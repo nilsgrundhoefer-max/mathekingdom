@@ -47,7 +47,7 @@ test('Auswahl: falsche Option meldet ihre Fehlvorstellung', () => {
 });
 
 test('Lücken, Zuordnen und Sachaufgabe: alles muss stimmen', () => {
-  const l = aufgaben('5.4.5-D4', 'F')[0];
+  const l = aufgaben('5.4.5-D4', 'M')[0];
   assert.equal(L.pruefeAntwort(l, { q: String(l.luecken.q.loesung), r: String(l.luecken.r.loesung) }).richtig, true);
   assert.equal(L.pruefeAntwort(l, { q: String(l.luecken.q.loesung), r: '0' }).fehlvorstellung, 'div-rest-vergessen');
   const z = aufgaben('5.3.3-S1', 'F').find((x) => x.format === 'zuordnen');
@@ -200,7 +200,7 @@ test('Hilferuf: Platz in der Warteschlange nach Eingang', () => {
 
 test('Klassendatei: Standardwerte ohne Datei, sonst Vorgaben der Lehrkraft', () => {
   const ohne = L.einstellungen(null, '5A-K4M2', pool);
-  assert.equal(ohne.zielniveau, 'G');
+  assert.equal(ohne.zielniveau, 'M');
   assert.equal(ohne.offeneKapitel.size, 9);
   assert.equal(ohne.spielpause, false);
   const mit = L.einstellungen({ aktuellesKapitel: '5.4', zielniveaus: { '5A-K4M2': 'M' }, spielpause: true, codes: ['5A-AAAA'] }, '5A-K4M2', pool);
@@ -256,4 +256,54 @@ test('Jede Station mit Aufgaben hat einen Merkzettel', () => {
     if (!u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id))) continue;
     assert.ok(u.merkzettel?.regeln.length >= 3 && u.merkzettel.beispiel, u.id);
   }
+});
+
+test('Sternregel: drei richtige reichen nur mit einer Aufgabe aus AFB II oder III', () => {
+  const g = aufgaben('5.4.5-D2', 'M');
+  assert.deepEqual(g.map((a) => a.afb), L.AFB_FOLGE);
+  const stand = neu();
+  const [eins, vier] = g.filter((a) => a.afb === 1);
+  L.verbuche(stand, eins, ok(), 'M', 't1', index);
+  L.verbuche(stand, vier, ok(), 'M', 't2', index);
+  // Dritte richtige Aufgabe, aber wieder nur AFB I (eine Wiederholung zählt nicht doppelt): kein Stern.
+  const fremd = { ...eins, id: 'x-afb1' };
+  const ohne = L.verbuche(stand, fremd, ok(), 'M', 't3', index);
+  assert.equal(ohne.neuesLernziel, false);
+  const st = L.lernzielStand(stand, '5.4.5-D2', 'M', index);
+  assert.deepEqual([st.erreicht, st.anspruchFehlt, st.fortschritt], [false, true, 2]);
+  const mit = L.verbuche(stand, g.find((a) => a.afb === 2), ok(), 'M', 't4', index);
+  assert.equal(mit.neuesLernziel, true);
+});
+
+test('Reihenfolge der Aufgaben folgt den Anforderungsbereichen I, II, II, I, II, III', () => {
+  const stand = neu(), folge = [];
+  for (let i = 0; i < 6; i++) {
+    const a = L.naechsteAufgabe(index, stand, '5.4.5-D4', 'G');
+    folge.push(a.afb);
+    L.verbuche(stand, a, ok({ geloest: false }), 'G', 't', index);
+  }
+  assert.deepEqual(folge, L.AFB_FOLGE);
+});
+
+test('Hilfekärtchen je Niveaustufe und Lösungsschritt auf M', () => {
+  const anzahl = (n) => Object.keys(aufgaben('5.4.5-D2', n)[0].hilfen);
+  assert.deepEqual([anzahl('F'), anzahl('G'), anzahl('M'), anzahl('E')], [L.KARTEN, L.KARTEN, ['tipp', 'loesungsschritt'], ['tipp']]);
+  // Auf M ist das zweite Kärtchen der Lösungsschritt: Die Aufgabe zählt dann nicht für den Stern und bringt nur 1 Münze.
+  const stand = neu(), m = aufgaben('5.4.5-D2', 'M')[0];
+  const b = L.verbuche(stand, m, ok({ hilfen: 2, karten: ['tipp', 'loesungsschritt'] }), 'M', 't', index);
+  assert.equal(b.muenzen, 1);
+  assert.equal(L.lernzielStand(stand, '5.4.5-D2', 'M', index).richtige, 0);
+  // Alte Einträge ohne Kartenliste: zwei Kärtchen waren Tipp und Beispiel, das zählt.
+  assert.equal(L.hatKarte({ hilfen: 2 }, 'loesungsschritt'), false);
+  assert.equal(L.hatKarte({ hilfen: 3 }, 'loesungsschritt'), true);
+});
+
+test('AFB III bringt die Hälfte mehr Münzen, Wortspeicher wächst mit der Stufe', () => {
+  const stand = neu(), e = aufgaben('5.4.5-D1', 'E');
+  assert.equal(L.muenzenFuer(stand, e.find((a) => a.afb === 3), ok(), 'M'), Math.round(L.MUENZEN_BASIS.E * 1.5));
+  assert.equal(L.muenzenFuer(stand, e.find((a) => a.afb === 1), ok(), 'M'), L.MUENZEN_BASIS.E);
+  const station = pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.id === '5.4.5');
+  const bis = (n) => station.wortspeicher.filter((w) => L.NIVEAUS.indexOf(w.ab) <= L.NIVEAUS.indexOf(n)).length;
+  assert.ok(bis('F') >= 4 && bis('F') < bis('G') && bis('G') < bis('M') && bis('M') < bis('E'));
+  assert.ok(!station.wortspeicher.filter((w) => w.ab === 'F').some((w) => /Quotient|Dividend|Divisor/.test(w.wort + w.erklaerung)));
 });

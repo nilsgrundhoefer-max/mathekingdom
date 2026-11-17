@@ -63,6 +63,26 @@
    "beschreibung": "Führt nur einen von mehreren nötigen Rechenschritten aus.",
    "hinweis": "Du bist noch nicht fertig: Es fehlt noch ein Rechenschritt."
   },
+  "div-vertauscht": {
+   "beschreibung": "Vertauscht bei der Division die beiden Zahlen.",
+   "hinweis": "Beim Teilen darfst du die Zahlen nicht tauschen. Die erste Zahl wird geteilt."
+  },
+  "div-falsche-rechenart": {
+   "beschreibung": "Wählt statt der Division eine andere Rechenart.",
+   "hinweis": "Überlege: Wird hier gerecht verteilt oder in gleiche Gruppen aufgeteilt? Dann wird geteilt."
+  },
+  "div-rest-zu-gross": {
+   "beschreibung": "Lässt einen Rest stehen, der so groß wie der Divisor oder größer ist.",
+   "hinweis": "Der Rest muss kleiner sein als die Zahl, durch die du teilst. Passt sie noch einmal hinein?"
+  },
+  "div-einmaleins": {
+   "beschreibung": "Irrt sich im kleinen Einmaleins.",
+   "hinweis": "Prüfe mit der Mal-Aufgabe: Ergebnis mal die zweite Zahl muss die erste Zahl ergeben."
+  },
+  "teilbar-summe": {
+   "beschreibung": "Erkennt nicht, dass die Summe zweier Vielfacher wieder ein Vielfaches ist.",
+   "hinweis": "Zerlege in Päckchen: Was passiert, wenn du zu vollen Päckchen weitere volle Päckchen legst?"
+  },
   "add-uebertrag-vergessen": {
    "beschreibung": "Addiert stellenweise, berücksichtigt den Übertrag aber nicht.",
    "hinweis": "Schau dir deine Überträge noch einmal an. Hast du sie in der nächsten Stelle mitgerechnet?"
@@ -480,7 +500,89 @@
       ],
       "beispiel": "952 : 4: 9 : 4 = 2 Rest 1. Dann 15 : 4 = 3 Rest 3. Dann 32 : 4 = 8. Ergebnis 238. Probe: 238 · 4 = 952.",
       "heft": "Rechne schriftliche Divisionen im Heft und schreibe die Probe dazu."
-     }
+     },
+     "wortspeicher": [
+      {
+       "wort": "geteilt durch",
+       "ab": "F",
+       "erklaerung": "So liest du das Zeichen : vor. 12 : 3 heißt: 12 geteilt durch 3."
+      },
+      {
+       "wort": "teilen",
+       "ab": "F",
+       "erklaerung": "Gerecht verteilen oder gleich große Gruppen bilden."
+      },
+      {
+       "wort": "mal",
+       "ab": "F",
+       "erklaerung": "So liest du das Zeichen · vor. Mal ist das Gegenteil von geteilt."
+      },
+      {
+       "wort": "Ergebnis",
+       "ab": "F",
+       "erklaerung": "Die Zahl hinter dem Zeichen =."
+      },
+      {
+       "wort": "Probe",
+       "ab": "F",
+       "erklaerung": "Du prüfst dein Ergebnis mit der Mal-Aufgabe. Zu 12 : 3 = 4 gehört 4 · 3 = 12."
+      },
+      {
+       "wort": "Rest",
+       "ab": "F",
+       "erklaerung": "Was beim Teilen übrig bleibt. 14 : 4 = 3 Rest 2."
+      },
+      {
+       "wort": "Quotient",
+       "ab": "G",
+       "erklaerung": "Das Ergebnis einer Geteilt-Aufgabe. Bei 12 : 3 = 4 ist 4 der Quotient."
+      },
+      {
+       "wort": "Überschlag",
+       "ab": "G",
+       "erklaerung": "Du rechnest mit runden Zahlen. So siehst du, wie groß das Ergebnis ungefähr ist."
+      },
+      {
+       "wort": "schriftlich dividieren",
+       "ab": "G",
+       "erklaerung": "Schritt für Schritt teilen: teilen, malnehmen, abziehen, nächste Ziffer herunterholen."
+      },
+      {
+       "wort": "Dividend",
+       "ab": "M",
+       "erklaerung": "Die Zahl, die geteilt wird. Bei 12 : 3 ist 12 der Dividend."
+      },
+      {
+       "wort": "Divisor",
+       "ab": "M",
+       "erklaerung": "Die Zahl, durch die geteilt wird. Bei 12 : 3 ist 3 der Divisor."
+      },
+      {
+       "wort": "Umkehraufgabe",
+       "ab": "M",
+       "erklaerung": "Die Rechnung, die eine andere rückgängig macht. Zur Division gehört die Multiplikation."
+      },
+      {
+       "wort": "Term",
+       "ab": "E",
+       "erklaerung": "Ein Rechenausdruck aus Zahlen, Rechenzeichen und Klammern, zum Beispiel (12 + 8) : 4."
+      },
+      {
+       "wort": "Wert",
+       "ab": "E",
+       "erklaerung": "Die Zahl, die herauskommt, wenn man einen Term ausrechnet."
+      },
+      {
+       "wort": "teilbar",
+       "ab": "E",
+       "erklaerung": "Eine Zahl ist durch 7 teilbar, wenn beim Dividieren durch 7 kein Rest bleibt."
+      },
+      {
+       "wort": "Vielfaches",
+       "ab": "E",
+       "erklaerung": "Die Vielfachen von 7 sind 7, 14, 21, 28 und so weiter."
+      }
+     ]
     },
     {
      "id": "5.4.6",
@@ -4077,104 +4179,92 @@
    "lernziel": "5.4.5-D1",
    "niveau": "F",
    "afb": 1,
-   "format": "auswahl",
-   "text": "28 : 7 = 4. Wie heißt die Zahl 28?",
-   "mehrfach": false,
-   "optionen": [
+   "format": "zahl",
+   "text": "12 : 4 = 3\nWelche Zahl ist das Ergebnis?",
+   "loesung": 3,
+   "typischeFehler": [
     {
-     "text": "Faktor",
-     "richtig": false,
+     "wert": 12,
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "Dividend",
-     "richtig": true
-    },
-    {
-     "text": "Quotient",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "text": "Divisor",
-     "richtig": false,
+     "wert": 4,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient.",
-    "beispiel": "In 20 : 4 = 5 ist 20 der Dividend, 4 der Divisor und 5 der Quotient.",
-    "loesungsschritt": "Schau auf die Reihenfolge: 28 steht vorn und ist der Dividend."
+    "tipp": "Das Zeichen : liest du „geteilt durch“. Hinter dem = steht das Ergebnis.",
+    "beispiel": "12 : 3 = 4. Du liest: 12 geteilt durch 3 ist gleich 4. Das Ergebnis ist 4.",
+    "loesungsschritt": "Lies die Aufgabe laut: 12 geteilt durch 4 ist gleich 3."
    }
   },
   {
    "id": "5.4.5-D1-F-02",
    "lernziel": "5.4.5-D1",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "56 : 7 = 8. Wie heißt die Zahl 7?",
+   "text": "45 geteilt durch 9\nWelche Aufgabe passt?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Quotient",
+     "text": "45 − 9",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "Divisor",
+     "text": "45 · 9",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "9 : 45",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "45 : 9",
      "richtig": true
-    },
-    {
-     "text": "Faktor",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "text": "Dividend",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient.",
-    "beispiel": "In 20 : 4 = 5 ist 20 der Dividend, 4 der Divisor und 5 der Quotient.",
-    "loesungsschritt": "Schau auf die Reihenfolge: 56 steht vorn und ist der Dividend."
+    "tipp": "„Geteilt durch“ schreibst du mit dem Zeichen :. Die Zahl, die geteilt wird, steht vorn.",
+    "beispiel": "10 geteilt durch 2 schreibst du so: 10 : 2.",
+    "loesungsschritt": "Die Zahl 45 wird geteilt. Sie steht vorn."
    }
   },
   {
    "id": "5.4.5-D1-F-03",
    "lernziel": "5.4.5-D1",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "40 : 8 = 5. Wie heißt die Zahl 5?",
+   "text": "Die Mal-Aufgabe ist 9 · 2 = 18.\nWelche Geteilt-Aufgabe passt dazu?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Divisor",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "text": "Faktor",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "text": "Quotient",
+     "text": "18 : 2 = 9",
      "richtig": true
     },
     {
-     "text": "Dividend",
+     "text": "2 : 18 = 9",
      "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "9 : 2 = 18",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "18 : 2 = 18",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient.",
-    "beispiel": "In 20 : 4 = 5 ist 20 der Dividend, 4 der Divisor und 5 der Quotient.",
-    "loesungsschritt": "Schau auf die Reihenfolge: 40 steht vorn und ist der Dividend."
+    "tipp": "Mal und geteilt gehören zusammen. Bei geteilt steht die größte Zahl vorn.",
+    "beispiel": "3 · 5 = 15. Dazu passt 15 : 5 = 3.",
+    "loesungsschritt": "Die größte Zahl ist 18. Sie steht bei der Geteilt-Aufgabe vorn."
    }
   },
   {
@@ -4183,87 +4273,87 @@
    "niveau": "F",
    "afb": 1,
    "format": "auswahl",
-   "text": "48 : 6 = 8. Wie heißt die Zahl 48?",
+   "text": "54 : 9\nWie liest du die Aufgabe?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Dividend",
+     "text": "54 mal 9",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "54 minus 9",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "9 geteilt durch 54",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "54 geteilt durch 9",
      "richtig": true
-    },
-    {
-     "text": "Faktor",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "text": "Quotient",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "text": "Divisor",
-     "richtig": false,
-     "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient.",
-    "beispiel": "In 20 : 4 = 5 ist 20 der Dividend, 4 der Divisor und 5 der Quotient.",
-    "loesungsschritt": "Schau auf die Reihenfolge: 48 steht vorn und ist der Dividend."
+    "tipp": "Das Zeichen : liest du „geteilt durch“. Hinter dem = steht das Ergebnis.",
+    "beispiel": "12 : 3 = 4. Du liest: 12 geteilt durch 3 ist gleich 4. Das Ergebnis ist 4.",
+    "loesungsschritt": "Lies die Aufgabe laut: 54 geteilt durch 9 ist gleich 6."
    }
   },
   {
    "id": "5.4.5-D1-F-05",
    "lernziel": "5.4.5-D1",
    "niveau": "F",
-   "afb": 1,
-   "format": "zuordnen",
-   "text": "Ordne die Fachbegriffe zu: 33 : 3 = 11",
-   "paare": [
+   "afb": 2,
+   "format": "zahl",
+   "text": "Eine Zahl wird durch 8 geteilt.\nDas Ergebnis ist 4.\nWie heißt die Zahl?",
+   "loesung": 32,
+   "typischeFehler": [
     {
-     "links": "33",
-     "rechts": "Dividend"
-    },
-    {
-     "links": "3",
-     "rechts": "Divisor"
-    },
-    {
-     "links": "11",
-     "rechts": "Quotient"
+     "wert": 12,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient.",
-    "beispiel": "In 20 : 4 = 5 ist 20 der Dividend, 4 der Divisor und 5 der Quotient.",
-    "loesungsschritt": "Schau auf die Reihenfolge: 33 steht vorn und ist der Dividend."
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "Eine Zahl geteilt durch 2 ist 6. Rechne 6 · 2 = 12. Die Zahl heißt 12.",
+    "loesungsschritt": "Rechne 4 · 8."
    }
   },
   {
    "id": "5.4.5-D1-F-06",
    "lernziel": "5.4.5-D1",
    "niveau": "F",
-   "afb": 1,
-   "format": "zuordnen",
-   "text": "Ordne die Fachbegriffe zu: 72 : 9 = 8",
-   "paare": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tim sagt:\n„8 : 2 ist dasselbe wie 2 : 8.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "links": "72",
-     "rechts": "Dividend"
+     "text": "Nein.\n8 Dinge kann man an 2 Kinder verteilen.\n2 Dinge reichen nicht für 8 Kinder.",
+     "richtig": true
     },
     {
-     "links": "9",
-     "rechts": "Divisor"
+     "text": "Ja.\nEs sind beide Male die gleichen Zahlen.",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
     },
     {
-     "links": "8",
-     "rechts": "Quotient"
+     "text": "Ja.\nBeim Teilen darf man die Zahlen tauschen.",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "Nein.\n2 : 8 ist größer.",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient.",
-    "beispiel": "In 20 : 4 = 5 ist 20 der Dividend, 4 der Divisor und 5 der Quotient.",
-    "loesungsschritt": "Schau auf die Reihenfolge: 72 steht vorn und ist der Dividend."
+    "tipp": "Stell dir Bonbons und Kinder vor. Lege Wendeplättchen.",
+    "beispiel": "6 : 2 heißt: 6 Bonbons für 2 Kinder. Jedes Kind bekommt 3. Bei 2 : 6 sind es nur 2 Bonbons für 6 Kinder.",
+    "loesungsschritt": "Lege 8 Plättchen. Verteile sie an 2 Kinder. Lege dann nur 2 Plättchen. Reichen sie für 8 Kinder?"
    }
   },
   {
@@ -4271,59 +4361,100 @@
    "lernziel": "5.4.5-D1",
    "niveau": "G",
    "afb": 1,
-   "format": "zahl",
-   "text": "Der Dividend ist 175, der Divisor ist 7. Berechne den Quotienten.",
-   "loesung": 25,
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "36 : 9 = 4\nWie heißt die Zahl 4?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 1225,
+     "text": "Quotient",
+     "richtig": true
+    },
+    {
+     "text": "Summe",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Produkt",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Differenz",
+     "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "In einer Division heißt die Zahl, die geteilt wird, Dividend, die Zahl, durch die geteilt wird, Divisor und das Ergebnis Quotient.",
-    "beispiel": "Dividend 60, Divisor 5: 60 : 5 = 12. Der Quotient ist 12.",
-    "loesungsschritt": "Die Rechnung lautet 175 : 7."
+    "tipp": "Das Ergebnis einer Geteilt-Aufgabe heißt Quotient.",
+    "beispiel": "20 : 4 = 5. Der Quotient ist 5.",
+    "loesungsschritt": "Du rechnest 36 : 9. Das Ergebnis ist der Quotient."
    }
   },
   {
    "id": "5.4.5-D1-G-02",
    "lernziel": "5.4.5-D1",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Der Dividend ist 224, der Divisor ist 8. Berechne den Quotienten.",
-   "loesung": 28,
-   "typischeFehler": [
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Der Quotient ist 5.\nWelche Aufgabe passt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 1792,
+     "text": "28 : 7",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "40 − 8",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "40 : 8",
+     "richtig": true
+    },
+    {
+     "text": "5 · 8",
+     "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "In einer Division heißt die Zahl, die geteilt wird, Dividend, die Zahl, durch die geteilt wird, Divisor und das Ergebnis Quotient.",
-    "beispiel": "Dividend 60, Divisor 5: 60 : 5 = 12. Der Quotient ist 12.",
-    "loesungsschritt": "Die Rechnung lautet 224 : 8."
+    "tipp": "Der Quotient ist das Ergebnis einer Geteilt-Aufgabe. Rechne die Geteilt-Aufgaben aus.",
+    "beispiel": "Der Quotient ist 4. Dazu passt 12 : 3, denn 12 : 3 = 4.",
+    "loesungsschritt": "Suche die Geteilt-Aufgabe mit dem Ergebnis 5."
    }
   },
   {
    "id": "5.4.5-D1-G-03",
    "lernziel": "5.4.5-D1",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Der Dividend ist 152, der Divisor ist 4. Berechne den Quotienten.",
-   "loesung": 38,
-   "typischeFehler": [
+   "afb": 2,
+   "format": "zuordnen",
+   "text": "Ordne jedem Ergebnis den richtigen Namen zu.",
+   "paare": [
     {
-     "wert": 608,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "links": "20 + 5",
+     "rechts": "Summe"
+    },
+    {
+     "links": "20 − 5",
+     "rechts": "Differenz"
+    },
+    {
+     "links": "20 · 5",
+     "rechts": "Produkt"
+    },
+    {
+     "links": "20 : 5",
+     "rechts": "Quotient"
     }
    ],
    "hilfen": {
-    "tipp": "In einer Division heißt die Zahl, die geteilt wird, Dividend, die Zahl, durch die geteilt wird, Divisor und das Ergebnis Quotient.",
-    "beispiel": "Dividend 60, Divisor 5: 60 : 5 = 12. Der Quotient ist 12.",
-    "loesungsschritt": "Die Rechnung lautet 152 : 4."
+    "tipp": "Schau in den Wortspeicher: Zu jeder Rechenart gehört ein Name für das Ergebnis.",
+    "beispiel": "Bei 8 + 2 heißt das Ergebnis Summe. Bei 8 : 2 heißt es Quotient.",
+    "loesungsschritt": "Plus gehört zu Summe. Geteilt gehört zu Quotient."
    }
   },
   {
@@ -4332,82 +4463,109 @@
    "niveau": "G",
    "afb": 1,
    "format": "zahl",
-   "text": "Der Dividend ist 84, der Divisor ist 3. Berechne den Quotienten.",
-   "loesung": 28,
+   "text": "Berechne den Quotienten.\n56 : 8",
+   "loesung": 7,
    "typischeFehler": [
     {
-     "wert": 252,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "wert": 8,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "div-einmaleins"
     }
    ],
    "hilfen": {
-    "tipp": "In einer Division heißt die Zahl, die geteilt wird, Dividend, die Zahl, durch die geteilt wird, Divisor und das Ergebnis Quotient.",
-    "beispiel": "Dividend 60, Divisor 5: 60 : 5 = 12. Der Quotient ist 12.",
-    "loesungsschritt": "Die Rechnung lautet 84 : 3."
+    "tipp": "Das Ergebnis einer Geteilt-Aufgabe heißt Quotient.",
+    "beispiel": "20 : 4 = 5. Der Quotient ist 5.",
+    "loesungsschritt": "Du rechnest 56 : 8. Das Ergebnis ist der Quotient."
    }
   },
   {
    "id": "5.4.5-D1-G-05",
    "lernziel": "5.4.5-D1",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Der Dividend ist 472, der Divisor ist 8. Berechne den Quotienten.",
-   "loesung": 59,
+   "text": "Eine Zahl wird durch 5 geteilt.\nDer Quotient ist 3.\nWie heißt die Zahl?",
+   "loesung": 15,
    "typischeFehler": [
     {
-     "wert": 3776,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "wert": 8,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "In einer Division heißt die Zahl, die geteilt wird, Dividend, die Zahl, durch die geteilt wird, Divisor und das Ergebnis Quotient.",
-    "beispiel": "Dividend 60, Divisor 5: 60 : 5 = 12. Der Quotient ist 12.",
-    "loesungsschritt": "Die Rechnung lautet 472 : 8."
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "Eine Zahl geteilt durch 5 ist 6. Rechne 6 · 5 = 30.",
+    "loesungsschritt": "Rechne 3 · 5."
    }
   },
   {
    "id": "5.4.5-D1-G-06",
    "lernziel": "5.4.5-D1",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Der Dividend ist 225, der Divisor ist 9. Berechne den Quotienten.",
-   "loesung": 25,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Lea sagt:\n„Der Quotient ist immer kleiner als die erste Zahl.“\nPrüfe mit 6 : 1.\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 2025,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "text": "Nein.\n6 : 1 = 6.\nDer Quotient ist hier genauso groß.",
+     "richtig": true
+    },
+    {
+     "text": "Ja.\n6 : 1 = 5.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "Nein.\nDer Quotient ist immer größer als die erste Zahl.",
+     "richtig": false
+    },
+    {
+     "text": "Ja.\nBeim Teilen wird jede Zahl kleiner.",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "In einer Division heißt die Zahl, die geteilt wird, Dividend, die Zahl, durch die geteilt wird, Divisor und das Ergebnis Quotient.",
-    "beispiel": "Dividend 60, Divisor 5: 60 : 5 = 12. Der Quotient ist 12.",
-    "loesungsschritt": "Die Rechnung lautet 225 : 9."
+    "tipp": "Rechne die Aufgabe aus. Vergleiche das Ergebnis mit der ersten Zahl.",
+    "beispiel": "5 : 1 = 5. Fünf Äpfel für ein Kind: Das Kind bekommt alle 5.",
+    "loesungsschritt": "Rechne 6 : 1. Wie viel bekommt ein Kind, wenn es alles allein bekommt?"
    }
   },
   {
    "id": "5.4.5-D1-M-01",
    "lernziel": "5.4.5-D1",
    "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "Der Quotient ist 80, der Divisor ist 8. Wie groß ist der Dividend?",
-   "loesung": 640,
-   "typischeFehler": [
+   "afb": 1,
+   "format": "auswahl",
+   "text": "In der Aufgabe 96 : 12 = 8: Wie heißt die Zahl 12?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 10,
+     "text": "Subtrahend",
+     "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "wert": 88,
+     "text": "Dividend",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Divisor",
+     "richtig": true
+    },
+    {
+     "text": "Quotient",
+     "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient. Gesucht ist die erste Zahl.",
-    "beispiel": "Quotient 7, Divisor 6: ? : 6 = 7. Der Dividend ist 7 · 6 = 42.",
-    "loesungsschritt": "Schreibe ? : 8 = 80. Den Dividenden findest du mit der Umkehraufgabe 80 · 8."
+    "tipp": "Der Dividend wird geteilt, der Divisor teilt, der Quotient ist das Ergebnis.",
+    "loesungsschritt": "Die Zahl 96 wird geteilt. Sie ist der Dividend."
    }
   },
   {
@@ -4416,22 +4574,17 @@
    "niveau": "M",
    "afb": 2,
    "format": "zahl",
-   "text": "Der Quotient ist 16, der Divisor ist 8. Wie groß ist der Dividend?",
-   "loesung": 128,
+   "text": "Der Quotient ist 23, der Divisor ist 10. Wie groß ist der Dividend?",
+   "loesung": 230,
    "typischeFehler": [
     {
-     "wert": 2,
-     "fehlvorstellung": "begriffe-verwechselt"
-    },
-    {
-     "wert": 24,
+     "wert": 33,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient. Gesucht ist die erste Zahl.",
-    "beispiel": "Quotient 7, Divisor 6: ? : 6 = 7. Der Dividend ist 7 · 6 = 42.",
-    "loesungsschritt": "Schreibe ? : 8 = 16. Den Dividenden findest du mit der Umkehraufgabe 16 · 8."
+    "tipp": "Die Umkehraufgabe hilft: Quotient · Divisor = Dividend.",
+    "loesungsschritt": "Rechne 23 · 10."
    }
   },
   {
@@ -4440,38 +4593,40 @@
    "niveau": "M",
    "afb": 2,
    "format": "zahl",
-   "text": "Der Quotient ist 86, der Divisor ist 6. Wie groß ist der Dividend?",
-   "loesung": 516,
+   "text": "Der Dividend ist 150, der Quotient ist 15. Wie groß ist der Divisor?",
+   "loesung": 10,
    "typischeFehler": [
     {
-     "wert": 92,
+     "wert": 135,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient. Gesucht ist die erste Zahl.",
-    "beispiel": "Quotient 7, Divisor 6: ? : 6 = 7. Der Dividend ist 7 · 6 = 42.",
-    "loesungsschritt": "Schreibe ? : 6 = 86. Den Dividenden findest du mit der Umkehraufgabe 86 · 6."
+    "tipp": "Dividend : Quotient = Divisor.",
+    "loesungsschritt": "Rechne 150 : 15."
    }
   },
   {
    "id": "5.4.5-D1-M-04",
    "lernziel": "5.4.5-D1",
    "niveau": "M",
-   "afb": 2,
+   "afb": 1,
    "format": "zahl",
-   "text": "Der Quotient ist 34, der Divisor ist 11. Wie groß ist der Dividend?",
-   "loesung": 374,
+   "text": "Der Dividend ist 168, der Divisor ist 12. Berechne den Quotienten.",
+   "loesung": 14,
    "typischeFehler": [
     {
-     "wert": 45,
+     "wert": 156,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "wert": 2016,
      "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient. Gesucht ist die erste Zahl.",
-    "beispiel": "Quotient 7, Divisor 6: ? : 6 = 7. Der Dividend ist 7 · 6 = 42.",
-    "loesungsschritt": "Schreibe ? : 11 = 34. Den Dividenden findest du mit der Umkehraufgabe 34 · 11."
+    "tipp": "Dividend : Divisor = Quotient.",
+    "loesungsschritt": "Rechne 168 : 12."
    }
   },
   {
@@ -4480,58 +4635,76 @@
    "niveau": "M",
    "afb": 2,
    "format": "zahl",
-   "text": "Der Quotient ist 77, der Divisor ist 10. Wie groß ist der Dividend?",
-   "loesung": 770,
-   "typischeFehler": [
-    {
-     "wert": 87,
-     "fehlvorstellung": "begriffe-verwechselt"
-    }
-   ],
+   "text": "Dividiere die Summe von 21 und 96 durch 9.",
+   "loesung": 13,
+   "typischeFehler": [],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient. Gesucht ist die erste Zahl.",
-    "beispiel": "Quotient 7, Divisor 6: ? : 6 = 7. Der Dividend ist 7 · 6 = 42.",
-    "loesungsschritt": "Schreibe ? : 10 = 77. Den Dividenden findest du mit der Umkehraufgabe 77 · 10."
+    "tipp": "Berechne zuerst die Summe. Sie ist der Dividend.",
+    "loesungsschritt": "Die Summe ist 21 + 96 = 117."
    }
   },
   {
    "id": "5.4.5-D1-M-06",
    "lernziel": "5.4.5-D1",
    "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "Der Quotient ist 78, der Divisor ist 8. Wie groß ist der Dividend?",
-   "loesung": 624,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Der Dividend wird verdoppelt, der Divisor bleibt gleich. Was passiert mit dem Quotienten? Prüfe an einem eigenen Beispiel.",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 86,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "text": "Er halbiert sich.",
+     "richtig": false
+    },
+    {
+     "text": "Er bleibt gleich.",
+     "richtig": false
+    },
+    {
+     "text": "Er verdoppelt sich.",
+     "richtig": true
+    },
+    {
+     "text": "Er wird um 2 größer.",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Dividend : Divisor = Quotient. Gesucht ist die erste Zahl.",
-    "beispiel": "Quotient 7, Divisor 6: ? : 6 = 7. Der Dividend ist 7 · 6 = 42.",
-    "loesungsschritt": "Schreibe ? : 8 = 78. Den Dividenden findest du mit der Umkehraufgabe 78 · 8."
+    "tipp": "Probiere es mit kleinen Zahlen aus, zum Beispiel mit 24 : 4.",
+    "loesungsschritt": "Rechne 24 : 4 und dann die veränderte Aufgabe. Vergleiche die beiden Quotienten."
    }
   },
   {
    "id": "5.4.5-D1-E-01",
    "lernziel": "5.4.5-D1",
    "niveau": "E",
-   "afb": 2,
-   "format": "zahl",
-   "text": "Dividiere die Summe der Zahlen 315 und 558 durch 9.",
-   "loesung": 97,
-   "typischeFehler": [
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welcher Term ist ein Quotient?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 377,
-     "fehlvorstellung": "sach-schritt-vergessen"
+     "text": "12 − 20 : 4",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "12 · (20 : 4)",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "12 + 20 : 4",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "(12 + 20) : 4",
+     "richtig": true
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Summe. Teile danach das Ergebnis.",
-    "beispiel": "Dividiere die Summe von 30 und 18 durch 6: 30 + 18 = 48, dann 48 : 6 = 8.",
-    "loesungsschritt": "Berechne zuerst die Summe: 315 + 558 = 873."
+    "tipp": "Welche Rechnung wird in jedem Term zuletzt ausgeführt?"
    }
   },
   {
@@ -4540,13 +4713,16 @@
    "niveau": "E",
    "afb": 2,
    "format": "zahl",
-   "text": "Dividiere die Differenz der Zahlen 520 und 43 durch 9.",
-   "loesung": 53,
-   "typischeFehler": [],
+   "text": "Der Divisor ist 16, der Quotient 35 und der Rest 3. Bestimme den Dividenden.",
+   "loesung": 563,
+   "typischeFehler": [
+    {
+     "wert": 560,
+     "fehlvorstellung": "div-rest-vergessen"
+    }
+   ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Differenz. Teile danach das Ergebnis.",
-    "beispiel": "Dividiere die Differenz von 80 und 24 durch 7: 80 − 24 = 56, dann 56 : 7 = 8.",
-    "loesungsschritt": "Berechne zuerst die Differenz: 520 − 43 = 477."
+    "tipp": "Wie lautet die Probe bei einer Division mit Rest?"
    }
   },
   {
@@ -4555,38 +4731,42 @@
    "niveau": "E",
    "afb": 2,
    "format": "zahl",
-   "text": "Dividiere die Summe der Zahlen 176 und 236 durch 4.",
-   "loesung": 103,
+   "text": "Ein Quotient hat den Wert 20. Der Dividend wird vervierfacht, der Divisor verdoppelt. Welchen Wert hat der neue Quotient?",
+   "loesung": 40,
    "typischeFehler": [
     {
-     "wert": 235,
-     "fehlvorstellung": "sach-schritt-vergessen"
+     "wert": 80,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 20,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Summe. Teile danach das Ergebnis.",
-    "beispiel": "Dividiere die Summe von 30 und 18 durch 6: 30 + 18 = 48, dann 48 : 6 = 8.",
-    "loesungsschritt": "Berechne zuerst die Summe: 176 + 236 = 412."
+    "tipp": "Was passiert bei 24 : 4, wenn du beide Zahlen in gleicher Weise veränderst?"
    }
   },
   {
    "id": "5.4.5-D1-E-04",
    "lernziel": "5.4.5-D1",
    "niveau": "E",
-   "afb": 2,
+   "afb": 1,
    "format": "zahl",
-   "text": "Dividiere die Differenz der Zahlen 320 und 188 durch 4.",
-   "loesung": 33,
+   "text": "Berechne den Wert des Quotienten aus 684 und dem Produkt von 6 und 6.",
+   "loesung": 19,
    "typischeFehler": [
     {
-     "wert": 127,
-     "fehlvorstellung": "begriffe-verwechselt"
+     "wert": 114,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Differenz. Teile danach das Ergebnis.",
-    "beispiel": "Dividiere die Differenz von 80 und 24 durch 7: 80 − 24 = 56, dann 56 : 7 = 8.",
-    "loesungsschritt": "Berechne zuerst die Differenz: 320 − 188 = 132."
+    "tipp": "Was ist hier der Divisor: eine Zahl oder ein Term?"
    }
   },
   {
@@ -4595,33 +4775,47 @@
    "niveau": "E",
    "afb": 2,
    "format": "zahl",
-   "text": "Dividiere die Summe der Zahlen 220 und 365 durch 5.",
-   "loesung": 117,
+   "text": "Die Summe aus Dividend und Divisor ist 80. Der Quotient ist 7. Wie groß ist der Dividend?",
+   "loesung": 70,
    "typischeFehler": [
     {
-     "wert": 293,
-     "fehlvorstellung": "sach-schritt-vergessen"
+     "wert": 10,
+     "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Summe. Teile danach das Ergebnis.",
-    "beispiel": "Dividiere die Summe von 30 und 18 durch 6: 30 + 18 = 48, dann 48 : 6 = 8.",
-    "loesungsschritt": "Berechne zuerst die Summe: 220 + 365 = 585."
+    "tipp": "Der Dividend ist das 7-Fache des Divisors. Wie viele gleich große Teile stecken dann in der Summe?"
    }
   },
   {
    "id": "5.4.5-D1-E-06",
    "lernziel": "5.4.5-D1",
    "niveau": "E",
-   "afb": 2,
-   "format": "zahl",
-   "text": "Dividiere die Differenz der Zahlen 968 und 257 durch 9.",
-   "loesung": 79,
-   "typischeFehler": [],
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Welche Aussage gilt für jede Division natürlicher Zahlen, die ohne Rest aufgeht (Divisor nicht 0)?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Dividend und Divisor darf man vertauschen.",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "Der Quotient ist immer größer als der Divisor.",
+     "richtig": false
+    },
+    {
+     "text": "Der Quotient ist immer kleiner als der Dividend.",
+     "richtig": false
+    },
+    {
+     "text": "Quotient · Divisor = Dividend",
+     "richtig": true
+    }
+   ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Differenz. Teile danach das Ergebnis.",
-    "beispiel": "Dividiere die Differenz von 80 und 24 durch 7: 80 − 24 = 56, dann 56 : 7 = 8.",
-    "loesungsschritt": "Berechne zuerst die Differenz: 968 − 257 = 711."
+    "tipp": "Suche zu jeder Aussage ein Gegenbeispiel. Denke auch an den Divisor 1."
    }
   },
   {
@@ -4630,58 +4824,62 @@
    "niveau": "F",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 95 : 5",
-   "loesung": 19,
+   "text": "Rechne.\n25 : 5",
+   "loesung": 5,
    "typischeFehler": [
     {
-     "wert": 190,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 6,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "div-einmaleins"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 9 : 5 = 1, denn 1 · 5 = 5. Es bleibt der Rest 4. Hole dann die nächste Ziffer herunter."
+    "tipp": "Nimm 25 Wendeplättchen. Lege immer 5 zusammen. Zähle die Häufchen.",
+    "beispiel": "Bei 12 : 3 hilft die 3er-Reihe: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also ist 12 : 3 = 4.",
+    "loesungsschritt": "Nutze die 5er-Reihe: 1 · 5 = 5, 2 · 5 = 10, 3 · 5 = 15, 4 · 5 = 20, … Wie oft brauchst du die 5, bis du bei 25 bist?"
    }
   },
   {
    "id": "5.4.5-D2-F-02",
    "lernziel": "5.4.5-D2",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 216 : 8",
-   "loesung": 27,
+   "text": "Welche Zahl fehlt?\n▢ : 6 = 8",
+   "loesung": 48,
    "typischeFehler": [
     {
-     "wert": 270,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 14,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 21 : 8 = 2, denn 2 · 8 = 16. Es bleibt der Rest 5. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "▢ : 2 = 5. Rechne 5 · 2 = 10. Die Zahl ist 10.",
+    "loesungsschritt": "Rechne 8 · 6."
    }
   },
   {
    "id": "5.4.5-D2-F-03",
    "lernziel": "5.4.5-D2",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 497 : 7",
-   "loesung": 71,
+   "text": "Welche Zahl fehlt?\n49 : ▢ = 7",
+   "loesung": 7,
    "typischeFehler": [
     {
-     "wert": 710,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 42,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 49 : 7 = 7, denn 7 · 7 = 49. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
+    "tipp": "Frage dich: 7 mal welche Zahl ergibt 49?",
+    "beispiel": "12 : ▢ = 4. Du weißt: 4 · 3 = 12. Die Zahl ist 3.",
+    "loesungsschritt": "Gehe die 7er-Reihe durch, bis du bei 49 bist."
    }
   },
   {
@@ -4690,58 +4888,81 @@
    "niveau": "F",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 198 : 2",
-   "loesung": 99,
+   "text": "Rechne.\n15 : 3",
+   "loesung": 5,
    "typischeFehler": [
     {
-     "wert": 990,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 6,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "div-einmaleins"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 19 : 2 = 9, denn 9 · 2 = 18. Es bleibt der Rest 1. Hole dann die nächste Ziffer herunter."
+    "tipp": "Nimm 15 Wendeplättchen. Lege immer 3 zusammen. Zähle die Häufchen.",
+    "beispiel": "Bei 12 : 3 hilft die 3er-Reihe: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also ist 12 : 3 = 4.",
+    "loesungsschritt": "Nutze die 3er-Reihe: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12, … Wie oft brauchst du die 3, bis du bei 15 bist?"
    }
   },
   {
    "id": "5.4.5-D2-F-05",
    "lernziel": "5.4.5-D2",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 39 : 3",
-   "loesung": 13,
+   "text": "12 : 3 = 4\nWie viel ist 120 : 3?",
+   "loesung": 40,
    "typischeFehler": [
     {
-     "wert": 130,
+     "wert": 4,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 400,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 3 : 3 = 1, denn 1 · 3 = 3. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
+    "tipp": "120 sind 12 Zehner. Teile die Zehner.",
+    "beispiel": "6 : 2 = 3. Dann ist 60 : 2 = 30. Aus 3 Einern werden 3 Zehner.",
+    "loesungsschritt": "12 Zehner geteilt durch 3 sind 4 Zehner. Wie heißt die Zahl?"
    }
   },
   {
    "id": "5.4.5-D2-F-06",
    "lernziel": "5.4.5-D2",
    "niveau": "F",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 448 : 7",
-   "loesung": 64,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Mia rechnet: 15 : 5 = 4.\nPrüfe mit der Mal-Aufgabe.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 640,
-     "fehlvorstellung": "div-stellenwert"
+     "text": "Richtig.\n15 − 5 = 10.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "Falsch.\n4 · 5 = 20.\nRichtig ist 3.",
+     "richtig": true
+    },
+    {
+     "text": "Richtig.\n4 · 5 = 15.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 5.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 44 : 7 = 6, denn 6 · 7 = 42. Es bleibt der Rest 2. Hole dann die nächste Ziffer herunter."
+    "tipp": "Die Mal-Aufgabe prüft die Geteilt-Aufgabe: Ergebnis mal zweite Zahl.",
+    "beispiel": "20 : 4 = 6? Prüfe: 6 · 4 = 24. Das ist nicht 20. Also ist 6 falsch.",
+    "loesungsschritt": "Rechne 4 · 5. Kommt 15 heraus?"
    }
   },
   {
@@ -4750,58 +4971,70 @@
    "niveau": "G",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 2646 : 7",
-   "loesung": 378,
+   "text": "Dividiere schriftlich.\n680 : 8",
+   "loesung": 85,
    "typischeFehler": [
     {
-     "wert": 3780,
+     "wert": 850,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 26 : 7 = 3, denn 3 · 7 = 21. Es bleibt der Rest 5. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen.",
+    "beispiel": "138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 8 in die 68? 8-mal, denn 8 · 8 = 64. Rechne 68 − 64 = 4. Hole die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D2-G-02",
    "lernziel": "5.4.5-D2",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 2790 : 5",
-   "loesung": 558,
-   "typischeFehler": [
-    {
-     "wert": 5580,
-     "fehlvorstellung": "div-stellenwert"
-    }
-   ],
+   "afb": 2,
+   "format": "luecken",
+   "text": "Rechne 270 : 5 in 2 Schritten.\n250 : 5 = {{zehner}}\n20 : 5 = {{einer}}\nZusammen: {{ergebnis}}",
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 27 : 5 = 5, denn 5 · 5 = 25. Es bleibt der Rest 2. Hole dann die nächste Ziffer herunter."
+    "tipp": "Die Zahl 270 wurde zerlegt in 250 und 20. Teile beide Zahlen einzeln.",
+    "beispiel": "138 : 6: 120 : 6 = 20 und 18 : 6 = 3. Zusammen 20 + 3 = 23.",
+    "loesungsschritt": "25 : 5 = 5. Also ist 250 : 5 = 50."
+   },
+   "luecken": {
+    "zehner": {
+     "loesung": 50,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "div-stellenwert"
+      }
+     ]
+    },
+    "einer": {
+     "loesung": 4,
+     "typischeFehler": []
+    },
+    "ergebnis": {
+     "loesung": 54,
+     "typischeFehler": []
+    }
    }
   },
   {
    "id": "5.4.5-D2-G-03",
    "lernziel": "5.4.5-D2",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 3896 : 8",
-   "loesung": 487,
+   "text": "Welche Zahl fehlt?\n▢ : 3 = 122",
+   "loesung": 366,
    "typischeFehler": [
     {
-     "wert": 4870,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 125,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 38 : 8 = 4, denn 4 · 8 = 32. Es bleibt der Rest 6. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "▢ : 4 = 21. Rechne 21 · 4 = 84.",
+    "loesungsschritt": "Rechne 122 · 3. Rechne erst 120 · 3, dann 2 · 3."
    }
   },
   {
@@ -4810,58 +5043,81 @@
    "niveau": "G",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 1388 : 2",
-   "loesung": 694,
+   "text": "Dividiere schriftlich.\n260 : 4",
+   "loesung": 65,
    "typischeFehler": [
     {
-     "wert": 6940,
+     "wert": 650,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 13 : 2 = 6, denn 6 · 2 = 12. Es bleibt der Rest 1. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen.",
+    "beispiel": "138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 4 in die 26? 6-mal, denn 6 · 4 = 24. Rechne 26 − 24 = 2. Hole die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D2-G-05",
    "lernziel": "5.4.5-D2",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 2487 : 3",
-   "loesung": 829,
-   "typischeFehler": [
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Aufgabe hat das größere Ergebnis?\nÜberlege zuerst.\nRechne dann nach.",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 8290,
-     "fehlvorstellung": "div-stellenwert"
+     "text": "126 : 3",
+     "richtig": true
+    },
+    {
+     "text": "126 : 6",
+     "richtig": false
+    },
+    {
+     "text": "Beide Ergebnisse sind gleich.",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 24 : 3 = 8, denn 8 · 3 = 24. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
+    "tipp": "Stell dir vor: Die gleiche Menge wird an wenige oder an viele Kinder verteilt.",
+    "beispiel": "12 : 2 = 6 und 12 : 4 = 3. Bei weniger Kindern bekommt jedes Kind mehr.",
+    "loesungsschritt": "126 wird einmal durch 3 geteilt und einmal durch 6. Wann bekommt jeder mehr?"
    }
   },
   {
    "id": "5.4.5-D2-G-06",
    "lernziel": "5.4.5-D2",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 2380 : 5",
-   "loesung": 476,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ben rechnet: 612 : 6 = 12.\nWas hat Ben falsch gemacht?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 4760,
-     "fehlvorstellung": "div-stellenwert"
+     "text": "Er hat die 0 im Ergebnis vergessen.\nRichtig ist 102.",
+     "richtig": true
+    },
+    {
+     "text": "Er hat mal gerechnet statt geteilt.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "Nichts.\nDas Ergebnis stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "div-null-vergessen"
+    },
+    {
+     "text": "Er hat die Zahlen vertauscht.",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 23 : 5 = 4, denn 4 · 5 = 20. Es bleibt der Rest 3. Hole dann die nächste Ziffer herunter."
+    "tipp": "Prüfe mit der Mal-Aufgabe oder mit einem Überschlag.",
+    "beispiel": "412 : 4: Die 4 passt 0-mal in die 1. Dann gehört eine 0 ins Ergebnis: 103.",
+    "loesungsschritt": "Rechne 12 · 6. Kommt 612 heraus? Schau, an welcher Stelle die 6 nicht hineinpasst."
    }
   },
   {
@@ -4870,70 +5126,59 @@
    "niveau": "M",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 36 216 : 6",
-   "loesung": 6036,
+   "text": "Dividiere schriftlich: 28 032 : 4",
+   "loesung": 7008,
    "typischeFehler": [
     {
-     "wert": 636,
+     "wert": 78,
      "fehlvorstellung": "div-null-vergessen"
     },
     {
-     "wert": 60360,
+     "wert": 70080,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 36 : 6 = 6, denn 6 · 6 = 36. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
+    "tipp": "Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 4 in die 28? 7-mal, denn 7 · 4 = 28. Rechne 28 − 28 = 0. Hole die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D2-M-02",
    "lernziel": "5.4.5-D2",
    "niveau": "M",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 5375 : 5",
-   "loesung": 1075,
+   "text": "Bestimme den fehlenden Dividenden: ▢ : 8 = 3504",
+   "loesung": 28032,
    "typischeFehler": [
     {
-     "wert": 175,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 10750,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 3512,
+     "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 5 : 5 = 1, denn 1 · 5 = 5. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
+    "tipp": "Die Umkehraufgabe der Division ist die Multiplikation.",
+    "loesungsschritt": "Rechne 3504 · 8."
    }
   },
   {
    "id": "5.4.5-D2-M-03",
    "lernziel": "5.4.5-D2",
    "niveau": "M",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 35 400 : 6",
-   "loesung": 5900,
+   "text": "Dividiere 3600 zuerst durch 5. Dividiere das Ergebnis dann durch 6.",
+   "loesung": 120,
    "typischeFehler": [
     {
-     "wert": 59,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 59000,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 720,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 35 : 6 = 5, denn 5 · 6 = 30. Es bleibt der Rest 5. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne zwei Divisionen nacheinander. Das erste Ergebnis ist der neue Dividend.",
+    "loesungsschritt": "Erster Schritt: 3600 : 5 = 720."
    }
   },
   {
@@ -4942,70 +5187,78 @@
    "niveau": "M",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 7637 : 7",
-   "loesung": 1091,
+   "text": "Dividiere schriftlich: 48 352 : 8",
+   "loesung": 6044,
    "typischeFehler": [
     {
-     "wert": 191,
+     "wert": 644,
      "fehlvorstellung": "div-null-vergessen"
     },
     {
-     "wert": 10910,
+     "wert": 60440,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 7 : 7 = 1, denn 1 · 7 = 7. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
+    "tipp": "Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 8 in die 48? 6-mal, denn 6 · 8 = 48. Rechne 48 − 48 = 0. Hole die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D2-M-05",
    "lernziel": "5.4.5-D2",
    "niveau": "M",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 47 790 : 9",
-   "loesung": 5310,
+   "text": "Um wie viel ist 856 : 2 größer als 856 : 8?",
+   "loesung": 321,
    "typischeFehler": [
     {
-     "wert": 531,
-     "fehlvorstellung": "div-null-vergessen"
+     "wert": 428,
+     "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
-     "wert": 53100,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 107,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 47 : 9 = 5, denn 5 · 9 = 45. Es bleibt der Rest 2. Hole dann die nächste Ziffer herunter."
+    "tipp": "Berechne beide Quotienten und bilde dann die Differenz.",
+    "loesungsschritt": "Erster Quotient: 856 : 2 = 428."
    }
   },
   {
    "id": "5.4.5-D2-M-06",
    "lernziel": "5.4.5-D2",
    "niveau": "M",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 8015 : 5",
-   "loesung": 1603,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jana erhält bei 3535 : 7 das Ergebnis 55. Prüfe mit einem Überschlag und entscheide.",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 163,
-     "fehlvorstellung": "div-null-vergessen"
+     "text": "Richtig: Der Überschlag bestätigt ein zweistelliges Ergebnis.",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
     },
     {
-     "wert": 16030,
+     "text": "Falsch: Der Quotient muss vierstellig sein.",
+     "richtig": false,
      "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "Falsch: 3500 : 7 = 500, der Quotient muss dreistellig sein. Richtig ist 505.",
+     "richtig": true
+    },
+    {
+     "text": "Richtig: 55 · 7 = 3535.",
+     "richtig": false,
+     "fehlvorstellung": "div-null-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 8 : 5 = 1, denn 1 · 5 = 5. Es bleibt der Rest 3. Hole dann die nächste Ziffer herunter."
+    "tipp": "Runde den Dividenden so, dass du im Kopf teilen kannst. Wie viele Stellen hat der Quotient dann?",
+    "loesungsschritt": "Überschlage mit 3500 : 7."
    }
   },
   {
@@ -5014,70 +5267,51 @@
    "niveau": "E",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 528 204 : 6",
-   "loesung": 88034,
+   "text": "Dividiere schriftlich: 14 714 : 7",
+   "loesung": 2102,
    "typischeFehler": [
     {
-     "wert": 8834,
+     "wert": 212,
      "fehlvorstellung": "div-null-vergessen"
     },
     {
-     "wert": 880340,
+     "wert": 21020,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 52 : 6 = 8, denn 8 · 6 = 48. Es bleibt der Rest 4. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wie viele Stellen muss der Quotient nach einem Überschlag haben?"
    }
   },
   {
    "id": "5.4.5-D2-E-02",
    "lernziel": "5.4.5-D2",
    "niveau": "E",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 845 640 : 9",
-   "loesung": 93960,
-   "typischeFehler": [
-    {
-     "wert": 9396,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 939600,
-     "fehlvorstellung": "div-stellenwert"
-    }
-   ],
+   "text": "Bei einer Division wurde gekleckert: 9▢1 : 7. Welche Ziffer muss in der Lücke stehen, damit die Division ohne Rest aufgeht?",
+   "loesung": 3,
+   "typischeFehler": [],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 84 : 9 = 9, denn 9 · 9 = 81. Es bleibt der Rest 3. Hole dann die nächste Ziffer herunter."
+    "tipp": "Welche Vielfachen von 7 liegen zwischen 900 und 999 und enden auf 1?"
    }
   },
   {
    "id": "5.4.5-D2-E-03",
    "lernziel": "5.4.5-D2",
    "niveau": "E",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 126 400 : 8",
-   "loesung": 15800,
+   "text": "Die Zahl 4▢3 soll ohne Rest durch 7 teilbar sein. Wie viele verschiedene Ziffern kommen für die Lücke in Frage?",
+   "loesung": 2,
    "typischeFehler": [
     {
-     "wert": 158,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 158000,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 1,
+     "fehlvorstellung": "teilbar-summe"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 12 : 8 = 1, denn 1 · 8 = 8. Es bleibt der Rest 4. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wenn du eine passende Zahl gefunden hast: Um wie viel musst du sie verändern, damit sie wieder durch 7 teilbar ist und die Einerziffer gleich bleibt?"
    }
   },
   {
@@ -5086,70 +5320,66 @@
    "niveau": "E",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 476 832 : 8",
-   "loesung": 59604,
+   "text": "Dividiere schriftlich: 14 245 : 7",
+   "loesung": 2035,
    "typischeFehler": [
     {
-     "wert": 5964,
+     "wert": 235,
      "fehlvorstellung": "div-null-vergessen"
     },
     {
-     "wert": 596040,
+     "wert": 20350,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 47 : 8 = 5, denn 5 · 8 = 40. Es bleibt der Rest 7. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wie viele Stellen muss der Quotient nach einem Überschlag haben?"
    }
   },
   {
    "id": "5.4.5-D2-E-05",
    "lernziel": "5.4.5-D2",
    "niveau": "E",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 737 010 : 9",
-   "loesung": 81890,
-   "typischeFehler": [
-    {
-     "wert": 8189,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 818900,
-     "fehlvorstellung": "div-stellenwert"
-    }
-   ],
+   "text": "Bestimme die größte dreistellige Zahl, die ohne Rest durch 7 teilbar ist.",
+   "loesung": 994,
+   "typischeFehler": [],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 73 : 9 = 8, denn 8 · 9 = 72. Es bleibt der Rest 1. Hole dann die nächste Ziffer herunter."
+    "tipp": "Welchen Rest lässt die Grenze selbst, also 1000 oder 999?"
    }
   },
   {
    "id": "5.4.5-D2-E-06",
    "lernziel": "5.4.5-D2",
    "niveau": "E",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 162 750 : 7",
-   "loesung": 23250,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jonas behauptet: „Wenn ich zu einer Zahl, die ohne Rest durch 8 teilbar ist, die Zahl 40 addiere, ist das Ergebnis wieder ohne Rest durch 8 teilbar.“ Beurteile, ohne eine bestimmte Zahl auszurechnen.",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 2325,
-     "fehlvorstellung": "div-null-vergessen"
+     "text": "Stimmt immer, weil jede Zahl plus 40 durch 8 teilbar ist.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
     },
     {
-     "wert": 232500,
-     "fehlvorstellung": "div-stellenwert"
+     "text": "Stimmt nur manchmal: Es hängt von der Ausgangszahl ab.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
+    },
+    {
+     "text": "Stimmt immer, weil 40 = 5 · 8 selbst ein Vielfaches von 8 ist.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt nie: Durch das Addieren entsteht ein Rest.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
     }
    ],
    "hilfen": {
-    "tipp": "Beginne links bei der größten Stelle. Passt der Divisor nicht hinein, nimm die nächste Ziffer dazu.",
-    "beispiel": "852 : 4: 8 : 4 = 2, dann 5 : 4 = 1 Rest 1, dann 12 : 4 = 3. Ergebnis 213.",
-    "loesungsschritt": "Beginne links: 16 : 7 = 2, denn 2 · 7 = 14. Es bleibt der Rest 2. Hole dann die nächste Ziffer herunter."
+    "tipp": "Stell dir 8er-Päckchen vor. Was geschieht, wenn du weitere volle Päckchen dazulegst?"
    }
   },
   {
@@ -5158,58 +5388,67 @@
    "niveau": "F",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 2820 : 30",
-   "loesung": 94,
+   "text": "Rechne.\n30 : 10",
+   "loesung": 3,
    "typischeFehler": [
     {
-     "wert": 940,
+     "wert": 30,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 300,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 282 : 30 = 9, denn 9 · 30 = 270. Es bleibt der Rest 12. Hole dann die nächste Ziffer herunter."
+    "tipp": "30 sind 3 Zehner. Zeichne für jeden Zehner einen Strich auf dein Schmierblatt.",
+    "beispiel": "70 : 10 = 7. In 70 stecken 7 Zehner.",
+    "loesungsschritt": "Wie viele Zehner stecken in 30? Zähle in Zehnerschritten bis 30."
    }
   },
   {
    "id": "5.4.5-D3-F-02",
    "lernziel": "5.4.5-D3",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 2820 : 60",
-   "loesung": 47,
+   "text": "Welche Zahl fehlt?\n▢ : 10 = 3",
+   "loesung": 30,
    "typischeFehler": [
     {
-     "wert": 470,
+     "wert": 3,
      "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 282 : 60 = 4, denn 4 · 60 = 240. Es bleibt der Rest 42. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "▢ : 10 = 4. Rechne 4 · 10 = 40.",
+    "loesungsschritt": "Rechne 3 · 10."
    }
   },
   {
    "id": "5.4.5-D3-F-03",
    "lernziel": "5.4.5-D3",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 1550 : 50",
-   "loesung": 31,
+   "text": "10 Kinder teilen 50 Murmeln gerecht.\nWie viele Murmeln bekommt 1 Kind?",
+   "loesung": 5,
+   "einheit": "Murmeln",
    "typischeFehler": [
     {
-     "wert": 310,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 40,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 155 : 50 = 3, denn 3 · 50 = 150. Es bleibt der Rest 5. Hole dann die nächste Ziffer herunter."
+    "tipp": "Verteile 50 Plättchen an 10 Plätze. Jeder Platz bekommt gleich viele.",
+    "beispiel": "10 Kinder teilen 30 Sticker. 30 : 10 = 3. Jedes Kind bekommt 3.",
+    "loesungsschritt": "Rechne 50 : 10."
    }
   },
   {
@@ -5218,58 +5457,81 @@
    "niveau": "F",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 1680 : 40",
-   "loesung": 42,
+   "text": "Rechne.\n600 : 10",
+   "loesung": 60,
    "typischeFehler": [
     {
-     "wert": 420,
+     "wert": 600,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 6000,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 168 : 40 = 4, denn 4 · 40 = 160. Es bleibt der Rest 8. Hole dann die nächste Ziffer herunter."
+    "tipp": "600 sind 60 Zehner. Zeichne für jeden Zehner einen Strich auf dein Schmierblatt.",
+    "beispiel": "70 : 10 = 7. In 70 stecken 7 Zehner.",
+    "loesungsschritt": "Wie viele Zehner stecken in 600? Zähle in Zehnerschritten bis 600."
    }
   },
   {
    "id": "5.4.5-D3-F-05",
    "lernziel": "5.4.5-D3",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 3440 : 80",
-   "loesung": 43,
+   "text": "60 : 10 = 6\nWie viel ist 600 : 10?",
+   "loesung": 60,
    "typischeFehler": [
     {
-     "wert": 430,
+     "wert": 6,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 600,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 344 : 80 = 4, denn 4 · 80 = 320. Es bleibt der Rest 24. Hole dann die nächste Ziffer herunter."
+    "tipp": "600 sind 60 Zehner.",
+    "beispiel": "50 : 10 = 5. Dann ist 500 : 10 = 50.",
+    "loesungsschritt": "In 600 stecken 60 Zehner. Das ist das Ergebnis."
    }
   },
   {
    "id": "5.4.5-D3-F-06",
    "lernziel": "5.4.5-D3",
    "niveau": "F",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 1820 : 70",
-   "loesung": 26,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ali sagt:\n„Teile ich eine Zehnerzahl durch 10, fällt eine Null weg.“\nPrüfe mit 90 : 10 und 500 : 10.\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 260,
+     "text": "Ja.\n90 : 10 = 9 und 500 : 10 = 50.",
+     "richtig": true
+    },
+    {
+     "text": "Ja.\n90 : 10 = 900.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "Nein.\n500 : 10 = 5.",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "Nein.\n90 : 10 = 90.",
+     "richtig": false,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 182 : 70 = 2, denn 2 · 70 = 140. Es bleibt der Rest 42. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne beide Aufgaben aus. Vergleiche die Zahlen vorher und nachher.",
+    "beispiel": "40 : 10 = 4. Aus 40 wird 4. Eine Null ist weg.",
+    "loesungsschritt": "In 90 stecken 9 Zehner. In 500 stecken 50 Zehner."
    }
   },
   {
@@ -5278,58 +5540,66 @@
    "niveau": "G",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 592 : 16",
-   "loesung": 37,
+   "text": "Rechne.\n360 : 90",
+   "loesung": 4,
    "typischeFehler": [
     {
-     "wert": 370,
+     "wert": 40,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 59 : 16 = 3, denn 3 · 16 = 48. Es bleibt der Rest 11. Hole dann die nächste Ziffer herunter."
+    "tipp": "Teile erst durch 10. Teile dann durch 9.",
+    "beispiel": "180 : 20: 180 : 10 = 18. Dann 18 : 2 = 9.",
+    "loesungsschritt": "360 : 10 = 36. Rechne jetzt 36 : 9."
    }
   },
   {
    "id": "5.4.5-D3-G-02",
    "lernziel": "5.4.5-D3",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 300 : 20",
-   "loesung": 15,
-   "typischeFehler": [
-    {
-     "wert": 150,
-     "fehlvorstellung": "div-stellenwert"
-    }
-   ],
+   "afb": 2,
+   "format": "luecken",
+   "text": "Rechne 570 : 30 in 2 Schritten.\n570 : 10 = {{erst}}\nDann geteilt durch 3: {{dann}}",
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 30 : 20 = 1, denn 1 · 20 = 20. Es bleibt der Rest 10. Hole dann die nächste Ziffer herunter."
+    "tipp": "Durch 30 teilen heißt: erst durch 10, dann durch 3.",
+    "beispiel": "240 : 30: 240 : 10 = 24. Dann 24 : 3 = 8.",
+    "loesungsschritt": "570 : 10 = 57. Bei geteilt durch 10 fällt die letzte Null weg."
+   },
+   "luecken": {
+    "erst": {
+     "loesung": 57,
+     "typischeFehler": []
+    },
+    "dann": {
+     "loesung": 19,
+     "typischeFehler": [
+      {
+       "wert": 190,
+       "fehlvorstellung": "div-stellenwert"
+      }
+     ]
+    }
    }
   },
   {
    "id": "5.4.5-D3-G-03",
    "lernziel": "5.4.5-D3",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 1691 : 19",
-   "loesung": 89,
+   "text": "Welche Zahl fehlt?\n▢ : 50 = 5",
+   "loesung": 250,
    "typischeFehler": [
     {
-     "wert": 890,
+     "wert": 25,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 169 : 19 = 8, denn 8 · 19 = 152. Es bleibt der Rest 17. Hole dann die nächste Ziffer herunter."
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "▢ : 20 = 6. Rechne 6 · 20 = 120.",
+    "loesungsschritt": "Rechne 5 · 50. Rechne erst 5 · 5, hänge dann eine 0 an."
    }
   },
   {
@@ -5338,58 +5608,78 @@
    "niveau": "G",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 1176 : 14",
-   "loesung": 84,
+   "text": "Rechne.\n520 : 40",
+   "loesung": 13,
    "typischeFehler": [
     {
-     "wert": 840,
+     "wert": 130,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 117 : 14 = 8, denn 8 · 14 = 112. Es bleibt der Rest 5. Hole dann die nächste Ziffer herunter."
+    "tipp": "Teile erst durch 10. Teile dann durch 4.",
+    "beispiel": "180 : 20: 180 : 10 = 18. Dann 18 : 2 = 9.",
+    "loesungsschritt": "520 : 10 = 52. Rechne jetzt 52 : 4."
    }
   },
   {
    "id": "5.4.5-D3-G-05",
    "lernziel": "5.4.5-D3",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 1066 : 13",
-   "loesung": 82,
+   "text": "40 Kinder zahlen zusammen 600 € für einen Ausflug.\nAlle zahlen gleich viel.\nWie viel Euro zahlt 1 Kind?",
+   "loesung": 15,
+   "einheit": "€",
    "typischeFehler": [
     {
-     "wert": 820,
+     "wert": 560,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 150,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 106 : 13 = 8, denn 8 · 13 = 104. Es bleibt der Rest 2. Hole dann die nächste Ziffer herunter."
+    "tipp": "Das Geld wird gerecht aufgeteilt. Du musst teilen.",
+    "beispiel": "20 Kinder zahlen zusammen 100 €. 100 : 20 = 5. Jedes Kind zahlt 5 €.",
+    "loesungsschritt": "Rechne 600 : 40. Teile erst durch 10, dann durch 4."
    }
   },
   {
    "id": "5.4.5-D3-G-06",
    "lernziel": "5.4.5-D3",
    "niveau": "G",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 1540 : 20",
-   "loesung": 77,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Emma rechnet: 400 : 20 = 2.\nPrüfe mit der Mal-Aufgabe.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 770,
+     "text": "Richtig.\nBei Zehnerzahlen fallen alle Nullen weg.",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "Falsch.\n2 · 20 = 40.\nRichtig ist 20.",
+     "richtig": true
+    },
+    {
+     "text": "Richtig.\n2 · 20 = 400.",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 200.",
+     "richtig": false,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 154 : 20 = 7, denn 7 · 20 = 140. Es bleibt der Rest 14. Hole dann die nächste Ziffer herunter."
+    "tipp": "Die Mal-Aufgabe prüft: Ergebnis mal zweite Zahl muss die erste Zahl ergeben.",
+    "beispiel": "600 : 20 = 3? Prüfe: 3 · 20 = 60. Das ist nicht 600. Richtig ist 30.",
+    "loesungsschritt": "Rechne 2 · 20. Kommt 400 heraus?"
    }
   },
   {
@@ -5398,62 +5688,59 @@
    "niveau": "M",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 53 679 : 87",
-   "loesung": 617,
+   "text": "Dividiere schriftlich: 1935 : 15",
+   "loesung": 129,
    "typischeFehler": [
     {
-     "wert": 6170,
+     "wert": 1290,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 536 : 87 = 6, denn 6 · 87 = 522. Es bleibt der Rest 14. Hole dann die nächste Ziffer herunter."
+    "tipp": "Notiere dir zuerst die Reihe 15, 30, 45, … am Rand. Sie hilft bei jedem Schritt.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 15 in die 19? 1-mal, denn 1 · 15 = 15. Rechne 19 − 15 = 4. Hole die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D3-M-02",
    "lernziel": "5.4.5-D3",
    "niveau": "M",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 61 088 : 83",
-   "loesung": 736,
+   "text": "Bestimme den fehlenden Dividenden: ▢ : 18 = 445",
+   "loesung": 8010,
    "typischeFehler": [
     {
-     "wert": 7360,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 463,
+     "fehlvorstellung": "begriffe-verwechselt"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 610 : 83 = 7, denn 7 · 83 = 581. Es bleibt der Rest 29. Hole dann die nächste Ziffer herunter."
+    "tipp": "Die Umkehraufgabe der Division ist die Multiplikation.",
+    "loesungsschritt": "Rechne 445 · 18."
    }
   },
   {
    "id": "5.4.5-D3-M-03",
    "lernziel": "5.4.5-D3",
    "niveau": "M",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 14 476 : 47",
-   "loesung": 308,
+   "text": "Dividiere 7380 durch das Produkt aus 3 und 15.",
+   "loesung": 164,
    "typischeFehler": [
     {
-     "wert": 38,
-     "fehlvorstellung": "div-null-vergessen"
+     "wert": 2460,
+     "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
-     "wert": 3080,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 492,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 144 : 47 = 3, denn 3 · 47 = 141. Es bleibt der Rest 3. Hole dann die nächste Ziffer herunter."
+    "tipp": "Berechne zuerst das Produkt. Es ist der Divisor.",
+    "loesungsschritt": "Das Produkt ist 3 · 15 = 45."
    }
   },
   {
@@ -5462,58 +5749,85 @@
    "niveau": "M",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 18 270 : 42",
-   "loesung": 435,
+   "text": "Dividiere schriftlich: 5275 : 25",
+   "loesung": 211,
    "typischeFehler": [
     {
-     "wert": 4350,
+     "wert": 2110,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 182 : 42 = 4, denn 4 · 42 = 168. Es bleibt der Rest 14. Hole dann die nächste Ziffer herunter."
+    "tipp": "Notiere dir zuerst die Reihe 25, 50, 75, … am Rand. Sie hilft bei jedem Schritt.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 25 in die 52? 2-mal, denn 2 · 25 = 50. Rechne 52 − 50 = 2. Hole die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D3-M-05",
    "lernziel": "5.4.5-D3",
    "niveau": "M",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 61 632 : 64",
-   "loesung": 963,
-   "typischeFehler": [
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welcher Überschlag passt am besten zu 6944 : 28?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 9630,
+     "text": "7500 : 30 = 250",
+     "richtig": true
+    },
+    {
+     "text": "7500 : 100 = 75",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "7500 : 10 = 750",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "75 000 : 30 = 2500",
+     "richtig": false,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 616 : 64 = 9, denn 9 · 64 = 576. Es bleibt der Rest 40. Hole dann die nächste Ziffer herunter."
+    "tipp": "Runde den Divisor auf Zehner. Runde den Dividenden so, dass die Division glatt aufgeht.",
+    "loesungsschritt": "Der Divisor 28 wird zu 30. Der genaue Quotient ist 248."
    }
   },
   {
    "id": "5.4.5-D3-M-06",
    "lernziel": "5.4.5-D3",
    "niveau": "M",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 4617 : 27",
-   "loesung": 171,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom erhält bei 5712 : 28 das Ergebnis 24. Prüfe mit einem Überschlag und entscheide.",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 1710,
+     "text": "Richtig: Bei einem zweistelligen Divisor ist auch der Quotient zweistellig.",
+     "richtig": false,
      "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "Falsch: 5600 : 28 = 200, der Quotient muss dreistellig sein. Richtig ist 204.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch: Der Quotient muss vierstellig sein.",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "Richtig: 24 · 28 = 5712.",
+     "richtig": false,
+     "fehlvorstellung": "div-null-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 46 : 27 = 1, denn 1 · 27 = 27. Es bleibt der Rest 19. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wie oft passt der Divisor ungefähr in den Dividenden? Schätze mit glatten Zahlen.",
+    "loesungsschritt": "Überschlage mit 5600 : 28."
    }
   },
   {
@@ -5522,70 +5836,51 @@
    "niveau": "E",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 552 210 : 79",
-   "loesung": 6990,
+   "text": "Dividiere schriftlich: 189 316 : 47",
+   "loesung": 4028,
    "typischeFehler": [
     {
-     "wert": 699,
+     "wert": 428,
      "fehlvorstellung": "div-null-vergessen"
     },
     {
-     "wert": 69900,
+     "wert": 40280,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 552 : 79 = 6, denn 6 · 79 = 474. Es bleibt der Rest 78. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wie viele Stellen muss der Quotient nach einem Überschlag haben?"
    }
   },
   {
    "id": "5.4.5-D3-E-02",
    "lernziel": "5.4.5-D3",
    "niveau": "E",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 398 555 : 79",
-   "loesung": 5045,
+   "text": "Es gilt 2856 : 24 = 119. Bestimme ohne schriftliche Rechnung: 2856 : 12",
+   "loesung": 238,
    "typischeFehler": [
     {
-     "wert": 545,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 50450,
+     "wert": 119,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 398 : 79 = 5, denn 5 · 79 = 395. Es bleibt der Rest 3. Hole dann die nächste Ziffer herunter."
+    "tipp": "Der Divisor ist nur noch halb so groß. Wie oft passt er dann hinein?"
    }
   },
   {
    "id": "5.4.5-D3-E-03",
    "lernziel": "5.4.5-D3",
    "niveau": "E",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 664 664 : 91",
-   "loesung": 7304,
-   "typischeFehler": [
-    {
-     "wert": 734,
-     "fehlvorstellung": "div-null-vergessen"
-    },
-    {
-     "wert": 73040,
-     "fehlvorstellung": "div-stellenwert"
-    }
-   ],
+   "text": "Genau eine Zahl zwischen 600 und 613 ist ohne Rest durch 13 teilbar. Welche?",
+   "loesung": 611,
+   "typischeFehler": [],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 664 : 91 = 7, denn 7 · 91 = 637. Es bleibt der Rest 27. Hole dann die nächste Ziffer herunter."
+    "tipp": "Welchen Rest lässt 600 bei Division durch 13? Wie viel fehlt bis zum nächsten Vielfachen?"
    }
   },
   {
@@ -5594,70 +5889,74 @@
    "niveau": "E",
    "afb": 1,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 139 500 : 45",
-   "loesung": 3100,
+   "text": "Dividiere schriftlich: 170 496 : 74",
+   "loesung": 2304,
    "typischeFehler": [
     {
-     "wert": 31,
+     "wert": 234,
      "fehlvorstellung": "div-null-vergessen"
     },
     {
-     "wert": 31000,
+     "wert": 23040,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 139 : 45 = 3, denn 3 · 45 = 135. Es bleibt der Rest 4. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wie viele Stellen muss der Quotient nach einem Überschlag haben?"
    }
   },
   {
    "id": "5.4.5-D3-E-05",
    "lernziel": "5.4.5-D3",
    "niveau": "E",
-   "afb": 1,
+   "afb": 2,
    "format": "zahl",
-   "text": "Dividiere schriftlich: 400 004 : 44",
-   "loesung": 9091,
+   "text": "Eine Zahl ergibt bei Division durch 15 den Quotienten 45 und den größtmöglichen Rest. Wie heißt die Zahl?",
+   "loesung": 689,
    "typischeFehler": [
     {
-     "wert": 991,
-     "fehlvorstellung": "div-null-vergessen"
+     "wert": 675,
+     "fehlvorstellung": "div-rest-vergessen"
     },
     {
-     "wert": 90910,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 690,
+     "fehlvorstellung": "div-rest-zu-gross"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 400 : 44 = 9, denn 9 · 44 = 396. Es bleibt der Rest 4. Hole dann die nächste Ziffer herunter."
+    "tipp": "Wie groß kann ein Rest bei Division durch 15 höchstens sein?"
    }
   },
   {
    "id": "5.4.5-D3-E-06",
    "lernziel": "5.4.5-D3",
    "niveau": "E",
-   "afb": 1,
-   "format": "zahl",
-   "text": "Dividiere schriftlich: 119 538 : 58",
-   "loesung": 2061,
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Eine Zahl ist ohne Rest durch 18 teilbar. Welche Aussage gilt dann immer?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 261,
-     "fehlvorstellung": "div-null-vergessen"
+     "text": "Sie ist größer als 100.",
+     "richtig": false
     },
     {
-     "wert": 20610,
-     "fehlvorstellung": "div-stellenwert"
+     "text": "Sie ist auch durch 2 und durch 9 teilbar.",
+     "richtig": true
+    },
+    {
+     "text": "Sie ist auch durch 12 teilbar.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
+    },
+    {
+     "text": "Sie ist auch durch 36 teilbar.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage bei jedem Schritt, wie oft der Divisor hineinpasst, und prüfe mit einer Multiplikation.",
-    "beispiel": "756 : 21: 75 : 21 = 3, denn 3 · 21 = 63, Rest 12. Dann 126 : 21 = 6. Ergebnis 36.",
-    "loesungsschritt": "Beginne links: 119 : 58 = 2, denn 2 · 58 = 116. Es bleibt der Rest 3. Hole dann die nächste Ziffer herunter."
+    "tipp": "Prüfe jede Aussage an der Zahl 18 selbst."
    }
   },
   {
@@ -5665,98 +5964,65 @@
    "lernziel": "5.4.5-D4",
    "niveau": "F",
    "afb": 1,
-   "format": "luecken",
-   "text": "79 : 8 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 9,
-     "typischeFehler": [
-      {
-       "wert": 10,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+   "format": "zahl",
+   "text": "Du hast 5 Plättchen.\nDu legst immer 2 zusammen.\nWie viele Plättchen bleiben übrig?",
+   "loesung": 1,
+   "einheit": "Plättchen",
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "div-rest-vergessen"
     },
-    "r": {
-     "loesung": 7,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+    {
+     "wert": 0,
+     "fehlvorstellung": "div-rest-vergessen"
     }
-   },
+   ],
    "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "9 · 8 = 72. Wie viel fehlt noch bis 79?"
+    "tipp": "Nimm 5 Wendeplättchen. Lege 2er-Häufchen. Was nicht mehr für ein Häufchen reicht, bleibt übrig.",
+    "beispiel": "14 Plättchen, immer 4 zusammen: 3 Häufchen sind 12 Plättchen. 2 bleiben übrig.",
+    "loesungsschritt": "2 Häufchen sind 2 · 2 = 4 Plättchen. Wie viele fehlen bis 5?"
    }
   },
   {
    "id": "5.4.5-D4-F-02",
    "lernziel": "5.4.5-D4",
    "niveau": "F",
-   "afb": 1,
-   "format": "luecken",
-   "text": "96 : 7 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 13,
-     "typischeFehler": [
-      {
-       "wert": 14,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    },
-    "r": {
-     "loesung": 5,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n▢ : 3 = 6 Rest 2",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 18,
+     "fehlvorstellung": "div-rest-vergessen"
     }
-   },
+   ],
    "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "13 · 7 = 91. Wie viel fehlt noch bis 96?"
+    "tipp": "Rechne rückwärts: erst mal, dann den Rest dazu.",
+    "beispiel": "▢ : 3 = 4 Rest 1. Rechne 4 · 3 = 12. Dann 12 + 1 = 13.",
+    "loesungsschritt": "Rechne 6 · 3 = 18. Zähle dann den Rest 2 dazu."
    }
   },
   {
    "id": "5.4.5-D4-F-03",
    "lernziel": "5.4.5-D4",
    "niveau": "F",
-   "afb": 1,
-   "format": "luecken",
-   "text": "33 : 4 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 8,
-     "typischeFehler": [
-      {
-       "wert": 9,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    },
-    "r": {
-     "loesung": 1,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+   "afb": 2,
+   "format": "zahl",
+   "text": "13 Kinder bilden 2er-Gruppen.\nWie viele Kinder bleiben übrig?",
+   "loesung": 1,
+   "einheit": "Kinder",
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "div-rest-vergessen"
     }
-   },
+   ],
    "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "8 · 4 = 32. Wie viel fehlt noch bis 33?"
+    "tipp": "Zeichne 13 Kreise auf dein Schmierblatt. Kreise immer 2 ein.",
+    "beispiel": "13 Kinder, 4er-Gruppen: 3 Gruppen sind 12 Kinder. 1 Kind bleibt übrig.",
+    "loesungsschritt": "6 Gruppen sind 12 Kinder. Wie viele Kinder sind noch nicht in einer Gruppe?"
    }
   },
   {
@@ -5765,97 +6031,98 @@
    "niveau": "F",
    "afb": 1,
    "format": "luecken",
-   "text": "89 : 5 = {{q}} Rest {{r}}",
+   "text": "5 : 2 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Suche in der 2er-Reihe die größte Zahl, die noch in die 5 passt.",
+    "beispiel": "17 : 5: 3 · 5 = 15 passt. Bis 17 fehlen 2. Also 3 Rest 2.",
+    "loesungsschritt": "2 · 2 = 4. Das passt in die 5. Wie viel bleibt übrig?"
+   },
    "luecken": {
     "q": {
-     "loesung": 17,
+     "loesung": 2,
      "typischeFehler": [
       {
-       "wert": 18,
-       "fehlvorstellung": "div-rest-vergessen"
+       "wert": 3,
+       "fehlvorstellung": "div-einmaleins"
       }
      ]
     },
     "r": {
-     "loesung": 4,
+     "loesung": 1,
      "typischeFehler": [
       {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
+       "wert": 3,
+       "fehlvorstellung": "div-rest-zu-gross"
       }
      ]
     }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "17 · 5 = 85. Wie viel fehlt noch bis 89?"
    }
   },
   {
    "id": "5.4.5-D4-F-05",
    "lernziel": "5.4.5-D4",
    "niveau": "F",
-   "afb": 1,
-   "format": "luecken",
-   "text": "25 : 7 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 3,
-     "typischeFehler": [
-      {
-       "wert": 4,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Bei welcher Aufgabe bleibt ein Rest?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "13 : 4",
+     "richtig": true
     },
-    "r": {
-     "loesung": 4,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+    {
+     "text": "20 : 4",
+     "richtig": false
+    },
+    {
+     "text": "16 : 4",
+     "richtig": false
+    },
+    {
+     "text": "12 : 4",
+     "richtig": false
     }
-   },
+   ],
    "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "3 · 7 = 21. Wie viel fehlt noch bis 25?"
+    "tipp": "Sage die 4er-Reihe auf. Welche Zahl kommt in der Reihe nicht vor?",
+    "beispiel": "Die 3er-Reihe: 3, 6, 9, 12. Die 10 kommt nicht vor. Bei 10 : 3 bleibt ein Rest.",
+    "loesungsschritt": "Die 4er-Reihe: 4, 8, 12, 16, 20, 24, 28, 32."
    }
   },
   {
    "id": "5.4.5-D4-F-06",
    "lernziel": "5.4.5-D4",
    "niveau": "F",
-   "afb": 1,
-   "format": "luecken",
-   "text": "31 : 8 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 3,
-     "typischeFehler": [
-      {
-       "wert": 4,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Paul rechnet: 11 : 2 = 4 Rest 3.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nBeim Teilen gibt es nie einen Rest.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-vergessen"
     },
-    "r": {
-     "loesung": 7,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
+    {
+     "text": "Richtig.\n4 · 2 + 3 = 11.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 6 Rest 1.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "Falsch.\nDer Rest 3 ist zu groß.\nDie 2 passt noch 1-mal hinein.\nRichtig ist 5 Rest 1.",
+     "richtig": true
     }
-   },
+   ],
    "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "3 · 8 = 24. Wie viel fehlt noch bis 31?"
+    "tipp": "Der Rest muss kleiner sein als die Zahl, durch die du teilst.",
+    "beispiel": "14 : 4 = 2 Rest 6? Der Rest 6 ist größer als 4. Es passt noch ein Häufchen. Richtig ist 3 Rest 2.",
+    "loesungsschritt": "Paul hat 3 Plättchen übrig. Kann er daraus noch ein 2er-Häufchen legen?"
    }
   },
   {
@@ -5864,52 +6131,203 @@
    "niveau": "G",
    "afb": 1,
    "format": "luecken",
-   "text": "418 : 6 = {{q}} Rest {{r}}",
+   "text": "55 : 7 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Suche in der 7er-Reihe die größte Zahl, die noch in die 55 passt.",
+    "beispiel": "47 : 6: 7 · 6 = 42 passt. Bis 47 fehlen 5. Also 7 Rest 5.",
+    "loesungsschritt": "7 · 7 = 49. Rechne 55 − 49."
+   },
    "luecken": {
     "q": {
-     "loesung": 69,
+     "loesung": 7,
      "typischeFehler": [
       {
-       "wert": 70,
-       "fehlvorstellung": "div-rest-vergessen"
+       "wert": 8,
+       "fehlvorstellung": "div-einmaleins"
       }
      ]
     },
     "r": {
-     "loesung": 4,
+     "loesung": 6,
      "typischeFehler": [
       {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
+       "wert": 13,
+       "fehlvorstellung": "div-rest-zu-gross"
       }
      ]
     }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "Beginne links: 41 : 6 = 6, denn 6 · 6 = 36. Es bleibt der Rest 5. Hole dann die nächste Ziffer herunter."
    }
   },
   {
    "id": "5.4.5-D4-G-02",
    "lernziel": "5.4.5-D4",
    "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n▢ : 9 = 6 Rest 4",
+   "loesung": 58,
+   "typischeFehler": [
+    {
+     "wert": 54,
+     "fehlvorstellung": "div-rest-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mache die Probe: Ergebnis mal Teiler, dann den Rest dazu.",
+    "beispiel": "▢ : 6 = 7 Rest 5. Rechne 7 · 6 = 42. Dann 42 + 5 = 47.",
+    "loesungsschritt": "Rechne 6 · 9 = 54. Zähle den Rest 4 dazu."
+   }
+  },
+  {
+   "id": "5.4.5-D4-G-03",
+   "lernziel": "5.4.5-D4",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Es gibt 23 Eier.\nIn 1 Karton passen 3 Eier.\nWie viele Kartons werden ganz voll?",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "div-rest-nicht-gedeutet"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "div-rest-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile 23 durch 3. Nur volle Kartons zählen.",
+    "beispiel": "50 Eier, 6 in einem Karton: 50 : 6 = 8 Rest 2. 8 Kartons werden voll. 2 Eier bleiben übrig.",
+    "loesungsschritt": "Rechne 23 : 3 = 7 Rest 2. Der Rest füllt nichts ganz."
+   }
+  },
+  {
+   "id": "5.4.5-D4-G-04",
+   "lernziel": "5.4.5-D4",
+   "niveau": "G",
    "afb": 1,
    "format": "luecken",
-   "text": "157 : 9 = {{q}} Rest {{r}}",
+   "text": "33 : 4 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Suche in der 4er-Reihe die größte Zahl, die noch in die 33 passt.",
+    "beispiel": "47 : 6: 7 · 6 = 42 passt. Bis 47 fehlen 5. Also 7 Rest 5.",
+    "loesungsschritt": "8 · 4 = 32. Rechne 33 − 32."
+   },
    "luecken": {
     "q": {
-     "loesung": 17,
+     "loesung": 8,
      "typischeFehler": [
       {
-       "wert": 18,
-       "fehlvorstellung": "div-rest-vergessen"
+       "wert": 9,
+       "fehlvorstellung": "div-einmaleins"
       }
      ]
     },
     "r": {
-     "loesung": 4,
+     "loesung": 1,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "div-rest-zu-gross"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "5.4.5-D4-G-05",
+   "lernziel": "5.4.5-D4",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Du teilst durch 4.\nWelcher Rest ist nicht möglich?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "3",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "1",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Rest ist immer kleiner als die Zahl, durch die du teilst.",
+    "beispiel": "Bleiben beim Teilen durch 4 noch 4 übrig, passt die 4 noch einmal hinein. Dann ist der Rest 0.",
+    "loesungsschritt": "Kann beim Teilen durch 4 genau 4 übrig bleiben?"
+   }
+  },
+  {
+   "id": "5.4.5-D4-G-06",
+   "lernziel": "5.4.5-D4",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Nina rechnet: 14 : 3 = 3 Rest 5.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Richtig.\nDer Rest darf beliebig groß sein.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "Richtig.\nDie Probe stimmt: 3 · 3 + 5 = 14.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 5 Rest 2.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "Falsch.\nDer Rest 5 ist größer als 3.\nRichtig ist 4 Rest 2.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche den Rest mit der Zahl, durch die geteilt wird.",
+    "beispiel": "58 : 7 = 7 Rest 9? Der Rest 9 ist größer als 7. Richtig ist 8 Rest 2.",
+    "loesungsschritt": "Der Rest ist 5. Passt die 3 noch einmal hinein?"
+   }
+  },
+  {
+   "id": "5.4.5-D4-M-01",
+   "lernziel": "5.4.5-D4",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "113 : 8 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Der Rest ist das, was nach dem letzten Abziehen übrig bleibt. Er ist kleiner als der Divisor.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 8 in die 11? 1-mal, denn 1 · 8 = 8. Rechne 11 − 8 = 3. Hole die nächste Ziffer herunter."
+   },
+   "luecken": {
+    "q": {
+     "loesung": 14,
+     "typischeFehler": [
+      {
+       "wert": 15,
+       "fehlvorstellung": "div-rest-nicht-gedeutet"
+      }
+     ]
+    },
+    "r": {
+     "loesung": 1,
      "typischeFehler": [
       {
        "wert": 0,
@@ -5917,29 +6335,174 @@
       }
      ]
     }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "Beginne links: 15 : 9 = 1, denn 1 · 9 = 9. Es bleibt der Rest 6. Hole dann die nächste Ziffer herunter."
    }
   },
   {
-   "id": "5.4.5-D4-G-03",
+   "id": "5.4.5-D4-M-02",
    "lernziel": "5.4.5-D4",
-   "niveau": "G",
-   "afb": 1,
-   "format": "luecken",
-   "text": "911 : 8 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 113,
+   "niveau": "M",
+   "afb": 2,
+   "format": "sachaufgabe",
+   "text": "877 Muffins sollen in Schachteln verpackt werden. In jede Schachtel passen genau 19 Muffins.",
+   "teile": [
+    {
+     "format": "zahl",
+     "text": "Wie viele Schachteln werden vollständig gefüllt?",
+     "loesung": 46,
+     "einheit": "Schachteln",
      "typischeFehler": [
       {
-       "wert": 114,
+       "wert": 47,
+       "fehlvorstellung": "div-rest-nicht-gedeutet"
+      }
+     ]
+    },
+    {
+     "format": "zahl",
+     "text": "Wie viele Muffins bleiben übrig?",
+     "loesung": 3,
+     "einheit": "Muffins",
+     "typischeFehler": [
+      {
+       "wert": 0,
        "fehlvorstellung": "div-rest-vergessen"
       }
      ]
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere mit Rest. Der Quotient und der Rest beantworten je eine Frage.",
+    "loesungsschritt": "Rechne 877 : 19. Der Quotient ist 46."
+   }
+  },
+  {
+   "id": "5.4.5-D4-M-03",
+   "lernziel": "5.4.5-D4",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "281 Kinder fahren mit Kleinbussen ins Schullandheim. In jeden Kleinbus passen 13 Kinder. Wie viele Kleinbusse werden insgesamt gebraucht?",
+   "loesung": 22,
+   "einheit": "Kleinbusse",
+   "typischeFehler": [
+    {
+     "wert": 21,
+     "fehlvorstellung": "div-rest-nicht-gedeutet"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "div-rest-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst mit Rest. Überlege dann: Was geschieht mit dem Rest?",
+    "loesungsschritt": "281 : 13 = 21 Rest 8. Der Rest braucht auch noch Platz."
+   }
+  },
+  {
+   "id": "5.4.5-D4-M-04",
+   "lernziel": "5.4.5-D4",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "582 : 12 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Der Rest ist das, was nach dem letzten Abziehen übrig bleibt. Er ist kleiner als der Divisor.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 12 in die 58? 4-mal, denn 4 · 12 = 48. Rechne 58 − 48 = 10. Hole die nächste Ziffer herunter."
+   },
+   "luecken": {
+    "q": {
+     "loesung": 48,
+     "typischeFehler": [
+      {
+       "wert": 49,
+       "fehlvorstellung": "div-rest-nicht-gedeutet"
+      }
+     ]
+    },
+    "r": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 0,
+       "fehlvorstellung": "div-rest-vergessen"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "5.4.5-D4-M-05",
+   "lernziel": "5.4.5-D4",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Eine Eintrittskarte kostet 16 €. Die Klassenkasse enthält 646 €. Wie viele Karten kann die Klasse höchstens kaufen?",
+   "loesung": 40,
+   "einheit": "Karten",
+   "typischeFehler": [
+    {
+     "wert": 41,
+     "fehlvorstellung": "div-rest-nicht-gedeutet"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "div-rest-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst mit Rest. Überlege dann: Reicht der Rest für ein weiteres Stück?",
+    "loesungsschritt": "646 : 16 = 40 Rest 6. Der Rest reicht nicht für ein weiteres Stück."
+   }
+  },
+  {
+   "id": "5.4.5-D4-M-06",
+   "lernziel": "5.4.5-D4",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "232 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 40 Plätze. Lars rechnet 232 : 40 = 5 Rest 32 und bestellt 5 Busse. Beurteile seine Entscheidung.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch: Es werden 32 Busse gebraucht.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-vergessen"
+    },
+    {
+     "text": "Falsch: 32 Kinder hätten keinen Platz. Es werden 6 Busse gebraucht.",
+     "richtig": true
+    },
+    {
+     "text": "Richtig: 5 Busse sind voll, das genügt.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-nicht-gedeutet"
+    },
+    {
+     "text": "Richtig: Bei Sachaufgaben lässt man den Rest weg.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-nicht-gedeutet"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was bedeutet der Rest in dieser Situation? Wer oder was ist das?",
+    "loesungsschritt": "Der Rest 32 steht für 32 Kinder, die in den 5 Bussen keinen Platz finden."
+   }
+  },
+  {
+   "id": "5.4.5-D4-E-01",
+   "lernziel": "5.4.5-D4",
+   "niveau": "E",
+   "afb": 1,
+   "format": "luecken",
+   "text": "5685 : 17 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Wie kannst du dein Ergebnis mit einer Probe sichern?"
+   },
+   "luecken": {
+    "q": {
+     "loesung": 334,
+     "typischeFehler": []
     },
     "r": {
      "loesung": 7,
@@ -5950,275 +6513,6 @@
       }
      ]
     }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "Beginne links: 9 : 8 = 1, denn 1 · 8 = 8. Es bleibt der Rest 1. Hole dann die nächste Ziffer herunter."
-   }
-  },
-  {
-   "id": "5.4.5-D4-G-04",
-   "lernziel": "5.4.5-D4",
-   "niveau": "G",
-   "afb": 1,
-   "format": "luecken",
-   "text": "737 : 8 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 92,
-     "typischeFehler": [
-      {
-       "wert": 93,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    },
-    "r": {
-     "loesung": 1,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "Beginne links: 73 : 8 = 9, denn 9 · 8 = 72. Es bleibt der Rest 1. Hole dann die nächste Ziffer herunter."
-   }
-  },
-  {
-   "id": "5.4.5-D4-G-05",
-   "lernziel": "5.4.5-D4",
-   "niveau": "G",
-   "afb": 1,
-   "format": "luecken",
-   "text": "249 : 5 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 49,
-     "typischeFehler": [
-      {
-       "wert": 50,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    },
-    "r": {
-     "loesung": 4,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "Beginne links: 24 : 5 = 4, denn 4 · 5 = 20. Es bleibt der Rest 4. Hole dann die nächste Ziffer herunter."
-   }
-  },
-  {
-   "id": "5.4.5-D4-G-06",
-   "lernziel": "5.4.5-D4",
-   "niveau": "G",
-   "afb": 1,
-   "format": "luecken",
-   "text": "506 : 5 = {{q}} Rest {{r}}",
-   "luecken": {
-    "q": {
-     "loesung": 101,
-     "typischeFehler": [
-      {
-       "wert": 102,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    },
-    "r": {
-     "loesung": 1,
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    }
-   },
-   "hilfen": {
-    "tipp": "Suche die größte Zahl, die mit dem Divisor malgenommen noch in den Dividenden passt. Was übrig bleibt, ist der Rest.",
-    "beispiel": "47 : 6: 7 · 6 = 42 passt, 8 · 6 = 48 ist zu viel. Also 7 Rest 5.",
-    "loesungsschritt": "Beginne links: 5 : 5 = 1, denn 1 · 5 = 5. Es bleibt der Rest 0. Hole dann die nächste Ziffer herunter."
-   }
-  },
-  {
-   "id": "5.4.5-D4-M-01",
-   "lernziel": "5.4.5-D4",
-   "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "232 Personen fahren mit Kleinbussen zum Ausflug. In jeden Kleinbus passen 9 Personen. Wie viele Kleinbusse werden mindestens gebraucht?",
-   "loesung": 26,
-   "einheit": "Kleinbusse",
-   "typischeFehler": [
-    {
-     "wert": 25,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Personen, die übrig bleiben, brauchen einen Kleinbus.",
-    "beispiel": "50 Kinder, 8 pro Zelt: 50 : 8 = 6 Rest 2. Die 2 Kinder brauchen auch ein Zelt, also 7 Zelte.",
-    "loesungsschritt": "Rechne zuerst 232 : 9 = 25 Rest 7."
-   }
-  },
-  {
-   "id": "5.4.5-D4-M-02",
-   "lernziel": "5.4.5-D4",
-   "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "233 Eier sollen verpackt werden. In einen Karton passen 12 Eier. Wie viele Kartons braucht man, damit alle Eier verpackt sind?",
-   "loesung": 20,
-   "einheit": "Kartons",
-   "typischeFehler": [
-    {
-     "wert": 19,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Eier, die übrig bleiben, brauchen einen Karton.",
-    "beispiel": "50 Kinder, 8 pro Zelt: 50 : 8 = 6 Rest 2. Die 2 Kinder brauchen auch ein Zelt, also 7 Zelte.",
-    "loesungsschritt": "Rechne zuerst 233 : 12 = 19 Rest 5."
-   }
-  },
-  {
-   "id": "5.4.5-D4-M-03",
-   "lernziel": "5.4.5-D4",
-   "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "150 Kinder zelten. In ein Zelt passen 12 Kinder. Wie viele Zelte werden mindestens gebraucht?",
-   "loesung": 13,
-   "einheit": "Zelte",
-   "typischeFehler": [
-    {
-     "wert": 12,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Kinder, die übrig bleiben, brauchen ein Zelt.",
-    "beispiel": "50 Kinder, 8 pro Zelt: 50 : 8 = 6 Rest 2. Die 2 Kinder brauchen auch ein Zelt, also 7 Zelte.",
-    "loesungsschritt": "Rechne zuerst 150 : 12 = 12 Rest 6."
-   }
-  },
-  {
-   "id": "5.4.5-D4-M-04",
-   "lernziel": "5.4.5-D4",
-   "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "In eine Gondel der Seilbahn passen 7 Personen. 199 Personen warten an der Talstation. Wie viele Gondeln werden mindestens gebraucht?",
-   "loesung": 29,
-   "einheit": "Gondeln",
-   "typischeFehler": [
-    {
-     "wert": 28,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Personen, die übrig bleiben, brauchen eine Gondel.",
-    "beispiel": "50 Kinder, 8 pro Zelt: 50 : 8 = 6 Rest 2. Die 2 Kinder brauchen auch ein Zelt, also 7 Zelte.",
-    "loesungsschritt": "Rechne zuerst 199 : 7 = 28 Rest 3."
-   }
-  },
-  {
-   "id": "5.4.5-D4-M-05",
-   "lernziel": "5.4.5-D4",
-   "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "93 Fotos sollen in ein Album geklebt werden. Auf eine Seite passen 8 Fotos. Wie viele Seiten werden gebraucht?",
-   "loesung": 12,
-   "einheit": "Seiten",
-   "typischeFehler": [
-    {
-     "wert": 11,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Fotos, die übrig bleiben, brauchen eine Seite.",
-    "beispiel": "50 Kinder, 8 pro Zelt: 50 : 8 = 6 Rest 2. Die 2 Kinder brauchen auch ein Zelt, also 7 Zelte.",
-    "loesungsschritt": "Rechne zuerst 93 : 8 = 11 Rest 5."
-   }
-  },
-  {
-   "id": "5.4.5-D4-M-06",
-   "lernziel": "5.4.5-D4",
-   "niveau": "M",
-   "afb": 2,
-   "format": "zahl",
-   "text": "98 Flaschen werden in Kästen gestellt. In einen Kasten passen 12 Flaschen. Wie viele Kästen braucht man für alle Flaschen?",
-   "loesung": 9,
-   "einheit": "Kästen",
-   "typischeFehler": [
-    {
-     "wert": 8,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Flaschen, die übrig bleiben, brauchen einen Kasten.",
-    "beispiel": "50 Kinder, 8 pro Zelt: 50 : 8 = 6 Rest 2. Die 2 Kinder brauchen auch ein Zelt, also 7 Zelte.",
-    "loesungsschritt": "Rechne zuerst 98 : 12 = 8 Rest 2."
-   }
-  },
-  {
-   "id": "5.4.5-D4-E-01",
-   "lernziel": "5.4.5-D4",
-   "niveau": "E",
-   "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Ein 4769 cm langes Band wird in Stücke von 34 cm geschnitten.",
-   "teile": [
-    {
-     "format": "zahl",
-     "text": "Wie viele ganze Stücke entstehen?",
-     "loesung": 140,
-     "einheit": "Stücke",
-     "typischeFehler": [
-      {
-       "wert": 141,
-       "fehlvorstellung": "div-rest-nicht-gedeutet"
-      }
-     ]
-    },
-    {
-     "format": "zahl",
-     "text": "Wie viele Zentimeter bleiben übrig?",
-     "loesung": 9,
-     "einheit": "cm",
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Hier zählt nur, was vollständig ist.",
-    "beispiel": "500 cm Band, Stücke von 60 cm: 500 : 60 = 8 Rest 20. Es entstehen 8 ganze Stücke, 20 cm bleiben übrig.",
-    "loesungsschritt": "Beginne links: 47 : 34 = 1, denn 1 · 34 = 34. Es bleibt der Rest 13. Hole dann die nächste Ziffer herunter."
    }
   },
   {
@@ -6227,19 +6521,16 @@
    "niveau": "E",
    "afb": 2,
    "format": "zahl",
-   "text": "7570 Fans reisen mit Bussen zum Auswärtsspiel. In jeden Bus passen 38 Fans. Wie viele Busse werden mindestens gebraucht?",
-   "loesung": 200,
-   "einheit": "Busse",
+   "text": "Bestimme die größte dreistellige Zahl, die bei Division durch 6 den Rest 4 lässt.",
+   "loesung": 994,
    "typischeFehler": [
     {
-     "wert": 199,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
+     "wert": 996,
+     "fehlvorstellung": "div-rest-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Fans, die übrig bleiben, brauchen einen Bus.",
-    "beispiel": "500 cm Band, Stücke von 60 cm: 500 : 60 = 8 Rest 20. Es entstehen 8 ganze Stücke, 20 cm bleiben übrig.",
-    "loesungsschritt": "Beginne links: 75 : 38 = 1, denn 1 · 38 = 38. Es bleibt der Rest 37. Hole dann die nächste Ziffer herunter."
+    "tipp": "Suche zuerst das größte dreistellige Vielfache von 6. Was musst du noch beachten?"
    }
   },
   {
@@ -6247,26 +6538,40 @@
    "lernziel": "5.4.5-D4",
    "niveau": "E",
    "afb": 2,
-   "format": "sachaufgabe",
-   "text": "7827 Äpfel werden in Kisten zu je 35 Äpfeln gepackt. Nur volle Kisten werden verkauft.",
-   "teile": [
+   "format": "zahl",
+   "text": "Eine Zahl lässt bei Division durch 7 den Rest 4. Welchen Rest lässt das Dreifache dieser Zahl bei Division durch 7?",
+   "loesung": 5,
+   "typischeFehler": [
     {
-     "format": "zahl",
-     "text": "Wie viele Kisten können verkauft werden?",
-     "loesung": 223,
-     "einheit": "Kisten",
-     "typischeFehler": [
-      {
-       "wert": 224,
-       "fehlvorstellung": "div-rest-nicht-gedeutet"
-      }
-     ]
+     "wert": 12,
+     "fehlvorstellung": "div-rest-zu-gross"
     },
     {
-     "format": "zahl",
-     "text": "Wie viele Äpfel bleiben übrig?",
-     "loesung": 22,
-     "einheit": "Äpfel",
+     "wert": 4,
+     "fehlvorstellung": "teilbar-summe"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Zahl als „Vielfaches von 7 plus 4“. Was geschieht mit beiden Teilen?"
+   }
+  },
+  {
+   "id": "5.4.5-D4-E-04",
+   "lernziel": "5.4.5-D4",
+   "niveau": "E",
+   "afb": 1,
+   "format": "luecken",
+   "text": "6213 : 27 = {{q}} Rest {{r}}",
+   "hilfen": {
+    "tipp": "Wie kannst du dein Ergebnis mit einer Probe sichern?"
+   },
+   "luecken": {
+    "q": {
+     "loesung": 230,
+     "typischeFehler": []
+    },
+    "r": {
+     "loesung": 3,
      "typischeFehler": [
       {
        "wert": 0,
@@ -6274,32 +6579,6 @@
       }
      ]
     }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Hier zählt nur, was vollständig ist.",
-    "beispiel": "500 cm Band, Stücke von 60 cm: 500 : 60 = 8 Rest 20. Es entstehen 8 ganze Stücke, 20 cm bleiben übrig.",
-    "loesungsschritt": "Beginne links: 78 : 35 = 2, denn 2 · 35 = 70. Es bleibt der Rest 8. Hole dann die nächste Ziffer herunter."
-   }
-  },
-  {
-   "id": "5.4.5-D4-E-04",
-   "lernziel": "5.4.5-D4",
-   "niveau": "E",
-   "afb": 2,
-   "format": "zahl",
-   "text": "6923 Bücher werden in Kartons verpackt. In einen Karton passen 38 Bücher. Wie viele Kartons braucht man für alle Bücher?",
-   "loesung": 183,
-   "einheit": "Kartons",
-   "typischeFehler": [
-    {
-     "wert": 182,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
-    }
-   ],
-   "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch die Bücher, die übrig bleiben, brauchen einen Karton.",
-    "beispiel": "500 cm Band, Stücke von 60 cm: 500 : 60 = 8 Rest 20. Es entstehen 8 ganze Stücke, 20 cm bleiben übrig.",
-    "loesungsschritt": "Beginne links: 69 : 38 = 1, denn 1 · 38 = 38. Es bleibt der Rest 31. Hole dann die nächste Ziffer herunter."
    }
   },
   {
@@ -6307,59 +6586,45 @@
    "lernziel": "5.4.5-D4",
    "niveau": "E",
    "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Eine Bücherei hat 6234 € für neue Bücher. Ein Buch kostet 45 €.",
-   "teile": [
-    {
-     "format": "zahl",
-     "text": "Wie viele Bücher kann sie kaufen?",
-     "loesung": 138,
-     "einheit": "Bücher",
-     "typischeFehler": [
-      {
-       "wert": 139,
-       "fehlvorstellung": "div-rest-nicht-gedeutet"
-      }
-     ]
-    },
-    {
-     "format": "zahl",
-     "text": "Wie viel Geld bleibt übrig?",
-     "loesung": 24,
-     "einheit": "€",
-     "typischeFehler": [
-      {
-       "wert": 0,
-       "fehlvorstellung": "div-rest-vergessen"
-      }
-     ]
-    }
-   ],
+   "format": "zahl",
+   "text": "Wie viele natürliche Zahlen von 1 bis 80 lassen bei Division durch 8 den Rest 4?",
+   "loesung": 10,
+   "typischeFehler": [],
    "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Hier zählt nur, was vollständig ist.",
-    "beispiel": "500 cm Band, Stücke von 60 cm: 500 : 60 = 8 Rest 20. Es entstehen 8 ganze Stücke, 20 cm bleiben übrig.",
-    "loesungsschritt": "Beginne links: 62 : 45 = 1, denn 1 · 45 = 45. Es bleibt der Rest 17. Hole dann die nächste Ziffer herunter."
+    "tipp": "Die kleinste solche Zahl ist 4. In welchen Abständen folgen die nächsten?"
    }
   },
   {
    "id": "5.4.5-D4-E-06",
    "lernziel": "5.4.5-D4",
    "niveau": "E",
-   "afb": 2,
-   "format": "zahl",
-   "text": "9691 Liter Saft werden in Fässer zu je 22 Litern abgefüllt. Wie viele Fässer braucht man für den ganzen Saft?",
-   "loesung": 441,
-   "einheit": "Fässer",
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Eine Zahl lässt bei Division durch 6 den Rest 3. Jonas addiert 18 zu dieser Zahl. Welche Aussage über den neuen Rest bei Division durch 6 stimmt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 440,
-     "fehlvorstellung": "div-rest-nicht-gedeutet"
+     "text": "Der Rest bleibt 3, weil 18 ein Vielfaches von 6 ist.",
+     "richtig": true
+    },
+    {
+     "text": "Der Rest wird 0, weil 18 durch 6 teilbar ist.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
+    },
+    {
+     "text": "Der Rest wird 21.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-zu-gross"
+    },
+    {
+     "text": "Das hängt von der Ausgangszahl ab.",
+     "richtig": false,
+     "fehlvorstellung": "teilbar-summe"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne mit Rest und überlege dann, was der Rest in der Situation bedeutet. Auch der Saft, der übrig bleibt, braucht ein Fass.",
-    "beispiel": "500 cm Band, Stücke von 60 cm: 500 : 60 = 8 Rest 20. Es entstehen 8 ganze Stücke, 20 cm bleiben übrig.",
-    "loesungsschritt": "Beginne links: 96 : 22 = 4, denn 4 · 22 = 88. Es bleibt der Rest 8. Hole dann die nächste Ziffer herunter."
+    "tipp": "Stell dir 6er-Päckchen und 3 einzelne Teile vor. Was kommt durch die 18 hinzu?"
    }
   },
   {
@@ -6368,103 +6633,102 @@
    "niveau": "F",
    "afb": 1,
    "format": "auswahl",
-   "text": "Mit welcher Rechnung machst du die Probe zu 237 : 3 = 79?",
+   "text": "16 : 8 = 2\nWelche Mal-Aufgabe ist die Probe?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "237 − 3 = 234",
+     "text": "16 · 8 = 2",
      "richtig": false,
      "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "79 + 3 = 82",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "79 · 3 = 237",
+     "text": "2 · 8 = 16",
      "richtig": true
     },
     {
-     "text": "237 · 3 = 711",
+     "text": "2 + 8 = 10",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
+    },
+    {
+     "text": "16 · 2 = 8",
      "richtig": false,
      "fehlvorstellung": "probe-falsche-umkehr"
     }
    ],
    "hilfen": {
-    "tipp": "Die Probe ist die Umkehraufgabe: Aus Geteilt wird Mal.",
-    "beispiel": "Probe zu 84 : 4 = 21: 21 · 4 = 84. Quotient mal Divisor ergibt wieder den Dividenden.",
-    "loesungsschritt": "Beginne mit dem Ergebnis 79 und multipliziere mit der Zahl, durch die geteilt wurde."
+    "tipp": "Zu jeder Geteilt-Aufgabe gehört eine Mal-Aufgabe: Ergebnis mal zweite Zahl.",
+    "beispiel": "28 : 4 = 7. Die Probe ist 7 · 4 = 28.",
+    "loesungsschritt": "Die Probe beginnt mit dem Ergebnis 2. Rechne 2 · 8."
    }
   },
   {
    "id": "5.4.5-D5-F-02",
    "lernziel": "5.4.5-D5",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "Mit welcher Rechnung machst du die Probe zu 272 : 8 = 34?",
+   "text": "Die Probe ist 3 · 4 = 12.\nWelche Geteilt-Aufgabe wurde geprüft?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "272 · 8 = 2176",
+     "text": "3 : 4 = 12",
      "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
+     "fehlvorstellung": "div-vertauscht"
     },
     {
-     "text": "34 + 8 = 42",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
+     "text": "12 : 4 = 12",
+     "richtig": false
     },
     {
-     "text": "272 − 8 = 264",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "34 · 8 = 272",
+     "text": "12 : 4 = 3",
      "richtig": true
+    },
+    {
+     "text": "4 : 12 = 3",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
     }
    ],
    "hilfen": {
-    "tipp": "Die Probe ist die Umkehraufgabe: Aus Geteilt wird Mal.",
-    "beispiel": "Probe zu 84 : 4 = 21: 21 · 4 = 84. Quotient mal Divisor ergibt wieder den Dividenden.",
-    "loesungsschritt": "Beginne mit dem Ergebnis 34 und multipliziere mit der Zahl, durch die geteilt wurde."
+    "tipp": "Bei der Geteilt-Aufgabe steht die größte Zahl vorn.",
+    "beispiel": "Probe 8 · 3 = 24. Geprüft wurde 24 : 3 = 8.",
+    "loesungsschritt": "Die größte Zahl ist 12. Sie wird geteilt."
    }
   },
   {
    "id": "5.4.5-D5-F-03",
    "lernziel": "5.4.5-D5",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "Mit welcher Rechnung machst du die Probe zu 819 : 9 = 91?",
+   "text": "Welche Rechnung ist richtig?\nPrüfe mit der Mal-Aufgabe.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "91 + 9 = 100",
+     "text": "63 : 7 = 8",
      "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
+     "fehlvorstellung": "div-einmaleins"
     },
     {
-     "text": "91 · 9 = 819",
+     "text": "63 : 7 = 11",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "63 : 7 = 9",
      "richtig": true
     },
     {
-     "text": "819 − 9 = 810",
+     "text": "63 : 7 = 10",
      "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "819 · 9 = 7371",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
+     "fehlvorstellung": "div-einmaleins"
     }
    ],
    "hilfen": {
-    "tipp": "Die Probe ist die Umkehraufgabe: Aus Geteilt wird Mal.",
-    "beispiel": "Probe zu 84 : 4 = 21: 21 · 4 = 84. Quotient mal Divisor ergibt wieder den Dividenden.",
-    "loesungsschritt": "Beginne mit dem Ergebnis 91 und multipliziere mit der Zahl, durch die geteilt wurde."
+    "tipp": "Rechne zu jeder Antwort die Mal-Aufgabe: Ergebnis mal zweite Zahl.",
+    "beispiel": "42 : 6 = 7? Probe: 7 · 6 = 42. Das stimmt.",
+    "loesungsschritt": "Bei der richtigen Antwort ergibt Ergebnis mal 7 genau 63."
    }
   },
   {
@@ -6472,104 +6736,82 @@
    "lernziel": "5.4.5-D5",
    "niveau": "F",
    "afb": 1,
-   "format": "auswahl",
-   "text": "Mit welcher Rechnung machst du die Probe zu 156 : 3 = 52?",
-   "mehrfach": false,
-   "optionen": [
+   "format": "zahl",
+   "text": "Mache die Probe.\n28 : 4 = 7\n7 · 4 = ▢",
+   "loesung": 28,
+   "typischeFehler": [
     {
-     "text": "156 − 3 = 153",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "156 · 3 = 468",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "52 · 3 = 156",
-     "richtig": true
-    },
-    {
-     "text": "52 + 3 = 55",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
+     "wert": 11,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Die Probe ist die Umkehraufgabe: Aus Geteilt wird Mal.",
-    "beispiel": "Probe zu 84 : 4 = 21: 21 · 4 = 84. Quotient mal Divisor ergibt wieder den Dividenden.",
-    "loesungsschritt": "Beginne mit dem Ergebnis 52 und multipliziere mit der Zahl, durch die geteilt wurde."
+    "tipp": "Zu jeder Geteilt-Aufgabe gehört eine Mal-Aufgabe: Ergebnis mal zweite Zahl.",
+    "beispiel": "28 : 4 = 7. Die Probe ist 7 · 4 = 28.",
+    "loesungsschritt": "Die Probe beginnt mit dem Ergebnis 7. Rechne 7 · 4."
    }
   },
   {
    "id": "5.4.5-D5-F-05",
    "lernziel": "5.4.5-D5",
    "niveau": "F",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "Mit welcher Rechnung machst du die Probe zu 231 : 3 = 77?",
+   "text": "12 : 4\nIst das Ergebnis größer oder kleiner als 10?\nÜberlege mit der Mal-Aufgabe.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "77 · 3 = 231",
+     "text": "größer als 10",
+     "richtig": false
+    },
+    {
+     "text": "genau 10",
+     "richtig": false
+    },
+    {
+     "text": "kleiner als 10",
      "richtig": true
-    },
-    {
-     "text": "231 − 3 = 228",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "231 · 3 = 693",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "77 + 3 = 80",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
     }
    ],
    "hilfen": {
-    "tipp": "Die Probe ist die Umkehraufgabe: Aus Geteilt wird Mal.",
-    "beispiel": "Probe zu 84 : 4 = 21: 21 · 4 = 84. Quotient mal Divisor ergibt wieder den Dividenden.",
-    "loesungsschritt": "Beginne mit dem Ergebnis 77 und multipliziere mit der Zahl, durch die geteilt wurde."
+    "tipp": "Rechne 10 · 4. Vergleiche mit 12.",
+    "beispiel": "80 : 4: 10 · 4 = 40. 80 ist mehr als 40. Das Ergebnis ist größer als 10.",
+    "loesungsschritt": "10 · 4 = 40. Ist 12 mehr oder weniger?"
    }
   },
   {
    "id": "5.4.5-D5-F-06",
    "lernziel": "5.4.5-D5",
    "niveau": "F",
-   "afb": 1,
+   "afb": 3,
    "format": "auswahl",
-   "text": "Mit welcher Rechnung machst du die Probe zu 231 : 7 = 33?",
+   "text": "Lena rechnet: 24 : 6 = 3.\nSie macht die Probe: 3 · 6 = 18.\nWas zeigt die Probe?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "33 · 7 = 231",
+     "text": "Die Probe ist falsch gerechnet.\n3 · 6 = 24.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "18 ist nicht 24.\nDas Ergebnis 3 ist falsch.\nRichtig ist 4.",
      "richtig": true
     },
     {
-     "text": "231 − 7 = 224",
+     "text": "Die Probe passt.\n3 ist richtig.",
      "richtig": false,
      "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "33 + 7 = 40",
-     "richtig": false,
-     "fehlvorstellung": "probe-falsche-umkehr"
-    },
-    {
-     "text": "231 · 7 = 1617",
+     "text": "Mit einer Mal-Aufgabe kann man nicht prüfen.",
      "richtig": false,
      "fehlvorstellung": "probe-falsche-umkehr"
     }
    ],
    "hilfen": {
-    "tipp": "Die Probe ist die Umkehraufgabe: Aus Geteilt wird Mal.",
-    "beispiel": "Probe zu 84 : 4 = 21: 21 · 4 = 84. Quotient mal Divisor ergibt wieder den Dividenden.",
-    "loesungsschritt": "Beginne mit dem Ergebnis 33 und multipliziere mit der Zahl, durch die geteilt wurde."
+    "tipp": "Bei der Probe muss wieder die erste Zahl herauskommen.",
+    "beispiel": "45 : 5 = 8? Probe: 8 · 5 = 40. Das ist nicht 45. Also stimmt 8 nicht.",
+    "loesungsschritt": "Vergleiche 18 mit 24. Sind die Zahlen gleich?"
    }
   },
   {
@@ -6577,101 +6819,84 @@
    "lernziel": "5.4.5-D5",
    "niveau": "G",
    "afb": 1,
-   "format": "auswahl",
-   "text": "Überschlage: 4489 : 9 ≈ ?",
-   "mehrfach": false,
-   "optionen": [
+   "format": "zahl",
+   "text": "Mache die Probe.\n835 : 5 = 167\n167 · 5 = ▢",
+   "loesung": 835,
+   "typischeFehler": [
     {
-     "text": "500",
-     "richtig": true
-    },
-    {
-     "text": "50",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "800",
-     "richtig": false
-    },
-    {
-     "text": "5000",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
+     "wert": 172,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Ändere den Dividenden zu einer Zahl in der Nähe, die sich leicht durch den Divisor teilen lässt.",
-    "beispiel": "4172 : 7: In der Nähe liegt 4200, und 42 ist in der Siebenerreihe. 4200 : 7 = 600.",
-    "loesungsschritt": "Rechne mit 4500 statt 4489: 45 gehört zur Einmaleinsreihe der 9."
+    "tipp": "Die Probe ist die Mal-Aufgabe: Ergebnis mal Teiler.",
+    "beispiel": "96 : 4 = 24. Probe: 24 · 4 = 96.",
+    "loesungsschritt": "Rechne 160 · 5 = 800. Rechne dann 7 · 5 dazu."
    }
   },
   {
    "id": "5.4.5-D5-G-02",
    "lernziel": "5.4.5-D5",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "Überschlage: 1962 : 4 ≈ ?",
+   "text": "Welcher Überschlag passt zu 804 : 2?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "50",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "5000",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "800",
-     "richtig": false
-    },
-    {
-     "text": "500",
+     "text": "800 : 2 = 400",
      "richtig": true
+    },
+    {
+     "text": "80 : 2 = 40",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "800 : 10 = 80",
+     "richtig": false,
+     "fehlvorstellung": "falsch-gerundet"
     }
    ],
    "hilfen": {
-    "tipp": "Ändere den Dividenden zu einer Zahl in der Nähe, die sich leicht durch den Divisor teilen lässt.",
-    "beispiel": "4172 : 7: In der Nähe liegt 4200, und 42 ist in der Siebenerreihe. 4200 : 7 = 600.",
-    "loesungsschritt": "Rechne mit 2000 statt 1962: 20 gehört zur Einmaleinsreihe der 4."
+    "tipp": "Runde nur die erste Zahl. Sie soll nahe bei der echten Zahl bleiben.",
+    "beispiel": "Zu 594 : 6 passt 600 : 6 = 100. Denn 594 liegt nahe bei 600.",
+    "loesungsschritt": "Welche runde Zahl liegt nahe bei 804 und lässt sich gut durch 2 teilen?"
    }
   },
   {
    "id": "5.4.5-D5-G-03",
    "lernziel": "5.4.5-D5",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "Überschlage: 3481 : 7 ≈ ?",
+   "text": "316 : 2\nWelches Ergebnis stimmt?\nPrüfe mit der Mal-Aufgabe.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "5000",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "50",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "500",
+     "text": "158",
      "richtig": true
     },
     {
-     "text": "800",
-     "richtig": false
+     "text": "159",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "168",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "148",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
     }
    ],
    "hilfen": {
-    "tipp": "Ändere den Dividenden zu einer Zahl in der Nähe, die sich leicht durch den Divisor teilen lässt.",
-    "beispiel": "4172 : 7: In der Nähe liegt 4200, und 42 ist in der Siebenerreihe. 4200 : 7 = 600.",
-    "loesungsschritt": "Rechne mit 3500 statt 3481: 35 gehört zur Einmaleinsreihe der 7."
+    "tipp": "Rechne zu jeder Antwort: Antwort mal Teiler.",
+    "beispiel": "252 : 7 = 36? Probe: 36 · 7 = 252. Das stimmt.",
+    "loesungsschritt": "Bei der richtigen Antwort ergibt Antwort mal 2 genau 316."
    }
   },
   {
@@ -6679,133 +6904,110 @@
    "lernziel": "5.4.5-D5",
    "niveau": "G",
    "afb": 1,
-   "format": "auswahl",
-   "text": "Überschlage: 1161 : 6 ≈ ?",
-   "mehrfach": false,
-   "optionen": [
+   "format": "zahl",
+   "text": "Überschlage.\n460 : 5\nRechne mit 500 : 5.",
+   "loesung": 100,
+   "typischeFehler": [
     {
-     "text": "200",
-     "richtig": true
+     "wert": 92,
+     "fehlvorstellung": "ueberschlag-nicht-gerundet"
     },
     {
-     "text": "500",
-     "richtig": false
-    },
-    {
-     "text": "2000",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "20",
-     "richtig": false,
+     "wert": 10,
      "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Ändere den Dividenden zu einer Zahl in der Nähe, die sich leicht durch den Divisor teilen lässt.",
-    "beispiel": "4172 : 7: In der Nähe liegt 4200, und 42 ist in der Siebenerreihe. 4200 : 7 = 600.",
-    "loesungsschritt": "Rechne mit 1200 statt 1161: 12 gehört zur Einmaleinsreihe der 6."
+    "tipp": "Beim Überschlag rechnest du mit einer runden Zahl. Das geht im Kopf.",
+    "beispiel": "Überschlag zu 418 : 4: Rechne 400 : 4 = 100.",
+    "loesungsschritt": "5 Hunderter geteilt durch 5 sind 1 Hunderter."
    }
   },
   {
    "id": "5.4.5-D5-G-05",
    "lernziel": "5.4.5-D5",
    "niveau": "G",
-   "afb": 1,
+   "afb": 2,
    "format": "auswahl",
-   "text": "Überschlage: 4470 : 9 ≈ ?",
+   "text": "Die Probe ist 123 · 8 = 984.\nWelche Geteilt-Aufgabe wurde geprüft?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "800",
-     "richtig": false
-    },
-    {
-     "text": "50",
+     "text": "123 : 8 = 984",
      "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
+     "fehlvorstellung": "div-vertauscht"
     },
     {
-     "text": "5000",
+     "text": "8 : 123 = 984",
      "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
+     "fehlvorstellung": "div-vertauscht"
     },
     {
-     "text": "500",
+     "text": "984 : 8 = 123",
      "richtig": true
+    },
+    {
+     "text": "984 : 123 = 984",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Ändere den Dividenden zu einer Zahl in der Nähe, die sich leicht durch den Divisor teilen lässt.",
-    "beispiel": "4172 : 7: In der Nähe liegt 4200, und 42 ist in der Siebenerreihe. 4200 : 7 = 600.",
-    "loesungsschritt": "Rechne mit 4500 statt 4470: 45 gehört zur Einmaleinsreihe der 9."
+    "tipp": "Bei der Geteilt-Aufgabe steht die größte Zahl vorn.",
+    "beispiel": "Probe 23 · 6 = 138. Geprüft wurde 138 : 6 = 23.",
+    "loesungsschritt": "Die größte Zahl ist 984. Sie wird geteilt."
    }
   },
   {
    "id": "5.4.5-D5-G-06",
    "lernziel": "5.4.5-D5",
    "niveau": "G",
-   "afb": 1,
+   "afb": 3,
    "format": "auswahl",
-   "text": "Überschlage: 1022 : 5 ≈ ?",
+   "text": "Tom rechnet: 318 : 3 = 16.\nSein Überschlag ist 300 : 3 = 100.\nWas zeigt der Überschlag?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "2000",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "20",
-     "richtig": false,
-     "fehlvorstellung": "div-stellenwert"
-    },
-    {
-     "text": "500",
+     "text": "16 ist zu groß.",
      "richtig": false
     },
     {
-     "text": "200",
+     "text": "Der Überschlag ist falsch.\n300 : 3 = 10.",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "16 passt zum Überschlag.",
+     "richtig": false,
+     "fehlvorstellung": "div-null-vergessen"
+    },
+    {
+     "text": "16 ist viel zu klein.\nDas Ergebnis muss nahe bei 100 liegen.\nRichtig ist 106.",
      "richtig": true
     }
    ],
    "hilfen": {
-    "tipp": "Ändere den Dividenden zu einer Zahl in der Nähe, die sich leicht durch den Divisor teilen lässt.",
-    "beispiel": "4172 : 7: In der Nähe liegt 4200, und 42 ist in der Siebenerreihe. 4200 : 7 = 600.",
-    "loesungsschritt": "Rechne mit 1000 statt 1022: 10 gehört zur Einmaleinsreihe der 5."
+    "tipp": "Vergleiche das Ergebnis mit dem Überschlag. Die Zahlen müssen nahe beieinander liegen.",
+    "beispiel": "824 : 4 = 26? Der Überschlag ist 800 : 4 = 200. 26 ist viel kleiner als 200. Richtig ist 206.",
+    "loesungsschritt": "Liegt 16 nahe bei 100?"
    }
   },
   {
    "id": "5.4.5-D5-M-01",
    "lernziel": "5.4.5-D5",
    "niveau": "M",
-   "afb": 2,
-   "format": "auswahl",
-   "text": "Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.",
-   "mehrfach": true,
-   "optionen": [
+   "afb": 1,
+   "format": "zahl",
+   "text": "Überschlage: Runde den Dividenden auf Tausender und rechne dann. 14 053 : 7 ≈ ?",
+   "loesung": 2000,
+   "typischeFehler": [
     {
-     "text": "1764 : 3 = 588",
-     "richtig": false
-    },
-    {
-     "text": "1026 : 9 = 115",
-     "richtig": true
-    },
-    {
-     "text": "1855 : 7 = 265",
-     "richtig": false
-    },
-    {
-     "text": "2215 : 5 = 443",
-     "richtig": false
+     "wert": 200,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Multipliziere jeweils das Ergebnis mit dem Divisor. Kommt nicht der Dividend heraus, ist die Rechnung falsch.",
-    "beispiel": "738 : 6 = 133? Probe: 133 · 6 = 798. Das ist nicht 738, also ist die Rechnung falsch.",
-    "loesungsschritt": "Rechne für die erste Rechnung die Probe: Ergebnis mal Divisor."
+    "tipp": "Runde so, dass du die Division im Kopf lösen kannst.",
+    "loesungsschritt": "Der Dividend wird zu 14 000."
    }
   },
   {
@@ -6814,30 +7016,32 @@
    "niveau": "M",
    "afb": 2,
    "format": "auswahl",
-   "text": "Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Nur ein Ergebnis kann stimmen. Entscheide mit einem Überschlag: 2864 : 4",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "2785 : 5 = 557",
-     "richtig": false
-    },
-    {
-     "text": "2475 : 9 = 275",
-     "richtig": false
-    },
-    {
-     "text": "1284 : 2 = 641",
+     "text": "716",
      "richtig": true
     },
     {
-     "text": "3414 : 6 = 579",
-     "richtig": true
+     "text": "1716",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "7160",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "71",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Multipliziere jeweils das Ergebnis mit dem Divisor. Kommt nicht der Dividend heraus, ist die Rechnung falsch.",
-    "beispiel": "738 : 6 = 133? Probe: 133 · 6 = 798. Das ist nicht 738, also ist die Rechnung falsch.",
-    "loesungsschritt": "Rechne für die erste Rechnung die Probe: Ergebnis mal Divisor."
+    "tipp": "Überschlage zuerst, wie groß der Quotient ungefähr sein muss.",
+    "loesungsschritt": "Überschlag: 2800 : 4 = 700."
    }
   },
   {
@@ -6845,63 +7049,52 @@
    "lernziel": "5.4.5-D5",
    "niveau": "M",
    "afb": 2,
-   "format": "auswahl",
-   "text": "Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.",
-   "mehrfach": true,
-   "optionen": [
+   "format": "zahl",
+   "text": "Bei einer Division durch 16 ist der Quotient 20 und der Rest 15. Bestimme mit der Probe den Dividenden.",
+   "loesung": 335,
+   "typischeFehler": [
     {
-     "text": "1494 : 2 = 747",
-     "richtig": false
-    },
-    {
-     "text": "5976 : 6 = 996",
-     "richtig": false
-    },
-    {
-     "text": "4602 : 6 = 767",
-     "richtig": false
-    },
-    {
-     "text": "3860 : 4 = 964",
-     "richtig": true
+     "wert": 320,
+     "fehlvorstellung": "div-rest-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Multipliziere jeweils das Ergebnis mit dem Divisor. Kommt nicht der Dividend heraus, ist die Rechnung falsch.",
-    "beispiel": "738 : 6 = 133? Probe: 133 · 6 = 798. Das ist nicht 738, also ist die Rechnung falsch.",
-    "loesungsschritt": "Rechne für die erste Rechnung die Probe: Ergebnis mal Divisor."
+    "tipp": "Probe bei einer Division mit Rest: Quotient · Divisor, dann den Rest addieren.",
+    "loesungsschritt": "Rechne 20 · 16 = 320."
    }
   },
   {
    "id": "5.4.5-D5-M-04",
    "lernziel": "5.4.5-D5",
    "niveau": "M",
-   "afb": 2,
+   "afb": 1,
    "format": "auswahl",
-   "text": "Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Welche Rechnung ist die Probe zu 8820 : 21 = 420?",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "1695 : 5 = 339",
-     "richtig": false
+     "text": "420 : 21 = 8820",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "1687 : 7 = 241",
-     "richtig": false
-    },
-    {
-     "text": "580 : 5 = 126",
+     "text": "420 · 21 = 8820",
      "richtig": true
     },
     {
-     "text": "5634 : 9 = 626",
-     "richtig": false
+     "text": "8820 · 21 = 420",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
+    },
+    {
+     "text": "8820 − 420 = 21",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
     }
    ],
    "hilfen": {
-    "tipp": "Multipliziere jeweils das Ergebnis mit dem Divisor. Kommt nicht der Dividend heraus, ist die Rechnung falsch.",
-    "beispiel": "738 : 6 = 133? Probe: 133 · 6 = 798. Das ist nicht 738, also ist die Rechnung falsch.",
-    "loesungsschritt": "Rechne für die erste Rechnung die Probe: Ergebnis mal Divisor."
+    "tipp": "Die Probe ist die Umkehraufgabe. Sie führt zurück zum Dividenden.",
+    "loesungsschritt": "Quotient · Divisor = Dividend."
    }
   },
   {
@@ -6910,98 +7103,87 @@
    "niveau": "M",
    "afb": 2,
    "format": "auswahl",
-   "text": "Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Zwischen welchen Zahlen liegt 2847 : 39? Entscheide mit einem Überschlag.",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "3460 : 5 = 692",
-     "richtig": false
-    },
-    {
-     "text": "1026 : 2 = 512",
+     "text": "zwischen 70 und 80",
      "richtig": true
     },
     {
-     "text": "844 : 2 = 422",
-     "richtig": false
+     "text": "zwischen 90 und 100",
+     "richtig": false,
+     "fehlvorstellung": "falsch-gerundet"
     },
     {
-     "text": "3444 : 7 = 491",
-     "richtig": true
+     "text": "zwischen 700 und 800",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "zwischen 7 und 8",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Multipliziere jeweils das Ergebnis mit dem Divisor. Kommt nicht der Dividend heraus, ist die Rechnung falsch.",
-    "beispiel": "738 : 6 = 133? Probe: 133 · 6 = 798. Das ist nicht 738, also ist die Rechnung falsch.",
-    "loesungsschritt": "Rechne für die erste Rechnung die Probe: Ergebnis mal Divisor."
+    "tipp": "Multipliziere die Grenzen mit dem Divisor und vergleiche mit dem Dividenden.",
+    "loesungsschritt": "70 · 39 = 2730 und 80 · 39 = 3120."
    }
   },
   {
    "id": "5.4.5-D5-M-06",
    "lernziel": "5.4.5-D5",
    "niveau": "M",
-   "afb": 2,
+   "afb": 3,
    "format": "auswahl",
-   "text": "Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Mona rechnet 10 972 : 26 = 422. Ihre Probe 422 · 26 = 10 972 stimmt. Ihr Überschlag 10 000 : 30 = 333 weicht aber deutlich ab. Was folgt daraus?",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "4185 : 5 = 837",
-     "richtig": false
-    },
-    {
-     "text": "1365 : 7 = 205",
+     "text": "Das Ergebnis 422 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.",
      "richtig": true
     },
     {
-     "text": "2236 : 4 = 559",
-     "richtig": false
+     "text": "Die Probe muss falsch sein.",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "544 : 2 = 271",
-     "richtig": true
+     "text": "Das Ergebnis ist falsch, weil der Überschlag 333 ergibt.",
+     "richtig": false,
+     "fehlvorstellung": "ueberschlag-nicht-gerundet"
+    },
+    {
+     "text": "Man nimmt den Mittelwert aus Ergebnis und Überschlag.",
+     "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Multipliziere jeweils das Ergebnis mit dem Divisor. Kommt nicht der Dividend heraus, ist die Rechnung falsch.",
-    "beispiel": "738 : 6 = 133? Probe: 133 · 6 = 798. Das ist nicht 738, also ist die Rechnung falsch.",
-    "loesungsschritt": "Rechne für die erste Rechnung die Probe: Ergebnis mal Divisor."
+    "tipp": "Welche Prüfung ist genau, welche nur ungefähr?",
+    "loesungsschritt": "Die Probe rechnet genau zurück. Der Überschlag zeigt nur die Größenordnung."
    }
   },
   {
    "id": "5.4.5-D5-E-01",
    "lernziel": "5.4.5-D5",
    "niveau": "E",
-   "afb": 2,
-   "format": "auswahl",
-   "text": "Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.",
-   "mehrfach": true,
-   "optionen": [
+   "afb": 1,
+   "format": "zahl",
+   "text": "Überschlage sinnvoll: 70 256 : 71 ≈ ? Runde den Divisor auf Zehner und den Dividenden auf Tausender.",
+   "loesung": 1000,
+   "typischeFehler": [
     {
-     "text": "10 188 : 2 = 5094",
-     "richtig": false
+     "wert": 10000,
+     "fehlvorstellung": "div-stellenwert"
     },
     {
-     "text": "12 138 : 2 = 6069",
-     "richtig": false
-    },
-    {
-     "text": "12 150 : 6 = 20 253",
-     "richtig": true
-    },
-    {
-     "text": "47 530 : 5 = 9506",
-     "richtig": false
-    },
-    {
-     "text": "16 227 : 9 = 18 034",
-     "richtig": true
+     "wert": 100,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage, wie viele Stellen das Ergebnis haben muss, und vergleiche mit dem angegebenen Ergebnis.",
-    "beispiel": "8428 : 4 = 217? Überschlag: 8000 : 4 = 2000. Das Ergebnis muss vierstellig sein, 217 kann nicht stimmen.",
-    "loesungsschritt": "Überschlage die erste Rechnung mit einem gerundeten Dividenden und vergleiche die Stellenzahl."
+    "tipp": "Auf welche glatten Zahlen kannst du runden, sodass die Division im Kopf aufgeht?"
    }
   },
   {
@@ -7010,34 +7192,31 @@
    "niveau": "E",
    "afb": 2,
    "format": "auswahl",
-   "text": "Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Entscheide ohne schriftliche Rechnung: Welcher Quotient ist größer als 100?",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "72 232 : 8 = 90 294",
+     "text": "8362 : 91",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "7362 : 81",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "8362 : 81",
      "richtig": true
     },
     {
-     "text": "32 196 : 4 = 8049",
-     "richtig": false
-    },
-    {
-     "text": "46 242 : 7 = 66 064",
-     "richtig": true
-    },
-    {
-     "text": "2052 : 2 = 1026",
-     "richtig": false
-    },
-    {
-     "text": "32 496 : 8 = 4062",
-     "richtig": false
+     "text": "8019 : 81",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage, wie viele Stellen das Ergebnis haben muss, und vergleiche mit dem angegebenen Ergebnis.",
-    "beispiel": "8428 : 4 = 217? Überschlag: 8000 : 4 = 2000. Das Ergebnis muss vierstellig sein, 217 kann nicht stimmen.",
-    "loesungsschritt": "Überschlage die erste Rechnung mit einem gerundeten Dividenden und vergleiche die Stellenzahl."
+    "tipp": "Wie groß wäre der Dividend, wenn der Quotient genau 100 wäre?"
    }
   },
   {
@@ -7045,71 +7224,50 @@
    "lernziel": "5.4.5-D5",
    "niveau": "E",
    "afb": 2,
-   "format": "auswahl",
-   "text": "Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.",
-   "mehrfach": true,
-   "optionen": [
+   "format": "zahl",
+   "text": "Bei einer Division durch 42 ist der Quotient 263 und der Rest 36. Bestimme den Dividenden.",
+   "loesung": 11082,
+   "typischeFehler": [
     {
-     "text": "3309 : 3 = 1103",
-     "richtig": false
-    },
-    {
-     "text": "18 123 : 3 = 6041",
-     "richtig": false
-    },
-    {
-     "text": "5170 : 5 = 103",
-     "richtig": true
-    },
-    {
-     "text": "10 490 : 5 = 2098",
-     "richtig": false
-    },
-    {
-     "text": "76 048 : 8 = 95 069",
-     "richtig": true
+     "wert": 11046,
+     "fehlvorstellung": "div-rest-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage, wie viele Stellen das Ergebnis haben muss, und vergleiche mit dem angegebenen Ergebnis.",
-    "beispiel": "8428 : 4 = 217? Überschlag: 8000 : 4 = 2000. Das Ergebnis muss vierstellig sein, 217 kann nicht stimmen.",
-    "loesungsschritt": "Überschlage die erste Rechnung mit einem gerundeten Dividenden und vergleiche die Stellenzahl."
+    "tipp": "Wie lautet die Probe bei einer Division mit Rest?"
    }
   },
   {
    "id": "5.4.5-D5-E-04",
    "lernziel": "5.4.5-D5",
    "niveau": "E",
-   "afb": 2,
+   "afb": 1,
    "format": "auswahl",
-   "text": "Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Welche Rechnung ist die Probe zu 6244 : 42 = 148 Rest 28?",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "20 872 : 8 = 2609",
-     "richtig": false
-    },
-    {
-     "text": "32 840 : 8 = 410",
+     "text": "148 · 42 + 28 = 6244",
      "richtig": true
     },
     {
-     "text": "28 735 : 7 = 4105",
-     "richtig": false
+     "text": "148 · 42 − 28 = 6244",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "18 441 : 9 = 20 496",
-     "richtig": true
+     "text": "148 · 28 + 42 = 6244",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "30 588 : 6 = 509",
-     "richtig": true
+     "text": "(148 + 28) · 42 = 6244",
+     "richtig": false,
+     "fehlvorstellung": "probe-falsche-umkehr"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage, wie viele Stellen das Ergebnis haben muss, und vergleiche mit dem angegebenen Ergebnis.",
-    "beispiel": "8428 : 4 = 217? Überschlag: 8000 : 4 = 2000. Das Ergebnis muss vierstellig sein, 217 kann nicht stimmen.",
-    "loesungsschritt": "Überschlage die erste Rechnung mit einem gerundeten Dividenden und vergleiche die Stellenzahl."
+    "tipp": "Wo steckt der Rest: im Vielfachen des Divisors oder daneben?"
    }
   },
   {
@@ -7118,95 +7276,89 @@
    "niveau": "E",
    "afb": 2,
    "format": "auswahl",
-   "text": "Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Der Überschlag zu einer Division lautet 20 000 : 40 = 500. Welche Aufgabe wurde überschlagen?",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "19 408 : 2 = 97 044",
+     "text": "2010 : 38",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "200 950 : 38",
+     "richtig": false,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "text": "20 095 : 38",
      "richtig": true
     },
     {
-     "text": "27 648 : 6 = 4608",
-     "richtig": false
-    },
-    {
-     "text": "12 276 : 3 = 4092",
-     "richtig": false
-    },
-    {
-     "text": "67 907 : 7 = 9701",
-     "richtig": false
-    },
-    {
-     "text": "49 616 : 8 = 620",
-     "richtig": true
+     "text": "20 095 : 98",
+     "richtig": false,
+     "fehlvorstellung": "falsch-gerundet"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage, wie viele Stellen das Ergebnis haben muss, und vergleiche mit dem angegebenen Ergebnis.",
-    "beispiel": "8428 : 4 = 217? Überschlag: 8000 : 4 = 2000. Das Ergebnis muss vierstellig sein, 217 kann nicht stimmen.",
-    "loesungsschritt": "Überschlage die erste Rechnung mit einem gerundeten Dividenden und vergleiche die Stellenzahl."
+    "tipp": "Runde bei jeder Aufgabe Dividend und Divisor. Bei welcher entstehen genau diese glatten Zahlen?"
    }
   },
   {
    "id": "5.4.5-D5-E-06",
    "lernziel": "5.4.5-D5",
    "niveau": "E",
-   "afb": 2,
+   "afb": 3,
    "format": "auswahl",
-   "text": "Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.",
-   "mehrfach": true,
+   "text": "Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?",
+   "mehrfach": false,
    "optionen": [
     {
-     "text": "56 200 : 8 = 702",
+     "text": "Er stimmt dann immer genau.",
+     "richtig": false,
+     "fehlvorstellung": "ueberschlag-nicht-gerundet"
+    },
+    {
+     "text": "Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.",
      "richtig": true
     },
     {
-     "text": "6558 : 6 = 1093",
-     "richtig": false
+     "text": "Er ist dann immer zu klein.",
+     "richtig": false,
+     "fehlvorstellung": "falsch-gerundet"
     },
     {
-     "text": "46 448 : 8 = 58 069",
-     "richtig": true
-    },
-    {
-     "text": "40 210 : 5 = 8042",
-     "richtig": false
-    },
-    {
-     "text": "46 464 : 8 = 5808",
-     "richtig": false
+     "text": "Er ist dann immer zu groß.",
+     "richtig": false,
+     "fehlvorstellung": "falsch-gerundet"
     }
    ],
    "hilfen": {
-    "tipp": "Überschlage, wie viele Stellen das Ergebnis haben muss, und vergleiche mit dem angegebenen Ergebnis.",
-    "beispiel": "8428 : 4 = 217? Überschlag: 8000 : 4 = 2000. Das Ergebnis muss vierstellig sein, 217 kann nicht stimmen.",
-    "loesungsschritt": "Überschlage die erste Rechnung mit einem gerundeten Dividenden und vergleiche die Stellenzahl."
+    "tipp": "Was bewirkt ein größerer Dividend, was ein größerer Divisor? Probiere 100 : 20, 120 : 20 und 100 : 25."
    }
   },
   {
    "id": "5.4.5-D6-F-01",
    "lernziel": "5.4.5-D6",
    "niveau": "F",
-   "afb": 2,
+   "afb": 1,
    "format": "zahl",
-   "text": "140 Äpfel werden gleichmäßig in 5 Kisten verteilt. Wie viele Äpfel kommen in jede Kiste?",
-   "loesung": 28,
-   "einheit": "Äpfel",
+   "text": "Herr Keller legt 24 Kekse in Dosen.\nIn jede Dose kommen 4 Kekse.\nWie viele Dosen werden voll?",
+   "loesung": 6,
+   "einheit": "Dosen",
    "typischeFehler": [
     {
-     "wert": 135,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 20,
+     "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "wert": 700,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 28,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 140 : 5."
+    "tipp": "Nimm 24 Wendeplättchen. Lege immer 4 Plättchen zusammen. Zähle die Häufchen.",
+    "beispiel": "24 Äpfel, immer 4 in eine Tüte: 24 : 4 = 6. Es werden 6 Tüten.",
+    "loesungsschritt": "Nutze die 4er-Reihe: 1 · 4 = 4, 2 · 4 = 8, … ▢ · 4 = 24."
    }
   },
   {
@@ -7214,24 +7366,34 @@
    "lernziel": "5.4.5-D6",
    "niveau": "F",
    "afb": 2,
-   "format": "zahl",
-   "text": "8 Freunde teilen sich die Kosten von 200 € für ein Geschenk gleichmäßig. Wie viel zahlt jeder?",
-   "loesung": 25,
-   "einheit": "€",
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "6 Kekse.\nImmer 2 kommen in eine Dose.\nWie viele Dosen sind es?\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 192,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "6 : 2",
+     "richtig": true
     },
     {
-     "wert": 1600,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "6 · 2",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "6 − 2",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "6 + 2",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 200 : 8."
+    "tipp": "Hier wird in gleiche Gruppen aufgeteilt. Dazu passt geteilt.",
+    "beispiel": "12 Kekse, immer 3 in eine Dose. Die Rechnung ist 12 : 3.",
+    "loesungsschritt": "Du legst immer 2 zusammen, bis alle 6 verteilt sind. Das ist Teilen."
    }
   },
   {
@@ -7239,49 +7401,55 @@
    "lernziel": "5.4.5-D6",
    "niveau": "F",
    "afb": 2,
-   "format": "zahl",
-   "text": "Ein Buch hat 66 Seiten. Samira möchte es in 6 Tagen lesen und jeden Tag gleich viele Seiten schaffen. Wie viele Seiten liest sie pro Tag?",
-   "loesung": 11,
-   "einheit": "Seiten",
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "Die Rechnung ist 10 : 2 = 5.\nWelche Geschichte passt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 60,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "Zu 10 Keksen kommen 2 Kekse dazu.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "wert": 396,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "10 Kekse werden an 2 Kinder gerecht verteilt.",
+     "richtig": true
+    },
+    {
+     "text": "Von 10 Keksen werden 2 gegessen.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "2 Kinder haben jedes 10 Kekse.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 66 : 6."
+    "tipp": "Geteilt bedeutet: gerecht verteilen.",
+    "beispiel": "10 : 2 = 5 passt zu: 10 Äpfel werden an 2 Kinder verteilt.",
+    "loesungsschritt": "Suche die Geschichte, in der etwas gerecht verteilt wird."
    }
   },
   {
    "id": "5.4.5-D6-F-04",
    "lernziel": "5.4.5-D6",
    "niveau": "F",
-   "afb": 2,
+   "afb": 1,
    "format": "zahl",
-   "text": "112 Stühle werden in Reihen zu je 8 Stühlen aufgestellt. Wie viele Reihen entstehen?",
-   "loesung": 14,
-   "einheit": "Reihen",
+   "text": "3 Kinder teilen 15 Äpfel gerecht.\nWie viele Äpfel bekommt 1 Kind?",
+   "loesung": 5,
+   "einheit": "Äpfel",
    "typischeFehler": [
     {
-     "wert": 104,
-     "fehlvorstellung": "sach-falsche-rechnung"
-    },
-    {
-     "wert": 896,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 12,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 112 : 8."
+    "tipp": "Zeichne 3 Kinder auf dein Schmierblatt. Verteile 15 Striche reihum.",
+    "beispiel": "3 Kinder teilen 15 Kekse: 15 : 3 = 5. Jedes Kind bekommt 5.",
+    "loesungsschritt": "Rechne 15 : 3. Frage dich: Wie oft passt die 3 in die 15?"
    }
   },
   {
@@ -7289,74 +7457,93 @@
    "lernziel": "5.4.5-D6",
    "niveau": "F",
    "afb": 2,
-   "format": "zahl",
-   "text": "Ein Radweg ist 208 km lang. Die Gruppe teilt ihn in 8 gleich lange Etappen. Wie lang ist eine Etappe?",
-   "loesung": 26,
-   "einheit": "km",
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "15 Kinder gehen in 5 gleich große Gruppen.\nLeo rechnet 15 : 5 = 3.\nWas bedeutet die 3?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 200,
+     "text": "Es fehlen 3 Kinder.",
+     "richtig": false
+    },
+    {
+     "text": "3 Kinder bleiben übrig.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-vergessen"
+    },
+    {
+     "text": "Es gibt 3 Gruppen.",
+     "richtig": false,
      "fehlvorstellung": "sach-falsche-rechnung"
     },
     {
-     "wert": 1664,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "In jeder Gruppe sind 3 Kinder.",
+     "richtig": true
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 208 : 8."
+    "tipp": "Lies noch einmal: Wie viele Gruppen gibt es? Was wurde ausgerechnet?",
+    "beispiel": "12 Kinder in 3 Gruppen: 12 : 3 = 4. In jeder Gruppe sind 4 Kinder.",
+    "loesungsschritt": "Die Zahl der Gruppen kennst du schon: 5. Die 3 sagt etwas über eine Gruppe."
    }
   },
   {
    "id": "5.4.5-D6-F-06",
    "lernziel": "5.4.5-D6",
    "niveau": "F",
-   "afb": 2,
-   "format": "zahl",
-   "text": "65 Flaschen werden in Kästen zu je 5 Flaschen gestellt. Wie viele Kästen werden voll?",
-   "loesung": 13,
-   "einheit": "Kästen",
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Sara hat 20 Bonbons für 5 Kinder.\nJedes Kind soll gleich viele bekommen.\nSara rechnet 20 − 5 = 15.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 60,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "Richtig.\nJedes Kind bekommt 15 Bonbons.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "wert": 325,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "Richtig.\nEs bleiben 15 Bonbons übrig.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "Falsch.\nSie muss teilen: 20 : 5 = 4.\nJedes Kind bekommt 4.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nSie muss mal rechnen: 20 · 5 = 100.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 65 : 5."
+    "tipp": "Gerecht verteilen heißt teilen. Lege es mit Wendeplättchen nach.",
+    "beispiel": "12 Bonbons für 3 Kinder: 12 : 3 = 4. Jedes Kind bekommt 4.",
+    "loesungsschritt": "Verteile 20 Plättchen reihum an 5 Plätze. Wie viele liegen an jedem Platz?"
    }
   },
   {
    "id": "5.4.5-D6-G-01",
    "lernziel": "5.4.5-D6",
    "niveau": "G",
-   "afb": 2,
+   "afb": 1,
    "format": "zahl",
-   "text": "Eine Fabrik verpackt 1351 Schrauben gleichmäßig in 7 Kartons. Wie viele Schrauben kommen in jeden Karton?",
-   "loesung": 193,
-   "einheit": "Schrauben",
+   "text": "Die Klasse kauft 8 Bälle.\nAlle kosten gleich viel.\nZusammen kosten sie 216 €.\nWie viel Euro kostet 1 Ball?",
+   "loesung": 27,
+   "einheit": "€",
    "typischeFehler": [
     {
-     "wert": 1344,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 208,
+     "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "wert": 9457,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 270,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 1351 : 7."
+    "tipp": "Der Preis wird gerecht auf 8 Bälle verteilt. Du musst teilen.",
+    "beispiel": "6 Springseile kosten 138 €. Zerlege: 120 : 6 = 20 und 18 : 6 = 3. Ein Seil kostet 23 €.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 8 in die 21? 2-mal, denn 2 · 8 = 16. Rechne 21 − 16 = 5. Hole die nächste Ziffer herunter."
    }
   },
   {
@@ -7364,24 +7551,34 @@
    "lernziel": "5.4.5-D6",
    "niveau": "G",
    "afb": 2,
-   "format": "zahl",
-   "text": "Eine Reise kostet für 12 Personen zusammen 1512 €. Alle zahlen gleich viel. Wie viel zahlt eine Person?",
-   "loesung": 126,
-   "einheit": "€",
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "7 Springseile kosten zusammen 133 €.\nAlle kosten gleich viel.\nGesucht ist der Preis für 1 Stück.\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 1500,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "133 : 7",
+     "richtig": true
     },
     {
-     "wert": 18144,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "7 : 133",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "text": "133 · 7",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "133 − 7",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 1512 : 12."
+    "tipp": "Der Gesamtpreis wird gerecht aufgeteilt.",
+    "beispiel": "4 Bälle kosten 48 €. Ein Ball kostet 48 : 4 = 12 €.",
+    "loesungsschritt": "Der Gesamtpreis 133 wird geteilt. Er steht vorn."
    }
   },
   {
@@ -7390,48 +7587,44 @@
    "niveau": "G",
    "afb": 2,
    "format": "zahl",
-   "text": "Ein Lkw fährt in 6 Tagen insgesamt 1110 km und jeden Tag gleich weit. Wie viele Kilometer fährt er an einem Tag?",
-   "loesung": 185,
-   "einheit": "km",
+   "text": "1 Woche hat 7 Tage.\nWie viele Wochen sind 161 Tage?",
+   "loesung": 23,
+   "einheit": "Wochen",
    "typischeFehler": [
     {
-     "wert": 1104,
-     "fehlvorstellung": "sach-falsche-rechnung"
-    },
-    {
-     "wert": 6660,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 154,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 1110 : 6."
+    "tipp": "Du bildest 7er-Gruppen aus den Tagen. Du musst teilen.",
+    "beispiel": "21 Tage sind 3 Wochen, denn 21 : 7 = 3.",
+    "loesungsschritt": "Rechne 161 : 7."
    }
   },
   {
    "id": "5.4.5-D6-G-04",
    "lernziel": "5.4.5-D6",
    "niveau": "G",
-   "afb": 2,
+   "afb": 1,
    "format": "zahl",
-   "text": "888 Flaschen werden in Kästen zu je 4 Flaschen gestellt. Wie viele Kästen werden voll?",
-   "loesung": 222,
-   "einheit": "Kästen",
+   "text": "Die Klasse kauft 8 Springseile.\nAlle kosten gleich viel.\nZusammen kosten sie 232 €.\nWie viel Euro kostet 1 Springseil?",
+   "loesung": 29,
+   "einheit": "€",
    "typischeFehler": [
     {
-     "wert": 884,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 224,
+     "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "wert": 3552,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "wert": 290,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 888 : 4."
+    "tipp": "Der Preis wird gerecht auf 8 Springseile verteilt. Du musst teilen.",
+    "beispiel": "6 Springseile kosten 138 €. Zerlege: 120 : 6 = 20 und 18 : 6 = 3. Ein Seil kostet 23 €.",
+    "loesungsschritt": "Beginne links. Wie oft passt die 8 in die 23? 2-mal, denn 2 · 8 = 16. Rechne 23 − 16 = 7. Hole die nächste Ziffer herunter."
    }
   },
   {
@@ -7439,78 +7632,92 @@
    "lernziel": "5.4.5-D6",
    "niveau": "G",
    "afb": 2,
-   "format": "zahl",
-   "text": "Ein Gärtner pflanzt 208 Salatköpfe in 4 gleich lange Reihen. Wie viele Salatköpfe stehen in einer Reihe?",
-   "loesung": 52,
-   "einheit": "Salatköpfe",
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "342 Flaschen stehen in 3 gleich vollen Regalen.\nMara rechnet 342 : 3 = 114.\nWas bedeutet die 114?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 204,
+     "text": "Es gibt 114 Regale.",
+     "richtig": false,
      "fehlvorstellung": "sach-falsche-rechnung"
     },
     {
-     "wert": 832,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "Es fehlen 114 Flaschen.",
+     "richtig": false
+    },
+    {
+     "text": "114 Flaschen bleiben übrig.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-vergessen"
+    },
+    {
+     "text": "In jedem Regal stehen 114 Flaschen.",
+     "richtig": true
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 208 : 4."
+    "tipp": "Lies noch einmal: Was ist gegeben? Was wurde ausgerechnet?",
+    "beispiel": "60 Flaschen in 5 Regalen: 60 : 5 = 12. In jedem Regal stehen 12 Flaschen.",
+    "loesungsschritt": "Die Zahl der Regale kennst du schon: 3. Die 114 sagt etwas über ein Regal."
    }
   },
   {
    "id": "5.4.5-D6-G-06",
    "lernziel": "5.4.5-D6",
    "niveau": "G",
-   "afb": 2,
-   "format": "zahl",
-   "text": "Eine Schule kauft 8 gleiche Tablets für zusammen 896 €. Wie viel kostet ein Tablet?",
-   "loesung": 112,
-   "einheit": "€",
-   "typischeFehler": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "8 Springseile kosten zusammen 120 €.\nFinn sagt: „1 Springseil kostet 112 €.“\nEr hat minus gerechnet.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 888,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "Falsch.\nEr muss mal rechnen: 120 · 8.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "wert": 7168,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "text": "Falsch.\nEr muss teilen: 120 : 8 = 15.\n1 Springseil kostet 15 €.",
+     "richtig": true
+    },
+    {
+     "text": "Richtig.\nEin Stück kostet fast so viel wie alle zusammen.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "Richtig.\n120 − 8 = 112.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
     }
    ],
    "hilfen": {
-    "tipp": "Hier wird gleichmäßig verteilt oder aufgeteilt. Das ist eine Division.",
-    "beispiel": "24 Äpfel in 4 Kisten: 24 : 4 = 6 Äpfel pro Kiste.",
-    "loesungsschritt": "Die Rechnung lautet 896 : 8."
+    "tipp": "Überlege: Kann ein Stück fast so viel kosten wie alle zusammen?",
+    "beispiel": "4 Bälle kosten 48 €. Ein Ball kostet 48 : 4 = 12 €. Nicht 48 − 4 = 44 €.",
+    "loesungsschritt": "Prüfe Finns Antwort: 8 mal 112 € wäre viel mehr als 120 €."
    }
   },
   {
    "id": "5.4.5-D6-M-01",
    "lernziel": "5.4.5-D6",
    "niveau": "M",
-   "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Eine Klassenfahrt kostet insgesamt 3389 €. Der Förderverein übernimmt 380 €. Den Rest teilen sich 17 Kinder gleichmäßig.",
-   "teile": [
+   "afb": 1,
+   "format": "zahl",
+   "text": "Ein Lkw legt in 21 Tagen 3045 km zurück, jeden Tag gleich viel. Wie viele Kilometer fährt er an einem Tag?",
+   "loesung": 145,
+   "einheit": "km",
+   "typischeFehler": [
     {
-     "format": "zahl",
-     "text": "Wie viel Euro müssen die Kinder zusammen bezahlen?",
-     "loesung": 3009,
-     "einheit": "€",
-     "typischeFehler": []
+     "wert": 1450,
+     "fehlvorstellung": "div-stellenwert"
     },
     {
-     "format": "zahl",
-     "text": "Wie viel Euro zahlt jedes Kind?",
-     "loesung": 177,
-     "einheit": "€",
-     "typischeFehler": []
+     "wert": 3024,
+     "fehlvorstellung": "sach-falsche-rechnung"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann den Rest gleichmäßig teilen.",
-    "beispiel": "500 € Kosten, 100 € übernimmt der Verein, 20 Kinder: 500 − 100 = 400, dann 400 : 20 = 20 € pro Kind.",
-    "loesungsschritt": "Für die erste Frage rechnest du 3389 − 380."
+    "tipp": "Hier wird gleichmäßig verteilt. Welche Rechenart passt?",
+    "loesungsschritt": "Rechne 3045 : 21."
    }
   },
   {
@@ -7519,27 +7726,26 @@
    "niveau": "M",
    "afb": 2,
    "format": "sachaufgabe",
-   "text": "Ein Bauer erntet 1472 kg Kartoffeln. 510 kg behält er selbst. Den Rest füllt er gleichmäßig in 26 Säcke.",
+   "text": "Eine Schule bekommt 3026 Hefte. 730 Hefte kommen ins Lager. Die übrigen werden gleichmäßig an 14 Klassen verteilt.",
    "teile": [
     {
      "format": "zahl",
-     "text": "Wie viele Kilogramm füllt er in Säcke?",
-     "loesung": 962,
-     "einheit": "kg",
+     "text": "Wie viele Hefte werden verteilt?",
+     "loesung": 2296,
+     "einheit": "Hefte",
      "typischeFehler": []
     },
     {
      "format": "zahl",
-     "text": "Wie viele Kilogramm kommen in jeden Sack?",
-     "loesung": 37,
-     "einheit": "kg",
+     "text": "Wie viele Hefte bekommt jede Klasse?",
+     "loesung": 164,
+     "einheit": "Hefte",
      "typischeFehler": []
     }
    ],
    "hilfen": {
-    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann den Rest gleichmäßig teilen.",
-    "beispiel": "500 € Kosten, 100 € übernimmt der Verein, 20 Kinder: 500 − 100 = 400, dann 400 : 20 = 20 € pro Kind.",
-    "loesungsschritt": "Für die erste Frage rechnest du 1472 − 510."
+    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann gleichmäßig teilen.",
+    "loesungsschritt": "Für die erste Frage rechnest du 3026 − 730."
    }
   },
   {
@@ -7547,57 +7753,57 @@
    "lernziel": "5.4.5-D6",
    "niveau": "M",
    "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Eine Schule bekommt 3904 Hefte geliefert. 460 Hefte kommen ins Lager. Die übrigen werden gleichmäßig auf 28 Klassen verteilt.",
-   "teile": [
+   "format": "auswahl",
+   "text": "Ein Bauer erntet 2516 kg Kartoffeln. 360 kg behält er selbst. Den Rest füllt er gleichmäßig in 22 Säcke. Wie viel Kilogramm sind in einem Sack? Welcher Rechenausdruck passt?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "format": "zahl",
-     "text": "Wie viele Hefte werden verteilt?",
-     "loesung": 3444,
-     "einheit": "Hefte",
-     "typischeFehler": []
+     "text": "2516 : 22 − 360",
+     "richtig": false,
+     "fehlvorstellung": "sach-falsche-rechnung"
     },
     {
-     "format": "zahl",
-     "text": "Wie viele Hefte bekommt jede Klasse?",
-     "loesung": 123,
-     "einheit": "Hefte",
-     "typischeFehler": []
+     "text": "(2516 − 360) : 22",
+     "richtig": true
+    },
+    {
+     "text": "(2516 + 360) : 22",
+     "richtig": false,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    },
+    {
+     "text": "2516 − 360 : 22",
+     "richtig": false,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann den Rest gleichmäßig teilen.",
-    "beispiel": "500 € Kosten, 100 € übernimmt der Verein, 20 Kinder: 500 − 100 = 400, dann 400 : 20 = 20 € pro Kind.",
-    "loesungsschritt": "Für die erste Frage rechnest du 3904 − 460."
+    "tipp": "Was muss zuerst berechnet werden? Das gehört in die Klammer.",
+    "loesungsschritt": "Erst wird abgezogen, dann wird das Ergebnis geteilt."
    }
   },
   {
    "id": "5.4.5-D6-M-04",
    "lernziel": "5.4.5-D6",
    "niveau": "M",
-   "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Eine Klassenfahrt kostet insgesamt 4134 €. Der Förderverein übernimmt 753 €. Den Rest teilen sich 23 Kinder gleichmäßig.",
-   "teile": [
+   "afb": 1,
+   "format": "zahl",
+   "text": "Ein Lkw legt in 22 Tagen 3080 km zurück, jeden Tag gleich viel. Wie viele Kilometer fährt er an einem Tag?",
+   "loesung": 140,
+   "einheit": "km",
+   "typischeFehler": [
     {
-     "format": "zahl",
-     "text": "Wie viel Euro müssen die Kinder zusammen bezahlen?",
-     "loesung": 3381,
-     "einheit": "€",
-     "typischeFehler": []
+     "wert": 1400,
+     "fehlvorstellung": "div-stellenwert"
     },
     {
-     "format": "zahl",
-     "text": "Wie viel Euro zahlt jedes Kind?",
-     "loesung": 147,
-     "einheit": "€",
-     "typischeFehler": []
+     "wert": 3058,
+     "fehlvorstellung": "sach-falsche-rechnung"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann den Rest gleichmäßig teilen.",
-    "beispiel": "500 € Kosten, 100 € übernimmt der Verein, 20 Kinder: 500 − 100 = 400, dann 400 : 20 = 20 € pro Kind.",
-    "loesungsschritt": "Für die erste Frage rechnest du 4134 − 753."
+    "tipp": "Hier wird gleichmäßig verteilt. Welche Rechenart passt?",
+    "loesungsschritt": "Rechne 3080 : 22."
    }
   },
   {
@@ -7605,174 +7811,155 @@
    "lernziel": "5.4.5-D6",
    "niveau": "M",
    "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Ein Bauer erntet 1785 kg Kartoffeln. 732 kg behält er selbst. Den Rest füllt er gleichmäßig in 13 Säcke.",
-   "teile": [
+   "format": "zahl",
+   "text": "In einer Fabrik werden 7920 Flaschen in Kästen zu je 24 Flaschen gepackt. Je 30 Kästen kommen auf eine Palette. Wie viele Paletten werden voll?",
+   "loesung": 11,
+   "einheit": "Paletten",
+   "typischeFehler": [
     {
-     "format": "zahl",
-     "text": "Wie viele Kilogramm füllt er in Säcke?",
-     "loesung": 1053,
-     "einheit": "kg",
-     "typischeFehler": []
-    },
-    {
-     "format": "zahl",
-     "text": "Wie viele Kilogramm kommen in jeden Sack?",
-     "loesung": 81,
-     "einheit": "kg",
-     "typischeFehler": []
+     "wert": 330,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann den Rest gleichmäßig teilen.",
-    "beispiel": "500 € Kosten, 100 € übernimmt der Verein, 20 Kinder: 500 − 100 = 400, dann 400 : 20 = 20 € pro Kind.",
-    "loesungsschritt": "Für die erste Frage rechnest du 1785 − 732."
+    "tipp": "Berechne zuerst die Zahl der Kästen, dann die Zahl der Paletten.",
+    "loesungsschritt": "Kästen: 7920 : 24 = 330."
    }
   },
   {
    "id": "5.4.5-D6-M-06",
    "lernziel": "5.4.5-D6",
    "niveau": "M",
-   "afb": 2,
-   "format": "sachaufgabe",
-   "text": "Eine Schule bekommt 3175 Hefte geliefert. 697 Hefte kommen ins Lager. Die übrigen werden gleichmäßig auf 21 Klassen verteilt.",
-   "teile": [
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Der Ausflug kostet für 21 Kinder zusammen 420 €. Mira sagt: „Wenn jedes Kind 18 € mitbringt, reicht das Geld.“ Beurteile ihre Aussage.",
+   "mehrfach": false,
+   "optionen": [
     {
-     "format": "zahl",
-     "text": "Wie viele Hefte werden verteilt?",
-     "loesung": 2478,
-     "einheit": "Hefte",
-     "typischeFehler": []
+     "text": "Falsch: Jedes Kind muss 21 € zahlen.",
+     "richtig": false,
+     "fehlvorstellung": "div-vertauscht"
     },
     {
-     "format": "zahl",
-     "text": "Wie viele Hefte bekommt jede Klasse?",
-     "loesung": 118,
-     "einheit": "Hefte",
-     "typischeFehler": []
+     "text": "Richtig: 420 : 18 ist mehr als 21.",
+     "richtig": false,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    },
+    {
+     "text": "Falsch: 21 · 18 € = 378 €, es fehlen 42 €. Nötig sind 20 € pro Kind.",
+     "richtig": true
+    },
+    {
+     "text": "Richtig: 18 € sind fast 20 €, das genügt.",
+     "richtig": false,
+     "fehlvorstellung": "div-rest-nicht-gedeutet"
     }
    ],
    "hilfen": {
-    "tipp": "Rechne Schritt für Schritt: erst abziehen, dann den Rest gleichmäßig teilen.",
-    "beispiel": "500 € Kosten, 100 € übernimmt der Verein, 20 Kinder: 500 − 100 = 400, dann 400 : 20 = 20 € pro Kind.",
-    "loesungsschritt": "Für die erste Frage rechnest du 3175 − 697."
+    "tipp": "Berechne, wie viel jedes Kind zahlen muss, oder wie viel bei Miras Vorschlag zusammenkommt.",
+    "loesungsschritt": "Rechne 420 : 21 oder 21 · 18."
    }
   },
   {
    "id": "5.4.5-D6-E-01",
    "lernziel": "5.4.5-D6",
    "niveau": "E",
-   "afb": 3,
+   "afb": 1,
    "format": "zahl",
-   "text": "Ein Obsthof erntet 32 Kisten mit je 18 kg Äpfeln. Die Äpfel werden in Säcke zu je 24 kg umgefüllt. Die Ernte dauert 9 Tage. Wie viele Säcke werden gefüllt?",
-   "loesung": 24,
-   "einheit": "Säcke",
+   "text": "Eine Reisegruppe aus 15 Personen zahlt zusammen 2160 € für eine Fahrt, die 9 Tage dauert. Alle zahlen gleich viel. Wie viel zahlt eine Person?",
+   "loesung": 144,
+   "einheit": "€",
    "typischeFehler": [
     {
-     "wert": 576,
-     "fehlvorstellung": "sach-schritt-vergessen"
+     "wert": 240,
+     "fehlvorstellung": "sach-unnoetige-angabe"
     },
     {
-     "wert": 64,
-     "fehlvorstellung": "sach-unnoetige-angabe"
+     "wert": 1440,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Gesamtmenge. Nicht jede Zahl im Text wird gebraucht.",
-    "beispiel": "10 Kisten mit je 30 kg, Säcke zu 20 kg: 10 · 30 = 300 kg, dann 300 : 20 = 15 Säcke.",
-    "loesungsschritt": "Berechne zuerst die Gesamtmenge: 32 · 18 = 576."
+    "tipp": "Welche Angaben brauchst du für die Frage, welche nicht?"
    }
   },
   {
    "id": "5.4.5-D6-E-02",
    "lernziel": "5.4.5-D6",
    "niveau": "E",
-   "afb": 3,
+   "afb": 2,
    "format": "zahl",
-   "text": "Eine Firma liefert 35 Paletten mit je 45 Dosen. Die Dosen werden in Kartons zu je 25 Dosen verpackt. Der Lkw fährt 6 km weit. Wie viele Kartons werden gebraucht?",
-   "loesung": 63,
+   "text": "Eine Firma liefert 27 Paletten mit je 25 Dosen. Die Dosen werden in Kartons zu je 15 Dosen verpackt. Der Lkw fährt 3 km weit. Wie viele Kartons werden gebraucht?",
+   "loesung": 45,
    "einheit": "Kartons",
    "typischeFehler": [
     {
-     "wert": 1575,
+     "wert": 675,
      "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 225,
+     "fehlvorstellung": "sach-unnoetige-angabe"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Gesamtmenge. Nicht jede Zahl im Text wird gebraucht.",
-    "beispiel": "10 Kisten mit je 30 kg, Säcke zu 20 kg: 10 · 30 = 300 kg, dann 300 : 20 = 15 Säcke.",
-    "loesungsschritt": "Berechne zuerst die Gesamtmenge: 35 · 45 = 1575."
+    "tipp": "Welche Gesamtmenge wird verteilt? Welche Zahl im Text spielt für die Frage keine Rolle?"
    }
   },
   {
    "id": "5.4.5-D6-E-03",
    "lernziel": "5.4.5-D6",
    "niveau": "E",
-   "afb": 3,
+   "afb": 2,
    "format": "zahl",
-   "text": "Für ein Schulfest werden 40 Packungen mit je 50 Bechern gekauft. Die Becher werden gleichmäßig auf 16 Stände verteilt. Das Fest beginnt um 13 Uhr. Wie viele Becher bekommt jeder Stand?",
-   "loesung": 125,
-   "einheit": "Becher",
-   "typischeFehler": [
-    {
-     "wert": 2000,
-     "fehlvorstellung": "sach-schritt-vergessen"
-    }
-   ],
+   "text": "360 Stühle sollen in gleich lange Reihen gestellt werden. Es sollen mehr als 30 und weniger als 40 Reihen sein, und kein Stuhl darf übrig bleiben. Wie viele Reihen sind es?",
+   "loesung": 36,
+   "einheit": "Reihen",
+   "typischeFehler": [],
    "hilfen": {
-    "tipp": "Berechne zuerst die Gesamtmenge. Nicht jede Zahl im Text wird gebraucht.",
-    "beispiel": "10 Kisten mit je 30 kg, Säcke zu 20 kg: 10 · 30 = 300 kg, dann 300 : 20 = 15 Säcke.",
-    "loesungsschritt": "Berechne zuerst die Gesamtmenge: 40 · 50 = 2000."
+    "tipp": "Welche Zahlen zwischen 30 und 40 teilen 360 ohne Rest? Teilbarkeitsregeln sparen Rechenarbeit."
    }
   },
   {
    "id": "5.4.5-D6-E-04",
    "lernziel": "5.4.5-D6",
    "niveau": "E",
-   "afb": 3,
+   "afb": 1,
    "format": "zahl",
-   "text": "Ein Obsthof erntet 30 Kisten mit je 24 kg Äpfeln. Die Äpfel werden in Säcke zu je 16 kg umgefüllt. Die Ernte dauert 3 Tage. Wie viele Säcke werden gefüllt?",
-   "loesung": 45,
-   "einheit": "Säcke",
+   "text": "Eine Reisegruppe aus 21 Personen zahlt zusammen 1218 € für eine Fahrt, die 5 Tage dauert. Alle zahlen gleich viel. Wie viel zahlt eine Person?",
+   "loesung": 58,
+   "einheit": "€",
    "typischeFehler": [
     {
-     "wert": 720,
-     "fehlvorstellung": "sach-schritt-vergessen"
-    },
-    {
-     "wert": 240,
-     "fehlvorstellung": "sach-unnoetige-angabe"
+     "wert": 580,
+     "fehlvorstellung": "div-stellenwert"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Gesamtmenge. Nicht jede Zahl im Text wird gebraucht.",
-    "beispiel": "10 Kisten mit je 30 kg, Säcke zu 20 kg: 10 · 30 = 300 kg, dann 300 : 20 = 15 Säcke.",
-    "loesungsschritt": "Berechne zuerst die Gesamtmenge: 30 · 24 = 720."
+    "tipp": "Welche Angaben brauchst du für die Frage, welche nicht?"
    }
   },
   {
    "id": "5.4.5-D6-E-05",
    "lernziel": "5.4.5-D6",
    "niveau": "E",
-   "afb": 3,
+   "afb": 2,
    "format": "zahl",
-   "text": "Eine Firma liefert 30 Paletten mit je 27 Dosen. Die Dosen werden in Kartons zu je 18 Dosen verpackt. Der Lkw fährt 3 km weit. Wie viele Kartons werden gebraucht?",
-   "loesung": 45,
-   "einheit": "Kartons",
+   "text": "Ein Betrag wird gleichmäßig auf 13 Personen verteilt. Jede müsste 48 € zahlen. Dann sagen 5 Personen ab. Wie viel zahlt nun jede der übrigen Personen?",
+   "loesung": 78,
+   "einheit": "€",
    "typischeFehler": [
     {
-     "wert": 810,
+     "wert": 48,
      "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
-     "wert": 270,
-     "fehlvorstellung": "sach-unnoetige-angabe"
+     "wert": 624,
+     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Gesamtmenge. Nicht jede Zahl im Text wird gebraucht.",
-    "beispiel": "10 Kisten mit je 30 kg, Säcke zu 20 kg: 10 · 30 = 300 kg, dann 300 : 20 = 15 Säcke.",
-    "loesungsschritt": "Berechne zuerst die Gesamtmenge: 30 · 27 = 810."
+    "tipp": "Welche Größe bleibt gleich, wenn Personen absagen?"
    }
   },
   {
@@ -7780,24 +7967,32 @@
    "lernziel": "5.4.5-D6",
    "niveau": "E",
    "afb": 3,
-   "format": "zahl",
-   "text": "Für ein Schulfest werden 42 Packungen mit je 20 Bechern gekauft. Die Becher werden gleichmäßig auf 12 Stände verteilt. Das Fest beginnt um 10 Uhr. Wie viele Becher bekommt jeder Stand?",
-   "loesung": 70,
-   "einheit": "Becher",
-   "typischeFehler": [
+   "format": "auswahl",
+   "text": "Eine Rechnung wird gleichmäßig auf eine Gruppe verteilt. Die Gruppe wird doppelt so groß. Welche Aussage gilt immer, egal wie hoch die Rechnung ist?",
+   "mehrfach": false,
+   "optionen": [
     {
-     "wert": 840,
-     "fehlvorstellung": "sach-schritt-vergessen"
+     "text": "Der Betrag pro Person bleibt gleich.",
+     "richtig": false,
+     "fehlvorstellung": "sach-falsche-rechnung"
     },
     {
-     "wert": 84,
-     "fehlvorstellung": "sach-unnoetige-angabe"
+     "text": "Jede Person zahlt nur noch die Hälfte.",
+     "richtig": true
+    },
+    {
+     "text": "Jede Person zahlt 2 € weniger.",
+     "richtig": false,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    },
+    {
+     "text": "Jede Person zahlt doppelt so viel.",
+     "richtig": false,
+     "fehlvorstellung": "sach-falsche-rechnung"
     }
    ],
    "hilfen": {
-    "tipp": "Berechne zuerst die Gesamtmenge. Nicht jede Zahl im Text wird gebraucht.",
-    "beispiel": "10 Kisten mit je 30 kg, Säcke zu 20 kg: 10 · 30 = 300 kg, dann 300 : 20 = 15 Säcke.",
-    "loesungsschritt": "Berechne zuerst die Gesamtmenge: 42 · 20 = 840."
+    "tipp": "Prüfe an zwei verschiedenen Beträgen. Was bleibt gleich, was ändert sich?"
    }
   },
   {

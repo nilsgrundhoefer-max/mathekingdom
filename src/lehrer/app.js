@@ -24,7 +24,7 @@ const jetzt = () => new Date().toISOString();
 const uhr = (d) => new Date(d).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
 const kl = () => z.daten.klassen[z.klasse];
 const name = (code) => kl().namen[code] ?? code;
-const ziel = (code) => kl().einst.zielniveaus[code] ?? 'G';
+const ziel = (code) => kl().einst.zielniveaus[code] ?? L.STANDARD_ZIELNIVEAU;
 const prozent = (x) => (x == null ? '–' : `${Math.round(x * 100)} %`);
 const chip = (n) => h('span', { class: 'chip', style: `background:${LINIENFARBE[n]}`, title: L.NIVEAU_NAMEN[n] }, n);
 const aufgabentext = (id) => z.index.aufgabe.get(id)?.text.replace(/\{\{\w+\}\}/g, '▢') ?? id;
@@ -451,7 +451,7 @@ function live() {
 }
 
 function zielWahl(code) {
-  return h('select', { 'data-ziel': code, 'aria-label': 'Zielniveau', onchange: (ev) => aendere((k) => { if (ev.target.value === 'G') delete k.einst.zielniveaus[code]; else k.einst.zielniveaus[code] = ev.target.value; }) },
+  return h('select', { 'data-ziel': code, 'aria-label': 'Zielniveau', onchange: (ev) => aendere((k) => { if (ev.target.value === L.STANDARD_ZIELNIVEAU) delete k.einst.zielniveaus[code]; else k.einst.zielniveaus[code] = ev.target.value; }) },
     L.NIVEAUS.map((n) => h('option', { value: n, selected: ziel(code) === n }, `${n} · ${L.NIVEAU_NAMEN[n]}`)));
 }
 function druckeEinzelbericht(code) {

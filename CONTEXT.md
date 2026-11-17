@@ -51,11 +51,11 @@ Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind b
 _Avoid_: Eingabe, Abgabe
 
 **Niveaustufe**:
-Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau).
+Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau). Die Stufen unterscheiden sich zuerst in der Art der Anforderung, erst danach in der Zahlengröße: F eine Handlung in einem Schritt, G ein Standardverfahren in einem Schritt, M mehrschrittig mit Übersetzen und Deuten, E Strukturen, Lücken und Behauptungen (siehe ADR 0009).
 _Avoid_: Schwierigkeit, Level, Sterne
 
 **Zielniveau**:
-Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard G, von der Lehrkraft pro Schüler anpassbar.
+Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard M, von der Lehrkraft pro Schüler anpassbar.
 _Avoid_: Leistungsstufe, Einstufung
 
 **Jahresplan**:
@@ -79,7 +79,7 @@ Ein Unterkapitel auf der Metrokarte. Sie gilt als erreicht, wenn der Schüler di
 _Avoid_: Level, Haltestelle
 
 **Lernziel**:
-Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen.
+Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III.
 _Avoid_: Kompetenz (allein), Ziel
 
 **Training**:
@@ -130,12 +130,24 @@ _Avoid_: Report, Ausdruck
 Die Regeln eines Unterkapitels in Kürze, mit einem vorgerechneten Beispiel und einem Hinweis fürs Heft. Jederzeit frei zugänglich, kostet keine Münzen und zählt nicht als Hilfekärtchen.
 _Avoid_: Regelheft, Spickzettel
 
+**Wortspeicher**:
+Die Wörter einer Station mit je einer Erklärung in einem Satz, neben der Aufgabe. Er zeigt nur die Wörter bis zur Niveaustufe der Aufgabe, ist auf F und G aufgeklappt und auf M und E zugeklappt. Kostet nichts.
+_Avoid_: Glossar, Vokabelliste
+
+**Einfache Sprache**:
+Die Schreibweise aller Aufgaben auf F und G: ein Gedanke pro Satz, keine Nebensätze, jeder Satz in einer eigenen Zeile, Alltagswörter, Zahlen als Ziffern, die Frage am Schluss.
+_Avoid_: Leichte Sprache (die trennt Wörter mit Bindestrich, das tun wir nicht)
+
+**Anforderungsbereich (AFB)**:
+Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge herstellen, III beurteilen und begründen. Er wird relativ zur Niveaustufe gelesen. Je Lernziel und Niveaustufe gibt es sechs Aufgaben in der Folge I, II, II, I, II, III.
+_Avoid_: Schwierigkeit
+
 **Etappe**:
 Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der geschafften Stationen und der nächsten Station. Sie steht oben auf der Startseite. Gesperrte Stationen zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Hilfekärtchen**:
-Eine von drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. Jede genutzte Stufe senkt die Punkte der Aufgabe.
+Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Jede genutzte Stufe senkt die Münzen der Aufgabe.
 _Avoid_: Joker, Hinweis
 
 **Hilferuf**:

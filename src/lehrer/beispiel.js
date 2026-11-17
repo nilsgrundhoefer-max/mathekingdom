@@ -15,7 +15,7 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
     namen[code] = name;
     const koennen = 0.35 + 0.6 * zufall();              // wie sicher der Schüler rechnet
     const ziel = koennen > 0.85 ? 'M' : koennen < 0.45 ? 'F' : 'G';
-    if (ziel !== 'G') zielniveaus[code] = ziel;
+    zielniveaus[code] = ziel; // ausdrücklich gesetzt, unabhängig vom Standard
     const stand = L.neuerSpeicherstand(code, '5a', new Date(jetzt - 40 * 60000).toISOString());
     let zeit = jetzt - 38 * 60000;
     const menge = 6 + Math.floor(zufall() * 16);

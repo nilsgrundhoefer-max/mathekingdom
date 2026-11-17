@@ -36,7 +36,7 @@ export function kennzahlen(stand, zielniveau, jetzt) {
     sterne: L.sterne(stand), muenzen: stand.muenzen, rang: L.rang(L.sterne(stand)).name,
     bearbeitet: v.length, geloest: geloest.length, quote: anteil(geloest.length, v.length),
     ersterVersuch: anteil(v.filter((x) => x.richtig && x.versuche === 1).length, v.length),
-    tipp: v.filter((x) => x.hilfen >= 1).length, beispiel: v.filter((x) => x.hilfen >= 2).length, loesungsschritt: v.filter((x) => x.hilfen >= 3).length,
+    tipp: v.filter((x) => L.hatKarte(x, 'tipp')).length, beispiel: v.filter((x) => L.hatKarte(x, 'beispiel')).length, loesungsschritt: v.filter((x) => L.hatKarte(x, 'loesungsschritt')).length,
     hilfekaertchen: v.reduce((s, x) => s + x.hilfen, 0),
     hilferufe: stand.hilferufe.length + (stand.hilferuf ? 1 : 0),
     zeitMedian: median(v.map((x) => x.dauer)),
@@ -83,7 +83,7 @@ export function pruefeStand(stand, zielniveau) {
 
 // ---------- Die Klasse ----------
 // staende: [{ code, stand }]; zielniveaus: code → Niveaustufe
-const zielVon = (zielniveaus, code) => zielniveaus?.[code] ?? 'G';
+const zielVon = (zielniveaus, code) => zielniveaus?.[code] ?? L.STANDARD_ZIELNIVEAU;
 
 export function lernzieleMitAufgaben(pool, index) {
   return pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele
@@ -167,7 +167,7 @@ export function klasseHaengt(staende, index, mindestens = 3) {
 export const SITZUNG_MINUTEN = 90;   // ältere Daten zählen nicht mehr zur laufenden Stunde
 export const BLOCKIERT_FEHLVERSUCHE = 3;
 export const BLOCKIERT_MINUTEN = 5;
-const KAERTCHEN = ['', 'Tipp gezogen', 'Tipp und Beispiel gezogen', 'alle drei Hilfekärtchen gezogen'];
+const KAERTCHEN = ['', '1 Hilfekärtchen gezogen', '2 Hilfekärtchen gezogen', '3 Hilfekärtchen gezogen'];
 
 // Ampel für die Live-Ansicht. status: hilfe | blockiert | beobachten | flow | arbeitet | inaktiv | fehlt
 export function livestatus(stand, zielniveau, jetzt) {

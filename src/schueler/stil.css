@@ -92,7 +92,7 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .aufgabenkopf { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; font-size: .88rem; color: var(--grau); }
 #mathekingdom .aufgabenkopf .linie { color: #fff; font-weight: 700; border-radius: 99px; padding: 2px 12px; }
 #mathekingdom .aufgabenkopf .ziel { flex: 1 1 200px; }
-#mathekingdom .aufgabentext { font-size: 1.3rem; line-height: 1.45; margin-bottom: 18px; max-width: 34em; }
+#mathekingdom .aufgabentext { font-size: 1.3rem; line-height: 1.45; margin-bottom: 18px; max-width: 34em; white-space: pre-line; }
 #mathekingdom .antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 #mathekingdom .zahlfeld { display: inline-flex; align-items: center; gap: 8px; }
 #mathekingdom .zahlfeld input { font-size: 1.3rem; width: 9ch; text-align: right; }
@@ -217,3 +217,11 @@ body { margin: 0; background: #f4f1ea; }
   #mathekingdom .metro .puls { animation: mk-puls 1.8s ease-in-out infinite; }
   @keyframes mk-puls { 50% { stroke-opacity: .15; } }
 }
+
+/* Wortspeicher */
+#mathekingdom .wortspeicher { background: #eef3fb; border: 1px solid #c3d0e6; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; font-size: .95rem; }
+#mathekingdom .wortspeicher summary { cursor: pointer; font-weight: 700; color: var(--nacht); padding: 12px 0; min-height: 44px; }
+#mathekingdom .wortspeicher dl { margin: 0 0 12px; display: grid; gap: 2px; }
+#mathekingdom .wortspeicher dt { font-weight: 700; margin-top: 6px; }
+#mathekingdom .wortspeicher dd { margin: 0; }
+#mathekingdom .option span { white-space: pre-line; }

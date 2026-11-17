@@ -172,6 +172,30 @@ export const merkzettel = {
   },
 };
 
+// Wortspeicher je Station: Wort, Erklärung in einfacher Sprache und die Niveaustufe, ab der das Wort verwendet wird.
+// Eine Aufgabe zeigt nur die Wörter bis zu ihrer eigenen Stufe. Die Aufgabentexte einer Stufe benutzen keine Wörter höherer Stufen.
+const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
+export const wortspeicher = {
+  '5.4.5': [
+    w('geteilt durch', 'F', 'So liest du das Zeichen : vor. 12 : 3 heißt: 12 geteilt durch 3.'),
+    w('teilen', 'F', 'Gerecht verteilen oder gleich große Gruppen bilden.'),
+    w('mal', 'F', 'So liest du das Zeichen · vor. Mal ist das Gegenteil von geteilt.'),
+    w('Ergebnis', 'F', 'Die Zahl hinter dem Zeichen =.'),
+    w('Probe', 'F', 'Du prüfst dein Ergebnis mit der Mal-Aufgabe. Zu 12 : 3 = 4 gehört 4 · 3 = 12.'),
+    w('Rest', 'F', 'Was beim Teilen übrig bleibt. 14 : 4 = 3 Rest 2.'),
+    w('Quotient', 'G', 'Das Ergebnis einer Geteilt-Aufgabe. Bei 12 : 3 = 4 ist 4 der Quotient.'),
+    w('Überschlag', 'G', 'Du rechnest mit runden Zahlen. So siehst du, wie groß das Ergebnis ungefähr ist.'),
+    w('schriftlich dividieren', 'G', 'Schritt für Schritt teilen: teilen, malnehmen, abziehen, nächste Ziffer herunterholen.'),
+    w('Dividend', 'M', 'Die Zahl, die geteilt wird. Bei 12 : 3 ist 12 der Dividend.'),
+    w('Divisor', 'M', 'Die Zahl, durch die geteilt wird. Bei 12 : 3 ist 3 der Divisor.'),
+    w('Umkehraufgabe', 'M', 'Die Rechnung, die eine andere rückgängig macht. Zur Division gehört die Multiplikation.'),
+    w('Term', 'E', 'Ein Rechenausdruck aus Zahlen, Rechenzeichen und Klammern, zum Beispiel (12 + 8) : 4.'),
+    w('Wert', 'E', 'Die Zahl, die herauskommt, wenn man einen Term ausrechnet.'),
+    w('teilbar', 'E', 'Eine Zahl ist durch 7 teilbar, wenn beim Dividieren durch 7 kein Rest bleibt.'),
+    w('Vielfaches', 'E', 'Die Vielfachen von 7 sind 7, 14, 21, 28 und so weiter.'),
+  ],
+};
+
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".
 export const kapitel = roh.map(([titel, unterkapitel], k) => {
   let nr = 0;
@@ -184,7 +208,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => {
       const lernziele = Array.isArray(u.lernziele)
         ? u.lernziele.map((text, i) => ({ id: `${id}-L${i + 1}`, text }))
         : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text }));
-      return { id, titel: u.titel, extra: u.extra, lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }) };
+      return { id, titel: u.titel, extra: u.extra, lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
     }),
   };
 });

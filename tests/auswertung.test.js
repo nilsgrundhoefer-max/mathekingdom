@@ -140,7 +140,7 @@ test('Live-Status: Hilferuf, blockiert, beobachten, im Flow, inaktiv, nicht da',
   // Tipp gezogen
   const gelb = mit((st) => { st.aktiv = { aufgabe: g[0].id, seit: '2026-11-17T10:29:00Z', fehlversuche: 1, hilfen: 1 }; });
   assert.equal(gelb.status, 'beobachten');
-  assert.match(gelb.kontext, /Tipp gezogen, 1 Fehlversuche/);
+  assert.match(gelb.kontext, /1 Hilfekärtchen gezogen, 1 Fehlversuche/);
   // Hilferuf geht vor
   const ruf = mit((st) => { L.rufeHilfe(st, g[0].id, '2026-11-17T10:27:00Z'); });
   assert.equal(ruf.status, 'hilfe');
@@ -171,7 +171,7 @@ test('Impulse: Lernbegleiter, Fehlerhäufung, Schnellläufer', () => {
   // Station Subtrahieren ganz abgeschlossen
   const fertig = neu('5A-FERT');
   for (const kurz of ['S1', 'S2', 'S3', 'S4', 'S5']) for (let i = 0; i < 3; i++) L.verbuche(fertig, aufgaben(`5.3.3-${kurz}`, 'G')[i], b(), 'G', '2026-11-17T10:15:00Z');
-  const lauf = A.schnelllaeufer([{ code: '5A-FERT', stand: fertig }, ...staende], pool, index, {}, JETZT);
+  const lauf = A.schnelllaeufer([{ code: '5A-FERT', stand: fertig }, ...staende], pool, index, { '5A-FERT': 'G' }, JETZT);
   assert.equal(lauf.length, 1);
   assert.deepEqual([lauf[0].code, lauf[0].station, lauf[0].naechstes], ['5A-FERT', '5.3.3', 'M']);
 });

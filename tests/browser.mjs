@@ -176,6 +176,65 @@ async function antworte(seite, richtig = true) {
   await seite.close();
 }
 
+// ---------- 1c. Niveaustufen: Hilfen, Wortspeicher und Sternregel je Stufe (Dividieren) ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.fill('#code', '5a-stuf');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('[data-kapitel="5.4"]');
+  await seite.waitForSelector('svg.metro');
+  assert.match(await seite.innerText('.unter'), /Linie M/); // Standard-Zielniveau ist M
+  const oeffne = async (linie, lernzielNr) => {
+    await seite.click('.station[aria-label="Station Dividieren"] .kapsel');
+    await seite.click(`.linienknopf[aria-label="Auf Linie ${linie} umsteigen"]`).catch(() => {});
+    await seite.locator('.lernziele li button').nth(lernzielNr).click();
+    await seite.waitForSelector('section.aufgabe');
+  };
+  const zurueck = async () => { await seite.click('.pfad button'); await seite.waitForSelector('svg.metro'); };
+  // F: drei Kärtchen, Wortspeicher offen und nur mit Alltagswörtern, jeder Satz in einer eigenen Zeile.
+  await oeffne('F', 5);
+  assert.equal(await seite.locator('[data-hilfe]').count(), 3);
+  assert.equal(await seite.locator('.wortspeicher dl').isVisible(), true);
+  assert.doesNotMatch(await seite.innerText('.wortspeicher'), /Quotient|Dividend/);
+  assert.ok((await seite.innerText('.aufgabentext')).includes('\n'));
+  await foto(seite, 'stufe-F');
+  await antworte(seite, false); await seite.waitForSelector('.hinweis');
+  await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig');
+  await seite.click('#weiter'); await seite.waitForSelector('#pruefen');
+  await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); // Auswahl mit mehrzeiligen Antworten
+  await seite.click('.ergebnis button:has-text("Zur Metrokarte")'); await seite.waitForSelector('svg.metro');
+  // G: drei Kärtchen, Wortspeicher mit Quotient. E: ein Kärtchen, Wortspeicher zugeklappt.
+  await oeffne('G', 1);
+  assert.equal(await seite.locator('[data-hilfe]').count(), 3);
+  assert.match(await seite.innerText('.wortspeicher'), /Quotient/);
+  await foto(seite, 'stufe-G');
+  await zurueck();
+  await oeffne('E', 1);
+  assert.equal(await seite.locator('[data-hilfe]').count(), 1);
+  assert.equal(await seite.locator('.wortspeicher dl').isVisible(), false);
+  await foto(seite, 'stufe-E');
+  await zurueck();
+  // M: zwei Kärtchen. Drei richtige in der Folge AFB I, II, II bringen den Stern.
+  await oeffne('M', 3);
+  assert.deepEqual(await seite.locator('[data-hilfe]').evaluateAll((k) => k.map((x) => x.dataset.hilfe)), ['tipp', 'loesungsschritt']);
+  await foto(seite, 'stufe-M');
+  const folge = [];
+  for (let i = 0; i < 3; i++) {
+    folge.push((await antworte(seite, true)).afb);
+    await seite.waitForSelector('.ergebnis.richtig');
+    if (i < 2) { await seite.click('#weiter, .vorschlag .schlicht'); await seite.waitForSelector('#pruefen'); }
+  }
+  assert.deepEqual(folge, [1, 2, 2]);
+  await seite.waitForSelector('.lohn.neu');
+  assert.equal(await seite.innerText('#sterne'), '1');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 2. Speichern im Ordner, Neuladen, falscher Ordner ----------
 {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
@@ -194,9 +253,16 @@ async function antworte(seite, richtig = true) {
   await antworte(seite, true);
   await seite.waitForSelector('.ergebnis.richtig');
   await seite.waitForFunction(() => document.getElementById('speicherstatus').textContent.startsWith('Gespeichert'));
+  // Der Status steht schon seit der Anmeldung auf "Gespeichert": auf den Versuch in der Datei warten.
   const gespeichert = await seite.evaluate(async () => {
     const ordner = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
-    return JSON.parse(await (await (await ordner.getFileHandle('5A-K4M2.json')).getFile()).text());
+    for (let i = 0; ; i++) {
+      try {
+        const stand = JSON.parse(await (await (await ordner.getFileHandle('5A-K4M2.json')).getFile()).text());
+        if (stand.versuche.length || i > 40) return stand;
+      } catch (e) { if (i > 40) throw e; }
+      await new Promise((r) => setTimeout(r, 100));
+    }
   });
   assert.equal(gespeichert.versuche.length, 1);
   assert.equal(gespeichert.code, '5A-K4M2');
@@ -382,7 +448,11 @@ async function antworte(seite, richtig = true) {
     let o = await navigator.storage.getDirectory();
     const teile = pfad.split('/');
     for (const t of teile.slice(0, -1)) o = await o.getDirectoryHandle(t);
-    return (await (await o.getFileHandle(teile.at(-1))).getFile()).text();
+    // Wird die Datei gerade geschrieben, scheitert das Lesen kurz: dann noch einmal versuchen.
+    for (let i = 0; ; i++) {
+      try { return await (await (await o.getFileHandle(teile.at(-1))).getFile()).text(); }
+      catch (e) { if (i >= 20) throw e; await new Promise((r) => setTimeout(r, 50)); }
+    }
   }, pfad);
   const schreibe = (pfad, text) => lehrer.evaluate(async ([pfad, text]) => {
     let o = await navigator.storage.getDirectory();

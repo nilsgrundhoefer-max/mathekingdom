@@ -33,10 +33,10 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 | `id` | Lernziel, Niveaustufe und laufende Nummer |
 | `lernziel` | Kennung des Lernziels, das die Aufgabe nachweist |
 | `niveau` | `F`, `G`, `M` oder `E` |
-| `afb` | Anforderungsbereich `1`, `2` oder `3`. Der Erzeuger setzt ihn nach einer Faustregel je Lernziel und Niveaustufe (Kopfrechnen und schriftliches Rechnen I; Klammern berechnen I, auf E II; geschickt und vorteilhaft rechnen, Gesetze erkennen wie Fachbegriffe; Rechenausdruck aufstellen wie Sachaufgaben; Fachbegriffe, Überschlag, Probe, Rest deuten auf F und G I, auf M und E II; Sachaufgaben II, auf E III). Eine Aufgabe kann davon abweichen. |
+| `afb` | Anforderungsbereich `1`, `2` oder `3`. Der Erzeuger setzt ihn nach einer Faustregel je Lernziel und Niveaustufe (Kopfrechnen und schriftliches Rechnen I; Klammern berechnen I, auf E II; geschickt und vorteilhaft rechnen, Gesetze erkennen wie Fachbegriffe; Rechenausdruck aufstellen wie Sachaufgaben; Fachbegriffe, Überschlag, Probe, Rest deuten auf F und G I, auf M und E II; Sachaufgaben II, auf E III). Eine Aufgabe kann davon abweichen. Für Lernziele nach ADR 0009 (bisher 5.4.5) gilt stattdessen die feste Folge I, II, II, I, II, III je Lernziel und Niveaustufe. |
 | `format` | Aufgabenformat, siehe unten |
 | `text` | Aufgabentext |
-| `hilfen` | die drei Hilfekärtchen `tipp`, `beispiel`, `loesungsschritt` |
+| `hilfen` | die Hilfekärtchen: auf F und G `tipp`, `beispiel`, `loesungsschritt`, auf M `tipp` und `loesungsschritt`, auf E nur `tipp` (ADR 0009; in Kapitel 3 vorerst noch überall alle drei) |
 
 ## Aufgabenformate
 
@@ -62,3 +62,7 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 - Jede Aufgabe hat alle drei Hilfekärtchen.
 - Ein typischer Fehler ist nie gleich der Lösung, und seine Fehlvorstellung steht im Katalog.
 - Reine Rechenaufgaben und die Rechnungen in Mehrfachauswahlen werden unabhängig nachgerechnet.
+
+## Wortspeicher
+
+Ein Unterkapitel kann `wortspeicher` tragen: eine Liste aus `{ wort, ab, erklaerung }`. `ab` ist die Niveaustufe, ab der das Wort gezeigt wird und in Aufgaben und Hilfekärtchen vorkommen darf. Zeilenumbrüche (`\n`) im Aufgabentext sind auf F und G gewollt: jeder Satz steht in einer eigenen Zeile.

@@ -20,7 +20,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 
 Die Startseite zeigt oben die Etappe: das Kapitel, an dem gerade gearbeitet wird, wie viele Stationen geschafft sind, und einen Knopf, der direkt zur nächsten Aufgabe führt. Auf der Metrokarte ist die Station markiert, an der es weitergeht. Jede Station hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Er ist frei und kostet keine Münzen.
 
-Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist G, und jeder Code mit passender Klasse wird angenommen. Sobald die Startdatei aus dem Lehrer-Dashboard stammt, ist eine gültig signierte Klassendatei Pflicht.
+Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code mit passender Klasse wird angenommen. Sobald die Startdatei aus dem Lehrer-Dashboard stammt, ist eine gültig signierte Klassendatei Pflicht.
 
 ## Lehrer-Dashboard ausprobieren
 

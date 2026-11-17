@@ -235,6 +235,17 @@ function merkzettel(station, halter) {
     m.heft && h('p', { class: 'heft' }, h('b', {}, 'Im Heft: '), m.heft));
 }
 
+// Wortspeicher der Station: nur die Wörter bis zur Niveaustufe der Aufgabe. Auf F und G ist er aufgeklappt.
+function wortspeicher(station, a) {
+  const stufe = L.NIVEAUS.indexOf(a.aufgabe.niveau);
+  const woerter = (station.wortspeicher ?? []).filter((w) => L.NIVEAUS.indexOf(w.ab) <= stufe);
+  if (woerter.length === 0) return null;
+  a.wortspeicherOffen ??= stufe <= 1;
+  return h('details', { class: 'wortspeicher', open: a.wortspeicherOffen, ontoggle: (e) => { a.wortspeicherOffen = e.target.open; } },
+    h('summary', {}, 'Wortspeicher'),
+    h('dl', {}, woerter.map((w) => [h('dt', {}, w.wort), h('dd', {}, w.erklaerung)])));
+}
+
 // ---------- Metrokarte ----------
 function metro() {
   const kapitel = z.pool.kapitel.find((k) => k.id === z.ansicht.kapitel);
@@ -268,7 +279,7 @@ function stationsTafel(kapitel, station, niveau) {
   return h('div', { class: 'karte tafel' },
     h('h2', {}, station.titel, status === 'erreicht' && h('span', { class: 'marke gut' }, 'Station erreicht')),
     h('ul', { class: 'lernziele' }, station.lernziele.filter((l) => z.index.lernzielMitAufgaben.has(l.id)).map((l) => {
-      const st = L.lernzielStand(z.stand, l.id, z.einst.zielniveau);
+      const st = L.lernzielStand(z.stand, l.id, z.einst.zielniveau, z.index);
       const erreicht = Boolean(z.stand.lernziele[l.id]);
       return h('li', { class: erreicht ? 'erreicht' : '' },
         stern(22, erreicht),
@@ -294,7 +305,7 @@ function aufgabenAnsicht() {
   const kapitelId = L.kapitelVon(auf.lernziel);
   const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
   const station = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
-  const st = L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau);
+  const st = L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index);
   const training = L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
   const fertig = Boolean(a.ergebnis);
   const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular); } },
@@ -384,7 +395,8 @@ function pruefe(formular) {
     return male();
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
-    hilfen: a.hilfen, dauer: Math.round((Date.now() - a.beginn) / 1000) }, z.einst.zielniveau, jetzt());
+    hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000) }, z.einst.zielniveau, jetzt(), z.index);
+  buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
   a.ergebnis = { ...buchung, richtig: ergebnis.richtig };
   geaendert();
@@ -426,7 +438,9 @@ function ergebnisTafel(a, kapitelId, station) {
     !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
     e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen',
       e.training && ' (Training unter deinem Zielniveau bringt weniger)'),
+    e.richtig && auf.afb === 3 && e.muenzen > 1 && h('p', { class: 'klein' }, 'Knobelaufgabe: Dafür gibt es die Hälfte mehr Münzen.'),
     e.neuesLernziel && h('p', { class: 'lohn neu' }, stern(26), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst einen Stern.'),
+    e.anspruchFehlt && h('p', { class: 'klein', id: 'anspruch' }, 'Für den Stern fehlt noch eine Aufgabe, bei der du mehr als nur rechnen musst.'),
     e.neuesLernziel && stationFertig && h('p', { class: 'lohn neu' }, h('b', {}, `Station „${station.titel}“ erreicht!`)),
     vorschlag && h('div', { class: 'vorschlag' },
       h('p', {}, vorschlag === 'hoch'
@@ -438,14 +452,17 @@ function ergebnisTafel(a, kapitelId, station) {
     h('button', { class: 'schlicht', onclick: () => zeige({ name: 'metro', kapitel: kapitelId, station: station.id }) }, 'Zur Metrokarte'));
 }
 
+const kartenVon = (auf) => L.KARTEN.filter((feld) => auf.hilfen[feld]);
 const stationVon = (auf) => z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.some((l) => l.id === auf.lernziel));
 function hilfen(a, station = stationVon(a.aufgabe)) {
+  // Je Niveaustufe gibt es unterschiedlich viele Kärtchen: F und G drei, M zwei, E eines.
   const karten = [
     ['tipp', 'Tipp', 'Ein Denkanstoß. Kostet einen Teil der Münzen.'],
     ['beispiel', 'Beispiel', 'Eine ähnliche Aufgabe, vorgerechnet. Kostet weitere Münzen.'],
-    ['loesungsschritt', 'Lösungsschritt', 'Der erste Schritt dieser Aufgabe. Danach zählt sie nicht mehr für dein Lernziel.'],
-  ];
+    ['loesungsschritt', 'Lösungsschritt', 'Der Anfang des Rechenwegs. Danach zählt die Aufgabe nicht mehr für dein Lernziel.'],
+  ].filter(([feld]) => a.aufgabe.hilfen[feld]);
   return h('aside', { class: 'hilfen' },
+    wortspeicher(station, a),
     merkzettel(station, a),
     h('h2', {}, 'Hilfekärtchen'),
     h('div', { class: 'kaertchen' }, karten.map(([feld, titel, kosten], i) => i < a.hilfen

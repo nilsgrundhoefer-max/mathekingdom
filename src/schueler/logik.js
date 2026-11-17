@@ -16,6 +16,14 @@ export const MINISPIEL_SEKUNDEN = 90;
 // Lernziel-Regel (Startwerte, später pro Klasse einstellbar).
 export const LERNZIEL_RICHTIGE = 3;
 export const LERNZIEL_AUF_ZIELNIVEAU = 2;
+// Anforderungsbereiche: Reihenfolge der sechs Aufgaben einer Gruppe, Mindestanspruch für den Stern, Zuschlag für AFB III.
+export const AFB_FOLGE = [1, 2, 2, 1, 2, 3];
+export const AFB_FUER_STERN = 2;
+export const AFB3_ZUSCHLAG = 1.5;
+export const STANDARD_ZIELNIVEAU = 'M';
+export const KARTEN = ['tipp', 'beispiel', 'loesungsschritt'];
+// Welche Hilfekärtchen bei einem Versuch aufgedeckt wurden. Alte Einträge kennen nur die Anzahl.
+export const hatKarte = (v, name) => (v.karten ? v.karten.includes(name) : (v.hilfen ?? 0) > KARTEN.indexOf(name));
 
 // ---------- Schülercode ----------
 export function leseCode(eingabe) {
@@ -61,7 +69,9 @@ export function indexiere(pool) {
   }
   const lernzielMitAufgaben = new Set(pool.aufgaben.map((a) => a.lernziel));
   const aufgabe = new Map(pool.aufgaben.map((a) => [a.id, a]));
-  return { nach, lernzielMitAufgaben, aufgabe };
+  // Lernziele, die auf jeder Niveaustufe Aufgaben aus AFB II oder III haben: Nur dort kann der Stern eine solche Aufgabe verlangen.
+  const mitAnspruch = new Set([...lernzielMitAufgaben].filter((l) => NIVEAUS.every((n) => (nach.get(`${l}|${n}`) ?? []).some((a) => a.afb >= AFB_FUER_STERN))));
+  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch };
 }
 
 // ---------- Antworten prüfen ----------
@@ -99,20 +109,25 @@ export function pruefeAntwort(aufgabe, eingabe) {
 }
 
 // ---------- Lernziele ----------
-const zaehlt = (v) => v.richtig && v.hilfen < 3; // mit Lösungsschritt-Kärtchen gelöst zählt nicht
-export function lernzielStand(stand, lernzielId, zielniveau) {
+const zaehlt = (v) => v.richtig && !hatKarte(v, 'loesungsschritt'); // mit Lösungsschritt-Kärtchen gelöst zählt nicht
+// Mit `index` gilt zusätzlich: Mindestens eine der richtigen Aufgaben stammt aus AFB II oder III,
+// sofern das Lernziel solche Aufgaben hat. Ohne `index` (reine Anzeige) wird das nicht geprüft.
+export function lernzielStand(stand, lernzielId, zielniveau, index = null) {
   const ziel = NIVEAUS.indexOf(zielniveau);
   const alle = new Set(), aufZiel = new Set();
+  let anspruch = !index?.mitAnspruch.has(lernzielId);
   for (const v of stand.versuche) {
     if (v.lernziel !== lernzielId || !zaehlt(v)) continue;
     alle.add(v.aufgabe);
     if (NIVEAUS.indexOf(v.niveau) >= ziel) aufZiel.add(v.aufgabe);
+    if ((v.afb ?? index?.aufgabe.get(v.aufgabe)?.afb ?? AFB_FUER_STERN) >= AFB_FUER_STERN) anspruch = true;
   }
-  // Fortschritt für die Anzeige: höchstens eine Trainingsaufgabe zählt mit.
-  const fortschritt = Math.min(LERNZIEL_RICHTIGE, aufZiel.size + Math.min(alle.size - aufZiel.size, LERNZIEL_RICHTIGE - LERNZIEL_AUF_ZIELNIVEAU));
+  const genug = alle.size >= LERNZIEL_RICHTIGE && aufZiel.size >= LERNZIEL_AUF_ZIELNIVEAU;
+  // Fortschritt für die Anzeige: höchstens eine Trainingsaufgabe zählt mit. Fehlt nur noch der Anspruch, bleibt ein Punkt offen.
+  const punkte = Math.min(LERNZIEL_RICHTIGE, aufZiel.size + Math.min(alle.size - aufZiel.size, LERNZIEL_RICHTIGE - LERNZIEL_AUF_ZIELNIVEAU));
   return {
-    richtige: alle.size, aufZiel: aufZiel.size, fortschritt,
-    erreicht: alle.size >= LERNZIEL_RICHTIGE && aufZiel.size >= LERNZIEL_AUF_ZIELNIVEAU,
+    richtige: alle.size, aufZiel: aufZiel.size, fortschritt: genug && !anspruch ? LERNZIEL_RICHTIGE - 1 : punkte,
+    erreicht: genug && anspruch, anspruchFehlt: genug && !anspruch,
   };
 }
 export function stationStatus(index, stand, unterkapitel) {
@@ -155,7 +170,10 @@ export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.
     kandidaten.filter((a) => bearbeitet.has(a.id) && !geloest.has(a.id)),
     kandidaten,
   ];
-  for (const stufe of stufen) {
+  // Unter den neuen Aufgaben zuerst den Anforderungsbereich, der in der Folge I, II, II, I, II, III an der Reihe ist.
+  const wunsch = AFB_FOLGE[kandidaten.filter((a) => bearbeitet.has(a.id)).length];
+  const passend = stufen[0].filter((a) => a.afb === wunsch);
+  for (const stufe of [passend, ...stufen]) {
     const ohneLetzte = stufe.filter((a) => a.id !== letzte);
     const auswahl = ohneLetzte.length ? ohneLetzte : stufe;
     if (auswahl.length) return auswahl[Math.floor(zufall() * auswahl.length)];
@@ -167,8 +185,9 @@ export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.
 export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
   if (!bearbeitung.geloest) return 0;
   if (stand.versuche.some((v) => v.aufgabe === aufgabe.id && v.richtig)) return 1; // Wiederholung
-  if (bearbeitung.hilfen >= 3) return 1;
+  if (hatKarte(bearbeitung, 'loesungsschritt')) return 1;
   let m = MUENZEN_BASIS[aufgabe.niveau];
+  if (aufgabe.afb === 3) m *= AFB3_ZUSCHLAG; // Aufgaben zum Beurteilen und Begründen bringen die Hälfte mehr
   if (NIVEAUS.indexOf(aufgabe.niveau) < NIVEAUS.indexOf(zielniveau)) m /= 2; // Training
   if (bearbeitung.versuche > 1) m *= 0.6;
   m *= 1 - 0.2 * bearbeitung.hilfen;
@@ -176,17 +195,19 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 }
 
 // ---------- Bearbeitung verbuchen ----------
-// bearbeitung: { geloest, versuche, eingaben, fehlvorstellungen, hilfen, dauer }
-export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt) {
+// bearbeitung: { geloest, versuche, eingaben, fehlvorstellungen, hilfen, karten, dauer }
+// Mit `index` verlangt der Stern auch eine Aufgabe aus AFB II oder III (siehe lernzielStand).
+export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null) {
   const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
   stand.versuche.push({
     t: jetzt, aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, niveau: aufgabe.niveau,
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
+    ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
   });
   stand.muenzen += muenzen;
   let neuesLernziel = false;
-  if (!stand.lernziele[aufgabe.lernziel] && lernzielStand(stand, aufgabe.lernziel, zielniveau).erreicht) {
+  if (!stand.lernziele[aufgabe.lernziel] && lernzielStand(stand, aufgabe.lernziel, zielniveau, index).erreicht) {
     stand.lernziele[aufgabe.lernziel] = { erreichtAm: jetzt };
     neuesLernziel = true;
   }
@@ -282,7 +303,7 @@ export function einstellungen(klassendatei, code, pool) {
   const kapitelIds = pool.kapitel.map((x) => x.id);
   const bis = k.aktuellesKapitel ? kapitelIds.indexOf(k.aktuellesKapitel) : kapitelIds.length - 1;
   return {
-    zielniveau: k.zielniveaus?.[code] ?? 'G',
+    zielniveau: k.zielniveaus?.[code] ?? STANDARD_ZIELNIVEAU,
     aktuellesKapitel: k.aktuellesKapitel ?? null,
     offeneKapitel: new Set(kapitelIds.slice(0, bis + 1)),
     spielpause: Boolean(k.spielpause),
