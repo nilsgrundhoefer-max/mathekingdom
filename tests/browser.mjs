@@ -59,7 +59,7 @@ async function antworte(seite, richtig = true) {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 800 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await foto(seite, 'anmeldung');
   await seite.fill('#code', 'quatsch');
   await seite.click('#demo');
@@ -123,7 +123,7 @@ async function antworte(seite, richtig = true) {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-form');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
@@ -183,7 +183,7 @@ async function antworte(seite, richtig = true) {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-stuf');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
@@ -242,7 +242,7 @@ async function antworte(seite, richtig = true) {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
   const seite = await kontext.newPage();
   await seite.addInitScript(ordnerErsatz('5a'));
-  await seite.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await seite.goto(`${basis}dist/Mathekingdom-ohne-Netz.html`);
   await seite.fill('#code', '5B-AAAA');
   await seite.click('#ordner');
   await seite.waitForSelector('.fehler');
@@ -329,7 +329,7 @@ async function antworte(seite, richtig = true) {
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
   await seite.addInitScript(() => { window.print = () => { window.gedruckt = (window.gedruckt ?? 0) + 1; }; });
-  await seite.goto(new URL('dist/Lehrer-Dashboard.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-Lehrer-ohne-Netz.html', wurzel).href);
   await foto(seite, 'lehrer-start');
   await seite.click('#beispiel');
   await seite.waitForSelector('.schlange li');
@@ -439,7 +439,7 @@ async function antworte(seite, richtig = true) {
     let wahl = 0;
     window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle(wahl++ === 0 ? 'lehrer' : '5a', { create: true });
   });
-  await lehrer.goto(`${basis}dist/Lehrer-Dashboard.html`);
+  await lehrer.goto(`${basis}dist/Mathekingdom-Lehrer-ohne-Netz.html`);
   await lehrer.click('#lehrerordner');
   await lehrer.fill('#neue-klasse', '5a');
   await lehrer.click('#klasse-anlegen');
@@ -500,7 +500,7 @@ async function antworte(seite, richtig = true) {
   const schueler = await kontext.newPage();
   schueler.on('pageerror', (e) => fehler.push(`Schüler: ${e.message}`));
   await schueler.addInitScript(`${ordnerErsatz('5a')}; window.MK_SCHLUESSEL = ${JSON.stringify(lehrerdaten.schluessel.oeffentlich)};`);
-  await schueler.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await schueler.goto(`${basis}dist/Mathekingdom-ohne-Netz.html`);
   await schueler.fill('#code', '5A-ZZZZ');
   await schueler.click('#ordner');
   await schueler.waitForSelector('.fehler');
@@ -586,7 +586,7 @@ async function antworte(seite, richtig = true) {
 
   // Ohne offenes Lehrer-Dashboard: Das Schüler-Dashboard lehnt die gefälschte Datei ab.
   await lehrer.goto('about:blank');
-  await schueler.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await schueler.goto(`${basis}dist/Mathekingdom-ohne-Netz.html`);
   await schueler.evaluate(async (text) => {
     const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
     const strom = await (await o.getFileHandle('klassendatei.json')).createWritable();
@@ -598,6 +598,55 @@ async function antworte(seite, richtig = true) {
   assert.match(await schueler.innerText('.fehler'), /Klassendatei/);
   assert.deepEqual(fehler, []);
   await kontext.close();
+}
+
+// ---------- 7. Startdatei der Lehrkraft: online laden, Kopie ablegen, ohne Netz aus der Kopie starten ----------
+{
+  const kontext = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+  const fehler = [];
+  const paket = readFileSync(new URL('dist/lehrer-paket.js', wurzel), 'utf8');
+  let netz = true;
+  await kontext.route(/github\.io/, (r) => {
+    if (!netz) return r.abort();
+    if (r.request().url().endsWith('dist/lehrer-paket.js')) return r.fulfill({ body: paket, contentType: 'text/javascript', headers: { 'access-control-allow-origin': '*' } });
+    return r.abort();
+  });
+  await kontext.addInitScript(ordnerErsatz('lehrer'));
+  const seite = await kontext.newPage();
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(`${basis}dist/Mathekingdom-Lehrer.html`);
+  await seite.waitForSelector('#lehrerordner');
+  const version = readFileSync(new URL('VERSIONEN.md', wurzel), 'utf8').match(/^## (\d+\.\d+)/m)[1];
+  assert.match(await seite.innerText('#version'), new RegExp(`^Version ${version.replace('.', '\\.')} vom \\d\\d\\.\\d\\d\\.\\d{4}$`));
+  await seite.click('#version');
+  assert.ok(await seite.locator('.mk-version-tafel li').count() > 0);
+  await foto(seite, 'lehrer-version');
+  await seite.click('#lehrerordner');
+  await seite.waitForSelector('#neue-klasse');
+  const kopie = await seite.evaluate(async () => {
+    const o = await (await (await navigator.storage.getDirectory()).getDirectoryHandle('lehrer')).getDirectoryHandle('_mathekingdom');
+    return (await (await o.getFileHandle('lehrer-paket.js')).getFile()).size;
+  });
+  assert.equal(kopie, Buffer.byteLength(paket));
+
+  // Ohne Netz: Ordner wählen, die Kopie startet und öffnet gleich die Klassenübersicht.
+  netz = false;
+  await seite.reload();
+  await seite.waitForSelector('#mk-lehrerordner', { timeout: 15000 });
+  await foto(seite, 'lehrer-startdatei-ohne-netz');
+  await seite.click('#mk-lehrerordner');
+  await seite.waitForSelector('#neue-klasse');
+  assert.match(await seite.innerText('#version'), /Kopie vom Lehrerlaufwerk/);
+  assert.deepEqual(fehler, []);
+  await kontext.close();
+}
+
+// ---------- 8. Versionsanzeige im Schüler-Dashboard ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 800 } });
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  assert.match(await seite.innerText('#version'), /^Version \d+\.\d+ vom .*\(Datei ohne Netz/);
+  await seite.close();
 }
 
 await browser.close();

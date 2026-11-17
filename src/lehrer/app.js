@@ -8,6 +8,7 @@ import * as K from '../gemeinsam/krypto.js';
 import { xlsx } from './xlsx.js';
 import { beispielklasse } from './beispiel.js';
 import { ROUTE_FARBE } from '../schueler/bilder.js';
+import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 
 const LEHRERDATEN = 'lehrerdaten.json';
 const CODE_DATEI = /^(\d{1,2}[A-Z]-[A-Z0-9]{4})\.json$/;
@@ -89,6 +90,8 @@ async function oeffneLehrer(ablage) {
   const text = await ablage.lies(LEHRERDATEN);
   z.daten = text ? JSON.parse(text) : { version: 1, schluessel: await K.erzeugeSchluessel(), klassen: {} };
   if (!text) await speichereDaten();
+  // Kopie des gerade geladenen Dashboards für Tage ohne Internet (ADR 0011).
+  if (window.MK_LEHRER_PAKET && !ablage.demo) await ablage.schreibe(`${S.SYSTEMORDNER}/lehrer-paket.js`, window.MK_LEHRER_PAKET).catch(() => {});
   z.ansicht = 'klassen'; z.fehler = null; male();
 }
 
@@ -224,6 +227,7 @@ function male() {
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
     h('main', {}, ansichten[z.ansicht]()),
     z.ansicht === 'klasse' && z.overlay && kl().namen[z.overlay] && overlay(),
+    versionsHinweis('lehrkraft'),
   ].filter(Boolean));
   if (gerollt) { const o = wurzel.querySelector('.overlay-inhalt'); if (o) o.scrollTop = gerollt; }
 }
@@ -818,6 +822,9 @@ function sicherung() {
 // ---------- Start ----------
 if (typeof document !== 'undefined') {
   wurzel = document.getElementById('mathekingdom-lehrer') ?? document.body.appendChild(h('div', { id: 'mathekingdom-lehrer' }));
-  document.head.append(h('style', {}, stil));
-  male();
+  document.head.append(h('style', {}, stil + VERSION_STIL));
+  // Kam das Dashboard als Kopie vom Lehrerlaufwerk, ist der Ordner schon gewählt.
+  if (window.MK_LEHRER_ORDNER) merke('lehrer', window.MK_LEHRER_ORDNER).then(() => oeffneLehrer(S.ordnerAblage(window.MK_LEHRER_ORDNER)))
+    .catch((e) => { z.fehler = e.message; male(); });
+  else male();
 }

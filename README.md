@@ -13,7 +13,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 
 ## Schüler-Dashboard ausprobieren
 
-`dist/Schueler-Dashboard-komplett.html` herunterladen und in Edge oder Chrome öffnen. Einen Schülercode wie `5A-K4M2` eingeben. Die PIN wird nur verlangt, wenn die Klasse im Lehrer-Dashboard eingerichtet ist.
+`dist/Mathekingdom-ohne-Netz.html` herunterladen und in Edge oder Chrome öffnen. Einen Schülercode wie `5A-K4M2` eingeben. Die PIN wird nur verlangt, wenn die Klasse im Lehrer-Dashboard eingerichtet ist.
 
 - **Ohne Ordner ausprobieren** speichert nur im Browser.
 - **Klassenordner wählen** speichert wie im Unterricht: Der Ordner muss wie die Klasse heißen (`5a`). Darin entsteht der Speicherstand `5A-K4M2.json`.
@@ -24,7 +24,7 @@ Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code 
 
 ## Lehrer-Dashboard ausprobieren
 
-`dist/Lehrer-Dashboard.html` herunterladen und in Edge oder Chrome öffnen.
+`dist/Mathekingdom-Lehrer-ohne-Netz.html` herunterladen und in Edge oder Chrome öffnen. Für den Unterricht gehört stattdessen `dist/Mathekingdom-Lehrer.html` auf den Lehrer-PC: Diese Startdatei lädt bei jedem Öffnen die neueste Version und legt eine Kopie auf das Lehrerlaufwerk.
 
 - **Mit einer Beispielklasse ausprobieren** zeigt alle Ansichten mit 14 erfundenen Schülern. Nichts wird gespeichert.
 - **Ordner auf dem Lehrerlaufwerk wählen** richtet den echten Betrieb ein: Dort entstehen `lehrerdaten.json` (Namenslisten, Notizen, Schlüssel) und der Ordner `backup/`. Danach eine Klasse anlegen, ihren Klassenordner wählen, Namen eintragen, Codes und PINs erzeugen, Code-Kärtchen drucken und die Startdatei für die Schülerlaufwerke herunterladen.
@@ -46,13 +46,17 @@ Noch nicht gebaut: Schuljahreswechsel, weitere Berichte.
 
 | Wo | Was |
 |---|---|
-| Lehrer-PC | `Lehrer-Dashboard.html` |
-| Lehrerlaufwerk | `lehrerdaten.json`, `backup/<Klasse>/<Zeitpunkt>/` |
+| Lehrer-PC | `Mathekingdom-Lehrer.html` (Startdatei der Lehrkraft, einmal aus `dist/` herunterladen) |
+| Lehrerlaufwerk | `lehrerdaten.json`, `backup/<Klasse>/<Zeitpunkt>/`, `_mathekingdom/lehrer-paket.js` (Kopie des Lehrer-Dashboards für Tage ohne Internet) |
 | Schülerlaufwerk | `Mathekingdom.html` (Startdatei aus dem Lehrer-Dashboard, enthält den öffentlichen Schlüssel der Lehrkraft) |
 | Klassenordner `5a/` | `5A-K4M2.json` (ein Speicherstand pro Schüler), `klassendatei.json` |
 | Klassenordner `5a/_mathekingdom/` | `schueler-dashboard.js`, `klasse-5.json`: Kopien für den Fall, dass das Internet fehlt |
 
-Die Startdatei lädt das Dashboard von GitHub Pages. Dafür muss Pages für dieses Repository eingeschaltet sein; die Adresse steht in `tools/baue.mjs`.
+Beide Startdateien laden ihr Dashboard von GitHub Pages (ADR 0005 und 0011). Dafür muss das Repository öffentlich und Pages für den Branch `main` eingeschaltet sein; die Adresse steht in `tools/baue.mjs`.
+
+## Versionen
+
+Beide Dashboards tragen dieselbe Versionsnummer und zeigen sie unten rechts an; ein Klick zeigt die Neuerungen. Das Versionslog steht in [VERSIONEN.md](VERSIONEN.md). Für eine neue Version oben einen Eintrag ergänzen, `npm run build` ausführen und per Pull Request nach `main` bringen. Mit dem Zusammenführen ist die Version veröffentlicht.
 
 ## Entwickeln
 

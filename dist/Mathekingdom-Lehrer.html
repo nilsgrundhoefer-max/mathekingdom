@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathekingdom Lehrer</title>
+</head>
+<body>
+<div id="mathekingdom-lehrer"></div>
+<script>
+(function () {
+  var BASIS = "https://nilsgrundhoefer-max.github.io/mathekingdom/";
+  var ziel = document.getElementById('mathekingdom-lehrer');
+  var KASTEN = 'font:16px Segoe UI,system-ui,sans-serif;max-width:480px;margin:12vh auto;padding:0 16px;text-align:center;color:#1f2533';
+  var KNOPF = 'font:inherit;padding:11px 16px;border-radius:10px;border:0;background:#1d2b4f;color:#fff;cursor:pointer;margin:4px';
+  function starte(code, quelle, ordner) {
+    window.MK_QUELLE = quelle;
+    if (ordner) window.MK_LEHRER_ORDNER = ordner;
+    ziel.innerHTML = '';
+    var skript = document.createElement('script');
+    skript.textContent = code;
+    document.body.appendChild(skript);
+  }
+  function ausKopie(ordner) {
+    return ordner.getDirectoryHandle('_mathekingdom').then(function (system) { return system.getFileHandle('lehrer-paket.js'); })
+      .then(function (datei) { return datei.getFile(); }).then(function (datei) { return datei.text(); })
+      .then(function (code) { starte(code, 'kopie-lehrer', ordner); });
+  }
+  function gemerkt() {
+    return new Promise(function (ok) {
+      try {
+        var r = indexedDB.open('mathekingdom-lehrer', 1);
+        r.onupgradeneeded = function () { r.result.createObjectStore('ordner'); };
+        r.onerror = function () { ok(null); };
+        r.onsuccess = function () {
+          try { var g = r.result.transaction('ordner').objectStore('ordner').get('lehrer'); g.onsuccess = function () { ok(g.result || null); }; g.onerror = function () { ok(null); }; }
+          catch (e) { ok(null); }
+        };
+      } catch (e) { ok(null); }
+    });
+  }
+  function ohneNetz() {
+    ziel.innerHTML = '<div style="' + KASTEN + '"><h1 style="color:#1d2b4f">Mathekingdom Lehrer</h1>'
+      + '<p>GitHub ist gerade nicht erreichbar. Wähle deinen Ordner auf dem Lehrerlaufwerk, dann startet die dort gesicherte Kopie.</p>'
+      + '<p id="mk-weiter"></p><button id="mk-lehrerordner" style="' + KNOPF + '">Ordner auf dem Lehrerlaufwerk wählen</button>'
+      + '<p id="mk-fehler" style="color:#b3372f;font-weight:600"></p></div>';
+    var fehler = function (e) {
+      if (e && e.name === 'AbortError') return;
+      document.getElementById('mk-fehler').textContent = 'In diesem Ordner liegt noch keine Kopie. Öffne das Dashboard einmal mit Internet, dann wird sie angelegt.';
+    };
+    gemerkt().then(function (handle) {
+      if (!handle) return;
+      var b = document.createElement('button');
+      b.id = 'mk-weiter-knopf'; b.style.cssText = KNOPF; b.textContent = 'Weiter mit Ordner „' + handle.name + '“';
+      b.onclick = function () {
+        handle.requestPermission({ mode: 'readwrite' }).then(function (r) { if (r === 'granted') return ausKopie(handle); }).catch(fehler);
+      };
+      document.getElementById('mk-weiter').appendChild(b);
+    });
+    document.getElementById('mk-lehrerordner').onclick = function () {
+      if (!window.showDirectoryPicker) { document.getElementById('mk-fehler').textContent = 'Öffne diese Datei bitte mit Edge oder Chrome.'; return; }
+      window.showDirectoryPicker({ id: 'mathekingdom-lehrer', mode: 'readwrite' }).then(ausKopie).catch(fehler);
+    };
+  }
+  ziel.innerHTML = '<p style="' + KASTEN + '">Mathekingdom wird geladen …</p>';
+  var abbruch = new AbortController();
+  var uhr = setTimeout(function () { abbruch.abort(); }, 10000);
+  fetch(BASIS + 'dist/lehrer-paket.js', { cache: 'no-cache', signal: abbruch.signal })
+    .then(function (antwort) { if (!antwort.ok) throw new Error(antwort.status); return antwort.text(); })
+    .then(function (code) { clearTimeout(uhr); window.MK_LEHRER_PAKET = code; starte(code, 'online'); })
+    .catch(function () { clearTimeout(uhr); ohneNetz(); });
+})();
+</script>
+</body>
+</html>

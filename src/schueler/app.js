@@ -1,5 +1,6 @@
 // Schüler-Dashboard: Oberfläche. Die Regeln stehen in logik.js, der Dateizugriff in speicher.js.
 import { pruefePin } from '../gemeinsam/krypto.js';
+import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
@@ -33,6 +34,7 @@ function male() {
     z.stand && nachrichtBanner(),
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
+    versionsHinweis('schueler'),
   ].filter(Boolean));
 }
 
@@ -548,7 +550,7 @@ function minispiel() {
 // ---------- Start ----------
 export function starte(ziel) {
   wurzel = ziel;
-  document.head.append(h('style', {}, stil));
+  document.head.append(h('style', {}, stil + VERSION_STIL));
   male();
   setTimeout(() => wurzel.querySelector('#code')?.focus());
 }

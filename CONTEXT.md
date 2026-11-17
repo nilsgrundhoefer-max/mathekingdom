@@ -177,8 +177,20 @@ _Avoid_: Queue
 ## Speichern
 
 **Startdatei**:
-Die unveränderliche HTML-Datei auf dem Schülerlaufwerk, die das jeweils aktuelle Schüler-Dashboard lädt.
+Die unveränderliche HTML-Datei, die das jeweils aktuelle Dashboard lädt: `Mathekingdom.html` auf dem Schülerlaufwerk für das Schüler-Dashboard, `Mathekingdom-Lehrer.html` auf dem Lehrer-PC für das Lehrer-Dashboard. Ohne Internet startet sie die Kopie aus dem Klassenordner bzw. vom Lehrerlaufwerk.
 _Avoid_: Launcher, Verknüpfung
+
+**Version**:
+Der Stand beider Dashboards, den Schüler und Lehrkraft gerade sehen, mit Nummer und Datum (z. B. „0.1 vom 17.11.2026“). Schüler- und Lehrer-Dashboard tragen immer dieselbe Nummer. Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht mehr passen.
+_Avoid_: Release, Build, Stand (für die Nummer)
+
+**Versionslog**:
+Die Liste aller Versionen mit dem, was sich darin für Schüler und für die Lehrkraft geändert hat.
+_Avoid_: Changelog, Patchnotes
+
+**Veröffentlichter Stand**:
+Die Version, die die Startdateien gerade laden. Er ändert sich nur, wenn die Lehrkraft eine neue Version freigibt.
+_Avoid_: Live-Version, Produktion
 
 **Lehrerlaufwerk**:
 Das persönliche Netzlaufwerk der Lehrkraft; nur sie hat Zugriff.

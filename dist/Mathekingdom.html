@@ -25,6 +25,7 @@
           .then(function (datei) { return datei.getFile(); }).then(function (datei) { return datei.text(); })
           .then(function (code) {
             window.MK_ORDNER = ordner;
+            window.MK_QUELLE = 'kopie';
             ziel.innerHTML = '';
             var skript = document.createElement('script');
             skript.textContent = code;
@@ -38,6 +39,7 @@
   window.MK_BASIS = BASIS;
   // Öffentlicher Schlüssel der Lehrkraft. Das Lehrer-Dashboard trägt ihn ein, wenn es die Startdatei ausgibt (siehe docs/adr/0006).
   window.MK_SCHLUESSEL = /*SCHLUESSEL*/null;
+  window.MK_QUELLE = 'online';
   var skript = document.createElement('script');
   skript.src = BASIS + 'dist/schueler-dashboard.js';
   skript.onload = function () { fertig = true; };
