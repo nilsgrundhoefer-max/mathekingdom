@@ -47,7 +47,9 @@ function kopf() {
 }
 
 function hilfeBanner() {
-  if (!z.stand.hilferuf) return null;
+  if (!z.stand.hilferuf) {
+    return z.hilfeErledigt ? h('div', { class: 'hilfebanner erledigt', role: 'status' }, h('span', {}, 'Deine Lehrkraft hat deinen Hilferuf als erledigt abgehakt.')) : null;
+  }
   const antwort = z.einst.hilfeAntwort;
   const kommt = antwort?.zu === z.stand.hilferuf.seit && antwort.status === 'unterwegs';
   return h('div', { class: 'hilfebanner', role: 'status' },
@@ -106,7 +108,11 @@ async function melde({ code, klasse }, ablage) {
   z.meldung = geladen.hinweis ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
   z.dienst = S.speicherdienst(ablage, () => z.stand, (status) => { z.speicherstatus = status; maleStatus(); });
   if (!geladen.stand || geladen.hinweis) { z.dienst.markiere(); z.dienst.sofort(); }
-  setInterval(takt, 10000);
+  // Vorgaben der Lehrkraft alle 10 Sekunden lesen. Wartet der Schüler auf Hilfe, alle 3 Sekunden,
+  // und sofort, wenn er zum Fenster zurückkehrt (im Hintergrund bremst der Browser die Uhr).
+  let schlag = 0;
+  setInterval(() => { if (z.stand.hilferuf || ++schlag % 3 === 0) takt(); }, 3300);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) takt(); });
   window.addEventListener('pagehide', () => z.dienst.sofort());
   zeige({ name: 'jahresplan' });
 }
@@ -125,7 +131,11 @@ async function takt() {
     z.einst = einstellungenJetzt();
     const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
     let neu = vorher !== JSON.stringify([...z.einst.offeneKapitel, z.einst.spielpause, z.einst.zielniveau, z.einst.hilfeAntwort]);
-    if (ruf && antwort?.zu === ruf.seit && antwort.status === 'erledigt') { L.beendeHilferuf(z.stand, 'erledigt', jetzt()); geaendert(); neu = true; }
+    if (ruf && antwort?.zu === ruf.seit && antwort.status === 'erledigt') {
+      L.beendeHilferuf(z.stand, 'erledigt', jetzt()); geaendert(); z.dienst.sofort(); neu = true;
+      z.hilfeErledigt = true;
+      setTimeout(() => { z.hilfeErledigt = false; wurzel.querySelector('.hilfebanner.erledigt')?.remove(); }, 20000);
+    }
     if (z.stand.hilferuf) {
       const platz = L.wartePlatz(z.stand, await S.ladeAndereHilferufe(z.ablage, z.stand.code));
       if (platz !== z.wartePlatz) { z.wartePlatz = platz; neu = true; }
@@ -133,6 +143,8 @@ async function takt() {
     // Nicht mitten in einer Eingabe neu zeichnen.
     if (neu && !['aufgabe', 'minispiel'].includes(z.ansicht.name)) male();
     else if (neu) { const alt = wurzel.querySelector('.hilfebanner'); const frisch = hilfeBanner(); if (alt && frisch) alt.replaceWith(frisch); else if (alt) alt.remove(); }
+    // In der Aufgabe erscheint der Knopf für einen neuen Hilferuf wieder, ohne die Eingabe zu verlieren.
+    if (neu && z.ansicht.name === 'aufgabe' && !z.stand.hilferuf && !wurzel.querySelector('#hilferuf')) wurzel.querySelector('aside.hilfen')?.replaceWith(hilfen(z.ansicht));
   } catch { /* Ordner kurz nicht erreichbar: beim nächsten Takt erneut */ }
 }
 function einstellungenJetzt() {

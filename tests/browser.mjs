@@ -199,6 +199,11 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.schlange li');
   assert.equal(await seite.locator('.karte .tabelle tbody tr').count(), 14);
   await foto(seite, 'lehrer-live');
+  const wartend = await seite.locator('.schlange li').count();
+  await seite.locator('[data-komme]').first().click();
+  await seite.waitForSelector('.schlange li.unterwegs');
+  await seite.locator('.schlange li.unterwegs [data-erledigt]').click();
+  await seite.waitForFunction((n) => document.querySelectorAll('.schlange li').length === n - 1, wartend);
   await seite.click('[data-tab=diagnose]');
   await seite.waitForSelector('.matrix');
   assert.equal(await seite.locator('.matrix tbody tr').count(), 14);
@@ -313,15 +318,17 @@ async function antworte(seite, richtig = true) {
 
   // Der Hilferuf erscheint bei der Lehrkraft, die Antwort beim Schüler.
   await lehrer.click('[data-tab=live]');
-  await lehrer.waitForSelector(`[data-komme="${aylin}"]`, { timeout: 25000 });
+  await lehrer.waitForSelector(`[data-komme="${aylin}"]`, { timeout: 8000 });
   assert.match(await lehrer.innerText('.schlange'), /Aylin Kaya/);
   await foto(lehrer, 'lehrer-hilferuf');
   await lehrer.click(`[data-komme="${aylin}"]`);
   await lehrer.waitForSelector('.schlange li.unterwegs');
-  await schueler.waitForFunction(() => /kommt|unterwegs/i.test(document.querySelector('.hilfebanner')?.textContent ?? ''), null, { timeout: 25000 });
+  await schueler.waitForFunction(() => /kommt|unterwegs/i.test(document.querySelector('.hilfebanner')?.textContent ?? ''), null, { timeout: 6000 });
   await foto(schueler, 'schueler-hilfe-kommt');
   await lehrer.click(`[data-erledigt="${aylin}"]`);
-  await schueler.waitForFunction(() => !document.querySelector('.hilfebanner'), null, { timeout: 25000 });
+  await lehrer.waitForFunction(() => !document.querySelector('.schlange li'), null, { timeout: 1000 }); // verschwindet sofort
+  await schueler.waitForSelector('.hilfebanner.erledigt', { timeout: 8000 });
+  await schueler.waitForSelector('#hilferuf'); // ein neuer Hilferuf ist wieder möglich
   await lehrer.waitForFunction(() => !document.querySelector('.schlange li'), null, { timeout: 25000 });
 
   // Spielpause wirkt beim Schüler.

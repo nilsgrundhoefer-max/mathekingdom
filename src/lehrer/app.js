@@ -91,13 +91,16 @@ async function oeffneKlasse(klasse, ablage) {
   await schreibeKlassendatei();
   await lade();
   clearInterval(takt);
-  takt = setInterval(async () => {
+  const frisch = async () => {
     const vorher = z.warnungen.length;
     await lade();
     const fokus = document.activeElement?.tagName;
     // Eine neue Warnung wird sofort gezeigt. Sonst nur neu zeichnen, wo es nicht beim Tippen stört.
     if (z.warnungen.length > vorher || (['live', 'diagnose'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus))) male();
-  }, 10000);
+  };
+  takt = setInterval(frisch, 5000);
+  // Im Hintergrund bremst der Browser die Uhr: beim Zurückkehren sofort neu lesen.
+  document.onvisibilitychange = () => { if (!document.hidden && z.ansicht === 'klasse') frisch(); };
   male();
 }
 
@@ -275,9 +278,11 @@ function klassenAnsicht() {
 
 // ---------- Live ----------
 function live() {
-  const schlange = A.warteschlange(z.staende, z.index, jetzt());
-  const haengt = A.klasseHaengt(z.staende, z.index);
   const hilfe = kl().einst.hilfe;
+  // Als erledigt abgehakte Rufe verschwinden sofort, auch wenn der Speicherstand des Schülers erst gleich nachzieht.
+  const erledigt = (code, seit) => hilfe[code]?.zu === seit && hilfe[code].status === 'erledigt';
+  const schlange = A.warteschlange(z.staende, z.index, jetzt()).filter((r) => !erledigt(r.code, r.seit));
+  const haengt = A.klasseHaengt(z.staende, z.index);
   const tag = heute();
   return h('div', {},
     h('section', { class: 'karte' },
@@ -307,7 +312,7 @@ function live() {
           const linien = [...new Set(Object.values(k.niveaus))];
           return h('tr', {},
             h('td', {}, h('button', { class: 'link', onclick: () => { z.schueler = code; z.tab = 'schueler'; male(); } }, name(code))),
-            h('td', {}, stand.hilferuf ? h('span', { class: 'marke warn' }, 'braucht Hilfe') : k.aktiveAufgabe ? h('span', { class: 'marke gut' }, 'arbeitet')
+            h('td', {}, stand.hilferuf && !erledigt(code, stand.hilferuf.seit) ? h('span', { class: 'marke warn' }, 'braucht Hilfe') : k.aktiveAufgabe ? h('span', { class: 'marke gut' }, 'arbeitet')
               : k.minutenStill != null && k.minutenStill < 3 ? 'aktiv' : k.minutenStill == null ? '–' : k.minutenStill < 90 ? `still seit ${k.minutenStill} min` : 'nicht da'),
             h('td', {}, (linien.length ? linien : [ziel(code)]).map(chip)),
             h('td', { class: 'zahl' }, k.sterne),
