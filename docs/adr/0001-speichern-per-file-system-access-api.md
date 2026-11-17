@@ -10,4 +10,4 @@ Die Dashboards sind reine HTML-Dateien ohne Server. Sie schreiben über die File
 ## Consequences
 
 - Firefox und Safari werden nicht unterstützt.
-- „Vier Dateien“ heißt vier Dateiarten: Lehrer-Dashboard, Schüler-Dashboard, Aufgabenpool und viele Speicherstände.
+- „Vier Dateien“ heißt Dateiarten statt einzelner Dateien (siehe auch ADR 0004).

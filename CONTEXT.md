@@ -5,8 +5,12 @@ Lernplattform für den Mathematikunterricht im Schulnetz: Schüler bearbeiten Au
 ## Personen und Gruppen
 
 **Schüler**:
-Ein Lernender, der über Name und PIN am Schüler-Dashboard angemeldet ist. Er gehört genau einer Klasse an.
+Ein Lernender, der über seinen Schülercode am Schüler-Dashboard angemeldet ist. Er gehört genau einer Klasse an.
 _Avoid_: User, Account, Nutzer
+
+**Schülercode**:
+Ein von der Lehrkraft vergebener, nicht erratbarer Code (z. B. `7B-K4M2`), der einen Schüler anmeldet und seine Klasse festlegt. Nur die Lehrkraft kennt die Zuordnung zum echten Namen.
+_Avoid_: Login, Benutzername, PIN, ID
 
 **Lehrkraft**:
 Die Person, die Klassen betreut, Freigaben erteilt und den Lernstand auswertet.
@@ -19,10 +23,6 @@ _Avoid_: Kurs, Gruppe
 **Klassenstufe**:
 Der Jahrgang (5 bis 10), der sich aus der Klasse ergibt und bestimmt, welche Kapitel geladen werden.
 _Avoid_: Jahrgangsstufe, Level
-
-**PIN**:
-Ein vierstelliger Code, den die Lehrkraft vergibt und der zusammen mit dem Namen einen Schüler anmeldet.
-_Avoid_: Passwort
 
 ## Inhalte
 
@@ -42,13 +42,39 @@ _Avoid_: Themenbereich, Lektion
 Eine einzelne zu lösende Einheit in einem Unterkapitel, mit festem Aufgabenformat.
 _Avoid_: Übung, Item
 
+**Niveaustufe**:
+Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau).
+_Avoid_: Schwierigkeit, Level, Sterne
+
+**Jahresplan**:
+Die Folge der Kapitel einer Klassenstufe über das Schuljahr; alle Kapitel bis zum aktuellen Kapitel sind freigeschaltet.
+_Avoid_: Lernpfad (für diese Ebene), Stoffverteilungsplan
+
+**Aktuelles Kapitel**:
+Das Kapitel, das die Lehrkraft für eine Klasse gerade als laufendes Thema gesetzt hat.
+_Avoid_: aktuelles Thema
+
 **Lernpfad**:
-Eine von der Lehrkraft freigegebene, geordnete Folge von Unterkapiteln, auch kapitelübergreifend.
+Der Weg durch die Unterkapitel eines einzelnen Kapitels.
 _Avoid_: Kurs, Weg, Themenbereich
 
 **Metrokarte**:
-Die Darstellung des Lernstands, in der jeder Lernpfad eine Linie und jedes Unterkapitel eine Station ist.
+Die Darstellung eines Lernpfads, in der die Unterkapitel Stationen sind.
 _Avoid_: Lernlandkarte, Fortschrittsbalken
+
+## Hilfe
+
+**Hilfekärtchen**:
+Eine von drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. Jede genutzte Stufe senkt die Punkte der Aufgabe.
+_Avoid_: Joker, Hinweis
+
+**Hilferuf**:
+Die Bitte eines Schülers um persönliche Hilfe durch die Lehrkraft, jederzeit und unabhängig von Hilfekärtchen möglich.
+_Avoid_: Meldung, Ticket
+
+**Hilfe-Warteschlange**:
+Die nach Eingang geordnete Liste offener Hilferufe einer Klasse im Lehrer-Dashboard.
+_Avoid_: Queue
 
 ## Speichern
 
@@ -57,5 +83,13 @@ Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernst
 _Avoid_: Spielstand, Save, Profil
 
 **Klassenordner**:
-Der Netzwerkordner einer Klasse, auf den Schüler und Lehrkraft Zugriff haben und in dem die Speicherstände liegen.
+Der Netzwerkordner einer Klasse, auf den Schüler und Lehrkraft Zugriff haben und in dem Speicherstände und Klassendatei liegen.
 _Avoid_: Laufwerk, Share
+
+**Klassendatei**:
+Die Datei im Klassenordner, die nur die Lehrkraft schreibt und die Schüler lesen: Freigaben, aktuelles Kapitel, Antworten auf Hilferufe.
+_Avoid_: Konfiguration, Einstellungen
+
+**Namensliste**:
+Die Zuordnung von Schülercodes zu echten Namen, die nur auf dem Laufwerk der Lehrkraft liegt.
+_Avoid_: Klassenliste (für die Datei)
