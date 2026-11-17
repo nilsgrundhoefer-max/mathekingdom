@@ -39,8 +39,12 @@ Ein abgegrenztes Thema innerhalb eines Kapitels (z. B. „Brüche erweitern“),
 _Avoid_: Themenbereich, Lektion
 
 **Aufgabe**:
-Eine einzelne zu lösende Einheit in einem Unterkapitel, mit festem Aufgabenformat.
+Eine einzelne zu lösende Einheit in einem Unterkapitel, mit festem Aufgabenformat, Niveaustufe und Lernziel. Jede Aufgabe ist automatisch auswertbar.
 _Avoid_: Übung, Item
+
+**Versuch**:
+Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt.
+_Avoid_: Eingabe, Abgabe
 
 **Niveaustufe**:
 Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau).
@@ -92,6 +96,14 @@ _Avoid_: Punkte, Abzeichen
 Die Stufe des Lokführers (Rangierlok, Regionalzug, Express, Königszug), die sich allein aus der Zahl seiner Sterne ergibt und neue Loks und Avatar-Teile zum Kauf freischaltet.
 _Avoid_: Level, Stufe
 
+**Minispiel**:
+Ein kurzes, mathematiknahes Spiel von höchstens drei Minuten, das Münzen kostet und nur während einer Spielpause spielbar ist.
+_Avoid_: Belohnungsspiel, Game
+
+**Spielpause**:
+Ein von der Lehrkraft pro Klasse eingeschaltetes Zeitfenster, in dem Minispiele erlaubt sind; standardmäßig aus.
+_Avoid_: Freizeit, Pause
+
 **Lokführer**:
 Die Rolle des Schülers in der Rahmenhandlung: Er erschließt mit seinem Zug der Königlichen Metro die Regionen des Reiches; jedes Kapitel ist eine Region.
 _Avoid_: Held, Spieler
@@ -141,8 +153,16 @@ Das gemeinsame Netzlaufwerk einer Klasse, auf das alle Schüler der Klasse schre
 _Avoid_: Tauschlaufwerk, Share
 
 **Speicherstand**:
-Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernstand enthält.
+Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernstand und sein Versuchsprotokoll enthält.
 _Avoid_: Spielstand, Save, Profil
+
+**Versuchsprotokoll**:
+Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Grundlage der Diagnose. Beim Schuljahreswechsel wird es in die Lehrerdaten archiviert und ein Jahr später gelöscht.
+_Avoid_: Log, Verlauf
+
+**Schuljahreswechsel**:
+Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Sterne, Rang, Avatar und erreichte Lernziele bleiben erhalten.
+_Avoid_: Versetzung, Reset
 
 **Klassenordner**:
 Der Ordner einer Klasse auf dem Klassenlaufwerk, in dem die Speicherstände der Schüler liegen.
