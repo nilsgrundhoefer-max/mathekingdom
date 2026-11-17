@@ -88,11 +88,27 @@ _Avoid_: Punkte, Coins, Taler
 Eine nicht ausgebbare Auszeichnung, genau eine pro erreichtem Lernziel.
 _Avoid_: Punkte, Abzeichen
 
+**Rang**:
+Die Stufe des Lokführers (Rangierlok, Regionalzug, Express, Königszug), die sich allein aus der Zahl seiner Sterne ergibt und neue Loks und Avatar-Teile zum Kauf freischaltet.
+_Avoid_: Level, Stufe
+
 **Lokführer**:
 Die Rolle des Schülers in der Rahmenhandlung: Er erschließt mit seinem Zug der Königlichen Metro die Regionen des Reiches; jedes Kapitel ist eine Region.
 _Avoid_: Held, Spieler
 
-## Hilfe
+## Hilfe und Diagnose
+
+**Typischer Fehler**:
+Eine vorab bei der Aufgabe hinterlegte falsche Antwort samt der Fehlvorstellung, die sie verrät (z. B. „Zähler und Nenner addiert“).
+_Avoid_: Fehlertyp, Distraktor
+
+**Diagnose**:
+Die Auswertung des Lernstands im Lehrer-Dashboard: was Schüler und Klasse bearbeitet haben, wo sie hängen, welche Hilfen sie nutzen und welche typischen Fehler sie machen.
+_Avoid_: Statistik, Analyse
+
+**Bericht**:
+Ein Export der Diagnose als PDF oder Excel-Datei; Namen werden erst beim Export aus der Namensliste eingesetzt.
+_Avoid_: Report, Ausdruck
 
 **Hilfekärtchen**:
 Eine von drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. Jede genutzte Stufe senkt die Punkte der Aufgabe.
