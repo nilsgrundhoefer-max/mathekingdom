@@ -182,3 +182,4 @@ body { margin: 0; background: #f4f1ea; }
   #mk-druck h3 { margin: 10px 0 4px; }
   #mk-druck .zweispaltig { grid-template-columns: 1fr 1fr; }
 }
+@media print { #mk-druck .kaertchen b.pin { font-size: 16pt; letter-spacing: .25em; } #mk-druck .kaertchen span { margin-top: 6px; font-size: 9pt; color: #555; } }

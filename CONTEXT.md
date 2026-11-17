@@ -9,8 +9,12 @@ Ein Lernender, der über seinen Schülercode am Schüler-Dashboard angemeldet is
 _Avoid_: User, Account, Nutzer
 
 **Schülercode**:
-Ein von der Lehrkraft vergebener, nicht erratbarer Code (z. B. `7B-K4M2`), der einen Schüler anmeldet und seine Klasse festlegt. Nur die Lehrkraft kennt die Zuordnung zum echten Namen.
-_Avoid_: Login, Benutzername, PIN, ID
+Ein von der Lehrkraft vergebener, nicht erratbarer Code (z. B. `7B-K4M2`), der zusammen mit der PIN einen Schüler anmeldet und seine Klasse festlegt. Nur die Lehrkraft kennt die Zuordnung zum echten Namen.
+_Avoid_: Login, Benutzername, ID
+
+**PIN**:
+Vier Ziffern, die ein Schüler zusätzlich zu seinem Schülercode eingibt. Die Lehrkraft vergibt sie und kann sie nachlesen oder erneuern. Sie steht mit dem Schülercode auf dem Code-Kärtchen.
+_Avoid_: Passwort, Kennwort
 
 **Lehrkraft**:
 Die Person, die Klassen betreut, Freigaben erteilt und den Lernstand auswertet.

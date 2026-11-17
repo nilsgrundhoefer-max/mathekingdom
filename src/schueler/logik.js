@@ -273,6 +273,7 @@ export function einstellungen(klassendatei, code, pool) {
     spielpause: Boolean(k.spielpause),
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,
+    pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst
     gesperrteStationen: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([station]) => station)),
     codeBekannt: k.codes ? k.codes.includes(code) : true,
   };

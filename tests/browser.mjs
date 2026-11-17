@@ -287,7 +287,9 @@ async function antworte(seite, richtig = true) {
   await lehrer.fill('#namen', 'Lena Müller\nTim Schmidt\n\nAylin Kaya');
   await lehrer.click('#codes');
   await lehrer.waitForSelector('td.code');
-  const codes = await lehrer.locator('td.code').allInnerTexts();
+  const codes = await lehrer.locator('td.code:not(.pin)').allInnerTexts();
+  await lehrer.waitForFunction(() => [...document.querySelectorAll('td.pin')].every((x) => /^\d{4}$/.test(x.textContent)));
+  const pin = (await lehrer.locator('td.pin').allInnerTexts())[0];
   assert.equal(codes.length, 3);
   assert.ok(codes.every((c) => /^5A-[A-Z0-9]{4}$/.test(c)));
   const aylin = codes[0]; // alphabetisch nach Namen
@@ -314,6 +316,10 @@ async function antworte(seite, richtig = true) {
   await warteAuf((k) => k.aktuellesKapitel === '5.4');
   const klassendatei = await lies('5a/klassendatei.json');
   assert.ok(!/Lena|Schmidt|Aylin/.test(klassendatei));
+  // Die PIN steht nur bei den Lehrerdaten, in der Klassendatei steht ein Prüfwert.
+  assert.equal(JSON.parse(await lies('lehrer/lehrerdaten.json')).klassen['5a'].pins[aylin].pin, pin);
+  assert.deepEqual(Object.keys((await inhalt()).pins[aylin]).sort(), ['salz', 'wert']);
+  assert.ok(!klassendatei.includes(`"${pin}"`));
   assert.equal(JSON.parse(JSON.parse(klassendatei).inhalt).aktuellesKapitel, '5.4');
   const lehrerdaten = JSON.parse(await lies('lehrer/lehrerdaten.json'));
   assert.deepEqual(Object.values(lehrerdaten.klassen['5a'].namen).sort(), ['Aylin Kaya', 'Lena Müller', 'Tim Schmidt']);
@@ -335,6 +341,12 @@ async function antworte(seite, richtig = true) {
   await schueler.click('#ordner');
   await schueler.waitForSelector('.fehler');
   await schueler.fill('#code', aylin);
+  await schueler.click('#ordner');
+  await schueler.waitForFunction(() => /Gib auch deine PIN ein/.test(document.querySelector('.fehler')?.textContent ?? ''));
+  await schueler.fill('#pin', pin === '0000' ? '0001' : '0000');
+  await schueler.click('#ordner');
+  await schueler.waitForFunction(() => /Die PIN stimmt nicht/.test(document.querySelector('.fehler')?.textContent ?? ''));
+  await schueler.fill('#pin', pin);
   await schueler.click('#ordner');
   await schueler.waitForSelector('.regionen');
   assert.equal(await schueler.locator('.region:not(.gesperrt)').count(), 4);

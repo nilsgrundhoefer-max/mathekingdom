@@ -211,3 +211,17 @@ test('Klassendatei: gesperrte Stationen und Nachricht je Schüler', () => {
   assert.equal(e.nachricht.text, 'Komm bitte nach vorn.');
   assert.equal(L.einstellungen(null, '5A-AAAA', pool).gesperrteStationen.size, 0);
 });
+
+test('PIN: vier Ziffern, Prüfwert statt PIN, falsche PIN fällt durch', async () => {
+  for (let i = 0; i < 50; i++) assert.match(K.neuePin(), /^\d{4}$/);
+  const eintrag = await K.pinEintrag('4711');
+  assert.deepEqual(Object.keys(eintrag).sort(), ['salz', 'wert']);
+  assert.ok(!JSON.stringify(eintrag).includes('4711'));
+  assert.equal(await K.pruefePin('4711', eintrag), true);
+  assert.equal(await K.pruefePin(' 4711 ', eintrag), true);
+  assert.equal(await K.pruefePin('4712', eintrag), false);
+  assert.equal(await K.pruefePin('', eintrag), false);
+  assert.notEqual((await K.pinEintrag('4711')).wert, eintrag.wert); // eigenes Salz je Schüler
+  assert.deepEqual(L.einstellungen({ pins: { '5A-AAAA': eintrag } }, '5A-AAAA', pool).pin, eintrag);
+  assert.equal(L.einstellungen({ pins: {} }, '5A-AAAA', pool).pin, null);
+});

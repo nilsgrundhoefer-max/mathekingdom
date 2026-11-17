@@ -149,3 +149,5 @@ body { margin: 0; background: #f4f1ea; }
   #mathekingdom .ergebnis { animation: mk-auf .25s ease-out; }
   @keyframes mk-auf { from { opacity: 0; transform: translateY(6px); } }
 }
+#mathekingdom .anmeldung input#pin { letter-spacing: .4em; }
+#mathekingdom .hilfebanner.nachricht { background: #e8eefb; border-bottom-color: #b9c8ea; }

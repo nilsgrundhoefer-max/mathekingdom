@@ -1,4 +1,5 @@
 // Schüler-Dashboard: Oberfläche. Die Regeln stehen in logik.js, der Dateizugriff in speicher.js.
+import { pruefePin } from '../gemeinsam/krypto.js';
 import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
@@ -78,13 +79,15 @@ function hilfeBanner() {
 function anmeldung() {
   const a = z.ansicht;
   const eingabe = h('input', { id: 'code', type: 'text', autocomplete: 'off', spellcheck: false, placeholder: 'z. B. 5A-K4M2', value: a.code ?? '', maxLength: 9,
+    onkeydown: (e) => { if (e.key === 'Enter') pinFeld.focus(); } });
+  const pinFeld = h('input', { id: 'pin', type: 'password', inputMode: 'numeric', autocomplete: 'off', placeholder: '4 Ziffern', maxLength: 4,
     onkeydown: (e) => { if (e.key === 'Enter') starte(false); } });
   const starte = async (demo) => {
     const gelesen = L.leseCode(eingabe.value);
     if (!gelesen) return zeige({ name: 'anmeldung', code: eingabe.value, fehler: 'Diesen Schülercode gibt es nicht. Er sieht so aus: 5A-K4M2.' });
     try {
       const ablage = demo ? S.demoAblage(gelesen.klasse) : window.MK_ORDNER ? S.ordnerAblage(window.MK_ORDNER) : await S.waehleOrdner();
-      await melde(gelesen, ablage);
+      await melde({ ...gelesen, pin: pinFeld.value }, ablage);
     } catch (e) {
       if (e.name === 'AbortError') return;
       zeige({ name: 'anmeldung', code: eingabe.value, fehler: `Das hat nicht geklappt: ${e.message}` });
@@ -95,6 +98,8 @@ function anmeldung() {
     h('p', { class: 'unter' }, 'Die Königliche Metro wartet auf ihren Lokführer.'),
     h('label', { for: 'code' }, 'Dein Schülercode'),
     eingabe,
+    h('label', { for: 'pin' }, 'Deine PIN'),
+    pinFeld,
     a.fehler && h('p', { class: 'fehler', role: 'alert' }, a.fehler),
     S.kannOrdner()
       ? h('button', { class: 'haupt', id: 'ordner', onclick: () => starte(false) }, window.MK_ORDNER ? 'Einsteigen' : 'Klassenordner wählen und einsteigen')
@@ -103,7 +108,7 @@ function anmeldung() {
     h('button', { class: 'schlicht', id: 'demo', onclick: () => starte(true) }, 'Ohne Ordner ausprobieren'));
 }
 
-async function melde({ code, klasse }, ablage) {
+async function melde({ code, klasse, pin }, ablage) {
   if (ablage.name.toLowerCase() !== klasse) {
     return zeige({ name: 'anmeldung', code, fehler: `Dein Code gehört zur Klasse ${klasse}, du hast aber den Ordner „${ablage.name}“ gewählt. Wähle den Ordner „${klasse}“.` });
   }
@@ -119,6 +124,11 @@ async function melde({ code, klasse }, ablage) {
   const klassendatei = gelesen.daten;
   const einst = L.einstellungen(klassendatei, code, pool);
   if (!einst.codeBekannt) return zeige({ name: 'anmeldung', code, fehler: 'Dieser Schülercode steht nicht in der Klassenliste. Prüfe, ob du dich vertippt hast.' });
+  // Hat die Lehrkraft eine PIN vergeben, gehört sie zur Anmeldung. Eine falsche PIN kostet absichtlich etwas Zeit.
+  if (einst.pin && !(await pruefePin(pin, einst.pin))) {
+    await new Promise((weiter) => setTimeout(weiter, 1500));
+    return zeige({ name: 'anmeldung', code, fehler: pin ? 'Die PIN stimmt nicht. Schau auf dein Code-Kärtchen.' : 'Gib auch deine PIN ein. Sie steht auf deinem Code-Kärtchen.' });
+  }
   const geladen = await S.ladeStand(ablage, code);
   Object.assign(z, { ablage, pool, index: L.indexiere(pool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
   z.meldung = geladen.hinweis ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;

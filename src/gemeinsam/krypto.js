@@ -27,6 +27,26 @@ export async function pruefeUnterschrift(dateitext, oeffentlicherSchluessel) {
     return (await crypto.subtle.verify(HASH, schluessel, bytes(signatur), kodiere(inhalt))) ? JSON.parse(inhalt) : null;
   } catch { return null; }
 }
+// ---------- PIN ----------
+// In der Klassendatei steht nie die PIN selbst, sondern ein absichtlich langsam berechneter Prüfwert (siehe docs/adr/0008).
+const PIN_RUNDEN = 150000;
+export function neuePin() {
+  const zahl = new Uint32Array(1);
+  do crypto.getRandomValues(zahl); while (zahl[0] >= 4294960000); // gleichmäßig verteilt
+  return String(zahl[0] % 10000).padStart(4, '0');
+}
+async function pinWert(pin, salz) {
+  const basis = await crypto.subtle.importKey('raw', kodiere(pin), 'PBKDF2', false, ['deriveBits']);
+  return b64(await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: bytes(salz), iterations: PIN_RUNDEN }, basis, 256));
+}
+export async function pinEintrag(pin) {
+  const salz = b64(crypto.getRandomValues(new Uint8Array(12)));
+  return { salz, wert: await pinWert(pin, salz) };
+}
+export async function pruefePin(pin, eintrag) {
+  try { return (await pinWert(String(pin).trim(), eintrag.salz)) === eintrag.wert; } catch { return false; }
+}
+
 // Ohne Prüfung lesen: für das Lehrer-Dashboard selbst und für Tests ohne Schlüssel.
 export function liesUngeprueft(dateitext) {
   try {

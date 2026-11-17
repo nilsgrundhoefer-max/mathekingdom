@@ -53,10 +53,25 @@ async function erlaube(handle) {
 
 // ---------- Dateien ----------
 async function speichereDaten() { await z.lehrer.schreibe(LEHRERDATEN, JSON.stringify(z.daten, null, 1)); }
+// Jeder Schüler der Namensliste hat eine PIN. Der langsame Prüfwert wird einmal berechnet und bei den Lehrerdaten gemerkt.
+async function sorgePins() {
+  const pins = (kl().pins ??= {});
+  let neu = false;
+  for (const code of Object.keys(pins)) if (!kl().namen[code]) { delete pins[code]; neu = true; }
+  for (const code of Object.keys(kl().namen)) {
+    if (pins[code]?.wert) continue;
+    const pin = K.neuePin();
+    pins[code] = { pin, ...(await K.pinEintrag(pin)) };
+    neu = true;
+  }
+  if (neu) await speichereDaten();
+}
 async function schreibeKlassendatei() {
   const e = kl().einst;
+  await sorgePins();
+  const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -616,18 +631,19 @@ function verwaltung() {
   const codes = Object.keys(kl().namen).sort((a, b) => name(a).localeCompare(name(b), 'de'));
   return h('div', {},
     h('section', { class: 'karte' }, h('h2', {}, 'Namensliste und Schülercodes'),
-      h('p', { class: 'klein' }, 'Die Namen bleiben in deinem Ordner auf dem Lehrerlaufwerk. Im Klassenordner stehen nur die Codes.'),
+      h('p', { class: 'klein' }, 'Die Namen und PINs bleiben in deinem Ordner auf dem Lehrerlaufwerk. Im Klassenordner stehen nur die Codes und zu jeder PIN ein Prüfwert.'),
       codes.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-        h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'Zielniveau', ''].map((t) => h('th', {}, t)))),
-        h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, name(c)), h('td', { class: 'code' }, c),
+        h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'PIN', 'Zielniveau', '', ''].map((t) => h('th', {}, t)))),
+        h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, name(c)), h('td', { class: 'code' }, c), h('td', { class: 'code pin' }, kl().pins?.[c]?.pin ?? '…'),
           h('td', {}, zielWahl(c)),
+          h('td', {}, h('button', { class: 'schlicht', 'data-neue-pin': c, onclick: () => { if (confirm(`Neue PIN für ${name(c)} vergeben? Die alte gilt dann nicht mehr.`)) aendere((k) => { delete k.pins[c]; }); } }, 'Neue PIN')),
           h('td', {}, h('button', { class: 'schlicht', onclick: () => { if (confirm(`${name(c)} aus der Namensliste entfernen? Der Speicherstand im Klassenordner bleibt liegen.`)) aendere((k) => { delete k.namen[c]; delete k.einst.zielniveaus[c]; }); } }, 'Entfernen'))))))),
       h('h3', {}, 'Schüler hinzufügen'), liste,
       h('div', { class: 'reihe' },
         h('button', { class: 'haupt', id: 'codes', onclick: () => aendere((k) => {
           for (const n of liste.value.split('\n').map((x) => x.trim()).filter(Boolean)) k.namen[A.erzeugeCode(z.klasse, Object.keys(k.namen))] = n;
         }) }, 'Codes erzeugen'),
-        codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
+        codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')));

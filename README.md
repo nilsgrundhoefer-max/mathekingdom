@@ -13,7 +13,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 
 ## Schüler-Dashboard ausprobieren
 
-`dist/Schueler-Dashboard-komplett.html` herunterladen und in Edge oder Chrome öffnen. Einen Schülercode wie `5A-K4M2` eingeben.
+`dist/Schueler-Dashboard-komplett.html` herunterladen und in Edge oder Chrome öffnen. Einen Schülercode wie `5A-K4M2` eingeben. Die PIN wird nur verlangt, wenn die Klasse im Lehrer-Dashboard eingerichtet ist.
 
 - **Ohne Ordner ausprobieren** speichert nur im Browser.
 - **Klassenordner wählen** speichert wie im Unterricht: Der Ordner muss wie die Klasse heißen (`5a`). Darin entsteht der Speicherstand `5A-K4M2.json`.
@@ -25,7 +25,7 @@ Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist G, und jeder Code 
 `dist/Lehrer-Dashboard.html` herunterladen und in Edge oder Chrome öffnen.
 
 - **Mit einer Beispielklasse ausprobieren** zeigt alle Ansichten mit 14 erfundenen Schülern. Nichts wird gespeichert.
-- **Ordner auf dem Lehrerlaufwerk wählen** richtet den echten Betrieb ein: Dort entstehen `lehrerdaten.json` (Namenslisten, Notizen, Schlüssel) und der Ordner `backup/`. Danach eine Klasse anlegen, ihren Klassenordner wählen, Namen eintragen, Codes erzeugen, Code-Kärtchen drucken und die Startdatei für die Schülerlaufwerke herunterladen.
+- **Ordner auf dem Lehrerlaufwerk wählen** richtet den echten Betrieb ein: Dort entstehen `lehrerdaten.json` (Namenslisten, Notizen, Schlüssel) und der Ordner `backup/`. Danach eine Klasse anlegen, ihren Klassenordner wählen, Namen eintragen, Codes und PINs erzeugen, Code-Kärtchen drucken und die Startdatei für die Schülerlaufwerke herunterladen.
 
 Ansichten:
 
