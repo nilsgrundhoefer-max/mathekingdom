@@ -4,6 +4,7 @@
 //   dist/schueler-dashboard.js           das Schüler-Dashboard (liegt online und als Kopie im Klassenordner)
 //   dist/Mathekingdom.html               die Startdatei für das Schülerlaufwerk (siehe docs/adr/0005)
 //   dist/Schueler-Dashboard-komplett.html  alles in einer Datei, zum Ausprobieren ohne Netz
+//   dist/Lehrer-Dashboard.html           das Lehrer-Dashboard in einer Datei (liegt auf dem Lehrer-PC)
 
 import { build } from 'esbuild';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
@@ -20,15 +21,23 @@ await build({
 });
 const dashboard = readFileSync(new URL('dist/schueler-dashboard.js', wurzel), 'utf8');
 
-const seite = (inhalt) => `<!doctype html>
+await build({
+  entryPoints: [new URL('src/lehrer/app.js', wurzel).pathname],
+  outfile: new URL('dist/lehrer-dashboard.js', wurzel).pathname,
+  bundle: true, format: 'iife', minify: true, target: 'chrome110',
+  loader: { '.css': 'text' }, logLevel: 'warning',
+});
+const lehrer = readFileSync(new URL('dist/lehrer-dashboard.js', wurzel), 'utf8');
+
+const seite = (inhalt, titel = 'Mathekingdom', halter = 'mathekingdom') => `<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mathekingdom</title>
+<title>${titel}</title>
 </head>
 <body>
-<div id="mathekingdom"></div>
+<div id="${halter}"></div>
 ${inhalt}
 </body>
 </html>
@@ -66,6 +75,8 @@ const startdatei = seite(`<script>
     };
   }
   window.MK_BASIS = BASIS;
+  // Öffentlicher Schlüssel der Lehrkraft. Das Lehrer-Dashboard trägt ihn ein, wenn es die Startdatei ausgibt (siehe docs/adr/0006).
+  window.MK_SCHLUESSEL = /*SCHLUESSEL*/null;
   var skript = document.createElement('script');
   skript.src = BASIS + 'dist/schueler-dashboard.js';
   skript.onload = function () { fertig = true; };
@@ -84,5 +95,13 @@ for (const name of readdirSync(new URL('aufgabenpool/', wurzel))) {
 }
 writeFileSync(new URL('dist/Schueler-Dashboard-komplett.html', wurzel),
   seite(`<script>window.MK_POOLS = ${sicher(JSON.stringify(pools))};</script>\n<script>${sicher(dashboard)}</script>`));
+
+// Lehrer-Dashboard: bringt Pools, Schüler-Dashboard und Startdatei mit, um sie in den Klassenordner zu legen.
+writeFileSync(new URL('dist/Lehrer-Dashboard.html', wurzel), seite(
+  `<script>window.MK_POOLS = ${sicher(JSON.stringify(pools))};
+window.MK_BASIS = ${JSON.stringify(BASIS)};
+window.MK_SCHUELER_JS = ${sicher(JSON.stringify(dashboard))};
+window.MK_STARTDATEI = ${sicher(JSON.stringify(startdatei))};</script>\n<script>${sicher(lehrer)}</script>`,
+  'Mathekingdom Lehrer-Dashboard', 'mathekingdom-lehrer'));
 
 console.log(`Gebaut: Dashboard ${Math.round(dashboard.length / 1024)} KB, Pools für Klasse ${Object.keys(pools).join(', ')}.`);

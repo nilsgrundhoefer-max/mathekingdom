@@ -1,0 +1,111 @@
+#mathekingdom-lehrer, #mk-druck {
+  --nacht: #1d2b4f; --gold: #d4a419; --papier: #f4f1ea; --karte: #ffffff; --tinte: #1f2533; --grau: #5d6679;
+  --rand: #d9d4c7; --gut: #1a7f4b; --gut-hell: #e3f4ea; --schlecht: #b3372f; --schlecht-hell: #fbe9e7; --hell: #fff8e1;
+  font: 15.5px/1.45 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; color: var(--tinte);
+}
+body { margin: 0; background: #f4f1ea; }
+#mathekingdom-lehrer { min-height: 100vh; background: var(--papier); }
+#mathekingdom-lehrer *, #mk-druck * { box-sizing: border-box; }
+#mathekingdom-lehrer main { max-width: 1280px; margin: 0 auto; padding: 18px 16px 60px; }
+#mathekingdom-lehrer h1, #mk-druck h1 { font-size: 1.5rem; margin: 0 0 6px; color: var(--nacht); }
+#mathekingdom-lehrer h2, #mk-druck h2 { font-size: 1.1rem; margin: 0 0 10px; color: var(--nacht); }
+#mathekingdom-lehrer h3, #mk-druck h3 { font-size: .98rem; margin: 18px 0 8px; color: var(--nacht); }
+#mathekingdom-lehrer p, #mk-druck p { margin: 0 0 10px; }
+#mathekingdom-lehrer .klein, #mk-druck .klein { font-size: .86rem; color: var(--grau); }
+#mathekingdom-lehrer .fehlertext { color: var(--schlecht); font-weight: 600; }
+
+#mathekingdom-lehrer button, #mathekingdom-lehrer input, #mathekingdom-lehrer select, #mathekingdom-lehrer textarea { font: inherit; color: inherit; }
+#mathekingdom-lehrer button { cursor: pointer; border-radius: 8px; border: 1px solid transparent; padding: 7px 14px; white-space: nowrap; }
+#mathekingdom-lehrer :is(button, input, select, textarea):focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+#mathekingdom-lehrer .haupt { background: var(--nacht); color: #fff; font-weight: 600; }
+#mathekingdom-lehrer .haupt:hover { background: #2a3d6e; }
+#mathekingdom-lehrer .schlicht { background: #fff; border-color: #b9bfcc; color: var(--nacht); }
+#mathekingdom-lehrer .schlicht:hover { background: #ece8dd; }
+#mathekingdom-lehrer .schlicht.hell { background: transparent; color: #fff; border-color: rgba(255,255,255,.45); }
+#mathekingdom-lehrer .link { background: none; border: 0; padding: 0; color: var(--nacht); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+#mathekingdom-lehrer input[type=text], #mathekingdom-lehrer select, #mathekingdom-lehrer textarea { border: 1.5px solid #b9bfcc; border-radius: 8px; padding: 6px 10px; background: #fff; }
+#mathekingdom-lehrer textarea { width: 100%; max-width: 520px; display: block; margin-bottom: 10px; }
+
+#mathekingdom-lehrer .kopf { background: var(--nacht); color: #fff; display: flex; align-items: center; gap: 14px; padding: 8px 18px; border-bottom: 4px solid var(--gold); flex-wrap: wrap; }
+#mathekingdom-lehrer .kopf strong { font-size: 1.1rem; }
+#mathekingdom-lehrer .kopf > span { color: #c9d1e8; }
+#mathekingdom-lehrer .kopf .demo { color: #ffe08a; font-weight: 600; }
+#mathekingdom-lehrer .kopf button { margin-left: auto; }
+
+#mathekingdom-lehrer .meldung { display: flex; gap: 14px; align-items: center; padding: 10px 16px; border-radius: 10px; margin: 0 0 14px; border: 1px solid; }
+#mathekingdom-lehrer .meldung ul { margin: 0; padding-left: 18px; flex: 1; }
+#mathekingdom-lehrer .meldung.warnung { background: var(--hell); border-color: #ecd58a; }
+#mathekingdom-lehrer .meldung.fehler { background: var(--schlecht-hell); border-color: #e7b3ad; color: var(--schlecht); font-weight: 600; border-radius: 0; margin: 0; justify-content: center; }
+
+#mathekingdom-lehrer .karte { background: var(--karte); border: 1px solid var(--rand); border-radius: 12px; padding: 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(29,43,79,.06); }
+#mathekingdom-lehrer .karte.schmal { max-width: 620px; margin: 6vh auto 0; }
+#mathekingdom-lehrer .karte.schmal h2 { margin-top: 22px; }
+#mathekingdom-lehrer .karte.schmal > .schlicht { margin-top: 14px; }
+#mathekingdom-lehrer .reihe { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+#mathekingdom-lehrer .klassenliste { list-style: none; padding: 0; margin: 0; }
+#mathekingdom-lehrer .klassenliste li { display: flex; gap: 14px; align-items: center; padding: 8px 0; border-top: 1px solid #ece8dd; }
+#mathekingdom-lehrer .klassenliste li span { flex: 1; color: var(--grau); }
+#mathekingdom-lehrer .klassenliste b { font-size: 1.2rem; min-width: 3ch; }
+
+#mathekingdom-lehrer .leiste { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+#mathekingdom-lehrer .leiste h1 { margin: 0; }
+#mathekingdom-lehrer .leiste .rechts { margin-left: auto; display: flex; gap: 8px; }
+#mathekingdom-lehrer .schalter { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+#mathekingdom-lehrer .schalter input { width: 18px; height: 18px; accent-color: var(--nacht); }
+#mathekingdom-lehrer .tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--rand); margin-bottom: 14px; flex-wrap: wrap; }
+#mathekingdom-lehrer .tabs button { background: transparent; border-radius: 8px 8px 0 0; color: var(--grau); padding: 8px 16px; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+#mathekingdom-lehrer .tabs button.aktiv { color: var(--nacht); font-weight: 700; border-bottom-color: var(--gold); background: #fff; }
+
+#mathekingdom-lehrer .schlange { list-style: none; counter-reset: platz; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+#mathekingdom-lehrer .schlange li { counter-increment: platz; border: 2px solid #ecd58a; background: var(--hell); border-radius: 10px; padding: 10px 12px 10px 46px; position: relative; display: grid; gap: 6px; }
+#mathekingdom-lehrer .schlange li::before { content: counter(platz); position: absolute; left: 10px; top: 10px; width: 26px; height: 26px; border-radius: 50%; background: var(--nacht); color: #fff; display: grid; place-items: center; font-weight: 700; }
+#mathekingdom-lehrer .schlange li.unterwegs { border-color: #a9dcbf; background: var(--gut-hell); }
+
+#mathekingdom-lehrer .marke { display: inline-block; font-size: .78rem; font-weight: 600; border-radius: 99px; padding: 1px 9px; margin: 1px 4px 1px 0; border: 1px solid; white-space: nowrap; }
+#mathekingdom-lehrer .marke.warn { background: var(--hell); color: #7a5b00; border-color: #ecd58a; }
+#mathekingdom-lehrer .marke.gut { background: var(--gut-hell); color: var(--gut); border-color: #a9dcbf; }
+#mathekingdom-lehrer .marke.schlecht { background: var(--schlecht-hell); color: var(--schlecht); border-color: #e7b3ad; }
+.chip { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: #fff; font-weight: 700; font-size: .78rem; margin-right: 3px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+#mathekingdom-lehrer .rollbar { overflow-x: auto; }
+.tabelle { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.tabelle th { text-align: left; font-size: .8rem; font-weight: 600; color: #5d6679; padding: 6px 10px; border-bottom: 2px solid #d9d4c7; vertical-align: bottom; }
+.tabelle td { padding: 6px 10px; border-bottom: 1px solid #ece8dd; vertical-align: top; }
+.tabelle td.zahl { text-align: right; white-space: nowrap; }
+.tabelle td.code { font-family: Consolas, ui-monospace, monospace; font-weight: 700; letter-spacing: .05em; }
+#mathekingdom-lehrer .tabelle tbody tr:hover { background: #faf8f2; }
+
+.balken { position: relative; display: inline-block; width: 120px; height: 18px; background: #ece8dd; border-radius: 4px; overflow: hidden; vertical-align: middle; }
+.balken i { position: absolute; inset: 0 auto 0 0; background: #7f9bd1; border-radius: 0 4px 4px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.balken b { position: relative; font-size: .78rem; padding-left: 6px; line-height: 18px; color: #1f2533; }
+
+.matrix th.gruppe { text-align: center; border-left: 2px solid #fff; background: #ece8dd; color: #1d2b4f; }
+.matrix th.kurz { text-align: center; cursor: help; }
+.matrix td.zelle { text-align: center; width: 46px; border-left: 2px solid #fff; font-size: .82rem; cursor: help; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.matrix td.zelle.erreicht { background: #f5c518; color: #4a3a00; font-weight: 700; }
+.matrix td.zelle.begonnen { background: #fff8e1; color: #7a5b00; }
+.matrix td.zelle.offen { color: #9aa3b5; }
+
+#mathekingdom-lehrer .liste { margin: 0 0 10px; padding-left: 18px; }
+#mathekingdom-lehrer .liste li { margin-bottom: 4px; }
+.kacheln { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; margin: 14px 0; }
+.kachel { border: 1px solid #d9d4c7; border-radius: 10px; padding: 8px 12px; display: flex; flex-direction: column; }
+.kachel span { font-size: .8rem; color: #5d6679; }
+.kachel b { font-size: 1.25rem; color: #1d2b4f; font-variant-numeric: tabular-nums; }
+.verlauf { line-height: 1.9; }
+
+@media print {
+  body > *:not(#mk-druck) { display: none !important; }
+  body { background: #fff; }
+  #mk-druck { font-size: 10pt; }
+  #mk-druck .rollbar { overflow: visible; }
+  #mk-druck .tabelle th, #mk-druck .tabelle td { padding: 3px 6px; }
+  #mk-druck tr { break-inside: avoid; }
+  #mk-druck h2 { margin-top: 18px; }
+  #mk-druck ul.klein { list-style: none; padding: 0; margin-top: 10px; }
+  #mk-druck .kaertchen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  #mk-druck .kaertchen > div { border: 1px dashed #777; padding: 14px 10px; display: flex; flex-direction: column; align-items: center; gap: 4px; break-inside: avoid; }
+  #mk-druck .kaertchen b { font: 700 20pt Consolas, ui-monospace, monospace; letter-spacing: .08em; }
+  #mk-druck .kaertchen small { color: #555; }
+}
+@media screen { #mk-druck { display: none; } }

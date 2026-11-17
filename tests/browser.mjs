@@ -187,6 +187,181 @@ async function antworte(seite, richtig = true) {
   await kontext.close();
 }
 
+// ---------- 4. Lehrer-Dashboard mit Beispielklasse, als lokale Datei ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1400, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.addInitScript(() => { window.print = () => { window.gedruckt = (window.gedruckt ?? 0) + 1; }; });
+  await seite.goto(new URL('dist/Lehrer-Dashboard.html', wurzel).href);
+  await foto(seite, 'lehrer-start');
+  await seite.click('#beispiel');
+  await seite.waitForSelector('.schlange li');
+  assert.equal(await seite.locator('.karte .tabelle tbody tr').count(), 14);
+  await foto(seite, 'lehrer-live');
+  await seite.click('[data-tab=diagnose]');
+  await seite.waitForSelector('.matrix');
+  assert.equal(await seite.locator('.matrix tbody tr').count(), 14);
+  await foto(seite, 'lehrer-diagnose');
+  await seite.click('[data-tab=schueler]');
+  await seite.waitForSelector('.kacheln');
+  await foto(seite, 'lehrer-einzel');
+  await seite.click('#einzelbericht');
+  assert.ok(await seite.locator('#mk-druck .kachel').count() > 5);
+  await seite.click('#pdf');
+  assert.equal(await seite.locator('#mk-druck .matrix').count(), 1);
+  assert.equal(await seite.evaluate(() => window.gedruckt), 2);
+  await seite.emulateMedia({ media: 'print' });
+  await foto(seite, 'lehrer-klassenbericht-druck');
+  await seite.emulateMedia({ media: 'screen' });
+  const [excel] = await Promise.all([seite.waitForEvent('download'), seite.click('#excel')]);
+  assert.match(excel.suggestedFilename(), /^Mathekingdom_5a_.*\.xlsx$/);
+  assert.equal(readFileSync(await excel.path()).subarray(0, 2).toString(), 'PK');
+  await seite.click('[data-tab=klasse]');
+  await seite.waitForSelector('td.code');
+  await foto(seite, 'lehrer-klasse');
+  await seite.click('#kaertchen');
+  assert.equal(await seite.locator('#mk-druck .kaertchen > div').count(), 14);
+  await seite.click('[data-tab=sicherung]');
+  await seite.click('#backup');
+  await seite.waitForSelector('#backup-wahl');
+  await foto(seite, 'lehrer-backup');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 5. Lehrkraft und Schüler arbeiten im selben Klassenordner ----------
+{
+  const kontext = await browser.newContext({ viewport: { width: 1400, height: 900 }, acceptDownloads: true });
+  await kontext.route(/github\.io/, (r) => r.abort());
+  const lehrer = await kontext.newPage();
+  const fehler = [];
+  lehrer.on('pageerror', (e) => fehler.push(`Lehrer: ${e.message}`));
+  lehrer.on('dialog', (d) => d.accept());
+  // Erste Ordnerwahl: Lehrerlaufwerk. Danach: Klassenordner.
+  await lehrer.addInitScript(() => {
+    let wahl = 0;
+    window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle(wahl++ === 0 ? 'lehrer' : '5a', { create: true });
+  });
+  await lehrer.goto(`${basis}dist/Lehrer-Dashboard.html`);
+  await lehrer.click('#lehrerordner');
+  await lehrer.fill('#neue-klasse', '5a');
+  await lehrer.click('#klasse-anlegen');
+  await lehrer.waitForSelector('#namen', { timeout: 15000 });
+  await lehrer.fill('#namen', 'Lena Müller\nTim Schmidt\n\nAylin Kaya');
+  await lehrer.click('#codes');
+  await lehrer.waitForSelector('td.code');
+  const codes = await lehrer.locator('td.code').allInnerTexts();
+  assert.equal(codes.length, 3);
+  assert.ok(codes.every((c) => /^5A-[A-Z0-9]{4}$/.test(c)));
+  const aylin = codes[0]; // alphabetisch nach Namen
+  await lehrer.selectOption(`[data-ziel="${aylin}"]`, 'M');
+  await lehrer.selectOption('#kapitel', '5.4');
+
+  const lies = (pfad) => lehrer.evaluate(async (pfad) => {
+    let o = await navigator.storage.getDirectory();
+    const teile = pfad.split('/');
+    for (const t of teile.slice(0, -1)) o = await o.getDirectoryHandle(t);
+    return (await (await o.getFileHandle(teile.at(-1))).getFile()).text();
+  }, pfad);
+  const schreibe = (pfad, text) => lehrer.evaluate(async ([pfad, text]) => {
+    let o = await navigator.storage.getDirectory();
+    const teile = pfad.split('/');
+    for (const t of teile.slice(0, -1)) o = await o.getDirectoryHandle(t);
+    const strom = await (await o.getFileHandle(teile.at(-1), { create: true })).createWritable();
+    await strom.write(text); await strom.close();
+  }, [pfad, text]);
+
+  // Im Klassenordner stehen keine Namen, auf dem Lehrerlaufwerk schon.
+  const inhalt = async () => JSON.parse(JSON.parse(await lies('5a/klassendatei.json')).inhalt);
+  const warteAuf = async (pruefe) => { for (let i = 0; i < 50 && !pruefe(await inhalt()); i++) await lehrer.waitForTimeout(100); assert.ok(pruefe(await inhalt())); };
+  await warteAuf((k) => k.aktuellesKapitel === '5.4');
+  const klassendatei = await lies('5a/klassendatei.json');
+  assert.ok(!/Lena|Schmidt|Aylin/.test(klassendatei));
+  assert.equal(JSON.parse(JSON.parse(klassendatei).inhalt).aktuellesKapitel, '5.4');
+  const lehrerdaten = JSON.parse(await lies('lehrer/lehrerdaten.json'));
+  assert.deepEqual(Object.values(lehrerdaten.klassen['5a'].namen).sort(), ['Aylin Kaya', 'Lena Müller', 'Tim Schmidt']);
+  assert.ok((await lies('5a/_mathekingdom/schueler-dashboard.js')).length > 10000);
+  assert.equal(JSON.parse(await lies('5a/_mathekingdom/klasse-5.json')).aufgaben.length, pool.aufgaben.length);
+
+  // Die Startdatei enthält den öffentlichen Schlüssel.
+  const [start] = await Promise.all([lehrer.waitForEvent('download'), lehrer.click('#startdatei')]);
+  const startText = readFileSync(await start.path(), 'utf8');
+  assert.ok(startText.includes(JSON.stringify(lehrerdaten.schluessel.oeffentlich)));
+  assert.ok(!startText.includes('/*SCHLUESSEL*/null'));
+
+  // Schülerin meldet sich an: Zielniveau M, Kapitel bis 5.4 offen, fremder Code wird abgelehnt.
+  const schueler = await kontext.newPage();
+  schueler.on('pageerror', (e) => fehler.push(`Schüler: ${e.message}`));
+  await schueler.addInitScript(`${ordnerErsatz('5a')}; window.MK_SCHLUESSEL = ${JSON.stringify(lehrerdaten.schluessel.oeffentlich)};`);
+  await schueler.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await schueler.fill('#code', '5A-ZZZZ');
+  await schueler.click('#ordner');
+  await schueler.waitForSelector('.fehler');
+  await schueler.fill('#code', aylin);
+  await schueler.click('#ordner');
+  await schueler.waitForSelector('.regionen');
+  assert.equal(await schueler.locator('.region:not(.gesperrt)').count(), 4);
+  await schueler.click('[data-kapitel="5.4"]');
+  assert.match(await schueler.innerText('.unter'), /Linie M/);
+  await schueler.click('#losfahren');
+  await antworte(schueler, true);
+  await schueler.waitForSelector('.ergebnis.richtig');
+  await schueler.click('#weiter');
+  await schueler.click('#hilferuf');
+  await schueler.waitForSelector('.hilfebanner');
+
+  // Der Hilferuf erscheint bei der Lehrkraft, die Antwort beim Schüler.
+  await lehrer.click('[data-tab=live]');
+  await lehrer.waitForSelector(`[data-komme="${aylin}"]`, { timeout: 25000 });
+  assert.match(await lehrer.innerText('.schlange'), /Aylin Kaya/);
+  await foto(lehrer, 'lehrer-hilferuf');
+  await lehrer.click(`[data-komme="${aylin}"]`);
+  await lehrer.waitForSelector('.schlange li.unterwegs');
+  await schueler.waitForFunction(() => /kommt|unterwegs/i.test(document.querySelector('.hilfebanner')?.textContent ?? ''), null, { timeout: 25000 });
+  await foto(schueler, 'schueler-hilfe-kommt');
+  await lehrer.click(`[data-erledigt="${aylin}"]`);
+  await schueler.waitForFunction(() => !document.querySelector('.hilfebanner'), null, { timeout: 25000 });
+  await lehrer.waitForFunction(() => !document.querySelector('.schlange li'), null, { timeout: 25000 });
+
+  // Spielpause wirkt beim Schüler.
+  await lehrer.check('#spielpause');
+  await warteAuf((k) => k.spielpause === true);
+
+  // Backup und Wiederherstellen.
+  await lehrer.click('[data-tab=sicherung]');
+  await lehrer.waitForSelector('#backup-wahl');
+  const stempel = await lehrer.inputValue('#backup-wahl');
+  assert.equal(JSON.parse(await lies(`lehrer/backup/5a/${stempel}/${aylin}.json`)).code, aylin);
+  await schreibe(`5a/${aylin}.json`, JSON.stringify({ ...JSON.parse(await lies(`5a/${aylin}.json`)), muenzen: 99999 }));
+  await lehrer.selectOption('#backup-schueler', aylin);
+  await lehrer.click('#wiederherstellen');
+  await lehrer.waitForFunction(() => /wiederhergestellt/.test(document.querySelector('.meldung.warnung')?.textContent ?? ''));
+  assert.ok(JSON.parse(await lies(`5a/${aylin}.json`)).muenzen < 1000);
+
+  // Eine von außen veränderte Klassendatei erkennt die Lehrkraft und stellt sie wieder her.
+  const gefaelscht = JSON.stringify({ inhalt: JSON.stringify({ klasse: '5a', aktuellesKapitel: null, codes: [aylin, '5A-ZZZZ'], zielniveaus: {}, spielpause: true, hilfe: {} }), signatur: JSON.parse(klassendatei).signatur });
+  await schreibe('5a/klassendatei.json', gefaelscht);
+  await lehrer.waitForFunction(() => /von außen verändert/.test(document.querySelector('.meldung.warnung')?.textContent ?? ''), null, { timeout: 25000 });
+  assert.notEqual(await lies('5a/klassendatei.json'), gefaelscht);
+  await foto(lehrer, 'lehrer-warnung');
+
+  // Ohne offenes Lehrer-Dashboard: Das Schüler-Dashboard lehnt die gefälschte Datei ab.
+  await lehrer.goto('about:blank');
+  await schueler.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await schueler.evaluate(async (text) => {
+    const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
+    const strom = await (await o.getFileHandle('klassendatei.json')).createWritable();
+    await strom.write(text); await strom.close();
+  }, gefaelscht);
+  await schueler.fill('#code', '5A-ZZZZ');
+  await schueler.click('#ordner');
+  await schueler.waitForSelector('.fehler');
+  assert.match(await schueler.innerText('.fehler'), /Klassendatei/);
+  assert.deepEqual(fehler, []);
+  await kontext.close();
+}
+
 await browser.close();
 server.close();
 console.log('Browsertest bestanden.');

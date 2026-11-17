@@ -1,6 +1,8 @@
 // Dateizugriff des Schüler-Dashboards. Siehe docs/adr/0001 und 0004.
 // Eine Ablage hat: name, lies(pfad) → Text oder null, schreibe(pfad, text), liste() → Dateinamen.
 
+import { pruefeUnterschrift, liesUngeprueft } from '../gemeinsam/krypto.js';
+
 export const SYSTEMORDNER = '_mathekingdom';
 export const KLASSENDATEI = 'klassendatei.json';
 const SICHERUNG = 'mk-sicherung-';
@@ -14,7 +16,7 @@ async function datei(wurzel, pfad, anlegen) {
 
 export function ordnerAblage(handle) {
   return {
-    name: handle.name,
+    name: handle.name, handle,
     async lies(pfad) {
       try { return await (await (await datei(handle, pfad, false)).getFile()).text(); }
       catch (e) { if (e.name === 'NotFoundError' || e.name === 'TypeMismatchError') return null; throw e; }
@@ -29,6 +31,35 @@ export function ordnerAblage(handle) {
       for await (const [name, eintrag] of handle.entries()) if (eintrag.kind === 'file') namen.push(name);
       return namen;
     },
+    async ordnernamen() {
+      const namen = [];
+      for await (const [name, eintrag] of handle.entries()) if (eintrag.kind === 'directory') namen.push(name);
+      return namen;
+    },
+    async unterordner(name) { return ordnerAblage(await handle.getDirectoryHandle(name, { create: true })); },
+    async entferne(name) { await handle.removeEntry(name, { recursive: true }); },
+  };
+}
+
+// Ablage nur im Arbeitsspeicher: für Beispieldaten im Lehrer-Dashboard.
+export function speicherAblage(name, baum = { dateien: new Map(), ordner: new Map() }) {
+  const ziel = (pfad, anlegen) => {
+    const teile = pfad.split('/');
+    let k = baum;
+    for (const t of teile.slice(0, -1)) {
+      if (!k.ordner.has(t)) { if (!anlegen) return [null]; k.ordner.set(t, { dateien: new Map(), ordner: new Map() }); }
+      k = k.ordner.get(t);
+    }
+    return [k, teile.at(-1)];
+  };
+  return {
+    name, demo: true,
+    async lies(pfad) { const [k, n] = ziel(pfad, false); return k?.dateien.get(n) ?? null; },
+    async schreibe(pfad, text) { const [k, n] = ziel(pfad, true); k.dateien.set(n, text); },
+    async liste() { return [...baum.dateien.keys()]; },
+    async ordnernamen() { return [...baum.ordner.keys()]; },
+    async unterordner(n) { if (!baum.ordner.has(n)) baum.ordner.set(n, { dateien: new Map(), ordner: new Map() }); return speicherAblage(n, baum.ordner.get(n)); },
+    async entferne(n) { baum.ordner.delete(n); baum.dateien.delete(n); },
   };
 }
 
@@ -61,8 +92,15 @@ export async function ladeStand(ablage, code) {
   return { stand: ausDatei, hinweis: null };
 }
 
+// Liest die Klassendatei. Ist ein öffentlicher Schlüssel hinterlegt (window.MK_SCHLUESSEL, aus der Startdatei),
+// zählt sie nur mit gültiger Unterschrift. status: ok | ungeprueft | fehlt | ungueltig
 export async function ladeKlassendatei(ablage) {
-  return liesJson(await ablage.lies(KLASSENDATEI));
+  const text = await ablage.lies(KLASSENDATEI);
+  const schluessel = window.MK_SCHLUESSEL;
+  if (!text) return { daten: null, status: schluessel ? 'fehlt' : 'ungeprueft' };
+  if (!schluessel) return { daten: liesUngeprueft(text), status: 'ungeprueft' };
+  const daten = await pruefeUnterschrift(text, schluessel);
+  return { daten, status: daten ? 'ok' : 'ungueltig' };
 }
 
 // Offene Hilferufe der anderen Schüler der Klasse, für den Platz in der Warteschlange.

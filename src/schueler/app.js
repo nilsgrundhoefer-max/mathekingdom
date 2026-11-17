@@ -92,7 +92,13 @@ async function melde({ code, klasse }, ablage) {
   const klassenstufe = parseInt(klasse, 10);
   const { pool } = await S.ladePool(ablage, klassenstufe);
   if (!pool) return zeige({ name: 'anmeldung', code, fehler: `Für Klasse ${klassenstufe} gibt es noch keine Aufgaben.` });
-  const klassendatei = await S.ladeKlassendatei(ablage);
+  const gelesen = await S.ladeKlassendatei(ablage);
+  if (gelesen.status === 'fehlt' || gelesen.status === 'ungueltig') {
+    return zeige({ name: 'anmeldung', code, fehler: gelesen.status === 'fehlt'
+      ? 'In diesem Ordner fehlt die Klassendatei. Sag deiner Lehrkraft Bescheid.'
+      : 'Die Klassendatei wurde verändert und ist ungültig. Sag deiner Lehrkraft Bescheid.' });
+  }
+  const klassendatei = gelesen.daten;
   const einst = L.einstellungen(klassendatei, code, pool);
   if (!einst.codeBekannt) return zeige({ name: 'anmeldung', code, fehler: 'Dieser Schülercode steht nicht in der Klassenliste. Prüfe, ob du dich vertippt hast.' });
   const geladen = await S.ladeStand(ablage, code);
@@ -112,7 +118,9 @@ function maleStatus() {
 // Alle 10 Sekunden: Vorgaben der Lehrkraft neu lesen und die Warteschlange prüfen.
 async function takt() {
   try {
-    z.klassendatei = await S.ladeKlassendatei(z.ablage);
+    const gelesen = await S.ladeKlassendatei(z.ablage);
+    // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
+    if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') z.klassendatei = gelesen.daten;
     const vorher = JSON.stringify([...z.einst.offeneKapitel, z.einst.spielpause, z.einst.zielniveau, z.einst.hilfeAntwort]);
     z.einst = einstellungenJetzt();
     const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
