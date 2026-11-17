@@ -18,6 +18,8 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 - **Ohne Ordner ausprobieren** speichert nur im Browser.
 - **Klassenordner wählen** speichert wie im Unterricht: Der Ordner muss wie die Klasse heißen (`5a`). Darin entsteht der Speicherstand `5A-K4M2.json`.
 
+Die Startseite zeigt oben die Etappe: das Kapitel, an dem gerade gearbeitet wird, wie viele Stationen geschafft sind, und einen Knopf, der direkt zur nächsten Aufgabe führt. Auf der Metrokarte ist die Station markiert, an der es weitergeht. Jede Station hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Er ist frei und kostet keine Münzen.
+
 Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist G, und jeder Code mit passender Klasse wird angenommen. Sobald die Startdatei aus dem Lehrer-Dashboard stammt, ist eine gültig signierte Klassendatei Pflicht.
 
 ## Lehrer-Dashboard ausprobieren

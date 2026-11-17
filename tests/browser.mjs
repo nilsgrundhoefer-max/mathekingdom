@@ -125,9 +125,25 @@ async function antworte(seite, richtig = true) {
   await seite.fill('#code', '5a-form');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
+  // Startseite: Etappe mit Fortschritt, ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
+  assert.match(await seite.innerText('.etappe'), /Addieren und Subtrahieren: Station Kopfrechnen[\s\S]*0 von 5 Stationen geschafft/);
+  await foto(seite, 'startseite-etappe');
+  await seite.click('#weiterfahren');
+  await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.3.1-K1"]');
+  assert.equal(await seite.locator('.merkzettel ul').isVisible(), false);
+  await seite.click('.merkzettel summary');
+  assert.match(await seite.innerText('.merkzettel'), /Rechne in Schritten[\s\S]*Beispiel[\s\S]*Im Heft/);
+  await seite.click('[data-hilfe=tipp]'); // Neuzeichnen: der Merkzettel bleibt offen
+  assert.equal(await seite.locator('.merkzettel ul').isVisible(), true);
+  await foto(seite, 'merkzettel');
+  await seite.click('.kopf nav button:has-text("Jahresplan")');
+  await seite.waitForSelector('.regionen');
   await seite.click('[data-kapitel="5.3"]');
   await seite.waitForSelector('svg.metro');
   assert.equal(await seite.locator('.station:not(.leer)').count(), 5); // alle fünf Stationen haben jetzt Aufgaben
+  assert.equal(await seite.locator('.station.standort').count(), 1);
+  assert.match(await seite.textContent('.station.standort'), /Hier weiter/);
+  await foto(seite, 'metrokarte-standort');
   // Übt an einer Station auf einer Linie ein Lernziel, bis eine Aufgabe des gesuchten Formats kommt, und löst sie.
   const suche = async (station, linie, lernzielNr, passt, name) => {
     for (let i = 0; i < 8; i++) {

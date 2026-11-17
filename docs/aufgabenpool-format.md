@@ -21,7 +21,7 @@ Der Zufall im Erzeuger ist fest geimpft: Gleicher Code ergibt dieselbe Datei. Ei
 | `version` | Version des Dateiaufbaus |
 | `klassenstufe` | 5 bis 10 |
 | `fehlvorstellungen` | Katalog: Kürzel → `beschreibung` (für die Diagnose) und `hinweis` (Rückmeldung an den Schüler nach dem ersten falschen Versuch) |
-| `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele |
+| `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele. Ein Unterkapitel mit Aufgaben trägt einen `merkzettel` mit `regeln` (Liste), `beispiel` und `heft`. Die Texte stehen in `tools/jahresplan-klasse-5.mjs`. |
 | `aufgaben` | Liste aller Aufgaben |
 
 Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.3-S2`, Aufgabe `5.3.3-S2-G-01`.

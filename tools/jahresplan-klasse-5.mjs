@@ -107,6 +107,71 @@ const roh = [
   ]],
 ];
 
+// Merkzettel je Station: die Regeln des Unterkapitels in Kürze, ein vorgerechnetes Beispiel und ein Hinweis fürs Heft.
+// Der Merkzettel ist frei zugänglich und kostet keine Münzen.
+export const merkzettel = {
+  '5.3.1': {
+    regeln: [
+      'Rechne in Schritten: erst bis zum nächsten Zehner oder Hunderter, dann den Rest.',
+      'Liegt eine Zahl knapp neben einem Hunderter, rechne mit dem Hunderter und gleiche danach aus.',
+      'Suche Zahlen, die zusammen einen glatten Zehner oder Hunderter ergeben.',
+    ],
+    beispiel: '67 + 48 = 67 + 3 + 45 = 115 und 83 − 27 = 83 − 3 − 24 = 56. Geschickt: 298 + 137 = 300 + 137 − 2 = 435.',
+    heft: 'Schreibe bei schwierigen Aufgaben deine Zwischenschritte auf.',
+  },
+  '5.3.2': {
+    regeln: [
+      'Summand + Summand = Summe. Bei 34 + 12 = 46 sind 34 und 12 die Summanden, 46 ist der Wert der Summe.',
+      'Schriftlich addieren: Schreibe stellengerecht untereinander, Einer unter Einer. Addiere von rechts nach links.',
+      'Ist das Ergebnis einer Spalte 10 oder größer, schreibst du den Übertrag klein in die nächste Spalte und rechnest ihn dort mit.',
+      'Überschlage vorher mit gerundeten Zahlen. Prüfe danach mit der Probe: Summe − Summand = anderer Summand.',
+    ],
+    beispiel: '467 + 285: Einer 7 + 5 = 12, schreibe 2, Übertrag 1. Zehner 6 + 8 + 1 = 15, schreibe 5, Übertrag 1. Hunderter 4 + 2 + 1 = 7. Ergebnis 752.',
+    heft: 'Rechne schriftliche Aufgaben im Heft, ein Kästchen pro Ziffer.',
+  },
+  '5.3.3': {
+    regeln: [
+      'Minuend − Subtrahend = Differenz. Bei 46 − 12 = 34 ist 46 der Minuend, 12 der Subtrahend, 34 der Wert der Differenz.',
+      'Schriftlich subtrahieren: Schreibe stellengerecht untereinander und beginne bei den Einern.',
+      'Ist die obere Ziffer zu klein, rechnest du mit 10 mehr und merkst dir den Übertrag 1 für die nächste Spalte.',
+      'Mehrere Subtrahenden kannst du zuerst addieren und ihre Summe dann abziehen.',
+      'Probe: Differenz + Subtrahend = Minuend.',
+    ],
+    beispiel: '532 − 218: Einer 12 − 8 = 4, Übertrag 1. Zehner 3 − 1 − 1 = 1. Hunderter 5 − 2 = 3. Ergebnis 314. Probe: 314 + 218 = 532.',
+    heft: 'Rechne schriftliche Aufgaben im Heft und schreibe den Übertrag immer mit.',
+  },
+  '5.3.4': {
+    regeln: [
+      'Was in der Klammer steht, wird zuerst berechnet.',
+      'Ohne Klammern rechnest du bei Plus und Minus von links nach rechts.',
+      'Eine Klammer hinter einem Minus fasst zusammen, was insgesamt abgezogen wird.',
+    ],
+    beispiel: '80 − (25 + 15) = 80 − 40 = 40. Ohne Klammer kommt etwas anderes heraus: 80 − 25 + 15 = 55 + 15 = 70.',
+    heft: 'Schreibe jeden Rechenschritt in eine neue Zeile und unterstreiche, was du als Nächstes rechnest.',
+  },
+  '5.3.5': {
+    regeln: [
+      'Vertauschungsgesetz: Beim Addieren darfst du die Summanden vertauschen. 17 + 48 = 48 + 17.',
+      'Verbindungsgesetz: Beim Addieren darfst du Klammern beliebig setzen. (17 + 48) + 52 = 17 + (48 + 52).',
+      'Beide Gesetze gelten nicht beim Subtrahieren: 9 − 4 ist nicht dasselbe wie 4 − 9.',
+      'Nutze die Gesetze, um zuerst die Zahlen zu addieren, die gut zusammenpassen.',
+    ],
+    beispiel: '37 + 48 + 63 = 37 + 63 + 48 = 100 + 48 = 148.',
+    heft: 'Schreibe auf, wie du umgestellt hast, bevor du rechnest.',
+  },
+  '5.4.5': {
+    regeln: [
+      'Dividend : Divisor = Quotient. Bei 48 : 6 = 8 ist 48 der Dividend, 6 der Divisor, 8 der Wert des Quotienten.',
+      'Schriftlich dividieren: Beginne links. Teile, multipliziere zurück, ziehe ab und hole die nächste Ziffer herunter.',
+      'Bleibt am Ende etwas übrig, ist das der Rest. Der Rest ist immer kleiner als der Divisor.',
+      'Probe: Quotient · Divisor, dazu der Rest, ergibt den Dividenden.',
+      'Durch 0 kann man nicht dividieren.',
+    ],
+    beispiel: '952 : 4: 9 : 4 = 2 Rest 1. Dann 15 : 4 = 3 Rest 3. Dann 32 : 4 = 8. Ergebnis 238. Probe: 238 · 4 = 952.',
+    heft: 'Rechne schriftliche Divisionen im Heft und schreibe die Probe dazu.',
+  },
+};
+
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".
 export const kapitel = roh.map(([titel, unterkapitel], k) => {
   let nr = 0;
@@ -119,7 +184,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => {
       const lernziele = Array.isArray(u.lernziele)
         ? u.lernziele.map((text, i) => ({ id: `${id}-L${i + 1}`, text }))
         : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text }));
-      return { id, titel: u.titel, extra: u.extra, lernziele };
+      return { id, titel: u.titel, extra: u.extra, lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }) };
     }),
   };
 });

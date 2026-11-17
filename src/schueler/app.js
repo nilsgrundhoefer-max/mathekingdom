@@ -188,6 +188,7 @@ function einstellungenJetzt() {
 function jahresplan() {
   z.einst = einstellungenJetzt();
   return h('section', {},
+    etappenKarte(),
     h('h1', {}, `Jahresplan Klasse ${z.pool.klassenstufe}`),
     h('p', { class: 'unter' }, 'Jedes Kapitel ist eine Region des Reiches. Wähle eine Region und erschließe sie mit deinem Zug.'),
     h('ol', { class: 'regionen' }, z.pool.kapitel.map((k, i) => {
@@ -200,6 +201,38 @@ function jahresplan() {
         k.id === z.einst.aktuellesKapitel && h('span', { class: 'marke' }, 'Aktuelles Kapitel'),
         h('span', { class: 'stand' }, !offen ? 'Noch gesperrt' : mit.length === 0 ? 'Aufgaben folgen' : `${erreicht} von ${mit.length} Stationen erreicht`)));
     })));
+}
+
+// Startseite: Wo stehe ich, was tue ich jetzt? Ein Tipp führt direkt zur nächsten Aufgabe.
+function etappenKarte() {
+  const e = L.etappe(z.pool, z.index, z.stand, z.einst);
+  if (!e) return null;
+  const k = e.kapitel, fertig = !e.station;
+  const los = () => {
+    z.ansicht = { name: 'metro', kapitel: k.id, station: e.station.id };
+    starteAufgabe(L.naechstesLernziel(z.index, z.stand, e.station).id, L.arbeitsniveau(z.stand, k.id, z.einst.zielniveau));
+  };
+  return h('div', { class: 'karte etappe' },
+    h('div', { class: 'etappe-text' },
+      h('span', { class: 'klein' }, fertig ? 'Etappe geschafft' : 'Hier geht es weiter'),
+      h('h2', {}, fertig ? `${k.titel}: alle Stationen erreicht` : `${k.titel}: Station ${e.station.titel}`),
+      h('div', { class: 'balken', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': e.gesamt, 'aria-valuenow': e.geschafft, 'aria-label': 'Etappenziel' },
+        Array.from({ length: e.gesamt }, (_, i) => h('i', { class: i < e.geschafft ? 'voll' : '' }))),
+      h('span', { class: 'etappe-stand' }, `${e.geschafft} von ${e.gesamt} Stationen geschafft`)),
+    fertig
+      ? h('button', { class: 'schlicht', id: 'weiterfahren', onclick: () => zeige({ name: 'metro', kapitel: k.id }) }, 'Zur Metrokarte')
+      : h('button', { class: 'haupt', id: 'weiterfahren', onclick: los }, 'Weiterfahren'));
+}
+
+// Merkzettel der Station: Regeln, Beispiel, Hinweis fürs Heft. Frei zugänglich, kostet nichts.
+function merkzettel(station, halter) {
+  const m = station.merkzettel;
+  if (!m) return null;
+  return h('details', { class: 'merkzettel', open: Boolean(halter?.merkzettelOffen), ontoggle: (e) => { if (halter) halter.merkzettelOffen = e.target.open; } },
+    h('summary', {}, 'Merkzettel'),
+    h('ul', {}, m.regeln.map((r) => h('li', {}, r))),
+    h('p', {}, h('b', {}, 'Beispiel: '), m.beispiel),
+    m.heft && h('p', { class: 'heft' }, h('b', {}, 'Im Heft: '), m.heft));
 }
 
 // ---------- Metrokarte ----------
@@ -243,7 +276,8 @@ function stationsTafel(kapitel, station, niveau) {
         h('span', { class: 'punkte', title: `${st.fortschritt} von ${L.LERNZIEL_RICHTIGE}` }, [0, 1, 2].map((i) => h('i', { class: i < (erreicht ? 3 : st.fortschritt) ? 'voll' : '' }))),
         h('button', { class: 'schlicht', onclick: () => starteAufgabe(l.id, niveau) }, erreicht ? 'Weiter üben' : 'Üben'));
     })),
-    h('button', { class: 'haupt', id: 'losfahren', onclick: () => starteAufgabe(naechstes.id, niveau) }, status === 'erreicht' ? 'Noch eine Runde fahren' : 'Losfahren'));
+    h('button', { class: 'haupt', id: 'losfahren', onclick: () => starteAufgabe(naechstes.id, niveau) }, status === 'erreicht' ? 'Noch eine Runde fahren' : 'Losfahren'),
+    merkzettel(station, z.ansicht));
 }
 
 // ---------- Aufgabe ----------
@@ -278,7 +312,7 @@ function aufgabenAnsicht() {
       formular,
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
       fertig && ergebnisTafel(a, kapitelId, station)),
-    !fertig && hilfen(a));
+    !fertig && hilfen(a, station));
 }
 
 function eingabefelder(auf, a, gesperrt) {
@@ -388,8 +422,8 @@ function ergebnisTafel(a, kapitelId, station) {
   };
   const ziel = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)];
   return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
-    h('h2', {}, e.richtig ? 'Richtig!' : 'Leider nicht richtig.'),
-    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Gleich kommt eine ähnliche Aufgabe.'),
+    h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
+    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
     e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen',
       e.training && ' (Training unter deinem Zielniveau bringt weniger)'),
     e.neuesLernziel && h('p', { class: 'lohn neu' }, stern(26), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst einen Stern.'),
@@ -404,13 +438,15 @@ function ergebnisTafel(a, kapitelId, station) {
     h('button', { class: 'schlicht', onclick: () => zeige({ name: 'metro', kapitel: kapitelId, station: station.id }) }, 'Zur Metrokarte'));
 }
 
-function hilfen(a) {
+const stationVon = (auf) => z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.some((l) => l.id === auf.lernziel));
+function hilfen(a, station = stationVon(a.aufgabe)) {
   const karten = [
     ['tipp', 'Tipp', 'Ein Denkanstoß. Kostet einen Teil der Münzen.'],
     ['beispiel', 'Beispiel', 'Eine ähnliche Aufgabe, vorgerechnet. Kostet weitere Münzen.'],
     ['loesungsschritt', 'Lösungsschritt', 'Der erste Schritt dieser Aufgabe. Danach zählt sie nicht mehr für dein Lernziel.'],
   ];
   return h('aside', { class: 'hilfen' },
+    merkzettel(station, a),
     h('h2', {}, 'Hilfekärtchen'),
     h('div', { class: 'kaertchen' }, karten.map(([feld, titel, kosten], i) => i < a.hilfen
       ? h('div', { class: 'kaertchen-offen' }, h('b', {}, titel), h('p', {}, a.aufgabe.hilfen[feld]))

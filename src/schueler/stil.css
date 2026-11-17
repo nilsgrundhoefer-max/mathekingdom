@@ -113,8 +113,9 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .ergebnis p { margin: 0; }
 #mathekingdom .ergebnis.richtig { background: var(--gut-hell); }
 #mathekingdom .ergebnis.richtig h2 { color: var(--gut); }
-#mathekingdom .ergebnis.falsch { background: var(--schlecht-hell); }
-#mathekingdom .ergebnis.falsch h2 { color: var(--schlecht); }
+/* Fehler sind Lernanlässe: ruhige Farbe statt Rot. */
+#mathekingdom .ergebnis.falsch { background: var(--hell); border-left: 5px solid var(--gold); }
+#mathekingdom .ergebnis.falsch h2 { color: var(--nacht); }
 #mathekingdom .lohn { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 #mathekingdom .vorschlag { background: #fff; border-radius: 10px; padding: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
 #mathekingdom .vorschlag p { flex-basis: 100%; }
@@ -188,3 +189,31 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .aufgabentabelle tbody th { text-align: left; }
 #mathekingdom .aufgabentabelle td .zahlfeld input { width: 7ch; font-size: 1.1rem; }
 #mathekingdom .teile.einzeln { list-style: none; }
+
+/* Startseite: Etappe */
+#mathekingdom .etappe { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; border-left: 8px solid var(--gold); margin-bottom: 22px; }
+#mathekingdom .etappe h2 { margin: 2px 0 10px; font-size: 1.3rem; }
+#mathekingdom .etappe .klein { text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; font-weight: 700; color: var(--grau); }
+#mathekingdom .etappe-text { flex: 1 1 320px; min-width: 0; }
+#mathekingdom .etappe .balken { display: flex; gap: 5px; max-width: 420px; }
+#mathekingdom .etappe .balken i { flex: 1; height: 12px; border-radius: 6px; background: #e4e0d5; border: 1px solid var(--rand); }
+#mathekingdom .etappe .balken i.voll { background: var(--gut); border-color: var(--gut); }
+#mathekingdom .etappe-stand { display: block; margin-top: 6px; font-size: .9rem; color: var(--grau); }
+#mathekingdom .etappe .haupt { font-size: 1.15rem; padding: 14px 26px; }
+
+/* Merkzettel */
+#mathekingdom .merkzettel { background: #f3f7ee; border: 1px solid #c9d8b8; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; }
+#mathekingdom .tafel .merkzettel { margin: 16px 0 0; }
+#mathekingdom .merkzettel summary { cursor: pointer; font-weight: 700; color: var(--nacht); padding: 12px 0; min-height: 44px; }
+#mathekingdom .merkzettel ul { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 6px; }
+#mathekingdom .merkzettel p { margin: 0 0 10px; font-variant-numeric: tabular-nums; }
+#mathekingdom .merkzettel .heft { color: var(--grau); }
+#mathekingdom .hilfen .merkzettel { font-size: .93rem; }
+
+/* Metrokarte: Standort */
+#mathekingdom .metro .puls { fill: none; stroke: var(--gold); stroke-width: 3; }
+#mathekingdom .metro .hiermarke { font-size: 12px; font-weight: 700; fill: var(--nacht); pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  #mathekingdom .metro .puls { animation: mk-puls 1.8s ease-in-out infinite; }
+  @keyframes mk-puls { 50% { stroke-opacity: .15; } }
+}

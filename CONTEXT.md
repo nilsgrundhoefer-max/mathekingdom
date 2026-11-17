@@ -126,6 +126,14 @@ _Avoid_: Statistik, Analyse
 Ein Export der Diagnose als PDF oder Excel-Datei; Namen werden erst beim Export aus der Namensliste eingesetzt.
 _Avoid_: Report, Ausdruck
 
+**Merkzettel**:
+Die Regeln eines Unterkapitels in Kürze, mit einem vorgerechneten Beispiel und einem Hinweis fürs Heft. Jederzeit frei zugänglich, kostet keine Münzen und zählt nicht als Hilfekärtchen.
+_Avoid_: Regelheft, Spickzettel
+
+**Etappe**:
+Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der geschafften Stationen und der nächsten Station. Sie steht oben auf der Startseite. Gesperrte Stationen zählen nicht mit.
+_Avoid_: Wochenmission, Wochenziel
+
 **Hilfekärtchen**:
 Eine von drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. Jede genutzte Stufe senkt die Punkte der Aufgabe.
 _Avoid_: Joker, Hinweis

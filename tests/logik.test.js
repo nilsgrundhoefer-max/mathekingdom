@@ -232,3 +232,28 @@ test('Kapitel 5.3 ist vollständig: jede Station hat Aufgaben auf allen vier Lin
     assert.ok(pool.aufgaben.filter((a) => a.lernziel === l.id && a.niveau === n).length >= 6, `${l.id} ${n}`);
   }
 });
+
+test('Etappe der Startseite: Fortschritt und nächste Station, gesperrte Stationen zählen nicht', () => {
+  const stand = neu();
+  const frei = L.einstellungen(null, stand.code, pool);
+  const start = L.etappe(pool, index, stand, frei);
+  assert.equal(start.kapitel.id, '5.3');
+  assert.deepEqual([start.geschafft, start.gesamt, start.station.id], [0, 5, '5.3.1']);
+  // Die Lehrkraft arbeitet in Kapitel 4: Dort geht es weiter.
+  const vier = L.einstellungen({ aktuellesKapitel: '5.4' }, stand.code, pool);
+  assert.equal(L.etappe(pool, index, stand, vier).station.id, '5.4.5');
+  // Eine begonnene Station hat Vorrang, eine gesperrte fällt heraus.
+  const zu = L.einstellungen({ aktuellesKapitel: '5.3', sperren: { '5.3.1': [stand.code] } }, stand.code, pool);
+  const mitSperre = L.etappe(pool, index, stand, zu);
+  assert.deepEqual([mitSperre.gesamt, mitSperre.station.id], [4, '5.3.2']);
+  // Alle Lernziele des aktuellen Kapitels erreicht: Die Etappe zeigt das nächste offene Kapitel mit Aufgaben.
+  for (const u of pool.kapitel.find((k) => k.id === '5.4').unterkapitel) for (const l of u.lernziele) stand.lernziele[l.id] = { t: 'x' };
+  assert.equal(L.etappe(pool, index, stand, vier).kapitel.id, '5.3');
+});
+
+test('Jede Station mit Aufgaben hat einen Merkzettel', () => {
+  for (const k of pool.kapitel) for (const u of k.unterkapitel) {
+    if (!u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id))) continue;
+    assert.ok(u.merkzettel?.regeln.length >= 3 && u.merkzettel.beispiel, u.id);
+  }
+});

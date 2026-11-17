@@ -77,8 +77,11 @@ export function metrokarte({ stationen, niveau, zielniveau, standort, gewaehlt, 
     const jj = st.extra ? haupt - 1 : j;
     const oben = st.extra ? y(jj, 1.5) - 10 : y(jj, 0) - 10;
     const hoch = st.extra ? 20 : 3 * LINIE + 20;
-    const g = s('g', { class: `station ${st.status}${st.id === gewaehlt ? ' gewaehlt' : ''}`, tabindex: 0, role: 'button', 'aria-label': `Station ${st.titel}`,
+    const hier = st.id === standort && st.status !== 'erreicht' && st.status !== 'leer';
+    const g = s('g', { class: `station ${st.status}${st.id === gewaehlt ? ' gewaehlt' : ''}${hier ? ' standort' : ''}`, tabindex: 0, role: 'button', 'aria-label': `Station ${st.titel}`,
       onclick: () => beiStation(st.id), onkeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); beiStation(st.id); } } },
+      hier && s('rect', { x: x(j) - 16, y: oben - 6, width: 32, height: hoch + 12, rx: 16, class: 'puls' }),
+      hier && s('text', { x: x(j), y: oben - 14, 'text-anchor': 'middle', class: 'hiermarke' }, 'Hier weiter'),
       s('rect', { x: x(j) - 10, y: oben, width: 20, height: hoch, rx: 10, class: 'kapsel' }),
       st.status === 'erreicht' && s('g', { transform: `translate(${x(j) - 10} ${oben - 26})` }, s('path', { d: STERNPFAD, fill: '#f5c518', stroke: '#a67c00', 'stroke-width': 1.2 })),
       s('text', { x: x(j) + 4, y: oben + hoch + 16, transform: `rotate(38 ${x(j) + 4} ${oben + hoch + 16})`, class: 'stationsname' }, st.titel));

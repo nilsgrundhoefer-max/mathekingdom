@@ -122,6 +122,21 @@ export function stationStatus(index, stand, unterkapitel) {
   if (erreicht === mit.length) return 'erreicht';
   return stand.versuche.some((v) => mit.some((l) => l.id === v.lernziel)) ? 'begonnen' : 'offen';
 }
+// Etappe für die Startseite: das Kapitel, an dem gerade gearbeitet wird, mit Fortschritt und nächster Station.
+// Gesperrte Stationen und Stationen ohne Aufgaben zählen nicht mit.
+export function etappe(pool, index, stand, einst) {
+  const zu = einst.gesperrteStationen ?? new Set();
+  const lage = (k) => {
+    const stationen = k.unterkapitel.filter((u) => !zu.has(u.id) && stationStatus(index, stand, u) !== 'leer');
+    const offen = stationen.filter((u) => stationStatus(index, stand, u) !== 'erreicht');
+    const naechste = offen.find((u) => stationStatus(index, stand, u) === 'begonnen') ?? offen[0] ?? null;
+    return { kapitel: k, gesamt: stationen.length, geschafft: stationen.length - offen.length, station: naechste };
+  };
+  const offene = pool.kapitel.filter((k) => einst.offeneKapitel.has(k.id)).map(lage).filter((l) => l.gesamt > 0);
+  if (offene.length === 0) return null;
+  const aktuell = offene.find((l) => l.kapitel.id === einst.aktuellesKapitel);
+  return (aktuell?.station ? aktuell : null) ?? offene.find((l) => l.station) ?? aktuell ?? offene.at(-1);
+}
 export function naechstesLernziel(index, stand, unterkapitel) {
   const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
   return mit.find((l) => !stand.lernziele[l.id]) ?? mit[0] ?? null;
