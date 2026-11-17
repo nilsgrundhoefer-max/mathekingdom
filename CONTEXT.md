@@ -59,8 +59,16 @@ Der Weg durch die Unterkapitel eines einzelnen Kapitels.
 _Avoid_: Kurs, Weg, Themenbereich
 
 **Metrokarte**:
-Die Darstellung eines Lernpfads, in der die Unterkapitel Stationen sind.
+Die Darstellung eines Lernpfads mit vier parallelen Linien (F, G, M, E), auf denen die Unterkapitel Stationen sind. Ein Niveauwechsel ist ein Umsteigen.
 _Avoid_: Lernlandkarte, Fortschrittsbalken
+
+**Station**:
+Ein Unterkapitel auf der Metrokarte. Sie gilt als erreicht, wenn der Schüler die Lernziele des Unterkapitels erreicht hat.
+_Avoid_: Level, Haltestelle
+
+**Lernziel**:
+Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel und einem Unterkapitel zugeordnet. Aufgaben weisen Lernziele nach.
+_Avoid_: Kompetenz (allein), Ziel
 
 ## Hilfe
 
@@ -78,12 +86,24 @@ _Avoid_: Queue
 
 ## Speichern
 
+**Lehrerlaufwerk**:
+Das persönliche Netzlaufwerk der Lehrkraft; nur sie hat Zugriff.
+_Avoid_: Lehrer-PC (für Daten)
+
+**Schülerlaufwerk**:
+Das persönliche Netzlaufwerk eines Schülers, auf dem sein Schüler-Dashboard liegt.
+_Avoid_: Home-Laufwerk
+
+**Klassenlaufwerk**:
+Das gemeinsame Netzlaufwerk einer Klasse, auf das alle Schüler der Klasse schreiben dürfen.
+_Avoid_: Tauschlaufwerk, Share
+
 **Speicherstand**:
 Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernstand enthält.
 _Avoid_: Spielstand, Save, Profil
 
 **Klassenordner**:
-Der Netzwerkordner einer Klasse, auf den Schüler und Lehrkraft Zugriff haben und in dem Speicherstände und Klassendatei liegen.
+Der Ordner einer Klasse auf dem Klassenlaufwerk, in dem die Speicherstände der Schüler liegen.
 _Avoid_: Laufwerk, Share
 
 **Klassendatei**:
