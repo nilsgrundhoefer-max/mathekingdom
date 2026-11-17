@@ -1,3 +1,3 @@
 # Klassendatei als einziger Schreibkanal der Lehrkraft
 
-Das Lehrer-Dashboard schreibt nie in Speicherstände von Schülern, sondern nur in eine Klassendatei pro Klassenordner, die Schüler lesen. So kann das automatische Speichern eines Schülers nie mit einem Schreibvorgang der Lehrkraft kollidieren. Damit gibt es fünf statt der ursprünglich geplanten vier Dateiarten.
+Das Lehrer-Dashboard schreibt nie in Speicherstände von Schülern, sondern nur in eine Klassendatei pro Klassenordner auf dem Klassenlaufwerk, die Schüler lesen. Alles Personenbezogene (Namensliste, Diagnosen) liegt getrennt davon als Lehrerdaten auf dem Lehrerlaufwerk. So kann das automatische Speichern eines Schülers nie mit einem Schreibvorgang der Lehrkraft kollidieren. Damit gibt es sechs statt der ursprünglich geplanten vier Dateiarten: Lehrer-Dashboard, Schüler-Dashboard (mit Startdatei), Aufgabenpool, Speicherstände, Klassendatei, Lehrerdaten.

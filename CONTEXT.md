@@ -46,6 +46,10 @@ _Avoid_: Übung, Item
 Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau).
 _Avoid_: Schwierigkeit, Level, Sterne
 
+**Zielniveau**:
+Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard G, von der Lehrkraft pro Schüler anpassbar.
+_Avoid_: Leistungsstufe, Einstufung
+
 **Jahresplan**:
 Die Folge der Kapitel einer Klassenstufe über das Schuljahr; alle Kapitel bis zum aktuellen Kapitel sind freigeschaltet.
 _Avoid_: Lernpfad (für diese Ebene), Stoffverteilungsplan
@@ -67,8 +71,26 @@ Ein Unterkapitel auf der Metrokarte. Sie gilt als erreicht, wenn der Schüler di
 _Avoid_: Level, Haltestelle
 
 **Lernziel**:
-Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel und einem Unterkapitel zugeordnet. Aufgaben weisen Lernziele nach.
+Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen.
 _Avoid_: Kompetenz (allein), Ziel
+
+**Training**:
+Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab.
+_Avoid_: Übungsmodus
+
+## Belohnung
+
+**Münze**:
+Die ausgebbare Währung für richtig gelöste Aufgaben; höhere Niveaustufen bringen mehr, Training weniger.
+_Avoid_: Punkte, Coins, Taler
+
+**Stern**:
+Eine nicht ausgebbare Auszeichnung, genau eine pro erreichtem Lernziel.
+_Avoid_: Punkte, Abzeichen
+
+**Lokführer**:
+Die Rolle des Schülers in der Rahmenhandlung: Er erschließt mit seinem Zug der Königlichen Metro die Regionen des Reiches; jedes Kapitel ist eine Region.
+_Avoid_: Held, Spieler
 
 ## Hilfe
 
@@ -86,12 +108,16 @@ _Avoid_: Queue
 
 ## Speichern
 
+**Startdatei**:
+Die unveränderliche HTML-Datei auf dem Schülerlaufwerk, die das jeweils aktuelle Schüler-Dashboard lädt.
+_Avoid_: Launcher, Verknüpfung
+
 **Lehrerlaufwerk**:
 Das persönliche Netzlaufwerk der Lehrkraft; nur sie hat Zugriff.
 _Avoid_: Lehrer-PC (für Daten)
 
 **Schülerlaufwerk**:
-Das persönliche Netzlaufwerk eines Schülers, auf dem sein Schüler-Dashboard liegt.
+Das persönliche Netzlaufwerk eines Schülers, auf dem seine Startdatei liegt.
 _Avoid_: Home-Laufwerk
 
 **Klassenlaufwerk**:
@@ -107,9 +133,13 @@ Der Ordner einer Klasse auf dem Klassenlaufwerk, in dem die Speicherstände der 
 _Avoid_: Laufwerk, Share
 
 **Klassendatei**:
-Die Datei im Klassenordner, die nur die Lehrkraft schreibt und die Schüler lesen: Freigaben, aktuelles Kapitel, Antworten auf Hilferufe.
+Die Datei im Klassenordner, die nur die Lehrkraft schreibt und die Schüler lesen: Freigaben, aktuelles Kapitel, Zielniveaus, Antworten auf Hilferufe. Sie enthält keine Namen.
 _Avoid_: Konfiguration, Einstellungen
 
+**Lehrerdaten**:
+Die Datei auf dem Lehrerlaufwerk mit allem, was nur die Lehrkraft sehen darf: Namensliste, Notizen, Diagnosen.
+_Avoid_: Lehrer-Klassendatei
+
 **Namensliste**:
-Die Zuordnung von Schülercodes zu echten Namen, die nur auf dem Laufwerk der Lehrkraft liegt.
+Die Zuordnung von Schülercodes zu echten Namen, Teil der Lehrerdaten.
 _Avoid_: Klassenliste (für die Datei)
