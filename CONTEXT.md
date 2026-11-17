@@ -47,12 +47,12 @@ Eine einzelne zu lösende Einheit in einem Unterkapitel, mit festem Aufgabenform
 _Avoid_: Übung, Item
 
 **Versuch**:
-Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt.
+Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt. Ein Fehlversuch kostet nichts: Der zweite Versuch bringt so viele Münzen wie der erste.
 _Avoid_: Eingabe, Abgabe
 
 **Niveaustufe**:
 Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau). Die Stufen unterscheiden sich zuerst in der Art der Anforderung, erst danach in der Zahlengröße: F eine Handlung in einem Schritt, G ein Standardverfahren in einem Schritt, M mehrschrittig mit Übersetzen und Deuten, E Strukturen, Lücken und Behauptungen (siehe ADR 0009).
-_Avoid_: Schwierigkeit, Level, Sterne
+_Avoid_: Schwierigkeit, Level, Sterne, Siegel
 
 **Zielniveau**:
 Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard M, von der Lehrkraft pro Schüler anpassbar.
@@ -92,13 +92,17 @@ _Avoid_: Übungsmodus
 Die ausgebbare Währung für richtig gelöste Aufgaben; höhere Niveaustufen bringen mehr, Training weniger.
 _Avoid_: Punkte, Coins, Taler
 
-**Stern**:
-Eine nicht ausgebbare Auszeichnung, genau eine pro erreichtem Lernziel.
-_Avoid_: Punkte, Abzeichen
+**Siegel**:
+Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
+_Avoid_: Stern, Punkte, Abzeichen
 
 **Rang**:
-Die Stufe des Lokführers (Rangierlok, Regionalzug, Express, Königszug), die sich allein aus der Zahl seiner Sterne ergibt und neue Loks und Avatar-Teile zum Kauf freischaltet.
+Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Reichskartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
 _Avoid_: Level, Stufe
+
+**Wappen**:
+Das Schild, das ein Schüler selbst gestaltet; Farben und Zeichen kauft er mit Münzen.
+_Avoid_: Avatar, Lok
 
 **Minispiel**:
 Ein kurzes, mathematiknahes Spiel von höchstens drei Minuten, das Münzen kostet und nur während einer Spielpause spielbar ist.
@@ -108,9 +112,9 @@ _Avoid_: Belohnungsspiel, Game
 Ein von der Lehrkraft pro Klasse eingeschaltetes Zeitfenster, in dem Minispiele erlaubt sind; standardmäßig aus.
 _Avoid_: Freizeit, Pause
 
-**Lokführer**:
-Die Rolle des Schülers in der Rahmenhandlung: Er erschließt mit seinem Zug der Königlichen Metro die Regionen des Reiches; jedes Kapitel ist eine Region.
-_Avoid_: Held, Spieler
+**Kundschafter**:
+Die Rolle des Schülers in der Rahmenhandlung: Er erkundet im Auftrag des Königs die Regionen des Reiches; jedes Kapitel ist eine Region.
+_Avoid_: Lokführer, Held, Spieler
 
 ## Hilfe und Diagnose
 
@@ -147,7 +151,7 @@ Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der geschafften S
 _Avoid_: Wochenmission, Wochenziel
 
 **Hilfekärtchen**:
-Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Jede genutzte Stufe senkt die Münzen der Aufgabe.
+Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Nach dem ersten falschen Versuch öffnet sich der Tipp von selbst. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
 
 **Hilferuf**:
@@ -185,7 +189,7 @@ Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Gru
 _Avoid_: Log, Verlauf
 
 **Schuljahreswechsel**:
-Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Sterne, Rang, Avatar und erreichte Lernziele bleiben erhalten.
+Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Siegel, Rang, Wappen und erreichte Lernziele bleiben erhalten.
 _Avoid_: Versetzung, Reset
 
 **Klassenordner**:
