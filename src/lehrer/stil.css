@@ -109,3 +109,76 @@ body { margin: 0; background: #f4f1ea; }
   #mk-druck .kaertchen small { color: #555; }
 }
 @media screen { #mk-druck { display: none; } }
+
+/* Bedienung mit dem Finger */
+#mathekingdom-lehrer button, #mathekingdom-lehrer select { min-height: 40px; }
+#mathekingdom-lehrer .link { min-height: 0; }
+
+/* Klassenraum */
+#mathekingdom-lehrer .karte > .reihe:first-child { margin-bottom: 10px; }
+#mathekingdom-lehrer .karte > .reihe:first-child h2 { margin: 0; }
+#mathekingdom-lehrer .reihe .rechts, #mathekingdom-lehrer .rechts { margin-left: auto; }
+#mathekingdom-lehrer .legende { display: flex; gap: 12px; flex-wrap: wrap; font-size: .86rem; color: var(--grau); }
+#mathekingdom-lehrer .punkt { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+#mathekingdom-lehrer .punkt i { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; font-style: normal; font-weight: 700; font-size: .75rem; color: #fff; background: #8d97ad; }
+#mathekingdom-lehrer .punkt.flow i { background: var(--gut); }
+#mathekingdom-lehrer .punkt.arbeitet i { background: #7f9bd1; }
+#mathekingdom-lehrer .punkt.beobachten i, #mathekingdom-lehrer .punkt.hilfe i { background: #c98a00; }
+#mathekingdom-lehrer .punkt.blockiert i { background: var(--schlecht); }
+#mathekingdom-lehrer .sitzplan { display: grid; gap: 8px; }
+#mathekingdom-lehrer .platz { min-height: 92px; border-radius: 10px; border: 2px solid var(--rand); background: #fff; padding: 8px 10px; text-align: left; white-space: normal;
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 6px; align-content: start; position: relative; overflow: hidden; }
+#mathekingdom-lehrer .platz b { grid-column: 1; font-size: .95rem; line-height: 1.2; overflow-wrap: break-word; hyphens: auto; min-width: 0; }
+@media (max-width: 900px) { #mathekingdom-lehrer .platz { padding: 6px; } #mathekingdom-lehrer .platz b { font-size: .84rem; } #mathekingdom-lehrer .platz .zeichen { width: 20px; height: 20px; font-size: .75rem; } }
+#mathekingdom-lehrer .platz .zeichen { grid-column: 2; grid-row: 1; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: #fff; background: #8d97ad; }
+#mathekingdom-lehrer .platz .was { grid-column: 1 / -1; font-size: .8rem; color: var(--grau); }
+#mathekingdom-lehrer .platz .unten { grid-column: 1 / -1; font-size: .8rem; display: flex; align-items: center; gap: 2px; margin-top: 2px; }
+#mathekingdom-lehrer .platz .chip { width: 18px; height: 18px; font-size: .68rem; }
+#mathekingdom-lehrer .platz.leer { border: 0; background: transparent; }
+#mathekingdom-lehrer .sitzplan.bearbeiten .platz.leer { border: 2px dashed #b9bfcc; }
+#mathekingdom-lehrer .platz.gewaehlt { outline: 4px solid var(--gold); outline-offset: 1px; }
+#mathekingdom-lehrer .platz.flow { background: var(--gut-hell); border-color: var(--gut); }
+#mathekingdom-lehrer .platz.flow .zeichen { background: var(--gut); }
+#mathekingdom-lehrer .platz.arbeitet .zeichen { background: #7f9bd1; }
+#mathekingdom-lehrer .platz.beobachten, #mathekingdom-lehrer .platz.hilfe { background: #fff1c2; border-color: #c98a00; }
+#mathekingdom-lehrer .platz.beobachten .zeichen, #mathekingdom-lehrer .platz.hilfe .zeichen { background: #c98a00; }
+#mathekingdom-lehrer .platz.hilfe { box-shadow: 0 0 0 3px #c98a00; }
+#mathekingdom-lehrer .platz.hilfe .was, #mathekingdom-lehrer .platz.blockiert .was { color: var(--tinte); font-weight: 600; }
+#mathekingdom-lehrer .platz.blockiert { background: #f9d2cd; border-color: var(--schlecht); }
+#mathekingdom-lehrer .platz.blockiert .zeichen { background: var(--schlecht); }
+#mathekingdom-lehrer .platz.inaktiv { background: #ebe8e0; }
+#mathekingdom-lehrer .platz.fehlt { background: transparent; border-style: dashed; color: var(--grau); }
+
+/* Akut-Zone und Impulse */
+#mathekingdom-lehrer .schlange li.blockiert { border-color: #e7b3ad; background: var(--schlecht-hell); }
+#mathekingdom-lehrer .schlange li .marke { margin-left: 8px; }
+#mathekingdom-lehrer .nachricht summary { cursor: pointer; color: var(--nacht); font-weight: 600; padding: 6px 0; }
+#mathekingdom-lehrer .nachricht .reihe { margin-top: 6px; }
+#mathekingdom-lehrer .nachricht .schlicht { white-space: normal; text-align: left; }
+#mathekingdom-lehrer .nachricht input { flex: 1 1 160px; min-height: 40px; }
+#mathekingdom-lehrer .impulse { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+#mathekingdom-lehrer .impulse li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; border: 1px solid #ecd58a; background: var(--hell); border-radius: 10px; padding: 8px 12px; }
+#mathekingdom-lehrer .impulse li > span { flex: 1 1 320px; }
+#mathekingdom-lehrer .impulse li.gut { border-color: #a9dcbf; background: var(--gut-hell); }
+
+/* Detailansicht */
+#mathekingdom-lehrer .overlay { position: fixed; inset: 0; background: rgba(29,43,79,.55); display: grid; place-items: center; padding: 16px; z-index: 10; }
+#mathekingdom-lehrer .overlay-inhalt { background: #fff; border-radius: 14px; width: min(980px, 100%); max-height: calc(100vh - 32px); overflow-y: auto; padding: 18px; box-shadow: 0 12px 40px rgba(0,0,0,.3); }
+#mathekingdom-lehrer .overlay-kopf { position: sticky; top: -18px; background: #fff; padding: 10px 0; margin-top: -10px; z-index: 1; border-bottom: 1px solid var(--rand); }
+#mathekingdom-lehrer .overlay-kopf h2 { margin: 0; font-size: 1.3rem; }
+.zweispaltig { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0 24px; }
+
+/* Lernpfad */
+#mathekingdom-lehrer .pfad th { vertical-align: top; min-width: 150px; }
+#mathekingdom-lehrer .pfad th select { margin-top: 4px; font-weight: 400; max-width: 190px; }
+#mathekingdom-lehrer .sperre { width: 100%; background: #fff; border-color: #b9bfcc; color: var(--nacht); }
+#mathekingdom-lehrer .sperre.erreicht { background: #f5c518; border-color: #a67c00; color: #4a3a00; font-weight: 600; }
+#mathekingdom-lehrer .sperre.begonnen { background: var(--hell); border-color: #ecd58a; }
+#mathekingdom-lehrer .sperre.zu { background: #5d6679; border-color: #5d6679; color: #fff; font-weight: 600; }
+
+@media print {
+  #mk-druck .kacheln { grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 8px 0; }
+  #mk-druck .kachel { padding: 4px 8px; }
+  #mk-druck h3 { margin: 10px 0 4px; }
+  #mk-druck .zweispaltig { grid-template-columns: 1fr 1fr; }
+}

@@ -16,6 +16,7 @@ const z = {
   lehrer: null, daten: null, klasse: null, ordner: null, pool: null, index: null,
   staende: [], unbekannt: [], warnungen: [], klassendateiText: null, aktualisiert: null, letztesBackup: null,
   ansicht: 'start', tab: 'live', schueler: null, fehler: null, backups: null, backupGewaehlt: null,
+  overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null,
 };
 let wurzel, takt;
 
@@ -55,7 +56,7 @@ async function speichereDaten() { await z.lehrer.schreibe(LEHRERDATEN, JSON.stri
 async function schreibeKlassendatei() {
   const e = kl().einst;
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -81,7 +82,10 @@ async function oeffneKlasse(klasse, ablage) {
   const stufe = parseInt(klasse, 10);
   const pool = await ladePool(ablage, stufe);
   if (!pool) { z.fehler = `Für Klasse ${stufe} gibt es noch keinen Aufgabenpool.`; return male(); }
-  z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, spielpause: false, zielniveaus: {}, hilfe: {} } };
+  z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } };
+  const e = z.daten.klassen[klasse].einst;
+  e.nachrichten ??= {}; e.sperren ??= {};
+  Object.assign(z, { overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null });
   Object.assign(z, { klasse, ordner: ablage, pool, index: L.indexiere(pool), ansicht: 'klasse', fehler: null, warnungen: [], klassendateiText: null, schueler: null,
     tab: Object.keys(z.daten.klassen[klasse].namen).length ? 'live' : 'klasse' });
   // Kopien für den Unterricht ohne Internet.
@@ -96,7 +100,7 @@ async function oeffneKlasse(klasse, ablage) {
     await lade();
     const fokus = document.activeElement?.tagName;
     // Eine neue Warnung wird sofort gezeigt. Sonst nur neu zeichnen, wo es nicht beim Tippen stört.
-    if (z.warnungen.length > vorher || (['live', 'diagnose'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus))) male();
+    if (z.warnungen.length > vorher || (['live', 'diagnose'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open]'))) male();
   };
   takt = setInterval(frisch, 5000);
   // Im Hintergrund bremst der Browser die Uhr: beim Zurückkehren sofort neu lesen.
@@ -196,13 +200,16 @@ function ladeStartdatei() {
 // ---------- Rahmen ----------
 function male() {
   const ansichten = { start, klassen, klasse: klassenAnsicht };
+  const gerollt = wurzel.querySelector('.overlay-inhalt')?.scrollTop;
   wurzel.replaceChildren(...[
     h('header', { class: 'kopf' }, h('strong', {}, 'Mathekingdom'), h('span', {}, 'Lehrer-Dashboard'),
       z.lehrer?.demo && h('span', { class: 'demo' }, 'Beispieldaten: nichts wird gespeichert'),
       z.ansicht === 'klasse' && h('button', { class: 'schlicht hell', onclick: () => { clearInterval(takt); z.ansicht = 'klassen'; male(); } }, 'Klasse wechseln')),
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
     h('main', {}, ansichten[z.ansicht]()),
+    z.ansicht === 'klasse' && z.overlay && kl().namen[z.overlay] && overlay(),
   ].filter(Boolean));
+  if (gerollt) { const o = wurzel.querySelector('.overlay-inhalt'); if (o) o.scrollTop = gerollt; }
 }
 
 function start() {
@@ -225,7 +232,7 @@ async function starteBeispiel() {
   const lehrer = S.speicherAblage('lehrer'), ordner = S.speicherAblage('5a');
   await oeffneLehrer(lehrer);
   const pool = window.MK_POOLS[5], bsp = beispielklasse(pool, L.indexiere(pool));
-  z.daten.klassen['5a'] = { namen: bsp.namen, notizen: {}, einst: { aktuellesKapitel: '5.4', spielpause: false, zielniveaus: bsp.zielniveaus, hilfe: {} } };
+  z.daten.klassen['5a'] = { namen: bsp.namen, notizen: {}, einst: { aktuellesKapitel: '5.4', spielpause: false, zielniveaus: bsp.zielniveaus, hilfe: {}, nachrichten: {}, sperren: {} } };
   for (const { code, stand } of bsp.staende) await ordner.schreibe(`${code}.json`, JSON.stringify(stand));
   await oeffneKlasse('5a', ordner);
 }
@@ -257,8 +264,8 @@ function klassen() {
 // ---------- Klasse ----------
 function klassenAnsicht() {
   const e = kl().einst;
-  const tabs = [['live', 'Live'], ['diagnose', 'Diagnose'], ['schueler', 'Einzelne Schüler'], ['klasse', 'Klasse und Codes'], ['sicherung', 'Backup']];
-  const inhalte = { live, diagnose, schueler: einzel, klasse: verwaltung, sicherung };
+  const tabs = [['live', 'Live'], ['pfad', 'Lernpfad'], ['diagnose', 'Diagnose'], ['schueler', 'Einzelne Schüler'], ['klasse', 'Klasse und Codes'], ['sicherung', 'Backup']];
+  const inhalte = { live, pfad: lernpfad, diagnose, schueler: einzel, klasse: verwaltung, sicherung };
   return h('div', {},
     h('div', { class: 'leiste' },
       h('h1', {}, `Klasse ${z.klasse}`),
@@ -277,28 +284,132 @@ function klassenAnsicht() {
 }
 
 // ---------- Live ----------
-function live() {
+const STATUS = {
+  hilfe: ['Hilferuf', '✋'], blockiert: ['Blockiert', '!'], beobachten: ['Beobachten', '?'], flow: ['Im Flow', '✓'],
+  arbeitet: ['Arbeitet', '›'], inaktiv: ['Inaktiv', 'z'], fehlt: ['Nicht da', '–'],
+};
+// Als erledigt abgehakte Rufe verschwinden sofort, auch wenn der Speicherstand des Schülers erst gleich nachzieht.
+const erledigt = (code, seit) => kl().einst.hilfe[code]?.zu === seit && kl().einst.hilfe[code].status === 'erledigt';
+const alleCodes = () => Object.keys(kl().namen).sort((a, b) => name(a).localeCompare(name(b), 'de'));
+function statusAller() {
+  const m = new Map();
+  for (const code of alleCodes()) {
+    const stand = z.staende.find((x) => x.code === code)?.stand ?? null;
+    let st = A.livestatus(stand, ziel(code), jetzt());
+    if (st.status === 'hilfe' && erledigt(code, st.seit)) st = { ...st, status: 'arbeitet', text: 'Hilfe erledigt' };
+    m.set(code, { ...st, stand });
+  }
+  return m;
+}
+
+// Sitzplan: Reihenfolge der Plätze, zeilenweise. Liegt bei den Lehrerdaten.
+function sitzplan() {
+  const plan = (kl().sitzplan ??= { spalten: 6, plaetze: [] });
+  plan.plaetze = plan.plaetze.map((c) => (c && kl().namen[c] ? c : null));
+  for (const code of alleCodes()) {
+    if (plan.plaetze.includes(code)) continue;
+    const frei = plan.plaetze.indexOf(null);
+    if (frei >= 0) plan.plaetze[frei] = code; else plan.plaetze.push(code);
+  }
+  return plan;
+}
+function sitzplanKarte(status) {
+  const plan = sitzplan(), bearbeiten = z.sitzplanOffen;
+  let plaetze = [...plan.plaetze];
+  while (plaetze.length && plaetze.at(-1) === null) plaetze.pop();
+  if (bearbeiten) { const voll = (Math.ceil(plaetze.length / plan.spalten) + 1) * plan.spalten; while (plaetze.length < voll) plaetze.push(null); }
+  const tausche = async (i) => {
+    if (z.sitzGewaehlt === null) { if (plaetze[i]) { z.sitzGewaehlt = i; male(); } return; }
+    [plaetze[i], plaetze[z.sitzGewaehlt]] = [plaetze[z.sitzGewaehlt], plaetze[i]];
+    plan.plaetze = plaetze; z.sitzGewaehlt = null;
+    await speichereDaten(); male();
+  };
+  const zaehler = {};
+  for (const st of status.values()) zaehler[st.status] = (zaehler[st.status] ?? 0) + 1;
+  return h('section', { class: 'karte' },
+    h('div', { class: 'reihe' }, h('h2', {}, 'Klassenraum'),
+      h('span', { class: 'legende' }, Object.entries(STATUS).filter(([id]) => zaehler[id]).map(([id, [titel, zeichen]]) => h('span', { class: `punkt ${id}` }, h('i', {}, zeichen), `${zaehler[id]} ${titel}`))),
+      h('span', { class: 'rechts reihe' },
+        bearbeiten && h('label', {}, 'Plätze pro Reihe ', h('select', { id: 'spalten', onchange: async (ev) => { plan.spalten = Number(ev.target.value); await speichereDaten(); male(); } },
+          [3, 4, 5, 6, 7, 8].map((n) => h('option', { value: n, selected: n === plan.spalten }, n)))),
+        h('button', { class: 'schlicht', id: 'sitzplan-bearbeiten', onclick: () => { z.sitzplanOffen = !bearbeiten; z.sitzGewaehlt = null; male(); } }, bearbeiten ? 'Fertig' : 'Sitzplan ändern'))),
+    bearbeiten && h('p', { class: 'klein' }, 'Tippe erst auf einen Schüler und dann auf den Platz, an dem er sitzt. Die beiden Plätze werden getauscht.'),
+    h('div', { class: `sitzplan ${bearbeiten ? 'bearbeiten' : ''}`, style: `grid-template-columns: repeat(${plan.spalten}, minmax(0, 1fr))` }, plaetze.map((code, i) => {
+      if (!code) return bearbeiten ? h('button', { class: 'platz leer', 'data-platz': i, 'aria-label': 'Leerer Platz', onclick: () => tausche(i) }) : h('span', { class: 'platz leer' });
+      const st = status.get(code), [titel, zeichen] = STATUS[st.status];
+      const linien = [...new Set(Object.values(st.stand?.niveau ?? {}))];
+      return h('button', { class: `platz ${st.status}${z.sitzGewaehlt === i ? ' gewaehlt' : ''}`, 'data-platz': i, 'data-schueler': code, title: `${titel}: ${st.text}`,
+        onclick: () => { if (bearbeiten) tausche(i); else { z.overlay = code; male(); } } },
+        h('span', { class: 'zeichen', 'aria-hidden': 'true' }, zeichen), h('b', {}, name(code)), h('span', { class: 'was' }, st.text),
+        h('span', { class: 'unten' }, (linien.length ? linien : [ziel(code)]).map(chip), st.stand ? `★ ${L.sterne(st.stand)}` : ''));
+    })));
+}
+
+function nachrichtFeld(code) {
+  const sende = (text) => { if (text.trim()) aendere((k) => { k.einst.nachrichten[code] = { t: jetzt(), text: text.trim().slice(0, 200) }; }); };
+  const eingabe = h('input', { type: 'text', placeholder: 'Eigene Nachricht', maxLength: 200, 'data-nachricht': code });
+  const letzte = kl().einst.nachrichten[code];
+  const gelesen = letzte && z.staende.find((x) => x.code === code)?.stand.gelesen === letzte.t;
+  return h('details', { class: 'nachricht' }, h('summary', {}, 'Nachricht senden', letzte && h('span', { class: `marke ${gelesen ? 'gut' : 'warn'}` }, gelesen ? 'gelesen' : 'gesendet, noch nicht gelesen')),
+    letzte && h('p', { class: 'klein' }, `Zuletzt um ${uhr(letzte.t)} Uhr: „${letzte.text}“`),
+    h('div', { class: 'reihe' }, ['Schau dir das Beispiel-Kärtchen an.', 'Lies die Aufgabe noch einmal genau.', 'Komm bitte zu mir nach vorn.'].map((t) => h('button', { class: 'schlicht', onclick: () => sende(t) }, t))),
+    h('div', { class: 'reihe' }, eingabe, h('button', { class: 'haupt', 'data-sende': code, onclick: () => sende(eingabe.value) }, 'Senden')));
+}
+
+function akutZone(status) {
   const hilfe = kl().einst.hilfe;
-  // Als erledigt abgehakte Rufe verschwinden sofort, auch wenn der Speicherstand des Schülers erst gleich nachzieht.
-  const erledigt = (code, seit) => hilfe[code]?.zu === seit && hilfe[code].status === 'erledigt';
-  const schlange = A.warteschlange(z.staende, z.index, jetzt()).filter((r) => !erledigt(r.code, r.seit));
-  const haengt = A.klasseHaengt(z.staende, z.index);
+  const akut = [...status].filter(([code, st]) => st.status === 'hilfe' || (st.status === 'blockiert' && !z.gesehen.has(`${code}|${st.seit}`)))
+    .sort(([, a], [, b]) => (a.status === b.status ? (a.seit < b.seit ? -1 : 1) : a.status === 'hilfe' ? -1 : 1));
+  return h('section', { class: 'karte' },
+    h('h2', {}, `Akut-Zone (${akut.length})`),
+    akut.length === 0 ? h('p', { class: 'klein' }, 'Gerade braucht niemand Hilfe.') : h('ol', { class: 'schlange' }, akut.map(([code, st]) => {
+      const ruf = st.status === 'hilfe';
+      const unterwegs = ruf && hilfe[code]?.zu === st.seit && hilfe[code].status === 'unterwegs';
+      const lz = z.index.aufgabe.get(st.aufgabe)?.lernziel;
+      const helfer = A.lernbegleiter(z.staende, lz, kl().einst.zielniveaus, jetzt(), code);
+      return h('li', { class: `${ruf ? 'ruf' : 'blockiert'}${unterwegs ? ' unterwegs' : ''}` },
+        h('div', {}, h('button', { class: 'link', onclick: () => { z.overlay = code; male(); } }, name(code)),
+          h('span', { class: `marke ${ruf ? 'warn' : 'schlecht'}` }, ruf ? `Hilferuf seit ${st.minuten} min` : st.text)),
+        st.aufgabe && h('div', {}, aufgabentext(st.aufgabe)),
+        st.kontext && h('div', { class: 'klein' }, st.kontext),
+        helfer.length > 0 && h('div', { class: 'klein' }, `Könnte helfen: ${helfer.map(name).join(', ')}`),
+        h('div', { class: 'reihe' },
+          ruf && !unterwegs && h('button', { class: 'haupt', 'data-komme': code, onclick: () => aendere((k) => { k.einst.hilfe[code] = { zu: st.seit, status: 'unterwegs' }; }) }, 'Ich komme'),
+          ruf && h('button', { class: 'schlicht', 'data-erledigt': code, onclick: () => aendere((k) => { k.einst.hilfe[code] = { zu: st.seit, status: 'erledigt' }; }) }, 'Erledigt'),
+          !ruf && h('button', { class: 'schlicht', 'data-kuemmere': code, onclick: () => { z.gesehen.add(`${code}|${st.seit}`); male(); } }, 'Ich kümmere mich')),
+        nachrichtFeld(code));
+    })));
+}
+
+function impulse() {
+  const gesehen = (schluessel) => h('button', { class: 'schlicht', onclick: () => { z.gesehen.add(schluessel); male(); } }, 'Gesehen');
+  const karten = [];
+  for (const x of A.klasseHaengt(z.staende, z.index)) {
+    if (z.gesehen.has(`lz|${x.lernziel}`)) continue;
+    karten.push(h('li', {}, h('span', {}, h('b', {}, 'Mini-Workshop: '), `${x.codes.length} Schüler kommen hier gerade nicht weiter: ${lernzieltext(x.lernziel)} (${x.codes.map(name).join(', ')})`), gesehen(`lz|${x.lernziel}`)));
+  }
+  for (const x of A.fehlerHaeufung(z.staende, jetzt())) {
+    if (z.gesehen.has(`fv|${x.fehlvorstellung}`)) continue;
+    karten.push(h('li', {}, h('span', {}, h('b', {}, 'Mini-Workshop: '), `${x.codes.length} Schüler machen denselben Fehler. ${z.pool.fehlvorstellungen[x.fehlvorstellung]?.beschreibung ?? x.fehlvorstellung} (${x.codes.map(name).join(', ')})`), gesehen(`fv|${x.fehlvorstellung}`)));
+  }
+  for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
+    const schluessel = `fertig|${x.code}|${x.station}|${x.zielniveau}`;
+    if (z.gesehen.has(schluessel)) continue;
+    karten.push(h('li', { class: 'gut' }, h('span', {}, h('b', {}, 'Schnellläufer: '), `${name(x.code)} hat die Station „${x.titel}“ auf Zielniveau ${x.zielniveau} abgeschlossen. `,
+      x.naechstes ? '' : 'Zeit für eine Knobelaufgabe oder für die Rolle als Lernbegleiter.'),
+      x.naechstes && h('button', { class: 'haupt', 'data-anheben': x.code, onclick: () => aendere((k) => { k.einst.zielniveaus[x.code] = x.naechstes; }) }, `Zielniveau auf ${x.naechstes} anheben`),
+      gesehen(schluessel)));
+  }
+  return karten.length > 0 && h('section', { class: 'karte' }, h('h2', {}, 'Impulse'), h('ul', { class: 'impulse' }, karten));
+}
+
+function live() {
+  const status = statusAller();
   const tag = heute();
   return h('div', {},
-    h('section', { class: 'karte' },
-      h('h2', {}, `Hilfe-Warteschlange (${schlange.length})`),
-      schlange.length === 0 ? h('p', { class: 'klein' }, 'Gerade braucht niemand Hilfe.') : h('ol', { class: 'schlange' }, schlange.map((r) => {
-        const unterwegs = hilfe[r.code]?.zu === r.seit && hilfe[r.code].status === 'unterwegs';
-        return h('li', { class: unterwegs ? 'unterwegs' : '' },
-          h('div', {}, h('b', {}, name(r.code)), h('span', { class: 'klein' }, ` wartet seit ${r.wartetMinuten} min`),
-            r.gleiche > 1 && h('span', { class: 'marke warn' }, `${r.gleiche} Schüler beim selben Lernziel`)),
-          h('div', { class: 'klein' }, aufgabentext(r.aufgabe)),
-          h('div', { class: 'reihe' },
-            !unterwegs && h('button', { class: 'haupt', 'data-komme': r.code, onclick: () => aendere((k) => { k.einst.hilfe[r.code] = { zu: r.seit, status: 'unterwegs' }; }) }, 'Ich komme'),
-            h('button', { class: 'schlicht', 'data-erledigt': r.code, onclick: () => aendere((k) => { k.einst.hilfe[r.code] = { zu: r.seit, status: 'erledigt' }; }) }, 'Erledigt')));
-      }))),
-    haengt.map((x) => h('div', { class: 'meldung warnung' }, h('span', {}, h('b', {}, `${x.codes.length} Schüler kommen gerade nicht weiter: `), lernzieltext(x.lernziel),
-      ` (${x.codes.map(name).join(', ')}). Das könnte eine Erklärung für alle wert sein.`))),
+    akutZone(status),
+    impulse(),
+    alleCodes().length > 0 && sitzplanKarte(status),
     z.unbekannt.length > 0 && h('div', { class: 'meldung warnung' }, `Im Klassenordner liegen Speicherstände mit Codes, die nicht in deiner Namensliste stehen: ${z.unbekannt.map((u) => u.code).join(', ')}.`),
     h('section', { class: 'karte' },
       h('h2', {}, 'Lernstand der Klasse'),
@@ -310,10 +421,10 @@ function live() {
           const auff = A.auffaelligkeiten(stand, ziel(code), jetzt());
           const maengel = A.pruefeStand(stand, ziel(code));
           const linien = [...new Set(Object.values(k.niveaus))];
+          const st = status.get(code);
           return h('tr', {},
-            h('td', {}, h('button', { class: 'link', onclick: () => { z.schueler = code; z.tab = 'schueler'; male(); } }, name(code))),
-            h('td', {}, stand.hilferuf && !erledigt(code, stand.hilferuf.seit) ? h('span', { class: 'marke warn' }, 'braucht Hilfe') : k.aktiveAufgabe ? h('span', { class: 'marke gut' }, 'arbeitet')
-              : k.minutenStill != null && k.minutenStill < 3 ? 'aktiv' : k.minutenStill == null ? '–' : k.minutenStill < 90 ? `still seit ${k.minutenStill} min` : 'nicht da'),
+            h('td', {}, h('button', { class: 'link', onclick: () => { z.overlay = code; male(); } }, name(code))),
+            h('td', {}, h('span', { class: `punkt ${st.status}` }, h('i', {}, STATUS[st.status][1]), st.text)),
             h('td', {}, (linien.length ? linien : [ziel(code)]).map(chip)),
             h('td', { class: 'zahl' }, k.sterne),
             h('td', { class: 'zahl' }, heuteV.length),
@@ -322,6 +433,64 @@ function live() {
             h('td', {}, auff.map((a) => h('span', { class: 'marke warn', title: lesbar(a.text) }, { inaktiv: 'still', raten: 'rät', training: 'zu leicht', 'ohne-erfolg': 'kommt nicht voran', hilfen: 'viele Hilfen' }[a.art])),
               maengel.length > 0 && h('span', { class: 'marke schlecht', title: maengel.join('; ') }, 'Datei verändert')));
         }))))));
+}
+
+function zielWahl(code) {
+  return h('select', { 'data-ziel': code, 'aria-label': 'Zielniveau', onchange: (ev) => aendere((k) => { if (ev.target.value === 'G') delete k.einst.zielniveaus[code]; else k.einst.zielniveaus[code] = ev.target.value; }) },
+    L.NIVEAUS.map((n) => h('option', { value: n, selected: ziel(code) === n }, `${n} · ${L.NIVEAU_NAMEN[n]}`)));
+}
+function druckeEinzelbericht(code) {
+  drucke(h('h1', {}, `${name(code)}, Klasse ${z.klasse}`), h('p', {}, `Diagnosebericht, Stand ${new Date().toLocaleDateString('de-DE')}`), einzelInhalt(code, true),
+    kl().notizen[code] && h('p', {}, h('b', {}, 'Notiz: '), kl().notizen[code]));
+}
+// Detailansicht über dem Klassenraum: Der Sitzplan bleibt dahinter stehen.
+function overlay() {
+  const code = z.overlay;
+  const zu = () => { z.overlay = null; male(); };
+  return h('div', { class: 'overlay', onclick: (ev) => { if (ev.target.classList.contains('overlay')) zu(); } },
+    h('div', { class: 'overlay-inhalt', role: 'dialog', 'aria-modal': 'true', 'aria-label': name(code) },
+      h('div', { class: 'reihe overlay-kopf' }, h('h2', {}, name(code)), h('span', { class: 'klein' }, code), h('label', {}, 'Zielniveau ', zielWahl(code)),
+        h('span', { class: 'rechts reihe' }, h('button', { class: 'schlicht', onclick: () => druckeEinzelbericht(code) }, 'Diagnosebericht als PDF'),
+          h('button', { class: 'haupt', id: 'overlay-zu', onclick: zu }, 'Schließen'))),
+      nachrichtFeld(code),
+      einzelInhalt(code)));
+}
+
+// ---------- Lernpfad: Stationen öffnen und sperren ----------
+function lernpfad() {
+  const hatAufgaben = (u) => u.lernziele.some((l) => z.index.lernzielMitAufgaben.has(l.id));
+  const kapitel = z.pool.kapitel.filter((k) => k.unterkapitel.some(hatAufgaben));
+  const kap = kapitel.find((k) => k.id === (z.pfadKapitel ?? kl().einst.aktuellesKapitel)) ?? kapitel[0];
+  const codes = alleCodes();
+  if (!kap || codes.length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Klasse und Codes“ die Namensliste an.'));
+  const stationen = kap.unterkapitel.filter(hatAufgaben);
+  const sperren = kl().einst.sperren;
+  const zu = (st, code) => Boolean(sperren[st]?.includes(code));
+  const setze = (st, wen, gesperrt) => aendere((k) => {
+    const menge = new Set(k.einst.sperren[st] ?? []);
+    for (const c of wen) { if (gesperrt) menge.add(c); else menge.delete(c); }
+    if (menge.size) k.einst.sperren[st] = [...menge]; else delete k.einst.sperren[st];
+  });
+  const massenwahl = (st) => h('select', { 'data-masse': st.id, 'aria-label': `Aktion für ${st.titel}`, onchange: (ev) => {
+    const [was, gruppe] = ev.target.value.split('|');
+    if (was) setze(st.id, gruppe === 'alle' ? codes : codes.filter((c) => ziel(c) === gruppe), was === 'zu');
+  } }, h('option', { value: '' }, 'Für mehrere …'), h('option', { value: 'auf|alle' }, 'Für alle öffnen'), h('option', { value: 'zu|alle' }, 'Für alle sperren'),
+    L.NIVEAUS.flatMap((n) => [h('option', { value: `zu|${n}` }, `Für Zielniveau ${n} sperren`), h('option', { value: `auf|${n}` }, `Für Zielniveau ${n} öffnen`)]));
+  return h('section', { class: 'karte' },
+    h('div', { class: 'reihe' }, h('h2', {}, 'Stationen öffnen und sperren'),
+      kapitel.length > 1 && h('label', {}, 'Kapitel ', h('select', { id: 'pfad-kapitel', onchange: (ev) => { z.pfadKapitel = ev.target.value; male(); } }, kapitel.map((k) => h('option', { value: k.id, selected: k.id === kap.id }, k.titel))))),
+    h('p', { class: 'klein' }, 'Eine gesperrte Station sieht der Schüler auf seiner Metrokarte mit Schloss und kann dort keine Aufgaben starten. „Erreicht“ setzt das Dashboard selbst, sobald alle Lernziele der Station erreicht sind.'),
+    h('div', { class: 'rollbar' }, h('table', { class: 'tabelle pfad' },
+      h('thead', {}, h('tr', {}, h('th', {}, 'Name'), h('th', {}, 'Ziel'), stationen.map((st) => h('th', {}, st.titel, h('br'), massenwahl(st))))),
+      h('tbody', {}, codes.map((code) => {
+        const stand = z.staende.find((x) => x.code === code)?.stand;
+        return h('tr', {}, h('td', {}, name(code)), h('td', {}, chip(ziel(code))), stationen.map((st) => {
+          const gesperrt = zu(st.id, code);
+          const status = stand ? L.stationStatus(z.index, stand, st) : 'offen';
+          return h('td', {}, h('button', { class: `sperre ${gesperrt ? 'zu' : status}`, 'data-sperre': `${st.id}|${code}`, 'aria-pressed': String(gesperrt), onclick: () => setze(st.id, [code], !gesperrt) },
+            gesperrt ? '🔒 gesperrt' : status === 'erreicht' ? '★ erreicht' : status === 'begonnen' ? 'offen, begonnen' : 'offen'));
+        }));
+      })))));
 }
 
 // ---------- Diagnose ----------
@@ -346,7 +515,7 @@ function diagnose() {
   if (z.staende.length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Noch gibt es keine Daten. Sobald Schüler Aufgaben bearbeiten, erscheint hier die Auswertung.'));
   const lernziele = A.lernzieleMitAufgaben(z.pool, z.index);
   const statistik = A.lernzielStatistik(z.staende, lernziele);
-  const schwer = A.aufgabenStatistik(z.staende).filter((a) => a.quote < 0.6).slice(0, 10);
+  const audit = A.aufgabenAudit(z.staende, z.index).slice(0, 15);
   const fehler = A.fehlerStatistik(z.staende);
   const auff = z.staende.flatMap(({ code, stand }) => [...A.auffaelligkeiten(stand, ziel(code), jetzt()), ...A.pruefeStand(stand, ziel(code)).map((text) => ({ art: 'datei', text }))].map((a) => ({ code, ...a })));
   const hilfen = z.staende.map(({ code, stand }) => ({ code, k: A.kennzahlen(stand, ziel(code), jetzt()) })).sort((a, b) => b.k.hilfekaertchen - a.k.hilfekaertchen);
@@ -366,10 +535,13 @@ function diagnose() {
         h('thead', {}, h('tr', {}, ['Fehlvorstellung', 'Wie oft', 'Wer'].map((t) => h('th', {}, t)))),
         h('tbody', {}, fehler.map((f) => h('tr', {}, h('td', {}, z.pool.fehlvorstellungen[f.fehlvorstellung]?.beschreibung ?? f.fehlvorstellung), h('td', { class: 'zahl' }, f.anzahl),
           h('td', {}, f.schueler.map((s) => `${name(s.code)} (${s.anzahl})`).join(', ')))))))),
-    h('section', { class: 'karte' }, h('h2', {}, 'Aufgaben, an denen die Klasse hängt'),
-      schwer.length === 0 ? h('p', { class: 'klein' }, 'Keine Aufgabe mit auffällig niedriger Lösungsquote.') : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-        h('thead', {}, h('tr', {}, ['Aufgabe', 'Linie', 'Bearbeitet', 'Lösungsquote', 'Zeit'].map((t) => h('th', {}, t)))),
-        h('tbody', {}, schwer.map((a) => h('tr', {}, h('td', {}, aufgabentext(a.aufgabe)), h('td', {}, chip(a.niveau)), h('td', { class: 'zahl' }, `${a.bearbeitet}-mal von ${a.schueler} Schülern`), h('td', {}, balken(a.quote)), h('td', { class: 'zahl' }, `${a.zeitMedian} s`))))))),
+    h('section', { class: 'karte' }, h('h2', {}, 'Aufgaben-Audit'),
+      h('p', { class: 'klein' }, 'Die schwierigsten Aufgaben zuerst (mindestens drei Bearbeitungen). „Prüfen“ heißt: Viele scheitern mit derselben falschen Antwort, die Aufgabe ist womöglich missverständlich.'),
+      audit.length === 0 ? h('p', { class: 'klein' }, 'Noch zu wenige Bearbeitungen.') : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+        h('thead', {}, h('tr', {}, ['Aufgabe', 'Linie', 'AFB', 'Bearbeitet', 'Lösungsquote', 'Im ersten Versuch', 'Abgebrochen', 'Zeit', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
+        h('tbody', {}, audit.map((a) => h('tr', {}, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen')), h('td', {}, a.niveau && chip(a.niveau)), h('td', { class: 'zahl' }, ['', 'I', 'II', 'III'][a.afb] ?? ''),
+          h('td', { class: 'zahl' }, a.bearbeitet), h('td', {}, a.bearbeitet ? balken(a.quote) : '–'), h('td', { class: 'zahl' }, prozent(a.ersterVersuch)), h('td', { class: 'zahl' }, a.abbrueche || '–'),
+          h('td', { class: 'zahl' }, a.zeitMedian == null ? '–' : `${a.zeitMedian} s`), h('td', {}, a.haeufigsteFalsche ? `${a.haeufigsteFalsche} (${a.haeufigsteAnzahl}-mal)` : '–'))))))),
     h('section', { class: 'karte' }, h('h2', {}, 'Hilfen'),
       h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Name', 'Tipp', 'Beispiel', 'Lösungsschritt', 'Hilferufe', 'Aufgaben'].map((t) => h('th', {}, t)))),
@@ -385,11 +557,21 @@ function einzelInhalt(code, fuerDruck = false) {
   const maengel = A.pruefeStand(stand, ziel(code));
   const lernziele = A.lernzieleMitAufgaben(z.pool, z.index);
   const kachel = (titel, wert) => h('div', { class: 'kachel' }, h('span', {}, titel), h('b', {}, wert));
-  const protokoll = fuerDruck ? stand.versuche.slice(-40) : [...stand.versuche].reverse();
+  const protokoll = [...stand.versuche].reverse();
+  const afb = A.afbProfil(stand, z.index), wirkung = A.hilfenWirkung(stand), fehler = A.fehlerVon(stand).slice(0, fuerDruck ? 4 : 8);
+  const zeile = (titel, x) => h('tr', {}, h('td', {}, titel), h('td', {}, x.bearbeitet ? balken(x.quote) : '–'), h('td', { class: 'klein' }, `${x.bearbeitet} Aufgaben`));
   return h('div', {},
     h('div', { class: 'kacheln' }, kachel('Zielniveau', ziel(code)), kachel('Rang', k.rang), kachel('Sterne', k.sterne), kachel('Aufgaben', k.bearbeitet), kachel('Lösungsquote', prozent(k.quote)),
       kachel('Im ersten Versuch', prozent(k.ersterVersuch)), kachel('Zeit pro Aufgabe', k.zeitMedian == null ? '–' : `${k.zeitMedian} s`), kachel('Hilfekärtchen', k.hilfekaertchen), kachel('Hilferufe', k.hilferufe), kachel('Training', prozent(k.trainingAnteil))),
     (auff.length > 0 || maengel.length > 0) && h('ul', { class: 'liste' }, auff.map((a) => h('li', {}, lesbar(a.text))), maengel.map((m) => h('li', { class: 'fehlertext' }, `Speicherstand passt nicht zum Protokoll: ${m}`))),
+    h('div', { class: 'zweispaltig' },
+      h('div', {}, h('h3', {}, 'Lösungsquote nach Anforderungsbereich'), h('table', { class: 'tabelle' }, h('tbody', {},
+        zeile('AFB I · Reproduzieren', afb[1]), zeile('AFB II · Zusammenhänge herstellen', afb[2]), zeile('AFB III · Verallgemeinern und Reflektieren', afb[3])))),
+      h('div', {}, h('h3', {}, 'Lösungsquote mit und ohne Hilfekärtchen'), h('table', { class: 'tabelle' }, h('tbody', {},
+        zeile('Ohne Hilfekärtchen', wirkung.ohne), zeile('Mit Hilfekärtchen', wirkung.mit),
+        h('tr', {}, h('td', {}, 'Im ersten Versuch gelöst'), h('td', {}, k.bearbeitet ? balken(k.ersterVersuch) : '–'), h('td', { class: 'klein' }, `${k.bearbeitet} Aufgaben`)))))),
+    h('h3', {}, 'Typische Fehler'),
+    fehler.length ? h('ul', { class: 'liste' }, fehler.map((f) => h('li', {}, `${z.pool.fehlvorstellungen[f.fehlvorstellung]?.beschreibung ?? f.fehlvorstellung} (${f.anzahl}-mal)`))) : h('p', { class: 'klein' }, 'Noch keine typischen Fehler erkannt.'),
     h('h3', {}, 'Niveauverlauf'),
     k.niveauverlauf.length ? h('p', { class: 'verlauf' }, k.niveauverlauf.map(chip)) : h('p', { class: 'klein' }, 'Noch keine Aufgaben.'),
     h('h3', {}, 'Lernziele'),
@@ -399,8 +581,8 @@ function einzelInhalt(code, fuerDruck = false) {
       return h('tr', {}, h('td', {}, stern(16, Boolean(stand.lernziele[l.id]))), h('td', {}, l.text),
         h('td', {}, stand.lernziele[l.id] ? 'erreicht' : n ? `${st.fortschritt} von 3, ${n} Aufgaben bearbeitet` : 'noch nicht begonnen'));
     }))),
-    h('h3', {}, fuerDruck ? 'Versuchsprotokoll (letzte 40 Aufgaben)' : 'Versuchsprotokoll'),
-    h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+    !fuerDruck && h('h3', {}, 'Versuchsprotokoll'),
+    !fuerDruck && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
       h('thead', {}, h('tr', {}, ['Wann', 'Aufgabe', 'Linie', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer', 'Erkannter Fehler'].map((t) => h('th', {}, t)))),
       h('tbody', {}, protokoll.map((v) => h('tr', {}, h('td', {}, new Date(v.t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })),
         h('td', {}, aufgabentext(v.aufgabe)), h('td', {}, chip(v.niveau)), h('td', {}, v.richtig ? 'ja' : 'nein'), h('td', { class: 'zahl' }, v.versuche), h('td', { class: 'zahl' }, v.hilfen),
@@ -416,7 +598,7 @@ function einzel() {
     h('div', { class: 'reihe' },
       h('label', {}, 'Schüler ', h('select', { id: 'schueler', onchange: (ev) => { z.schueler = ev.target.value; male(); } }, codes.map((c) => h('option', { value: c, selected: c === code }, name(c))))),
       h('span', { class: 'klein' }, code),
-      h('button', { class: 'schlicht', id: 'einzelbericht', onclick: () => drucke(h('h1', {}, `${name(code)}, Klasse ${z.klasse}`), h('p', {}, `Stand: ${new Date().toLocaleDateString('de-DE')}`), einzelInhalt(code, true), kl().notizen[code] && h('p', {}, h('b', {}, 'Notiz: '), kl().notizen[code])) }, 'Einzelbericht als PDF')),
+      h('button', { class: 'schlicht', id: 'einzelbericht', onclick: () => druckeEinzelbericht(code) }, 'Diagnosebericht als PDF')),
     einzelInhalt(code), h('h3', {}, 'Notiz'), notiz);
 }
 function klassenbericht() {
@@ -438,8 +620,7 @@ function verwaltung() {
       codes.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'Zielniveau', ''].map((t) => h('th', {}, t)))),
         h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, name(c)), h('td', { class: 'code' }, c),
-          h('td', {}, h('select', { 'data-ziel': c, onchange: (ev) => aendere((k) => { if (ev.target.value === 'G') delete k.einst.zielniveaus[c]; else k.einst.zielniveaus[c] = ev.target.value; }) },
-            L.NIVEAUS.map((n) => h('option', { value: n, selected: ziel(c) === n }, `${n} · ${L.NIVEAU_NAMEN[n]}`)))),
+          h('td', {}, zielWahl(c)),
           h('td', {}, h('button', { class: 'schlicht', onclick: () => { if (confirm(`${name(c)} aus der Namensliste entfernen? Der Speicherstand im Klassenordner bleibt liegen.`)) aendere((k) => { delete k.namen[c]; delete k.einst.zielniveaus[c]; }); } }, 'Entfernen'))))))),
       h('h3', {}, 'Schüler hinzufügen'), liste,
       h('div', { class: 'reihe' },

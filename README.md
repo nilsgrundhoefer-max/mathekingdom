@@ -27,7 +27,17 @@ Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist G, und jeder Code 
 - **Mit einer Beispielklasse ausprobieren** zeigt alle Ansichten mit 14 erfundenen Schülern. Nichts wird gespeichert.
 - **Ordner auf dem Lehrerlaufwerk wählen** richtet den echten Betrieb ein: Dort entstehen `lehrerdaten.json` (Namenslisten, Notizen, Schlüssel) und der Ordner `backup/`. Danach eine Klasse anlegen, ihren Klassenordner wählen, Namen eintragen, Codes erzeugen, Code-Kärtchen drucken und die Startdatei für die Schülerlaufwerke herunterladen.
 
-Ansichten: Live (Hilfe-Warteschlange, Lernstand, Hinweise), Diagnose (Auffälligkeiten, Lernzielmatrix, Lernziele im Vergleich, typische Fehler, schwierige Aufgaben, Hilfen), Einzelne Schüler, Klasse und Codes, Backup. Berichte: Klassenbericht und Einzelbericht über den Druckdialog als PDF, Rohdaten als Excel-Datei mit fünf Blättern.
+Ansichten:
+
+- **Live:** Akut-Zone (Hilferufe und blockierte Schüler mit Aufgabe, Fehlversuchen, gezogenen Hilfekärtchen und möglichen Lernbegleitern), Impulse (Mini-Workshop bei gehäuftem Fehler, Schnellläufer), Klassenraum als Sitzplan mit Ampel, Lernstand als Tabelle. Ein Tipp auf einen Schüler öffnet die Detailansicht über dem Sitzplan.
+- **Lernpfad:** Stationen für einzelne Schüler, die ganze Klasse oder ein Zielniveau sperren und öffnen.
+- **Diagnose:** Auffälligkeiten, Lernzielmatrix, Lernziele im Vergleich, typische Fehler, Aufgaben-Audit, Hilfen.
+- **Einzelne Schüler:** Kennzahlen, Lösungsquote nach Anforderungsbereich (AFB I bis III), Wirkung der Hilfekärtchen, typische Fehler, Niveauverlauf, Lernziele, Versuchsprotokoll, Notiz.
+- **Klasse und Codes**, **Backup**.
+
+Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den Druckdialog als PDF, Rohdaten als Excel-Datei mit sechs Blättern.
+
+Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
 
 Noch nicht gebaut: Schuljahreswechsel, weitere Berichte, Aufgabenformate Zahlenstrahl, Diagramm und Tabelle.
 

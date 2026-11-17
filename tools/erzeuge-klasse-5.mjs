@@ -170,10 +170,20 @@ const gruppe = (lernziel, niveau, erzeuge) => {
     const schluessel = a.text + JSON.stringify(a.optionen ?? '');
     if (texte.has(schluessel)) continue;
     texte.add(schluessel);
-    aufgaben.push({ id: `${lernziel}-${niveau}-${String(++i).padStart(2, '0')}`, lernziel, niveau, ...a });
+    aufgaben.push({ id: `${lernziel}-${niveau}-${String(++i).padStart(2, '0')}`, lernziel, niveau, afb: a.afb ?? afbVon(lernziel, niveau), ...a });
   }
 };
 const NIVEAUS = ['F', 'G', 'M', 'E'];
+
+// Anforderungsbereich (AFB I Reproduzieren, II Zusammenhänge herstellen, III Verallgemeinern und Reflektieren).
+// Faustregel je Lernziel und Niveaustufe; eine einzelne Aufgabe kann mit `afb` davon abweichen.
+function afbVon(lernziel, niveau) {
+  const kurz = lernziel.split('-').pop();
+  const schwer = niveau === 'M' || niveau === 'E';
+  if (['S2', 'S3', 'D2', 'D3'].includes(kurz)) return 1;          // schriftliches Rechnen
+  if (['S1', 'D1', 'S4', 'D4', 'D5'].includes(kurz)) return schwer ? 2 : 1; // Fachbegriffe, Überschlag und Probe, Rest deuten
+  return niveau === 'E' ? 3 : 2;                                   // Sachaufgaben
+}
 
 // =====================================================================
 // 3.3 Subtrahieren

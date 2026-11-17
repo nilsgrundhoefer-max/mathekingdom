@@ -33,6 +33,7 @@ for (const a of pool.aufgaben) {
   ids.add(a.id);
   if (!lernziele.has(a.lernziel)) melde(a.id, `unbekanntes Lernziel ${a.lernziel}`);
   if (!NIVEAUS.includes(a.niveau)) melde(a.id, `unbekannte Niveaustufe ${a.niveau}`);
+  if (![1, 2, 3].includes(a.afb)) melde(a.id, `Anforderungsbereich fehlt oder ist ungültig: ${a.afb}`);
   if (!a.id.startsWith(`${a.lernziel}-${a.niveau}-`)) melde(a.id, 'ID passt nicht zu Lernziel und Niveaustufe');
   if (!a.text?.trim()) melde(a.id, 'Text fehlt');
   for (const h of ['tipp', 'beispiel', 'loesungsschritt']) if (!a.hilfen?.[h]?.trim()) melde(a.id, `Hilfekärtchen ${h} fehlt`);

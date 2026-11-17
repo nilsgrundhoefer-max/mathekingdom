@@ -13,13 +13,23 @@ const z = { // Zustand der laufenden Sitzung
 let wurzel;
 
 // ---------- Rahmen ----------
-function zeige(ansicht) { z.ansicht = ansicht; if (ansicht.name !== 'aufgabe' && z.stand?.aktiv) { z.stand.aktiv = null; z.dienst.markiere(); } male(); }
+function zeige(ansicht) {
+  z.ansicht = ansicht;
+  if (ansicht.name !== 'aufgabe' && z.stand?.aktiv) {
+    // Aufgabe ohne Ergebnis verlassen: für das Aufgaben-Audit der Lehrkraft festhalten.
+    const a = z.stand.aktiv;
+    (z.stand.abbrueche ??= []).push({ t: jetzt(), aufgabe: a.aufgabe, fehlversuche: a.fehlversuche ?? 0, hilfen: a.hilfen ?? 0 });
+    z.stand.aktiv = null; z.dienst.markiere();
+  }
+  male();
+}
 function geaendert() { z.dienst?.markiere(); }
 function male() {
   const ansichten = { anmeldung, jahresplan, metro, aufgabe: aufgabenAnsicht, werkstatt, minispiel };
   wurzel.replaceChildren(...[
     z.stand && kopf(),
     z.stand && hilfeBanner(),
+    z.stand && nachrichtBanner(),
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
   ].filter(Boolean));
@@ -46,6 +56,12 @@ function kopf() {
       z.ablage.demo && h('span', { class: 'demo' }, 'Demo: nur in diesem Browser')));
 }
 
+function nachrichtBanner() {
+  const n = z.einst.nachricht;
+  if (!n || z.stand.gelesen === n.t) return null;
+  return h('div', { class: 'hilfebanner nachricht', role: 'status' }, h('span', {}, h('b', {}, 'Nachricht von deiner Lehrkraft: '), n.text),
+    h('button', { class: 'schlicht', id: 'nachricht-ok', onclick: (e) => { z.stand.gelesen = n.t; geaendert(); z.dienst.sofort(); e.target.closest('.hilfebanner').remove(); } }, 'Verstanden'));
+}
 function hilfeBanner() {
   if (!z.stand.hilferuf) {
     return z.hilfeErledigt ? h('div', { class: 'hilfebanner erledigt', role: 'status' }, h('span', {}, 'Deine Lehrkraft hat deinen Hilferuf als erledigt abgehakt.')) : null;
@@ -127,10 +143,11 @@ async function takt() {
     const gelesen = await S.ladeKlassendatei(z.ablage);
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') z.klassendatei = gelesen.daten;
-    const vorher = JSON.stringify([...z.einst.offeneKapitel, z.einst.spielpause, z.einst.zielniveau, z.einst.hilfeAntwort]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteStationen]]);
+    const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
-    let neu = vorher !== JSON.stringify([...z.einst.offeneKapitel, z.einst.spielpause, z.einst.zielniveau, z.einst.hilfeAntwort]);
+    let neu = vorher !== bild(z.einst);
     if (ruf && antwort?.zu === ruf.seit && antwort.status === 'erledigt') {
       L.beendeHilferuf(z.stand, 'erledigt', jetzt()); geaendert(); z.dienst.sofort(); neu = true;
       z.hilfeErledigt = true;
@@ -142,7 +159,11 @@ async function takt() {
     }
     // Nicht mitten in einer Eingabe neu zeichnen.
     if (neu && !['aufgabe', 'minispiel'].includes(z.ansicht.name)) male();
-    else if (neu) { const alt = wurzel.querySelector('.hilfebanner'); const frisch = hilfeBanner(); if (alt && frisch) alt.replaceWith(frisch); else if (alt) alt.remove(); }
+    else if (neu) {
+      // Mitten in einer Aufgabe nur die Banner austauschen.
+      wurzel.querySelectorAll('.hilfebanner').forEach((b) => b.remove());
+      wurzel.querySelector('.kopf').after(...[hilfeBanner(), nachrichtBanner()].filter(Boolean));
+    }
     // In der Aufgabe erscheint der Knopf für einen neuen Hilferuf wieder, ohne die Eingabe zu verlieren.
     if (neu && z.ansicht.name === 'aufgabe' && !z.stand.hilferuf && !wurzel.querySelector('#hilferuf')) wurzel.querySelector('aside.hilfen')?.replaceWith(hilfen(z.ansicht));
   } catch { /* Ordner kurz nicht erreichbar: beim nächsten Takt erneut */ }
@@ -175,7 +196,9 @@ function jahresplan() {
 function metro() {
   const kapitel = z.pool.kapitel.find((k) => k.id === z.ansicht.kapitel);
   const niveau = L.arbeitsniveau(z.stand, kapitel.id, z.einst.zielniveau);
-  const stationen = kapitel.unterkapitel.map((u) => ({ id: u.id, titel: u.titel, extra: u.extra, status: L.stationStatus(z.index, z.stand, u) }));
+  const zu = z.einst.gesperrteStationen;
+  // Gesperrte Stationen sehen aus wie noch nicht eröffnete und tragen ein Schloss im Namen.
+  const stationen = kapitel.unterkapitel.map((u) => ({ id: u.id, titel: zu.has(u.id) ? `${u.titel} 🔒` : u.titel, extra: u.extra, status: zu.has(u.id) ? 'leer' : L.stationStatus(z.index, z.stand, u) }));
   const standort = (stationen.find((st) => st.status === 'begonnen') ?? stationen.find((st) => st.status === 'offen') ?? stationen[0]).id;
   const gewaehlt = z.ansicht.station ?? standort;
   const station = kapitel.unterkapitel.find((u) => u.id === gewaehlt);
@@ -192,6 +215,9 @@ function metro() {
 
 function stationsTafel(kapitel, station, niveau) {
   const status = L.stationStatus(z.index, z.stand, station);
+  if (z.einst.gesperrteStationen.has(station.id)) {
+    return h('div', { class: 'karte tafel gesperrt' }, h('h2', {}, `${station.titel} 🔒`), h('p', {}, 'Diese Station hat deine Lehrkraft für dich noch nicht geöffnet. Fahre erst an den anderen Stationen weiter.'));
+  }
   if (status === 'leer') {
     return h('div', { class: 'karte tafel' }, h('h2', {}, station.titel), h('p', {}, 'An dieser Station gibt es noch keine Aufgaben. Sie wird bald eröffnet.'));
   }
@@ -213,7 +239,7 @@ function stationsTafel(kapitel, station, niveau) {
 // ---------- Aufgabe ----------
 function starteAufgabe(lernzielId, niveau) {
   const aufgabe = L.naechsteAufgabe(z.index, z.stand, lernzielId, niveau);
-  z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt() };
+  z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt(), fehlversuche: 0, hilfen: 0 };
   geaendert();
   zeige({ name: 'aufgabe', aufgabe, beginn: Date.now(), versuch: 0, hilfen: 0, eingaben: [], fehlvorstellungen: [], hinweis: null, ergebnis: null,
     reihenfolge: aufgabe.format === 'zuordnen' ? mische(aufgabe.paare.map((p) => p.rechts)) : null });
@@ -290,6 +316,7 @@ function pruefe(formular) {
   if (!ergebnis.richtig && a.versuch < 2) {
     const gezielt = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis;
     a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'} Du hast noch einen Versuch.`;
+    if (z.stand.aktiv) { z.stand.aktiv.fehlversuche = a.versuch; geaendert(); }
     return male();
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
@@ -355,7 +382,7 @@ function hilfen(a) {
     h('h2', {}, 'Hilfekärtchen'),
     h('div', { class: 'kaertchen' }, karten.map(([feld, titel, kosten], i) => i < a.hilfen
       ? h('div', { class: 'kaertchen-offen' }, h('b', {}, titel), h('p', {}, a.aufgabe.hilfen[feld]))
-      : h('button', { class: 'kaertchen-zu', disabled: i > a.hilfen, 'data-hilfe': feld, onclick: () => { a.hilfen++; maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); } },
+      : h('button', { class: 'kaertchen-zu', disabled: i > a.hilfen, 'data-hilfe': feld, onclick: () => { a.hilfen++; if (z.stand.aktiv) { z.stand.aktiv.hilfen = a.hilfen; geaendert(); } maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); } },
         h('b', {}, titel), h('span', {}, i > a.hilfen ? 'Erst das Kärtchen davor aufdecken.' : kosten)))),
     !z.stand.hilferuf && h('button', { class: 'schlicht hilferuf', id: 'hilferuf', onclick: () => { L.rufeHilfe(z.stand, a.aufgabe.id, jetzt()); z.wartePlatz = null; geaendert(); z.dienst.sofort(); maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); takt(); } },
       'Ich brauche Hilfe von meiner Lehrkraft'));

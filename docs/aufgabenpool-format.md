@@ -33,6 +33,7 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 | `id` | Lernziel, Niveaustufe und laufende Nummer |
 | `lernziel` | Kennung des Lernziels, das die Aufgabe nachweist |
 | `niveau` | `F`, `G`, `M` oder `E` |
+| `afb` | Anforderungsbereich `1`, `2` oder `3`. Der Erzeuger setzt ihn nach einer Faustregel je Lernziel und Niveaustufe (schriftliches Rechnen I; Fachbegriffe, Überschlag, Probe, Rest deuten auf F und G I, auf M und E II; Sachaufgaben II, auf E III). Eine Aufgabe kann davon abweichen. |
 | `format` | Aufgabenformat, siehe unten |
 | `text` | Aufgabentext |
 | `hilfen` | die drei Hilfekärtchen `tipp`, `beispiel`, `loesungsschritt` |

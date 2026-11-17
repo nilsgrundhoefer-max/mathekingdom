@@ -97,13 +97,13 @@ test('Klasse hängt: mehrere Schüler scheitern gerade am selben Lernziel', () =
   assert.deepEqual(A.klasseHaengt(staende.slice(0, 2), index), []);
 });
 
-test('Berichtstabellen: fünf Blätter, Namen aus der Namensliste', () => {
+test('Berichtstabellen: sechs Blätter, Namen aus der Namensliste', () => {
   const stand = neu();
   L.verbuche(stand, aufgaben(S2, 'G')[0], b(), 'G', JETZT);
   const blaetter = A.berichtstabellen([{ code: '5A-AAAA', stand }], pool, index, {}, () => 'Lena Muster', JETZT);
-  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Versuchsprotokoll']);
+  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll']);
   assert.equal(blaetter[0].zeilen[1][0], 'Lena Muster');
-  assert.equal(blaetter[4].zeilen.length, 2);
+  assert.equal(blaetter[5].zeilen.length, 2);
   for (const blatt of blaetter) for (const zeile of blatt.zeilen) assert.equal(zeile.length, blatt.zeilen[0].length, blatt.name);
 });
 
@@ -121,4 +121,93 @@ test('Signatur: echte Klassendatei wird angenommen, veränderte abgelehnt', asyn
   const fremd = await K.erzeugeSchluessel();
   assert.equal(await K.pruefeUnterschrift(datei, fremd.oeffentlich), null);
   assert.deepEqual(K.liesUngeprueft(datei), { klasse: '5a', aktuellesKapitel: '5.3' });
+});
+
+test('Live-Status: Hilferuf, blockiert, beobachten, im Flow, inaktiv, nicht da', () => {
+  const g = aufgaben(S2, 'G');
+  const mit = (tun) => { const st = neu(); tun(st); st.geaendert ??= JETZT; return A.livestatus(st, 'G', JETZT); };
+  assert.equal(A.livestatus(null, 'G', JETZT).status, 'fehlt');
+  assert.equal(mit((st) => { st.geaendert = '2026-11-16T10:00:00Z'; }).status, 'fehlt');
+  assert.equal(mit((st) => { st.geaendert = JETZT; }).status, 'inaktiv');
+  // drei richtige in Folge
+  assert.equal(mit((st) => { for (let i = 0; i < 3; i++) L.verbuche(st, g[i], b(), 'G', '2026-11-17T10:2' + i + ':00Z'); st.geaendert = JETZT; }).status, 'flow');
+  // zwei ungelöste Aufgaben mit je zwei Versuchen: vier Fehlversuche in Folge
+  const rot = mit((st) => { for (let i = 0; i < 2; i++) L.verbuche(st, g[i], b({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:2' + i + ':00Z'); st.geaendert = JETZT; });
+  assert.equal(rot.status, 'blockiert');
+  assert.equal(rot.fehlversuche, 4);
+  // seit sechs Minuten an derselben Aufgabe
+  assert.equal(mit((st) => { st.aktiv = { aufgabe: g[0].id, seit: '2026-11-17T10:24:00Z', fehlversuche: 0, hilfen: 0 }; }).status, 'blockiert');
+  // Tipp gezogen
+  const gelb = mit((st) => { st.aktiv = { aufgabe: g[0].id, seit: '2026-11-17T10:29:00Z', fehlversuche: 1, hilfen: 1 }; });
+  assert.equal(gelb.status, 'beobachten');
+  assert.match(gelb.kontext, /Tipp gezogen, 1 Fehlversuche/);
+  // Hilferuf geht vor
+  const ruf = mit((st) => { L.rufeHilfe(st, g[0].id, '2026-11-17T10:27:00Z'); });
+  assert.equal(ruf.status, 'hilfe');
+  assert.equal(ruf.minuten, 3);
+  // alte Fehlversuche von gestern machen niemanden rot
+  assert.notEqual(mit((st) => { for (let i = 0; i < 2; i++) L.verbuche(st, g[i], b({ geloest: false, versuche: 2 }), 'G', '2026-11-16T10:2' + i + ':00Z'); st.aktiv = { aufgabe: g[2].id, seit: '2026-11-17T10:29:30Z' }; }).status, 'blockiert');
+});
+
+test('Impulse: Lernbegleiter, Fehlerhäufung, Schnellläufer', () => {
+  const g = aufgaben(S2, 'G');
+  const gut = neu('5A-GUTE');
+  for (let i = 0; i < 3; i++) L.verbuche(gut, g[i], b(), 'G', '2026-11-17T10:1' + i + ':00Z');
+  gut.geaendert = JETZT;
+  assert.ok(gut.lernziele[S2]);
+  const schwach = neu('5A-HILF');
+  const staende = [{ code: '5A-GUTE', stand: gut }, { code: '5A-HILF', stand: schwach }];
+  assert.deepEqual(A.lernbegleiter(staende, S2, {}, JETZT, '5A-HILF'), ['5A-GUTE']);
+  assert.deepEqual(A.lernbegleiter(staende, S2, {}, JETZT, '5A-GUTE'), []);
+
+  const drei = ['5A-AAAA', '5A-BBBB', '5A-CCCC'].map((code) => {
+    const st = neu(code);
+    L.verbuche(st, g[0], b({ geloest: false, versuche: 2, fehlvorstellungen: ['sub-uebertrag-vergessen'] }), 'G', '2026-11-17T10:20:00Z');
+    return { code, stand: st };
+  });
+  assert.deepEqual(A.fehlerHaeufung(drei, JETZT), [{ fehlvorstellung: 'sub-uebertrag-vergessen', codes: ['5A-AAAA', '5A-BBBB', '5A-CCCC'] }]);
+  assert.deepEqual(A.fehlerHaeufung(drei.slice(0, 2), JETZT), []);
+
+  // Station Subtrahieren ganz abgeschlossen
+  const fertig = neu('5A-FERT');
+  for (const kurz of ['S1', 'S2', 'S3', 'S4', 'S5']) for (let i = 0; i < 3; i++) L.verbuche(fertig, aufgaben(`5.3.3-${kurz}`, 'G')[i], b(), 'G', '2026-11-17T10:15:00Z');
+  const lauf = A.schnelllaeufer([{ code: '5A-FERT', stand: fertig }, ...staende], pool, index, {}, JETZT);
+  assert.equal(lauf.length, 1);
+  assert.deepEqual([lauf[0].code, lauf[0].station, lauf[0].naechstes], ['5A-FERT', '5.3.3', 'M']);
+});
+
+test('Anforderungsbereiche, Wirkung der Hilfen und Aufgaben-Audit', () => {
+  assert.ok(pool.aufgaben.every((a) => [1, 2, 3].includes(a.afb)));
+  assert.ok(pool.aufgaben.some((a) => a.afb === 3));
+  const stand = neu();
+  const g = aufgaben(S2, 'G');
+  L.verbuche(stand, g[0], b(), 'G', JETZT);
+  L.verbuche(stand, g[1], b({ geloest: false, versuche: 2, hilfen: 1, eingaben: ['77', '77'] }), 'G', JETZT);
+  const profil = A.afbProfil(stand, index);
+  assert.deepEqual(profil[1], { bearbeitet: 2, quote: 0.5 });
+  assert.equal(profil[3].quote, null);
+  const w = A.hilfenWirkung(stand);
+  assert.equal(w.ohne.quote, 1); assert.equal(w.mit.quote, 0);
+
+  const staende = ['5A-AAAA', '5A-BBBB', '5A-CCCC'].map((code) => {
+    const st = neu(code);
+    L.verbuche(st, g[0], b({ geloest: false, versuche: 2, eingaben: ['77', '77'] }), 'G', JETZT);
+    st.abbrueche.push({ t: JETZT, aufgabe: g[0].id, fehlversuche: 1, hilfen: 0 });
+    return { code, stand: st };
+  });
+  const [a] = A.aufgabenAudit(staende, index);
+  assert.equal(a.aufgabe, g[0].id);
+  assert.equal(a.quote, 0);
+  assert.equal(a.abbrueche, 3);
+  assert.equal(a.abbruchquote, 0.5);
+  assert.equal(a.haeufigsteFalsche, '77');
+  assert.equal(a.haeufigsteAnzahl, 6);
+  assert.equal(a.auffaellig, true);
+});
+
+test('Klassendatei: gesperrte Stationen und Nachricht je Schüler', () => {
+  const e = L.einstellungen({ sperren: { '5.3.3': ['5A-AAAA'], '5.4.5': ['5A-BBBB'] }, nachrichten: { '5A-AAAA': { t: JETZT, text: 'Komm bitte nach vorn.' } } }, '5A-AAAA', pool);
+  assert.deepEqual([...e.gesperrteStationen], ['5.3.3']);
+  assert.equal(e.nachricht.text, 'Komm bitte nach vorn.');
+  assert.equal(L.einstellungen(null, '5A-AAAA', pool).gesperrteStationen.size, 0);
 });

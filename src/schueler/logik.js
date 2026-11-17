@@ -37,7 +37,9 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
     hilferufe: [],     // abgeschlossene Hilferufe
     lok: { farbe: 'rot', extras: [], gekauft: ['rot'] },
     spiele: [],
-    aktiv: null,       // { aufgabe, seit } für die Live-Ansicht der Lehrkraft
+    aktiv: null,       // { aufgabe, seit, fehlversuche, hilfen } für die Live-Ansicht der Lehrkraft
+    abbrueche: [],     // verlassene Aufgaben ohne Ergebnis: { t, aufgabe, fehlversuche, hilfen }
+    gelesen: null,     // Zeitpunkt der letzten Nachricht der Lehrkraft, die der Schüler bestätigt hat
   };
 }
 export const sterne = (stand) => Object.keys(stand.lernziele).length;
@@ -270,6 +272,8 @@ export function einstellungen(klassendatei, code, pool) {
     offeneKapitel: new Set(kapitelIds.slice(0, bis + 1)),
     spielpause: Boolean(k.spielpause),
     hilfeAntwort: k.hilfe?.[code] ?? null,
+    nachricht: k.nachrichten?.[code] ?? null,
+    gesperrteStationen: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([station]) => station)),
     codeBekannt: k.codes ? k.codes.includes(code) : true,
   };
 }

@@ -204,6 +204,37 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.schlange li.unterwegs');
   await seite.locator('.schlange li.unterwegs [data-erledigt]').click();
   await seite.waitForFunction((n) => document.querySelectorAll('.schlange li').length === n - 1, wartend);
+  // Klassenraum: 14 Plätze mit Ampel, mindestens ein blockierter Schüler ohne Hilferuf in der Akut-Zone.
+  assert.equal(await seite.locator('.sitzplan .platz[data-schueler]').count(), 14);
+  assert.ok(await seite.locator('.sitzplan .platz.blockiert').count() >= 1);
+  assert.ok(await seite.locator('.schlange li.blockiert').count() >= 1);
+  await seite.locator('[data-kuemmere]').first().click();
+  // Detailansicht über dem Sitzplan.
+  await seite.locator('.sitzplan .platz[data-schueler]').first().click();
+  await seite.waitForSelector('.overlay .kacheln');
+  assert.equal(await seite.locator('.sitzplan').count(), 1);
+  await foto(seite, 'lehrer-overlay');
+  await seite.click('#overlay-zu');
+  assert.equal(await seite.locator('.overlay').count(), 0);
+  // Sitzplan ändern: ersten und zweiten Platz tauschen.
+  const vorher = await seite.locator('.sitzplan .platz').nth(0).getAttribute('data-schueler');
+  await seite.click('#sitzplan-bearbeiten');
+  await seite.locator('.sitzplan .platz').nth(0).click();
+  await seite.locator('.sitzplan .platz').nth(1).click();
+  await seite.click('#sitzplan-bearbeiten');
+  assert.equal(await seite.locator('.sitzplan .platz').nth(1).getAttribute('data-schueler'), vorher);
+  await foto(seite, 'lehrer-live-neu');
+  await seite.setViewportSize({ width: 820, height: 1100 });
+  await foto(seite, 'lehrer-live-tablet');
+  await seite.setViewportSize({ width: 1400, height: 900 });
+  // Lernpfad: Station für eine ganze Gruppe sperren.
+  await seite.click('[data-tab=pfad]');
+  await seite.selectOption('#pfad-kapitel', '5.3');
+  await seite.selectOption('[data-masse="5.3.3"]', 'zu|alle');
+  await seite.waitForFunction(() => document.querySelectorAll('.sperre.zu').length === 14);
+  await seite.locator('.sperre.zu').first().click();
+  await seite.waitForFunction(() => document.querySelectorAll('.sperre.zu').length === 13);
+  await foto(seite, 'lehrer-lernpfad');
   await seite.click('[data-tab=diagnose]');
   await seite.waitForSelector('.matrix');
   assert.equal(await seite.locator('.matrix tbody tr').count(), 14);
@@ -330,6 +361,29 @@ async function antworte(seite, richtig = true) {
   await schueler.waitForSelector('.hilfebanner.erledigt', { timeout: 8000 });
   await schueler.waitForSelector('#hilferuf'); // ein neuer Hilferuf ist wieder möglich
   await lehrer.waitForFunction(() => !document.querySelector('.schlange li'), null, { timeout: 25000 });
+
+  // Nachricht an eine Schülerin, sie bestätigt, die Lehrkraft sieht „gelesen“.
+  await lehrer.click(`.sitzplan [data-schueler="${aylin}"]`);
+  await lehrer.click('.overlay details.nachricht summary');
+  await lehrer.fill(`[data-nachricht="${aylin}"]`, 'Rechne die Probe.');
+  await lehrer.click(`.overlay [data-sende="${aylin}"]`);
+  await schueler.waitForSelector('.hilfebanner.nachricht', { timeout: 15000 });
+  assert.match(await schueler.innerText('.hilfebanner.nachricht'), /Rechne die Probe\./);
+  await schueler.click('#nachricht-ok');
+  await lehrer.waitForFunction(() => /gelesen/.test(document.querySelector('.overlay details.nachricht .marke.gut')?.textContent ?? ''), null, { timeout: 15000 });
+  await lehrer.click('#overlay-zu');
+
+  // Station sperren: Die Schülerin sieht das Schloss und kann dort nichts starten. Öffnen macht es rückgängig.
+  await lehrer.click('[data-tab=pfad]');
+  await lehrer.click(`[data-sperre="5.4.5|${aylin}"]`);
+  await warteAuf((k) => k.sperren?.['5.4.5']?.includes(aylin));
+  await schueler.click('.pfad button');
+  await schueler.waitForSelector('.tafel.gesperrt', { timeout: 15000 });
+  assert.equal(await schueler.locator('#losfahren').count(), 0);
+  await foto(schueler, 'schueler-station-gesperrt');
+  await lehrer.click(`[data-sperre="5.4.5|${aylin}"]`);
+  await schueler.waitForSelector('#losfahren', { timeout: 15000 });
+  assert.equal(JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length, 1);
 
   // Spielpause wirkt beim Schüler.
   await lehrer.check('#spielpause');

@@ -39,6 +39,9 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
     stand.geaendert = new Date(jetzt - still).toISOString();
     const offene = index.nach.get(`${lernziele[1].id}|${niveau}`);
     if (i === 1 || i === 7) L.rufeHilfe(stand, offene[0].id, new Date(jetzt - (i === 1 ? 4 : 2) * 60000).toISOString());
+    if (i === 3) stand.aktiv = { aufgabe: offene[1].id, seit: new Date(jetzt - 6 * 60000).toISOString(), fehlversuche: 1, hilfen: 2 }; // einer steckt fest
+    if (i === 12) stand.aktiv = { aufgabe: offene[2].id, seit: new Date(jetzt - 60000).toISOString(), fehlversuche: 0, hilfen: 1 };    // eine hat einen Tipp gezogen
+    if (i === 5) stand.abbrueche.push({ t: new Date(jetzt - 5 * 60000).toISOString(), aufgabe: offene[0].id, fehlversuche: 1, hilfen: 0 });
     if (i === 11) stand.muenzen += 5000;                // einer hat an seiner Datei gedreht
     staende.push({ code, stand });
   });
