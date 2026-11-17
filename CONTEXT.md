@@ -70,13 +70,21 @@ _Avoid_: aktuelles Thema
 Der Weg durch die Unterkapitel eines einzelnen Kapitels.
 _Avoid_: Kurs, Weg, Themenbereich
 
-**Metrokarte**:
-Die Darstellung eines Lernpfads mit vier parallelen Linien (F, G, M, E), auf denen die Unterkapitel Stationen sind. Ein Niveauwechsel ist ein Umsteigen.
-_Avoid_: Lernlandkarte, Fortschrittsbalken
+**Regionskarte**:
+Die Darstellung eines Lernpfads im Stil einer alten Landkarte: vier parallele Straßen (F, G, M, E), auf denen die Unterkapitel Meilensteine sind. Ein Niveauwechsel heißt „die Straße wechseln“.
+_Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken
 
-**Station**:
-Ein Unterkapitel auf der Metrokarte. Sie gilt als erreicht, wenn der Schüler die Lernziele des Unterkapitels erreicht hat.
-_Avoid_: Level, Haltestelle
+**Straße**:
+Der Weg einer Niveaustufe auf der Regionskarte, mit festem Namen und eigenem Strichmuster: F Feldweg, G Talweg, M Königsweg, E Bergpfad.
+_Avoid_: Linie, Route (auf dem Bildschirm)
+
+**Meilenstein**:
+Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, und trägt dann ein Wachssiegel. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
+_Avoid_: Station, Haltestelle, Level, Knotenpunkt
+
+**Abstecher**:
+Ein zusätzlicher Meilenstein, der abseits der Straßen gestrichelt angehängt ist.
+_Avoid_: Zusatzstation, Extra
 
 **Lernziel**:
 Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III.
@@ -135,7 +143,7 @@ Die Regeln eines Unterkapitels in Kürze, mit einem vorgerechneten Beispiel und 
 _Avoid_: Regelheft, Spickzettel
 
 **Wortspeicher**:
-Die Wörter einer Station mit je einer Erklärung in einem Satz, neben der Aufgabe. Er zeigt nur die Wörter bis zur Niveaustufe der Aufgabe, ist auf F und G aufgeklappt und auf M und E zugeklappt. Kostet nichts.
+Die Wörter eines Meilensteins mit je einer Erklärung in einem Satz, neben der Aufgabe. Er zeigt nur die Wörter bis zur Niveaustufe der Aufgabe, ist auf F und G aufgeklappt und auf M und E zugeklappt. Kostet nichts.
 _Avoid_: Glossar, Vokabelliste
 
 **Einfache Sprache**:
@@ -147,7 +155,7 @@ Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge
 _Avoid_: Schwierigkeit
 
 **Etappe**:
-Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der geschafften Stationen und der nächsten Station. Sie steht oben auf der Startseite. Gesperrte Stationen zählen nicht mit.
+Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten Meilensteine und dem nächsten Meilenstein. Sie steht oben auf der Startseite. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Hilfekärtchen**:
@@ -215,8 +223,8 @@ _Avoid_: Klassenliste (für die Datei)
 - **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Lehrerdaten.
 - **Impuls**: Vorschlag des Lehrer-Dashboards an die Lehrkraft, zum Beispiel ein Mini-Workshop, wenn mehrere Schüler denselben typischen Fehler machen, oder ein Hinweis auf einen Schnellläufer.
 - **Lernbegleiter**: Ein Schüler, der ein Lernziel schon erreicht hat und einem blockierten Mitschüler helfen könnte. Nur ein Vorschlag an die Lehrkraft.
-- **Schnellläufer**: Ein Schüler, der in der laufenden Stunde eine Station abgeschlossen hat. Die Lehrkraft kann sein Zielniveau anheben.
-- **Gesperrte Station**: Eine Station, die die Lehrkraft für einen Schüler geschlossen hat. Der Schüler sieht sie, kann dort aber keine Aufgaben starten. „Erreicht“ wird eine Station nie von Hand, sondern nur über ihre Lernziele.
+- **Schnellläufer**: Ein Schüler, der in der laufenden Stunde einen Meilenstein gemeistert hat. Die Lehrkraft kann sein Zielniveau anheben.
+- **Gesperrter Meilenstein**: Ein Meilenstein, den die Lehrkraft für einen Schüler geschlossen hat. Der Schüler sieht sie, kann dort aber keine Aufgaben starten. Gemeistert wird ein Meilenstein nie von Hand, sondern nur über seine Lernziele.
 - **Nachricht**: Kurzer Text der Lehrkraft an einen einzelnen Schüler. Der Schüler bestätigt ihn.
 - **Anforderungsbereich (AFB)**: Einordnung jeder Aufgabe in I (Reproduzieren), II (Zusammenhänge herstellen) oder III (Verallgemeinern und Reflektieren). Unabhängig von der Niveaustufe.
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
