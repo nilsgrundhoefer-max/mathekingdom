@@ -115,7 +115,7 @@ async function oeffneKlasse(klasse, ablage) {
     await lade();
     const fokus = document.activeElement?.tagName;
     // Eine neue Warnung wird sofort gezeigt. Sonst nur neu zeichnen, wo es nicht beim Tippen stört.
-    if (z.warnungen.length > vorher || (['live', 'diagnose'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open]'))) male();
+    if (z.warnungen.length > vorher || (['live', 'diagnose', 'aufgaben'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open]'))) male();
   };
   takt = setInterval(frisch, 5000);
   // Im Hintergrund bremst der Browser die Uhr: beim Zurückkehren sofort neu lesen.
@@ -279,8 +279,8 @@ function klassen() {
 // ---------- Klasse ----------
 function klassenAnsicht() {
   const e = kl().einst;
-  const tabs = [['live', 'Live'], ['pfad', 'Lernpfad'], ['diagnose', 'Diagnose'], ['schueler', 'Einzelne Schüler'], ['klasse', 'Klasse und Codes'], ['sicherung', 'Backup']];
-  const inhalte = { live, pfad: lernpfad, diagnose, schueler: einzel, klasse: verwaltung, sicherung };
+  const tabs = [['live', 'Live'], ['pfad', 'Lernpfad'], ['diagnose', 'Diagnose'], ['aufgaben', 'Aufgaben'], ['schueler', 'Einzelne Schüler'], ['klasse', 'Klasse und Codes'], ['sicherung', 'Backup']];
+  const inhalte = { live, pfad: lernpfad, diagnose, aufgaben: aufgabenTab, schueler: einzel, klasse: verwaltung, sicherung };
   return h('div', {},
     h('div', { class: 'leiste' },
       h('h1', {}, `Klasse ${z.klasse}`),
@@ -561,6 +561,51 @@ function diagnose() {
       h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Name', 'Tipp', 'Beispiel', 'Lösungsschritt', 'Hilferufe', 'Aufgaben'].map((t) => h('th', {}, t)))),
         h('tbody', {}, hilfen.map(({ code, k }) => h('tr', {}, h('td', {}, name(code)), h('td', { class: 'zahl' }, k.tipp), h('td', { class: 'zahl' }, k.beispiel), h('td', { class: 'zahl' }, k.loesungsschritt), h('td', { class: 'zahl' }, k.hilferufe), h('td', { class: 'zahl' }, k.bearbeitet))))))));
+}
+
+// ---------- Aufgaben: Auswertung nach AFB, Aufgabentyp, Linie und je Aufgabe ----------
+function aufgabenTab() {
+  if (z.staende.length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Noch gibt es keine Daten. Sobald Schüler Aufgaben bearbeiten, erscheint hier die Auswertung.'));
+  const u = A.aufgabenUebersicht(z.staende, z.pool, z.index);
+  const f = (z.aufg ??= { sicht: 'schwierig', station: '', afb: '', format: '', niveau: '', alle: false });
+  const setze = (feld) => (e) => { f[feld] = e.target.value; f.alle = false; male(); };
+  const wahl = (feld, id, leer, optionen) => h('label', {}, h('span', { class: 'klein' }, leer[0]),
+    h('select', { id, onchange: setze(feld) }, leer[1] && h('option', { value: '' }, leer[1]), optionen.map(([wert, text]) => h('option', { value: wert, selected: String(f[feld]) === String(wert) }, text))));
+  const gruppenTabelle = (titel, erste, liste, zeige = (g) => g.name) => h('section', { class: 'karte' }, h('h2', {}, titel),
+    h('div', { class: 'rollbar' }, h('table', { class: 'tabelle gruppen' },
+      h('thead', {}, h('tr', {}, [erste, 'Aufgaben im Pool', 'davon bearbeitet', 'Bearbeitungen', 'Lösungsquote', 'Im ersten Versuch', 'Abgebrochen', 'Zeit pro Aufgabe'].map((t) => h('th', {}, t)))),
+      h('tbody', {}, liste.map((g) => h('tr', {}, h('td', {}, zeige(g)), h('td', { class: 'zahl' }, g.imPool), h('td', { class: 'zahl' }, g.genutzt), h('td', { class: 'zahl' }, g.bearbeitet),
+        h('td', {}, g.bearbeitet ? balken(g.quote) : '–'), h('td', { class: 'zahl' }, prozent(g.ersterVersuch)), h('td', { class: 'zahl' }, g.abbrueche || '–'),
+        h('td', { class: 'zahl' }, g.zeitMedian == null ? '–' : `${g.zeitMedian} s`)))))));
+  const stationen = [...new Map(u.aufgaben.filter((a) => a.station).map((a) => [a.station.id, a.station.titel]))];
+  const liste = A.aufgabenSicht(u.aufgaben, f.sicht, f);
+  const sichtbar = f.alle ? liste : liste.slice(0, 20);
+  const zahl = (sicht) => A.aufgabenSicht(u.aufgaben, sicht).length;
+  return h('div', {},
+    h('section', { class: 'karte' }, h('h2', {}, 'Auf einen Blick'),
+      h('div', { class: 'kacheln' },
+        [['Aufgaben bearbeitet', `${u.aufgaben.filter((a) => a.bearbeitet > 0).length} von ${u.aufgaben.length}`],
+          ['Bearbeitet, aber nie gelöst', zahl('nieGeloest')], ['Nie bearbeitet, obwohl angeboten', zahl('nie')],
+          ['Zum Prüfen markiert', u.aufgaben.filter((a) => a.auffaellig).length]].map(([t, w]) => h('div', { class: 'kachel' }, h('b', {}, w), h('span', {}, t))))),
+    gruppenTabelle('Nach Anforderungsbereich', 'AFB', u.afb),
+    gruppenTabelle('Nach Aufgabentyp', 'Aufgabentyp', u.format),
+    gruppenTabelle('Nach Linie', 'Linie', u.niveau, (g) => [chip(g.wert), ` ${L.NIVEAU_NAMEN[g.wert]}`]),
+    h('section', { class: 'karte' }, h('h2', {}, 'Einzelne Aufgaben'),
+      h('div', { class: 'filter' },
+        wahl('sicht', 'aufg-sicht', ['Zeige', null], Object.entries(A.AUFGABEN_SICHTEN).map(([id, x]) => [id, x.titel])),
+        wahl('station', 'aufg-station', ['Station', 'Alle Stationen'], stationen),
+        wahl('afb', 'aufg-afb', ['AFB', 'Alle'], Object.entries(A.AFB_NAMEN)),
+        wahl('format', 'aufg-format', ['Aufgabentyp', 'Alle'], u.format.map((g) => [g.wert, g.name])),
+        wahl('niveau', 'aufg-niveau', ['Linie', 'Alle'], L.NIVEAUS.map((n) => [n, `Linie ${n}`]))),
+      f.sicht === 'nie' && h('p', { class: 'klein' }, 'Gezeigt werden nur Aufgaben aus Lernzielen und Linien, an denen die Klasse schon gearbeitet hat. Sie hätten also drankommen können.'),
+      liste.length === 0 ? h('p', { class: 'klein', id: 'aufg-leer' }, 'Keine Aufgabe passt zu dieser Auswahl.') : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle', id: 'aufg-liste' },
+        h('thead', {}, h('tr', {}, ['Aufgabe', 'Station', 'Linie', 'AFB', 'Typ', 'Bearbeitet', 'Gelöst', 'Lösungsquote', 'Im ersten Versuch', 'Abgebrochen', 'Zeit', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
+        h('tbody', {}, sichtbar.map((a) => h('tr', { 'data-aufgabe': a.aufgabe }, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen')),
+          h('td', {}, a.station?.titel ?? ''), h('td', {}, chip(a.niveau)), h('td', { class: 'zahl' }, ['', 'I', 'II', 'III'][a.afb] ?? ''), h('td', {}, A.FORMAT_NAMEN[a.format] ?? a.format),
+          h('td', { class: 'zahl' }, a.bearbeitet), h('td', { class: 'zahl' }, a.geloest), h('td', {}, a.bearbeitet ? balken(a.quote) : '–'), h('td', { class: 'zahl' }, prozent(a.ersterVersuch)),
+          h('td', { class: 'zahl' }, a.abbrueche || '–'), h('td', { class: 'zahl' }, a.zeitMedian == null ? '–' : `${a.zeitMedian} s`),
+          h('td', {}, a.haeufigsteFalsche ? `${a.haeufigsteFalsche} (${a.haeufigsteAnzahl}-mal)` : '–')))))),
+      liste.length > sichtbar.length && h('button', { class: 'schlicht', id: 'aufg-alle', onclick: () => { f.alle = true; male(); } }, `Alle ${liste.length} Aufgaben zeigen`)));
 }
 
 // ---------- Einzelne Schüler ----------

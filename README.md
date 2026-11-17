@@ -37,7 +37,9 @@ Ansichten:
 - **Einzelne Schüler:** Kennzahlen, Lösungsquote nach Anforderungsbereich (AFB I bis III), Wirkung der Hilfekärtchen, typische Fehler, Niveauverlauf, Lernziele, Versuchsprotokoll, Notiz.
 - **Klasse und Codes**, **Backup**.
 
-Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den Druckdialog als PDF, Rohdaten als Excel-Datei mit sechs Blättern.
+Der Reiter **Aufgaben** wertet die Klasse nach Anforderungsbereich, Aufgabentyp und Linie aus und listet einzelne Aufgaben: schwierigste, nie gelöste, am häufigsten gelöste, bearbeitete oder abgebrochene sowie nie bearbeitete, obwohl sie hätten drankommen können.
+
+Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den Druckdialog als PDF, Rohdaten als Excel-Datei mit acht Blättern.
 
 Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
 

@@ -307,6 +307,20 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.matrix');
   assert.equal(await seite.locator('.matrix tbody tr').count(), 14);
   await foto(seite, 'lehrer-diagnose');
+  // Aufgaben: Auswertung nach AFB, Typ und Linie, Liste mit Sichten und Filtern.
+  await seite.click('[data-tab=aufgaben]');
+  await seite.waitForSelector('#aufg-liste');
+  assert.equal(await seite.locator('.tabelle.gruppen').count(), 3);
+  assert.match(await seite.innerText('.tabelle.gruppen >> nth=0'), /AFB I[\s\S]*AFB II[\s\S]*AFB III/);
+  await foto(seite, 'lehrer-aufgaben');
+  const schwierig = await seite.locator('#aufg-liste tbody tr').first().getAttribute('data-aufgabe');
+  await seite.selectOption('#aufg-sicht', 'geloest');
+  assert.notEqual(await seite.locator('#aufg-liste tbody tr').first().getAttribute('data-aufgabe'), schwierig);
+  await seite.selectOption('#aufg-sicht', 'nie');
+  await seite.waitForSelector('#aufg-liste');
+  assert.equal(await seite.locator('#aufg-liste tbody tr').first().locator('td.zahl').nth(1).innerText(), '0');
+  await seite.selectOption('#aufg-niveau', 'G');
+  assert.equal(await seite.inputValue('#aufg-sicht'), 'nie'); // Die Auswahl bleibt beim Neuzeichnen erhalten.
   await seite.click('[data-tab=schueler]');
   await seite.waitForSelector('.kacheln');
   await foto(seite, 'lehrer-einzel');

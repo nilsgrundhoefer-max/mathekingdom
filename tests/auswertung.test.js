@@ -97,11 +97,11 @@ test('Klasse hängt: mehrere Schüler scheitern gerade am selben Lernziel', () =
   assert.deepEqual(A.klasseHaengt(staende.slice(0, 2), index), []);
 });
 
-test('Berichtstabellen: sechs Blätter, Namen aus der Namensliste', () => {
+test('Berichtstabellen: acht Blätter, Namen aus der Namensliste', () => {
   const stand = neu();
   L.verbuche(stand, aufgaben(S2, 'G')[0], b(), 'G', JETZT);
   const blaetter = A.berichtstabellen([{ code: '5A-AAAA', stand }], pool, index, {}, () => 'Lena Muster', JETZT);
-  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll']);
+  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll', 'Nach AFB, Typ, Linie', 'Alle Aufgaben']);
   assert.equal(blaetter[0].zeilen[1][0], 'Lena Muster');
   assert.equal(blaetter[5].zeilen.length, 2);
   for (const blatt of blaetter) for (const zeile of blatt.zeilen) assert.equal(zeile.length, blatt.zeilen[0].length, blatt.name);
@@ -224,4 +224,35 @@ test('PIN: vier Ziffern, Prüfwert statt PIN, falsche PIN fällt durch', async (
   assert.notEqual((await K.pinEintrag('4711')).wert, eintrag.wert); // eigenes Salz je Schüler
   assert.deepEqual(L.einstellungen({ pins: { '5A-AAAA': eintrag } }, '5A-AAAA', pool).pin, eintrag);
   assert.equal(L.einstellungen({ pins: {} }, '5A-AAAA', pool).pin, null);
+});
+
+test('Auswertung nach AFB, Aufgabentyp und Linie, Sichten auf einzelne Aufgaben', () => {
+  const g = aufgaben(S2, 'G');
+  const eins = neu('5A-AAAA'), zwei = neu('5A-BBBB');
+  L.verbuche(eins, g[0], b(), 'G', JETZT);
+  L.verbuche(zwei, g[0], b(), 'G', JETZT);
+  L.verbuche(eins, g[1], b({ geloest: false, versuche: 2, eingaben: ['1', '2'] }), 'G', JETZT);
+  zwei.abbrueche.push({ t: JETZT, aufgabe: g[2].id, fehlversuche: 0, hilfen: 0 });
+  const u = A.aufgabenUebersicht([{ code: '5A-AAAA', stand: eins }, { code: '5A-BBBB', stand: zwei }], pool, index);
+  assert.equal(u.aufgaben.length, pool.aufgaben.length);
+  // Gruppen: Summen stimmen mit dem Pool und den Bearbeitungen überein.
+  for (const gruppen of [u.afb, u.format, u.niveau]) {
+    assert.equal(gruppen.reduce((s, x) => s + x.imPool, 0), pool.aufgaben.length);
+    assert.equal(gruppen.reduce((s, x) => s + x.bearbeitet, 0), 3);
+    assert.equal(gruppen.reduce((s, x) => s + x.abbrueche, 0), 1);
+  }
+  const linieG = u.niveau.find((x) => x.wert === 'G');
+  assert.deepEqual([linieG.genutzt, linieG.bearbeitet, Math.round(linieG.quote * 100), linieG.abbruchquote], [2, 3, 67, 0.25]);
+  assert.equal(u.niveau.find((x) => x.wert === 'E').quote, null);
+  assert.equal(u.format.find((x) => x.wert === g[0].format).name, A.FORMAT_NAMEN[g[0].format]);
+  // Sichten
+  const ids = (sicht, filter) => A.aufgabenSicht(u.aufgaben, sicht, filter).map((a) => a.aufgabe);
+  assert.deepEqual(ids('geloest'), [g[0].id]);
+  assert.deepEqual(ids('schwierig'), [g[1].id, g[0].id]);
+  assert.deepEqual(ids('nieGeloest'), [g[1].id]);
+  assert.deepEqual(ids('abgebrochen'), [g[2].id]);
+  // Nie bearbeitet: nur aus Lernziel und Linie, an denen gearbeitet wurde, und ohne die abgebrochene Aufgabe.
+  assert.deepEqual(ids('nie'), g.slice(3).map((a) => a.id).sort());
+  assert.deepEqual(ids('bearbeitet', { niveau: 'E' }), []);
+  assert.deepEqual(ids('bearbeitet', { station: '5.3.3', afb: g[0].afb, format: g[0].format }).includes(g[0].id), true);
 });

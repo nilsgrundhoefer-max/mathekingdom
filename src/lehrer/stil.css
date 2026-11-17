@@ -183,3 +183,9 @@ body { margin: 0; background: #f4f1ea; }
   #mk-druck .zweispaltig { grid-template-columns: 1fr 1fr; }
 }
 @media print { #mk-druck .kaertchen b.pin { font-size: 16pt; letter-spacing: .25em; } #mk-druck .kaertchen span { margin-top: 6px; font-size: 9pt; color: #555; } }
+
+/* Aufgaben-Auswertung */
+.filter { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 12px; }
+.filter label { display: flex; flex-direction: column; gap: 2px; }
+.filter select { min-height: 40px; }
+.tabelle.gruppen td:first-child { font-weight: 600; white-space: nowrap; }

@@ -281,12 +281,55 @@ export function aufgabenAudit(staende, index, mindestens = 3) {
     const [antwort, anzahl] = [...e.falsch].sort((a, b) => b[1] - a[1])[0] ?? [null, 0];
     const falscheGesamt = [...e.falsch.values()].reduce((s, n) => s + n, 0);
     const a = index.aufgabe.get(e.aufgabe);
-    return { aufgabe: e.aufgabe, niveau: a?.niveau ?? null, afb: a?.afb ?? null, bearbeitet: e.bearbeitet, quote: anteil(e.geloest, e.bearbeitet),
+    return { aufgabe: e.aufgabe, niveau: a?.niveau ?? null, afb: a?.afb ?? null, bearbeitet: e.bearbeitet, geloest: e.geloest, erster: e.erster, quote: anteil(e.geloest, e.bearbeitet),
       ersterVersuch: anteil(e.erster, e.bearbeitet), abbrueche: e.abbrueche, abbruchquote: anteil(e.abbrueche, e.bearbeitet + e.abbrueche),
       zeitMedian: median(e.dauern), haeufigsteFalsche: antwort, haeufigsteAnzahl: anzahl,
       // Viele scheitern, und fast alle mit derselben Antwort: Die Aufgabe ist womöglich missverständlich.
       auffaellig: e.bearbeitet >= mindestens && e.geloest / e.bearbeitet < 0.4 && anzahl >= 3 && anzahl / falscheGesamt >= 0.6 };
   }).sort((a, b) => (a.quote ?? 1) - (b.quote ?? 1) || b.bearbeitet - a.bearbeitet);
+}
+
+// ---------- Auswertung nach Aufgaben, Aufgabentyp, AFB und Linie ----------
+export const FORMAT_NAMEN = { zahl: 'Zahl eingeben', auswahl: 'Auswahl', luecken: 'Lückentext', zuordnen: 'Zuordnen', sachaufgabe: 'Sachaufgabe',
+  zahlenstrahl: 'Zahlenstrahl', diagramm: 'Diagramm', tabelle: 'Tabelle' };
+export const AFB_NAMEN = { 1: 'AFB I', 2: 'AFB II', 3: 'AFB III' };
+// Jede Aufgabe des Pools mit ihren Zahlen, auch die nie bearbeiteten. `angeboten` heißt: Im selben Lernziel auf derselben Linie
+// hat die Klasse schon gearbeitet, die Aufgabe hätte also drankommen können.
+export function aufgabenUebersicht(staende, pool, index) {
+  const zahlen = new Map(aufgabenAudit(staende, index, 0).map((a) => [a.aufgabe, a]));
+  const station = new Map(pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele.map((l) => [l.id, { id: u.id, titel: u.titel }]))));
+  const begonnen = new Set(staende.flatMap(({ stand }) => stand.versuche.map((x) => `${x.lernziel}|${x.niveau}`)));
+  const aufgaben = pool.aufgaben.map((a) => {
+    const e = zahlen.get(a.id);
+    return { aufgabe: a.id, lernziel: a.lernziel, station: station.get(a.lernziel) ?? null, niveau: a.niveau, afb: a.afb, format: a.format,
+      bearbeitet: e?.bearbeitet ?? 0, geloest: e?.geloest ?? 0, erster: e?.erster ?? 0, abbrueche: e?.abbrueche ?? 0,
+      quote: e?.quote ?? null, ersterVersuch: e?.ersterVersuch ?? null, zeitMedian: e?.zeitMedian ?? null,
+      haeufigsteFalsche: e?.haeufigsteFalsche ?? null, haeufigsteAnzahl: e?.haeufigsteAnzahl ?? 0, auffaellig: e?.auffaellig ?? false,
+      angeboten: begonnen.has(`${a.lernziel}|${a.niveau}`) };
+  });
+  const gruppe = (feld, reihenfolge, namen) => reihenfolge.map((wert) => {
+    const teil = aufgaben.filter((a) => a[feld] === wert);
+    const n = teil.reduce((sum, a) => sum + a.bearbeitet, 0), ab = teil.reduce((sum, a) => sum + a.abbrueche, 0);
+    return { wert, name: namen?.[wert] ?? String(wert), imPool: teil.length, genutzt: teil.filter((a) => a.bearbeitet > 0).length, bearbeitet: n,
+      quote: anteil(teil.reduce((sum, a) => sum + a.geloest, 0), n), ersterVersuch: anteil(teil.reduce((sum, a) => sum + a.erster, 0), n),
+      abbrueche: ab, abbruchquote: anteil(ab, n + ab),
+      zeitMedian: median(staende.flatMap(({ stand }) => stand.versuche.filter((x) => index.aufgabe.get(x.aufgabe)?.[feld] === wert).map((x) => x.dauer))) };
+  }).filter((g) => g.imPool > 0);
+  return { aufgaben, afb: gruppe('afb', [1, 2, 3], AFB_NAMEN), format: gruppe('format', Object.keys(FORMAT_NAMEN), FORMAT_NAMEN), niveau: gruppe('niveau', L.NIVEAUS) };
+}
+// Sichten auf die Aufgabenliste. Jede liefert die passenden Aufgaben in sinnvoller Reihenfolge.
+export const AUFGABEN_SICHTEN = {
+  schwierig: { titel: 'Schwierigste zuerst', wahl: (a) => a.bearbeitet > 0, ordnung: (a, b) => a.quote - b.quote || b.bearbeitet - a.bearbeitet },
+  nieGeloest: { titel: 'Bearbeitet, aber nie gelöst', wahl: (a) => a.bearbeitet > 0 && a.geloest === 0, ordnung: (a, b) => b.bearbeitet - a.bearbeitet },
+  geloest: { titel: 'Am häufigsten gelöst', wahl: (a) => a.geloest > 0, ordnung: (a, b) => b.geloest - a.geloest || b.quote - a.quote },
+  bearbeitet: { titel: 'Am häufigsten bearbeitet', wahl: (a) => a.bearbeitet > 0, ordnung: (a, b) => b.bearbeitet - a.bearbeitet },
+  abgebrochen: { titel: 'Am häufigsten abgebrochen', wahl: (a) => a.abbrueche > 0, ordnung: (a, b) => b.abbrueche - a.abbrueche },
+  nie: { titel: 'Nie bearbeitet (obwohl angeboten)', wahl: (a) => a.bearbeitet === 0 && a.abbrueche === 0 && a.angeboten, ordnung: (a, b) => a.aufgabe.localeCompare(b.aufgabe) },
+};
+export function aufgabenSicht(aufgaben, sicht, filter = {}) {
+  const s = AUFGABEN_SICHTEN[sicht] ?? AUFGABEN_SICHTEN.schwierig;
+  return aufgaben.filter((a) => s.wahl(a) && (!filter.station || a.station?.id === filter.station) && (!filter.afb || a.afb === Number(filter.afb))
+    && (!filter.format || a.format === filter.format) && (!filter.niveau || a.niveau === filter.niveau)).sort(s.ordnung);
 }
 
 // ---------- Tabellen für die Berichte ----------
@@ -323,9 +366,20 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   for (const a of aufgabenAudit(staende, index, 1)) {
     audit.push([a.aufgabe, index.aufgabe.get(a.aufgabe)?.text ?? '', a.niveau ?? '', a.afb ?? '', a.bearbeitet, prozent(a.quote), prozent(a.ersterVersuch), a.abbrueche, a.zeitMedian ?? '', a.haeufigsteFalsche ?? '', a.haeufigsteAnzahl || '', a.auffaellig ? 'ja' : '']);
   }
+  const ueb = aufgabenUebersicht(staende, pool, index);
+  const gruppen = [['Gruppe', 'Wert', 'Aufgaben im Pool', 'davon bearbeitet', 'Bearbeitungen', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)']];
+  for (const [titel, liste] of [['Anforderungsbereich', ueb.afb], ['Aufgabentyp', ueb.format], ['Linie', ueb.niveau]]) for (const g of liste) {
+    gruppen.push([titel, g.name, g.imPool, g.genutzt, g.bearbeitet, prozent(g.quote), prozent(g.ersterVersuch), g.abbrueche, g.zeitMedian ?? '']);
+  }
+  const alle = [['Aufgabe', 'Text', 'Station', 'Lernziel', 'Niveaustufe', 'AFB', 'Aufgabentyp', 'Bearbeitet', 'Gelöst', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)', 'Status']];
+  for (const a of ueb.aufgaben.filter((x) => x.bearbeitet || x.abbrueche || x.angeboten)) {
+    alle.push([a.aufgabe, index.aufgabe.get(a.aufgabe)?.text ?? '', a.station?.titel ?? '', a.lernziel, a.niveau, a.afb, FORMAT_NAMEN[a.format] ?? a.format, a.bearbeitet, a.geloest,
+      prozent(a.quote), prozent(a.ersterVersuch), a.abbrueche, a.zeitMedian ?? '', a.bearbeitet === 0 ? (a.abbrueche ? 'nur abgebrochen' : 'nie bearbeitet') : a.geloest === 0 ? 'nie gelöst' : '']);
+  }
   return [
     { name: 'Übersicht', zeilen: uebersicht }, { name: 'Lernzielmatrix', zeilen: matrix }, { name: 'Lernziele', zeilen: ziele },
     { name: 'Typische Fehler', zeilen: fehler }, { name: 'Aufgaben-Audit', zeilen: audit }, { name: 'Versuchsprotokoll', zeilen: versuche },
+    { name: 'Nach AFB, Typ, Linie', zeilen: gruppen }, { name: 'Alle Aufgaben', zeilen: alle },
   ];
 }
 
