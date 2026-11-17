@@ -2,6 +2,7 @@
 // Eine Ablage hat: name, lies(pfad) → Text oder null, schreibe(pfad, text), liste() → Dateinamen.
 
 import { pruefeUnterschrift, liesUngeprueft } from '../gemeinsam/krypto.js';
+import { migriere } from './logik.js';
 
 export const SYSTEMORDNER = '_mathekingdom';
 export const KLASSENDATEI = 'klassendatei.json';
@@ -84,8 +85,9 @@ const liesSicherung = (code) => { try { return liesJson(localStorage.getItem(SIC
 
 // Lädt den Speicherstand. Fehlt die Datei oder ist sie älter als die Sicherung im Browser, gilt die Sicherung.
 export async function ladeStand(ablage, code) {
-  const ausDatei = liesJson(await ablage.lies(`${code}.json`));
-  const sicherung = liesSicherung(code);
+  // Alte Speicherstände (mit Lok statt Wappen) werden beim Laden umgestellt.
+  const ausDatei = migriere(liesJson(await ablage.lies(`${code}.json`)));
+  const sicherung = migriere(liesSicherung(code));
   if (sicherung && (!ausDatei || sicherung.geaendert > ausDatei.geaendert)) {
     return { stand: sicherung, hinweis: ausDatei ? 'sicherung-neuer' : 'datei-fehlte' };
   }

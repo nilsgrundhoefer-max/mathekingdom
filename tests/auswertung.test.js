@@ -67,7 +67,7 @@ test('Lernzielmatrix und Statistik der Klasse', () => {
   assert.equal(lernziele.length, 23);
   const spalte = lernziele.findIndex((l) => l.id === S2);
   const matrix = A.lernzielmatrix(staende, lernziele, {});
-  assert.equal(matrix[0].zellen[spalte].status, 'erreicht');
+  assert.equal(matrix[0].zellen[spalte].status, 'siegel');
   assert.equal(matrix[1].zellen[spalte].status, 'begonnen');
   assert.equal(matrix[1].zellen[0].status, 'offen');
   const st = A.lernzielStatistik(staende, lernziele)[spalte];
@@ -101,7 +101,7 @@ test('Berichtstabellen: acht Blätter, Namen aus der Namensliste', () => {
   const stand = neu();
   L.verbuche(stand, aufgaben(S2, 'G')[0], b(), 'G', JETZT);
   const blaetter = A.berichtstabellen([{ code: '5A-AAAA', stand }], pool, index, {}, () => 'Lena Muster', JETZT);
-  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll', 'Nach AFB, Typ, Linie', 'Alle Aufgaben']);
+  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll', 'Nach AFB, Typ, Straße', 'Alle Aufgaben']);
   assert.equal(blaetter[0].zeilen[1][0], 'Lena Muster');
   assert.equal(blaetter[5].zeilen.length, 2);
   for (const blatt of blaetter) for (const zeile of blatt.zeilen) assert.equal(zeile.length, blatt.zeilen[0].length, blatt.name);
@@ -173,7 +173,7 @@ test('Impulse: Lernbegleiter, Fehlerhäufung, Schnellläufer', () => {
   for (const kurz of ['S1', 'S2', 'S3', 'S4', 'S5']) for (let i = 0; i < 3; i++) L.verbuche(fertig, aufgaben(`5.3.3-${kurz}`, 'G')[i], b(), 'G', '2026-11-17T10:15:00Z');
   const lauf = A.schnelllaeufer([{ code: '5A-FERT', stand: fertig }, ...staende], pool, index, { '5A-FERT': 'G' }, JETZT);
   assert.equal(lauf.length, 1);
-  assert.deepEqual([lauf[0].code, lauf[0].station, lauf[0].naechstes], ['5A-FERT', '5.3.3', 'M']);
+  assert.deepEqual([lauf[0].code, lauf[0].milestone, lauf[0].naechstes], ['5A-FERT', '5.3.3', 'M']);
 });
 
 test('Anforderungsbereiche, Wirkung der Hilfen und Aufgaben-Audit', () => {
@@ -207,9 +207,9 @@ test('Anforderungsbereiche, Wirkung der Hilfen und Aufgaben-Audit', () => {
 
 test('Klassendatei: gesperrte Stationen und Nachricht je Schüler', () => {
   const e = L.einstellungen({ sperren: { '5.3.3': ['5A-AAAA'], '5.4.5': ['5A-BBBB'] }, nachrichten: { '5A-AAAA': { t: JETZT, text: 'Komm bitte nach vorn.' } } }, '5A-AAAA', pool);
-  assert.deepEqual([...e.gesperrteStationen], ['5.3.3']);
+  assert.deepEqual([...e.gesperrteMeilensteine], ['5.3.3']);
   assert.equal(e.nachricht.text, 'Komm bitte nach vorn.');
-  assert.equal(L.einstellungen(null, '5A-AAAA', pool).gesperrteStationen.size, 0);
+  assert.equal(L.einstellungen(null, '5A-AAAA', pool).gesperrteMeilensteine.size, 0);
 });
 
 test('PIN: vier Ziffern, Prüfwert statt PIN, falsche PIN fällt durch', async () => {
@@ -254,5 +254,22 @@ test('Auswertung nach AFB, Aufgabentyp und Linie, Sichten auf einzelne Aufgaben'
   // Nie bearbeitet: nur aus Lernziel und Linie, an denen gearbeitet wurde, und ohne die abgebrochene Aufgabe.
   assert.deepEqual(ids('nie'), g.slice(3).map((a) => a.id).sort());
   assert.deepEqual(ids('bearbeitet', { niveau: 'E' }), []);
-  assert.deepEqual(ids('bearbeitet', { station: '5.3.3', afb: g[0].afb, format: g[0].format }).includes(g[0].id), true);
+  assert.deepEqual(ids('bearbeitet', { milestone: '5.3.3', afb: g[0].afb, format: g[0].format }).includes(g[0].id), true);
+});
+
+test('Lernzielstand: offen, begonnen, wackelig, Siegel; Bereich beim Öffnen', () => {
+  const stand = neu();
+  assert.equal(A.lernzielZustand(stand, S2), 'offen');
+  const g = aufgaben(S2, 'G');
+  L.verbuche(stand, g[0], b({ geloest: false }), 'G', JETZT);
+  assert.equal(A.lernzielZustand(stand, S2), 'begonnen');
+  for (const a of g.slice(1, 4)) L.verbuche(stand, a, b({ geloest: false }), 'G', JETZT);
+  assert.equal(A.lernzielZustand(stand, S2), 'wackelig', 'vier Aufgaben, keine gelöst');
+  const zwei = neu();
+  for (const a of g.slice(0, 2)) L.verbuche(zwei, a, b({ hilfen: 3, karten: L.KARTEN }), 'G', JETZT);
+  assert.equal(A.lernzielZustand(zwei, S2), 'wackelig', 'zweimal Lösungsschritt');
+  zwei.lernziele[S2] = { erreichtAm: JETZT };
+  assert.equal(A.lernzielZustand(zwei, S2), 'siegel');
+  assert.equal(A.jemandAktiv([{ code: 'x', stand }], '2026-11-17T10:35:00Z'), true);
+  assert.equal(A.jemandAktiv([{ code: 'x', stand }], '2026-11-17T11:30:00Z'), false);
 });

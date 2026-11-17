@@ -1,47 +1,53 @@
 #mathekingdom {
-  --nacht: #1d2b4f; --gold: #d4a419; --papier: #f4f1ea; --karte: #ffffff; --tinte: #1f2533; --grau: #5d6679;
-  --rand: #d9d4c7; --gut: #1a7f4b; --gut-hell: #e3f4ea; --schlecht: #b3372f; --schlecht-hell: #fbe9e7; --hell: #fff8e1;
+  /* Pergament als Fläche, Tinte für Wege und Schrift (ADR 0010). --nacht ist die dunkle Tinte für Knöpfe und Überschriften. */
+  --nacht: #3a3029; --gold: #b8892b; --papier: #efe6d2; --karte: #fbf7ec; --tinte: #2e2822; --grau: #6b5f50;
+  --rand: #d8cbb0; --gut: #3e6b3a; --gut-hell: #e6eedb; --schlecht: #9e2f28; --schlecht-hell: #f6e2dc; --hell: #f8efd6; --siegel: #a3302a;
+  --schrift-titel: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   font: 17px/1.5 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; color: var(--tinte);
   background: var(--papier); min-height: 100vh;
 }
-body { margin: 0; background: #f4f1ea; }
+body { margin: 0; background: #efe6d2; }
 #mathekingdom *, #mathekingdom *::before { box-sizing: border-box; }
 #mathekingdom main { max-width: 1040px; margin: 0 auto; padding: 20px 16px 60px; }
-#mathekingdom h1 { font-size: 1.7rem; margin: 0 0 4px; color: var(--nacht); text-wrap: balance; }
-#mathekingdom h2 { font-size: 1.15rem; margin: 22px 0 10px; color: var(--nacht); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+#mathekingdom h1 { font-family: var(--schrift-titel); font-size: 1.85rem; font-weight: 700; margin: 0 0 4px; color: var(--nacht); text-wrap: balance; }
+#mathekingdom h2 { font-family: var(--schrift-titel); font-size: 1.22rem; margin: 22px 0 10px; color: var(--nacht); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 #mathekingdom p { margin: 0 0 12px; }
 #mathekingdom .unter { color: var(--grau); margin-bottom: 18px; }
 #mathekingdom .klein { font-size: .88rem; color: var(--grau); }
 #mathekingdom .fehler { color: var(--schlecht); font-weight: 600; }
-#mathekingdom .karte { background: var(--karte); border: 1px solid var(--rand); border-radius: 14px; padding: 20px; box-shadow: 0 1px 2px rgba(29,43,79,.06); }
+#mathekingdom .karte { background: var(--karte); border: 1px solid var(--rand); border-radius: 14px; padding: 20px; box-shadow: 0 1px 2px rgba(58,48,41,.08); }
 
 #mathekingdom button, #mathekingdom input, #mathekingdom select { font: inherit; color: inherit; }
 #mathekingdom button { white-space: nowrap; cursor: pointer; border-radius: 10px; border: 1px solid transparent; padding: 9px 16px; }
 #mathekingdom button:disabled { cursor: not-allowed; opacity: .55; }
 #mathekingdom button:focus-visible, #mathekingdom input:focus-visible, #mathekingdom select:focus-visible, #mathekingdom [tabindex]:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 #mathekingdom .haupt { background: var(--nacht); color: #fff; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-#mathekingdom .haupt:hover:not(:disabled) { background: #2a3d6e; }
+#mathekingdom .haupt:hover:not(:disabled) { background: #54473c; }
 #mathekingdom .schlicht { background: transparent; border-color: var(--rand); color: var(--nacht); display: inline-flex; align-items: center; gap: 4px; }
-#mathekingdom .schlicht:hover:not(:disabled) { background: #ece8dd; }
-#mathekingdom input[type=text] { border: 2px solid #b9bfcc; border-radius: 10px; padding: 8px 12px; background: #fff; font-variant-numeric: tabular-nums; }
-#mathekingdom select { border: 2px solid #b9bfcc; border-radius: 10px; padding: 8px 10px; background: #fff; }
-#mathekingdom .marke { font-size: .78rem; font-weight: 600; background: var(--hell); color: #7a5b00; border: 1px solid #ecd58a; border-radius: 99px; padding: 2px 10px; }
-#mathekingdom .marke.gut { background: var(--gut-hell); color: var(--gut); border-color: #a9dcbf; }
+#mathekingdom .schlicht:hover:not(:disabled) { background: #f1e7cf; }
+#mathekingdom input[type=text] { border: 2px solid #bfae8f; border-radius: 10px; padding: 8px 12px; background: #fff; font-variant-numeric: tabular-nums; }
+#mathekingdom select { border: 2px solid #bfae8f; border-radius: 10px; padding: 8px 10px; background: #fff; }
+#mathekingdom .marke { font-size: .78rem; font-weight: 600; background: var(--hell); color: #6e5110; border: 1px solid #e0c98c; border-radius: 99px; padding: 2px 10px; }
+#mathekingdom .marke.gut { background: var(--gut-hell); color: var(--gut); border-color: #bccfa8; }
 
 /* Kopf */
-#mathekingdom .kopf { background: var(--nacht); color: #fff; display: flex; align-items: center; gap: 16px; padding: 8px 18px; flex-wrap: wrap; border-bottom: 4px solid var(--gold); }
-#mathekingdom .lokknopf { background: #fff; padding: 2px 6px; border-radius: 12px; line-height: 0; }
+#mathekingdom .kopf { background: var(--karte); color: var(--tinte); display: flex; align-items: center; gap: 16px; padding: 8px 18px; flex-wrap: wrap; border-bottom: 1px solid var(--rand); box-shadow: inset 0 -3px 0 #e3d6b8; }
+#mathekingdom .wappenknopf { background: transparent; padding: 2px; border-radius: 8px; line-height: 0; }
 #mathekingdom .wer { display: flex; flex-direction: column; line-height: 1.25; margin-right: auto; }
-#mathekingdom .wer span { font-size: .85rem; color: #c9d1e8; }
-#mathekingdom .konto { display: flex; gap: 14px; }
-#mathekingdom .wert { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.12); border-radius: 99px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
+#mathekingdom .wer strong { font-family: var(--schrift-titel); font-size: 1.05rem; }
+#mathekingdom .wer span { font-size: .85rem; color: var(--grau); }
+#mathekingdom .konto { display: flex; gap: 10px; align-items: center; }
+#mathekingdom .wert { display: inline-flex; align-items: center; gap: 6px; border-radius: 99px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
+#mathekingdom .siegelwert { background: #f6e2dc; color: #6e1c18; font-size: 1.05rem; }
+#mathekingdom .siegelwert .wort { font-size: .82rem; }
+#mathekingdom .klein-wert { font-size: .85rem; color: var(--grau); padding: 4px 6px; }
 #mathekingdom .kopf nav { display: flex; gap: 6px; }
-#mathekingdom .kopf nav button { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); padding: 6px 14px; }
-#mathekingdom .kopf nav button.aktiv { background: #fff; color: var(--nacht); }
-#mathekingdom .speicher { flex-basis: 100%; font-size: .8rem; color: #c9d1e8; display: flex; gap: 12px; }
-#mathekingdom .speicher.fehler { color: #ffd0cb; font-weight: 600; }
-#mathekingdom .speicher .demo { color: #ffe08a; }
-#mathekingdom .hilfebanner, #mathekingdom .meldung { display: flex; gap: 14px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 10px 16px; background: var(--hell); border-bottom: 1px solid #ecd58a; }
+#mathekingdom .kopf nav button { background: transparent; color: var(--nacht); border-color: var(--rand); padding: 6px 14px; }
+#mathekingdom .kopf nav button.aktiv { background: var(--nacht); color: #fff; }
+#mathekingdom .speicher { flex-basis: 100%; font-size: .8rem; color: var(--grau); display: flex; gap: 12px; }
+#mathekingdom .speicher.fehler { color: var(--schlecht); font-weight: 600; }
+#mathekingdom .speicher .demo { color: #8a6a1c; }
+#mathekingdom .hilfebanner, #mathekingdom .meldung { display: flex; gap: 14px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 10px 16px; background: var(--hell); border-bottom: 1px solid #e0c98c; }
 
 /* Anmeldung */
 #mathekingdom .anmeldung { max-width: 460px; margin: 8vh auto 0; display: flex; flex-direction: column; gap: 10px; }
@@ -50,47 +56,70 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .anmeldung .haupt { justify-content: center; padding: 12px; }
 #mathekingdom .anmeldung .schlicht { justify-content: center; border: 0; text-decoration: underline; }
 
-/* Jahresplan */
-#mathekingdom .regionen { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-#mathekingdom .region { white-space: normal; width: 100%; height: 100%; text-align: left; background: var(--karte); border: 1px solid var(--rand); border-left: 8px solid var(--gold); border-radius: 14px; padding: 14px 16px; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; align-items: center; }
-#mathekingdom .region:hover:not(:disabled) { border-color: var(--nacht); border-left-color: var(--gold); }
-#mathekingdom .region .nummer { grid-row: span 3; width: 40px; height: 40px; border-radius: 50%; background: var(--nacht); color: #fff; display: grid; place-items: center; font-weight: 700; align-self: start; }
-#mathekingdom .region .titel { font-weight: 700; color: var(--nacht); }
+/* Schlossgarten */
+#mathekingdom .schlosskopf { text-align: center; margin: 4px 0 18px; }
+#mathekingdom .schlossbild { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 4px; }
+#mathekingdom .schlosskopf .unter { max-width: 40em; margin: 0 auto 6px; }
+#mathekingdom .regionen { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+#mathekingdom .region { white-space: normal; width: 100%; height: 100%; text-align: left; background: var(--karte); border: 1px solid var(--rand); border-radius: 12px; padding: 12px 16px; display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: center; min-height: 92px; }
+#mathekingdom .region:hover:not(:disabled) { border-color: var(--nacht); background: #fffaf0; }
+#mathekingdom .region .gartentor { grid-row: span 4; }
+#mathekingdom .region .nummer { font-size: .76rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--grau); }
+#mathekingdom .region .titel { font-family: var(--schrift-titel); font-weight: 700; font-size: 1.08rem; color: var(--nacht); }
 #mathekingdom .region .marke { justify-self: start; }
 #mathekingdom .region .stand { font-size: .88rem; color: var(--grau); }
-#mathekingdom .region.gesperrt { border-left-color: #b9bfcc; background: #ebe8e0; }
-#mathekingdom .region.gesperrt .nummer { background: #8d97ad; }
+#mathekingdom .region.gesperrt { background: #e9e1cf; }
+#mathekingdom .region.gesperrt .titel { color: var(--grau); }
 
-/* Metrokarte */
+/* Regionskarte */
 #mathekingdom .pfad { margin-bottom: 8px; }
-#mathekingdom .kartenrahmen { background: var(--karte); border: 1px solid var(--rand); border-radius: 14px; overflow-x: auto; padding: 6px 10px; }
-#mathekingdom .metro { display: block; margin: 0 auto; }
-#mathekingdom .metro .linienname { fill: #fff; font-weight: 700; font-size: 12px; pointer-events: none; }
-#mathekingdom .metro .zielmarke { font-size: 11px; fill: var(--grau); font-weight: 600; }
-#mathekingdom .metro .linienknopf, #mathekingdom .metro .station { cursor: pointer; }
-#mathekingdom .metro .kapsel { fill: #fff; stroke: var(--nacht); stroke-width: 3; }
-#mathekingdom .metro .station.leer .kapsel { stroke: #9aa3b5; stroke-dasharray: 4 4; fill: #f1f1f1; }
-#mathekingdom .metro .station.begonnen .kapsel { fill: var(--hell); }
-#mathekingdom .metro .station.erreicht .kapsel { fill: #f5c518; }
-#mathekingdom .metro .station.gewaehlt .kapsel { stroke-width: 5; }
-#mathekingdom .metro .stationsname { font-size: 15px; fill: var(--tinte); }
-#mathekingdom .metro .station.gewaehlt .stationsname { font-weight: 700; }
-#mathekingdom .metro .station.leer .stationsname { fill: #7b8497; }
-#mathekingdom .metro .zug { pointer-events: none; }
+#mathekingdom .kartenrahmen { background: #f6efdf; border: 1px solid var(--rand); border-radius: 10px; overflow: auto; padding: 6px 10px; -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y pinch-zoom; }
+#mathekingdom .regionskarte { display: block; margin: 0 auto; }
+#mathekingdom .regionskarte .kartenrand { fill: none; stroke: #c9b994; stroke-width: 1.5; stroke-dasharray: 1 0; }
+#mathekingdom .regionskarte .windrose { fill: #c9b994; stroke: #b3a27c; stroke-width: 1; opacity: .7; }
+#mathekingdom .regionskarte .windrose circle { fill: none; }
+#mathekingdom .regionskarte .windrose text { font: 700 11px var(--schrift-titel); fill: #9c8b66; stroke: none; }
+#mathekingdom .regionskarte .strassenknopf, #mathekingdom .regionskarte .meilenstein { cursor: pointer; }
+#mathekingdom .regionskarte .strassenfeld { fill: transparent; stroke: transparent; }
+#mathekingdom .regionskarte .strassenknopf:hover .strassenfeld { fill: #efe3c6; }
+#mathekingdom .regionskarte .strassenknopf.aktiv .strassenfeld { fill: #efe3c6; stroke: var(--nacht); stroke-width: 1.5; }
+#mathekingdom .regionskarte .strassenname { font: 600 13px var(--schrift-titel); fill: var(--tinte); pointer-events: none; }
+#mathekingdom .regionskarte .strassenknopf.aktiv .strassenname { font-weight: 700; }
+#mathekingdom .regionskarte .zielmarke { font-size: 11px; fill: var(--grau); font-weight: 700; pointer-events: none; }
+#mathekingdom .regionskarte .abstecher { fill: none; stroke: #a89d8a; stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; }
+#mathekingdom .regionskarte .stein { fill: #e6dcc3; stroke: #5b4632; stroke-width: 2.5; }
+#mathekingdom .regionskarte .steinnummer { font: 700 12px var(--schrift-titel); fill: #5b4632; pointer-events: none; }
+#mathekingdom .regionskarte .meilenstein.leer .stein { stroke: #a89d8a; stroke-dasharray: 4 4; fill: #efe8d8; }
+#mathekingdom .regionskarte .meilenstein.gesperrt .stein { stroke: #8b8170; fill: #ddd5c4; }
+#mathekingdom .regionskarte .meilenstein.begonnen .stein { fill: #f4e5bd; }
+#mathekingdom .regionskarte .meilenstein.gemeistert .stein { fill: #ecd9cf; stroke: #6e1c18; }
+#mathekingdom .regionskarte .meilenstein.gewaehlt .stein { stroke-width: 4.5; }
+#mathekingdom .regionskarte .meilensteinname { font: 15px var(--schrift-titel); fill: var(--tinte); }
+#mathekingdom .regionskarte .meilenstein.gewaehlt .meilensteinname { font-weight: 700; }
+#mathekingdom .regionskarte .meilenstein.leer .meilensteinname, #mathekingdom .regionskarte .meilenstein.gesperrt .meilensteinname { fill: #857a69; }
+#mathekingdom .regionskarte .standwappen { pointer-events: none; }
+#mathekingdom .regionskarte .puls { fill: none; stroke: var(--gold); stroke-width: 3; }
+#mathekingdom .regionskarte .hiermarke { font-size: 12px; font-weight: 700; fill: var(--nacht); pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  #mathekingdom .regionskarte .puls { animation: mk-puls 1.8s ease-in-out infinite; }
+  @keyframes mk-puls { 50% { stroke-opacity: .15; } }
+}
+#mathekingdom .legende { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 10px 2px 0; font-size: .86rem; color: var(--grau); }
+#mathekingdom .legende li { display: inline-flex; align-items: center; gap: 6px; }
 #mathekingdom .tafel { margin-top: 14px; }
 #mathekingdom .tafel h2 { margin-top: 0; }
 #mathekingdom .lernziele { list-style: none; padding: 0; margin: 0 0 16px; }
-#mathekingdom .lernziele li { display: grid; grid-template-columns: auto 1fr auto auto; gap: 12px; align-items: center; padding: 8px 0; border-top: 1px solid #ece8dd; }
+#mathekingdom .lernziele li { display: grid; grid-template-columns: auto 1fr auto auto; gap: 12px; align-items: center; padding: 8px 0; border-top: 1px solid #e8dcc2; }
 #mathekingdom .lernziele li:first-child { border-top: 0; }
 #mathekingdom .punkte { display: inline-flex; gap: 4px; }
-#mathekingdom .punkte i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #9aa3b5; }
+#mathekingdom .punkte i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #a89d8a; }
 #mathekingdom .punkte i.voll { background: var(--gut); border-color: var(--gut); }
 
 /* Aufgabe */
 #mathekingdom .aufgabe { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
 #mathekingdom .aufgabe .pfad { grid-column: 1 / -1; margin: 0; }
 #mathekingdom .aufgabenkopf { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; font-size: .88rem; color: var(--grau); }
-#mathekingdom .aufgabenkopf .linie { color: #fff; font-weight: 700; border-radius: 99px; padding: 2px 12px; }
+#mathekingdom .aufgabenkopf .strasse { display: inline-flex; align-items: center; gap: 6px; color: var(--tinte); font-weight: 700; border: 1px solid var(--rand); background: #f6efdf; border-radius: 99px; padding: 2px 12px 2px 8px; }
 #mathekingdom .aufgabenkopf .ziel { flex: 1 1 200px; }
 #mathekingdom .aufgabentext { font-size: 1.3rem; line-height: 1.45; margin-bottom: 18px; max-width: 34em; white-space: pre-line; }
 #mathekingdom .antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
@@ -100,7 +129,7 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .einheit { font-size: 1.1rem; color: var(--grau); }
 #mathekingdom .optionen { display: flex; flex-direction: column; gap: 8px; align-self: stretch; }
 #mathekingdom .option { display: flex; gap: 12px; align-items: center; border: 2px solid var(--rand); border-radius: 10px; padding: 10px 14px; cursor: pointer; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
-#mathekingdom .option:has(input:checked) { border-color: var(--nacht); background: #eef1f8; }
+#mathekingdom .option:has(input:checked) { border-color: var(--nacht); background: #f3e9d2; }
 #mathekingdom .option input { width: 20px; height: 20px; accent-color: var(--nacht); }
 #mathekingdom .zuordnen { display: grid; gap: 10px; }
 #mathekingdom .zuordnen label { display: grid; grid-template-columns: 5ch auto; gap: 14px; align-items: center; font-size: 1.2rem; }
@@ -121,19 +150,20 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .vorschlag p { flex-basis: 100%; }
 #mathekingdom .hilfen h2 { margin-top: 0; }
 #mathekingdom .kaertchen { display: grid; gap: 10px; }
-#mathekingdom .kaertchen-zu { white-space: normal; text-align: left; background: var(--karte); border: 2px dashed #b9bfcc; display: flex; flex-direction: column; gap: 2px; padding: 12px; }
+#mathekingdom .kaertchen-zu { white-space: normal; text-align: left; background: var(--karte); border: 2px dashed #bfae8f; border-radius: 4px 14px 4px 14px; display: flex; flex-direction: column; gap: 2px; padding: 12px; }
 #mathekingdom .kaertchen-zu span { font-size: .84rem; color: var(--grau); }
 #mathekingdom .kaertchen-zu:hover:not(:disabled) { border-color: var(--gold); background: var(--hell); }
-#mathekingdom .kaertchen-offen { background: var(--hell); border: 2px solid #ecd58a; border-radius: 10px; padding: 12px; }
+/* Ein aufgedecktes Hilfekärtchen sieht aus wie eine kleine Schriftrolle. */
+#mathekingdom .kaertchen-offen { background: linear-gradient(#f8efd6, #f8efd6) padding-box; border: 2px solid #d9c48d; border-left-width: 8px; border-right-width: 8px; border-radius: 10px; padding: 12px 14px; box-shadow: inset 0 6px 0 -3px #efe1b8, inset 0 -6px 0 -3px #efe1b8; }
 #mathekingdom .kaertchen-offen p { margin: 4px 0 0; }
 #mathekingdom .hilferuf { white-space: normal; margin-top: 14px; width: 100%; justify-content: center; }
 
-/* Werkstatt und Spiel */
+/* Wappen und Spiel */
 #mathekingdom .werkbank { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; background: var(--karte); border: 1px solid var(--rand); border-radius: 14px; padding: 16px 24px; }
 #mathekingdom .teile-liste { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
 #mathekingdom .teil { background: var(--karte); border: 2px solid var(--rand); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; }
 #mathekingdom .teil.an { border-color: var(--nacht); }
-#mathekingdom .farbfeld { width: 60px; height: 40px; border-radius: 8px; border: 2px solid var(--nacht); }
+#mathekingdom .farbfeld { width: 44px; height: 50px; border-radius: 4px 4px 22px 22px; border: 2px solid var(--nacht); }
 #mathekingdom .vorschau { line-height: 0; }
 #mathekingdom .spiel { max-width: 520px; margin: 6vh auto 0; text-align: center; }
 #mathekingdom .spiel form { display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; }
@@ -151,7 +181,7 @@ body { margin: 0; background: #f4f1ea; }
   @keyframes mk-auf { from { opacity: 0; transform: translateY(6px); } }
 }
 #mathekingdom .anmeldung input#pin { letter-spacing: .4em; }
-#mathekingdom .hilfebanner.nachricht { background: #e8eefb; border-bottom-color: #b9c8ea; }
+#mathekingdom .hilfebanner.nachricht { background: #e9eef0; border-bottom-color: #c3cdd1; }
 
 /* Bilder in Aufgaben */
 #mathekingdom .mitbild { display: flex; flex-direction: column; gap: 12px; align-self: stretch; align-items: flex-start; }
@@ -185,7 +215,7 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .diagramm .wert { font-size: 14px; font-weight: 700; fill: var(--tinte); }
 #mathekingdom .aufgabentabelle { border-collapse: collapse; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
 #mathekingdom .aufgabentabelle th, #mathekingdom .aufgabentabelle td { border: 1.5px solid #9aa3b5; padding: 8px 14px; text-align: right; }
-#mathekingdom .aufgabentabelle thead th, #mathekingdom .aufgabentabelle tbody th { background: #eef1f8; color: var(--nacht); }
+#mathekingdom .aufgabentabelle thead th, #mathekingdom .aufgabentabelle tbody th { background: #f1e7cf; color: var(--nacht); }
 #mathekingdom .aufgabentabelle tbody th { text-align: left; }
 #mathekingdom .aufgabentabelle td .zahlfeld input { width: 7ch; font-size: 1.1rem; }
 #mathekingdom .teile.einzeln { list-style: none; }
@@ -196,13 +226,13 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .etappe .klein { text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; font-weight: 700; color: var(--grau); }
 #mathekingdom .etappe-text { flex: 1 1 320px; min-width: 0; }
 #mathekingdom .etappe .balken { display: flex; gap: 5px; max-width: 420px; }
-#mathekingdom .etappe .balken i { flex: 1; height: 12px; border-radius: 6px; background: #e4e0d5; border: 1px solid var(--rand); }
+#mathekingdom .etappe .balken i { flex: 1; height: 12px; border-radius: 6px; background: #e8dcc2; border: 1px solid var(--rand); }
 #mathekingdom .etappe .balken i.voll { background: var(--gut); border-color: var(--gut); }
 #mathekingdom .etappe-stand { display: block; margin-top: 6px; font-size: .9rem; color: var(--grau); }
 #mathekingdom .etappe .haupt { font-size: 1.15rem; padding: 14px 26px; }
 
 /* Merkzettel */
-#mathekingdom .merkzettel { background: #f3f7ee; border: 1px solid #c9d8b8; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; }
+#mathekingdom .merkzettel { background: #f1f2e4; border: 1px solid #cfd2b4; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; }
 #mathekingdom .tafel .merkzettel { margin: 16px 0 0; }
 #mathekingdom .merkzettel summary { cursor: pointer; font-weight: 700; color: var(--nacht); padding: 12px 0; min-height: 44px; }
 #mathekingdom .merkzettel ul { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 6px; }
@@ -210,18 +240,21 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom .merkzettel .heft { color: var(--grau); }
 #mathekingdom .hilfen .merkzettel { font-size: .93rem; }
 
-/* Metrokarte: Standort */
-#mathekingdom .metro .puls { fill: none; stroke: var(--gold); stroke-width: 3; }
-#mathekingdom .metro .hiermarke { font-size: 12px; font-weight: 700; fill: var(--nacht); pointer-events: none; }
-@media (prefers-reduced-motion: no-preference) {
-  #mathekingdom .metro .puls { animation: mk-puls 1.8s ease-in-out infinite; }
-  @keyframes mk-puls { 50% { stroke-opacity: .15; } }
-}
-
 /* Wortspeicher */
-#mathekingdom .wortspeicher { background: #eef3fb; border: 1px solid #c3d0e6; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; font-size: .95rem; }
+#mathekingdom .wortspeicher { background: #edf0ea; border: 1px solid #c8cfbf; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; font-size: .95rem; }
 #mathekingdom .wortspeicher summary { cursor: pointer; font-weight: 700; color: var(--nacht); padding: 12px 0; min-height: 44px; }
 #mathekingdom .wortspeicher dl { margin: 0 0 12px; display: grid; gap: 2px; }
 #mathekingdom .wortspeicher dt { font-weight: 700; margin-top: 6px; }
 #mathekingdom .wortspeicher dd { margin: 0; }
 #mathekingdom .option span { white-space: pre-line; }
+
+/* Größere Tippflächen auf Touch-Bildschirmen */
+@media (pointer: coarse) {
+  #mathekingdom button { min-height: 44px; }
+  #mathekingdom .regionskarte .meilensteinname { font-size: 16px; }
+}
+@media (max-width: 560px) {
+  #mathekingdom .kopf { gap: 10px; padding: 8px 12px; }
+  #mathekingdom .kopf nav { flex-basis: 100%; }
+  #mathekingdom .kopf nav button { flex: 1; }
+}

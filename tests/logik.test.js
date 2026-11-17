@@ -64,13 +64,13 @@ test('Lernziel: drei richtige Aufgaben auf dem Zielniveau erreichen es', () => {
   assert.equal(L.verbuche(stand, a, ok(), 'G', 't1').neuesLernziel, false);
   assert.equal(L.verbuche(stand, b, ok(), 'G', 't2').neuesLernziel, false);
   assert.equal(L.verbuche(stand, c, ok(), 'G', 't3').neuesLernziel, true);
-  assert.equal(L.sterne(stand), 1);
+  assert.equal(L.siegel(stand), 1);
 });
 
 test('Lernziel: nur leichte Aufgaben reichen nicht (kein Durchrennen)', () => {
   const stand = neu();
   for (const a of aufgaben(S2, 'F')) L.verbuche(stand, a, ok(), 'G', 't');
-  assert.equal(L.sterne(stand), 0);
+  assert.equal(L.siegel(stand), 0);
   assert.equal(L.lernzielStand(stand, S2, 'G').fortschritt, 1);
   // Eine Trainingsaufgabe plus zwei auf dem Zielniveau genügen.
   const [a, b] = aufgaben(S2, 'G');
@@ -82,30 +82,32 @@ test('Lernziel: dieselbe Aufgabe dreimal zählt nur einmal, Lösungsschritt zäh
   const stand = neu();
   const [a, b, c, d] = aufgaben(S2, 'G');
   for (let i = 0; i < 3; i++) L.verbuche(stand, a, ok(), 'G', 't');
-  assert.equal(L.sterne(stand), 0);
+  assert.equal(L.siegel(stand), 0);
   L.verbuche(stand, b, ok({ hilfen: 3 }), 'G', 't');
   L.verbuche(stand, c, ok({ hilfen: 2 }), 'G', 't');
-  assert.equal(L.sterne(stand), 0);
+  assert.equal(L.siegel(stand), 0);
   L.verbuche(stand, d, ok(), 'G', 't');
-  assert.equal(L.sterne(stand), 1);
+  assert.equal(L.siegel(stand), 1);
 });
 
 test('Lernziel: Förderschüler mit Zielniveau F erreicht es auf F', () => {
   const stand = neu();
   for (const a of aufgaben(S2, 'F').slice(0, 3)) L.verbuche(stand, a, ok(), 'F', 't');
-  assert.equal(L.sterne(stand), 1);
+  assert.equal(L.siegel(stand), 1);
 });
 
-test('Münzen: höheres Niveau bringt mehr, Training, Hilfen und zweiter Versuch weniger', () => {
+test('Münzen: höheres Niveau bringt mehr, Training und Beispiel weniger, Fehlversuch und Tipp kosten nichts', () => {
   const stand = neu();
   const g = aufgaben(S2, 'G')[0], e = aufgaben(S2, 'E')[0], f = aufgaben(S2, 'F')[0];
   assert.equal(L.muenzenFuer(stand, g, ok(), 'G'), 15);
   assert.equal(L.muenzenFuer(stand, e, ok(), 'G'), 25);
   assert.equal(L.muenzenFuer(stand, f, ok(), 'G'), 5);
   assert.equal(L.muenzenFuer(stand, f, ok(), 'F'), 10);
-  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 1 }), 'G'), 12);
+  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 1, karten: ['tipp'] }), 'G'), 15, 'Tipp kostet nichts');
+  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 2, karten: ['tipp', 'beispiel'] }), 'G'), 12);
+  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 2 }), 'G'), 12, 'alter Eintrag ohne Kartenliste');
   assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 3 }), 'G'), 1);
-  assert.equal(L.muenzenFuer(stand, g, ok({ versuche: 2 }), 'G'), 9);
+  assert.equal(L.muenzenFuer(stand, g, ok({ versuche: 2 }), 'G'), 15, 'zweiter Versuch kostet nichts');
   assert.equal(L.muenzenFuer(stand, g, ok({ geloest: false }), 'G'), 0);
   L.verbuche(stand, g, ok(), 'G', 't');
   assert.equal(L.muenzenFuer(stand, g, ok(), 'G'), 1, 'Wiederholung einer gelösten Aufgabe');
@@ -144,27 +146,27 @@ test('Aufgabenauswahl: erst neue, dann ungelöste, nie zweimal direkt dieselbe',
   assert.equal(L.naechsteAufgabe(index, stand, '5.1.1-L1', 'G'), null);
 });
 
-test('Station: Status folgt den Lernzielen', () => {
+test('Meilenstein: Status folgt den Lernzielen', () => {
   const stand = neu();
   const station = pool.kapitel[2].unterkapitel[2];
-  assert.equal(L.stationStatus(index, stand, pool.kapitel[0].unterkapitel[0]), 'leer');
-  assert.equal(L.stationStatus(index, stand, station), 'offen');
+  assert.equal(L.milestoneStatus(index, stand, pool.kapitel[0].unterkapitel[0]), 'leer');
+  assert.equal(L.milestoneStatus(index, stand, station), 'offen');
   L.verbuche(stand, aufgaben(S2, 'G')[0], ok(), 'G', 't');
-  assert.equal(L.stationStatus(index, stand, station), 'begonnen');
+  assert.equal(L.milestoneStatus(index, stand, station), 'begonnen');
   assert.equal(L.naechstesLernziel(index, stand, station).id, '5.3.3-S1');
   for (const l of station.lernziele) stand.lernziele[l.id] = { erreichtAm: 't' };
-  assert.equal(L.stationStatus(index, stand, station), 'erreicht');
+  assert.equal(L.milestoneStatus(index, stand, station), 'gemeistert');
 });
 
-test('Rang ergibt sich allein aus den Sternen', () => {
-  assert.equal(L.rang(0).name, 'Rangierlok');
-  assert.equal(L.rang(5).name, 'Regionalzug');
-  assert.equal(L.rang(29).name, 'Express');
-  assert.equal(L.rang(30).name, 'Königszug');
+test('Rang ergibt sich allein aus den Siegeln', () => {
+  assert.equal(L.rang(0).name, 'Wanderer');
+  assert.equal(L.rang(5).name, 'Kundschafter');
+  assert.equal(L.rang(29).name, 'Wegmeister');
+  assert.equal(L.rang(30).name, 'Hofkartograf');
   assert.equal(L.rang(30).naechster, null);
 });
 
-test('Werkstatt: Kauf braucht Münzen und Rang', () => {
+test('Wappen: Kauf braucht Münzen und Rang', () => {
   const stand = neu();
   assert.equal(L.kaufe(stand, 'blau'), 'muenzen');
   stand.muenzen = 500;
@@ -172,10 +174,22 @@ test('Werkstatt: Kauf braucht Münzen und Rang', () => {
   assert.equal(stand.muenzen, 470);
   assert.equal(L.kaufe(stand, 'blau'), 'vorhanden');
   assert.equal(L.kaufe(stand, 'krone'), 'rang', 'Münzen allein kaufen keinen Rang');
-  L.ruesteAus(stand, 'blau');
-  assert.equal(stand.lok.farbe, 'blau');
-  L.ruesteAus(stand, 'gold');
-  assert.equal(stand.lok.farbe, 'blau', 'nicht gekaufte Teile lassen sich nicht anlegen');
+  L.legeAn(stand, 'blau');
+  assert.equal(stand.wappen.farbe, 'blau');
+  L.legeAn(stand, 'gold');
+  assert.equal(stand.wappen.farbe, 'blau', 'nicht gekaufte Teile lassen sich nicht anlegen');
+});
+
+test('Alter Speicherstand: Lok-Teile werden Wappen-Teile, Münzen und Lernziele bleiben', () => {
+  const alt = { version: 1, muenzen: 42, lernziele: { 'x': { erreichtAm: 't' } }, lok: { farbe: 'blau', extras: ['dampf', 'krone'], gekauft: ['rot', 'blau', 'dampf', 'krone'] } };
+  const stand = L.migriere(alt);
+  assert.deepEqual(stand.wappen, { farbe: 'blau', zeichen: ['eichenlaub', 'krone'], gekauft: ['rot', 'blau', 'eichenlaub', 'krone'] });
+  assert.equal(stand.lok, undefined);
+  assert.equal(stand.muenzen, 42);
+  assert.equal(L.siegel(stand), 1);
+  for (const id of stand.wappen.gekauft) assert.ok(L.WAPPEN_TEILE.some((w) => w.id === id), id);
+  assert.equal(L.migriere(stand), stand, 'zweimal umstellen ändert nichts');
+  assert.equal(L.migriere(null), null);
 });
 
 test('Minispiel: nur in der Spielpause und gegen Münzen', () => {
@@ -226,46 +240,46 @@ test('Neue Formate: Zahlenstrahl, Tabelle und Diagramm werden ausgewertet', () =
   assert.equal(L.pruefeAntwort(diagramm, [String(diagramm.teile[0].loesung), '']).richtig, false);
 });
 
-test('Kapitel 5.3 ist vollständig: jede Station hat Aufgaben auf allen vier Linien', () => {
+test('Kapitel 5.3 ist vollständig: jeder Meilenstein hat Aufgaben auf allen vier Straßen', () => {
   const kapitel = pool.kapitel.find((k) => k.id === '5.3');
   for (const u of kapitel.unterkapitel) for (const l of u.lernziele) for (const n of ['F', 'G', 'M', 'E']) {
     assert.ok(pool.aufgaben.filter((a) => a.lernziel === l.id && a.niveau === n).length >= 6, `${l.id} ${n}`);
   }
 });
 
-test('Etappe der Startseite: Fortschritt und nächste Station, gesperrte Stationen zählen nicht', () => {
+test('Etappe der Startseite: Fortschritt und nächster Meilenstein, gesperrte Meilensteine zählen nicht', () => {
   const stand = neu();
   const frei = L.einstellungen(null, stand.code, pool);
   const start = L.etappe(pool, index, stand, frei);
   assert.equal(start.kapitel.id, '5.3');
-  assert.deepEqual([start.geschafft, start.gesamt, start.station.id], [0, 5, '5.3.1']);
+  assert.deepEqual([start.geschafft, start.gesamt, start.milestone.id], [0, 5, '5.3.1']);
   // Die Lehrkraft arbeitet in Kapitel 4: Dort geht es weiter.
   const vier = L.einstellungen({ aktuellesKapitel: '5.4' }, stand.code, pool);
-  assert.equal(L.etappe(pool, index, stand, vier).station.id, '5.4.5');
-  // Eine begonnene Station hat Vorrang, eine gesperrte fällt heraus.
+  assert.equal(L.etappe(pool, index, stand, vier).milestone.id, '5.4.5');
+  // Ein begonnener Meilenstein hat Vorrang, ein gesperrter fällt heraus.
   const zu = L.einstellungen({ aktuellesKapitel: '5.3', sperren: { '5.3.1': [stand.code] } }, stand.code, pool);
   const mitSperre = L.etappe(pool, index, stand, zu);
-  assert.deepEqual([mitSperre.gesamt, mitSperre.station.id], [4, '5.3.2']);
+  assert.deepEqual([mitSperre.gesamt, mitSperre.milestone.id], [4, '5.3.2']);
   // Alle Lernziele des aktuellen Kapitels erreicht: Die Etappe zeigt das nächste offene Kapitel mit Aufgaben.
   for (const u of pool.kapitel.find((k) => k.id === '5.4').unterkapitel) for (const l of u.lernziele) stand.lernziele[l.id] = { t: 'x' };
   assert.equal(L.etappe(pool, index, stand, vier).kapitel.id, '5.3');
 });
 
-test('Jede Station mit Aufgaben hat einen Merkzettel', () => {
+test('Jeder Meilenstein mit Aufgaben hat einen Merkzettel', () => {
   for (const k of pool.kapitel) for (const u of k.unterkapitel) {
     if (!u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id))) continue;
     assert.ok(u.merkzettel?.regeln.length >= 3 && u.merkzettel.beispiel, u.id);
   }
 });
 
-test('Sternregel: drei richtige reichen nur mit einer Aufgabe aus AFB II oder III', () => {
+test('Siegelregel: drei richtige reichen nur mit einer Aufgabe aus AFB II oder III', () => {
   const g = aufgaben('5.4.5-D2', 'M');
   assert.deepEqual(g.map((a) => a.afb), L.AFB_FOLGE);
   const stand = neu();
   const [eins, vier] = g.filter((a) => a.afb === 1);
   L.verbuche(stand, eins, ok(), 'M', 't1', index);
   L.verbuche(stand, vier, ok(), 'M', 't2', index);
-  // Dritte richtige Aufgabe, aber wieder nur AFB I (eine Wiederholung zählt nicht doppelt): kein Stern.
+  // Dritte richtige Aufgabe, aber wieder nur AFB I (eine Wiederholung zählt nicht doppelt): kein Siegel.
   const fremd = { ...eins, id: 'x-afb1' };
   const ohne = L.verbuche(stand, fremd, ok(), 'M', 't3', index);
   assert.equal(ohne.neuesLernziel, false);
@@ -288,7 +302,7 @@ test('Reihenfolge der Aufgaben folgt den Anforderungsbereichen I, II, II, I, II,
 test('Hilfekärtchen je Niveaustufe und Lösungsschritt auf M', () => {
   const anzahl = (n) => Object.keys(aufgaben('5.4.5-D2', n)[0].hilfen);
   assert.deepEqual([anzahl('F'), anzahl('G'), anzahl('M'), anzahl('E')], [L.KARTEN, L.KARTEN, ['tipp', 'loesungsschritt'], ['tipp']]);
-  // Auf M ist das zweite Kärtchen der Lösungsschritt: Die Aufgabe zählt dann nicht für den Stern und bringt nur 1 Münze.
+  // Auf M ist das zweite Kärtchen der Lösungsschritt: Die Aufgabe zählt dann nicht für das Siegel und bringt nur 1 Münze.
   const stand = neu(), m = aufgaben('5.4.5-D2', 'M')[0];
   const b = L.verbuche(stand, m, ok({ hilfen: 2, karten: ['tipp', 'loesungsschritt'] }), 'M', 't', index);
   assert.equal(b.muenzen, 1);

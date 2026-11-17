@@ -33,7 +33,7 @@ export function kennzahlen(stand, zielniveau, jetzt) {
   const ziel = L.NIVEAUS.indexOf(zielniveau);
   const training = v.filter((x) => L.NIVEAUS.indexOf(x.niveau) < ziel).length;
   return {
-    sterne: L.sterne(stand), muenzen: stand.muenzen, rang: L.rang(L.sterne(stand)).name,
+    siegel: L.siegel(stand), muenzen: stand.muenzen, rang: L.rang(L.siegel(stand)).name,
     bearbeitet: v.length, geloest: geloest.length, quote: anteil(geloest.length, v.length),
     ersterVersuch: anteil(v.filter((x) => x.richtig && x.versuche === 1).length, v.length),
     tipp: v.filter((x) => L.hatKarte(x, 'tipp')).length, beispiel: v.filter((x) => L.hatKarte(x, 'beispiel')).length, loesungsschritt: v.filter((x) => L.hatKarte(x, 'loesungsschritt')).length,
@@ -76,7 +76,7 @@ export function pruefeStand(stand, zielniveau) {
   if (stand.muenzen > verdient) maengel.push(`Mehr Münzen (${stand.muenzen}) als je verdient (${verdient})`);
   // Lernziele dürfen nur stehen, wenn sie auf irgendeinem Zielniveau ab F belegt sind.
   for (const lz of Object.keys(stand.lernziele)) {
-    if (!L.lernzielStand(stand, lz, 'F').erreicht) maengel.push(`Stern für ${lz} ohne passende Aufgaben im Protokoll`);
+    if (!L.lernzielStand(stand, lz, 'F').erreicht) maengel.push(`Siegel für ${lz} ohne passende Aufgaben im Protokoll`);
   }
   return maengel;
 }
@@ -88,7 +88,19 @@ const zielVon = (zielniveaus, code) => zielniveaus?.[code] ?? L.STANDARD_ZIELNIV
 export function lernzieleMitAufgaben(pool, index) {
   return pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele
     .filter((l) => index.lernzielMitAufgaben.has(l.id))
-    .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, station: u.titel }))));
+    .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, milestone: u.titel }))));
+}
+
+// Lernzielstand eines Schülers: siegel | wackelig | begonnen | offen.
+// Wackelig: mindestens WACKELIG_AB Aufgaben, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
+export const WACKELIG_AB = 4;
+export function lernzielZustand(stand, lernzielId) {
+  if (stand.lernziele[lernzielId]) return 'siegel';
+  const v = stand.versuche.filter((x) => x.lernziel === lernzielId);
+  if (v.length === 0) return 'offen';
+  const geloest = v.filter((x) => x.richtig).length;
+  const schritte = v.filter((x) => L.hatKarte(x, 'loesungsschritt')).length;
+  return (v.length >= WACKELIG_AB && geloest / v.length < 0.5) || schritte >= 2 ? 'wackelig' : 'begonnen';
 }
 
 export function lernzielmatrix(staende, lernziele, zielniveaus) {
@@ -97,7 +109,7 @@ export function lernzielmatrix(staende, lernziele, zielniveaus) {
     zellen: lernziele.map((l) => {
       const st = L.lernzielStand(stand, l.id, zielVon(zielniveaus, code));
       const bearbeitet = stand.versuche.filter((x) => x.lernziel === l.id).length;
-      return { lernziel: l.id, status: stand.lernziele[l.id] ? 'erreicht' : bearbeitet ? 'begonnen' : 'offen', fortschritt: st.fortschritt, bearbeitet };
+      return { lernziel: l.id, status: lernzielZustand(stand, l.id), fortschritt: st.fortschritt, bearbeitet };
     }),
   }));
 }
@@ -106,7 +118,7 @@ export function lernzielStatistik(staende, lernziele) {
   return lernziele.map((l) => {
     const v = staende.flatMap(({ stand }) => stand.versuche.filter((x) => x.lernziel === l.id));
     return {
-      lernziel: l.id, text: l.text, station: l.station,
+      lernziel: l.id, text: l.text, milestone: l.milestone,
       bearbeitet: v.length, quote: anteil(v.filter((x) => x.richtig).length, v.length),
       zeitMedian: median(v.map((x) => x.dauer)), hilfenAnteil: anteil(v.filter((x) => x.hilfen > 0).length, v.length),
       schueler: staende.filter(({ stand }) => stand.versuche.some((x) => x.lernziel === l.id)).length,
@@ -137,6 +149,16 @@ export function fehlerStatistik(staende) {
   }
   return [...je.values()].map((e) => ({ ...e, schueler: [...e.schueler].sort((a, b) => b[1] - a[1]).map(([code, anzahl]) => ({ code, anzahl })) }))
     .sort((a, b) => b.anzahl - a.anzahl);
+}
+
+// Typische Fehler zu einem Lernziel, häufigste zuerst: [{ fehlvorstellung, anzahl, schueler }]
+export function fehlerZuLernziel(staende, lernzielId) {
+  return fehlerStatistik(staende.map(({ code, stand }) => ({ code, stand: { ...stand, versuche: stand.versuche.filter((x) => x.lernziel === lernzielId) } })));
+}
+// Hat in der Klasse in den letzten `minuten` Minuten jemand gearbeitet? Entscheidet, welcher Bereich beim Öffnen erscheint.
+export function jemandAktiv(staende, jetzt, minuten = 10) {
+  const grenze = new Date(jetzt).getTime() - minuten * 60000;
+  return staende.some(({ stand }) => [stand.geaendert, stand.aktiv?.seit, stand.versuche.at(-1)?.t].some((t) => t && new Date(t).getTime() >= grenze));
 }
 
 // Hilfe-Warteschlange: offene Hilferufe nach Eingang. `gleiche` zählt Rufe zum selben Lernziel.
@@ -221,16 +243,16 @@ export function fehlerHaeufung(staende, jetzt, mindestens = 3) {
     .sort((a, b) => b.codes.length - a.codes.length);
 }
 
-// Schnellläufer: hat in der laufenden Stunde eine Station abgeschlossen.
+// Schnellläufer: hat in der laufenden Stunde einen Meilenstein gemeistert.
 export function schnelllaeufer(staende, pool, index, zielniveaus, jetzt) {
   const grenze = new Date(jetzt).getTime() - SITZUNG_MINUTEN * 60000;
   const liste = [];
   for (const { code, stand } of staende) for (const u of pool.kapitel.flatMap((k) => k.unterkapitel)) {
-    if (L.stationStatus(index, stand, u) !== 'erreicht') continue;
+    if (L.milestoneStatus(index, stand, u) !== 'gemeistert') continue;
     const fertig = u.lernziele.map((l) => stand.lernziele[l.id]?.erreichtAm).filter(Boolean).sort().at(-1);
     if (new Date(fertig).getTime() < grenze) continue;
     const ziel = zielVon(zielniveaus, code);
-    liste.push({ code, station: u.id, titel: u.titel, fertig, zielniveau: ziel, naechstes: L.NIVEAUS[L.NIVEAUS.indexOf(ziel) + 1] ?? null });
+    liste.push({ code, milestone: u.id, titel: u.titel, fertig, zielniveau: ziel, naechstes: L.NIVEAUS[L.NIVEAUS.indexOf(ziel) + 1] ?? null });
   }
   return liste;
 }
@@ -281,7 +303,7 @@ export function aufgabenAudit(staende, index, mindestens = 3) {
     const [antwort, anzahl] = [...e.falsch].sort((a, b) => b[1] - a[1])[0] ?? [null, 0];
     const falscheGesamt = [...e.falsch.values()].reduce((s, n) => s + n, 0);
     const a = index.aufgabe.get(e.aufgabe);
-    return { aufgabe: e.aufgabe, niveau: a?.niveau ?? null, afb: a?.afb ?? null, bearbeitet: e.bearbeitet, geloest: e.geloest, erster: e.erster, quote: anteil(e.geloest, e.bearbeitet),
+    return { aufgabe: e.aufgabe, lernziel: a?.lernziel ?? null, niveau: a?.niveau ?? null, afb: a?.afb ?? null, bearbeitet: e.bearbeitet, geloest: e.geloest, erster: e.erster, quote: anteil(e.geloest, e.bearbeitet),
       ersterVersuch: anteil(e.erster, e.bearbeitet), abbrueche: e.abbrueche, abbruchquote: anteil(e.abbrueche, e.bearbeitet + e.abbrueche),
       zeitMedian: median(e.dauern), haeufigsteFalsche: antwort, haeufigsteAnzahl: anzahl,
       // Viele scheitern, und fast alle mit derselben Antwort: Die Aufgabe ist womöglich missverständlich.
@@ -289,19 +311,19 @@ export function aufgabenAudit(staende, index, mindestens = 3) {
   }).sort((a, b) => (a.quote ?? 1) - (b.quote ?? 1) || b.bearbeitet - a.bearbeitet);
 }
 
-// ---------- Auswertung nach Aufgaben, Aufgabentyp, AFB und Linie ----------
+// ---------- Auswertung nach Aufgaben, Aufgabentyp, AFB und Straße ----------
 export const FORMAT_NAMEN = { zahl: 'Zahl eingeben', auswahl: 'Auswahl', luecken: 'Lückentext', zuordnen: 'Zuordnen', sachaufgabe: 'Sachaufgabe',
   zahlenstrahl: 'Zahlenstrahl', diagramm: 'Diagramm', tabelle: 'Tabelle' };
 export const AFB_NAMEN = { 1: 'AFB I', 2: 'AFB II', 3: 'AFB III' };
-// Jede Aufgabe des Pools mit ihren Zahlen, auch die nie bearbeiteten. `angeboten` heißt: Im selben Lernziel auf derselben Linie
+// Jede Aufgabe des Pools mit ihren Zahlen, auch die nie bearbeiteten. `angeboten` heißt: Im selben Lernziel auf derselben Straße
 // hat die Klasse schon gearbeitet, die Aufgabe hätte also drankommen können.
 export function aufgabenUebersicht(staende, pool, index) {
   const zahlen = new Map(aufgabenAudit(staende, index, 0).map((a) => [a.aufgabe, a]));
-  const station = new Map(pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele.map((l) => [l.id, { id: u.id, titel: u.titel }]))));
+  const meilenstein = new Map(pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele.map((l) => [l.id, { id: u.id, titel: u.titel }]))));
   const begonnen = new Set(staende.flatMap(({ stand }) => stand.versuche.map((x) => `${x.lernziel}|${x.niveau}`)));
   const aufgaben = pool.aufgaben.map((a) => {
     const e = zahlen.get(a.id);
-    return { aufgabe: a.id, lernziel: a.lernziel, station: station.get(a.lernziel) ?? null, niveau: a.niveau, afb: a.afb, format: a.format,
+    return { aufgabe: a.id, lernziel: a.lernziel, milestone: meilenstein.get(a.lernziel) ?? null, niveau: a.niveau, afb: a.afb, format: a.format,
       bearbeitet: e?.bearbeitet ?? 0, geloest: e?.geloest ?? 0, erster: e?.erster ?? 0, abbrueche: e?.abbrueche ?? 0,
       quote: e?.quote ?? null, ersterVersuch: e?.ersterVersuch ?? null, zeitMedian: e?.zeitMedian ?? null,
       haeufigsteFalsche: e?.haeufigsteFalsche ?? null, haeufigsteAnzahl: e?.haeufigsteAnzahl ?? 0, auffaellig: e?.auffaellig ?? false,
@@ -328,7 +350,7 @@ export const AUFGABEN_SICHTEN = {
 };
 export function aufgabenSicht(aufgaben, sicht, filter = {}) {
   const s = AUFGABEN_SICHTEN[sicht] ?? AUFGABEN_SICHTEN.schwierig;
-  return aufgaben.filter((a) => s.wahl(a) && (!filter.station || a.station?.id === filter.station) && (!filter.afb || a.afb === Number(filter.afb))
+  return aufgaben.filter((a) => s.wahl(a) && (!filter.milestone || a.milestone?.id === filter.milestone) && (!filter.afb || a.afb === Number(filter.afb))
     && (!filter.format || a.format === filter.format) && (!filter.niveau || a.niveau === filter.niveau)).sort(s.ordnung);
 }
 
@@ -336,18 +358,18 @@ export function aufgabenSicht(aufgaben, sicht, filter = {}) {
 const prozent = (x) => (x == null ? '' : Math.round(x * 100));
 export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt) {
   const lernziele = lernzieleMitAufgaben(pool, index);
-  const uebersicht = [['Name', 'Schülercode', 'Zielniveau', 'Rang', 'Sterne', 'Münzen', 'Aufgaben bearbeitet', 'davon gelöst', 'Lösungsquote in %',
+  const uebersicht = [['Name', 'Schülercode', 'Zielniveau', 'Rang', 'Siegel', 'Münzen', 'Aufgaben bearbeitet', 'davon gelöst', 'Lösungsquote in %',
     'Im ersten Versuch in %', 'Tipp', 'Beispiel', 'Lösungsschritt', 'Hilferufe', 'Zeit pro Aufgabe (Median, s)', 'Training in %', 'Letzte Aktivität',
     'AFB I in %', 'AFB II in %', 'AFB III in %', 'Lösungsquote ohne Hilfekärtchen in %', 'Lösungsquote mit Hilfekärtchen in %']];
   for (const { code, stand } of staende) {
     const k = kennzahlen(stand, zielVon(zielniveaus, code), jetzt);
-    uebersicht.push([name(code), code, zielVon(zielniveaus, code), k.rang, k.sterne, k.muenzen, k.bearbeitet, k.geloest, prozent(k.quote),
+    uebersicht.push([name(code), code, zielVon(zielniveaus, code), k.rang, k.siegel, k.muenzen, k.bearbeitet, k.geloest, prozent(k.quote),
       prozent(k.ersterVersuch), k.tipp, k.beispiel, k.loesungsschritt, k.hilferufe, k.zeitMedian ?? '', prozent(k.trainingAnteil), k.letzteAktivitaet ?? '',
       ...[1, 2, 3].map((n) => prozent(afbProfil(stand, index)[n].quote)), prozent(hilfenWirkung(stand).ohne.quote), prozent(hilfenWirkung(stand).mit.quote)]);
   }
   const matrix = [['Name', 'Schülercode', ...lernziele.map((l) => l.id)], ['', 'Lernziel', ...lernziele.map((l) => l.text)]];
   for (const zeile of lernzielmatrix(staende, lernziele, zielniveaus)) {
-    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'erreicht' ? 'erreicht' : c.status === 'begonnen' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
+    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
   }
   const versuche = [['Name', 'Schülercode', 'Zeitpunkt', 'Aufgabe', 'Lernziel', 'Niveaustufe', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer (s)', 'Münzen', 'Erkannte Fehlvorstellungen', 'Eingaben']];
   for (const { code, stand } of staende) for (const x of stand.versuche) {
@@ -358,9 +380,9 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   for (const f of fehlerStatistik(staende)) {
     fehler.push([f.fehlvorstellung, pool.fehlvorstellungen[f.fehlvorstellung]?.beschreibung ?? '', f.anzahl, f.schueler.map((s) => `${name(s.code)} (${s.anzahl})`).join(', ')]);
   }
-  const ziele = [['Lernziel', 'Text', 'Station', 'Schüler daran', 'erreicht von', 'Aufgaben bearbeitet', 'Lösungsquote in %', 'Zeit (Median, s)', 'mit Hilfekärtchen in %']];
+  const ziele = [['Lernziel', 'Text', 'Meilenstein', 'Schüler daran', 'erreicht von', 'Aufgaben bearbeitet', 'Lösungsquote in %', 'Zeit (Median, s)', 'mit Hilfekärtchen in %']];
   for (const l of lernzielStatistik(staende, lernziele)) {
-    ziele.push([l.lernziel, l.text, l.station, l.schueler, l.erreicht, l.bearbeitet, prozent(l.quote), l.zeitMedian ?? '', prozent(l.hilfenAnteil)]);
+    ziele.push([l.lernziel, l.text, l.milestone, l.schueler, l.erreicht, l.bearbeitet, prozent(l.quote), l.zeitMedian ?? '', prozent(l.hilfenAnteil)]);
   }
   const audit = [['Aufgabe', 'Text', 'Niveaustufe', 'AFB', 'Bearbeitet', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)', 'Häufigste falsche Antwort', 'wie oft', 'Prüfen?']];
   for (const a of aufgabenAudit(staende, index, 1)) {
@@ -368,18 +390,18 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   }
   const ueb = aufgabenUebersicht(staende, pool, index);
   const gruppen = [['Gruppe', 'Wert', 'Aufgaben im Pool', 'davon bearbeitet', 'Bearbeitungen', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)']];
-  for (const [titel, liste] of [['Anforderungsbereich', ueb.afb], ['Aufgabentyp', ueb.format], ['Linie', ueb.niveau]]) for (const g of liste) {
+  for (const [titel, liste] of [['Anforderungsbereich', ueb.afb], ['Aufgabentyp', ueb.format], ['Straße', ueb.niveau]]) for (const g of liste) {
     gruppen.push([titel, g.name, g.imPool, g.genutzt, g.bearbeitet, prozent(g.quote), prozent(g.ersterVersuch), g.abbrueche, g.zeitMedian ?? '']);
   }
-  const alle = [['Aufgabe', 'Text', 'Station', 'Lernziel', 'Niveaustufe', 'AFB', 'Aufgabentyp', 'Bearbeitet', 'Gelöst', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)', 'Status']];
+  const alle = [['Aufgabe', 'Text', 'Meilenstein', 'Lernziel', 'Niveaustufe', 'AFB', 'Aufgabentyp', 'Bearbeitet', 'Gelöst', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)', 'Status']];
   for (const a of ueb.aufgaben.filter((x) => x.bearbeitet || x.abbrueche || x.angeboten)) {
-    alle.push([a.aufgabe, index.aufgabe.get(a.aufgabe)?.text ?? '', a.station?.titel ?? '', a.lernziel, a.niveau, a.afb, FORMAT_NAMEN[a.format] ?? a.format, a.bearbeitet, a.geloest,
+    alle.push([a.aufgabe, index.aufgabe.get(a.aufgabe)?.text ?? '', a.milestone?.titel ?? '', a.lernziel, a.niveau, a.afb, FORMAT_NAMEN[a.format] ?? a.format, a.bearbeitet, a.geloest,
       prozent(a.quote), prozent(a.ersterVersuch), a.abbrueche, a.zeitMedian ?? '', a.bearbeitet === 0 ? (a.abbrueche ? 'nur abgebrochen' : 'nie bearbeitet') : a.geloest === 0 ? 'nie gelöst' : '']);
   }
   return [
     { name: 'Übersicht', zeilen: uebersicht }, { name: 'Lernzielmatrix', zeilen: matrix }, { name: 'Lernziele', zeilen: ziele },
     { name: 'Typische Fehler', zeilen: fehler }, { name: 'Aufgaben-Audit', zeilen: audit }, { name: 'Versuchsprotokoll', zeilen: versuche },
-    { name: 'Nach AFB, Typ, Linie', zeilen: gruppen }, { name: 'Alle Aufgaben', zeilen: alle },
+    { name: 'Nach AFB, Typ, Straße', zeilen: gruppen }, { name: 'Alle Aufgaben', zeilen: alle },
   ];
 }
 

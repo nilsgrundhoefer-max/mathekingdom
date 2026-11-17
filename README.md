@@ -1,6 +1,6 @@
 # Mathekingdom
 
-Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CONTEXT.md](CONTEXT.md), Grundsatzentscheidungen in [docs/adr/](docs/adr/).
+Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CONTEXT.md](CONTEXT.md), Grundsatzentscheidungen in [docs/adr/](docs/adr/). Das Setting ist eine mittelalterliche Landkarte (ADR 0010): Schlossgarten, Regionskarte mit vier Straßen, Meilensteine, Siegel, Wappen.
 
 ## Stand
 
@@ -18,7 +18,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 - **Ohne Ordner ausprobieren** speichert nur im Browser.
 - **Klassenordner wählen** speichert wie im Unterricht: Der Ordner muss wie die Klasse heißen (`5a`). Darin entsteht der Speicherstand `5A-K4M2.json`.
 
-Die Startseite zeigt oben die Etappe: das Kapitel, an dem gerade gearbeitet wird, wie viele Stationen geschafft sind, und einen Knopf, der direkt zur nächsten Aufgabe führt. Auf der Metrokarte ist die Station markiert, an der es weitergeht. Jede Station hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Er ist frei und kostet keine Münzen.
+Die Startseite ist der Schlossgarten: oben die Etappe (das Kapitel, an dem gerade gearbeitet wird, wie viele Meilensteine gemeistert sind, und ein Knopf direkt zur nächsten Aufgabe), darunter ein Gartentor je Kapitel. Hinter jedem Tor liegt die Regionskarte mit vier Straßen (F Feldweg, G Talweg, M Königsweg, E Bergpfad), die man auch ohne Farbe am Strichmuster erkennt. Meilensteine zeigen ihren Zustand: Wegstein, Kompassnadel (begonnen), rotes Wachssiegel (gemeistert), Schloss (gesperrt). Jeder Meilenstein hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Nach dem ersten Fehlversuch öffnet sich der Tipp von selbst; Fehlversuch und Tipp kosten keine Münzen.
 
 Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code mit passender Klasse wird angenommen. Sobald die Startdatei aus dem Lehrer-Dashboard stammt, ist eine gültig signierte Klassendatei Pflicht.
 
@@ -29,19 +29,16 @@ Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code 
 - **Mit einer Beispielklasse ausprobieren** zeigt alle Ansichten mit 14 erfundenen Schülern. Nichts wird gespeichert.
 - **Ordner auf dem Lehrerlaufwerk wählen** richtet den echten Betrieb ein: Dort entstehen `lehrerdaten.json` (Namenslisten, Notizen, Schlüssel) und der Ordner `backup/`. Danach eine Klasse anlegen, ihren Klassenordner wählen, Namen eintragen, Codes und PINs erzeugen, Code-Kärtchen drucken und die Startdatei für die Schülerlaufwerke herunterladen.
 
-Ansichten:
+Vier Bereiche (beim Öffnen „Jetzt“, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst „Lernstand“):
 
-- **Live:** Akut-Zone (Hilferufe und blockierte Schüler mit Aufgabe, Fehlversuchen, gezogenen Hilfekärtchen und möglichen Lernbegleitern), Impulse (Mini-Workshop bei gehäuftem Fehler, Schnellläufer), Klassenraum als Sitzplan mit Ampel, Lernstand als Tabelle. Ein Tipp auf einen Schüler öffnet die Detailansicht über dem Sitzplan.
-- **Lernpfad:** Stationen für einzelne Schüler, die ganze Klasse oder ein Zielniveau sperren und öffnen.
-- **Diagnose:** Auffälligkeiten, Lernzielmatrix, Lernziele im Vergleich, typische Fehler, Aufgaben-Audit, Hilfen.
-- **Einzelne Schüler:** Kennzahlen, Lösungsquote nach Anforderungsbereich (AFB I bis III), Wirkung der Hilfekärtchen, typische Fehler, Niveauverlauf, Lernziele, Versuchsprotokoll, Notiz.
-- **Klasse und Codes**, **Backup**.
-
-Der Reiter **Aufgaben** wertet die Klasse nach Anforderungsbereich, Aufgabentyp und Linie aus und listet einzelne Aufgaben: schwierigste, nie gelöste, am häufigsten gelöste, bearbeitete oder abgebrochene sowie nie bearbeitete, obwohl sie hätten drankommen können.
+- **Jetzt:** Akut-Zone (Hilferufe und blockierte Schüler mit Aufgabe, Fehlversuchen, gezogenen Hilfekärtchen und möglichen Lernbegleitern), Impulse (Mini-Workshop bei gehäuftem Fehler, Schnellläufer), Klassenraum als Sitzplan mit Ampel. Ein Tipp auf einen Schüler öffnet die Detailansicht über dem Sitzplan.
+- **Lernstand:** Kennzahlen der Klasse, Heatmap Schüler × Lernziel mit vier Zuständen (Siegel, wackelig, begonnen, nicht begonnen), gestapelte Balken je Lernziel, Auffälligkeiten, Meilensteine öffnen und sperren. Ein Lernziel öffnet seine Seite (wer steht wo, häufigste typische Fehler, Lösungsquote nach Straße, schwierigste Aufgaben), ein Name die Seite des Schülers (Siegel, Zielniveau, zuletzt aktiv, Weg über die Lernziele, AFB, Hilfekärtchen, typische Fehler, Versuchsprotokoll zugeklappt, Notiz).
+- **Aufgaben:** Auswertung nach Anforderungsbereich, Aufgabentyp und Straße, dazu einzelne Aufgaben: schwierigste, nie gelöste, am häufigsten gelöste, bearbeitete oder abgebrochene sowie nie bearbeitete, obwohl sie hätten drankommen können.
+- **Verwaltung:** Namensliste, Codes und PINs, Startdatei, Berichte, Backup.
 
 Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den Druckdialog als PDF, Rohdaten als Excel-Datei mit acht Blättern.
 
-Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
+„Wackelig“ heißt: mindestens 4 Aufgaben zum Lernziel und weniger als die Hälfte gelöst, oder zweimal das Lösungsschritt-Kärtchen. Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
 
 Noch nicht gebaut: Schuljahreswechsel, weitere Berichte.
 
@@ -67,5 +64,5 @@ npm run build    # dist/ bauen
 NODE_PATH=<Pfad zu Playwright> node tests/browser.mjs   # Dashboard im Browser durchfahren
 ```
 
-Quelltext des Schüler-Dashboards: `src/schueler/` (`logik.js` Regeln, `speicher.js` Dateizugriff, `app.js` Oberfläche, `bilder.js` Lok und Metrokarte).
+Quelltext des Schüler-Dashboards: `src/schueler/` (`logik.js` Regeln, `speicher.js` Dateizugriff, `app.js` Oberfläche, `bilder.js` Wappen, Siegel, Regionskarte und Schlossgarten).
 Quelltext des Lehrer-Dashboards: `src/lehrer/` (`auswertung.js` Kennzahlen und Berichte, `xlsx.js` Excel-Ausgabe, `beispiel.js` Beispielklasse, `app.js` Oberfläche). Die Signatur der Klassendatei steht in `src/gemeinsam/krypto.js`.

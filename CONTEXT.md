@@ -70,6 +70,10 @@ _Avoid_: aktuelles Thema
 Der Weg durch die Unterkapitel eines einzelnen Kapitels.
 _Avoid_: Kurs, Weg, Themenbereich
 
+**Schlossgarten**:
+Die Übersicht aller Kapitel einer Klassenstufe: der Ausgangsort in der Mitte des Königreichs, mit einem Gartentor für jede Region. Hinter jedem Tor liegt die Regionskarte. Gesperrte Kapitel haben ein geschlossenes Tor.
+_Avoid_: Reichskarte, Weltkarte, Jahresplan (für die Ansicht)
+
 **Regionskarte**:
 Die Darstellung eines Lernpfads im Stil einer alten Landkarte: vier parallele Straßen (F, G, M, E), auf denen die Unterkapitel Meilensteine sind. Ein Niveauwechsel heißt „die Straße wechseln“.
 _Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken
@@ -105,7 +109,7 @@ Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
 _Avoid_: Stern, Punkte, Abzeichen
 
 **Rang**:
-Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Reichskartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
+Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Hofkartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
 _Avoid_: Level, Stufe
 
 **Wappen**:
@@ -229,4 +233,6 @@ _Avoid_: Klassenliste (für die Datei)
 - **Anforderungsbereich (AFB)**: Einordnung jeder Aufgabe in I (Reproduzieren), II (Zusammenhänge herstellen) oder III (Verallgemeinern und Reflektieren). Unabhängig von der Niveaustufe.
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
+- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
+- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig oder Siegel. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
 
