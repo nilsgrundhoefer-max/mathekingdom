@@ -208,3 +208,27 @@ test('Klassendatei: Standardwerte ohne Datei, sonst Vorgaben der Lehrkraft', () 
   assert.deepEqual([...mit.offeneKapitel], ['5.1', '5.2', '5.3', '5.4']);
   assert.equal(mit.codeBekannt, false);
 });
+
+test('Neue Formate: Zahlenstrahl, Tabelle und Diagramm werden ausgewertet', () => {
+  const je = (format, filter = () => true) => pool.aufgaben.find((a) => a.format === format && filter(a));
+  for (const strahl of [je('zahlenstrahl', (a) => a.eingabe === 'markieren'), je('zahlenstrahl', (a) => a.eingabe === 'ablesen')]) {
+    assert.equal(L.pruefeAntwort(strahl, String(strahl.loesung)).richtig, true);
+    assert.equal(L.pruefeAntwort(strahl, String(strahl.loesung + strahl.strahl.schritt)).richtig, false);
+  }
+  const tabelle = je('tabelle');
+  const voll = Object.fromEntries(Object.entries(tabelle.luecken).map(([n, l]) => [n, String(l.loesung)]));
+  assert.equal(L.pruefeAntwort(tabelle, voll).richtig, true);
+  const [erste] = Object.keys(voll);
+  assert.equal(L.pruefeAntwort(tabelle, { ...voll, [erste]: String(tabelle.luecken[erste].loesung + 1) }).richtig, false);
+  assert.equal(L.pruefeAntwort(tabelle, {}).richtig, false);
+  const diagramm = je('diagramm', (a) => a.teile.length === 2);
+  assert.equal(L.pruefeAntwort(diagramm, diagramm.teile.map((t) => String(t.loesung))).richtig, true);
+  assert.equal(L.pruefeAntwort(diagramm, [String(diagramm.teile[0].loesung), '']).richtig, false);
+});
+
+test('Kapitel 5.3 ist vollständig: jede Station hat Aufgaben auf allen vier Linien', () => {
+  const kapitel = pool.kapitel.find((k) => k.id === '5.3');
+  for (const u of kapitel.unterkapitel) for (const l of u.lernziele) for (const n of ['F', 'G', 'M', 'E']) {
+    assert.ok(pool.aufgaben.filter((a) => a.lernziel === l.id && a.niveau === n).length >= 6, `${l.id} ${n}`);
+  }
+});

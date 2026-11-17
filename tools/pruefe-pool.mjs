@@ -26,6 +26,14 @@ const pruefeZahl = (id, a) => {
   if (new Set(werte).size !== werte.length) melde(id, 'typischer Fehler doppelt');
 };
 
+// Rechnet einen Ausdruck aus Zahlen, +, − und Klammern unabhängig vom Erzeuger nach.
+const rechne = (ausdruck) => {
+  const js = ausdruck.replace(/[\s\u00a0\u202f]/g, '').replace(/−/g, '-').replace(/\[/g, '(').replace(/\]/g, ')');
+  if (!/^[\d+\-() ]+$/.test(js)) return NaN;
+  try { return Function(`"use strict"; return (${js});`)(); } catch { return NaN; }
+};
+const NUR_ZAHLEN = /^([\d\s\u00a0\u202f]+) ([−:+]) ([\d\s\u00a0\u202f]+) = ([\d\s\u00a0\u202f]+)$/;
+
 const ids = new Set();
 const anzahl = new Map();
 for (const a of pool.aufgaben) {
@@ -46,10 +54,8 @@ for (const a of pool.aufgaben) {
     let m;
     if ((m = a.text.match(/^Subtrahiere schriftlich: (.+) − (.+)$/)) && zahlAus(m[1]) - zahlAus(m[2]) !== a.loesung) melde(a.id, 'Differenz falsch');
     if ((m = a.text.match(/^Dividiere schriftlich: (.+) : (.+)$/)) && zahlAus(m[1]) / zahlAus(m[2]) !== a.loesung) melde(a.id, 'Quotient falsch');
-    if ((m = a.text.match(/^Berechne: (.+)$/))) {
-      const [erste, ...rest] = m[1].split(' − ').map(zahlAus);
-      if (rest.reduce((s, x) => s - x, erste) !== a.loesung) melde(a.id, 'Kettenrechnung falsch');
-    }
+    if ((m = a.text.match(/^(?:Berechne|Rechne im Kopf|Rechne geschickt|Rechne vorteilhaft|Addiere schriftlich): (.+)$/)) && rechne(m[1]) !== a.loesung) melde(a.id, `Rechnung falsch: ${m[1]} ist ${rechne(m[1])}`);
+    if ((m = a.text.match(/^Wie viel fehlt von (.+) bis (.+)\?$/)) && zahlAus(m[2]) - zahlAus(m[1]) !== a.loesung) melde(a.id, 'Ergänzung falsch');
   } else if (a.format === 'auswahl') {
     const richtige = a.optionen.filter((o) => o.richtig).length;
     if (a.optionen.length < 3) melde(a.id, 'weniger als drei Optionen');
@@ -60,16 +66,26 @@ for (const a of pool.aufgaben) {
       if (o.fehlvorstellung && !(o.fehlvorstellung in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${o.fehlvorstellung}`);
       // Rechnungen in den Optionen nachrechnen: "falsch" muss wirklich falsch sein.
       let m;
-      if (a.mehrfach && (m = o.text.match(/^(.+) ([−:]) (.+) = (.+)$/))) {
+      if (a.mehrfach && a.text.includes('falsch') && (m = o.text.match(NUR_ZAHLEN))) {
         const [x, y, r] = [m[1], m[3], m[4]].map(zahlAus);
-        const stimmt = (m[2] === '−' ? x - y : x / y) === r;
+        const stimmt = (m[2] === '−' ? x - y : m[2] === '+' ? x + y : x / y) === r;
         if (stimmt === o.richtig) melde(a.id, `Option "${o.text}" ist falsch eingestuft`);
+      }
+      // "Welche Gleichungen stimmen?": beide Seiten ausrechnen.
+      if (a.text.startsWith('Welche Gleichungen stimmen')) {
+        const [links, rechts] = o.text.split(' = ').map(rechne);
+        if (Number.isNaN(links) || Number.isNaN(rechts) || (links === rechts) !== o.richtig) melde(a.id, `Gleichung "${o.text}" ist falsch eingestuft`);
       }
     }
   } else if (a.format === 'luecken') {
     const namen = [...a.text.matchAll(/\{\{(\w+)\}\}/g)].map((x) => x[1]);
     if (namen.length === 0) melde(a.id, 'keine Lücke im Text');
     for (const n of namen) if (!a.luecken?.[n]) melde(a.id, `Lücke ${n} hat keine Lösung`); else pruefeZahl(a.id, a.luecken[n]);
+    // Gleichungen mit einer Lücke: Lösung einsetzen und beide Seiten ausrechnen.
+    if (namen.length === 1 && a.text.includes(' = ') && /[+−]/.test(a.text) && !a.text.includes('Rest')) {
+      const [links, rechts] = a.text.replace(/\{\{\w+\}\}/, String(a.luecken[namen[0]]?.loesung)).split(' = ').map(rechne);
+      if (Number.isNaN(links) || links !== rechts) melde(a.id, 'Lückengleichung geht nicht auf');
+    }
     const m = a.text.match(/^(\d+) : (\d+) = \{\{q\}\} Rest \{\{r\}\}$/);
     if (m && (Math.floor(m[1] / m[2]) !== a.luecken.q.loesung || m[1] % m[2] !== a.luecken.r.loesung)) melde(a.id, 'Division mit Rest falsch');
   } else if (a.format === 'zuordnen') {
@@ -78,6 +94,59 @@ for (const a of pool.aufgaben) {
   } else if (a.format === 'sachaufgabe') {
     if ((a.teile?.length ?? 0) < 2) melde(a.id, 'Sachaufgabe braucht mindestens zwei Teile');
     for (const t of a.teile ?? []) { if (!t.text?.trim()) melde(a.id, 'Teilfrage fehlt'); pruefeZahl(a.id, t); }
+  } else if (a.format === 'zahlenstrahl') {
+    pruefeZahl(a.id, a);
+    const st = a.strahl ?? {};
+    if (!['markieren', 'ablesen'].includes(a.eingabe)) melde(a.id, 'Zahlenstrahl: eingabe muss markieren oder ablesen sein');
+    if (!(st.von < st.bis) || !(st.schritt > 0) || (st.bis - st.von) % st.schritt !== 0 || st.beschriftung % st.schritt !== 0) melde(a.id, 'Zahlenstrahl: Einteilung geht nicht auf');
+    if ((st.bis - st.von) / st.schritt > 40) melde(a.id, 'Zahlenstrahl: zu viele Teilstriche zum Antippen');
+    const aufStrich = (v) => v >= st.von && v <= st.bis && (v - st.von) % st.schritt === 0;
+    for (const [was, v] of [['Lösung', a.loesung], ['Start', st.start ?? st.von], ['Pfeil', st.pfeil ?? st.von], ...(st.spruenge ?? []).flatMap((sp) => [['Sprung', sp.von], ['Sprung', sp.nach]])]) {
+      if (!aufStrich(v)) melde(a.id, `Zahlenstrahl: ${was} ${v} liegt nicht auf einem Teilstrich`);
+    }
+    if (a.eingabe === 'ablesen' && st.pfeil !== a.loesung) melde(a.id, 'Zahlenstrahl: Pfeil zeigt nicht auf die Lösung');
+    for (const sp of st.spruenge ?? []) {
+      const m = sp.text.match(/^([+−]) (\d+)$/);
+      if (!m || sp.von + (m[1] === '+' ? 1 : -1) * Number(m[2]) !== sp.nach) melde(a.id, 'Zahlenstrahl: Sprung passt nicht zu seiner Beschriftung');
+    }
+    let m;
+    if ((m = a.text.match(/^Starte bei (\d+) und springe (\d+) (weiter|zurück)/))) {
+      if (Number(m[1]) !== st.start || Number(m[1]) + (m[3] === 'weiter' ? 1 : -1) * Number(m[2]) !== a.loesung) melde(a.id, 'Zahlenstrahl: Sprung im Text passt nicht zur Lösung');
+    }
+  } else if (a.format === 'diagramm') {
+    const d = a.diagramm ?? {};
+    if (!d.titel || !d.einheit || !(d.max > 0) || !(d.schritt > 0) || d.max % d.schritt !== 0) melde(a.id, 'Diagramm: Titel, Einheit oder Achse fehlt');
+    if ((d.saeulen?.length ?? 0) < 2) melde(a.id, 'Diagramm braucht mindestens zwei Säulen');
+    // Ablesbar ist ein Wert nur auf einer Linie, einer Hilfslinie oder genau in der Mitte dazwischen.
+    const raster = d.werteZeigen ? 1 : d.hilfslinien ? d.schritt / 4 : d.schritt / 2;
+    for (const sa of d.saeulen ?? []) if (!(sa.wert > 0) || sa.wert > d.max || sa.wert % raster !== 0) melde(a.id, `Diagramm: Wert ${sa.wert} lässt sich nicht ablesen`);
+    if ((a.teile?.length ?? 0) < 1) melde(a.id, 'Diagramm braucht mindestens eine Frage');
+    for (const t of a.teile ?? []) { if (!t.text?.trim()) melde(a.id, 'Teilfrage fehlt'); pruefeZahl(a.id, t); }
+    // Standardfragen nachrechnen.
+    const werte = (d.saeulen ?? []).map((sa) => sa.wert);
+    for (const t of a.teile ?? []) {
+      if (/an allen vier|in allen vier/.test(t.text) && werte.reduce((s, x) => s + x, 0) !== t.loesung) melde(a.id, 'Diagramm: Gesamtsumme falsch');
+    }
+  } else if (a.format === 'tabelle') {
+    const t = a.tabelle ?? {};
+    const zellen = (t.zeilen ?? []).flat();
+    if (!t.kopf?.length || (t.zeilen ?? []).some((z) => z.length !== t.kopf.length)) melde(a.id, 'Tabelle: Zeilen passen nicht zur Kopfzeile');
+    const namen = zellen.filter((c) => typeof c === 'object').map((c) => c.luecke);
+    if (namen.length === 0) melde(a.id, 'Tabelle ohne Lücke');
+    if (new Set(namen).size !== namen.length) melde(a.id, 'Tabelle: Lücke doppelt');
+    for (const n of namen) if (!a.luecken?.[n]) melde(a.id, `Lücke ${n} hat keine Lösung`); else pruefeZahl(a.id, a.luecken[n]);
+    for (const n of Object.keys(a.luecken ?? {})) if (!namen.includes(n)) melde(a.id, `Lösung ${n} ohne Lücke in der Tabelle`);
+    // Bekannte Tabellenarten nachrechnen.
+    const zeichen = t.kopf?.[0];
+    for (const zeile of t.zeilen ?? []) zeile.forEach((c, k) => {
+      if (typeof c !== 'object') return;
+      const l = a.luecken?.[c.luecke]?.loesung, links = zahlAus(String(zeile[0])), oben = zahlAus(String(t.kopf[k]));
+      if (zeichen === '+' && links + oben !== l) melde(a.id, 'Additionstabelle falsch');
+      if (zeichen === '−' && links - oben !== l) melde(a.id, 'Subtraktionstabelle falsch');
+      if (t.kopf[k] === 'Gesamt' && zeile.slice(1, k).reduce((s, x) => s + zahlAus(String(x)), 0) !== l) melde(a.id, 'Tabelle: Gesamt falsch');
+      if (t.kopf[k] === 'fehlt bis 1000' && 1000 - links !== l) melde(a.id, 'Tabelle: Ergänzung falsch');
+      if (t.kopf[k] === 'a − (b + c)' && Number(zeile[0]) - (Number(zeile[1]) + Number(zeile[2])) !== l) melde(a.id, 'Tabelle: Rechenausdruck falsch');
+    });
   } else melde(a.id, `unbekanntes Format ${a.format}`);
 }
 

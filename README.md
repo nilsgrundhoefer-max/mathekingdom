@@ -7,7 +7,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 | Teil | Stand |
 |---|---|
 | Jahresplan Klasse 5 | [docs/jahresplan-klasse-5.md](docs/jahresplan-klasse-5.md) |
-| Aufgabenpool Klasse 5 | Pilot: Subtrahieren (3.3) und Dividieren (4.5), [Übersicht](docs/aufgaben-klasse-5-pilot.md), [Aufbau](docs/aufgabenpool-format.md) |
+| Aufgabenpool Klasse 5 | Kapitel 3 Addieren und Subtrahieren vollständig (3.1 bis 3.5) und Dividieren (4.5), 552 Aufgaben, [Übersicht](docs/aufgaben-klasse-5-pilot.md), [Aufbau](docs/aufgabenpool-format.md) |
 | Schüler-Dashboard | erste Version, siehe unten |
 | Lehrer-Dashboard | erste Version, siehe unten |
 
@@ -39,7 +39,7 @@ Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den D
 
 Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
 
-Noch nicht gebaut: Schuljahreswechsel, weitere Berichte, Aufgabenformate Zahlenstrahl, Diagramm und Tabelle.
+Noch nicht gebaut: Schuljahreswechsel, weitere Berichte.
 
 ## Dateien im Schulnetz
 

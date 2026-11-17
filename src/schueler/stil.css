@@ -151,3 +151,40 @@ body { margin: 0; background: #f4f1ea; }
 }
 #mathekingdom .anmeldung input#pin { letter-spacing: .4em; }
 #mathekingdom .hilfebanner.nachricht { background: #e8eefb; border-bottom-color: #b9c8ea; }
+
+/* Bilder in Aufgaben */
+#mathekingdom .mitbild { display: flex; flex-direction: column; gap: 12px; align-self: stretch; align-items: flex-start; }
+#mathekingdom .bildrahmen { align-self: stretch; overflow-x: auto; }
+#mathekingdom svg.zahlenstrahl { display: block; width: 100%; min-width: 560px; max-width: 760px; height: auto; }
+#mathekingdom .zahlenstrahl .achse { stroke: var(--tinte); stroke-width: 2.5; }
+#mathekingdom .zahlenstrahl .spitze { fill: var(--tinte); }
+#mathekingdom .zahlenstrahl .strich line { stroke: var(--tinte); stroke-width: 1.5; }
+#mathekingdom .zahlenstrahl .strich.gross line { stroke-width: 2.5; }
+#mathekingdom .zahlenstrahl text { font-size: 15px; fill: var(--tinte); font-variant-numeric: tabular-nums; }
+#mathekingdom .zahlenstrahl .treffer { fill: transparent; cursor: pointer; }
+#mathekingdom .zahlenstrahl .strich[role=button]:hover .treffer { fill: rgba(212,164,25,.22); }
+#mathekingdom .zahlenstrahl .strich[role=button]:focus-visible { outline: none; }
+#mathekingdom .zahlenstrahl .strich[role=button]:focus-visible .treffer { fill: rgba(212,164,25,.22); stroke: var(--gold); stroke-width: 2; }
+#mathekingdom .zahlenstrahl .marke { fill: var(--gold); stroke: var(--nacht); stroke-width: 2.5; }
+#mathekingdom .zahlenstrahl .start { fill: var(--nacht); stroke: #fff; stroke-width: 2; }
+#mathekingdom .zahlenstrahl .startwort { font-size: 13px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .zahlenstrahl .sprung { fill: none; stroke: #0072b2; stroke-width: 2.5; }
+#mathekingdom .zahlenstrahl .sprungspitze { fill: #0072b2; }
+#mathekingdom .zahlenstrahl .sprungtext { font-weight: 700; fill: #005a8c; }
+#mathekingdom .zahlenstrahl .frage { font-size: 20px; font-weight: 700; fill: var(--schlecht); }
+#mathekingdom .zahlenstrahl .fragepfeil { fill: var(--schlecht); }
+#mathekingdom svg.diagramm { display: block; width: 100%; min-width: 420px; max-width: 580px; height: auto; }
+#mathekingdom .diagramm .titel { font-size: 15px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .diagramm .einheit, #mathekingdom .diagramm .achsenzahl { font-size: 13px; fill: var(--grau); font-variant-numeric: tabular-nums; }
+#mathekingdom .diagramm .gitter { stroke: #ddd8cb; stroke-width: 1; }
+#mathekingdom .diagramm .gitter.fein { stroke-dasharray: 3 4; }
+#mathekingdom .diagramm .grund { stroke: var(--tinte); stroke-width: 1.5; }
+#mathekingdom .diagramm .saeule { fill: #3b6fb5; }
+#mathekingdom .diagramm .name { font-size: 14px; fill: var(--tinte); }
+#mathekingdom .diagramm .wert { font-size: 14px; font-weight: 700; fill: var(--tinte); }
+#mathekingdom .aufgabentabelle { border-collapse: collapse; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+#mathekingdom .aufgabentabelle th, #mathekingdom .aufgabentabelle td { border: 1.5px solid #9aa3b5; padding: 8px 14px; text-align: right; }
+#mathekingdom .aufgabentabelle thead th, #mathekingdom .aufgabentabelle tbody th { background: #eef1f8; color: var(--nacht); }
+#mathekingdom .aufgabentabelle tbody th { text-align: left; }
+#mathekingdom .aufgabentabelle td .zahlfeld input { width: 7ch; font-size: 1.1rem; }
+#mathekingdom .teile.einzeln { list-style: none; }

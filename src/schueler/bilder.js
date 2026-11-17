@@ -93,3 +93,71 @@ export function metrokarte({ stationen, niveau, zielniveau, standort, gewaehlt, 
   svg.append(zug);
   return svg;
 }
+
+// ---------- Bilder in Aufgaben ----------
+const gliedere = (n) => (n >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ') : String(n));
+
+// Zahlenstrahl. strahl: { von, bis, schritt, beschriftung, start?, spruenge?: [{ von, nach, text }], pfeil? }
+// Mit beiWahl lässt sich ein Teilstrich antippen; gewaehlt ist der gerade markierte Wert.
+export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null } = {}) {
+  const { von, bis, schritt, beschriftung } = strahl;
+  const B = 720, links = 34, rechts = 44, y = 78;
+  const x = (w) => links + ((w - von) / (bis - von)) * (B - links - rechts);
+  const svg = s('svg', { class: 'zahlenstrahl', viewBox: `0 0 ${B} 138`, role: beiWahl ? 'group' : 'img', 'aria-label': `Zahlenstrahl von ${von} bis ${bis}` },
+    s('line', { x1: links - 14, y1: y, x2: B - 14, y2: y, class: 'achse' }),
+    s('path', { d: `M${B - 16} ${y - 7} L${B - 2} ${y} L${B - 16} ${y + 7} Z`, class: 'spitze' }));
+  const breite = x(von + schritt) - x(von);
+  for (let w = von; w <= bis; w += schritt) {
+    const gross = (w - von) % beschriftung === 0;
+    const g = s('g', { class: `strich${gross ? ' gross' : ''}${w === gewaehlt ? ' gewaehlt' : ''}`, 'data-wert': w },
+      s('line', { x1: x(w), y1: y - (gross ? 12 : 7), x2: x(w), y2: y + (gross ? 12 : 7) }),
+      gross && s('text', { x: x(w), y: y + 32, 'text-anchor': 'middle' }, gliedere(w)),
+      w === gewaehlt && s('circle', { cx: x(w), cy: y, r: 9, class: 'marke' }));
+    if (beiWahl) {
+      const waehle = () => beiWahl(w);
+      g.append(s('rect', { x: x(w) - breite / 2, y: y - 30, width: breite, height: 70, class: 'treffer' }));
+      g.setAttribute('role', 'button'); g.setAttribute('tabindex', '0'); g.setAttribute('aria-label', `Teilstrich ${w === gewaehlt ? '(gewählt)' : ''} ${strahl.verdeckt ? '' : w}`.trim());
+      g.addEventListener('click', waehle);
+      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); waehle(); } });
+    }
+    svg.append(g);
+  }
+  if (strahl.start != null) {
+    svg.append(s('circle', { cx: x(strahl.start), cy: y, r: 7, class: 'start' }),
+      s('text', { x: x(strahl.start), y: y + 52, 'text-anchor': 'middle', class: 'startwort' }, 'Start'));
+  }
+  for (const sp of strahl.spruenge ?? []) {
+    const a = x(sp.von), b = x(sp.nach), hoch = Math.min(46, 16 + Math.abs(b - a) / 6);
+    svg.append(s('path', { d: `M${a} ${y - 12} Q${(a + b) / 2} ${y - 12 - hoch * 1.6} ${b} ${y - 12}`, class: 'sprung' }),
+      s('path', { d: `M${b} ${y - 12} l${b > a ? -9 : 9} -3 l${b > a ? 3 : -3} -8 Z`, class: 'sprungspitze' }),
+      s('text', { x: (a + b) / 2, y: y - 18 - hoch * 0.8, 'text-anchor': 'middle', class: 'sprungtext' }, sp.text));
+  }
+  if (strahl.pfeil != null) {
+    svg.append(s('text', { x: x(strahl.pfeil), y: y + 54, 'text-anchor': 'middle', class: 'frage' }, '?'),
+      s('path', { d: `M${x(strahl.pfeil)} ${y + 38} l-6 -12 h12 Z`, class: 'fragepfeil' }));
+  }
+  return svg;
+}
+
+// Säulendiagramm. d: { titel, einheit, max, schritt, werteZeigen, saeulen: [{ name, wert }] }
+export function saeulendiagramm(d) {
+  const B = 560, H = 320, links = 62, unten = 48, oben = 44, rechts = 12;
+  const hoehe = H - oben - unten, platz = (B - links - rechts) / d.saeulen.length, breit = Math.min(64, platz * 0.6);
+  const y = (w) => oben + hoehe - (w / d.max) * hoehe;
+  const svg = s('svg', { class: 'diagramm', viewBox: `0 0 ${B} ${H}`, role: 'img', 'aria-label': `Säulendiagramm: ${d.titel}` },
+    s('text', { x: 0, y: 16, class: 'titel' }, d.titel),
+    s('text', { x: links - 8, y: oben - 12, 'text-anchor': 'end', class: 'einheit' }, d.einheit));
+  for (let w = 0; w <= d.max; w += d.schritt) {
+    svg.append(s('line', { x1: links, y1: y(w), x2: B - rechts, y2: y(w), class: w === 0 ? 'grund' : 'gitter' }),
+      s('text', { x: links - 8, y: y(w) + 5, 'text-anchor': 'end', class: 'achsenzahl' }, gliedere(w)));
+    // feine Hilfslinie auf halber Höhe, damit sich Zwischenwerte ablesen lassen
+    if (d.hilfslinien && w + d.schritt / 2 <= d.max) svg.append(s('line', { x1: links, y1: y(w + d.schritt / 2), x2: B - rechts, y2: y(w + d.schritt / 2), class: 'gitter fein' }));
+  }
+  d.saeulen.forEach((sa, i) => {
+    const x = links + platz * i + (platz - breit) / 2, t = y(sa.wert), r = Math.min(4, (y(0) - t) / 2);
+    svg.append(s('path', { d: `M${x} ${y(0)} V${t + r} Q${x} ${t} ${x + r} ${t} H${x + breit - r} Q${x + breit} ${t} ${x + breit} ${t + r} V${y(0)} Z`, class: 'saeule' }),
+      s('text', { x: x + breit / 2, y: y(0) + 20, 'text-anchor': 'middle', class: 'name' }, sa.name),
+      d.werteZeigen && s('text', { x: x + breit / 2, y: t - 7, 'text-anchor': 'middle', class: 'wert' }, gliedere(sa.wert)));
+  });
+  return svg;
+}

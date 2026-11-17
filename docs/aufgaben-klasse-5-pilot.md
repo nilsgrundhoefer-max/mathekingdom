@@ -1,8 +1,540 @@
-# Aufgaben Klasse 5, Pilot: Übersicht zur Durchsicht
+# Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (264 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (552 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
+
+## 5.3.1-K1: Ich kann im Kopf addieren.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Weiter springen heißt addieren. Springe in Zehnerschritten nach rechts. *Beispiel:* Start bei 90, 50 weiter: erst 10 bis zur 100, dann noch 40. Du landest bei 140. *Lösungsschritt:* Springe zuerst bis zur 100. Das sind 50. Von den 70 bleiben dann noch 20 übrig, die springst du danach.
+
+- `01` Starte bei 50 und springe 70 weiter. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **120**.
+- `02` Starte bei 40 und springe 70 weiter. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **110**.
+- `03` Starte bei 70 und springe 60 weiter. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **130**. Typische Fehler: 10 (add-subtrahiert).
+- `04` Rechne im Kopf: 80 + 60 Lösung: **140**. Typische Fehler: 40 (kopf-stellenwert), 20 (add-subtrahiert).
+- `05` Rechne im Kopf: 40 + 90 Lösung: **130**. Typische Fehler: 30 (kopf-stellenwert), 50 (add-subtrahiert).
+- `06` Rechne im Kopf: 20 + 90 Lösung: **110**. Typische Fehler: 10 (kopf-stellenwert), 70 (add-subtrahiert).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege die zweite Zahl in Hunderter und Zehner und addiere sie nacheinander. *Beispiel:* 340 + 280: 340 + 200 = 540, dann 540 + 80 = 620. *Lösungsschritt:* Addiere zuerst die Hunderter: 290 + 500 = 790. Dann fehlen noch 90.
+
+- `01` Rechne im Kopf: 290 + 590 Lösung: **880**. Typische Fehler: 780 (add-uebertrag-vergessen), 300 (add-subtrahiert).
+- `02` Rechne im Kopf: 430 + 480 Lösung: **910**. Typische Fehler: 810 (add-uebertrag-vergessen), 50 (add-subtrahiert).
+- `03` Rechne im Kopf: 550 + 260 Lösung: **810**. Typische Fehler: 710 (add-uebertrag-vergessen), 290 (add-subtrahiert).
+- `04` Rechne im Kopf: 170 + 560 Lösung: **730**. Typische Fehler: 630 (add-uebertrag-vergessen), 390 (add-subtrahiert).
+- `05` Der Zahlenstrahl zeigt einen Sprung. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 400: + 400; Zahl eintragen)_ Lösung: **800**. Typische Fehler: 0 (add-subtrahiert), 900 (kopf-stellenwert), 700 (kopf-stellenwert).
+- `06` Der Zahlenstrahl zeigt einen Sprung. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 300: + 150; Zahl eintragen)_ Lösung: **450**. Typische Fehler: 150 (add-subtrahiert), 550 (kopf-stellenwert), 350 (kopf-stellenwert).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* In jedes Feld gehört die Summe aus der Zahl links und der Zahl oben. *Beispiel:* Links 250, oben 130: In das Feld gehört 250 + 130 = 380. *Lösungsschritt:* Das erste Feld: 830 + 390 = 1220.
+
+- `01` Fülle die Additionstabelle aus. Rechne im Kopf. 
+
+  | + | 390 | 420 |
+  |---|---|---|
+  | 830 | **1220** | **1250** |
+  | 180 | **570** | **600** |
+
+- `02` Rechne im Kopf: 140 + 120 + 190 Lösung: **450**. Typische Fehler: 260 (sach-schritt-vergessen), 350 (add-uebertrag-vergessen).
+- `03` Fülle die Additionstabelle aus. Rechne im Kopf. 
+
+  | + | 490 | 410 |
+  |---|---|---|
+  | 490 | **980** | **900** |
+  | 400 | **890** | **810** |
+
+- `04` Rechne im Kopf: 440 + 190 + 290 Lösung: **920**. Typische Fehler: 630 (sach-schritt-vergessen), 720 (add-uebertrag-vergessen).
+- `05` Fülle die Additionstabelle aus. Rechne im Kopf. 
+
+  | + | 440 | 120 |
+  |---|---|---|
+  | 720 | **1160** | **840** |
+  | 140 | **580** | **260** |
+
+- `06` Rechne im Kopf: 210 + 260 + 300 Lösung: **770**. Typische Fehler: 470 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte auf die Stellen: Tausender zu Tausendern, Hunderter zu Hundertern. *Beispiel:* 48 000 + 7 500: 48 000 + 7 000 = 55 000, dann + 500 = 55 500. *Lösungsschritt:* Addiere zuerst die Tausender: 67 000 + 5000 = 72 000.
+
+- `01` Rechne im Kopf: 67 000 + 5700 Lösung: **72700**. Typische Fehler: 124000 (kopf-stellenwert), 67570 (kopf-stellenwert).
+- `02` ▢ + 5100 = 20 000 Lösung: a = **14900**
+- `03` Rechne im Kopf: 54 000 + 9800 Lösung: **63800**. Typische Fehler: 152000 (kopf-stellenwert), 54980 (kopf-stellenwert).
+- `04` ▢ + 7700 = 40 000 Lösung: a = **32300**
+- `05` Rechne im Kopf: 38 000 + 6300 Lösung: **44300**. Typische Fehler: 101000 (kopf-stellenwert), 38630 (kopf-stellenwert).
+- `06` ▢ + 8500 = 50 000 Lösung: a = **41500**
+
+## 5.3.1-K2: Ich kann im Kopf subtrahieren.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück springen heißt subtrahieren. Springe in Zehnerschritten nach links. *Beispiel:* Start bei 120, 50 zurück: erst 20 bis zur 100, dann noch 30. Du landest bei 70. *Lösungsschritt:* Springe zuerst zurück bis zur 100. Das sind 30. Von den 70 bleiben dann noch 40 übrig, die springst du danach.
+
+- `01` Starte bei 130 und springe 70 zurück. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **60**. Typische Fehler: 200 (sub-addiert).
+- `02` Starte bei 140 und springe 60 zurück. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **80**. Typische Fehler: 200 (sub-addiert).
+- `03` Starte bei 160 und springe 70 zurück. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **90**. Typische Fehler: 230 (sub-addiert).
+- `04` Rechne im Kopf: 140 − 60 Lösung: **80**. Typische Fehler: 200 (sub-addiert), 120 (sub-kleiner-von-groesser).
+- `05` Rechne im Kopf: 150 − 80 Lösung: **70**. Typische Fehler: 230 (sub-addiert), 130 (sub-kleiner-von-groesser).
+- `06` Rechne im Kopf: 110 − 30 Lösung: **80**. Typische Fehler: 140 (sub-addiert), 120 (sub-kleiner-von-groesser).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege die zweite Zahl in Hunderter und Zehner und ziehe sie nacheinander ab. *Beispiel:* 720 − 350: 720 − 300 = 420, dann 420 − 50 = 370. *Lösungsschritt:* Ziehe zuerst die Hunderter ab: 650 − 200 = 450. Dann fehlen noch 60.
+
+- `01` Rechne im Kopf: 650 − 260 Lösung: **390**. Typische Fehler: 410 (sub-kleiner-von-groesser), 490 (sub-uebertrag-vergessen), 910 (sub-addiert).
+- `02` Rechne im Kopf: 910 − 550 Lösung: **360**. Typische Fehler: 440 (sub-kleiner-von-groesser), 460 (sub-uebertrag-vergessen), 1460 (sub-addiert).
+- `03` Rechne im Kopf: 950 − 190 Lösung: **760**. Typische Fehler: 840 (sub-kleiner-von-groesser), 860 (sub-uebertrag-vergessen), 1140 (sub-addiert).
+- `04` Rechne im Kopf: 950 − 480 Lösung: **470**. Typische Fehler: 530 (sub-kleiner-von-groesser), 570 (sub-uebertrag-vergessen), 1430 (sub-addiert).
+- `05` Der Zahlenstrahl zeigt einen Sprung zurück. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 600: − 550; Zahl eintragen)_ Lösung: **50**. Typische Fehler: 1150 (sub-addiert), 150 (kopf-stellenwert).
+- `06` Der Zahlenstrahl zeigt einen Sprung zurück. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 850: − 400; Zahl eintragen)_ Lösung: **450**. Typische Fehler: 1250 (sub-addiert), 550 (kopf-stellenwert), 350 (kopf-stellenwert).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* In jedes Feld gehört die Differenz: Zahl links minus Zahl oben. *Beispiel:* Links 750, oben 230: In das Feld gehört 750 − 230 = 520. *Lösungsschritt:* Das erste Feld: 960 − 240 = 720.
+
+- `01` Fülle die Tabelle aus: Ziehe von der Zahl links die Zahl oben ab. Rechne im Kopf. 
+
+  | − | 240 | 130 |
+  |---|---|---|
+  | 960 | **720** | **830** |
+  | 700 | **460** | **570** |
+
+- `02` Rechne im Kopf: 870 − 240 − 200 Lösung: **430**. Typische Fehler: 830 (sub-klammerfehler), 630 (sach-schritt-vergessen).
+- `03` Fülle die Tabelle aus: Ziehe von der Zahl links die Zahl oben ab. Rechne im Kopf. 
+
+  | − | 440 | 200 |
+  |---|---|---|
+  | 940 | **500** | **740** |
+  | 630 | **190** | **430** |
+
+- `04` Rechne im Kopf: 970 − 150 − 130 Lösung: **690**. Typische Fehler: 950 (sub-klammerfehler), 820 (sach-schritt-vergessen).
+- `05` Fülle die Tabelle aus: Ziehe von der Zahl links die Zahl oben ab. Rechne im Kopf. 
+
+  | − | 120 | 500 |
+  |---|---|---|
+  | 990 | **870** | **490** |
+  | 620 | **500** | **120** |
+
+- `06` Rechne im Kopf: 620 − 220 − 130 Lösung: **270**. Typische Fehler: 530 (sub-klammerfehler), 400 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe erst die Tausender ab, dann die Hunderter. *Beispiel:* 60 000 − 7 500: 60 000 − 7 000 = 53 000, dann − 500 = 52 500. *Lösungsschritt:* Ziehe zuerst die Tausender ab: 22 000 − 1000 = 21 000.
+
+- `01` Rechne im Kopf: 22 000 − 1900 Lösung: **20100**. Typische Fehler: 23900 (sub-addiert), 21100 (ergaenzen-zu-viel), 21810 (kopf-stellenwert).
+- `02` 60 000 − ▢ = 6900 Lösung: a = **53100**
+- `03` Rechne im Kopf: 21 000 − 3800 Lösung: **17200**. Typische Fehler: 24800 (sub-addiert), 18200 (ergaenzen-zu-viel), 20620 (kopf-stellenwert).
+- `04` 20 000 − ▢ = 6800 Lösung: a = **13200**
+- `05` Rechne im Kopf: 48 000 − 5200 Lösung: **42800**. Typische Fehler: 53200 (sub-addiert), 43800 (ergaenzen-zu-viel), 47480 (kopf-stellenwert).
+- `06` 20 000 − ▢ = 8700 Lösung: a = **11300**
+
+## 5.3.1-K3: Ich kann beim Kopfrechnen geschickt vorgehen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze in Schritten: erst bis zum nächsten Zehner, dann weiter bis zur glatten Zahl. *Beispiel:* Von 64 bis 100: 6 bis zur 70, dann 30 bis zur 100. Zusammen 36. *Lösungsschritt:* Bis zum nächsten Zehner fehlen 7. Du bist dann bei 80.
+
+- `01` Wie viel fehlt von 73 bis 100? Lösung: **27**. Typische Fehler: 37 (ergaenzen-zu-viel).
+- `02` Wie viel fehlt von 84 bis 100? Lösung: **16**. Typische Fehler: 26 (ergaenzen-zu-viel).
+- `03` Wie viel fehlt von 27 bis 100? Lösung: **73**. Typische Fehler: 83 (ergaenzen-zu-viel).
+- `04` Rechne geschickt: 54 + 29 Lösung: **83**. Typische Fehler: 84 (geschickt-nicht-ausgeglichen), 85 (geschickt-falsch-ausgeglichen).
+- `05` Rechne geschickt: 66 − 19 Lösung: **47**. Typische Fehler: 46 (geschickt-nicht-ausgeglichen), 45 (geschickt-falsch-ausgeglichen).
+- `06` Rechne geschickt: 46 + 29 Lösung: **75**. Typische Fehler: 76 (geschickt-nicht-ausgeglichen), 77 (geschickt-falsch-ausgeglichen).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze in Schritten: erst bis zum nächsten Zehner, dann weiter bis zur glatten Zahl. *Beispiel:* Von 64 bis 100: 6 bis zur 70, dann 30 bis zur 100. Zusammen 36. *Lösungsschritt:* Bis zum nächsten Zehner fehlen 2. Du bist dann bei 590.
+
+- `01` Wie viel fehlt von 588 bis 1000? Lösung: **412**. Typische Fehler: 422 (ergaenzen-zu-viel), 512 (ergaenzen-zu-viel), 522 (ergaenzen-zu-viel).
+- `02` Wie viel fehlt von 651 bis 1000? Lösung: **349**. Typische Fehler: 359 (ergaenzen-zu-viel), 449 (ergaenzen-zu-viel), 459 (ergaenzen-zu-viel).
+- `03` Wie viel fehlt von 536 bis 1000? Lösung: **464**. Typische Fehler: 474 (ergaenzen-zu-viel), 564 (ergaenzen-zu-viel), 574 (ergaenzen-zu-viel).
+- `04` Rechne geschickt: 305 + 99 Lösung: **404**. Typische Fehler: 405 (geschickt-nicht-ausgeglichen), 406 (geschickt-falsch-ausgeglichen).
+- `05` Rechne geschickt: 771 − 99 Lösung: **672**. Typische Fehler: 671 (geschickt-nicht-ausgeglichen), 670 (geschickt-falsch-ausgeglichen).
+- `06` Rechne geschickt: 337 + 99 Lösung: **436**. Typische Fehler: 437 (geschickt-nicht-ausgeglichen), 438 (geschickt-falsch-ausgeglichen).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit der glatten Nachbarzahl 2000 und gleiche danach aus. *Beispiel:* 83 − 29: 83 − 30 = 53, das war 1 zu viel abgezogen, also 53 + 1 = 54. *Lösungsschritt:* 8891 − 2000 = 6891. Jetzt gleichst du noch 3 aus.
+
+- `01` Rechne geschickt: 8891 − 1997 Lösung: **6894**. Typische Fehler: 6891 (geschickt-nicht-ausgeglichen), 6888 (geschickt-falsch-ausgeglichen).
+- `02` Rechne geschickt: 2259 + 2998 Lösung: **5257**. Typische Fehler: 5259 (geschickt-nicht-ausgeglichen), 5261 (geschickt-falsch-ausgeglichen).
+- `03` Ergänze jede Zahl bis 1000. 
+
+  | Zahl | fehlt bis 1000 |
+  |---|---|
+  | 167 | **833** |
+  | 818 | **182** |
+  | 726 | **274** |
+
+- `04` Rechne geschickt: 4839 + 998 Lösung: **5837**. Typische Fehler: 5839 (geschickt-nicht-ausgeglichen), 5841 (geschickt-falsch-ausgeglichen).
+- `05` Rechne geschickt: 7064 − 997 Lösung: **6067**. Typische Fehler: 6064 (geschickt-nicht-ausgeglichen), 6061 (geschickt-falsch-ausgeglichen).
+- `06` Ergänze jede Zahl bis 1000. 
+
+  | Zahl | fehlt bis 1000 |
+  |---|---|
+  | 547 | **453** |
+  | 718 | **282** |
+  | 511 | **489** |
+
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die ersten beiden Zahlen liegen knapp unter einem Tausender. Verteile die kleine Zahl so, dass glatte Zahlen entstehen. *Beispiel:* 3 996 + 1 998 + 6: 3 996 + 4 = 4 000 und 1 998 + 2 = 2 000. Zusammen 6 000. *Lösungsschritt:* 5995 + 5 = 6000. Die übrigen 2 gehören zur zweiten Zahl.
+
+- `01` Rechne geschickt: 5995 + 5998 + 7 Lösung: **12000**. Typische Fehler: 12007 (geschickt-nicht-ausgeglichen), 11993 (geschickt-falsch-ausgeglichen).
+- `02` Wie viel fehlt von 80 342 bis 100 000? Lösung: **19658**. Typische Fehler: 19668 (ergaenzen-zu-viel), 19758 (ergaenzen-zu-viel), 20658 (ergaenzen-zu-viel).
+- `03` Rechne geschickt: 5997 + 3998 + 5 Lösung: **10000**. Typische Fehler: 10005 (geschickt-nicht-ausgeglichen), 9995 (geschickt-falsch-ausgeglichen).
+- `04` Wie viel fehlt von 74 614 bis 100 000? Lösung: **25386**. Typische Fehler: 25396 (ergaenzen-zu-viel), 25486 (ergaenzen-zu-viel), 26386 (ergaenzen-zu-viel).
+- `05` Rechne geschickt: 2998 + 3996 + 6 Lösung: **7000**. Typische Fehler: 7006 (geschickt-nicht-ausgeglichen), 6994 (geschickt-falsch-ausgeglichen).
+- `06` Wie viel fehlt von 52 288 bis 100 000? Lösung: **47712**. Typische Fehler: 47722 (ergaenzen-zu-viel), 47812 (ergaenzen-zu-viel), 48712 (ergaenzen-zu-viel).
+
+## 5.3.2-A1: Ich kann die Fachbegriffe Summand und Summe verwenden.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. *Beispiel:* In 20 + 30 = 50 sind 20 und 30 die Summanden, 50 ist die Summe. *Lösungsschritt:* Schau, wo 21 steht: vor oder hinter dem Gleichheitszeichen?
+
+- `01` 21 + 12 = 33. Wie heißt die Zahl 21?
+  - ☐ Minuend
+  - ☐ Differenz
+  - ☐ Summe
+  - ☑ Summand
+- `02` 36 + 15 = 51. Wie heißt die Zahl 51?
+  - ☐ Summand
+  - ☐ Differenz
+  - ☑ Summe
+  - ☐ Minuend
+- `03` 60 + 21 = 81. Wie heißt die Zahl 21?
+  - ☐ Minuend
+  - ☑ Summand
+  - ☐ Summe
+  - ☐ Differenz
+- `04` 26 + 33 = 59. Wie heißt die Zahl 26?
+  - ☐ Differenz
+  - ☐ Minuend
+  - ☐ Summe
+  - ☑ Summand
+- `05` 18 + 33 = 51. Wie heißt die Zahl 51?
+  - ☐ Minuend
+  - ☑ Summe
+  - ☐ Differenz
+  - ☐ Summand
+- `06` 33 + 12 = 45. Wie heißt die Zahl 12?
+  - ☐ Differenz
+  - ☑ Summand
+  - ☐ Summe
+  - ☐ Minuend
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* In einer Addition heißen die Zahlen, die addiert werden, Summanden. Das Ergebnis heißt Summe. *Beispiel:* Summanden 40 und 25: 40 + 25 = 65. Die Summe ist 65. *Lösungsschritt:* Die Rechnung lautet 432 + 275.
+
+- `01` Die Summanden sind 432 und 275. Berechne die Summe. Lösung: **707**. Typische Fehler: 157 (begriffe-verwechselt), 607 (add-uebertrag-vergessen).
+- `02` Die Summanden sind 601 und 248. Berechne die Summe. Lösung: **849**. Typische Fehler: 353 (begriffe-verwechselt).
+- `03` Die Summanden sind 230 und 41. Berechne die Summe. Lösung: **271**. Typische Fehler: 189 (begriffe-verwechselt).
+- `04` Die Summanden sind 384 und 214. Berechne die Summe. Lösung: **598**. Typische Fehler: 170 (begriffe-verwechselt).
+- `05` Die Summanden sind 602 und 74. Berechne die Summe. Lösung: **676**. Typische Fehler: 528 (begriffe-verwechselt).
+- `06` Die Summanden sind 479 und 246. Berechne die Summe. Lösung: **725**. Typische Fehler: 233 (begriffe-verwechselt), 615 (add-uebertrag-vergessen).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. Gesucht ist einer der Summanden. *Beispiel:* Summe 90, ein Summand 35: 35 + ? = 90. Der andere Summand ist 90 − 35 = 55. *Lösungsschritt:* Schreibe 305 + ? = 472. Den Summanden findest du mit der Umkehraufgabe 472 − 305.
+
+- `01` Die Summe ist 472, ein Summand ist 305. Wie groß ist der andere Summand? Lösung: **167**. Typische Fehler: 777 (begriffe-verwechselt).
+- `02` Die Summe ist 760, ein Summand ist 472. Wie groß ist der andere Summand? Lösung: **288**. Typische Fehler: 1232 (begriffe-verwechselt).
+- `03` Die Summe ist 606, ein Summand ist 311. Wie groß ist der andere Summand? Lösung: **295**. Typische Fehler: 917 (begriffe-verwechselt).
+- `04` Die Summe ist 344, ein Summand ist 203. Wie groß ist der andere Summand? Lösung: **141**. Typische Fehler: 547 (begriffe-verwechselt).
+- `05` Die Summe ist 405, ein Summand ist 272. Wie groß ist der andere Summand? Lösung: **133**. Typische Fehler: 677 (begriffe-verwechselt).
+- `06` Die Summe ist 635, ein Summand ist 292. Wie groß ist der andere Summand? Lösung: **343**. Typische Fehler: 927 (begriffe-verwechselt).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Summe und die Differenz einzeln. Addiere danach beide Ergebnisse. *Beispiel:* Summe von 30 und 20 ist 50, Differenz von 90 und 60 ist 30. Zusammen 50 + 30 = 80. *Lösungsschritt:* Berechne zuerst die Summe: 579 + 276 = 855.
+
+- `01` Addiere zur Summe der Zahlen 579 und 276 die Differenz der Zahlen 605 und 217. Lösung: **1243**. Typische Fehler: 1677 (begriffe-verwechselt), 855 (sach-schritt-vergessen).
+- `02` Addiere zur Summe der Zahlen 422 und 146 die Differenz der Zahlen 600 und 197. Lösung: **971**. Typische Fehler: 1365 (begriffe-verwechselt), 568 (sach-schritt-vergessen).
+- `03` Addiere zur Summe der Zahlen 535 und 171 die Differenz der Zahlen 655 und 462. Lösung: **899**. Typische Fehler: 1823 (begriffe-verwechselt), 706 (sach-schritt-vergessen).
+- `04` Addiere zur Summe der Zahlen 278 und 192 die Differenz der Zahlen 665 und 311. Lösung: **824**. Typische Fehler: 1446 (begriffe-verwechselt), 470 (sach-schritt-vergessen).
+- `05` Addiere zur Summe der Zahlen 312 und 284 die Differenz der Zahlen 760 und 334. Lösung: **1022**. Typische Fehler: 1690 (begriffe-verwechselt), 596 (sach-schritt-vergessen).
+- `06` Addiere zur Summe der Zahlen 305 und 294 die Differenz der Zahlen 807 und 434. Lösung: **972**. Typische Fehler: 1840 (begriffe-verwechselt), 599 (sach-schritt-vergessen).
+
+## 5.3.2-A2: Ich kann schriftlich addieren, auch mit Übertrag.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 5 + 4 = 9. Schreibe 9 an die Einerstelle und rechne dann die Zehner.
+
+- `01` Addiere schriftlich: 625 + 114 Lösung: **739**. Typische Fehler: 511 (add-subtrahiert).
+- `02` Addiere schriftlich: 136 + 123 Lösung: **259**. Typische Fehler: 13 (add-subtrahiert).
+- `03` Addiere schriftlich: 328 + 141 Lösung: **469**. Typische Fehler: 187 (add-subtrahiert).
+- `04` Addiere schriftlich: 510 + 94 Lösung: **604**. Typische Fehler: 504 (add-uebertrag-vergessen), 416 (add-subtrahiert).
+- `05` Addiere schriftlich: 343 + 302 Lösung: **645**. Typische Fehler: 41 (add-subtrahiert).
+- `06` Addiere schriftlich: 214 + 204 Lösung: **418**. Typische Fehler: 10 (add-subtrahiert).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 9 + 7 = 16. Schreibe 6 an die Einerstelle und merke dir den Übertrag 1 für die Zehner.
+
+- `01` Addiere schriftlich: 3679 + 2047 Lösung: **5726**. Typische Fehler: 5616 (add-uebertrag-vergessen), 1632 (add-subtrahiert).
+- `02` Addiere schriftlich: 1548 + 582 Lösung: **2130**. Typische Fehler: 1020 (add-uebertrag-vergessen), 966 (add-subtrahiert).
+- `03` Addiere schriftlich: 5041 + 4089 Lösung: **9130**. Typische Fehler: 9020 (add-uebertrag-vergessen), 952 (add-subtrahiert).
+- `04` Addiere schriftlich: 6793 + 1690 Lösung: **8483**. Typische Fehler: 7383 (add-uebertrag-vergessen), 5103 (add-subtrahiert).
+- `05` Addiere schriftlich: 5631 + 5493 Lösung: **11124**. Typische Fehler: 24 (add-uebertrag-vergessen), 138 (add-subtrahiert).
+- `06` Addiere schriftlich: 1425 + 1049 Lösung: **2474**. Typische Fehler: 2464 (add-uebertrag-vergessen), 376 (add-subtrahiert).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 7 + 1 = 8. Schreibe 8 an die Einerstelle und rechne dann die Zehner.
+
+- `01` Addiere schriftlich: 70 187 + 49 151 Lösung: **119338**. Typische Fehler: 19238 (add-uebertrag-vergessen), 21036 (add-subtrahiert).
+- `02` Addiere schriftlich: 26 083 + 4966 Lösung: **31049**. Typische Fehler: 20949 (add-uebertrag-vergessen), 21117 (add-subtrahiert).
+- `03` Addiere schriftlich: 21 251 + 19 815 Lösung: **41066**. Typische Fehler: 30066 (add-uebertrag-vergessen), 1436 (add-subtrahiert).
+- `04` Addiere schriftlich: 60 903 + 51 133 Lösung: **112036**. Typische Fehler: 11036 (add-uebertrag-vergessen), 9770 (add-subtrahiert).
+- `05` Addiere schriftlich: 47 490 + 22 974 Lösung: **70464**. Typische Fehler: 69364 (add-uebertrag-vergessen), 24516 (add-subtrahiert).
+- `06` Addiere schriftlich: 29 590 + 17 329 Lösung: **46919**. Typische Fehler: 36819 (add-uebertrag-vergessen), 12261 (add-subtrahiert).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 2 + 7 = 9. Schreibe 9 an die Einerstelle und rechne dann die Zehner.
+
+- `01` Addiere schriftlich: 4 272 992 + 382 057 Lösung: **4655049**. Typische Fehler: 4554949 (add-uebertrag-vergessen), 3890935 (add-subtrahiert).
+- `02` Addiere schriftlich: 1 317 054 + 687 309 Lösung: **2004363**. Typische Fehler: 1994353 (add-uebertrag-vergessen), 629745 (add-subtrahiert).
+- `03` Addiere schriftlich: 6 319 240 + 291 386 Lösung: **6610626**. Typische Fehler: 6500526 (add-uebertrag-vergessen), 6027854 (add-subtrahiert).
+- `04` Addiere schriftlich: 4 933 978 + 901 359 Lösung: **5835337**. Typische Fehler: 4834227 (add-uebertrag-vergessen), 4032619 (add-subtrahiert).
+- `05` Addiere schriftlich: 5 445 381 + 295 166 Lösung: **5740547**. Typische Fehler: 5630447 (add-uebertrag-vergessen), 5150215 (add-subtrahiert).
+- `06` Addiere schriftlich: 611 084 + 49 889 Lösung: **660973**. Typische Fehler: 650863 (add-uebertrag-vergessen), 561195 (add-subtrahiert).
+
+## 5.3.2-A3: Ich kann mehrere Zahlen schriftlich addieren.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 4 + 0 + 9 = 13.
+
+- `01` Berechne: 224 + 260 + 59 Lösung: **543**. Typische Fehler: 433 (add-uebertrag-vergessen), 484 (sach-schritt-vergessen).
+- `02` Berechne: 359 + 126 + 35 Lösung: **520**. Typische Fehler: 400 (add-uebertrag-vergessen), 485 (sach-schritt-vergessen).
+- `03` Berechne: 391 + 41 + 43 Lösung: **475**. Typische Fehler: 375 (add-uebertrag-vergessen), 432 (sach-schritt-vergessen).
+- `04` Berechne: 412 + 269 + 28 Lösung: **709**. Typische Fehler: 699 (add-uebertrag-vergessen), 681 (sach-schritt-vergessen).
+- `05` Berechne: 478 + 283 + 36 Lösung: **797**. Typische Fehler: 687 (add-uebertrag-vergessen), 761 (sach-schritt-vergessen).
+- `06` Berechne: 212 + 87 + 37 Lösung: **336**. Typische Fehler: 226 (add-uebertrag-vergessen), 299 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 7 + 9 + 4 = 20.
+
+- `01` Berechne: 2067 + 2289 + 434 Lösung: **4790**. Typische Fehler: 4670 (add-uebertrag-vergessen), 4356 (sach-schritt-vergessen).
+- `02` Berechne: 1220 + 1893 + 249 Lösung: **3362**. Typische Fehler: 2252 (add-uebertrag-vergessen), 3113 (sach-schritt-vergessen).
+- `03` Berechne: 3634 + 377 + 531 Lösung: **4542**. Typische Fehler: 3432 (add-uebertrag-vergessen), 4011 (sach-schritt-vergessen).
+- `04` Berechne: 2740 + 2294 + 691 Lösung: **5725**. Typische Fehler: 4525 (add-uebertrag-vergessen), 5034 (sach-schritt-vergessen).
+- `05` Berechne: 3480 + 429 + 571 Lösung: **4480**. Typische Fehler: 3370 (add-uebertrag-vergessen), 3909 (sach-schritt-vergessen).
+- `06` Berechne: 1661 + 419 + 695 Lösung: **2775**. Typische Fehler: 1665 (add-uebertrag-vergessen), 2080 (sach-schritt-vergessen).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 4 + 6 + 5 + 7 = 22.
+
+- `01` Berechne: 33 954 + 5936 + 725 + 87 Lösung: **40702**. Typische Fehler: 38582 (add-uebertrag-vergessen), 40615 (sach-schritt-vergessen).
+- `02` Berechne: 17 882 + 8466 + 782 + 67 Lösung: **27197**. Typische Fehler: 15987 (add-uebertrag-vergessen), 27130 (sach-schritt-vergessen).
+- `03` Berechne: 41 059 + 9383 + 506 + 65 Lösung: **51013**. Typische Fehler: 40893 (add-uebertrag-vergessen), 50948 (sach-schritt-vergessen).
+- `04` Berechne: 31 447 + 6847 + 526 + 95 Lösung: **38915**. Typische Fehler: 37795 (add-uebertrag-vergessen), 38820 (sach-schritt-vergessen).
+- `05` Berechne: 30 077 + 9575 + 575 + 56 Lösung: **40283**. Typische Fehler: 39063 (add-uebertrag-vergessen), 40227 (sach-schritt-vergessen).
+- `06` Berechne: 17 882 + 6234 + 698 + 63 Lösung: **24877**. Typische Fehler: 13667 (add-uebertrag-vergessen), 24814 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 0 + 7 + 5 + 6 + 1 = 19.
+
+- `01` Berechne: 267 310 + 90 127 + 6225 + 906 + 31 Lösung: **364599**. Typische Fehler: 253589 (add-uebertrag-vergessen), 364568 (sach-schritt-vergessen).
+- `02` Berechne: 684 692 + 79 171 + 7579 + 597 + 49 Lösung: **772088**. Typische Fehler: 650768 (add-uebertrag-vergessen), 772039 (sach-schritt-vergessen).
+- `03` Berechne: 621 217 + 54 596 + 4961 + 484 + 46 Lösung: **681304**. Typische Fehler: 679084 (add-uebertrag-vergessen), 681258 (sach-schritt-vergessen).
+- `04` Berechne: 224 439 + 58 575 + 5254 + 748 + 41 Lösung: **289057**. Typische Fehler: 277837 (add-uebertrag-vergessen), 289016 (sach-schritt-vergessen).
+- `05` Berechne: 241 403 + 60 727 + 9747 + 368 + 99 Lösung: **312344**. Typische Fehler: 200114 (add-uebertrag-vergessen), 312245 (sach-schritt-vergessen).
+- `06` Berechne: 524 234 + 68 432 + 9387 + 546 + 65 Lösung: **602664**. Typische Fehler: 581444 (add-uebertrag-vergessen), 602599 (sach-schritt-vergessen).
+
+## 5.3.2-A4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Umkehraufgabe: Aus Plus wird Minus. *Beispiel:* Probe zu 50 + 30 = 80: 80 − 30 = 50. Summe minus ein Summand ergibt den anderen Summanden. *Lösungsschritt:* Beginne mit der Summe 692 und ziehe einen der Summanden ab.
+
+- `01` Mit welcher Rechnung machst du die Probe zu 402 + 290 = 692?
+  - ☐ 402 − 290 = 112
+  - ☑ 692 − 290 = 402
+  - ☐ 692 + 290 = 982
+  - ☐ 692 + 402 = 1094
+- `02` Mit welcher Rechnung machst du die Probe zu 425 + 355 = 780?
+  - ☐ 425 − 355 = 70
+  - ☑ 780 − 355 = 425
+  - ☐ 780 + 355 = 1135
+  - ☐ 780 + 425 = 1205
+- `03` Mit welcher Rechnung machst du die Probe zu 159 + 101 = 260?
+  - ☑ 260 − 101 = 159
+  - ☐ 260 + 159 = 419
+  - ☐ 260 + 101 = 361
+  - ☐ 159 − 101 = 58
+- `04` Mit welcher Rechnung machst du die Probe zu 326 + 206 = 532?
+  - ☐ 532 + 206 = 738
+  - ☐ 326 − 206 = 120
+  - ☐ 532 + 326 = 858
+  - ☑ 532 − 206 = 326
+- `05` Mit welcher Rechnung machst du die Probe zu 351 + 44 = 395?
+  - ☐ 395 + 44 = 439
+  - ☐ 395 + 351 = 746
+  - ☐ 351 − 44 = 307
+  - ☑ 395 − 44 = 351
+- `06` Mit welcher Rechnung machst du die Probe zu 594 + 232 = 826?
+  - ☐ 594 − 232 = 362
+  - ☐ 826 + 232 = 1058
+  - ☐ 826 + 594 = 1420
+  - ☑ 826 − 232 = 594
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Zehnerziffer: Bei 0 bis 4 rundest du ab, bei 5 bis 9 auf. *Beispiel:* 4782 + 1319: 4782 wird zu 4800, 1319 wird zu 1300. 4800 + 1300 = 6100. *Lösungsschritt:* Runde zuerst die erste Zahl: 5513 ≈ 5500.
+
+- `01` Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 5513 + 3561 ≈ ? Lösung: **9100**. Typische Fehler: 9074 (ueberschlag-nicht-gerundet), 9000 (falsch-gerundet).
+- `02` Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 6351 + 5242 ≈ ? Lösung: **11600**. Typische Fehler: 11593 (ueberschlag-nicht-gerundet), 11500 (falsch-gerundet).
+- `03` Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 7012 + 6361 ≈ ? Lösung: **13400**. Typische Fehler: 13373 (ueberschlag-nicht-gerundet), 13300 (falsch-gerundet).
+- `04` Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 5057 + 4982 ≈ ? Lösung: **10100**. Typische Fehler: 10039 (ueberschlag-nicht-gerundet), 9900 (falsch-gerundet).
+- `05` Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 4926 + 1182 ≈ ? Lösung: **6100**. Typische Fehler: 6108 (ueberschlag-nicht-gerundet), 6000 (falsch-gerundet).
+- `06` Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 4764 + 3856 ≈ ? Lösung: **8700**. Typische Fehler: 8620 (ueberschlag-nicht-gerundet), 8500 (falsch-gerundet).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe vom Ergebnis einen Summanden ab. Kommt nicht der andere Summand heraus, ist die Rechnung falsch. *Beispiel:* 2458 + 1367 = 3925? Probe: 3925 − 1367 = 2558. Das ist nicht 2458, also ist die Rechnung falsch. *Lösungsschritt:* Rechne für die erste Rechnung die Probe: Ergebnis minus zweiter Summand.
+
+- `01` Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
+  - ☑ 6903 + 3411 = 10304
+  - ☐ 2115 + 1226 = 3341
+  - ☐ 7354 + 3762 = 11116
+  - ☐ 1295 + 1158 = 2453
+- `02` Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
+  - ☐ 6945 + 3425 = 10370
+  - ☑ 1976 + 1519 = 3595
+  - ☐ 4672 + 4516 = 9188
+  - ☐ 6322 + 3802 = 10124
+- `03` Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
+  - ☑ 5005 + 3495 = 8490
+  - ☐ 3444 + 2258 = 5702
+  - ☐ 6240 + 4923 = 11163
+  - ☐ 6266 + 4056 = 10322
+- `04` Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
+  - ☐ 7737 + 6910 = 14647
+  - ☑ 5727 + 5528 = 11155
+  - ☐ 1517 + 483 = 2000
+  - ☐ 1271 + 591 = 1862
+- `05` Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
+  - ☑ 3885 + 3260 = 7135
+  - ☐ 5996 + 4288 = 10284
+  - ☐ 7002 + 4284 = 11286
+  - ☐ 5944 + 5195 = 11139
+- `06` Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
+  - ☐ 6749 + 6013 = 12762
+  - ☐ 4323 + 1237 = 5560
+  - ☐ 5892 + 1994 = 7886
+  - ☑ 5631 + 2962 = 8493
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Hunderterziffer: Bei 0 bis 4 rundest du ab, bei 5 bis 9 auf. *Beispiel:* 23 480 + 15 720 + 4 510: 23 000 + 16 000 + 5 000 = 44 000. *Lösungsschritt:* Runde zuerst die erste Zahl: 56 979 ≈ 57 000.
+
+- `01` Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 56 979 + 24 523 + 4427 ≈ ? Lösung: **86000**. Typische Fehler: 85929 (ueberschlag-nicht-gerundet), 84000 (falsch-gerundet).
+- `02` Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 52 591 + 25 405 + 4910 ≈ ? Lösung: **83000**. Typische Fehler: 82906 (ueberschlag-nicht-gerundet), 81000 (falsch-gerundet).
+- `03` Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 63 231 + 38 513 + 8011 ≈ ? Lösung: **110000**. Typische Fehler: 109755 (ueberschlag-nicht-gerundet), 109000 (falsch-gerundet).
+- `04` Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 47 271 + 28 804 + 7589 ≈ ? Lösung: **84000**. Typische Fehler: 83664 (ueberschlag-nicht-gerundet), 82000 (falsch-gerundet).
+- `05` Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 28 638 + 46 783 + 6515 ≈ ? Lösung: **83000**. Typische Fehler: 81936 (ueberschlag-nicht-gerundet), 80000 (falsch-gerundet).
+- `06` Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 28 775 + 30 905 + 2648 ≈ ? Lösung: **63000**. Typische Fehler: 62328 (ueberschlag-nicht-gerundet), 60000 (falsch-gerundet).
+
+## 5.3.2-A5: Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gesucht ist, wie viel es zusammen ist. Dazu addierst du. *Beispiel:* 120 Kinder am Vormittag, 90 am Nachmittag: 120 + 90 = 210 Kinder. *Lösungsschritt:* Die Rechnung lautet 280 + 78. Beginne bei den Einern: 0 + 8 = 8. Schreibe 8 an die Einerstelle und rechne dann die Zehner.
+
+- `01` Mila hat 280 € gespart. Zum Geburtstag bekommt sie 78 € dazu. Wie viel Geld hat sie jetzt? Lösung: **358 €**. Typische Fehler: 202 (sach-falsche-rechnung), 258 (add-uebertrag-vergessen).
+- `02` Am Vormittag kommen 231 Kinder ins Hallenbad, am Nachmittag noch einmal 205. Wie viele Kinder waren es an diesem Tag? Lösung: **436 Kinder**. Typische Fehler: 26 (sach-falsche-rechnung).
+- `03` Ein Buch hat 271 Seiten, der zweite Band hat 160 Seiten. Wie viele Seiten haben beide Bände zusammen? Lösung: **431 Seiten**. Typische Fehler: 111 (sach-falsche-rechnung), 331 (add-uebertrag-vergessen).
+- `04` Die Klasse 5a sammelt 551 Kastanien, die Klasse 5b sammelt 385. Wie viele Kastanien sind es zusammen? Lösung: **936 Kastanien**. Typische Fehler: 166 (sach-falsche-rechnung), 836 (add-uebertrag-vergessen).
+- `05` Eine Radtour führt am ersten Tag über 66 km und am zweiten Tag über 38 km. Wie lang ist die ganze Tour? Lösung: **104 km**. Typische Fehler: 28 (sach-falsche-rechnung), 94 (add-uebertrag-vergessen).
+- `06` In einer Bücherei stehen 331 Sachbücher und 181 Romane. Wie viele Bücher sind das zusammen? Lösung: **512 Bücher**. Typische Fehler: 150 (sach-falsche-rechnung), 412 (add-uebertrag-vergessen).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies an der linken Achse ab, wie hoch jede Säule ist. Die gestrichelte Linie liegt genau zwischen zwei Hundertern. *Beispiel:* Eine Säule endet bei 300, eine andere bei 150: zusammen 300 + 150 = 450. *Lösungsschritt:* Die Säule Mo zeigt 150.
+
+- `01` Lies die Werte im Diagramm ab und rechne. 
+  _(Säulendiagramm „Besucher im Freibad“: Mo 150, Di 100, Mi 200, Do 250; Werte müssen abgelesen werden)_
+  - a) Wie viele Besucher kamen am Montag und am Donnerstag zusammen? **400 Besucher**. Typische Fehler: 100 (sach-falsche-rechnung).
+- `02` Lies die Werte im Diagramm ab und rechne. 
+  _(Säulendiagramm „Verkaufte Brötchen“: Mo 350, Di 450, Mi 400, Do 100; Werte müssen abgelesen werden)_
+  - a) Wie viele Brötchen wurden am Montag und am Dienstag zusammen verkauft? **800 Brötchen**. Typische Fehler: 100 (sach-falsche-rechnung).
+- `03` Lies die Werte im Diagramm ab und rechne. 
+  _(Säulendiagramm „Ausgeliehene Bücher“: Jan 100, Feb 400, Mär 300, Apr 450; Werte müssen abgelesen werden)_
+  - a) Wie viele Bücher wurden im März und im April zusammen ausgeliehen? **750 Bücher**. Typische Fehler: 150 (sach-falsche-rechnung).
+- `04` Ein Zoo hatte im Juni 3964 Besucher und im Juli 3415 Besucher. Wie viele Besucher kamen in beiden Monaten zusammen? Lösung: **7379 Besucher**. Typische Fehler: 549 (sach-falsche-rechnung), 6379 (add-uebertrag-vergessen).
+- `05` Ein Fahrradladen verkauft ein E-Bike für 1907 € und dazu einen Anhänger für 498 €. Wie viel kostet beides zusammen? Lösung: **2405 €**. Typische Fehler: 1409 (sach-falsche-rechnung), 1395 (add-uebertrag-vergessen).
+- `06` Ein Lkw hat 4541 kg Sand geladen. Es werden noch 2585 kg Kies dazugeladen. Wie viele Kilogramm hat er dann geladen? Lösung: **7126 kg**. Typische Fehler: 1956 (sach-falsche-rechnung), 6026 (add-uebertrag-vergessen).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* In die Spalte „Gesamt“ gehört die Summe der beiden Zahlen in derselben Zeile. *Beispiel:* Vormittag 1 200, Nachmittag 2 350: Gesamt 1 200 + 2 350 = 3 550. *Lösungsschritt:* Erste Zeile: 2832 + 1586. Beginne bei den Einern: 2 + 6 = 8. Schreibe 8 an die Einerstelle und rechne dann die Zehner.
+
+- `01` Im Zoo werden die Besucher gezählt. Ergänze die Spalte „Gesamt“. 
+
+  | Tag | Vormittag | Nachmittag | Gesamt |
+  |---|---|---|---|
+  | Freitag | 2832 | 1586 | **4418** |
+  | Samstag | 2533 | 3047 | **5580** |
+  | Sonntag | 3727 | 3281 | **7008** |
+
+- `02` Die Schule sammelt Altpapier. Ergänze die Spalte „Gesamt“ (Angaben in kg). 
+
+  | Klasse | 1. Woche | 2. Woche | Gesamt |
+  |---|---|---|---|
+  | 5a | 3480 | 2221 | **5701** |
+  | 5b | 2153 | 1484 | **3637** |
+  | 5c | 2547 | 2110 | **4657** |
+
+- `03` Ein Kino zählt die verkauften Karten. Ergänze die Spalte „Gesamt“. 
+
+  | Film | Kinder | Erwachsene | Gesamt |
+  |---|---|---|---|
+  | Film 1 | 4041 | 2696 | **6737** |
+  | Film 2 | 3021 | 2844 | **5865** |
+  | Film 3 | 4659 | 1584 | **6243** |
+
+- `04` Ein Sportverein hat 28 406 € auf dem Konto. Er nimmt beim Sommerfest 6261 € ein und bekommt 8716 € Spenden.
+  - a) Wie viel Geld ist nach dem Sommerfest auf dem Konto? **34667 €**.
+  - b) Wie viel Geld ist mit den Spenden auf dem Konto? **43383 €**. Typische Fehler: 37122 (sach-schritt-vergessen).
+- `05` Ein Schiff hat 29 029 Container geladen. Im ersten Hafen kommen 8212 Container dazu, im zweiten Hafen 5671.
+  - a) Wie viele Container sind nach dem ersten Hafen an Bord? **37241 Container**.
+  - b) Wie viele Container sind nach dem zweiten Hafen an Bord? **42912 Container**. Typische Fehler: 34700 (sach-schritt-vergessen).
+- `06` In einem Stausee sind 16 414 Kubikmeter Wasser. Im März fließen 8016 Kubikmeter dazu, im April 6283 Kubikmeter.
+  - a) Wie viel Wasser ist Ende März im See? **24430 m³**.
+  - b) Wie viel Wasser ist Ende April im See? **30713 m³**. Typische Fehler: 22697 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die gestrichelte Linie liegt bei 500. Eine Säule kann auch auf halbem Weg zwischen zwei Linien enden: Das sind dann 250 mehr. *Beispiel:* Endet eine Säule in der Mitte zwischen 2 000 und 2 500, zeigt sie 2 250. *Lösungsschritt:* Die Säule Mo zeigt 3500.
+
+- `01` Lies die Werte im Diagramm ab und rechne. 
+  _(Säulendiagramm „Besucher im Freibad“: Mo 3500, Di 4750, Mi 3250, Do 1000; Werte müssen abgelesen werden)_
+  - a) Wie viele Besucher kamen an allen vier Tagen zusammen? **12500 Besucher**. Typische Fehler: 11500 (sach-schritt-vergessen).
+  - b) Wie viele Besucher kamen am Montag mehr als am Donnerstag? **2500 Besucher**. Typische Fehler: 4500 (sach-falsche-rechnung).
+- `02` Lies die Werte im Diagramm ab und rechne. 
+  _(Säulendiagramm „Verkaufte Brötchen“: Mo 2500, Di 2000, Mi 3250, Do 3500; Werte müssen abgelesen werden)_
+  - a) Wie viele Brötchen wurden an allen vier Tagen zusammen verkauft? **11250 Brötchen**. Typische Fehler: 7750 (sach-schritt-vergessen).
+  - b) Wie viele Brötchen wurden am Mittwoch mehr verkauft als am Montag? **750 Brötchen**. Typische Fehler: 5750 (sach-falsche-rechnung).
+- `03` Lies die Werte im Diagramm ab und rechne. 
+  _(Säulendiagramm „Ausgeliehene Bücher“: Jan 3750, Feb 2250, Mär 750, Apr 4500; Werte müssen abgelesen werden)_
+  - a) Wie viele Bücher wurden in allen vier Monaten zusammen ausgeliehen? **11250 Bücher**. Typische Fehler: 6750 (sach-schritt-vergessen).
+  - b) Wie viele Bücher wurden im Januar mehr ausgeliehen als im Februar? **1500 Bücher**. Typische Fehler: 6000 (sach-falsche-rechnung).
+- `04` Eine Stadt baut eine Sporthalle. Der Rohbau kostet 449 739 €, die Technik 79 380 € und die Einrichtung 19 172 €. Die Bauzeit beträgt 28 Wochen. Wie viel kostet die Halle insgesamt? Lösung: **548291 €**. Typische Fehler: 529119 (sach-schritt-vergessen), 548319 (sach-unnoetige-angabe), 427181 (add-uebertrag-vergessen).
+- `05` Ein Verlag druckt 353 727 Schulbücher, 65 516 Arbeitshefte und 28 310 Lösungshefte. Die Druckerei hat 33 Mitarbeiter. Wie viele Hefte und Bücher werden insgesamt gedruckt? Lösung: **447553 Stück**. Typische Fehler: 419243 (sach-schritt-vergessen), 447586 (sach-unnoetige-angabe), 336543 (add-uebertrag-vergessen).
+- `06` Bei einem Stadtlauf werden 265 484 € Startgeld, 56 736 € von Sponsoren und 45 338 € Spenden eingenommen. Die Strecke ist 16 km lang. Wie viel Geld kommt insgesamt zusammen? Lösung: **367558 €**. Typische Fehler: 322220 (sach-schritt-vergessen), 367574 (sach-unnoetige-angabe), 256448 (add-uebertrag-vergessen).
 
 ## 5.3.3-S1: Ich kann die Fachbegriffe Minuend, Subtrahend und Differenz verwenden.
 
@@ -339,6 +871,273 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nicht jede Zahl im Text wird gebrauch
 - `04` Ein Wasserspeicher fasst 450 799 Liter. Im Juli werden 47 206 Liter entnommen, im August 132 360 Liter. Der Speicher ist 78 Jahre alt. Wie viele Liter sind Ende August noch im Speicher, wenn er Anfang Juli voll war? Lösung: **271233 Liter**. Typische Fehler: 403593 (sach-schritt-vergessen), 271155 (sach-unnoetige-angabe), 535953 (sub-klammerfehler).
 - `05` Eine Stadt hat 571 348 € für ihre Spielplätze eingeplant. Für neue Geräte zahlt sie 189 149 €, für die Bepflanzung 160 060 €. In der Stadt gibt es 32 Spielplätze. Wie viel Geld ist noch übrig? Lösung: **222139 €**. Typische Fehler: 382199 (sach-schritt-vergessen), 222107 (sach-unnoetige-angabe), 542259 (sub-klammerfehler).
 - `06` Eine Druckerei soll 558 029 Hefte drucken. Am Montag druckt sie 96 737 Hefte, am Dienstag 155 053. Jedes Heft hat 36 Seiten. Wie viele Hefte fehlen noch? Lösung: **306239 Hefte**. Typische Fehler: 461292 (sach-schritt-vergessen), 306203 (sach-unnoetige-angabe), 616345 (sub-klammerfehler).
+
+## 5.3.4-B1: Ich kann Rechenausdrücke mit Klammern berechnen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was in der Klammer steht, wird zuerst berechnet. *Beispiel:* 50 − (20 + 10): Die Klammer ergibt 30, dann 50 − 30 = 20. *Lösungsschritt:* Berechne zuerst die Klammer: 13 + 14 = 27.
+
+- `01` Berechne: 89 − (13 + 14) Lösung: **62**. Typische Fehler: 90 (klammer-ignoriert).
+- `02` Berechne: 72 − (27 − 9) Lösung: **54**. Typische Fehler: 36 (klammer-ignoriert).
+- `03` Berechne: 84 − (13 + 10) Lösung: **61**. Typische Fehler: 81 (klammer-ignoriert).
+- `04` Berechne: 50 − (47 − 29) Lösung: **32**.
+- `05` Berechne: 94 − (17 + 27) Lösung: **50**. Typische Fehler: 104 (klammer-ignoriert).
+- `06` Berechne: 63 − (48 − 24) Lösung: **39**.
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was in der Klammer steht, wird zuerst berechnet. *Beispiel:* 50 − (20 + 10): Die Klammer ergibt 30, dann 50 − 30 = 20. *Lösungsschritt:* Berechne zuerst die Klammer: 405 + 164 = 569.
+
+- `01` Berechne: 821 − (405 + 164) Lösung: **252**. Typische Fehler: 580 (klammer-ignoriert).
+- `02` Berechne: 986 − (331 − 102) Lösung: **757**. Typische Fehler: 553 (klammer-ignoriert).
+- `03` Berechne: 374 + (474 − 328) Lösung: **520**. Typische Fehler: 1176 (klammer-ignoriert).
+- `04` Berechne: 638 − (121 + 74) Lösung: **443**. Typische Fehler: 591 (klammer-ignoriert).
+- `05` Berechne: 530 − (411 − 172) Lösung: **291**.
+- `06` Berechne: 318 + (258 − 77) Lösung: **499**. Typische Fehler: 653 (klammer-ignoriert).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst beide Klammern einzeln. Verrechne danach die beiden Ergebnisse. *Beispiel:* (90 − 30) − (20 + 10): 60 − 30 = 30. *Lösungsschritt:* Die erste Klammer: 822 + 303 = 1125.
+
+- `01` Berechne: (822 + 303) − (167 − 36) Lösung: **994**. Typische Fehler: 922 (klammer-ignoriert).
+- `02` Berechne: (807 − 303) − (87 + 50) Lösung: **367**. Typische Fehler: 467 (klammer-ignoriert).
+- `03` Berechne für jede Zeile den Wert von a − (b + c). 
+
+  | a | b | c | a − (b + c) |
+  |---|---|---|---|
+  | 761 | 111 | 131 | **519** |
+  | 929 | 170 | 80 | **679** |
+  | 648 | 219 | 74 | **355** |
+
+- `04` Berechne: (752 − 327) − (100 + 68) Lösung: **257**. Typische Fehler: 393 (klammer-ignoriert).
+- `05` Berechne: (715 + 355) − (178 − 142) Lösung: **1034**. Typische Fehler: 750 (klammer-ignoriert).
+- `06` Berechne für jede Zeile den Wert von a − (b + c). 
+
+  | a | b | c | a − (b + c) |
+  |---|---|---|---|
+  | 791 | 196 | 130 | **465** |
+  | 898 | 248 | 83 | **567** |
+  | 741 | 195 | 138 | **408** |
+
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei Klammern in Klammern rechnest du von innen nach außen: erst die runde Klammer, dann die eckige. *Beispiel:* 100 − [50 − (20 + 10)]: runde Klammer 30, eckige Klammer 50 − 30 = 20, dann 100 − 20 = 80. *Lösungsschritt:* Berechne zuerst die runde Klammer: 618 − 362 = 256.
+
+- `01` Berechne: 6984 − [4749 + (618 − 362)] Lösung: **1979**. Typische Fehler: 2491 (klammer-ignoriert).
+- `02` Berechne: 6101 − [4795 − (832 + 246)] Lösung: **2384**. Typische Fehler: 720 (klammer-ignoriert).
+- `03` Berechne: 6185 − [4144 + (774 − 369)] Lösung: **1636**. Typische Fehler: 2446 (klammer-ignoriert).
+- `04` Berechne: 4111 − [4589 − (726 + 232)] Lösung: **480**.
+- `05` Berechne: 4583 − [3639 + (560 − 557)] Lösung: **941**. Typische Fehler: 947 (klammer-ignoriert).
+- `06` Berechne: 3160 − [3326 − (622 + 138)] Lösung: **594**.
+
+## 5.3.4-B2: Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe oder Differenz, von der im Text die Rede ist, gehört in die Klammer. *Beispiel:* „Subtrahiere von 80 die Summe von 20 und 10“: Die Summe ist (20 + 10), also 80 − (20 + 10). *Lösungsschritt:* Welche zwei Zahlen werden zuerst zusammengefasst? Es sind 24 und 13.
+
+- `01` Welcher Rechenausdruck passt? „Subtrahiere von 93 die Summe der Zahlen 24 und 13.“
+  - ☑ 93 − (24 + 13)
+  - ☐ 93 + (24 − 13)
+  - ☐ 93 − (24 − 13)
+  - ☐ (93 − 24) + 13
+- `02` Welcher Rechenausdruck passt? „Subtrahiere von 75 die Differenz der Zahlen 39 und 14.“
+  - ☐ (75 − 39) + 14
+  - ☐ 75 − (39 + 14)
+  - ☐ 75 + (39 − 14)
+  - ☑ 75 − (39 − 14)
+- `03` Welcher Rechenausdruck passt? „Addiere zu 85 die Differenz der Zahlen 23 und 16.“
+  - ☐ 85 − (23 − 16)
+  - ☐ (85 − 23) + 16
+  - ☐ 85 − (23 + 16)
+  - ☑ 85 + (23 − 16)
+- `04` Welcher Rechenausdruck passt? „Subtrahiere von 95 die Summe der Zahlen 31 und 7.“
+  - ☐ (95 − 31) + 7
+  - ☐ 95 + (31 − 7)
+  - ☑ 95 − (31 + 7)
+  - ☐ 95 − (31 − 7)
+- `05` Welcher Rechenausdruck passt? „Subtrahiere von 57 die Differenz der Zahlen 29 und 9.“
+  - ☐ (57 − 29) + 9
+  - ☐ 57 − (29 + 9)
+  - ☑ 57 − (29 − 9)
+  - ☐ 57 + (29 − 9)
+- `06` Welcher Rechenausdruck passt? „Addiere zu 71 die Differenz der Zahlen 30 und 8.“
+  - ☐ 71 − (30 − 8)
+  - ☑ 71 + (30 − 8)
+  - ☐ 71 − (30 + 8)
+  - ☐ (71 − 30) + 8
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe oder Differenz, von der im Text die Rede ist, gehört in die Klammer und wird zuerst berechnet. *Beispiel:* „Subtrahiere von 80 die Summe von 20 und 10“: 80 − (20 + 10) = 80 − 30 = 50. *Lösungsschritt:* Der Rechenausdruck lautet 838 − (163 + 36).
+
+- `01` Subtrahiere von 838 die Summe der Zahlen 163 und 36. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **639**. Typische Fehler: 711 (klammer-ignoriert).
+- `02` Subtrahiere von 429 die Differenz der Zahlen 122 und 107. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **414**. Typische Fehler: 200 (klammer-ignoriert).
+- `03` Addiere zu 438 die Differenz der Zahlen 170 und 83. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **525**. Typische Fehler: 691 (klammer-ignoriert).
+- `04` Subtrahiere von 435 die Summe der Zahlen 210 und 39. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **186**. Typische Fehler: 264 (klammer-ignoriert).
+- `05` Subtrahiere von 871 die Differenz der Zahlen 191 und 46. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **726**. Typische Fehler: 634 (klammer-ignoriert).
+- `06` Addiere zu 693 die Differenz der Zahlen 200 und 74. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **819**. Typische Fehler: 967 (klammer-ignoriert).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Klammer fasst zusammen, was insgesamt weggeht. Sie wird zuerst berechnet. *Beispiel:* 50 € gespart, 12 € und 8 € ausgegeben: 50 − (12 + 8) = 50 − 20 = 30 €. *Lösungsschritt:* Die Klammer: 37 + 21 = 58.
+
+- `01` Lena hat 173 € gespart. Sie kauft ein Buch für 37 € und ein Spiel für 21 €. Zur Aufgabe passt der Rechenausdruck 173 − (37 + 21).
+  - a) Wie viel kosten Buch und Spiel zusammen? **58 €**.
+  - b) Wie viel Geld hat Lena danach noch? **115 €**. Typische Fehler: 157 (klammer-ignoriert), 136 (sach-schritt-vergessen).
+- `02` In einem Kinosaal gibt es 142 Plätze. Die Klasse 5a reserviert 22 Plätze, die Klasse 5b reserviert 25 Plätze. Zur Aufgabe passt der Rechenausdruck 142 − (22 + 25).
+  - a) Wie viele Plätze sind reserviert? **47 Plätze**.
+  - b) Wie viele Plätze sind danach noch frei? **95 Plätze**. Typische Fehler: 145 (klammer-ignoriert), 120 (sach-schritt-vergessen).
+- `03` Ein Wanderweg ist 149 km lang. Die Gruppe schafft am ersten Tag 31 km und am zweiten Tag 27 km. Zur Aufgabe passt der Rechenausdruck 149 − (31 + 27).
+  - a) Wie viele Kilometer hat die Gruppe an beiden Tagen geschafft? **58 km**.
+  - b) Wie viele Kilometer liegen noch vor ihr? **91 km**. Typische Fehler: 145 (klammer-ignoriert), 118 (sach-schritt-vergessen).
+- `04` Lena hat 182 € gespart. Sie kauft ein Buch für 19 € und ein Spiel für 10 €. Zur Aufgabe passt der Rechenausdruck 182 − (19 + 10).
+  - a) Wie viel kosten Buch und Spiel zusammen? **29 €**.
+  - b) Wie viel Geld hat Lena danach noch? **153 €**. Typische Fehler: 173 (klammer-ignoriert), 163 (sach-schritt-vergessen).
+- `05` In einem Kinosaal gibt es 154 Plätze. Die Klasse 5a reserviert 17 Plätze, die Klasse 5b reserviert 9 Plätze. Zur Aufgabe passt der Rechenausdruck 154 − (17 + 9).
+  - a) Wie viele Plätze sind reserviert? **26 Plätze**.
+  - b) Wie viele Plätze sind danach noch frei? **128 Plätze**. Typische Fehler: 146 (klammer-ignoriert), 137 (sach-schritt-vergessen).
+- `06` Ein Wanderweg ist 93 km lang. Die Gruppe schafft am ersten Tag 29 km und am zweiten Tag 10 km. Zur Aufgabe passt der Rechenausdruck 93 − (29 + 10).
+  - a) Wie viele Kilometer hat die Gruppe an beiden Tagen geschafft? **39 km**.
+  - b) Wie viele Kilometer liegen noch vor ihr? **54 km**. Typische Fehler: 74 (klammer-ignoriert), 64 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Differenz bekommt eine eigene Klammer. Berechne beide Klammern und addiere die Ergebnisse. *Beispiel:* Differenz von 90 und 60 ist 30, Differenz von 50 und 30 ist 20: (90 − 60) + (50 − 30) = 50. *Lösungsschritt:* Der Rechenausdruck lautet (627 − 134) + (566 − 199).
+
+- `01` Addiere zur Differenz der Zahlen 627 und 134 die Differenz der Zahlen 566 und 199. Schreibe den Rechenausdruck mit Klammern auf und berechne ihn. Lösung: **860**. Typische Fehler: 1258 (klammer-ignoriert), 493 (sach-schritt-vergessen).
+- `02` Ein Bus hat 49 Plätze. An der ersten Haltestelle steigen 12 Personen ein. An der zweiten steigen 17 Personen ein und 6 aus. Wie viele Plätze sind danach noch frei? Lösung: **26 Plätze**. Typische Fehler: 14 (klammer-ignoriert), 37 (sach-schritt-vergessen).
+- `03` Addiere zur Differenz der Zahlen 862 und 350 die Differenz der Zahlen 488 und 209. Schreibe den Rechenausdruck mit Klammern auf und berechne ihn. Lösung: **791**. Typische Fehler: 1209 (klammer-ignoriert), 512 (sach-schritt-vergessen).
+- `04` In einer Kiste sind 59 Äpfel. Am Montag werden 15 Äpfel gegessen. Am Dienstag werden 14 gegessen, aber 4 neue dazugelegt. Wie viele Äpfel sind danach in der Kiste? Lösung: **34 Äpfel**. Typische Fehler: 26 (klammer-ignoriert), 44 (sach-schritt-vergessen).
+- `05` Addiere zur Differenz der Zahlen 852 und 270 die Differenz der Zahlen 377 und 174. Schreibe den Rechenausdruck mit Klammern auf und berechne ihn. Lösung: **785**. Typische Fehler: 1133 (klammer-ignoriert), 582 (sach-schritt-vergessen).
+- `06` Ein Parkplatz hat 55 Stellplätze. Am Morgen kommen 13 Autos. Am Mittag kommen 18 Autos dazu und 7 fahren weg. Wie viele Stellplätze sind danach noch frei? Lösung: **31 Stellplätze**. Typische Fehler: 17 (klammer-ignoriert), 42 (sach-schritt-vergessen).
+
+## 5.3.5-R1: Ich kann das Vertauschungsgesetz und das Verbindungsgesetz erkennen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vertauschungsgesetz: Beim Addieren darf man die Summanden vertauschen. Das Ergebnis bleibt gleich. *Beispiel:* 14 + 23 = 23 + 14. *Lösungsschritt:* Rechts steht schon 68. Es fehlt der andere Summand von der linken Seite.
+
+- `01` 63 + 68 = 68 + ▢ Lösung: a = **63**
+- `02` 33 + 34 = 34 + ▢ Lösung: a = **33**
+- `03` 16 + 14 = 14 + ▢ Lösung: a = **16**
+- `04` 45 + 30 = 30 + ▢ Lösung: a = **45**
+- `05` 33 + 46 = 46 + ▢ Lösung: a = **33**
+- `06` 28 + 52 = 52 + ▢ Lösung: a = **28**
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Verbindungsgesetz: Beim Addieren darf man die Klammer versetzen. Die Zahlen bleiben in derselben Reihenfolge. *Beispiel:* (14 + 23) + 7 = 14 + (23 + 7). *Lösungsschritt:* Die Reihenfolge der drei Zahlen bleibt gleich. Welche Zahl steht links in der Mitte?
+
+- `01` (67 + 41) + 32 = 67 + (▢ + 32) Lösung: a = **41**
+- `02` Welches Rechengesetz zeigt diese Gleichung? 62 + 40 = 40 + 62
+  - ☐ Verbindungsgesetz
+  - ☐ kein Gesetz, die Gleichung ist falsch
+  - ☑ Vertauschungsgesetz
+- `03` (48 + 22) + 45 = 48 + (▢ + 45) Lösung: a = **22**
+- `04` Welches Rechengesetz zeigt diese Gleichung? (56 + 12) + 26 = 56 + (12 + 26)
+  - ☐ Vertauschungsgesetz
+  - ☐ kein Gesetz, die Gleichung ist falsch
+  - ☑ Verbindungsgesetz
+- `05` (41 + 39) + 36 = 41 + (▢ + 36) Lösung: a = **39**
+- `06` Welches Rechengesetz zeigt diese Gleichung? 16 − 12 = 12 − 16
+  - ☐ Vertauschungsgesetz
+  - ☑ kein Gesetz, die Gleichung ist falsch
+  - ☐ Verbindungsgesetz
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vertauschungsgesetz: Summanden darf man vertauschen. Verbindungsgesetz: Beim Addieren darf man Klammern beliebig setzen. Für die Subtraktion gilt beides nicht. *Beispiel:* 17 + 25 = 25 + 17 (Vertauschungsgesetz). (17 + 25) + 5 = 17 + (25 + 5) (Verbindungsgesetz). *Lösungsschritt:* Schau zuerst: Wurden nur Zahlen vertauscht oder wurde die Klammer versetzt?
+
+- `01` Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 154 + 37 = 37 + 154 → Vertauschungsgesetz, (154 + 37) + 58 = 154 + (37 + 58) → Verbindungsgesetz, (154 − 37) − 58 = 154 − (37 − 58) → kein Gesetz, die Gleichung ist falsch
+- `02` Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 410 + 88 = 88 + 410 → Vertauschungsgesetz, (410 + 88) + 31 = 410 + (88 + 31) → Verbindungsgesetz, (410 − 88) − 31 = 410 − (88 − 31) → kein Gesetz, die Gleichung ist falsch
+- `03` Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 200 + 73 = 73 + 200 → Vertauschungsgesetz, (200 + 73) + 69 = 200 + (73 + 69) → Verbindungsgesetz, (200 − 73) − 69 = 200 − (73 − 69) → kein Gesetz, die Gleichung ist falsch
+- `04` Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 128 + 65 = 65 + 128 → Vertauschungsgesetz, (128 + 65) + 38 = 128 + (65 + 38) → Verbindungsgesetz, (128 − 65) − 38 = 128 − (65 − 38) → kein Gesetz, die Gleichung ist falsch
+- `05` Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 169 + 93 = 93 + 169 → Vertauschungsgesetz, (169 + 93) + 62 = 169 + (93 + 62) → Verbindungsgesetz, (169 − 93) − 62 = 169 − (93 − 62) → kein Gesetz, die Gleichung ist falsch
+- `06` Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 416 + 39 = 39 + 416 → Vertauschungsgesetz, (416 + 39) + 58 = 416 + (39 + 58) → Verbindungsgesetz, (416 − 39) − 58 = 416 − (39 − 58) → kein Gesetz, die Gleichung ist falsch
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vertauschungsgesetz: Summanden darf man vertauschen. Verbindungsgesetz: Beim Addieren darf man Klammern beliebig setzen. Für die Subtraktion gilt beides nicht. *Beispiel:* 17 + 25 = 25 + 17 (Vertauschungsgesetz). (17 + 25) + 5 = 17 + (25 + 5) (Verbindungsgesetz). *Lösungsschritt:* Rechne bei der ersten Gleichung beide Seiten aus und vergleiche.
+
+- `01` Welche Gleichungen stimmen? Es können mehrere sein.
+  - ☐ 391 − 219 = 219 − 391
+  - ☐ 391 − (219 + 115) = (391 − 219) + 115
+  - ☑ 391 + 219 = 219 + 391
+  - ☑ (391 + 219) + 115 = 391 + (219 + 115)
+- `02` Welche Gleichungen stimmen? Es können mehrere sein.
+  - ☐ 617 − (269 + 101) = (617 − 269) + 101
+  - ☐ 617 − 269 = 269 − 617
+  - ☑ (617 + 269) + 101 = 617 + (269 + 101)
+  - ☑ 617 + 269 + 101 = 101 + 617 + 269
+- `03` Welche Gleichungen stimmen? Es können mehrere sein.
+  - ☐ 731 − (233 + 61) = (731 − 233) + 61
+  - ☑ (731 + 233) + 61 = 731 + (233 + 61)
+  - ☑ 731 + 233 = 233 + 731
+  - ☐ (731 − 233) − 61 = 731 − (233 − 61)
+- `04` Welche Gleichungen stimmen? Es können mehrere sein.
+  - ☐ 737 − (134 + 43) = (737 − 134) + 43
+  - ☑ 737 + 134 = 134 + 737
+  - ☑ 737 + 134 + 43 = 43 + 737 + 134
+  - ☑ (737 + 134) + 43 = 737 + (134 + 43)
+- `05` Welche Gleichungen stimmen? Es können mehrere sein.
+  - ☑ 660 + 233 + 38 = 38 + 660 + 233
+  - ☐ 660 − 233 = 233 − 660
+  - ☐ 660 − (233 + 38) = (660 − 233) + 38
+  - ☐ (660 − 233) − 38 = 660 − (233 − 38)
+- `06` Welche Gleichungen stimmen? Es können mehrere sein.
+  - ☐ 648 − (236 + 68) = (648 − 236) + 68
+  - ☐ (648 − 236) − 68 = 648 − (236 − 68)
+  - ☑ 648 + 236 + 68 = 68 + 648 + 236
+  - ☐ 648 − 236 = 236 − 648
+
+## 5.3.5-R2: Ich kann mit den Rechengesetzen vorteilhaft rechnen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 38 + 12 = 50.
+
+- `01` Rechne vorteilhaft: 38 + 39 + 12 Lösung: **89**. Typische Fehler: 77 (sach-schritt-vergessen), 79 (add-uebertrag-vergessen).
+- `02` Rechne vorteilhaft: 34 + 22 + 16 Lösung: **72**. Typische Fehler: 56 (sach-schritt-vergessen), 62 (add-uebertrag-vergessen).
+- `03` Rechne vorteilhaft: 19 + 29 + 21 Lösung: **69**. Typische Fehler: 48 (sach-schritt-vergessen), 59 (add-uebertrag-vergessen).
+- `04` Rechne vorteilhaft: 28 + 31 + 2 Lösung: **61**. Typische Fehler: 59 (sach-schritt-vergessen), 51 (add-uebertrag-vergessen).
+- `05` Rechne vorteilhaft: 11 + 18 + 9 Lösung: **38**. Typische Fehler: 29 (sach-schritt-vergessen), 28 (add-uebertrag-vergessen).
+- `06` Rechne vorteilhaft: 48 + 35 + 12 Lösung: **95**. Typische Fehler: 83 (sach-schritt-vergessen), 85 (add-uebertrag-vergessen).
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 186 + 114 = 300.
+
+- `01` Rechne vorteilhaft: 186 + 25 + 114 Lösung: **325**. Typische Fehler: 211 (sach-schritt-vergessen), 215 (add-uebertrag-vergessen).
+- `02` Rechne vorteilhaft: 153 + 54 + 147 Lösung: **354**. Typische Fehler: 207 (sach-schritt-vergessen), 244 (add-uebertrag-vergessen).
+- `03` Rechne vorteilhaft: 233 + 49 + 167 Lösung: **449**. Typische Fehler: 282 (sach-schritt-vergessen), 339 (add-uebertrag-vergessen).
+- `04` Rechne vorteilhaft: 384 + 38 + 216 Lösung: **638**. Typische Fehler: 422 (sach-schritt-vergessen), 528 (add-uebertrag-vergessen).
+- `05` Rechne vorteilhaft: 162 + 76 + 238 Lösung: **476**. Typische Fehler: 238 (sach-schritt-vergessen), 366 (add-uebertrag-vergessen).
+- `06` Rechne vorteilhaft: 159 + 33 + 141 Lösung: **333**. Typische Fehler: 192 (sach-schritt-vergessen), 223 (add-uebertrag-vergessen).
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 340 + 260 = 600 und 139 + 61 = 200.
+
+- `01` Rechne vorteilhaft: 340 + 139 + 260 + 61 Lösung: **800**. Typische Fehler: 739 (sach-schritt-vergessen), 690 (add-uebertrag-vergessen).
+- `02` Rechne vorteilhaft: 460 + 129 + 140 + 171 Lösung: **900**. Typische Fehler: 729 (sach-schritt-vergessen), 790 (add-uebertrag-vergessen).
+- `03` Rechne vorteilhaft: 195 + 129 + 5 + 71 Lösung: **400**. Typische Fehler: 329 (sach-schritt-vergessen), 280 (add-uebertrag-vergessen).
+- `04` Rechne vorteilhaft: 345 + 371 + 255 + 129 Lösung: **1100**. Typische Fehler: 971 (sach-schritt-vergessen), 980 (add-uebertrag-vergessen).
+- `05` Rechne vorteilhaft: 435 + 116 + 265 + 184 Lösung: **1000**. Typische Fehler: 816 (sach-schritt-vergessen), 880 (add-uebertrag-vergessen).
+- `06` Rechne vorteilhaft: 160 + 333 + 140 + 167 Lösung: **800**. Typische Fehler: 633 (sach-schritt-vergessen), 690 (add-uebertrag-vergessen).
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 2300 + 2700 = 5000 und 3200 + 1800 = 5000.
+
+- `01` Rechne vorteilhaft: 2300 + 3200 + 2700 + 920 + 1800 Lösung: **10920**. Typische Fehler: 9120 (sach-schritt-vergessen), 8920 (add-uebertrag-vergessen).
+- `02` Rechne vorteilhaft: 8967 − 2800 − 200 Lösung: **5967**. Typische Fehler: 6367 (sub-klammerfehler), 6167 (sach-schritt-vergessen).
+- `03` Rechne vorteilhaft: 3200 + 2675 + 2800 + 170 + 325 Lösung: **9170**. Typische Fehler: 8845 (sach-schritt-vergessen), 7060 (add-uebertrag-vergessen).
+- `04` Rechne vorteilhaft: 7146 − 2200 − 800 Lösung: **4146**. Typische Fehler: 5746 (sub-klammerfehler), 4946 (sach-schritt-vergessen).
+- `05` Rechne vorteilhaft: 4450 + 3350 + 550 + 720 + 1650 Lösung: **10720**. Typische Fehler: 9070 (sach-schritt-vergessen), 8520 (add-uebertrag-vergessen).
+- `06` Rechne vorteilhaft: 7995 − 2200 − 1800 Lösung: **3995**. Typische Fehler: 7595 (sub-klammerfehler), 5795 (sach-schritt-vergessen).
 
 ## 5.4.5-D1: Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden.
 

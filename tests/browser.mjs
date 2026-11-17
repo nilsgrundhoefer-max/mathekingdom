@@ -34,7 +34,15 @@ async function antworte(seite, richtig = true) {
   const auf = pool.aufgaben.find((a) => a.id === id);
   assert.ok(auf, `Aufgabe nicht gefunden: ${id}`);
   const wert = (l) => String(richtig ? l : l + 1);
-  if (auf.format === 'zahl') await seite.fill('input[name=zahl]', wert(auf.loesung));
+  if (auf.format === 'zahl' || (auf.format === 'zahlenstrahl' && auf.eingabe === 'ablesen')) await seite.fill('input[name=zahl]', wert(auf.loesung));
+  else if (auf.format === 'zahlenstrahl') {
+    const st = auf.strahl, daneben = auf.loesung + st.schritt <= st.bis ? auf.loesung + st.schritt : auf.loesung - st.schritt;
+    await seite.click(`svg.zahlenstrahl [data-wert="${richtig ? auf.loesung : daneben}"]`);
+  } else if (auf.format === 'tabelle') {
+    for (const [n, l] of Object.entries(auf.luecken)) await seite.fill(`input[name="luecke-${n}"]`, wert(l.loesung));
+  } else if (auf.format === 'diagramm') {
+    for (const [i, t] of auf.teile.entries()) await seite.fill(`input[name="teil-${i}"]`, wert(t.loesung));
+  }
   else if (auf.format === 'auswahl') {
     for (const o of auf.optionen) await seite.locator('label.option', { hasText: o.text }).locator('input').setChecked(o.richtig === richtig).catch(() => {});
   } else if (auf.format === 'zuordnen') {
@@ -104,6 +112,50 @@ async function antworte(seite, richtig = true) {
   await foto(seite, 'werkstatt');
   await seite.click('#spiel').catch(() => {});
   await foto(seite, 'spiel');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 1b. Neue Formate: Zahlenstrahl, Tabelle, Diagramm ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.fill('#code', '5a-form');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.waitForSelector('svg.metro');
+  assert.equal(await seite.locator('.station:not(.leer)').count(), 5); // alle fünf Stationen haben jetzt Aufgaben
+  // Übt an einer Station auf einer Linie ein Lernziel, bis eine Aufgabe des gesuchten Formats kommt, und löst sie.
+  const suche = async (station, linie, lernzielNr, passt, name) => {
+    for (let i = 0; i < 8; i++) {
+      await seite.click(`.station[aria-label="Station ${station}"] .kapsel`);
+      await seite.click(`.linienknopf[aria-label="Auf Linie ${linie} umsteigen"]`).catch(() => {});
+      await seite.locator('.lernziele li button').nth(lernzielNr).click();
+      const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
+      const treffer = passt(pool.aufgaben.find((a) => a.id === id));
+      if (treffer) {
+        await foto(seite, `format-${name}`);
+        await antworte(seite, false);
+        await seite.waitForSelector('.hinweis');
+      }
+      await antworte(seite, true);
+      await seite.waitForSelector('.ergebnis.richtig');
+      if (treffer) await foto(seite, `format-${name}-geloest`);
+      await seite.click('.ergebnis button:has-text("Zur Metrokarte")');
+      await seite.waitForSelector('svg.metro');
+      if (treffer) return;
+    }
+    assert.fail(`Keine Aufgabe im Format ${name} gefunden`);
+  };
+  await suche('Kopfrechnen', 'F', 0, (a) => a.format === 'zahlenstrahl' && a.eingabe === 'markieren', 'zahlenstrahl-antippen');
+  await suche('Kopfrechnen', 'G', 1, (a) => a.format === 'zahlenstrahl' && a.eingabe === 'ablesen', 'zahlenstrahl-ablesen');
+  await suche('Kopfrechnen', 'M', 0, (a) => a.format === 'tabelle', 'tabelle');
+  await suche('Addieren', 'G', 4, (a) => a.format === 'diagramm', 'diagramm');
+  await suche('Addieren', 'E', 4, (a) => a.format === 'diagramm' && a.teile.length === 2, 'diagramm-zwei-fragen');
+  await suche('Addieren', 'M', 4, (a) => a.format === 'tabelle', 'tabelle-gesamt');
   assert.deepEqual(fehler, []);
   await seite.close();
 }

@@ -20,8 +20,18 @@ const roh = [
     uk('Römische Zahlzeichen', ['Ich kann römische Zahlzeichen verwenden.'], true),
   ]],
   ['Addieren und Subtrahieren', [
-    uk('Kopfrechnen', ['Ich kann im Kopf addieren und subtrahieren und dabei geschickt vorgehen.']),
-    uk('Addieren', ['Ich kann Zahlen addieren.']),
+    uk('Kopfrechnen', {
+      K1: 'Ich kann im Kopf addieren.',
+      K2: 'Ich kann im Kopf subtrahieren.',
+      K3: 'Ich kann beim Kopfrechnen geschickt vorgehen.',
+    }),
+    uk('Addieren', {
+      A1: 'Ich kann die Fachbegriffe Summand und Summe verwenden.',
+      A2: 'Ich kann schriftlich addieren, auch mit Übertrag.',
+      A3: 'Ich kann mehrere Zahlen schriftlich addieren.',
+      A4: 'Ich kann ein Ergebnis mit Überschlag und Probe prüfen.',
+      A5: 'Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen.',
+    }),
     uk('Subtrahieren', {
       S1: 'Ich kann die Fachbegriffe Minuend, Subtrahend und Differenz verwenden.',
       S2: 'Ich kann schriftlich subtrahieren, auch mit Übertrag.',
@@ -29,8 +39,14 @@ const roh = [
       S4: 'Ich kann ein Ergebnis mit Überschlag und Probe prüfen.',
       S5: 'Ich kann Sachaufgaben zur Subtraktion lösen.',
     }),
-    uk('Klammern', ['Ich kann mit Klammern umgehen.']),
-    uk('Rechengesetze', ['Ich kann Rechengesetze anwenden.']),
+    uk('Klammern', {
+      B1: 'Ich kann Rechenausdrücke mit Klammern berechnen.',
+      B2: 'Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden.',
+    }),
+    uk('Rechengesetze', {
+      R1: 'Ich kann das Vertauschungsgesetz und das Verbindungsgesetz erkennen.',
+      R2: 'Ich kann mit den Rechengesetzen vorteilhaft rechnen.',
+    }),
   ]],
   ['Multiplizieren und Dividieren', [
     uk('Kopfrechnen', ['Ich kann im Kopf multiplizieren und dividieren und dabei geschickt vorgehen.']),

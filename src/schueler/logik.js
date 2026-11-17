@@ -84,16 +84,16 @@ function zusammen(teile) {
 }
 export function pruefeAntwort(aufgabe, eingabe) {
   switch (aufgabe.format) {
-    case 'zahl': return pruefeZahl(aufgabe, eingabe);
+    case 'zahl': case 'zahlenstrahl': return pruefeZahl(aufgabe, eingabe);
     case 'auswahl': {
       const gewaehlt = new Set(eingabe ?? []);
       const richtig = aufgabe.optionen.every((o) => gewaehlt.has(o.text) === o.richtig);
       const falsche = aufgabe.optionen.find((o) => gewaehlt.has(o.text) && !o.richtig && o.fehlvorstellung);
       return { richtig, fehlvorstellung: richtig ? null : falsche?.fehlvorstellung ?? null };
     }
-    case 'luecken': return zusammen(Object.entries(aufgabe.luecken).map(([name, l]) => pruefeZahl(l, eingabe?.[name])));
+    case 'luecken': case 'tabelle': return zusammen(Object.entries(aufgabe.luecken).map(([name, l]) => pruefeZahl(l, eingabe?.[name])));
     case 'zuordnen': return { richtig: aufgabe.paare.every((p) => eingabe?.[p.links] === p.rechts), fehlvorstellung: null };
-    case 'sachaufgabe': return zusammen(aufgabe.teile.map((t, i) => pruefeZahl(t, eingabe?.[i])));
+    case 'sachaufgabe': case 'diagramm': return zusammen(aufgabe.teile.map((t, i) => pruefeZahl(t, eingabe?.[i])));
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
 }

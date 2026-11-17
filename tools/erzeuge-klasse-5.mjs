@@ -4,6 +4,7 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { kapitel } from './jahresplan-klasse-5.mjs';
+import { kapitel53, fehlvorstellungen53 } from './kapitel-5-3.mjs';
 
 const PRO_GRUPPE = 6; // Aufgaben je Lernziel und Niveaustufe
 
@@ -167,7 +168,7 @@ const gruppe = (lernziel, niveau, erzeuge) => {
   while (i < PRO_GRUPPE) {
     if (++versuche > 1000) throw new Error(`Zu wenige verschiedene Aufgaben für ${lernziel} ${niveau}`);
     const a = erzeuge(i);
-    const schluessel = a.text + JSON.stringify(a.optionen ?? '');
+    const schluessel = a.text + JSON.stringify(a.optionen ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare].filter(Boolean));
     if (texte.has(schluessel)) continue;
     texte.add(schluessel);
     aufgaben.push({ id: `${lernziel}-${niveau}-${String(++i).padStart(2, '0')}`, lernziel, niveau, afb: a.afb ?? afbVon(lernziel, niveau), ...a });
@@ -180,9 +181,10 @@ const NIVEAUS = ['F', 'G', 'M', 'E'];
 function afbVon(lernziel, niveau) {
   const kurz = lernziel.split('-').pop();
   const schwer = niveau === 'M' || niveau === 'E';
-  if (['S2', 'S3', 'D2', 'D3'].includes(kurz)) return 1;          // schriftliches Rechnen
-  if (['S1', 'D1', 'S4', 'D4', 'D5'].includes(kurz)) return schwer ? 2 : 1; // Fachbegriffe, Überschlag und Probe, Rest deuten
-  return niveau === 'E' ? 3 : 2;                                   // Sachaufgaben
+  if (['S2', 'S3', 'D2', 'D3', 'K1', 'K2', 'A2', 'A3'].includes(kurz)) return 1;            // Rechnen nach Verfahren, im Kopf oder schriftlich
+  if (kurz === 'B1') return niveau === 'E' ? 2 : 1;                                         // Klammern berechnen
+  if (['S1', 'D1', 'S4', 'D4', 'D5', 'K3', 'A1', 'A4', 'R1', 'R2'].includes(kurz)) return schwer ? 2 : 1; // Fachbegriffe, Überschlag und Probe, Rest deuten, geschickt rechnen, Rechengesetze
+  return niveau === 'E' ? 3 : 2;                                                            // Sachaufgaben, Rechenausdrücke aufstellen
 }
 
 // =====================================================================
@@ -614,6 +616,13 @@ gruppe(D('D6'), 'E', (i) => {
 });
 
 // ---------- Schreiben ----------
+// =====================================================================
+// Übrige Stationen von Kapitel 3 (eigene Datei, eigene Saat: Die Aufgaben oben bleiben dadurch unverändert.)
+// =====================================================================
+saat = 53053053;
+Object.assign(fehlvorstellungen, fehlvorstellungen53);
+kapitel53({ gruppe, zahl, auswahl, opt, zz, wahl, suche, fz, fehlerliste, runde, NIVEAUS, teil, kleinerVonGroesser, uebertragVergessen });
+
 const pool = {
   version: 2,
   klassenstufe: 5,

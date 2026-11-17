@@ -33,7 +33,7 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 | `id` | Lernziel, Niveaustufe und laufende Nummer |
 | `lernziel` | Kennung des Lernziels, das die Aufgabe nachweist |
 | `niveau` | `F`, `G`, `M` oder `E` |
-| `afb` | Anforderungsbereich `1`, `2` oder `3`. Der Erzeuger setzt ihn nach einer Faustregel je Lernziel und Niveaustufe (schriftliches Rechnen I; Fachbegriffe, Überschlag, Probe, Rest deuten auf F und G I, auf M und E II; Sachaufgaben II, auf E III). Eine Aufgabe kann davon abweichen. |
+| `afb` | Anforderungsbereich `1`, `2` oder `3`. Der Erzeuger setzt ihn nach einer Faustregel je Lernziel und Niveaustufe (Kopfrechnen und schriftliches Rechnen I; Klammern berechnen I, auf E II; geschickt und vorteilhaft rechnen, Gesetze erkennen wie Fachbegriffe; Rechenausdruck aufstellen wie Sachaufgaben; Fachbegriffe, Überschlag, Probe, Rest deuten auf F und G I, auf M und E II; Sachaufgaben II, auf E III). Eine Aufgabe kann davon abweichen. |
 | `format` | Aufgabenformat, siehe unten |
 | `text` | Aufgabentext |
 | `hilfen` | die drei Hilfekärtchen `tipp`, `beispiel`, `loesungsschritt` |
@@ -50,7 +50,11 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 
 **`sachaufgabe`**: Ein gemeinsamer `text` und mehrere `teile`. Jeder Teil ist wie eine `zahl`-Aufgabe aufgebaut. Alle Teile müssen stimmen.
 
-Noch nicht im Pilot enthalten und später zu ergänzen: `zahlenstrahl`, `diagramm`, `tabelle`.
+**`zahlenstrahl`**: `strahl` beschreibt den Strahl mit `von`, `bis`, `schritt` (Abstand der Teilstriche) und `beschriftung` (Abstand der beschrifteten Striche). Optional markiert `start` einen Punkt, `spruenge` (Liste aus `von`, `nach`, `text`) zeichnet Bögen und `pfeil` zeigt mit einem Fragezeichen auf eine Stelle. Bei `eingabe: "markieren"` tippt der Schüler auf einen Teilstrich, bei `eingabe: "ablesen"` gibt er die Zahl ein. `loesung` und `typischeFehler` wie bei `zahl`. Die Lösung muss auf einem Teilstrich liegen.
+
+**`diagramm`**: `diagramm` beschreibt ein Säulendiagramm mit `titel`, `einheit`, `max`, `schritt` (Beschriftung der Achse), `hilfslinien` (Abstand feinerer Linien, optional), `werteZeigen` (Werte über den Säulen, sonst muss abgelesen werden) und `saeulen` aus `name` und `wert`. Dazu `teile` wie bei der `sachaufgabe`. Jeder Wert muss auf einer Linie liegen, damit er sich ablesen lässt.
+
+**`tabelle`**: `tabelle` hat einen `kopf` und `zeilen`. Eine Zelle ist ein Text oder eine Lücke `{ "luecke": "name" }`. `luecken` ordnet jedem Namen `loesung` und `typischeFehler` zu, wie beim Format `luecken`. Alle Lücken müssen stimmen.
 
 ## Regeln, die die Prüfung erzwingt
 

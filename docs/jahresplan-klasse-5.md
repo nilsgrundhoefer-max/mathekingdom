@@ -4,7 +4,7 @@ Grundlage: Kompetenzraster des Verlags zu Schnittpunkt 5, Schülerbuch Baden-Wü
 Quelle: https://bridge.klett.de/DUA-UNKQIGNK1Q/content/media/Kompetenzraster_DIN_A3.pdf
 
 Was aus der Quelle stammt: Reihenfolge der Kapitel, Zahl und Reihenfolge der Unterkapitel, die „Ich kann“-Sätze.
-Was von mir stammt und geprüft werden muss: die Kurztitel der Kapitel und Unterkapitel (das Raster nennt keine Überschriften) und die feineren Lernziele in den Pilot-Unterkapiteln.
+Was von mir stammt und geprüft werden muss: die Kurztitel der Kapitel und Unterkapitel (das Raster nennt keine Überschriften) und die feineren Lernziele im Kapitel 3 und im Unterkapitel 4.5.
 
 Mit „Extra“ markierte Unterkapitel sind im Buch Zusatzstoff. Vorschlag: Sie erscheinen als Nebenstation und zählen nicht zum Kapitelabschluss.
 
@@ -39,13 +39,35 @@ Mit „Extra“ markierte Unterkapitel sind im Buch Zusatzstoff. Vorschlag: Sie 
 | 3.4 | Klammern | Ich kann mit Klammern umgehen. |
 | 3.5 | Rechengesetze | Ich kann Rechengesetze anwenden. |
 
-### Feinere Lernziele für 3.3 Subtrahieren (mein Vorschlag)
+### Feinere Lernziele für Kapitel 3 (mein Vorschlag)
+
+3.1 Kopfrechnen
+- K1: Ich kann im Kopf addieren.
+- K2: Ich kann im Kopf subtrahieren.
+- K3: Ich kann beim Kopfrechnen geschickt vorgehen.
+
+3.2 Addieren
+- A1: Ich kann die Fachbegriffe Summand und Summe verwenden.
+- A2: Ich kann schriftlich addieren, auch mit Übertrag.
+- A3: Ich kann mehrere Zahlen schriftlich addieren.
+- A4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
+- A5: Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen.
+
+3.3 Subtrahieren
 
 - S1: Ich kann die Fachbegriffe Minuend, Subtrahend und Differenz verwenden.
 - S2: Ich kann schriftlich subtrahieren, auch mit Übertrag.
 - S3: Ich kann mehrere Zahlen schriftlich subtrahieren.
 - S4: Ich kann ein Ergebnis mit Überschlag und Probe (Umkehraufgabe) prüfen.
 - S5: Ich kann Sachaufgaben zur Subtraktion lösen.
+
+3.4 Klammern
+- B1: Ich kann Rechenausdrücke mit Klammern berechnen.
+- B2: Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden.
+
+3.5 Rechengesetze
+- R1: Ich kann das Vertauschungsgesetz und das Verbindungsgesetz erkennen.
+- R2: Ich kann mit den Rechengesetzen vorteilhaft rechnen.
 
 ## Kapitel 4: Multiplizieren und Dividieren
 
