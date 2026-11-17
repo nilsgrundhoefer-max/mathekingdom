@@ -1,0 +1,13 @@
+{
+  "name": "mathekingdom",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pool": "node tools/erzeuge-klasse-5.mjs && node tools/pruefe-pool.mjs && node tools/uebersicht.mjs",
+    "build": "node tools/baue.mjs",
+    "test": "node --test tests/*.test.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

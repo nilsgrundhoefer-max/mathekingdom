@@ -20,7 +20,7 @@ Der Zufall im Erzeuger ist fest geimpft: Gleicher Code ergibt dieselbe Datei. Ei
 |---|---|
 | `version` | Version des Dateiaufbaus |
 | `klassenstufe` | 5 bis 10 |
-| `fehlvorstellungen` | Katalog: Kürzel → Beschreibung für die Diagnose |
+| `fehlvorstellungen` | Katalog: Kürzel → `beschreibung` (für die Diagnose) und `hinweis` (Rückmeldung an den Schüler nach dem ersten falschen Versuch) |
 | `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele |
 | `aufgaben` | Liste aller Aufgaben |
 

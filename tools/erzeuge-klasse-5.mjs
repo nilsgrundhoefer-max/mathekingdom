@@ -69,22 +69,24 @@ const fehlerliste = (loesung, kandidaten) => {
 };
 
 // ---------- Fehlvorstellungen ----------
+const fv = (beschreibung, hinweis) => ({ beschreibung, hinweis });
+// beschreibung: für die Diagnose der Lehrkraft. hinweis: Rückmeldung an den Schüler nach dem ersten falschen Versuch.
 const fehlvorstellungen = {
-  'begriffe-verwechselt': 'Verwechselt die Fachbegriffe der Rechenart.',
-  'sub-kleiner-von-groesser': 'Zieht in jeder Stelle die kleinere von der größeren Ziffer ab, statt zu entbündeln.',
-  'sub-uebertrag-vergessen': 'Entbündelt richtig, berücksichtigt den Übertrag in der nächsten Stelle aber nicht.',
-  'sub-addiert': 'Addiert, statt zu subtrahieren.',
-  'sub-klammerfehler': 'Rechnet a − (b − c) statt a − b − c: Der zweite Subtrahend wird addiert.',
-  'ueberschlag-nicht-gerundet': 'Rechnet genau, statt mit gerundeten Zahlen zu überschlagen.',
-  'falsch-gerundet': 'Rundet immer ab, statt nach der Rundungsregel zu runden.',
-  'probe-falsche-umkehr': 'Wählt für die Probe nicht die Umkehraufgabe.',
-  'div-null-vergessen': 'Lässt eine Null im Quotienten aus.',
-  'div-stellenwert': 'Irrt sich beim Stellenwert des Quotienten (eine Null zu viel oder zu wenig).',
-  'div-rest-nicht-gedeutet': 'Berechnet den Quotienten richtig, deutet den Rest aber nicht im Sachzusammenhang.',
-  'div-rest-vergessen': 'Gibt den Rest nicht oder falsch an.',
-  'sach-falsche-rechnung': 'Wählt eine Rechnung, die nicht zur Situation passt.',
-  'sach-unnoetige-angabe': 'Verrechnet eine Angabe, die für die Frage nicht gebraucht wird.',
-  'sach-schritt-vergessen': 'Führt nur einen von mehreren nötigen Rechenschritten aus.',
+  'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
+  'sub-kleiner-von-groesser': fv('Zieht in jeder Stelle die kleinere von der größeren Ziffer ab, statt zu entbündeln.', 'Achte auf die Reihenfolge: Es wird immer die untere von der oberen Ziffer abgezogen. Geht das nicht, musst du entbündeln.'),
+  'sub-uebertrag-vergessen': fv('Entbündelt richtig, berücksichtigt den Übertrag in der nächsten Stelle aber nicht.', 'Schau dir deine Überträge noch einmal an. Hast du sie in der nächsten Stelle mitgerechnet?'),
+  'sub-addiert': fv('Addiert, statt zu subtrahieren.', 'Schau auf das Rechenzeichen: Hier wird abgezogen.'),
+  'sub-klammerfehler': fv('Rechnet a − (b − c) statt a − b − c: Der zweite Subtrahend wird addiert.', 'Jede Zahl hinter einem Minus wird abgezogen. Prüfe, ob du eine davon addiert hast.'),
+  'ueberschlag-nicht-gerundet': fv('Rechnet genau, statt mit gerundeten Zahlen zu überschlagen.', 'Du hast genau gerechnet. Beim Überschlag rundest du zuerst und rechnest dann.'),
+  'falsch-gerundet': fv('Rundet immer ab, statt nach der Rundungsregel zu runden.', 'Prüfe dein Runden: Bei 5, 6, 7, 8 und 9 wird aufgerundet.'),
+  'probe-falsche-umkehr': fv('Wählt für die Probe nicht die Umkehraufgabe.', 'Die Probe ist die Umkehraufgabe. Sie muss wieder zur ersten Zahl der Aufgabe führen.'),
+  'div-null-vergessen': fv('Lässt eine Null im Quotienten aus.', 'Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 ins Ergebnis.'),
+  'div-stellenwert': fv('Irrt sich beim Stellenwert des Quotienten (eine Null zu viel oder zu wenig).', 'Prüfe mit einem Überschlag, wie viele Stellen dein Ergebnis haben muss.'),
+  'div-rest-nicht-gedeutet': fv('Berechnet den Quotienten richtig, deutet den Rest aber nicht im Sachzusammenhang.', 'Deine Rechnung stimmt. Überlege jetzt, was mit dem Rest in dieser Situation passiert.'),
+  'div-rest-vergessen': fv('Gibt den Rest nicht oder falsch an.', 'Prüfe den Rest: Was bleibt übrig, wenn du Ergebnis mal Divisor vom Dividenden abziehst?'),
+  'sach-falsche-rechnung': fv('Wählt eine Rechnung, die nicht zur Situation passt.', 'Lies die Frage noch einmal: Welche Rechenart passt zu dieser Situation?'),
+  'sach-unnoetige-angabe': fv('Verrechnet eine Angabe, die für die Frage nicht gebraucht wird.', 'Nicht jede Zahl im Text wird gebraucht. Welche Angaben gehören wirklich zur Frage?'),
+  'sach-schritt-vergessen': fv('Führt nur einen von mehreren nötigen Rechenschritten aus.', 'Du bist noch nicht fertig: Es fehlt noch ein Rechenschritt.'),
 };
 
 // ---------- Bausteine ----------
@@ -603,7 +605,7 @@ gruppe(D('D6'), 'E', (i) => {
 
 // ---------- Schreiben ----------
 const pool = {
-  version: 1,
+  version: 2,
   klassenstufe: 5,
   quelle: 'Bildungsplan 2016 Baden-Württemberg, Kapitelfolge nach Schnittpunkt 5 (Klett)',
   fehlvorstellungen,
