@@ -328,6 +328,42 @@ async function antworte(seite, richtig = true) {
   await seite.close();
 }
 
+// ---------- 1f. Heftcheck: Heftcode nach gelösten Aufgaben ab Gold, Stichprobe nach acht Codes (ADR 0014) ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  const t = new Date(Date.now() - 3600000).toISOString();
+  const mitWert = pool.aufgaben.filter((a) => a.niveau === 'M' && a.format === 'zahl' && a.lernziel.startsWith('5.3.2')).slice(0, 8);
+  const versuche = mitWert.map((a, i) => ({ t, aufgabe: a.id, lernziel: a.lernziel, niveau: 'M', richtig: true, versuche: 1, eingaben: [String(a.loesung)], fehlvorstellungen: [], hilfen: 0, dauer: 30, muenzen: 20, heft: `H${i + 1}` }));
+  const stand = { version: 2, code: '5A-HEFT', klasse: '5a', erstellt: t, geaendert: t, muenzen: 160, niveau: {}, niveauMarke: {}, lernziele: {}, versuche, hilferuf: null, hilferufe: [],
+    wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], heftNr: 8, heftSeitCheck: 8, heftchecks: [] };
+  await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-HEFT.json')) localStorage.setItem('mk-demo-5a/5A-HEFT.json', text); }, JSON.stringify(stand));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-heft');
+  await seite.click('#demo');
+  await seite.click('#weiter-wandern');
+  await seite.waitForSelector('.heftcheck');
+  const heft = (await seite.innerText('.heftcheck h1')).match(/H\d+/)[0];
+  const gefragt = mitWert[Number(heft.slice(1)) - 1];
+  assert.notEqual(heft, 'H8', 'gefragt wird nicht nach der allerletzten Aufgabe');
+  assert.equal(await seite.locator('[data-heftwahl]').count(), 4);
+  await foto(seite, 'heftcheck');
+  // Absichtlich eine falsche Antwort: Die Aufgabe muss noch einmal gelöst werden.
+  const richtigText = `${gefragt.loesung}${gefragt.einheit ? ` ${gefragt.einheit}` : ''}`.replace(/^(\d+)/, (z) => (Number(z) >= 10000 ? z.replace(/\B(?=(\d{3})+$)/g, ' ') : z));
+  const texte = await seite.locator('[data-heftwahl]').allInnerTexts();
+  await seite.locator('[data-heftwahl]').nth(texte.findIndex((x) => x.trim() !== richtigText)).click();
+  await seite.click('#heftcheck-nachloesen');
+  assert.equal(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), gefragt.id);
+  await antworte(seite, true);
+  await seite.waitForSelector('.ergebnis.richtig');
+  assert.match(await seite.innerText('#heftcode'), /H9/);
+  const gespeichert = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-HEFT.json')));
+  assert.deepEqual(gespeichert.heftchecks.map((c) => [c.heft, c.richtig]), [[heft, false]]);
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 2. Speichern im Ordner, Neuladen, falscher Ordner ----------
 {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
@@ -483,6 +519,17 @@ async function antworte(seite, richtig = true) {
   await seite.locator('.heatmap [data-lernziel]').first().click();
   await seite.waitForSelector('.vierspaltig');
   assert.equal(await seite.locator('.gruppenliste').count(), 5);
+  // Tafelbild: eine Aufgabe mit den häufigsten falschen Antworten, ohne Namen, Lösung auf Knopfdruck.
+  await seite.locator('[data-tafelbild]').first().click();
+  await seite.waitForSelector('.tafelbild');
+  assert.equal(await seite.locator('.tafelbild .tafel-loesung').count(), 0);
+  await seite.click('#tafel-loesung');
+  assert.match(await seite.innerText('.tafel-loesung'), /Lösung:/);
+  const namen = Object.values(JSON.parse(await seite.evaluate(() => JSON.stringify(window.MK_BEISPIEL_NAMEN ?? {}))));
+  for (const n of namen) assert.doesNotMatch(await seite.innerText('.tafelbild'), new RegExp(n));
+  await foto(seite, 'lehrer-tafelbild');
+  await seite.click('#tafel-zu');
+  assert.equal(await seite.locator('.tafelbild').count(), 0);
   await foto(seite, 'lehrer-lernziel');
   await seite.click('.brotkrumen button');
   await seite.locator('[data-schueler-zeile]').first().click();
@@ -686,6 +733,22 @@ async function antworte(seite, richtig = true) {
   assert.match(await schueler.innerText('#expedition-stand'), /Die Klasse hat \d von 2\. Davon/);
   await foto(schueler, 'schueler-expedition');
   assert.match(await lehrer.innerText('#expedition'), /von 2 Expeditionszeichen/);
+
+  // Sicherheitsangabe: Die Lehrkraft schaltet sie ein, die Schülerin prüft mit „ich bin sicher“ und bekommt bei Fehlern den deutlichen Hinweis.
+  await lehrer.check('#sicherheitsangabe');
+  await warteAuf((k) => k.sicherheitsangabe === true);
+  await schueler.waitForTimeout(11000); // das Schüler-Dashboard liest die Klassendatei alle 10 Sekunden
+  await schueler.click('#weiter-wandern');
+  await schueler.waitForSelector('#pruefen-unsicher', { timeout: 15000 });
+  await antworte(schueler, false);
+  await schueler.waitForSelector('#ueberraschung');
+  assert.match(await schueler.innerText('#ueberraschung'), /Überraschung! Du warst dir sicher/);
+  assert.equal(await schueler.locator('#pruefen-unsicher').count(), 0, 'nur beim ersten Versuch');
+  await foto(schueler, 'schueler-sicher-falsch');
+  await schueler.click('.pfad button');
+  // Warten, bis der Abbruch im Speicherstand steht, damit das folgende Backup nicht überholt wird.
+  for (let i = 0; i < 150 && JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length < 2; i++) await lehrer.waitForTimeout(100);
+  assert.equal(JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length, 2);
 
   // Backup und Wiederherstellen.
   await lehrer.click('[data-tab=verwaltung]');

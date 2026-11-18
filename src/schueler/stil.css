@@ -279,3 +279,15 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .expeditionsbalken i { display: block; height: 100%; background: linear-gradient(90deg, #b9783e, #dcb24a); }
 #mathekingdom .karte.expedition.geschafft .expeditionsbalken i { background: #3e6b3a; }
 #mathekingdom .karte.expedition p { margin: .2rem 0; }
+
+/* Sicherheitsangabe und Heftcheck (ADR 0014) */
+#mathekingdom .sicherwahl { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .6rem; }
+#mathekingdom button.haupt.hell { background: #f3ead6; color: var(--tinte); border: 2px solid #5b4632; }
+#mathekingdom .hinweis.ueberraschung { border-left: 5px solid #7b2d43; font-weight: 600; }
+#mathekingdom .heftcode { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+#mathekingdom .heftcode .code { font: 700 1.1rem var(--schrift-titel); border: 2px solid #5b4632; border-radius: 6px; padding: .1rem .5rem; background: #fffaf0; }
+#mathekingdom .heftwahl { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .6rem; margin-top: .8rem; }
+#mathekingdom .heftwahl button { font-size: 1.15rem; padding: .8rem; }
+#mathekingdom .karte.heftcheck { border-left: 6px solid #5b4632; }
+#mathekingdom .karte.heftcheck.richtig { border-left-color: #3e6b3a; }
+#mathekingdom .karte.heftcheck.falsch { border-left-color: #a3302a; }

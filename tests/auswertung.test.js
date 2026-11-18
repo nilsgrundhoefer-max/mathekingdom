@@ -304,3 +304,15 @@ test('Lernzielstand: Siegel mit Fehler im Rückblick ist aufzufrischen und zähl
   stand.rueckblick['x-1'].aufzufrischen = false;
   assert.equal(A.lernzielZustand(stand, 'x-1'), 'siegel');
 });
+
+test('Sicherheitsprofil und Tafelbild: Vierfeldertafel und häufigste erste falsche Antworten', () => {
+  const v = (aufgabe, sicher, richtig, versuche, eingaben, fehlvorstellungen = []) => ({ aufgabe, sicher, richtig, versuche, eingaben, fehlvorstellungen });
+  const a = { code: 'A', stand: { versuche: [v('x', true, true, 1, ['5']), v('x', true, false, 2, ['7', '8'], ['f1'])] } };
+  const b = { code: 'B', stand: { versuche: [v('x', false, true, 2, ['7', '5'], ['f1']), v('y', undefined, true, 1, ['1'])] } };
+  const p = A.sicherheitsProfil([...a.stand.versuche, ...b.stand.versuche]);
+  assert.deepEqual([p.gesamt, p.sicherRichtig, p.sicherFalsch, p.unsicherRichtig, p.unsicherFalsch], [3, 1, 1, 0, 1]);
+  assert.deepEqual(p.fehler, [{ fehlvorstellung: 'f1', anzahl: 1 }]);
+  assert.equal(A.tafelAufgabe([a, b], 'f1'), 'x');
+  assert.deepEqual(A.tafelbild([a, b], 'x'), { bearbeitet: 3, richtig: 1, falsche: [{ antwort: '7', anzahl: 2 }] });
+  assert.deepEqual(A.heftQuote({ heftchecks: [{ richtig: true }, { richtig: false }] }), { gesamt: 2, richtig: 1, quote: 0.5 });
+});

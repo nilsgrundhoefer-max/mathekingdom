@@ -41,7 +41,7 @@ function speicherMeldung(status) {
   maleStatus();
 }
 function male() {
-  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, wappen: wappenAnsicht, minispiel };
+  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wappen: wappenAnsicht, minispiel };
   wurzel.replaceChildren(...[
     z.stand && kopf(),
     z.stand && hilfeBanner(),
@@ -190,7 +190,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -423,6 +423,11 @@ function starteAufgabe(lernzielId, niveau) {
   zeigeAufgabe(aufgabe);
 }
 function zeigeAufgabe(aufgabe, extra = {}) {
+  // Heftcheck vor der nächsten Aufgabe, nicht mitten im Rückblick und nicht beim Nachlösen.
+  if (!extra.rueckblick && !extra.heftNachloesen) {
+    const frage = L.heftcheckFrage(z.stand, z.index);
+    if (frage) return zeige({ name: 'heftcheck', frage, danach: { aufgabe, extra }, gewaehlt: null });
+  }
   z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt(), fehlversuche: 0, hilfen: 0 };
   geaendert();
   zeige({ name: 'aufgabe', aufgabe, beginn: Date.now(), versuch: 0, hilfen: 0, eingaben: [], fehlvorstellungen: [], hinweis: null, ergebnis: null,
@@ -437,9 +442,14 @@ function aufgabenAnsicht() {
   const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
   const training = L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
   const fertig = Boolean(a.ergebnis);
-  const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular); } },
+  // Sicherheitsangabe (ADR 0014): Beim ersten Versuch gibt es zwei Prüfen-Knöpfe, wenn die Lehrkraft sie eingeschaltet hat.
+  const zweiKnoepfe = !fertig && a.versuch === 0 && z.einst.sicherheitsangabe;
+  const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular, zweiKnoepfe ? e.submitter?.dataset.sicher === 'ja' : null); } },
     eingabefelder(auf, a, fertig),
-    !fertig && h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'));
+    zweiKnoepfe ? h('div', { class: 'sicherwahl' },
+      h('button', { class: 'haupt', id: 'pruefen', type: 'submit', 'data-sicher': 'ja' }, 'Prüfen – ich bin sicher'),
+      h('button', { class: 'haupt hell', id: 'pruefen-unsicher', type: 'submit', 'data-sicher': 'nein' }, 'Prüfen – ich bin unsicher'))
+      : !fertig && h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'));
   return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
     h('p', { class: 'pfad' }, a.rueckblick
       ? h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')
@@ -453,6 +463,7 @@ function aufgabenAnsicht() {
         h('span', { class: 'punkte', title: `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
       formular,
+      a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
       fertig && ergebnisTafel(a, kapitelId, meilenstein)),
     !fertig && hilfen(a, meilenstein));
@@ -512,10 +523,11 @@ function liesEingabe(auf, formular) {
   }
 }
 
-function pruefe(formular) {
+function pruefe(formular, sicher = null) {
   const a = z.ansicht, auf = a.aufgabe;
   const { eingabe, leer } = liesEingabe(auf, formular);
   if (leer) { a.hinweis = 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
+  if (a.versuch === 0 && sicher != null) a.sicher = sicher;
   const ergebnis = L.pruefeAntwort(auf, eingabe);
   a.versuch++;
   a.eingaben.push(eingabe);
@@ -526,11 +538,17 @@ function pruefe(formular) {
     const tippNeu = a.hilfen === 0 && Boolean(auf.hilfen.tipp);
     if (tippNeu) a.hilfen = 1;
     a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'}${tippNeu ? ' Rechts liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
+    // Sicher, aber falsch: Hier lohnt genaues Hinschauen besonders (Hyperkorrektur, ADR 0014).
+    if (a.sicher === true) {
+      const typisch = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.beschreibung;
+      a.ueberraschung = `Überraschung! Du warst dir sicher, aber das stimmt noch nicht. Schau genau hin.${typisch ? ` Typischer Fehler: ${typisch}` : ''}`;
+    }
     if (z.stand.aktiv) { z.stand.aktiv.fehlversuche = a.versuch; z.stand.aktiv.hilfen = a.hilfen; geaendert(); }
     return male();
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
-    hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000) }, z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick) });
+    hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000), ...(a.sicher != null && { sicher: a.sicher }) },
+  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick) });
   if (a.rueckblick) buchung.rueckblick = L.trageRueckblickEin(z.stand, auf, ergebnis.richtig, jetzt());
   buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
@@ -577,6 +595,7 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
     e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen',
       e.training && ` (unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger)`),
     e.richtig && auf.afb === 3 && e.muenzen > 1 && h('p', { class: 'klein' }, 'Knobelaufgabe: Dafür gibt es die Hälfte mehr Münzen.'),
+    heftHinweis(e),
     e.neuesLernziel && h('p', { class: 'lohn neu' }, siegel(30), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst ein Siegel.'),
     e.anspruchFehlt && h('p', { class: 'klein', id: 'anspruch' }, 'Für das Siegel fehlt noch eine Aufgabe, bei der du mehr als nur rechnen musst.'),
     e.neueKrone && h('p', { class: 'lohn neu', id: 'neue-krone' }, kroneBild(e.neueKrone.niveau, 32),
@@ -609,11 +628,38 @@ function rueckblickErgebnis(a) {
     h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
     !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. Dein Siegel behältst du. „${lernziel?.text ?? ''}“ kommt beim nächsten Rückblick noch einmal dran.`),
     e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'),
+    heftHinweis(e),
     r?.fertig && h('p', { class: 'lohn neu', id: 'rueckblick-fertig' }, h('b', {}, 'Rückblick geschafft!'), ` ${r.richtig} von ${r.gesamt} richtig.`,
       z.einst.expedition && !L.expeditionsStand([z.stand], z.einst.expedition, jetzt()).vorbei ? ' Das bringt der Klasse ein Expeditionszeichen.' : ''),
     r && !r.fertig
       ? h('button', { class: 'haupt', id: 'weiter', onclick: starteRueckblick }, 'Nächste Aufgabe im Rückblick')
       : h('button', { class: 'haupt', id: 'weiter', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Zum Schlossgarten'));
+}
+
+// Heftcode unter jeder gelösten Aufgabe ab Gold.
+const heftHinweis = (e) => e.heft && h('p', { class: 'heftcode', id: 'heftcode' }, h('b', { class: 'code' }, e.heft), ' Schreib den Code und dein Ergebnis ins Heft. Ab und zu fragt dich der Heftcheck danach.');
+
+// ---------- Heftcheck (ADR 0014) ----------
+function heftcheckAnsicht() {
+  const a = z.ansicht, f = a.frage;
+  const weiter = () => zeigeAufgabe(a.danach.aufgabe, a.danach.extra); // der Zähler steht wieder auf null
+  if (a.gewaehlt == null) {
+    return h('section', { class: 'karte heftcheck' },
+      h('span', { class: 'klein' }, 'Heftcheck'),
+      h('h1', {}, `Schau in dein Heft: Was hattest du bei ${f.heft} heraus?`),
+      h('div', { class: 'heftwahl' }, f.optionen.map((o, i) => h('button', { class: 'schlicht', 'data-heftwahl': i, onclick: () => {
+        L.trageHeftcheckEin(z.stand, f, o.richtig, jetzt()); geaendert(); z.dienst.sofort();
+        zeige({ ...a, gewaehlt: i });
+      } }, o.text))));
+  }
+  const richtig = f.optionen[a.gewaehlt].richtig;
+  const aufgabe = z.index.aufgabe.get(f.aufgabe);
+  return h('section', { class: `karte heftcheck ${richtig ? 'richtig' : 'falsch'}`, role: 'status' },
+    h('span', { class: 'klein' }, 'Heftcheck'),
+    h('h1', {}, richtig ? 'Stimmt, genau das steht in deinem Heft.' : `Das passt nicht zu ${f.heft}.`),
+    richtig ? h('button', { class: 'haupt', id: 'heftcheck-weiter', onclick: weiter }, 'Weiter')
+      : [h('p', {}, `Löse die Aufgabe ${f.heft} bitte noch einmal und schreib den Rechenweg ordentlich ins Heft. Du verlierst dabei keine Münzen.`),
+        h('button', { class: 'haupt', id: 'heftcheck-nachloesen', onclick: () => zeigeAufgabe(aufgabe, { heftNachloesen: true, heftAufgabe: f.heft }) }, `Aufgabe ${f.heft} lösen`)]);
 }
 
 const kartenVon = (auf) => L.KARTEN.filter((feld) => auf.hilfen[feld]);

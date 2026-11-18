@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -266,6 +266,7 @@ function male() {
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
     h('main', {}, ansichten[z.ansicht]()),
     z.ansicht === 'klasse' && z.overlay && kl().namen[z.overlay] && overlay(),
+    z.ansicht === 'klasse' && z.tafel && tafelbildAnsicht(),
     versionsHinweis('lehrkraft'),
   ].filter(Boolean));
   if (gerollt) { const o = wurzel.querySelector('.overlay-inhalt'); if (o) o.scrollTop = gerollt; }
@@ -447,7 +448,10 @@ function impulse() {
   }
   for (const x of A.fehlerHaeufung(z.staende, jetzt())) {
     if (z.gesehen.has(`fv|${x.fehlvorstellung}`)) continue;
-    karten.push(h('li', {}, h('span', {}, h('b', {}, 'Mini-Workshop: '), `${x.codes.length} Schüler machen denselben Fehler. ${z.pool.fehlvorstellungen[x.fehlvorstellung]?.beschreibung ?? x.fehlvorstellung} (${x.codes.map(name).join(', ')})`), gesehen(`fv|${x.fehlvorstellung}`)));
+    const tafel = A.tafelAufgabe(z.staende, x.fehlvorstellung);
+    karten.push(h('li', {}, h('span', {}, h('b', {}, 'Mini-Workshop: '), `${x.codes.length} Schüler machen denselben Fehler. ${z.pool.fehlvorstellungen[x.fehlvorstellung]?.beschreibung ?? x.fehlvorstellung} (${x.codes.map(name).join(', ')})`),
+      tafel && h('button', { class: 'haupt', 'data-tafelbild': tafel, onclick: () => { z.tafel = { aufgabe: tafel }; male(); } }, 'Tafelbild zeigen'),
+      gesehen(`fv|${x.fehlvorstellung}`)));
   }
   for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
     const schluessel = `fertig|${x.code}|${x.milestone}|${x.zielniveau}`;
@@ -495,6 +499,43 @@ function overlay() {
           h('button', { class: 'haupt', id: 'overlay-zu', onclick: zu }, 'Schließen'))),
       nachrichtFeld(code),
       einzelInhalt(code)));
+}
+
+// ---------- Tafelbild (ADR 0014) ----------
+// Vollbild für den Beamer: eine Aufgabe und die häufigsten falschen Antworten der Klasse, ohne Codes und Namen.
+const zahlMitEinheit = (t) => `${t.loesung}${t.einheit ? ` ${t.einheit}` : ''}`;
+function loesungVon(a) {
+  switch (a.format) {
+    case 'zahl': case 'zahlenstrahl': return zahlMitEinheit(a);
+    case 'sachaufgabe': case 'diagramm': return a.teile.map((t, i) => `${'abcdef'[i]}) ${zahlMitEinheit(t)}`).join('   ');
+    case 'luecken': return a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken[n].loesung);
+    case 'tabelle': return Object.values(a.luecken).map((l) => l.loesung).join(', ');
+    case 'auswahl': return a.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
+    case 'zuordnen': return a.paare.map((p) => `${p.links} → ${p.rechts}`).join(', ');
+    default: return '';
+  }
+}
+function tafelbildAnsicht() {
+  const t = z.tafel, a = z.index.aufgabe.get(t.aufgabe);
+  const zu = () => { z.tafel = null; male(); };
+  if (!a) { z.tafel = null; return null; }
+  const bild = A.tafelbild(angemeldet(), a.id);
+  const groesste = Math.max(1, ...bild.falsche.map((f) => f.anzahl));
+  setTimeout(() => wurzel.querySelector('.tafelbild')?.focus());
+  return h('div', { class: 'tafelbild', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Tafelbild', tabindex: -1, onkeydown: (ev) => { if (ev.key === 'Escape') zu(); } },
+    h('div', { class: 'tafel-kopf' }, h('span', {}, `Aufgabe · ${lernzieltext(a.lernziel)}`),
+      h('span', { class: 'rechts reihe' }, h('button', { class: 'schlicht', id: 'tafel-loesung', onclick: () => { t.loesung = !t.loesung; male(); } }, t.loesung ? 'Lösung verbergen' : 'Lösung zeigen'),
+        h('button', { class: 'haupt', id: 'tafel-zu', onclick: zu }, 'Schließen'))),
+    h('p', { class: 'tafel-aufgabe' }, aufgabentext(a.id)),
+    a.format === 'auswahl' && h('ul', { class: 'tafel-optionen' }, a.optionen.map((o) => h('li', {}, o.text))),
+    a.format === 'zuordnen' && h('ul', { class: 'tafel-optionen' }, a.paare.map((p) => h('li', {}, p.links))),
+    a.teile && h('ol', { class: 'tafel-optionen' }, a.teile.map((x) => h('li', {}, x.text))),
+    h('h2', {}, 'Antworten aus der Klasse'),
+    bild.falsche.length === 0 ? h('p', {}, 'Noch keine falschen Antworten.')
+      : h('ul', { class: 'tafel-balken' }, bild.falsche.map((f) => h('li', {}, h('b', {}, f.antwort), h('span', { class: 'spur' }, h('i', { style: `width:${Math.round((f.anzahl / groesste) * 100)}%` })), h('span', {}, `${f.anzahl}-mal`)))),
+    h('p', { class: 'tafel-fuss' }, `${bild.richtig} von ${bild.bearbeitet} Bearbeitungen im ersten Versuch richtig.`),
+    t.loesung && h('p', { class: 'tafel-loesung' }, h('b', {}, 'Lösung: '), loesungVon(a)),
+    h('p', { class: 'tafel-frage' }, 'Wie könnte man auf diese Antworten kommen? Was wurde dabei gedacht?'));
 }
 
 // ---------- Meilensteine öffnen und sperren ----------
@@ -611,9 +652,33 @@ function lernstandKlasse() {
       h('p', { class: 'klein' }, 'Wie viele Schüler bei jedem Lernziel wo stehen. Tippe auf eine Zeile für die Einzelheiten.'),
       lernzielBalken(matrix, lernziele)),
     selbsteinschaetzungKlasse(staende),
+    heftUndSicherheitKlasse(staende),
     h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Auffälligkeiten (${auff.length})`)),
       auff.length === 0 ? h('p', { class: 'klein' }, 'Keine Auffälligkeiten.') : h('ul', { class: 'liste' }, auff.map((a) => h('li', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: a.code }) }, name(a.code)), `: ${lesbar(a.text)}`)))),
     meilensteineSperren());
+}
+
+// Heftcheck und Sicherheitsangabe der Klasse (ADR 0014). Die Sicherheitsangabe ist eine Probe: Nach etwa vier Wochen auswerten.
+function heftUndSicherheitKlasse(staende) {
+  const heft = staende.map(({ code, stand }) => ({ code, ...A.heftQuote(stand) })).filter((x) => x.gesamt > 0);
+  const p = A.sicherheitsProfil(staende.flatMap(({ stand }) => stand.versuche));
+  if (heft.length === 0 && p.gesamt === 0) return null;
+  const summe = heft.reduce((n, x) => n + x.gesamt, 0), richtig = heft.reduce((n, x) => n + x.richtig, 0);
+  const auffaellig = heft.filter((x) => x.gesamt >= 2 && x.quote < 0.7);
+  const sicherFalsch = staende.map(({ code, stand }) => ({ code, n: A.sicherheitsProfil(stand.versuche).sicherFalsch })).filter((x) => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 5);
+  return h('section', { class: 'karte', id: 'heft-sicherheit' }, h('h2', {}, 'Heftcheck und Sicherheitsangabe'),
+    heft.length > 0 && h('div', {}, h('h3', {}, 'Heftcheck'),
+      h('p', {}, `${richtig} von ${summe} Heftchecks richtig (${prozent(richtig / summe)}).`),
+      auffaellig.length > 0 && h('p', { class: 'klein' }, `Weniger als 70 % richtig: ${auffaellig.map((x) => `${name(x.code)} (${x.richtig} von ${x.gesamt})`).join(', ')}. Ein Blick ins Heft lohnt sich.`)),
+    p.gesamt > 0 && h('div', {}, h('h3', {}, 'Sicherheitsangabe (Probe)'),
+      h('table', { class: 'tabelle vierfeld' },
+        h('thead', {}, h('tr', {}, h('th', {}, ''), h('th', {}, 'im 1. Versuch richtig'), h('th', {}, 'nicht im 1. Versuch'))),
+        h('tbody', {},
+          h('tr', {}, h('th', {}, 'sicher'), h('td', { class: 'zahl' }, p.sicherRichtig), h('td', { class: 'zahl fehlertext' }, h('b', {}, p.sicherFalsch), ' sicher falsch')),
+          h('tr', {}, h('th', {}, 'unsicher'), h('td', { class: 'zahl' }, p.unsicherRichtig), h('td', { class: 'zahl' }, p.unsicherFalsch)))),
+      h('p', { class: 'klein' }, '„Sicher falsch“ ist das stärkste Zeichen einer Fehlvorstellung. „Unsicher richtig“ heißt oft: Das Wissen ist da, aber noch nicht gefestigt.'),
+      p.fehler.length > 0 && h('p', { class: 'klein' }, h('b', {}, 'Häufigste Fehler bei „sicher falsch“: '), p.fehler.slice(0, 3).map((f) => `${z.pool.fehlvorstellungen[f.fehlvorstellung]?.beschreibung ?? f.fehlvorstellung} (${f.anzahl}-mal)`).join('; ')),
+      sicherFalsch.length > 0 && h('p', { class: 'klein' }, h('b', {}, 'Am häufigsten sicher falsch: '), sicherFalsch.map((x) => `${name(x.code)} (${x.n})`).join(', '))));
 }
 
 // Heatmap Schüler × Lernziel, nach Meilensteinen gruppiert.
@@ -699,7 +764,8 @@ function lernstandLernziel(id) {
     audit.length > 0 && h('section', { class: 'karte' }, h('h2', {}, 'Schwierigste Aufgaben zu diesem Lernziel'),
       h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Aufgabe', 'Niveau', 'AFB', 'Bearbeitet', 'Lösungsquote', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
-        h('tbody', {}, audit.map((a) => h('tr', {}, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen')), h('td', {}, a.niveau && chip(a.niveau)),
+        h('tbody', {}, audit.map((a) => h('tr', {}, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen'),
+          h('button', { class: 'link', 'data-tafelbild': a.aufgabe, onclick: () => { z.tafel = { aufgabe: a.aufgabe }; male(); } }, ' Tafelbild')), h('td', {}, a.niveau && chip(a.niveau)),
           h('td', { class: 'zahl' }, ['', 'I', 'II', 'III'][a.afb] ?? ''), h('td', { class: 'zahl' }, a.bearbeitet), h('td', {}, balken(a.quote)),
           h('td', {}, a.haeufigsteFalsche ? `${a.haeufigsteFalsche} (${a.haeufigsteAnzahl}-mal)` : '–'))))))));
 }
@@ -766,6 +832,10 @@ function aufgabenTab() {
 
 // ---------- Seite eines Schülers ----------
 // Oben drei Kennzahlen, darunter der Weg über die Lernziele, dann Balken und Fehler. Das Protokoll ist zugeklappt.
+function heftUndSicherText(stand) {
+  const heft = A.heftQuote(stand), sicher = A.sicherheitsProfil(stand.versuche);
+  return [heft.gesamt ? ` · Heftcheck ${heft.richtig} von ${heft.gesamt} richtig` : '', sicher.gesamt ? ` · ${sicher.sicherFalsch}-mal sicher falsch` : ''].join('');
+}
 function einzelInhalt(code, fuerDruck = false) {
   const stand = z.staende.find((s) => s.code === code)?.stand;
   if (!stand) return h('section', { class: 'karte' }, h('p', {}, `${name(code)} hat sich noch nicht angemeldet.`));
@@ -784,7 +854,8 @@ function einzelInhalt(code, fuerDruck = false) {
       kennzahl(`${k.siegel} von ${lernziele.length}`, 'Siegel', k.rang),
       kennzahl(ziel(code), 'Zielniveau', L.NIVEAU_NAMEN[ziel(code)]),
       kennzahl(zuletzt, 'zuletzt aktiv')),
-    h('p', { class: 'klein nebenwerte' }, `${k.bearbeitet} Aufgaben · ${prozent(k.quote)} gelöst · ${prozent(k.ersterVersuch)} im ersten Versuch · ${k.hilfekaertchen} Hilfekärtchen · ${k.hilferufe} Hilferufe · ${prozent(k.trainingAnteil)} Training`),
+    h('p', { class: 'klein nebenwerte' }, `${k.bearbeitet} Aufgaben · ${prozent(k.quote)} gelöst · ${prozent(k.ersterVersuch)} im ersten Versuch · ${k.hilfekaertchen} Hilfekärtchen · ${k.hilferufe} Hilferufe · ${prozent(k.trainingAnteil)} Training`,
+      heftUndSicherText(stand)),
     (auff.length > 0 || maengel.length > 0) && h('ul', { class: 'liste hinweise' }, auff.map((a) => h('li', {}, lesbar(a.text))), maengel.map((m) => h('li', { class: 'fehlertext' }, `Speicherstand passt nicht zum Protokoll: ${m}`))),
     h('section', { class: 'karte' }, h('div', { class: 'reihe' }, h('h2', {}, 'Weg über die Lernziele'), h('span', { class: 'rechts' }, zustandLegende())),
       h('div', { class: 'weg' }, gruppen.map((g) => h('div', { class: 'weggruppe' }, h('small', {}, g.titel),
@@ -861,6 +932,9 @@ function verwaltung() {
         }) }, 'Codes erzeugen'),
         codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
     expeditionKarte(),
+    h('section', { class: 'karte', id: 'sicherheitsangabe-karte' }, h('h2', {}, 'Sicherheitsangabe (Probe)'),
+      h('p', { class: 'klein' }, 'Beim ersten Versuch prüfen die Schüler mit „ich bin sicher“ oder „ich bin unsicher“. Ist eine sichere Antwort falsch, kommt sofort ein deutlicher Hinweis. Münzen ändern sich nicht. Die Auswertung steht im Lernstand unter „Heftcheck und Sicherheitsangabe“.'),
+      h('label', { class: 'schalter' }, h('input', { id: 'sicherheitsangabe', type: 'checkbox', checked: Boolean(kl().einst.sicherheitsangabe), onchange: (ev) => aendere((k) => { k.einst.sicherheitsangabe = ev.target.checked; }) }), ' Für diese Klasse einschalten')),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),

@@ -56,6 +56,9 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
     rueckblickAktiv: null, // laufender Rückblick: { tag, aufgaben: [id], erledigt: [{ aufgabe, lernziel, richtig }] }
     rueckblicke: [],   // abgeschlossene Rückblicke: { t, tag }
     expeditionen: {},  // Expedition → { geschafftAm }: Belohnung erhalten
+    heftNr: 0,         // letzter vergebener Heftcode (H1, H2, …)
+    heftSeitCheck: 0,  // Heftcodes seit dem letzten Heftcheck
+    heftchecks: [],    // { t, heft, aufgabe, richtig }
   };
 }
 // Ein Siegel je erreichtem Lernziel. Es wird nicht gespeichert, sondern aus den Lernzielen gezählt.
@@ -269,8 +272,16 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
-    ...(rueckblick && { rueckblick: true }),
+    ...(rueckblick && { rueckblick: true }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
   });
+  // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
+  let heft = null;
+  if (bearbeitung.geloest && NIVEAUS.indexOf(aufgabe.niveau) >= NIVEAUS.indexOf(HEFT_AB)) {
+    stand.heftNr = (stand.heftNr ?? 0) + 1;
+    heft = `H${stand.heftNr}`;
+    stand.versuche.at(-1).heft = heft;
+    stand.heftSeitCheck = (stand.heftSeitCheck ?? 0) + 1;
+  }
   stand.muenzen += muenzen;
   let neuesLernziel = false;
   if (!stand.lernziele[aufgabe.lernziel] && lernzielStand(stand, aufgabe.lernziel, zielniveau, index).erreicht) {
@@ -286,7 +297,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     if (kroneJetzt) { e.krone = kroneJetzt; e.kroneAm = jetzt; ersteKrone = true; }
   }
   const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
-  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null };
+  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft };
 }
 
 // ---------- Rückblick (ADR 0014) ----------
@@ -382,6 +393,44 @@ export function holeBelohnung(stand, expedition, jetzt) {
   stand.expeditionen[expedition.id] = { geschafftAm: jetzt };
   if (expedition.belohnung === 'fahne' && !stand.wappen.gekauft.includes('fahne')) stand.wappen.gekauft.push('fahne');
   return true;
+}
+
+// ---------- Sicherheitsangabe (ADR 0014) ----------
+// „Sicher falsch“: beim ersten Versuch sicher geprüft, aber nicht im ersten Versuch gelöst. Stärkstes Zeichen einer Fehlvorstellung.
+export const sicherFalsch = (v) => v.sicher === true && !(v.richtig && v.versuche === 1);
+
+// ---------- Heftcheck (ADR 0014) ----------
+// Etwa jede achte Aufgabe ab M fragt nach einem Ergebnis aus dem Heft. Falsch heißt: Die Aufgabe noch einmal lösen, ohne Münzverlust.
+export const HEFT_AB = 'M';
+export const HEFT_TAKT = 8;
+// Der Wert, nach dem der Heftcheck fragt: bei Zahl und Zahlenstrahl die Lösung, bei Sachaufgabe und Diagramm die letzte Teilantwort.
+export function heftWert(aufgabe) {
+  if (['zahl', 'zahlenstrahl'].includes(aufgabe.format)) return { wert: aufgabe.loesung, einheit: aufgabe.einheit ?? null, fehler: (aufgabe.typischeFehler ?? []).map((f) => f.wert) };
+  if (['sachaufgabe', 'diagramm'].includes(aufgabe.format) && aufgabe.teile?.length) {
+    const t = aufgabe.teile.at(-1);
+    return { wert: t.loesung, einheit: t.einheit ?? null, fehler: (t.typischeFehler ?? []).map((f) => f.wert) };
+  }
+  return null;
+}
+const mitEinheit = (w, einheit) => `${w >= 10000 ? String(w).replace(/\B(?=(\d{3})+$)/g, ' ') : w}${einheit ? ` ${einheit}` : ''}`;
+export function heftcheckFrage(stand, index, zufall = Math.random) {
+  if ((stand.heftSeitCheck ?? 0) < HEFT_TAKT) return null;
+  // Gefragt wird nach einer der letzten Aufgaben mit Heftcode, nicht nach der allerletzten.
+  const mitCode = stand.versuche.filter((v) => v.heft).slice(-HEFT_TAKT, -1)
+    .map((v) => ({ v, a: index.aufgabe.get(v.aufgabe) })).filter(({ a }) => a && heftWert(a));
+  if (!mitCode.length) return null;
+  const { v, a } = mitCode[Math.floor(zufall() * mitCode.length)];
+  const { wert, einheit, fehler } = heftWert(a);
+  const falsche = [...new Set([...fehler, wert + 1, wert - 1, wert + 10, wert - 10, wert * 10, wert + 100])].filter((x) => Number.isInteger(x) && x >= 0 && x !== wert);
+  const auswahl = [];
+  for (const x of falsche) { if (auswahl.length < 3) auswahl.push(x); }
+  const optionen = [wert, ...auswahl].map((x) => ({ text: mitEinheit(x, einheit), richtig: x === wert }));
+  for (let i = optionen.length - 1; i > 0; i--) { const j = Math.floor(zufall() * (i + 1)); [optionen[i], optionen[j]] = [optionen[j], optionen[i]]; }
+  return { heft: v.heft, aufgabe: a.id, optionen };
+}
+export function trageHeftcheckEin(stand, frage, richtig, jetzt) {
+  (stand.heftchecks ??= []).push({ t: jetzt, heft: frage.heft, aufgabe: frage.aufgabe, richtig });
+  stand.heftSeitCheck = 0;
 }
 
 // ---------- Niveaustufe ----------
@@ -502,6 +551,7 @@ export function einstellungen(klassendatei, code, pool) {
     offeneKapitel: new Set(kapitelIds.slice(0, bis + 1)),
     spielpause: Boolean(k.spielpause),
     expedition: k.expedition ?? null,
+    sicherheitsangabe: Boolean(k.sicherheitsangabe),
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst
