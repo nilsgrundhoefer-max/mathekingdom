@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (768 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (864 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -2206,6 +2206,327 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche einen geschickten Rechenweg.
   - ☑ Lina. 4 · 64 + 4 · 36 = 256 + 144 = 400.
   - ☐ Beide. Es kommt darauf an, wie man rechnet.
   - ☐ Keiner. Es sind 8 · 36 = 288 Personen.
+
+## 5.4.3-R1: Ich kann das Vertauschungsgesetz und das Verbindungsgesetz der Multiplikation erkennen.
+
+Grundlage, die F übt: Tauschaufgaben im Punktefeld: Reihen und Spalten tauschen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei der Tauschaufgabe bleibt das Ergebnis gleich. *Beispiel:* 3 · 4 = 12. Also ist auch 4 · 3 = 12. *Lösungsschritt:* Es sind dieselben Punkte. Du zählst sie nur anders.
+
+- `01` AFB I · 7 · 9 = 63 / Tausche die Zahlen. / 9 · 7 = ▢ _(Bild: Punktefeld mit 7 Reihen zu je 9 Punkten)_ Lösung: a = **63**
+- `02` AFB I · Welche Aufgabe ist die Tauschaufgabe? / 6 · 8 _(Bild: Punktefeld mit 6 Reihen zu je 8 Punkten)_
+  - ☐ 8 + 6
+  - ☐ 6 · 6
+  - ☑ 8 · 6
+- `03` AFB I · Rechne. / 2 · 6 · 5 / Rechne zuerst 2 · 5. _(Bild: Punktefeld mit 6 Reihen zu je 10 Punkten)_ Lösung: **60**. Typische Fehler: 17 (punkt-vor-strich), 120 (mal-stellenwert).
+- `04` AFB I · Welche Zahl fehlt? / 5 · 3 = 3 · ▢ _(Bild: Punktefeld mit 5 Reihen zu je 3 Punkten)_ Lösung: x = **5**
+- `05` AFB II · Welche 2 Aufgaben haben dasselbe Ergebnis? _(Bild: Punktefeld mit 4 Reihen zu je 9 Punkten)_
+  - ☐ 4 · 9 und 4 + 9
+  - ☑ 4 · 9 und 9 · 4
+  - ☐ 4 · 9 und 4 · 4
+- `06` AFB I · Rechne. / 5 · 8 · 2 / Tausche zuerst: 5 · 2 · 8. _(Bild: Punktefeld mit 8 Reihen zu je 10 Punkten)_ Lösung: **80**. Typische Fehler: 42 (punkt-vor-strich), 8 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau genau: Haben die Faktoren den Platz getauscht? *Beispiel:* 5 · 9 = 9 · 5: Die Faktoren sind vertauscht. Das ist das Vertauschungsgesetz. *Lösungsschritt:* 6 und 7 haben den Platz getauscht.
+
+- `01` AFB I · Welches Gesetz siehst du? / 6 · 7 = 7 · 6 _(Bild: Punktefeld mit 6 Reihen zu je 7 Punkten)_
+  - ☑ Vertauschungsgesetz
+  - ☐ Kein Gesetz. / Die Rechnung ist falsch.
+  - ☐ Verbindungsgesetz
+- `02` AFB I · Die Klammer wandert. / Die Faktoren bleiben gleich. / (7 · 3) · 2 = 7 · (3 · ▢) Lösung: a = **2**
+- `03` AFB II · Rechne auf 2 Wegen. / (7 · 2) · 5 = ▢ / 7 · (2 · 5) = ▢ _(Bild: 7 Gruppen mit je 10 Plättchen)_ Lösung: a = **70**, b = **70**
+- `04` AFB I · Welche Zahl fehlt? / 9 · 5 = ▢ · 9 _(Bild: Punktefeld mit 9 Reihen zu je 5 Punkten)_ Lösung: x = **5**
+- `05` AFB II · Welche Rechnung hat dasselbe Ergebnis? / 12 · (4 · 2)
+  - ☐ 12 · (4 + 2)
+  - ☐ (12 · 4) + 2
+  - ☑ (12 · 4) · 2
+- `06` AFB III · Paul sagt: / (24 : 4) : 2 ist dasselbe wie 24 : (4 : 2). / Stimmt das?
+  - ☑ Falsch. / Links kommt 3 heraus. / Rechts kommt 12 heraus.
+  - ☐ Stimmt. / Die Klammer darf man immer versetzen.
+  - ☐ Falsch. / Links kommt 12 heraus. / Rechts kommt 3 heraus.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche beide Seiten: Hat sich die Reihenfolge der Faktoren geändert oder nur die Klammer? *Lösungsschritt:* 9 und 6 haben den Platz getauscht.
+
+- `01` AFB I · Welches Rechengesetz wurde angewendet? 12 · 9 · 6 = 12 · 6 · 9
+  - ☐ Verbindungsgesetz
+  - ☐ Kein Rechengesetz. Die Gleichung ist falsch.
+  - ☑ Vertauschungsgesetz
+  - ☐ Verteilungsgesetz
+- `02` AFB II · Ergänze: 4 · 65 · 25 = 65 · (4 · ▢) = ▢ Lösung: x = **25**, y = **6500**
+- `03` AFB II · Welche Gleichungen stimmen? Wähle alle richtigen aus.
+  - ☑ 3 · 4 = 4 · 3
+  - ☐ 3 · 4 = 3 + 4
+  - ☑ (3 · 4) · 7 = 3 · (4 · 7)
+  - ☐ (48 : 4) : 2 = 48 : (4 : 2)
+- `04` AFB I · Welches Rechengesetz wurde angewendet? (22 · 5) · 6 = 22 · (5 · 6)
+  - ☐ Vertauschungsgesetz
+  - ☑ Verbindungsgesetz
+  - ☐ Kein Rechengesetz. Die Gleichung ist falsch.
+  - ☐ Verteilungsgesetz
+- `05` AFB II · Welche Zahl fehlt? (68 · 25) · 4 = 68 · ▢ Lösung: **100**. Typische Fehler: 29 (1x1-addiert), 25 (sach-schritt-vergessen).
+- `06` AFB III · Ben sagt: „(128 : 8) : 4 ist dasselbe wie 128 : (8 : 4).“ Sara sagt: „Bei der Division darf man die Klammer nicht versetzen.“ Wer hat recht?
+  - ☑ Sara. (128 : 8) : 4 = 4, aber 128 : (8 : 4) = 64.
+  - ☐ Ben. Das Verbindungsgesetz gilt für alle Rechenarten.
+  - ☐ Ben. Beide Seiten ergeben 4.
+  - ☐ Beide. Bei manchen Zahlen geht es, bei anderen nicht.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte auf zwei Dinge: Hat sich die Reihenfolge geändert? Steht die Klammer anders?
+
+- `01` AFB I · Welche Rechengesetze werden in 4 · (33 · 25) = (4 · 25) · 33 verwendet?
+  - ☐ Nur das Verbindungsgesetz
+  - ☑ Vertauschungsgesetz und Verbindungsgesetz
+  - ☐ Nur das Vertauschungsgesetz
+  - ☐ Keins. Die Gleichung ist falsch.
+  - ☐ Das Verteilungsgesetz
+- `02` AFB II · Schreibe mit dem Vertauschungsgesetz so um, dass 25 und 4 nebeneinanderstehen: 25 · 21 · 4 = 25 · ▢ · ▢ Lösung: x = **4**, y = **21**
+- `03` AFB II · Welche Gleichung ist falsch?
+  - ☐ (6 · 9) · 5 = 6 · (9 · 5)
+  - ☑ (64 : 8) : 2 = 64 : (8 : 2)
+  - ☐ 6 · 9 · 5 = (5 · 6) · 9
+  - ☐ 6 · 9 · 5 = 5 · 9 · 6
+  - ☐ 6 · 9 · 5 = 9 · (6 · 5)
+- `04` AFB III · Gilt das Vertauschungsgesetz auch für die Division? Prüfe an 36 : 4 und 4 : 36.
+  - ☑ Nein. 36 : 4 = 9, aber 4 : 36 ergibt keine natürliche Zahl. Die Ergebnisse sind verschieden.
+  - ☐ Das kann man nicht prüfen.
+  - ☐ Ja. Beide Aufgaben ergeben 9.
+  - ☐ Nein. Bei der Division darf man gar nichts umstellen.
+  - ☐ Ja. Bei allen Rechenarten darf man vertauschen.
+- `05` AFB II · Es gilt (12 · 9) · 7 = 756. Wie groß ist 7 · (9 · 12)? Antworte, ohne neu zu rechnen. Lösung: **756**. Typische Fehler: 115 (punkt-vor-strich).
+- `06` AFB III · Welche Rechnung zeigt, dass das Verbindungsgesetz für die Division nicht gilt?
+  - ☐ (32 · 8) · 2 = 32 · (8 · 2).
+  - ☐ (32 : 8) : 2 = 2 und 32 : (8 : 2) = 2.
+  - ☑ (32 : 8) : 2 = 2, aber 32 : (8 : 2) = 8.
+  - ☐ 32 : 8 = 4 und 32 : 2 = 16.
+  - ☐ Das kann keine Rechnung zeigen.
+
+## 5.4.3-R2: Ich kann mit den Rechengesetzen vorteilhaft multiplizieren.
+
+Grundlage, die F übt: Mal 2 und mal 5 zusammen ist mal 10
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 2 · 5 = 10. Mit 10 rechnest du leicht weiter. *Beispiel:* 2 · 7 · 5: 2 · 5 = 10. 10 · 7 = 70. *Lösungsschritt:* Rechne jetzt 10 · 9.
+
+- `01` AFB I · Rechne geschickt. / 2 · 9 · 5 / Rechne zuerst 2 · 5. _(Bild: Punktefeld mit 9 Reihen zu je 10 Punkten)_ Lösung: **90**. Typische Fehler: 23 (punkt-vor-strich).
+- `02` AFB I · 5 · 7 · 2 / Welche 2 Zahlen rechnest du zuerst? _(Bild: Punktefeld mit 7 Reihen zu je 10 Punkten)_
+  - ☐ 5 · 7
+  - ☑ 5 · 2
+  - ☐ 7 · 2
+- `03` AFB I · Rechne. / 5 · 4 · 2 / Tausche zuerst: 5 · 2 · 4. _(Bild: Punktefeld mit 4 Reihen zu je 10 Punkten)_ Lösung: **40**. Typische Fehler: 22 (punkt-vor-strich).
+- `04` AFB I · Welche Zahl fehlt? / 5 · 2 · 3 = 10 · ▢ _(Bild: Punktefeld mit 3 Reihen zu je 10 Punkten)_ Lösung: x = **3**
+- `05` AFB II · Rechne geschickt. / 2 · 9 · 5 _(Bild: Punktefeld mit 9 Reihen zu je 10 Punkten)_ Lösung: **90**. Typische Fehler: 23 (punkt-vor-strich), 18 (sach-schritt-vergessen).
+- `06` AFB I · In 1 Kiste sind 2 Reihen. / In jeder Reihe sind 5 Flaschen. / Es gibt 7 Kisten. / Wie viele Flaschen sind es? _(Bild: 7 Gruppen mit je 10 Plättchen)_ Lösung: **70 Flaschen**. Typische Fehler: 14 (1x1-addiert), 35 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Tausche so, dass 5 und 2 nebeneinanderstehen. *Beispiel:* 5 · 6 · 2 = 10 · 6 = 60. *Lösungsschritt:* 5 · 2 = 10. Es bleibt der Faktor 8.
+
+- `01` AFB I · Rechne geschickt. / 5 · 8 · 2 = 10 · ▢ = ▢ _(Bild: 8 Gruppen mit je 10 Plättchen)_ Lösung: a = **8**, b = **80**
+- `02` AFB I · Rechne geschickt. / 2 · 11 · 5 _(Bild: Punktefeld mit 11 Reihen zu je 10 Punkten)_ Lösung: **110**. Typische Fehler: 27 (punkt-vor-strich), 22 (sach-schritt-vergessen).
+- `03` AFB II · Rechne geschickt. / 4 · 52 · 25 Lösung: **5200**. Typische Fehler: 2080 (mal-stellenwert), 233 (punkt-vor-strich).
+- `04` AFB I · Rechne geschickt. / 20 · 16 · 5 = 100 · ▢ = ▢ Lösung: a = **16**, b = **1600**
+- `05` AFB II · In 1 Kiste sind 4 Reihen mit je 8 Flaschen. / Ein Laster bringt 25 Kisten. / Wie viele Flaschen sind es? _(Bild: Punktefeld mit 4 Reihen zu je 8 Punkten)_ Lösung: **800 Flaschen**. Typische Fehler: 32 (sach-schritt-vergessen), 200 (sach-schritt-vergessen).
+- `06` AFB III · Welcher Weg ist am geschicktesten? / 25 · 28 · 4
+  - ☐ Zuerst 25 · 28. / Dann das Ergebnis mal 4.
+  - ☐ Zuerst 28 · 4. / Dann das Ergebnis mal 25.
+  - ☑ Zuerst 25 · 4 = 100. / Dann 100 · 28 = 2800.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Faktoren, die zusammen 100 ergeben. *Lösungsschritt:* 25 · 4 = 100. Rechne 100 · 76.
+
+- `01` AFB I · Rechne vorteilhaft: 25 · 76 · 4 Lösung: **7600**. Typische Fehler: 760 (mal-stellenwert).
+- `02` AFB II · Rechne vorteilhaft: 125 · 24 · 8 Lösung: **24000**. Typische Fehler: 2400 (mal-stellenwert).
+- `03` AFB II · Rechne vorteilhaft: 4 · 5 · 44 · 25 · 2 Lösung: **44000**. Typische Fehler: 4400 (mal-stellenwert), 440 (mal-stellenwert).
+- `04` AFB I · Rechne vorteilhaft: 2 · 62 · 50 Lösung: **6200**. Typische Fehler: 620 (mal-stellenwert).
+- `05` AFB II · Ein Regal hat 8 Böden. Auf jedem Boden stehen 23 Kisten mit je 20 Dosen. Wie viele Dosen stehen im Regal? Rechne vorteilhaft. Lösung: **3680 Dosen**. Typische Fehler: 460 (sach-schritt-vergessen), 184 (sach-schritt-vergessen).
+- `06` AFB III · Jonas rechnet 25 · 23 · 4 so: 25 · 4 = 100 und 100 · 23 = 2300. Emre rechnet 25 · 23 = 575 und 575 · 4 = 2300. Wer rechnet vorteilhafter?
+  - ☑ Jonas. 25 · 4 = 100 ist leicht, und mal 100 hängt nur zwei Nullen an.
+  - ☐ Emre. Man muss immer von links nach rechts rechnen.
+  - ☐ Keiner. Beide Ergebnisse sind falsch.
+  - ☐ Beide gleich. Das Ergebnis ist ja dasselbe.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche zwei Faktoren ergeben zusammen eine Stufenzahl?
+
+- `01` AFB I · Rechne vorteilhaft: 8 · 69 · 125 Lösung: **69000**. Typische Fehler: 6900 (mal-stellenwert).
+- `02` AFB II · Rechne vorteilhaft: 4 · 125 · 2 · 25 · 8 Lösung: **200000**. Typische Fehler: 20000 (mal-stellenwert).
+- `03` AFB II · Rechne vorteilhaft: 50 · 12 · 25 Lösung: **15000**. Typische Fehler: 625 (punkt-vor-strich).
+- `04` AFB III · Warum darf man bei 25 · 82 · 4 zuerst 25 · 4 rechnen?
+  - ☐ Weil man immer mit den kleinsten Zahlen anfängt.
+  - ☐ Weil Punkt vor Strich gilt.
+  - ☐ Wegen des Verteilungsgesetzes.
+  - ☑ Wegen des Vertauschungsgesetzes darf man 82 und 4 tauschen. Wegen des Verbindungsgesetzes darf man dann 25 · 4 zuerst rechnen.
+  - ☐ Das darf man nicht. Man muss von links nach rechts rechnen.
+- `05` AFB II · Ein Stadion hat 5 Tribünen. Jede Tribüne hat 125 Reihen mit je 40 Plätzen. Wie viele Plätze hat das Stadion? Rechne vorteilhaft. Lösung: **25000 Plätze**. Typische Fehler: 5000 (sach-schritt-vergessen).
+- `06` AFB III · Tom sagt: „Bei 25 · 46 · 4 darf ich 25 · 4 zuerst rechnen.“ Mara sagt: „Bei 4600 : 46 : 4 darf ich auch 46 : 4 zuerst rechnen.“ Wer hat recht?
+  - ☑ Nur Tom. Beim Multiplizieren gelten Vertauschungs- und Verbindungsgesetz, beim Dividieren nicht.
+  - ☐ Beide. Das Verbindungsgesetz gilt immer.
+  - ☐ Keiner. Man muss immer von links nach rechts rechnen.
+  - ☐ Nur Mara. Beim Dividieren darf man umstellen.
+  - ☐ Beide. Die Rechengesetze gelten für Mal und Geteilt.
+
+## 5.4.4-P1: Ich kann ein Produkt aus gleichen Faktoren als Potenz schreiben und Basis und Exponent benennen.
+
+Grundlage, die F übt: Gleiche Faktoren zählen: 3 · 3 · 3
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die kleine Zahl oben sagt, wie oft die Zahl dasteht. *Beispiel:* 4 · 4 schreibst du kurz 4². Du liest: 4 hoch 2. *Lösungsschritt:* Die Zahl 3 steht 2-mal da.
+
+- `01` AFB I · 3 · 3 / Wie schreibst du das kurz? _(Bild: Quadrat aus 3 · 3 Kästchen)_
+  - ☐ 3 · 2
+  - ☐ 2³
+  - ☑ 3²
+- `02` AFB I · Rechne. / 8² _(Bild: Quadrat aus 8 · 8 Kästchen)_ Lösung: **64**. Typische Fehler: 16 (potenz-mal-exponent), 256 (potenz-vertauscht).
+- `03` AFB I · 2 · 2 · 2 / Wie oft steht die 2 da? _(Bild: Würfel aus 2 Schichten mit je 2 · 2 Würfelchen)_ Lösung: **3**. Typische Fehler: 8 (begriffe-verwechselt).
+- `04` AFB I · Das Quadrat hat 6 Reihen. / In jeder Reihe sind 6 Kästchen. / Das ist 6². / Wie viele Kästchen sind es? _(Bild: Quadrat aus 6 · 6 Kästchen)_ Lösung: **36 Kästchen**. Typische Fehler: 12 (potenz-mal-exponent), 64 (potenz-vertauscht).
+- `05` AFB II · Was bedeutet 4³? _(Bild: Würfel aus 4 Schichten mit je 4 · 4 Würfelchen)_
+  - ☑ 4 · 4 · 4
+  - ☐ 3 · 3 · 3 · 3
+  - ☐ 4 · 3
+- `06` AFB I · Rechne. / 10² _(Bild: Quadrat aus 10 · 10 Kästchen)_ Lösung: **100**. Typische Fehler: 20 (potenz-mal-exponent), 1024 (potenz-vertauscht).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Basis ist der Faktor. Der Exponent sagt, wie oft er vorkommt. *Beispiel:* 7 · 7 · 7 = 7³. *Lösungsschritt:* Der Faktor 6 kommt 2-mal vor.
+
+- `01` AFB I · Schreibe als Potenz. / 6 · 6 _(Bild: Quadrat aus 6 · 6 Kästchen)_
+  - ☑ 6²
+  - ☐ 6 · 2
+  - ☐ 2⁶
+- `02` AFB I · Bei 4³ ist die Basis ▢. / Der Exponent ist ▢. _(Bild: Würfel aus 4 Schichten mit je 4 · 4 Würfelchen)_ Lösung: a = **4**, b = **3**
+- `03` AFB II · Schreibe als Potenz. / 10 · 10 · 10 / Die Basis ist ▢. / Der Exponent ist ▢. Lösung: a = **10**, b = **3**
+- `04` AFB I · Berechne. / 3⁵ Lösung: **243**. Typische Fehler: 15 (potenz-mal-exponent), 125 (potenz-vertauscht).
+- `05` AFB II · Der große Würfel hat 5 Schichten. / Jede Schicht hat 5 Reihen mit je 5 Würfeln. / Wie viele kleine Würfel sind es? _(Bild: Würfel aus 5 Schichten mit je 5 · 5 Würfelchen)_ Lösung: **125 Würfel**. Typische Fehler: 15 (potenz-mal-exponent), 243 (potenz-vertauscht).
+- `06` AFB III · Jonas sagt: / „2⁵ = 10“ / Stimmt das?
+  - ☐ Falsch. / 2⁵ = 5 · 5.
+  - ☐ Stimmt. / 2 · 5 = 10.
+  - ☑ Falsch. / 2⁵ = 2 · 2 · 2 · 2 · 2 = 32.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Basis ist der Faktor, der mehrmals vorkommt. Der Exponent zählt, wie oft. *Lösungsschritt:* 9⁵ = 9 · 9 · 9 · 9 · 9.
+
+- `01` AFB I · Bei 9⁵ ist die Basis ▢ und der Exponent ▢. Lösung: a = **9**, b = **5**
+- `02` AFB II · Welche Potenzen ergeben 64? Wähle alle richtigen aus.
+  - ☑ 8²
+  - ☐ 6²
+  - ☑ 4³
+  - ☑ 2⁶
+- `03` AFB II · Schreibe 1000 · 100 als Zehnerpotenz. Wie heißt der Exponent? Lösung: **5**. Typische Fehler: 4 (potenz-nullen), 6 (potenz-nullen).
+- `04` AFB I · Du schreibst 5 · 5 · 5 · 5 · 5 · 5 · 5 als Potenz mit der Basis 5. Der Exponent ist ▢. Lösung: x = **7**
+- `05` AFB II · Um wie viel ist 3⁴ größer als 4³? Lösung: **17**. Typische Fehler: 0 (potenz-mal-exponent).
+- `06` AFB III · Ali sagt: „2³ = 3².“ Lina sagt: „2³ ist kleiner als 3².“ Wer hat recht?
+  - ☐ Ali. 2 · 3 = 3 · 2 = 6.
+  - ☐ Keiner. 2³ ist größer.
+  - ☐ Ali. Es kommen dieselben Zahlen vor.
+  - ☑ Lina. 2³ = 8 und 3² = 9.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Faktoren genau.
+
+- `01` AFB I · Gib Basis und Exponent an, wenn du 3 · 3 · 3 · 3 · 3 · 3 · 3 als Potenz schreibst. Basis: ▢, Exponent: ▢ Lösung: a = **3**, b = **7**
+- `02` AFB II · Eine Potenz hat die Basis 5 und den Wert 3125. Wie heißt der Exponent? Lösung: **5**.
+- `03` AFB II · Welche Potenz hat den größten Wert?
+  - ☐ 10³
+  - ☐ 5⁴
+  - ☐ 3⁶
+  - ☐ 6³
+  - ☑ 2¹⁰
+- `04` AFB III · Was passiert mit dem Wert einer Potenz mit der Basis 2, wenn der Exponent um 1 größer wird? Prüfe an 2⁶ und 2⁷.
+  - ☐ Er wird um 2 größer.
+  - ☐ Er wird um 1 größer.
+  - ☑ Er verdoppelt sich. 2⁷ = 2⁶ · 2 = 128.
+  - ☐ Er wird 10-mal so groß.
+  - ☐ Das hängt von der Zahl ab.
+- `05` AFB II · Schreibe 81 auf zwei Arten als Potenz. Mit der Basis 9 ist der Exponent ▢. Mit der Basis 3 ist der Exponent ▢. Lösung: a = **2**, b = **4**
+- `06` AFB III · Mia sagt: „Eine Zehnerpotenz hat so viele Nullen, wie der Exponent angibt.“ Mara sagt: „Sie hat eine Null mehr als der Exponent.“ Wer hat recht?
+  - ☐ Keiner. 10³ = 30.
+  - ☐ Mara. Die 10 hat schon eine Null.
+  - ☐ Mara. 10³ = 10 000.
+  - ☐ Beide. Es kommt auf die Zahl an.
+  - ☑ Mia. 10³ = 1000 hat drei Nullen, 10⁵ = 100 000 hat fünf Nullen.
+
+## 5.4.4-P2: Ich kann Potenzen berechnen, auch Quadratzahlen und Zehnerpotenzen.
+
+Grundlage, die F übt: Quadrate aus Kästchen und Würfel aus Schichten abzählen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleich viele Kästchen in jeder Reihe: Rechne mal. *Beispiel:* 4 Reihen mit je 4 Kästchen: 4 · 4 = 16. *Lösungsschritt:* Es sind 5 Reihen mit je 5 Kästchen.
+
+- `01` AFB I · Wie viele Kästchen hat das Quadrat? / Rechne 5 · 5. _(Bild: Quadrat aus 5 · 5 Kästchen)_ Lösung: **25 Kästchen**. Typische Fehler: 10 (potenz-mal-exponent), 32 (potenz-vertauscht).
+- `02` AFB I · Rechne. / 3² _(Bild: Quadrat aus 3 · 3 Kästchen)_ Lösung: **9**. Typische Fehler: 6 (potenz-mal-exponent), 8 (potenz-vertauscht).
+- `03` AFB I · Rechne. / 2³ _(Bild: Würfel aus 2 Schichten mit je 2 · 2 Würfelchen)_ Lösung: **8**. Typische Fehler: 6 (potenz-mal-exponent), 9 (potenz-vertauscht).
+- `04` AFB I · Wie viel ist 5²? _(Bild: Quadrat aus 5 · 5 Kästchen)_
+  - ☐ 7
+  - ☑ 25
+  - ☐ 10
+- `05` AFB II · Ein Quadrat hat 8 Reihen mit je 8 Kästchen. / Wie viele Kästchen sind es? _(Bild: Quadrat aus 8 · 8 Kästchen)_ Lösung: **64 Kästchen**. Typische Fehler: 16 (potenz-mal-exponent), 256 (potenz-vertauscht).
+- `06` AFB I · Rechne. / 3³ _(Bild: Würfel aus 3 Schichten mit je 3 · 3 Würfelchen)_ Lösung: **27**. Typische Fehler: 9 (potenz-mal-exponent).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 9² = 9 · 9. *Beispiel:* 8² = 8 · 8 = 64. *Lösungsschritt:* Rechne 9 · 9.
+
+- `01` AFB I · Berechne die Quadratzahl. / 9² _(Bild: Quadrat aus 9 · 9 Kästchen)_ Lösung: **81**. Typische Fehler: 18 (potenz-mal-exponent), 512 (potenz-vertauscht).
+- `02` AFB I · Berechne die Zehnerpotenz. / 10³ Lösung: **1000**. Typische Fehler: 30 (potenz-mal-exponent), 59049 (potenz-vertauscht).
+- `03` AFB II · Welche Zahl ist eine Quadratzahl?
+  - ☐ 39
+  - ☐ 42
+  - ☑ 36
+- `04` AFB I · Berechne. / 3³ _(Bild: Würfel aus 3 Schichten mit je 3 · 3 Würfelchen)_ Lösung: **27**. Typische Fehler: 9 (potenz-mal-exponent).
+- `05` AFB II · Der große Würfel hat 4 Schichten. / Jede Schicht hat 4 Reihen mit je 4 Würfeln. / Wie viele kleine Würfel sind es? _(Bild: Würfel aus 4 Schichten mit je 4 · 4 Würfelchen)_ Lösung: **64 Würfel**. Typische Fehler: 12 (potenz-mal-exponent), 81 (potenz-vertauscht).
+- `06` AFB III · Ole sagt: / „10⁴ hat 4 Nullen.“ / Stimmt das?
+  - ☐ Falsch. / 10⁴ hat 5 Nullen.
+  - ☑ Stimmt. / 10⁴ = 10 · 10 · 10 · 10 = 10 000.
+  - ☐ Falsch. / 10⁴ = 40.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Potenz als Produkt. *Lösungsschritt:* 16² = 16 · 16.
+
+- `01` AFB I · Berechne 16². Lösung: **256**. Typische Fehler: 32 (potenz-mal-exponent), 65536 (potenz-vertauscht).
+- `02` AFB II · Berechne 2⁶ + 6². Lösung: **100**. Typische Fehler: 24 (potenz-mal-exponent).
+- `03` AFB II · Welche Quadratzahl liegt zwischen 180 und 200? Lösung: **196**.
+- `04` AFB I · Berechne 10⁵. Lösung: **100000**. Typische Fehler: 50 (potenz-mal-exponent), 9765625 (potenz-vertauscht).
+- `05` AFB II · Welche Zahl mal sich selbst ergibt 196? Lösung: **14**. Typische Fehler: 98 (potenz-mal-exponent).
+- `06` AFB III · Tom rechnet 40² = 1600. Ole rechnet 40² = 80. Wer hat recht?
+  - ☐ Beide. Es kommt darauf an, wie man rechnet.
+  - ☐ Ole. 40 · 2 = 80.
+  - ☐ Keiner. 40² = 16 000.
+  - ☑ Tom. 40² = 40 · 40 = 1600.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne beide Potenzen einzeln.
+
+- `01` AFB I · Berechne 5⁴ − 4⁴. Lösung: **369**. Typische Fehler: 1 (potenz-vertauscht), 4 (potenz-mal-exponent).
+- `02` AFB II · Welche ist die größte Quadratzahl, die kleiner als 300 ist? Lösung: **289**.
+- `03` AFB II · Berechne 10² · 10². Lösung: **10000**.
+- `04` AFB III · Die Quadratzahlen beginnen so: 1, 4, 9, 16, 25. Welche Regel gilt für den Unterschied zwischen zwei benachbarten Quadratzahlen?
+  - ☑ Die Unterschiede sind die ungeraden Zahlen 3, 5, 7, 9 und so weiter.
+  - ☐ Der Unterschied ist immer 3.
+  - ☐ Der Unterschied verdoppelt sich jedes Mal.
+  - ☐ Die Unterschiede sind die geraden Zahlen.
+  - ☐ Es gibt keine Regel.
+- `05` AFB II · Auf ein Feld legt man 2 Körner, auf das nächste 4, dann 8 und so weiter. Es sind immer doppelt so viele. Wie viele Körner liegen auf dem 11. Feld? Lösung: **2048 Körner**. Typische Fehler: 1024 (potenz-mal-exponent), 22 (potenz-mal-exponent).
+- `06` AFB III · Tom sagt: „2¹⁰ ist größer als 10².“ Lina sagt: „10² ist größer, weil 10 größer als 2 ist.“ Wer hat recht?
+  - ☐ Lina. Die größere Basis gewinnt immer.
+  - ☐ Beide. Es kommt auf die Zahl an.
+  - ☑ Tom. 2¹⁰ = 1024 und 10² = 100.
+  - ☐ Lina. 2¹⁰ = 20.
+  - ☐ Keiner. Beide Potenzen sind gleich groß.
 
 ## 5.4.5-D1: Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden.
 

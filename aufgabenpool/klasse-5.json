@@ -1189,6 +1189,11 @@
        "wort": "Zehnerpotenz",
        "ab": "G",
        "erklaerung": "Eine Potenz mit der Basis 10. 10³ = 1000."
+      },
+      {
+       "wort": "Zweierpotenz",
+       "ab": "M",
+       "erklaerung": "Eine Potenz mit der Basis 2. 2⁶ = 64."
       }
      ]
     },
@@ -25105,6 +25110,3297 @@
     "4 · 36 = 144",
     "256 + 144 = 400",
     "8 · 64 = 512"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-F-01",
+   "lernziel": "5.4.3-R1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "7 · 9 = 63\nTausche die Zahlen.\n9 · 7 = {{a}}",
+   "luecken": {
+    "a": {
+     "loesung": 63,
+     "typischeFehler": [
+      {
+       "wert": 16,
+       "fehlvorstellung": "1x1-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Bei der Tauschaufgabe bleibt das Ergebnis gleich.",
+    "beispiel": "3 · 4 = 12. Also ist auch 4 · 3 = 12.",
+    "loesungsschritt": "Es sind dieselben Punkte. Du zählst sie nur anders."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 7,
+    "spalten": 9
+   },
+   "nachweis": [
+    "7 · 9 = 63",
+    "9 · 7 = 63"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-F-02",
+   "lernziel": "5.4.3-R1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Aufgabe ist die Tauschaufgabe?\n6 · 8",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "8 + 6",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "6 · 6",
+     "richtig": false
+    },
+    {
+     "text": "8 · 6",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei der Tauschaufgabe tauschen die beiden Zahlen den Platz.",
+    "beispiel": "Die Tauschaufgabe zu 2 · 6 ist 6 · 2.",
+    "loesungsschritt": "Die Zahlen 6 und 8 bleiben. Das Mal bleibt auch."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 8
+   },
+   "nachweis": [
+    "6 · 8 = 48",
+    "8 · 6 = 48"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-F-03",
+   "lernziel": "5.4.3-R1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n2 · 6 · 5\nRechne zuerst 2 · 5.",
+   "loesung": 60,
+   "typischeFehler": [
+    {
+     "wert": 17,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 120,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "2 · 5 = 10. Mit 10 rechnest du leicht weiter.",
+    "beispiel": "2 · 4 · 5: 2 · 5 = 10. 10 · 4 = 40.",
+    "loesungsschritt": "Rechne jetzt 10 · 6."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 10
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "10 · 6 = 60",
+    "2 · 6 · 5 = 60"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-F-04",
+   "lernziel": "5.4.3-R1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n5 · 3 = 3 · {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 15,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Links und rechts stehen dieselben Zahlen. Sie sind nur getauscht.",
+    "beispiel": "2 · 7 = 7 · 2.",
+    "loesungsschritt": "Links stehen 5 und 3. Rechts steht schon die 3."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 5,
+    "spalten": 3
+   },
+   "nachweis": [
+    "5 · 3 = 15",
+    "3 · 5 = 15"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-F-05",
+   "lernziel": "5.4.3-R1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche 2 Aufgaben haben dasselbe Ergebnis?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 · 9 und 4 + 9",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "4 · 9 und 9 · 4",
+     "richtig": true
+    },
+    {
+     "text": "4 · 9 und 4 · 4",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Tauschaufgaben haben dasselbe Ergebnis.",
+    "beispiel": "5 · 3 und 3 · 5 haben beide das Ergebnis 15.",
+    "loesungsschritt": "Suche die Aufgabe mit denselben Zahlen und einem Mal."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 4,
+    "spalten": 9
+   },
+   "nachweis": [
+    {
+     "art": "gleicheWerte"
+    },
+    "4 · 9 = 36",
+    "9 · 4 = 36",
+    "4 + 9 = 13",
+    "4 · 4 = 16"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-F-06",
+   "lernziel": "5.4.3-R1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n5 · 8 · 2\nTausche zuerst: 5 · 2 · 8.",
+   "loesung": 80,
+   "typischeFehler": [
+    {
+     "wert": 42,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Du darfst die Zahlen tauschen. Dann stehen 5 und 2 nebeneinander.",
+    "beispiel": "5 · 7 · 2 = 5 · 2 · 7. 5 · 2 = 10. 10 · 7 = 70.",
+    "loesungsschritt": "5 · 2 = 10. Rechne jetzt 10 · 8."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 8,
+    "spalten": 10
+   },
+   "nachweis": [
+    "5 · 2 = 10",
+    "10 · 8 = 80",
+    "5 · 8 · 2 = 80",
+    "5 · 2 · 8 = 80"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-G-01",
+   "lernziel": "5.4.3-R1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welches Gesetz siehst du?\n6 · 7 = 7 · 6",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Vertauschungsgesetz",
+     "richtig": true
+    },
+    {
+     "text": "Kein Gesetz.\nDie Rechnung ist falsch.",
+     "richtig": false
+    },
+    {
+     "text": "Verbindungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau genau: Haben die Faktoren den Platz getauscht?",
+    "beispiel": "5 · 9 = 9 · 5: Die Faktoren sind vertauscht. Das ist das Vertauschungsgesetz.",
+    "loesungsschritt": "6 und 7 haben den Platz getauscht."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 7
+   },
+   "nachweis": [
+    "6 · 7 = 42",
+    "7 · 6 = 42"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-G-02",
+   "lernziel": "5.4.3-R1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Die Klammer wandert.\nDie Faktoren bleiben gleich.\n(7 · 3) · 2 = 7 · (3 · {{a}})",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Beim Verbindungsgesetz bleibt die Reihenfolge der Faktoren gleich.",
+    "beispiel": "(4 · 7) · 2 = 4 · (7 · 2).",
+    "loesungsschritt": "Links stehen 7, 3 und 2. Rechts fehlt der letzte Faktor."
+   },
+   "nachweis": [
+    "(7 · 3) · 2 = 42",
+    "7 · (3 · 2) = 42"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-G-03",
+   "lernziel": "5.4.3-R1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Rechne auf 2 Wegen.\n(7 · 2) · 5 = {{a}}\n7 · (2 · 5) = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 70,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 70,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne immer zuerst die Klammer aus.",
+    "beispiel": "(7 · 2) · 5 = 14 · 5 = 70. Und 7 · (2 · 5) = 7 · 10 = 70.",
+    "loesungsschritt": "Zweiter Weg: 2 · 5 = 10. Dann 7 · 10."
+   },
+   "bild": {
+    "art": "gruppenbild",
+    "gruppen": 7,
+    "je": 10
+   },
+   "nachweis": [
+    "7 · 2 = 14",
+    "14 · 5 = 70",
+    "2 · 5 = 10",
+    "7 · 10 = 70",
+    "(7 · 2) · 5 = 70",
+    "7 · (2 · 5) = 70"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-G-04",
+   "lernziel": "5.4.3-R1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n9 · 5 = {{x}} · 9",
+   "luecken": {
+    "x": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 45,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Beim Vertauschungsgesetz bleiben die Faktoren dieselben.",
+    "beispiel": "6 · 8 = 8 · 6.",
+    "loesungsschritt": "Links stehen die Faktoren 9 und 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 5
+   },
+   "nachweis": [
+    "9 · 5 = 45",
+    "5 · 9 = 45"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-G-05",
+   "lernziel": "5.4.3-R1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Rechnung hat dasselbe Ergebnis?\n12 · (4 · 2)",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "12 · (4 + 2)",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "(12 · 4) + 2",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "(12 · 4) · 2",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Multiplizieren darfst du die Klammer versetzen.",
+    "beispiel": "5 · (4 · 2) = (5 · 4) · 2.",
+    "loesungsschritt": "Suche die Rechnung mit denselben Zahlen und 2-mal Mal."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 96
+    },
+    "12 · (4 · 2) = 96",
+    "(12 · 4) · 2 = 96"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-G-06",
+   "lernziel": "5.4.3-R1",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Paul sagt:\n(24 : 4) : 2 ist dasselbe wie 24 : (4 : 2).\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nLinks kommt 3 heraus.\nRechts kommt 12 heraus.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.\nDie Klammer darf man immer versetzen.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Falsch.\nLinks kommt 12 heraus.\nRechts kommt 3 heraus.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Seiten aus. Die Klammer kommt zuerst.",
+    "beispiel": "(16 : 4) : 2 = 4 : 2 = 2. Aber 16 : (4 : 2) = 16 : 2 = 8.",
+    "loesungsschritt": "Rechts: Klammer 4 : 2 = 2. Dann 24 : 2."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "(24 : 4) : 2 = 3",
+    "24 : (4 : 2) = 12"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-M-01",
+   "lernziel": "5.4.3-R1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welches Rechengesetz wurde angewendet? 12 · 9 · 6 = 12 · 6 · 9",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Verbindungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Kein Rechengesetz. Die Gleichung ist falsch.",
+     "richtig": false
+    },
+    {
+     "text": "Vertauschungsgesetz",
+     "richtig": true
+    },
+    {
+     "text": "Verteilungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche beide Seiten: Hat sich die Reihenfolge der Faktoren geändert oder nur die Klammer?",
+    "loesungsschritt": "9 und 6 haben den Platz getauscht."
+   },
+   "nachweis": [
+    "12 · 9 · 6 = 648",
+    "12 · 6 · 9 = 648"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-M-02",
+   "lernziel": "5.4.3-R1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ergänze: 4 · 65 · 25 = 65 · (4 · {{x}}) = {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 25,
+     "typischeFehler": []
+    },
+    "y": {
+     "loesung": 6500,
+     "typischeFehler": [
+      {
+       "wert": 285,
+       "fehlvorstellung": "punkt-vor-strich"
+      },
+      {
+       "wert": 650,
+       "fehlvorstellung": "mal-stellenwert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Tausche so, dass 4 und 25 nebeneinanderstehen. Fasse sie mit einer Klammer zusammen.",
+    "loesungsschritt": "4 · 25 = 100. Dann 65 · 100."
+   },
+   "nachweis": [
+    "4 · 25 = 100",
+    "65 · 100 = 6500",
+    "4 · 65 · 25 = 6500",
+    "65 · (4 · 25) = 6500"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-M-03",
+   "lernziel": "5.4.3-R1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Gleichungen stimmen? Wähle alle richtigen aus.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "3 · 4 = 4 · 3",
+     "richtig": true
+    },
+    {
+     "text": "3 · 4 = 3 + 4",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "(3 · 4) · 7 = 3 · (4 · 7)",
+     "richtig": true
+    },
+    {
+     "text": "(48 : 4) : 2 = 48 : (4 : 2)",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Multiplizieren darfst du vertauschen und Klammern versetzen. Prüfe die übrigen Gleichungen durch Ausrechnen.",
+    "loesungsschritt": "(48 : 4) : 2 = 6, aber 48 : (4 : 2) = 24."
+   },
+   "nachweis": [
+    {
+     "art": "gleichungen"
+    },
+    "(48 : 4) : 2 = 6",
+    "48 : (4 : 2) = 24"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-M-04",
+   "lernziel": "5.4.3-R1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welches Rechengesetz wurde angewendet? (22 · 5) · 6 = 22 · (5 · 6)",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Vertauschungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Verbindungsgesetz",
+     "richtig": true
+    },
+    {
+     "text": "Kein Rechengesetz. Die Gleichung ist falsch.",
+     "richtig": false
+    },
+    {
+     "text": "Verteilungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche beide Seiten: Hat sich die Reihenfolge der Faktoren geändert oder nur die Klammer?",
+    "loesungsschritt": "Die Reihenfolge ist gleich geblieben. Nur die Klammer steht an einer anderen Stelle."
+   },
+   "nachweis": [
+    "(22 · 5) · 6 = 660",
+    "22 · (5 · 6) = 660"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-M-05",
+   "lernziel": "5.4.3-R1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? (68 · 25) · 4 = 68 · ▢",
+   "loesung": 100,
+   "typischeFehler": [
+    {
+     "wert": 29,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "wert": 25,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Klammer darf wandern. Fasse die beiden letzten Faktoren zusammen.",
+    "loesungsschritt": "(68 · 25) · 4 = 68 · (25 · 4)."
+   },
+   "nachweis": [
+    "(68 · 25) · 4 = 6800",
+    "25 · 4 = 100"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-M-06",
+   "lernziel": "5.4.3-R1",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ben sagt: „(128 : 8) : 4 ist dasselbe wie 128 : (8 : 4).“ Sara sagt: „Bei der Division darf man die Klammer nicht versetzen.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Sara. (128 : 8) : 4 = 4, aber 128 : (8 : 4) = 64.",
+     "richtig": true
+    },
+    {
+     "text": "Ben. Das Verbindungsgesetz gilt für alle Rechenarten.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Ben. Beide Seiten ergeben 4.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Beide. Bei manchen Zahlen geht es, bei anderen nicht.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Seiten aus und vergleiche.",
+    "loesungsschritt": "Rechts: 8 : 4 = 2, dann 128 : 2."
+   },
+   "nachweis": [
+    "(128 : 8) : 4 = 4",
+    "128 : (8 : 4) = 64"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-E-01",
+   "lernziel": "5.4.3-R1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Rechengesetze werden in 4 · (33 · 25) = (4 · 25) · 33 verwendet?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nur das Verbindungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Vertauschungsgesetz und Verbindungsgesetz",
+     "richtig": true
+    },
+    {
+     "text": "Nur das Vertauschungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Keins. Die Gleichung ist falsch.",
+     "richtig": false
+    },
+    {
+     "text": "Das Verteilungsgesetz",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Achte auf zwei Dinge: Hat sich die Reihenfolge geändert? Steht die Klammer anders?"
+   },
+   "nachweis": [
+    "4 · (33 · 25) = 3300",
+    "(4 · 25) · 33 = 3300"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-E-02",
+   "lernziel": "5.4.3-R1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Schreibe mit dem Vertauschungsgesetz so um, dass 25 und 4 nebeneinanderstehen: 25 · 21 · 4 = 25 · {{x}} · {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 4,
+     "typischeFehler": []
+    },
+    "y": {
+     "loesung": 21,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Nur die Reihenfolge der Faktoren ändert sich."
+   },
+   "nachweis": [
+    "25 · 21 · 4 = 2100",
+    "25 · 4 · 21 = 2100"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-E-03",
+   "lernziel": "5.4.3-R1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Gleichung ist falsch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "(6 · 9) · 5 = 6 · (9 · 5)",
+     "richtig": false
+    },
+    {
+     "text": "(64 : 8) : 2 = 64 : (8 : 2)",
+     "richtig": true
+    },
+    {
+     "text": "6 · 9 · 5 = (5 · 6) · 9",
+     "richtig": false
+    },
+    {
+     "text": "6 · 9 · 5 = 5 · 9 · 6",
+     "richtig": false
+    },
+    {
+     "text": "6 · 9 · 5 = 9 · (6 · 5)",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vertauschen und Klammern versetzen sind beim Multiplizieren erlaubt. Prüfe die anderen Gleichungen genau."
+   },
+   "nachweis": [
+    {
+     "art": "gleichungen",
+     "falsche": true
+    },
+    "(64 : 8) : 2 = 4",
+    "64 : (8 : 2) = 16"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-E-04",
+   "lernziel": "5.4.3-R1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Gilt das Vertauschungsgesetz auch für die Division? Prüfe an 36 : 4 und 4 : 36.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein. 36 : 4 = 9, aber 4 : 36 ergibt keine natürliche Zahl. Die Ergebnisse sind verschieden.",
+     "richtig": true
+    },
+    {
+     "text": "Das kann man nicht prüfen.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. Beide Aufgaben ergeben 9.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Nein. Bei der Division darf man gar nichts umstellen.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. Bei allen Rechenarten darf man vertauschen.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Aufgaben aus. Was fällt dir bei der zweiten auf?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "36 : 4 = 9"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-E-05",
+   "lernziel": "5.4.3-R1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Es gilt (12 · 9) · 7 = 756. Wie groß ist 7 · (9 · 12)? Antworte, ohne neu zu rechnen.",
+   "loesung": 756,
+   "typischeFehler": [
+    {
+     "wert": 115,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Gesetze verbinden die beiden Rechnungen?"
+   },
+   "nachweis": [
+    "(12 · 9) · 7 = 756",
+    "7 · (9 · 12) = 756"
+   ]
+  },
+  {
+   "id": "5.4.3-R1-E-06",
+   "lernziel": "5.4.3-R1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Welche Rechnung zeigt, dass das Verbindungsgesetz für die Division nicht gilt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "(32 · 8) · 2 = 32 · (8 · 2).",
+     "richtig": false
+    },
+    {
+     "text": "(32 : 8) : 2 = 2 und 32 : (8 : 2) = 2.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "(32 : 8) : 2 = 2, aber 32 : (8 : 2) = 8.",
+     "richtig": true
+    },
+    {
+     "text": "32 : 8 = 4 und 32 : 2 = 16.",
+     "richtig": false
+    },
+    {
+     "text": "Das kann keine Rechnung zeigen.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Gegenbeispiel braucht dieselben Zahlen, einmal mit der Klammer vorne, einmal hinten."
+   },
+   "nachweis": [
+    "(32 : 8) : 2 = 2",
+    "32 : (8 : 2) = 8",
+    "32 : 8 = 4",
+    "32 : 2 = 16"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-F-01",
+   "lernziel": "5.4.3-R2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n2 · 9 · 5\nRechne zuerst 2 · 5.",
+   "loesung": 90,
+   "typischeFehler": [
+    {
+     "wert": 23,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "2 · 5 = 10. Mit 10 rechnest du leicht weiter.",
+    "beispiel": "2 · 7 · 5: 2 · 5 = 10. 10 · 7 = 70.",
+    "loesungsschritt": "Rechne jetzt 10 · 9."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 10
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "10 · 9 = 90",
+    "2 · 9 · 5 = 90"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-F-02",
+   "lernziel": "5.4.3-R2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "5 · 7 · 2\nWelche 2 Zahlen rechnest du zuerst?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 · 7",
+     "richtig": false
+    },
+    {
+     "text": "5 · 2",
+     "richtig": true
+    },
+    {
+     "text": "7 · 2",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche 2 Zahlen, die zusammen 10 ergeben, wenn du sie malnimmst.",
+    "beispiel": "2 · 5 = 10. Mit 10 rechnest du leicht.",
+    "loesungsschritt": "Probiere 5 · 2."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 7,
+    "spalten": 10
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 10
+    },
+    "5 · 2 = 10",
+    "10 · 7 = 70",
+    "5 · 7 · 2 = 70"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-F-03",
+   "lernziel": "5.4.3-R2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n5 · 4 · 2\nTausche zuerst: 5 · 2 · 4.",
+   "loesung": 40,
+   "typischeFehler": [
+    {
+     "wert": 22,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Tausche so, dass 5 und 2 nebeneinanderstehen.",
+    "beispiel": "5 · 9 · 2 = 5 · 2 · 9 = 10 · 9 = 90.",
+    "loesungsschritt": "5 · 2 = 10. Rechne jetzt 10 · 4."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 4,
+    "spalten": 10
+   },
+   "nachweis": [
+    "5 · 2 = 10",
+    "10 · 4 = 40",
+    "5 · 4 · 2 = 40",
+    "5 · 2 · 4 = 40"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-F-04",
+   "lernziel": "5.4.3-R2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n5 · 2 · 3 = 10 · {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 30,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "5 · 2 ist 10. Die letzte Zahl bleibt.",
+    "beispiel": "5 · 2 · 4 = 10 · 4.",
+    "loesungsschritt": "Im Bild sind 3 Reihen mit je 10 Punkten."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 3,
+    "spalten": 10
+   },
+   "nachweis": [
+    "5 · 2 = 10",
+    "5 · 2 · 3 = 30",
+    "10 · 3 = 30"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-F-05",
+   "lernziel": "5.4.3-R2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n2 · 9 · 5",
+   "loesung": 90,
+   "typischeFehler": [
+    {
+     "wert": 23,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 18,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche 2 Zahlen, die mal genommen 10 ergeben.",
+    "beispiel": "2 · 4 · 5: 2 · 5 = 10. 10 · 4 = 40.",
+    "loesungsschritt": "Rechne zuerst 2 · 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 10
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "10 · 9 = 90",
+    "2 · 9 · 5 = 90"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-F-06",
+   "lernziel": "5.4.3-R2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "In 1 Kiste sind 2 Reihen.\nIn jeder Reihe sind 5 Flaschen.\nEs gibt 7 Kisten.\nWie viele Flaschen sind es?",
+   "loesung": 70,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "wert": 35,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die Flaschen in 1 Kiste.",
+    "beispiel": "2 Reihen mit je 5 sind 10 Flaschen. 3 Kisten: 3 · 10 = 30.",
+    "loesungsschritt": "In 1 Kiste sind 2 · 5 = 10 Flaschen. Rechne 7 · 10."
+   },
+   "einheit": "Flaschen",
+   "bild": {
+    "art": "gruppenbild",
+    "gruppen": 7,
+    "je": 10
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "7 · 10 = 70"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-G-01",
+   "lernziel": "5.4.3-R2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Rechne geschickt.\n5 · 8 · 2 = 10 · {{a}} = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 8,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 80,
+     "typischeFehler": [
+      {
+       "wert": 42,
+       "fehlvorstellung": "punkt-vor-strich"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Tausche so, dass 5 und 2 nebeneinanderstehen.",
+    "beispiel": "5 · 6 · 2 = 10 · 6 = 60.",
+    "loesungsschritt": "5 · 2 = 10. Es bleibt der Faktor 8."
+   },
+   "bild": {
+    "art": "gruppenbild",
+    "gruppen": 8,
+    "je": 10
+   },
+   "nachweis": [
+    "5 · 2 = 10",
+    "10 · 8 = 80",
+    "5 · 8 · 2 = 80"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-G-02",
+   "lernziel": "5.4.3-R2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n2 · 11 · 5",
+   "loesung": 110,
+   "typischeFehler": [
+    {
+     "wert": 27,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 22,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Fasse 2 und 5 zusammen.",
+    "beispiel": "2 · 13 · 5: 2 · 5 = 10. 10 · 13 = 130.",
+    "loesungsschritt": "2 · 5 = 10. Rechne jetzt 10 · 11."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 10
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "10 · 11 = 110",
+    "2 · 11 · 5 = 110"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-G-03",
+   "lernziel": "5.4.3-R2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n4 · 52 · 25",
+   "loesung": 5200,
+   "typischeFehler": [
+    {
+     "wert": 2080,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 233,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "4 · 25 = 100. Tausche die Faktoren.",
+    "beispiel": "4 · 13 · 25 = 4 · 25 · 13 = 100 · 13 = 1300.",
+    "loesungsschritt": "4 · 25 = 100. Rechne jetzt 100 · 52."
+   },
+   "nachweis": [
+    "4 · 25 = 100",
+    "100 · 52 = 5200",
+    "4 · 52 · 25 = 5200"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-G-04",
+   "lernziel": "5.4.3-R2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Rechne geschickt.\n20 · 16 · 5 = 100 · {{a}} = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 16,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 1600,
+     "typischeFehler": [
+      {
+       "wert": 160,
+       "fehlvorstellung": "mal-stellenwert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "20 · 5 = 100. Mit 100 rechnest du leicht.",
+    "beispiel": "20 · 17 · 5 = 100 · 17 = 1700.",
+    "loesungsschritt": "Es bleibt der Faktor 16."
+   },
+   "nachweis": [
+    "20 · 5 = 100",
+    "100 · 16 = 1600",
+    "20 · 16 · 5 = 1600"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-G-05",
+   "lernziel": "5.4.3-R2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "In 1 Kiste sind 4 Reihen mit je 8 Flaschen.\nEin Laster bringt 25 Kisten.\nWie viele Flaschen sind es?",
+   "loesung": 800,
+   "typischeFehler": [
+    {
+     "wert": 32,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 200,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne geschickt: 25 Kisten mit je 4 Reihen sind 100 Reihen.",
+    "beispiel": "25 Kisten mit je 4 Reihen zu 6 Flaschen: 25 · 4 = 100. 100 · 6 = 600.",
+    "loesungsschritt": "25 · 4 = 100 Reihen. Rechne 100 · 8."
+   },
+   "einheit": "Flaschen",
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 4,
+    "spalten": 8
+   },
+   "nachweis": [
+    {
+     "zahl": 32,
+     "grund": "Flaschen in 1 Kiste"
+    },
+    "25 · 4 = 100",
+    "100 · 8 = 800",
+    "25 · 4 · 8 = 800"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-G-06",
+   "lernziel": "5.4.3-R2",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Welcher Weg ist am geschicktesten?\n25 · 28 · 4",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Zuerst 25 · 28.\nDann das Ergebnis mal 4.",
+     "richtig": false
+    },
+    {
+     "text": "Zuerst 28 · 4.\nDann das Ergebnis mal 25.",
+     "richtig": false
+    },
+    {
+     "text": "Zuerst 25 · 4 = 100.\nDann 100 · 28 = 2800.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche 2 Faktoren, die zusammen eine glatte Zahl ergeben.",
+    "beispiel": "25 · 4 = 100. Mal 100 ist leicht.",
+    "loesungsschritt": "Tausche die Faktoren so, dass 25 und 4 nebeneinanderstehen."
+   },
+   "nachweis": [
+    "25 · 4 = 100",
+    "100 · 28 = 2800",
+    "25 · 28 · 4 = 2800"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-M-01",
+   "lernziel": "5.4.3-R2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 25 · 76 · 4",
+   "loesung": 7600,
+   "typischeFehler": [
+    {
+     "wert": 760,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zwei Faktoren, die zusammen 100 ergeben.",
+    "loesungsschritt": "25 · 4 = 100. Rechne 100 · 76."
+   },
+   "nachweis": [
+    "25 · 4 = 100",
+    "100 · 76 = 7600",
+    "25 · 76 · 4 = 7600"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-M-02",
+   "lernziel": "5.4.3-R2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 125 · 24 · 8",
+   "loesung": 24000,
+   "typischeFehler": [
+    {
+     "wert": 2400,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "125 · 8 = 1000.",
+    "loesungsschritt": "Rechne 1000 · 24."
+   },
+   "nachweis": [
+    "125 · 8 = 1000",
+    "1000 · 24 = 24000",
+    "125 · 24 · 8 = 24000"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-M-03",
+   "lernziel": "5.4.3-R2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 4 · 5 · 44 · 25 · 2",
+   "loesung": 44000,
+   "typischeFehler": [
+    {
+     "wert": 4400,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 440,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bilde zwei Paare, die glatte Zahlen ergeben.",
+    "loesungsschritt": "4 · 25 = 100 und 5 · 2 = 10. Rechne 100 · 10 · 44."
+   },
+   "nachweis": [
+    "4 · 25 = 100",
+    "5 · 2 = 10",
+    "100 · 10 = 1000",
+    "1000 · 44 = 44000",
+    "4 · 5 · 44 · 25 · 2 = 44000"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-M-04",
+   "lernziel": "5.4.3-R2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 2 · 62 · 50",
+   "loesung": 6200,
+   "typischeFehler": [
+    {
+     "wert": 620,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zwei Faktoren, die zusammen 100 ergeben.",
+    "loesungsschritt": "2 · 50 = 100. Rechne 100 · 62."
+   },
+   "nachweis": [
+    "2 · 50 = 100",
+    "100 · 62 = 6200",
+    "2 · 62 · 50 = 6200"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-M-05",
+   "lernziel": "5.4.3-R2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Regal hat 8 Böden. Auf jedem Boden stehen 23 Kisten mit je 20 Dosen. Wie viele Dosen stehen im Regal? Rechne vorteilhaft.",
+   "loesung": 3680,
+   "typischeFehler": [
+    {
+     "wert": 460,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 184,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nimm zuerst die beiden Zahlen mal, die eine glatte Zahl ergeben.",
+    "loesungsschritt": "8 · 20 = 160. Rechne dann 160 · 23."
+   },
+   "einheit": "Dosen",
+   "nachweis": [
+    "8 · 20 = 160",
+    "160 · 23 = 3680",
+    "8 · 23 · 20 = 3680"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-M-06",
+   "lernziel": "5.4.3-R2",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jonas rechnet 25 · 23 · 4 so: 25 · 4 = 100 und 100 · 23 = 2300. Emre rechnet 25 · 23 = 575 und 575 · 4 = 2300. Wer rechnet vorteilhafter?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Jonas. 25 · 4 = 100 ist leicht, und mal 100 hängt nur zwei Nullen an.",
+     "richtig": true
+    },
+    {
+     "text": "Emre. Man muss immer von links nach rechts rechnen.",
+     "richtig": false
+    },
+    {
+     "text": "Keiner. Beide Ergebnisse sind falsch.",
+     "richtig": false
+    },
+    {
+     "text": "Beide gleich. Das Ergebnis ist ja dasselbe.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Ergebnisse stimmen. Welcher Weg hat die leichteren Schritte?",
+    "loesungsschritt": "Vergleiche 25 · 4 mit 25 · 23."
+   },
+   "nachweis": [
+    "25 · 4 = 100",
+    "100 · 23 = 2300",
+    "25 · 23 = 575",
+    "575 · 4 = 2300"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-E-01",
+   "lernziel": "5.4.3-R2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 8 · 69 · 125",
+   "loesung": 69000,
+   "typischeFehler": [
+    {
+     "wert": 6900,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche zwei Faktoren ergeben zusammen eine Stufenzahl?"
+   },
+   "nachweis": [
+    "8 · 125 = 1000",
+    "1000 · 69 = 69000",
+    "8 · 69 · 125 = 69000"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-E-02",
+   "lernziel": "5.4.3-R2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 4 · 125 · 2 · 25 · 8",
+   "loesung": 200000,
+   "typischeFehler": [
+    {
+     "wert": 20000,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bilde Paare, die Stufenzahlen ergeben."
+   },
+   "nachweis": [
+    "4 · 25 = 100",
+    "125 · 8 = 1000",
+    "100 · 1000 = 100000",
+    "100000 · 2 = 200000",
+    "4 · 125 · 2 · 25 · 8 = 200000"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-E-03",
+   "lernziel": "5.4.3-R2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne vorteilhaft: 50 · 12 · 25",
+   "loesung": 15000,
+   "typischeFehler": [
+    {
+     "wert": 625,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege 12 geschickt, sodass Faktoren für 100 entstehen."
+   },
+   "nachweis": [
+    "12 : 4 = 3",
+    "25 · 4 = 100",
+    "50 · 3 = 150",
+    "100 · 150 = 15000",
+    "50 · 12 · 25 = 15000"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-E-04",
+   "lernziel": "5.4.3-R2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Warum darf man bei 25 · 82 · 4 zuerst 25 · 4 rechnen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Weil man immer mit den kleinsten Zahlen anfängt.",
+     "richtig": false
+    },
+    {
+     "text": "Weil Punkt vor Strich gilt.",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Wegen des Verteilungsgesetzes.",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Wegen des Vertauschungsgesetzes darf man 82 und 4 tauschen. Wegen des Verbindungsgesetzes darf man dann 25 · 4 zuerst rechnen.",
+     "richtig": true
+    },
+    {
+     "text": "Das darf man nicht. Man muss von links nach rechts rechnen.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche beiden Rechengesetze gelten für die Multiplikation?"
+   },
+   "nachweis": [
+    "25 · 4 = 100",
+    "100 · 82 = 8200",
+    "25 · 82 · 4 = 8200"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-E-05",
+   "lernziel": "5.4.3-R2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Stadion hat 5 Tribünen. Jede Tribüne hat 125 Reihen mit je 40 Plätzen. Wie viele Plätze hat das Stadion? Rechne vorteilhaft.",
+   "loesung": 25000,
+   "typischeFehler": [
+    {
+     "wert": 5000,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege 40 so, dass eine 8 darin steckt."
+   },
+   "einheit": "Plätze",
+   "nachweis": [
+    "40 : 8 = 5",
+    "125 · 8 = 1000",
+    "1000 · 5 = 5000",
+    "5000 · 5 = 25000",
+    "5 · 125 · 40 = 25000"
+   ]
+  },
+  {
+   "id": "5.4.3-R2-E-06",
+   "lernziel": "5.4.3-R2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom sagt: „Bei 25 · 46 · 4 darf ich 25 · 4 zuerst rechnen.“ Mara sagt: „Bei 4600 : 46 : 4 darf ich auch 46 : 4 zuerst rechnen.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nur Tom. Beim Multiplizieren gelten Vertauschungs- und Verbindungsgesetz, beim Dividieren nicht.",
+     "richtig": true
+    },
+    {
+     "text": "Beide. Das Verbindungsgesetz gilt immer.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Keiner. Man muss immer von links nach rechts rechnen.",
+     "richtig": false
+    },
+    {
+     "text": "Nur Mara. Beim Dividieren darf man umstellen.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Beide. Die Rechengesetze gelten für Mal und Geteilt.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Rechengesetze gelten nicht für jede Rechenart."
+   },
+   "nachweis": [
+    "25 · 4 = 100",
+    "100 · 46 = 4600",
+    "25 · 46 · 4 = 4600",
+    "4600 : 46 = 100"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-F-01",
+   "lernziel": "5.4.4-P1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "3 · 3\nWie schreibst du das kurz?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3 · 2",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "2³",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "3²",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die kleine Zahl oben sagt, wie oft die Zahl dasteht.",
+    "beispiel": "4 · 4 schreibst du kurz 4². Du liest: 4 hoch 2.",
+    "loesungsschritt": "Die Zahl 3 steht 2-mal da."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 3
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 9
+    },
+    {
+     "art": "potenz",
+     "basis": 3,
+     "exponent": 2,
+     "wert": 9
+    },
+    "3 · 3 = 9"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-F-02",
+   "lernziel": "5.4.4-P1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n8²",
+   "loesung": 64,
+   "typischeFehler": [
+    {
+     "wert": 16,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 256,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "8² heißt 8 · 8.",
+    "beispiel": "5² = 5 · 5 = 25.",
+    "loesungsschritt": "Rechne 8 · 8."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 8
+   },
+   "nachweis": [
+    "8² = 64",
+    "8 · 8 = 64"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-F-03",
+   "lernziel": "5.4.4-P1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "2 · 2 · 2\nWie oft steht die 2 da?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Zahlen zwischen den Malpunkten.",
+    "beispiel": "4 · 4 · 4 · 4: Die 4 steht 4-mal da.",
+    "loesungsschritt": "Zähle: 1, 2 und so weiter."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 2,
+    "schichten": 2
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 2,
+     "exponent": 3,
+     "wert": 8
+    },
+    "2 · 2 · 2 = 8"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-F-04",
+   "lernziel": "5.4.4-P1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Das Quadrat hat 6 Reihen.\nIn jeder Reihe sind 6 Kästchen.\nDas ist 6².\nWie viele Kästchen sind es?",
+   "loesung": 36,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 64,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele Kästchen in jeder Reihe: Rechne mal.",
+    "beispiel": "4 Reihen mit je 4 Kästchen: 4 · 4 = 16.",
+    "loesungsschritt": "Rechne 6 · 6."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "quadratbild",
+    "seite": 6
+   },
+   "nachweis": [
+    "6 · 6 = 36",
+    "6² = 36"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-F-05",
+   "lernziel": "5.4.4-P1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Was bedeutet 4³?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 · 4 · 4",
+     "richtig": true
+    },
+    {
+     "text": "3 · 3 · 3 · 3",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "4 · 3",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die kleine Zahl sagt, wie oft die große Zahl malgenommen wird.",
+    "beispiel": "4³ heißt 4 · 4 · 4.",
+    "loesungsschritt": "Die 4 steht 3-mal da."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 4,
+    "schichten": 4
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 64
+    },
+    "4³ = 64",
+    "4 · 4 · 4 = 64"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-F-06",
+   "lernziel": "5.4.4-P1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n10²",
+   "loesung": 100,
+   "typischeFehler": [
+    {
+     "wert": 20,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 1024,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "10² heißt 10 · 10.",
+    "beispiel": "3² = 3 · 3 = 9.",
+    "loesungsschritt": "10 Reihen mit je 10 Kästchen. Zähle in 10er-Schritten."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 10
+   },
+   "nachweis": [
+    "10² = 100",
+    "10 · 10 = 100"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-G-01",
+   "lernziel": "5.4.4-P1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Schreibe als Potenz.\n6 · 6",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6²",
+     "richtig": true
+    },
+    {
+     "text": "6 · 2",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "2⁶",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Basis ist der Faktor. Der Exponent sagt, wie oft er vorkommt.",
+    "beispiel": "7 · 7 · 7 = 7³.",
+    "loesungsschritt": "Der Faktor 6 kommt 2-mal vor."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 6
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 36
+    },
+    {
+     "art": "potenz",
+     "basis": 6,
+     "exponent": 2,
+     "wert": 36
+    },
+    "6 · 6 = 36"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-G-02",
+   "lernziel": "5.4.4-P1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Bei 4³ ist die Basis {{a}}.\nDer Exponent ist {{b}}.",
+   "luecken": {
+    "a": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 64,
+       "fehlvorstellung": "begriffe-verwechselt"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "begriffe-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Basis ist die große Zahl. Der Exponent ist die kleine Zahl oben.",
+    "beispiel": "Bei 2⁵ ist 2 die Basis. 5 ist der Exponent.",
+    "loesungsschritt": "4³ heißt 4 · 4 · 4."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 4,
+    "schichten": 4
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 4,
+     "exponent": 3,
+     "wert": 64
+    },
+    "4³ = 64"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-G-03",
+   "lernziel": "5.4.4-P1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Schreibe als Potenz.\n10 · 10 · 10\nDie Basis ist {{a}}.\nDer Exponent ist {{b}}.",
+   "luecken": {
+    "a": {
+     "loesung": 10,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "potenz-vertauscht"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 10,
+       "fehlvorstellung": "potenz-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Basis ist der Faktor. Der Exponent sagt, wie oft er dasteht.",
+    "beispiel": "4 · 4 · 4 = 4³. Die Basis ist 4. Der Exponent ist 3.",
+    "loesungsschritt": "Der Faktor ist 10. Zähle, wie oft er dasteht."
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 10,
+     "exponent": 3,
+     "wert": 1000
+    },
+    "10 · 10 · 10 = 1000"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-G-04",
+   "lernziel": "5.4.4-P1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne.\n3⁵",
+   "loesung": 243,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 125,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Potenz als Produkt. Rechne dann Schritt für Schritt.",
+    "beispiel": "2⁴ = 2 · 2 · 2 · 2 = 16.",
+    "loesungsschritt": "3⁵ = 3 · 3 · 3 · 3 · 3."
+   },
+   "nachweis": [
+    "3⁵ = 243",
+    "3 · 3 · 3 · 3 · 3 = 243"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-G-05",
+   "lernziel": "5.4.4-P1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Der große Würfel hat 5 Schichten.\nJede Schicht hat 5 Reihen mit je 5 Würfeln.\nWie viele kleine Würfel sind es?",
+   "loesung": 125,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 243,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das ist 5³.",
+    "beispiel": "2 Schichten mit je 2 · 2 Würfeln: 2³ = 8.",
+    "loesungsschritt": "In 1 Schicht sind 5 · 5 = 25 Würfel."
+   },
+   "einheit": "Würfel",
+   "bild": {
+    "art": "quadratbild",
+    "seite": 5,
+    "schichten": 5
+   },
+   "nachweis": [
+    "5 · 5 = 25",
+    "25 · 5 = 125",
+    "5³ = 125"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-G-06",
+   "lernziel": "5.4.4-P1",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jonas sagt:\n„2⁵ = 10“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\n2⁵ = 5 · 5.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "Stimmt.\n2 · 5 = 10.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Falsch.\n2⁵ = 2 · 2 · 2 · 2 · 2 = 32.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Exponent sagt, wie oft die Basis malgenommen wird.",
+    "beispiel": "2³ = 2 · 2 · 2 = 8 und nicht 2 · 3.",
+    "loesungsschritt": "Schreibe 2⁵ als Produkt."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "2⁵",
+     "behauptet": 10
+    },
+    "2 · 2 · 2 · 2 · 2 = 32",
+    "2 · 5 = 10"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-M-01",
+   "lernziel": "5.4.4-P1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Bei 9⁵ ist die Basis {{a}} und der Exponent {{b}}.",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "begriffe-verwechselt"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "begriffe-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Basis ist der Faktor, der mehrmals vorkommt. Der Exponent zählt, wie oft.",
+    "loesungsschritt": "9⁵ = 9 · 9 · 9 · 9 · 9."
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 9,
+     "exponent": 5,
+     "wert": 59049
+    }
+   ]
+  },
+  {
+   "id": "5.4.4-P1-M-02",
+   "lernziel": "5.4.4-P1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Potenzen ergeben 64? Wähle alle richtigen aus.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "8²",
+     "richtig": true
+    },
+    {
+     "text": "6²",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "4³",
+     "richtig": true
+    },
+    {
+     "text": "2⁶",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Potenz aus.",
+    "loesungsschritt": "2⁶ = 2 · 2 · 2 · 2 · 2 · 2."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 64
+    },
+    "2⁶ = 64",
+    "4³ = 64",
+    "8² = 64",
+    "6² = 36"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-M-03",
+   "lernziel": "5.4.4-P1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Schreibe 1000 · 100 als Zehnerpotenz. Wie heißt der Exponent?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "potenz-nullen"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "potenz-nullen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Nullen.",
+    "loesungsschritt": "1000 · 100 = 100 000."
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 10,
+     "exponent": 5,
+     "wert": 100000
+    },
+    "1000 · 100 = 100000"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-M-04",
+   "lernziel": "5.4.4-P1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Du schreibst 5 · 5 · 5 · 5 · 5 · 5 · 5 als Potenz mit der Basis 5. Der Exponent ist {{x}}.",
+   "luecken": {
+    "x": {
+     "loesung": 7,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "begriffe-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Zähle die Faktoren, nicht die Malpunkte.",
+    "loesungsschritt": "Es sind 6 Malpunkte. Wie viele Faktoren sind es?"
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 5,
+     "exponent": 7,
+     "wert": 78125
+    },
+    {
+     "zahl": 6,
+     "grund": "Malpunkte"
+    }
+   ]
+  },
+  {
+   "id": "5.4.4-P1-M-05",
+   "lernziel": "5.4.4-P1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Um wie viel ist 3⁴ größer als 4³?",
+   "loesung": 17,
+   "typischeFehler": [
+    {
+     "wert": 0,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Berechne zuerst beide Potenzen.",
+    "loesungsschritt": "3⁴ = 81."
+   },
+   "nachweis": [
+    "3⁴ = 81",
+    "4³ = 64",
+    "81 − 64 = 17"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-M-06",
+   "lernziel": "5.4.4-P1",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ali sagt: „2³ = 3².“ Lina sagt: „2³ ist kleiner als 3².“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ali. 2 · 3 = 3 · 2 = 6.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Keiner. 2³ ist größer.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "Ali. Es kommen dieselben Zahlen vor.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "Lina. 2³ = 8 und 3² = 9.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Potenzen aus.",
+    "loesungsschritt": "2³ = 2 · 2 · 2."
+   },
+   "nachweis": [
+    "2³ = 8",
+    "3² = 9",
+    "2 · 3 = 6",
+    "3 · 2 = 6"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-E-01",
+   "lernziel": "5.4.4-P1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Gib Basis und Exponent an, wenn du 3 · 3 · 3 · 3 · 3 · 3 · 3 als Potenz schreibst. Basis: {{a}}, Exponent: {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 3,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 7,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Zähle die Faktoren genau."
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 3,
+     "exponent": 7,
+     "wert": 2187
+    }
+   ]
+  },
+  {
+   "id": "5.4.4-P1-E-02",
+   "lernziel": "5.4.4-P1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Eine Potenz hat die Basis 5 und den Wert 3125. Wie heißt der Exponent?",
+   "loesung": 5,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Multipliziere so lange mit 5, bis 3125 herauskommt. Zähle die Faktoren."
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 5,
+     "exponent": 5,
+     "wert": 3125
+    }
+   ]
+  },
+  {
+   "id": "5.4.4-P1-E-03",
+   "lernziel": "5.4.4-P1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Potenz hat den größten Wert?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "10³",
+     "richtig": false
+    },
+    {
+     "text": "5⁴",
+     "richtig": false
+    },
+    {
+     "text": "3⁶",
+     "richtig": false
+    },
+    {
+     "text": "6³",
+     "richtig": false
+    },
+    {
+     "text": "2¹⁰",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Potenz aus. Rechne geschickt, zum Beispiel 2¹⁰ = 2⁵ · 2⁵."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesstes"
+    },
+    "2¹⁰ = 1024",
+    "10³ = 1000",
+    "5⁴ = 625",
+    "3⁶ = 729",
+    "6³ = 216"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-E-04",
+   "lernziel": "5.4.4-P1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Was passiert mit dem Wert einer Potenz mit der Basis 2, wenn der Exponent um 1 größer wird? Prüfe an 2⁶ und 2⁷.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Er wird um 2 größer.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Er wird um 1 größer.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Er verdoppelt sich. 2⁷ = 2⁶ · 2 = 128.",
+     "richtig": true
+    },
+    {
+     "text": "Er wird 10-mal so groß.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-nullen"
+    },
+    {
+     "text": "Das hängt von der Zahl ab.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Potenzen aus und vergleiche."
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "Exponent wird um 1 größer"
+    },
+    "2⁶ = 64",
+    "2⁷ = 128",
+    "64 · 2 = 128"
+   ]
+  },
+  {
+   "id": "5.4.4-P1-E-05",
+   "lernziel": "5.4.4-P1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Schreibe 81 auf zwei Arten als Potenz. Mit der Basis 9 ist der Exponent {{a}}. Mit der Basis 3 ist der Exponent {{b}}.",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 4,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Wie oft musst du 9 malnehmen? Und wie oft 3?"
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 9,
+     "exponent": 2,
+     "wert": 81
+    },
+    {
+     "art": "potenz",
+     "basis": 3,
+     "exponent": 4,
+     "wert": 81
+    }
+   ]
+  },
+  {
+   "id": "5.4.4-P1-E-06",
+   "lernziel": "5.4.4-P1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Mia sagt: „Eine Zehnerpotenz hat so viele Nullen, wie der Exponent angibt.“ Mara sagt: „Sie hat eine Null mehr als der Exponent.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Keiner. 10³ = 30.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Mara. Die 10 hat schon eine Null.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-nullen"
+    },
+    {
+     "text": "Mara. 10³ = 10 000.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-nullen"
+    },
+    {
+     "text": "Beide. Es kommt auf die Zahl an.",
+     "richtig": false
+    },
+    {
+     "text": "Mia. 10³ = 1000 hat drei Nullen, 10⁵ = 100 000 hat fünf Nullen.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe zwei Zehnerpotenzen aus und zähle die Nullen."
+   },
+   "nachweis": [
+    "10³ = 1000",
+    "10⁵ = 100000"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-F-01",
+   "lernziel": "5.4.4-P2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Wie viele Kästchen hat das Quadrat?\nRechne 5 · 5.",
+   "loesung": 25,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 32,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele Kästchen in jeder Reihe: Rechne mal.",
+    "beispiel": "4 Reihen mit je 4 Kästchen: 4 · 4 = 16.",
+    "loesungsschritt": "Es sind 5 Reihen mit je 5 Kästchen."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "quadratbild",
+    "seite": 5
+   },
+   "nachweis": [
+    "5 · 5 = 25"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-F-02",
+   "lernziel": "5.4.4-P2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n3²",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "3² heißt 3 · 3.",
+    "beispiel": "5² = 5 · 5 = 25.",
+    "loesungsschritt": "Zähle die Kästchen im Bild. Es sind 3 Reihen mit je 3."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 3
+   },
+   "nachweis": [
+    "3² = 9",
+    "3 · 3 = 9"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-F-03",
+   "lernziel": "5.4.4-P2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n2³",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "2³ heißt 2 · 2 · 2.",
+    "beispiel": "3³ = 3 · 3 · 3. Erst 3 · 3 = 9. Dann 9 · 3 = 27.",
+    "loesungsschritt": "2 · 2 = 4. Rechne dann 4 · 2."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 2,
+    "schichten": 2
+   },
+   "nachweis": [
+    "2³ = 8",
+    "2 · 2 = 4",
+    "4 · 2 = 8"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-F-04",
+   "lernziel": "5.4.4-P2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Wie viel ist 5²?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "7",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "25",
+     "richtig": true
+    },
+    {
+     "text": "10",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "5² heißt 5 · 5.",
+    "beispiel": "6² = 6 · 6 = 36.",
+    "loesungsschritt": "Zähle die Kästchen im Bild."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 5
+   },
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 5,
+     "exponent": 2,
+     "wert": 25
+    },
+    "5 · 5 = 25"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-F-05",
+   "lernziel": "5.4.4-P2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Quadrat hat 8 Reihen mit je 8 Kästchen.\nWie viele Kästchen sind es?",
+   "loesung": 64,
+   "typischeFehler": [
+    {
+     "wert": 16,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 256,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne Reihen mal Kästchen in 1 Reihe.",
+    "beispiel": "5 Reihen mit je 5: 5 · 5 = 25.",
+    "loesungsschritt": "Rechne 8 · 8 = 5 · 8 + 3 · 8."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "quadratbild",
+    "seite": 8
+   },
+   "nachweis": [
+    "8 · 8 = 64"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-F-06",
+   "lernziel": "5.4.4-P2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n3³",
+   "loesung": 27,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "3³ heißt 3 · 3 · 3.",
+    "beispiel": "2³ = 2 · 2 · 2. Erst 2 · 2 = 4. Dann 4 · 2 = 8.",
+    "loesungsschritt": "3 · 3 = 9. Rechne dann 9 · 3."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 3,
+    "schichten": 3
+   },
+   "nachweis": [
+    "3³ = 27",
+    "3 · 3 = 9",
+    "9 · 3 = 27"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-G-01",
+   "lernziel": "5.4.4-P2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne die Quadratzahl.\n9²",
+   "loesung": 81,
+   "typischeFehler": [
+    {
+     "wert": 18,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 512,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "9² = 9 · 9.",
+    "beispiel": "8² = 8 · 8 = 64.",
+    "loesungsschritt": "Rechne 9 · 9."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 9
+   },
+   "nachweis": [
+    "9² = 81",
+    "9 · 9 = 81"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-G-02",
+   "lernziel": "5.4.4-P2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne die Zehnerpotenz.\n10³",
+   "loesung": 1000,
+   "typischeFehler": [
+    {
+     "wert": 30,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 59049,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer Zehnerpotenz sagt der Exponent, wie viele Nullen die Zahl hat.",
+    "beispiel": "10² = 100. Das sind 2 Nullen.",
+    "loesungsschritt": "10³ = 10 · 10 · 10."
+   },
+   "nachweis": [
+    "10³ = 1000",
+    "10 · 10 · 10 = 1000"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-G-03",
+   "lernziel": "5.4.4-P2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Zahl ist eine Quadratzahl?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "39",
+     "richtig": false
+    },
+    {
+     "text": "42",
+     "richtig": false
+    },
+    {
+     "text": "36",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Quadratzahl ist eine Zahl mal sich selbst.",
+    "beispiel": "36 ist eine Quadratzahl, denn 6 · 6 = 36.",
+    "loesungsschritt": "Probiere 6 · 6."
+   },
+   "nachweis": [
+    {
+     "art": "quadrat",
+     "zahl": 36,
+     "wurzel": 6
+    },
+    "6 · 6 = 36"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-G-04",
+   "lernziel": "5.4.4-P2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne.\n3³",
+   "loesung": 27,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "3³ = 3 · 3 · 3. Das ist ein Würfel.",
+    "beispiel": "2³ = 2 · 2 · 2 = 8.",
+    "loesungsschritt": "3 · 3 = 9. Rechne dann 9 · 3."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 3,
+    "schichten": 3
+   },
+   "nachweis": [
+    "3³ = 27",
+    "3 · 3 = 9",
+    "9 · 3 = 27"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-G-05",
+   "lernziel": "5.4.4-P2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Der große Würfel hat 4 Schichten.\nJede Schicht hat 4 Reihen mit je 4 Würfeln.\nWie viele kleine Würfel sind es?",
+   "loesung": 64,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 81,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das ist 4³.",
+    "beispiel": "2 Schichten mit je 2 · 2 Würfeln: 2³ = 8.",
+    "loesungsschritt": "In 1 Schicht sind 4 · 4 = 16 Würfel."
+   },
+   "einheit": "Würfel",
+   "bild": {
+    "art": "quadratbild",
+    "seite": 4,
+    "schichten": 4
+   },
+   "nachweis": [
+    "4 · 4 = 16",
+    "16 · 4 = 64",
+    "4³ = 64"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-G-06",
+   "lernziel": "5.4.4-P2",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ole sagt:\n„10⁴ hat 4 Nullen.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\n10⁴ hat 5 Nullen.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-nullen"
+    },
+    {
+     "text": "Stimmt.\n10⁴ = 10 · 10 · 10 · 10 = 10 000.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\n10⁴ = 40.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Potenz als Produkt und rechne aus.",
+    "beispiel": "10³ = 10 · 10 · 10 = 1000. Das sind 3 Nullen.",
+    "loesungsschritt": "Rechne 10 · 10 · 10 · 10. Zähle die Nullen."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    },
+    {
+     "zahl": 4,
+     "grund": "Exponent und Zahl der Nullen"
+    },
+    "10⁴ = 10000",
+    "10 · 10 · 10 · 10 = 10000"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-M-01",
+   "lernziel": "5.4.4-P2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 16².",
+   "loesung": 256,
+   "typischeFehler": [
+    {
+     "wert": 32,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 65536,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Potenz als Produkt.",
+    "loesungsschritt": "16² = 16 · 16."
+   },
+   "nachweis": [
+    "16² = 256",
+    "16 · 16 = 256"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-M-02",
+   "lernziel": "5.4.4-P2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Berechne 2⁶ + 6².",
+   "loesung": 100,
+   "typischeFehler": [
+    {
+     "wert": 24,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Berechne zuerst die Potenzen. Addiere dann.",
+    "loesungsschritt": "2⁶ = 64."
+   },
+   "nachweis": [
+    "2⁶ = 64",
+    "6² = 36",
+    "64 + 36 = 100"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-M-03",
+   "lernziel": "5.4.4-P2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Quadratzahl liegt zwischen 180 und 200?",
+   "loesung": 196,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Gehe die Quadratzahlen der Reihe nach durch.",
+    "loesungsschritt": "13 · 13 = 169. Wie geht es weiter?"
+   },
+   "nachweis": [
+    {
+     "zahl": 180,
+     "grund": "untere Grenze"
+    },
+    {
+     "zahl": 200,
+     "grund": "obere Grenze"
+    },
+    {
+     "zahl": 13,
+     "grund": "probiert"
+    },
+    {
+     "zahl": 14,
+     "grund": "probiert"
+    },
+    {
+     "zahl": 15,
+     "grund": "probiert"
+    },
+    "13 · 13 = 169",
+    "15 · 15 = 225",
+    "14 · 14 = 196"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-M-04",
+   "lernziel": "5.4.4-P2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 10⁵.",
+   "loesung": 100000,
+   "typischeFehler": [
+    {
+     "wert": 50,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 9765625,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Exponent sagt, wie viele Nullen die Zehnerpotenz hat.",
+    "loesungsschritt": "10⁵ = 10 · 10 · 10 · 10 · 10."
+   },
+   "nachweis": [
+    "10⁵ = 100000",
+    "10 · 10 · 10 · 10 · 10 = 100000"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-M-05",
+   "lernziel": "5.4.4-P2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl mal sich selbst ergibt 196?",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 98,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mache einen Überschlag mit Zehnerzahlen.",
+    "loesungsschritt": "10 · 10 = 100 und 20 · 20 = 400. Die Zahl liegt zwischen 10 und 20."
+   },
+   "nachweis": [
+    {
+     "art": "quadrat",
+     "zahl": 196,
+     "wurzel": 14
+    }
+   ]
+  },
+  {
+   "id": "5.4.4-P2-M-06",
+   "lernziel": "5.4.4-P2",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom rechnet 40² = 1600. Ole rechnet 40² = 80. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Es kommt darauf an, wie man rechnet.",
+     "richtig": false
+    },
+    {
+     "text": "Ole. 40 · 2 = 80.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Keiner. 40² = 16 000.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-nullen"
+    },
+    {
+     "text": "Tom. 40² = 40 · 40 = 1600.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Exponent sagt, wie oft die Basis malgenommen wird.",
+    "loesungsschritt": "40² = 40 · 40."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "40²",
+     "behauptet": 80
+    },
+    "40 · 40 = 1600",
+    "40 · 2 = 80"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-E-01",
+   "lernziel": "5.4.4-P2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 5⁴ − 4⁴.",
+   "loesung": 369,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Berechne beide Potenzen einzeln."
+   },
+   "nachweis": [
+    "5⁴ = 625",
+    "4⁴ = 256",
+    "625 − 256 = 369"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-E-02",
+   "lernziel": "5.4.4-P2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche ist die größte Quadratzahl, die kleiner als 300 ist?",
+   "loesung": 289,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Probiere Zahlen mal sich selbst, bis du über die Grenze kommst."
+   },
+   "nachweis": [
+    {
+     "zahl": 300,
+     "grund": "Grenze"
+    },
+    {
+     "zahl": 17,
+     "grund": "probiert"
+    },
+    {
+     "zahl": 18,
+     "grund": "probiert"
+    },
+    "18 · 18 = 324",
+    "17 · 17 = 289"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-E-03",
+   "lernziel": "5.4.4-P2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Berechne 10² · 10².",
+   "loesung": 10000,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Schreibe beide Zehnerpotenzen aus. Wie viele Nullen hat das Produkt?"
+   },
+   "nachweis": [
+    "10² = 100",
+    "10² = 100",
+    "100 · 100 = 10000"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-E-04",
+   "lernziel": "5.4.4-P2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Die Quadratzahlen beginnen so: 1, 4, 9, 16, 25. Welche Regel gilt für den Unterschied zwischen zwei benachbarten Quadratzahlen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Die Unterschiede sind die ungeraden Zahlen 3, 5, 7, 9 und so weiter.",
+     "richtig": true
+    },
+    {
+     "text": "Der Unterschied ist immer 3.",
+     "richtig": false
+    },
+    {
+     "text": "Der Unterschied verdoppelt sich jedes Mal.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Die Unterschiede sind die geraden Zahlen.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Es gibt keine Regel.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne die Unterschiede aus und schreibe sie nebeneinander."
+   },
+   "nachweis": [
+    "4 − 1 = 3",
+    "9 − 4 = 5",
+    "16 − 9 = 7",
+    "25 − 16 = 9"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-E-05",
+   "lernziel": "5.4.4-P2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Auf ein Feld legt man 2 Körner, auf das nächste 4, dann 8 und so weiter. Es sind immer doppelt so viele. Wie viele Körner liegen auf dem 11. Feld?",
+   "loesung": 2048,
+   "typischeFehler": [
+    {
+     "wert": 1024,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "wert": 22,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auf dem ersten Feld liegen 2¹, auf dem zweiten 2² Körner. Und auf dem n-ten Feld?"
+   },
+   "einheit": "Körner",
+   "nachweis": [
+    {
+     "art": "potenz",
+     "basis": 2,
+     "exponent": 11,
+     "wert": 2048
+    },
+    "2 · 2 = 4",
+    "4 · 2 = 8",
+    "2¹¹ = 2048"
+   ]
+  },
+  {
+   "id": "5.4.4-P2-E-06",
+   "lernziel": "5.4.4-P2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom sagt: „2¹⁰ ist größer als 10².“ Lina sagt: „10² ist größer, weil 10 größer als 2 ist.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Lina. Die größere Basis gewinnt immer.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    },
+    {
+     "text": "Beide. Es kommt auf die Zahl an.",
+     "richtig": false
+    },
+    {
+     "text": "Tom. 2¹⁰ = 1024 und 10² = 100.",
+     "richtig": true
+    },
+    {
+     "text": "Lina. 2¹⁰ = 20.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-mal-exponent"
+    },
+    {
+     "text": "Keiner. Beide Potenzen sind gleich groß.",
+     "richtig": false,
+     "fehlvorstellung": "potenz-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Potenzen aus."
+   },
+   "nachweis": [
+    "2¹⁰ = 1024",
+    "10² = 100"
    ]
   },
   {

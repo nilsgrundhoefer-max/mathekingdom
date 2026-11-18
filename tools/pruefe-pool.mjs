@@ -421,7 +421,7 @@ const SONDER = {
   // Potenz: basis hoch exponent ist wert.
   potenz: (n) => (Number.isInteger(n.basis) && Number.isInteger(n.exponent) && n.exponent >= 1 && n.basis ** n.exponent === n.wert ? null : `${n.basis} hoch ${n.exponent} ist nicht ${n.wert}`),
   quadrat: (n) => {
-    const alle = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].filter((x) => x * x === n.zahl);
+    const alle = Array.from({ length: 1000 }, (_, i) => i + 1).filter((x) => x * x === n.zahl);
     return alle.length === 1 && alle[0] === n.wurzel ? null : 'keine Quadratzahl';
   },
   // Überschlag mit einer glatten Zahl in der Nähe, die nicht durch Runden entsteht (963 : 3 mit 900 : 3).

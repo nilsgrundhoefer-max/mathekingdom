@@ -382,6 +382,7 @@ export const wortspeicher = {
     w('Exponent', 'G', 'Die kleine Zahl oben. Sie sagt, wie oft die Basis vorkommt. Bei 2³ ist 3 der Exponent.'),
     w('Quadratzahl', 'G', 'Eine Zahl mal sich selbst. 6 · 6 = 36, also ist 36 eine Quadratzahl.'),
     w('Zehnerpotenz', 'G', 'Eine Potenz mit der Basis 10. 10³ = 1000.'),
+    w('Zweierpotenz', 'M', 'Eine Potenz mit der Basis 2. 2⁶ = 64.'),
   ],
   '5.4.5': [
     w('geteilt durch', 'F', 'So liest du das Zeichen : vor. 12 : 3 heißt: 12 geteilt durch 3.'),
