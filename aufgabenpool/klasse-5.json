@@ -1595,6 +1595,11 @@
        "wort": "Quadratzahl",
        "ab": "G",
        "erklaerung": "Eine Zahl mal sich selbst. 4 · 4 = 16, also ist 16 eine Quadratzahl."
+      },
+      {
+       "wort": "Vielfaches",
+       "ab": "M",
+       "erklaerung": "Eine Zahl aus der Mal-Reihe einer Zahl. 12 ist ein Vielfaches von 3."
       }
      ]
     }
@@ -19789,23 +19794,23 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "5 + 8 und 1 + 8",
+     "text": "5 + 8 + 1 + 8",
      "richtig": false,
      "fehlvorstellung": "1x1-addiert"
     },
     {
-     "text": "5 · 8 und 1",
+     "text": "5 · 8 + 1",
      "richtig": false,
      "fehlvorstellung": "mal-zerlegung-halb"
     },
     {
-     "text": "5 · 8 und 1 · 8",
+     "text": "5 · 8 + 1 · 8",
      "richtig": true
     }
    ],
    "hilfen": {
     "tipp": "Schau ins Bild. Über der Lücke sind 5 Reihen.",
-    "beispiel": "7 · 3: 5 Reihen und noch 2 Reihen. Also 5 · 3 und 2 · 3.",
+    "beispiel": "7 · 3: 5 Reihen und noch 2 Reihen. Also 5 · 3 + 2 · 3.",
     "loesungsschritt": "Unter der Lücke ist 1 Reihe mit 8 Punkten."
    },
    "bild": {
@@ -19815,6 +19820,10 @@
     "trenn": 5
    },
    "nachweis": [
+    {
+     "art": "wert",
+     "wert": 48
+    },
     "5 · 8 = 40",
     "1 · 8 = 8",
     "40 + 8 = 48",
@@ -38284,6 +38293,2154 @@
     "4 · 25 = 100",
     "9 · 100 = 900",
     "36 · 25 = 900"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-F-01",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Wie geht es weiter?\n6, 11, 16, 21, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 26,
+     "typischeFehler": [
+      {
+       "wert": 22,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schau auf die Sprünge am Zahlenstrahl.",
+    "beispiel": "1, 3, 5, 7: Es kommt immer 2 dazu. Dann kommt 9.",
+    "loesungsschritt": "Es kommt immer 5 dazu."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 6,
+    "spruenge": [
+     {
+      "von": 6,
+      "nach": 11,
+      "text": "+ 5"
+     },
+     {
+      "von": 11,
+      "nach": 16,
+      "text": "+ 5"
+     },
+     {
+      "von": 16,
+      "nach": 21,
+      "text": "+ 5"
+     },
+     {
+      "von": 21,
+      "nach": 26,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "6 + 5 = 11",
+    "11 + 5 = 16",
+    "16 + 5 = 21",
+    "21 + 5 = 26"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-F-02",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Wie geht es weiter?\n30, 27, 24, 21, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 18,
+     "typischeFehler": [
+      {
+       "wert": 24,
+       "fehlvorstellung": "muster-falsche-regel"
+      },
+      {
+       "wert": 20,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Zahlen werden kleiner. Schau auf die Sprünge.",
+    "beispiel": "20, 16, 12, 8: Es kommt immer 4 weg. Dann kommt 4.",
+    "loesungsschritt": "Es kommt immer 3 weg."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 10,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 30,
+    "spruenge": [
+     {
+      "von": 30,
+      "nach": 27,
+      "text": "− 3"
+     },
+     {
+      "von": 27,
+      "nach": 24,
+      "text": "− 3"
+     },
+     {
+      "von": 24,
+      "nach": 21,
+      "text": "− 3"
+     },
+     {
+      "von": 21,
+      "nach": 18,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "30 − 3 = 27",
+    "27 − 3 = 24",
+    "24 − 3 = 21",
+    "21 − 3 = 18"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-F-03",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Jede Reihe hat gleich viele Punkte.\nZähle Reihe für Reihe weiter.\n4, 8, 12, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 16,
+     "typischeFehler": [
+      {
+       "wert": 13,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Mit jeder Reihe kommen gleich viele Punkte dazu.",
+    "beispiel": "2, 4, 6: Es kommen immer 2 dazu. Dann kommt 8.",
+    "loesungsschritt": "Es kommen immer 4 dazu."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 3,
+    "spalten": 4
+   },
+   "nachweis": [
+    "4 + 4 = 8",
+    "8 + 4 = 12",
+    "12 + 4 = 16"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-F-04",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Zahl kommt als Nächstes?\n4, 9, 14, 19",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "24",
+     "richtig": true
+    },
+    {
+     "text": "29",
+     "richtig": false
+    },
+    {
+     "text": "20",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viel kommt von Zahl zu Zahl dazu?",
+    "beispiel": "3, 13, 23, 33: Es kommt immer 10 dazu. Dann kommt 43.",
+    "loesungsschritt": "Es kommt immer 5 dazu."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 4,
+    "spruenge": [
+     {
+      "von": 4,
+      "nach": 9,
+      "text": "+ 5"
+     },
+     {
+      "von": 9,
+      "nach": 14,
+      "text": "+ 5"
+     },
+     {
+      "von": 14,
+      "nach": 19,
+      "text": "+ 5"
+     },
+     {
+      "von": 19,
+      "nach": 24,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "4 + 5 = 9",
+    "9 + 5 = 14",
+    "14 + 5 = 19",
+    "19 + 5 = 24"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-F-05",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Zwei Zahlen fehlen.\n5, {{x}}, 13, 17, {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 21,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Schau auf zwei Nachbarzahlen, die beide dastehen.",
+    "beispiel": "2, ▢, 6, 8: Von 6 bis 8 sind es 2. Also fehlt 4.",
+    "loesungsschritt": "Von 13 bis 17 sind es 4."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 5,
+    "spruenge": [
+     {
+      "von": 5,
+      "nach": 9,
+      "text": "?"
+     },
+     {
+      "von": 9,
+      "nach": 13,
+      "text": "?"
+     },
+     {
+      "von": 13,
+      "nach": 17,
+      "text": "+ 4"
+     },
+     {
+      "von": 17,
+      "nach": 21,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "5 + 4 = 9",
+    "9 + 4 = 13",
+    "13 + 4 = 17",
+    "17 + 4 = 21"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-F-06",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Jede Zahl ist das Doppelte der Zahl davor.\nWie heißt die nächste Zahl?\n3, 6, 12, 24, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 48,
+     "typischeFehler": [
+      {
+       "wert": 36,
+       "fehlvorstellung": "muster-falsche-regel"
+      },
+      {
+       "wert": 27,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Das Doppelte heißt: Rechne die Zahl plus die Zahl.",
+    "beispiel": "2, 4, 8: 8 + 8 = 16. Dann kommt 16.",
+    "loesungsschritt": "Rechne 24 + 24."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 50,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 3,
+    "spruenge": [
+     {
+      "von": 3,
+      "nach": 6,
+      "text": "+ 3"
+     },
+     {
+      "von": 6,
+      "nach": 12,
+      "text": "+ 6"
+     },
+     {
+      "von": 12,
+      "nach": 24,
+      "text": "+ 12"
+     },
+     {
+      "von": 24,
+      "nach": 48,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "3 + 3 = 6",
+    "6 + 6 = 12",
+    "12 + 12 = 24",
+    "24 + 24 = 48"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-G-01",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort.\n14, 20, 26, 32, {{x}}, {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 38,
+     "typischeFehler": [
+      {
+       "wert": 42,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 44,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Bestimme den Unterschied zwischen zwei Nachbarzahlen.",
+    "beispiel": "12, 19, 26: Der Unterschied ist 7. Dann kommen 33 und 40.",
+    "loesungsschritt": "20 − 14 = 6."
+   },
+   "nachweis": [
+    "20 − 14 = 6",
+    "14 + 6 = 20",
+    "20 + 6 = 26",
+    "26 + 6 = 32",
+    "32 + 6 = 38",
+    "38 + 6 = 44"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-G-02",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort.\n2, 6, 18, 54, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 162,
+     "typischeFehler": [
+      {
+       "wert": 90,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Unterschiede sind nicht gleich. Probiere es mit Mal.",
+    "beispiel": "2, 8, 32: Immer mal 4. Dann kommt 128.",
+    "loesungsschritt": "2 · 3 = 6."
+   },
+   "nachweis": [
+    "6 : 2 = 3",
+    "2 · 3 = 6",
+    "6 · 3 = 18",
+    "18 · 3 = 54",
+    "54 · 3 = 162"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-G-03",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Das sind Quadratzahlen.\n4 · 4 = 16\n5 · 5 = 25\n6 · 6 = 36\nWie heißt die nächste Quadratzahl?",
+   "loesung": 49,
+   "typischeFehler": [
+    {
+     "wert": 47,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "wert": 14,
+     "fehlvorstellung": "potenz-mal-exponent"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die nächste Zahl mal sich selbst.",
+    "beispiel": "1 · 1 = 1, 2 · 2 = 4. Dann kommt 3 · 3 = 9.",
+    "loesungsschritt": "Rechne 7 · 7."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 6
+   },
+   "nachweis": [
+    {
+     "zahl": 7,
+     "grund": "nächste Zahl"
+    },
+    "4 · 4 = 16",
+    "5 · 5 = 25",
+    "6 · 6 = 36",
+    "7 · 7 = 49"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-G-04",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort.\n90, 83, 76, {{x}}, {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 69,
+     "typischeFehler": [
+      {
+       "wert": 66,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 62,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Zahlen werden kleiner. Bestimme den Unterschied.",
+    "beispiel": "90, 82, 74: Immer 8 weniger. Dann kommen 66 und 58.",
+    "loesungsschritt": "90 − 83 = 7."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 60,
+    "bis": 90,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 90,
+    "spruenge": [
+     {
+      "von": 90,
+      "nach": 83,
+      "text": "− 7"
+     },
+     {
+      "von": 83,
+      "nach": 76,
+      "text": "− 7"
+     },
+     {
+      "von": 76,
+      "nach": 69,
+      "text": "?"
+     },
+     {
+      "von": 69,
+      "nach": 62,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "90 − 7 = 83",
+    "83 − 7 = 76",
+    "76 − 7 = 69",
+    "69 − 7 = 62"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-G-05",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "tabelle",
+   "text": "Das ist eine Mal-Mauer.\nJeder Stein ist das Produkt der beiden Steine darunter.\nFülle die leeren Steine aus.",
+   "tabelle": {
+    "kopf": [],
+    "zeilen": [
+     [
+      {
+       "luecke": "a"
+      }
+     ],
+     [
+      {
+       "luecke": "b"
+      },
+      {
+       "luecke": "c"
+      }
+     ],
+     [
+      "2",
+      "3",
+      "4"
+     ]
+    ],
+    "art": "mauer",
+    "rechenart": "·"
+   },
+   "luecken": {
+    "a": {
+     "loesung": 72,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 6,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 12,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm die beiden Steine darunter mal.",
+    "beispiel": "Unten 6 und 7: Darüber steht 42.",
+    "loesungsschritt": "Unten links: 2 · 3 = 6."
+   },
+   "nachweis": [
+    "2 · 3 = 6",
+    "3 · 4 = 12",
+    "6 · 12 = 72"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-G-06",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Lena sagt:\n„Bei 2, 4, 8, 16 kommt immer 2 dazu.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nJede Zahl ist das Doppelte der Zahl davor.\nNach 16 kommt 32.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nEs geht abwechselnd plus und mal weiter.",
+     "richtig": false
+    },
+    {
+     "text": "Stimmt.\n2 + 2 = 4.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe die Regel an allen Zahlen, nicht nur an den ersten beiden.",
+    "beispiel": "5, 10, 20: Von 5 bis 10 sind es 5, von 10 bis 20 aber 10.",
+    "loesungsschritt": "Von 4 bis 8 sind es 4."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 2,
+    "spruenge": [
+     {
+      "von": 2,
+      "nach": 4,
+      "text": "+ 2"
+     },
+     {
+      "von": 4,
+      "nach": 8,
+      "text": "+ 4"
+     },
+     {
+      "von": 8,
+      "nach": 16,
+      "text": "+ 8"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "2 + 2 = 4",
+    "4 + 4 = 8",
+    "8 + 8 = 16",
+    "16 + 16 = 32",
+    "8 − 4 = 4"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-M-01",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort: 4, 5, 7, 10, 14, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 19,
+     "typischeFehler": [
+      {
+       "wert": 18,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schreibe die Unterschiede zwischen den Nachbarzahlen auf.",
+    "loesungsschritt": "Die Unterschiede sind 1, 2, 3, 4. Als Nächstes kommt 5 dazu."
+   },
+   "nachweis": [
+    "4 + 1 = 5",
+    "5 + 2 = 7",
+    "7 + 3 = 10",
+    "10 + 4 = 14",
+    "14 + 5 = 19"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-M-02",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "tabelle",
+   "text": "Das ist eine Mal-Mauer. Unten fehlt ein Stein. Fülle alle leeren Steine aus.",
+   "tabelle": {
+    "kopf": [],
+    "zeilen": [
+     [
+      {
+       "luecke": "a"
+      }
+     ],
+     [
+      "10",
+      {
+       "luecke": "b"
+      }
+     ],
+     [
+      "2",
+      {
+       "luecke": "c"
+      },
+      "4"
+     ]
+    ],
+    "art": "mauer",
+    "rechenart": "·"
+   },
+   "luecken": {
+    "a": {
+     "loesung": 200,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 20,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 5,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne zuerst den fehlenden unteren Stein aus. Geteilt ist die Umkehrung von Mal.",
+    "loesungsschritt": "10 : 2 = 5."
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "5 · 4 = 20",
+    "10 · 20 = 200"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-M-03",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Zwei Zahlen fehlen: 7, {{x}}, 28, 56, {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 14,
+     "typischeFehler": []
+    },
+    "y": {
+     "loesung": 112,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Schau zuerst auf die beiden Nachbarzahlen, die dastehen.",
+    "loesungsschritt": "56 : 28 = 2."
+   },
+   "nachweis": [
+    "7 · 2 = 14",
+    "14 · 2 = 28",
+    "28 · 2 = 56",
+    "56 · 2 = 112"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-M-04",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort: 3, 15, 75, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 375,
+     "typischeFehler": [
+      {
+       "wert": 135,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Prüfe, ob immer mit derselben Zahl malgenommen wird.",
+    "loesungsschritt": "15 : 3 = 5."
+   },
+   "nachweis": [
+    "3 · 5 = 15",
+    "15 · 5 = 75",
+    "75 · 5 = 375"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-M-05",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Bei der Zahlenfolge 9, 12, 18, 27, 39 werden die Differenzen immer um 3 größer. Wie heißt die nächste Zahl?",
+   "loesung": 54,
+   "typischeFehler": [
+    {
+     "wert": 51,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "wert": 42,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Differenzen auf und setze sie fort.",
+    "loesungsschritt": "Die Differenzen sind 3, 6, 9, 12."
+   },
+   "nachweis": [
+    "12 − 9 = 3",
+    "18 − 12 = 6",
+    "27 − 18 = 9",
+    "39 − 27 = 12",
+    "12 + 3 = 15",
+    "9 + 3 = 12",
+    "12 + 6 = 18",
+    "18 + 9 = 27",
+    "27 + 12 = 39",
+    "39 + 15 = 54"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-M-06",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Die Folge beginnt mit 4, 8, 16. Emre sagt: „Als Nächstes kommt 32.“ Mara sagt: „Als Nächstes kommt 28.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Keiner. Es kommt immer 8 dazu, also kommt 24.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Nur Emre. Eine Zahlenfolge geht immer mit Mal weiter.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Nur Mara. Man muss immer auf die Unterschiede schauen.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Beide. Bei „immer mal 2“ kommt 32. Bei „die Unterschiede 4, 8 werden immer um 4 größer“ kommt 28. Drei Zahlen legen die Regel nicht fest.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zwei verschiedene Regeln, die zu den drei Zahlen passen.",
+    "loesungsschritt": "8 − 4 = 4 und 16 − 8 = 8."
+   },
+   "nachweis": [
+    "4 · 2 = 8",
+    "8 · 2 = 16",
+    "16 · 2 = 32",
+    "8 − 4 = 4",
+    "16 − 8 = 8",
+    "8 + 4 = 12",
+    "16 + 12 = 28"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-E-01",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort: 243, 81, 27, 9, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 3,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Zahlen werden schnell kleiner. Wird immer gleich viel weggenommen?"
+   },
+   "nachweis": [
+    "243 : 3 = 81",
+    "81 : 3 = 27",
+    "27 : 3 = 9",
+    "9 : 3 = 3"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-E-02",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "tabelle",
+   "text": "In dieser Mal-Mauer stehen nur der oberste Stein und zwei untere Steine. Fülle alle leeren Steine aus.",
+   "tabelle": {
+    "kopf": [],
+    "zeilen": [
+     [
+      "288"
+     ],
+     [
+      {
+       "luecke": "a"
+      },
+      {
+       "luecke": "b"
+      }
+     ],
+     [
+      {
+       "luecke": "c"
+      },
+      "4",
+      "6"
+     ]
+    ],
+    "art": "mauer",
+    "rechenart": "·"
+   },
+   "luecken": {
+    "a": {
+     "loesung": 12,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 24,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 3,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Welchen Stein kannst du aus den beiden unteren Steinen sofort ausrechnen?"
+   },
+   "nachweis": [
+    "3 · 4 = 12",
+    "4 · 6 = 24",
+    "12 · 24 = 288"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-E-03",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Setze die Zahlenfolge fort: 5, 10, 17, 26, 37, {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 50,
+     "typischeFehler": [
+      {
+       "wert": 48,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Vergleiche die Zahlen mit den Quadratzahlen."
+   },
+   "nachweis": [
+    {
+     "zahl": 7,
+     "grund": "nächste Zahl"
+    },
+    "7 · 7 = 49",
+    "49 + 1 = 50",
+    "5 + 5 = 10",
+    "10 + 7 = 17",
+    "17 + 9 = 26",
+    "26 + 11 = 37",
+    "37 + 13 = 50"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-E-04",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Paul sagt: „In der Zahlenfolge 4, 8, 12, 16, … kommt irgendwann die Zahl 142 vor.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Alle Zahlen der Folge stehen in der 4er-Reihe. 142 liegt zwischen 35 · 4 = 140 und 36 · 4 = 144.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. In der Folge kommen nur Zahlen bis 100 vor.",
+     "richtig": false
+    },
+    {
+     "text": "Stimmt. Man muss nur lange genug 4 dazuzählen.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Stimmt. Die Folge geht immer weiter, also kommt jede Zahl einmal vor.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Zahlen bekommst du, wenn du bei 4 anfängst und immer 4 dazuzählst?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "4 + 4 = 8",
+    "8 + 4 = 12",
+    "12 + 4 = 16",
+    "35 · 4 = 140",
+    "36 · 4 = 144"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-E-05",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Die Zahlenfolge 2, 5, 8, 11 geht immer plus 3 weiter. Welche Zahl steht an der 20. Stelle?",
+   "loesung": 59,
+   "typischeFehler": [
+    {
+     "wert": 62,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "wert": 60,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Sprünge brauchst du von der ersten Zahl bis zur Zahl an dieser Stelle?"
+   },
+   "nachweis": [
+    "2 + 3 = 5",
+    "5 + 3 = 8",
+    "8 + 3 = 11",
+    "20 − 1 = 19",
+    "19 · 3 = 57",
+    "2 + 57 = 59"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z1-E-06",
+   "lernziel": "5.4.X1-Z1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "In einer Mal-Mauer stehen unten 4, 3 und 2. Oben steht 72. Sara sagt: „Verdopple ich den mittleren unteren Stein, wird der oberste Stein doppelt so groß.“ Jonas sagt: „Er wird viermal so groß.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Jonas. Der mittlere Stein steckt in beiden Steinen darüber. Mit 6 steht oben 24 · 12 = 288, und das ist 4 · 72.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Der oberste Stein bleibt gleich.",
+     "richtig": false
+    },
+    {
+     "text": "Beide. Es kommt darauf an, wie man rechnet.",
+     "richtig": false
+    },
+    {
+     "text": "Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne die Mauer mit dem verdoppelten Stein neu aus und vergleiche."
+   },
+   "nachweis": [
+    "4 · 3 = 12",
+    "3 · 2 = 6",
+    "12 · 6 = 72",
+    "3 + 3 = 6",
+    "4 · 6 = 24",
+    "6 · 2 = 12",
+    "24 · 12 = 288",
+    "4 · 72 = 288"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-F-01",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Regel passt?\n7, 9, 11, 13",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Immer plus 2.",
+     "richtig": true
+    },
+    {
+     "text": "Immer minus 2.",
+     "richtig": false
+    },
+    {
+     "text": "Immer plus 3.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau auf die Sprünge am Zahlenstrahl.",
+    "beispiel": "1, 4, 7, 10: Es kommt immer 3 dazu.",
+    "loesungsschritt": "Von 7 bis 9 sind es 2."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 7,
+    "spruenge": [
+     {
+      "von": 7,
+      "nach": 9,
+      "text": "+ 2"
+     },
+     {
+      "von": 9,
+      "nach": 11,
+      "text": "?"
+     },
+     {
+      "von": 11,
+      "nach": 13,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "7 + 2 = 9",
+    "9 + 2 = 11",
+    "11 + 2 = 13"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-F-02",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Regel passt?\n40, 37, 34, 31",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Immer minus 4.",
+     "richtig": false
+    },
+    {
+     "text": "Immer minus 3.",
+     "richtig": true
+    },
+    {
+     "text": "Immer plus 3.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Zahlen werden kleiner. Schau auf die Sprünge.",
+    "beispiel": "20, 18, 16: Es kommt immer 2 weg.",
+    "loesungsschritt": "Von 40 bis 37 sind es 3."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 30,
+    "bis": 40,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 40,
+    "spruenge": [
+     {
+      "von": 40,
+      "nach": 37,
+      "text": "− 3"
+     },
+     {
+      "von": 37,
+      "nach": 34,
+      "text": "?"
+     },
+     {
+      "von": 34,
+      "nach": 31,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "40 − 3 = 37",
+    "37 − 3 = 34",
+    "34 − 3 = 31"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-F-03",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Jede Reihe hat gleich viele Punkte.\nZähle Reihe für Reihe: 3, 6, 9.\nWelche Regel passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Immer das Doppelte.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Immer plus 1.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Immer plus 3.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Punkte kommen mit einer Reihe dazu?",
+    "beispiel": "2, 4, 6: Mit jeder Reihe kommen 2 dazu.",
+    "loesungsschritt": "Zähle die Punkte in 1 Reihe."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 3,
+    "spalten": 3
+   },
+   "nachweis": [
+    "3 + 3 = 6",
+    "6 + 3 = 9"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-F-04",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Regel passt?\n2, 4, 8, 16",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Immer plus 2.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Jede Zahl ist das Doppelte der Zahl davor.",
+     "richtig": true
+    },
+    {
+     "text": "Immer plus 4.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe die Regel an allen Zahlen.",
+    "beispiel": "5, 10, 20: 5 + 5 = 10 und 10 + 10 = 20.",
+    "loesungsschritt": "4 + 4 = 8."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 2,
+    "spruenge": [
+     {
+      "von": 2,
+      "nach": 4,
+      "text": "+ 2"
+     },
+     {
+      "von": 4,
+      "nach": 8,
+      "text": "+ 4"
+     },
+     {
+      "von": 8,
+      "nach": 16,
+      "text": "+ 8"
+     }
+    ]
+   },
+   "nachweis": [
+    "2 + 2 = 4",
+    "4 + 4 = 8",
+    "8 + 8 = 16"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-F-05",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Die Regel heißt: immer plus 4.\nStarte bei 1.\n1, {{x}}, {{y}}, {{z}}",
+   "luecken": {
+    "x": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 9,
+     "typischeFehler": []
+    },
+    "z": {
+     "loesung": 13,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Springe am Zahlenstrahl immer gleich weit.",
+    "beispiel": "Regel: immer plus 3. Start bei 1: 1, 4, 7, 10.",
+    "loesungsschritt": "1 + 4 = 5."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 1,
+    "spruenge": [
+     {
+      "von": 1,
+      "nach": 5,
+      "text": "?"
+     },
+     {
+      "von": 5,
+      "nach": 9,
+      "text": "?"
+     },
+     {
+      "von": 9,
+      "nach": 13,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "1 + 4 = 5",
+    "5 + 4 = 9",
+    "9 + 4 = 13"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-F-06",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Die Regel heißt: immer minus 10.\nStarte bei 30.\n30, {{x}}, {{y}}, {{z}}",
+   "luecken": {
+    "x": {
+     "loesung": 20,
+     "typischeFehler": [
+      {
+       "wert": 40,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 10,
+     "typischeFehler": []
+    },
+    "z": {
+     "loesung": 0,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Springe am Zahlenstrahl immer gleich weit zurück.",
+    "beispiel": "Regel: immer minus 2. Start bei 20: 20, 18, 16, 14.",
+    "loesungsschritt": "30 − 10 = 20."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 30,
+    "spruenge": [
+     {
+      "von": 30,
+      "nach": 20,
+      "text": "?"
+     },
+     {
+      "von": 20,
+      "nach": 10,
+      "text": "?"
+     },
+     {
+      "von": 10,
+      "nach": 0,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "30 − 10 = 20",
+    "20 − 10 = 10",
+    "10 − 10 = 0"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-G-01",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Ergänze die Regel.\n13, 17, 21, 25\nDie Regel heißt: immer plus {{x}}.",
+   "luecken": {
+    "x": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 17,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne den Unterschied zwischen zwei Nachbarzahlen aus.",
+    "beispiel": "13, 19, 25: 19 − 13 = 6.",
+    "loesungsschritt": "17 − 13 = ?"
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 10,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 13,
+    "spruenge": [
+     {
+      "von": 13,
+      "nach": 17,
+      "text": "?"
+     },
+     {
+      "von": 17,
+      "nach": 21,
+      "text": "?"
+     },
+     {
+      "von": 21,
+      "nach": 25,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "17 − 13 = 4",
+    "21 − 17 = 4",
+    "25 − 21 = 4"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-G-02",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Ergänze die Regel.\n5, 15, 45, 135\nDie Regel heißt: immer mal {{x}}.",
+   "luecken": {
+    "x": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 10,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Unterschiede sind nicht gleich. Mit welcher Zahl wird malgenommen?",
+    "beispiel": "2, 8, 32: 2 · 4 = 8. Immer mal 4.",
+    "loesungsschritt": "5 · ? = 15."
+   },
+   "nachweis": [
+    "15 : 5 = 3",
+    "45 : 15 = 3",
+    "135 : 45 = 3"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-G-03",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Das sind Quadratzahlen.\n16, 25, 36, 49\nSchreibe die Unterschiede auf: {{a}}, {{b}}, {{c}}",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 11,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "c": {
+     "loesung": 13,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne immer die größere minus die kleinere Zahl.",
+    "beispiel": "1, 4, 9: 4 − 1 = 3 und 9 − 4 = 5.",
+    "loesungsschritt": "25 − 16 = 9."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 7
+   },
+   "nachweis": [
+    "25 − 16 = 9",
+    "36 − 25 = 11",
+    "49 − 36 = 13"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-G-04",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Ergänze die Regel.\n80, 72, 64, 56\nDie Regel heißt: immer minus {{x}}.",
+   "luecken": {
+    "x": {
+     "loesung": 8,
+     "typischeFehler": [
+      {
+       "wert": 72,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne den Unterschied zwischen zwei Nachbarzahlen aus.",
+    "beispiel": "90, 83, 76: 90 − 83 = 7.",
+    "loesungsschritt": "80 − 72 = ?"
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 50,
+    "bis": 80,
+    "schritt": 1,
+    "beschriftung": 10,
+    "start": 80,
+    "spruenge": [
+     {
+      "von": 80,
+      "nach": 72,
+      "text": "?"
+     },
+     {
+      "von": 72,
+      "nach": 64,
+      "text": "?"
+     },
+     {
+      "von": 64,
+      "nach": 56,
+      "text": "?"
+     }
+    ]
+   },
+   "nachweis": [
+    "80 − 72 = 8",
+    "72 − 64 = 8",
+    "64 − 56 = 8"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-G-05",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Die Regel heißt: immer mal 4.\nStarte bei 3.\nWelche Zahlenfolge passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3, 7, 11, 15",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "3, 12, 48, 192",
+     "richtig": true
+    },
+    {
+     "text": "4, 8, 12, 16",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne die zweite Zahl aus. Rechne dann weiter.",
+    "beispiel": "Immer mal 3, Start bei 1: 1, 3, 9, 27.",
+    "loesungsschritt": "3 · 4 = 12."
+   },
+   "nachweis": [
+    "3 · 4 = 12",
+    "12 · 4 = 48",
+    "48 · 4 = 192"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-G-06",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom sagt:\n„Die Regel von 5, 10, 20, 40 heißt: immer plus 5.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.\n5 + 5 = 10.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Falsch.\nVon 10 bis 20 sind es 10.\nDie Regel heißt: immer mal 2.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nDie Regel heißt: immer plus 10.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe die Regel an allen Zahlen.",
+    "beispiel": "3, 6, 12: 3 + 3 = 6, aber 6 + 3 = 9.",
+    "loesungsschritt": "Rechne 10 + 5. Kommt 20 heraus?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "5 + 5 = 10",
+    "20 − 10 = 10",
+    "10 + 5 = 15",
+    "5 · 2 = 10",
+    "10 · 2 = 20",
+    "20 · 2 = 40"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-M-01",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Bei 8, 11, 17, 26, 38 werden die Differenzen immer um {{x}} größer.",
+   "luecken": {
+    "x": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schreibe die Differenzen der Nachbarzahlen auf. Vergleiche sie dann.",
+    "loesungsschritt": "11 − 8 = 3 und 17 − 11 = 6."
+   },
+   "nachweis": [
+    "11 − 8 = 3",
+    "17 − 11 = 6",
+    "26 − 17 = 9",
+    "38 − 26 = 12",
+    "6 − 3 = 3"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-M-02",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Regel passt zu 3, 6, 4, 8, 6, 12?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Abwechselnd mal 2 und plus 2.",
+     "richtig": false
+    },
+    {
+     "text": "Abwechselnd mal 2 und minus 2.",
+     "richtig": true
+    },
+    {
+     "text": "Immer plus 3.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Abwechselnd plus 3 und minus 2.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Regel an allen Zahlen, nicht nur an den ersten.",
+    "loesungsschritt": "3 · 2 = 6 und 6 − 2 = 4."
+   },
+   "nachweis": [
+    "3 · 2 = 6",
+    "6 − 2 = 4",
+    "4 · 2 = 8",
+    "8 − 2 = 6",
+    "6 · 2 = 12"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-M-03",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "luecken",
+   "text": "2, 10, 50, 250: Die Regel heißt immer mal {{x}}. Die nächste Zahl ist {{y}}.",
+   "luecken": {
+    "x": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 8,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 1250,
+     "typischeFehler": [
+      {
+       "wert": 450,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile eine Zahl durch die Zahl davor.",
+    "loesungsschritt": "10 : 2 = 5."
+   },
+   "nachweis": [
+    "10 : 2 = 5",
+    "50 : 10 = 5",
+    "250 : 50 = 5",
+    "1250 : 250 = 5",
+    "250 · 5 = 1250"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-M-04",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Die Regel heißt: immer mal 2. Ergänze die ersten beiden Zahlen: {{x}}, {{y}}, 28, 56, 112",
+   "luecken": {
+    "x": {
+     "loesung": 7,
+     "typischeFehler": [
+      {
+       "wert": 26,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 14,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Gehe rückwärts. Das Gegenteil von mal 2 ist geteilt durch 2.",
+    "loesungsschritt": "28 : 2 = 14."
+   },
+   "nachweis": [
+    "28 : 2 = 14",
+    "14 : 2 = 7",
+    "7 · 2 = 14",
+    "14 · 2 = 28",
+    "28 · 2 = 56",
+    "56 · 2 = 112"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-M-05",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Regel beschreibt die Zahlenfolge 1, 4, 9, 16, 25?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Immer plus 3.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Die Differenzen sind immer gleich.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Das sind die Quadratzahlen 1 · 1, 2 · 2, 3 · 3, 4 · 4 und 5 · 5.",
+     "richtig": true
+    },
+    {
+     "text": "Immer mal 4.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Regel an allen Zahlen.",
+    "loesungsschritt": "4 − 1 = 3, aber 9 − 4 = 5."
+   },
+   "bild": {
+    "art": "quadratbild",
+    "seite": 5
+   },
+   "nachweis": [
+    "1 · 1 = 1",
+    "2 · 2 = 4",
+    "3 · 3 = 9",
+    "4 · 4 = 16",
+    "5 · 5 = 25",
+    "4 − 1 = 3",
+    "9 − 4 = 5"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-M-06",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Zur Zahlenfolge 9, 15, 21, 27 sagt Ben: „Die Regel heißt: immer plus 6.“ Jonas sagt: „Das sind die Zahlen der 6er-Reihe, jeweils plus 3.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Es kommt immer 6 dazu. Und 9 = 6 + 3, 15 = 12 + 3 und so weiter. Eine Folge kann man mit verschiedenen Regeln beschreiben.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Die Regel heißt: immer mal 2.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Nur Ben. Eine Regel muss immer von Zahl zu Zahl gehen.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe beide Regeln an allen Zahlen.",
+    "loesungsschritt": "15 − 9 = 6 und 9 − 6 = 3."
+   },
+   "nachweis": [
+    "9 + 6 = 15",
+    "15 + 6 = 21",
+    "21 + 6 = 27",
+    "6 + 3 = 9",
+    "12 + 3 = 15",
+    "18 + 3 = 21",
+    "24 + 3 = 27",
+    "9 − 6 = 3"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-E-01",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "luecken",
+   "text": "375, 75, 15, 3: Die Regel heißt immer geteilt durch {{x}}.",
+   "luecken": {
+    "x": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 300,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Zahlen werden nicht immer um gleich viel kleiner."
+   },
+   "nachweis": [
+    "375 : 75 = 5",
+    "75 : 15 = 5",
+    "15 : 3 = 5"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-E-02",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "5, 13, 29, 61, 125: Die Regel heißt: mal {{x}}, dann plus {{y}}.",
+   "luecken": {
+    "x": {
+     "loesung": 2,
+     "typischeFehler": []
+    },
+    "y": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 8,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Unterschiede werden immer größer. Probiere es mit Mal und Plus."
+   },
+   "nachweis": [
+    "13 − 5 · 2 = 3",
+    "(29 − 13) : (13 − 5) = 2",
+    "5 · 2 + 3 = 13",
+    "13 · 2 + 3 = 29",
+    "29 · 2 + 3 = 61",
+    "61 · 2 + 3 = 125",
+    "13 − 5 = 8",
+    "29 − 13 = 16",
+    "61 − 29 = 32",
+    "125 − 61 = 64"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-E-03",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Unten in einer Mal-Mauer stehen 4, 3 und 2. Welcher Term ergibt den obersten Stein?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "(4 + 2) · 3",
+     "richtig": false
+    },
+    {
+     "text": "4 · 3 + 3 · 2",
+     "richtig": false
+    },
+    {
+     "text": "4 · 3 · 3 · 2",
+     "richtig": true
+    },
+    {
+     "text": "4 · 3 · 2",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe zuerst die beiden mittleren Steine als Produkt."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 72
+    },
+    "4 · 3 = 12",
+    "3 · 2 = 6",
+    "12 · 6 = 72"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-E-04",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Warum ist in der Zahlenfolge 9, 18, 36, 72, … ab der zweiten Zahl jede Zahl gerade?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Weil man immer plus 9 rechnet.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Das stimmt nur zufällig für diese vier Zahlen.",
+     "richtig": false
+    },
+    {
+     "text": "Jede Zahl ist das Doppelte der Zahl davor. Ein Doppeltes ist immer gerade.",
+     "richtig": true
+    },
+    {
+     "text": "Weil die Zahlen immer größer werden.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mit welcher Rechnung kommst du von einer Zahl zur nächsten?"
+   },
+   "nachweis": [
+    "9 · 2 = 18",
+    "18 · 2 = 36",
+    "36 · 2 = 72"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-E-05",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "8, 13, 20, 29, 40: Die Unterschiede sind {{a}}, {{b}}, {{c}}, {{e}}. Sie werden immer um {{s}} größer.",
+   "luecken": {
+    "a": {
+     "loesung": 5,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 7,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 9,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 11,
+     "typischeFehler": []
+    },
+    "s": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "muster-falsche-regel"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schreibe die Unterschiede auf. Vergleiche dann die Unterschiede miteinander."
+   },
+   "nachweis": [
+    "13 − 8 = 5",
+    "20 − 13 = 7",
+    "29 − 20 = 9",
+    "40 − 29 = 11",
+    "7 − 5 = 2"
+   ]
+  },
+  {
+   "id": "5.4.X1-Z2-E-06",
+   "lernziel": "5.4.X1-Z2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Zur Zahlenfolge 5, 15, 45, 135 sagt Finn: „Die Regel heißt: immer mal 3.“ Ida sagt: „Der Unterschied zur nächsten Zahl ist immer das Doppelte der Zahl davor.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nur Finn. Unterschiede gibt es nur bei Plus-Folgen.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Beide. Eine Zahl plus ihr Doppeltes ist dasselbe wie die Zahl mal 3: 5 + 2 · 5 = 3 · 5 = 15.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Die Regel heißt: immer plus 10.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    },
+    {
+     "text": "Nur Ida. Bei mal 3 wären die Unterschiede immer gleich.",
+     "richtig": false,
+     "fehlvorstellung": "muster-falsche-regel"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe beide Regeln an allen Zahlen."
+   },
+   "nachweis": [
+    "5 · 3 = 15",
+    "15 · 3 = 45",
+    "45 · 3 = 135",
+    "15 − 5 = 10",
+    "45 − 15 = 30",
+    "135 − 45 = 90",
+    "2 · 5 = 10",
+    "2 · 15 = 30",
+    "2 · 45 = 90",
+    "5 + 2 · 5 = 15"
    ]
   }
  ]

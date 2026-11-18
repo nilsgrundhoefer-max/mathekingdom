@@ -432,6 +432,7 @@ export const wortspeicher = {
     w('Zahlenfolge', 'G', 'Zahlen in einer Reihe, die nach einer Regel weitergehen.'),
     w('Unterschied', 'G', 'Wie viel eine Zahl größer ist als die Zahl davor.'),
     w('Quadratzahl', 'G', 'Eine Zahl mal sich selbst. 4 · 4 = 16, also ist 16 eine Quadratzahl.'),
+    w('Vielfaches', 'M', 'Eine Zahl aus der Mal-Reihe einer Zahl. 12 ist ein Vielfaches von 3.'),
   ],
 };
 

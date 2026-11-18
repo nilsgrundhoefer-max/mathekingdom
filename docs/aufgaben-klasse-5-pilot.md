@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1008 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1056 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -1675,9 +1675,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne beide Teile. Rechne dann zusam
 - `02` AFB I · Verdopple 12. _(Bild: Zehnermaterial: 1 Zehnerstangen, 2 Einerwürfel)_ Lösung: **24**. Typische Fehler: 14 (1x1-addiert).
 - `03` AFB I · Halbiere 82. _(Bild: Zehnermaterial: 8 Zehnerstangen, 2 Einerwürfel)_ Lösung: **41**. Typische Fehler: 80 (div-falsche-rechenart), 164 (div-vertauscht).
 - `04` AFB I · Du rechnest 6 · 8. / Wie zerlegst du die Aufgabe? _(Bild: Punktefeld mit 6 Reihen zu je 8 Punkten, Trennlinie nach 5 Reihen)_
-  - ☐ 5 + 8 und 1 + 8
-  - ☐ 5 · 8 und 1
-  - ☑ 5 · 8 und 1 · 8
+  - ☐ 5 + 8 + 1 + 8
+  - ☐ 5 · 8 + 1
+  - ☑ 5 · 8 + 1 · 8
 - `05` AFB II · Welche Zahl fehlt? / 4 · 5 = 2 · ▢ _(Bild: Punktefeld mit 4 Reihen zu je 5 Punkten)_ Lösung: x = **10**
 - `06` AFB I · Rechne. / 9 · 5 / Rechne 10 · 5. / Nimm dann 5 weg. _(Bild: Punktefeld mit 9 Reihen zu je 5 Punkten)_ Lösung: **45**. Typische Fehler: 50 (1x1-nachbar), 40 (1x1-nachbar), 14 (1x1-addiert).
 
@@ -3527,3 +3527,159 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 101 geschickt.
   - ☐ Nur Lina. Das Verteilungsgesetz gilt nicht bei 25.
   - ☐ Keiner. Richtig ist 725.
   - ☑ Beide. Jonas nutzt das Verteilungsgesetz, Lina zerlegt 36 in 9 · 4 und nutzt 4 · 25 = 100.
+
+## 5.4.X1-Z1: Ich kann Zahlenmuster fortsetzen.
+
+Grundlage, die F übt: Zahlenfolgen mit gleichen Sprüngen am Zahlenstrahl
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrahl. *Beispiel:* 1, 3, 5, 7: Es kommt immer 2 dazu. Dann kommt 9. *Lösungsschritt:* Es kommt immer 5 dazu.
+
+- `01` AFB I · Wie geht es weiter? / 6, 11, 16, 21, ▢ _(Bild: Zahlenstrahl 0 bis 30, Sprünge 6 nach 11 (+ 5), 11 nach 16 (+ 5), 16 nach 21 (+ 5), 21 nach 26 (?))_ Lösung: x = **26**
+- `02` AFB I · Wie geht es weiter? / 30, 27, 24, 21, ▢ _(Bild: Zahlenstrahl 10 bis 30, Sprünge 30 nach 27 (− 3), 27 nach 24 (− 3), 24 nach 21 (− 3), 21 nach 18 (?))_ Lösung: x = **18**
+- `03` AFB I · Jede Reihe hat gleich viele Punkte. / Zähle Reihe für Reihe weiter. / 4, 8, 12, ▢ _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_ Lösung: x = **16**
+- `04` AFB I · Welche Zahl kommt als Nächstes? / 4, 9, 14, 19 _(Bild: Zahlenstrahl 0 bis 30, Sprünge 4 nach 9 (+ 5), 9 nach 14 (+ 5), 14 nach 19 (+ 5), 19 nach 24 (?))_
+  - ☑ 24
+  - ☐ 29
+  - ☐ 20
+- `05` AFB II · Zwei Zahlen fehlen. / 5, ▢, 13, 17, ▢ _(Bild: Zahlenstrahl 0 bis 30, Sprünge 5 nach 9 (?), 9 nach 13 (?), 13 nach 17 (+ 4), 17 nach 21 (?))_ Lösung: x = **9**, y = **21**
+- `06` AFB I · Jede Zahl ist das Doppelte der Zahl davor. / Wie heißt die nächste Zahl? / 3, 6, 12, 24, ▢ _(Bild: Zahlenstrahl 0 bis 50, Sprünge 3 nach 6 (+ 3), 6 nach 12 (+ 6), 12 nach 24 (+ 12), 24 nach 48 (?))_ Lösung: x = **48**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme den Unterschied zwischen zwei Nachbarzahlen. *Beispiel:* 12, 19, 26: Der Unterschied ist 7. Dann kommen 33 und 40. *Lösungsschritt:* 20 − 14 = 6.
+
+- `01` AFB I · Setze die Zahlenfolge fort. / 14, 20, 26, 32, ▢, ▢ Lösung: x = **38**, y = **44**
+- `02` AFB I · Setze die Zahlenfolge fort. / 2, 6, 18, 54, ▢ Lösung: x = **162**
+- `03` AFB II · Das sind Quadratzahlen. / 4 · 4 = 16 / 5 · 5 = 25 / 6 · 6 = 36 / Wie heißt die nächste Quadratzahl? _(Bild: Quadrat aus 6 · 6 Kästchen)_ Lösung: **49**. Typische Fehler: 47 (muster-falsche-regel), 14 (potenz-mal-exponent).
+- `04` AFB I · Setze die Zahlenfolge fort. / 90, 83, 76, ▢, ▢ _(Bild: Zahlenstrahl 60 bis 90, Sprünge 90 nach 83 (− 7), 83 nach 76 (− 7), 76 nach 69 (?), 69 nach 62 (?))_ Lösung: x = **69**, y = **62**
+- `05` AFB II · Das ist eine Mal-Mauer. / Jeder Stein ist das Produkt der beiden Steine darunter. / Fülle die leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ **72** / **6** · **12** / 2 · 3 · 4
+- `06` AFB III · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
+  - ☑ Falsch. / Jede Zahl ist das Doppelte der Zahl davor. / Nach 16 kommt 32.
+  - ☐ Falsch. / Es geht abwechselnd plus und mal weiter.
+  - ☐ Stimmt. / 2 + 2 = 4.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Unterschiede zwischen den Nachbarzahlen auf. *Lösungsschritt:* Die Unterschiede sind 1, 2, 3, 4. Als Nächstes kommt 5 dazu.
+
+- `01` AFB I · Setze die Zahlenfolge fort: 4, 5, 7, 10, 14, ▢ Lösung: x = **19**
+- `02` AFB II · Das ist eine Mal-Mauer. Unten fehlt ein Stein. Fülle alle leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ **200** / 10 · **20** / 2 · **5** · 4
+- `03` AFB II · Zwei Zahlen fehlen: 7, ▢, 28, 56, ▢ Lösung: x = **14**, y = **112**
+- `04` AFB I · Setze die Zahlenfolge fort: 3, 15, 75, ▢ Lösung: x = **375**
+- `05` AFB II · Bei der Zahlenfolge 9, 12, 18, 27, 39 werden die Differenzen immer um 3 größer. Wie heißt die nächste Zahl? Lösung: **54**. Typische Fehler: 51 (muster-falsche-regel), 42 (muster-falsche-regel).
+- `06` AFB III · Die Folge beginnt mit 4, 8, 16. Emre sagt: „Als Nächstes kommt 32.“ Mara sagt: „Als Nächstes kommt 28.“ Wer hat recht?
+  - ☐ Keiner. Es kommt immer 8 dazu, also kommt 24.
+  - ☐ Nur Emre. Eine Zahlenfolge geht immer mit Mal weiter.
+  - ☐ Nur Mara. Man muss immer auf die Unterschiede schauen.
+  - ☑ Beide. Bei „immer mal 2“ kommt 32. Bei „die Unterschiede 4, 8 werden immer um 4 größer“ kommt 28. Drei Zahlen legen die Regel nicht fest.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden schnell kleiner. Wird immer gleich viel weggenommen?
+
+- `01` AFB I · Setze die Zahlenfolge fort: 243, 81, 27, 9, ▢ Lösung: x = **3**
+- `02` AFB II · In dieser Mal-Mauer stehen nur der oberste Stein und zwei untere Steine. Fülle alle leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ 288 / **12** · **24** / **3** · 4 · 6
+- `03` AFB II · Setze die Zahlenfolge fort: 5, 10, 17, 26, 37, ▢ Lösung: x = **50**
+- `04` AFB III · Paul sagt: „In der Zahlenfolge 4, 8, 12, 16, … kommt irgendwann die Zahl 142 vor.“ Stimmt das?
+  - ☑ Falsch. Alle Zahlen der Folge stehen in der 4er-Reihe. 142 liegt zwischen 35 · 4 = 140 und 36 · 4 = 144.
+  - ☐ Falsch. In der Folge kommen nur Zahlen bis 100 vor.
+  - ☐ Stimmt. Man muss nur lange genug 4 dazuzählen.
+  - ☐ Stimmt. Die Folge geht immer weiter, also kommt jede Zahl einmal vor.
+- `05` AFB II · Die Zahlenfolge 2, 5, 8, 11 geht immer plus 3 weiter. Welche Zahl steht an der 20. Stelle? Lösung: **59**. Typische Fehler: 62 (muster-falsche-regel), 60 (muster-falsche-regel).
+- `06` AFB III · In einer Mal-Mauer stehen unten 4, 3 und 2. Oben steht 72. Sara sagt: „Verdopple ich den mittleren unteren Stein, wird der oberste Stein doppelt so groß.“ Jonas sagt: „Er wird viermal so groß.“ Wer hat recht?
+  - ☑ Jonas. Der mittlere Stein steckt in beiden Steinen darüber. Mit 6 steht oben 24 · 12 = 288, und das ist 4 · 72.
+  - ☐ Keiner. Der oberste Stein bleibt gleich.
+  - ☐ Beide. Es kommt darauf an, wie man rechnet.
+  - ☐ Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß.
+
+## 5.4.X1-Z2: Ich kann die Regel eines Zahlenmusters beschreiben.
+
+Grundlage, die F übt: Sprünge zwischen Nachbarzahlen bestimmen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrahl. *Beispiel:* 1, 4, 7, 10: Es kommt immer 3 dazu. *Lösungsschritt:* Von 7 bis 9 sind es 2.
+
+- `01` AFB I · Welche Regel passt? / 7, 9, 11, 13 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 7 nach 9 (+ 2), 9 nach 11 (?), 11 nach 13 (?))_
+  - ☑ Immer plus 2.
+  - ☐ Immer minus 2.
+  - ☐ Immer plus 3.
+- `02` AFB I · Welche Regel passt? / 40, 37, 34, 31 _(Bild: Zahlenstrahl 30 bis 40, Sprünge 40 nach 37 (− 3), 37 nach 34 (?), 34 nach 31 (?))_
+  - ☐ Immer minus 4.
+  - ☑ Immer minus 3.
+  - ☐ Immer plus 3.
+- `03` AFB I · Jede Reihe hat gleich viele Punkte. / Zähle Reihe für Reihe: 3, 6, 9. / Welche Regel passt? _(Bild: Punktefeld mit 3 Reihen zu je 3 Punkten)_
+  - ☐ Immer das Doppelte.
+  - ☐ Immer plus 1.
+  - ☑ Immer plus 3.
+- `04` AFB I · Welche Regel passt? / 2, 4, 8, 16 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
+  - ☐ Immer plus 2.
+  - ☑ Jede Zahl ist das Doppelte der Zahl davor.
+  - ☐ Immer plus 4.
+- `05` AFB II · Die Regel heißt: immer plus 4. / Starte bei 1. / 1, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 1 nach 5 (?), 5 nach 9 (?), 9 nach 13 (?))_ Lösung: x = **5**, y = **9**, z = **13**
+- `06` AFB I · Die Regel heißt: immer minus 10. / Starte bei 30. / 30, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 30, Sprünge 30 nach 20 (?), 20 nach 10 (?), 10 nach 0 (?))_ Lösung: x = **20**, y = **10**, z = **0**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne den Unterschied zwischen zwei Nachbarzahlen aus. *Beispiel:* 13, 19, 25: 19 − 13 = 6. *Lösungsschritt:* 17 − 13 = ?
+
+- `01` AFB I · Ergänze die Regel. / 13, 17, 21, 25 / Die Regel heißt: immer plus ▢. _(Bild: Zahlenstrahl 10 bis 30, Sprünge 13 nach 17 (?), 17 nach 21 (?), 21 nach 25 (?))_ Lösung: x = **4**
+- `02` AFB I · Ergänze die Regel. / 5, 15, 45, 135 / Die Regel heißt: immer mal ▢. Lösung: x = **3**
+- `03` AFB II · Das sind Quadratzahlen. / 16, 25, 36, 49 / Schreibe die Unterschiede auf: ▢, ▢, ▢ _(Bild: Quadrat aus 7 · 7 Kästchen)_ Lösung: a = **9**, b = **11**, c = **13**
+- `04` AFB I · Ergänze die Regel. / 80, 72, 64, 56 / Die Regel heißt: immer minus ▢. _(Bild: Zahlenstrahl 50 bis 80, Sprünge 80 nach 72 (?), 72 nach 64 (?), 64 nach 56 (?))_ Lösung: x = **8**
+- `05` AFB II · Die Regel heißt: immer mal 4. / Starte bei 3. / Welche Zahlenfolge passt?
+  - ☐ 3, 7, 11, 15
+  - ☑ 3, 12, 48, 192
+  - ☐ 4, 8, 12, 16
+- `06` AFB III · Tom sagt: / „Die Regel von 5, 10, 20, 40 heißt: immer plus 5.“ / Stimmt das?
+  - ☐ Stimmt. / 5 + 5 = 10.
+  - ☑ Falsch. / Von 10 bis 20 sind es 10. / Die Regel heißt: immer mal 2.
+  - ☐ Falsch. / Die Regel heißt: immer plus 10.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Differenzen der Nachbarzahlen auf. Vergleiche sie dann. *Lösungsschritt:* 11 − 8 = 3 und 17 − 11 = 6.
+
+- `01` AFB I · Bei 8, 11, 17, 26, 38 werden die Differenzen immer um ▢ größer. Lösung: x = **3**
+- `02` AFB II · Welche Regel passt zu 3, 6, 4, 8, 6, 12?
+  - ☐ Abwechselnd mal 2 und plus 2.
+  - ☑ Abwechselnd mal 2 und minus 2.
+  - ☐ Immer plus 3.
+  - ☐ Abwechselnd plus 3 und minus 2.
+- `03` AFB II · 2, 10, 50, 250: Die Regel heißt immer mal ▢. Die nächste Zahl ist ▢. Lösung: x = **5**, y = **1250**
+- `04` AFB I · Die Regel heißt: immer mal 2. Ergänze die ersten beiden Zahlen: ▢, ▢, 28, 56, 112 Lösung: x = **7**, y = **14**
+- `05` AFB II · Welche Regel beschreibt die Zahlenfolge 1, 4, 9, 16, 25? _(Bild: Quadrat aus 5 · 5 Kästchen)_
+  - ☐ Immer plus 3.
+  - ☐ Die Differenzen sind immer gleich.
+  - ☑ Das sind die Quadratzahlen 1 · 1, 2 · 2, 3 · 3, 4 · 4 und 5 · 5.
+  - ☐ Immer mal 4.
+- `06` AFB III · Zur Zahlenfolge 9, 15, 21, 27 sagt Ben: „Die Regel heißt: immer plus 6.“ Jonas sagt: „Das sind die Zahlen der 6er-Reihe, jeweils plus 3.“ Wer hat recht?
+  - ☑ Beide. Es kommt immer 6 dazu. Und 9 = 6 + 3, 15 = 12 + 3 und so weiter. Eine Folge kann man mit verschiedenen Regeln beschreiben.
+  - ☐ Keiner. Die Regel heißt: immer mal 2.
+  - ☐ Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen.
+  - ☐ Nur Ben. Eine Regel muss immer von Zahl zu Zahl gehen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden nicht immer um gleich viel kleiner.
+
+- `01` AFB I · 375, 75, 15, 3: Die Regel heißt immer geteilt durch ▢. Lösung: x = **5**
+- `02` AFB II · 5, 13, 29, 61, 125: Die Regel heißt: mal ▢, dann plus ▢. Lösung: x = **2**, y = **3**
+- `03` AFB II · Unten in einer Mal-Mauer stehen 4, 3 und 2. Welcher Term ergibt den obersten Stein?
+  - ☐ (4 + 2) · 3
+  - ☐ 4 · 3 + 3 · 2
+  - ☑ 4 · 3 · 3 · 2
+  - ☐ 4 · 3 · 2
+- `04` AFB III · Warum ist in der Zahlenfolge 9, 18, 36, 72, … ab der zweiten Zahl jede Zahl gerade?
+  - ☐ Weil man immer plus 9 rechnet.
+  - ☐ Das stimmt nur zufällig für diese vier Zahlen.
+  - ☑ Jede Zahl ist das Doppelte der Zahl davor. Ein Doppeltes ist immer gerade.
+  - ☐ Weil die Zahlen immer größer werden.
+- `05` AFB II · 8, 13, 20, 29, 40: Die Unterschiede sind ▢, ▢, ▢, ▢. Sie werden immer um ▢ größer. Lösung: a = **5**, b = **7**, c = **9**, e = **11**, s = **2**
+- `06` AFB III · Zur Zahlenfolge 5, 15, 45, 135 sagt Finn: „Die Regel heißt: immer mal 3.“ Ida sagt: „Der Unterschied zur nächsten Zahl ist immer das Doppelte der Zahl davor.“ Wer hat recht?
+  - ☐ Nur Finn. Unterschiede gibt es nur bei Plus-Folgen.
+  - ☑ Beide. Eine Zahl plus ihr Doppeltes ist dasselbe wie die Zahl mal 3: 5 + 2 · 5 = 3 · 5 = 15.
+  - ☐ Keiner. Die Regel heißt: immer plus 10.
+  - ☐ Nur Ida. Bei mal 3 wären die Unterschiede immer gleich.

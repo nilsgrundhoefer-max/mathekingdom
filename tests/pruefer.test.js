@@ -79,3 +79,24 @@ test('Regeln der Niveaustufen: zu viele Antworten, fehlendes Bild und fehlende G
   assert.ok(meldet((p) => { delete p.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.grundlage).grundlage; }).some((f) => /Grundlage/.test(f)));
   assert.ok(meldet((p) => { delete p.aufgaben.find((x) => x.niveau === 'G').hilfen.beispiel; }).length > 0);
 });
+
+test('Zahlenmauer, Malkreuz und Rechenraster: falsche Steine, Felder und Zahlen fallen auf', () => {
+  const mitTabelle = (art) => frisch().aufgaben.map((a, i) => [a, i]).filter(([a]) => a.tabelle?.art === art).map(([, i]) => i);
+  for (const art of ['mauer', 'malkreuz', 'raster']) {
+    const stellen = mitTabelle(art);
+    assert.ok(stellen.length >= 5, `${art}: nur ${stellen.length} Aufgaben`);
+    for (const i of stellen) {
+      // Ein Eingabefeld mit falscher Lösung.
+      let pool = frisch(), a = pool.aufgaben[i];
+      const l = Object.values(a.luecken); l[0].loesung += 1;
+      assert.ok(pruefePool(pool).fehler.length > 0, `${a.id}: falsches Eingabefeld nicht gemeldet`);
+      // Eine vorgegebene Zahl in der Tabelle verändert.
+      pool = frisch(); a = pool.aufgaben[i];
+      const zeile = a.tabelle.zeilen.find((z) => z.some((c) => typeof c === 'string' && /^\d+$/.test(c)));
+      if (!zeile) continue;
+      const k = zeile.findIndex((c) => typeof c === 'string' && /^\d+$/.test(c));
+      zeile[k] = String(Number(zeile[k]) + 1);
+      assert.ok(pruefePool(pool).fehler.length > 0, `${a.id}: veränderte Zahl ${zeile[k]} nicht gemeldet`);
+    }
+  }
+});
