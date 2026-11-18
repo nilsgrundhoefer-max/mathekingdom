@@ -59,7 +59,7 @@ async function antworte(seite, richtig = true) {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 800 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await foto(seite, 'anmeldung');
   await seite.fill('#code', 'quatsch');
   await seite.click('#demo');
@@ -68,25 +68,27 @@ async function antworte(seite, richtig = true) {
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
   assert.equal(await seite.locator('.region').count(), 9);
-  await foto(seite, 'jahresplan');
+  await foto(seite, 'schlossgarten');
   await seite.click('[data-kapitel="5.3"]');
-  await seite.waitForSelector('svg.metro');
-  assert.equal(await seite.locator('.station').count(), 5);
-  await foto(seite, 'metrokarte');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.equal(await seite.locator('.meilenstein').count(), 5);
+  await foto(seite, 'regionskarte');
 
   // Erste Aufgabe: einmal falsch (Hinweis), dann richtig (weniger Münzen).
-  await seite.click('#losfahren');
+  await seite.click('#aufbrechen');
   await antworte(seite, false);
   await seite.waitForSelector('.hinweis');
+  // Nach dem ersten Fehlversuch liegt der Tipp offen, und der zweite Versuch kostet nichts.
+  assert.equal(await seite.locator('.kaertchen-offen').count(), 1);
   await foto(seite, 'aufgabe-hinweis');
   await antworte(seite, true);
   await seite.waitForSelector('.ergebnis.richtig');
-  assert.ok(Number(await seite.innerText('#muenzen')) > 0);
+  assert.equal(Number(await seite.innerText('#muenzen')), 20);
   await foto(seite, 'aufgabe-richtig');
 
   // Zwei weitere richtige Aufgaben: Lernziel erreicht, ein Stern.
   for (let i = 0; i < 2; i++) { await seite.click('#weiter'); await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); }
-  assert.equal(await seite.innerText('#sterne'), '1');
+  assert.equal(await seite.innerText('#siegel'), '1');
   await seite.waitForSelector('.lohn.neu');
   await foto(seite, 'lernziel-erreicht');
 
@@ -106,10 +108,10 @@ async function antworte(seite, richtig = true) {
   await seite.click('#weiter');
   await seite.click('#hilferuf');
   await seite.waitForSelector('.hilfebanner');
-  await seite.click('.kopf nav button:has-text("Werkstatt")');
+  await seite.click('.kopf nav button:has-text("Wappen")');
   await seite.waitForSelector('.werkbank');
   await seite.click('[data-teil=blau]');
-  await foto(seite, 'werkstatt');
+  await foto(seite, 'wappen');
   await seite.click('#spiel').catch(() => {});
   await foto(seite, 'spiel');
   assert.deepEqual(fehler, []);
@@ -121,14 +123,14 @@ async function antworte(seite, richtig = true) {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-form');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
   // Startseite: Etappe mit Fortschritt, ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
-  assert.match(await seite.innerText('.etappe'), /Addieren und Subtrahieren: Station Kopfrechnen[\s\S]*0 von 5 Stationen geschafft/);
+  assert.match(await seite.innerText('.etappe'), /Addieren und Subtrahieren: Meilenstein Kopfrechnen[\s\S]*0 von 5 Meilensteinen gemeistert/);
   await foto(seite, 'startseite-etappe');
-  await seite.click('#weiterfahren');
+  await seite.click('#weiter-wandern');
   await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.3.1-K1"]');
   assert.equal(await seite.locator('.merkzettel ul').isVisible(), false);
   await seite.click('.merkzettel summary');
@@ -136,19 +138,19 @@ async function antworte(seite, richtig = true) {
   await seite.click('[data-hilfe=tipp]'); // Neuzeichnen: der Merkzettel bleibt offen
   assert.equal(await seite.locator('.merkzettel ul').isVisible(), true);
   await foto(seite, 'merkzettel');
-  await seite.click('.kopf nav button:has-text("Jahresplan")');
+  await seite.click('.kopf nav button:has-text("Schlossgarten")');
   await seite.waitForSelector('.regionen');
   await seite.click('[data-kapitel="5.3"]');
-  await seite.waitForSelector('svg.metro');
-  assert.equal(await seite.locator('.station:not(.leer)').count(), 5); // alle fünf Stationen haben jetzt Aufgaben
-  assert.equal(await seite.locator('.station.standort').count(), 1);
-  assert.match(await seite.textContent('.station.standort'), /Hier weiter/);
-  await foto(seite, 'metrokarte-standort');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.equal(await seite.locator('.meilenstein:not(.leer)').count(), 5); // alle fünf Stationen haben jetzt Aufgaben
+  assert.equal(await seite.locator('.meilenstein.standort').count(), 1);
+  assert.match(await seite.textContent('.meilenstein.standort'), /Hier weiter/);
+  await foto(seite, 'regionskarte-standort');
   // Übt an einer Station auf einer Linie ein Lernziel, bis eine Aufgabe des gesuchten Formats kommt, und löst sie.
   const suche = async (station, linie, lernzielNr, passt, name) => {
     for (let i = 0; i < 8; i++) {
-      await seite.click(`.station[aria-label="Station ${station}"] .kapsel`);
-      await seite.click(`.linienknopf[aria-label="Auf Linie ${linie} umsteigen"]`).catch(() => {});
+      await seite.click(`.meilenstein[aria-label^="Meilenstein ${station}"] .stein`);
+      await seite.click(`.kronenwahl button[data-krone="${linie}"]`);
       await seite.locator('.lernziele li button').nth(lernzielNr).click();
       const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
       const treffer = passt(pool.aufgaben.find((a) => a.id === id));
@@ -160,8 +162,8 @@ async function antworte(seite, richtig = true) {
       await antworte(seite, true);
       await seite.waitForSelector('.ergebnis.richtig');
       if (treffer) await foto(seite, `format-${name}-geloest`);
-      await seite.click('.ergebnis button:has-text("Zur Metrokarte")');
-      await seite.waitForSelector('svg.metro');
+      await seite.click('.ergebnis button:has-text("Zur Regionskarte")');
+      await seite.waitForSelector('svg.regionskarte');
       if (treffer) return;
     }
     assert.fail(`Keine Aufgabe im Format ${name} gefunden`);
@@ -181,20 +183,20 @@ async function antworte(seite, richtig = true) {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(new URL('dist/Schueler-Dashboard-komplett.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-stuf');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
   await seite.click('[data-kapitel="5.4"]');
-  await seite.waitForSelector('svg.metro');
-  assert.match(await seite.innerText('.unter'), /Linie M/); // Standard-Zielniveau ist M
+  await seite.waitForSelector('svg.regionskarte');
+  assert.match(await seite.innerText('.unter'), /spielst um Gold/); // Standard-Zielniveau ist M
   const oeffne = async (linie, lernzielNr) => {
-    await seite.click('.station[aria-label="Station Dividieren"] .kapsel');
-    await seite.click(`.linienknopf[aria-label="Auf Linie ${linie} umsteigen"]`).catch(() => {});
+    await seite.click('.meilenstein[aria-label^="Meilenstein Dividieren"] .stein');
+    await seite.click(`.kronenwahl button[data-krone="${linie}"]`);
     await seite.locator('.lernziele li button').nth(lernzielNr).click();
     await seite.waitForSelector('section.aufgabe');
   };
-  const zurueck = async () => { await seite.click('.pfad button'); await seite.waitForSelector('svg.metro'); };
+  const zurueck = async () => { await seite.click('.pfad button'); await seite.waitForSelector('svg.regionskarte'); };
   // F: drei Kärtchen, Wortspeicher offen und nur mit Alltagswörtern, jeder Satz in einer eigenen Zeile.
   await oeffne('F', 5);
   assert.equal(await seite.locator('[data-hilfe]').count(), 3);
@@ -206,7 +208,7 @@ async function antworte(seite, richtig = true) {
   await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig');
   await seite.click('#weiter'); await seite.waitForSelector('#pruefen');
   await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); // Auswahl mit mehrzeiligen Antworten
-  await seite.click('.ergebnis button:has-text("Zur Metrokarte")'); await seite.waitForSelector('svg.metro');
+  await seite.click('.ergebnis button:has-text("Zur Regionskarte")'); await seite.waitForSelector('svg.regionskarte');
   // G: drei Kärtchen, Wortspeicher mit Quotient. E: ein Kärtchen, Wortspeicher zugeklappt.
   await oeffne('G', 1);
   assert.equal(await seite.locator('[data-hilfe]').count(), 3);
@@ -230,7 +232,49 @@ async function antworte(seite, richtig = true) {
   }
   assert.deepEqual(folge, [1, 2, 2]);
   await seite.waitForSelector('.lohn.neu');
-  assert.equal(await seite.innerText('#sterne'), '1');
+  assert.equal(await seite.innerText('#siegel'), '1');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 1d. Kronen: ein Weg, Kronenwahl, Bronze unter dem Ziel Gold, Selbsteinschätzung ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-kron');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  assert.equal(await seite.locator('#kronen [data-krone]').count(), 4);
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.equal(await seite.locator('.regionskarte path.weg').count(), 1, 'nur noch ein Weg');
+  assert.equal(await seite.locator('.kronenwahl button').count(), 4);
+  assert.equal(await seite.getAttribute('.kronenwahl button[data-krone="M"]', 'aria-pressed'), 'true', 'voreingestellt ist das Zielniveau Gold');
+  assert.doesNotMatch(await seite.innerText('main'), /Förderniveau|Feldweg|Königsweg|\b[FGME] ·/);
+  await seite.click('.kronenwahl button[data-krone="F"]');
+  assert.equal(await seite.getAttribute('.kronenwahl button[data-krone="F"]', 'aria-pressed'), 'true');
+  await foto(seite, 'kronenwahl');
+  await seite.click('#aufbrechen');
+  assert.match(await seite.innerText('.kronenmarke'), /Spiel um Bronze/);
+  for (let i = 0; i < 40 && !(await seite.locator('#neue-krone').count()); i++) {
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+    if (await seite.locator('#neue-krone').count()) break;
+    await seite.click('#weiter, .vorschlag button.schlicht');
+  }
+  assert.match(await seite.innerText('#neue-krone'), /Neue Krone: Bronze/);
+  assert.match(await seite.innerText('#einschaetzung'), /um Bronze gespielt. Geschafft hast du Bronze/);
+  assert.match(await seite.innerText('.ergebnis'), /brauchst du Gold/);
+  assert.equal(await seite.innerText('#siegel'), '0', 'kein Siegel unter dem Zielniveau');
+  await foto(seite, 'krone-bronze');
+  await seite.click('.ergebnis button:has-text("Zur Regionskarte")');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.match(await seite.innerText('#meine-krone'), /Deine Krone: Bronze. Für den Meilenstein brauchst du Gold/);
+  assert.equal(await seite.locator('.regionskarte .meilenstein .krone-F').count(), 1);
+  assert.equal(await seite.locator('#kronen [data-krone="F"] b').innerText(), '1');
+  await foto(seite, 'regionskarte-krone');
   assert.deepEqual(fehler, []);
   await seite.close();
 }
@@ -240,7 +284,7 @@ async function antworte(seite, richtig = true) {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
   const seite = await kontext.newPage();
   await seite.addInitScript(ordnerErsatz('5a'));
-  await seite.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await seite.goto(`${basis}dist/Mathekingdom-ohne-Netz.html`);
   await seite.fill('#code', '5B-AAAA');
   await seite.click('#ordner');
   await seite.waitForSelector('.fehler');
@@ -249,7 +293,7 @@ async function antworte(seite, richtig = true) {
   await seite.click('#ordner');
   await seite.waitForSelector('.regionen');
   await seite.click('[data-kapitel="5.4"]');
-  await seite.click('#losfahren');
+  await seite.click('#aufbrechen');
   await antworte(seite, true);
   await seite.waitForSelector('.ergebnis.richtig');
   await seite.waitForFunction(() => document.getElementById('speicherstatus').textContent.startsWith('Gespeichert'));
@@ -292,7 +336,7 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.regionen');
   assert.equal(await seite.locator('.region:not(.gesperrt)').count(), 3);
   await seite.click('[data-kapitel="5.3"]');
-  assert.match(await seite.innerText('.unter'), /Linie M/);
+  assert.match(await seite.innerText('.unter'), /spielst um Gold/);
   await kontext.close();
 }
 
@@ -318,6 +362,18 @@ async function antworte(seite, richtig = true) {
   await seite.fill('#code', '5A-K4M2');
   await seite.click('#ordner');
   await seite.waitForSelector('.regionen', { timeout: 15000 });
+  // Betriebsprotokoll: Der Start aus der Kopie steht als Problem mit Grund im Speicherstand.
+  const betrieb = await seite.evaluate(async () => {
+    const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
+    for (let i = 0; i < 40; i++) {
+      try { const s = JSON.parse(await (await (await o.getFileHandle('5A-K4M2.json')).getFile()).text()); if (s.betrieb?.length) return s.betrieb; } catch { /* noch nicht geschrieben */ }
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    return [];
+  });
+  assert.equal(betrieb[0]?.art, 'problem');
+  assert.match(betrieb[0].text, /Kopie im Klassenordner/);
+  assert.match(betrieb[0].text, /Grund: GitHub/);
   await kontext.close();
 }
 
@@ -327,12 +383,14 @@ async function antworte(seite, richtig = true) {
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
   await seite.addInitScript(() => { window.print = () => { window.gedruckt = (window.gedruckt ?? 0) + 1; }; });
-  await seite.goto(new URL('dist/Lehrer-Dashboard.html', wurzel).href);
+  await seite.goto(new URL('dist/Mathekingdom-Lehrer-ohne-Netz.html', wurzel).href);
   await foto(seite, 'lehrer-start');
   await seite.click('#beispiel');
   await seite.waitForSelector('.schlange li');
-  assert.equal(await seite.locator('.karte .tabelle tbody tr').count(), 14);
-  await foto(seite, 'lehrer-live');
+  assert.equal(await seite.locator('.tabs.bereiche button').count(), 4);
+  assert.equal(await seite.locator('[data-tab=jetzt].aktiv').count(), 1); // im Unterricht öffnet „Jetzt“
+  await foto(seite, 'lehrer-jetzt');
+  assert.match(await seite.innerText('.impulse'), /Selbsteinschätzung: Carla Rossi hat sich an den letzten 3 Meilensteinen unterschätzt/);
   const wartend = await seite.locator('.schlange li').count();
   await seite.locator('[data-komme]').first().click();
   await seite.waitForSelector('.schlange li.unterwegs');
@@ -345,7 +403,7 @@ async function antworte(seite, richtig = true) {
   await seite.locator('[data-kuemmere]').first().click();
   // Detailansicht über dem Sitzplan.
   await seite.locator('.sitzplan .platz[data-schueler]').first().click();
-  await seite.waitForSelector('.overlay .kacheln');
+  await seite.waitForSelector('.overlay .kennzahlen');
   assert.equal(await seite.locator('.sitzplan').count(), 1);
   await foto(seite, 'lehrer-overlay');
   await seite.click('#overlay-zu');
@@ -357,22 +415,43 @@ async function antworte(seite, richtig = true) {
   await seite.locator('.sitzplan .platz').nth(1).click();
   await seite.click('#sitzplan-bearbeiten');
   assert.equal(await seite.locator('.sitzplan .platz').nth(1).getAttribute('data-schueler'), vorher);
-  await foto(seite, 'lehrer-live-neu');
+  await foto(seite, 'lehrer-jetzt-neu');
   await seite.setViewportSize({ width: 820, height: 1100 });
-  await foto(seite, 'lehrer-live-tablet');
+  await foto(seite, 'lehrer-jetzt-tablet');
   await seite.setViewportSize({ width: 1400, height: 900 });
-  // Lernpfad: Station für eine ganze Gruppe sperren.
-  await seite.click('[data-tab=pfad]');
+  // Lernstand: Heatmap der Klasse, ein Lernziel, ein Schüler.
+  await seite.click('[data-tab=lernstand]');
+  await seite.waitForSelector('.heatmap');
+  assert.equal(await seite.locator('.heatmap tbody tr').count(), 14);
+  assert.ok(await seite.locator('.heatmap td.zelle.siegel').count() > 0);
+  assert.ok(await seite.locator('.stapel li').count() > 5);
+  await foto(seite, 'lehrer-lernstand');
+  // Selbsteinschätzung: Tendenz je Schüler, Impuls bei Carla (dreimal unterschätzt), keine Kronen beim Lehrer.
+  assert.equal(await seite.locator('#selbsteinschaetzung tbody tr').count(), 14);
+  assert.match(await seite.innerText('#selbsteinschaetzung'), /eher zu niedrig[\s\S]*eher zu hoch|eher zu hoch[\s\S]*eher zu niedrig/);
+  await seite.locator('#selbsteinschaetzung').screenshot(bilder ? { path: `${bilder}/lehrer-selbsteinschaetzung.png` } : {});
+  assert.equal(await seite.locator('.krone').count(), 0, 'die Lehrkraft sieht Niveaustufen, keine Kronen');
+  await seite.locator('.heatmap [data-lernziel]').first().click();
+  await seite.waitForSelector('.vierspaltig');
+  assert.equal(await seite.locator('.gruppenliste').count(), 4);
+  await foto(seite, 'lehrer-lernziel');
+  await seite.click('.brotkrumen button');
+  await seite.locator('[data-schueler-zeile]').first().click();
+  await seite.waitForSelector('.weg');
+  assert.equal(await seite.locator('.schuelerseite .kennzahl').count(), 3);
+  await foto(seite, 'lehrer-schueler');
+  assert.match(await seite.innerText('#meilensteine-schueler'), /Gewählt beim Start/);
+  await seite.click('#einzelbericht');
+  assert.ok(await seite.locator('#mk-druck .kennzahl').count() >= 3);
+  // Meilensteine für eine ganze Gruppe sperren.
+  await seite.click('.brotkrumen button');
+  await seite.click('summary:has-text("Meilensteine öffnen und sperren")');
   await seite.selectOption('#pfad-kapitel', '5.3');
   await seite.selectOption('[data-masse="5.3.3"]', 'zu|alle');
   await seite.waitForFunction(() => document.querySelectorAll('.sperre.zu').length === 14);
   await seite.locator('.sperre.zu').first().click();
   await seite.waitForFunction(() => document.querySelectorAll('.sperre.zu').length === 13);
-  await foto(seite, 'lehrer-lernpfad');
-  await seite.click('[data-tab=diagnose]');
-  await seite.waitForSelector('.matrix');
-  assert.equal(await seite.locator('.matrix tbody tr').count(), 14);
-  await foto(seite, 'lehrer-diagnose');
+  await foto(seite, 'lehrer-meilensteine-sperren');
   // Aufgaben: Auswertung nach AFB, Typ und Linie, Liste mit Sichten und Filtern.
   await seite.click('[data-tab=aufgaben]');
   await seite.waitForSelector('#aufg-liste');
@@ -387,13 +466,9 @@ async function antworte(seite, richtig = true) {
   assert.equal(await seite.locator('#aufg-liste tbody tr').first().locator('td.zahl').nth(1).innerText(), '0');
   await seite.selectOption('#aufg-niveau', 'G');
   assert.equal(await seite.inputValue('#aufg-sicht'), 'nie'); // Die Auswahl bleibt beim Neuzeichnen erhalten.
-  await seite.click('[data-tab=schueler]');
-  await seite.waitForSelector('.kacheln');
-  await foto(seite, 'lehrer-einzel');
-  await seite.click('#einzelbericht');
-  assert.ok(await seite.locator('#mk-druck .kachel').count() > 5);
+  await seite.click('[data-tab=verwaltung]');
   await seite.click('#pdf');
-  assert.equal(await seite.locator('#mk-druck .matrix').count(), 1);
+  assert.equal(await seite.locator('#mk-druck .heatmap').count(), 1);
   assert.equal(await seite.evaluate(() => window.gedruckt), 2);
   await seite.emulateMedia({ media: 'print' });
   await foto(seite, 'lehrer-klassenbericht-druck');
@@ -401,12 +476,10 @@ async function antworte(seite, richtig = true) {
   const [excel] = await Promise.all([seite.waitForEvent('download'), seite.click('#excel')]);
   assert.match(excel.suggestedFilename(), /^Mathekingdom_5a_.*\.xlsx$/);
   assert.equal(readFileSync(await excel.path()).subarray(0, 2).toString(), 'PK');
-  await seite.click('[data-tab=klasse]');
   await seite.waitForSelector('td.code');
   await foto(seite, 'lehrer-klasse');
   await seite.click('#kaertchen');
   assert.equal(await seite.locator('#mk-druck .kaertchen > div').count(), 14);
-  await seite.click('[data-tab=sicherung]');
   await seite.click('#backup');
   await seite.waitForSelector('#backup-wahl');
   await foto(seite, 'lehrer-backup');
@@ -427,7 +500,7 @@ async function antworte(seite, richtig = true) {
     let wahl = 0;
     window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle(wahl++ === 0 ? 'lehrer' : '5a', { create: true });
   });
-  await lehrer.goto(`${basis}dist/Lehrer-Dashboard.html`);
+  await lehrer.goto(`${basis}dist/Mathekingdom-Lehrer-ohne-Netz.html`);
   await lehrer.click('#lehrerordner');
   await lehrer.fill('#neue-klasse', '5a');
   await lehrer.click('#klasse-anlegen');
@@ -488,7 +561,7 @@ async function antworte(seite, richtig = true) {
   const schueler = await kontext.newPage();
   schueler.on('pageerror', (e) => fehler.push(`Schüler: ${e.message}`));
   await schueler.addInitScript(`${ordnerErsatz('5a')}; window.MK_SCHLUESSEL = ${JSON.stringify(lehrerdaten.schluessel.oeffentlich)};`);
-  await schueler.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await schueler.goto(`${basis}dist/Mathekingdom-ohne-Netz.html`);
   await schueler.fill('#code', '5A-ZZZZ');
   await schueler.click('#ordner');
   await schueler.waitForSelector('.fehler');
@@ -503,8 +576,8 @@ async function antworte(seite, richtig = true) {
   await schueler.waitForSelector('.regionen');
   assert.equal(await schueler.locator('.region:not(.gesperrt)').count(), 4);
   await schueler.click('[data-kapitel="5.4"]');
-  assert.match(await schueler.innerText('.unter'), /Linie M/);
-  await schueler.click('#losfahren');
+  assert.match(await schueler.innerText('.unter'), /spielst um Gold/);
+  await schueler.click('#aufbrechen');
   await antworte(schueler, true);
   await schueler.waitForSelector('.ergebnis.richtig');
   await schueler.click('#weiter');
@@ -512,7 +585,7 @@ async function antworte(seite, richtig = true) {
   await schueler.waitForSelector('.hilfebanner');
 
   // Der Hilferuf erscheint bei der Lehrkraft, die Antwort beim Schüler.
-  await lehrer.click('[data-tab=live]');
+  await lehrer.click('[data-tab=jetzt]');
   await lehrer.waitForSelector(`[data-komme="${aylin}"]`, { timeout: 8000 });
   assert.match(await lehrer.innerText('.schlange'), /Aylin Kaya/);
   await foto(lehrer, 'lehrer-hilferuf');
@@ -538,15 +611,16 @@ async function antworte(seite, richtig = true) {
   await lehrer.click('#overlay-zu');
 
   // Station sperren: Die Schülerin sieht das Schloss und kann dort nichts starten. Öffnen macht es rückgängig.
-  await lehrer.click('[data-tab=pfad]');
+  await lehrer.click('[data-tab=lernstand]');
+  await lehrer.click('summary:has-text("Meilensteine öffnen und sperren")');
   await lehrer.click(`[data-sperre="5.4.5|${aylin}"]`);
   await warteAuf((k) => k.sperren?.['5.4.5']?.includes(aylin));
   await schueler.click('.pfad button');
   await schueler.waitForSelector('.tafel.gesperrt', { timeout: 15000 });
-  assert.equal(await schueler.locator('#losfahren').count(), 0);
-  await foto(schueler, 'schueler-station-gesperrt');
+  assert.equal(await schueler.locator('#aufbrechen').count(), 0);
+  await foto(schueler, 'schueler-meilenstein-gesperrt');
   await lehrer.click(`[data-sperre="5.4.5|${aylin}"]`);
-  await schueler.waitForSelector('#losfahren', { timeout: 15000 });
+  await schueler.waitForSelector('#aufbrechen', { timeout: 15000 });
   assert.equal(JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length, 1);
 
   // Spielpause wirkt beim Schüler.
@@ -554,7 +628,7 @@ async function antworte(seite, richtig = true) {
   await warteAuf((k) => k.spielpause === true);
 
   // Backup und Wiederherstellen.
-  await lehrer.click('[data-tab=sicherung]');
+  await lehrer.click('[data-tab=verwaltung]');
   await lehrer.waitForSelector('#backup-wahl');
   const stempel = await lehrer.inputValue('#backup-wahl');
   assert.equal(JSON.parse(await lies(`lehrer/backup/5a/${stempel}/${aylin}.json`)).code, aylin);
@@ -564,16 +638,30 @@ async function antworte(seite, richtig = true) {
   await lehrer.waitForFunction(() => /wiederhergestellt/.test(document.querySelector('.meldung.warnung')?.textContent ?? ''));
   assert.ok(JSON.parse(await lies(`5a/${aylin}.json`)).muenzen < 1000);
 
+  // Eine ältere, aber echt unterschriebene Klassendatei (etwa ein Überbleibsel eines überholten Schreibvorgangs)
+  // wird still ersetzt, ohne Warnung.
+  const warnungenVorher = await lehrer.locator('.meldung.warnung li').count();
+  await schreibe('5a/klassendatei.json', klassendatei);
+  for (let i = 0; i < 100 && (await lies('5a/klassendatei.json')) === klassendatei; i++) await lehrer.waitForTimeout(200);
+  assert.notEqual(await lies('5a/klassendatei.json'), klassendatei);
+  assert.equal(await lehrer.locator('.meldung.warnung li').count(), warnungenVorher);
+
   // Eine von außen veränderte Klassendatei erkennt die Lehrkraft und stellt sie wieder her.
   const gefaelscht = JSON.stringify({ inhalt: JSON.stringify({ klasse: '5a', aktuellesKapitel: null, codes: [aylin, '5A-ZZZZ'], zielniveaus: {}, spielpause: true, hilfe: {} }), signatur: JSON.parse(klassendatei).signatur });
   await schreibe('5a/klassendatei.json', gefaelscht);
   await lehrer.waitForFunction(() => /von außen verändert/.test(document.querySelector('.meldung.warnung')?.textContent ?? ''), null, { timeout: 25000 });
   assert.notEqual(await lies('5a/klassendatei.json'), gefaelscht);
+  // Betriebsprotokoll: Starts der Schüler und das Problem der Lehrkraft stehen in der Verwaltung.
+  await lehrer.waitForFunction(() => /von außen/.test(document.getElementById('protokoll')?.textContent ?? ''), null, { timeout: 15000 });
+  assert.ok(await lehrer.locator('#protokoll tbody tr').count() >= 3);
+  assert.ok(JSON.parse(await lies('lehrer/lehrerdaten.json')).protokoll.some((e) => /von außen/.test(e.text)));
+  assert.ok(JSON.parse(await lies(`5a/${aylin}.json`)).betrieb.some((e) => e.art === 'start'));
+  await foto(lehrer, 'lehrer-protokoll');
   await foto(lehrer, 'lehrer-warnung');
 
   // Ohne offenes Lehrer-Dashboard: Das Schüler-Dashboard lehnt die gefälschte Datei ab.
   await lehrer.goto('about:blank');
-  await schueler.goto(`${basis}dist/Schueler-Dashboard-komplett.html`);
+  await schueler.goto(`${basis}dist/Mathekingdom-ohne-Netz.html`);
   await schueler.evaluate(async (text) => {
     const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
     const strom = await (await o.getFileHandle('klassendatei.json')).createWritable();
@@ -585,6 +673,68 @@ async function antworte(seite, richtig = true) {
   assert.match(await schueler.innerText('.fehler'), /Klassendatei/);
   assert.deepEqual(fehler, []);
   await kontext.close();
+}
+
+// ---------- 7. Startdatei der Lehrkraft: online laden, Kopie ablegen, ohne Netz aus der Kopie starten ----------
+{
+  const kontext = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+  const fehler = [];
+  const paket = readFileSync(new URL('dist/lehrer-paket.js', wurzel), 'utf8');
+  let netz = true;
+  await kontext.route(/github\.io/, (r) => {
+    if (netz === '404') return r.fulfill({ status: 404, body: 'nicht da', headers: { 'access-control-allow-origin': '*' } });
+    if (!netz) return r.abort();
+    if (r.request().url().endsWith('dist/lehrer-paket.js')) return r.fulfill({ body: paket, contentType: 'text/javascript', headers: { 'access-control-allow-origin': '*' } });
+    return r.abort();
+  });
+  await kontext.addInitScript(ordnerErsatz('lehrer'));
+  const seite = await kontext.newPage();
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(`${basis}dist/Mathekingdom-Lehrer.html`);
+  await seite.waitForSelector('#lehrerordner');
+  const version = readFileSync(new URL('VERSIONEN.md', wurzel), 'utf8').match(/^## (\d+\.\d+)/m)[1];
+  assert.match(await seite.innerText('#version'), new RegExp(`^Version ${version.replace('.', '\\.')} vom \\d\\d\\.\\d\\d\\.\\d{4}$`));
+  await seite.click('#version');
+  assert.ok(await seite.locator('.mk-version-tafel li').count() > 0);
+  await foto(seite, 'lehrer-version');
+  await seite.click('#lehrerordner');
+  await seite.waitForSelector('#neue-klasse');
+  const kopie = await seite.evaluate(async () => {
+    const o = await (await (await navigator.storage.getDirectory()).getDirectoryHandle('lehrer')).getDirectoryHandle('_mathekingdom');
+    return (await (await o.getFileHandle('lehrer-paket.js')).getFile()).size;
+  });
+  assert.equal(kopie, Buffer.byteLength(paket));
+
+  // Ohne Netz: Ordner wählen, die Kopie startet und öffnet gleich die Klassenübersicht.
+  netz = false;
+  await seite.reload();
+  await seite.waitForSelector('#mk-lehrerordner', { timeout: 15000 });
+  await foto(seite, 'lehrer-startdatei-ohne-netz');
+  await seite.click('#mk-lehrerordner');
+  await seite.waitForSelector('#neue-klasse');
+  assert.match(await seite.innerText('#version'), /Kopie vom Lehrerlaufwerk/);
+  // Der Grund steht auf der Seite und im Betriebsprotokoll der Lehrerdaten.
+  const protokoll = await seite.evaluate(async () => {
+    const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('lehrer');
+    return JSON.parse(await (await (await o.getFileHandle('lehrerdaten.json')).getFile()).text()).protokoll;
+  });
+  assert.equal(protokoll.at(-1).art, 'problem');
+  assert.match(protokoll.at(-1).text, /Kopie auf dem Lehrerlaufwerk.*GitHub nicht erreichbar/);
+  // GitHub antwortet, aber Pages fehlt: Die Startdatei nennt 404.
+  netz = '404';
+  await seite.reload();
+  await seite.waitForSelector('#mk-lehrerordner', { timeout: 15000 });
+  assert.match(await seite.innerText('#mk-grund'), /404.*Pages/);
+  assert.deepEqual(fehler, []);
+  await kontext.close();
+}
+
+// ---------- 8. Versionsanzeige im Schüler-Dashboard ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 800 } });
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  assert.match(await seite.innerText('#version'), /^Version \d+\.\d+ vom .*\(Datei ohne Netz/);
+  await seite.close();
 }
 
 await browser.close();

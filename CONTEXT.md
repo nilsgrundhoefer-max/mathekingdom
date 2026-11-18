@@ -47,12 +47,12 @@ Eine einzelne zu lösende Einheit in einem Unterkapitel, mit festem Aufgabenform
 _Avoid_: Übung, Item
 
 **Versuch**:
-Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt.
+Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt. Ein Fehlversuch kostet nichts: Der zweite Versuch bringt so viele Münzen wie der erste.
 _Avoid_: Eingabe, Abgabe
 
 **Niveaustufe**:
 Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau). Die Stufen unterscheiden sich zuerst in der Art der Anforderung, erst danach in der Zahlengröße: F eine Handlung in einem Schritt, G ein Standardverfahren in einem Schritt, M mehrschrittig mit Übersetzen und Deuten, E Strukturen, Lücken und Behauptungen (siehe ADR 0009).
-_Avoid_: Schwierigkeit, Level, Sterne
+_Avoid_: Schwierigkeit, Level, Sterne, Siegel
 
 **Zielniveau**:
 Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard M, von der Lehrkraft pro Schüler anpassbar.
@@ -70,20 +70,28 @@ _Avoid_: aktuelles Thema
 Der Weg durch die Unterkapitel eines einzelnen Kapitels.
 _Avoid_: Kurs, Weg, Themenbereich
 
-**Metrokarte**:
-Die Darstellung eines Lernpfads mit vier parallelen Linien (F, G, M, E), auf denen die Unterkapitel Stationen sind. Ein Niveauwechsel ist ein Umsteigen.
-_Avoid_: Lernlandkarte, Fortschrittsbalken
+**Schlossgarten**:
+Die Übersicht aller Kapitel einer Klassenstufe: der Ausgangsort in der Mitte des Königreichs, mit einem Gartentor für jede Region. Hinter jedem Tor liegt die Regionskarte. Gesperrte Kapitel haben ein geschlossenes Tor.
+_Avoid_: Reichskarte, Weltkarte, Jahresplan (für die Ansicht)
 
-**Station**:
-Ein Unterkapitel auf der Metrokarte. Sie gilt als erreicht, wenn der Schüler die Lernziele des Unterkapitels erreicht hat.
-_Avoid_: Level, Haltestelle
+**Regionskarte**:
+Die Darstellung eines Lernpfads im Stil einer alten Landkarte: ein einziger Weg, auf dem die Unterkapitel Meilensteine sind. Die Niveaustufe ist kein eigener Weg mehr, sondern die Kronenfarbe, um die der Schüler spielt.
+_Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken, Straße
+
+**Meilenstein**:
+Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, also eine Krone auf oder über seinem Zielniveau trägt. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
+_Avoid_: Station, Haltestelle, Level, Knotenpunkt
+
+**Abstecher**:
+Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist. Er bekommt eine Krone nach derselben Regel.
+_Avoid_: Zusatzstation, Extra
 
 **Lernziel**:
 Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III.
 _Avoid_: Kompetenz (allein), Ziel
 
 **Training**:
-Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab.
+Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab, können aber eine Krone unter dem Zielniveau bringen.
 _Avoid_: Übungsmodus
 
 ## Belohnung
@@ -92,13 +100,33 @@ _Avoid_: Übungsmodus
 Die ausgebbare Währung für richtig gelöste Aufgaben; höhere Niveaustufen bringen mehr, Training weniger.
 _Avoid_: Punkte, Coins, Taler
 
-**Stern**:
-Eine nicht ausgebbare Auszeichnung, genau eine pro erreichtem Lernziel.
-_Avoid_: Punkte, Abzeichen
+**Siegel**:
+Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
+_Avoid_: Stern, Punkte, Abzeichen
+
+**Krone**:
+Die nicht ausgebbare Auszeichnung eines Meilensteins, in einer der vier Kronenfarben. Sie zeigt das niedrigste Niveau, auf dem alle Lernziele des Meilensteins nachgewiesen sind. Jeder Schüler kann alle vier Kronen sammeln; gemeistert ist der Meilenstein aber erst mit einer Krone auf oder über seinem Zielniveau. Ein Schüler kann sie später aufwerten; der Meilenstein zeigt immer die beste Farbe. Kronen bringen keine Münzen und bestimmen nicht den Rang.
+_Avoid_: Meilensteinkrone, Pokal, Medaille
+
+**Kronenfarbe**:
+Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (M), Purpur (E). Im Schüler-Dashboard erscheinen nur die Kronenfarben, im Lehrer-Dashboard nur die Niveaustufen.
+_Avoid_: Kronenstufe, Lila, Purple
+
+**Kronenwahl**:
+Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau.
+_Avoid_: Straße wechseln, Niveauwahl (auf dem Bildschirm)
+
+**Selbsteinschätzung**:
+Der Vergleich der Kronenwahl beim ersten Start eines Meilensteins mit der ersten Krone, die der Schüler dort bekommt: unterschätzt (Krone besser), passend (gleich) oder überschätzt (Krone schlechter oder vorher abgestiegen). Spätere Aufwertungen zählen nicht. Der Schüler sieht das Ergebnis neutral, die Lehrkraft wertet es im Lernstand aus.
+_Avoid_: Selbstbewertung, Prognose
 
 **Rang**:
-Die Stufe des Lokführers (Rangierlok, Regionalzug, Express, Königszug), die sich allein aus der Zahl seiner Sterne ergibt und neue Loks und Avatar-Teile zum Kauf freischaltet.
+Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Hofkartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
 _Avoid_: Level, Stufe
+
+**Wappen**:
+Das Schild, das ein Schüler selbst gestaltet; Farben und Zeichen kauft er mit Münzen. Ein Wappen-Zeichen heißt nie Krone (das teuerste Zeichen ist die Lilie).
+_Avoid_: Avatar, Lok
 
 **Minispiel**:
 Ein kurzes, mathematiknahes Spiel von höchstens drei Minuten, das Münzen kostet und nur während einer Spielpause spielbar ist.
@@ -108,9 +136,9 @@ _Avoid_: Belohnungsspiel, Game
 Ein von der Lehrkraft pro Klasse eingeschaltetes Zeitfenster, in dem Minispiele erlaubt sind; standardmäßig aus.
 _Avoid_: Freizeit, Pause
 
-**Lokführer**:
-Die Rolle des Schülers in der Rahmenhandlung: Er erschließt mit seinem Zug der Königlichen Metro die Regionen des Reiches; jedes Kapitel ist eine Region.
-_Avoid_: Held, Spieler
+**Kundschafter**:
+Die Rolle des Schülers in der Rahmenhandlung: Er erkundet im Auftrag des Königs die Regionen des Reiches; jedes Kapitel ist eine Region.
+_Avoid_: Lokführer, Held, Spieler
 
 ## Hilfe und Diagnose
 
@@ -131,7 +159,7 @@ Die Regeln eines Unterkapitels in Kürze, mit einem vorgerechneten Beispiel und 
 _Avoid_: Regelheft, Spickzettel
 
 **Wortspeicher**:
-Die Wörter einer Station mit je einer Erklärung in einem Satz, neben der Aufgabe. Er zeigt nur die Wörter bis zur Niveaustufe der Aufgabe, ist auf F und G aufgeklappt und auf M und E zugeklappt. Kostet nichts.
+Die Wörter eines Meilensteins mit je einer Erklärung in einem Satz, neben der Aufgabe. Er zeigt nur die Wörter bis zur Niveaustufe der Aufgabe, ist auf F und G aufgeklappt und auf M und E zugeklappt. Kostet nichts.
 _Avoid_: Glossar, Vokabelliste
 
 **Einfache Sprache**:
@@ -143,11 +171,11 @@ Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge
 _Avoid_: Schwierigkeit
 
 **Etappe**:
-Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der geschafften Stationen und der nächsten Station. Sie steht oben auf der Startseite. Gesperrte Stationen zählen nicht mit.
+Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten Meilensteine und dem nächsten Meilenstein. Sie steht oben auf der Startseite. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Hilfekärtchen**:
-Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Jede genutzte Stufe senkt die Münzen der Aufgabe.
+Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Nach dem ersten falschen Versuch öffnet sich der Tipp von selbst. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
 
 **Hilferuf**:
@@ -161,8 +189,20 @@ _Avoid_: Queue
 ## Speichern
 
 **Startdatei**:
-Die unveränderliche HTML-Datei auf dem Schülerlaufwerk, die das jeweils aktuelle Schüler-Dashboard lädt.
+Die unveränderliche HTML-Datei, die das jeweils aktuelle Dashboard lädt: `Mathekingdom.html` auf dem Schülerlaufwerk für das Schüler-Dashboard, `Mathekingdom-Lehrer.html` auf dem Lehrer-PC für das Lehrer-Dashboard. Ohne Internet startet sie die Kopie aus dem Klassenordner bzw. vom Lehrerlaufwerk.
 _Avoid_: Launcher, Verknüpfung
+
+**Version**:
+Der Stand beider Dashboards, den Schüler und Lehrkraft gerade sehen, mit Nummer und Datum (z. B. „0.1 vom 17.11.2026“). Schüler- und Lehrer-Dashboard tragen immer dieselbe Nummer. Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht mehr passen.
+_Avoid_: Release, Build, Stand (für die Nummer)
+
+**Versionslog**:
+Die Liste aller Versionen mit dem, was sich darin für Schüler und für die Lehrkraft geändert hat.
+_Avoid_: Changelog, Patchnotes
+
+**Veröffentlichter Stand**:
+Die Version, die die Startdateien gerade laden. Er ändert sich nur, wenn die Lehrkraft eine neue Version freigibt.
+_Avoid_: Live-Version, Produktion
 
 **Lehrerlaufwerk**:
 Das persönliche Netzlaufwerk der Lehrkraft; nur sie hat Zugriff.
@@ -184,8 +224,12 @@ _Avoid_: Spielstand, Save, Profil
 Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Grundlage der Diagnose. Beim Schuljahreswechsel wird es in die Lehrerdaten archiviert und ein Jahr später gelöscht.
 _Avoid_: Log, Verlauf
 
+**Betriebsprotokoll**:
+Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten; die Lehrkraft sieht es für die ganze Klasse als „Protokoll“ in der Verwaltung.
+_Avoid_: Log, Status, Fehlerliste
+
 **Schuljahreswechsel**:
-Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Sterne, Rang, Avatar und erreichte Lernziele bleiben erhalten.
+Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Siegel, Rang, Wappen und erreichte Lernziele bleiben erhalten.
 _Avoid_: Versetzung, Reset
 
 **Klassenordner**:
@@ -211,10 +255,12 @@ _Avoid_: Klassenliste (für die Datei)
 - **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Lehrerdaten.
 - **Impuls**: Vorschlag des Lehrer-Dashboards an die Lehrkraft, zum Beispiel ein Mini-Workshop, wenn mehrere Schüler denselben typischen Fehler machen, oder ein Hinweis auf einen Schnellläufer.
 - **Lernbegleiter**: Ein Schüler, der ein Lernziel schon erreicht hat und einem blockierten Mitschüler helfen könnte. Nur ein Vorschlag an die Lehrkraft.
-- **Schnellläufer**: Ein Schüler, der in der laufenden Stunde eine Station abgeschlossen hat. Die Lehrkraft kann sein Zielniveau anheben.
-- **Gesperrte Station**: Eine Station, die die Lehrkraft für einen Schüler geschlossen hat. Der Schüler sieht sie, kann dort aber keine Aufgaben starten. „Erreicht“ wird eine Station nie von Hand, sondern nur über ihre Lernziele.
+- **Schnellläufer**: Ein Schüler, der in der laufenden Stunde einen Meilenstein gemeistert hat. Die Lehrkraft kann sein Zielniveau anheben.
+- **Gesperrter Meilenstein**: Ein Meilenstein, den die Lehrkraft für einen Schüler geschlossen hat. Der Schüler sieht sie, kann dort aber keine Aufgaben starten. Gemeistert wird ein Meilenstein nie von Hand, sondern nur über seine Lernziele.
 - **Nachricht**: Kurzer Text der Lehrkraft an einen einzelnen Schüler. Der Schüler bestätigt ihn.
 - **Anforderungsbereich (AFB)**: Einordnung jeder Aufgabe in I (Reproduzieren), II (Zusammenhänge herstellen) oder III (Verallgemeinern und Reflektieren). Unabhängig von der Niveaustufe.
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
+- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
+- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig oder Siegel. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
 

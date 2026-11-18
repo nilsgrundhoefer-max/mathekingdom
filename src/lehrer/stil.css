@@ -189,3 +189,83 @@ body { margin: 0; background: #f4f1ea; }
 .filter label { display: flex; flex-direction: column; gap: 2px; }
 .filter select { min-height: 40px; }
 .tabelle.gruppen td:first-child { font-weight: 600; white-space: nowrap; }
+
+/* ---------- Bereiche und Lernstand (ADR 0010) ---------- */
+#mathekingdom-lehrer .tabs.bereiche button { font-size: 1.02rem; padding: 10px 22px; }
+#mathekingdom-lehrer .leiste .rechts { margin-left: auto; }
+#mathekingdom-lehrer .zweispaltig > .karte { margin-bottom: 14px; }
+#mathekingdom-lehrer .brotkrumen { display: flex; gap: 8px; align-items: center; margin: 0 0 12px; font-size: .95rem; }
+#mathekingdom-lehrer .brotkrumen .aktiv { font-weight: 700; color: var(--nacht); background: none; border: 0; padding: 0; }
+#mathekingdom-lehrer .brotkrumen > span:not(.aktiv) { color: var(--grau); }
+#mathekingdom-lehrer .kennzahlen { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; }
+#mathekingdom-lehrer .kennzahl { background: var(--karte); border: 1px solid var(--rand); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; }
+#mathekingdom-lehrer .kennzahl b { font-size: 1.7rem; line-height: 1.1; color: var(--nacht); font-variant-numeric: tabular-nums; }
+#mathekingdom-lehrer .kennzahl span { font-size: .9rem; color: var(--tinte); }
+#mathekingdom-lehrer .kennzahl small { font-size: .8rem; color: var(--grau); }
+#mathekingdom-lehrer .nebenwerte { margin: -4px 2px 14px; }
+#mathekingdom-lehrer details.aufklapp > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+#mathekingdom-lehrer details.aufklapp > summary::before { content: '▸'; color: var(--grau); }
+#mathekingdom-lehrer details.aufklapp[open] > summary::before { content: '▾'; }
+#mathekingdom-lehrer details.aufklapp > summary h2 { margin: 0; }
+#mathekingdom-lehrer details.aufklapp[open] > summary { margin-bottom: 12px; }
+
+/* Vier Zustände: Farbe plus Zeichen, damit nichts an der Farbe allein hängt. */
+.zelle { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.zelle.offen { background: #ece9e2; color: #6b7280; }
+.zelle.begonnen { background: #5f97cf; color: #fff; }
+.zelle.wackelig { background: #dd8526; color: #1f2533; font-weight: 800; }
+.zelle.siegel { background: #2a7a50; color: #fff; font-weight: 700; }
+.zlegende { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0; padding: 0; font-size: .84rem; color: #5d6679; }
+.zlegende li { display: inline-flex; align-items: center; gap: 6px; }
+.zlegende i, #mathekingdom-lehrer .gruppenliste h3 i { font-style: normal; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 4px; font-size: .78rem; }
+
+.heatmap { border-collapse: separate; border-spacing: 2px; font-variant-numeric: tabular-nums; }
+.heatmap th { font-size: .78rem; font-weight: 600; color: #5d6679; padding: 2px 4px; }
+.heatmap th.gruppe { background: #ece8dd; color: #1d2b4f; border-radius: 4px; text-align: center; font-size: .74rem; }
+.heatmap th.name { text-align: left; padding-right: 12px; white-space: nowrap; font-size: .88rem; color: #1f2533; }
+.heatmap th.kurz { text-align: center; }
+.heatmap .spalte { background: none; border: 0; padding: 4px 2px; font: inherit; font-weight: 700; color: #1d2b4f; text-decoration: underline dotted; text-underline-offset: 3px; }
+.heatmap .spalte:hover { color: #000; background: #ece8dd; border-radius: 4px; }
+.heatmap td.zelle { width: 34px; min-width: 34px; height: 28px; text-align: center; border-radius: 4px; font-size: .82rem; cursor: default; }
+.heatmap td.summe, .heatmap th.summe { text-align: right; padding-left: 10px; font-weight: 700; color: #1d2b4f; }
+#mathekingdom-lehrer .heatmap tbody tr:hover th.name { background: #faf8f2; }
+
+/* Gestapelte Balken je Lernziel */
+#mathekingdom-lehrer .stapel { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+#mathekingdom-lehrer .stapelzeile { width: 100%; display: grid; grid-template-columns: minmax(0, 2fr) minmax(160px, 3fr) 3.5em; gap: 12px; align-items: center; background: none; border: 0; border-radius: 6px; padding: 6px 8px; text-align: left; white-space: normal; }
+#mathekingdom-lehrer .stapelzeile:hover { background: #faf8f2; }
+#mathekingdom-lehrer .stapelname { font-size: .88rem; line-height: 1.3; }
+#mathekingdom-lehrer .stapelname small { display: block; color: var(--grau); font-size: .76rem; }
+#mathekingdom-lehrer .stapelbalken { display: flex; gap: 2px; height: 22px; }
+#mathekingdom-lehrer .stapelbalken .teil { flex-basis: 0; display: grid; place-items: center; font-style: normal; font-size: .76rem; font-weight: 700; min-width: 4px; }
+#mathekingdom-lehrer .stapelbalken .teil:first-child { border-radius: 4px 0 0 4px; }
+#mathekingdom-lehrer .stapelbalken .teil:last-child { border-radius: 0 4px 4px 0; }
+#mathekingdom-lehrer .stapelbalken .teil:only-child { border-radius: 4px; }
+#mathekingdom-lehrer .stapelzahl { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--nacht); }
+
+/* Einfache Balkenliste */
+.balkenliste { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.balkenliste li { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(80px, 2fr) auto; gap: 10px; align-items: center; font-size: .88rem; }
+.balkenliste .bspur { height: 14px; background: #ece8dd; border-radius: 4px; overflow: hidden; }
+.balkenliste .bspur i { display: block; height: 100%; background: #4f6fa8; border-radius: 0 4px 4px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.balkenliste .bwert { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.balkenliste .bwert small { font-weight: 400; color: #5d6679; }
+
+#mathekingdom-lehrer .vierspaltig { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+#mathekingdom-lehrer .gruppenliste h3 { display: flex; align-items: center; gap: 8px; margin: 4px 0 6px; }
+#mathekingdom-lehrer .gruppenliste ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+
+/* Weg eines Schülers über die Lernziele */
+.weg { display: flex; flex-wrap: wrap; gap: 14px 20px; }
+.weggruppe small { display: block; font-size: .76rem; color: #5d6679; margin-bottom: 4px; }
+.wegzellen { display: flex; gap: 3px; }
+.wegzellen .zelle { width: 30px; height: 30px; border-radius: 5px; border: 0; padding: 0; display: inline-grid; place-items: center; font-style: normal; font-size: .85rem; }
+#mathekingdom-lehrer .wegzellen button.zelle:hover { outline: 2px solid var(--nacht); outline-offset: 1px; }
+#mathekingdom-lehrer .hinweise { background: var(--hell); border: 1px solid #ecd58a; border-radius: 10px; padding: 10px 14px 10px 30px; }
+@media (max-width: 700px) {
+  #mathekingdom-lehrer .stapelzeile { grid-template-columns: 1fr 3em; }
+  #mathekingdom-lehrer .stapelbalken { grid-column: 1 / -1; grid-row: 2; }
+}
+#mathekingdom-lehrer button.zelle.siegel, #mathekingdom-lehrer button.zelle.begonnen { color: #fff; }
+#mathekingdom-lehrer button.zelle.wackelig { color: #1f2533; }
+#mathekingdom-lehrer button.zelle.offen { color: #6b7280; }

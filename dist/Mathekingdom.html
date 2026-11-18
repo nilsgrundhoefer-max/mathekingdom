@@ -25,6 +25,7 @@
           .then(function (datei) { return datei.getFile(); }).then(function (datei) { return datei.text(); })
           .then(function (code) {
             window.MK_ORDNER = ordner;
+            window.MK_QUELLE = 'kopie';
             ziel.innerHTML = '';
             var skript = document.createElement('script');
             skript.textContent = code;
@@ -38,11 +39,13 @@
   window.MK_BASIS = BASIS;
   // Öffentlicher Schlüssel der Lehrkraft. Das Lehrer-Dashboard trägt ihn ein, wenn es die Startdatei ausgibt (siehe docs/adr/0006).
   window.MK_SCHLUESSEL = /*SCHLUESSEL*/null;
+  window.MK_QUELLE = 'online';
   var skript = document.createElement('script');
   skript.src = BASIS + 'dist/schueler-dashboard.js';
   skript.onload = function () { fertig = true; };
-  skript.onerror = ausOrdner;
-  setTimeout(function () { if (!fertig) { skript.remove(); ausOrdner(); } }, 6000);
+  // Der Grund landet im Betriebsprotokoll (ADR 0013).
+  skript.onerror = function () { window.MK_GRUND = 'GitHub nicht erreichbar oder Datei fehlt (dist/schueler-dashboard.js)'; ausOrdner(); };
+  setTimeout(function () { if (!fertig) { window.MK_GRUND = 'GitHub hat nicht innerhalb von 6 Sekunden geantwortet'; skript.remove(); ausOrdner(); } }, 6000);
   document.body.appendChild(skript);
 })();
 </script>
