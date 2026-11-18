@@ -224,6 +224,10 @@ _Avoid_: Spielstand, Save, Profil
 Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Grundlage der Diagnose. Beim Schuljahreswechsel wird es in die Lehrerdaten archiviert und ein Jahr später gelöscht.
 _Avoid_: Log, Verlauf
 
+**Betriebsprotokoll**:
+Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten; die Lehrkraft sieht es für die ganze Klasse als „Protokoll“ in der Verwaltung.
+_Avoid_: Log, Status, Fehlerliste
+
 **Schuljahreswechsel**:
 Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Siegel, Rang, Wappen und erreichte Lernziele bleiben erhalten.
 _Avoid_: Versetzung, Reset

@@ -362,6 +362,18 @@ async function antworte(seite, richtig = true) {
   await seite.fill('#code', '5A-K4M2');
   await seite.click('#ordner');
   await seite.waitForSelector('.regionen', { timeout: 15000 });
+  // Betriebsprotokoll: Der Start aus der Kopie steht als Problem mit Grund im Speicherstand.
+  const betrieb = await seite.evaluate(async () => {
+    const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
+    for (let i = 0; i < 40; i++) {
+      try { const s = JSON.parse(await (await (await o.getFileHandle('5A-K4M2.json')).getFile()).text()); if (s.betrieb?.length) return s.betrieb; } catch { /* noch nicht geschrieben */ }
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    return [];
+  });
+  assert.equal(betrieb[0]?.art, 'problem');
+  assert.match(betrieb[0].text, /Kopie im Klassenordner/);
+  assert.match(betrieb[0].text, /Grund: GitHub/);
   await kontext.close();
 }
 
@@ -631,6 +643,12 @@ async function antworte(seite, richtig = true) {
   await schreibe('5a/klassendatei.json', gefaelscht);
   await lehrer.waitForFunction(() => /von außen verändert/.test(document.querySelector('.meldung.warnung')?.textContent ?? ''), null, { timeout: 25000 });
   assert.notEqual(await lies('5a/klassendatei.json'), gefaelscht);
+  // Betriebsprotokoll: Starts der Schüler und das Problem der Lehrkraft stehen in der Verwaltung.
+  await lehrer.waitForFunction(() => /von außen/.test(document.getElementById('protokoll')?.textContent ?? ''), null, { timeout: 15000 });
+  assert.ok(await lehrer.locator('#protokoll tbody tr').count() >= 3);
+  assert.ok(JSON.parse(await lies('lehrer/lehrerdaten.json')).protokoll.some((e) => /von außen/.test(e.text)));
+  assert.ok(JSON.parse(await lies(`5a/${aylin}.json`)).betrieb.some((e) => e.art === 'start'));
+  await foto(lehrer, 'lehrer-protokoll');
   await foto(lehrer, 'lehrer-warnung');
 
   // Ohne offenes Lehrer-Dashboard: Das Schüler-Dashboard lehnt die gefälschte Datei ab.
@@ -656,6 +674,7 @@ async function antworte(seite, richtig = true) {
   const paket = readFileSync(new URL('dist/lehrer-paket.js', wurzel), 'utf8');
   let netz = true;
   await kontext.route(/github\.io/, (r) => {
+    if (netz === '404') return r.fulfill({ status: 404, body: 'nicht da', headers: { 'access-control-allow-origin': '*' } });
     if (!netz) return r.abort();
     if (r.request().url().endsWith('dist/lehrer-paket.js')) return r.fulfill({ body: paket, contentType: 'text/javascript', headers: { 'access-control-allow-origin': '*' } });
     return r.abort();
@@ -686,6 +705,18 @@ async function antworte(seite, richtig = true) {
   await seite.click('#mk-lehrerordner');
   await seite.waitForSelector('#neue-klasse');
   assert.match(await seite.innerText('#version'), /Kopie vom Lehrerlaufwerk/);
+  // Der Grund steht auf der Seite und im Betriebsprotokoll der Lehrerdaten.
+  const protokoll = await seite.evaluate(async () => {
+    const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('lehrer');
+    return JSON.parse(await (await (await o.getFileHandle('lehrerdaten.json')).getFile()).text()).protokoll;
+  });
+  assert.equal(protokoll.at(-1).art, 'problem');
+  assert.match(protokoll.at(-1).text, /Kopie auf dem Lehrerlaufwerk.*GitHub nicht erreichbar/);
+  // GitHub antwortet, aber Pages fehlt: Die Startdatei nennt 404.
+  netz = '404';
+  await seite.reload();
+  await seite.waitForSelector('#mk-lehrerordner', { timeout: 15000 });
+  assert.match(await seite.innerText('#mk-grund'), /404.*Pages/);
   assert.deepEqual(fehler, []);
   await kontext.close();
 }

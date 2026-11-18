@@ -1,6 +1,7 @@
 // Schüler-Dashboard: Oberfläche. Die Regeln stehen in logik.js, der Dateizugriff in speicher.js.
 import { pruefePin } from '../gemeinsam/krypto.js';
-import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
+import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
+import * as P from '../gemeinsam/protokoll.js';
 import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
@@ -26,6 +27,19 @@ function zeige(ansicht) {
   male();
 }
 function geaendert() { z.dienst?.markiere(); }
+// Betriebsprotokoll im Speicherstand: nur Starts und technische Probleme, nie Lerndaten (ADR 0013).
+function notiere(art, text) {
+  P.trage((z.stand.betrieb ??= []), { t: jetzt(), art, text }, P.MAX_SCHUELER);
+  geaendert();
+}
+// Ein Speicherfehler wird nur beim Wechsel notiert, nicht bei jedem neuen Versuch alle 10 Sekunden.
+function speicherMeldung(status) {
+  const vorher = z.speicherstatus;
+  z.speicherstatus = status;
+  if (!status.ok && vorher?.ok !== false) notiere('problem', `Speichern im Klassenordner fehlgeschlagen: ${status.fehler?.name ?? ''} ${status.fehler?.message ?? ''}`.trim());
+  if (status.ok && vorher?.ok === false) notiere('ok', 'Speichern im Klassenordner klappt wieder');
+  maleStatus();
+}
 function male() {
   const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, wappen: wappenAnsicht, minispiel };
   wurzel.replaceChildren(...[
@@ -125,7 +139,7 @@ async function melde({ code, klasse, pin }, ablage) {
     return zeige({ name: 'anmeldung', code, fehler: `Dein Code gehört zur Klasse ${klasse}, du hast aber den Ordner „${ablage.name}“ gewählt. Wähle den Ordner „${klasse}“.` });
   }
   const klassenstufe = parseInt(klasse, 10);
-  const { pool } = await S.ladePool(ablage, klassenstufe);
+  const { pool, quelle: poolQuelle, grund: poolGrund } = await S.ladePool(ablage, klassenstufe);
   if (!pool) return zeige({ name: 'anmeldung', code, fehler: `Für Klasse ${klassenstufe} gibt es noch keine Aufgaben.` });
   const gelesen = await S.ladeKlassendatei(ablage);
   if (gelesen.status === 'fehlt' || gelesen.status === 'ungueltig') {
@@ -144,8 +158,16 @@ async function melde({ code, klasse, pin }, ablage) {
   const geladen = await S.ladeStand(ablage, code);
   Object.assign(z, { ablage, pool, index: L.indexiere(pool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
   z.meldung = geladen.hinweis ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
-  z.dienst = S.speicherdienst(ablage, () => z.stand, (status) => { z.speicherstatus = status; maleStatus(); });
-  if (!geladen.stand || geladen.hinweis) { z.dienst.markiere(); z.dienst.sofort(); }
+  z.dienst = S.speicherdienst(ablage, () => z.stand, speicherMeldung);
+  if (!ablage.demo) {
+    const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND,
+      aufgaben: poolQuelle, aufgabenGrund: poolGrund, klassendatei: gelesen.status, browser: P.browserName(navigator.userAgent) });
+    notiere(e.art, e.text);
+    if (geladen.hinweis) notiere('problem', geladen.hinweis === 'datei-fehlte'
+      ? 'Speicherstand fehlte im Klassenordner, aus der Sicherung dieses Computers wiederhergestellt'
+      : 'Speicherstand im Klassenordner war älter als die Sicherung dieses Computers, Sicherung übernommen');
+  }
+  z.dienst.markiere(); z.dienst.sofort();
   // Hat die Lehrkraft das Zielniveau gesenkt, kommen die Siegel jetzt dazu. Weggenommen wird nie etwas (ADR 0012).
   if (L.trageSiegelNach(z.stand, z.index, einst.zielniveau, jetzt())) { z.dienst.markiere(); z.dienst.sofort(); }
   // Vorgaben der Lehrkraft alle 10 Sekunden lesen. Wartet der Schüler auf Hilfe, alle 3 Sekunden,
@@ -166,7 +188,8 @@ async function takt() {
   try {
     const gelesen = await S.ladeKlassendatei(z.ablage);
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
-    if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') z.klassendatei = gelesen.daten;
+    if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
+    else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
     const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine]]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();

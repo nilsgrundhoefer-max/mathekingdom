@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.3 vom 18.11.2026
+
+### Schüler
+
+- Im Hintergrund wird jetzt festgehalten, ob das Dashboard richtig geladen wurde und ob das Speichern klappt. Für dich ändert sich nichts.
+
+### Lehrkraft
+
+- Neues Protokoll unter Verwaltung: Jeder Start eines Dashboards steht dort mit Quelle (online von GitHub, Kopie oder Datei ohne Netz), Version und Browser, dazu jedes technische Problem, etwa GitHub nicht erreichbar, Speichern fehlgeschlagen, Klassendatei verändert oder Backup fehlgeschlagen.
+- „Nur Probleme“ blendet die normalen Starts aus. „Protokoll als Textdatei speichern“ gibt alles zum Weitergeben aus, zum Beispiel an die Schul-IT; Schüler stehen darin nur mit Code.
+- Ist GitHub nicht erreichbar, nennt die Lehrer-Startdatei jetzt den Grund, zum Beispiel „GitHub antwortet 404“.
+- Damit auch die Schüler-Startdatei den Grund nennt, lade sie unter Verwaltung neu herunter und lege sie auf die Schülerlaufwerke. Die alte Startdatei funktioniert weiter.
+
 ## 0.2 vom 18.11.2026
 
 ### Schüler
