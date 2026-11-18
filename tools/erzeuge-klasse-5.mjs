@@ -6,6 +6,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { kapitel } from './jahresplan-klasse-5.mjs';
 import { kapitel53, fehlvorstellungen53 } from './kapitel-5-3.mjs';
 import { dividieren, fehlvorstellungenDiv } from './dividieren-5-4-5.mjs';
+import { einmaleins, fehlvorstellungen541 } from './einmaleins-5-4-1.mjs';
 
 const PRO_GRUPPE = 6; // Aufgaben je Lernziel und Niveaustufe
 
@@ -390,6 +391,13 @@ dividieren({ gruppe, zahl, auswahl, opt, zz, wahl, suche, fz, fehlerliste, teil 
 saat = 53053053;
 Object.assign(fehlvorstellungen, fehlvorstellungen53);
 kapitel53({ gruppe, zahl, auswahl, opt, zz, wahl, suche, fz, fehlerliste, runde, NIVEAUS, teil, kleinerVonGroesser, uebertragVergessen });
+
+// =====================================================================
+// 4.1 Kopfrechnen: kleines Einmaleins als Basis fürs Dividieren (eigene Datei, eigene Saat)
+// =====================================================================
+saat = 54154154;
+Object.assign(fehlvorstellungen, fehlvorstellungen541);
+einmaleins({ gruppe, zahl, auswahl, opt, zz, wahl, suche, fehlerliste });
 
 const pool = {
   version: 2,

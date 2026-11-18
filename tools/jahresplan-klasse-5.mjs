@@ -49,7 +49,11 @@ const roh = [
     }),
   ]],
   ['Multiplizieren und Dividieren', [
-    uk('Kopfrechnen', ['Ich kann im Kopf multiplizieren und dividieren und dabei geschickt vorgehen.']),
+    uk('Kopfrechnen', {
+      K1: 'Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.',
+      K2: 'Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.',
+      K3: 'Ich kann im Kopf multiplizieren und dividieren und dabei geschickt vorgehen.',
+    }),
     uk('Multiplizieren', ['Ich kann Multiplikationsaufgaben berechnen.']),
     uk('Rechenvorteile', ['Ich kann Rechengesetze anwenden und somit Rechenvorteile nutzen.']),
     uk('Potenzen', ['Ich kann Potenzen berechnen.']),
@@ -159,6 +163,17 @@ export const merkzettel = {
     beispiel: '37 + 48 + 63 = 37 + 63 + 48 = 100 + 48 = 148.',
     heft: 'Schreibe auf, wie du umgestellt hast, bevor du rechnest.',
   },
+  '5.4.1': {
+    regeln: [
+      'Kernaufgaben helfen: mal 1, mal 2, mal 5 und mal 10 kannst du schnell.',
+      'Schwere Aufgaben zerlegst du: 7 · 8 ist 5 · 8 und noch 2 · 8, also 40 + 16 = 56.',
+      'Nachbaraufgaben: Kennst du 6 · 8 = 48, dann ist 7 · 8 eine Acht mehr, also 56.',
+      'Tauschaufgaben haben dasselbe Ergebnis: 3 · 9 = 27 und 9 · 3 = 27.',
+      'Geteilt rechnest du mit der Mal-Aufgabe: 56 : 8 = 7, denn 7 · 8 = 56.',
+    ],
+    beispiel: '63 : 9: Welche Zahl mal 9 ergibt 63? 5 · 9 = 45, 6 · 9 = 54, 7 · 9 = 63. Also 63 : 9 = 7.',
+    heft: 'Schreibe die Reihen, die du noch nicht sicher kannst, ins Heft und sage sie dir laut vor.',
+  },
   '5.4.5': {
     regeln: [
       'Dividend : Divisor = Quotient. Bei 48 : 6 = 8 ist 48 der Dividend, 6 der Divisor, 8 der Wert des Quotienten.',
@@ -176,6 +191,19 @@ export const merkzettel = {
 // Eine Aufgabe zeigt nur die Wörter bis zu ihrer eigenen Stufe. Die Aufgabentexte einer Stufe benutzen keine Wörter höherer Stufen.
 const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
 export const wortspeicher = {
+  '5.4.1': [
+    w('mal', 'F', 'So liest du das Zeichen ·. 3 · 4 heißt: 3 Päckchen mit je 4.'),
+    w('geteilt durch', 'F', 'So liest du das Zeichen :. 12 : 3 heißt: 12 gerecht in 3 Teile.'),
+    w('Kernaufgabe', 'F', 'Eine leichte Aufgabe mit 1, 2, 5 oder 10. Von ihr aus rechnest du weiter.'),
+    w('Tauschaufgabe', 'F', 'Die Zahlen tauschen den Platz. 3 · 4 und 4 · 3 ergeben beide 12.'),
+    w('Nachbaraufgabe', 'G', 'Eine Reihe mehr oder weniger. Zu 6 · 7 gehören 5 · 7 und 7 · 7.'),
+    w('Produkt', 'G', 'Das Ergebnis einer Mal-Aufgabe. Bei 4 · 5 = 20 ist 20 das Produkt.'),
+    w('Probe', 'G', 'Du prüfst eine Geteilt-Aufgabe mit der Mal-Aufgabe.'),
+    w('zerlegen', 'M', 'Eine schwere Aufgabe in zwei leichte teilen. 7 · 6 ist 5 · 6 und 2 · 6.'),
+    w('Umkehraufgabe', 'M', 'Die Rechnung, die eine andere rückgängig macht. Zu 56 : 8 gehört 7 · 8.'),
+    w('Quadratzahl', 'E', 'Eine Zahl mal sich selbst. 6 · 6 = 36, also ist 36 eine Quadratzahl.'),
+    w('teilbar', 'E', 'Eine Zahl ist durch 6 teilbar, wenn beim Teilen durch 6 kein Rest bleibt.'),
+  ],
   '5.4.5': [
     w('geteilt durch', 'F', 'So liest du das Zeichen : vor. 12 : 3 heißt: 12 geteilt durch 3.'),
     w('teilen', 'F', 'Gerecht verteilen oder gleich große Gruppen bilden.'),
@@ -198,6 +226,7 @@ export const wortspeicher = {
 
 // Voraussetzungen (ADR 0014): Lernziel → Lernziele, auf denen es aufbaut. Daraus schlägt das Schüler-Dashboard eine Brücke vor,
 // wenn ein Lernziel wackelig wird. Vorerst nur Lernziele, zu denen es schon Aufgaben gibt.
+// Das kleine Einmaleins (5.4.1-K1, -K2) ist Grundschulstoff und die Basis-Brücke für das Dividieren.
 const voraussetzungen = {
   '5.3.2-A2': ['5.3.1-K1'],
   '5.3.2-A3': ['5.3.2-A2'],
@@ -210,11 +239,12 @@ const voraussetzungen = {
   '5.3.4-B1': ['5.3.1-K1', '5.3.1-K2'],
   '5.3.4-B2': ['5.3.4-B1'],
   '5.3.5-R2': ['5.3.5-R1', '5.3.1-K3'],
-  '5.4.5-D2': ['5.3.1-K2', '5.4.5-D1'],
-  '5.4.5-D3': ['5.4.5-D2'],
-  '5.4.5-D4': ['5.4.5-D2'],
+  '5.4.5-D2': ['5.4.1-K2', '5.4.5-D1', '5.3.1-K2'],
+  '5.4.5-D3': ['5.4.5-D2', '5.4.1-K1'],
+  '5.4.5-D4': ['5.4.5-D2', '5.4.1-K2'],
   '5.4.5-D5': ['5.4.5-D2', '5.3.2-A4'],
   '5.4.5-D6': ['5.4.5-D2', '5.4.5-D4'],
+  '5.4.1-K2': ['5.4.1-K1'],
 };
 
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".

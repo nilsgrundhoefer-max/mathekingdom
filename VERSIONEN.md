@@ -6,6 +6,18 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.8 vom 18.11.2026
+
+### Schüler
+
+- Neuer Meilenstein „Kopfrechnen“ in Kapitel 4: das kleine Einmaleins, einmal mit Mal-Aufgaben und einmal mit Geteilt-Aufgaben, auf allen vier Kronen.
+- Einmaleins-Brücke: Wird das schriftliche Dividieren wackelig, schlägt das Dashboard zuerst drei Geteilt-Aufgaben aus dem Einmaleins vor. Danach geht es zurück zum Dividieren.
+
+### Lehrkraft
+
+- Kapitel 4 hat zwei neue Lernziele mit je 24 Aufgaben (F bis E, mit Hilfekärtchen, typischen Fehlern, Merkzettel und Wortspeicher). Sie erscheinen in Lernstand, Heatmap, Einstiegscheck und beim Öffnen und Sperren von Meilensteinen.
+- Das Einmaleins ist jetzt die erste Voraussetzung für schriftliches Dividieren durch einstellige Zahlen und für Division mit Rest, das Mal-Einmaleins für das Dividieren durch zweistellige Zahlen.
+
 ## 0.7 vom 18.11.2026
 
 ### Schüler

@@ -786,13 +786,13 @@ async function antworte(seite, richtig = true) {
   // Station sperren: Die Schülerin sieht das Schloss und kann dort nichts starten. Öffnen macht es rückgängig.
   await lehrer.click('[data-tab=lernstand]');
   await lehrer.click('summary:has-text("Meilensteine öffnen und sperren")');
-  await lehrer.click(`[data-sperre="5.4.5|${aylin}"]`);
-  await warteAuf((k) => k.sperren?.['5.4.5']?.includes(aylin));
+  await lehrer.click(`[data-sperre="5.4.1|${aylin}"]`);
+  await warteAuf((k) => k.sperren?.['5.4.1']?.includes(aylin));
   await schueler.click('.pfad button');
   await schueler.waitForSelector('.tafel.gesperrt', { timeout: 15000 });
   assert.equal(await schueler.locator('#aufbrechen').count(), 0);
   await foto(schueler, 'schueler-meilenstein-gesperrt');
-  await lehrer.click(`[data-sperre="5.4.5|${aylin}"]`);
+  await lehrer.click(`[data-sperre="5.4.1|${aylin}"]`);
   await schueler.waitForSelector('#aufbrechen', { timeout: 15000 });
   assert.equal(JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length, 1);
 

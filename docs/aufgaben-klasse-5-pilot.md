@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (552 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (600 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -1138,6 +1138,166 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatt
 - `04` AFB II · Rechne vorteilhaft: 7146 − 2200 − 800 Lösung: **4146**. Typische Fehler: 5746 (sub-klammerfehler), 4946 (sach-schritt-vergessen).
 - `05` AFB II · Rechne vorteilhaft: 4450 + 3350 + 550 + 720 + 1650 Lösung: **10720**. Typische Fehler: 9070 (sach-schritt-vergessen), 8520 (add-uebertrag-vergessen).
 - `06` AFB II · Rechne vorteilhaft: 7995 − 2200 − 1800 Lösung: **3995**. Typische Fehler: 7595 (sub-klammerfehler), 5795 (sach-schritt-vergessen).
+
+## 5.4.1-K1: Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mal heißt: gleich große Päckchen zusammen. *Beispiel:* 3 · 5 heißt: 3 Päckchen mit je 5. Zähle 5, 10, 15. Das Ergebnis ist 15. *Lösungsschritt:* Zähle in 10er-Schritten: 10, 20, 30.
+
+- `01` AFB I · Rechne. / 10 · 3 Lösung: **30**. Typische Fehler: 33 (1x1-nachbar), 27 (1x1-nachbar), 13 (1x1-addiert).
+- `02` AFB II · 5 + 5 + 5 + 5 + 5 / Welche Mal-Aufgabe passt?
+  - ☐ 6 · 5
+  - ☐ 4 · 5
+  - ☑ 5 · 5
+  - ☐ 5 + 5
+- `03` AFB II · 10 · 7 = 7 · ▢ Lösung: x = **10**
+- `04` AFB I · Rechne. / 4 · 5 Lösung: **20**. Typische Fehler: 25 (1x1-nachbar), 15 (1x1-nachbar), 9 (1x1-addiert).
+- `05` AFB II · Tom hat 4 Packungen. / In jeder Packung sind 10 Stifte. / Wie viele Stifte sind es zusammen? Lösung: **40**. Typische Fehler: 14 (1x1-addiert).
+- `06` AFB III · Mia sagt: / „3 · 0 = 3“ / Stimmt das?
+  - ☐ Ja. / Mal 0 ändert nichts.
+  - ☐ Ja. / Die Zahl bleibt gleich.
+  - ☐ Nein. / Es kommt 1 heraus.
+  - ☑ Nein. / 3 · 0 = 0.
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze eine Kernaufgabe mit 2, 5 oder 10. *Beispiel:* 6 · 7: Du weißt 5 · 7 = 35. Dazu noch einmal 7 ergibt 42. *Lösungsschritt:* Rechne zuerst 5 · 8 = 40.
+
+- `01` AFB I · Rechne. / 6 · 8 Lösung: **48**. Typische Fehler: 56 (1x1-nachbar), 40 (1x1-nachbar), 14 (1x1-addiert).
+- `02` AFB II · 3 · 6 = 18 / 4 · 6 = ▢ Lösung: x = **24**
+- `03` AFB II · Welche Aufgabe hat das Ergebnis 32?
+  - ☐ 7 · 5
+  - ☐ 8 · 3
+  - ☑ 8 · 4
+  - ☐ 9 · 4
+- `04` AFB I · Welche Zahl fehlt? / 5 · ▢ = 35 Lösung: **7**. Typische Fehler: 30 (1x1-addiert), 8 (1x1-nachbar), 6 (1x1-nachbar).
+- `05` AFB II · In einen Karton passen 6 Eier. / Es gibt 4 Kartons. / Wie viele Eier sind es? Lösung: **24**. Typische Fehler: 10 (1x1-addiert), 18 (1x1-nachbar).
+- `06` AFB III · Ben sagt: / „Jede Zahl mal 2 ergibt eine gerade Zahl.“ / Prüfe mit 3 · 2. / Stimmt das?
+  - ☐ Nein. / 3 ist ungerade. / Dann ist auch 3 · 2 ungerade.
+  - ☐ Ja. / Aber nur für kleine Zahlen.
+  - ☐ Nein. / Das gilt nur bis 10.
+  - ☑ Ja. / 3 · 2 = 6. / Mal 2 ist das Doppelte. / Ein Doppeltes ist immer gerade.
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege in eine Kernaufgabe und den Rest. *Lösungsschritt:* Rechne 5 · 7 = 35. Dazu kommen 3 · 7 = 21.
+
+- `01` AFB I · Wie viel ist 8 · 7? Lösung: **56**. Typische Fehler: 63 (1x1-nachbar), 49 (1x1-nachbar), 15 (1x1-addiert).
+- `02` AFB II · Lisa rechnet 6 · 7 mit einer Kernaufgabe. Welcher Rechenweg passt?
+  - ☐ 5 · 7 + 1
+  - ☑ 5 · 7 + 1 · 7
+  - ☐ 6 · 5 + 7
+  - ☐ 5 · 7 + 6 · 7
+- `03` AFB II · In einem Bus gibt es 8 Reihen mit je 5 Plätzen. 20 Plätze sind besetzt. Wie viele Plätze sind noch frei? Lösung: **20**. Typische Fehler: 40 (sach-schritt-vergessen), 13 (1x1-addiert).
+- `04` AFB I · Welche Zahl fehlt? ▢ · 9 = 72 Lösung: **8**. Typische Fehler: 9 (1x1-nachbar), 7 (1x1-nachbar).
+- `05` AFB II · Welche Aufgaben haben das Ergebnis 18? Kreuze alle an.
+  - ☐ 4 · 2
+  - ☑ 3 · 6
+  - ☑ 2 · 9
+  - ☐ 9 · 8
+- `06` AFB III · Ben rechnet 7 · 6 und erhält 48. Wie kann er seinen Fehler finden?
+  - ☐ Er prüft mit 7 + 6.
+  - ☐ Gar nicht. Sein Ergebnis stimmt.
+  - ☑ Mit der Nachbaraufgabe: 6 · 6 = 36. Dazu kommt noch einmal 6. Das sind 42.
+  - ☐ Er rechnet einfach noch einmal genauso.
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Aufgabe mit zwei gleichen Zahlen kennst du, die 9 ergibt?
+
+- `01` AFB I · Eine Zahl mal sich selbst ergibt 9. Wie heißt die Zahl? Lösung: **3**.
+- `02` AFB II · Welche Zahl ist kein Ergebnis des kleinen Einmaleins?
+  - ☐ 20
+  - ☐ 72
+  - ☐ 12
+  - ☑ 23
+- `03` AFB II · Zwei Zahlen aus dem Einmaleins haben das Produkt 28 und die Summe 11. Die kleinere Zahl ist ▢, die größere ist ▢. Lösung: x = **4**, y = **7**
+- `04` AFB I · 3 · 4 = 12. Wie viel ist 3 · 8? Lösung: **24**. Typische Fehler: 14 (1x1-addiert), 48 (1x1-nachbar).
+- `05` AFB II · Wie viele Aufgaben des kleinen Einmaleins (beide Zahlen von 1 bis 10) haben das Ergebnis 12? Zähle Tauschaufgaben einzeln. Lösung: **4**. Typische Fehler: 2 (1x1-nachbar).
+- `06` AFB III · Stimmt das? „Ungerade mal ungerade ergibt immer eine ungerade Zahl.“ Wähle die beste Begründung.
+  - ☐ Nein. 3 · 5 ist gerade.
+  - ☐ Ja. Aber nur im kleinen Einmaleins.
+  - ☑ Ja. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.
+  - ☐ Nein. Zwei ungerade Zahlen ergeben immer gerade.
+
+## 5.4.1-K2: Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.
+
+### F · Förderniveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:* 15 : 5: Du weißt 3 · 5 = 15. Also ist 15 : 5 = 3. *Lösungsschritt:* Welche Zahl mal 5 ergibt 25? Zähle 5, 10, 15, 20, 25.
+
+- `01` AFB I · Rechne. / 25 : 5 Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
+- `02` AFB II · 12 Äpfel werden an 3 Kinder verteilt. / Jedes Kind bekommt gleich viele. / Wie viele bekommt jedes Kind? Lösung: **4**. Typische Fehler: 9 (div-falsche-rechenart), 15 (div-falsche-rechenart).
+- `03` AFB II · Welche Zahl fehlt? / 10 : ▢ = 5 Lösung: **2**. Typische Fehler: 5 (div-falsche-rechenart).
+- `04` AFB I · 6 : 2 / Welche Mal-Aufgabe hilft dir?
+  - ☐ 6 · 2
+  - ☑ 3 · 2 = 6
+  - ☐ 4 · 2
+  - ☐ 6 + 2
+- `05` AFB II · Welche Zahl fehlt? / ▢ : 2 = 6 Lösung: **12**. Typische Fehler: 8 (div-falsche-rechenart).
+- `06` AFB III · Leo sagt: / „6 : 6 = 0“ / Stimmt das?
+  - ☐ Ja. / Es bleibt nichts übrig.
+  - ☐ Nein. / Es kommt die Zahl selbst heraus.
+  - ☑ Nein. / 6 : 6 = 1.
+  - ☐ Ja. / Die Zahlen sind gleich.
+
+### G · Grundlegendes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:* 42 : 6: Du weißt 7 · 6 = 42. Also ist 42 : 6 = 7. *Lösungsschritt:* Zähle in 3er-Schritten bis 18: 3, 6, 9, 12, 15, 18.
+
+- `01` AFB I · Rechne. / 18 : 3 Lösung: **6**. Typische Fehler: 7 (div-einmaleins), 5 (div-einmaleins).
+- `02` AFB II · 12 Kinder bilden Gruppen. / In jeder Gruppe sind 3 Kinder. / Wie viele Gruppen gibt es? Lösung: **4**. Typische Fehler: 9 (div-falsche-rechenart), 5 (div-einmaleins).
+- `03` AFB II · Welche Aufgabe hat das Ergebnis 3?
+  - ☐ 24 : 3
+  - ☑ 15 : 5
+  - ☐ 21 : 3
+  - ☐ 18 : 3
+- `04` AFB I · Welche Zahl fehlt? / 42 : ▢ = 6 Lösung: **7**. Typische Fehler: 36 (div-falsche-rechenart), 8 (div-einmaleins).
+- `05` AFB II · Ordne jeder Aufgabe ihr Ergebnis zu. Lösung: 18 : 9 → 2, 28 : 4 → 7, 24 : 4 → 6, 24 : 8 → 3
+- `06` AFB III · Ida rechnet 12 : 4 = 3. / Sie prüft mit 3 · 4. / Warum klappt das?
+  - ☑ Mal ist das Gegenteil von geteilt. / 3 · 4 = 12.
+  - ☐ Das klappt nur bei kleinen Zahlen.
+  - ☐ Auch 3 + 4 ergibt 12.
+  - ☐ Das klappt gar nicht.
+
+### M · Mittleres Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze die Umkehraufgabe. *Lösungsschritt:* Welche Zahl mal 6 ergibt 54? Beginne mit 5 · 6 = 30.
+
+- `01` AFB I · Wie viel ist 54 : 6? Lösung: **9**. Typische Fehler: 10 (div-einmaleins), 8 (div-einmaleins).
+- `02` AFB II · 28 Kinder fahren zum Ausflug. 4 Kinder kommen zu Fuß. Die anderen fahren in Autos mit je 6 Plätzen. Wie viele Autos braucht man? Lösung: **4**. Typische Fehler: 18 (div-falsche-rechenart).
+- `03` AFB II · Welche Aufgaben haben das Ergebnis 3? Kreuze alle an.
+  - ☑ 15 : 5
+  - ☑ 24 : 8
+  - ☐ 30 : 6
+  - ☐ 63 : 9
+- `04` AFB I · Welche Zahl fehlt? 72 : ▢ = 9 Lösung: **8**. Typische Fehler: 63 (div-falsche-rechenart), 9 (div-einmaleins).
+- `05` AFB II · Durch welche Zahl musst du 36 teilen, um 9 zu erhalten? Lösung: **4**. Typische Fehler: 27 (div-falsche-rechenart).
+- `06` AFB III · Max rechnet 56 : 8 = 8. Wie zeigst du ihm am besten, dass das falsch ist?
+  - ☐ Ich sage ihm das richtige Ergebnis.
+  - ☐ Gar nicht. Das Ergebnis stimmt.
+  - ☑ Mit der Probe: 8 · 8 = 64. Das ist nicht 56.
+  - ☐ Mit 8 + 8.
+
+### E · Erweitertes Niveau
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du das Teilen rückgängig machen?
+
+- `01` AFB I · Ich denke mir eine Zahl. Ich teile sie durch 9 und erhalte 4. Welche Zahl habe ich mir gedacht? Lösung: **36**. Typische Fehler: 13 (div-falsche-rechenart).
+- `02` AFB II · Durch welche Zahl ist 24 nicht teilbar?
+  - ☑ 7
+  - ☐ 2
+  - ☐ 3
+  - ☐ 8
+- `03` AFB II · Wie viele Zahlen von 1 bis 10 teilen 36 ohne Rest? Lösung: **6**. Typische Fehler: 5 (div-einmaleins), 7 (div-einmaleins).
+- `04` AFB I · 24 : 4 = 6. Wie viel ist 24 : 6? Lösung: **4**. Typische Fehler: 6 (div-vertauscht).
+- `05` AFB II · Die Zahl 24 wird durch 4 geteilt. Das Ergebnis wird noch einmal durch 3 geteilt. Was kommt heraus? Lösung: **2**. Typische Fehler: 6 (sach-schritt-vergessen).
+- `06` AFB III · Tim sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche 24 : 3 und 24 : 12. Wähle die richtige Antwort.
+  - ☐ Nein. Das Ergebnis bleibt immer gleich.
+  - ☐ Ja. Größere Zahlen ergeben größere Ergebnisse.
+  - ☑ Nein. 24 : 3 = 8, aber 24 : 12 = 2. Das Ergebnis wird kleiner.
+  - ☐ Ja. Beim Malnehmen ist das auch so.
 
 ## 5.4.5-D1: Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden.
 

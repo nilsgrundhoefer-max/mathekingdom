@@ -335,7 +335,7 @@ test('Etappe der Startseite: Fortschritt und nächster Meilenstein, gesperrte Me
   assert.deepEqual([start.geschafft, start.gesamt, start.milestone.id], [0, 5, '5.3.1']);
   // Die Lehrkraft arbeitet in Kapitel 4: Dort geht es weiter.
   const vier = L.einstellungen({ aktuellesKapitel: '5.4' }, stand.code, pool);
-  assert.equal(L.etappe(pool, index, stand, vier).milestone.id, '5.4.5');
+  assert.equal(L.etappe(pool, index, stand, vier).milestone.id, '5.4.1');
   // Ein begonnener Meilenstein hat Vorrang, ein gesperrter fällt heraus.
   const zu = L.einstellungen({ aktuellesKapitel: '5.3', sperren: { '5.3.1': [stand.code] } }, stand.code, pool);
   const mitSperre = L.etappe(pool, index, stand, zu);
@@ -590,4 +590,19 @@ test('Brücke: Lernziele ohne Voraussetzungen bekommen keine', () => {
   assert.deepEqual(index.lernziel.get(lz).voraussetzungen ?? [], []);
   for (const a of aufgaben(lz, 'G').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
   assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:08:00Z'), null);
+});
+
+test('Einmaleins-Brücke: Schriftliches Dividieren baut auf Geteilt-Aufgaben aus dem Einmaleins auf', () => {
+  for (const lz of ['5.4.1-K1', '5.4.1-K2']) for (const n of L.NIVEAUS) assert.equal(aufgaben(lz, n).length, 6, `${lz} ${n}`);
+  assert.equal(index.lernziel.get('5.4.5-D2').voraussetzungen[0], '5.4.1-K2');
+  const stand = neu();
+  for (const a of aufgaben('5.4.5-D2', 'G').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
+  const v = L.brueckeVorschlag(stand, index, '5.4.5-D2', '2026-11-17T10:08:00Z');
+  assert.equal(v.zu, '5.4.1-K2');
+  const b = L.stelleBruecke(stand, index, v, 'G', '2026-11-17T10:08:00Z');
+  assert.ok(b.aufgaben.every((id) => index.aufgabe.get(id).lernziel === '5.4.1-K2' && index.aufgabe.get(id).niveau === 'F'));
+  // Mit Siegel beim Einmaleins geht die Brücke zur nächsten Voraussetzung ohne Siegel.
+  stand.brueckeAktiv = null;
+  stand.lernziele['5.4.1-K2'] = { t: '2026-11-16T10:00:00Z' };
+  assert.equal(L.brueckeVorschlag(stand, index, '5.4.5-D2', '2026-11-17T10:08:00Z').zu, '5.4.5-D1');
 });
