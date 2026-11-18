@@ -270,3 +270,19 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer button.zelle.siegel, #mathekingdom-lehrer button.zelle.begonnen { color: #fff; }
 #mathekingdom-lehrer button.zelle.wackelig, #mathekingdom-lehrer button.zelle.aufzufrischen { color: #1f2533; }
 #mathekingdom-lehrer button.zelle.offen { color: #6b7280; }
+
+/* Tafelbild für den Beamer (ADR 0014) */
+#mathekingdom-lehrer .tafelbild { position: fixed; inset: 0; z-index: 20; background: #fbfaf6; color: #1f2533; padding: 3vh 5vw; overflow-y: auto; font-size: clamp(18px, 2.2vw, 30px); }
+#mathekingdom-lehrer .tafelbild:focus { outline: none; }
+#mathekingdom-lehrer .tafel-kopf { display: flex; align-items: center; gap: 12px; font-size: .7em; color: #5a6275; border-bottom: 1px solid var(--rand); padding-bottom: 8px; }
+#mathekingdom-lehrer .tafel-aufgabe { font-size: 1.3em; line-height: 1.4; margin: 1em 0 .5em; white-space: pre-line; }
+#mathekingdom-lehrer .tafel-optionen { margin: 0 0 1em; }
+#mathekingdom-lehrer .tafelbild h2 { font-size: 1em; margin: 1em 0 .4em; }
+#mathekingdom-lehrer .tafel-balken { list-style: none; padding: 0; margin: 0; display: grid; gap: .4em; }
+#mathekingdom-lehrer .tafel-balken li { display: grid; grid-template-columns: minmax(6em, auto) 1fr auto; gap: .6em; align-items: center; }
+#mathekingdom-lehrer .tafel-balken .spur { height: .9em; background: #eef0f4; border-radius: 6px; overflow: hidden; }
+#mathekingdom-lehrer .tafel-balken .spur i { display: block; height: 100%; background: #dd8526; }
+#mathekingdom-lehrer .tafel-fuss { font-size: .7em; color: #5a6275; }
+#mathekingdom-lehrer .tafel-loesung { font-size: 1.1em; background: #e6f3ec; border-left: 6px solid #2a7a50; padding: .4em .7em; }
+#mathekingdom-lehrer .tafel-frage { margin-top: 1.5em; font-style: italic; }
+#mathekingdom-lehrer .vierfeld td, #mathekingdom-lehrer .vierfeld th { text-align: center; }

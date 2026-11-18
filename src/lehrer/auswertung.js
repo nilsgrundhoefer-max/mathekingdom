@@ -443,6 +443,45 @@ export function expeditionUebersicht(staende, expedition, jetzt) {
   return { ...L.expeditionsStand(staende.map((x) => x.stand), expedition, jetzt), beitraege };
 }
 
+// ---------- Sicherheitsangabe und Heftcheck (ADR 0014) ----------
+// Vier Felder je Versuch mit Sicherheitsangabe: sicher/unsicher × im ersten Versuch richtig/nicht.
+export function sicherheitsProfil(versuche) {
+  const mit = versuche.filter((v) => v.sicher != null);
+  const ersterRichtig = (v) => v.richtig && v.versuche === 1;
+  const p = { gesamt: mit.length, sicherRichtig: 0, sicherFalsch: 0, unsicherRichtig: 0, unsicherFalsch: 0, fehler: new Map() };
+  for (const v of mit) {
+    const feld = `${v.sicher ? 'sicher' : 'unsicher'}${ersterRichtig(v) ? 'Richtig' : 'Falsch'}`;
+    p[feld]++;
+    if (L.sicherFalsch(v)) for (const f of v.fehlvorstellungen ?? []) p.fehler.set(f, (p.fehler.get(f) ?? 0) + 1);
+  }
+  p.fehler = [...p.fehler].map(([fehlvorstellung, anzahl]) => ({ fehlvorstellung, anzahl })).sort((a, b) => b.anzahl - a.anzahl);
+  return p;
+}
+export function heftQuote(stand) {
+  const c = stand.heftchecks ?? [];
+  return { gesamt: c.length, richtig: c.filter((x) => x.richtig).length, quote: anteil(c.filter((x) => x.richtig).length, c.length) };
+}
+
+// ---------- Tafelbild (ADR 0014) ----------
+// Die Aufgabe, an der die Klasse eine Fehlvorstellung am häufigsten gezeigt hat, mit allen Antworten ohne Namen.
+export function tafelAufgabe(staende, fehlvorstellung) {
+  const je = new Map();
+  for (const { stand } of staende) for (const v of stand.versuche) if ((v.fehlvorstellungen ?? []).includes(fehlvorstellung)) je.set(v.aufgabe, (je.get(v.aufgabe) ?? 0) + 1);
+  return [...je].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+}
+export function tafelbild(staende, aufgabeId) {
+  const falsch = new Map();
+  let richtig = 0, bearbeitet = 0;
+  for (const { stand } of staende) for (const v of stand.versuche) {
+    if (v.aufgabe !== aufgabeId) continue;
+    bearbeitet++;
+    if (v.richtig && v.versuche === 1) richtig++;
+    const erste = (v.eingaben ?? [])[0];
+    if (!(v.richtig && v.versuche === 1) && erste != null) { const t = alsText(erste); if (t) falsch.set(t, (falsch.get(t) ?? 0) + 1); }
+  }
+  return { bearbeitet, richtig, falsche: [...falsch].map(([antwort, anzahl]) => ({ antwort, anzahl })).sort((a, b) => b.anzahl - a.anzahl).slice(0, 5) };
+}
+
 export function alteBackups(namen, jetzt, tage = 14) {
   const zeit = (n) => new Date(`${n.slice(0, 10)}T${n.slice(11, 13)}:${n.slice(14, 16)}:00`);
   const grenze = new Date(jetzt).getTime() - tage * 86400000;

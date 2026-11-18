@@ -6,6 +6,20 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.6 vom 18.11.2026
+
+### Schüler
+
+- Heftcode: Unter jeder gelösten Aufgabe auf Gold oder Purpur steht ein kurzer Code wie „H7“. Schreib ihn mit deinem Ergebnis ins Heft.
+- Heftcheck: Ungefähr nach jeder achten solchen Aufgabe fragt dich das Dashboard, was du bei einem Heftcode herausbekommen hast. Passt deine Antwort nicht, löst du die Aufgabe noch einmal. Münzen verlierst du dabei nicht.
+- Wenn deine Lehrkraft es einschaltet: Beim ersten Versuch prüfst du mit „ich bin sicher“ oder „ich bin unsicher“. Warst du sicher und es stimmt nicht, bekommst du einen deutlichen Hinweis zum Hinschauen.
+
+### Lehrkraft
+
+- Sicherheitsangabe als Probe: unter Verwaltung pro Klasse einschalten. Im Lernstand zeigt die neue Karte „Heftcheck und Sicherheitsangabe“ eine Vierfeldertafel (sicher/unsicher × richtig/falsch), die häufigsten Fehler bei „sicher falsch“ und wer am häufigsten sicher falsch lag.
+- Heftcheck: Quote der Klasse und Schüler unter 70 % in derselben Karte, auf der Schülerseite „Heftcheck x von y richtig“.
+- Tafelbild: Aus dem Mini-Workshop-Impuls oder bei den schwierigsten Aufgaben eines Lernziels öffnet „Tafelbild“ eine Vollbild-Ansicht für den Beamer: Aufgabe, häufigste falsche Antworten der Klasse, Lösung auf Knopfdruck, ohne Namen und Codes. Schließen mit Esc.
+
 ## 0.5 vom 18.11.2026
 
 ### Schüler

@@ -463,3 +463,40 @@ test('Expedition: Siegel und Rückblick-Tage im Zeitraum zählen, Belohnung einm
   assert.ok(a.wappen.gekauft.includes('fahne'));
   assert.equal(L.kaufe(b, 'fahne'), 'expedition');
 });
+
+// ---------- Heftcheck und Sicherheitsangabe (ADR 0014) ----------
+test('Heftcode: nur für gelöste Aufgaben ab M, fortlaufend', () => {
+  const st = neu();
+  const g = aufgaben(S2, 'G')[0], m = aufgaben(S2, 'M');
+  assert.equal(L.verbuche(st, g, ok(), 'M', '2026-11-18T10:00:00Z', index).heft, null);
+  assert.equal(L.verbuche(st, m[0], ok(), 'M', '2026-11-18T10:01:00Z', index).heft, 'H1');
+  assert.equal(L.verbuche(st, m[1], { ...ok(), geloest: false, versuche: 2 }, 'M', '2026-11-18T10:02:00Z', index).heft, null);
+  assert.equal(L.verbuche(st, m[2], ok(), 'M', '2026-11-18T10:03:00Z', index).heft, 'H2');
+  assert.equal(st.versuche.at(-1).heft, 'H2');
+});
+
+test('Heftcheck: nach acht Heftcodes eine Frage mit vier Antworten, danach beginnt der Zähler neu', () => {
+  const st = neu();
+  const zahlen = pool.aufgaben.filter((a) => a.niveau === 'M' && L.heftWert(a)).slice(0, 9);
+  zahlen.slice(0, 7).forEach((a, i) => L.verbuche(st, a, ok(), 'M', `2026-11-18T10:0${i}:00Z`, index));
+  assert.equal(L.heftcheckFrage(st, index), null);
+  L.verbuche(st, zahlen[7], ok(), 'M', '2026-11-18T10:09:00Z', index);
+  const f = L.heftcheckFrage(st, index, () => 0);
+  assert.equal(f.optionen.length, 4);
+  assert.equal(f.optionen.filter((o) => o.richtig).length, 1);
+  assert.notEqual(f.heft, 'H8', 'nicht nach der allerletzten Aufgabe');
+  assert.equal(new Set(f.optionen.map((o) => o.text)).size, 4);
+  L.trageHeftcheckEin(st, f, false, '2026-11-18T10:10:00Z');
+  assert.equal(L.heftcheckFrage(st, index), null);
+  assert.deepEqual(st.heftchecks.map((c) => c.richtig), [false]);
+});
+
+test('Sicherheitsangabe: sicher falsch heißt sicher geprüft und nicht im ersten Versuch gelöst', () => {
+  assert.equal(L.sicherFalsch({ sicher: true, richtig: true, versuche: 1 }), false);
+  assert.equal(L.sicherFalsch({ sicher: true, richtig: true, versuche: 2 }), true);
+  assert.equal(L.sicherFalsch({ sicher: true, richtig: false, versuche: 2 }), true);
+  assert.equal(L.sicherFalsch({ sicher: false, richtig: false, versuche: 2 }), false);
+  const st = neu();
+  L.verbuche(st, aufgaben(S2, 'M')[0], { ...ok(), sicher: true }, 'M', '2026-11-18T10:00:00Z', index);
+  assert.equal(st.versuche.at(-1).sicher, true);
+});
