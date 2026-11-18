@@ -6,6 +6,25 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.2 vom 18.11.2026
+
+### Schüler
+
+- Die Regionskarte hat nur noch einen Weg. Statt die Straße zu wechseln, wählst du am Meilenstein, um welche Krone du spielst: Bronze, Silber, Gold oder Purpur.
+- Jeder Meilenstein bekommt eine Krone in der Farbe, auf der du alle seine Lernziele geschafft hast. Du kannst sie später aufwerten.
+- Gemeistert ist ein Meilenstein erst mit der Krone deines Ziels.
+- Oben stehen jetzt neben Siegeln und Münzen deine Kronen, gezählt nach Farbe.
+- Beim ersten Mal siehst du, um welche Krone du gespielt hast und welche du geschafft hast.
+- Das Wappen-Zeichen Krone heißt jetzt Lilie.
+
+### Lehrkraft
+
+- Neue Auswertung „Selbsteinschätzung“ im Lernstand: Wer schätzt sich zu niedrig, passend oder zu hoch ein?
+- Neuer Impuls: Wer sich dreimal in Folge unterschätzt, dem kann man das Zielniveau anheben.
+- Auf der Seite eines Schülers stehen seine Meilensteine mit erreichtem Niveau, Ziel und erster Wahl. Unter dem Ziel heißt es zum Beispiel „F erreicht, Ziel M“.
+- Senkst du ein Zielniveau, bekommt der Schüler beim nächsten Öffnen die Siegel, die er damit schon verdient hat. Siegel werden nie weggenommen.
+- „Niveau“ statt „Straße“ in allen Auswertungen.
+
 ## 0.1 vom 17.11.2026
 
 ### Schüler

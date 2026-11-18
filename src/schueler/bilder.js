@@ -1,29 +1,32 @@
 // Gezeichnete Bausteine im Stil alter Kartografie: Münze, Siegel, Wappen, Regionskarte, Schlossgarten (ADR 0010).
 import { s } from './dom.js';
-import { NIVEAUS, ROUTE_NAMEN, WAPPEN_TEILE } from './logik.js';
+import { NIVEAUS, KRONEN, WAPPEN_TEILE } from './logik.js';
 
-// Gedämpfte Tintenfarben der Straßen. Jede Straße hat zusätzlich ein eigenes Strichmuster,
-// damit man sie auch ohne Farbe auseinanderhält: Feldweg gestrichelt, Talweg durchgezogen, Königsweg doppelt, Bergpfad gepunktet.
-export const ROUTE_FARBE = { F: '#9a6a1f', G: '#4b6b35', M: '#2f4f7f', E: '#7b2d43' };
+// Gedämpfte Farben der Niveaustufen für das Lehrer-Dashboard (dort nur als Buchstaben-Chips).
+export const NIVEAU_FARBE = { F: '#9a6a1f', G: '#4b6b35', M: '#2f4f7f', E: '#7b2d43' };
 const PERGAMENT = '#f6efdf';
 const SEPIA = '#5b4632';
 
-// Eine Straße als Pfad: Rückgabe sind ein oder zwei SVG-Pfade mit dem Muster der Niveaustufe.
-export function routeStrich(niveau, d, { breite = 7, aktiv = true } = {}) {
-  const farbe = ROUTE_FARBE[niveau];
-  const basis = { d, fill: 'none', stroke: farbe, 'stroke-linejoin': 'round', opacity: aktiv ? 1 : 0.5 };
-  switch (niveau) {
-    case 'F': return [s('path', { ...basis, 'stroke-width': breite, 'stroke-dasharray': `${breite * 1.8} ${breite * 1.1}`, 'stroke-linecap': 'butt' })];
-    case 'M': return [s('path', { ...basis, 'stroke-width': breite + 2, 'stroke-linecap': 'round' }),
-      s('path', { d, fill: 'none', stroke: PERGAMENT, 'stroke-width': Math.max(2, breite / 2.6), 'stroke-linejoin': 'round', 'stroke-linecap': 'round' })];
-    case 'E': return [s('path', { ...basis, 'stroke-width': breite + 1, 'stroke-dasharray': `0.1 ${breite * 1.55}`, 'stroke-linecap': 'round' })];
-    default: return [s('path', { ...basis, 'stroke-width': breite - 1, 'stroke-linecap': 'round' })];
-  }
-}
-// Kurzes Musterstück einer Straße, etwa für die Legende oder den Aufgabenkopf.
-export function routeMuster(niveau, breite = 46) {
-  return s('svg', { viewBox: `0 0 ${breite} 14`, width: breite, height: 14, 'aria-hidden': 'true', class: 'routemuster' },
-    ...routeStrich(niveau, `M4 7 H${breite - 4}`, { breite: 5 }));
+// Kronen in vier Farben (ADR 0012). Damit man sie auch ohne Farbe unterscheidet, trägt jede Krone
+// so viele Edelsteine wie ihre Stufe: Bronze einen, Silber zwei, Gold drei, Purpur vier.
+export const KRONEN_FARBE = {
+  F: { fuell: '#b9783e', rand: '#6b3f17', stein: '#f0d2b0' },
+  G: { fuell: '#c3c8cf', rand: '#5d636b', stein: '#ffffff' },
+  M: { fuell: '#dcb24a', rand: '#7a5a12', stein: '#fff2c4' },
+  E: { fuell: '#7d3f93', rand: '#3f1b4d', stein: '#e9c9f4' },
+};
+const KRONE = 'M2 16 L3.5 6 L7.5 10.5 L10 3.5 L12.5 10.5 L16.5 6 L18 16 Z';
+export function kroneBild(niveau, groesse = 22, { voll = true, titel = null } = {}) {
+  const f = KRONEN_FARBE[niveau];
+  const attr = { viewBox: '0 0 20 20', width: groesse, height: groesse, class: `krone krone-${niveau ?? 'leer'}`, ...(titel ? { role: 'img', 'aria-label': titel } : { 'aria-hidden': 'true' }) };
+  if (!voll || !f) return s('svg', attr, s('path', { d: KRONE, fill: 'none', stroke: '#a89d8a', 'stroke-width': 1.2, 'stroke-dasharray': '2 1.6', 'stroke-linejoin': 'round' }),
+    s('path', { d: 'M2 16 H18 V18 H2 Z', fill: 'none', stroke: '#a89d8a', 'stroke-width': 1 }));
+  const zahl = NIVEAUS.indexOf(niveau) + 1;
+  const steine = Array.from({ length: zahl }, (_, i) => s('circle', { cx: 10 + (i - (zahl - 1) / 2) * 3.4, cy: 14.6, r: 1.15, fill: f.stein, stroke: f.rand, 'stroke-width': 0.5 }));
+  return s('svg', attr,
+    s('path', { d: KRONE, fill: f.fuell, stroke: f.rand, 'stroke-width': 1.1, 'stroke-linejoin': 'round' }),
+    s('path', { d: 'M2 16 H18 V18.4 H2 Z', fill: f.fuell, stroke: f.rand, 'stroke-width': 1.1, 'stroke-linejoin': 'round' }),
+    ...steine);
 }
 
 export function muenze(groesse = 18) {
@@ -58,11 +61,6 @@ const kompass = (x, y) => s('g', { transform: `translate(${x} ${y})`, class: 'ze
 const schloss = (x, y) => s('g', { transform: `translate(${x} ${y})`, class: 'zeichen-schloss' },
   s('path', { d: 'M-4 -2 V-5 A4 4 0 0 1 4 -5 V-2', fill: 'none', stroke: '#6f665a', 'stroke-width': 1.8 }),
   s('rect', { x: -6, y: -2, width: 12, height: 9, rx: 1.5, fill: '#6f665a' }));
-const wachssiegel = (x, y) => {
-  const g = siegel(26, true);
-  g.setAttribute('x', x - 13); g.setAttribute('y', y - 13);
-  return g;
-};
 
 // Wappen: Schild in der gewählten Farbe, darauf die angebrachten Zeichen.
 const SCHILD = 'M10 8 H90 V48 C90 78 68 96 50 104 C32 96 10 78 10 48 Z';
@@ -77,75 +75,73 @@ export function wappenBild(wappen, breite = 60) {
     hat('winkel') && s('path', { ...linie, d: 'M30 30 V76 H72', 'stroke-width': 5 }),
     hat('eichenlaub') && s('g', { fill: '#c9b77a', stroke: '#5d5223', 'stroke-width': 1.2 },
       s('path', { d: 'M50 92 C38 88 30 80 28 70 C38 72 46 80 50 92 Z' }), s('path', { d: 'M50 92 C62 88 70 80 72 70 C62 72 54 80 50 92 Z' })),
-    hat('krone') && s('path', { d: 'M30 8 L33 -2 L41 4 L50 -6 L59 4 L67 -2 L70 8 Z', transform: 'translate(0 6)', fill: '#d6ae4a', stroke: '#6b5115', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }));
+    hat('lilie') && s('g', { fill: '#d6ae4a', stroke: '#6b5115', 'stroke-width': 1.4, 'stroke-linejoin': 'round' },
+      s('path', { d: 'M50 14 C44 22 44 32 50 40 C56 32 56 22 50 14 Z' }),
+      s('path', { d: 'M48 38 C40 26 28 28 30 38 C32 44 40 44 46 42 Z' }),
+      s('path', { d: 'M52 38 C60 26 72 28 70 38 C68 44 60 44 54 42 Z' }),
+      s('path', { d: 'M38 42 H62 V47 H38 Z' }),
+      s('path', { d: 'M47 47 C46 54 44 58 40 60 H60 C56 58 54 54 53 47 Z' })));
 }
 
 // ---------- Regionskarte (region_map) ----------
-// Vier parallele Straßen, Unterkapitel als Meilensteine. Meilensteine gehen nicht nacheinander auf;
-// die Nummern zeigen nur die empfohlene Reihenfolge.
-// milestones: [{ id, titel, extra, status }]; status: leer | gesperrt | offen | begonnen | gemeistert
-export function regionMap({ milestones, niveau, zielniveau, standort, gewaehlt, wappen, beiMeilenstein, beiStrasse }) {
-  const ABSTAND = 150, LINKS = 200, OBEN = 74, LINIE = 28, STUFE = 52;
+// Ein Weg, Unterkapitel als Meilensteine (ADR 0012). Über jedem Meilenstein steht seine Krone, sobald es eine gibt.
+// Meilensteine gehen nicht nacheinander auf; die Nummern zeigen nur die empfohlene Reihenfolge.
+// milestones: [{ id, titel, extra, status, krone }]; status: leer | gesperrt | offen | begonnen | gemeistert
+export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenstein }) {
+  const ABSTAND = 150, LINKS = 90, OBEN = 96, STUFE = 52, HOCH = 40;
+  const haupt = milestones.filter((m) => !m.extra).length;
   const breite = LINKS + (milestones.length - 1) * ABSTAND + 150;
-  const hoehe = OBEN + 3 * LINIE + (milestones.length > 3 ? STUFE : 0) + 140;
+  const hoehe = OBEN + (haupt > 3 ? STUFE : 0) + HOCH + (milestones.length > haupt ? 70 : 0) + 120;
   const x = (j) => LINKS + j * ABSTAND;
   const versatz = (j) => (Math.floor(j / 3) % 2) * STUFE; // alle drei Meilensteine biegt der Weg ab
-  const y = (j, i) => OBEN + versatz(j) + i * LINIE;
-  const haupt = milestones.filter((m) => !m.extra).length;
+  const y = (j) => OBEN + versatz(j) + HOCH / 2;
 
-  const weg = (i) => {
-    let d = `M${x(0) - 46} ${y(0, i)}`;
-    for (let j = 0; j < haupt; j++) {
-      if (j > 0 && versatz(j) !== versatz(j - 1)) {
-        const mitte = (x(j - 1) + x(j)) / 2, halb = STUFE / 2;
-        d += ` C${mitte} ${y(j - 1, i)} ${mitte} ${y(j, i)} ${mitte + halb} ${y(j, i)}`;
-      }
-      d += ` L${x(j)} ${y(j, i)}`;
+  let d = `M${x(0) - 60} ${y(0)}`;
+  for (let j = 0; j < haupt; j++) {
+    if (j > 0 && versatz(j) !== versatz(j - 1)) {
+      const mitte = (x(j - 1) + x(j)) / 2, halb = STUFE / 2;
+      d += ` C${mitte} ${y(j - 1)} ${mitte} ${y(j)} ${mitte + halb} ${y(j)}`;
     }
-    return d + ` L${x(haupt - 1) + 30} ${y(haupt - 1, i)}`;
-  };
+    d += ` L${x(j)} ${y(j)}`;
+  }
+  d += ` L${x(haupt - 1) + 40} ${y(haupt - 1)}`;
 
   const svg = s('svg', { viewBox: `0 0 ${breite} ${hoehe}`, width: breite, height: hoehe, class: 'regionskarte', role: 'group', 'aria-label': 'Regionskarte' },
     s('rect', { x: 3, y: 3, width: breite - 6, height: hoehe - 6, rx: 6, class: 'kartenrand' }),
-    windrose(breite - 46, hoehe - 46));
-  NIVEAUS.forEach((n, i) => {
-    svg.append(...routeStrich(n, weg(i), { breite: n === niveau ? 9 : 6, aktiv: n === niveau }));
-    const knopf = s('g', { class: `strassenknopf${n === niveau ? ' aktiv' : ''}`, tabindex: 0, role: 'button', 'aria-label': `Auf den ${ROUTE_NAMEN[n]} (${n}) wechseln`, 'aria-pressed': String(n === niveau),
-      onclick: () => beiStrasse(n), onkeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); beiStrasse(n); } } },
-      s('rect', { x: 8, y: y(0, i) - 12, width: x(0) - 62, height: 24, rx: 4, class: 'strassenfeld' }),
-      s('text', { x: 16, y: y(0, i) + 5, class: 'strassenname' }, `${n} ${ROUTE_NAMEN[n]}`),
-      n === zielniveau && s('text', { x: x(0) - 68, y: y(0, i) + 4, 'text-anchor': 'end', class: 'zielmarke' }, 'Ziel'));
-    svg.append(knopf);
-  });
-  // Abstecher: gestrichelt abseits der Straßen
+    windrose(breite - 46, hoehe - 46),
+    s('path', { d, class: 'weg-rand' }), s('path', { d, class: 'weg' }));
+  // Abstecher: gestrichelt unterhalb des Weges
+  const unten = y(haupt - 1) + 70;
   milestones.forEach((m, j) => {
     if (!m.extra) return;
-    svg.append(s('path', { d: `M${x(j - 1) + (j === haupt ? 30 : 0)} ${y(haupt - 1, 1.5)} L${x(j)} ${y(haupt - 1, 1.5)}`, class: 'abstecher' }));
+    svg.append(s('path', { d: `M${x(haupt - 1)} ${y(haupt - 1)} C${x(haupt - 1)} ${unten} ${x(j) - 40} ${unten} ${x(j)} ${unten}`, class: 'abstecher' }));
   });
   milestones.forEach((m, j) => {
-    const jj = m.extra ? haupt - 1 : j;
-    const oben = m.extra ? y(jj, 1.5) - 12 : y(jj, 0) - 12;
-    const hoch = m.extra ? 24 : 3 * LINIE + 24;
+    const mitte = m.extra ? unten : y(j);
+    const oben = mitte - HOCH / 2;
     const hier = m.id === standort && ['offen', 'begonnen'].includes(m.status);
     const nummer = m.extra ? null : j + 1;
+    const zustand = m.status === 'gemeistert' ? ', gemeistert' : m.status === 'gesperrt' ? ', gesperrt' : '';
+    const kroneText = m.krone ? `, Krone ${KRONEN[m.krone]}` : '';
     const g = s('g', { class: `meilenstein ${m.status}${m.id === gewaehlt ? ' gewaehlt' : ''}${hier ? ' standort' : ''}`, tabindex: 0, role: 'button',
-      'aria-label': `Meilenstein ${m.titel}${m.status === 'gemeistert' ? ', gemeistert' : m.status === 'gesperrt' ? ', gesperrt' : ''}`,
+      'aria-label': `Meilenstein ${m.titel}${zustand}${kroneText}`,
       onclick: () => beiMeilenstein(m.id), onkeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); beiMeilenstein(m.id); } } },
-      hier && s('rect', { x: x(j) - 18, y: oben - 6, width: 36, height: hoch + 12, rx: 8, class: 'puls' }),
-      s('rect', { x: x(j) - 11, y: oben, width: 22, height: hoch, rx: 5, class: 'stein' }),
-      nummer && s('text', { x: x(j), y: oben + hoch - 6, 'text-anchor': 'middle', class: 'steinnummer' }, nummer),
-      m.status === 'gemeistert' && wachssiegel(x(j), oben - 18),
-      m.status === 'begonnen' && kompass(x(j), oben - 18),
-      m.status === 'gesperrt' && schloss(x(j), oben - 16),
-      hier && s('text', { x: x(j) + 16, y: oben - 26, class: 'hiermarke' }, 'Hier weiter'),
-      s('text', { x: x(j) + 4, y: oben + hoch + 16, transform: `rotate(34 ${x(j) + 4} ${oben + hoch + 16})`, class: 'meilensteinname' }, m.titel));
+      hier && s('rect', { x: x(j) - 19, y: oben - 7, width: 38, height: HOCH + 14, rx: 9, class: 'puls' }),
+      s('rect', { x: x(j) - 12, y: oben, width: 24, height: HOCH, rx: 6, class: 'stein' }),
+      nummer && s('text', { x: x(j), y: oben + HOCH - 9, 'text-anchor': 'middle', class: 'steinnummer' }, nummer));
+    const zeichen = m.krone ? kroneBild(m.krone, 34) : m.status === 'gemeistert' ? siegel(26, true) : null;
+    if (zeichen) { zeichen.setAttribute('x', x(j) - (m.krone ? 17 : 13)); zeichen.setAttribute('y', oben - (m.krone ? 38 : 30)); g.append(zeichen); }
+    else if (m.status === 'begonnen') g.append(kompass(x(j), oben - 18));
+    else if (m.status === 'gesperrt') g.append(schloss(x(j), oben - 16));
+    if (hier) g.append(s('text', { x: x(j) + 18, y: oben - 42, class: 'hiermarke' }, 'Hier weiter'));
+    g.append(s('text', { x: x(j) + 4, y: oben + HOCH + 18, transform: `rotate(34 ${x(j) + 4} ${oben + HOCH + 18})`, class: 'meilensteinname' }, m.titel));
     svg.append(g);
   });
-  // Das eigene Wappen steht am empfohlenen Meilenstein auf der eigenen Straße.
+  // Das eigene Wappen steht am empfohlenen Meilenstein auf dem Weg.
   const ort = Math.max(0, milestones.findIndex((m) => m.id === standort));
-  const zeile = NIVEAUS.indexOf(niveau);
   const bild = wappenBild(wappen, 26);
-  bild.setAttribute('x', x(ort) - 46); bild.setAttribute('y', y(ort, zeile) - 15);
+  const ortY = milestones[ort]?.extra ? unten : y(ort);
+  bild.setAttribute('x', x(ort) - 52); bild.setAttribute('y', ortY - 16);
   bild.setAttribute('class', 'wappen standwappen');
   svg.append(bild);
   return svg;

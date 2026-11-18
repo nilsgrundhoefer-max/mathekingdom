@@ -150,7 +150,7 @@ async function antworte(seite, richtig = true) {
   const suche = async (station, linie, lernzielNr, passt, name) => {
     for (let i = 0; i < 8; i++) {
       await seite.click(`.meilenstein[aria-label^="Meilenstein ${station}"] .stein`);
-      await seite.click(`.strassenknopf[aria-label*="(${linie})"]`).catch(() => {});
+      await seite.click(`.kronenwahl button[data-krone="${linie}"]`);
       await seite.locator('.lernziele li button').nth(lernzielNr).click();
       const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
       const treffer = passt(pool.aufgaben.find((a) => a.id === id));
@@ -189,10 +189,10 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.regionen');
   await seite.click('[data-kapitel="5.4"]');
   await seite.waitForSelector('svg.regionskarte');
-  assert.match(await seite.innerText('.unter'), /Königsweg \(M/); // Standard-Zielniveau ist M
+  assert.match(await seite.innerText('.unter'), /spielst um Gold/); // Standard-Zielniveau ist M
   const oeffne = async (linie, lernzielNr) => {
     await seite.click('.meilenstein[aria-label^="Meilenstein Dividieren"] .stein');
-    await seite.click(`.strassenknopf[aria-label*="(${linie})"]`).catch(() => {});
+    await seite.click(`.kronenwahl button[data-krone="${linie}"]`);
     await seite.locator('.lernziele li button').nth(lernzielNr).click();
     await seite.waitForSelector('section.aufgabe');
   };
@@ -233,6 +233,48 @@ async function antworte(seite, richtig = true) {
   assert.deepEqual(folge, [1, 2, 2]);
   await seite.waitForSelector('.lohn.neu');
   assert.equal(await seite.innerText('#siegel'), '1');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 1d. Kronen: ein Weg, Kronenwahl, Bronze unter dem Ziel Gold, Selbsteinschätzung ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-kron');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  assert.equal(await seite.locator('#kronen [data-krone]').count(), 4);
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.equal(await seite.locator('.regionskarte path.weg').count(), 1, 'nur noch ein Weg');
+  assert.equal(await seite.locator('.kronenwahl button').count(), 4);
+  assert.equal(await seite.getAttribute('.kronenwahl button[data-krone="M"]', 'aria-pressed'), 'true', 'voreingestellt ist das Zielniveau Gold');
+  assert.doesNotMatch(await seite.innerText('main'), /Förderniveau|Feldweg|Königsweg|\b[FGME] ·/);
+  await seite.click('.kronenwahl button[data-krone="F"]');
+  assert.equal(await seite.getAttribute('.kronenwahl button[data-krone="F"]', 'aria-pressed'), 'true');
+  await foto(seite, 'kronenwahl');
+  await seite.click('#aufbrechen');
+  assert.match(await seite.innerText('.kronenmarke'), /Spiel um Bronze/);
+  for (let i = 0; i < 40 && !(await seite.locator('#neue-krone').count()); i++) {
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+    if (await seite.locator('#neue-krone').count()) break;
+    await seite.click('#weiter, .vorschlag button.schlicht');
+  }
+  assert.match(await seite.innerText('#neue-krone'), /Neue Krone: Bronze/);
+  assert.match(await seite.innerText('#einschaetzung'), /um Bronze gespielt. Geschafft hast du Bronze/);
+  assert.match(await seite.innerText('.ergebnis'), /brauchst du Gold/);
+  assert.equal(await seite.innerText('#siegel'), '0', 'kein Siegel unter dem Zielniveau');
+  await foto(seite, 'krone-bronze');
+  await seite.click('.ergebnis button:has-text("Zur Regionskarte")');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.match(await seite.innerText('#meine-krone'), /Deine Krone: Bronze. Für den Meilenstein brauchst du Gold/);
+  assert.equal(await seite.locator('.regionskarte .meilenstein .krone-F').count(), 1);
+  assert.equal(await seite.locator('#kronen [data-krone="F"] b').innerText(), '1');
+  await foto(seite, 'regionskarte-krone');
   assert.deepEqual(fehler, []);
   await seite.close();
 }
@@ -294,7 +336,7 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.regionen');
   assert.equal(await seite.locator('.region:not(.gesperrt)').count(), 3);
   await seite.click('[data-kapitel="5.3"]');
-  assert.match(await seite.innerText('.unter'), /Königsweg \(M/);
+  assert.match(await seite.innerText('.unter'), /spielst um Gold/);
   await kontext.close();
 }
 
@@ -336,6 +378,7 @@ async function antworte(seite, richtig = true) {
   assert.equal(await seite.locator('.tabs.bereiche button').count(), 4);
   assert.equal(await seite.locator('[data-tab=jetzt].aktiv').count(), 1); // im Unterricht öffnet „Jetzt“
   await foto(seite, 'lehrer-jetzt');
+  assert.match(await seite.innerText('.impulse'), /Selbsteinschätzung: Carla Rossi hat sich an den letzten 3 Meilensteinen unterschätzt/);
   const wartend = await seite.locator('.schlange li').count();
   await seite.locator('[data-komme]').first().click();
   await seite.waitForSelector('.schlange li.unterwegs');
@@ -371,6 +414,11 @@ async function antworte(seite, richtig = true) {
   assert.ok(await seite.locator('.heatmap td.zelle.siegel').count() > 0);
   assert.ok(await seite.locator('.stapel li').count() > 5);
   await foto(seite, 'lehrer-lernstand');
+  // Selbsteinschätzung: Tendenz je Schüler, Impuls bei Carla (dreimal unterschätzt), keine Kronen beim Lehrer.
+  assert.equal(await seite.locator('#selbsteinschaetzung tbody tr').count(), 14);
+  assert.match(await seite.innerText('#selbsteinschaetzung'), /eher zu niedrig[\s\S]*eher zu hoch|eher zu hoch[\s\S]*eher zu niedrig/);
+  await seite.locator('#selbsteinschaetzung').screenshot(bilder ? { path: `${bilder}/lehrer-selbsteinschaetzung.png` } : {});
+  assert.equal(await seite.locator('.krone').count(), 0, 'die Lehrkraft sieht Niveaustufen, keine Kronen');
   await seite.locator('.heatmap [data-lernziel]').first().click();
   await seite.waitForSelector('.vierspaltig');
   assert.equal(await seite.locator('.gruppenliste').count(), 4);
@@ -380,6 +428,7 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.weg');
   assert.equal(await seite.locator('.schuelerseite .kennzahl').count(), 3);
   await foto(seite, 'lehrer-schueler');
+  assert.match(await seite.innerText('#meilensteine-schueler'), /Gewählt beim Start/);
   await seite.click('#einzelbericht');
   assert.ok(await seite.locator('#mk-druck .kennzahl').count() >= 3);
   // Meilensteine für eine ganze Gruppe sperren.
@@ -515,7 +564,7 @@ async function antworte(seite, richtig = true) {
   await schueler.waitForSelector('.regionen');
   assert.equal(await schueler.locator('.region:not(.gesperrt)').count(), 4);
   await schueler.click('[data-kapitel="5.4"]');
-  assert.match(await schueler.innerText('.unter'), /Königsweg \(M/);
+  assert.match(await schueler.innerText('.unter'), /spielst um Gold/);
   await schueler.click('#aufbrechen');
   await antworte(schueler, true);
   await schueler.waitForSelector('.ergebnis.richtig');

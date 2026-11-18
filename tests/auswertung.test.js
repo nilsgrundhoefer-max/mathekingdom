@@ -101,7 +101,7 @@ test('Berichtstabellen: acht Blätter, Namen aus der Namensliste', () => {
   const stand = neu();
   L.verbuche(stand, aufgaben(S2, 'G')[0], b(), 'G', JETZT);
   const blaetter = A.berichtstabellen([{ code: '5A-AAAA', stand }], pool, index, {}, () => 'Lena Muster', JETZT);
-  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll', 'Nach AFB, Typ, Straße', 'Alle Aufgaben']);
+  assert.deepEqual(blaetter.map((x) => x.name), ['Übersicht', 'Lernzielmatrix', 'Lernziele', 'Typische Fehler', 'Aufgaben-Audit', 'Versuchsprotokoll', 'Nach AFB, Typ, Niveau', 'Alle Aufgaben']);
   assert.equal(blaetter[0].zeilen[1][0], 'Lena Muster');
   assert.equal(blaetter[5].zeilen.length, 2);
   for (const blatt of blaetter) for (const zeile of blatt.zeilen) assert.equal(zeile.length, blatt.zeilen[0].length, blatt.name);
@@ -272,4 +272,27 @@ test('Lernzielstand: offen, begonnen, wackelig, Siegel; Bereich beim Öffnen', (
   assert.equal(A.lernzielZustand(zwei, S2), 'siegel');
   assert.equal(A.jemandAktiv([{ code: 'x', stand }], '2026-11-17T10:35:00Z'), true);
   assert.equal(A.jemandAktiv([{ code: 'x', stand }], '2026-11-17T11:30:00Z'), false);
+});
+
+test('Selbsteinschätzung: Tendenz ab drei Meilensteinen, Impuls nach dreimal unterschätzt', () => {
+  const stand = neu();
+  const meilensteine = pool.kapitel[2].unterkapitel.filter((u) => u.lernziele.every((l) => !index.lernzielMitAufgaben.has(l.id) || aufgaben(l.id, 'M')?.length));
+  const geschafft = (u, gewaehlt, niveau, t) => {
+    L.merkeWahl(stand, index, u, gewaehlt, t);
+    for (const l of u.lernziele.filter((x) => index.lernzielMitAufgaben.has(x.id))) {
+      for (const a of [...aufgaben(l.id, niveau)].sort((x, y) => y.afb - x.afb).slice(0, 3)) L.verbuche(stand, a, b(), 'M', t, index);
+    }
+  };
+  geschafft(meilensteine[0], 'G', 'M', '2026-11-17T10:01:00Z');
+  geschafft(meilensteine[1], 'G', 'M', '2026-11-17T10:02:00Z');
+  let se = A.selbsteinschaetzung(stand, pool);
+  assert.equal(se.tendenz, null, 'erst ab drei bewerteten Meilensteinen');
+  assert.equal(se.liste[0].urteil, 'unterschaetzt');
+  assert.deepEqual(A.unterschaetzer([{ code: '5A-AAAA', stand }], pool, {}), []);
+  geschafft(meilensteine[2], 'F', 'M', '2026-11-17T10:03:00Z');
+  se = A.selbsteinschaetzung(stand, pool);
+  assert.equal(se.tendenz, 'eher zu niedrig');
+  const impuls = A.unterschaetzer([{ code: '5A-AAAA', stand }], pool, {});
+  assert.equal(impuls.length, 1);
+  assert.equal(impuls[0].naechstes, 'E');
 });

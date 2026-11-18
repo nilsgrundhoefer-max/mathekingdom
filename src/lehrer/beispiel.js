@@ -9,6 +9,7 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
   let saat = 7;
   const zufall = () => { saat = (saat * 1103515245 + 12345) & 0x7fffffff; return saat / 0x7fffffff; };
   const namen = {}, zielniveaus = {}, staende = [];
+  const frueher = pool.kapitel.flatMap((k) => k.unterkapitel).filter((u) => ['5.3.1', '5.3.2', '5.3.4'].includes(u.id));
   const lernziele = pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).filter((l) => index.lernzielMitAufgaben.has(l.id) && l.id.startsWith('5.3.3'));
   NAMEN.forEach((name, i) => {
     const code = erzeugeCode('5a', Object.keys(namen), zufall);
@@ -17,6 +18,20 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
     const ziel = koennen > 0.85 ? 'M' : koennen < 0.45 ? 'F' : 'G';
     zielniveaus[code] = ziel; // ausdrücklich gesetzt, unabhängig vom Standard
     const stand = L.neuerSpeicherstand(code, '5a', new Date(jetzt - 40 * 60000).toISOString());
+    // Frühere Tage: drei Meilensteine mit Kronenwahl und Krone, damit die Selbsteinschätzung etwas zeigt (ADR 0012).
+    frueher.forEach((u, k) => {
+      const t = new Date(jetzt - (3 - k) * 86400000).toISOString();
+      const stufe = L.NIVEAUS.indexOf(ziel) + (koennen > 0.75 ? 1 : koennen < 0.45 ? -1 : 0);
+      const geschafft = L.NIVEAUS[Math.max(0, Math.min(3, stufe))];
+      const daneben = i === 2 ? -1 : Math.floor(zufall() * 3) - 1;    // Carla traut sich jedes Mal zu wenig zu
+      const gewaehlt = L.NIVEAUS[Math.max(0, Math.min(3, L.NIVEAUS.indexOf(geschafft) + daneben))];
+      L.merkeWahl(stand, index, u, gewaehlt, t);
+      for (const l of u.lernziele.filter((x) => index.lernzielMitAufgaben.has(x.id))) {
+        for (const a of [...index.nach.get(`${l.id}|${geschafft}`)].sort((x, y) => y.afb - x.afb).slice(0, 3)) {
+          L.verbuche(stand, a, { geloest: true, versuche: 1, eingaben: [String(a.loesung ?? '')], fehlvorstellungen: [], hilfen: 0, dauer: 40 }, ziel, t, index);
+        }
+      }
+    });
     let zeit = jetzt - 38 * 60000;
     const menge = 6 + Math.floor(zufall() * 16);
     let niveau = i === 3 ? 'F' : ziel;                  // einer arbeitet nur im Training

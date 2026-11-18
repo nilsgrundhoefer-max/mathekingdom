@@ -173,7 +173,7 @@ test('Wappen: Kauf braucht Münzen und Rang', () => {
   assert.equal(L.kaufe(stand, 'blau'), 'ok');
   assert.equal(stand.muenzen, 470);
   assert.equal(L.kaufe(stand, 'blau'), 'vorhanden');
-  assert.equal(L.kaufe(stand, 'krone'), 'rang', 'Münzen allein kaufen keinen Rang');
+  assert.equal(L.kaufe(stand, 'lilie'), 'rang', 'Münzen allein kaufen keinen Rang');
   L.legeAn(stand, 'blau');
   assert.equal(stand.wappen.farbe, 'blau');
   L.legeAn(stand, 'gold');
@@ -183,13 +183,93 @@ test('Wappen: Kauf braucht Münzen und Rang', () => {
 test('Alter Speicherstand: Lok-Teile werden Wappen-Teile, Münzen und Lernziele bleiben', () => {
   const alt = { version: 1, muenzen: 42, lernziele: { 'x': { erreichtAm: 't' } }, lok: { farbe: 'blau', extras: ['dampf', 'krone'], gekauft: ['rot', 'blau', 'dampf', 'krone'] } };
   const stand = L.migriere(alt);
-  assert.deepEqual(stand.wappen, { farbe: 'blau', zeichen: ['eichenlaub', 'krone'], gekauft: ['rot', 'blau', 'eichenlaub', 'krone'] });
+  assert.deepEqual(stand.wappen, { farbe: 'blau', zeichen: ['eichenlaub', 'lilie'], gekauft: ['rot', 'blau', 'eichenlaub', 'lilie'] });
   assert.equal(stand.lok, undefined);
   assert.equal(stand.muenzen, 42);
   assert.equal(L.siegel(stand), 1);
   for (const id of stand.wappen.gekauft) assert.ok(L.WAPPEN_TEILE.some((w) => w.id === id), id);
   assert.equal(L.migriere(stand), stand, 'zweimal umstellen ändert nichts');
   assert.equal(L.migriere(null), null);
+});
+
+test('Wappen-Zeichen Krone heißt jetzt Lilie, auch in Speicherständen mit Wappen', () => {
+  const stand = L.migriere({ ...neu(), wappen: { farbe: 'rot', zeichen: ['krone'], gekauft: ['rot', 'krone'] } });
+  assert.deepEqual(stand.wappen, { farbe: 'rot', zeichen: ['lilie'], gekauft: ['rot', 'lilie'] });
+});
+
+// Drei passende Aufgaben richtig lösen, davon eine aus AFB II oder III: Damit ist ein Lernziel auf diesem Niveau nachgewiesen.
+const loese = (stand, lz, n, ziel, t = 't') => {
+  const liste = [...aufgaben(lz, n)].sort((a, b) => b.afb - a.afb).slice(0, 3);
+  const b = liste.map((a) => L.verbuche(stand, a, ok(), ziel, t, index));
+  return b.find((x) => x.neueKrone) ?? b.at(-1);
+};
+const meilenstein = pool.kapitel[2].unterkapitel[2]; // 5.3.3
+const ziele = meilenstein.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id)).map((l) => l.id);
+
+test('Krone: niedrigstes Niveau, auf dem alle Lernziele nachgewiesen sind', () => {
+  const stand = neu();
+  assert.equal(L.krone(index, stand, meilenstein), null);
+  for (const lz of ziele.slice(1)) loese(stand, lz, 'M', 'M');
+  assert.equal(L.krone(index, stand, meilenstein), null, 'ein Lernziel fehlt noch');
+  const b = loese(stand, ziele[0], 'G', 'M');
+  assert.equal(L.krone(index, stand, meilenstein), 'G', 'Silber, weil ein Lernziel nur auf G nachgewiesen ist');
+  assert.deepEqual(b.neueKrone, { niveau: 'G', vorher: null });
+  assert.equal(L.milestoneStatus(index, stand, meilenstein), 'begonnen', 'unter dem Zielniveau M nicht gemeistert');
+  assert.equal(stand.lernziele[ziele[0]], undefined, 'kein Siegel unter dem Zielniveau');
+  const c = loese(stand, ziele[0], 'M', 'M');
+  assert.equal(L.krone(index, stand, meilenstein), 'M', 'aufgewertet auf Gold');
+  assert.deepEqual(c.neueKrone, { niveau: 'M', vorher: 'G' });
+  assert.equal(L.milestoneStatus(index, stand, meilenstein), 'gemeistert');
+  assert.equal(L.kronen(pool, index, stand)[meilenstein.id], 'M');
+});
+
+test('Krone: E-Aufgaben zählen auch für Gold, Lösungsschritt zählt nicht', () => {
+  const stand = neu();
+  for (const lz of ziele) loese(stand, lz, 'E', 'M');
+  assert.equal(L.krone(index, stand, meilenstein), 'E');
+  const ohne = neu();
+  for (const lz of ziele) for (const a of [...aufgaben(lz, 'F')].sort((x, y) => y.afb - x.afb).slice(0, 3)) L.verbuche(ohne, a, ok({ hilfen: 3, karten: ['tipp', 'beispiel', 'loesungsschritt'] }), 'M', 't', index);
+  assert.equal(L.krone(index, ohne, meilenstein), null);
+});
+
+test('Selbsteinschätzung: unterschätzt, passend, überschätzt', () => {
+  const unter = neu();
+  L.merkeWahl(unter, index, meilenstein, 'F', 't0');
+  L.merkeWahl(unter, index, meilenstein, 'E', 't1');
+  assert.equal(unter.einschaetzung[meilenstein.id].gewaehlt, 'F', 'nur die erste Wahl zählt');
+  let b;
+  for (const lz of ziele) b = loese(unter, lz, 'M', 'M', 't2');
+  assert.equal(b.ersteKrone, true);
+  assert.equal(L.urteil(unter.einschaetzung[meilenstein.id]), 'unterschaetzt');
+  for (const lz of ziele) loese(unter, lz, 'E', 'M', 't3');
+  assert.equal(unter.einschaetzung[meilenstein.id].krone, 'M', 'spätere Aufwertung ändert die Einschätzung nicht');
+
+  const passt = neu();
+  L.merkeWahl(passt, index, meilenstein, 'G', 't0');
+  for (const lz of ziele) loese(passt, lz, 'G', 'M');
+  assert.equal(L.urteil(passt.einschaetzung[meilenstein.id]), 'passend', 'Bronze oder Silber unter dem Ziel zählt ganz normal');
+
+  const ueber = neu();
+  L.merkeWahl(ueber, index, meilenstein, 'E', 't0');
+  assert.equal(L.urteil(ueber.einschaetzung[meilenstein.id]), null, 'noch offen');
+  L.verbuche(ueber, aufgaben(ziele[0], 'G')[0], ok(), 'M', 't1', index);
+  assert.equal(L.urteil(ueber.einschaetzung[meilenstein.id]), 'ueberschaetzt', 'abgestiegen');
+
+  const alt = neu();
+  L.verbuche(alt, aufgaben(ziele[0], 'M')[0], ok(), 'M', 't0', index);
+  L.merkeWahl(alt, index, meilenstein, 'M', 't1');
+  assert.equal(alt.einschaetzung[meilenstein.id], undefined, 'schon begonnen: keine Einschätzung');
+});
+
+test('Zielniveau gesenkt: Siegel werden nachgetragen, nie weggenommen', () => {
+  const stand = neu();
+  for (const lz of ziele) loese(stand, lz, 'G', 'M');
+  assert.equal(L.siegel(stand), 0);
+  assert.equal(L.trageSiegelNach(stand, index, 'E', 't'), 0);
+  assert.equal(L.trageSiegelNach(stand, index, 'G', 't'), ziele.length);
+  assert.equal(L.milestoneStatus(index, stand, meilenstein), 'gemeistert');
+  assert.equal(L.trageSiegelNach(stand, index, 'E', 't'), 0);
+  assert.equal(L.milestoneStatus(index, stand, meilenstein), 'gemeistert', 'Anheben nimmt nichts weg');
 });
 
 test('Minispiel: nur in der Spielpause und gegen Münzen', () => {

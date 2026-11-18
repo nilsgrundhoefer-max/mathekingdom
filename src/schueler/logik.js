@@ -13,8 +13,8 @@ export const RAENGE = [
 export const MINISPIEL_PREIS = 20;
 export const MINISPIEL_SEKUNDEN = 90;
 
-// Straßen der Regionskarte: eine je Niveaustufe (Code: route).
-export const ROUTE_NAMEN = { F: 'Feldweg', G: 'Talweg', M: 'Königsweg', E: 'Bergpfad' };
+// Kronenfarben: So sehen Schüler die Niveaustufen (ADR 0012). Die Lehrkraft sieht nur F, G, M, E.
+export const KRONEN = { F: 'Bronze', G: 'Silber', M: 'Gold', E: 'Purpur' };
 // Lernziel-Regel (Startwerte, später pro Klasse einstellbar).
 export const LERNZIEL_RICHTIGE = 3;
 export const LERNZIEL_AUF_ZIELNIVEAU = 2;
@@ -50,6 +50,7 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
     aktiv: null,       // { aufgabe, seit, fehlversuche, hilfen } für die Live-Ansicht der Lehrkraft
     abbrueche: [],     // verlassene Aufgaben ohne Ergebnis: { t, aufgabe, fehlversuche, hilfen }
     gelesen: null,     // Zeitpunkt der letzten Nachricht der Lehrkraft, die der Schüler bestätigt hat
+    einschaetzung: {}, // Meilenstein → { gewaehlt, t, abstieg?, krone?, kroneAm? }: Selbsteinschätzung (ADR 0012)
   };
 }
 // Ein Siegel je erreichtem Lernziel. Es wird nicht gespeichert, sondern aus den Lernzielen gezählt.
@@ -71,10 +72,12 @@ export function indexiere(pool) {
     nach.get(k).push(a);
   }
   const lernzielMitAufgaben = new Set(pool.aufgaben.map((a) => a.lernziel));
+  // Lernziel → Unterkapitel (Meilenstein), für Kronen und Selbsteinschätzung.
+  const meilensteinVon = new Map((pool.kapitel ?? []).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele.map((l) => [l.id, u])));
   const aufgabe = new Map(pool.aufgaben.map((a) => [a.id, a]));
   // Lernziele, die auf jeder Niveaustufe Aufgaben aus AFB II oder III haben: Nur dort kann das Siegel eine solche Aufgabe verlangen.
   const mitAnspruch = new Set([...lernzielMitAufgaben].filter((l) => NIVEAUS.every((n) => (nach.get(`${l}|${n}`) ?? []).some((a) => a.afb >= AFB_FUER_STERN))));
-  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch };
+  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon };
 }
 
 // ---------- Antworten prüfen ----------
@@ -141,6 +144,53 @@ export function milestoneStatus(index, stand, unterkapitel) {
   if (erreicht === mit.length) return 'gemeistert';
   return stand.versuche.some((v) => mit.some((l) => l.id === v.lernziel)) ? 'begonnen' : 'offen';
 }
+// Krone eines Meilensteins: das höchste Niveau, auf dem alle seine Lernziele nachgewiesen sind, sonst null.
+// Nachgewiesen heißt: dieselbe Regel wie beim Lernziel, mit diesem Niveau statt dem Zielniveau (ADR 0012).
+// Sie wird wie das Siegel nicht gespeichert, sondern aus dem Versuchsprotokoll berechnet.
+export function krone(index, stand, unterkapitel) {
+  const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
+  if (mit.length === 0) return null;
+  for (const n of [...NIVEAUS].reverse()) {
+    if (mit.every((l) => lernzielStand(stand, l.id, n, index).erreicht)) return n;
+  }
+  return null;
+}
+// Alle Kronen eines Schülers: Meilenstein → Niveaustufe.
+export function kronen(pool, index, stand) {
+  const alle = {};
+  for (const u of pool.kapitel.flatMap((k) => k.unterkapitel)) { const n = krone(index, stand, u); if (n) alle[u.id] = n; }
+  return alle;
+}
+export const unterZiel = (niveau, zielniveau) => NIVEAUS.indexOf(niveau) < NIVEAUS.indexOf(zielniveau);
+
+// ---------- Selbsteinschätzung ----------
+// Die Kronenwahl beim ersten Start eines Meilensteins wird festgehalten. Wer dort schon vor dieser Version gearbeitet hat, bekommt keine.
+export function merkeWahl(stand, index, unterkapitel, niveau, jetzt) {
+  stand.einschaetzung ??= {};
+  if (stand.einschaetzung[unterkapitel.id]) return;
+  const ids = new Set(unterkapitel.lernziele.map((l) => l.id));
+  if (stand.versuche.some((v) => ids.has(v.lernziel))) return;
+  stand.einschaetzung[unterkapitel.id] = { gewaehlt: niveau, t: jetzt };
+}
+// unterschaetzt | passend | ueberschaetzt, oder null, solange noch keine Krone da ist und kein Abstieg.
+export function urteil(e) {
+  if (!e) return null;
+  if (e.abstieg) return 'ueberschaetzt';
+  if (!e.krone) return null;
+  const d = NIVEAUS.indexOf(e.krone) - NIVEAUS.indexOf(e.gewaehlt);
+  return d > 0 ? 'unterschaetzt' : d < 0 ? 'ueberschaetzt' : 'passend';
+}
+
+// Siegel nachtragen, etwa nachdem die Lehrkraft das Zielniveau gesenkt hat. Siegel werden nie weggenommen.
+export function trageSiegelNach(stand, index, zielniveau, jetzt) {
+  let neu = 0;
+  for (const id of index.lernzielMitAufgaben) {
+    if (stand.lernziele[id] || !stand.versuche.some((v) => v.lernziel === id)) continue;
+    if (lernzielStand(stand, id, zielniveau, index).erreicht) { stand.lernziele[id] = { erreichtAm: jetzt }; neu++; }
+  }
+  return neu;
+}
+
 // Etappe für die Startseite: das Kapitel, an dem gerade gearbeitet wird, mit Fortschritt und nächstem Meilenstein.
 // Gesperrte Meilensteine und Meilensteine ohne Aufgaben zählen nicht mit.
 export function etappe(pool, index, stand, einst) {
@@ -156,9 +206,11 @@ export function etappe(pool, index, stand, einst) {
   const aktuell = offene.find((l) => l.kapitel.id === einst.aktuellesKapitel);
   return (aktuell?.milestone ? aktuell : null) ?? offene.find((l) => l.milestone) ?? aktuell ?? offene.at(-1);
 }
-export function naechstesLernziel(index, stand, unterkapitel) {
+// Mit `niveau`: zuerst ein Lernziel, das für die Krone dieser Farbe noch fehlt (ADR 0012).
+export function naechstesLernziel(index, stand, unterkapitel, niveau = null) {
   const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
-  return mit.find((l) => !stand.lernziele[l.id]) ?? mit[0] ?? null;
+  const fehlt = niveau && mit.find((l) => !lernzielStand(stand, l.id, niveau, index).erreicht);
+  return fehlt || mit.find((l) => !stand.lernziele[l.id]) || mit[0] || null;
 }
 
 // ---------- Aufgabe auswählen ----------
@@ -204,6 +256,8 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 // Mit `index` verlangt das Siegel auch eine Aufgabe aus AFB II oder III (siehe lernzielStand).
 export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null) {
   const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
+  const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
+  const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
   stand.versuche.push({
     t: jetzt, aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, niveau: aufgabe.niveau,
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
@@ -216,7 +270,16 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     stand.lernziele[aufgabe.lernziel] = { erreichtAm: jetzt };
     neuesLernziel = true;
   }
-  return { muenzen, neuesLernziel, training: NIVEAUS.indexOf(aufgabe.niveau) < NIVEAUS.indexOf(zielniveau) };
+  // Krone und Selbsteinschätzung: Wer unter der gewählten Krone arbeitet, bevor er dort eine Krone hat, ist abgestiegen.
+  const kroneJetzt = meilenstein ? krone(index, stand, meilenstein) : null;
+  const e = meilenstein ? stand.einschaetzung?.[meilenstein.id] : null;
+  let ersteKrone = false;
+  if (e && !e.krone) {
+    if (unterZiel(aufgabe.niveau, e.gewaehlt)) e.abstieg = true;
+    if (kroneJetzt) { e.krone = kroneJetzt; e.kroneAm = jetzt; ersteKrone = true; }
+  }
+  const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
+  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null };
 }
 
 // ---------- Niveaustufe ----------
@@ -266,7 +329,7 @@ export const WAPPEN_TEILE = [
   { id: 'balken', art: 'zeichen', name: 'Querbalken', preis: 40, rang: 0 },
   { id: 'zirkel', art: 'zeichen', name: 'Zirkel', preis: 50, rang: 1 },
   { id: 'winkel', art: 'zeichen', name: 'Winkelmaß', preis: 70, rang: 2 },
-  { id: 'krone', art: 'zeichen', name: 'Krone', preis: 250, rang: 3 },
+  { id: 'lilie', art: 'zeichen', name: 'Lilie', preis: 250, rang: 3 },
 ];
 export function kaufe(stand, id) {
   const teil = WAPPEN_TEILE.find((w) => w.id === id);
@@ -288,9 +351,16 @@ export function legeAn(stand, id) {
 
 // ---------- Alte Speicherstände ----------
 // Version 1 hatte eine Lok: Jedes Lok-Teil wird das Wappen-Teil mit demselben Preis (ADR 0010).
-const LOK_ZU_WAPPEN = { dampf: 'eichenlaub', streifen: 'balken', fahne: 'zirkel', laterne: 'winkel', krone: 'krone' };
+const LOK_ZU_WAPPEN = { dampf: 'eichenlaub', streifen: 'balken', fahne: 'zirkel', laterne: 'winkel', krone: 'lilie' };
 export function migriere(stand) {
-  if (!stand || stand.wappen) return stand;
+  if (!stand) return stand;
+  // Das Wappen-Zeichen Krone heißt seit ADR 0012 Lilie, damit „Krone“ eindeutig der Lohn am Meilenstein ist.
+  if (stand.wappen) {
+    const neu = (id) => (id === 'krone' ? 'lilie' : id);
+    stand.wappen.zeichen = stand.wappen.zeichen.map(neu);
+    stand.wappen.gekauft = stand.wappen.gekauft.map(neu);
+    return stand;
+  }
   const lok = stand.lok ?? { farbe: 'rot', extras: [], gekauft: ['rot'] };
   const neu = (id) => LOK_ZU_WAPPEN[id] ?? id;
   stand.wappen = { farbe: lok.farbe, zeichen: lok.extras.map(neu), gekauft: lok.gekauft.map(neu) };

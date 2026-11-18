@@ -5,7 +5,7 @@ import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
 import * as S from './speicher.js';
-import { wappenBild, regionMap, muenze, siegel, routeMuster, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
+import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
 
 const jetzt = () => new Date().toISOString();
 const z = { // Zustand der laufenden Sitzung
@@ -49,6 +49,7 @@ function kopf() {
       h('span', {}, r.naechster ? `Noch ${r.naechster.ab - anzahl} Siegel bis ${r.naechster.name}` : 'Höchster Rang erreicht')),
     h('div', { class: 'konto' },
       h('span', { class: 'wert siegelwert', title: 'Siegel: eines pro erreichtem Lernziel' }, siegel(24), h('b', { id: 'siegel' }, anzahl), h('span', { class: 'wort' }, 'Siegel')),
+      kronenZaehler(),
       h('span', { class: 'wert klein-wert', title: 'Münzen zum Ausgeben' }, muenze(16), h('b', { id: 'muenzen' }, z.stand.muenzen))),
     h('nav', {},
       h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Schlossgarten'),
@@ -58,6 +59,14 @@ function kopf() {
         : status.ok ? `Gespeichert um ${status.um.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
           : 'Speichern fehlgeschlagen. Sag deiner Lehrkraft Bescheid.',
       z.ablage.demo && h('span', { class: 'demo' }, 'Demo: nur in diesem Browser')));
+}
+
+// Kronen je Farbe: Bronze, Silber, Gold, Purpur (ADR 0012).
+function kronenZaehler() {
+  const alle = Object.values(L.kronen(z.pool, z.index, z.stand));
+  const je = Object.fromEntries(L.NIVEAUS.map((n) => [n, alle.filter((k) => k === n).length]));
+  return h('span', { class: 'wert kronenwert', id: 'kronen', title: `Kronen: ${L.NIVEAUS.map((n) => `${je[n]} ${L.KRONEN[n]}`).join(', ')}` },
+    L.NIVEAUS.map((n) => h('span', { class: `je${je[n] ? '' : ' null'}`, 'data-krone': n }, kroneBild(n, 20), h('b', {}, je[n]))));
 }
 
 function nachrichtBanner() {
@@ -137,6 +146,8 @@ async function melde({ code, klasse, pin }, ablage) {
   z.meldung = geladen.hinweis ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
   z.dienst = S.speicherdienst(ablage, () => z.stand, (status) => { z.speicherstatus = status; maleStatus(); });
   if (!geladen.stand || geladen.hinweis) { z.dienst.markiere(); z.dienst.sofort(); }
+  // Hat die Lehrkraft das Zielniveau gesenkt, kommen die Siegel jetzt dazu. Weggenommen wird nie etwas (ADR 0012).
+  if (L.trageSiegelNach(z.stand, z.index, einst.zielniveau, jetzt())) { z.dienst.markiere(); z.dienst.sofort(); }
   // Vorgaben der Lehrkraft alle 10 Sekunden lesen. Wartet der Schüler auf Hilfe, alle 3 Sekunden,
   // und sofort, wenn er zum Fenster zurückkehrt (im Hintergrund bremst der Browser die Uhr).
   let schlag = 0;
@@ -159,6 +170,7 @@ async function takt() {
     const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine]]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
+    if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
     const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
     let neu = vorher !== bild(z.einst);
     if (ruf && antwort?.zu === ruf.seit && antwort.status === 'erledigt') {
@@ -216,7 +228,8 @@ function etappenKarte() {
   const k = e.kapitel, fertig = !e.milestone;
   const los = () => {
     z.ansicht = { name: 'region', kapitel: k.id, milestone: e.milestone.id };
-    starteAufgabe(L.naechstesLernziel(z.index, z.stand, e.milestone).id, L.arbeitsniveau(z.stand, k.id, z.einst.zielniveau));
+    const n = L.arbeitsniveau(z.stand, k.id, z.einst.zielniveau);
+    starteAufgabe(L.naechstesLernziel(z.index, z.stand, e.milestone, n).id, n);
   };
   return h('div', { class: 'karte etappe' },
     h('div', { class: 'etappe-text' },
@@ -257,25 +270,23 @@ function regionsAnsicht() {
   const kapitel = z.pool.kapitel.find((k) => k.id === z.ansicht.kapitel);
   const niveau = L.arbeitsniveau(z.stand, kapitel.id, z.einst.zielniveau);
   const zu = z.einst.gesperrteMeilensteine;
-  const milestones = kapitel.unterkapitel.map((u) => ({ id: u.id, titel: u.titel, extra: u.extra, status: zu.has(u.id) ? 'gesperrt' : L.milestoneStatus(z.index, z.stand, u) }));
+  const milestones = kapitel.unterkapitel.map((u) => ({ id: u.id, titel: u.titel, extra: u.extra, krone: L.krone(z.index, z.stand, u), status: zu.has(u.id) ? 'gesperrt' : L.milestoneStatus(z.index, z.stand, u) }));
   const standort = (milestones.find((m) => m.status === 'begonnen') ?? milestones.find((m) => m.status === 'offen') ?? milestones[0]).id;
   const gewaehlt = z.ansicht.milestone ?? standort;
   const meilenstein = kapitel.unterkapitel.find((u) => u.id === gewaehlt);
-  const karte = regionMap({ milestones, niveau, zielniveau: z.einst.zielniveau, standort, gewaehlt, wappen: z.stand.wappen,
-    beiMeilenstein: (id) => zeige({ ...z.ansicht, milestone: id }),
-    beiStrasse: (n) => { if (n !== niveau) { L.setzeNiveau(z.stand, kapitel.id, n); geaendert(); male(); } } });
+  const karte = regionMap({ milestones, standort, gewaehlt, wappen: z.stand.wappen,
+    beiMeilenstein: (id) => zeige({ ...z.ansicht, milestone: id }) });
   return h('section', {},
     h('p', { class: 'pfad' }, h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')),
     h('h1', {}, kapitel.titel),
-    h('p', { class: 'unter' }, `Du wanderst auf dem ${L.ROUTE_NAMEN[niveau]} (${niveau}, ${L.NIVEAU_NAMEN[niveau]}). Tippe links auf eine andere Straße, um die Straße zu wechseln. Die Nummern auf den Meilensteinen sind ein Vorschlag: Du darfst jeden offenen Meilenstein wählen.`),
+    h('p', { class: 'unter' }, `Du spielst um ${L.KRONEN[niveau]}. Für einen Meilenstein brauchst du mindestens ${L.KRONEN[z.einst.zielniveau]}. Die Nummern auf den Meilensteinen sind ein Vorschlag: Du darfst jeden offenen Meilenstein wählen.`),
     h('div', { class: 'kartenrahmen' }, karte),
     legende(),
     meilensteinTafel(kapitel, meilenstein, niveau));
 }
 function legende() {
   return h('ul', { class: 'legende', 'aria-label': 'Zeichenerklärung' },
-    L.NIVEAUS.map((n) => h('li', {}, routeMuster(n), `${n} ${L.ROUTE_NAMEN[n]}`)),
-    h('li', {}, siegel(16), 'gemeistert'));
+    L.NIVEAUS.map((n) => h('li', {}, kroneBild(n, 18), `Krone ${L.KRONEN[n]}`)));
 }
 
 function meilensteinTafel(kapitel, meilenstein, niveau) {
@@ -286,25 +297,43 @@ function meilensteinTafel(kapitel, meilenstein, niveau) {
   if (status === 'leer') {
     return h('div', { class: 'karte tafel' }, h('h2', {}, meilenstein.titel), h('p', {}, 'An diesem Meilenstein gibt es noch keine Aufgaben. Er wird bald eröffnet.'));
   }
-  const naechstes = L.naechstesLernziel(z.index, z.stand, meilenstein);
+  const naechstes = L.naechstesLernziel(z.index, z.stand, meilenstein, niveau);
+  const meine = L.krone(z.index, z.stand, meilenstein), ziel = z.einst.zielniveau;
   return h('div', { class: 'karte tafel' },
     h('h2', {}, meilenstein.titel, status === 'gemeistert' && h('span', { class: 'marke gut' }, 'Meilenstein gemeistert')),
+    h('p', { class: 'meinekrone', id: 'meine-krone' }, meine
+      ? [kroneBild(meine, 30), h('span', {}, h('b', {}, `Deine Krone: ${L.KRONEN[meine]}.`), L.unterZiel(meine, ziel) ? ` Für den Meilenstein brauchst du ${L.KRONEN[ziel]}.` : meine !== 'E' ? ' Du kannst sie noch aufwerten.' : '')]
+      : [kroneBild(null, 30, { voll: false }), h('span', {}, `Noch keine Krone. Für den Meilenstein brauchst du ${L.KRONEN[ziel]}.`)]),
+    kronenWahl(kapitel, niveau),
     h('ul', { class: 'lernziele' }, meilenstein.lernziele.filter((l) => z.index.lernzielMitAufgaben.has(l.id)).map((l) => {
-      const st = L.lernzielStand(z.stand, l.id, z.einst.zielniveau, z.index);
+      // Die Punkte zeigen den Weg zur Krone, um die der Schüler gerade spielt. Das Siegel gibt es fürs Zielniveau.
+      const st = L.lernzielStand(z.stand, l.id, niveau, z.index);
       const erreicht = Boolean(z.stand.lernziele[l.id]);
       return h('li', { class: erreicht ? 'erreicht' : '' },
         siegel(24, erreicht),
         h('span', { class: 'text' }, l.text),
-        h('span', { class: 'punkte', title: `${st.fortschritt} von ${L.LERNZIEL_RICHTIGE}` }, [0, 1, 2].map((i) => h('i', { class: i < (erreicht ? 3 : st.fortschritt) ? 'voll' : '' }))),
+        h('span', { class: 'punkte', title: `${st.erreicht ? 3 : st.fortschritt} von ${L.LERNZIEL_RICHTIGE} für ${L.KRONEN[niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' }))),
         h('button', { class: 'schlicht', onclick: () => starteAufgabe(l.id, niveau) }, erreicht ? 'Weiter üben' : 'Üben'));
     })),
     h('button', { class: 'haupt', id: 'aufbrechen', onclick: () => starteAufgabe(naechstes.id, niveau) }, status === 'gemeistert' ? 'Noch eine Runde' : 'Aufbrechen'),
     merkzettel(meilenstein, z.ansicht));
 }
 
+// Kronenwahl: „Spiele um …“. Sie gilt für das ganze Kapitel; voreingestellt ist das Zielniveau (ADR 0012).
+function kronenWahl(kapitel, niveau) {
+  return h('div', { class: 'kronenwahl', role: 'group', 'aria-label': 'Um welche Krone spielst du?' },
+    h('b', {}, 'Spiele um'),
+    h('div', { class: 'wahl' }, L.NIVEAUS.map((n) => h('button', { 'data-krone': n, 'aria-pressed': String(n === niveau),
+      onclick: () => { if (n !== niveau) { L.setzeNiveau(z.stand, kapitel.id, n); geaendert(); male(); } } },
+      kroneBild(n, 28), h('span', {}, L.KRONEN[n]), n === z.einst.zielniveau && h('span', { class: 'ziel' }, 'dein Ziel')))));
+}
+
 // ---------- Aufgabe ----------
 function starteAufgabe(lernzielId, niveau) {
   const aufgabe = L.naechsteAufgabe(z.index, z.stand, lernzielId, niveau);
+  // Die Kronenwahl beim ersten Start eines Meilensteins ist die Selbsteinschätzung.
+  const ms = z.index.meilensteinVon.get(lernzielId);
+  if (ms) L.merkeWahl(z.stand, z.index, ms, niveau, jetzt());
   z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt(), fehlversuche: 0, hilfen: 0 };
   geaendert();
   zeige({ name: 'aufgabe', aufgabe, beginn: Date.now(), versuch: 0, hilfen: 0, eingaben: [], fehlvorstellungen: [], hinweis: null, ergebnis: null,
@@ -316,7 +345,7 @@ function aufgabenAnsicht() {
   const kapitelId = L.kapitelVon(auf.lernziel);
   const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
   const meilenstein = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
-  const st = L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index);
+  const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
   const training = L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
   const fertig = Boolean(a.ergebnis);
   const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular); } },
@@ -326,10 +355,10 @@ function aufgabenAnsicht() {
     h('p', { class: 'pfad' }, h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, `← ${meilenstein.titel}`)),
     h('div', { class: 'karte' },
       h('div', { class: 'aufgabenkopf' },
-        h('span', { class: 'strasse' }, routeMuster(auf.niveau, 34), `${auf.niveau} ${L.ROUTE_NAMEN[auf.niveau]}`),
-        training && h('span', { class: 'marke' }, 'Training'),
+        h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
+        training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
-        h('span', { class: 'punkte', title: 'Fortschritt beim Lernziel' }, [0, 1, 2].map((i) => h('i', { class: i < (z.stand.lernziele[auf.lernziel] ? 3 : st.fortschritt) ? 'voll' : '' })))),
+        h('span', { class: 'punkte', title: `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
       formular,
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
@@ -443,7 +472,8 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
   const vorschlag = L.niveauVorschlag(z.stand, kapitelId, niveau);
   const gemeistert = L.milestoneStatus(z.index, z.stand, meilenstein) === 'gemeistert';
   const weiter = (n = niveau) => {
-    const lz = z.stand.lernziele[auf.lernziel] ? L.naechstesLernziel(z.index, z.stand, meilenstein).id : auf.lernziel;
+    const fertig = z.stand.lernziele[auf.lernziel] || L.lernzielStand(z.stand, auf.lernziel, n, z.index).erreicht;
+    const lz = fertig ? L.naechstesLernziel(z.index, z.stand, meilenstein, n).id : auf.lernziel;
     starteAufgabe(lz, n);
   };
   const ziel = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)];
@@ -451,17 +481,21 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
     h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
     !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
     e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen',
-      e.training && ' (Training unter deinem Zielniveau bringt weniger)'),
+      e.training && ` (unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger)`),
     e.richtig && auf.afb === 3 && e.muenzen > 1 && h('p', { class: 'klein' }, 'Knobelaufgabe: Dafür gibt es die Hälfte mehr Münzen.'),
     e.neuesLernziel && h('p', { class: 'lohn neu' }, siegel(30), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst ein Siegel.'),
     e.anspruchFehlt && h('p', { class: 'klein', id: 'anspruch' }, 'Für das Siegel fehlt noch eine Aufgabe, bei der du mehr als nur rechnen musst.'),
+    e.neueKrone && h('p', { class: 'lohn neu', id: 'neue-krone' }, kroneBild(e.neueKrone.niveau, 32),
+      h('b', {}, `${e.neueKrone.vorher ? 'Krone aufgewertet' : 'Neue Krone'}: ${L.KRONEN[e.neueKrone.niveau]}!`), ` Am Meilenstein „${meilenstein.titel}“.`),
+    e.einschaetzung && h('p', { class: 'klein', id: 'einschaetzung' }, `Du hattest um ${L.KRONEN[e.einschaetzung.gewaehlt]} gespielt. Geschafft hast du ${L.KRONEN[e.einschaetzung.krone]}.`),
+    e.neueKrone && L.unterZiel(e.neueKrone.niveau, z.einst.zielniveau) && h('p', { class: 'klein' }, `Für den Meilenstein brauchst du ${L.KRONEN[z.einst.zielniveau]}.`),
     e.neuesLernziel && gemeistert && h('p', { class: 'lohn neu' }, h('b', {}, `Meilenstein „${meilenstein.titel}“ gemeistert!`)),
     vorschlag && h('div', { class: 'vorschlag' },
       h('p', {}, vorschlag === 'hoch'
-        ? `Das läuft richtig gut. Möchtest du auf den ${L.ROUTE_NAMEN[ziel]} (${ziel}) wechseln? Dort sind die Aufgaben anspruchsvoller und bringen mehr Münzen.`
-        : `Diese Aufgaben sind gerade ganz schön schwer. Möchtest du auf den ${L.ROUTE_NAMEN[ziel]} (${ziel}) wechseln und dort Sicherheit sammeln?`),
-      h('button', { class: 'haupt', id: 'strasse-wechseln', onclick: () => { L.setzeNiveau(z.stand, kapitelId, ziel); geaendert(); weiter(ziel); } }, `Auf den ${L.ROUTE_NAMEN[ziel]} wechseln`),
-      h('button', { class: 'schlicht', onclick: () => { L.lehneVorschlagAb(z.stand, kapitelId); geaendert(); weiter(); } }, `Auf dem ${L.ROUTE_NAMEN[niveau]} bleiben`)),
+        ? `Das läuft richtig gut. Möchtest du um ${L.KRONEN[ziel]} spielen? Dort sind die Aufgaben anspruchsvoller und bringen mehr Münzen.`
+        : `Diese Aufgaben sind gerade ganz schön schwer. Möchtest du um ${L.KRONEN[ziel]} spielen und dort Sicherheit sammeln?`),
+      h('button', { class: 'haupt', id: 'krone-wechseln', onclick: () => { L.setzeNiveau(z.stand, kapitelId, ziel); geaendert(); weiter(ziel); } }, kroneBild(ziel, 20), ` Um ${L.KRONEN[ziel]} spielen`),
+      h('button', { class: 'schlicht', onclick: () => { L.lehneVorschlagAb(z.stand, kapitelId); geaendert(); weiter(); } }, `Bei ${L.KRONEN[niveau]} bleiben`)),
     !vorschlag && h('button', { class: 'haupt', id: 'weiter', onclick: () => weiter() }, 'Nächste Aufgabe'),
     h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte'));
 }
@@ -509,7 +543,7 @@ function wappenAnsicht() {
     h('div', { class: 'werkbank' }, wappenBild(w, 150),
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
         h('p', {}, r.naechster ? `Mit ${r.naechster.ab} Siegeln wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
-        h('p', { class: 'klein' }, 'Siegel bekommst du für erreichte Lernziele. Münzen gibst du hier für dein Wappen aus.'))),
+        h('p', { class: 'klein' }, 'Siegel bekommst du für erreichte Lernziele, Kronen an den Meilensteinen. Münzen gibst du hier für dein Wappen aus.'))),
     h('h2', {}, 'Farben'), h('ul', { class: 'teile-liste' }, L.WAPPEN_TEILE.filter((x) => x.art === 'farbe').map(teilKarte)),
     h('h2', {}, 'Zeichen'), h('ul', { class: 'teile-liste' }, L.WAPPEN_TEILE.filter((x) => x.art === 'zeichen').map(teilKarte)),
     h('h2', {}, 'Spielpause'),
