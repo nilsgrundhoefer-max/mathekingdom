@@ -3,6 +3,7 @@
 
 import { pruefeUnterschrift, liesUngeprueft } from '../gemeinsam/krypto.js';
 import { migriere } from './logik.js';
+import { fehlergrund } from '../gemeinsam/protokoll.js';
 
 export const SYSTEMORDNER = '_mathekingdom';
 export const KLASSENDATEI = 'klassendatei.json';
@@ -137,15 +138,17 @@ export function speicherdienst(ablage, holeStand, melde, intervall = 10000) {
 // Aufgabenpool: zuerst online, dann die Kopie im Klassenordner, zuletzt die eingebettete Fassung.
 export async function ladePool(ablage, klassenstufe) {
   const datei = `klasse-${klassenstufe}.json`;
+  let grund = null;
   if (window.MK_BASIS) {
     try {
       const antwort = await fetch(`${window.MK_BASIS}aufgabenpool/${datei}`, { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
       if (antwort.ok) return { pool: await antwort.json(), quelle: 'online' };
-    } catch { /* weiter mit der Kopie */ }
+      grund = fehlergrund(null, antwort.status);
+    } catch (e) { grund = fehlergrund(e); /* weiter mit der Kopie */ }
   }
   const kopie = liesJson(await ablage.lies(`${SYSTEMORDNER}/${datei}`).catch(() => null));
-  if (kopie) return { pool: kopie, quelle: 'klassenordner' };
+  if (kopie) return { pool: kopie, quelle: 'klassenordner', grund };
   const eingebettet = window.MK_POOLS?.[klassenstufe];
-  if (eingebettet) return { pool: eingebettet, quelle: 'eingebettet' };
-  return { pool: null, quelle: null };
+  if (eingebettet) return { pool: eingebettet, quelle: 'eingebettet', grund };
+  return { pool: null, quelle: null, grund };
 }

@@ -106,8 +106,9 @@ const startdatei = seite(`<script>
   var skript = document.createElement('script');
   skript.src = BASIS + 'dist/schueler-dashboard.js';
   skript.onload = function () { fertig = true; };
-  skript.onerror = ausOrdner;
-  setTimeout(function () { if (!fertig) { skript.remove(); ausOrdner(); } }, 6000);
+  // Der Grund landet im Betriebsprotokoll (ADR 0013).
+  skript.onerror = function () { window.MK_GRUND = 'GitHub nicht erreichbar oder Datei fehlt (dist/schueler-dashboard.js)'; ausOrdner(); };
+  setTimeout(function () { if (!fertig) { window.MK_GRUND = 'GitHub hat nicht innerhalb von 6 Sekunden geantwortet'; skript.remove(); ausOrdner(); } }, 6000);
   document.body.appendChild(skript);
 })();
 </script>`);
@@ -171,8 +172,10 @@ const lehrerStart = seite(`<script>
   function ohneNetz() {
     ziel.innerHTML = '<div style="' + KASTEN + '"><h1 style="color:#1d2b4f">Mathekingdom Lehrer</h1>'
       + '<p>GitHub ist gerade nicht erreichbar. Wähle deinen Ordner auf dem Lehrerlaufwerk, dann startet die dort gesicherte Kopie.</p>'
+      + '<p style="font-size:13px;color:#5b6475" id="mk-grund"></p>'
       + '<p id="mk-weiter"></p><button id="mk-lehrerordner" style="' + KNOPF + '">Ordner auf dem Lehrerlaufwerk wählen</button>'
       + '<p id="mk-fehler" style="color:#b3372f;font-weight:600"></p></div>';
+    document.getElementById('mk-grund').textContent = window.MK_GRUND || '';
     var fehler = function (e) {
       if (e && e.name === 'AbortError') return;
       document.getElementById('mk-fehler').textContent = 'In diesem Ordner liegt noch keine Kopie. Öffne das Dashboard einmal mit Internet, dann wird sie angelegt.';
@@ -195,9 +198,20 @@ const lehrerStart = seite(`<script>
   var abbruch = new AbortController();
   var uhr = setTimeout(function () { abbruch.abort(); }, 10000);
   fetch(BASIS + 'dist/lehrer-paket.js', { cache: 'no-cache', signal: abbruch.signal })
-    .then(function (antwort) { if (!antwort.ok) throw new Error(antwort.status); return antwort.text(); })
+    .then(function (antwort) {
+      if (!antwort.ok) { var f = new Error('Status ' + antwort.status); f.status = antwort.status; throw f; }
+      return antwort.text();
+    })
     .then(function (code) { clearTimeout(uhr); window.MK_LEHRER_PAKET = code; starte(code, 'online'); })
-    .catch(function () { clearTimeout(uhr); ohneNetz(); });
+    .catch(function (e) {
+      clearTimeout(uhr);
+      // Der Grund landet im Betriebsprotokoll (ADR 0013) und steht auf dieser Seite.
+      window.MK_GRUND = e.status === 404 ? 'GitHub antwortet 404: Die Datei fehlt. Ist GitHub Pages für main eingeschaltet?'
+        : e.status ? 'GitHub antwortet mit Fehler ' + e.status
+        : e.name === 'AbortError' ? 'GitHub hat nicht innerhalb von 10 Sekunden geantwortet'
+        : 'GitHub nicht erreichbar (' + e.message + ')';
+      ohneNetz();
+    });
 })();
 </script>`, 'Mathekingdom Lehrer', 'mathekingdom-lehrer');
 writeFileSync(new URL('dist/Mathekingdom-Lehrer.html', wurzel), lehrerStart);

@@ -8,7 +8,8 @@ import * as K from '../gemeinsam/krypto.js';
 import { xlsx } from './xlsx.js';
 import { beispielklasse } from './beispiel.js';
 import { NIVEAU_FARBE } from '../schueler/bilder.js';
-import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
+import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
+import * as P from '../gemeinsam/protokoll.js';
 
 const LEHRERDATEN = 'lehrerdaten.json';
 const CODE_DATEI = /^(\d{1,2}[A-Z]-[A-Z0-9]{4})\.json$/;
@@ -54,6 +55,11 @@ async function erlaube(handle) {
 
 // ---------- Dateien ----------
 async function speichereDaten() { await z.lehrer.schreibe(LEHRERDATEN, JSON.stringify(z.daten, null, 1)); }
+// Betriebsprotokoll der Lehrkraft in den Lehrerdaten (ADR 0013). Ein Fehler beim Speichern darf hier nichts aufhalten.
+function notiere(art, text, klasse) {
+  P.trage((z.daten.protokoll ??= []), { t: jetzt(), art, text, ...(klasse ? { klasse } : {}) }, P.MAX_LEHRER);
+  return speichereDaten().catch(() => {});
+}
 // Jeder Schüler der Namensliste hat eine PIN. Der langsame Prüfwert wird einmal berechnet und bei den Lehrerdaten gemerkt.
 async function sorgePins() {
   const pins = (kl().pins ??= {});
@@ -81,7 +87,7 @@ let schlange = Promise.resolve();
 function aendere(tun) {
   tun(kl());
   schlange = schlange.then(async () => { await speichereDaten(); await schreibeKlassendatei(); male(); })
-    .catch((e) => { z.fehler = `Speichern fehlgeschlagen: ${e.message}`; male(); });
+    .catch((e) => { z.fehler = `Speichern fehlgeschlagen: ${e.message}`; notiere('problem', `Speichern der Klassendatei oder Lehrerdaten fehlgeschlagen: ${e.message}`, z.klasse); male(); });
   return schlange;
 }
 
@@ -90,15 +96,21 @@ async function oeffneLehrer(ablage) {
   const text = await ablage.lies(LEHRERDATEN);
   z.daten = text ? JSON.parse(text) : { version: 1, schluessel: await K.erzeugeSchluessel(), klassen: {} };
   if (!text) await speichereDaten();
+  if (!ablage.demo) {
+    const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND, browser: P.browserName(navigator.userAgent) });
+    await notiere(e.art, e.text);
+  }
   // Kopie des gerade geladenen Dashboards für Tage ohne Internet (ADR 0011).
-  if (window.MK_LEHRER_PAKET && !ablage.demo) await ablage.schreibe(`${S.SYSTEMORDNER}/lehrer-paket.js`, window.MK_LEHRER_PAKET).catch(() => {});
+  if (window.MK_LEHRER_PAKET && !ablage.demo) await ablage.schreibe(`${S.SYSTEMORDNER}/lehrer-paket.js`, window.MK_LEHRER_PAKET)
+    .catch((e) => notiere('problem', `Kopie des Dashboards aufs Lehrerlaufwerk fehlgeschlagen: ${e.message}`));
   z.ansicht = 'klassen'; z.fehler = null; male();
 }
 
 async function oeffneKlasse(klasse, ablage) {
   if (ablage.name.toLowerCase() !== klasse) { z.fehler = `Der gewählte Ordner heißt „${ablage.name}“. Für die Klasse ${klasse} muss er „${klasse}“ heißen.`; return male(); }
   const stufe = parseInt(klasse, 10);
-  const pool = await ladePool(ablage, stufe);
+  const { pool, quelle: poolQuelle, grund: poolGrund } = await ladePool(ablage, stufe);
+  if (poolGrund) notiere('problem', `Aufgaben für Klasse ${stufe} ${P.QUELLE_TEXT[poolQuelle] ?? 'nicht gefunden'}, Grund: ${poolGrund}`, klasse);
   if (!pool) { z.fehler = `Für Klasse ${stufe} gibt es noch keinen Aufgabenpool.`; return male(); }
   z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } };
   const e = z.daten.klassen[klasse].einst;
@@ -129,14 +141,16 @@ async function oeffneKlasse(klasse, ablage) {
 
 // Der neueste Aufgabenpool: online, sonst der in dieser Datei mitgelieferte, zuletzt die Kopie im Klassenordner.
 async function ladePool(ablage, stufe) {
+  let grund = null;
   if (window.MK_BASIS && !ablage.demo) {
     try {
       const antwort = await fetch(`${window.MK_BASIS}aufgabenpool/klasse-${stufe}.json`, { cache: 'no-cache', signal: AbortSignal.timeout(4000) });
-      if (antwort.ok) return await antwort.json();
-    } catch { /* weiter mit der mitgelieferten Fassung */ }
+      if (antwort.ok) return { pool: await antwort.json(), quelle: 'online' };
+      grund = P.fehlergrund(null, antwort.status);
+    } catch (e) { grund = P.fehlergrund(e); /* weiter mit der mitgelieferten Fassung */ }
   }
-  if (window.MK_POOLS?.[stufe]) return window.MK_POOLS[stufe];
-  try { return JSON.parse(await ablage.lies(`${S.SYSTEMORDNER}/klasse-${stufe}.json`)); } catch { return null; }
+  if (window.MK_POOLS?.[stufe]) return { pool: window.MK_POOLS[stufe], quelle: 'mitgeliefert', grund };
+  try { return { pool: JSON.parse(await ablage.lies(`${S.SYSTEMORDNER}/klasse-${stufe}.json`)), quelle: 'klassenordner', grund }; } catch { return { pool: null, quelle: null, grund }; }
 }
 
 async function lade() {
@@ -157,6 +171,7 @@ async function lade() {
   const liegt = await z.ordner.lies(S.KLASSENDATEI);
   if (z.klassendateiText && liegt !== z.klassendateiText) {
     z.warnungen.unshift(`${uhr(Date.now())} Uhr: Die Klassendatei wurde von außen verändert. Sie wurde wiederhergestellt.`);
+    notiere('problem', 'Klassendatei wurde von außen verändert und wiederhergestellt', z.klasse);
     await schreibeKlassendatei();
   }
   // Antworten auf erledigte oder zurückgezogene Hilferufe entfernen.
@@ -167,7 +182,9 @@ async function lade() {
     if (!ruf || ruf.seit !== hilfe[code].zu) { delete hilfe[code]; geaendert = true; }
   }
   if (geaendert) { await speichereDaten(); await schreibeKlassendatei(); }
-  if (!z.letztesBackup || Date.now() - z.letztesBackup > BACKUP_ABSTAND) await sichere().catch(() => {});
+  if (!z.letztesBackup || Date.now() - z.letztesBackup > BACKUP_ABSTAND) {
+    await sichere().catch((e) => { z.letztesBackup = Date.now(); notiere('problem', `Stündliches Backup fehlgeschlagen: ${e.message}`, z.klasse); });
+  }
 }
 
 // ---------- Backup ----------
@@ -829,7 +846,29 @@ function verwaltung() {
       h('div', { class: 'reihe' },
         h('button', { class: 'schlicht', id: 'excel', onclick: exportiereExcel }, 'Rohdaten als Excel-Datei'),
         h('button', { class: 'schlicht', id: 'pdf', onclick: () => drucke(klassenbericht()) }, 'Klassenbericht als PDF'))),
-    sicherung());
+    sicherung(),
+    protokollKarte());
+}
+
+// ---------- Betriebsprotokoll (ADR 0013) ----------
+function protokollKarte() {
+  const alle = P.sammle(z.staende, z.daten.protokoll, z.klasse, name);
+  const nurProbleme = z.protokollNurProbleme ?? false;
+  const zeilen = (nurProbleme ? alle.filter((e) => e.art === 'problem') : alle).slice(0, 100);
+  const probleme = alle.filter((e) => e.art === 'problem').length;
+  const ART = { start: 'Start', problem: 'Problem', ok: 'wieder ok' };
+  return h('section', { class: 'karte', id: 'protokoll' }, h('h2', {}, 'Protokoll'),
+    h('p', { class: 'klein' }, 'Technische Ereignisse aus allen Speicherständen und von diesem Dashboard: woher es geladen wurde, welche Version, und was schiefging, zum Beispiel GitHub nicht erreichbar oder Speichern fehlgeschlagen. Lerndaten stehen hier nicht.'),
+    h('p', {}, alle.length ? `${alle.length} Einträge, davon ${probleme} Probleme.` : 'Noch keine Einträge.'),
+    alle.length > 0 && h('div', { class: 'reihe' },
+      h('label', {}, h('input', { type: 'checkbox', id: 'protokoll-probleme', checked: nurProbleme, onchange: (ev) => { z.protokollNurProbleme = ev.target.checked; document.getElementById('protokoll').replaceWith(protokollKarte()); } }), ' Nur Probleme'),
+      h('button', { class: 'schlicht', id: 'protokoll-export', onclick: () => ladeHerunter(`Mathekingdom_Protokoll_${z.klasse}_${heute()}.txt`, P.alsText(alle, z.klasse, jetzt()), 'text/plain;charset=utf-8') }, 'Protokoll als Textdatei speichern')),
+    zeilen.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+      h('thead', {}, h('tr', {}, ['Zeit', 'Wer', 'Art', 'Ereignis'].map((t) => h('th', {}, t)))),
+      h('tbody', {}, zeilen.map((e) => h('tr', { class: e.art === 'problem' ? 'problem' : '' },
+        h('td', { style: 'white-space:nowrap' }, new Date(e.t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })),
+        h('td', { style: 'white-space:nowrap' }, e.wer), h('td', { class: e.art === 'problem' ? 'fehlertext' : '' }, ART[e.art] ?? e.art), h('td', {}, e.text)))))),
+    alle.length > zeilen.length && h('p', { class: 'klein' }, 'Gezeigt werden die neuesten 100. Die Textdatei enthält alle.'));
 }
 
 // ---------- Backup ----------

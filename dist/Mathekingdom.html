@@ -43,8 +43,9 @@
   var skript = document.createElement('script');
   skript.src = BASIS + 'dist/schueler-dashboard.js';
   skript.onload = function () { fertig = true; };
-  skript.onerror = ausOrdner;
-  setTimeout(function () { if (!fertig) { skript.remove(); ausOrdner(); } }, 6000);
+  // Der Grund landet im Betriebsprotokoll (ADR 0013).
+  skript.onerror = function () { window.MK_GRUND = 'GitHub nicht erreichbar oder Datei fehlt (dist/schueler-dashboard.js)'; ausOrdner(); };
+  setTimeout(function () { if (!fertig) { window.MK_GRUND = 'GitHub hat nicht innerhalb von 6 Sekunden geantwortet'; skript.remove(); ausOrdner(); } }, 6000);
   document.body.appendChild(skript);
 })();
 </script>
