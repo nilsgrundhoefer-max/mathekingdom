@@ -36,7 +36,7 @@ const NUR_ZAHLEN = /^([\d\s\u00a0\u202f]+) ([−:+]) ([\d\s\u00a0\u202f]+) = ([\
 
 // ---------- Regeln für klar getrennte Niveaustufen (docs/adr/0009) ----------
 // Sie gelten für die Stationen, die schon nach den neuen Regeln erzeugt sind.
-const NEUE_REGELN = (lernziel) => lernziel.startsWith('5.4.5');
+const NEUE_REGELN = (lernziel) => lernziel.startsWith('5.4.5') || lernziel.startsWith('5.4.1');
 const AFB_FOLGE = [1, 2, 2, 1, 2, 3];
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const pruefeHilfen = (a) => {

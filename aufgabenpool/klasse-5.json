@@ -118,6 +118,22 @@
   "gesetz-auf-subtraktion": {
    "beschreibung": "Überträgt das Vertauschungs- oder Verbindungsgesetz auf die Subtraktion.",
    "hinweis": "Die beiden Gesetze gelten nur für die Addition. Rechne beide Seiten aus."
+  },
+  "1x1-nachbar": {
+   "beschreibung": "Irrt sich im Einmaleins um eine Reihe (Ergebnis der Nachbaraufgabe).",
+   "hinweis": "Geh von einer Kernaufgabe aus, zum Beispiel 5 mal. Rechne dann eine Reihe weiter."
+  },
+  "1x1-addiert": {
+   "beschreibung": "Addiert, statt zu multiplizieren.",
+   "hinweis": "Schau auf das Zeichen ·. Hier wird mal gerechnet, nicht plus."
+  },
+  "1x1-null": {
+   "beschreibung": "Meint, eine Zahl mal 0 ergibt die Zahl selbst.",
+   "hinweis": "Stell dir 0 Päckchen vor. Wie viel ist dann darin?"
+  },
+  "div-durch-sich-selbst": {
+   "beschreibung": "Meint, eine Zahl geteilt durch sich selbst ergibt 0.",
+   "hinweis": "Verteile 4 Äpfel an 4 Kinder. Wie viele bekommt jedes Kind?"
   }
  },
  "kapitel": [
@@ -460,8 +476,87 @@
      "extra": false,
      "lernziele": [
       {
-       "id": "5.4.1-L1",
+       "id": "5.4.1-K1",
+       "text": "Ich kann die Aufgaben des kleinen Einmaleins sicher lösen."
+      },
+      {
+       "id": "5.4.1-K2",
+       "text": "Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.",
+       "voraussetzungen": [
+        "5.4.1-K1"
+       ]
+      },
+      {
+       "id": "5.4.1-K3",
        "text": "Ich kann im Kopf multiplizieren und dividieren und dabei geschickt vorgehen."
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Kernaufgaben helfen: mal 1, mal 2, mal 5 und mal 10 kannst du schnell.",
+       "Schwere Aufgaben zerlegst du: 7 · 8 ist 5 · 8 und noch 2 · 8, also 40 + 16 = 56.",
+       "Nachbaraufgaben: Kennst du 6 · 8 = 48, dann ist 7 · 8 eine Acht mehr, also 56.",
+       "Tauschaufgaben haben dasselbe Ergebnis: 3 · 9 = 27 und 9 · 3 = 27.",
+       "Geteilt rechnest du mit der Mal-Aufgabe: 56 : 8 = 7, denn 7 · 8 = 56."
+      ],
+      "beispiel": "63 : 9: Welche Zahl mal 9 ergibt 63? 5 · 9 = 45, 6 · 9 = 54, 7 · 9 = 63. Also 63 : 9 = 7.",
+      "heft": "Schreibe die Reihen, die du noch nicht sicher kannst, ins Heft und sage sie dir laut vor."
+     },
+     "wortspeicher": [
+      {
+       "wort": "mal",
+       "ab": "F",
+       "erklaerung": "So liest du das Zeichen ·. 3 · 4 heißt: 3 Päckchen mit je 4."
+      },
+      {
+       "wort": "geteilt durch",
+       "ab": "F",
+       "erklaerung": "So liest du das Zeichen :. 12 : 3 heißt: 12 gerecht in 3 Teile."
+      },
+      {
+       "wort": "Kernaufgabe",
+       "ab": "F",
+       "erklaerung": "Eine leichte Aufgabe mit 1, 2, 5 oder 10. Von ihr aus rechnest du weiter."
+      },
+      {
+       "wort": "Tauschaufgabe",
+       "ab": "F",
+       "erklaerung": "Die Zahlen tauschen den Platz. 3 · 4 und 4 · 3 ergeben beide 12."
+      },
+      {
+       "wort": "Nachbaraufgabe",
+       "ab": "G",
+       "erklaerung": "Eine Reihe mehr oder weniger. Zu 6 · 7 gehören 5 · 7 und 7 · 7."
+      },
+      {
+       "wort": "Produkt",
+       "ab": "G",
+       "erklaerung": "Das Ergebnis einer Mal-Aufgabe. Bei 4 · 5 = 20 ist 20 das Produkt."
+      },
+      {
+       "wort": "Probe",
+       "ab": "G",
+       "erklaerung": "Du prüfst eine Geteilt-Aufgabe mit der Mal-Aufgabe."
+      },
+      {
+       "wort": "zerlegen",
+       "ab": "M",
+       "erklaerung": "Eine schwere Aufgabe in zwei leichte teilen. 7 · 6 ist 5 · 6 und 2 · 6."
+      },
+      {
+       "wort": "Umkehraufgabe",
+       "ab": "M",
+       "erklaerung": "Die Rechnung, die eine andere rückgängig macht. Zu 56 : 8 gehört 7 · 8."
+      },
+      {
+       "wort": "Quadratzahl",
+       "ab": "E",
+       "erklaerung": "Eine Zahl mal sich selbst. 6 · 6 = 36, also ist 36 eine Quadratzahl."
+      },
+      {
+       "wort": "teilbar",
+       "ab": "E",
+       "erklaerung": "Eine Zahl ist durch 6 teilbar, wenn beim Teilen durch 6 kein Rest bleibt."
       }
      ]
     },
@@ -511,22 +606,25 @@
        "id": "5.4.5-D2",
        "text": "Ich kann schriftlich durch einstellige Zahlen dividieren.",
        "voraussetzungen": [
-        "5.3.1-K2",
-        "5.4.5-D1"
+        "5.4.1-K2",
+        "5.4.5-D1",
+        "5.3.1-K2"
        ]
       },
       {
        "id": "5.4.5-D3",
        "text": "Ich kann schriftlich durch zweistellige Zahlen dividieren.",
        "voraussetzungen": [
-        "5.4.5-D2"
+        "5.4.5-D2",
+        "5.4.1-K1"
        ]
       },
       {
        "id": "5.4.5-D4",
        "text": "Ich kann Divisionen mit Rest berechnen und den Rest deuten.",
        "voraussetzungen": [
-        "5.4.5-D2"
+        "5.4.5-D2",
+        "5.4.1-K2"
        ]
       },
       {
@@ -16087,6 +16185,1277 @@
     "tipp": "Fasse die beiden Zahlen zusammen, die abgezogen werden. Ihre Summe ist eine glatte Zahl.",
     "beispiel": "900 − 250 − 150: 250 + 150 = 400, dann 900 − 400 = 500.",
     "loesungsschritt": "2200 + 1800 = 4000. Ziehe diese Summe von 7995 ab."
+   }
+  },
+  {
+   "id": "5.4.1-K1-F-01",
+   "lernziel": "5.4.1-K1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n10 · 3",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 33,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 27,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal heißt: gleich große Päckchen zusammen.",
+    "beispiel": "3 · 5 heißt: 3 Päckchen mit je 5. Zähle 5, 10, 15. Das Ergebnis ist 15.",
+    "loesungsschritt": "Zähle in 10er-Schritten: 10, 20, 30."
+   }
+  },
+  {
+   "id": "5.4.1-K1-F-02",
+   "lernziel": "5.4.1-K1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "5 + 5 + 5 + 5 + 5\nWelche Mal-Aufgabe passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6 · 5",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "4 · 5",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "5 · 5",
+     "richtig": true
+    },
+    {
+     "text": "5 + 5",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle, wie oft die gleiche Zahl dasteht.",
+    "beispiel": "4 + 4 + 4 sind drei Vieren. Dazu passt 3 · 4.",
+    "loesungsschritt": "Die Zahl 5 steht 5-mal da."
+   }
+  },
+  {
+   "id": "5.4.1-K1-F-03",
+   "lernziel": "5.4.1-K1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "luecken",
+   "text": "10 · 7 = 7 · {{x}}",
+   "hilfen": {
+    "tipp": "Bei Mal-Aufgaben darfst du die Zahlen tauschen.",
+    "beispiel": "2 · 7 und 7 · 2 ergeben beide 14.",
+    "loesungsschritt": "Tausche die Zahlen von 10 · 7."
+   },
+   "luecken": {
+    "x": {
+     "loesung": 10,
+     "typischeFehler": [
+      {
+       "wert": 7,
+       "fehlvorstellung": "1x1-addiert"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "5.4.1-K1-F-04",
+   "lernziel": "5.4.1-K1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n4 · 5",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 25,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal heißt: gleich große Päckchen zusammen.",
+    "beispiel": "3 · 5 heißt: 3 Päckchen mit je 5. Zähle 5, 10, 15. Das Ergebnis ist 15.",
+    "loesungsschritt": "Zähle in 5er-Schritten: 5, 10, 15, 20."
+   }
+  },
+  {
+   "id": "5.4.1-K1-F-05",
+   "lernziel": "5.4.1-K1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Tom hat 4 Packungen.\nIn jeder Packung sind 10 Stifte.\nWie viele Stifte sind es zusammen?",
+   "loesung": 40,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele in jeder Packung: Das ist eine Mal-Aufgabe.",
+    "beispiel": "3 Tüten mit je 2 Bonbons: 3 · 2 = 6.",
+    "loesungsschritt": "Rechne 4 · 10."
+   }
+  },
+  {
+   "id": "5.4.1-K1-F-06",
+   "lernziel": "5.4.1-K1",
+   "niveau": "F",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Mia sagt:\n„3 · 0 = 3“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ja.\nMal 0 ändert nichts.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-null"
+    },
+    {
+     "text": "Ja.\nDie Zahl bleibt gleich.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-null"
+    },
+    {
+     "text": "Nein.\nEs kommt 1 heraus.",
+     "richtig": false
+    },
+    {
+     "text": "Nein.\n3 · 0 = 0.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir Päckchen vor, in denen nichts ist.",
+    "beispiel": "3 · 0 heißt: 3 Päckchen mit je 0 Bonbons. Das sind 0 Bonbons.",
+    "loesungsschritt": "Lege 3 leere Päckchen hin. Wie viele Bonbons sind darin?"
+   }
+  },
+  {
+   "id": "5.4.1-K1-G-01",
+   "lernziel": "5.4.1-K1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n6 · 8",
+   "loesung": 48,
+   "typischeFehler": [
+    {
+     "wert": 56,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 40,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 14,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nutze eine Kernaufgabe mit 2, 5 oder 10.",
+    "beispiel": "6 · 7: Du weißt 5 · 7 = 35. Dazu noch einmal 7 ergibt 42.",
+    "loesungsschritt": "Rechne zuerst 5 · 8 = 40."
+   }
+  },
+  {
+   "id": "5.4.1-K1-G-02",
+   "lernziel": "5.4.1-K1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "3 · 6 = 18\n4 · 6 = {{x}}",
+   "hilfen": {
+    "tipp": "Bei der Nachbaraufgabe kommt eine Reihe dazu.",
+    "beispiel": "5 · 6 = 30. Bei 6 · 6 kommt noch eine 6 dazu: 30 + 6 = 36.",
+    "loesungsschritt": "Rechne 18 + 6."
+   },
+   "luecken": {
+    "x": {
+     "loesung": 24,
+     "typischeFehler": [
+      {
+       "wert": 19,
+       "fehlvorstellung": "1x1-nachbar"
+      },
+      {
+       "wert": 21,
+       "fehlvorstellung": "1x1-nachbar"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "5.4.1-K1-G-03",
+   "lernziel": "5.4.1-K1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Aufgabe hat das Ergebnis 32?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "7 · 5",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "8 · 3",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "8 · 4",
+     "richtig": true
+    },
+    {
+     "text": "9 · 4",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Aufgabe aus.",
+    "beispiel": "3 · 6 = 18 und 3 + 6 = 9. Nur 3 · 6 hat das Ergebnis 18.",
+    "loesungsschritt": "Rechne 8 · 4."
+   }
+  },
+  {
+   "id": "5.4.1-K1-G-04",
+   "lernziel": "5.4.1-K1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n5 · ▢ = 35",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 30,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe die Reihe durch.",
+    "beispiel": "4 · ▢ = 28. Zähle 4, 8, 12, 16, 20, 24, 28. Das sind 7 Schritte.",
+    "loesungsschritt": "Zähle in 5er-Schritten: 5, 10, 15, 20, 25, 30, 35."
+   }
+  },
+  {
+   "id": "5.4.1-K1-G-05",
+   "lernziel": "5.4.1-K1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "In einen Karton passen 6 Eier.\nEs gibt 4 Kartons.\nWie viele Eier sind es?",
+   "loesung": 24,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "wert": 18,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele in jeder Gruppe: Das ist eine Mal-Aufgabe.",
+    "beispiel": "4 Reihen mit je 5 Stühlen: 4 · 5 = 20.",
+    "loesungsschritt": "Rechne 4 · 6."
+   }
+  },
+  {
+   "id": "5.4.1-K1-G-06",
+   "lernziel": "5.4.1-K1",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ben sagt:\n„Jede Zahl mal 2 ergibt eine gerade Zahl.“\nPrüfe mit 3 · 2.\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein.\n3 ist ungerade.\nDann ist auch 3 · 2 ungerade.",
+     "richtig": false
+    },
+    {
+     "text": "Ja.\nAber nur für kleine Zahlen.",
+     "richtig": false
+    },
+    {
+     "text": "Nein.\nDas gilt nur bis 10.",
+     "richtig": false
+    },
+    {
+     "text": "Ja.\n3 · 2 = 6.\nMal 2 ist das Doppelte.\nEin Doppeltes ist immer gerade.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne die Aufgabe aus. Ist das Ergebnis gerade?",
+    "beispiel": "7 · 2 = 14. 14 ist gerade. Mal 2 heißt: zwei gleiche Teile.",
+    "loesungsschritt": "Rechne 3 · 2. Teile das Ergebnis in zwei gleiche Teile."
+   }
+  },
+  {
+   "id": "5.4.1-K1-M-01",
+   "lernziel": "5.4.1-K1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Wie viel ist 8 · 7?",
+   "loesung": 56,
+   "typischeFehler": [
+    {
+     "wert": 63,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 49,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege in eine Kernaufgabe und den Rest.",
+    "loesungsschritt": "Rechne 5 · 7 = 35. Dazu kommen 3 · 7 = 21."
+   }
+  },
+  {
+   "id": "5.4.1-K1-M-02",
+   "lernziel": "5.4.1-K1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Lisa rechnet 6 · 7 mit einer Kernaufgabe. Welcher Rechenweg passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 · 7 + 1",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "5 · 7 + 1 · 7",
+     "richtig": true
+    },
+    {
+     "text": "6 · 5 + 7",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "5 · 7 + 6 · 7",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile die erste Zahl auf: 5 und der Rest. Beide Teile werden mit derselben Zahl malgenommen.",
+    "loesungsschritt": "Teile 6 in 5 und 1. Nimm beide Teile mal 7."
+   }
+  },
+  {
+   "id": "5.4.1-K1-M-03",
+   "lernziel": "5.4.1-K1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "In einem Bus gibt es 8 Reihen mit je 5 Plätzen. 20 Plätze sind besetzt. Wie viele Plätze sind noch frei?",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 40,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie viele Plätze es insgesamt gibt.",
+    "loesungsschritt": "Insgesamt sind es 8 · 5 = 40 Plätze."
+   }
+  },
+  {
+   "id": "5.4.1-K1-M-04",
+   "lernziel": "5.4.1-K1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? ▢ · 9 = 72",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Zahl mal 9 ergibt 72? Prüfe mit einer Kernaufgabe.",
+    "loesungsschritt": "5 · 9 = 45. Bis 72 fehlen noch 27."
+   }
+  },
+  {
+   "id": "5.4.1-K1-M-05",
+   "lernziel": "5.4.1-K1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Aufgaben haben das Ergebnis 18? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "4 · 2",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "3 · 6",
+     "richtig": true
+    },
+    {
+     "text": "2 · 9",
+     "richtig": true
+    },
+    {
+     "text": "9 · 8",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe die Reihen durch: In welchen Reihen kommt 18 vor?",
+    "loesungsschritt": "2 · 9 = 18. Prüfe die anderen genauso."
+   }
+  },
+  {
+   "id": "5.4.1-K1-M-06",
+   "lernziel": "5.4.1-K1",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ben rechnet 7 · 6 und erhält 48. Wie kann er seinen Fehler finden?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Er prüft mit 7 + 6.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "Gar nicht. Sein Ergebnis stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "Mit der Nachbaraufgabe: 6 · 6 = 36. Dazu kommt noch einmal 6. Das sind 42.",
+     "richtig": true
+    },
+    {
+     "text": "Er rechnet einfach noch einmal genauso.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Kernaufgabe oder Nachbaraufgabe kennst du sicher?",
+    "loesungsschritt": "6 · 6 = 36. Vergleiche mit Bens Ergebnis."
+   }
+  },
+  {
+   "id": "5.4.1-K1-E-01",
+   "lernziel": "5.4.1-K1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Eine Zahl mal sich selbst ergibt 9. Wie heißt die Zahl?",
+   "loesung": 3,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Welche Aufgabe mit zwei gleichen Zahlen kennst du, die 9 ergibt?"
+   }
+  },
+  {
+   "id": "5.4.1-K1-E-02",
+   "lernziel": "5.4.1-K1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Zahl ist kein Ergebnis des kleinen Einmaleins?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "20",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "72",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "12",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "23",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zu welchen Zahlen findest du eine Aufgabe aus dem Einmaleins?"
+   }
+  },
+  {
+   "id": "5.4.1-K1-E-03",
+   "lernziel": "5.4.1-K1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Zwei Zahlen aus dem Einmaleins haben das Produkt 28 und die Summe 11. Die kleinere Zahl ist {{x}}, die größere ist {{y}}.",
+   "hilfen": {
+    "tipp": "Welche Aufgaben mit dem Ergebnis 28 kennst du? Welche passt auch zur Summe?"
+   },
+   "luecken": {
+    "x": {
+     "loesung": 4,
+     "typischeFehler": []
+    },
+    "y": {
+     "loesung": 7,
+     "typischeFehler": []
+    }
+   }
+  },
+  {
+   "id": "5.4.1-K1-E-04",
+   "lernziel": "5.4.1-K1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "3 · 4 = 12. Wie viel ist 3 · 8?",
+   "loesung": 24,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "wert": 48,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was passiert mit dem Ergebnis, wenn eine Zahl doppelt so groß wird?"
+   }
+  },
+  {
+   "id": "5.4.1-K1-E-05",
+   "lernziel": "5.4.1-K1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Wie viele Aufgaben des kleinen Einmaleins (beide Zahlen von 1 bis 10) haben das Ergebnis 12? Zähle Tauschaufgaben einzeln.",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe alle Reihen von 1 bis 10 durch. In welchen kommt die Zahl vor?"
+   }
+  },
+  {
+   "id": "5.4.1-K1-E-06",
+   "lernziel": "5.4.1-K1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Stimmt das? „Ungerade mal ungerade ergibt immer eine ungerade Zahl.“ Wähle die beste Begründung.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein. 3 · 5 ist gerade.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. Aber nur im kleinen Einmaleins.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.",
+     "richtig": true
+    },
+    {
+     "text": "Nein. Zwei ungerade Zahlen ergeben immer gerade.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Probiere einige Beispiele. Kannst du erklären, warum es immer so ist?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-F-01",
+   "lernziel": "5.4.1-K2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n25 : 5",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denke an die Mal-Aufgabe.",
+    "beispiel": "15 : 5: Du weißt 3 · 5 = 15. Also ist 15 : 5 = 3.",
+    "loesungsschritt": "Welche Zahl mal 5 ergibt 25? Zähle 5, 10, 15, 20, 25."
+   }
+  },
+  {
+   "id": "5.4.1-K2-F-02",
+   "lernziel": "5.4.1-K2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "12 Äpfel werden an 3 Kinder verteilt.\nJedes Kind bekommt gleich viele.\nWie viele bekommt jedes Kind?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Verteile gerecht. Lege Plättchen.",
+    "beispiel": "6 Äpfel für 2 Kinder: 6 : 2 = 3. Jedes Kind bekommt 3.",
+    "loesungsschritt": "Rechne 12 : 3."
+   }
+  },
+  {
+   "id": "5.4.1-K2-F-03",
+   "lernziel": "5.4.1-K2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n10 : ▢ = 5",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denke an die Mal-Aufgabe.",
+    "beispiel": "20 : ▢ = 4. Du weißt 4 · 5 = 20. Die Zahl ist 5.",
+    "loesungsschritt": "5 mal welche Zahl ergibt 10?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-F-04",
+   "lernziel": "5.4.1-K2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "6 : 2\nWelche Mal-Aufgabe hilft dir?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6 · 2",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "3 · 2 = 6",
+     "richtig": true
+    },
+    {
+     "text": "4 · 2",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "6 + 2",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal und geteilt gehören zusammen.",
+    "beispiel": "Zu 12 : 2 passt 6 · 2 = 12.",
+    "loesungsschritt": "Suche die Mal-Aufgabe mit dem Ergebnis 6."
+   }
+  },
+  {
+   "id": "5.4.1-K2-F-05",
+   "lernziel": "5.4.1-K2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n▢ : 2 = 6",
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+    "beispiel": "▢ : 2 = 7. Rechne 7 · 2 = 14. Die Zahl ist 14.",
+    "loesungsschritt": "Rechne 6 · 2."
+   }
+  },
+  {
+   "id": "5.4.1-K2-F-06",
+   "lernziel": "5.4.1-K2",
+   "niveau": "F",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Leo sagt:\n„6 : 6 = 0“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ja.\nEs bleibt nichts übrig.",
+     "richtig": false,
+     "fehlvorstellung": "div-durch-sich-selbst"
+    },
+    {
+     "text": "Nein.\nEs kommt die Zahl selbst heraus.",
+     "richtig": false
+    },
+    {
+     "text": "Nein.\n6 : 6 = 1.",
+     "richtig": true
+    },
+    {
+     "text": "Ja.\nDie Zahlen sind gleich.",
+     "richtig": false,
+     "fehlvorstellung": "div-durch-sich-selbst"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir Äpfel und Kinder vor.",
+    "beispiel": "4 Äpfel für 4 Kinder. Jedes Kind bekommt 1 Apfel.",
+    "loesungsschritt": "Verteile 6 Äpfel an 6 Kinder."
+   }
+  },
+  {
+   "id": "5.4.1-K2-G-01",
+   "lernziel": "5.4.1-K2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n18 : 3",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denke an die Mal-Aufgabe.",
+    "beispiel": "42 : 6: Du weißt 7 · 6 = 42. Also ist 42 : 6 = 7.",
+    "loesungsschritt": "Zähle in 3er-Schritten bis 18: 3, 6, 9, 12, 15, 18."
+   }
+  },
+  {
+   "id": "5.4.1-K2-G-02",
+   "lernziel": "5.4.1-K2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "12 Kinder bilden Gruppen.\nIn jeder Gruppe sind 3 Kinder.\nWie viele Gruppen gibt es?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie oft passt die Gruppe in alle Kinder?",
+    "beispiel": "24 Kinder, Gruppen mit je 6: 24 : 6 = 4. Es gibt 4 Gruppen.",
+    "loesungsschritt": "Rechne 12 : 3."
+   }
+  },
+  {
+   "id": "5.4.1-K2-G-03",
+   "lernziel": "5.4.1-K2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Aufgabe hat das Ergebnis 3?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "24 : 3",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "15 : 5",
+     "richtig": true
+    },
+    {
+     "text": "21 : 3",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "18 : 3",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Aufgabe aus.",
+    "beispiel": "35 : 5 = 7, denn 7 · 5 = 35.",
+    "loesungsschritt": "Prüfe 15 : 5 mit 3 · 5."
+   }
+  },
+  {
+   "id": "5.4.1-K2-G-04",
+   "lernziel": "5.4.1-K2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n42 : ▢ = 6",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 36,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denke an die Mal-Aufgabe.",
+    "beispiel": "36 : ▢ = 9. Du weißt 9 · 4 = 36. Die Zahl ist 4.",
+    "loesungsschritt": "6 mal welche Zahl ergibt 42?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-G-05",
+   "lernziel": "5.4.1-K2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zuordnen",
+   "text": "Ordne jeder Aufgabe ihr Ergebnis zu.",
+   "paare": [
+    {
+     "links": "18 : 9",
+     "rechts": "2"
+    },
+    {
+     "links": "28 : 4",
+     "rechts": "7"
+    },
+    {
+     "links": "24 : 4",
+     "rechts": "6"
+    },
+    {
+     "links": "24 : 8",
+     "rechts": "3"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denke bei jeder Aufgabe an die Mal-Aufgabe.",
+    "beispiel": "18 : 3 = 6, denn 6 · 3 = 18.",
+    "loesungsschritt": "Fang mit 18 : 9 an."
+   }
+  },
+  {
+   "id": "5.4.1-K2-G-06",
+   "lernziel": "5.4.1-K2",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ida rechnet 12 : 4 = 3.\nSie prüft mit 3 · 4.\nWarum klappt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Mal ist das Gegenteil von geteilt.\n3 · 4 = 12.",
+     "richtig": true
+    },
+    {
+     "text": "Das klappt nur bei kleinen Zahlen.",
+     "richtig": false
+    },
+    {
+     "text": "Auch 3 + 4 ergibt 12.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "Das klappt gar nicht.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne die Mal-Aufgabe aus. Was kommt heraus?",
+    "beispiel": "12 : 3 = 4. Prüfe: 4 · 3 = 12. Das ist wieder die erste Zahl.",
+    "loesungsschritt": "Rechne 3 · 4. Vergleiche mit 12."
+   }
+  },
+  {
+   "id": "5.4.1-K2-M-01",
+   "lernziel": "5.4.1-K2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Wie viel ist 54 : 6?",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nutze die Umkehraufgabe.",
+    "loesungsschritt": "Welche Zahl mal 6 ergibt 54? Beginne mit 5 · 6 = 30."
+   }
+  },
+  {
+   "id": "5.4.1-K2-M-02",
+   "lernziel": "5.4.1-K2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "28 Kinder fahren zum Ausflug. 4 Kinder kommen zu Fuß. Die anderen fahren in Autos mit je 6 Plätzen. Wie viele Autos braucht man?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 18,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Kinder fahren wirklich mit dem Auto?",
+    "loesungsschritt": "28 − 4 = 24. Teile dann durch 6."
+   }
+  },
+  {
+   "id": "5.4.1-K2-M-03",
+   "lernziel": "5.4.1-K2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Aufgaben haben das Ergebnis 3? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "15 : 5",
+     "richtig": true
+    },
+    {
+     "text": "24 : 8",
+     "richtig": true
+    },
+    {
+     "text": "30 : 6",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "63 : 9",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Aufgabe mit der Umkehraufgabe nach.",
+    "loesungsschritt": "15 : 5 = 3, denn 3 · 5 = 15."
+   }
+  },
+  {
+   "id": "5.4.1-K2-M-04",
+   "lernziel": "5.4.1-K2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? 72 : ▢ = 9",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 63,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nutze die Umkehraufgabe.",
+    "loesungsschritt": "9 · ▢ = 72. Probiere 9 · 5 = 45 und gehe weiter."
+   }
+  },
+  {
+   "id": "5.4.1-K2-M-05",
+   "lernziel": "5.4.1-K2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Durch welche Zahl musst du 36 teilen, um 9 zu erhalten?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 27,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell die Aufgabe mit Platzhalter auf.",
+    "loesungsschritt": "36 : ▢ = 9. Welche Zahl mal 9 ergibt 36?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-M-06",
+   "lernziel": "5.4.1-K2",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Max rechnet 56 : 8 = 8. Wie zeigst du ihm am besten, dass das falsch ist?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ich sage ihm das richtige Ergebnis.",
+     "richtig": false
+    },
+    {
+     "text": "Gar nicht. Das Ergebnis stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "Mit der Probe: 8 · 8 = 64. Das ist nicht 56.",
+     "richtig": true
+    },
+    {
+     "text": "Mit 8 + 8.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Rechnung prüft eine Geteilt-Aufgabe?",
+    "loesungsschritt": "Rechne 8 · 8 und vergleiche mit 56."
+   }
+  },
+  {
+   "id": "5.4.1-K2-E-01",
+   "lernziel": "5.4.1-K2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Ich denke mir eine Zahl. Ich teile sie durch 9 und erhalte 4. Welche Zahl habe ich mir gedacht?",
+   "loesung": 36,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie kannst du das Teilen rückgängig machen?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-E-02",
+   "lernziel": "5.4.1-K2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Durch welche Zahl ist 24 nicht teilbar?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "7",
+     "richtig": true
+    },
+    {
+     "text": "2",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "3",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "text": "8",
+     "richtig": false,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Zahl: Geht die Geteilt-Aufgabe ohne Rest auf?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-E-03",
+   "lernziel": "5.4.1-K2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Wie viele Zahlen von 1 bis 10 teilen 36 ohne Rest?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergiss die 1 nicht. Und teilt die Zahl 10 auch?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-E-04",
+   "lernziel": "5.4.1-K2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "24 : 4 = 6. Wie viel ist 24 : 6?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "div-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Mal-Aufgabe gehört zu beiden Geteilt-Aufgaben?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-E-05",
+   "lernziel": "5.4.1-K2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Die Zahl 24 wird durch 4 geteilt. Das Ergebnis wird noch einmal durch 3 geteilt. Was kommt heraus?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was kommt nach dem ersten Teilen heraus? Und was passiert, wenn du gleich durch 12 teilst?"
+   }
+  },
+  {
+   "id": "5.4.1-K2-E-06",
+   "lernziel": "5.4.1-K2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tim sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche 24 : 3 und 24 : 12. Wähle die richtige Antwort.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein. Das Ergebnis bleibt immer gleich.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. Größere Zahlen ergeben größere Ergebnisse.",
+     "richtig": false
+    },
+    {
+     "text": "Nein. 24 : 3 = 8, aber 24 : 12 = 2. Das Ergebnis wird kleiner.",
+     "richtig": true
+    },
+    {
+     "text": "Ja. Beim Malnehmen ist das auch so.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir vor, du verteilst Kuchen an mehr Kinder. Was passiert mit jedem Stück?"
    }
   }
  ]
