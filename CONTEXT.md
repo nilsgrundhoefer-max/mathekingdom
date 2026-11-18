@@ -63,11 +63,26 @@ Eine Stichprobe, etwa jede achte Aufgabe ab M: Der Schüler wählt aus vier Antw
 _Avoid_: Heftkontrolle (die macht die Lehrkraft von Hand)
 
 **Niveaustufe**:
-Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau). Die Stufen unterscheiden sich zuerst in der Art der Anforderung, erst danach in der Zahlengröße: F eine Handlung in einem Schritt, G ein Standardverfahren in einem Schritt, M mehrschrittig mit Übersetzen und Deuten, E Strukturen, Lücken und Behauptungen (siehe ADR 0009).
+Eine von vier Anforderungsstufen einer Aufgabe: F (Grundlage: Basiskompetenzen mit größtmöglicher Unterstützung), G (grundlegendes Niveau, Hauptschulabschluss), M (mittleres Niveau, Realschulabschluss), E (erweitertes Niveau, Zugabe Richtung Gymnasium). Die Stufen unterscheiden sich in der Art der Anforderung, nicht in der Zahlengröße: F ein Schritt am Bild oder Material, G ein Standardverfahren, M mehrschrittig mit Übersetzen und Deuten, E Strukturen, Verallgemeinern und Begründen. F wird nie gewählt, sondern nur über die Grundlagen-Schleife erreicht (siehe ADR 0015).
 _Avoid_: Schwierigkeit, Level, Sterne, Siegel
 
+**Grundlage**:
+Der Baustein, den ein Lernziel voraussetzt und den seine F-Aufgaben üben, in einem Satz im Jahresplan (zum Beispiel „Entbündeln: 1 Zehner sind 10 Einer“). So heißt F auch für die Schüler.
+_Avoid_: Förderaufgabe, Bronze-Aufgabe
+
+**Grundlagen-Schleife**:
+Der Umweg über F bei einem einzelnen Lernziel: Löst ein Schüler auf G zwei Aufgaben trotz Lösungsschritt-Kärtchen nicht oder wird das Lernziel wackelig, kommen F-Aufgaben, bis drei richtig sind. Dann geht es von selbst zurück. Beim zweiten Mal erfährt es die Lehrkraft als Impuls mit dem Namen der Grundlage.
+_Avoid_: Abstieg, Herunterstufen
+
+**Nachweis**:
+Die Rechnungen oder die benannte Prüfart, mit denen der Prüfer die Lösung einer Aufgabe unabhängig vom Erzeuger nachrechnet. Nicht zu verwechseln mit dem Nachweisen eines Lernziels durch den Schüler.
+
+**Aufgabenbild**:
+Ein schematisches Bild zu einer Aufgabe, im Dashboard aus den Zahlen der Aufgabe gezeichnet: Zehnerfeld, Mengenbild, Gruppenbild, Punktefeld, Zehnermaterial, Stellenwerttafel, Streifenbild, Vergleichsbild, Zahlenstrahl. Jede F-Aufgabe hat eines, auf G mindestens drei von sechs.
+_Avoid_: Illustration, Grafik
+
 **Zielniveau**:
-Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard M, von der Lehrkraft pro Schüler anpassbar.
+Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard M, von der Lehrkraft pro Schüler anpassbar. Bei Zielniveau F arbeitet der Schüler fest auf F, ohne Grundlagen-Schleife.
 _Avoid_: Leistungsstufe, Einstufung
 
 **Jahresplan**:
@@ -115,7 +130,7 @@ Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln 
 _Avoid_: Vorwissen (für die Verknüpfung)
 
 **Brücke**:
-Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard vorschlägt, wenn ein Lernziel wackelig wird. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
+Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard auf M und E vorschlägt, wenn ein Lernziel wackelig wird. Auf G greift stattdessen die Grundlagen-Schleife. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
 _Avoid_: Förderaufgabe, Rückweg
 
 **Training**:
@@ -137,11 +152,11 @@ Die nicht ausgebbare Auszeichnung eines Meilensteins, in einer der vier Kronenfa
 _Avoid_: Meilensteinkrone, Pokal, Medaille
 
 **Kronenfarbe**:
-Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (M), Purpur (E). Im Schüler-Dashboard erscheinen nur die Kronenfarben, im Lehrer-Dashboard nur die Niveaustufen.
+Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (M), Purpur (E). Bronze ist nur Anerkennung für drei richtige Aufgaben der Grundlage und steht nicht zur Wahl. Im Schüler-Dashboard erscheinen nur die Kronenfarben, im Lehrer-Dashboard nur die Niveaustufen.
 _Avoid_: Kronenstufe, Lila, Purple
 
 **Kronenwahl**:
-Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau.
+Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F.
 _Avoid_: Straße wechseln, Niveauwahl (auf dem Bildschirm)
 
 **Selbsteinschätzung**:
@@ -207,7 +222,7 @@ Die Schreibweise aller Aufgaben auf F und G: ein Gedanke pro Satz, keine Nebens�
 _Avoid_: Leichte Sprache (die trennt Wörter mit Bindestrich, das tun wir nicht)
 
 **Anforderungsbereich (AFB)**:
-Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge herstellen, III beurteilen und begründen. Er wird relativ zur Niveaustufe gelesen. Je Lernziel und Niveaustufe gibt es sechs Aufgaben in der Folge I, II, II, I, II, III.
+Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge herstellen, III beurteilen und begründen. Er wird relativ zur Niveaustufe gelesen. Je Lernziel und Niveaustufe gibt es sechs Aufgaben in fester Folge: F I, I, I, I, II, I; G I, I, II, I, II, III; M I, II, II, I, II, III; E I, II, II, III, II, III.
 _Avoid_: Schwierigkeit
 
 **Etappe**:
@@ -215,7 +230,7 @@ Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten 
 _Avoid_: Wochenmission, Wochenziel
 
 **Hilfekärtchen**:
-Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Nach dem ersten falschen Versuch öffnet sich der Tipp von selbst. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
+Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
 
 **Hilferuf**:

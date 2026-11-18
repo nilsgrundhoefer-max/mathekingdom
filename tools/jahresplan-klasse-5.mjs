@@ -191,6 +191,68 @@ export const merkzettel = {
 // Eine Aufgabe zeigt nur die Wörter bis zu ihrer eigenen Stufe. Die Aufgabentexte einer Stufe benutzen keine Wörter höherer Stufen.
 const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
 export const wortspeicher = {
+  '5.3.1': [
+    w('plus', 'F', 'So liest du das Zeichen +. Es kommt etwas dazu.'),
+    w('minus', 'F', 'So liest du das Zeichen −. Es geht etwas weg.'),
+    w('Zehner', 'F', 'Zehn Einer sind ein Zehner. Die Zahl 34 hat 3 Zehner und 4 Einer.'),
+    w('Nachbarzehner', 'F', 'Die glatte Zehnerzahl davor oder danach. Die Nachbarzehner von 34 sind 30 und 40.'),
+    w('Tauschaufgabe', 'F', 'Die Zahlen tauschen den Platz. 3 + 9 und 9 + 3 ergeben beide 12.'),
+    w('addieren', 'G', 'Plus rechnen.'),
+    w('subtrahieren', 'G', 'Minus rechnen.'),
+    w('ergänzen', 'G', 'Ausrechnen, wie viel bis zu einer Zahl noch fehlt.'),
+    w('Rechenvorteil', 'M', 'Ein geschickter Weg, der das Rechnen leichter macht.'),
+    w('Umkehraufgabe', 'M', 'Die Rechnung, die eine andere rückgängig macht. Zu 52 − 4 = 48 gehört 48 + 4 = 52.'),
+    w('Summand', 'E', 'Eine Zahl, die addiert wird. Bei 34 + 12 sind 34 und 12 die Summanden.'),
+  ],
+  '5.3.2': [
+    w('plus', 'F', 'So liest du das Zeichen +. Es kommt etwas dazu.'),
+    w('zusammen', 'F', 'Alles wird zusammengezählt.'),
+    w('Zehner', 'F', 'Zehn Einer sind ein Zehner. Die Zahl 34 hat 3 Zehner und 4 Einer.'),
+    w('Ergebnis', 'F', 'Die Zahl hinter dem Zeichen =.'),
+    w('addieren', 'G', 'Plus rechnen.'),
+    w('Summand', 'G', 'Eine Zahl, die addiert wird. Bei 34 + 12 sind 34 und 12 die Summanden.'),
+    w('Summe', 'G', 'Das Ergebnis einer Plus-Aufgabe. Bei 34 + 12 = 46 ist 46 die Summe.'),
+    w('schriftlich addieren', 'G', 'Die Zahlen stehen untereinander. Du rechnest Stelle für Stelle von rechts nach links.'),
+    w('Übertrag', 'G', 'Der Zehner, den du in die nächste Spalte mitnimmst.'),
+    w('Überschlag', 'G', 'Du rechnest mit runden Zahlen. So siehst du, wie groß das Ergebnis ungefähr ist.'),
+    w('runden', 'G', 'Eine Zahl durch eine glatte Zahl in der Nähe ersetzen. Aus 48 wird 50.'),
+    w('Probe', 'G', 'Du prüfst dein Ergebnis mit der Minus-Aufgabe. Zu 34 + 12 = 46 gehört 46 − 12 = 34.'),
+    w('Umkehraufgabe', 'M', 'Die Rechnung, die eine andere rückgängig macht. Zur Addition gehört die Subtraktion.'),
+    w('Term', 'E', 'Ein Rechenausdruck aus Zahlen, Rechenzeichen und Klammern, zum Beispiel 34 + 12.'),
+  ],
+  '5.3.3': [
+    w('minus', 'F', 'So liest du das Zeichen −. Es geht etwas weg.'),
+    w('wegnehmen', 'F', 'Etwas geht weg. Danach ist es weniger.'),
+    w('tauschen', 'F', 'Du wechselst 1 Zehner in 10 Einer. Der Wert bleibt gleich.'),
+    w('Ergebnis', 'F', 'Die Zahl hinter dem Zeichen =.'),
+    w('subtrahieren', 'G', 'Minus rechnen.'),
+    w('Minuend', 'G', 'Die Zahl, von der abgezogen wird. Bei 46 − 12 ist 46 der Minuend.'),
+    w('Subtrahend', 'G', 'Die Zahl, die abgezogen wird. Bei 46 − 12 ist 12 der Subtrahend.'),
+    w('Differenz', 'G', 'Das Ergebnis einer Minus-Aufgabe. Bei 46 − 12 = 34 ist 34 die Differenz.'),
+    w('schriftlich subtrahieren', 'G', 'Die Zahlen stehen untereinander. Du rechnest Stelle für Stelle von rechts nach links.'),
+    w('Übertrag', 'G', 'Die 1, die du dir für die nächste Spalte merkst.'),
+    w('Überschlag', 'G', 'Du rechnest mit runden Zahlen. So siehst du, wie groß das Ergebnis ungefähr ist.'),
+    w('Probe', 'G', 'Du prüfst dein Ergebnis mit der Plus-Aufgabe. Zu 46 − 12 = 34 gehört 34 + 12 = 46.'),
+    w('Umkehraufgabe', 'M', 'Die Rechnung, die eine andere rückgängig macht. Zur Subtraktion gehört die Addition.'),
+    w('Term', 'E', 'Ein Rechenausdruck aus Zahlen, Rechenzeichen und Klammern, zum Beispiel 46 − 12.'),
+  ],
+  '5.3.4': [
+    w('Klammer', 'F', 'Die Zeichen ( und ). Was in der Klammer steht, rechnest du zuerst.'),
+    w('zuerst', 'F', 'Das kommt als Erstes dran.'),
+    w('Rechenausdruck', 'G', 'Eine Rechnung aus Zahlen, Rechenzeichen und Klammern, zum Beispiel 20 − (5 + 3).'),
+    w('Summe', 'G', 'Das Ergebnis einer Plus-Aufgabe.'),
+    w('Differenz', 'G', 'Das Ergebnis einer Minus-Aufgabe.'),
+    w('Minusklammer', 'M', 'Eine Klammer hinter einem Minus. Alles in ihr wird zusammen abgezogen.'),
+    w('Term', 'E', 'Ein anderes Wort für Rechenausdruck.'),
+  ],
+  '5.3.5': [
+    w('Tauschaufgabe', 'F', 'Die Zahlen tauschen den Platz. 3 + 9 und 9 + 3 ergeben beide 12.'),
+    w('zusammen', 'F', 'Alles wird zusammengezählt.'),
+    w('Vertauschungsgesetz', 'G', 'Beim Addieren darfst du die Zahlen vertauschen. 17 + 48 = 48 + 17.'),
+    w('Verbindungsgesetz', 'G', 'Beim Addieren darfst du die Klammern beliebig setzen. (17 + 48) + 52 = 17 + (48 + 52).'),
+    w('Rechenvorteil', 'M', 'Ein geschickter Weg, der das Rechnen leichter macht.'),
+    w('Term', 'E', 'Ein Rechenausdruck aus Zahlen, Rechenzeichen und Klammern.'),
+  ],
   '5.4.1': [
     w('mal', 'F', 'So liest du das Zeichen ·. 3 · 4 heißt: 3 Päckchen mit je 4.'),
     w('geteilt durch', 'F', 'So liest du das Zeichen :. 12 : 3 heißt: 12 gerecht in 3 Teile.'),
@@ -247,6 +309,36 @@ const voraussetzungen = {
   '5.4.1-K2': ['5.4.1-K1'],
 };
 
+// Grundlage (ADR 0015): der Baustein, den die Förderstufe F zu diesem Lernziel übt. Das Lehrer-Dashboard nennt ihn,
+// wenn ein Kind zum zweiten Mal auf die Grundlage zurückfällt. Die Zuordnung lehnt sich an „Mathe sicher können“ an.
+const grundlagen = {
+  '5.3.1-K1': 'Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100',
+  '5.3.1-K2': 'Wegnehmen und Ergänzen in Schritten bis 100',
+  '5.3.1-K3': 'Zahlen, die zusammen 10 oder 100 ergeben',
+  '5.3.2-A1': 'Plus als „zusammen“ und „dazu“: Aufgabe und Bild zuordnen',
+  '5.3.2-A2': 'Bündeln: 10 Einer sind 1 Zehner, dann Rechnen im Stellenraster',
+  '5.3.2-A3': 'Drei Zahlen im Raster ohne Übertrag, passende Zehner zuerst',
+  '5.3.2-A4': 'Nachbarzehner finden, Plus mit Minus rückgängig machen',
+  '5.3.2-A5': 'Dazukommen und Zusammenlegen am Bild, Rechnung zuordnen',
+  '5.3.3-S1': 'Minus als „wegnehmen“: Aufgabe und Bild zuordnen',
+  '5.3.3-S2': 'Entbündeln: 1 Zehner sind 10 Einer, dann Rechnen im Stellenraster',
+  '5.3.3-S3': 'Zweimal nacheinander wegnehmen',
+  '5.3.3-S4': 'Minus mit Plus rückgängig machen, Nachbarzehner',
+  '5.3.3-S5': 'Wegnehmen am Bild, Rechnung und Geschichte zuordnen',
+  '5.3.4-B1': 'In zwei Schritten rechnen: erst zusammenfassen, dann weiter',
+  '5.3.4-B2': 'Geschichte mit zwei Schritten der passenden Rechnung zuordnen',
+  '5.3.5-R1': 'Tauschaufgaben wie 3 + 5 und 5 + 3',
+  '5.3.5-R2': 'Passende Zehner suchen, zum Beispiel 7 + 5 + 3',
+  '5.4.1-K1': 'Mal-Aufgaben im Punktefeld sehen, Kernaufgaben mit 2, 5 und 10',
+  '5.4.1-K2': 'Gerecht verteilen im Punktefeld, Mal-Aufgabe als Hilfe',
+  '5.4.5-D1': 'Teilen als Verteilen und als Aufteilen in Gruppen',
+  '5.4.5-D2': 'Einmaleins rückwärts, dann mit Zehnerzahlen (12 : 3 und 120 : 3)',
+  '5.4.5-D3': 'Durch 10 teilen',
+  '5.4.5-D4': 'Plättchen verteilen, einige bleiben übrig',
+  '5.4.5-D5': 'Geteilt mit Mal rückgängig machen',
+  '5.4.5-D6': 'Verteil- und Aufteil-Geschichten, Rechnung zuordnen',
+};
+
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".
 export const kapitel = roh.map(([titel, unterkapitel], k) => {
   let nr = 0;
@@ -258,7 +350,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => {
       const id = u.extra ? `5.${k + 1}.X${++extraNr}` : `5.${k + 1}.${++nr}`;
       const lernziele = Array.isArray(u.lernziele)
         ? u.lernziele.map((text, i) => ({ id: `${id}-L${i + 1}`, text }))
-        : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(voraussetzungen[`${id}-${kurz}`] && { voraussetzungen: voraussetzungen[`${id}-${kurz}`] }) }));
+        : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(voraussetzungen[`${id}-${kurz}`] && { voraussetzungen: voraussetzungen[`${id}-${kurz}`] }), ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }) }));
       return { id, titel: u.titel, extra: u.extra, lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
     }),
   };

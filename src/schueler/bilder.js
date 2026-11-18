@@ -223,7 +223,8 @@ const gliedere = (n) => (n >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ')
 
 // Zahlenstrahl. strahl: { von, bis, schritt, beschriftung, start?, spruenge?: [{ von, nach, text }], pfeil? }
 // Mit beiWahl lässt sich ein Teilstrich antippen; gewaehlt ist der gerade markierte Wert.
-export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null } = {}) {
+// startwort: false zeichnet nur den Punkt, ohne das Wort „Start“ (Bilder, in denen nichts gesprungen wird).
+export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwort = true } = {}) {
   const { von, bis, schritt, beschriftung } = strahl;
   const B = 720, links = 34, rechts = 44, y = 78;
   const x = (w) => links + ((w - von) / (bis - von)) * (B - links - rechts);
@@ -247,8 +248,8 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null } = {}) {
     svg.append(g);
   }
   if (strahl.start != null) {
-    svg.append(s('circle', { cx: x(strahl.start), cy: y, r: 7, class: 'start' }),
-      s('text', { x: x(strahl.start), y: y + 52, 'text-anchor': 'middle', class: 'startwort' }, 'Start'));
+    svg.append(s('circle', { cx: x(strahl.start), cy: y, r: 7, class: 'start' }));
+    if (startwort) svg.append(s('text', { x: x(strahl.start), y: y + 52, 'text-anchor': 'middle', class: 'startwort' }, 'Start'));
   }
   for (const sp of strahl.spruenge ?? []) {
     const a = x(sp.von), b = x(sp.nach), hoch = Math.min(46, 16 + Math.abs(b - a) / 6);

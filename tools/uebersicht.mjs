@@ -4,10 +4,28 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const pool = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json', import.meta.url), 'utf8'));
-const NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
+const NAMEN = { F: 'Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)', G: 'Grundlegendes Niveau (Hauptschulabschluss)', M: 'Mittleres Niveau (Realschulabschluss)', E: 'Erweitertes Niveau (Zugabe Richtung Gymnasium)' };
 const flach = (t) => String(t).replace(/\n/g, ' / ');
 const fehler = (liste) => (liste?.length ? ` Typische Fehler: ${liste.map((f) => `${f.wert} (${f.fehlvorstellung})`).join(', ')}.` : '');
 const zahl = (a) => `**${a.loesung}${a.einheit ? ' ' + a.einheit : ''}**.${fehler(a.typischeFehler)}`;
+
+// Bild zur Aufgabe in Worten, damit die Durchsicht auch ohne Dashboard sieht, was gezeichnet wird.
+const wert = (w) => (typeof w === 'object' ? (w.frage ? '?' : w.wert) : w);
+const bild = (b) => {
+  if (!b) return '';
+  const text = {
+    zehnerfeld: () => `Zehnerfeld mit ${b.felder} Feldern, ${b.belegt} belegt${b.dazu ? `, ${b.dazu} dazu` : ''}${b.weg ? `, ${b.weg} durchgestrichen` : ''}`,
+    mengenbild: () => `Mengenbild: ${b.anzahl} Plättchen${b.dazu ? `, ${b.dazu} dazu` : ''}${b.weg ? `, ${b.weg} durchgestrichen` : ''}`,
+    gruppenbild: () => `${b.gruppen} Gruppen mit je ${b.je} Plättchen${b.rest ? `, ${b.rest} einzeln daneben` : ''}`,
+    punktefeld: () => `Punktefeld mit ${b.reihen} Reihen zu je ${b.spalten} Punkten${b.trenn ? `, Trennlinie nach ${b.trenn} Reihen` : ''}`,
+    zehnermaterial: () => `Zehnermaterial: ${b.h ? `${b.h} Hunderterplatten, ` : ''}${b.z} Zehnerstangen, ${b.e} Einerwürfel${b.weg ? `, durchgestrichen: ${JSON.stringify(b.weg)}` : ''}`,
+    stellenwerttafel: () => `Stellenwerttafel ${b.spalten.map((x, i) => `${x}: ${b.plaettchen[i]}`).join(', ')}`,
+    streifen: () => `Streifenbild: Ganzes ${wert(b.ganz)}, Teile ${b.teile.map(wert).join(' und ')}`,
+    vergleich: () => `Vergleichsbild: ${b.oben.name} ${wert(b.oben.wert)}, ${b.unten.name} ${wert(b.unten.wert)}${b.unterschied != null ? `, Unterschied ${wert(b.unterschied)}` : ''}`,
+    zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
+  }[b.art];
+  return ` _(Bild: ${text ? text() : b.art})_`;
+};
 
 const loesung = (a) => {
   if (a.format === 'zahl') return `Lösung: ${zahl(a)}`;
@@ -18,7 +36,7 @@ const loesung = (a) => {
   if (a.format === 'diagramm') return `\n  _(Säulendiagramm „${a.diagramm.titel}“: ${a.diagramm.saeulen.map((x) => `${x.name} ${x.wert}`).join(', ')}; Werte ${a.diagramm.werteZeigen ? 'stehen an den Säulen' : 'müssen abgelesen werden'})_\n${a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n')}`;
   if (a.format === 'tabelle') {
     const zelle = (c) => (typeof c === 'object' ? `**${a.luecken[c.luecke].loesung}**` : c);
-    return `\n\n  | ${a.tabelle.kopf.join(' | ')} |\n  |${a.tabelle.kopf.map(() => '---').join('|')}|\n${a.tabelle.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n`;
+    return `${a.tabelle.art === 'raster' ? ' _(Rechenraster mit Ziffernfeldern)_' : ''}\n\n  | ${a.tabelle.kopf.join(' | ')} |\n  |${a.tabelle.kopf.map(() => '---').join('|')}|\n${a.tabelle.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n`;
   }
   if (a.format === 'auswahl') return a.optionen.map((o) => `  - ${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join('\n');
   if (a.format === 'luecken') return `Lösung: ${Object.entries(a.luecken).map(([n, l]) => `${n} = **${l.loesung}**`).join(', ')}`;
@@ -30,16 +48,17 @@ let md = `# Aufgaben Klasse 5: Übersicht zur Durchsicht\n\nAutomatisch erzeugt 
 for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.lernziele) {
   const eigene = pool.aufgaben.filter((a) => a.lernziel === l.id);
   if (!eigene.length) continue;
-  md += `\n## ${l.id}: ${l.text}\n`;
+  md += `\n## ${l.id}: ${l.text}\n\nGrundlage, die F übt: ${l.grundlage}\n`;
   for (const n of Object.keys(NAMEN)) {
     const gruppe = eigene.filter((a) => a.niveau === n);
     md += `\n### ${n} · ${NAMEN[n]}\n\n`;
-    // Je Niveaustufe gibt es unterschiedlich viele Hilfekärtchen (ADR 0009). Zeilenumbrüche der einfachen Sprache werden zu " / ".
+    // Je Niveaustufe gibt es unterschiedlich viele Hilfekärtchen (ADR 0015). Zeilenumbrüche der einfachen Sprache werden zu " / ".
     const karten = (h) => [['tipp', 'Tipp'], ['beispiel', 'Beispiel'], ['loesungsschritt', 'Lösungsschritt']].filter(([f]) => h[f]).map(([f, n]) => `*${n}:* ${flach(h[f])}`).join(' ');
+    if (!gruppe.length) continue;
     md += `Hilfekärtchen der ersten Aufgabe: ${karten(gruppe[0].hilfen)}\n\n`;
     for (const a of gruppe) {
       const mehrzeilig = a.format === 'auswahl' || a.format === 'sachaufgabe';
-      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
+      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
     }
   }
 }

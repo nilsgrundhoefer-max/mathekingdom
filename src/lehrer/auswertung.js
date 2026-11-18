@@ -520,6 +520,19 @@ export function brueckenImpulse(staende, index, jetzt) {
   return liste;
 }
 
+// Grundlagen-Hinweise (ADR 0015): Ein Kind ist bei einem Lernziel zum zweiten Mal von G auf die Grundlage (F) zurückgefallen.
+// Die Lehrkraft erfährt, welcher Baustein dort geübt wird. Beim ersten Mal bleibt es still: Die Schleife ist der normale Weg.
+export function grundlagenHinweise(staende, index) {
+  const liste = [];
+  for (const { code, stand } of staende) {
+    for (const [lernziel, g] of Object.entries(stand.grundlage ?? {})) {
+      if (g.mal < L.GRUNDLAGE_HINWEIS_AB) continue;
+      liste.push({ code, lernziel, mal: g.mal, aktiv: Boolean(g.aktiv), baustein: index.lernziel.get(lernziel)?.grundlage ?? null });
+    }
+  }
+  return liste;
+}
+
 export function alteBackups(namen, jetzt, tage = 14) {
   const zeit = (n) => new Date(`${n.slice(0, 10)}T${n.slice(11, 13)}:${n.slice(14, 16)}:00`);
   const grenze = new Date(jetzt).getTime() - tage * 86400000;

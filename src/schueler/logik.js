@@ -18,12 +18,18 @@ export const KRONEN = { F: 'Bronze', G: 'Silber', M: 'Gold', E: 'Purpur' };
 // Lernziel-Regel (Startwerte, später pro Klasse einstellbar).
 export const LERNZIEL_RICHTIGE = 3;
 export const LERNZIEL_AUF_ZIELNIVEAU = 2;
-// Anforderungsbereiche: Reihenfolge der sechs Aufgaben einer Gruppe, Mindestanspruch für das Siegel, Zuschlag für AFB III.
-export const AFB_FOLGE = [1, 2, 2, 1, 2, 3];
+// Anforderungsbereiche: Reihenfolge der sechs Aufgaben einer Gruppe je Niveaustufe (ADR 0015), Mindestanspruch für das Siegel, Zuschlag für AFB III.
+// F bleibt beim Wiedergeben und Anwenden, E hat zwei Aufgaben zum Begründen und Verallgemeinern.
+export const AFB_FOLGEN = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1, 2, 3], E: [1, 2, 2, 3, 2, 3] };
 export const AFB_FUER_STERN = 2;
 export const AFB3_ZUSCHLAG = 1.5;
 export const STANDARD_ZIELNIVEAU = 'M';
 export const KARTEN = ['tipp', 'beispiel', 'loesungsschritt'];
+// Auf F liegt das erste Hilfekärtchen von Anfang an offen. Auf E geht nach einem Fehlversuch keines von selbst auf (ADR 0015).
+export const kartenZuBeginn = (aufgabe) => (aufgabe.niveau === 'F' && aufgabe.hilfen?.tipp ? 1 : 0);
+export const tippVonSelbst = (aufgabe) => aufgabe.niveau !== 'E' && Boolean(aufgabe.hilfen?.tipp);
+// Um diese Kronen kann ein Schüler spielen. Bronze steht nur zur Wahl, wenn die Lehrkraft das Ziel auf F gesetzt hat (ADR 0015).
+export const wahlNiveaus = (zielniveau) => (zielniveau === 'F' ? NIVEAUS : NIVEAUS.slice(1));
 // Welche Hilfekärtchen bei einem Versuch aufgedeckt wurden. Alte Einträge kennen nur die Anzahl.
 export const hatKarte = (v, name) => (v.karten ? v.karten.includes(name) : (v.hilfen ?? 0) > KARTEN.indexOf(name));
 
@@ -136,10 +142,11 @@ export function istWackelig(stand, lernzielId) {
 }
 // Mit `index` gilt zusätzlich: Mindestens eine der richtigen Aufgaben stammt aus AFB II oder III,
 // sofern das Lernziel solche Aufgaben hat. Ohne `index` (reine Anzeige) wird das nicht geprüft.
+// Auf F gilt diese Bedingung nicht: Bronze gibt es für drei richtige Aufgaben (ADR 0015).
 export function lernzielStand(stand, lernzielId, zielniveau, index = null) {
   const ziel = NIVEAUS.indexOf(zielniveau);
   const alle = new Set(), aufZiel = new Set();
-  let anspruch = !index?.mitAnspruch.has(lernzielId);
+  let anspruch = zielniveau === 'F' || !index?.mitAnspruch.has(lernzielId);
   for (const v of stand.versuche) {
     if (v.lernziel !== lernzielId || !zaehlt(v)) continue;
     alle.add(v.aufgabe);
@@ -244,10 +251,10 @@ export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.
     kandidaten.filter((a) => bearbeitet.has(a.id) && !geloest.has(a.id)),
     kandidaten,
   ];
-  // Unter den neuen Aufgaben zuerst den Anforderungsbereich, der in der Folge I, II, II, I, II, III an der Reihe ist.
-  const wunsch = AFB_FOLGE[kandidaten.filter((a) => bearbeitet.has(a.id)).length];
-  const passend = stufen[0].filter((a) => a.afb === wunsch);
-  for (const stufe of [passend, ...stufen]) {
+  // Neue Aufgaben kommen in der Reihenfolge ihrer Nummern. So folgen die Anforderungsbereiche der festen Folge der Niveaustufe
+  // (AFB_FOLGEN), und die Aufgaben einer Gruppe bauen aufeinander auf.
+  const erste = [...stufen[0]].sort((a, b) => a.id.localeCompare(b.id)).slice(0, 1);
+  for (const stufe of [erste, ...stufen]) {
     const ohneLetzte = stufe.filter((a) => a.id !== letzte);
     const auswahl = ohneLetzte.length ? ohneLetzte : stufe;
     if (auswahl.length) return auswahl[Math.floor(zufall() * auswahl.length)];
@@ -307,7 +314,9 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     if (kroneJetzt) { e.krone = kroneJetzt; e.kroneAm = jetzt; ersteKrone = true; }
   }
   const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
-  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft };
+  // Grundlagen-Schleife (ADR 0015): nur beim Üben am Meilenstein und nur, wenn das Ziel nicht ohnehin F ist.
+  const grundlage = !rueckblick && !bruecke && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
+  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage };
 }
 
 // ---------- Rückblick (ADR 0014) ----------
@@ -440,13 +449,13 @@ export const naechsteEinstiegsAufgabe = (stand, kapitelId) => {
   return e && !e.fertig ? e.aufgaben.find((id) => !e.erledigt.some((x) => x.aufgabe === id)) ?? null : null;
 };
 // Vorschlag für die Kronenwahl aus den Ergebnissen: alles richtig → E, M mindestens zur Hälfte → M, G mindestens zur Hälfte → G, sonst F.
+// Die unterste Empfehlung ist G. F wird nie empfohlen: Dorthin führt nur die Grundlagen-Schleife (ADR 0015).
 export function einstiegsEmpfehlung(erledigt) {
   const quote = (n) => { const x = erledigt.filter((e) => e.niveau === n); return x.length ? x.filter((e) => e.richtig).length / x.length : 0; };
   const g = quote('G'), m = quote('M');
   if (g === 1 && m === 1) return 'E';
   if (m >= 0.5) return 'M';
-  if (g >= 0.5) return 'G';
-  return 'F';
+  return 'G';
 }
 export function trageEinstiegEin(stand, kapitelId, aufgabe, bearbeitung, jetzt) {
   const e = stand.einstieg?.[kapitelId];
@@ -463,12 +472,49 @@ export function ueberspringeEinstieg(stand, kapitelId, jetzt) {
   (stand.einstieg ??= {})[kapitelId] = { uebersprungen: jetzt };
 }
 
+// ---------- Grundlagen-Schleife (ADR 0015) ----------
+// Kommt ein Kind auf G bei einem Lernziel nicht weiter, übt es zuerst die Grundlage auf F und kehrt nach drei richtigen
+// Aufgaben von selbst zurück. Die Schleife gilt je Lernziel. F wird nie gewählt oder empfohlen.
+// stand.grundlage[lernziel] = { aktiv, ab, mal, t, zurueckAb? }: ab und zurueckAb sind Stellen im Versuchsprotokoll.
+export const GRUNDLAGE_RICHTIGE = 3;
+export const GRUNDLAGE_OHNE_ERFOLG = 2; // so viele Aufgaben trotz Lösungsschritt-Kärtchen nicht gelöst
+export const GRUNDLAGE_HINWEIS_AB = 2; // ab dem zweiten Mal erfährt es die Lehrkraft
+export const inGrundlage = (stand, lernzielId) => Boolean(stand.grundlage?.[lernzielId]?.aktiv);
+// Niveaustufe der nächsten Aufgabe zu diesem Lernziel.
+export const aufgabenNiveau = (stand, lernzielId, niveau) => (inGrundlage(stand, lernzielId) ? 'F' : niveau);
+const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke;
+// Wie viele verschiedene F-Aufgaben in der laufenden Schleife schon richtig sind.
+export function grundlageRichtige(stand, lernzielId) {
+  const g = stand.grundlage?.[lernzielId];
+  if (!g?.aktiv) return 0;
+  return new Set(stand.versuche.slice(g.ab).filter((v) => v.lernziel === lernzielId && v.niveau === 'F' && eigenerVersuch(v) && zaehlt(v)).map((v) => v.aufgabe)).size;
+}
+// Nach dem Verbuchen einer Aufgabe: beginnt die Schleife, läuft sie weiter oder endet sie?
+// Liefert null oder { art: 'beginnt' | 'laeuft' | 'endet', richtige, mal }.
+export function pruefeGrundlage(stand, aufgabe, jetzt, index = null) {
+  const id = aufgabe.lernziel, g = stand.grundlage?.[id];
+  if (g?.aktiv) {
+    const richtige = grundlageRichtige(stand, id);
+    if (richtige < GRUNDLAGE_RICHTIGE) return { art: 'laeuft', richtige, mal: g.mal };
+    g.aktiv = false; g.zurueckAb = stand.versuche.length; g.zurueckAm = jetzt;
+    return { art: 'endet', richtige, mal: g.mal };
+  }
+  if (aufgabe.niveau !== 'G' || (index && !(index.nach.get(`${id}|F`) ?? []).length)) return null;
+  const v = stand.versuche.slice(g?.zurueckAb ?? 0).filter((x) => x.lernziel === id && x.niveau === 'G' && eigenerVersuch(x));
+  const ohneErfolg = v.filter((x) => !x.richtig && hatKarte(x, 'loesungsschritt')).length;
+  const schritte = v.filter((x) => hatKarte(x, 'loesungsschritt')).length;
+  const wackelig = (v.length >= WACKELIG_AB && v.filter((x) => x.richtig).length / v.length < 0.5) || schritte >= 2;
+  if (ohneErfolg < GRUNDLAGE_OHNE_ERFOLG && !wackelig) return null;
+  (stand.grundlage ??= {})[id] = { aktiv: true, ab: stand.versuche.length, mal: (g?.mal ?? 0) + 1, t: jetzt };
+  return { art: 'beginnt', richtige: 0, mal: stand.grundlage[id].mal };
+}
+
 // ---------- Brücke (ADR 0014) ----------
 // Wird ein Lernziel wackelig, schlägt das Dashboard drei Aufgaben zu einer Voraussetzung vor, eine Stufe unter dem Zielniveau.
 // Höchstens eine Brücke je Lernziel und Tag; freiwillig.
 export const BRUECKE_AUFGABEN = 3;
 export function brueckeVorschlag(stand, index, lernzielId, jetzt) {
-  if (stand.brueckeAktiv || !istWackelig(stand, lernzielId)) return null;
+  if (stand.brueckeAktiv || inGrundlage(stand, lernzielId) || !istWackelig(stand, lernzielId)) return null;
   if ((stand.bruecken ?? []).some((b) => b.fuer === lernzielId && b.tag === tagVon(jetzt))) return null;
   const vor = (index.lernziel?.get(lernzielId)?.voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id));
   if (!vor.length) return null;
@@ -543,14 +589,19 @@ export function trageHeftcheckEin(stand, frage, richtig, jetzt) {
 }
 
 // ---------- Niveaustufe ----------
-export const arbeitsniveau = (stand, kapitelId, zielniveau) => stand.niveau[kapitelId] ?? zielniveau;
+// Wer früher um Bronze gespielt hat, spielt jetzt um Silber, außer die Lehrkraft hat das Ziel auf F gesetzt (ADR 0015).
+export const arbeitsniveau = (stand, kapitelId, zielniveau) => {
+  const n = stand.niveau[kapitelId] ?? zielniveau;
+  return wahlNiveaus(zielniveau).includes(n) ? n : 'G';
+};
 // 'hoch' nach 4 von 5 guten Aufgaben, 'runter' nach 3 nicht gelösten in Folge, sonst null.
-export function niveauVorschlag(stand, kapitelId, niveau) {
+// 'runter' gibt es nur zu einer Krone, die zur Wahl steht: nie von Silber auf Bronze, außer das Ziel ist F.
+export function niveauVorschlag(stand, kapitelId, niveau, zielniveau = STANDARD_ZIELNIVEAU) {
   const seit = stand.niveauMarke[kapitelId] ?? 0;
   const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
   const stufe = NIVEAUS.indexOf(niveau);
   if (stufe < 3 && eigene.length >= 5 && eigene.slice(-5).filter(zaehlt).length >= 4) return 'hoch';
-  if (stufe > 0 && eigene.length >= 3 && eigene.slice(-3).every((v) => !v.richtig)) return 'runter';
+  if (stufe > NIVEAUS.indexOf(wahlNiveaus(zielniveau)[0]) && eigene.length >= 3 && eigene.slice(-3).every((v) => !v.richtig)) return 'runter';
   return null;
 }
 export function setzeNiveau(stand, kapitelId, niveau) {

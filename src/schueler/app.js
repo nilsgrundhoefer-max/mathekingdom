@@ -7,6 +7,7 @@ import { h, mische } from './dom.js';
 import * as L from './logik.js';
 import * as S from './speicher.js';
 import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
+import { aufgabenBild } from './aufgabenbilder.js';
 
 const jetzt = () => new Date().toISOString();
 const z = { // Zustand der laufenden Sitzung
@@ -339,6 +340,8 @@ function brueckeKarte() {
 const lernzielText = (id) => (z.index.lernziel.get(id)?.text ?? id).replace(/\.$/, ''); // ohne Schlusspunkt, für Zitate im Satz
 // Brücken nur zu Lernzielen, die der Schüler auch öffnen darf.
 function brueckeAngebot(lernzielId) {
+  // Die Brücke gibt es ab Gold. Wer um Silber spielt, übt stattdessen die Grundlage (ADR 0015).
+  if (L.NIVEAUS.indexOf(L.arbeitsniveau(z.stand, L.kapitelVon(lernzielId), z.einst.zielniveau)) < L.NIVEAUS.indexOf('M')) return null;
   if ((z.brueckeAbgelehnt ??= new Set()).has(lernzielId)) return null;
   const v = L.brueckeVorschlag(z.stand, z.index, lernzielId, jetzt());
   if (!v || !z.einst.offeneKapitel.has(L.kapitelVon(v.zu))) return null;
@@ -468,17 +471,19 @@ function meilensteinTafel(kapitel, meilenstein, niveau) {
 }
 
 // Kronenwahl: „Spiele um …“. Sie gilt für das ganze Kapitel; voreingestellt ist das Zielniveau (ADR 0012).
+// Bronze steht nicht zur Wahl, außer die Lehrkraft hat das Ziel auf F gesetzt (ADR 0015).
 function kronenWahl(kapitel, niveau) {
   return h('div', { class: 'kronenwahl', role: 'group', 'aria-label': 'Um welche Krone spielst du?' },
     h('b', {}, 'Spiele um'),
-    h('div', { class: 'wahl' }, L.NIVEAUS.map((n) => h('button', { 'data-krone': n, 'aria-pressed': String(n === niveau),
+    h('div', { class: 'wahl' }, L.wahlNiveaus(z.einst.zielniveau).map((n) => h('button', { 'data-krone': n, 'aria-pressed': String(n === niveau),
       onclick: () => { if (n !== niveau) { L.setzeNiveau(z.stand, kapitel.id, n); geaendert(); male(); } } },
       kroneBild(n, 28), h('span', {}, L.KRONEN[n]), n === z.einst.zielniveau && h('span', { class: 'ziel' }, 'dein Ziel')))));
 }
 
 // ---------- Aufgabe ----------
 function starteAufgabe(lernzielId, niveau) {
-  const aufgabe = L.naechsteAufgabe(z.index, z.stand, lernzielId, niveau);
+  // In der Grundlagen-Schleife kommt die Aufgabe von F, bis drei davon richtig sind (ADR 0015).
+  const aufgabe = L.naechsteAufgabe(z.index, z.stand, lernzielId, L.aufgabenNiveau(z.stand, lernzielId, niveau));
   // Die Kronenwahl beim ersten Start eines Meilensteins ist die Selbsteinschätzung.
   const ms = z.index.meilensteinVon.get(lernzielId);
   if (ms) L.merkeWahl(z.stand, z.index, ms, niveau, jetzt());
@@ -490,9 +495,10 @@ function zeigeAufgabe(aufgabe, extra = {}) {
     const frage = L.heftcheckFrage(z.stand, z.index);
     if (frage) return zeige({ name: 'heftcheck', frage, danach: { aufgabe, extra }, gewaehlt: null });
   }
-  z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt(), fehlversuche: 0, hilfen: 0 };
+  const offen = L.kartenZuBeginn(aufgabe); // auf F liegt der Tipp von Anfang an offen
+  z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt(), fehlversuche: 0, hilfen: offen };
   geaendert();
-  zeige({ name: 'aufgabe', aufgabe, beginn: Date.now(), versuch: 0, hilfen: 0, eingaben: [], fehlvorstellungen: [], hinweis: null, ergebnis: null,
+  zeige({ name: 'aufgabe', aufgabe, beginn: Date.now(), versuch: 0, hilfen: offen, eingaben: [], fehlvorstellungen: [], hinweis: null, ergebnis: null,
     reihenfolge: aufgabe.format === 'zuordnen' ? mische(aufgabe.paare.map((p) => p.rechts)) : null, ...extra });
 }
 
@@ -502,7 +508,10 @@ function aufgabenAnsicht() {
   const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
   const meilenstein = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
   const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
-  const training = L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
+  // Eine F-Aufgabe beim Üben am Meilenstein gehört zur Grundlagen-Schleife, außer das Ziel des Kindes ist F (ADR 0015).
+  const grundlage = !a.rueckblick && !a.bruecke && !a.einstieg && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
+  const training = !grundlage && L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
+  const punkte = grundlage ? (L.inGrundlage(z.stand, auf.lernziel) ? L.grundlageRichtige(z.stand, auf.lernziel) : L.GRUNDLAGE_RICHTIGE) : st.erreicht ? 3 : st.fortschritt;
   const fertig = Boolean(a.ergebnis);
   // Sicherheitsangabe (ADR 0014): Beim ersten Versuch gibt es zwei Prüfen-Knöpfe, wenn die Lehrkraft sie eingeschaltet hat.
   const zweiKnoepfe = !fertig && a.versuch === 0 && z.einst.sicherheitsangabe && !a.einstieg;
@@ -522,11 +531,13 @@ function aufgabenAnsicht() {
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
+          : grundlage ? h('span', { class: 'marke grundlagenmarke', id: 'grundlage-marke' }, 'Grundlage')
           : h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
         !a.einstieg && training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
-        !a.einstieg && h('span', { class: 'punkte', title: `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' })))),
+        !a.einstieg && h('span', { class: 'punkte', title: grundlage ? `${punkte} von ${L.GRUNDLAGE_RICHTIGE} Aufgaben zur Grundlage` : `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < punkte ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
+      auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
       formular,
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
@@ -538,6 +549,8 @@ function eingabefelder(auf, a, gesperrt) {
   const zahlfeld = (name, einheit, wert) => h('span', { class: 'zahlfeld' },
     h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 9, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort' }),
     einheit && h('span', { class: 'einheit' }, einheit));
+  // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
+  const ziffernfeld = (name, wert, stellen = 1) => h('input', { class: 'ziffer', name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: stellen, maxLength: stellen, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Fehlende Ziffer' });
   const letzte = a.eingaben.at(-1);
   switch (auf.format) {
     case 'zahl': return zahlfeld('zahl', auf.einheit, letzte);
@@ -547,7 +560,8 @@ function eingabefelder(auf, a, gesperrt) {
         h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
     case 'luecken': return h('p', { class: 'aufgabentext luecken' }, auf.text.split(/(\{\{\w+\}\})/).map((stueck) => {
       const m = stueck.match(/^\{\{(\w+)\}\}$/);
-      return m ? zahlfeld(`luecke-${m[1]}`, null, letzte?.[m[1]]) : stueck;
+      if (!m) return stueck;
+      return auf.ziffernfelder ? ziffernfeld(`luecke-${m[1]}`, letzte?.[m[1]]) : zahlfeld(`luecke-${m[1]}`, null, letzte?.[m[1]]);
     }));
     case 'zuordnen': return h('div', { class: 'zuordnen' }, auf.paare.map((p) => h('label', {}, h('b', {}, p.links),
       h('select', { name: `paar-${p.links}`, disabled: gesperrt }, h('option', { value: '' }, 'bitte wählen'),
@@ -565,10 +579,10 @@ function eingabefelder(auf, a, gesperrt) {
       zeichne();
       return h('div', { class: 'mitbild' }, rahmen, wert, !gesperrt && h('p', { class: 'klein' }, 'Tippe auf den passenden Teilstrich.'));
     }
-    case 'tabelle': return h('div', { class: 'bildrahmen' }, h('table', { class: 'aufgabentabelle' },
+    case 'tabelle': return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
       h('thead', {}, h('tr', {}, auf.tabelle.kopf.map((k) => h('th', { scope: 'col' }, k)))),
       h('tbody', {}, auf.tabelle.zeilen.map((zeile) => h('tr', {}, zeile.map((zelle, i) => (typeof zelle === 'object'
-        ? h('td', {}, zahlfeld(`luecke-${zelle.luecke}`, null, letzte?.[zelle.luecke]))
+        ? h('td', {}, auf.tabelle.art === 'raster' ? ziffernfeld(`luecke-${zelle.luecke}`, letzte?.[zelle.luecke], String(auf.luecken[zelle.luecke].loesung).length > 1 ? 2 : 1) : zahlfeld(`luecke-${zelle.luecke}`, null, letzte?.[zelle.luecke]))
         : h(i === 0 ? 'th' : 'td', i === 0 ? { scope: 'row' } : {}, zelle))))))));
     default: return null;
   }
@@ -607,8 +621,8 @@ function pruefe(formular, sicher = null) {
   }
   if (!ergebnis.richtig && a.versuch < 2) {
     const gezielt = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis;
-    // Nach dem ersten Fehlversuch geht der Tipp von selbst auf. Er kostet nichts (ADR 0010).
-    const tippNeu = a.hilfen === 0 && Boolean(auf.hilfen.tipp);
+    // Nach dem ersten Fehlversuch geht der Tipp von selbst auf. Er kostet nichts (ADR 0010). Auf E bleibt er zu (ADR 0015).
+    const tippNeu = a.hilfen === 0 && L.tippVonSelbst(auf);
     if (tippNeu) a.hilfen = 1;
     a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'}${tippNeu ? ' Rechts liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
     // Sicher, aber falsch: Hier lohnt genaues Hinschauen besonders (Hyperkorrektur, ADR 0014).
@@ -657,18 +671,20 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
   if (a.bruecke) return brueckeErgebnis(a, meilenstein);
   const e = a.ergebnis, auf = a.aufgabe;
   const niveau = L.arbeitsniveau(z.stand, kapitelId, z.einst.zielniveau);
-  const vorschlag = L.niveauVorschlag(z.stand, kapitelId, niveau);
+  // In der Grundlagen-Schleife gibt es weder Kronenwechsel noch Brücke: Der Weg zurück ist schon festgelegt.
+  const schleife = L.inGrundlage(z.stand, auf.lernziel);
+  const vorschlag = schleife ? null : L.niveauVorschlag(z.stand, kapitelId, niveau, z.einst.zielniveau);
   const gemeistert = L.milestoneStatus(z.index, z.stand, meilenstein) === 'gemeistert';
   const weiter = (n = niveau) => {
-    const fertig = z.stand.lernziele[auf.lernziel] || L.lernzielStand(z.stand, auf.lernziel, n, z.index).erreicht;
+    const fertig = !schleife && (z.stand.lernziele[auf.lernziel] || L.lernzielStand(z.stand, auf.lernziel, n, z.index).erreicht);
     const lz = fertig ? L.naechstesLernziel(z.index, z.stand, meilenstein, n).id : auf.lernziel;
     starteAufgabe(lz, n);
   };
   const ziel = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)];
-  const bruecke = !z.stand.lernziele[auf.lernziel] && brueckeAngebot(auf.lernziel);
+  const bruecke = !schleife && !z.stand.lernziele[auf.lernziel] && brueckeAngebot(auf.lernziel);
   return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
     h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
-    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
+    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), e.grundlage?.art === 'beginnt' ? '. Schau sie dir in Ruhe an.' : '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
     e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen',
       e.training && ` (unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger)`),
     e.richtig && auf.afb === 3 && e.muenzen > 1 && h('p', { class: 'klein' }, 'Knobelaufgabe: Dafür gibt es die Hälfte mehr Münzen.'),
@@ -680,6 +696,8 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
     e.einschaetzung && h('p', { class: 'klein', id: 'einschaetzung' }, `Du hattest um ${L.KRONEN[e.einschaetzung.gewaehlt]} gespielt. Geschafft hast du ${L.KRONEN[e.einschaetzung.krone]}.`),
     e.neueKrone && L.unterZiel(e.neueKrone.niveau, z.einst.zielniveau) && h('p', { class: 'klein' }, `Für den Meilenstein brauchst du ${L.KRONEN[z.einst.zielniveau]}.`),
     e.neuesLernziel && gemeistert && h('p', { class: 'lohn neu' }, h('b', {}, `Meilenstein „${meilenstein.titel}“ gemeistert!`)),
+    e.grundlage?.art === 'beginnt' && h('p', { class: 'grundlage', id: 'grundlage-beginnt' }, h('b', {}, 'Wir üben erst die Grundlage. '), `Die nächsten Aufgaben sind leichter. Nach ${L.GRUNDLAGE_RICHTIGE} richtigen Aufgaben geht es hier weiter.`),
+    e.grundlage?.art === 'endet' && h('p', { class: 'grundlage', id: 'grundlage-endet' }, h('b', {}, 'Jetzt klappt auch der nächste Schritt. '), `Du spielst wieder um ${L.KRONEN[niveau]}.`),
     vorschlag && h('div', { class: 'vorschlag' },
       h('p', {}, vorschlag === 'hoch'
         ? `Das läuft richtig gut. Möchtest du um ${L.KRONEN[ziel]} spielen? Dort sind die Aufgaben anspruchsvoller und bringen mehr Münzen.`

@@ -462,6 +462,14 @@ function impulse() {
       x.genommen ? 'Die Brücke wurde schon gegangen. Ein kurzes Gespräch lohnt sich.' : 'Das Dashboard bietet dazu eine Brücke an. Ein Hinweis von dir kann helfen, sie zu nehmen.'),
     gesehen(schluessel)));
   }
+  // Grundlage (ADR 0015): zum zweiten Mal von G auf die Grundlage zurückgefallen.
+  for (const x of A.grundlagenHinweise(z.staende, z.index)) {
+    const schluessel = `grundlage|${x.code}|${x.lernziel}|${x.mal}`;
+    if (z.gesehen.has(schluessel)) continue;
+    karten.push(h('li', { 'data-grundlage': x.code }, h('span', {}, h('b', {}, 'Grundlage: '), `${name(x.code)} übt bei ${lesbar(x.lernziel)} zum ${x.mal}. Mal die Grundlage${x.aktiv ? '' : ' und ist inzwischen zurück auf G'}. `,
+      x.baustein ? `Baustein: ${x.baustein}. ` : '', 'Ein kurzes Gespräch oder Material zum Anfassen kann jetzt helfen.'),
+    gesehen(schluessel)));
+  }
   for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
     const schluessel = `fertig|${x.code}|${x.milestone}|${x.zielniveau}`;
     if (z.gesehen.has(schluessel)) continue;
