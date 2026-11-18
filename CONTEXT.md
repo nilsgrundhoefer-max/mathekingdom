@@ -50,6 +50,18 @@ _Avoid_: Übung, Item
 Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt. Ein Fehlversuch kostet nichts: Der zweite Versuch bringt so viele Münzen wie der erste.
 _Avoid_: Eingabe, Abgabe
 
+**Sicherheitsangabe**:
+Ob ein Schüler beim ersten Versuch „sicher“ oder „unsicher“ geprüft hat; er wählt es mit dem Prüfen-Knopf, ohne zusätzlichen Klick. Eine sichere falsche Antwort heißt „sicher falsch“, bekommt sofort die Erklärung zum typischen Fehler und gilt in der Diagnose als stärkstes Zeichen einer Fehlvorstellung. Sie ändert keine Münzen. Die Lehrkraft schaltet sie pro Klasse ein.
+_Avoid_: Konfidenz, Selbsteinschätzung (die gilt für Meilensteine)
+
+**Heftcode**:
+Ein kurzer Code (z. B. „H7“) zu jeder gelösten Aufgabe ab M, den der Schüler mit seinem Ergebnis ins Heft schreibt.
+_Avoid_: Bookwork-Code, Kontrollnummer
+
+**Heftcheck**:
+Eine Stichprobe, etwa jede achte Aufgabe ab M: Der Schüler wählt aus vier Antworten, was er bei einem Heftcode herausbekommen hatte. Ist die Antwort falsch, löst er die Aufgabe noch einmal, ohne Münzen zu verlieren; die Lehrkraft sieht die Quote.
+_Avoid_: Heftkontrolle (die macht die Lehrkraft von Hand)
+
 **Niveaustufe**:
 Eine von vier Anforderungsstufen einer Aufgabe: F (Förderniveau), G (grundlegendes Niveau), M (mittleres Niveau), E (erweitertes Niveau). Die Stufen unterscheiden sich zuerst in der Art der Anforderung, erst danach in der Zahlengröße: F eine Handlung in einem Schritt, G ein Standardverfahren in einem Schritt, M mehrschrittig mit Übersetzen und Deuten, E Strukturen, Lücken und Behauptungen (siehe ADR 0009).
 _Avoid_: Schwierigkeit, Level, Sterne, Siegel
@@ -89,6 +101,22 @@ _Avoid_: Zusatzstation, Extra
 **Lernziel**:
 Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III.
 _Avoid_: Kompetenz (allein), Ziel
+
+**Rückblick**:
+Ein freiwilliges Päckchen aus drei bis fünf gemischten Aufgaben zu Lernzielen, deren Siegel etwa 2, 7 und 21 Tage alt sind. Er steht höchstens einmal am Tag oben auf der Startseite und bringt die normalen Münzen. Ein Fehler nimmt kein Siegel weg; die Aufgabe kommt im nächsten Rückblick wieder, und das Lernziel gilt für die Lehrkraft als aufzufrischen.
+_Avoid_: Wiederholung (allein), Auffrischen, Review
+
+**Einstiegscheck**:
+Sechs bis acht Aufgaben über alle Meilensteine eines Kapitels, angeboten beim ersten Öffnen der Regionskarte. Sein Ergebnis stellt die Kronenwahl vor; er bringt keine Siegel und zählt für kein Lernziel. Freiwillig, außer die Lehrkraft macht ihn für ein Kapitel zur Pflicht.
+_Avoid_: Eingangstest, Vortest, Diagnosetest
+
+**Voraussetzung**:
+Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln oder aus dem Grundschulstoff.
+_Avoid_: Vorwissen (für die Verknüpfung)
+
+**Brücke**:
+Drei Aufgaben zu einer Voraussetzung, die das Schüler-Dashboard vorschlägt, wenn ein Lernziel wackelig wird. Freiwillig; die Lehrkraft bekommt dazu einen Impuls.
+_Avoid_: Förderaufgabe, Rückweg
 
 **Training**:
 Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab, können aber eine Krone unter dem Zielniveau bringen.
@@ -135,6 +163,18 @@ _Avoid_: Belohnungsspiel, Game
 **Spielpause**:
 Ein von der Lehrkraft pro Klasse eingeschaltetes Zeitfenster, in dem Minispiele erlaubt sind; standardmäßig aus.
 _Avoid_: Freizeit, Pause
+
+**Nebel**:
+Die Verhüllung der Regionskarte. Jeder gemeisterte Meilenstein lichtet den Nebel um sich und gibt Zeichnungen der Landschaft frei. Rein optisch, ohne Münzen.
+_Avoid_: Fog of War, Verdeckung
+
+**Expedition**:
+Ein gemeinsames Ziel der ganzen Klasse, das die Lehrkraft mit Zahl, Enddatum und Belohnung setzt (z. B. „120 Expeditionszeichen bis zu den Ferien“, Belohnung Expeditionsfahne fürs Wappen oder eine Spielpause). Jeder Schüler sieht den Stand der Klasse und nur für sich seinen eigenen Beitrag, nie die Beiträge anderer. Ist das Ziel erreicht, bekommen alle die Belohnung.
+_Avoid_: Klassenwettbewerb, Challenge, Quest
+
+**Expeditionszeichen**:
+Der Beitrag eines Schülers zur Expedition: eines je Siegel und höchstens eines am Tag für einen gelösten Rückblick.
+_Avoid_: Punkte, Klassenpunkte
 
 **Kundschafter**:
 Die Rolle des Schülers in der Rahmenhandlung: Er erkundet im Auftrag des Königs die Regionen des Reiches; jedes Kapitel ist eine Region.
@@ -262,5 +302,6 @@ _Avoid_: Klassenliste (für die Datei)
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
 - **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
-- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig oder Siegel. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
+- **Tafelbild**: Vollbild-Ansicht im Bereich Jetzt, die eine Aufgabe mit den häufigsten falschen Antworten der Klasse am Beamer zeigt, ohne Codes und Namen. Sie wird aus einem Mini-Workshop-Impuls geöffnet.
+- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel oder aufzufrischen. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
 
