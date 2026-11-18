@@ -79,7 +79,7 @@ Die Darstellung eines Lernpfads im Stil einer alten Landkarte: ein einziger Weg,
 _Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken, Straße
 
 **Meilenstein**:
-Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, und trägt dann eine Krone. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
+Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, also eine Krone auf oder über seinem Zielniveau trägt. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
 _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 
 **Abstecher**:
@@ -105,7 +105,7 @@ Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
 _Avoid_: Stern, Punkte, Abzeichen
 
 **Krone**:
-Die nicht ausgebbare Auszeichnung eines gemeisterten Meilensteins, in einer der vier Kronenfarben. Sie zeigt das niedrigste Niveau, auf dem alle Lernziele des Meilensteins nachgewiesen sind, und nie ein Niveau unter dem Zielniveau. Ein Schüler kann sie später aufwerten; der Meilenstein zeigt immer die beste Farbe. Kronen bringen keine Münzen und bestimmen nicht den Rang.
+Die nicht ausgebbare Auszeichnung eines Meilensteins, in einer der vier Kronenfarben. Sie zeigt das niedrigste Niveau, auf dem alle Lernziele des Meilensteins nachgewiesen sind. Jeder Schüler kann alle vier Kronen sammeln; gemeistert ist der Meilenstein aber erst mit einer Krone auf oder über seinem Zielniveau. Ein Schüler kann sie später aufwerten; der Meilenstein zeigt immer die beste Farbe. Kronen bringen keine Münzen und bestimmen nicht den Rang.
 _Avoid_: Meilensteinkrone, Pokal, Medaille
 
 **Kronenfarbe**:
