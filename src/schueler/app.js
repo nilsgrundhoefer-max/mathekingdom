@@ -7,6 +7,7 @@ import { h, mische } from './dom.js';
 import * as L from './logik.js';
 import * as S from './speicher.js';
 import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
+import { aufgabenBild } from './aufgabenbilder.js';
 
 const jetzt = () => new Date().toISOString();
 const z = { // Zustand der laufenden Sitzung
@@ -527,6 +528,7 @@ function aufgabenAnsicht() {
         h('span', { class: 'ziel' }, lernziel.text),
         !a.einstieg && h('span', { class: 'punkte', title: `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
+      auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
       formular,
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
@@ -538,6 +540,8 @@ function eingabefelder(auf, a, gesperrt) {
   const zahlfeld = (name, einheit, wert) => h('span', { class: 'zahlfeld' },
     h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 9, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort' }),
     einheit && h('span', { class: 'einheit' }, einheit));
+  // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
+  const ziffernfeld = (name, wert, stellen = 1) => h('input', { class: 'ziffer', name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: stellen, maxLength: stellen, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Fehlende Ziffer' });
   const letzte = a.eingaben.at(-1);
   switch (auf.format) {
     case 'zahl': return zahlfeld('zahl', auf.einheit, letzte);
@@ -547,7 +551,8 @@ function eingabefelder(auf, a, gesperrt) {
         h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
     case 'luecken': return h('p', { class: 'aufgabentext luecken' }, auf.text.split(/(\{\{\w+\}\})/).map((stueck) => {
       const m = stueck.match(/^\{\{(\w+)\}\}$/);
-      return m ? zahlfeld(`luecke-${m[1]}`, null, letzte?.[m[1]]) : stueck;
+      if (!m) return stueck;
+      return auf.ziffernfelder ? ziffernfeld(`luecke-${m[1]}`, letzte?.[m[1]]) : zahlfeld(`luecke-${m[1]}`, null, letzte?.[m[1]]);
     }));
     case 'zuordnen': return h('div', { class: 'zuordnen' }, auf.paare.map((p) => h('label', {}, h('b', {}, p.links),
       h('select', { name: `paar-${p.links}`, disabled: gesperrt }, h('option', { value: '' }, 'bitte wählen'),
@@ -565,10 +570,10 @@ function eingabefelder(auf, a, gesperrt) {
       zeichne();
       return h('div', { class: 'mitbild' }, rahmen, wert, !gesperrt && h('p', { class: 'klein' }, 'Tippe auf den passenden Teilstrich.'));
     }
-    case 'tabelle': return h('div', { class: 'bildrahmen' }, h('table', { class: 'aufgabentabelle' },
+    case 'tabelle': return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
       h('thead', {}, h('tr', {}, auf.tabelle.kopf.map((k) => h('th', { scope: 'col' }, k)))),
       h('tbody', {}, auf.tabelle.zeilen.map((zeile) => h('tr', {}, zeile.map((zelle, i) => (typeof zelle === 'object'
-        ? h('td', {}, zahlfeld(`luecke-${zelle.luecke}`, null, letzte?.[zelle.luecke]))
+        ? h('td', {}, auf.tabelle.art === 'raster' ? ziffernfeld(`luecke-${zelle.luecke}`, letzte?.[zelle.luecke], String(auf.luecken[zelle.luecke].loesung).length > 1 ? 2 : 1) : zahlfeld(`luecke-${zelle.luecke}`, null, letzte?.[zelle.luecke]))
         : h(i === 0 ? 'th' : 'td', i === 0 ? { scope: 'row' } : {}, zelle))))))));
     default: return null;
   }
