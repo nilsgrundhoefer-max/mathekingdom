@@ -20,6 +20,8 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 
 Die Startseite ist der Schlossgarten: oben die Etappe (das Kapitel, an dem gerade gearbeitet wird, wie viele Meilensteine gemeistert sind, und ein Knopf direkt zur nächsten Aufgabe), darunter ein Gartentor je Kapitel. Hinter jedem Tor liegt die Regionskarte mit einem Weg. Am Meilenstein wählt der Schüler, um welche Krone er spielt (Bronze F, Silber G, Gold M, Purpur E; die Kronen tragen ein bis vier Edelsteine, damit man sie auch ohne Farbe unterscheidet). Meilensteine zeigen ihren Zustand: Wegstein, Kompassnadel (begonnen), Krone in der erreichten Farbe, Schloss (gesperrt). Gemeistert ist ein Meilenstein erst mit der Krone des Zielniveaus. Schüler sehen nie F, G, M, E, nur Kronenfarben; die Lehrkraft sieht nur die Niveaustufen. Jeder Meilenstein hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Nach dem ersten Fehlversuch öffnet sich der Tipp von selbst; Fehlversuch und Tipp kosten keine Münzen.
 
+Lernpsychologische Ergänzungen (ADR 0014, Version 0.5): Auf der Startseite erscheint etwa 2, 7 und 21 Tage nach einem Siegel ein freiwilliger **Rückblick** mit drei bis fünf gemischten Aufgaben (höchstens einer am Tag; ein Fehler nimmt kein Siegel weg, das Lernziel gilt dann für die Lehrkraft als „aufzufrischen“). Die Regionskarte liegt im **Nebel**, den jeder gemeisterte Meilenstein lichtet. Hat die Lehrkraft eine **Expedition** gestartet, zeigt die Startseite den Stand der Klasse und den eigenen Beitrag.
+
 Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code mit passender Klasse wird angenommen. Sobald die Startdatei aus dem Lehrer-Dashboard stammt, ist eine gültig signierte Klassendatei Pflicht.
 
 ## Lehrer-Dashboard ausprobieren
@@ -34,7 +36,7 @@ Vier Bereiche (beim Öffnen „Jetzt“, wenn in den letzten 10 Minuten jemand g
 - **Jetzt:** Akut-Zone (Hilferufe und blockierte Schüler mit Aufgabe, Fehlversuchen, gezogenen Hilfekärtchen und möglichen Lernbegleitern), Impulse (Mini-Workshop bei gehäuftem Fehler, Schnellläufer), Klassenraum als Sitzplan mit Ampel. Ein Tipp auf einen Schüler öffnet die Detailansicht über dem Sitzplan.
 - **Lernstand:** Kennzahlen der Klasse, Heatmap Schüler × Lernziel mit vier Zuständen (Siegel, wackelig, begonnen, nicht begonnen), gestapelte Balken je Lernziel, Selbsteinschätzung je Schüler (erste Wahl am Meilenstein gegen das erste erreichte Niveau), Auffälligkeiten, Meilensteine öffnen und sperren. Ein Lernziel öffnet seine Seite (wer steht wo, häufigste typische Fehler, Lösungsquote nach Niveau, schwierigste Aufgaben), ein Name die Seite des Schülers (Siegel, Zielniveau, zuletzt aktiv, Weg über die Lernziele, AFB, Hilfekärtchen, typische Fehler, Versuchsprotokoll zugeklappt, Notiz).
 - **Aufgaben:** Auswertung nach Anforderungsbereich, Aufgabentyp und Niveau, dazu einzelne Aufgaben: schwierigste, nie gelöste, am häufigsten gelöste, bearbeitete oder abgebrochene sowie nie bearbeitete, obwohl sie hätten drankommen können.
-- **Verwaltung:** Namensliste, Codes und PINs, Startdatei, Berichte, Backup.
+- **Verwaltung:** Namensliste, Codes und PINs, Expedition (Ziel, Enddatum, Belohnung), Startdatei, Berichte, Backup.
 
 Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den Druckdialog als PDF, Rohdaten als Excel-Datei mit acht Blättern.
 

@@ -401,3 +401,65 @@ test('AFB III bringt die Hälfte mehr Münzen, Wortspeicher wächst mit der Stuf
   assert.ok(bis('F') >= 4 && bis('F') < bis('G') && bis('G') < bis('M') && bis('M') < bis('E'));
   assert.ok(!station.wortspeicher.filter((w) => w.ab === 'F').some((w) => /Quotient|Dividend|Divisor/.test(w.wort + w.erklaerung)));
 });
+
+// ---------- Rückblick und Expedition (ADR 0014) ----------
+const mitSiegeln = (ids, erreichtAm) => { const st = neu(); for (const id of ids) st.lernziele[id] = { erreichtAm }; return st; };
+const rbZiele = [...index.lernzielMitAufgaben].slice(0, 6);
+
+test('Rückblick: fällig nach 2, 7 und 21 Tagen, höchstens einmal am Tag', () => {
+  const st = mitSiegeln(rbZiele.slice(0, 2), '2026-11-01T10:00:00Z');
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-02T10:00:00Z'), []);
+  assert.equal(L.faelligeLernziele(st, index, '2026-11-03T11:00:00Z').length, 2);
+  const r = L.stelleRueckblick(st, index, 'M', '2026-11-03T11:00:00Z', () => 0);
+  assert.equal(r.aufgaben.length, L.RUECKBLICK_MIN);
+  assert.equal(new Set(r.aufgaben).size, r.aufgaben.length);
+  // gemischt: die ersten beiden Aufgaben stammen aus verschiedenen LernrbZielen
+  assert.notEqual(index.aufgabe.get(r.aufgaben[0]).lernziel, index.aufgabe.get(r.aufgaben[1]).lernziel);
+  assert.ok(r.aufgaben.every((id) => index.aufgabe.get(id).niveau === 'M'));
+  for (const id of r.aufgaben) L.trageRueckblickEin(st, index.aufgabe.get(id), true, '2026-11-03T11:10:00Z');
+  assert.equal(st.rueckblickAktiv, null);
+  assert.equal(L.rueckblickAngebot(st, index, '2026-11-03T15:00:00Z'), null); // heute schon einer
+  assert.equal(st.rueckblick[rbZiele[0]].stufe, 1);
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-05T10:00:00Z'), []); // nächste Stufe erst ab Tag 7
+  assert.equal(L.faelligeLernziele(st, index, '2026-11-08T11:00:00Z').length, 2);
+});
+
+test('Rückblick: Ein Fehler nimmt kein Siegel weg, das Lernziel kommt wieder und ist aufzufrischen', () => {
+  const st = mitSiegeln([rbZiele[0]], '2026-11-01T10:00:00Z');
+  const r = L.stelleRueckblick(st, index, 'M', '2026-11-04T10:00:00Z', () => 0);
+  const [erste, ...rest] = r.aufgaben.map((id) => index.aufgabe.get(id));
+  assert.equal(L.trageRueckblickEin(st, erste, false, '2026-11-04T10:01:00Z').fertig, false);
+  let ende;
+  for (const a of rest) ende = L.trageRueckblickEin(st, a, true, '2026-11-04T10:05:00Z');
+  assert.deepEqual(ende.aufzufrischen, [rbZiele[0]]);
+  assert.ok(st.lernziele[rbZiele[0]]);
+  assert.equal(st.rueckblick[rbZiele[0]].stufe, 0);
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-05T08:00:00Z'), [rbZiele[0]]);
+  assert.equal(L.rueckblickAngebot(st, index, '2026-11-05T08:00:00Z').art, 'neu');
+});
+
+test('Rückblick: Aufgaben zählen nicht zur Selbsteinschätzung und bringen normale Münzen', () => {
+  const st = mitSiegeln([S2], '2026-11-01T10:00:00Z');
+  const ms = index.meilensteinVon.get(S2);
+  st.einschaetzung[ms.id] = { gewaehlt: 'E', t: '2026-11-01T09:00:00Z' };
+  const a = aufgaben(S2, 'M')[0];
+  const b = L.verbuche(st, a, ok(), 'M', '2026-11-04T10:00:00Z', index, { rueckblick: true });
+  assert.equal(st.einschaetzung[ms.id].abstieg, undefined);
+  assert.equal(st.versuche.at(-1).rueckblick, true);
+  assert.equal(b.muenzen, L.muenzenFuer(neu(), a, ok(), 'M'));
+});
+
+test('Expedition: Siegel und Rückblick-Tage im Zeitraum zählen, Belohnung einmal', () => {
+  const ex = { id: 'ex-1', ziel: 3, start: '2026-11-10T00:00:00Z', bis: '2026-11-30', belohnung: 'fahne' };
+  const a = mitSiegeln([rbZiele[0]], '2026-11-05T10:00:00Z'); // vor dem Start: zählt nicht
+  a.lernziele[rbZiele[1]] = { erreichtAm: '2026-11-12T10:00:00Z' };
+  a.rueckblicke = [{ t: '2026-11-12T11:00:00Z', tag: '2026-11-12' }, { t: '2026-12-02T11:00:00Z', tag: '2026-12-02' }];
+  const b = mitSiegeln([rbZiele[2]], '2026-11-20T10:00:00Z');
+  assert.equal(L.expeditionsZeichen(a, ex), 2);
+  assert.deepEqual(L.expeditionsStand([a, b], ex, '2026-11-21T10:00:00Z'), { summe: 3, ziel: 3, geschafft: true, vorbei: false });
+  assert.equal(L.expeditionsStand([a], ex, '2026-12-01T10:00:00Z').vorbei, true);
+  assert.equal(L.holeBelohnung(a, ex, '2026-11-21T10:00:00Z'), true);
+  assert.equal(L.holeBelohnung(a, ex, '2026-11-22T10:00:00Z'), false);
+  assert.ok(a.wappen.gekauft.includes('fahne'));
+  assert.equal(L.kaufe(b, 'fahne'), 'expedition');
+});

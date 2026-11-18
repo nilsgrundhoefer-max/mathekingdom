@@ -75,6 +75,9 @@ export function wappenBild(wappen, breite = 60) {
     hat('winkel') && s('path', { ...linie, d: 'M30 30 V76 H72', 'stroke-width': 5 }),
     hat('eichenlaub') && s('g', { fill: '#c9b77a', stroke: '#5d5223', 'stroke-width': 1.2 },
       s('path', { d: 'M50 92 C38 88 30 80 28 70 C38 72 46 80 50 92 Z' }), s('path', { d: 'M50 92 C62 88 70 80 72 70 C62 72 54 80 50 92 Z' })),
+    hat('fahne') && s('g', { stroke: '#2f2820', 'stroke-width': 1.4, 'stroke-linejoin': 'round' },
+      s('path', { d: 'M24 18 V62', stroke: hell, 'stroke-width': 3, 'stroke-linecap': 'round' }),
+      s('path', { d: 'M25 19 C32 15 38 23 46 19 V33 C38 37 32 29 25 33 Z', fill: hell })),
     hat('lilie') && s('g', { fill: '#d6ae4a', stroke: '#6b5115', 'stroke-width': 1.4, 'stroke-linejoin': 'round' },
       s('path', { d: 'M50 14 C44 22 44 32 50 40 C56 32 56 22 50 14 Z' }),
       s('path', { d: 'M48 38 C40 26 28 28 30 38 C32 44 40 44 46 42 Z' }),
@@ -107,11 +110,26 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
   d += ` L${x(haupt - 1) + 40} ${y(haupt - 1)}`;
 
   const svg = s('svg', { viewBox: `0 0 ${breite} ${hoehe}`, width: breite, height: hoehe, class: 'regionskarte', role: 'group', 'aria-label': 'Regionskarte' },
-    s('rect', { x: 3, y: 3, width: breite - 6, height: hoehe - 6, rx: 6, class: 'kartenrand' }),
+    s('rect', { x: 3, y: 3, width: breite - 6, height: hoehe - 6, rx: 6, class: 'kartenrand' }));
+  const unten = y(haupt - 1) + 70;
+  const mitteVon = (m, j) => [x(j), m.extra ? unten : y(j)];
+  // Landschaft und Nebel (ADR 0014): Jeder gemeisterte Meilenstein lichtet den Nebel um sich und gibt die Zeichnung daneben frei.
+  svg.append(s('g', { class: 'landschaft', 'aria-hidden': 'true' }, milestones.map((m, j) => {
+    const [mx, my] = mitteVon(m, j);
+    return landschaft(j, mx + 104, m.extra ? my + 4 : my - 64);
+  })));
+  const frei = milestones.map((m, j) => [m, j]).filter(([m]) => m.status === 'gemeistert');
+  const nebelId = `mk-nebel-${Math.random().toString(36).slice(2, 8)}`;
+  svg.append(
+    s('defs', {},
+      s('filter', { id: `${nebelId}-weich`, x: '-50%', y: '-50%', width: '200%', height: '200%' }, s('feGaussianBlur', { stdDeviation: 18 })),
+      s('mask', { id: nebelId, maskUnits: 'userSpaceOnUse', x: 0, y: 0, width: breite, height: hoehe },
+        s('rect', { x: 0, y: 0, width: breite, height: hoehe, fill: 'white' }),
+        frei.map(([m, j]) => { const [mx, my] = mitteVon(m, j); return s('ellipse', { cx: mx + 45, cy: my - 25, rx: 125, ry: 95, fill: 'black', filter: `url(#${nebelId}-weich)` }); }))),
+    s('rect', { x: 4, y: 4, width: breite - 8, height: hoehe - 8, rx: 6, class: 'nebel', mask: `url(#${nebelId})`, 'aria-hidden': 'true', 'data-frei': frei.length }),
     windrose(breite - 46, hoehe - 46),
     s('path', { d, class: 'weg-rand' }), s('path', { d, class: 'weg' }));
   // Abstecher: gestrichelt unterhalb des Weges
-  const unten = y(haupt - 1) + 70;
   milestones.forEach((m, j) => {
     if (!m.extra) return;
     svg.append(s('path', { d: `M${x(haupt - 1)} ${y(haupt - 1)} C${x(haupt - 1)} ${unten} ${x(j) - 40} ${unten} ${x(j)} ${unten}`, class: 'abstecher' }));
@@ -145,6 +163,22 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
   bild.setAttribute('class', 'wappen standwappen');
   svg.append(bild);
   return svg;
+}
+
+// Kleine Federzeichnungen der Landschaft, eine je Meilenstein, reihum: Dorf, Wald, Brücke, Burg, Mühle, Berge.
+const LANDSCHAFT = ['Dorf', 'Wald', 'Brücke', 'Burg', 'Mühle', 'Berge'];
+function landschaft(j, cx, cy) {
+  const strich = { fill: 'none', stroke: SEPIA, 'stroke-width': 1.6, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' };
+  const art = LANDSCHAFT[j % LANDSCHAFT.length];
+  const formen = {
+    Dorf: [s('path', { ...strich, d: 'M-22 8 V-4 L-14 -12 L-6 -4 V8 Z M-2 8 V-8 L8 -18 L18 -8 V8 Z M5 8 V1 H11 V8' }), s('path', { ...strich, d: 'M8 -18 V-24' })],
+    Wald: [-18, -4, 10].map((dx, i) => s('path', { ...strich, fill: '#c7d0ae', d: `M${dx} 8 V3 M${dx - 9} 3 L${dx} ${-16 - i * 2} L${dx + 9} 3 Z` })),
+    Brücke: [s('path', { ...strich, stroke: '#5f86a6', 'stroke-width': 3, d: 'M-30 10 C-12 4 6 14 30 6' }), s('path', { ...strich, d: 'M-14 4 C-6 -6 6 -6 14 4 M-14 4 V10 M14 4 V8' })],
+    Burg: [s('path', { ...strich, d: 'M-16 10 V-8 H-12 V-12 H-8 V-8 H8 V-12 H12 V-8 H16 V10 Z M-3 10 V2 A3 3 0 0 1 3 2 V10' }), s('path', { ...strich, d: 'M0 -8 V-22 L9 -19 L0 -16' })],
+    Mühle: [s('path', { ...strich, d: 'M-8 10 L-5 -6 H5 L8 10 Z' }), s('path', { ...strich, d: 'M0 -6 L-14 -20 M0 -6 L14 -20 M0 -6 L-14 8 M0 -6 L14 8' })],
+    Berge: [s('path', { ...strich, fill: '#ddd2b8', d: 'M-30 10 L-12 -16 L0 0 L10 -12 L30 10 Z' }), s('path', { ...strich, d: 'M-16 -10 L-12 -16 L-8 -10' })],
+  };
+  return s('g', { transform: `translate(${cx} ${cy}) scale(.85)`, class: 'zeichnung', 'data-art': art }, formen[art]);
 }
 
 function windrose(cx, cy) {

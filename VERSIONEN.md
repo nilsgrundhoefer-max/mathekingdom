@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.5 vom 18.11.2026
+
+### Schüler
+
+- Rückblick: Ein paar Tage und Wochen nach einem Siegel erscheint auf der Startseite ein kurzer Rückblick mit gemischten Aufgaben zu Lernzielen, die du schon geschafft hast. Er ist freiwillig, kommt höchstens einmal am Tag und bringt die normalen Münzen. Deine Siegel behältst du in jedem Fall.
+- Nebel auf der Regionskarte: Am Anfang liegt die Region im Nebel. Jeder gemeisterte Meilenstein lichtet ihn und zeigt dir ein Stück Landschaft.
+- Expedition: Hat deine Lehrkraft eine Expedition gestartet, sammelt die ganze Klasse gemeinsam Expeditionszeichen, für jedes neue Siegel und jeden Rückblick. Du siehst den Stand der Klasse und deinen eigenen Beitrag. Ist das Ziel erreicht, bekommen alle die Belohnung, zum Beispiel die Expeditionsfahne fürs Wappen.
+
+### Lehrkraft
+
+- Neue Karte „Expedition“ in der Verwaltung: Ziel, Enddatum und Belohnung (Expeditionsfahne oder Spielpause) festlegen. Du siehst den Stand der Klasse und die Beiträge aller Schüler, die Schüler nur den Stand der Klasse und ihren eigenen.
+- Neuer Lernzielstand „aufzufrischen“ (↻) in Heatmap, Balken und Lernziel-Seite: Der Schüler hat das Siegel, hat das Lernziel aber im Rückblick falsch gelöst. Das Siegel bleibt, das Lernziel kommt beim nächsten Rückblick wieder.
+- Rückblick-Aufgaben stehen im Versuchsprotokoll und zählen nicht zur Selbsteinschätzung.
 ## 0.4 vom 18.11.2026
 
 ### Schüler
