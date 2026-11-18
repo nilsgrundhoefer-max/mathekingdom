@@ -46,6 +46,22 @@ _Avoid_: Themenbereich, Lektion
 Eine einzelne zu lösende Einheit in einem Unterkapitel, mit festem Aufgabenformat, Niveaustufe und Lernziel. Jede Aufgabe ist automatisch auswertbar.
 _Avoid_: Übung, Item
 
+**Aufgabenformat**:
+Die Art, wie eine Aufgabe gestellt und beantwortet wird, zum Beispiel Zahleingabe, Auswahl, Lückentext, Zuordnen, Zahlenstrahl, Tabelle, Rechenraster, Zahlenmauer oder Malkreuz. Bei Zahlenstrahl, Rechenraster, Zahlenmauer und Malkreuz zeichnet das Dashboard die Darstellung selbst, und der Schüler trägt seine Antworten direkt in sie ein.
+_Avoid_: Aufgabentyp, Bild (für eine Darstellung mit Eingabefeldern)
+
+**Zahlenmauer**:
+Ein Aufgabenformat aus Steinen in Reihen: Jeder Stein ist die Summe (bei der Mal-Mauer das Produkt) der beiden Steine darunter. Die gesuchten Zahlen tippt der Schüler in die leeren Steine.
+_Avoid_: Rechenmauer, Zahlenpyramide
+
+**Malkreuz**:
+Ein Aufgabenformat für das Multiplizieren durch Zerlegen: Die Faktoren stehen zerlegt am Rand einer Tabelle (· | 20 | 3 und 4), die Teilprodukte und ihre Summe trägt der Schüler in die Felder ein.
+_Avoid_: Malkreuz-Bild, Multiplikationstabelle
+
+**Rechenraster**:
+Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft.
+_Avoid_: Kästchenraster
+
 **Versuch**:
 Eine abgegebene Antwort auf eine Aufgabe. Ein Schüler hat zwei Versuche; sind beide falsch, gilt die Aufgabe als nicht gelöst und die Lösung wird gezeigt. Ein Fehlversuch kostet nichts: Der zweite Versuch bringt so viele Münzen wie der erste.
 _Avoid_: Eingabe, Abgabe
@@ -78,7 +94,7 @@ _Avoid_: Abstieg, Herunterstufen
 Die Rechnungen oder die benannte Prüfart, mit denen der Prüfer die Lösung einer Aufgabe unabhängig vom Erzeuger nachrechnet. Nicht zu verwechseln mit dem Nachweisen eines Lernziels durch den Schüler.
 
 **Aufgabenbild**:
-Ein schematisches Bild zu einer Aufgabe, im Dashboard aus den Zahlen der Aufgabe gezeichnet: Zehnerfeld, Mengenbild, Gruppenbild, Punktefeld, Zehnermaterial, Stellenwerttafel, Streifenbild, Vergleichsbild, Zahlenstrahl. Jede F-Aufgabe hat eines, auf G mindestens drei von sechs.
+Ein schematisches Bild zu einer Aufgabe, im Dashboard aus den Zahlen der Aufgabe gezeichnet und ohne Eingabefelder: Zehnerfeld, Mengenbild, Gruppenbild, Punktefeld, Zehnermaterial, Stellenwerttafel, Streifenbild, Vergleichsbild, Zahlenstrahl. Jede F-Aufgabe hat eines, auf G mindestens drei von sechs; eine Aufgabe im Format Zahlenstrahl, Rechenraster, Zahlenmauer oder Malkreuz braucht keines.
 _Avoid_: Illustration, Grafik
 
 **Zielniveau**:
