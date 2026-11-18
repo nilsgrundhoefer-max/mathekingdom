@@ -269,7 +269,7 @@ export function punktVorStrich() {
         h3('Rechne zuerst die Päckchen.', '3 Sticker und 2 Päckchen mit je 5: 2 · 5 = 10. 3 + 10 = 13.', `${p} · ${j} = ${p * j}. Rechne jetzt ${e} + ${p * j}.`), { einheit: 'Sticker', bild: B.paeckchen(e, p, j), nachweis: N(`${p} · ${j}`, `${e} + ${p * j}`) }); },
     () => { const [e, p, j] = suche(() => [zz(2, 4), zz(2, 4), zz(3, 5)], ([x, y, z]) => new Set([x, y, z]).size === 3);
       return auswahl(Z(`Es gibt ${p} Päckchen mit je ${j} Plättchen.`, `Dazu kommen ${e} Plättchen.`, 'Welche Rechnung passt?'), [opt(`${p} · ${j} + ${e}`, true), opt(`${p} · (${j} + ${e})`, false, 'punkt-vor-strich'), opt(`${p} + ${j} + ${e}`, false, '1x1-addiert')],
-        h3('Die Päckchen sind ein Mal. Die einzelnen Plättchen sind ein Plus.', '3 Päckchen mit je 4 und dazu 2: 3 · 4 + 2.', `${p} Päckchen mit je ${j}: ${p} · ${j}.`), { bild: B.paeckchen(e, p, j), nachweis: [WERT(p * j + e), ...N(`${p} · ${j}`, `${p * j} + ${e}`)] }); },
+        h3('Die Päckchen sind ein Mal. Die einzelnen Plättchen sind ein Plus.', [p, j, e].sort().join() === '2,3,4' ? '4 Päckchen mit je 5 und dazu 1: 4 · 5 + 1.' : '3 Päckchen mit je 4 und dazu 2: 3 · 4 + 2.', `${p} Päckchen mit je ${j}: ${p} · ${j}.`), { bild: B.paeckchen(e, p, j), nachweis: [WERT(p * j + e), ...N(`${p} · ${j}`, `${p * j} + ${e}`)] }); },
     () => { const [h, p] = suche(() => [zz(2, 4), zz(2, 3)], ([x, y]) => x !== y), k = kind();
       return zahl(Z(`${k} hat 20 €.`, `${k} kauft ${h} Hefte.`, `1 Heft kostet ${p} €.`, 'Wie viel Geld hat sie noch?'.replace('sie', k)), 20 - h * p, fehlerliste(20 - h * p, [[(20 - h) * p, 'punkt-vor-strich']]),
         h3('Rechne zuerst, was die Hefte kosten.', '2 Hefte zu je 3 €: 2 · 3 = 6 €. 20 − 6 = 14 €.', `Die Hefte kosten ${h} · ${p} = ${h * p} €.`), { einheit: '€', bild: B.menge(20, { weg: h * p }), nachweis: N(`${h} · ${p}`, `20 − ${h * p}`) }); },
@@ -278,7 +278,7 @@ export function punktVorStrich() {
         opt(`Ich habe ${e} Stifte. Ich kaufe ${p} Packungen mit je ${j} Stiften.`, true),
         opt(`Ich habe ${e} Packungen und ${p} Packungen mit je ${j} Stiften.`, false, 'punkt-vor-strich'),
         opt(`Ich habe ${e} Stifte, ${p} Stifte und ${j} Stifte.`, false, '1x1-addiert')],
-      h3('Mal heißt: gleich viele in jeder Packung.', '2 + 3 · 4: 2 einzelne und 3 Packungen mit je 4.', `${p} · ${j} heißt: ${p} Packungen mit je ${j}.`), { bild: B.paeckchen(e, p, j), nachweis: N(`${p} · ${j}`, `${e} + ${p * j}`) }); },
+      h3('Mal heißt: gleich viele in jeder Packung.', e === 2 && p === 3 && j === 4 ? '3 + 2 · 5: 3 einzelne und 2 Packungen mit je 5.' : '2 + 3 · 4: 2 einzelne und 3 Packungen mit je 4.', `${p} · ${j} heißt: ${p} Packungen mit je ${j}.`), { bild: B.paeckchen(e, p, j), nachweis: N(`${p} · ${j}`, `${e} + ${p * j}`) }); },
     () => { const [n, l] = suche(() => [zz(3, 5), zz(2, 5)], ([x, y]) => x !== y);
       return zahl(Z('In 1 Kiste sind 6 Flaschen.', `Es gibt ${n} Kisten.`, `${l} Flaschen sind leer.`, 'Wie viele Flaschen sind voll?'), n * 6 - l, fehlerliste(n * 6 - l, [[n * (6 - l), 'punkt-vor-strich']]),
         h3('Rechne zuerst alle Flaschen. Nimm dann die leeren weg.', '2 Kisten mit je 6 Flaschen: 12 Flaschen. 3 sind leer: 12 − 3 = 9.', `${n} · 6 = ${n * 6}. Rechne ${n * 6} − ${l}.`), { einheit: 'Flaschen', bild: B.gruppen(n, 6), nachweis: N(`${n} · 6`, `${n * 6} − ${l}`) }); },

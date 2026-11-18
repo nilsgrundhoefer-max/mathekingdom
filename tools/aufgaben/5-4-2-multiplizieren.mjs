@@ -40,7 +40,7 @@ export function multiplizieren() {
         h3('Gleich viele in jeder Tüte: Das ist eine Mal-Aufgabe.', '3 Tüten mit je 4 Murmeln: 3 · 4 = 12.', `Rechne ${g} · ${je}.`), { einheit: ding, bild: B.gruppen(g, je), nachweis: N(`${g} · ${je}`) }); },
     () => { const [r, sp] = [zz(2, 4), zz(5, 9)];
       return zahl(Z('Rechne.', `${r} · ${sp}`), r * sp, fehlerliste(r * sp, [[r + sp, '1x1-addiert'], [r * sp + sp, '1x1-nachbar']]),
-        h3('Das Bild hilft dir. Zähle die Reihen und die Punkte in 1 Reihe.', '2 · 6 heißt: 2 Reihen mit je 6 Punkten. Das sind 12.', `Zähle in ${sp}er-Schritten. Mache ${r} Schritte.`), { bild: B.feld(r, sp), nachweis: N(`${r} · ${sp}`) }); },
+        h3('Das Bild hilft dir. Zähle die Reihen und die Punkte in 1 Reihe.', r * sp === 12 ? '3 · 5 heißt: 3 Reihen mit je 5 Punkten. Das sind 15.' : '2 · 6 heißt: 2 Reihen mit je 6 Punkten. Das sind 12.', `Zähle in ${sp}er-Schritten. Mache ${r} Schritte.`), { bild: B.feld(r, sp), nachweis: N(`${r} · ${sp}`) }); },
     () => { const [r, sp] = suche(() => [zz(3, 6), zz(3, 8)], ([x, y]) => x !== y);
       return zahl(Z('Welche Zahl fehlt?', `${r} · ▢ = ${r * sp}`), sp, fehlerliste(sp, [[r * sp - r, '1x1-addiert'], [sp + 1, '1x1-nachbar']]),
         h3('Schau ins Bild: Wie viele Punkte sind in 1 Reihe?', '3 · ▢ = 15. Im Bild sind 3 Reihen mit je 5 Punkten. Die Zahl ist 5.', `Es sind ${r} Reihen. Zähle die Punkte in 1 Reihe.`), { bild: B.feld(r, sp), nachweis: N(`${r * sp} : ${r}`, `${r} · ${sp}`) }); },
@@ -472,7 +472,7 @@ export function multiplizieren() {
         h3('Gleich viele in jeder Reihe: mal. Einfach dazu: plus.', '2 Reihen mit je 3 Stühlen: 2 · 3. 2 Stühle und noch 3 Stühle: 2 + 3.', `Bei „${r} Reihen mit je ${je}“ ist jede Reihe gleich groß.`), { bild: B.gruppen(r, je), nachweis: N(`${r} · ${je}`, `${r} + ${je}`) }); },
     () => { const [p, je, lose] = suche(() => [zz(2, 4), zz(4, 6), zz(1, 3)], ([x, y]) => x !== y);
       return zahl(Z(`Es gibt ${p} Packungen mit je ${je} Stiften.`, `Dazu kommen ${lose} einzelne Stifte.`, 'Wie viele Stifte sind es?'), p * je + lose, fehlerliste(p * je + lose, [[p * je, 'sach-schritt-vergessen'], [p + je + lose, '1x1-addiert']]),
-        h3('Rechne zuerst die Packungen. Zähle dann die einzelnen Stifte dazu.', '2 Packungen mit je 5 Stiften sind 10 Stifte. Dazu 3 einzelne: 13.', `${p} · ${je} = ${p * je}. Dazu kommen ${lose}.`), { einheit: 'Stifte', bild: B.paeckchen(lose, p, je), nachweis: N(`${p} · ${je}`, `${p * je} + ${lose}`) }); },
+        h3('Rechne zuerst die Packungen. Zähle dann die einzelnen Stifte dazu.', p === 2 && je === 5 ? '3 Packungen mit je 4 Stiften sind 12 Stifte. Dazu 2 einzelne: 14.' : '2 Packungen mit je 5 Stiften sind 10 Stifte. Dazu 3 einzelne: 13.', `${p} · ${je} = ${p * je}. Dazu kommen ${lose}.`), { einheit: 'Stifte', bild: B.paeckchen(lose, p, je), nachweis: N(`${p} · ${je}`, `${p * je} + ${lose}`) }); },
     () => { const n = zz(3, 9);
       return zahl(Z('In 1 Karton sind 6 Eier.', `Mia kauft ${n} Kartons.`, 'Wie viele Eier sind es?'), n * 6, fehlerliste(n * 6, [[n + 6, '1x1-addiert']]),
         h3('In jedem Karton sind gleich viele Eier. Rechne mal.', '2 Kartons mit je 6 Eiern: 2 · 6 = 12.', `Rechne ${n} · 6.`), { einheit: 'Eier', bild: B.gruppen(n, 6), nachweis: N(`${n} · 6`) }); },

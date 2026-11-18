@@ -44,7 +44,7 @@ export function dividieren() {
         h3('„Geteilt durch“ schreibst du mit dem Zeichen :.', '10 geteilt durch 2 schreibst du so: 10 : 2.', `Die Zahl ${a} wird geteilt. Sie steht vorn.`), { bild: B.gruppen(q, d), nachweis: N(`${a} : ${d}`) }); },
     () => { const [a, d, q] = ungleich(2, 5, 2, 5);
       return zahl(Z(`Du hast ${a} Plättchen.`, `Immer ${d} Plättchen sind zusammen.`, 'Wie viele Gruppen sind es?'), q, fehlerliste(q, [[a - d, 'div-falsche-rechenart'], [d, 'begriffe-verwechselt']]),
-        h3('Teilen heißt: gleich große Gruppen bilden.', '12 Plättchen, immer 3 zusammen: Das sind 4 Gruppen. 12 : 3 = 4.', 'Zähle im Bild die Gruppen.'), { einheit: 'Gruppen', bild: B.gruppen(q, d), nachweis: N(`${a} : ${d}`) }); },
+        h3('Teilen heißt: gleich große Gruppen bilden.', a === 12 ? '10 Plättchen, immer 2 zusammen: Das sind 5 Gruppen. 10 : 2 = 5.' : '12 Plättchen, immer 3 zusammen: Das sind 4 Gruppen. 12 : 3 = 4.', 'Zähle im Bild die Gruppen.'), { einheit: 'Gruppen', bild: B.gruppen(q, d), nachweis: N(`${a} : ${d}`) }); },
     () => { const [a, d, q] = ungleich(2, 5, 2, 5);
       return auswahl(Z(`Die Mal-Aufgabe ist ${q} · ${d} = ${a}.`, 'Welche Geteilt-Aufgabe passt dazu?'), [opt(`${a} : ${d} = ${q}`, true), opt(`${d} : ${a} = ${q}`, false, 'div-vertauscht'), opt(`${q} : ${d} = ${a}`, false, 'div-vertauscht')],
         h3('Mal und geteilt gehören zusammen. Bei geteilt steht die größte Zahl vorn.', '3 · 5 = 15. Dazu passt 15 : 5 = 3.', `Die größte Zahl ist ${a}. Sie steht vorn.`), { bild: B.feld(q, d), nachweis: [{ art: 'gleichungen' }, ...N(`${q} · ${d}`, `${a} : ${d}`)] }); },
@@ -141,7 +141,7 @@ export function dividieren() {
         h3(`Lege immer ${d} zusammen. Zähle die Gruppen.`, `12 : 3: Die 3er-Reihe hilft: ${reihe(3, 4)}. Also 12 : 3 = 4.`, `Zähle im Bild die Gruppen mit je ${d} Plättchen.`), { bild: B.gruppen(q, d), nachweis: N(`${a} : ${d}`) }); },
     () => { const [a, d, q] = ungleich(3, 6, 3, 6);
       return luecken(Z(`${q} · ${d} = ${a}`, `${a} : ${d} = {{x}}`), { x: [q, fehlerliste(q, [[d, 'div-vertauscht'], [q + 1, 'div-einmaleins']])] },
-        h3('Die Mal-Aufgabe hilft dir beim Teilen.', '4 · 3 = 12. Also ist 12 : 3 = 4.', `Welche Zahl mal ${d} ergibt ${a}? Schau auf die Mal-Aufgabe.`), { bild: B.feld(q, d), nachweis: N(`${q} · ${d}`, `${a} : ${d}`) }); },
+        h3('Die Mal-Aufgabe hilft dir beim Teilen.', a === 12 ? '5 · 2 = 10. Also ist 10 : 2 = 5.' : '4 · 3 = 12. Also ist 12 : 3 = 4.', `Welche Zahl mal ${d} ergibt ${a}? Schau auf die Mal-Aufgabe.`), { bild: B.feld(q, d), nachweis: N(`${q} · ${d}`, `${a} : ${d}`) }); },
     () => { const [a, d, q] = suche(() => einmaleins(2, 5, 3, 6), ([x, y, w]) => y !== w && x - y !== w && x - y !== w + 1);
       return auswahl(Z(`${a} : ${d}`, 'Welches Ergebnis stimmt?'), [opt(String(q), true), opt(String(q + 1), false, 'div-einmaleins'), opt(String(a - d), false, 'div-falsche-rechenart')],
         h3('Prüfe mit der Mal-Aufgabe.', '15 : 3 = 5, denn 5 · 3 = 15.', `Im Bild sind ${d} Punkte in 1 Reihe. Zähle die Reihen.`), { bild: B.feld(q, d), nachweis: N(`${a} : ${d}`, `${q} · ${d}`) }); },
@@ -236,22 +236,22 @@ export function dividieren() {
   sechs(D('D3'), 'F', [
     () => { const q = zz(2, 9), a = q * 10;
       return zahl(Z('Rechne.', `${a} : 10`), q, fehlerliste(q, [[a, 'div-stellenwert'], [q * 100, 'div-stellenwert']]),
-        h3('Geteilt durch 10 fragt: Wie viele Zehner sind es?', '70 : 10 = 7. In 70 stecken 7 Zehner.', `Zähle im Bild die Zehner.`), { bild: B.material({ z: q }), nachweis: N(`${a} : 10`) }); },
+        h3('Geteilt durch 10 fragt: Wie viele Zehner sind es?', q === 7 ? '90 : 10 = 9. In 90 stecken 9 Zehner.' : '70 : 10 = 7. In 70 stecken 7 Zehner.', `Zähle im Bild die Zehner.`), { bild: B.material({ z: q }), nachweis: N(`${a} : 10`) }); },
     () => { const q = zz(2, 5), ding = wahl(['Sticker', 'Murmeln', 'Karten']);
       return zahl(Z(`10 Kinder teilen ${q * 10} ${ding} gerecht.`, `Wie viele ${ding} bekommt 1 Kind?`), q, fehlerliste(q, [[q * 10 - 10, 'div-falsche-rechenart']]),
-        h3('Gerecht teilen heißt: Jedes Kind bekommt gleich viele.', '10 Kinder teilen 30 Sticker. 30 : 10 = 3. Jedes Kind bekommt 3.', `Rechne ${q * 10} : 10. Zähle im Bild 1 Gruppe.`), { einheit: ding, bild: B.gruppen(10, q), nachweis: N(`${q * 10} : 10`) }); },
+        h3('Gerecht teilen heißt: Jedes Kind bekommt gleich viele.', q === 3 ? '10 Kinder teilen 40 Sticker. 40 : 10 = 4. Jedes Kind bekommt 4.' : '10 Kinder teilen 30 Sticker. 30 : 10 = 3. Jedes Kind bekommt 3.', `Rechne ${q * 10} : 10. Zähle im Bild 1 Gruppe.`), { einheit: ding, bild: B.gruppen(10, q), nachweis: N(`${q * 10} : 10`) }); },
     () => { const q = zz(2, 9), a = q * 10;
       return luecken(Z(`${a} sind {{x}} Zehner.`, `${a} : 10 = {{y}}`), { x: q, y: [q, fehlerliste(q, [[a, 'div-stellenwert']])] },
         h3('Zähle die Zehner. So viele sind das Ergebnis.', '40 sind 4 Zehner. 40 : 10 = 4.', 'Zähle im Bild die Zehner.'), { bild: B.material({ z: q }), nachweis: N(`${q} · 10`, `${a} : 10`) }); },
     () => { const q = zz(2, 9), a = q * 10;
       return auswahl(Z(`${a} : 10`, 'Welches Ergebnis stimmt?'), [opt(String(q), true), opt(String(a), false, 'div-stellenwert'), opt(String(q * 100), false, 'div-stellenwert')],
-        h3('Geteilt durch 10: Die Zahl wird kleiner.', '60 : 10 = 6. In 60 stecken 6 Zehner.', `Zähle im Bild die Zehner.`), { bild: B.material({ z: q }), nachweis: N(`${a} : 10`) }); },
+        h3('Geteilt durch 10: Die Zahl wird kleiner.', q === 6 ? '80 : 10 = 8. In 80 stecken 8 Zehner.' : '60 : 10 = 6. In 60 stecken 6 Zehner.', `Zähle im Bild die Zehner.`), { bild: B.material({ z: q }), nachweis: N(`${a} : 10`) }); },
     () => { const q = zz(2, 9);
       return zahl(Z(`${q * 10} : 10 = ${q}`, `Wie viel ist ${q * 100} : 10?`), q * 10, fehlerliste(q * 10, [[q, 'div-stellenwert'], [q * 100, 'div-stellenwert']]),
-        h3('1 Hunderter sind 10 Zehner.', '50 : 10 = 5. Dann ist 500 : 10 = 50.', `${q} Hunderter sind ${q * 10} Zehner. Das ist das Ergebnis.`), { bild: B.material({ h: q }), nachweis: N(`${q * 10} : 10`, `${q * 100} : 10`) }); },
+        h3('1 Hunderter sind 10 Zehner.', q === 5 ? '30 : 10 = 3. Dann ist 300 : 10 = 30.' : '50 : 10 = 5. Dann ist 500 : 10 = 50.', `${q} Hunderter sind ${q * 10} Zehner. Das ist das Ergebnis.`), { bild: B.material({ h: q }), nachweis: N(`${q * 10} : 10`, `${q * 100} : 10`) }); },
     () => { const q = zz(2, 9);
       return zahl(Z('Welche Zahl fehlt?', `▢ : 10 = ${q}`), q * 10, fehlerliste(q * 10, [[q, 'div-stellenwert'], [q + 10, 'div-falsche-rechenart']]),
-        h3('Rechne rückwärts mit einer Mal-Aufgabe.', '▢ : 10 = 4. Rechne 4 · 10 = 40.', `Im Bild siehst du ${q} Zehner. Wie heißt die Zahl?`), { bild: B.material({ z: q }), nachweis: N(`${q} · 10`, `${q * 10} : 10`) }); },
+        h3('Rechne rückwärts mit einer Mal-Aufgabe.', q === 4 ? '▢ : 10 = 7. Rechne 7 · 10 = 70.' : '▢ : 10 = 4. Rechne 4 · 10 = 40.', `Im Bild siehst du ${q} Zehner. Wie heißt die Zahl?`), { bild: B.material({ z: q }), nachweis: N(`${q} · 10`, `${q * 10} : 10`) }); },
   ]);
 
   const zehnerG = (max = 1000) => suche(() => { const d = zz(2, 9) * 10, q = zz(2, 30); return [d * q, d, q]; }, ([a, , q]) => a <= max && q % 10 !== 0);
@@ -276,7 +276,7 @@ export function dividieren() {
     3: () => { const [d, q] = suche(() => [zz(2, 6) * 10, zz(2, 9) * 10], ([x, y]) => x * y <= 1000 && x !== y), a = d * q, k = kind();
       return auswahl(Z(`${k} rechnet: ${a} : ${d} = ${q / 10}.`, 'Prüfe mit der Mal-Aufgabe.', 'Stimmt das?'),
         [opt(`Falsch. ${q / 10} · ${d} = ${q / 10 * d}. Richtig ist ${q}.`, true), opt(`Stimmt. ${q / 10} · ${d} = ${a}.`, false, 'div-stellenwert'), opt(`Falsch. Richtig ist ${q * 10}.`, false, 'div-stellenwert')],
-        h3('Die Mal-Aufgabe prüft: Ergebnis mal zweite Zahl muss die erste Zahl ergeben.', '600 : 20 = 3? Prüfe: 3 · 20 = 60. Das ist nicht 600. Richtig ist 30.', `Rechne ${q / 10} · ${d}. Kommt ${a} heraus?`), { nachweis: N(U(false, `${a} : ${d}`, q / 10), `${q / 10} · ${d}`, `${a} : ${d}`) }); },
+        h3('Die Mal-Aufgabe prüft: Ergebnis mal zweite Zahl muss die erste Zahl ergeben.', a === 600 ? '800 : 40 = 2? Prüfe: 2 · 40 = 80. Das ist nicht 800. Richtig ist 20.' : '600 : 20 = 3? Prüfe: 3 · 20 = 60. Das ist nicht 600. Richtig ist 30.', `Rechne ${q / 10} · ${d}. Kommt ${a} heraus?`), { nachweis: N(U(false, `${a} : ${d}`, q / 10), `${q / 10} · ${d}`, `${a} : ${d}`) }); },
   });
 
   stufen(D('D3'), 'M', {
@@ -560,7 +560,7 @@ export function dividieren() {
         h3(`Lege immer ${d} zusammen. Zähle die Gruppen.`, '24 Äpfel, immer 4 in eine Tüte: 24 : 4 = 6. Es werden 6 Tüten.', `Rechne ${a} : ${d}. Zähle im Bild die Gruppen.`), { einheit: plaetze, bild: B.gruppen(q, d), nachweis: N(`${a} : ${d}`) }); },
     () => { const [a, d, q] = ungleich(2, 5, 2, 6), [ding] = wahl(dingeF);
       return zahl(Z(`${d} Kinder teilen ${a} ${ding} gerecht.`, `Wie viele ${ding} bekommt 1 Kind?`), q, fehlerliste(q, [[a - d, 'div-falsche-rechenart']]),
-        h3('Gerecht teilen heißt: Jedes Kind bekommt gleich viele.', '3 Kinder teilen 15 Kekse: 15 : 3 = 5. Jedes Kind bekommt 5.', `Rechne ${a} : ${d}. Zähle im Bild 1 Gruppe.`), { einheit: ding, bild: B.gruppen(d, q), nachweis: N(`${a} : ${d}`) }); },
+        h3('Gerecht teilen heißt: Jedes Kind bekommt gleich viele.', a === 15 ? '4 Kinder teilen 8 Kekse: 8 : 4 = 2. Jedes Kind bekommt 2.' : '3 Kinder teilen 15 Kekse: 15 : 3 = 5. Jedes Kind bekommt 5.', `Rechne ${a} : ${d}. Zähle im Bild 1 Gruppe.`), { einheit: ding, bild: B.gruppen(d, q), nachweis: N(`${a} : ${d}`) }); },
     () => { const [a, d, q] = suche(() => einmaleins(2, 5, 3, 6), ([x, y, w]) => y !== w && x !== 2 * y), [ding, , plaetze, platz] = wahl(dingeF);
       return auswahl(Z(`Es gibt ${a} ${ding}.`, `Immer ${d} kommen in 1 ${platz}.`, `Wie viele ${plaetze} sind es?`, 'Welche Rechnung passt?'), [opt(`${a} : ${d}`, true), opt(`${a} − ${d}`, false, 'div-falsche-rechenart'), opt(`${a} · ${d}`, false, 'div-falsche-rechenart')],
         h3('Hier wird in gleiche Gruppen aufgeteilt. Dazu passt geteilt.', '12 Kekse, immer 3 in 1 Dose. Die Rechnung ist 12 : 3.', `Du legst immer ${d} zusammen, bis alle ${a} verteilt sind.`), { bild: B.gruppen(q, d), nachweis: N(`${a} : ${d}`) }); },

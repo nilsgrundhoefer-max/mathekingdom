@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (936 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1008 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -3261,3 +3261,269 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Differenz und Summe kommen je in eine
   - ☐ Beide. Die Ausdrücke sind gleich.
   - ☐ Keiner. Richtig ist 8 + 3 + 2.
   - ☑ Ole. Jedes Heft und jeder Stift wird 8-mal gekauft: 8 · 5 = 40.
+
+## 5.4.7-V1: Ich kann ausmultiplizieren.
+
+Grundlage, die F übt: Geteiltes Punktefeld: zwei Teile zusammen ergeben das ganze Feld
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm beide Teile in der Klammer mal. Rechne dann zusammen. *Beispiel:* 3 · (10 + 4): 3 · 10 = 30 und 3 · 4 = 12. Zusammen 42. *Lösungsschritt:* 3 · 10 = 30. Rechne jetzt 3 · 4.
+
+- `01` AFB I · 3 · (10 + 4) = 3 · 14 / Rechne mit dem Malkreuz. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 4 |
+  |---|---|---|
+  | 3 | **30** | **12** |
+
+  3 · 14 = **42**
+
+- `02` AFB I · Welche Zahl fehlt? / (10 + 1) · 6 = 10 · 6 + ▢ · 6 _(Bild: Punktefeld mit 11 Reihen zu je 6 Punkten, Trennlinie nach 10 Reihen)_ Lösung: x = **1**
+- `03` AFB I · Rechne. / (2 + 4) · 5 / Rechne 2 · 5 und 4 · 5. / Rechne dann zusammen. _(Bild: Punktefeld mit 6 Reihen zu je 5 Punkten, Trennlinie nach 2 Reihen)_ Lösung: **30**. Typische Fehler: 14 (verteilung-halb).
+- `04` AFB I · Welche Rechnung passt zum Bild? _(Bild: Punktefeld mit 11 Reihen zu je 3 Punkten, Trennlinie nach 9 Reihen)_
+  - ☐ 9 · 3 + 2
+  - ☑ 9 · 3 + 2 · 3
+  - ☐ 9 + 2 · 3
+- `05` AFB II · Ergänze. / (5 + 3) · 7 = 5 · 7 + ▢ · ▢ _(Bild: Punktefeld mit 8 Reihen zu je 7 Punkten, Trennlinie nach 5 Reihen)_ Lösung: a = **3**, b = **7**
+- `06` AFB I · Rechne 9 · 12 mit dem Malkreuz. / Zerlege 12 in 10 und 2. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 2 |
+  |---|---|---|
+  | 9 | **90** | **18** |
+
+  9 · 12 = **108**
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Teil der Klammer wird malgenommen. *Beispiel:* (8 + 4) · 6 = 8 · 6 + 4 · 6 = 48 + 24 = 72. *Lösungsschritt:* 7 · 5 = 35.
+
+- `01` AFB I · Rechne mit dem Verteilungsgesetz. / (7 + 4) · 5 = 7 · 5 + 4 · 5 / = ▢ + ▢ = ▢ _(Bild: Punktefeld mit 11 Reihen zu je 5 Punkten, Trennlinie nach 7 Reihen)_ Lösung: a = **35**, b = **20**, c = **55**
+- `02` AFB I · 5 · 47 = 5 · (40 + 7) / Rechne mit dem Malkreuz. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 40 | 7 |
+  |---|---|---|
+  | 5 | **200** | **35** |
+
+  5 · 47 = **235**
+
+- `03` AFB II · Welche Rechnung ist dasselbe wie 7 · (50 + 6)?
+  - ☐ 7 · 50 + 6
+  - ☐ 7 + 50 · 6
+  - ☑ 7 · 50 + 7 · 6
+- `04` AFB I · Rechne mit dem Verteilungsgesetz. / 3 · (20 + 9) Lösung: **87**. Typische Fehler: 69 (verteilung-halb).
+- `05` AFB II · Schau ins Bild. / (9 + 2) · 6 = ▢ · 6 + ▢ · 6 _(Bild: Punktefeld mit 11 Reihen zu je 6 Punkten, Trennlinie nach 9 Reihen)_ Lösung: a = **9**, b = **2**
+- `06` AFB III · Sara rechnet: / 6 · (20 + 2) = 120 + 2 = 122 / Stimmt das?
+  - ☐ Stimmt. / 6 · 20 = 120.
+  - ☐ Falsch. / Richtig ist 52.
+  - ☑ Falsch. / Auch 2 muss mit 6 malgenommen werden. / 120 + 12 = 132.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Summand in der Klammer wird mit dem Faktor davor malgenommen. *Lösungsschritt:* 7 · 60 = 420.
+
+- `01` AFB I · Multipliziere aus und rechne: 7 · (60 + 4) = ▢ + ▢ = ▢ Lösung: a = **420**, b = **28**, c = **448**
+- `02` AFB II · Rechne 17 · 36 mit dem Malkreuz. Zerlege beide Faktoren: (10 + 7) · (30 + 6). _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 30 | 6 |
+  |---|---|---|
+  | 10 | **300** | **60** |
+  | 7 | **210** | **42** |
+
+  17 · 36 = **612**
+
+- `03` AFB II · Welche Rechnung ist falsch ausmultipliziert?
+  - ☐ 6 · (9 + 7) = 6 · 9 + 6 · 7
+  - ☐ 6 · (9 − 7) = 6 · 9 − 6 · 7
+  - ☑ 6 · (9 + 7) = 6 · 9 + 7
+  - ☐ (9 + 7) · 6 = 9 · 6 + 7 · 6
+- `04` AFB I · Multipliziere aus und berechne: 4 · (100 − 3) Lösung: **388**. Typische Fehler: 397 (verteilung-halb).
+- `05` AFB II · Für 27 Kinder kauft die Lehrerin je ein Eis für 3 € und ein Getränk für 2 €. Wie viel kostet alles zusammen? Lösung: **135 €**. Typische Fehler: 83 (verteilung-halb).
+- `06` AFB III · Sara sagt: „6 · (15 + 8) = 6 · 15 + 8.“ Elif sagt: „6 · (15 + 8) = 6 · 15 + 6 · 8.“ Wer hat recht?
+  - ☐ Beide. Es kommt dasselbe heraus.
+  - ☑ Elif. Beim Ausmultiplizieren wird jeder Summand malgenommen: 90 + 48 = 138.
+  - ☐ Keiner. Richtig ist 21 · 8.
+  - ☐ Sara. Man nimmt nur den ersten Summanden mal.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Multipliziere zuerst aus. Was fällt dir dann auf?
+
+- `01` AFB I · Multipliziere aus und berechne: 14 · (60 + 4) − 14 · 4 Lösung: **840**. Typische Fehler: 892 (verteilung-halb).
+- `02` AFB II · Ergänze: ▢ · (60 + 7) = 360 + 42 Lösung: a = **6**
+- `03` AFB II · Multipliziere aus: (20 + 8) · (20 + 9) Lösung: **812**. Typische Fehler: 472 (verteilung-halb).
+- `04` AFB III · Gilt das Verteilungsgesetz auch für eine Division wie (30 + 9) : 3? Prüfe.
+  - ☐ Das kann man nicht prüfen.
+  - ☑ Ja. (30 + 9) : 3 = 13 und 30 : 3 + 9 : 3 = 10 + 3 = 13.
+  - ☐ Nein. Bei der Division darf man nichts zerlegen.
+  - ☐ Ja, aber nur, wenn man 30 : 3 + 9 rechnet.
+  - ☐ Nein. Das Verteilungsgesetz gilt nur für die Multiplikation.
+- `05` AFB II · Wie viele Teilprodukte entstehen, wenn du (10 + 4) · (10 + 5) ausmultiplizierst?
+  - ☐ 6
+  - ☐ 1
+  - ☐ 2
+  - ☐ 3
+  - ☑ 4
+- `06` AFB III · Elif sagt: „4 · (6 · 2) = 4 · 6 · 4 · 2.“ Sara sagt: „4 · (6 · 2) = 4 · 6 · 2.“ Wer hat recht?
+  - ☐ Keiner. Man darf die Klammer nicht auflösen.
+  - ☐ Beide. Es kommt dasselbe heraus.
+  - ☑ Sara. In der Klammer steht ein Produkt, keine Summe. Das Verteilungsgesetz gilt hier nicht: 4 · 12 = 48.
+  - ☐ Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen.
+  - ☐ Elif. Das ist das Verbindungsgesetz.
+
+## 5.4.7-V2: Ich kann ausklammern.
+
+Grundlage, die F übt: Zwei Punktefelder mit gleich vielen Reihen zusammenschieben
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben im Bild und unten sind gleich lange Reihen. *Beispiel:* 3 · 4 + 2 · 4 = (3 + 2) · 4. *Lösungsschritt:* Oben sind 8 Reihen.
+
+- `01` AFB I · Welche Zahl fehlt? / 8 · 5 + 3 · 5 = (▢ + 3) · 5 _(Bild: Punktefeld mit 11 Reihen zu je 5 Punkten, Trennlinie nach 8 Reihen)_ Lösung: x = **8**
+- `02` AFB I · Welche Rechnung passt zum Bild? _(Bild: Punktefeld mit 9 Reihen zu je 4 Punkten, Trennlinie nach 6 Reihen)_
+  - ☐ 6 + 3 · 4
+  - ☑ (6 + 3) · 4
+  - ☐ 6 · 3 · 4
+- `03` AFB I · 7 · 4 + 3 · 4 = (7 + 3) · 4 / Rechne mit der Klammer. _(Bild: Punktefeld mit 10 Reihen zu je 4 Punkten, Trennlinie nach 7 Reihen)_ Lösung: **40**. Typische Fehler: 31 (verteilung-halb).
+- `04` AFB I · Welche Zahl fehlt? / 3 · 7 + 3 · 4 = 3 · (7 + ▢) _(Bild: Punktefeld mit 11 Reihen zu je 3 Punkten, Trennlinie nach 7 Reihen)_ Lösung: x = **4**
+- `05` AFB II · Rechne geschickt. / 6 · 8 + 4 · 8 _(Bild: Punktefeld mit 10 Reihen zu je 8 Punkten, Trennlinie nach 6 Reihen)_ Lösung: **80**. Typische Fehler: 52 (verteilung-halb).
+- `06` AFB I · Rechne geschickt. / 9 · 6 + 1 · 6 _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 9 Reihen)_ Lösung: **60**. Typische Fehler: 55 (verteilung-halb).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gleiche Faktor kommt vor die Klammer. *Beispiel:* 9 · 6 + 9 · 4 = 9 · (6 + 4). *Lösungsschritt:* Der gleiche Faktor ist 3.
+
+- `01` AFB I · Schreibe mit Klammer. / 3 · 6 + 3 · 4 = 3 · (▢ + ▢) _(Bild: Punktefeld mit 10 Reihen zu je 3 Punkten, Trennlinie nach 6 Reihen)_ Lösung: a = **6**, b = **4**
+- `02` AFB I · Rechne geschickt. / 13 · 6 + 7 · 6 Lösung: **120**. Typische Fehler: 85 (verteilung-halb).
+- `03` AFB II · Welche Rechnung ist dasselbe wie 16 · 7 + 4 · 7?
+  - ☐ (16 · 4) + 7
+  - ☑ (16 + 4) · 7
+  - ☐ 16 + 4 · 7
+- `04` AFB I · Rechne geschickt. / 4 · 43 + 4 · 57 Lösung: **400**. Typische Fehler: 229 (verteilung-halb).
+- `05` AFB II · Rechne geschickt. / 7 · 6 + 3 · 6 _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 7 Reihen)_ Lösung: **60**. Typische Fehler: 45 (verteilung-halb).
+- `06` AFB III · Tom rechnet: / 6 · 7 + 6 · 3 = 6 · 7 + 3 = 45 / Stimmt das? _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 7 Reihen)_
+  - ☐ Stimmt. / 6 · 7 = 42.
+  - ☐ Falsch. / Richtig ist 6 + 7 + 3 = 16.
+  - ☑ Falsch. / Richtig ist 6 · (7 + 3) = 6 · 10 = 60.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gemeinsame Faktor kommt vor die Klammer. *Lösungsschritt:* 8 + 2 = 10.
+
+- `01` AFB I · Klammere aus und rechne: 17 · 8 + 17 · 2 = 17 · (▢ + 2) = ▢ Lösung: x = **8**, y = **170**
+- `02` AFB II · Klammere aus und berechne: 61 · 13 − 61 · 3 Lösung: **610**. Typische Fehler: 790 (verteilung-halb).
+- `03` AFB II · Bei welcher Rechnung kannst du einen gemeinsamen Faktor ausklammern?
+  - ☐ 9 · 16 + 3 · 7
+  - ☐ 9 · 16 · 7
+  - ☑ 9 · 16 + 9 · 7
+  - ☐ 9 + 16 · 7
+- `04` AFB I · Klammere aus und berechne: 14 · 13 + 14 · 7 Lösung: **280**. Typische Fehler: 189 (verteilung-halb).
+- `05` AFB II · Ein Bäcker verkauft am Morgen 46 Brötchen und am Nachmittag 54 Brötchen. Jedes Brötchen kostet 40 Cent. Wie viel Cent nimmt er ein? Lösung: **4000 Cent**. Typische Fehler: 1894 (verteilung-halb).
+- `06` AFB III · Ali sagt: „15 · 9 + 15 · 4 = 15 · 13.“ Emre sagt: „15 · 9 + 15 · 4 = 15 · 36.“ Wer hat recht?
+  - ☐ Emre. In der Klammer wird malgenommen.
+  - ☐ Beide. Es kommt dasselbe heraus.
+  - ☑ Ali. Beim Ausklammern werden die Zahlen in der Klammer addiert: 15 · (9 + 4) = 195.
+  - ☐ Keiner. Richtig ist 15 · 9 + 4.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die einzelne 32 als Produkt.
+
+- `01` AFB I · Klammere aus und berechne: 32 · 99 + 32 Lösung: **3200**. Typische Fehler: 3169 (verteilung-halb).
+- `02` AFB II · Klammere aus und berechne: 125 · 14 − 125 · 6 Lösung: **1000**. Typische Fehler: 1744 (verteilung-halb).
+- `03` AFB II · Ergänze: 27 · 12 + 27 · ▢ = 27 · 30 = ▢ Lösung: a = **18**, b = **810**
+- `04` AFB III · Warum ist 58 · 99 + 58 leicht zu rechnen?
+  - ☐ Es ist nicht leicht. Man muss schriftlich rechnen.
+  - ☑ Weil 58 = 58 · 1 ist. Ausklammern ergibt 58 · (99 + 1) = 58 · 100 = 5800.
+  - ☐ Weil man 99 + 58 zuerst rechnen darf.
+  - ☐ Weil man die Klammer weglassen darf.
+  - ☐ Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf.
+- `05` AFB II · Klammere aus und berechne: 9 · 25 + 9 · 16 + 9 · 59 Lösung: **900**. Typische Fehler: 300 (verteilung-halb).
+- `06` AFB III · Sara sagt: „18 · 9 − 18 · 2 = 18 · 7.“ Jonas sagt: „18 · 9 − 18 · 2 = 18 · 11.“ Wer hat recht?
+  - ☐ Beide. Ausklammern ändert nichts.
+  - ☐ Keiner. Bei Minus darf man nicht ausklammern.
+  - ☐ Jonas. Es kommt 198 heraus.
+  - ☐ Jonas. In der Klammer wird immer addiert.
+  - ☑ Sara. Beim Ausklammern bleibt das Minus in der Klammer: 18 · (9 − 2) = 126.
+
+## 5.4.7-V3: Ich kann mit dem Verteilungsgesetz geschickt rechnen.
+
+Grundlage, die F übt: Malkreuz mit glatten Zehnern
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 12 ist 10 und 2. Nimm beide Teile mal. *Beispiel:* 4 · 12: 4 · 10 = 40 und 4 · 2 = 8. Zusammen 48. *Lösungsschritt:* 5 · 10 = 50. Rechne jetzt 5 · 2.
+
+- `01` AFB I · Rechne geschickt. / 5 · 12 / Rechne 5 · 10 und 5 · 2. _(Bild: Punktefeld mit 12 Reihen zu je 5 Punkten, Trennlinie nach 10 Reihen)_ Lösung: **60**. Typische Fehler: 52 (verteilung-halb).
+- `02` AFB I · Rechne geschickt. / 11 · 8 / Rechne 10 · 8 und 1 · 8. _(Bild: Punktefeld mit 11 Reihen zu je 8 Punkten, Trennlinie nach 10 Reihen)_ Lösung: **88**. Typische Fehler: 81 (verteilung-halb).
+- `03` AFB I · Wie rechnest du 9 · 8 geschickt? _(Bild: Punktefeld mit 9 Reihen zu je 8 Punkten)_
+  - ☐ 9 · 7 + 1
+  - ☐ 10 · 8 − 1
+  - ☑ 10 · 8 − 1 · 8
+- `04` AFB I · Rechne. / 12 · 6 / Zerlege 12 in 10 und 2. _(Bild: Punktefeld mit 12 Reihen zu je 6 Punkten, Trennlinie nach 10 Reihen)_ Lösung: **72**. Typische Fehler: 62 (verteilung-halb).
+- `05` AFB II · Rechne 7 · 11 geschickt. / Zerlege 11 in 10 und 1. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 1 |
+  |---|---|---|
+  | 7 | **70** | **7** |
+
+  7 · 11 = **77**
+
+- `06` AFB I · Rechne geschickt. / 3 · 11 _(Bild: Punktefeld mit 11 Reihen zu je 3 Punkten, Trennlinie nach 10 Reihen)_ Lösung: **33**. Typische Fehler: 31 (verteilung-halb).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm beide Teile mal. Rechne dann zusammen. *Beispiel:* 8 · 102: 8 · 100 = 800 und 8 · 2 = 16. Zusammen 816. *Lösungsschritt:* 6 · 100 = 600.
+
+- `01` AFB I · Rechne 6 · 101 geschickt. / Zerlege 101 in 100 und 1. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 100 | 1 |
+  |---|---|---|
+  | 6 | **600** | **6** |
+
+  6 · 101 = **606**
+
+- `02` AFB I · Rechne geschickt. / 5 · 98 Lösung: **490**. Typische Fehler: 498 (verteilung-halb).
+- `03` AFB II · Rechne geschickt. / 18 · 21 = 18 · 20 + 18 · ▢ / 18 · 21 = ▢ Lösung: a = **1**, b = **378**
+- `04` AFB I · Rechne geschickt. / 6 · 28 Lösung: **168**. Typische Fehler: 178 (verteilung-halb).
+- `05` AFB II · Ein Buch kostet 29 €. / Ida kauft 4 Bücher. / Wie viel muss Ida bezahlen? _(Bild: Streifenbild: Ganzes ?, Teile 29 und 29 und 29 und 29)_ Lösung: **116 €**. Typische Fehler: 119 (verteilung-halb).
+- `06` AFB III · Sara rechnet 9 · 12 so: / 10 · 12 − 1 = 119 / Stimmt das? _(Bild: Punktefeld mit 9 Reihen zu je 12 Punkten)_
+  - ☐ Falsch. / Richtig ist 10 · 12 + 1 = 121.
+  - ☐ Stimmt. / Man nimmt nur 1 weg.
+  - ☑ Falsch. / 9 ist 1 weniger als 10. / Richtig ist 10 · 12 − 1 · 12 = 108.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 83 in 80 und 3. *Lösungsschritt:* 45 · 80 = 3600. Dazu 45 · 3 = 135.
+
+- `01` AFB I · Rechne geschickt: 45 · 83 Lösung: **3735**. Typische Fehler: 3603 (verteilung-halb).
+- `02` AFB II · Rechne geschickt: 53 · 25 + 47 · 25 Lösung: **2500**. Typische Fehler: 1372 (verteilung-halb).
+- `03` AFB II · Ergänze: 26 · 103 = 26 · 100 + ▢ = ▢ Lösung: a = **78**, b = **2678**
+- `04` AFB I · Rechne geschickt: 31 · 99 Lösung: **3069**. Typische Fehler: 3099 (verteilung-halb).
+- `05` AFB II · Ein Ticket kostet 49 €. Eine Gruppe kauft 14 Tickets. Wie viel kosten die Tickets? Rechne geschickt. Lösung: **686 €**. Typische Fehler: 699 (verteilung-halb).
+- `06` AFB III · Noah rechnet 65 · 19 = 65 · 20 − 65 = 1235. Finn rechnet 65 · 19 = 65 · 20 − 19 = 1281. Wer hat recht?
+  - ☐ Keiner. Richtig ist 65 · 20 − 1.
+  - ☐ Finn. Man zieht die Zahl ab, die geändert wurde.
+  - ☐ Beide. Es kommt dasselbe heraus.
+  - ☑ Noah. 65 · 19 ist 65 · 20 − 65 · 1. Abgezogen wird 65, nicht 19.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 101 geschickt.
+
+- `01` AFB I · Rechne geschickt: 101 · 55 Lösung: **5555**. Typische Fehler: 5501 (verteilung-halb).
+- `02` AFB II · Rechne geschickt: 25 · 62 + 25 · 38 Lösung: **2500**. Typische Fehler: 1588 (verteilung-halb).
+- `03` AFB II · Rechne geschickt: 999 · 13 Lösung: **12987**. Typische Fehler: 12999 (verteilung-halb).
+- `04` AFB III · Welche Gleichung stimmt? Prüfe, ohne 39 · 41 auszurechnen.
+  - ☐ 39 · 41 = 40 · 40 + 1
+  - ☐ 39 · 41 = 40 · 41 − 1
+  - ☐ 39 · 41 = 39 · 40 + 2
+  - ☐ 39 · 41 = 39 · 39 + 2
+  - ☑ 39 · 41 = 39 · 40 + 39
+- `05` AFB II · Rechne geschickt: 8 · 31 · 125 + 8 · 69 · 125 Lösung: **100000**. Typische Fehler: 31069 (verteilung-halb).
+- `06` AFB III · Jonas rechnet 36 · 25 = 36 · 20 + 36 · 5 = 900. Lina rechnet 36 · 25 = 9 · 100 = 900. Wer hat recht?
+  - ☐ Nur Jonas. Man muss immer das Verteilungsgesetz nehmen.
+  - ☐ Keiner. Man muss schriftlich rechnen.
+  - ☐ Nur Lina. Das Verteilungsgesetz gilt nicht bei 25.
+  - ☐ Keiner. Richtig ist 725.
+  - ☑ Beide. Jonas nutzt das Verteilungsgesetz, Lina zerlegt 36 in 9 · 4 und nutzt 4 · 25 = 100.

@@ -17404,7 +17404,7 @@
    ],
    "hilfen": {
     "tipp": "Mal 10 heißt: so viele Zehner.",
-    "beispiel": "3 · 10 sind 3 Zehner. Das ist 30.",
+    "beispiel": "4 · 10 sind 4 Zehner. Das ist 40.",
     "loesungsschritt": "Im Bild siehst du 3 Zehner. Zähle 10, 20, 30 und so weiter."
    },
    "bild": {
@@ -18202,7 +18202,7 @@
    ],
    "hilfen": {
     "tipp": "Geteilt durch 10 heißt: Wie viele Zehner sind es?",
-    "beispiel": "30 : 10 = 3. In 30 stecken 3 Zehner.",
+    "beispiel": "40 : 10 = 4. In 40 stecken 4 Zehner.",
     "loesungsschritt": "Zähle im Bild die Zehner."
    },
    "bild": {
@@ -20630,7 +20630,7 @@
    ],
    "hilfen": {
     "tipp": "Das Bild hilft dir. Zähle die Reihen und die Punkte in 1 Reihe.",
-    "beispiel": "2 · 6 heißt: 2 Reihen mit je 6 Punkten. Das sind 12.",
+    "beispiel": "3 · 5 heißt: 3 Reihen mit je 5 Punkten. Das sind 15.",
     "loesungsschritt": "Zähle in 6er-Schritten. Mache 2 Schritte."
    },
    "bild": {
@@ -24467,7 +24467,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne zuerst die Packungen. Zähle dann die einzelnen Stifte dazu.",
-    "beispiel": "2 Packungen mit je 5 Stiften sind 10 Stifte. Dazu 3 einzelne: 13.",
+    "beispiel": "3 Packungen mit je 4 Stiften sind 12 Stifte. Dazu 2 einzelne: 14.",
     "loesungsschritt": "2 · 5 = 10. Dazu kommen 3."
    },
    "einheit": "Stifte",
@@ -25418,7 +25418,7 @@
    },
    "hilfen": {
     "tipp": "Rechne immer zuerst die Klammer aus.",
-    "beispiel": "(7 · 2) · 5 = 14 · 5 = 70. Und 7 · (2 · 5) = 7 · 10 = 70.",
+    "beispiel": "(6 · 2) · 5 = 12 · 5 = 60. Und 6 · (2 · 5) = 6 · 10 = 60.",
     "loesungsschritt": "Zweiter Weg: 2 · 5 = 10. Dann 7 · 10."
    },
    "bild": {
@@ -29241,7 +29241,7 @@
    },
    "hilfen": {
     "tipp": "Die Mal-Aufgabe hilft dir beim Teilen.",
-    "beispiel": "4 · 3 = 12. Also ist 12 : 3 = 4.",
+    "beispiel": "5 · 2 = 10. Also ist 10 : 2 = 5.",
     "loesungsschritt": "Welche Zahl mal 3 ergibt 12? Schau auf die Mal-Aufgabe."
    },
    "bild": {
@@ -30069,7 +30069,7 @@
    ],
    "hilfen": {
     "tipp": "Geteilt durch 10: Die Zahl wird kleiner.",
-    "beispiel": "60 : 10 = 6. In 60 stecken 6 Zehner.",
+    "beispiel": "80 : 10 = 8. In 80 stecken 8 Zehner.",
     "loesungsschritt": "Zähle im Bild die Zehner."
    },
    "bild": {
@@ -30102,7 +30102,7 @@
    ],
    "hilfen": {
     "tipp": "1 Hunderter sind 10 Zehner.",
-    "beispiel": "50 : 10 = 5. Dann ist 500 : 10 = 50.",
+    "beispiel": "30 : 10 = 3. Dann ist 300 : 10 = 30.",
     "loesungsschritt": "5 Hunderter sind 50 Zehner. Das ist das Ergebnis."
    },
    "bild": {
@@ -30136,7 +30136,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
-    "beispiel": "▢ : 10 = 4. Rechne 4 · 10 = 40.",
+    "beispiel": "▢ : 10 = 7. Rechne 7 · 10 = 70.",
     "loesungsschritt": "Im Bild siehst du 4 Zehner. Wie heißt die Zahl?"
    },
    "bild": {
@@ -30333,7 +30333,7 @@
    ],
    "hilfen": {
     "tipp": "Die Mal-Aufgabe prüft: Ergebnis mal zweite Zahl muss die erste Zahl ergeben.",
-    "beispiel": "600 : 20 = 3? Prüfe: 3 · 20 = 60. Das ist nicht 600. Richtig ist 30.",
+    "beispiel": "800 : 40 = 2? Prüfe: 2 · 40 = 80. Das ist nicht 800. Richtig ist 20.",
     "loesungsschritt": "Rechne 3 · 20. Kommt 600 heraus?"
    },
    "nachweis": [
@@ -34942,7 +34942,7 @@
    ],
    "hilfen": {
     "tipp": "Die Päckchen sind ein Mal. Die einzelnen Plättchen sind ein Plus.",
-    "beispiel": "3 Päckchen mit je 4 und dazu 2: 3 · 4 + 2.",
+    "beispiel": "4 Päckchen mit je 5 und dazu 1: 4 · 5 + 1.",
     "loesungsschritt": "2 Päckchen mit je 3: 2 · 3."
    },
    "bild": {
@@ -35016,7 +35016,7 @@
    ],
    "hilfen": {
     "tipp": "Mal heißt: gleich viele in jeder Packung.",
-    "beispiel": "2 + 3 · 4: 2 einzelne und 3 Packungen mit je 4.",
+    "beispiel": "3 + 2 · 5: 3 einzelne und 2 Packungen mit je 5.",
     "loesungsschritt": "3 · 4 heißt: 3 Packungen mit je 4."
    },
    "bild": {
@@ -35657,6 +35657,2633 @@
     "8 · 5 = 40",
     "8 · 3 = 24",
     "8 · 2 = 16"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-F-01",
+   "lernziel": "5.4.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "tabelle",
+   "text": "3 · (10 + 4) = 3 · 14\nRechne mit dem Malkreuz.",
+   "tabelle": {
+    "kopf": [
+     "·",
+     "10",
+     "4"
+    ],
+    "zeilen": [
+     [
+      "3",
+      {
+       "luecke": "p00"
+      },
+      {
+       "luecke": "p01"
+      }
+     ]
+    ],
+    "art": "malkreuz",
+    "rechnung": {
+     "faktoren": [
+      3,
+      14
+     ],
+     "summe": "e"
+    }
+   },
+   "luecken": {
+    "p00": {
+     "loesung": 30,
+     "typischeFehler": []
+    },
+    "p01": {
+     "loesung": 12,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 42,
+     "typischeFehler": [
+      {
+       "wert": 34,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm beide Teile in der Klammer mal. Rechne dann zusammen.",
+    "beispiel": "3 · (10 + 4): 3 · 10 = 30 und 3 · 4 = 12. Zusammen 42.",
+    "loesungsschritt": "3 · 10 = 30. Rechne jetzt 3 · 4."
+   },
+   "nachweis": [
+    "3 · 10 = 30",
+    "3 · 4 = 12",
+    "30 + 12 = 42",
+    "3 · 14 = 42"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-F-02",
+   "lernziel": "5.4.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n(10 + 1) · 6 = 10 · 6 + {{x}} · 6",
+   "luecken": {
+    "x": {
+     "loesung": 1,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Im Bild sind oben 10 Reihen. Unten sind die anderen Reihen.",
+    "beispiel": "(10 + 2) · 3 = 10 · 3 + 2 · 3.",
+    "loesungsschritt": "Zähle die Reihen unter der Lücke."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 6,
+    "trenn": 10
+   },
+   "nachweis": [
+    "(10 + 1) · 6 = 66",
+    "10 · 6 = 60",
+    "1 · 6 = 6",
+    "60 + 6 = 66"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-F-03",
+   "lernziel": "5.4.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n(2 + 4) · 5\nRechne 2 · 5 und 4 · 5.\nRechne dann zusammen.",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Oben im Bild ist ein Teil, unten der andere.",
+    "beispiel": "(5 + 2) · 3: 5 · 3 = 15 und 2 · 3 = 6. Zusammen 21.",
+    "loesungsschritt": "2 · 5 = 10. Rechne jetzt 4 · 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 5,
+    "trenn": 2
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "4 · 5 = 20",
+    "10 + 20 = 30",
+    "(2 + 4) · 5 = 30"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-F-04",
+   "lernziel": "5.4.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Rechnung passt zum Bild?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "9 · 3 + 2",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "9 · 3 + 2 · 3",
+     "richtig": true
+    },
+    {
+     "text": "9 + 2 · 3",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Reihen oben und unten. In jeder Reihe sind gleich viele Punkte.",
+    "beispiel": "3 Reihen oben, 2 Reihen unten, je 4 Punkte: 3 · 4 + 2 · 4.",
+    "loesungsschritt": "Oben sind 9 Reihen mit je 3 Punkten."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 3,
+    "trenn": 9
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 33
+    },
+    "9 · 3 = 27",
+    "2 · 3 = 6",
+    "27 + 6 = 33"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-F-05",
+   "lernziel": "5.4.7-V1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ergänze.\n(5 + 3) · 7 = 5 · 7 + {{a}} · {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 8,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 7,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Beide Teile werden mit derselben Zahl malgenommen.",
+    "beispiel": "(4 + 3) · 5 = 4 · 5 + 3 · 5.",
+    "loesungsschritt": "Der zweite Teil ist 3."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 8,
+    "spalten": 7,
+    "trenn": 5
+   },
+   "nachweis": [
+    "(5 + 3) · 7 = 56",
+    "5 · 7 + 3 · 7 = 56"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-F-06",
+   "lernziel": "5.4.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "tabelle",
+   "text": "Rechne 9 · 12 mit dem Malkreuz.\nZerlege 12 in 10 und 2.",
+   "tabelle": {
+    "kopf": [
+     "·",
+     "10",
+     "2"
+    ],
+    "zeilen": [
+     [
+      "9",
+      {
+       "luecke": "p00"
+      },
+      {
+       "luecke": "p01"
+      }
+     ]
+    ],
+    "art": "malkreuz",
+    "rechnung": {
+     "faktoren": [
+      9,
+      12
+     ],
+     "summe": "e"
+    }
+   },
+   "luecken": {
+    "p00": {
+     "loesung": 90,
+     "typischeFehler": []
+    },
+    "p01": {
+     "loesung": 18,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 108,
+     "typischeFehler": [
+      {
+       "wert": 92,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm beide Teile mal. Rechne dann zusammen.",
+    "beispiel": "4 · 12: 4 · 10 = 40 und 4 · 2 = 8. Zusammen 48.",
+    "loesungsschritt": "9 · 10 = 90. Rechne jetzt 9 · 2."
+   },
+   "nachweis": [
+    "9 · 10 = 90",
+    "9 · 2 = 18",
+    "90 + 18 = 108",
+    "9 · 12 = 108"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-G-01",
+   "lernziel": "5.4.7-V1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Rechne mit dem Verteilungsgesetz.\n(7 + 4) · 5 = 7 · 5 + 4 · 5\n= {{a}} + {{b}} = {{c}}",
+   "luecken": {
+    "a": {
+     "loesung": 35,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 20,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 55,
+     "typischeFehler": [
+      {
+       "wert": 39,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Jeder Teil der Klammer wird malgenommen.",
+    "beispiel": "(8 + 4) · 6 = 8 · 6 + 4 · 6 = 48 + 24 = 72.",
+    "loesungsschritt": "7 · 5 = 35."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 5,
+    "trenn": 7
+   },
+   "nachweis": [
+    "7 · 5 = 35",
+    "4 · 5 = 20",
+    "35 + 20 = 55",
+    "(7 + 4) · 5 = 55"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-G-02",
+   "lernziel": "5.4.7-V1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "tabelle",
+   "text": "5 · 47 = 5 · (40 + 7)\nRechne mit dem Malkreuz.",
+   "tabelle": {
+    "kopf": [
+     "·",
+     "40",
+     "7"
+    ],
+    "zeilen": [
+     [
+      "5",
+      {
+       "luecke": "p00"
+      },
+      {
+       "luecke": "p01"
+      }
+     ]
+    ],
+    "art": "malkreuz",
+    "rechnung": {
+     "faktoren": [
+      5,
+      47
+     ],
+     "summe": "e"
+    }
+   },
+   "luecken": {
+    "p00": {
+     "loesung": 200,
+     "typischeFehler": []
+    },
+    "p01": {
+     "loesung": 35,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 235,
+     "typischeFehler": [
+      {
+       "wert": 207,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm beide Teile mal und addiere.",
+    "beispiel": "7 · (30 + 4): 7 · 30 = 210 und 7 · 4 = 28. Zusammen 238.",
+    "loesungsschritt": "5 · 40 = 200."
+   },
+   "nachweis": [
+    "5 · 40 = 200",
+    "5 · 7 = 35",
+    "200 + 35 = 235",
+    "5 · 47 = 235"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-G-03",
+   "lernziel": "5.4.7-V1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Rechnung ist dasselbe wie 7 · (50 + 6)?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "7 · 50 + 6",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "7 + 50 · 6",
+     "richtig": false
+    },
+    {
+     "text": "7 · 50 + 7 · 6",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Teile der Klammer werden malgenommen.",
+    "beispiel": "8 · (30 + 5) = 8 · 30 + 8 · 5.",
+    "loesungsschritt": "Auch 6 wird mit 7 malgenommen."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 392
+    },
+    "7 · (50 + 6) = 392",
+    "7 · 50 + 7 · 6 = 392"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-G-04",
+   "lernziel": "5.4.7-V1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne mit dem Verteilungsgesetz.\n3 · (20 + 9)",
+   "loesung": 87,
+   "typischeFehler": [
+    {
+     "wert": 69,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nimm jeden Teil der Klammer mal. Addiere dann.",
+    "beispiel": "5 · (40 + 7) = 5 · 40 + 5 · 7 = 200 + 35 = 235.",
+    "loesungsschritt": "3 · 20 = 60 und 3 · 9 = 27."
+   },
+   "nachweis": [
+    "3 · 20 = 60",
+    "3 · 9 = 27",
+    "60 + 27 = 87",
+    "3 · (20 + 9) = 87"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-G-05",
+   "lernziel": "5.4.7-V1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Schau ins Bild.\n(9 + 2) · 6 = {{a}} · 6 + {{b}} · 6",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 2,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Oben im Bild ist der erste Teil. Unten ist der zweite Teil.",
+    "beispiel": "(7 + 5) · 9 = 7 · 9 + 5 · 9.",
+    "loesungsschritt": "Oben sind 9 Reihen."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 6,
+    "trenn": 9
+   },
+   "nachweis": [
+    "(9 + 2) · 6 = 66",
+    "9 · 6 + 2 · 6 = 66"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-G-06",
+   "lernziel": "5.4.7-V1",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Sara rechnet:\n6 · (20 + 2) = 120 + 2 = 122\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.\n6 · 20 = 120.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 52.",
+     "richtig": false
+    },
+    {
+     "text": "Falsch.\nAuch 2 muss mit 6 malgenommen werden.\n120 + 12 = 132.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Teil der Klammer wird malgenommen.",
+    "beispiel": "4 · (25 + 3) = 4 · 25 + 4 · 3 = 100 + 12 = 112.",
+    "loesungsschritt": "Rechne 6 · 2."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "6 · (20 + 2)",
+     "behauptet": 122
+    },
+    "6 · 20 = 120",
+    "6 · 2 = 12",
+    "120 + 12 = 132",
+    "120 + 2 = 122",
+    "(6 + 20) · 2 = 52"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-M-01",
+   "lernziel": "5.4.7-V1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Multipliziere aus und rechne: 7 · (60 + 4) = {{a}} + {{b}} = {{c}}",
+   "luecken": {
+    "a": {
+     "loesung": 420,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 28,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 448,
+     "typischeFehler": [
+      {
+       "wert": 424,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Jeder Summand in der Klammer wird mit dem Faktor davor malgenommen.",
+    "loesungsschritt": "7 · 60 = 420."
+   },
+   "nachweis": [
+    "7 · 60 = 420",
+    "7 · 4 = 28",
+    "420 + 28 = 448",
+    "7 · (60 + 4) = 448"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-M-02",
+   "lernziel": "5.4.7-V1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "tabelle",
+   "text": "Rechne 17 · 36 mit dem Malkreuz. Zerlege beide Faktoren: (10 + 7) · (30 + 6).",
+   "tabelle": {
+    "kopf": [
+     "·",
+     "30",
+     "6"
+    ],
+    "zeilen": [
+     [
+      "10",
+      {
+       "luecke": "p00"
+      },
+      {
+       "luecke": "p01"
+      }
+     ],
+     [
+      "7",
+      {
+       "luecke": "p10"
+      },
+      {
+       "luecke": "p11"
+      }
+     ]
+    ],
+    "art": "malkreuz",
+    "rechnung": {
+     "faktoren": [
+      17,
+      36
+     ],
+     "summe": "e"
+    }
+   },
+   "luecken": {
+    "p00": {
+     "loesung": 300,
+     "typischeFehler": []
+    },
+    "p01": {
+     "loesung": 60,
+     "typischeFehler": []
+    },
+    "p10": {
+     "loesung": 210,
+     "typischeFehler": []
+    },
+    "p11": {
+     "loesung": 42,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 612,
+     "typischeFehler": [
+      {
+       "wert": 342,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Jeder Teil wird mit jedem Teil malgenommen. Das sind vier Felder.",
+    "loesungsschritt": "10 · 30 = 300."
+   },
+   "nachweis": [
+    "10 · 30 = 300",
+    "10 · 6 = 60",
+    "7 · 30 = 210",
+    "7 · 6 = 42",
+    "300 + 60 + 210 + 42 = 612",
+    "17 · 36 = 612"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-M-03",
+   "lernziel": "5.4.7-V1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Rechnung ist falsch ausmultipliziert?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6 · (9 + 7) = 6 · 9 + 6 · 7",
+     "richtig": false
+    },
+    {
+     "text": "6 · (9 − 7) = 6 · 9 − 6 · 7",
+     "richtig": false
+    },
+    {
+     "text": "6 · (9 + 7) = 6 · 9 + 7",
+     "richtig": true
+    },
+    {
+     "text": "(9 + 7) · 6 = 9 · 6 + 7 · 6",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Seiten jeder Gleichung aus.",
+    "loesungsschritt": "6 · (9 + 7) = 6 · 16 = 96."
+   },
+   "nachweis": [
+    {
+     "art": "gleichungen",
+     "falsche": true
+    }
+   ]
+  },
+  {
+   "id": "5.4.7-V1-M-04",
+   "lernziel": "5.4.7-V1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Multipliziere aus und berechne: 4 · (100 − 3)",
+   "loesung": 388,
+   "typischeFehler": [
+    {
+     "wert": 397,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Verteilungsgesetz gilt auch bei Minus.",
+    "loesungsschritt": "4 · 100 = 400 und 4 · 3 = 12."
+   },
+   "nachweis": [
+    "4 · 100 = 400",
+    "4 · 3 = 12",
+    "400 − 12 = 388",
+    "4 · (100 − 3) = 388"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-M-05",
+   "lernziel": "5.4.7-V1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Für 27 Kinder kauft die Lehrerin je ein Eis für 3 € und ein Getränk für 2 €. Wie viel kostet alles zusammen?",
+   "loesung": 135,
+   "typischeFehler": [
+    {
+     "wert": 83,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Du kannst zuerst ausrechnen, was ein Kind bekommt, oder Eis und Getränke getrennt rechnen.",
+    "loesungsschritt": "27 · (3 + 2) = 27 · 3 + 27 · 2."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "3 + 2 = 5",
+    "27 · 5 = 135",
+    "27 · 3 = 81",
+    "27 · 2 = 54",
+    "81 + 54 = 135"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-M-06",
+   "lernziel": "5.4.7-V1",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Sara sagt: „6 · (15 + 8) = 6 · 15 + 8.“ Elif sagt: „6 · (15 + 8) = 6 · 15 + 6 · 8.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Es kommt dasselbe heraus.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Elif. Beim Ausmultiplizieren wird jeder Summand malgenommen: 90 + 48 = 138.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Richtig ist 21 · 8.",
+     "richtig": false
+    },
+    {
+     "text": "Sara. Man nimmt nur den ersten Summanden mal.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne alle Ausdrücke aus und vergleiche.",
+    "loesungsschritt": "6 · 23 = 138."
+   },
+   "nachweis": [
+    "6 · 23 = 138",
+    "6 · 15 = 90",
+    "6 · 8 = 48",
+    "90 + 48 = 138",
+    "90 + 8 = 98"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-E-01",
+   "lernziel": "5.4.7-V1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Multipliziere aus und berechne: 14 · (60 + 4) − 14 · 4",
+   "loesung": 840,
+   "typischeFehler": [
+    {
+     "wert": 892,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Multipliziere zuerst aus. Was fällt dir dann auf?"
+   },
+   "nachweis": [
+    "14 · 60 = 840",
+    "14 · 4 = 56",
+    "840 + 56 = 896",
+    "896 − 56 = 840"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-E-02",
+   "lernziel": "5.4.7-V1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ergänze: {{a}} · (60 + 7) = 360 + 42",
+   "luecken": {
+    "a": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 36,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Mit welcher Zahl wurden beide Summanden malgenommen?"
+   },
+   "nachweis": [
+    "360 : 60 = 6",
+    "42 : 7 = 6",
+    "6 · (60 + 7) = 402"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-E-03",
+   "lernziel": "5.4.7-V1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Multipliziere aus: (20 + 8) · (20 + 9)",
+   "loesung": 812,
+   "typischeFehler": [
+    {
+     "wert": 472,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Summand der ersten Klammer wird mit jedem Summanden der zweiten Klammer malgenommen."
+   },
+   "nachweis": [
+    "20 · 20 = 400",
+    "20 · 9 = 180",
+    "8 · 20 = 160",
+    "8 · 9 = 72",
+    "400 + 180 + 160 + 72 = 812",
+    "28 · 29 = 812"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-E-04",
+   "lernziel": "5.4.7-V1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Gilt das Verteilungsgesetz auch für eine Division wie (30 + 9) : 3? Prüfe.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Das kann man nicht prüfen.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. (30 + 9) : 3 = 13 und 30 : 3 + 9 : 3 = 10 + 3 = 13.",
+     "richtig": true
+    },
+    {
+     "text": "Nein. Bei der Division darf man nichts zerlegen.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    },
+    {
+     "text": "Ja, aber nur, wenn man 30 : 3 + 9 rechnet.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Nein. Das Verteilungsgesetz gilt nur für die Multiplikation.",
+     "richtig": false,
+     "fehlvorstellung": "gesetz-auf-division"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Wege aus und vergleiche."
+   },
+   "nachweis": [
+    "(30 + 9) : 3 = 13",
+    "30 : 3 = 10",
+    "9 : 3 = 3",
+    "10 + 3 = 13",
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.4.7-V1-E-05",
+   "lernziel": "5.4.7-V1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Wie viele Teilprodukte entstehen, wenn du (10 + 4) · (10 + 5) ausmultiplizierst?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6",
+     "richtig": false
+    },
+    {
+     "text": "1",
+     "richtig": false
+    },
+    {
+     "text": "2",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "3",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Summand der ersten Klammer trifft auf jeden Summanden der zweiten Klammer."
+   },
+   "nachweis": [
+    {
+     "zahl": 2,
+     "grund": "zwei Summanden in jeder Klammer"
+    },
+    "2 · 2 = 4",
+    "10 · 10 = 100",
+    "10 · 5 = 50",
+    "4 · 10 = 40",
+    "4 · 5 = 20"
+   ]
+  },
+  {
+   "id": "5.4.7-V1-E-06",
+   "lernziel": "5.4.7-V1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Elif sagt: „4 · (6 · 2) = 4 · 6 · 4 · 2.“ Sara sagt: „4 · (6 · 2) = 4 · 6 · 2.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Keiner. Man darf die Klammer nicht auflösen.",
+     "richtig": false
+    },
+    {
+     "text": "Beide. Es kommt dasselbe heraus.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Sara. In der Klammer steht ein Produkt, keine Summe. Das Verteilungsgesetz gilt hier nicht: 4 · 12 = 48.",
+     "richtig": true
+    },
+    {
+     "text": "Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Elif. Das ist das Verbindungsgesetz.",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Ausdrücke aus. Was steht in der Klammer?"
+   },
+   "nachweis": [
+    "6 · 2 = 12",
+    "4 · 12 = 48",
+    "4 · 6 · 2 = 48",
+    "4 · 6 · 4 · 2 = 192"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-F-01",
+   "lernziel": "5.4.7-V2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n8 · 5 + 3 · 5 = ({{x}} + 3) · 5",
+   "luecken": {
+    "x": {
+     "loesung": 8,
+     "typischeFehler": [
+      {
+       "wert": 40,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Oben im Bild und unten sind gleich lange Reihen.",
+    "beispiel": "3 · 4 + 2 · 4 = (3 + 2) · 4.",
+    "loesungsschritt": "Oben sind 8 Reihen."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 5,
+    "trenn": 8
+   },
+   "nachweis": [
+    "8 · 5 + 3 · 5 = 55",
+    "(8 + 3) · 5 = 55"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-F-02",
+   "lernziel": "5.4.7-V2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Welche Rechnung passt zum Bild?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6 + 3 · 4",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "(6 + 3) · 4",
+     "richtig": true
+    },
+    {
+     "text": "6 · 3 · 4",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Reihen zusammen. In jeder Reihe sind gleich viele Punkte.",
+    "beispiel": "4 Reihen oben und 3 Reihen unten, je 5 Punkte: (4 + 3) · 5.",
+    "loesungsschritt": "Es sind 6 + 3 Reihen mit je 4 Punkten."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 4,
+    "trenn": 6
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 36
+    },
+    "(6 + 3) · 4 = 36",
+    "9 · 4 = 36"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-F-03",
+   "lernziel": "5.4.7-V2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "7 · 4 + 3 · 4 = (7 + 3) · 4\nRechne mit der Klammer.",
+   "loesung": 40,
+   "typischeFehler": [
+    {
+     "wert": 31,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In der Klammer kommt 10 heraus.",
+    "beispiel": "6 · 5 + 4 · 5 = (6 + 4) · 5 = 10 · 5 = 50.",
+    "loesungsschritt": "7 + 3 = 10. Rechne 10 · 4."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 4,
+    "trenn": 7
+   },
+   "nachweis": [
+    "7 + 3 = 10",
+    "10 · 4 = 40",
+    "7 · 4 + 3 · 4 = 40"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-F-04",
+   "lernziel": "5.4.7-V2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n3 · 7 + 3 · 4 = 3 · (7 + {{x}})",
+   "luecken": {
+    "x": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 12,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die gleiche Zahl steht vor der Klammer. In der Klammer stehen die beiden anderen Zahlen.",
+    "beispiel": "8 · 3 + 8 · 2 = 8 · (3 + 2).",
+    "loesungsschritt": "Die zweite Zahl neben der 3 ist 4."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 3,
+    "trenn": 7
+   },
+   "nachweis": [
+    "3 · 7 + 3 · 4 = 33",
+    "3 · (7 + 4) = 33"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-F-05",
+   "lernziel": "5.4.7-V2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n6 · 8 + 4 · 8",
+   "loesung": 80,
+   "typischeFehler": [
+    {
+     "wert": 52,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Reihen zusammen.",
+    "beispiel": "7 · 4 + 3 · 4 = (7 + 3) · 4 = 40.",
+    "loesungsschritt": "6 + 4 = 10 Reihen mit je 8."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 8,
+    "trenn": 6
+   },
+   "nachweis": [
+    "6 + 4 = 10",
+    "10 · 8 = 80",
+    "6 · 8 + 4 · 8 = 80"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-F-06",
+   "lernziel": "5.4.7-V2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n9 · 6 + 1 · 6",
+   "loesung": 60,
+   "typischeFehler": [
+    {
+     "wert": 55,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "9 Reihen und noch 1 Reihe sind 10 Reihen.",
+    "beispiel": "9 · 3 + 1 · 3 = 10 · 3 = 30.",
+    "loesungsschritt": "Rechne 10 · 6."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 6,
+    "trenn": 9
+   },
+   "nachweis": [
+    "9 + 1 = 10",
+    "10 · 6 = 60",
+    "9 · 6 + 1 · 6 = 60"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-G-01",
+   "lernziel": "5.4.7-V2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Schreibe mit Klammer.\n3 · 6 + 3 · 4 = 3 · ({{a}} + {{b}})",
+   "luecken": {
+    "a": {
+     "loesung": 6,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 4,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Der gleiche Faktor kommt vor die Klammer.",
+    "beispiel": "9 · 6 + 9 · 4 = 9 · (6 + 4).",
+    "loesungsschritt": "Der gleiche Faktor ist 3."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 3,
+    "trenn": 6
+   },
+   "nachweis": [
+    "3 · 6 + 3 · 4 = 30",
+    "3 · (6 + 4) = 30"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-G-02",
+   "lernziel": "5.4.7-V2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n13 · 6 + 7 · 6",
+   "loesung": 120,
+   "typischeFehler": [
+    {
+     "wert": 85,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Faktor ist gleich. Addiere zuerst die anderen Zahlen.",
+    "beispiel": "17 · 8 + 3 · 8 = (17 + 3) · 8 = 20 · 8 = 160.",
+    "loesungsschritt": "13 + 7 = 20."
+   },
+   "nachweis": [
+    "13 + 7 = 20",
+    "20 · 6 = 120",
+    "13 · 6 + 7 · 6 = 120"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-G-03",
+   "lernziel": "5.4.7-V2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Rechnung ist dasselbe wie 16 · 7 + 4 · 7?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "(16 · 4) + 7",
+     "richtig": false
+    },
+    {
+     "text": "(16 + 4) · 7",
+     "richtig": true
+    },
+    {
+     "text": "16 + 4 · 7",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der gleiche Faktor wird ausgeklammert. Die beiden anderen Zahlen kommen in die Klammer.",
+    "beispiel": "12 · 5 + 8 · 5 = (12 + 8) · 5.",
+    "loesungsschritt": "Der gleiche Faktor ist 7."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 140
+    },
+    "16 · 7 + 4 · 7 = 140",
+    "(16 + 4) · 7 = 140"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-G-04",
+   "lernziel": "5.4.7-V2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n4 · 43 + 4 · 57",
+   "loesung": 400,
+   "typischeFehler": [
+    {
+     "wert": 229,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Klammere den gleichen Faktor aus.",
+    "beispiel": "7 · 46 + 7 · 54 = 7 · (46 + 54) = 7 · 100 = 700.",
+    "loesungsschritt": "43 + 57 = 100."
+   },
+   "nachweis": [
+    "43 + 57 = 100",
+    "4 · 100 = 400",
+    "4 · 43 + 4 · 57 = 400"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-G-05",
+   "lernziel": "5.4.7-V2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n7 · 6 + 3 · 6",
+   "loesung": 60,
+   "typischeFehler": [
+    {
+     "wert": 45,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Reihen oben und unten zusammen.",
+    "beispiel": "8 · 9 + 2 · 9 = (8 + 2) · 9 = 90.",
+    "loesungsschritt": "7 + 3 = 10."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 6,
+    "trenn": 7
+   },
+   "nachweis": [
+    "7 + 3 = 10",
+    "10 · 6 = 60",
+    "7 · 6 + 3 · 6 = 60"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-G-06",
+   "lernziel": "5.4.7-V2",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom rechnet:\n6 · 7 + 6 · 3 = 6 · 7 + 3 = 45\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.\n6 · 7 = 42.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 6 + 7 + 3 = 16.",
+     "richtig": false
+    },
+    {
+     "text": "Falsch.\nRichtig ist 6 · (7 + 3) = 6 · 10 = 60.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Produkte haben den gleichen Faktor.",
+    "beispiel": "5 · 8 + 5 · 2 = 5 · (8 + 2) = 50.",
+    "loesungsschritt": "Klammere 6 aus."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 6,
+    "trenn": 7
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "6 · 7 + 6 · 3",
+     "behauptet": 45
+    },
+    "7 + 3 = 10",
+    "6 · 10 = 60",
+    "6 · 7 = 42",
+    "42 + 3 = 45",
+    "6 + 7 + 3 = 16"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-M-01",
+   "lernziel": "5.4.7-V2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Klammere aus und rechne: 17 · 8 + 17 · 2 = 17 · ({{x}} + 2) = {{y}}",
+   "luecken": {
+    "x": {
+     "loesung": 8,
+     "typischeFehler": []
+    },
+    "y": {
+     "loesung": 170,
+     "typischeFehler": [
+      {
+       "wert": 138,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der gemeinsame Faktor kommt vor die Klammer.",
+    "loesungsschritt": "8 + 2 = 10."
+   },
+   "nachweis": [
+    "8 + 2 = 10",
+    "17 · 10 = 170",
+    "17 · 8 + 17 · 2 = 170"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-M-02",
+   "lernziel": "5.4.7-V2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Klammere aus und berechne: 61 · 13 − 61 · 3",
+   "loesung": 610,
+   "typischeFehler": [
+    {
+     "wert": 790,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ausklammern geht auch bei Minus.",
+    "loesungsschritt": "61 · (13 − 3) = 61 · 10."
+   },
+   "nachweis": [
+    "13 − 3 = 10",
+    "61 · 10 = 610",
+    "61 · 13 − 61 · 3 = 610"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-M-03",
+   "lernziel": "5.4.7-V2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Bei welcher Rechnung kannst du einen gemeinsamen Faktor ausklammern?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "9 · 16 + 3 · 7",
+     "richtig": false
+    },
+    {
+     "text": "9 · 16 · 7",
+     "richtig": false
+    },
+    {
+     "text": "9 · 16 + 9 · 7",
+     "richtig": true
+    },
+    {
+     "text": "9 + 16 · 7",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ausklammern geht bei einer Summe aus zwei Produkten mit dem gleichen Faktor.",
+    "loesungsschritt": "Suche die Summe, in der ein Faktor zweimal vorkommt."
+   },
+   "nachweis": [
+    "9 · 16 + 9 · 7 = 207",
+    "9 · (16 + 7) = 207"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-M-04",
+   "lernziel": "5.4.7-V2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Klammere aus und berechne: 14 · 13 + 14 · 7",
+   "loesung": 280,
+   "typischeFehler": [
+    {
+     "wert": 189,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Klammere den gemeinsamen Faktor aus.",
+    "loesungsschritt": "14 · (13 + 7) = 14 · 20."
+   },
+   "nachweis": [
+    "13 + 7 = 20",
+    "14 · 20 = 280",
+    "14 · 13 + 14 · 7 = 280"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-M-05",
+   "lernziel": "5.4.7-V2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Bäcker verkauft am Morgen 46 Brötchen und am Nachmittag 54 Brötchen. Jedes Brötchen kostet 40 Cent. Wie viel Cent nimmt er ein?",
+   "loesung": 4000,
+   "typischeFehler": [
+    {
+     "wert": 1894,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Klammere den Preis aus.",
+    "loesungsschritt": "46 · 40 + 54 · 40 = (46 + 54) · 40."
+   },
+   "einheit": "Cent",
+   "nachweis": [
+    "46 + 54 = 100",
+    "100 · 40 = 4000",
+    "46 · 40 + 54 · 40 = 4000"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-M-06",
+   "lernziel": "5.4.7-V2",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ali sagt: „15 · 9 + 15 · 4 = 15 · 13.“ Emre sagt: „15 · 9 + 15 · 4 = 15 · 36.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Emre. In der Klammer wird malgenommen.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Beide. Es kommt dasselbe heraus.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Ali. Beim Ausklammern werden die Zahlen in der Klammer addiert: 15 · (9 + 4) = 195.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Richtig ist 15 · 9 + 4.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Seiten aus.",
+    "loesungsschritt": "15 · 9 + 15 · 4 = 135 + 60."
+   },
+   "nachweis": [
+    "15 · 9 = 135",
+    "15 · 4 = 60",
+    "135 + 60 = 195",
+    "15 · 13 = 195",
+    "15 · 36 = 540"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-E-01",
+   "lernziel": "5.4.7-V2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Klammere aus und berechne: 32 · 99 + 32",
+   "loesung": 3200,
+   "typischeFehler": [
+    {
+     "wert": 3169,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die einzelne 32 als Produkt."
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "32 = 32 · 1"
+    },
+    "99 + 1 = 100",
+    "32 · 100 = 3200",
+    "32 · 99 + 32 = 3200"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-E-02",
+   "lernziel": "5.4.7-V2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Klammere aus und berechne: 125 · 14 − 125 · 6",
+   "loesung": 1000,
+   "typischeFehler": [
+    {
+     "wert": 1744,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Klammere aus. Was steht dann in der Klammer?"
+   },
+   "nachweis": [
+    "14 − 6 = 8",
+    "125 · 8 = 1000",
+    "125 · 14 − 125 · 6 = 1000"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-E-03",
+   "lernziel": "5.4.7-V2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ergänze: 27 · 12 + 27 · {{a}} = 27 · 30 = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 18,
+     "typischeFehler": [
+      {
+       "wert": 30,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 810,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Was muss zu 12 dazukommen, damit in der Klammer 30 steht?"
+   },
+   "nachweis": [
+    "30 − 12 = 18",
+    "27 · 30 = 810",
+    "27 · 12 + 27 · 18 = 810"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-E-04",
+   "lernziel": "5.4.7-V2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Warum ist 58 · 99 + 58 leicht zu rechnen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Es ist nicht leicht. Man muss schriftlich rechnen.",
+     "richtig": false
+    },
+    {
+     "text": "Weil 58 = 58 · 1 ist. Ausklammern ergibt 58 · (99 + 1) = 58 · 100 = 5800.",
+     "richtig": true
+    },
+    {
+     "text": "Weil man 99 + 58 zuerst rechnen darf.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Weil man die Klammer weglassen darf.",
+     "richtig": false
+    },
+    {
+     "text": "Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die einzelne Zahl als Produkt mit dem Faktor 1."
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "58 = 58 · 1"
+    },
+    "99 + 1 = 100",
+    "58 · 100 = 5800",
+    "58 · 99 + 58 = 5800"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-E-05",
+   "lernziel": "5.4.7-V2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Klammere aus und berechne: 9 · 25 + 9 · 16 + 9 · 59",
+   "loesung": 900,
+   "typischeFehler": [
+    {
+     "wert": 300,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Man kann auch aus drei Produkten den gleichen Faktor ausklammern."
+   },
+   "nachweis": [
+    "25 + 16 + 59 = 100",
+    "9 · 100 = 900",
+    "9 · 25 + 9 · 16 + 9 · 59 = 900"
+   ]
+  },
+  {
+   "id": "5.4.7-V2-E-06",
+   "lernziel": "5.4.7-V2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Sara sagt: „18 · 9 − 18 · 2 = 18 · 7.“ Jonas sagt: „18 · 9 − 18 · 2 = 18 · 11.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Ausklammern ändert nichts.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Keiner. Bei Minus darf man nicht ausklammern.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Jonas. Es kommt 198 heraus.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Jonas. In der Klammer wird immer addiert.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Sara. Beim Ausklammern bleibt das Minus in der Klammer: 18 · (9 − 2) = 126.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Seiten aus."
+   },
+   "nachweis": [
+    "18 · 9 = 162",
+    "18 · 2 = 36",
+    "162 − 36 = 126",
+    "18 · 7 = 126",
+    "18 · 11 = 198"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-F-01",
+   "lernziel": "5.4.7-V3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n5 · 12\nRechne 5 · 10 und 5 · 2.",
+   "loesung": 60,
+   "typischeFehler": [
+    {
+     "wert": 52,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "12 ist 10 und 2. Nimm beide Teile mal.",
+    "beispiel": "4 · 12: 4 · 10 = 40 und 4 · 2 = 8. Zusammen 48.",
+    "loesungsschritt": "5 · 10 = 50. Rechne jetzt 5 · 2."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 12,
+    "spalten": 5,
+    "trenn": 10
+   },
+   "nachweis": [
+    "5 · 10 = 50",
+    "5 · 2 = 10",
+    "50 + 10 = 60",
+    "5 · 12 = 60"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-F-02",
+   "lernziel": "5.4.7-V3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n11 · 8\nRechne 10 · 8 und 1 · 8.",
+   "loesung": 88,
+   "typischeFehler": [
+    {
+     "wert": 81,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "11 Reihen sind 10 Reihen und noch 1 Reihe.",
+    "beispiel": "11 · 3: 10 · 3 = 30 und 1 · 3 = 3. Zusammen 33.",
+    "loesungsschritt": "10 · 8 = 80. Dazu kommt 1 Reihe mit 8."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 8,
+    "trenn": 10
+   },
+   "nachweis": [
+    "10 · 8 = 80",
+    "1 · 8 = 8",
+    "80 + 8 = 88",
+    "11 · 8 = 88"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-F-03",
+   "lernziel": "5.4.7-V3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Wie rechnest du 9 · 8 geschickt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "9 · 7 + 1",
+     "richtig": false
+    },
+    {
+     "text": "10 · 8 − 1",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "10 · 8 − 1 · 8",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "9 Reihen sind 1 Reihe weniger als 10 Reihen.",
+    "beispiel": "9 · 6 = 10 · 6 − 1 · 6 = 60 − 6 = 54.",
+    "loesungsschritt": "Von 10 Reihen mit je 8 nimmst du 1 Reihe weg."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 8
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 72
+    },
+    "10 · 8 = 80",
+    "1 · 8 = 8",
+    "80 − 8 = 72"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-F-04",
+   "lernziel": "5.4.7-V3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n12 · 6\nZerlege 12 in 10 und 2.",
+   "loesung": 72,
+   "typischeFehler": [
+    {
+     "wert": 62,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Oben im Bild sind 10 Reihen, unten 2 Reihen.",
+    "beispiel": "12 · 8: 10 · 8 = 80 und 2 · 8 = 16. Zusammen 96.",
+    "loesungsschritt": "10 · 6 = 60. Rechne jetzt 2 · 6."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 12,
+    "spalten": 6,
+    "trenn": 10
+   },
+   "nachweis": [
+    "10 · 6 = 60",
+    "2 · 6 = 12",
+    "60 + 12 = 72",
+    "12 · 6 = 72"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-F-05",
+   "lernziel": "5.4.7-V3",
+   "niveau": "F",
+   "afb": 2,
+   "format": "tabelle",
+   "text": "Rechne 7 · 11 geschickt.\nZerlege 11 in 10 und 1.",
+   "tabelle": {
+    "kopf": [
+     "·",
+     "10",
+     "1"
+    ],
+    "zeilen": [
+     [
+      "7",
+      {
+       "luecke": "p00"
+      },
+      {
+       "luecke": "p01"
+      }
+     ]
+    ],
+    "art": "malkreuz",
+    "rechnung": {
+     "faktoren": [
+      7,
+      11
+     ],
+     "summe": "e"
+    }
+   },
+   "luecken": {
+    "p00": {
+     "loesung": 70,
+     "typischeFehler": []
+    },
+    "p01": {
+     "loesung": 7,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 77,
+     "typischeFehler": [
+      {
+       "wert": 71,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm beide Teile mal. Rechne dann zusammen.",
+    "beispiel": "4 · 11: 4 · 10 = 40 und 4 · 1 = 4. Zusammen 44.",
+    "loesungsschritt": "7 · 10 = 70."
+   },
+   "nachweis": [
+    "7 · 10 = 70",
+    "7 · 1 = 7",
+    "70 + 7 = 77",
+    "7 · 11 = 77"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-F-06",
+   "lernziel": "5.4.7-V3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n3 · 11",
+   "loesung": 33,
+   "typischeFehler": [
+    {
+     "wert": 31,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "11 ist 10 und 1.",
+    "beispiel": "5 · 11: 5 · 10 = 50 und 5 · 1 = 5. Zusammen 55.",
+    "loesungsschritt": "3 · 10 = 30. Dazu kommt 3 · 1."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 11,
+    "spalten": 3,
+    "trenn": 10
+   },
+   "nachweis": [
+    "3 · 10 = 30",
+    "3 · 1 = 3",
+    "30 + 3 = 33",
+    "3 · 11 = 33"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-G-01",
+   "lernziel": "5.4.7-V3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "tabelle",
+   "text": "Rechne 6 · 101 geschickt.\nZerlege 101 in 100 und 1.",
+   "tabelle": {
+    "kopf": [
+     "·",
+     "100",
+     "1"
+    ],
+    "zeilen": [
+     [
+      "6",
+      {
+       "luecke": "p00"
+      },
+      {
+       "luecke": "p01"
+      }
+     ]
+    ],
+    "art": "malkreuz",
+    "rechnung": {
+     "faktoren": [
+      6,
+      101
+     ],
+     "summe": "e"
+    }
+   },
+   "luecken": {
+    "p00": {
+     "loesung": 600,
+     "typischeFehler": []
+    },
+    "p01": {
+     "loesung": 6,
+     "typischeFehler": []
+    },
+    "e": {
+     "loesung": 606,
+     "typischeFehler": [
+      {
+       "wert": 601,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm beide Teile mal. Rechne dann zusammen.",
+    "beispiel": "8 · 102: 8 · 100 = 800 und 8 · 2 = 16. Zusammen 816.",
+    "loesungsschritt": "6 · 100 = 600."
+   },
+   "nachweis": [
+    "6 · 100 = 600",
+    "6 · 1 = 6",
+    "600 + 6 = 606",
+    "6 · 101 = 606"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-G-02",
+   "lernziel": "5.4.7-V3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n5 · 98",
+   "loesung": 490,
+   "typischeFehler": [
+    {
+     "wert": 498,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "98 ist 2 weniger als 100.",
+    "beispiel": "7 · 98 = 7 · 100 − 7 · 2 = 700 − 14 = 686.",
+    "loesungsschritt": "5 · 100 = 500. Ziehe 5 · 2 = 10 ab."
+   },
+   "nachweis": [
+    "5 · 100 = 500",
+    "5 · 2 = 10",
+    "500 − 10 = 490",
+    "5 · 98 = 490"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-G-03",
+   "lernziel": "5.4.7-V3",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Rechne geschickt.\n18 · 21 = 18 · 20 + 18 · {{a}}\n18 · 21 = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 1,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 378,
+     "typischeFehler": [
+      {
+       "wert": 361,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "21 ist 20 und 1.",
+    "beispiel": "15 · 21 = 15 · 20 + 15 · 1 = 300 + 15 = 315.",
+    "loesungsschritt": "18 · 20 = 360."
+   },
+   "nachweis": [
+    "18 · 20 = 360",
+    "18 · 1 = 18",
+    "360 + 18 = 378",
+    "18 · 21 = 378"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-G-04",
+   "lernziel": "5.4.7-V3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n6 · 28",
+   "loesung": 168,
+   "typischeFehler": [
+    {
+     "wert": 178,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "28 ist 2 weniger als 30.",
+    "beispiel": "5 · 48 = 5 · 50 − 5 · 2 = 250 − 10 = 240.",
+    "loesungsschritt": "6 · 30 = 180. Ziehe 6 · 2 ab."
+   },
+   "nachweis": [
+    {
+     "zahl": 30,
+     "grund": "glatte Zahl"
+    },
+    {
+     "zahl": 2,
+     "grund": "Abstand zur glatten Zahl"
+    },
+    "6 · 30 = 180",
+    "6 · 2 = 12",
+    "180 − 12 = 168",
+    "6 · 28 = 168"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-G-05",
+   "lernziel": "5.4.7-V3",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Buch kostet 29 €.\nIda kauft 4 Bücher.\nWie viel muss Ida bezahlen?",
+   "loesung": 116,
+   "typischeFehler": [
+    {
+     "wert": 119,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne mit einem glatten Preis. Ziehe dann ab, was zu viel ist.",
+    "beispiel": "4 Bücher zu je 19 €: 4 · 20 = 80. 80 − 4 = 76.",
+    "loesungsschritt": "4 · 30 = 120. Ziehe 4 · 1 = 4 ab."
+   },
+   "einheit": "€",
+   "bild": {
+    "art": "streifen",
+    "ganz": {
+     "wert": 116,
+     "frage": true
+    },
+    "teile": [
+     29,
+     29,
+     29,
+     29
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 30,
+     "grund": "glatter Preis"
+    },
+    "4 · 30 = 120",
+    "4 · 1 = 4",
+    "120 − 4 = 116",
+    "4 · 29 = 116"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-G-06",
+   "lernziel": "5.4.7-V3",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Sara rechnet 9 · 12 so:\n10 · 12 − 1 = 119\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nRichtig ist 10 · 12 + 1 = 121.",
+     "richtig": false
+    },
+    {
+     "text": "Stimmt.\nMan nimmt nur 1 weg.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Falsch.\n9 ist 1 weniger als 10.\nRichtig ist 10 · 12 − 1 · 12 = 108.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "9 Reihen sind 1 Reihe weniger als 10 Reihen.",
+    "beispiel": "9 · 11 = 10 · 11 − 1 · 11 = 110 − 11 = 99.",
+    "loesungsschritt": "Im Bild sind 9 Reihen mit je 12 Punkten."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 12
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "9 · 12",
+     "behauptet": 119
+    },
+    {
+     "zahl": 10,
+     "grund": "glatte Zahl"
+    },
+    "10 · 12 = 120",
+    "1 · 12 = 12",
+    "120 − 12 = 108",
+    "9 · 12 = 108",
+    "10 · 12 − 1 = 119",
+    "120 + 1 = 121"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-M-01",
+   "lernziel": "5.4.7-V3",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt: 45 · 83",
+   "loesung": 3735,
+   "typischeFehler": [
+    {
+     "wert": 3603,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege 83 in 80 und 3.",
+    "loesungsschritt": "45 · 80 = 3600. Dazu 45 · 3 = 135."
+   },
+   "nachweis": [
+    {
+     "zahl": 80,
+     "grund": "glatte Zahl"
+    },
+    "45 · 80 = 3600",
+    "45 · 3 = 135",
+    "3600 + 135 = 3735",
+    "45 · 83 = 3735"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-M-02",
+   "lernziel": "5.4.7-V3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 53 · 25 + 47 · 25",
+   "loesung": 2500,
+   "typischeFehler": [
+    {
+     "wert": 1372,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Klammere den gemeinsamen Faktor aus.",
+    "loesungsschritt": "53 + 47 = 100."
+   },
+   "nachweis": [
+    "53 + 47 = 100",
+    "100 · 25 = 2500",
+    "53 · 25 + 47 · 25 = 2500"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-M-03",
+   "lernziel": "5.4.7-V3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ergänze: 26 · 103 = 26 · 100 + {{a}} = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 78,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 2678,
+     "typischeFehler": [
+      {
+       "wert": 2603,
+       "fehlvorstellung": "verteilung-halb"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Auch 3 wird mit 26 malgenommen.",
+    "loesungsschritt": "26 · 3 = 78."
+   },
+   "nachweis": [
+    "26 · 100 = 2600",
+    "26 · 3 = 78",
+    "2600 + 78 = 2678",
+    "26 · 103 = 2678"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-M-04",
+   "lernziel": "5.4.7-V3",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt: 31 · 99",
+   "loesung": 3069,
+   "typischeFehler": [
+    {
+     "wert": 3099,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "99 ist 100 − 1.",
+    "loesungsschritt": "31 · 100 = 3100. Ziehe 31 ab."
+   },
+   "nachweis": [
+    "31 · 100 = 3100",
+    "3100 − 31 = 3069",
+    "31 · 99 = 3069"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-M-05",
+   "lernziel": "5.4.7-V3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Ticket kostet 49 €. Eine Gruppe kauft 14 Tickets. Wie viel kosten die Tickets? Rechne geschickt.",
+   "loesung": 686,
+   "typischeFehler": [
+    {
+     "wert": 699,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne mit einem glatten Preis. Ziehe dann ab, was zu viel ist.",
+    "loesungsschritt": "14 · 50 = 700. Ziehe 14 · 1 ab."
+   },
+   "einheit": "€",
+   "nachweis": [
+    {
+     "zahl": 50,
+     "grund": "glatter Preis"
+    },
+    "14 · 50 = 700",
+    "14 · 1 = 14",
+    "700 − 14 = 686",
+    "14 · 49 = 686"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-M-06",
+   "lernziel": "5.4.7-V3",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Noah rechnet 65 · 19 = 65 · 20 − 65 = 1235. Finn rechnet 65 · 19 = 65 · 20 − 19 = 1281. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Keiner. Richtig ist 65 · 20 − 1.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Finn. Man zieht die Zahl ab, die geändert wurde.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Beide. Es kommt dasselbe heraus.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Noah. 65 · 19 ist 65 · 20 − 65 · 1. Abgezogen wird 65, nicht 19.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Reihen fehlen zu 20 Reihen?",
+    "loesungsschritt": "65 · 19 = 65 · (20 − 1)."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "65 · 19",
+     "behauptet": 1281
+    },
+    "65 · 20 = 1300",
+    "65 · 1 = 65",
+    "1300 − 65 = 1235",
+    "65 · 19 = 1235",
+    "1300 − 19 = 1281"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-E-01",
+   "lernziel": "5.4.7-V3",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt: 101 · 55",
+   "loesung": 5555,
+   "typischeFehler": [
+    {
+     "wert": 5501,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege 101 geschickt."
+   },
+   "nachweis": [
+    "100 · 55 = 5500",
+    "1 · 55 = 55",
+    "5500 + 55 = 5555",
+    "101 · 55 = 5555"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-E-02",
+   "lernziel": "5.4.7-V3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 25 · 62 + 25 · 38",
+   "loesung": 2500,
+   "typischeFehler": [
+    {
+     "wert": 1588,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche den gemeinsamen Faktor."
+   },
+   "nachweis": [
+    "62 + 38 = 100",
+    "25 · 100 = 2500",
+    "25 · 62 + 25 · 38 = 2500"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-E-03",
+   "lernziel": "5.4.7-V3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 999 · 13",
+   "loesung": 12987,
+   "typischeFehler": [
+    {
+     "wert": 12999,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie weit ist 999 von 1000 entfernt?"
+   },
+   "nachweis": [
+    "1000 · 13 = 13000",
+    "1 · 13 = 13",
+    "13000 − 13 = 12987",
+    "999 · 13 = 12987"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-E-04",
+   "lernziel": "5.4.7-V3",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Welche Gleichung stimmt? Prüfe, ohne 39 · 41 auszurechnen.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "39 · 41 = 40 · 40 + 1",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "39 · 41 = 40 · 41 − 1",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "39 · 41 = 39 · 40 + 2",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "39 · 41 = 39 · 39 + 2",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "39 · 41 = 39 · 40 + 39",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe 41 als 40 + 1 und multipliziere aus."
+   },
+   "nachweis": [
+    {
+     "art": "gleichungen"
+    },
+    "39 · 41 = 1599",
+    "39 · 40 = 1560",
+    "1560 + 39 = 1599"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-E-05",
+   "lernziel": "5.4.7-V3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 8 · 31 · 125 + 8 · 69 · 125",
+   "loesung": 100000,
+   "typischeFehler": [
+    {
+     "wert": 31069,
+     "fehlvorstellung": "verteilung-halb"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Fasse zuerst 8 · 125 zusammen. Klammere dann aus."
+   },
+   "nachweis": [
+    "8 · 125 = 1000",
+    "31 + 69 = 100",
+    "1000 · 100 = 100000",
+    "8 · 31 · 125 + 8 · 69 · 125 = 100000"
+   ]
+  },
+  {
+   "id": "5.4.7-V3-E-06",
+   "lernziel": "5.4.7-V3",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jonas rechnet 36 · 25 = 36 · 20 + 36 · 5 = 900. Lina rechnet 36 · 25 = 9 · 100 = 900. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nur Jonas. Man muss immer das Verteilungsgesetz nehmen.",
+     "richtig": false
+    },
+    {
+     "text": "Keiner. Man muss schriftlich rechnen.",
+     "richtig": false
+    },
+    {
+     "text": "Nur Lina. Das Verteilungsgesetz gilt nicht bei 25.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Keiner. Richtig ist 725.",
+     "richtig": false,
+     "fehlvorstellung": "verteilung-halb"
+    },
+    {
+     "text": "Beide. Jonas nutzt das Verteilungsgesetz, Lina zerlegt 36 in 9 · 4 und nutzt 4 · 25 = 100.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe beide Rechenwege Schritt für Schritt."
+   },
+   "nachweis": [
+    "36 · 20 = 720",
+    "36 · 5 = 180",
+    "720 + 180 = 900",
+    "36 : 4 = 9",
+    "4 · 25 = 100",
+    "9 · 100 = 900",
+    "36 · 25 = 900"
    ]
   }
  ]

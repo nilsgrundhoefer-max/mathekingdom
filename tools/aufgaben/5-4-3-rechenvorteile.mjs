@@ -49,7 +49,7 @@ export function rechenvorteile() {
     2: (k) => {
       if (k === 0) { const a = zz(3, 9);
         return luecken(Z('Rechne auf 2 Wegen.', `(${a} · 2) · 5 = {{a}}`, `${a} · (2 · 5) = {{b}}`), { a: 10 * a, b: 10 * a },
-          h3('Rechne immer zuerst die Klammer aus.', '(7 · 2) · 5 = 14 · 5 = 70. Und 7 · (2 · 5) = 7 · 10 = 70.', `Zweiter Weg: 2 · 5 = 10. Dann ${a} · 10.`), { bild: B.gruppen(a, 10), nachweis: N(`${a} · 2`, `${2 * a} · 5`, '2 · 5', `${a} · 10`, `(${a} · 2) · 5`, `${a} · (2 · 5)`) }); }
+          h3('Rechne immer zuerst die Klammer aus.', a === 7 ? '(6 · 2) · 5 = 12 · 5 = 60. Und 6 · (2 · 5) = 6 · 10 = 60.' : '(7 · 2) · 5 = 14 · 5 = 70. Und 7 · (2 · 5) = 7 · 10 = 70.', `Zweiter Weg: 2 · 5 = 10. Dann ${a} · 10.`), { bild: B.gruppen(a, 10), nachweis: N(`${a} · 2`, `${2 * a} · 5`, '2 · 5', `${a} · 10`, `(${a} · 2) · 5`, `${a} · (2 · 5)`) }); }
       const [a, b, c] = suche(() => [zz(11, 19), zz(2, 5), zz(2, 5)], ([x, y, z]) => y !== z);
       return auswahl(Z('Welche Rechnung hat dasselbe Ergebnis?', `${a} · (${b} · ${c})`), [opt(`(${a} · ${b}) · ${c}`, true), opt(`(${a} · ${b}) + ${c}`, false, '1x1-addiert'), opt(`${a} · (${b} + ${c})`, false, '1x1-addiert')],
         h3('Beim Multiplizieren darfst du die Klammer versetzen.', '5 · (4 · 2) = (5 · 4) · 2.', 'Suche die Rechnung mit denselben Zahlen und 2-mal Mal.'), { nachweis: [WERT(a * b * c), ...N(`${a} · (${b} · ${c})`, `(${a} · ${b}) · ${c}`)] });

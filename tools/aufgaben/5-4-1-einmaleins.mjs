@@ -39,7 +39,7 @@ export function einmaleins() {
         h3('Zähle die Reihen. Zähle dann die Punkte in 1 Reihe.', '2 Reihen mit je 5 Punkten: 2 · 5.', `Es sind ${r} Reihen. In jeder Reihe sind ${s} Punkte.`), { bild: B.feld(r, s), nachweis: N(`${r} · ${s}`) }); },
     () => { const n = zz(2, 9);
       return zahl(Z('Rechne.', `${n} · 10`), n * 10, fehlerliste(n * 10, [[n + 10, '1x1-addiert'], [n, 'stellenwert']]),
-        h3('Mal 10 heißt: so viele Zehner.', '3 · 10 sind 3 Zehner. Das ist 30.', `Im Bild siehst du ${n} Zehner. Zähle 10, 20, 30 und so weiter.`), { bild: B.material({ z: n }), nachweis: N(`${n} · 10`) }); },
+        h3('Mal 10 heißt: so viele Zehner.', n === 3 ? '4 · 10 sind 4 Zehner. Das ist 40.' : '3 · 10 sind 3 Zehner. Das ist 30.', `Im Bild siehst du ${n} Zehner. Zähle 10, 20, 30 und so weiter.`), { bild: B.material({ z: n }), nachweis: N(`${n} · 10`) }); },
   ]);
 
   stufen(K('K1'), 'G', {
@@ -139,7 +139,7 @@ export function einmaleins() {
         h3('Verteile gerecht. Im Bild hat jedes Kind eine Gruppe.', '6 Äpfel für 2 Kinder: 6 : 2 = 3. Jedes Kind bekommt 3.', `Rechne ${a} : ${d}. Zähle die Plättchen in 1 Gruppe.`), { einheit: ding, bild: B.gruppen(d, q), nachweis: N(`${a} : ${d}`) }); },
     () => { const q = zz(2, 9);
       return zahl(Z('Rechne.', `${q * 10} : 10`), q, fehlerliste(q, [[q * 10, 'div-stellenwert']]),
-        h3('Geteilt durch 10 heißt: Wie viele Zehner sind es?', '30 : 10 = 3. In 30 stecken 3 Zehner.', `Zähle im Bild die Zehner.`), { bild: B.material({ z: q }), nachweis: N(`${q * 10} : 10`) }); },
+        h3('Geteilt durch 10 heißt: Wie viele Zehner sind es?', q === 3 ? '40 : 10 = 4. In 40 stecken 4 Zehner.' : '30 : 10 = 3. In 30 stecken 3 Zehner.', `Zähle im Bild die Zehner.`), { bild: B.material({ z: q }), nachweis: N(`${q * 10} : 10`) }); },
     () => { const d = wahl([2, 5]), q = suche(() => zz(3, 5), (x) => x !== d), a = d * q;
       return zahl(Z('Welche Zahl fehlt?', `${a} : ▢ = ${q}`), d, fehlerliste(d, [[a - q, 'div-falsche-rechenart']]),
         h3('Denke an die Mal-Aufgabe.', '20 : ▢ = 4. Du weißt 4 · 5 = 20. Die Zahl ist 5.', `Im Bild sind ${q} Gruppen. Wie viele Plättchen sind in 1 Gruppe?`), { bild: B.gruppen(q, d), nachweis: N(`${a} : ${q}`, `${a} : ${d}`, `${q} · ${d}`) }); },
