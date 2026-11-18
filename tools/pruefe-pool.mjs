@@ -940,6 +940,8 @@ for (const l of mitAufgaben) for (const n of NIVEAUS) {
     gesehen.add(k);
   }
 }
+// Grundlage: Jedes Lernziel mit Aufgaben nennt den Baustein, den die Förderstufe übt (für den Hinweis im Lehrer-Dashboard).
+for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele)) if (mitAufgaben.has(l.id) && !l.grundlage) melde(l.id, 'Lernziel ohne Grundlage');
 // Wortspeicher: Jede Station mit Aufgaben braucht einen, mit Wörtern mindestens für F, G und M.
 for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.some((l) => mitAufgaben.has(l.id))) {
   for (const n of ['F', 'G', 'M']) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);

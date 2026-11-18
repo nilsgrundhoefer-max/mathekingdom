@@ -285,15 +285,18 @@
      "lernziele": [
       {
        "id": "5.3.1-K1",
-       "text": "Ich kann im Kopf addieren."
+       "text": "Ich kann im Kopf addieren.",
+       "grundlage": "Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100"
       },
       {
        "id": "5.3.1-K2",
-       "text": "Ich kann im Kopf subtrahieren."
+       "text": "Ich kann im Kopf subtrahieren.",
+       "grundlage": "Wegnehmen und Ergänzen in Schritten bis 100"
       },
       {
        "id": "5.3.1-K3",
-       "text": "Ich kann beim Kopfrechnen geschickt vorgehen."
+       "text": "Ich kann beim Kopfrechnen geschickt vorgehen.",
+       "grundlage": "Zahlen, die zusammen 10 oder 100 ergeben"
       }
      ],
      "merkzettel": {
@@ -370,21 +373,24 @@
      "lernziele": [
       {
        "id": "5.3.2-A1",
-       "text": "Ich kann die Fachbegriffe Summand und Summe verwenden."
+       "text": "Ich kann die Fachbegriffe Summand und Summe verwenden.",
+       "grundlage": "Plus als „zusammen“ und „dazu“: Aufgabe und Bild zuordnen"
       },
       {
        "id": "5.3.2-A2",
        "text": "Ich kann schriftlich addieren, auch mit Übertrag.",
        "voraussetzungen": [
         "5.3.1-K1"
-       ]
+       ],
+       "grundlage": "Bündeln: 10 Einer sind 1 Zehner, dann Rechnen im Stellenraster"
       },
       {
        "id": "5.3.2-A3",
        "text": "Ich kann mehrere Zahlen schriftlich addieren.",
        "voraussetzungen": [
         "5.3.2-A2"
-       ]
+       ],
+       "grundlage": "Drei Zahlen im Raster ohne Übertrag, passende Zehner zuerst"
       },
       {
        "id": "5.3.2-A4",
@@ -392,14 +398,16 @@
        "voraussetzungen": [
         "5.3.2-A2",
         "5.3.1-K1"
-       ]
+       ],
+       "grundlage": "Nachbarzehner finden, Plus mit Minus rückgängig machen"
       },
       {
        "id": "5.3.2-A5",
        "text": "Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen.",
        "voraussetzungen": [
         "5.3.2-A2"
-       ]
+       ],
+       "grundlage": "Dazukommen und Zusammenlegen am Bild, Rechnung zuordnen"
       }
      ],
      "merkzettel": {
@@ -492,7 +500,8 @@
      "lernziele": [
       {
        "id": "5.3.3-S1",
-       "text": "Ich kann die Fachbegriffe Minuend, Subtrahend und Differenz verwenden."
+       "text": "Ich kann die Fachbegriffe Minuend, Subtrahend und Differenz verwenden.",
+       "grundlage": "Minus als „wegnehmen“: Aufgabe und Bild zuordnen"
       },
       {
        "id": "5.3.3-S2",
@@ -500,14 +509,16 @@
        "voraussetzungen": [
         "5.3.1-K2",
         "5.3.2-A2"
-       ]
+       ],
+       "grundlage": "Entbündeln: 1 Zehner sind 10 Einer, dann Rechnen im Stellenraster"
       },
       {
        "id": "5.3.3-S3",
        "text": "Ich kann mehrere Zahlen schriftlich subtrahieren.",
        "voraussetzungen": [
         "5.3.3-S2"
-       ]
+       ],
+       "grundlage": "Zweimal nacheinander wegnehmen"
       },
       {
        "id": "5.3.3-S4",
@@ -515,14 +526,16 @@
        "voraussetzungen": [
         "5.3.3-S2",
         "5.3.2-A4"
-       ]
+       ],
+       "grundlage": "Minus mit Plus rückgängig machen, Nachbarzehner"
       },
       {
        "id": "5.3.3-S5",
        "text": "Ich kann Sachaufgaben zur Subtraktion lösen.",
        "voraussetzungen": [
         "5.3.3-S2"
-       ]
+       ],
+       "grundlage": "Wegnehmen am Bild, Rechnung und Geschichte zuordnen"
       }
      ],
      "merkzettel": {
@@ -620,14 +633,16 @@
        "voraussetzungen": [
         "5.3.1-K1",
         "5.3.1-K2"
-       ]
+       ],
+       "grundlage": "In zwei Schritten rechnen: erst zusammenfassen, dann weiter"
       },
       {
        "id": "5.3.4-B2",
        "text": "Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden.",
        "voraussetzungen": [
         "5.3.4-B1"
-       ]
+       ],
+       "grundlage": "Geschichte mit zwei Schritten der passenden Rechnung zuordnen"
       }
      ],
      "merkzettel": {
@@ -684,7 +699,8 @@
      "lernziele": [
       {
        "id": "5.3.5-R1",
-       "text": "Ich kann das Vertauschungsgesetz und das Verbindungsgesetz erkennen."
+       "text": "Ich kann das Vertauschungsgesetz und das Verbindungsgesetz erkennen.",
+       "grundlage": "Tauschaufgaben wie 3 + 5 und 5 + 3"
       },
       {
        "id": "5.3.5-R2",
@@ -692,7 +708,8 @@
        "voraussetzungen": [
         "5.3.5-R1",
         "5.3.1-K3"
-       ]
+       ],
+       "grundlage": "Passende Zehner suchen, zum Beispiel 7 + 5 + 3"
       }
      ],
      "merkzettel": {
@@ -751,14 +768,16 @@
      "lernziele": [
       {
        "id": "5.4.1-K1",
-       "text": "Ich kann die Aufgaben des kleinen Einmaleins sicher lösen."
+       "text": "Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.",
+       "grundlage": "Mal-Aufgaben im Punktefeld sehen, Kernaufgaben mit 2, 5 und 10"
       },
       {
        "id": "5.4.1-K2",
        "text": "Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.",
        "voraussetzungen": [
         "5.4.1-K1"
-       ]
+       ],
+       "grundlage": "Gerecht verteilen im Punktefeld, Mal-Aufgabe als Hilfe"
       },
       {
        "id": "5.4.1-K3",
@@ -874,7 +893,8 @@
      "lernziele": [
       {
        "id": "5.4.5-D1",
-       "text": "Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden."
+       "text": "Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden.",
+       "grundlage": "Teilen als Verteilen und als Aufteilen in Gruppen"
       },
       {
        "id": "5.4.5-D2",
@@ -883,7 +903,8 @@
         "5.4.1-K2",
         "5.4.5-D1",
         "5.3.1-K2"
-       ]
+       ],
+       "grundlage": "Einmaleins rückwärts, dann mit Zehnerzahlen (12 : 3 und 120 : 3)"
       },
       {
        "id": "5.4.5-D3",
@@ -891,7 +912,8 @@
        "voraussetzungen": [
         "5.4.5-D2",
         "5.4.1-K1"
-       ]
+       ],
+       "grundlage": "Durch 10 teilen"
       },
       {
        "id": "5.4.5-D4",
@@ -899,7 +921,8 @@
        "voraussetzungen": [
         "5.4.5-D2",
         "5.4.1-K2"
-       ]
+       ],
+       "grundlage": "Plättchen verteilen, einige bleiben übrig"
       },
       {
        "id": "5.4.5-D5",
@@ -907,7 +930,8 @@
        "voraussetzungen": [
         "5.4.5-D2",
         "5.3.2-A4"
-       ]
+       ],
+       "grundlage": "Geteilt mit Mal rückgängig machen"
       },
       {
        "id": "5.4.5-D6",
@@ -915,7 +939,8 @@
        "voraussetzungen": [
         "5.4.5-D2",
         "5.4.5-D4"
-       ]
+       ],
+       "grundlage": "Verteil- und Aufteil-Geschichten, Rechnung zuordnen"
       }
      ],
      "merkzettel": {

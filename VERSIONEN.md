@@ -6,6 +6,25 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.9 vom 18.11.2026
+
+### Schüler
+
+- Alle Aufgaben sind neu. Silber, Gold und Purpur unterscheiden sich jetzt deutlich: Auf Silber rechnest du mit einem festen Verfahren, auf Gold löst du Aufgaben mit mehreren Schritten, auf Purpur begründest du.
+- Viele Aufgaben haben ein Bild: Plättchen, Zehnerstangen, Punktefelder, Streifen oder einen Zahlenstrahl.
+- Bronze steht nicht mehr zur Wahl. Du spielst mindestens um Silber.
+- Grundlage: Klappt ein Lernziel auf Silber noch nicht, übst du zuerst drei Aufgaben zur Grundlage. Dort liegt der Tipp schon offen. Danach geht es von selbst mit Silber weiter. Für die drei Aufgaben bekommst du die Bronze-Krone.
+- Rechenraster und Ziffernrätsel: Du trägst jede Ziffer in ein eigenes Feld ein.
+
+### Lehrkraft
+
+- Niveaustufen mit fester Bedeutung: G Hauptschulabschluss, M Realschulabschluss, E Zugabe Richtung Gymnasium, F Basiskompetenzen mit größtmöglicher Unterstützung. Alle 600 Aufgaben der Klasse 5 sind danach neu erzeugt.
+- F wird nicht mehr gewählt oder empfohlen. Schüler kommen nur über die Grundlagen-Schleife dorthin, je Lernziel, und nach drei richtigen Aufgaben zurück. Ein Kind, das fest auf F arbeiten soll, bekommt wie bisher das Zielniveau F.
+- Neuer Impuls „Grundlage“: Übt ein Schüler bei einem Lernziel zum zweiten Mal die Grundlage, steht das unter „Impulse“, mit dem Baustein, der fehlt.
+- Die Brücke gibt es nur noch auf M und E. Auf G übernimmt die Grundlagen-Schleife.
+- Hilfekärtchen: F und G drei, M zwei, E eines. Auf F und G gibt es höchstens drei Auswahlantworten.
+- Jede Aufgabe trägt ihren Rechenweg als Nachweis. Ein unabhängiger Prüfer rechnet Lösung, Hilfekärtchen und Bild nach, bevor der Pool gebaut wird.
+
 ## 0.8 vom 18.11.2026
 
 ### Schüler

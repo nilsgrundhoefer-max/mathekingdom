@@ -226,6 +226,9 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .aufgabenbild .bildfrage { font-size: 24px; font-weight: 800; fill: #8a5a00; }
 #mathekingdom .aufgabenbild .bildkopf { font-size: 17px; font-weight: 700; fill: var(--nacht); }
 #mathekingdom .aufgabenbild .bildname { font-size: 16px; fill: var(--tinte); }
+/* Grundlagen-Schleife (ADR 0015) */
+#mathekingdom .marke.grundlagenmarke { background: #e7eef8; color: #2f4f7f; border: 1.5px solid #2f4f7f; }
+#mathekingdom .ergebnis p.grundlage { border-left: 6px solid #2f4f7f; background: #eef3fa; padding: 10px 14px; border-radius: 6px; }
 /* Rechenraster und Ziffernrätsel: ein Kästchen je Ziffer */
 #mathekingdom input.ziffer { width: 1.9ch; padding: 4px 2px; margin: 0 2px; text-align: center; font: inherit; font-weight: 700; border: 2px solid var(--nacht); border-radius: 6px; background: #fffdf6; box-sizing: content-box; }
 #mathekingdom input.ziffer[size="2"] { width: 2.9ch; }

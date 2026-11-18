@@ -345,3 +345,13 @@ test('Brücken-Impuls: wackelig in dieser Stunde und eine Voraussetzung ohne Sie
   assert.ok(liste[0].voraussetzungen.some((v) => v.zustand === 'offen'));
   assert.deepEqual(A.brueckenImpulse([{ code: '5A-AAAA', stand }], index, '2026-11-17T14:00:00Z'), [], 'nur in der laufenden Stunde');
 });
+
+test('Grundlagen-Hinweis: erst ab dem zweiten Mal, mit dem Baustein des Lernziels', () => {
+  const einmal = neu('5A-AAAA'), zweimal = neu('5A-BBBB');
+  einmal.grundlage = { [S2]: { aktiv: true, ab: 0, mal: 1, t: JETZT } };
+  zweimal.grundlage = { [S2]: { aktiv: false, ab: 0, mal: 2, t: JETZT, zurueckAb: 8 }, '5.3.2-A2': { aktiv: true, ab: 0, mal: 1, t: JETZT } };
+  const hinweise = A.grundlagenHinweise([{ code: '5A-AAAA', stand: einmal }, { code: '5A-BBBB', stand: zweimal }, { code: '5A-CCCC', stand: neu('5A-CCCC') }], index);
+  assert.equal(hinweise.length, 1);
+  assert.deepEqual({ ...hinweise[0], baustein: undefined }, { code: '5A-BBBB', lernziel: S2, mal: 2, aktiv: false, baustein: undefined });
+  assert.match(hinweise[0].baustein, /Entbündeln/);
+});

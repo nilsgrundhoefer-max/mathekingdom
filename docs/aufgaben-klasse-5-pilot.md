@@ -6,1352 +6,1640 @@ Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
 ## 5.3.1-K1: Ich kann im Kopf addieren.
 
-### F · Förderniveau
+Grundlage, die F übt: Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Weiter springen heißt addieren. Springe in Zehnerschritten nach rechts. *Beispiel:* Start bei 90, 50 weiter: erst 10 bis zur 100, dann noch 40. Du landest bei 140. *Lösungsschritt:* Springe zuerst bis zur 100. Das sind 50. Von den 70 bleiben dann noch 20 übrig, die springst du danach.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Starte bei 50 und springe 70 weiter. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **120**.
-- `02` AFB I · Starte bei 40 und springe 70 weiter. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **110**.
-- `03` AFB I · Starte bei 70 und springe 60 weiter. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **130**. Typische Fehler: 10 (add-subtrahiert).
-- `04` AFB I · Rechne im Kopf: 80 + 60 Lösung: **140**. Typische Fehler: 40 (kopf-stellenwert), 20 (add-subtrahiert).
-- `05` AFB I · Rechne im Kopf: 40 + 90 Lösung: **130**. Typische Fehler: 30 (kopf-stellenwert), 50 (add-subtrahiert).
-- `06` AFB I · Rechne im Kopf: 20 + 90 Lösung: **110**. Typische Fehler: 10 (kopf-stellenwert), 70 (add-subtrahiert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:* 7 Plättchen: Bis 10 fehlen 3. *Lösungsschritt:* Zähle von 5 weiter bis 10.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Im Feld liegen 5 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 5 belegt)_ Lösung: **5**.
+- `02` AFB I · Rechne. / 7 + 6 _(Bild: Zehnerfeld mit 20 Feldern, 7 belegt, 6 dazu)_ Lösung: **13**. Typische Fehler: 3 (stellenwert).
+- `03` AFB I · Starte bei 76. / Springe 4 weiter. / Tippe an: Wo landest du? _(Zahlenstrahl 70 bis 90, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 72 (add-subtrahiert).
+- `04` AFB I · 48 + 4 / Erst bis zur 50: 48 + ▢ = 50 / Dann weiter: 50 + ▢ = ▢ _(Bild: Zahlenstrahl 40 bis 60, Sprünge 48 nach 50 (+ 2), 50 nach 52 (+ 2))_ Lösung: a = **2**, b = **2**, c = **52**
+- `05` AFB II · Rechne der Reihe nach. / 4 + 5 = ▢ / 14 + 5 = ▢ / 24 + 5 = ▢ / 34 + 5 = ▢ _(Bild: Zahlenstrahl 0 bis 40, Sprünge 4 nach 9 (+ 5), 14 nach 19 (+ 5), 24 nach 29 (+ 5), 34 nach 39 (+ 5))_ Lösung: a = **9**, b = **19**, c = **29**, d = **39**
+- `06` AFB I · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 40 bis 80, Sprünge 45 nach 65 (+ 20))_
+  - ☐ 45 − 20
+  - ☑ 45 + 20
+  - ☐ 20 + 65
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege die zweite Zahl in Hunderter und Zehner und addiere sie nacheinander. *Beispiel:* 340 + 280: 340 + 200 = 540, dann 540 + 80 = 620. *Lösungsschritt:* Addiere zuerst die Hunderter: 290 + 500 = 790. Dann fehlen noch 90.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Rechne im Kopf: 290 + 590 Lösung: **880**. Typische Fehler: 780 (add-uebertrag-vergessen), 300 (add-subtrahiert).
-- `02` AFB I · Rechne im Kopf: 430 + 480 Lösung: **910**. Typische Fehler: 810 (add-uebertrag-vergessen), 50 (add-subtrahiert).
-- `03` AFB I · Rechne im Kopf: 550 + 260 Lösung: **810**. Typische Fehler: 710 (add-uebertrag-vergessen), 290 (add-subtrahiert).
-- `04` AFB I · Rechne im Kopf: 170 + 560 Lösung: **730**. Typische Fehler: 630 (add-uebertrag-vergessen), 390 (add-subtrahiert).
-- `05` AFB I · Der Zahlenstrahl zeigt einen Sprung. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 400: + 400; Zahl eintragen)_ Lösung: **800**. Typische Fehler: 0 (add-subtrahiert), 900 (kopf-stellenwert), 700 (kopf-stellenwert).
-- `06` AFB I · Der Zahlenstrahl zeigt einen Sprung. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 300: + 150; Zahl eintragen)_ Lösung: **450**. Typische Fehler: 150 (add-subtrahiert), 550 (kopf-stellenwert), 350 (kopf-stellenwert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier kommen nur Zehner dazu. Die Einer bleiben gleich. *Beispiel:* 46 + 30: 4 Zehner + 3 Zehner = 7 Zehner. Ergebnis 76. *Lösungsschritt:* 3 Zehner + 3 Zehner = 6 Zehner.
 
-### M · Mittleres Niveau
+- `01` AFB I · Rechne im Kopf. / 32 + 30 Lösung: **62**. Typische Fehler: 35 (kopf-stellenwert).
+- `02` AFB I · Rechne im Kopf. / 77 + 9 _(Bild: Zahlenstrahl 70 bis 90, Sprünge 77 nach 80 (+ 3), 80 nach 86 (+ 6))_ Lösung: **86**. Typische Fehler: 76 (add-uebertrag-vergessen).
+- `03` AFB II · Rechne der Reihe nach. / 38 + 5 = ▢ / 48 + 5 = ▢ / 58 + 5 = ▢ / Setze fort: 68 + 5 = ▢ Lösung: a = **43**, b = **53**, c = **63**, d = **73**
+- `04` AFB I · Rechne im Kopf. / 53 + 38 _(Bild: Zahlenstrahl 50 bis 100, Sprünge 53 nach 83 (+ 30), 83 nach 91 (+ 8))_ Lösung: **91**. Typische Fehler: 81 (add-uebertrag-vergessen).
+- `05` AFB II · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes ?, Teile 36 und 43)_
+  - ☐ 34 + 41
+  - ☐ 36 + 41
+  - ☑ 36 + 43
+- `06` AFB III · Mia rechnet 48 + 17 so: / 40 + 10 = 50 / 8 + 7 = 15 / Mia schreibt als Ergebnis 55. / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Ein Zehner fehlt. / Richtig ist 65.
+  - ☐ Falsch. / Hier muss man minus rechnen.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* In jedes Feld gehört die Summe aus der Zahl links und der Zahl oben. *Beispiel:* Links 250, oben 130: In das Feld gehört 250 + 130 = 380. *Lösungsschritt:* Das erste Feld: 830 + 390 = 1220.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB I · Fülle die Additionstabelle aus. Rechne im Kopf. 
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Zahlen. *Lösungsschritt:* 29 Zehner + 36 Zehner = 65 Zehner.
 
-  | + | 390 | 420 |
-  |---|---|---|
-  | 830 | **1220** | **1250** |
-  | 180 | **570** | **600** |
+- `01` AFB I · Rechne im Kopf: 290 + 360 Lösung: **650**. Typische Fehler: 550 (add-uebertrag-vergessen).
+- `02` AFB II · ▢ + 180 = 810 Lösung: a = **630**
+- `03` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Untere Reihe: 46, 30, 19. Mittlere Reihe: ▢, ▢. Oberster Stein: ▢. Lösung: a = **76**, b = **49**, c = **125**
+- `04` AFB I · Rechne im Kopf: 660 + 65 Lösung: **725**. Typische Fehler: 1310 (kopf-stellenwert).
+- `05` AFB II · Rechenkette: 220 + 140 = ▢, dann + 95 = ▢, dann + ▢ = 600. Lösung: a = **360**, b = **455**, c = **145**
+- `06` AFB III · „Die Summe von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
+  - ☑ Richtig. Beispiel: 13 + 25 = 38. Von jeder ungeraden Zahl bleibt beim Paarebilden ein Einzelner übrig. Die beiden Einzelnen bilden zusammen wieder ein Paar.
+  - ☐ Falsch. Ungerade plus ungerade bleibt ungerade.
+  - ☐ Richtig, denn jede Summe ist eine gerade Zahl.
+  - ☐ Das stimmt nur bei kleinen Zahlen wie 3 + 5 = 8.
 
-- `02` AFB I · Rechne im Kopf: 140 + 120 + 190 Lösung: **450**. Typische Fehler: 260 (sach-schritt-vergessen), 350 (add-uebertrag-vergessen).
-- `03` AFB I · Fülle die Additionstabelle aus. Rechne im Kopf. 
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-  | + | 490 | 410 |
-  |---|---|---|
-  | 490 | **980** | **900** |
-  | 400 | **890** | **810** |
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere schrittweise: erst die Hunderter, dann die Zehner, dann die Einer.
 
-- `04` AFB I · Rechne im Kopf: 440 + 190 + 290 Lösung: **920**. Typische Fehler: 630 (sach-schritt-vergessen), 720 (add-uebertrag-vergessen).
-- `05` AFB I · Fülle die Additionstabelle aus. Rechne im Kopf. 
-
-  | + | 440 | 120 |
-  |---|---|---|
-  | 720 | **1160** | **840** |
-  | 140 | **580** | **260** |
-
-- `06` AFB I · Rechne im Kopf: 210 + 260 + 300 Lösung: **770**. Typische Fehler: 470 (sach-schritt-vergessen).
-
-### E · Erweitertes Niveau
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte auf die Stellen: Tausender zu Tausendern, Hunderter zu Hundertern. *Beispiel:* 48 000 + 7 500: 48 000 + 7 000 = 55 000, dann + 500 = 55 500. *Lösungsschritt:* Addiere zuerst die Tausender: 67 000 + 5000 = 72 000.
-
-- `01` AFB I · Rechne im Kopf: 67 000 + 5700 Lösung: **72700**. Typische Fehler: 124000 (kopf-stellenwert), 67570 (kopf-stellenwert).
-- `02` AFB I · ▢ + 5100 = 20 000 Lösung: a = **14900**
-- `03` AFB I · Rechne im Kopf: 54 000 + 9800 Lösung: **63800**. Typische Fehler: 152000 (kopf-stellenwert), 54980 (kopf-stellenwert).
-- `04` AFB I · ▢ + 7700 = 40 000 Lösung: a = **32300**
-- `05` AFB I · Rechne im Kopf: 38 000 + 6300 Lösung: **44300**. Typische Fehler: 101000 (kopf-stellenwert), 38630 (kopf-stellenwert).
-- `06` AFB I · ▢ + 8500 = 50 000 Lösung: a = **41500**
+- `01` AFB I · Rechne im Kopf: 279 + 138 Lösung: **417**. Typische Fehler: 307 (add-uebertrag-vergessen).
+- `02` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Untere Reihe: 55, ▢, 35. Mittlere Reihe: 94, ▢. Oberster Stein: ▢. Lösung: a = **39**, b = **74**, c = **168**
+- `03` AFB II · Entscheide ohne zu rechnen: Welche Aufgabe hat das größte Ergebnis?
+  - ☑ 574 + 277, denn der erste Summand ist gleich geblieben und der zweite ist am größten
+  - ☐ 574 + 274, denn die Zahlen sind am einfachsten
+  - ☐ 571 + 274, denn der erste Summand ist am kleinsten
+  - ☐ 571 + 277, denn hier wurden beide Summanden verändert
+  - ☐ Alle Ergebnisse sind gleich groß.
+- `04` AFB III · Summen von drei aufeinanderfolgenden Zahlen: 4 + 5 + 6 = 15, 10 + 11 + 12 = 33, 20 + 21 + 22 = 63. Stelle die Regel auf: Die Summe ist ▢ · die mittlere Zahl. Sage damit 199 + 200 + 201 vorher: ▢ Lösung: a = **3**, b = **600**
+- `05` AFB II · Die Summe zweier Zahlen ist 780. Der erste Summand wird um 20 größer, der zweite um 20 größer. Bestimme die neue Summe. Lösung: **820**. Typische Fehler: 800 (sach-schritt-vergessen), 780 (add-subtrahiert).
+- `06` AFB III · Auf einer Dartscheibe gibt es nur die Felder 16 und 17. Du willst mit mehreren Würfen genau 100 Punkte erreichen.
+  - a) Wie oft musst du die 16 treffen? **2**.
+  - b) Wie oft musst du die 17 treffen? **4**.
 
 ## 5.3.1-K2: Ich kann im Kopf subtrahieren.
 
-### F · Förderniveau
+Grundlage, die F übt: Wegnehmen und Ergänzen in Schritten bis 100
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück springen heißt subtrahieren. Springe in Zehnerschritten nach links. *Beispiel:* Start bei 120, 50 zurück: erst 20 bis zur 100, dann noch 30. Du landest bei 70. *Lösungsschritt:* Springe zuerst zurück bis zur 100. Das sind 30. Von den 70 bleiben dann noch 40 übrig, die springst du danach.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Starte bei 130 und springe 70 zurück. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **60**. Typische Fehler: 200 (sub-addiert).
-- `02` AFB I · Starte bei 140 und springe 60 zurück. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **80**. Typische Fehler: 200 (sub-addiert).
-- `03` AFB I · Starte bei 160 und springe 70 zurück. Bei welcher Zahl landest du? _(Zahlenstrahl 0 bis 200, Teilstriche alle 10; antippen)_ Lösung: **90**. Typische Fehler: 230 (sub-addiert).
-- `04` AFB I · Rechne im Kopf: 140 − 60 Lösung: **80**. Typische Fehler: 200 (sub-addiert), 120 (sub-kleiner-von-groesser).
-- `05` AFB I · Rechne im Kopf: 150 − 80 Lösung: **70**. Typische Fehler: 230 (sub-addiert), 130 (sub-kleiner-von-groesser).
-- `06` AFB I · Rechne im Kopf: 110 − 30 Lösung: **80**. Typische Fehler: 140 (sub-addiert), 120 (sub-kleiner-von-groesser).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück heißt: nach links. *Beispiel:* Start 30, 4 zurück: Du landest bei 26. *Lösungsschritt:* Zähle von 40 aus 4 Striche nach links.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Starte bei 40. / Springe 4 zurück. / Tippe an: Wo landest du? _(Zahlenstrahl 30 bis 50, Teilstriche alle 1; antippen)_ Lösung: **36**. Typische Fehler: 44 (sub-addiert).
+- `02` AFB I · 72 − 5 / Erst bis zur 70: 72 − ▢ = 70 / Dann weiter: 70 − ▢ = ▢ _(Bild: Zahlenstrahl 60 bis 80, Sprünge 72 nach 70 (− 2), 70 nach 67 (− 3))_ Lösung: a = **2**, b = **3**, c = **67**
+- `03` AFB I · Der Punkt liegt bei 68. / Wie viel fehlt von 68 bis 70? _(Bild: Zahlenstrahl 60 bis 70)_ Lösung: **2**. Typische Fehler: 8 (begriffe-verwechselt).
+- `04` AFB I · Der Pfeil springt zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 20 bis 60, Teilstriche alle 5, Sprung von 55: − 20; Zahl eintragen)_ Lösung: **35**. Typische Fehler: 75 (sub-addiert), 53 (stellenwert).
+- `05` AFB II · Rechne der Reihe nach. / 13 − 5 = ▢ / 23 − 5 = ▢ / 33 − 5 = ▢ / 43 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 13 nach 10 (− 3), 10 nach 8 (− 2))_ Lösung: a = **8**, b = **18**, c = **28**, d = **38**
+- `06` AFB I · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 50 bis 90, Sprünge 85 nach 65 (− 20))_
+  - ☐ 65 − 20
+  - ☐ 85 + 20
+  - ☑ 85 − 20
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege die zweite Zahl in Hunderter und Zehner und ziehe sie nacheinander ab. *Beispiel:* 720 − 350: 720 − 300 = 420, dann 420 − 50 = 370. *Lösungsschritt:* Ziehe zuerst die Hunderter ab: 650 − 200 = 450. Dann fehlen noch 60.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Rechne im Kopf: 650 − 260 Lösung: **390**. Typische Fehler: 410 (sub-kleiner-von-groesser), 490 (sub-uebertrag-vergessen), 910 (sub-addiert).
-- `02` AFB I · Rechne im Kopf: 910 − 550 Lösung: **360**. Typische Fehler: 440 (sub-kleiner-von-groesser), 460 (sub-uebertrag-vergessen), 1460 (sub-addiert).
-- `03` AFB I · Rechne im Kopf: 950 − 190 Lösung: **760**. Typische Fehler: 840 (sub-kleiner-von-groesser), 860 (sub-uebertrag-vergessen), 1140 (sub-addiert).
-- `04` AFB I · Rechne im Kopf: 950 − 480 Lösung: **470**. Typische Fehler: 530 (sub-kleiner-von-groesser), 570 (sub-uebertrag-vergessen), 1430 (sub-addiert).
-- `05` AFB I · Der Zahlenstrahl zeigt einen Sprung zurück. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 600: − 550; Zahl eintragen)_ Lösung: **50**. Typische Fehler: 1150 (sub-addiert), 150 (kopf-stellenwert).
-- `06` AFB I · Der Zahlenstrahl zeigt einen Sprung zurück. Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50, Sprung von 850: − 400; Zahl eintragen)_ Lösung: **450**. Typische Fehler: 1250 (sub-addiert), 550 (kopf-stellenwert), 350 (kopf-stellenwert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier gehen nur Zehner weg. Die Einer bleiben gleich. *Beispiel:* 76 − 30: 7 Zehner − 3 Zehner = 4 Zehner. Ergebnis 46. *Lösungsschritt:* 9 Zehner − 3 Zehner = 6 Zehner.
 
-### M · Mittleres Niveau
+- `01` AFB I · Rechne im Kopf. / 98 − 30 Lösung: **68**. Typische Fehler: 95 (kopf-stellenwert), 128 (sub-addiert).
+- `02` AFB I · Rechne im Kopf. / 74 − 9 _(Bild: Zahlenstrahl 60 bis 80, Sprünge 74 nach 70 (− 4), 70 nach 65 (− 5))_ Lösung: **65**. Typische Fehler: 75 (sub-kleiner-von-groesser).
+- `03` AFB II · Abziehen oder ergänzen? / Bei welcher Aufgabe ist Ergänzen am leichtesten? _(Bild: Zahlenstrahl 90 bis 110, Sprünge 91 nach 93 (+ 2))_
+  - ☐ 93 − 40
+  - ☐ 93 − 2
+  - ☑ 93 − 91
+- `04` AFB I · Rechne im Kopf. / 81 − 34 _(Bild: Zahlenstrahl 40 bis 90, Sprünge 81 nach 51 (− 30), 51 nach 47 (− 4))_ Lösung: **47**. Typische Fehler: 53 (sub-kleiner-von-groesser), 115 (sub-addiert).
+- `05` AFB II · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes 82, Teile 31 und ?)_
+  - ☐ 80 − 31
+  - ☐ 82 − 34
+  - ☑ 82 − 31
+- `06` AFB III · Lina rechnet 91 − 37 so: / 90 − 30 = 60 / 7 − 1 = 6 / Lina schreibt als Ergebnis 66. / Stimmt das?
+  - ☐ Stimmt.
+  - ☐ Falsch. / Hier muss man plus rechnen.
+  - ☑ Falsch. / Die Einer sind vertauscht. / Richtig ist 54.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* In jedes Feld gehört die Differenz: Zahl links minus Zahl oben. *Beispiel:* Links 750, oben 230: In das Feld gehört 750 − 230 = 520. *Lösungsschritt:* Das erste Feld: 960 − 240 = 720.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB I · Fülle die Tabelle aus: Ziehe von der Zahl links die Zahl oben ab. Rechne im Kopf. 
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Zahlen. *Lösungsschritt:* 66 Zehner − 28 Zehner = 38 Zehner.
 
-  | − | 240 | 130 |
-  |---|---|---|
-  | 960 | **720** | **830** |
-  | 700 | **460** | **570** |
+- `01` AFB I · Rechne im Kopf: 660 − 280 Lösung: **380**. Typische Fehler: 420 (sub-kleiner-von-groesser), 940 (sub-addiert).
+- `02` AFB II · Abziehen oder ergänzen? Rechne geschickt: 706 − 699 = ▢ und 1005 − 993 = ▢ Lösung: a = **7**, b = **12**
+- `03` AFB II · Rechenkette: 900 − 280 = ▢, dann − ▢ = 500, dann − 125 = ▢. Lösung: a = **620**, b = **120**, c = **375**
+- `04` AFB I · Rechne im Kopf: 850 − 275 Lösung: **575**. Typische Fehler: 585 (ergaenzen-zu-viel), 1125 (sub-addiert).
+- `05` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Oberster Stein: 107. Mittlere Reihe: 58, ▢. Untere Reihe: 35, ▢, ▢. Lösung: a = **49**, b = **23**, c = **26**
+- `06` AFB III · „Die Differenz von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
+  - ☐ Falsch. Ungerade minus ungerade bleibt ungerade.
+  - ☐ Das stimmt nur, wenn die Differenz kleiner als 10 ist.
+  - ☐ Falsch. Beispiel: 25 − 13 = 11.
+  - ☑ Richtig. Beispiel: 25 − 13 = 12. Beide Zahlen liegen um 1 über einer geraden Zahl. Dieser Überschuss hebt sich beim Subtrahieren auf.
 
-- `02` AFB I · Rechne im Kopf: 870 − 240 − 200 Lösung: **430**. Typische Fehler: 830 (sub-klammerfehler), 630 (sach-schritt-vergessen).
-- `03` AFB I · Fülle die Tabelle aus: Ziehe von der Zahl links die Zahl oben ab. Rechne im Kopf. 
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-  | − | 440 | 200 |
-  |---|---|---|
-  | 940 | **500** | **740** |
-  | 630 | **190** | **430** |
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Subtrahiere schrittweise: erst die Hunderter, dann die Zehner, dann die Einer.
 
-- `04` AFB I · Rechne im Kopf: 970 − 150 − 130 Lösung: **690**. Typische Fehler: 950 (sub-klammerfehler), 820 (sach-schritt-vergessen).
-- `05` AFB I · Fülle die Tabelle aus: Ziehe von der Zahl links die Zahl oben ab. Rechne im Kopf. 
-
-  | − | 120 | 500 |
-  |---|---|---|
-  | 990 | **870** | **490** |
-  | 620 | **500** | **120** |
-
-- `06` AFB I · Rechne im Kopf: 620 − 220 − 130 Lösung: **270**. Typische Fehler: 530 (sub-klammerfehler), 400 (sach-schritt-vergessen).
-
-### E · Erweitertes Niveau
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe erst die Tausender ab, dann die Hunderter. *Beispiel:* 60 000 − 7 500: 60 000 − 7 000 = 53 000, dann − 500 = 52 500. *Lösungsschritt:* Ziehe zuerst die Tausender ab: 22 000 − 1000 = 21 000.
-
-- `01` AFB I · Rechne im Kopf: 22 000 − 1900 Lösung: **20100**. Typische Fehler: 23900 (sub-addiert), 21100 (ergaenzen-zu-viel), 21810 (kopf-stellenwert).
-- `02` AFB I · 60 000 − ▢ = 6900 Lösung: a = **53100**
-- `03` AFB I · Rechne im Kopf: 21 000 − 3800 Lösung: **17200**. Typische Fehler: 24800 (sub-addiert), 18200 (ergaenzen-zu-viel), 20620 (kopf-stellenwert).
-- `04` AFB I · 20 000 − ▢ = 6800 Lösung: a = **13200**
-- `05` AFB I · Rechne im Kopf: 48 000 − 5200 Lösung: **42800**. Typische Fehler: 53200 (sub-addiert), 43800 (ergaenzen-zu-viel), 47480 (kopf-stellenwert).
-- `06` AFB I · 20 000 − ▢ = 8700 Lösung: a = **11300**
+- `01` AFB I · Rechne im Kopf: 554 − 196 Lösung: **358**. Typische Fehler: 442 (sub-kleiner-von-groesser), 750 (sub-addiert).
+- `02` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Oberster Stein: 605. Mittlere Reihe: ▢, 245. Untere Reihe: ▢, ▢, 126. Lösung: a = **360**, b = **241**, c = **119**
+- `03` AFB II · Entscheide ohne zu rechnen: Welche Differenz ist am größten?
+  - ☐ 754 − 255, denn die Zahlen wurden nicht verändert
+  - ☐ Alle Differenzen sind gleich groß.
+  - ☐ 757 − 258, denn beide Zahlen sind hier am größten
+  - ☐ 751 − 252, denn der Subtrahend ist am kleinsten
+  - ☑ 757 − 252, denn hier ist der Minuend am größten und der Subtrahend am kleinsten
+- `04` AFB III · Zahl minus Quersumme: 23 − 5 = 18, 41 − 5 = 36, 52 − 7 = 45. Alle Ergebnisse sind Vielfache von 9. Stelle die Regel auf: Das Ergebnis ist 9 · Zehnerziffer. Sage damit 87 − 15 vorher: 9 · ▢ = ▢ Lösung: a = **8**, b = **72**
+- `05` AFB II · Verändere Minuend und Subtrahend um dieselbe Zahl: 805 − 297 = ▢ − 300 = ▢ Lösung: a = **808**, b = **508**
+- `06` AFB III · Steckbrief einer Unbekannten: „Ich bin eine zweistellige Zahl. Subtrahierst du mich von 100, erhältst du eine Zahl, die um 16 größer ist als ich.“ Bestimme die Zahl. Lösung: **42**. Typische Fehler: 84 (sach-schritt-vergessen), 58 (begriffe-verwechselt).
 
 ## 5.3.1-K3: Ich kann beim Kopfrechnen geschickt vorgehen.
 
-### F · Förderniveau
+Grundlage, die F übt: Zahlen, die zusammen 10 oder 100 ergeben
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze in Schritten: erst bis zum nächsten Zehner, dann weiter bis zur glatten Zahl. *Beispiel:* Von 64 bis 100: 6 bis zur 70, dann 30 bis zur 100. Zusammen 36. *Lösungsschritt:* Bis zum nächsten Zehner fehlen 7. Du bist dann bei 80.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Wie viel fehlt von 73 bis 100? Lösung: **27**. Typische Fehler: 37 (ergaenzen-zu-viel).
-- `02` AFB I · Wie viel fehlt von 84 bis 100? Lösung: **16**. Typische Fehler: 26 (ergaenzen-zu-viel).
-- `03` AFB I · Wie viel fehlt von 27 bis 100? Lösung: **73**. Typische Fehler: 83 (ergaenzen-zu-viel).
-- `04` AFB I · Rechne geschickt: 54 + 29 Lösung: **83**. Typische Fehler: 84 (geschickt-nicht-ausgeglichen), 85 (geschickt-falsch-ausgeglichen).
-- `05` AFB I · Rechne geschickt: 66 − 19 Lösung: **47**. Typische Fehler: 46 (geschickt-nicht-ausgeglichen), 45 (geschickt-falsch-ausgeglichen).
-- `06` AFB I · Rechne geschickt: 46 + 29 Lösung: **75**. Typische Fehler: 76 (geschickt-nicht-ausgeglichen), 77 (geschickt-falsch-ausgeglichen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:* 6 Plättchen: Bis 10 fehlen 4. *Lösungsschritt:* Zähle von 4 weiter bis 10.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Im Feld liegen 4 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: **6**. Typische Fehler: 4 (begriffe-verwechselt).
+- `02` AFB I · Welche Zahl passt? / 4 + ▢ = 10 _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: a = **6**
+- `03` AFB I · Welche Zahlen ergeben zusammen 10? / Ordne zu. _(Bild: Zehnerfeld mit 10 Feldern, 2 belegt, 8 dazu)_ Lösung: 2 → 8, 3 → 7, 4 → 6
+- `04` AFB I · Der Punkt liegt bei 70. / Wie viel fehlt von 70 bis 100? _(Bild: Zahlenstrahl 0 bis 100)_ Lösung: **30**. Typische Fehler: 3 (stellenwert).
+- `05` AFB II · 6 + 4 = 10 / Mit Zehnern geht es genauso. / 60 + ▢ = 100 _(Bild: Zehnerfeld mit 10 Feldern, 6 belegt, 4 dazu)_ Lösung: a = **40**
+- `06` AFB I · Welche Zahl ergibt zusammen mit 30 genau 100? _(Bild: Zahlenstrahl 0 bis 100)_
+  - ☐ 20
+  - ☑ 70
+  - ☐ 10
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze in Schritten: erst bis zum nächsten Zehner, dann weiter bis zur glatten Zahl. *Beispiel:* Von 64 bis 100: 6 bis zur 70, dann 30 bis zur 100. Zusammen 36. *Lösungsschritt:* Bis zum nächsten Zehner fehlen 2. Du bist dann bei 590.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Wie viel fehlt von 588 bis 1000? Lösung: **412**. Typische Fehler: 422 (ergaenzen-zu-viel), 512 (ergaenzen-zu-viel), 522 (ergaenzen-zu-viel).
-- `02` AFB I · Wie viel fehlt von 651 bis 1000? Lösung: **349**. Typische Fehler: 359 (ergaenzen-zu-viel), 449 (ergaenzen-zu-viel), 459 (ergaenzen-zu-viel).
-- `03` AFB I · Wie viel fehlt von 536 bis 1000? Lösung: **464**. Typische Fehler: 474 (ergaenzen-zu-viel), 564 (ergaenzen-zu-viel), 574 (ergaenzen-zu-viel).
-- `04` AFB I · Rechne geschickt: 305 + 99 Lösung: **404**. Typische Fehler: 405 (geschickt-nicht-ausgeglichen), 406 (geschickt-falsch-ausgeglichen).
-- `05` AFB I · Rechne geschickt: 771 − 99 Lösung: **672**. Typische Fehler: 671 (geschickt-nicht-ausgeglichen), 670 (geschickt-falsch-ausgeglichen).
-- `06` AFB I · Rechne geschickt: 337 + 99 Lösung: **436**. Typische Fehler: 437 (geschickt-nicht-ausgeglichen), 438 (geschickt-falsch-ausgeglichen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Zehner. Ergänze dann bis 100. *Beispiel:* Von 64 bis 100: erst 6 bis 70, dann 30 bis 100. Zusammen 36. *Lösungsschritt:* Von 48 bis 50 fehlen 2.
 
-### M · Mittleres Niveau
+- `01` AFB I · Wie viel fehlt von 48 bis 100? _(Bild: Zahlenstrahl 40 bis 100)_ Lösung: **52**. Typische Fehler: 62 (ergaenzen-zu-viel).
+- `02` AFB I · Rechne geschickt. / 55 + 19 / Rechne erst 55 + 20. / Ziehe dann 1 ab. Lösung: **74**. Typische Fehler: 75 (geschickt-nicht-ausgeglichen), 76 (geschickt-falsch-ausgeglichen).
+- `03` AFB II · Rechne geschickt. / 28 + 38 / 28 + 40 = ▢ / Das sind 2 zu viel. / Ergebnis: ▢ _(Bild: Zahlenstrahl 20 bis 70, Sprünge 28 nach 68 (+ 40), 68 nach 66 (− 2))_ Lösung: a = **68**, b = **66**
+- `04` AFB I · Rechne geschickt. / 35 + 42 + 15 _(Bild: Streifenbild: Ganzes ?, Teile 35 und 15 und 42)_ Lösung: **92**. Typische Fehler: 77 (sach-schritt-vergessen).
+- `05` AFB II · Du rechnest 73 − 70. / Welcher Weg ist am leichtesten? _(Bild: Zahlenstrahl 70 bis 90, Sprünge 70 nach 73 (+ 3))_
+  - ☑ Ergänzen: von 70 bis 73
+  - ☐ Abziehen: erst 70 weg, dann 0 weg
+  - ☐ Zusammenzählen: 73 + 70
+- `06` AFB III · Sara rechnet 39 + 19 so: / 39 + 20 = 59 / 59 + 1 = 60 / Stimmt das?
+  - ☑ Falsch. / Es war 1 zu viel. / Die 1 muss wieder weg. / Richtig ist 58.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Richtig ist 59.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit der glatten Nachbarzahl 2000 und gleiche danach aus. *Beispiel:* 83 − 29: 83 − 30 = 53, das war 1 zu viel abgezogen, also 53 + 1 = 54. *Lösungsschritt:* 8891 − 2000 = 6891. Jetzt gleichst du noch 3 aus.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Rechne geschickt: 8891 − 1997 Lösung: **6894**. Typische Fehler: 6891 (geschickt-nicht-ausgeglichen), 6888 (geschickt-falsch-ausgeglichen).
-- `02` AFB II · Rechne geschickt: 2259 + 2998 Lösung: **5257**. Typische Fehler: 5259 (geschickt-nicht-ausgeglichen), 5261 (geschickt-falsch-ausgeglichen).
-- `03` AFB II · Ergänze jede Zahl bis 1000. 
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit 400 statt 397 und gleiche danach aus. *Lösungsschritt:* 400 + 213 = 613. Das sind 3 zu viel.
+
+- `01` AFB I · Rechne geschickt: 397 + 213 Lösung: **610**. Typische Fehler: 613 (geschickt-nicht-ausgeglichen), 616 (geschickt-falsch-ausgeglichen).
+- `02` AFB II · Rechne geschickt: 656 − 199. Rechne zuerst 656 − 200 = ▢. Gleiche dann aus: ▢ Lösung: a = **456**, b = **457**
+- `03` AFB II · Berechne der Reihe nach: 99 + 45 = ▢, 199 + 45 = ▢, 299 + 45 = ▢. Nutze das Muster: 899 + 45 = ▢ Lösung: a = **144**, b = **244**, c = **344**, d = **944**
+- `04` AFB I · Rechne geschickt: 135 + 82 + 65 Lösung: **282**. Typische Fehler: 217 (sach-schritt-vergessen).
+- `05` AFB II · Ergänze jede Zahl bis 1000. 
 
   | Zahl | fehlt bis 1000 |
   |---|---|
-  | 167 | **833** |
-  | 818 | **182** |
-  | 726 | **274** |
+  | 510 | **490** |
+  | 305 | **695** |
+  | 48 | **952** |
 
-- `04` AFB II · Rechne geschickt: 4839 + 998 Lösung: **5837**. Typische Fehler: 5839 (geschickt-nicht-ausgeglichen), 5841 (geschickt-falsch-ausgeglichen).
-- `05` AFB II · Rechne geschickt: 7064 − 997 Lösung: **6067**. Typische Fehler: 6064 (geschickt-nicht-ausgeglichen), 6061 (geschickt-falsch-ausgeglichen).
-- `06` AFB II · Ergänze jede Zahl bis 1000. 
+- `06` AFB III · Finn rechnet 500 − 198 so: 500 − 200 = 300, dann 300 − 2 = 298. Beurteile den Rechenweg.
+  - ☐ Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen.
+  - ☐ Richtig. 198 ist um 2 kleiner als 200, also wird 2 abgezogen.
+  - ☐ Falsch. Das Ergebnis ist 300, ein Ausgleich ist nicht nötig.
+  - ☑ Falsch. Mit 200 wurden 2 zu viel abgezogen. Die 2 müssen addiert werden: 300 + 2 = 302.
 
-  | Zahl | fehlt bis 1000 |
-  |---|---|
-  | 547 | **453** |
-  | 718 | **282** |
-  | 511 | **489** |
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Alle drei Summanden liegen knapp unter derselben glatten Zahl.
 
-### E · Erweitertes Niveau
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die ersten beiden Zahlen liegen knapp unter einem Tausender. Verteile die kleine Zahl so, dass glatte Zahlen entstehen. *Beispiel:* 3 996 + 1 998 + 6: 3 996 + 4 = 4 000 und 1 998 + 2 = 2 000. Zusammen 6 000. *Lösungsschritt:* 5995 + 5 = 6000. Die übrigen 2 gehören zur zweiten Zahl.
-
-- `01` AFB II · Rechne geschickt: 5995 + 5998 + 7 Lösung: **12000**. Typische Fehler: 12007 (geschickt-nicht-ausgeglichen), 11993 (geschickt-falsch-ausgeglichen).
-- `02` AFB II · Wie viel fehlt von 80 342 bis 100 000? Lösung: **19658**. Typische Fehler: 19668 (ergaenzen-zu-viel), 19758 (ergaenzen-zu-viel), 20658 (ergaenzen-zu-viel).
-- `03` AFB II · Rechne geschickt: 5997 + 3998 + 5 Lösung: **10000**. Typische Fehler: 10005 (geschickt-nicht-ausgeglichen), 9995 (geschickt-falsch-ausgeglichen).
-- `04` AFB II · Wie viel fehlt von 74 614 bis 100 000? Lösung: **25386**. Typische Fehler: 25396 (ergaenzen-zu-viel), 25486 (ergaenzen-zu-viel), 26386 (ergaenzen-zu-viel).
-- `05` AFB II · Rechne geschickt: 2998 + 3996 + 6 Lösung: **7000**. Typische Fehler: 7006 (geschickt-nicht-ausgeglichen), 6994 (geschickt-falsch-ausgeglichen).
-- `06` AFB II · Wie viel fehlt von 52 288 bis 100 000? Lösung: **47712**. Typische Fehler: 47722 (ergaenzen-zu-viel), 47812 (ergaenzen-zu-viel), 48712 (ergaenzen-zu-viel).
+- `01` AFB I · Rechne geschickt: 997 + 998 + 999 Lösung: **2994**. Typische Fehler: 3000 (geschickt-nicht-ausgeglichen), 3006 (geschickt-falsch-ausgeglichen).
+- `02` AFB II · Verändere die Summanden gegensinnig: 398 + 200 = 400 + ▢ = ▢ Lösung: a = **198**, b = **598**
+- `03` AFB II · Welche Aufgabe hat dasselbe Ergebnis wie 663 − 298? Wähle die Antwort mit der richtigen Begründung.
+  - ☐ 661 − 298, denn der Minuend darf beliebig verändert werden
+  - ☑ 665 − 300, denn Minuend und Subtrahend wurden um dieselbe Zahl vergrößert
+  - ☐ 663 − 300, denn 300 ist eine glatte Zahl
+  - ☐ 665 − 296, denn die Änderungen gleichen sich aus
+  - ☐ 661 − 300, denn die Änderungen gleichen sich aus
+- `04` AFB III · Du rechnest mit einer glatten Nachbarzahl und gleichst aus. Stelle eine Regel auf, die für Summen und für Differenzen gilt.
+  - ☐ Summe und Differenz: beide Zahlen gegensinnig verändern.
+  - ☐ Summe: die Summanden gleichsinnig verändern. Differenz: gegensinnig verändern.
+  - ☑ Summe: die Summanden gegensinnig verändern. Differenz: Minuend und Subtrahend gleichsinnig verändern.
+  - ☐ Summe und Differenz: beide Zahlen gleichsinnig verändern.
+  - ☐ Es genügt immer, nur eine der beiden Zahlen zu verändern.
+- `05` AFB II · Berechne geschickt: 79 + 81 + 78 + 82 + 77 + 83 Lösung: **480**. Typische Fehler: 240 (sach-schritt-vergessen).
+- `06` AFB III · 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45. Vor genau einer Zahl wird das Plus durch ein Minus ersetzt. Das Ergebnis ist dann 37. Bestimme diese Zahl. Lösung: **4**. Typische Fehler: 8 (sach-schritt-vergessen).
 
 ## 5.3.2-A1: Ich kann die Fachbegriffe Summand und Summe verwenden.
 
-### F · Förderniveau
+Grundlage, die F übt: Plus als „zusammen“ und „dazu“: Aufgabe und Bild zuordnen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. *Beispiel:* In 20 + 30 = 50 sind 20 und 30 die Summanden, 50 ist die Summe. *Lösungsschritt:* Schau, wo 21 steht: vor oder hinter dem Gleichheitszeichen?
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · 21 + 12 = 33. Wie heißt die Zahl 21?
-  - ☐ Minuend
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dazu heißt plus. *Beispiel:* Bild: 5 dunkle Plättchen, 2 helle kommen dazu. Die Rechnung ist 5 + 2. *Lösungsschritt:* Zähle die dunklen Plättchen: 4. Zähle die hellen: 4.
+
+- `01` AFB I · Die hellen Plättchen kommen dazu. / Welche Rechnung passt? _(Bild: Mengenbild: 4 Plättchen, 4 dazu)_
+  - ☐ 4 − 4
+  - ☑ 4 + 4
+  - ☐ 8 + 4
+- `02` AFB I · Es liegen 7 Plättchen da. / 4 Plättchen kommen dazu. / Wie viele Plättchen sind es zusammen? _(Bild: Mengenbild: 7 Plättchen, 4 dazu)_ Lösung: **11**. Typische Fehler: 3 (add-subtrahiert).
+- `03` AFB I · Schreibe die Plus-Aufgabe zum Bild. / ▢ + ▢ = ▢ _(Bild: Mengenbild: 5 Plättchen, 4 dazu)_ Lösung: a = **5**, b = **4**, c = **9**
+- `04` AFB I · Der Pfeil springt weiter. / Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprung von 6: + 5; Zahl eintragen)_ Lösung: **11**. Typische Fehler: 1 (add-subtrahiert).
+- `05` AFB II · Zusammen sind es 12 Plättchen. / 9 Plättchen sind dunkel. / Wie viele Plättchen sind hell? _(Bild: Mengenbild: 9 Plättchen, 3 dazu)_ Lösung: **3**. Typische Fehler: 21 (begriffe-verwechselt), 9 (begriffe-verwechselt).
+- `06` AFB I · Im Feld liegen 7 Plättchen. / Ordne jeder Aufgabe das Ergebnis zu. _(Bild: Zehnerfeld mit 20 Feldern, 7 belegt)_ Lösung: 7 + 3 → 10, 7 + 7 → 14, 7 + 4 → 11
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. *Beispiel:* 4 + 5 = 9: 4 und 5 sind die Summanden, 9 ist die Summe. *Lösungsschritt:* 89 ist das Ergebnis. Das Ergebnis heißt Summe.
+
+- `01` AFB I · 24 + 65 = 89 / Wie heißt die Zahl 65 in dieser Aufgabe?
+  - ☑ Summand
   - ☐ Differenz
   - ☐ Summe
-  - ☑ Summand
-- `02` AFB I · 36 + 15 = 51. Wie heißt die Zahl 51?
-  - ☐ Summand
-  - ☐ Differenz
-  - ☑ Summe
-  - ☐ Minuend
-- `03` AFB I · 60 + 21 = 81. Wie heißt die Zahl 21?
-  - ☐ Minuend
-  - ☑ Summand
-  - ☐ Summe
-  - ☐ Differenz
-- `04` AFB I · 26 + 33 = 59. Wie heißt die Zahl 26?
-  - ☐ Differenz
-  - ☐ Minuend
-  - ☐ Summe
-  - ☑ Summand
-- `05` AFB I · 18 + 33 = 51. Wie heißt die Zahl 51?
-  - ☐ Minuend
-  - ☑ Summe
-  - ☐ Differenz
-  - ☐ Summand
-- `06` AFB I · 33 + 12 = 45. Wie heißt die Zahl 12?
-  - ☐ Differenz
-  - ☑ Summand
-  - ☐ Summe
-  - ☐ Minuend
+- `02` AFB I · 66 + 22 = 88 / Der erste Summand ist ▢. / Der zweite Summand ist ▢. / Die Summe ist ▢. _(Bild: Streifenbild: Ganzes 88, Teile 66 und 22)_ Lösung: a = **66**, b = **22**, c = **88**
+- `03` AFB II · Die Summanden sind 55 und 40. / Berechne die Summe. _(Bild: Streifenbild: Ganzes ?, Teile 55 und 40)_ Lösung: **95**. Typische Fehler: 15 (add-subtrahiert).
+- `04` AFB I · 44 + 51 = 95 / Ordne jeder Zahl den Namen zu. Lösung: 44 → erster Summand, 51 → zweiter Summand, 95 → Summe
+- `05` AFB II · Die Summe ist 80. / Ein Summand ist 25. / Wie groß ist der andere Summand? _(Bild: Streifenbild: Ganzes 80, Teile 25 und ?)_ Lösung: **55**. Typische Fehler: 105 (probe-falsche-umkehr).
+- `06` AFB III · Noah sagt: / „Bei 41 + 46 = 87 ist 87 ein Summand.“ / Stimmt das?
+  - ☑ Falsch. / 87 ist die Summe.
+  - ☐ Stimmt.
+  - ☐ Falsch. / 87 ist die Differenz.
 
-### G · Grundlegendes Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* In einer Addition heißen die Zahlen, die addiert werden, Summanden. Das Ergebnis heißt Summe. *Beispiel:* Summanden 40 und 25: 40 + 25 = 65. Die Summe ist 65. *Lösungsschritt:* Die Rechnung lautet 432 + 275.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe ist das Ergebnis einer Addition. *Lösungsschritt:* Rechne 510 + 198.
 
-- `01` AFB I · Die Summanden sind 432 und 275. Berechne die Summe. Lösung: **707**. Typische Fehler: 157 (begriffe-verwechselt), 607 (add-uebertrag-vergessen).
-- `02` AFB I · Die Summanden sind 601 und 248. Berechne die Summe. Lösung: **849**. Typische Fehler: 353 (begriffe-verwechselt).
-- `03` AFB I · Die Summanden sind 230 und 41. Berechne die Summe. Lösung: **271**. Typische Fehler: 189 (begriffe-verwechselt).
-- `04` AFB I · Die Summanden sind 384 und 214. Berechne die Summe. Lösung: **598**. Typische Fehler: 170 (begriffe-verwechselt).
-- `05` AFB I · Die Summanden sind 602 und 74. Berechne die Summe. Lösung: **676**. Typische Fehler: 528 (begriffe-verwechselt).
-- `06` AFB I · Die Summanden sind 479 und 246. Berechne die Summe. Lösung: **725**. Typische Fehler: 233 (begriffe-verwechselt), 615 (add-uebertrag-vergessen).
+- `01` AFB I · Berechne die Summe von 510 und 198. Lösung: **708**. Typische Fehler: 312 (add-subtrahiert).
+- `02` AFB II · Die Summe ist 700, ein Summand ist 310. Bestimme den anderen Summanden. Lösung: **390**. Typische Fehler: 1010 (probe-falsche-umkehr), 490 (ergaenzen-zu-viel).
+- `03` AFB II · Welche Aussage passt zu 250 + 130 = 380?
+  - ☐ 250 und 380 sind die Summanden.
+  - ☑ 380 ist die Summe der Summanden 250 und 130.
+  - ☐ 380 ist ein Summand.
+  - ☐ 250 ist die Summe von 130 und 380.
+- `04` AFB I · Addiere 810 zur Zahl 240. Lösung: **1050**. Typische Fehler: 570 (add-subtrahiert).
+- `05` AFB II · Beide Summanden einer Addition sind gleich groß. Die Summe ist 344. Bestimme einen Summanden. Lösung: **172**. Typische Fehler: 344 (sach-schritt-vergessen), 688 (begriffe-verwechselt).
+- `06` AFB III · Lena behauptet: „Wird ein Summand um 10 größer und der andere um 10 kleiner, bleibt die Summe gleich.“ Beurteile die Aussage.
+  - ☑ Richtig. Beispiel: 40 + 20 = 60 und 50 + 10 = 60. Was der eine Summand gewinnt, verliert der andere.
+  - ☐ Falsch. Beispiel: 40 + 20 = 60, aber 50 + 20 = 70.
+  - ☐ Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert.
+  - ☐ Falsch. Die Summe wird um 20 größer.
 
-### M · Mittleres Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. Gesucht ist einer der Summanden. *Beispiel:* Summe 90, ein Summand 35: 35 + ? = 90. Der andere Summand ist 90 − 35 = 55. *Lösungsschritt:* Schreibe 305 + ? = 472. Den Summanden findest du mit der Umkehraufgabe 472 − 305.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Summe und die Differenz getrennt.
 
-- `01` AFB II · Die Summe ist 472, ein Summand ist 305. Wie groß ist der andere Summand? Lösung: **167**. Typische Fehler: 777 (begriffe-verwechselt).
-- `02` AFB II · Die Summe ist 760, ein Summand ist 472. Wie groß ist der andere Summand? Lösung: **288**. Typische Fehler: 1232 (begriffe-verwechselt).
-- `03` AFB II · Die Summe ist 606, ein Summand ist 311. Wie groß ist der andere Summand? Lösung: **295**. Typische Fehler: 917 (begriffe-verwechselt).
-- `04` AFB II · Die Summe ist 344, ein Summand ist 203. Wie groß ist der andere Summand? Lösung: **141**. Typische Fehler: 547 (begriffe-verwechselt).
-- `05` AFB II · Die Summe ist 405, ein Summand ist 272. Wie groß ist der andere Summand? Lösung: **133**. Typische Fehler: 677 (begriffe-verwechselt).
-- `06` AFB II · Die Summe ist 635, ein Summand ist 292. Wie groß ist der andere Summand? Lösung: **343**. Typische Fehler: 927 (begriffe-verwechselt).
-
-### E · Erweitertes Niveau
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Summe und die Differenz einzeln. Addiere danach beide Ergebnisse. *Beispiel:* Summe von 30 und 20 ist 50, Differenz von 90 und 60 ist 30. Zusammen 50 + 30 = 80. *Lösungsschritt:* Berechne zuerst die Summe: 579 + 276 = 855.
-
-- `01` AFB II · Addiere zur Summe der Zahlen 579 und 276 die Differenz der Zahlen 605 und 217. Lösung: **1243**. Typische Fehler: 1677 (begriffe-verwechselt), 855 (sach-schritt-vergessen).
-- `02` AFB II · Addiere zur Summe der Zahlen 422 und 146 die Differenz der Zahlen 600 und 197. Lösung: **971**. Typische Fehler: 1365 (begriffe-verwechselt), 568 (sach-schritt-vergessen).
-- `03` AFB II · Addiere zur Summe der Zahlen 535 und 171 die Differenz der Zahlen 655 und 462. Lösung: **899**. Typische Fehler: 1823 (begriffe-verwechselt), 706 (sach-schritt-vergessen).
-- `04` AFB II · Addiere zur Summe der Zahlen 278 und 192 die Differenz der Zahlen 665 und 311. Lösung: **824**. Typische Fehler: 1446 (begriffe-verwechselt), 470 (sach-schritt-vergessen).
-- `05` AFB II · Addiere zur Summe der Zahlen 312 und 284 die Differenz der Zahlen 760 und 334. Lösung: **1022**. Typische Fehler: 1690 (begriffe-verwechselt), 596 (sach-schritt-vergessen).
-- `06` AFB II · Addiere zur Summe der Zahlen 305 und 294 die Differenz der Zahlen 807 und 434. Lösung: **972**. Typische Fehler: 1840 (begriffe-verwechselt), 599 (sach-schritt-vergessen).
+- `01` AFB I · Addiere zur Summe von 260 und 517 die Differenz von 500 und 110. Lösung: **1167**. Typische Fehler: 1387 (add-subtrahiert), 777 (sach-schritt-vergessen).
+- `02` AFB II · Die Summe zweier Zahlen ist 600. Der erste Summand wird um 30 größer, der zweite um 30 kleiner. Bestimme die neue Summe. Lösung: **600**. Typische Fehler: 660 (add-subtrahiert), 630 (sach-schritt-vergessen).
+- `03` AFB II · Ein Summand ist doppelt so groß wie der andere. Die Summe ist 249.
+  - a) Bestimme den kleineren Summanden. **83**.
+  - b) Bestimme den größeren Summanden. **166**.
+- `04` AFB III · Summen von vier aufeinanderfolgenden Zahlen: 1 + 2 + 3 + 4 = 10, 5 + 6 + 7 + 8 = 26, 10 + 11 + 12 + 13 = 46. Stelle die Regel auf: Summe = 4 · kleinste Zahl + ▢. Die Summe von vier aufeinanderfolgenden Zahlen ist 606. Die kleinste Zahl ist ▢. Lösung: a = **6**, b = **150**
+- `05` AFB II · Zwei Summanden ergeben zusammen 920. Der eine ist um 150 größer als der andere.
+  - a) Bestimme den kleineren Summanden. **385**.
+  - b) Bestimme den größeren Summanden. **535**.
+- `06` AFB III · Kann die Summe zweier natürlicher Zahlen kleiner sein als einer der beiden Summanden? Wähle die richtige Begründung.
+  - ☐ Ja. Bei sehr kleinen Summanden ist die Summe kleiner.
+  - ☑ Nein. Zu jedem Summanden kommt etwas dazu oder nichts. Die Summe ist deshalb mindestens so groß wie jeder Summand.
+  - ☐ Das hängt davon ab, welcher Summand vorne steht.
+  - ☐ Ja. Bei 5 + 0 ist die Summe kleiner als 5.
+  - ☐ Nein. Die Summe ist immer genau doppelt so groß wie ein Summand.
 
 ## 5.3.2-A2: Ich kann schriftlich addieren, auch mit Übertrag.
 
-### F · Förderniveau
+Grundlage, die F übt: Bündeln: 10 Einer sind 1 Zehner, dann Rechnen im Stellenraster
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 5 + 4 = 9. Schreibe 9 an die Einerstelle und rechne dann die Zehner.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Addiere schriftlich: 625 + 114 Lösung: **739**. Typische Fehler: 511 (add-subtrahiert).
-- `02` AFB I · Addiere schriftlich: 136 + 123 Lösung: **259**. Typische Fehler: 13 (add-subtrahiert).
-- `03` AFB I · Addiere schriftlich: 328 + 141 Lösung: **469**. Typische Fehler: 187 (add-subtrahiert).
-- `04` AFB I · Addiere schriftlich: 510 + 94 Lösung: **604**. Typische Fehler: 504 (add-uebertrag-vergessen), 416 (add-subtrahiert).
-- `05` AFB I · Addiere schriftlich: 343 + 302 Lösung: **645**. Typische Fehler: 41 (add-subtrahiert).
-- `06` AFB I · Addiere schriftlich: 214 + 204 Lösung: **418**. Typische Fehler: 10 (add-subtrahiert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Stange ist 1 Zehner. Ein Würfel ist 1 Einer. *Beispiel:* 3 Stangen und 5 Würfel: Das ist die Zahl 35. *Lösungsschritt:* 3 Stangen sind 30.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Du siehst 3 Stangen und 8 Würfel. / Welche Zahl ist das? _(Bild: Zehnermaterial: 3 Zehnerstangen, 8 Einerwürfel)_ Lösung: **38**. Typische Fehler: 83 (stellenwert), 11 (stellenwert).
+- `02` AFB I · Du hast 1 Stange und 14 Würfel. / Tausche 10 Würfel in 1 Stange. _(Bild: Zehnermaterial: 1 Zehnerstangen, 14 Einerwürfel)_
+  - a) Wie viele Stangen hast du jetzt? **2**.
+  - b) Wie viele Würfel hast du jetzt? **4**. Typische Fehler: 14 (stellenwert).
+- `03` AFB I · Rechne im Raster: 62 + 15 / Beginne bei den Einern.  _(Rechenraster mit Ziffernfeldern)_
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 9 + 7 = 16. Schreibe 6 an die Einerstelle und merke dir den Übertrag 1 für die Zehner.
+  |  | Z | E |
+  |---|---|---|
+  |  | 6 | 2 |
+  | + | 1 | 5 |
+  | Ergebnis | **7** | **7** |
 
-- `01` AFB I · Addiere schriftlich: 3679 + 2047 Lösung: **5726**. Typische Fehler: 5616 (add-uebertrag-vergessen), 1632 (add-subtrahiert).
-- `02` AFB I · Addiere schriftlich: 1548 + 582 Lösung: **2130**. Typische Fehler: 1020 (add-uebertrag-vergessen), 966 (add-subtrahiert).
-- `03` AFB I · Addiere schriftlich: 5041 + 4089 Lösung: **9130**. Typische Fehler: 9020 (add-uebertrag-vergessen), 952 (add-subtrahiert).
-- `04` AFB I · Addiere schriftlich: 6793 + 1690 Lösung: **8483**. Typische Fehler: 7383 (add-uebertrag-vergessen), 5103 (add-subtrahiert).
-- `05` AFB I · Addiere schriftlich: 5631 + 5493 Lösung: **11124**. Typische Fehler: 24 (add-uebertrag-vergessen), 138 (add-subtrahiert).
-- `06` AFB I · Addiere schriftlich: 1425 + 1049 Lösung: **2474**. Typische Fehler: 2464 (add-uebertrag-vergessen), 376 (add-subtrahiert).
+- `04` AFB I · Rechne im Raster: 326 + 563 / Jede Stelle hat ein Feld.  _(Rechenraster mit Ziffernfeldern)_
 
-### M · Mittleres Niveau
+  |  | H | Z | E |
+  |---|---|---|---|
+  |  | 3 | 2 | 6 |
+  | + | 5 | 6 | 3 |
+  | Ergebnis | **8** | **8** | **9** |
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 7 + 1 = 8. Schreibe 8 an die Einerstelle und rechne dann die Zehner.
+- `05` AFB II · In der Tafel liegen 2 Zehner und 11 Einer. / 10 Einer werden zu 1 Zehner. / Welche Zahl ist das? _(Bild: Stellenwerttafel Z: 2, E: 11)_ Lösung: **31**. Typische Fehler: 21 (add-uebertrag-vergessen), 211 (stellenwert).
+- `06` AFB I · Rechne im Raster: 28 + 27 / Der gemerkte Zehner ist schon eingetragen.  _(Rechenraster mit Ziffernfeldern)_
 
-- `01` AFB I · Addiere schriftlich: 70 187 + 49 151 Lösung: **119338**. Typische Fehler: 19238 (add-uebertrag-vergessen), 21036 (add-subtrahiert).
-- `02` AFB I · Addiere schriftlich: 26 083 + 4966 Lösung: **31049**. Typische Fehler: 20949 (add-uebertrag-vergessen), 21117 (add-subtrahiert).
-- `03` AFB I · Addiere schriftlich: 21 251 + 19 815 Lösung: **41066**. Typische Fehler: 30066 (add-uebertrag-vergessen), 1436 (add-subtrahiert).
-- `04` AFB I · Addiere schriftlich: 60 903 + 51 133 Lösung: **112036**. Typische Fehler: 11036 (add-uebertrag-vergessen), 9770 (add-subtrahiert).
-- `05` AFB I · Addiere schriftlich: 47 490 + 22 974 Lösung: **70464**. Typische Fehler: 69364 (add-uebertrag-vergessen), 24516 (add-subtrahiert).
-- `06` AFB I · Addiere schriftlich: 29 590 + 17 329 Lösung: **46919**. Typische Fehler: 36819 (add-uebertrag-vergessen), 12261 (add-subtrahiert).
+  |  | Z | E |
+  |---|---|---|
+  |  | 2 | 8 |
+  | + | 2 | 7 |
+  | gemerkt | 1 |  |
+  | Ergebnis | **5** | **5** |
 
-### E · Erweitertes Niveau
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 457 + 268: Einer 7 + 8 = 15 (schreibe 5, Übertrag 1), Zehner 5 + 6 + 1 = 12 (schreibe 2, Übertrag 1), Hunderter 4 + 2 + 1 = 7. Ergebnis 725. *Lösungsschritt:* Beginne bei den Einern: 2 + 7 = 9. Schreibe 9 an die Einerstelle und rechne dann die Zehner.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Addiere schriftlich: 4 272 992 + 382 057 Lösung: **4655049**. Typische Fehler: 4554949 (add-uebertrag-vergessen), 3890935 (add-subtrahiert).
-- `02` AFB I · Addiere schriftlich: 1 317 054 + 687 309 Lösung: **2004363**. Typische Fehler: 1994353 (add-uebertrag-vergessen), 629745 (add-subtrahiert).
-- `03` AFB I · Addiere schriftlich: 6 319 240 + 291 386 Lösung: **6610626**. Typische Fehler: 6500526 (add-uebertrag-vergessen), 6027854 (add-subtrahiert).
-- `04` AFB I · Addiere schriftlich: 4 933 978 + 901 359 Lösung: **5835337**. Typische Fehler: 4834227 (add-uebertrag-vergessen), 4032619 (add-subtrahiert).
-- `05` AFB I · Addiere schriftlich: 5 445 381 + 295 166 Lösung: **5740547**. Typische Fehler: 5630447 (add-uebertrag-vergessen), 5150215 (add-subtrahiert).
-- `06` AFB I · Addiere schriftlich: 611 084 + 49 889 Lösung: **660973**. Typische Fehler: 650863 (add-uebertrag-vergessen), 561195 (add-subtrahiert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen genau untereinander. Beginne bei den Einern. *Beispiel:* 342 + 251: Einer 2 + 1 = 3. Zehner 4 + 5 = 9. Hunderter 3 + 2 = 5. Ergebnis 593. *Lösungsschritt:* Einer: 1 + 7 = 8.
+
+- `01` AFB I · Addiere schriftlich. / 211 + 587 Lösung: **798**. Typische Fehler: 376 (add-subtrahiert).
+- `02` AFB I · Addiere schriftlich. / 449 + 424 _(Bild: Stellenwerttafel H: 8, Z: 6, E: 13)_ Lösung: **873**. Typische Fehler: 863 (add-uebertrag-vergessen), 25 (add-subtrahiert).
+- `03` AFB II · Welche Ziffer fehlt? / 4▢4 + 545 = 999 Lösung: a = **5**
+- `04` AFB I · Addiere schriftlich. / 6842 + 2436 Lösung: **9278**. Typische Fehler: 8278 (add-uebertrag-vergessen), 4406 (add-subtrahiert).
+- `05` AFB II · Überlege zuerst. / Nur bei einer Aufgabe brauchst du einen Übertrag. / 231 + 338 / 236 + 338 / 232 + 331 _(Bild: Stellenwerttafel H: 5, Z: 6, E: 14)_
+  - a) Welche Zahl steht bei dieser Aufgabe vorne? **236**. Typische Fehler: 231 (add-uebertrag-vergessen).
+  - b) Rechne diese Aufgabe aus. **574**. Typische Fehler: 564 (add-uebertrag-vergessen), 102 (add-subtrahiert).
+- `06` AFB III · Finn rechnet: 228 + 633 = 851 / Bei den Einern rechnet Finn 8 + 3 = 11. / Finn schreibt nur die 1 auf. / Stimmt das Ergebnis? _(Bild: Stellenwerttafel H: 8, Z: 5, E: 11)_
+  - ☑ Falsch. / Der Übertrag fehlt. / Richtig ist 861.
+  - ☐ Falsch. / Hier muss man minus rechnen.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne von rechts nach links und nimm jeden Übertrag in die nächste Spalte mit. *Lösungsschritt:* Einer: 9 + 8 = 17.
+
+- `01` AFB I · Addiere schriftlich: 5829 + 2298 Lösung: **8127**. Typische Fehler: 7017 (add-uebertrag-vergessen), 3531 (add-subtrahiert).
+- `02` AFB II · Bestimme die fehlenden Ziffern: 2▢29 + 33▢5 = 5524 Lösung: a = **1**, b = **9**
+- `03` AFB II · Berechne der Reihe nach: 1234 + 4321 = ▢, 2345 + 5432 = ▢, 3456 + 6543 = ▢. Nutze das Muster: 1357 + 7531 = ▢ Lösung: a = **5555**, b = **7777**, c = **9999**, d = **8888**
+- `04` AFB I · Addiere schriftlich: 4305 + 1856 Lösung: **6161**. Typische Fehler: 5151 (add-uebertrag-vergessen), 2449 (add-subtrahiert).
+- `05` AFB II · Bestimme den fehlenden Summanden: ▢ + 3253 = 7004 Lösung: a = **3751**
+- `06` AFB III · Ida rechnet 2596 + 4885 = 6371. Finde den Fehler.
+  - ☐ Ida hat die Zahlen nicht stellengerecht untereinandergeschrieben.
+  - ☑ Ida hat die Überträge nicht mitgerechnet. Richtig ist 7481.
+  - ☐ Ida hat subtrahiert, statt zu addieren.
+  - ☐ Die Rechnung ist richtig.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Übertrag kann in der nächsten Spalte einen weiteren Übertrag auslösen.
+
+- `01` AFB I · Addiere schriftlich: 3316 + 4685 Lösung: **8001**. Typische Fehler: 7991 (add-uebertrag-vergessen), 1369 (add-subtrahiert).
+- `02` AFB II · Bestimme die fehlenden Ziffern: 4▢93 + 19▢9 = 653▢ Lösung: a = **5**, b = **3**, c = **2**
+- `03` AFB II · Bilde aus den Ziffern 1, 0, 6 und 9 die größte und die kleinste vierstellige Zahl. Jede Ziffer kommt genau einmal vor. Berechne die Summe der beiden Zahlen. Lösung: **10679**. Typische Fehler: 9779 (stellenwert).
+- `04` AFB III · Zahl plus Spiegelzahl: 23 + 32 = 55, 41 + 14 = 55, 52 + 25 = 77. Alle Ergebnisse sind Vielfache von 11. Stelle die Regel auf: Die Summe ist 11 · (Summe der beiden Ziffern). Sage damit 59 + 95 vorher: 11 · ▢ = ▢ Lösung: a = **14**, b = **154**
+- `05` AFB II · Die Summe zweier Zahlen ist 4698. Die eine Zahl ist um 1672 größer als die andere.
+  - a) Bestimme die kleinere Zahl. **1513**.
+  - b) Bestimme die größere Zahl. **3185**.
+- `06` AFB III · Zwei dreistellige Zahlen werden schriftlich addiert. Wie viele Überträge können höchstens entstehen? Wähle die richtige Begründung.
+  - ☐ Vier. Das Ergebnis kann vierstellig sein.
+  - ☑ Drei. Beispiel: 999 + 999 = 1998. In jeder der drei Spalten entsteht ein Übertrag.
+  - ☐ Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen.
+  - ☐ Einer. Ein Übertrag entsteht nur bei den Einern.
+  - ☐ Beliebig viele. Das hängt von den Zahlen ab.
 
 ## 5.3.2-A3: Ich kann mehrere Zahlen schriftlich addieren.
 
-### F · Förderniveau
+Grundlage, die F übt: Drei Zahlen im Raster ohne Übertrag, passende Zehner zuerst
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 4 + 0 + 9 = 13.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Berechne: 224 + 260 + 59 Lösung: **543**. Typische Fehler: 433 (add-uebertrag-vergessen), 484 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 359 + 126 + 35 Lösung: **520**. Typische Fehler: 400 (add-uebertrag-vergessen), 485 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 391 + 41 + 43 Lösung: **475**. Typische Fehler: 375 (add-uebertrag-vergessen), 432 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 412 + 269 + 28 Lösung: **709**. Typische Fehler: 699 (add-uebertrag-vergessen), 681 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 478 + 283 + 36 Lösung: **797**. Typische Fehler: 687 (add-uebertrag-vergessen), 761 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 212 + 87 + 37 Lösung: **336**. Typische Fehler: 226 (add-uebertrag-vergessen), 299 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9. *Lösungsschritt:* 3 + 4 = 7.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
+- `02` AFB I · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
+- `03` AFB I · Rechne im Raster: 42 + 11 + 23 / Zähle in jeder Spalte 3 Ziffern zusammen.  _(Rechenraster mit Ziffernfeldern)_
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 7 + 9 + 4 = 20.
+  |  | Z | E |
+  |---|---|---|
+  |  | 4 | 2 |
+  | + | 1 | 1 |
+  | + | 2 | 3 |
+  | Ergebnis | **7** | **6** |
 
-- `01` AFB I · Berechne: 2067 + 2289 + 434 Lösung: **4790**. Typische Fehler: 4670 (add-uebertrag-vergessen), 4356 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 1220 + 1893 + 249 Lösung: **3362**. Typische Fehler: 2252 (add-uebertrag-vergessen), 3113 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 3634 + 377 + 531 Lösung: **4542**. Typische Fehler: 3432 (add-uebertrag-vergessen), 4011 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 2740 + 2294 + 691 Lösung: **5725**. Typische Fehler: 4525 (add-uebertrag-vergessen), 5034 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 3480 + 429 + 571 Lösung: **4480**. Typische Fehler: 3370 (add-uebertrag-vergessen), 3909 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 1661 + 419 + 695 Lösung: **2775**. Typische Fehler: 1665 (add-uebertrag-vergessen), 2080 (sach-schritt-vergessen).
+- `04` AFB I · Rechne im Raster: 113 + 112 + 142 / Jede Stelle hat ein Feld.  _(Rechenraster mit Ziffernfeldern)_
 
-### M · Mittleres Niveau
+  |  | H | Z | E |
+  |---|---|---|---|
+  |  | 1 | 1 | 3 |
+  | + | 1 | 1 | 2 |
+  | + | 1 | 4 | 2 |
+  | Ergebnis | **3** | **6** | **7** |
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 4 + 6 + 5 + 7 = 22.
+- `05` AFB II · 7 + 5 + 3 / Welche 2 Zahlen ergeben zusammen 10? _(Bild: Zehnerfeld mit 10 Feldern, 7 belegt, 3 dazu)_
+  - ☐ 5 und 3
+  - ☑ 7 und 3
+  - ☐ 7 und 5
+- `06` AFB I · 6 + 7 + 4 / Zwei Zahlen ergeben zusammen 10. / Rechne sie zuerst zusammen. / 6 + 4 = ▢ / Dann noch 7 dazu: ▢ _(Bild: Zehnerfeld mit 20 Feldern, 6 belegt, 4 dazu)_ Lösung: a = **10**, b = **17**
 
-- `01` AFB I · Berechne: 33 954 + 5936 + 725 + 87 Lösung: **40702**. Typische Fehler: 38582 (add-uebertrag-vergessen), 40615 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 17 882 + 8466 + 782 + 67 Lösung: **27197**. Typische Fehler: 15987 (add-uebertrag-vergessen), 27130 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 41 059 + 9383 + 506 + 65 Lösung: **51013**. Typische Fehler: 40893 (add-uebertrag-vergessen), 50948 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 31 447 + 6847 + 526 + 95 Lösung: **38915**. Typische Fehler: 37795 (add-uebertrag-vergessen), 38820 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 30 077 + 9575 + 575 + 56 Lösung: **40283**. Typische Fehler: 39063 (add-uebertrag-vergessen), 40227 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 17 882 + 6234 + 698 + 63 Lösung: **24877**. Typische Fehler: 13667 (add-uebertrag-vergessen), 24814 (sach-schritt-vergessen).
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-### E · Erweitertes Niveau
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle 3 Zahlen genau untereinander. Beginne bei den Einern. *Beispiel:* 231 + 142 + 315: Einer 1 + 2 + 5 = 8. Zehner 3 + 4 + 1 = 8. Hunderter 2 + 1 + 3 = 6. Ergebnis 688. *Lösungsschritt:* Einer: 1 + 3 + 5 = 9.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen stellengerecht untereinander: Einer unter Einer, Zehner unter Zehner. Der Übertrag kann auch 2 sein. *Beispiel:* 478 + 356 + 89: Einer 8 + 6 + 9 = 23 (schreibe 3, Übertrag 2), Zehner 7 + 5 + 8 + 2 = 22 (schreibe 2, Übertrag 2), Hunderter 4 + 3 + 2 = 9. Ergebnis 923. *Lösungsschritt:* Beginne bei den Einern: 0 + 7 + 5 + 6 + 1 = 19.
+- `01` AFB I · Addiere schriftlich. / 421 + 143 + 225 Lösung: **789**. Typische Fehler: 278 (add-subtrahiert).
+- `02` AFB I · Addiere schriftlich. / 126 + 111 + 143 _(Bild: Stellenwerttafel H: 3, Z: 7, E: 10)_ Lösung: **380**. Typische Fehler: 370 (add-uebertrag-vergessen), 15 (add-subtrahiert).
+- `03` AFB II · 38 + 25 + 22 / Suche erst 2 Zahlen mit einem glatten Ergebnis. / 38 + 22 = ▢ / Dann noch 25 dazu: ▢ _(Bild: Streifenbild: Ganzes ?, Teile 38 und 22 und 25)_ Lösung: a = **60**, b = **85**
+- `04` AFB I · Addiere schriftlich. / 3318 + 3141 + 2236 Lösung: **8695**. Typische Fehler: 8685 (add-uebertrag-vergessen), 177 (add-subtrahiert).
+- `05` AFB II · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes ?, Teile 140 und 210 und 340)_
+  - ☐ 140 + 210 + 331
+  - ☑ 140 + 210 + 340
+  - ☐ 131 + 210 + 340
+- `06` AFB III · Ole rechnet: 16 + 16 + 14 = 36 / Bei den Einern rechnet Ole 6 + 6 + 4 = 16. / Ole schreibt nur die 6 auf. / Stimmt das Ergebnis? _(Bild: Stellenwerttafel Z: 3, E: 16)_
+  - ☑ Falsch. / Der Übertrag fehlt. / Richtig ist 46.
+  - ☐ Falsch. / Richtig ist 26.
+  - ☐ Stimmt.
 
-- `01` AFB I · Berechne: 267 310 + 90 127 + 6225 + 906 + 31 Lösung: **364599**. Typische Fehler: 253589 (add-uebertrag-vergessen), 364568 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 684 692 + 79 171 + 7579 + 597 + 49 Lösung: **772088**. Typische Fehler: 650768 (add-uebertrag-vergessen), 772039 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 621 217 + 54 596 + 4961 + 484 + 46 Lösung: **681304**. Typische Fehler: 679084 (add-uebertrag-vergessen), 681258 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 224 439 + 58 575 + 5254 + 748 + 41 Lösung: **289057**. Typische Fehler: 277837 (add-uebertrag-vergessen), 289016 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 241 403 + 60 727 + 9747 + 368 + 99 Lösung: **312344**. Typische Fehler: 200114 (add-uebertrag-vergessen), 312245 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 524 234 + 68 432 + 9387 + 546 + 65 Lösung: **602664**. Typische Fehler: 581444 (add-uebertrag-vergessen), 602599 (sach-schritt-vergessen).
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei drei Summanden kann der Übertrag auch 2 sein. *Lösungsschritt:* Einer: 3 + 5 + 2 = 10.
+
+- `01` AFB I · Addiere schriftlich: 2123 + 2225 + 1962 Lösung: **6310**. Typische Fehler: 5200 (add-uebertrag-vergessen), 102 (add-subtrahiert).
+- `02` AFB II · Die Tabelle zeigt die Besucherzahlen von zwei Kinos an einem Wochenende. Berechne für jedes Kino die Gesamtzahl. 
+
+  | Kino | Freitag | Samstag | Sonntag | Gesamt |
+  |---|---|---|---|---|
+  | Apollo | 176 | 253 | 272 | **701** |
+  | Scala | 109 | 199 | 251 | **559** |
+
+- `03` AFB II · Bestimme den fehlenden Summanden: 1263 + ▢ + 2168 = 8000 Lösung: a = **4569**
+- `04` AFB I · Addiere schriftlich: 5055 + 811 + 2401 Lösung: **8267**. Typische Fehler: 7267 (add-uebertrag-vergessen), 4244 (add-subtrahiert).
+- `05` AFB II · Berechne der Reihe nach: 1 + 2 + 3 = ▢, 11 + 12 + 13 = ▢, 21 + 22 + 23 = ▢. Nutze das Muster: 91 + 92 + 93 = ▢ Lösung: a = **6**, b = **36**, c = **66**, d = **276**
+- `06` AFB III · Paul soll 3035 + 557 berechnen und schreibt 557 so unter 3035, dass beide Zahlen links bündig stehen. Das Ergebnis ist 8605. Beurteile das Vorgehen.
+  - ☐ Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen.
+  - ☐ Richtig. Links bündig zu schreiben ist beim Addieren üblich.
+  - ☑ Falsch. Die Zahlen stehen nicht stellengerecht untereinander. So wurde 3035 + 5570 gerechnet. Richtig ist 3592.
+  - ☐ Falsch. Paul hat die Überträge vergessen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei vier Summanden kann der Übertrag auch 2 oder 3 sein.
+
+- `01` AFB I · Addiere schriftlich: 2125 + 2625 + 753 + 1652 Lösung: **7155**. Typische Fehler: 5045 (add-uebertrag-vergessen), 500 (add-subtrahiert).
+- `02` AFB II · In einem Zauberquadrat ist die Summe in jeder Zeile, in jeder Spalte und in beiden Diagonalen gleich. Hier ist sie 390. Bestimme die fehlenden Zahlen. 
+
+  |  |  |  |
+  |---|---|---|
+  | 205 | **30** | 155 |
+  | **80** | 130 | **180** |
+  | 105 | **230** | 55 |
+
+- `03` AFB II · Drei aufeinanderfolgende Zahlen haben die Summe 5262. Bestimme die kleinste der drei Zahlen. Lösung: **1753**. Typische Fehler: 1754 (sach-schritt-vergessen).
+- `04` AFB III · 1 + 2 + 3 + … + 10 lässt sich geschickt berechnen: 1 + 10, 2 + 9, 3 + 8, 4 + 7 und 5 + 6 sind 5 Paare mit der Summe 11, zusammen 55. Übertrage die Regel auf 1 + 2 + 3 + … + 40: Es sind ▢ Paare mit der Summe ▢, zusammen ▢. Lösung: a = **20**, b = **41**, c = **820**
+- `05` AFB II · Drei Summanden ergeben zusammen 2840. Zwei Summanden sind gleich groß, der dritte ist doppelt so groß wie jeder der beiden anderen. Bestimme den größten Summanden. Lösung: **1420**. Typische Fehler: 710 (sach-schritt-vergessen).
+- `06` AFB III · „Die Summe von drei ungeraden Zahlen ist immer ungerade.“ Wähle die richtige Begründung.
+  - ☐ Das stimmt nur bei einstelligen Zahlen.
+  - ☑ Das stimmt immer. Zwei ungerade Zahlen ergeben zusammen eine gerade Zahl. Kommt eine ungerade dazu, wird die Summe ungerade.
+  - ☐ Das stimmt nie. 3 + 5 + 7 = 16.
+  - ☐ Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade.
+  - ☐ Das stimmt nur, wenn alle drei Zahlen verschieden sind.
 
 ## 5.3.2-A4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
 
-### F · Förderniveau
+Grundlage, die F übt: Nachbarzehner finden, Plus mit Minus rückgängig machen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Umkehraufgabe: Aus Plus wird Minus. *Beispiel:* Probe zu 50 + 30 = 80: 80 − 30 = 50. Summe minus ein Summand ergibt den anderen Summanden. *Lösungsschritt:* Beginne mit der Summe 692 und ziehe einen der Summanden ab.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Mit welcher Rechnung machst du die Probe zu 402 + 290 = 692?
-  - ☐ 402 − 290 = 112
-  - ☑ 692 − 290 = 402
-  - ☐ 692 + 290 = 982
-  - ☐ 692 + 402 = 1094
-- `02` AFB I · Mit welcher Rechnung machst du die Probe zu 425 + 355 = 780?
-  - ☐ 425 − 355 = 70
-  - ☑ 780 − 355 = 425
-  - ☐ 780 + 355 = 1135
-  - ☐ 780 + 425 = 1205
-- `03` AFB I · Mit welcher Rechnung machst du die Probe zu 159 + 101 = 260?
-  - ☑ 260 − 101 = 159
-  - ☐ 260 + 159 = 419
-  - ☐ 260 + 101 = 361
-  - ☐ 159 − 101 = 58
-- `04` AFB I · Mit welcher Rechnung machst du die Probe zu 326 + 206 = 532?
-  - ☐ 532 + 206 = 738
-  - ☐ 326 − 206 = 120
-  - ☐ 532 + 326 = 858
-  - ☑ 532 − 206 = 326
-- `05` AFB I · Mit welcher Rechnung machst du die Probe zu 351 + 44 = 395?
-  - ☐ 395 + 44 = 439
-  - ☐ 395 + 351 = 746
-  - ☐ 351 − 44 = 307
-  - ☑ 395 − 44 = 351
-- `06` AFB I · Mit welcher Rechnung machst du die Probe zu 594 + 232 = 826?
-  - ☐ 594 − 232 = 362
-  - ☐ 826 + 232 = 1058
-  - ☐ 826 + 594 = 1420
-  - ☑ 826 − 232 = 594
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Zähle die Striche bis zum Zehner links und rechts. *Beispiel:* 38: Bis 40 sind es 2 Striche, bis 30 sind es 8 Striche. Am nächsten ist 40. *Lösungsschritt:* Bis 60 sind es 8 Striche. Bis 70 sind es 2 Striche.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Der Punkt liegt bei 68. / Welcher Zehner liegt am nächsten? / Tippe ihn an. _(Zahlenstrahl 60 bis 70, Teilstriche alle 1; antippen)_ Lösung: **70**. Typische Fehler: 60 (falsch-gerundet).
+- `02` AFB I · Der Punkt liegt bei 74. / Welcher Zehner liegt näher an 74? _(Bild: Zahlenstrahl 70 bis 80)_
+  - ☐ 80
+  - ☐ 75
+  - ☑ 70
+- `03` AFB I · 7 + 5 = 12 / Mit Minus kommst du zurück. / 12 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 7 nach 12 (+ 5))_ Lösung: a = **7**
+- `04` AFB I · Der Punkt liegt bei 79. / Welcher Zehner liegt am nächsten bei 79? / Tippe ihn an. _(Zahlenstrahl 70 bis 80, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 70 (falsch-gerundet).
+- `05` AFB II · Ali rechnet: 9 + 6 = 16 / Prüfe mit Minus. / 16 − 6 = ▢ / Das ist nicht 9. / Richtig ist: 9 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 9 nach 15 (+ 6))_ Lösung: a = **10**, b = **15**
+- `06` AFB I · Lena rechnet: 8 + 5 = 13 / Mit welcher Minus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 8 nach 13 (+ 5))_
+  - ☐ 5 − 13
+  - ☐ 8 − 5
+  - ☑ 13 − 5
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Zehnerziffer: Bei 0 bis 4 rundest du ab, bei 5 bis 9 auf. *Beispiel:* 4782 + 1319: 4782 wird zu 4800, 1319 wird zu 1300. 4800 + 1300 = 6100. *Lösungsschritt:* Runde zuerst die erste Zahl: 5513 ≈ 5500.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 5513 + 3561 ≈ ? Lösung: **9100**. Typische Fehler: 9074 (ueberschlag-nicht-gerundet), 9000 (falsch-gerundet).
-- `02` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 6351 + 5242 ≈ ? Lösung: **11600**. Typische Fehler: 11593 (ueberschlag-nicht-gerundet), 11500 (falsch-gerundet).
-- `03` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 7012 + 6361 ≈ ? Lösung: **13400**. Typische Fehler: 13373 (ueberschlag-nicht-gerundet), 13300 (falsch-gerundet).
-- `04` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 5057 + 4982 ≈ ? Lösung: **10100**. Typische Fehler: 10039 (ueberschlag-nicht-gerundet), 9900 (falsch-gerundet).
-- `05` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 4926 + 1182 ≈ ? Lösung: **6100**. Typische Fehler: 6108 (ueberschlag-nicht-gerundet), 6000 (falsch-gerundet).
-- `06` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 4764 + 3856 ≈ ? Lösung: **8700**. Typische Fehler: 8620 (ueberschlag-nicht-gerundet), 8500 (falsch-gerundet).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten Zehner. *Beispiel:* 48 + 31: 48 ist fast 50, 31 ist fast 30. Der Überschlag ist 50 + 30. *Lösungsschritt:* 22 liegt am nächsten bei 20.
 
-### M · Mittleres Niveau
+- `01` AFB I · Welcher Überschlag passt zu 22 + 38? _(Bild: Zahlenstrahl 20 bis 30)_
+  - ☐ 30 + 40
+  - ☑ 20 + 40
+  - ☐ 20 + 30
+- `02` AFB I · Mache die Probe. / 31 + 11 = 42 / Probe: 42 − ▢ = ▢ Lösung: a = **11**, b = **31**
+- `03` AFB II · Überschlage zuerst. / 297 + 314 / Runde beide Zahlen auf Hunderter. / ▢ + ▢ = ▢ Lösung: a = **300**, b = **300**, c = **600**
+- `04` AFB I · Überschlage: 42 + 29 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30)_ Lösung: **70**. Typische Fehler: 71 (ueberschlag-nicht-gerundet).
+- `05` AFB II · Finn rechnet: 35 + 57 = 92 / Mit welcher Rechnung macht Finn die Probe? _(Bild: Streifenbild: Ganzes 92, Teile 35 und 57)_
+  - ☑ 92 − 57
+  - ☐ 57 − 35
+  - ☐ 92 + 57
+- `06` AFB III · Sara rechnet: 397 + 301 = 598 / Der Überschlag ist 400 + 300 = 700. / Stimmt das Ergebnis 598?
+  - ☐ Falsch. / Es muss nahe bei 100 liegen.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es muss nahe bei 700 liegen. / Richtig ist 698.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe vom Ergebnis einen Summanden ab. Kommt nicht der andere Summand heraus, ist die Rechnung falsch. *Beispiel:* 2458 + 1367 = 3925? Probe: 3925 − 1367 = 2558. Das ist nicht 2458, also ist die Rechnung falsch. *Lösungsschritt:* Rechne für die erste Rechnung die Probe: Ergebnis minus zweiter Summand.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☑ 6903 + 3411 = 10304
-  - ☐ 2115 + 1226 = 3341
-  - ☐ 7354 + 3762 = 11116
-  - ☐ 1295 + 1158 = 2453
-- `02` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 6945 + 3425 = 10370
-  - ☑ 1976 + 1519 = 3595
-  - ☐ 4672 + 4516 = 9188
-  - ☐ 6322 + 3802 = 10124
-- `03` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☑ 5005 + 3495 = 8490
-  - ☐ 3444 + 2258 = 5702
-  - ☐ 6240 + 4923 = 11163
-  - ☐ 6266 + 4056 = 10322
-- `04` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 7737 + 6910 = 14647
-  - ☑ 5727 + 5528 = 11155
-  - ☐ 1517 + 483 = 2000
-  - ☐ 1271 + 591 = 1862
-- `05` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☑ 3885 + 3260 = 7135
-  - ☐ 5996 + 4288 = 10284
-  - ☐ 7002 + 4284 = 11286
-  - ☐ 5944 + 5195 = 11139
-- `06` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 6749 + 6013 = 12762
-  - ☐ 4323 + 1237 = 5560
-  - ☐ 5892 + 1994 = 7886
-  - ☑ 5631 + 2962 = 8493
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde zuerst, rechne dann im Kopf. *Lösungsschritt:* 3020 ≈ 3000 und 2055 ≈ 2000.
 
-### E · Erweitertes Niveau
+- `01` AFB I · Überschlage: 3020 + 2055. Runde dazu beide Zahlen auf Tausender. Lösung: **5000**. Typische Fehler: 5075 (ueberschlag-nicht-gerundet).
+- `02` AFB II · Ida hat gerechnet: 5248 + 2965 = 8213.
+  - a) Berechne den Überschlag mit Zahlen, die auf Tausender gerundet sind. **8000**. Typische Fehler: 8213 (ueberschlag-nicht-gerundet).
+  - b) Mache die Probe: 8213 − 2965 **5248**. Typische Fehler: 11178 (probe-falsche-umkehr).
+- `03` AFB II · Genau eine Rechnung ist falsch. Finde sie mit dem Überschlag.
+  - ☐ 3050 + 1960 = 5010
+  - ☑ 4986 + 2762 = 6748
+  - ☐ 5208 + 2878 = 8086
+  - ☐ 5038 + 2208 = 7246
+- `04` AFB I · Mache die Probe zu 2375 + 3447 = 5822. Probe: 5822 − ▢ = ▢ Lösung: a = **3447**, b = **2375**
+- `05` AFB II · Ein Ergebnis liegt zwischen 7000 und 8000. Entscheide mit dem Überschlag, welche Aufgabe dazu gehört.
+  - ☐ 5035 + 3941
+  - ☑ 4137 + 3305
+  - ☐ 3041 + 2973
+  - ☐ 4217 + 4927
+- `06` AFB III · Zu 2528 + 2551 passt der Überschlag 3000 + 3000 = 6000. Das genaue Ergebnis ist 5079. Erkläre, warum der Überschlag so stark abweicht.
+  - ☑ Beide Summanden wurden aufgerundet, um 472 und um 449. Beide Rundungen vergrößern die Summe.
+  - ☐ Der Überschlag ist falsch gerechnet.
+  - ☐ Beim Überschlag darf das Ergebnis beliebig weit abweichen.
+  - ☐ Ein Summand wurde aufgerundet, der andere abgerundet. Das vergrößert die Summe.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Hunderterziffer: Bei 0 bis 4 rundest du ab, bei 5 bis 9 auf. *Beispiel:* 23 480 + 15 720 + 4 510: 23 000 + 16 000 + 5 000 = 44 000. *Lösungsschritt:* Runde zuerst die erste Zahl: 56 979 ≈ 57 000.
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-- `01` AFB II · Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 56 979 + 24 523 + 4427 ≈ ? Lösung: **86000**. Typische Fehler: 85929 (ueberschlag-nicht-gerundet), 84000 (falsch-gerundet).
-- `02` AFB II · Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 52 591 + 25 405 + 4910 ≈ ? Lösung: **83000**. Typische Fehler: 82906 (ueberschlag-nicht-gerundet), 81000 (falsch-gerundet).
-- `03` AFB II · Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 63 231 + 38 513 + 8011 ≈ ? Lösung: **110000**. Typische Fehler: 109755 (ueberschlag-nicht-gerundet), 109000 (falsch-gerundet).
-- `04` AFB II · Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 47 271 + 28 804 + 7589 ≈ ? Lösung: **84000**. Typische Fehler: 83664 (ueberschlag-nicht-gerundet), 82000 (falsch-gerundet).
-- `05` AFB II · Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 28 638 + 46 783 + 6515 ≈ ? Lösung: **83000**. Typische Fehler: 81936 (ueberschlag-nicht-gerundet), 80000 (falsch-gerundet).
-- `06` AFB II · Überschlage: Runde alle Zahlen auf Tausender und rechne dann. 28 775 + 30 905 + 2648 ≈ ? Lösung: **63000**. Typische Fehler: 62328 (ueberschlag-nicht-gerundet), 60000 (falsch-gerundet).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf Hunderter runden heißt: Die Zehnerziffer entscheidet.
+
+- `01` AFB I · Überschlage 4175 + 3291. Runde beide Zahlen auf Hunderter. Lösung: **7500**. Typische Fehler: 7466 (ueberschlag-nicht-gerundet), 7000 (falsch-gerundet).
+- `02` AFB II · Bei einem Überschlag wird ein Summand aufgerundet und der andere abgerundet. Vergleiche den Überschlag mit dem genauen Ergebnis.
+  - ☐ Der Überschlag ist immer kleiner.
+  - ☐ Der Überschlag ist immer größer.
+  - ☑ Das hängt davon ab, welche Rundung größer ist. Die beiden Rundungsfehler gleichen sich teilweise aus.
+  - ☐ Beide sind immer genau gleich.
+  - ☐ Der Überschlag ist immer doppelt so ungenau wie bei zwei aufgerundeten Summanden.
+- `03` AFB II · Sara rechnet 4477 + 3237 und erhält ein falsches Ergebnis. Die Probe ergibt: Ergebnis − 3237 = 4577. Um wie viel ist das Ergebnis zu groß? Lösung: **100**. Typische Fehler: 7814 (sach-schritt-vergessen).
+- `04` AFB III · Du willst eine Summe möglichst genau überschlagen. Stelle eine Regel für das Runden auf.
+  - ☐ Runde beide Summanden auf. Dann gleichen sich die Rundungsfehler aus.
+  - ☐ Runde nur den größeren Summanden. Der kleinere spielt für die Genauigkeit keine Rolle.
+  - ☐ Runde immer beide Summanden ab. Dann ist der Überschlag am genauesten.
+  - ☑ Runde einen Summanden auf und den anderen ab. Dann gleichen sich die Rundungsfehler teilweise aus.
+  - ☐ Runde beide Summanden auf dieselbe Stelle. Die Richtung ist gleichgültig.
+- `05` AFB II · Bei einer Addition ist ein Summand 1899. Die Probe lautet 5000 − ▢ = 1899. Bestimme den anderen Summanden. Lösung: **3101**. Typische Fehler: 6899 (add-subtrahiert), 4101 (ergaenzen-zu-viel).
+- `06` AFB III · Jana prüft 46 + 28 = 74 mit der Rechnung 28 + 46. Ist das eine geeignete Probe? Wähle die richtige Begründung.
+  - ☐ Nein. 28 + 46 hat ein anderes Ergebnis als 46 + 28.
+  - ☐ Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition.
+  - ☑ Sie hilft nur wenig. Die Tauschaufgabe benutzt dieselben Zahlen, ein Denkfehler kann sich wiederholen. Sicherer ist 74 − 28 = 46.
+  - ☐ Ja. Eine Probe muss immer eine Addition sein.
+  - ☐ Nein. Beim Addieren darf man die Summanden nicht vertauschen.
 
 ## 5.3.2-A5: Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen.
 
-### F · Förderniveau
+Grundlage, die F übt: Dazukommen und Zusammenlegen am Bild, Rechnung zuordnen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Gesucht ist, wie viel es zusammen ist. Dazu addierst du. *Beispiel:* 120 Kinder am Vormittag, 90 am Nachmittag: 120 + 90 = 210 Kinder. *Lösungsschritt:* Die Rechnung lautet 280 + 78. Beginne bei den Einern: 0 + 8 = 8. Schreibe 8 an die Einerstelle und rechne dann die Zehner.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB II · Mila hat 280 € gespart. Zum Geburtstag bekommt sie 78 € dazu. Wie viel Geld hat sie jetzt? Lösung: **358 €**. Typische Fehler: 202 (sach-falsche-rechnung), 258 (add-uebertrag-vergessen).
-- `02` AFB II · Am Vormittag kommen 231 Kinder ins Hallenbad, am Nachmittag noch einmal 205. Wie viele Kinder waren es an diesem Tag? Lösung: **436 Kinder**. Typische Fehler: 26 (sach-falsche-rechnung).
-- `03` AFB II · Ein Buch hat 271 Seiten, der zweite Band hat 160 Seiten. Wie viele Seiten haben beide Bände zusammen? Lösung: **431 Seiten**. Typische Fehler: 111 (sach-falsche-rechnung), 331 (add-uebertrag-vergessen).
-- `04` AFB II · Die Klasse 5a sammelt 551 Kastanien, die Klasse 5b sammelt 385. Wie viele Kastanien sind es zusammen? Lösung: **936 Kastanien**. Typische Fehler: 166 (sach-falsche-rechnung), 836 (add-uebertrag-vergessen).
-- `05` AFB II · Eine Radtour führt am ersten Tag über 66 km und am zweiten Tag über 38 km. Wie lang ist die ganze Tour? Lösung: **104 km**. Typische Fehler: 28 (sach-falsche-rechnung), 94 (add-uebertrag-vergessen).
-- `06` AFB II · In einer Bücherei stehen 331 Sachbücher und 181 Romane. Wie viele Bücher sind das zusammen? Lösung: **512 Bücher**. Typische Fehler: 150 (sach-falsche-rechnung), 412 (add-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es werden mehr. Das ist plus. *Beispiel:* 6 Äpfel, 3 Äpfel dazu: 6 + 3. *Lösungsschritt:* Am Anfang sind es 6. Dann kommen 5 dazu.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · In der Kiste sind 6 Bälle. / Elif legt 5 Bälle dazu. / Welche Rechnung passt? _(Bild: Mengenbild: 6 Plättchen, 5 dazu)_
+  - ☑ 6 + 5
+  - ☐ 6 − 5
+  - ☐ 5 − 6
+- `02` AFB I · Auf dem Tisch liegen 6 Stifte. / Ole legt 4 Stifte dazu. / Wie viele Stifte sind es zusammen? _(Bild: Mengenbild: 6 Plättchen, 4 dazu)_ Lösung: **10**. Typische Fehler: 2 (sach-falsche-rechnung).
+- `03` AFB I · Im Bus sitzen 16 Kinder. / 10 Kinder steigen ein. / Wie viele Kinder sitzen jetzt im Bus? _(Bild: Streifenbild: Ganzes ?, Teile 16 und 10)_ Lösung: **26**. Typische Fehler: 6 (sach-falsche-rechnung), 17 (stellenwert).
+- `04` AFB I · Mia hat 30 Euro. / Mia bekommt 7 Euro dazu. / Wie viel Euro hat Mia jetzt? _(Bild: Zahlenstrahl 20 bis 40, Sprünge 30 nach 37 (+ 7))_ Lösung: **37 Euro**. Typische Fehler: 23 (sach-falsche-rechnung).
+- `05` AFB II · Die Rechnung ist 8 + 5. / Welche Geschichte passt? _(Bild: Mengenbild: 8 Plättchen, 5 dazu)_
+  - ☐ 8 Vögel sitzen im Baum. / 5 Vögel fliegen weg.
+  - ☑ 8 Vögel sitzen im Baum. / 5 Vögel kommen dazu.
+  - ☐ 5 Bäume. / In jedem Baum sitzen 8 Vögel.
+- `06` AFB I · Noah hat 31 Sticker. / Lina hat 13 Sticker. / Wie viele Sticker haben beide zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 31 und 13)_ Lösung: **44**. Typische Fehler: 18 (sach-falsche-rechnung).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies an der linken Achse ab, wie hoch jede Säule ist. Die gestrichelte Linie liegt genau zwischen zwei Hundertern. *Beispiel:* Eine Säule endet bei 300, eine andere bei 150: zusammen 300 + 150 = 450. *Lösungsschritt:* Die Säule Mo zeigt 150.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB II · Lies die Werte im Diagramm ab und rechne. 
-  _(Säulendiagramm „Besucher im Freibad“: Mo 150, Di 100, Mi 200, Do 250; Werte müssen abgelesen werden)_
-  - a) Wie viele Besucher kamen am Montag und am Donnerstag zusammen? **400 Besucher**. Typische Fehler: 100 (sach-falsche-rechnung).
-- `02` AFB II · Lies die Werte im Diagramm ab und rechne. 
-  _(Säulendiagramm „Verkaufte Brötchen“: Mo 350, Di 450, Mi 400, Do 100; Werte müssen abgelesen werden)_
-  - a) Wie viele Brötchen wurden am Montag und am Dienstag zusammen verkauft? **800 Brötchen**. Typische Fehler: 100 (sach-falsche-rechnung).
-- `03` AFB II · Lies die Werte im Diagramm ab und rechne. 
-  _(Säulendiagramm „Ausgeliehene Bücher“: Jan 100, Feb 400, Mär 300, Apr 450; Werte müssen abgelesen werden)_
-  - a) Wie viele Bücher wurden im März und im April zusammen ausgeliehen? **750 Bücher**. Typische Fehler: 150 (sach-falsche-rechnung).
-- `04` AFB II · Ein Zoo hatte im Juni 3964 Besucher und im Juli 3415 Besucher. Wie viele Besucher kamen in beiden Monaten zusammen? Lösung: **7379 Besucher**. Typische Fehler: 549 (sach-falsche-rechnung), 6379 (add-uebertrag-vergessen).
-- `05` AFB II · Ein Fahrradladen verkauft ein E-Bike für 1907 € und dazu einen Anhänger für 498 €. Wie viel kostet beides zusammen? Lösung: **2405 €**. Typische Fehler: 1409 (sach-falsche-rechnung), 1395 (add-uebertrag-vergessen).
-- `06` AFB II · Ein Lkw hat 4541 kg Sand geladen. Es werden noch 2585 kg Kies dazugeladen. Wie viele Kilogramm hat er dann geladen? Lösung: **7126 kg**. Typische Fehler: 1956 (sach-falsche-rechnung), 6026 (add-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dazu heißt plus. *Beispiel:* 40 Seiten und 20 Seiten dazu: 40 + 20 = 60. *Lösungsschritt:* Rechne 42 + 30.
 
-### M · Mittleres Niveau
+- `01` AFB I · Ole hat 42 Seiten gelesen. / Heute liest Ole noch 30 Seiten dazu. / Wie viele Seiten sind es zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 42 und 30)_ Lösung: **72 Seiten**. Typische Fehler: 12 (sach-falsche-rechnung).
+- `02` AFB I · In der Klasse 5a sind 43 Bücher. / In der Klasse 5b sind 31 Bücher. / Wie viele Bücher sind es zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 43 und 31)_ Lösung: **74 Bücher**. Typische Fehler: 12 (sach-falsche-rechnung).
+- `03` AFB II · Noah hat 37 Karten. / Lena hat 19 Karten mehr als Noah. / Wie viele Karten hat Lena? _(Bild: Vergleichsbild: Lena ?, Noah 37, Unterschied 19)_ Lösung: **56 Karten**. Typische Fehler: 18 (sach-falsche-rechnung), 46 (add-uebertrag-vergessen).
+- `04` AFB I · Das Diagramm zeigt die Kinder in 4 Klassen. / Wie viele Kinder sind in 5a und 5b zusammen? 
+  _(Säulendiagramm „Kinder je Klasse“: 5a 17, 5b 24, 5c 13, 5d 29; Werte stehen an den Säulen)_
+  - a) 5a und 5b zusammen: **41 Kinder**. Typische Fehler: 83 (sach-unnoetige-angabe).
+- `05` AFB II · Tom ist 8 Jahre alt. / Die Schwester ist 5 Jahre älter. / Wie alt ist die Schwester? / Welche Rechnung passt? _(Bild: Vergleichsbild: Schwester ?, Tom 8, Unterschied 5)_
+  - ☐ 8 − 5
+  - ☐ 5 − 8
+  - ☑ 8 + 5
+- `06` AFB III · Im Bus sind 57 Menschen. / 14 Menschen steigen ein. / Jonas rechnet 57 − 14 = 43. / Stimmt das? _(Bild: Streifenbild: Ganzes ?, Teile 57 und 14)_
+  - ☐ Falsch. / Man muss 14 − 57 rechnen.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Einsteigen heißt plus. / 57 + 14 = 71.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* In die Spalte „Gesamt“ gehört die Summe der beiden Zahlen in derselben Zeile. *Beispiel:* Vormittag 1 200, Nachmittag 2 350: Gesamt 1 200 + 2 350 = 3 550. *Lösungsschritt:* Erste Zeile: 2832 + 1586. Beginne bei den Einern: 2 + 6 = 8. Schreibe 8 an die Einerstelle und rechne dann die Zehner.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Im Zoo werden die Besucher gezählt. Ergänze die Spalte „Gesamt“. 
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Etappen zusammen ergeben die ganze Tour. *Lösungsschritt:* Rechne 247 + 134.
 
-  | Tag | Vormittag | Nachmittag | Gesamt |
-  |---|---|---|---|
-  | Freitag | 2832 | 1586 | **4418** |
-  | Samstag | 2533 | 3047 | **5580** |
-  | Sonntag | 3727 | 3281 | **7008** |
+- `01` AFB I · Eine Radtour hat zwei Etappen: 247 km und 134 km. Berechne die Länge der ganzen Tour. Lösung: **381 km**. Typische Fehler: 371 (add-uebertrag-vergessen), 113 (sach-falsche-rechnung).
+- `02` AFB II · Die Tabelle zeigt, wie viele Lose zwei Klassen beim Schulfest verkauft haben. Berechne die Gesamtzahl für jede Klasse. 
 
-- `02` AFB II · Die Schule sammelt Altpapier. Ergänze die Spalte „Gesamt“ (Angaben in kg). 
+  | Klasse | Freitag | Samstag | Sonntag | Gesamt |
+  |---|---|---|---|---|
+  | 5a | 29 | 38 | 25 | **92** |
+  | 5b | 28 | 34 | 25 | **87** |
 
-  | Klasse | 1. Woche | 2. Woche | Gesamt |
-  |---|---|---|---|
-  | 5a | 3480 | 2221 | **5701** |
-  | 5b | 2153 | 1484 | **3637** |
-  | 5c | 2547 | 2110 | **4657** |
+- `03` AFB II · Das Diagramm zeigt die Besucher eines Freibads an vier Tagen. Lies die Werte ab und rechne. 
+  _(Säulendiagramm „Besucher im Freibad“: Do 300, Fr 400, Sa 250, So 200; Werte müssen abgelesen werden)_
+  - a) Besucher am Samstag und Sonntag zusammen: **450**. Typische Fehler: 1150 (sach-unnoetige-angabe).
+  - b) Besucher an allen vier Tagen zusammen: **1150**. Typische Fehler: 450 (sach-schritt-vergessen).
+- `04` AFB I · Für das Klassenfest werden 53 Brötchen, 26 Brezeln und 12 Stück Kuchen bestellt. Berechne, wie viele Backwaren das zusammen sind. Lösung: **91**. Typische Fehler: 79 (sach-schritt-vergessen).
+- `05` AFB II · Noah kauft ein Spiel für 34 € und ein Buch für 14 €. Dazu kommen 4 € Versandkosten. Noah hat einen Gutschein über 10 €. Welcher Rechenausdruck beschreibt den Betrag, der noch zu zahlen ist?
+  - ☐ 34 + 14 − 4 − 10
+  - ☐ 34 + 14 + 4 + 10
+  - ☑ (34 + 14 + 4) − 10
+  - ☐ 34 + 14 − (4 + 10)
+- `06` AFB III · Ole hat 60 € und möchte drei Dinge kaufen: einen Rucksack für 20 €, ein Mäppchen für 15 € und Turnschuhe für 26 €. Ole sagt: „Das Geld reicht.“ Beurteile die Aussage.
+  - ☑ Falsch: 20 + 15 + 26 = 61. Es fehlt 1 €.
+  - ☐ Richtig: 20 + 15 = 35. Das ist weniger als 60.
+  - ☐ Falsch: Schon der Rucksack kostet mehr als 60 €.
+  - ☐ Richtig: Jeder einzelne Preis ist kleiner als 60 €.
 
-- `03` AFB II · Ein Kino zählt die verkauften Karten. Ergänze die Spalte „Gesamt“. 
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-  | Film | Kinder | Erwachsene | Gesamt |
-  |---|---|---|---|
-  | Film 1 | 4041 | 2696 | **6737** |
-  | Film 2 | 3021 | 2844 | **5865** |
-  | Film 3 | 4659 | 1584 | **6243** |
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nicht jede Angabe im Text wird gebraucht.
 
-- `04` AFB II · Ein Sportverein hat 28 406 € auf dem Konto. Er nimmt beim Sommerfest 6261 € ein und bekommt 8716 € Spenden.
-  - a) Wie viel Geld ist nach dem Sommerfest auf dem Konto? **34667 €**.
-  - b) Wie viel Geld ist mit den Spenden auf dem Konto? **43383 €**. Typische Fehler: 37122 (sach-schritt-vergessen).
-- `05` AFB II · Ein Schiff hat 29 029 Container geladen. Im ersten Hafen kommen 8212 Container dazu, im zweiten Hafen 5671.
-  - a) Wie viele Container sind nach dem ersten Hafen an Bord? **37241 Container**.
-  - b) Wie viele Container sind nach dem zweiten Hafen an Bord? **42912 Container**. Typische Fehler: 34700 (sach-schritt-vergessen).
-- `06` AFB II · In einem Stausee sind 16 414 Kubikmeter Wasser. Im März fließen 8016 Kubikmeter dazu, im April 6283 Kubikmeter.
-  - a) Wie viel Wasser ist Ende März im See? **24430 m³**.
-  - b) Wie viel Wasser ist Ende April im See? **30713 m³**. Typische Fehler: 22697 (sach-schritt-vergessen).
-
-### E · Erweitertes Niveau
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die gestrichelte Linie liegt bei 500. Eine Säule kann auch auf halbem Weg zwischen zwei Linien enden: Das sind dann 250 mehr. *Beispiel:* Endet eine Säule in der Mitte zwischen 2 000 und 2 500, zeigt sie 2 250. *Lösungsschritt:* Die Säule Mo zeigt 3500.
-
-- `01` AFB III · Lies die Werte im Diagramm ab und rechne. 
-  _(Säulendiagramm „Besucher im Freibad“: Mo 3500, Di 4750, Mi 3250, Do 1000; Werte müssen abgelesen werden)_
-  - a) Wie viele Besucher kamen an allen vier Tagen zusammen? **12500 Besucher**. Typische Fehler: 11500 (sach-schritt-vergessen).
-  - b) Wie viele Besucher kamen am Montag mehr als am Donnerstag? **2500 Besucher**. Typische Fehler: 4500 (sach-falsche-rechnung).
-- `02` AFB III · Lies die Werte im Diagramm ab und rechne. 
-  _(Säulendiagramm „Verkaufte Brötchen“: Mo 2500, Di 2000, Mi 3250, Do 3500; Werte müssen abgelesen werden)_
-  - a) Wie viele Brötchen wurden an allen vier Tagen zusammen verkauft? **11250 Brötchen**. Typische Fehler: 7750 (sach-schritt-vergessen).
-  - b) Wie viele Brötchen wurden am Mittwoch mehr verkauft als am Montag? **750 Brötchen**. Typische Fehler: 5750 (sach-falsche-rechnung).
-- `03` AFB III · Lies die Werte im Diagramm ab und rechne. 
-  _(Säulendiagramm „Ausgeliehene Bücher“: Jan 3750, Feb 2250, Mär 750, Apr 4500; Werte müssen abgelesen werden)_
-  - a) Wie viele Bücher wurden in allen vier Monaten zusammen ausgeliehen? **11250 Bücher**. Typische Fehler: 6750 (sach-schritt-vergessen).
-  - b) Wie viele Bücher wurden im Januar mehr ausgeliehen als im Februar? **1500 Bücher**. Typische Fehler: 6000 (sach-falsche-rechnung).
-- `04` AFB III · Eine Stadt baut eine Sporthalle. Der Rohbau kostet 449 739 €, die Technik 79 380 € und die Einrichtung 19 172 €. Die Bauzeit beträgt 28 Wochen. Wie viel kostet die Halle insgesamt? Lösung: **548291 €**. Typische Fehler: 529119 (sach-schritt-vergessen), 548319 (sach-unnoetige-angabe), 427181 (add-uebertrag-vergessen).
-- `05` AFB III · Ein Verlag druckt 353 727 Schulbücher, 65 516 Arbeitshefte und 28 310 Lösungshefte. Die Druckerei hat 33 Mitarbeiter. Wie viele Hefte und Bücher werden insgesamt gedruckt? Lösung: **447553 Stück**. Typische Fehler: 419243 (sach-schritt-vergessen), 447586 (sach-unnoetige-angabe), 336543 (add-uebertrag-vergessen).
-- `06` AFB III · Bei einem Stadtlauf werden 265 484 € Startgeld, 56 736 € von Sponsoren und 45 338 € Spenden eingenommen. Die Strecke ist 16 km lang. Wie viel Geld kommt insgesamt zusammen? Lösung: **367558 €**. Typische Fehler: 322220 (sach-schritt-vergessen), 367574 (sach-unnoetige-angabe), 256448 (add-uebertrag-vergessen).
+- `01` AFB I · Lena ist 11 Jahre alt und sammelt Sticker. Im ersten Album kleben 157 Sticker, im zweiten 281. Berechne, wie viele Sticker Lena insgesamt eingeklebt hat. Lösung: **438**. Typische Fehler: 449 (sach-unnoetige-angabe).
+- `02` AFB II · Familie Weber geht mit 2 Erwachsenen und 3 Kindern ins Museum. Der Eintritt kostet 10 € für Erwachsene und 5 € für Kinder. Danach kauft jedes Kind ein Eis für 3 €. Berechne die Gesamtkosten. Lösung: **44 €**. Typische Fehler: 35 (sach-schritt-vergessen), 18 (sach-schritt-vergessen).
+- `03` AFB II · Ein Zoo zählt die Besucher. Am Montag kamen 121 Besucher, am nächsten Tag doppelt so viele. Gesucht ist die Zahl aller Besucher in dieser Woche. Welche Angabe fehlt?
+  - ☐ die Öffnungszeiten des Zoos
+  - ☐ der Eintrittspreis
+  - ☑ die Besucherzahlen der übrigen Tage der Woche
+  - ☐ die Zahl der Tiere im Zoo
+  - ☐ Es fehlt nichts: 121 + 242 = 363.
+- `04` AFB III · Finn, Dana und Eda sammeln Kastanien. Finn hat 11 mehr als Dana. Eda hat doppelt so viele wie Dana. Zusammen haben sie 115. Bestimme, wie viele Kastanien Dana hat. Lösung: **26**. Typische Fehler: 37 (sach-schritt-vergessen), 52 (sach-schritt-vergessen).
+- `05` AFB II · Das Diagramm zeigt, wie viele Flaschen vier Klassen bei einer Sammelaktion abgegeben haben. Lies die Werte ab und rechne. 
+  _(Säulendiagramm „Gesammelte Flaschen“: 5a 300, 5b 250, 5c 250, 5d 300; Werte müssen abgelesen werden)_
+  - a) Flaschen in allen vier Klassen zusammen: **1100**. Typische Fehler: 800 (sach-schritt-vergessen).
+  - b) Das Ziel der Schule sind 2000 Flaschen. So viele fehlen noch: **900**. Typische Fehler: 3100 (sach-falsche-rechnung).
+- `06` AFB III · Fermi-Frage: Eine Schule hat 6 Klassenstufen mit je 3 Klassen. In jeder Klasse sind etwa 25 Kinder. Wie viele Kinder besuchen die Schule ungefähr?
+  - ☐ etwa 5000
+  - ☑ etwa 500
+  - ☐ etwa 150
+  - ☐ etwa 50
 
 ## 5.3.3-S1: Ich kann die Fachbegriffe Minuend, Subtrahend und Differenz verwenden.
 
-### F · Förderniveau
+Grundlage, die F übt: Minus als „wegnehmen“: Aufgabe und Bild zuordnen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Minuend − Subtrahend = Differenz. *Beispiel:* In 70 − 20 = 50 ist 70 der Minuend, 20 der Subtrahend und 50 die Differenz. *Lösungsschritt:* Schau auf die Reihenfolge: 92 steht vorn und ist der Minuend.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · 92 − 17 = 75. Wie heißt die Zahl 92?
-  - ☐ Subtrahend
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Durchgestrichen heißt: weggenommen. Wegnehmen ist minus. *Beispiel:* Bild: 7 Plättchen, 2 durchgestrichen. Die Rechnung ist 7 − 2. *Lösungsschritt:* Zähle alle Plättchen: 11. Zähle die durchgestrichenen: 2.
+
+- `01` AFB I · Schau dir das Bild an. / Welche Rechnung passt? _(Bild: Mengenbild: 11 Plättchen, 2 durchgestrichen)_
+  - ☑ 11 − 2
+  - ☐ 11 + 2
+  - ☐ 2 − 11
+- `02` AFB I · Es sind 16 Plättchen. / 9 Plättchen sind durchgestrichen. / Wie viele Plättchen bleiben? _(Bild: Mengenbild: 16 Plättchen, 9 durchgestrichen)_ Lösung: **7**. Typische Fehler: 25 (sub-addiert).
+- `03` AFB I · Schreibe die Minus-Aufgabe zum Bild. / ▢ − ▢ = ▢ _(Bild: Mengenbild: 13 Plättchen, 8 durchgestrichen)_ Lösung: a = **13**, b = **8**, c = **5**
+- `04` AFB I · Der Pfeil springt zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprung von 18: − 5; Zahl eintragen)_ Lösung: **13**. Typische Fehler: 23 (sub-addiert).
+- `05` AFB II · Vorher waren es 16 Plättchen. / Jetzt sind es noch 10 Plättchen. / Wie viele Plättchen wurden weggenommen? _(Bild: Mengenbild: 16 Plättchen, 6 durchgestrichen)_ Lösung: **6**. Typische Fehler: 10 (begriffe-verwechselt), 26 (sub-addiert).
+- `06` AFB I · Im Feld liegen 9 Plättchen. / Ordne jeder Aufgabe das Ergebnis zu. _(Bild: Zehnerfeld mit 10 Feldern, 9 belegt)_ Lösung: 9 − 5 → 4, 9 − 3 → 6, 9 − 1 → 8
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Minuend − Subtrahend = Differenz. *Beispiel:* 9 − 4 = 5: 9 ist der Minuend, 4 der Subtrahend, 5 die Differenz. *Lösungsschritt:* 89 steht vorne. Das ist der Minuend.
+
+- `01` AFB I · 89 − 34 = 55 / Wie heißt die Zahl 34 in dieser Aufgabe?
+  - ☐ Minuend
   - ☐ Differenz
-  - ☑ Minuend
-  - ☐ Summand
-- `02` AFB I · 49 − 29 = 20. Wie heißt die Zahl 29?
-  - ☐ Summand
   - ☑ Subtrahend
-  - ☐ Minuend
-  - ☐ Differenz
-- `03` AFB I · 64 − 13 = 51. Wie heißt die Zahl 51?
-  - ☐ Subtrahend
-  - ☑ Differenz
-  - ☐ Summand
-  - ☐ Minuend
-- `04` AFB I · 88 − 12 = 76. Wie heißt die Zahl 88?
-  - ☐ Subtrahend
-  - ☐ Summand
-  - ☑ Minuend
-  - ☐ Differenz
-- `05` AFB I · Ordne die Fachbegriffe zu: 87 − 44 = 43 Lösung: 87 → Minuend, 44 → Subtrahend, 43 → Differenz
-- `06` AFB I · Ordne die Fachbegriffe zu: 88 − 14 = 74 Lösung: 88 → Minuend, 14 → Subtrahend, 74 → Differenz
+- `02` AFB I · 47 − 21 = 26 / Der Minuend ist ▢. / Der Subtrahend ist ▢. / Die Differenz ist ▢. _(Bild: Streifenbild: Ganzes 47, Teile 21 und 26)_ Lösung: a = **47**, b = **21**, c = **26**
+- `03` AFB II · Der Minuend ist 72. / Der Subtrahend ist 30. / Berechne die Differenz. _(Bild: Streifenbild: Ganzes 72, Teile 30 und ?)_ Lösung: **42**. Typische Fehler: 102 (sub-addiert).
+- `04` AFB I · 76 − 43 = 33 / Ordne jeder Zahl den Namen zu. Lösung: 76 → Minuend, 43 → Subtrahend, 33 → Differenz
+- `05` AFB II · Die Differenz ist 20. / Der Subtrahend ist 45. / Wie groß ist der Minuend? _(Bild: Streifenbild: Ganzes ?, Teile 45 und 20)_ Lösung: **65**. Typische Fehler: 25 (probe-falsche-umkehr).
+- `06` AFB III · Elif sagt: / „Bei 96 − 72 = 24 ist 72 der Minuend.“ / Stimmt das?
+  - ☐ Stimmt.
+  - ☐ Falsch. / 72 ist die Differenz.
+  - ☑ Falsch. / 72 ist der Subtrahend.
 
-### G · Grundlegendes Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* In einer Subtraktion heißt die erste Zahl Minuend, die Zahl, die abgezogen wird, Subtrahend und das Ergebnis Differenz. *Beispiel:* Minuend 90, Subtrahend 30: 90 − 30 = 60. Die Differenz ist 60. *Lösungsschritt:* Die Rechnung lautet 329 − 155.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Differenz ist das Ergebnis einer Subtraktion. *Lösungsschritt:* Rechne 430 − 240.
 
-- `01` AFB I · Der Minuend ist 329, der Subtrahend ist 155. Berechne die Differenz. Lösung: **174**. Typische Fehler: 484 (begriffe-verwechselt).
-- `02` AFB I · Der Minuend ist 786, der Subtrahend ist 52. Berechne die Differenz. Lösung: **734**. Typische Fehler: 838 (begriffe-verwechselt).
-- `03` AFB I · Der Minuend ist 617, der Subtrahend ist 470. Berechne die Differenz. Lösung: **147**. Typische Fehler: 1087 (begriffe-verwechselt).
-- `04` AFB I · Der Minuend ist 453, der Subtrahend ist 83. Berechne die Differenz. Lösung: **370**. Typische Fehler: 536 (begriffe-verwechselt).
-- `05` AFB I · Der Minuend ist 161, der Subtrahend ist 88. Berechne die Differenz. Lösung: **73**. Typische Fehler: 249 (begriffe-verwechselt).
-- `06` AFB I · Der Minuend ist 638, der Subtrahend ist 227. Berechne die Differenz. Lösung: **411**. Typische Fehler: 865 (begriffe-verwechselt).
+- `01` AFB I · Berechne die Differenz von 430 und 240. Lösung: **190**. Typische Fehler: 670 (sub-addiert).
+- `02` AFB II · Der Subtrahend ist 85, die Differenz ist 290. Bestimme den Minuenden. Lösung: **375**. Typische Fehler: 205 (probe-falsche-umkehr).
+- `03` AFB II · Welcher Rechenausdruck passt? „Subtrahiere die Summe von 40 und 25 von 130.“
+  - ☑ 130 − (40 + 25)
+  - ☐ (40 + 25) − 130
+  - ☐ (130 − 40) + 25
+  - ☐ 130 − 40 + 25
+- `04` AFB I · Der Minuend ist 900, die Differenz ist 230. Bestimme den Subtrahenden. Lösung: **670**. Typische Fehler: 1130 (sub-addiert).
+- `05` AFB II · Die Differenz zweier Zahlen ist 72. Der Minuend ist doppelt so groß wie der Subtrahend. Bestimme den Minuenden. Lösung: **144**. Typische Fehler: 72 (sach-schritt-vergessen), 36 (begriffe-verwechselt).
+- `06` AFB III · Mara behauptet: „Wenn der Subtrahend größer wird und der Minuend gleich bleibt, wird auch die Differenz größer.“ Beurteile die Aussage.
+  - ☑ Falsch. Beispiel: 80 − 20 = 60, aber 80 − 30 = 50. Wer mehr abzieht, behält weniger.
+  - ☐ Das lässt sich nicht entscheiden. Es kommt auf die Zahlen an.
+  - ☐ Richtig. Größere Zahlen ergeben immer größere Ergebnisse.
+  - ☐ Richtig. Beispiel: 80 − 20 = 60 und 90 − 20 = 70.
 
-### M · Mittleres Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Minuend − Subtrahend = Differenz. Gesucht ist die erste Zahl. *Beispiel:* Differenz 40, Subtrahend 25: ? − 25 = 40. Der Minuend ist 40 + 25 = 65. *Lösungsschritt:* Schreibe ? − 231 = 834. Den Minuenden findest du mit der Umkehraufgabe 834 + 231.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bilde zuerst die Summe. Sie ist der Minuend.
 
-- `01` AFB II · Die Differenz ist 834, der Subtrahend ist 231. Wie groß ist der Minuend? Lösung: **1065**. Typische Fehler: 603 (begriffe-verwechselt).
-- `02` AFB II · Die Differenz ist 838, der Subtrahend ist 287. Wie groß ist der Minuend? Lösung: **1125**. Typische Fehler: 551 (begriffe-verwechselt).
-- `03` AFB II · Die Differenz ist 292, der Subtrahend ist 177. Wie groß ist der Minuend? Lösung: **469**. Typische Fehler: 115 (begriffe-verwechselt).
-- `04` AFB II · Die Differenz ist 652, der Subtrahend ist 108. Wie groß ist der Minuend? Lösung: **760**. Typische Fehler: 544 (begriffe-verwechselt).
-- `05` AFB II · Die Differenz ist 458, der Subtrahend ist 599. Wie groß ist der Minuend? Lösung: **1057**.
-- `06` AFB II · Die Differenz ist 507, der Subtrahend ist 173. Wie groß ist der Minuend? Lösung: **680**. Typische Fehler: 334 (begriffe-verwechselt).
-
-### E · Erweitertes Niveau
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Differenz der beiden Zahlen. Ziehe sie danach von der dritten Zahl ab. *Beispiel:* Subtrahiere die Differenz von 50 und 20 von 100: 50 − 20 = 30, dann 100 − 30 = 70. *Lösungsschritt:* Berechne zuerst die Differenz: 736 − 551 = 185.
-
-- `01` AFB II · Subtrahiere die Differenz der Zahlen 736 und 551 von der Zahl 388. Lösung: **203**. Typische Fehler: 185 (sach-schritt-vergessen).
-- `02` AFB II · Subtrahiere die Differenz der Zahlen 371 und 134 von der Zahl 1874. Lösung: **1637**. Typische Fehler: 1369 (sub-klammerfehler), 237 (sach-schritt-vergessen).
-- `03` AFB II · Subtrahiere die Differenz der Zahlen 496 und 332 von der Zahl 638. Lösung: **474**. Typische Fehler: 164 (sach-schritt-vergessen).
-- `04` AFB II · Subtrahiere die Differenz der Zahlen 453 und 286 von der Zahl 1108. Lösung: **941**. Typische Fehler: 369 (sub-klammerfehler), 167 (sach-schritt-vergessen).
-- `05` AFB II · Subtrahiere die Differenz der Zahlen 899 und 475 von der Zahl 580. Lösung: **156**. Typische Fehler: 424 (sach-schritt-vergessen).
-- `06` AFB II · Subtrahiere die Differenz der Zahlen 483 und 164 von der Zahl 1687. Lösung: **1368**. Typische Fehler: 1040 (sub-klammerfehler), 319 (sach-schritt-vergessen).
+- `01` AFB I · Subtrahiere 75 von der Summe der Zahlen 250 und 190. Lösung: **365**. Typische Fehler: 515 (sub-addiert).
+- `02` AFB II · Der Minuend ist um 56 größer als der Subtrahend. Bestimme die Differenz. Lösung: **56**.
+- `03` AFB II · Die Differenz zweier Zahlen ist 110. Der Minuend wird um 15 kleiner, der Subtrahend bleibt gleich. Bestimme die neue Differenz. Lösung: **95**. Typische Fehler: 125 (sub-addiert), 110 (sach-schritt-vergessen).
+- `04` AFB III · Bei 9 − 4 = 5 gilt 9 + 4 + 5 = 18, bei 20 − 8 = 12 gilt 20 + 8 + 12 = 40. Stelle die Regel auf: Minuend + Subtrahend + Differenz = ▢ · Minuend. Bei einer Subtraktion ergeben Minuend, Subtrahend und Differenz zusammen 440. Der Minuend ist ▢. Lösung: a = **2**, b = **220**
+- `05` AFB II · Zwei Zahlen haben die Summe 60 und die Differenz 6.
+  - a) Bestimme die größere Zahl. **33**.
+  - b) Bestimme die kleinere Zahl. **27**.
+- `06` AFB III · Minuend und Subtrahend sind natürliche Zahlen. Kann die Differenz größer sein als der Minuend? Wähle die richtige Begründung.
+  - ☐ Ja. Bei 5 − 9 ist die Differenz größer als der Minuend.
+  - ☐ Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend.
+  - ☐ Nein. Die Differenz ist immer kleiner als der Subtrahend.
+  - ☐ Das hängt davon ab, ob die Zahlen gerade oder ungerade sind.
+  - ☑ Nein. Vom Minuenden wird etwas weggenommen oder nichts. Die Differenz ist deshalb höchstens so groß wie der Minuend.
 
 ## 5.3.3-S2: Ich kann schriftlich subtrahieren, auch mit Übertrag.
 
-### F · Förderniveau
+Grundlage, die F übt: Entbündeln: 1 Zehner sind 10 Einer, dann Rechnen im Stellenraster
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 532 − 218: Einer 12 − 8 = 4 (Übertrag 1), Zehner 3 − 1 − 1 = 1, Hunderter 5 − 2 = 3. Ergebnis 314. *Lösungsschritt:* Beginne bei den Einern: 7 − 8 geht nicht. Rechne 17 − 8 = 9 und merke dir den Übertrag 1 für die Zehner.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Subtrahiere schriftlich: 587 − 558 Lösung: **29**. Typische Fehler: 31 (sub-kleiner-von-groesser), 39 (sub-uebertrag-vergessen), 1145 (sub-addiert).
-- `02` AFB I · Subtrahiere schriftlich: 716 − 103 Lösung: **613**. Typische Fehler: 819 (sub-addiert).
-- `03` AFB I · Subtrahiere schriftlich: 599 − 151 Lösung: **448**. Typische Fehler: 750 (sub-addiert).
-- `04` AFB I · Subtrahiere schriftlich: 764 − 584 Lösung: **180**. Typische Fehler: 220 (sub-kleiner-von-groesser), 280 (sub-uebertrag-vergessen), 1348 (sub-addiert).
-- `05` AFB I · Subtrahiere schriftlich: 292 − 256 Lösung: **36**. Typische Fehler: 44 (sub-kleiner-von-groesser), 46 (sub-uebertrag-vergessen), 548 (sub-addiert).
-- `06` AFB I · Subtrahiere schriftlich: 699 − 542 Lösung: **157**. Typische Fehler: 1241 (sub-addiert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Z heißt Zehner. E heißt Einer. *Beispiel:* 2 Plättchen bei Z und 5 bei E: Das ist die Zahl 25. *Lösungsschritt:* Bei Z liegen 8 Plättchen. Das sind 8 Zehner, also 80.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Schau in die Tafel. / Welche Zahl siehst du? _(Bild: Stellenwerttafel Z: 8, E: 3)_ Lösung: **83**. Typische Fehler: 38 (stellenwert), 11 (stellenwert).
+- `02` AFB I · Du hast 88. / Nimm 1 Stange und 7 Würfel weg. / Wie viel bleibt? _(Bild: Zehnermaterial: 8 Zehnerstangen, 8 Einerwürfel, durchgestrichen: {"h":0,"z":1,"e":7})_ Lösung: **71**. Typische Fehler: 80 (stellenwert).
+- `03` AFB I · Rechne im Raster: 55 − 12 / Beginne bei den Einern.  _(Rechenraster mit Ziffernfeldern)_
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 532 − 218: Einer 12 − 8 = 4 (Übertrag 1), Zehner 3 − 1 − 1 = 1, Hunderter 5 − 2 = 3. Ergebnis 314. *Lösungsschritt:* Beginne bei den Einern: 0 − 6 geht nicht. Rechne 10 − 6 = 4 und merke dir den Übertrag 1 für die Zehner.
+  |  | Z | E |
+  |---|---|---|
+  |  | 5 | 5 |
+  | − | 1 | 2 |
+  | Ergebnis | **4** | **3** |
 
-- `01` AFB I · Subtrahiere schriftlich: 8550 − 2086 Lösung: **6464**. Typische Fehler: 6536 (sub-kleiner-von-groesser), 6574 (sub-uebertrag-vergessen), 10636 (sub-addiert).
-- `02` AFB I · Subtrahiere schriftlich: 1349 − 1152 Lösung: **197**. Typische Fehler: 217 (sub-kleiner-von-groesser), 297 (sub-uebertrag-vergessen), 2501 (sub-addiert).
-- `03` AFB I · Subtrahiere schriftlich: 7805 − 2350 Lösung: **5455**. Typische Fehler: 5555 (sub-kleiner-von-groesser), 10155 (sub-addiert).
-- `04` AFB I · Subtrahiere schriftlich: 2232 − 208 Lösung: **2024**. Typische Fehler: 2036 (sub-kleiner-von-groesser), 2034 (sub-uebertrag-vergessen), 2440 (sub-addiert).
-- `05` AFB I · Subtrahiere schriftlich: 8690 − 3343 Lösung: **5347**. Typische Fehler: 5353 (sub-kleiner-von-groesser), 5357 (sub-uebertrag-vergessen), 12033 (sub-addiert).
-- `06` AFB I · Subtrahiere schriftlich: 9746 − 562 Lösung: **9184**. Typische Fehler: 9224 (sub-kleiner-von-groesser), 9284 (sub-uebertrag-vergessen), 10308 (sub-addiert).
+- `04` AFB I · Rechne im Raster: 589 − 417 / Jede Stelle hat ein Feld.  _(Rechenraster mit Ziffernfeldern)_
 
-### M · Mittleres Niveau
+  |  | H | Z | E |
+  |---|---|---|---|
+  |  | 5 | 8 | 9 |
+  | − | 4 | 1 | 7 |
+  | Ergebnis | **1** | **7** | **2** |
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 532 − 218: Einer 12 − 8 = 4 (Übertrag 1), Zehner 3 − 1 − 1 = 1, Hunderter 5 − 2 = 3. Ergebnis 314. *Lösungsschritt:* Beginne bei den Einern: 1 − 0 = 1. Schreibe 1 an die Einerstelle und rechne dann die Zehner.
+- `05` AFB II · Du hast 4 Stangen und 3 Würfel. / Du willst 6 Würfel wegnehmen. / Du tauschst 1 Stange in 10 Würfel. _(Bild: Zehnermaterial: 4 Zehnerstangen, 3 Einerwürfel)_
+  - a) Wie viele Würfel hast du jetzt? **13**. Typische Fehler: 10 (stellenwert), 3 (sub-kleiner-von-groesser).
+  - b) Wie viel bleibt nach dem Wegnehmen? **37**. Typische Fehler: 43 (sub-kleiner-von-groesser).
+- `06` AFB I · Rechne im Raster: 35 − 16 / Der Tausch ist schon eingetragen.  _(Rechenraster mit Ziffernfeldern)_
 
-- `01` AFB I · Subtrahiere schriftlich: 90 171 − 18 800 Lösung: **71371**. Typische Fehler: 88771 (sub-kleiner-von-groesser), 82371 (sub-uebertrag-vergessen), 108971 (sub-addiert).
-- `02` AFB I · Subtrahiere schriftlich: 10 208 − 2439 Lösung: **7769**. Typische Fehler: 12231 (sub-kleiner-von-groesser), 18879 (sub-uebertrag-vergessen), 12647 (sub-addiert).
-- `03` AFB I · Subtrahiere schriftlich: 10 077 − 4922 Lösung: **5155**. Typische Fehler: 14955 (sub-kleiner-von-groesser), 16155 (sub-uebertrag-vergessen), 14999 (sub-addiert).
-- `04` AFB I · Subtrahiere schriftlich: 51 013 − 17 787 Lösung: **33226**. Typische Fehler: 46774 (sub-kleiner-von-groesser), 44336 (sub-uebertrag-vergessen), 68800 (sub-addiert).
-- `05` AFB I · Subtrahiere schriftlich: 70 930 − 8212 Lösung: **62718**. Typische Fehler: 78722 (sub-kleiner-von-groesser), 72728 (sub-uebertrag-vergessen), 79142 (sub-addiert).
-- `06` AFB I · Subtrahiere schriftlich: 96 021 − 7165 Lösung: **88856**. Typische Fehler: 91144 (sub-kleiner-von-groesser), 99966 (sub-uebertrag-vergessen), 103186 (sub-addiert).
+  |  | Z | E |
+  |---|---|---|
+  |  | 3 | 5 |
+  | getauscht | 2 | 15 |
+  | − | 1 | 6 |
+  | Ergebnis | **1** | **9** |
 
-### E · Erweitertes Niveau
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen stellengerecht untereinander und beginne bei den Einern. *Beispiel:* 532 − 218: Einer 12 − 8 = 4 (Übertrag 1), Zehner 3 − 1 − 1 = 1, Hunderter 5 − 2 = 3. Ergebnis 314. *Lösungsschritt:* Beginne bei den Einern: 0 − 0 = 0. Schreibe 0 an die Einerstelle und rechne dann die Zehner.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Subtrahiere schriftlich: 3 028 000 − 692 050 Lösung: **2335950**. Typische Fehler: 3676050 (sub-kleiner-von-groesser), 3436050 (sub-uebertrag-vergessen), 3720050 (sub-addiert).
-- `02` AFB I · Subtrahiere schriftlich: 7 070 400 − 1 143 088 Lösung: **5927312**. Typische Fehler: 6133488 (sub-kleiner-von-groesser), 6937422 (sub-uebertrag-vergessen), 8213488 (sub-addiert).
-- `03` AFB I · Subtrahiere schriftlich: 103 307 − 18 414 Lösung: **84893**. Typische Fehler: 115113 (sub-kleiner-von-groesser), 195993 (sub-uebertrag-vergessen), 121721 (sub-addiert).
-- `04` AFB I · Subtrahiere schriftlich: 1 401 013 − 96 403 Lösung: **1304610**. Typische Fehler: 1495410 (sub-kleiner-von-groesser), 1415610 (sub-uebertrag-vergessen), 1497416 (sub-addiert).
-- `05` AFB I · Subtrahiere schriftlich: 2 270 029 − 1 760 953 Lösung: **509076**. Typische Fehler: 1510936 (sub-kleiner-von-groesser), 1510176 (sub-uebertrag-vergessen), 4030982 (sub-addiert).
-- `06` AFB I · Subtrahiere schriftlich: 7 713 050 − 2 990 071 Lösung: **4722979**. Typische Fehler: 5283021 (sub-kleiner-von-groesser), 5823089 (sub-uebertrag-vergessen), 10703121 (sub-addiert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen genau untereinander. Beginne bei den Einern. *Beispiel:* 578 − 243: Einer 8 − 3 = 5. Zehner 7 − 4 = 3. Hunderter 5 − 2 = 3. Ergebnis 335. *Lösungsschritt:* Einer: 9 − 4 = 5.
+
+- `01` AFB I · Subtrahiere schriftlich. / 399 − 294 Lösung: **105**. Typische Fehler: 693 (sub-addiert).
+- `02` AFB I · Subtrahiere schriftlich. / 693 − 316 _(Bild: Stellenwerttafel H: 6, Z: 9, E: 3)_ Lösung: **377**. Typische Fehler: 383 (sub-kleiner-von-groesser), 387 (sub-uebertrag-vergessen), 1009 (sub-addiert).
+- `03` AFB II · Welche Ziffer fehlt? / 7▢5 − 173 = 612 Lösung: a = **8**
+- `04` AFB I · Subtrahiere schriftlich. / 2594 − 1256 Lösung: **1338**. Typische Fehler: 1342 (sub-kleiner-von-groesser), 1348 (sub-uebertrag-vergessen), 3850 (sub-addiert).
+- `05` AFB II · Überlege zuerst. / Nur bei einer Aufgabe brauchst du einen Übertrag. / 665 − 132 / 662 − 135 / 685 − 132 _(Bild: Stellenwerttafel H: 6, Z: 6, E: 2)_
+  - a) Welche Zahl steht bei dieser Aufgabe vorne? **662**. Typische Fehler: 665 (sub-kleiner-von-groesser), 685 (sub-kleiner-von-groesser).
+  - b) Rechne diese Aufgabe aus. **527**. Typische Fehler: 533 (sub-kleiner-von-groesser), 537 (sub-uebertrag-vergessen), 797 (sub-addiert).
+- `06` AFB III · Jonas rechnet: 683 − 579 = 116 / Bei den Einern rechnet Jonas 9 − 3 = 6. / Stimmt das? _(Bild: Stellenwerttafel H: 6, Z: 8, E: 3)_
+  - ☑ Falsch. / Die Einer sind vertauscht. / Richtig ist 104.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Hier muss man plus rechnen.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Steht oben eine Null, holst du den Übertrag aus der nächsten Stelle, die keine Null ist. *Lösungsschritt:* Einer: 10 − 1 = 9, Übertrag 1.
+
+- `01` AFB I · Subtrahiere schriftlich: 6600 − 2331 Lösung: **4269**. Typische Fehler: 4331 (sub-kleiner-von-groesser), 4379 (sub-uebertrag-vergessen), 8931 (sub-addiert).
+- `02` AFB II · Bestimme die fehlenden Ziffern: 5▢08 − 38▢2 = 1866 Lösung: a = **7**, b = **4**
+- `03` AFB II · Berechne: 8005 − 1639 − 220 Lösung: **6146**. Typische Fehler: 6586 (sub-klammerfehler), 6366 (sach-schritt-vergessen).
+- `04` AFB I · Subtrahiere schriftlich: 9010 − 6281 Lösung: **2729**. Typische Fehler: 3271 (sub-kleiner-von-groesser), 3839 (sub-uebertrag-vergessen), 15291 (sub-addiert).
+- `05` AFB II · Berechne der Reihe nach: 5005 − 4996 = ▢, 6005 − 5996 = ▢, 7005 − 6996 = ▢. Setze das Muster fort: ▢ − 8996 hat dasselbe Ergebnis. Lösung: a = **9**, b = **9**, c = **9**, d = **9005**
+- `06` AFB III · Elif erhält bei 7002 − 1773 das Ergebnis 6771. Prüfe mit einem Überschlag und entscheide.
+  - ☐ Falsch: Das Ergebnis muss größer sein als 7002.
+  - ☐ Richtig: 7000 − 1800 ist ungefähr 6800.
+  - ☑ Falsch: 7000 − 1800 = 5200. Das Ergebnis muss nahe bei 5200 liegen.
+  - ☐ Richtig: In jeder Stelle wurde die kleinere von der größeren Ziffer abgezogen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Übertrag wandert über beide Nullen hinweg.
+
+- `01` AFB I · Subtrahiere schriftlich: 9004 − 3667 Lösung: **5337**. Typische Fehler: 6663 (sub-kleiner-von-groesser), 6447 (sub-uebertrag-vergessen), 12671 (sub-addiert).
+- `02` AFB II · Bilde aus den Ziffern 3, 5, 6 und 8 zwei zweistellige Zahlen. Jede Ziffer kommt genau einmal vor. Wie groß ist die kleinste mögliche Differenz? Lösung: **5**.
+- `03` AFB II · Von 6000 wird dreimal dieselbe Zahl subtrahiert. Es bleibt 2949. Bestimme die Zahl. Lösung: **1017**. Typische Fehler: 3051 (sach-schritt-vergessen).
+- `04` AFB III · ANNA-Zahlen: 4334 − 3443 = 891, 5115 − 1551 = 3564, 7227 − 2772 = 4455. Alle Ergebnisse sind Vielfache von 891. Der Faktor hängt nur von den beiden Ziffern ab. Stelle die Regel auf und sage mit ihr 9229 − 2992 vorher: ▢ · 891 = ▢ Lösung: a = **7**, b = **6237**
+- `05` AFB II · Die Differenz zweier Zahlen ist 1228. Der Minuend wird um 250 größer, der Subtrahend um 250 kleiner. Bestimme die neue Differenz. Lösung: **1728**. Typische Fehler: 1228 (sach-schritt-vergessen), 1478 (sach-schritt-vergessen).
+- `06` AFB III · „Vergrößere ich Minuend und Subtrahend um dieselbe Zahl, bleibt die Differenz gleich.“ Gilt das immer? Wähle die richtige Begründung.
+  - ☐ Ja, aber nur, wenn dabei kein Übertrag entsteht.
+  - ☑ Ja, immer: Beide Zahlen verschieben sich auf dem Zahlenstrahl gleich weit. Ihr Abstand bleibt gleich.
+  - ☐ Nein: Die Differenz wird doppelt so groß.
+  - ☐ Nur bei geraden Zahlen: 8 − 2 = 6 und 10 − 4 = 6.
+  - ☐ Nein: Die Differenz wird um diese Zahl größer.
 
 ## 5.3.3-S3: Ich kann mehrere Zahlen schriftlich subtrahieren.
 
-### F · Förderniveau
+Grundlage, die F übt: Zweimal nacheinander wegnehmen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Du darfst die Subtrahenden zuerst addieren und dann ihre Summe auf einmal abziehen. *Beispiel:* 900 − 250 − 150: Die Subtrahenden ergeben zusammen 400. 900 − 400 = 500. *Lösungsschritt:* Addiere zuerst die Subtrahenden: 244 + 35 = 279. Ziehe diese Summe dann von 655 ab.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Berechne: 655 − 244 − 35 Lösung: **376**. Typische Fehler: 446 (sub-klammerfehler), 411 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 555 − 208 − 67 Lösung: **280**. Typische Fehler: 414 (sub-klammerfehler), 347 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 665 − 253 − 206 Lösung: **206**. Typische Fehler: 618 (sub-klammerfehler), 412 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 756 − 111 − 92 Lösung: **553**. Typische Fehler: 737 (sub-klammerfehler), 645 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 742 − 149 − 55 Lösung: **538**. Typische Fehler: 648 (sub-klammerfehler), 593 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 616 − 240 − 99 Lösung: **277**. Typische Fehler: 475 (sub-klammerfehler), 376 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Folge beiden Sprüngen nach links. *Beispiel:* Start 15, erst − 4, dann − 3: Du landest bei 8. *Lösungsschritt:* Nach dem ersten Sprung bist du bei 12.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Der Pfeil springt 2-mal zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprung von 17: − 5; von 12: − 4; Zahl eintragen)_ Lösung: **8**. Typische Fehler: 12 (sach-schritt-vergessen), 16 (sub-klammerfehler).
+- `02` AFB I · Rechne in 2 Schritten: 14 − 5 − 3 / Erst 5 weg: ▢ / Dann noch 3 weg: ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 14 nach 9 (− 5), 9 nach 6 (− 3))_ Lösung: a = **9**, b = **6**
+- `03` AFB I · Rechne. / 30 − 10 − 5 _(Bild: Zahlenstrahl 10 bis 30, Sprünge 30 nach 20 (− 10), 20 nach 15 (− 5))_ Lösung: **15**. Typische Fehler: 25 (sub-klammerfehler), 20 (sach-schritt-vergessen).
+- `04` AFB I · Starte bei 26. / Springe erst 6 zurück. / Springe dann 5 zurück. / Tippe an: Wo landest du? _(Zahlenstrahl 10 bis 30, Teilstriche alle 1; antippen)_ Lösung: **15**. Typische Fehler: 20 (sach-schritt-vergessen), 25 (sub-klammerfehler).
+- `05` AFB II · Mara hat 20 Euro. / Mara kauft ein Heft für 4 Euro. / Mara kauft einen Stift für 4 Euro. / Welche Rechnung passt? _(Bild: Streifenbild: Ganzes 20, Teile 4 und 4 und ?)_
+  - ☑ 20 − 4 − 4
+  - ☐ 20 − 4 + 4
+  - ☐ 20 + 4 + 4
+- `06` AFB I · Rechne. / 18 − 8 − 3 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 18 nach 10 (− 8), 10 nach 7 (− 3))_ Lösung: **7**. Typische Fehler: 13 (sub-klammerfehler), 10 (sach-schritt-vergessen).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Du darfst die Subtrahenden zuerst addieren und dann ihre Summe auf einmal abziehen. *Beispiel:* 900 − 250 − 150: Die Subtrahenden ergeben zusammen 400. 900 − 400 = 500. *Lösungsschritt:* Addiere zuerst die Subtrahenden: 2559 + 1837 = 4396. Ziehe diese Summe dann von 9318 ab.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Berechne: 9318 − 2559 − 1837 Lösung: **4922**. Typische Fehler: 8596 (sub-klammerfehler), 6759 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 6402 − 2978 − 791 Lösung: **2633**. Typische Fehler: 4215 (sub-klammerfehler), 3424 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 5032 − 2041 − 1143 Lösung: **1848**. Typische Fehler: 4134 (sub-klammerfehler), 2991 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 2825 − 1403 − 410 Lösung: **1012**. Typische Fehler: 1832 (sub-klammerfehler), 1422 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 6230 − 2441 − 1018 Lösung: **2771**. Typische Fehler: 4807 (sub-klammerfehler), 3789 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 5684 − 1438 − 670 Lösung: **3576**. Typische Fehler: 4916 (sub-klammerfehler), 4246 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe die Zahlen nacheinander ab. *Beispiel:* 75 − 20 − 10: Erst 75 − 20 = 55. Dann 55 − 10 = 45. *Lösungsschritt:* 97 − 30 = 67.
 
-### M · Mittleres Niveau
+- `01` AFB I · Berechne. / 97 − 30 − 10 _(Bild: Zahlenstrahl 50 bis 100)_ Lösung: **57**. Typische Fehler: 77 (sub-klammerfehler), 67 (sach-schritt-vergessen).
+- `02` AFB I · Subtrahiere schriftlich. / 858 − 206 − 250 Lösung: **402**. Typische Fehler: 902 (sub-klammerfehler), 652 (sach-schritt-vergessen).
+- `03` AFB II · 80 − 29 − 11 / Zähle erst zusammen, was weggeht. / 29 + 11 = ▢ / Ziehe dieses Ergebnis von 80 ab: ▢ _(Bild: Streifenbild: Ganzes 80, Teile 29 und 11 und ?)_ Lösung: a = **40**, b = **40**
+- `04` AFB I · Subtrahiere schriftlich. / 863 − 133 − 113 Lösung: **617**. Typische Fehler: 843 (sub-klammerfehler), 730 (sach-schritt-vergessen).
+- `05` AFB II · Welche Rechnung hat dasselbe Ergebnis? / 80 − 17 − 3 _(Bild: Streifenbild: Ganzes 80, Teile 17 und 3 und ?)_
+  - ☑ 80 − 20
+  - ☐ 80 − 14
+  - ☐ 80 + 20
+- `06` AFB III · Lena rechnet 90 − 20 − 10 so: / 20 − 10 = 10 / 90 − 10 = 80 / Stimmt das?
+  - ☑ Falsch. / Beide Zahlen gehen weg. / Richtig ist 60.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Richtig ist 120.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Du darfst die Subtrahenden zuerst addieren und dann ihre Summe auf einmal abziehen. *Beispiel:* 900 − 250 − 150: Die Subtrahenden ergeben zusammen 400. 900 − 400 = 500. *Lösungsschritt:* Addiere zuerst die Subtrahenden: 9993 + 7626 + 1507 = 19 126. Ziehe diese Summe dann von 37 992 ab.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB I · Berechne: 37 992 − 9993 − 7626 − 1507 Lösung: **18866**. Typische Fehler: 34118 (sub-klammerfehler), 27999 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 96 866 − 15 608 − 8475 − 1196 Lösung: **71587**. Typische Fehler: 88537 (sub-klammerfehler), 81258 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 50 266 − 12 765 − 7194 − 3607 Lösung: **26700**. Typische Fehler: 41088 (sub-klammerfehler), 37501 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 68 352 − 18 577 − 1352 − 6995 Lösung: **41428**. Typische Fehler: 44132 (sub-klammerfehler), 49775 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 59 606 − 19 737 − 13 152 − 4448 Lösung: **22269**. Typische Fehler: 48573 (sub-klammerfehler), 39869 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 70 383 − 2156 − 1295 − 10 862 Lösung: **56070**. Typische Fehler: 58660 (sub-klammerfehler), 68227 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere zuerst die beiden Subtrahenden und ziehe ihre Summe ab. *Lösungsschritt:* 1179 + 865 = 2044.
 
-### E · Erweitertes Niveau
+- `01` AFB I · Subtrahiere schriftlich: 4005 − 1179 − 865 Lösung: **1961**. Typische Fehler: 3691 (sub-klammerfehler), 2826 (sach-schritt-vergessen).
+- `02` AFB II · Berechne geschickt: 9000 − 1330 − 670. Die Summe der Subtrahenden ist ▢. Das Ergebnis ist ▢. Lösung: a = **2000**, b = **7000**
+- `03` AFB II · Bestimme die fehlende Ziffer: 8▢0 − 117 − 200 = 553 Lösung: a = **7**
+- `04` AFB I · Subtrahiere schriftlich: 8030 − 1456 − 1382 Lösung: **5192**. Typische Fehler: 7956 (sub-klammerfehler), 6574 (sach-schritt-vergessen).
+- `05` AFB II · Berechne der Reihe nach: 1000 − 100 − 99 = ▢, 1000 − 200 − 199 = ▢, 1000 − 300 − 299 = ▢. Setze das Muster fort: 1000 − 400 − 399 = ▢ Lösung: a = **801**, b = **601**, c = **401**, d = **201**
+- `06` AFB III · Lena rechnet 700 − 450 − 150 so: 450 − 150 = 300, dann 700 − 300 = 400. Beurteile den Rechenweg.
+  - ☐ Richtig. Die beiden Subtrahenden darf man zuerst verrechnen.
+  - ☐ Falsch. Man muss 700 + 450 − 150 rechnen.
+  - ☑ Falsch. Beide Zahlen werden abgezogen: 450 + 150 = 600 und 700 − 600 = 100.
+  - ☐ Richtig. Das Ergebnis ist kleiner als der Minuend, also stimmt es.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Du darfst die Subtrahenden zuerst addieren und dann ihre Summe auf einmal abziehen. *Beispiel:* 900 − 250 − 150: Die Subtrahenden ergeben zusammen 400. 900 − 400 = 500. *Lösungsschritt:* Addiere zuerst die Subtrahenden: 47 047 + 19 717 + 19 208 + 50 759 = 136 731. Ziehe diese Summe dann von 230 187 ab.
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-- `01` AFB I · Berechne: 230 187 − 47 047 − 19 717 − 19 208 − 50 759 Lösung: **93456**. Typische Fehler: 132890 (sub-klammerfehler), 183140 (sach-schritt-vergessen).
-- `02` AFB I · Berechne: 703 838 − 98 478 − 28 815 − 87 749 − 109 301 Lösung: **379495**. Typische Fehler: 437125 (sub-klammerfehler), 605360 (sach-schritt-vergessen).
-- `03` AFB I · Berechne: 910 901 − 221 824 − 97 540 − 107 160 − 215 561 Lösung: **268816**. Typische Fehler: 463896 (sub-klammerfehler), 689077 (sach-schritt-vergessen).
-- `04` AFB I · Berechne: 400 810 − 70 912 − 12 940 − 26 969 − 87 449 Lösung: **202540**. Typische Fehler: 228420 (sub-klammerfehler), 329898 (sach-schritt-vergessen).
-- `05` AFB I · Berechne: 732 001 − 90 009 − 46 745 − 19 222 − 175 928 Lösung: **400097**. Typische Fehler: 493587 (sub-klammerfehler), 641992 (sach-schritt-vergessen).
-- `06` AFB I · Berechne: 465 213 − 86 527 − 18 977 − 107 442 − 17 947 Lösung: **234320**. Typische Fehler: 272274 (sub-klammerfehler), 378686 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere zuerst alle Subtrahenden.
+
+- `01` AFB I · Berechne: 7000 − 2994 − 1961 − 360 Lösung: **1685**. Typische Fehler: 2045 (sach-schritt-vergessen), 2405 (sub-klammerfehler).
+- `02` AFB II · Von einer Zahl werden nacheinander 165, 400 und 115 subtrahiert. Es bleibt 800. Bestimme die Zahl. Lösung: **1480**. Typische Fehler: 120 (probe-falsche-umkehr).
+- `03` AFB II · Welcher Term hat denselben Wert wie 2300 − 650 − 350 − 250?
+  - ☐ 2300 − 650 + 350 + 250
+  - ☐ (2300 − 650) + (350 − 250)
+  - ☑ 2300 − (650 + 350 + 250)
+  - ☐ 2300 − (650 + 350) + 250
+  - ☐ 2300 − (650 − 350) − 250
+- `04` AFB III · Von 100 werden fünf aufeinanderfolgende Zahlen subtrahiert: 100 − 10 − 11 − 12 − 13 − 14 = 40. Stelle die Regel auf: Insgesamt wird ▢ · die mittlere Zahl subtrahiert. Bei welcher mittleren Zahl ist das Ergebnis 0? ▢ Lösung: a = **5**, b = **20**
+- `05` AFB II · In 510 − ▢ − ▢ = 270 steht in beiden Kästchen dieselbe Zahl. Bestimme sie. Lösung: **120**. Typische Fehler: 240 (sach-schritt-vergessen).
+- `06` AFB III · Lisa behauptet: „Bei a − b − c darf ich die beiden Subtrahenden vertauschen. Es gilt immer a − b − c = a − c − b.“ Wähle die richtige Begründung.
+  - ☑ Das stimmt immer. Beide Male wird insgesamt b + c abgezogen. Beispiel: 90 − 20 − 30 = 40 und 90 − 30 − 20 = 40.
+  - ☐ Das stimmt immer, denn auch a − b = b − a.
+  - ☐ Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen.
+  - ☐ Das stimmt nur, wenn b größer ist als c.
+  - ☐ Das stimmt nur, wenn b und c gleich groß sind.
 
 ## 5.3.3-S4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
 
-### F · Förderniveau
+Grundlage, die F übt: Minus mit Plus rückgängig machen, Nachbarzehner
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Umkehraufgabe: Aus Minus wird Plus. *Beispiel:* Probe zu 80 − 30 = 50: 50 + 30 = 80. Das Ergebnis und der Subtrahend ergeben wieder den Minuenden. *Lösungsschritt:* Beginne mit dem Ergebnis 337 und addiere die Zahl, die abgezogen wurde.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Mit welcher Rechnung machst du die Probe zu 395 − 58 = 337?
-  - ☐ 395 + 58 = 453
-  - ☐ 395 − 337 = 58
-  - ☑ 337 + 58 = 395
-  - ☐ 395 + 337 = 732
-- `02` AFB I · Mit welcher Rechnung machst du die Probe zu 834 − 692 = 142?
-  - ☐ 834 + 142 = 976
-  - ☑ 142 + 692 = 834
-  - ☐ 834 + 692 = 1526
-  - ☐ 834 − 142 = 692
-- `03` AFB I · Mit welcher Rechnung machst du die Probe zu 416 − 81 = 335?
-  - ☐ 416 − 335 = 81
-  - ☐ 416 + 81 = 497
-  - ☑ 335 + 81 = 416
-  - ☐ 416 + 335 = 751
-- `04` AFB I · Mit welcher Rechnung machst du die Probe zu 954 − 438 = 516?
-  - ☑ 516 + 438 = 954
-  - ☐ 954 − 516 = 438
-  - ☐ 954 + 516 = 1470
-  - ☐ 954 + 438 = 1392
-- `05` AFB I · Mit welcher Rechnung machst du die Probe zu 281 − 104 = 177?
-  - ☑ 177 + 104 = 281
-  - ☐ 281 + 104 = 385
-  - ☐ 281 + 177 = 458
-  - ☐ 281 − 177 = 104
-- `06` AFB I · Mit welcher Rechnung machst du die Probe zu 949 − 740 = 209?
-  - ☐ 949 + 209 = 1158
-  - ☐ 949 + 740 = 1689
-  - ☑ 209 + 740 = 949
-  - ☐ 949 − 209 = 740
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Zähle die Striche bis zum Zehner links und rechts. *Beispiel:* 38: Bis 40 sind es 2 Striche, bis 30 sind es 8 Striche. Am nächsten ist 40. *Lösungsschritt:* Bis 80 sind es 3 Striche. Bis 90 sind es 7 Striche.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Der Punkt liegt bei 83. / Welcher Zehner liegt am nächsten? / Tippe ihn an. _(Zahlenstrahl 80 bis 90, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 90 (falsch-gerundet).
+- `02` AFB I · Der Punkt liegt bei 67. / Welcher Zehner liegt näher an 67? _(Bild: Zahlenstrahl 60 bis 70)_
+  - ☑ 70
+  - ☐ 60
+  - ☐ 65
+- `03` AFB I · 18 − 6 = 12 / Mit Plus kommst du zurück. / 12 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 18 nach 12 (− 6))_ Lösung: a = **18**
+- `04` AFB I · Der Punkt liegt bei 79. / Welcher Zehner liegt am nächsten bei 79? / Tippe ihn an. _(Zahlenstrahl 70 bis 80, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 70 (falsch-gerundet).
+- `05` AFB II · Ida rechnet: 20 − 8 = 11 / Prüfe mit Plus. / 11 + 8 = ▢ / Das ist nicht 20. / Richtig ist: 20 − 8 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 20 nach 12 (− 8))_ Lösung: a = **19**, b = **12**
+- `06` AFB I · Finn rechnet: 15 − 7 = 8 / Mit welcher Plus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 15 nach 8 (− 7))_
+  - ☑ 8 + 7
+  - ☐ 15 + 8
+  - ☐ 15 + 7
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Zehnerziffer: Bei 0 bis 4 rundest du ab, bei 5 bis 9 auf. *Beispiel:* 4782 − 1319: 4782 wird zu 4800, 1319 wird zu 1300. 4800 − 1300 = 3500. *Lösungsschritt:* Runde zuerst den Minuenden: 5602 ≈ 5600.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 5602 − 3373 ≈ ? Lösung: **2200**. Typische Fehler: 2229 (ueberschlag-nicht-gerundet), 2300 (falsch-gerundet).
-- `02` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 9050 − 8620 ≈ ? Lösung: **500**. Typische Fehler: 430 (ueberschlag-nicht-gerundet), 400 (falsch-gerundet).
-- `03` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 9494 − 3562 ≈ ? Lösung: **5900**. Typische Fehler: 5932 (ueberschlag-nicht-gerundet).
-- `04` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 2769 − 1670 ≈ ? Lösung: **1100**. Typische Fehler: 1099 (ueberschlag-nicht-gerundet).
-- `05` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 4046 − 1622 ≈ ? Lösung: **2400**. Typische Fehler: 2424 (ueberschlag-nicht-gerundet).
-- `06` AFB I · Überschlage: Runde beide Zahlen auf Hunderter und rechne dann. 7281 − 830 ≈ ? Lösung: **6500**. Typische Fehler: 6451 (ueberschlag-nicht-gerundet), 6400 (falsch-gerundet).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten Zehner. *Beispiel:* 68 − 31: 68 ist fast 70, 31 ist fast 30. Der Überschlag ist 70 − 30. *Lösungsschritt:* 78 liegt am nächsten bei 80.
 
-### M · Mittleres Niveau
+- `01` AFB I · Welcher Überschlag passt zu 78 − 41? _(Bild: Zahlenstrahl 70 bis 80)_
+  - ☑ 80 − 40
+  - ☐ 80 − 50
+  - ☐ 70 − 40
+- `02` AFB I · Mache die Probe. / 77 − 21 = 56 / Probe: 56 + ▢ = ▢ Lösung: a = **21**, b = **77**
+- `03` AFB II · Überschlage zuerst. / 892 − 389 / Runde beide Zahlen auf Hunderter. / ▢ − ▢ = ▢ Lösung: a = **900**, b = **400**, c = **500**
+- `04` AFB I · Überschlage: 61 − 21 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30)_ Lösung: **40**.
+- `05` AFB II · Ole rechnet: 95 − 79 = 16 / Mit welcher Rechnung macht Ole die Probe? _(Bild: Streifenbild: Ganzes 95, Teile 79 und 16)_
+  - ☑ 16 + 79
+  - ☐ 16 − 79
+  - ☐ 95 + 79
+- `06` AFB III · Emre rechnet: 805 − 295 = 610 / Der Überschlag ist 800 − 300 = 500. / Stimmt das Ergebnis 610?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es muss nahe bei 500 liegen. / Richtig ist 510.
+  - ☐ Falsch. / Es muss nahe bei 1100 liegen.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere jeweils das Ergebnis und den Subtrahenden. Kommt nicht der Minuend heraus, ist die Rechnung falsch. *Beispiel:* 734 − 258 = 486? Probe: 486 + 258 = 744. Das ist nicht 734, also ist die Rechnung falsch. *Lösungsschritt:* Rechne für die erste Rechnung die Probe: Ergebnis plus Subtrahend.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 9855 − 6165 = 3690
-  - ☑ 4008 − 2306 = 1712
-  - ☑ 5252 − 1510 = 3752
-  - ☐ 9126 − 4599 = 4527
-- `02` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 6010 − 2028 = 3982
-  - ☑ 8076 − 270 = 7816
-  - ☐ 3572 − 1631 = 1941
-  - ☐ 1832 − 157 = 1675
-- `03` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 4327 − 3565 = 762
-  - ☐ 6844 − 4829 = 2015
-  - ☑ 1762 − 153 = 1709
-  - ☐ 5195 − 3259 = 1936
-- `04` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 6600 − 4651 = 1949
-  - ☑ 5317 − 3830 = 1387
-  - ☐ 4680 − 772 = 3908
-  - ☐ 2594 − 2437 = 157
-- `05` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 4802 − 3175 = 1627
-  - ☑ 8566 − 7824 = 642
-  - ☑ 5383 − 3422 = 1971
-  - ☐ 3929 − 2992 = 937
-- `06` AFB II · Prüfe mit der Probe: Welche Rechnungen sind falsch? Es können mehrere sein.
-  - ☐ 8746 − 5870 = 2876
-  - ☑ 2080 − 1850 = 220
-  - ☐ 5225 − 604 = 4621
-  - ☑ 6380 − 901 = 5379
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde zuerst, rechne dann im Kopf. *Lösungsschritt:* 7108 ≈ 7000 und 2156 ≈ 2000.
 
-### E · Erweitertes Niveau
+- `01` AFB I · Überschlage: 7108 − 2156. Runde dazu beide Zahlen auf Tausender. Lösung: **5000**. Typische Fehler: 4952 (ueberschlag-nicht-gerundet).
+- `02` AFB II · Ali hat gerechnet: 4932 − 2230 = 2702.
+  - a) Berechne den Überschlag mit Zahlen, die auf Tausender gerundet sind. **3000**. Typische Fehler: 2702 (ueberschlag-nicht-gerundet).
+  - b) Mache die Probe: 2702 + 2230 **4932**. Typische Fehler: 472 (probe-falsche-umkehr).
+- `03` AFB II · Genau eine Rechnung ist falsch. Finde sie mit dem Überschlag.
+  - ☐ 7239 − 2990 = 4249
+  - ☐ 7887 − 2786 = 5101
+  - ☐ 8945 − 2961 = 5984
+  - ☑ 7925 − 2139 = 6786
+- `04` AFB I · Mache die Probe zu 7040 − 3869 = 3171. Probe: 3171 + ▢ = ▢ Lösung: a = **3869**, b = **7040**
+- `05` AFB II · Ein Ergebnis liegt zwischen 2000 und 3000. Entscheide mit dem Überschlag, welche Aufgabe dazu gehört.
+  - ☐ 4027 − 2970
+  - ☐ 6045 − 1970
+  - ☐ 7163 − 3111
+  - ☑ 6098 − 3872
+- `06` AFB III · Zu 7514 − 2494 passt der Überschlag 8000 − 2000 = 6000. Das genaue Ergebnis ist 5020. Erkläre, warum der Überschlag so stark abweicht.
+  - ☐ Beim Überschlag darf das Ergebnis beliebig weit abweichen.
+  - ☐ Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz.
+  - ☑ Der Minuend wurde um 486 aufgerundet, der Subtrahend um 494 abgerundet. Beide Rundungen vergrößern die Differenz.
+  - ☐ Der Überschlag ist falsch gerechnet.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf Tausender und vergleiche deinen Überschlag mit dem angegebenen Ergebnis. *Beispiel:* 52 310 − 18 790 = 43 520? Überschlag: 52 000 − 19 000 = 33 000. Das Ergebnis liegt weit daneben, es kann nicht stimmen. *Lösungsschritt:* Überschlage die erste Rechnung mit auf Tausender gerundeten Zahlen und vergleiche.
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-- `01` AFB II · Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.
-  - ☑ 80 785 − 15 478 = 55 307
-  - ☐ 50 685 − 29 639 = 21 046
-  - ☐ 35 098 − 6616 = 28 482
-  - ☐ 98 750 − 30 579 = 68 171
-  - ☑ 46 503 − 9855 = 46 648
-- `02` AFB II · Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.
-  - ☑ 36 104 − 13 195 = 32 909
-  - ☐ 52 507 − 9354 = 43 153
-  - ☑ 64 063 − 21 169 = 32 894
-  - ☑ 70 732 − 37 830 = 22 902
-  - ☐ 32 066 − 11 728 = 20 338
-- `03` AFB II · Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.
-  - ☐ 37 305 − 11 944 = 25 361
-  - ☑ 54 304 − 10 218 = 34 086
-  - ☐ 33 960 − 10 383 = 23 577
-  - ☐ 71 580 − 24 960 = 46 620
-  - ☑ 65 094 − 37 121 = 37 973
-- `04` AFB II · Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.
-  - ☑ 34 018 − 5928 = 18 090
-  - ☑ 63 304 − 6037 = 67 267
-  - ☐ 81 060 − 14 942 = 66 118
-  - ☑ 42 098 − 6417 = 45 681
-  - ☐ 76 023 − 33 938 = 42 085
-- `05` AFB II · Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.
-  - ☑ 50 146 − 13 550 = 46 596
-  - ☐ 96 604 − 50 983 = 45 621
-  - ☐ 59 350 − 18 965 = 40 385
-  - ☐ 82 508 − 14 963 = 67 545
-  - ☑ 62 021 − 31 349 = 40 672
-- `06` AFB II · Prüfe nur mit einem Überschlag, ohne genau zu rechnen: Welche Ergebnisse können nicht stimmen? Es können mehrere sein.
-  - ☐ 68 011 − 35 982 = 32 029
-  - ☐ 49 043 − 16 696 = 32 347
-  - ☑ 34 406 − 11 630 = 12 776
-  - ☑ 40 754 − 11 395 = 39 359
-  - ☐ 90 632 − 62 712 = 27 920
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf Hunderter runden heißt: Die Zehnerziffer entscheidet.
+
+- `01` AFB I · Überschlage 9025 − 4622. Runde beide Zahlen auf Hunderter. Lösung: **4400**. Typische Fehler: 4403 (ueberschlag-nicht-gerundet), 4000 (falsch-gerundet).
+- `02` AFB II · Bei einem Überschlag wird der Minuend aufgerundet und der Subtrahend abgerundet. Vergleiche den Überschlag mit dem genauen Ergebnis.
+  - ☐ Der Überschlag ist kleiner: Beim Runden geht immer etwas verloren.
+  - ☑ Der Überschlag ist größer: Es wird von mehr ausgegangen und weniger abgezogen.
+  - ☐ Das lässt sich ohne die Zahlen nicht sagen.
+  - ☐ Beide sind gleich: Die Rundungen heben sich auf.
+  - ☐ Der Überschlag ist kleiner: Der Subtrahend wird kleiner.
+- `03` AFB II · Ali rechnet 8578 − 6586 und erhält ein falsches Ergebnis. Die Probe ergibt: Ergebnis + 6586 = 8568. Um wie viel ist das Ergebnis zu klein? Lösung: **10**. Typische Fehler: 1982 (sach-schritt-vergessen).
+- `04` AFB III · Du willst eine Differenz möglichst genau überschlagen. Stelle eine Regel für das Runden auf.
+  - ☐ Runde nur den Subtrahenden. Der Minuend spielt für die Genauigkeit keine Rolle.
+  - ☐ Runde beide Zahlen auf dieselbe Stelle. Die Richtung ist gleichgültig.
+  - ☑ Runde Minuend und Subtrahend in dieselbe Richtung. Dann gleichen sich die Rundungsfehler teilweise aus.
+  - ☐ Runde den Minuenden auf und den Subtrahenden ab. Dann gleichen sich die Rundungsfehler aus.
+  - ☐ Runde immer beide Zahlen ab. Dann ist der Überschlag nie zu groß.
+- `05` AFB II · Bei einer Subtraktion ist die Differenz 2197. Die Probe lautet 2197 + ▢ = 4000. Bestimme den Subtrahenden. Lösung: **1803**. Typische Fehler: 6197 (sub-addiert), 2803 (ergaenzen-zu-viel).
+- `06` AFB III · Tarik prüft 74 − 28 = 46 mit der Rechnung 74 − 46. Ist das eine geeignete Probe? Wähle die richtige Begründung.
+  - ☐ Nein. 74 − 46 ergibt wieder 46.
+  - ☐ Ja. Bei der Subtraktion darf man die Zahlen beliebig vertauschen.
+  - ☐ Ja, aber nur, weil 74 eine gerade Zahl ist.
+  - ☑ Ja. Minuend − Differenz ergibt den Subtrahenden: 74 − 46 = 28.
+  - ☐ Nein. Eine Probe muss immer eine Addition sein.
 
 ## 5.3.3-S5: Ich kann Sachaufgaben zur Subtraktion lösen.
 
-### F · Förderniveau
+Grundlage, die F übt: Wegnehmen am Bild, Rechnung und Geschichte zuordnen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Gesucht ist ein Unterschied oder ein Rest. Dazu ziehst du die kleinere Zahl von der größeren ab. *Beispiel:* 300 Plätze, 120 besetzt: 300 − 120 = 180 Plätze sind frei. *Lösungsschritt:* Die Rechnung lautet 465 − 230. Beginne bei den Einern: 5 − 0 = 5. Schreibe 5 an die Einerstelle und rechne dann die Zehner.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB II · Im Kino gibt es 465 Plätze. 230 Plätze sind schon besetzt. Wie viele Plätze sind noch frei? Lösung: **235 Plätze**. Typische Fehler: 695 (sach-falsche-rechnung).
-- `02` AFB II · Ein Fahrrad kostet 718 €. Mila hat schon 485 € gespart. Wie viel Geld fehlt ihr noch? Lösung: **233 €**. Typische Fehler: 1203 (sach-falsche-rechnung), 333 (sub-uebertrag-vergessen).
-- `03` AFB II · Ein Buch hat 522 Seiten. Jonas hat schon 286 Seiten gelesen. Wie viele Seiten muss er noch lesen? Lösung: **236 Seiten**. Typische Fehler: 808 (sach-falsche-rechnung), 346 (sub-uebertrag-vergessen).
-- `04` AFB II · Der Wanderweg ist 317 km lang. Die Gruppe ist schon 240 km gewandert. Wie viele Kilometer liegen noch vor ihr? Lösung: **77 km**. Typische Fehler: 557 (sach-falsche-rechnung), 177 (sub-uebertrag-vergessen).
-- `05` AFB II · Ein Turm ist 233 m hoch, das Rathaus daneben 132 m. Wie viele Meter ist der Turm höher? Lösung: **101 m**. Typische Fehler: 365 (sach-falsche-rechnung).
-- `06` AFB II · In der Schulbücherei stehen 722 Bücher. 472 davon sind gerade ausgeliehen. Wie viele Bücher stehen im Regal? Lösung: **250 Bücher**. Typische Fehler: 1194 (sach-falsche-rechnung), 350 (sub-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es werden weniger. Das ist minus. *Beispiel:* 10 Äpfel, 3 Äpfel weg: 10 − 3. *Lösungsschritt:* Am Anfang sind es 14. Dann gehen 3 weg.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · In der Schale liegen 14 Nüsse. / Elif isst 3 Nüsse auf. / Welche Rechnung passt? _(Bild: Mengenbild: 14 Plättchen, 3 durchgestrichen)_
+  - ☐ 14 + 3
+  - ☐ 3 − 14
+  - ☑ 14 − 3
+- `02` AFB I · In der Schale liegen 16 Nüsse. / Finn isst 5 Nüsse auf. / Wie viele Nüsse sind noch da? _(Bild: Mengenbild: 16 Plättchen, 5 durchgestrichen)_ Lösung: **11**. Typische Fehler: 21 (sach-falsche-rechnung).
+- `03` AFB I · Im Bus sitzen 24 Kinder. / 10 Kinder steigen aus. / Wie viele Kinder sitzen noch im Bus? _(Bild: Streifenbild: Ganzes 24, Teile 10 und ?)_ Lösung: **14**. Typische Fehler: 34 (sach-falsche-rechnung), 23 (stellenwert).
+- `04` AFB I · Tom hat 30 Euro. / Tom gibt 5 Euro aus. / Wie viel Euro hat Tom noch? _(Bild: Zahlenstrahl 20 bis 40, Sprünge 30 nach 25 (− 5))_ Lösung: **25 Euro**. Typische Fehler: 35 (sach-falsche-rechnung).
+- `05` AFB II · Die Rechnung ist 15 − 8. / Welche Geschichte passt? _(Bild: Mengenbild: 15 Plättchen, 8 durchgestrichen)_
+  - ☐ 15 Ballons. / 8 Ballons kommen dazu.
+  - ☐ 8 Kinder. / Jedes Kind hat 15 Ballons.
+  - ☑ 15 Ballons. / 8 Ballons platzen.
+- `06` AFB I · In der Kiste sind 48 Bälle. / Die Kinder holen 8 Bälle heraus. / Wie viele Bälle bleiben in der Kiste? _(Bild: Streifenbild: Ganzes 48, Teile 8 und ?)_ Lösung: **40**. Typische Fehler: 56 (sach-falsche-rechnung).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Gesucht ist ein Unterschied oder ein Rest. Dazu ziehst du die kleinere Zahl von der größeren ab. *Beispiel:* 300 Plätze, 120 besetzt: 300 − 120 = 180 Plätze sind frei. *Lösungsschritt:* Die Rechnung lautet 5192 − 1116. Beginne bei den Einern: 2 − 6 geht nicht. Rechne 12 − 6 = 6 und merke dir den Übertrag 1 für die Zehner.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB II · Im Stadion gibt es 5192 Plätze. 1116 Karten wurden verkauft. Wie viele Plätze bleiben frei? Lösung: **4076 Plätze**. Typische Fehler: 6308 (sach-falsche-rechnung), 4086 (sub-uebertrag-vergessen).
-- `02` AFB II · Ein gebrauchtes Auto kostet 7928 €. Familie Yilmaz hat 3326 € gespart. Wie viel Geld fehlt noch? Lösung: **4602 €**. Typische Fehler: 11254 (sach-falsche-rechnung).
-- `03` AFB II · Die Zugspitze ist 2962 m hoch. Eine Hütte liegt auf 1201 m Höhe. Wie viele Höhenmeter sind es von der Hütte bis zum Gipfel? Lösung: **1761 m**. Typische Fehler: 4163 (sach-falsche-rechnung).
-- `04` AFB II · Ein Lkw darf 7360 kg laden. 1662 kg sind schon geladen. Wie viele Kilogramm dürfen noch dazu? Lösung: **5698 kg**. Typische Fehler: 9022 (sach-falsche-rechnung), 6708 (sub-uebertrag-vergessen).
-- `05` AFB II · Ein Freibad hatte im Juli 6690 Besucher. Im August waren es 3543 Besucher weniger. Wie viele Besucher kamen im August? Lösung: **3147 Besucher**. Typische Fehler: 10233 (sach-falsche-rechnung), 3157 (sub-uebertrag-vergessen).
-- `06` AFB II · Ein Flug ist 3970 km lang. 2465 km sind schon geschafft. Wie viele Kilometer sind es noch? Lösung: **1505 km**. Typische Fehler: 6435 (sach-falsche-rechnung), 1515 (sub-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das ganze Buch ist der lange Streifen. Die gelesenen Seiten gehen weg. *Beispiel:* 70 Seiten, 20 gelesen: 70 − 20 = 50. *Lösungsschritt:* Rechne 93 − 30.
 
-### M · Mittleres Niveau
+- `01` AFB I · Ein Buch hat 93 Seiten. / Ben hat schon 30 Seiten gelesen. / Wie viele Seiten fehlen noch? _(Bild: Streifenbild: Ganzes 93, Teile 30 und ?)_ Lösung: **63 Seiten**. Typische Fehler: 123 (sach-falsche-rechnung).
+- `02` AFB I · Im Kino gibt es 99 Plätze. / 61 Plätze sind besetzt. / Wie viele Plätze sind noch frei? _(Bild: Streifenbild: Ganzes 99, Teile 61 und ?)_ Lösung: **38 Plätze**. Typische Fehler: 160 (sach-falsche-rechnung).
+- `03` AFB II · Ben hat 77 Karten. / Ida hat 94 Karten. / Wie viele Karten hat Ida mehr als Ben? _(Bild: Vergleichsbild: Ida 94, Ben 77, Unterschied ?)_ Lösung: **17 Karten**. Typische Fehler: 171 (sach-falsche-rechnung), 23 (sub-kleiner-von-groesser).
+- `04` AFB I · Eine Jacke kostet 67 Euro. / Im Angebot ist sie 24 Euro billiger. / Wie viel Euro kostet die Jacke jetzt? _(Bild: Streifenbild: Ganzes 67, Teile 24 und ?)_ Lösung: **43 Euro**. Typische Fehler: 91 (sach-falsche-rechnung).
+- `05` AFB II · Jonas ist 13 Jahre alt. / Jonas ist 4 Jahre älter als der Bruder. / Wie alt ist der Bruder? / Welche Rechnung passt? _(Bild: Vergleichsbild: Jonas 13, Bruder ?, Unterschied 4)_
+  - ☑ 13 − 4
+  - ☐ 4 − 13
+  - ☐ 13 + 4
+- `06` AFB III · Im Bus sind 62 Menschen. / 16 Menschen steigen aus. / Ole rechnet 62 + 16 = 78. / Stimmt das? _(Bild: Streifenbild: Ganzes 62, Teile 16 und ?)_
+  - ☑ Falsch. / Aussteigen heißt minus. / 62 − 16 = 46.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Man muss 16 − 62 rechnen.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Schritt für Schritt: Das Ergebnis der ersten Frage brauchst du für die zweite. *Beispiel:* 1000 € auf dem Konto, erst 300 € weg, dann 200 € weg: 1000 − 300 = 700, dann 700 − 200 = 500. *Lösungsschritt:* Für die erste Frage rechnest du 19 272 − 8275.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Auf dem Konto eines Sportvereins sind 19 272 €. Zuerst bezahlt der Verein 8275 € für neue Tore, danach 6267 € für einen Rasenmäher.
-  - a) Wie viel Geld ist nach dem Kauf der Tore noch auf dem Konto? **10997 €**.
-  - b) Wie viel Geld ist nach dem Kauf des Rasenmähers noch auf dem Konto? **4730 €**. Typische Fehler: 13005 (sach-schritt-vergessen).
-- `02` AFB II · Ein Schiff hat 16 258 Container geladen. Im ersten Hafen werden 6410 Container entladen, im zweiten Hafen 1628.
-  - a) Wie viele Container sind nach dem ersten Hafen noch an Bord? **9848 Container**.
-  - b) Wie viele Container sind nach dem zweiten Hafen noch an Bord? **8220 Container**. Typische Fehler: 14630 (sach-schritt-vergessen).
-- `03` AFB II · Eine Radtour ist 42 674 m lang. Bis zur ersten Pause fährt die Klasse 16 227 m, bis zur zweiten Pause weitere 4355 m.
-  - a) Wie viele Meter sind es nach der ersten Pause noch? **26447 m**.
-  - b) Wie viele Meter sind es nach der zweiten Pause noch? **22092 m**. Typische Fehler: 38319 (sach-schritt-vergessen).
-- `04` AFB II · Auf dem Konto eines Sportvereins sind 38 679 €. Zuerst bezahlt der Verein 18 273 € für neue Tore, danach 3591 € für einen Rasenmäher.
-  - a) Wie viel Geld ist nach dem Kauf der Tore noch auf dem Konto? **20406 €**.
-  - b) Wie viel Geld ist nach dem Kauf des Rasenmähers noch auf dem Konto? **16815 €**. Typische Fehler: 35088 (sach-schritt-vergessen).
-- `05` AFB II · Ein Schiff hat 22 247 Container geladen. Im ersten Hafen werden 10 398 Container entladen, im zweiten Hafen 4840.
-  - a) Wie viele Container sind nach dem ersten Hafen noch an Bord? **11849 Container**.
-  - b) Wie viele Container sind nach dem zweiten Hafen noch an Bord? **7009 Container**. Typische Fehler: 17407 (sach-schritt-vergessen).
-- `06` AFB II · Eine Radtour ist 37 838 m lang. Bis zur ersten Pause fährt die Klasse 8255 m, bis zur zweiten Pause weitere 12 030 m.
-  - a) Wie viele Meter sind es nach der ersten Pause noch? **29583 m**.
-  - b) Wie viele Meter sind es nach der zweiten Pause noch? **17553 m**. Typische Fehler: 25808 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gesucht ist der Unterschied zwischen dem Betrag, der gebraucht wird, und dem Betrag, der da ist. *Lösungsschritt:* Rechne 250 − 151.
 
-### E · Erweitertes Niveau
+- `01` AFB I · Die Klasse 5d braucht 250 € für den Ausflug. In der Klassenkasse sind 151 €. Berechne den Betrag, der fehlt. Lösung: **99 €**. Typische Fehler: 401 (sach-falsche-rechnung), 101 (sub-kleiner-von-groesser).
+- `02` AFB II · Ein Bus fährt mit 47 Fahrgästen los. An der ersten Haltestelle steigen 12 aus, an der zweiten 8.
+  - a) Berechne die Zahl der Fahrgäste nach der ersten Haltestelle. **35**. Typische Fehler: 59 (sach-falsche-rechnung).
+  - b) Berechne die Zahl der Fahrgäste nach der zweiten Haltestelle. **27**. Typische Fehler: 39 (sach-schritt-vergessen), 43 (sub-klammerfehler).
+- `03` AFB II · Preise im Freibad: Erwachsene 10 €, Kinder 6 €, Familienkarte 28 €. Familie Kaya kommt mit 2 Erwachsenen und 2 Kindern und kauft die Familienkarte. Berechne, wie viel sie gegenüber Einzelkarten spart. Lösung: **4 €**. Typische Fehler: 32 (sach-schritt-vergessen).
+- `04` AFB I · Das Hochhaus ist 282 m hoch, der Aussichtsturm 163 m. Berechne den Höhenunterschied. Lösung: **119 m**. Typische Fehler: 445 (sach-falsche-rechnung), 121 (sub-kleiner-von-groesser).
+- `05` AFB II · Emre hat 90 €. Emre kauft ein Spiel für 33 € und ein Buch für 15 €. Welcher Rechenausdruck beschreibt das Restgeld?
+  - ☐ 90 − 33 + 15
+  - ☐ (90 − 33) + 15
+  - ☐ 90 + 33 − 15
+  - ☑ 90 − (33 + 15)
+- `06` AFB III · Ein Aufzug trägt 600 kg. Darin stehen 5 Personen mit zusammen 395 kg. Zwei weitere Personen mit 93 kg und 120 kg wollen einsteigen. Lena sagt: „Das passt.“ Beurteile die Aussage.
+  - ☐ Richtig: 600 − 395 = 205. Es ist noch viel Platz.
+  - ☑ Falsch: 395 + 93 + 120 = 608. Das sind 8 kg zu viel.
+  - ☐ Falsch: In einem Aufzug dürfen höchstens 5 Personen stehen.
+  - ☐ Richtig: 600 − 395 − 93 = 112. Es bleibt noch etwas übrig.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nicht jede Zahl im Text wird gebraucht. Überlege, welche Angaben zur Frage gehören. *Beispiel:* 5000 € sind eingeplant, 1200 € und 800 € werden ausgegeben, es gibt 40 Spielplätze: 5000 − 1200 − 800 = 3000 €. Die 40 braucht man nicht. *Lösungsschritt:* Ziehe zuerst die erste Menge ab: 849 860 − 29 383 = 820 477.
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-- `01` AFB III · Ein Wasserspeicher fasst 849 860 Liter. Im Juli werden 29 383 Liter entnommen, im August 221 394 Liter. Der Speicher ist 91 Jahre alt. Wie viele Liter sind Ende August noch im Speicher, wenn er Anfang Juli voll war? Lösung: **599083 Liter**. Typische Fehler: 820477 (sach-schritt-vergessen), 598992 (sach-unnoetige-angabe), 1041871 (sub-klammerfehler).
-- `02` AFB III · Eine Stadt hat 887 570 € für ihre Spielplätze eingeplant. Für neue Geräte zahlt sie 71 416 €, für die Bepflanzung 70 968 €. In der Stadt gibt es 48 Spielplätze. Wie viel Geld ist noch übrig? Lösung: **745186 €**. Typische Fehler: 816154 (sach-schritt-vergessen), 745138 (sach-unnoetige-angabe), 887122 (sub-klammerfehler).
-- `03` AFB III · Eine Druckerei soll 769 805 Hefte drucken. Am Montag druckt sie 125 510 Hefte, am Dienstag 118 559. Jedes Heft hat 57 Seiten. Wie viele Hefte fehlen noch? Lösung: **525736 Hefte**. Typische Fehler: 644295 (sach-schritt-vergessen), 525679 (sach-unnoetige-angabe), 762854 (sub-klammerfehler).
-- `04` AFB III · Ein Wasserspeicher fasst 450 799 Liter. Im Juli werden 47 206 Liter entnommen, im August 132 360 Liter. Der Speicher ist 78 Jahre alt. Wie viele Liter sind Ende August noch im Speicher, wenn er Anfang Juli voll war? Lösung: **271233 Liter**. Typische Fehler: 403593 (sach-schritt-vergessen), 271155 (sach-unnoetige-angabe), 535953 (sub-klammerfehler).
-- `05` AFB III · Eine Stadt hat 571 348 € für ihre Spielplätze eingeplant. Für neue Geräte zahlt sie 189 149 €, für die Bepflanzung 160 060 €. In der Stadt gibt es 32 Spielplätze. Wie viel Geld ist noch übrig? Lösung: **222139 €**. Typische Fehler: 382199 (sach-schritt-vergessen), 222107 (sach-unnoetige-angabe), 542259 (sub-klammerfehler).
-- `06` AFB III · Eine Druckerei soll 558 029 Hefte drucken. Am Montag druckt sie 96 737 Hefte, am Dienstag 155 053. Jedes Heft hat 36 Seiten. Wie viele Hefte fehlen noch? Lösung: **306239 Hefte**. Typische Fehler: 461292 (sach-schritt-vergessen), 306203 (sach-unnoetige-angabe), 616345 (sub-klammerfehler).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nicht jede Angabe im Text wird gebraucht.
+
+- `01` AFB I · Ein Schwimmbad lässt 430 Menschen gleichzeitig ins Wasser und hat 11 Duschen. Um 14 Uhr sind 289 Menschen im Wasser. Berechne, wie viele noch hineindürfen. Lösung: **141**. Typische Fehler: 130 (sach-unnoetige-angabe), 719 (sach-falsche-rechnung).
+- `02` AFB II · Lena hat 100 €. Lena kauft Schuhe für 46 € und zwei T-Shirts für je 12 €. An der Kasse gibt es 3 € Rabatt. Berechne das Restgeld. Lösung: **33 €**. Typische Fehler: 45 (sach-schritt-vergessen), 27 (sach-falsche-rechnung), 30 (sach-schritt-vergessen).
+- `03` AFB II · Ein Zug hat 330 Sitzplätze. In Stuttgart steigen 84 Personen aus, niemand steigt ein. Gesucht ist die Zahl der freien Sitzplätze nach dem Halt. Welche Angabe fehlt?
+  - ☐ Es fehlt nichts: 330 − 84 = 246.
+  - ☐ der Preis einer Fahrkarte
+  - ☐ die Zahl der Wagen des Zuges
+  - ☑ die Zahl der Personen, die vor dem Halt im Zug saßen
+  - ☐ die Uhrzeit der Ankunft
+- `04` AFB III · Tom liest ein Buch: am Montag 20 Seiten, am Dienstag 10 Seiten mehr als am Montag, am Mittwoch 5 Seiten weniger als am Dienstag. Danach sind noch 40 Seiten übrig. Bestimme, wie viele Seiten das Buch hat. Lösung: **115 Seiten**. Typische Fehler: 75 (sach-schritt-vergessen).
+- `05` AFB II · Ali hat 93 €. Jede Woche gibt Ali 9 € aus. Nach wie vielen Wochen sind es zum ersten Mal weniger als 50 €? Lösung: **5 Wochen**. Typische Fehler: 4 (sach-schritt-vergessen).
+- `06` AFB III · Fermi-Frage: Wie viele Schultage hat ein Jahr ungefähr? Ein Jahr hat 365 Tage. Überlege, welche Tage du abziehen musst.
+  - ☐ etwa 350
+  - ☐ etwa 100
+  - ☐ etwa 300
+  - ☑ etwa 190
 
 ## 5.3.4-B1: Ich kann Rechenausdrücke mit Klammern berechnen.
 
-### F · Förderniveau
+Grundlage, die F übt: In zwei Schritten rechnen: erst zusammenfassen, dann weiter
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Was in der Klammer steht, wird zuerst berechnet. *Beispiel:* 50 − (20 + 10): Die Klammer ergibt 30, dann 50 − 30 = 20. *Lösungsschritt:* Berechne zuerst die Klammer: 13 + 14 = 27.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Berechne: 89 − (13 + 14) Lösung: **62**. Typische Fehler: 90 (klammer-ignoriert).
-- `02` AFB I · Berechne: 72 − (27 − 9) Lösung: **54**. Typische Fehler: 36 (klammer-ignoriert).
-- `03` AFB I · Berechne: 84 − (13 + 10) Lösung: **61**. Typische Fehler: 81 (klammer-ignoriert).
-- `04` AFB I · Berechne: 50 − (47 − 29) Lösung: **32**.
-- `05` AFB I · Berechne: 94 − (17 + 27) Lösung: **50**. Typische Fehler: 104 (klammer-ignoriert).
-- `06` AFB I · Berechne: 63 − (48 − 24) Lösung: **39**.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die beiden kleinen Teile gehen zusammen weg. *Beispiel:* Erst 3 + 2 = 5. Dann 10 − 5 = 5. *Lösungsschritt:* 3 + 5 = 8.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Rechne in 2 Schritten. / Erst: 3 + 5 = ▢ / Dann: 10 minus dieses Ergebnis = ▢ _(Bild: Streifenbild: Ganzes 10, Teile 3 und 5 und ?)_ Lösung: a = **8**, b = **2**
+- `02` AFB I · Ida hat 13 Euro. / Ein Heft kostet 3 Euro. / Ein Stift kostet 4 Euro. / Ida kauft beides. / Wie viel Euro bleiben? _(Bild: Streifenbild: Ganzes 13, Teile 3 und 4 und ?)_ Lösung: **6 Euro**. Typische Fehler: 10 (sach-schritt-vergessen), 14 (sub-klammerfehler).
+- `03` AFB I · Rechne in 2 Schritten. / Erst: 5 + 2 = ▢ / Dann: 17 minus dieses Ergebnis = ▢ _(Bild: Streifenbild: Ganzes 17, Teile 5 und 2 und ?)_ Lösung: a = **7**, b = **10**
+- `04` AFB I · Rechne erst 3 + 6. / Ziehe das Ergebnis von 20 ab. _(Bild: Streifenbild: Ganzes 20, Teile 3 und 6 und ?)_ Lösung: **11**. Typische Fehler: 9 (sach-schritt-vergessen), 29 (sub-addiert).
+- `05` AFB II · Beide Wege haben dasselbe Ergebnis. / Weg 1: 16 − 5 − 2 = ▢ / Weg 2: 5 + 2 = ▢ / und dann 16 − 7 = ▢ _(Bild: Streifenbild: Ganzes 16, Teile 5 und 2 und ?)_ Lösung: a = **9**, b = **7**, c = **9**
+- `06` AFB I · Rechne erst 20 + 5. / Ziehe das Ergebnis von 50 ab. _(Bild: Streifenbild: Ganzes 50, Teile 20 und 5 und ?)_ Lösung: **25**. Typische Fehler: 35 (sub-klammerfehler).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Was in der Klammer steht, wird zuerst berechnet. *Beispiel:* 50 − (20 + 10): Die Klammer ergibt 30, dann 50 − 30 = 20. *Lösungsschritt:* Berechne zuerst die Klammer: 405 + 164 = 569.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Berechne: 821 − (405 + 164) Lösung: **252**. Typische Fehler: 580 (klammer-ignoriert).
-- `02` AFB I · Berechne: 986 − (331 − 102) Lösung: **757**. Typische Fehler: 553 (klammer-ignoriert).
-- `03` AFB I · Berechne: 374 + (474 − 328) Lösung: **520**. Typische Fehler: 1176 (klammer-ignoriert).
-- `04` AFB I · Berechne: 638 − (121 + 74) Lösung: **443**. Typische Fehler: 591 (klammer-ignoriert).
-- `05` AFB I · Berechne: 530 − (411 − 172) Lösung: **291**.
-- `06` AFB I · Berechne: 318 + (258 − 77) Lösung: **499**. Typische Fehler: 653 (klammer-ignoriert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst aus, was in der Klammer steht. *Beispiel:* 20 − (4 + 6): Klammer 4 + 6 = 10. Dann 20 − 10 = 10. *Lösungsschritt:* Klammer: 3 + 7 = 10.
 
-### M · Mittleres Niveau
+- `01` AFB I · Berechne. / 50 − (3 + 7) _(Bild: Streifenbild: Ganzes 50, Teile 3 und 7 und ?)_ Lösung: **40**. Typische Fehler: 54 (klammer-ignoriert).
+- `02` AFB I · Berechne. / (19 + 15) − 7 Lösung: **27**. Typische Fehler: 41 (sub-addiert), 34 (sach-schritt-vergessen).
+- `03` AFB II · 45 − (12 + 8) / Klammer zuerst: 12 + 8 = ▢ / Dann 45 minus dieses Ergebnis: ▢ _(Bild: Streifenbild: Ganzes 45, Teile 12 und 8 und ?)_ Lösung: a = **20**, b = **25**
+- `04` AFB I · Berechne. / 60 − (25 − 5) Lösung: **40**. Typische Fehler: 30 (klammer-ignoriert).
+- `05` AFB II · Welche Rechnung hat dasselbe Ergebnis? / 40 − (10 + 5) _(Bild: Streifenbild: Ganzes 40, Teile 10 und 5 und ?)_
+  - ☐ 40 + 15
+  - ☐ 30 + 5
+  - ☑ 40 − 15
+- `06` AFB III · Ben rechnet 50 − (10 + 5) so: / 50 − 10 = 40 / 40 + 5 = 45 / Stimmt das?
+  - ☑ Falsch. / Die Klammer kommt zuerst. / Richtig ist 35.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Richtig ist 65.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst beide Klammern einzeln. Verrechne danach die beiden Ergebnisse. *Beispiel:* (90 − 30) − (20 + 10): 60 − 30 = 30. *Lösungsschritt:* Die erste Klammer: 822 + 303 = 1125.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB I · Berechne: (822 + 303) − (167 − 36) Lösung: **994**. Typische Fehler: 922 (klammer-ignoriert).
-- `02` AFB I · Berechne: (807 − 303) − (87 + 50) Lösung: **367**. Typische Fehler: 467 (klammer-ignoriert).
-- `03` AFB I · Berechne für jede Zeile den Wert von a − (b + c). 
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Klammer. *Lösungsschritt:* Klammer: 80 + 30 = 110.
 
-  | a | b | c | a − (b + c) |
-  |---|---|---|---|
-  | 761 | 111 | 131 | **519** |
-  | 929 | 170 | 80 | **679** |
-  | 648 | 219 | 74 | **355** |
-
-- `04` AFB I · Berechne: (752 − 327) − (100 + 68) Lösung: **257**. Typische Fehler: 393 (klammer-ignoriert).
-- `05` AFB I · Berechne: (715 + 355) − (178 − 142) Lösung: **1034**. Typische Fehler: 750 (klammer-ignoriert).
-- `06` AFB I · Berechne für jede Zeile den Wert von a − (b + c). 
+- `01` AFB I · Berechne: 240 − (80 + 30) Lösung: **130**. Typische Fehler: 190 (klammer-ignoriert).
+- `02` AFB II · Berechne: (400 − 120) − (95 − 15) Lösung: **200**. Typische Fehler: 170 (klammer-ignoriert).
+- `03` AFB II · Setze die Zahlen für a, b und c ein und berechne. 
 
   | a | b | c | a − (b + c) |
   |---|---|---|---|
-  | 791 | 196 | 130 | **465** |
-  | 898 | 248 | 83 | **567** |
-  | 741 | 195 | 138 | **408** |
+  | 80 | 30 | 25 | **25** |
+  | 120 | 55 | 35 | **30** |
+  | 200 | 90 | 50 | **60** |
 
+- `04` AFB I · Berechne: 600 − (290 − 65) Lösung: **375**. Typische Fehler: 245 (klammer-ignoriert).
+- `05` AFB II · In 80 − 20 + 10 = 50 fehlt eine Klammer. Wo muss sie stehen, damit die Gleichung stimmt?
+  - ☐ Die Gleichung stimmt auch ohne Klammer.
+  - ☑ 80 − (20 + 10)
+  - ☐ (80 − 20 + 10)
+  - ☐ (80 − 20) + 10
+- `06` AFB III · „a − (b + c) hat immer denselben Wert wie a − b − c.“ Beurteile die Aussage.
+  - ☐ Falsch. Beispiel: 90 − (30 + 20) = 40, aber 90 − 30 − 20 = 80.
+  - ☑ Richtig. Beide Male werden b und c abgezogen. Beispiel: 90 − (30 + 20) = 40 und 90 − 30 − 20 = 40.
+  - ☐ Das stimmt nur, wenn b und c gleich groß sind.
+  - ☐ Falsch. Klammern verändern das Ergebnis immer.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei Klammern in Klammern rechnest du von innen nach außen: erst die runde Klammer, dann die eckige. *Beispiel:* 100 − [50 − (20 + 10)]: runde Klammer 30, eckige Klammer 50 − 30 = 20, dann 100 − 20 = 80. *Lösungsschritt:* Berechne zuerst die runde Klammer: 618 − 362 = 256.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei verschachtelten Klammern rechnest du von innen nach außen.
 
-- `01` AFB II · Berechne: 6984 − [4749 + (618 − 362)] Lösung: **1979**. Typische Fehler: 2491 (klammer-ignoriert).
-- `02` AFB II · Berechne: 6101 − [4795 − (832 + 246)] Lösung: **2384**. Typische Fehler: 720 (klammer-ignoriert).
-- `03` AFB II · Berechne: 6185 − [4144 + (774 − 369)] Lösung: **1636**. Typische Fehler: 2446 (klammer-ignoriert).
-- `04` AFB II · Berechne: 4111 − [4589 − (726 + 232)] Lösung: **480**.
-- `05` AFB II · Berechne: 4583 − [3639 + (560 − 557)] Lösung: **941**. Typische Fehler: 947 (klammer-ignoriert).
-- `06` AFB II · Berechne: 3160 − [3326 − (622 + 138)] Lösung: **594**.
+- `01` AFB I · Berechne: 1000 − [500 − (190 + 80)] Lösung: **770**. Typische Fehler: 230 (klammer-ignoriert), 390 (klammer-ignoriert).
+- `02` AFB II · In 80 − 40 − 20 + 10 darfst du ein Klammerpaar setzen. Welcher Term hat den größten Wert?
+  - ☐ 80 − 40 − (20 + 10)
+  - ☐ (80 − 40) − 20 + 10
+  - ☐ 80 − (40 + 20) + 10
+  - ☑ 80 − (40 − 20) + 10
+  - ☐ 80 − (40 − 20 + 10)
+- `03` AFB II · Bestimme die fehlende Zahl: 300 − (▢ + 40) = 180 Lösung: a = **80**
+- `04` AFB III · 50 − (20 − 5) = 35 und 50 − 20 + 5 = 35. Ebenso 90 − (40 − 10) = 60 und 90 − 40 + 10 = 60. Stelle die Regel für a − (b − c) auf.
+  - ☐ a − (b − c) = a − b − c: Die Klammer darf man einfach weglassen.
+  - ☑ a − (b − c) = a − b + c: Es wird um c weniger abgezogen, also kommt c wieder dazu.
+  - ☐ a − (b − c) = (a − b) − c: Die Klammer darf man verschieben.
+  - ☐ Es gibt keine Regel. Jedes Beispiel muss einzeln berechnet werden.
+  - ☐ a − (b − c) = a + b − c: Das Minus vor der Klammer wird zu einem Plus.
+- `05` AFB II · In 100 − 50 − 30 − 10 darfst du genau ein Klammerpaar setzen. Bestimme den größten Wert, den du so erreichen kannst. Lösung: **90**. Typische Fehler: 70 (klammer-falsch-gesetzt), 10 (klammer-ignoriert).
+- `06` AFB III · Jonas behauptet: „Eine Klammer hinter einem Plus darf ich weglassen. Es gilt immer a + (b − c) = a + b − c.“ Wähle die richtige Begründung.
+  - ☐ Das stimmt nur, wenn c kleiner ist als a.
+  - ☐ Das stimmt nie. Klammern darf man nicht weglassen.
+  - ☐ Das stimmt nie. Beim Weglassen wird aus dem Minus ein Plus.
+  - ☐ Das stimmt immer, denn auch a − (b − c) = a − b − c.
+  - ☑ Das stimmt immer. In beiden Termen kommt b dazu und c geht weg. Beispiel: 50 + (20 − 5) = 65 und 50 + 20 − 5 = 65.
 
 ## 5.3.4-B2: Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden.
 
-### F · Förderniveau
+Grundlage, die F übt: Geschichte mit zwei Schritten der passenden Rechnung zuordnen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe oder Differenz, von der im Text die Rede ist, gehört in die Klammer. *Beispiel:* „Subtrahiere von 80 die Summe von 20 und 10“: Die Summe ist (20 + 10), also 80 − (20 + 10). *Lösungsschritt:* Welche zwei Zahlen werden zuerst zusammengefasst? Es sind 24 und 13.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB II · Welcher Rechenausdruck passt? „Subtrahiere von 93 die Summe der Zahlen 24 und 13.“
-  - ☑ 93 − (24 + 13)
-  - ☐ 93 + (24 − 13)
-  - ☐ 93 − (24 − 13)
-  - ☐ (93 − 24) + 13
-- `02` AFB II · Welcher Rechenausdruck passt? „Subtrahiere von 75 die Differenz der Zahlen 39 und 14.“
-  - ☐ (75 − 39) + 14
-  - ☐ 75 − (39 + 14)
-  - ☐ 75 + (39 − 14)
-  - ☑ 75 − (39 − 14)
-- `03` AFB II · Welcher Rechenausdruck passt? „Addiere zu 85 die Differenz der Zahlen 23 und 16.“
-  - ☐ 85 − (23 − 16)
-  - ☐ (85 − 23) + 16
-  - ☐ 85 − (23 + 16)
-  - ☑ 85 + (23 − 16)
-- `04` AFB II · Welcher Rechenausdruck passt? „Subtrahiere von 95 die Summe der Zahlen 31 und 7.“
-  - ☐ (95 − 31) + 7
-  - ☐ 95 + (31 − 7)
-  - ☑ 95 − (31 + 7)
-  - ☐ 95 − (31 − 7)
-- `05` AFB II · Welcher Rechenausdruck passt? „Subtrahiere von 57 die Differenz der Zahlen 29 und 9.“
-  - ☐ (57 − 29) + 9
-  - ☐ 57 − (29 + 9)
-  - ☑ 57 − (29 − 9)
-  - ☐ 57 + (29 − 9)
-- `06` AFB II · Welcher Rechenausdruck passt? „Addiere zu 71 die Differenz der Zahlen 30 und 8.“
-  - ☐ 71 − (30 − 8)
-  - ☑ 71 + (30 − 8)
-  - ☐ 71 − (30 + 8)
-  - ☐ (71 − 30) + 8
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Aussteigen heißt minus. Hier steigen 2-mal Kinder aus. *Beispiel:* 8 Kinder. 2 steigen aus, dann 1: 8 − 2 − 1. *Lösungsschritt:* Erst gehen 5 weg. Dann gehen 2 weg.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Im Bus sind 9 Kinder. / 5 Kinder steigen aus. / Dann steigen noch 2 Kinder aus. / Welche Rechnung passt? _(Bild: Mengenbild: 9 Plättchen, 7 durchgestrichen)_
+  - ☐ 9 − 5 + 2
+  - ☐ 9 + 5 + 2
+  - ☑ 9 − 5 − 2
+- `02` AFB I · Im Bus sind 6 Kinder. / 5 Kinder steigen ein. / Dann steigen 2 Kinder aus. / Welche Rechnung passt? _(Bild: Mengenbild: 6 Plättchen, 5 dazu, 2 durchgestrichen)_
+  - ☐ 6 − 5 − 2
+  - ☐ 6 + 5 + 2
+  - ☑ 6 + 5 − 2
+- `03` AFB I · Auf dem Tisch liegen 15 Nüsse. / Ida isst 4 Nüsse. / Noah isst 3 Nüsse. / Wie viele Nüsse bleiben? _(Bild: Mengenbild: 15 Plättchen, 7 durchgestrichen)_ Lösung: **8**. Typische Fehler: 11 (sach-schritt-vergessen), 14 (sub-klammerfehler).
+- `04` AFB I · Elif hat 6 Sticker. / Elif bekommt 3 Sticker dazu. / Dann bekommt Elif noch 4 Sticker. / Wie viele Sticker hat Elif jetzt? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 6 nach 9 (+ 3), 9 nach 13 (+ 4))_ Lösung: **13**. Typische Fehler: 9 (sach-schritt-vergessen).
+- `05` AFB II · Die Rechnung ist 12 − 4 − 2. / Welche Geschichte passt? _(Bild: Mengenbild: 12 Plättchen, 6 durchgestrichen)_
+  - ☑ 12 Kekse. / Mia isst 4 Kekse. / Tom isst 2 Kekse.
+  - ☐ 12 Kekse. / Mia isst 4 Kekse. / Tom bringt 2 Kekse.
+  - ☐ 12 Kekse. / Mia bringt 4 Kekse. / Tom bringt 2 Kekse.
+- `06` AFB I · Emre hat 9 Murmeln. / Emre gewinnt 4 Murmeln dazu. / Dann verliert Emre 2 Murmeln. / Wie viele Murmeln hat Emre jetzt? _(Bild: Mengenbild: 9 Plättchen, 4 dazu, 2 durchgestrichen)_ Lösung: **11**. Typische Fehler: 13 (sach-schritt-vergessen), 15 (sach-falsche-rechnung).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe oder Differenz, von der im Text die Rede ist, gehört in die Klammer und wird zuerst berechnet. *Beispiel:* „Subtrahiere von 80 die Summe von 20 und 10“: 80 − (20 + 10) = 80 − 30 = 50. *Lösungsschritt:* Der Rechenausdruck lautet 838 − (163 + 36).
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB II · Subtrahiere von 838 die Summe der Zahlen 163 und 36. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **639**. Typische Fehler: 711 (klammer-ignoriert).
-- `02` AFB II · Subtrahiere von 429 die Differenz der Zahlen 122 und 107. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **414**. Typische Fehler: 200 (klammer-ignoriert).
-- `03` AFB II · Addiere zu 438 die Differenz der Zahlen 170 und 83. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **525**. Typische Fehler: 691 (klammer-ignoriert).
-- `04` AFB II · Subtrahiere von 435 die Summe der Zahlen 210 und 39. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **186**. Typische Fehler: 264 (klammer-ignoriert).
-- `05` AFB II · Subtrahiere von 871 die Differenz der Zahlen 191 und 46. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **726**. Typische Fehler: 634 (klammer-ignoriert).
-- `06` AFB II · Addiere zu 693 die Differenz der Zahlen 200 und 74. Schreibe den Rechenausdruck mit Klammer auf und berechne ihn. Lösung: **819**. Typische Fehler: 967 (klammer-ignoriert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Preise gehen weg. In der Klammer steht, was zusammen weggeht. *Beispiel:* 30 Euro. Ein Heft für 4 Euro, ein Ball für 6 Euro: 30 − (4 + 6). *Lösungsschritt:* Zusammen gehen 11 + 20 Euro weg.
 
-### M · Mittleres Niveau
+- `01` AFB I · Mara hat 50 Euro. / Mara kauft ein Buch für 11 Euro. / Mara kauft ein Spiel für 20 Euro. / Welche Rechnung passt? _(Bild: Streifenbild: Ganzes 50, Teile 11 und 20 und ?)_
+  - ☑ 50 − (11 + 20)
+  - ☐ (50 + 11) − 20
+  - ☐ 50 − 11 + 20
+- `02` AFB I · Noah hat 40 Euro. / Noah kauft einen Ball für 16 Euro. / Noah kauft ein Heft für 10 Euro. / Wie viel Euro bleiben? _(Bild: Streifenbild: Ganzes 40, Teile 16 und 10 und ?)_ Lösung: **14 Euro**. Typische Fehler: 34 (klammer-ignoriert), 24 (sach-schritt-vergessen).
+- `03` AFB II · Die Rechnung ist 50 − (15 + 5). / Wie viel wird zusammen abgezogen? ▢ / Was ist das Ergebnis? ▢ _(Bild: Streifenbild: Ganzes 50, Teile 15 und 5 und ?)_ Lösung: a = **20**, b = **30**
+- `04` AFB I · Addiere 8 und 3. / Ziehe das Ergebnis von 30 ab. / Welche Rechnung passt?
+  - ☐ (8 + 3) − 30
+  - ☐ 30 − 8 + 3
+  - ☑ 30 − (8 + 3)
+- `05` AFB II · Die Rechnung ist 30 − (7 + 13). / Welche Geschichte passt? _(Bild: Streifenbild: Ganzes 30, Teile 7 und 13 und ?)_
+  - ☐ 30 Plätze. / 7 Kinder setzen sich. / 13 Plätze kommen dazu.
+  - ☐ 7 Kinder und 13 Erwachsene. / 30 Menschen kommen dazu.
+  - ☑ 30 Plätze. / 7 Kinder und 13 Erwachsene setzen sich.
+- `06` AFB III · Paul hat 80 Euro. / Paul gibt erst 25 Euro aus, dann 10 Euro. / Paul schreibt: 80 − 25 + 10 / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Beide Beträge gehen weg. / Richtig ist 80 − (25 + 10).
+  - ☐ Falsch. / Richtig ist 80 + 25 + 10.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Klammer fasst zusammen, was insgesamt weggeht. Sie wird zuerst berechnet. *Beispiel:* 50 € gespart, 12 € und 8 € ausgegeben: 50 − (12 + 8) = 50 − 20 = 30 €. *Lösungsschritt:* Die Klammer: 37 + 21 = 58.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Lena hat 173 € gespart. Sie kauft ein Buch für 37 € und ein Spiel für 21 €. Zur Aufgabe passt der Rechenausdruck 173 − (37 + 21).
-  - a) Wie viel kosten Buch und Spiel zusammen? **58 €**.
-  - b) Wie viel Geld hat Lena danach noch? **115 €**. Typische Fehler: 157 (klammer-ignoriert), 136 (sach-schritt-vergessen).
-- `02` AFB II · In einem Kinosaal gibt es 142 Plätze. Die Klasse 5a reserviert 22 Plätze, die Klasse 5b reserviert 25 Plätze. Zur Aufgabe passt der Rechenausdruck 142 − (22 + 25).
-  - a) Wie viele Plätze sind reserviert? **47 Plätze**.
-  - b) Wie viele Plätze sind danach noch frei? **95 Plätze**. Typische Fehler: 145 (klammer-ignoriert), 120 (sach-schritt-vergessen).
-- `03` AFB II · Ein Wanderweg ist 149 km lang. Die Gruppe schafft am ersten Tag 31 km und am zweiten Tag 27 km. Zur Aufgabe passt der Rechenausdruck 149 − (31 + 27).
-  - a) Wie viele Kilometer hat die Gruppe an beiden Tagen geschafft? **58 km**.
-  - b) Wie viele Kilometer liegen noch vor ihr? **91 km**. Typische Fehler: 145 (klammer-ignoriert), 118 (sach-schritt-vergessen).
-- `04` AFB II · Lena hat 182 € gespart. Sie kauft ein Buch für 19 € und ein Spiel für 10 €. Zur Aufgabe passt der Rechenausdruck 182 − (19 + 10).
-  - a) Wie viel kosten Buch und Spiel zusammen? **29 €**.
-  - b) Wie viel Geld hat Lena danach noch? **153 €**. Typische Fehler: 173 (klammer-ignoriert), 163 (sach-schritt-vergessen).
-- `05` AFB II · In einem Kinosaal gibt es 154 Plätze. Die Klasse 5a reserviert 17 Plätze, die Klasse 5b reserviert 9 Plätze. Zur Aufgabe passt der Rechenausdruck 154 − (17 + 9).
-  - a) Wie viele Plätze sind reserviert? **26 Plätze**.
-  - b) Wie viele Plätze sind danach noch frei? **128 Plätze**. Typische Fehler: 146 (klammer-ignoriert), 137 (sach-schritt-vergessen).
-- `06` AFB II · Ein Wanderweg ist 93 km lang. Die Gruppe schafft am ersten Tag 29 km und am zweiten Tag 10 km. Zur Aufgabe passt der Rechenausdruck 93 − (29 + 10).
-  - a) Wie viele Kilometer hat die Gruppe an beiden Tagen geschafft? **39 km**.
-  - b) Wie viele Kilometer liegen noch vor ihr? **54 km**. Typische Fehler: 74 (klammer-ignoriert), 64 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* „Von“ nennt den Minuenden. Die Summe wird als Ganzes abgezogen und steht deshalb in der Klammer. *Lösungsschritt:* Der Minuend ist 200. Abgezogen wird 65 + 30.
 
-### E · Erweitertes Niveau
+- `01` AFB I · Welcher Rechenausdruck passt? „Subtrahiere die Summe von 65 und 30 von 200.“
+  - ☐ 200 − 65 + 30
+  - ☐ (65 + 30) − 200
+  - ☑ 200 − (65 + 30)
+  - ☐ (200 − 65) + 30
+- `02` AFB II · Subtrahiere von 500 die Differenz der Zahlen 310 und 130. Stelle den Rechenausdruck auf und berechne. Lösung: **320**. Typische Fehler: 60 (klammer-ignoriert).
+- `03` AFB II · Ordne jedem Text den passenden Rechenausdruck zu. Lösung: Subtrahiere die Summe von 30 und 15 von 80. → 80 − (30 + 15), Subtrahiere 30 von 80 und addiere 15. → (80 − 30) + 15, Subtrahiere die Differenz von 30 und 15 von 80. → 80 − (30 − 15)
+- `04` AFB I · Welcher Rechenausdruck passt? „Addiere zur Differenz von 90 und 45 die Zahl 25.“
+  - ☐ 90 − (45 + 25)
+  - ☑ (90 − 45) + 25
+  - ☐ 25 − (90 − 45)
+  - ☐ (90 + 45) − 25
+- `05` AFB II · Sara hat 80 € gespart und kauft einen Rucksack für 35 € und eine Trinkflasche für 18 €. Zur Situation passt der Rechenausdruck 80 − (35 + 18).
+  - a) Berechne den Wert der Klammer. Er gibt an, wie viel zusammen ausgegeben wird. **53 €**.
+  - b) Berechne das Restgeld. **27 €**. Typische Fehler: 63 (klammer-ignoriert).
+- `06` AFB III · Von 80 € werden erst 33 € und dann 18 € ausgegeben. Ida schreibt 80 − 33 − 18, Ben schreibt 80 − (33 + 18). Beurteile die beiden Rechenausdrücke.
+  - ☑ Beide passen. Sie haben denselben Wert 29: Einmal werden die Beträge nacheinander abgezogen, einmal zusammen.
+  - ☐ Nur der Ausdruck von Ida passt. Eine Klammer verändert das Ergebnis.
+  - ☐ Nur der Ausdruck von Ben passt. Ohne Klammer wird 18 addiert.
+  - ☐ Keiner von beiden passt. Hier muss addiert werden.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Differenz bekommt eine eigene Klammer. Berechne beide Klammern und addiere die Ergebnisse. *Beispiel:* Differenz von 90 und 60 ist 30, Differenz von 50 und 30 ist 20: (90 − 60) + (50 − 30) = 50. *Lösungsschritt:* Der Rechenausdruck lautet (627 − 134) + (566 − 199).
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-- `01` AFB III · Addiere zur Differenz der Zahlen 627 und 134 die Differenz der Zahlen 566 und 199. Schreibe den Rechenausdruck mit Klammern auf und berechne ihn. Lösung: **860**. Typische Fehler: 1258 (klammer-ignoriert), 493 (sach-schritt-vergessen).
-- `02` AFB III · Ein Bus hat 49 Plätze. An der ersten Haltestelle steigen 12 Personen ein. An der zweiten steigen 17 Personen ein und 6 aus. Wie viele Plätze sind danach noch frei? Lösung: **26 Plätze**. Typische Fehler: 14 (klammer-ignoriert), 37 (sach-schritt-vergessen).
-- `03` AFB III · Addiere zur Differenz der Zahlen 862 und 350 die Differenz der Zahlen 488 und 209. Schreibe den Rechenausdruck mit Klammern auf und berechne ihn. Lösung: **791**. Typische Fehler: 1209 (klammer-ignoriert), 512 (sach-schritt-vergessen).
-- `04` AFB III · In einer Kiste sind 59 Äpfel. Am Montag werden 15 Äpfel gegessen. Am Dienstag werden 14 gegessen, aber 4 neue dazugelegt. Wie viele Äpfel sind danach in der Kiste? Lösung: **34 Äpfel**. Typische Fehler: 26 (klammer-ignoriert), 44 (sach-schritt-vergessen).
-- `05` AFB III · Addiere zur Differenz der Zahlen 852 und 270 die Differenz der Zahlen 377 und 174. Schreibe den Rechenausdruck mit Klammern auf und berechne ihn. Lösung: **785**. Typische Fehler: 1133 (klammer-ignoriert), 582 (sach-schritt-vergessen).
-- `06` AFB III · Ein Parkplatz hat 55 Stellplätze. Am Morgen kommen 13 Autos. Am Mittag kommen 18 Autos dazu und 7 fahren weg. Wie viele Stellplätze sind danach noch frei? Lösung: **31 Stellplätze**. Typische Fehler: 17 (klammer-ignoriert), 42 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Baue den Term von innen nach außen: zuerst die Differenz, dann die Summe, dann die Subtraktion von 1000.
+
+- `01` AFB I · Welcher Term passt? „Subtrahiere von 1000 die Summe aus 250 und der Differenz von 400 und 160.“
+  - ☐ 1000 − 250 + (400 − 160)
+  - ☐ (1000 − 250) + 400 − 160
+  - ☐ 1000 − [(250 + 400) − 160]
+  - ☑ 1000 − [250 + (400 − 160)]
+  - ☐ [1000 − (250 + 400)] − 160
+- `02` AFB II · Eine Klasse hat 30 Plätze im Bus reserviert. Angemeldet sind 28 Kinder. 3 Kinder sind krank, 3 Begleitpersonen kommen dazu. Stelle einen Term auf und berechne, wie viele Plätze frei bleiben. Lösung: **2**. Typische Fehler: 5 (sach-schritt-vergessen).
+- `03` AFB II · Welcher Text passt zum Term 300 − (130 − 20)?
+  - ☐ In einem Saal sitzen 300 Gäste. Erst gehen 130, dann gehen 20. Gesucht sind die übrigen Gäste.
+  - ☐ Ein Saal hat 300 Plätze. Erst kommen 130 Gäste, dann noch 20. Gesucht sind die freien Plätze.
+  - ☑ Ein Saal hat 300 Plätze. 130 Karten wurden verkauft, 20 davon wurden zurückgegeben. Gesucht sind die freien Plätze.
+  - ☐ In einem Saal sitzen 130 Gäste. 20 gehen, 300 kommen dazu. Gesucht sind alle Gäste.
+  - ☐ Ein Saal hat 300 Plätze. 130 Gäste kommen, 20 Stühle werden weggeräumt. Gesucht sind die freien Plätze.
+- `04` AFB III · Für welche Zahlen im Kästchen haben die Terme 100 − (▢ + 20) und 100 − ▢ − 20 denselben Wert? Stelle die Regel auf.
+  - ☐ Nur für die Zahl 0.
+  - ☐ Nur für die Zahl 20.
+  - ☐ Für keine Zahl: Eine Klammer verändert immer den Wert.
+  - ☐ Nur für gerade Zahlen.
+  - ☑ Für jede Zahl von 0 bis 80: Beide Terme subtrahieren insgesamt die Zahl und 20.
+- `05` AFB II · Mia ist 12 Jahre alt und hat 50 €. Mia kauft 3 Hefte für je 5 € und einen Füller für 9 €. Stelle einen Term auf und berechne das Restgeld. Lösung: **26 €**. Typische Fehler: 36 (sach-schritt-vergessen), 14 (sach-unnoetige-angabe).
+- `06` AFB III · In 60 − 20 − 10 + 5 soll genau ein Klammerpaar gesetzt werden, sodass der Wert 45 herauskommt. Welcher Term erfüllt das?
+  - ☐ (60 − 20) − 10 + 5
+  - ☑ 60 − (20 − 10 + 5)
+  - ☐ 60 − (20 + 10) + 5
+  - ☐ 60 − 20 − (10 + 5)
+  - ☐ 60 − (20 − 10) + 5
 
 ## 5.3.5-R1: Ich kann das Vertauschungsgesetz und das Verbindungsgesetz erkennen.
 
-### F · Förderniveau
+Grundlage, die F übt: Tauschaufgaben wie 3 + 5 und 5 + 3
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Vertauschungsgesetz: Beim Addieren darf man die Summanden vertauschen. Das Ergebnis bleibt gleich. *Beispiel:* 14 + 23 = 23 + 14. *Lösungsschritt:* Rechts steht schon 68. Es fehlt der andere Summand von der linken Seite.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · 63 + 68 = 68 + ▢ Lösung: a = **63**
-- `02` AFB I · 33 + 34 = 34 + ▢ Lösung: a = **33**
-- `03` AFB I · 16 + 14 = 14 + ▢ Lösung: a = **16**
-- `04` AFB I · 45 + 30 = 30 + ▢ Lösung: a = **45**
-- `05` AFB I · 33 + 46 = 46 + ▢ Lösung: a = **33**
-- `06` AFB I · 28 + 52 = 52 + ▢ Lösung: a = **28**
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Plus-Rechnen darfst du die Zahlen tauschen. Das Ergebnis bleibt gleich. *Beispiel:* 2 + 7 = 9. Also ist auch 7 + 2 = 9. *Lösungsschritt:* Es sind dieselben Plättchen. Zusammen sind es 11.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · 3 + 8 = 11 / Tausche die Zahlen. / 8 + 3 = ▢ _(Bild: Mengenbild: 3 Plättchen, 8 dazu)_ Lösung: a = **11**
+- `02` AFB I · Welche Aufgabe ist die Tauschaufgabe? / 2 + 7 _(Bild: Mengenbild: 2 Plättchen, 7 dazu)_
+  - ☐ 7 − 2
+  - ☑ 7 + 2
+  - ☐ 2 + 2
+- `03` AFB I · 2 + 14 ist schwer zu zählen. / Tausche die Zahlen. / Rechne 14 + 2. _(Bild: Zahlenstrahl 10 bis 20, Sprünge 14 nach 16 (+ 2))_ Lösung: **16**. Typische Fehler: 12 (add-subtrahiert).
+- `04` AFB I · Welche Zahl fehlt? / 5 + 9 = ▢ + 5 _(Bild: Mengenbild: 5 Plättchen, 9 dazu)_ Lösung: a = **9**
+- `05` AFB II · Welche 2 Aufgaben haben dasselbe Ergebnis? _(Bild: Mengenbild: 8 Plättchen, 2 dazu)_
+  - ☐ 8 + 2 und 8 − 2
+  - ☑ 8 + 2 und 2 + 8
+  - ☐ 8 + 2 und 8 + 8
+- `06` AFB I · 30 + 40 = 70 / Wie viel ist 40 + 30? _(Bild: Zahlenstrahl 0 bis 100, Sprünge 0 nach 40 (+ 40), 40 nach 70 (+ 30))_ Lösung: **70**. Typische Fehler: 10 (add-subtrahiert).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Verbindungsgesetz: Beim Addieren darf man die Klammer versetzen. Die Zahlen bleiben in derselben Reihenfolge. *Beispiel:* (14 + 23) + 7 = 14 + (23 + 7). *Lösungsschritt:* Die Reihenfolge der drei Zahlen bleibt gleich. Welche Zahl steht links in der Mitte?
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · (67 + 41) + 32 = 67 + (▢ + 32) Lösung: a = **41**
-- `02` AFB I · Welches Rechengesetz zeigt diese Gleichung? 62 + 40 = 40 + 62
-  - ☐ Verbindungsgesetz
-  - ☐ kein Gesetz, die Gleichung ist falsch
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau genau: Haben die Zahlen den Platz getauscht? *Beispiel:* 5 + 9 = 9 + 5: Die Zahlen sind vertauscht. Das ist das Vertauschungsgesetz. *Lösungsschritt:* 15 und 46 haben den Platz getauscht.
+
+- `01` AFB I · Welches Gesetz siehst du? / 15 + 46 = 46 + 15
   - ☑ Vertauschungsgesetz
-- `03` AFB I · (48 + 22) + 45 = 48 + (▢ + 45) Lösung: a = **22**
-- `04` AFB I · Welches Rechengesetz zeigt diese Gleichung? (56 + 12) + 26 = 56 + (12 + 26)
-  - ☐ Vertauschungsgesetz
-  - ☐ kein Gesetz, die Gleichung ist falsch
-  - ☑ Verbindungsgesetz
-- `05` AFB I · (41 + 39) + 36 = 41 + (▢ + 36) Lösung: a = **39**
-- `06` AFB I · Welches Rechengesetz zeigt diese Gleichung? 16 − 12 = 12 − 16
-  - ☐ Vertauschungsgesetz
-  - ☑ kein Gesetz, die Gleichung ist falsch
   - ☐ Verbindungsgesetz
+  - ☐ Kein Gesetz. / Die Rechnung ist falsch.
+- `02` AFB I · Die Klammer wandert. / Die Zahlen bleiben gleich. / (14 + 21) + 4 = 14 + (21 + ▢) _(Bild: Streifenbild: Ganzes ?, Teile 14 und 21 und 4)_ Lösung: a = **4**
+- `03` AFB II · Rechne auf 2 Wegen. / (11 + 3) + 7 = ▢ / 11 + (3 + 7) = ▢ _(Bild: Streifenbild: Ganzes ?, Teile 11 und 3 und 7)_ Lösung: a = **21**, b = **21**
+- `04` AFB I · Wo darfst du die Zahlen tauschen?
+  - ☐ Bei beiden Aufgaben
+  - ☐ Bei 40 − 23
+  - ☑ Bei 40 + 23
+- `05` AFB II · Welche Rechnung hat dasselbe Ergebnis? / 34 + (16 + 5) _(Bild: Streifenbild: Ganzes ?, Teile 34 und 16 und 5)_
+  - ☐ 34 − (16 + 5)
+  - ☐ (34 + 16) − 5
+  - ☑ (34 + 16) + 5
+- `06` AFB III · Lena sagt: / 20 − 9 − 3 ist dasselbe wie 20 − (9 − 3). / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Links kommt 8 heraus. / Rechts kommt 14 heraus.
+  - ☐ Falsch. / Links kommt 14 heraus. / Rechts kommt 8 heraus.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Vertauschungsgesetz: Summanden darf man vertauschen. Verbindungsgesetz: Beim Addieren darf man Klammern beliebig setzen. Für die Subtraktion gilt beides nicht. *Beispiel:* 17 + 25 = 25 + 17 (Vertauschungsgesetz). (17 + 25) + 5 = 17 + (25 + 5) (Verbindungsgesetz). *Lösungsschritt:* Schau zuerst: Wurden nur Zahlen vertauscht oder wurde die Klammer versetzt?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche beide Seiten: Hat sich die Reihenfolge der Zahlen geändert oder nur die Klammer? *Lösungsschritt:* Die Reihenfolge der Zahlen ist gleich geblieben. Nur die Klammer steht an einer anderen Stelle.
 
-- `01` AFB II · Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 154 + 37 = 37 + 154 → Vertauschungsgesetz, (154 + 37) + 58 = 154 + (37 + 58) → Verbindungsgesetz, (154 − 37) − 58 = 154 − (37 − 58) → kein Gesetz, die Gleichung ist falsch
-- `02` AFB II · Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 410 + 88 = 88 + 410 → Vertauschungsgesetz, (410 + 88) + 31 = 410 + (88 + 31) → Verbindungsgesetz, (410 − 88) − 31 = 410 − (88 − 31) → kein Gesetz, die Gleichung ist falsch
-- `03` AFB II · Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 200 + 73 = 73 + 200 → Vertauschungsgesetz, (200 + 73) + 69 = 200 + (73 + 69) → Verbindungsgesetz, (200 − 73) − 69 = 200 − (73 − 69) → kein Gesetz, die Gleichung ist falsch
-- `04` AFB II · Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 128 + 65 = 65 + 128 → Vertauschungsgesetz, (128 + 65) + 38 = 128 + (65 + 38) → Verbindungsgesetz, (128 − 65) − 38 = 128 − (65 − 38) → kein Gesetz, die Gleichung ist falsch
-- `05` AFB II · Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 169 + 93 = 93 + 169 → Vertauschungsgesetz, (169 + 93) + 62 = 169 + (93 + 62) → Verbindungsgesetz, (169 − 93) − 62 = 169 − (93 − 62) → kein Gesetz, die Gleichung ist falsch
-- `06` AFB II · Ordne jeder Gleichung zu, welches Rechengesetz sie zeigt. Lösung: 416 + 39 = 39 + 416 → Vertauschungsgesetz, (416 + 39) + 58 = 416 + (39 + 58) → Verbindungsgesetz, (416 − 39) − 58 = 416 − (39 − 58) → kein Gesetz, die Gleichung ist falsch
+- `01` AFB I · Welches Rechengesetz wurde angewendet? (132 + 72) + 28 = 132 + (72 + 28)
+  - ☑ Verbindungsgesetz
+  - ☐ Vertauschungsgesetz
+  - ☐ Vertauschungsgesetz und Verbindungsgesetz zugleich
+  - ☐ Kein Rechengesetz. Die Gleichung ist falsch.
+- `02` AFB II · Welche Gleichungen stimmen? Wähle alle richtigen aus.
+  - ☑ 42 + 57 = 57 + 42
+  - ☐ 42 + 57 = 42 + 75
+  - ☑ (42 + 57) + 43 = 42 + (57 + 43)
+  - ☐ (90 − 40) − 10 = 90 − (40 − 10)
+- `03` AFB II · Nutze das Verbindungsgesetz und fülle die Lücken: (41 + 83) + 17 = 41 + (83 + ▢) = 41 + ▢ = ▢ Lösung: a = **17**, b = **100**, c = **141**
+- `04` AFB I · Welche Gleichung zeigt das Vertauschungsgesetz?
+  - ☐ (61 + 31) + 5 = 61 + (31 + 5)
+  - ☑ 61 + 31 = 31 + 61
+  - ☐ 61 + 31 = 92
+  - ☐ 61 − 31 = 31 − 61
+- `05` AFB II · Zeige mit einem Beispiel, dass das Verbindungsgesetz für die Subtraktion nicht gilt. (70 − 20) − 15 = ▢ und 70 − (20 − 15) = ▢ Lösung: a = **35**, b = **65**
+- `06` AFB III · Mara behauptet: „Das Vertauschungsgesetz gilt auch für die Subtraktion.“ Welche Begründung ist richtig?
+  - ☐ Richtig. Die Rechengesetze gelten für alle Rechenarten.
+  - ☑ Falsch. Ein Gegenbeispiel genügt: 12 − 6 = 6, aber 6 − 12 ist keine natürliche Zahl.
+  - ☐ Richtig, denn 12 − 6 und 6 − 12 haben dasselbe Ergebnis.
+  - ☐ Falsch. Das Vertauschungsgesetz gilt für keine Rechenart.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Vertauschungsgesetz: Summanden darf man vertauschen. Verbindungsgesetz: Beim Addieren darf man Klammern beliebig setzen. Für die Subtraktion gilt beides nicht. *Beispiel:* 17 + 25 = 25 + 17 (Vertauschungsgesetz). (17 + 25) + 5 = 17 + (25 + 5) (Verbindungsgesetz). *Lösungsschritt:* Rechne bei der ersten Gleichung beide Seiten aus und vergleiche.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Verbindungsgesetz bleibt die Reihenfolge der Summanden gleich. Nur die Klammer wird versetzt.
 
-- `01` AFB II · Welche Gleichungen stimmen? Es können mehrere sein.
-  - ☐ 391 − 219 = 219 − 391
-  - ☐ 391 − (219 + 115) = (391 − 219) + 115
-  - ☑ 391 + 219 = 219 + 391
-  - ☑ (391 + 219) + 115 = 391 + (219 + 115)
-- `02` AFB II · Welche Gleichungen stimmen? Es können mehrere sein.
-  - ☐ 617 − (269 + 101) = (617 − 269) + 101
-  - ☐ 617 − 269 = 269 − 617
-  - ☑ (617 + 269) + 101 = 617 + (269 + 101)
-  - ☑ 617 + 269 + 101 = 101 + 617 + 269
-- `03` AFB II · Welche Gleichungen stimmen? Es können mehrere sein.
-  - ☐ 731 − (233 + 61) = (731 − 233) + 61
-  - ☑ (731 + 233) + 61 = 731 + (233 + 61)
-  - ☑ 731 + 233 = 233 + 731
-  - ☐ (731 − 233) − 61 = 731 − (233 − 61)
-- `04` AFB II · Welche Gleichungen stimmen? Es können mehrere sein.
-  - ☐ 737 − (134 + 43) = (737 − 134) + 43
-  - ☑ 737 + 134 = 134 + 737
-  - ☑ 737 + 134 + 43 = 43 + 737 + 134
-  - ☑ (737 + 134) + 43 = 737 + (134 + 43)
-- `05` AFB II · Welche Gleichungen stimmen? Es können mehrere sein.
-  - ☑ 660 + 233 + 38 = 38 + 660 + 233
-  - ☐ 660 − 233 = 233 − 660
-  - ☐ 660 − (233 + 38) = (660 − 233) + 38
-  - ☐ (660 − 233) − 38 = 660 − (233 − 38)
-- `06` AFB II · Welche Gleichungen stimmen? Es können mehrere sein.
-  - ☐ 648 − (236 + 68) = (648 − 236) + 68
-  - ☐ (648 − 236) − 68 = 648 − (236 − 68)
-  - ☑ 648 + 236 + 68 = 68 + 648 + 236
-  - ☐ 648 − 236 = 236 − 648
+- `01` AFB I · Welche Gleichung beschreibt das Verbindungsgesetz der Addition allgemein?
+  - ☐ a + (b + c) = (a + b) · c
+  - ☐ a + b = b + a
+  - ☑ (a + b) + c = a + (b + c)
+  - ☐ (a + b) + c = a + b
+  - ☐ (a − b) − c = a − (b − c)
+- `02` AFB II · Berechne für a = 60, b = 35 und c = 15: (a − b) − c = ▢ und a − (b − c) = ▢. Die beiden Ergebnisse unterscheiden sich um ▢. Lösung: x = **10**, y = **40**, z = **30**
+- `03` AFB II · Für welche Zahlen im Kästchen gilt (70 − 40) − ▢ = 70 − (40 − ▢)?
+  - ☐ Nur für die Zahl 20.
+  - ☑ Nur für die Zahl 0.
+  - ☐ Für jede Zahl von 0 bis 40.
+  - ☐ Nur für die Zahl 40.
+  - ☐ Für keine Zahl.
+- `04` AFB III · (50 − 20) − 5 = 25 und 50 − (20 − 5) = 35. Ebenso (80 − 40) − 10 = 30 und 80 − (40 − 10) = 50. Stelle eine Regel für die Terme (a − b) − c und a − (b − c) auf.
+  - ☐ a − (b − c) ist immer um 2 · c kleiner als (a − b) − c.
+  - ☐ a − (b − c) ist immer um b größer als (a − b) − c.
+  - ☐ a − (b − c) ist immer um c größer als (a − b) − c.
+  - ☑ a − (b − c) ist immer um 2 · c größer als (a − b) − c.
+  - ☐ Beide Terme haben immer denselben Wert.
+- `05` AFB II · Bestimme die fehlende Zahl mithilfe des Verbindungsgesetzes: (▢ + 37) + 13 = 110 Lösung: a = **60**
+- `06` AFB III · Paul behauptet: „a − b = b − a gilt für keine natürlichen Zahlen.“ Beurteile die Aussage.
+  - ☐ Falsch. Die Gleichung gilt für alle natürlichen Zahlen.
+  - ☑ Falsch. Für a = b gilt die Gleichung, zum Beispiel 7 − 7 = 7 − 7 = 0. Für verschiedene Zahlen gilt sie nicht.
+  - ☐ Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen.
+  - ☐ Falsch. Die Gleichung gilt immer, wenn a größer ist als b.
+  - ☐ Richtig. Auch wenn a und b gleich sind, sind die Ergebnisse verschieden.
 
 ## 5.3.5-R2: Ich kann mit den Rechengesetzen vorteilhaft rechnen.
 
-### F · Förderniveau
+Grundlage, die F übt: Passende Zehner suchen, zum Beispiel 7 + 5 + 3
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 38 + 12 = 50.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Rechne vorteilhaft: 38 + 39 + 12 Lösung: **89**. Typische Fehler: 77 (sach-schritt-vergessen), 79 (add-uebertrag-vergessen).
-- `02` AFB I · Rechne vorteilhaft: 34 + 22 + 16 Lösung: **72**. Typische Fehler: 56 (sach-schritt-vergessen), 62 (add-uebertrag-vergessen).
-- `03` AFB I · Rechne vorteilhaft: 19 + 29 + 21 Lösung: **69**. Typische Fehler: 48 (sach-schritt-vergessen), 59 (add-uebertrag-vergessen).
-- `04` AFB I · Rechne vorteilhaft: 28 + 31 + 2 Lösung: **61**. Typische Fehler: 59 (sach-schritt-vergessen), 51 (add-uebertrag-vergessen).
-- `05` AFB I · Rechne vorteilhaft: 11 + 18 + 9 Lösung: **38**. Typische Fehler: 29 (sach-schritt-vergessen), 28 (add-uebertrag-vergessen).
-- `06` AFB I · Rechne vorteilhaft: 48 + 35 + 12 Lösung: **95**. Typische Fehler: 83 (sach-schritt-vergessen), 85 (add-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche 2 Zahlen, die zusammen 10 ergeben. *Beispiel:* 8 + 5 + 2: Erst 8 + 2 = 10. Dann 10 + 5 = 15. *Lösungsschritt:* 7 + 3 = 10.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · 7 + 4 + 3 / Rechne erst 7 + 3 = ▢ / Dann plus 4: ▢ _(Bild: Zehnerfeld mit 10 Feldern, 7 belegt, 3 dazu)_ Lösung: a = **10**, b = **14**
+- `02` AFB I · Welche 2 Zahlen ergeben zusammen 10? / 7 + 2 + 3 _(Bild: Zehnerfeld mit 10 Feldern, 7 belegt, 3 dazu)_
+  - ☐ 2 und 3
+  - ☐ 7 und 2
+  - ☑ 7 und 3
+- `03` AFB I · Rechne geschickt. / 9 + 4 + 1 _(Bild: Zehnerfeld mit 10 Feldern, 9 belegt, 1 dazu)_ Lösung: **14**.
+- `04` AFB I · Suche erst die 10. / 4 + 3 + 6 _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt, 6 dazu)_ Lösung: **13**.
+- `05` AFB II · Wie rechnest du am leichtesten? / 6 + 7 + 4 _(Bild: Zehnerfeld mit 10 Feldern, 6 belegt, 4 dazu)_
+  - ☑ Erst 6 + 4. / Dann plus 7.
+  - ☐ Erst 6 + 7. / Dann plus 4.
+  - ☐ Erst 7 + 4. / Dann plus 6.
+- `06` AFB I · Suche erst die 20. / 15 + 6 + 5 _(Bild: Zehnerfeld mit 20 Feldern, 15 belegt, 5 dazu)_ Lösung: **26**.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 186 + 114 = 300.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Rechne vorteilhaft: 186 + 25 + 114 Lösung: **325**. Typische Fehler: 211 (sach-schritt-vergessen), 215 (add-uebertrag-vergessen).
-- `02` AFB I · Rechne vorteilhaft: 153 + 54 + 147 Lösung: **354**. Typische Fehler: 207 (sach-schritt-vergessen), 244 (add-uebertrag-vergessen).
-- `03` AFB I · Rechne vorteilhaft: 233 + 49 + 167 Lösung: **449**. Typische Fehler: 282 (sach-schritt-vergessen), 339 (add-uebertrag-vergessen).
-- `04` AFB I · Rechne vorteilhaft: 384 + 38 + 216 Lösung: **638**. Typische Fehler: 422 (sach-schritt-vergessen), 528 (add-uebertrag-vergessen).
-- `05` AFB I · Rechne vorteilhaft: 162 + 76 + 238 Lösung: **476**. Typische Fehler: 238 (sach-schritt-vergessen), 366 (add-uebertrag-vergessen).
-- `06` AFB I · Rechne vorteilhaft: 159 + 33 + 141 Lösung: **333**. Typische Fehler: 192 (sach-schritt-vergessen), 223 (add-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche 2 Zahlen, deren Einer zusammen 10 ergeben. *Beispiel:* 27 + 15 + 13: Erst 27 + 13 = 40. Dann 40 + 15 = 55. *Lösungsschritt:* 42 + 18 = 60.
 
-### M · Mittleres Niveau
+- `01` AFB I · Rechne geschickt. / 42 + 13 + 18 / Erst 42 + 18 = ▢ / Dann plus 13: ▢ _(Bild: Streifenbild: Ganzes ?, Teile 42 und 13 und 18)_ Lösung: a = **60**, b = **73**
+- `02` AFB I · Rechne geschickt. / 46 + 21 + 24 _(Bild: Streifenbild: Ganzes ?, Teile 46 und 21 und 24)_ Lösung: **91**.
+- `03` AFB II · Welche 2 Zahlen rechnest du zuerst zusammen? / 21 + 13 + 29
+  - ☐ 13 und 29
+  - ☑ 21 und 29
+  - ☐ 21 und 13
+- `04` AFB I · Rechne geschickt. / 70 − 22 − 8 _(Bild: Streifenbild: Ganzes 70, Teile 22 und 8 und ?)_ Lösung: **40**. Typische Fehler: 56 (sub-klammerfehler).
+- `05` AFB II · Ziehe beide Zahlen zusammen ab. / 19 + 1 = ▢ / 83 − 19 − 1 = ▢ _(Bild: Streifenbild: Ganzes 83, Teile 19 und 1 und ?)_ Lösung: a = **20**, b = **63**
+- `06` AFB III · Ali rechnet 50 − 19 − 1 so: / 19 + 1 = 20 / 50 − 20 = 30 / Stimmt das?
+  - ☑ Stimmt. / Beide Zahlen gehen weg.
+  - ☐ Falsch. / Man muss immer von links nach rechts rechnen.
+  - ☐ Falsch. / Richtig ist 32.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 340 + 260 = 600 und 139 + 61 = 200.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB II · Rechne vorteilhaft: 340 + 139 + 260 + 61 Lösung: **800**. Typische Fehler: 739 (sach-schritt-vergessen), 690 (add-uebertrag-vergessen).
-- `02` AFB II · Rechne vorteilhaft: 460 + 129 + 140 + 171 Lösung: **900**. Typische Fehler: 729 (sach-schritt-vergessen), 790 (add-uebertrag-vergessen).
-- `03` AFB II · Rechne vorteilhaft: 195 + 129 + 5 + 71 Lösung: **400**. Typische Fehler: 329 (sach-schritt-vergessen), 280 (add-uebertrag-vergessen).
-- `04` AFB II · Rechne vorteilhaft: 345 + 371 + 255 + 129 Lösung: **1100**. Typische Fehler: 971 (sach-schritt-vergessen), 980 (add-uebertrag-vergessen).
-- `05` AFB II · Rechne vorteilhaft: 435 + 116 + 265 + 184 Lösung: **1000**. Typische Fehler: 816 (sach-schritt-vergessen), 880 (add-uebertrag-vergessen).
-- `06` AFB II · Rechne vorteilhaft: 160 + 333 + 140 + 167 Lösung: **800**. Typische Fehler: 633 (sach-schritt-vergessen), 690 (add-uebertrag-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Summanden, die sich zu vollen Hundertern ergänzen. *Lösungsschritt:* 172 + 28 = 200 und 94 + 6 = 100.
 
-### E · Erweitertes Niveau
+- `01` AFB I · Berechne vorteilhaft: 172 + 94 + 28 + 6 Lösung: **300**.
+- `02` AFB II · Berechne vorteilhaft und fülle die Lücken: 600 − 161 − 39 = 600 − ▢ = ▢ Lösung: a = **200**, b = **400**
+- `03` AFB II · Ordne jedem Rechenausdruck den vorteilhaften Rechenweg zu. Lösung: 47 + 38 + 53 → (47 + 53) + 38, 47 + 38 + 62 → 47 + (38 + 62), 143 − 47 − 53 → 143 − (47 + 53)
+- `04` AFB I · Berechne vorteilhaft: 367 + 73 + 133 Lösung: **573**.
+- `05` AFB II · Rechne mit einer Hilfsaufgabe und fülle die Lücken: 404 + 299 = 404 + 300 − ▢ = ▢ Lösung: a = **1**, b = **703**
+- `06` AFB III · Jonas rechnet: 300 − 140 + 60 = 300 − 200 = 100. Beurteile den Rechenweg.
+  - ☐ Falsch. Richtig ist 300 + 140 + 60 = 500.
+  - ☐ Richtig. 140 und 60 ergänzen sich zu 200 und dürfen zusammengefasst werden.
+  - ☐ Richtig. Zusammenfassen ist in jedem Rechenausdruck erlaubt.
+  - ☑ Falsch. Ohne Klammer wird von links nach rechts gerechnet: 300 − 140 + 60 = 220.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatte Zahl ergeben. Du darfst die Summanden vertauschen und beliebig zusammenfassen. *Beispiel:* 17 + 25 + 3: 17 + 3 = 20, dann 20 + 25 = 45. *Lösungsschritt:* Fasse zuerst zusammen: 2300 + 2700 = 5000 und 3200 + 1800 = 5000.
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-- `01` AFB II · Rechne vorteilhaft: 2300 + 3200 + 2700 + 920 + 1800 Lösung: **10920**. Typische Fehler: 9120 (sach-schritt-vergessen), 8920 (add-uebertrag-vergessen).
-- `02` AFB II · Rechne vorteilhaft: 8967 − 2800 − 200 Lösung: **5967**. Typische Fehler: 6367 (sub-klammerfehler), 6167 (sach-schritt-vergessen).
-- `03` AFB II · Rechne vorteilhaft: 3200 + 2675 + 2800 + 170 + 325 Lösung: **9170**. Typische Fehler: 8845 (sach-schritt-vergessen), 7060 (add-uebertrag-vergessen).
-- `04` AFB II · Rechne vorteilhaft: 7146 − 2200 − 800 Lösung: **4146**. Typische Fehler: 5746 (sub-klammerfehler), 4946 (sach-schritt-vergessen).
-- `05` AFB II · Rechne vorteilhaft: 4450 + 3350 + 550 + 720 + 1650 Lösung: **10720**. Typische Fehler: 9070 (sach-schritt-vergessen), 8520 (add-uebertrag-vergessen).
-- `06` AFB II · Rechne vorteilhaft: 7995 − 2200 − 1800 Lösung: **3995**. Typische Fehler: 7595 (sub-klammerfehler), 5795 (sach-schritt-vergessen).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bilde Paare mit gleicher Summe. Eine Zahl bleibt ohne Partner.
+
+- `01` AFB I · Berechne vorteilhaft: 10 + 20 + 30 + 40 + 50 + 60 + 70 + 80 + 90 Lösung: **450**. Typische Fehler: 500 (sach-schritt-vergessen), 400 (sach-schritt-vergessen).
+- `02` AFB II · Wie lässt sich die Summe 1 + 2 + 3 + … + 20 aller Zahlen von 1 bis 20 vorteilhaft berechnen?
+  - ☐ Jede Zahl durch 10 ersetzen: 20 · 10 = 200.
+  - ☑ 10 Paare mit der Summe 21 bilden: 10 · 21 = 210.
+  - ☐ 20 Paare mit der Summe 21 bilden: 20 · 21 = 420.
+  - ☐ 10 Paare mit der Summe 20 bilden: 10 · 20 = 200.
+  - ☐ Nur die erste und die letzte Zahl addieren: 1 + 20 = 21.
+- `03` AFB II · Berechne vorteilhaft: 1000 − 152 − 48 − 173 − 127 Lösung: **500**. Typische Fehler: 800 (sach-schritt-vergessen).
+- `04` AFB III · Die Zahlen 10, 20, 30, 40 und 50 werden in ein Kreuz aus 5 Feldern geschrieben: ein Feld in der Mitte und je ein Feld links, rechts, oben und unten. Die drei Zahlen waagerecht und die drei Zahlen senkrecht sollen dieselbe Summe haben. Welche Zahlen können in der Mitte stehen? Wähle alle richtigen aus.
+  - ☑ 50
+  - ☑ 10
+  - ☐ 40
+  - ☑ 30
+  - ☐ 20
+- `05` AFB II · Es gilt 1 + 2 + 3 + … + 9 = 45. Berechne damit die Summe aller Zahlen von 31 bis 39: 31 + 32 + 33 + … + 39 = ▢ Lösung: a = **315**
+- `06` AFB III · 3 + 4 + 5 + 6 + 7 = 25 und 10 + 11 + 12 + 13 + 14 = 60. Stelle eine Regel für die Summe von 5 aufeinanderfolgenden Zahlen auf.
+  - ☐ Die Summe ist die erste Zahl plus die letzte Zahl.
+  - ☐ Es gibt keine Regel. Jede Summe muss einzeln berechnet werden.
+  - ☐ Die Summe ist 5-mal die erste Zahl.
+  - ☑ Die Summe ist 5-mal die mittlere Zahl, denn die äußeren Paare ergeben jeweils das Doppelte der mittleren Zahl.
+  - ☐ Die Summe ist 5-mal die letzte Zahl.
 
 ## 5.4.1-K1: Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.
 
-### F · Förderniveau
+Grundlage, die F übt: Mal-Aufgaben im Punktefeld sehen, Kernaufgaben mit 2, 5 und 10
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Mal heißt: gleich große Päckchen zusammen. *Beispiel:* 3 · 5 heißt: 3 Päckchen mit je 5. Zähle 5, 10, 15. Das Ergebnis ist 15. *Lösungsschritt:* Zähle in 10er-Schritten: 10, 20, 30.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Rechne. / 10 · 3 Lösung: **30**. Typische Fehler: 33 (1x1-nachbar), 27 (1x1-nachbar), 13 (1x1-addiert).
-- `02` AFB II · 5 + 5 + 5 + 5 + 5 / Welche Mal-Aufgabe passt?
-  - ☐ 6 · 5
-  - ☐ 4 · 5
-  - ☑ 5 · 5
-  - ☐ 5 + 5
-- `03` AFB II · 10 · 7 = 7 · ▢ Lösung: x = **10**
-- `04` AFB I · Rechne. / 4 · 5 Lösung: **20**. Typische Fehler: 25 (1x1-nachbar), 15 (1x1-nachbar), 9 (1x1-addiert).
-- `05` AFB II · Tom hat 4 Packungen. / In jeder Packung sind 10 Stifte. / Wie viele Stifte sind es zusammen? Lösung: **40**. Typische Fehler: 14 (1x1-addiert).
-- `06` AFB III · Mia sagt: / „3 · 0 = 3“ / Stimmt das?
-  - ☐ Ja. / Mal 0 ändert nichts.
-  - ☐ Ja. / Die Zahl bleibt gleich.
-  - ☐ Nein. / Es kommt 1 heraus.
-  - ☑ Nein. / 3 · 0 = 0.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mal heißt: gleich große Reihen zusammen. *Beispiel:* 3 · 5 heißt: 3 Reihen mit je 5. Zähle 5, 10, 15. Das Ergebnis ist 15. *Lösungsschritt:* Zähle in 10er-Schritten: 10, 20.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Rechne. / 2 · 10 _(Bild: Punktefeld mit 2 Reihen zu je 10 Punkten)_ Lösung: **20**. Typische Fehler: 30 (1x1-nachbar), 10 (1x1-nachbar), 12 (1x1-addiert).
+- `02` AFB I · 5 + 5 + 5 + 5 / Welche Mal-Aufgabe passt? _(Bild: 4 Gruppen mit je 5 Plättchen)_
+  - ☐ 5 · 5
+  - ☑ 4 · 5
+  - ☐ 5 + 4
+- `03` AFB I · Welche Zahl fehlt? / 5 · 6 = 6 · ▢ _(Bild: Punktefeld mit 5 Reihen zu je 6 Punkten)_ Lösung: x = **5**
+- `04` AFB I · Ali hat 4 Packungen. / In jeder Packung sind 10 Stifte. / Wie viele Stifte sind es zusammen? _(Bild: 4 Gruppen mit je 10 Plättchen)_ Lösung: **40 Stifte**. Typische Fehler: 14 (1x1-addiert).
+- `05` AFB II · Welche Aufgabe passt zum Bild? _(Bild: Punktefeld mit 3 Reihen zu je 5 Punkten)_
+  - ☐ 3 + 5
+  - ☑ 3 · 5
+  - ☐ 3 · 6
+- `06` AFB I · Rechne. / 3 · 10 _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **30**. Typische Fehler: 13 (1x1-addiert), 3 (stellenwert).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze eine Kernaufgabe mit 2, 5 oder 10. *Beispiel:* 6 · 7: Du weißt 5 · 7 = 35. Dazu noch einmal 7 ergibt 42. *Lösungsschritt:* Rechne zuerst 5 · 8 = 40.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Rechne. / 6 · 8 Lösung: **48**. Typische Fehler: 56 (1x1-nachbar), 40 (1x1-nachbar), 14 (1x1-addiert).
-- `02` AFB II · 3 · 6 = 18 / 4 · 6 = ▢ Lösung: x = **24**
-- `03` AFB II · Welche Aufgabe hat das Ergebnis 32?
-  - ☐ 7 · 5
-  - ☐ 8 · 3
-  - ☑ 8 · 4
-  - ☐ 9 · 4
-- `04` AFB I · Welche Zahl fehlt? / 5 · ▢ = 35 Lösung: **7**. Typische Fehler: 30 (1x1-addiert), 8 (1x1-nachbar), 6 (1x1-nachbar).
-- `05` AFB II · In einen Karton passen 6 Eier. / Es gibt 4 Kartons. / Wie viele Eier sind es? Lösung: **24**. Typische Fehler: 10 (1x1-addiert), 18 (1x1-nachbar).
-- `06` AFB III · Ben sagt: / „Jede Zahl mal 2 ergibt eine gerade Zahl.“ / Prüfe mit 3 · 2. / Stimmt das?
-  - ☐ Nein. / 3 ist ungerade. / Dann ist auch 3 · 2 ungerade.
-  - ☐ Ja. / Aber nur für kleine Zahlen.
-  - ☐ Nein. / Das gilt nur bis 10.
-  - ☑ Ja. / 3 · 2 = 6. / Mal 2 ist das Doppelte. / Ein Doppeltes ist immer gerade.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze eine Kernaufgabe mit 2, 5 oder 10. *Beispiel:* 6 · 7: Du weißt 5 · 7 = 35. Dazu noch einmal 7 ergibt 42. *Lösungsschritt:* 5 · 5 = 25. Dazu kommen 1 · 5 = 5.
 
-### M · Mittleres Niveau
+- `01` AFB I · Rechne. / 6 · 5 _(Bild: Punktefeld mit 6 Reihen zu je 5 Punkten, Trennlinie nach 5 Reihen)_ Lösung: **30**. Typische Fehler: 35 (1x1-nachbar), 25 (1x1-nachbar), 11 (1x1-addiert).
+- `02` AFB I · Welche Zahl fehlt? / 6 · ▢ = 48 Lösung: **8**. Typische Fehler: 42 (1x1-addiert), 9 (1x1-nachbar), 7 (1x1-nachbar).
+- `03` AFB II · 3 · 6 = 18 / 4 · 6 = ▢ _(Bild: Punktefeld mit 4 Reihen zu je 6 Punkten, Trennlinie nach 3 Reihen)_ Lösung: x = **24**
+- `04` AFB I · In 1 Reihe stehen 6 Stühle. / Es gibt 8 Reihen. / Wie viele Stühle sind es? _(Bild: Punktefeld mit 8 Reihen zu je 6 Punkten)_ Lösung: **48 Stühle**. Typische Fehler: 14 (1x1-addiert), 42 (1x1-nachbar).
+- `05` AFB II · Welche Aufgabe hat das Ergebnis 20?
+  - ☑ 4 · 5
+  - ☐ 4 + 5
+  - ☐ 5 · 5
+- `06` AFB III · Lena sagt: / „Jede Zahl mal 2 ergibt eine gerade Zahl.“ / Prüfe mit 9 · 2. / Stimmt das? _(Bild: Punktefeld mit 9 Reihen zu je 2 Punkten)_
+  - ☐ Falsch. / 9 ist ungerade. / Dann ist auch 9 · 2 ungerade.
+  - ☐ Falsch. / Das gilt nur bis 10.
+  - ☑ Stimmt. / 9 · 2 = 18. / Mal 2 ist das Doppelte. / Ein Doppeltes ist immer gerade.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege in eine Kernaufgabe und den Rest. *Lösungsschritt:* Rechne 5 · 7 = 35. Dazu kommen 3 · 7 = 21.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB I · Wie viel ist 8 · 7? Lösung: **56**. Typische Fehler: 63 (1x1-nachbar), 49 (1x1-nachbar), 15 (1x1-addiert).
-- `02` AFB II · Lisa rechnet 6 · 7 mit einer Kernaufgabe. Welcher Rechenweg passt?
-  - ☐ 5 · 7 + 1
-  - ☑ 5 · 7 + 1 · 7
-  - ☐ 6 · 5 + 7
-  - ☐ 5 · 7 + 6 · 7
-- `03` AFB II · In einem Bus gibt es 8 Reihen mit je 5 Plätzen. 20 Plätze sind besetzt. Wie viele Plätze sind noch frei? Lösung: **20**. Typische Fehler: 40 (sach-schritt-vergessen), 13 (1x1-addiert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege in eine Kernaufgabe und den Rest. *Lösungsschritt:* Rechne 5 · 7 = 35. Dazu kommen 4 · 7 = 28.
+
+- `01` AFB I · Wie viel ist 9 · 7? Lösung: **63**. Typische Fehler: 70 (1x1-nachbar), 56 (1x1-nachbar), 16 (1x1-addiert).
+- `02` AFB II · Lisa rechnet 8 · 7 mit einer Kernaufgabe. Welcher Rechenweg passt?
+  - ☐ 5 · 7 + 3
+  - ☐ 8 · 5 + 7
+  - ☐ 5 · 7 + 8 · 7
+  - ☑ 5 · 7 + 3 · 7
+- `03` AFB II · In einem Bus gibt es 9 Reihen mit je 5 Plätzen. 30 Plätze sind besetzt. Wie viele Plätze sind noch frei? Lösung: **15 Plätze**. Typische Fehler: 45 (sach-schritt-vergessen), 14 (1x1-addiert).
 - `04` AFB I · Welche Zahl fehlt? ▢ · 9 = 72 Lösung: **8**. Typische Fehler: 9 (1x1-nachbar), 7 (1x1-nachbar).
-- `05` AFB II · Welche Aufgaben haben das Ergebnis 18? Kreuze alle an.
-  - ☐ 4 · 2
-  - ☑ 3 · 6
-  - ☑ 2 · 9
-  - ☐ 9 · 8
-- `06` AFB III · Ben rechnet 7 · 6 und erhält 48. Wie kann er seinen Fehler finden?
-  - ☐ Er prüft mit 7 + 6.
-  - ☐ Gar nicht. Sein Ergebnis stimmt.
+- `05` AFB II · Welche Aufgaben haben das Ergebnis 20? Wähle alle richtigen aus.
+  - ☐ 7 · 8
+  - ☐ 5 · 9
+  - ☑ 4 · 5
+  - ☑ 2 · 10
+- `06` AFB III · Elif rechnet 7 · 6 und erhält 48. Wie lässt sich der Fehler finden?
+  - ☐ Mit derselben Rechnung, noch einmal genauso gerechnet.
   - ☑ Mit der Nachbaraufgabe: 6 · 6 = 36. Dazu kommt noch einmal 6. Das sind 42.
-  - ☐ Er rechnet einfach noch einmal genauso.
+  - ☐ Mit der Rechnung 7 + 6.
+  - ☐ Gar nicht. Das Ergebnis stimmt.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Aufgabe mit zwei gleichen Zahlen kennst du, die 9 ergibt?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Aufgabe mit zwei gleichen Zahlen kennst du, die 64 ergibt?
 
-- `01` AFB I · Eine Zahl mal sich selbst ergibt 9. Wie heißt die Zahl? Lösung: **3**.
+- `01` AFB I · Eine Zahl mal sich selbst ergibt 64. Wie heißt die Zahl? Lösung: **8**. Typische Fehler: 32 (1x1-addiert).
 - `02` AFB II · Welche Zahl ist kein Ergebnis des kleinen Einmaleins?
-  - ☐ 20
-  - ☐ 72
-  - ☐ 12
-  - ☑ 23
-- `03` AFB II · Zwei Zahlen aus dem Einmaleins haben das Produkt 28 und die Summe 11. Die kleinere Zahl ist ▢, die größere ist ▢. Lösung: x = **4**, y = **7**
-- `04` AFB I · 3 · 4 = 12. Wie viel ist 3 · 8? Lösung: **24**. Typische Fehler: 14 (1x1-addiert), 48 (1x1-nachbar).
-- `05` AFB II · Wie viele Aufgaben des kleinen Einmaleins (beide Zahlen von 1 bis 10) haben das Ergebnis 12? Zähle Tauschaufgaben einzeln. Lösung: **4**. Typische Fehler: 2 (1x1-nachbar).
-- `06` AFB III · Stimmt das? „Ungerade mal ungerade ergibt immer eine ungerade Zahl.“ Wähle die beste Begründung.
-  - ☐ Nein. 3 · 5 ist gerade.
-  - ☐ Ja. Aber nur im kleinen Einmaleins.
-  - ☑ Ja. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.
-  - ☐ Nein. Zwei ungerade Zahlen ergeben immer gerade.
+  - ☐ 24
+  - ☑ 37
+  - ☐ 27
+  - ☐ 9
+- `03` AFB II · Zwei Zahlen aus dem Einmaleins haben das Produkt 27 und die Summe 12. Die kleinere Zahl ist ▢, die größere ist ▢. Lösung: x = **3**, y = **9**
+- `04` AFB III · Stimmt das? „Ungerade mal ungerade ergibt immer eine ungerade Zahl.“ Wähle die beste Begründung.
+  - ☐ Falsch. Zwei ungerade Zahlen ergeben immer eine gerade Zahl.
+  - ☑ Stimmt. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.
+  - ☐ Stimmt, aber nur im kleinen Einmaleins.
+  - ☐ Das hängt von den beiden Zahlen ab.
+  - ☐ Falsch. 3 · 5 ist gerade.
+- `05` AFB II · Wie viele Aufgaben des kleinen Einmaleins (beide Zahlen von 1 bis 10) haben das Ergebnis 18? Zähle Tauschaufgaben einzeln. Lösung: **4**. Typische Fehler: 2 (1x1-nachbar).
+- `06` AFB III · 9 · 1 = 9, 9 · 2 = 18, 9 · 3 = 27, 9 · 4 = 36. Stelle eine Regel für alle Ergebnisse von 9 · 1 bis 9 · 10 auf.
+  - ☐ Zehnerziffer und Einerziffer ergeben zusammen immer 10.
+  - ☐ Es gibt keine Regel.
+  - ☐ Die Einerziffer wird von Ergebnis zu Ergebnis um 1 größer.
+  - ☐ Alle Ergebnisse sind ungerade.
+  - ☑ Zehnerziffer und Einerziffer ergeben zusammen immer 9, denn von Ergebnis zu Ergebnis wird der Zehner um 1 größer und der Einer um 1 kleiner.
 
 ## 5.4.1-K2: Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.
 
-### F · Förderniveau
+Grundlage, die F übt: Gerecht verteilen im Punktefeld, Mal-Aufgabe als Hilfe
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:* 15 : 5: Du weißt 3 · 5 = 15. Also ist 15 : 5 = 3. *Lösungsschritt:* Welche Zahl mal 5 ergibt 25? Zähle 5, 10, 15, 20, 25.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Rechne. / 25 : 5 Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
-- `02` AFB II · 12 Äpfel werden an 3 Kinder verteilt. / Jedes Kind bekommt gleich viele. / Wie viele bekommt jedes Kind? Lösung: **4**. Typische Fehler: 9 (div-falsche-rechenart), 15 (div-falsche-rechenart).
-- `03` AFB II · Welche Zahl fehlt? / 10 : ▢ = 5 Lösung: **2**. Typische Fehler: 5 (div-falsche-rechenart).
-- `04` AFB I · 6 : 2 / Welche Mal-Aufgabe hilft dir?
-  - ☐ 6 · 2
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 2 zusammen. Zähle die Gruppen. *Beispiel:* 15 : 5: Immer 5 zusammen. Das sind 3 Gruppen. Also 15 : 5 = 3. *Lösungsschritt:* Zähle im Bild die Gruppen mit je 2 Plättchen.
+
+- `01` AFB I · Rechne. / 8 : 2 _(Bild: 4 Gruppen mit je 2 Plättchen)_ Lösung: **4**. Typische Fehler: 5 (div-einmaleins), 3 (div-einmaleins).
+- `02` AFB I · 6 : 2 / Welche Mal-Aufgabe hilft dir? _(Bild: Punktefeld mit 3 Reihen zu je 2 Punkten)_
+  - ☐ 6 + 2 = 8
   - ☑ 3 · 2 = 6
-  - ☐ 4 · 2
-  - ☐ 6 + 2
-- `05` AFB II · Welche Zahl fehlt? / ▢ : 2 = 6 Lösung: **12**. Typische Fehler: 8 (div-falsche-rechenart).
-- `06` AFB III · Leo sagt: / „6 : 6 = 0“ / Stimmt das?
-  - ☐ Ja. / Es bleibt nichts übrig.
-  - ☐ Nein. / Es kommt die Zahl selbst heraus.
-  - ☑ Nein. / 6 : 6 = 1.
-  - ☐ Ja. / Die Zahlen sind gleich.
+  - ☐ 4 · 2 = 8
+- `03` AFB I · 6 Äpfel werden an 2 Kinder verteilt. / Jedes Kind bekommt gleich viele. / Wie viele Äpfel bekommt 1 Kind? _(Bild: 2 Gruppen mit je 3 Plättchen)_ Lösung: **3 Äpfel**. Typische Fehler: 4 (div-falsche-rechenart), 8 (div-falsche-rechenart).
+- `04` AFB I · Rechne. / 30 : 10 _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **3**. Typische Fehler: 30 (div-stellenwert).
+- `05` AFB II · Welche Zahl fehlt? / 15 : ▢ = 3 _(Bild: 3 Gruppen mit je 5 Plättchen)_ Lösung: **5**. Typische Fehler: 12 (div-falsche-rechenart).
+- `06` AFB I · Welche Aufgabe passt zum Bild? _(Bild: 3 Gruppen mit je 5 Plättchen)_
+  - ☐ 15 : 5 = 4
+  - ☐ 5 : 15 = 3
+  - ☑ 15 : 5 = 3
 
-### G · Grundlegendes Niveau
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:* 42 : 6: Du weißt 7 · 6 = 42. Also ist 42 : 6 = 7. *Lösungsschritt:* Zähle in 3er-Schritten bis 18: 3, 6, 9, 12, 15, 18.
 
-- `01` AFB I · Rechne. / 18 : 3 Lösung: **6**. Typische Fehler: 7 (div-einmaleins), 5 (div-einmaleins).
-- `02` AFB II · 12 Kinder bilden Gruppen. / In jeder Gruppe sind 3 Kinder. / Wie viele Gruppen gibt es? Lösung: **4**. Typische Fehler: 9 (div-falsche-rechenart), 5 (div-einmaleins).
-- `03` AFB II · Welche Aufgabe hat das Ergebnis 3?
-  - ☐ 24 : 3
-  - ☑ 15 : 5
+- `01` AFB I · Rechne. / 18 : 3 _(Bild: Punktefeld mit 6 Reihen zu je 3 Punkten)_ Lösung: **6**. Typische Fehler: 7 (div-einmaleins), 5 (div-einmaleins).
+- `02` AFB I · Welche Zahl fehlt? / 12 : ▢ = 4 Lösung: **3**. Typische Fehler: 8 (div-falsche-rechenart), 4 (div-einmaleins).
+- `03` AFB II · 15 Kinder bilden Gruppen. / In jeder Gruppe sind 5 Kinder. / Wie viele Gruppen gibt es? _(Bild: Mengenbild: 15 Plättchen)_ Lösung: **3 Gruppen**. Typische Fehler: 10 (div-falsche-rechenart), 4 (div-einmaleins).
+- `04` AFB I · 3 · 8 = 24 / 24 : 8 = ▢ / 24 : 3 = ▢ _(Bild: Punktefeld mit 3 Reihen zu je 8 Punkten)_ Lösung: x = **3**, y = **8**
+- `05` AFB II · Welche Aufgabe hat das Ergebnis 3?
+  - ☑ 18 : 6
+  - ☐ 54 : 9
   - ☐ 21 : 3
-  - ☐ 18 : 3
-- `04` AFB I · Welche Zahl fehlt? / 42 : ▢ = 6 Lösung: **7**. Typische Fehler: 36 (div-falsche-rechenart), 8 (div-einmaleins).
-- `05` AFB II · Ordne jeder Aufgabe ihr Ergebnis zu. Lösung: 18 : 9 → 2, 28 : 4 → 7, 24 : 4 → 6, 24 : 8 → 3
-- `06` AFB III · Ida rechnet 12 : 4 = 3. / Sie prüft mit 3 · 4. / Warum klappt das?
-  - ☑ Mal ist das Gegenteil von geteilt. / 3 · 4 = 12.
+- `06` AFB III · Ben rechnet 54 : 6 = 9. / Ben prüft mit 9 · 6. / Warum klappt das? _(Bild: Punktefeld mit 9 Reihen zu je 6 Punkten)_
   - ☐ Das klappt nur bei kleinen Zahlen.
-  - ☐ Auch 3 + 4 ergibt 12.
-  - ☐ Das klappt gar nicht.
+  - ☐ Auch 9 + 6 ergibt 54.
+  - ☑ Mal macht geteilt wieder rückgängig. / 9 · 6 = 54.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze die Umkehraufgabe. *Lösungsschritt:* Welche Zahl mal 6 ergibt 54? Beginne mit 5 · 6 = 30.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze die Umkehraufgabe. *Lösungsschritt:* Welche Zahl mal 6 ergibt 42? Beginne mit 5 · 6 = 30.
 
-- `01` AFB I · Wie viel ist 54 : 6? Lösung: **9**. Typische Fehler: 10 (div-einmaleins), 8 (div-einmaleins).
-- `02` AFB II · 28 Kinder fahren zum Ausflug. 4 Kinder kommen zu Fuß. Die anderen fahren in Autos mit je 6 Plätzen. Wie viele Autos braucht man? Lösung: **4**. Typische Fehler: 18 (div-falsche-rechenart).
-- `03` AFB II · Welche Aufgaben haben das Ergebnis 3? Kreuze alle an.
-  - ☑ 15 : 5
-  - ☑ 24 : 8
-  - ☐ 30 : 6
-  - ☐ 63 : 9
-- `04` AFB I · Welche Zahl fehlt? 72 : ▢ = 9 Lösung: **8**. Typische Fehler: 63 (div-falsche-rechenart), 9 (div-einmaleins).
-- `05` AFB II · Durch welche Zahl musst du 36 teilen, um 9 zu erhalten? Lösung: **4**. Typische Fehler: 27 (div-falsche-rechenart).
-- `06` AFB III · Max rechnet 56 : 8 = 8. Wie zeigst du ihm am besten, dass das falsch ist?
-  - ☐ Ich sage ihm das richtige Ergebnis.
+- `01` AFB I · Wie viel ist 42 : 6? Lösung: **7**. Typische Fehler: 8 (div-einmaleins), 6 (div-einmaleins).
+- `02` AFB II · 35 Kinder fahren zum Ausflug. 3 Kinder kommen zu Fuß. Die anderen fahren in Autos mit je 8 Plätzen. Wie viele Autos braucht man? Lösung: **4 Autos**. Typische Fehler: 24 (div-falsche-rechenart).
+- `03` AFB II · Welche Aufgaben haben das Ergebnis 7? Wähle alle richtigen aus.
+  - ☐ 12 : 4
+  - ☑ 28 : 4
+  - ☑ 42 : 6
+  - ☐ 45 : 9
+- `04` AFB I · Welche Zahl fehlt? 42 : ▢ = 6 Lösung: **7**. Typische Fehler: 36 (div-falsche-rechenart), 8 (div-einmaleins).
+- `05` AFB II · Durch welche Zahl musst du 20 teilen, um 4 zu erhalten? Lösung: **5**. Typische Fehler: 16 (div-falsche-rechenart).
+- `06` AFB III · Jonas rechnet 56 : 7 = 9. Wie lässt sich am besten zeigen, dass das falsch ist?
+  - ☑ Mit der Probe: 9 · 7 = 63. Das ist nicht 56.
+  - ☐ Indem man das richtige Ergebnis nennt.
   - ☐ Gar nicht. Das Ergebnis stimmt.
-  - ☑ Mit der Probe: 8 · 8 = 64. Das ist nicht 56.
-  - ☐ Mit 8 + 8.
+  - ☐ Mit der Rechnung 9 + 7.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du das Teilen rückgängig machen?
 
-- `01` AFB I · Ich denke mir eine Zahl. Ich teile sie durch 9 und erhalte 4. Welche Zahl habe ich mir gedacht? Lösung: **36**. Typische Fehler: 13 (div-falsche-rechenart).
-- `02` AFB II · Durch welche Zahl ist 24 nicht teilbar?
+- `01` AFB I · Ich denke mir eine Zahl. Ich teile sie durch 6 und erhalte 7. Welche Zahl habe ich mir gedacht? Lösung: **42**. Typische Fehler: 13 (div-falsche-rechenart).
+- `02` AFB II · Durch welche Zahl ist 72 nicht teilbar?
   - ☑ 7
-  - ☐ 2
-  - ☐ 3
-  - ☐ 8
-- `03` AFB II · Wie viele Zahlen von 1 bis 10 teilen 36 ohne Rest? Lösung: **6**. Typische Fehler: 5 (div-einmaleins), 7 (div-einmaleins).
-- `04` AFB I · 24 : 4 = 6. Wie viel ist 24 : 6? Lösung: **4**. Typische Fehler: 6 (div-vertauscht).
-- `05` AFB II · Die Zahl 24 wird durch 4 geteilt. Das Ergebnis wird noch einmal durch 3 geteilt. Was kommt heraus? Lösung: **2**. Typische Fehler: 6 (sach-schritt-vergessen).
-- `06` AFB III · Tim sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche 24 : 3 und 24 : 12. Wähle die richtige Antwort.
-  - ☐ Nein. Das Ergebnis bleibt immer gleich.
-  - ☐ Ja. Größere Zahlen ergeben größere Ergebnisse.
-  - ☑ Nein. 24 : 3 = 8, aber 24 : 12 = 2. Das Ergebnis wird kleiner.
-  - ☐ Ja. Beim Malnehmen ist das auch so.
+  - ☐ 6
+  - ☐ 9
+  - ☐ 4
+- `03` AFB II · Wie viele Zahlen von 1 bis 10 teilen 30 ohne Rest? Lösung: **6**. Typische Fehler: 5 (div-einmaleins), 7 (div-einmaleins).
+- `04` AFB III · Sara sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche 48 : 4 und 48 : 6. Wähle die richtige Antwort.
+  - ☐ Stimmt. 48 : 6 ist größer als 48 : 4.
+  - ☑ Falsch. 48 : 4 = 12, aber 48 : 6 = 8. Das Ergebnis wird kleiner.
+  - ☐ Stimmt. Größere Zahlen ergeben größere Ergebnisse.
+  - ☐ Stimmt. Beim Malnehmen ist das auch so.
+  - ☐ Falsch. Das Ergebnis bleibt immer gleich.
+- `05` AFB II · Die Zahl 24 wird durch 2 geteilt. Das Ergebnis wird noch einmal durch 3 geteilt. Was kommt heraus? Lösung: **4**. Typische Fehler: 12 (sach-schritt-vergessen).
+- `06` AFB III · 40 : 2 = 20, 40 : 4 = 10 und 40 : 8 = 5. Stelle eine Regel auf: Was geschieht mit dem Ergebnis, wenn die Zahl, durch die geteilt wird, verdoppelt wird?
+  - ☑ Das Ergebnis halbiert sich.
+  - ☐ Das Ergebnis verdoppelt sich.
+  - ☐ Das Ergebnis wird um 2 kleiner.
+  - ☐ Das Ergebnis wird immer um 10 kleiner.
+  - ☐ Das Ergebnis bleibt gleich.
 
 ## 5.4.5-D1: Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden.
 
-### F · Förderniveau
+Grundlage, die F übt: Teilen als Verteilen und als Aufteilen in Gruppen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Zeichen : liest du „geteilt durch“. Hinter dem = steht das Ergebnis. *Beispiel:* 12 : 3 = 4. Du liest: 12 geteilt durch 3 ist gleich 4. Das Ergebnis ist 4. *Lösungsschritt:* Lies die Aufgabe laut: 12 geteilt durch 4 ist gleich 3.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · 12 : 4 = 3 / Welche Zahl ist das Ergebnis? Lösung: **3**. Typische Fehler: 12 (begriffe-verwechselt), 4 (begriffe-verwechselt).
-- `02` AFB II · 45 geteilt durch 9 / Welche Aufgabe passt?
-  - ☐ 45 − 9
-  - ☐ 45 · 9
-  - ☐ 9 : 45
-  - ☑ 45 : 9
-- `03` AFB II · Die Mal-Aufgabe ist 9 · 2 = 18. / Welche Geteilt-Aufgabe passt dazu?
-  - ☑ 18 : 2 = 9
-  - ☐ 2 : 18 = 9
-  - ☐ 9 : 2 = 18
-  - ☐ 18 : 2 = 18
-- `04` AFB I · 54 : 9 / Wie liest du die Aufgabe?
-  - ☐ 54 mal 9
-  - ☐ 54 minus 9
-  - ☐ 9 geteilt durch 54
-  - ☑ 54 geteilt durch 9
-- `05` AFB II · Eine Zahl wird durch 8 geteilt. / Das Ergebnis ist 4. / Wie heißt die Zahl? Lösung: **32**. Typische Fehler: 12 (div-falsche-rechenart).
-- `06` AFB III · Tim sagt: / „8 : 2 ist dasselbe wie 2 : 8.“ / Stimmt das?
-  - ☑ Nein. / 8 Dinge kann man an 2 Kinder verteilen. / 2 Dinge reichen nicht für 8 Kinder.
-  - ☐ Ja. / Es sind beide Male die gleichen Zahlen.
-  - ☐ Ja. / Beim Teilen darf man die Zahlen tauschen.
-  - ☐ Nein. / 2 : 8 ist größer.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Zeichen : liest du „geteilt durch“. *Beispiel:* 12 : 3 liest du: 12 geteilt durch 3. *Lösungsschritt:* Die Zahl 6 wird geteilt. Sie steht vorn.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · 6 : 3 / Wie liest du die Aufgabe? _(Bild: 2 Gruppen mit je 3 Plättchen)_
+  - ☐ 6 mal 3
+  - ☑ 6 geteilt durch 3
+  - ☐ 3 geteilt durch 6
+- `02` AFB I · 6 : 2 = 3 / Welche Zahl ist das Ergebnis? _(Bild: 3 Gruppen mit je 2 Plättchen)_ Lösung: **3**. Typische Fehler: 6 (begriffe-verwechselt), 2 (begriffe-verwechselt).
+- `03` AFB I · 10 geteilt durch 5 / Welche Aufgabe passt? _(Bild: 2 Gruppen mit je 5 Plättchen)_
+  - ☑ 10 : 5
+  - ☐ 5 : 10
+  - ☐ 10 · 5
+- `04` AFB I · Du hast 20 Plättchen. / Immer 5 Plättchen sind zusammen. / Wie viele Gruppen sind es? _(Bild: 4 Gruppen mit je 5 Plättchen)_ Lösung: **4 Gruppen**. Typische Fehler: 15 (div-falsche-rechenart), 5 (begriffe-verwechselt).
+- `05` AFB II · Die Mal-Aufgabe ist 5 · 2 = 10. / Welche Geteilt-Aufgabe passt dazu? _(Bild: Punktefeld mit 5 Reihen zu je 2 Punkten)_
+  - ☐ 5 : 2 = 10
+  - ☐ 2 : 10 = 5
+  - ☑ 10 : 2 = 5
+- `06` AFB I · 10 Bonbons sind für 2 Kinder. / Jedes Kind bekommt gleich viele. / Wie viele Bonbons bekommt 1 Kind? _(Bild: 2 Gruppen mit je 5 Plättchen)_ Lösung: **5 Bonbons**. Typische Fehler: 8 (div-falsche-rechenart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Ergebnis einer Geteilt-Aufgabe heißt Quotient. *Beispiel:* 20 : 4 = 5. Der Quotient ist 5. *Lösungsschritt:* Du rechnest 36 : 9. Das Ergebnis ist der Quotient.
 
 - `01` AFB I · 36 : 9 = 4 / Wie heißt die Zahl 4?
   - ☑ Quotient
-  - ☐ Summe
   - ☐ Produkt
-  - ☐ Differenz
-- `02` AFB II · Der Quotient ist 5. / Welche Aufgabe passt?
-  - ☐ 28 : 7
-  - ☐ 40 − 8
-  - ☑ 40 : 8
-  - ☐ 5 · 8
-- `03` AFB II · Ordne jedem Ergebnis den richtigen Namen zu. Lösung: 20 + 5 → Summe, 20 − 5 → Differenz, 20 · 5 → Produkt, 20 : 5 → Quotient
-- `04` AFB I · Berechne den Quotienten. / 56 : 8 Lösung: **7**. Typische Fehler: 8 (div-einmaleins), 6 (div-einmaleins).
-- `05` AFB II · Eine Zahl wird durch 5 geteilt. / Der Quotient ist 3. / Wie heißt die Zahl? Lösung: **15**. Typische Fehler: 8 (div-falsche-rechenart).
-- `06` AFB III · Lea sagt: / „Der Quotient ist immer kleiner als die erste Zahl.“ / Prüfe mit 6 : 1. / Stimmt das?
-  - ☑ Nein. / 6 : 1 = 6. / Der Quotient ist hier genauso groß.
-  - ☐ Ja. / 6 : 1 = 5.
-  - ☐ Nein. / Der Quotient ist immer größer als die erste Zahl.
-  - ☐ Ja. / Beim Teilen wird jede Zahl kleiner.
+  - ☐ Summe
+- `02` AFB I · Berechne den Quotienten. / 56 : 7 _(Bild: Punktefeld mit 8 Reihen zu je 7 Punkten)_ Lösung: **8**. Typische Fehler: 9 (div-einmaleins), 7 (div-einmaleins).
+- `03` AFB II · Der Quotient ist 7. / Welche Aufgabe passt?
+  - ☐ 24 : 4
+  - ☐ 35 − 5
+  - ☑ 35 : 5
+- `04` AFB I · 40 : 8 = 5 / Der Quotient ist ▢. _(Bild: Punktefeld mit 5 Reihen zu je 8 Punkten)_ Lösung: x = **5**
+- `05` AFB II · Ordne jedem Ergebnis den richtigen Namen zu. Lösung: 30 + 5 → Summe, 30 − 5 → Differenz, 30 · 5 → Produkt, 30 : 5 → Quotient
+- `06` AFB III · Lena sagt: / „Der Quotient ist immer kleiner als die erste Zahl.“ / Prüfe mit 7 : 1. / Stimmt das? _(Bild: 1 Gruppen mit je 7 Plättchen)_
+  - ☐ Stimmt. / Beim Teilen wird jede Zahl kleiner.
+  - ☐ Stimmt. / 7 : 1 = 6.
+  - ☑ Falsch. / 7 : 1 = 7. / Der Quotient ist hier genauso groß.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt, der Divisor teilt, der Quotient ist das Ergebnis. *Lösungsschritt:* Die Zahl 96 wird geteilt. Sie ist der Dividend.
 
@@ -1370,424 +1658,412 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt, der Diviso
   - ☑ Er verdoppelt sich.
   - ☐ Er wird um 2 größer.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Rechnung wird in jedem Term zuletzt ausgeführt?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was ist hier der Divisor: eine Zahl oder ein Term?
 
-- `01` AFB I · Welcher Term ist ein Quotient?
-  - ☐ 12 − 20 : 4
-  - ☐ 12 · (20 : 4)
-  - ☐ 12 + 20 : 4
-  - ☑ (12 + 20) : 4
-- `02` AFB II · Der Divisor ist 16, der Quotient 35 und der Rest 3. Bestimme den Dividenden. Lösung: **563**. Typische Fehler: 560 (div-rest-vergessen).
-- `03` AFB II · Ein Quotient hat den Wert 20. Der Dividend wird vervierfacht, der Divisor verdoppelt. Welchen Wert hat der neue Quotient? Lösung: **40**. Typische Fehler: 80 (div-stellenwert), 10 (div-stellenwert), 20 (div-stellenwert).
-- `04` AFB I · Berechne den Wert des Quotienten aus 684 und dem Produkt von 6 und 6. Lösung: **19**. Typische Fehler: 114 (sach-schritt-vergessen).
-- `05` AFB II · Die Summe aus Dividend und Divisor ist 80. Der Quotient ist 7. Wie groß ist der Dividend? Lösung: **70**. Typische Fehler: 10 (begriffe-verwechselt).
-- `06` AFB III · Welche Aussage gilt für jede Division natürlicher Zahlen, die ohne Rest aufgeht (Divisor nicht 0)?
-  - ☐ Dividend und Divisor darf man vertauschen.
+- `01` AFB I · Berechne den Wert des Quotienten aus 336 und dem Produkt von 4 und 6. Lösung: **14**. Typische Fehler: 84 (sach-schritt-vergessen), 56 (sach-schritt-vergessen).
+- `02` AFB II · Der Divisor ist 11, der Quotient 26 und der Rest 6. Bestimme den Dividenden. Lösung: **292**. Typische Fehler: 286 (div-rest-vergessen).
+- `03` AFB II · Ein Quotient hat den Wert 22. Der Dividend wird vervierfacht, der Divisor verdoppelt. Welchen Wert hat der neue Quotient? Lösung: **44**. Typische Fehler: 88 (div-stellenwert), 11 (div-stellenwert), 22 (div-stellenwert).
+- `04` AFB III · Welche Aussage gilt für jede Division natürlicher Zahlen, die ohne Rest aufgeht (Divisor nicht 0)?
+  - ☐ Der Quotient ist immer kleiner als der Divisor.
   - ☐ Der Quotient ist immer größer als der Divisor.
+  - ☐ Dividend und Divisor darf man vertauschen.
   - ☐ Der Quotient ist immer kleiner als der Dividend.
   - ☑ Quotient · Divisor = Dividend
+- `05` AFB II · Die Summe aus Dividend und Divisor ist 120. Der Quotient ist 7. Wie groß ist der Dividend? Lösung: **105**. Typische Fehler: 15 (begriffe-verwechselt).
+- `06` AFB III · 28 : 4 = 7, 56 : 8 = 7 und 84 : 12 = 7. Stelle eine Regel auf.
+  - ☐ Der Wert des Quotienten bleibt gleich, wenn nur der Dividend größer wird.
+  - ☐ Wird zu Dividend und Divisor dieselbe Zahl addiert, bleibt der Wert des Quotienten gleich.
+  - ☐ Es gibt keine Regel. Die drei Ergebnisse sind zufällig gleich.
+  - ☐ Werden Dividend und Divisor mit derselben Zahl multipliziert, wird auch der Wert des Quotienten mit dieser Zahl multipliziert.
+  - ☑ Werden Dividend und Divisor mit derselben Zahl multipliziert, bleibt der Wert des Quotienten gleich.
 
 ## 5.4.5-D2: Ich kann schriftlich durch einstellige Zahlen dividieren.
 
-### F · Förderniveau
+Grundlage, die F übt: Einmaleins rückwärts, dann mit Zehnerzahlen (12 : 3 und 120 : 3)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm 25 Wendeplättchen. Lege immer 5 zusammen. Zähle die Häufchen. *Beispiel:* Bei 12 : 3 hilft die 3er-Reihe: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also ist 12 : 3 = 4. *Lösungsschritt:* Nutze die 5er-Reihe: 1 · 5 = 5, 2 · 5 = 10, 3 · 5 = 15, 4 · 5 = 20, … Wie oft brauchst du die 5, bis du bei 25 bist?
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Rechne. / 25 : 5 Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
-- `02` AFB II · Welche Zahl fehlt? / ▢ : 6 = 8 Lösung: **48**. Typische Fehler: 14 (div-falsche-rechenart).
-- `03` AFB II · Welche Zahl fehlt? / 49 : ▢ = 7 Lösung: **7**. Typische Fehler: 42 (div-falsche-rechenart).
-- `04` AFB I · Rechne. / 15 : 3 Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
-- `05` AFB II · 12 : 3 = 4 / Wie viel ist 120 : 3? Lösung: **40**. Typische Fehler: 4 (div-stellenwert), 400 (div-stellenwert).
-- `06` AFB III · Mia rechnet: 15 : 5 = 4. / Prüfe mit der Mal-Aufgabe. / Was stimmt?
-  - ☐ Richtig. / 15 − 5 = 10.
-  - ☑ Falsch. / 4 · 5 = 20. / Richtig ist 3.
-  - ☐ Richtig. / 4 · 5 = 15.
-  - ☐ Falsch. / Richtig ist 5.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 3 zusammen. Zähle die Gruppen. *Beispiel:* 12 : 3: Die 3er-Reihe hilft: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also 12 : 3 = 4. *Lösungsschritt:* Zähle im Bild die Gruppen mit je 3 Plättchen.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Rechne. / 15 : 3 _(Bild: 5 Gruppen mit je 3 Plättchen)_ Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
+- `02` AFB I · 5 · 6 = 30 / 30 : 6 = ▢ _(Bild: Punktefeld mit 5 Reihen zu je 6 Punkten)_ Lösung: x = **5**
+- `03` AFB I · 12 : 4 / Welches Ergebnis stimmt? _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_
+  - ☐ 8
+  - ☑ 3
+  - ☐ 4
+- `04` AFB I · Rechne 26 : 2 in 2 Schritten. / 20 : 2 = ▢ / 6 : 2 = ▢ / Zusammen: ▢ _(Bild: Zehnermaterial: 2 Zehnerstangen, 6 Einerwürfel)_ Lösung: x = **10**, y = **3**, z = **13**
+- `05` AFB II · Welche Zahl fehlt? / ▢ : 5 = 3 _(Bild: 3 Gruppen mit je 5 Plättchen)_ Lösung: **15**. Typische Fehler: 8 (div-falsche-rechenart).
+- `06` AFB I · 6 : 2 = 3 / Wie viel ist 60 : 2? _(Bild: Zehnermaterial: 6 Zehnerstangen, 0 Einerwürfel)_ Lösung: **30**. Typische Fehler: 3 (div-stellenwert), 300 (div-stellenwert).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen. *Beispiel:* 138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23. *Lösungsschritt:* Beginne links. Wie oft passt die 8 in die 68? 8-mal, denn 8 · 8 = 64. Rechne 68 − 64 = 4. Hole die nächste Ziffer herunter.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Dividiere schriftlich. / 680 : 8 Lösung: **85**. Typische Fehler: 850 (div-stellenwert).
-- `02` AFB II · Rechne 270 : 5 in 2 Schritten. / 250 : 5 = ▢ / 20 : 5 = ▢ / Zusammen: ▢ Lösung: zehner = **50**, einer = **4**, ergebnis = **54**
-- `03` AFB II · Welche Zahl fehlt? / ▢ : 3 = 122 Lösung: **366**. Typische Fehler: 125 (div-falsche-rechenart).
-- `04` AFB I · Dividiere schriftlich. / 260 : 4 Lösung: **65**. Typische Fehler: 650 (div-stellenwert).
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen. *Beispiel:* 138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23. *Lösungsschritt:* Beginne links. Wie oft passt die 5 in die 23? 4-mal, denn 4 · 5 = 20. Rechne 23 − 20 = 3. Hole die nächste Ziffer herunter.
+
+- `01` AFB I · Dividiere schriftlich. / 230 : 5 _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **46**. Typische Fehler: 460 (div-stellenwert).
+- `02` AFB I · Rechne 315 : 7 in 2 Schritten. / 280 : 7 = ▢ / 35 : 7 = ▢ / Zusammen: ▢ _(Bild: Zehnermaterial: 3 Hunderterplatten, 1 Zehnerstangen, 5 Einerwürfel)_ Lösung: zehner = **40**, einer = **5**, ergebnis = **45**
+- `03` AFB II · Welche Zahl fehlt? / ▢ : 6 = 43 Lösung: **258**. Typische Fehler: 49 (div-falsche-rechenart).
+- `04` AFB I · Dividiere schriftlich. / 489 : 3 _(Bild: Zehnermaterial: 4 Hunderterplatten, 8 Zehnerstangen, 9 Einerwürfel)_ Lösung: **163**. Typische Fehler: 1630 (div-stellenwert).
 - `05` AFB II · Welche Aufgabe hat das größere Ergebnis? / Überlege zuerst. / Rechne dann nach.
-  - ☑ 126 : 3
-  - ☐ 126 : 6
   - ☐ Beide Ergebnisse sind gleich.
-- `06` AFB III · Ben rechnet: 612 : 6 = 12. / Was hat Ben falsch gemacht?
-  - ☑ Er hat die 0 im Ergebnis vergessen. / Richtig ist 102.
-  - ☐ Er hat mal gerechnet statt geteilt.
-  - ☐ Nichts. / Das Ergebnis stimmt.
-  - ☐ Er hat die Zahlen vertauscht.
+  - ☑ 243 : 3
+  - ☐ 243 : 9
+- `06` AFB III · Ben rechnet: 102 : 6 = 27. / Prüfe mit der Mal-Aufgabe. / Stimmt das?
+  - ☑ Falsch. / 27 · 6 = 162. / Richtig ist 17.
+  - ☐ Falsch. / Richtig ist 37.
+  - ☐ Stimmt. / 27 · 6 = 102.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten. *Lösungsschritt:* Beginne links. Wie oft passt die 4 in die 28? 7-mal, denn 7 · 4 = 28. Rechne 28 − 28 = 0. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten. *Lösungsschritt:* Beginne links. Wie oft passt die 5 in die 7? 1-mal, denn 1 · 5 = 5. Rechne 7 − 5 = 2. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · Dividiere schriftlich: 28 032 : 4 Lösung: **7008**. Typische Fehler: 78 (div-null-vergessen), 70080 (div-stellenwert).
-- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 8 = 3504 Lösung: **28032**. Typische Fehler: 3512 (begriffe-verwechselt).
-- `03` AFB II · Dividiere 3600 zuerst durch 5. Dividiere das Ergebnis dann durch 6. Lösung: **120**. Typische Fehler: 720 (sach-schritt-vergessen).
-- `04` AFB I · Dividiere schriftlich: 48 352 : 8 Lösung: **6044**. Typische Fehler: 644 (div-null-vergessen), 60440 (div-stellenwert).
-- `05` AFB II · Um wie viel ist 856 : 2 größer als 856 : 8? Lösung: **321**. Typische Fehler: 428 (sach-schritt-vergessen), 107 (sach-schritt-vergessen).
-- `06` AFB III · Jana erhält bei 3535 : 7 das Ergebnis 55. Prüfe mit einem Überschlag und entscheide.
-  - ☐ Richtig: Der Überschlag bestätigt ein zweistelliges Ergebnis.
+- `01` AFB I · Dividiere schriftlich: 7545 : 5 Lösung: **1509**. Typische Fehler: 159 (div-null-vergessen), 15090 (div-stellenwert).
+- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 4 = 803 Lösung: **3212**. Typische Fehler: 807 (begriffe-verwechselt).
+- `03` AFB II · Dividiere 5250 zuerst durch 6. Dividiere das Ergebnis dann durch 7. Lösung: **125**. Typische Fehler: 875 (sach-schritt-vergessen).
+- `04` AFB I · Dividiere schriftlich: 9873 : 9 Lösung: **1097**. Typische Fehler: 197 (div-null-vergessen), 10970 (div-stellenwert).
+- `05` AFB II · Um wie viel ist 688 : 2 größer als 688 : 8? Lösung: **258**. Typische Fehler: 344 (sach-schritt-vergessen), 86 (sach-schritt-vergessen).
+- `06` AFB III · Lena erhält bei 3228 : 4 das Ergebnis 87. Prüfe mit einem Überschlag und entscheide.
   - ☐ Falsch: Der Quotient muss vierstellig sein.
-  - ☑ Falsch: 3500 : 7 = 500, der Quotient muss dreistellig sein. Richtig ist 505.
-  - ☐ Richtig: 55 · 7 = 3535.
+  - ☑ Falsch: 3200 : 4 = 800, der Quotient muss dreistellig sein. Richtig ist 807.
+  - ☐ Richtig: 87 · 4 = 3228.
+  - ☐ Richtig: Der Überschlag bestätigt ein zweistelliges Ergebnis.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie viele Stellen muss der Quotient nach einem Überschlag haben?
 
-- `01` AFB I · Dividiere schriftlich: 14 714 : 7 Lösung: **2102**. Typische Fehler: 212 (div-null-vergessen), 21020 (div-stellenwert).
-- `02` AFB II · Bei einer Division wurde gekleckert: 9▢1 : 7. Welche Ziffer muss in der Lücke stehen, damit die Division ohne Rest aufgeht? Lösung: **3**.
-- `03` AFB II · Die Zahl 4▢3 soll ohne Rest durch 7 teilbar sein. Wie viele verschiedene Ziffern kommen für die Lücke in Frage? Lösung: **2**. Typische Fehler: 1 (teilbar-summe).
-- `04` AFB I · Dividiere schriftlich: 14 245 : 7 Lösung: **2035**. Typische Fehler: 235 (div-null-vergessen), 20350 (div-stellenwert).
-- `05` AFB II · Bestimme die größte dreistellige Zahl, die ohne Rest durch 7 teilbar ist. Lösung: **994**.
-- `06` AFB III · Jonas behauptet: „Wenn ich zu einer Zahl, die ohne Rest durch 8 teilbar ist, die Zahl 40 addiere, ist das Ergebnis wieder ohne Rest durch 8 teilbar.“ Beurteile, ohne eine bestimmte Zahl auszurechnen.
-  - ☐ Stimmt immer, weil jede Zahl plus 40 durch 8 teilbar ist.
-  - ☐ Stimmt nur manchmal: Es hängt von der Ausgangszahl ab.
-  - ☑ Stimmt immer, weil 40 = 5 · 8 selbst ein Vielfaches von 8 ist.
+- `01` AFB I · Dividiere schriftlich: 5614 : 7 Lösung: **802**. Typische Fehler: 82 (div-null-vergessen), 8020 (div-stellenwert).
+- `02` AFB II · Bei einer Division wurde gekleckert: 5▢6 : 7. Welche Ziffer muss in der Lücke stehen, damit die Division ohne Rest aufgeht? Lösung: **4**.
+- `03` AFB II · Die Zahl 8▢2 soll ohne Rest durch 8 teilbar sein. Wie viele verschiedene Ziffern kommen für die Lücke in Frage? Lösung: **2**. Typische Fehler: 1 (teilbar-summe).
+- `04` AFB III · Lena behauptet: „Wenn ich zu einer Zahl, die ohne Rest durch 8 teilbar ist, die Zahl 32 addiere, ist das Ergebnis wieder ohne Rest durch 8 teilbar.“ Beurteile, ohne eine bestimmte Zahl auszurechnen.
   - ☐ Stimmt nie: Durch das Addieren entsteht ein Rest.
+  - ☑ Stimmt immer, weil 32 = 4 · 8 selbst ein Vielfaches von 8 ist.
+  - ☐ Stimmt immer, weil jede Zahl plus 32 durch 8 teilbar ist.
+  - ☐ Stimmt nur manchmal: Es hängt von der Ausgangszahl ab.
+- `05` AFB II · Bestimme die größte dreistellige Zahl, die ohne Rest durch 7 teilbar ist. Lösung: **994**.
+- `06` AFB III · Aus den Ziffern 1, 2 und 6 werden alle dreistelligen Zahlen gebildet, in denen jede Ziffer genau einmal vorkommt. Wie viele dieser Zahlen sind ohne Rest durch 8 teilbar? Lösung: **1**. Typische Fehler: 6 (sach-schritt-vergessen).
 
 ## 5.4.5-D3: Ich kann schriftlich durch zweistellige Zahlen dividieren.
 
-### F · Förderniveau
+Grundlage, die F übt: Durch 10 teilen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* 30 sind 3 Zehner. Zeichne für jeden Zehner einen Strich auf dein Schmierblatt. *Beispiel:* 70 : 10 = 7. In 70 stecken 7 Zehner. *Lösungsschritt:* Wie viele Zehner stecken in 30? Zähle in Zehnerschritten bis 30.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Rechne. / 30 : 10 Lösung: **3**. Typische Fehler: 30 (div-stellenwert), 300 (div-stellenwert).
-- `02` AFB II · Welche Zahl fehlt? / ▢ : 10 = 3 Lösung: **30**. Typische Fehler: 3 (div-stellenwert), 13 (div-falsche-rechenart).
-- `03` AFB II · 10 Kinder teilen 50 Murmeln gerecht. / Wie viele Murmeln bekommt 1 Kind? Lösung: **5 Murmeln**. Typische Fehler: 40 (div-falsche-rechenart).
-- `04` AFB I · Rechne. / 600 : 10 Lösung: **60**. Typische Fehler: 600 (div-stellenwert), 6000 (div-stellenwert).
-- `05` AFB II · 60 : 10 = 6 / Wie viel ist 600 : 10? Lösung: **60**. Typische Fehler: 6 (div-stellenwert), 600 (div-stellenwert).
-- `06` AFB III · Ali sagt: / „Teile ich eine Zehnerzahl durch 10, fällt eine Null weg.“ / Prüfe mit 90 : 10 und 500 : 10. / Stimmt das?
-  - ☑ Ja. / 90 : 10 = 9 und 500 : 10 = 50.
-  - ☐ Ja. / 90 : 10 = 900.
-  - ☐ Nein. / 500 : 10 = 5.
-  - ☐ Nein. / 90 : 10 = 90.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt durch 10 fragt: Wie viele Zehner sind es? *Beispiel:* 70 : 10 = 7. In 70 stecken 7 Zehner. *Lösungsschritt:* Zähle im Bild die Zehner.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Rechne. / 50 : 10 _(Bild: Zehnermaterial: 5 Zehnerstangen, 0 Einerwürfel)_ Lösung: **5**. Typische Fehler: 50 (div-stellenwert), 500 (div-stellenwert).
+- `02` AFB I · 10 Kinder teilen 30 Sticker gerecht. / Wie viele Sticker bekommt 1 Kind? _(Bild: 10 Gruppen mit je 3 Plättchen)_ Lösung: **3 Sticker**. Typische Fehler: 20 (div-falsche-rechenart).
+- `03` AFB I · 20 sind ▢ Zehner. / 20 : 10 = ▢ _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_ Lösung: x = **2**, y = **2**
+- `04` AFB I · 30 : 10 / Welches Ergebnis stimmt? _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_
+  - ☐ 30
+  - ☑ 3
+  - ☐ 300
+- `05` AFB II · 80 : 10 = 8 / Wie viel ist 800 : 10? _(Bild: Zehnermaterial: 8 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **80**. Typische Fehler: 8 (div-stellenwert), 800 (div-stellenwert).
+- `06` AFB I · Welche Zahl fehlt? / ▢ : 10 = 5 _(Bild: Zehnermaterial: 5 Zehnerstangen, 0 Einerwürfel)_ Lösung: **50**. Typische Fehler: 5 (div-stellenwert), 15 (div-falsche-rechenart).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile erst durch 10. Teile dann durch 9. *Beispiel:* 180 : 20: 180 : 10 = 18. Dann 18 : 2 = 9. *Lösungsschritt:* 360 : 10 = 36. Rechne jetzt 36 : 9.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Rechne. / 360 : 90 Lösung: **4**. Typische Fehler: 40 (div-stellenwert).
-- `02` AFB II · Rechne 570 : 30 in 2 Schritten. / 570 : 10 = ▢ / Dann geteilt durch 3: ▢ Lösung: erst = **57**, dann = **19**
-- `03` AFB II · Welche Zahl fehlt? / ▢ : 50 = 5 Lösung: **250**. Typische Fehler: 25 (div-stellenwert).
-- `04` AFB I · Rechne. / 520 : 40 Lösung: **13**. Typische Fehler: 130 (div-stellenwert).
-- `05` AFB II · 40 Kinder zahlen zusammen 600 € für einen Ausflug. / Alle zahlen gleich viel. / Wie viel Euro zahlt 1 Kind? Lösung: **15 €**. Typische Fehler: 560 (div-falsche-rechenart), 150 (div-stellenwert).
-- `06` AFB III · Emma rechnet: 400 : 20 = 2. / Prüfe mit der Mal-Aufgabe. / Was stimmt?
-  - ☐ Richtig. / Bei Zehnerzahlen fallen alle Nullen weg.
-  - ☑ Falsch. / 2 · 20 = 40. / Richtig ist 20.
-  - ☐ Richtig. / 2 · 20 = 400.
-  - ☐ Falsch. / Richtig ist 200.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile erst durch 10. Teile dann durch 3. *Beispiel:* 180 : 20: 180 : 10 = 18. Dann 18 : 2 = 9. *Lösungsschritt:* 90 : 10 = 9. Rechne jetzt 9 : 3.
 
-### M · Mittleres Niveau
+- `01` AFB I · Rechne. / 90 : 30 _(Bild: Zehnermaterial: 9 Zehnerstangen, 0 Einerwürfel)_ Lösung: **3**. Typische Fehler: 30 (div-stellenwert).
+- `02` AFB I · Rechne 560 : 20 in 2 Schritten. / 560 : 10 = ▢ / Dann geteilt durch 2: ▢ _(Bild: Zehnermaterial: 5 Hunderterplatten, 6 Zehnerstangen, 0 Einerwürfel)_ Lösung: erst = **56**, dann = **28**
+- `03` AFB II · Welche Zahl fehlt? / ▢ : 20 = 4 Lösung: **80**. Typische Fehler: 8 (div-stellenwert).
+- `04` AFB I · 320 : 10 = 32 / Wie viel ist 320 : 20? Lösung: **16**. Typische Fehler: 160 (div-stellenwert), 32 (sach-schritt-vergessen).
+- `05` AFB II · 50 Kinder zahlen zusammen 650 € für einen Ausflug. / Alle zahlen gleich viel. / Wie viel Euro zahlt 1 Kind? _(Bild: Zehnermaterial: 6 Hunderterplatten, 5 Zehnerstangen, 0 Einerwürfel)_ Lösung: **13 €**. Typische Fehler: 600 (div-falsche-rechenart), 130 (div-stellenwert).
+- `06` AFB III · Finn rechnet: 800 : 20 = 4. / Prüfe mit der Mal-Aufgabe. / Stimmt das?
+  - ☐ Stimmt. / 4 · 20 = 800.
+  - ☑ Falsch. / 4 · 20 = 80. / Richtig ist 40.
+  - ☐ Falsch. / Richtig ist 400.
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere dir zuerst die Reihe 15, 30, 45, … am Rand. Sie hilft bei jedem Schritt. *Lösungsschritt:* Beginne links. Wie oft passt die 15 in die 19? 1-mal, denn 1 · 15 = 15. Rechne 19 − 15 = 4. Hole die nächste Ziffer herunter.
+### M · Mittleres Niveau (Realschulabschluss)
 
-- `01` AFB I · Dividiere schriftlich: 1935 : 15 Lösung: **129**. Typische Fehler: 1290 (div-stellenwert).
-- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 18 = 445 Lösung: **8010**. Typische Fehler: 463 (begriffe-verwechselt).
-- `03` AFB II · Dividiere 7380 durch das Produkt aus 3 und 15. Lösung: **164**. Typische Fehler: 2460 (sach-schritt-vergessen), 492 (sach-schritt-vergessen).
-- `04` AFB I · Dividiere schriftlich: 5275 : 25 Lösung: **211**. Typische Fehler: 2110 (div-stellenwert).
-- `05` AFB II · Welcher Überschlag passt am besten zu 6944 : 28?
-  - ☑ 7500 : 30 = 250
-  - ☐ 7500 : 100 = 75
-  - ☐ 7500 : 10 = 750
-  - ☐ 75 000 : 30 = 2500
-- `06` AFB III · Tom erhält bei 5712 : 28 das Ergebnis 24. Prüfe mit einem Überschlag und entscheide.
-  - ☐ Richtig: Bei einem zweistelligen Divisor ist auch der Quotient zweistellig.
-  - ☑ Falsch: 5600 : 28 = 200, der Quotient muss dreistellig sein. Richtig ist 204.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere dir zuerst die Reihe 38, 76, 114, … am Rand. Sie hilft bei jedem Schritt. *Lösungsschritt:* Beginne links. Wie oft passt die 38 in die 62? 1-mal, denn 1 · 38 = 38. Rechne 62 − 38 = 24. Hole die nächste Ziffer herunter.
+
+- `01` AFB I · Dividiere schriftlich: 6232 : 38 Lösung: **164**. Typische Fehler: 1640 (div-stellenwert).
+- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 16 = 473 Lösung: **7568**. Typische Fehler: 489 (begriffe-verwechselt).
+- `03` AFB II · Dividiere 9840 durch das Produkt aus 4 und 15. Lösung: **164**. Typische Fehler: 2460 (sach-schritt-vergessen), 656 (sach-schritt-vergessen).
+- `04` AFB I · Dividiere schriftlich: 7337 : 29 Lösung: **253**. Typische Fehler: 2530 (div-stellenwert).
+- `05` AFB II · Welcher Überschlag passt am besten zu 5092 : 38?
+  - ☐ 52 000 : 40 = 1300
+  - ☑ 5200 : 40 = 130
+  - ☐ 5200 : 10 = 520
+  - ☐ 5200 : 100 = 52
+- `06` AFB III · Ole erhält bei 2460 : 12 das Ergebnis 25. Prüfe mit einem Überschlag und entscheide.
   - ☐ Falsch: Der Quotient muss vierstellig sein.
-  - ☐ Richtig: 24 · 28 = 5712.
+  - ☑ Falsch: 2400 : 12 = 200, der Quotient muss dreistellig sein. Richtig ist 205.
+  - ☐ Richtig: 25 · 12 = 2460.
+  - ☐ Richtig: Bei einem zweistelligen Divisor ist auch der Quotient zweistellig.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie viele Stellen muss der Quotient nach einem Überschlag haben?
 
-- `01` AFB I · Dividiere schriftlich: 189 316 : 47 Lösung: **4028**. Typische Fehler: 428 (div-null-vergessen), 40280 (div-stellenwert).
-- `02` AFB II · Es gilt 2856 : 24 = 119. Bestimme ohne schriftliche Rechnung: 2856 : 12 Lösung: **238**. Typische Fehler: 119 (div-stellenwert).
-- `03` AFB II · Genau eine Zahl zwischen 600 und 613 ist ohne Rest durch 13 teilbar. Welche? Lösung: **611**.
-- `04` AFB I · Dividiere schriftlich: 170 496 : 74 Lösung: **2304**. Typische Fehler: 234 (div-null-vergessen), 23040 (div-stellenwert).
-- `05` AFB II · Eine Zahl ergibt bei Division durch 15 den Quotienten 45 und den größtmöglichen Rest. Wie heißt die Zahl? Lösung: **689**. Typische Fehler: 675 (div-rest-vergessen), 690 (div-rest-zu-gross).
-- `06` AFB III · Eine Zahl ist ohne Rest durch 18 teilbar. Welche Aussage gilt dann immer?
+- `01` AFB I · Dividiere schriftlich: 6804 : 63 Lösung: **108**. Typische Fehler: 18 (div-null-vergessen), 1080 (div-stellenwert).
+- `02` AFB II · Es gilt 1656 : 46 = 36. Bestimme ohne schriftliche Rechnung: 1656 : 23 Lösung: **72**. Typische Fehler: 18 (div-stellenwert), 36 (div-stellenwert).
+- `03` AFB II · Genau eine Zahl zwischen 570 und 587 ist ohne Rest durch 17 teilbar. Welche? Lösung: **578**.
+- `04` AFB III · Eine Zahl ist ohne Rest durch 12 teilbar. Welche Aussage gilt dann immer?
+  - ☑ Sie ist auch durch 3 und durch 4 teilbar.
+  - ☐ Sie ist auch durch 8 teilbar.
+  - ☐ Sie ist auch durch 24 teilbar.
   - ☐ Sie ist größer als 100.
-  - ☑ Sie ist auch durch 2 und durch 9 teilbar.
-  - ☐ Sie ist auch durch 12 teilbar.
-  - ☐ Sie ist auch durch 36 teilbar.
+  - ☐ Sie ist eine gerade Zahl und endet auf 0.
+- `05` AFB II · Eine Zahl ergibt bei Division durch 19 den Quotienten 46 und den größtmöglichen Rest. Wie heißt die Zahl? Lösung: **892**. Typische Fehler: 874 (div-rest-vergessen), 893 (div-rest-zu-gross).
+- `06` AFB III · Tom berechnet 2772 : 28 in zwei Schritten: zuerst 2772 : 4 = 693, dann 693 : 7 = 99. Beurteile den Rechenweg.
+  - ☐ Falsch. Tom müsste zuerst durch 24 und dann durch 4 teilen.
+  - ☐ Falsch, denn 4 + 7 ist nicht 28.
+  - ☑ Richtig, denn 4 · 7 = 28. Nacheinander durch 4 und durch 7 zu teilen wirkt wie das Teilen durch 28.
+  - ☐ Falsch. Ein Divisor darf nicht zerlegt werden.
+  - ☐ Richtig, aber nur, weil 2772 eine gerade Zahl ist.
 
 ## 5.4.5-D4: Ich kann Divisionen mit Rest berechnen und den Rest deuten.
 
-### F · Förderniveau
+Grundlage, die F übt: Plättchen verteilen, einige bleiben übrig
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm 5 Wendeplättchen. Lege 2er-Häufchen. Was nicht mehr für ein Häufchen reicht, bleibt übrig. *Beispiel:* 14 Plättchen, immer 4 zusammen: 3 Häufchen sind 12 Plättchen. 2 bleiben übrig. *Lösungsschritt:* 2 Häufchen sind 2 · 2 = 4 Plättchen. Wie viele fehlen bis 5?
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Du hast 5 Plättchen. / Du legst immer 2 zusammen. / Wie viele Plättchen bleiben übrig? Lösung: **1 Plättchen**. Typische Fehler: 2 (div-rest-vergessen), 0 (div-rest-vergessen).
-- `02` AFB II · Welche Zahl fehlt? / ▢ : 3 = 6 Rest 2 Lösung: **20**. Typische Fehler: 18 (div-rest-vergessen).
-- `03` AFB II · 13 Kinder bilden 2er-Gruppen. / Wie viele Kinder bleiben übrig? Lösung: **1 Kinder**. Typische Fehler: 6 (div-rest-vergessen).
-- `04` AFB I · 5 : 2 = ▢ Rest ▢ Lösung: q = **2**, r = **1**
-- `05` AFB II · Bei welcher Aufgabe bleibt ein Rest?
-  - ☑ 13 : 4
-  - ☐ 20 : 4
-  - ☐ 16 : 4
-  - ☐ 12 : 4
-- `06` AFB III · Paul rechnet: 11 : 2 = 4 Rest 3. / Was stimmt?
-  - ☐ Falsch. / Beim Teilen gibt es nie einen Rest.
-  - ☐ Richtig. / 4 · 2 + 3 = 11.
-  - ☐ Falsch. / Richtig ist 6 Rest 1.
-  - ☑ Falsch. / Der Rest 3 ist zu groß. / Die 2 passt noch 1-mal hinein. / Richtig ist 5 Rest 1.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was nicht mehr für eine Gruppe reicht, bleibt übrig. *Beispiel:* 14 Plättchen, immer 4 zusammen: 3 Gruppen sind 12 Plättchen. 2 bleiben übrig. *Lösungsschritt:* 3 Gruppen sind 3 · 5 = 15 Plättchen. Zähle die Plättchen ohne Gruppe.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · Du hast 17 Plättchen. / Du legst immer 5 zusammen. / Wie viele Plättchen bleiben übrig? _(Bild: 3 Gruppen mit je 5 Plättchen, 2 einzeln daneben)_ Lösung: **2 Plättchen**. Typische Fehler: 3 (div-rest-vergessen), 0 (div-rest-vergessen).
+- `02` AFB I · 21 : 5 = ▢ Rest ▢ _(Bild: 4 Gruppen mit je 5 Plättchen, 1 einzeln daneben)_ Lösung: q = **4**, r = **1**
+- `03` AFB I · 11 Kinder bilden 2er-Gruppen. / Wie viele Kinder bleiben übrig? _(Bild: 5 Gruppen mit je 2 Plättchen, 1 einzeln daneben)_ Lösung: **1 Kinder**. Typische Fehler: 5 (div-rest-vergessen).
+- `04` AFB I · Du hast 14 Plättchen. / Du legst immer 5 zusammen. / Wie viele volle Gruppen sind es? _(Bild: 2 Gruppen mit je 5 Plättchen, 4 einzeln daneben)_ Lösung: **2 Gruppen**. Typische Fehler: 3 (div-rest-nicht-gedeutet), 4 (div-rest-vergessen).
+- `05` AFB II · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 0 nach 5 (+ 5), 5 nach 10 (+ 5), 10 nach 15 (+ 5), 15 nach 20 (+ 5))_
+  - ☐ 10 : 5
+  - ☑ 14 : 5
+  - ☐ 15 : 5
+- `06` AFB I · Welche Zahl fehlt? / 9 : 4 = 2 Rest ▢ _(Bild: 2 Gruppen mit je 4 Plättchen, 1 einzeln daneben)_ Lösung: r = **1**
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der 7er-Reihe die größte Zahl, die noch in die 55 passt. *Beispiel:* 47 : 6: 7 · 6 = 42 passt. Bis 47 fehlen 5. Also 7 Rest 5. *Lösungsschritt:* 7 · 7 = 49. Rechne 55 − 49.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · 55 : 7 = ▢ Rest ▢ Lösung: q = **7**, r = **6**
-- `02` AFB II · Welche Zahl fehlt? / ▢ : 9 = 6 Rest 4 Lösung: **58**. Typische Fehler: 54 (div-rest-vergessen).
-- `03` AFB II · Es gibt 23 Eier. / In 1 Karton passen 3 Eier. / Wie viele Kartons werden ganz voll? Lösung: **7**. Typische Fehler: 8 (div-rest-nicht-gedeutet), 2 (div-rest-vergessen).
-- `04` AFB I · 33 : 4 = ▢ Rest ▢ Lösung: q = **8**, r = **1**
-- `05` AFB II · Du teilst durch 4. / Welcher Rest ist nicht möglich?
-  - ☐ 2
-  - ☐ 3
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der 7er-Reihe die größte Zahl, die noch in die 34 passt. *Beispiel:* 47 : 6: 7 · 6 = 42 passt. Bis 47 fehlen 5. Also 7 Rest 5. *Lösungsschritt:* 4 · 7 = 28. Rechne 34 − 28.
+
+- `01` AFB I · 34 : 7 = ▢ Rest ▢ _(Bild: 4 Gruppen mit je 7 Plättchen, 6 einzeln daneben)_ Lösung: q = **4**, r = **6**
+- `02` AFB I · Es gibt 25 Eier. / In 1 Karton passen 8 Eier. / Wie viele Kartons werden ganz voll? _(Bild: 3 Gruppen mit je 8 Plättchen, 1 einzeln daneben)_ Lösung: **3 Kartons**. Typische Fehler: 4 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
+- `03` AFB II · Welche Zahl fehlt? / ▢ : 8 = 9 Rest 2 Lösung: **74**. Typische Fehler: 72 (div-rest-vergessen).
+- `04` AFB I · 5 · 3 = 15 / 16 : 3 = 5 Rest ▢ _(Bild: 5 Gruppen mit je 3 Plättchen, 1 einzeln daneben)_ Lösung: r = **1**
+- `05` AFB II · Du teilst durch 7. / Welcher Rest ist nicht möglich?
   - ☐ 1
-  - ☑ 4
-- `06` AFB III · Nina rechnet: 14 : 3 = 3 Rest 5. / Was stimmt?
-  - ☐ Richtig. / Der Rest darf beliebig groß sein.
-  - ☐ Richtig. / Die Probe stimmt: 3 · 3 + 5 = 14.
-  - ☐ Falsch. / Richtig ist 5 Rest 2.
-  - ☑ Falsch. / Der Rest 5 ist größer als 3. / Richtig ist 4 Rest 2.
+  - ☑ 7
+  - ☐ 6
+- `06` AFB III · Emre rechnet: 59 : 9 = 5 Rest 14. / Stimmt das?
+  - ☑ Falsch. / Der Rest 14 ist größer als 9. / Richtig ist 6 Rest 5.
+  - ☐ Falsch. / Richtig ist 7 Rest 5.
+  - ☐ Stimmt. / Die Probe passt: 5 · 9 + 14 = 59.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rest ist das, was nach dem letzten Abziehen übrig bleibt. Er ist kleiner als der Divisor. *Lösungsschritt:* Beginne links. Wie oft passt die 8 in die 11? 1-mal, denn 1 · 8 = 8. Rechne 11 − 8 = 3. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rest ist das, was nach dem letzten Abziehen übrig bleibt. Er ist kleiner als der Divisor. *Lösungsschritt:* Beginne links. Wie oft passt die 15 in die 40? 2-mal, denn 2 · 15 = 30. Rechne 40 − 30 = 10. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · 113 : 8 = ▢ Rest ▢ Lösung: q = **14**, r = **1**
-- `02` AFB II · 877 Muffins sollen in Schachteln verpackt werden. In jede Schachtel passen genau 19 Muffins.
-  - a) Wie viele Schachteln werden vollständig gefüllt? **46 Schachteln**. Typische Fehler: 47 (div-rest-nicht-gedeutet).
-  - b) Wie viele Muffins bleiben übrig? **3 Muffins**. Typische Fehler: 0 (div-rest-vergessen).
-- `03` AFB II · 281 Kinder fahren mit Kleinbussen ins Schullandheim. In jeden Kleinbus passen 13 Kinder. Wie viele Kleinbusse werden insgesamt gebraucht? Lösung: **22 Kleinbusse**. Typische Fehler: 21 (div-rest-nicht-gedeutet), 8 (div-rest-vergessen).
-- `04` AFB I · 582 : 12 = ▢ Rest ▢ Lösung: q = **48**, r = **6**
-- `05` AFB II · Eine Eintrittskarte kostet 16 €. Die Klassenkasse enthält 646 €. Wie viele Karten kann die Klasse höchstens kaufen? Lösung: **40 Karten**. Typische Fehler: 41 (div-rest-nicht-gedeutet), 6 (div-rest-vergessen).
-- `06` AFB III · 232 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 40 Plätze. Lars rechnet 232 : 40 = 5 Rest 32 und bestellt 5 Busse. Beurteile seine Entscheidung.
-  - ☐ Falsch: Es werden 32 Busse gebraucht.
-  - ☑ Falsch: 32 Kinder hätten keinen Platz. Es werden 6 Busse gebraucht.
-  - ☐ Richtig: 5 Busse sind voll, das genügt.
+- `01` AFB I · 402 : 15 = ▢ Rest ▢ Lösung: q = **26**, r = **12**
+- `02` AFB II · 583 Muffins sollen in Schachteln verpackt werden. In jede Schachtel passen genau 23 Muffins.
+  - a) Wie viele Schachteln werden vollständig gefüllt? **25 Schachteln**. Typische Fehler: 26 (div-rest-nicht-gedeutet).
+  - b) Wie viele Muffins bleiben übrig? **8 Muffins**. Typische Fehler: 0 (div-rest-vergessen).
+- `03` AFB II · 477 Kinder fahren mit Kleinbussen ins Schullandheim. In jeden Kleinbus passen 17 Kinder. Wie viele Kleinbusse werden insgesamt gebraucht? Lösung: **29 Kleinbusse**. Typische Fehler: 28 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
+- `04` AFB I · 358 : 13 = ▢ Rest ▢ Lösung: q = **27**, r = **7**
+- `05` AFB II · Ein Armband braucht 13 Perlen. Lina hat 314 Perlen. Wie viele vollständige Armbänder kann sie fädeln? Lösung: **24 Armbänder**. Typische Fehler: 25 (div-rest-nicht-gedeutet), 2 (div-rest-vergessen).
+- `06` AFB III · 239 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 35 Plätze. Ole rechnet 239 : 35 = 6 Rest 29 und bestellt 6 Busse. Beurteile die Entscheidung.
+  - ☐ Richtig: 6 Busse sind voll, das genügt.
+  - ☑ Falsch: 29 Kinder hätten keinen Platz. Es werden 7 Busse gebraucht.
   - ☐ Richtig: Bei Sachaufgaben lässt man den Rest weg.
+  - ☐ Falsch: Es werden 29 Busse gebraucht.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du dein Ergebnis mit einer Probe sichern?
 
-- `01` AFB I · 5685 : 17 = ▢ Rest ▢ Lösung: q = **334**, r = **7**
-- `02` AFB II · Bestimme die größte dreistellige Zahl, die bei Division durch 6 den Rest 4 lässt. Lösung: **994**. Typische Fehler: 996 (div-rest-vergessen).
-- `03` AFB II · Eine Zahl lässt bei Division durch 7 den Rest 4. Welchen Rest lässt das Dreifache dieser Zahl bei Division durch 7? Lösung: **5**. Typische Fehler: 12 (div-rest-zu-gross), 4 (teilbar-summe).
-- `04` AFB I · 6213 : 27 = ▢ Rest ▢ Lösung: q = **230**, r = **3**
-- `05` AFB II · Wie viele natürliche Zahlen von 1 bis 80 lassen bei Division durch 8 den Rest 4? Lösung: **10**.
-- `06` AFB III · Eine Zahl lässt bei Division durch 6 den Rest 3. Jonas addiert 18 zu dieser Zahl. Welche Aussage über den neuen Rest bei Division durch 6 stimmt?
-  - ☑ Der Rest bleibt 3, weil 18 ein Vielfaches von 6 ist.
-  - ☐ Der Rest wird 0, weil 18 durch 6 teilbar ist.
-  - ☐ Der Rest wird 21.
+- `01` AFB I · 2084 : 19 = ▢ Rest ▢ Lösung: q = **109**, r = **13**
+- `02` AFB II · Bestimme die größte dreistellige Zahl, die bei Division durch 6 den Rest 3 lässt. Lösung: **999**. Typische Fehler: 996 (div-rest-vergessen).
+- `03` AFB II · Eine Zahl lässt bei Division durch 9 den Rest 7. Welchen Rest lässt das Doppelte dieser Zahl bei Division durch 9? Lösung: **5**. Typische Fehler: 14 (div-rest-zu-gross), 7 (teilbar-summe).
+- `04` AFB III · Eine Zahl lässt bei Division durch 5 den Rest 4. Ben addiert 20 zu dieser Zahl. Welche Aussage über den neuen Rest bei Division durch 5 stimmt?
+  - ☐ Der Rest wird 0, weil 20 durch 5 teilbar ist.
   - ☐ Das hängt von der Ausgangszahl ab.
+  - ☐ Der Rest wird 24.
+  - ☑ Der Rest bleibt 4, weil 20 ein Vielfaches von 5 ist.
+- `05` AFB II · Wie viele natürliche Zahlen von 1 bis 60 lassen bei Division durch 6 den Rest 3? Lösung: **10**.
+- `06` AFB III · Eine Zahl lässt bei Division durch 5 den Rest 2 und bei Division durch 7 den Rest 5. Bestimme die kleinste natürliche Zahl mit dieser Eigenschaft. Lösung: **12**.
 
 ## 5.4.5-D5: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
 
-### F · Förderniveau
+Grundlage, die F übt: Geteilt mit Mal rückgängig machen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zu jeder Geteilt-Aufgabe gehört eine Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 28 : 4 = 7. Die Probe ist 7 · 4 = 28. *Lösungsschritt:* Die Probe beginnt mit dem Ergebnis 2. Rechne 2 · 8.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · 16 : 8 = 2 / Welche Mal-Aufgabe ist die Probe?
-  - ☐ 16 · 8 = 2
-  - ☑ 2 · 8 = 16
-  - ☐ 2 + 8 = 10
-  - ☐ 16 · 2 = 8
-- `02` AFB II · Die Probe ist 3 · 4 = 12. / Welche Geteilt-Aufgabe wurde geprüft?
-  - ☐ 3 : 4 = 12
-  - ☐ 12 : 4 = 12
-  - ☑ 12 : 4 = 3
-  - ☐ 4 : 12 = 3
-- `03` AFB II · Welche Rechnung ist richtig? / Prüfe mit der Mal-Aufgabe.
-  - ☐ 63 : 7 = 8
-  - ☐ 63 : 7 = 11
-  - ☑ 63 : 7 = 9
-  - ☐ 63 : 7 = 10
-- `04` AFB I · Mache die Probe. / 28 : 4 = 7 / 7 · 4 = ▢ Lösung: **28**. Typische Fehler: 11 (div-falsche-rechenart).
-- `05` AFB II · 12 : 4 / Ist das Ergebnis größer oder kleiner als 10? / Überlege mit der Mal-Aufgabe.
-  - ☐ größer als 10
-  - ☐ genau 10
-  - ☑ kleiner als 10
-- `06` AFB III · Lena rechnet: 24 : 6 = 3. / Sie macht die Probe: 3 · 6 = 18. / Was zeigt die Probe?
-  - ☐ Die Probe ist falsch gerechnet. / 3 · 6 = 24.
-  - ☑ 18 ist nicht 24. / Das Ergebnis 3 ist falsch. / Richtig ist 4.
-  - ☐ Die Probe passt. / 3 ist richtig.
-  - ☐ Mit einer Mal-Aufgabe kann man nicht prüfen.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 28 : 4 = 7. Die Probe ist 7 · 4 = 28. *Lösungsschritt:* Die Probe beginnt mit dem Ergebnis 2.
 
-### G · Grundlegendes Niveau
+- `01` AFB I · 8 : 4 = 2 / Welche Mal-Aufgabe ist die Probe? _(Bild: Punktefeld mit 2 Reihen zu je 4 Punkten)_
+  - ☑ 2 · 4 = 8
+  - ☐ 8 · 4 = 2
+  - ☐ 2 + 4 = 6
+- `02` AFB I · Mache die Probe. / 24 : 4 = 6 / 6 · 4 = ▢ _(Bild: Punktefeld mit 6 Reihen zu je 4 Punkten)_ Lösung: **24**. Typische Fehler: 10 (div-falsche-rechenart).
+- `03` AFB I · Mache die Probe. / 20 : 5 = 4 / ▢ · 5 = ▢ _(Bild: Punktefeld mit 4 Reihen zu je 5 Punkten)_ Lösung: x = **4**, y = **20**
+- `04` AFB I · Welche Rechnung ist richtig? / Prüfe mit der Mal-Aufgabe. _(Bild: Punktefeld mit 6 Reihen zu je 2 Punkten)_
+  - ☐ 12 : 2 = 5
+  - ☑ 12 : 2 = 6
+  - ☐ 12 : 2 = 7
+- `05` AFB II · Die Probe ist 6 · 3 = 18. / Welche Geteilt-Aufgabe wurde geprüft? _(Bild: Punktefeld mit 6 Reihen zu je 3 Punkten)_
+  - ☑ 18 : 3 = 6
+  - ☐ 6 : 3 = 18
+  - ☐ 3 : 18 = 6
+- `06` AFB I · 20 : 4 = 5 / Die Probe ist eine Mal-Aufgabe. / Welche Zahl kommt bei der Probe heraus? _(Bild: Punktefeld mit 5 Reihen zu je 4 Punkten)_ Lösung: **20**. Typische Fehler: 5 (probe-falsche-umkehr), 9 (div-falsche-rechenart).
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal Teiler. *Beispiel:* 96 : 4 = 24. Probe: 24 · 4 = 96. *Lösungsschritt:* Rechne 160 · 5 = 800. Rechne dann 7 · 5 dazu.
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-- `01` AFB I · Mache die Probe. / 835 : 5 = 167 / 167 · 5 = ▢ Lösung: **835**. Typische Fehler: 172 (div-falsche-rechenart).
-- `02` AFB II · Welcher Überschlag passt zu 804 : 2?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 96 : 4 = 24. Probe: 24 · 4 = 96. *Lösungsschritt:* Rechne 80 · 2 = 160. Rechne dann 3 · 2 dazu.
+
+- `01` AFB I · Mache die Probe. / 166 : 2 = 83 / 83 · 2 = ▢ _(Bild: Zehnermaterial: 1 Hunderterplatten, 6 Zehnerstangen, 6 Einerwürfel)_ Lösung: **166**. Typische Fehler: 85 (div-falsche-rechenart).
+- `02` AFB I · Überschlage. / 612 : 2 / Rechne mit 600 : 2. _(Bild: Zehnermaterial: 6 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **300**. Typische Fehler: 306 (ueberschlag-nicht-gerundet), 30 (div-stellenwert).
+- `03` AFB II · Welcher Überschlag passt zu 808 : 2? _(Bild: Zehnermaterial: 8 Hunderterplatten, 0 Zehnerstangen, 8 Einerwürfel)_
   - ☑ 800 : 2 = 400
-  - ☐ 80 : 2 = 40
   - ☐ 800 : 10 = 80
-- `03` AFB II · 316 : 2 / Welches Ergebnis stimmt? / Prüfe mit der Mal-Aufgabe.
-  - ☑ 158
-  - ☐ 159
-  - ☐ 168
-  - ☐ 148
-- `04` AFB I · Überschlage. / 460 : 5 / Rechne mit 500 : 5. Lösung: **100**. Typische Fehler: 92 (ueberschlag-nicht-gerundet), 10 (div-stellenwert).
-- `05` AFB II · Die Probe ist 123 · 8 = 984. / Welche Geteilt-Aufgabe wurde geprüft?
-  - ☐ 123 : 8 = 984
-  - ☐ 8 : 123 = 984
-  - ☑ 984 : 8 = 123
-  - ☐ 984 : 123 = 984
-- `06` AFB III · Tom rechnet: 318 : 3 = 16. / Sein Überschlag ist 300 : 3 = 100. / Was zeigt der Überschlag?
-  - ☐ 16 ist zu groß.
-  - ☐ Der Überschlag ist falsch. / 300 : 3 = 10.
-  - ☐ 16 passt zum Überschlag.
-  - ☑ 16 ist viel zu klein. / Das Ergebnis muss nahe bei 100 liegen. / Richtig ist 106.
+  - ☐ 80 : 2 = 40
+- `04` AFB I · 456 : 6 = 76 / Welche Mal-Aufgabe ist die Probe?
+  - ☐ 456 · 6 = 76
+  - ☐ 76 + 6 = 82
+  - ☑ 76 · 6 = 456
+- `05` AFB II · 190 : 5 / Welches Ergebnis stimmt? / Prüfe mit der Mal-Aufgabe. _(Bild: Zehnermaterial: 1 Hunderterplatten, 9 Zehnerstangen, 0 Einerwürfel)_
+  - ☐ 39
+  - ☑ 38
+  - ☐ 48
+- `06` AFB III · Lina rechnet: 995 : 5 = 99. / Der Überschlag ist 1000 : 5 = 200. / Was zeigt der Überschlag?
+  - ☐ 99 passt zum Überschlag.
+  - ☐ Der Überschlag ist falsch. / 1000 : 5 = 20.
+  - ☑ 99 ist viel zu klein. / Das Ergebnis muss nahe bei 200 liegen. / Richtig ist 199.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde so, dass du die Division im Kopf lösen kannst. *Lösungsschritt:* Der Dividend wird zu 14 000.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde so, dass du die Division im Kopf lösen kannst. *Lösungsschritt:* Der Dividend wird zu 1600.
 
-- `01` AFB I · Überschlage: Runde den Dividenden auf Tausender und rechne dann. 14 053 : 7 ≈ ? Lösung: **2000**. Typische Fehler: 200 (div-stellenwert).
-- `02` AFB II · Nur ein Ergebnis kann stimmen. Entscheide mit einem Überschlag: 2864 : 4
-  - ☑ 716
-  - ☐ 1716
-  - ☐ 7160
-  - ☐ 71
-- `03` AFB II · Bei einer Division durch 16 ist der Quotient 20 und der Rest 15. Bestimme mit der Probe den Dividenden. Lösung: **335**. Typische Fehler: 320 (div-rest-vergessen).
-- `04` AFB I · Welche Rechnung ist die Probe zu 8820 : 21 = 420?
-  - ☐ 420 : 21 = 8820
-  - ☑ 420 · 21 = 8820
-  - ☐ 8820 · 21 = 420
-  - ☐ 8820 − 420 = 21
-- `05` AFB II · Zwischen welchen Zahlen liegt 2847 : 39? Entscheide mit einem Überschlag.
-  - ☑ zwischen 70 und 80
-  - ☐ zwischen 90 und 100
-  - ☐ zwischen 700 und 800
-  - ☐ zwischen 7 und 8
-- `06` AFB III · Mona rechnet 10 972 : 26 = 422. Ihre Probe 422 · 26 = 10 972 stimmt. Ihr Überschlag 10 000 : 30 = 333 weicht aber deutlich ab. Was folgt daraus?
-  - ☑ Das Ergebnis 422 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.
+- `01` AFB I · Überschlage: Runde den Dividenden auf Hunderter und rechne dann. 1572 : 8 ≈ ? Lösung: **200**. Typische Fehler: 20 (div-stellenwert).
+- `02` AFB II · Nur ein Ergebnis kann stimmen. Entscheide mit einem Überschlag: 5336 : 8
+  - ☐ 1667
+  - ☐ 66
+  - ☑ 667
+  - ☐ 6670
+- `03` AFB II · Bei einer Division durch 17 ist der Quotient 15 und der Rest 5. Bestimme mit der Probe den Dividenden. Lösung: **260**. Typische Fehler: 255 (div-rest-vergessen).
+- `04` AFB I · Welche Rechnung ist die Probe zu 9972 : 36 = 277?
+  - ☑ 277 · 36 = 9972
+  - ☐ 9972 − 277 = 36
+  - ☐ 9972 · 36 = 277
+  - ☐ 277 : 36 = 9972
+- `05` AFB II · Zwischen welchen Zahlen liegt 2184 : 78? Entscheide mit einem Überschlag.
+  - ☑ zwischen 20 und 30
+  - ☐ zwischen 200 und 300
+  - ☐ zwischen 2 und 3
+  - ☐ zwischen 40 und 50
+- `06` AFB III · Emre rechnet 7800 : 25 = 312. Die Probe 312 · 25 = 7800 stimmt. Ein grober Überschlag mit 7000 : 30 ergibt aber nur etwa 233. Was folgt daraus?
+  - ☑ Das Ergebnis 312 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.
+  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 233 ergibt.
   - ☐ Die Probe muss falsch sein.
-  - ☐ Das Ergebnis ist falsch, weil der Überschlag 333 ergibt.
   - ☐ Man nimmt den Mittelwert aus Ergebnis und Überschlag.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf welche glatten Zahlen kannst du runden, sodass die Division im Kopf aufgeht?
 
-- `01` AFB I · Überschlage sinnvoll: 70 256 : 71 ≈ ? Runde den Divisor auf Zehner und den Dividenden auf Tausender. Lösung: **1000**. Typische Fehler: 10000 (div-stellenwert), 100 (div-stellenwert).
+- `01` AFB I · Überschlage sinnvoll: 9269 : 33 ≈ ? Runde den Divisor auf Zehner und den Dividenden auf Tausender. Lösung: **300**. Typische Fehler: 3000 (div-stellenwert), 30 (div-stellenwert).
 - `02` AFB II · Entscheide ohne schriftliche Rechnung: Welcher Quotient ist größer als 100?
-  - ☐ 8362 : 91
-  - ☐ 7362 : 81
-  - ☑ 8362 : 81
-  - ☐ 8019 : 81
-- `03` AFB II · Bei einer Division durch 42 ist der Quotient 263 und der Rest 36. Bestimme den Dividenden. Lösung: **11082**. Typische Fehler: 11046 (div-rest-vergessen).
-- `04` AFB I · Welche Rechnung ist die Probe zu 6244 : 42 = 148 Rest 28?
-  - ☑ 148 · 42 + 28 = 6244
-  - ☐ 148 · 42 − 28 = 6244
-  - ☐ 148 · 28 + 42 = 6244
-  - ☐ (148 + 28) · 42 = 6244
-- `05` AFB II · Der Überschlag zu einer Division lautet 20 000 : 40 = 500. Welche Aufgabe wurde überschlagen?
-  - ☐ 2010 : 38
-  - ☐ 200 950 : 38
-  - ☑ 20 095 : 38
-  - ☐ 20 095 : 98
-- `06` AFB III · Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?
-  - ☐ Er stimmt dann immer genau.
+  - ☑ 6956 : 65
+  - ☐ 5956 : 65
+  - ☐ 6435 : 65
+  - ☐ 6956 : 75
+- `03` AFB II · Bei einer Division durch 28 ist der Quotient 216 und der Rest 6. Bestimme den Dividenden. Lösung: **6054**. Typische Fehler: 6048 (div-rest-vergessen).
+- `04` AFB III · Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?
   - ☑ Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.
-  - ☐ Er ist dann immer zu klein.
+  - ☐ Er stimmt dann immer genau.
   - ☐ Er ist dann immer zu groß.
+  - ☐ Er ist dann immer zu klein.
+- `05` AFB II · Der Überschlag zu einer Division lautet 6000 : 30 = 200. Welche Aufgabe wurde überschlagen?
+  - ☐ 6111 : 68
+  - ☐ 611 : 28
+  - ☐ 61 110 : 28
+  - ☑ 6111 : 28
+- `06` AFB III · Lina überschlägt 4704 : 56 mit 5000 : 50 = 100. Der genaue Wert ist 84. Warum ist der Überschlag deutlich zu groß?
+  - ☐ Der Dividend wurde verkleinert und der Divisor vergrößert. Beides vergrößert den Quotienten.
+  - ☐ Der Überschlag ist nicht zu groß: 100 und 84 liegen nah genug beieinander.
+  - ☑ Der Dividend wurde vergrößert und der Divisor verkleinert. Beides vergrößert den Quotienten.
+  - ☐ Ein Überschlag ergibt immer einen zu großen Wert.
+  - ☐ Bei einem Überschlag darf nur der Dividend gerundet werden.
 
 ## 5.4.5-D6: Ich kann Sachaufgaben zur Division lösen.
 
-### F · Förderniveau
+Grundlage, die F übt: Verteil- und Aufteil-Geschichten, Rechnung zuordnen
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm 24 Wendeplättchen. Lege immer 4 Plättchen zusammen. Zähle die Häufchen. *Beispiel:* 24 Äpfel, immer 4 in eine Tüte: 24 : 4 = 6. Es werden 6 Tüten. *Lösungsschritt:* Nutze die 4er-Reihe: 1 · 4 = 4, 2 · 4 = 8, … ▢ · 4 = 24.
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-- `01` AFB I · Herr Keller legt 24 Kekse in Dosen. / In jede Dose kommen 4 Kekse. / Wie viele Dosen werden voll? Lösung: **6 Dosen**. Typische Fehler: 20 (div-falsche-rechenart), 28 (div-falsche-rechenart).
-- `02` AFB II · 6 Kekse. / Immer 2 kommen in eine Dose. / Wie viele Dosen sind es? / Welche Rechnung passt?
-  - ☑ 6 : 2
-  - ☐ 6 · 2
-  - ☐ 6 − 2
-  - ☐ 6 + 2
-- `03` AFB II · Die Rechnung ist 10 : 2 = 5. / Welche Geschichte passt?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 3 zusammen. Zähle die Gruppen. *Beispiel:* 24 Äpfel, immer 4 in eine Tüte: 24 : 4 = 6. Es werden 6 Tüten. *Lösungsschritt:* Rechne 12 : 3. Zähle im Bild die Gruppen.
+
+- `01` AFB I · Es gibt 12 Bälle. / In jede Kiste kommen 3 Bälle. / Wie viele Kisten werden voll? _(Bild: 4 Gruppen mit je 3 Plättchen)_ Lösung: **4 Kisten**. Typische Fehler: 9 (div-falsche-rechenart), 15 (div-falsche-rechenart).
+- `02` AFB I · 3 Kinder teilen 12 Äpfel gerecht. / Wie viele Äpfel bekommt 1 Kind? _(Bild: 3 Gruppen mit je 4 Plättchen)_ Lösung: **4 Äpfel**. Typische Fehler: 9 (div-falsche-rechenart).
+- `03` AFB I · Es gibt 12 Äpfel. / Immer 4 kommen in 1 Tüte. / Wie viele Tüten sind es? / Welche Rechnung passt? _(Bild: 3 Gruppen mit je 4 Plättchen)_
+  - ☐ 12 − 4
+  - ☐ 12 · 4
+  - ☑ 12 : 4
+- `04` AFB I · 30 Kinder gehen in 5 gleich große Gruppen. / Wie viele Kinder sind in 1 Gruppe? _(Bild: 5 Gruppen mit je 6 Plättchen)_ Lösung: **6 Kinder**. Typische Fehler: 25 (div-falsche-rechenart), 5 (sach-falsche-rechnung).
+- `05` AFB II · Die Rechnung ist 10 : 2 = 5. / Welche Geschichte passt? _(Bild: 2 Gruppen mit je 5 Plättchen)_
   - ☐ Zu 10 Keksen kommen 2 Kekse dazu.
-  - ☑ 10 Kekse werden an 2 Kinder gerecht verteilt.
   - ☐ Von 10 Keksen werden 2 gegessen.
-  - ☐ 2 Kinder haben jedes 10 Kekse.
-- `04` AFB I · 3 Kinder teilen 15 Äpfel gerecht. / Wie viele Äpfel bekommt 1 Kind? Lösung: **5 Äpfel**. Typische Fehler: 12 (div-falsche-rechenart).
-- `05` AFB II · 15 Kinder gehen in 5 gleich große Gruppen. / Leo rechnet 15 : 5 = 3. / Was bedeutet die 3?
-  - ☐ Es fehlen 3 Kinder.
-  - ☐ 3 Kinder bleiben übrig.
-  - ☐ Es gibt 3 Gruppen.
-  - ☑ In jeder Gruppe sind 3 Kinder.
-- `06` AFB III · Sara hat 20 Bonbons für 5 Kinder. / Jedes Kind soll gleich viele bekommen. / Sara rechnet 20 − 5 = 15. / Was stimmt?
-  - ☐ Richtig. / Jedes Kind bekommt 15 Bonbons.
-  - ☐ Richtig. / Es bleiben 15 Bonbons übrig.
-  - ☑ Falsch. / Sie muss teilen: 20 : 5 = 4. / Jedes Kind bekommt 4.
-  - ☐ Falsch. / Sie muss mal rechnen: 20 · 5 = 100.
+  - ☑ 10 Kekse werden an 2 Kinder gerecht verteilt.
+- `06` AFB I · 1 Woche hat 7 Tage. / Wie viele Wochen sind 35 Tage? _(Bild: 5 Gruppen mit je 7 Plättchen)_ Lösung: **5 Wochen**. Typische Fehler: 28 (div-falsche-rechenart).
 
-### G · Grundlegendes Niveau
+### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Preis wird gerecht auf 8 Bälle verteilt. Du musst teilen. *Beispiel:* 6 Springseile kosten 138 €. Zerlege: 120 : 6 = 20 und 18 : 6 = 3. Ein Seil kostet 23 €. *Lösungsschritt:* Beginne links. Wie oft passt die 8 in die 21? 2-mal, denn 2 · 8 = 16. Rechne 21 − 16 = 5. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Preis wird gerecht auf 7 Springseile verteilt. Du musst teilen. *Beispiel:* 6 Springseile kosten 138 €. Rechne 120 : 6 = 20 und 18 : 6 = 3. 1 Seil kostet 23 €. *Lösungsschritt:* Beginne links. Wie oft passt die 7 in die 13? 1-mal, denn 1 · 7 = 7. Rechne 13 − 7 = 6. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · Die Klasse kauft 8 Bälle. / Alle kosten gleich viel. / Zusammen kosten sie 216 €. / Wie viel Euro kostet 1 Ball? Lösung: **27 €**. Typische Fehler: 208 (div-falsche-rechenart), 270 (div-stellenwert).
-- `02` AFB II · 7 Springseile kosten zusammen 133 €. / Alle kosten gleich viel. / Gesucht ist der Preis für 1 Stück. / Welche Rechnung passt?
-  - ☑ 133 : 7
-  - ☐ 7 : 133
-  - ☐ 133 · 7
-  - ☐ 133 − 7
-- `03` AFB II · 1 Woche hat 7 Tage. / Wie viele Wochen sind 161 Tage? Lösung: **23 Wochen**. Typische Fehler: 154 (div-falsche-rechenart).
-- `04` AFB I · Die Klasse kauft 8 Springseile. / Alle kosten gleich viel. / Zusammen kosten sie 232 €. / Wie viel Euro kostet 1 Springseil? Lösung: **29 €**. Typische Fehler: 224 (div-falsche-rechenart), 290 (div-stellenwert).
-- `05` AFB II · 342 Flaschen stehen in 3 gleich vollen Regalen. / Mara rechnet 342 : 3 = 114. / Was bedeutet die 114?
-  - ☐ Es gibt 114 Regale.
-  - ☐ Es fehlen 114 Flaschen.
-  - ☐ 114 Flaschen bleiben übrig.
-  - ☑ In jedem Regal stehen 114 Flaschen.
-- `06` AFB III · 8 Springseile kosten zusammen 120 €. / Finn sagt: „1 Springseil kostet 112 €.“ / Er hat minus gerechnet. / Was stimmt?
-  - ☐ Falsch. / Er muss mal rechnen: 120 · 8.
-  - ☑ Falsch. / Er muss teilen: 120 : 8 = 15. / 1 Springseil kostet 15 €.
-  - ☐ Richtig. / Ein Stück kostet fast so viel wie alle zusammen.
-  - ☐ Richtig. / 120 − 8 = 112.
+- `01` AFB I · Die Klasse kauft 7 Springseile. / Alle kosten gleich viel. / Zusammen kosten sie 133 €. / Wie viel Euro kostet 1 Springseil? _(Bild: Zehnermaterial: 1 Hunderterplatten, 3 Zehnerstangen, 3 Einerwürfel)_ Lösung: **19 €**. Typische Fehler: 126 (div-falsche-rechenart), 190 (div-stellenwert).
+- `02` AFB I · 1 Woche hat 7 Tage. / Wie viele Wochen sind 63 Tage? _(Bild: 9 Gruppen mit je 7 Plättchen)_ Lösung: **9 Wochen**. Typische Fehler: 56 (div-falsche-rechenart).
+- `03` AFB II · 6 Trikots kosten zusammen 144 €. / Alle kosten gleich viel. / Gesucht ist der Preis für 1 Stück. / Welche Rechnung passt? _(Bild: Zehnermaterial: 1 Hunderterplatten, 4 Zehnerstangen, 4 Einerwürfel)_
+  - ☑ 144 : 6
+  - ☐ 144 · 6
+  - ☐ 144 − 6
+- `04` AFB I · 126 Flaschen stehen in 6 gleich vollen Regalen. / Wie viele Flaschen stehen in 1 Regal? _(Bild: Zehnermaterial: 1 Hunderterplatten, 2 Zehnerstangen, 6 Einerwürfel)_ Lösung: **21 Flaschen**. Typische Fehler: 120 (div-falsche-rechenart), 210 (div-stellenwert).
+- `05` AFB II · 378 Flaschen stehen in 7 gleich vollen Regalen. / Noah rechnet 378 : 7 = 54. / Was bedeutet die 54? _(Bild: Zehnermaterial: 3 Hunderterplatten, 7 Zehnerstangen, 8 Einerwürfel)_
+  - ☐ Es gibt 54 Regale.
+  - ☐ 54 Flaschen bleiben übrig.
+  - ☑ In jedem Regal stehen 54 Flaschen.
+- `06` AFB III · 9 Springseile kosten zusammen 234 €. / Elif rechnet 234 − 9 = 225. / Elif sagt: „1 Springseil kostet 225 €.“ / Stimmt das? _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 4 Einerwürfel)_
+  - ☑ Falsch. / Hier wird geteilt: 234 : 9 = 26. / 1 Springseil kostet 26 €.
+  - ☐ Stimmt. / 234 − 9 = 225.
+  - ☐ Falsch. / Hier wird mal gerechnet: 234 · 9.
 
-### M · Mittleres Niveau
+### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier wird gleichmäßig verteilt. Welche Rechenart passt? *Lösungsschritt:* Rechne 3045 : 21.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier wird gleichmäßig verteilt. Welche Rechenart passt? *Lösungsschritt:* Rechne 1716 : 22.
 
-- `01` AFB I · Ein Lkw legt in 21 Tagen 3045 km zurück, jeden Tag gleich viel. Wie viele Kilometer fährt er an einem Tag? Lösung: **145 km**. Typische Fehler: 1450 (div-stellenwert), 3024 (sach-falsche-rechnung).
-- `02` AFB II · Eine Schule bekommt 3026 Hefte. 730 Hefte kommen ins Lager. Die übrigen werden gleichmäßig an 14 Klassen verteilt.
-  - a) Wie viele Hefte werden verteilt? **2296 Hefte**.
-  - b) Wie viele Hefte bekommt jede Klasse? **164 Hefte**.
-- `03` AFB II · Ein Bauer erntet 2516 kg Kartoffeln. 360 kg behält er selbst. Den Rest füllt er gleichmäßig in 22 Säcke. Wie viel Kilogramm sind in einem Sack? Welcher Rechenausdruck passt?
-  - ☐ 2516 : 22 − 360
-  - ☑ (2516 − 360) : 22
-  - ☐ (2516 + 360) : 22
-  - ☐ 2516 − 360 : 22
-- `04` AFB I · Ein Lkw legt in 22 Tagen 3080 km zurück, jeden Tag gleich viel. Wie viele Kilometer fährt er an einem Tag? Lösung: **140 km**. Typische Fehler: 1400 (div-stellenwert), 3058 (sach-falsche-rechnung).
-- `05` AFB II · In einer Fabrik werden 7920 Flaschen in Kästen zu je 24 Flaschen gepackt. Je 30 Kästen kommen auf eine Palette. Wie viele Paletten werden voll? Lösung: **11 Paletten**. Typische Fehler: 330 (sach-schritt-vergessen).
-- `06` AFB III · Der Ausflug kostet für 21 Kinder zusammen 420 €. Mira sagt: „Wenn jedes Kind 18 € mitbringt, reicht das Geld.“ Beurteile ihre Aussage.
-  - ☐ Falsch: Jedes Kind muss 21 € zahlen.
-  - ☐ Richtig: 420 : 18 ist mehr als 21.
-  - ☑ Falsch: 21 · 18 € = 378 €, es fehlen 42 €. Nötig sind 20 € pro Kind.
-  - ☐ Richtig: 18 € sind fast 20 €, das genügt.
+- `01` AFB I · Eine Reise kostet für 22 Personen zusammen 1716 €. Alle zahlen gleich viel. Wie viel zahlt eine Person? Lösung: **78 €**. Typische Fehler: 780 (div-stellenwert), 1694 (sach-falsche-rechnung).
+- `02` AFB II · Ein Bauer erntet 1682 kg Kartoffeln. 590 kg behält er selbst. Den Rest füllt er gleichmäßig in 12 Säcke.
+  - a) Wie viel Kilogramm füllt er in Säcke? **1092 kg**.
+  - b) Wie viel Kilogramm sind in einem Sack? **91 kg**.
+- `03` AFB II · Ein Bauer erntet 4640 kg Kartoffeln. 900 kg behält er selbst. Den Rest füllt er gleichmäßig in 22 Säcke. Wie viel Kilogramm sind in einem Sack? Welcher Rechenausdruck passt?
+  - ☐ (4640 + 900) : 22
+  - ☑ (4640 − 900) : 22
+  - ☐ 4640 : 22 − 900
+  - ☐ 4640 − 900 : 22
+- `04` AFB I · 2432 Flaschen werden gleichmäßig auf 19 Kästen verteilt. Wie viele Flaschen kommen in einen Kasten? Lösung: **128 Flaschen**. Typische Fehler: 1280 (div-stellenwert), 2413 (sach-falsche-rechnung).
+- `05` AFB II · In einer Fabrik werden 1680 Flaschen in Kästen zu je 12 Flaschen gepackt. Je 20 Kästen kommen auf eine Palette. Wie viele Paletten werden voll? Lösung: **7 Paletten**. Typische Fehler: 140 (sach-schritt-vergessen).
+- `06` AFB III · Der Ausflug kostet für 27 Kinder zusammen 621 €. Ben sagt: „Wenn jedes Kind 20 € mitbringt, reicht das Geld.“ Beurteile die Aussage.
+  - ☑ Falsch: 27 · 20 € = 540 €, es fehlen 81 €. Nötig sind 23 € pro Kind.
+  - ☐ Richtig: 20 € sind fast 23 €, das genügt.
+  - ☐ Richtig: 621 : 20 ist mehr als 27.
+  - ☐ Falsch: Jedes Kind muss 27 € zahlen.
 
-### E · Erweitertes Niveau
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Angaben brauchst du für die Frage, welche nicht?
 
-- `01` AFB I · Eine Reisegruppe aus 15 Personen zahlt zusammen 2160 € für eine Fahrt, die 9 Tage dauert. Alle zahlen gleich viel. Wie viel zahlt eine Person? Lösung: **144 €**. Typische Fehler: 240 (sach-unnoetige-angabe), 1440 (div-stellenwert).
-- `02` AFB II · Eine Firma liefert 27 Paletten mit je 25 Dosen. Die Dosen werden in Kartons zu je 15 Dosen verpackt. Der Lkw fährt 3 km weit. Wie viele Kartons werden gebraucht? Lösung: **45 Kartons**. Typische Fehler: 675 (sach-schritt-vergessen), 225 (sach-unnoetige-angabe).
-- `03` AFB II · 360 Stühle sollen in gleich lange Reihen gestellt werden. Es sollen mehr als 30 und weniger als 40 Reihen sein, und kein Stuhl darf übrig bleiben. Wie viele Reihen sind es? Lösung: **36 Reihen**.
-- `04` AFB I · Eine Reisegruppe aus 21 Personen zahlt zusammen 1218 € für eine Fahrt, die 5 Tage dauert. Alle zahlen gleich viel. Wie viel zahlt eine Person? Lösung: **58 €**. Typische Fehler: 580 (div-stellenwert).
-- `05` AFB II · Ein Betrag wird gleichmäßig auf 13 Personen verteilt. Jede müsste 48 € zahlen. Dann sagen 5 Personen ab. Wie viel zahlt nun jede der übrigen Personen? Lösung: **78 €**. Typische Fehler: 48 (sach-schritt-vergessen), 624 (sach-schritt-vergessen).
-- `06` AFB III · Eine Rechnung wird gleichmäßig auf eine Gruppe verteilt. Die Gruppe wird doppelt so groß. Welche Aussage gilt immer, egal wie hoch die Rechnung ist?
+- `01` AFB I · Eine Reisegruppe aus 21 Personen zahlt zusammen 2394 € für eine Fahrt, die 9 Tage dauert. Alle zahlen gleich viel. Wie viel zahlt eine Person? Lösung: **114 €**. Typische Fehler: 266 (sach-unnoetige-angabe), 1140 (div-stellenwert).
+- `02` AFB II · Für ein Schulfest werden 39 Packungen mit je 25 Bechern gekauft. Die Becher werden gleichmäßig auf 15 Stände verteilt. Das Fest dauert 8 Stunden. Wie viele Becher bekommt jeder Stand? Lösung: **65 Becher**. Typische Fehler: 975 (sach-schritt-vergessen).
+- `03` AFB II · 444 Stühle sollen in gleich lange Reihen gestellt werden. Es sollen mehr als 10 und weniger als 20 Reihen sein, und kein Stuhl darf übrig bleiben. Wie viele Reihen sind es? Lösung: **12 Reihen**.
+- `04` AFB III · Eine Rechnung wird gleichmäßig auf eine Gruppe verteilt. Die Gruppe wird halb so groß. Welche Aussage gilt immer, egal wie hoch die Rechnung ist?
+  - ☑ Jede Person zahlt doppelt so viel.
+  - ☐ Jede Person zahlt nur noch die Hälfte.
   - ☐ Der Betrag pro Person bleibt gleich.
-  - ☑ Jede Person zahlt nur noch die Hälfte.
-  - ☐ Jede Person zahlt 2 € weniger.
-  - ☐ Jede Person zahlt doppelt so viel.
+  - ☐ Das hängt von der Höhe der Rechnung ab.
+  - ☐ Jede Person zahlt 2 € mehr.
+- `05` AFB II · Ein Betrag wird gleichmäßig auf 18 Personen verteilt. Jede müsste 42 € zahlen. Dann sagen 6 Personen ab. Wie viel zahlt nun jede der übrigen Personen? Lösung: **63 €**. Typische Fehler: 42 (sach-schritt-vergessen), 756 (sach-schritt-vergessen).
+- `06` AFB III · Eine Schule hat 5 Klassenstufen mit je 4 Klassen. Alle Kinder fahren gemeinsam mit Reisebussen zu einem Ausflug. Schätze die fehlenden Angaben selbst. Wie viele Reisebusse werden ungefähr gebraucht?
+  - ☐ etwa 2
+  - ☐ etwa 100
+  - ☑ etwa 10
+  - ☐ etwa 50
+  - ☐ etwa 500

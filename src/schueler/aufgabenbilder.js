@@ -114,14 +114,14 @@ function zehnermaterial({ h = 0, z = 0, e = 0, weg = null }) {
     x += w + 3 + abstand;
   }
   if (z && e) x += block;
-  // Würfel in Spalten zu 5, von unten nach oben.
-  const wk = w + 5;
+  // Würfel einzeln mit Abstand, in Reihen zu 5 (damit eine Reihe nicht wie eine Stange aussieht).
+  const wk = 12, wa = 7;
   for (let i = 0; i < e; i++) {
-    const cx = x + Math.floor(i / 5) * (wk + 6), cy = rand + 10 * w - wk - (i % 5) * (wk + 2);
+    const cx = x + (i % 5) * (wk + wa), cy = rand + Math.floor(i / 5) * (wk + wa);
     teile.push(s('rect', { class: 'wuerfel', x: cx, y: cy, width: wk, height: wk, fill: '#dfe7f3', stroke: DUNKEL, 'stroke-width': 2 }));
     if (weg && i >= e - (weg.e ?? 0)) teile.push(kreuz(cx, cy, wk, wk));
   }
-  if (e) x += Math.ceil(e / 5) * (wk + 6);
+  if (e) x += Math.min(e, 5) * (wk + wa);
   const sorten = [h && mehrzahl(h, 'Hunderterplatte', 'Hunderterplatten'), z && mehrzahl(z, 'Zehnerstange', 'Zehnerstangen'), e && mehrzahl(e, 'Einerwürfel', 'Einerwürfel')].filter(Boolean);
   const wegText = weg ? [weg.h && mehrzahl(weg.h, 'Platte', 'Platten'), weg.z && mehrzahl(weg.z, 'Stange', 'Stangen'), weg.e && mehrzahl(weg.e, 'Würfel', 'Würfel')].filter(Boolean).join(', ') : '';
   return rahmen(Math.max(x + rand - 6, 60), hoehe, `${sorten.join(', ')}${wegText ? `. Durchgestrichen: ${wegText}` : ''}`, teile);
@@ -172,25 +172,28 @@ function streifen({ ganz, teile: stuecke }) {
   return rahmen(B + rand * 2, hoch * 2 + rand * 2, titel, el);
 }
 
-// Vergleich: zwei Streifen untereinander. Der Unterschied ist am längeren Streifen gestrichelt abgesetzt.
+// Vergleich: zwei Streifen untereinander, links bündig. Am längeren Streifen ist der Unterschied gestrichelt abgesetzt.
+// Die Zahl jedes Streifens steht rechts daneben, weil sie für den ganzen Streifen gilt.
 function vergleich({ oben, unten, unterschied }) {
-  const B = 400, rand = 6, hoch = 40, namen = 120, luecke = 14;
+  const B = 360, rand = 6, hoch = 40, namen = 120, luecke = 14, zahl = 78;
   const wo = wertVon(oben.wert), wu = wertVon(unten.wert), gross = Math.max(wo, wu), klein = Math.min(wo, wu);
   const [bKlein, bDiff] = teilBreiten([klein, gross - klein], B, 70);
   const zeile = (p, y) => {
     const lang = wertVon(p.wert) === gross && gross !== klein;
     const b = lang ? bKlein + bDiff : bKlein;
     return [s('text', { x: rand, y: y + hoch / 2 + 6, class: 'bildname' }, p.name),
-      s('rect', { x: namen, y, width: b, height: hoch, fill: istFrage(p.wert) ? '#fff6d6' : '#dfe7f3', stroke: LINIE, 'stroke-width': 2 }),
+      s('rect', { x: namen, y, width: bKlein, height: hoch, fill: '#dfe7f3', stroke: 'none' }),
+      lang && s('rect', { x: namen + bKlein, y, width: bDiff, height: hoch, fill: istFrage(unterschied) ? '#fff6d6' : '#f1e7cf', stroke: 'none', class: 'unterschied' }),
+      s('rect', { x: namen, y, width: b, height: hoch, fill: 'none', stroke: LINIE, 'stroke-width': 2 }),
       lang && s('line', { x1: namen + bKlein, x2: namen + bKlein, y1: y, y2: y + hoch, stroke: LINIE, 'stroke-width': 2, 'stroke-dasharray': '5 4' }),
-      s('text', { x: namen + (lang ? bKlein / 2 : b / 2), y: y + hoch / 2 + 7, 'text-anchor': 'middle', class: istFrage(p.wert) ? 'bildfrage' : 'bildzahl' }, lies(p.wert)),
-      lang && s('text', { x: namen + bKlein + bDiff / 2, y: y + hoch / 2 + 7, 'text-anchor': 'middle', class: istFrage(unterschied) ? 'bildfrage' : 'bildzahl klein' }, lies(unterschied))];
+      lang && s('text', { x: namen + bKlein + bDiff / 2, y: y + hoch / 2 + 7, 'text-anchor': 'middle', class: istFrage(unterschied) ? 'bildfrage' : 'bildzahl klein' }, lies(unterschied)),
+      s('text', { x: namen + b + 12, y: y + hoch / 2 + 7, class: istFrage(p.wert) ? 'bildfrage' : 'bildzahl' }, lies(p.wert))];
   };
   const titel = `Vergleich: ${oben.name} ${istFrage(oben.wert) ? 'gesucht' : oben.wert}, ${unten.name} ${istFrage(unten.wert) ? 'gesucht' : unten.wert}, Unterschied ${istFrage(unterschied) ? 'gesucht' : unterschied}`;
-  return rahmen(namen + B + rand, rand * 2 + hoch * 2 + luecke, titel, zeile(oben, rand), zeile(unten, rand + hoch + luecke));
+  return rahmen(namen + B + zahl, rand * 2 + hoch * 2 + luecke, titel, zeile(oben, rand), zeile(unten, rand + hoch + luecke));
 }
 
-const ARTEN = { zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b) };
+const ARTEN = { zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }) };
 export const BILDARTEN = Object.keys(ARTEN);
 export function aufgabenBild(bild) {
   return ARTEN[bild?.art]?.(bild) ?? null;

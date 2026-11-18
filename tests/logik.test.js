@@ -33,7 +33,7 @@ test('Zahl-Aufgabe: richtige Lösung, typischer Fehler, sonstiger Fehler', () =>
 });
 
 test('Auswahl: Mehrfachauswahl verlangt genau alle richtigen Optionen', () => {
-  const a = aufgaben('5.3.3-S4', 'M')[0];
+  const a = pool.aufgaben.find((x) => x.mehrfach);
   const richtige = a.optionen.filter((o) => o.richtig).map((o) => o.text);
   assert.equal(L.pruefeAntwort(a, richtige).richtig, true);
   assert.equal(L.pruefeAntwort(a, a.optionen.map((o) => o.text)).richtig, false);
@@ -42,20 +42,23 @@ test('Auswahl: Mehrfachauswahl verlangt genau alle richtigen Optionen', () => {
 
 test('Auswahl: falsche Option meldet ihre Fehlvorstellung', () => {
   const a = aufgaben('5.3.3-S1', 'F').find((x) => x.format === 'auswahl');
-  const falsch = a.optionen.find((o) => !o.richtig);
-  assert.deepEqual(L.pruefeAntwort(a, [falsch.text]), { richtig: false, fehlvorstellung: 'begriffe-verwechselt' });
+  const falsch = a.optionen.find((o) => !o.richtig && o.fehlvorstellung);
+  assert.deepEqual(L.pruefeAntwort(a, [falsch.text]), { richtig: false, fehlvorstellung: falsch.fehlvorstellung });
 });
 
 test('Lücken, Zuordnen und Sachaufgabe: alles muss stimmen', () => {
-  const l = aufgaben('5.4.5-D4', 'M')[0];
-  assert.equal(L.pruefeAntwort(l, { q: String(l.luecken.q.loesung), r: String(l.luecken.r.loesung) }).richtig, true);
-  assert.equal(L.pruefeAntwort(l, { q: String(l.luecken.q.loesung), r: '0' }).fehlvorstellung, 'div-rest-vergessen');
-  const z = aufgaben('5.3.3-S1', 'F').find((x) => x.format === 'zuordnen');
+  // Eine Lückenaufgabe, deren letzte Lücke einen typischen Fehler kennt.
+  const l = pool.aufgaben.find((x) => x.format === 'luecken' && Object.keys(x.luecken).length === 2 && Object.values(x.luecken)[1].typischeFehler.length);
+  const [erste, zweite] = Object.keys(l.luecken);
+  assert.equal(L.pruefeAntwort(l, { [erste]: String(l.luecken[erste].loesung), [zweite]: String(l.luecken[zweite].loesung) }).richtig, true);
+  const fehler = l.luecken[zweite].typischeFehler[0];
+  assert.deepEqual(L.pruefeAntwort(l, { [erste]: String(l.luecken[erste].loesung), [zweite]: String(fehler.wert) }), { richtig: false, fehlvorstellung: fehler.fehlvorstellung });
+  const z = pool.aufgaben.find((x) => x.format === 'zuordnen');
   assert.equal(L.pruefeAntwort(z, Object.fromEntries(z.paare.map((p) => [p.links, p.rechts]))).richtig, true);
   assert.equal(L.pruefeAntwort(z, {}).richtig, false);
-  const s = aufgaben('5.3.3-S5', 'M')[0];
+  const s = pool.aufgaben.find((x) => x.format === 'sachaufgabe' && x.teile.length >= 2);
   assert.equal(L.pruefeAntwort(s, s.teile.map((t) => String(t.loesung))).richtig, true);
-  assert.equal(L.pruefeAntwort(s, [String(s.teile[0].loesung), '5']).richtig, false);
+  assert.equal(L.pruefeAntwort(s, [String(s.teile[0].loesung), ...s.teile.slice(1).map((t) => String(t.loesung + 1))]).richtig, false);
 });
 
 test('Lernziel: drei richtige Aufgaben auf dem Zielniveau erreichen es', () => {
@@ -124,11 +127,16 @@ test('Niveauvorschlag: hoch nach 4 von 5, runter nach 3 Fehlern, Ruhe nach Ableh
   L.lehneVorschlagAb(stand, '5.3');
   assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null);
   for (let i = 0; i < 3; i++) L.verbuche(stand, g[i], ok({ geloest: false }), 'G', 't');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), 'runter');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null, 'von Silber geht es nicht hinunter auf Bronze (ADR 0015)');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G', 'F'), 'runter', 'außer das Ziel des Kindes ist F');
+  const m = aufgaben(S2, 'M');
+  for (let i = 0; i < 3; i++) L.verbuche(stand, m[i], ok({ geloest: false }), 'M', 't');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'M'), 'runter');
   L.setzeNiveau(stand, '5.3', 'F');
-  assert.equal(L.arbeitsniveau(stand, '5.3', 'G'), 'F');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'F'), null);
-  assert.equal(L.niveauVorschlag(stand, '5.4', 'G'), null, 'anderes Kapitel bleibt unberührt');
+  assert.equal(L.arbeitsniveau(stand, '5.3', 'M'), 'G', 'eine alte Bronze-Wahl wird zu Silber');
+  assert.equal(L.arbeitsniveau(stand, '5.3', 'F'), 'F');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'F', 'F'), null);
+  assert.equal(L.niveauVorschlag(stand, '5.4', 'M'), null, 'anderes Kapitel bleibt unberührt');
 });
 
 test('Aufgabenauswahl: erst neue, dann ungelöste, nie zweimal direkt dieselbe', () => {
@@ -354,7 +362,7 @@ test('Jeder Meilenstein mit Aufgaben hat einen Merkzettel', () => {
 
 test('Siegelregel: drei richtige reichen nur mit einer Aufgabe aus AFB II oder III', () => {
   const g = aufgaben('5.4.5-D2', 'M');
-  assert.deepEqual(g.map((a) => a.afb), L.AFB_FOLGE);
+  assert.deepEqual(g.map((a) => a.afb), L.AFB_FOLGEN.M);
   const stand = neu();
   const [eins, vier] = g.filter((a) => a.afb === 1);
   L.verbuche(stand, eins, ok(), 'M', 't1', index);
@@ -369,14 +377,18 @@ test('Siegelregel: drei richtige reichen nur mit einer Aufgabe aus AFB II oder I
   assert.equal(mit.neuesLernziel, true);
 });
 
-test('Reihenfolge der Aufgaben folgt den Anforderungsbereichen I, II, II, I, II, III', () => {
-  const stand = neu(), folge = [];
-  for (let i = 0; i < 6; i++) {
-    const a = L.naechsteAufgabe(index, stand, '5.4.5-D4', 'G');
-    folge.push(a.afb);
-    L.verbuche(stand, a, ok({ geloest: false }), 'G', 't', index);
+test('Reihenfolge der Aufgaben folgt der Folge der Anforderungsbereiche jeder Niveaustufe', () => {
+  for (const n of L.NIVEAUS) {
+    const stand = neu(), folge = [], ids = [];
+    for (let i = 0; i < 6; i++) {
+      const a = L.naechsteAufgabe(index, stand, '5.4.5-D4', n);
+      folge.push(a.afb); ids.push(a.id);
+      L.verbuche(stand, a, ok({ geloest: false }), 'F', 't', index);
+    }
+    assert.deepEqual(folge, L.AFB_FOLGEN[n], n);
+    assert.deepEqual(ids, [...ids].sort(), 'neue Aufgaben kommen in der Reihenfolge ihrer Nummern');
   }
-  assert.deepEqual(folge, L.AFB_FOLGE);
+  assert.ok(!L.AFB_FOLGEN.F.includes(3), 'auf F gibt es keine Aufgabe zum Begründen');
 });
 
 test('Hilfekärtchen je Niveaustufe und Lösungsschritt auf M', () => {
@@ -539,7 +551,7 @@ test('Einstiegscheck: zählt für kein Lernziel, bringt keine Münzen und schlä
   assert.equal(stand.einschaetzung[ms.id].gewaehlt, 'G');
   assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }]), 'E');
   assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }, { niveau: 'M', richtig: false }]), 'M');
-  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: false }, { niveau: 'M', richtig: false }]), 'F');
+  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: false }, { niveau: 'M', richtig: false }]), 'G', 'F wird nie empfohlen (ADR 0015)');
 });
 
 test('Einstiegscheck: nicht mehr angeboten, wenn im Kapitel schon gearbeitet wurde oder er übersprungen ist', () => {
@@ -556,24 +568,24 @@ test('Einstiegscheck: nicht mehr angeboten, wenn im Kapitel schon gearbeitet wur
 test('Brücke: Vorschlag erst bei wackelig, drei Aufgaben eine Stufe tiefer, einmal am Tag je Lernziel', () => {
   const stand = neu();
   const lz = '5.3.3-S2';
-  const g = aufgaben(lz, 'G');
-  for (let i = 0; i < 3; i++) L.verbuche(stand, g[i], ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
+  const g = aufgaben(lz, 'M'); // die Brücke gibt es ab Gold, auf Silber übt das Kind die Grundlage (ADR 0015)
+  for (let i = 0; i < 3; i++) L.verbuche(stand, g[i], ok({ geloest: false, versuche: 2 }), 'M', '2026-11-17T10:05:00Z');
   assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:06:00Z'), null);
-  L.verbuche(stand, g[3], ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:07:00Z');
+  L.verbuche(stand, g[3], ok({ geloest: false, versuche: 2 }), 'M', '2026-11-17T10:07:00Z');
   const v = L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:08:00Z');
   assert.equal(v.fuer, lz);
   assert.ok(index.lernziel.get(lz).voraussetzungen.includes(v.zu));
   assert.equal(L.brueckenNiveau('G'), 'F');
   assert.equal(L.brueckenNiveau('F'), 'F');
-  const b = L.stelleBruecke(stand, index, v, 'G', '2026-11-17T10:08:00Z');
+  const b = L.stelleBruecke(stand, index, v, 'M', '2026-11-17T10:08:00Z');
   assert.equal(b.aufgaben.length, L.BRUECKE_AUFGABEN);
-  assert.ok(b.aufgaben.every((id) => index.aufgabe.get(id).niveau === 'F' && index.aufgabe.get(id).lernziel === v.zu));
+  assert.ok(b.aufgaben.every((id) => index.aufgabe.get(id).niveau === 'G' && index.aufgabe.get(id).lernziel === v.zu));
   assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:09:00Z'), null, 'nicht, solange eine Brücke läuft');
   let r;
   for (const id of [...b.aufgaben]) {
     const a = index.aufgabe.get(id);
     assert.equal(L.naechsteBrueckenAufgabe(stand), id);
-    L.verbuche(stand, a, ok(), 'G', '2026-11-17T10:10:00Z', index, { bruecke: true });
+    L.verbuche(stand, a, ok(), 'M', '2026-11-17T10:10:00Z', index, { bruecke: true });
     r = L.trageBrueckeEin(stand, a, true, '2026-11-17T10:10:00Z');
   }
   assert.deepEqual({ fertig: r.fertig, richtig: r.richtig, gesamt: r.gesamt, fuer: r.fuer }, { fertig: true, richtig: 3, gesamt: 3, fuer: lz });
@@ -596,13 +608,88 @@ test('Einmaleins-Brücke: Schriftliches Dividieren baut auf Geteilt-Aufgaben aus
   for (const lz of ['5.4.1-K1', '5.4.1-K2']) for (const n of L.NIVEAUS) assert.equal(aufgaben(lz, n).length, 6, `${lz} ${n}`);
   assert.equal(index.lernziel.get('5.4.5-D2').voraussetzungen[0], '5.4.1-K2');
   const stand = neu();
-  for (const a of aufgaben('5.4.5-D2', 'G').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
+  for (const a of aufgaben('5.4.5-D2', 'M').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'M', '2026-11-17T10:05:00Z');
   const v = L.brueckeVorschlag(stand, index, '5.4.5-D2', '2026-11-17T10:08:00Z');
   assert.equal(v.zu, '5.4.1-K2');
-  const b = L.stelleBruecke(stand, index, v, 'G', '2026-11-17T10:08:00Z');
-  assert.ok(b.aufgaben.every((id) => index.aufgabe.get(id).lernziel === '5.4.1-K2' && index.aufgabe.get(id).niveau === 'F'));
+  const b = L.stelleBruecke(stand, index, v, 'M', '2026-11-17T10:08:00Z');
+  assert.ok(b.aufgaben.every((id) => index.aufgabe.get(id).lernziel === '5.4.1-K2' && index.aufgabe.get(id).niveau === 'G'));
   // Mit Siegel beim Einmaleins geht die Brücke zur nächsten Voraussetzung ohne Siegel.
   stand.brueckeAktiv = null;
   stand.lernziele['5.4.1-K2'] = { t: '2026-11-16T10:00:00Z' };
   assert.equal(L.brueckeVorschlag(stand, index, '5.4.5-D2', '2026-11-17T10:08:00Z').zu, '5.4.5-D1');
+});
+
+// ---------- Niveaustufen nach Abschluss (ADR 0015) ----------
+test('Kronenwahl: Bronze steht nur zur Wahl, wenn das Ziel F ist', () => {
+  assert.deepEqual(L.wahlNiveaus('M'), ['G', 'M', 'E']);
+  assert.deepEqual(L.wahlNiveaus('G'), ['G', 'M', 'E']);
+  assert.deepEqual(L.wahlNiveaus('F'), ['F', 'G', 'M', 'E']);
+});
+
+test('Hilfekärtchen: auf F liegt der Tipp sofort offen, auf E geht er nicht von selbst auf', () => {
+  const je = (n) => aufgaben(S2, n)[0];
+  assert.equal(L.kartenZuBeginn(je('F')), 1);
+  for (const n of ['G', 'M', 'E']) assert.equal(L.kartenZuBeginn(je(n)), 0, n);
+  for (const n of ['F', 'G', 'M']) assert.equal(L.tippVonSelbst(je(n)), true, n);
+  assert.equal(L.tippVonSelbst(je('E')), false);
+  // Anzahl der Kärtchen: F und G drei, M zwei, E eines.
+  const anzahl = (n) => L.KARTEN.filter((k) => je(n).hilfen[k]).length;
+  assert.deepEqual(['F', 'G', 'M', 'E'].map(anzahl), [3, 3, 2, 1]);
+});
+
+test('Bronze: drei richtige F-Aufgaben reichen, ohne Aufgabe aus AFB II', () => {
+  const stand = neu();
+  const f = aufgaben(S2, 'F').filter((a) => a.afb === 1);
+  for (const a of f.slice(0, 3)) L.verbuche(stand, a, ok(), 'F', 't', index);
+  assert.equal(L.lernzielStand(stand, S2, 'F', index).erreicht, true);
+  assert.equal(L.lernzielStand(stand, S2, 'G', index).erreicht, false);
+});
+
+test('Grundlagen-Schleife: zwei Aufgaben trotz Lösungsschritt nicht gelöst, dann F, nach drei richtigen zurück', () => {
+  const stand = neu();
+  const g = aufgaben(S2, 'G'), f = aufgaben(S2, 'F');
+  const mitSchritt = ok({ geloest: false, versuche: 2, hilfen: 3, karten: ['tipp', 'beispiel', 'loesungsschritt'] });
+  assert.equal(L.verbuche(stand, g[0], mitSchritt, 'M', 't1', index).grundlage, null);
+  assert.equal(L.aufgabenNiveau(stand, S2, 'G'), 'G');
+  const beginn = L.verbuche(stand, g[1], mitSchritt, 'M', 't2', index).grundlage;
+  assert.deepEqual(beginn, { art: 'beginnt', richtige: 0, mal: 1 });
+  assert.equal(L.inGrundlage(stand, S2), true);
+  assert.equal(L.aufgabenNiveau(stand, S2, 'G'), 'F');
+  assert.equal(L.aufgabenNiveau(stand, '5.3.3-S3', 'G'), 'G', 'die Schleife gilt nur für dieses Lernziel');
+  assert.equal(L.naechsteAufgabe(index, stand, S2, L.aufgabenNiveau(stand, S2, 'G')).niveau, 'F');
+  assert.equal(L.brueckeVorschlag(stand, index, S2, 't'), null, 'in der Schleife gibt es keine Brücke');
+  // Eine falsche und eine mit Lösungsschritt gelöste F-Aufgabe zählen nicht.
+  assert.equal(L.verbuche(stand, f[0], ok({ geloest: false }), 'M', 't3', index).grundlage.richtige, 0);
+  assert.equal(L.verbuche(stand, f[0], ok({ hilfen: 3, karten: ['tipp', 'beispiel', 'loesungsschritt'] }), 'M', 't4', index).grundlage.richtige, 0);
+  assert.deepEqual(L.verbuche(stand, f[1], ok(), 'M', 't5', index).grundlage, { art: 'laeuft', richtige: 1, mal: 1 });
+  assert.equal(L.verbuche(stand, f[1], ok(), 'M', 't6', index).grundlage.richtige, 1, 'dieselbe Aufgabe zählt nur einmal');
+  assert.equal(L.verbuche(stand, f[2], ok(), 'M', 't7', index).grundlage.richtige, 2);
+  assert.equal(L.grundlageRichtige(stand, S2), 2);
+  assert.deepEqual(L.verbuche(stand, f[3], ok(), 'M', 't8', index).grundlage, { art: 'endet', richtige: 3, mal: 1 });
+  assert.equal(L.inGrundlage(stand, S2), false);
+  assert.equal(L.aufgabenNiveau(stand, S2, 'G'), 'G');
+  // Zurück auf G zählt nur, was danach geschieht.
+  assert.equal(L.verbuche(stand, g[2], ok(), 'M', 't9', index).grundlage, null);
+  assert.equal(L.verbuche(stand, g[3], mitSchritt, 'M', 't10', index).grundlage, null);
+  assert.deepEqual(L.verbuche(stand, g[4], mitSchritt, 'M', 't11', index).grundlage, { art: 'beginnt', richtige: 0, mal: 2 });
+  assert.equal(stand.grundlage[S2].mal, L.GRUNDLAGE_HINWEIS_AB);
+});
+
+test('Grundlagen-Schleife: beginnt auch bei einem wackeligen Lernziel, nicht auf M und nicht bei Ziel F', () => {
+  const g = aufgaben(S2, 'G'), m = aufgaben(S2, 'M');
+  const falsch = ok({ geloest: false, versuche: 2 });
+  const wackelig = neu();
+  for (let i = 0; i < 3; i++) assert.equal(L.verbuche(wackelig, g[i], falsch, 'G', 't', index).grundlage, null);
+  assert.equal(L.verbuche(wackelig, g[3], falsch, 'G', 't', index).grundlage.art, 'beginnt');
+  const aufM = neu();
+  for (let i = 0; i < 5; i++) assert.equal(L.verbuche(aufM, m[i], falsch, 'M', 't', index).grundlage, null);
+  const zielF = neu();
+  for (let i = 0; i < 5; i++) assert.equal(L.verbuche(zielF, g[i], falsch, 'F', 't', index).grundlage, null);
+  // Rückblick und Brücke lösen keine Schleife aus.
+  const rueck = neu();
+  for (let i = 0; i < 5; i++) assert.equal(L.verbuche(rueck, g[i], falsch, 'G', 't', index, { rueckblick: true }).grundlage, null);
+});
+
+test('Jedes Lernziel mit Aufgaben nennt seine Grundlage', () => {
+  for (const id of index.lernzielMitAufgaben) assert.ok(index.lernziel.get(id).grundlage, id);
 });
