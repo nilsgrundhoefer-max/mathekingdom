@@ -75,19 +75,15 @@ Die Übersicht aller Kapitel einer Klassenstufe: der Ausgangsort in der Mitte de
 _Avoid_: Reichskarte, Weltkarte, Jahresplan (für die Ansicht)
 
 **Regionskarte**:
-Die Darstellung eines Lernpfads im Stil einer alten Landkarte: vier parallele Straßen (F, G, M, E), auf denen die Unterkapitel Meilensteine sind. Ein Niveauwechsel heißt „die Straße wechseln“.
-_Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken
-
-**Straße**:
-Der Weg einer Niveaustufe auf der Regionskarte, mit festem Namen und eigenem Strichmuster: F Feldweg, G Talweg, M Königsweg, E Bergpfad.
-_Avoid_: Linie, Route (auf dem Bildschirm)
+Die Darstellung eines Lernpfads im Stil einer alten Landkarte: ein einziger Weg, auf dem die Unterkapitel Meilensteine sind. Die Niveaustufe ist kein eigener Weg mehr, sondern die Kronenfarbe, um die der Schüler spielt.
+_Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken, Straße
 
 **Meilenstein**:
-Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, und trägt dann ein Wachssiegel. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
+Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, und trägt dann eine Krone. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
 _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 
 **Abstecher**:
-Ein zusätzlicher Meilenstein, der abseits der Straßen gestrichelt angehängt ist.
+Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist. Er bekommt eine Krone nach derselben Regel.
 _Avoid_: Zusatzstation, Extra
 
 **Lernziel**:
@@ -108,12 +104,20 @@ _Avoid_: Punkte, Coins, Taler
 Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
 _Avoid_: Stern, Punkte, Abzeichen
 
+**Krone**:
+Die nicht ausgebbare Auszeichnung eines gemeisterten Meilensteins, in einer der vier Kronenfarben. Sie zeigt das niedrigste Niveau, auf dem alle Lernziele des Meilensteins nachgewiesen sind, und nie ein Niveau unter dem Zielniveau. Ein Schüler kann sie später aufwerten; der Meilenstein zeigt immer die beste Farbe. Kronen bringen keine Münzen und bestimmen nicht den Rang.
+_Avoid_: Meilensteinkrone, Pokal, Medaille
+
+**Kronenfarbe**:
+Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (M), Purpur (E). Im Schüler-Dashboard erscheinen nur die Kronenfarben, im Lehrer-Dashboard nur die Niveaustufen.
+_Avoid_: Kronenstufe, Lila, Purple
+
 **Rang**:
 Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Hofkartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
 _Avoid_: Level, Stufe
 
 **Wappen**:
-Das Schild, das ein Schüler selbst gestaltet; Farben und Zeichen kauft er mit Münzen.
+Das Schild, das ein Schüler selbst gestaltet; Farben und Zeichen kauft er mit Münzen. Ein Wappen-Zeichen heißt nie Krone (das teuerste Zeichen ist die Lilie).
 _Avoid_: Avatar, Lok
 
 **Minispiel**:
