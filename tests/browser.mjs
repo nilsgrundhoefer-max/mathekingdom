@@ -638,6 +638,14 @@ async function antworte(seite, richtig = true) {
   await lehrer.waitForFunction(() => /wiederhergestellt/.test(document.querySelector('.meldung.warnung')?.textContent ?? ''));
   assert.ok(JSON.parse(await lies(`5a/${aylin}.json`)).muenzen < 1000);
 
+  // Eine ältere, aber echt unterschriebene Klassendatei (etwa ein Überbleibsel eines überholten Schreibvorgangs)
+  // wird still ersetzt, ohne Warnung.
+  const warnungenVorher = await lehrer.locator('.meldung.warnung li').count();
+  await schreibe('5a/klassendatei.json', klassendatei);
+  for (let i = 0; i < 100 && (await lies('5a/klassendatei.json')) === klassendatei; i++) await lehrer.waitForTimeout(200);
+  assert.notEqual(await lies('5a/klassendatei.json'), klassendatei);
+  assert.equal(await lehrer.locator('.meldung.warnung li').count(), warnungenVorher);
+
   // Eine von außen veränderte Klassendatei erkennt die Lehrkraft und stellt sie wieder her.
   const gefaelscht = JSON.stringify({ inhalt: JSON.stringify({ klasse: '5a', aktuellesKapitel: null, codes: [aylin, '5A-ZZZZ'], zielniveaus: {}, spielpause: true, hilfe: {} }), signatur: JSON.parse(klassendatei).signatur });
   await schreibe('5a/klassendatei.json', gefaelscht);

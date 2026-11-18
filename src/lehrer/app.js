@@ -82,8 +82,14 @@ async function schreibeKlassendatei() {
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
-// Änderungen werden nacheinander geschrieben, damit sich zwei schnelle Klicks nicht überholen.
+// Alles, was die Klassendatei schreibt oder prüft, läuft nacheinander durch diese Schlange. Sonst überholen sich
+// ein Klick und das Neuladen alle 5 Sekunden, und das Dashboard hält seine eigene Datei für fremd verändert.
 let schlange = Promise.resolve();
+function inSchlange(tun) {
+  const fertig = schlange.then(tun);
+  schlange = fertig.catch(() => {});
+  return fertig;
+}
 function aendere(tun) {
   tun(kl());
   schlange = schlange.then(async () => { await speichereDaten(); await schreibeKlassendatei(); male(); })
@@ -115,13 +121,14 @@ async function oeffneKlasse(klasse, ablage) {
   z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } };
   const e = z.daten.klassen[klasse].einst;
   e.nachrichten ??= {}; e.sperren ??= {};
-  Object.assign(z, { overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null });
+  Object.assign(z, { overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null, zweitesGemeldet: false });
   Object.assign(z, { klasse, ordner: ablage, pool, index: L.indexiere(pool), ansicht: 'klasse', fehler: null, warnungen: [], klassendateiText: null, schueler: null, ls: { art: 'klasse' } });
   // Kopien für den Unterricht ohne Internet.
   await ablage.schreibe(`${S.SYSTEMORDNER}/klasse-${stufe}.json`, JSON.stringify(pool));
   if (window.MK_SCHUELER_JS) await ablage.schreibe(`${S.SYSTEMORDNER}/schueler-dashboard.js`, window.MK_SCHUELER_JS);
+  clearInterval(takt);
   await speichereDaten();
-  await schreibeKlassendatei();
+  await inSchlange(schreibeKlassendatei);
   await lade();
   // Im Unterricht zuerst der Raum, sonst der Lernstand. Ohne Namensliste die Verwaltung.
   z.tab = !Object.keys(kl().namen).length ? 'verwaltung' : A.jemandAktiv(z.staende, jetzt()) ? 'jetzt' : 'lernstand';
@@ -133,7 +140,9 @@ async function oeffneKlasse(klasse, ablage) {
     // Eine neue Warnung wird sofort gezeigt. Sonst nur neu zeichnen, wo es nicht beim Tippen stört.
     if (z.warnungen.length > vorher || (['jetzt', 'lernstand', 'aufgaben'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open]'))) male();
   };
-  takt = setInterval(frisch, 5000);
+  // Dauert das Lesen im Netz länger als 5 Sekunden, wird der nächste Durchgang ausgelassen statt doppelt gestartet.
+  let laeuft = false;
+  takt = setInterval(async () => { if (laeuft) return; laeuft = true; try { await frisch(); } finally { laeuft = false; } }, 5000);
   // Im Hintergrund bremst der Browser die Uhr: beim Zurückkehren sofort neu lesen.
   document.onvisibilitychange = () => { if (!document.hidden && z.ansicht === 'klasse') frisch(); };
   male();
@@ -167,24 +176,37 @@ async function lade() {
   staende.sort((a, b) => name(a.code).localeCompare(name(b.code), 'de'));
   Object.assign(z, { staende, unbekannt, aktualisiert: new Date() });
 
-  // Wurde die Klassendatei von außen verändert, wird sie sofort wiederhergestellt.
+  await inSchlange(pruefeKlassendatei);
+  if (!z.letztesBackup || Date.now() - z.letztesBackup > BACKUP_ABSTAND) {
+    await sichere().catch((e) => { z.letztesBackup = Date.now(); notiere('problem', `Stündliches Backup fehlgeschlagen: ${e.message}`, z.klasse); });
+  }
+}
+
+// Weicht die Klassendatei im Ordner von der zuletzt geschriebenen ab, wird sie wiederhergestellt. Gewarnt wird nur,
+// wenn sie fehlt oder ihre Unterschrift nicht passt. Trägt sie die eigene Unterschrift, stammt sie von einem
+// Lehrer-Dashboard: bei älterem Stand ein Überbleibsel, bei neuerem ein zweites geöffnetes Dashboard.
+async function pruefeKlassendatei() {
   const liegt = await z.ordner.lies(S.KLASSENDATEI);
   if (z.klassendateiText && liegt !== z.klassendateiText) {
-    z.warnungen.unshift(`${uhr(Date.now())} Uhr: Die Klassendatei wurde von außen verändert. Sie wurde wiederhergestellt.`);
-    notiere('problem', 'Klassendatei wurde von außen verändert und wiederhergestellt', z.klasse);
+    const echt = liegt ? await K.pruefeUnterschrift(liegt, z.daten.schluessel.oeffentlich) : null;
+    if (!echt) {
+      z.warnungen.unshift(`${uhr(Date.now())} Uhr: Die Klassendatei ${liegt ? 'wurde von außen verändert' : 'fehlte'}. Sie wurde wiederhergestellt.`);
+      notiere('problem', liegt ? 'Klassendatei von außen verändert (Unterschrift passt nicht), wiederhergestellt' : 'Klassendatei fehlte im Klassenordner, neu geschrieben', z.klasse);
+    } else if (echt.stand > (K.liesUngeprueft(z.klassendateiText)?.stand ?? '') && !z.zweitesGemeldet) {
+      z.zweitesGemeldet = true;
+      z.warnungen.unshift(`${uhr(Date.now())} Uhr: Ein zweites Lehrer-Dashboard schreibt in diese Klasse. Lass bitte nur eines offen, sonst überschreiben sie sich gegenseitig.`);
+      notiere('problem', 'Ein zweites Lehrer-Dashboard schreibt in diese Klasse', z.klasse);
+    }
     await schreibeKlassendatei();
   }
   // Antworten auf erledigte oder zurückgezogene Hilferufe entfernen.
   const hilfe = kl().einst.hilfe;
   let geaendert = false;
   for (const code of Object.keys(hilfe)) {
-    const ruf = staende.find((s) => s.code === code)?.stand.hilferuf;
+    const ruf = z.staende.find((s) => s.code === code)?.stand.hilferuf;
     if (!ruf || ruf.seit !== hilfe[code].zu) { delete hilfe[code]; geaendert = true; }
   }
   if (geaendert) { await speichereDaten(); await schreibeKlassendatei(); }
-  if (!z.letztesBackup || Date.now() - z.letztesBackup > BACKUP_ABSTAND) {
-    await sichere().catch((e) => { z.letztesBackup = Date.now(); notiere('problem', `Stündliches Backup fehlgeschlagen: ${e.message}`, z.klasse); });
-  }
 }
 
 // ---------- Backup ----------
