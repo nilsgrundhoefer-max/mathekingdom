@@ -7,7 +7,7 @@ import * as A from './auswertung.js';
 import * as K from '../gemeinsam/krypto.js';
 import { xlsx } from './xlsx.js';
 import { beispielklasse } from './beispiel.js';
-import { ROUTE_FARBE } from '../schueler/bilder.js';
+import { NIVEAU_FARBE } from '../schueler/bilder.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 
 const LEHRERDATEN = 'lehrerdaten.json';
@@ -27,7 +27,7 @@ const kl = () => z.daten.klassen[z.klasse];
 const name = (code) => kl().namen[code] ?? code;
 const ziel = (code) => kl().einst.zielniveaus[code] ?? L.STANDARD_ZIELNIVEAU;
 const prozent = (x) => (x == null ? '–' : `${Math.round(x * 100)} %`);
-const chip = (n) => h('span', { class: 'chip', style: `background:${ROUTE_FARBE[n]}`, title: `${L.ROUTE_NAMEN[n]} · ${L.NIVEAU_NAMEN[n]}` }, n);
+const chip = (n) => h('span', { class: 'chip', style: `background:${NIVEAU_FARBE[n]}`, title: L.NIVEAU_NAMEN[n] }, n);
 const aufgabentext = (id) => z.index.aufgabe.get(id)?.text.replace(/\{\{\w+\}\}/g, '▢') ?? id;
 // Ersetzt Lernziel-Kennungen in Hinweistexten durch etwas Lesbares, z. B. „Subtrahieren S2“.
 const lesbar = (text) => text.replace(/\d+\.\d+\.\w+-\w+/g, (id) => { const l = A.lernzieleMitAufgaben(z.pool, z.index).find((x) => x.id === id); return l ? `„${l.milestone} ${id.split('-').pop()}“` : id; });
@@ -418,6 +418,13 @@ function impulse() {
       x.naechstes && h('button', { class: 'haupt', 'data-anheben': x.code, onclick: () => aendere((k) => { k.einst.zielniveaus[x.code] = x.naechstes; }) }, `Zielniveau auf ${x.naechstes} anheben`),
       gesehen(schluessel)));
   }
+  for (const x of A.unterschaetzer(angemeldet(), z.pool, kl().einst.zielniveaus)) {
+    const schluessel = `unter|${x.code}|${x.meilensteine.join(',')}`;
+    if (z.gesehen.has(schluessel) || !x.naechstes) continue;
+    karten.push(h('li', { class: 'gut' }, h('span', {}, h('b', {}, 'Selbsteinschätzung: '), `${name(x.code)} hat sich an den letzten ${x.meilensteine.length} Meilensteinen unterschätzt und jedes Mal ein höheres Niveau geschafft als gewählt.`),
+      h('button', { class: 'haupt', 'data-anheben': x.code, onclick: () => aendere((k) => { k.einst.zielniveaus[x.code] = x.naechstes; }) }, `Zielniveau auf ${x.naechstes} anheben`),
+      gesehen(schluessel)));
+  }
   return karten.length > 0 && h('section', { class: 'karte' }, h('h2', {}, 'Impulse'), h('ul', { class: 'impulse' }, karten));
 }
 
@@ -483,8 +490,9 @@ function meilensteineSperren() {
         return h('tr', {}, h('td', {}, name(code)), h('td', {}, chip(ziel(code))), meilensteine.map((st) => {
           const gesperrt = zu(st.id, code);
           const status = stand ? L.milestoneStatus(z.index, stand, st) : 'offen';
+          const erreicht = stand && status !== 'gemeistert' ? L.krone(z.index, stand, st) : null;
           return h('td', {}, h('button', { class: `sperre ${gesperrt ? 'zu' : status}`, 'data-sperre': `${st.id}|${code}`, 'aria-pressed': String(gesperrt), onclick: () => setze(st.id, [code], !gesperrt) },
-            gesperrt ? '🔒 gesperrt' : status === 'gemeistert' ? '✓ gemeistert' : status === 'begonnen' ? 'offen, begonnen' : 'offen'));
+            gesperrt ? '🔒 gesperrt' : status === 'gemeistert' ? '✓ gemeistert' : erreicht ? `${erreicht} erreicht, Ziel ${ziel(code)}` : status === 'begonnen' ? 'offen, begonnen' : 'offen'));
         }));
       })))));
 }
@@ -563,12 +571,26 @@ function lernstandKlasse() {
       h('h2', {}, 'Lernziele im Vergleich'),
       h('p', { class: 'klein' }, 'Wie viele Schüler bei jedem Lernziel wo stehen. Tippe auf eine Zeile für die Einzelheiten.'),
       lernzielBalken(matrix, lernziele)),
+    selbsteinschaetzungKlasse(staende),
     h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Auffälligkeiten (${auff.length})`)),
       auff.length === 0 ? h('p', { class: 'klein' }, 'Keine Auffälligkeiten.') : h('ul', { class: 'liste' }, auff.map((a) => h('li', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: a.code }) }, name(a.code)), `: ${lesbar(a.text)}`)))),
     meilensteineSperren());
 }
 
 // Heatmap Schüler × Lernziel, nach Meilensteinen gruppiert.
+// Selbsteinschätzung je Schüler: erste Wahl am Meilenstein gegen das erste erreichte Niveau (ADR 0012).
+function selbsteinschaetzungKlasse(staende) {
+  const zeilen = staende.map(({ code, stand }) => ({ code, ...A.selbsteinschaetzung(stand, z.pool) })).filter((x) => x.liste.length > 0);
+  return h('section', { class: 'karte', id: 'selbsteinschaetzung' }, h('h2', {}, 'Selbsteinschätzung'),
+    h('p', { class: 'klein' }, `Beim ersten Start eines Meilensteins wählt jeder Schüler ein Niveau. Verglichen wird es mit dem Niveau, auf dem er dort zuerst alle Lernziele nachweist. Wer vorher absteigt, hat sich überschätzt. Eine Tendenz steht ab ${A.SELBSTEINSCHAETZUNG_AB} bewerteten Meilensteinen da.`),
+    zeilen.length === 0 ? h('p', { class: 'klein' }, 'Noch hat niemand einen Meilenstein mit Niveauwahl begonnen.')
+      : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+        h('thead', {}, h('tr', {}, ['Name', 'Selbsteinschätzung', 'unterschätzt', 'passend', 'überschätzt'].map((t) => h('th', {}, t)))),
+        h('tbody', {}, zeilen.map((x) => h('tr', {}, h('td', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: x.code }) }, name(x.code))),
+          h('td', {}, x.tendenz ? h('b', {}, x.tendenz) : h('span', { class: 'klein' }, `noch zu wenig (${x.bewertet} von ${A.SELBSTEINSCHAETZUNG_AB})`)),
+          h('td', { class: 'zahl' }, x.unter), h('td', { class: 'zahl' }, x.passend), h('td', { class: 'zahl' }, x.ueber)))))));
+}
+
 function heatmap(matrix, lernziele, klickbar) {
   const gruppen = [];
   for (const l of lernziele) { const g = gruppen.at(-1); if (g?.id === l.unterkapitel) g.anzahl++; else gruppen.push({ id: l.unterkapitel, titel: l.milestone, anzahl: 1 }); }
@@ -615,7 +637,7 @@ function lernstandLernziel(id) {
   const gruppen = { siegel: [], wackelig: [], begonnen: [], offen: [] };
   for (const { code, stand } of staende) gruppen[A.lernzielZustand(stand, id)].push(code);
   const fehler = A.fehlerZuLernziel(staende, id).slice(0, 6);
-  const nachStrasse = L.NIVEAUS.map((n) => { const x = v.filter((y) => y.niveau === n); return { n, bearbeitet: x.length, quote: x.length ? x.filter((y) => y.richtig).length / x.length : 0 }; }).filter((x) => x.bearbeitet);
+  const nachNiveau = L.NIVEAUS.map((n) => { const x = v.filter((y) => y.niveau === n); return { n, bearbeitet: x.length, quote: x.length ? x.filter((y) => y.richtig).length / x.length : 0 }; }).filter((x) => x.bearbeitet);
   const audit = A.aufgabenAudit(staende, z.index, 2).filter((a) => a.lernziel === id).slice(0, 5);
   return h('div', {},
     h('section', { class: 'karte' }, h('p', { class: 'klein' }, `Meilenstein ${l.milestone}`), h('h2', {}, l.text)),
@@ -632,12 +654,12 @@ function lernstandLernziel(id) {
       h('section', { class: 'karte' }, h('h2', {}, 'Häufigste typische Fehler'),
         fehler.length === 0 ? h('p', { class: 'klein' }, 'Noch keine typischen Fehler erkannt.')
           : balkenListe(fehler.map((f) => ({ name: z.pool.fehlvorstellungen[f.fehlvorstellung]?.beschreibung ?? f.fehlvorstellung, wert: f.anzahl, zusatz: `· ${f.schueler.length} Schüler` })), { format: (x) => `${x}-mal` })),
-      h('section', { class: 'karte' }, h('h2', {}, 'Lösungsquote nach Straße'),
-        nachStrasse.length === 0 ? h('p', { class: 'klein' }, 'Noch keine Aufgaben bearbeitet.')
-          : balkenListe(nachStrasse.map((x) => ({ name: [chip(x.n), ` ${L.ROUTE_NAMEN[x.n]}`], wert: x.quote, zusatz: `· ${x.bearbeitet} Aufgaben` })), { max: 1, format: prozent }))),
+      h('section', { class: 'karte' }, h('h2', {}, 'Lösungsquote nach Niveau'),
+        nachNiveau.length === 0 ? h('p', { class: 'klein' }, 'Noch keine Aufgaben bearbeitet.')
+          : balkenListe(nachNiveau.map((x) => ({ name: [chip(x.n), ` ${L.NIVEAU_NAMEN[x.n]}`], wert: x.quote, zusatz: `· ${x.bearbeitet} Aufgaben` })), { max: 1, format: prozent }))),
     audit.length > 0 && h('section', { class: 'karte' }, h('h2', {}, 'Schwierigste Aufgaben zu diesem Lernziel'),
       h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-        h('thead', {}, h('tr', {}, ['Aufgabe', 'Straße', 'AFB', 'Bearbeitet', 'Lösungsquote', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
+        h('thead', {}, h('tr', {}, ['Aufgabe', 'Niveau', 'AFB', 'Bearbeitet', 'Lösungsquote', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
         h('tbody', {}, audit.map((a) => h('tr', {}, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen')), h('td', {}, a.niveau && chip(a.niveau)),
           h('td', { class: 'zahl' }, ['', 'I', 'II', 'III'][a.afb] ?? ''), h('td', { class: 'zahl' }, a.bearbeitet), h('td', {}, balken(a.quote)),
           h('td', {}, a.haeufigsteFalsche ? `${a.haeufigsteFalsche} (${a.haeufigsteAnzahl}-mal)` : '–'))))))));
@@ -658,7 +680,7 @@ function lernstandSchueler(code) {
     h('section', { class: 'karte' }, h('h2', {}, 'Notiz'), notiz));
 }
 
-// ---------- Aufgaben: Auswertung nach AFB, Aufgabentyp, Straße und je Aufgabe ----------
+// ---------- Aufgaben: Auswertung nach AFB, Aufgabentyp, Niveau und je Aufgabe ----------
 function aufgabenTab() {
   if (z.staende.length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Noch gibt es keine Daten. Sobald Schüler Aufgaben bearbeiten, erscheint hier die Auswertung.'));
   const u = A.aufgabenUebersicht(z.staende, z.pool, z.index);
@@ -684,17 +706,17 @@ function aufgabenTab() {
           ['Zum Prüfen markiert', u.aufgaben.filter((a) => a.auffaellig).length]].map(([t, w]) => h('div', { class: 'kachel' }, h('b', {}, w), h('span', {}, t))))),
     gruppenTabelle('Nach Anforderungsbereich', 'AFB', u.afb),
     gruppenTabelle('Nach Aufgabentyp', 'Aufgabentyp', u.format),
-    gruppenTabelle('Nach Straße', 'Straße', u.niveau, (g) => [chip(g.wert), ` ${L.ROUTE_NAMEN[g.wert]} · ${L.NIVEAU_NAMEN[g.wert]}`]),
+    gruppenTabelle('Nach Niveau', 'Niveau', u.niveau, (g) => [chip(g.wert), ` ${L.NIVEAU_NAMEN[g.wert]}`]),
     h('section', { class: 'karte' }, h('h2', {}, 'Einzelne Aufgaben'),
       h('div', { class: 'filter' },
         wahl('sicht', 'aufg-sicht', ['Zeige', null], Object.entries(A.AUFGABEN_SICHTEN).map(([id, x]) => [id, x.titel])),
         wahl('milestone', 'aufg-meilenstein', ['Meilenstein', 'Alle Meilensteine'], meilensteine),
         wahl('afb', 'aufg-afb', ['AFB', 'Alle'], Object.entries(A.AFB_NAMEN)),
         wahl('format', 'aufg-format', ['Aufgabentyp', 'Alle'], u.format.map((g) => [g.wert, g.name])),
-        wahl('niveau', 'aufg-niveau', ['Straße', 'Alle'], L.NIVEAUS.map((n) => [n, `${n} ${L.ROUTE_NAMEN[n]}`]))),
-      f.sicht === 'nie' && h('p', { class: 'klein' }, 'Gezeigt werden nur Aufgaben aus Lernzielen und Straßen, an denen die Klasse schon gearbeitet hat. Sie hätten also drankommen können.'),
+        wahl('niveau', 'aufg-niveau', ['Niveau', 'Alle'], L.NIVEAUS.map((n) => [n, `${n} · ${L.NIVEAU_NAMEN[n]}`]))),
+      f.sicht === 'nie' && h('p', { class: 'klein' }, 'Gezeigt werden nur Aufgaben aus Lernzielen und Niveaustufen, an denen die Klasse schon gearbeitet hat. Sie hätten also drankommen können.'),
       liste.length === 0 ? h('p', { class: 'klein', id: 'aufg-leer' }, 'Keine Aufgabe passt zu dieser Auswahl.') : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle', id: 'aufg-liste' },
-        h('thead', {}, h('tr', {}, ['Aufgabe', 'Meilenstein', 'Straße', 'AFB', 'Typ', 'Bearbeitet', 'Gelöst', 'Lösungsquote', 'Im ersten Versuch', 'Abgebrochen', 'Zeit', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
+        h('thead', {}, h('tr', {}, ['Aufgabe', 'Meilenstein', 'Niveau', 'AFB', 'Typ', 'Bearbeitet', 'Gelöst', 'Lösungsquote', 'Im ersten Versuch', 'Abgebrochen', 'Zeit', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
         h('tbody', {}, sichtbar.map((a) => h('tr', { 'data-aufgabe': a.aufgabe }, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen')),
           h('td', {}, a.milestone?.titel ?? ''), h('td', {}, chip(a.niveau)), h('td', { class: 'zahl' }, ['', 'I', 'II', 'III'][a.afb] ?? ''), h('td', {}, A.FORMAT_NAMEN[a.format] ?? a.format),
           h('td', { class: 'zahl' }, a.bearbeitet), h('td', { class: 'zahl' }, a.geloest), h('td', {}, a.bearbeitet ? balken(a.quote) : '–'), h('td', { class: 'zahl' }, prozent(a.ersterVersuch)),
@@ -733,6 +755,7 @@ function einzelInhalt(code, fuerDruck = false) {
           return fuerDruck ? h('i', { class: `zelle ${s}`, title: titel }, ZUSTAND[s][1])
             : h('button', { class: `zelle ${s}`, title: titel, 'aria-label': titel, onclick: () => gehe({ art: 'lernziel', id: l.id }) }, ZUSTAND[s][1]);
         })))))),
+    meilensteineVon(code, stand),
     h('div', { class: 'zweispaltig' },
       h('section', { class: 'karte' }, h('h2', {}, 'Lösungsquote nach Anforderungsbereich'),
         balkenListe([{ name: 'AFB I · Reproduzieren', ...quote(afb[1]) }, { name: 'AFB II · Zusammenhänge', ...quote(afb[2]) }, { name: 'AFB III · Verallgemeinern', ...quote(afb[3]) }], { max: 1, format: prozent })),
@@ -742,15 +765,32 @@ function einzelInhalt(code, fuerDruck = false) {
       h('section', { class: 'karte' }, h('h2', {}, 'Typische Fehler'),
         fehler.length ? balkenListe(fehler.map((f) => ({ name: z.pool.fehlvorstellungen[f.fehlvorstellung]?.beschreibung ?? f.fehlvorstellung, wert: f.anzahl })), { format: (x) => `${x}-mal` })
           : h('p', { class: 'klein' }, 'Noch keine typischen Fehler erkannt.')),
-      h('section', { class: 'karte' }, h('h2', {}, 'Straßen der letzten Aufgaben'),
+      h('section', { class: 'karte' }, h('h2', {}, 'Niveau der letzten Aufgaben'),
         k.niveauverlauf.length ? h('p', { class: 'verlauf' }, k.niveauverlauf.slice(-40).map(chip)) : h('p', { class: 'klein' }, 'Noch keine Aufgaben.'),
         h('p', { class: 'klein' }, 'Links die älteren, rechts die neuesten Aufgaben.'))),
     !fuerDruck && h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Versuchsprotokoll (${protokoll.length})`)),
       h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-        h('thead', {}, h('tr', {}, ['Wann', 'Aufgabe', 'Straße', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer', 'Erkannter Fehler'].map((t) => h('th', {}, t)))),
+        h('thead', {}, h('tr', {}, ['Wann', 'Aufgabe', 'Niveau', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer', 'Erkannter Fehler'].map((t) => h('th', {}, t)))),
         h('tbody', {}, protokoll.map((v) => h('tr', {}, h('td', {}, new Date(v.t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })),
           h('td', {}, aufgabentext(v.aufgabe)), h('td', {}, chip(v.niveau)), h('td', {}, v.richtig ? 'ja' : 'nein'), h('td', { class: 'zahl' }, v.versuche), h('td', { class: 'zahl' }, v.hilfen),
           h('td', { class: 'zahl' }, `${v.dauer} s`), h('td', {}, (v.fehlvorstellungen ?? []).map((f) => z.pool.fehlvorstellungen[f]?.beschreibung ?? f).join(' ')))))))));
+}
+// Meilensteine eines Schülers: erreichtes Niveau gegen Ziel, dazu die Selbsteinschätzung (ADR 0012).
+function meilensteineVon(code, stand) {
+  const se = new Map(A.selbsteinschaetzung(stand, z.pool).liste.map((x) => [x.meilenstein, x]));
+  const zeilen = z.pool.kapitel.flatMap((k) => k.unterkapitel).filter((u) => L.milestoneStatus(z.index, stand, u) !== 'leer')
+    .map((u) => ({ u, status: L.milestoneStatus(z.index, stand, u), erreicht: L.krone(z.index, stand, u), e: se.get(u.id) }))
+    .filter((x) => x.status !== 'offen' || x.e);
+  if (zeilen.length === 0) return null;
+  const zielN = ziel(code);
+  return h('section', { class: 'karte', id: 'meilensteine-schueler' }, h('h2', {}, 'Meilensteine'),
+    h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+      h('thead', {}, h('tr', {}, ['Meilenstein', 'Erreicht', 'Ziel', 'Gewählt beim Start', 'Selbsteinschätzung'].map((t) => h('th', {}, t)))),
+      h('tbody', {}, zeilen.map(({ u, status, erreicht, e }) => h('tr', {}, h('td', {}, u.titel),
+        h('td', {}, erreicht ? [chip(erreicht), status === 'gemeistert' ? ' gemeistert' : ` erreicht, Ziel ${zielN}`] : status === 'gemeistert' ? 'gemeistert' : 'begonnen'),
+        h('td', {}, chip(zielN)),
+        h('td', {}, e ? chip(e.gewaehlt) : '–'),
+        h('td', {}, e?.urteil ? `${A.URTEIL_TEXT[e.urteil]}${e.abstieg ? ' (abgestiegen)' : ''}` : e ? 'noch offen' : '–')))))));
 }
 function klassenbericht() {
   const zeilen = A.berichtstabellen(z.staende, z.pool, z.index, kl().einst.zielniveaus, name, jetzt())[0].zeilen;

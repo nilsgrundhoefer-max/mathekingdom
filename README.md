@@ -1,6 +1,6 @@
 # Mathekingdom
 
-Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CONTEXT.md](CONTEXT.md), Grundsatzentscheidungen in [docs/adr/](docs/adr/). Das Setting ist eine mittelalterliche Landkarte (ADR 0010): Schlossgarten, Regionskarte mit vier Straßen, Meilensteine, Siegel, Wappen.
+Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CONTEXT.md](CONTEXT.md), Grundsatzentscheidungen in [docs/adr/](docs/adr/). Das Setting ist eine mittelalterliche Landkarte (ADR 0010): Schlossgarten, Regionskarte mit einem Weg, Meilensteine mit Kronen (ADR 0012), Siegel, Wappen.
 
 ## Stand
 
@@ -18,7 +18,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 - **Ohne Ordner ausprobieren** speichert nur im Browser.
 - **Klassenordner wählen** speichert wie im Unterricht: Der Ordner muss wie die Klasse heißen (`5a`). Darin entsteht der Speicherstand `5A-K4M2.json`.
 
-Die Startseite ist der Schlossgarten: oben die Etappe (das Kapitel, an dem gerade gearbeitet wird, wie viele Meilensteine gemeistert sind, und ein Knopf direkt zur nächsten Aufgabe), darunter ein Gartentor je Kapitel. Hinter jedem Tor liegt die Regionskarte mit vier Straßen (F Feldweg, G Talweg, M Königsweg, E Bergpfad), die man auch ohne Farbe am Strichmuster erkennt. Meilensteine zeigen ihren Zustand: Wegstein, Kompassnadel (begonnen), rotes Wachssiegel (gemeistert), Schloss (gesperrt). Jeder Meilenstein hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Nach dem ersten Fehlversuch öffnet sich der Tipp von selbst; Fehlversuch und Tipp kosten keine Münzen.
+Die Startseite ist der Schlossgarten: oben die Etappe (das Kapitel, an dem gerade gearbeitet wird, wie viele Meilensteine gemeistert sind, und ein Knopf direkt zur nächsten Aufgabe), darunter ein Gartentor je Kapitel. Hinter jedem Tor liegt die Regionskarte mit einem Weg. Am Meilenstein wählt der Schüler, um welche Krone er spielt (Bronze F, Silber G, Gold M, Purpur E; die Kronen tragen ein bis vier Edelsteine, damit man sie auch ohne Farbe unterscheidet). Meilensteine zeigen ihren Zustand: Wegstein, Kompassnadel (begonnen), Krone in der erreichten Farbe, Schloss (gesperrt). Gemeistert ist ein Meilenstein erst mit der Krone des Zielniveaus. Schüler sehen nie F, G, M, E, nur Kronenfarben; die Lehrkraft sieht nur die Niveaustufen. Jeder Meilenstein hat einen Merkzettel mit Regeln, Beispiel und Hinweis fürs Heft. Nach dem ersten Fehlversuch öffnet sich der Tipp von selbst; Fehlversuch und Tipp kosten keine Münzen.
 
 Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code mit passender Klasse wird angenommen. Sobald die Startdatei aus dem Lehrer-Dashboard stammt, ist eine gültig signierte Klassendatei Pflicht.
 
@@ -32,8 +32,8 @@ Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code 
 Vier Bereiche (beim Öffnen „Jetzt“, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst „Lernstand“):
 
 - **Jetzt:** Akut-Zone (Hilferufe und blockierte Schüler mit Aufgabe, Fehlversuchen, gezogenen Hilfekärtchen und möglichen Lernbegleitern), Impulse (Mini-Workshop bei gehäuftem Fehler, Schnellläufer), Klassenraum als Sitzplan mit Ampel. Ein Tipp auf einen Schüler öffnet die Detailansicht über dem Sitzplan.
-- **Lernstand:** Kennzahlen der Klasse, Heatmap Schüler × Lernziel mit vier Zuständen (Siegel, wackelig, begonnen, nicht begonnen), gestapelte Balken je Lernziel, Auffälligkeiten, Meilensteine öffnen und sperren. Ein Lernziel öffnet seine Seite (wer steht wo, häufigste typische Fehler, Lösungsquote nach Straße, schwierigste Aufgaben), ein Name die Seite des Schülers (Siegel, Zielniveau, zuletzt aktiv, Weg über die Lernziele, AFB, Hilfekärtchen, typische Fehler, Versuchsprotokoll zugeklappt, Notiz).
-- **Aufgaben:** Auswertung nach Anforderungsbereich, Aufgabentyp und Straße, dazu einzelne Aufgaben: schwierigste, nie gelöste, am häufigsten gelöste, bearbeitete oder abgebrochene sowie nie bearbeitete, obwohl sie hätten drankommen können.
+- **Lernstand:** Kennzahlen der Klasse, Heatmap Schüler × Lernziel mit vier Zuständen (Siegel, wackelig, begonnen, nicht begonnen), gestapelte Balken je Lernziel, Selbsteinschätzung je Schüler (erste Wahl am Meilenstein gegen das erste erreichte Niveau), Auffälligkeiten, Meilensteine öffnen und sperren. Ein Lernziel öffnet seine Seite (wer steht wo, häufigste typische Fehler, Lösungsquote nach Niveau, schwierigste Aufgaben), ein Name die Seite des Schülers (Siegel, Zielniveau, zuletzt aktiv, Weg über die Lernziele, AFB, Hilfekärtchen, typische Fehler, Versuchsprotokoll zugeklappt, Notiz).
+- **Aufgaben:** Auswertung nach Anforderungsbereich, Aufgabentyp und Niveau, dazu einzelne Aufgaben: schwierigste, nie gelöste, am häufigsten gelöste, bearbeitete oder abgebrochene sowie nie bearbeitete, obwohl sie hätten drankommen können.
 - **Verwaltung:** Namensliste, Codes und PINs, Startdatei, Berichte, Backup.
 
 Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den Druckdialog als PDF, Rohdaten als Excel-Datei mit acht Blättern.
@@ -68,5 +68,5 @@ npm run build    # dist/ bauen
 NODE_PATH=<Pfad zu Playwright> node tests/browser.mjs   # Dashboard im Browser durchfahren
 ```
 
-Quelltext des Schüler-Dashboards: `src/schueler/` (`logik.js` Regeln, `speicher.js` Dateizugriff, `app.js` Oberfläche, `bilder.js` Wappen, Siegel, Regionskarte und Schlossgarten).
+Quelltext des Schüler-Dashboards: `src/schueler/` (`logik.js` Regeln, `speicher.js` Dateizugriff, `app.js` Oberfläche, `bilder.js` Wappen, Siegel, Kronen, Regionskarte und Schlossgarten).
 Quelltext des Lehrer-Dashboards: `src/lehrer/` (`auswertung.js` Kennzahlen und Berichte, `xlsx.js` Excel-Ausgabe, `beispiel.js` Beispielklasse, `app.js` Oberfläche). Die Signatur der Klassendatei steht in `src/gemeinsam/krypto.js`.

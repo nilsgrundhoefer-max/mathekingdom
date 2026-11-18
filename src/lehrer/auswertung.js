@@ -257,6 +257,31 @@ export function schnelllaeufer(staende, pool, index, zielniveaus, jetzt) {
   return liste;
 }
 
+// ---------- Selbsteinschätzung (ADR 0012) ----------
+// Erste Kronenwahl je Meilenstein gegen die erste Krone dort. Die Lehrkraft sieht Niveaustufen, keine Kronen.
+export const URTEIL_TEXT = { unterschaetzt: 'unterschätzt', passend: 'passend', ueberschaetzt: 'überschätzt' };
+export const SELBSTEINSCHAETZUNG_AB = 3;
+export function selbsteinschaetzung(stand, pool) {
+  const titel = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).map((u) => [u.id, u.titel]));
+  const liste = Object.entries(stand.einschaetzung ?? {}).map(([id, e]) => ({ meilenstein: id, titel: titel.get(id) ?? id, gewaehlt: e.gewaehlt, krone: e.krone ?? null,
+    abstieg: Boolean(e.abstieg), urteil: L.urteil(e), t: e.kroneAm ?? e.t })).sort((a, b) => String(a.t).localeCompare(String(b.t)));
+  const bewertet = liste.filter((x) => x.urteil);
+  const zahl = (u) => bewertet.filter((x) => x.urteil === u).length;
+  const unter = zahl('unterschaetzt'), ueber = zahl('ueberschaetzt'), passend = zahl('passend');
+  const tendenz = bewertet.length < SELBSTEINSCHAETZUNG_AB ? null
+    : unter > ueber && unter > passend ? 'eher zu niedrig' : ueber > unter && ueber > passend ? 'eher zu hoch' : 'passend';
+  return { liste, bewertet: bewertet.length, unter, ueber, passend, tendenz };
+}
+// Impuls: Wer sich dreimal in Folge unterschätzt hat, könnte ein höheres Zielniveau vertragen.
+export function unterschaetzer(staende, pool, zielniveaus, folge = 3) {
+  return staende.flatMap(({ code, stand }) => {
+    const letzte = selbsteinschaetzung(stand, pool).liste.filter((x) => x.urteil).slice(-folge);
+    if (letzte.length < folge || !letzte.every((x) => x.urteil === 'unterschaetzt')) return [];
+    const ziel = zielVon(zielniveaus, code);
+    return [{ code, zielniveau: ziel, naechstes: L.NIVEAUS[L.NIVEAUS.indexOf(ziel) + 1] ?? null, meilensteine: letzte.map((x) => x.meilenstein) }];
+  });
+}
+
 // ---------- Anforderungsbereiche und Wirkung der Hilfen ----------
 // Lösungsquote je Anforderungsbereich: { 1: { bearbeitet, quote }, 2: …, 3: … }
 export function afbProfil(stand, index) {
@@ -311,11 +336,11 @@ export function aufgabenAudit(staende, index, mindestens = 3) {
   }).sort((a, b) => (a.quote ?? 1) - (b.quote ?? 1) || b.bearbeitet - a.bearbeitet);
 }
 
-// ---------- Auswertung nach Aufgaben, Aufgabentyp, AFB und Straße ----------
+// ---------- Auswertung nach Aufgaben, Aufgabentyp, AFB und Niveau ----------
 export const FORMAT_NAMEN = { zahl: 'Zahl eingeben', auswahl: 'Auswahl', luecken: 'Lückentext', zuordnen: 'Zuordnen', sachaufgabe: 'Sachaufgabe',
   zahlenstrahl: 'Zahlenstrahl', diagramm: 'Diagramm', tabelle: 'Tabelle' };
 export const AFB_NAMEN = { 1: 'AFB I', 2: 'AFB II', 3: 'AFB III' };
-// Jede Aufgabe des Pools mit ihren Zahlen, auch die nie bearbeiteten. `angeboten` heißt: Im selben Lernziel auf derselben Straße
+// Jede Aufgabe des Pools mit ihren Zahlen, auch die nie bearbeiteten. `angeboten` heißt: Im selben Lernziel auf derselben Niveaustufe
 // hat die Klasse schon gearbeitet, die Aufgabe hätte also drankommen können.
 export function aufgabenUebersicht(staende, pool, index) {
   const zahlen = new Map(aufgabenAudit(staende, index, 0).map((a) => [a.aufgabe, a]));
@@ -390,7 +415,7 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   }
   const ueb = aufgabenUebersicht(staende, pool, index);
   const gruppen = [['Gruppe', 'Wert', 'Aufgaben im Pool', 'davon bearbeitet', 'Bearbeitungen', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)']];
-  for (const [titel, liste] of [['Anforderungsbereich', ueb.afb], ['Aufgabentyp', ueb.format], ['Straße', ueb.niveau]]) for (const g of liste) {
+  for (const [titel, liste] of [['Anforderungsbereich', ueb.afb], ['Aufgabentyp', ueb.format], ['Niveau', ueb.niveau]]) for (const g of liste) {
     gruppen.push([titel, g.name, g.imPool, g.genutzt, g.bearbeitet, prozent(g.quote), prozent(g.ersterVersuch), g.abbrueche, g.zeitMedian ?? '']);
   }
   const alle = [['Aufgabe', 'Text', 'Meilenstein', 'Lernziel', 'Niveaustufe', 'AFB', 'Aufgabentyp', 'Bearbeitet', 'Gelöst', 'Lösungsquote in %', 'Im ersten Versuch in %', 'Abgebrochen', 'Zeit (Median, s)', 'Status']];
@@ -401,7 +426,7 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   return [
     { name: 'Übersicht', zeilen: uebersicht }, { name: 'Lernzielmatrix', zeilen: matrix }, { name: 'Lernziele', zeilen: ziele },
     { name: 'Typische Fehler', zeilen: fehler }, { name: 'Aufgaben-Audit', zeilen: audit }, { name: 'Versuchsprotokoll', zeilen: versuche },
-    { name: 'Nach AFB, Typ, Straße', zeilen: gruppen }, { name: 'Alle Aufgaben', zeilen: alle },
+    { name: 'Nach AFB, Typ, Niveau', zeilen: gruppen }, { name: 'Alle Aufgaben', zeilen: alle },
   ];
 }
 

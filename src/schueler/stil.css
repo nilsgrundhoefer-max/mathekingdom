@@ -79,14 +79,10 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .regionskarte .windrose { fill: #c9b994; stroke: #b3a27c; stroke-width: 1; opacity: .7; }
 #mathekingdom .regionskarte .windrose circle { fill: none; }
 #mathekingdom .regionskarte .windrose text { font: 700 11px var(--schrift-titel); fill: #9c8b66; stroke: none; }
-#mathekingdom .regionskarte .strassenknopf, #mathekingdom .regionskarte .meilenstein { cursor: pointer; }
-#mathekingdom .regionskarte .strassenfeld { fill: transparent; stroke: transparent; }
-#mathekingdom .regionskarte .strassenknopf:hover .strassenfeld { fill: #efe3c6; }
-#mathekingdom .regionskarte .strassenknopf.aktiv .strassenfeld { fill: #efe3c6; stroke: var(--nacht); stroke-width: 1.5; }
-#mathekingdom .regionskarte .strassenname { font: 600 13px var(--schrift-titel); fill: var(--tinte); pointer-events: none; }
-#mathekingdom .regionskarte .strassenknopf.aktiv .strassenname { font-weight: 700; }
-#mathekingdom .regionskarte .zielmarke { font-size: 11px; fill: var(--grau); font-weight: 700; pointer-events: none; }
 #mathekingdom .regionskarte .abstecher { fill: none; stroke: #a89d8a; stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; }
+#mathekingdom .regionskarte .meilenstein { cursor: pointer; }
+#mathekingdom .regionskarte .weg-rand { fill: none; stroke: #5b4632; stroke-width: 12; stroke-linejoin: round; stroke-linecap: round; }
+#mathekingdom .regionskarte .weg { fill: none; stroke: #e8d9b2; stroke-width: 7; stroke-linejoin: round; stroke-linecap: round; }
 #mathekingdom .regionskarte .stein { fill: #e6dcc3; stroke: #5b4632; stroke-width: 2.5; }
 #mathekingdom .regionskarte .steinnummer { font: 700 12px var(--schrift-titel); fill: #5b4632; pointer-events: none; }
 #mathekingdom .regionskarte .meilenstein.leer .stein { stroke: #a89d8a; stroke-dasharray: 4 4; fill: #efe8d8; }
@@ -119,7 +115,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .aufgabe { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
 #mathekingdom .aufgabe .pfad { grid-column: 1 / -1; margin: 0; }
 #mathekingdom .aufgabenkopf { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; font-size: .88rem; color: var(--grau); }
-#mathekingdom .aufgabenkopf .strasse { display: inline-flex; align-items: center; gap: 6px; color: var(--tinte); font-weight: 700; border: 1px solid var(--rand); background: #f6efdf; border-radius: 99px; padding: 2px 12px 2px 8px; }
+#mathekingdom .aufgabenkopf .kronenmarke { display: inline-flex; align-items: center; gap: 6px; color: var(--tinte); font-weight: 700; border: 1px solid var(--rand); background: #f6efdf; border-radius: 99px; padding: 2px 12px 2px 8px; }
 #mathekingdom .aufgabenkopf .ziel { flex: 1 1 200px; }
 #mathekingdom .aufgabentext { font-size: 1.3rem; line-height: 1.45; margin-bottom: 18px; max-width: 34em; white-space: pre-line; }
 #mathekingdom .antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
@@ -258,3 +254,14 @@ body { margin: 0; background: #efe6d2; }
   #mathekingdom .kopf nav { flex-basis: 100%; }
   #mathekingdom .kopf nav button { flex: 1; }
 }
+
+/* Kronen (ADR 0012) */
+#mathekingdom .kronenwert { display: inline-flex; align-items: center; gap: 2px 8px; flex-wrap: wrap; }
+#mathekingdom .kronenwert .je { display: inline-flex; align-items: center; gap: 2px; }
+#mathekingdom .kronenwert .je.null { opacity: .4; }
+#mathekingdom .kronenwahl { margin: 12px 0; }
+#mathekingdom .kronenwahl .wahl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+#mathekingdom .kronenwahl button { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; min-width: 84px; padding: 6px 10px; border: 1.5px solid var(--rand); border-radius: 8px; background: #fbf6ea; color: var(--tinte); font: inherit; cursor: pointer; }
+#mathekingdom .kronenwahl button[aria-pressed="true"] { border: 3px solid var(--nacht); background: #efe3c6; font-weight: 700; }
+#mathekingdom .kronenwahl .ziel { font-size: .75rem; color: var(--grau); font-weight: 700; }
+#mathekingdom .meinekrone { display: flex; align-items: center; gap: 8px; margin: 6px 0; }

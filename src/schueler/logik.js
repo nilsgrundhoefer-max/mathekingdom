@@ -206,9 +206,11 @@ export function etappe(pool, index, stand, einst) {
   const aktuell = offene.find((l) => l.kapitel.id === einst.aktuellesKapitel);
   return (aktuell?.milestone ? aktuell : null) ?? offene.find((l) => l.milestone) ?? aktuell ?? offene.at(-1);
 }
-export function naechstesLernziel(index, stand, unterkapitel) {
+// Mit `niveau`: zuerst ein Lernziel, das für die Krone dieser Farbe noch fehlt (ADR 0012).
+export function naechstesLernziel(index, stand, unterkapitel, niveau = null) {
   const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
-  return mit.find((l) => !stand.lernziele[l.id]) ?? mit[0] ?? null;
+  const fehlt = niveau && mit.find((l) => !lernzielStand(stand, l.id, niveau, index).erreicht);
+  return fehlt || mit.find((l) => !stand.lernziele[l.id]) || mit[0] || null;
 }
 
 // ---------- Aufgabe auswählen ----------
