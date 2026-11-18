@@ -410,6 +410,7 @@ export const wortspeicher = {
     w('Rechenausdruck', 'G', 'Eine Rechnung aus Zahlen, Rechenzeichen und Klammern, zum Beispiel 3 + 4 · 5.'),
     w('Punktrechnung', 'G', 'Mal und geteilt. Ihre Zeichen sind Punkte.'),
     w('Strichrechnung', 'G', 'Plus und minus. Ihre Zeichen sind Striche.'),
+    w('Vorrangregel', 'M', 'Sie sagt, was zuerst kommt: Klammer zuerst, dann Punkt vor Strich, sonst von links nach rechts.'),
     w('Term', 'E', 'Ein anderes Wort für Rechenausdruck.'),
   ],
   '5.4.7': [

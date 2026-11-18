@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (864 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (936 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -3000,3 +3000,264 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Angaben brauchst du für die F
   - ☐ etwa 100
   - ☐ etwa 2
   - ☑ etwa 10
+
+## 5.4.6-T1: Ich kann die Regel „Punkt vor Strich“ anwenden.
+
+Grundlage, die F übt: Päckchenbilder: einzelne Plättchen und volle Päckchen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Punkt vor Strich: Mal rechnest du vor plus. *Beispiel:* 2 + 3 · 4: Erst 3 · 4 = 12. Dann 2 + 12 = 14. *Lösungsschritt:* 2 · 4 = 8. Rechne jetzt 6 + 8.
+
+- `01` AFB I · Rechne. / 6 + 2 · 4 / Rechne zuerst 2 · 4. _(Bild: 6 einzelne Plättchen und 2 Päckchen mit je 4 Plättchen)_ Lösung: **14**. Typische Fehler: 32 (punkt-vor-strich).
+- `02` AFB I · 5 + 3 · 4 / Was rechnest du zuerst? _(Bild: 5 einzelne Plättchen und 3 Päckchen mit je 4 Plättchen)_
+  - ☐ 5 + 4
+  - ☐ 5 + 3
+  - ☑ 3 · 4
+- `03` AFB I · Im Bild sind 3 einzelne Plättchen. / Dazu kommen 2 Päckchen mit je 6 Plättchen. / Wie viele Plättchen sind es? _(Bild: 3 einzelne Plättchen und 2 Päckchen mit je 6 Plättchen)_ Lösung: **15 Plättchen**. Typische Fehler: 30 (punkt-vor-strich), 11 (1x1-addiert).
+- `04` AFB I · Rechne. / 2 · 5 + 4 / Rechne zuerst 2 · 5. _(Bild: 4 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen)_ Lösung: **14**. Typische Fehler: 18 (punkt-vor-strich).
+- `05` AFB II · Rechne. / 22 − 4 · 3 _(Bild: Mengenbild: 22 Plättchen, 12 durchgestrichen)_ Lösung: **10**. Typische Fehler: 54 (punkt-vor-strich).
+- `06` AFB I · Rechne Schritt für Schritt. / 3 · 5 = ▢ / 2 + 3 · 5 = ▢ _(Bild: 2 einzelne Plättchen und 3 Päckchen mit je 5 Plättchen)_ Lösung: a = **15**, b = **17**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Punktrechnung vor Strichrechnung. *Beispiel:* 7 + 6 · 8: Erst 6 · 8 = 48. Dann 7 + 48 = 55. *Lösungsschritt:* 8 · 5 = 40.
+
+- `01` AFB I · Rechne. / 10 + 8 · 5 _(Bild: 10 einzelne Plättchen und 8 Päckchen mit je 5 Plättchen)_ Lösung: **50**. Typische Fehler: 90 (punkt-vor-strich).
+- `02` AFB I · Rechne. / 5 · 8 − 11 Lösung: **29**.
+- `03` AFB II · Welcher Rechenweg ist richtig? / 6 + 4 · 5 _(Bild: 6 einzelne Plättchen und 4 Päckchen mit je 5 Plättchen)_
+  - ☐ 6 + 4 = 10 / 10 · 5 = 50
+  - ☐ 6 + 4 = 10 / 10 + 5 = 15
+  - ☑ 4 · 5 = 20 / 6 + 20 = 26
+- `04` AFB I · Rechne. / 27 : 3 + 8 · 3 Lösung: **33**. Typische Fehler: 51 (punkt-vor-strich).
+- `05` AFB II · Welche Zahl fehlt? / 7 + 4 · ▢ = 31 Lösung: **6**.
+- `06` AFB III · Finn rechnet: / 9 + 2 · 5 = 55 / Stimmt das? _(Bild: 9 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen)_
+  - ☐ Stimmt. / 9 + 2 = 11. / 11 · 5 = 55.
+  - ☑ Falsch. / Punkt vor Strich: 2 · 5 = 10. / 9 + 10 = 19.
+  - ☐ Falsch. / Richtig ist 16.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst die Punktrechnung. Rechne dann die Strichrechnungen von links nach rechts. *Lösungsschritt:* 7 · 13 = 91.
+
+- `01` AFB I · Berechne 154 − 7 · 13 + 14. Lösung: **77**. Typische Fehler: 1925 (punkt-vor-strich).
+- `02` AFB II · Welche Rechnung hat das größte Ergebnis?
+  - ☐ 4 · 3 − 5
+  - ☐ 5 · 3 − 4
+  - ☑ 4 · 5 + 3
+  - ☐ 4 + 5 · 3
+- `03` AFB II · Welche Zahl fehlt? 86 − ▢ · 7 = 23 Lösung: **9**. Typische Fehler: 10 (punkt-vor-strich).
+- `04` AFB I · Berechne 72 : 8 + 5 · 8 − 17. Lösung: **32**. Typische Fehler: 95 (punkt-vor-strich).
+- `05` AFB II · Berechne 7 · 8 − 5 · 7. Lösung: **21**. Typische Fehler: 357 (punkt-vor-strich).
+- `06` AFB III · Finn rechnet 89 − 3 · 9 = 774. Paul rechnet 89 − 3 · 9 = 62. Wer hat recht?
+  - ☐ Finn. Man rechnet von links nach rechts.
+  - ☐ Keiner. Richtig ist 77.
+  - ☐ Beide. Die Reihenfolge ist egal.
+  - ☑ Paul. Punkt vor Strich: 3 · 9 = 27 und 89 − 27 = 62.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erst alle Punktrechnungen, dann von links nach rechts.
+
+- `01` AFB I · Berechne 9 · 9 + 63 : 9 − 4 · 8. Lösung: **56**. Typische Fehler: 672 (punkt-vor-strich).
+- `02` AFB II · Welche Gleichung stimmt?
+  - ☐ 5 · 6 + 7 = 65
+  - ☐ 30 − 5 · 7 = 175
+  - ☑ 3 + 5 · 7 = 38
+  - ☐ 30 : 6 + 7 = 37
+  - ☐ 3 + 5 · 7 = 56
+- `03` AFB II · Ich denke mir eine Zahl. Ich nehme sie mal 3 und addiere 17. Ich erhalte 47. Welche Zahl habe ich mir gedacht? Lösung: **10**. Typische Fehler: 27 (punkt-vor-strich).
+- `04` AFB III · Warum rechnet man bei 9 + 2 · 5 zuerst 2 · 5? Denke an 9 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen.
+  - ☐ Weil das Mal links steht.
+  - ☑ 2 · 5 zählt die Plättchen in den Päckchen. Erst wenn sie gezählt sind, kommen die 9 einzelnen dazu: 9 + 10 = 19.
+  - ☐ Weil man immer mit der größten Zahl anfängt.
+  - ☐ Das ist nur eine Abmachung ohne Grund.
+  - ☐ Weil 9 + 2 zuerst gerechnet werden muss.
+- `05` AFB II · Welche Rechenzeichen passen? 5 ▢ 7 ▢ 3 = 26
+  - ☐ 5 · 7 · 3
+  - ☑ 5 + 7 · 3
+  - ☐ 5 · 7 − 3
+  - ☐ 5 · 7 + 3
+  - ☐ 5 + 7 + 3
+- `06` AFB III · Ole sagt: „Bei 72 : 8 − 3 · 2 rechnet man zuerst 8 − 3.“ Sara sagt: „Man rechnet zuerst 72 : 8 und 3 · 2.“ Wer hat recht?
+  - ☐ Beide. Das Ergebnis ist gleich.
+  - ☐ Ole. Geteilt ist keine Punktrechnung.
+  - ☑ Sara. Geteilt und mal sind Punktrechnungen. 72 : 8 = 9 und 3 · 2 = 6, also 9 − 6 = 3.
+  - ☐ Keiner. Man rechnet von links nach rechts.
+  - ☐ Ole. Minus steht in der Mitte.
+
+## 5.4.6-T2: Ich kann Rechenausdrücke mit Klammern berechnen, auch mit einer Klammer in der Klammer.
+
+Grundlage, die F übt: Erst die Klammer, dann der Rest: in zwei Schritten rechnen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was in der Klammer steht, rechnest du zuerst. *Beispiel:* (2 + 3) · 4: Erst 2 + 3 = 5. Dann 5 · 4 = 20. *Lösungsschritt:* 5 + 2 = 7. Rechne jetzt 7 · 6.
+
+- `01` AFB I · Rechne. / (5 + 2) · 6 / Rechne zuerst die Klammer. _(Bild: Punktefeld mit 7 Reihen zu je 6 Punkten, Trennlinie nach 5 Reihen)_ Lösung: **42**. Typische Fehler: 17 (klammer-ignoriert).
+- `02` AFB I · 3 · (5 + 4) / Was rechnest du zuerst? _(Bild: Punktefeld mit 3 Reihen zu je 9 Punkten)_
+  - ☐ 3 · 5
+  - ☐ 3 · 4
+  - ☑ 5 + 4
+- `03` AFB I · Rechne. / 20 − (6 + 3) _(Bild: Mengenbild: 20 Plättchen, 9 durchgestrichen)_ Lösung: **11**. Typische Fehler: 17 (klammer-ignoriert).
+- `04` AFB I · Rechne. / (10 − 4) · 5 _(Bild: Punktefeld mit 6 Reihen zu je 5 Punkten)_ Lösung: **30**.
+- `05` AFB II · 4 + 2 · 5 und (4 + 2) · 5 / Welche Rechnung hat das Ergebnis 30? _(Bild: Punktefeld mit 6 Reihen zu je 5 Punkten, Trennlinie nach 4 Reihen)_
+  - ☐ 4 + 2 · 5
+  - ☑ (4 + 2) · 5
+  - ☐ Beide Rechnungen
+- `06` AFB I · Rechne. / (3 + 2) · 5 = ▢ _(Bild: Punktefeld mit 5 Reihen zu je 5 Punkten, Trennlinie nach 3 Reihen)_ Lösung: x = **25**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zuerst die Klammer. *Beispiel:* 8 · (12 − 5): 12 − 5 = 7. 8 · 7 = 56. *Lösungsschritt:* 14 − 3 = 11.
+
+- `01` AFB I · Rechne. / 8 · (14 − 3) _(Bild: Punktefeld mit 8 Reihen zu je 11 Punkten)_ Lösung: **88**. Typische Fehler: 109 (klammer-ignoriert).
+- `02` AFB I · Rechne. / (20 + 8) : 7 Lösung: **4**.
+- `03` AFB II · Rechne. / 4 · (30 − (5 + 4)) Lösung: **84**. Typische Fehler: 116 (klammer-innen-aussen), 111 (klammer-ignoriert).
+- `04` AFB I · Rechne. / 60 − (4 + 2) · 4 Lösung: **36**. Typische Fehler: 216 (punkt-vor-strich), 64 (klammer-ignoriert).
+- `05` AFB II · Setze eine Klammer. / Das Ergebnis soll am größten sein. / 4 + 2 · 6 _(Bild: Punktefeld mit 6 Reihen zu je 6 Punkten, Trennlinie nach 4 Reihen)_
+  - ☑ (4 + 2) · 6
+  - ☐ 4 + (2 · 6)
+  - ☐ (4 · 2) + 6
+- `06` AFB III · Jonas rechnet: / (6 + 4) · 3 = 18 / Stimmt das? _(Bild: Punktefeld mit 10 Reihen zu je 3 Punkten, Trennlinie nach 6 Reihen)_
+  - ☐ Falsch. / Richtig ist 13.
+  - ☐ Stimmt. / Punkt vor Strich.
+  - ☑ Falsch. / Zuerst die Klammer: 6 + 4 = 10. / 10 · 3 = 30.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zuerst die Klammer, dann das Mal, dann das Plus. *Lösungsschritt:* 47 − 14 = 33.
+
+- `01` AFB I · Berechne 4 · (47 − 14) + 13. Lösung: **145**. Typische Fehler: 187 (klammer-ignoriert), 184 (punkt-vor-strich).
+- `02` AFB II · Berechne 100 − 7 · (12 − 5). Lösung: **51**. Typische Fehler: 11 (klammer-ignoriert), 651 (punkt-vor-strich).
+- `03` AFB II · Wo muss die Klammer stehen, damit 144 herauskommt?
+  - ☐ (8 + 7) · 11
+  - ☑ 8 · (7 + 11)
+  - ☐ 8 · 7 + 11
+  - ☐ (8 · 7) + 11
+- `04` AFB I · Berechne (66 − 7 · 6) : 6. Lösung: **4**. Typische Fehler: 59 (punkt-vor-strich).
+- `05` AFB II · Welche Zahl fehlt? (▢ + 5) · 8 = 120 Lösung: **10**.
+- `06` AFB III · Jonas rechnet 60 − (29 − 8) = 23. Elif rechnet 60 − (29 − 8) = 39. Wer hat recht?
+  - ☑ Elif. Zuerst die Klammer: 29 − 8 = 21. Dann 60 − 21 = 39.
+  - ☐ Keiner. Richtig ist 49.
+  - ☐ Beide. Es kommt dasselbe heraus.
+  - ☐ Jonas. Man darf die Klammer bei Minus einfach weglassen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Arbeite dich von der innersten Klammer nach außen vor.
+
+- `01` AFB I · Berechne 3 · (57 − (6 + 5) · 5). Lösung: **6**. Typische Fehler: 78 (klammer-ignoriert).
+- `02` AFB II · Berechne ((11 + 11) · 6 − 60) : 8. Lösung: **9**.
+- `03` AFB II · Wo setzt du Klammern in 4 · 6 + 5 · 7, damit das Ergebnis am größten wird?
+  - ☐ 4 · (6 + 5 · 7)
+  - ☐ (4 · 6) + (5 · 7)
+  - ☑ 4 · (6 + 5) · 7
+  - ☐ 4 · 6 + 5 · 7
+  - ☐ (4 · 6 + 5) · 7
+- `04` AFB III · Braucht man in 3 + (5 · 8) die Klammer?
+  - ☐ Das kann man nicht sagen.
+  - ☐ Ja. Klammern darf man nie weglassen.
+  - ☐ Nein. Klammern ändern nie etwas.
+  - ☐ Ja. Ohne Klammer ist es 64.
+  - ☑ Nein. Wegen Punkt vor Strich ist auch 3 + 5 · 8 = 43.
+- `05` AFB II · Welche Zahl fehlt? 4 · (▢ − 6) = 36 Lösung: **15**. Typische Fehler: 3 (klammer-innen-aussen).
+- `06` AFB III · Tom sagt: „In (90 − 25) − 8 darf man die Klammer weglassen.“ Sara sagt: „In 90 − (25 − 8) darf man die Klammer weglassen.“ Wer hat recht?
+  - ☑ Nur Tom. (90 − 25) − 8 = 57 und 90 − 25 − 8 = 57. Aber 90 − (25 − 8) = 73.
+  - ☐ Nur Sara. Die Klammer hinten ist egal.
+  - ☐ Beide. Es kommt immer 57 heraus.
+  - ☐ Keiner. Klammern darf man nie weglassen.
+  - ☐ Beide. Bei Minus darf man Klammern immer weglassen.
+
+## 5.4.6-T3: Ich kann zu einem Text den passenden Rechenausdruck aufstellen.
+
+Grundlage, die F übt: Geschichte mit Päckchen der passenden Rechnung zuordnen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleich viele in jeder Tüte: mal. Die einzelnen Murmeln: plus. *Beispiel:* 2 Murmeln und 3 Tüten mit je 5: 2 + 3 · 5. *Lösungsschritt:* 3 Tüten mit je 5 sind 3 · 5.
+
+- `01` AFB I · Paul hat 6 Murmeln. / Dazu bekommt Paul 3 Tüten mit je 5 Murmeln. / Welche Rechnung passt? _(Bild: 6 einzelne Plättchen und 3 Päckchen mit je 5 Plättchen)_
+  - ☐ 6 + 3 + 5
+  - ☐ (6 + 3) · 5
+  - ☑ 6 + 3 · 5
+- `02` AFB I · Sara hat 4 Sticker. / Sara kauft 2 Päckchen mit je 5 Stickern. / Wie viele Sticker hat Sara jetzt? _(Bild: 4 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen)_ Lösung: **14 Sticker**. Typische Fehler: 30 (punkt-vor-strich).
+- `03` AFB I · Es gibt 2 Päckchen mit je 3 Plättchen. / Dazu kommen 4 Plättchen. / Welche Rechnung passt? _(Bild: 4 einzelne Plättchen und 2 Päckchen mit je 3 Plättchen)_
+  - ☑ 2 · 3 + 4
+  - ☐ 2 + 3 + 4
+  - ☐ 2 · (3 + 4)
+- `04` AFB I · Lina hat 20 €. / Lina kauft 2 Hefte. / 1 Heft kostet 3 €. / Wie viel Geld hat Lina noch? _(Bild: Mengenbild: 20 Plättchen, 6 durchgestrichen)_ Lösung: **14 €**. Typische Fehler: 54 (punkt-vor-strich).
+- `05` AFB II · Welche Geschichte passt zu 2 + 3 · 4? _(Bild: 2 einzelne Plättchen und 3 Päckchen mit je 4 Plättchen)_
+  - ☐ Ich habe 2 Stifte, 3 Stifte und 4 Stifte.
+  - ☐ Ich habe 2 Packungen und 3 Packungen mit je 4 Stiften.
+  - ☑ Ich habe 2 Stifte. / Ich kaufe 3 Packungen mit je 4 Stiften.
+- `06` AFB I · In 1 Kiste sind 6 Flaschen. / Es gibt 3 Kisten. / 5 Flaschen sind leer. / Wie viele Flaschen sind voll? _(Bild: 3 Gruppen mit je 6 Plättchen)_ Lösung: **13 Flaschen**. Typische Fehler: 3 (punkt-vor-strich).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleich viele Brötchen zum gleichen Preis: mal. Die Milch kommt dazu: plus. *Beispiel:* 2 Brezeln zu je 50 Cent und ein Saft für 70 Cent: 2 · 50 + 70. *Lösungsschritt:* Die Brötchen kosten 4 · 35.
+
+- `01` AFB I · Ole kauft 4 Brötchen zu je 35 Cent. / Dazu kauft Ole eine Milch für 80 Cent. / Welcher Rechenausdruck passt?
+  - ☐ 4 · (35 + 80)
+  - ☐ 4 + 35 + 80
+  - ☑ 4 · 35 + 80
+- `02` AFB I · 8 Kinder gehen ins Kino. / Eine Karte kostet 6 €. / Jedes Kind kauft noch Popcorn für 3 €. / Wie viel bezahlen alle zusammen? Lösung: **72 €**. Typische Fehler: 51 (punkt-vor-strich).
+- `03` AFB II · Welcher Rechenausdruck passt zum Bild? _(Bild: 5 einzelne Plättchen und 4 Päckchen mit je 6 Plättchen)_
+  - ☐ 5 · 4 + 6
+  - ☐ (5 + 4) · 6
+  - ☑ 5 + 4 · 6
+- `04` AFB I · Addiere 5 und 3. / Nimm das Ergebnis mal 4. _(Bild: Punktefeld mit 8 Reihen zu je 4 Punkten, Trennlinie nach 5 Reihen)_ Lösung: **32**. Typische Fehler: 17 (klammer-ignoriert).
+- `05` AFB II · Ida hat 50 €. / Ida kauft 4 Bücher zu je 8 €. / Wie viel Geld bleibt Ida? Lösung: **18 €**. Typische Fehler: 368 (punkt-vor-strich), 42 (sach-schritt-vergessen).
+- `06` AFB III · Die Geschichte heißt: Ich habe 6 € und bekomme 2-mal 4 €. / Mara schreibt (6 + 2) · 4. / Stimmt das? _(Bild: 6 einzelne Plättchen und 2 Päckchen mit je 4 Plättchen)_
+  - ☐ Falsch. / Richtig ist 6 + 2 + 4.
+  - ☐ Stimmt. / Man rechnet die Zahlen der Reihe nach.
+  - ☑ Falsch. / Nur die 2-mal 4 € sind ein Mal: 6 + 2 · 4 = 14.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Produkt ist das Ergebnis einer Mal-Aufgabe. Es wird von der Zahl abgezogen. *Lösungsschritt:* Das Produkt ist 5 · 7.
+
+- `01` AFB I · Schreibe als Rechenausdruck: Subtrahiere das Produkt von 5 und 7 von 91.
+  - ☐ 91 − 5 + 7
+  - ☐ (91 − 5) · 7
+  - ☑ 91 − 5 · 7
+  - ☐ 5 · 7 − 91
+- `02` AFB II · Ein Kino hat 14 Reihen mit je 19 Plätzen. Bei einer Vorstellung bleiben 26 Plätze leer. Wie viele Besucher sind im Kino? Lösung: **240 Besucher**.
+- `03` AFB II · Ein T-Shirt kostet 9 €, eine Hose kostet 30 €. Elif kauft 2 T-Shirts und eine Hose. Ergänze den Rechenausdruck: 2 · ▢ + ▢ = ▢ Lösung: a = **9**, b = **30**, c = **48**
+- `04` AFB I · Dividiere die Summe von 27 und 29 durch 8. Lösung: **7**.
+- `05` AFB II · Für einen Ausflug zahlt jedes der 19 Kinder 5 € Eintritt und 3 € für den Bus. Welcher Rechenausdruck passt nicht?
+  - ☐ 19 · (5 + 3)
+  - ☐ 19 · 5 + 19 · 3
+  - ☑ 19 · 5 + 3
+  - ☐ 19 · 8
+- `06` AFB III · Zur Aufgabe „Ziehe von 90 das Fünffache von 8 ab“ schreibt Jonas 90 − 5 · 8 und Emre (90 − 5) · 8. Wer hat recht?
+  - ☐ Beide. Beide Ausdrücke haben dasselbe Ergebnis.
+  - ☑ Jonas. Das Fünffache von 8 ist 5 · 8 = 40. 90 − 40 = 50.
+  - ☐ Emre. Man rechnet in der Reihenfolge des Textes.
+  - ☐ Keiner. Richtig ist 90 − 5 − 8.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Differenz und Summe kommen je in eine Klammer.
+
+- `01` AFB I · Multipliziere die Differenz von 63 und 21 mit der Summe von 7 und 9. Lösung: **672**.
+- `02` AFB II · Eine Klasse mit 26 Kindern fährt in den Zoo. Der Eintritt kostet für jedes Kind 7 €. Der Bus kostet für alle zusammen 156 €. Die Kosten werden gerecht verteilt. Wie viel muss jedes Kind bezahlen? Lösung: **13 €**. Typische Fehler: 188 (punkt-vor-strich), 163 (sach-schritt-vergessen).
+- `03` AFB II · Welcher Rechenausdruck passt? Addiere zum Produkt von 13 und 6 den Quotienten aus 60 und 6.
+  - ☑ 13 · 6 + 60 : 6
+  - ☐ 13 · 6 + 60 · 6
+  - ☐ 13 · (6 + 60) : 6
+  - ☐ (13 · 6 + 60) : 6
+  - ☐ 13 + 6 · 60 : 6
+- `04` AFB III · Welche Geschichte passt zu (60 − 7) · 4?
+  - ☑ Ein Paket wiegt 60 kg. Davon werden 7 kg ausgepackt. 4 solche Pakete werden verschickt.
+  - ☐ Ich habe 60 €. Ich gebe 7 € aus und dann noch 4 €.
+  - ☐ Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon ausgepackt.
+  - ☐ Ich habe 60 €. Ich bekomme 4-mal 7 € dazu.
+  - ☐ Keine Geschichte passt.
+- `05` AFB II · Ich denke mir eine Zahl. Ich addiere 5 und nehme das Ergebnis mal 3. Ich erhalte 45. Welche Zahl habe ich mir gedacht? Lösung: **10**. Typische Fehler: 20 (klammer-innen-aussen).
+- `06` AFB III · Für 8 Hefte zu je 3 € und 8 Stifte zu je 2 € schreibt Mia 8 · 3 + 2. Ole schreibt 8 · (3 + 2). Wer hat recht?
+  - ☐ Mia. Punkt vor Strich.
+  - ☐ Mia. Die Stifte kosten nur 2 €.
+  - ☐ Beide. Die Ausdrücke sind gleich.
+  - ☐ Keiner. Richtig ist 8 + 3 + 2.
+  - ☑ Ole. Jedes Heft und jeder Stift wird 8-mal gekauft: 8 · 5 = 40.

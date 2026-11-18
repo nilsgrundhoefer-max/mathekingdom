@@ -1427,6 +1427,11 @@
        "erklaerung": "Plus und minus. Ihre Zeichen sind Striche."
       },
       {
+       "wort": "Vorrangregel",
+       "ab": "M",
+       "erklaerung": "Sie sagt, was zuerst kommt: Klammer zuerst, dann Punkt vor Strich, sonst von links nach rechts."
+      },
+      {
        "wort": "Term",
        "ab": "E",
        "erklaerung": "Ein anderes Wort für Rechenausdruck."
@@ -33244,6 +33249,2414 @@
     "5 · 4 = 20",
     "20 · 25 = 500",
     "500 : 50 = 10"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-F-01",
+   "lernziel": "5.4.6-T1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n6 + 2 · 4\nRechne zuerst 2 · 4.",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 32,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punkt vor Strich: Mal rechnest du vor plus.",
+    "beispiel": "2 + 3 · 4: Erst 3 · 4 = 12. Dann 2 + 12 = 14.",
+    "loesungsschritt": "2 · 4 = 8. Rechne jetzt 6 + 8."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 6,
+    "paeckchen": 2,
+    "je": 4
+   },
+   "nachweis": [
+    "2 · 4 = 8",
+    "6 + 8 = 14",
+    "6 + 2 · 4 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-F-02",
+   "lernziel": "5.4.6-T1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "5 + 3 · 4\nWas rechnest du zuerst?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 + 4",
+     "richtig": false
+    },
+    {
+     "text": "5 + 3",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "3 · 4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punkt vor Strich: Das Mal kommt zuerst.",
+    "beispiel": "Bei 5 + 2 · 3 rechnest du zuerst 2 · 3.",
+    "loesungsschritt": "Suche das Zeichen ·."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 5,
+    "paeckchen": 3,
+    "je": 4
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 12
+    },
+    "3 · 4 = 12",
+    "5 + 12 = 17"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-F-03",
+   "lernziel": "5.4.6-T1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Im Bild sind 3 einzelne Plättchen.\nDazu kommen 2 Päckchen mit je 6 Plättchen.\nWie viele Plättchen sind es?",
+   "loesung": 15,
+   "typischeFehler": [
+    {
+     "wert": 30,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 11,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Plättchen in den Päckchen.",
+    "beispiel": "3 einzelne und 2 Päckchen mit je 4: 2 · 4 = 8. 3 + 8 = 11.",
+    "loesungsschritt": "2 · 6 = 12. Rechne jetzt 3 + 12."
+   },
+   "einheit": "Plättchen",
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 3,
+    "paeckchen": 2,
+    "je": 6
+   },
+   "nachweis": [
+    "2 · 6 = 12",
+    "3 + 12 = 15"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-F-04",
+   "lernziel": "5.4.6-T1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n2 · 5 + 4\nRechne zuerst 2 · 5.",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 18,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Mal kommt zuerst. Danach rechnest du plus.",
+    "beispiel": "3 · 4 + 2: Erst 3 · 4 = 12. Dann 12 + 2 = 14.",
+    "loesungsschritt": "2 · 5 = 10. Rechne jetzt 10 + 4."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 4,
+    "paeckchen": 2,
+    "je": 5
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "10 + 4 = 14",
+    "2 · 5 + 4 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-F-05",
+   "lernziel": "5.4.6-T1",
+   "niveau": "F",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne.\n22 − 4 · 3",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 54,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auch bei minus gilt: Das Mal kommt zuerst.",
+    "beispiel": "20 − 3 · 4: Erst 3 · 4 = 12. Dann 20 − 12 = 8.",
+    "loesungsschritt": "4 · 3 = 12. Nimm 12 von 22 weg."
+   },
+   "bild": {
+    "art": "mengenbild",
+    "anzahl": 22,
+    "weg": 12
+   },
+   "nachweis": [
+    "4 · 3 = 12",
+    "22 − 12 = 10",
+    "22 − 4 · 3 = 10"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-F-06",
+   "lernziel": "5.4.6-T1",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Rechne Schritt für Schritt.\n3 · 5 = {{a}}\n2 + 3 · 5 = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 15,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 17,
+     "typischeFehler": [
+      {
+       "wert": 25,
+       "fehlvorstellung": "punkt-vor-strich"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Zuerst das Mal. Dann das Plus.",
+    "beispiel": "4 + 2 · 3: 2 · 3 = 6. 4 + 6 = 10.",
+    "loesungsschritt": "Rechne 2 + 15."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 2,
+    "paeckchen": 3,
+    "je": 5
+   },
+   "nachweis": [
+    "3 · 5 = 15",
+    "2 + 15 = 17",
+    "2 + 3 · 5 = 17"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-G-01",
+   "lernziel": "5.4.6-T1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n10 + 8 · 5",
+   "loesung": 50,
+   "typischeFehler": [
+    {
+     "wert": 90,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punktrechnung vor Strichrechnung.",
+    "beispiel": "7 + 6 · 8: Erst 6 · 8 = 48. Dann 7 + 48 = 55.",
+    "loesungsschritt": "8 · 5 = 40."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 10,
+    "paeckchen": 8,
+    "je": 5
+   },
+   "nachweis": [
+    "8 · 5 = 40",
+    "10 + 40 = 50",
+    "10 + 8 · 5 = 50"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-G-02",
+   "lernziel": "5.4.6-T1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n5 · 8 − 11",
+   "loesung": 29,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Zuerst das Mal. Dann das Minus.",
+    "beispiel": "9 · 7 − 25: 9 · 7 = 63. 63 − 25 = 38.",
+    "loesungsschritt": "5 · 8 = 40."
+   },
+   "nachweis": [
+    "5 · 8 = 40",
+    "40 − 11 = 29",
+    "5 · 8 − 11 = 29"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-G-03",
+   "lernziel": "5.4.6-T1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welcher Rechenweg ist richtig?\n6 + 4 · 5",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6 + 4 = 10\n10 · 5 = 50",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "6 + 4 = 10\n10 + 5 = 15",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "4 · 5 = 20\n6 + 20 = 26",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punktrechnung vor Strichrechnung.",
+    "beispiel": "4 + 5 · 3: Erst 5 · 3 = 15. Dann 4 + 15 = 19.",
+    "loesungsschritt": "Welcher Weg beginnt mit 4 · 5?"
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 6,
+    "paeckchen": 4,
+    "je": 5
+   },
+   "nachweis": [
+    "4 · 5 = 20",
+    "6 + 20 = 26"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-G-04",
+   "lernziel": "5.4.6-T1",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n27 : 3 + 8 · 3",
+   "loesung": 33,
+   "typischeFehler": [
+    {
+     "wert": 51,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal und geteilt kommen vor plus. Rechne beide Punktrechnungen zuerst.",
+    "beispiel": "48 : 6 + 4 · 5: 48 : 6 = 8 und 4 · 5 = 20. 8 + 20 = 28.",
+    "loesungsschritt": "27 : 3 = 9."
+   },
+   "nachweis": [
+    "27 : 3 = 9",
+    "8 · 3 = 24",
+    "9 + 24 = 33",
+    "27 : 3 + 8 · 3 = 33"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-G-05",
+   "lernziel": "5.4.6-T1",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt?\n7 + 4 · ▢ = 31",
+   "loesung": 6,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Ziehe zuerst die einzelne Zahl ab.",
+    "beispiel": "3 + 4 · ▢ = 31: 31 − 3 = 28. 4 · 7 = 28. Die Zahl ist 7.",
+    "loesungsschritt": "31 − 7 = 24. Welche Zahl mal 4 ergibt 24?"
+   },
+   "nachweis": [
+    "31 − 7 = 24",
+    "24 : 4 = 6",
+    "7 + 4 · 6 = 31"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-G-06",
+   "lernziel": "5.4.6-T1",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Finn rechnet:\n9 + 2 · 5 = 55\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.\n9 + 2 = 11.\n11 · 5 = 55.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Falsch.\nPunkt vor Strich: 2 · 5 = 10.\n9 + 10 = 19.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nRichtig ist 16.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Rechnung kommt zuerst?",
+    "beispiel": "6 + 4 · 2: Erst 4 · 2 = 8. Dann 6 + 8 = 14.",
+    "loesungsschritt": "Rechne zuerst 2 · 5."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 9,
+    "paeckchen": 2,
+    "je": 5
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "9 + 2 · 5",
+     "behauptet": 55
+    },
+    "2 · 5 = 10",
+    "9 + 10 = 19",
+    "9 + 2 = 11",
+    "11 · 5 = 55"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-M-01",
+   "lernziel": "5.4.6-T1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 154 − 7 · 13 + 14.",
+   "loesung": 77,
+   "typischeFehler": [
+    {
+     "wert": 1925,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die Punktrechnung. Rechne dann die Strichrechnungen von links nach rechts.",
+    "loesungsschritt": "7 · 13 = 91."
+   },
+   "nachweis": [
+    "7 · 13 = 91",
+    "154 − 91 = 63",
+    "63 + 14 = 77",
+    "154 − 7 · 13 + 14 = 77"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-M-02",
+   "lernziel": "5.4.6-T1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Rechnung hat das größte Ergebnis?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 · 3 − 5",
+     "richtig": false
+    },
+    {
+     "text": "5 · 3 − 4",
+     "richtig": false
+    },
+    {
+     "text": "4 · 5 + 3",
+     "richtig": true
+    },
+    {
+     "text": "4 + 5 · 3",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne bei jeder Rechnung zuerst das Mal.",
+    "loesungsschritt": "4 + 5 · 3 = 4 + 15."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesstes"
+    },
+    "4 + 5 · 3 = 19",
+    "4 · 5 + 3 = 23",
+    "5 · 3 − 4 = 11",
+    "4 · 3 − 5 = 7"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-M-03",
+   "lernziel": "5.4.6-T1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? 86 − ▢ · 7 = 23",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viel wird von der ersten Zahl abgezogen?",
+    "loesungsschritt": "86 − 23 = 63. Also ist ▢ · 7 = 63."
+   },
+   "nachweis": [
+    "86 − 23 = 63",
+    "63 : 7 = 9",
+    "86 − 9 · 7 = 23"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-M-04",
+   "lernziel": "5.4.6-T1",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 72 : 8 + 5 · 8 − 17.",
+   "loesung": 32,
+   "typischeFehler": [
+    {
+     "wert": 95,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erst beide Punktrechnungen, dann von links nach rechts plus und minus.",
+    "loesungsschritt": "72 : 8 = 9 und 5 · 8 = 40."
+   },
+   "nachweis": [
+    "72 : 8 = 9",
+    "5 · 8 = 40",
+    "9 + 40 = 49",
+    "49 − 17 = 32",
+    "72 : 8 + 5 · 8 − 17 = 32"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-M-05",
+   "lernziel": "5.4.6-T1",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Berechne 7 · 8 − 5 · 7.",
+   "loesung": 21,
+   "typischeFehler": [
+    {
+     "wert": 357,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Produkte kommen zuerst.",
+    "loesungsschritt": "7 · 8 = 56 und 5 · 7 = 35."
+   },
+   "nachweis": [
+    "7 · 8 = 56",
+    "5 · 7 = 35",
+    "56 − 35 = 21",
+    "7 · 8 − 5 · 7 = 21"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-M-06",
+   "lernziel": "5.4.6-T1",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Finn rechnet 89 − 3 · 9 = 774. Paul rechnet 89 − 3 · 9 = 62. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Finn. Man rechnet von links nach rechts.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Keiner. Richtig ist 77.",
+     "richtig": false
+    },
+    {
+     "text": "Beide. Die Reihenfolge ist egal.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Paul. Punkt vor Strich: 3 · 9 = 27 und 89 − 27 = 62.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Rechenart kommt zuerst?",
+    "loesungsschritt": "Rechne zuerst 3 · 9."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "89 − 3 · 9",
+     "behauptet": 774
+    },
+    "3 · 9 = 27",
+    "89 − 27 = 62"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-E-01",
+   "lernziel": "5.4.6-T1",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 9 · 9 + 63 : 9 − 4 · 8.",
+   "loesung": 56,
+   "typischeFehler": [
+    {
+     "wert": 672,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erst alle Punktrechnungen, dann von links nach rechts."
+   },
+   "nachweis": [
+    "9 · 9 = 81",
+    "63 : 9 = 7",
+    "4 · 8 = 32",
+    "81 + 7 = 88",
+    "88 − 32 = 56",
+    "9 · 9 + 63 : 9 − 4 · 8 = 56"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-E-02",
+   "lernziel": "5.4.6-T1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Gleichung stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 · 6 + 7 = 65",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "30 − 5 · 7 = 175",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "3 + 5 · 7 = 38",
+     "richtig": true
+    },
+    {
+     "text": "30 : 6 + 7 = 37",
+     "richtig": false
+    },
+    {
+     "text": "3 + 5 · 7 = 56",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne bei jeder Gleichung die linke Seite mit Punkt vor Strich aus."
+   },
+   "nachweis": [
+    {
+     "art": "gleichungen"
+    }
+   ]
+  },
+  {
+   "id": "5.4.6-T1-E-03",
+   "lernziel": "5.4.6-T1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ich denke mir eine Zahl. Ich nehme sie mal 3 und addiere 17. Ich erhalte 47. Welche Zahl habe ich mir gedacht?",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 27,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne rückwärts. Was hast du zuletzt gemacht?"
+   },
+   "nachweis": [
+    "47 − 17 = 30",
+    "30 : 3 = 10",
+    "10 · 3 + 17 = 47"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-E-04",
+   "lernziel": "5.4.6-T1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Warum rechnet man bei 9 + 2 · 5 zuerst 2 · 5? Denke an 9 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Weil das Mal links steht.",
+     "richtig": false
+    },
+    {
+     "text": "2 · 5 zählt die Plättchen in den Päckchen. Erst wenn sie gezählt sind, kommen die 9 einzelnen dazu: 9 + 10 = 19.",
+     "richtig": true
+    },
+    {
+     "text": "Weil man immer mit der größten Zahl anfängt.",
+     "richtig": false
+    },
+    {
+     "text": "Das ist nur eine Abmachung ohne Grund.",
+     "richtig": false
+    },
+    {
+     "text": "Weil 9 + 2 zuerst gerechnet werden muss.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was bedeutet ein Produkt in einer Plättchengeschichte?"
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "9 + 10 = 19"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-E-05",
+   "lernziel": "5.4.6-T1",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Rechenzeichen passen? 5 ▢ 7 ▢ 3 = 26",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 · 7 · 3",
+     "richtig": false
+    },
+    {
+     "text": "5 + 7 · 3",
+     "richtig": true
+    },
+    {
+     "text": "5 · 7 − 3",
+     "richtig": false
+    },
+    {
+     "text": "5 · 7 + 3",
+     "richtig": false
+    },
+    {
+     "text": "5 + 7 + 3",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Möglichkeit mit Punkt vor Strich aus."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 26
+    },
+    "5 + 7 · 3 = 26",
+    "5 · 7 + 3 = 38",
+    "5 · 7 − 3 = 32",
+    "5 + 7 + 3 = 15",
+    "5 · 7 · 3 = 105"
+   ]
+  },
+  {
+   "id": "5.4.6-T1-E-06",
+   "lernziel": "5.4.6-T1",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ole sagt: „Bei 72 : 8 − 3 · 2 rechnet man zuerst 8 − 3.“ Sara sagt: „Man rechnet zuerst 72 : 8 und 3 · 2.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Das Ergebnis ist gleich.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Ole. Geteilt ist keine Punktrechnung.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Sara. Geteilt und mal sind Punktrechnungen. 72 : 8 = 9 und 3 · 2 = 6, also 9 − 6 = 3.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Man rechnet von links nach rechts.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Ole. Minus steht in der Mitte.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Rechenzeichen gehören zur Punktrechnung?"
+   },
+   "nachweis": [
+    "72 : 8 = 9",
+    "3 · 2 = 6",
+    "9 − 6 = 3"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-F-01",
+   "lernziel": "5.4.6-T2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n(5 + 2) · 6\nRechne zuerst die Klammer.",
+   "loesung": 42,
+   "typischeFehler": [
+    {
+     "wert": 17,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was in der Klammer steht, rechnest du zuerst.",
+    "beispiel": "(2 + 3) · 4: Erst 2 + 3 = 5. Dann 5 · 4 = 20.",
+    "loesungsschritt": "5 + 2 = 7. Rechne jetzt 7 · 6."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 7,
+    "spalten": 6,
+    "trenn": 5
+   },
+   "nachweis": [
+    "5 + 2 = 7",
+    "7 · 6 = 42",
+    "(5 + 2) · 6 = 42"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-F-02",
+   "lernziel": "5.4.6-T2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "3 · (5 + 4)\nWas rechnest du zuerst?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3 · 5",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "3 · 4",
+     "richtig": false
+    },
+    {
+     "text": "5 + 4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Klammer kommt immer zuerst.",
+    "beispiel": "Bei 3 · (2 + 4) rechnest du zuerst 2 + 4.",
+    "loesungsschritt": "Schau, was in der Klammer steht."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 3,
+    "spalten": 9
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 9
+    },
+    "5 + 4 = 9",
+    "3 · 9 = 27"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-F-03",
+   "lernziel": "5.4.6-T2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n20 − (6 + 3)",
+   "loesung": 11,
+   "typischeFehler": [
+    {
+     "wert": 17,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die Klammer. Dann nimm alles zusammen weg.",
+    "beispiel": "20 − (3 + 5): Erst 3 + 5 = 8. Dann 20 − 8 = 12.",
+    "loesungsschritt": "6 + 3 = 9. Nimm 9 von 20 weg."
+   },
+   "bild": {
+    "art": "mengenbild",
+    "anzahl": 20,
+    "weg": 9
+   },
+   "nachweis": [
+    "6 + 3 = 9",
+    "20 − 9 = 11",
+    "20 − (6 + 3) = 11"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-F-04",
+   "lernziel": "5.4.6-T2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n(10 − 4) · 5",
+   "loesung": 30,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Zuerst die Klammer.",
+    "beispiel": "(10 − 6) · 2: Erst 10 − 6 = 4. Dann 4 · 2 = 8.",
+    "loesungsschritt": "10 − 4 = 6. Rechne jetzt 6 · 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 5
+   },
+   "nachweis": [
+    "10 − 4 = 6",
+    "6 · 5 = 30",
+    "(10 − 4) · 5 = 30"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-F-05",
+   "lernziel": "5.4.6-T2",
+   "niveau": "F",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "4 + 2 · 5 und (4 + 2) · 5\nWelche Rechnung hat das Ergebnis 30?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 + 2 · 5",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "(4 + 2) · 5",
+     "richtig": true
+    },
+    {
+     "text": "Beide Rechnungen",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Rechnungen aus. Die Klammer kommt zuerst.",
+    "beispiel": "2 + 3 · 4 = 14. Aber (2 + 3) · 4 = 20.",
+    "loesungsschritt": "(4 + 2) · 5: Erst 4 + 2 = 6."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 5,
+    "trenn": 4
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 30
+    },
+    "(4 + 2) · 5 = 30",
+    "4 + 2 · 5 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-F-06",
+   "lernziel": "5.4.6-T2",
+   "niveau": "F",
+   "afb": 1,
+   "format": "luecken",
+   "text": "Rechne.\n(3 + 2) · 5 = {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 25,
+     "typischeFehler": [
+      {
+       "wert": 13,
+       "fehlvorstellung": "klammer-ignoriert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Klammer zuerst.",
+    "beispiel": "(3 + 1) · 5: 3 + 1 = 4. 4 · 5 = 20.",
+    "loesungsschritt": "3 + 2 = 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 5,
+    "spalten": 5,
+    "trenn": 3
+   },
+   "nachweis": [
+    "3 + 2 = 5",
+    "5 · 5 = 25",
+    "(3 + 2) · 5 = 25"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-G-01",
+   "lernziel": "5.4.6-T2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n8 · (14 − 3)",
+   "loesung": 88,
+   "typischeFehler": [
+    {
+     "wert": 109,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zuerst die Klammer.",
+    "beispiel": "8 · (12 − 5): 12 − 5 = 7. 8 · 7 = 56.",
+    "loesungsschritt": "14 − 3 = 11."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 8,
+    "spalten": 11
+   },
+   "nachweis": [
+    "14 − 3 = 11",
+    "8 · 11 = 88",
+    "8 · (14 − 3) = 88"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-G-02",
+   "lernziel": "5.4.6-T2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n(20 + 8) : 7",
+   "loesung": 4,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Zuerst die Klammer. Dann geteilt.",
+    "beispiel": "(35 + 13) : 6: 35 + 13 = 48. 48 : 6 = 8.",
+    "loesungsschritt": "20 + 8 = 28."
+   },
+   "nachweis": [
+    "20 + 8 = 28",
+    "28 : 7 = 4",
+    "(20 + 8) : 7 = 4"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-G-03",
+   "lernziel": "5.4.6-T2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne.\n4 · (30 − (5 + 4))",
+   "loesung": 84,
+   "typischeFehler": [
+    {
+     "wert": 116,
+     "fehlvorstellung": "klammer-innen-aussen"
+    },
+    {
+     "wert": 111,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer Klammer in der Klammer rechnest du die innere Klammer zuerst.",
+    "beispiel": "3 · (20 − (4 + 6)): 4 + 6 = 10. 20 − 10 = 10. 3 · 10 = 30.",
+    "loesungsschritt": "Innen: 5 + 4 = 9."
+   },
+   "nachweis": [
+    "5 + 4 = 9",
+    "30 − 9 = 21",
+    "4 · 21 = 84",
+    "4 · (30 − (5 + 4)) = 84"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-G-04",
+   "lernziel": "5.4.6-T2",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n60 − (4 + 2) · 4",
+   "loesung": 36,
+   "typischeFehler": [
+    {
+     "wert": 216,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 64,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erst die Klammer. Dann das Mal. Zum Schluss das Minus.",
+    "beispiel": "50 − (6 + 4) · 3: 6 + 4 = 10. 10 · 3 = 30. 50 − 30 = 20.",
+    "loesungsschritt": "4 + 2 = 6. 6 · 4 = 24."
+   },
+   "nachweis": [
+    "4 + 2 = 6",
+    "6 · 4 = 24",
+    "60 − 24 = 36",
+    "60 − (4 + 2) · 4 = 36"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-G-05",
+   "lernziel": "5.4.6-T2",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Setze eine Klammer.\nDas Ergebnis soll am größten sein.\n4 + 2 · 6",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "(4 + 2) · 6",
+     "richtig": true
+    },
+    {
+     "text": "4 + (2 · 6)",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "(4 · 2) + 6",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Möglichkeit aus und vergleiche.",
+    "beispiel": "2 + 4 · 5 = 22. Aber (2 + 4) · 5 = 30.",
+    "loesungsschritt": "(4 + 2) · 6: Erst 4 + 2 = 6."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 6,
+    "trenn": 4
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesstes"
+    },
+    "(4 + 2) · 6 = 36",
+    "4 + (2 · 6) = 16",
+    "(4 · 2) + 6 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-G-06",
+   "lernziel": "5.4.6-T2",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jonas rechnet:\n(6 + 4) · 3 = 18\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nRichtig ist 13.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "Stimmt.\nPunkt vor Strich.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "Falsch.\nZuerst die Klammer: 6 + 4 = 10.\n10 · 3 = 30.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was kommt bei Klammern zuerst?",
+    "beispiel": "(6 + 2) · 3: Erst 6 + 2 = 8. Dann 8 · 3 = 24.",
+    "loesungsschritt": "Rechne zuerst 6 + 4."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 10,
+    "spalten": 3,
+    "trenn": 6
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "(6 + 4) · 3",
+     "behauptet": 18
+    },
+    "6 + 4 = 10",
+    "10 · 3 = 30",
+    "6 + 4 + 3 = 13"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-M-01",
+   "lernziel": "5.4.6-T2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 4 · (47 − 14) + 13.",
+   "loesung": 145,
+   "typischeFehler": [
+    {
+     "wert": 187,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "wert": 184,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zuerst die Klammer, dann das Mal, dann das Plus.",
+    "loesungsschritt": "47 − 14 = 33."
+   },
+   "nachweis": [
+    "47 − 14 = 33",
+    "4 · 33 = 132",
+    "132 + 13 = 145",
+    "4 · (47 − 14) + 13 = 145"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-M-02",
+   "lernziel": "5.4.6-T2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Berechne 100 − 7 · (12 − 5).",
+   "loesung": 51,
+   "typischeFehler": [
+    {
+     "wert": 11,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "wert": 651,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erst die Klammer, dann das Mal, zum Schluss das Minus.",
+    "loesungsschritt": "12 − 5 = 7."
+   },
+   "nachweis": [
+    "12 − 5 = 7",
+    "7 · 7 = 49",
+    "100 − 49 = 51",
+    "100 − 7 · (12 − 5) = 51"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-M-03",
+   "lernziel": "5.4.6-T2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Wo muss die Klammer stehen, damit 144 herauskommt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "(8 + 7) · 11",
+     "richtig": false
+    },
+    {
+     "text": "8 · (7 + 11)",
+     "richtig": true
+    },
+    {
+     "text": "8 · 7 + 11",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "(8 · 7) + 11",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jede Möglichkeit aus.",
+    "loesungsschritt": "8 · (7 + 11) = 8 · 18."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 144
+    },
+    "8 · (7 + 11) = 144",
+    "(8 · 7) + 11 = 67",
+    "8 · 7 + 11 = 67",
+    "(8 + 7) · 11 = 165"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-M-04",
+   "lernziel": "5.4.6-T2",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne (66 − 7 · 6) : 6.",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 59,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In der Klammer gilt Punkt vor Strich.",
+    "loesungsschritt": "7 · 6 = 42. 66 − 42 = 24."
+   },
+   "nachweis": [
+    "7 · 6 = 42",
+    "66 − 42 = 24",
+    "24 : 6 = 4",
+    "(66 − 7 · 6) : 6 = 4"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-M-05",
+   "lernziel": "5.4.6-T2",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? (▢ + 5) · 8 = 120",
+   "loesung": 10,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Teile zuerst durch die Zahl hinter der Klammer.",
+    "loesungsschritt": "120 : 8 = 15. Also ist ▢ + 5 = 15."
+   },
+   "nachweis": [
+    "120 : 8 = 15",
+    "15 − 5 = 10",
+    "(10 + 5) · 8 = 120"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-M-06",
+   "lernziel": "5.4.6-T2",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Jonas rechnet 60 − (29 − 8) = 23. Elif rechnet 60 − (29 − 8) = 39. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Elif. Zuerst die Klammer: 29 − 8 = 21. Dann 60 − 21 = 39.",
+     "richtig": true
+    },
+    {
+     "text": "Keiner. Richtig ist 49.",
+     "richtig": false
+    },
+    {
+     "text": "Beide. Es kommt dasselbe heraus.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "Jonas. Man darf die Klammer bei Minus einfach weglassen.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die Klammer aus.",
+    "loesungsschritt": "29 − 8 = 21."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "60 − (29 − 8)",
+     "behauptet": 23
+    },
+    "29 − 8 = 21",
+    "60 − 21 = 39"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-E-01",
+   "lernziel": "5.4.6-T2",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Berechne 3 · (57 − (6 + 5) · 5).",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 78,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Arbeite dich von der innersten Klammer nach außen vor."
+   },
+   "nachweis": [
+    "6 + 5 = 11",
+    "11 · 5 = 55",
+    "57 − 55 = 2",
+    "3 · 2 = 6",
+    "3 · (57 − (6 + 5) · 5) = 6"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-E-02",
+   "lernziel": "5.4.6-T2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Berechne ((11 + 11) · 6 − 60) : 8.",
+   "loesung": 9,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Rechne von innen nach außen."
+   },
+   "nachweis": [
+    "11 + 11 = 22",
+    "22 · 6 = 132",
+    "132 − 60 = 72",
+    "72 : 8 = 9",
+    "((11 + 11) · 6 − 60) : 8 = 9"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-E-03",
+   "lernziel": "5.4.6-T2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Wo setzt du Klammern in 4 · 6 + 5 · 7, damit das Ergebnis am größten wird?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 · (6 + 5 · 7)",
+     "richtig": false
+    },
+    {
+     "text": "(4 · 6) + (5 · 7)",
+     "richtig": false
+    },
+    {
+     "text": "4 · (6 + 5) · 7",
+     "richtig": true
+    },
+    {
+     "text": "4 · 6 + 5 · 7",
+     "richtig": false
+    },
+    {
+     "text": "(4 · 6 + 5) · 7",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Je später du malnimmst, desto mehr wird vorher zusammengezählt."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesstes"
+    },
+    "4 · (6 + 5) · 7 = 308",
+    "(4 · 6 + 5) · 7 = 203",
+    "4 · (6 + 5 · 7) = 164",
+    "4 · 6 + 5 · 7 = 59",
+    "(4 · 6) + (5 · 7) = 59"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-E-04",
+   "lernziel": "5.4.6-T2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Braucht man in 3 + (5 · 8) die Klammer?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Das kann man nicht sagen.",
+     "richtig": false
+    },
+    {
+     "text": "Ja. Klammern darf man nie weglassen.",
+     "richtig": false
+    },
+    {
+     "text": "Nein. Klammern ändern nie etwas.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "Ja. Ohne Klammer ist es 64.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Nein. Wegen Punkt vor Strich ist auch 3 + 5 · 8 = 43.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne mit und ohne Klammer und vergleiche."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "3 + (5 · 8) = 43",
+    "3 + 5 · 8 = 43"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-E-05",
+   "lernziel": "5.4.6-T2",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? 4 · (▢ − 6) = 36",
+   "loesung": 15,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "klammer-innen-aussen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne rückwärts: Was steht in der Klammer?"
+   },
+   "nachweis": [
+    "36 : 4 = 9",
+    "9 + 6 = 15",
+    "4 · (15 − 6) = 36"
+   ]
+  },
+  {
+   "id": "5.4.6-T2-E-06",
+   "lernziel": "5.4.6-T2",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom sagt: „In (90 − 25) − 8 darf man die Klammer weglassen.“ Sara sagt: „In 90 − (25 − 8) darf man die Klammer weglassen.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nur Tom. (90 − 25) − 8 = 57 und 90 − 25 − 8 = 57. Aber 90 − (25 − 8) = 73.",
+     "richtig": true
+    },
+    {
+     "text": "Nur Sara. Die Klammer hinten ist egal.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "Beide. Es kommt immer 57 heraus.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    },
+    {
+     "text": "Keiner. Klammern darf man nie weglassen.",
+     "richtig": false
+    },
+    {
+     "text": "Beide. Bei Minus darf man Klammern immer weglassen.",
+     "richtig": false,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne alle drei Fassungen aus."
+   },
+   "nachweis": [
+    "(90 − 25) − 8 = 57",
+    "90 − 25 − 8 = 57",
+    "90 − (25 − 8) = 73"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-F-01",
+   "lernziel": "5.4.6-T3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Paul hat 6 Murmeln.\nDazu bekommt Paul 3 Tüten mit je 5 Murmeln.\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "6 + 3 + 5",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "(6 + 3) · 5",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "6 + 3 · 5",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele in jeder Tüte: mal. Die einzelnen Murmeln: plus.",
+    "beispiel": "2 Murmeln und 3 Tüten mit je 5: 2 + 3 · 5.",
+    "loesungsschritt": "3 Tüten mit je 5 sind 3 · 5."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 6,
+    "paeckchen": 3,
+    "je": 5
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 21
+    },
+    "3 · 5 = 15",
+    "6 + 15 = 21"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-F-02",
+   "lernziel": "5.4.6-T3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Sara hat 4 Sticker.\nSara kauft 2 Päckchen mit je 5 Stickern.\nWie viele Sticker hat Sara jetzt?",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 30,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die Päckchen.",
+    "beispiel": "3 Sticker und 2 Päckchen mit je 5: 2 · 5 = 10. 3 + 10 = 13.",
+    "loesungsschritt": "2 · 5 = 10. Rechne jetzt 4 + 10."
+   },
+   "einheit": "Sticker",
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 4,
+    "paeckchen": 2,
+    "je": 5
+   },
+   "nachweis": [
+    "2 · 5 = 10",
+    "4 + 10 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-F-03",
+   "lernziel": "5.4.6-T3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Es gibt 2 Päckchen mit je 3 Plättchen.\nDazu kommen 4 Plättchen.\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2 · 3 + 4",
+     "richtig": true
+    },
+    {
+     "text": "2 + 3 + 4",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "2 · (3 + 4)",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Päckchen sind ein Mal. Die einzelnen Plättchen sind ein Plus.",
+    "beispiel": "3 Päckchen mit je 4 und dazu 2: 3 · 4 + 2.",
+    "loesungsschritt": "2 Päckchen mit je 3: 2 · 3."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 4,
+    "paeckchen": 2,
+    "je": 3
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 10
+    },
+    "2 · 3 = 6",
+    "6 + 4 = 10"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-F-04",
+   "lernziel": "5.4.6-T3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Lina hat 20 €.\nLina kauft 2 Hefte.\n1 Heft kostet 3 €.\nWie viel Geld hat Lina noch?",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 54,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst, was die Hefte kosten.",
+    "beispiel": "2 Hefte zu je 3 €: 2 · 3 = 6 €. 20 − 6 = 14 €.",
+    "loesungsschritt": "Die Hefte kosten 2 · 3 = 6 €."
+   },
+   "einheit": "€",
+   "bild": {
+    "art": "mengenbild",
+    "anzahl": 20,
+    "weg": 6
+   },
+   "nachweis": [
+    "2 · 3 = 6",
+    "20 − 6 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-F-05",
+   "lernziel": "5.4.6-T3",
+   "niveau": "F",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welche Geschichte passt zu 2 + 3 · 4?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ich habe 2 Stifte, 3 Stifte und 4 Stifte.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "Ich habe 2 Packungen und 3 Packungen mit je 4 Stiften.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Ich habe 2 Stifte.\nIch kaufe 3 Packungen mit je 4 Stiften.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal heißt: gleich viele in jeder Packung.",
+    "beispiel": "2 + 3 · 4: 2 einzelne und 3 Packungen mit je 4.",
+    "loesungsschritt": "3 · 4 heißt: 3 Packungen mit je 4."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 2,
+    "paeckchen": 3,
+    "je": 4
+   },
+   "nachweis": [
+    "3 · 4 = 12",
+    "2 + 12 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-F-06",
+   "lernziel": "5.4.6-T3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "In 1 Kiste sind 6 Flaschen.\nEs gibt 3 Kisten.\n5 Flaschen sind leer.\nWie viele Flaschen sind voll?",
+   "loesung": 13,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst alle Flaschen. Nimm dann die leeren weg.",
+    "beispiel": "2 Kisten mit je 6 Flaschen: 12 Flaschen. 3 sind leer: 12 − 3 = 9.",
+    "loesungsschritt": "3 · 6 = 18. Rechne 18 − 5."
+   },
+   "einheit": "Flaschen",
+   "bild": {
+    "art": "gruppenbild",
+    "gruppen": 3,
+    "je": 6
+   },
+   "nachweis": [
+    "3 · 6 = 18",
+    "18 − 5 = 13"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-G-01",
+   "lernziel": "5.4.6-T3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Ole kauft 4 Brötchen zu je 35 Cent.\nDazu kauft Ole eine Milch für 80 Cent.\nWelcher Rechenausdruck passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 · (35 + 80)",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "4 + 35 + 80",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "4 · 35 + 80",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele Brötchen zum gleichen Preis: mal. Die Milch kommt dazu: plus.",
+    "beispiel": "2 Brezeln zu je 50 Cent und ein Saft für 70 Cent: 2 · 50 + 70.",
+    "loesungsschritt": "Die Brötchen kosten 4 · 35."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 220
+    },
+    "4 · 35 = 140",
+    "140 + 80 = 220"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-G-02",
+   "lernziel": "5.4.6-T3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "8 Kinder gehen ins Kino.\nEine Karte kostet 6 €.\nJedes Kind kauft noch Popcorn für 3 €.\nWie viel bezahlen alle zusammen?",
+   "loesung": 72,
+   "typischeFehler": [
+    {
+     "wert": 51,
+     "fehlvorstellung": "punkt-vor-strich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst, was ein Kind bezahlt.",
+    "beispiel": "4 Kinder, Karte 5 €, Popcorn 2 €: (5 + 2) · 4 = 28 €.",
+    "loesungsschritt": "Ein Kind bezahlt 6 + 3 = 9 €."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "6 + 3 = 9",
+    "8 · 9 = 72"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-G-03",
+   "lernziel": "5.4.6-T3",
+   "niveau": "G",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welcher Rechenausdruck passt zum Bild?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 · 4 + 6",
+     "richtig": false
+    },
+    {
+     "text": "(5 + 4) · 6",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "5 + 4 · 6",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die vollen Päckchen sind ein Mal. Die einzelnen Plättchen kommen dazu.",
+    "beispiel": "3 einzelne und 2 Päckchen mit je 4: 3 + 2 · 4.",
+    "loesungsschritt": "Es sind 4 Päckchen mit je 6 Plättchen."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 5,
+    "paeckchen": 4,
+    "je": 6
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 29
+    },
+    "4 · 6 = 24",
+    "5 + 24 = 29"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-G-04",
+   "lernziel": "5.4.6-T3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Addiere 5 und 3.\nNimm das Ergebnis mal 4.",
+   "loesung": 32,
+   "typischeFehler": [
+    {
+     "wert": 17,
+     "fehlvorstellung": "klammer-ignoriert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Ergebnis der ersten Rechnung kommt in eine Klammer.",
+    "beispiel": "Addiere 2 und 3, nimm mal 4: (2 + 3) · 4 = 20.",
+    "loesungsschritt": "(5 + 3) · 4. Rechne zuerst 5 + 3."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 8,
+    "spalten": 4,
+    "trenn": 5
+   },
+   "nachweis": [
+    "5 + 3 = 8",
+    "8 · 4 = 32"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-G-05",
+   "lernziel": "5.4.6-T3",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ida hat 50 €.\nIda kauft 4 Bücher zu je 8 €.\nWie viel Geld bleibt Ida?",
+   "loesung": 18,
+   "typischeFehler": [
+    {
+     "wert": 368,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 42,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst, was alle Bücher kosten.",
+    "beispiel": "2 Bücher zu je 15 €: 2 · 15 = 30 €. 50 − 30 = 20 €.",
+    "loesungsschritt": "Die Bücher kosten 4 · 8 = 32 €."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "4 · 8 = 32",
+    "50 − 32 = 18"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-G-06",
+   "lernziel": "5.4.6-T3",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Die Geschichte heißt: Ich habe 6 € und bekomme 2-mal 4 €.\nMara schreibt (6 + 2) · 4.\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nRichtig ist 6 + 2 + 4.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "Stimmt.\nMan rechnet die Zahlen der Reihe nach.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Falsch.\nNur die 2-mal 4 € sind ein Mal: 6 + 2 · 4 = 14.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welcher Teil der Geschichte ist ein Mal?",
+    "beispiel": "3 € und 2-mal 4 €: 3 + 2 · 4 = 11 €.",
+    "loesungsschritt": "2-mal 4 € ist 2 · 4."
+   },
+   "bild": {
+    "art": "paeckchen",
+    "einzeln": 6,
+    "paeckchen": 2,
+    "je": 4
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "2 · 4 = 8",
+    "6 + 8 = 14"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-M-01",
+   "lernziel": "5.4.6-T3",
+   "niveau": "M",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Schreibe als Rechenausdruck: Subtrahiere das Produkt von 5 und 7 von 91.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "91 − 5 + 7",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "(91 − 5) · 7",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "91 − 5 · 7",
+     "richtig": true
+    },
+    {
+     "text": "5 · 7 − 91",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Produkt ist das Ergebnis einer Mal-Aufgabe. Es wird von der Zahl abgezogen.",
+    "loesungsschritt": "Das Produkt ist 5 · 7."
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 56
+    },
+    "5 · 7 = 35",
+    "91 − 35 = 56"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-M-02",
+   "lernziel": "5.4.6-T3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Kino hat 14 Reihen mit je 19 Plätzen. Bei einer Vorstellung bleiben 26 Plätze leer. Wie viele Besucher sind im Kino?",
+   "loesung": 240,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Schreibe einen Rechenausdruck mit Punkt vor Strich.",
+    "loesungsschritt": "14 · 19 − 26."
+   },
+   "einheit": "Besucher",
+   "nachweis": [
+    "14 · 19 = 266",
+    "266 − 26 = 240"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-M-03",
+   "lernziel": "5.4.6-T3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ein T-Shirt kostet 9 €, eine Hose kostet 30 €. Elif kauft 2 T-Shirts und eine Hose. Ergänze den Rechenausdruck: 2 · {{a}} + {{b}} = {{c}}",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 30,
+     "typischeFehler": []
+    },
+    "c": {
+     "loesung": 48,
+     "typischeFehler": [
+      {
+       "wert": 78,
+       "fehlvorstellung": "punkt-vor-strich"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Gleich teure T-Shirts: mal. Die Hose kommt dazu.",
+    "loesungsschritt": "2 · 9 = 18."
+   },
+   "nachweis": [
+    "2 · 9 = 18",
+    "18 + 30 = 48"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-M-04",
+   "lernziel": "5.4.6-T3",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Dividiere die Summe von 27 und 29 durch 8.",
+   "loesung": 7,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die Summe kommt in eine Klammer.",
+    "loesungsschritt": "(27 + 29) : 8."
+   },
+   "nachweis": [
+    "27 + 29 = 56",
+    "56 : 8 = 7"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-M-05",
+   "lernziel": "5.4.6-T3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Für einen Ausflug zahlt jedes der 19 Kinder 5 € Eintritt und 3 € für den Bus. Welcher Rechenausdruck passt nicht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "19 · (5 + 3)",
+     "richtig": false
+    },
+    {
+     "text": "19 · 5 + 19 · 3",
+     "richtig": false
+    },
+    {
+     "text": "19 · 5 + 3",
+     "richtig": true
+    },
+    {
+     "text": "19 · 8",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jedes Kind zahlt beides. Prüfe, ob der Bus bei jedem Ausdruck für alle Kinder gezählt wird.",
+    "loesungsschritt": "Ein Kind zahlt 5 + 3 = 8 €."
+   },
+   "nachweis": [
+    "5 + 3 = 8",
+    "19 · 5 + 3 = 98"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-M-06",
+   "lernziel": "5.4.6-T3",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Zur Aufgabe „Ziehe von 90 das Fünffache von 8 ab“ schreibt Jonas 90 − 5 · 8 und Emre (90 − 5) · 8. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Beide Ausdrücke haben dasselbe Ergebnis.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Jonas. Das Fünffache von 8 ist 5 · 8 = 40. 90 − 40 = 50.",
+     "richtig": true
+    },
+    {
+     "text": "Emre. Man rechnet in der Reihenfolge des Textes.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Keiner. Richtig ist 90 − 5 − 8.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was wird abgezogen?",
+    "loesungsschritt": "Das Fünffache von 8 ist 5 · 8."
+   },
+   "nachweis": [
+    "5 · 8 = 40",
+    "90 − 40 = 50",
+    "(90 − 5) · 8 = 680"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-E-01",
+   "lernziel": "5.4.6-T3",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Multipliziere die Differenz von 63 und 21 mit der Summe von 7 und 9.",
+   "loesung": 672,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Differenz und Summe kommen je in eine Klammer."
+   },
+   "nachweis": [
+    "63 − 21 = 42",
+    "7 + 9 = 16",
+    "42 · 16 = 672"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-E-02",
+   "lernziel": "5.4.6-T3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Eine Klasse mit 26 Kindern fährt in den Zoo. Der Eintritt kostet für jedes Kind 7 €. Der Bus kostet für alle zusammen 156 €. Die Kosten werden gerecht verteilt. Wie viel muss jedes Kind bezahlen?",
+   "loesung": 13,
+   "typischeFehler": [
+    {
+     "wert": 188,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "wert": 163,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe zuerst einen Rechenausdruck für die Gesamtkosten."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "26 · 7 = 182",
+    "182 + 156 = 338",
+    "338 : 26 = 13"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-E-03",
+   "lernziel": "5.4.6-T3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "auswahl",
+   "text": "Welcher Rechenausdruck passt? Addiere zum Produkt von 13 und 6 den Quotienten aus 60 und 6.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "13 · 6 + 60 : 6",
+     "richtig": true
+    },
+    {
+     "text": "13 · 6 + 60 · 6",
+     "richtig": false
+    },
+    {
+     "text": "13 · (6 + 60) : 6",
+     "richtig": false
+    },
+    {
+     "text": "(13 · 6 + 60) : 6",
+     "richtig": false
+    },
+    {
+     "text": "13 + 6 · 60 : 6",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Produkt und Quotient sind beide Punktrechnungen. Braucht man dann eine Klammer?"
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": 88
+    },
+    "13 · 6 + 60 : 6 = 88",
+    "(13 · 6 + 60) : 6 = 23",
+    "13 · (6 + 60) : 6 = 143",
+    "13 + 6 · 60 : 6 = 73",
+    "13 · 6 + 60 · 6 = 438"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-E-04",
+   "lernziel": "5.4.6-T3",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Welche Geschichte passt zu (60 − 7) · 4?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Paket wiegt 60 kg. Davon werden 7 kg ausgepackt. 4 solche Pakete werden verschickt.",
+     "richtig": true
+    },
+    {
+     "text": "Ich habe 60 €. Ich gebe 7 € aus und dann noch 4 €.",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon ausgepackt.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Ich habe 60 €. Ich bekomme 4-mal 7 € dazu.",
+     "richtig": false,
+     "fehlvorstellung": "begriffe-verwechselt"
+    },
+    {
+     "text": "Keine Geschichte passt.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was rechnet man zuerst, und was wird danach malgenommen?"
+   },
+   "nachweis": [
+    "60 − 7 = 53",
+    "53 · 4 = 212"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-E-05",
+   "lernziel": "5.4.6-T3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ich denke mir eine Zahl. Ich addiere 5 und nehme das Ergebnis mal 3. Ich erhalte 45. Welche Zahl habe ich mir gedacht?",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 20,
+     "fehlvorstellung": "klammer-innen-aussen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne rückwärts: zuerst die letzte Rechnung umkehren."
+   },
+   "nachweis": [
+    "45 : 3 = 15",
+    "15 − 5 = 10",
+    "(10 + 5) · 3 = 45"
+   ]
+  },
+  {
+   "id": "5.4.6-T3-E-06",
+   "lernziel": "5.4.6-T3",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Für 8 Hefte zu je 3 € und 8 Stifte zu je 2 € schreibt Mia 8 · 3 + 2. Ole schreibt 8 · (3 + 2). Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Mia. Punkt vor Strich.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Mia. Die Stifte kosten nur 2 €.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Beide. Die Ausdrücke sind gleich.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-vor-strich"
+    },
+    {
+     "text": "Keiner. Richtig ist 8 + 3 + 2.",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "Ole. Jedes Heft und jeder Stift wird 8-mal gekauft: 8 · 5 = 40.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne aus, was die Stifte zusammen kosten."
+   },
+   "nachweis": [
+    {
+     "zahl": 8,
+     "grund": "Anzahl"
+    },
+    "3 + 2 = 5",
+    "8 · 5 = 40",
+    "8 · 3 = 24",
+    "8 · 2 = 16"
    ]
   }
  ]

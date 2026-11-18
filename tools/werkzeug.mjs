@@ -371,7 +371,10 @@ export function sechs(lernziel, niveau, plaetze) {
   plaetze.forEach((erzeuge, i) => {
     for (let versuch = 0; ; versuch++) {
       if (versuch > 300) throw new Error(`Keine neue Aufgabe für ${lernziel} ${niveau}, Platz ${i + 1}`);
-      const a = nachbearbeiten(erzeuge(), niveau);
+      // Ein Erzeuger darf null liefern, wenn die gezogenen Zahlen nicht passen; dann wird neu gezogen.
+      const roh = erzeuge();
+      if (!roh) continue;
+      const a = nachbearbeiten(roh, niveau);
       const k = schluessel(a);
       if (gesehen.has(k)) continue;
       gesehen.add(k);
