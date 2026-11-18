@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (720 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (768 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -1456,10 +1456,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze eine Kernaufgabe mit 2, 5 oder 
 - `02` AFB I · Welche Zahl fehlt? / 6 · ▢ = 48 Lösung: **8**. Typische Fehler: 42 (1x1-addiert), 9 (1x1-nachbar), 7 (1x1-nachbar).
 - `03` AFB II · 3 · 6 = 18 / 4 · 6 = ▢ _(Bild: Punktefeld mit 4 Reihen zu je 6 Punkten, Trennlinie nach 3 Reihen)_ Lösung: x = **24**
 - `04` AFB I · In 1 Reihe stehen 6 Stühle. / Es gibt 8 Reihen. / Wie viele Stühle sind es? _(Bild: Punktefeld mit 8 Reihen zu je 6 Punkten)_ Lösung: **48 Stühle**. Typische Fehler: 14 (1x1-addiert), 42 (1x1-nachbar).
-- `05` AFB II · Welche Aufgabe hat das Ergebnis 20?
-  - ☑ 4 · 5
-  - ☐ 4 + 5
-  - ☐ 5 · 5
+- `05` AFB II · Welche Aufgabe hat das Ergebnis 55?
+  - ☑ 11 · 5
+  - ☐ 11 + 5
+  - ☐ 12 · 5
 - `06` AFB III · Lena sagt: / „Jede Zahl mal 2 ergibt eine gerade Zahl.“ / Prüfe mit 9 · 2. / Stimmt das? _(Bild: Punktefeld mit 9 Reihen zu je 2 Punkten)_
   - ☐ Falsch. / 9 ist ungerade. / Dann ist auch 9 · 2 ungerade.
   - ☐ Falsch. / Das gilt nur bis 10.
@@ -1543,7 +1543,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:*
 - `03` AFB II · 15 Kinder bilden Gruppen. / In jeder Gruppe sind 5 Kinder. / Wie viele Gruppen gibt es? _(Bild: Mengenbild: 15 Plättchen)_ Lösung: **3 Gruppen**. Typische Fehler: 10 (div-falsche-rechenart), 4 (div-einmaleins).
 - `04` AFB I · 3 · 8 = 24 / 24 : 8 = ▢ / 24 : 3 = ▢ _(Bild: Punktefeld mit 3 Reihen zu je 8 Punkten)_ Lösung: x = **3**, y = **8**
 - `05` AFB II · Welche Aufgabe hat das Ergebnis 3?
-  - ☑ 18 : 6
+  - ☑ 33 : 11
   - ☐ 54 : 9
   - ☐ 21 : 3
 - `06` AFB III · Ben rechnet 54 : 6 = 9. / Ben prüft mit 9 · 6. / Warum klappt das? _(Bild: Punktefeld mit 9 Reihen zu je 6 Punkten)_
@@ -1594,6 +1594,142 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du das Teilen rückgängig
   - ☐ Das Ergebnis wird um 2 kleiner.
   - ☐ Das Ergebnis wird immer um 10 kleiner.
   - ☐ Das Ergebnis bleibt gleich.
+
+## 5.4.1-K3: Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.
+
+Grundlage, die F übt: Mal 10 und mal 100 am Zehnermaterial: aus Einern werden Zehner, aus Zehnern Hunderter
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 40 sind 4 Zehner. *Beispiel:* 2 · 30: 2 · 3 Zehner sind 6 Zehner. Das ist 60. *Lösungsschritt:* 2 · 4 = 8. Also sind es 8 Zehner.
+
+- `01` AFB I · Rechne. / 2 · 40 / Jeder Punkt im Bild ist ein Zehner. _(Bild: Punktefeld mit 2 Reihen zu je 4 Punkten)_ Lösung: **80**. Typische Fehler: 8 (mal-stellenwert), 42 (1x1-addiert).
+- `02` AFB I · Rechne. / 8 · 100 _(Bild: Zehnermaterial: 8 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **800**. Typische Fehler: 80 (mal-stellenwert), 108 (1x1-addiert).
+- `03` AFB I · Rechne. / 70 : 10 _(Bild: Zehnermaterial: 7 Zehnerstangen, 0 Einerwürfel)_ Lösung: **7**. Typische Fehler: 700 (div-stellenwert), 60 (div-falsche-rechenart).
+- `04` AFB I · Jeder Punkt im Bild ist ein Zehner. / Welche Aufgabe passt zum Bild? _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_
+  - ☐ 4 · 40
+  - ☑ 3 · 40
+  - ☐ 3 + 40
+- `05` AFB II · Welche Zahl fehlt? / ▢ · 10 = 70 _(Bild: Zehnermaterial: 7 Zehnerstangen, 0 Einerwürfel)_ Lösung: x = **7**
+- `06` AFB I · In 1 Schachtel sind 10 Karten. / Es gibt 9 Schachteln. / Wie viele Karten sind es? _(Bild: 9 Gruppen mit je 10 Plättchen)_ Lösung: **90 Karten**. Typische Fehler: 19 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst ohne die Null. Hänge die Null dann an. *Beispiel:* 6 · 40: 6 · 4 = 24. Also ist 6 · 40 = 240. *Lösungsschritt:* 7 · 5 = 35.
+
+- `01` AFB I · Rechne. / 7 · 50 / Jeder Punkt im Bild ist ein Zehner. _(Bild: Punktefeld mit 7 Reihen zu je 5 Punkten)_ Lösung: **350**. Typische Fehler: 35 (mal-stellenwert), 3500 (mal-stellenwert).
+- `02` AFB I · Rechne. / 90 · 60 Lösung: **5400**. Typische Fehler: 540 (mal-stellenwert), 54000 (mal-stellenwert).
+- `03` AFB II · Rechne. / 3600 : 4 Lösung: **900**. Typische Fehler: 90 (div-null-vergessen), 9 (div-null-vergessen).
+- `04` AFB I · Rechne. / 720 : 8 / Jeder Punkt im Bild ist ein Zehner. _(Bild: Punktefeld mit 8 Reihen zu je 9 Punkten)_ Lösung: **90**. Typische Fehler: 9 (div-null-vergessen), 900 (div-stellenwert).
+- `05` AFB II · 4 Lastwagen bringen Steine. / Jeder Lastwagen bringt 1800 Steine. / Wie viele Steine sind es zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 1800 und 1800 und 1800 und 1800)_ Lösung: **7200 Steine**. Typische Fehler: 720 (mal-stellenwert), 1804 (sach-falsche-rechnung).
+- `06` AFB III · Ali rechnet: / 50 · 40 = 200 / Stimmt das?
+  - ☐ Falsch. / Richtig ist 20 000.
+  - ☐ Stimmt. / 5 · 4 = 20. / Die Null ist schon da.
+  - ☑ Falsch. / 5 · 4 = 20. / Dazu kommen zwei Nullen: 2000.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne die Nullen und zähle dann alle Nullen der Faktoren. *Lösungsschritt:* 4 · 8 = 32. Dazu kommen drei Nullen.
+
+- `01` AFB I · Rechne im Kopf: 400 · 80 Lösung: **32000**. Typische Fehler: 3200 (mal-stellenwert), 320000 (mal-stellenwert).
+- `02` AFB II · Welche Zahl fehlt? 70 · ▢ = 14 000 Lösung: **200**. Typische Fehler: 20 (mal-stellenwert), 2000 (mal-stellenwert).
+- `03` AFB II · Wie oft passt 50 in 3500? Lösung: **70**. Typische Fehler: 700 (div-stellenwert), 7 (div-null-vergessen).
+- `04` AFB I · Rechne im Kopf: 2400 : 30 Lösung: **80**. Typische Fehler: 800 (div-stellenwert), 8 (div-null-vergessen).
+- `05` AFB II · Eine Fabrik packt jeden Tag 600 Kartons. In jeden Karton kommen 12 Dosen. Wie viele Dosen packt sie an 3 Tagen? Lösung: **21600 Dosen**. Typische Fehler: 7200 (sach-schritt-vergessen), 1800 (sach-schritt-vergessen).
+- `06` AFB III · Elif rechnet 400 · 50 = 2000. Noah rechnet 400 · 50 = 20 000. Wer hat recht?
+  - ☐ Elif. 4 · 5 = 20, und die Null von 20 zählt schon mit.
+  - ☑ Noah. 4 · 5 = 20. Dazu kommen die drei Nullen der Faktoren: 20 000.
+  - ☐ Beide. Es kommt nur auf die Ziffern an.
+  - ☐ Keiner. Richtig ist 200 000.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne die Nullen und zähle dann alle Nullen.
+
+- `01` AFB I · Rechne im Kopf: 2000 · 400 Lösung: **800000**. Typische Fehler: 80000 (mal-stellenwert).
+- `02` AFB II · Rechne im Kopf: 300 000 : 500 Lösung: **600**. Typische Fehler: 60 (div-null-vergessen), 6000 (div-stellenwert).
+- `03` AFB II · Welche Zahl fehlt? 250 · ▢ = 100 000 Lösung: **400**. Typische Fehler: 4000 (mal-stellenwert), 40 (mal-stellenwert).
+- `04` AFB III · Lina sagt: „Das Produkt hat immer genau so viele Nullen am Ende wie beide Faktoren zusammen.“ Prüfe mit 500 · 20.
+  - ☐ Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.
+  - ☑ Falsch. 500 · 20 = 10 000 hat 4 Nullen am Ende, die Faktoren zusammen nur 3. 5 · 2 = 10 bringt eine Null mit.
+  - ☐ Falsch. Das Produkt hat immer weniger Nullen.
+  - ☐ Das kann man nicht prüfen.
+  - ☐ Stimmt. 500 · 20 = 1000.
+- `05` AFB II · Eine Druckerei druckt jede Stunde 3000 Seiten. Sie druckt 6 Stunden am Tag, und das an 20 Tagen. Wie viele Seiten sind das? Lösung: **360000 Seiten**. Typische Fehler: 18000 (sach-schritt-vergessen), 60000 (sach-schritt-vergessen).
+- `06` AFB III · Welche Aufgabe hat das kleinste Ergebnis? Entscheide, ohne alles auszurechnen.
+  - ☐ 60 · 500
+  - ☐ 6000 · 5
+  - ☑ 60 · 50
+  - ☐ 600 · 50
+  - ☐ 6 · 5000
+
+## 5.4.1-K4: Ich kann im Kopf geschickt multiplizieren, zum Beispiel durch Zerlegen, Verdoppeln und Halbieren.
+
+Grundlage, die F übt: Verdoppeln und Halbieren im Punktefeld, Kernaufgaben mit 2, 5 und 10
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne beide Teile. Rechne dann zusammen. *Beispiel:* 7 · 4: 5 · 4 = 20 und 2 · 4 = 8. Zusammen 28. *Lösungsschritt:* 5 · 8 = 40. Rechne jetzt 2 · 8.
+
+- `01` AFB I · Rechne. / 7 · 8 / Zerlege in 5 · 8 und 2 · 8. _(Bild: Punktefeld mit 7 Reihen zu je 8 Punkten, Trennlinie nach 5 Reihen)_ Lösung: **56**. Typische Fehler: 64 (1x1-nachbar), 48 (1x1-nachbar), 15 (1x1-addiert).
+- `02` AFB I · Verdopple 12. _(Bild: Zehnermaterial: 1 Zehnerstangen, 2 Einerwürfel)_ Lösung: **24**. Typische Fehler: 14 (1x1-addiert).
+- `03` AFB I · Halbiere 82. _(Bild: Zehnermaterial: 8 Zehnerstangen, 2 Einerwürfel)_ Lösung: **41**. Typische Fehler: 80 (div-falsche-rechenart), 164 (div-vertauscht).
+- `04` AFB I · Du rechnest 6 · 8. / Wie zerlegst du die Aufgabe? _(Bild: Punktefeld mit 6 Reihen zu je 8 Punkten, Trennlinie nach 5 Reihen)_
+  - ☐ 5 + 8 und 1 + 8
+  - ☐ 5 · 8 und 1
+  - ☑ 5 · 8 und 1 · 8
+- `05` AFB II · Welche Zahl fehlt? / 4 · 5 = 2 · ▢ _(Bild: Punktefeld mit 4 Reihen zu je 5 Punkten)_ Lösung: x = **10**
+- `06` AFB I · Rechne. / 9 · 5 / Rechne 10 · 5. / Nimm dann 5 weg. _(Bild: Punktefeld mit 9 Reihen zu je 5 Punkten)_ Lösung: **45**. Typische Fehler: 50 (1x1-nachbar), 40 (1x1-nachbar), 14 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mal 4 ist das Doppelte vom Doppelten. *Beispiel:* 4 · 23: Das Doppelte von 23 ist 46. Das Doppelte von 46 ist 92. *Lösungsschritt:* Das Doppelte von 17 ist 34.
+
+- `01` AFB I · Rechne geschickt. / 4 · 17 / Verdopple zweimal. _(Bild: Streifenbild: Ganzes ?, Teile 17 und 17 und 17 und 17)_ Lösung: **68**. Typische Fehler: 34 (sach-schritt-vergessen), 64 (1x1-nachbar).
+- `02` AFB I · Rechne geschickt. / 12 · 14 / Zerlege 12 in 10 und 2. Lösung: **168**. Typische Fehler: 142 (mal-zerlegung-halb), 140 (sach-schritt-vergessen).
+- `03` AFB II · Rechne geschickt. / 25 · 32 / Halbiere und verdopple zweimal. Lösung: **800**. Typische Fehler: 400 (geschickt-nicht-ausgeglichen), 200 (geschickt-falsch-ausgeglichen).
+- `04` AFB I · Halbiere 298. _(Bild: Zehnermaterial: 2 Hunderterplatten, 9 Zehnerstangen, 8 Einerwürfel)_ Lösung: **149**. Typische Fehler: 596 (div-vertauscht), 296 (div-falsche-rechenart).
+- `05` AFB II · Ergänze den Rechenweg. / 9 · 45 = 10 · 45 − ▢ / 9 · 45 = ▢ _(Bild: Zehnermaterial: 4 Zehnerstangen, 5 Einerwürfel)_ Lösung: a = **45**, b = **405**
+- `06` AFB III · Ida rechnet 7 · 39 so: / 7 · 40 = 280 / 280 − 1 = 279 / Stimmt das?
+  - ☑ Falsch. / Ida muss 7-mal 1 wegnehmen. / Richtig ist 280 − 7 = 273.
+  - ☐ Stimmt. / 39 ist 1 weniger als 40.
+  - ☐ Falsch. / Richtig ist 280 + 7 = 287.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 25 · 4 = 100. Zerlege die andere Zahl so, dass eine 4 darin steckt. *Lösungsschritt:* 72 = 4 · 18. Also ist 25 · 72 = 100 · 18.
+
+- `01` AFB I · Rechne geschickt: 25 · 72 Lösung: **1800**. Typische Fehler: 450 (geschickt-falsch-ausgeglichen), 180 (mal-stellenwert).
+- `02` AFB II · Rechne geschickt: 16 · 125 Lösung: **2000**. Typische Fehler: 16000 (geschickt-nicht-ausgeglichen), 200 (mal-stellenwert).
+- `03` AFB II · Rechne geschickt: 5 · 274 Lösung: **1370**. Typische Fehler: 2740 (geschickt-nicht-ausgeglichen), 13700 (mal-stellenwert).
+- `04` AFB I · Rechne geschickt: 99 · 33 Lösung: **3267**. Typische Fehler: 3299 (geschickt-falsch-ausgeglichen), 3201 (geschickt-falsch-ausgeglichen).
+- `05` AFB II · Halbiere und verdopple. Ergänze: 22 · 35 = 11 · ▢ = ▢ Lösung: a = **70**, b = **770**
+- `06` AFB III · Mia sagt: „16 · 35 ist dasselbe wie 8 · 70.“ Mara sagt: „16 · 35 ist dasselbe wie 32 · 70.“ Wer hat recht?
+  - ☐ Mara. Man muss beide Faktoren gleich behandeln.
+  - ☐ Keiner. Man darf die Zahlen nicht verändern.
+  - ☐ Beide. Beim Malnehmen darf man verdoppeln, wie man will.
+  - ☑ Mia. Halbiert man einen Faktor und verdoppelt den anderen, bleibt das Produkt gleich: 8 · 70 = 560.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Zahl mal 125 ergibt 1000?
+
+- `01` AFB I · Rechne geschickt: 125 · 56 Lösung: **7000**. Typische Fehler: 875 (geschickt-falsch-ausgeglichen), 700 (mal-stellenwert).
+- `02` AFB II · Rechne geschickt: 999 · 84 Lösung: **83916**. Typische Fehler: 83999 (geschickt-falsch-ausgeglichen), 83001 (geschickt-falsch-ausgeglichen).
+- `03` AFB II · Paul halbiert eine Zahl. Das Ergebnis halbiert Paul noch einmal und dann ein drittes Mal. Am Ende steht 47 da. Mit welcher Zahl hat Paul begonnen? Lösung: **376**. Typische Fehler: 188 (sach-schritt-vergessen), 282 (sach-falsche-rechnung).
+- `04` AFB III · Ein Faktor wird mit 3 multipliziert, der andere durch 3 geteilt. Was passiert mit dem Produkt? Prüfe an 15 · 12.
+  - ☐ Es wird 3-mal so groß.
+  - ☐ Es wird 9-mal so groß, denn 3 · 3 = 9.
+  - ☐ Das hängt von den Zahlen ab.
+  - ☑ Es bleibt gleich. 15 · 12 = 180 und 45 · 4 = 180. Mal 3 und durch 3 heben sich auf.
+  - ☐ Es wird kleiner, denn durch 3 teilen macht kleiner.
+- `05` AFB II · Ein Kinosaal hat 25 Reihen mit je 16 Plätzen. Ein Kino hat 4 solche Säle. Wie viele Plätze hat das Kino? Rechne geschickt. Lösung: **1600 Plätze**. Typische Fehler: 400 (sach-schritt-vergessen), 1000 (mal-stellenwert).
+- `06` AFB III · Tom rechnet 52 · 25 so: 52 : 4 = 13 und 13 · 100 = 1300. Ida sagt: „Das ist falsch. Man darf nur halbieren und verdoppeln.“ Wer hat recht?
+  - ☐ Beide. Tom rechnet richtig, aber nur durch Zufall.
+  - ☐ Keiner. Man muss schriftlich rechnen.
+  - ☐ Ida. Richtig ist 325.
+  - ☐ Ida. Durch 4 teilen ist kein Halbieren.
+  - ☑ Tom. 25 · 4 = 100. Teilt man 52 durch 4 und nimmt 25 mal 4, bleibt das Produkt gleich.
 
 ## 5.4.2-M1: Ich kann die Fachbegriffe Faktor und Produkt verwenden.
 

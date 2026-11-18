@@ -1,11 +1,13 @@
-// Aufgaben zu 5.4.1 „Kopfrechnen: das kleine Einmaleins“ (Lernziele K1 und K2) nach ADR 0015.
+// Aufgaben zu 5.4.1 „Kopfrechnen: das kleine Einmaleins“ (Lernziele K1 bis K4) nach ADR 0015.
 // Das Einmaleins ist Voraussetzung für das Dividieren (Brücke, ADR 0014) und zugleich ein normaler Meilenstein.
 //   F  Kernaufgaben mit 2, 5 und 10 am Punktefeld und am Gruppenbild
 //   G  das ganze kleine Einmaleins, Nachbaraufgaben, Platzhalter
 //   M  schwere Aufgaben (6 bis 9), Zerlegen in Kernaufgaben, zwei Schritte, Fehler finden
 //   E  Strukturen: Quadratzahlen, Zahlenrätsel, Teilbarkeit, Regeln aufstellen
 
-import { sechs, stufen, zahl, auswahl, opt, luecken, Z, N, B, h1, h2, h3, zz, wahl, suche, fehlerliste, kind, U, WERT } from '../werkzeug.mjs';
+import { sechs, stufen, zahl, auswahl, opt, luecken, Z, N, B, h1, h2, h3, zz, wahl, suche, fehlerliste, kind, zweiKinder, U, WERT, KLEINSTES, HILFSZAHL, fz, frage } from '../werkzeug.mjs';
+
+const hze = (n) => ({ h: Math.floor(n / 100), z: Math.floor(n / 10) % 10, e: n % 10 });
 
 const K = (kurz) => `5.4.1-${kurz}`;
 const reihe = (b, bis) => Array.from({ length: bis }, (_, i) => (i + 1) * b).join(', ');
@@ -56,9 +58,9 @@ export function einmaleins() {
       if (k === 0) { const a = zz(3, 8), b = zz(3, 9);
         return luecken(Z(`${a} · ${b} = ${a * b}`, `${a + 1} · ${b} = {{x}}`), { x: [(a + 1) * b, fehlerliste((a + 1) * b, [[a * b + 1, '1x1-nachbar'], [a * b + a, '1x1-nachbar']])] },
           h3('Bei der Nachbaraufgabe kommt eine Reihe dazu.', '5 · 6 = 30. Bei 6 · 6 kommt noch eine 6 dazu: 30 + 6 = 36.', `Rechne ${a * b} + ${b}.`), { bild: B.feld(a + 1, b, a), nachweis: N(`${a} · ${b}`, `${a * b} + ${b}`, `${a + 1} · ${b}`) }); }
-      const [a, b] = verschieden(3, 9), p = a * b;
+      const a = wahl([11, 12]), b = zz(3, 9), p = a * b;
       return auswahl(`Welche Aufgabe hat das Ergebnis ${p}?`, [opt(`${a} · ${b}`, true), opt(`${a + 1} · ${b}`, false, '1x1-nachbar'), opt(`${a} + ${b}`, false, '1x1-addiert')],
-        h3('Rechne jede Aufgabe aus.', '3 · 6 = 18 und 3 + 6 = 9. Nur 3 · 6 hat das Ergebnis 18.', `Rechne ${a} · ${b}.`), { nachweis: [{ art: 'wert', wert: p }, ...N(`${a} · ${b}`, `${a + 1} · ${b}`, `${a} + ${b}`)] });
+        h3('Rechne jede Aufgabe aus.', '11 · 2 = 22 und 11 + 2 = 13. Nur 11 · 2 hat das Ergebnis 22.', `${a} · ${b} ist 10 · ${b} und noch ${a - 10} · ${b}.`), { nachweis: [{ art: 'wert', wert: p }, ...N(`${a} · ${b}`, `${a + 1} · ${b}`, `${a} + ${b}`)] });
     },
     3: () => { const a = wahl([3, 5, 7, 9]), k = kind();
       return auswahl(Z(`${k} sagt:`, '„Jede Zahl mal 2 ergibt eine gerade Zahl.“', `Prüfe mit ${a} · 2.`, 'Stimmt das?'),
@@ -162,10 +164,10 @@ export function einmaleins() {
       if (k === 0) { const d = zz(3, 9), q = zz(3, 9), a = d * q;
         return zahl(Z(`${a} Kinder bilden Gruppen.`, `In jeder Gruppe sind ${d} Kinder.`, 'Wie viele Gruppen gibt es?'), q, fehlerliste(q, [[a - d, 'div-falsche-rechenart'], [q + 1, 'div-einmaleins']]),
           h3('Wie oft passt die Gruppe in alle Kinder?', '24 Kinder, Gruppen mit je 6: 24 : 6 = 4. Es gibt 4 Gruppen.', `Rechne ${a} : ${d}.`), { einheit: 'Gruppen', bild: B.menge(a), nachweis: N(`${a} : ${d}`) }); }
-      const [d, q] = [zz(3, 9), zz(3, 9)];
+      const [d, q] = [wahl([11, 12]), zz(3, 9)];
       const falsch = suche(() => [[zz(3, 9), zz(3, 9)], [zz(3, 9), zz(3, 9)]], (f) => f.every(([x]) => x !== q) && new Set([`${d * q} : ${d}`, ...f.map(([x, y]) => `${x * y} : ${y}`)]).size === 3);
       return auswahl(`Welche Aufgabe hat das Ergebnis ${q}?`, [opt(`${d * q} : ${d}`, true), ...falsch.map(([x, y]) => opt(`${x * y} : ${y}`, false, 'div-einmaleins'))],
-        h3('Rechne jede Aufgabe aus.', '35 : 5 = 7, denn 7 · 5 = 35.', `Prüfe ${d * q} : ${d} mit ${q} · ${d}.`), { nachweis: [{ art: 'wert', wert: q }, ...N(`${d * q} : ${d}`, ...falsch.map(([x, y]) => `${x * y} : ${y}`))] });
+        h3('Rechne jede Aufgabe aus.', '24 : 12 = 2, denn 2 · 12 = 24.', `Prüfe ${d * q} : ${d} mit ${q} · ${d}.`), { nachweis: [{ art: 'wert', wert: q }, ...N(`${d * q} : ${d}`, ...falsch.map(([x, y]) => `${x * y} : ${y}`))] });
     },
     3: () => { const [d, q] = verschieden(3, 9), a = d * q, k = kind();
       return auswahl(Z(`${k} rechnet ${a} : ${d} = ${q}.`, `${k} prüft mit ${q} · ${d}.`, 'Warum klappt das?'),
@@ -224,5 +226,232 @@ export function einmaleins() {
         opt('Das Ergebnis halbiert sich.', true), opt('Das Ergebnis verdoppelt sich.', false, 'div-vertauscht'), opt('Das Ergebnis wird um 2 kleiner.'), opt('Das Ergebnis bleibt gleich.'), opt(`Das Ergebnis wird immer um ${a / 4} kleiner.`)],
       h1('Vergleiche je zwei Ergebnisse, die nebeneinander stehen.'), { nachweis: N(`${a} : 2`, `${a} : 4`, `${a} : 8`, `${a / 2} : 2`, `${a / 4} : 2`) });
     },
+  });
+
+  // ===================================================================
+  // K3 Stufenzahlen und Zehnerzahlen im Kopf (mal und geteilt)
+  // ===================================================================
+  sechs(K('K3'), 'F', [
+    () => { const [a, z] = verschieden(2, 5);
+      return zahl(Z('Rechne.', `${a} · ${z * 10}`, 'Jeder Punkt im Bild ist ein Zehner.'), a * z * 10, fehlerliste(a * z * 10, [[a * z, 'mal-stellenwert'], [a + z * 10, '1x1-addiert']]),
+        h3(`${z * 10} sind ${z} Zehner.`, a * z === 6 ? '2 · 40: 2 · 4 Zehner sind 8 Zehner. Das ist 80.' : '2 · 30: 2 · 3 Zehner sind 6 Zehner. Das ist 60.', `${a} · ${z} = ${a * z}. Also sind es ${a * z} Zehner.`), { bild: B.feld(a, z), nachweis: N(`${a} · ${z}`, `${a} · ${z * 10}`) }); },
+    () => { const n = zz(2, 9);
+      return zahl(Z('Rechne.', `${n} · 100`), n * 100, fehlerliste(n * 100, [[n * 10, 'mal-stellenwert'], [n + 100, '1x1-addiert']]),
+        h3('Mal 100 heißt: so viele Hunderter.', n === 3 ? '4 · 100 sind 4 Hunderter. Das ist 400.' : '3 · 100 sind 3 Hunderter. Das ist 300.', `Im Bild siehst du ${n} Hunderter.`), { bild: B.material({ h: n }), nachweis: N(`${n} · 100`) }); },
+    () => { const n = zz(3, 9);
+      return zahl(Z('Rechne.', `${n * 10} : 10`), n, fehlerliste(n, [[n * 100, 'div-stellenwert'], [n * 10 - 10, 'div-falsche-rechenart']]),
+        h3('Geteilt durch 10 fragt: Wie viele Zehner sind es?', n === 4 ? '50 : 10 = 5, denn 50 sind 5 Zehner.' : '40 : 10 = 4, denn 40 sind 4 Zehner.', 'Zähle die Zehnerstangen im Bild.'), { bild: B.material({ z: n }), nachweis: N(`${n * 10} : 10`, `${n} · 10`) }); },
+    () => { const [r, s] = verschieden(2, 4);
+      return auswahl(Z('Jeder Punkt im Bild ist ein Zehner.', 'Welche Aufgabe passt zum Bild?'), [opt(`${r} · ${s * 10}`, true), opt(`${r + 1} · ${s * 10}`, false, '1x1-nachbar'), opt(`${r} + ${s * 10}`, false, '1x1-addiert')],
+        h3('Zähle die Reihen. Zähle die Zehner in 1 Reihe.', '2 Reihen mit je 3 Zehnern: 2 · 30.', `Es sind ${r} Reihen. In jeder Reihe sind ${s} Zehner.`), { bild: B.feld(r, s), nachweis: [HILFSZAHL(r * s, 'Punkte im Bild, jeder ein Zehner'), ...N(`${r} · ${s * 10}`)] }); },
+    () => { const n = zz(3, 9);
+      return luecken(Z('Welche Zahl fehlt?', `{{x}} · 10 = ${n * 10}`), { x: [n, fehlerliste(n, [[n * 100, 'mal-stellenwert']])] },
+        h3('Wie viele Zehner sind es?', n === 6 ? '▢ · 10 = 70. 70 sind 7 Zehner. Die Zahl ist 7.' : '▢ · 10 = 60. 60 sind 6 Zehner. Die Zahl ist 6.', 'Zähle die Zehnerstangen im Bild.'), { bild: B.material({ z: n }), nachweis: N(`${n * 10} : 10`, `${n} · 10`) }); },
+    () => { const n = zz(3, 9), [ding, eins] = wahl([['Stifte', 'Packung'], ['Bonbons', 'Tüte'], ['Karten', 'Schachtel']]);
+      return zahl(Z(`In 1 ${eins} sind 10 ${ding}.`, `Es gibt ${n} ${eins === 'Packung' ? 'Packungen' : eins === 'Tüte' ? 'Tüten' : 'Schachteln'}.`, `Wie viele ${ding} sind es?`), n * 10, fehlerliste(n * 10, [[n + 10, '1x1-addiert']]),
+        h3('Gleich viele in jeder Gruppe: Rechne mal.', n === 4 ? '5 Tüten mit je 10: 5 · 10 = 50.' : '4 Tüten mit je 10: 4 · 10 = 40.', `Rechne ${n} · 10.`), { einheit: ding, bild: B.gruppen(n, 10), nachweis: N(`${n} · 10`) }); },
+  ]);
+
+  stufen(K('K3'), 'G', {
+    1: (k) => {
+      if (k === 0) { const [a, z] = suche(() => [zz(3, 9), zz(2, 9)], ([x, y]) => x !== y && x * y !== 24);
+        return zahl(Z('Rechne.', `${a} · ${z * 10}`, 'Jeder Punkt im Bild ist ein Zehner.'), a * z * 10, fehlerliste(a * z * 10, [[a * z, 'mal-stellenwert'], [a * z * 100, 'mal-stellenwert']]),
+          h3('Rechne zuerst ohne die Null. Hänge die Null dann an.', '6 · 40: 6 · 4 = 24. Also ist 6 · 40 = 240.', `${a} · ${z} = ${a * z}.`), { bild: B.feld(a, z), nachweis: N(`${a} · ${z}`, `${a} · ${z * 10}`) }); }
+      if (k === 1) { const [x, y] = suche(() => [zz(2, 9), zz(2, 9)], ([p, q]) => p !== q && p * q !== 12);
+        return zahl(Z('Rechne.', `${x * 10} · ${y * 10}`), x * y * 100, fehlerliste(x * y * 100, [[x * y * 10, 'mal-stellenwert'], [x * y * 1000, 'mal-stellenwert']]),
+          h3('Rechne zuerst ohne die Nullen. Hänge dann beide Nullen an.', '30 · 40: 3 · 4 = 12. Zwei Nullen dazu: 1200.', `${x} · ${y} = ${x * y}.`), { nachweis: N(`${x * 10} · ${y * 10}`) }); }
+      const [d, q] = suche(() => [zz(3, 9), zz(2, 9)], ([p, r]) => p !== r && p * r !== 24);
+      return zahl(Z('Rechne.', `${d * q * 10} : ${d}`, 'Jeder Punkt im Bild ist ein Zehner.'), q * 10, fehlerliste(q * 10, [[q, 'div-null-vergessen'], [q * 100, 'div-stellenwert']]),
+        h3('Rechne zuerst ohne die Null. Hänge die Null dann an.', '240 : 6: 24 : 6 = 4. Also ist 240 : 6 = 40.', `${d * q} : ${d} = ${q}.`), { bild: B.feld(d, q), nachweis: [HILFSZAHL(d * q, 'Punkte im Bild, jeder ein Zehner'), ...N(`${d * q * 10} : ${d}`, `${d} · ${q * 10}`)] });
+    },
+    2: (k) => {
+      if (k === 0) { const [d, q] = suche(() => [zz(3, 9), zz(2, 9)], ([p, r]) => p !== r && p * r !== 48);
+        return zahl(Z('Rechne.', `${d * q * 100} : ${d}`), q * 100, fehlerliste(q * 100, [[q * 10, 'div-null-vergessen'], [q, 'div-null-vergessen']]),
+          h3('Rechne zuerst ohne die Nullen. Hänge dann beide Nullen an.', '4800 : 8: 48 : 8 = 6. Also ist 4800 : 8 = 600.', `${d * q} : ${d} = ${q}.`), { nachweis: N(`${d * q * 100} : ${d}`, `${d} · ${q * 100}`) }); }
+      const [n, m] = suche(() => [zz(3, 4), zz(11, 25)], ([x, y]) => x * y * 100 <= 10000 && y % 10 !== 0);
+      return zahl(Z(`${n} Lastwagen bringen Steine.`, `Jeder Lastwagen bringt ${m * 100} Steine.`, 'Wie viele Steine sind es zusammen?'), n * m * 100, fehlerliste(n * m * 100, [[n * m * 10, 'mal-stellenwert'], [n + m * 100, 'sach-falsche-rechnung']]),
+        h3('Jeder Lastwagen bringt gleich viele Steine. Rechne mal.', '2 Lastwagen mit je 1500 Steinen: 2 · 15 = 30. Also 2 · 1500 = 3000.', `Rechne ${n} · ${m} = ${n * m}. Hänge dann zwei Nullen an.`), { einheit: 'Steine', bild: B.streifen(frage(n * m * 100), Array(n).fill(m * 100)), nachweis: N(`${n} · ${m * 100}`) });
+    },
+    3: () => { const [x, y] = wahl([[5, 4], [5, 2], [5, 6], [5, 8]]), k = kind(), a = x * 10, b = y * 10, falsch = x * y * 10;
+      return auswahl(Z(`${k} rechnet:`, `${a} · ${b} = ${falsch}`, 'Stimmt das?'), [
+        opt(Z('Falsch.', `${x} · ${y} = ${x * y}.`, `Dazu kommen zwei Nullen: ${x * y * 100}.`), true),
+        opt(Z('Stimmt.', `${x} · ${y} = ${x * y}.`, 'Die Null ist schon da.'), false, 'mal-stellenwert'),
+        opt(Z('Falsch.', `Richtig ist ${fz(x * y * 1000)}.`), false, 'mal-stellenwert')],
+      h3('Rechne ohne die Nullen. Zähle dann die Nullen der beiden Zahlen.', '50 · 20: 5 · 2 = 10. Zwei Nullen dazu: 1000.', `Rechne ${x} · ${y}. Hänge dann zwei Nullen an.`), { nachweis: [U(false, `${a} · ${b}`, falsch), ...N(`${x} · ${y}`, `${a} · ${b}`)] }); },
+  });
+
+  stufen(K('K3'), 'M', {
+    1: (k) => {
+      if (k === 0) { const [a, b] = suche(() => [zz(2, 9), zz(2, 9)], ([x, y]) => x !== y);
+        return zahl(`Rechne im Kopf: ${a * 100} · ${b * 10}`, a * b * 1000, fehlerliste(a * b * 1000, [[a * b * 100, 'mal-stellenwert'], [a * b * 10000, 'mal-stellenwert']]),
+          h2('Rechne ohne die Nullen und zähle dann alle Nullen der Faktoren.', `${a} · ${b} = ${a * b}. Dazu kommen drei Nullen.`), { nachweis: N(`${a} · ${b}`, `${a * 100} · ${b * 10}`) }); }
+      const [d, q] = suche(() => [zz(3, 9), zz(3, 9)], ([x, y]) => x !== y);
+      return zahl(`Rechne im Kopf: ${fz(d * q * 100)} : ${d * 10}`, q * 10, fehlerliste(q * 10, [[q * 100, 'div-stellenwert'], [q, 'div-null-vergessen']]),
+        h2('Streiche bei beiden Zahlen gleich viele Nullen. Das Ergebnis bleibt gleich.', `${d * q * 100} : ${d * 10} ist so viel wie ${d * q * 10} : ${d}.`), { nachweis: N(`${d * q * 10} : ${d}`, `${d * q * 100} : ${d * 10}`, `${q * 10} · ${d * 10}`) });
+    },
+    2: (k) => {
+      if (k === 0) { const [z, y] = suche(() => [zz(2, 9), zz(2, 9)], ([p, q]) => p !== q && p * q * 1000 <= 100000);
+        return zahl(`Welche Zahl fehlt? ${z * 10} · ▢ = ${fz(z * y * 1000)}`, y * 100, fehlerliste(y * 100, [[y * 10, 'mal-stellenwert'], [y * 1000, 'mal-stellenwert']]),
+          h2('Die Umkehraufgabe hilft dir.', `Rechne ${fz(z * y * 1000)} : ${z * 10}.`), { nachweis: N(`${z * y * 1000} : ${z * 10}`, `${z * 10} · ${y * 100}`) }); }
+      if (k === 1) { const [d, q] = suche(() => [wahl([20, 40, 50, 60, 80]), zz(2, 9) * 10], ([x, y]) => x * y <= 10000 && x !== y);
+        return zahl(`Wie oft passt ${d} in ${fz(d * q)}?`, q, fehlerliste(q, [[q * 10, 'div-stellenwert'], [q / 10, 'div-null-vergessen']]),
+          h2('Das ist eine Geteilt-Aufgabe. Streiche zuerst gleich viele Nullen.', `Rechne ${fz(d * q)} : ${d}.`), { nachweis: N(`${d * q} : ${d}`, `${q} · ${d}`) }); }
+      const [kart, dosen, tage] = suche(() => [zz(2, 9) * 100, wahl([12, 20, 24, 30]), zz(3, 6)], ([x, y, t]) => x * y * t <= 100000);
+      return zahl(`Eine Fabrik packt jeden Tag ${kart} Kartons. In jeden Karton kommen ${dosen} Dosen. Wie viele Dosen packt sie an ${tage} Tagen?`, kart * dosen * tage, fehlerliste(kart * dosen * tage, [[kart * dosen, 'sach-schritt-vergessen'], [kart * tage, 'sach-schritt-vergessen']]),
+        h2('Berechne zuerst die Dosen an einem Tag.', `An einem Tag: ${kart} · ${dosen} = ${fz(kart * dosen)} Dosen.`), { einheit: 'Dosen', nachweis: N(`${kart} · ${dosen}`, `${kart * dosen} · ${tage}`) });
+    },
+    3: () => { const [x, y] = wahl([[6, 5], [4, 5], [8, 5], [2, 5]]), [k1, k2] = zweiKinder(), a = x * 100, b = y * 10, falsch = x * y * 100;
+      return auswahl(`${k1} rechnet ${a} · ${b} = ${fz(falsch)}. ${k2} rechnet ${a} · ${b} = ${fz(a * b)}. Wer hat recht?`, [
+        opt(`${k2}. ${x} · ${y} = ${x * y}. Dazu kommen die drei Nullen der Faktoren: ${fz(a * b)}.`, true),
+        opt(`${k1}. ${x} · ${y} = ${x * y}, und die Null von ${x * y} zählt schon mit.`, false, 'mal-stellenwert'),
+        opt(`Keiner. Richtig ist ${fz(a * b * 10)}.`, false, 'mal-stellenwert'),
+        opt('Beide. Es kommt nur auf die Ziffern an.')],
+      h2('Rechne ohne die Nullen. Zähle dann alle Nullen der Faktoren.', `${x} · ${y} = ${x * y}. ${a} hat zwei Nullen, ${b} hat eine.`), { nachweis: [U(false, `${a} · ${b}`, falsch), ...N(`${x} · ${y}`, `${a} · ${b}`)] }); },
+  });
+
+  stufen(K('K3'), 'E', {
+    1: () => { const [a, b] = suche(() => [zz(2, 5), zz(2, 5)], ([x, y]) => x !== y && x * y <= 10);
+      return zahl(`Rechne im Kopf: ${fz(a * 1000)} · ${b * 100}`, a * b * 100000, fehlerliste(a * b * 100000, [[a * b * 10000, 'mal-stellenwert']]),
+        h1('Rechne ohne die Nullen und zähle dann alle Nullen.'), { nachweis: N(`${a} · ${b}`, `${a * 1000} · ${b * 100}`) }); },
+    2: (k) => {
+      if (k === 0) { const [x, y] = suche(() => [zz(2, 9), zz(2, 9)], ([p, q]) => p !== q && p * q <= 100);
+        return zahl(`Rechne im Kopf: ${fz(x * y * 10000)} : ${x * 100}`, y * 100, fehlerliste(y * 100, [[y * 10, 'div-null-vergessen'], [y * 1000, 'div-stellenwert']]),
+          h1('Streiche bei beiden Zahlen gleich viele Nullen.'), { nachweis: N(`${x * y * 100} : ${x}`, `${x * y * 10000} : ${x * 100}`, `${y * 100} · ${x * 100}`) }); }
+      if (k === 1) { const [a, p] = wahl([[250, 4], [125, 8], [500, 2], [250, 8], [125, 4]]), m = wahl([10, 100]), x = p * m;
+        return zahl(`Welche Zahl fehlt? ${a} · ▢ = ${fz(a * x)}`, x, fehlerliste(x, [[x * 10, 'mal-stellenwert'], [x / 10, 'mal-stellenwert']]),
+          h1(`Denke an ${a} · ${p} = ${a * p}.`), { nachweis: N(`${a} · ${p}`, `${a * x} : ${a}`, `${a} · ${x}`) }); }
+      const [s, h, t] = suche(() => [zz(2, 9) * 1000, zz(6, 9), wahl([20, 30])], ([x, y, z]) => x * y * z <= 1000000);
+      return zahl(`Eine Druckerei druckt jede Stunde ${fz(s)} Seiten. Sie druckt ${h} Stunden am Tag, und das an ${t} Tagen. Wie viele Seiten sind das?`, s * h * t, fehlerliste(s * h * t, [[s * h, 'sach-schritt-vergessen'], [s * t, 'sach-schritt-vergessen']]),
+        h1('Wie viele Seiten sind es an einem Tag?'), { einheit: 'Seiten', nachweis: N(`${s} · ${h}`, `${s * h} · ${t}`) });
+    },
+    3: (k) => {
+      if (k === 0) { const [x, y] = wahl([[5, 2], [5, 4], [5, 6], [5, 8]]), i = zz(1, 2), a = x * 10 ** i, b = y * 10, p = a * b, n = kind();
+        const nullenP = String(p).match(/0+$/)[0].length;
+        return auswahl(`${n} sagt: „Das Produkt hat immer genau so viele Nullen am Ende wie beide Faktoren zusammen.“ Prüfe mit ${a} · ${b}.`, [
+          opt(`Falsch. ${a} · ${b} = ${fz(p)} hat ${nullenP} Nullen am Ende, die Faktoren zusammen nur ${i + 1}. ${x} · ${y} = ${x * y} bringt eine Null mit.`, true),
+          opt('Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.', false, 'mal-stellenwert'),
+          opt(`Stimmt. ${a} · ${b} = ${fz(p / 10)}.`, false, 'mal-stellenwert'),
+          opt('Falsch. Das Produkt hat immer weniger Nullen.'),
+          opt('Das kann man nicht prüfen.')],
+        h1(`Rechne ${a} · ${b} aus und zähle die Nullen am Ende.`), { nachweis: [U(false), HILFSZAHL(nullenP, 'Nullen am Ende des Produkts'), HILFSZAHL(i + 1, 'Nullen der Faktoren zusammen'), ...N(`${x} · ${y}`, `${a} · ${b}`)] }); }
+      const x = wahl([2, 4, 6, 8]), y = 5;
+      const liste = [[x * 10, y * 100], [x * 100, y * 10], [x, y * 1000], [x * 10, y * 10], [x * 1000, y]];
+      return auswahl('Welche Aufgabe hat das kleinste Ergebnis? Entscheide, ohne alles auszurechnen.', liste.map(([p, q], j) => opt(`${fz(p)} · ${fz(q)}`, j === 3)),
+        h1('Zähle bei jeder Aufgabe die Nullen. Die Ziffern sind überall gleich.'), { nachweis: [KLEINSTES, ...N(...liste.map(([p, q]) => `${p} · ${q}`))] }); },
+  });
+
+  // ===================================================================
+  // K4 Geschickt multiplizieren: zerlegen, verdoppeln, halbieren
+  // ===================================================================
+  sechs(K('K4'), 'F', [
+    () => { const b = suche(() => zz(3, 9), (x) => x !== 7);
+      return zahl(Z('Rechne.', `7 · ${b}`, `Zerlege in 5 · ${b} und 2 · ${b}.`), 7 * b, malFehler(7, b),
+        h3('Rechne beide Teile. Rechne dann zusammen.', '7 · 4: 5 · 4 = 20 und 2 · 4 = 8. Zusammen 28.', `5 · ${b} = ${5 * b}. Rechne jetzt 2 · ${b}.`), { bild: B.feld(7, b, 5), nachweis: N(`5 · ${b}`, `2 · ${b}`, `${5 * b} + ${2 * b}`, `7 · ${b}`) }); },
+    () => { const n = suche(() => zz(11, 34), (x) => x % 10 <= 4 && x % 10 > 0 && x !== 13);
+      return zahl(Z(`Verdopple ${n}.`), 2 * n, fehlerliste(2 * n, [[n + 2, '1x1-addiert'], [2 * n - 10, 'stellenwert']]),
+        h3('Verdopple die Zehner. Verdopple die Einer.', 'Das Doppelte von 13: 10 und 10 sind 20. 3 und 3 sind 6. Zusammen 26.', `Die Zehner: ${n - n % 10} + ${n - n % 10} = ${2 * (n - n % 10)}.`), { bild: B.material(hze(n)), nachweis: N(`2 · ${n}`, `${n - n % 10} + ${n - n % 10}`, `${n % 10} + ${n % 10}`) }); },
+    () => { const n = suche(() => wahl([2, 4, 6, 8]) * 10 + wahl([2, 4, 6, 8]), (x) => x !== 26);
+      return zahl(Z(`Halbiere ${n}.`), n / 2, fehlerliste(n / 2, [[n - 2, 'div-falsche-rechenart'], [n * 2, 'div-vertauscht']]),
+        h3('Halbiere die Zehner. Halbiere die Einer.', 'Die Hälfte von 26: Die Hälfte von 20 ist 10. Die Hälfte von 6 ist 3. Zusammen 13.', `Die Hälfte von ${n - n % 10} ist ${(n - n % 10) / 2}.`), { bild: B.material(hze(n)), nachweis: N(`${n} : 2`, `${n - n % 10} : 2`, `${n % 10} : 2`) }); },
+    () => { const a = zz(6, 9), b = suche(() => zz(3, 9), (x) => x !== a && x !== a - 5);
+      return auswahl(Z(`Du rechnest ${a} · ${b}.`, 'Wie zerlegst du die Aufgabe?'), [opt(`5 · ${b} und ${a - 5} · ${b}`, true), opt(`5 · ${b} und ${a - 5}`, false, 'mal-zerlegung-halb'), opt(`5 + ${b} und ${a - 5} + ${b}`, false, '1x1-addiert')],
+        h3('Schau ins Bild. Über der Lücke sind 5 Reihen.', '7 · 3: 5 Reihen und noch 2 Reihen. Also 5 · 3 und 2 · 3.', a === 6 ? `Unter der Lücke ist 1 Reihe mit ${b} Punkten.` : `Unter der Lücke sind ${a - 5} Reihen mit je ${b} Punkten.`), { bild: B.feld(a, b, 5), nachweis: N(`5 · ${b}`, `${a - 5} · ${b}`, `${5 * b} + ${(a - 5) * b}`, `${a} · ${b}`) }); },
+    () => { const a = wahl([4, 6, 8]), b = suche(() => zz(3, 6), (x) => x !== a && 2 * x !== a);
+      return luecken(Z('Welche Zahl fehlt?', `${a} · ${b} = ${a / 2} · {{x}}`), { x: [2 * b, fehlerliste(2 * b, [[b, 'geschickt-nicht-ausgeglichen'], [b / 2, 'geschickt-falsch-ausgeglichen']])] },
+        h3('Halbiere die erste Zahl. Verdopple dann die zweite Zahl.', '4 · 7 = 2 · 14. Beide ergeben 28.', `${a} wird zu ${a / 2}. Verdopple jetzt ${b}.`), { bild: B.feld(a, b), nachweis: N(`${a} · ${b}`, `${a / 2} · ${2 * b}`) }); },
+    () => { const b = suche(() => zz(3, 9), (x) => x !== 4);
+      return zahl(Z('Rechne.', `9 · ${b}`, `Rechne 10 · ${b}.`, `Nimm dann ${b} weg.`), 9 * b, malFehler(9, b),
+        h3('9 Reihen sind 1 Reihe weniger als 10 Reihen.', '9 · 4: 10 · 4 = 40. 40 − 4 = 36.', `10 · ${b} = ${10 * b}. Rechne jetzt ${10 * b} − ${b}.`), { bild: B.feld(9, b), nachweis: N(`10 · ${b}`, `${10 * b} − ${b}`, `9 · ${b}`) }); },
+  ]);
+
+  stufen(K('K4'), 'G', {
+    1: (k) => {
+      if (k === 0) { const n = suche(() => zz(13, 24), (x) => x % 10 !== 0 && x !== 23);
+        return zahl(Z('Rechne geschickt.', `4 · ${n}`, 'Verdopple zweimal.'), 4 * n, fehlerliste(4 * n, [[2 * n, 'sach-schritt-vergessen'], [4 * n - 4, '1x1-nachbar']]),
+          h3('Mal 4 ist das Doppelte vom Doppelten.', '4 · 23: Das Doppelte von 23 ist 46. Das Doppelte von 46 ist 92.', `Das Doppelte von ${n} ist ${2 * n}.`), { bild: B.streifen(frage(4 * n), [n, n, n, n]), nachweis: N(`${n} + ${n}`, `${2 * n} + ${2 * n}`, `4 · ${n}`) }); }
+      if (k === 1) { const [a, b] = suche(() => [wahl([11, 12]), zz(13, 19)], ([x, y]) => x * y !== 180);
+        return zahl(Z('Rechne geschickt.', `${a} · ${b}`, `Zerlege ${a} in 10 und ${a - 10}.`), a * b, fehlerliste(a * b, [[10 * b + (a - 10), 'mal-zerlegung-halb'], [10 * b, 'sach-schritt-vergessen']]),
+          h3(`Nimm beide Teile mal ${b}. Rechne dann zusammen.`, '12 · 15: 10 · 15 = 150 und 2 · 15 = 30. Zusammen 180.', `10 · ${b} = ${10 * b}. Rechne jetzt ${a - 10} · ${b}.`), { nachweis: N(`10 · ${b}`, `${a - 10} · ${b}`, `${10 * b} + ${(a - 10) * b}`, `${a} · ${b}`) }); }
+      const n = suche(() => zz(51, 249) * 2, (x) => x % 10 !== 0 && x !== 348);
+      return zahl(Z(`Halbiere ${n}.`), n / 2, fehlerliste(n / 2, [[n * 2, 'div-vertauscht'], [n - 2, 'div-falsche-rechenart']]),
+        h3('Zerlege die Zahl in Teile, die du leicht halbieren kannst.', 'Die Hälfte von 348: Die Hälfte von 300 ist 150. Die Hälfte von 48 ist 24. Zusammen 174.', `Die Hälfte von ${n - n % 100} ist ${(n - n % 100) / 2}.`), { bild: B.material(hze(n)), nachweis: [HILFSZAHL(2, 'halbieren heißt durch 2 teilen'), ...N(`${n} : 2`)] });
+    },
+    2: (k) => {
+      if (k === 0) { const m = suche(() => zz(2, 9), (x) => x !== 4);
+        return zahl(Z('Rechne geschickt.', `25 · ${4 * m}`, 'Halbiere und verdopple zweimal.'), 100 * m, fehlerliste(100 * m, [[50 * m, 'geschickt-nicht-ausgeglichen'], [25 * m, 'geschickt-falsch-ausgeglichen']]),
+          h3('Verdopple die 25. Halbiere die andere Zahl. Mache das noch einmal.', '25 · 16 = 50 · 8 = 100 · 4 = 400.', `25 · ${4 * m} = 50 · ${2 * m}.`), { nachweis: N(`25 · ${4 * m}`, `50 · ${2 * m}`, `100 · ${m}`) }); }
+      const b = suche(() => zz(23, 89), (x) => x % 10 !== 0);
+      return luecken(Z('Ergänze den Rechenweg.', `9 · ${b} = 10 · ${b} − {{a}}`, `9 · ${b} = {{b}}`), { a: [b, fehlerliste(b, [[9, 'geschickt-falsch-ausgeglichen'], [1, 'geschickt-falsch-ausgeglichen']])], b: [9 * b, fehlerliste(9 * b, [[10 * b - 1, 'geschickt-falsch-ausgeglichen'], [10 * b - 9, 'geschickt-falsch-ausgeglichen']])] },
+        h3(`9 · ${b} ist 1-mal ${b} weniger als 10 · ${b}.`, '9 · 34: 10 · 34 = 340. 340 − 34 = 306.', `10 · ${b} = ${10 * b}.`), { bild: B.material(hze(b)), nachweis: N(`10 · ${b}`, `${10 * b} − ${b}`, `9 · ${b}`) });
+    },
+    3: () => { const a = wahl([6, 7, 8]), z = wahl([2, 3, 4]) * 10, b = z - 1, k = kind(), falsch = a * z - 1;
+      return auswahl(Z(`${k} rechnet ${a} · ${b} so:`, `${a} · ${z} = ${a * z}`, `${a * z} − 1 = ${falsch}`, 'Stimmt das?'), [
+        opt(Z('Falsch.', `${k} muss ${a}-mal 1 wegnehmen.`, `Richtig ist ${a * z} − ${a} = ${a * b}.`), true),
+        opt(Z('Stimmt.', `${b} ist 1 weniger als ${z}.`), false, 'geschickt-falsch-ausgeglichen'),
+        opt(Z('Falsch.', `Richtig ist ${a * z} + ${a} = ${a * z + a}.`), false, 'geschickt-falsch-ausgeglichen')],
+      h3(`${a} · ${b} sind ${a} Reihen mit je ${b}. In jeder Reihe fehlt 1.`, '3 · 19: 3 · 20 = 60. In 3 Reihen fehlt je 1. 60 − 3 = 57.', `Wie oft fehlt 1? Es sind ${a} Reihen.`), { nachweis: [U(false, `${a} · ${b}`, falsch), ...N(`${a} · ${z}`, `${a * z} − ${a}`, `${a * z} − 1`, `${a * z} + ${a}`, `${a} · ${b}`)] }); },
+  });
+
+  stufen(K('K4'), 'M', {
+    1: (k) => {
+      if (k === 0) { const m = suche(() => zz(5, 24), (x) => x % 4 !== 0 || x > 8);
+        return zahl(`Rechne geschickt: 25 · ${4 * m}`, 100 * m, fehlerliste(100 * m, [[25 * m, 'geschickt-falsch-ausgeglichen'], [10 * m, 'mal-stellenwert']]),
+          h2('25 · 4 = 100. Zerlege die andere Zahl so, dass eine 4 darin steckt.', `${4 * m} = 4 · ${m}. Also ist 25 · ${4 * m} = 100 · ${m}.`), { nachweis: N('25 · 4', `4 · ${m}`, `100 · ${m}`, `25 · ${4 * m}`) }); }
+      const b = suche(() => zz(23, 89), (x) => x % 10 !== 0);
+      return zahl(`Rechne geschickt: 99 · ${b}`, 99 * b, fehlerliste(99 * b, [[100 * b - 1, 'geschickt-falsch-ausgeglichen'], [100 * b - 99, 'geschickt-falsch-ausgeglichen']]),
+        h2(`99 · ${b} ist 1-mal ${b} weniger als 100 · ${b}.`, `100 · ${b} = ${fz(100 * b)}. Ziehe ${b} ab.`), { nachweis: N(`100 · ${b}`, `${100 * b} − ${b}`, `99 · ${b}`) });
+    },
+    2: (k) => {
+      if (k === 0) { const a = wahl([16, 24, 32, 48]);
+        return zahl(`Rechne geschickt: ${a} · 125`, a * 125, fehlerliste(a * 125, [[a * 1000, 'geschickt-nicht-ausgeglichen'], [a / 8 * 100, 'mal-stellenwert']]),
+          h2('8 · 125 = 1000. Zerlege die andere Zahl so, dass eine 8 darin steckt.', `${a} = ${a / 8} · 8. Also ist ${a} · 125 = ${a / 8} · 1000.`), { nachweis: N('8 · 125', `${a / 8} · 8`, `${a / 8} · 1000`, `${a} · 125`) }); }
+      if (k === 1) { const n = suche(() => zz(112, 998), (x) => x % 10 !== 0);
+        return zahl(`Rechne geschickt: 5 · ${n}`, 5 * n, fehlerliste(5 * n, [[10 * n, 'geschickt-nicht-ausgeglichen'], [n / 2 * 10 * 10, 'mal-stellenwert']]),
+          h2('Mal 5 ist die Hälfte von mal 10.', `${n} · 10 = ${fz(n * 10)}. Halbiere das Ergebnis.`), { nachweis: N(`${n} · 10`, `${n * 10} : 2`, `5 · ${n}`) }); }
+      const [a, b] = suche(() => [wahl([14, 16, 18, 22, 24]), wahl([15, 25, 35, 45])], ([x, y]) => x * y <= 10000);
+      return luecken(`Halbiere und verdopple. Ergänze: ${a} · ${b} = ${a / 2} · {{a}} = {{b}}`, { a: [2 * b, fehlerliste(2 * b, [[b, 'geschickt-nicht-ausgeglichen'], [b / 5, 'geschickt-falsch-ausgeglichen']])], b: a * b },
+        h2(`Halbiere ${a} und verdopple ${b}. Dann ist eine Zehnerzahl dabei.`, `${a / 2} · ${2 * b}: Rechne ${a / 2} · ${2 * b / 10} und hänge eine Null an.`), { nachweis: N(`${a / 2} · ${2 * b}`, `${a} · ${b}`) });
+    },
+    3: () => { const [a, b] = suche(() => [wahl([12, 14, 16, 18]), wahl([15, 25, 35])], ([x, y]) => x * y <= 1000), [k1, k2] = zweiKinder();
+      return auswahl(`${k1} sagt: „${a} · ${b} ist dasselbe wie ${a / 2} · ${2 * b}.“ ${k2} sagt: „${a} · ${b} ist dasselbe wie ${2 * a} · ${2 * b}.“ Wer hat recht?`, [
+        opt(`${k1}. Halbiert man einen Faktor und verdoppelt den anderen, bleibt das Produkt gleich: ${a / 2} · ${2 * b} = ${a * b}.`, true),
+        opt(`${k2}. Man muss beide Faktoren gleich behandeln.`, false, 'geschickt-falsch-ausgeglichen'),
+        opt('Beide. Beim Malnehmen darf man verdoppeln, wie man will.', false, 'geschickt-falsch-ausgeglichen'),
+        opt('Keiner. Man darf die Zahlen nicht verändern.')],
+      h2('Rechne alle drei Aufgaben aus und vergleiche.', `${a} · ${b} = ${a * b}.`), { nachweis: N(`${a} · ${b}`, `${a / 2} · ${2 * b}`, `${2 * a} · ${2 * b}`) }); },
+  });
+
+  stufen(K('K4'), 'E', {
+    1: () => { const m = suche(() => zz(3, 12), (x) => x !== 8);
+      return zahl(`Rechne geschickt: 125 · ${8 * m}`, 1000 * m, fehlerliste(1000 * m, [[125 * m, 'geschickt-falsch-ausgeglichen'], [100 * m, 'mal-stellenwert']]),
+        h1('Welche Zahl mal 125 ergibt 1000?'), { nachweis: N('125 · 8', `8 · ${m}`, `1000 · ${m}`, `125 · ${8 * m}`) }); },
+    2: (k) => {
+      if (k === 0) { const b = suche(() => zz(23, 99), (x) => x % 10 !== 0);
+        return zahl(`Rechne geschickt: 999 · ${b}`, 999 * b, fehlerliste(999 * b, [[1000 * b - 1, 'geschickt-falsch-ausgeglichen'], [1000 * b - 999, 'geschickt-falsch-ausgeglichen']]),
+          h1(`Wie hängt 999 · ${b} mit 1000 · ${b} zusammen?`), { nachweis: N(`1000 · ${b}`, `${1000 * b} − ${b}`, `999 · ${b}`) }); }
+      if (k === 1) { const e = suche(() => zz(13, 99), (x) => x % 2 === 1 || x % 4 === 2), n = kind();
+        return zahl(`${n} halbiert eine Zahl. Das Ergebnis halbiert ${n} noch einmal und dann ein drittes Mal. Am Ende steht ${e} da. Mit welcher Zahl hat ${n} begonnen?`, 8 * e, fehlerliste(8 * e, [[4 * e, 'sach-schritt-vergessen'], [e / 8, 'div-vertauscht'], [6 * e, 'sach-falsche-rechnung']]),
+          h1('Rechne rückwärts. Was macht das Halbieren rückgängig?'), { nachweis: N(`${e} · 2`, `${2 * e} · 2`, `${4 * e} · 2`) }); }
+      const [r, p, s] = [25, wahl([16, 18, 22, 24, 28]), 4];
+      return zahl(`Ein Kinosaal hat ${r} Reihen mit je ${p} Plätzen. Ein Kino hat ${s} solche Säle. Wie viele Plätze hat das Kino? Rechne geschickt.`, r * p * s, fehlerliste(r * p * s, [[r * p, 'sach-schritt-vergessen'], [r * s * 10, 'mal-stellenwert']]),
+        h1('Welche zwei Zahlen ergeben malgenommen genau 100?'), { einheit: 'Plätze', nachweis: N(`${r} · ${p}`, `${r * p} · ${s}`, `${r} · ${s}`, `100 · ${p}`) });
+    },
+    3: (k) => {
+      if (k === 0) { const [a, b] = suche(() => [zz(4, 9) * 3, wahl([6, 9, 12, 15])], ([x, y]) => x !== y);
+        return auswahl(`Ein Faktor wird mit 3 multipliziert, der andere durch 3 geteilt. Was passiert mit dem Produkt? Prüfe an ${a} · ${b}.`, [
+          opt(`Es bleibt gleich. ${a} · ${b} = ${a * b} und ${a * 3} · ${b / 3} = ${a * b}. Mal 3 und durch 3 heben sich auf.`, true),
+          opt('Es wird 3-mal so groß.', false, 'geschickt-nicht-ausgeglichen'),
+          opt('Es wird 9-mal so groß, denn 3 · 3 = 9.', false, 'geschickt-falsch-ausgeglichen'),
+          opt('Es wird kleiner, denn durch 3 teilen macht kleiner.'),
+          opt('Das hängt von den Zahlen ab.')],
+        h1('Rechne vorher und nachher aus und vergleiche.'), { nachweis: N(`${a} · 3`, `${b} : 3`, `${a} · ${b}`, `${a * 3} · ${b / 3}`) }); }
+      const m = suche(() => zz(11, 24), (x) => x % 10 !== 0), a = 4 * m, [k1, k2] = zweiKinder();
+      return auswahl(`${k1} rechnet ${a} · 25 so: ${a} : 4 = ${m} und ${m} · 100 = ${fz(m * 100)}. ${k2} sagt: „Das ist falsch. Man darf nur halbieren und verdoppeln.“ Wer hat recht?`, [
+        opt(`${k1}. 25 · 4 = 100. Teilt man ${a} durch 4 und nimmt 25 mal 4, bleibt das Produkt gleich.`, true),
+        opt(`${k2}. Durch 4 teilen ist kein Halbieren.`, false, 'geschickt-falsch-ausgeglichen'),
+        opt(`${k2}. Richtig ist ${fz(m * 25)}.`, false, 'geschickt-falsch-ausgeglichen'),
+        opt('Keiner. Man muss schriftlich rechnen.'),
+        opt(`Beide. ${k1} rechnet richtig, aber nur durch Zufall.`)],
+      h1(`Durch 4 teilen ist zweimal halbieren. Mal 4 ist zweimal verdoppeln.`), { nachweis: N(`${a} : 4`, `${m} · 100`, '25 · 4', `${a} · 25`) }); },
   });
 }

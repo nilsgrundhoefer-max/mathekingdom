@@ -17556,37 +17556,37 @@
    "niveau": "G",
    "afb": 2,
    "format": "auswahl",
-   "text": "Welche Aufgabe hat das Ergebnis 20?",
+   "text": "Welche Aufgabe hat das Ergebnis 55?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "4 · 5",
+     "text": "11 · 5",
      "richtig": true
     },
     {
-     "text": "4 + 5",
+     "text": "11 + 5",
      "richtig": false,
      "fehlvorstellung": "1x1-addiert"
     },
     {
-     "text": "5 · 5",
+     "text": "12 · 5",
      "richtig": false,
      "fehlvorstellung": "1x1-nachbar"
     }
    ],
    "hilfen": {
     "tipp": "Rechne jede Aufgabe aus.",
-    "beispiel": "3 · 6 = 18 und 3 + 6 = 9. Nur 3 · 6 hat das Ergebnis 18.",
-    "loesungsschritt": "Rechne 4 · 5."
+    "beispiel": "11 · 2 = 22 und 11 + 2 = 13. Nur 11 · 2 hat das Ergebnis 22.",
+    "loesungsschritt": "11 · 5 ist 10 · 5 und noch 1 · 5."
    },
    "nachweis": [
     {
      "art": "wert",
-     "wert": 20
+     "wert": 55
     },
-    "4 · 5 = 20",
-    "5 · 5 = 25",
-    "4 + 5 = 9"
+    "11 · 5 = 55",
+    "12 · 5 = 60",
+    "11 + 5 = 16"
    ]
   },
   {
@@ -18419,7 +18419,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "18 : 6",
+     "text": "33 : 11",
      "richtig": true
     },
     {
@@ -18435,15 +18435,15 @@
    ],
    "hilfen": {
     "tipp": "Rechne jede Aufgabe aus.",
-    "beispiel": "35 : 5 = 7, denn 7 · 5 = 35.",
-    "loesungsschritt": "Prüfe 18 : 6 mit 3 · 6."
+    "beispiel": "24 : 12 = 2, denn 2 · 12 = 24.",
+    "loesungsschritt": "Prüfe 33 : 11 mit 3 · 11."
    },
    "nachweis": [
     {
      "art": "wert",
      "wert": 3
     },
-    "18 : 6 = 3",
+    "33 : 11 = 3",
     "21 : 3 = 7",
     "54 : 9 = 6"
    ]
@@ -18870,6 +18870,1631 @@
     "40 : 8 = 5",
     "20 : 2 = 10",
     "10 : 2 = 5"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-F-01",
+   "lernziel": "5.4.1-K3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n2 · 40\nJeder Punkt im Bild ist ein Zehner.",
+   "loesung": 80,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 42,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "40 sind 4 Zehner.",
+    "beispiel": "2 · 30: 2 · 3 Zehner sind 6 Zehner. Das ist 60.",
+    "loesungsschritt": "2 · 4 = 8. Also sind es 8 Zehner."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 2,
+    "spalten": 4
+   },
+   "nachweis": [
+    "2 · 4 = 8",
+    "2 · 40 = 80"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-F-02",
+   "lernziel": "5.4.1-K3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n8 · 100",
+   "loesung": 800,
+   "typischeFehler": [
+    {
+     "wert": 80,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 108,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal 100 heißt: so viele Hunderter.",
+    "beispiel": "3 · 100 sind 3 Hunderter. Das ist 300.",
+    "loesungsschritt": "Im Bild siehst du 8 Hunderter."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 8,
+    "z": 0,
+    "e": 0
+   },
+   "nachweis": [
+    "8 · 100 = 800"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-F-03",
+   "lernziel": "5.4.1-K3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n70 : 10",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 700,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 60,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Geteilt durch 10 fragt: Wie viele Zehner sind es?",
+    "beispiel": "40 : 10 = 4, denn 40 sind 4 Zehner.",
+    "loesungsschritt": "Zähle die Zehnerstangen im Bild."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 0,
+    "z": 7,
+    "e": 0
+   },
+   "nachweis": [
+    "70 : 10 = 7",
+    "7 · 10 = 70"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-F-04",
+   "lernziel": "5.4.1-K3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Jeder Punkt im Bild ist ein Zehner.\nWelche Aufgabe passt zum Bild?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4 · 40",
+     "richtig": false,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "text": "3 · 40",
+     "richtig": true
+    },
+    {
+     "text": "3 + 40",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Reihen. Zähle die Zehner in 1 Reihe.",
+    "beispiel": "2 Reihen mit je 3 Zehnern: 2 · 30.",
+    "loesungsschritt": "Es sind 3 Reihen. In jeder Reihe sind 4 Zehner."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 3,
+    "spalten": 4
+   },
+   "nachweis": [
+    {
+     "zahl": 12,
+     "grund": "Punkte im Bild, jeder ein Zehner"
+    },
+    "3 · 40 = 120"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-F-05",
+   "lernziel": "5.4.1-K3",
+   "niveau": "F",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n{{x}} · 10 = 70",
+   "luecken": {
+    "x": {
+     "loesung": 7,
+     "typischeFehler": [
+      {
+       "wert": 700,
+       "fehlvorstellung": "mal-stellenwert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Wie viele Zehner sind es?",
+    "beispiel": "▢ · 10 = 60. 60 sind 6 Zehner. Die Zahl ist 6.",
+    "loesungsschritt": "Zähle die Zehnerstangen im Bild."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 0,
+    "z": 7,
+    "e": 0
+   },
+   "nachweis": [
+    "70 : 10 = 7",
+    "7 · 10 = 70"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-F-06",
+   "lernziel": "5.4.1-K3",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "In 1 Schachtel sind 10 Karten.\nEs gibt 9 Schachteln.\nWie viele Karten sind es?",
+   "loesung": 90,
+   "typischeFehler": [
+    {
+     "wert": 19,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleich viele in jeder Gruppe: Rechne mal.",
+    "beispiel": "4 Tüten mit je 10: 4 · 10 = 40.",
+    "loesungsschritt": "Rechne 9 · 10."
+   },
+   "einheit": "Karten",
+   "bild": {
+    "art": "gruppenbild",
+    "gruppen": 9,
+    "je": 10
+   },
+   "nachweis": [
+    "9 · 10 = 90"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-G-01",
+   "lernziel": "5.4.1-K3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n7 · 50\nJeder Punkt im Bild ist ein Zehner.",
+   "loesung": 350,
+   "typischeFehler": [
+    {
+     "wert": 35,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 3500,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst ohne die Null. Hänge die Null dann an.",
+    "beispiel": "6 · 40: 6 · 4 = 24. Also ist 6 · 40 = 240.",
+    "loesungsschritt": "7 · 5 = 35."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 7,
+    "spalten": 5
+   },
+   "nachweis": [
+    "7 · 5 = 35",
+    "7 · 50 = 350"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-G-02",
+   "lernziel": "5.4.1-K3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n90 · 60",
+   "loesung": 5400,
+   "typischeFehler": [
+    {
+     "wert": 540,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 54000,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst ohne die Nullen. Hänge dann beide Nullen an.",
+    "beispiel": "30 · 40: 3 · 4 = 12. Zwei Nullen dazu: 1200.",
+    "loesungsschritt": "9 · 6 = 54."
+   },
+   "nachweis": [
+    "90 · 60 = 5400"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-G-03",
+   "lernziel": "5.4.1-K3",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne.\n3600 : 4",
+   "loesung": 900,
+   "typischeFehler": [
+    {
+     "wert": 90,
+     "fehlvorstellung": "div-null-vergessen"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "div-null-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst ohne die Nullen. Hänge dann beide Nullen an.",
+    "beispiel": "4800 : 8: 48 : 8 = 6. Also ist 4800 : 8 = 600.",
+    "loesungsschritt": "36 : 4 = 9."
+   },
+   "nachweis": [
+    "3600 : 4 = 900",
+    "4 · 900 = 3600"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-G-04",
+   "lernziel": "5.4.1-K3",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n720 : 8\nJeder Punkt im Bild ist ein Zehner.",
+   "loesung": 90,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "div-null-vergessen"
+    },
+    {
+     "wert": 900,
+     "fehlvorstellung": "div-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst ohne die Null. Hänge die Null dann an.",
+    "beispiel": "240 : 6: 24 : 6 = 4. Also ist 240 : 6 = 40.",
+    "loesungsschritt": "72 : 8 = 9."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 8,
+    "spalten": 9
+   },
+   "nachweis": [
+    {
+     "zahl": 72,
+     "grund": "Punkte im Bild, jeder ein Zehner"
+    },
+    "720 : 8 = 90",
+    "8 · 90 = 720"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-G-05",
+   "lernziel": "5.4.1-K3",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "4 Lastwagen bringen Steine.\nJeder Lastwagen bringt 1800 Steine.\nWie viele Steine sind es zusammen?",
+   "loesung": 7200,
+   "typischeFehler": [
+    {
+     "wert": 720,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 1804,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Lastwagen bringt gleich viele Steine. Rechne mal.",
+    "beispiel": "2 Lastwagen mit je 1500 Steinen: 2 · 15 = 30. Also 2 · 1500 = 3000.",
+    "loesungsschritt": "Rechne 4 · 18 = 72. Hänge dann zwei Nullen an."
+   },
+   "einheit": "Steine",
+   "bild": {
+    "art": "streifen",
+    "ganz": {
+     "wert": 7200,
+     "frage": true
+    },
+    "teile": [
+     1800,
+     1800,
+     1800,
+     1800
+    ]
+   },
+   "nachweis": [
+    "4 · 1800 = 7200"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-G-06",
+   "lernziel": "5.4.1-K3",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ali rechnet:\n50 · 40 = 200\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nRichtig ist 20 000.",
+     "richtig": false,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "text": "Stimmt.\n5 · 4 = 20.\nDie Null ist schon da.",
+     "richtig": false,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "text": "Falsch.\n5 · 4 = 20.\nDazu kommen zwei Nullen: 2000.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne ohne die Nullen. Zähle dann die Nullen der beiden Zahlen.",
+    "beispiel": "50 · 20: 5 · 2 = 10. Zwei Nullen dazu: 1000.",
+    "loesungsschritt": "Rechne 5 · 4. Hänge dann zwei Nullen an."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "50 · 40",
+     "behauptet": 200
+    },
+    "5 · 4 = 20",
+    "50 · 40 = 2000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-M-01",
+   "lernziel": "5.4.1-K3",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne im Kopf: 400 · 80",
+   "loesung": 32000,
+   "typischeFehler": [
+    {
+     "wert": 3200,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 320000,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne ohne die Nullen und zähle dann alle Nullen der Faktoren.",
+    "loesungsschritt": "4 · 8 = 32. Dazu kommen drei Nullen."
+   },
+   "nachweis": [
+    "4 · 8 = 32",
+    "400 · 80 = 32000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-M-02",
+   "lernziel": "5.4.1-K3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? 70 · ▢ = 14 000",
+   "loesung": 200,
+   "typischeFehler": [
+    {
+     "wert": 20,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 2000,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Umkehraufgabe hilft dir.",
+    "loesungsschritt": "Rechne 14 000 : 70."
+   },
+   "nachweis": [
+    "14000 : 70 = 200",
+    "70 · 200 = 14000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-M-03",
+   "lernziel": "5.4.1-K3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Wie oft passt 50 in 3500?",
+   "loesung": 70,
+   "typischeFehler": [
+    {
+     "wert": 700,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "div-null-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das ist eine Geteilt-Aufgabe. Streiche zuerst gleich viele Nullen.",
+    "loesungsschritt": "Rechne 3500 : 50."
+   },
+   "nachweis": [
+    "3500 : 50 = 70",
+    "70 · 50 = 3500"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-M-04",
+   "lernziel": "5.4.1-K3",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne im Kopf: 2400 : 30",
+   "loesung": 80,
+   "typischeFehler": [
+    {
+     "wert": 800,
+     "fehlvorstellung": "div-stellenwert"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "div-null-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Streiche bei beiden Zahlen gleich viele Nullen. Das Ergebnis bleibt gleich.",
+    "loesungsschritt": "2400 : 30 ist so viel wie 240 : 3."
+   },
+   "nachweis": [
+    "240 : 3 = 80",
+    "2400 : 30 = 80",
+    "80 · 30 = 2400"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-M-05",
+   "lernziel": "5.4.1-K3",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Eine Fabrik packt jeden Tag 600 Kartons. In jeden Karton kommen 12 Dosen. Wie viele Dosen packt sie an 3 Tagen?",
+   "loesung": 21600,
+   "typischeFehler": [
+    {
+     "wert": 7200,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 1800,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Berechne zuerst die Dosen an einem Tag.",
+    "loesungsschritt": "An einem Tag: 600 · 12 = 7200 Dosen."
+   },
+   "einheit": "Dosen",
+   "nachweis": [
+    "600 · 12 = 7200",
+    "7200 · 3 = 21600"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-M-06",
+   "lernziel": "5.4.1-K3",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Elif rechnet 400 · 50 = 2000. Noah rechnet 400 · 50 = 20 000. Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Elif. 4 · 5 = 20, und die Null von 20 zählt schon mit.",
+     "richtig": false,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "text": "Noah. 4 · 5 = 20. Dazu kommen die drei Nullen der Faktoren: 20 000.",
+     "richtig": true
+    },
+    {
+     "text": "Beide. Es kommt nur auf die Ziffern an.",
+     "richtig": false
+    },
+    {
+     "text": "Keiner. Richtig ist 200 000.",
+     "richtig": false,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne ohne die Nullen. Zähle dann alle Nullen der Faktoren.",
+    "loesungsschritt": "4 · 5 = 20. 400 hat zwei Nullen, 50 hat eine."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "400 · 50",
+     "behauptet": 2000
+    },
+    "4 · 5 = 20",
+    "400 · 50 = 20000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-E-01",
+   "lernziel": "5.4.1-K3",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne im Kopf: 2000 · 400",
+   "loesung": 800000,
+   "typischeFehler": [
+    {
+     "wert": 80000,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne ohne die Nullen und zähle dann alle Nullen."
+   },
+   "nachweis": [
+    "2 · 4 = 8",
+    "2000 · 400 = 800000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-E-02",
+   "lernziel": "5.4.1-K3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne im Kopf: 300 000 : 500",
+   "loesung": 600,
+   "typischeFehler": [
+    {
+     "wert": 60,
+     "fehlvorstellung": "div-null-vergessen"
+    },
+    {
+     "wert": 6000,
+     "fehlvorstellung": "div-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Streiche bei beiden Zahlen gleich viele Nullen."
+   },
+   "nachweis": [
+    "3000 : 5 = 600",
+    "300000 : 500 = 600",
+    "600 · 500 = 300000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-E-03",
+   "lernziel": "5.4.1-K3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Welche Zahl fehlt? 250 · ▢ = 100 000",
+   "loesung": 400,
+   "typischeFehler": [
+    {
+     "wert": 4000,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "wert": 40,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denke an 250 · 4 = 1000."
+   },
+   "nachweis": [
+    "250 · 4 = 1000",
+    "100000 : 250 = 400",
+    "250 · 400 = 100000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-E-04",
+   "lernziel": "5.4.1-K3",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Lina sagt: „Das Produkt hat immer genau so viele Nullen am Ende wie beide Faktoren zusammen.“ Prüfe mit 500 · 20.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.",
+     "richtig": false,
+     "fehlvorstellung": "mal-stellenwert"
+    },
+    {
+     "text": "Falsch. 500 · 20 = 10 000 hat 4 Nullen am Ende, die Faktoren zusammen nur 3. 5 · 2 = 10 bringt eine Null mit.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Das Produkt hat immer weniger Nullen.",
+     "richtig": false
+    },
+    {
+     "text": "Das kann man nicht prüfen.",
+     "richtig": false
+    },
+    {
+     "text": "Stimmt. 500 · 20 = 1000.",
+     "richtig": false,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne 500 · 20 aus und zähle die Nullen am Ende."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "zahl": 4,
+     "grund": "Nullen am Ende des Produkts"
+    },
+    {
+     "zahl": 3,
+     "grund": "Nullen der Faktoren zusammen"
+    },
+    "5 · 2 = 10",
+    "500 · 20 = 10000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-E-05",
+   "lernziel": "5.4.1-K3",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Eine Druckerei druckt jede Stunde 3000 Seiten. Sie druckt 6 Stunden am Tag, und das an 20 Tagen. Wie viele Seiten sind das?",
+   "loesung": 360000,
+   "typischeFehler": [
+    {
+     "wert": 18000,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 60000,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Seiten sind es an einem Tag?"
+   },
+   "einheit": "Seiten",
+   "nachweis": [
+    "3000 · 6 = 18000",
+    "18000 · 20 = 360000"
+   ]
+  },
+  {
+   "id": "5.4.1-K3-E-06",
+   "lernziel": "5.4.1-K3",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Welche Aufgabe hat das kleinste Ergebnis? Entscheide, ohne alles auszurechnen.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "60 · 500",
+     "richtig": false
+    },
+    {
+     "text": "6000 · 5",
+     "richtig": false
+    },
+    {
+     "text": "60 · 50",
+     "richtig": true
+    },
+    {
+     "text": "600 · 50",
+     "richtig": false
+    },
+    {
+     "text": "6 · 5000",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle bei jeder Aufgabe die Nullen. Die Ziffern sind überall gleich."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "kleinstes"
+    },
+    "60 · 500 = 30000",
+    "600 · 50 = 30000",
+    "6 · 5000 = 30000",
+    "60 · 50 = 3000",
+    "6000 · 5 = 30000"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-F-01",
+   "lernziel": "5.4.1-K4",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n7 · 8\nZerlege in 5 · 8 und 2 · 8.",
+   "loesung": 56,
+   "typischeFehler": [
+    {
+     "wert": 64,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 48,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Teile. Rechne dann zusammen.",
+    "beispiel": "7 · 4: 5 · 4 = 20 und 2 · 4 = 8. Zusammen 28.",
+    "loesungsschritt": "5 · 8 = 40. Rechne jetzt 2 · 8."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 7,
+    "spalten": 8,
+    "trenn": 5
+   },
+   "nachweis": [
+    "5 · 8 = 40",
+    "2 · 8 = 16",
+    "40 + 16 = 56",
+    "7 · 8 = 56"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-F-02",
+   "lernziel": "5.4.1-K4",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Verdopple 12.",
+   "loesung": 24,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Verdopple die Zehner. Verdopple die Einer.",
+    "beispiel": "Das Doppelte von 13: 10 und 10 sind 20. 3 und 3 sind 6. Zusammen 26.",
+    "loesungsschritt": "Die Zehner: 10 + 10 = 20."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 0,
+    "z": 1,
+    "e": 2
+   },
+   "nachweis": [
+    "2 · 12 = 24",
+    "10 + 10 = 20",
+    "2 + 2 = 4"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-F-03",
+   "lernziel": "5.4.1-K4",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Halbiere 82.",
+   "loesung": 41,
+   "typischeFehler": [
+    {
+     "wert": 80,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 164,
+     "fehlvorstellung": "div-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Halbiere die Zehner. Halbiere die Einer.",
+    "beispiel": "Die Hälfte von 26: Die Hälfte von 20 ist 10. Die Hälfte von 6 ist 3. Zusammen 13.",
+    "loesungsschritt": "Die Hälfte von 80 ist 40."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 0,
+    "z": 8,
+    "e": 2
+   },
+   "nachweis": [
+    "82 : 2 = 41",
+    "80 : 2 = 40",
+    "2 : 2 = 1"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-F-04",
+   "lernziel": "5.4.1-K4",
+   "niveau": "F",
+   "afb": 1,
+   "format": "auswahl",
+   "text": "Du rechnest 6 · 8.\nWie zerlegst du die Aufgabe?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5 + 8 und 1 + 8",
+     "richtig": false,
+     "fehlvorstellung": "1x1-addiert"
+    },
+    {
+     "text": "5 · 8 und 1",
+     "richtig": false,
+     "fehlvorstellung": "mal-zerlegung-halb"
+    },
+    {
+     "text": "5 · 8 und 1 · 8",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau ins Bild. Über der Lücke sind 5 Reihen.",
+    "beispiel": "7 · 3: 5 Reihen und noch 2 Reihen. Also 5 · 3 und 2 · 3.",
+    "loesungsschritt": "Unter der Lücke ist 1 Reihe mit 8 Punkten."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 6,
+    "spalten": 8,
+    "trenn": 5
+   },
+   "nachweis": [
+    "5 · 8 = 40",
+    "1 · 8 = 8",
+    "40 + 8 = 48",
+    "6 · 8 = 48"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-F-05",
+   "lernziel": "5.4.1-K4",
+   "niveau": "F",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Welche Zahl fehlt?\n4 · 5 = 2 · {{x}}",
+   "luecken": {
+    "x": {
+     "loesung": 10,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "geschickt-nicht-ausgeglichen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Halbiere die erste Zahl. Verdopple dann die zweite Zahl.",
+    "beispiel": "4 · 7 = 2 · 14. Beide ergeben 28.",
+    "loesungsschritt": "4 wird zu 2. Verdopple jetzt 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 4,
+    "spalten": 5
+   },
+   "nachweis": [
+    "4 · 5 = 20",
+    "2 · 10 = 20"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-F-06",
+   "lernziel": "5.4.1-K4",
+   "niveau": "F",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne.\n9 · 5\nRechne 10 · 5.\nNimm dann 5 weg.",
+   "loesung": 45,
+   "typischeFehler": [
+    {
+     "wert": 50,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 40,
+     "fehlvorstellung": "1x1-nachbar"
+    },
+    {
+     "wert": 14,
+     "fehlvorstellung": "1x1-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "9 Reihen sind 1 Reihe weniger als 10 Reihen.",
+    "beispiel": "9 · 4: 10 · 4 = 40. 40 − 4 = 36.",
+    "loesungsschritt": "10 · 5 = 50. Rechne jetzt 50 − 5."
+   },
+   "bild": {
+    "art": "punktefeld",
+    "reihen": 9,
+    "spalten": 5
+   },
+   "nachweis": [
+    "10 · 5 = 50",
+    "50 − 5 = 45",
+    "9 · 5 = 45"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-G-01",
+   "lernziel": "5.4.1-K4",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n4 · 17\nVerdopple zweimal.",
+   "loesung": 68,
+   "typischeFehler": [
+    {
+     "wert": 34,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 64,
+     "fehlvorstellung": "1x1-nachbar"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal 4 ist das Doppelte vom Doppelten.",
+    "beispiel": "4 · 23: Das Doppelte von 23 ist 46. Das Doppelte von 46 ist 92.",
+    "loesungsschritt": "Das Doppelte von 17 ist 34."
+   },
+   "bild": {
+    "art": "streifen",
+    "ganz": {
+     "wert": 68,
+     "frage": true
+    },
+    "teile": [
+     17,
+     17,
+     17,
+     17
+    ]
+   },
+   "nachweis": [
+    "17 + 17 = 34",
+    "34 + 34 = 68",
+    "4 · 17 = 68"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-G-02",
+   "lernziel": "5.4.1-K4",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n12 · 14\nZerlege 12 in 10 und 2.",
+   "loesung": 168,
+   "typischeFehler": [
+    {
+     "wert": 142,
+     "fehlvorstellung": "mal-zerlegung-halb"
+    },
+    {
+     "wert": 140,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nimm beide Teile mal 14. Rechne dann zusammen.",
+    "beispiel": "12 · 15: 10 · 15 = 150 und 2 · 15 = 30. Zusammen 180.",
+    "loesungsschritt": "10 · 14 = 140. Rechne jetzt 2 · 14."
+   },
+   "nachweis": [
+    "10 · 14 = 140",
+    "2 · 14 = 28",
+    "140 + 28 = 168",
+    "12 · 14 = 168"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-G-03",
+   "lernziel": "5.4.1-K4",
+   "niveau": "G",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt.\n25 · 32\nHalbiere und verdopple zweimal.",
+   "loesung": 800,
+   "typischeFehler": [
+    {
+     "wert": 400,
+     "fehlvorstellung": "geschickt-nicht-ausgeglichen"
+    },
+    {
+     "wert": 200,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Verdopple die 25. Halbiere die andere Zahl. Mache das noch einmal.",
+    "beispiel": "25 · 16 = 50 · 8 = 100 · 4 = 400.",
+    "loesungsschritt": "25 · 32 = 50 · 16."
+   },
+   "nachweis": [
+    "25 · 32 = 800",
+    "50 · 16 = 800",
+    "100 · 8 = 800"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-G-04",
+   "lernziel": "5.4.1-K4",
+   "niveau": "G",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Halbiere 298.",
+   "loesung": 149,
+   "typischeFehler": [
+    {
+     "wert": 596,
+     "fehlvorstellung": "div-vertauscht"
+    },
+    {
+     "wert": 296,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege die Zahl in Teile, die du leicht halbieren kannst.",
+    "beispiel": "Die Hälfte von 348: Die Hälfte von 300 ist 150. Die Hälfte von 48 ist 24. Zusammen 174.",
+    "loesungsschritt": "Die Hälfte von 200 ist 100."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 2,
+    "z": 9,
+    "e": 8
+   },
+   "nachweis": [
+    {
+     "zahl": 2,
+     "grund": "halbieren heißt durch 2 teilen"
+    },
+    "298 : 2 = 149"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-G-05",
+   "lernziel": "5.4.1-K4",
+   "niveau": "G",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Ergänze den Rechenweg.\n9 · 45 = 10 · 45 − {{a}}\n9 · 45 = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 45,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+      },
+      {
+       "wert": 1,
+       "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 405,
+     "typischeFehler": [
+      {
+       "wert": 449,
+       "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+      },
+      {
+       "wert": 441,
+       "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "9 · 45 ist 1-mal 45 weniger als 10 · 45.",
+    "beispiel": "9 · 34: 10 · 34 = 340. 340 − 34 = 306.",
+    "loesungsschritt": "10 · 45 = 450."
+   },
+   "bild": {
+    "art": "zehnermaterial",
+    "h": 0,
+    "z": 4,
+    "e": 5
+   },
+   "nachweis": [
+    "10 · 45 = 450",
+    "450 − 45 = 405",
+    "9 · 45 = 405"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-G-06",
+   "lernziel": "5.4.1-K4",
+   "niveau": "G",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ida rechnet 7 · 39 so:\n7 · 40 = 280\n280 − 1 = 279\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nIda muss 7-mal 1 wegnehmen.\nRichtig ist 280 − 7 = 273.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.\n39 ist 1 weniger als 40.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "text": "Falsch.\nRichtig ist 280 + 7 = 287.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "7 · 39 sind 7 Reihen mit je 39. In jeder Reihe fehlt 1.",
+    "beispiel": "3 · 19: 3 · 20 = 60. In 3 Reihen fehlt je 1. 60 − 3 = 57.",
+    "loesungsschritt": "Wie oft fehlt 1? Es sind 7 Reihen."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "rechnung": "7 · 39",
+     "behauptet": 279
+    },
+    "7 · 40 = 280",
+    "280 − 7 = 273",
+    "280 − 1 = 279",
+    "280 + 7 = 287",
+    "7 · 39 = 273"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-M-01",
+   "lernziel": "5.4.1-K4",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt: 25 · 72",
+   "loesung": 1800,
+   "typischeFehler": [
+    {
+     "wert": 450,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "wert": 180,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "25 · 4 = 100. Zerlege die andere Zahl so, dass eine 4 darin steckt.",
+    "loesungsschritt": "72 = 4 · 18. Also ist 25 · 72 = 100 · 18."
+   },
+   "nachweis": [
+    "25 · 4 = 100",
+    "4 · 18 = 72",
+    "100 · 18 = 1800",
+    "25 · 72 = 1800"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-M-02",
+   "lernziel": "5.4.1-K4",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 16 · 125",
+   "loesung": 2000,
+   "typischeFehler": [
+    {
+     "wert": 16000,
+     "fehlvorstellung": "geschickt-nicht-ausgeglichen"
+    },
+    {
+     "wert": 200,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "8 · 125 = 1000. Zerlege die andere Zahl so, dass eine 8 darin steckt.",
+    "loesungsschritt": "16 = 2 · 8. Also ist 16 · 125 = 2 · 1000."
+   },
+   "nachweis": [
+    "8 · 125 = 1000",
+    "2 · 8 = 16",
+    "2 · 1000 = 2000",
+    "16 · 125 = 2000"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-M-03",
+   "lernziel": "5.4.1-K4",
+   "niveau": "M",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 5 · 274",
+   "loesung": 1370,
+   "typischeFehler": [
+    {
+     "wert": 2740,
+     "fehlvorstellung": "geschickt-nicht-ausgeglichen"
+    },
+    {
+     "wert": 13700,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Mal 5 ist die Hälfte von mal 10.",
+    "loesungsschritt": "274 · 10 = 2740. Halbiere das Ergebnis."
+   },
+   "nachweis": [
+    "274 · 10 = 2740",
+    "2740 : 2 = 1370",
+    "5 · 274 = 1370"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-M-04",
+   "lernziel": "5.4.1-K4",
+   "niveau": "M",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt: 99 · 33",
+   "loesung": 3267,
+   "typischeFehler": [
+    {
+     "wert": 3299,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "wert": 3201,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "99 · 33 ist 1-mal 33 weniger als 100 · 33.",
+    "loesungsschritt": "100 · 33 = 3300. Ziehe 33 ab."
+   },
+   "nachweis": [
+    "100 · 33 = 3300",
+    "3300 − 33 = 3267",
+    "99 · 33 = 3267"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-M-05",
+   "lernziel": "5.4.1-K4",
+   "niveau": "M",
+   "afb": 2,
+   "format": "luecken",
+   "text": "Halbiere und verdopple. Ergänze: 22 · 35 = 11 · {{a}} = {{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 70,
+     "typischeFehler": [
+      {
+       "wert": 35,
+       "fehlvorstellung": "geschickt-nicht-ausgeglichen"
+      },
+      {
+       "wert": 7,
+       "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 770,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Halbiere 22 und verdopple 35. Dann ist eine Zehnerzahl dabei.",
+    "loesungsschritt": "11 · 70: Rechne 11 · 7 und hänge eine Null an."
+   },
+   "nachweis": [
+    "11 · 70 = 770",
+    "22 · 35 = 770"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-M-06",
+   "lernziel": "5.4.1-K4",
+   "niveau": "M",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Mia sagt: „16 · 35 ist dasselbe wie 8 · 70.“ Mara sagt: „16 · 35 ist dasselbe wie 32 · 70.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Mara. Man muss beide Faktoren gleich behandeln.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "text": "Keiner. Man darf die Zahlen nicht verändern.",
+     "richtig": false
+    },
+    {
+     "text": "Beide. Beim Malnehmen darf man verdoppeln, wie man will.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "text": "Mia. Halbiert man einen Faktor und verdoppelt den anderen, bleibt das Produkt gleich: 8 · 70 = 560.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne alle drei Aufgaben aus und vergleiche.",
+    "loesungsschritt": "16 · 35 = 560."
+   },
+   "nachweis": [
+    "16 · 35 = 560",
+    "8 · 70 = 560",
+    "32 · 70 = 2240"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-E-01",
+   "lernziel": "5.4.1-K4",
+   "niveau": "E",
+   "afb": 1,
+   "format": "zahl",
+   "text": "Rechne geschickt: 125 · 56",
+   "loesung": 7000,
+   "typischeFehler": [
+    {
+     "wert": 875,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "wert": 700,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche Zahl mal 125 ergibt 1000?"
+   },
+   "nachweis": [
+    "125 · 8 = 1000",
+    "8 · 7 = 56",
+    "1000 · 7 = 7000",
+    "125 · 56 = 7000"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-E-02",
+   "lernziel": "5.4.1-K4",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Rechne geschickt: 999 · 84",
+   "loesung": 83916,
+   "typischeFehler": [
+    {
+     "wert": 83999,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "wert": 83001,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie hängt 999 · 84 mit 1000 · 84 zusammen?"
+   },
+   "nachweis": [
+    "1000 · 84 = 84000",
+    "84000 − 84 = 83916",
+    "999 · 84 = 83916"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-E-03",
+   "lernziel": "5.4.1-K4",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Paul halbiert eine Zahl. Das Ergebnis halbiert Paul noch einmal und dann ein drittes Mal. Am Ende steht 47 da. Mit welcher Zahl hat Paul begonnen?",
+   "loesung": 376,
+   "typischeFehler": [
+    {
+     "wert": 188,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 282,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne rückwärts. Was macht das Halbieren rückgängig?"
+   },
+   "nachweis": [
+    "47 · 2 = 94",
+    "94 · 2 = 188",
+    "188 · 2 = 376"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-E-04",
+   "lernziel": "5.4.1-K4",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Ein Faktor wird mit 3 multipliziert, der andere durch 3 geteilt. Was passiert mit dem Produkt? Prüfe an 15 · 12.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Es wird 3-mal so groß.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-nicht-ausgeglichen"
+    },
+    {
+     "text": "Es wird 9-mal so groß, denn 3 · 3 = 9.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "text": "Das hängt von den Zahlen ab.",
+     "richtig": false
+    },
+    {
+     "text": "Es bleibt gleich. 15 · 12 = 180 und 45 · 4 = 180. Mal 3 und durch 3 heben sich auf.",
+     "richtig": true
+    },
+    {
+     "text": "Es wird kleiner, denn durch 3 teilen macht kleiner.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne vorher und nachher aus und vergleiche."
+   },
+   "nachweis": [
+    "15 · 3 = 45",
+    "12 : 3 = 4",
+    "15 · 12 = 180",
+    "45 · 4 = 180"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-E-05",
+   "lernziel": "5.4.1-K4",
+   "niveau": "E",
+   "afb": 2,
+   "format": "zahl",
+   "text": "Ein Kinosaal hat 25 Reihen mit je 16 Plätzen. Ein Kino hat 4 solche Säle. Wie viele Plätze hat das Kino? Rechne geschickt.",
+   "loesung": 1600,
+   "typischeFehler": [
+    {
+     "wert": 400,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 1000,
+     "fehlvorstellung": "mal-stellenwert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welche zwei Zahlen ergeben malgenommen genau 100?"
+   },
+   "einheit": "Plätze",
+   "nachweis": [
+    "25 · 16 = 400",
+    "400 · 4 = 1600",
+    "25 · 4 = 100",
+    "100 · 16 = 1600"
+   ]
+  },
+  {
+   "id": "5.4.1-K4-E-06",
+   "lernziel": "5.4.1-K4",
+   "niveau": "E",
+   "afb": 3,
+   "format": "auswahl",
+   "text": "Tom rechnet 52 · 25 so: 52 : 4 = 13 und 13 · 100 = 1300. Ida sagt: „Das ist falsch. Man darf nur halbieren und verdoppeln.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide. Tom rechnet richtig, aber nur durch Zufall.",
+     "richtig": false
+    },
+    {
+     "text": "Keiner. Man muss schriftlich rechnen.",
+     "richtig": false
+    },
+    {
+     "text": "Ida. Richtig ist 325.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "text": "Ida. Durch 4 teilen ist kein Halbieren.",
+     "richtig": false,
+     "fehlvorstellung": "geschickt-falsch-ausgeglichen"
+    },
+    {
+     "text": "Tom. 25 · 4 = 100. Teilt man 52 durch 4 und nimmt 25 mal 4, bleibt das Produkt gleich.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Durch 4 teilen ist zweimal halbieren. Mal 4 ist zweimal verdoppeln."
+   },
+   "nachweis": [
+    "52 : 4 = 13",
+    "13 · 100 = 1300",
+    "25 · 4 = 100",
+    "52 · 25 = 1300"
    ]
   },
   {
