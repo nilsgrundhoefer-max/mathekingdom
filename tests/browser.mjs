@@ -274,7 +274,56 @@ async function antworte(seite, richtig = true) {
   assert.match(await seite.innerText('#meine-krone'), /Deine Krone: Bronze. Für den Meilenstein brauchst du Gold/);
   assert.equal(await seite.locator('.regionskarte .meilenstein .krone-F').count(), 1);
   assert.equal(await seite.locator('#kronen [data-krone="F"] b').innerText(), '1');
+  assert.equal(await seite.getAttribute('.regionskarte .nebel', 'data-frei'), '0', 'Bronze unter dem Ziel lichtet keinen Nebel');
   await foto(seite, 'regionskarte-krone');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 1e. Rückblick und Nebel (ADR 0014) ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  // Vorbereiteter Speicherstand: alle Lernziele von 5.3.1 vor drei Tagen erreicht, der Meilenstein ist gemeistert.
+  const ms = pool.kapitel.find((k) => k.id === '5.3').unterkapitel[0];
+  const vor3Tagen = new Date(Date.now() - 3 * 86400000).toISOString();
+  const stand = { version: 2, code: '5A-RUEK', klasse: '5a', erstellt: vor3Tagen, geaendert: vor3Tagen, muenzen: 0, niveau: {}, niveauMarke: {},
+    lernziele: Object.fromEntries(ms.lernziele.map((l) => [l.id, { erreichtAm: vor3Tagen }])), versuche: [], hilferuf: null, hilferufe: [],
+    wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [] };
+  await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-RUEK.json')) localStorage.setItem('mk-demo-5a/5A-RUEK.json', text); }, JSON.stringify(stand));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-ruek');
+  await seite.click('#demo');
+  await seite.waitForSelector('#rueckblick');
+  assert.match(await seite.innerText('#rueckblick'), /Weißt du es noch\?/);
+  await foto(seite, 'rueckblick-angebot');
+  await seite.click('#rueckblick-start');
+  assert.match(await seite.innerText('.rueckblickmarke'), /Rückblick 1 von 3/);
+  // Erste Aufgabe absichtlich zweimal falsch: Siegel bleibt, Lernziel kommt wieder.
+  await antworte(seite, false); await antworte(seite, false);
+  await seite.waitForSelector('.ergebnis.falsch');
+  assert.match(await seite.innerText('.ergebnis'), /Dein Siegel behältst du/);
+  for (let i = 0; i < 2; i++) {
+    await seite.click('#weiter');
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+  }
+  assert.match(await seite.innerText('#rueckblick-fertig'), /Rückblick geschafft!\s+2 von 3 richtig/);
+  assert.equal(await seite.innerText('#siegel'), String(ms.lernziele.length));
+  await seite.click('#weiter');
+  await seite.waitForSelector('.regionen');
+  assert.equal(await seite.locator('#rueckblick').count(), 0, 'höchstens ein Rückblick am Tag');
+  // Nebel: Der gemeisterte Meilenstein lichtet ihn, die Landschaft liegt darunter.
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.equal(await seite.getAttribute('.regionskarte .nebel', 'data-frei'), '1');
+  assert.ok(await seite.locator('.regionskarte .zeichnung').count() >= 5);
+  await foto(seite, 'regionskarte-nebel');
+  const gespeichert = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-RUEK.json')));
+  assert.equal(gespeichert.rueckblicke.length, 1);
+  assert.ok(Object.values(gespeichert.rueckblick).some((r) => r.aufzufrischen));
+  assert.ok(gespeichert.versuche.every((v) => v.rueckblick));
   assert.deepEqual(fehler, []);
   await seite.close();
 }
@@ -433,7 +482,7 @@ async function antworte(seite, richtig = true) {
   assert.equal(await seite.locator('.krone').count(), 0, 'die Lehrkraft sieht Niveaustufen, keine Kronen');
   await seite.locator('.heatmap [data-lernziel]').first().click();
   await seite.waitForSelector('.vierspaltig');
-  assert.equal(await seite.locator('.gruppenliste').count(), 4);
+  assert.equal(await seite.locator('.gruppenliste').count(), 5);
   await foto(seite, 'lehrer-lernziel');
   await seite.click('.brotkrumen button');
   await seite.locator('[data-schueler-zeile]').first().click();
@@ -626,6 +675,17 @@ async function antworte(seite, richtig = true) {
   // Spielpause wirkt beim Schüler.
   await lehrer.check('#spielpause');
   await warteAuf((k) => k.spielpause === true);
+
+  // Expedition: Die Lehrkraft setzt ein Ziel, die Schülerin sieht den Stand der Klasse und ihren eigenen Beitrag.
+  await lehrer.click('[data-tab=verwaltung]');
+  await lehrer.fill('#expedition-ziel', '2');
+  await lehrer.click('#expedition-starten');
+  await warteAuf((k) => k.expedition?.ziel === 2);
+  await schueler.click('nav button:has-text("Schlossgarten")');
+  await schueler.waitForSelector('#expedition', { timeout: 15000 });
+  assert.match(await schueler.innerText('#expedition-stand'), /Die Klasse hat \d von 2\. Davon/);
+  await foto(schueler, 'schueler-expedition');
+  assert.match(await lehrer.innerText('#expedition'), /von 2 Expeditionszeichen/);
 
   // Backup und Wiederherstellen.
   await lehrer.click('[data-tab=verwaltung]');

@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -521,10 +521,10 @@ function balken(wert) {
 // ---------- Lernstand: Klasse, darunter Lernziel, darunter Schüler ----------
 // Vier Zustände je Lernziel und Schüler, jeder mit eigenem Zeichen, damit die Farbe nie allein trägt.
 const ZUSTAND = {
-  siegel: ['Siegel', '✓'], wackelig: ['Wackelig', '!'], begonnen: ['Begonnen', '…'], offen: ['Nicht begonnen', '·'],
+  siegel: ['Siegel', '✓'], aufzufrischen: ['Aufzufrischen', '↻'], wackelig: ['Wackelig', '!'], begonnen: ['Begonnen', '…'], offen: ['Nicht begonnen', '·'],
 };
 const ZUSTAND_TEXT = {
-  siegel: 'Lernziel erreicht', wackelig: 'begonnen, aber viele Fehlversuche oder Lösungsschritt-Kärtchen', begonnen: 'begonnen', offen: 'noch nicht begonnen',
+  siegel: 'Lernziel erreicht', aufzufrischen: 'Siegel vorhanden, aber im Rückblick falsch gelöst', wackelig: 'begonnen, aber viele Fehlversuche oder Lösungsschritt-Kärtchen', begonnen: 'begonnen', offen: 'noch nicht begonnen',
 };
 const zustandLegende = () => h('ul', { class: 'zlegende', 'aria-label': 'Zeichenerklärung' },
   Object.entries(ZUSTAND).map(([id, [titel, zeichen]]) => h('li', {}, h('i', { class: `zelle ${id}` }, zeichen), titel)));
@@ -575,7 +575,7 @@ function lernstandKlasse() {
   const auff = staende.flatMap(({ code, stand }) => [...A.auffaelligkeiten(stand, ziel(code), jetzt()), ...A.pruefeStand(stand, ziel(code)).map((text) => ({ art: 'datei', text }))].map((a) => ({ code, ...a })));
   return h('div', {},
     h('section', { class: 'kennzahlen' },
-      kennzahl(zellen.filter((c) => c.status === 'siegel').length, 'Siegel in der Klasse', `von ${zellen.length} möglichen`),
+      kennzahl(zellen.filter((c) => A.hatSiegel(c.status)).length, 'Siegel in der Klasse', `von ${zellen.length} möglichen`),
       kennzahl(zellen.filter((c) => c.status === 'wackelig').length, 'wackelige Lernziele', 'genauer hinschauen'),
       kennzahl(prozent(versuche.length ? versuche.filter((v) => v.richtig).length / versuche.length : null), 'Lösungsquote', `${versuche.length} Aufgaben`),
       kennzahl(`${heuteAktiv} von ${codes.length}`, 'heute aktiv', fehlen.length ? `${fehlen.length} noch nie angemeldet` : null)),
@@ -620,12 +620,12 @@ function heatmap(matrix, lernziele, klickbar) {
     h('tbody', {}, zeilen.map((zeile) => h('tr', {},
       h('th', { class: 'name', scope: 'row' }, klickbar ? h('button', { class: 'link', 'data-schueler-zeile': zeile.code, onclick: () => gehe({ art: 'schueler', code: zeile.code }) }, name(zeile.code)) : name(zeile.code)),
       zeile.zellen.map((c, i) => h('td', { class: `zelle ${c.status}`, title: `${name(zeile.code)} · ${lernziele[i].text}: ${ZUSTAND_TEXT[c.status]}${c.bearbeitet ? ` (${c.bearbeitet} Aufgaben, Fortschritt ${c.fortschritt} von 3)` : ''}` }, ZUSTAND[c.status][1])),
-      h('td', { class: 'summe' }, zeile.zellen.filter((c) => c.status === 'siegel').length))))));
+      h('td', { class: 'summe' }, zeile.zellen.filter((c) => A.hatSiegel(c.status)).length))))));
 }
 
 // Gestapelte Balken je Lernziel: Siegel, begonnen, wackelig, nicht begonnen.
 function lernzielBalken(matrix, lernziele) {
-  const reihenfolge = ['siegel', 'begonnen', 'wackelig', 'offen'];
+  const reihenfolge = ['siegel', 'aufzufrischen', 'begonnen', 'wackelig', 'offen'];
   return h('ul', { class: 'stapel' }, lernziele.map((l, i) => {
     const anzahl = Object.fromEntries(reihenfolge.map((s) => [s, matrix.filter((m) => m.zellen[i].status === s).length]));
     const gesamt = matrix.length || 1;
@@ -633,7 +633,7 @@ function lernzielBalken(matrix, lernziele) {
       h('span', { class: 'stapelname' }, h('small', {}, kurzname(l)), l.text),
       h('span', { class: 'stapelbalken', role: 'img', 'aria-label': reihenfolge.map((s) => `${anzahl[s]} ${ZUSTAND[s][0]}`).join(', ') },
         reihenfolge.filter((s) => anzahl[s]).map((s) => h('i', { class: `teil zelle ${s}`, style: `flex-grow:${anzahl[s] / gesamt}`, title: `${ZUSTAND[s][0]}: ${anzahl[s]}` }, anzahl[s] / gesamt >= 0.12 ? anzahl[s] : ''))),
-      h('span', { class: 'stapelzahl' }, `${anzahl.siegel}/${matrix.length}`)));
+      h('span', { class: 'stapelzahl' }, `${anzahl.siegel + anzahl.aufzufrischen}/${matrix.length}`)));
   }));
 }
 
@@ -651,7 +651,7 @@ function lernstandLernziel(id) {
   const staende = angemeldet();
   const v = staende.flatMap(({ stand }) => stand.versuche.filter((x) => x.lernziel === id));
   const st = A.lernzielStatistik(staende, [l])[0];
-  const gruppen = { siegel: [], wackelig: [], begonnen: [], offen: [] };
+  const gruppen = { siegel: [], aufzufrischen: [], wackelig: [], begonnen: [], offen: [] };
   for (const { code, stand } of staende) gruppen[A.lernzielZustand(stand, id)].push(code);
   const fehler = A.fehlerZuLernziel(staende, id).slice(0, 6);
   const nachNiveau = L.NIVEAUS.map((n) => { const x = v.filter((y) => y.niveau === n); return { n, bearbeitet: x.length, quote: x.length ? x.filter((y) => y.richtig).length / x.length : 0 }; }).filter((x) => x.bearbeitet);
@@ -838,6 +838,7 @@ function verwaltung() {
           for (const n of liste.value.split('\n').map((x) => x.trim()).filter(Boolean)) k.namen[A.erzeugeCode(z.klasse, Object.keys(k.namen))] = n;
         }) }, 'Codes erzeugen'),
         codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
+    expeditionKarte(),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),
@@ -848,6 +849,42 @@ function verwaltung() {
         h('button', { class: 'schlicht', id: 'pdf', onclick: () => drucke(klassenbericht()) }, 'Klassenbericht als PDF'))),
     sicherung(),
     protokollKarte());
+}
+
+// ---------- Expedition (ADR 0014) ----------
+// Ein gemeinsames Ziel der Klasse. Die Schüler sehen den Stand der Klasse und nur ihren eigenen Beitrag.
+const BELOHNUNG = { fahne: 'Expeditionsfahne fürs Wappen', spielpause: 'eine Spielpause' };
+function expeditionKarte() {
+  const ex = kl().einst.expedition;
+  const datum = (t) => new Date(`${t}T12:00:00`).toLocaleDateString('de-DE');
+  if (ex) {
+    const st = A.expeditionUebersicht(angemeldet(), ex, jetzt());
+    const anteil = Math.min(1, st.summe / ex.ziel);
+    return h('section', { class: 'karte', id: 'expedition' }, h('h2', {}, 'Expedition'),
+      h('p', {}, h('b', {}, `${st.summe} von ${ex.ziel} Expeditionszeichen`), ` bis zum ${datum(ex.bis)}. Belohnung: ${BELOHNUNG[ex.belohnung]}.`),
+      h('span', { class: 'balken', title: prozent(anteil) }, h('i', { style: `width:${Math.round(anteil * 100)}%` }), h('b', {}, prozent(anteil))),
+      st.geschafft ? h('p', { class: 'marke gut' }, ex.belohnung === 'spielpause' ? 'Geschafft! Die Klasse hat sich eine Spielpause verdient. Schalte sie oben ein, wenn es passt.' : 'Geschafft! Alle Schüler bekommen beim nächsten Öffnen die Expeditionsfahne.')
+        : st.vorbei ? h('p', { class: 'fehlertext' }, 'Das Enddatum ist vorbei, das Ziel wurde nicht erreicht.') : null,
+      h('p', { class: 'klein' }, 'Ein Zeichen gibt es für jedes neue Siegel und für jeden Tag, an dem ein Schüler einen Rückblick abschließt. Die Schüler sehen nur den Stand der Klasse und ihren eigenen Beitrag, nie die der anderen.'),
+      h('details', {}, h('summary', {}, 'Beiträge der Schüler (nur für dich)'),
+        h('ul', { class: 'liste' }, [...st.beitraege].sort((a, b) => b.zeichen - a.zeichen).map((b) => h('li', {}, `${name(b.code)}: ${b.zeichen}`)))),
+      h('button', { class: 'schlicht', id: 'expedition-beenden', onclick: () => { if (confirm('Expedition beenden? Der Balken verschwindet bei allen Schülern.')) aendere((k) => { k.einst.expedition = null; }); } }, 'Expedition beenden'));
+  }
+  const in4Wochen = new Date(Date.now() + 28 * 86400000).toLocaleDateString('sv-SE');
+  const zielFeld = h('input', { id: 'expedition-ziel', type: 'number', min: 1, value: Math.max(10, Object.keys(kl().namen).length * 4), style: 'width:6em' });
+  const bisFeld = h('input', { id: 'expedition-bis', type: 'date', value: in4Wochen });
+  const lohnFeld = h('select', { id: 'expedition-belohnung' }, Object.entries(BELOHNUNG).map(([id, text]) => h('option', { value: id }, text)));
+  return h('section', { class: 'karte', id: 'expedition' }, h('h2', {}, 'Expedition'),
+    h('p', { class: 'klein' }, 'Ein gemeinsames Ziel für die ganze Klasse: Jedes neue Siegel und jeder abgeschlossene Rückblick (höchstens einer am Tag) bringt ein Expeditionszeichen. Jeder Schüler sieht den Stand der Klasse und seinen eigenen Beitrag, aber nicht den der anderen. Als Richtwert passen etwa vier Zeichen je Schüler in vier Wochen.'),
+    h('div', { class: 'reihe' },
+      h('label', {}, 'Ziel ', zielFeld, ' Zeichen'),
+      h('label', {}, 'bis ', bisFeld),
+      h('label', {}, 'Belohnung ', lohnFeld),
+      h('button', { class: 'haupt', id: 'expedition-starten', onclick: () => {
+        const ziel = parseInt(zielFeld.value, 10);
+        if (!(ziel > 0) || !bisFeld.value) { z.fehler = 'Gib ein Ziel und ein Enddatum ein.'; return male(); }
+        aendere((k) => { k.einst.expedition = { id: `ex-${Date.now().toString(36)}`, ziel, start: jetzt(), bis: bisFeld.value, belohnung: lohnFeld.value }; });
+      } }, 'Expedition starten')));
 }
 
 // ---------- Betriebsprotokoll (ADR 0013) ----------

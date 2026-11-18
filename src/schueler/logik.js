@@ -52,6 +52,10 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
     gelesen: null,     // Zeitpunkt der letzten Nachricht der Lehrkraft, die der Schüler bestätigt hat
     einschaetzung: {}, // Meilenstein → { gewaehlt, t, abstieg?, krone?, kroneAm? }: Selbsteinschätzung (ADR 0012)
     betrieb: [],       // Betriebsprotokoll: Starts und technische Probleme, die neuesten 50 (ADR 0013)
+    rueckblick: {},    // Lernziel → { stufe, zuletzt?, aufzufrischen? }: verteiltes Wiederholen (ADR 0014)
+    rueckblickAktiv: null, // laufender Rückblick: { tag, aufgaben: [id], erledigt: [{ aufgabe, lernziel, richtig }] }
+    rueckblicke: [],   // abgeschlossene Rückblicke: { t, tag }
+    expeditionen: {},  // Expedition → { geschafftAm }: Belohnung erhalten
   };
 }
 // Ein Siegel je erreichtem Lernziel. Es wird nicht gespeichert, sondern aus den Lernzielen gezählt.
@@ -255,7 +259,8 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 // ---------- Bearbeitung verbuchen ----------
 // bearbeitung: { geloest, versuche, eingaben, fehlvorstellungen, hilfen, karten, dauer }
 // Mit `index` verlangt das Siegel auch eine Aufgabe aus AFB II oder III (siehe lernzielStand).
-export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null) {
+// Mit `{ rueckblick: true }` zählt die Aufgabe zum Rückblick und nicht zur Selbsteinschätzung.
+export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false } = {}) {
   const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
@@ -264,6 +269,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
+    ...(rueckblick && { rueckblick: true }),
   });
   stand.muenzen += muenzen;
   let neuesLernziel = false;
@@ -273,7 +279,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   // Krone und Selbsteinschätzung: Wer unter der gewählten Krone arbeitet, bevor er dort eine Krone hat, ist abgestiegen.
   const kroneJetzt = meilenstein ? krone(index, stand, meilenstein) : null;
-  const e = meilenstein ? stand.einschaetzung?.[meilenstein.id] : null;
+  const e = meilenstein && !rueckblick ? stand.einschaetzung?.[meilenstein.id] : null;
   let ersteKrone = false;
   if (e && !e.krone) {
     if (unterZiel(aufgabe.niveau, e.gewaehlt)) e.abstieg = true;
@@ -281,6 +287,101 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
   return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null };
+}
+
+// ---------- Rückblick (ADR 0014) ----------
+// Verteiltes, gemischtes Wiederholen: Etwa 2, 7 und 21 Tage nach dem Siegel kommt ein Lernziel in den Rückblick.
+// Ein Fehler nimmt nie ein Siegel weg; das Lernziel kommt im nächsten Rückblick wieder und gilt als aufzufrischen.
+export const RUECKBLICK_TAGE = [2, 7, 21];
+export const RUECKBLICK_MIN = 3, RUECKBLICK_MAX = 5;
+const TAG_MS = 86400000;
+export const tagVon = (iso) => new Date(iso).toLocaleDateString('sv-SE'); // JJJJ-MM-TT in Ortszeit
+export function faelligeLernziele(stand, index, jetzt) {
+  const r = stand.rueckblick ?? {};
+  const faellig = [];
+  for (const [id, { erreichtAm }] of Object.entries(stand.lernziele)) {
+    if (!index.lernzielMitAufgaben.has(id)) continue;
+    const e = r[id] ?? { stufe: 0 };
+    if (e.aufzufrischen) { faellig.push({ id, seit: Infinity }); continue; }
+    if (e.stufe >= RUECKBLICK_TAGE.length) continue;
+    const alter = (new Date(jetzt) - new Date(erreichtAm)) / TAG_MS;
+    if (alter >= RUECKBLICK_TAGE[e.stufe]) faellig.push({ id, seit: alter });
+  }
+  // Aufzufrischende zuerst, dann die ältesten Siegel.
+  return faellig.sort((a, b) => (b.seit === a.seit ? 0 : b.seit > a.seit ? 1 : -1)).map((f) => f.id);
+}
+// Höchstens ein Rückblick am Tag: Wer heute schon einen begonnen hat, bekommt keinen neuen.
+export const rueckblickHeuteBegonnen = (stand, jetzt) => stand.rueckblickAktiv?.tag === tagVon(jetzt) || (stand.rueckblicke ?? []).some((r) => r.tag === tagVon(jetzt));
+export function rueckblickAngebot(stand, index, jetzt) {
+  if (stand.rueckblickAktiv) return { art: 'fortsetzen', offen: stand.rueckblickAktiv.aufgaben.length - stand.rueckblickAktiv.erledigt.length };
+  if (rueckblickHeuteBegonnen(stand, jetzt)) return null;
+  const faellig = faelligeLernziele(stand, index, jetzt);
+  return faellig.length ? { art: 'neu', lernziele: faellig.length } : null;
+}
+// Stellt drei bis fünf Aufgaben auf dem Zielniveau zusammen, abwechselnd aus verschiedenen Lernzielen.
+export function stelleRueckblick(stand, index, zielniveau, jetzt, zufall = Math.random) {
+  const faellig = faelligeLernziele(stand, index, jetzt).slice(0, RUECKBLICK_MAX);
+  if (!faellig.length) return null;
+  const anzahl = Math.max(RUECKBLICK_MIN, Math.min(RUECKBLICK_MAX, faellig.length));
+  const bearbeitet = new Set(stand.versuche.map((v) => v.aufgabe));
+  const gewaehlt = [];
+  for (let i = 0; gewaehlt.length < anzahl && i < anzahl * 3; i++) {
+    const lz = faellig[i % faellig.length];
+    const alle = (index.nach.get(`${lz}|${zielniveau}`) ?? []).filter((a) => !gewaehlt.includes(a.id));
+    const frisch = alle.filter((a) => !bearbeitet.has(a.id));
+    const auswahl = frisch.length ? frisch : alle;
+    if (auswahl.length) gewaehlt.push(auswahl[Math.floor(zufall() * auswahl.length)].id);
+  }
+  if (!gewaehlt.length) return null;
+  stand.rueckblickAktiv = { tag: tagVon(jetzt), t: jetzt, aufgaben: gewaehlt, erledigt: [] };
+  return stand.rueckblickAktiv;
+}
+export const naechsteRueckblickAufgabe = (stand) => {
+  const r = stand.rueckblickAktiv;
+  return r ? r.aufgaben.find((id) => !r.erledigt.some((e) => e.aufgabe === id)) ?? null : null;
+};
+// Nach jeder Rückblick-Aufgabe. Ist der Rückblick fertig, rücken richtig gelöste Lernziele eine Stufe weiter,
+// Lernziele mit einem Fehler bleiben stehen und gelten als aufzufrischen. Ergebnis: null oder { fertig, richtig, gesamt, aufzufrischen: [id] }.
+export function trageRueckblickEin(stand, aufgabe, richtig, jetzt) {
+  const r = stand.rueckblickAktiv;
+  if (!r || !r.aufgaben.includes(aufgabe.id) || r.erledigt.some((e) => e.aufgabe === aufgabe.id)) return null;
+  r.erledigt.push({ aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, richtig });
+  if (r.erledigt.length < r.aufgaben.length) return { fertig: false, richtig: r.erledigt.filter((e) => e.richtig).length, gesamt: r.aufgaben.length };
+  stand.rueckblick ??= {};
+  const aufzufrischen = [];
+  for (const lz of new Set(r.erledigt.map((e) => e.lernziel))) {
+    const e = (stand.rueckblick[lz] ??= { stufe: 0 });
+    e.zuletzt = jetzt;
+    if (r.erledigt.some((x) => x.lernziel === lz && !x.richtig)) { e.aufzufrischen = true; aufzufrischen.push(lz); }
+    else { e.stufe = Math.min(RUECKBLICK_TAGE.length, e.stufe + 1); e.aufzufrischen = false; }
+  }
+  (stand.rueckblicke ??= []).push({ t: jetzt, tag: r.tag });
+  stand.rueckblickAktiv = null;
+  return { fertig: true, richtig: r.erledigt.filter((e) => e.richtig).length, gesamt: r.aufgaben.length, aufzufrischen };
+}
+
+// ---------- Expedition (ADR 0014) ----------
+// Gemeinsames Klassenziel. Expeditionszeichen: eines je Siegel und eines je Tag mit abgeschlossenem Rückblick,
+// gezählt zwischen Start und Enddatum der Expedition. expedition: { id, ziel, start, bis (JJJJ-MM-TT), belohnung: 'fahne' | 'spielpause' }
+export function expeditionsZeichen(stand, expedition) {
+  if (!stand || !expedition) return 0;
+  const drin = (t) => t >= expedition.start && tagVon(t) <= expedition.bis;
+  const siegelZahl = Object.values(stand.lernziele ?? {}).filter((l) => drin(l.erreichtAm)).length;
+  const tage = new Set((stand.rueckblicke ?? []).filter((r) => drin(r.t)).map((r) => r.tag));
+  return siegelZahl + tage.size;
+}
+// Stand der Klasse: alle Speicherstände zusammen. vorbei = Enddatum überschritten.
+export function expeditionsStand(staende, expedition, jetzt) {
+  const summe = staende.reduce((n, st) => n + expeditionsZeichen(st, expedition), 0);
+  return { summe, ziel: expedition.ziel, geschafft: summe >= expedition.ziel, vorbei: tagVon(jetzt) > expedition.bis };
+}
+// Belohnung abholen, sobald die Klasse das Ziel erreicht hat. Die Expeditionsfahne gibt es nur so.
+export function holeBelohnung(stand, expedition, jetzt) {
+  stand.expeditionen ??= {};
+  if (stand.expeditionen[expedition.id]) return false;
+  stand.expeditionen[expedition.id] = { geschafftAm: jetzt };
+  if (expedition.belohnung === 'fahne' && !stand.wappen.gekauft.includes('fahne')) stand.wappen.gekauft.push('fahne');
+  return true;
 }
 
 // ---------- Niveaustufe ----------
@@ -331,11 +432,14 @@ export const WAPPEN_TEILE = [
   { id: 'zirkel', art: 'zeichen', name: 'Zirkel', preis: 50, rang: 1 },
   { id: 'winkel', art: 'zeichen', name: 'Winkelmaß', preis: 70, rang: 2 },
   { id: 'lilie', art: 'zeichen', name: 'Lilie', preis: 250, rang: 3 },
+  // Nicht zu kaufen: Belohnung einer geschafften Expedition (ADR 0014).
+  { id: 'fahne', art: 'zeichen', name: 'Expeditionsfahne', preis: null, rang: 0, expedition: true },
 ];
 export function kaufe(stand, id) {
   const teil = WAPPEN_TEILE.find((w) => w.id === id);
   if (!teil) return 'unbekannt';
   if (stand.wappen.gekauft.includes(id)) return 'vorhanden';
+  if (teil.expedition) return 'expedition';
   if (rang(siegel(stand)).stufe < teil.rang) return 'rang';
   if (stand.muenzen < teil.preis) return 'muenzen';
   stand.muenzen -= teil.preis;
@@ -397,6 +501,7 @@ export function einstellungen(klassendatei, code, pool) {
     aktuellesKapitel: k.aktuellesKapitel ?? null,
     offeneKapitel: new Set(kapitelIds.slice(0, bis + 1)),
     spielpause: Boolean(k.spielpause),
+    expedition: k.expedition ?? null,
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst

@@ -79,6 +79,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .regionskarte .windrose { fill: #c9b994; stroke: #b3a27c; stroke-width: 1; opacity: .7; }
 #mathekingdom .regionskarte .windrose circle { fill: none; }
 #mathekingdom .regionskarte .windrose text { font: 700 11px var(--schrift-titel); fill: #9c8b66; stroke: none; }
+#mathekingdom .regionskarte .nebel { fill: #d9d1c0; opacity: .9; }
+#mathekingdom .regionskarte .zeichnung { opacity: .9; }
 #mathekingdom .regionskarte .abstecher { fill: none; stroke: #a89d8a; stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; }
 #mathekingdom .regionskarte .meilenstein { cursor: pointer; }
 #mathekingdom .regionskarte .weg-rand { fill: none; stroke: #5b4632; stroke-width: 12; stroke-linejoin: round; stroke-linecap: round; }
@@ -265,3 +267,15 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .kronenwahl button[aria-pressed="true"] { border: 3px solid var(--nacht); background: #efe3c6; font-weight: 700; }
 #mathekingdom .kronenwahl .ziel { font-size: .75rem; color: var(--grau); font-weight: 700; }
 #mathekingdom .meinekrone { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+
+/* Rückblick und Expedition (ADR 0014) */
+#mathekingdom .karte.rueckblick { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; border-left: 6px solid #2f4f7f; }
+#mathekingdom .karte.rueckblick h2, #mathekingdom .karte.expedition h2 { margin: .1rem 0 .3rem; }
+#mathekingdom .karte.rueckblick p { margin: 0; }
+#mathekingdom .marke.rueckblickmarke { background: #e3eaf4; color: #2f4f7f; border-color: #b7c7de; }
+#mathekingdom .karte.expedition { border-left: 6px solid #9a6a1f; }
+#mathekingdom .karte.expedition.geschafft { border-left-color: #3e6b3a; }
+#mathekingdom .expeditionsbalken { height: 16px; border-radius: 8px; background: #ece3cf; border: 1px solid #c9b994; overflow: hidden; margin: .4rem 0; }
+#mathekingdom .expeditionsbalken i { display: block; height: 100%; background: linear-gradient(90deg, #b9783e, #dcb24a); }
+#mathekingdom .karte.expedition.geschafft .expeditionsbalken i { background: #3e6b3a; }
+#mathekingdom .karte.expedition p { margin: .2rem 0; }

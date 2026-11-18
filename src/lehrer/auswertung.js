@@ -91,11 +91,12 @@ export function lernzieleMitAufgaben(pool, index) {
     .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, milestone: u.titel }))));
 }
 
-// Lernzielstand eines Schülers: siegel | wackelig | begonnen | offen.
+// Lernzielstand eines Schülers: siegel | aufzufrischen | wackelig | begonnen | offen.
+// Aufzufrischen: Siegel vorhanden, aber im Rückblick falsch gelöst (ADR 0014). Das Siegel bleibt.
 // Wackelig: mindestens WACKELIG_AB Aufgaben, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
 export const WACKELIG_AB = 4;
 export function lernzielZustand(stand, lernzielId) {
-  if (stand.lernziele[lernzielId]) return 'siegel';
+  if (stand.lernziele[lernzielId]) return stand.rueckblick?.[lernzielId]?.aufzufrischen ? 'aufzufrischen' : 'siegel';
   const v = stand.versuche.filter((x) => x.lernziel === lernzielId);
   if (v.length === 0) return 'offen';
   const geloest = v.filter((x) => x.richtig).length;
@@ -394,7 +395,7 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   }
   const matrix = [['Name', 'Schülercode', ...lernziele.map((l) => l.id)], ['', 'Lernziel', ...lernziele.map((l) => l.text)]];
   for (const zeile of lernzielmatrix(staende, lernziele, zielniveaus)) {
-    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
+    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
   }
   const versuche = [['Name', 'Schülercode', 'Zeitpunkt', 'Aufgabe', 'Lernziel', 'Niveaustufe', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer (s)', 'Münzen', 'Erkannte Fehlvorstellungen', 'Eingaben']];
   for (const { code, stand } of staende) for (const x of stand.versuche) {
@@ -433,6 +434,15 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
 // ---------- Backups aufräumen ----------
 // Behält alles der letzten 14 Tage und danach das jeweils erste Backup jeder Kalenderwoche.
 // namen: Ordnernamen im Format JJJJ-MM-TT_HH-MM. Liefert die Namen, die gelöscht werden dürfen.
+// Siegel zählen auch, wenn sie gerade aufzufrischen sind.
+export const hatSiegel = (status) => status === 'siegel' || status === 'aufzufrischen';
+
+// Expedition: Beitrag jedes Schülers und Stand der Klasse (ADR 0014). Nur die Lehrkraft sieht die Einzelbeiträge.
+export function expeditionUebersicht(staende, expedition, jetzt) {
+  const beitraege = staende.map(({ code, stand }) => ({ code, zeichen: L.expeditionsZeichen(stand, expedition) }));
+  return { ...L.expeditionsStand(staende.map((x) => x.stand), expedition, jetzt), beitraege };
+}
+
 export function alteBackups(namen, jetzt, tage = 14) {
   const zeit = (n) => new Date(`${n.slice(0, 10)}T${n.slice(11, 13)}:${n.slice(14, 16)}:00`);
   const grenze = new Date(jetzt).getTime() - tage * 86400000;

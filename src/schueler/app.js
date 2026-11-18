@@ -190,7 +190,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine]]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -200,6 +200,12 @@ async function takt() {
       L.beendeHilferuf(z.stand, 'erledigt', jetzt()); geaendert(); z.dienst.sofort(); neu = true;
       z.hilfeErledigt = true;
       setTimeout(() => { z.hilfeErledigt = false; wurzel.querySelector('.hilfebanner.erledigt')?.remove(); }, 20000);
+    }
+    // Stand der Expedition höchstens jede Minute neu zählen, und nur auf der Startseite.
+    if (z.einst.expedition && z.ansicht.name === 'schlossgarten' && Date.now() - (z.klasseGelesen ?? 0) > 60000) {
+      const vorher = expeditionsSumme();
+      await ladeKlasse();
+      if (expeditionsSumme() !== vorher) neu = true;
     }
     if (z.stand.hilferuf) {
       const platz = L.wartePlatz(z.stand, await S.ladeAndereHilferufe(z.ablage, z.stand.code));
@@ -228,6 +234,8 @@ function schlossgarten() {
   z.einst = einstellungenJetzt();
   return h('section', {},
     etappenKarte(),
+    rueckblickKarte(),
+    expeditionKarte(),
     h('div', { class: 'schlosskopf' }, schlossBild(),
       h('h1', {}, 'Der Schlossgarten'),
       h('p', { class: 'unter' }, `Klasse ${z.pool.klassenstufe}: Hinter jedem Tor liegt eine Region des Königreichs. Wähle ein offenes Tor und erkunde die Region.`)),
@@ -264,6 +272,61 @@ function etappenKarte() {
     fertig
       ? h('button', { class: 'schlicht', id: 'weiter-wandern', onclick: () => zeige({ name: 'region', kapitel: k.id }) }, 'Zur Regionskarte')
       : h('button', { class: 'haupt', id: 'weiter-wandern', onclick: los }, 'Weiter wandern'));
+}
+
+// ---------- Rückblick (ADR 0014) ----------
+// Gemischte Aufgaben zu älteren Siegeln. Freiwillig, höchstens einmal am Tag. Siegel gehen nie verloren.
+function rueckblickKarte() {
+  const angebot = L.rueckblickAngebot(z.stand, z.index, jetzt());
+  if (!angebot) return null;
+  return h('div', { class: 'karte rueckblick', id: 'rueckblick' },
+    h('div', {},
+      h('span', { class: 'klein' }, 'Rückblick'),
+      h('h2', {}, angebot.art === 'fortsetzen' ? 'Dein Rückblick wartet' : 'Weißt du es noch?'),
+      h('p', {}, angebot.art === 'fortsetzen'
+        ? `Noch ${angebot.offen} ${angebot.offen === 1 ? 'Aufgabe' : 'Aufgaben'} aus deinem Rückblick.`
+        : 'Ein paar gemischte Aufgaben zu Lernzielen, die du schon geschafft hast. Wer regelmäßig zurückblickt, vergisst weniger. Deine Siegel behältst du in jedem Fall.')),
+    h('button', { class: 'haupt', id: 'rueckblick-start', onclick: starteRueckblick }, angebot.art === 'fortsetzen' ? 'Weitermachen' : 'Rückblick starten'));
+}
+function starteRueckblick() {
+  if (!z.stand.rueckblickAktiv && !L.stelleRueckblick(z.stand, z.index, z.einst.zielniveau, jetzt())) return male();
+  geaendert();
+  const id = L.naechsteRueckblickAufgabe(z.stand);
+  const aufgabe = id && z.index.aufgabe.get(id);
+  if (!aufgabe) { z.stand.rueckblickAktiv = null; geaendert(); return zeige({ name: 'schlossgarten' }); }
+  zeigeAufgabe(aufgabe, { rueckblick: true });
+}
+
+// ---------- Expedition (ADR 0014) ----------
+// Gemeinsames Ziel der Klasse. Jeder sieht den Stand der Klasse und nur seinen eigenen Beitrag.
+async function ladeKlasse() {
+  z.klasseGelesen = Date.now();
+  try { z.andere = await S.ladeAndereStaende(z.ablage, z.stand.code); } catch { /* beim nächsten Mal */ }
+}
+function expeditionsSumme() {
+  const ex = z.einst.expedition;
+  return ex ? L.expeditionsStand([z.stand, ...(z.andere ?? [])], ex, jetzt()).summe : 0;
+}
+function expeditionKarte() {
+  const ex = z.einst.expedition;
+  if (!ex) return null;
+  if (!z.andere && !z.klasseLaedt) { z.klasseLaedt = true; ladeKlasse().then(() => { z.klasseLaedt = false; if (z.ansicht.name === 'schlossgarten') male(); }); }
+  const st = L.expeditionsStand([z.stand, ...(z.andere ?? [])], ex, jetzt());
+  const meine = L.expeditionsZeichen(z.stand, ex);
+  const lohn = ex.belohnung === 'spielpause' ? 'eine Spielpause für alle' : 'die Expeditionsfahne fürs Wappen, für alle';
+  if (st.geschafft && L.holeBelohnung(z.stand, ex, jetzt())) geaendert();
+  const bis = new Date(`${ex.bis}T12:00:00`).toLocaleDateString('de-DE', { day: 'numeric', month: 'long' });
+  const anteil = Math.min(1, st.summe / ex.ziel);
+  return h('div', { class: `karte expedition${st.geschafft ? ' geschafft' : ''}`, id: 'expedition' },
+    h('span', { class: 'klein' }, `Expedition der Klasse ${z.stand.klasse}`),
+    h('h2', {}, st.geschafft ? 'Die Expedition ist geschafft!' : st.vorbei ? 'Die Expedition ist vorbei' : `Gemeinsam ${ex.ziel} Expeditionszeichen bis zum ${bis}`),
+    h('div', { class: 'expeditionsbalken', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': ex.ziel, 'aria-valuenow': Math.min(st.summe, ex.ziel), 'aria-label': 'Stand der Klasse' },
+      h('i', { style: `width:${Math.round(anteil * 100)}%` })),
+    h('p', { id: 'expedition-stand' }, h('b', {}, `Die Klasse hat ${Math.min(st.summe, ex.ziel)} von ${ex.ziel}.`), ` Davon ${meine === 1 ? 'ist 1 deins' : `sind ${meine} deine`}.`),
+    h('p', { class: 'klein' }, st.geschafft
+      ? (ex.belohnung === 'spielpause' ? 'Eure Belohnung ist eine Spielpause. Deine Lehrkraft schaltet sie frei.' : 'Eure Belohnung: Die Expeditionsfahne liegt jetzt bei deinem Wappen.')
+      : st.vorbei ? 'Das Ziel wurde diesmal nicht erreicht. Beim nächsten Mal klappt es.'
+        : `Jedes neue Siegel und jeder Rückblick bringt ein Zeichen. Belohnung: ${lohn}.`));
 }
 
 // Merkzettel des Meilensteins: Regeln, Beispiel, Hinweis fürs Heft. Frei zugänglich, kostet nichts.
@@ -357,10 +420,13 @@ function starteAufgabe(lernzielId, niveau) {
   // Die Kronenwahl beim ersten Start eines Meilensteins ist die Selbsteinschätzung.
   const ms = z.index.meilensteinVon.get(lernzielId);
   if (ms) L.merkeWahl(z.stand, z.index, ms, niveau, jetzt());
+  zeigeAufgabe(aufgabe);
+}
+function zeigeAufgabe(aufgabe, extra = {}) {
   z.stand.aktiv = { aufgabe: aufgabe.id, seit: jetzt(), fehlversuche: 0, hilfen: 0 };
   geaendert();
   zeige({ name: 'aufgabe', aufgabe, beginn: Date.now(), versuch: 0, hilfen: 0, eingaben: [], fehlvorstellungen: [], hinweis: null, ergebnis: null,
-    reihenfolge: aufgabe.format === 'zuordnen' ? mische(aufgabe.paare.map((p) => p.rechts)) : null });
+    reihenfolge: aufgabe.format === 'zuordnen' ? mische(aufgabe.paare.map((p) => p.rechts)) : null, ...extra });
 }
 
 function aufgabenAnsicht() {
@@ -375,9 +441,12 @@ function aufgabenAnsicht() {
     eingabefelder(auf, a, fertig),
     !fertig && h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'));
   return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
-    h('p', { class: 'pfad' }, h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, `← ${meilenstein.titel}`)),
+    h('p', { class: 'pfad' }, a.rueckblick
+      ? h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')
+      : h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, `← ${meilenstein.titel}`)),
     h('div', { class: 'karte' },
       h('div', { class: 'aufgabenkopf' },
+        a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
         training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
@@ -461,7 +530,8 @@ function pruefe(formular) {
     return male();
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
-    hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000) }, z.einst.zielniveau, jetzt(), z.index);
+    hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000) }, z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick) });
+  if (a.rueckblick) buchung.rueckblick = L.trageRueckblickEin(z.stand, auf, ergebnis.richtig, jetzt());
   buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
   a.ergebnis = { ...buchung, richtig: ergebnis.richtig };
@@ -490,6 +560,7 @@ function loesungstext(auf) {
 }
 
 function ergebnisTafel(a, kapitelId, meilenstein) {
+  if (a.rueckblick) return rueckblickErgebnis(a);
   const e = a.ergebnis, auf = a.aufgabe;
   const niveau = L.arbeitsniveau(z.stand, kapitelId, z.einst.zielniveau);
   const vorschlag = L.niveauVorschlag(z.stand, kapitelId, niveau);
@@ -521,6 +592,28 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
       h('button', { class: 'schlicht', onclick: () => { L.lehneVorschlagAb(z.stand, kapitelId); geaendert(); weiter(); } }, `Bei ${L.KRONEN[niveau]} bleiben`)),
     !vorschlag && h('button', { class: 'haupt', id: 'weiter', onclick: () => weiter() }, 'Nächste Aufgabe'),
     h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte'));
+}
+
+// „Rückblick 2 von 4“: Nach der letzten Aufgabe ist der laufende Rückblick schon abgeschlossen.
+function rueckblickNummer(a, fertig) {
+  const r = z.stand.rueckblickAktiv;
+  if (r) return `Rückblick ${Math.min(r.aufgaben.length, r.erledigt.length + (fertig ? 0 : 1))} von ${r.aufgaben.length}`;
+  const g = a.ergebnis?.rueckblick?.gesamt;
+  return g ? `Rückblick ${g} von ${g}` : 'Rückblick';
+}
+// Ergebnis einer Rückblick-Aufgabe: ohne Kronenvorschlag, danach die nächste Rückblick-Aufgabe oder die Bilanz.
+function rueckblickErgebnis(a) {
+  const e = a.ergebnis, auf = a.aufgabe, r = e.rueckblick;
+  const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
+  return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
+    h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
+    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. Dein Siegel behältst du. „${lernziel?.text ?? ''}“ kommt beim nächsten Rückblick noch einmal dran.`),
+    e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'),
+    r?.fertig && h('p', { class: 'lohn neu', id: 'rueckblick-fertig' }, h('b', {}, 'Rückblick geschafft!'), ` ${r.richtig} von ${r.gesamt} richtig.`,
+      z.einst.expedition && !L.expeditionsStand([z.stand], z.einst.expedition, jetzt()).vorbei ? ' Das bringt der Klasse ein Expeditionszeichen.' : ''),
+    r && !r.fertig
+      ? h('button', { class: 'haupt', id: 'weiter', onclick: starteRueckblick }, 'Nächste Aufgabe im Rückblick')
+      : h('button', { class: 'haupt', id: 'weiter', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Zum Schlossgarten'));
 }
 
 const kartenVon = (auf) => L.KARTEN.filter((feld) => auf.hilfen[feld]);
@@ -557,6 +650,7 @@ function wappenAnsicht() {
       h('b', {}, teil.name),
       gekauft
         ? h('button', { class: an ? 'haupt' : 'schlicht', 'data-teil': teil.id, onclick: () => { L.legeAn(z.stand, teil.id); geaendert(); male(); } }, teil.art === 'farbe' ? (an ? 'Gewählt' : 'Wählen') : (an ? 'Abnehmen' : 'Anbringen'))
+        : teil.expedition ? h('span', { class: 'klein' }, 'Belohnung einer geschafften Expedition')
         : rangFehlt ? h('span', { class: 'klein' }, `Ab Rang ${L.RAENGE[teil.rang].name}`)
           : h('button', { class: 'schlicht', 'data-teil': teil.id, disabled: z.stand.muenzen < teil.preis, onclick: () => { L.kaufe(z.stand, teil.id); L.legeAn(z.stand, teil.id); geaendert(); male(); } }, muenze(16), ` ${teil.preis} kaufen`));
   };

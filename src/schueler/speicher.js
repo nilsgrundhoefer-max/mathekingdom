@@ -106,15 +106,19 @@ export async function ladeKlassendatei(ablage) {
   return { daten, status: daten ? 'ok' : 'ungueltig' };
 }
 
-// Offene Hilferufe der anderen Schüler der Klasse, für den Platz in der Warteschlange.
-export async function ladeAndereHilferufe(ablage, eigenerCode) {
-  const rufe = [];
+// Speicherstände der anderen Schüler der Klasse (nur lesen).
+export async function ladeAndereStaende(ablage, eigenerCode) {
+  const staende = [];
   for (const name of await ablage.liste()) {
     if (!/^\d{1,2}[A-Z]-[A-Z0-9]{4}\.json$/.test(name) || name === `${eigenerCode}.json`) continue;
     const stand = liesJson(await ablage.lies(name).catch(() => null));
-    if (stand?.hilferuf) rufe.push(stand.hilferuf);
+    if (stand) staende.push(stand);
   }
-  return rufe;
+  return staende;
+}
+// Offene Hilferufe der anderen Schüler der Klasse, für den Platz in der Warteschlange.
+export async function ladeAndereHilferufe(ablage, eigenerCode) {
+  return (await ladeAndereStaende(ablage, eigenerCode)).map((s) => s.hilferuf).filter(Boolean);
 }
 
 // Speichert höchstens alle `intervall` Millisekunden, und nur wenn sich etwas geändert hat.

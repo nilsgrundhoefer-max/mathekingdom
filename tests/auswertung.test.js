@@ -296,3 +296,11 @@ test('Selbsteinschätzung: Tendenz ab drei Meilensteinen, Impuls nach dreimal un
   assert.equal(impuls.length, 1);
   assert.equal(impuls[0].naechstes, 'E');
 });
+
+test('Lernzielstand: Siegel mit Fehler im Rückblick ist aufzufrischen und zählt weiter als Siegel', () => {
+  const stand = { lernziele: { 'x-1': { erreichtAm: '2026-11-01T10:00:00Z' } }, versuche: [], rueckblick: { 'x-1': { stufe: 0, aufzufrischen: true } } };
+  assert.equal(A.lernzielZustand(stand, 'x-1'), 'aufzufrischen');
+  assert.ok(A.hatSiegel('aufzufrischen'));
+  stand.rueckblick['x-1'].aufzufrischen = false;
+  assert.equal(A.lernzielZustand(stand, 'x-1'), 'siegel');
+});
