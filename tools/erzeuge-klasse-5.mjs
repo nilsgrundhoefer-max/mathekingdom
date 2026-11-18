@@ -14,10 +14,11 @@ import { klammern } from './aufgaben/5-3-4-klammern.mjs';
 import { rechengesetze } from './aufgaben/5-3-5-rechengesetze.mjs';
 import { einmaleins } from './aufgaben/5-4-1-einmaleins.mjs';
 import { dividieren } from './aufgaben/5-4-5-dividieren.mjs';
+import { multiplizieren } from './aufgaben/5-4-2-multiplizieren.mjs';
 
 const ERZEUGER = [
   [53153153, kopfrechnen], [53253253, addieren], [53353353, subtrahieren], [53453453, klammern], [53553553, rechengesetze],
-  [54154154, einmaleins], [54554554, dividieren],
+  [54154154, einmaleins], [54254254, multiplizieren], [54554554, dividieren],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

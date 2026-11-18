@@ -57,7 +57,9 @@ export function dividieren() {
     1: (k) => {
       const [a, d, q] = ungleich(3, 9, 3, 9);
       const hilfen = h3('Das Ergebnis einer Geteilt-Aufgabe heißt Quotient.', '20 : 4 = 5. Der Quotient ist 5.', `Du rechnest ${a} : ${d}. Das Ergebnis ist der Quotient.`);
-      if (k === 0) return auswahl(Z(`${a} : ${d} = ${q}`, `Wie heißt die Zahl ${q}?`), [opt('Quotient', true), opt('Summe', false, 'begriffe-verwechselt'), opt('Produkt', false, 'begriffe-verwechselt')], hilfen, { nachweis: N(`${a} : ${d}`) });
+      if (k === 0) { const [gesucht, name] = wahl([[a, 'Dividend'], [d, 'Divisor']]);
+        return auswahl(Z(`${a} : ${d} = ${q}`, `Wie heißt die Zahl ${gesucht}?`), ['Dividend', 'Divisor', 'Quotient'].map((n) => opt(n, n === name, n === name ? undefined : 'begriffe-verwechselt')),
+          h3('Der Dividend wird geteilt. Der Divisor teilt. Der Quotient ist das Ergebnis.', '20 : 4 = 5. Der Dividend ist 20. Der Divisor ist 4.', `Die Zahl ${a} wird geteilt. Durch die Zahl ${d} wird geteilt.`), { nachweis: N(`${a} : ${d}`) }); }
       if (k === 1) return zahl(Z('Berechne den Quotienten.', `${a} : ${d}`), q, efehler(q), hilfen, { bild: B.feld(q, d), nachweis: N(`${a} : ${d}`) });
       return luecken(Z(`${a} : ${d} = ${q}`, 'Der Quotient ist {{x}}.'), { x: [q, fehlerliste(q, [[a, 'begriffe-verwechselt'], [d, 'begriffe-verwechselt']])] }, hilfen, { bild: B.feld(q, d), nachweis: N(`${a} : ${d}`) });
     },
@@ -271,7 +273,7 @@ export function dividieren() {
       return zahl(Z(`${d} Kinder zahlen zusammen ${a} € für einen Ausflug.`, 'Alle zahlen gleich viel.', 'Wie viel Euro zahlt 1 Kind?'), q, fehlerliste(q, [[a - d, 'div-falsche-rechenart'], [q * 10, 'div-stellenwert']]),
         h3('Das Geld wird gerecht aufgeteilt. Du musst teilen.', '20 Kinder zahlen zusammen 100 €. 100 : 20 = 5. Jedes Kind zahlt 5 €.', `Rechne ${a} : ${d}. Teile erst durch 10, dann durch ${d / 10}.`), { einheit: '€', bild: B.material(hze(a)), nachweis: N(`${a} : ${d}`) });
     },
-    3: () => { const [d, q] = suche(() => [zz(2, 6) * 10, zz(2, 9) * 10], ([x, y]) => x * y <= 1000), a = d * q, k = kind();
+    3: () => { const [d, q] = suche(() => [zz(2, 6) * 10, zz(2, 9) * 10], ([x, y]) => x * y <= 1000 && x !== y), a = d * q, k = kind();
       return auswahl(Z(`${k} rechnet: ${a} : ${d} = ${q / 10}.`, 'Prüfe mit der Mal-Aufgabe.', 'Stimmt das?'),
         [opt(`Falsch. ${q / 10} · ${d} = ${q / 10 * d}. Richtig ist ${q}.`, true), opt(`Stimmt. ${q / 10} · ${d} = ${a}.`, false, 'div-stellenwert'), opt(`Falsch. Richtig ist ${q * 10}.`, false, 'div-stellenwert')],
         h3('Die Mal-Aufgabe prüft: Ergebnis mal zweite Zahl muss die erste Zahl ergeben.', '600 : 20 = 3? Prüfe: 3 · 20 = 60. Das ist nicht 600. Richtig ist 30.', `Rechne ${q / 10} · ${d}. Kommt ${a} heraus?`), { nachweis: N(U(false, `${a} : ${d}`, q / 10), `${q / 10} · ${d}`, `${a} : ${d}`) }); },

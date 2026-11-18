@@ -579,11 +579,27 @@ function eingabefelder(auf, a, gesperrt) {
       zeichne();
       return h('div', { class: 'mitbild' }, rahmen, wert, !gesperrt && h('p', { class: 'klein' }, 'Tippe auf den passenden Teilstrich.'));
     }
-    case 'tabelle': return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
+    case 'tabelle': {
+      const t = auf.tabelle;
+      const feld = (c) => zahlfeld(`luecke-${c.luecke}`, null, letzte?.[c.luecke]);
+      // Zahlenmauer: Steine in Reihen, in die leeren Steine wird direkt eingetragen.
+      if (t.art === 'mauer') return h('div', { class: 'bildrahmen' }, h('div', { class: `mauer${t.rechenart === '·' ? ' malmauer' : ''}`, role: 'group', 'aria-label': t.rechenart === '·' ? 'Mal-Mauer' : 'Zahlenmauer' },
+        t.zeilen.map((reihe) => h('div', { class: 'mauerreihe' }, reihe.map((c) => h('span', { class: `stein${typeof c === 'object' ? ' offen' : ''}` }, typeof c === 'object' ? feld(c) : c))))));
+      // Malkreuz: Zerlegung oben und links, Teilprodukte in den Feldern, darunter die Summe.
+      if (t.art === 'malkreuz') return h('div', { class: 'bildrahmen' }, h('table', { class: 'aufgabentabelle malkreuz' },
+        h('thead', {}, h('tr', {}, t.kopf.map((k, i) => h('th', { scope: 'col', class: i === 0 ? 'zeichen' : '' }, k)))),
+        h('tbody', {}, t.zeilen.map((zeile) => h('tr', {}, zeile.map((c, i) => (i === 0 ? h('th', { scope: 'row' }, c) : h('td', {}, typeof c === 'object' ? feld(c) : c))))))),
+        h('p', { class: 'malkreuzsumme' }, `${t.rechnung.faktoren[0]} · ${t.rechnung.faktoren[1]} = `, feld({ luecke: t.rechnung.summe })));
+      // Rechenraster beim Multiplizieren: wie im Heft, ohne Kopfzeile; Striche unter der Aufgabe und über dem Ergebnis.
+      if (t.art === 'raster' && t.rechnung?.zeichen === '·') return h('div', { class: 'bildrahmen' }, h('table', { class: 'aufgabentabelle raster malraster' },
+        h('tbody', {}, t.zeilen.map((zeile, r) => h('tr', { class: r === 0 ? 'aufgabe' : r === t.zeilen.length - 1 ? 'ergebnis' : 'teil' }, zeile.map((c) => h('td', {},
+          typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c)))))));
+      return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
       h('thead', {}, h('tr', {}, auf.tabelle.kopf.map((k) => h('th', { scope: 'col' }, k)))),
       h('tbody', {}, auf.tabelle.zeilen.map((zeile) => h('tr', {}, zeile.map((zelle, i) => (typeof zelle === 'object'
         ? h('td', {}, auf.tabelle.art === 'raster' ? ziffernfeld(`luecke-${zelle.luecke}`, letzte?.[zelle.luecke], String(auf.luecken[zelle.luecke].loesung).length > 1 ? 2 : 1) : zahlfeld(`luecke-${zelle.luecke}`, null, letzte?.[zelle.luecke]))
         : h(i === 0 ? 'th' : 'td', i === 0 ? { scope: 'row' } : {}, zelle))))))));
+    }
     default: return null;
   }
 }

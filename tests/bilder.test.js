@@ -55,6 +55,12 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
     } else if (b.art === 'punktefeld') {
       assert.equal(svg.klasse('plaettchen').length, b.reihen * b.spalten, a.id);
       assert.equal(svg.klasse('trennlinie').length, b.trenn ? 1 : 0, a.id);
+    } else if (b.art === 'quadratbild') {
+      assert.equal(svg.klasse('kaestchen').length, b.seite * b.seite * (b.schichten ?? 1), a.id);
+    } else if (b.art === 'paeckchen') {
+      assert.equal(svg.klasse('paeckchen').length, b.paeckchen, a.id);
+      assert.equal(p('hell'), b.paeckchen * b.je, a.id);
+      assert.equal(p('voll'), b.einzeln ?? 0, a.id);
     } else if (b.art === 'zehnermaterial') {
       assert.equal(svg.klasse('platte').length, b.h ?? 0, a.id);
       assert.equal(svg.klasse('stange').length, b.z ?? 0, a.id);

@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (600 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (720 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -45,7 +45,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 
 - `01` AFB I · Rechne im Kopf: 290 + 360 Lösung: **650**. Typische Fehler: 550 (add-uebertrag-vergessen).
 - `02` AFB II · ▢ + 180 = 810 Lösung: a = **630**
-- `03` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Untere Reihe: 46, 30, 19. Mittlere Reihe: ▢, ▢. Oberster Stein: ▢. Lösung: a = **76**, b = **49**, c = **125**
+- `03` AFB II · Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ **125** / **76** · **49** / 46 · 30 · 19
 - `04` AFB I · Rechne im Kopf: 660 + 65 Lösung: **725**. Typische Fehler: 1310 (kopf-stellenwert).
 - `05` AFB II · Rechenkette: 220 + 140 = ▢, dann + 95 = ▢, dann + ▢ = 600. Lösung: a = **360**, b = **455**, c = **145**
 - `06` AFB III · „Die Summe von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
@@ -59,7 +59,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere schrittweise: erst die Hunderter, dann die Zehner, dann die Einer.
 
 - `01` AFB I · Rechne im Kopf: 279 + 138 Lösung: **417**. Typische Fehler: 307 (add-uebertrag-vergessen).
-- `02` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Untere Reihe: 55, ▢, 35. Mittlere Reihe: 94, ▢. Oberster Stein: ▢. Lösung: a = **39**, b = **74**, c = **168**
+- `02` AFB II · Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ **168** / 94 · **74** / 55 · **39** · 35
 - `03` AFB II · Entscheide ohne zu rechnen: Welche Aufgabe hat das größte Ergebnis?
   - ☑ 574 + 277, denn der erste Summand ist gleich geblieben und der zweite ist am größten
   - ☐ 574 + 274, denn die Zahlen sind am einfachsten
@@ -118,7 +118,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 - `02` AFB II · Abziehen oder ergänzen? Rechne geschickt: 706 − 699 = ▢ und 1005 − 993 = ▢ Lösung: a = **7**, b = **12**
 - `03` AFB II · Rechenkette: 900 − 280 = ▢, dann − ▢ = 500, dann − 125 = ▢. Lösung: a = **620**, b = **120**, c = **375**
 - `04` AFB I · Rechne im Kopf: 850 − 275 Lösung: **575**. Typische Fehler: 585 (ergaenzen-zu-viel), 1125 (sub-addiert).
-- `05` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Oberster Stein: 107. Mittlere Reihe: 58, ▢. Untere Reihe: 35, ▢, ▢. Lösung: a = **49**, b = **23**, c = **26**
+- `05` AFB II · Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ 107 / 58 · **49** / 35 · **23** · **26**
 - `06` AFB III · „Die Differenz von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
   - ☐ Falsch. Ungerade minus ungerade bleibt ungerade.
   - ☐ Das stimmt nur, wenn die Differenz kleiner als 10 ist.
@@ -130,7 +130,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Subtrahiere schrittweise: erst die Hunderter, dann die Zehner, dann die Einer.
 
 - `01` AFB I · Rechne im Kopf: 554 − 196 Lösung: **358**. Typische Fehler: 442 (sub-kleiner-von-groesser), 750 (sub-addiert).
-- `02` AFB II · Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Oberster Stein: 605. Mittlere Reihe: ▢, 245. Untere Reihe: ▢, ▢, 126. Lösung: a = **360**, b = **241**, c = **119**
+- `02` AFB II · Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ 605 / **360** · 245 / **241** · **119** · 126
 - `03` AFB II · Entscheide ohne zu rechnen: Welche Differenz ist am größten?
   - ☐ 754 − 255, denn die Zahlen wurden nicht verändert
   - ☐ Alle Differenzen sind gleich groß.
@@ -1595,6 +1595,482 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du das Teilen rückgängig
   - ☐ Das Ergebnis wird immer um 10 kleiner.
   - ☐ Das Ergebnis bleibt gleich.
 
+## 5.4.2-M1: Ich kann die Fachbegriffe Faktor und Produkt verwenden.
+
+Grundlage, die F übt: Mal-Aufgaben im Punktefeld: Reihen, Punkte in einer Reihe, alle Punkte
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Reihen. Zähle die Punkte in 1 Reihe. Rechne dann mal. *Beispiel:* 3 Reihen mit je 4 Punkten: 3 · 4 = 12. *Lösungsschritt:* Es sind 4 Reihen mit je 8 Punkten. Rechne 4 · 8.
+
+- `01` AFB I · Im Bild sind Reihen mit Punkten. / Wie viele Punkte sind es zusammen? _(Bild: Punktefeld mit 4 Reihen zu je 8 Punkten)_ Lösung: **32**. Typische Fehler: 12 (1x1-addiert), 24 (1x1-nachbar).
+- `02` AFB I · Im Bild sind 3 Reihen. / In jeder Reihe sind 8 Punkte. / Welche Mal-Aufgabe passt? _(Bild: Punktefeld mit 3 Reihen zu je 8 Punkten)_
+  - ☐ 3 + 8
+  - ☐ 3 · 9
+  - ☑ 3 · 8
+- `03` AFB I · Es gibt 2 Tüten. / In jeder Tüte sind 6 Murmeln. / Wie viele Murmeln sind es zusammen? _(Bild: 2 Gruppen mit je 6 Plättchen)_ Lösung: **12 Murmeln**. Typische Fehler: 8 (1x1-addiert).
+- `04` AFB I · Rechne. / 2 · 6 _(Bild: Punktefeld mit 2 Reihen zu je 6 Punkten)_ Lösung: **12**. Typische Fehler: 8 (1x1-addiert), 18 (1x1-nachbar).
+- `05` AFB II · Welche Zahl fehlt? / 4 · ▢ = 12 _(Bild: Punktefeld mit 4 Reihen zu je 3 Punkten)_ Lösung: **3**. Typische Fehler: 8 (1x1-addiert), 4 (1x1-nachbar).
+- `06` AFB I · 5 · 7 / Was kommt heraus? _(Bild: Punktefeld mit 5 Reihen zu je 7 Punkten)_
+  - ☐ 12
+  - ☐ 28
+  - ☑ 35
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Faktor mal Faktor ergibt das Produkt. *Beispiel:* Bei 4 · 5 = 20 sind 4 und 5 die Faktoren. 20 ist das Produkt. *Lösungsschritt:* Rechne 3 · 6. Das Ergebnis heißt Produkt.
+
+- `01` AFB I · 3 · 6 = 18 / Wie heißt die Zahl 18?
+  - ☐ Faktor
+  - ☐ Summe
+  - ☑ Produkt
+- `02` AFB I · Berechne das Produkt. / 3 · 4 _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_ Lösung: **12**. Typische Fehler: 7 (begriffe-verwechselt).
+- `03` AFB II · Die Faktoren sind 12 und 6. / Das Produkt ist ▢. Lösung: x = **72**
+- `04` AFB I · 4 · 6 = 24 / Der zweite Faktor ist ▢. Lösung: x = **6**
+- `05` AFB II · Das Produkt ist 72. / Ein Faktor ist 8. / Wie heißt der andere Faktor? _(Bild: Punktefeld mit 9 Reihen zu je 8 Punkten)_ Lösung: **9**. Typische Fehler: 64 (begriffe-verwechselt), 10 (1x1-nachbar).
+- `06` AFB III · Paul sagt: / „Das Produkt ist immer größer als jeder Faktor.“ / Prüfe mit 7 · 1. / Stimmt das? _(Bild: Punktefeld mit 1 Reihen zu je 7 Punkten)_
+  - ☑ Falsch. / 7 · 1 = 7. / Das Produkt ist hier genauso groß wie der Faktor 7.
+  - ☐ Stimmt. / 7 · 1 = 8.
+  - ☐ Stimmt. / Beim Malnehmen wird es immer mehr.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Faktoren werden malgenommen, das Produkt ist das Ergebnis. *Lösungsschritt:* 112 ist das Ergebnis von 28 · 4.
+
+- `01` AFB I · In der Aufgabe 28 · 4 = 112: Wie heißt die Zahl 28?
+  - ☐ Quotient
+  - ☐ Produkt
+  - ☐ Summand
+  - ☑ Faktor
+- `02` AFB II · Ein Faktor ist 18, das Produkt ist 90. Wie heißt der andere Faktor? Lösung: **5**. Typische Fehler: 72 (begriffe-verwechselt).
+- `03` AFB II · Multipliziere die Summe von 20 und 30 mit 7. Lösung: **350**. Typische Fehler: 230 (punkt-vor-strich), 57 (begriffe-verwechselt).
+- `04` AFB I · Der erste Faktor ist 14, der zweite Faktor ist 3. Berechne das Produkt. Lösung: **42**. Typische Fehler: 17 (begriffe-verwechselt).
+- `05` AFB II · Das Produkt zweier Zahlen ist 42. Ein Faktor ist das Doppelte von 3. Wie heißt der andere Faktor? Lösung: **7**. Typische Fehler: 14 (sach-schritt-vergessen).
+- `06` AFB III · Paul sagt: „Bei 6 · 8 = 48 nennt man 48 Faktor.“ Mara sagt: „48 nennt man Produkt.“ Wer hat recht?
+  - ☐ Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor.
+  - ☐ Keiner. 48 nennt man Summe.
+  - ☐ Beide. Faktor und Produkt bedeuten dasselbe.
+  - ☑ Mara. 48 ist das Ergebnis der Mal-Aufgabe. Die Faktoren sind 6 und 8.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fasse die beiden bekannten Faktoren zuerst zusammen.
+
+- `01` AFB I · Das Produkt von drei Faktoren ist 40. Zwei Faktoren sind 2 und 5. Wie heißt der dritte Faktor? Lösung: **4**. Typische Fehler: 33 (begriffe-verwechselt).
+- `02` AFB II · Wie viele Mal-Aufgaben mit zwei natürlichen Zahlen haben das Produkt 48? Zähle Tauschaufgaben wie 6 · 8 und 8 · 6 einzeln. Lösung: **10**. Typische Fehler: 5 (begriffe-verwechselt).
+- `03` AFB II · Setze die beiden Faktoren ein. Beide sind größer als 1, der erste ist kleiner als der zweite: ▢ · ▢ = 77 Lösung: a = **7**, b = **11**
+- `04` AFB III · Beide Faktoren werden verdoppelt. Was passiert mit dem Produkt? Prüfe an 3 · 7.
+  - ☐ Es bleibt gleich.
+  - ☐ Das hängt von den Zahlen ab.
+  - ☐ Es wird doppelt so groß.
+  - ☑ Es wird 4-mal so groß, denn 2 · 2 = 4. 3 · 7 = 21 und 6 · 14 = 84.
+  - ☐ Es wird um 4 größer.
+- `05` AFB II · Ein Faktor wird verdoppelt, der andere bleibt gleich. Vorher war das Produkt 64. Wie groß ist das Produkt jetzt? Lösung: **128**. Typische Fehler: 66 (begriffe-verwechselt), 256 (mal-stellenwert).
+- `06` AFB III · Jonas sagt: „Ein Produkt ist schon dann gerade, wenn ein Faktor gerade ist.“ Sara sagt: „Nur wenn beide Faktoren gerade sind.“ Wer hat recht?
+  - ☐ Sara. 8 · 3 ist ungerade, weil 3 ungerade ist.
+  - ☐ Keiner. 3 · 3 = 9 ist ungerade.
+  - ☑ Jonas. Ein gerader Faktor ist ein Doppeltes. Dann ist auch das Produkt ein Doppeltes, zum Beispiel 8 · 3 = 24.
+  - ☐ Beide. Es kommt auf die Zahlen an.
+
+## 5.4.2-M2: Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.
+
+Grundlage, die F übt: Malkreuz mit Zehnern und Einern, Einmaleins bis 12 · 12
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm beide Teile mal. Rechne dann zusammen. *Beispiel:* 3 · 12: 3 · 10 = 30 und 3 · 2 = 6. Zusammen 36. *Lösungsschritt:* 5 · 20 = 100. Rechne jetzt 5 · 7.
+
+- `01` AFB I · Rechne 5 · 27 mit dem Malkreuz. / Zerlege 27 in 20 und 7. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 20 | 7 |
+  |---|---|---|
+  | 5 | **100** | **35** |
+
+  5 · 27 = **135**
+
+- `02` AFB I · Rechne 4 · 21. / Ein Feld ist schon ausgefüllt. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 20 | 1 |
+  |---|---|---|
+  | 4 | 80 | **4** |
+
+  4 · 21 = **84**
+
+- `03` AFB I · Rechne. / 4 · 30 / Jeder Punkt im Bild ist ein Zehner. _(Bild: Punktefeld mit 4 Reihen zu je 3 Punkten)_ Lösung: **120**. Typische Fehler: 12 (mal-stellenwert), 34 (1x1-addiert).
+- `04` AFB I · Du rechnest 4 · 35 mit dem Malkreuz. / Wie zerlegst du 35? _(Bild: Zehnermaterial: 3 Zehnerstangen, 5 Einerwürfel)_
+  - ☑ 30 und 5
+  - ☐ 3 und 5
+  - ☐ 30 und 6
+- `05` AFB II · Rechne 12 · 8 mit dem Malkreuz. / Zerlege 12 in 10 und 2. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 8 |
+  |---|---|
+  | 10 | **80** |
+  | 2 | **16** |
+
+  12 · 8 = **96**
+
+- `06` AFB I · Rechne. / 2 · 39 / Zerlege 39 in 30 und 9. _(Bild: Zehnermaterial: 3 Zehnerstangen, 9 Einerwürfel)_ Lösung: **78**. Typische Fehler: 69 (mal-zerlegung-halb), 41 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne bei den Einern. Den Zehner merkst du dir für die nächste Stelle. *Beispiel:* 213 · 4: 3 · 4 = 12, schreibe 2, merke 1. 1 · 4 + 1 = 5. 2 · 4 = 8. Ergebnis 852. *Lösungsschritt:* Beginne mit 9 · 6 = 54.
+
+- `01` AFB I · Rechne schriftlich. / 729 · 6  _(Rechenraster wie im Heft, hier mit Lösung)_
+
+```
+7 2 9 · 6
+  4 3 7 4
+```
+
+- `02` AFB I · Rechne schriftlich. / Achte auf die Null. / 507 · 8  _(Rechenraster wie im Heft, hier mit Lösung)_
+
+```
+5 0 7 · 8
+  4 0 5 6
+```
+
+- `03` AFB II · Rechne 120 · 12 mit dem Malkreuz. / Zerlege 12 in 10 und 2. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 2 |
+  |---|---|---|
+  | 120 | **1200** | **240** |
+
+  120 · 12 = **1440**
+
+- `04` AFB I · Rechne schriftlich im Heft. / 342 · 7 Lösung: **2394**. Typische Fehler: 184 (mal-uebertrag-vergessen), 349 (1x1-addiert).
+- `05` AFB II · Welche Ziffer fehlt? / 3▢6 · 8 = 3088 Lösung: a = **8**
+- `06` AFB III · Ben rechnet: 202 · 5 = 110. / Stimmt das?
+  - ☐ Falsch. / Richtig ist 1100.
+  - ☑ Falsch. / Richtig ist 1010. / Ben hat die Null vergessen.
+  - ☐ Stimmt. / 202 · 5 = 110.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Auch eine Null wird malgenommen: 0 mal eine Zahl ist 0, dazu kommt der Übertrag. *Lösungsschritt:* Beginne mit 4 · 5 = 20.
+
+- `01` AFB I · Rechne schriftlich. Achte auf die Null im ersten Faktor.  _(Rechenraster wie im Heft, hier mit Lösung)_
+
+```
+6 0 5 4 · 5
+  3 0 2 7 0
+```
+
+- `02` AFB II · Rechne schriftlich: 4205 · 9 Lösung: **37845**. Typische Fehler: 3825 (mal-null-vergessen), 6805 (mal-uebertrag-vergessen).
+- `03` AFB II · Welche Ziffern fehlen? 2▢2 · ▢ = 2628 Lösung: a = **9**, b = **9**
+- `04` AFB I · Berechne 189 · 12. Lösung: **2268**. Typische Fehler: 1892 (mal-zerlegung-halb), 378 (mal-stellenwert).
+- `05` AFB II · Ben rechnet 3 · 2563 und erhält 6589. Gib das richtige Ergebnis an. Lösung: **7689**. Typische Fehler: 6589 (mal-uebertrag-vergessen).
+- `06` AFB III · Lina rechnet 704 · 7 = 4928. Elif rechnet 704 · 7 = 518. Wer hat recht?
+  - ☐ Elif. Die Null zählt beim Malnehmen nicht.
+  - ☐ Keiner. Richtig ist 49 280.
+  - ☐ Beide. Die Ziffern sind fast gleich.
+  - ☑ Lina. 700 · 7 = 4900 und 4 · 7 = 28. Zusammen 4928.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Stelle für Stelle und schreibe jeden Übertrag auf.
+
+- `01` AFB I · Rechne schriftlich: 8 · 68 086 Lösung: **544688**. Typische Fehler: 55088 (mal-null-vergessen), 84048 (mal-uebertrag-vergessen).
+- `02` AFB II · Welche Ziffern fehlen? ▢▢ · 7 = 8▢ Lösung: a = **1**, b = **2**, c = **4**
+- `03` AFB II · Mit welcher einstelligen Zahl musst du 2604 multiplizieren, um 23 436 zu erhalten? Lösung: **9**. Typische Fehler: 10 (1x1-nachbar).
+- `04` AFB III · Wie viele Stellen kann das Produkt einer dreistelligen und einer einstelligen Zahl haben? Wähle die Antwort mit der richtigen Begründung.
+  - ☐ 3, 4 oder 5 Stellen, denn 999 · 9 ist fast 10 000.
+  - ☑ 3 oder 4 Stellen. Das kleinste Produkt ist 100 · 1 = 100, das größte ist 999 · 9 = 8991.
+  - ☐ Immer 3 Stellen, denn die größere Zahl hat 3 Stellen.
+  - ☐ Immer 4 Stellen, denn 3 + 1 = 4.
+  - ☐ Das kann man nicht sagen.
+- `05` AFB II · Mit welcher einstelligen Zahl musst du 3322 multiplizieren, um 29 898 zu erhalten? Lösung: **9**. Typische Fehler: 10 (1x1-nachbar).
+- `06` AFB III · Welches Produkt ist am größten? Entscheide zuerst mit einem Überschlag und prüfe dann genau.
+  - ☐ 8 · 6734
+  - ☑ 9 · 6075
+  - ☐ 5 · 2610
+  - ☐ 6 · 3687
+
+## 5.4.2-M3: Ich kann schriftlich mit einer mehrstelligen Zahl multiplizieren.
+
+Grundlage, die F übt: Malkreuz mit Zehnern und Einern bei beiden Zahlen, kleine Zahlen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jedes Feld aus. Addiere dann alle Felder. *Beispiel:* 13 · 11: 10 · 10 = 100, 10 · 1 = 10, 3 · 10 = 30, 3 · 1 = 3. Zusammen 143. *Lösungsschritt:* Beginne mit 10 · 10 = 100.
+
+- `01` AFB I · Rechne 12 · 11 mit dem Malkreuz. / Zerlege beide Zahlen in Zehner und Einer. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 1 |
+  |---|---|---|
+  | 10 | **100** | **10** |
+  | 2 | **20** | **2** |
+
+  12 · 11 = **132**
+
+- `02` AFB I · Rechne 11 · 11. / Zwei Felder sind schon ausgefüllt. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 1 |
+  |---|---|---|
+  | 10 | 100 | 10 |
+  | 1 | **10** | **1** |
+
+  11 · 11 = **121**
+
+- `03` AFB I · Rechne. / 10 · 11 _(Bild: Punktefeld mit 10 Reihen zu je 11 Punkten)_ Lösung: **110**. Typische Fehler: 11 (mal-stellenwert), 21 (1x1-addiert).
+- `04` AFB I · 12 · 12 = 10 · 12 + 2 · 12 / Was ist 2 · 12? _(Bild: Punktefeld mit 12 Reihen zu je 12 Punkten, Trennlinie nach 10 Reihen)_
+  - ☐ 14
+  - ☐ 120
+  - ☑ 24
+- `05` AFB II · Rechne 13 · 11 mit dem Malkreuz. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 10 | 1 |
+  |---|---|---|
+  | 10 | **100** | **10** |
+  | 3 | **30** | **3** |
+
+  13 · 11 = **143**
+
+- `06` AFB I · Rechne. / 11 · 12 _(Bild: Punktefeld mit 11 Reihen zu je 12 Punkten, Trennlinie nach 10 Reihen)_ Lösung: **132**. Typische Fehler: 121 (mal-zerlegung-halb), 23 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne für jede Ziffer des zweiten Faktors ein Teilprodukt. Es endet unter dieser Ziffer. Addiere dann. *Beispiel:* 41 · 32: 41 · 3 = 123, darunter 41 · 2 = 82, um eine Stelle nach rechts. Zusammen 1312. *Lösungsschritt:* Das erste Teilprodukt ist 82 · 6 = 492.
+
+- `01` AFB I · Rechne schriftlich. / 82 · 65  _(Rechenraster wie im Heft, hier mit Lösung)_
+
+```
+8 2 · 6 5
+  4 9 2  
+    4 1 0
+  5 3 3 0
+```
+
+- `02` AFB I · Die Teilprodukte stehen schon da. / Addiere sie zum Ergebnis. / 98 · 19  _(Rechenraster wie im Heft, hier mit Lösung)_
+
+```
+9 8 · 1 9
+    9 8  
+    8 8 2
+  1 8 6 2
+```
+
+- `03` AFB II · Rechne 31 · 41 mit dem Malkreuz. _(Malkreuz; fett = Eingabefeld)_
+
+  | · | 40 | 1 |
+  |---|---|---|
+  | 30 | **1200** | **30** |
+  | 1 | **40** | **1** |
+
+  31 · 41 = **1271**
+
+- `04` AFB I · Rechne schriftlich im Heft. / 64 · 14 Lösung: **896**. Typische Fehler: 320 (mal-nicht-eingerueckt), 256 (sach-schritt-vergessen).
+- `05` AFB II · Rechne 74 · 77 in Schritten. / 74 · 70 = ▢ / 74 · 7 = ▢ / 74 · 77 = ▢ Lösung: a = **5180**, b = **518**, c = **5698**
+- `06` AFB III · Finn rechnet 31 · 41 so: / 31 · 4 = 124 / 31 · 1 = 31 / 124 + 31 = 155 / Stimmt das?
+  - ☐ Stimmt. / Alle Rechnungen sind richtig.
+  - ☑ Falsch. / Es ist 31 · 40 = 1240. / Richtig ist 1271.
+  - ☐ Falsch. / Richtig ist 1550.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Je Ziffer des zweiten Faktors ein Teilprodukt, jedes endet unter seiner Ziffer. Dann addieren. *Lösungsschritt:* Das erste Teilprodukt ist 718 · 6 = 4308.
+
+- `01` AFB I · Rechne schriftlich: 718 · 65  _(Rechenraster wie im Heft, hier mit Lösung)_
+
+```
+7 1 8 · 6 5
+  4 3 0 8  
+    3 5 9 0
+  4 6 6 7 0
+```
+
+- `02` AFB II · Rechne schriftlich: 105 · 68 Lösung: **7140**. Typische Fehler: 1470 (mal-nicht-eingerueckt), 1020 (mal-null-vergessen).
+- `03` AFB II · Mia rechnet 579 · 82 = 5790. Welchen Fehler hat Mia gemacht?
+  - ☐ Mia hat richtig gerechnet.
+  - ☑ Mia hat die Teilprodukte nicht stellengerecht untereinandergeschrieben. Richtig ist 47 478.
+  - ☐ Mia hat sich bei 579 · 8 verrechnet.
+  - ☐ Mia hat einen Übertrag vergessen.
+- `04` AFB I · Berechne 52 · 903. Lösung: **46956**. Typische Fehler: 4836 (mal-null-vergessen).
+- `05` AFB II · Welche Ziffern fehlen? 6▢ · 4▢ = 2967 Lösung: a = **9**, b = **3**
+- `06` AFB III · Paul rechnet 259 · 71 = 18 389. Lena rechnet 259 · 71 = 2072. Wer hat recht?
+  - ☐ Lena. Die Teilprodukte werden einfach addiert.
+  - ☑ Paul. Überschlag: 300 · 70 = 21 000. Dazu passt nur 18 389.
+  - ☐ Keiner. Richtig ist 183 890.
+  - ☐ Beide. Die Teilprodukte sind bei beiden gleich.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache zuerst einen Überschlag, damit du dein Ergebnis prüfen kannst.
+
+- `01` AFB I · Rechne schriftlich: 2437 · 77 Lösung: **187649**. Typische Fehler: 34118 (mal-nicht-eingerueckt).
+- `02` AFB II · Rechne schriftlich: 471 · 330 Lösung: **155430**. Typische Fehler: 2826 (mal-nicht-eingerueckt).
+- `03` AFB II · Welche Ziffern fehlen? ▢8 · 8▢ = 2▢68 Lösung: a = **2**, b = **1**, c = **2**
+- `04` AFB III · Wie viele Stellen hat das Produkt zweier zweistelliger Zahlen höchstens? Wähle die Antwort mit der richtigen Begründung.
+  - ☐ 5 Stellen, denn 99 · 99 ist fast 10 000.
+  - ☐ 3 Stellen, denn 10 · 10 = 100.
+  - ☐ 2 Stellen, wie die Faktoren.
+  - ☑ 4 Stellen, denn das größte Produkt ist 99 · 99 = 9801.
+  - ☐ Das kann man nicht sagen.
+- `05` AFB II · Welche Zahl fehlt? 32 · ▢ = 5792 Lösung: **181**. Typische Fehler: 182 (1x1-nachbar).
+- `06` AFB III · Ida sagt: „23 · 23 ist kleiner als 24 · 22.“ Lina sagt: „23 · 23 ist größer.“ Wer hat recht?
+  - ☑ Lina. 23 · 23 = 529 und 24 · 22 = 528. Der Unterschied ist genau 1.
+  - ☐ Keiner. Beide Produkte sind gleich groß.
+  - ☐ Ida. 23 · 23 = 429.
+  - ☐ Ida. 24 ist größer als 23.
+
+## 5.4.2-M4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
+
+Grundlage, die F übt: Mal mit Geteilt rückgängig machen, auf Zehner runden
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beispiel:* 2 · 5 = 10. Dazu passt 10 : 5 = 2. *Lösungsschritt:* Teile 12 durch 3. Was kommt heraus?
+
+- `01` AFB I · 4 · 3 = 12 / Welche Geteilt-Aufgabe passt dazu? _(Bild: Punktefeld mit 4 Reihen zu je 3 Punkten)_
+  - ☐ 12 : 4 = 4
+  - ☐ 12 + 3 = 15
+  - ☑ 12 : 3 = 4
+- `02` AFB I · Runde 53 auf Zehner. _(Bild: Zahlenstrahl 50 bis 60)_ Lösung: **50**. Typische Fehler: 60 (falsch-gerundet).
+- `03` AFB I · Prüfe 5 · 9 = 45. / Rechne 45 : 9. _(Bild: Punktefeld mit 5 Reihen zu je 9 Punkten)_ Lösung: **5**. Typische Fehler: 9 (div-vertauscht), 6 (div-einmaleins).
+- `04` AFB I · Rechne ungefähr. / 3 · 28 / Rechne dafür 3 · 30. _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **90**. Typische Fehler: 84 (ueberschlag-nicht-gerundet), 9 (mal-stellenwert).
+- `05` AFB II · Emre rechnet 3 · 19 = 87. / Ungefähr ist es 3 · 20 = 60. / Kann 87 stimmen? _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_
+  - ☐ Ja. / 87 ist nah an 60.
+  - ☑ Nein. / 87 ist zu groß. / Es muss etwas weniger als 60 sein.
+  - ☐ Ja. / Das kann man nicht sehen.
+- `06` AFB I · 7 · 6 = 42 / Prüfe: 42 : 6 = ▢ _(Bild: Punktefeld mit 7 Reihen zu je 6 Punkten)_ Lösung: **7**. Typische Fehler: 6 (div-vertauscht).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde die krumme Zahl auf Zehner. Rechne dann im Kopf. *Beispiel:* 38 · 4: 38 wird zu 40. 40 · 4 = 160. *Lösungsschritt:* 87 wird zu 90.
+
+- `01` AFB I · Mache einen Überschlag. / 87 · 7 / Welcher Überschlag passt? _(Bild: Zahlenstrahl 80 bis 90)_
+  - ☑ 90 · 7 = 630
+  - ☐ 80 · 7 = 560
+  - ☐ 87 · 7 = 609
+- `02` AFB I · Mache einen Überschlag. / 549 · 6 / Runde 549 auf Hunderter. _(Bild: Zehnermaterial: 5 Hunderterplatten, 4 Zehnerstangen, 9 Einerwürfel)_ Lösung: **3000**. Typische Fehler: 3294 (ueberschlag-nicht-gerundet), 3600 (falsch-gerundet).
+- `03` AFB II · Finn rechnet 236 · 3 = 7080. / Mache einen Überschlag. / Stimmt das?
+  - ☐ Stimmt. / Die Ziffern passen.
+  - ☑ Falsch. / Überschlag: 200 · 3 = 600. / 7080 ist viel zu groß.
+  - ☐ Stimmt. / Überschlag: 200 · 3 = 7080.
+- `04` AFB I · Mache die Probe. / 3 · 78 = 234 / Rechne 234 : 3. _(Bild: Zehnermaterial: 7 Zehnerstangen, 8 Einerwürfel)_ Lösung: **78**. Typische Fehler: 231 (probe-falsche-umkehr).
+- `05` AFB II · 32 · 4 = ▢ / Probe: ▢ : 4 = 32 Lösung: x = **128**, y = **128**
+- `06` AFB III · Ida sagt: / „Bei 39 · 7 ist der Überschlag 40 · 7 = 280. / Also ist das Ergebnis kleiner als 280.“ / Stimmt das?
+  - ☐ Falsch. / Das kann man ohne Rechnen nicht wissen.
+  - ☐ Falsch. / Das Ergebnis ist größer als 280.
+  - ☑ Stimmt. / 39 ist kleiner als 40. / Also ist 39 · 7 kleiner als 40 · 7.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde jede Zahl auf ihre höchste Stelle und rechne im Kopf. *Lösungsschritt:* 256 wird zu 300, 73 wird zu 70.
+
+- `01` AFB I · Überschlage 256 · 73. Runde dazu auf Hunderter und auf Zehner. Lösung: **21000**. Typische Fehler: 18688 (ueberschlag-nicht-gerundet).
+- `02` AFB II · Welches Ergebnis gehört zu 393 · 46? Entscheide mit einem Überschlag.
+  - ☐ 180 780
+  - ☐ 28 078
+  - ☐ 1808
+  - ☑ 18 078
+- `03` AFB II · Prüfe 4875 : 5 = 975 mit der Umkehraufgabe. Was kommt bei der Probe heraus? Lösung: **4875**. Typische Fehler: 980 (probe-falsche-umkehr).
+- `04` AFB I · Überschlage 8 · 4180. Runde dazu auf Tausender. Lösung: **32000**. Typische Fehler: 33440 (ueberschlag-nicht-gerundet).
+- `05` AFB II · Welche Rechnung ist sicher falsch? Entscheide mit einem Überschlag.
+  - ☐ 52 · 77 = 4004
+  - ☐ 68 · 46 = 3128
+  - ☐ 86 · 75 = 6450
+  - ☑ 48 · 53 = 25 440
+- `06` AFB III · Ida sagt: „336 · 59 ist größer als 300 · 50 = 15 000.“ Ben sagt: „Es ist kleiner.“ Wer hat recht?
+  - ☐ Ben. Beim Runden wird ein Ergebnis immer größer.
+  - ☐ Keiner. Man muss genau rechnen, sonst weiß man es nicht.
+  - ☐ Ben. 15 000 ist eine runde Zahl.
+  - ☑ Ida. 336 ist größer als 300, und 59 ist größer als 50. Also ist das Produkt größer als 300 · 50.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde auf die höchste Stelle.
+
+- `01` AFB I · Überschlage 5 · 51 519 mit einer gerundeten Zahl. Lösung: **250000**. Typische Fehler: 257595 (ueberschlag-nicht-gerundet), 25000 (mal-stellenwert).
+- `02` AFB II · Ali rechnet 5 · 497 und rundet 497 dafür auf 500. Um wie viel ist der Überschlag größer als das genaue Ergebnis? Lösung: **15**. Typische Fehler: 3 (sach-schritt-vergessen).
+- `03` AFB II · Welche Zahl fehlt? 8 · ▢ = 7896. Löse mit einer Geteilt-Aufgabe. Lösung: **987**. Typische Fehler: 7888 (probe-falsche-umkehr).
+- `04` AFB III · Elif überschlägt 488 · 47 mit 500 · 50 = 25 000. Ist das genaue Ergebnis größer oder kleiner? Wähle die richtige Begründung.
+  - ☐ Das kann man ohne genaues Rechnen nicht sagen.
+  - ☐ Gleich groß. Ein Überschlag ist immer genau.
+  - ☑ Kleiner. Beide Zahlen wurden aufgerundet, also ist der Überschlag zu groß.
+  - ☐ Größer. 488 wurde aufgerundet.
+  - ☐ Kleiner. 47 wurde abgerundet.
+- `05` AFB II · Wie weit liegt das genaue Ergebnis von 44 · 71 vom Überschlag 40 · 70 entfernt? Lösung: **324**.
+- `06` AFB III · Sara sagt: „Die Probe zu 125 · 8 = 1000 ist 1000 : 125 = 8.“ Emre sagt: „Die Probe ist 1000 : 8 = 125.“ Wer hat recht?
+  - ☐ Keiner. Die Probe ist 1000 − 125.
+  - ☐ Nur Emre. Man teilt immer durch den zweiten Faktor.
+  - ☑ Beide. Man kann das Produkt durch jeden der beiden Faktoren teilen.
+  - ☐ Nur Sara. Man teilt immer durch den ersten Faktor.
+  - ☐ Keiner. Zur Mal-Aufgabe gibt es keine Probe.
+
+## 5.4.2-M5: Ich kann Sachaufgaben zur Multiplikation lösen.
+
+Grundlage, die F übt: Gleich große Gruppen im Bild, Mal-Geschichte und Rechnung zuordnen
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleich viele in jeder Tüte: Rechne mal. *Beispiel:* 3 Tüten mit je 5 Äpfeln: 3 · 5 = 15. *Lösungsschritt:* Rechne 5 · 4.
+
+- `01` AFB I · Es gibt 5 Tüten. / In jeder Tüte sind 4 Möhren. / Wie viele Möhren sind es? _(Bild: 5 Gruppen mit je 4 Plättchen)_ Lösung: **20 Möhren**. Typische Fehler: 9 (1x1-addiert).
+- `02` AFB I · Es gibt 4 Kisten. / In jeder Kiste sind 5 Flaschen. / Welche Rechnung passt? _(Bild: 4 Gruppen mit je 5 Plättchen)_
+  - ☐ 4 + 5
+  - ☐ 5 − 4
+  - ☑ 4 · 5
+- `03` AFB I · 1 Heft kostet 2 €. / Ben kauft 7 Hefte. / Wie viel muss Ben zahlen? _(Bild: 7 Gruppen mit je 2 Plättchen)_ Lösung: **14 €**. Typische Fehler: 9 (1x1-addiert).
+- `04` AFB I · Welche Rechnung passt zu welcher Geschichte? _(Bild: 4 Gruppen mit je 6 Plättchen)_ Lösung: 4 Reihen mit je 6 Stühlen → 4 · 6, 4 Stühle und noch 6 Stühle → 4 + 6
+- `05` AFB II · Es gibt 2 Packungen mit je 5 Stiften. / Dazu kommen 3 einzelne Stifte. / Wie viele Stifte sind es? _(Bild: 3 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen)_ Lösung: **13 Stifte**. Typische Fehler: 10 (sach-schritt-vergessen).
+- `06` AFB I · In 1 Karton sind 6 Eier. / Mia kauft 9 Kartons. / Wie viele Eier sind es? _(Bild: 9 Gruppen mit je 6 Plättchen)_ Lösung: **54 Eier**. Typische Fehler: 15 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Packung kostet gleich viel. Rechne mal. *Beispiel:* 1 Packung kostet 75 Cent. 2 Packungen kosten 2 · 75 = 150 Cent. *Lösungsschritt:* Rechne 4 · 96.
+
+- `01` AFB I · 1 Packung Saft kostet 96 Cent. / Lina kauft 4 Packungen. / Wie viel Cent muss sie zahlen? _(Bild: Streifenbild: Ganzes ?, Teile 96 und 96 und 96 und 96)_ Lösung: **384 Cent**. Typische Fehler: 100 (1x1-addiert).
+- `02` AFB I · Ein Turm hat 12 Treppen. / Jede Treppe hat 14 Stufen. / Wie viele Stufen sind es zusammen? Lösung: **168 Stufen**. Typische Fehler: 26 (1x1-addiert).
+- `03` AFB II · Eine Schule kauft 24 Tische für je 42 €. / Dazu kauft sie 24 Stühle für je 20 €.
+  - a) Wie viel kosten die Tische? **1008 €**. Typische Fehler: 66 (1x1-addiert).
+  - b) Wie viel kosten die Stühle? **480 €**.
+  - c) Wie viel kostet alles zusammen? **1488 €**. Typische Fehler: 1008 (sach-schritt-vergessen).
+- `04` AFB I · Finn hat 243 Sammelkarten. / Sara hat 4-mal so viele Karten. / Wie viele Karten hat Sara? _(Bild: Streifenbild: Ganzes ?, Teile 243 und 243 und 243 und 243)_ Lösung: **972 Karten**. Typische Fehler: 247 (1x1-addiert).
+- `05` AFB II · Eine Treppe hat 55 Stufen. / Lina geht sie 2-mal hoch und wieder runter. / Wie viele Stufen geht sie insgesamt? Lösung: **220 Stufen**. Typische Fehler: 110 (sach-schritt-vergessen).
+- `06` AFB III · Ein Bus hat 57 Plätze. / Es fahren 3 Busse. / 150 Kinder fahren mit. / Reicht der Platz? _(Bild: Streifenbild: Ganzes ?, Teile 57 und 57 und 57)_
+  - ☐ Nein. / 150 ist eine große Zahl.
+  - ☐ Nein. / 57 + 3 = 60.
+  - ☑ Ja. / 3 · 57 = 171. / 171 ist mehr als 150.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleich viele Plätze in jeder Reihe: Rechne mal. *Lösungsschritt:* Rechne 16 · 25.
+
+- `01` AFB I · Ein Kino hat 16 Reihen mit je 25 Plätzen. Wie viele Plätze hat das Kino? Lösung: **400 Plätze**. Typische Fehler: 41 (1x1-addiert), 112 (mal-nicht-eingerueckt).
+- `02` AFB II · Ein Turm hat Treppen mit je 16 Stufen. Elif ist 240 Stufen gestiegen. Wie viele Treppen hat Elif geschafft? Lösung: **15 Treppen**. Typische Fehler: 224 (div-falsche-rechenart).
+- `03` AFB II · Auf einer Wiese stehen 6 Reihen mit je 12 Apfelbäumen. An jedem Baum hängen 58 Äpfel.
+  - a) Wie viele Bäume sind es? **72 Bäume**. Typische Fehler: 18 (1x1-addiert).
+  - b) Wie viele Äpfel sind es zusammen? **4176 Äpfel**. Typische Fehler: 696 (sach-schritt-vergessen).
+- `04` AFB I · Ein Fahrrad kostet 326 €. Eine Schule kauft 14 Fahrräder. Wie viel kostet das? Lösung: **4564 €**. Typische Fehler: 3274 (mal-zerlegung-halb).
+- `05` AFB II · Eine Klasse fährt 4 Tage ins Landheim. Pro Tag kostet es für jedes Kind 24 €. Es fahren 22 Kinder mit. Wie viel kostet die Fahrt insgesamt? Lösung: **2112 €**. Typische Fehler: 96 (sach-schritt-vergessen), 528 (sach-schritt-vergessen).
+- `06` AFB III · Für ein Fest werden 12 Tische mit je 8 Plätzen aufgestellt. Es kommen 105 Gäste. Noah sagt: „Es fehlen 9 Plätze.“ Ali sagt: „Es fehlen 85 Plätze.“ Wer hat recht?
+  - ☐ Beide. Es kommt auf die Rechnung an.
+  - ☑ Noah. 12 · 8 = 96 und 105 − 96 = 9.
+  - ☐ Ali. 105 − 12 − 8 = 85.
+  - ☐ Keiner. Es sind genug Plätze da.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche einen geschickten Rechenweg.
+
+- `01` AFB I · Ein Rohr ist 250 cm lang. Für eine Leitung werden 45 Rohre aneinandergelegt. Wie lang ist die Leitung in Zentimetern? Lösung: **11250 cm**. Typische Fehler: 295 (1x1-addiert).
+- `02` AFB II · Ein Herz schlägt in einer Minute 86-mal. Wie oft schlägt es in einer Stunde? Lösung: **5160**. Typische Fehler: 516 (mal-stellenwert).
+- `03` AFB II · Ein Kino verkauft an 7 Tagen jeden Tag 248 Karten. Eine Karte kostet 9 €.
+  - a) Wie viele Karten sind das? **1736 Karten**.
+  - b) Wie viel Geld nimmt das Kino ein? **15624 €**. Typische Fehler: 2232 (sach-schritt-vergessen).
+- `04` AFB III · Ein Schritt ist etwa 50 cm lang. Wie viele Schritte brauchst du ungefähr für 5 km?
+  - ☐ etwa 100 000
+  - ☐ etwa 1000
+  - ☑ etwa 10 000
+  - ☐ etwa 100
+- `05` AFB II · Eine Bäckerei backt jeden Tag gleich viele Brötchen, auch am Wochenende. In 2 Wochen sind es 8260 Brötchen. Wie viele Brötchen sind es an 6 Tagen? Lösung: **3540 Brötchen**. Typische Fehler: 590 (sach-schritt-vergessen).
+- `06` AFB III · Ein Zug hat 8 Wagen mit je 64 Sitzplätzen. 4 Wagen sind voll, in den anderen Wagen sitzen je 36 Personen. Lina sagt: „Es sind 400 Personen.“ Finn sagt: „Es sind 512 Personen.“ Wer hat recht?
+  - ☐ Finn. 8 · 64 = 512.
+  - ☑ Lina. 4 · 64 + 4 · 36 = 256 + 144 = 400.
+  - ☐ Beide. Es kommt darauf an, wie man rechnet.
+  - ☐ Keiner. Es sind 8 · 36 = 288 Personen.
+
 ## 5.4.5-D1: Ich kann die Fachbegriffe Dividend, Divisor und Quotient verwenden.
 
 Grundlage, die F übt: Teilen als Verteilen und als Aufteilen in Gruppen
@@ -1621,63 +2097,63 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Zeichen : liest du „geteilt dur
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Ergebnis einer Geteilt-Aufgabe heißt Quotient. *Beispiel:* 20 : 4 = 5. Der Quotient ist 5. *Lösungsschritt:* Du rechnest 36 : 9. Das Ergebnis ist der Quotient.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt. Der Divisor teilt. Der Quotient ist das Ergebnis. *Beispiel:* 20 : 4 = 5. Der Dividend ist 20. Der Divisor ist 4. *Lösungsschritt:* Die Zahl 36 wird geteilt. Durch die Zahl 9 wird geteilt.
 
-- `01` AFB I · 36 : 9 = 4 / Wie heißt die Zahl 4?
-  - ☑ Quotient
-  - ☐ Produkt
-  - ☐ Summe
-- `02` AFB I · Berechne den Quotienten. / 56 : 7 _(Bild: Punktefeld mit 8 Reihen zu je 7 Punkten)_ Lösung: **8**. Typische Fehler: 9 (div-einmaleins), 7 (div-einmaleins).
-- `03` AFB II · Der Quotient ist 7. / Welche Aufgabe passt?
-  - ☐ 24 : 4
-  - ☐ 35 − 5
-  - ☑ 35 : 5
-- `04` AFB I · 40 : 8 = 5 / Der Quotient ist ▢. _(Bild: Punktefeld mit 5 Reihen zu je 8 Punkten)_ Lösung: x = **5**
-- `05` AFB II · Ordne jedem Ergebnis den richtigen Namen zu. Lösung: 30 + 5 → Summe, 30 − 5 → Differenz, 30 · 5 → Produkt, 30 : 5 → Quotient
-- `06` AFB III · Lena sagt: / „Der Quotient ist immer kleiner als die erste Zahl.“ / Prüfe mit 7 : 1. / Stimmt das? _(Bild: 1 Gruppen mit je 7 Plättchen)_
-  - ☐ Stimmt. / Beim Teilen wird jede Zahl kleiner.
-  - ☐ Stimmt. / 7 : 1 = 6.
-  - ☑ Falsch. / 7 : 1 = 7. / Der Quotient ist hier genauso groß.
-
-### M · Mittleres Niveau (Realschulabschluss)
-
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt, der Divisor teilt, der Quotient ist das Ergebnis. *Lösungsschritt:* Die Zahl 96 wird geteilt. Sie ist der Dividend.
-
-- `01` AFB I · In der Aufgabe 96 : 12 = 8: Wie heißt die Zahl 12?
-  - ☐ Subtrahend
+- `01` AFB I · 36 : 9 = 4 / Wie heißt die Zahl 9?
   - ☐ Dividend
   - ☑ Divisor
   - ☐ Quotient
-- `02` AFB II · Der Quotient ist 23, der Divisor ist 10. Wie groß ist der Dividend? Lösung: **230**. Typische Fehler: 33 (begriffe-verwechselt).
-- `03` AFB II · Der Dividend ist 150, der Quotient ist 15. Wie groß ist der Divisor? Lösung: **10**. Typische Fehler: 135 (begriffe-verwechselt).
-- `04` AFB I · Der Dividend ist 168, der Divisor ist 12. Berechne den Quotienten. Lösung: **14**. Typische Fehler: 156 (begriffe-verwechselt), 2016 (begriffe-verwechselt).
-- `05` AFB II · Dividiere die Summe von 21 und 96 durch 9. Lösung: **13**.
+- `02` AFB I · Berechne den Quotienten. / 40 : 8 _(Bild: Punktefeld mit 5 Reihen zu je 8 Punkten)_ Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
+- `03` AFB II · Der Quotient ist 4. / Welche Aufgabe passt?
+  - ☑ 28 : 7
+  - ☐ 28 − 7
+  - ☐ 18 : 6
+- `04` AFB I · 40 : 5 = 8 / Der Quotient ist ▢. _(Bild: Punktefeld mit 8 Reihen zu je 5 Punkten)_ Lösung: x = **8**
+- `05` AFB II · Ordne jedem Ergebnis den richtigen Namen zu. Lösung: 25 + 5 → Summe, 25 − 5 → Differenz, 25 · 5 → Produkt, 25 : 5 → Quotient
+- `06` AFB III · Tom sagt: / „Der Quotient ist immer kleiner als die erste Zahl.“ / Prüfe mit 6 : 1. / Stimmt das? _(Bild: 1 Gruppen mit je 6 Plättchen)_
+  - ☐ Stimmt. / 6 : 1 = 5.
+  - ☑ Falsch. / 6 : 1 = 6. / Der Quotient ist hier genauso groß.
+  - ☐ Stimmt. / Beim Teilen wird jede Zahl kleiner.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt, der Divisor teilt, der Quotient ist das Ergebnis. *Lösungsschritt:* Die Zahl 77 wird geteilt. Sie ist der Dividend.
+
+- `01` AFB I · In der Aufgabe 77 : 7 = 11: Wie heißt die Zahl 11?
+  - ☐ Divisor
+  - ☐ Subtrahend
+  - ☐ Dividend
+  - ☑ Quotient
+- `02` AFB II · Der Quotient ist 21, der Divisor ist 8. Wie groß ist der Dividend? Lösung: **168**. Typische Fehler: 29 (begriffe-verwechselt).
+- `03` AFB II · Der Dividend ist 204, der Quotient ist 17. Wie groß ist der Divisor? Lösung: **12**. Typische Fehler: 187 (begriffe-verwechselt).
+- `04` AFB I · Der Dividend ist 96, der Divisor ist 8. Berechne den Quotienten. Lösung: **12**. Typische Fehler: 88 (begriffe-verwechselt), 768 (begriffe-verwechselt).
+- `05` AFB II · Dividiere die Summe von 21 und 63 durch 6. Lösung: **14**.
 - `06` AFB III · Der Dividend wird verdoppelt, der Divisor bleibt gleich. Was passiert mit dem Quotienten? Prüfe an einem eigenen Beispiel.
-  - ☐ Er halbiert sich.
-  - ☐ Er bleibt gleich.
-  - ☑ Er verdoppelt sich.
   - ☐ Er wird um 2 größer.
+  - ☑ Er verdoppelt sich.
+  - ☐ Er bleibt gleich.
+  - ☐ Er halbiert sich.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Was ist hier der Divisor: eine Zahl oder ein Term?
 
-- `01` AFB I · Berechne den Wert des Quotienten aus 336 und dem Produkt von 4 und 6. Lösung: **14**. Typische Fehler: 84 (sach-schritt-vergessen), 56 (sach-schritt-vergessen).
-- `02` AFB II · Der Divisor ist 11, der Quotient 26 und der Rest 6. Bestimme den Dividenden. Lösung: **292**. Typische Fehler: 286 (div-rest-vergessen).
-- `03` AFB II · Ein Quotient hat den Wert 22. Der Dividend wird vervierfacht, der Divisor verdoppelt. Welchen Wert hat der neue Quotient? Lösung: **44**. Typische Fehler: 88 (div-stellenwert), 11 (div-stellenwert), 22 (div-stellenwert).
+- `01` AFB I · Berechne den Wert des Quotienten aus 225 und dem Produkt von 3 und 5. Lösung: **15**. Typische Fehler: 75 (sach-schritt-vergessen), 45 (sach-schritt-vergessen).
+- `02` AFB II · Der Divisor ist 16, der Quotient 35 und der Rest 3. Bestimme den Dividenden. Lösung: **563**. Typische Fehler: 560 (div-rest-vergessen).
+- `03` AFB II · Ein Quotient hat den Wert 20. Der Dividend wird vervierfacht, der Divisor verdoppelt. Welchen Wert hat der neue Quotient? Lösung: **40**. Typische Fehler: 80 (div-stellenwert), 10 (div-stellenwert), 20 (div-stellenwert).
 - `04` AFB III · Welche Aussage gilt für jede Division natürlicher Zahlen, die ohne Rest aufgeht (Divisor nicht 0)?
-  - ☐ Der Quotient ist immer kleiner als der Divisor.
-  - ☐ Der Quotient ist immer größer als der Divisor.
-  - ☐ Dividend und Divisor darf man vertauschen.
   - ☐ Der Quotient ist immer kleiner als der Dividend.
   - ☑ Quotient · Divisor = Dividend
-- `05` AFB II · Die Summe aus Dividend und Divisor ist 120. Der Quotient ist 7. Wie groß ist der Dividend? Lösung: **105**. Typische Fehler: 15 (begriffe-verwechselt).
-- `06` AFB III · 28 : 4 = 7, 56 : 8 = 7 und 84 : 12 = 7. Stelle eine Regel auf.
-  - ☐ Der Wert des Quotienten bleibt gleich, wenn nur der Dividend größer wird.
-  - ☐ Wird zu Dividend und Divisor dieselbe Zahl addiert, bleibt der Wert des Quotienten gleich.
-  - ☐ Es gibt keine Regel. Die drei Ergebnisse sind zufällig gleich.
-  - ☐ Werden Dividend und Divisor mit derselben Zahl multipliziert, wird auch der Wert des Quotienten mit dieser Zahl multipliziert.
+  - ☐ Dividend und Divisor darf man vertauschen.
+  - ☐ Der Quotient ist immer größer als der Divisor.
+  - ☐ Der Quotient ist immer kleiner als der Divisor.
+- `05` AFB II · Die Summe aus Dividend und Divisor ist 56. Der Quotient ist 3. Wie groß ist der Dividend? Lösung: **42**. Typische Fehler: 14 (begriffe-verwechselt).
+- `06` AFB III · 12 : 4 = 3, 24 : 8 = 3 und 36 : 12 = 3. Stelle eine Regel auf.
   - ☑ Werden Dividend und Divisor mit derselben Zahl multipliziert, bleibt der Wert des Quotienten gleich.
+  - ☐ Es gibt keine Regel. Die drei Ergebnisse sind zufällig gleich.
+  - ☐ Der Wert des Quotienten bleibt gleich, wenn nur der Dividend größer wird.
+  - ☐ Werden Dividend und Divisor mit derselben Zahl multipliziert, wird auch der Wert des Quotienten mit dieser Zahl multipliziert.
+  - ☐ Wird zu Dividend und Divisor dieselbe Zahl addiert, bleibt der Wert des Quotienten gleich.
 
 ## 5.4.5-D2: Ich kann schriftlich durch einstellige Zahlen dividieren.
 
@@ -1685,64 +2161,64 @@ Grundlage, die F übt: Einmaleins rückwärts, dann mit Zehnerzahlen (12 : 3 und
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 3 zusammen. Zähle die Gruppen. *Beispiel:* 12 : 3: Die 3er-Reihe hilft: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also 12 : 3 = 4. *Lösungsschritt:* Zähle im Bild die Gruppen mit je 3 Plättchen.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 4 zusammen. Zähle die Gruppen. *Beispiel:* 12 : 3: Die 3er-Reihe hilft: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also 12 : 3 = 4. *Lösungsschritt:* Zähle im Bild die Gruppen mit je 4 Plättchen.
 
-- `01` AFB I · Rechne. / 15 : 3 _(Bild: 5 Gruppen mit je 3 Plättchen)_ Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
-- `02` AFB I · 5 · 6 = 30 / 30 : 6 = ▢ _(Bild: Punktefeld mit 5 Reihen zu je 6 Punkten)_ Lösung: x = **5**
-- `03` AFB I · 12 : 4 / Welches Ergebnis stimmt? _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_
-  - ☐ 8
-  - ☑ 3
-  - ☐ 4
-- `04` AFB I · Rechne 26 : 2 in 2 Schritten. / 20 : 2 = ▢ / 6 : 2 = ▢ / Zusammen: ▢ _(Bild: Zehnermaterial: 2 Zehnerstangen, 6 Einerwürfel)_ Lösung: x = **10**, y = **3**, z = **13**
-- `05` AFB II · Welche Zahl fehlt? / ▢ : 5 = 3 _(Bild: 3 Gruppen mit je 5 Plättchen)_ Lösung: **15**. Typische Fehler: 8 (div-falsche-rechenart).
-- `06` AFB I · 6 : 2 = 3 / Wie viel ist 60 : 2? _(Bild: Zehnermaterial: 6 Zehnerstangen, 0 Einerwürfel)_ Lösung: **30**. Typische Fehler: 3 (div-stellenwert), 300 (div-stellenwert).
+- `01` AFB I · Rechne. / 20 : 4 _(Bild: 5 Gruppen mit je 4 Plättchen)_ Lösung: **5**. Typische Fehler: 6 (div-einmaleins), 4 (div-einmaleins).
+- `02` AFB I · 4 · 3 = 12 / 12 : 3 = ▢ _(Bild: Punktefeld mit 4 Reihen zu je 3 Punkten)_ Lösung: x = **4**
+- `03` AFB I · 12 : 3 / Welches Ergebnis stimmt? _(Bild: Punktefeld mit 4 Reihen zu je 3 Punkten)_
+  - ☑ 4
+  - ☐ 9
+  - ☐ 5
+- `04` AFB I · Rechne 36 : 3 in 2 Schritten. / 30 : 3 = ▢ / 6 : 3 = ▢ / Zusammen: ▢ _(Bild: Zehnermaterial: 3 Zehnerstangen, 6 Einerwürfel)_ Lösung: x = **10**, y = **2**, z = **12**
+- `05` AFB II · Welche Zahl fehlt? / ▢ : 4 = 3 _(Bild: 3 Gruppen mit je 4 Plättchen)_ Lösung: **12**. Typische Fehler: 7 (div-falsche-rechenart).
+- `06` AFB I · 12 : 3 = 4 / Wie viel ist 120 : 3? _(Bild: Zehnermaterial: 12 Zehnerstangen, 0 Einerwürfel)_ Lösung: **40**. Typische Fehler: 4 (div-stellenwert), 400 (div-stellenwert).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen. *Beispiel:* 138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23. *Lösungsschritt:* Beginne links. Wie oft passt die 5 in die 23? 4-mal, denn 4 · 5 = 20. Rechne 23 − 20 = 3. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · Dividiere schriftlich. / 230 : 5 _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **46**. Typische Fehler: 460 (div-stellenwert).
-- `02` AFB I · Rechne 315 : 7 in 2 Schritten. / 280 : 7 = ▢ / 35 : 7 = ▢ / Zusammen: ▢ _(Bild: Zehnermaterial: 3 Hunderterplatten, 1 Zehnerstangen, 5 Einerwürfel)_ Lösung: zehner = **40**, einer = **5**, ergebnis = **45**
-- `03` AFB II · Welche Zahl fehlt? / ▢ : 6 = 43 Lösung: **258**. Typische Fehler: 49 (div-falsche-rechenart).
-- `04` AFB I · Dividiere schriftlich. / 489 : 3 _(Bild: Zehnermaterial: 4 Hunderterplatten, 8 Zehnerstangen, 9 Einerwürfel)_ Lösung: **163**. Typische Fehler: 1630 (div-stellenwert).
+- `01` AFB I · Dividiere schriftlich. / 235 : 5 _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 5 Einerwürfel)_ Lösung: **47**. Typische Fehler: 470 (div-stellenwert).
+- `02` AFB I · Rechne 258 : 6 in 2 Schritten. / 240 : 6 = ▢ / 18 : 6 = ▢ / Zusammen: ▢ _(Bild: Zehnermaterial: 2 Hunderterplatten, 5 Zehnerstangen, 8 Einerwürfel)_ Lösung: zehner = **40**, einer = **3**, ergebnis = **43**
+- `03` AFB II · Welche Zahl fehlt? / ▢ : 6 = 88 Lösung: **528**. Typische Fehler: 94 (div-falsche-rechenart).
+- `04` AFB I · Dividiere schriftlich. / 994 : 7 _(Bild: Zehnermaterial: 9 Hunderterplatten, 9 Zehnerstangen, 4 Einerwürfel)_ Lösung: **142**. Typische Fehler: 1420 (div-stellenwert).
 - `05` AFB II · Welche Aufgabe hat das größere Ergebnis? / Überlege zuerst. / Rechne dann nach.
+  - ☐ 144 : 6
   - ☐ Beide Ergebnisse sind gleich.
-  - ☑ 243 : 3
-  - ☐ 243 : 9
-- `06` AFB III · Ben rechnet: 102 : 6 = 27. / Prüfe mit der Mal-Aufgabe. / Stimmt das?
-  - ☑ Falsch. / 27 · 6 = 162. / Richtig ist 17.
-  - ☐ Falsch. / Richtig ist 37.
-  - ☐ Stimmt. / 27 · 6 = 102.
+  - ☑ 144 : 3
+- `06` AFB III · Ole rechnet: 425 : 5 = 95. / Prüfe mit der Mal-Aufgabe. / Stimmt das?
+  - ☑ Falsch. / 95 · 5 = 475. / Richtig ist 85.
+  - ☐ Falsch. / Richtig ist 105.
+  - ☐ Stimmt. / 95 · 5 = 425.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten. *Lösungsschritt:* Beginne links. Wie oft passt die 5 in die 7? 1-mal, denn 1 · 5 = 5. Rechne 7 − 5 = 2. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten. *Lösungsschritt:* Beginne links. Wie oft passt die 8 in die 8? 1-mal, denn 1 · 8 = 8. Rechne 8 − 8 = 0. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · Dividiere schriftlich: 7545 : 5 Lösung: **1509**. Typische Fehler: 159 (div-null-vergessen), 15090 (div-stellenwert).
-- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 4 = 803 Lösung: **3212**. Typische Fehler: 807 (begriffe-verwechselt).
-- `03` AFB II · Dividiere 5250 zuerst durch 6. Dividiere das Ergebnis dann durch 7. Lösung: **125**. Typische Fehler: 875 (sach-schritt-vergessen).
-- `04` AFB I · Dividiere schriftlich: 9873 : 9 Lösung: **1097**. Typische Fehler: 197 (div-null-vergessen), 10970 (div-stellenwert).
-- `05` AFB II · Um wie viel ist 688 : 2 größer als 688 : 8? Lösung: **258**. Typische Fehler: 344 (sach-schritt-vergessen), 86 (sach-schritt-vergessen).
-- `06` AFB III · Lena erhält bei 3228 : 4 das Ergebnis 87. Prüfe mit einem Überschlag und entscheide.
-  - ☐ Falsch: Der Quotient muss vierstellig sein.
-  - ☑ Falsch: 3200 : 4 = 800, der Quotient muss dreistellig sein. Richtig ist 807.
-  - ☐ Richtig: 87 · 4 = 3228.
+- `01` AFB I · Dividiere schriftlich: 8456 : 8 Lösung: **1057**. Typische Fehler: 157 (div-null-vergessen), 10570 (div-stellenwert).
+- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 4 = 703 Lösung: **2812**. Typische Fehler: 707 (begriffe-verwechselt).
+- `03` AFB II · Dividiere 7672 zuerst durch 7. Dividiere das Ergebnis dann durch 8. Lösung: **137**. Typische Fehler: 1096 (sach-schritt-vergessen).
+- `04` AFB I · Dividiere schriftlich: 3212 : 4 Lösung: **803**. Typische Fehler: 83 (div-null-vergessen), 8030 (div-stellenwert).
+- `05` AFB II · Um wie viel ist 1620 : 6 größer als 1620 : 9? Lösung: **90**. Typische Fehler: 270 (sach-schritt-vergessen), 180 (sach-schritt-vergessen).
+- `06` AFB III · Sara erhält bei 4864 : 8 das Ergebnis 68. Prüfe mit einem Überschlag und entscheide.
+  - ☐ Richtig: 68 · 8 = 4864.
   - ☐ Richtig: Der Überschlag bestätigt ein zweistelliges Ergebnis.
+  - ☑ Falsch: 4800 : 8 = 600, der Quotient muss dreistellig sein. Richtig ist 608.
+  - ☐ Falsch: Der Quotient muss vierstellig sein.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie viele Stellen muss der Quotient nach einem Überschlag haben?
 
-- `01` AFB I · Dividiere schriftlich: 5614 : 7 Lösung: **802**. Typische Fehler: 82 (div-null-vergessen), 8020 (div-stellenwert).
-- `02` AFB II · Bei einer Division wurde gekleckert: 5▢6 : 7. Welche Ziffer muss in der Lücke stehen, damit die Division ohne Rest aufgeht? Lösung: **4**.
-- `03` AFB II · Die Zahl 8▢2 soll ohne Rest durch 8 teilbar sein. Wie viele verschiedene Ziffern kommen für die Lücke in Frage? Lösung: **2**. Typische Fehler: 1 (teilbar-summe).
-- `04` AFB III · Lena behauptet: „Wenn ich zu einer Zahl, die ohne Rest durch 8 teilbar ist, die Zahl 32 addiere, ist das Ergebnis wieder ohne Rest durch 8 teilbar.“ Beurteile, ohne eine bestimmte Zahl auszurechnen.
-  - ☐ Stimmt nie: Durch das Addieren entsteht ein Rest.
-  - ☑ Stimmt immer, weil 32 = 4 · 8 selbst ein Vielfaches von 8 ist.
-  - ☐ Stimmt immer, weil jede Zahl plus 32 durch 8 teilbar ist.
+- `01` AFB I · Dividiere schriftlich: 7263 : 9 Lösung: **807**. Typische Fehler: 87 (div-null-vergessen), 8070 (div-stellenwert).
+- `02` AFB II · Bei einer Division wurde gekleckert: 8▢3 : 7. Welche Ziffer muss in der Lücke stehen, damit die Division ohne Rest aufgeht? Lösung: **3**.
+- `03` AFB II · Die Zahl 8▢9 soll ohne Rest durch 7 teilbar sein. Wie viele verschiedene Ziffern kommen für die Lücke in Frage? Lösung: **2**. Typische Fehler: 1 (teilbar-summe).
+- `04` AFB III · Paul behauptet: „Wenn ich zu einer Zahl, die ohne Rest durch 7 teilbar ist, die Zahl 28 addiere, ist das Ergebnis wieder ohne Rest durch 7 teilbar.“ Beurteile, ohne eine bestimmte Zahl auszurechnen.
   - ☐ Stimmt nur manchmal: Es hängt von der Ausgangszahl ab.
+  - ☐ Stimmt immer, weil jede Zahl plus 28 durch 7 teilbar ist.
+  - ☑ Stimmt immer, weil 28 = 4 · 7 selbst ein Vielfaches von 7 ist.
+  - ☐ Stimmt nie: Durch das Addieren entsteht ein Rest.
 - `05` AFB II · Bestimme die größte dreistellige Zahl, die ohne Rest durch 7 teilbar ist. Lösung: **994**.
-- `06` AFB III · Aus den Ziffern 1, 2 und 6 werden alle dreistelligen Zahlen gebildet, in denen jede Ziffer genau einmal vorkommt. Wie viele dieser Zahlen sind ohne Rest durch 8 teilbar? Lösung: **1**. Typische Fehler: 6 (sach-schritt-vergessen).
+- `06` AFB III · Aus den Ziffern 5, 6 und 9 werden alle dreistelligen Zahlen gebildet, in denen jede Ziffer genau einmal vorkommt. Wie viele dieser Zahlen sind ohne Rest durch 4 teilbar? Lösung: **2**. Typische Fehler: 6 (sach-schritt-vergessen).
 
 ## 5.4.5-D3: Ich kann schriftlich durch zweistellige Zahlen dividieren.
 
@@ -1752,69 +2228,69 @@ Grundlage, die F übt: Durch 10 teilen
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt durch 10 fragt: Wie viele Zehner sind es? *Beispiel:* 70 : 10 = 7. In 70 stecken 7 Zehner. *Lösungsschritt:* Zähle im Bild die Zehner.
 
-- `01` AFB I · Rechne. / 50 : 10 _(Bild: Zehnermaterial: 5 Zehnerstangen, 0 Einerwürfel)_ Lösung: **5**. Typische Fehler: 50 (div-stellenwert), 500 (div-stellenwert).
-- `02` AFB I · 10 Kinder teilen 30 Sticker gerecht. / Wie viele Sticker bekommt 1 Kind? _(Bild: 10 Gruppen mit je 3 Plättchen)_ Lösung: **3 Sticker**. Typische Fehler: 20 (div-falsche-rechenart).
-- `03` AFB I · 20 sind ▢ Zehner. / 20 : 10 = ▢ _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_ Lösung: x = **2**, y = **2**
-- `04` AFB I · 30 : 10 / Welches Ergebnis stimmt? _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_
-  - ☐ 30
-  - ☑ 3
-  - ☐ 300
-- `05` AFB II · 80 : 10 = 8 / Wie viel ist 800 : 10? _(Bild: Zehnermaterial: 8 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **80**. Typische Fehler: 8 (div-stellenwert), 800 (div-stellenwert).
-- `06` AFB I · Welche Zahl fehlt? / ▢ : 10 = 5 _(Bild: Zehnermaterial: 5 Zehnerstangen, 0 Einerwürfel)_ Lösung: **50**. Typische Fehler: 5 (div-stellenwert), 15 (div-falsche-rechenart).
+- `01` AFB I · Rechne. / 80 : 10 _(Bild: Zehnermaterial: 8 Zehnerstangen, 0 Einerwürfel)_ Lösung: **8**. Typische Fehler: 80 (div-stellenwert), 800 (div-stellenwert).
+- `02` AFB I · 10 Kinder teilen 40 Sticker gerecht. / Wie viele Sticker bekommt 1 Kind? _(Bild: 10 Gruppen mit je 4 Plättchen)_ Lösung: **4 Sticker**. Typische Fehler: 30 (div-falsche-rechenart).
+- `03` AFB I · 80 sind ▢ Zehner. / 80 : 10 = ▢ _(Bild: Zehnermaterial: 8 Zehnerstangen, 0 Einerwürfel)_ Lösung: x = **8**, y = **8**
+- `04` AFB I · 60 : 10 / Welches Ergebnis stimmt? _(Bild: Zehnermaterial: 6 Zehnerstangen, 0 Einerwürfel)_
+  - ☐ 60
+  - ☐ 600
+  - ☑ 6
+- `05` AFB II · 50 : 10 = 5 / Wie viel ist 500 : 10? _(Bild: Zehnermaterial: 5 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **50**. Typische Fehler: 5 (div-stellenwert), 500 (div-stellenwert).
+- `06` AFB I · Welche Zahl fehlt? / ▢ : 10 = 4 _(Bild: Zehnermaterial: 4 Zehnerstangen, 0 Einerwürfel)_ Lösung: **40**. Typische Fehler: 4 (div-stellenwert), 14 (div-falsche-rechenart).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile erst durch 10. Teile dann durch 3. *Beispiel:* 180 : 20: 180 : 10 = 18. Dann 18 : 2 = 9. *Lösungsschritt:* 90 : 10 = 9. Rechne jetzt 9 : 3.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile erst durch 10. Teile dann durch 2. *Beispiel:* 180 : 20: 180 : 10 = 18. Dann 18 : 2 = 9. *Lösungsschritt:* 60 : 10 = 6. Rechne jetzt 6 : 2.
 
-- `01` AFB I · Rechne. / 90 : 30 _(Bild: Zehnermaterial: 9 Zehnerstangen, 0 Einerwürfel)_ Lösung: **3**. Typische Fehler: 30 (div-stellenwert).
-- `02` AFB I · Rechne 560 : 20 in 2 Schritten. / 560 : 10 = ▢ / Dann geteilt durch 2: ▢ _(Bild: Zehnermaterial: 5 Hunderterplatten, 6 Zehnerstangen, 0 Einerwürfel)_ Lösung: erst = **56**, dann = **28**
-- `03` AFB II · Welche Zahl fehlt? / ▢ : 20 = 4 Lösung: **80**. Typische Fehler: 8 (div-stellenwert).
-- `04` AFB I · 320 : 10 = 32 / Wie viel ist 320 : 20? Lösung: **16**. Typische Fehler: 160 (div-stellenwert), 32 (sach-schritt-vergessen).
-- `05` AFB II · 50 Kinder zahlen zusammen 650 € für einen Ausflug. / Alle zahlen gleich viel. / Wie viel Euro zahlt 1 Kind? _(Bild: Zehnermaterial: 6 Hunderterplatten, 5 Zehnerstangen, 0 Einerwürfel)_ Lösung: **13 €**. Typische Fehler: 600 (div-falsche-rechenart), 130 (div-stellenwert).
-- `06` AFB III · Finn rechnet: 800 : 20 = 4. / Prüfe mit der Mal-Aufgabe. / Stimmt das?
-  - ☐ Stimmt. / 4 · 20 = 800.
-  - ☑ Falsch. / 4 · 20 = 80. / Richtig ist 40.
-  - ☐ Falsch. / Richtig ist 400.
+- `01` AFB I · Rechne. / 60 : 20 _(Bild: Zehnermaterial: 6 Zehnerstangen, 0 Einerwürfel)_ Lösung: **3**. Typische Fehler: 30 (div-stellenwert).
+- `02` AFB I · Rechne 840 : 30 in 2 Schritten. / 840 : 10 = ▢ / Dann geteilt durch 3: ▢ _(Bild: Zehnermaterial: 8 Hunderterplatten, 4 Zehnerstangen, 0 Einerwürfel)_ Lösung: erst = **84**, dann = **28**
+- `03` AFB II · Welche Zahl fehlt? / ▢ : 20 = 25 Lösung: **500**. Typische Fehler: 50 (div-stellenwert).
+- `04` AFB I · 600 : 10 = 60 / Wie viel ist 600 : 50? Lösung: **12**. Typische Fehler: 120 (div-stellenwert), 60 (sach-schritt-vergessen).
+- `05` AFB II · 40 Kinder zahlen zusammen 160 € für einen Ausflug. / Alle zahlen gleich viel. / Wie viel Euro zahlt 1 Kind? _(Bild: Zehnermaterial: 1 Hunderterplatten, 6 Zehnerstangen, 0 Einerwürfel)_ Lösung: **4 €**. Typische Fehler: 120 (div-falsche-rechenart), 40 (div-stellenwert).
+- `06` AFB III · Lina rechnet: 600 : 20 = 3. / Prüfe mit der Mal-Aufgabe. / Stimmt das?
+  - ☑ Falsch. / 3 · 20 = 60. / Richtig ist 30.
+  - ☐ Falsch. / Richtig ist 300.
+  - ☐ Stimmt. / 3 · 20 = 600.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere dir zuerst die Reihe 38, 76, 114, … am Rand. Sie hilft bei jedem Schritt. *Lösungsschritt:* Beginne links. Wie oft passt die 38 in die 62? 1-mal, denn 1 · 38 = 38. Rechne 62 − 38 = 24. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere dir zuerst die Reihe 15, 30, 45, … am Rand. Sie hilft bei jedem Schritt. *Lösungsschritt:* Beginne links. Wie oft passt die 15 in die 66? 4-mal, denn 4 · 15 = 60. Rechne 66 − 60 = 6. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · Dividiere schriftlich: 6232 : 38 Lösung: **164**. Typische Fehler: 1640 (div-stellenwert).
-- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 16 = 473 Lösung: **7568**. Typische Fehler: 489 (begriffe-verwechselt).
-- `03` AFB II · Dividiere 9840 durch das Produkt aus 4 und 15. Lösung: **164**. Typische Fehler: 2460 (sach-schritt-vergessen), 656 (sach-schritt-vergessen).
-- `04` AFB I · Dividiere schriftlich: 7337 : 29 Lösung: **253**. Typische Fehler: 2530 (div-stellenwert).
-- `05` AFB II · Welcher Überschlag passt am besten zu 5092 : 38?
-  - ☐ 52 000 : 40 = 1300
-  - ☑ 5200 : 40 = 130
-  - ☐ 5200 : 10 = 520
-  - ☐ 5200 : 100 = 52
-- `06` AFB III · Ole erhält bei 2460 : 12 das Ergebnis 25. Prüfe mit einem Überschlag und entscheide.
-  - ☐ Falsch: Der Quotient muss vierstellig sein.
-  - ☑ Falsch: 2400 : 12 = 200, der Quotient muss dreistellig sein. Richtig ist 205.
-  - ☐ Richtig: 25 · 12 = 2460.
+- `01` AFB I · Dividiere schriftlich: 6600 : 15 Lösung: **440**. Typische Fehler: 4400 (div-stellenwert), 44 (div-null-vergessen).
+- `02` AFB II · Bestimme den fehlenden Dividenden: ▢ : 45 = 107 Lösung: **4815**. Typische Fehler: 152 (begriffe-verwechselt).
+- `03` AFB II · Dividiere 8778 durch das Produkt aus 7 und 11. Lösung: **114**. Typische Fehler: 1254 (sach-schritt-vergessen), 798 (sach-schritt-vergessen).
+- `04` AFB I · Dividiere schriftlich: 5264 : 14 Lösung: **376**. Typische Fehler: 3760 (div-stellenwert).
+- `05` AFB II · Welcher Überschlag passt am besten zu 7350 : 21?
+  - ☑ 7400 : 20 = 370
+  - ☐ 74 000 : 20 = 3700
+  - ☐ 7400 : 100 = 74
+  - ☐ 7400 : 10 = 740
+- `06` AFB III · Mara erhält bei 6160 : 20 das Ergebnis 38. Prüfe mit einem Überschlag und entscheide.
   - ☐ Richtig: Bei einem zweistelligen Divisor ist auch der Quotient zweistellig.
+  - ☑ Falsch: 6000 : 20 = 300, der Quotient muss dreistellig sein. Richtig ist 308.
+  - ☐ Richtig: 38 · 20 = 6160.
+  - ☐ Falsch: Der Quotient muss vierstellig sein.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie viele Stellen muss der Quotient nach einem Überschlag haben?
 
-- `01` AFB I · Dividiere schriftlich: 6804 : 63 Lösung: **108**. Typische Fehler: 18 (div-null-vergessen), 1080 (div-stellenwert).
-- `02` AFB II · Es gilt 1656 : 46 = 36. Bestimme ohne schriftliche Rechnung: 1656 : 23 Lösung: **72**. Typische Fehler: 18 (div-stellenwert), 36 (div-stellenwert).
-- `03` AFB II · Genau eine Zahl zwischen 570 und 587 ist ohne Rest durch 17 teilbar. Welche? Lösung: **578**.
-- `04` AFB III · Eine Zahl ist ohne Rest durch 12 teilbar. Welche Aussage gilt dann immer?
-  - ☑ Sie ist auch durch 3 und durch 4 teilbar.
-  - ☐ Sie ist auch durch 8 teilbar.
-  - ☐ Sie ist auch durch 24 teilbar.
+- `01` AFB I · Dividiere schriftlich: 5096 : 49 Lösung: **104**. Typische Fehler: 14 (div-null-vergessen), 1040 (div-stellenwert).
+- `02` AFB II · Es gilt 2176 : 34 = 64. Bestimme ohne schriftliche Rechnung: 2176 : 17 Lösung: **128**. Typische Fehler: 32 (div-stellenwert), 64 (div-stellenwert).
+- `03` AFB II · Genau eine Zahl zwischen 430 und 443 ist ohne Rest durch 13 teilbar. Welche? Lösung: **442**.
+- `04` AFB III · Eine Zahl ist ohne Rest durch 15 teilbar. Welche Aussage gilt dann immer?
+  - ☐ Sie ist auch durch 10 teilbar.
   - ☐ Sie ist größer als 100.
+  - ☑ Sie ist auch durch 3 und durch 5 teilbar.
+  - ☐ Sie ist auch durch 30 teilbar.
   - ☐ Sie ist eine gerade Zahl und endet auf 0.
-- `05` AFB II · Eine Zahl ergibt bei Division durch 19 den Quotienten 46 und den größtmöglichen Rest. Wie heißt die Zahl? Lösung: **892**. Typische Fehler: 874 (div-rest-vergessen), 893 (div-rest-zu-gross).
-- `06` AFB III · Tom berechnet 2772 : 28 in zwei Schritten: zuerst 2772 : 4 = 693, dann 693 : 7 = 99. Beurteile den Rechenweg.
-  - ☐ Falsch. Tom müsste zuerst durch 24 und dann durch 4 teilen.
-  - ☐ Falsch, denn 4 + 7 ist nicht 28.
+- `05` AFB II · Eine Zahl ergibt bei Division durch 18 den Quotienten 36 und den größtmöglichen Rest. Wie heißt die Zahl? Lösung: **665**. Typische Fehler: 648 (div-rest-vergessen), 666 (div-rest-zu-gross).
+- `06` AFB III · Mia berechnet 3556 : 28 in zwei Schritten: zuerst 3556 : 4 = 889, dann 889 : 7 = 127. Beurteile den Rechenweg.
+  - ☐ Richtig, aber nur, weil 3556 eine gerade Zahl ist.
   - ☑ Richtig, denn 4 · 7 = 28. Nacheinander durch 4 und durch 7 zu teilen wirkt wie das Teilen durch 28.
+  - ☐ Falsch. Mia müsste zuerst durch 24 und dann durch 4 teilen.
+  - ☐ Falsch, denn 4 + 7 ist nicht 28.
   - ☐ Falsch. Ein Divisor darf nicht zerlegt werden.
-  - ☐ Richtig, aber nur, weil 2772 eine gerade Zahl ist.
 
 ## 5.4.5-D4: Ich kann Divisionen mit Rest berechnen und den Rest deuten.
 
@@ -1822,66 +2298,66 @@ Grundlage, die F übt: Plättchen verteilen, einige bleiben übrig
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Was nicht mehr für eine Gruppe reicht, bleibt übrig. *Beispiel:* 14 Plättchen, immer 4 zusammen: 3 Gruppen sind 12 Plättchen. 2 bleiben übrig. *Lösungsschritt:* 3 Gruppen sind 3 · 5 = 15 Plättchen. Zähle die Plättchen ohne Gruppe.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was nicht mehr für eine Gruppe reicht, bleibt übrig. *Beispiel:* 14 Plättchen, immer 4 zusammen: 3 Gruppen sind 12 Plättchen. 2 bleiben übrig. *Lösungsschritt:* 5 Gruppen sind 5 · 2 = 10 Plättchen. Zähle die Plättchen ohne Gruppe.
 
-- `01` AFB I · Du hast 17 Plättchen. / Du legst immer 5 zusammen. / Wie viele Plättchen bleiben übrig? _(Bild: 3 Gruppen mit je 5 Plättchen, 2 einzeln daneben)_ Lösung: **2 Plättchen**. Typische Fehler: 3 (div-rest-vergessen), 0 (div-rest-vergessen).
-- `02` AFB I · 21 : 5 = ▢ Rest ▢ _(Bild: 4 Gruppen mit je 5 Plättchen, 1 einzeln daneben)_ Lösung: q = **4**, r = **1**
-- `03` AFB I · 11 Kinder bilden 2er-Gruppen. / Wie viele Kinder bleiben übrig? _(Bild: 5 Gruppen mit je 2 Plättchen, 1 einzeln daneben)_ Lösung: **1 Kinder**. Typische Fehler: 5 (div-rest-vergessen).
-- `04` AFB I · Du hast 14 Plättchen. / Du legst immer 5 zusammen. / Wie viele volle Gruppen sind es? _(Bild: 2 Gruppen mit je 5 Plättchen, 4 einzeln daneben)_ Lösung: **2 Gruppen**. Typische Fehler: 3 (div-rest-nicht-gedeutet), 4 (div-rest-vergessen).
-- `05` AFB II · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 0 nach 5 (+ 5), 5 nach 10 (+ 5), 10 nach 15 (+ 5), 15 nach 20 (+ 5))_
-  - ☐ 10 : 5
-  - ☑ 14 : 5
-  - ☐ 15 : 5
-- `06` AFB I · Welche Zahl fehlt? / 9 : 4 = 2 Rest ▢ _(Bild: 2 Gruppen mit je 4 Plättchen, 1 einzeln daneben)_ Lösung: r = **1**
+- `01` AFB I · Du hast 11 Plättchen. / Du legst immer 2 zusammen. / Wie viele Plättchen bleiben übrig? _(Bild: 5 Gruppen mit je 2 Plättchen, 1 einzeln daneben)_ Lösung: **1 Plättchen**. Typische Fehler: 5 (div-rest-vergessen), 0 (div-rest-vergessen).
+- `02` AFB I · 20 : 3 = ▢ Rest ▢ _(Bild: 6 Gruppen mit je 3 Plättchen, 2 einzeln daneben)_ Lösung: q = **6**, r = **2**
+- `03` AFB I · 5 Kinder bilden 2er-Gruppen. / Wie viele Kinder bleiben übrig? _(Bild: 2 Gruppen mit je 2 Plättchen, 1 einzeln daneben)_ Lösung: **1 Kinder**. Typische Fehler: 2 (div-rest-vergessen).
+- `04` AFB I · Du hast 16 Plättchen. / Du legst immer 5 zusammen. / Wie viele volle Gruppen sind es? _(Bild: 3 Gruppen mit je 5 Plättchen, 1 einzeln daneben)_ Lösung: **3 Gruppen**. Typische Fehler: 4 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
+- `05` AFB II · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 15, Sprünge 0 nach 4 (+ 4), 4 nach 8 (+ 4), 8 nach 12 (+ 4))_
+  - ☐ 12 : 4
+  - ☐ 8 : 4
+  - ☑ 9 : 4
+- `06` AFB I · Welche Zahl fehlt? / 23 : 5 = 4 Rest ▢ _(Bild: 4 Gruppen mit je 5 Plättchen, 3 einzeln daneben)_ Lösung: r = **3**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der 7er-Reihe die größte Zahl, die noch in die 34 passt. *Beispiel:* 47 : 6: 7 · 6 = 42 passt. Bis 47 fehlen 5. Also 7 Rest 5. *Lösungsschritt:* 4 · 7 = 28. Rechne 34 − 28.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der 6er-Reihe die größte Zahl, die noch in die 23 passt. *Beispiel:* 47 : 6: 7 · 6 = 42 passt. Bis 47 fehlen 5. Also 7 Rest 5. *Lösungsschritt:* 3 · 6 = 18. Rechne 23 − 18.
 
-- `01` AFB I · 34 : 7 = ▢ Rest ▢ _(Bild: 4 Gruppen mit je 7 Plättchen, 6 einzeln daneben)_ Lösung: q = **4**, r = **6**
-- `02` AFB I · Es gibt 25 Eier. / In 1 Karton passen 8 Eier. / Wie viele Kartons werden ganz voll? _(Bild: 3 Gruppen mit je 8 Plättchen, 1 einzeln daneben)_ Lösung: **3 Kartons**. Typische Fehler: 4 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
-- `03` AFB II · Welche Zahl fehlt? / ▢ : 8 = 9 Rest 2 Lösung: **74**. Typische Fehler: 72 (div-rest-vergessen).
-- `04` AFB I · 5 · 3 = 15 / 16 : 3 = 5 Rest ▢ _(Bild: 5 Gruppen mit je 3 Plättchen, 1 einzeln daneben)_ Lösung: r = **1**
-- `05` AFB II · Du teilst durch 7. / Welcher Rest ist nicht möglich?
+- `01` AFB I · 23 : 6 = ▢ Rest ▢ _(Bild: 3 Gruppen mit je 6 Plättchen, 5 einzeln daneben)_ Lösung: q = **3**, r = **5**
+- `02` AFB I · Es gibt 55 Stifte. / In 1 Dose passen 7 Stifte. / Wie viele Dosen werden ganz voll? _(Bild: 7 Gruppen mit je 7 Plättchen, 6 einzeln daneben)_ Lösung: **7 Dosen**. Typische Fehler: 8 (div-rest-nicht-gedeutet), 6 (div-rest-vergessen).
+- `03` AFB II · Welche Zahl fehlt? / ▢ : 6 = 3 Rest 5 Lösung: **23**. Typische Fehler: 18 (div-rest-vergessen).
+- `04` AFB I · 3 · 6 = 18 / 21 : 6 = 3 Rest ▢ _(Bild: 3 Gruppen mit je 6 Plättchen, 3 einzeln daneben)_ Lösung: r = **3**
+- `05` AFB II · Du teilst durch 8. / Welcher Rest ist nicht möglich?
+  - ☑ 8
+  - ☐ 7
   - ☐ 1
-  - ☑ 7
-  - ☐ 6
-- `06` AFB III · Emre rechnet: 59 : 9 = 5 Rest 14. / Stimmt das?
-  - ☑ Falsch. / Der Rest 14 ist größer als 9. / Richtig ist 6 Rest 5.
-  - ☐ Falsch. / Richtig ist 7 Rest 5.
-  - ☐ Stimmt. / Die Probe passt: 5 · 9 + 14 = 59.
+- `06` AFB III · Noah rechnet: 36 : 5 = 6 Rest 6. / Stimmt das?
+  - ☐ Falsch. / Richtig ist 8 Rest 1.
+  - ☐ Stimmt. / Die Probe passt: 6 · 5 + 6 = 36.
+  - ☑ Falsch. / Der Rest 6 ist größer als 5. / Richtig ist 7 Rest 1.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rest ist das, was nach dem letzten Abziehen übrig bleibt. Er ist kleiner als der Divisor. *Lösungsschritt:* Beginne links. Wie oft passt die 15 in die 40? 2-mal, denn 2 · 15 = 30. Rechne 40 − 30 = 10. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rest ist das, was nach dem letzten Abziehen übrig bleibt. Er ist kleiner als der Divisor. *Lösungsschritt:* Beginne links. Wie oft passt die 16 in die 50? 3-mal, denn 3 · 16 = 48. Rechne 50 − 48 = 2. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · 402 : 15 = ▢ Rest ▢ Lösung: q = **26**, r = **12**
-- `02` AFB II · 583 Muffins sollen in Schachteln verpackt werden. In jede Schachtel passen genau 23 Muffins.
-  - a) Wie viele Schachteln werden vollständig gefüllt? **25 Schachteln**. Typische Fehler: 26 (div-rest-nicht-gedeutet).
-  - b) Wie viele Muffins bleiben übrig? **8 Muffins**. Typische Fehler: 0 (div-rest-vergessen).
-- `03` AFB II · 477 Kinder fahren mit Kleinbussen ins Schullandheim. In jeden Kleinbus passen 17 Kinder. Wie viele Kleinbusse werden insgesamt gebraucht? Lösung: **29 Kleinbusse**. Typische Fehler: 28 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
-- `04` AFB I · 358 : 13 = ▢ Rest ▢ Lösung: q = **27**, r = **7**
-- `05` AFB II · Ein Armband braucht 13 Perlen. Lina hat 314 Perlen. Wie viele vollständige Armbänder kann sie fädeln? Lösung: **24 Armbänder**. Typische Fehler: 25 (div-rest-nicht-gedeutet), 2 (div-rest-vergessen).
-- `06` AFB III · 239 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 35 Plätze. Ole rechnet 239 : 35 = 6 Rest 29 und bestellt 6 Busse. Beurteile die Entscheidung.
-  - ☐ Richtig: 6 Busse sind voll, das genügt.
-  - ☑ Falsch: 29 Kinder hätten keinen Platz. Es werden 7 Busse gebraucht.
+- `01` AFB I · 507 : 16 = ▢ Rest ▢ Lösung: q = **31**, r = **11**
+- `02` AFB II · 189 Muffins sollen in Schachteln verpackt werden. In jede Schachtel passen genau 15 Muffins.
+  - a) Wie viele Schachteln werden vollständig gefüllt? **12 Schachteln**. Typische Fehler: 13 (div-rest-nicht-gedeutet).
+  - b) Wie viele Muffins bleiben übrig? **9 Muffins**. Typische Fehler: 0 (div-rest-vergessen).
+- `03` AFB II · 330 Kinder fahren mit Kleinbussen ins Schullandheim. In jeden Kleinbus passen 24 Kinder. Wie viele Kleinbusse werden insgesamt gebraucht? Lösung: **14 Kleinbusse**. Typische Fehler: 13 (div-rest-nicht-gedeutet), 18 (div-rest-vergessen).
+- `04` AFB I · 471 : 15 = ▢ Rest ▢ Lösung: q = **31**, r = **6**
+- `05` AFB II · Eine Eintrittskarte kostet 7 €. Die Klassenkasse enthält 296 €. Wie viele Karten kann die Klasse höchstens kaufen? Lösung: **42 Karten**. Typische Fehler: 43 (div-rest-nicht-gedeutet), 2 (div-rest-vergessen).
+- `06` AFB III · 380 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 50 Plätze. Paul rechnet 380 : 50 = 7 Rest 30 und bestellt 7 Busse. Beurteile die Entscheidung.
+  - ☐ Richtig: 7 Busse sind voll, das genügt.
+  - ☐ Falsch: Es werden 30 Busse gebraucht.
   - ☐ Richtig: Bei Sachaufgaben lässt man den Rest weg.
-  - ☐ Falsch: Es werden 29 Busse gebraucht.
+  - ☑ Falsch: 30 Kinder hätten keinen Platz. Es werden 8 Busse gebraucht.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du dein Ergebnis mit einer Probe sichern?
 
-- `01` AFB I · 2084 : 19 = ▢ Rest ▢ Lösung: q = **109**, r = **13**
-- `02` AFB II · Bestimme die größte dreistellige Zahl, die bei Division durch 6 den Rest 3 lässt. Lösung: **999**. Typische Fehler: 996 (div-rest-vergessen).
-- `03` AFB II · Eine Zahl lässt bei Division durch 9 den Rest 7. Welchen Rest lässt das Doppelte dieser Zahl bei Division durch 9? Lösung: **5**. Typische Fehler: 14 (div-rest-zu-gross), 7 (teilbar-summe).
-- `04` AFB III · Eine Zahl lässt bei Division durch 5 den Rest 4. Ben addiert 20 zu dieser Zahl. Welche Aussage über den neuen Rest bei Division durch 5 stimmt?
-  - ☐ Der Rest wird 0, weil 20 durch 5 teilbar ist.
+- `01` AFB I · 6788 : 23 = ▢ Rest ▢ Lösung: q = **295**, r = **3**
+- `02` AFB II · Bestimme die größte dreistellige Zahl, die bei Division durch 7 den Rest 6 lässt. Lösung: **993**. Typische Fehler: 994 (div-rest-vergessen).
+- `03` AFB II · Eine Zahl lässt bei Division durch 8 den Rest 2. Welchen Rest lässt das Doppelte dieser Zahl bei Division durch 8? Lösung: **4**. Typische Fehler: 2 (teilbar-summe).
+- `04` AFB III · Eine Zahl lässt bei Division durch 8 den Rest 2. Finn addiert 32 zu dieser Zahl. Welche Aussage über den neuen Rest bei Division durch 8 stimmt?
+  - ☑ Der Rest bleibt 2, weil 32 ein Vielfaches von 8 ist.
   - ☐ Das hängt von der Ausgangszahl ab.
-  - ☐ Der Rest wird 24.
-  - ☑ Der Rest bleibt 4, weil 20 ein Vielfaches von 5 ist.
-- `05` AFB II · Wie viele natürliche Zahlen von 1 bis 60 lassen bei Division durch 6 den Rest 3? Lösung: **10**.
-- `06` AFB III · Eine Zahl lässt bei Division durch 5 den Rest 2 und bei Division durch 7 den Rest 5. Bestimme die kleinste natürliche Zahl mit dieser Eigenschaft. Lösung: **12**.
+  - ☐ Der Rest wird 34.
+  - ☐ Der Rest wird 0, weil 32 durch 8 teilbar ist.
+- `05` AFB II · Wie viele natürliche Zahlen von 1 bis 50 lassen bei Division durch 6 den Rest 5? Lösung: **8**.
+- `06` AFB III · Eine Zahl lässt bei Division durch 5 den Rest 3 und bei Division durch 7 den Rest 4. Bestimme die kleinste natürliche Zahl mit dieser Eigenschaft. Lösung: **18**.
 
 ## 5.4.5-D5: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
 
@@ -1889,100 +2365,100 @@ Grundlage, die F übt: Geteilt mit Mal rückgängig machen
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 28 : 4 = 7. Die Probe ist 7 · 4 = 28. *Lösungsschritt:* Die Probe beginnt mit dem Ergebnis 2.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 28 : 4 = 7. Die Probe ist 7 · 4 = 28. *Lösungsschritt:* Die Probe beginnt mit dem Ergebnis 3.
 
-- `01` AFB I · 8 : 4 = 2 / Welche Mal-Aufgabe ist die Probe? _(Bild: Punktefeld mit 2 Reihen zu je 4 Punkten)_
-  - ☑ 2 · 4 = 8
-  - ☐ 8 · 4 = 2
-  - ☐ 2 + 4 = 6
-- `02` AFB I · Mache die Probe. / 24 : 4 = 6 / 6 · 4 = ▢ _(Bild: Punktefeld mit 6 Reihen zu je 4 Punkten)_ Lösung: **24**. Typische Fehler: 10 (div-falsche-rechenart).
-- `03` AFB I · Mache die Probe. / 20 : 5 = 4 / ▢ · 5 = ▢ _(Bild: Punktefeld mit 4 Reihen zu je 5 Punkten)_ Lösung: x = **4**, y = **20**
-- `04` AFB I · Welche Rechnung ist richtig? / Prüfe mit der Mal-Aufgabe. _(Bild: Punktefeld mit 6 Reihen zu je 2 Punkten)_
-  - ☐ 12 : 2 = 5
+- `01` AFB I · 6 : 2 = 3 / Welche Mal-Aufgabe ist die Probe? _(Bild: Punktefeld mit 3 Reihen zu je 2 Punkten)_
+  - ☐ 6 · 2 = 3
+  - ☑ 3 · 2 = 6
+  - ☐ 3 + 2 = 5
+- `02` AFB I · Mache die Probe. / 30 : 5 = 6 / 6 · 5 = ▢ _(Bild: Punktefeld mit 6 Reihen zu je 5 Punkten)_ Lösung: **30**. Typische Fehler: 11 (div-falsche-rechenart).
+- `03` AFB I · Mache die Probe. / 12 : 2 = 6 / ▢ · 2 = ▢ _(Bild: Punktefeld mit 6 Reihen zu je 2 Punkten)_ Lösung: x = **6**, y = **12**
+- `04` AFB I · Welche Rechnung ist richtig? / Prüfe mit der Mal-Aufgabe. _(Bild: Punktefeld mit 6 Reihen zu je 4 Punkten)_
+  - ☑ 24 : 4 = 6
+  - ☐ 24 : 4 = 7
+  - ☐ 24 : 4 = 5
+- `05` AFB II · Die Probe ist 6 · 2 = 12. / Welche Geteilt-Aufgabe wurde geprüft? _(Bild: Punktefeld mit 6 Reihen zu je 2 Punkten)_
   - ☑ 12 : 2 = 6
-  - ☐ 12 : 2 = 7
-- `05` AFB II · Die Probe ist 6 · 3 = 18. / Welche Geteilt-Aufgabe wurde geprüft? _(Bild: Punktefeld mit 6 Reihen zu je 3 Punkten)_
-  - ☑ 18 : 3 = 6
-  - ☐ 6 : 3 = 18
-  - ☐ 3 : 18 = 6
-- `06` AFB I · 20 : 4 = 5 / Die Probe ist eine Mal-Aufgabe. / Welche Zahl kommt bei der Probe heraus? _(Bild: Punktefeld mit 5 Reihen zu je 4 Punkten)_ Lösung: **20**. Typische Fehler: 5 (probe-falsche-umkehr), 9 (div-falsche-rechenart).
+  - ☐ 6 : 2 = 12
+  - ☐ 2 : 12 = 6
+- `06` AFB I · 15 : 5 = 3 / Die Probe ist eine Mal-Aufgabe. / Welche Zahl kommt bei der Probe heraus? _(Bild: Punktefeld mit 3 Reihen zu je 5 Punkten)_ Lösung: **15**. Typische Fehler: 3 (probe-falsche-umkehr), 8 (div-falsche-rechenart).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 96 : 4 = 24. Probe: 24 · 4 = 96. *Lösungsschritt:* Rechne 80 · 2 = 160. Rechne dann 3 · 2 dazu.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebnis mal zweite Zahl. *Beispiel:* 96 : 4 = 24. Probe: 24 · 4 = 96. *Lösungsschritt:* Rechne 70 · 9 = 630. Rechne dann 6 · 9 dazu.
 
-- `01` AFB I · Mache die Probe. / 166 : 2 = 83 / 83 · 2 = ▢ _(Bild: Zehnermaterial: 1 Hunderterplatten, 6 Zehnerstangen, 6 Einerwürfel)_ Lösung: **166**. Typische Fehler: 85 (div-falsche-rechenart).
-- `02` AFB I · Überschlage. / 612 : 2 / Rechne mit 600 : 2. _(Bild: Zehnermaterial: 6 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **300**. Typische Fehler: 306 (ueberschlag-nicht-gerundet), 30 (div-stellenwert).
-- `03` AFB II · Welcher Überschlag passt zu 808 : 2? _(Bild: Zehnermaterial: 8 Hunderterplatten, 0 Zehnerstangen, 8 Einerwürfel)_
-  - ☑ 800 : 2 = 400
+- `01` AFB I · Mache die Probe. / 684 : 9 = 76 / 76 · 9 = ▢ _(Bild: Zehnermaterial: 6 Hunderterplatten, 8 Zehnerstangen, 4 Einerwürfel)_ Lösung: **684**. Typische Fehler: 85 (div-falsche-rechenart).
+- `02` AFB I · Überschlage. / 372 : 4 / Rechne mit 400 : 4. _(Bild: Zehnermaterial: 4 Hunderterplatten, 0 Zehnerstangen, 0 Einerwürfel)_ Lösung: **100**. Typische Fehler: 93 (ueberschlag-nicht-gerundet), 10 (div-stellenwert).
+- `03` AFB II · Welcher Überschlag passt zu 840 : 8? _(Bild: Zehnermaterial: 8 Hunderterplatten, 4 Zehnerstangen, 0 Einerwürfel)_
   - ☐ 800 : 10 = 80
-  - ☐ 80 : 2 = 40
-- `04` AFB I · 456 : 6 = 76 / Welche Mal-Aufgabe ist die Probe?
-  - ☐ 456 · 6 = 76
-  - ☐ 76 + 6 = 82
-  - ☑ 76 · 6 = 456
-- `05` AFB II · 190 : 5 / Welches Ergebnis stimmt? / Prüfe mit der Mal-Aufgabe. _(Bild: Zehnermaterial: 1 Hunderterplatten, 9 Zehnerstangen, 0 Einerwürfel)_
-  - ☐ 39
-  - ☑ 38
-  - ☐ 48
-- `06` AFB III · Lina rechnet: 995 : 5 = 99. / Der Überschlag ist 1000 : 5 = 200. / Was zeigt der Überschlag?
-  - ☐ 99 passt zum Überschlag.
-  - ☐ Der Überschlag ist falsch. / 1000 : 5 = 20.
-  - ☑ 99 ist viel zu klein. / Das Ergebnis muss nahe bei 200 liegen. / Richtig ist 199.
+  - ☐ 80 : 8 = 10
+  - ☑ 800 : 8 = 100
+- `04` AFB I · 408 : 6 = 68 / Welche Mal-Aufgabe ist die Probe?
+  - ☑ 68 · 6 = 408
+  - ☐ 68 + 6 = 74
+  - ☐ 408 · 6 = 68
+- `05` AFB II · 126 : 3 / Welches Ergebnis stimmt? / Prüfe mit der Mal-Aufgabe. _(Bild: Zehnermaterial: 1 Hunderterplatten, 2 Zehnerstangen, 6 Einerwürfel)_
+  - ☐ 43
+  - ☐ 52
+  - ☑ 42
+- `06` AFB III · Lina rechnet: 665 : 5 = 33. / Der Überschlag ist 700 : 5 = 140. / Was zeigt der Überschlag?
+  - ☐ 33 passt zum Überschlag.
+  - ☐ Der Überschlag ist falsch. / 700 : 5 = 14.
+  - ☑ 33 ist viel zu klein. / Das Ergebnis muss nahe bei 140 liegen. / Richtig ist 133.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde so, dass du die Division im Kopf lösen kannst. *Lösungsschritt:* Der Dividend wird zu 1600.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde so, dass du die Division im Kopf lösen kannst. *Lösungsschritt:* Der Dividend wird zu 1500.
 
-- `01` AFB I · Überschlage: Runde den Dividenden auf Hunderter und rechne dann. 1572 : 8 ≈ ? Lösung: **200**. Typische Fehler: 20 (div-stellenwert).
-- `02` AFB II · Nur ein Ergebnis kann stimmen. Entscheide mit einem Überschlag: 5336 : 8
-  - ☐ 1667
-  - ☐ 66
-  - ☑ 667
-  - ☐ 6670
-- `03` AFB II · Bei einer Division durch 17 ist der Quotient 15 und der Rest 5. Bestimme mit der Probe den Dividenden. Lösung: **260**. Typische Fehler: 255 (div-rest-vergessen).
-- `04` AFB I · Welche Rechnung ist die Probe zu 9972 : 36 = 277?
-  - ☑ 277 · 36 = 9972
-  - ☐ 9972 − 277 = 36
-  - ☐ 9972 · 36 = 277
-  - ☐ 277 : 36 = 9972
-- `05` AFB II · Zwischen welchen Zahlen liegt 2184 : 78? Entscheide mit einem Überschlag.
-  - ☑ zwischen 20 und 30
-  - ☐ zwischen 200 und 300
-  - ☐ zwischen 2 und 3
-  - ☐ zwischen 40 und 50
-- `06` AFB III · Emre rechnet 7800 : 25 = 312. Die Probe 312 · 25 = 7800 stimmt. Ein grober Überschlag mit 7000 : 30 ergibt aber nur etwa 233. Was folgt daraus?
-  - ☑ Das Ergebnis 312 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.
-  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 233 ergibt.
+- `01` AFB I · Überschlage: Runde den Dividenden auf Hunderter und rechne dann. 1537 : 3 ≈ ? Lösung: **500**. Typische Fehler: 50 (div-stellenwert).
+- `02` AFB II · Nur ein Ergebnis kann stimmen. Entscheide mit einem Überschlag: 2765 : 5
+  - ☐ 5530
+  - ☐ 55
+  - ☐ 1553
+  - ☑ 553
+- `03` AFB II · Bei einer Division durch 22 ist der Quotient 28 und der Rest 14. Bestimme mit der Probe den Dividenden. Lösung: **630**. Typische Fehler: 616 (div-rest-vergessen).
+- `04` AFB I · Welche Rechnung ist die Probe zu 4779 : 27 = 177?
+  - ☑ 177 · 27 = 4779
+  - ☐ 177 : 27 = 4779
+  - ☐ 4779 · 27 = 177
+  - ☐ 4779 − 177 = 27
+- `05` AFB II · Zwischen welchen Zahlen liegt 5538 : 71? Entscheide mit einem Überschlag.
+  - ☐ zwischen 7 und 8
+  - ☐ zwischen 700 und 800
+  - ☑ zwischen 70 und 80
+  - ☐ zwischen 90 und 100
+- `06` AFB III · Finn rechnet 4968 : 24 = 207. Die Probe 207 · 24 = 4968 stimmt. Ein grober Überschlag mit 4000 : 30 ergibt aber nur etwa 133. Was folgt daraus?
+  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt.
   - ☐ Die Probe muss falsch sein.
+  - ☑ Das Ergebnis 207 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.
   - ☐ Man nimmt den Mittelwert aus Ergebnis und Überschlag.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf welche glatten Zahlen kannst du runden, sodass die Division im Kopf aufgeht?
 
-- `01` AFB I · Überschlage sinnvoll: 9269 : 33 ≈ ? Runde den Divisor auf Zehner und den Dividenden auf Tausender. Lösung: **300**. Typische Fehler: 3000 (div-stellenwert), 30 (div-stellenwert).
+- `01` AFB I · Überschlage sinnvoll: 6072 : 33 ≈ ? Runde den Divisor auf Zehner und den Dividenden auf Tausender. Lösung: **200**. Typische Fehler: 2000 (div-stellenwert), 20 (div-stellenwert).
 - `02` AFB II · Entscheide ohne schriftliche Rechnung: Welcher Quotient ist größer als 100?
-  - ☑ 6956 : 65
-  - ☐ 5956 : 65
-  - ☐ 6435 : 65
-  - ☐ 6956 : 75
-- `03` AFB II · Bei einer Division durch 28 ist der Quotient 216 und der Rest 6. Bestimme den Dividenden. Lösung: **6054**. Typische Fehler: 6048 (div-rest-vergessen).
+  - ☐ 8118 : 82
+  - ☑ 8723 : 82
+  - ☐ 7723 : 82
+  - ☐ 8723 : 92
+- `03` AFB II · Bei einer Division durch 23 ist der Quotient 250 und der Rest 13. Bestimme den Dividenden. Lösung: **5763**. Typische Fehler: 5750 (div-rest-vergessen).
 - `04` AFB III · Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?
-  - ☑ Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.
   - ☐ Er stimmt dann immer genau.
-  - ☐ Er ist dann immer zu groß.
   - ☐ Er ist dann immer zu klein.
-- `05` AFB II · Der Überschlag zu einer Division lautet 6000 : 30 = 200. Welche Aufgabe wurde überschlagen?
-  - ☐ 6111 : 68
-  - ☐ 611 : 28
-  - ☐ 61 110 : 28
-  - ☑ 6111 : 28
-- `06` AFB III · Lina überschlägt 4704 : 56 mit 5000 : 50 = 100. Der genaue Wert ist 84. Warum ist der Überschlag deutlich zu groß?
+  - ☐ Er ist dann immer zu groß.
+  - ☑ Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.
+- `05` AFB II · Der Überschlag zu einer Division lautet 6000 : 60 = 100. Welche Aufgabe wurde überschlagen?
+  - ☑ 6218 : 59
+  - ☐ 622 : 59
+  - ☐ 62 180 : 59
+  - ☐ 6218 : 99
+- `06` AFB III · Mara überschlägt 4704 : 56 mit 5000 : 50 = 100. Der genaue Wert ist 84. Warum ist der Überschlag deutlich zu groß?
   - ☐ Der Dividend wurde verkleinert und der Divisor vergrößert. Beides vergrößert den Quotienten.
   - ☐ Der Überschlag ist nicht zu groß: 100 und 84 liegen nah genug beieinander.
-  - ☑ Der Dividend wurde vergrößert und der Divisor verkleinert. Beides vergrößert den Quotienten.
   - ☐ Ein Überschlag ergibt immer einen zu großen Wert.
+  - ☑ Der Dividend wurde vergrößert und der Divisor verkleinert. Beides vergrößert den Quotienten.
   - ☐ Bei einem Überschlag darf nur der Dividend gerundet werden.
 
 ## 5.4.5-D6: Ich kann Sachaufgaben zur Division lösen.
@@ -1991,79 +2467,79 @@ Grundlage, die F übt: Verteil- und Aufteil-Geschichten, Rechnung zuordnen
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 3 zusammen. Zähle die Gruppen. *Beispiel:* 24 Äpfel, immer 4 in eine Tüte: 24 : 4 = 6. Es werden 6 Tüten. *Lösungsschritt:* Rechne 12 : 3. Zähle im Bild die Gruppen.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 2 zusammen. Zähle die Gruppen. *Beispiel:* 24 Äpfel, immer 4 in eine Tüte: 24 : 4 = 6. Es werden 6 Tüten. *Lösungsschritt:* Rechne 6 : 2. Zähle im Bild die Gruppen.
 
-- `01` AFB I · Es gibt 12 Bälle. / In jede Kiste kommen 3 Bälle. / Wie viele Kisten werden voll? _(Bild: 4 Gruppen mit je 3 Plättchen)_ Lösung: **4 Kisten**. Typische Fehler: 9 (div-falsche-rechenart), 15 (div-falsche-rechenart).
-- `02` AFB I · 3 Kinder teilen 12 Äpfel gerecht. / Wie viele Äpfel bekommt 1 Kind? _(Bild: 3 Gruppen mit je 4 Plättchen)_ Lösung: **4 Äpfel**. Typische Fehler: 9 (div-falsche-rechenart).
-- `03` AFB I · Es gibt 12 Äpfel. / Immer 4 kommen in 1 Tüte. / Wie viele Tüten sind es? / Welche Rechnung passt? _(Bild: 3 Gruppen mit je 4 Plättchen)_
-  - ☐ 12 − 4
-  - ☐ 12 · 4
-  - ☑ 12 : 4
-- `04` AFB I · 30 Kinder gehen in 5 gleich große Gruppen. / Wie viele Kinder sind in 1 Gruppe? _(Bild: 5 Gruppen mit je 6 Plättchen)_ Lösung: **6 Kinder**. Typische Fehler: 25 (div-falsche-rechenart), 5 (sach-falsche-rechnung).
-- `05` AFB II · Die Rechnung ist 10 : 2 = 5. / Welche Geschichte passt? _(Bild: 2 Gruppen mit je 5 Plättchen)_
-  - ☐ Zu 10 Keksen kommen 2 Kekse dazu.
-  - ☐ Von 10 Keksen werden 2 gegessen.
-  - ☑ 10 Kekse werden an 2 Kinder gerecht verteilt.
-- `06` AFB I · 1 Woche hat 7 Tage. / Wie viele Wochen sind 35 Tage? _(Bild: 5 Gruppen mit je 7 Plättchen)_ Lösung: **5 Wochen**. Typische Fehler: 28 (div-falsche-rechenart).
+- `01` AFB I · Es gibt 6 Bälle. / In jede Kiste kommen 2 Bälle. / Wie viele Kisten werden voll? _(Bild: 3 Gruppen mit je 2 Plättchen)_ Lösung: **3 Kisten**. Typische Fehler: 4 (div-falsche-rechenart), 8 (div-falsche-rechenart).
+- `02` AFB I · 5 Kinder teilen 20 Äpfel gerecht. / Wie viele Äpfel bekommt 1 Kind? _(Bild: 5 Gruppen mit je 4 Plättchen)_ Lösung: **4 Äpfel**. Typische Fehler: 15 (div-falsche-rechenart).
+- `03` AFB I · Es gibt 30 Kekse. / Immer 5 kommen in 1 Dose. / Wie viele Dosen sind es? / Welche Rechnung passt? _(Bild: 6 Gruppen mit je 5 Plättchen)_
+  - ☑ 30 : 5
+  - ☐ 30 · 5
+  - ☐ 30 − 5
+- `04` AFB I · 15 Kinder gehen in 5 gleich große Gruppen. / Wie viele Kinder sind in 1 Gruppe? _(Bild: 5 Gruppen mit je 3 Plättchen)_ Lösung: **3 Kinder**. Typische Fehler: 10 (div-falsche-rechenart), 5 (sach-falsche-rechnung).
+- `05` AFB II · Die Rechnung ist 6 : 2 = 3. / Welche Geschichte passt? _(Bild: 2 Gruppen mit je 3 Plättchen)_
+  - ☑ 6 Kekse werden an 2 Kinder gerecht verteilt.
+  - ☐ Von 6 Keksen werden 2 gegessen.
+  - ☐ Zu 6 Keksen kommen 2 Kekse dazu.
+- `06` AFB I · 1 Woche hat 7 Tage. / Wie viele Wochen sind 28 Tage? _(Bild: 4 Gruppen mit je 7 Plättchen)_ Lösung: **4 Wochen**. Typische Fehler: 21 (div-falsche-rechenart).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Preis wird gerecht auf 7 Springseile verteilt. Du musst teilen. *Beispiel:* 6 Springseile kosten 138 €. Rechne 120 : 6 = 20 und 18 : 6 = 3. 1 Seil kostet 23 €. *Lösungsschritt:* Beginne links. Wie oft passt die 7 in die 13? 1-mal, denn 1 · 7 = 7. Rechne 13 − 7 = 6. Hole die nächste Ziffer herunter.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Preis wird gerecht auf 4 Bücher verteilt. Du musst teilen. *Beispiel:* 6 Springseile kosten 138 €. Rechne 120 : 6 = 20 und 18 : 6 = 3. 1 Seil kostet 23 €. *Lösungsschritt:* Beginne links. Wie oft passt die 4 in die 11? 2-mal, denn 2 · 4 = 8. Rechne 11 − 8 = 3. Hole die nächste Ziffer herunter.
 
-- `01` AFB I · Die Klasse kauft 7 Springseile. / Alle kosten gleich viel. / Zusammen kosten sie 133 €. / Wie viel Euro kostet 1 Springseil? _(Bild: Zehnermaterial: 1 Hunderterplatten, 3 Zehnerstangen, 3 Einerwürfel)_ Lösung: **19 €**. Typische Fehler: 126 (div-falsche-rechenart), 190 (div-stellenwert).
-- `02` AFB I · 1 Woche hat 7 Tage. / Wie viele Wochen sind 63 Tage? _(Bild: 9 Gruppen mit je 7 Plättchen)_ Lösung: **9 Wochen**. Typische Fehler: 56 (div-falsche-rechenart).
-- `03` AFB II · 6 Trikots kosten zusammen 144 €. / Alle kosten gleich viel. / Gesucht ist der Preis für 1 Stück. / Welche Rechnung passt? _(Bild: Zehnermaterial: 1 Hunderterplatten, 4 Zehnerstangen, 4 Einerwürfel)_
-  - ☑ 144 : 6
-  - ☐ 144 · 6
-  - ☐ 144 − 6
-- `04` AFB I · 126 Flaschen stehen in 6 gleich vollen Regalen. / Wie viele Flaschen stehen in 1 Regal? _(Bild: Zehnermaterial: 1 Hunderterplatten, 2 Zehnerstangen, 6 Einerwürfel)_ Lösung: **21 Flaschen**. Typische Fehler: 120 (div-falsche-rechenart), 210 (div-stellenwert).
-- `05` AFB II · 378 Flaschen stehen in 7 gleich vollen Regalen. / Noah rechnet 378 : 7 = 54. / Was bedeutet die 54? _(Bild: Zehnermaterial: 3 Hunderterplatten, 7 Zehnerstangen, 8 Einerwürfel)_
-  - ☐ Es gibt 54 Regale.
-  - ☐ 54 Flaschen bleiben übrig.
-  - ☑ In jedem Regal stehen 54 Flaschen.
-- `06` AFB III · 9 Springseile kosten zusammen 234 €. / Elif rechnet 234 − 9 = 225. / Elif sagt: „1 Springseil kostet 225 €.“ / Stimmt das? _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 4 Einerwürfel)_
-  - ☑ Falsch. / Hier wird geteilt: 234 : 9 = 26. / 1 Springseil kostet 26 €.
-  - ☐ Stimmt. / 234 − 9 = 225.
-  - ☐ Falsch. / Hier wird mal gerechnet: 234 · 9.
+- `01` AFB I · Die Klasse kauft 4 Bücher. / Alle kosten gleich viel. / Zusammen kosten sie 116 €. / Wie viel Euro kostet 1 Buch? _(Bild: Zehnermaterial: 1 Hunderterplatten, 1 Zehnerstangen, 6 Einerwürfel)_ Lösung: **29 €**. Typische Fehler: 112 (div-falsche-rechenart), 290 (div-stellenwert).
+- `02` AFB I · 1 Woche hat 7 Tage. / Wie viele Wochen sind 42 Tage? _(Bild: 6 Gruppen mit je 7 Plättchen)_ Lösung: **6 Wochen**. Typische Fehler: 35 (div-falsche-rechenart).
+- `03` AFB II · 5 Springseile kosten zusammen 145 €. / Alle kosten gleich viel. / Gesucht ist der Preis für 1 Stück. / Welche Rechnung passt? _(Bild: Zehnermaterial: 1 Hunderterplatten, 4 Zehnerstangen, 5 Einerwürfel)_
+  - ☑ 145 : 5
+  - ☐ 145 − 5
+  - ☐ 145 · 5
+- `04` AFB I · 155 Flaschen stehen in 5 gleich vollen Regalen. / Wie viele Flaschen stehen in 1 Regal? _(Bild: Zehnermaterial: 1 Hunderterplatten, 5 Zehnerstangen, 5 Einerwürfel)_ Lösung: **31 Flaschen**. Typische Fehler: 150 (div-falsche-rechenart), 310 (div-stellenwert).
+- `05` AFB II · 186 Flaschen stehen in 3 gleich vollen Regalen. / Tom rechnet 186 : 3 = 62. / Was bedeutet die 62? _(Bild: Zehnermaterial: 1 Hunderterplatten, 8 Zehnerstangen, 6 Einerwürfel)_
+  - ☑ In jedem Regal stehen 62 Flaschen.
+  - ☐ 62 Flaschen bleiben übrig.
+  - ☐ Es gibt 62 Regale.
+- `06` AFB III · 8 Trikots kosten zusammen 232 €. / Lena rechnet 232 − 8 = 224. / Lena sagt: „1 Trikot kostet 224 €.“ / Stimmt das? _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 2 Einerwürfel)_
+  - ☑ Falsch. / Hier wird geteilt: 232 : 8 = 29. / 1 Trikot kostet 29 €.
+  - ☐ Falsch. / Hier wird mal gerechnet: 232 · 8.
+  - ☐ Stimmt. / 232 − 8 = 224.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier wird gleichmäßig verteilt. Welche Rechenart passt? *Lösungsschritt:* Rechne 1716 : 22.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier wird gleichmäßig verteilt. Welche Rechenart passt? *Lösungsschritt:* Rechne 1224 : 24.
 
-- `01` AFB I · Eine Reise kostet für 22 Personen zusammen 1716 €. Alle zahlen gleich viel. Wie viel zahlt eine Person? Lösung: **78 €**. Typische Fehler: 780 (div-stellenwert), 1694 (sach-falsche-rechnung).
-- `02` AFB II · Ein Bauer erntet 1682 kg Kartoffeln. 590 kg behält er selbst. Den Rest füllt er gleichmäßig in 12 Säcke.
-  - a) Wie viel Kilogramm füllt er in Säcke? **1092 kg**.
-  - b) Wie viel Kilogramm sind in einem Sack? **91 kg**.
-- `03` AFB II · Ein Bauer erntet 4640 kg Kartoffeln. 900 kg behält er selbst. Den Rest füllt er gleichmäßig in 22 Säcke. Wie viel Kilogramm sind in einem Sack? Welcher Rechenausdruck passt?
-  - ☐ (4640 + 900) : 22
-  - ☑ (4640 − 900) : 22
-  - ☐ 4640 : 22 − 900
-  - ☐ 4640 − 900 : 22
-- `04` AFB I · 2432 Flaschen werden gleichmäßig auf 19 Kästen verteilt. Wie viele Flaschen kommen in einen Kasten? Lösung: **128 Flaschen**. Typische Fehler: 1280 (div-stellenwert), 2413 (sach-falsche-rechnung).
-- `05` AFB II · In einer Fabrik werden 1680 Flaschen in Kästen zu je 12 Flaschen gepackt. Je 20 Kästen kommen auf eine Palette. Wie viele Paletten werden voll? Lösung: **7 Paletten**. Typische Fehler: 140 (sach-schritt-vergessen).
-- `06` AFB III · Der Ausflug kostet für 27 Kinder zusammen 621 €. Ben sagt: „Wenn jedes Kind 20 € mitbringt, reicht das Geld.“ Beurteile die Aussage.
-  - ☑ Falsch: 27 · 20 € = 540 €, es fehlen 81 €. Nötig sind 23 € pro Kind.
-  - ☐ Richtig: 20 € sind fast 23 €, das genügt.
-  - ☐ Richtig: 621 : 20 ist mehr als 27.
-  - ☐ Falsch: Jedes Kind muss 27 € zahlen.
+- `01` AFB I · Ein Lkw legt in 24 Tagen 1224 km zurück, jeden Tag gleich viel. Wie viele Kilometer fährt er an einem Tag? Lösung: **51 km**. Typische Fehler: 510 (div-stellenwert), 1200 (sach-falsche-rechnung).
+- `02` AFB II · Eine Schule bekommt 1980 Hefte. 420 Hefte kommen ins Lager. Die übrigen werden gleichmäßig an 24 Klassen verteilt.
+  - a) Wie viele Hefte werden verteilt? **1560 Hefte**.
+  - b) Wie viele Hefte bekommt jede Klasse? **65 Hefte**.
+- `03` AFB II · Ein Ausflug kostet 2682 €. Der Förderverein übernimmt 820 €. Den Rest teilen sich 14 Kinder gleichmäßig. Wie viel zahlt jedes Kind? Welcher Rechenausdruck passt?
+  - ☐ 2682 : 14 − 820
+  - ☑ (2682 − 820) : 14
+  - ☐ (2682 + 820) : 14
+  - ☐ 2682 − 820 : 14
+- `04` AFB I · 2548 Flaschen werden gleichmäßig auf 28 Kästen verteilt. Wie viele Flaschen kommen in einen Kasten? Lösung: **91 Flaschen**. Typische Fehler: 910 (div-stellenwert), 2520 (sach-falsche-rechnung).
+- `05` AFB II · In einer Fabrik werden 4800 Flaschen in Kästen zu je 24 Flaschen gepackt. Je 20 Kästen kommen auf eine Palette. Wie viele Paletten werden voll? Lösung: **10 Paletten**. Typische Fehler: 200 (sach-schritt-vergessen).
+- `06` AFB III · Der Ausflug kostet für 18 Kinder zusammen 414 €. Ida sagt: „Wenn jedes Kind 21 € mitbringt, reicht das Geld.“ Beurteile die Aussage.
+  - ☑ Falsch: 18 · 21 € = 378 €, es fehlen 36 €. Nötig sind 23 € pro Kind.
+  - ☐ Richtig: 414 : 21 ist mehr als 18.
+  - ☐ Falsch: Jedes Kind muss 18 € zahlen.
+  - ☐ Richtig: 21 € sind fast 23 €, das genügt.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Angaben brauchst du für die Frage, welche nicht?
 
-- `01` AFB I · Eine Reisegruppe aus 21 Personen zahlt zusammen 2394 € für eine Fahrt, die 9 Tage dauert. Alle zahlen gleich viel. Wie viel zahlt eine Person? Lösung: **114 €**. Typische Fehler: 266 (sach-unnoetige-angabe), 1140 (div-stellenwert).
-- `02` AFB II · Für ein Schulfest werden 39 Packungen mit je 25 Bechern gekauft. Die Becher werden gleichmäßig auf 15 Stände verteilt. Das Fest dauert 8 Stunden. Wie viele Becher bekommt jeder Stand? Lösung: **65 Becher**. Typische Fehler: 975 (sach-schritt-vergessen).
-- `03` AFB II · 444 Stühle sollen in gleich lange Reihen gestellt werden. Es sollen mehr als 10 und weniger als 20 Reihen sein, und kein Stuhl darf übrig bleiben. Wie viele Reihen sind es? Lösung: **12 Reihen**.
+- `01` AFB I · 2014 Flaschen werden gleichmäßig auf 19 Kästen verteilt. Der Transport dauert 5 Stunden. Wie viele Flaschen kommen in einen Kasten? Lösung: **106 Flaschen**. Typische Fehler: 1060 (div-stellenwert).
+- `02` AFB II · Ein Obsthof erntet 36 Kisten mit je 56 kg Äpfeln. Die Äpfel werden in Säcke zu je 24 kg umgefüllt. Die Ernte dauert 8 Tage. Wie viele Säcke werden gefüllt? Lösung: **84 Säcke**. Typische Fehler: 2016 (sach-schritt-vergessen), 252 (sach-unnoetige-angabe).
+- `03` AFB II · 708 Stühle sollen in gleich lange Reihen gestellt werden. Es sollen mehr als 10 und weniger als 20 Reihen sein, und kein Stuhl darf übrig bleiben. Wie viele Reihen sind es? Lösung: **12 Reihen**.
 - `04` AFB III · Eine Rechnung wird gleichmäßig auf eine Gruppe verteilt. Die Gruppe wird halb so groß. Welche Aussage gilt immer, egal wie hoch die Rechnung ist?
-  - ☑ Jede Person zahlt doppelt so viel.
-  - ☐ Jede Person zahlt nur noch die Hälfte.
-  - ☐ Der Betrag pro Person bleibt gleich.
   - ☐ Das hängt von der Höhe der Rechnung ab.
   - ☐ Jede Person zahlt 2 € mehr.
-- `05` AFB II · Ein Betrag wird gleichmäßig auf 18 Personen verteilt. Jede müsste 42 € zahlen. Dann sagen 6 Personen ab. Wie viel zahlt nun jede der übrigen Personen? Lösung: **63 €**. Typische Fehler: 42 (sach-schritt-vergessen), 756 (sach-schritt-vergessen).
+  - ☐ Jede Person zahlt nur noch die Hälfte.
+  - ☑ Jede Person zahlt doppelt so viel.
+  - ☐ Der Betrag pro Person bleibt gleich.
+- `05` AFB II · Ein Betrag wird gleichmäßig auf 15 Personen verteilt. Jede müsste 34 € zahlen. Dann sagen 5 Personen ab. Wie viel zahlt nun jede der übrigen Personen? Lösung: **51 €**. Typische Fehler: 34 (sach-schritt-vergessen), 510 (sach-schritt-vergessen).
 - `06` AFB III · Eine Schule hat 5 Klassenstufen mit je 4 Klassen. Alle Kinder fahren gemeinsam mit Reisebussen zu einem Ausflug. Schätze die fehlenden Angaben selbst. Wie viele Reisebusse werden ungefähr gebraucht?
-  - ☐ etwa 2
-  - ☐ etwa 100
-  - ☑ etwa 10
-  - ☐ etwa 50
   - ☐ etwa 500
+  - ☐ etwa 50
+  - ☐ etwa 100
+  - ☐ etwa 2
+  - ☑ etwa 10
