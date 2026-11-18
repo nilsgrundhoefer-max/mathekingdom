@@ -297,19 +297,32 @@
       },
       {
        "id": "5.3.2-A2",
-       "text": "Ich kann schriftlich addieren, auch mit Übertrag."
+       "text": "Ich kann schriftlich addieren, auch mit Übertrag.",
+       "voraussetzungen": [
+        "5.3.1-K1"
+       ]
       },
       {
        "id": "5.3.2-A3",
-       "text": "Ich kann mehrere Zahlen schriftlich addieren."
+       "text": "Ich kann mehrere Zahlen schriftlich addieren.",
+       "voraussetzungen": [
+        "5.3.2-A2"
+       ]
       },
       {
        "id": "5.3.2-A4",
-       "text": "Ich kann ein Ergebnis mit Überschlag und Probe prüfen."
+       "text": "Ich kann ein Ergebnis mit Überschlag und Probe prüfen.",
+       "voraussetzungen": [
+        "5.3.2-A2",
+        "5.3.1-K1"
+       ]
       },
       {
        "id": "5.3.2-A5",
-       "text": "Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen."
+       "text": "Ich kann Sachaufgaben zur Addition lösen, auch mit Tabellen und Diagrammen.",
+       "voraussetzungen": [
+        "5.3.2-A2"
+       ]
       }
      ],
      "merkzettel": {
@@ -334,19 +347,33 @@
       },
       {
        "id": "5.3.3-S2",
-       "text": "Ich kann schriftlich subtrahieren, auch mit Übertrag."
+       "text": "Ich kann schriftlich subtrahieren, auch mit Übertrag.",
+       "voraussetzungen": [
+        "5.3.1-K2",
+        "5.3.2-A2"
+       ]
       },
       {
        "id": "5.3.3-S3",
-       "text": "Ich kann mehrere Zahlen schriftlich subtrahieren."
+       "text": "Ich kann mehrere Zahlen schriftlich subtrahieren.",
+       "voraussetzungen": [
+        "5.3.3-S2"
+       ]
       },
       {
        "id": "5.3.3-S4",
-       "text": "Ich kann ein Ergebnis mit Überschlag und Probe prüfen."
+       "text": "Ich kann ein Ergebnis mit Überschlag und Probe prüfen.",
+       "voraussetzungen": [
+        "5.3.3-S2",
+        "5.3.2-A4"
+       ]
       },
       {
        "id": "5.3.3-S5",
-       "text": "Ich kann Sachaufgaben zur Subtraktion lösen."
+       "text": "Ich kann Sachaufgaben zur Subtraktion lösen.",
+       "voraussetzungen": [
+        "5.3.3-S2"
+       ]
       }
      ],
      "merkzettel": {
@@ -368,11 +395,18 @@
      "lernziele": [
       {
        "id": "5.3.4-B1",
-       "text": "Ich kann Rechenausdrücke mit Klammern berechnen."
+       "text": "Ich kann Rechenausdrücke mit Klammern berechnen.",
+       "voraussetzungen": [
+        "5.3.1-K1",
+        "5.3.1-K2"
+       ]
       },
       {
        "id": "5.3.4-B2",
-       "text": "Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden."
+       "text": "Ich kann zu einem Text den passenden Rechenausdruck mit Klammern finden.",
+       "voraussetzungen": [
+        "5.3.4-B1"
+       ]
       }
      ],
      "merkzettel": {
@@ -396,7 +430,11 @@
       },
       {
        "id": "5.3.5-R2",
-       "text": "Ich kann mit den Rechengesetzen vorteilhaft rechnen."
+       "text": "Ich kann mit den Rechengesetzen vorteilhaft rechnen.",
+       "voraussetzungen": [
+        "5.3.5-R1",
+        "5.3.1-K3"
+       ]
       }
      ],
      "merkzettel": {
@@ -471,23 +509,41 @@
       },
       {
        "id": "5.4.5-D2",
-       "text": "Ich kann schriftlich durch einstellige Zahlen dividieren."
+       "text": "Ich kann schriftlich durch einstellige Zahlen dividieren.",
+       "voraussetzungen": [
+        "5.3.1-K2",
+        "5.4.5-D1"
+       ]
       },
       {
        "id": "5.4.5-D3",
-       "text": "Ich kann schriftlich durch zweistellige Zahlen dividieren."
+       "text": "Ich kann schriftlich durch zweistellige Zahlen dividieren.",
+       "voraussetzungen": [
+        "5.4.5-D2"
+       ]
       },
       {
        "id": "5.4.5-D4",
-       "text": "Ich kann Divisionen mit Rest berechnen und den Rest deuten."
+       "text": "Ich kann Divisionen mit Rest berechnen und den Rest deuten.",
+       "voraussetzungen": [
+        "5.4.5-D2"
+       ]
       },
       {
        "id": "5.4.5-D5",
-       "text": "Ich kann ein Ergebnis mit Überschlag und Probe prüfen."
+       "text": "Ich kann ein Ergebnis mit Überschlag und Probe prüfen.",
+       "voraussetzungen": [
+        "5.4.5-D2",
+        "5.3.2-A4"
+       ]
       },
       {
        "id": "5.4.5-D6",
-       "text": "Ich kann Sachaufgaben zur Division lösen."
+       "text": "Ich kann Sachaufgaben zur Division lösen.",
+       "voraussetzungen": [
+        "5.4.5-D2",
+        "5.4.5-D4"
+       ]
       }
      ],
      "merkzettel": {

@@ -500,3 +500,94 @@ test('Sicherheitsangabe: sicher falsch heißt sicher geprüft und nicht im erste
   L.verbuche(st, aufgaben(S2, 'M')[0], { ...ok(), sicher: true }, 'M', '2026-11-18T10:00:00Z', index);
   assert.equal(st.versuche.at(-1).sicher, true);
 });
+
+test('Einstiegscheck: sechs bis acht Aufgaben aus allen Meilensteinen, G und M, AFB I und II', () => {
+  const stand = neu();
+  const kapitel = pool.kapitel.find((k) => k.id === '5.3');
+  assert.equal(L.einstiegsZustand(stand, index, kapitel), 'offen');
+  const e = L.stelleEinstieg(stand, index, kapitel, '2026-11-17T10:00:00Z');
+  assert.ok(e.aufgaben.length >= L.EINSTIEG_MIN && e.aufgaben.length <= L.EINSTIEG_MAX, String(e.aufgaben.length));
+  const auf = e.aufgaben.map((id) => index.aufgabe.get(id));
+  assert.ok(auf.every((a) => ['G', 'M'].includes(a.niveau) && (a.afb ?? 1) <= 2));
+  const mitAufgaben = kapitel.unterkapitel.filter((u) => u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id)));
+  for (const u of mitAufgaben) assert.ok(auf.some((a) => index.meilensteinVon.get(a.lernziel).id === u.id), u.id);
+  assert.equal(L.einstiegsZustand(stand, index, kapitel), 'laeuft');
+});
+
+test('Einstiegscheck: zählt für kein Lernziel, bringt keine Münzen und schlägt eine Krone vor', () => {
+  const stand = neu();
+  const kapitel = pool.kapitel.find((k) => k.id === '5.3');
+  const e = L.stelleEinstieg(stand, index, kapitel, '2026-11-17T10:00:00Z');
+  let r;
+  for (const id of [...e.aufgaben]) {
+    assert.equal(L.naechsteEinstiegsAufgabe(stand, '5.3'), id);
+    const a = index.aufgabe.get(id);
+    r = L.trageEinstiegEin(stand, '5.3', a, { geloest: a.niveau === 'G', eingaben: [], fehlvorstellungen: [], dauer: 10 }, '2026-11-17T10:05:00Z');
+  }
+  assert.equal(r.fertig, true);
+  assert.equal(r.empfehlung, 'G');
+  assert.equal(L.naechsteEinstiegsAufgabe(stand, '5.3'), null);
+  assert.equal(L.einstiegsZustand(stand, index, kapitel), null);
+  assert.equal(stand.muenzen ?? 0, 0);
+  assert.deepEqual(stand.lernziele, {});
+  assert.ok(stand.versuche.every((v) => v.einstieg && v.muenzen === 0));
+  for (const u of kapitel.unterkapitel) assert.notEqual(L.milestoneStatus(index, stand, u), 'begonnen');
+  // Die erste echte Aufgabe ist noch neu, und die Kronenwahl gilt als Selbsteinschätzung.
+  const id0 = e.aufgaben[0], lz = index.aufgabe.get(id0).lernziel;
+  const ms = index.meilensteinVon.get(lz);
+  L.merkeWahl(stand, index, ms, 'G', '2026-11-17T10:10:00Z');
+  assert.equal(stand.einschaetzung[ms.id].gewaehlt, 'G');
+  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }]), 'E');
+  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }, { niveau: 'M', richtig: false }]), 'M');
+  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: false }, { niveau: 'M', richtig: false }]), 'F');
+});
+
+test('Einstiegscheck: nicht mehr angeboten, wenn im Kapitel schon gearbeitet wurde oder er übersprungen ist', () => {
+  const kapitel = pool.kapitel.find((k) => k.id === '5.3');
+  const a = neu();
+  L.verbuche(a, aufgaben(S2, 'G')[0], ok(), 'G', '2026-11-17T10:05:00Z');
+  assert.equal(L.einstiegsZustand(a, index, kapitel), null);
+  const b = neu();
+  L.ueberspringeEinstieg(b, '5.3', '2026-11-17T10:05:00Z');
+  assert.equal(L.einstiegsZustand(b, index, kapitel), null);
+  assert.equal(L.einstellungen({ einstiegPflicht: ['5.3'] }, '5A-K4M2', pool).einstiegPflicht.has('5.3'), true);
+});
+
+test('Brücke: Vorschlag erst bei wackelig, drei Aufgaben eine Stufe tiefer, einmal am Tag je Lernziel', () => {
+  const stand = neu();
+  const lz = '5.3.3-S2';
+  const g = aufgaben(lz, 'G');
+  for (let i = 0; i < 3; i++) L.verbuche(stand, g[i], ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
+  assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:06:00Z'), null);
+  L.verbuche(stand, g[3], ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:07:00Z');
+  const v = L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:08:00Z');
+  assert.equal(v.fuer, lz);
+  assert.ok(index.lernziel.get(lz).voraussetzungen.includes(v.zu));
+  assert.equal(L.brueckenNiveau('G'), 'F');
+  assert.equal(L.brueckenNiveau('F'), 'F');
+  const b = L.stelleBruecke(stand, index, v, 'G', '2026-11-17T10:08:00Z');
+  assert.equal(b.aufgaben.length, L.BRUECKE_AUFGABEN);
+  assert.ok(b.aufgaben.every((id) => index.aufgabe.get(id).niveau === 'F' && index.aufgabe.get(id).lernziel === v.zu));
+  assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:09:00Z'), null, 'nicht, solange eine Brücke läuft');
+  let r;
+  for (const id of [...b.aufgaben]) {
+    const a = index.aufgabe.get(id);
+    assert.equal(L.naechsteBrueckenAufgabe(stand), id);
+    L.verbuche(stand, a, ok(), 'G', '2026-11-17T10:10:00Z', index, { bruecke: true });
+    r = L.trageBrueckeEin(stand, a, true, '2026-11-17T10:10:00Z');
+  }
+  assert.deepEqual({ fertig: r.fertig, richtig: r.richtig, gesamt: r.gesamt, fuer: r.fuer }, { fertig: true, richtig: 3, gesamt: 3, fuer: lz });
+  assert.equal(stand.brueckeAktiv, null);
+  assert.equal(stand.bruecken.length, 1);
+  assert.ok(stand.versuche.filter((x) => x.bruecke).length === 3);
+  assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T12:00:00Z'), null, 'am selben Tag nicht noch einmal');
+  assert.ok(L.brueckeVorschlag(stand, index, lz, '2026-11-18T09:00:00Z'), 'am nächsten Tag wieder');
+});
+
+test('Brücke: Lernziele ohne Voraussetzungen bekommen keine', () => {
+  const stand = neu();
+  const lz = '5.3.1-K1';
+  assert.deepEqual(index.lernziel.get(lz).voraussetzungen ?? [], []);
+  for (const a of aufgaben(lz, 'G').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
+  assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:08:00Z'), null);
+});

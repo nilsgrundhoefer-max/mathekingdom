@@ -94,14 +94,12 @@ export function lernzieleMitAufgaben(pool, index) {
 // Lernzielstand eines Schülers: siegel | aufzufrischen | wackelig | begonnen | offen.
 // Aufzufrischen: Siegel vorhanden, aber im Rückblick falsch gelöst (ADR 0014). Das Siegel bleibt.
 // Wackelig: mindestens WACKELIG_AB Aufgaben, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
-export const WACKELIG_AB = 4;
+export const WACKELIG_AB = L.WACKELIG_AB;
+// Aufgaben aus dem Einstiegscheck zählen für den Lernzielstand nicht (ADR 0014).
 export function lernzielZustand(stand, lernzielId) {
   if (stand.lernziele[lernzielId]) return stand.rueckblick?.[lernzielId]?.aufzufrischen ? 'aufzufrischen' : 'siegel';
-  const v = stand.versuche.filter((x) => x.lernziel === lernzielId);
-  if (v.length === 0) return 'offen';
-  const geloest = v.filter((x) => x.richtig).length;
-  const schritte = v.filter((x) => L.hatKarte(x, 'loesungsschritt')).length;
-  return (v.length >= WACKELIG_AB && geloest / v.length < 0.5) || schritte >= 2 ? 'wackelig' : 'begonnen';
+  if (!stand.versuche.some((x) => x.lernziel === lernzielId && !x.einstieg)) return 'offen';
+  return L.istWackelig(stand, lernzielId) ? 'wackelig' : 'begonnen';
 }
 
 export function lernzielmatrix(staende, lernziele, zielniveaus) {
@@ -480,6 +478,46 @@ export function tafelbild(staende, aufgabeId) {
     if (!(v.richtig && v.versuche === 1) && erste != null) { const t = alsText(erste); if (t) falsch.set(t, (falsch.get(t) ?? 0) + 1); }
   }
   return { bearbeitet, richtig, falsche: [...falsch].map(([antwort, anzahl]) => ({ antwort, anzahl })).sort((a, b) => b.anzahl - a.anzahl).slice(0, 5) };
+}
+
+// ---------- Einstiegscheck und Brücken (ADR 0014) ----------
+// Vorwissen der Klasse je Meilenstein eines Kapitels: Anteil richtiger Einstiegsaufgaben, dazu wer fertig ist und wer übersprungen hat.
+export function vorwissen(staende, pool, kapitelId) {
+  const kapitel = pool.kapitel.find((k) => k.id === kapitelId);
+  const meilensteinVon = new Map(kapitel.unterkapitel.flatMap((u) => u.lernziele.map((l) => [l.id, u])));
+  const je = new Map();
+  let fertig = 0, uebersprungen = 0;
+  const empfehlungen = {};
+  for (const { stand } of staende) {
+    const e = stand.einstieg?.[kapitelId];
+    if (!e) continue;
+    if (e.uebersprungen) { uebersprungen++; continue; }
+    if (e.fertig) { fertig++; empfehlungen[e.empfehlung] = (empfehlungen[e.empfehlung] ?? 0) + 1; }
+    for (const x of e.erledigt ?? []) {
+      const u = meilensteinVon.get(x.lernziel);
+      if (!u) continue;
+      if (!je.has(u.id)) je.set(u.id, { meilenstein: u.id, titel: u.titel, richtig: 0, gesamt: 0 });
+      const z = je.get(u.id); z.gesamt++; if (x.richtig) z.richtig++;
+    }
+  }
+  return { fertig, uebersprungen, empfehlungen, meilensteine: kapitel.unterkapitel.map((u) => je.get(u.id)).filter(Boolean).map((z) => ({ ...z, quote: anteil(z.richtig, z.gesamt) })) };
+}
+// Brücken-Impulse: In der laufenden Stunde ist ein Lernziel wackelig, und eine Voraussetzung hat noch kein Siegel (oder ist aufzufrischen).
+export function brueckenImpulse(staende, index, jetzt) {
+  const grenze = new Date(jetzt).getTime() - SITZUNG_MINUTEN * 60000;
+  const liste = [];
+  for (const { code, stand } of staende) {
+    const heute = new Set(stand.versuche.filter((v) => !v.einstieg && new Date(v.t).getTime() >= grenze).map((v) => v.lernziel));
+    for (const lz of heute) {
+      if (stand.lernziele[lz] || !L.istWackelig(stand, lz)) continue;
+      const vor = (index.lernziel.get(lz)?.voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id));
+      const offen = vor.filter((id) => ['offen', 'begonnen', 'wackelig', 'aufzufrischen'].includes(lernzielZustand(stand, id)));
+      if (!offen.length) continue;
+      const genommen = (stand.bruecken ?? []).some((b) => b.fuer === lz && new Date(b.t).getTime() >= grenze);
+      liste.push({ code, lernziel: lz, voraussetzungen: offen.map((id) => ({ id, zustand: lernzielZustand(stand, id) })), genommen });
+    }
+  }
+  return liste;
 }
 
 export function alteBackups(namen, jetzt, tage = 14) {

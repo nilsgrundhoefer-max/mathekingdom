@@ -130,7 +130,12 @@ async function antworte(seite, richtig = true) {
   // Startseite: Etappe mit Fortschritt, ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
   assert.match(await seite.innerText('.etappe'), /Addieren und Subtrahieren: Meilenstein Kopfrechnen[\s\S]*0 von 5 Meilensteinen gemeistert/);
   await foto(seite, 'startseite-etappe');
+  // Vor der ersten Aufgabe im Kapitel führt der Weg über den Einstiegscheck, den man überspringen darf.
   await seite.click('#weiter-wandern');
+  await seite.waitForSelector('#einstieg');
+  await seite.click('#einstieg-ueberspringen');
+  assert.equal(await seite.locator('#einstieg').count(), 0);
+  await seite.click('#aufbrechen');
   await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.3.1-K1"]');
   assert.equal(await seite.locator('.merkzettel ul').isVisible(), false);
   await seite.click('.merkzettel summary');
@@ -364,6 +369,72 @@ async function antworte(seite, richtig = true) {
   await seite.close();
 }
 
+// ---------- 1g. Einstiegscheck und Brücke (ADR 0014) ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-eins');
+  await seite.click('#demo');
+  await seite.click('#weiter-wandern');
+  await seite.waitForSelector('#einstieg');
+  await foto(seite, 'einstieg-angebot');
+  await seite.click('#einstieg-start');
+  // G richtig, M falsch: Vorschlag Silber. Ein Versuch, keine Hilfekärtchen, keine Münzen.
+  for (let i = 0; i < 8; i++) {
+    await seite.waitForSelector('section.aufgabe');
+    assert.equal(await seite.locator('aside.hilfen').count(), 0);
+    assert.match(await seite.innerText('.einstiegmarke'), /Einstiegscheck \d von \d/);
+    if (i === 0) await foto(seite, 'einstieg-aufgabe');
+    const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
+    await antworte(seite, pool.aufgaben.find((a) => a.id === id).niveau === 'G');
+    await seite.waitForSelector('.ergebnis.neutral');
+    if (await seite.locator('#einstieg-fertig').count()) break;
+    await seite.click('#weiter');
+  }
+  assert.match(await seite.innerText('#einstieg-fertig'), /Unser Vorschlag: Spiel um Silber/);
+  assert.equal(Number(await seite.innerText('#muenzen')), 0);
+  await seite.waitForTimeout(800);
+  await foto(seite, 'einstieg-fertig');
+  await seite.click('#einstieg-krone');
+  await seite.waitForSelector('svg.regionskarte');
+  assert.equal(await seite.getAttribute('.kronenwahl button[data-krone="G"]', 'aria-pressed'), 'true');
+  assert.equal(await seite.locator('#einstieg').count(), 0);
+
+  // Brücke: Subtrahieren S2 wird wackelig, das Dashboard bietet drei Aufgaben zur Voraussetzung an.
+  await seite.locator('.meilenstein .stein').nth(2).click();
+  await seite.locator('.lernziele li').nth(1).locator('button').click();
+  for (let i = 0; i < 4 && !(await seite.locator('#bruecke-angebot').count()); i++) {
+    await seite.waitForSelector('section.aufgabe');
+    assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.3-S2/);
+    await antworte(seite, false); await seite.waitForSelector('.hinweis');
+    await antworte(seite, false); await seite.waitForSelector('.ergebnis.falsch');
+    if (!(await seite.locator('#bruecke-angebot').count())) await seite.locator('#weiter, .vorschlag:not(.bruecke) button.schlicht').first().click(); // nach drei Fehlern kommt der Vorschlag, eine Krone tiefer zu spielen
+  }
+  assert.match(await seite.innerText('#bruecke-angebot'), /Wie wäre es mit einer Brücke\?/);
+  await seite.waitForTimeout(800); // Einblenden abwarten
+  await foto(seite, 'bruecke-angebot');
+  await seite.click('#bruecke-start');
+  for (let i = 0; i < 3; i++) {
+    await seite.waitForSelector('section.aufgabe');
+    assert.match(await seite.innerText('.brueckenmarke'), new RegExp(`Brücke ${i + 1} von 3`));
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+    if (i < 2) await seite.click('#weiter');
+  }
+  assert.match(await seite.innerText('#bruecke-fertig'), /Brücke geschafft!\s+3 von 3 richtig/);
+  await foto(seite, 'bruecke-fertig');
+  await seite.click('#weiter');
+  await seite.waitForSelector('section.aufgabe');
+  assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.3-S2/);
+  const gespeichert = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-EINS.json')));
+  assert.equal(gespeichert.bruecken.length, 1);
+  assert.equal(gespeichert.einstieg['5.3'].empfehlung, 'G');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 2. Speichern im Ordner, Neuladen, falscher Ordner ----------
 {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
@@ -516,6 +587,10 @@ async function antworte(seite, richtig = true) {
   assert.match(await seite.innerText('#selbsteinschaetzung'), /eher zu niedrig[\s\S]*eher zu hoch|eher zu hoch[\s\S]*eher zu niedrig/);
   await seite.locator('#selbsteinschaetzung').screenshot(bilder ? { path: `${bilder}/lehrer-selbsteinschaetzung.png` } : {});
   assert.equal(await seite.locator('.krone').count(), 0, 'die Lehrkraft sieht Niveaustufen, keine Kronen');
+  // Vorwissen aus dem Einstiegscheck: 13 gemacht, einer übersprungen, Anteil je Meilenstein.
+  assert.match(await seite.innerText('#vorwissen'), /13 Schüler haben den Einstiegscheck gemacht, 1 übersprungen/);
+  assert.equal(await seite.locator('#vorwissen .balkenliste li').count(), 5);
+  await seite.locator('#vorwissen').screenshot(bilder ? { path: `${bilder}/lehrer-vorwissen.png` } : {});
   await seite.locator('.heatmap [data-lernziel]').first().click();
   await seite.waitForSelector('.vierspaltig');
   assert.equal(await seite.locator('.gruppenliste').count(), 5);
@@ -563,6 +638,8 @@ async function antworte(seite, richtig = true) {
   await seite.selectOption('#aufg-niveau', 'G');
   assert.equal(await seite.inputValue('#aufg-sicht'), 'nie'); // Die Auswahl bleibt beim Neuzeichnen erhalten.
   await seite.click('[data-tab=verwaltung]');
+  assert.ok(await seite.locator('#einstieg-karte [data-einstieg-pflicht]').count() >= 2);
+  await seite.locator('#einstieg-karte').screenshot(bilder ? { path: `${bilder}/lehrer-einstieg-pflicht.png` } : {});
   await seite.click('#pdf');
   assert.equal(await seite.locator('#mk-druck .heatmap').count(), 1);
   assert.equal(await seite.evaluate(() => window.gedruckt), 2);
@@ -737,6 +814,8 @@ async function antworte(seite, richtig = true) {
   // Sicherheitsangabe: Die Lehrkraft schaltet sie ein, die Schülerin prüft mit „ich bin sicher“ und bekommt bei Fehlern den deutlichen Hinweis.
   await lehrer.check('#sicherheitsangabe');
   await warteAuf((k) => k.sicherheitsangabe === true);
+  await lehrer.check('[data-einstieg-pflicht="5.4"]');
+  await warteAuf((k) => k.einstiegPflicht?.includes('5.4'));
   await schueler.waitForTimeout(11000); // das Schüler-Dashboard liest die Klassendatei alle 10 Sekunden
   await schueler.click('#weiter-wandern');
   await schueler.waitForSelector('#pruefen-unsicher', { timeout: 15000 });

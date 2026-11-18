@@ -316,3 +316,32 @@ test('Sicherheitsprofil und Tafelbild: Vierfeldertafel und häufigste erste fals
   assert.deepEqual(A.tafelbild([a, b], 'x'), { bearbeitet: 3, richtig: 1, falsche: [{ antwort: '7', anzahl: 2 }] });
   assert.deepEqual(A.heftQuote({ heftchecks: [{ richtig: true }, { richtig: false }] }), { gesamt: 2, richtig: 1, quote: 0.5 });
 });
+
+test('Vorwissen: Anteil gelöster Einstiegsaufgaben je Meilenstein, Empfehlungen und Übersprungene', () => {
+  const kapitel = pool.kapitel.find((k) => k.id === '5.3');
+  const a = neu('5A-AAAA'), c = neu('5A-CCCC');
+  const e = L.stelleEinstieg(a, index, kapitel, JETZT);
+  for (const id of [...e.aufgaben]) L.trageEinstiegEin(a, '5.3', index.aufgabe.get(id), { geloest: true, eingaben: [], fehlvorstellungen: [], dauer: 5 }, JETZT);
+  L.ueberspringeEinstieg(c, '5.3', JETZT);
+  const v = A.vorwissen([{ code: 'a', stand: a }, { code: 'c', stand: c }], pool, '5.3');
+  assert.equal(v.fertig, 1);
+  assert.equal(v.uebersprungen, 1);
+  assert.deepEqual(v.empfehlungen, { E: 1 });
+  assert.ok(v.meilensteine.length >= 3);
+  assert.ok(v.meilensteine.every((m) => m.quote === 1));
+  assert.equal(v.meilensteine.reduce((n, m) => n + m.gesamt, 0), e.aufgaben.length);
+  // Einstiegsaufgaben machen kein Lernziel „begonnen“.
+  assert.ok(e.aufgaben.every((id) => A.lernzielZustand(a, index.aufgabe.get(id).lernziel) === 'offen'));
+});
+
+test('Brücken-Impuls: wackelig in dieser Stunde und eine Voraussetzung ohne Siegel', () => {
+  const stand = neu();
+  const g = aufgaben(S2, 'G');
+  for (let i = 0; i < 4; i++) L.verbuche(stand, g[i], b({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:10:00Z');
+  const liste = A.brueckenImpulse([{ code: '5A-AAAA', stand }], index, JETZT);
+  assert.equal(liste.length, 1);
+  assert.equal(liste[0].lernziel, S2);
+  assert.equal(liste[0].genommen, false);
+  assert.ok(liste[0].voraussetzungen.some((v) => v.zustand === 'offen'));
+  assert.deepEqual(A.brueckenImpulse([{ code: '5A-AAAA', stand }], index, '2026-11-17T14:00:00Z'), [], 'nur in der laufenden Stunde');
+});

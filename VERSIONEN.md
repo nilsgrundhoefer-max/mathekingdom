@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.7 vom 18.11.2026
+
+### Schüler
+
+- Einstiegscheck: Bevor du in einem Kapitel die erste Aufgabe bearbeitest, bietet dir die Regionskarte sechs bis acht Aufgaben aus allen Meilensteinen an, je ein Versuch, ohne Hilfekärtchen. Danach bekommst du einen Vorschlag, um welche Krone du spielen könntest. Es gibt dabei keine Münzen und keine Siegel, und meistens darfst du ihn überspringen.
+- Brücke: Wird ein Lernziel wackelig, schlägt dir das Dashboard drei kurze Aufgaben zu einem Lernziel vor, das du dafür brauchst, eine Krone tiefer. Danach geht es zurück zu deinem Lernziel. Die Brücke ist freiwillig.
+
+### Lehrkraft
+
+- Einstiegscheck: unter Verwaltung je Kapitel als Pflicht einstellbar. Im Lernstand zeigt die neue Karte „Vorwissen aus dem Einstiegscheck“, wie viele ihn gemacht oder übersprungen haben, welche Kronen vorgeschlagen wurden und wie gut jeder Meilenstein schon sitzt.
+- Brücken-Impuls: Ist ein Schüler in der laufenden Stunde bei einem Lernziel wackelig und eine Voraussetzung sitzt noch nicht, steht das unter „Impulse“, mit dem Hinweis, ob die Brücke schon gegangen wurde.
+- Aufgaben aus dem Einstiegscheck zählen für kein Lernziel: Ein Lernziel wird dadurch nicht „begonnen“ oder „wackelig“.
+
 ## 0.6 vom 18.11.2026
 
 ### Schüler
