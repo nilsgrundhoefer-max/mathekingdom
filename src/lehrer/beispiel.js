@@ -18,6 +18,19 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
     const ziel = koennen > 0.85 ? 'M' : koennen < 0.45 ? 'F' : 'G';
     zielniveaus[code] = ziel; // ausdrücklich gesetzt, unabhängig vom Standard
     const stand = L.neuerSpeicherstand(code, '5a', new Date(jetzt - 40 * 60000).toISOString());
+    // Vor vier Tagen: Einstiegscheck zum Kapitel, mit eigenem Zufall, damit der Rest der Beispielklasse gleich bleibt (ADR 0014).
+    const kap = pool.kapitel.find((k) => k.id === '5.3');
+    const t0 = new Date(jetzt - 4 * 86400000).toISOString();
+    if (i === 4) L.ueberspringeEinstieg(stand, kap.id, t0);
+    else {
+      let s2 = 11 + i;
+      const z2 = () => { s2 = (s2 * 1103515245 + 12345) & 0x7fffffff; return s2 / 0x7fffffff; };
+      const e = L.stelleEinstieg(stand, index, kap, t0, z2);
+      for (const id of [...e.aufgaben]) {
+        const a = index.aufgabe.get(id);
+        L.trageEinstiegEin(stand, kap.id, a, { geloest: z2() < koennen - (a.niveau === 'M' ? 0.15 : 0) - (a.lernziel.startsWith('5.3.3') ? 0.2 : 0), eingaben: [], fehlvorstellungen: [], dauer: 40 }, t0);
+      }
+    }
     // Frühere Tage: drei Meilensteine mit Kronenwahl und Krone, damit die Selbsteinschätzung etwas zeigt (ADR 0012).
     frueher.forEach((u, k) => {
       const t = new Date(jetzt - (3 - k) * 86400000).toISOString();

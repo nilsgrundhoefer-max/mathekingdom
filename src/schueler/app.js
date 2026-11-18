@@ -190,7 +190,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, [...e.einstiegPflicht]]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -235,6 +235,7 @@ function schlossgarten() {
   return h('section', {},
     etappenKarte(),
     rueckblickKarte(),
+    brueckeKarte(),
     expeditionKarte(),
     h('div', { class: 'schlosskopf' }, schlossBild(),
       h('h1', {}, 'Der Schlossgarten'),
@@ -258,6 +259,8 @@ function etappenKarte() {
   if (!e) return null;
   const k = e.kapitel, fertig = !e.milestone;
   const los = () => {
+    // Ein offener Einstiegscheck kommt vor der ersten Aufgabe des Kapitels: dafür auf die Regionskarte.
+    if (L.einstiegsZustand(z.stand, z.index, k)) return zeige({ name: 'region', kapitel: k.id });
     z.ansicht = { name: 'region', kapitel: k.id, milestone: e.milestone.id };
     const n = L.arbeitsniveau(z.stand, k.id, z.einst.zielniveau);
     starteAufgabe(L.naechstesLernziel(z.index, z.stand, e.milestone, n).id, n);
@@ -295,6 +298,62 @@ function starteRueckblick() {
   const aufgabe = id && z.index.aufgabe.get(id);
   if (!aufgabe) { z.stand.rueckblickAktiv = null; geaendert(); return zeige({ name: 'schlossgarten' }); }
   zeigeAufgabe(aufgabe, { rueckblick: true });
+}
+
+// ---------- Einstiegscheck (ADR 0014) ----------
+// Vor dem ersten Meilenstein eines Kapitels: ein paar Aufgaben, die eine Krone vorschlagen. Keine Münzen, keine Siegel.
+function einstiegKarte(kapitel) {
+  const zustand = L.einstiegsZustand(z.stand, z.index, kapitel);
+  if (!zustand) return null;
+  const pflicht = z.einst.einstiegPflicht.has(kapitel.id);
+  const e = z.stand.einstieg?.[kapitel.id];
+  return h('div', { class: 'karte einstieg', id: 'einstieg' },
+    h('div', {},
+      h('span', { class: 'klein' }, 'Einstiegscheck'),
+      h('h2', {}, zustand === 'laeuft' ? 'Dein Einstiegscheck wartet' : 'Was weißt du schon?'),
+      h('p', {}, zustand === 'laeuft'
+        ? `Noch ${e.aufgaben.length - e.erledigt.length} von ${e.aufgaben.length} Aufgaben.`
+        : `Ein paar Aufgaben aus der ganzen Region, je ein Versuch, ohne Hilfekärtchen. Danach schlagen wir dir vor, um welche Krone du spielen könntest. Es gibt keine Münzen und nichts zu verlieren.${pflicht ? ' Deine Lehrkraft möchte, dass du ihn machst, bevor du losgehst.' : ''}`)),
+    h('div', { class: 'knoepfe' },
+      h('button', { class: 'haupt', id: 'einstieg-start', onclick: () => starteEinstieg(kapitel) }, zustand === 'laeuft' ? 'Weitermachen' : 'Einstiegscheck starten'),
+      !pflicht && zustand === 'offen' && h('button', { class: 'schlicht', id: 'einstieg-ueberspringen', onclick: () => { L.ueberspringeEinstieg(z.stand, kapitel.id, jetzt()); geaendert(); male(); } }, 'Überspringen')));
+}
+function starteEinstieg(kapitel) {
+  if (!z.stand.einstieg?.[kapitel.id]) { L.stelleEinstieg(z.stand, z.index, kapitel, jetzt()); geaendert(); }
+  const id = L.naechsteEinstiegsAufgabe(z.stand, kapitel.id);
+  const aufgabe = id && z.index.aufgabe.get(id);
+  if (!aufgabe) return zeige({ name: 'region', kapitel: kapitel.id });
+  zeigeAufgabe(aufgabe, { einstieg: kapitel.id });
+}
+
+// ---------- Brücke (ADR 0014) ----------
+// Wird ein Lernziel wackelig, schlägt das Dashboard drei Aufgaben zu einer Voraussetzung vor. Freiwillig.
+function brueckeKarte() {
+  const b = z.stand.brueckeAktiv;
+  if (!b) return null;
+  return h('div', { class: 'karte bruecke', id: 'bruecke' },
+    h('div', {}, h('span', { class: 'klein' }, 'Brücke'), h('h2', {}, 'Deine Brücke wartet'),
+      h('p', {}, `Noch ${b.aufgaben.length - b.erledigt.length} von ${b.aufgaben.length} Aufgaben zu „${lernzielText(b.zu)}“.`)),
+    h('button', { class: 'haupt', id: 'bruecke-weiter', onclick: starteBruecke }, 'Weitermachen'));
+}
+const lernzielText = (id) => (z.index.lernziel.get(id)?.text ?? id).replace(/\.$/, ''); // ohne Schlusspunkt, für Zitate im Satz
+// Brücken nur zu Lernzielen, die der Schüler auch öffnen darf.
+function brueckeAngebot(lernzielId) {
+  if ((z.brueckeAbgelehnt ??= new Set()).has(lernzielId)) return null;
+  const v = L.brueckeVorschlag(z.stand, z.index, lernzielId, jetzt());
+  if (!v || !z.einst.offeneKapitel.has(L.kapitelVon(v.zu))) return null;
+  const ms = z.index.meilensteinVon.get(v.zu);
+  return ms && z.einst.gesperrteMeilensteine.has(ms.id) ? null : v;
+}
+function starteBruecke(vorschlag) {
+  if (!z.stand.brueckeAktiv) {
+    if (!vorschlag?.zu || !L.stelleBruecke(z.stand, z.index, vorschlag, z.einst.zielniveau, jetzt())) return male();
+    geaendert();
+  }
+  const id = L.naechsteBrueckenAufgabe(z.stand);
+  const aufgabe = id && z.index.aufgabe.get(id);
+  if (!aufgabe) { z.stand.brueckeAktiv = null; geaendert(); return zeige({ name: 'schlossgarten' }); }
+  zeigeAufgabe(aufgabe, { bruecke: true });
 }
 
 // ---------- Expedition (ADR 0014) ----------
@@ -360,15 +419,18 @@ function regionsAnsicht() {
   const standort = (milestones.find((m) => m.status === 'begonnen') ?? milestones.find((m) => m.status === 'offen') ?? milestones[0]).id;
   const gewaehlt = z.ansicht.milestone ?? standort;
   const meilenstein = kapitel.unterkapitel.find((u) => u.id === gewaehlt);
+  const einstieg = einstiegKarte(kapitel);
+  const wartet = einstieg && z.einst.einstiegPflicht.has(kapitel.id);
   const karte = regionMap({ milestones, standort, gewaehlt, wappen: z.stand.wappen,
     beiMeilenstein: (id) => zeige({ ...z.ansicht, milestone: id }) });
   return h('section', {},
     h('p', { class: 'pfad' }, h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')),
     h('h1', {}, kapitel.titel),
     h('p', { class: 'unter' }, `Du spielst um ${L.KRONEN[niveau]}. Für einen Meilenstein brauchst du mindestens ${L.KRONEN[z.einst.zielniveau]}. Die Nummern auf den Meilensteinen sind ein Vorschlag: Du darfst jeden offenen Meilenstein wählen.`),
+    einstieg,
     h('div', { class: 'kartenrahmen' }, karte),
     legende(),
-    meilensteinTafel(kapitel, meilenstein, niveau));
+    wartet ? h('div', { class: 'karte tafel' }, h('p', {}, 'Mach zuerst den Einstiegscheck. Danach öffnen sich die Meilensteine.')) : meilensteinTafel(kapitel, meilenstein, niveau));
 }
 function legende() {
   return h('ul', { class: 'legende', 'aria-label': 'Zeichenerklärung' },
@@ -424,7 +486,7 @@ function starteAufgabe(lernzielId, niveau) {
 }
 function zeigeAufgabe(aufgabe, extra = {}) {
   // Heftcheck vor der nächsten Aufgabe, nicht mitten im Rückblick und nicht beim Nachlösen.
-  if (!extra.rueckblick && !extra.heftNachloesen) {
+  if (!extra.rueckblick && !extra.heftNachloesen && !extra.einstieg && !extra.bruecke) {
     const frage = L.heftcheckFrage(z.stand, z.index);
     if (frage) return zeige({ name: 'heftcheck', frage, danach: { aufgabe, extra }, gewaehlt: null });
   }
@@ -443,7 +505,7 @@ function aufgabenAnsicht() {
   const training = L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
   const fertig = Boolean(a.ergebnis);
   // Sicherheitsangabe (ADR 0014): Beim ersten Versuch gibt es zwei Prüfen-Knöpfe, wenn die Lehrkraft sie eingeschaltet hat.
-  const zweiKnoepfe = !fertig && a.versuch === 0 && z.einst.sicherheitsangabe;
+  const zweiKnoepfe = !fertig && a.versuch === 0 && z.einst.sicherheitsangabe && !a.einstieg;
   const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular, zweiKnoepfe ? e.submitter?.dataset.sicher === 'ja' : null); } },
     eingabefelder(auf, a, fertig),
     zweiKnoepfe ? h('div', { class: 'sicherwahl' },
@@ -453,20 +515,23 @@ function aufgabenAnsicht() {
   return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
     h('p', { class: 'pfad' }, a.rueckblick
       ? h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')
+      : a.einstieg ? h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: a.einstieg }) }, '← Regionskarte')
       : h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, `← ${meilenstein.titel}`)),
     h('div', { class: 'karte' },
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
-        h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
-        training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
+        a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
+        a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
+          : h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
+        !a.einstieg && training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
-        h('span', { class: 'punkte', title: `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' })))),
+        !a.einstieg && h('span', { class: 'punkte', title: `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
       formular,
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
       fertig && ergebnisTafel(a, kapitelId, meilenstein)),
-    !fertig && hilfen(a, meilenstein));
+    !fertig && !a.einstieg && hilfen(a, meilenstein));
 }
 
 function eingabefelder(auf, a, gesperrt) {
@@ -532,6 +597,14 @@ function pruefe(formular, sicher = null) {
   a.versuch++;
   a.eingaben.push(eingabe);
   if (ergebnis.fehlvorstellung) a.fehlvorstellungen.push(ergebnis.fehlvorstellung);
+  // Einstiegscheck: ein Versuch, keine Münzen, zählt für kein Lernziel.
+  if (a.einstieg) {
+    const einstieg = L.trageEinstiegEin(z.stand, a.einstieg, auf, { geloest: ergebnis.richtig, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen, dauer: Math.round((Date.now() - a.beginn) / 1000) }, jetzt());
+    z.stand.aktiv = null;
+    a.ergebnis = { richtig: ergebnis.richtig, einstieg };
+    geaendert(); z.dienst.sofort();
+    return male();
+  }
   if (!ergebnis.richtig && a.versuch < 2) {
     const gezielt = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis;
     // Nach dem ersten Fehlversuch geht der Tipp von selbst auf. Er kostet nichts (ADR 0010).
@@ -548,8 +621,9 @@ function pruefe(formular, sicher = null) {
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
     hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000), ...(a.sicher != null && { sicher: a.sicher }) },
-  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick) });
+  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick), bruecke: Boolean(a.bruecke) });
   if (a.rueckblick) buchung.rueckblick = L.trageRueckblickEin(z.stand, auf, ergebnis.richtig, jetzt());
+  if (a.bruecke) buchung.bruecke = L.trageBrueckeEin(z.stand, auf, ergebnis.richtig, jetzt());
   buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
   a.ergebnis = { ...buchung, richtig: ergebnis.richtig };
@@ -579,6 +653,8 @@ function loesungstext(auf) {
 
 function ergebnisTafel(a, kapitelId, meilenstein) {
   if (a.rueckblick) return rueckblickErgebnis(a);
+  if (a.einstieg) return einstiegErgebnis(a);
+  if (a.bruecke) return brueckeErgebnis(a, meilenstein);
   const e = a.ergebnis, auf = a.aufgabe;
   const niveau = L.arbeitsniveau(z.stand, kapitelId, z.einst.zielniveau);
   const vorschlag = L.niveauVorschlag(z.stand, kapitelId, niveau);
@@ -589,6 +665,7 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
     starteAufgabe(lz, n);
   };
   const ziel = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)];
+  const bruecke = !z.stand.lernziele[auf.lernziel] && brueckeAngebot(auf.lernziel);
   return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
     h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
     !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
@@ -609,6 +686,10 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
         : `Diese Aufgaben sind gerade ganz schön schwer. Möchtest du um ${L.KRONEN[ziel]} spielen und dort Sicherheit sammeln?`),
       h('button', { class: 'haupt', id: 'krone-wechseln', onclick: () => { L.setzeNiveau(z.stand, kapitelId, ziel); geaendert(); weiter(ziel); } }, kroneBild(ziel, 20), ` Um ${L.KRONEN[ziel]} spielen`),
       h('button', { class: 'schlicht', onclick: () => { L.lehneVorschlagAb(z.stand, kapitelId); geaendert(); weiter(); } }, `Bei ${L.KRONEN[niveau]} bleiben`)),
+    bruecke && h('div', { class: 'vorschlag bruecke', id: 'bruecke-angebot' },
+      h('p', {}, h('b', {}, 'Wie wäre es mit einer Brücke? '), `Für „${lernzielText(auf.lernziel)}“ hilft es, zuerst „${lernzielText(bruecke.zu)}“ zu festigen. Das sind ${L.BRUECKE_AUFGABEN} kurze Aufgaben um ${L.KRONEN[L.brueckenNiveau(z.einst.zielniveau)]}, danach geht es hier weiter.`),
+      h('button', { class: 'haupt', id: 'bruecke-start', onclick: () => starteBruecke(bruecke) }, 'Brücke gehen'),
+      h('button', { class: 'schlicht', id: 'bruecke-nein', onclick: () => { z.brueckeAbgelehnt.add(auf.lernziel); male(); } }, 'Nein danke')),
     !vorschlag && h('button', { class: 'haupt', id: 'weiter', onclick: () => weiter() }, 'Nächste Aufgabe'),
     h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte'));
 }
@@ -634,6 +715,55 @@ function rueckblickErgebnis(a) {
     r && !r.fertig
       ? h('button', { class: 'haupt', id: 'weiter', onclick: starteRueckblick }, 'Nächste Aufgabe im Rückblick')
       : h('button', { class: 'haupt', id: 'weiter', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Zum Schlossgarten'));
+}
+
+// Einstiegscheck: neutrale Rückmeldung je Aufgabe, am Ende der Kronenvorschlag.
+function einstiegNummer(a, fertig) {
+  const e = z.stand.einstieg?.[a.einstieg];
+  if (!e?.aufgaben) return 'Einstiegscheck';
+  return `Einstiegscheck ${Math.min(e.aufgaben.length, e.erledigt.length + (fertig ? 0 : 1))} von ${e.aufgaben.length}`;
+}
+function einstiegErgebnis(a) {
+  const r = a.ergebnis.einstieg;
+  const kapitel = z.pool.kapitel.find((k) => k.id === a.einstieg);
+  if (!r?.fertig) {
+    return h('div', { class: 'ergebnis neutral', role: 'status' },
+      h('p', {}, 'Deine Antwort ist notiert. Am Ende siehst du, wie es gelaufen ist.'),
+      h('button', { class: 'haupt', id: 'weiter', onclick: () => starteEinstieg(kapitel) }, 'Nächste Aufgabe'));
+  }
+  const n = r.empfehlung;
+  return h('div', { class: 'ergebnis neutral', role: 'status', id: 'einstieg-fertig' },
+    h('h2', {}, 'Einstiegscheck geschafft!'),
+    h('p', {}, `Du hast ${r.richtig} von ${r.gesamt} Aufgaben gelöst.`),
+    h('p', { class: 'lohn neu' }, kroneBild(n, 32), h('b', {}, `Unser Vorschlag: Spiel um ${L.KRONEN[n]}.`),
+      L.unterZiel(n, z.einst.zielniveau) ? ` Dort sammelst du erst Sicherheit. Für die Meilensteine brauchst du später ${L.KRONEN[z.einst.zielniveau]}.` : ''),
+    h('button', { class: 'haupt', id: 'einstieg-krone', onclick: () => { L.setzeNiveau(z.stand, kapitel.id, n); geaendert(); zeige({ name: 'region', kapitel: kapitel.id }); } }, kroneBild(n, 20), ` Um ${L.KRONEN[n]} spielen`),
+    h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitel.id }) }, 'Selbst wählen'));
+}
+
+// Brücke: „Brücke 2 von 3“, am Ende zurück zum Lernziel, für das sie gebaut wurde.
+function brueckeNummer(a, fertig) {
+  const b = z.stand.brueckeAktiv;
+  if (b) return `Brücke ${Math.min(b.aufgaben.length, b.erledigt.length + (fertig ? 0 : 1))} von ${b.aufgaben.length}`;
+  const g = a.ergebnis?.bruecke?.gesamt;
+  return g ? `Brücke ${g} von ${g}` : 'Brücke';
+}
+function brueckeErgebnis(a, meilenstein) {
+  const e = a.ergebnis, auf = a.aufgabe, r = e.bruecke;
+  const zurueck = () => {
+    const kap = L.kapitelVon(r.fuer);
+    starteAufgabe(r.fuer, L.arbeitsniveau(z.stand, kap, z.einst.zielniveau));
+  };
+  return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
+    h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
+    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an.'),
+    e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'),
+    heftHinweis(e),
+    e.neuesLernziel && h('p', { class: 'lohn neu' }, siegel(30), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst ein Siegel.'),
+    r?.fertig && h('p', { class: 'lohn neu', id: 'bruecke-fertig' }, h('b', {}, 'Brücke geschafft!'), ` ${r.richtig} von ${r.gesamt} richtig. Jetzt zurück zu „${lernzielText(r.fuer)}“.`),
+    !r ? h('button', { class: 'haupt', id: 'weiter', onclick: () => zeige({ name: 'region', kapitel: L.kapitelVon(auf.lernziel), milestone: meilenstein.id }) }, 'Zur Regionskarte')
+      : r.fertig ? h('button', { class: 'haupt', id: 'weiter', onclick: zurueck }, 'Zurück zum Lernziel')
+        : h('button', { class: 'haupt', id: 'weiter', onclick: () => starteBruecke() }, 'Nächste Aufgabe der Brücke'));
 }
 
 // Heftcode unter jeder gelösten Aufgabe ab Gold.

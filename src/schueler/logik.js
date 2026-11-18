@@ -83,9 +83,10 @@ export function indexiere(pool) {
   // Lernziel → Unterkapitel (Meilenstein), für Kronen und Selbsteinschätzung.
   const meilensteinVon = new Map((pool.kapitel ?? []).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele.map((l) => [l.id, u])));
   const aufgabe = new Map(pool.aufgaben.map((a) => [a.id, a]));
+  const lernziel = new Map((pool.kapitel ?? []).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l]));
   // Lernziele, die auf jeder Niveaustufe Aufgaben aus AFB II oder III haben: Nur dort kann das Siegel eine solche Aufgabe verlangen.
   const mitAnspruch = new Set([...lernzielMitAufgaben].filter((l) => NIVEAUS.every((n) => (nach.get(`${l}|${n}`) ?? []).some((a) => a.afb >= AFB_FUER_STERN))));
-  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon };
+  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon, lernziel };
 }
 
 // ---------- Antworten prüfen ----------
@@ -123,7 +124,16 @@ export function pruefeAntwort(aufgabe, eingabe) {
 }
 
 // ---------- Lernziele ----------
-const zaehlt = (v) => v.richtig && !hatKarte(v, 'loesungsschritt'); // mit Lösungsschritt-Kärtchen gelöst zählt nicht
+// Mit Lösungsschritt-Kärtchen gelöst zählt nicht, Aufgaben aus dem Einstiegscheck zählen nie (ADR 0014).
+const zaehlt = (v) => v.richtig && !v.einstieg && !hatKarte(v, 'loesungsschritt');
+// Wackelig: mindestens 4 Aufgaben zum Lernziel, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
+export const WACKELIG_AB = 4;
+export function istWackelig(stand, lernzielId) {
+  const v = stand.versuche.filter((x) => x.lernziel === lernzielId && !x.einstieg);
+  const geloest = v.filter((x) => x.richtig).length;
+  const schritte = v.filter((x) => hatKarte(x, 'loesungsschritt')).length;
+  return (v.length >= WACKELIG_AB && geloest / v.length < 0.5) || schritte >= 2;
+}
 // Mit `index` gilt zusätzlich: Mindestens eine der richtigen Aufgaben stammt aus AFB II oder III,
 // sofern das Lernziel solche Aufgaben hat. Ohne `index` (reine Anzeige) wird das nicht geprüft.
 export function lernzielStand(stand, lernzielId, zielniveau, index = null) {
@@ -150,7 +160,7 @@ export function milestoneStatus(index, stand, unterkapitel) {
   if (mit.length === 0) return 'leer';
   const erreicht = mit.filter((l) => stand.lernziele[l.id]).length;
   if (erreicht === mit.length) return 'gemeistert';
-  return stand.versuche.some((v) => mit.some((l) => l.id === v.lernziel)) ? 'begonnen' : 'offen';
+  return stand.versuche.some((v) => !v.einstieg && mit.some((l) => l.id === v.lernziel)) ? 'begonnen' : 'offen';
 }
 // Krone eines Meilensteins: das höchste Niveau, auf dem alle seine Lernziele nachgewiesen sind, sonst null.
 // Nachgewiesen heißt: dieselbe Regel wie beim Lernziel, mit diesem Niveau statt dem Zielniveau (ADR 0012).
@@ -177,7 +187,7 @@ export function merkeWahl(stand, index, unterkapitel, niveau, jetzt) {
   stand.einschaetzung ??= {};
   if (stand.einschaetzung[unterkapitel.id]) return;
   const ids = new Set(unterkapitel.lernziele.map((l) => l.id));
-  if (stand.versuche.some((v) => ids.has(v.lernziel))) return;
+  if (stand.versuche.some((v) => !v.einstieg && ids.has(v.lernziel))) return;
   stand.einschaetzung[unterkapitel.id] = { gewaehlt: niveau, t: jetzt };
 }
 // unterschaetzt | passend | ueberschaetzt, oder null, solange noch keine Krone da ist und kein Abstieg.
@@ -227,7 +237,7 @@ export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.
   const kandidaten = index.nach.get(`${lernzielId}|${niveau}`) ?? [];
   if (kandidaten.length === 0) return null;
   const geloest = new Set(), bearbeitet = new Set();
-  for (const v of stand.versuche) { bearbeitet.add(v.aufgabe); if (v.richtig) geloest.add(v.aufgabe); }
+  for (const v of stand.versuche) { if (v.einstieg) continue; bearbeitet.add(v.aufgabe); if (v.richtig) geloest.add(v.aufgabe); }
   const letzte = stand.versuche.at(-1)?.aufgabe;
   const stufen = [
     kandidaten.filter((a) => !bearbeitet.has(a.id)),
@@ -263,7 +273,7 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 // bearbeitung: { geloest, versuche, eingaben, fehlvorstellungen, hilfen, karten, dauer }
 // Mit `index` verlangt das Siegel auch eine Aufgabe aus AFB II oder III (siehe lernzielStand).
 // Mit `{ rueckblick: true }` zählt die Aufgabe zum Rückblick und nicht zur Selbsteinschätzung.
-export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false } = {}) {
+export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false } = {}) {
   const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
@@ -272,7 +282,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
-    ...(rueckblick && { rueckblick: true }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
+    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
   });
   // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
   let heft = null;
@@ -290,7 +300,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   // Krone und Selbsteinschätzung: Wer unter der gewählten Krone arbeitet, bevor er dort eine Krone hat, ist abgestiegen.
   const kroneJetzt = meilenstein ? krone(index, stand, meilenstein) : null;
-  const e = meilenstein && !rueckblick ? stand.einschaetzung?.[meilenstein.id] : null;
+  const e = meilenstein && !rueckblick && !bruecke ? stand.einschaetzung?.[meilenstein.id] : null;
   let ersteKrone = false;
   if (e && !e.krone) {
     if (unterZiel(aufgabe.niveau, e.gewaehlt)) e.abstieg = true;
@@ -395,6 +405,105 @@ export function holeBelohnung(stand, expedition, jetzt) {
   return true;
 }
 
+// ---------- Einstiegscheck (ADR 0014) ----------
+// Sechs bis acht Aufgaben über alle Meilensteine eines Kapitels, abwechselnd G und M, AFB I und II.
+// Er stellt nur die Kronenwahl vor: keine Münzen, keine Siegel, zählt für kein Lernziel.
+export const EINSTIEG_MIN = 6, EINSTIEG_MAX = 8;
+const lernzieleMitAufgabenIn = (index, kapitel) => kapitel.unterkapitel.map((u) => u.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id))).filter((x) => x.length);
+// offen: noch nicht gemacht und im Kapitel noch nichts gearbeitet | laeuft | null (fertig, übersprungen oder nicht nötig)
+export function einstiegsZustand(stand, index, kapitel) {
+  const e = stand.einstieg?.[kapitel.id];
+  if (e) return e.fertig || e.uebersprungen ? null : 'laeuft';
+  const gruppen = lernzieleMitAufgabenIn(index, kapitel);
+  if (!gruppen.length) return null;
+  const ids = new Set(gruppen.flat().map((l) => l.id));
+  return stand.versuche.some((v) => ids.has(v.lernziel)) ? null : 'offen';
+}
+export function stelleEinstieg(stand, index, kapitel, jetzt, zufall = Math.random) {
+  const gruppen = lernzieleMitAufgabenIn(index, kapitel);
+  const alle = gruppen.flat().length;
+  const anzahl = Math.max(EINSTIEG_MIN, Math.min(EINSTIEG_MAX, alle));
+  // Reihum je Meilenstein ein Lernziel, damit jeder Meilenstein vorkommt.
+  const folge = [];
+  for (let runde = 0; folge.length < anzahl && runde < 20; runde++) for (const g of gruppen) if (folge.length < anzahl) folge.push(g[runde % g.length]);
+  const aufgaben = [];
+  folge.forEach((l, i) => {
+    const niveau = i % 2 ? 'M' : 'G';
+    const kandidaten = (index.nach.get(`${l.id}|${niveau}`) ?? []).filter((a) => (a.afb ?? 1) <= 2 && !aufgaben.includes(a.id));
+    if (kandidaten.length) aufgaben.push(kandidaten[Math.floor(zufall() * kandidaten.length)].id);
+  });
+  (stand.einstieg ??= {})[kapitel.id] = { t: jetzt, aufgaben, erledigt: [] };
+  return stand.einstieg[kapitel.id];
+}
+export const naechsteEinstiegsAufgabe = (stand, kapitelId) => {
+  const e = stand.einstieg?.[kapitelId];
+  return e && !e.fertig ? e.aufgaben.find((id) => !e.erledigt.some((x) => x.aufgabe === id)) ?? null : null;
+};
+// Vorschlag für die Kronenwahl aus den Ergebnissen: alles richtig → E, M mindestens zur Hälfte → M, G mindestens zur Hälfte → G, sonst F.
+export function einstiegsEmpfehlung(erledigt) {
+  const quote = (n) => { const x = erledigt.filter((e) => e.niveau === n); return x.length ? x.filter((e) => e.richtig).length / x.length : 0; };
+  const g = quote('G'), m = quote('M');
+  if (g === 1 && m === 1) return 'E';
+  if (m >= 0.5) return 'M';
+  if (g >= 0.5) return 'G';
+  return 'F';
+}
+export function trageEinstiegEin(stand, kapitelId, aufgabe, bearbeitung, jetzt) {
+  const e = stand.einstieg?.[kapitelId];
+  if (!e || e.fertig || e.erledigt.some((x) => x.aufgabe === aufgabe.id)) return null;
+  stand.versuche.push({ t: jetzt, aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, niveau: aufgabe.niveau, richtig: bearbeitung.geloest, versuche: 1,
+    eingaben: bearbeitung.eingaben, fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: 0, dauer: bearbeitung.dauer, muenzen: 0, einstieg: true, ...(aufgabe.afb && { afb: aufgabe.afb }) });
+  e.erledigt.push({ aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, niveau: aufgabe.niveau, richtig: bearbeitung.geloest });
+  if (e.erledigt.length < e.aufgaben.length) return { fertig: false, nummer: e.erledigt.length, gesamt: e.aufgaben.length };
+  e.fertig = jetzt;
+  e.empfehlung = einstiegsEmpfehlung(e.erledigt);
+  return { fertig: true, gesamt: e.aufgaben.length, richtig: e.erledigt.filter((x) => x.richtig).length, empfehlung: e.empfehlung };
+}
+export function ueberspringeEinstieg(stand, kapitelId, jetzt) {
+  (stand.einstieg ??= {})[kapitelId] = { uebersprungen: jetzt };
+}
+
+// ---------- Brücke (ADR 0014) ----------
+// Wird ein Lernziel wackelig, schlägt das Dashboard drei Aufgaben zu einer Voraussetzung vor, eine Stufe unter dem Zielniveau.
+// Höchstens eine Brücke je Lernziel und Tag; freiwillig.
+export const BRUECKE_AUFGABEN = 3;
+export function brueckeVorschlag(stand, index, lernzielId, jetzt) {
+  if (stand.brueckeAktiv || !istWackelig(stand, lernzielId)) return null;
+  if ((stand.bruecken ?? []).some((b) => b.fuer === lernzielId && b.tag === tagVon(jetzt))) return null;
+  const vor = (index.lernziel?.get(lernzielId)?.voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id));
+  if (!vor.length) return null;
+  const zu = vor.find((id) => !stand.lernziele[id] || stand.rueckblick?.[id]?.aufzufrischen) ?? vor[0];
+  return { fuer: lernzielId, zu, text: index.lernziel.get(zu)?.text ?? zu };
+}
+export const brueckenNiveau = (zielniveau) => NIVEAUS[Math.max(0, NIVEAUS.indexOf(zielniveau) - 1)];
+export function stelleBruecke(stand, index, vorschlag, zielniveau, jetzt, zufall = Math.random) {
+  const niveau = brueckenNiveau(zielniveau);
+  const geloest = new Set(stand.versuche.filter((v) => v.richtig).map((v) => v.aufgabe));
+  const alle = index.nach.get(`${vorschlag.zu}|${niveau}`) ?? [];
+  const frisch = alle.filter((a) => !geloest.has(a.id));
+  const quelle = [...(frisch.length >= BRUECKE_AUFGABEN ? frisch : alle)];
+  const aufgaben = [];
+  while (aufgaben.length < BRUECKE_AUFGABEN && quelle.length) aufgaben.push(quelle.splice(Math.floor(zufall() * quelle.length), 1)[0].id);
+  if (!aufgaben.length) return null;
+  stand.brueckeAktiv = { t: jetzt, tag: tagVon(jetzt), fuer: vorschlag.fuer, zu: vorschlag.zu, aufgaben, erledigt: [] };
+  return stand.brueckeAktiv;
+}
+export const naechsteBrueckenAufgabe = (stand) => {
+  const b = stand.brueckeAktiv;
+  return b ? b.aufgaben.find((id) => !b.erledigt.some((e) => e.aufgabe === id)) ?? null : null;
+};
+export function trageBrueckeEin(stand, aufgabe, richtig, jetzt) {
+  const b = stand.brueckeAktiv;
+  if (!b || !b.aufgaben.includes(aufgabe.id) || b.erledigt.some((e) => e.aufgabe === aufgabe.id)) return null;
+  b.erledigt.push({ aufgabe: aufgabe.id, richtig });
+  const ergebnis = { fertig: b.erledigt.length === b.aufgaben.length, nummer: b.erledigt.length, gesamt: b.aufgaben.length, richtig: b.erledigt.filter((e) => e.richtig).length, fuer: b.fuer, zu: b.zu };
+  if (ergebnis.fertig) {
+    (stand.bruecken ??= []).push({ t: jetzt, tag: b.tag, fuer: b.fuer, zu: b.zu, richtig: ergebnis.richtig, gesamt: ergebnis.gesamt });
+    stand.brueckeAktiv = null;
+  }
+  return ergebnis;
+}
+
 // ---------- Sicherheitsangabe (ADR 0014) ----------
 // „Sicher falsch“: beim ersten Versuch sicher geprüft, aber nicht im ersten Versuch gelöst. Stärkstes Zeichen einer Fehlvorstellung.
 export const sicherFalsch = (v) => v.sicher === true && !(v.richtig && v.versuche === 1);
@@ -438,7 +547,7 @@ export const arbeitsniveau = (stand, kapitelId, zielniveau) => stand.niveau[kapi
 // 'hoch' nach 4 von 5 guten Aufgaben, 'runter' nach 3 nicht gelösten in Folge, sonst null.
 export function niveauVorschlag(stand, kapitelId, niveau) {
   const seit = stand.niveauMarke[kapitelId] ?? 0;
-  const eigene = stand.versuche.slice(seit).filter((v) => kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
+  const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
   const stufe = NIVEAUS.indexOf(niveau);
   if (stufe < 3 && eigene.length >= 5 && eigene.slice(-5).filter(zaehlt).length >= 4) return 'hoch';
   if (stufe > 0 && eigene.length >= 3 && eigene.slice(-3).every((v) => !v.richtig)) return 'runter';
@@ -552,6 +661,7 @@ export function einstellungen(klassendatei, code, pool) {
     spielpause: Boolean(k.spielpause),
     expedition: k.expedition ?? null,
     sicherheitsangabe: Boolean(k.sicherheitsangabe),
+    einstiegPflicht: new Set(k.einstiegPflicht ?? []),
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst

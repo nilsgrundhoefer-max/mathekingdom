@@ -196,6 +196,27 @@ export const wortspeicher = {
   ],
 };
 
+// Voraussetzungen (ADR 0014): Lernziel → Lernziele, auf denen es aufbaut. Daraus schlägt das Schüler-Dashboard eine Brücke vor,
+// wenn ein Lernziel wackelig wird. Vorerst nur Lernziele, zu denen es schon Aufgaben gibt.
+const voraussetzungen = {
+  '5.3.2-A2': ['5.3.1-K1'],
+  '5.3.2-A3': ['5.3.2-A2'],
+  '5.3.2-A4': ['5.3.2-A2', '5.3.1-K1'],
+  '5.3.2-A5': ['5.3.2-A2'],
+  '5.3.3-S2': ['5.3.1-K2', '5.3.2-A2'],
+  '5.3.3-S3': ['5.3.3-S2'],
+  '5.3.3-S4': ['5.3.3-S2', '5.3.2-A4'],
+  '5.3.3-S5': ['5.3.3-S2'],
+  '5.3.4-B1': ['5.3.1-K1', '5.3.1-K2'],
+  '5.3.4-B2': ['5.3.4-B1'],
+  '5.3.5-R2': ['5.3.5-R1', '5.3.1-K3'],
+  '5.4.5-D2': ['5.3.1-K2', '5.4.5-D1'],
+  '5.4.5-D3': ['5.4.5-D2'],
+  '5.4.5-D4': ['5.4.5-D2'],
+  '5.4.5-D5': ['5.4.5-D2', '5.3.2-A4'],
+  '5.4.5-D6': ['5.4.5-D2', '5.4.5-D4'],
+};
+
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".
 export const kapitel = roh.map(([titel, unterkapitel], k) => {
   let nr = 0;
@@ -207,7 +228,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => {
       const id = u.extra ? `5.${k + 1}.X${++extraNr}` : `5.${k + 1}.${++nr}`;
       const lernziele = Array.isArray(u.lernziele)
         ? u.lernziele.map((text, i) => ({ id: `${id}-L${i + 1}`, text }))
-        : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text }));
+        : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(voraussetzungen[`${id}-${kurz}`] && { voraussetzungen: voraussetzungen[`${id}-${kurz}`] }) }));
       return { id, titel: u.titel, extra: u.extra, lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
     }),
   };

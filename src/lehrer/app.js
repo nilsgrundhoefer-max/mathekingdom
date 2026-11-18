@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -453,6 +453,15 @@ function impulse() {
       tafel && h('button', { class: 'haupt', 'data-tafelbild': tafel, onclick: () => { z.tafel = { aufgabe: tafel }; male(); } }, 'Tafelbild zeigen'),
       gesehen(`fv|${x.fehlvorstellung}`)));
   }
+  // Brücke (ADR 0014): wackelig in dieser Stunde, und eine Voraussetzung sitzt noch nicht.
+  for (const x of A.brueckenImpulse(angemeldet(), z.index, jetzt())) {
+    const schluessel = `bruecke|${x.code}|${x.lernziel}`;
+    if (z.gesehen.has(schluessel)) continue;
+    const zustand = { offen: 'nicht begonnen', begonnen: 'begonnen', wackelig: 'wackelig', aufzufrischen: 'aufzufrischen' };
+    karten.push(h('li', { 'data-bruecke': x.code }, h('span', {}, h('b', {}, 'Brücke: '), `${name(x.code)} ist wackelig bei ${lesbar(x.lernziel)}. Voraussetzung: ${x.voraussetzungen.map((v) => `${lesbar(v.id)} (${zustand[v.zustand]})`).join(', ')}. `,
+      x.genommen ? 'Die Brücke wurde schon gegangen. Ein kurzes Gespräch lohnt sich.' : 'Das Dashboard bietet dazu eine Brücke an. Ein Hinweis von dir kann helfen, sie zu nehmen.'),
+    gesehen(schluessel)));
+  }
   for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
     const schluessel = `fertig|${x.code}|${x.milestone}|${x.zielniveau}`;
     if (z.gesehen.has(schluessel)) continue;
@@ -652,10 +661,26 @@ function lernstandKlasse() {
       h('p', { class: 'klein' }, 'Wie viele Schüler bei jedem Lernziel wo stehen. Tippe auf eine Zeile für die Einzelheiten.'),
       lernzielBalken(matrix, lernziele)),
     selbsteinschaetzungKlasse(staende),
+    vorwissenKlasse(staende),
     heftUndSicherheitKlasse(staende),
     h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Auffälligkeiten (${auff.length})`)),
       auff.length === 0 ? h('p', { class: 'klein' }, 'Keine Auffälligkeiten.') : h('ul', { class: 'liste' }, auff.map((a) => h('li', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: a.code }) }, name(a.code)), `: ${lesbar(a.text)}`)))),
     meilensteineSperren());
+}
+
+// Vorwissen aus dem Einstiegscheck (ADR 0014): je Kapitel, in dem jemand ihn gemacht oder übersprungen hat.
+function vorwissenKlasse(staende) {
+  const kapitel = z.pool.kapitel.filter((k) => staende.some(({ stand }) => stand.einstieg?.[k.id]));
+  if (kapitel.length === 0) return null;
+  return h('section', { class: 'karte', id: 'vorwissen' }, h('h2', {}, 'Vorwissen aus dem Einstiegscheck'),
+    h('p', { class: 'klein' }, 'Ergebnisse vor dem ersten Meilenstein eines Kapitels, je Meilenstein der Anteil gelöster Aufgaben (G und M, ohne Hilfen, ein Versuch). Sie zählen für kein Lernziel und für kein Siegel.'),
+    kapitel.map((k) => {
+      const v = A.vorwissen(staende, z.pool, k.id);
+      const verteilung = L.NIVEAUS.filter((n) => v.empfehlungen[n]).map((n) => `${v.empfehlungen[n]} × ${n}`).join(', ');
+      return h('div', { class: 'vorwissen-kapitel' }, h('h3', {}, k.titel),
+        h('p', {}, `${v.fertig} ${v.fertig === 1 ? 'Schüler hat' : 'Schüler haben'} den Einstiegscheck gemacht${v.uebersprungen ? `, ${v.uebersprungen} übersprungen` : ''}.${verteilung ? ` Vorgeschlagenes Niveau: ${verteilung}.` : ''}`),
+        v.meilensteine.length > 0 && balkenListe(v.meilensteine.map((m) => ({ name: m.titel, wert: m.quote ?? 0, zusatz: `${m.richtig} von ${m.gesamt}` })), { max: 1, format: prozent }));
+    }));
 }
 
 // Heftcheck und Sicherheitsangabe der Klasse (ADR 0014). Die Sicherheitsangabe ist eine Probe: Nach etwa vier Wochen auswerten.
@@ -932,6 +957,7 @@ function verwaltung() {
         }) }, 'Codes erzeugen'),
         codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
     expeditionKarte(),
+    einstiegKarte(),
     h('section', { class: 'karte', id: 'sicherheitsangabe-karte' }, h('h2', {}, 'Sicherheitsangabe (Probe)'),
       h('p', { class: 'klein' }, 'Beim ersten Versuch prüfen die Schüler mit „ich bin sicher“ oder „ich bin unsicher“. Ist eine sichere Antwort falsch, kommt sofort ein deutlicher Hinweis. Münzen ändern sich nicht. Die Auswertung steht im Lernstand unter „Heftcheck und Sicherheitsangabe“.'),
       h('label', { class: 'schalter' }, h('input', { id: 'sicherheitsangabe', type: 'checkbox', checked: Boolean(kl().einst.sicherheitsangabe), onchange: (ev) => aendere((k) => { k.einst.sicherheitsangabe = ev.target.checked; }) }), ' Für diese Klasse einschalten')),
@@ -945,6 +971,21 @@ function verwaltung() {
         h('button', { class: 'schlicht', id: 'pdf', onclick: () => drucke(klassenbericht()) }, 'Klassenbericht als PDF'))),
     sicherung(),
     protokollKarte());
+}
+
+// ---------- Einstiegscheck (ADR 0014) ----------
+// Freiwillig für die Schüler; die Lehrkraft kann ihn je Kapitel zur Pflicht machen.
+function einstiegKarte() {
+  const pflicht = new Set(kl().einst.einstiegPflicht ?? []);
+  const mit = z.pool.kapitel.filter((k) => k.unterkapitel.some((u) => u.lernziele.some((l) => z.index.lernzielMitAufgaben.has(l.id))));
+  return h('section', { class: 'karte', id: 'einstieg-karte' }, h('h2', {}, 'Einstiegscheck'),
+    h('p', { class: 'klein' }, 'Bevor ein Schüler in einem Kapitel die erste Aufgabe bearbeitet, bietet das Dashboard sechs bis acht Aufgaben aus allen Meilensteinen an. Daraus folgt ein Vorschlag für die Kronenwahl, keine Siegel und keine Münzen. Normalerweise darf man ihn überspringen. Als Pflicht muss er vor dem ersten Meilenstein gemacht werden. Das Ergebnis steht im Lernstand unter „Vorwissen“.'),
+    h('ul', { class: 'liste' }, mit.map((k) => h('li', {}, h('label', { class: 'schalter' },
+      h('input', { type: 'checkbox', 'data-einstieg-pflicht': k.id, checked: pflicht.has(k.id), onchange: (ev) => aendere((kk) => {
+        const neu = new Set(kk.einst.einstiegPflicht ?? []);
+        if (ev.target.checked) neu.add(k.id); else neu.delete(k.id);
+        kk.einst.einstiegPflicht = [...neu];
+      }) }), ` ${k.titel}: Pflicht`)))));
 }
 
 // ---------- Expedition (ADR 0014) ----------

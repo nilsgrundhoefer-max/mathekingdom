@@ -79,7 +79,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .regionskarte .windrose { fill: #c9b994; stroke: #b3a27c; stroke-width: 1; opacity: .7; }
 #mathekingdom .regionskarte .windrose circle { fill: none; }
 #mathekingdom .regionskarte .windrose text { font: 700 11px var(--schrift-titel); fill: #9c8b66; stroke: none; }
-#mathekingdom .regionskarte .nebel { fill: #d9d1c0; opacity: .9; }
+#mathekingdom .regionskarte .nebel { fill: #d9d1c0; opacity: .9; pointer-events: none; }
 #mathekingdom .regionskarte .zeichnung { opacity: .9; }
 #mathekingdom .regionskarte .abstecher { fill: none; stroke: #a89d8a; stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; }
 #mathekingdom .regionskarte .meilenstein { cursor: pointer; }
@@ -291,3 +291,14 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .karte.heftcheck { border-left: 6px solid #5b4632; }
 #mathekingdom .karte.heftcheck.richtig { border-left-color: #3e6b3a; }
 #mathekingdom .karte.heftcheck.falsch { border-left-color: #a3302a; }
+
+/* Einstiegscheck und Brücke (ADR 0014) */
+#mathekingdom .karte.einstieg, #mathekingdom .karte.bruecke { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; border-left: 6px solid #6b4f9e; }
+#mathekingdom .karte.bruecke { border-left-color: #2e7d6b; }
+#mathekingdom .karte.einstieg h2, #mathekingdom .karte.bruecke h2 { margin: .1rem 0 .3rem; }
+#mathekingdom .karte.einstieg p, #mathekingdom .karte.bruecke p { margin: 0; max-width: 60ch; }
+#mathekingdom .karte.einstieg .knoepfe { display: flex; gap: 8px; flex-wrap: wrap; }
+#mathekingdom .marke.einstiegmarke { background: #ece6f5; color: #4b3675; border-color: #cbbde3; }
+#mathekingdom .marke.brueckenmarke { background: #e2f1ec; color: #1f5a4c; border-color: #b4d9cd; }
+#mathekingdom .ergebnis.neutral { background: var(--hell); border-left: 5px solid #6b4f9e; }
+#mathekingdom .vorschlag.bruecke { border-left: 5px solid #2e7d6b; margin-top: 10px; }

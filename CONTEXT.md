@@ -107,7 +107,7 @@ Ein freiwilliges Päckchen aus drei bis fünf gemischten Aufgaben zu Lernzielen,
 _Avoid_: Wiederholung (allein), Auffrischen, Review
 
 **Einstiegscheck**:
-Sechs bis acht Aufgaben über alle Meilensteine eines Kapitels, angeboten beim ersten Öffnen der Regionskarte. Sein Ergebnis stellt die Kronenwahl vor; er bringt keine Siegel und zählt für kein Lernziel. Freiwillig, außer die Lehrkraft macht ihn für ein Kapitel zur Pflicht.
+Sechs bis acht Aufgaben über alle Meilensteine eines Kapitels, angeboten auf der Regionskarte, solange im Kapitel noch keine Aufgabe bearbeitet ist. Je Aufgabe ein Versuch, ohne Hilfekärtchen. Sein Ergebnis stellt die Kronenwahl vor; er bringt keine Siegel und zählt für kein Lernziel. Freiwillig, außer die Lehrkraft macht ihn für ein Kapitel zur Pflicht.
 _Avoid_: Eingangstest, Vortest, Diagnosetest
 
 **Voraussetzung**:
@@ -115,7 +115,7 @@ Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln 
 _Avoid_: Vorwissen (für die Verknüpfung)
 
 **Brücke**:
-Drei Aufgaben zu einer Voraussetzung, die das Schüler-Dashboard vorschlägt, wenn ein Lernziel wackelig wird. Freiwillig; die Lehrkraft bekommt dazu einen Impuls.
+Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard vorschlägt, wenn ein Lernziel wackelig wird. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
 _Avoid_: Förderaufgabe, Rückweg
 
 **Training**:
