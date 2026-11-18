@@ -91,7 +91,7 @@ Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem 
 _Avoid_: Kompetenz (allein), Ziel
 
 **Training**:
-Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab.
+Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab, können aber eine Krone unter dem Zielniveau bringen.
 _Avoid_: Übungsmodus
 
 ## Belohnung
@@ -111,6 +111,14 @@ _Avoid_: Meilensteinkrone, Pokal, Medaille
 **Kronenfarbe**:
 Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (M), Purpur (E). Im Schüler-Dashboard erscheinen nur die Kronenfarben, im Lehrer-Dashboard nur die Niveaustufen.
 _Avoid_: Kronenstufe, Lila, Purple
+
+**Kronenwahl**:
+Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau.
+_Avoid_: Straße wechseln, Niveauwahl (auf dem Bildschirm)
+
+**Selbsteinschätzung**:
+Der Vergleich der Kronenwahl beim ersten Start eines Meilensteins mit der ersten Krone, die der Schüler dort bekommt: unterschätzt (Krone besser), passend (gleich) oder überschätzt (Krone schlechter oder vorher abgestiegen). Spätere Aufwertungen zählen nicht. Der Schüler sieht das Ergebnis neutral, die Lehrkraft wertet es im Lernstand aus.
+_Avoid_: Selbstbewertung, Prognose
 
 **Rang**:
 Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Hofkartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
