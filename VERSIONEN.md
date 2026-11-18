@@ -19,6 +19,16 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 - Neue Karte „Expedition“ in der Verwaltung: Ziel, Enddatum und Belohnung (Expeditionsfahne oder Spielpause) festlegen. Du siehst den Stand der Klasse und die Beiträge aller Schüler, die Schüler nur den Stand der Klasse und ihren eigenen.
 - Neuer Lernzielstand „aufzufrischen“ (↻) in Heatmap, Balken und Lernziel-Seite: Der Schüler hat das Siegel, hat das Lernziel aber im Rückblick falsch gelöst. Das Siegel bleibt, das Lernziel kommt beim nächsten Rückblick wieder.
 - Rückblick-Aufgaben stehen im Versuchsprotokoll und zählen nicht zur Selbsteinschätzung.
+## 0.4 vom 18.11.2026
+
+### Schüler
+
+- Keine Änderungen.
+
+### Lehrkraft
+
+- Die Meldung „Klassendatei wurde von außen verändert“ kam im Schulnetz regelmäßig, obwohl niemand die Datei angefasst hatte: Das Dashboard hatte sich beim Schreiben selbst überholt. Jetzt laufen alle Schreibvorgänge nacheinander, und gewarnt wird nur noch, wenn die Unterschrift der Datei nicht passt oder sie fehlt.
+- Sind zwei Lehrer-Dashboards für dieselbe Klasse offen, etwa in zwei Tabs oder an zwei PCs, erscheint einmal ein Hinweis, weil sie sich sonst gegenseitig überschreiben.
 
 ## 0.3 vom 18.11.2026
 
