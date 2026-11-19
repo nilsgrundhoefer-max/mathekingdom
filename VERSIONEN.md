@@ -6,6 +6,18 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.25 vom 19.11.2026
+
+### Schüler
+
+- Schriftlich multiplizieren: Das Rechenraster steht wieder sauber wie im Heft. Vorher fiel es auseinander, die Ziffern standen untereinander statt nebeneinander.
+- Alle Rechenraster ohne Karohintergrund: Jede Spalte ist gleich breit, so stehen Ziffern und Felder genau untereinander.
+- Beim schriftlichen Multiplizieren gibt es über dem Ergebnis kleine Felder für Überträge. Sie sind nur zum Notieren da und werden nicht bewertet.
+
+### Lehrkraft
+
+- Für dich ändert sich nichts.
+
 ## 0.24 vom 19.11.2026
 
 ### Schüler
