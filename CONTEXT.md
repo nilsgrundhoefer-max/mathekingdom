@@ -229,7 +229,7 @@ Die Liste der fünf besten Ergebnisse der Klasse in einem Belohnungsspiel, dazu 
 _Avoid_: Rangliste (verwechselbar mit Rang), Highscore
 
 **Beiname**:
-Der Name, unter dem ein Schüler auf der Bestenliste steht, aus festen Bausteinen gewählt (zum Beispiel „Seeblauer Falke“), nie frei getippt.
+Der Name, unter dem ein Schüler auf der Bestenliste steht, aus festen Bausteinen gewählt (zum Beispiel „Seeblauer Falke“), nie frei getippt. Die erste eigene Wahl ist kostenlos, jede weitere Änderung kostet 50 Münzen; eine Änderung umfasst immer beide Bausteine.
 _Avoid_: Nickname, Spitzname
 
 **Nebel**:
