@@ -77,6 +77,8 @@ export function schluesselDerKlasse(v, schuljahr, klasse) {
   const wer = new Set([...(v?.klassen?.[schuljahr]?.[klasse]?.lehrkraefte ?? []), ...Object.keys(lk).filter((k) => lk[k].admin)]);
   return [...[...wer].map((k) => lk[k]?.oeffentlich), v?.admin].filter(Boolean);
 }
+// Testklasse (ADR 0028): im Schulverzeichnis markiert, zählt nicht in Nutzungsstatistik, Auffällige Aufgaben und Aufgabenmeldungen.
+export const istTestklasse = (v, schuljahr, klasse) => Boolean(v?.klassen?.[schuljahr]?.[klasse]?.test);
 export function klassenDerLehrkraft(v, schuljahr, kuerzel) {
   const alle = v?.klassen?.[schuljahr] ?? {};
   const admin = Boolean(v?.lehrkraefte?.[kuerzel]?.admin);

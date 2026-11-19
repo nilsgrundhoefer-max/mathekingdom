@@ -340,7 +340,7 @@ function klassenwahl() {
   return h('select', { class: 'klassenwahl', id: 'klassenwahl', 'aria-label': 'Klasse wechseln', onchange: (ev) => {
     clearInterval(takt);
     oeffneSchulklasse(ev.target.value).catch((e) => { z.fehler = `Die Klasse ${ev.target.value} ließ sich nicht öffnen: ${e.message}`; male(); });
-  } }, meine.map((k) => h('option', { value: k, selected: k === z.klasse }, `Klasse ${k}`)));
+  } }, meine.map((k) => h('option', { value: k, selected: k === z.klasse }, `Klasse ${k}${SCH.istTestklasse(z.schule.verzeichnis, z.schule.schuljahr, k) ? ' (Test)' : ''}`)));
 }
 function male() {
   const ansichten = { start, klassen, klasse: klassenAnsicht };
@@ -349,6 +349,7 @@ function male() {
     h('header', { class: 'kopf' }, h('strong', {}, 'Mathekingdom'), h('span', {}, 'Lehrer-Dashboard'),
       z.lehrer?.demo && h('span', { class: 'demo' }, 'Beispieldaten: nichts wird gespeichert'),
       z.schule && h('span', { class: 'demo' }, `${z.schule.kuerzel} · Schuljahr ${z.schule.schuljahr}`),
+      z.ansicht === 'klasse' && z.schule && SCH.istTestklasse(z.schule.verzeichnis, z.schule.schuljahr, z.klasse) && h('span', { class: 'demo', id: 'testklasse' }, 'Testklasse: simulierte Schüler'),
       z.ansicht === 'klasse' && z.andereOffen.length > 0 && h('span', { class: 'demo', id: 'andere-offen' }, `Auch ${z.andereOffen.join(' und ')} ${z.andereOffen.length > 1 ? 'haben' : 'hat'} die Klasse gerade offen`),
       z.ansicht === 'klasse' && klassenwahl()),
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
@@ -462,7 +463,7 @@ function klassenSchule() {
   return h('section', { class: 'karte schmal' },
     h('h1', {}, 'Deine Klassen'),
     h('p', { class: 'klein' }, `Schuljahr ${jahr}. ${v.lehrkraefte?.[z.schule.kuerzel]?.admin ? 'Du hast Einblick in alle Klassen.' : 'Klassen legt der Administrator an und ordnet sie dir zu.'}`),
-    meine.length ? h('ul', { class: 'klassenliste' }, meine.map((k) => h('li', {}, h('b', {}, k), h('span', {}, (v.klassen[jahr][k].lehrkraefte ?? []).join(', ') || 'keine Lehrkraft'),
+    meine.length ? h('ul', { class: 'klassenliste' }, meine.map((k) => h('li', {}, h('b', {}, k), h('span', {}, (v.klassen[jahr][k].lehrkraefte ?? []).join(', ') || 'keine Lehrkraft', v.klassen[jahr][k].test ? ' · Testklasse' : ''),
       h('button', { class: 'haupt', 'data-klasse': k, onclick: () => oeffne(k) }, 'Öffnen')))) : h('p', {}, 'Dir ist in diesem Schuljahr noch keine Klasse zugeordnet.'),
     h('button', { class: 'schlicht', id: 'verzeichnis-neu', onclick: async () => { await ladeVerzeichnisNeu(); male(); } }, 'Neu laden'));
 }

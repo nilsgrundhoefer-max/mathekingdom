@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.30 vom 19.11.2026
+
+### Schüler
+
+- Keine Änderung im Spiel.
+
+### Lehrkraft
+
+- Neu im Administrator-Dashboard unter „Klassen und Lehrkräfte“: Testklassen. Eine Testklasse hat 5 bis 30 simulierte Schüler mit Vornamen und Profil (sicher, schnell, durchschnittlich, wackelig, rät, blockiert oft, ruft oft Hilfe, wird oft inaktiv) und drei Probe-Codes, mit denen du selbst mitarbeitest. Beim Anlegen entstehen auf Wunsch 1, 3 oder 6 Schulwochen Vergangenheit, damit Lernstand und Rückblick sofort etwas zeigen.
+- „Simulation starten“ lässt die simulierten Schüler live arbeiten, in echtem oder dreifachem Tempo, 45 Minuten, 90 Minuten oder bis du anhältst. Sie reagieren auf die Lehrkraft: Antworten auf Hilferufe, Tore, Meilensteinfreigaben, Sonderaufträge, Münzgaben, Nachrichten und Spielpause. Das geht auch auf demselben PC wie das Lehrer-Dashboard; bremst der Browser das Fenster im Hintergrund, holen die Schüler die Zeit nach.
+- Im Lehrer-Dashboard trägt eine Testklasse oben das Schild „Testklasse“. Sie zählt nicht in Nutzungsstatistik, Auffällige Aufgaben und Aufgabenmeldungen und wird nicht ins neue Schuljahr übernommen.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.29 vom 19.11.2026
 
 ### Schüler
