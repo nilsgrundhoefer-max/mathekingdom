@@ -6,6 +6,17 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.28 vom 19.11.2026
+
+### Schüler
+
+- Keine Änderung im Spiel. Die Kopie für Tage ohne Internet heißt jetzt `_mathekingdom/schueler-kopie.txt`.
+
+### Lehrkraft
+
+- Behoben: „Kopie des Dashboards … fehlgeschlagen: Aborted due to security policy“. Edge und Chrome durften auf den Tauschlaufwerken keine Skriptdatei (.js) anlegen. Die Kopien für Tage ohne Internet heißen jetzt `lehrer-kopie.txt` und `schueler-kopie.txt` und sind gewöhnliche Textdateien.
+- Damit die Startdateien ohne Internet die neue Kopie finden, erstelle die Schüler- und Lehrer-Startdateien im Administrator-Dashboard einmal neu. Mit Internet laufen alte Startdateien weiter wie bisher.
+
 ## 0.27 vom 19.11.2026
 
 ### Schüler

@@ -1299,8 +1299,8 @@ async function weiter(seite, wahl = '#weiter') {
   // NG hat nur eine Klasse: Sie öffnet sich gleich (ADR 0025).
   await lehrer.waitForSelector('nav.bereiche');
   assert.match(await lehrer.innerText('h1'), /Klasse 5a/);
-  assert.ok(await lies(lehrer, 'L/Mathekingdom/_mathekingdom/lehrer.js'));
-  assert.ok(await lies(lehrer, 'S/Mathekingdom/_mathekingdom/schueler.js'));
+  assert.ok(await lies(lehrer, 'L/Mathekingdom/_mathekingdom/lehrer-kopie.txt'));
+  assert.ok(await lies(lehrer, 'S/Mathekingdom/_mathekingdom/schueler-kopie.txt'));
   await lehrer.click('[data-tab="klasse"]');
   await lehrer.waitForSelector('#codes');
   // Backup und Protokoll gibt es mit Schulverzeichnis nur im Administrator-Dashboard.

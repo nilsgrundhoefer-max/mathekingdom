@@ -7,6 +7,11 @@ import { fehlergrund } from '../gemeinsam/protokoll.js';
 
 export const SYSTEMORDNER = '_mathekingdom';
 export const KLASSENDATEI = 'klassendatei.json';
+// Kopien der Dashboards für Tage ohne Internet. Als .txt, nicht als .js: Windows und Edge/Chrome brechen das Schreiben
+// von Skriptdateien (.js) auf Netzlaufwerken je nach Schulrichtlinie ab („Aborted due to security policy“).
+// Die Startdatei liest die Kopie als Text, die Endung spielt dafür keine Rolle.
+export const KOPIE_SCHUELER = 'schueler-kopie.txt';
+export const KOPIE_LEHRER = 'lehrer-kopie.txt';
 const SICHERUNG = 'mk-sicherung-';
 
 async function datei(wurzel, pfad, anlegen) {
