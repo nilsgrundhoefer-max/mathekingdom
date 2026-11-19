@@ -14,6 +14,16 @@ import * as B from '../gemeinsam/backup.js';
 import * as M from '../gemeinsam/meldungen.js';
 import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
+import { aufklapper, AUFKLAPP_STIL } from '../gemeinsam/aufklappen.js';
+import { laufwerkSchild, LAUFWERK_STIL } from '../gemeinsam/laufwerke.js';
+
+// Aufklappbare Karten (Version 0.32): anfangs alles zu, nur im Reiter „Jetzt“ Klassenraum und Akut-Zone offen.
+const klapp = aufklapper('lehrer', { anfangsOffen: (id) => id === 'jetzt|Klassenraum' || id === 'jetzt|Akut-Zone' });
+function klappeKarten() {
+  if (z.ansicht !== 'klasse' || !wurzel) return;
+  klapp.wandle(wurzel.querySelector('main'), () => z.tab);
+  klapp.wandle(wurzel.querySelector('.overlay-inhalt'), () => 'schueler');
+}
 
 const LEHRERDATEN = 'lehrerdaten.json';
 const CODE_DATEI = /^(\d{1,2}[A-Z]-[A-Z0-9]{4})\.json$/;
@@ -352,7 +362,8 @@ function male() {
       z.schule && h('span', { class: 'demo' }, `${z.schule.kuerzel} · Schuljahr ${z.schule.schuljahr}`),
       z.ansicht === 'klasse' && z.schule && SCH.istTestklasse(z.schule.verzeichnis, z.schule.schuljahr, z.klasse) && h('span', { class: 'demo', id: 'testklasse' }, 'Testklasse: simulierte Schüler'),
       z.ansicht === 'klasse' && z.andereOffen.length > 0 && h('span', { class: 'demo', id: 'andere-offen' }, `Auch ${z.andereOffen.join(' und ')} ${z.andereOffen.length > 1 ? 'haben' : 'hat'} die Klasse gerade offen`),
-      z.ansicht === 'klasse' && klassenwahl()),
+      z.ansicht === 'klasse' && klassenwahl(),
+      z.schule && laufwerkSchild(laufwerkEintraege(), { offen: z.laufwerkPanel, umschalten: () => { z.laufwerkPanel = !z.laufwerkPanel; male(); }, waehle: andererOrdner })),
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
     h('main', {}, ansichten[z.ansicht]()),
     z.ansicht === 'klasse' && z.overlay && kl().namen[z.overlay] && overlay(),
@@ -381,37 +392,62 @@ function start() {
 }
 
 // Erster Start mit Schulverzeichnis: Kürzel (aus der Startdatei), dann einmal die beiden Mathekingdom-Ordner.
-// Danach sind sie gemerkt, und „Weiter“ fragt höchstens nach der Erlaubnis.
+// Danach sind sie gemerkt (Version 0.32): Hat der Browser die Erlaubnis noch, geht es ohne Zwischenschritt in die Klasse.
+// Sonst zeigt eine Karte die hinterlegten Ordner; ein Klick darauf holt die Erlaubnis. Die Wahl kommt nur noch beim
+// ersten Mal oder wenn ein Ordner fehlt oder falsch ist.
+const LAUFWERK = { schueler: ['Schülertauschlaufwerk', () => window.MK_PFAD_SCHUELER], lehrer: ['Lehrertauschlaufwerk', () => window.MK_PFAD_LEHRER] };
+const pfadText = (art) => (LAUFWERK[art][1]() ? ` (${LAUFWERK[art][1]()})` : '');
+function bekanntesKuerzel() {
+  let k = window.MK_KUERZEL ?? '';
+  try { k ||= localStorage.getItem('mk-kuerzel') ?? ''; } catch { /* egal */ }
+  return SCH.istKuerzel(k) ? k : '';
+}
+// Einen Mathekingdom-Ordner wählen und merken. Liefert true, wenn er passt.
+async function waehleLaufwerk(art) {
+  try {
+    const gewaehlt = S.ordnerAblage(await window.showDirectoryPicker({ id: `mk-${art}`, mode: 'readwrite' }));
+    const { wurzel: w } = await SCH.findeSchule(gewaehlt);
+    if (!w) { z.fehler = `In diesem Ordner liegt kein eingerichtetes Mathekingdom. Wähle auf dem ${LAUFWERK[art][0]} den Ordner „Mathekingdom“${pfadText(art)}.`; male(); return false; }
+    z.wahl[art] = w.handle; z.wahl.zeigeWahl = true; await merke(`schule-${art}`, w.handle); z.fehler = null; male();
+    return true;
+  } catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } return false; }
+}
+async function oeffneGemerkteSchule(kuerzel, fragen = true) {
+  try { localStorage.setItem('mk-kuerzel', kuerzel); } catch { /* egal */ }
+  for (const art of ['schueler', 'lehrer']) {
+    if (!(await erlaube(z.wahl[art], fragen))) {
+      if (!fragen) return false;
+      z.fehler = `Bitte erlaube den Zugriff auf das ${LAUFWERK[art][0]}. Klicke dazu noch einmal.`; male(); return false;
+    }
+  }
+  try { await oeffneSchule(S.ordnerAblage(z.wahl.schueler), S.ordnerAblage(z.wahl.lehrer), kuerzel); return true; }
+  // Fehlt etwas oder ist ein Ordner falsch: zurück zur Wahl.
+  catch (e) { z.fehler = e.message; z.wahl.zeigeWahl = true; male(); return false; }
+}
 function startSchule() {
   if (!z.wahl) {
-    z.wahl = { schueler: null, lehrer: null, geladen: false };
-    Promise.all([erinnere('schule-schueler'), erinnere('schule-lehrer')]).then(([s, l]) => { Object.assign(z.wahl, { schueler: z.wahl.schueler ?? s, lehrer: z.wahl.lehrer ?? l, geladen: true }); male(); });
+    z.wahl = { schueler: null, lehrer: null, geladen: false, zeigeWahl: false, geprueft: false };
+    Promise.all([erinnere('schule-schueler'), erinnere('schule-lehrer')]).then(async ([s, l]) => {
+      Object.assign(z.wahl, { schueler: z.wahl.schueler ?? s, lehrer: z.wahl.lehrer ?? l, geladen: true });
+      const k = bekanntesKuerzel();
+      // Erlaubnis noch da: gleich hinein, ohne Zwischenschritt.
+      if (k && s && l) await oeffneGemerkteSchule(k, false);
+      if (!z.schule) { z.wahl.geprueft = true; male(); }
+    });
   }
-  let kuerzel = window.MK_KUERZEL ?? '';
-  try { kuerzel ||= localStorage.getItem('mk-kuerzel') ?? ''; } catch { /* egal */ }
+  const kuerzel = bekanntesKuerzel();
+  if (!z.wahl.geladen || (!z.wahl.geprueft && kuerzel && z.wahl.schueler && z.wahl.lehrer)) return h('section', { class: 'karte schmal' }, h('p', { class: 'klein' }, 'Mathekingdom öffnet …'));
+  if (S.kannOrdner() && kuerzel && z.wahl.schueler && z.wahl.lehrer && !z.wahl.zeigeWahl) return hinterlegtKarte(kuerzel);
+
   const kuerzelFeld = !window.MK_KUERZEL && h('input', { id: 'kuerzel', type: 'text', value: kuerzel, size: 6, maxLength: 5, placeholder: 'z. B. NG' });
-  const LAUFWERK = { schueler: ['Schülertauschlaufwerk', window.MK_PFAD_SCHUELER], lehrer: ['Lehrertauschlaufwerk', window.MK_PFAD_LEHRER] };
-  const waehle = async (art) => {
-    try {
-      const gewaehlt = S.ordnerAblage(await window.showDirectoryPicker({ id: `mk-${art}`, mode: 'readwrite' }));
-      const { wurzel: w } = await SCH.findeSchule(gewaehlt);
-      if (!w) { z.fehler = `In diesem Ordner liegt kein eingerichtetes Mathekingdom. Wähle auf dem ${LAUFWERK[art][0]} den Ordner „Mathekingdom“${LAUFWERK[art][1] ? ` (${LAUFWERK[art][1]})` : ''}.`; return male(); }
-      z.wahl[art] = w.handle; await merke(`schule-${art}`, w.handle); z.fehler = null; male();
-    } catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } }
-  };
   const weiter = async () => {
-    const k = (kuerzelFeld ? kuerzelFeld.value : kuerzel).trim().toUpperCase();
+    const k = (kuerzelFeld ? kuerzelFeld.value : window.MK_KUERZEL).trim().toUpperCase();
     if (!SCH.istKuerzel(k)) { z.fehler = 'Gib dein Kürzel ein, zum Beispiel NG.'; return male(); }
-    try { localStorage.setItem('mk-kuerzel', k); } catch { /* egal */ }
-    for (const art of ['schueler', 'lehrer']) {
-      if (!(await erlaube(z.wahl[art]))) { z.fehler = `Bitte erlaube den Zugriff auf das ${LAUFWERK[art][0]}. Klicke dazu noch einmal auf „Weiter“.`; return male(); }
-    }
-    try { await oeffneSchule(S.ordnerAblage(z.wahl.schueler), S.ordnerAblage(z.wahl.lehrer), k); }
-    catch (e) { z.fehler = e.message; male(); }
+    await oeffneGemerkteSchule(k);
   };
   const zeile = (art) => h('li', {}, h('b', {}, LAUFWERK[art][0]), ' ',
-    z.wahl[art] ? h('span', {}, `Ordner „${z.wahl[art].name}“ gemerkt `) : h('span', { class: 'klein' }, `Wähle den Ordner „Mathekingdom“${LAUFWERK[art][1] ? ` (${LAUFWERK[art][1]})` : ''}. `),
-    h('button', { class: z.wahl[art] ? 'schlicht' : 'haupt', id: `wahl-${art}`, onclick: () => waehle(art) }, z.wahl[art] ? 'Anderen Ordner wählen' : 'Ordner wählen'));
+    z.wahl[art] ? h('span', {}, `Ordner „${z.wahl[art].name}“ gemerkt `) : h('span', { class: 'klein' }, `Wähle den Ordner „Mathekingdom“${pfadText(art)}. `),
+    h('button', { class: z.wahl[art] ? 'schlicht' : 'haupt', id: `wahl-${art}`, onclick: () => waehleLaufwerk(art) }, z.wahl[art] ? 'Anderen Ordner wählen' : 'Ordner wählen'));
   return h('section', { class: 'karte schmal' },
     h('h1', {}, 'Willkommen'),
     window.MK_KUERZEL ? h('p', {}, `Dein Kürzel: `, h('b', {}, window.MK_KUERZEL)) : h('p', {}, h('label', {}, 'Dein Kürzel ', kuerzelFeld)),
@@ -421,6 +457,27 @@ function startSchule() {
         h('ul', { class: 'liste' }, zeile('schueler'), zeile('lehrer')),
         h('button', { class: 'haupt', id: 'weiter', disabled: !(z.wahl.schueler && z.wahl.lehrer), onclick: weiter }, 'Weiter')),
     h('button', { class: 'schlicht', id: 'beispiel', onclick: starteBeispiel }, 'Mit einer Beispielklasse ausprobieren'));
+}
+// Die Ordner sind hinterlegt, der Browser will nur noch einmal die Erlaubnis: Die ganze Karte ist der Klick dafür.
+function hinterlegtKarte(kuerzel) {
+  const los = () => oeffneGemerkteSchule(kuerzel);
+  return h('section', { class: 'karte schmal hinterlegt', id: 'hinterlegt', role: 'button', tabIndex: 0, onclick: los, onkeydown: (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); los(); } } },
+    h('h1', {}, 'Deine Laufwerke sind hinterlegt'),
+    h('ul', { class: 'liste laufwerke' }, ['schueler', 'lehrer'].map((art) => h('li', {}, h('span', { class: 'haken' }, '✓'), h('b', {}, LAUFWERK[art][0]), ` · Ordner „${z.wahl[art].name}“`))),
+    h('p', { class: 'zum-oeffnen' }, `Zum Öffnen klicken${window.MK_KUERZEL ? '' : ` (Kürzel ${kuerzel})`}`),
+    h('p', { class: 'klein' }, 'Tipp: Fragt der Browser nach, wähle „Bei jedem Besuch zulassen“. Dann öffnet sich Mathekingdom künftig ohne diesen Schritt.'));
+}
+// Für das Schild oben rechts: Was beim Öffnen gefunden wurde (oeffneSchule bricht ab, wenn etwas fehlt).
+function laufwerkEintraege() {
+  const k = z.schule.kuerzel;
+  return [
+    { art: 'schueler', titel: 'Schülertauschlaufwerk', ordner: z.schule.schueler.name, funde: [{ text: 'Schulverzeichnis gefunden', ok: true }] },
+    { art: 'lehrer', titel: 'Lehrertauschlaufwerk', ordner: z.schule.lehrer.name, funde: [{ text: `Ordner „${k}“ mit deinem Schlüssel gefunden`, ok: true }] },
+  ];
+}
+// Anderen Ordner wählen: merken und neu starten, damit alles aus dem neuen Ordner kommt.
+async function andererOrdner(art) {
+  if (await waehleLaufwerk(art)) { clearInterval(takt); location.reload(); }
 }
 
 async function starteBeispiel() {
@@ -466,7 +523,10 @@ function klassenSchule() {
     h('p', { class: 'klein' }, `Schuljahr ${jahr}. ${v.lehrkraefte?.[z.schule.kuerzel]?.admin ? 'Du hast Einblick in alle Klassen.' : 'Klassen legt der Administrator an und ordnet sie dir zu.'}`),
     meine.length ? h('ul', { class: 'klassenliste' }, meine.map((k) => h('li', {}, h('b', {}, k), h('span', {}, (v.klassen[jahr][k].lehrkraefte ?? []).join(', ') || 'keine Lehrkraft', v.klassen[jahr][k].test ? ' · Testklasse' : ''),
       h('button', { class: 'haupt', 'data-klasse': k, onclick: () => oeffne(k) }, 'Öffnen')))) : h('p', {}, 'Dir ist in diesem Schuljahr noch keine Klasse zugeordnet.'),
-    h('button', { class: 'schlicht', id: 'verzeichnis-neu', onclick: async () => { await ladeVerzeichnisNeu(); male(); } }, 'Neu laden'));
+    h('div', { class: 'reihe' },
+      h('button', { class: 'schlicht', id: 'verzeichnis-neu', onclick: async () => { await ladeVerzeichnisNeu(); male(); } }, 'Neu laden'),
+      // Ohne Ordner, nichts wird gespeichert: Die Schule ist dafür ganz abgemeldet; zurück geht es über Neuladen der Seite.
+      h('button', { class: 'link', id: 'beispiel', onclick: () => { clearInterval(takt); z.schule = null; z.laufwerkPanel = false; starteBeispiel(); } }, 'Mit einer Beispielklasse ausprobieren')));
 }
 
 // ---------- Klasse ----------
@@ -492,7 +552,8 @@ function klassenAnsicht() {
       h('span', { class: 'klein rechts', id: 'aktualisiert' }, z.aktualisiert ? `Aktualisiert um ${z.aktualisiert.toLocaleTimeString('de-DE')}` : '')),
     z.warnungen.length > 0 && h('div', { class: 'meldung warnung' }, h('ul', {}, z.warnungen.slice(0, 4).map((w) => h('li', {}, w))),
       h('button', { class: 'schlicht', onclick: () => { z.warnungen = []; male(); } }, 'Gelesen')),
-    h('nav', { class: 'tabs bereiche' }, BEREICHE.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; if (id === 'lernstand') z.ls = { art: 'klasse' }; if (id === 'klasse') z.backups = null; male(); } }, titel))),
+    h('nav', { class: 'tabs bereiche' }, BEREICHE.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; if (id === 'lernstand') z.ls = { art: 'klasse' }; if (id === 'klasse') z.backups = null; male(); } }, titel)),
+      klapp.alleKnoepfe(() => wurzel.querySelector('main'))),
     inhalte[z.tab]());
 }
 
@@ -887,8 +948,8 @@ function meilensteineSperren() {
     if (was) setze(st.id, gruppe === 'alle' ? codes : codes.filter((c) => ziel(c) === gruppe), was === 'zu');
   } }, h('option', { value: '' }, 'Für mehrere …'), h('option', { value: 'auf|alle' }, 'Für alle öffnen'), h('option', { value: 'zu|alle' }, 'Für alle sperren'),
     L.NIVEAUS.flatMap((n) => [h('option', { value: `zu|${n}` }, `Für Zielniveau ${n} sperren`), h('option', { value: `auf|${n}` }, `Für Zielniveau ${n} öffnen`)]));
-  return h('details', { class: 'karte aufklapp', open: Boolean(z.sperrenOffen), ontoggle: (ev) => { z.sperrenOffen = ev.target.open; } },
-    h('summary', {}, h('h2', {}, 'Meilensteine öffnen und sperren')),
+  return h('section', { class: 'karte', id: 'meilensteine-sperren' },
+    h('h2', {}, 'Meilensteine öffnen und sperren'),
     h('div', { class: 'reihe' },
       kapitel.length > 1 && h('label', {}, 'Kapitel ', h('select', { id: 'pfad-kapitel', onchange: (ev) => { z.pfadKapitel = ev.target.value; male(); } }, kapitel.map((k) => h('option', { value: k.id, selected: k.id === kap.id }, k.titel))))),
     h('p', { class: 'klein' }, 'Einen gesperrten Meilenstein sieht der Schüler auf seiner Regionskarte mit Schloss und kann dort keine Aufgaben starten. „Gemeistert“ setzt das Dashboard selbst, sobald alle Lernziele des Meilensteins erreicht sind.'),
@@ -995,7 +1056,7 @@ function lernstandKlasse() {
     selbsteinschaetzungKlasse(staende),
     vorwissenKlasse(staende),
     heftUndSicherheitKlasse(staende),
-    h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Auffälligkeiten (${auff.length})`)),
+    h('section', { class: 'karte', id: 'auffaelligkeiten' }, h('h2', {}, `Auffälligkeiten (${auff.length})`),
       auff.length === 0 ? h('p', { class: 'klein' }, 'Keine Auffälligkeiten.') : h('ul', { class: 'liste' }, auff.map((a) => h('li', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: a.code }) }, name(a.code)), `: ${lesbar(a.text)}`)))),
     meilensteineSperren());
 }
@@ -1374,7 +1435,7 @@ function einzelInhalt(code, fuerDruck = false) {
       h('p', { class: 'klein' }, `Lernziele mit mindestens ${L.HILFE_MIN} Aufgaben: Wie oft Beispiel oder Lösungsschritt aufgedeckt wurden und ob es weniger wird.`),
       hilfebedarfTabelle(hilfe, 'Lernziel')),
     !fuerDruck && versuchsverlaufKarte(stand),
-    !fuerDruck && h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Versuchsprotokoll (${protokoll.length})`)),
+    !fuerDruck && h('section', { class: 'karte', id: 'versuchsprotokoll' }, h('h2', {}, `Versuchsprotokoll (${protokoll.length})`),
       h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Wann', 'Aufgabe', 'Niveau', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer', 'Erkannter Fehler'].map((t) => h('th', {}, t)))),
         h('tbody', {}, protokoll.map((v) => h('tr', {}, h('td', {}, new Date(v.t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })),
@@ -1694,7 +1755,11 @@ function sicherung() {
 // ---------- Start ----------
 if (typeof document !== 'undefined') {
   wurzel = document.getElementById('mathekingdom-lehrer') ?? document.body.appendChild(h('div', { id: 'mathekingdom-lehrer' }));
-  document.head.append(h('style', {}, stil + VERSION_STIL));
+  document.head.append(h('style', {}, stil + VERSION_STIL + AUFKLAPP_STIL + LAUFWERK_STIL));
+  klapp.binde(wurzel);
+  // Spät nachgeladene Karten (z. B. Backups) werden ebenfalls aufklappbar.
+  let geplant = false;
+  new MutationObserver(() => { if (!geplant) { geplant = true; queueMicrotask(() => { geplant = false; klappeKarten(); }); } }).observe(wurzel, { childList: true, subtree: true });
   // Kam das Dashboard als Kopie vom Lehrerlaufwerk, ist der Ordner schon gewählt.
   if (window.MK_LEHRER_ORDNER) merke('lehrer', window.MK_LEHRER_ORDNER).then(() => oeffneLehrer(S.ordnerAblage(window.MK_LEHRER_ORDNER)))
     .catch((e) => { z.fehler = e.message; male(); });

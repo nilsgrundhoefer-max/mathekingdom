@@ -21,6 +21,14 @@ const server = createServer((req, res) => {
 const basis = `http://localhost:${server.address().port}/`;
 const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-5.json', wurzel), 'utf8'));
 const browser = await chromium.launch();
+// Seit 0.32 sind die Karten in Lehrer- und Administrator-Dashboard anfangs zugeklappt. Die Tests arbeiten mit allem
+// offen; das Auf- und Zuklappen selbst prüft Teil 8.
+const alleOffen = () => { try { for (const n of ['lehrer', 'admin']) if (!localStorage.getItem(`mk-aufgeklappt-${n}`)) localStorage.setItem(`mk-aufgeklappt-${n}`, '{"*":true}'); } catch { /* about:blank */ } };
+{
+  const neueSeite = browser.newPage.bind(browser), neuerKontext = browser.newContext.bind(browser);
+  browser.newPage = async (o) => { const p = await neueSeite(o); await p.addInitScript(alleOffen); return p; };
+  browser.newContext = async (o) => { const k = await neuerKontext(o); await k.addInitScript(alleOffen); return k; };
+}
 let nr = 0;
 // Bild eines Elements, das sich alle paar Sekunden neu zeichnet: aus einem Bild der ganzen Seite ausgeschnitten.
 const fotoStabil = async (seite, sel, name) => {
@@ -698,7 +706,7 @@ async function weiter(seite, wahl = '#weiter') {
   await foto(seite, 'lehrer-start');
   await seite.click('#beispiel');
   await seite.waitForSelector('.schlange li');
-  assert.equal(await seite.locator('.tabs.bereiche button').count(), 4);
+  assert.equal(await seite.locator('.tabs.bereiche > button').count(), 4);
   assert.equal(await seite.locator('[data-tab=jetzt].aktiv').count(), 1); // im Unterricht öffnet „Jetzt“
   await foto(seite, 'lehrer-jetzt');
   assert.match(await seite.innerText('.impulse'), /Selbsteinschätzung: Carla Rossi hat sich an den letzten 3 Meilensteinen unterschätzt/);
@@ -804,7 +812,7 @@ async function weiter(seite, wahl = '#weiter') {
   assert.ok(await seite.locator('#mk-druck .kennzahl').count() >= 3);
   // Meilensteine für eine ganze Gruppe sperren.
   await seite.click('.brotkrumen button');
-  await seite.click('summary:has-text("Meilensteine öffnen und sperren")');
+  await seite.waitForSelector('#meilensteine-sperren:not(.zu)'); // seit 0.32 eine aufklappbare Karte, im Test offen
   await seite.selectOption('#pfad-kapitel', '5.3');
   await seite.selectOption('[data-masse="5.3.3"]', 'zu|alle');
   await seite.waitForFunction(() => document.querySelectorAll('.sperre.zu').length === 14);
@@ -1055,7 +1063,7 @@ async function weiter(seite, wahl = '#weiter') {
 
   // Station sperren: Die Schülerin sieht das Schloss und kann dort nichts starten. Öffnen macht es rückgängig.
   await lehrer.click('[data-tab=lernstand]');
-  await lehrer.click('summary:has-text("Meilensteine öffnen und sperren")');
+  await lehrer.waitForSelector('#meilensteine-sperren:not(.zu)'); // seit 0.32 eine aufklappbare Karte, im Test offen
   await lehrer.click(`[data-sperre="5.4.1|${aylin}"]`);
   await warteAuf((k) => k.sperren?.['5.4.1']?.includes(aylin));
   await schueler.click('#zurueck');
@@ -1259,6 +1267,8 @@ async function weiter(seite, wahl = '#weiter') {
   schueler.on('pageerror', (e) => fehler.push(`schüler: ${e.message}`));
   await schueler.goto(`${basis}test/Mathekingdom.html`);
   await schueler.waitForSelector('#code');
+  // Mit der Startdatei des Administrators gibt es kein Ausprobieren ohne Ordner (Version 0.32).
+  assert.equal(await schueler.locator('#demo').count(), 0);
   assert.match(await schueler.innerText('#ordner-hinweis'), /Nur beim ersten Mal.*„Mathekingdom“ \(S:\\Mathekingdom\)/);
   await schueler.fill('#code', code); await schueler.fill('#pin', pin);
   await waehle(schueler, `S/Mathekingdom/${jahr}/5a`);
@@ -1337,11 +1347,33 @@ async function weiter(seite, wahl = '#weiter') {
     return false;
   }, [jahr], { timeout: 15000 });
   await foto(lehrer, 'lehrer-schule');
-  // Nach dem Neuladen sind beide Ordner gemerkt.
+  // Nach dem Neuladen sind beide Ordner gemerkt. Hat der Browser die Erlaubnis noch, geht es ohne Zwischenschritt
+  // in die Klasse (Version 0.32); oben rechts steht das Schild „Laufwerke verbunden“.
   await lehrer.reload();
-  await lehrer.waitForSelector('#weiter:not([disabled])');
-  await lehrer.click('#weiter');
   await lehrer.waitForSelector('nav.bereiche');
+  assert.equal(await lehrer.innerText('#laufwerke'), '✓ Laufwerke verbunden');
+  assert.match(await lehrer.getAttribute('#laufwerke', 'title'), /Lehrertauschlaufwerk: Ordner „Mathekingdom“, Ordner „NG“ mit deinem Schlüssel gefunden/);
+  await lehrer.click('#laufwerke');
+  assert.equal(await lehrer.locator('#laufwerk-panel [data-anderer]').count(), 2);
+  await foto(lehrer, 'laufwerke-verbunden');
+  await lehrer.click('#laufwerk-panel-zu');
+  // Ohne Erlaubnis: Karte mit den hinterlegten Ordnern, ein Klick darauf öffnet die Klasse.
+  {
+    const ohne = await kontext.newPage();
+    ohne.on('pageerror', (e) => fehler.push(`lehrer ohne Erlaubnis: ${e.message}`));
+    await ohne.addInitScript(() => {
+      FileSystemHandle.prototype.queryPermission = async () => (window.mkErlaubt ? 'granted' : 'prompt');
+      FileSystemHandle.prototype.requestPermission = async () => { window.mkErlaubt = true; return 'granted'; };
+    });
+    await ohne.goto(`${basis}test/Lehrer-NG.html`);
+    await ohne.waitForSelector('#hinterlegt');
+    assert.match(await ohne.innerText('#hinterlegt'), /Deine Laufwerke sind hinterlegt[\s\S]*Schülertauschlaufwerk · Ordner „Mathekingdom“[\s\S]*Zum Öffnen klicken/);
+    assert.equal(await ohne.locator('#hinterlegt button, #wahl-schueler, #kuerzel').count(), 0);
+    await foto(ohne, 'laufwerke-hinterlegt');
+    await ohne.click('#hinterlegt h1');
+    await ohne.waitForSelector('nav.bereiche');
+    await ohne.close();
+  }
 
   // Münzgabe (ADR 0027): Der Administrator schickt Lena 500 Münzen. Sie kommen als Brief, gutgeschrieben beim Öffnen.
   // Eine zweite Gabe zieht er zurück, bevor sie geöffnet ist. Die Lehrkraft sieht die Gabe im Schülerprofil.
@@ -1578,8 +1610,6 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(JSON.parse(await lies(admin, 'L/Mathekingdom/aufgabenmeldungen.json'))[gemeldet].status, 'behoben');
   // Die Lehrkraft sieht die Sperre bei ihrer Meldung.
   await lehrer.reload();
-  await lehrer.waitForSelector('#weiter:not([disabled])');
-  await lehrer.click('#weiter');
   await lehrer.click('[data-tab="aufgaben"]');
   await lehrer.waitForFunction(() => /behoben/.test(document.getElementById('meldungen')?.textContent ?? ''));
   assert.match(await lehrer.innerText('#meldungen'), /gesperrt/);
@@ -1607,8 +1637,6 @@ async function weiter(seite, wahl = '#weiter') {
   await foto(admin, 'admin-testklasse');
   // Die Lehrkraft öffnet die Testklasse und sieht die simulierten Schüler live.
   await lehrer.reload();
-  await lehrer.waitForSelector('#weiter:not([disabled])');
-  await lehrer.click('#weiter');
   await lehrer.waitForSelector('#klassenwahl, [data-klasse="5t"]');
   if (await lehrer.locator('#klassenwahl').count()) await lehrer.selectOption('#klassenwahl', '5t'); else await lehrer.click('[data-klasse="5t"]');
   await lehrer.waitForSelector('#testklasse');
@@ -1630,6 +1658,53 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.click('#sim-anhalten');
   await admin.waitForFunction(() => /Simulation in 5t beendet/.test(document.getElementById('hinweis')?.textContent ?? ''));
   assert.equal(JSON.parse(await lies(admin, `S/Mathekingdom/${jahr}/5t/${ersterBot}.json`)).aktiv, null);
+
+  // Administrator nach dem Neuladen: ohne Laufwerkswahl gleich in die Übersicht, mit grünem Schild (Version 0.32).
+  // Dabei anfangs alles zugeklappt, eine Karte allein im Reiter offen; der Zustand bleibt nach dem Neuladen.
+  await admin.evaluate(() => localStorage.setItem('mk-aufgeklappt-admin', '{}'));
+  await admin.reload();
+  await admin.waitForSelector('nav.bereiche');
+  assert.equal(await admin.innerText('#laufwerke'), '✓ Laufwerke verbunden');
+  assert.match(await admin.getAttribute('#laufwerke', 'title'), /Persönliches Lehrerlaufwerk: Ordner „P“, Administrator-Schlüssel gefunden/);
+  await admin.waitForSelector('#uebersicht.klappbar:not(.zu)');
+  await admin.click('[data-tab="aufgaben"]');
+  await admin.waitForSelector('#aufgabenmeldungen.klappbar.zu');
+  assert.equal(await admin.locator('main section.klappbar:not(.zu)').count(), 0);
+  assert.ok(!(await admin.isVisible('#aufgabenmeldungen #meldungen-leer, #aufgabenmeldungen table')));
+  await foto(admin, 'admin-aufgaben-zugeklappt');
+  await admin.click('#aufgabenmeldungen h2');
+  await admin.waitForSelector('#aufgabenmeldungen.klappbar:not(.zu)');
+  await admin.reload();
+  await admin.waitForSelector('nav.bereiche');
+  await admin.click('[data-tab="aufgaben"]');
+  await admin.waitForSelector('#aufgabenmeldungen.klappbar:not(.zu)');
+  assert.ok(await admin.locator('#auffaellig.klappbar.zu').count());
+  await admin.click('#alle-auf');
+  assert.equal(await admin.locator('main section.klappbar.zu').count(), 0);
+  await admin.click('#alle-zu');
+  assert.equal(await admin.locator('main section.klappbar:not(.zu)').count(), 0);
+  // Lehrkraft: im Reiter „Jetzt“ sind Klassenraum und Akut-Zone anfangs offen, in „Aufgaben“ ist alles zu.
+  await lehrer.evaluate(() => localStorage.setItem('mk-aufgeklappt-lehrer', '{}'));
+  await lehrer.reload();
+  await lehrer.waitForSelector('nav.bereiche, [data-klasse="5a"]');
+  if (await lehrer.locator('[data-klasse="5a"]').count()) {
+    // Mehrere Klassen: Unten auf „Deine Klassen“ steht die Beispielklasse als kleiner Link.
+    assert.equal(await lehrer.innerText('#beispiel'), 'Mit einer Beispielklasse ausprobieren');
+    await lehrer.click('[data-klasse="5a"]');
+  }
+  await lehrer.waitForSelector('nav.bereiche');
+  if (await lehrer.locator('[data-tab="jetzt"]:not(.aktiv)').count()) await lehrer.click('[data-tab="jetzt"]');
+  await lehrer.waitForSelector('section.klappbar[data-klapp="jetzt|Klassenraum"]:not(.zu)');
+  await lehrer.waitForSelector('section.klappbar[data-klapp="jetzt|Akut-Zone"]:not(.zu)');
+  await lehrer.click('[data-tab="aufgaben"]');
+  await lehrer.waitForSelector('#meldungen.klappbar.zu');
+  assert.equal(await lehrer.locator('main section.klappbar:not(.zu)').count(), 0);
+  await foto(lehrer, 'lehrer-aufgaben-zugeklappt');
+  await lehrer.click('#alle-auf');
+  // Auch nach dem Neuzeichnen (alle 5 Sekunden) bleibt alles offen.
+  await lehrer.waitForTimeout(5500);
+  assert.equal(await lehrer.locator('main section.klappbar.zu').count(), 0);
+  await foto(lehrer, 'lehrer-aufgaben-aufgeklappt');
 
   // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.
   netz = false;

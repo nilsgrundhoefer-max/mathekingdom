@@ -6,6 +6,20 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.32 vom 19.11.2026
+
+### Schüler
+
+- Auf der Anmeldung steht unter „Aufbrechen“ nicht mehr „Ohne Ordner ausprobieren“. Damit hätte ein Schüler nur im Browser seines PCs gearbeitet, und du hättest nichts davon gesehen. Das Ausprobieren gibt es nur noch in der Datei ohne Schuleinrichtung.
+
+### Lehrkraft
+
+- Lehrer- und Administrator-Dashboard fragen die Laufwerke nur noch beim ersten Mal ab. Hat der Browser die Erlaubnis noch, geht es ohne Zwischenschritt ins Dashboard. Sonst zeigt eine Karte „Deine Laufwerke sind hinterlegt“ die Ordner; ein Klick darauf holt die Erlaubnis des Browsers. Wählst du dort einmal „Bei jedem Besuch zulassen“, entfällt auch dieser Klick. Ein bekanntes Kürzel wird nicht mehr abgefragt.
+- Oben rechts in der Kopfzeile zeigt ein grünes Schild „Laufwerke verbunden“, welche Ordner und Dateien gefunden wurden. Ein Klick darauf öffnet die Liste der Laufwerke; dort lässt sich ein anderer Ordner wählen. Fehlt etwas, wird das Schild rot.
+- In allen Reitern beider Dashboards lassen sich die Karten auf- und zuklappen. Anfangs ist alles zugeklappt, außer Klassenraum und Akut-Zone im Reiter „Jetzt“ und einer Karte, die allein in ihrem Reiter steht. Oben rechts neben den Reitern stehen „Alle aufklappen“ und „Alle zuklappen“. Der Browser merkt sich, was offen ist.
+- „Mit einer Beispielklasse ausprobieren“ steht jetzt als kleiner Link unten auf „Deine Klassen“.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.31 vom 19.11.2026
 
 ### Schüler
