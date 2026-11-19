@@ -245,6 +245,10 @@ _Avoid_: Schwierigkeit
 Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten Meilensteine und dem nächsten Meilenstein. Sie steht oben auf der Startseite. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
+**Wegstück**:
+Ein Päckchen von fünf Aufgaben, etwa fünf Minuten Arbeit, mit „Aufgabe 3 von 5“ und einem kurzen Abschluss („Wegstück geschafft: 4 von 5“). Es gliedert eine lange Arbeitsphase in kleine, abschließbare Teile; eine Stunde hat etwa zehn bis zwölf Wegstücke.
+_Avoid_: Runde (das ist ein Knopftext), Etappe (das ist das Kapitel), Chunk, Sequenz
+
 **Hilfekärtchen**:
 Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
