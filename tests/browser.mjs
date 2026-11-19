@@ -1286,6 +1286,22 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.click('#weiter');
   await lehrer.waitForSelector('nav.bereiche');
 
+  // Aufgabenmeldung (ADR 0025): Die Lehrkraft meldet eine Aufgabe mit ihrer Kennung.
+  const gemeldet = pool.aufgaben[0].id;
+  await lehrer.click('[data-tab="aufgaben"]');
+  await lehrer.click('#melden-frei');
+  await lehrer.fill('#melde-kennung', gemeldet);
+  await lehrer.click('#melde-senden');
+  await lehrer.waitForSelector('#melde-dialog .fehlertext');
+  await lehrer.check('input[name="melde-art"][value="loesung"]');
+  await lehrer.fill('#melde-satz', 'Die Lösung im Pool stimmt nicht.');
+  await foto(lehrer, 'lehrer-meldung');
+  await lehrer.click('#melde-senden');
+  await lehrer.waitForSelector('#meldung-gesendet');
+  const meldung = JSON.parse(await lies(lehrer, 'L/Mathekingdom/NG/lehrer.json')).meldungen[0];
+  assert.equal(meldung.kennung, gemeldet); assert.equal(meldung.art, 'loesung'); assert.equal(meldung.klasse, '5a');
+  assert.match(await lehrer.innerText('#meldungen'), /offen/);
+
   // Administrator: neues Schuljahr, 5a wird 6a.
   await admin.click('[data-tab="schule"]');
   await admin.fill('#neues-schuljahr', naechstes);
@@ -1406,7 +1422,29 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(await lies(admin, `S/Mathekingdom/${jahr}/5b/klassendatei.json`), null);
   await admin.click('[data-tab="uebersicht"]');
   await admin.waitForSelector('#uebersicht');
+  assert.match(await admin.innerText('#uebersicht'), /1 offene Aufgabenmeldung/);
   await foto(admin, 'admin-uebersicht');
+
+  // Aufgaben: Meldung ansehen, Aufgabe sperren, als behoben markieren.
+  await admin.click('[data-tab="aufgaben"]');
+  await admin.waitForSelector(`[data-meldung="${gemeldet}"]`, { timeout: 15000 });
+  assert.match(await admin.innerText(`[data-meldung="${gemeldet}"]`), /NG \(5a\): Lösung falsch\. Die Lösung im Pool stimmt nicht/);
+  await admin.check(`[data-sperre="${gemeldet}"]`);
+  await admin.waitForFunction(([k]) => [...document.querySelectorAll('#gesperrt code')].some((c) => c.textContent === k), [gemeldet]);
+  assert.deepEqual(JSON.parse(JSON.parse(await lies(admin, 'S/Mathekingdom/schulverzeichnis.json')).inhalt).gesperrt, [gemeldet]);
+  await foto(admin, 'admin-aufgaben');
+  const [exportDatei] = await Promise.all([admin.waitForEvent('download'), admin.click('#meldungen-export')]);
+  assert.match(readFileSync(await exportDatei.path(), 'utf8'), new RegExp(`## ${gemeldet.replace(/\./g, '\\.')} \\(gesperrt\\)[\\s\\S]*Lösung im Pool`));
+  await admin.selectOption(`[data-status="${gemeldet}"]`, 'behoben');
+  await admin.waitForSelector('#meldungen-leer', { timeout: 15000 });
+  assert.equal(JSON.parse(await lies(admin, 'L/Mathekingdom/aufgabenmeldungen.json'))[gemeldet].status, 'behoben');
+  // Die Lehrkraft sieht die Sperre bei ihrer Meldung.
+  await lehrer.reload();
+  await lehrer.waitForSelector('#weiter:not([disabled])');
+  await lehrer.click('#weiter');
+  await lehrer.click('[data-tab="aufgaben"]');
+  await lehrer.waitForFunction(() => /behoben/.test(document.getElementById('meldungen')?.textContent ?? ''));
+  assert.match(await lehrer.innerText('#meldungen'), /gesperrt/);
 
   // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.
   netz = false;
@@ -1446,6 +1484,8 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(await seite.innerText('#wegstueck'), /Aufgabe 1 von 5/);
   await seite.waitForFunction(() => document.activeElement?.closest('form.antwort'));
   await foto(seite, 'fokus-aufgabe');
+  // Die Aufgabenkennung steht klein unten links (ADR 0025).
+  assert.equal(await seite.innerText('#kennung'), await seite.getAttribute('section.aufgabe', 'data-aufgabe'));
   // Erste Aufgabe zweimal falsch: Lösung mit Beispiel und Lösungsschritt. Der Tipp lag nach dem ersten Fehlversuch unter dem Eingabefeld.
   await antworte(seite, false, { taste: true }); await seite.waitForSelector('.hinweis');
   assert.equal(await seite.locator('.karte .kaertchen .kaertchen-offen').count(), 1);

@@ -11,6 +11,7 @@ import { NIVEAU_FARBE } from '../schueler/bilder.js';
 import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
 import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
+import * as M from '../gemeinsam/meldungen.js';
 import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 
@@ -50,7 +51,7 @@ const erinnere = (schluessel) => gemerkt.hole(schluessel);
 async function speichereLehrer() {
   if (!z.schule) return z.lehrer.schreibe(LEHRERDATEN, JSON.stringify(z.daten, null, 1));
   const ich = await z.schule.lehrer.unterordner(z.schule.kuerzel);
-  await ich.schreibe(SCH.LEHRER_DATEI, JSON.stringify({ kuerzel: z.schule.kuerzel, schluessel: z.daten.schluessel, protokoll: z.daten.protokoll ?? [] }, null, 1));
+  await ich.schreibe(SCH.LEHRER_DATEI, JSON.stringify({ kuerzel: z.schule.kuerzel, schluessel: z.daten.schluessel, protokoll: z.daten.protokoll ?? [], meldungen: z.daten.meldungen ?? [] }, null, 1));
 }
 const klasseImLehrerlaufwerk = async (klasse = z.klasse) => (await z.schule.lehrer.unterordner(z.schule.schuljahr)).unterordner(klasse);
 // Hat eine andere Lehrkraft die Klassendaten inzwischen geändert, wird die Änderung auf ihre Fassung angewandt (ADR 0024).
@@ -126,7 +127,7 @@ async function oeffneSchule(schueler, lehrer, kuerzel) {
   const text = ichOrdner && await ichOrdner.lies(SCH.LEHRER_DATEI);
   if (!text) throw new Error(`Auf dem Lehrertauschlaufwerk fehlt der Ordner „${kuerzel}“ mit deinem Schlüssel. Hast du dort den Ordner „Mathekingdom“ gewählt?`);
   const ich = JSON.parse(text);
-  Object.assign(z, { schule: { schueler, lehrer, kuerzel, verzeichnis: v.daten, schuljahr: v.daten.schuljahr }, lehrer, daten: { version: 2, schluessel: ich.schluessel, protokoll: ich.protokoll ?? [], klassen: {} } });
+  Object.assign(z, { schule: { schueler, lehrer, kuerzel, verzeichnis: v.daten, schuljahr: v.daten.schuljahr }, lehrer, daten: { version: 2, schluessel: ich.schluessel, protokoll: ich.protokoll ?? [], meldungen: ich.meldungen ?? [], klassen: {} } });
   const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND, browser: P.browserName(navigator.userAgent) });
   await notiere(e.art, e.text);
   // Kopien für Tage ohne Internet: Lehrer-Dashboard aufs Lehrer-, Schüler-Dashboard aufs Schülertauschlaufwerk.
@@ -178,7 +179,7 @@ async function oeffneKlasse(klasse, ablage) {
   // Bestehende Klassen ohne Torfreigabe behalten genau die Tore, die bisher offen waren.
   if (!Array.isArray(e.tore)) e.tore = [...L.toreDerKlasse(e, pool)];
   e.toreEinzeln ??= {};
-  Object.assign(z, { overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null, zweitesGemeldet: false });
+  Object.assign(z, { melden: null, meldungGesendet: null, overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null, zweitesGemeldet: false });
   Object.assign(z, { klasse, ordner: ablage, pool, index: L.indexiere(pool), ansicht: 'klasse', fehler: null, warnungen: [], klassendateiText: null, schueler: null, ls: { art: 'klasse' } });
   // Kopien für den Unterricht ohne Internet.
   await ablage.schreibe(`${S.SYSTEMORDNER}/klasse-${stufe}.json`, JSON.stringify(pool));
@@ -351,6 +352,7 @@ function male() {
     h('main', {}, ansichten[z.ansicht]()),
     z.ansicht === 'klasse' && z.overlay && kl().namen[z.overlay] && overlay(),
     z.ansicht === 'klasse' && z.tafel && tafelbildAnsicht(),
+    z.ansicht === 'klasse' && z.melden && meldeDialog(),
     versionsHinweis('lehrkraft'),
   ].filter(Boolean));
   if (gerollt) { const o = wurzel.querySelector('.overlay-inhalt'); if (o) o.scrollTop = gerollt; }
@@ -657,7 +659,7 @@ function akutZone(status) {
       return h('li', { class: `${ruf ? 'ruf' : 'blockiert'}${unterwegs ? ' unterwegs' : ''}` },
         h('div', {}, h('button', { class: 'link', onclick: () => { z.overlay = code; male(); } }, name(code)),
           h('span', { class: `marke ${ruf ? 'warn' : 'schlecht'}` }, ruf ? `Hilferuf seit ${st.minuten} min` : st.text)),
-        st.aufgabe && h('div', {}, aufgabentext(st.aufgabe)),
+        st.aufgabe && h('div', {}, aufgabentext(st.aufgabe), ' ', kennungMitMelden(st.aufgabe)),
         st.kontext && h('div', { class: 'klein' }, st.kontext),
         helfer.length > 0 && h('div', { class: 'klein' }, `Könnte helfen: ${helfer.map(name).join(', ')}`),
         h('div', { class: 'reihe' },
@@ -762,25 +764,68 @@ function overlay() {
       h('div', { class: 'reihe overlay-kopf' }, h('h2', {}, name(code)), h('span', { class: 'klein' }, code), h('label', {}, 'Zielniveau ', zielWahl(code)),
         h('span', { class: 'rechts reihe' }, h('button', { class: 'schlicht', onclick: () => druckeEinzelbericht(code) }, 'Diagnosebericht als PDF'),
           h('button', { class: 'haupt', id: 'overlay-zu', onclick: zu }, 'Schließen'))),
+      aktuelleAufgabe(code),
       nachrichtFeld(code),
       sonderauftragFeld(code),
       einzelInhalt(code)));
 }
 
+// ---------- Aufgabenmeldungen (ADR 0025) ----------
+// Die Lehrkraft meldet eine fehlerhafte Aufgabe an den Administrator. Er setzt den Stand und sperrt sie notfalls.
+const gesperrt = (kennung) => Boolean(z.schule?.verzeichnis.gesperrt?.includes(kennung));
+function kennungMitMelden(kennung) {
+  return h('span', { class: 'kennung-zeile' }, h('code', { class: 'kennung' }, kennung),
+    gesperrt(kennung) && h('span', { class: 'marke schlecht' }, 'gesperrt'),
+    z.schule && h('button', { class: 'link klein', 'data-melden': kennung, onclick: (ev) => { ev.stopPropagation(); z.melden = { kennung, art: '', satz: '' }; male(); } }, 'Aufgabe melden'));
+}
+function aktuelleAufgabe(code) {
+  const id = z.staende.find((s) => s.code === code)?.stand.aktiv?.aufgabe;
+  if (!id) return null;
+  return h('div', { class: 'karte aktuelle-aufgabe', id: 'aktuelle-aufgabe' }, h('span', { class: 'klein' }, 'Gerade bei: '), aufgabentext(id), ' ', kennungMitMelden(id));
+}
+async function ladeMeldungsStatus() {
+  try { z.meldungsStatus = JSON.parse(await z.schule.lehrer.lies(M.STATUS_DATEI)) ?? {}; } catch { z.meldungsStatus = {}; }
+}
+function meldeDialog() {
+  const m = z.melden, a = z.index.aufgabe.get(m.kennung.trim());
+  const zu = () => { z.melden = null; male(); };
+  const senden = async () => {
+    try {
+      const neu = M.neueMeldung({ ...m, klasse: z.klasse, t: jetzt() });
+      (z.daten.meldungen ??= []).push(neu);
+      await speichereLehrer();
+      z.melden = null; z.meldungGesendet = neu.kennung; male();
+    } catch (e) { m.fehler = e.message; male(); }
+  };
+  return h('div', { class: 'overlay', onclick: (ev) => { if (ev.target.classList.contains('overlay')) zu(); } },
+    h('div', { class: 'overlay-inhalt schmal', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Aufgabe melden', id: 'melde-dialog' },
+      h('h2', {}, 'Aufgabe melden'),
+      h('p', { class: 'klein' }, 'Die Meldung geht an den Administrator. Er prüft die Aufgabe, korrigiert sie und kann sie bis dahin für alle Schüler sperren.'),
+      h('label', {}, 'Kennung ', h('input', { id: 'melde-kennung', type: 'text', size: 18, value: m.kennung, oninput: (ev) => { m.kennung = ev.target.value; } })),
+      a ? h('p', { class: 'tafel-klein' }, aufgabentext(a.id), h('br'), h('span', { class: 'klein' }, `Lösung im Pool: ${loesungVon(a)}`)) : h('p', { class: 'klein' }, 'Diese Kennung steht nicht im Aufgabenpool. Prüfe, ob du sie richtig abgeschrieben hast.'),
+      h('div', { class: 'reihe' }, Object.entries(M.ARTEN).map(([wert, text]) => h('label', { class: 'schalter' },
+        h('input', { type: 'radio', name: 'melde-art', value: wert, checked: m.art === wert, onchange: () => { m.art = wert; if (m.fehler) { m.fehler = null; male(); } } }), ` ${text}`))),
+      h('input', { id: 'melde-satz', type: 'text', maxLength: M.MAX_SATZ, placeholder: 'Was stimmt nicht? (ein Satz, freiwillig)', value: m.satz, oninput: (ev) => { m.satz = ev.target.value; }, style: 'width:100%' }),
+      m.fehler && h('p', { class: 'fehlertext' }, m.fehler),
+      h('div', { class: 'reihe' }, h('button', { class: 'haupt', id: 'melde-senden', onclick: senden }, 'Melden'), h('button', { class: 'schlicht', onclick: zu }, 'Abbrechen'))));
+}
+function meldungenKarte() {
+  if (z.meldungsStatus === undefined) { z.meldungsStatus = null; ladeMeldungsStatus().then(male); }
+  const eigene = M.sammle({ [z.schule.kuerzel]: z.daten.meldungen ?? [] }, z.meldungsStatus ?? {}, z.schule.verzeichnis.gesperrt ?? []);
+  return h('section', { class: 'karte', id: 'meldungen' }, h('div', { class: 'reihe' }, h('h2', {}, 'Aufgabenmeldungen'),
+    h('button', { class: 'schlicht rechts', id: 'melden-frei', onclick: () => { z.melden = { kennung: '', art: '', satz: '' }; male(); } }, 'Aufgabe melden')),
+    h('p', { class: 'klein' }, 'Ist eine Aufgabe fehlerhaft oder nicht lösbar, melde sie mit ihrer Kennung. Die Schüler sehen die Kennung klein unten links, du siehst sie hier, in der Akut-Zone und bei jedem Schüler. Der Administrator behebt die Aufgabe.'),
+    z.meldungGesendet && h('p', { class: 'meldung warnung', id: 'meldung-gesendet' }, `Aufgabe ${z.meldungGesendet} gemeldet.`),
+    eigene.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+      h('thead', {}, h('tr', {}, ['Kennung', 'Gemeldet', 'Was', 'Stand'].map((t) => h('th', {}, t)))),
+      h('tbody', {}, eigene.map((g) => h('tr', {}, h('td', {}, h('code', { class: 'kennung' }, g.kennung)), h('td', {}, new Date(g.zuletzt).toLocaleDateString('de-DE')),
+        h('td', {}, g.arten.map((x) => M.ARTEN[x]).join(', ')),
+        h('td', {}, M.STATUS[g.status], g.gesperrt && [' ', h('span', { class: 'marke schlecht' }, 'gesperrt')])))))));
+}
+
 // ---------- Tafelbild (ADR 0014) ----------
 // Vollbild für den Beamer: eine Aufgabe und die häufigsten falschen Antworten der Klasse, ohne Codes und Namen.
-const zahlMitEinheit = (t) => `${t.loesung}${t.einheit ? ` ${t.einheit}` : ''}`;
-function loesungVon(a) {
-  switch (a.format) {
-    case 'zahl': case 'zahlenstrahl': return zahlMitEinheit(a);
-    case 'sachaufgabe': case 'diagramm': return a.teile.map((t, i) => `${'abcdef'[i]}) ${zahlMitEinheit(t)}`).join('   ');
-    case 'luecken': return a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken[n].loesung);
-    case 'tabelle': return Object.values(a.luecken).map((l) => l.loesung).join(', ');
-    case 'auswahl': return a.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
-    case 'zuordnen': return a.paare.map((p) => `${p.links} → ${p.rechts}`).join(', ');
-    default: return '';
-  }
-}
+const loesungVon = M.loesungVon;
 function tafelbildAnsicht() {
   const t = z.tafel, a = z.index.aufgabe.get(t.aufgabe);
   const zu = () => { z.tafel = null; male(); };
@@ -1204,6 +1249,9 @@ function lernstandSchueler(code) {
 
 // ---------- Aufgaben: Auswertung nach AFB, Aufgabentyp, Niveau und je Aufgabe ----------
 function aufgabenTab() {
+  return h('div', {}, z.schule && meldungenKarte(), aufgabenAuswertung());
+}
+function aufgabenAuswertung() {
   if (z.staende.length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Noch gibt es keine Daten. Sobald Schüler Aufgaben bearbeiten, erscheint hier die Auswertung.'));
   const u = A.aufgabenUebersicht(z.staende, z.pool, z.index);
   const f = (z.aufg ??= { sicht: 'schwierig', milestone: '', afb: '', format: '', niveau: '', alle: false });
@@ -1239,7 +1287,7 @@ function aufgabenTab() {
       f.sicht === 'nie' && h('p', { class: 'klein' }, 'Gezeigt werden nur Aufgaben aus Lernzielen und Niveaustufen, an denen die Klasse schon gearbeitet hat. Sie hätten also drankommen können.'),
       liste.length === 0 ? h('p', { class: 'klein', id: 'aufg-leer' }, 'Keine Aufgabe passt zu dieser Auswahl.') : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle', id: 'aufg-liste' },
         h('thead', {}, h('tr', {}, ['Aufgabe', 'Meilenstein', 'Niveau', 'AFB', 'Typ', 'Bearbeitet', 'Gelöst', 'Lösungsquote', 'Im ersten Versuch', 'Abgebrochen', 'Zeit', 'Häufigste falsche Antwort'].map((t) => h('th', {}, t)))),
-        h('tbody', {}, sichtbar.map((a) => h('tr', { 'data-aufgabe': a.aufgabe }, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen')),
+        h('tbody', {}, sichtbar.map((a) => h('tr', { 'data-aufgabe': a.aufgabe }, h('td', {}, aufgabentext(a.aufgabe), a.auffaellig && h('span', { class: 'marke schlecht' }, 'Prüfen'), h('br'), kennungMitMelden(a.aufgabe)),
           h('td', {}, a.milestone?.titel ?? ''), h('td', {}, chip(a.niveau)), h('td', { class: 'zahl' }, ['', 'I', 'II', 'III'][a.afb] ?? ''), h('td', {}, A.FORMAT_NAMEN[a.format] ?? a.format),
           h('td', { class: 'zahl' }, a.bearbeitet), h('td', { class: 'zahl' }, a.geloest), h('td', {}, a.bearbeitet ? balken(a.quote) : '–'), h('td', { class: 'zahl' }, prozent(a.ersterVersuch)),
           h('td', { class: 'zahl' }, a.abbrueche || '–'), h('td', { class: 'zahl' }, a.zeitMedian == null ? '–' : `${a.zeitMedian} s`),

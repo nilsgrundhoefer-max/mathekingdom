@@ -2,6 +2,7 @@
 import { pruefePin } from '../gemeinsam/krypto.js';
 import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
 import * as P from '../gemeinsam/protokoll.js';
+import * as M from '../gemeinsam/meldungen.js';
 import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
@@ -339,6 +340,8 @@ async function meldeInSchule(gelesen, schule, fehler) {
   if (!ort) return fehler(`Für die Klasse ${gelesen.klasse} gibt es noch keinen Ordner. Sag deiner Lehrkraft Bescheid.`);
   z.schule = schule;
   z.klassenSchluessel = v.status === 'ok' ? SCH.schluesselDerKlasse(v.daten, ort.schuljahr, gelesen.klasse) : null;
+  // Vom Administrator gesperrte Aufgaben kommen nicht mehr dran (ADR 0025).
+  z.gesperrt = v.status === 'ok' ? v.daten.gesperrt ?? [] : [];
   await melde(gelesen, ort.ablage);
 }
 
@@ -364,9 +367,12 @@ async function melde({ code, klasse, pin }, ablage) {
     return zeige({ name: 'anmeldung', code, fehler: pin ? 'Die PIN stimmt nicht. Schau auf dein Code-Kärtchen.' : 'Gib auch deine PIN ein. Sie steht auf deinem Code-Kärtchen.' });
   }
   const geladen = await S.ladeStand(ablage, code);
-  Object.assign(z, { ablage, pool, index: L.indexiere(pool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
+  const offenerPool = M.ohneGesperrte(pool, z.gesperrt);
+  Object.assign(z, { ablage, pool: offenerPool, index: L.indexiere(offenerPool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
+  const sperrenBeachtet = M.beachteSperren(z.stand, z.gesperrt);
   z.meldung = geladen.hinweis ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
   z.dienst = S.speicherdienst(ablage, () => z.stand, speicherMeldung);
+  if (sperrenBeachtet) z.dienst.markiere();
   if (!ablage.demo) {
     const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND,
       aufgaben: poolQuelle, aufgabenGrund: poolGrund, klassendatei: gelesen.status, browser: P.browserName(navigator.userAgent) });
@@ -798,7 +804,9 @@ function aufgabenAnsicht() {
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
       !fertig && !a.einstieg && kaertchen(a),
       fertig && ergebnisTafel(a, kapitelId, meilenstein)),
-    !fertig && !a.einstieg && hilfen(a, meilenstein));
+    !fertig && !a.einstieg && hilfen(a, meilenstein),
+    // Klein unten links, damit die Lehrkraft eine fehlerhafte Aufgabe melden kann (ADR 0025).
+    h('p', { class: 'kennung', id: 'kennung', title: 'Kennung dieser Aufgabe' }, auf.id));
 }
 
 function eingabefelder(auf, a, gesperrt) {
