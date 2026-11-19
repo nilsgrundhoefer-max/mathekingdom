@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, tore: e.tore, toreEinzeln: e.toreEinzeln ?? {}, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, ehrentafel: e.ehrentafel !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -791,12 +791,33 @@ function lernstandKlasse() {
       lernzielBalken(matrix, lernziele)),
     h('section', { class: 'karte', id: 'kompetenz-klasse' }, h('h2', {}, 'Kompetenzprofil der Klasse'),
       h('p', { class: 'klein' }, kompetenzErklaerung), kompetenzNetz(A.kompetenzProfil(versuche, z.index), null, 'Kompetenzprofil der Klasse')),
+    ehrentafelKlasse(staende),
     selbsteinschaetzungKlasse(staende),
     vorwissenKlasse(staende),
     heftUndSicherheitKlasse(staende),
     h('details', { class: 'karte aufklapp' }, h('summary', {}, h('h2', {}, `Auffälligkeiten (${auff.length})`)),
       auff.length === 0 ? h('p', { class: 'klein' }, 'Keine Auffälligkeiten.') : h('ul', { class: 'liste' }, auff.map((a) => h('li', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: a.code }) }, name(a.code)), `: ${lesbar(a.text)}`)))),
     meilensteineSperren());
+}
+
+// Ehrentafel (ADR 0023): wie bei den Schülern, aber mit Namen, Punkten und Niveaustufen statt Kronenfarben.
+function ehrentafelKlasse(staende) {
+  const an = kl().einst.ehrentafel !== false;
+  const t = L.ehrentafel(z.pool, z.index, staende.map(({ code, stand }) => ({ id: code, stand })));
+  const aus = staende.filter(({ stand }) => stand.ehrentafelAus).map(({ code }) => name(code));
+  return h('section', { class: 'karte', id: 'ehrentafel-lehrer' }, h('h2', {}, 'Ehrentafel'),
+    h('p', { class: 'klein' }, `${an ? 'Die Schüler sehen' : 'Ausgeschaltet. Eingeschaltet sähen die Schüler'} die fünf Besten des Schuljahrs mit Hoftitel, Wappen und Beinamen. Punkte: je Meilenstein die beste Krone (F 1, G 2, M 4, E 6), dazu 1 je Siegel; gezählt wird erst ab einer Krone auf G. Die Werte kommen aus den Speicherständen der Schüler und sind deshalb nicht fälschungssicher.`),
+    t.length === 0 ? h('p', { class: 'klein' }, 'Noch hat niemand eine Krone auf G oder besser.')
+      : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+        h('thead', {}, h('tr', {}, ['Platz', 'Hoftitel', 'Name', 'Punkte', ...L.NIVEAUS, 'Siegel'].map((x) => h('th', {}, L.NIVEAUS.includes(x) ? chip(x) : x)))),
+        h('tbody', {}, t.map((e) => h('tr', { 'data-ehre': e.id },
+          h('td', { class: 'zahl' }, e.platz),
+          h('td', {}, L.titelName(e.titel, e.stand.hoftitelForm)),
+          h('td', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: e.id }) }, name(e.id))),
+          h('td', { class: 'zahl' }, e.wert.punkte),
+          L.NIVEAUS.map((n) => h('td', { class: 'zahl' }, e.wert.kronen[n])),
+          h('td', { class: 'zahl' }, e.wert.siegel)))))),
+    aus.length > 0 && h('p', { class: 'klein' }, `Ausgeblendet und deshalb nicht auf der Tafel: ${aus.join(', ')}.`));
 }
 
 // Vorwissen aus dem Einstiegscheck (ADR 0014): je Kapitel, in dem jemand ihn gemacht oder übersprungen hat.
@@ -1248,7 +1269,9 @@ function verwaltung() {
     h('section', { class: 'karte', id: 'spiele-karte' }, h('h2', {}, 'Spiele und Bestenliste'),
       h('p', { class: 'klein' }, 'Die Schüler lösen Münzen für Spiele ein: die Rechenpause (Kopfrechen-Sprint, 20 Münzen) und Belohnungsspiele rein zum Spaß (Botenritt, Burgmauer, Steinmetz, Grenzlauf und Kellerjagd, je 100 Münzen, eine Runde von höchstens 3 Minuten). Oben in der Leiste stellst du ein, wann Spiele gehen: aus, nur in der Spielpause oder verdient. Bei „verdient“ geht die Rechenpause immer und ein Belohnungsspiel nach jedem vierten Wegstück, etwa alle 20 Minuten.'),
       h('p', { class: 'klein' }, 'Die Bestenliste gibt es nur in den Belohnungsspielen: die besten fünf der Klasse in dieser Woche, mit Wappen und einem Beinamen aus festen Bausteinen, nie mit Namen. Jeder Schüler kann sich ausblenden. Weil die Schüler ihren Speicherstand selbst schreiben, ist ein Bestwert nicht fälschungssicher.'),
-      h('label', { class: 'schalter' }, h('input', { id: 'bestenliste', type: 'checkbox', checked: kl().einst.bestenliste !== false, onchange: (ev) => aendere((k) => { k.einst.bestenliste = ev.target.checked; }) }), ' Bestenliste zeigen')),
+      h('label', { class: 'schalter' }, h('input', { id: 'bestenliste', type: 'checkbox', checked: kl().einst.bestenliste !== false, onchange: (ev) => aendere((k) => { k.einst.bestenliste = ev.target.checked; }) }), ' Bestenliste zeigen'),
+      h('p', { class: 'klein' }, 'Die Ehrentafel im Schlossgarten zeigt die fünf Besten des Schuljahrs nach Kronen und Siegeln, mit Hoftitel (Klassenkönig, Herzog, Graf, Ritter, Knappe), Wappen und Beinamen. Wer nicht dabei ist, sieht keinen Platz. Die Ehrentafel mit Namen findest du im Lernstand.'),
+      h('label', { class: 'schalter' }, h('input', { id: 'ehrentafel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Ehrentafel zeigen')),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),

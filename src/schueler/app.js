@@ -6,7 +6,7 @@ import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
 import * as S from './speicher.js';
-import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
+import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
@@ -128,7 +128,7 @@ function kopf() {
   return h('header', { class: 'kopf' },
     h('button', { class: 'wappenknopf', title: 'Zu deinem Wappen', onclick: () => zeige({ name: 'wappen' }) }, wappenBild(z.stand.wappen, 40)),
     h('div', { class: 'wer' },
-      h('strong', {}, `${r.name} ${z.stand.code}`),
+      h('strong', {}, `${r.name} ${z.stand.code}`, hoftitelKopf()),
       h('span', {}, r.naechster ? `Noch ${r.naechster.ab - anzahl} Siegel bis ${r.naechster.name}` : 'Höchster Rang erreicht')),
     h('div', { class: 'konto' },
       h('span', { class: 'wert siegelwert', title: 'Siegel: eines pro erreichtem Lernziel' }, siegel(24), h('b', { id: 'siegel' }, anzahl), h('span', { class: 'wort' }, 'Siegel')),
@@ -353,7 +353,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste, e.sonderauftrag?.id]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste, e.ehrentafel, e.sonderauftrag?.id]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -402,13 +402,16 @@ function schlossgarten() {
   const offene = z.pool.kapitel.map((k, i) => ({ k, nr: i + 1 })).filter(({ k }) => z.einst.offeneKapitel.has(k.id));
   const verborgen = offene.length < z.pool.kapitel.length;
   const neuTitel = offene.filter(({ k }) => z.toreNeu?.has(k.id)).map(({ k }) => k.titel);
+  const tafelJetzt = ehrentafelPruefen();
   return h('section', {},
+    hoftitelMeldung(),
     neuTitel.length > 0 && h('div', { class: 'karte neues-tor', id: 'neues-tor', role: 'status' },
       h('p', {}, h('strong', {}, neuTitel.length === 1 ? 'Ein neues Tor hat sich geöffnet: ' : 'Neue Tore haben sich geöffnet: '), neuTitel.join(', '))),
     etappenKarte(),
     rueckblickKarte(),
     brueckeKarte(),
     expeditionKarte(),
+    ehrentafelKarte(tafelJetzt),
     h('div', { class: 'schlosskopf' }, schlossBild(),
       h('h1', {}, 'Der Schlossgarten'),
       h('p', { class: 'unter' }, `Klasse ${z.pool.klassenstufe}: Hinter jedem Tor liegt eine Region des Königreichs. Wähle ein Tor und erkunde die Region.`)),
@@ -528,6 +531,111 @@ function starteBruecke(vorschlag) {
   const aufgabe = id && z.index.aufgabe.get(id);
   if (!aufgabe) { z.stand.brueckeAktiv = null; geaendert(); return zeige({ name: 'schlossgarten' }); }
   zeigeAufgabe(aufgabe, { bruecke: true });
+}
+
+// ---------- Ehrentafel und Hoftitel (ADR 0023) ----------
+// Die fünf Besten des Schuljahrs nach Kronen und Siegeln, berechnet aus den Speicherständen der Klasse.
+// Mitschüler erscheinen mit Wappen und Beinamen; Punkte und Plätze außerhalb der Tafel sieht niemand.
+const ehreCache = new WeakMap();
+function wertVon(stand) {
+  const schluessel = `${stand.versuche?.length ?? 0}|${Object.keys(stand.lernziele ?? {}).length}`;
+  const c = ehreCache.get(stand);
+  if (c?.schluessel === schluessel) return c.wert;
+  const wert = L.ehrenwert(z.pool, z.index, stand);
+  ehreCache.set(stand, { schluessel, wert });
+  return wert;
+}
+const eintrag = (st) => ({ id: st.code, stand: st, wert: wertVon(st) });
+function tafel() {
+  if (!z.einst?.ehrentafel || !z.andere || !z.index) return null;
+  return L.ehrentafel(z.pool, z.index, [eintrag(z.stand), ...z.andere.filter((st) => st.code !== z.stand.code).map(eintrag)]);
+}
+const titelVonCode = (t, code) => t?.find((e) => e.id === code)?.titel ?? null;
+const eigenerTitel = (t = tafel()) => titelVonCode(t, z.stand.code);
+function symbolVon(code) {
+  const t = tafel(), titel = titelVonCode(t, code);
+  if (!titel) return null;
+  const st = code === z.stand.code ? z.stand : z.andere.find((x) => x.code === code);
+  const name = L.titelName(titel, st?.hoftitelForm);
+  return h('span', { class: 'hofsymbol-neben', title: name }, hoftitelBild(titel.id, 18, { titel: name }));
+}
+function hoftitelKopf() {
+  const titel = eigenerTitel();
+  if (!titel) return null;
+  const name = L.titelName(titel, z.stand.hoftitelForm);
+  return h('span', { class: 'hoftitel-kopf', id: 'hoftitel-kopf', title: `${name}: dein Hoftitel auf der Ehrentafel` }, hoftitelBild(titel.id, 20, { titel: name }), name);
+}
+// Lädt die Stände der Mitschüler höchstens einmal pro Minute und meldet einen neuen oder besseren Titel einmal.
+function ehrentafelPruefen() {
+  if (!z.einst.ehrentafel) return null;
+  if (!z.klasseLaedt && Date.now() - (z.klasseGelesen ?? 0) > 60000) {
+    z.klasseLaedt = true;
+    ladeKlasse().then(() => { z.klasseLaedt = false; if (z.ansicht.name === 'schlossgarten') male(); });
+  }
+  const t = tafel();
+  if (!t) return null;
+  const vorher = z.stand.hoftitelGemeldet ?? null;
+  const neu = L.meldeHoftitel(z.stand, eigenerTitel(t));
+  if ((z.stand.hoftitelGemeldet ?? null) !== vorher) { geaendert(); z.dienst.sofort(); }
+  if (neu) z.titelMeldung = neu;
+  return t;
+}
+function hoftitelMeldung() {
+  const titel = z.titelMeldung;
+  if (!titel || !z.einst.ehrentafel) return null;
+  const name = L.titelName(titel, z.stand.hoftitelForm);
+  return h('div', { class: 'karte hoftitel-neu', id: 'hoftitel-neu', role: 'status' },
+    hoftitelBild(titel.id, 56, { titel: name }),
+    h('div', {},
+      h('h2', {}, titel.platz === 1 ? `Du bist jetzt ${name}!` : `Du bist jetzt ${name} der Klasse!`),
+      h('p', {}, 'Du stehst auf der Ehrentafel. Der Titel gilt, solange du deinen Platz hältst.'),
+      !z.stand.hoftitelForm && h('div', { class: 'titelform-frage' }, h('p', {}, h('b', {}, 'Wie möchtest du heißen?')),
+        ['m', 'w'].map((f) => [h('button', { class: 'haupt', 'data-titelform': f, onclick: () => { L.setzeTitelform(z.stand, f); geaendert(); z.dienst.sofort(); male(); } }, titel[f]), ' '])),
+      h('button', { class: 'schlicht', id: 'hoftitel-ok', onclick: () => { z.titelMeldung = null; male(); } }, z.stand.hoftitelForm ? 'Schließen' : 'Später')));
+}
+// Form des Titels (König oder Königin usw.), jederzeit kostenlos änderbar.
+function titelformWahl() {
+  const titel = eigenerTitel() ?? L.hoftitelVon(1);
+  const form = z.stand.hoftitelForm ?? 'm';
+  return h('div', { class: 'titelform', role: 'group', 'aria-label': 'Form deines Hoftitels' },
+    h('span', { class: 'klein' }, 'Dein Hoftitel heißt: '),
+    ['m', 'w'].map((f) => h('button', { class: 'schlicht', 'data-titelform': f, 'aria-pressed': String(form === f), onclick: () => { L.setzeTitelform(z.stand, f); geaendert(); z.dienst.sofort(); male(); } }, titel[f])));
+}
+function kronenUndSiegel(w) {
+  return h('span', { class: 'ehre-werte' },
+    L.NIVEAUS.filter((n) => w.kronen[n] > 0).map((n) => h('span', { class: 'je', 'data-krone': n, title: `${w.kronen[n]} ${L.KRONEN[n]}` }, kroneBild(n, 16), h('b', {}, w.kronen[n]))),
+    h('span', { class: 'je', title: `${w.siegel} Siegel` }, siegel(16), h('b', {}, w.siegel)));
+}
+function ehrentafelKarte(t) {
+  if (!z.einst.ehrentafel) return null;
+  const eigen = t?.find((e) => e.id === z.stand.code);
+  // Nach geteilten Plätzen geht es weiter wie im Sport (1, 1, 3): frei sind die Titel hinter dem letzten Eintrag.
+  const frei = L.HOFTITEL.filter((ht) => ht.platz > (t?.length ?? 0));
+  const sonst = !eigen && z.stand.ehrentafelAus && z.andere ? L.titelOhneAusblenden(z.pool, z.index, z.stand, z.andere.filter((st) => st.code !== z.stand.code)) : null;
+  return h('div', { class: 'karte ehrentafel', id: 'ehrentafel' },
+    h('h2', {}, `Ehrentafel der Klasse ${z.stand.klasse}`),
+    h('p', { class: 'klein' }, 'Die fünf Besten in diesem Schuljahr, nach Kronen und Siegeln. Purpur zählt am meisten, dann Gold, Silber und Bronze.'),
+    !t ? h('p', { class: 'klein' }, 'Die Ehrentafel wird geladen …')
+      : h('ol', { class: 'ehrenliste' },
+        t.map((e) => {
+          const name = L.titelName(e.titel, e.stand.hoftitelForm);
+          return h('li', { class: e.id === z.stand.code ? 'eigen' : '', 'data-titel': e.titel.id },
+            hoftitelBild(e.titel.id, 30, { titel: name }),
+            h('b', { class: 'titelname' }, name),
+            wappenBild(e.stand.wappen ?? { farbe: 'rot', zeichen: [] }, 24),
+            h('span', { class: 'beiname' }, L.beiname(e.stand)),
+            kronenUndSiegel(e.wert));
+        }),
+        frei.map((ht) => h('li', { class: 'frei', 'data-titel': ht.id },
+          hoftitelBild(ht.id, 30, { leer: true }),
+          h('b', { class: 'titelname' }, `${ht.m} / ${ht.w}`),
+          h('span', { class: 'klein' }, 'Noch frei')))),
+    h('p', { id: 'ehrentafel-eigen' }, eigen
+      ? h('b', {}, `Du bist ${L.titelName(eigen.titel, z.stand.hoftitelForm)}. Der Titel gilt, solange du deinen Platz hältst.`)
+      : z.stand.ehrentafelAus ? `Du bist ausgeblendet.${sonst ? ` Sonst wärst du ${L.titelName(sonst, z.stand.hoftitelForm)}.` : ''}`
+        : 'Jede Krone bringt dich nach vorn.'),
+    (eigen || sonst) && titelformWahl(),
+    h('label', { class: 'schalter' }, h('input', { type: 'checkbox', id: 'ehrentafel-aus', checked: Boolean(z.stand.ehrentafelAus), onchange: (ev) => { z.stand.ehrentafelAus = ev.target.checked; geaendert(); z.dienst.sofort(); male(); } }), ' Mich auf der Ehrentafel ausblenden'));
 }
 
 // ---------- Expedition (ADR 0014) ----------
@@ -1224,7 +1332,7 @@ function bestenlisteKarte(sp) {
   return h('div', { class: 'bestenliste', id: `bestenliste-${sp.id}` },
     h('b', {}, 'Bestenliste der Klasse, diese Woche'),
     b.plaetze.length === 0 ? h('p', { class: 'klein' }, 'Diese Woche hat noch niemand gespielt. Die Liste beginnt jeden Montag neu.')
-      : h('ol', {}, b.plaetze.map((p) => h('li', { class: p.eigen ? 'eigen' : '' }, h('span', { class: 'platz' }, `${p.platz}.`), wappenBild(p.wappen ?? { farbe: 'rot', zeichen: [] }, 22), h('span', { class: 'beiname' }, p.beiname), h('b', {}, p.punkte)))),
+      : h('ol', {}, b.plaetze.map((p) => h('li', { class: p.eigen ? 'eigen' : '' }, h('span', { class: 'platz' }, `${p.platz}.`), wappenBild(p.wappen ?? { farbe: 'rot', zeichen: [] }, 22), h('span', { class: 'beiname' }, p.beiname, symbolVon(p.code)), h('b', {}, p.punkte)))),
     b.eigenerPlatz && b.eigenerPlatz > L.BESTENLISTE_PLAETZE && h('p', { class: 'klein' }, `Du bist auf Platz ${b.eigenerPlatz} mit ${b.eigenerWert}.`),
     b.ausgeblendet && b.eigenerPlatz && h('p', { class: 'klein' }, `Du bist ausgeblendet. Dein Platz wäre ${b.eigenerPlatz} mit ${b.eigenerWert}.`));
 }
@@ -1258,6 +1366,7 @@ function beinameKarte() {
         : `Willst du wirklich „${neu}“ heißen? Das kostet ${preis} Münzen.`),
       h('button', { class: 'haupt', id: 'beiname-ja', onclick: aendern }, 'Ja, ändern'), ' ',
       h('button', { class: 'schlicht', id: 'beiname-nein', onclick: () => { z.ansicht.beiname = null; male(); } }, 'Abbrechen')),
+    z.einst.ehrentafel && titelformWahl(),
     h('label', { class: 'schalter' }, h('input', { type: 'checkbox', id: 'ausblenden', checked: Boolean(z.stand.bestenlisteAus), onchange: (e) => { z.stand.bestenlisteAus = e.target.checked; geaendert(); male(); } }), ' Mich in der Bestenliste ausblenden'));
 }
 

@@ -30,6 +30,47 @@ export function kroneBild(niveau, groesse = 22, { voll = true, titel = null } = 
     ...steine);
 }
 
+// Symbole der Hoftitel (ADR 0023). Die Königskrone ist absichtlich anders als die Kronen der Meilensteine:
+// höher, mit Kreuz, rotem Samt und Hermelinband, ohne Edelsteine einer Kronenfarbe.
+const TINTE = '#3b2f22';
+const HOFSYMBOL = {
+  koenig: () => [
+    s('path', { d: 'M5 9.5 C5 6 15 6 15 9.5 Z', fill: '#a3243b', stroke: TINTE, 'stroke-width': 0.8 }),
+    s('path', { d: 'M3 15 L3.6 7.2 L6.8 10.4 L10 5.2 L13.2 10.4 L16.4 7.2 L17 15 Z', fill: '#e0b53c', stroke: TINTE, 'stroke-width': 1, 'stroke-linejoin': 'round' }),
+    s('path', { d: 'M10 1.2 V4.6 M8.6 2.6 H11.4', stroke: TINTE, 'stroke-width': 1.1, 'stroke-linecap': 'round' }),
+    s('rect', { x: 2.6, y: 14.6, width: 14.8, height: 3.6, rx: 0.8, fill: '#fbf7ee', stroke: TINTE, 'stroke-width': 0.9 }),
+    ...[5, 8.3, 11.7, 15].map((x) => s('path', { d: `M${x} 15.6 v1.6`, stroke: '#1d1712', 'stroke-width': 1.1, 'stroke-linecap': 'round' }))],
+  herzog: () => [
+    s('path', { d: 'M5 17 L13.2 6.8', stroke: '#8a6a1c', 'stroke-width': 1.8, 'stroke-linecap': 'round' }),
+    s('path', { d: 'M5 17 L13.2 6.8', stroke: '#e0b53c', 'stroke-width': 0.8, 'stroke-linecap': 'round' }),
+    s('circle', { cx: 14.4, cy: 5.4, r: 2.6, fill: '#e0b53c', stroke: TINTE, 'stroke-width': 0.9 }),
+    s('path', { d: 'M14.4 1.4 V2.8 M13.6 2 H15.2', stroke: TINTE, 'stroke-width': 0.9, 'stroke-linecap': 'round' }),
+    s('path', { d: 'M8.4 12.7 l1.6 1.3', stroke: TINTE, 'stroke-width': 1.2, 'stroke-linecap': 'round' })],
+  graf: () => [
+    s('path', { d: 'M10 1.6 L11.4 4 V13 H8.6 V4 Z', fill: '#d9dde2', stroke: TINTE, 'stroke-width': 0.9, 'stroke-linejoin': 'round' }),
+    s('path', { d: 'M10 4 V12.4', stroke: '#8d949c', 'stroke-width': 0.6 }),
+    s('rect', { x: 5.4, y: 12.8, width: 9.2, height: 1.8, rx: 0.9, fill: '#8a6a1c', stroke: TINTE, 'stroke-width': 0.8 }),
+    s('rect', { x: 9.1, y: 14.6, width: 1.8, height: 2.6, fill: '#6b4a2a', stroke: TINTE, 'stroke-width': 0.6 }),
+    s('circle', { cx: 10, cy: 18.2, r: 1.2, fill: '#e0b53c', stroke: TINTE, 'stroke-width': 0.7 })],
+  ritter: () => [
+    s('path', { d: 'M4.4 17.6 V9.4 C4.4 5.2 7 3 10 3 C13 3 15.6 5.2 15.6 9.4 V17.6 Z', fill: '#c3c8cf', stroke: TINTE, 'stroke-width': 1, 'stroke-linejoin': 'round' }),
+    s('path', { d: 'M6 10 H14', stroke: TINTE, 'stroke-width': 1.3, 'stroke-linecap': 'round' }),
+    s('path', { d: 'M10 3 V17.6', stroke: '#8d949c', 'stroke-width': 0.6 }),
+    ...[12.6, 14.4].map((y) => s('path', { d: `M7.6 ${y} h1.2 M11.2 ${y} h1.2`, stroke: TINTE, 'stroke-width': 0.9, 'stroke-linecap': 'round' })),
+    s('path', { d: 'M10 3 C11 1.2 13.4 0.8 14.6 1.6 C13 2 11.8 2.6 10 3 Z', fill: '#a3243b', stroke: TINTE, 'stroke-width': 0.6 })],
+  knappe: () => [
+    s('path', { d: 'M5 1.8 V18.4', stroke: '#6b4a2a', 'stroke-width': 1.4, 'stroke-linecap': 'round' }),
+    s('path', { d: 'M5.6 2.6 H16.8 L12.4 5.4 L16.8 8.2 H5.6 Z', fill: '#2f6f73', stroke: TINTE, 'stroke-width': 0.9, 'stroke-linejoin': 'round' }),
+    s('circle', { cx: 5, cy: 1.6, r: 1, fill: '#e0b53c', stroke: TINTE, 'stroke-width': 0.6 })],
+};
+// Leer: dieselbe Form in Grau, für „Noch frei“.
+export function hoftitelBild(id, groesse = 22, { titel = null, leer = false } = {}) {
+  const zeichner = HOFSYMBOL[id];
+  if (!zeichner) return null;
+  return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, class: `hofsymbol hofsymbol-${id}${leer ? ' leer' : ''}`, ...(titel ? { role: 'img', 'aria-label': titel } : { 'aria-hidden': 'true' }) },
+    leer ? s('g', { opacity: 0.35, style: 'filter:grayscale(1)' }, zeichner()) : zeichner());
+}
+
 export function muenze(groesse = 18) {
   return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, 'aria-hidden': 'true' },
     s('circle', { cx: 10, cy: 10, r: 9, fill: '#d6ae4a', stroke: '#8a6a1c', 'stroke-width': 1.5 }),
