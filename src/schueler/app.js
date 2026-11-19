@@ -1143,7 +1143,7 @@ function minispiel() {
     spielStopp?.(); spielStopp = null;
     const best = L.bestwert(z.stand, sp.id);
     return h('section', { class: 'karte spiel', id: 'spiel-ende' }, h('h1', {}, sp.art === 'rechenpause' ? 'Zeit ist um!' : 'Runde vorbei!'),
-      h('p', { class: 'gross' }, sp.id === 'kopfrechnen' ? `${a.punkte} richtige Aufgaben` : sp.id === 'botenritt' ? `${a.punkte} Briefe` : `${a.punkte} Raben`),
+      h('p', { class: 'gross' }, `${a.punkte} ${sp.einheit}`),
       a.punkte > 0 && a.punkte >= best && h('p', {}, 'Neuer Bestwert!'),
       sp.art === 'belohnung' && z.einst.bestenliste && bestenlisteKarte(sp),
       h('div', { class: 'knoepfe' },
@@ -1157,7 +1157,7 @@ function minispiel() {
       a.anzeige = h('p', { class: 'spielanzeige' });
       spielStopp = starteSpiel(sp.id, a.canvas, { sekunden: sp.sekunden, melde: (m) => {
         a.punkte = m.punkte;
-        a.anzeige.textContent = `Noch ${m.rest} s · ${sp.id === 'botenritt' ? 'Briefe' : 'Raben'}: ${m.punkte}${m.banner != null ? ` · Banner: ${m.banner}` : ''}`;
+        a.anzeige.textContent = `Noch ${m.rest} s · ${sp.einheit}: ${m.punkte}${m.banner != null ? ` · Banner: ${m.banner}` : ''}`;
         if (m.vorbei && !a.vorbei) fertig();
       } });
     }

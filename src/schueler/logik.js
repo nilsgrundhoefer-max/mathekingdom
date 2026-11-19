@@ -820,9 +820,13 @@ export function migriere(stand) {
 // ---------- Minispiele (ADR 0018) ----------
 // Rechenpause: kurz, billig, mit Mathematik. Belohnungsspiel: reiner Spaß, eine Runde von höchstens drei Minuten, mit Bestenliste.
 export const SPIELE = [
-  { id: 'kopfrechnen', art: 'rechenpause', name: 'Kopfrechen-Sprint', preis: 20, sekunden: 90, text: 'Löse in 90 Sekunden so viele Aufgaben wie möglich.' },
-  { id: 'botenritt', art: 'belohnung', name: 'Botenritt', preis: 100, sekunden: 180, text: 'Reite mit den Pfeiltasten über die Karte und sammle Briefe. Mit jedem Brief wird dein Gefolge länger. Stoß nicht an den Rand und nicht an dein Gefolge.' },
-  { id: 'burgmauer', art: 'belohnung', name: 'Burgmauer', preis: 100, sekunden: 180, text: 'Schieb die Armbrust mit ← und → über die Mauer und schieß mit ↑ die Raben ab, bevor sie die Mauer erreichen. Drei Banner hast du.' },
+  { id: 'kopfrechnen', art: 'rechenpause', name: 'Kopfrechen-Sprint', preis: 20, sekunden: 90, einheit: 'richtige Aufgaben', text: 'Löse in 90 Sekunden so viele Aufgaben wie möglich.' },
+  { id: 'botenritt', art: 'belohnung', name: 'Botenritt', preis: 100, sekunden: 180, einheit: 'Briefe', text: 'Reite mit den Pfeiltasten über die Karte und sammle Briefe. Mit jedem Brief wird dein Gefolge länger. Stoß nicht an den Rand und nicht an dein Gefolge.' },
+  { id: 'burgmauer', art: 'belohnung', name: 'Burgmauer', preis: 100, sekunden: 180, einheit: 'Raben', text: 'Schieb die Armbrust mit ← und → über die Mauer und schieß mit ↑ die Raben ab, bevor sie die Mauer erreichen. Drei Banner hast du.' },
+  // ADR 0019
+  { id: 'steinmetz', art: 'belohnung', name: 'Steinmetz', preis: 100, sekunden: 180, einheit: 'Reihen', text: 'Bausteine der Burg fallen von oben. Schieb sie mit ← und →, dreh sie mit ↑ und lass sie mit ↓ schneller fallen. Eine volle Reihe wird zur fertigen Mauer und verschwindet.' },
+  { id: 'grenzlauf', art: 'belohnung', name: 'Grenzlauf', preis: 100, sekunden: 180, einheit: 'Meilen', text: 'Lauf über die Landstraße. Spring mit ↑ über Steine, Zäune und Gräben und duck dich mit ↓ unter den Raben. Drei Banner hast du.' },
+  { id: 'kellerjagd', art: 'belohnung', name: 'Kellerjagd', preis: 100, sekunden: 180, einheit: 'Rollen', text: 'Lauf mit den Pfeiltasten durch den Burgkeller und sammle alle Pergamentrollen. Dann geht es über die Treppe in den nächsten Keller. Weich den Ratten aus, drei Banner hast du.' },
 ];
 export const spiel = (id) => SPIELE.find((x) => x.id === id) ?? null;
 // Für alte Tests und Aufrufe: der Kopfrechen-Sprint.
