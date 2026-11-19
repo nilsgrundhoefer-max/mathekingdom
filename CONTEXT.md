@@ -162,7 +162,7 @@ Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die
 _Avoid_: Förderaufgabe, Rückweg
 
 **Sonderauftrag**:
-Drei bis fünf Aufgaben zu einem Lernziel, die die Lehrkraft einem einzelnen Schüler im Schülerprofil schickt, auf einer Niveaustufe, die sie frei wählt (F bis E). Er kommt als versiegelter Brief des Königs, nie mitten in einer Aufgabe, und bleibt sichtbar, bis er erledigt ist oder die Lehrkraft ihn zurückzieht; höchstens einer ist offen. Freiwillig, ohne Ablaufdatum. Seine Aufgaben zählen wie sonst für Lernziel und Wegstück; sind alle bearbeitet, gibt es 100 Münzen dazu, egal wie viele richtig sind. Danach geht es zurück an die Stelle, an der der Schüler war. Mitschüler erfahren nichts davon.
+Drei bis fünf Aufgaben zu einem Lernziel, die die Lehrkraft einem einzelnen Schüler im Schülerprofil schickt, auf einer Niveaustufe, die sie frei wählt (F bis E). Er kommt als versiegelter Brief des Königs, nie mitten in einer Aufgabe, und bleibt sichtbar, bis er erledigt ist oder die Lehrkraft ihn zurückzieht; höchstens einer ist offen. Freiwillig, ohne Ablaufdatum. Seine Aufgaben zählen wie sonst für Lernziel und Wegstück; sind alle bearbeitet, gibt es eine Belohnung in Münzen dazu, egal wie viele richtig sind. Wie hoch sie ist, stellt die Lehrkraft für ihre Klasse ein (50, 100, 250, 500 oder 1000, Standard 100); der Brief nennt den Betrag, der beim Abschicken galt. Danach geht es zurück an die Stelle, an der der Schüler war. Mitschüler erfahren nichts davon.
 _Avoid_: Bonusquest, Quest, Förderbrief, Bonuspunkte
 
 **Training**:
@@ -172,8 +172,12 @@ _Avoid_: Übungsmodus
 ## Belohnung
 
 **Münze**:
-Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Dazu kommen 100 Münzen für einen erledigten Sonderauftrag. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
+Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Dazu kommen die Belohnung eines erledigten Sonderauftrags und Münzgaben. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
 _Avoid_: Punkte, Coins, Taler
+
+**Münzgabe**:
+Münzen, die der Administrator einem einzelnen Schüler schickt, ohne Aufgabe: zum Testen oder als besondere Anerkennung. Fest wählbar sind 50, 100, 250, 500, 1000 und 5.000 Münzen, dazu ein kurzer Satz. Der Schüler bekommt sie als Brief „Eine Gabe des Königs“ mit eigenem Siegel, ohne Absender, nie mitten in einer Aufgabe; gutgeschrieben wird beim Öffnen. Ungeöffnet kann der Administrator sie zurückziehen, danach gehören die Münzen dem Schüler. Münzen abziehen kann niemand. Die Lehrkraft der Klasse sieht die Münzgabe im Schülerprofil, ändern kann sie sie nicht.
+_Avoid_: Geschenk, Bonus, Gutschrift
 
 **Siegel**:
 Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
