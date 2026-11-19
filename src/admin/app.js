@@ -10,6 +10,7 @@ import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
 import * as M from '../gemeinsam/meldungen.js';
 import * as ST from '../gemeinsam/statistik.js';
+import * as L from '../schueler/logik.js';
 import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
@@ -20,7 +21,7 @@ const LAUFWERKE = {
   schueler: ['Schülertauschlaufwerk', 'Wähle den Ordner „Mathekingdom“ oder das Laufwerk; fehlt der Ordner, wird er angelegt.'],
   lehrer: ['Lehrertauschlaufwerk', 'Wähle den Ordner „Mathekingdom“ oder das Laufwerk; fehlt der Ordner, wird er angelegt.'],
 };
-const z = { wahl: null, persoenlich: null, schueler: null, lehrer: null, admin: null, v: null, tab: 'uebersicht', jahr: null, betrieb: null, betriebLaedt: false, protokoll: { klasse: '', nurProbleme: true }, klasse: null, uebernahme: null, alt: null, fehler: null, hinweis: null };
+const z = { wahl: null, persoenlich: null, schueler: null, lehrer: null, admin: null, v: null, tab: 'uebersicht', jahr: null, betrieb: null, betriebLaedt: false, protokoll: { klasse: '', nurProbleme: true }, klasse: null, gabe: null, uebernahme: null, alt: null, fehler: null, hinweis: null };
 let wurzel;
 const jetzt = () => new Date().toISOString();
 
@@ -172,7 +173,7 @@ function klassenKarte() {
         h('td', {}, kuerzel.length ? kuerzel.map((kz) => h('label', { class: 'schalter', style: 'margin-right:10px' },
           h('input', { type: 'checkbox', 'data-lehrkraft': `${k}|${kz}`, checked: (v.klassen[z.jahr][k].lehrkraefte ?? []).includes(kz), onchange: (ev) => setzeLehrkraft(k, kz, ev.target.checked) }), ` ${kz}`))
           : h('span', { class: 'klein' }, 'Lege zuerst Lehrkräfte an.')),
-        h('td', {}, h('div', { class: 'reihe' }, h('button', { class: 'schlicht', 'data-namen': k, onclick: () => { z.klasse = k; male(); } }, 'Namen und Codes'),
+        h('td', {}, h('div', { class: 'reihe' }, h('button', { class: 'schlicht', 'data-namen': k, onclick: () => { z.klasse = k; z.gabe = null; male(); } }, 'Namen und Codes'),
           h('button', { class: 'schlicht', 'data-aufloesen': k, onclick: tue(async () => {
             if (!confirm(`Klasse ${k} auflösen? Sie verschwindet aus dem Schulverzeichnis, die Schüler können sich nicht mehr anmelden. Ihre Ordner bleiben liegen; du kannst sie wieder aufnehmen oder danach endgültig löschen.`)) return;
             delete v.klassen[z.jahr][k];
@@ -200,7 +201,7 @@ function namenKarte() {
     platz.replaceChildren(h('h2', {}, `Klasse ${klasse}: Namen und Codes`),
       h('p', { class: 'klein' }, 'Die Namen und PINs liegen auf dem Lehrertauschlaufwerk. Die Lehrkräfte der Klasse sehen und ändern dieselbe Liste.'),
       codes.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-        h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'PIN', '', '', ''].map((t) => h('th', {}, t)))),
+        h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'PIN', '', '', '', ''].map((t) => h('th', {}, t)))),
         h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, daten.namen[c]), h('td', { class: 'code' }, c), h('td', { class: 'code pin' }, daten.pins?.[c]?.pin ?? '…'),
           h('td', {}, h('button', { class: 'schlicht', 'data-neue-pin': c, onclick: tue(async () => {
             if (!confirm(`Neue PIN für ${daten.namen[c]} vergeben? Die alte gilt dann nicht mehr.`)) return;
@@ -210,7 +211,9 @@ function namenKarte() {
             if (!confirm(`${daten.namen[c]} aus der Namensliste entfernen? Der Speicherstand bleibt liegen.`)) return;
             delete daten.namen[c]; delete daten.einst.zielniveaus?.[c]; await speichereKlasse(klasse, daten);
           }) }, 'Entfernen')),
-          h('td', {}, h('button', { class: 'schlicht gefahr', 'data-loeschen': c, onclick: tue(() => loescheSchueler(klasse, daten, c)) }, 'Löschen'))))))),
+          h('td', {}, h('button', { class: 'schlicht gefahr', 'data-loeschen': c, onclick: tue(() => loescheSchueler(klasse, daten, c)) }, 'Löschen')),
+          h('td', {}, h('button', { class: 'schlicht', 'data-muenzen': c, onclick: () => { z.gabe = { code: c, muenzen: 100 }; male(); } }, 'Münzen schicken'))))))),
+      z.gabe && daten.namen[z.gabe.code] && gabeKarte(klasse, daten),
       h('p', { class: 'klein' }, '„Entfernen“ nimmt einen Schüler nur aus der Namensliste, sein Speicherstand bleibt. „Löschen“ löscht auch den Speicherstand und seine Backups endgültig, etwa bei einem Schulwechsel.'),
       h('h3', {}, 'Schüler hinzufügen'), liste,
       h('div', { class: 'reihe' },
@@ -223,6 +226,69 @@ function namenKarte() {
         h('button', { class: 'schlicht', onclick: () => { z.klasse = null; male(); } }, 'Schließen')));
   }).catch((e) => { platz.replaceChildren(h('p', { class: 'fehlertext' }, e.message)); });
   return platz;
+}
+
+// ---------- Münzgabe (ADR 0027) ----------
+// Der Administrator schickt einem Schüler Münzen über die Klassendatei. Feste Stufen, ein optionaler Satz.
+// Zurückziehen geht nur, solange der Schüler die Gabe nicht geöffnet hat; abziehen geht nie.
+async function ladeStand(klasse, code, jahr = z.jahr) {
+  const ordner = await (await z.schueler.ordner(jahr))?.ordner(klasse);
+  const t = ordner && await ordner.lies(`${code}.json`).catch(() => null);
+  try { return t ? JSON.parse(t) : null; } catch { return null; }
+}
+const neueGabeId = () => `${jetzt()}-${Math.random().toString(36).slice(2, 6)}`;
+async function schickeGabe(klasse, code, muenzen, satz) {
+  if (!L.MUENZGABEN.includes(muenzen)) throw new Error('Diese Menge gibt es nicht.');
+  const daten = await ladeKlasse(klasse);
+  if (!daten?.namen[code]) throw new Error('Diesen Schüler gibt es in der Klasse nicht mehr.');
+  ((daten.einst.muenzgaben ??= {})[code] ??= []).push({ id: neueGabeId(), t: jetzt(), muenzen, ...(satz ? { satz: satz.slice(0, 200) } : {}) });
+  await speichereKlasse(klasse, daten);
+  return daten;
+}
+async function zieheGabeZurueck(klasse, code, id) {
+  const stand = await ladeStand(klasse, code);
+  if (stand && L.geoeffneteMuenzgabe(stand, id)) throw new Error('Diese Gabe ist schon geöffnet. Die Münzen gehören jetzt dem Schüler.');
+  const daten = await ladeKlasse(klasse);
+  const liste = daten?.einst.muenzgaben?.[code];
+  if (!liste) return;
+  daten.einst.muenzgaben[code] = liste.filter((g) => g.id !== id);
+  if (!daten.einst.muenzgaben[code].length) delete daten.einst.muenzgaben[code];
+  await speichereKlasse(klasse, daten);
+}
+const datumZeit = (t) => new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+function gabeKarte(klasse, daten) {
+  const g = z.gabe, name = daten.namen[g.code];
+  const satz = h('input', { type: 'text', id: 'gabe-satz', maxlength: 200, style: 'width: 100%; max-width: 560px', placeholder: 'Ein kurzer Satz, zum Beispiel: Für deine Hilfe beim Aufräumen.', value: g.satz ?? '', oninput: (e) => { g.satz = e.target.value; } });
+  const stufen = h('div', { class: 'reihe', role: 'radiogroup', 'aria-label': 'Münzen' }, L.MUENZGABEN.map((m) => h('label', { class: 'wahl' },
+    h('input', { type: 'radio', name: 'gabe-muenzen', value: m, checked: g.muenzen === m, onchange: () => { g.muenzen = m; } }), ` ${m.toLocaleString('de-DE')}${m === 5000 ? ' (zum Testen)' : ''}`)));
+  const liste = h('div', { id: 'gaben-liste' }, h('p', { class: 'klein' }, 'Lade …'));
+  const gaben = daten.einst.muenzgaben?.[g.code] ?? [];
+  ladeStand(klasse, g.code).then((stand) => {
+    liste.replaceChildren(gaben.length ? h('table', { class: 'tabelle' },
+      h('thead', {}, h('tr', {}, ['Geschickt', 'Münzen', 'Satz', 'Stand', ''].map((t) => h('th', {}, t)))),
+      h('tbody', {}, [...gaben].reverse().map((x) => {
+        const offen = stand ? L.geoeffneteMuenzgabe(stand, x.id) : null;
+        return h('tr', {}, h('td', {}, datumZeit(x.t)), h('td', {}, `+${x.muenzen}`), h('td', {}, x.satz ?? ''),
+          h('td', {}, offen ? `geöffnet am ${datumZeit(offen.t)}` : 'noch nicht geöffnet'),
+          h('td', {}, offen ? '' : h('button', { class: 'schlicht', 'data-zurueck': x.id, onclick: tue(async () => {
+            if (!confirm(`Die Gabe über ${x.muenzen} Münzen an ${name} zurückziehen?`)) return;
+            await zieheGabeZurueck(klasse, g.code, x.id);
+            z.hinweis = 'Gabe zurückgezogen.';
+          }) }, 'Zurückziehen')));
+      }))) : h('p', { class: 'klein' }, 'Noch keine Münzgabe an diesen Schüler.'));
+  });
+  return h('div', { class: 'karte innen', id: 'gabe-karte' },
+    h('h3', {}, `Münzen schicken an ${name} (${g.code})`),
+    h('p', { class: 'klein' }, 'Der Schüler bekommt einen Brief „Eine Gabe des Königs“, ohne Absender, und die Münzen beim Öffnen. Zurückziehen geht nur, solange er ihn nicht geöffnet hat. Die Lehrkraft der Klasse sieht die Gabe im Schülerprofil.'),
+    stufen, satz,
+    h('div', { class: 'reihe' },
+      h('button', { class: 'haupt', id: 'gabe-schicken', onclick: tue(async () => {
+        await schickeGabe(klasse, g.code, g.muenzen, (g.satz ?? '').trim());
+        z.hinweis = `${g.muenzen.toLocaleString('de-DE')} Münzen an ${name} geschickt.`;
+        g.satz = '';
+      }) }, 'Schicken'),
+      h('button', { class: 'schlicht', onclick: () => { z.gabe = null; male(); } }, 'Schließen')),
+    h('h4', {}, 'Bisherige Gaben'), liste);
 }
 
 // ---------- Übernahme ins neue Schuljahr ----------
@@ -482,6 +548,8 @@ async function ladeBetrieb() {
         for (const e of stand.betrieb ?? []) eintraege.push({ ...e, klasse: k, code: m[1], wer: namen[m[1]] ? `${namen[m[1]]} (${m[1]})` : m[1] });
       } catch { /* halb geschrieben */ }
     }
+    for (const [code, gaben] of Object.entries(daten?.einst?.muenzgaben ?? {})) for (const g of gaben)
+      eintraege.push({ t: g.t, art: 'ok', text: `Münzgabe +${g.muenzen} Münzen an ${code}`, klasse: k, code, wer: 'Administrator' });
     const bo = lJahr && await (await lJahr.ordner(k))?.ordner('backup');
     klassen.push({ klasse: k, lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
   }

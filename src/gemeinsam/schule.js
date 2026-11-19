@@ -103,7 +103,7 @@ export async function findeKlassenordner(wurzel, schuljahr, klasse) {
 
 // ---------- Klassendaten ----------
 export function neueKlassendaten(ersteTore = []) {
-  return { namen: {}, notizen: {}, pins: {}, einst: { aktuellesKapitel: null, tore: ersteTore, toreEinzeln: {}, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {}, sonderauftraege: {} } };
+  return { namen: {}, notizen: {}, pins: {}, einst: { aktuellesKapitel: null, tore: ersteTore, toreEinzeln: {}, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {}, sonderauftraege: {}, muenzgaben: {} } };
 }
 // Jeder Schüler der Namensliste hat eine PIN; der langsame Prüfwert wird einmal berechnet. Liefert, ob sich etwas änderte.
 export async function sorgePins(k) {
@@ -124,7 +124,7 @@ export function klassendateiInhalt(klasse, k, stand) {
   const pins = Object.fromEntries(Object.entries(k.pins ?? {}).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   return { klasse, stand, aktuellesKapitel: e.aktuellesKapitel, tore: e.tore, toreEinzeln: e.toreEinzeln ?? {}, codes: Object.keys(k.namen),
     zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, ehrentafel: e.ehrentafel !== false,
-    hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, sperren: e.sperren, meilensteinFreigabe: e.meilensteinFreigabe ?? {}, expedition: e.expedition ?? null,
+    hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, muenzgaben: e.muenzgaben ?? {}, sperren: e.sperren, meilensteinFreigabe: e.meilensteinFreigabe ?? {}, expedition: e.expedition ?? null,
     sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins };
 }
 

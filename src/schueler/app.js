@@ -9,7 +9,7 @@ import * as L from './logik.js';
 import * as S from './speicher.js';
 import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
-import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
+import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
@@ -61,6 +61,7 @@ function male() {
     z.stand && (fokus ? fokusKopf() : kopf()),
     z.stand && hilfeBanner(),
     z.stand && nachrichtBanner(),
+    z.stand && gabeBanner(),
     z.stand && briefBanner(),
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
@@ -183,7 +184,7 @@ function briefBanner() {
   if (sa.geoeffnet || z.briefSpaeter?.has(sa.id)) {
     return h('div', { class: 'hilfebanner brief-klein', id: 'brief-klein', role: 'status' },
       h('span', { class: 'briefzeichen', 'aria-hidden': 'true' }, '✉'),
-      h('span', {}, h('b', {}, 'Sonderauftrag: '), `noch ${sa.offen} von ${sa.gesamt} ${sa.gesamt === 1 ? 'Aufgabe' : 'Aufgaben'}, danach ${L.SONDERAUFTRAG_BONUS} Münzen.`), knopf);
+      h('span', {}, h('b', {}, 'Sonderauftrag: '), `noch ${sa.offen} von ${sa.gesamt} ${sa.gesamt === 1 ? 'Aufgabe' : 'Aufgaben'}, danach ${sa.belohnung} Münzen.`), knopf);
   }
   const einflug = z.briefGezeigt !== sa.id;
   z.briefGezeigt = sa.id;
@@ -192,10 +193,51 @@ function briefBanner() {
     h('div', { class: 'brieftext' },
       h('span', { class: 'klein' }, 'Ein Brief des Königs'),
       h('h2', {}, 'Ein Sonderauftrag für dich'),
-      h('p', {}, `${sa.gesamt} Aufgaben zu „${lernzielText(sa.lernziel)}“. Wenn du alle bearbeitet hast, bekommst du ${L.SONDERAUFTRAG_BONUS} Münzen dazu.`),
+      h('p', {}, `${sa.gesamt} Aufgaben zu „${lernzielText(sa.lernziel)}“. Wenn du alle bearbeitet hast, bekommst du die Belohnung dazu, egal wie viele richtig sind.`),
+      h('p', { class: 'briefbelohnung', id: 'brief-belohnung' }, h('b', {}, 'Belohnung: '), muenze(16), ` ${sa.belohnung} Münzen`),
       sa.satz && h('p', { class: 'briefsatz' }, h('b', {}, 'Deine Lehrkraft schreibt: '), `„${sa.satz}“`),
       h('div', { class: 'knoepfe' }, knopf,
         h('button', { class: 'schlicht', id: 'brief-spaeter', onclick: () => { (z.briefSpaeter ??= new Set()).add(sa.id); male(); } }, 'Später'))));
+}
+// ---------- Münzgabe (ADR 0027) ----------
+// Eine Gabe des Königs: Brief mit goldenem Siegel, ohne Absender, nie mitten in einer Aufgabe. Gutgeschrieben wird beim Öffnen.
+function gabeBanner() {
+  if (z.gabeOffen) {
+    const g = z.gabeOffen;
+    return h('div', { class: 'brief gabe geoeffnet', id: 'gabe-geoeffnet', role: 'status' },
+      h('div', { class: 'briefsiegel' }, gabeSiegel(44)),
+      h('div', { class: 'brieftext' },
+        h('span', { class: 'klein' }, 'Eine Gabe des Königs'),
+        h('h2', { class: 'gabe-betrag' }, h('span', { class: 'muenzregen', 'aria-hidden': 'true' }, muenze(20), muenze(16), muenze(22)), `+${g.muenzen} Münzen`),
+        g.satz && h('p', { class: 'briefsatz' }, `„${g.satz}“`),
+        h('div', { class: 'knoepfe' }, h('button', { class: 'haupt', id: 'gabe-ok', onclick: () => { z.gabeOffen = null; male(); } }, 'Danke'))));
+  }
+  const offen = L.offeneMuenzgaben(z.stand, z.einst.muenzgaben);
+  if (offen.length === 0 || !briefErlaubt()) return null;
+  const g = offen[0];
+  const oeffnen = () => {
+    const muenzen = L.oeffneMuenzgabe(z.stand, g, jetzt());
+    if (muenzen) { geaendert(); z.dienst.sofort(); }
+    z.gabeOffen = muenzen ? g : null;
+    male();
+  };
+  const knopf = h('button', { class: 'haupt', id: 'gabe-oeffnen', onclick: oeffnen }, 'Öffnen');
+  const mehr = offen.length > 1 ? ` (${offen.length} Briefe)` : '';
+  if (z.gabeSpaeter?.has(g.id)) {
+    return h('div', { class: 'hilfebanner brief-klein gabe-klein', id: 'gabe-klein', role: 'status' },
+      h('span', { class: 'briefzeichen', 'aria-hidden': 'true' }, '✉'),
+      h('span', {}, h('b', {}, 'Eine Gabe des Königs'), ` wartet auf dich${mehr}.`), knopf);
+  }
+  const einflug = z.gabeGezeigt !== g.id;
+  z.gabeGezeigt = g.id;
+  return h('div', { class: `brief gabe${einflug ? ' einflug' : ''}`, id: 'gabe', role: 'status' },
+    h('div', { class: 'briefsiegel' }, gabeSiegel(44)),
+    h('div', { class: 'brieftext' },
+      h('span', { class: 'klein' }, `Eine Gabe des Königs${mehr}`),
+      h('h2', {}, 'Der König schickt dir etwas'),
+      h('p', {}, 'Ein versiegelter Beutel ist angekommen. Öffne ihn!'),
+      h('div', { class: 'knoepfe' }, knopf,
+        h('button', { class: 'schlicht', id: 'gabe-spaeter', onclick: () => { (z.gabeSpaeter ??= new Set()).add(g.id); male(); } }, 'Später'))));
 }
 // Wohin es nach dem Sonderauftrag zurückgeht: an das Lernziel, an dem der Schüler gerade war, sonst auf seine Karte.
 function rueckkehrPunkt() {
@@ -405,7 +447,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste, e.hoftitel, e.sonderauftrag?.id]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste, e.hoftitel, e.sonderauftrag?.id, e.sonderauftrag?.belohnung, e.muenzgaben.map((g) => g.id).join()]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -432,7 +474,7 @@ async function takt() {
     else if (neu) {
       // Mitten in einer Aufgabe nur die Banner austauschen.
       wurzel.querySelectorAll('.hilfebanner, .brief').forEach((b) => b.remove());
-      wurzel.querySelector('.kopf').after(...[hilfeBanner(), nachrichtBanner(), briefBanner()].filter(Boolean));
+      wurzel.querySelector('.kopf').after(...[hilfeBanner(), nachrichtBanner(), gabeBanner(), briefBanner()].filter(Boolean));
     }
     // In der Aufgabe erscheint der Knopf für einen neuen Hilferuf wieder, ohne die Eingabe zu verlieren.
     if (neu && z.ansicht.name === 'aufgabe' && !z.stand.hilferuf && !wurzel.querySelector('#hilferuf')) wurzel.querySelector('aside.hilfen')?.replaceWith(hilfen(z.ansicht));

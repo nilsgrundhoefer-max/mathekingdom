@@ -586,7 +586,7 @@ function sonderauftragFeld(code) {
   const offen = st && st.status !== 'erledigt';
   const zieh = () => aendere((k) => { delete k.einst.sonderauftraege[code]; });
   const statusZeile = st && h('div', { class: 'sa-stand', id: 'sonderauftrag-stand' },
-    h('p', {}, h('b', {}, 'Sonderauftrag: '), `${lernzieltext(auftrag.lernziel)}, Niveau ${auftrag.niveau}, ${auftrag.aufgaben.length} Aufgaben, verschickt um ${uhr(auftrag.t)} Uhr. `,
+    h('p', {}, h('b', {}, 'Sonderauftrag: '), `${lernzieltext(auftrag.lernziel)}, Niveau ${auftrag.niveau}, ${auftrag.aufgaben.length} Aufgaben, Belohnung ${L.sonderauftragBelohnung(auftrag.belohnung)} Münzen, verschickt um ${uhr(auftrag.t)} Uhr. `,
       h('span', { class: `marke ${SA_STATUS[st.status][1]}` }, SA_STATUS[st.status][0]),
       st.status === 'geoeffnet' && ` ${st.erledigt} von ${st.gesamt} bearbeitet`,
       st.status === 'erledigt' && ` ${st.richtig} von ${st.gesamt} richtig`),
@@ -614,7 +614,7 @@ function sonderauftragFeld(code) {
   const sende = () => {
     if (!sa.lernziel || !sa.aufgaben?.length) return;
     const t = jetzt();
-    const eintrag = { id: t, t, lernziel: sa.lernziel, niveau: sa.niveau, aufgaben: [...sa.aufgaben], ...(sa.satz.trim() && { satz: sa.satz.trim().slice(0, 200) }) };
+    const eintrag = { id: t, t, lernziel: sa.lernziel, niveau: sa.niveau, aufgaben: [...sa.aufgaben], belohnung: L.sonderauftragBelohnung(kl().einst.sonderauftragBelohnung), ...(sa.satz.trim() && { satz: sa.satz.trim().slice(0, 200) }) };
     z.sa = null;
     aendere((k) => { (k.einst.sonderauftraege ??= {})[code] = eintrag; });
   };
@@ -622,7 +622,7 @@ function sonderauftragFeld(code) {
   return h('div', { class: 'sonderauftrag' }, statusZeile,
     h('details', { class: 'sonderauftrag', open: sa.offen, ontoggle: (ev) => { sa.offen = ev.target.open; } },
       h('summary', {}, st ? 'Neuen Sonderauftrag schicken' : 'Sonderauftrag schicken'),
-      h('p', { class: 'klein' }, `3 bis 5 Aufgaben als Brief. Für das Bearbeiten aller Aufgaben gibt es ${L.SONDERAUFTRAG_BONUS} Münzen dazu, egal wie viele richtig sind.`),
+      h('p', { class: 'klein' }, `3 bis 5 Aufgaben als Brief. Für das Bearbeiten aller Aufgaben gibt es ${L.sonderauftragBelohnung(kl().einst.sonderauftragBelohnung)} Münzen dazu, egal wie viele richtig sind. Die Belohnung stellst du unter Klasse › Unterricht ein.`),
       h('div', { class: 'reihe' },
         h('label', {}, 'Lernziel ', h('select', { 'data-sa-lernziel': code, onchange: (ev) => { sa.lernziel = ev.target.value || null; neu(); } },
           !sa.lernziel && h('option', { value: '' }, 'bitte wählen'),
@@ -767,7 +767,20 @@ function overlay() {
       aktuelleAufgabe(code),
       nachrichtFeld(code),
       sonderauftragFeld(code),
+      muenzgabenZeile(code),
       einzelInhalt(code)));
+}
+
+// Münzgaben des Administrators (ADR 0027): nur zum Ansehen, damit sich niemand über einen Münzberg wundert.
+function muenzgabenZeile(code) {
+  const stand = z.staende.find((x) => x.code === code)?.stand;
+  const liste = A.muenzgabenStand(stand, L.gueltigeMuenzgaben(kl().einst.muenzgaben?.[code]));
+  if (!liste.length) return null;
+  const tag = (t) => new Date(t).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  return h('div', { class: 'muenzgaben', id: 'muenzgaben' },
+    liste.map((g) => h('p', {}, h('b', {}, `Münzgabe +${g.muenzen}`), g.geoeffnet ? `, geöffnet am ${tag(g.geoeffnet)}` : `, noch nicht geöffnet (geschickt am ${tag(g.t)})`,
+      g.satz && h('span', { class: 'klein' }, ` „${g.satz}“`))),
+    h('p', { class: 'klein' }, 'Münzgaben schickt der Administrator. Du kannst sie nicht ändern.'));
 }
 
 // ---------- Aufgabenmeldungen (ADR 0025) ----------
@@ -1462,7 +1475,11 @@ function unterrichtAbschnitt() {
       h('p', { class: 'klein' }, 'Die Bestenliste gibt es nur in den Belohnungsspielen: die besten fünf der Klasse in dieser Woche, mit Wappen und einem Beinamen aus festen Bausteinen, nie mit Namen. Jeder Schüler kann sich ausblenden. Weil die Schüler ihren Speicherstand selbst schreiben, ist ein Bestwert nicht fälschungssicher.'),
       h('label', { class: 'schalter' }, h('input', { id: 'bestenliste', type: 'checkbox', checked: kl().einst.bestenliste !== false, onchange: (ev) => aendere((k) => { k.einst.bestenliste = ev.target.checked; }) }), ' Bestenliste zeigen'),
       h('p', { class: 'klein' }, 'Hoftitel: Die fünf Besten des Schuljahrs nach Kronen und Siegeln sehen oben in ihrer Kopfzeile einen Titel mit Symbol (Klassenkönig, Herzog, Graf, Ritter, Knappe). Die Mitschüler sehen ihn nicht. Wer gerade welchen Titel trägt, steht im Lernstand.'),
-      h('label', { class: 'schalter' }, h('input', { id: 'hoftitel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Hoftitel zeigen')));
+      h('label', { class: 'schalter' }, h('input', { id: 'hoftitel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Hoftitel zeigen')),
+    h('section', { class: 'karte', id: 'belohnung-karte' }, h('h2', {}, 'Belohnung für den Sonderauftrag'),
+      h('p', { class: 'klein' }, 'So viele Münzen bekommt ein Schüler dazu, wenn er alle Aufgaben eines Sonderauftrags bearbeitet hat, egal wie viele richtig sind. Der Betrag gilt für alle Aufträge, die du ab jetzt in dieser Klasse schickst, und steht auf dem Brief. Bereits verschickte Aufträge behalten ihren Betrag. Zum Vergleich: Eine Aufgabe auf dem Zielniveau bringt 20 Münzen, der Wappenschrank eines Schuljahrs kostet etwa 5.000.'),
+      h('label', {}, 'Belohnung ', h('select', { id: 'sonderauftrag-belohnung', onchange: (ev) => aendere((k) => { k.einst.sonderauftragBelohnung = Number(ev.target.value); }) },
+        L.SONDERAUFTRAG_BELOHNUNGEN.map((m) => h('option', { value: m, selected: L.sonderauftragBelohnung(kl().einst.sonderauftragBelohnung) === m }, `${m.toLocaleString('de-DE')} Münzen${m === L.SONDERAUFTRAG_BONUS ? ' (Standard)' : ''}`))))));
 }
 function berichteAbschnitt() {
   return h('div', {},

@@ -72,7 +72,10 @@ export function auffaelligkeiten(stand, zielniveau, jetzt, sitzungLaeuft = true)
 // Stimmt der Speicherstand mit seinem eigenen Versuchsprotokoll überein? Sonst wurde er wohl von Hand verändert.
 export function pruefeStand(stand, zielniveau) {
   const maengel = [];
-  const verdient = stand.versuche.reduce((s, x) => s + (x.muenzen ?? 0), 0);
+  // Verdient: Aufgaben, dazu Belohnungen erledigter Sonderaufträge (ADR 0021) und geöffnete Münzgaben (ADR 0027).
+  const verdient = stand.versuche.reduce((s, x) => s + (x.muenzen ?? 0), 0)
+    + (stand.sonderauftraege ?? []).reduce((s, x) => s + (x.bonus ?? 0), 0)
+    + (stand.muenzgaben ?? []).reduce((s, x) => s + (x.muenzen ?? 0), 0);
   if (stand.muenzen > verdient) maengel.push(`Mehr Münzen (${stand.muenzen}) als je verdient (${verdient})`);
   // Lernziele dürfen nur stehen, wenn sie auf irgendeinem Zielniveau ab F belegt sind.
   for (const lz of Object.keys(stand.lernziele)) {
@@ -689,6 +692,14 @@ export function sonderauftragAufgaben(index, stand, lernziel, niveau, anzahl, oh
   return { aufgaben: kandidaten.slice(0, anzahl).map((a) => a.id), ungeloest: frei, vorrat: kandidaten.map((a) => a.id), nachbar };
 }
 // Zustand eines verschickten Sonderauftrags aus Sicht der Lehrkraft: gesendet | geoeffnet | erledigt.
+// Münzgaben des Administrators an einen Schüler (ADR 0027), die neueste zuerst: geschickt, Betrag, geöffnet oder nicht.
+// Auch Gaben, die nicht mehr in der Klassendatei stehen, aber geöffnet wurden, bleiben sichtbar.
+export function muenzgabenStand(stand, gaben = []) {
+  const geoeffnet = new Map((stand?.muenzgaben ?? []).map((g) => [g.id, g]));
+  const liste = gaben.map((g) => ({ id: g.id, t: g.t, muenzen: g.muenzen, satz: g.satz ?? null, geoeffnet: geoeffnet.get(g.id)?.t ?? null }));
+  for (const [id, g] of geoeffnet) if (!liste.some((x) => x.id === id)) liste.push({ id, t: null, muenzen: g.muenzen, satz: null, geoeffnet: g.t });
+  return liste.sort((a, b) => String(b.geoeffnet ?? b.t).localeCompare(String(a.geoeffnet ?? a.t)));
+}
 export function sonderauftragStand(stand, auftrag) {
   if (!auftrag) return null;
   const fertig = (stand?.sonderauftraege ?? []).find((x) => x.id === auftrag.id);

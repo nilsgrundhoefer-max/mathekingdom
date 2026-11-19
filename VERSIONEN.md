@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.27 vom 19.11.2026
+
+### Schüler
+
+- Manchmal schickt dir der König eine Gabe: einen Brief mit goldenem Siegel. Öffnest du ihn, bekommst du die Münzen darin.
+- Auf dem Brief eines Sonderauftrags steht jetzt, wie viele Münzen du am Ende bekommst.
+
+### Lehrkraft
+
+- Neu unter Klasse, Unterricht: „Belohnung für den Sonderauftrag“. Du stellst für deine Klasse ein, wie viele Münzen ein erledigter Sonderauftrag bringt (50, 100, 250, 500 oder 1000, Standard 100). Bereits verschickte Aufträge behalten ihren Betrag.
+- Hat der Administrator einem Schüler Münzen geschickt, steht das in seinem Schülerprofil.
+- Administrator: In der Schülerliste einer Klasse gibt es „Münzen schicken“ (50 bis 1000 und 5.000 zum Testen, mit einem kurzen Satz). Ungeöffnete Gaben lassen sich zurückziehen, Münzen abziehen geht nicht. Die Gaben stehen im Betriebsprotokoll.
+
 ## 0.26 vom 19.11.2026
 
 ### Schüler
