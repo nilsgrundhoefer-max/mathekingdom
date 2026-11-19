@@ -149,6 +149,10 @@ _Avoid_: Vorwissen (für die Verknüpfung)
 Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard auf M und E vorschlägt, wenn ein Lernziel wackelig wird. Auf G greift stattdessen die Grundlagen-Schleife. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
 _Avoid_: Förderaufgabe, Rückweg
 
+**Sonderauftrag**:
+Drei bis fünf Aufgaben zu einem Lernziel, die die Lehrkraft einem einzelnen Schüler im Schülerprofil schickt, auf einer Niveaustufe, die sie frei wählt (F bis E). Er kommt als versiegelter Brief des Königs, nie mitten in einer Aufgabe, und bleibt sichtbar, bis er erledigt ist oder die Lehrkraft ihn zurückzieht; höchstens einer ist offen. Freiwillig, ohne Ablaufdatum. Seine Aufgaben zählen wie sonst für Lernziel und Wegstück; sind alle bearbeitet, gibt es 100 Münzen dazu, egal wie viele richtig sind. Danach geht es zurück an die Stelle, an der der Schüler war. Mitschüler erfahren nichts davon.
+_Avoid_: Bonusquest, Quest, Förderbrief, Bonuspunkte
+
 **Training**:
 Aufgaben unter dem Zielniveau eines Schülers; sie bringen weniger Münzen und schließen kein Lernziel ab, können aber eine Krone unter dem Zielniveau bringen.
 _Avoid_: Übungsmodus
@@ -156,7 +160,7 @@ _Avoid_: Übungsmodus
 ## Belohnung
 
 **Münze**:
-Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
+Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Dazu kommen 100 Münzen für einen erledigten Sonderauftrag. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
 _Avoid_: Punkte, Coins, Taler
 
 **Siegel**:
