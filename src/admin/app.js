@@ -9,7 +9,8 @@ import * as SCH from '../gemeinsam/schule.js';
 import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
 import * as M from '../gemeinsam/meldungen.js';
-import { erzeugeCode } from '../lehrer/auswertung.js';
+import * as ST from '../gemeinsam/statistik.js';
+import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 
@@ -470,14 +471,19 @@ async function ladeBetrieb() {
     const namen = daten?.namen ?? {};
     const ordner = sJahr && await sJahr.ordner(k);
     let staende = 0;
+    const standListe = [];
     for (const datei of ordner ? await ordner.liste() : []) {
       const m = datei.match(B.CODE_DATEI);
       if (!m) continue;
       staende++;
-      try { for (const e of JSON.parse(await ordner.lies(datei)).betrieb ?? []) eintraege.push({ ...e, klasse: k, code: m[1], wer: namen[m[1]] ? `${namen[m[1]]} (${m[1]})` : m[1] }); } catch { /* halb geschrieben */ }
+      try {
+        const stand = JSON.parse(await ordner.lies(datei));
+        standListe.push({ code: m[1], stand });
+        for (const e of stand.betrieb ?? []) eintraege.push({ ...e, klasse: k, code: m[1], wer: namen[m[1]] ? `${namen[m[1]]} (${m[1]})` : m[1] });
+      } catch { /* halb geschrieben */ }
     }
     const bo = lJahr && await (await lJahr.ordner(k))?.ordner('backup');
-    klassen.push({ klasse: k, lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
+    klassen.push({ klasse: k, lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
   }
   const meldungen = {};
   for (const kz of Object.keys(v.lehrkraefte)) {
@@ -513,8 +519,11 @@ function uebersichtKarte() {
     const ohneBackup = b.klassen.filter((k) => k.staende && backupAlt(k));
     const ohneLehrkraft = b.klassen.filter((k) => !k.lehrkraefte.length);
     const offen = M.sammle(b.meldungen, b.status, z.v.gesperrt ?? []).filter((g) => g.status === 'offen');
+    const auffaellig = auffaelligeVon(b).filter((x) => !(z.v.gesperrt ?? []).includes(x.aufgabe));
     const punkte = [
       offen.length > 0 && h('li', {}, h('b', {}, `${offen.length} ${offen.length === 1 ? 'offene Aufgabenmeldung' : 'offene Aufgabenmeldungen'}: `), offen.slice(0, 5).map((g) => g.kennung).join(', '), ' ',
+        h('button', { class: 'schlicht', onclick: () => { z.tab = 'aufgaben'; male(); } }, 'Ansehen')),
+      auffaellig.length > 0 && h('li', {}, h('b', {}, `${auffaellig.length} ${auffaellig.length === 1 ? 'auffällige Aufgabe' : 'auffällige Aufgaben'} `), 'nach den Antworten der Schüler. ',
         h('button', { class: 'schlicht', onclick: () => { z.tab = 'aufgaben'; male(); } }, 'Ansehen')),
       woche.length > 0 && h('li', {}, h('b', {}, `${woche.length} technische ${woche.length === 1 ? 'Problem' : 'Probleme'} in den letzten 7 Tagen. `),
         h('button', { class: 'schlicht', onclick: () => { z.tab = 'betrieb'; z.protokoll.nurProbleme = true; male(); } }, 'Im Protokoll ansehen'),
@@ -525,7 +534,31 @@ function uebersichtKarte() {
     ].filter(Boolean);
     return h('section', { class: 'karte', id: 'uebersicht' }, h('div', { class: 'reihe' }, h('h2', {}, 'Was jetzt Aufmerksamkeit braucht'), h('span', { class: 'rechts' }, neuLaden())),
       h('p', { class: 'klein' }, `Schuljahr ${z.v.schuljahr}: ${b.klassen.length} Klassen, ${b.klassen.reduce((n, k) => n + k.staende, 0)} Speicherstände, ${Object.keys(z.v.lehrkraefte).length} Lehrkräfte.`),
-      punkte.length ? h('ul', { class: 'liste' }, punkte) : h('p', { id: 'alles-gut' }, 'Alles in Ordnung: keine offenen Aufgabenmeldungen, keine technischen Probleme in den letzten 7 Tagen, jede Klasse hat ein frisches Backup und eine Lehrkraft.'));
+      punkte.length ? h('ul', { class: 'liste' }, punkte) : h('p', { id: 'alles-gut' }, 'Alles in Ordnung: keine offenen Aufgabenmeldungen, keine auffälligen Aufgaben, keine technischen Probleme in den letzten 7 Tagen, jede Klasse hat ein frisches Backup und eine Lehrkraft.'));
+  });
+}
+
+// ---------- Nutzungsstatistik (ADR 0025): Nutzung und Technik, kein Lernstand, keine Namen ----------
+const prozent = (q) => (q == null ? '–' : `${Math.round(q * 100)} %`);
+const haeufigste = (liste, n = 2) => (liste.length ? liste.slice(0, n).map(([w, c]) => `${w} (${c})`).join(', ') + (liste.length > n ? ' …' : '') : '–');
+function nutzungKarte() {
+  return mitBetrieb((b) => {
+    const tage = (z.nutzungTage ??= 7);
+    const { zeilen, gesamt } = ST.nutzung(b.klassen.map((k) => ({ ...k, staende: k.standListe })), jetzt(), tage);
+    const zeile = (r, fett) => h('tr', { class: fett ? 'summe' : '', 'data-nutzung': r.klasse },
+      h('td', {}, fett ? h('b', {}, 'Alle Klassen') : h('b', {}, r.klasse)),
+      h('td', { class: 'zahl' }, `${r.aktiv} von ${r.staende}`), h('td', { class: 'zahl' }, String(r.aufgaben)), h('td', { class: 'zahl' }, prozent(r.quote)),
+      h('td', { class: 'zahl' }, String(r.starts)), h('td', { class: `zahl${r.ohneNetz ? ' fehlertext' : ''}` }, String(r.ohneNetz)), h('td', { class: `zahl${r.probleme ? ' fehlertext' : ''}` }, String(r.probleme)),
+      h('td', { class: 'klein' }, haeufigste(r.versionen)), h('td', { class: 'klein' }, haeufigste(r.browser)));
+    const alteVersion = gesamt.versionen.length > 1 ? gesamt.versionen.slice(1).reduce((n, [, c]) => n + c, 0) : 0;
+    return h('section', { class: 'karte', id: 'nutzung' }, h('div', { class: 'reihe' }, h('h2', {}, 'Nutzungsstatistik'), h('span', { class: 'rechts' }, neuLaden())),
+      h('p', { class: 'klein' }, 'Wie Mathekingdom an der Schule genutzt wird und ob es technisch läuft. Gezählt werden Speicherstände, keine Personen; Lernstände sehen die Lehrkräfte in ihrem Dashboard. „Nicht online“ heißt: gestartet aus einer Kopie oder der Datei ohne Netz, meist weil GitHub nicht erreichbar war. Version und Browser stammen vom jeweils letzten Start eines Speicherstands.'),
+      h('div', { class: 'reihe' }, h('label', {}, 'Zeitraum ', h('select', { id: 'nutzung-tage', onchange: (ev) => { z.nutzungTage = Number(ev.target.value); male(); } },
+        [[7, 'letzte 7 Tage'], [30, 'letzte 30 Tage'], [365, 'ganzes Schuljahr']].map(([w, t]) => h('option', { value: w, selected: tage === w }, t))))),
+      !zeilen.length ? h('p', {}, 'Noch keine Klasse in diesem Schuljahr.') : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+        h('thead', {}, h('tr', {}, ['Klasse', 'Aktive Speicherstände', 'Aufgaben', 'Gelöst', 'Starts', 'Nicht online', 'Probleme', 'Version', 'Browser'].map((t) => h('th', {}, t)))),
+        h('tbody', {}, zeilen.map((r) => zeile(r)), zeilen.length > 1 && zeile(gesamt, true)))),
+      alteVersion > 0 && h('p', { class: 'klein', id: 'alte-version' }, `${alteVersion} Speicherstände starteten zuletzt nicht mit der häufigsten Version ${gesamt.versionen[0][0]}. Liegt im Klassenordner noch eine alte Kopie? Unter „Schule“ kannst du die Startdateien neu schreiben.`));
   });
 }
 
@@ -642,6 +675,41 @@ function meldungenKarte() {
           })))));
   });
 }
+// ---------- Auffällige Aufgaben (ADR 0025) ----------
+const allePoolAufgaben = () => Object.values(window.MK_POOLS ?? {}).flatMap((p) => p.aufgaben);
+const alleStaendeVon = (b) => b.klassen.flatMap((k) => k.standListe ?? []);
+function auffaelligeVon(b) { return (b.auffaellig ??= ST.auffaelligeAufgaben(alleStaendeVon(b), allePoolAufgaben())); }
+function auffaelligKarte() {
+  return mitBetrieb((b) => {
+    const liste = auffaelligeVon(b), gesperrt = new Set(z.v.gesperrt ?? []);
+    const kurz = (t) => (t.length > 90 ? `${t.slice(0, 88)} …` : t);
+    return h('section', { class: 'karte', id: 'auffaellig' }, h('div', { class: 'reihe' }, h('h2', {}, `Auffällige Aufgaben (${liste.length})`), h('span', { class: 'rechts' }, neuLaden())),
+      h('p', { class: 'klein' }, `Aus den Antworten aller Schüler dieses Schuljahres, ohne Namen. Auffällig ist eine Aufgabe, wenn viele dieselbe falsche Antwort geben, die nicht als typischer Fehler hinterlegt ist (vielleicht stimmt die Lösung im Pool nicht), wenn sie viel seltener gelöst wird als die übrigen Aufgaben desselben Lernziels und Niveaus, oder wenn sie oft abgebrochen wird. Beurteilt wird erst ab ${ST.MINDESTENS} Bearbeitungen von mindestens ${ST.MIN_SCHUELER} Schülern. Auffällig heißt nicht fehlerhaft: Sieh dir die Aufgabe an und sperre sie, wenn sie nicht stimmt.`),
+      !liste.length ? h('p', { id: 'auffaellig-leer' }, 'Keine Aufgabe fällt auf.')
+        : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+          h('thead', {}, h('tr', {}, ['Kennung', 'Aufgabe', 'Bearbeitet', 'Gelöst', 'Warum auffällig', 'Gesperrt'].map((t) => h('th', {}, t)))),
+          h('tbody', {}, liste.map((x) => {
+            const a = aufgabeZu(x.aufgabe);
+            return h('tr', { 'data-auffaellig': x.aufgabe }, h('td', {}, h('code', { class: 'kennung' }, x.aufgabe), h('div', { class: 'klein' }, FORMAT_NAMEN[x.format] ?? x.format)),
+              h('td', {}, a ? kurz(a.text.replace(/\{\{\w+\}\}/g, '▢').replace(/\s*\n\s*/g, ' ')) : '', a && h('div', { class: 'klein' }, `Lösung im Pool: ${M.loesungVon(a)}`)),
+              h('td', { class: 'zahl' }, `${x.bearbeitet} (${x.schueler} Schüler)`), h('td', { class: 'zahl' }, prozent(x.quote)),
+              h('td', {}, h('ul', { class: 'liste klein' }, x.gruende.map((g) => h('li', {}, g)))),
+              h('td', {}, h('input', { type: 'checkbox', 'data-sperre-auffaellig': x.aufgabe, checked: gesperrt.has(x.aufgabe), onchange: tue(async (ev) => { await setzeSperre(x.aufgabe, ev.target.checked); }) })));
+          })))));
+  });
+}
+function typenKarte() {
+  return mitBetrieb((b) => {
+    const typen = ST.jeAufgabentyp(alleStaendeVon(b), allePoolAufgaben(), auffaelligeVon(b), FORMAT_NAMEN);
+    return h('section', { class: 'karte', id: 'aufgabentypen' }, h('h2', {}, 'Je Aufgabentyp'),
+      h('p', { class: 'klein' }, 'Wie die Aufgabenformate laufen: Eine hohe Abbruchquote bei einem Format deutet eher auf ein Problem mit der Bedienung als mit einzelnen Aufgaben.'),
+      h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+        h('thead', {}, h('tr', {}, ['Aufgabentyp', 'Im Pool', 'Genutzt', 'Bearbeitungen', 'Gelöst', 'Abgebrochen', 'Auffällig'].map((t) => h('th', {}, t)))),
+        h('tbody', {}, typen.map((t) => h('tr', { 'data-typ': t.format }, h('td', {}, t.name), h('td', { class: 'zahl' }, String(t.imPool)), h('td', { class: 'zahl' }, String(t.genutzt)),
+          h('td', { class: 'zahl' }, String(t.bearbeitet)), h('td', { class: 'zahl' }, prozent(t.quote)),
+          h('td', { class: `zahl${(t.abbruchquote ?? 0) >= 0.2 ? ' fehlertext' : ''}` }, prozent(t.abbruchquote)), h('td', { class: 'zahl' }, String(t.auffaellig))))))));
+  });
+}
 function sperrenKarte() {
   const liste = z.v.gesperrt ?? [];
   const eingabe = h('input', { id: 'sperre-kennung', type: 'text', size: 18, placeholder: 'z. B. 5.3.1-K1-F-01' });
@@ -665,8 +733,8 @@ function hauptansicht() {
     uebersicht: () => uebersichtKarte(),
     schule: () => [schuljahrKarte(), uebernahmeKarte(), startdateien(), altKarte()],
     klassen: () => [lehrkraefte(), klassenKarte(), z.klasse && namenKarte(), aufgeloesteKarte()],
-    betrieb: () => [backupKarte(), protokollKarte()],
-    aufgaben: () => [meldungenKarte(), sperrenKarte()],
+    betrieb: () => [nutzungKarte(), backupKarte(), protokollKarte()],
+    aufgaben: () => [meldungenKarte(), auffaelligKarte(), typenKarte(), sperrenKarte()],
   }[z.tab];
   return h('div', {},
     h('nav', { class: 'tabs bereiche' }, TABS.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; z.hinweis = null; if (id !== 'schule' && id !== 'klassen') z.betrieb = null; male(); } }, titel))),

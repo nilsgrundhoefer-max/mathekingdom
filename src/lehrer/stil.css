@@ -370,3 +370,6 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer #melde-dialog > * { margin-bottom: 10px; }
 #mathekingdom-lehrer .aktuelle-aufgabe { padding: 10px 14px; }
 #mathekingdom-lehrer #aufgabenmeldungen ul.liste { margin: 4px 0 0; padding-left: 18px; }
+/* Administrator: Nutzungsstatistik und auffällige Aufgaben (ADR 0025) */
+#nutzung tr.summe td { border-top: 2px solid #1d2b4f; font-weight: 600; }
+#auffaellig ul.liste, #aufgabenmeldungen ul.liste { margin: 0; padding-left: 16px; }
