@@ -366,7 +366,7 @@ _Avoid_: Klassenliste (für die Datei)
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
 - **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
 - **Tafelbild**: Vollbild-Ansicht im Bereich Jetzt, die eine Aufgabe mit den häufigsten falschen Antworten der Klasse am Beamer zeigt, ohne Codes und Namen. Sie wird aus einem Mini-Workshop-Impuls geöffnet.
-- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
+- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick oder im Seitenblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
 - **Hilfebedarf**: Wie oft ein Schüler bei einem Lernziel Beispiel- oder Lösungsschritt-Kärtchen braucht, und ob das mit der Zeit weniger wird.
 - **Versuchsverlauf**: Für die Lehrkraft die letzten Aufgaben eines Schülers mit erstem Versuch, zweitem Versuch, Ergebnis und erkannter Fehlvorstellung. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
 
