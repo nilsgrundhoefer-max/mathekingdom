@@ -36,7 +36,7 @@ const leererStand = (code, grundlage = []) => ({ version: 2, code, klasse: '5a',
 const mitStand = (seite, stand) => seite.addInitScript(([name, text]) => { if (!localStorage.getItem(name)) localStorage.setItem(name, text); }, [`mk-demo-5a/${stand.code}.json`, JSON.stringify(stand)]);
 
 // Löst die gerade angezeigte Aufgabe richtig (oder absichtlich falsch).
-async function antworte(seite, richtig = true) {
+async function antworte(seite, richtig = true, { taste = false } = {}) {
   const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
   const auf = pool.aufgaben.find((a) => a.id === id);
   assert.ok(auf, `Aufgabe nicht gefunden: ${id}`);
@@ -57,8 +57,16 @@ async function antworte(seite, richtig = true) {
   } else if (auf.format === 'luecken') {
     for (const [n, l] of Object.entries(auf.luecken)) await seite.fill(`input[name="luecke-${n}"]`, wert(l.loesung));
   } else for (const [i, t] of auf.teile.entries()) await seite.fill(`input[name="teil-${i}"]`, wert(t.loesung));
-  await seite.click('#pruefen');
+  // Mit `taste`: Enter im Textfeld prüft, ohne Maus (ADR 0016).
+  if (taste && await seite.evaluate(() => document.activeElement?.matches('form.antwort input[type=text]'))) await seite.keyboard.press('Enter');
+  else await seite.click('#pruefen');
   return auf;
+}
+
+// Weiter nach dem Ergebnis. Ist gerade ein Wegstück fertig, kommt erst sein Abschluss (ADR 0016): dort ebenfalls weiter.
+async function weiter(seite, wahl = '#weiter') {
+  await seite.click(wahl);
+  if (await seite.locator('#wegstueck-ende').count()) await seite.click('#weiter');
 }
 
 // ---------- 1. Komplettdatei als lokale Datei, Demo ohne Ordner ----------
@@ -90,17 +98,16 @@ async function antworte(seite, richtig = true) {
   await foto(seite, 'aufgabe-hinweis');
   await antworte(seite, true);
   await seite.waitForSelector('.ergebnis.richtig');
-  assert.equal(Number(await seite.innerText('#muenzen')), 20);
+  assert.equal(await seite.innerText('.ergebnis .plus'), '+20'); // Kopfzeile im Fokus-Modus ohne Münzen (ADR 0016)
   await foto(seite, 'aufgabe-richtig');
 
   // Zwei weitere richtige Aufgaben: Lernziel erreicht, ein Stern.
-  for (let i = 0; i < 2; i++) { await seite.click('#weiter'); await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); }
-  assert.equal(await seite.innerText('#siegel'), '1');
-  await seite.waitForSelector('.lohn.neu');
+  for (let i = 0; i < 2; i++) { await weiter(seite, '#weiter'); await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); }
+  await seite.waitForSelector('#neues-siegel');
   await foto(seite, 'lernziel-erreicht');
 
   // Hilfekärtchen der Reihe nach, dann zweimal falsch: Lösung wird gezeigt.
-  await seite.click('#weiter');
+  await weiter(seite, '#weiter');
   await seite.fill('input[name=zahl], input[type=text]', '7').catch(() => {});
   // Auf M gibt es zwei Kärtchen: Tipp und Lösungsschritt. Das zweite geht erst nach dem ersten auf.
   assert.equal(await seite.locator('[data-hilfe]').count(), 2);
@@ -114,9 +121,10 @@ async function antworte(seite, richtig = true) {
   await foto(seite, 'aufgabe-falsch');
 
   // Hilferuf und Werkstatt.
-  await seite.click('#weiter');
+  await weiter(seite, '#weiter');
   await seite.click('#hilferuf');
   await seite.waitForSelector('.hilfebanner');
+  await seite.click('#zurueck');
   await seite.click('.kopf nav button:has-text("Wappen")');
   await seite.waitForSelector('.werkbank');
   await seite.click('[data-teil=blau]');
@@ -154,6 +162,7 @@ async function antworte(seite, richtig = true) {
   await seite.click('[data-hilfe=tipp]'); // Neuzeichnen: der Merkzettel bleibt offen
   assert.equal(await seite.locator('.merkzettel ul').isVisible(), true);
   await foto(seite, 'merkzettel');
+  await seite.click('#zurueck');
   await seite.click('.kopf nav button:has-text("Schlossgarten")');
   await seite.waitForSelector('.regionen');
   await seite.click('[data-kapitel="5.3"]');
@@ -290,7 +299,7 @@ async function antworte(seite, richtig = true) {
     await seite.locator('.lernziele li button').nth(lernzielNr).click();
     await seite.waitForSelector('section.aufgabe');
   };
-  const zurueck = async () => { await seite.click('.pfad button'); await seite.waitForSelector('svg.regionskarte'); };
+  const zurueck = async () => { await seite.click('#zurueck'); await seite.waitForSelector('svg.regionskarte'); };
   // F: drei Kärtchen, das erste liegt offen. Wortspeicher offen und nur mit Alltagswörtern, jeder Satz in einer eigenen Zeile, mit Bild.
   await oeffne('G', 5);
   assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.4\.5-D6-F/);
@@ -303,7 +312,7 @@ async function antworte(seite, richtig = true) {
   await foto(seite, 'stufe-F');
   await antworte(seite, false); await seite.waitForSelector('.hinweis');
   await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig');
-  await seite.click('#weiter'); await seite.waitForSelector('#pruefen');
+  await weiter(seite, '#weiter'); await seite.waitForSelector('#pruefen');
   await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); // Auswahl mit mehrzeiligen Antworten
   await seite.click('.ergebnis button:has-text("Zur Regionskarte")'); await seite.waitForSelector('svg.regionskarte');
   // G: drei Kärtchen, Wortspeicher mit Quotient. E: ein Kärtchen, Wortspeicher zugeklappt.
@@ -325,11 +334,10 @@ async function antworte(seite, richtig = true) {
   for (let i = 0; i < 3; i++) {
     folge.push((await antworte(seite, true)).afb);
     await seite.waitForSelector('.ergebnis.richtig');
-    if (i < 2) { await seite.click('#weiter, .vorschlag .schlicht'); await seite.waitForSelector('#pruefen'); }
+    if (i < 2) { await weiter(seite, '#weiter, .vorschlag .schlicht'); await seite.waitForSelector('#pruefen'); }
   }
   assert.deepEqual(folge, [1, 2, 2]);
-  await seite.waitForSelector('.lohn.neu');
-  assert.equal(await seite.innerText('#siegel'), '1');
+  await seite.waitForSelector('#neues-siegel');
   assert.deepEqual(fehler, []);
   await seite.close();
 }
@@ -359,12 +367,12 @@ async function antworte(seite, richtig = true) {
     await antworte(seite, true);
     await seite.waitForSelector('.ergebnis.richtig');
     if (await seite.locator('#neue-krone').count()) break;
-    await seite.click('#weiter, .vorschlag button.schlicht');
+    await weiter(seite, '#weiter, .vorschlag button.schlicht');
   }
   assert.match(await seite.innerText('#neue-krone'), /Neue Krone: Silber/);
   assert.match(await seite.innerText('#einschaetzung'), /um Silber gespielt. Geschafft hast du Silber/);
   assert.match(await seite.innerText('.ergebnis'), /brauchst du Gold/);
-  assert.equal(await seite.innerText('#siegel'), '0', 'kein Siegel unter dem Zielniveau');
+  assert.equal(await seite.locator('#neues-siegel').count(), 0, 'kein Siegel unter dem Zielniveau');
   await foto(seite, 'krone-silber');
   await seite.click('.ergebnis button:has-text("Zur Regionskarte")');
   await seite.waitForSelector('svg.regionskarte');
@@ -402,14 +410,14 @@ async function antworte(seite, richtig = true) {
   await seite.waitForSelector('.ergebnis.falsch');
   assert.match(await seite.innerText('.ergebnis'), /Dein Siegel behältst du/);
   for (let i = 0; i < 2; i++) {
-    await seite.click('#weiter');
+    await weiter(seite, '#weiter');
     await antworte(seite, true);
     await seite.waitForSelector('.ergebnis.richtig');
   }
   assert.match(await seite.innerText('#rueckblick-fertig'), /Rückblick geschafft!\s+2 von 3 richtig/);
-  assert.equal(await seite.innerText('#siegel'), String(ms.lernziele.length));
-  await seite.click('#weiter');
+  await weiter(seite, '#weiter');
   await seite.waitForSelector('.regionen');
+  assert.equal(await seite.innerText('#siegel'), String(ms.lernziele.length));
   assert.equal(await seite.locator('#rueckblick').count(), 0, 'höchstens ein Rückblick am Tag');
   // Nebel: Der gemeisterte Meilenstein lichtet ihn, die Landschaft liegt darunter.
   await seite.click('[data-kapitel="5.3"]');
@@ -483,10 +491,10 @@ async function antworte(seite, richtig = true) {
     await antworte(seite, pool.aufgaben.find((a) => a.id === id).niveau === 'G');
     await seite.waitForSelector('.ergebnis.neutral');
     if (await seite.locator('#einstieg-fertig').count()) break;
-    await seite.click('#weiter');
+    await weiter(seite, '#weiter');
   }
   assert.match(await seite.innerText('#einstieg-fertig'), /Unser Vorschlag: Spiel um Silber/);
-  assert.equal(Number(await seite.innerText('#muenzen')), 0);
+  assert.equal(await seite.locator('.ergebnis .plus').count(), 0, 'keine Münzen im Einstiegscheck');
   await seite.waitForTimeout(800);
   await foto(seite, 'einstieg-fertig');
   await seite.click('#einstieg-krone');
@@ -504,13 +512,13 @@ async function antworte(seite, richtig = true) {
     await antworte(seite, false); await seite.waitForSelector('.ergebnis.falsch');
     assert.equal(await seite.locator('#bruecke-angebot').count(), 0, 'auf Silber gibt es keine Brücke');
     assert.equal(await seite.locator('#krone-wechseln').count(), 0, 'und keinen Vorschlag, um Bronze zu spielen');
-    if (i < 3) await seite.click('#weiter');
+    if (i < 3) await weiter(seite, '#weiter');
   }
   assert.match(await seite.innerText('#grundlage-beginnt'), /Wir üben erst die Grundlage\./);
   await seite.waitForTimeout(800);
   await foto(seite, 'grundlage-beginnt');
   for (let i = 0; i < 3; i++) {
-    await seite.click('#weiter');
+    await weiter(seite, '#weiter');
     await seite.waitForSelector('section.aufgabe #pruefen');
     assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.3-S2-F/);
     assert.match(await seite.innerText('#grundlage-marke'), /Grundlage/);
@@ -522,7 +530,7 @@ async function antworte(seite, richtig = true) {
   assert.match(await seite.innerText('#grundlage-endet'), /Jetzt klappt auch der nächste Schritt\.[\s\S]*wieder um Silber/);
   await seite.waitForTimeout(800);
   await foto(seite, 'grundlage-endet');
-  await seite.click('#weiter');
+  await weiter(seite, '#weiter');
   await seite.waitForSelector('section.aufgabe #pruefen');
   assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.3-S2-G/);
   assert.equal(await seite.locator('#grundlage-marke').count(), 0);
@@ -532,7 +540,7 @@ async function antworte(seite, richtig = true) {
   }
 
   // Brücke: Auf Gold bietet das Dashboard bei einem wackeligen Lernziel drei Aufgaben zur Voraussetzung an.
-  await seite.click('.pfad button');
+  await seite.click('#zurueck');
   await seite.waitForSelector('svg.regionskarte');
   await seite.locator('.meilenstein .stein').nth(2).click();
   await seite.click('.kronenwahl button[data-krone="M"]');
@@ -550,11 +558,11 @@ async function antworte(seite, richtig = true) {
     assert.match(await seite.innerText('.brueckenmarke'), new RegExp(`Brücke ${i + 1} von 3`));
     await antworte(seite, true);
     await seite.waitForSelector('.ergebnis.richtig');
-    if (i < 2) await seite.click('#weiter');
+    if (i < 2) await weiter(seite, '#weiter');
   }
   assert.match(await seite.innerText('#bruecke-fertig'), /Brücke geschafft!\s+3 von 3 richtig/);
   await foto(seite, 'bruecke-fertig');
-  await seite.click('#weiter');
+  await weiter(seite, '#weiter');
   await seite.waitForSelector('section.aufgabe');
   assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.3-S2/);
   const gespeichert = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-EINS.json')));
@@ -581,8 +589,8 @@ async function antworte(seite, richtig = true) {
   await seite.click('#aufbrechen');
   await antworte(seite, true);
   await seite.waitForSelector('.ergebnis.richtig');
-  await seite.waitForFunction(() => document.getElementById('speicherstatus').textContent.startsWith('Gespeichert'));
-  // Der Status steht schon seit der Anmeldung auf "Gespeichert": auf den Versuch in der Datei warten.
+  // Im Fokus-Modus zeigt die Kopfzeile nur Speicherfehler (ADR 0016): auf den Versuch in der Datei warten.
+  assert.equal(await seite.innerText('#speicherstatus'), '');
   const gespeichert = await seite.evaluate(async () => {
     const ordner = await (await navigator.storage.getDirectory()).getDirectoryHandle('5a');
     for (let i = 0; ; i++) {
@@ -882,7 +890,7 @@ async function antworte(seite, richtig = true) {
   await schueler.click('#aufbrechen');
   await antworte(schueler, true);
   await schueler.waitForSelector('.ergebnis.richtig');
-  await schueler.click('#weiter');
+  await weiter(schueler, '#weiter');
   await schueler.click('#hilferuf');
   await schueler.waitForSelector('.hilfebanner');
 
@@ -917,7 +925,7 @@ async function antworte(seite, richtig = true) {
   await lehrer.click('summary:has-text("Meilensteine öffnen und sperren")');
   await lehrer.click(`[data-sperre="5.4.1|${aylin}"]`);
   await warteAuf((k) => k.sperren?.['5.4.1']?.includes(aylin));
-  await schueler.click('.pfad button');
+  await schueler.click('#zurueck');
   await schueler.waitForSelector('.tafel.gesperrt', { timeout: 15000 });
   assert.equal(await schueler.locator('#aufbrechen').count(), 0);
   await foto(schueler, 'schueler-meilenstein-gesperrt');
@@ -953,7 +961,7 @@ async function antworte(seite, richtig = true) {
   assert.match(await schueler.innerText('#ueberraschung'), /Überraschung! Du warst dir sicher/);
   assert.equal(await schueler.locator('#pruefen-unsicher').count(), 0, 'nur beim ersten Versuch');
   await foto(schueler, 'schueler-sicher-falsch');
-  await schueler.click('.pfad button');
+  await schueler.click('#zurueck');
   // Warten, bis der Abbruch im Speicherstand steht, damit das folgende Backup nicht überholt wird.
   for (let i = 0; i < 150 && JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length < 2; i++) await lehrer.waitForTimeout(100);
   assert.equal(JSON.parse(await lies(`5a/${aylin}.json`)).abbrueche.length, 2);
@@ -1058,6 +1066,81 @@ async function antworte(seite, richtig = true) {
   assert.match(await seite.innerText('#mk-grund'), /404.*Pages/);
   assert.deepEqual(fehler, []);
   await kontext.close();
+}
+
+// ---------- 7b. Konzentration (ADR 0016): Fokus-Modus, Tastatur, Wegstück, Seitenblick, Rast ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1366, height: 768 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  const ms = pool.kapitel.find((k) => k.id === '5.3').unterkapitel.find((u) => u.id === '5.3.3');
+  const [erstes] = ms.lernziele.filter((l) => pool.aufgaben.some((a) => a.lernziel === l.id && a.niveau === 'M'));
+  const tag = new Date().toLocaleDateString('sv-SE');
+  const stand = { ...leererStand('5A-FOKU'), lernziele: { [erstes.id]: { erreichtAm: t0 } },
+    wegstuecke: [0, 1, 2].map(() => ({ t: t0, bis: t0, tag, richtig: 5, gesamt: 5, muenzen: 100 })) };
+  await mitStand(seite, stand);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-foku');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.click('#einstieg-ueberspringen');
+  await seite.locator('.meilenstein .stein').nth(2).click();
+  await seite.locator('.lernziele li').nth(1).locator('button').click(); // am zweiten Lernziel üben, das erste hat schon sein Siegel
+  await seite.waitForSelector('section.aufgabe');
+  // Fokus-Modus: schmale Kopfzeile, keine Zähler, keine Versionsanzeige; Wegstück 1 von 5; das Eingabefeld hat den Fokus.
+  assert.equal(await seite.locator('.kopf.fokus').count(), 1);
+  assert.equal(await seite.locator('#muenzen, #siegel, #kronen, .kopf nav').count(), 0);
+  assert.equal(await seite.locator('#version').isVisible().catch(() => false), false);
+  assert.match(await seite.innerText('#wegstueck'), /Aufgabe 1 von 5/);
+  await seite.waitForFunction(() => document.activeElement?.closest('form.antwort'));
+  await foto(seite, 'fokus-aufgabe');
+  // Erste Aufgabe zweimal falsch: Lösung mit Beispiel und Lösungsschritt. Der Tipp lag nach dem ersten Fehlversuch unter dem Eingabefeld.
+  await antworte(seite, false, { taste: true }); await seite.waitForSelector('.hinweis');
+  assert.equal(await seite.locator('.karte .kaertchen .kaertchen-offen').count(), 1);
+  assert.match(await seite.innerText('.hinweis'), /Unten liegt jetzt ein Tipp/);
+  await foto(seite, 'fokus-tipp-unten');
+  await antworte(seite, false, { taste: true }); await seite.waitForSelector('.ergebnis.falsch');
+  assert.ok(await seite.locator('#so-geht-es .kaertchen-offen').count() >= 1);
+  await foto(seite, 'fokus-so-geht-es');
+  // Enter führt weiter; zu schnell nach dem Ergebnis zählt ein Enter noch nicht.
+  await seite.waitForFunction(() => document.activeElement?.id === 'weiter');
+  await seite.keyboard.press('Enter');
+  assert.equal(await seite.locator('.ergebnis').count(), 1, 'doppeltes Enter überspringt die Lösung nicht');
+  await seite.waitForTimeout(700);
+  await seite.keyboard.press('Enter');
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  for (let i = 2; i <= 5; i++) {
+    assert.match(await seite.innerText('#wegstueck'), new RegExp(`Aufgabe ${i} von 5`));
+    // Die vierte Aufgabe ist der Seitenblick auf das schon besiegelte Lernziel.
+    if (i === 4) {
+      assert.equal(await seite.locator('#seitenblick-marke').count(), 1);
+      assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), new RegExp(`^${erstes.id.replace(/\./g, '\\.')}`));
+      await foto(seite, 'seitenblick');
+    } else assert.equal(await seite.locator('#seitenblick-marke').count(), 0);
+    await seite.waitForFunction(() => document.activeElement?.closest('form.antwort'));
+    await antworte(seite, true, { taste: true });
+    await seite.waitForSelector('.ergebnis.richtig');
+    if (i === 2) await foto(seite, 'fokus-richtig');
+    await seite.waitForTimeout(700);
+    await seite.keyboard.press('Enter');
+  }
+  // Abschluss des vierten Wegstücks heute: Bilanz und Rast.
+  await seite.waitForSelector('#wegstueck-ende');
+  assert.match(await seite.innerText('#wegstueck-ende'), /Wegstück geschafft[\s\S]*4 von 5 richtig/);
+  assert.equal(await seite.locator('#wegstueck-ende .wegpunkte i.voll').count(), 4);
+  assert.match(await seite.innerText('#rast'), /Zeit für eine Rast/);
+  assert.equal(await seite.innerText('#weiter'), 'Rast überspringen');
+  await foto(seite, 'wegstueck-rast');
+  await seite.click('#weiter');
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  assert.match(await seite.innerText('#wegstueck'), /Aufgabe 1 von 5/);
+  const gespeichert = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-FOKU.json')));
+  assert.equal(gespeichert.wegstuecke.length, 4);
+  assert.equal(gespeichert.wegstuecke.at(-1).rast, 'uebersprungen');
+  assert.equal(gespeichert.versuche.filter((v) => v.seitenblick).length, 1);
+  assert.deepEqual(fehler, []);
+  await seite.close();
 }
 
 // ---------- 8. Versionsanzeige im Schüler-Dashboard ----------

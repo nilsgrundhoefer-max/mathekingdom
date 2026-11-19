@@ -6,6 +6,27 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.11 vom 19.11.2026
+
+### Schüler
+
+- Während einer Aufgabe ist die Kopfzeile schmal: Dein Wappen führt zurück, daneben siehst du dein Wegstück. Siegel, Kronen und Münzen siehst du wieder auf der Karte.
+- Wegstücke: Die Aufgaben kommen in Päckchen zu fünf. „Aufgabe 3 von 5“ zeigt, wie weit du bist, am Ende siehst du, wie viele richtig waren.
+- Seitenblick: Einmal im Wegstück kommt eine Aufgabe zu einem Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.
+- Rast: Nach jedem vierten Wegstück am Tag schlägt Mathekingdom eine Minute Pause vor. Du kannst sie überspringen.
+- Ohne Maus: Das Eingabefeld ist gleich bereit, Enter prüft, und nach dem Ergebnis bringt dich Enter zur nächsten Aufgabe.
+- Der Tipp und die anderen Hilfekärtchen liegen jetzt direkt unter dem Eingabefeld.
+- Das Ergebnis ist kürzer. Ist eine Aufgabe zweimal falsch, siehst du neben der Lösung auch das Beispiel und den Lösungsschritt.
+- Siegel, Krone und Meilenstein bekommen einen kurzen eigenen Moment.
+
+### Lehrkraft
+
+- Konzentration über eine ganze Stunde (ADR 0016): Fokus-Modus, Wegstücke zu fünf Aufgaben mit einem Seitenblick, kürzere Rückmeldung, Arbeiten ohne Maus.
+- Im Bereich Jetzt zeigt jede Kachel die Wegstücke von heute als Punktreihe (voll ab 4 von 5, halb ab 3 von 5).
+- Neuer Live-Status „lässt nach“ mit Impuls: Die letzten zwei Wegstücke liegen deutlich unter dem Schnitt davor. Der Schüler bekommt dazu keine Meldung.
+- Verwaltung, „Rast und Ton“: Rast nach jedem vierten Wegstück (standardmäßig an) und ein leiser Ton bei richtigen Aufgaben (standardmäßig aus).
+- Seitenblicke stehen im Versuchsprotokoll, zählen aber für kein Siegel und keine Krone.
+
 ## 0.10 vom 18.11.2026
 
 ### Schüler

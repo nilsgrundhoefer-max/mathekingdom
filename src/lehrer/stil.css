@@ -286,3 +286,14 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .tafel-loesung { font-size: 1.1em; background: #e6f3ec; border-left: 6px solid #2a7a50; padding: .4em .7em; }
 #mathekingdom-lehrer .tafel-frage { margin-top: 1.5em; font-style: italic; }
 #mathekingdom-lehrer .vierfeld td, #mathekingdom-lehrer .vierfeld th { text-align: center; }
+/* Wegstücke und „lässt nach“ (ADR 0016) */
+#mathekingdom-lehrer .punkt.laesstnach i { background: #8a5a9e; }
+#mathekingdom-lehrer .platz.laesstnach { background: #f4ecf7; border-color: #8a5a9e; }
+#mathekingdom-lehrer .platz.laesstnach .zeichen { background: #8a5a9e; }
+#mathekingdom-lehrer .platz .wegreihe { grid-column: 1 / -1; display: flex; gap: 3px; align-items: center; margin-top: 3px; }
+#mathekingdom-lehrer .wegreihe i { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #3e6b3a; }
+#mathekingdom-lehrer .wegreihe i.voll { background: #3e6b3a; }
+#mathekingdom-lehrer .wegreihe i.halb { background: linear-gradient(90deg, #3e6b3a 50%, transparent 50%); }
+#mathekingdom-lehrer .wegreihe i.leer { background: transparent; border-color: #9e2f28; }
+#mathekingdom-lehrer .wegreihe small { font-size: .7rem; color: var(--grau); }
+#konzentration-karte .schalter { margin-right: 22px; }

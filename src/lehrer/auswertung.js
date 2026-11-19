@@ -190,7 +190,21 @@ export const BLOCKIERT_FEHLVERSUCHE = 3;
 export const BLOCKIERT_MINUTEN = 5;
 const KAERTCHEN = ['', '1 Hilfekärtchen gezogen', '2 Hilfekärtchen gezogen', '3 Hilfekärtchen gezogen'];
 
-// Ampel für die Live-Ansicht. status: hilfe | blockiert | beobachten | flow | arbeitet | inaktiv | fehlt
+// ---------- Wegstücke (ADR 0016) ----------
+// Lässt nach: Die letzten zwei Wegstücke von heute liegen beide deutlich (0,4, also zwei von fünf Aufgaben) unter dem Schnitt
+// der Wegstücke davor. Dafür braucht es mindestens drei Wegstücke am Tag. Der Schüler sieht davon nichts.
+export const LAESST_NACH_UM = 0.4;
+export const wegstueckeHeute = (stand, jetzt) => L.wegstueckeAm(stand, L.tagVon(jetzt));
+const quoteVon = (w) => w.richtig / w.gesamt;
+export function laesstNach(stand, jetzt) {
+  const w = wegstueckeHeute(stand, jetzt);
+  if (w.length < 3) return null;
+  const vorher = w.slice(0, -2), letzte = w.slice(-2);
+  const schnitt = vorher.reduce((s, x) => s + quoteVon(x), 0) / vorher.length;
+  return letzte.every((x) => quoteVon(x) <= schnitt - LAESST_NACH_UM + 1e-9) ? { schnitt, letzte, anzahl: w.length } : null;
+}
+
+// Ampel für die Live-Ansicht. status: hilfe | blockiert | beobachten | laesstnach | flow | arbeitet | inaktiv | fehlt
 export function livestatus(stand, zielniveau, jetzt) {
   if (!stand) return { status: 'fehlt', text: 'noch nie angemeldet' };
   const k = kennzahlen(stand, zielniveau, jetzt);
@@ -216,6 +230,7 @@ export function livestatus(stand, zielniveau, jetzt) {
   if (geraten >= 3) return { ...basis, status: 'beobachten', text: 'rät vermutlich' };
   if (hilfen >= 1) return { ...basis, status: 'beobachten', text: KAERTCHEN[Math.min(hilfen, 3)] };
   if (fehl >= 2) return { ...basis, status: 'beobachten', text: `${fehl} Fehlversuche in Folge` };
+  if (laesstNach(stand, jetzt)) return { ...basis, status: 'laesstnach', text: 'lässt nach' };
   const quote = anteil(letzte.filter((x) => x.richtig).length, letzte.length);
   if (letzte.length >= 3 && quote >= 0.8) return { ...basis, status: 'flow', text: 'im Flow' };
   return { ...basis, status: 'arbeitet', text: 'arbeitet' };

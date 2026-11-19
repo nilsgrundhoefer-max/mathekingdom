@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -343,7 +343,7 @@ function klassenAnsicht() {
 
 // ---------- Jetzt: Klassenraum und Akut-Zone ----------
 const STATUS = {
-  hilfe: ['Hilferuf', '✋'], blockiert: ['Blockiert', '!'], beobachten: ['Beobachten', '?'], flow: ['Im Flow', '✓'],
+  hilfe: ['Hilferuf', '✋'], blockiert: ['Blockiert', '!'], beobachten: ['Beobachten', '?'], laesstnach: ['Lässt nach', '↘'], flow: ['Im Flow', '✓'],
   arbeitet: ['Arbeitet', '›'], inaktiv: ['Inaktiv', 'z'], fehlt: ['Nicht da', '–'],
 };
 // Als erledigt abgehakte Rufe verschwinden sofort, auch wenn der Speicherstand des Schülers erst gleich nachzieht.
@@ -399,9 +399,20 @@ function sitzplanKarte(status) {
       return h('button', { class: `platz ${st.status}${z.sitzGewaehlt === i ? ' gewaehlt' : ''}`, 'data-platz': i, 'data-schueler': code, title: `${titel}: ${st.text}`,
         onclick: () => { if (bearbeiten) tausche(i); else { z.overlay = code; male(); } } },
         h('span', { class: 'zeichen', 'aria-hidden': 'true' }, zeichen), h('b', {}, name(code)), h('span', { class: 'was' }, st.text),
-        h('span', { class: 'unten' }, (linien.length ? linien : [ziel(code)]).map(chip), st.stand ? `Siegel ${L.siegel(st.stand)}` : ''));
+        h('span', { class: 'unten' }, (linien.length ? linien : [ziel(code)]).map(chip), st.stand ? `Siegel ${L.siegel(st.stand)}` : ''),
+        st.stand && wegreihe(st.stand));
     })));
 }
+
+// Wegstücke von heute als kleine Reihe, gefärbt nach der Quote (ADR 0016).
+const wegKlasse = (w) => (w.richtig / w.gesamt >= 0.8 ? 'voll' : w.richtig / w.gesamt >= 0.5 ? 'halb' : 'leer');
+function wegreihe(stand) {
+  const w = A.wegstueckeHeute(stand, jetzt());
+  if (!w.length) return null;
+  return h('span', { class: 'wegreihe', title: `Wegstücke heute: ${w.map((x) => `${x.richtig}/${x.gesamt}`).join(', ')}` },
+    w.slice(-8).map((x) => h('i', { class: wegKlasse(x) })), w.length > 8 && h('small', {}, `+${w.length - 8}`));
+}
+const anteilText = (q) => String(Math.round(q * 50) / 10).replace('.', ',');
 
 function nachrichtFeld(code) {
   const sende = (text) => { if (text.trim()) aendere((k) => { k.einst.nachrichten[code] = { t: jetzt(), text: text.trim().slice(0, 200) }; }); };
@@ -469,6 +480,15 @@ function impulse() {
     karten.push(h('li', { 'data-grundlage': x.code }, h('span', {}, h('b', {}, 'Grundlage: '), `${name(x.code)} übt bei ${lesbar(x.lernziel)} zum ${x.mal}. Mal die Grundlage${x.aktiv ? '' : ' und ist inzwischen zurück auf G'}. `,
       x.baustein ? `Baustein: ${x.baustein}. ` : '', 'Ein kurzes Gespräch oder Material zum Anfassen kann jetzt helfen.'),
     gesehen(schluessel)));
+  }
+  // Lässt nach (ADR 0016): Ob eine Pause, ein Wechsel oder ein Gespräch hilft, entscheidet die Lehrkraft.
+  for (const { code, stand } of angemeldet()) {
+    const x = A.laesstNach(stand, jetzt());
+    if (!x) continue;
+    const schluessel = `nach|${code}|${x.anzahl}`;
+    if (z.gesehen.has(schluessel)) continue;
+    karten.push(h('li', { 'data-laesst-nach': code }, h('span', {}, h('b', {}, 'Lässt nach: '), `${name(code)} hat in den letzten zwei Wegstücken ${x.letzte.map((w) => `${w.richtig} von ${w.gesamt}`).join(' und ')} gelöst, vorher im Schnitt ${anteilText(x.schnitt)} von 5. `,
+      'Vielleicht hilft eine kurze Pause, ein anderes Lernziel oder ein Gespräch.'), gesehen(schluessel)));
   }
   for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
     const schluessel = `fertig|${x.code}|${x.milestone}|${x.zielniveau}`;
@@ -969,6 +989,10 @@ function verwaltung() {
     h('section', { class: 'karte', id: 'sicherheitsangabe-karte' }, h('h2', {}, 'Sicherheitsangabe (Probe)'),
       h('p', { class: 'klein' }, 'Beim ersten Versuch prüfen die Schüler mit „ich bin sicher“ oder „ich bin unsicher“. Ist eine sichere Antwort falsch, kommt sofort ein deutlicher Hinweis. Münzen ändern sich nicht. Die Auswertung steht im Lernstand unter „Heftcheck und Sicherheitsangabe“.'),
       h('label', { class: 'schalter' }, h('input', { id: 'sicherheitsangabe', type: 'checkbox', checked: Boolean(kl().einst.sicherheitsangabe), onchange: (ev) => aendere((k) => { k.einst.sicherheitsangabe = ev.target.checked; }) }), ' Für diese Klasse einschalten')),
+    h('section', { class: 'karte', id: 'konzentration-karte' }, h('h2', {}, 'Rast und Ton'),
+      h('p', { class: 'klein' }, 'Die Schüler arbeiten in Wegstücken zu fünf Aufgaben. Nach jedem vierten Wegstück am Tag (etwa 20 Minuten) schlägt das Dashboard eine Rast von einer Minute vor; die Schüler können sie überspringen. Der Ton ist ein kurzer, leiser Klang bei jeder richtigen Aufgabe, sinnvoll nur mit Kopfhörern.'),
+      h('label', { class: 'schalter' }, h('input', { id: 'rast', type: 'checkbox', checked: kl().einst.rast !== false, onchange: (ev) => aendere((k) => { k.einst.rast = ev.target.checked; }) }), ' Rast vorschlagen'),
+      h('label', { class: 'schalter' }, h('input', { id: 'ton', type: 'checkbox', checked: Boolean(kl().einst.ton), onchange: (ev) => aendere((k) => { k.einst.ton = ev.target.checked; }) }), ' Ton bei richtigen Aufgaben')),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),

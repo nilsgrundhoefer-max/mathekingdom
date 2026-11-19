@@ -65,6 +65,8 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
     heftNr: 0,         // letzter vergebener Heftcode (H1, H2, …)
     heftSeitCheck: 0,  // Heftcodes seit dem letzten Heftcheck
     heftchecks: [],    // { t, heft, aufgabe, richtig }
+    wegstueck: null,   // laufendes Wegstück: { t, aufgaben: [{ aufgabe, richtig, muenzen, seitenblick? }] } (ADR 0016)
+    wegstuecke: [],    // abgeschlossene Wegstücke: { t, bis, tag, richtig, gesamt, muenzen }
   };
 }
 // Ein Siegel je erreichtem Lernziel. Es wird nicht gespeichert, sondern aus den Lernzielen gezählt.
@@ -130,12 +132,12 @@ export function pruefeAntwort(aufgabe, eingabe) {
 }
 
 // ---------- Lernziele ----------
-// Mit Lösungsschritt-Kärtchen gelöst zählt nicht, Aufgaben aus dem Einstiegscheck zählen nie (ADR 0014).
-const zaehlt = (v) => v.richtig && !v.einstieg && !hatKarte(v, 'loesungsschritt');
+// Mit Lösungsschritt-Kärtchen gelöst zählt nicht, Aufgaben aus dem Einstiegscheck (ADR 0014) und Seitenblicke (ADR 0016) zählen nie.
+const zaehlt = (v) => v.richtig && !v.einstieg && !v.seitenblick && !hatKarte(v, 'loesungsschritt');
 // Wackelig: mindestens 4 Aufgaben zum Lernziel, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
 export const WACKELIG_AB = 4;
 export function istWackelig(stand, lernzielId) {
-  const v = stand.versuche.filter((x) => x.lernziel === lernzielId && !x.einstieg);
+  const v = stand.versuche.filter((x) => x.lernziel === lernzielId && !x.einstieg && !x.seitenblick);
   const geloest = v.filter((x) => x.richtig).length;
   const schritte = v.filter((x) => hatKarte(x, 'loesungsschritt')).length;
   return (v.length >= WACKELIG_AB && geloest / v.length < 0.5) || schritte >= 2;
@@ -280,7 +282,8 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 // bearbeitung: { geloest, versuche, eingaben, fehlvorstellungen, hilfen, karten, dauer }
 // Mit `index` verlangt das Siegel auch eine Aufgabe aus AFB II oder III (siehe lernzielStand).
 // Mit `{ rueckblick: true }` zählt die Aufgabe zum Rückblick und nicht zur Selbsteinschätzung.
-export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false } = {}) {
+// Mit `{ seitenblick: true }` bringt sie nur Münzen: kein Siegel, keine Krone, keine Selbsteinschätzung, keine Grundlagen-Schleife (ADR 0016).
+export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false } = {}) {
   const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
@@ -289,7 +292,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
-    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
+    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(seitenblick && { seitenblick: true }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
   });
   // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
   let heft = null;
@@ -307,7 +310,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   // Krone und Selbsteinschätzung: Wer unter der gewählten Krone arbeitet, bevor er dort eine Krone hat, ist abgestiegen.
   const kroneJetzt = meilenstein ? krone(index, stand, meilenstein) : null;
-  const e = meilenstein && !rueckblick && !bruecke ? stand.einschaetzung?.[meilenstein.id] : null;
+  const e = meilenstein && !rueckblick && !bruecke && !seitenblick ? stand.einschaetzung?.[meilenstein.id] : null;
   let ersteKrone = false;
   if (e && !e.krone) {
     if (unterZiel(aufgabe.niveau, e.gewaehlt)) e.abstieg = true;
@@ -315,7 +318,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
   // Grundlagen-Schleife (ADR 0015): nur beim Üben am Meilenstein und nur, wenn das Ziel nicht ohnehin F ist.
-  const grundlage = !rueckblick && !bruecke && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
+  const grundlage = !rueckblick && !bruecke && !seitenblick && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
   return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage };
 }
 
@@ -482,7 +485,7 @@ export const GRUNDLAGE_HINWEIS_AB = 2; // ab dem zweiten Mal erfährt es die Leh
 export const inGrundlage = (stand, lernzielId) => Boolean(stand.grundlage?.[lernzielId]?.aktiv);
 // Niveaustufe der nächsten Aufgabe zu diesem Lernziel.
 export const aufgabenNiveau = (stand, lernzielId, niveau) => (inGrundlage(stand, lernzielId) ? 'F' : niveau);
-const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke;
+const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke && !v.seitenblick;
 // Wie viele verschiedene F-Aufgaben in der laufenden Schleife schon richtig sind.
 export function grundlageRichtige(stand, lernzielId) {
   const g = stand.grundlage?.[lernzielId];
@@ -550,6 +553,49 @@ export function trageBrueckeEin(stand, aufgabe, richtig, jetzt) {
   return ergebnis;
 }
 
+// ---------- Wegstück (ADR 0016) ----------
+// Fünf Aufgaben, etwa fünf Minuten. Es zählt Aufgaben, nicht Lernziele: Grundlagen-Schleife, Brücke und Seitenblick zählen mit,
+// Rückblick, Einstiegscheck und Heftcheck nicht. Der Stand bleibt im Speicherstand, bis das Wegstück fertig ist.
+export const WEGSTUECK_AUFGABEN = 5;
+export const SEITENBLICK_AB = 3;   // frühestens die vierte Aufgabe eines Wegstücks ist der Seitenblick
+export const RAST_NACH = 4;        // nach jedem vierten Wegstück des Tages schlägt das Dashboard eine Rast vor
+export const RAST_SEKUNDEN = 60;
+// Nummer der Aufgabe, die gerade läuft oder als nächste kommt (1 bis 5).
+export const wegstueckNummer = (stand) => Math.min(WEGSTUECK_AUFGABEN, (stand.wegstueck?.aufgaben.length ?? 0) + 1);
+export const wegstueckeAm = (stand, tag) => (stand.wegstuecke ?? []).filter((w) => w.tag === tag);
+export function trageWegstueckEin(stand, aufgabe, { richtig, muenzen = 0, seitenblick = false }, jetzt) {
+  const w = (stand.wegstueck ??= { t: jetzt, aufgaben: [] });
+  w.aufgaben.push({ aufgabe: aufgabe.id, richtig, muenzen, ...(seitenblick && { seitenblick: true }) });
+  const ergebnis = {
+    nummer: w.aufgaben.length, gesamt: WEGSTUECK_AUFGABEN, fertig: w.aufgaben.length >= WEGSTUECK_AUFGABEN,
+    richtig: w.aufgaben.filter((a) => a.richtig).length, muenzen: w.aufgaben.reduce((s, a) => s + (a.muenzen ?? 0), 0),
+    punkte: w.aufgaben.map((a) => a.richtig),
+  };
+  if (ergebnis.fertig) {
+    const tag = tagVon(jetzt);
+    (stand.wegstuecke ??= []).push({ t: w.t, bis: jetzt, tag, richtig: ergebnis.richtig, gesamt: ergebnis.gesamt, muenzen: ergebnis.muenzen });
+    stand.wegstueck = null;
+    ergebnis.heute = wegstueckeAm(stand, tag).length;
+    ergebnis.rast = ergebnis.heute % RAST_NACH === 0;
+  }
+  return ergebnis;
+}
+// Ein Seitenblick ist fällig ab der vierten Aufgabe, solange das laufende Wegstück noch keinen hatte.
+export function seitenblickFaellig(stand) {
+  const w = stand.wegstueck;
+  return Boolean(w) && w.aufgaben.length >= SEITENBLICK_AB && !w.aufgaben.some((a) => a.seitenblick);
+}
+// Aufgabe zu einem schon besiegelten Lernziel desselben Kapitels, das am längsten nicht mehr dran war. Ohne Siegel: null.
+export function waehleSeitenblick(index, stand, lernzielId, niveau, zufall = Math.random) {
+  const kapitel = kapitelVon(lernzielId);
+  const kandidaten = Object.keys(stand.lernziele).filter((id) => id !== lernzielId && kapitelVon(id) === kapitel && (index.nach.get(`${id}|${niveau}`) ?? []).length);
+  if (!kandidaten.length) return null;
+  const zuletzt = new Map(kandidaten.map((id) => [id, '']));
+  for (const v of stand.versuche) if (zuletzt.has(v.lernziel) && v.t > zuletzt.get(v.lernziel)) zuletzt.set(v.lernziel, v.t);
+  kandidaten.sort((a, b) => (zuletzt.get(a) < zuletzt.get(b) ? -1 : zuletzt.get(a) > zuletzt.get(b) ? 1 : 0));
+  return naechsteAufgabe(index, stand, kandidaten[0], niveau, zufall);
+}
+
 // ---------- Sicherheitsangabe (ADR 0014) ----------
 // „Sicher falsch“: beim ersten Versuch sicher geprüft, aber nicht im ersten Versuch gelöst. Stärkstes Zeichen einer Fehlvorstellung.
 export const sicherFalsch = (v) => v.sicher === true && !(v.richtig && v.versuche === 1);
@@ -598,7 +644,7 @@ export const arbeitsniveau = (stand, kapitelId, zielniveau) => {
 // 'runter' gibt es nur zu einer Krone, die zur Wahl steht: nie von Silber auf Bronze, außer das Ziel ist F.
 export function niveauVorschlag(stand, kapitelId, niveau, zielniveau = STANDARD_ZIELNIVEAU) {
   const seit = stand.niveauMarke[kapitelId] ?? 0;
-  const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
+  const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && !v.seitenblick && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
   const stufe = NIVEAUS.indexOf(niveau);
   if (stufe < 3 && eigene.length >= 5 && eigene.slice(-5).filter(zaehlt).length >= 4) return 'hoch';
   if (stufe > NIVEAUS.indexOf(wahlNiveaus(zielniveau)[0]) && eigene.length >= 3 && eigene.slice(-3).every((v) => !v.richtig)) return 'runter';
@@ -712,6 +758,8 @@ export function einstellungen(klassendatei, code, pool) {
     spielpause: Boolean(k.spielpause),
     expedition: k.expedition ?? null,
     sicherheitsangabe: Boolean(k.sicherheitsangabe),
+    ton: Boolean(k.ton),          // dezenter Ton bei richtigen Aufgaben, standardmäßig aus (ADR 0016)
+    rast: k.rast !== false,       // Rast nach jedem vierten Wegstück, standardmäßig an (ADR 0016)
     einstiegPflicht: new Set(k.einstiegPflicht ?? []),
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,

@@ -333,3 +333,43 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .marke.brueckenmarke { background: #e2f1ec; color: #1f5a4c; border-color: #b4d9cd; }
 #mathekingdom .ergebnis.neutral { background: var(--hell); border-left: 5px solid #6b4f9e; }
 #mathekingdom .vorschlag.bruecke { border-left: 5px solid #2e7d6b; margin-top: 10px; }
+
+/* Fokus-Modus und Wegstück (ADR 0016) */
+#mathekingdom .kopf.fokus { padding: 6px 18px; gap: 18px; }
+#mathekingdom .kopf.fokus .zurueck { display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px 4px 4px; border: 1px solid transparent; border-radius: 10px; line-height: 1.2; color: var(--nacht); font-size: .92rem; }
+#mathekingdom .kopf.fokus .zurueck:hover { border-color: var(--rand); background: #f1e7cf; }
+#mathekingdom .kopf.fokus .speicher { flex-basis: auto; margin-left: auto; }
+#mathekingdom .kopf.fokus .speicher:empty { display: none; }
+#mathekingdom .wegstueck-anzeige { display: inline-flex; align-items: center; gap: 10px; margin-left: auto; font-size: .9rem; color: var(--grau); font-variant-numeric: tabular-nums; }
+#mathekingdom .wegpunkte { display: inline-flex; gap: 6px; }
+#mathekingdom .wegpunkte i { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #b9ab90; background: transparent; }
+#mathekingdom .wegpunkte i.voll { background: var(--gut); border-color: var(--gut); }
+#mathekingdom .wegpunkte i.daneben { background: #e3d6b8; border-color: #c8b893; }
+#mathekingdom .wegpunkte i.jetzt { border-color: var(--nacht); box-shadow: 0 0 0 2px #fbf7ec, 0 0 0 4px #c8b893; }
+#mathekingdom .wegpunkte.gross { margin: 6px 0 14px; gap: 10px; }
+#mathekingdom .wegpunkte.gross i { width: 26px; height: 26px; border-width: 3px; }
+#mathekingdom .aufgabe .karte > .kaertchen { margin-top: 18px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+#mathekingdom .aufgabe .karte > .kaertchen .kaertchen-offen { grid-column: 1 / -1; }
+#mathekingdom .kaertchen-zu.spaeter { opacity: .6; padding: 8px 12px; }
+#mathekingdom .ergebnis h2 .lohn { font-family: "Segoe UI", system-ui, sans-serif; font-size: 1.05rem; color: var(--tinte); font-weight: 400; margin-left: 6px; }
+#mathekingdom .ergebnis .knoepfe { display: flex; gap: 10px; flex-wrap: wrap; }
+#mathekingdom .so-geht-es { display: grid; gap: 10px; width: 100%; }
+#mathekingdom .moment { display: flex; align-items: center; gap: 14px; background: #fffaf0; border: 2px solid #e0c98c; border-radius: 12px; padding: 10px 16px 10px 10px; width: 100%; }
+#mathekingdom .moment b { font-family: var(--schrift-titel); font-size: 1.15rem; color: var(--nacht); }
+#mathekingdom .moment p { margin: 2px 0 0; }
+#mathekingdom .wegstueck-ende { max-width: 620px; margin: 4vh auto 0; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+#mathekingdom .wegstueck-ende .knoepfe { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+#mathekingdom .rast { display: flex; gap: 16px; align-items: center; text-align: left; background: #eef3ec; border: 1px solid #c4d3bf; border-radius: 12px; padding: 14px 18px; margin-top: 10px; }
+#mathekingdom .rast .sanduhr { font-size: 2.6rem; line-height: 1; }
+#mathekingdom .rast p { margin: 4px 0 0; }
+#mathekingdom .rast .uhr { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: no-preference) {
+  #mathekingdom .wegpunkte i.neu, #mathekingdom .aufgabe:has(.ergebnis.richtig) .aufgabenkopf .punkte i.voll:last-of-type { animation: mk-plopp .45s ease-out; }
+  #mathekingdom .ergebnis.richtig .plus { display: inline-block; animation: mk-huepf .5s ease-out; }
+  #mathekingdom .moment > svg, #mathekingdom .moment > :first-child { animation: mk-stempel .5s cubic-bezier(.2, 1.4, .4, 1); }
+  #mathekingdom .rast .sanduhr { animation: mk-drehe 4s ease-in-out infinite; }
+  @keyframes mk-plopp { 0% { transform: scale(.4); } 60% { transform: scale(1.35); } 100% { transform: scale(1); } }
+  @keyframes mk-huepf { 0% { transform: translateY(6px); opacity: 0; } 60% { transform: translateY(-4px); opacity: 1; } 100% { transform: none; } }
+  @keyframes mk-stempel { 0% { transform: scale(1.8) rotate(-12deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
+  @keyframes mk-drehe { 0%, 40% { transform: rotate(0); } 50%, 90% { transform: rotate(180deg); } 100% { transform: rotate(360deg); } }
+}
