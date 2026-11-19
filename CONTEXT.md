@@ -381,12 +381,16 @@ Der Ordner eines Schuljahres im Mathekingdom-Ordner, benannt wie `2026-27`. Welc
 _Avoid_: Jahrgang
 
 **Administrator**:
-Eine Lehrkraft mit umfassenden Rechten: Sie legt Schuljahre, Klassen und Lehrkräfte (Kürzel) an, ordnet Lehrkräfte Klassen zu, wechselt das Schuljahr und erstellt die Startdateien. Sie sieht alles, auch Namen und Lernstände.
-_Avoid_: Admin (im Text für Nutzer), Schulleitung
+Eine Lehrkraft mit dem Administrator-Schlüssel und dem Administrator-Dashboard: Sie legt Schuljahre, Klassen, Lehrkräfte (Kürzel) und Schüler an und löscht sie, ordnet Lehrkräfte Klassen zu, wechselt das Schuljahr, erstellt die Startdateien, stellt Backups wieder her, liest Betriebsprotokoll und Nutzungsstatistik und betreut die Aufgaben. Lernstände sieht sie im Lehrer-Dashboard, in allen Klassen.
+_Avoid_: Admin (im Text für Nutzer), Schulleitung, Lehrkraft mit Einblick in alle Klassen
+
+**Einblick in alle Klassen**:
+Ein Recht, das der Administrator einer Lehrkraft gibt: Sie öffnet im Lehrer-Dashboard jede Klasse der Schule, mehr nicht. Administrator wird man nur mit einer Kopie der Schlüsseldatei.
+_Avoid_: Administratorrechte
 
 **Administrator-Dashboard**:
 Die dritte Anwendung neben Schüler- und Lehrer-Dashboard, nur für Administratoren. Mit ihr beginnt die Einrichtung.
-_Avoid_: Verwaltung (das ist ein Bereich im Lehrer-Dashboard)
+_Avoid_: Verwaltung, Klasse (das ist ein Bereich im Lehrer-Dashboard)
 
 **Kürzel**:
 Das Lehrerkürzel, mit dem der Administrator eine Lehrkraft anlegt; jede Lehrkraft hat einen eigenen Schlüssel.
@@ -405,7 +409,7 @@ Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Gru
 _Avoid_: Log, Verlauf
 
 **Betriebsprotokoll**:
-Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten; die Lehrkraft sieht es für die ganze Klasse als „Protokoll“ in der Verwaltung.
+Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten. Nur der Administrator sieht es, über alle Klassen und Lehrkräfte; die Lehrkraft sieht nur Warnungen, bei denen sie im Unterricht selbst handeln kann.
 _Avoid_: Log, Status, Fehlerliste
 
 **Schuljahreswechsel**:
@@ -428,9 +432,37 @@ _Avoid_: Lehrer-Klassendatei, Lehrerdaten (für diese Datei)
 Bis Version 0.20 die eine Datei der Lehrkraft mit allen Klassen (`lehrerdaten.json`); seit 0.21 nur noch Schlüssel und Betriebsprotokoll einer Lehrkraft (`Mathekingdom/<Kürzel>/lehrer.json`).
 _Avoid_: Lehrer-Klassendatei
 
+**Aufgabenkennung**:
+Die eindeutige Kennung einer Aufgabe im Aufgabenpool, etwa `5.3.1-K1-F-01`. Sie steht klein beim Schüler unten links und im Lehrer-Dashboard bei der Aufgabe, an der ein Schüler gerade sitzt.
+_Avoid_: Aufgaben-ID, Nummer
+
+**Aufgabenmeldung**:
+Der Hinweis einer Lehrkraft an den Administrator, dass eine Aufgabe fehlerhaft ist: Aufgabenkennung, Art (Lösung falsch, nicht lösbar, unklar formuliert, Bild falsch) und ein Satz. Der Administrator setzt sie auf offen, behoben oder kein Fehler und behebt die Aufgabe; die Lehrkraft sieht diesen Stand. Schüler melden nicht.
+_Avoid_: Support-Protokoll, Ticket, Fehlermeldung
+
+**Auffällige Aufgabe**:
+Eine Aufgabe, die über alle Klassen hinweg an ihren Zahlen auffällt, ohne dass jemand sie gemeldet hat: etwa viele gleiche falsche Antworten, die kein typischer Fehler sind, oder eine viel niedrigere Lösungsquote als die übrigen Aufgaben ihres Lernziels. Nur der Administrator sieht diese Liste, ohne Namen.
+_Avoid_: schwierige Aufgabe (das zeigt das Lehrer-Dashboard je Klasse)
+
 **Namensliste**:
 Die Zuordnung von Schülercodes zu echten Namen, Teil der Klassendaten.
 _Avoid_: Klassenliste (für die Datei)
+
+**Entfernen** (eines Schülers):
+Der Schüler verschwindet aus der Namensliste, sein Speicherstand bleibt liegen; das lässt sich rückgängig machen. Lehrkraft und Administrator dürfen das.
+_Avoid_: Löschen (für diesen Schritt)
+
+**Löschen** (eines Schülers):
+Speicherstand und seine Backups werden endgültig gelöscht, etwa bei Schulwechsel. Nur der Administrator darf das.
+_Avoid_: Entfernen (für diesen Schritt)
+
+**Klasse auflösen**:
+Die Klasse verschwindet aus dem Schulverzeichnis, ihre Ordner bleiben. Erst danach kann der Administrator die Daten der Klasse endgültig löschen.
+_Avoid_: Klasse löschen (für den ersten Schritt)
+
+**Nutzungsstatistik**:
+Zahlen zum Betrieb im Administrator-Dashboard, über alle Klassen und je Klasse: Starts, Versionen, Browser, technische Probleme, aktive Schüler, Alter des letzten Backups. Sie enthält keine Namen und keinen Lernstand; Lernstände sieht man im Lehrer-Dashboard.
+_Avoid_: Statistik (allein), Auswertung
 
 ## Ergänzungen zum Lehrer-Dashboard
 
@@ -445,7 +477,7 @@ _Avoid_: Klassenliste (für die Datei)
 - **Anforderungsbereich (AFB)**: Einordnung jeder Aufgabe in I (Reproduzieren), II (Zusammenhänge herstellen) oder III (Verallgemeinern und Reflektieren). Unabhängig von der Niveaustufe.
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
-- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
+- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Klasse (Schüler, Unterricht, Berichte; bis 0.21 „Verwaltung“). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
 - **Tafelbild**: Vollbild-Ansicht im Bereich Jetzt, die eine Aufgabe mit den häufigsten falschen Antworten der Klasse am Beamer zeigt, ohne Codes und Namen. Sie wird aus einem Mini-Workshop-Impuls geöffnet.
 - **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick oder im Seitenblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
 - **Hilfebedarf**: Wie oft ein Schüler bei einem Lernziel Beispiel- oder Lösungsschritt-Kärtchen braucht, und ob das mit der Zeit weniger wird.

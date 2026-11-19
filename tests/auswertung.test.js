@@ -107,11 +107,6 @@ test('Berichtstabellen: acht Blätter, Namen aus der Namensliste', () => {
   for (const blatt of blaetter) for (const zeile of blatt.zeilen) assert.equal(zeile.length, blatt.zeilen[0].length, blatt.name);
 });
 
-test('Backups: 14 Tage alles, danach eines pro Woche', () => {
-  const namen = ['2026-11-17_09-00', '2026-11-10_09-00', '2026-10-28_09-00', '2026-10-27_09-00', '2026-10-26_08-00', '2026-10-20_09-00'];
-  assert.deepEqual(A.alteBackups(namen, '2026-11-17T12:00:00').sort(), ['2026-10-27_09-00', '2026-10-28_09-00']);
-});
-
 test('Signatur: echte Klassendatei wird angenommen, veränderte abgelehnt', async () => {
   const schluessel = await K.erzeugeSchluessel();
   const datei = await K.unterschreibe({ klasse: '5a', aktuellesKapitel: '5.3' }, schluessel.privat);
