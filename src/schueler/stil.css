@@ -404,3 +404,20 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .aha-liste .funke { color: #b8860b; font-size: 1.1rem; }
 #mathekingdom .aha-liste small { display: block; color: #6b6255; margin-top: 2px; }
 #mathekingdom .aha-liste .marke-neu { font-size: .75rem; font-weight: 700; color: #1f6b43; }
+
+/* Sonderauftrag (ADR 0021): ein versiegelter Brief des Königs, der oben hereingleitet */
+#mathekingdom .brief { display: flex; gap: 16px; align-items: flex-start; max-width: 640px; margin: 12px auto 0; padding: 16px 20px; background: #fbf3dc;
+  border: 1px solid #d9bf7a; border-radius: 6px; box-shadow: 0 6px 18px rgba(58, 48, 41, .18); position: relative; }
+#mathekingdom .brief::before { content: ""; position: absolute; inset: 6px; border: 1px dashed #d9bf7a; border-radius: 4px; pointer-events: none; }
+#mathekingdom .brief .briefsiegel { flex: none; }
+#mathekingdom .brief h2 { margin: 2px 0 6px; font-family: var(--schrift-titel); }
+#mathekingdom .brief p { margin: 4px 0; }
+#mathekingdom .brief .briefsatz { font-style: italic; }
+#mathekingdom .brief .knoepfe { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; position: relative; }
+#mathekingdom .hilfebanner.brief-klein { background: #fbf3dc; border-bottom-color: #d9bf7a; }
+#mathekingdom .briefzeichen { font-size: 1.4em; color: var(--siegel); }
+#mathekingdom .marke.sonderauftragmarke { background: #fbf3dc; border-color: #d9bf7a; color: var(--siegel); }
+@media (prefers-reduced-motion: no-preference) {
+  #mathekingdom .brief.einflug { animation: mk-brief .7s cubic-bezier(.2, .9, .3, 1.15); }
+  @keyframes mk-brief { from { opacity: 0; transform: translateY(-140%) rotate(-6deg); } 60% { opacity: 1; } to { transform: none; } }
+}

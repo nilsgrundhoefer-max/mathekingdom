@@ -949,6 +949,63 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.waitForFunction(() => /gelesen/.test(document.querySelector('.overlay details.nachricht .marke.gut')?.textContent ?? ''), null, { timeout: 15000 });
   await lehrer.click('#overlay-zu');
 
+  // Sonderauftrag (ADR 0021): Die Lehrkraft stellt im Schülerprofil drei Aufgaben zusammen. Der Brief kommt nicht mitten in der Aufgabe,
+  // sondern nach dem Ergebnis. Am Ende gibt es 100 Münzen, und es geht zurück an den Meilenstein, an dem die Schülerin war.
+  await lehrer.click(`.sitzplan [data-schueler="${aylin}"]`);
+  await lehrer.click('.overlay details.sonderauftrag summary');
+  await lehrer.selectOption(`[data-sa-lernziel="${aylin}"]`, '5.4.1-K1');
+  await lehrer.selectOption(`[data-sa-anzahl="${aylin}"]`, '3');
+  assert.equal(await lehrer.locator('.overlay .sa-aufgaben li').count(), 3);
+  assert.equal(await lehrer.inputValue(`[data-sa-niveau="${aylin}"]`), 'G', 'vorbelegt eine Stufe unter dem Zielniveau M');
+  await lehrer.click('.overlay .sonderauftrag button:has-text("Das schaffst du!")');
+  await lehrer.locator('.overlay div.sonderauftrag').screenshot(bilder ? { path: `${bilder}/lehrer-sonderauftrag.png` } : {});
+  await lehrer.click(`[data-sa-senden="${aylin}"]`);
+  await warteAuf((k) => k.sonderauftraege?.[aylin]?.aufgaben.length === 3 && k.sonderauftraege[aylin].satz === 'Das schaffst du!');
+  await lehrer.waitForSelector('#sonderauftrag-stand');
+  assert.match(await lehrer.innerText('#sonderauftrag-stand'), /gesendet, noch nicht geöffnet/);
+  await lehrer.click('#overlay-zu');
+  const vorherAufgabe = await schueler.getAttribute('section.aufgabe', 'data-aufgabe');
+  await schueler.waitForTimeout(11000);
+  assert.equal(await schueler.locator('#brief').count(), 0, 'kein Brief mitten in einer Aufgabe');
+  await antworte(schueler, true);
+  await schueler.waitForSelector('#brief.einflug', { timeout: 15000 });
+  assert.match(await schueler.innerText('#brief'), /Sonderauftrag für dich[\s\S]*3 Aufgaben[\s\S]*100 Münzen[\s\S]*Das schaffst du!/);
+  await schueler.waitForTimeout(800);
+  await foto(schueler, 'schueler-brief');
+  await schueler.locator('#brief').screenshot(bilder ? { path: `${bilder}/brief.png` } : {});
+  await schueler.click('#brief-spaeter');
+  await schueler.waitForSelector('#brief-klein');
+  const muenzenVorher = JSON.parse(await lies(`5a/${aylin}.json`)).muenzen;
+  await schueler.click('#brief-oeffnen');
+  for (let i = 0; i < 3; i++) {
+    await schueler.waitForSelector('#sonderauftrag-marke');
+    assert.match(await schueler.innerText('#sonderauftrag-marke'), new RegExp(`Sonderauftrag ${i + 1} von 3`));
+    assert.equal(await schueler.locator('#brief, #brief-klein').count(), 0, 'kein Brief während des Auftrags');
+    if (i === 1) { await antworte(schueler, false); await schueler.waitForSelector('.hinweis'); await antworte(schueler, false); } else await antworte(schueler, true);
+    await schueler.waitForSelector('.ergebnis');
+    if (i < 2) await weiter(schueler);
+  }
+  await schueler.waitForSelector('#sonderauftrag-fertig');
+  assert.match(await schueler.innerText('#sonderauftrag-fertig'), /2 von 3 richtig[\s\S]*100 Münzen/);
+  await schueler.waitForTimeout(600);
+  await foto(schueler, 'schueler-sonderauftrag-fertig');
+  await weiter(schueler);
+  await schueler.waitForSelector('section.aufgabe:not(:has(#sonderauftrag-marke))');
+  const zurueckAufgabe = await schueler.getAttribute('section.aufgabe', 'data-aufgabe');
+  const msVon = (id) => pool.aufgaben.find((a) => a.id === id).lernziel.split('-')[0];
+  assert.equal(msVon(zurueckAufgabe), msVon(vorherAufgabe), 'zurück am selben Meilenstein');
+  assert.equal(await schueler.locator('#brief, #brief-klein').count(), 0);
+  for (let i = 0; i < 50 && !(JSON.parse(await lies(`5a/${aylin}.json`)).sonderauftraege ?? []).length; i++) await lehrer.waitForTimeout(100);
+  const nachher = JSON.parse(await lies(`5a/${aylin}.json`));
+  assert.equal(nachher.sonderauftraege.length, 1);
+  assert.ok(nachher.muenzen >= muenzenVorher + 100);
+  assert.equal(nachher.versuche.filter((v) => v.sonderauftrag).length, 3);
+  await lehrer.waitForSelector(`[data-sa-erledigt="${aylin}"]`, { timeout: 15000 });
+  assert.match(await lehrer.innerText(`[data-sa-erledigt="${aylin}"]`), /2 von 3 Aufgaben/);
+  await lehrer.click(`[data-sa-erledigt="${aylin}"] button:has-text("Ansehen")`);
+  assert.match(await lehrer.innerText('#sonderauftrag-stand'), /erledigt[\s\S]*2 von 3 richtig/);
+  await lehrer.click('#overlay-zu');
+
   // Station sperren: Die Schülerin sieht das Schloss und kann dort nichts starten. Öffnen macht es rückgängig.
   await lehrer.click('[data-tab=lernstand]');
   await lehrer.click('summary:has-text("Meilensteine öffnen und sperren")');

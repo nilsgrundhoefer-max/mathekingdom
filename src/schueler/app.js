@@ -58,6 +58,7 @@ function male() {
     z.stand && (fokus ? fokusKopf() : kopf()),
     z.stand && hilfeBanner(),
     z.stand && nachrichtBanner(),
+    z.stand && briefBanner(),
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
     !fokus && versionsHinweis('schueler'),
@@ -90,7 +91,7 @@ if (typeof document !== 'undefined') {
 
 // Schmale Kopfzeile im Fokus-Modus: Wappen als Weg zurück, das laufende Wegstück und eine Speicherwarnung nur im Fehlerfall.
 function zurueckVon(a) {
-  if (a.name === 'aufgabe' && !a.rueckblick) {
+  if (a.name === 'aufgabe' && !a.rueckblick && !a.sonderauftrag) {
     if (a.einstieg) return { text: 'Regionskarte', tun: () => zeige({ name: 'region', kapitel: a.einstieg }) };
     const ms = meilensteinVon(a.aufgabe);
     return { text: ms.titel, tun: () => zeige({ name: 'region', kapitel: L.kapitelVon(a.aufgabe.lernziel), milestone: ms.id }) };
@@ -159,6 +160,97 @@ function nachrichtBanner() {
   return h('div', { class: 'hilfebanner nachricht', role: 'status' }, h('span', {}, h('b', {}, 'Nachricht von deiner Lehrkraft: '), n.text),
     h('button', { class: 'schlicht', id: 'nachricht-ok', onclick: (e) => { z.stand.gelesen = n.t; geaendert(); z.dienst.sofort(); e.target.closest('.hilfebanner').remove(); } }, 'Verstanden'));
 }
+// ---------- Sonderauftrag (ADR 0021) ----------
+// Ein Brief des Königs: nie mitten in einer Aufgabe, beim ersten Mal groß, danach klein oben, bis der Auftrag erledigt ist.
+const offenerAuftrag = () => L.offenerSonderauftrag(z.stand, z.einst.sonderauftrag);
+function briefErlaubt() {
+  const a = z.ansicht;
+  if (['anmeldung', 'minispiel', 'heftcheck'].includes(a.name)) return false;
+  return a.name !== 'aufgabe' || (Boolean(a.ergebnis) && !a.sonderauftrag);
+}
+function briefBanner() {
+  const sa = offenerAuftrag();
+  if (!sa || !briefErlaubt()) return null;
+  const oeffnen = () => {
+    const zurueck = rueckkehrPunkt(), a = z.ansicht;
+    const los = () => starteSonderauftrag(zurueck);
+    if (a.name === 'aufgabe') danach(a, los)(); else los();
+  };
+  const knopf = h('button', { class: 'haupt', id: 'brief-oeffnen', onclick: oeffnen }, sa.geoeffnet ? 'Weitermachen' : 'Öffnen');
+  if (sa.geoeffnet || z.briefSpaeter?.has(sa.id)) {
+    return h('div', { class: 'hilfebanner brief-klein', id: 'brief-klein', role: 'status' },
+      h('span', { class: 'briefzeichen', 'aria-hidden': 'true' }, '✉'),
+      h('span', {}, h('b', {}, 'Sonderauftrag: '), `noch ${sa.offen} von ${sa.gesamt} ${sa.gesamt === 1 ? 'Aufgabe' : 'Aufgaben'}, danach ${L.SONDERAUFTRAG_BONUS} Münzen.`), knopf);
+  }
+  const einflug = z.briefGezeigt !== sa.id;
+  z.briefGezeigt = sa.id;
+  return h('div', { class: `brief${einflug ? ' einflug' : ''}`, id: 'brief', role: 'status' },
+    h('div', { class: 'briefsiegel' }, siegel(44)),
+    h('div', { class: 'brieftext' },
+      h('span', { class: 'klein' }, 'Ein Brief des Königs'),
+      h('h2', {}, 'Ein Sonderauftrag für dich'),
+      h('p', {}, `${sa.gesamt} Aufgaben zu „${lernzielText(sa.lernziel)}“. Wenn du alle bearbeitet hast, bekommst du ${L.SONDERAUFTRAG_BONUS} Münzen dazu.`),
+      sa.satz && h('p', { class: 'briefsatz' }, h('b', {}, 'Deine Lehrkraft schreibt: '), `„${sa.satz}“`),
+      h('div', { class: 'knoepfe' }, knopf,
+        h('button', { class: 'schlicht', id: 'brief-spaeter', onclick: () => { (z.briefSpaeter ??= new Set()).add(sa.id); male(); } }, 'Später'))));
+}
+// Wohin es nach dem Sonderauftrag zurückgeht: an das Lernziel, an dem der Schüler gerade war, sonst auf seine Karte.
+function rueckkehrPunkt() {
+  const a = z.ansicht;
+  if (a.name === 'aufgabe') {
+    if (a.seitenblick) return { lernziel: a.seitenblick.zurueck };
+    if (a.einstieg) return { kapitel: a.einstieg };
+    if (!a.rueckblick && !a.bruecke && !a.heftNachloesen) return { lernziel: a.aufgabe.lernziel };
+    return null;
+  }
+  if (a.name === 'region') return { kapitel: a.kapitel, ...(a.milestone && { milestone: a.milestone }) };
+  if (a.name === 'wegstueck' && a.kapitel) return { kapitel: a.kapitel };
+  return null;
+}
+function kehreZurueck(r) {
+  if (r?.lernziel && z.index.lernziel.has(r.lernziel)) {
+    const kap = L.kapitelVon(r.lernziel), n = L.arbeitsniveau(z.stand, kap, z.einst.zielniveau), ms = z.index.meilensteinVon.get(r.lernziel);
+    const lz = z.stand.lernziele[r.lernziel] && ms ? L.naechstesLernziel(z.index, z.stand, ms, n)?.id ?? r.lernziel : r.lernziel;
+    z.ansicht = { name: 'region', kapitel: kap, ...(ms && { milestone: ms.id }) };
+    return starteAufgabe(lz, n);
+  }
+  if (r?.kapitel) return zeige({ name: 'region', kapitel: r.kapitel, ...(r.milestone && { milestone: r.milestone }) });
+  zeige({ name: 'schlossgarten' });
+}
+function starteSonderauftrag(zurueck = null) {
+  const auftrag = z.einst.sonderauftrag;
+  if (!auftrag || !L.oeffneSonderauftrag(z.stand, auftrag, zurueck, jetzt())) return zeige({ name: 'schlossgarten' });
+  geaendert(); z.dienst.sofort();
+  let id = L.naechsteSonderauftragAufgabe(z.stand, auftrag);
+  // Fehlt eine Aufgabe im Pool (neue Version), wird sie übersprungen.
+  while (id && !z.index.aufgabe.has(id)) {
+    const r = L.trageSonderauftragEin(z.stand, auftrag, { id }, false, jetzt());
+    if (r?.fertig) return kehreZurueck(r.zurueck);
+    id = L.naechsteSonderauftragAufgabe(z.stand, auftrag);
+  }
+  if (!id) return zeige({ name: 'schlossgarten' });
+  zeigeAufgabe(z.index.aufgabe.get(id), { sonderauftrag: auftrag.id });
+}
+function sonderauftragNummer(a, fertig) {
+  const sa = offenerAuftrag();
+  if (sa?.geoeffnet) return `Sonderauftrag ${Math.min(sa.gesamt, sa.erledigt + (fertig ? 0 : 1))} von ${sa.gesamt}`;
+  const g = a.ergebnis?.sonderauftrag?.gesamt;
+  return g ? `Sonderauftrag ${g} von ${g}` : 'Sonderauftrag';
+}
+function sonderauftragErgebnis(a) {
+  const e = a.ergebnis, auf = a.aufgabe, r = e.sonderauftrag;
+  return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
+    urteilZeile(e, auf, 'Schau sie dir in Ruhe an.'),
+    heftHinweis(e),
+    !e.richtig && soGehtEs(auf),
+    e.neuesLernziel && h('div', { class: 'moment', id: 'neues-siegel' }, siegel(48), h('div', {}, h('b', {}, 'Lernziel erreicht!'), h('p', {}, 'Du bekommst ein Siegel.'))),
+    r?.fertig && h('div', { class: 'moment', id: 'sonderauftrag-fertig' }, siegel(48),
+      h('div', {}, h('b', {}, 'Sonderauftrag erfüllt!'), h('p', {}, `${r.richtig} von ${r.gesamt} richtig. Der König schickt dir `, muenze(18), h('b', {}, ` ${r.bonus} Münzen`), '.'))),
+    !r ? h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => zeige({ name: 'schlossgarten' })) }, 'Zum Schlossgarten')
+      : r.fertig ? h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => kehreZurueck(r.zurueck)) }, 'Zurück auf deinen Weg')
+        : h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => starteSonderauftrag()) }, 'Nächste Aufgabe im Sonderauftrag'));
+}
+
 function hilfeBanner() {
   if (!z.stand.hilferuf) {
     return z.hilfeErledigt ? h('div', { class: 'hilfebanner erledigt', role: 'status' }, h('span', {}, 'Deine Lehrkraft hat deinen Hilferuf als erledigt abgehakt.')) : null;
@@ -240,6 +332,7 @@ async function melde({ code, klasse, pin }, ablage) {
   z.dienst.markiere(); z.dienst.sofort();
   // Hat die Lehrkraft das Zielniveau gesenkt, kommen die Siegel jetzt dazu. Weggenommen wird nie etwas (ADR 0012).
   if (L.trageSiegelNach(z.stand, z.index, einst.zielniveau, jetzt())) { z.dienst.markiere(); z.dienst.sofort(); }
+  if (L.gleicheSonderauftragAb(z.stand, einst.sonderauftrag)) z.dienst.markiere();
   // Vorgaben der Lehrkraft alle 10 Sekunden lesen. Wartet der Schüler auf Hilfe, alle 3 Sekunden,
   // und sofort, wenn er zum Fenster zurückkehrt (im Hintergrund bremst der Browser die Uhr).
   let schlag = 0;
@@ -260,10 +353,11 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste, e.sonderauftrag?.id]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
+    if (L.gleicheSonderauftragAb(z.stand, z.einst.sonderauftrag)) geaendert(); // zurückgezogen oder ersetzt
     const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
     let neu = vorher !== bild(z.einst);
     if (ruf && antwort?.zu === ruf.seit && antwort.status === 'erledigt') {
@@ -285,8 +379,8 @@ async function takt() {
     if (neu && !['aufgabe', 'minispiel'].includes(z.ansicht.name)) male();
     else if (neu) {
       // Mitten in einer Aufgabe nur die Banner austauschen.
-      wurzel.querySelectorAll('.hilfebanner').forEach((b) => b.remove());
-      wurzel.querySelector('.kopf').after(...[hilfeBanner(), nachrichtBanner()].filter(Boolean));
+      wurzel.querySelectorAll('.hilfebanner, .brief').forEach((b) => b.remove());
+      wurzel.querySelector('.kopf').after(...[hilfeBanner(), nachrichtBanner(), briefBanner()].filter(Boolean));
     }
     // In der Aufgabe erscheint der Knopf für einen neuen Hilferuf wieder, ohne die Eingabe zu verlieren.
     if (neu && z.ansicht.name === 'aufgabe' && !z.stand.hilferuf && !wurzel.querySelector('#hilferuf')) wurzel.querySelector('aside.hilfen')?.replaceWith(hilfen(z.ansicht));
@@ -566,7 +660,7 @@ function starteAufgabe(lernzielId, niveau) {
 }
 function zeigeAufgabe(aufgabe, extra = {}) {
   // Heftcheck vor der nächsten Aufgabe, nicht mitten im Rückblick und nicht beim Nachlösen.
-  if (!extra.rueckblick && !extra.heftNachloesen && !extra.einstieg && !extra.bruecke) {
+  if (!extra.rueckblick && !extra.heftNachloesen && !extra.einstieg && !extra.bruecke && !extra.sonderauftrag) {
     const frage = L.heftcheckFrage(z.stand, z.index);
     if (frage) return zeige({ name: 'heftcheck', frage, danach: { aufgabe, extra }, gewaehlt: null });
   }
@@ -584,7 +678,7 @@ function aufgabenAnsicht() {
   const meilenstein = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
   const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
   // Eine F-Aufgabe beim Üben am Meilenstein gehört zur Grundlagen-Schleife, außer das Ziel des Kindes ist F (ADR 0015).
-  const grundlage = !a.rueckblick && !a.bruecke && !a.einstieg && !a.seitenblick && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
+  const grundlage = !a.rueckblick && !a.bruecke && !a.sonderauftrag && !a.einstieg && !a.seitenblick && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
   const training = !grundlage && L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
   const punkte = grundlage ? (L.inGrundlage(z.stand, auf.lernziel) ? L.grundlageRichtige(z.stand, auf.lernziel) : L.GRUNDLAGE_RICHTIGE) : st.erreicht ? 3 : st.fortschritt;
   const fertig = Boolean(a.ergebnis);
@@ -602,6 +696,7 @@ function aufgabenAnsicht() {
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
         a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
+        a.sonderauftrag && h('span', { class: 'marke sonderauftragmarke', id: 'sonderauftrag-marke' }, '✉ ', sonderauftragNummer(a, fertig)),
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
           : grundlage ? h('span', { class: 'marke grundlagenmarke', id: 'grundlage-marke' }, 'Grundlage')
           : h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
@@ -724,9 +819,10 @@ function pruefe(formular, sicher = null) {
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
     hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000), ...(a.sicher != null && { sicher: a.sicher }) },
-  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick), bruecke: Boolean(a.bruecke), seitenblick: Boolean(a.seitenblick) });
+  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick), bruecke: Boolean(a.bruecke), seitenblick: Boolean(a.seitenblick), sonderauftrag: a.sonderauftrag ?? null });
   if (a.rueckblick) buchung.rueckblick = L.trageRueckblickEin(z.stand, auf, ergebnis.richtig, jetzt());
   if (a.bruecke) buchung.bruecke = L.trageBrueckeEin(z.stand, auf, ergebnis.richtig, jetzt());
+  if (a.sonderauftrag) buchung.sonderauftrag = L.trageSonderauftragEin(z.stand, z.einst.sonderauftrag, auf, ergebnis.richtig, jetzt());
   if (zaehltFuerWegstueck(a)) buchung.wegstueck = L.trageWegstueckEin(z.stand, auf, { richtig: ergebnis.richtig, muenzen: buchung.muenzen, seitenblick: Boolean(a.seitenblick) }, jetzt());
   // „Du kannst mehr, als du denkst“ (ADR 0017): nach „unsicher“ und richtig, höchstens einmal je Wegstück.
   if (zaehltFuerWegstueck(a)) buchung.mut = L.mutSatzFaellig(z.stand);
@@ -807,6 +903,7 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
   if (a.rueckblick) return rueckblickErgebnis(a);
   if (a.einstieg) return einstiegErgebnis(a);
   if (a.bruecke) return brueckeErgebnis(a, meilenstein);
+  if (a.sonderauftrag) return sonderauftragErgebnis(a);
   if (a.seitenblick) return seitenblickErgebnis(a, meilenstein);
   const e = a.ergebnis, auf = a.aufgabe;
   const niveau = L.arbeitsniveau(z.stand, kapitelId, z.einst.zielniveau);
