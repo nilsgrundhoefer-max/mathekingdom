@@ -1288,6 +1288,15 @@ async function weiter(seite, wahl = '#weiter') {
   const lehrer = await kontext.newPage();
   lehrer.on('pageerror', (e) => fehler.push(`lehrer: ${e.message}`));
   lehrer.on('dialog', (dlg) => dlg.accept());
+  // Wie die Schulrichtlinie: Skriptdateien dürfen nicht geschrieben werden (Version 0.29).
+  await lehrer.addInitScript(() => {
+    const echt = FileSystemFileHandle.prototype.createWritable;
+    FileSystemFileHandle.prototype.createWritable = async function (...a) {
+      const strom = await echt.apply(this, a);
+      if (this.name.endsWith('.js')) strom.close = async () => { await strom.abort(); throw new DOMException('Aborted due to security policy', 'AbortError'); };
+      return strom;
+    };
+  });
   await lehrer.goto(`${basis}test/Lehrer-NG.html`);
   await lehrer.waitForSelector('#wahl-schueler');
   assert.match(await lehrer.innerText('main'), /Dein Kürzel: NG/);
@@ -1301,6 +1310,8 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(await lehrer.innerText('h1'), /Klasse 5a/);
   assert.ok(await lies(lehrer, 'L/Mathekingdom/_mathekingdom/lehrer-kopie.txt'));
   assert.ok(await lies(lehrer, 'S/Mathekingdom/_mathekingdom/schueler-kopie.txt'));
+  // Im Schulbetrieb keine Kopie mehr im Klassenordner (seit 0.29).
+  assert.ok(!(await lies(lehrer, `S/Mathekingdom/${jahr}/5a/_mathekingdom/schueler-dashboard.js`).catch(() => null)));
   await lehrer.click('[data-tab="klasse"]');
   await lehrer.waitForSelector('#codes');
   // Backup und Protokoll gibt es mit Schulverzeichnis nur im Administrator-Dashboard.
