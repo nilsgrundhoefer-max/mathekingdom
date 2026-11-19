@@ -357,16 +357,44 @@ Die Version, die die Startdateien gerade laden. Er ändert sich nur, wenn die Le
 _Avoid_: Live-Version, Produktion
 
 **Lehrerlaufwerk**:
-Das persönliche Netzlaufwerk der Lehrkraft; nur sie hat Zugriff.
+Das persönliche Netzlaufwerk einer Lehrkraft; nur sie hat Zugriff. Hier liegt der private Schlüssel des Administrators.
 _Avoid_: Lehrer-PC (für Daten)
+
+**Lehrertauschlaufwerk**:
+Das gemeinsame Netzlaufwerk aller Lehrkräfte der Schule; Schüler haben keinen Zugriff. Hier liegen Lehrerdaten und Backups im Mathekingdom-Ordner.
+_Avoid_: Lehrerlaufwerk (für das gemeinsame), Share
 
 **Schülerlaufwerk**:
 Das persönliche Netzlaufwerk eines Schülers, auf dem seine Startdatei liegt.
 _Avoid_: Home-Laufwerk
 
-**Klassenlaufwerk**:
-Das gemeinsame Netzlaufwerk einer Klasse, auf das alle Schüler der Klasse schreiben dürfen.
-_Avoid_: Tauschlaufwerk, Share
+**Schülertauschlaufwerk**:
+Das gemeinsame Netzlaufwerk aller Schüler der Schule, auf dem alle Schüler und Lehrkräfte lesen und schreiben. Hier liegen die Klassenordner im Mathekingdom-Ordner.
+_Avoid_: Klassenlaufwerk, Share
+
+**Mathekingdom-Ordner**:
+Der Ordner `Mathekingdom` auf dem Schülertauschlaufwerk und auf dem Lehrertauschlaufwerk, darin je ein Schuljahresordner und darin die Klassen. Er wird einmal gewählt und danach im Browser gemerkt.
+_Avoid_: Wurzel, Basisordner
+
+**Schuljahresordner**:
+Der Ordner eines Schuljahres im Mathekingdom-Ordner, benannt wie `2026-27`. Welches Schuljahr gilt, legt der Administrator fest.
+_Avoid_: Jahrgang
+
+**Administrator**:
+Eine Lehrkraft mit umfassenden Rechten: Sie legt Schuljahre, Klassen und Lehrkräfte (Kürzel) an, ordnet Lehrkräfte Klassen zu, wechselt das Schuljahr und erstellt die Startdateien. Sie sieht alles, auch Namen und Lernstände.
+_Avoid_: Admin (im Text für Nutzer), Schulleitung
+
+**Administrator-Dashboard**:
+Die dritte Anwendung neben Schüler- und Lehrer-Dashboard, nur für Administratoren. Mit ihr beginnt die Einrichtung.
+_Avoid_: Verwaltung (das ist ein Bereich im Lehrer-Dashboard)
+
+**Kürzel**:
+Das Lehrerkürzel, mit dem der Administrator eine Lehrkraft anlegt; jede Lehrkraft hat einen eigenen Schlüssel.
+_Avoid_: Lehrer-ID, Login
+
+**Schulverzeichnis**:
+Die vom Administrator unterschriebene Datei im Mathekingdom-Ordner des Schülertauschlaufwerks: aktuelles Schuljahr, Klassen und die Schlüssel der Lehrkräfte jeder Klasse. Die Startdatei vertraut nur dem Administrator und über das Schulverzeichnis den Lehrkräften.
+_Avoid_: Konfiguration, schule.json (im Gespräch)
 
 **Speicherstand**:
 Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernstand und sein Versuchsprotokoll enthält.
@@ -385,7 +413,7 @@ Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münze
 _Avoid_: Versetzung, Reset
 
 **Klassenordner**:
-Der Ordner einer Klasse auf dem Klassenlaufwerk, in dem die Speicherstände der Schüler liegen.
+Der Ordner einer Klasse im Schuljahresordner auf dem Schülertauschlaufwerk (z. B. `Mathekingdom/2026-27/5a`), in dem die Speicherstände der Schüler liegen.
 _Avoid_: Laufwerk, Share
 
 **Klassendatei**:
