@@ -297,3 +297,25 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .wegreihe i.leer { background: transparent; border-color: #9e2f28; }
 #mathekingdom-lehrer .wegreihe small { font-size: .7rem; color: var(--grau); }
 #konzentration-karte .schalter { margin-right: 22px; }
+
+/* Lernen sichtbar machen (ADR 0017) */
+.zelle.gefestigt { background: #164d31; color: #f5d76e; font-weight: 800; }
+#mathekingdom-lehrer button.zelle.gefestigt { color: #f5d76e; }
+.zelle.fv-aktiv { background: #c8553d; color: #fff; font-weight: 800; }
+.zelle.fv-ueberwunden { background: #2a7a50; color: #fff; font-weight: 700; }
+.zelle.fv-nie { background: #ece9e2; color: #6b7280; }
+.zlegende .zelle, .balkenliste .zelle { display: inline-grid; place-items: center; width: 22px; height: 20px; border-radius: 4px; font-style: normal; font-size: .78rem; vertical-align: middle; }
+#mathekingdom-lehrer .umschalter { display: inline-flex; flex-wrap: wrap; gap: 0; border: 1px solid #b9bfcc; border-radius: 8px; overflow: hidden; background: #fff; }
+#mathekingdom-lehrer .umschalter button { border: 0; border-radius: 0; border-right: 1px solid #d9d4c7; background: #fff; color: var(--nacht); padding: 5px 12px; font-size: .88rem; }
+#mathekingdom-lehrer .umschalter button:last-child { border-right: 0; }
+#mathekingdom-lehrer .umschalter button[aria-pressed="true"] { background: var(--nacht); color: #fff; font-weight: 600; }
+#mathekingdom-lehrer .filterleiste { margin: 4px 0 12px; }
+#mathekingdom-lehrer .filtergruende { margin-top: 8px; padding: 8px 12px; background: var(--hell); border-radius: 8px; }
+#mathekingdom-lehrer .filtergruende .liste { margin: 0; }
+#mathekingdom-lehrer .fehlerspalten { margin: 10px 0 6px; padding-left: 22px; columns: 2 360px; }
+#mathekingdom-lehrer .fehlerspalten li { break-inside: avoid; margin-bottom: 2px; }
+#mathekingdom-lehrer .trend.weniger { color: var(--gut); font-weight: 600; }
+#mathekingdom-lehrer .trend.mehr { color: var(--schlecht); font-weight: 600; }
+#mathekingdom-lehrer .diskrepanz { background: var(--hell); border-left: 4px solid var(--gold); padding: 8px 12px; border-radius: 6px; }
+#mathekingdom-lehrer .verlauf-tabelle td.eingabe { font-family: Consolas, "Courier New", monospace; white-space: nowrap; }
+#mathekingdom-lehrer .verlauf-tabelle tr.falsch td:nth-child(6) { color: var(--schlecht); font-weight: 600; }

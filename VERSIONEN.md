@@ -6,6 +6,22 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.12 vom 19.11.2026
+
+### Schüler
+
+- Kommst du bei einem Lernziel zum ersten Mal ohne Beispiel und Lösungsschritt aus, sagt dir das Ergebnis Bescheid.
+- Warst du unsicher und hattest trotzdem recht, liest du ab und zu: Du kannst mehr, als du denkst.
+- Löst du ein Lernziel mehr als eine Woche nach dem Siegel im Rückblick oder Seitenblick richtig, steht am Meilenstein „gefestigt“ daneben.
+
+### Lehrkraft
+
+- Lernen sichtbar machen (ADR 0017): Neben dem Siegel gibt es den Lernzielstand „gefestigt“ (★), wenn das Lernziel mindestens 7 Tage nach dem Siegel im Rückblick oder Seitenblick richtig gelöst wurde.
+- Lernstand: Die Heatmap lässt sich auf „nach Fehlvorstellungen“ umschalten. Jede Spalte ist ein typischer Fehler, jede Zelle aktiv oder überwunden (danach drei Aufgaben desselben Lernziels ohne ihn richtig).
+- Lernstand: Filter über der Heatmap: „Braucht viel Hilfe“ (Beispiel oder Lösungsschritt in mindestens der Hälfte der letzten 10 Aufgaben eines Lernziels), „Überschätzt sich“ und „Unterschätzt sich“, jeweils mit Grund.
+- Lernziel-Seite: Hilfebedarf je Schüler mit Trend von der ersten zur zweiten Hälfte der Aufgaben.
+- Schüler-Seite: Versuchsverlauf der letzten 20 Aufgaben mit erstem und zweitem Versuch, typische Fehler mit „überwunden“, Hilfebedarf je Lernziel und ein Hinweis, wenn die Einschätzung nicht passt.
+
 ## 0.11 vom 19.11.2026
 
 ### Schüler

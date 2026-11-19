@@ -319,7 +319,9 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
   // Grundlagen-Schleife (ADR 0015): nur beim Üben am Meilenstein und nur, wenn das Ziel nicht ohnehin F ist.
   const grundlage = !rueckblick && !bruecke && !seitenblick && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
-  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage };
+  // Erstmals ohne Beispiel und Lösungsschritt (ADR 0017): nur beim Üben am Meilenstein.
+  const ohneHilfe = !rueckblick && !bruecke && !seitenblick && erstmalsOhneHilfe(stand);
+  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe };
 }
 
 // ---------- Rückblick (ADR 0014) ----------
@@ -767,4 +769,80 @@ export function einstellungen(klassendatei, code, pool) {
     gesperrteMeilensteine: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([meilenstein]) => meilenstein)),
     codeBekannt: k.codes ? k.codes.includes(code) : true,
   };
+}
+
+// ---------- Lernen sichtbar machen (ADR 0017) ----------
+// Alles wird aus dem Versuchsprotokoll berechnet; der Speicherstand merkt sich nur, welcher Satz schon gezeigt wurde.
+export const FESTIGUNG_TAGE = 7;     // so viele Tage nach dem Siegel festigt eine richtige Lösung im Rückblick oder Seitenblick
+export const UEBERWUNDEN_NACH = 3;   // so viele richtige Aufgaben desselben Lernziels ohne die Fehlvorstellung
+export const HILFE_FENSTER = 10;     // Hilfebedarf: die letzten 10 Aufgaben eines Lernziels
+export const HILFE_MIN = 4;          // „braucht viel Hilfe“ erst ab 4 Aufgaben
+export const HILFE_TREND_AB = 6;     // Trend erste gegen zweite Hälfte ab 6 Aufgaben
+export const HILFE_TREND_SCHRITT = 0.2;
+// Beispiel und Lösungsschritt zählen als Hilfe. Der Tipp nicht, weil er sich auf F, G und M von selbst öffnet.
+export const brauchteHilfe = (v) => hatKarte(v, 'beispiel') || hatKarte(v, 'loesungsschritt');
+
+// Gefestigt: Siegel vorhanden, nicht aufzufrischen, und mindestens 7 Tage nach dem Siegel im Rückblick oder Seitenblick richtig gelöst.
+export function istGefestigt(stand, lernzielId) {
+  const s = stand.lernziele?.[lernzielId];
+  if (!s || stand.rueckblick?.[lernzielId]?.aufzufrischen) return false;
+  const ab = new Date(s.erreichtAm).getTime() + FESTIGUNG_TAGE * TAG_MS;
+  return stand.versuche.some((v) => v.lernziel === lernzielId && v.richtig && (v.rueckblick || v.seitenblick) && new Date(v.t).getTime() >= ab);
+}
+
+// Fehlvorstellungen eines Schülers mit ihrem Zustand, in der Reihenfolge des ersten Auftretens:
+// [{ fehlvorstellung, anzahl, lernziel, zuletzt, status: 'aktiv' | 'ueberwunden', ueberwundenAm }]
+// Überwunden nach drei richtigen Aufgaben desselben Lernziels ohne sie; taucht sie wieder auf, ist sie wieder aktiv.
+// ueberwundenAm bleibt beim ersten Mal stehen: Daraus wird später der Aha-Moment des Schülers.
+export function fehlvorstellungsStand(versuche) {
+  const je = new Map();
+  for (const v of [...versuche].sort((a, b) => String(a.t).localeCompare(String(b.t)))) {
+    const eigene = v.fehlvorstellungen ?? [];
+    for (const e of je.values()) {
+      if (e.status !== 'aktiv' || e.lernziel !== v.lernziel || !v.richtig || eigene.includes(e.fehlvorstellung)) continue;
+      if (++e.sauber >= UEBERWUNDEN_NACH) { e.status = 'ueberwunden'; e.ueberwundenAm ??= v.t; }
+    }
+    for (const f of eigene) {
+      const e = je.get(f) ?? { fehlvorstellung: f, anzahl: 0, ueberwundenAm: null };
+      Object.assign(e, { anzahl: e.anzahl + 1, lernziel: v.lernziel, zuletzt: v.t, status: 'aktiv', sauber: 0 });
+      je.set(f, e);
+    }
+  }
+  return [...je.values()].map(({ sauber, ...e }) => e);
+}
+
+// Hilfebedarf bei einem Lernziel: Wie oft Beispiel oder Lösungsschritt, und wird es mit der Zeit weniger?
+// trend: 'weniger' | 'gleich' | 'mehr' | null (unter 6 Aufgaben)
+export function hilfebedarf(stand, lernzielId) {
+  const v = stand.versuche.filter((x) => x.lernziel === lernzielId && !x.einstieg);
+  const anteilMit = (liste) => (liste.length ? liste.filter(brauchteHilfe).length / liste.length : 0);
+  const letzte = v.slice(-HILFE_FENSTER);
+  const mitHilfe = letzte.filter(brauchteHilfe).length;
+  let vorher = null, nachher = null, trend = null;
+  if (v.length >= HILFE_TREND_AB) {
+    const mitte = Math.floor(v.length / 2);
+    vorher = anteilMit(v.slice(0, mitte)); nachher = anteilMit(v.slice(mitte));
+    trend = nachher <= vorher - HILFE_TREND_SCHRITT ? 'weniger' : nachher >= vorher + HILFE_TREND_SCHRITT ? 'mehr' : 'gleich';
+  }
+  return { bearbeitet: v.length, letzte: letzte.length, mitHilfe, viel: letzte.length >= HILFE_MIN && mitHilfe * 2 >= letzte.length, vorher, nachher, trend };
+}
+
+// Kommt der Schüler bei diesem Lernziel zum ersten Mal ohne Beispiel und Lösungsschritt aus, nachdem er sie gebraucht hat?
+// Prüft den zuletzt verbuchten Versuch.
+export function erstmalsOhneHilfe(stand) {
+  const v = stand.versuche.at(-1);
+  if (!v || !v.richtig || v.einstieg || brauchteHilfe(v)) return false;
+  const vorher = stand.versuche.slice(0, -1).filter((x) => x.lernziel === v.lernziel && !x.einstieg);
+  return vorher.some(brauchteHilfe) && !vorher.some((x) => x.richtig && !brauchteHilfe(x));
+}
+
+// „Du kannst mehr, als du denkst“: nach „unsicher“ und im ersten Versuch richtig, höchstens einmal je Wegstück.
+// Merkt sich das Wegstück im Speicherstand. Aufruf nach trageWegstueckEin.
+export function mutSatzFaellig(stand) {
+  const v = stand.versuche.at(-1);
+  if (!v || v.sicher !== false || !v.richtig || v.versuche !== 1) return false;
+  const wegstueck = stand.wegstueck?.t ?? stand.wegstuecke?.at(-1)?.t ?? null;
+  if (!wegstueck || stand.mutSatz === wegstueck) return false;
+  stand.mutSatz = wegstueck;
+  return true;
 }

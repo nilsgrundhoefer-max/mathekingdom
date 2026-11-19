@@ -522,9 +522,10 @@ function meilensteinTafel(kapitel, meilenstein, niveau) {
       // Die Punkte zeigen den Weg zur Krone, um die der Schüler gerade spielt. Das Siegel gibt es fürs Zielniveau.
       const st = L.lernzielStand(z.stand, l.id, niveau, z.index);
       const erreicht = Boolean(z.stand.lernziele[l.id]);
-      return h('li', { class: erreicht ? 'erreicht' : '' },
+      const fest = erreicht && L.istGefestigt(z.stand, l.id);
+      return h('li', { class: `${erreicht ? 'erreicht' : ''}${fest ? ' gefestigt' : ''}` },
         siegel(24, erreicht),
-        h('span', { class: 'text' }, l.text),
+        h('span', { class: 'text' }, l.text, fest && h('span', { class: 'fest', title: 'Auch nach mehr als einer Woche noch gewusst.' }, 'gefestigt')),
         h('span', { class: 'punkte', title: `${st.erreicht ? 3 : st.fortschritt} von ${L.LERNZIEL_RICHTIGE} für ${L.KRONEN[niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < (st.erreicht ? 3 : st.fortschritt) ? 'voll' : '' }))),
         h('button', { class: 'schlicht', onclick: () => starteAufgabe(l.id, niveau) }, erreicht ? 'Weiter üben' : 'Üben'));
     })),
@@ -720,6 +721,8 @@ function pruefe(formular, sicher = null) {
   if (a.rueckblick) buchung.rueckblick = L.trageRueckblickEin(z.stand, auf, ergebnis.richtig, jetzt());
   if (a.bruecke) buchung.bruecke = L.trageBrueckeEin(z.stand, auf, ergebnis.richtig, jetzt());
   if (zaehltFuerWegstueck(a)) buchung.wegstueck = L.trageWegstueckEin(z.stand, auf, { richtig: ergebnis.richtig, muenzen: buchung.muenzen, seitenblick: Boolean(a.seitenblick) }, jetzt());
+  // „Du kannst mehr, als du denkst“ (ADR 0017): nach „unsicher“ und richtig, höchstens einmal je Wegstück.
+  if (zaehltFuerWegstueck(a)) buchung.mut = L.mutSatzFaellig(z.stand);
   if (ergebnis.richtig && z.einst.ton) klinge(buchung.wegstueck?.fertig || buchung.neuesLernziel ? 'gross' : 'klein');
   buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
@@ -769,8 +772,13 @@ function soGehtEs(auf) {
 // Erste Zeile des Ergebnisses: richtig mit Münzen oder falsch mit Lösung.
 function urteilZeile(e, auf, nachsatz) {
   return e.richtig
-    ? h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'))
+    ? h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e))
     : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd())];
+}
+// Ein kurzer Satz in der Urteilszeile, wenn sich am Lernen etwas zeigt (ADR 0017). Höchstens einer, damit es zwei Zeilen bleiben.
+function lernsatz(e) {
+  const text = e.ohneHilfe ? 'Diesmal ganz ohne Beispiel und Lösungsschritt!' : e.mut ? 'Du warst unsicher, aber es stimmt. Du kannst mehr, als du denkst.' : null;
+  return text && h('small', { class: 'lernsatz', id: e.ohneHilfe ? 'ohne-hilfe' : 'mut-satz' }, text);
 }
 // Siegel, Krone und Meilenstein bekommen einen kurzen eigenen Moment, immer nur der wichtigste.
 function moment(e, meilenstein) {
