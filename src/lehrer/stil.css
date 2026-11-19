@@ -356,3 +356,9 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .tabelle.tore td.einzeln { background: #fff3cf; }
 #mathekingdom-lehrer .tabelle.tore .punkt { color: #9a6a1f; font-weight: 700; margin-left: 2px; }
 #mathekingdom-lehrer .tabelle.tore input:disabled { opacity: .55; }
+/* Abschnitte im Bereich Klasse und Klassenauswahl in der Kopfzeile (ADR 0025) */
+#mathekingdom-lehrer .abschnitte { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+#mathekingdom-lehrer .abschnitte button { background: #fff; color: var(--nacht); border: 1px solid var(--rand); border-radius: 999px; padding: 6px 16px; }
+#mathekingdom-lehrer .abschnitte button.aktiv { background: var(--nacht); color: #fff; border-color: var(--nacht); font-weight: 700; }
+#mathekingdom-lehrer .kopf select.klassenwahl { font: inherit; padding: 4px 8px; border-radius: 6px; }
+#mathekingdom-lehrer button.gefahr { color: #a12a1f; border-color: #e3b3ad; }

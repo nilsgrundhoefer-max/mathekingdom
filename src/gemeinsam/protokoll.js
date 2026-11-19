@@ -65,8 +65,9 @@ export function sammle(staende, lehrerEintraege, klasse, name) {
 
 const ART = { start: 'Start', problem: 'PROBLEM', ok: 'wieder ok' };
 // Für die Weitergabe, etwa an die Schul-IT: Schüler erscheinen nur mit Code, nie mit Namen.
+// Ohne Klasse (Administrator-Dashboard) steht die Klasse in jeder Zeile.
 export function alsText(eintraege, klasse, jetzt) {
   const zeit = (t) => new Date(t).toLocaleString('de-DE');
-  return [`Mathekingdom, Betriebsprotokoll der Klasse ${klasse}, erstellt ${zeit(jetzt)}`, '',
-    ...eintraege.map((e) => `${zeit(e.t)}\t${e.code ?? e.wer}\t${ART[e.art] ?? e.art}\t${e.text}`)].join('\r\n');
+  return [`Mathekingdom, Betriebsprotokoll ${klasse ? `der Klasse ${klasse}` : 'aller Klassen'}, erstellt ${zeit(jetzt)}`, '',
+    ...eintraege.map((e) => [zeit(e.t), ...(klasse ? [] : [e.klasse ?? '–']), e.code ?? e.wer, ART[e.art] ?? e.art, e.text].join('\t'))].join('\r\n');
 }

@@ -10,6 +10,7 @@ import { beispielklasse } from './beispiel.js';
 import { NIVEAU_FARBE } from '../schueler/bilder.js';
 import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
 import * as P from '../gemeinsam/protokoll.js';
+import * as B from '../gemeinsam/backup.js';
 import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 
@@ -133,7 +134,11 @@ async function oeffneSchule(schueler, lehrer, kuerzel) {
     .catch((f) => notiere('problem', `Kopie des Dashboards aufs Lehrertauschlaufwerk fehlgeschlagen: ${f.message}`));
   if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/schueler.js`, window.MK_SCHUELER_JS)
     .catch((f) => notiere('problem', `Kopie des Schüler-Dashboards aufs Schülertauschlaufwerk fehlgeschlagen: ${f.message}`));
-  z.ansicht = 'klassen'; z.fehler = null; male();
+  z.ansicht = 'klassen'; z.fehler = null;
+  // Die Liste der Klassen braucht nur, wer mehrere hat (ADR 0025).
+  const meine = SCH.klassenDerLehrkraft(z.schule.verzeichnis, z.schule.schuljahr, kuerzel);
+  if (meine.length === 1) return oeffneSchulklasse(meine[0]);
+  male();
 }
 async function ladeVerzeichnisNeu() {
   const v = await SCH.ladeVerzeichnis(z.schule.schueler, window.MK_SCHLUESSEL);
@@ -182,8 +187,9 @@ async function oeffneKlasse(klasse, ablage) {
   await speichereDaten();
   await inSchlange(schreibeKlassendatei);
   await lade();
-  // Im Unterricht zuerst der Raum, sonst der Lernstand. Ohne Namensliste die Verwaltung.
-  z.tab = !Object.keys(kl().namen).length ? 'verwaltung' : A.jemandAktiv(z.staende, jetzt()) ? 'jetzt' : 'lernstand';
+  // Im Unterricht zuerst der Raum, sonst der Lernstand. Ohne Namensliste der Bereich Klasse.
+  if (!Object.keys(kl().namen).length) z.abschnitt = 'schueler';
+  z.tab = !Object.keys(kl().namen).length ? 'klasse' : A.jemandAktiv(z.staende, jetzt()) ? 'jetzt' : 'lernstand';
   clearInterval(takt);
   const frisch = async () => {
     const vorher = z.warnungen.length, vorherOffen = z.andereOffen.join();
@@ -261,7 +267,8 @@ async function pruefeKlassendatei() {
       // sind eben schon neu gelesen. Nur eine ältere Fassung (wieder eingespielt) wird überschrieben.
       if (echt.stand >= (K.liesUngeprueft(z.klassendateiText)?.stand ?? '')) { z.klassendateiText = liegt; liegtNeu = true; }
     } else if (!echt) {
-      z.warnungen.unshift(`${uhr(Date.now())} Uhr: Die Klassendatei ${liegt ? 'wurde von außen verändert' : 'fehlte'}. Sie wurde wiederhergestellt.`);
+      // Mit Schulverzeichnis geht das nur ins Betriebsprotokoll für den Administrator: Die Lehrkraft kann nichts tun (ADR 0025).
+      if (!z.schule) z.warnungen.unshift(`${uhr(Date.now())} Uhr: Die Klassendatei ${liegt ? 'wurde von außen verändert' : 'fehlte'}. Sie wurde wiederhergestellt.`);
       notiere('problem', liegt ? 'Klassendatei von außen verändert (Unterschrift passt nicht), wiederhergestellt' : 'Klassendatei fehlte im Klassenordner, neu geschrieben', z.klasse);
     } else if (echt.stand > (K.liesUngeprueft(z.klassendateiText)?.stand ?? '') && !z.zweitesGemeldet) {
       z.zweitesGemeldet = true;
@@ -284,23 +291,15 @@ async function pruefeKlassendatei() {
 const backupOrdner = async () => (z.schule ? (await klasseImLehrerlaufwerk()).unterordner('backup') : (await z.lehrer.unterordner('backup')).unterordner(z.klasse));
 async function sichere() {
   if (!z.staende.length) return;
-  const d = new Date(), zwei = (n) => String(n).padStart(2, '0');
-  const stempel = `${d.getFullYear()}-${zwei(d.getMonth() + 1)}-${zwei(d.getDate())}_${zwei(d.getHours())}-${zwei(d.getMinutes())}`;
-  const alle = await backupOrdner(), ziel = await alle.unterordner(stempel);
-  for (const { code, roh } of [...z.staende, ...z.unbekannt]) await ziel.schreibe(`${code}.json`, roh);
-  await ziel.schreibe(S.KLASSENDATEI, z.klassendateiText ?? '');
-  if (z.schule) await ziel.schreibe(SCH.KLASSE_DATEI, JSON.stringify(kl()));
-  else await ziel.schreibe(LEHRERDATEN, JSON.stringify(z.daten));
-  for (const alt of A.alteBackups(await alle.ordnernamen(), d)) await alle.entferne(alt);
+  const d = new Date();
+  await B.sichereKlasse({ klassenordner: z.ordner, backupOrdner: await backupOrdner(), staende: [...z.staende, ...z.unbekannt], jetzt: d,
+    zusatz: z.schule ? { [SCH.KLASSE_DATEI]: JSON.stringify(kl()) } : { [LEHRERDATEN]: JSON.stringify(z.daten) } });
   z.letztesBackup = Date.now();
   kl().letztesBackup = d.toISOString();
   await speichereDaten();
 }
 async function stelleWiederHer(stempel, code) {
-  const quelle = await (await backupOrdner()).unterordner(stempel);
-  const stand = JSON.parse(await quelle.lies(`${code}.json`));
-  stand.geaendert = jetzt(); // damit ältere Sicherungen im Browser des Schülers nicht gewinnen
-  await z.ordner.schreibe(`${code}.json`, JSON.stringify(stand));
+  await B.stelleStandWiederHer({ backupOrdner: await backupOrdner(), stempel, code, klassenordner: z.ordner });
   await lade();
   z.warnungen.unshift(`${uhr(Date.now())} Uhr: Speicherstand von ${name(code)} aus dem Backup ${stempel} wiederhergestellt.`);
   male();
@@ -329,6 +328,16 @@ function ladeStartdatei() {
 }
 
 // ---------- Rahmen ----------
+// Zwischen den eigenen Klassen oben wechseln (ADR 0025). Ohne Schulverzeichnis zurück zur Liste.
+function klassenwahl() {
+  if (!z.schule) return h('button', { class: 'schlicht hell', onclick: () => { clearInterval(takt); z.ansicht = 'klassen'; male(); } }, 'Klasse wechseln');
+  const meine = SCH.klassenDerLehrkraft(z.schule.verzeichnis, z.schule.schuljahr, z.schule.kuerzel);
+  if (meine.length < 2) return null;
+  return h('select', { class: 'klassenwahl', id: 'klassenwahl', 'aria-label': 'Klasse wechseln', onchange: (ev) => {
+    clearInterval(takt);
+    oeffneSchulklasse(ev.target.value).catch((e) => { z.fehler = `Die Klasse ${ev.target.value} ließ sich nicht öffnen: ${e.message}`; male(); });
+  } }, meine.map((k) => h('option', { value: k, selected: k === z.klasse }, `Klasse ${k}`)));
+}
 function male() {
   const ansichten = { start, klassen, klasse: klassenAnsicht };
   const gerollt = wurzel.querySelector('.overlay-inhalt')?.scrollTop;
@@ -337,7 +346,7 @@ function male() {
       z.lehrer?.demo && h('span', { class: 'demo' }, 'Beispieldaten: nichts wird gespeichert'),
       z.schule && h('span', { class: 'demo' }, `${z.schule.kuerzel} · Schuljahr ${z.schule.schuljahr}`),
       z.ansicht === 'klasse' && z.andereOffen.length > 0 && h('span', { class: 'demo', id: 'andere-offen' }, `Auch ${z.andereOffen.join(' und ')} ${z.andereOffen.length > 1 ? 'haben' : 'hat'} die Klasse gerade offen`),
-      z.ansicht === 'klasse' && h('button', { class: 'schlicht hell', onclick: () => { clearInterval(takt); z.ansicht = 'klassen'; male(); } }, 'Klasse wechseln')),
+      z.ansicht === 'klasse' && klassenwahl()),
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
     h('main', {}, ansichten[z.ansicht]()),
     z.ansicht === 'klasse' && z.overlay && kl().namen[z.overlay] && overlay(),
@@ -447,7 +456,7 @@ function klassenSchule() {
   const oeffne = (k) => oeffneSchulklasse(k).catch((e) => { z.fehler = `Die Klasse ${k} ließ sich nicht öffnen: ${e.message}`; male(); });
   return h('section', { class: 'karte schmal' },
     h('h1', {}, 'Deine Klassen'),
-    h('p', { class: 'klein' }, `Schuljahr ${jahr}. ${v.lehrkraefte?.[z.schule.kuerzel]?.admin ? 'Als Administrator siehst du alle Klassen.' : 'Klassen legt der Administrator an und ordnet sie dir zu.'}`),
+    h('p', { class: 'klein' }, `Schuljahr ${jahr}. ${v.lehrkraefte?.[z.schule.kuerzel]?.admin ? 'Du hast Einblick in alle Klassen.' : 'Klassen legt der Administrator an und ordnet sie dir zu.'}`),
     meine.length ? h('ul', { class: 'klassenliste' }, meine.map((k) => h('li', {}, h('b', {}, k), h('span', {}, (v.klassen[jahr][k].lehrkraefte ?? []).join(', ') || 'keine Lehrkraft'),
       h('button', { class: 'haupt', 'data-klasse': k, onclick: () => oeffne(k) }, 'Öffnen')))) : h('p', {}, 'Dir ist in diesem Schuljahr noch keine Klasse zugeordnet.'),
     h('button', { class: 'schlicht', id: 'verzeichnis-neu', onclick: async () => { await ladeVerzeichnisNeu(); male(); } }, 'Neu laden'));
@@ -455,10 +464,10 @@ function klassenSchule() {
 
 // ---------- Klasse ----------
 // Vier Bereiche statt vieler Reiter (ADR 0010). Jeder Bereich geht beim Anklicken in die Tiefe.
-const BEREICHE = [['jetzt', 'Jetzt'], ['lernstand', 'Lernstand'], ['aufgaben', 'Aufgaben'], ['verwaltung', 'Verwaltung']];
+const BEREICHE = [['jetzt', 'Jetzt'], ['lernstand', 'Lernstand'], ['aufgaben', 'Aufgaben'], ['klasse', 'Klasse']];
 function klassenAnsicht() {
   const e = kl().einst;
-  const inhalte = { jetzt: bereichJetzt, lernstand, aufgaben: aufgabenTab, verwaltung };
+  const inhalte = { jetzt: bereichJetzt, lernstand, aufgaben: aufgabenTab, klasse: bereichKlasse };
   return h('div', {},
     h('div', { class: 'leiste' },
       h('h1', {}, `Klasse ${z.klasse}`),
@@ -476,7 +485,7 @@ function klassenAnsicht() {
       h('span', { class: 'klein rechts', id: 'aktualisiert' }, z.aktualisiert ? `Aktualisiert um ${z.aktualisiert.toLocaleTimeString('de-DE')}` : '')),
     z.warnungen.length > 0 && h('div', { class: 'meldung warnung' }, h('ul', {}, z.warnungen.slice(0, 4).map((w) => h('li', {}, w))),
       h('button', { class: 'schlicht', onclick: () => { z.warnungen = []; male(); } }, 'Gelesen')),
-    h('nav', { class: 'tabs bereiche' }, BEREICHE.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; if (id === 'lernstand') z.ls = { art: 'klasse' }; if (id === 'verwaltung') z.backups = null; male(); } }, titel))),
+    h('nav', { class: 'tabs bereiche' }, BEREICHE.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; if (id === 'lernstand') z.ls = { art: 'klasse' }; if (id === 'klasse') z.backups = null; male(); } }, titel))),
     inhalte[z.tab]());
 }
 
@@ -732,7 +741,7 @@ function bereichJetzt() {
   return h('div', {},
     akutZone(status),
     impulse(),
-    alleCodes().length > 0 ? sitzplanKarte(status) : h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Verwaltung“ die Namensliste an.')),
+    alleCodes().length > 0 ? sitzplanKarte(status) : h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Klasse“ die Namensliste an.')),
     z.unbekannt.length > 0 && h('div', { class: 'meldung warnung' }, `Im Klassenordner liegen Speicherstände mit Codes, die nicht in deiner Namensliste stehen: ${z.unbekannt.map((u) => u.code).join(', ')}.`));
 }
 
@@ -854,7 +863,7 @@ const kurzname = (l) => `${l.milestone} ${l.id.split('-').pop()}`;
 const angemeldet = () => alleCodes().map((code) => ({ code, stand: z.staende.find((x) => x.code === code)?.stand })).filter((x) => x.stand);
 
 function lernstand() {
-  if (alleCodes().length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Verwaltung“ die Namensliste an.'));
+  if (alleCodes().length === 0) return h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Klasse“ die Namensliste an.'));
   const ls = (z.ls ??= { art: 'klasse' });
   const pfad = ls.art !== 'klasse' && h('nav', { class: 'brotkrumen', 'aria-label': 'Ebene' },
     h('button', { class: ls.art === 'klasse' ? 'aktiv' : 'link', onclick: () => gehe({ art: 'klasse' }) }, `Klasse ${z.klasse}`),
@@ -1363,8 +1372,9 @@ function klassenbericht() {
     h('ul', { class: 'klein' }, lernziele.map((l) => h('li', {}, `${l.id.split('-').pop()} (${l.milestone}): ${l.text}`))));
 }
 
-// ---------- Verwaltung: Klasse und Codes, Berichte, Backup ----------
-function verwaltung() {
+// ---------- Bereich Klasse (ADR 0025): Schüler, Unterricht, Berichte ----------
+// Backup und Betriebsprotokoll gehören zum Administrator-Dashboard. Nur ohne Schulverzeichnis (bis 0.20) gibt es sie hier noch.
+function schuelerAbschnitt() {
   const liste = h('textarea', { id: 'namen', rows: 6, placeholder: 'Ein Name pro Zeile, zum Beispiel:\nLena Müller\nTim Schmidt' });
   const codes = Object.keys(kl().namen).sort((a, b) => name(a).localeCompare(name(b), 'de'));
   return h('div', {},
@@ -1382,6 +1392,12 @@ function verwaltung() {
           for (const n of liste.value.split('\n').map((x) => x.trim()).filter(Boolean)) k.namen[A.erzeugeCode(z.klasse, [...Object.keys(k.namen), ...z.alleCodes])] = n;
         }) }, 'Codes erzeugen'),
         codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
+    h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
+      h('p', {}, z.schule ? 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie ist für alle Schüler der Schule gleich und enthält den öffentlichen Schlüssel des Administrators. Normalerweise verteilt sie der Administrator.' : 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
+      h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')));
+}
+function unterrichtAbschnitt() {
+  return h('div', {},
     toreKarte(),
     expeditionKarte(),
     einstiegKarte(),
@@ -1397,17 +1413,25 @@ function verwaltung() {
       h('p', { class: 'klein' }, 'Die Bestenliste gibt es nur in den Belohnungsspielen: die besten fünf der Klasse in dieser Woche, mit Wappen und einem Beinamen aus festen Bausteinen, nie mit Namen. Jeder Schüler kann sich ausblenden. Weil die Schüler ihren Speicherstand selbst schreiben, ist ein Bestwert nicht fälschungssicher.'),
       h('label', { class: 'schalter' }, h('input', { id: 'bestenliste', type: 'checkbox', checked: kl().einst.bestenliste !== false, onchange: (ev) => aendere((k) => { k.einst.bestenliste = ev.target.checked; }) }), ' Bestenliste zeigen'),
       h('p', { class: 'klein' }, 'Hoftitel: Die fünf Besten des Schuljahrs nach Kronen und Siegeln sehen oben in ihrer Kopfzeile einen Titel mit Symbol (Klassenkönig, Herzog, Graf, Ritter, Knappe). Die Mitschüler sehen ihn nicht. Wer gerade welchen Titel trägt, steht im Lernstand.'),
-      h('label', { class: 'schalter' }, h('input', { id: 'hoftitel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Hoftitel zeigen')),
-    h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
-      h('p', {}, z.schule ? 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie ist für alle Schüler der Schule gleich und enthält den öffentlichen Schlüssel des Administrators. Normalerweise verteilt sie der Administrator.' : 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
-      h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),
+      h('label', { class: 'schalter' }, h('input', { id: 'hoftitel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Hoftitel zeigen')));
+}
+function berichteAbschnitt() {
+  return h('div', {},
     h('section', { class: 'karte' }, h('h2', {}, 'Berichte'),
       h('p', { class: 'klein' }, 'Den Diagnosebericht eines einzelnen Schülers findest du auf seiner Seite im Lernstand.'),
       h('div', { class: 'reihe' },
         h('button', { class: 'schlicht', id: 'excel', onclick: exportiereExcel }, 'Rohdaten als Excel-Datei'),
-        h('button', { class: 'schlicht', id: 'pdf', onclick: () => drucke(klassenbericht()) }, 'Klassenbericht als PDF'))),
-    sicherung(),
-    protokollKarte());
+        h('button', { class: 'schlicht', id: 'pdf', onclick: () => drucke(klassenbericht()) }, 'Klassenbericht als PDF'))));
+}
+// Ohne Schulverzeichnis gibt es keinen Administrator: Backup und Protokoll bleiben dann bei der Lehrkraft.
+const sicherungAbschnitt = () => h('div', {}, sicherung(), protokollKarte());
+const ABSCHNITTE = [['schueler', 'Schüler', schuelerAbschnitt], ['unterricht', 'Unterricht', unterrichtAbschnitt], ['berichte', 'Berichte', berichteAbschnitt], ['sicherung', 'Backup und Protokoll', sicherungAbschnitt]];
+function bereichKlasse() {
+  const abschnitte = ABSCHNITTE.filter(([id]) => id !== 'sicherung' || !z.schule);
+  const aktiv = abschnitte.find(([id]) => id === z.abschnitt) ?? abschnitte[0];
+  return h('div', {},
+    h('nav', { class: 'abschnitte' }, abschnitte.map(([id, titel]) => h('button', { class: aktiv[0] === id ? 'aktiv' : '', 'data-abschnitt': id, onclick: () => { z.abschnitt = id; z.backups = null; male(); } }, titel))),
+    aktiv[2]());
 }
 
 // ---------- Einstiegscheck (ADR 0014) ----------
@@ -1536,7 +1560,7 @@ function protokollKarte() {
 // ---------- Backup ----------
 function sicherung() {
   if (z.backups === null) {
-    // Nur diesen Teil nachzeichnen, damit angefangene Eingaben in der Verwaltung stehen bleiben.
+    // Nur diesen Teil nachzeichnen, damit angefangene Eingaben stehen bleiben.
     const platz = h('section', { class: 'karte' }, h('p', {}, 'Lade Backups …'));
     backupOrdner().then((o) => o.ordnernamen()).then((n) => { z.backups = n.sort().reverse(); if (platz.isConnected) platz.replaceWith(sicherung()); });
     return platz;

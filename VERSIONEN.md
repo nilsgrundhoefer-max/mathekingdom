@@ -6,6 +6,21 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.22 vom 19.11.2026
+
+### Schüler
+
+- Für dich ändert sich nichts.
+
+### Lehrkraft
+
+- Lehrer-Dashboard aufgeräumt (ADR 0025): Der Bereich „Verwaltung“ heißt jetzt „Klasse“ und hat drei Abschnitte: Schüler (Namensliste, neue PIN, Zielniveau, Code-Kärtchen, Startdatei), Unterricht (Tore, Expedition, Einstiegscheck, Sicherheitsangabe, Rast und Ton, Spiele, Bestenliste, Hoftitel) und Berichte.
+- Hast du mehrere Klassen, wechselst du oben in der Kopfzeile. Mit nur einer Klasse öffnet sie sich gleich nach dem Start.
+- Backup und Betriebsprotokoll sind ins Administrator-Dashboard gezogen. Das Lehrer-Dashboard sichert weiter stündlich im Hintergrund. Warnungen siehst du nur noch, wenn du selbst etwas tun kannst, etwa ein zweites offenes Dashboard schließen.
+- Je Klasse bleiben höchstens fünf Backups: der neueste und je der letzte der vier Tage davor, an denen gesichert wurde.
+- Administrator-Dashboard in vier Bereichen: Übersicht (was jetzt Aufmerksamkeit braucht), Schule, Klassen und Lehrkräfte, Betrieb (Backups und Betriebsprotokoll aller Klassen). Neu sind dort: Klasse auflösen und ihre Daten löschen, Schüler endgültig löschen, neue PIN, Lehrkraft löschen (ihre Klassendateien werden dabei neu unterschrieben), Backups jeder Klasse sichern und einzeln oder ganz wiederherstellen.
+- „Administratorrechte“ einer Lehrkraft heißen jetzt „Einblick in alle Klassen“.
+
 ## 0.21 vom 19.11.2026
 
 ### Schüler

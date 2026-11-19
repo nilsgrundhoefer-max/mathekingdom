@@ -548,19 +548,6 @@ export function grundlagenHinweise(staende, index) {
   return liste;
 }
 
-export function alteBackups(namen, jetzt, tage = 14) {
-  const zeit = (n) => new Date(`${n.slice(0, 10)}T${n.slice(11, 13)}:${n.slice(14, 16)}:00`);
-  const grenze = new Date(jetzt).getTime() - tage * 86400000;
-  const woche = (d) => { const t = new Date(d); t.setHours(0, 0, 0, 0); t.setDate(t.getDate() - ((t.getDay() + 6) % 7)); return t.getTime(); };
-  const behalten = new Set(), wochen = new Set();
-  for (const n of [...namen].sort()) {
-    const d = zeit(n);
-    if (Number.isNaN(d.getTime()) || d.getTime() >= grenze) { behalten.add(n); continue; }
-    if (!wochen.has(woche(d))) { wochen.add(woche(d)); behalten.add(n); }
-  }
-  return namen.filter((n) => !behalten.has(n));
-}
-
 // ---------- Lernen sichtbar machen (ADR 0017) ----------
 // Fehlvorstellungen, die in den Aufgaben der gegebenen Lernziele hinterlegt sind (typische Fehler und Auswahl-Antworten).
 export function fehlvorstellungenZu(pool, lernzielIds) {
