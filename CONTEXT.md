@@ -102,19 +102,23 @@ Die Niveaustufe, auf der ein Schüler Lernziele nachweisen muss; Standard M, von
 _Avoid_: Leistungsstufe, Einstufung
 
 **Jahresplan**:
-Die Folge der Kapitel einer Klassenstufe über das Schuljahr; alle Kapitel bis zum aktuellen Kapitel sind freigeschaltet.
+Die Folge der Kapitel einer Klassenstufe über das Schuljahr, in der Reihenfolge des Lehrwerks. Welche Kapitel offen sind, bestimmt allein die Torfreigabe, nicht die Reihenfolge.
 _Avoid_: Lernpfad (für diese Ebene), Stoffverteilungsplan
 
 **Aktuelles Kapitel**:
 Das Kapitel, das die Lehrkraft für eine Klasse gerade als laufendes Thema gesetzt hat.
 _Avoid_: aktuelles Thema
 
+**Torfreigabe**:
+Die Entscheidung der Lehrkraft, dass ein Kapitel für eine Klasse oder zusätzlich für einzelne Schüler offen ist. Sie gilt in beliebiger Reihenfolge und kann zurückgenommen werden; Siegel, Kronen und Münzen bleiben dabei erhalten. Für einzelne Schüler kann die Lehrkraft Tore nur zusätzlich öffnen, nie ein Klassentor schließen. Eine neue Klasse hat nur Tor 1 offen.
+_Avoid_: Freischaltung, Kapitelsperre
+
 **Lernpfad**:
 Der Weg durch die Unterkapitel eines einzelnen Kapitels.
 _Avoid_: Kurs, Weg, Themenbereich
 
 **Schlossgarten**:
-Die Übersicht aller Kapitel einer Klassenstufe: der Ausgangsort in der Mitte des Königreichs, mit einem Gartentor für jede Region. Hinter jedem Tor liegt die Regionskarte. Gesperrte Kapitel haben ein geschlossenes Tor.
+Die Übersicht aller Kapitel einer Klassenstufe: der Ausgangsort in der Mitte des Königreichs, mit einem Gartentor für jede Region. Hinter jedem Tor liegt die Regionskarte. Der Schüler sieht nur die Tore, die für ihn freigegeben sind, mit der Nummer des Kapitels im Lehrwerk; nicht freigegebene Tore fehlen ganz, nur ein Satz sagt, dass weitere folgen.
 _Avoid_: Reichskarte, Weltkarte, Jahresplan (für die Ansicht)
 
 **Regionskarte**:

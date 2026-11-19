@@ -393,28 +393,36 @@ function einstellungenJetzt() {
 }
 
 // ---------- Schlossgarten ----------
-// Ausgangsort in der Mitte des Königreichs: ein Gartentor je Kapitel, dahinter die Regionskarte.
+// Ausgangsort in der Mitte des Königreichs: ein Gartentor je freigegebenem Kapitel, dahinter die Regionskarte.
+// Nicht freigegebene Tore fehlen ganz; die Nummer ist die des Kapitels im Lehrwerk (ADR 0022).
 function schlossgarten() {
   z.einst = einstellungenJetzt();
+  const neu = L.neueTore(z.stand, z.einst.offeneKapitel);
+  if (neu.length) { z.toreNeu = new Set(neu); L.merkeToreGesehen(z.stand, neu); geaendert(); }
+  const offene = z.pool.kapitel.map((k, i) => ({ k, nr: i + 1 })).filter(({ k }) => z.einst.offeneKapitel.has(k.id));
+  const verborgen = offene.length < z.pool.kapitel.length;
+  const neuTitel = offene.filter(({ k }) => z.toreNeu?.has(k.id)).map(({ k }) => k.titel);
   return h('section', {},
+    neuTitel.length > 0 && h('div', { class: 'karte neues-tor', id: 'neues-tor', role: 'status' },
+      h('p', {}, h('strong', {}, neuTitel.length === 1 ? 'Ein neues Tor hat sich geöffnet: ' : 'Neue Tore haben sich geöffnet: '), neuTitel.join(', '))),
     etappenKarte(),
     rueckblickKarte(),
     brueckeKarte(),
     expeditionKarte(),
     h('div', { class: 'schlosskopf' }, schlossBild(),
       h('h1', {}, 'Der Schlossgarten'),
-      h('p', { class: 'unter' }, `Klasse ${z.pool.klassenstufe}: Hinter jedem Tor liegt eine Region des Königreichs. Wähle ein offenes Tor und erkunde die Region.`)),
-    h('ol', { class: 'regionen' }, z.pool.kapitel.map((k, i) => {
-      const offen = z.einst.offeneKapitel.has(k.id);
+      h('p', { class: 'unter' }, `Klasse ${z.pool.klassenstufe}: Hinter jedem Tor liegt eine Region des Königreichs. Wähle ein Tor und erkunde die Region.`)),
+    h('ol', { class: 'regionen' }, offene.map(({ k, nr }) => {
       const mit = k.unterkapitel.filter((u) => L.milestoneStatus(z.index, z.stand, u) !== 'leer');
       const gemeistert = mit.filter((u) => L.milestoneStatus(z.index, z.stand, u) === 'gemeistert').length;
-      return h('li', {}, h('button', { class: `region ${offen ? '' : 'gesperrt'}`, disabled: !offen, 'data-kapitel': k.id, onclick: () => zeige({ name: 'region', kapitel: k.id }) },
-        gartentor(offen),
-        h('span', { class: 'nummer' }, `Tor ${i + 1}`),
+      return h('li', {}, h('button', { class: `region${z.toreNeu?.has(k.id) ? ' neu' : ''}`, 'data-kapitel': k.id, onclick: () => zeige({ name: 'region', kapitel: k.id }) },
+        gartentor(true),
+        h('span', { class: 'nummer' }, `Tor ${nr}`),
         h('span', { class: 'titel' }, k.titel),
         k.id === z.einst.aktuellesKapitel && h('span', { class: 'marke' }, 'Aktuelles Kapitel'),
-        h('span', { class: 'stand' }, !offen ? 'Tor noch geschlossen' : mit.length === 0 ? 'Aufgaben folgen' : `${gemeistert} von ${mit.length} Meilensteinen gemeistert`)));
-    })));
+        h('span', { class: 'stand' }, mit.length === 0 ? 'Aufgaben folgen' : `${gemeistert} von ${mit.length} Meilensteinen gemeistert`)));
+    })),
+    verborgen && h('p', { class: 'klein weitere-tore', id: 'weitere-tore' }, 'Weitere Tore öffnet deine Lehrkraft, wenn es so weit ist.'));
 }
 
 // Startseite: Wo stehe ich, was tue ich jetzt? Ein Tipp führt direkt zur nächsten Aufgabe.
@@ -578,6 +586,9 @@ function wortspeicher(meilenstein, a) {
 
 // ---------- Regionskarte ----------
 function regionsAnsicht() {
+  z.toreNeu = null; // Die Ankündigung neuer Tore gilt nur bis zum ersten Gang durch ein Tor.
+  // Hat die Lehrkraft das Tor inzwischen geschlossen, geht es zurück in den Schlossgarten (ADR 0022).
+  if (!z.einst.offeneKapitel.has(z.ansicht.kapitel)) { z.ansicht = { name: 'schlossgarten', seit: Date.now() }; return schlossgarten(); }
   const kapitel = z.pool.kapitel.find((k) => k.id === z.ansicht.kapitel);
   const niveau = L.arbeitsniveau(z.stand, kapitel.id, z.einst.zielniveau);
   const zu = z.einst.gesperrteMeilensteine;

@@ -6,6 +6,17 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.18 vom 19.11.2026
+
+### Schüler
+
+- Im Schlossgarten siehst du nur die Tore, die deine Lehrkraft schon geöffnet hat. Ein neues Tor wird dir beim nächsten Start einmal angekündigt und leuchtet kurz auf.
+
+### Lehrkraft
+
+- Torfreigabe (ADR 0022): In der Verwaltung unter „Tore“ hakst du an, welche Kapitel die Klasse sieht, in beliebiger Reihenfolge. Einzelnen Schülern kannst du zusätzlich Tore öffnen. Nicht freigegebene Tore fehlen bei den Schülern ganz. Ein Tor wieder zu schließen nimmt niemandem Siegel, Kronen oder Münzen.
+- Wenn du ein Aktuelles Kapitel wählst, öffnet sich sein Tor für die Klasse mit. „Alle Kapitel offen“ ist jetzt der Knopf „Alle Tore öffnen“. Eine neue Klasse beginnt mit Tor 1; bestehende Klassen behalten die Tore, die bisher offen waren.
+
 ## 0.17 vom 19.11.2026
 
 ### Schüler

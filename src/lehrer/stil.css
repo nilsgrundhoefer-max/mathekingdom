@@ -347,3 +347,12 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .sa-aufgaben li::marker { font-weight: 600; }
 #mathekingdom-lehrer .sa-stand p { margin: 4px 0; }
 #mathekingdom-lehrer .warnhinweis { color: #8a5a00; }
+/* Torfreigabe (ADR 0022) */
+#mathekingdom-lehrer .tabelle.tore th small { font-weight: 400; color: #666; display: block; max-width: 9em; white-space: normal; line-height: 1.2; }
+#mathekingdom-lehrer .tabelle.tore td { text-align: center; }
+#mathekingdom-lehrer .tabelle.tore tbody th { text-align: left; white-space: nowrap; }
+#mathekingdom-lehrer .tabelle.tore .klassenzeile { background: #f3efe4; }
+#mathekingdom-lehrer .tabelle.tore .zaehler { display: block; font-size: .72rem; color: #666; white-space: nowrap; }
+#mathekingdom-lehrer .tabelle.tore td.einzeln { background: #fff3cf; }
+#mathekingdom-lehrer .tabelle.tore .punkt { color: #9a6a1f; font-weight: 700; margin-left: 2px; }
+#mathekingdom-lehrer .tabelle.tore input:disabled { opacity: .55; }

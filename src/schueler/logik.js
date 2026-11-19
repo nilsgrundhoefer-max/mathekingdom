@@ -239,7 +239,9 @@ export function etappe(pool, index, stand, einst) {
   const offene = pool.kapitel.filter((k) => einst.offeneKapitel.has(k.id)).map(lage).filter((l) => l.gesamt > 0);
   if (offene.length === 0) return null;
   const aktuell = offene.find((l) => l.kapitel.id === einst.aktuellesKapitel);
-  return (aktuell?.milestone ? aktuell : null) ?? offene.find((l) => l.milestone) ?? aktuell ?? offene.at(-1);
+  // Ist das Klassenkapitel geschafft, kommt zuerst ein zusätzlich geöffnetes Tor (ADR 0022).
+  const extra = offene.find((l) => l.milestone && einst.zusaetzlicheKapitel?.has(l.kapitel.id));
+  return (aktuell?.milestone ? aktuell : null) ?? extra ?? offene.find((l) => l.milestone) ?? aktuell ?? offene.at(-1);
 }
 // Mit `niveau`: zuerst ein Lernziel, das für die Krone dieser Farbe noch fehlt (ADR 0012).
 export function naechstesLernziel(index, stand, unterkapitel, niveau = null) {
@@ -975,16 +977,45 @@ export function bestenliste(eigener, andere, spielId, jetzt) {
   return { plaetze, eigenerPlatz: i >= 0 ? i + 1 : null, eigenerWert: i >= 0 ? eintraege[i].punkte : 0, ausgeblendet: Boolean(eigener.bestenlisteAus) };
 }
 
+// ---------- Torfreigabe (ADR 0022) ----------
+// Die Klasse hat eine Menge offener Tore (`tore`), einzelne Schüler zusätzliche (`toreEinzeln`).
+// Alte Klassendateien ohne `tore`: offen sind alle Kapitel bis zum Aktuellen Kapitel, ohne Aktuelles Kapitel alle.
+export function toreDerKlasse(k, pool) {
+  const ids = pool.kapitel.map((x) => x.id);
+  if (Array.isArray(k?.tore)) {
+    const menge = new Set(k.tore.filter((id) => ids.includes(id)));
+    if (k.aktuellesKapitel && ids.includes(k.aktuellesKapitel)) menge.add(k.aktuellesKapitel);
+    return menge;
+  }
+  const bis = k?.aktuellesKapitel ? ids.indexOf(k.aktuellesKapitel) : ids.length - 1;
+  return new Set(ids.slice(0, bis + 1));
+}
+export function offeneTore(k, code, pool) {
+  const ids = pool.kapitel.map((x) => x.id);
+  const klasse = toreDerKlasse(k, pool);
+  const einzeln = new Set((k?.toreEinzeln?.[code] ?? []).filter((id) => ids.includes(id) && !klasse.has(id)));
+  // In Buchreihenfolge, damit die Tore im Schlossgarten der Reihe nach stehen.
+  return { klasse, einzeln, alle: new Set(ids.filter((id) => klasse.has(id) || einzeln.has(id))) };
+}
+// Neu geöffnete Tore, die der Schüler noch nicht gesehen hat. Beim allerersten Start gibt es keine Ankündigung.
+export function neueTore(stand, offene) {
+  if (!Array.isArray(stand.toreGesehen)) { stand.toreGesehen = [...offene]; return []; }
+  return [...offene].filter((id) => !stand.toreGesehen.includes(id));
+}
+export function merkeToreGesehen(stand, ids) {
+  stand.toreGesehen = [...new Set([...(stand.toreGesehen ?? []), ...ids])];
+}
+
 // ---------- Klassendatei ----------
 // Ohne Klassendatei gelten Standardwerte: alle Kapitel offen, Zielniveau G, keine Spielpause.
 export function einstellungen(klassendatei, code, pool) {
   const k = klassendatei ?? {};
-  const kapitelIds = pool.kapitel.map((x) => x.id);
-  const bis = k.aktuellesKapitel ? kapitelIds.indexOf(k.aktuellesKapitel) : kapitelIds.length - 1;
+  const tore = offeneTore(k, code, pool);
   return {
     zielniveau: k.zielniveaus?.[code] ?? STANDARD_ZIELNIVEAU,
     aktuellesKapitel: k.aktuellesKapitel ?? null,
-    offeneKapitel: new Set(kapitelIds.slice(0, bis + 1)),
+    offeneKapitel: tore.alle,
+    zusaetzlicheKapitel: tore.einzeln, // nur für diesen Schüler zusätzlich geöffnet (ADR 0022)
     spielpause: Boolean(k.spielpause),
     spielfreigabe: SPIELFREIGABEN[k.spielfreigabe] ? k.spielfreigabe : 'spielpause', // ADR 0018
     bestenliste: k.bestenliste !== false, // Bestenliste der Belohnungsspiele, standardmäßig an
