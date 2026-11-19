@@ -1401,7 +1401,8 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.click('[data-tab="jetzt"]');
   await lehrer.click(`.sitzplan [data-schueler="${code}"]`);
   await lehrer.waitForSelector('#muenzgaben');
-  assert.match(await lehrer.innerText('#muenzgaben'), /Münzgabe \+500, geöffnet am/);
+  // Das Lehrer-Dashboard liest die Speicherstände alle 5 Sekunden: auf den geöffneten Stand warten.
+  await lehrer.waitForFunction(() => /Münzgabe \+500, geöffnet am/.test(document.getElementById('muenzgaben')?.textContent ?? ''), null, { timeout: 15000 });
   await lehrer.click('.overlay details.sonderauftrag summary');
   assert.match(await lehrer.innerText('.overlay details.sonderauftrag'), /250 Münzen dazu/);
   await fotoStabil(lehrer, '.overlay-inhalt', 'lehrer-muenzgabe');
@@ -1580,6 +1581,47 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.click('[data-tab="aufgaben"]');
   await lehrer.waitForFunction(() => /behoben/.test(document.getElementById('meldungen')?.textContent ?? ''));
   assert.match(await lehrer.innerText('#meldungen'), /gesperrt/);
+
+  // Testklasse mit simulierten Schülern (ADR 0028): anlegen mit Vorlauf, live simulieren, im Lehrer-Dashboard sehen, anhalten.
+  await admin.click('[data-tab="klassen"]');
+  await admin.waitForSelector('#test-anlegen');
+  await admin.fill('#test-name', '5t');
+  await admin.selectOption('#test-lehrkraft', 'NG');
+  await admin.fill('#test-anzahl', '8'); await admin.dispatchEvent('#test-anzahl', 'change');
+  await admin.selectOption('#test-vorlauf', '1');
+  await admin.click('#test-anlegen');
+  await admin.waitForFunction(() => /Testklasse 5t angelegt: 8 simulierte Schüler/.test(document.getElementById('hinweis')?.textContent ?? ''), null, { timeout: 30000 });
+  assert.equal(JSON.parse(JSON.parse(await lies(admin, 'S/Mathekingdom/schulverzeichnis.json')).inhalt).klassen[jahr]['5t'].test, true);
+  const testDaten = JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5t/klasse.json`));
+  assert.equal(Object.keys(testDaten.test.profile).length, 8);
+  assert.equal(testDaten.test.probe.length, 3);
+  assert.match(testDaten.notizen[Object.keys(testDaten.test.profile)[3]], /Profil: rät/);
+  const ersterBot = Object.keys(testDaten.test.profile)[0];
+  assert.ok(JSON.parse(await lies(admin, `S/Mathekingdom/${jahr}/5t/${ersterBot}.json`)).versuche.length > 10, 'Vorlauf');
+  await admin.selectOption('[data-test-tempo="5t"]', '3');
+  await admin.click('[data-sim-start="5t"]');
+  await admin.waitForSelector('#sim-status');
+  await admin.waitForFunction(() => /[1-9]\d* an einer Aufgabe/.test(document.getElementById('sim-status')?.textContent ?? ''), null, { timeout: 60000 });
+  await foto(admin, 'admin-testklasse');
+  // Die Lehrkraft öffnet die Testklasse und sieht die simulierten Schüler live.
+  await lehrer.reload();
+  await lehrer.waitForSelector('#weiter:not([disabled])');
+  await lehrer.click('#weiter');
+  await lehrer.waitForSelector('#klassenwahl, [data-klasse="5t"]');
+  if (await lehrer.locator('#klassenwahl').count()) await lehrer.selectOption('#klassenwahl', '5t'); else await lehrer.click('[data-klasse="5t"]');
+  await lehrer.waitForSelector('#testklasse');
+  await lehrer.click('[data-tab="jetzt"]');
+  await lehrer.waitForFunction(() => /Ayla/.test(document.querySelector('main')?.textContent ?? '') && /arbeitet|im Flow|beobachten|an dieser Aufgabe|kommt nicht weiter/.test(document.querySelector('main')?.textContent ?? ''), null, { timeout: 30000 });
+  await foto(lehrer, 'lehrer-testklasse');
+  // Testklassen zählen nicht in der Nutzungsstatistik.
+  await admin.click('[data-tab="betrieb"]');
+  await admin.waitForSelector('#nutzung');
+  assert.equal(await admin.locator('[data-nutzung="5t"]').count(), 0);
+  await admin.click('[data-tab="klassen"]');
+  await admin.waitForSelector('#sim-anhalten');
+  await admin.click('#sim-anhalten');
+  await admin.waitForFunction(() => /Simulation in 5t beendet/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  assert.equal(JSON.parse(await lies(admin, `S/Mathekingdom/${jahr}/5t/${ersterBot}.json`)).aktiv, null);
 
   // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.
   netz = false;

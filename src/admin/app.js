@@ -14,6 +14,7 @@ import * as L from '../schueler/logik.js';
 import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
+import { testklassenKarte } from './testklasse.js';
 
 const gemerkt = gemerkteOrdner('mathekingdom-admin');
 const LAUFWERKE = {
@@ -169,7 +170,7 @@ function klassenKarte() {
   return h('section', { class: 'karte' }, h('h2', {}, `Klassen im Schuljahr ${z.jahr}`),
     klassen.length ? h('div', { class: 'rollbar' }, h('table', { class: 'tabelle', id: 'klassen' },
       h('thead', {}, h('tr', {}, h('th', {}, 'Klasse'), h('th', {}, 'Lehrkräfte'), h('th', {}, ''))),
-      h('tbody', {}, klassen.map((k) => h('tr', {}, h('td', {}, h('b', {}, k)),
+      h('tbody', {}, klassen.map((k) => h('tr', {}, h('td', {}, h('b', {}, k), v.klassen[z.jahr][k].test && h('span', { class: 'klein' }, ' Testklasse')),
         h('td', {}, kuerzel.length ? kuerzel.map((kz) => h('label', { class: 'schalter', style: 'margin-right:10px' },
           h('input', { type: 'checkbox', 'data-lehrkraft': `${k}|${kz}`, checked: (v.klassen[z.jahr][k].lehrkraefte ?? []).includes(kz), onchange: (ev) => setzeLehrkraft(k, kz, ev.target.checked) }), ` ${kz}`))
           : h('span', { class: 'klein' }, 'Lege zuerst Lehrkräfte an.')),
@@ -294,12 +295,13 @@ function gabeKarte(klasse, daten) {
 // ---------- Übernahme ins neue Schuljahr ----------
 // Aus einer Klasse eines früheren Schuljahrs: jeder Schüler in eine Klasse des angezeigten Schuljahrs.
 function uebernahmeKarte() {
-  const v = z.v, frueher = v.schuljahre.filter((j) => j < z.jahr && Object.keys(v.klassen[j] ?? {}).length).sort().reverse();
+  const v = z.v, echte = (j) => Object.keys(v.klassen[j] ?? {}).filter((k) => !v.klassen[j][k].test); // Testklassen nicht (ADR 0028)
+  const frueher = v.schuljahre.filter((j) => j < z.jahr && echte(j).length).sort().reverse();
   if (!frueher.length) return null;
   const u = z.uebernahme;
   if (!u) {
     const jahrWahl = h('select', { id: 'uebernahme-jahr' }, frueher.map((j) => h('option', { value: j }, j)));
-    const klassenWahl = () => h('select', { id: 'uebernahme-klasse' }, Object.keys(v.klassen[jahrWahl.value] ?? {}).sort(SCH.vergleicheKlassen).map((k) => h('option', { value: k }, k)));
+    const klassenWahl = () => h('select', { id: 'uebernahme-klasse' }, echte(jahrWahl.value).sort(SCH.vergleicheKlassen).map((k) => h('option', { value: k }, k)));
     let kw = klassenWahl();
     jahrWahl.onchange = () => { const neu = klassenWahl(); kw.replaceWith(neu); kw = neu; };
     return h('section', { class: 'karte' }, h('h2', {}, 'Klassen aus einem früheren Schuljahr übernehmen'),
@@ -551,14 +553,14 @@ async function ladeBetrieb() {
     for (const [code, gaben] of Object.entries(daten?.einst?.muenzgaben ?? {})) for (const g of gaben)
       eintraege.push({ t: g.t, art: 'ok', text: `Münzgabe +${g.muenzen} Münzen an ${code}`, klasse: k, code, wer: 'Administrator' });
     const bo = lJahr && await (await lJahr.ordner(k))?.ordner('backup');
-    klassen.push({ klasse: k, lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
+    klassen.push({ klasse: k, test: Boolean(v.klassen[jahr][k].test), lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
   }
   const meldungen = {};
   for (const kz of Object.keys(v.lehrkraefte)) {
     try {
       const l = JSON.parse(await (await z.lehrer.ordner(kz))?.lies(SCH.LEHRER_DATEI));
       for (const e of l.protokoll ?? []) eintraege.push({ ...e, wer: `Lehrkraft ${kz}` });
-      meldungen[kz] = l.meldungen ?? [];
+      meldungen[kz] = (l.meldungen ?? []).filter((m) => !SCH.istTestklasse(v, jahr, m.klasse)); // Testklassen zählen nicht (ADR 0028)
     } catch { /* noch nie gestartet */ }
   }
   eintraege.sort((a, b) => (a.t < b.t ? 1 : a.t > b.t ? -1 : 0));
@@ -577,6 +579,8 @@ function mitBetrieb(zeichne) {
   return h('section', { class: 'karte' }, h('p', {}, 'Lese alle Klassenordner …'));
 }
 const TAG = 86400000;
+// Testklassen zählen nicht in Nutzungsstatistik und Auffällige Aufgaben (ADR 0028).
+const echteKlassen = (b) => b.klassen.filter((k) => !k.test);
 const backupAlt = (k) => !k.backups.length || Date.now() - B.backupZeit(k.backups[0]) > 7 * TAG;
 const kurzeZeit = (t) => new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
 const neuLaden = () => h('button', { class: 'schlicht', id: 'betrieb-neu', onclick: () => { z.betrieb = null; male(); } }, 'Neu lesen');
@@ -584,7 +588,7 @@ const neuLaden = () => h('button', { class: 'schlicht', id: 'betrieb-neu', oncli
 function uebersichtKarte() {
   return mitBetrieb((b) => {
     const woche = b.eintraege.filter((e) => e.art === 'problem' && Date.now() - new Date(e.t) < 7 * TAG);
-    const ohneBackup = b.klassen.filter((k) => k.staende && backupAlt(k));
+    const ohneBackup = echteKlassen(b).filter((k) => k.staende && backupAlt(k));
     const ohneLehrkraft = b.klassen.filter((k) => !k.lehrkraefte.length);
     const offen = M.sammle(b.meldungen, b.status, z.v.gesperrt ?? []).filter((g) => g.status === 'offen');
     const auffaellig = auffaelligeVon(b).filter((x) => !(z.v.gesperrt ?? []).includes(x.aufgabe));
@@ -601,7 +605,7 @@ function uebersichtKarte() {
       ohneLehrkraft.length > 0 && h('li', {}, h('b', {}, 'Ohne Lehrkraft: '), ohneLehrkraft.map((k) => k.klasse).join(', ')),
     ].filter(Boolean);
     return h('section', { class: 'karte', id: 'uebersicht' }, h('div', { class: 'reihe' }, h('h2', {}, 'Was jetzt Aufmerksamkeit braucht'), h('span', { class: 'rechts' }, neuLaden())),
-      h('p', { class: 'klein' }, `Schuljahr ${z.v.schuljahr}: ${b.klassen.length} Klassen, ${b.klassen.reduce((n, k) => n + k.staende, 0)} Speicherstände, ${Object.keys(z.v.lehrkraefte).length} Lehrkräfte.`),
+      h('p', { class: 'klein' }, `Schuljahr ${z.v.schuljahr}: ${echteKlassen(b).length} Klassen, ${echteKlassen(b).reduce((n, k) => n + k.staende, 0)} Speicherstände, ${Object.keys(z.v.lehrkraefte).length} Lehrkräfte${b.klassen.length > echteKlassen(b).length ? `, dazu ${b.klassen.length - echteKlassen(b).length} Testklasse${b.klassen.length - echteKlassen(b).length > 1 ? 'n' : ''}` : ''}.`),
       punkte.length ? h('ul', { class: 'liste' }, punkte) : h('p', { id: 'alles-gut' }, 'Alles in Ordnung: keine offenen Aufgabenmeldungen, keine auffälligen Aufgaben, keine technischen Probleme in den letzten 7 Tagen, jede Klasse hat ein frisches Backup und eine Lehrkraft.'));
   });
 }
@@ -612,7 +616,7 @@ const haeufigste = (liste, n = 2) => (liste.length ? liste.slice(0, n).map(([w, 
 function nutzungKarte() {
   return mitBetrieb((b) => {
     const tage = (z.nutzungTage ??= 7);
-    const { zeilen, gesamt } = ST.nutzung(b.klassen.map((k) => ({ ...k, staende: k.standListe })), jetzt(), tage);
+    const { zeilen, gesamt } = ST.nutzung(echteKlassen(b).map((k) => ({ ...k, staende: k.standListe })), jetzt(), tage);
     const zeile = (r, fett) => h('tr', { class: fett ? 'summe' : '', 'data-nutzung': r.klasse },
       h('td', {}, fett ? h('b', {}, 'Alle Klassen') : h('b', {}, r.klasse)),
       h('td', { class: 'zahl' }, `${r.aktiv} von ${r.staende}`), h('td', { class: 'zahl' }, String(r.aufgaben)), h('td', { class: 'zahl' }, prozent(r.quote)),
@@ -745,7 +749,7 @@ function meldungenKarte() {
 }
 // ---------- Auffällige Aufgaben (ADR 0025) ----------
 const allePoolAufgaben = () => Object.values(window.MK_POOLS ?? {}).flatMap((p) => p.aufgaben);
-const alleStaendeVon = (b) => b.klassen.flatMap((k) => k.standListe ?? []);
+const alleStaendeVon = (b) => echteKlassen(b).flatMap((k) => k.standListe ?? []);
 function auffaelligeVon(b) { return (b.auffaellig ??= ST.auffaelligeAufgaben(alleStaendeVon(b), allePoolAufgaben())); }
 function auffaelligKarte() {
   return mitBetrieb((b) => {
@@ -793,6 +797,9 @@ function sperrenKarte() {
     }) }, 'Aufgabe sperren')));
 }
 
+// ---------- Testklassen (ADR 0028) ----------
+const testApi = { z, tue, male: () => male(), ladeKlasse, speichereKlasse, klassenOrdner, speichereVerzeichnis, alleCodes, drucke };
+
 // ---------- Rahmen ----------
 // Fünf Bereiche (ADR 0025).
 const TABS = [['uebersicht', 'Übersicht'], ['schule', 'Schule'], ['klassen', 'Klassen und Lehrkräfte'], ['betrieb', 'Betrieb'], ['aufgaben', 'Aufgaben']];
@@ -800,7 +807,7 @@ function hauptansicht() {
   const inhalt = {
     uebersicht: () => uebersichtKarte(),
     schule: () => [schuljahrKarte(), uebernahmeKarte(), startdateien(), altKarte()],
-    klassen: () => [lehrkraefte(), klassenKarte(), z.klasse && namenKarte(), aufgeloesteKarte()],
+    klassen: () => [lehrkraefte(), klassenKarte(), z.klasse && namenKarte(), testklassenKarte(testApi), aufgeloesteKarte()],
     betrieb: () => [nutzungKarte(), backupKarte(), protokollKarte()],
     aufgaben: () => [meldungenKarte(), auffaelligKarte(), typenKarte(), sperrenKarte()],
   }[z.tab];

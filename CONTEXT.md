@@ -24,6 +24,22 @@ _Avoid_: Admin, Lehrer-Account
 Die konkrete Lerngruppe eines Schuljahres (z. B. 7b). Sie wird beim ersten Öffnen festgelegt und ändert sich nur zum neuen Schuljahr.
 _Avoid_: Kurs, Gruppe
 
+**Testklasse**:
+Eine Klasse, die der Administrator zum Ausprobieren anlegt und im Schulverzeichnis als solche markiert. In ihr arbeiten simulierte Schüler und bis zu drei echte Probe-Codes. Sie trägt im Lehrer-Dashboard das Schild „Testklasse“ und zählt nicht in Nutzungsstatistik, Auffällige Aufgaben und Aufgabenmeldungen. Sonst verhält sie sich wie jede Klasse: eine Lehrkraft ist ihr zugeordnet, sie lässt sich zurücksetzen, auflösen und löschen.
+_Avoid_: Demo-Klasse, Beispielklasse (die gibt es nur im Lehrer-Dashboard, ohne Ordner und ohne Bewegung)
+
+**Simulierter Schüler**:
+Ein erfundener Schüler einer Testklasse, dessen Speicherstand das Administrator-Dashboard schreibt, nach derselben Spiellogik wie bei echten Schülern. Er hat einen Vornamen und ein Profil (etwa sicher, wackelig, rät, blockiert oft), das in seiner Notiz steht, und reagiert auf Freigaben, Sonderaufträge, Münzgaben und Antworten auf Hilferufe.
+_Avoid_: Bot, Testschüler, Dummy
+
+**Simulation**:
+Der Lauf, in dem die simulierten Schüler einer Testklasse in echter oder dreifacher Geschwindigkeit arbeiten, für 45 Minuten, 90 Minuten oder unbegrenzt; zum Ende hören sie nach und nach auf. Ein fester Zufallswert macht einen Lauf wiederholbar.
+_Avoid_: Lasttest (ein PC schreibt alle Speicherstände, das Schulnetz wird nicht wie von 25 PCs belastet)
+
+**Vorlauf**:
+Die beim Anlegen einer Testklasse sofort erzeugte Vergangenheit von 1, 3 oder 6 Schulwochen, damit Lernstand, Rückblick und Selbsteinschätzung schon vor der ersten Simulation etwas zeigen.
+_Avoid_: Vorgeschichte, Testdaten
+
 **Klassenstufe**:
 Der Jahrgang (5 bis 10), der sich aus der Klasse ergibt und bestimmt, welche Kapitel geladen werden.
 _Avoid_: Jahrgangsstufe, Level
