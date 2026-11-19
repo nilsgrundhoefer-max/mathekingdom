@@ -175,10 +175,10 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
     const oben = mitte - HOCH / 2;
     const hier = m.id === standort && ['offen', 'begonnen'].includes(m.status);
     const nummer = m.extra ? null : j + 1;
-    const zustand = m.status === 'gemeistert' ? ', gemeistert' : m.status === 'gesperrt' ? ', gesperrt' : '';
+    const zustand = m.status === 'gemeistert' ? ', gemeistert' : m.status === 'gesperrt' ? ', gesperrt' : m.status === 'imnebel' ? ', noch im Nebel' : '';
     const kroneText = m.krone ? `, Krone ${KRONEN[m.krone]}` : '';
     const g = s('g', { class: `meilenstein ${m.status}${m.id === gewaehlt ? ' gewaehlt' : ''}${hier ? ' standort' : ''}`, tabindex: 0, role: 'button',
-      'aria-label': `Meilenstein ${m.titel}${zustand}${kroneText}`,
+      'aria-label': m.status === 'imnebel' ? `Meilenstein ${nummer ?? ''} noch im Nebel` : `Meilenstein ${m.titel}${zustand}${kroneText}`,
       onclick: () => beiMeilenstein(m.id), onkeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); beiMeilenstein(m.id); } } },
       hier && s('rect', { x: x(j) - 19, y: oben - 7, width: 38, height: HOCH + 14, rx: 9, class: 'puls' }),
       s('rect', { x: x(j) - 12, y: oben, width: 24, height: HOCH, rx: 6, class: 'stein' }),
@@ -188,7 +188,8 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
     else if (m.status === 'begonnen') g.append(kompass(x(j), oben - 18));
     else if (m.status === 'gesperrt') g.append(schloss(x(j), oben - 16));
     if (hier) g.append(s('text', { x: x(j) + 18, y: oben - 42, class: 'hiermarke' }, 'Hier weiter'));
-    g.append(s('text', { x: x(j) + 4, y: oben + HOCH + 18, transform: `rotate(34 ${x(j) + 4} ${oben + HOCH + 18})`, class: 'meilensteinname' }, m.titel));
+    // Im Nebel nur Umriss und Nummer, ohne Namen (ADR 0026).
+    if (m.status !== 'imnebel') g.append(s('text', { x: x(j) + 4, y: oben + HOCH + 18, transform: `rotate(34 ${x(j) + 4} ${oben + HOCH + 18})`, class: 'meilensteinname' }, m.titel));
     svg.append(g);
   });
   // Das eigene Wappen steht am empfohlenen Meilenstein auf dem Weg.

@@ -1447,6 +1447,7 @@ function schuelerAbschnitt() {
 function unterrichtAbschnitt() {
   return h('div', {},
     toreKarte(),
+    meilensteinFreigabeKarte(),
     expeditionKarte(),
     einstiegKarte(),
     h('section', { class: 'karte', id: 'sicherheitsangabe-karte' }, h('h2', {}, 'Sicherheitsangabe (Probe)'),
@@ -1533,6 +1534,42 @@ function toreKarte() {
           return h('td', { class: an ? 'einzeln' : '' }, h('label', { class: 'torhaken', title: an ? 'einzeln geöffnet' : 'einzeln öffnen' },
             h('input', { type: 'checkbox', checked: an, 'data-tor': `${k.id}|${c}`, onchange: (ev) => einzelHaken(c, k.id, ev.target.checked) }), an && h('span', { class: 'punkt' }, '•')));
         })))))));
+}
+
+// ---------- Meilensteinfreigabe (ADR 0026) ----------
+// Standard: alle Meilensteine eines Kapitels offen. Ausgeschaltet bleiben nur die angehakten offen; die übrigen liegen
+// im Nebel und gehen für einen Schüler auf, sobald er alle angehakten gemeistert hat.
+function meilensteinFreigabeKarte() {
+  const e = kl().einst;
+  const hatAufgaben = (u) => u.lernziele.some((l) => z.index.lernzielMitAufgaben.has(l.id));
+  const kapitel = z.pool.kapitel.filter((k) => (e.tore ?? []).includes(k.id) && k.unterkapitel.some(hatAufgaben));
+  if (!kapitel.length) return null;
+  const kap = kapitel.find((k) => k.id === (z.freigabeKapitel ?? e.aktuellesKapitel)) ?? kapitel[0];
+  const frei = e.meilensteinFreigabe?.[kap.id];
+  const beschraenkt = Array.isArray(frei);
+  const meilensteine = kap.unterkapitel.filter(hatAufgaben);
+  const codes = alleCodes();
+  const offenFuer = (u) => codes.filter((c) => {
+    const stand = z.staende.find((x) => x.code === c)?.stand ?? { versuche: [], lernziele: {} };
+    const einst = { meilensteinFreigabe: e.meilensteinFreigabe, gesperrteMeilensteine: new Set(Object.entries(e.sperren ?? {}).filter(([, cs]) => cs.includes(c)).map(([m]) => m)) };
+    return !L.imNebel(z.index, stand, kap, einst).has(u.id);
+  }).length;
+  const setze = (liste) => aendere((k) => {
+    k.einst.meilensteinFreigabe ??= {};
+    if (liste === null) delete k.einst.meilensteinFreigabe[kap.id];
+    else k.einst.meilensteinFreigabe[kap.id] = kap.unterkapitel.map((u) => u.id).filter((id) => liste.includes(id));
+  });
+  const haken = (id, an) => { const neu = new Set(frei ?? []); if (an) neu.add(id); else neu.delete(id); setze([...neu]); };
+  return h('section', { class: 'karte', id: 'meilenstein-freigabe' }, h('h2', {}, 'Meilensteine im Kapitel'),
+    h('p', { class: 'klein' }, 'Normalerweise sind alle Meilensteine eines Kapitels offen. Schaltest du das aus, bleiben nur die angehakten offen. Die übrigen liegen für die Schüler im Nebel und öffnen sich für jeden Schüler einzeln, sobald er alle angehakten gemeistert hat. Ein Abstecher öffnet sich, wenn sein Meilenstein gemeistert ist. Was ein Schüler schon angefangen hat, bleibt für ihn offen.'),
+    kapitel.length > 1 && h('label', {}, 'Kapitel ', h('select', { id: 'freigabe-kapitel', onchange: (ev) => { z.freigabeKapitel = ev.target.value; male(); } },
+      kapitel.map((k) => h('option', { value: k.id, selected: k.id === kap.id }, k.titel)))),
+    h('label', { class: 'schalter' }, h('input', { type: 'checkbox', id: 'alle-meilensteine', checked: !beschraenkt,
+      onchange: (ev) => setze(ev.target.checked ? null : [meilensteine.find((u) => !u.extra)?.id].filter(Boolean)) }), ' Alle Meilensteine offen'),
+    beschraenkt && h('ul', { class: 'liste' }, meilensteine.map((u) => h('li', {}, h('label', { class: 'schalter' },
+      h('input', { type: 'checkbox', 'data-freigabe': u.id, checked: frei.includes(u.id), onchange: (ev) => haken(u.id, ev.target.checked) }),
+      ` ${u.extra ? 'Abstecher: ' : ''}${u.titel}`),
+      codes.length > 0 && h('small', { class: 'zaehler' }, ` ${offenFuer(u)} von ${codes.length} offen`)))));
 }
 
 function einstiegKarte() {

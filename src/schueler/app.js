@@ -52,7 +52,7 @@ function speicherMeldung(status) {
 const FOKUS = new Set(['aufgabe', 'heftcheck', 'wegstueck']);
 const imFokus = () => Boolean(z.stand) && FOKUS.has(z.ansicht.name);
 function male() {
-  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, wappen: wappenAnsicht, spiele: spieleAnsicht, minispiel };
+  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, wappen: wappenAnsicht, koennen: koennenAnsicht, spiele: spieleAnsicht, minispiel };
   const fokus = imFokus();
   wurzel.classList.toggle('fokus', fokus);
   // Neu verdiente Ehrenzeichen (ADR 0018) zeigt das Zeichen am Knopf „Wappen“ an. Nicht mitten in einer Aufgabe prüfen.
@@ -134,7 +134,7 @@ function kopf() {
       h('strong', {}, `${r.name} ${z.stand.code}`, hoftitelKopf()),
       h('span', {}, r.naechster ? `Noch ${r.naechster.ab - anzahl} Siegel bis ${r.naechster.name}` : 'Höchster Rang erreicht')),
     h('div', { class: 'konto' },
-      h('span', { class: 'wert siegelwert', title: 'Siegel: eines pro erreichtem Lernziel' }, siegel(24), h('b', { id: 'siegel' }, anzahl), h('span', { class: 'wort' }, 'Siegel')),
+      h('button', { class: `wert siegelwert${z.ansicht.name === 'koennen' ? ' aktiv' : ''}`, id: 'siegel-knopf', title: 'Klick: Das kannst du schon', onclick: () => zeige({ name: 'koennen' }) }, siegel(24), h('b', { id: 'siegel' }, anzahl), h('span', { class: 'wort' }, 'Siegel')),
       kronenZaehler(),
       h('span', { class: 'wert klein-wert', title: 'Münzen zum Ausgeben' }, muenze(16), h('b', { id: 'muenzen' }, z.stand.muenzen))),
     h('nav', {},
@@ -667,6 +667,33 @@ function wortspeicher(meilenstein, a) {
     h('dl', {}, woerter.map((w) => [h('dt', {}, w.wort), h('dd', {}, w.erklaerung)])));
 }
 
+// ---------- Das kannst du schon (ADR 0026) ----------
+// Alle Lernziele der aktuellen Klassenstufe mit Siegel, als Ich-kann-Sätze nach Kapitel und Meilenstein.
+function koennenAnsicht() {
+  const mitAufgaben = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).filter((l) => z.index.lernzielMitAufgaben.has(l.id));
+  const geschafft = mitAufgaben.filter((l) => z.stand.lernziele[l.id]);
+  const datum = (t) => { const d = new Date(t); return Number.isNaN(d.getTime()) ? '' : d.toLocaleDateString('de-DE'); };
+  const kapitel = z.pool.kapitel.map((k) => ({ k, meilensteine: k.unterkapitel.map((u) => ({ u, ziele: u.lernziele.filter((l) => z.stand.lernziele[l.id] && z.index.lernzielMitAufgaben.has(l.id)) })).filter((m) => m.ziele.length) }))
+    .filter((x) => x.meilensteine.length);
+  return h('section', { class: 'koennen', id: 'koennen' },
+    h('h1', {}, 'Das kannst du schon'),
+    h('p', { class: 'unter', id: 'koennen-zaehler' }, `${geschafft.length} von ${mitAufgaben.length} Lernzielen in Klasse ${z.pool.klassenstufe}`),
+    kapitel.length === 0 && h('div', { class: 'karte' }, h('p', {}, 'Noch hast du kein Siegel. Für jedes Lernziel, das du schaffst, steht hier ein Satz, was du jetzt kannst.')),
+    kapitel.map(({ k, meilensteine }) => h('div', { class: 'karte koennen-kapitel', 'data-kapitel': k.id },
+      h('h2', {}, k.titel),
+      meilensteine.map(({ u, ziele }) => {
+        const krone = L.krone(z.index, z.stand, u);
+        return h('div', { class: 'koennen-meilenstein' },
+          h('h3', {}, krone && kroneBild(krone, 22), u.titel, krone && h('span', { class: 'klein' }, ` Krone ${L.KRONEN[krone]}`)),
+          h('ul', { class: 'lernziele' }, ziele.map((l) => {
+            const fest = L.istGefestigt(z.stand, l.id);
+            return h('li', { class: `erreicht${fest ? ' gefestigt' : ''}`, 'data-lernziel': l.id }, siegel(22, true),
+              h('span', { class: 'text' }, l.text, fest && h('span', { class: 'fest', title: 'Auch nach mehr als einer Woche noch gewusst.' }, 'gefestigt')),
+              h('small', { class: 'datum' }, datum(z.stand.lernziele[l.id].erreichtAm)));
+          })));
+      }))));
+}
+
 // ---------- Regionskarte ----------
 function regionsAnsicht() {
   z.toreNeu = null; // Die Ankündigung neuer Tore gilt nur bis zum ersten Gang durch ein Tor.
@@ -674,9 +701,11 @@ function regionsAnsicht() {
   if (!z.einst.offeneKapitel.has(z.ansicht.kapitel)) { z.ansicht = { name: 'schlossgarten', seit: Date.now() }; return schlossgarten(); }
   const kapitel = z.pool.kapitel.find((k) => k.id === z.ansicht.kapitel);
   const niveau = L.arbeitsniveau(z.stand, kapitel.id, z.einst.zielniveau);
-  const zu = z.einst.gesperrteMeilensteine;
-  const milestones = kapitel.unterkapitel.map((u) => ({ id: u.id, titel: u.titel, extra: u.extra, krone: L.krone(z.index, z.stand, u), status: zu.has(u.id) ? 'gesperrt' : L.milestoneStatus(z.index, z.stand, u) }));
-  const standort = (milestones.find((m) => m.status === 'begonnen') ?? milestones.find((m) => m.status === 'offen') ?? milestones[0]).id;
+  const zu = z.einst.gesperrteMeilensteine, nebel = L.imNebel(z.index, z.stand, kapitel, z.einst);
+  const milestones = kapitel.unterkapitel.map((u) => ({ id: u.id, titel: u.titel, extra: u.extra, krone: L.krone(z.index, z.stand, u),
+    status: zu.has(u.id) ? 'gesperrt' : nebel.has(u.id) ? 'imnebel' : L.milestoneStatus(z.index, z.stand, u) }));
+  // Standort ist, wohin die Aufgabenführung gerade führt (ADR 0026).
+  const standort = (L.fuehrungsMeilenstein(z.index, z.stand, kapitel, z.einst, niveau) ?? milestones.find((m) => m.status === 'begonnen') ?? milestones.find((m) => m.status === 'offen') ?? milestones[0]).id;
   const gewaehlt = z.ansicht.milestone ?? standort;
   const meilenstein = kapitel.unterkapitel.find((u) => u.id === gewaehlt);
   const einstieg = einstiegKarte(kapitel);
@@ -686,7 +715,7 @@ function regionsAnsicht() {
   return h('section', {},
     h('p', { class: 'pfad' }, h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')),
     h('h1', {}, kapitel.titel),
-    h('p', { class: 'unter' }, `Du spielst um ${L.KRONEN[niveau]}. Für einen Meilenstein brauchst du mindestens ${L.KRONEN[z.einst.zielniveau]}. Die Nummern auf den Meilensteinen sind ein Vorschlag: Du darfst jeden offenen Meilenstein wählen.`),
+    h('p', { class: 'unter' }, `Du spielst um ${L.KRONEN[niveau]}. Für einen Meilenstein brauchst du mindestens ${L.KRONEN[z.einst.zielniveau]}. ${nebel.size ? 'Die Meilensteine im Nebel öffnen sich, wenn du alle offenen gemeistert hast.' : 'Die Nummern auf den Meilensteinen sind ein Vorschlag: Du darfst jeden offenen Meilenstein wählen.'}`),
     einstieg,
     h('div', { class: 'kartenrahmen' }, karte),
     legende(),
@@ -701,6 +730,12 @@ function meilensteinTafel(kapitel, meilenstein, niveau) {
   const status = L.milestoneStatus(z.index, z.stand, meilenstein);
   if (z.einst.gesperrteMeilensteine.has(meilenstein.id)) {
     return h('div', { class: 'karte tafel gesperrt' }, h('h2', {}, `${meilenstein.titel} 🔒`), h('p', {}, 'Diesen Meilenstein hat deine Lehrkraft für dich noch nicht geöffnet. Wähle einen anderen Meilenstein.'));
+  }
+  if (L.imNebel(z.index, z.stand, kapitel, z.einst).has(meilenstein.id)) {
+    const nr = kapitel.unterkapitel.filter((u) => !u.extra).indexOf(meilenstein) + 1;
+    const wirt = meilenstein.extra && L.wirtVon(kapitel, meilenstein);
+    return h('div', { class: 'karte tafel nebeltafel', id: 'nebel-tafel' }, h('h2', {}, meilenstein.extra ? 'Ein Abstecher im Nebel' : `Meilenstein ${nr} im Nebel`),
+      h('p', {}, wirt ? `Dieser Abstecher liegt noch im Nebel. Meistere zuerst ${wirt.titel}.` : 'Dieser Meilenstein liegt noch im Nebel. Meistere zuerst die offenen Meilensteine, dann lichtet er sich.'));
   }
   if (status === 'leer') {
     return h('div', { class: 'karte tafel' }, h('h2', {}, meilenstein.titel), h('p', {}, 'An diesem Meilenstein gibt es noch keine Aufgaben. Er wird bald eröffnet.'));
@@ -789,6 +824,7 @@ function aufgabenAnsicht() {
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
+        a.seitenblick && h('span', { class: 'seitenblick-satz', id: 'seitenblick-satz' }, `Kurzer Blick zurück, danach geht es mit ${z.index.meilensteinVon.get(a.seitenblick.zurueck)?.titel ?? 'deinem Meilenstein'} weiter.`),
         a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
         a.sonderauftrag && h('span', { class: 'marke sonderauftragmarke', id: 'sonderauftrag-marke' }, '✉ ', sonderauftragNummer(a, fertig)),
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
@@ -1017,11 +1053,21 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
   // In der Grundlagen-Schleife gibt es weder Kronenwechsel noch Brücke: Der Weg zurück ist schon festgelegt.
   const schleife = L.inGrundlage(z.stand, auf.lernziel);
   const vorschlag = schleife ? null : L.niveauVorschlag(z.stand, kapitelId, niveau, z.einst.zielniveau);
+  // Aufgabenführung (ADR 0026): erst der ganze Meilenstein, dann der nächste. Abstecher nur auf Wunsch.
+  const kapitel = z.pool.kapitel.find((k) => k.id === kapitelId);
+  const naechsterMeilenstein = (n = niveau) => (!schleife && L.fuehrungFertig(z.index, z.stand, meilenstein, n, z.einst.zielniveau)
+    ? L.fuehrungsMeilenstein(z.index, z.stand, kapitel, z.einst, n) : null);
+  const geheZu = (ms, n = niveau) => { z.ansicht = { name: 'region', kapitel: kapitelId, milestone: ms.id }; starteAufgabe(L.naechstesLernziel(z.index, z.stand, ms, n).id, n); };
   const weiter = (n = niveau) => {
+    const anderer = naechsterMeilenstein(n);
+    if (anderer && anderer.id !== meilenstein.id) return geheZu(anderer, n);
     const fertig = !schleife && (z.stand.lernziele[auf.lernziel] || L.lernzielStand(z.stand, auf.lernziel, n, z.index).erreicht);
     const lz = fertig ? L.naechstesLernziel(z.index, z.stand, meilenstein, n).id : auf.lernziel;
     starteAufgabe(lz, n);
   };
+  const danachZu = naechsterMeilenstein();
+  const weiterZu = danachZu && danachZu.id !== meilenstein.id ? danachZu : null;
+  const abstecher = !schleife && L.fuehrungFertig(z.index, z.stand, meilenstein, niveau, z.einst.zielniveau) ? L.abstecherAm(z.index, z.stand, kapitel, meilenstein, z.einst, niveau) : [];
   const ziel = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)];
   // Kronenvorschlag und Brücke kommen nacheinander, nie zugleich (ADR 0016).
   const bruecke = !vorschlag && !schleife && !z.stand.lernziele[auf.lernziel] && brueckeAngebot(auf.lernziel);
@@ -1046,7 +1092,8 @@ function ergebnisTafel(a, kapitelId, meilenstein) {
       h('button', { class: 'haupt', id: 'bruecke-start', onclick: danach(a, () => starteBruecke(bruecke)) }, 'Brücke gehen'),
       h('button', { class: 'schlicht', id: 'bruecke-nein', onclick: () => { z.brueckeAbgelehnt.add(auf.lernziel); male(); } }, 'Nein danke')),
     !vorschlag && !bruecke && h('div', { class: 'knoepfe' },
-      h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => weiter()) }, 'Nächste Aufgabe'),
+      h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => weiter()) }, weiterZu ? `Weiter zu ${weiterZu.titel}` : 'Nächste Aufgabe'),
+      abstecher.map((u) => h('button', { class: 'schlicht', 'data-abstecher': u.id, onclick: danach(a, () => geheZu(u)) }, `Abstecher: ${u.titel}`)),
       h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte')),
     (vorschlag || bruecke) && h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte'));
 }

@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.26 vom 19.11.2026
+
+### Schüler
+
+- Klick auf deine Siegel oben: Eine neue Seite „Das kannst du schon“ zeigt alle Lernziele mit Siegel als Ich-kann-Sätze, geordnet nach Kapitel und Meilenstein.
+- „Nächste Aufgabe“ und „Hier geht es weiter“ bleiben in dem Meilenstein, an dem du gerade arbeitest. Erst wenn er geschafft ist, geht es mit „Weiter zu …“ zum nächsten. Abstecher werden dir dann angeboten.
+- Der Seitenblick sagt jetzt, wo es danach weitergeht.
+- Meilensteine, die deine Lehrkraft noch zurückhält, liegen im Nebel und öffnen sich, wenn du die offenen gemeistert hast.
+
+### Lehrkraft
+
+- Neu unter Klasse, Unterricht: „Meilensteine im Kapitel“. Standardmäßig sind alle offen. Schaltest du das aus, bleiben nur die angehakten offen, und die übrigen öffnen sich für jeden Schüler, wenn er die angehakten gemeistert hat.
+
 ## 0.25 vom 19.11.2026
 
 ### Schüler
