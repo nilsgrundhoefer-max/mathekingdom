@@ -24,14 +24,17 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'format', 'text', 'loesun
 // ---------- Rechnen ----------
 const zahlAus = (s) => Number(String(s).replace(/[\s\u00a0\u202f]/g, ''));
 const NUM = '\\d+(?:\\u00a0\\d{3})*';
-const ATOM = `[(\\[]*${NUM}[)\\]]*`;
+// Potenzen stehen in Hochschreibweise (2³). Beim Rechnen werden sie als Produkt ausgeschrieben.
+const HOCH = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+const ATOM = `[(\\[]*${NUM}[${HOCH}]*[)\\]]*`;
+const ausschreiben = (s) => String(s).replace(new RegExp(`(\\d+)([${HOCH}]+)`, 'g'), (_, b, e) => `(${Array(Number([...e].map((c) => HOCH.indexOf(c)).join(''))).fill(b).join('·')})`);
 const AUSDRUCK = `${ATOM}(?: [+−·:] ${ATOM})*`;
 const zahlenIn = (s) => [...String(s).matchAll(new RegExp(NUM, 'g'))].map((m) => zahlAus(m[0]));
 const norm = (s) => String(s).replace(/[\s\u00a0\u202f]/g, '');
 
 // Rechnet einen Ausdruck aus Zahlen, +, −, ·, : und Klammern aus. NaN, wenn es kein Ausdruck ist oder eine Division nicht aufgeht.
 function rechne(ausdruck) {
-  const t = norm(ausdruck).replace(/\[/g, '(').replace(/\]/g, ')').match(/\d+|[+−·:()]|./g) ?? [];
+  const t = norm(ausschreiben(ausdruck)).replace(/\[/g, '(').replace(/\]/g, ')').match(/\d+|[+−·:()]|./g) ?? [];
   let i = 0;
   const faktor = () => {
     if (t[i] === '(') { i++; const w = strich(); if (t[i++] !== ')') return NaN; return w; }
@@ -163,7 +166,8 @@ function pruefeZahlenraum(a) {
   for (const n of zahlen) {
     let ok = true;
     if (kapitel === '5.3') ok = stufe === 0 ? n <= (raster ? 999 : 100) : n <= 20000;
-    if (kapitel === '5.4') ok = stufe === 0 ? n <= 100 || (n <= 1000 && n % 10 === 0) : stufe === 1 ? n <= 1000 : n <= 10000;
+    // Kapitel 4: Auf F höchstens das Einmaleins bis 12 · 12 und glatte Zehnerzahlen (Nils, 2026-11-18).
+    if (kapitel === '5.4') ok = stufe === 0 ? n <= 144 || (n <= 1000 && n % 10 === 0) : stufe === 1 ? n <= 10000 : stufe === 2 ? n <= 100000 : n <= 1000000;
     if (!ok) melde(a.id, `Zahl ${n} liegt außerhalb des Zahlenraums der Niveaustufe ${a.niveau}`);
   }
 }
@@ -414,8 +418,10 @@ const SONDER = {
     while (x >= n.grenze && x - n.schritt >= 0) { x -= n.schritt; k++; }
     return x < n.grenze && k === n.anzahl ? null : `es sind ${k} Schritte`;
   },
+  // Potenz: basis hoch exponent ist wert.
+  potenz: (n) => (Number.isInteger(n.basis) && Number.isInteger(n.exponent) && n.exponent >= 1 && n.basis ** n.exponent === n.wert ? null : `${n.basis} hoch ${n.exponent} ist nicht ${n.wert}`),
   quadrat: (n) => {
-    const alle = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].filter((x) => x * x === n.zahl);
+    const alle = Array.from({ length: 1000 }, (_, i) => i + 1).filter((x) => x * x === n.zahl);
     return alle.length === 1 && alle[0] === n.wurzel ? null : 'keine Quadratzahl';
   },
   // Überschlag mit einer glatten Zahl in der Nähe, die nicht durch Runden entsteht (963 : 3 mit 900 : 3).
@@ -427,7 +433,7 @@ const SONDER = {
 // Was eine Sonderprüfung als Ergebnis bestätigt. Nur das zählt als Lösung, nicht jede Zahl in der Beschreibung.
 const ERGEBNIS = {
   kleinsteDifferenz: (n) => n.differenz,
-  ziffern: (n) => n.ziffern, extremzahlen: (n) => [n.gross, n.klein], anzahlProdukte: (n) => n.anzahl, anzahlTeiler: (n) => n.anzahl,
+  ziffern: (n) => n.ziffern, potenz: (n) => [n.basis, n.exponent, n.wert], extremzahlen: (n) => [n.gross, n.klein], anzahlProdukte: (n) => n.anzahl, anzahlTeiler: (n) => n.anzahl,
   ziffernTeilbar: (n) => n.anzahl ?? n.ziffern, ziffernZahlen: (n) => n.anzahl, grenzVielfaches: (n) => n.zahl, vielfachesZwischen: (n) => n.zahl,
   grenzRest: (n) => n.zahl, anzahlMitRest: (n) => n.anzahl, kleinsteMitResten: (n) => n.zahl, teilerZwischen: (n) => n.teiler,
   kombination: (n) => n.anzahl, uebertrag: (n) => n.aufgaben.filter((_, i) => n.mit[i]).map((x) => x[0]), ersteUnterschreitung: (n) => n.anzahl, quadrat: (n) => n.wurzel, zahlenpaar: (n) => n.paar,
@@ -445,6 +451,8 @@ function bildZahlen(b) {
       return [b.h, b.z, b.e, wert(b), 10 * b.z, 100 * b.h, ...(b.weg ? [b.weg.h, b.weg.z, b.weg.e, wert(b.weg), wert(b) - wert(b.weg)] : [])];
     }
     case 'punktefeld': return [b.reihen, b.spalten, b.reihen * b.spalten, ...(b.trenn ? [b.trenn, b.reihen - b.trenn, b.trenn * b.spalten, (b.reihen - b.trenn) * b.spalten] : [])];
+    case 'quadratbild': return [b.seite, b.seite * b.seite, ...(b.schichten > 1 ? [b.schichten, b.schichten * b.seite * b.seite] : [])];
+    case 'paeckchen': return [b.einzeln ?? 0, b.paeckchen, b.je, b.paeckchen * b.je, (b.einzeln ?? 0) + b.paeckchen * b.je];
     case 'mengenbild': return [b.anzahl, b.weg ?? 0, b.dazu ?? 0, b.anzahl + (b.dazu ?? 0), b.anzahl + (b.dazu ?? 0) - (b.weg ?? 0)];
     case 'gruppenbild': return [b.gruppen, b.je, b.rest ?? 0, b.gruppen * b.je, b.gruppen * b.je + (b.rest ?? 0)];
     case 'streifen': return [...w(b.ganz), ...b.teile.flatMap(w)];
@@ -681,9 +689,18 @@ function pruefeBild(a) {
       break;
     }
     case 'punktefeld':
-      if (!ganz(b.reihen, 1, 10) || !ganz(b.spalten, 1, 10)) m('Feld ist größer als 10 mal 10');
+      if (!ganz(b.reihen, 1, 12) || !ganz(b.spalten, 1, 12)) m('Feld ist größer als 12 mal 12');
       if (b.trenn != null && !ganz(b.trenn, 1, b.reihen - 1)) m('Trennlinie liegt nicht im Feld');
       kern.push({ faktoren: [b.reihen, b.spalten] });
+      break;
+    case 'quadratbild':
+      if (!ganz(b.seite, 2, 10) || !ganz(b.schichten ?? 1, 1, 5) || ((b.schichten ?? 1) > 1 && b.schichten !== b.seite)) m('Quadrat passt nicht (Schichten nur als Würfel: so viele Schichten wie Kästchen an einer Seite)');
+      kern.push((b.schichten ?? 1) > 1 ? b.seite ** 3 : b.seite * b.seite);
+      break;
+    case 'paeckchen':
+      if (!ganz(b.einzeln ?? 0, 0, 20) || !ganz(b.paeckchen, 1, 8) || !ganz(b.je, 2, 10)) m('Päckchen passen nicht');
+      kern.push({ faktoren: [b.paeckchen, b.je] });
+      if (b.einzeln) kern.push(b.einzeln);
       break;
     case 'mengenbild':
       if (!ganz(b.anzahl, 1, 30) || !ganz(b.dazu ?? 0, 0, 20) || !ganz(b.weg ?? 0, 0, b.anzahl + (b.dazu ?? 0))) m('Anzahl passt nicht');
@@ -738,7 +755,8 @@ function pruefeBild(a) {
   for (const u of unbekannte) if (!bekannt.has(u)) m(`Unbekannte ${u} gehört nicht zur Aufgabe`);
   if (unbekannte.length > 1) m('mehr als eine Unbekannte');
 }
-const hatBild = (a) => Boolean(a.bild) || a.format === 'zahlenstrahl' || a.format === 'diagramm' || a.tabelle?.art === 'raster';
+// Formate, die das Dashboard selbst zeichnet (Zahlenstrahl, Diagramm, Rechenraster, Zahlenmauer, Malkreuz), zählen wie ein Bild.
+const hatBild = (a) => Boolean(a.bild) || a.format === 'zahlenstrahl' || a.format === 'diagramm' || ['raster', 'mauer', 'malkreuz'].includes(a.tabelle?.art);
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -831,13 +849,15 @@ function pruefeFormat(a) {
   } else if (a.format === 'tabelle') {
     const t = a.tabelle ?? {};
     const zellen = (t.zeilen ?? []).flat();
-    if (!t.kopf?.length || (t.zeilen ?? []).some((z) => z.length !== t.kopf.length)) melde(a.id, 'Tabelle: Zeilen passen nicht zur Kopfzeile');
-    const namen = zellen.filter((c) => typeof c === 'object').map((c) => c.luecke);
+    if (t.art !== 'mauer' && (!t.kopf?.length || (t.zeilen ?? []).some((z) => z.length !== t.kopf.length))) melde(a.id, 'Tabelle: Zeilen passen nicht zur Kopfzeile');
+    const namen = [...zellen.filter((c) => typeof c === 'object').map((c) => c.luecke), ...(t.art === 'malkreuz' && t.rechnung?.summe ? [t.rechnung.summe] : [])];
     if (namen.length === 0) melde(a.id, 'Tabelle ohne Lücke');
     if (new Set(namen).size !== namen.length) melde(a.id, 'Tabelle: Lücke doppelt');
     for (const n of namen) if (!a.luecken?.[n]) melde(a.id, `Lücke ${n} hat keine Lösung`); else pruefeZahl(a.id, a.luecken[n], `Lücke ${n}`);
     for (const n of Object.keys(a.luecken ?? {})) if (!namen.includes(n)) melde(a.id, `Lösung ${n} ohne Lücke in der Tabelle`);
-    if (t.art === 'raster') pruefeRaster(a);
+    if (t.art === 'raster') (t.rechnung?.zeichen === '·' ? pruefeRasterMal : pruefeRaster)(a);
+    else if (t.art === 'mauer') pruefeMauer(a);
+    else if (t.art === 'malkreuz') pruefeMalkreuz(a);
     else {
       // Bekannte Tabellenarten zusätzlich nachrechnen.
       const zeichen = t.kopf?.[0];
@@ -892,6 +912,69 @@ function pruefeRaster(a) {
   }
   if (r.zeichen === '−' && !getauscht && ziff(r.zahlen[0]).some((x, i) => x < ziff(r.zahlen[1])[i])) m('Tausch nötig, aber die Zeile „getauscht“ fehlt');
   if (r.zeichen === '+' && !gemerkt && ziff(r.ergebnis).some((x, i) => r.zahlen.reduce((s, y) => s + ziff(y)[i], 0) !== x)) m('Übertrag nötig, aber die Zeile „gemerkt“ fehlt');
+}
+
+// Zahlenmauer: Jeder Stein ist die Summe (das Produkt) der beiden darunter, und die leeren Steine lassen sich eindeutig bestimmen.
+function pruefeMauer(a) {
+  const t = a.tabelle, m = (text) => melde(a.id, `Zahlenmauer: ${text}`);
+  if (!['+', '·'].includes(t.rechenart)) { m('Rechenart fehlt'); return; }
+  const z = t.zeilen ?? [];
+  if (z.length < 3 || z.length > 4 || z.some((r, i) => r.length !== i + 1)) { m('Steine sind nicht als Mauer angeordnet'); return; }
+  const wert = (c) => (typeof c === 'object' ? a.luecken?.[c.luecke]?.loesung : zahlAus(c));
+  const w = z.map((r) => r.map(wert));
+  if (w.flat().some((x) => !Number.isInteger(x) || x < 0)) { m('Stein ohne natürliche Zahl'); return; }
+  const op = t.rechenart === '·' ? (x, y) => x * y : (x, y) => x + y;
+  for (let i = 0; i < z.length - 1; i++) for (let j = 0; j <= i; j++) if (op(w[i + 1][j], w[i + 1][j + 1]) !== w[i][j]) m(`Stein ${w[i][j]} ist nicht ${w[i + 1][j]} ${t.rechenart} ${w[i + 1][j + 1]}`);
+  // Eindeutig: Von den bekannten Steinen aus lässt sich jeder leere Stein Schritt für Schritt ausrechnen.
+  const bekannt = z.map((r) => r.map((c) => typeof c !== 'object'));
+  for (let weiter = true; weiter;) {
+    weiter = false;
+    for (let i = 0; i < z.length - 1; i++) for (let j = 0; j <= i; j++) {
+      const [o, l, r] = [bekannt[i][j], bekannt[i + 1][j], bekannt[i + 1][j + 1]];
+      if (!o && l && r) { bekannt[i][j] = true; weiter = true; }
+      if (o && l !== r && (t.rechenart === '+' || w[i + 1][l ? j : j + 1] !== 0)) { bekannt[i + 1][j] = bekannt[i + 1][j + 1] = true; weiter = true; }
+    }
+  }
+  if (bekannt.flat().some((x) => !x)) m('die leeren Steine lassen sich nicht eindeutig bestimmen');
+}
+
+// Malkreuz: Die Zerlegungen ergeben die Faktoren der Aufgabe, jedes Feld ist sein Teilprodukt, die Summe ist das Produkt.
+function pruefeMalkreuz(a) {
+  const t = a.tabelle, m = (text) => melde(a.id, `Malkreuz: ${text}`);
+  if (t.kopf[0] !== '·') { m('Malzeichen fehlt'); return; }
+  const oben = t.kopf.slice(1).map(zahlAus), links = t.zeilen.map((r) => zahlAus(r[0]));
+  if ([...oben, ...links].some((x) => !(x > 0))) m('Zerlegung mit 0');
+  const [x, y] = t.rechnung?.faktoren ?? [];
+  if (links.reduce((s, v) => s + v, 0) !== x || oben.reduce((s, v) => s + v, 0) !== y) m('Zerlegung ergibt nicht die Faktoren');
+  if (!norm(a.text).includes(`${x}·${y}`)) m(`${x} · ${y} steht nicht im Text`);
+  t.zeilen.forEach((r, i) => r.slice(1).forEach((c, j) => {
+    const v = typeof c === 'object' ? a.luecken?.[c.luecke]?.loesung : zahlAus(c);
+    if (v !== links[i] * oben[j]) m(`Feld ${links[i]} mal ${oben[j]} ist nicht ${v}`);
+  }));
+  if (a.luecken?.[t.rechnung?.summe]?.loesung !== x * y) m('Summe ist nicht das Produkt');
+}
+
+// Rechenraster beim Multiplizieren: oben a · b, je Ziffer von b ein Teilprodukt, das unter dieser Ziffer endet, unten das Ergebnis.
+function pruefeRasterMal(a) {
+  const t = a.tabelle, r = t.rechnung, m = (text) => melde(a.id, `Raster: ${text}`);
+  const [x, y] = r.zahlen ?? [];
+  if (!Number.isInteger(x) || !Number.isInteger(y) || r.zahlen.length !== 2) { m('Rechnung fehlt'); return; }
+  if (x * y !== r.ergebnis) m(`Ergebnis stimmt nicht (${x * y} und ${r.ergebnis})`);
+  const yz = String(y).split('').map(Number), lx = String(x).length, breite = lx + 1 + yz.length;
+  if (t.kopf.length !== breite) { m('Raster hat die falsche Breite'); return; }
+  if (!gleich(t.zeilen[0], [...String(x).split(''), '·', ...String(y).split('')])) m('erste Zeile zeigt nicht die Aufgabe');
+  const ziffer = (c) => (typeof c === 'object' ? a.luecken?.[c.luecke]?.loesung : c === '' ? null : Number(c));
+  const liest = (zeile, ende, soll, was) => {
+    const z = zeile.map(ziffer), s = String(soll), anfang = ende - s.length + 1;
+    if (z.some((v, i) => (i < anfang || i > ende ? v !== null : !ganz(v, 0, 9) || v !== Number(s[i - anfang])))) m(`${was} ${soll} steht nicht richtig im Raster`);
+  };
+  const soll = yz.length > 1 ? yz.length + 2 : 2;
+  if (t.zeilen.length !== soll) { m('falsche Anzahl Zeilen'); return; }
+  if (yz.length > 1) {
+    if (yz.includes(0)) m('Null im zweiten Faktor');
+    yz.forEach((d, i) => liest(t.zeilen[1 + i], lx + 1 + i, x * d, 'Teilprodukt'));
+  }
+  liest(t.zeilen.at(-1), breite - 1, x * y, 'Ergebnis');
 }
 
 // ---------- Durchlauf ----------

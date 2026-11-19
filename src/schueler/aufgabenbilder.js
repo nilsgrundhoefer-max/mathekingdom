@@ -193,7 +193,43 @@ function vergleich({ oben, unten, unterschied }) {
   return rahmen(namen + B + zahl, rand * 2 + hoch * 2 + luecke, titel, zeile(oben, rand), zeile(unten, rand + hoch + luecke));
 }
 
-const ARTEN = { zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }) };
+// Quadratbild: ein Quadrat aus seite · seite Kästchen. Mit mehreren Schichten liegen gleiche Quadrate nebeneinander
+// (3 Schichten mit je 3 · 3 Würfeln sind 3 · 3 · 3 = 27 Würfel). So wird eine Potenz abzählbar.
+function quadratbild({ seite, schichten = 1 }) {
+  const k = Math.max(12, Math.min(26, Math.floor(150 / seite))), rand = 8, abstand = 18;
+  const q = seite * k, breite = rand * 2 + schichten * q + (schichten - 1) * abstand, hoehe = rand * 2 + q;
+  const teile = [];
+  for (let n = 0; n < schichten; n++) {
+    const x0 = rand + n * (q + abstand);
+    for (let r = 0; r < seite; r++) for (let c = 0; c < seite; c++) teile.push(s('rect', { class: 'kaestchen', x: x0 + c * k, y: rand + r * k, width: k, height: k, fill: '#dfe7f3', stroke: DUNKEL, 'stroke-width': 1.5 }));
+    teile.push(s('rect', { x: x0, y: rand, width: q, height: q, fill: 'none', stroke: DUNKEL, 'stroke-width': 3 }));
+  }
+  const titel = schichten === 1 ? `Quadrat aus ${seite} Reihen mit je ${seite} Kästchen` : `${schichten} Schichten, jede ein Quadrat aus ${seite} Reihen mit je ${seite} Würfeln`;
+  return rahmen(breite, hoehe, titel, teile);
+}
+
+// Päckchenbild: einzelne Plättchen links, daneben volle Päckchen mit je gleich vielen Plättchen (3 + 2 · 4).
+function paeckchenbild({ einzeln = 0, paeckchen, je }) {
+  const k = 22, innen = 8, abstand = 14, rand = 6;
+  const proReihe = Math.min(5, je), reihenInnen = Math.ceil(je / 5);
+  const kb = innen * 2 + proReihe * k, kh = innen * 2 + reihenInnen * k;
+  const lose = einzeln ? Math.min(einzeln, 5) * k + abstand + 12 : 0, loseReihen = Math.ceil(einzeln / 5);
+  const proZeile = Math.min(paeckchen, 4), zeilen = Math.ceil(paeckchen / 4);
+  const breite = rand * 2 + lose + proZeile * kb + (proZeile - 1) * abstand;
+  const hoehe = rand * 2 + Math.max(zeilen * kh + (zeilen - 1) * abstand, loseReihen * k);
+  const teile = [];
+  for (let i = 0; i < einzeln; i++) teile.push(plaettchen(rand + (i % 5) * k + k / 2, rand + Math.floor(i / 5) * k + k / 2, k / 2 - 3, 'voll'));
+  if (einzeln) teile.push(s('line', { x1: rand + lose - abstand / 2 - 6, x2: rand + lose - abstand / 2 - 6, y1: rand, y2: hoehe - rand, stroke: LINIE, 'stroke-width': 1.5, 'stroke-dasharray': '4 4' }));
+  for (let g = 0; g < paeckchen; g++) {
+    const x0 = rand + lose + (g % 4) * (kb + abstand), y0 = rand + Math.floor(g / 4) * (kh + abstand);
+    teile.push(s('rect', { class: 'paeckchen', x: x0, y: y0, width: kb, height: kh, rx: 4, fill: '#f4dcc3', stroke: '#8a5a3b', 'stroke-width': 2.5 }));
+    for (let i = 0; i < je; i++) teile.push(plaettchen(x0 + innen + (i % 5) * k + k / 2, y0 + innen + Math.floor(i / 5) * k + k / 2, k / 2 - 3, 'hell'));
+  }
+  const titel = `${einzeln ? `${mehrzahl(einzeln, 'einzelnes Plättchen', 'einzelne Plättchen')} und ` : ''}${mehrzahl(paeckchen, 'Päckchen', 'Päckchen')} mit je ${je} Plättchen`;
+  return rahmen(breite, hoehe, titel, teile);
+}
+
+const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }) };
 export const BILDARTEN = Object.keys(ARTEN);
 export function aufgabenBild(bild) {
   return ARTEN[bild?.art]?.(bild) ?? null;

@@ -6,6 +6,22 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.10 vom 18.11.2026
+
+### Schüler
+
+- Kapitel 4 „Multiplizieren und Dividieren“ ist vollständig: Stufen- und Zehnerzahlen, geschickt rechnen, schriftlich multiplizieren, Rechenvorteile, Potenzen, Punkt vor Strich, Verteilungsgesetz und der Abstecher Zahlenmuster.
+- Malkreuz und Mal-Mauer: Du trägst die Teilprodukte direkt in die Felder des Malkreuzes und die Zahlen direkt in die Steine der Mauer ein.
+- Neue Bilder: Kästchenquadrate und Würfel zu Potenzen, Päckchenbilder zu Punkt vor Strich, geteilte Punktefelder zum Verteilungsgesetz.
+
+### Lehrkraft
+
+- 456 neue Aufgaben zu 19 Lernzielen (K3, K4, M1 bis M5, R1, R2, P1, P2, T1 bis T3, V1 bis V3, Z1, Z2), je Lernziel sechs Aufgaben auf F, G, M und E. Der Pool hat jetzt 1056 Aufgaben.
+- F rechnet höchstens 12 · 12. Auf G hat der zweite Faktor höchstens zwei Stellen, auf M wird dreistellig mal zweistellig gerechnet.
+- Fachbegriffe wie Faktor, Produkt, Potenz und Verteilungsgesetz stehen ab G, ausmultiplizieren und ausklammern ab M.
+- „Wer hat recht?“-Aufgaben auf M und E: Zwei Kinder rechnen unterschiedlich, die Antwort nennt die Begründung.
+- Wie alle Aufgaben trägt jede neue Aufgabe ihren Rechenweg als Nachweis. Der Prüfer rechnet sie nach. Beispiele in den Hilfekärtchen verraten nie die Lösung der eigenen Aufgabe.
+
 ## 0.9 vom 18.11.2026
 
 ### Schüler

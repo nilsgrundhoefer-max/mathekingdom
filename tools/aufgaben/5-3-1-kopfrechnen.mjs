@@ -1,7 +1,7 @@
 // Aufgaben zu 5.3.1 „Kopfrechnen“ (Lernziele K1 bis K3) nach ADR 0015.
 // Formate für sinnvolles Üben: Päckchen mit Struktur, „Abziehen oder ergänzen?“, „Überlege zuerst“, Aufgabe und Zahlenstrahl zuordnen.
 
-import { sechs, zahl, auswahl, opt, luecken, sach, teil, zuordnen, strahl, tabelle, L, Z, N, B, frage, h1, h2, h3, zz, wahl, suche, mische, fehlerliste, addOhneUebertrag, kleinerVonGroesser, kind, U, GROESSTES, WERT, HILFSZAHL } from '../werkzeug.mjs';
+import { mauer, sechs, zahl, auswahl, opt, luecken, sach, teil, zuordnen, strahl, tabelle, L, Z, N, B, frage, h1, h2, h3, zz, wahl, suche, mische, fehlerliste, addOhneUebertrag, kleinerVonGroesser, kind, U, GROESSTES, WERT, HILFSZAHL } from '../werkzeug.mjs';
 
 const K = (kurz) => `5.3.1-${kurz}`;
 const vor = (a, ...schritte) => { let x = a; return schritte.map((s) => ({ von: x, nach: (x += s), text: `+ ${s}` })); };
@@ -62,8 +62,8 @@ export function kopfrechnen() {
     () => { const b = zz(14, 38) * 10, s = suche(() => zz(52, 88) * 10, (x) => x - b > 150 && x - b !== b);
       return luecken(`{{a}} + ${b} = ${s}`, { a: [s - b, fehlerliste(s - b, [[s + b, 'probe-falsche-umkehr'], [s - b + 100, 'ergaenzen-zu-viel']])] }, h2('Der fehlende Summand ist die Differenz aus Summe und bekanntem Summanden.', `Rechne ${s} − ${b}.`), { nachweis: N(`${s} − ${b}`, `${s - b} + ${b}`) }); },
     () => { const [a, b, c] = [zz(31, 58), zz(24, 48), zz(15, 37)];
-      return luecken(`Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Untere Reihe: ${a}, ${b}, ${c}. Mittlere Reihe: {{a}}, {{b}}. Oberster Stein: {{c}}.`, { a: a + b, b: b + c, c: a + 2 * b + c },
-        h2('Arbeite von unten nach oben: Zwei benachbarte Steine ergeben den Stein darüber.', `Links in der Mitte steht ${a} + ${b} = ${a + b}.`), { nachweis: N(`${a} + ${b}`, `${b} + ${c}`, `${a + b} + ${b + c}`) }); },
+      return mauer('Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus.', '+', [a, b, c], [[1, 0], [1, 1], [2, 0]],
+        h2('Arbeite von unten nach oben: Zwei benachbarte Steine ergeben den Stein darüber.', `Links in der Mitte steht ${a} + ${b} = ${a + b}.`)); },
     () => { const a = zz(41, 78) * 10, b = zz(4, 9) * 10 + 5;
       return zahl(`Rechne im Kopf: ${a} + ${b}`, a + b, fehlerliste(a + b, [[a + b * 10, 'kopf-stellenwert']]), h2('Achte auf die Stellen: Zehner zu Zehnern, Einer zu Einern.', `${a} + ${b - 5} = ${a + b - 5}. Addiere noch 5.`), { nachweis: N(`${a} + ${b}`) }); },
     () => { const a = zz(21, 28) * 10, b = zz(12, 19) * 10, c = 95, ziel = suche(() => zz(6, 8) * 100, (x) => x - a - b - c > 20);
@@ -80,8 +80,8 @@ export function kopfrechnen() {
     () => { const [a, b] = suche(() => [zz(245, 589), zz(136, 389)], ([x, y]) => x % 10 + y % 10 > 10 && Math.floor(x / 10) % 10 + Math.floor(y / 10) % 10 >= 9);
       return zahl(`Rechne im Kopf: ${a} + ${b}`, a + b, fehlerliste(a + b, [[addOhneUebertrag(a, b), 'add-uebertrag-vergessen']]), h1('Addiere schrittweise: erst die Hunderter, dann die Zehner, dann die Einer.'), { nachweis: N(`${a} + ${b}`) }); },
     () => { const [a, b, c] = [zz(41, 68), zz(34, 58), zz(25, 47)];
-      return luecken(`Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Untere Reihe: ${a}, {{a}}, ${c}. Mittlere Reihe: ${a + b}, {{b}}. Oberster Stein: {{c}}.`, { a: b, b: b + c, c: a + 2 * b + c },
-        h1('Der linke mittlere Stein verrät dir den fehlenden unteren Stein.'), { nachweis: N(`${a + b} − ${a}`, `${b} + ${c}`, `${a + b} + ${b + c}`) }); },
+      return mauer('Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus.', '+', [a, b, c], [[0, 1], [1, 1], [2, 0]],
+        h1('Der linke mittlere Stein verrät dir den fehlenden unteren Stein.')); },
     () => { const a = zz(41, 68) * 10 + zz(1, 9), b = zz(21, 38) * 10 + zz(1, 9);
       return auswahl('Entscheide ohne zu rechnen: Welche Aufgabe hat das größte Ergebnis?', [
         opt(`${a} + ${b + 3}, denn der erste Summand ist gleich geblieben und der zweite ist am größten`, true),
@@ -161,8 +161,8 @@ export function kopfrechnen() {
     () => { const a = zz(61, 95) * 10, b = zz(13, 38) * 10 + 5;
       return zahl(`Rechne im Kopf: ${a} − ${b}`, a - b, fehlerliste(a - b, [[a - b + 10, 'ergaenzen-zu-viel'], [a + b, 'sub-addiert']]), h2('Subtrahiere erst die Hunderter und Zehner, dann die Einer.', `${a} − ${b - 5} = ${a - b + 5}. Subtrahiere noch 5.`), { nachweis: N(`${a} − ${b}`) }); },
     () => { const [x, y, w] = [zz(31, 48), zz(15, 29), zz(21, 38)];
-      return luecken(`Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Oberster Stein: ${x + 2 * y + w}. Mittlere Reihe: ${x + y}, {{a}}. Untere Reihe: ${x}, {{b}}, {{c}}.`, { a: y + w, b: y, c: w },
-        h2('Hier rechnest du rückwärts: Stein oben minus Stein unten ergibt den Nachbarstein.', `Rechts in der Mitte steht ${x + 2 * y + w} − ${x + y}.`), { nachweis: N(`${x + 2 * y + w} − ${x + y}`, `${x + y} − ${x}`, `${y + w} − ${y}`) }); },
+      return mauer('Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus.', '+', [x, y, w], [[1, 1], [0, 1], [0, 2]],
+        h2('Hier rechnest du rückwärts: Stein oben minus Stein unten ergibt den Nachbarstein.', `Rechts in der Mitte steht ${x + 2 * y + w} − ${x + y}.`)); },
     () => auswahl('„Die Differenz von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.', [
       opt('Richtig. Beispiel: 25 − 13 = 12. Beide Zahlen liegen um 1 über einer geraden Zahl. Dieser Überschuss hebt sich beim Subtrahieren auf.', true),
       opt('Falsch. Ungerade minus ungerade bleibt ungerade.', false, 'begriffe-verwechselt'),
@@ -174,8 +174,8 @@ export function kopfrechnen() {
     () => { const [a, b] = suche(() => [zz(512, 945), zz(146, 389)], ([x, y]) => x % 10 < y % 10 && Math.floor(x / 10) % 10 <= Math.floor(y / 10) % 10 && x - y > 150);
       return zahl(`Rechne im Kopf: ${a} − ${b}`, a - b, fehlerliste(a - b, [[kleinerVonGroesser(a, b), 'sub-kleiner-von-groesser'], [a + b, 'sub-addiert']]), h1('Subtrahiere schrittweise: erst die Hunderter, dann die Zehner, dann die Einer.'), { nachweis: N(`${a} − ${b}`) }); },
     () => { const [x, y, w] = [zz(131, 248), zz(115, 229), zz(121, 238)];
-      return luecken(`Zahlenmauer: Jeder Stein ist die Summe der beiden Steine darunter. Oberster Stein: ${x + 2 * y + w}. Mittlere Reihe: {{a}}, ${y + w}. Untere Reihe: {{b}}, {{c}}, ${w}.`, { a: x + y, b: x, c: y },
-        h1('Beginne dort, wo zwei von drei zusammengehörenden Steinen bekannt sind.'), { nachweis: N(`${x + 2 * y + w} − ${y + w}`, `${y + w} − ${w}`, `${x + y} − ${y}`) }); },
+      return mauer('Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus.', '+', [x, y, w], [[1, 0], [0, 0], [0, 1]],
+        h1('Beginne dort, wo zwei von drei zusammengehörenden Steinen bekannt sind.')); },
     () => { const a = zz(61, 88) * 10 + zz(2, 8), b = zz(21, 38) * 10 + zz(4, 8);
       return auswahl('Entscheide ohne zu rechnen: Welche Differenz ist am größten?', [
         opt(`${a + 3} − ${b - 3}, denn hier ist der Minuend am größten und der Subtrahend am kleinsten`, true),

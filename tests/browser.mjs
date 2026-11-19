@@ -222,6 +222,55 @@ async function antworte(seite, richtig = true) {
   await seite.close();
 }
 
+// ---------- 1b2. Kapitel 4: Malkreuz und Mal-Mauer zum Eintragen ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await mitStand(seite, leererStand('5A-MALK', ['5.4.2-M2'])); // F-Aufgaben zum Malkreuz über die Grundlagen-Schleife
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-malk');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('[data-kapitel="5.4"]');
+  await seite.waitForSelector('svg.regionskarte');
+  // Übt ein Lernziel, bis eine Aufgabe mit der gesuchten Tabelle kommt, und löst sie erst falsch, dann richtig. Andere Aufgaben löst es richtig.
+  const finde = async (station, lernzielNr, art, name, pruefe) => {
+    for (let i = 0; i < 8; i++) {
+      await seite.click(`.meilenstein[aria-label^="Meilenstein ${station}"] .stein`);
+      await seite.click('.kronenwahl button[data-krone="G"]');
+      await seite.locator('.lernziele li button').nth(lernzielNr).click();
+      const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
+      if (process.env.SPUR) console.log(name, id);
+      const treffer = pool.aufgaben.find((a) => a.id === id)?.tabelle?.art === art;
+      if (treffer) {
+        await pruefe(pool.aufgaben.find((a) => a.id === id));
+        await foto(seite, `format-${name}`);
+        await antworte(seite, false); await seite.waitForSelector('.hinweis');
+        await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig');
+        await foto(seite, `format-${name}-geloest`);
+      } else {
+        await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); // richtig lösen, sonst beginnt die Grundlagen-Schleife
+      }
+      await seite.click('.ergebnis button:has-text("Zur Regionskarte")');
+      await seite.waitForSelector('svg.regionskarte');
+      if (treffer) return;
+    }
+    assert.fail(`Keine Aufgabe mit ${art} gefunden`);
+  };
+  await finde('Multiplizieren', 1, 'malkreuz', 'malkreuz', async (a) => {
+    assert.equal(await seite.locator('table.aufgabentabelle.malkreuz').count(), 1);
+    assert.equal(await seite.locator('.bildrahmen input').count(), Object.keys(a.luecken).length);
+  });
+  await finde('Zahlenmuster', 0, 'mauer', 'malmauer', async (a) => {
+    assert.equal(await seite.locator('.mauer.malmauer[aria-label="Mal-Mauer"]').count(), 1);
+    assert.equal(await seite.locator('.mauer .stein.offen input').count(), Object.keys(a.luecken).length);
+    assert.equal(await seite.locator('.mauer .mauerreihe').count(), 3);
+  });
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 1c. Niveaustufen: Hilfen, Wortspeicher und Sternregel je Stufe (Dividieren) ----------
 {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
