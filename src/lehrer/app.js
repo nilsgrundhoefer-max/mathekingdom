@@ -131,9 +131,9 @@ async function oeffneSchule(schueler, lehrer, kuerzel) {
   const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND, browser: P.browserName(navigator.userAgent) });
   await notiere(e.art, e.text);
   // Kopien für Tage ohne Internet: Lehrer-Dashboard aufs Lehrer-, Schüler-Dashboard aufs Schülertauschlaufwerk.
-  if (window.MK_LEHRER_PAKET) await lehrer.schreibe(`${S.SYSTEMORDNER}/lehrer.js`, window.MK_LEHRER_PAKET)
+  if (window.MK_LEHRER_PAKET) await lehrer.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_LEHRER}`, window.MK_LEHRER_PAKET)
     .catch((f) => notiere('problem', `Kopie des Dashboards aufs Lehrertauschlaufwerk fehlgeschlagen: ${f.message}`));
-  if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/schueler.js`, window.MK_SCHUELER_JS)
+  if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_SCHUELER}`, window.MK_SCHUELER_JS)
     .catch((f) => notiere('problem', `Kopie des Schüler-Dashboards aufs Schülertauschlaufwerk fehlgeschlagen: ${f.message}`));
   z.ansicht = 'klassen'; z.fehler = null;
   // Die Liste der Klassen braucht nur, wer mehrere hat (ADR 0025).

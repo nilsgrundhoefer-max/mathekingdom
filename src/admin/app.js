@@ -111,7 +111,7 @@ async function weiter() {
   Object.assign(z, { persoenlich, schueler, lehrer, admin, v, jahr: v.schuljahr });
   if (!vorhanden) { await jahrOrdner(schueler); await jahrOrdner(lehrer); await speichereVerzeichnis(); z.hinweis = `Mathekingdom ist eingerichtet, Schuljahr ${v.schuljahr}. Lege jetzt die Lehrkräfte an, dann die Klassen.`; z.tab = 'klassen'; }
   // Kopie für Tage ohne Internet, damit Schüler-Startdateien auch dann starten.
-  if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/schueler.js`, window.MK_SCHUELER_JS).catch(() => {});
+  if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_SCHUELER}`, window.MK_SCHUELER_JS).catch(() => {});
 }
 
 function start() {

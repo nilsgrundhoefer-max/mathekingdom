@@ -96,9 +96,12 @@ const gemerktJs = `function gemerkt(db, schluessel) {
       return ordner.getDirectoryHandle('Mathekingdom').then(function (u) { return u.getFileHandle('schulverzeichnis.json').then(function () { return u; }); });
     });
   }
+  // Die Kopie liegt seit 0.28 als .txt (Schulrichtlinien blockieren das Schreiben von .js), davor als .js.
   function kopie(ordner, datei) {
-    return ordner.getDirectoryHandle('_mathekingdom').then(function (s) { return s.getFileHandle(datei); })
-      .then(function (d) { return d.getFile(); }).then(function (d) { return d.text(); });
+    var lies = function (s, name) { return s.getFileHandle(name).then(function (d) { return d.getFile(); }).then(function (d) { return d.text(); }); };
+    return ordner.getDirectoryHandle('_mathekingdom').then(function (s) {
+      return lies(s, datei.replace(/\.js$/, '-kopie.txt')).catch(function () { return lies(s, datei); });
+    });
   }
   function fuehreAus(code) {
     ziel.innerHTML = '';
