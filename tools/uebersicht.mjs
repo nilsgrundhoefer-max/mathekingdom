@@ -50,11 +50,15 @@ const loesung = (a) => {
   return a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n');
 };
 
+const alleLernziele = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.text]));
+// Prozessbezogene Kompetenz (ADR 0017): Haupt, in Klammern die Nebenkompetenz.
+const kompetenzText = (a) => `${pool.kompetenzen[a.kompetenz[0]]}${a.kompetenz[1] ? ` (+ ${pool.kompetenzen[a.kompetenz[1]]})` : ''}`;
 let md = `# Aufgaben Klasse 5: Übersicht zur Durchsicht\n\nAutomatisch erzeugt aus \`aufgabenpool/klasse-5.json\` (${pool.aufgaben.length} Aufgaben). Nicht von Hand bearbeiten.\n\nBei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.\n`;
 for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.lernziele) {
   const eigene = pool.aufgaben.filter((a) => a.lernziel === l.id);
   if (!eigene.length) continue;
-  md += `\n## ${l.id}: ${l.text}\n\nGrundlage, die F übt: ${l.grundlage}\n`;
+  const vor = l.voraussetzungen?.length ? l.voraussetzungen.map((v) => `${v} (${alleLernziele.get(v)})`).join(', ') : 'nur Grundschulstoff';
+  md += `\n## ${l.id}: ${l.text}\n\nGrundlage, die F übt: ${l.grundlage}\n\nBaut auf: ${vor}\n`;
   for (const n of Object.keys(NAMEN)) {
     const gruppe = eigene.filter((a) => a.niveau === n);
     md += `\n### ${n} · ${NAMEN[n]}\n\n`;
@@ -64,9 +68,16 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
     md += `Hilfekärtchen der ersten Aufgabe: ${karten(gruppe[0].hilfen)}\n\n`;
     for (const a of gruppe) {
       const mehrzeilig = a.format === 'auswahl' || a.format === 'sachaufgabe';
-      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
+      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
     }
   }
+}
+md += `\n## Typische Fehler und Aha-Momente\n\nJe Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).\n\n| Kürzel | Für die Lehrkraft | Hinweis an den Schüler | Aha-Moment |\n|---|---|---|---|\n`;
+for (const [id, f] of Object.entries(pool.fehlvorstellungen)) md += `| \`${id}\` | ${f.beschreibung} | ${f.hinweis} | ${f.kind} |\n`;
+md += `\n## Voraussetzungen der Lernziele ohne Aufgaben\n\n`;
+for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.lernziele) {
+  if (pool.aufgaben.some((a) => a.lernziel === l.id)) continue;
+  md += `- ${l.id} ${l.text} Baut auf: ${l.voraussetzungen?.length ? l.voraussetzungen.map((v) => `${v} (${alleLernziele.get(v)})`).join(', ') : 'nur Grundschulstoff'}\n`;
 }
 writeFileSync(new URL('../docs/aufgaben-klasse-5-pilot.md', import.meta.url), md);
 console.log('Übersicht geschrieben.');

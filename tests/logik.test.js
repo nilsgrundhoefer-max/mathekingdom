@@ -596,10 +596,11 @@ test('Brücke: Vorschlag erst bei wackelig, drei Aufgaben eine Stufe tiefer, ein
   assert.ok(L.brueckeVorschlag(stand, index, lz, '2026-11-18T09:00:00Z'), 'am nächsten Tag wieder');
 });
 
-test('Brücke: Lernziele ohne Voraussetzungen bekommen keine', () => {
+test('Brücke: Lernziele ohne Voraussetzungen mit Aufgaben bekommen keine', () => {
   const stand = neu();
   const lz = '5.3.1-K1';
-  assert.deepEqual(index.lernziel.get(lz).voraussetzungen ?? [], []);
+  // 5.3.1-K1 baut auf 5.2.1 (Natürliche Zahlen) auf; dazu gibt es noch keine Aufgaben, also auch keine Brücke (ADR 0017).
+  assert.deepEqual((index.lernziel.get(lz).voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id)), []);
   for (const a of aufgaben(lz, 'G').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
   assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:08:00Z'), null);
 });

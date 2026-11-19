@@ -142,7 +142,57 @@ export const zweiKinder = () => mische(KINDER).slice(0, 2);
 
 // ---------- Fehlvorstellungen ----------
 // beschreibung: für die Diagnose der Lehrkraft. hinweis: Rückmeldung an den Schüler nach dem ersten falschen Versuch.
+// kind: Satz in einfacher Sprache für den Aha-Moment, wenn der Schüler den Fehler überwunden hat (ADR 0017).
 const fv = (beschreibung, hinweis) => ({ beschreibung, hinweis });
+const KIND = {
+  'begriffe-verwechselt': 'Du weißt jetzt, welche Zahl wie heißt.',
+  'sub-kleiner-von-groesser': 'Du tauschst jetzt richtig beim schriftlichen Minus.',
+  'sub-uebertrag-vergessen': 'Du denkst jetzt an den Übertrag in der nächsten Stelle.',
+  'sub-addiert': 'Du achtest jetzt auf das Minuszeichen.',
+  'sub-klammerfehler': 'Du ziehst jetzt jede Zahl hinter einem Minus ab.',
+  'add-uebertrag-vergessen': 'Du denkst jetzt an den Übertrag in der nächsten Stelle.',
+  'add-subtrahiert': 'Du achtest jetzt auf das Pluszeichen.',
+  'stellenwert': 'Du hältst jetzt Einer, Zehner und Hunderter auseinander.',
+  'kopf-stellenwert': 'Du rechnest im Kopf jetzt an der richtigen Stelle.',
+  'ergaenzen-zu-viel': 'Du ergänzt jetzt richtig: die Einer bis 10, alle anderen Stellen bis 9.',
+  'geschickt-nicht-ausgeglichen': 'Du gleichst jetzt nach dem Rechnen mit der glatten Zahl aus.',
+  'geschickt-falsch-ausgeglichen': 'Du gleichst jetzt in die richtige Richtung aus.',
+  'ueberschlag-nicht-gerundet': 'Du rundest jetzt zuerst und überschlägst dann.',
+  'falsch-gerundet': 'Du rundest jetzt richtig: Bei 5 bis 9 wird aufgerundet.',
+  'probe-falsche-umkehr': 'Du findest jetzt die richtige Umkehraufgabe für die Probe.',
+  'klammer-ignoriert': 'Du rechnest jetzt die Klammer zuerst.',
+  'klammer-falsch-gesetzt': 'Du setzt die Klammer jetzt an die richtige Stelle.',
+  'gesetz-auf-subtraktion': 'Du weißt jetzt: Beim Minus darfst du nicht tauschen.',
+  'div-null-vergessen': 'Du denkst jetzt an die Null im Ergebnis.',
+  'div-stellenwert': 'Du prüfst jetzt mit dem Überschlag, wie viele Stellen das Ergebnis hat.',
+  'div-rest-nicht-gedeutet': 'Du überlegst jetzt, was der Rest in der Geschichte bedeutet.',
+  'div-rest-vergessen': 'Du gibst den Rest jetzt richtig an.',
+  'div-vertauscht': 'Du weißt jetzt: Beim Teilen darfst du nicht tauschen.',
+  'div-falsche-rechenart': 'Du erkennst jetzt, wann geteilt wird.',
+  'div-rest-zu-gross': 'Du weißt jetzt: Der Rest ist immer kleiner als die Zahl hinter dem Geteiltzeichen.',
+  'div-einmaleins': 'Du prüfst Geteilt-Aufgaben jetzt mit dem Einmaleins.',
+  'teilbar-summe': 'Du weißt jetzt: Volle Päckchen und volle Päckchen ergeben wieder volle Päckchen.',
+  '1x1-nachbar': 'Du triffst im Einmaleins jetzt die richtige Reihe.',
+  '1x1-addiert': 'Du achtest jetzt auf das Malzeichen.',
+  '1x1-null': 'Du weißt jetzt: Mal 0 ergibt immer 0.',
+  'div-durch-sich-selbst': 'Du weißt jetzt: Eine Zahl geteilt durch sich selbst ergibt 1.',
+  'sach-falsche-rechnung': 'Du findest jetzt die passende Rechnung zur Geschichte.',
+  'sach-unnoetige-angabe': 'Du erkennst jetzt, welche Zahlen du wirklich brauchst.',
+  'mal-uebertrag-vergessen': 'Du nimmst den Übertrag jetzt in die nächste Stelle mit.',
+  'mal-null-vergessen': 'Du denkst jetzt auch an die Null im Faktor.',
+  'mal-nicht-eingerueckt': 'Du schreibst die Teilergebnisse jetzt an die richtige Stelle.',
+  'mal-stellenwert': 'Du zählst die Nullen jetzt richtig.',
+  'mal-zerlegung-halb': 'Du nimmst jetzt beide Teile mal.',
+  'punkt-vor-strich': 'Du rechnest jetzt Punkt vor Strich.',
+  'klammer-innen-aussen': 'Du beginnst jetzt bei der innersten Klammer.',
+  'potenz-mal-exponent': 'Du weißt jetzt: 2³ heißt 2 · 2 · 2.',
+  'potenz-vertauscht': 'Du hältst Basis und Exponent jetzt auseinander.',
+  'potenz-nullen': 'Du zählst die Nullen bei Zehnerpotenzen jetzt richtig.',
+  'verteilung-halb': 'Du nimmst jetzt jeden Teil in der Klammer mal.',
+  'gesetz-auf-division': 'Du weißt jetzt: Beim Teilen darfst du nicht tauschen und keine Klammern verschieben.',
+  'muster-falsche-regel': 'Du prüfst deine Regel jetzt an allen Zahlen des Musters.',
+  'sach-schritt-vergessen': 'Du denkst jetzt an alle Rechenschritte.',
+};
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
   'sub-kleiner-von-groesser': fv('Zieht in jeder Stelle die kleinere von der größeren Ziffer ab, statt zu tauschen.', 'Achte auf die Reihenfolge: Es wird immer die untere von der oberen Ziffer abgezogen. Geht das nicht, musst du tauschen.'),
@@ -192,6 +242,10 @@ export const fehlvorstellungen = {
   'muster-falsche-regel': fv('Setzt ein Zahlenmuster mit einer falschen Regel fort (zum Beispiel immer gleich viel dazu statt immer mal gleich viel).', 'Prüfe deine Regel an allen Zahlen des Musters, nicht nur an den ersten beiden.'),
   'sach-schritt-vergessen': fv('Führt nur einen von mehreren nötigen Rechenschritten aus.', 'Du bist noch nicht fertig: Es fehlt noch ein Rechenschritt.'),
 };
+for (const [id, f] of Object.entries(fehlvorstellungen)) {
+  if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
+  f.kind = KIND[id];
+}
 
 // ---------- Bausteine ----------
 // Einfache Sprache: jeder Satz in einer eigenen Zeile.
@@ -348,6 +402,44 @@ export const B = {
   strahl: (s) => ({ art: 'zahlenstrahl', ...s }),
 };
 
+// ---------- Prozessbezogene Kompetenzen (Bildungsplan 2016, ADR 0017) ----------
+// Jede Aufgabe trägt eine Haupt- und höchstens eine Nebenkompetenz: kompetenz: [haupt] oder [haupt, neben].
+// Festgelegt je Aufgabenmuster: zuerst das Lernziel, dann Merkmale der Aufgabe (Nachweisart, Format). Ein Erzeuger kann
+// sie mit `extra.kompetenz` selbst setzen; das geht vor.
+export const KOMPETENZEN = {
+  argumentieren: 'Argumentieren',
+  'probleme-loesen': 'Probleme lösen',
+  modellieren: 'Modellieren',
+  symbolisch: 'Mit symbolischen Elementen umgehen',
+  kommunizieren: 'Kommunizieren',
+};
+// Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
+const KOMPETENZ_LERNZIEL = {
+  kommunizieren: ['5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
+  modellieren: ['5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  'probleme-loesen': ['5.4.X1-Z1'],
+  argumentieren: ['5.4.X1-Z2'],
+};
+// Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
+const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
+  'gleicheWerte', 'zahlenwahl', 'anzahlProdukte', 'zahlenpaar', 'anzahlTeiler', 'ziffernTeilbar', 'grenzVielfaches', 'ziffernZahlen', 'vielfachesZwischen',
+  'restBleibt', 'grenzRest', 'anzahlMitRest', 'kleinsteMitResten', 'naheBei', 'quotientUeber', 'teilerZwischen']);
+// Aufgaben, die eine Aussage prüfen oder begründen lassen („Wer hat recht?“, „Warum …?“).
+const BEGRUENDEN = /Wer hat recht\?|Beurteile|Begründe|Stimmt das\?|Erkläre|Warum/;
+export function kompetenzVon(lernziel, a) {
+  const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
+  const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
+  const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
+  const darstellung = a.format === 'diagramm' || a.format === 'tabelle';
+  let haupt = vomLernziel;
+  if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
+  else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';
+  else if (sach && haupt === 'symbolisch') haupt = 'modellieren';
+  const neben = [vomLernziel !== haupt ? vomLernziel : null, sach && haupt !== 'modellieren' ? 'modellieren' : null, darstellung && haupt !== 'kommunizieren' ? 'kommunizieren' : null]
+    .find((x) => x && x !== haupt && x !== 'symbolisch') ?? null;
+  return neben ? [haupt, neben] : [haupt];
+}
+
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
 const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild].filter(Boolean));
@@ -378,7 +470,7 @@ export function sechs(lernziel, niveau, plaetze) {
       const k = schluessel(a);
       if (gesehen.has(k)) continue;
       gesehen.add(k);
-      aufgaben.push({ id: `${lernziel}-${niveau}-${String(i + 1).padStart(2, '0')}`, lernziel, niveau, afb: AFB_FOLGE[niveau][i], ...a });
+      aufgaben.push({ id: `${lernziel}-${niveau}-${String(i + 1).padStart(2, '0')}`, lernziel, niveau, afb: AFB_FOLGE[niveau][i], kompetenz: a.kompetenz ?? kompetenzVon(lernziel, a), ...a });
       break;
     }
   });

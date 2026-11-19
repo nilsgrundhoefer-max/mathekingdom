@@ -153,3 +153,54 @@ test('Versuchsverlauf: neueste zuerst, erster und zweiter Versuch, Hilfekärtche
   assert.deepEqual(vl[1].karten, ['tipp']);
   assert.equal(A.versuchsverlauf(stand, 1).length, 1);
 });
+
+test('Pool: jede Aufgabe hat eine prozessbezogene Kompetenz, jede Fehlvorstellung einen Kindersatz, jedes Lernziel Voraussetzungen', () => {
+  const erlaubt = Object.keys(pool.kompetenzen);
+  assert.deepEqual(erlaubt.sort(), [...A.KOMPETENZ_REIHE].sort());
+  for (const a of pool.aufgaben) {
+    assert.ok(Array.isArray(a.kompetenz) && a.kompetenz.length >= 1 && a.kompetenz.length <= 2, a.id);
+    for (const k of a.kompetenz) assert.ok(erlaubt.includes(k), `${a.id}: ${k}`);
+  }
+  // Jede Kompetenz kommt vor, damit das Profil keine Achse hat, die nie gefüllt wird.
+  for (const k of erlaubt) assert.ok(pool.aufgaben.some((a) => a.kompetenz.includes(k)), k);
+  for (const [id, f] of Object.entries(pool.fehlvorstellungen)) assert.match(f.kind, /^Du /, id);
+  for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele)) assert.ok(Array.isArray(l.voraussetzungen), l.id);
+});
+
+test('Kompetenzprofil: Haupt- und Nebenkompetenz zählen, nur erster Versuch ohne Beispiel und Lösungsschritt, ab sechs Aufgaben', () => {
+  const sach = pool.aufgaben.filter((a) => a.kompetenz[0] === 'modellieren').slice(0, 6);
+  const versuche = sach.map((a, i) => v(a.lernziel, { aufgabe: a.id, richtig: i !== 0, versuche: i === 1 ? 2 : 1, karten: i === 2 ? ['tipp', 'beispiel'] : i === 3 ? ['tipp'] : [] }));
+  const p = A.kompetenzProfil(versuche.slice(0, 5), index);
+  assert.equal(p.modellieren.bearbeitet, 5);
+  assert.equal(p.modellieren.quote, null, 'unter sechs Aufgaben');
+  const q = A.kompetenzProfil(versuche, index);
+  assert.equal(q.modellieren.gut, 3, 'Nr. 0 falsch, Nr. 1 im zweiten Versuch, Nr. 2 mit Beispiel; der Tipp schadet nicht');
+  assert.equal(q.modellieren.quote, 0.5);
+  const neben = sach.filter((a) => a.kompetenz[1]).length;
+  for (const k of A.KOMPETENZ_REIHE) if (k !== 'modellieren') assert.equal(q[k].bearbeitet, sach.filter((a) => a.kompetenz[1] === k).length);
+  assert.ok(neben >= 0);
+});
+
+test('Baut auf: Voraussetzungen und was darauf aufbaut', () => {
+  const b = A.bautAuf(pool, '5.3.3-S2');
+  assert.deepEqual(b.auf.map((l) => l.id), ['5.3.1-K2', '5.3.2-A2']);
+  assert.ok(b.darauf.some((l) => l.id === '5.3.3-S3'));
+  assert.deepEqual(A.bautAuf(pool, '5.4.1-K1').auf, [], 'Einmaleins: nur Grundschulstoff');
+});
+
+test('Aha-Momente: nur überwundene Fehler, neueste zuerst, gesehen wird gemerkt', () => {
+  const stand = neu();
+  const f = 'sub-uebertrag-vergessen', g = 'sub-addiert';
+  stand.versuche.push(v('A', { richtig: false, fehlvorstellungen: [f], t: zeit(1) }), v('A', { t: zeit(2) }), v('A', { t: zeit(3) }), v('A', { t: zeit(4) }),
+    v('B', { richtig: false, fehlvorstellungen: [g], t: zeit(5) }));
+  let aha = L.ahaMomente(stand);
+  assert.deepEqual(aha.map((a) => a.fehlvorstellung), [f], 'offener Fehler g erscheint nicht');
+  assert.equal(aha[0].neu, true);
+  assert.equal(L.merkeAhaGesehen(stand), true);
+  assert.equal(L.merkeAhaGesehen(stand), false);
+  assert.equal(L.ahaMomente(stand)[0].neu, false);
+  stand.versuche.push(v('B', { t: zeit(6) }), v('B', { t: zeit(7) }), v('B', { t: zeit(8) }), v('A', { richtig: false, fehlvorstellungen: [f], t: zeit(9) }));
+  aha = L.ahaMomente(stand);
+  assert.deepEqual(aha.map((a) => a.fehlvorstellung), [g, f], 'f bleibt stehen, obwohl er wieder auftaucht');
+  assert.deepEqual(aha.map((a) => a.neu), [true, false]);
+});

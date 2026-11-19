@@ -130,7 +130,8 @@ function kopf() {
       h('span', { class: 'wert klein-wert', title: 'Münzen zum Ausgeben' }, muenze(16), h('b', { id: 'muenzen' }, z.stand.muenzen))),
     h('nav', {},
       h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Schlossgarten'),
-      h('button', { class: z.ansicht.name === 'wappen' ? 'aktiv' : '', onclick: () => zeige({ name: 'wappen' }) }, 'Wappen')),
+      h('button', { class: z.ansicht.name === 'wappen' ? 'aktiv' : '', onclick: () => zeige({ name: 'wappen' }) }, 'Wappen',
+        (() => { const n = z.ansicht.name === 'wappen' ? 0 : L.ahaMomente(z.stand).filter((a) => a.neu).length; return n > 0 && h('span', { class: 'aha-neu', id: 'aha-neu', title: `${n} neue Aha-Momente` }, `✦ ${n}`); })())),
     h('div', { class: `speicher ${status && !status.ok ? 'fehler' : ''}`, id: 'speicherstatus' },
       !status ? 'Noch nichts zu speichern'
         : status.ok ? `Gespeichert um ${status.um.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
@@ -1006,6 +1007,19 @@ function hilfen(a, meilenstein = meilensteinVon(a.aufgabe)) {
 }
 
 // ---------- Wappen ----------
+// Aha-Momente (ADR 0017): nur Überwundenes, nie offene Fehler, ohne Münzen. Beim Ansehen gelten sie als gesehen.
+function ahaKarte() {
+  const liste = L.ahaMomente(z.stand);
+  if (L.merkeAhaGesehen(z.stand)) geaendert();
+  return h('section', { class: 'karte aha', id: 'aha' }, h('h2', {}, 'Deine Aha-Momente'),
+    liste.length === 0
+      ? h('p', { class: 'klein' }, 'Hier sammelst du Fehler, die du hinter dir gelassen hast. Wer Fehler macht und sie dann nicht mehr macht, hat etwas gelernt.')
+      : [h('p', { class: 'klein' }, 'Diese Fehler hast du einmal gemacht. Jetzt machst du sie nicht mehr.'),
+        h('ul', { class: 'aha-liste' }, liste.map((a) => h('li', { class: a.neu ? 'neu' : '' }, h('span', { class: 'funke', 'aria-hidden': 'true' }, '✦'),
+          h('span', {}, z.pool.fehlvorstellungen[a.fehlvorstellung]?.kind ?? a.fehlvorstellung,
+            h('small', {}, ` ${lernzielText(a.lernziel)} · ${new Date(a.am).toLocaleDateString('de-DE')}`)),
+          a.neu && h('span', { class: 'marke-neu' }, 'neu'))))]);
+}
 function wappenAnsicht() {
   const r = L.rang(L.siegel(z.stand));
   const w = z.stand.wappen;
@@ -1029,6 +1043,7 @@ function wappenAnsicht() {
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
         h('p', {}, r.naechster ? `Mit ${r.naechster.ab} Siegeln wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
         h('p', { class: 'klein' }, 'Siegel bekommst du für erreichte Lernziele, Kronen an den Meilensteinen. Münzen gibst du hier für dein Wappen aus.'))),
+    ahaKarte(),
     h('h2', {}, 'Farben'), h('ul', { class: 'teile-liste' }, L.WAPPEN_TEILE.filter((x) => x.art === 'farbe').map(teilKarte)),
     h('h2', {}, 'Zeichen'), h('ul', { class: 'teile-liste' }, L.WAPPEN_TEILE.filter((x) => x.art === 'zeichen').map(teilKarte)),
     h('h2', {}, 'Spielpause'),

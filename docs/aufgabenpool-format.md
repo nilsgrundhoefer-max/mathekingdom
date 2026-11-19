@@ -20,8 +20,9 @@ Der Zufall im Erzeuger ist fest geimpft: Gleicher Code ergibt dieselbe Datei. Ei
 |---|---|
 | `version` | Version des Dateiaufbaus |
 | `klassenstufe` | 5 bis 10 |
-| `fehlvorstellungen` | Katalog: Kürzel → `beschreibung` (für die Diagnose) und `hinweis` (Rückmeldung an den Schüler nach dem ersten falschen Versuch) |
-| `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele. Ein Unterkapitel mit Aufgaben trägt einen `merkzettel` mit `regeln` (Liste), `beispiel` und `heft`. Die Texte stehen in `tools/jahresplan-klasse-5.mjs`. |
+| `fehlvorstellungen` | Katalog: Kürzel → `beschreibung` (für die Diagnose) `hinweis` (Rückmeldung an den Schüler nach dem ersten falschen Versuch) und `kind` (Satz in einfacher Sprache für den Aha-Moment, ADR 0017) |
+| `kompetenzen` | Die fünf prozessbezogenen Kompetenzen: Kürzel → Name (ADR 0017) |
+| `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele. Jedes Lernziel trägt `voraussetzungen` (Liste, leer heißt: nur Grundschulstoff). Ein Unterkapitel mit Aufgaben trägt einen `merkzettel` mit `regeln` (Liste), `beispiel` und `heft`. Die Texte stehen in `tools/jahresplan-klasse-5.mjs`. |
 | `aufgaben` | Liste aller Aufgaben |
 
 Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.3-S2`, Aufgabe `5.3.3-S2-G-01`.
@@ -34,6 +35,7 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 | `lernziel` | Kennung des Lernziels, das die Aufgabe nachweist |
 | `niveau` | `F`, `G`, `M` oder `E` |
 | `afb` | Anforderungsbereich `1`, `2` oder `3`. Der Erzeuger setzt ihn nach einer Faustregel je Lernziel und Niveaustufe (Kopfrechnen und schriftliches Rechnen I; Klammern berechnen I, auf E II; geschickt und vorteilhaft rechnen, Gesetze erkennen wie Fachbegriffe; Rechenausdruck aufstellen wie Sachaufgaben; Fachbegriffe, Überschlag, Probe, Rest deuten auf F und G I, auf M und E II; Sachaufgaben II, auf E III). Eine Aufgabe kann davon abweichen. Seit ADR 0015 gilt für alle Lernziele die feste Folge je Niveaustufe: F I, I, I, I, II, I; G I, I, II, I, II, III; M I, II, II, I, II, III; E I, II, II, III, II, III. |
+| `kompetenz` | Prozessbezogene Kompetenz nach Bildungsplan 2016: `[haupt]` oder `[haupt, neben]` aus `argumentieren`, `probleme-loesen`, `modellieren`, `symbolisch`, `kommunizieren`. Der Erzeuger setzt sie je Aufgabenmuster (`kompetenzVon` in `tools/werkzeug.mjs`): zuerst nach Lernziel (Fachbegriffe Kommunizieren, Sachaufgaben und Rechenausdruck aufstellen Modellieren), dann „Wer hat recht?“, „Warum“ und Urteile als Argumentieren, Knobel-Nachweise als Probleme lösen. `extra.kompetenz` geht vor. |
 | `format` | Aufgabenformat, siehe unten |
 | `text` | Aufgabentext |
 | `hilfen` | die Hilfekärtchen: auf F und G `tipp`, `beispiel`, `loesungsschritt`, auf M `tipp` und `loesungsschritt`, auf E nur `tipp` (ADR 0015) |

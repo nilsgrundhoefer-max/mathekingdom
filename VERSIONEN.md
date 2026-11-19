@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.13 vom 19.11.2026
+
+### Schüler
+
+- Neu beim Wappen: deine Aha-Momente. Dort stehen Fehler, die du einmal gemacht hast und jetzt nicht mehr machst. Ein Zeichen neben „Wappen“ zeigt, wenn ein neuer dazugekommen ist.
+
+### Lehrkraft
+
+- Kompetenzprofil (ADR 0017): Jede Aufgabe trägt eine prozessbezogene Kompetenz des Bildungsplans (Argumentieren, Probleme lösen, Modellieren, mit symbolischen Elementen umgehen, Kommunizieren). Lernstand und Schüler-Seite zeigen sie als Netzdiagramm mit Tabelle: Anteil der Aufgaben im ersten Versuch ohne Beispiel und Lösungsschritt richtig, ab 6 Aufgaben je Kompetenz.
+- Lernziel-Seite: „Baut auf“ und „Darauf baut auf“, mit der Zahl der Siegel in der Klasse. Alle 85 Lernziele haben jetzt Voraussetzungen. Neu bieten auch Kopfrechnen geschickt, die Fachbegriff-Lernziele und das Vertauschungsgesetz eine Brücke an.
+- Aha-Momente der Schüler: Jede Fehlvorstellung hat einen Satz in einfacher Sprache, den der Schüler sieht, sobald er den Fehler überwunden hat.
+- Die Aufgabenübersicht zeigt je Aufgabe die Kompetenz, je Lernziel die Voraussetzungen und am Ende alle Kindersätze.
+
 ## 0.12 vom 19.11.2026
 
 ### Schüler

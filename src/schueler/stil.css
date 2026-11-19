@@ -377,3 +377,11 @@ body { margin: 0; background: #efe6d2; }
 /* Lernen sichtbar machen (ADR 0017) */
 #mathekingdom .ergebnis h2 .lernsatz { display: block; flex-basis: 100%; font-family: "Segoe UI", system-ui, sans-serif; font-size: .95rem; font-weight: 600; color: #1f6b43; margin-top: 4px; }
 #mathekingdom .lernziele .fest { display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 99px; font-size: .78rem; font-weight: 700; color: #4a3a00; background: #f5d76e; vertical-align: 1px; }
+#mathekingdom .aha-neu { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 99px; background: #f5d76e; color: #4a3a00; font-size: .78rem; font-weight: 700; }
+#mathekingdom .aha { margin: 16px 0; }
+#mathekingdom .aha-liste { list-style: none; margin: 0; padding: 0; }
+#mathekingdom .aha-liste li { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid #e8dcc2; }
+#mathekingdom .aha-liste li:first-child { border-top: 0; }
+#mathekingdom .aha-liste .funke { color: #b8860b; font-size: 1.1rem; }
+#mathekingdom .aha-liste small { display: block; color: #6b6255; margin-top: 2px; }
+#mathekingdom .aha-liste .marke-neu { font-size: .75rem; font-weight: 700; color: #1f6b43; }
