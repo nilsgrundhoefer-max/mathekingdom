@@ -129,6 +129,10 @@ _Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken, Straße
 Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, also eine Krone auf oder über seinem Zielniveau trägt. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
 _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 
+**Aufgabenführung**:
+Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt: erst alle Lernziele des Meilensteins, an dem er gerade arbeitet, dann der nächste Meilenstein des Lernpfads. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
+_Avoid_: Empfehlung, Lernpfad (das ist der Weg durch das Kapitel)
+
 **Abstecher**:
 Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist. Er bekommt eine Krone nach derselben Regel.
 _Avoid_: Zusatzstation, Extra
