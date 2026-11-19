@@ -1290,6 +1290,19 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.keyboard.up('ArrowUp');
   await seite.click('#nav-spiele');
   await seite.waitForSelector('.spiele-liste');
+  // Steinmetz, Grenzlauf, Kellerjagd (ADR 0019): jedes Spiel läuft an und zeigt seine Punkt-Einheit.
+  for (const [id, einheit, tasten] of [['steinmetz', 'Reihen', ['ArrowLeft', 'ArrowUp', 'ArrowDown']], ['grenzlauf', 'Meilen', ['ArrowUp']], ['kellerjagd', 'Rollen', ['ArrowLeft', 'ArrowUp']]]) {
+    await seite.click(`[data-spiel=${id}]`);
+    await seite.waitForSelector('#spielfeld');
+    for (const t of tasten) { await seite.keyboard.press(t); await seite.waitForTimeout(400); }
+    await seite.waitForTimeout(id === 'grenzlauf' ? 2600 : 1200);
+    assert.match(await seite.innerText('.spielanzeige'), new RegExp(`Noch \\d+ s · ${einheit}: \\d+`));
+    await foto(seite, id);
+    await seite.locator('#spielfeld').screenshot(bilder ? { path: `${bilder}/${id}.png` } : {});
+    await seite.click('#nav-spiele');
+    await seite.waitForSelector('.spiele-liste');
+  }
+  assert.equal(JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-WAPP.json'))).muenzen, 2000 - 620 - 100 - 100 - 300);
   // Beiname wählen.
   await seite.selectOption('#beiname-vorne', 'Flinker');
   assert.match(await seite.innerText('#bestenliste-botenritt'), /Flinker Otter/);

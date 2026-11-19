@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.15 vom 19.11.2026
+
+### Schüler
+
+- Drei neue Belohnungsspiele unter „Spiele“, je 100 Münzen, eine Runde höchstens 3 Minuten, jedes mit eigener Bestenliste:
+- Steinmetz: Bausteine der Burg fallen von oben. Schieben mit ← und →, drehen mit ↑, schneller fallen mit ↓. Jede volle Reihe zählt.
+- Grenzlauf: Lauf über die Landstraße, spring mit ↑ über Steine, Zäune und Gräben und duck dich mit ↓ unter den Raben. Gezählt werden Meilen.
+- Kellerjagd: Sammle im Burgkeller alle Pergamentrollen und nimm dann die Treppe in den nächsten Keller. Weich den Ratten aus.
+
+### Lehrkraft
+
+- Drei weitere Belohnungsspiele (ADR 0019). Freigabe, Preis und Bestenliste funktionieren wie bei Botenritt und Burgmauer, du musst nichts einstellen.
+
 ## 0.14 vom 19.11.2026
 
 ### Schüler

@@ -210,8 +210,12 @@ Ein billiges, kurzes Minispiel mit Mathematik, etwa der Kopfrechen-Sprint. Ohne 
 _Avoid_: Kurzpause
 
 **Belohnungsspiel**:
-Ein Minispiel rein zum Spaß, ohne Mathematik, eine Runde von höchstens drei Minuten pro Kauf (zum Beispiel Botenritt, Burgmauer, Kellerjagd). Es kostet deutlich mehr als eine Rechenpause und hat eine Bestenliste.
-_Avoid_: Freispiel, Arcade
+Ein Minispiel rein zum Spaß, ohne Mathematik, eine Runde von höchstens drei Minuten pro Kauf (Botenritt, Burgmauer, Steinmetz, Grenzlauf, Kellerjagd). Es kostet deutlich mehr als eine Rechenpause und hat eine Bestenliste. Jedes ist ein eigenes Spiel im Kartenstil, kein Nachbau eines bekannten Spiels.
+_Avoid_: Freispiel, Arcade, die Namen bekannter Spiele (Tetris, Pac-Man, Dino-Spiel)
+
+**Banner**:
+Ein Leben in einem Belohnungsspiel. Burgmauer, Grenzlauf und Kellerjagd beginnen mit drei Bannern; ein Treffer kostet eines, ohne Banner ist die Runde vorbei.
+_Avoid_: Leben, Herz
 
 **Spielfreigabe**:
 Der Klassenschalter der Lehrkraft, wann Minispiele gehen: aus, nur in der Spielpause oder verdient. Bei „verdient“ geht die Rechenpause immer, ein Belohnungsspiel nach jedem vierten abgeschlossenen Wegstück.
