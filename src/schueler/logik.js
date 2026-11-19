@@ -3,15 +3,23 @@
 
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
 export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
-export const MUENZEN_BASIS = { F: 10, G: 15, M: 20, E: 25 };
+// Münzen am Zielniveau des Schülers (ADR 0018): auf dem Ziel bekommt jeder gleich viel, darüber mehr, im Training weniger.
+export const MUENZEN = { ziel: 20, darueber: 25, training: 10 };
+// Zwölf Ränge über sechs Schuljahre (ADR 0018). Die ersten vier bleiben, die Abstände wachsen mit den Jahren.
 export const RAENGE = [
   { ab: 0, name: 'Wanderer' },
   { ab: 5, name: 'Kundschafter' },
   { ab: 15, name: 'Wegmeister' },
   { ab: 30, name: 'Hofkartograf' },
+  { ab: 50, name: 'Fährtenleser' },
+  { ab: 75, name: 'Landvermesser' },
+  { ab: 105, name: 'Burgvogt' },
+  { ab: 140, name: 'Kartenmeister' },
+  { ab: 180, name: 'Hofgelehrter' },
+  { ab: 225, name: 'Großkartograf' },
+  { ab: 275, name: 'Kanzler des Reiches' },
+  { ab: 330, name: 'Ritter der Karte' },
 ];
-export const MINISPIEL_PREIS = 20;
-export const MINISPIEL_SEKUNDEN = 90;
 
 // Kronenfarben: So sehen Schüler die Niveaustufen (ADR 0012). Die Lehrkraft sieht nur F, G, M, E.
 export const KRONEN = { F: 'Bronze', G: 'Silber', M: 'Gold', E: 'Purpur' };
@@ -269,9 +277,9 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
   if (!bearbeitung.geloest) return 0;
   if (stand.versuche.some((v) => v.aufgabe === aufgabe.id && v.richtig)) return 1; // Wiederholung
   if (hatKarte(bearbeitung, 'loesungsschritt')) return 1;
-  let m = MUENZEN_BASIS[aufgabe.niveau];
+  const abstand = NIVEAUS.indexOf(aufgabe.niveau) - NIVEAUS.indexOf(zielniveau);
+  let m = abstand === 0 ? MUENZEN.ziel : abstand > 0 ? MUENZEN.darueber : MUENZEN.training;
   if (aufgabe.afb === 3) m *= AFB3_ZUSCHLAG; // Aufgaben zum Beurteilen und Begründen bringen die Hälfte mehr
-  if (NIVEAUS.indexOf(aufgabe.niveau) < NIVEAUS.indexOf(zielniveau)) m /= 2; // Training
   // Ein Fehlversuch und der Tipp kosten nichts (ADR 0010). Nur Beispiel und Lösungsschritt senken die Münzen.
   const karten = bearbeitung.karten ?? KARTEN.slice(0, bearbeitung.hilfen ?? 0);
   m *= 1 - 0.2 * karten.filter((k) => k !== 'tipp').length;
@@ -415,7 +423,7 @@ export function holeBelohnung(stand, expedition, jetzt) {
   stand.expeditionen ??= {};
   if (stand.expeditionen[expedition.id]) return false;
   stand.expeditionen[expedition.id] = { geschafftAm: jetzt };
-  if (expedition.belohnung === 'fahne' && !stand.wappen.gekauft.includes('fahne')) stand.wappen.gekauft.push('fahne');
+  if (expedition.belohnung === 'fahne' && !stand.wappen.gekauft.includes('fahne')) { stand.wappen.gekauft.push('fahne'); (stand.neueEhre ??= []).push('fahne'); }
   return true;
 }
 
@@ -579,6 +587,8 @@ export function trageWegstueckEin(stand, aufgabe, { richtig, muenzen = 0, seiten
     stand.wegstueck = null;
     ergebnis.heute = wegstueckeAm(stand, tag).length;
     ergebnis.rast = ergebnis.heute % RAST_NACH === 0;
+    // Mit der Spielfreigabe „verdient“ gibt es zur selben Zeit ein Belohnungsspiel (ADR 0018). Es sammelt sich nicht an.
+    if (ergebnis.rast) stand.spielGutschrift = 1;
   }
   return ergebnis;
 }
@@ -675,45 +685,119 @@ export function wartePlatz(stand, andereHilferufe) {
   return 1 + andereHilferufe.filter((h) => h && h.seit < stand.hilferuf.seit).length;
 }
 
-// ---------- Wappen ----------
-// Farben und Zeichen fürs eigene Wappen. Preise und Rangstufen wie bei den früheren Lok-Teilen.
-export const WAPPEN_TEILE = [
-  { id: 'rot', art: 'farbe', name: 'Siegelrot', wert: '#9e2f28', preis: 0, rang: 0 },
-  { id: 'blau', art: 'farbe', name: 'Seeblau', wert: '#2f5f8a', preis: 30, rang: 0 },
-  { id: 'gruen', art: 'farbe', name: 'Waldgrün', wert: '#3e6b3a', preis: 30, rang: 0 },
-  { id: 'violett', art: 'farbe', name: 'Königsviolett', wert: '#5e4280', preis: 60, rang: 1 },
-  { id: 'schwarz', art: 'farbe', name: 'Tintenschwarz', wert: '#2c2a2e', preis: 90, rang: 2 },
-  { id: 'gold', art: 'farbe', name: 'Goldgelb', wert: '#c39a2c', preis: 200, rang: 3 },
-  { id: 'eichenlaub', art: 'zeichen', name: 'Eichenlaub', preis: 20, rang: 0 },
-  { id: 'balken', art: 'zeichen', name: 'Querbalken', preis: 40, rang: 0 },
-  { id: 'zirkel', art: 'zeichen', name: 'Zirkel', preis: 50, rang: 1 },
-  { id: 'winkel', art: 'zeichen', name: 'Winkelmaß', preis: 70, rang: 2 },
-  { id: 'lilie', art: 'zeichen', name: 'Lilie', preis: 250, rang: 3 },
-  // Nicht zu kaufen: Belohnung einer geschafften Expedition (ADR 0014).
-  { id: 'fahne', art: 'zeichen', name: 'Expeditionsfahne', preis: null, rang: 0, expedition: true },
+// ---------- Wappen (ADR 0018) ----------
+// Der Wappenschrank wächst mit der Klassenstufe: Jede öffnet beim Schuljahreswechsel einen neuen Wappenbereich.
+// Gebaut ist bisher der Bereich von Klasse 5 (Farben und Zeichen); die späteren zeigt der Schrank nur als Ausblick.
+export const WAPPENBEREICHE = [
+  { klasse: 5, name: 'Farben und Zeichen' },
+  { klasse: 6, name: 'Schildteilung' },
+  { klasse: 7, name: 'Helmzier' },
+  { klasse: 8, name: 'Schildhalter' },
+  { klasse: 9, name: 'Wahlspruch' },
+  { klasse: 10, name: 'Prunkrahmen' },
 ];
+export const ZEICHEN_GRUPPEN = { formen: 'Formen', natur: 'Natur', werkzeuge: 'Werkzeuge', bauwerke: 'Bauwerke', tiere: 'Tiere', ehre: 'Ehrenzeichen' };
+// Ein Wappen trägt ein Hauptzeichen und bis zu zwei Beizeichen: zeichen[0] ist das Hauptzeichen.
+export const MAX_ZEICHEN = 3;
+// Preise für ein Schuljahr: zusammen etwa 5.000 Münzen, einzeln 50 bis 600. `rang` ist die Rangstufe, ab der ein Teil kaufbar ist.
+// `metall`: helle Farbe, auf der die Zeichen dunkel stehen.
+export const WAPPEN_TEILE = [
+  { id: 'rot', art: 'farbe', klasse: 5, name: 'Siegelrot', wert: '#9e2f28', preis: 0, rang: 0 },
+  { id: 'blau', art: 'farbe', klasse: 5, name: 'Seeblau', wert: '#2f5f8a', preis: 60, rang: 0 },
+  { id: 'gruen', art: 'farbe', klasse: 5, name: 'Waldgrün', wert: '#3e6b3a', preis: 60, rang: 0 },
+  { id: 'himmel', art: 'farbe', klasse: 5, name: 'Himmelblau', wert: '#4f86b0', preis: 90, rang: 0 },
+  { id: 'braun', art: 'farbe', klasse: 5, name: 'Erdbraun', wert: '#7a5232', preis: 90, rang: 0 },
+  { id: 'rost', art: 'farbe', klasse: 5, name: 'Rostorange', wert: '#b0592a', preis: 120, rang: 1 },
+  { id: 'weinrot', art: 'farbe', klasse: 5, name: 'Weinrot', wert: '#6e2233', preis: 120, rang: 1 },
+  { id: 'violett', art: 'farbe', klasse: 5, name: 'Königsviolett', wert: '#5e4280', preis: 160, rang: 1 },
+  { id: 'moos', art: 'farbe', klasse: 5, name: 'Moosgrün', wert: '#5b6b2e', preis: 160, rang: 2 },
+  { id: 'schwarz', art: 'farbe', klasse: 5, name: 'Tintenschwarz', wert: '#2c2a2e', preis: 220, rang: 2 },
+  { id: 'silber', art: 'farbe', klasse: 5, name: 'Silber', wert: '#c9ccc8', preis: 320, rang: 2, metall: true },
+  { id: 'gold', art: 'farbe', klasse: 5, name: 'Gold', wert: '#d2a93c', preis: 450, rang: 3, metall: true },
+  { id: 'kreis', art: 'zeichen', gruppe: 'formen', klasse: 5, name: 'Kugel', preis: 50, rang: 0 },
+  { id: 'raute', art: 'zeichen', gruppe: 'formen', klasse: 5, name: 'Raute', preis: 60, rang: 0 },
+  { id: 'balken', art: 'zeichen', gruppe: 'formen', klasse: 5, name: 'Querbalken', preis: 70, rang: 0 },
+  { id: 'stern', art: 'zeichen', gruppe: 'formen', klasse: 5, name: 'Stern', preis: 90, rang: 0 },
+  { id: 'eichenlaub', art: 'zeichen', gruppe: 'natur', klasse: 5, name: 'Eichenlaub', preis: 80, rang: 0 },
+  { id: 'lilie', art: 'zeichen', gruppe: 'natur', klasse: 5, name: 'Lilie', preis: 500, rang: 4 },
+  { id: 'feder', art: 'zeichen', gruppe: 'werkzeuge', klasse: 5, name: 'Schreibfeder', preis: 100, rang: 0 },
+  { id: 'buch', art: 'zeichen', gruppe: 'werkzeuge', klasse: 5, name: 'Buch', preis: 110, rang: 0 },
+  { id: 'schluessel', art: 'zeichen', gruppe: 'werkzeuge', klasse: 5, name: 'Schlüssel', preis: 120, rang: 1 },
+  { id: 'zirkel', art: 'zeichen', gruppe: 'werkzeuge', klasse: 5, name: 'Zirkel', preis: 150, rang: 1 },
+  { id: 'winkel', art: 'zeichen', gruppe: 'werkzeuge', klasse: 5, name: 'Winkelmaß', preis: 150, rang: 1 },
+  { id: 'sanduhr', art: 'zeichen', gruppe: 'werkzeuge', klasse: 5, name: 'Sanduhr', preis: 180, rang: 2 },
+  { id: 'tor', art: 'zeichen', gruppe: 'bauwerke', klasse: 5, name: 'Tor', preis: 140, rang: 1 },
+  { id: 'bruecke', art: 'zeichen', gruppe: 'bauwerke', klasse: 5, name: 'Brücke', preis: 160, rang: 1 },
+  { id: 'turm', art: 'zeichen', gruppe: 'bauwerke', klasse: 5, name: 'Turm', preis: 200, rang: 2 },
+  { id: 'eule', art: 'zeichen', gruppe: 'tiere', klasse: 5, name: 'Eule', preis: 160, rang: 1 },
+  { id: 'hirsch', art: 'zeichen', gruppe: 'tiere', klasse: 5, name: 'Hirsch', preis: 220, rang: 2 },
+  { id: 'baer', art: 'zeichen', gruppe: 'tiere', klasse: 5, name: 'Bär', preis: 240, rang: 2 },
+  { id: 'adler', art: 'zeichen', gruppe: 'tiere', klasse: 5, name: 'Adler', preis: 300, rang: 3 },
+  { id: 'loewe', art: 'zeichen', gruppe: 'tiere', klasse: 5, name: 'Löwe', preis: 350, rang: 3 },
+  // Ehrenzeichen: nicht zu kaufen, nur zu verdienen (ADR 0014, 0018). Nichts davon belohnt tägliches Erscheinen.
+  { id: 'fahne', art: 'zeichen', gruppe: 'ehre', klasse: 5, name: 'Expeditionsfahne', preis: null, rang: 0, ehre: 'Für eine geschaffte Expedition der Klasse' },
+  { id: 'purpurrose', art: 'zeichen', gruppe: 'ehre', klasse: 5, name: 'Purpurrose', preis: null, rang: 0, ehre: 'Für deine erste Purpurkrone' },
+  { id: 'kapitelband', art: 'zeichen', gruppe: 'ehre', klasse: 5, name: 'Kapitelband', preis: null, rang: 0, ehre: 'Für ein Kapitel, in dem du jedes Lernziel besiegelt hast' },
+  { id: 'wegstern', art: 'zeichen', gruppe: 'ehre', klasse: 5, name: 'Wegstern', preis: null, rang: 0, ehre: 'Für 25 Wegstücke mit mindestens 4 von 5 richtig' },
+];
+export const WEGSTERN_WEGSTUECKE = 25;
+export const klassenstufe = (stand) => Number.parseInt(stand?.klasse, 10) || 5;
+export const teil = (id) => WAPPEN_TEILE.find((w) => w.id === id) ?? null;
+
 export function kaufe(stand, id) {
-  const teil = WAPPEN_TEILE.find((w) => w.id === id);
-  if (!teil) return 'unbekannt';
+  const t = teil(id);
+  if (!t) return 'unbekannt';
+  if (t.preis == null) return 'ehrenzeichen';
   if (stand.wappen.gekauft.includes(id)) return 'vorhanden';
-  if (teil.expedition) return 'expedition';
-  if (rang(siegel(stand)).stufe < teil.rang) return 'rang';
-  if (stand.muenzen < teil.preis) return 'muenzen';
-  stand.muenzen -= teil.preis;
+  if (t.klasse > klassenstufe(stand)) return 'klasse';
+  if (rang(siegel(stand)).stufe < t.rang) return 'rang';
+  if (stand.muenzen < t.preis) return 'muenzen';
+  stand.muenzen -= t.preis;
   stand.wappen.gekauft.push(id);
   return 'ok';
 }
+// Farbe wählen; ein Zeichen anbringen oder abnehmen. Ein neues Zeichen wird Hauptzeichen, wenn noch keines da ist,
+// sonst Beizeichen; sind schon zwei Beizeichen da, ersetzt es das letzte.
 export function legeAn(stand, id) {
-  const teil = WAPPEN_TEILE.find((w) => w.id === id);
-  if (!teil || !stand.wappen.gekauft.includes(id)) return;
-  if (teil.art === 'farbe') stand.wappen.farbe = id;
-  else if (stand.wappen.zeichen.includes(id)) stand.wappen.zeichen = stand.wappen.zeichen.filter((x) => x !== id);
-  else stand.wappen.zeichen.push(id);
+  const t = teil(id);
+  if (!t || !stand.wappen.gekauft.includes(id)) return;
+  const w = stand.wappen;
+  if (t.art === 'farbe') w.farbe = id;
+  else if (w.zeichen.includes(id)) w.zeichen = w.zeichen.filter((x) => x !== id);
+  else if (w.zeichen.length < MAX_ZEICHEN) w.zeichen.push(id);
+  else w.zeichen[MAX_ZEICHEN - 1] = id;
+}
+// Ein angebrachtes Beizeichen wird Hauptzeichen; das bisherige Hauptzeichen wird Beizeichen.
+export function macheHauptzeichen(stand, id) {
+  const z = stand.wappen.zeichen;
+  if (!z.includes(id)) return;
+  stand.wappen.zeichen = [id, ...z.filter((x) => x !== id)];
 }
 
-// ---------- Alte Speicherstände ----------
-// Version 1 hatte eine Lok: Jedes Lok-Teil wird das Wappen-Teil mit demselben Preis (ADR 0010).
+// Ehrenzeichen vergeben, die der Schüler inzwischen verdient hat. Liefert die neuen Ids.
+// Die Expeditionsfahne kommt über holeBelohnung.
+export function vergebeEhrenzeichen(stand, pool, index) {
+  const neu = [];
+  const gib = (id) => { if (!stand.wappen.gekauft.includes(id)) { stand.wappen.gekauft.push(id); neu.push(id); } };
+  if (Object.values(kronen(pool, index, stand)).includes('E')) gib('purpurrose');
+  const ganz = pool.kapitel.some((k) => {
+    const ziele = k.unterkapitel.flatMap((u) => u.lernziele).filter((l) => index.lernzielMitAufgaben.has(l.id));
+    return ziele.length > 0 && ziele.every((l) => stand.lernziele[l.id]);
+  });
+  if (ganz) gib('kapitelband');
+  if ((stand.wegstuecke ?? []).filter((w) => w.gesamt >= WEGSTUECK_AUFGABEN && w.richtig >= 4).length >= WEGSTERN_WEGSTUECKE) gib('wegstern');
+  if (neu.length) (stand.neueEhre ??= []).push(...neu);
+  return neu;
+}
+
+// Version 1 hatte eine Lok: Jedes Lok-Teil wird das Wappen-Teil mit demselben Namen (ADR 0010).
 const LOK_ZU_WAPPEN = { dampf: 'eichenlaub', streifen: 'balken', fahne: 'zirkel', laterne: 'winkel', krone: 'lilie' };
+// Seit ADR 0018 trägt ein Wappen höchstens drei Zeichen. Bei mehr bleiben die teuersten, das teuerste wird Hauptzeichen.
+function ordneZeichen(wappen) {
+  if (wappen.zeichen.length <= MAX_ZEICHEN) return;
+  const wert = (id) => teil(id)?.preis ?? 1000;
+  wappen.zeichen = [...wappen.zeichen].sort((a, b) => wert(b) - wert(a)).slice(0, MAX_ZEICHEN);
+}
 export function migriere(stand) {
   if (!stand) return stand;
   // Das Wappen-Zeichen Krone heißt seit ADR 0012 Lilie, damit „Krone“ eindeutig der Lohn am Meilenstein ist.
@@ -721,23 +805,56 @@ export function migriere(stand) {
     const neu = (id) => (id === 'krone' ? 'lilie' : id);
     stand.wappen.zeichen = stand.wappen.zeichen.map(neu);
     stand.wappen.gekauft = stand.wappen.gekauft.map(neu);
+    ordneZeichen(stand.wappen);
     return stand;
   }
   const lok = stand.lok ?? { farbe: 'rot', extras: [], gekauft: ['rot'] };
   const neu = (id) => LOK_ZU_WAPPEN[id] ?? id;
   stand.wappen = { farbe: lok.farbe, zeichen: lok.extras.map(neu), gekauft: lok.gekauft.map(neu) };
+  ordneZeichen(stand.wappen);
   delete stand.lok;
   stand.version = 2;
   return stand;
 }
 
-// ---------- Minispiel ----------
-export function starteMinispiel(stand, spielpauseErlaubt) {
-  if (!spielpauseErlaubt) return 'keine-spielpause';
-  if (stand.muenzen < MINISPIEL_PREIS) return 'muenzen';
-  stand.muenzen -= MINISPIEL_PREIS;
+// ---------- Minispiele (ADR 0018) ----------
+// Rechenpause: kurz, billig, mit Mathematik. Belohnungsspiel: reiner Spaß, eine Runde von höchstens drei Minuten, mit Bestenliste.
+export const SPIELE = [
+  { id: 'kopfrechnen', art: 'rechenpause', name: 'Kopfrechen-Sprint', preis: 20, sekunden: 90, text: 'Löse in 90 Sekunden so viele Aufgaben wie möglich.' },
+  { id: 'botenritt', art: 'belohnung', name: 'Botenritt', preis: 100, sekunden: 180, text: 'Reite mit den Pfeiltasten über die Karte und sammle Briefe. Mit jedem Brief wird dein Gefolge länger. Stoß nicht an den Rand und nicht an dein Gefolge.' },
+  { id: 'burgmauer', art: 'belohnung', name: 'Burgmauer', preis: 100, sekunden: 180, text: 'Schieb die Armbrust mit ← und → über die Mauer und schieß mit ↑ die Raben ab, bevor sie die Mauer erreichen. Drei Banner hast du.' },
+];
+export const spiel = (id) => SPIELE.find((x) => x.id === id) ?? null;
+// Für alte Tests und Aufrufe: der Kopfrechen-Sprint.
+export const MINISPIEL_PREIS = SPIELE[0].preis;
+export const MINISPIEL_SEKUNDEN = SPIELE[0].sekunden;
+export const SPIELFREIGABEN = { aus: 'Aus', spielpause: 'Nur in der Spielpause', verdient: 'Verdient' };
+
+// Darf der Schüler dieses Spiel jetzt spielen? 'ok' | 'aus' | 'keine-spielpause' | 'nicht-verdient'
+// In der Spielpause gehen alle Spiele. Bei „verdient“ geht die Rechenpause immer, ein Belohnungsspiel mit Gutschrift aus einem vierten Wegstück.
+export function spielErlaubt(stand, einst, spielId) {
+  const s = spiel(spielId);
+  const freigabe = einst.spielfreigabe ?? 'spielpause';
+  if (!s || freigabe === 'aus') return 'aus';
+  if (einst.spielpause) return 'ok';
+  if (freigabe === 'verdient') return s.art === 'rechenpause' || (stand.spielGutschrift ?? 0) > 0 ? 'ok' : 'nicht-verdient';
+  return 'keine-spielpause';
+}
+export function starteMinispiel(stand, einst, spielId = 'kopfrechnen') {
+  const s = spiel(spielId);
+  const erlaubt = spielErlaubt(stand, einst, spielId);
+  if (erlaubt !== 'ok') return erlaubt;
+  if (stand.muenzen < s.preis) return 'muenzen';
+  stand.muenzen -= s.preis;
+  if (s.art === 'belohnung' && !einst.spielpause) stand.spielGutschrift = 0;
   return 'ok';
 }
+export function trageSpielEin(stand, spielId, punkte, jetzt) {
+  (stand.spiele ??= []).push({ spiel: spielId, t: jetzt, punkte });
+}
+// Alte Einträge ohne Spiel-Id stammen aus dem Kopfrechen-Sprint.
+const spielVon = (e) => e.spiel ?? 'kopfrechnen';
+export const bestwert = (stand, spielId) => Math.max(0, ...(stand.spiele ?? []).filter((e) => spielVon(e) === spielId).map((e) => e.punkte));
 export function kopfrechenAufgabe(zufall = Math.random) {
   const zz = (a, b) => a + Math.floor(zufall() * (b - a + 1));
   const art = zz(0, 3);
@@ -745,6 +862,47 @@ export function kopfrechenAufgabe(zufall = Math.random) {
   if (art === 1) { const a = zz(30, 99), b = zz(11, a - 5); return { text: `${a} − ${b}`, loesung: a - b }; }
   if (art === 2) { const a = zz(2, 12), b = zz(2, 10); return { text: `${a} · ${b}`, loesung: a * b }; }
   const b = zz(2, 10), q = zz(2, 12); return { text: `${b * q} : ${b}`, loesung: q };
+}
+
+// ---------- Bestenliste (ADR 0018) ----------
+// Nur für Belohnungsspiele. Die fünf Besten der Klasse in dieser Woche (ab Montag), dazu der eigene Platz.
+// Schüler erscheinen mit Wappen und Beinamen, nie mit Namen oder Code.
+export const BESTENLISTE_PLAETZE = 5;
+export const BEINAME_VORNE = ['Seeblauer', 'Goldener', 'Stiller', 'Flinker', 'Kluger', 'Tapferer', 'Wachsamer', 'Fröhlicher', 'Silberner', 'Grüner', 'Roter', 'Weiser', 'Mutiger', 'Schneller'];
+export const BEINAME_HINTEN = ['Falke', 'Fuchs', 'Bär', 'Hirsch', 'Luchs', 'Adler', 'Rabe', 'Wolf', 'Biber', 'Dachs', 'Igel', 'Otter', 'Kranich', 'Steinbock'];
+// Ohne eigene Wahl bekommt jeder einen festen Beinamen aus seinem Code.
+export function beiname(stand) {
+  const b = stand.beiname;
+  if (b && BEINAME_VORNE.includes(b.vorne) && BEINAME_HINTEN.includes(b.hinten)) return `${b.vorne} ${b.hinten}`;
+  let h = 0;
+  for (const c of String(stand.code ?? '')) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return `${BEINAME_VORNE[h % BEINAME_VORNE.length]} ${BEINAME_HINTEN[Math.floor(h / BEINAME_VORNE.length) % BEINAME_HINTEN.length]}`;
+}
+export function setzeBeiname(stand, vorne, hinten) {
+  if (BEINAME_VORNE.includes(vorne) && BEINAME_HINTEN.includes(hinten)) stand.beiname = { vorne, hinten };
+}
+// Montag der Woche von `iso`, als JJJJ-MM-TT in Ortszeit.
+export function wocheVon(iso) {
+  const d = new Date(iso);
+  d.setHours(12, 0, 0, 0);
+  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  return d.toLocaleDateString('sv-SE');
+}
+// eigener: Speicherstand des Schülers; andere: die der Mitschüler.
+// Liefert { plaetze: [{ platz, beiname, wappen, punkte, eigen }], eigenerPlatz, eigenerWert, ausgeblendet }.
+export function bestenliste(eigener, andere, spielId, jetzt) {
+  const woche = wocheVon(jetzt);
+  const besterDerWoche = (st) => Math.max(0, ...(st.spiele ?? []).filter((e) => spielVon(e) === spielId && wocheVon(e.t) === woche).map((e) => e.punkte));
+  const eintraege = [eigener, ...andere]
+    .filter((st) => st === eigener || !st.bestenlisteAus)
+    .map((st) => ({ beiname: beiname(st), wappen: st.wappen, punkte: besterDerWoche(st), eigen: st === eigener }))
+    .filter((e) => e.punkte > 0)
+    .sort((a, b) => b.punkte - a.punkte || Number(b.eigen) - Number(a.eigen));
+  // Wer sich ausgeblendet hat, sieht seinen Platz, steht aber für die anderen nicht in der Liste.
+  const sichtbar = eigener.bestenlisteAus ? eintraege.filter((e) => !e.eigen) : eintraege;
+  const plaetze = sichtbar.slice(0, BESTENLISTE_PLAETZE).map((e, i) => ({ platz: i + 1, beiname: e.beiname, wappen: e.wappen, punkte: e.punkte, eigen: e.eigen }));
+  const i = eintraege.findIndex((e) => e.eigen);
+  return { plaetze, eigenerPlatz: i >= 0 ? i + 1 : null, eigenerWert: i >= 0 ? eintraege[i].punkte : 0, ausgeblendet: Boolean(eigener.bestenlisteAus) };
 }
 
 // ---------- Klassendatei ----------
@@ -758,6 +916,8 @@ export function einstellungen(klassendatei, code, pool) {
     aktuellesKapitel: k.aktuellesKapitel ?? null,
     offeneKapitel: new Set(kapitelIds.slice(0, bis + 1)),
     spielpause: Boolean(k.spielpause),
+    spielfreigabe: SPIELFREIGABEN[k.spielfreigabe] ? k.spielfreigabe : 'spielpause', // ADR 0018
+    bestenliste: k.bestenliste !== false, // Bestenliste der Belohnungsspiele, standardmäßig an
     expedition: k.expedition ?? null,
     sicherheitsangabe: Boolean(k.sicherheitsangabe),
     ton: Boolean(k.ton),          // dezenter Ton bei richtigen Aufgaben, standardmäßig aus (ADR 0016)

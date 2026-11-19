@@ -9,6 +9,7 @@ import * as S from './speicher.js';
 import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { klinge } from './ton.js';
+import { starteSpiel } from './spiele.js';
 
 const jetzt = () => new Date().toISOString();
 const z = { // Zustand der laufenden Sitzung
@@ -19,6 +20,8 @@ let wurzel;
 
 // ---------- Rahmen ----------
 function zeige(ansicht) {
+  // Wer ein laufendes Belohnungsspiel verlässt, beendet die Runde.
+  if (z.ansicht.name === 'minispiel' && ansicht.name !== 'minispiel') { spielStopp?.(); spielStopp = null; clearInterval(spieluhr); }
   z.ansicht = { ...ansicht, seit: Date.now() };
   if (ansicht.name !== 'aufgabe' && z.stand?.aktiv) {
     // Aufgabe ohne Ergebnis verlassen: für das Aufgaben-Audit der Lehrkraft festhalten.
@@ -46,9 +49,11 @@ function speicherMeldung(status) {
 const FOKUS = new Set(['aufgabe', 'heftcheck', 'wegstueck']);
 const imFokus = () => Boolean(z.stand) && FOKUS.has(z.ansicht.name);
 function male() {
-  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, wappen: wappenAnsicht, minispiel };
+  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, wappen: wappenAnsicht, spiele: spieleAnsicht, minispiel };
   const fokus = imFokus();
   wurzel.classList.toggle('fokus', fokus);
+  // Neu verdiente Ehrenzeichen (ADR 0018) zeigt das Zeichen am Knopf „Wappen“ an. Nicht mitten in einer Aufgabe prüfen.
+  if (z.stand && z.index && !fokus && L.vergebeEhrenzeichen(z.stand, z.pool, z.index).length) geaendert();
   wurzel.replaceChildren(...[
     z.stand && (fokus ? fokusKopf() : kopf()),
     z.stand && hilfeBanner(),
@@ -131,7 +136,8 @@ function kopf() {
     h('nav', {},
       h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Schlossgarten'),
       h('button', { class: z.ansicht.name === 'wappen' ? 'aktiv' : '', onclick: () => zeige({ name: 'wappen' }) }, 'Wappen',
-        (() => { const n = z.ansicht.name === 'wappen' ? 0 : L.ahaMomente(z.stand).filter((a) => a.neu).length; return n > 0 && h('span', { class: 'aha-neu', id: 'aha-neu', title: `${n} neue Aha-Momente` }, `✦ ${n}`); })())),
+        (() => { const n = z.ansicht.name === 'wappen' ? 0 : L.ahaMomente(z.stand).filter((a) => a.neu).length + (z.stand.neueEhre?.length ?? 0); return n > 0 && h('span', { class: 'aha-neu', id: 'aha-neu', title: `${n} Neues beim Wappen` }, `✦ ${n}`); })()),
+      h('button', { class: ['spiele', 'minispiel'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-spiele', onclick: () => zeige({ name: 'spiele' }) }, 'Spiele')),
     h('div', { class: `speicher ${status && !status.ok ? 'fehler' : ''}`, id: 'speicherstatus' },
       !status ? 'Noch nichts zu speichern'
         : status.ok ? `Gespeichert um ${status.um.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
@@ -254,7 +260,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht]]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht], e.spielfreigabe, e.bestenliste]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -877,6 +883,8 @@ function wegstueckAnsicht() {
     h('div', { class: 'wegpunkte gross', 'aria-hidden': 'true' }, b.punkte.map((r) => h('i', { class: r ? 'voll' : 'daneben' }))),
     b.muenzen > 0 && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${b.muenzen}`), ' Münzen in diesem Wegstück'),
     rastKarte,
+    b.rast && z.einst.spielfreigabe === 'verdient' && (z.stand.spielGutschrift ?? 0) > 0 && h('p', { class: 'verdient', id: 'spiel-verdient' }, 'Du hast dir ein Belohnungsspiel verdient. ',
+      h('button', { class: 'schlicht', onclick: () => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); zeige({ name: 'spiele' }); } }, 'Zu den Spielen')),
     h('div', { class: 'knoepfe' },
       h('button', { class: 'haupt', id: 'weiter', onclick: bereit(() => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); a.fortsetzung(); }) }, rast ? 'Rast überspringen' : 'Nächstes Wegstück'),
       h('button', { class: 'schlicht', onclick: () => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); zeige({ name: 'region', kapitel: a.kapitel }); } }, 'Zur Regionskarte')));
@@ -1023,52 +1031,143 @@ function ahaKarte() {
 function wappenAnsicht() {
   const r = L.rang(L.siegel(z.stand));
   const w = z.stand.wappen;
+  const stufe = L.klassenstufe(z.stand);
+  L.vergebeEhrenzeichen(z.stand, z.pool, z.index);
+  const neueEhre = z.stand.neueEhre ?? [];
+  if (neueEhre.length) { z.stand.neueEhre = []; geaendert(); }
   const teilKarte = (teil) => {
     const gekauft = w.gekauft.includes(teil.id);
-    const an = teil.art === 'farbe' ? w.farbe === teil.id : w.zeichen.includes(teil.id);
+    const platz = teil.art === 'farbe' ? -1 : w.zeichen.indexOf(teil.id);
+    const an = teil.art === 'farbe' ? w.farbe === teil.id : platz >= 0;
     const rangFehlt = r.stufe < teil.rang;
-    return h('li', { class: `teil ${an ? 'an' : ''}` },
+    const kaufen = () => { if (L.kaufe(z.stand, teil.id) === 'ok') { L.legeAn(z.stand, teil.id); geaendert(); male(); } };
+    const lege = () => { L.legeAn(z.stand, teil.id); geaendert(); male(); };
+    return h('li', { class: `teil ${an ? 'an' : ''} ${teil.ehre ? 'ehre' : ''}` },
       teil.art === 'farbe' ? h('span', { class: 'farbfeld', style: `background:${teil.wert}` }) : h('span', { class: 'vorschau' }, wappenBild({ farbe: w.farbe, zeichen: [teil.id] }, 44)),
       h('b', {}, teil.name),
+      an && platz >= 0 && h('span', { class: 'klein' }, platz === 0 ? 'Hauptzeichen' : 'Beizeichen'),
       gekauft
-        ? h('button', { class: an ? 'haupt' : 'schlicht', 'data-teil': teil.id, onclick: () => { L.legeAn(z.stand, teil.id); geaendert(); male(); } }, teil.art === 'farbe' ? (an ? 'Gewählt' : 'Wählen') : (an ? 'Abnehmen' : 'Anbringen'))
-        : teil.expedition ? h('span', { class: 'klein' }, 'Belohnung einer geschafften Expedition')
-        : rangFehlt ? h('span', { class: 'klein' }, `Ab Rang ${L.RAENGE[teil.rang].name}`)
-          : h('button', { class: 'schlicht', 'data-teil': teil.id, disabled: z.stand.muenzen < teil.preis, onclick: () => { L.kaufe(z.stand, teil.id); L.legeAn(z.stand, teil.id); geaendert(); male(); } }, muenze(16), ` ${teil.preis} kaufen`));
+        ? h('div', { class: 'teil-knoepfe' },
+          h('button', { class: an ? 'haupt' : 'schlicht', 'data-teil': teil.id, onclick: lege }, teil.art === 'farbe' ? (an ? 'Gewählt' : 'Wählen') : (an ? 'Abnehmen' : 'Anbringen')),
+          platz > 0 && h('button', { class: 'schlicht', 'data-haupt': teil.id, onclick: () => { L.macheHauptzeichen(z.stand, teil.id); geaendert(); male(); } }, 'Als Hauptzeichen'))
+        : teil.ehre ? h('span', { class: 'klein' }, teil.ehre)
+          : rangFehlt ? h('span', { class: 'klein' }, `Ab Rang ${L.RAENGE[teil.rang].name}`)
+            : h('button', { class: 'schlicht', 'data-teil': teil.id, disabled: z.stand.muenzen < teil.preis, onclick: kaufen }, muenze(16), ` ${teil.preis} kaufen`));
   };
-  const bestwert = Math.max(0, ...z.stand.spiele.map((x) => x.punkte));
+  const imSchrank = L.WAPPEN_TEILE.filter((t) => t.klasse <= stufe);
+  const gruppen = Object.entries(L.ZEICHEN_GRUPPEN).map(([id, titel]) => [titel, imSchrank.filter((t) => t.art === 'zeichen' && t.gruppe === id)]).filter(([, liste]) => liste.length);
   return h('section', {},
     h('h1', {}, 'Dein Wappen'),
     h('div', { class: 'werkbank' }, wappenBild(w, 150),
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
         h('p', {}, r.naechster ? `Mit ${r.naechster.ab} Siegeln wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
-        h('p', { class: 'klein' }, 'Siegel bekommst du für erreichte Lernziele, Kronen an den Meilensteinen. Münzen gibst du hier für dein Wappen aus.'))),
+        h('p', { class: 'klein' }, 'Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen. Münzen bekommst du für gelöste Aufgaben, Ehrenzeichen kannst du nur verdienen.'))),
+    neueEhre.length > 0 && h('div', { class: 'karte neue-ehre', id: 'neue-ehre', role: 'status' },
+      h('b', {}, neueEhre.length === 1 ? 'Neues Ehrenzeichen: ' : 'Neue Ehrenzeichen: '), neueEhre.map((id) => L.teil(id)?.name).join(', '),
+      '. Du findest es unten bei den Ehrenzeichen.'),
     ahaKarte(),
-    h('h2', {}, 'Farben'), h('ul', { class: 'teile-liste' }, L.WAPPEN_TEILE.filter((x) => x.art === 'farbe').map(teilKarte)),
-    h('h2', {}, 'Zeichen'), h('ul', { class: 'teile-liste' }, L.WAPPEN_TEILE.filter((x) => x.art === 'zeichen').map(teilKarte)),
-    h('h2', {}, 'Spielpause'),
-    h('div', { class: 'karte' },
-      h('p', {}, h('b', {}, 'Kopfrechen-Sprint: '), `Löse in ${L.MINISPIEL_SEKUNDEN} Sekunden so viele Aufgaben wie möglich.`, bestwert ? ` Dein Bestwert: ${bestwert}.` : ''),
-      !z.einst.spielpause ? h('p', { class: 'klein' }, 'Gerade ist keine Spielpause. Deine Lehrkraft schaltet sie frei.')
-        : h('button', { class: 'haupt', id: 'spiel', disabled: z.stand.muenzen < L.MINISPIEL_PREIS, onclick: () => {
-          if (L.starteMinispiel(z.stand, z.einst.spielpause) === 'ok') { geaendert(); zeige({ name: 'minispiel', ende: Date.now() + L.MINISPIEL_SEKUNDEN * 1000, punkte: 0, frage: L.kopfrechenAufgabe() }); }
-        } }, muenze(16), ` ${L.MINISPIEL_PREIS} Münzen: Spiel starten`)));
+    h('h2', {}, 'Farben'), h('ul', { class: 'teile-liste' }, imSchrank.filter((x) => x.art === 'farbe').map(teilKarte)),
+    gruppen.map(([titel, liste]) => [h('h2', {}, titel), h('ul', { class: 'teile-liste' }, liste.map(teilKarte))]),
+    h('h2', {}, 'Später im Wappenschrank'),
+    h('ul', { class: 'ausblick', id: 'ausblick' }, L.WAPPENBEREICHE.filter((b) => b.klasse > stufe).map((b) => h('li', {}, h('b', {}, b.name), ` öffnet sich in Klasse ${b.klasse}.`))));
+}
+
+// ---------- Spiele (ADR 0018) ----------
+const SPERRE = {
+  aus: 'Spiele sind in deiner Klasse gerade ausgeschaltet.',
+  'keine-spielpause': 'Gerade ist keine Spielpause. Deine Lehrkraft schaltet sie frei.',
+  'nicht-verdient': 'Nach jedem vierten Wegstück verdienst du dir ein Belohnungsspiel.',
+};
+function spieleAnsicht() {
+  z.einst = einstellungenJetzt();
+  if (z.einst.bestenliste && !z.klasseLaedt && Date.now() - (z.klasseGelesen ?? 0) > 60000) {
+    z.klasseLaedt = true;
+    ladeKlasse().then(() => { z.klasseLaedt = false; if (z.ansicht.name === 'spiele') male(); });
+  }
+  const verdient = z.einst.spielfreigabe === 'verdient' && !z.einst.spielpause && (z.stand.spielGutschrift ?? 0) > 0;
+  const karte = (sp) => {
+    const erlaubt = L.spielErlaubt(z.stand, z.einst, sp.id);
+    const best = L.bestwert(z.stand, sp.id);
+    return h('li', { class: `karte spielkarte ${sp.art}`, id: `spiel-${sp.id}` },
+      h('h3', {}, sp.name, h('span', { class: 'klein' }, sp.art === 'rechenpause' ? ' · Rechenpause' : ' · Belohnungsspiel')),
+      h('p', {}, sp.text),
+      best > 0 && h('p', { class: 'klein' }, `Dein Bestwert: ${best}`),
+      erlaubt === 'ok'
+        ? h('button', { class: 'haupt', 'data-spiel': sp.id, disabled: z.stand.muenzen < sp.preis, onclick: () => starte(sp) }, muenze(16), ` ${sp.preis} Münzen: Spiel starten`)
+        : h('p', { class: 'klein gesperrt' }, SPERRE[erlaubt]),
+      sp.art === 'belohnung' && z.einst.bestenliste && bestenlisteKarte(sp));
+  };
+  const starte = (sp) => {
+    if (L.starteMinispiel(z.stand, z.einst, sp.id) !== 'ok') return male();
+    geaendert(); z.dienst.sofort();
+    zeige(sp.art === 'rechenpause'
+      ? { name: 'minispiel', spiel: sp.id, ende: Date.now() + sp.sekunden * 1000, punkte: 0, frage: L.kopfrechenAufgabe() }
+      : { name: 'minispiel', spiel: sp.id, punkte: 0, rest: sp.sekunden });
+  };
+  return h('section', {},
+    h('h1', {}, 'Spiele'),
+    h('p', { class: 'unter' }, 'Hier löst du Münzen für eine kurze Pause ein. Die Rechenpause hält den Kopf in Schwung, ein Belohnungsspiel ist reiner Spaß.'),
+    verdient && h('div', { class: 'karte verdient', id: 'verdient', role: 'status' }, h('b', {}, 'Du hast dir ein Belohnungsspiel verdient.'), ' Es gilt, bis du es spielst.'),
+    h('ul', { class: 'spiele-liste' }, L.SPIELE.map(karte)),
+    z.einst.bestenliste && beinameKarte());
+}
+function bestenlisteKarte(sp) {
+  const b = L.bestenliste(z.stand, z.andere ?? [], sp.id, jetzt());
+  return h('div', { class: 'bestenliste', id: `bestenliste-${sp.id}` },
+    h('b', {}, 'Bestenliste der Klasse, diese Woche'),
+    b.plaetze.length === 0 ? h('p', { class: 'klein' }, 'Diese Woche hat noch niemand gespielt. Die Liste beginnt jeden Montag neu.')
+      : h('ol', {}, b.plaetze.map((p) => h('li', { class: p.eigen ? 'eigen' : '' }, h('span', { class: 'platz' }, `${p.platz}.`), wappenBild(p.wappen ?? { farbe: 'rot', zeichen: [] }, 22), h('span', { class: 'beiname' }, p.beiname), h('b', {}, p.punkte)))),
+    b.eigenerPlatz && b.eigenerPlatz > L.BESTENLISTE_PLAETZE && h('p', { class: 'klein' }, `Du bist auf Platz ${b.eigenerPlatz} mit ${b.eigenerWert}.`),
+    b.ausgeblendet && b.eigenerPlatz && h('p', { class: 'klein' }, `Du bist ausgeblendet. Dein Platz wäre ${b.eigenerPlatz} mit ${b.eigenerWert}.`));
+}
+function beinameKarte() {
+  const [vorne, hinten] = L.beiname(z.stand).split(' ');
+  const wahl = (liste, aktuell, id, setze) => h('select', { id, onchange: (e) => { setze(e.target.value); geaendert(); male(); } }, liste.map((x) => h('option', { value: x, selected: x === aktuell }, x)));
+  return h('div', { class: 'karte beiname-karte', id: 'beiname' },
+    h('h2', {}, 'Dein Beiname'),
+    h('p', { class: 'klein' }, 'Auf der Bestenliste stehst du mit deinem Wappen und diesem Beinamen, nie mit deinem Namen.'),
+    h('div', { class: 'beiname-wahl' }, wappenBild(z.stand.wappen, 36),
+      wahl(L.BEINAME_VORNE, vorne, 'beiname-vorne', (v) => L.setzeBeiname(z.stand, v, hinten)),
+      wahl(L.BEINAME_HINTEN, hinten, 'beiname-hinten', (v) => L.setzeBeiname(z.stand, vorne, v))),
+    h('label', { class: 'schalter' }, h('input', { type: 'checkbox', id: 'ausblenden', checked: Boolean(z.stand.bestenlisteAus), onchange: (e) => { z.stand.bestenlisteAus = e.target.checked; geaendert(); male(); } }), ' Mich in der Bestenliste ausblenden'));
 }
 
 // ---------- Minispiel ----------
-let spieluhr = null;
+let spieluhr = null, spielStopp = null;
 function minispiel() {
   const a = z.ansicht;
+  const sp = L.spiel(a.spiel ?? 'kopfrechnen');
   clearInterval(spieluhr);
+  const fertig = () => { a.vorbei = true; L.trageSpielEin(z.stand, sp.id, a.punkte, jetzt()); geaendert(); z.dienst.sofort(); male(); };
   if (a.vorbei) {
-    return h('section', { class: 'karte spiel' }, h('h1', {}, 'Zeit ist um!'), h('p', { class: 'gross' }, `${a.punkte} richtige Aufgaben`),
-      h('button', { class: 'haupt', onclick: () => zeige({ name: 'wappen' }) }, 'Zurück zum Wappen'));
+    spielStopp?.(); spielStopp = null;
+    const best = L.bestwert(z.stand, sp.id);
+    return h('section', { class: 'karte spiel', id: 'spiel-ende' }, h('h1', {}, sp.art === 'rechenpause' ? 'Zeit ist um!' : 'Runde vorbei!'),
+      h('p', { class: 'gross' }, sp.id === 'kopfrechnen' ? `${a.punkte} richtige Aufgaben` : sp.id === 'botenritt' ? `${a.punkte} Briefe` : `${a.punkte} Raben`),
+      a.punkte > 0 && a.punkte >= best && h('p', {}, 'Neuer Bestwert!'),
+      sp.art === 'belohnung' && z.einst.bestenliste && bestenlisteKarte(sp),
+      h('div', { class: 'knoepfe' },
+        h('button', { class: 'haupt', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Zurück an die Arbeit'),
+        h('button', { class: 'schlicht', onclick: () => zeige({ name: 'spiele' }) }, 'Zu den Spielen')));
+  }
+  if (sp.art === 'belohnung') {
+    // Das Canvas bleibt beim Neuzeichnen dasselbe, damit das Spiel weiterläuft.
+    if (!a.canvas) {
+      a.canvas = h('canvas', { class: 'spielfeld', id: 'spielfeld', 'aria-label': sp.name });
+      a.anzeige = h('p', { class: 'spielanzeige' });
+      spielStopp = starteSpiel(sp.id, a.canvas, { sekunden: sp.sekunden, melde: (m) => {
+        a.punkte = m.punkte;
+        a.anzeige.textContent = `Noch ${m.rest} s · ${sp.id === 'botenritt' ? 'Briefe' : 'Raben'}: ${m.punkte}${m.banner != null ? ` · Banner: ${m.banner}` : ''}`;
+        if (m.vorbei && !a.vorbei) fertig();
+      } });
+    }
+    return h('section', { class: 'karte spiel belohnungsspiel' }, h('h1', {}, sp.name), a.anzeige, a.canvas, h('p', { class: 'klein' }, sp.text));
   }
   const rest = () => Math.max(0, Math.ceil((a.ende - Date.now()) / 1000));
   const uhr = h('b', { class: 'uhr' }, `${rest()} s`);
   spieluhr = setInterval(() => {
     uhr.textContent = `${rest()} s`;
-    if (rest() === 0) { clearInterval(spieluhr); a.vorbei = true; z.stand.spiele.push({ t: jetzt(), punkte: a.punkte }); geaendert(); male(); }
+    if (rest() === 0) { clearInterval(spieluhr); fertig(); }
   }, 250);
   const eingabe = h('input', { type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 5, 'aria-label': 'Ergebnis' });
   const formular = h('form', { onsubmit: (e) => {

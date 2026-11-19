@@ -99,22 +99,22 @@ test('Lernziel: Förderschüler mit Zielniveau F erreicht es auf F', () => {
   assert.equal(L.siegel(stand), 1);
 });
 
-test('Münzen: höheres Niveau bringt mehr, Training und Beispiel weniger, Fehlversuch und Tipp kosten nichts', () => {
+test('Münzen am eigenen Zielniveau: auf dem Ziel gleich viel, darüber mehr, Training und Beispiel weniger, Fehlversuch und Tipp kosten nichts', () => {
   const stand = neu();
   const g = aufgaben(S2, 'G')[0], e = aufgaben(S2, 'E')[0], f = aufgaben(S2, 'F')[0];
-  assert.equal(L.muenzenFuer(stand, g, ok(), 'G'), 15);
+  assert.equal(L.muenzenFuer(stand, g, ok(), 'G'), 20);
   assert.equal(L.muenzenFuer(stand, e, ok(), 'G'), 25);
-  assert.equal(L.muenzenFuer(stand, f, ok(), 'G'), 5);
-  assert.equal(L.muenzenFuer(stand, f, ok(), 'F'), 10);
-  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 1, karten: ['tipp'] }), 'G'), 15, 'Tipp kostet nichts');
-  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 2, karten: ['tipp', 'beispiel'] }), 'G'), 12);
-  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 2 }), 'G'), 12, 'alter Eintrag ohne Kartenliste');
+  assert.equal(L.muenzenFuer(stand, f, ok(), 'G'), 10);
+  assert.equal(L.muenzenFuer(stand, f, ok(), 'F'), 20, 'auf F bringt die Aufgabe am eigenen Ziel so viel wie auf M');
+  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 1, karten: ['tipp'] }), 'G'), 20, 'Tipp kostet nichts');
+  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 2, karten: ['tipp', 'beispiel'] }), 'G'), 16);
+  assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 2 }), 'G'), 16, 'alter Eintrag ohne Kartenliste');
   assert.equal(L.muenzenFuer(stand, g, ok({ hilfen: 3 }), 'G'), 1);
-  assert.equal(L.muenzenFuer(stand, g, ok({ versuche: 2 }), 'G'), 15, 'zweiter Versuch kostet nichts');
+  assert.equal(L.muenzenFuer(stand, g, ok({ versuche: 2 }), 'G'), 20, 'zweiter Versuch kostet nichts');
   assert.equal(L.muenzenFuer(stand, g, ok({ geloest: false }), 'G'), 0);
   L.verbuche(stand, g, ok(), 'G', 't');
   assert.equal(L.muenzenFuer(stand, g, ok(), 'G'), 1, 'Wiederholung einer gelösten Aufgabe');
-  assert.equal(stand.muenzen, 15);
+  assert.equal(stand.muenzen, 20);
 });
 
 test('Niveauvorschlag: hoch nach 4 von 5, runter nach 3 Fehlern, Ruhe nach Ablehnung', () => {
@@ -171,7 +171,10 @@ test('Rang ergibt sich allein aus den Siegeln', () => {
   assert.equal(L.rang(5).name, 'Kundschafter');
   assert.equal(L.rang(29).name, 'Wegmeister');
   assert.equal(L.rang(30).name, 'Hofkartograf');
-  assert.equal(L.rang(30).naechster, null);
+  assert.equal(L.rang(30).naechster.name, 'Fährtenleser');
+  assert.equal(L.RAENGE.length, 12, 'zwölf Ränge über sechs Schuljahre');
+  assert.equal(L.rang(330).name, 'Ritter der Karte');
+  assert.equal(L.rang(1000).naechster, null);
 });
 
 test('Wappen: Kauf braucht Münzen und Rang', () => {
@@ -179,7 +182,7 @@ test('Wappen: Kauf braucht Münzen und Rang', () => {
   assert.equal(L.kaufe(stand, 'blau'), 'muenzen');
   stand.muenzen = 500;
   assert.equal(L.kaufe(stand, 'blau'), 'ok');
-  assert.equal(stand.muenzen, 470);
+  assert.equal(stand.muenzen, 440);
   assert.equal(L.kaufe(stand, 'blau'), 'vorhanden');
   assert.equal(L.kaufe(stand, 'lilie'), 'rang', 'Münzen allein kaufen keinen Rang');
   L.legeAn(stand, 'blau');
@@ -283,10 +286,10 @@ test('Zielniveau gesenkt: Siegel werden nachgetragen, nie weggenommen', () => {
 test('Minispiel: nur in der Spielpause und gegen Münzen', () => {
   const stand = neu();
   stand.muenzen = 25;
-  assert.equal(L.starteMinispiel(stand, false), 'keine-spielpause');
-  assert.equal(L.starteMinispiel(stand, true), 'ok');
+  assert.equal(L.starteMinispiel(stand, { spielpause: false }), 'keine-spielpause');
+  assert.equal(L.starteMinispiel(stand, { spielpause: true }), 'ok');
   assert.equal(stand.muenzen, 5);
-  assert.equal(L.starteMinispiel(stand, true), 'muenzen');
+  assert.equal(L.starteMinispiel(stand, { spielpause: true }), 'muenzen');
   for (let i = 0; i < 200; i++) { const a = L.kopfrechenAufgabe(); assert.ok(Number.isInteger(a.loesung) && a.loesung > 0); }
 });
 
@@ -406,8 +409,8 @@ test('Hilfekärtchen je Niveaustufe und Lösungsschritt auf M', () => {
 
 test('AFB III bringt die Hälfte mehr Münzen, Wortspeicher wächst mit der Stufe', () => {
   const stand = neu(), e = aufgaben('5.4.5-D1', 'E');
-  assert.equal(L.muenzenFuer(stand, e.find((a) => a.afb === 3), ok(), 'M'), Math.round(L.MUENZEN_BASIS.E * 1.5));
-  assert.equal(L.muenzenFuer(stand, e.find((a) => a.afb === 1), ok(), 'M'), L.MUENZEN_BASIS.E);
+  assert.equal(L.muenzenFuer(stand, e.find((a) => a.afb === 3), ok(), 'M'), Math.round(L.MUENZEN.darueber * 1.5));
+  assert.equal(L.muenzenFuer(stand, e.find((a) => a.afb === 1), ok(), 'M'), L.MUENZEN.darueber);
   const station = pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.id === '5.4.5');
   const bis = (n) => station.wortspeicher.filter((w) => L.NIVEAUS.indexOf(w.ab) <= L.NIVEAUS.indexOf(n)).length;
   assert.ok(bis('F') >= 4 && bis('F') < bis('G') && bis('G') < bis('M') && bis('M') < bis('E'));
@@ -473,7 +476,7 @@ test('Expedition: Siegel und Rückblick-Tage im Zeitraum zählen, Belohnung einm
   assert.equal(L.holeBelohnung(a, ex, '2026-11-21T10:00:00Z'), true);
   assert.equal(L.holeBelohnung(a, ex, '2026-11-22T10:00:00Z'), false);
   assert.ok(a.wappen.gekauft.includes('fahne'));
-  assert.equal(L.kaufe(b, 'fahne'), 'expedition');
+  assert.equal(L.kaufe(b, 'fahne'), 'ehrenzeichen');
 });
 
 // ---------- Heftcheck und Sicherheitsangabe (ADR 0014) ----------

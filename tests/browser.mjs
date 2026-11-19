@@ -1222,6 +1222,81 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.close();
 }
 
+// ---------- 9. Münzen einlösen: Wappenschrank, Ehrenzeichen, Spiele, Bestenliste (ADR 0018) ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  const heute = new Date(Date.now() - 60000).toISOString();
+  // 30 Siegel (Rang Hofkartograf), 2.000 Münzen, 25 gute Wegstücke: Der Wegstern ist verdient.
+  const ich = { ...leererStand('5A-WAPP'), muenzen: 2000, lernziele: Object.fromEntries(Array.from({ length: 30 }, (_, i) => [`x.${i}`, { erreichtAm: heute }])),
+    wegstuecke: Array.from({ length: 25 }, () => ({ t: heute, bis: heute, tag: '2026-01-05', richtig: 5, gesamt: 5, muenzen: 100 })),
+    spiele: [{ spiel: 'botenritt', t: heute, punkte: 9 }], beiname: { vorne: 'Kluger', hinten: 'Otter' } };
+  await mitStand(seite, ich);
+  // Mitschüler mit Wappen und Ergebnissen dieser Woche.
+  const andere = [['5A-BBBB', 'blau', ['adler'], 14], ['5A-CCCC', 'gruen', ['turm', 'stern'], 11], ['5A-DDDD', 'gold', ['loewe'], 7], ['5A-EEEE', 'schwarz', ['eule'], 21, true]];
+  for (const [code, farbe, zeichen, punkte, aus] of andere) {
+    await mitStand(seite, { ...leererStand(code), wappen: { farbe, zeichen, gekauft: ['rot', farbe, ...zeichen] }, spiele: [{ spiel: 'botenritt', t: heute, punkte }], ...(aus && { bestenlisteAus: true }) });
+  }
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-wapp');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  assert.match(await seite.innerText('#aha-neu'), /1/, 'ein neues Ehrenzeichen wartet beim Wappen');
+  await seite.click('.kopf nav button:has-text("Wappen")');
+  await seite.waitForSelector('#neue-ehre');
+  assert.match(await seite.innerText('#neue-ehre'), /Wegstern/);
+  // Hauptzeichen und zwei Beizeichen kaufen und anbringen.
+  for (const id of ['blau', 'loewe', 'stern', 'schluessel']) await seite.click(`[data-teil=${id}]:has-text("kaufen")`);
+  assert.equal(await seite.innerText('#muenzen'), String(2000 - 60 - 350 - 90 - 120));
+  await seite.click('[data-teil=wegstern]');
+  assert.equal(await seite.locator('.werkbank svg [class^=zeichen-]').count(), 3, 'ein Hauptzeichen und zwei Beizeichen');
+  await seite.click('[data-haupt=stern]');
+  assert.equal(await seite.getAttribute('.werkbank svg g[class^=zeichen-]', 'class'), 'zeichen-stern');
+  await seite.click('[data-haupt=loewe]');
+  assert.match(await seite.innerText('#ausblick'), /Schildteilung öffnet sich in Klasse 6/);
+  assert.match(await seite.innerText('.teile-liste >> nth=0'), /Gold[\s\S]*Ab Rang Hofkartograf|Gold/);
+  await foto(seite, 'wappenschrank');
+  await seite.locator('.werkbank').screenshot(bilder ? { path: `${bilder}/wappen-werkbank.png` } : {});
+  // Spiele: Bestenliste mit Wappen und Beinamen, die Ausgeblendete fehlt.
+  await seite.click('#nav-spiele');
+  await seite.waitForSelector('#bestenliste-botenritt li');
+  const liste = await seite.innerText('#bestenliste-botenritt');
+  assert.match(liste, /1\.\s*\S+ \S+\s*14[\s\S]*Kluger Otter\s*9/);
+  assert.doesNotMatch(liste, /21/, 'wer sich ausblendet, steht nicht in der Liste');
+  assert.doesNotMatch(liste, /5A-/);
+  await foto(seite, 'spiele');
+  await seite.locator('#spiel-botenritt').screenshot(bilder ? { path: `${bilder}/bestenliste.png` } : {});
+  // Botenritt: Der Reiter läuft geradeaus gegen den Rand, dann ist die Runde vorbei.
+  await seite.click('[data-spiel=botenritt]');
+  await seite.waitForSelector('#spielfeld');
+  await seite.waitForTimeout(700);
+  await foto(seite, 'botenritt');
+  await seite.waitForSelector('#spiel-ende', { timeout: 15000 });
+  assert.match(await seite.innerText('#spiel-ende'), /Runde vorbei!/);
+  const gespeichert = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-WAPP.json')));
+  assert.equal(gespeichert.spiele.filter((e) => e.spiel === 'botenritt').length, 2);
+  assert.equal(gespeichert.muenzen, 2000 - 620 - 100);
+  // Burgmauer: Armbrust schießt, Raben fliegen.
+  await seite.click('button:has-text("Zu den Spielen")');
+  await seite.click('[data-spiel=burgmauer]');
+  await seite.waitForSelector('#spielfeld');
+  await seite.keyboard.down('ArrowUp');
+  await seite.keyboard.down('ArrowLeft');
+  await seite.waitForTimeout(2500);
+  await seite.keyboard.up('ArrowLeft');
+  await seite.waitForTimeout(1200);
+  await foto(seite, 'burgmauer');
+  await seite.keyboard.up('ArrowUp');
+  await seite.click('#nav-spiele');
+  await seite.waitForSelector('.spiele-liste');
+  // Beiname wählen.
+  await seite.selectOption('#beiname-vorne', 'Flinker');
+  assert.match(await seite.innerText('#bestenliste-botenritt'), /Flinker Otter/);
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 8. Versionsanzeige im Schüler-Dashboard ----------
 {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 800 } });

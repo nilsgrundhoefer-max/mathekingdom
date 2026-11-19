@@ -1,6 +1,7 @@
 // Gezeichnete Bausteine im Stil alter Kartografie: Münze, Siegel, Wappen, Regionskarte, Schlossgarten (ADR 0010).
 import { s } from './dom.js';
 import { NIVEAUS, KRONEN, WAPPEN_TEILE } from './logik.js';
+import { ZEICHNER } from './wappenzeichen.js';
 
 // Gedämpfte Farben der Niveaustufen für das Lehrer-Dashboard (dort nur als Buchstaben-Chips).
 export const NIVEAU_FARBE = { F: '#9a6a1f', G: '#4b6b35', M: '#2f4f7f', E: '#7b2d43' };
@@ -62,28 +63,24 @@ const schloss = (x, y) => s('g', { transform: `translate(${x} ${y})`, class: 'ze
   s('path', { d: 'M-4 -2 V-5 A4 4 0 0 1 4 -5 V-2', fill: 'none', stroke: '#6f665a', 'stroke-width': 1.8 }),
   s('rect', { x: -6, y: -2, width: 12, height: 9, rx: 1.5, fill: '#6f665a' }));
 
-// Wappen: Schild in der gewählten Farbe, darauf die angebrachten Zeichen.
+// Wappen: Schild in der gewählten Farbe, darauf ein großes Hauptzeichen und bis zu zwei kleine Beizeichen oben (ADR 0018).
+// Auf hellen Metallfarben (Silber, Gold) stehen die Zeichen dunkel, sonst hell.
 const SCHILD = 'M10 8 H90 V48 C90 78 68 96 50 104 C32 96 10 78 10 48 Z';
+const ORTE = [{ x: 50, y: 60, m: 0.92 }, { x: 27, y: 25, m: 0.34 }, { x: 73, y: 25, m: 0.34 }];
 export function wappenBild(wappen, breite = 60) {
-  const farbe = WAPPEN_TEILE.find((w) => w.id === wappen.farbe)?.wert ?? '#9e2f28';
-  const hat = (id) => wappen.zeichen.includes(id);
-  const hell = '#f3e7c9', linie = { fill: 'none', stroke: hell, 'stroke-width': 4, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
+  const feld = WAPPEN_TEILE.find((w) => w.id === wappen.farbe) ?? WAPPEN_TEILE[0];
+  const zeichenFarbe = feld.metall ? '#2f2820' : '#f3e7c9';
+  const zeichen = (wappen.zeichen ?? []).filter((id) => ZEICHNER[id]).slice(0, ORTE.length);
+  const id = `mk-schild-${Math.random().toString(36).slice(2, 8)}`;
   return s('svg', { viewBox: '0 -12 100 124', width: breite, height: (breite * 124) / 100, role: 'img', 'aria-label': 'Dein Wappen', class: 'wappen' },
-    s('path', { d: SCHILD, fill: farbe, stroke: '#2f2820', 'stroke-width': 3, 'stroke-linejoin': 'round' }),
-    hat('balken') && s('path', { d: 'M10 40 H90 V56 H10 Z', fill: hell, opacity: 0.9 }),
-    hat('zirkel') && s('g', linie, s('path', { d: 'M50 26 L36 72 M50 26 L64 72' }), s('circle', { cx: 50, cy: 24, r: 4, fill: hell })),
-    hat('winkel') && s('path', { ...linie, d: 'M30 30 V76 H72', 'stroke-width': 5 }),
-    hat('eichenlaub') && s('g', { fill: '#c9b77a', stroke: '#5d5223', 'stroke-width': 1.2 },
-      s('path', { d: 'M50 92 C38 88 30 80 28 70 C38 72 46 80 50 92 Z' }), s('path', { d: 'M50 92 C62 88 70 80 72 70 C62 72 54 80 50 92 Z' })),
-    hat('fahne') && s('g', { stroke: '#2f2820', 'stroke-width': 1.4, 'stroke-linejoin': 'round' },
-      s('path', { d: 'M24 18 V62', stroke: hell, 'stroke-width': 3, 'stroke-linecap': 'round' }),
-      s('path', { d: 'M25 19 C32 15 38 23 46 19 V33 C38 37 32 29 25 33 Z', fill: hell })),
-    hat('lilie') && s('g', { fill: '#d6ae4a', stroke: '#6b5115', 'stroke-width': 1.4, 'stroke-linejoin': 'round' },
-      s('path', { d: 'M50 14 C44 22 44 32 50 40 C56 32 56 22 50 14 Z' }),
-      s('path', { d: 'M48 38 C40 26 28 28 30 38 C32 44 40 44 46 42 Z' }),
-      s('path', { d: 'M52 38 C60 26 72 28 70 38 C68 44 60 44 54 42 Z' }),
-      s('path', { d: 'M38 42 H62 V47 H38 Z' }),
-      s('path', { d: 'M47 47 C46 54 44 58 40 60 H60 C56 58 54 54 53 47 Z' })));
+    s('defs', {}, s('clipPath', { id }, s('path', { d: SCHILD }))),
+    s('path', { d: SCHILD, fill: feld.wert }),
+    s('g', { 'clip-path': `url(#${id})` }, zeichen.map((z, i) => {
+      // Nur ein Hauptzeichen: Es steht in der Mitte. Mit Beizeichen rückt es etwas nach unten.
+      const ort = i === 0 && zeichen.length === 1 ? { x: 50, y: 54, m: 1 } : ORTE[i];
+      return s('g', { transform: `translate(${ort.x} ${ort.y}) scale(${ort.m})`, class: `zeichen-${z}` }, ZEICHNER[z](zeichenFarbe, feld.wert));
+    })),
+    s('path', { d: SCHILD, fill: 'none', stroke: '#2f2820', 'stroke-width': 3, 'stroke-linejoin': 'round' }));
 }
 
 // ---------- Regionskarte (region_map) ----------
