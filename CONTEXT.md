@@ -130,7 +130,7 @@ Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle
 _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 
 **Aufgabenführung**:
-Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt: erst alle Lernziele des Meilensteins, an dem er zuletzt gearbeitet hat, bis er dort die Krone in seiner Kronenwahl trägt, dann der nächste nicht gemeisterte Meilenstein des Lernpfads. Abstecher überspringt sie, bietet sie aber an. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
+Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt: erst alle Lernziele des Meilensteins, an dem er zuletzt gearbeitet hat, bis er dort die Krone in seiner Kronenwahl trägt, dann der nächste nicht gemeisterte Meilenstein danach im Lernpfad, am Ende wieder von vorn. Abstecher überspringt sie, bietet sie aber an. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
 _Avoid_: Empfehlung, Lernpfad (das ist der Weg durch das Kapitel)
 
 **Meilensteinfreigabe**:

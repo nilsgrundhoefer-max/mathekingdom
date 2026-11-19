@@ -226,6 +226,62 @@ export function trageSiegelNach(stand, index, zielniveau, jetzt) {
   return neu;
 }
 
+// ---------- Meilensteinfreigabe und Aufgabenführung (ADR 0026) ----------
+const hatAufgabenIn = (index, u) => u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id));
+// Eigene Arbeit an einem Meilenstein zählt nach eigenerVersuch (weiter unten): ohne Einstiegscheck, Sonderauftrag, Rückblick, Seitenblick, Brücke.
+// Der Meilenstein auf dem Weg, an dem ein Abstecher hängt: der letzte davor, der kein Abstecher ist.
+export function wirtVon(kapitel, abstecher) {
+  const i = kapitel.unterkapitel.findIndex((u) => u.id === abstecher.id);
+  for (let j = i - 1; j >= 0; j--) if (!kapitel.unterkapitel[j].extra) return kapitel.unterkapitel[j];
+  return null;
+}
+// Meilensteine eines Kapitels, die für diesen Schüler noch im Nebel liegen. Ohne Meilensteinfreigabe: keine.
+// Mit Freigabe gehen die übrigen alle auf einmal auf, sobald alle freigegebenen gemeistert sind (gesperrte zählen nicht).
+// Ein Abstecher geht auf, wenn sein Meilenstein gemeistert ist. Wo der Schüler schon selbst gearbeitet hat, bleibt es offen.
+export function imNebel(index, stand, kapitel, einst) {
+  const frei = einst.meilensteinFreigabe?.[kapitel.id];
+  if (!Array.isArray(frei)) return new Set();
+  const offen = new Set(frei), zu = einst.gesperrteMeilensteine ?? new Set();
+  const gemeistert = (u) => milestoneStatus(index, stand, u) === 'gemeistert';
+  const erledigt = kapitel.unterkapitel.filter((u) => !u.extra && offen.has(u.id) && !zu.has(u.id) && hatAufgabenIn(index, u)).every(gemeistert);
+  const angefangen = new Set(stand.versuche.filter(eigenerVersuch).map((v) => index.meilensteinVon.get(v.lernziel)?.id).filter(Boolean));
+  const nebel = new Set();
+  for (const u of kapitel.unterkapitel) {
+    if (offen.has(u.id) || angefangen.has(u.id)) continue;
+    if (u.extra) { const w = wirtVon(kapitel, u); if (w && gemeistert(w)) continue; } else if (erledigt) continue;
+    nebel.add(u.id);
+  }
+  return nebel;
+}
+// Fertig für die Aufgabenführung: gemeistert, und wer über seinem Ziel spielt, braucht die Krone in der gewählten Farbe.
+export function fuehrungFertig(index, stand, unterkapitel, niveau, zielniveau) {
+  if (milestoneStatus(index, stand, unterkapitel) !== 'gemeistert') return false;
+  if (NIVEAUS.indexOf(niveau) <= NIVEAUS.indexOf(zielniveau)) return true;
+  const k = krone(index, stand, unterkapitel);
+  return Boolean(k) && NIVEAUS.indexOf(k) >= NIVEAUS.indexOf(niveau);
+}
+// Wohin die Aufgabenführung in einem Kapitel führt: zum zuletzt bearbeiteten Meilenstein, solange er nicht fertig ist,
+// sonst zum nächsten nicht fertigen danach in Kapitelreihenfolge, am Ende wieder von vorn. Abstecher nur, wenn der Schüler dort zuletzt war.
+export function fuehrungsMeilenstein(index, stand, kapitel, einst, niveau) {
+  const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
+  const offen = (u) => !zu.has(u.id) && !nebel.has(u.id) && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau);
+  let zuletzt = null;
+  for (let i = stand.versuche.length - 1; i >= 0 && !zuletzt; i--) {
+    const v = stand.versuche[i];
+    if (eigenerVersuch(v) && kapitelVon(v.lernziel ?? '') === kapitel.id) zuletzt = index.meilensteinVon.get(v.lernziel) ?? null;
+  }
+  if (zuletzt && offen(zuletzt)) return zuletzt;
+  const weg = kapitel.unterkapitel.filter((u) => !u.extra);
+  const ab = zuletzt ? Math.max(0, weg.indexOf(zuletzt.extra ? wirtVon(kapitel, zuletzt) : zuletzt) + 1) : 0;
+  return [...weg.slice(ab), ...weg.slice(0, ab)].find(offen) ?? null;
+}
+// Abstecher, die an diesem Meilenstein hängen und noch offen sind: Sie bietet die Führung nach dem Meilenstein an.
+export function abstecherAm(index, stand, kapitel, unterkapitel, einst, niveau) {
+  const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
+  return kapitel.unterkapitel.filter((u) => u.extra && wirtVon(kapitel, u)?.id === unterkapitel.id && !zu.has(u.id) && !nebel.has(u.id)
+    && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau));
+}
+
 // Etappe für die Startseite: das Kapitel, an dem gerade gearbeitet wird, mit Fortschritt und nächstem Meilenstein.
 // Gesperrte Meilensteine und Meilensteine ohne Aufgaben zählen nicht mit.
 export function etappe(pool, index, stand, einst) {
@@ -233,7 +289,8 @@ export function etappe(pool, index, stand, einst) {
   const lage = (k) => {
     const meilensteine = k.unterkapitel.filter((u) => !zu.has(u.id) && milestoneStatus(index, stand, u) !== 'leer');
     const offen = meilensteine.filter((u) => milestoneStatus(index, stand, u) !== 'gemeistert');
-    const naechste = offen.find((u) => milestoneStatus(index, stand, u) === 'begonnen') ?? offen[0] ?? null;
+    const naechste = einst.zielniveau ? fuehrungsMeilenstein(index, stand, k, einst, arbeitsniveau(stand, k.id, einst.zielniveau))
+      : offen.find((u) => milestoneStatus(index, stand, u) === 'begonnen') ?? offen[0] ?? null;
     return { kapitel: k, gesamt: meilensteine.length, geschafft: meilensteine.length - offen.length, milestone: naechste };
   };
   const offene = pool.kapitel.filter((k) => einst.offeneKapitel.has(k.id)).map(lage).filter((l) => l.gesamt > 0);
@@ -1029,6 +1086,7 @@ export function einstellungen(klassendatei, code, pool) {
     nachricht: k.nachrichten?.[code] ?? null,
     sonderauftrag: gueltigerAuftrag(k.sonderauftraege?.[code]), // ADR 0021
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst
+    meilensteinFreigabe: k.meilensteinFreigabe ?? {}, // ADR 0026: je Kapitel die freigegebenen Meilensteine; fehlt ein Kapitel, ist alles offen
     gesperrteMeilensteine: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([meilenstein]) => meilenstein)),
     codeBekannt: k.codes ? k.codes.includes(code) : true,
   };

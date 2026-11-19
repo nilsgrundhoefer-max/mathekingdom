@@ -1073,6 +1073,32 @@ async function weiter(seite, wahl = '#weiter') {
   await schueler.click('nav button:has-text("Schlossgarten")');
   await schueler.waitForSelector('#expedition', { timeout: 15000 });
   assert.match(await schueler.innerText('#expedition-stand'), /Die Klasse hat \d von 2\. Davon/);
+
+  // Meilensteinfreigabe (ADR 0026): Die Lehrkraft lässt in Kapitel 4 nur den ersten Meilenstein offen. Der Rest liegt im Nebel.
+  await lehrer.waitForSelector('#meilenstein-freigabe');
+  await lehrer.uncheck('#alle-meilensteine');
+  await warteAuf((k) => Array.isArray(k.meilensteinFreigabe?.['5.4']));
+  assert.deepEqual((await inhalt()).meilensteinFreigabe['5.4'], ['5.4.1']);
+  await lehrer.check('[data-freigabe="5.4.2"]');
+  await warteAuf((k) => k.meilensteinFreigabe['5.4'].includes('5.4.2'));
+  assert.match(await lehrer.innerText('#meilenstein-freigabe'), /von 3 offen/);
+  await lehrer.locator('#meilenstein-freigabe').screenshot(bilder ? { path: `${bilder}/lehrer-meilensteinfreigabe.png` } : {});
+  // Die Klassendatei wird etwa alle zehn Sekunden neu gelesen.
+  for (let i = 0; i < 30 && !(await schueler.locator('.regionskarte .meilenstein.imnebel').count()); i++) {
+    await schueler.waitForTimeout(1000);
+    await schueler.click('nav button:has-text("Schlossgarten")');
+    await schueler.click('[data-kapitel="5.4"]');
+  }
+  assert.equal(await schueler.locator('.regionskarte .meilenstein.imnebel .meilensteinname').count(), 0, 'im Nebel ohne Namen');
+  assert.match(await schueler.innerText('.unter'), /im Nebel öffnen sich/);
+  await schueler.locator('.regionskarte .meilenstein.imnebel').nth(1).click();
+  await schueler.waitForSelector('#nebel-tafel');
+  assert.match(await schueler.innerText('#nebel-tafel'), /liegt noch im Nebel/);
+  assert.equal(await schueler.locator('#aufbrechen').count(), 0);
+  await foto(schueler, 'meilenstein-im-nebel');
+  await lehrer.check('#alle-meilensteine');
+  await warteAuf((k) => !k.meilensteinFreigabe?.['5.4']);
+  await schueler.click('nav button:has-text("Schlossgarten")');
   await foto(schueler, 'schueler-expedition');
   assert.match(await lehrer.innerText('#expedition'), /von 2 Expeditionszeichen/);
 
@@ -1751,6 +1777,57 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(await seite.locator('#bestenliste-botenritt .hofsymbol').count(), 0, 'kein Symbol in der Bestenliste');
   assert.equal(await seite.locator('#beiname [data-titelform]').count(), 0);
   assert.equal(await seite.innerText('#hoftitel-kopf'), 'Herzog');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 11. Aufgabenführung und „Das kannst du schon“ (ADR 0026) ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  const vor = new Date(Date.now() - 10 * 86400000).toISOString();
+  const potenzen = pool.kapitel.find((k) => k.id === '5.4').unterkapitel.find((u) => u.id === '5.4.4');
+  const kopf = pool.kapitel.find((k) => k.id === '5.3').unterkapitel[0];
+  const stand = leererStand('5A-FUEH');
+  stand.lernziele = Object.fromEntries([potenzen.lernziele[0], ...kopf.lernziele].map((l) => [l.id, { erreichtAm: vor }]));
+  await mitStand(seite, stand);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-fueh');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  // Siegel oben anklicken: alle Lernziele mit Siegel als Ich-kann-Sätze, nach Kapitel geordnet.
+  assert.equal(await seite.getAttribute('#siegel-knopf', 'title'), 'Klick: Das kannst du schon');
+  await seite.click('#siegel-knopf');
+  await seite.waitForSelector('#koennen');
+  const alle = pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).filter((l) => pool.aufgaben.some((a) => a.lernziel === l.id)).length;
+  assert.equal(await seite.innerText('#koennen-zaehler'), `${1 + kopf.lernziele.length} von ${alle} Lernzielen in Klasse 5`);
+  assert.deepEqual(await seite.locator('.koennen-kapitel').evaluateAll((d) => d.map((x) => x.dataset.kapitel)), ['5.3', '5.4']);
+  assert.match(await seite.innerText('#koennen'), new RegExp(potenzen.lernziele[0].text.slice(0, 20).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.equal(await seite.locator(`[data-lernziel="${potenzen.lernziele[1].id}"]`).count(), 0, 'ohne Siegel steht es nicht da');
+  await foto(seite, 'das-kannst-du-schon');
+  // Potenzen fertig machen: Danach führt „Nächste Aufgabe“ zum nächsten Meilenstein, nicht im Kreis.
+  await seite.click('nav button:has-text("Schlossgarten")');
+  await seite.click('[data-kapitel="5.4"]');
+  await seite.locator('.regionskarte .meilenstein[aria-label^="Meilenstein Potenzen"]').click();
+  await seite.locator('.lernziele li', { hasText: potenzen.lernziele[1].text }).locator('button').click();
+  for (let i = 0; i < 3; i++) {
+    if (i > 0) await weiter(seite, '#weiter');
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+  }
+  if (await seite.locator('#krone-wechseln').count()) await seite.click('button:has-text("Bei Gold bleiben")');
+  else { assert.equal(await seite.innerText('#weiter'), 'Weiter zu Dividieren'); await foto(seite, 'weiter-zu-dividieren'); await weiter(seite, '#weiter'); }
+  // Jetzt ist ein Seitenblick fällig: Er sagt, wo es danach weitergeht.
+  await seite.waitForSelector('section.aufgabe');
+  if (await seite.locator('#seitenblick-marke').count()) {
+    assert.equal(await seite.innerText('#seitenblick-satz'), 'Kurzer Blick zurück, danach geht es mit Dividieren weiter.');
+    await foto(seite, 'seitenblick-satz');
+    await antworte(seite, true);
+    await weiter(seite, '#weiter');
+  }
+  const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
+  assert.match(pool.aufgaben.find((a) => a.id === id).lernziel, /^5\.4\.5-/, 'die Führung ist bei Dividieren');
   assert.deepEqual(fehler, []);
   await seite.close();
 }

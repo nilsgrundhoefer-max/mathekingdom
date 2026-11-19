@@ -437,3 +437,11 @@ body { margin: 0; background: #efe6d2; }
 /* Aufgabenkennung unten links (ADR 0025) */
 #mathekingdom .kennung { position: fixed; left: 10px; bottom: 6px; margin: 0; font-size: 0.72rem; color: #9a9389; font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; pointer-events: none; z-index: 5; }
 @media print { #mathekingdom .kennung { display: none; } }
+/* ADR 0026: Siegel als Knopf, Meilensteine im Nebel, Seite „Das kannst du schon“ */
+#mathekingdom button.siegelwert { border: 0; cursor: pointer; font: inherit; font-size: 1.05rem; }
+#mathekingdom button.siegelwert:hover, #mathekingdom button.siegelwert.aktiv { box-shadow: 0 0 0 2px #6e1c18; }
+#mathekingdom .regionskarte .meilenstein.imnebel { opacity: .55; }
+#mathekingdom .regionskarte .meilenstein.imnebel .stein { stroke: #a89d8a; stroke-dasharray: 3 3; fill: #e9e4da; }
+#mathekingdom .seitenblick-satz { flex-basis: 100%; font-size: .9rem; color: #5b5246; }
+#mathekingdom .koennen-meilenstein h3 { display: flex; align-items: center; gap: 8px; font-size: 1.02rem; margin: 14px 0 6px; }
+#mathekingdom .koennen .lernziele .datum { margin-left: auto; color: #6f665a; white-space: nowrap; }
