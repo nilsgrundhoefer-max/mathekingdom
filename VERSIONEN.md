@@ -6,6 +6,18 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.23 vom 19.11.2026
+
+### Schüler
+
+- Unten links steht klein und grau die Kennung deiner Aufgabe, zum Beispiel 5.3.1-K1-F-01. Ist eine Aufgabe fehlerhaft, kann deine Lehrkraft sie damit melden.
+- Eine gesperrte Aufgabe bekommst du nicht mehr, sondern eine andere zum selben Lernziel. Fehlversuche an ihr zählen nicht.
+
+### Lehrkraft
+
+- Aufgabenmeldungen (ADR 0025): Die Kennung einer Aufgabe steht in der Akut-Zone, oben in der Ansicht eines Schülers („Gerade bei“) und in der Aufgabenauswertung, jeweils mit „Aufgabe melden“. Im Bereich Aufgaben meldest du auch frei mit Kennung, Art (Lösung falsch, nicht lösbar, unklar formuliert, Bild falsch) und einem Satz und siehst den Stand deiner Meldungen.
+- Administrator-Dashboard, neuer Bereich „Aufgaben“: alle Meldungen je Kennung mit Aufgabentext und Lösung, Stand (offen, behoben, kein Fehler), Export als Textdatei zum Korrigieren der Erzeuger, und Aufgaben schulweit sperren oder wieder freigeben. Die Übersicht zeigt offene Meldungen.
+
 ## 0.22 vom 19.11.2026
 
 ### Schüler

@@ -145,7 +145,7 @@ const zaehlt = (v) => v.richtig && !v.einstieg && !v.seitenblick && !hatKarte(v,
 // Wackelig: mindestens 4 Aufgaben zum Lernziel, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
 export const WACKELIG_AB = 4;
 export function istWackelig(stand, lernzielId) {
-  const v = stand.versuche.filter((x) => x.lernziel === lernzielId && !x.einstieg && !x.seitenblick);
+  const v = stand.versuche.filter((x) => x.lernziel === lernzielId && !x.einstieg && !x.seitenblick && !x.gesperrt); // gesperrte Aufgaben zählen nicht (ADR 0025)
   const geloest = v.filter((x) => x.richtig).length;
   const schritte = v.filter((x) => hatKarte(x, 'loesungsschritt')).length;
   return (v.length >= WACKELIG_AB && geloest / v.length < 0.5) || schritte >= 2;
@@ -499,7 +499,7 @@ export const GRUNDLAGE_HINWEIS_AB = 2; // ab dem zweiten Mal erfährt es die Leh
 export const inGrundlage = (stand, lernzielId) => Boolean(stand.grundlage?.[lernzielId]?.aktiv);
 // Niveaustufe der nächsten Aufgabe zu diesem Lernziel.
 export const aufgabenNiveau = (stand, lernzielId, niveau) => (inGrundlage(stand, lernzielId) ? 'F' : niveau);
-const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke && !v.seitenblick && !v.sonderauftrag;
+const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke && !v.seitenblick && !v.sonderauftrag && !v.gesperrt;
 // Wie viele verschiedene F-Aufgaben in der laufenden Schleife schon richtig sind.
 export function grundlageRichtige(stand, lernzielId) {
   const g = stand.grundlage?.[lernzielId];

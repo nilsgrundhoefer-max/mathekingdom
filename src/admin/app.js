@@ -8,6 +8,7 @@ import * as K from '../gemeinsam/krypto.js';
 import * as SCH from '../gemeinsam/schule.js';
 import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
+import * as M from '../gemeinsam/meldungen.js';
 import { erzeugeCode } from '../lehrer/auswertung.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
@@ -478,18 +479,25 @@ async function ladeBetrieb() {
     const bo = lJahr && await (await lJahr.ordner(k))?.ordner('backup');
     klassen.push({ klasse: k, lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
   }
+  const meldungen = {};
   for (const kz of Object.keys(v.lehrkraefte)) {
-    try { for (const e of JSON.parse(await (await z.lehrer.ordner(kz))?.lies(SCH.LEHRER_DATEI)).protokoll ?? []) eintraege.push({ ...e, wer: `Lehrkraft ${kz}` }); } catch { /* noch nie gestartet */ }
+    try {
+      const l = JSON.parse(await (await z.lehrer.ordner(kz))?.lies(SCH.LEHRER_DATEI));
+      for (const e of l.protokoll ?? []) eintraege.push({ ...e, wer: `Lehrkraft ${kz}` });
+      meldungen[kz] = l.meldungen ?? [];
+    } catch { /* noch nie gestartet */ }
   }
   eintraege.sort((a, b) => (a.t < b.t ? 1 : a.t > b.t ? -1 : 0));
-  return { klassen, eintraege, geladen: new Date() };
+  let status = {};
+  try { status = JSON.parse(await z.lehrer.lies(M.STATUS_DATEI)) ?? {}; } catch { /* noch keine */ }
+  return { klassen, eintraege, meldungen, status, geladen: new Date() };
 }
 // Zeichnet `zeichne(betrieb)` erst, wenn die Daten da sind.
 function mitBetrieb(zeichne) {
   if (z.betrieb) return zeichne(z.betrieb);
   if (!z.betriebLaedt) {
     z.betriebLaedt = true;
-    ladeBetrieb().then((b) => { z.betrieb = b; }).catch((e) => { z.fehler = `Lesen der Klassenordner fehlgeschlagen: ${e.message}`; z.betrieb = { klassen: [], eintraege: [], geladen: new Date() }; })
+    ladeBetrieb().then((b) => { z.betrieb = b; }).catch((e) => { z.fehler = `Lesen der Klassenordner fehlgeschlagen: ${e.message}`; z.betrieb = { klassen: [], eintraege: [], meldungen: {}, status: {}, geladen: new Date() }; })
       .finally(() => { z.betriebLaedt = false; male(); });
   }
   return h('section', { class: 'karte' }, h('p', {}, 'Lese alle Klassenordner …'));
@@ -504,7 +512,10 @@ function uebersichtKarte() {
     const woche = b.eintraege.filter((e) => e.art === 'problem' && Date.now() - new Date(e.t) < 7 * TAG);
     const ohneBackup = b.klassen.filter((k) => k.staende && backupAlt(k));
     const ohneLehrkraft = b.klassen.filter((k) => !k.lehrkraefte.length);
+    const offen = M.sammle(b.meldungen, b.status, z.v.gesperrt ?? []).filter((g) => g.status === 'offen');
     const punkte = [
+      offen.length > 0 && h('li', {}, h('b', {}, `${offen.length} ${offen.length === 1 ? 'offene Aufgabenmeldung' : 'offene Aufgabenmeldungen'}: `), offen.slice(0, 5).map((g) => g.kennung).join(', '), ' ',
+        h('button', { class: 'schlicht', onclick: () => { z.tab = 'aufgaben'; male(); } }, 'Ansehen')),
       woche.length > 0 && h('li', {}, h('b', {}, `${woche.length} technische ${woche.length === 1 ? 'Problem' : 'Probleme'} in den letzten 7 Tagen. `),
         h('button', { class: 'schlicht', onclick: () => { z.tab = 'betrieb'; z.protokoll.nurProbleme = true; male(); } }, 'Im Protokoll ansehen'),
         h('ul', { class: 'liste' }, woche.slice(0, 5).map((e) => h('li', { class: 'klein' }, `${kurzeZeit(e.t)} · ${e.klasse ?? e.wer}: ${e.text}`)))),
@@ -514,7 +525,7 @@ function uebersichtKarte() {
     ].filter(Boolean);
     return h('section', { class: 'karte', id: 'uebersicht' }, h('div', { class: 'reihe' }, h('h2', {}, 'Was jetzt Aufmerksamkeit braucht'), h('span', { class: 'rechts' }, neuLaden())),
       h('p', { class: 'klein' }, `Schuljahr ${z.v.schuljahr}: ${b.klassen.length} Klassen, ${b.klassen.reduce((n, k) => n + k.staende, 0)} Speicherstände, ${Object.keys(z.v.lehrkraefte).length} Lehrkräfte.`),
-      punkte.length ? h('ul', { class: 'liste' }, punkte) : h('p', { id: 'alles-gut' }, 'Alles in Ordnung: keine technischen Probleme in den letzten 7 Tagen, jede Klasse hat ein frisches Backup und eine Lehrkraft.'));
+      punkte.length ? h('ul', { class: 'liste' }, punkte) : h('p', { id: 'alles-gut' }, 'Alles in Ordnung: keine offenen Aufgabenmeldungen, keine technischen Probleme in den letzten 7 Tagen, jede Klasse hat ein frisches Backup und eine Lehrkraft.'));
   });
 }
 
@@ -586,18 +597,79 @@ function protokollKarte() {
   });
 }
 
+// ---------- Aufgaben: Meldungen und Sperren (ADR 0025) ----------
+// Die Aufgabe zu einer Kennung aus den mitgelieferten Pools.
+function aufgabeZu(kennung) {
+  for (const pool of Object.values(window.MK_POOLS ?? {})) { const a = pool.aufgaben.find((x) => x.id === kennung); if (a) return a; }
+  return null;
+}
+async function setzeStatus(kennung, status) {
+  let liste = {};
+  try { liste = JSON.parse(await z.lehrer.lies(M.STATUS_DATEI)) ?? {}; } catch { /* neu */ }
+  liste[kennung] = { status, t: jetzt() };
+  await z.lehrer.schreibe(M.STATUS_DATEI, JSON.stringify(liste, null, 1));
+}
+async function setzeSperre(kennung, an) {
+  const liste = new Set(z.v.gesperrt ?? []);
+  if (an) liste.add(kennung); else liste.delete(kennung);
+  z.v.gesperrt = [...liste].sort();
+  await speichereVerzeichnis();
+}
+function meldungenKarte() {
+  return mitBetrieb((b) => {
+    const f = (z.meldungsFilter ??= { nurOffen: true });
+    const alle = M.sammle(b.meldungen, b.status, z.v.gesperrt ?? []);
+    const liste = f.nurOffen ? alle.filter((g) => g.status === 'offen') : alle;
+    const kurz = (t) => (t.length > 90 ? `${t.slice(0, 88)} …` : t);
+    return h('section', { class: 'karte', id: 'aufgabenmeldungen' }, h('div', { class: 'reihe' }, h('h2', {}, 'Aufgabenmeldungen'), h('span', { class: 'rechts' }, neuLaden())),
+      h('p', { class: 'klein' }, 'Lehrkräfte melden fehlerhafte Aufgaben mit ihrer Kennung. Korrigiert wird die Aufgabe in ihrem Erzeuger; dafür kannst du die Meldungen als Text speichern und weitergeben. Bis die korrigierte Version da ist, kannst du die Aufgabe sperren: Die Schüler bekommen dann eine andere Aufgabe desselben Lernziels und Niveaus, Fehlversuche an ihr zählen nicht. Kommt nach „behoben“ eine neue Meldung, ist die Aufgabe wieder offen.'),
+      h('div', { class: 'reihe' },
+        h('label', { class: 'schalter' }, h('input', { type: 'checkbox', id: 'meldungen-offen', checked: f.nurOffen, onchange: (ev) => { f.nurOffen = ev.target.checked; male(); } }), ' Nur offene'),
+        liste.length > 0 && h('button', { class: 'schlicht', id: 'meldungen-export', onclick: () => ladeHerunter(`Mathekingdom_Aufgabenmeldungen_${new Date().toLocaleDateString('sv-SE')}.txt`, M.alsText(liste, aufgabeZu, jetzt()), 'text/plain;charset=utf-8') }, 'Als Textdatei speichern')),
+      !liste.length ? h('p', { id: 'meldungen-leer' }, alle.length ? 'Keine offenen Meldungen.' : 'Noch keine Aufgabe gemeldet.')
+        : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+          h('thead', {}, h('tr', {}, ['Kennung', 'Aufgabe', 'Gemeldet', 'Stand', 'Gesperrt'].map((t) => h('th', {}, t)))),
+          h('tbody', {}, liste.map((g) => {
+            const a = aufgabeZu(g.kennung);
+            return h('tr', { 'data-meldung': g.kennung }, h('td', {}, h('code', { class: 'kennung' }, g.kennung)),
+              h('td', {}, a ? kurz(a.text.replace(/\{\{\w+\}\}/g, '▢').replace(/\s*\n\s*/g, ' ')) : h('span', { class: 'fehlertext' }, 'nicht im Pool'),
+                a && h('div', { class: 'klein' }, `Lösung im Pool: ${M.loesungVon(a)}`),
+                h('ul', { class: 'liste klein' }, g.meldungen.map((m) => h('li', {}, `${new Date(m.t).toLocaleDateString('de-DE')}, ${m.kuerzel}${m.klasse ? ` (${m.klasse})` : ''}: ${M.ARTEN[m.art] ?? m.art}${m.satz ? `. ${m.satz}` : ''}`)))),
+              h('td', { class: 'zahl' }, String(g.meldungen.length)),
+              h('td', {}, h('select', { 'data-status': g.kennung, onchange: tue(async (ev) => { await setzeStatus(g.kennung, ev.target.value); z.betrieb = null; }) },
+                Object.entries(M.STATUS).map(([w, t]) => h('option', { value: w, selected: g.status === w }, t)))),
+              h('td', {}, h('input', { type: 'checkbox', 'data-sperre': g.kennung, checked: g.gesperrt, onchange: tue(async (ev) => { await setzeSperre(g.kennung, ev.target.checked); }) })));
+          })))));
+  });
+}
+function sperrenKarte() {
+  const liste = z.v.gesperrt ?? [];
+  const eingabe = h('input', { id: 'sperre-kennung', type: 'text', size: 18, placeholder: 'z. B. 5.3.1-K1-F-01' });
+  return h('section', { class: 'karte', id: 'gesperrt' }, h('h2', {}, `Gesperrte Aufgaben (${liste.length})`),
+    liste.length ? h('ul', { class: 'klassenliste' }, liste.map((k) => h('li', {}, h('code', { class: 'kennung' }, k), h('span', { class: 'klein' }, aufgabeZu(k)?.lernziel ?? 'nicht im Pool'),
+      h('button', { class: 'schlicht', 'data-entsperren': k, onclick: tue(async () => { await setzeSperre(k, false); z.hinweis = `Aufgabe ${k} ist wieder frei.`; }) }, 'Wieder freigeben'))))
+      : h('p', { class: 'klein' }, 'Keine Aufgabe gesperrt.'),
+    h('div', { class: 'reihe' }, eingabe, h('button', { class: 'schlicht', id: 'sperren', onclick: tue(async () => {
+      const k = eingabe.value.trim();
+      if (!aufgabeZu(k)) throw new Error(`Die Kennung ${k || '(leer)'} steht nicht im Aufgabenpool.`);
+      await setzeSperre(k, true);
+      z.hinweis = `Aufgabe ${k} ist gesperrt. Die Schüler bekommen sie ab der nächsten Anmeldung nicht mehr.`;
+    }) }, 'Aufgabe sperren')));
+}
+
 // ---------- Rahmen ----------
-// Fünf Bereiche (ADR 0025); „Aufgaben“ kommt mit Version 0.23.
-const TABS = [['uebersicht', 'Übersicht'], ['schule', 'Schule'], ['klassen', 'Klassen und Lehrkräfte'], ['betrieb', 'Betrieb']];
+// Fünf Bereiche (ADR 0025).
+const TABS = [['uebersicht', 'Übersicht'], ['schule', 'Schule'], ['klassen', 'Klassen und Lehrkräfte'], ['betrieb', 'Betrieb'], ['aufgaben', 'Aufgaben']];
 function hauptansicht() {
   const inhalt = {
     uebersicht: () => uebersichtKarte(),
     schule: () => [schuljahrKarte(), uebernahmeKarte(), startdateien(), altKarte()],
     klassen: () => [lehrkraefte(), klassenKarte(), z.klasse && namenKarte(), aufgeloesteKarte()],
     betrieb: () => [backupKarte(), protokollKarte()],
+    aufgaben: () => [meldungenKarte(), sperrenKarte()],
   }[z.tab];
   return h('div', {},
-    h('nav', { class: 'tabs bereiche' }, TABS.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; z.hinweis = null; if (id === 'uebersicht' || id === 'betrieb') z.betrieb = null; male(); } }, titel))),
+    h('nav', { class: 'tabs bereiche' }, TABS.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; z.hinweis = null; if (id !== 'schule' && id !== 'klassen') z.betrieb = null; male(); } }, titel))),
     inhalt());
 }
 function male() {

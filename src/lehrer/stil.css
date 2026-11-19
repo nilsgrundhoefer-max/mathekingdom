@@ -362,3 +362,11 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .abschnitte button.aktiv { background: var(--nacht); color: #fff; border-color: var(--nacht); font-weight: 700; }
 #mathekingdom-lehrer .kopf select.klassenwahl { font: inherit; padding: 4px 8px; border-radius: 6px; }
 #mathekingdom-lehrer button.gefahr { color: #a12a1f; border-color: #e3b3ad; }
+/* Aufgabenkennung und Aufgabenmeldung (ADR 0025) */
+#mathekingdom-lehrer code.kennung { font-size: 0.78rem; color: var(--grau); background: #f3efe6; padding: 1px 5px; border-radius: 4px; }
+#mathekingdom-lehrer .kennung-zeile { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+#mathekingdom-lehrer button.link.klein { font-size: 0.8rem; }
+#mathekingdom-lehrer .overlay-inhalt.schmal { max-width: 640px; }
+#mathekingdom-lehrer #melde-dialog > * { margin-bottom: 10px; }
+#mathekingdom-lehrer .aktuelle-aufgabe { padding: 10px 14px; }
+#mathekingdom-lehrer #aufgabenmeldungen ul.liste { margin: 4px 0 0; padding-left: 18px; }

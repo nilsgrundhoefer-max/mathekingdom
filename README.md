@@ -43,7 +43,7 @@ Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den D
 
 „Wackelig“ heißt: mindestens 4 Aufgaben zum Lernziel und weniger als die Hälfte gelöst, oder zweimal das Lösungsschritt-Kärtchen. Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben, lässt nach, wenn die letzten zwei Wegstücke von heute je mindestens zwei von fünf Aufgaben unter dem Schnitt der Wegstücke davor liegen. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
 
-Noch nicht gebaut: weitere Berichte; Aufgabenkennung beim Schüler und Aufgabenmeldungen (0.23); Nutzungsstatistik und Auffällige Aufgaben (0.24).
+Seit 0.23: Aufgabenkennung beim Schüler, Aufgabenmeldungen der Lehrkräfte, gesperrte Aufgaben (Administrator-Dashboard, Bereich Aufgaben). Noch nicht gebaut: weitere Berichte; Nutzungsstatistik und Auffällige Aufgaben (0.24).
 
 ## Einrichtung im Schulnetz (seit 0.21, ADR 0024)
 

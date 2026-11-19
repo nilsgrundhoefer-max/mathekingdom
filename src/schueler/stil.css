@@ -427,3 +427,6 @@ body { margin: 0; background: #efe6d2; }
 }
 /* Hoftitel in der Kopfzeile (ADR 0023) */
 #mathekingdom .hoftitel-kopf { display: inline-flex; align-items: center; gap: 3px; margin-left: 8px; font-weight: 600; color: #7a5a12; }
+/* Aufgabenkennung unten links (ADR 0025) */
+#mathekingdom .kennung { position: fixed; left: 10px; bottom: 6px; margin: 0; font-size: 0.72rem; color: #9a9389; font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; pointer-events: none; z-index: 5; }
+@media print { #mathekingdom .kennung { display: none; } }
