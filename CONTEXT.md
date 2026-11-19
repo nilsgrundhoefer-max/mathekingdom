@@ -405,7 +405,7 @@ Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Gru
 _Avoid_: Log, Verlauf
 
 **Betriebsprotokoll**:
-Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten; die Lehrkraft sieht es für die ganze Klasse als „Protokoll“ in der Verwaltung.
+Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten. Nur der Administrator sieht es, über alle Klassen und Lehrkräfte; die Lehrkraft sieht nur Warnungen, bei denen sie im Unterricht selbst handeln kann.
 _Avoid_: Log, Status, Fehlerliste
 
 **Schuljahreswechsel**:
@@ -431,6 +431,22 @@ _Avoid_: Lehrer-Klassendatei
 **Namensliste**:
 Die Zuordnung von Schülercodes zu echten Namen, Teil der Klassendaten.
 _Avoid_: Klassenliste (für die Datei)
+
+**Entfernen** (eines Schülers):
+Der Schüler verschwindet aus der Namensliste, sein Speicherstand bleibt liegen; das lässt sich rückgängig machen. Lehrkraft und Administrator dürfen das.
+_Avoid_: Löschen (für diesen Schritt)
+
+**Löschen** (eines Schülers):
+Speicherstand und seine Backups werden endgültig gelöscht, etwa bei Schulwechsel. Nur der Administrator darf das.
+_Avoid_: Entfernen (für diesen Schritt)
+
+**Klasse auflösen**:
+Die Klasse verschwindet aus dem Schulverzeichnis, ihre Ordner bleiben. Erst danach kann der Administrator die Daten der Klasse endgültig löschen.
+_Avoid_: Klasse löschen (für den ersten Schritt)
+
+**Nutzungsstatistik**:
+Zahlen zum Betrieb im Administrator-Dashboard, über alle Klassen und je Klasse: Starts, Versionen, Browser, technische Probleme, aktive Schüler, Alter des letzten Backups. Sie enthält keine Namen und keinen Lernstand; Lernstände sieht man im Lehrer-Dashboard.
+_Avoid_: Statistik (allein), Auswertung
 
 ## Ergänzungen zum Lehrer-Dashboard
 
