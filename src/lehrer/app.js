@@ -791,7 +791,7 @@ function lernstandKlasse() {
       lernzielBalken(matrix, lernziele)),
     h('section', { class: 'karte', id: 'kompetenz-klasse' }, h('h2', {}, 'Kompetenzprofil der Klasse'),
       h('p', { class: 'klein' }, kompetenzErklaerung), kompetenzNetz(A.kompetenzProfil(versuche, z.index), null, 'Kompetenzprofil der Klasse')),
-    ehrentafelKlasse(staende),
+    hoftitelKlasse(staende),
     selbsteinschaetzungKlasse(staende),
     vorwissenKlasse(staende),
     heftUndSicherheitKlasse(staende),
@@ -800,24 +800,22 @@ function lernstandKlasse() {
     meilensteineSperren());
 }
 
-// Ehrentafel (ADR 0023): wie bei den Schülern, aber mit Namen, Punkten und Niveaustufen statt Kronenfarben.
-function ehrentafelKlasse(staende) {
+// Hoftitel (ADR 0023): wer gerade einen der fünf Titel trägt, mit Namen, Punkten und Niveaustufen.
+function hoftitelKlasse(staende) {
   const an = kl().einst.ehrentafel !== false;
-  const t = L.ehrentafel(z.pool, z.index, staende.map(({ code, stand }) => ({ id: code, stand })));
-  const aus = staende.filter(({ stand }) => stand.ehrentafelAus).map(({ code }) => name(code));
-  return h('section', { class: 'karte', id: 'ehrentafel-lehrer' }, h('h2', {}, 'Ehrentafel'),
-    h('p', { class: 'klein' }, `${an ? 'Die Schüler sehen' : 'Ausgeschaltet. Eingeschaltet sähen die Schüler'} die fünf Besten des Schuljahrs mit Hoftitel, Wappen und Beinamen. Punkte: je Meilenstein die beste Krone (F 1, G 2, M 4, E 6), dazu 1 je Siegel; gezählt wird erst ab einer Krone auf G. Die Werte kommen aus den Speicherständen der Schüler und sind deshalb nicht fälschungssicher.`),
-    t.length === 0 ? h('p', { class: 'klein' }, 'Noch hat niemand eine Krone auf G oder besser.')
+  const v = L.hoftitelVergabe(z.pool, z.index, staende.map(({ code, stand }) => ({ id: code, stand })));
+  return h('section', { class: 'karte', id: 'hoftitel-lehrer' }, h('h2', {}, 'Hoftitel'),
+    h('p', { class: 'klein' }, `${an ? 'Jeder dieser Schüler sieht' : 'Ausgeschaltet. Eingeschaltet sähe jeder dieser Schüler'} seinen Titel oben in der Kopfzeile, sonst nirgends; die Mitschüler sehen ihn nicht. Punkte: je Meilenstein die beste Krone (F 1, G 2, M 4, E 6), dazu 1 je Siegel; ein Titel erst ab einer Krone auf G. Die Werte kommen aus den Speicherständen der Schüler und sind deshalb nicht fälschungssicher.`),
+    v.length === 0 ? h('p', { class: 'klein' }, 'Noch hat niemand eine Krone auf G oder besser.')
       : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Platz', 'Hoftitel', 'Name', 'Punkte', ...L.NIVEAUS, 'Siegel'].map((x) => h('th', {}, L.NIVEAUS.includes(x) ? chip(x) : x)))),
-        h('tbody', {}, t.map((e) => h('tr', { 'data-ehre': e.id },
+        h('tbody', {}, v.map((e) => h('tr', { 'data-ehre': e.id },
           h('td', { class: 'zahl' }, e.platz),
-          h('td', {}, L.titelName(e.titel, e.stand.hoftitelForm)),
+          h('td', {}, e.titel.name),
           h('td', {}, h('button', { class: 'link', onclick: () => gehe({ art: 'schueler', code: e.id }) }, name(e.id))),
           h('td', { class: 'zahl' }, e.wert.punkte),
           L.NIVEAUS.map((n) => h('td', { class: 'zahl' }, e.wert.kronen[n])),
-          h('td', { class: 'zahl' }, e.wert.siegel)))))),
-    aus.length > 0 && h('p', { class: 'klein' }, `Ausgeblendet und deshalb nicht auf der Tafel: ${aus.join(', ')}.`));
+          h('td', { class: 'zahl' }, e.wert.siegel)))))));
 }
 
 // Vorwissen aus dem Einstiegscheck (ADR 0014): je Kapitel, in dem jemand ihn gemacht oder übersprungen hat.
@@ -1270,8 +1268,8 @@ function verwaltung() {
       h('p', { class: 'klein' }, 'Die Schüler lösen Münzen für Spiele ein: die Rechenpause (Kopfrechen-Sprint, 20 Münzen) und Belohnungsspiele rein zum Spaß (Botenritt, Burgmauer, Steinmetz, Grenzlauf und Kellerjagd, je 100 Münzen, eine Runde von höchstens 3 Minuten). Oben in der Leiste stellst du ein, wann Spiele gehen: aus, nur in der Spielpause oder verdient. Bei „verdient“ geht die Rechenpause immer und ein Belohnungsspiel nach jedem vierten Wegstück, etwa alle 20 Minuten.'),
       h('p', { class: 'klein' }, 'Die Bestenliste gibt es nur in den Belohnungsspielen: die besten fünf der Klasse in dieser Woche, mit Wappen und einem Beinamen aus festen Bausteinen, nie mit Namen. Jeder Schüler kann sich ausblenden. Weil die Schüler ihren Speicherstand selbst schreiben, ist ein Bestwert nicht fälschungssicher.'),
       h('label', { class: 'schalter' }, h('input', { id: 'bestenliste', type: 'checkbox', checked: kl().einst.bestenliste !== false, onchange: (ev) => aendere((k) => { k.einst.bestenliste = ev.target.checked; }) }), ' Bestenliste zeigen'),
-      h('p', { class: 'klein' }, 'Die Ehrentafel im Schlossgarten zeigt die fünf Besten des Schuljahrs nach Kronen und Siegeln, mit Hoftitel (Klassenkönig, Herzog, Graf, Ritter, Knappe), Wappen und Beinamen. Wer nicht dabei ist, sieht keinen Platz. Die Ehrentafel mit Namen findest du im Lernstand.'),
-      h('label', { class: 'schalter' }, h('input', { id: 'ehrentafel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Ehrentafel zeigen')),
+      h('p', { class: 'klein' }, 'Hoftitel: Die fünf Besten des Schuljahrs nach Kronen und Siegeln sehen oben in ihrer Kopfzeile einen Titel mit Symbol (Klassenkönig, Herzog, Graf, Ritter, Knappe). Die Mitschüler sehen ihn nicht. Wer gerade welchen Titel trägt, steht im Lernstand.'),
+      h('label', { class: 'schalter' }, h('input', { id: 'hoftitel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Hoftitel zeigen')),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),
