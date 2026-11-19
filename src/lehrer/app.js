@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -120,7 +120,7 @@ async function oeffneKlasse(klasse, ablage) {
   if (!pool) { z.fehler = `Für Klasse ${stufe} gibt es noch keinen Aufgabenpool.`; return male(); }
   z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } };
   const e = z.daten.klassen[klasse].einst;
-  e.nachrichten ??= {}; e.sperren ??= {};
+  e.nachrichten ??= {}; e.sperren ??= {}; e.sonderauftraege ??= {};
   Object.assign(z, { overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null, zweitesGemeldet: false });
   Object.assign(z, { klasse, ordner: ablage, pool, index: L.indexiere(pool), ansicht: 'klasse', fehler: null, warnungen: [], klassendateiText: null, schueler: null, ls: { art: 'klasse' } });
   // Kopien für den Unterricht ohne Internet.
@@ -138,7 +138,7 @@ async function oeffneKlasse(klasse, ablage) {
     await lade();
     const fokus = document.activeElement?.tagName;
     // Eine neue Warnung wird sofort gezeigt. Sonst nur neu zeichnen, wo es nicht beim Tippen stört.
-    if (z.warnungen.length > vorher || (['jetzt', 'lernstand', 'aufgaben'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open]'))) male();
+    if (z.warnungen.length > vorher || (['jetzt', 'lernstand', 'aufgaben'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open], details.sonderauftrag[open]'))) male();
   };
   // Dauert das Lesen im Netz länger als 5 Sekunden, wird der nächste Durchgang ausgelassen statt doppelt gestartet.
   let laeuft = false;
@@ -428,6 +428,76 @@ function nachrichtFeld(code) {
     h('div', { class: 'reihe' }, eingabe, h('button', { class: 'haupt', 'data-sende': code, onclick: () => sende(eingabe.value) }, 'Senden')));
 }
 
+// ---------- Sonderauftrag (ADR 0021) ----------
+// Im Schülerprofil: ein Lernziel (Vorschlag: die schwächsten und ihre Voraussetzungen), eine Niveaustufe, 3 bis 5 Aufgaben.
+const SATZ_VORLAGEN = ['Das schaffst du!', 'Damit kommst du bei deinem Lernziel weiter.', 'Eine kleine Herausforderung für dich.'];
+const SA_STATUS = { gesendet: ['gesendet, noch nicht geöffnet', 'warn'], geoeffnet: ['geöffnet', 'warn'], erledigt: ['erledigt', 'gut'] };
+function sonderauftragFeld(code) {
+  const stand = z.staende.find((x) => x.code === code)?.stand ?? L.neuerSpeicherstand(code, z.klasse, jetzt());
+  const auftrag = kl().einst.sonderauftraege?.[code] ?? null;
+  const st = A.sonderauftragStand(stand, auftrag);
+  const offen = st && st.status !== 'erledigt';
+  const zieh = () => aendere((k) => { delete k.einst.sonderauftraege[code]; });
+  const statusZeile = st && h('div', { class: 'sa-stand', id: 'sonderauftrag-stand' },
+    h('p', {}, h('b', {}, 'Sonderauftrag: '), `${lernzieltext(auftrag.lernziel)}, Niveau ${auftrag.niveau}, ${auftrag.aufgaben.length} Aufgaben, verschickt um ${uhr(auftrag.t)} Uhr. `,
+      h('span', { class: `marke ${SA_STATUS[st.status][1]}` }, SA_STATUS[st.status][0]),
+      st.status === 'geoeffnet' && ` ${st.erledigt} von ${st.gesamt} bearbeitet`,
+      st.status === 'erledigt' && ` ${st.richtig} von ${st.gesamt} richtig`),
+    st.fehlvorstellungen.length > 0 && h('p', { class: 'klein' }, `Typische Fehler dabei: ${st.fehlvorstellungen.map((f) => z.pool.fehlvorstellungen[f]?.beschreibung ?? f).join('; ')}`),
+    offen && h('button', { class: 'schlicht', 'data-sa-zurueck': code, onclick: zieh }, 'Zurückziehen'));
+  if (offen) return h('div', { class: 'sonderauftrag' }, statusZeile);
+  // Zusammenstellen. Der Entwurf bleibt beim Neuzeichnen erhalten.
+  const ziel = kl().einst.zielniveaus[code] ?? L.STANDARD_ZIELNIVEAU;
+  const schwach = A.schwaechsteLernziele(stand, z.index).map((x) => x.lernziel);
+  const vor = A.voraussetzungenVon(z.index, schwach);
+  if (z.sa?.code !== code) {
+    z.sa = { code, offen: false, lernziel: schwach[0] ?? null, niveau: L.NIVEAUS[Math.max(0, L.NIVEAUS.indexOf(ziel) - 1)], anzahl: 4, satz: '', aufgaben: null };
+  }
+  const sa = z.sa;
+  const neu = () => { sa.aufgaben = null; male(); };
+  const auswahl = sa.lernziel ? A.sonderauftragAufgaben(z.index, stand, sa.lernziel, sa.niveau, sa.anzahl) : null;
+  if (auswahl && !sa.aufgaben) sa.aufgaben = auswahl.aufgaben;
+  const alle = A.lernzieleMitAufgaben(z.pool, z.index);
+  const tausche = (i) => {
+    const frei = auswahl.vorrat.filter((id) => !sa.aufgaben.includes(id));
+    if (!frei.length) return;
+    sa.aufgaben = sa.aufgaben.map((id, j) => (j === i ? frei[0] : id));
+    male();
+  };
+  const sende = () => {
+    if (!sa.lernziel || !sa.aufgaben?.length) return;
+    const t = jetzt();
+    const eintrag = { id: t, t, lernziel: sa.lernziel, niveau: sa.niveau, aufgaben: [...sa.aufgaben], ...(sa.satz.trim() && { satz: sa.satz.trim().slice(0, 200) }) };
+    z.sa = null;
+    aendere((k) => { (k.einst.sonderauftraege ??= {})[code] = eintrag; });
+  };
+  const option = (id, mark) => h('option', { value: id, selected: sa.lernziel === id }, `${mark}${lernzieltext(id)}`);
+  return h('div', { class: 'sonderauftrag' }, statusZeile,
+    h('details', { class: 'sonderauftrag', open: sa.offen, ontoggle: (ev) => { sa.offen = ev.target.open; } },
+      h('summary', {}, st ? 'Neuen Sonderauftrag schicken' : 'Sonderauftrag schicken'),
+      h('p', { class: 'klein' }, `3 bis 5 Aufgaben als Brief. Für das Bearbeiten aller Aufgaben gibt es ${L.SONDERAUFTRAG_BONUS} Münzen dazu, egal wie viele richtig sind.`),
+      h('div', { class: 'reihe' },
+        h('label', {}, 'Lernziel ', h('select', { 'data-sa-lernziel': code, onchange: (ev) => { sa.lernziel = ev.target.value || null; neu(); } },
+          !sa.lernziel && h('option', { value: '' }, 'bitte wählen'),
+          schwach.length > 0 && h('optgroup', { label: 'Schwächste Lernziele' }, schwach.map((id) => option(id, ''))),
+          vor.length > 0 && h('optgroup', { label: 'Voraussetzungen dazu' }, vor.map((id) => option(id, ''))),
+          h('optgroup', { label: 'Alle Lernziele' }, alle.filter((l) => !schwach.includes(l.id) && !vor.includes(l.id)).map((l) => option(l.id, `${l.milestone}: `))))),
+        h('label', {}, 'Niveau ', h('select', { 'data-sa-niveau': code, onchange: (ev) => { sa.niveau = ev.target.value; neu(); } },
+          L.NIVEAUS.map((n) => h('option', { value: n, selected: sa.niveau === n }, `${n}${n === ziel ? ' (Zielniveau)' : ''}`)))),
+        h('label', {}, 'Aufgaben ', h('select', { 'data-sa-anzahl': code, onchange: (ev) => { sa.anzahl = Number(ev.target.value); neu(); } },
+          [3, 4, 5].map((n) => h('option', { value: n, selected: sa.anzahl === n }, n))))),
+      !schwach.length && h('p', { class: 'klein' }, 'Noch keine Schwächen erkennbar. Wähle ein Lernziel aus der Liste.'),
+      auswahl && auswahl.ungeloest < sa.anzahl && h('p', { class: 'klein warnhinweis', id: 'sa-knapp' },
+        `Auf Niveau ${sa.niveau} hat ${name(code)} nur ${auswahl.ungeloest} ungelöste Aufgaben zu diesem Lernziel, der Rest wurde schon einmal gelöst und bringt nur 1 Münze.`,
+        auswahl.nachbar && [' ', h('button', { class: 'link', 'data-sa-nachbar': auswahl.nachbar, onclick: () => { sa.niveau = auswahl.nachbar; neu(); } }, `Niveau ${auswahl.nachbar} hat genug.`)]),
+      sa.aufgaben?.length > 0 && h('ol', { class: 'sa-aufgaben' }, sa.aufgaben.map((id, i) => h('li', {}, h('span', {}, aufgabentext(id)),
+        auswahl.vorrat.length > sa.aufgaben.length && h('button', { class: 'schlicht', 'data-sa-tausche': i, onclick: () => tausche(i) }, 'Tauschen')))),
+      h('div', { class: 'reihe' }, SATZ_VORLAGEN.map((t) => h('button', { class: `schlicht${sa.satz === t ? ' aktiv' : ''}`, onclick: () => { sa.satz = sa.satz === t ? '' : t; male(); } }, t))),
+      h('div', { class: 'reihe' },
+        h('input', { type: 'text', placeholder: 'Eigener Satz (freiwillig)', maxLength: 200, value: sa.satz, 'data-sa-satz': code, oninput: (ev) => { sa.satz = ev.target.value; } }),
+        h('button', { class: 'haupt', 'data-sa-senden': code, disabled: !sa.aufgaben?.length, onclick: sende }, 'Sonderauftrag schicken'))));
+}
+
 function akutZone(status) {
   const hilfe = kl().einst.hilfe;
   const akut = [...status].filter(([code, st]) => st.status === 'hilfe' || (st.status === 'blockiert' && !z.gesehen.has(`${code}|${st.seit}`)))
@@ -493,6 +563,16 @@ function impulse() {
     karten.push(h('li', { 'data-laesst-nach': code }, h('span', {}, h('b', {}, 'Lässt nach: '), `${name(code)} hat in den letzten zwei Wegstücken ${x.letzte.map((w) => `${w.richtig} von ${w.gesamt}`).join(' und ')} gelöst, vorher im Schnitt ${anteilText(x.schnitt)} von 5. `,
       'Vielleicht hilft eine kurze Pause, ein anderes Lernziel oder ein Gespräch.'), gesehen(schluessel)));
   }
+  // Sonderauftrag erledigt (ADR 0021).
+  for (const { code, stand } of z.staende) {
+    const auftrag = kl().einst.sonderauftraege?.[code];
+    const st = kl().namen[code] && A.sonderauftragStand(stand, auftrag);
+    if (st?.status !== 'erledigt') continue;
+    const schluessel = `sa|${code}|${auftrag.id}`;
+    if (z.gesehen.has(schluessel)) continue;
+    karten.push(h('li', { class: 'gut', 'data-sa-erledigt': code }, h('span', {}, h('b', {}, 'Sonderauftrag erledigt: '), `${name(code)} hat ${st.richtig} von ${st.gesamt} Aufgaben zu ${lesbar(auftrag.lernziel)} richtig gelöst.`),
+      h('button', { class: 'schlicht', onclick: () => { z.overlay = code; male(); } }, 'Ansehen'), gesehen(schluessel)));
+  }
   for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
     const schluessel = `fertig|${x.code}|${x.milestone}|${x.zielniveau}`;
     if (z.gesehen.has(schluessel)) continue;
@@ -538,6 +618,7 @@ function overlay() {
         h('span', { class: 'rechts reihe' }, h('button', { class: 'schlicht', onclick: () => druckeEinzelbericht(code) }, 'Diagnosebericht als PDF'),
           h('button', { class: 'haupt', id: 'overlay-zu', onclick: zu }, 'Schließen'))),
       nachrichtFeld(code),
+      sonderauftragFeld(code),
       einzelInhalt(code)));
 }
 

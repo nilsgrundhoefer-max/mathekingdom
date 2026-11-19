@@ -626,7 +626,7 @@ export function versuchsverlauf(stand, anzahl = 20) {
       t: v.t, aufgabe: v.aufgabe, lernziel: v.lernziel, niveau: v.niveau, richtig: v.richtig,
       erster: e.length ? alsText(e[0]) : null, zweiter: e.length > 1 ? alsText(e[1]) : null,
       fehlvorstellungen: v.fehlvorstellungen ?? [], karten: L.KARTEN.filter((k) => L.hatKarte(v, k)), sicher: v.sicher ?? null,
-      art: v.rueckblick ? 'Rückblick' : v.seitenblick ? 'Seitenblick' : v.bruecke ? 'Brücke' : v.einstieg ? 'Einstiegscheck' : null,
+      art: v.rueckblick ? 'Rückblick' : v.seitenblick ? 'Seitenblick' : v.bruecke ? 'Brücke' : v.sonderauftrag ? 'Sonderauftrag' : v.einstieg ? 'Einstiegscheck' : null,
     };
   });
 }
@@ -653,4 +653,62 @@ export function bautAuf(pool, lernzielId) {
   const alle = pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele.map((l) => ({ ...l, milestone: u.titel }))));
   const von = alle.find((l) => l.id === lernzielId);
   return { auf: (von?.voraussetzungen ?? []).map((id) => alle.find((l) => l.id === id)).filter(Boolean), darauf: alle.filter((l) => l.voraussetzungen?.includes(lernzielId)) };
+}
+
+// ---------- Sonderauftrag (ADR 0021) ----------
+// Die schwächsten Lernziele eines Schülers: wackelig, viele Fehlversuche, aktive Fehlvorstellung, aufzufrischen.
+// Lernziele mit Siegel zählen nur, wenn sie aufzufrischen sind.
+export function schwaechsteLernziele(stand, index, anzahl = 3) {
+  const aktiv = new Map();
+  for (const f of L.fehlvorstellungsStand(stand.versuche.filter((v) => !v.einstieg))) if (f.status === 'aktiv') aktiv.set(f.lernziel, (aktiv.get(f.lernziel) ?? 0) + 1);
+  const je = new Map();
+  for (const v of stand.versuche) {
+    if (v.einstieg || !index.lernzielMitAufgaben.has(v.lernziel)) continue;
+    const e = je.get(v.lernziel) ?? { lernziel: v.lernziel, versuche: 0, falsch: 0 };
+    e.versuche++; if (!v.richtig) e.falsch++;
+    je.set(v.lernziel, e);
+  }
+  return [...je.values()].map((e) => {
+    const zustand = lernzielZustand(stand, e.lernziel);
+    const fehlvorstellungen = aktiv.get(e.lernziel) ?? 0;
+    const wert = (zustand === 'wackelig' ? 100 : 0) + (zustand === 'aufzufrischen' ? 50 : 0) + fehlvorstellungen * 10 + e.falsch * 5;
+    return { ...e, zustand, fehlvorstellungen, wert };
+  }).filter((e) => !['siegel', 'gefestigt'].includes(e.zustand) && (e.falsch > 0 || e.zustand !== 'begonnen'))
+    .sort((a, b) => b.wert - a.wert || a.lernziel.localeCompare(b.lernziel)).slice(0, anzahl);
+}
+// Voraussetzungen der schwächsten Lernziele, ohne die Lernziele selbst und nur solche mit Aufgaben.
+export function voraussetzungenVon(index, lernziele) {
+  const schon = new Set(lernziele);
+  const raus = [];
+  for (const id of lernziele) for (const v of index.lernziel.get(id)?.voraussetzungen ?? []) {
+    if (schon.has(v) || !index.lernzielMitAufgaben.has(v)) continue;
+    schon.add(v); raus.push(v);
+  }
+  return raus;
+}
+// Aufgaben für einen Sonderauftrag: zuerst nie bearbeitete, dann nicht gelöste, zuletzt schon gelöste, je in der Folge des Pools.
+// Liefert auch, wie viele ungelöste es gibt und welches Nachbarniveau mehr hätte.
+export function sonderauftragAufgaben(index, stand, lernziel, niveau, anzahl, ohne = []) {
+  const geloest = new Set(), bearbeitet = new Set();
+  for (const v of stand.versuche) { if (v.einstieg) continue; bearbeitet.add(v.aufgabe); if (v.richtig) geloest.add(v.aufgabe); }
+  const rang = (a) => (!bearbeitet.has(a.id) ? 0 : !geloest.has(a.id) ? 1 : 2);
+  const ungeloest = (n) => (index.nach.get(`${lernziel}|${n}`) ?? []).filter((a) => !geloest.has(a.id)).length;
+  const kandidaten = [...(index.nach.get(`${lernziel}|${niveau}`) ?? [])].filter((a) => !ohne.includes(a.id))
+    .sort((a, b) => rang(a) - rang(b) || a.id.localeCompare(b.id));
+  const frei = ungeloest(niveau);
+  const stufe = L.NIVEAUS.indexOf(niveau);
+  const nachbarn = [L.NIVEAUS[stufe - 1], L.NIVEAUS[stufe + 1]].filter(Boolean);
+  const nachbar = frei >= anzahl ? null : nachbarn.filter((n) => ungeloest(n) >= anzahl).sort((a, b) => ungeloest(b) - ungeloest(a))[0] ?? null;
+  return { aufgaben: kandidaten.slice(0, anzahl).map((a) => a.id), ungeloest: frei, vorrat: kandidaten.map((a) => a.id), nachbar };
+}
+// Zustand eines verschickten Sonderauftrags aus Sicht der Lehrkraft: gesendet | geoeffnet | erledigt.
+export function sonderauftragStand(stand, auftrag) {
+  if (!auftrag) return null;
+  const fertig = (stand?.sonderauftraege ?? []).find((x) => x.id === auftrag.id);
+  const versuche = (stand?.versuche ?? []).filter((v) => v.sonderauftrag === auftrag.id);
+  const fehlvorstellungen = [...new Set(versuche.flatMap((v) => v.fehlvorstellungen ?? []))];
+  if (fertig) return { status: 'erledigt', richtig: fertig.richtig, gesamt: fertig.gesamt, am: fertig.t, fehlvorstellungen };
+  const lauf = stand?.sonderauftrag?.id === auftrag.id ? stand.sonderauftrag : null;
+  if (lauf) return { status: 'geoeffnet', erledigt: lauf.erledigt.length, richtig: lauf.erledigt.filter((e) => e.richtig).length, gesamt: auftrag.aufgaben.length, fehlvorstellungen };
+  return { status: 'gesendet', erledigt: 0, gesamt: auftrag.aufgaben.length, fehlvorstellungen };
 }

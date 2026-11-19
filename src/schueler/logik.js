@@ -291,7 +291,9 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 // Mit `index` verlangt das Siegel auch eine Aufgabe aus AFB II oder III (siehe lernzielStand).
 // Mit `{ rueckblick: true }` zählt die Aufgabe zum Rückblick und nicht zur Selbsteinschätzung.
 // Mit `{ seitenblick: true }` bringt sie nur Münzen: kein Siegel, keine Krone, keine Selbsteinschätzung, keine Grundlagen-Schleife (ADR 0016).
-export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false } = {}) {
+// Mit `{ sonderauftrag: id }` zählt sie wie die Brücke fürs Lernziel, aber nicht für Selbsteinschätzung und Grundlagen-Schleife (ADR 0021).
+export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false, sonderauftrag = null } = {}) {
+  const eigen = !rueckblick && !bruecke && !seitenblick && !sonderauftrag;
   const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
@@ -300,7 +302,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
-    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(seitenblick && { seitenblick: true }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
+    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(seitenblick && { seitenblick: true }), ...(sonderauftrag && { sonderauftrag }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
   });
   // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
   let heft = null;
@@ -318,7 +320,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   // Krone und Selbsteinschätzung: Wer unter der gewählten Krone arbeitet, bevor er dort eine Krone hat, ist abgestiegen.
   const kroneJetzt = meilenstein ? krone(index, stand, meilenstein) : null;
-  const e = meilenstein && !rueckblick && !bruecke && !seitenblick ? stand.einschaetzung?.[meilenstein.id] : null;
+  const e = meilenstein && eigen ? stand.einschaetzung?.[meilenstein.id] : null;
   let ersteKrone = false;
   if (e && !e.krone) {
     if (unterZiel(aufgabe.niveau, e.gewaehlt)) e.abstieg = true;
@@ -326,9 +328,9 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   }
   const neueKrone = kroneJetzt && kroneJetzt !== kroneVorher ? { niveau: kroneJetzt, vorher: kroneVorher } : null;
   // Grundlagen-Schleife (ADR 0015): nur beim Üben am Meilenstein und nur, wenn das Ziel nicht ohnehin F ist.
-  const grundlage = !rueckblick && !bruecke && !seitenblick && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
+  const grundlage = eigen && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
   // Erstmals ohne Beispiel und Lösungsschritt (ADR 0017): nur beim Üben am Meilenstein.
-  const ohneHilfe = !rueckblick && !bruecke && !seitenblick && erstmalsOhneHilfe(stand);
+  const ohneHilfe = eigen && erstmalsOhneHilfe(stand);
   return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe };
 }
 
@@ -495,7 +497,7 @@ export const GRUNDLAGE_HINWEIS_AB = 2; // ab dem zweiten Mal erfährt es die Leh
 export const inGrundlage = (stand, lernzielId) => Boolean(stand.grundlage?.[lernzielId]?.aktiv);
 // Niveaustufe der nächsten Aufgabe zu diesem Lernziel.
 export const aufgabenNiveau = (stand, lernzielId, niveau) => (inGrundlage(stand, lernzielId) ? 'F' : niveau);
-const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke && !v.seitenblick;
+const eigenerVersuch = (v) => !v.einstieg && !v.rueckblick && !v.bruecke && !v.seitenblick && !v.sonderauftrag;
 // Wie viele verschiedene F-Aufgaben in der laufenden Schleife schon richtig sind.
 export function grundlageRichtige(stand, lernzielId) {
   const g = stand.grundlage?.[lernzielId];
@@ -559,6 +561,58 @@ export function trageBrueckeEin(stand, aufgabe, richtig, jetzt) {
   if (ergebnis.fertig) {
     (stand.bruecken ??= []).push({ t: jetzt, tag: b.tag, fuer: b.fuer, zu: b.zu, richtig: ergebnis.richtig, gesamt: ergebnis.gesamt });
     stand.brueckeAktiv = null;
+  }
+  return ergebnis;
+}
+
+// ---------- Sonderauftrag (ADR 0021) ----------
+// Die Lehrkraft schickt einem Schüler drei bis fünf Aufgaben zu einem Lernziel über die Klassendatei:
+// { id, lernziel, niveau, aufgaben: [Aufgaben-Ids], satz? }. Zurückziehen heißt: Der Eintrag fehlt.
+// Der Speicherstand merkt sich den laufenden Auftrag (sonderauftrag) und die erledigten (sonderauftraege).
+export const SONDERAUFTRAG_BONUS = 100;
+export const SONDERAUFTRAG_MIN = 3, SONDERAUFTRAG_MAX = 5;
+function gueltigerAuftrag(a) {
+  if (!a?.id || !Array.isArray(a.aufgaben) || a.aufgaben.length === 0) return null;
+  return { id: String(a.id), lernziel: a.lernziel, niveau: a.niveau, aufgaben: a.aufgaben.slice(0, SONDERAUFTRAG_MAX), satz: a.satz ? String(a.satz).slice(0, 200) : null, t: a.t ?? a.id };
+}
+const erledigterAuftrag = (stand, id) => (stand.sonderauftraege ?? []).some((x) => x.id === id);
+// Stimmt der laufende Auftrag im Speicherstand nicht mehr mit der Klassendatei überein (zurückgezogen oder ersetzt),
+// wird er verworfen. Gelöste Aufgaben behalten ihre Münzen, einen Bonus gibt es nicht.
+export function gleicheSonderauftragAb(stand, auftrag) {
+  if (stand.sonderauftrag && stand.sonderauftrag.id !== auftrag?.id) { stand.sonderauftrag = null; return true; }
+  return false;
+}
+// Offener Auftrag für die Anzeige: null, wenn keiner da oder schon erledigt ist.
+export function offenerSonderauftrag(stand, auftrag) {
+  if (!auftrag || erledigterAuftrag(stand, auftrag.id)) return null;
+  const lauf = stand.sonderauftrag?.id === auftrag.id ? stand.sonderauftrag : null;
+  const erledigt = lauf?.erledigt.length ?? 0;
+  return { ...auftrag, geoeffnet: Boolean(lauf), erledigt, offen: auftrag.aufgaben.length - erledigt, gesamt: auftrag.aufgaben.length };
+}
+// Öffnen: Ab jetzt sieht die Lehrkraft „geöffnet“. `zurueck` sagt, wohin es danach geht.
+export function oeffneSonderauftrag(stand, auftrag, zurueck, jetzt) {
+  if (!auftrag || erledigterAuftrag(stand, auftrag.id)) return null;
+  if (stand.sonderauftrag?.id !== auftrag.id) stand.sonderauftrag = { id: auftrag.id, t: jetzt, erledigt: [], zurueck: zurueck ?? null };
+  else if (zurueck && !stand.sonderauftrag.zurueck) stand.sonderauftrag.zurueck = zurueck; // der erste Ort gilt
+  return stand.sonderauftrag;
+}
+export function naechsteSonderauftragAufgabe(stand, auftrag) {
+  const lauf = stand.sonderauftrag;
+  if (!auftrag || lauf?.id !== auftrag.id) return null;
+  return auftrag.aufgaben.find((id) => !lauf.erledigt.some((e) => e.aufgabe === id)) ?? null;
+}
+// Nach dem Verbuchen einer Aufgabe. Ist die letzte bearbeitet, gibt es den Bonus, egal wie viele richtig sind.
+export function trageSonderauftragEin(stand, auftrag, aufgabe, richtig, jetzt) {
+  const lauf = stand.sonderauftrag;
+  if (!auftrag || lauf?.id !== auftrag.id || !auftrag.aufgaben.includes(aufgabe.id) || lauf.erledigt.some((e) => e.aufgabe === aufgabe.id)) return null;
+  lauf.erledigt.push({ aufgabe: aufgabe.id, richtig });
+  const ergebnis = { fertig: lauf.erledigt.length >= auftrag.aufgaben.length, nummer: lauf.erledigt.length, gesamt: auftrag.aufgaben.length,
+    richtig: lauf.erledigt.filter((e) => e.richtig).length, bonus: 0, zurueck: lauf.zurueck ?? null };
+  if (ergebnis.fertig) {
+    ergebnis.bonus = SONDERAUFTRAG_BONUS;
+    stand.muenzen += SONDERAUFTRAG_BONUS;
+    (stand.sonderauftraege ??= []).push({ id: auftrag.id, t: jetzt, lernziel: auftrag.lernziel, niveau: auftrag.niveau, richtig: ergebnis.richtig, gesamt: ergebnis.gesamt, bonus: SONDERAUFTRAG_BONUS });
+    stand.sonderauftrag = null;
   }
   return ergebnis;
 }
@@ -656,7 +710,7 @@ export const arbeitsniveau = (stand, kapitelId, zielniveau) => {
 // 'runter' gibt es nur zu einer Krone, die zur Wahl steht: nie von Silber auf Bronze, außer das Ziel ist F.
 export function niveauVorschlag(stand, kapitelId, niveau, zielniveau = STANDARD_ZIELNIVEAU) {
   const seit = stand.niveauMarke[kapitelId] ?? 0;
-  const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && !v.seitenblick && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
+  const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && !v.seitenblick && !v.sonderauftrag && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
   const stufe = NIVEAUS.indexOf(niveau);
   if (stufe < 3 && eigene.length >= 5 && eigene.slice(-5).filter(zaehlt).length >= 4) return 'hoch';
   if (stufe > NIVEAUS.indexOf(wahlNiveaus(zielniveau)[0]) && eigene.length >= 3 && eigene.slice(-3).every((v) => !v.richtig)) return 'runter';
@@ -941,6 +995,7 @@ export function einstellungen(klassendatei, code, pool) {
     einstiegPflicht: new Set(k.einstiegPflicht ?? []),
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,
+    sonderauftrag: gueltigerAuftrag(k.sonderauftraege?.[code]), // ADR 0021
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst
     gesperrteMeilensteine: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([meilenstein]) => meilenstein)),
     codeBekannt: k.codes ? k.codes.includes(code) : true,

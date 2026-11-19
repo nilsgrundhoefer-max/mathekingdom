@@ -335,3 +335,15 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .bautauf { display: flex; flex-wrap: wrap; gap: 4px 32px; margin-top: 6px; }
 #mathekingdom-lehrer .bautauf h3 { margin-top: 6px; }
 #mathekingdom-lehrer .bautauf .liste { margin: 0; }
+/* Sonderauftrag (ADR 0021) */
+#mathekingdom-lehrer details.sonderauftrag summary { cursor: pointer; color: var(--nacht); font-weight: 600; padding: 6px 0; }
+#mathekingdom-lehrer .sonderauftrag .reihe { margin-top: 6px; }
+#mathekingdom-lehrer .sonderauftrag select { max-width: 100%; min-height: 36px; }
+#mathekingdom-lehrer .sonderauftrag label select { margin-left: 4px; }
+#mathekingdom-lehrer .sonderauftrag input { flex: 1 1 160px; min-height: 40px; }
+#mathekingdom-lehrer .sonderauftrag .schlicht.aktiv { outline: 2px solid var(--nacht); }
+#mathekingdom-lehrer .sa-aufgaben { margin: 8px 0; padding-left: 22px; }
+#mathekingdom-lehrer .sa-aufgaben li { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 3px 0; }
+#mathekingdom-lehrer .sa-aufgaben li::marker { font-weight: 600; }
+#mathekingdom-lehrer .sa-stand p { margin: 4px 0; }
+#mathekingdom-lehrer .warnhinweis { color: #8a5a00; }

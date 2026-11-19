@@ -6,6 +6,17 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.17 vom 19.11.2026
+
+### Schüler
+
+- Deine Lehrkraft kann dir einen Sonderauftrag schicken: einen Brief des Königs mit drei bis fünf Aufgaben. Er kommt nie mitten in einer Aufgabe, und du kannst ihn sofort öffnen oder später. Wenn du alle Aufgaben bearbeitet hast, bekommst du 100 Münzen dazu, egal wie viele richtig sind. Danach geht es dort weiter, wo du warst.
+
+### Lehrkraft
+
+- Sonderauftrag (ADR 0021): Im Bereich Jetzt im Schülerprofil schickst du einem Schüler drei bis fünf Aufgaben zu einem Lernziel. Vorgeschlagen werden seine schwächsten Lernziele und ihre Voraussetzungen. Das Niveau stellst du frei ein (vorbelegt eine Stufe unter dem Zielniveau), einzelne Aufgaben kannst du tauschen, und ein kurzer Satz kann dabei sein. Du siehst, ob der Auftrag geöffnet ist, wie weit der Schüler ist und welche typischen Fehler er gemacht hat, und bekommst einen Impuls, wenn er erledigt ist. Ein offener Auftrag lässt sich zurückziehen.
+- Die Aufgaben zählen wie sonst für das Lernziel und das Wegstück, aber nicht für die Selbsteinschätzung und die Grundlagen-Schleife. Im Versuchsverlauf stehen sie als „Sonderauftrag“.
+
 ## 0.16 vom 19.11.2026
 
 ### Schüler
