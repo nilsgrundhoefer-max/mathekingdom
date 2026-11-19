@@ -425,22 +425,5 @@ body { margin: 0; background: #efe6d2; }
   #mathekingdom .brief.einflug { animation: mk-brief .7s cubic-bezier(.2, .9, .3, 1.15); }
   @keyframes mk-brief { from { opacity: 0; transform: translateY(-140%) rotate(-6deg); } 60% { opacity: 1; } to { transform: none; } }
 }
-/* Ehrentafel und Hoftitel (ADR 0023) */
-#mathekingdom .ehrentafel h2 { margin: 0 0 4px; }
-#mathekingdom .ehrenliste { list-style: none; padding: 0; margin: 8px 0; }
-#mathekingdom .ehrenliste li { display: grid; grid-template-columns: 34px minmax(7em, auto) 28px 1fr auto; gap: 8px; align-items: center; padding: 4px 6px; border-radius: 6px; }
-#mathekingdom .ehrenliste li.eigen { background: #f3e7c9; font-weight: 600; }
-#mathekingdom .ehrenliste li.frei { color: #8a7f6d; }
-#mathekingdom .ehrenliste li.frei .klein { grid-column: 3 / -1; }
-#mathekingdom .ehre-werte { display: inline-flex; gap: 2px 8px; flex-wrap: wrap; justify-content: flex-end; }
-#mathekingdom .ehre-werte .je { display: inline-flex; align-items: center; gap: 2px; }
+/* Hoftitel in der Kopfzeile (ADR 0023) */
 #mathekingdom .hoftitel-kopf { display: inline-flex; align-items: center; gap: 3px; margin-left: 8px; font-weight: 600; color: #7a5a12; }
-#mathekingdom .hofsymbol-neben { display: inline-flex; vertical-align: middle; margin-left: 4px; }
-#mathekingdom .hoftitel-neu { display: flex; gap: 14px; align-items: flex-start; border: 2px solid #dcb24a; background: #fff8e6; }
-#mathekingdom .hoftitel-neu h2 { margin: 0 0 4px; }
-#mathekingdom .titelform { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin: 6px 0; }
-#mathekingdom .titelform button[aria-pressed="true"] { background: #f3e7c9; font-weight: 600; }
-@media (max-width: 560px) {
-  #mathekingdom .ehrenliste li { grid-template-columns: 30px 1fr 24px; }
-  #mathekingdom .ehrenliste li .beiname, #mathekingdom .ehrenliste li .ehre-werte { grid-column: 2 / -1; justify-content: flex-start; }
-}

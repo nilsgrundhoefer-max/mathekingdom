@@ -6,6 +6,16 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.20 vom 19.11.2026
+
+### Schüler
+
+- Die Ehrentafel im Schlossgarten ist wieder weg. Wenn du zu den fünf Besten der Klasse gehörst, siehst du deinen Hoftitel (Klassenkönig, Herzog, Graf, Ritter, Knappe) nur noch oben in deiner Kopfzeile. Die anderen sehen ihn nicht, auch nicht in den Bestenlisten.
+
+### Lehrkraft
+
+- Hoftitel (ADR 0023, geändert): keine Ehrentafel, keine Meldung, keine weibliche Form und kein Ausblenden mehr. Im Lernstand heißt die Karte jetzt „Hoftitel“, in der Verwaltung der Schalter „Hoftitel zeigen“. Die Wertung bleibt gleich.
+
 ## 0.19 vom 19.11.2026
 
 ### Schüler

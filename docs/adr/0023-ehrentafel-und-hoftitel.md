@@ -16,3 +16,7 @@ Nils möchte die Spitze der Klasse würdigen. Am 19.11.2026 (Version 0.18) hat e
 - Der Speicherstand bekommt die gewählte Titelform, das Ausblenden von der Ehrentafel und den zuletzt gemeldeten Titel (für die einmalige Meldung).
 - Die Klassendatei bekommt den Schalter für die Ehrentafel (standardmäßig an).
 - Neue Zeichnungen: Königskrone (größer, mit Hermelin, ohne Kronenfarbe), Zepter, Schwert, Helm, Wimpel.
+
+## Geändert am 19.11.2026 (Version 0.20)
+
+Nach dem ersten Ausprobieren hat Nils drei Dinge zurückgenommen: Die **Ehrentafel** im Schlossgarten entfällt, der **Hoftitel** erscheint nur noch in der eigenen Kopfzeile (nicht mehr in den Bestenlisten), und es gibt nur die **männliche Form** (keine Wahl König oder Königin). Damit entfallen auch die Meldung bei einem neuen Titel und das Ausblenden. Weil kein Schüler mehr den Titel eines anderen sieht, ist die Ausnahme von „Mathematik ohne Vergleich“ (ADR 0014, 0018) deutlich kleiner: Verglichen wird nur noch im Hintergrund, sichtbar ist allein der eigene Titel. Wertung, Schwelle, Gleichstand, Schuljahr und Lehrer-Übersicht bleiben wie oben. Der Schalter in der Klassendatei heißt weiter `ehrentafel`, damit bestehende Klassendateien gelten.

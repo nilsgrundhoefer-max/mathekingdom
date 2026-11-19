@@ -63,12 +63,10 @@ const HOFSYMBOL = {
     s('path', { d: 'M5.6 2.6 H16.8 L12.4 5.4 L16.8 8.2 H5.6 Z', fill: '#2f6f73', stroke: TINTE, 'stroke-width': 0.9, 'stroke-linejoin': 'round' }),
     s('circle', { cx: 5, cy: 1.6, r: 1, fill: '#e0b53c', stroke: TINTE, 'stroke-width': 0.6 })],
 };
-// Leer: dieselbe Form in Grau, für „Noch frei“.
-export function hoftitelBild(id, groesse = 22, { titel = null, leer = false } = {}) {
+export function hoftitelBild(id, groesse = 22, { titel = null } = {}) {
   const zeichner = HOFSYMBOL[id];
   if (!zeichner) return null;
-  return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, class: `hofsymbol hofsymbol-${id}${leer ? ' leer' : ''}`, ...(titel ? { role: 'img', 'aria-label': titel } : { 'aria-hidden': 'true' }) },
-    leer ? s('g', { opacity: 0.35, style: 'filter:grayscale(1)' }, zeichner()) : zeichner());
+  return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, class: `hofsymbol hofsymbol-${id}`, ...(titel ? { role: 'img', 'aria-label': titel } : { 'aria-hidden': 'true' }) }, zeichner());
 }
 
 export function muenze(groesse = 18) {
