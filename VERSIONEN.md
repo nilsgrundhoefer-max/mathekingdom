@@ -6,6 +6,18 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.29 vom 19.11.2026
+
+### Schüler
+
+- Keine Änderung im Spiel.
+
+### Lehrkraft
+
+- Behoben: Das Lehrer-Dashboard brach nach der Ordnerwahl mit „Aborted due to security policy“ ab. Beim Öffnen einer Klasse legte es noch eine alte Kopie `_mathekingdom/schueler-dashboard.js` in den Klassenordner, und die Schulrichtlinie verbietet dort Skriptdateien. Diese Kopie braucht seit 0.21 niemand mehr; das Dashboard legt sie im Schulbetrieb nicht mehr an.
+- Schlägt eine Kopie für Tage ohne Internet fehl, steht das nur im Betriebsprotokoll. Das Öffnen geht trotzdem weiter.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.28 vom 19.11.2026
 
 ### Schüler

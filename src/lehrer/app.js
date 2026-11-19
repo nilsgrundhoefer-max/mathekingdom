@@ -181,9 +181,12 @@ async function oeffneKlasse(klasse, ablage) {
   e.toreEinzeln ??= {};
   Object.assign(z, { melden: null, meldungGesendet: null, overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null, zweitesGemeldet: false });
   Object.assign(z, { klasse, ordner: ablage, pool, index: L.indexiere(pool), ansicht: 'klasse', fehler: null, warnungen: [], klassendateiText: null, schueler: null, ls: { art: 'klasse' } });
-  // Kopien für den Unterricht ohne Internet.
-  await ablage.schreibe(`${S.SYSTEMORDNER}/klasse-${stufe}.json`, JSON.stringify(pool));
-  if (window.MK_SCHUELER_JS) await ablage.schreibe(`${S.SYSTEMORDNER}/schueler-dashboard.js`, window.MK_SCHUELER_JS);
+  // Kopien für den Unterricht ohne Internet. Ein Fehlschlag kommt nur ins Betriebsprotokoll und hält das Öffnen nicht auf.
+  await ablage.schreibe(`${S.SYSTEMORDNER}/klasse-${stufe}.json`, JSON.stringify(pool))
+    .catch((e) => notiere('problem', `Kopie der Aufgaben in den Klassenordner fehlgeschlagen: ${e.message}`, klasse));
+  // Nur die alte Startdatei (bis 0.20) liest die Kopie im Klassenordner; im Schulbetrieb liegt sie im Mathekingdom-Ordner.
+  if (window.MK_SCHUELER_JS && !z.schule) await ablage.schreibe(`${S.SYSTEMORDNER}/schueler-dashboard.js`, window.MK_SCHUELER_JS)
+    .catch((e) => notiere('problem', `Kopie des Schüler-Dashboards in den Klassenordner fehlgeschlagen: ${e.message}`, klasse));
   clearInterval(takt);
   await speichereDaten();
   await inSchlange(schreibeKlassendatei);
