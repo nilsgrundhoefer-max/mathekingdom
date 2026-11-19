@@ -1121,14 +1121,35 @@ function bestenlisteKarte(sp) {
     b.ausgeblendet && b.eigenerPlatz && h('p', { class: 'klein' }, `Du bist ausgeblendet. Dein Platz wäre ${b.eigenerPlatz} mit ${b.eigenerWert}.`));
 }
 function beinameKarte() {
+  // Beide Bausteine werden erst eingestellt und dann mit einem Knopf gemeinsam gespeichert (ADR 0020).
   const [vorne, hinten] = L.beiname(z.stand).split(' ');
-  const wahl = (liste, aktuell, id, setze) => h('select', { id, onchange: (e) => { setze(e.target.value); geaendert(); male(); } }, liste.map((x) => h('option', { value: x, selected: x === aktuell }, x)));
+  const e = (z.ansicht.beiname ??= { vorne, hinten, frage: false });
+  const preis = L.preisBeiname(z.stand);
+  const neu = `${e.vorne} ${e.hinten}`, anders = neu !== `${vorne} ${hinten}`;
+  const wahl = (liste, aktuell, id, feld) => h('select', { id, onchange: (ev) => { e[feld] = ev.target.value; e.frage = false; male(); } }, liste.map((x) => h('option', { value: x, selected: x === aktuell }, x)));
+  const aendern = () => { if (L.aendereBeiname(z.stand, e.vorne, e.hinten) === 'ok') { geaendert(); z.dienst.sofort(); z.ansicht.beiname = null; z.meldungBeiname = `Du heißt jetzt „${neu}“.`; } male(); };
+  const meldung = z.meldungBeiname; z.meldungBeiname = null;
   return h('div', { class: 'karte beiname-karte', id: 'beiname' },
     h('h2', {}, 'Dein Beiname'),
     h('p', { class: 'klein' }, 'Auf der Bestenliste stehst du mit deinem Wappen und diesem Beinamen, nie mit deinem Namen.'),
+    h('p', { class: 'klein', id: 'beiname-preis' }, preis === 0
+      ? 'Die erste Änderung ist kostenlos. Danach kostet jede Änderung 50 Münzen.'
+      : `Jede Änderung kostet ${preis} Münzen.`),
     h('div', { class: 'beiname-wahl' }, wappenBild(z.stand.wappen, 36),
-      wahl(L.BEINAME_VORNE, vorne, 'beiname-vorne', (v) => L.setzeBeiname(z.stand, v, hinten)),
-      wahl(L.BEINAME_HINTEN, hinten, 'beiname-hinten', (v) => L.setzeBeiname(z.stand, vorne, v))),
+      wahl(L.BEINAME_VORNE, e.vorne, 'beiname-vorne', 'vorne'),
+      wahl(L.BEINAME_HINTEN, e.hinten, 'beiname-hinten', 'hinten')),
+    meldung && h('p', { class: 'klein', role: 'status', id: 'beiname-meldung' }, meldung),
+    anders && !e.frage && h('div', { class: 'beiname-aendern' },
+      h('p', {}, 'Neu: ', h('b', {}, neu)),
+      h('button', { class: 'haupt', id: 'beiname-aendern', disabled: z.stand.muenzen < preis, onclick: () => { e.frage = true; male(); } },
+        preis === 0 ? 'Beiname ändern: kostenlos' : [muenze(16), ` ${preis} Münzen: Beiname ändern`]),
+      z.stand.muenzen < preis && h('p', { class: 'klein gesperrt' }, `Dafür brauchst du ${preis} Münzen.`)),
+    anders && e.frage && h('div', { class: 'beiname-aendern', role: 'alertdialog', id: 'beiname-frage' },
+      h('p', {}, preis === 0
+        ? `Willst du wirklich „${neu}“ heißen? Danach kostet jede Änderung ${L.BEINAME_PREIS} Münzen.`
+        : `Willst du wirklich „${neu}“ heißen? Das kostet ${preis} Münzen.`),
+      h('button', { class: 'haupt', id: 'beiname-ja', onclick: aendern }, 'Ja, ändern'), ' ',
+      h('button', { class: 'schlicht', id: 'beiname-nein', onclick: () => { z.ansicht.beiname = null; male(); } }, 'Abbrechen')),
     h('label', { class: 'schalter' }, h('input', { type: 'checkbox', id: 'ausblenden', checked: Boolean(z.stand.bestenlisteAus), onchange: (e) => { z.stand.bestenlisteAus = e.target.checked; geaendert(); male(); } }), ' Mich in der Bestenliste ausblenden'));
 }
 

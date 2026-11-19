@@ -182,6 +182,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .bestenliste ol { list-style: none; padding: 0; margin: 6px 0 0; }
 #mathekingdom .bestenliste li { display: grid; grid-template-columns: 2.2em auto 1fr auto; gap: 8px; align-items: center; padding: 2px 6px; border-radius: 6px; }
 #mathekingdom .bestenliste li.eigen { background: #f3e7c9; font-weight: 600; }
+#mathekingdom .beiname-aendern { margin: 8px 0; }
 #mathekingdom .beiname-wahl { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 8px 0; }
 #mathekingdom .spiel.belohnungsspiel { max-width: 540px; }
 #mathekingdom .spielfeld { display: block; margin: 8px auto; max-width: 100%; border: 2px solid var(--nacht); border-radius: 8px; }

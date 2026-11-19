@@ -121,10 +121,33 @@ test('Beiname: fest aus dem Code, frei wählbar nur aus den Bausteinen', () => {
   const st = neu();
   const vorher = L.beiname(st);
   assert.equal(L.beiname(neu()), vorher, 'derselbe Code, derselbe Beiname');
-  L.setzeBeiname(st, 'Kluger', 'Otter');
+  assert.equal(L.aendereBeiname(st, 'Kluger', 'Otter'), 'ok');
   assert.equal(L.beiname(st), 'Kluger Otter');
-  L.setzeBeiname(st, 'Doofer', 'Otter');
+  assert.equal(L.aendereBeiname(st, 'Doofer', 'Otter'), 'ungueltig');
   assert.equal(L.beiname(st), 'Kluger Otter', 'freie Wörter gehen nicht');
+});
+
+test('Beiname: erste Änderung kostenlos, danach 50 Münzen (ADR 0020)', () => {
+  const st = neu();
+  st.muenzen = 70;
+  assert.equal(L.preisBeiname(st), 0);
+  assert.equal(L.aendereBeiname(st, 'Kluger', 'Otter'), 'ok');
+  assert.equal(st.muenzen, 70, 'die erste Änderung kostet nichts');
+  assert.equal(L.preisBeiname(st), 50);
+  assert.equal(L.aendereBeiname(st, 'Kluger', 'Otter'), 'gleich', 'derselbe Name kostet nichts');
+  assert.equal(st.muenzen, 70);
+  assert.equal(L.aendereBeiname(st, 'Flinker', 'Fuchs'), 'ok');
+  assert.equal(st.muenzen, 20);
+  assert.equal(L.aendereBeiname(st, 'Stiller', 'Biber'), 'zu-wenig');
+  assert.equal(L.beiname(st), 'Flinker Fuchs');
+  assert.equal(st.muenzen, 20);
+  // Ein alter Stand mit gewähltem Beinamen, aber ohne Merker, hat die kostenlose Änderung noch.
+  const alt = neu();
+  alt.beiname = { vorne: 'Roter', hinten: 'Igel' };
+  alt.muenzen = 0;
+  assert.equal(L.preisBeiname(alt), 0);
+  assert.equal(L.aendereBeiname(alt, 'Weiser', 'Igel'), 'ok');
+  assert.equal(L.preisBeiname(alt), 50);
 });
 
 test('Wochenbeginn ist der Montag', () => {
