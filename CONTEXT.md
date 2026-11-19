@@ -59,7 +59,7 @@ Ein Aufgabenformat für das Multiplizieren durch Zerlegen: Die Faktoren stehen z
 _Avoid_: Malkreuz-Bild, Multiplikationstabelle
 
 **Rechenraster**:
-Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft.
+Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft. Beim Multiplizieren steht über dem Ergebnis eine Zeile kleiner Übertragsfelder; sie sind Notizhilfe und werden nicht bewertet.
 _Avoid_: Kästchenraster
 
 **Versuch**:

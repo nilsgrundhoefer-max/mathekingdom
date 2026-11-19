@@ -855,9 +855,20 @@ function eingabefelder(auf, a, gesperrt) {
         h('tbody', {}, t.zeilen.map((zeile) => h('tr', {}, zeile.map((c, i) => (i === 0 ? h('th', { scope: 'row' }, c) : h('td', {}, typeof c === 'object' ? feld(c) : c))))))),
         h('p', { class: 'malkreuzsumme' }, `${t.rechnung.faktoren[0]} · ${t.rechnung.faktoren[1]} = `, feld({ luecke: t.rechnung.summe })));
       // Rechenraster beim Multiplizieren: wie im Heft, ohne Kopfzeile; Striche unter der Aufgabe und über dem Ergebnis.
-      if (t.art === 'raster' && t.rechnung?.zeichen === '·') return h('div', { class: 'bildrahmen' }, h('table', { class: 'aufgabentabelle raster malraster' },
-        h('tbody', {}, t.zeilen.map((zeile, r) => h('tr', { class: r === 0 ? 'aufgabe' : r === t.zeilen.length - 1 ? 'ergebnis' : 'teil' }, zeile.map((c) => h('td', {},
-          typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c)))))));
+      // Über dem Ergebnis steht eine Zeile kleiner Übertragsfelder, je eine über jeder Ergebnisziffer außer den Einern.
+      // Sie sind nur Notizhilfe: Sie gehören nicht zu den Lücken und werden nicht bewertet.
+      // Die Zeilenklassen beginnen mit `rz-`, damit sie nicht mit Seitenbausteinen wie .aufgabe oder .ergebnis zusammenstoßen.
+      if (t.art === 'raster' && t.rechnung?.zeichen === '·') {
+        const ergebnis = t.zeilen.at(-1), anfang = ergebnis.findIndex((c) => typeof c === 'object');
+        const uebertrag = h('tr', { class: 'rz-uebertrag' }, ergebnis.map((c, i) => h('td', {}, i >= anfang && i < ergebnis.length - 1
+          ? h('input', { class: 'uebertrag', name: `uebertrag-${i}`, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 1, maxLength: 1, disabled: gesperrt, 'aria-label': 'Übertrag, wird nicht bewertet' })
+          : null)));
+        const zeilen = t.zeilen.map((zeile, r) => h('tr', { class: r === 0 ? 'rz-aufgabe' : r === t.zeilen.length - 1 ? 'rz-ergebnis' : 'rz-teil' }, zeile.map((c) => h('td', {},
+          typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c))));
+        zeilen.splice(zeilen.length - 1, 0, uebertrag);
+        return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle raster malraster${t.zeilen.length === 2 ? ' ohne-teile' : ''}` }, h('tbody', {}, zeilen)),
+          !gesperrt && h('p', { class: 'klein rasterhinweis' }, 'In die kleinen Felder kannst du Überträge schreiben. Sie werden nicht bewertet.'));
+      }
       return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
       h('thead', {}, h('tr', {}, auf.tabelle.kopf.map((k) => h('th', { scope: 'col' }, k)))),
       h('tbody', {}, auf.tabelle.zeilen.map((zeile) => h('tr', {}, zeile.map((zelle, i) => (typeof zelle === 'object'

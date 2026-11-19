@@ -255,12 +255,19 @@ body { margin: 0; background: #efe6d2; }
 /* Rechenraster und Ziffernrätsel: ein Kästchen je Ziffer */
 #mathekingdom input.ziffer { width: 1.9ch; padding: 4px 2px; margin: 0 2px; text-align: center; font: inherit; font-weight: 700; border: 2px solid var(--nacht); border-radius: 6px; background: #fffdf6; box-sizing: content-box; }
 #mathekingdom input.ziffer[size="2"] { width: 2.9ch; }
-#mathekingdom .aufgabentabelle.raster { font-size: 1.5rem; background-image: linear-gradient(#d9e2f0 1px, transparent 1px), linear-gradient(90deg, #d9e2f0 1px, transparent 1px); background-size: 12px 12px; background-color: #fff; }
-#mathekingdom .aufgabentabelle.raster th, #mathekingdom .aufgabentabelle.raster td { border: none; text-align: center; padding: 6px 12px; min-width: 2.2ch; }
+/* Ohne Karohintergrund: weiße Fläche, jede Ziffernspalte gleich breit, damit Ziffern, Felder und Überträge genau untereinander stehen. */
+#mathekingdom .aufgabentabelle.raster { font-size: 1.5rem; font-weight: 600; background: #fff; border-radius: 8px; }
+#mathekingdom .aufgabentabelle.raster th, #mathekingdom .aufgabentabelle.raster td { border: none; text-align: center; vertical-align: middle; padding: 3px 0; width: 2.6rem; min-width: 2.6rem; height: 2.6rem; }
+#mathekingdom .aufgabentabelle.raster input.ziffer { width: 1.6rem; height: 1.9rem; margin: 0; padding: 0; }
+#mathekingdom .aufgabentabelle.raster input.ziffer[size="2"] { width: 2.3rem; }
+#mathekingdom .malraster tr.rz-uebertrag td { height: 1.8rem; padding: 2px 0 0; vertical-align: bottom; }
+#mathekingdom .malraster input.uebertrag { width: 1.2rem; height: 1.3rem; padding: 0; margin: 0; text-align: center; font: inherit; font-size: .85rem; font-weight: 600; color: var(--grau); border: 1.5px solid #9aa3b5; border-radius: 4px; background: #fffdf6; box-sizing: content-box; }
+#mathekingdom table.malraster.ohne-teile tbody tr.rz-ergebnis td { border-top: none; }
+#mathekingdom .aufgabentabelle.raster thead th:first-child, #mathekingdom .aufgabentabelle.raster tbody th { width: auto; padding: 3px 10px 3px 4px; }
+#mathekingdom .rasterhinweis { margin: 6px 0 0; }
 #mathekingdom .aufgabentabelle.raster thead th { background: #f1e7cf; border-bottom: 1.5px solid #9aa3b5; }
-#mathekingdom .malraster tr.aufgabe td { border-bottom: 2px solid var(--nacht); }
-#mathekingdom .malraster tr.ergebnis td { border-top: 2px solid var(--nacht); }
-#mathekingdom .malraster tr.aufgabe + tr.ergebnis td { border-top: none; }
+#mathekingdom .malraster tr.rz-aufgabe td { border-bottom: 2px solid var(--nacht); }
+#mathekingdom .malraster tr.rz-ergebnis td { border-top: 3px solid var(--nacht); }
 #mathekingdom .mauer { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px; }
 #mathekingdom .mauerreihe { display: flex; gap: 4px; }
 #mathekingdom .stein { display: inline-flex; align-items: center; justify-content: center; width: 5.6rem; height: 2.8rem; border: 2px solid #8a5a3b; border-radius: 4px; background: #f4dcc3; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--nacht); }

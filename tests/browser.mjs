@@ -271,6 +271,18 @@ async function weiter(seite, wahl = '#weiter') {
     assert.equal(await seite.locator('table.aufgabentabelle.malkreuz').count(), 1);
     assert.equal(await seite.locator('.bildrahmen input').count(), Object.keys(a.luecken).length);
   });
+  // Schriftlich multiplizieren: ohne Karo, alle Zeilen als echte Tabellenzeilen, jede Spalte genau untereinander,
+  // über dem Ergebnis kleine Übertragsfelder, die nicht bewertet werden (antworte füllt sie nicht aus und löst trotzdem richtig).
+  await finde('Multiplizieren', 2, 'raster', 'malraster', async (a) => {
+    assert.equal(await seite.locator('table.malraster').count(), 1);
+    assert.equal(await seite.locator('table.malraster').evaluate((t) => getComputedStyle(t).backgroundImage), 'none');
+    assert.deepEqual([...new Set(await seite.locator('table.malraster tr').evaluateAll((z) => z.map((x) => getComputedStyle(x).display)))], ['table-row']);
+    const ergebnis = a.tabelle.zeilen.at(-1), erste = ergebnis.findIndex((c) => typeof c === 'object');
+    assert.equal(await seite.locator('table.malraster input.uebertrag').count(), ergebnis.length - 1 - erste);
+    const mitten = await seite.locator('table.malraster tr').evaluateAll((z) => z.map((x) => [...x.cells].map((c) => Math.round(c.getBoundingClientRect().x + c.getBoundingClientRect().width / 2))));
+    for (const zeile of mitten) assert.deepEqual(zeile, mitten[0]);
+    assert.equal(await seite.locator('.bildrahmen input.ziffer').count(), Object.keys(a.luecken).length);
+  });
   await finde('Zahlenmuster', 0, 'mauer', 'malmauer', async (a) => {
     assert.equal(await seite.locator('.mauer.malmauer[aria-label="Mal-Mauer"]').count(), 1);
     assert.equal(await seite.locator('.mauer .stein.offen input').count(), Object.keys(a.luecken).length);
