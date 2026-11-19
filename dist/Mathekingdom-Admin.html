@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathekingdom Administrator</title>
+</head>
+<body>
+<div id="mathekingdom-lehrer"></div>
+<script>
+(function () {
+  var BASIS = "https://nilsgrundhoefer-max.github.io/mathekingdom/";
+  var ziel = document.getElementById('mathekingdom-lehrer');
+  function gemerkt(db, schluessel) {
+    return new Promise(function (ok) {
+      try {
+        var r = indexedDB.open(db, 1);
+        r.onupgradeneeded = function () { r.result.createObjectStore('ordner'); };
+        r.onerror = function () { ok(null); };
+        r.onsuccess = function () {
+          try { var g = r.result.transaction('ordner').objectStore('ordner').get(schluessel); g.onsuccess = function () { ok(g.result || null); }; g.onerror = function () { ok(null); }; }
+          catch (e) { ok(null); }
+        };
+      } catch (e) { ok(null); }
+    });
+  }
+  function merke(db, schluessel, handle) {
+    try { var r = indexedDB.open(db, 1); r.onupgradeneeded = function () { r.result.createObjectStore('ordner'); };
+      r.onsuccess = function () { try { r.result.transaction('ordner', 'readwrite').objectStore('ordner').put(handle, schluessel); } catch (e) {} }; } catch (e) {}
+  }
+  // Der Mathekingdom-Ordner: er selbst oder ein Unterordner „Mathekingdom“.
+  function schulordner(ordner) {
+    return ordner.getFileHandle('schulverzeichnis.json').then(function () { return ordner; }, function () {
+      return ordner.getDirectoryHandle('Mathekingdom').then(function (u) { return u.getFileHandle('schulverzeichnis.json').then(function () { return u; }); });
+    });
+  }
+  function kopie(ordner, datei) {
+    return ordner.getDirectoryHandle('_mathekingdom').then(function (s) { return s.getFileHandle(datei); })
+      .then(function (d) { return d.getFile(); }).then(function (d) { return d.text(); });
+  }
+  function fuehreAus(code) {
+    ziel.innerHTML = '';
+    var skript = document.createElement('script');
+    skript.textContent = code;
+    document.body.appendChild(skript);
+  }
+  // Ohne Internet: die Kopie aus dem gemerkten oder einmal gewählten Mathekingdom-Ordner.
+  function ohneNetz(titel, db, schluessel, datei, pfad, weiter) {
+    ziel.innerHTML = '<div style="font:16px Segoe UI,system-ui,sans-serif;max-width:480px;margin:12vh auto;padding:0 16px;text-align:center;color:#1f2533"><h1 style="color:#1d2b4f">' + titel + '</h1>'
+      + '<p>Das Internet ist gerade nicht erreichbar. Dann startet die Kopie aus dem Ordner „Mathekingdom“' + (pfad ? ' (' + pfad + ')' : '') + '.</p>'
+      + '<p style="font-size:13px;color:#5b6475" id="mk-grund"></p><p id="mk-weiter"></p>'
+      + '<button id="mk-ordner" style="font:inherit;padding:11px 16px;border-radius:10px;border:0;background:#1d2b4f;color:#fff;cursor:pointer;margin:4px">Ordner „Mathekingdom“ wählen</button>'
+      + '<p id="mk-fehler" style="color:#b3372f;font-weight:600"></p></div>';
+    document.getElementById('mk-grund').textContent = window.MK_GRUND || '';
+    var fehler = function (e) {
+      if (e && e.name === 'AbortError') return;
+      document.getElementById('mk-fehler').textContent = 'In diesem Ordner liegt keine Kopie. Wähle den Ordner „Mathekingdom“' + (pfad ? ' (' + pfad + ')' : '') + '.';
+    };
+    var los = function (ordner) { return kopie(ordner, datei).then(function (code) { weiter(ordner); fuehreAus(code); }); };
+    gemerkt(db, schluessel).then(function (handle) {
+      if (!handle) return;
+      var b = document.createElement('button');
+      b.id = 'mk-weiter-knopf'; b.style.cssText = 'font:inherit;padding:11px 16px;border-radius:10px;border:0;background:#1d2b4f;color:#fff;cursor:pointer;margin:4px'; b.textContent = 'Weiter mit Ordner „' + handle.name + '“';
+      b.onclick = function () { handle.requestPermission({ mode: 'readwrite' }).then(function (r) { if (r === 'granted') return los(handle); }).catch(fehler); };
+      document.getElementById('mk-weiter').appendChild(b);
+    });
+    document.getElementById('mk-ordner').onclick = function () {
+      if (!window.showDirectoryPicker) { document.getElementById('mk-fehler').textContent = 'Öffne diese Datei bitte mit Edge oder Chrome.'; return; }
+      window.showDirectoryPicker({ id: 'mk-' + schluessel, mode: 'readwrite' }).then(schulordner).then(function (o) { merke(db, schluessel, o); return los(o); }).catch(fehler);
+    };
+  }
+  function grund(e) {
+    return e.status === 404 ? 'GitHub antwortet 404: Die Datei fehlt. Ist GitHub Pages für main eingeschaltet?'
+      : e.status ? 'GitHub antwortet mit Fehler ' + e.status
+      : e.name === 'AbortError' ? 'GitHub hat nicht innerhalb von 10 Sekunden geantwortet'
+      : 'GitHub nicht erreichbar (' + e.message + ')';
+  }
+  // Lädt den Code online; danach läuft er in dieser Seite.
+  function online(datei, gelungen, misslungen) {
+    var abbruch = new AbortController();
+    var uhr = setTimeout(function () { abbruch.abort(); }, 10000);
+    fetch(BASIS + 'dist/' + datei, { cache: 'no-cache', signal: abbruch.signal })
+      .then(function (antwort) { if (!antwort.ok) { var f = new Error('Status ' + antwort.status); f.status = antwort.status; throw f; } return antwort.text(); })
+      .then(function (code) { clearTimeout(uhr); gelungen(code); })
+      .catch(function (e) { clearTimeout(uhr); window.MK_GRUND = grund(e); misslungen(); });
+  }
+  window.MK_QUELLE = 'online';
+  ziel.innerHTML = '<p style="font:16px Segoe UI,system-ui,sans-serif;max-width:480px;margin:12vh auto;padding:0 16px;text-align:center;color:#1f2533">Mathekingdom wird geladen …</p>';
+  online('admin.js', fuehreAus, function () {
+    ziel.innerHTML = '<div style="font:16px Segoe UI,system-ui,sans-serif;max-width:480px;margin:12vh auto;padding:0 16px;text-align:center;color:#1f2533"><h1 style="color:#1d2b4f">Mathekingdom Administrator</h1><p>Das Administrator-Dashboard braucht Internet. Versuche es gleich noch einmal.</p><p style="font-size:13px;color:#5b6475" id="mk-grund"></p></div>';
+    document.getElementById('mk-grund').textContent = window.MK_GRUND || '';
+  });
+})();
+</script>
+</body>
+</html>

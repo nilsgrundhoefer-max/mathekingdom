@@ -26,7 +26,7 @@ Ohne Klassendatei sind alle Kapitel offen, das Zielniveau ist M, und jeder Code 
 
 ## Lehrer-Dashboard ausprobieren
 
-`dist/Mathekingdom-Lehrer-ohne-Netz.html` herunterladen und in Edge oder Chrome öffnen. Für den Unterricht gehört stattdessen `dist/Mathekingdom-Lehrer.html` auf den Lehrer-PC: Diese Startdatei lädt bei jedem Öffnen die neueste Version und legt eine Kopie auf das Lehrerlaufwerk.
+`dist/Mathekingdom-Lehrer-ohne-Netz.html` herunterladen und in Edge oder Chrome öffnen (nur zum Ausprobieren und für die Tests). Für den Unterricht bekommt jede Lehrkraft ihre Startdatei aus dem Administrator-Dashboard, siehe „Einrichtung im Schulnetz“.
 
 - **Mit einer Beispielklasse ausprobieren** zeigt alle Ansichten mit 14 erfundenen Schülern. Nichts wird gespeichert.
 - **Ordner auf dem Lehrerlaufwerk wählen** richtet den echten Betrieb ein: Dort entstehen `lehrerdaten.json` (Namenslisten, Notizen, Schlüssel) und der Ordner `backup/`. Danach eine Klasse anlegen, ihren Klassenordner wählen, Namen eintragen, Codes und PINs erzeugen, Code-Kärtchen drucken und die Startdatei für die Schülerlaufwerke herunterladen.
@@ -43,19 +43,24 @@ Berichte: Klassenbericht und einseitiger Diagnosebericht je Schüler über den D
 
 „Wackelig“ heißt: mindestens 4 Aufgaben zum Lernziel und weniger als die Hälfte gelöst, oder zweimal das Lösungsschritt-Kärtchen. Schwellen der Ampel (in `src/lehrer/auswertung.js`): blockiert ab 3 Fehlversuchen in Folge oder 5 Minuten an einer Aufgabe, inaktiv ab 5 Minuten ohne Eingabe, im Flow ab 80 % der letzten fünf Aufgaben, lässt nach, wenn die letzten zwei Wegstücke von heute je mindestens zwei von fünf Aufgaben unter dem Schnitt der Wegstücke davor liegen. Daten, die älter als 90 Minuten sind, zählen nicht zur laufenden Stunde.
 
-Noch nicht gebaut: Schuljahreswechsel, weitere Berichte.
+Noch nicht gebaut: weitere Berichte. Das Lehrer-Dashboard soll nach der Einführung des Administrator-Dashboards entschlackt werden.
+
+## Einrichtung im Schulnetz (seit 0.21, ADR 0024)
+
+Alles beginnt mit dem **Administrator-Dashboard** `dist/Mathekingdom-Admin.html`. Beim ersten Öffnen wählt der Administrator drei Ordner: einen auf seinem persönlichen Lehrerlaufwerk (für den Administrator-Schlüssel) und auf dem Schüler- und dem Lehrertauschlaufwerk jeweils den Ordner `Mathekingdom` (fehlt er, wird er angelegt). Danach: Lehrkräfte mit Kürzel anlegen, Pfade für die Hinweise eintragen (z. B. `S:\Mathekingdom`), Klassen anlegen, Lehrkräfte zuordnen, Namen eintragen, Code-Kärtchen drucken. Die Schüler-Startdatei (eine für die ganze Schule) und die Lehrer-Startdatei je Kürzel erstellt das Administrator-Dashboard. Im August legt der Administrator das neue Schuljahr an, übernimmt die Klassen (5A-K4M2 wird 6A-K4M2) und macht es zum aktuellen.
+
+Schüler und Lehrkräfte wählen nur beim ersten Öffnen den Ordner `Mathekingdom`; danach merkt sich der Browser ihn. Die Klasse eines Schülers ergibt sich aus seinem Code.
 
 ## Dateien im Schulnetz
 
 | Wo | Was |
 |---|---|
-| Lehrer-PC | `Mathekingdom-Lehrer.html` (Startdatei der Lehrkraft, einmal aus `dist/` herunterladen) |
-| Lehrerlaufwerk | `lehrerdaten.json`, `backup/<Klasse>/<Zeitpunkt>/`, `_mathekingdom/lehrer-paket.js` (Kopie des Lehrer-Dashboards für Tage ohne Internet) |
-| Schülerlaufwerk | `Mathekingdom.html` (Startdatei aus dem Lehrer-Dashboard, enthält den öffentlichen Schlüssel der Lehrkraft) |
-| Klassenordner `5a/` | `5A-K4M2.json` (ein Speicherstand pro Schüler), `klassendatei.json` |
-| Klassenordner `5a/_mathekingdom/` | `schueler-dashboard.js`, `klasse-5.json`: Kopien für den Fall, dass das Internet fehlt |
+| Persönliches Lehrerlaufwerk des Administrators | `mathekingdom-admin.json` (privater Schlüssel des Administrators) |
+| Lehrertauschlaufwerk `Mathekingdom/` | `schulverzeichnis.json` (Kopie), `<Kürzel>/lehrer.json` (Schlüssel und Protokoll der Lehrkraft), `<Kürzel>/Mathekingdom-Lehrer.html` (ihre Startdatei), `2026-27/5a/klasse.json` (Namensliste, PINs, Einstellungen, Notizen), `2026-27/5a/backup/<Zeitpunkt>/`, `_mathekingdom/lehrer.js` (Kopie für Tage ohne Internet) |
+| Schülertauschlaufwerk `Mathekingdom/` | `schulverzeichnis.json` (vom Administrator unterschrieben: Schuljahr, Klassen, Lehrkräfte und ihre Schlüssel), `Mathekingdom.html` (zum Kopieren), `_mathekingdom/schueler.js`, `2026-27/5a/5A-K4M2.json` (ein Speicherstand pro Schüler), `2026-27/5a/klassendatei.json`, `2026-27/5a/_mathekingdom/klasse-5.json` |
+| Schülerlaufwerk | `Mathekingdom.html` (Startdatei, enthält den öffentlichen Schlüssel des Administrators) |
 
-Beide Startdateien laden ihr Dashboard von GitHub Pages (ADR 0005 und 0011). Dafür muss das Repository öffentlich und Pages für den Branch `main` eingeschaltet sein; die Adresse steht in `tools/baue.mjs`.
+Die Startdateien laden ihr Dashboard von GitHub Pages (`dist/schueler.js`, `dist/lehrer.js`, `dist/admin.js`). Dafür muss das Repository öffentlich und Pages für den Branch `main` eingeschaltet sein; die Adresse steht in `tools/baue.mjs`. Die Dateien von Version 0.20 (`dist/schueler-dashboard.js`, `dist/lehrer-paket.js` und ihre Startdateien) bleiben eingefroren liegen, damit alte Startdateien bis zum Umzug weiterlaufen.
 
 ## Versionen
 

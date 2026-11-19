@@ -19,8 +19,8 @@ export function erzeugeCode(klasse, vorhandene, zufall = Math.random) {
   for (;;) {
     let ende = '';
     for (let i = 0; i < 4; i++) ende += ZEICHEN[Math.floor(zufall() * ZEICHEN.length)];
-    const code = `${klasse.toUpperCase()}-${ende}`;
-    if (!vorhandene.includes(code)) return code;
+    // Der hintere Teil ist schulweit einmalig (ADR 0024), damit beim Übernehmen niemand zusammenstößt.
+    if (!vorhandene.some((c) => c.split('-')[1] === ende)) return `${klasse.toUpperCase()}-${ende}`;
   }
 }
 

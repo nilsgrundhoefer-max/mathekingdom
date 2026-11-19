@@ -6,6 +6,8 @@ import stil from './stil.css';
 import { h, mische } from './dom.js';
 import * as L from './logik.js';
 import * as S from './speicher.js';
+import * as SCH from '../gemeinsam/schule.js';
+import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { klinge } from './ton.js';
@@ -273,14 +275,39 @@ function anmeldung() {
   const starte = async (demo) => {
     const gelesen = L.leseCode(eingabe.value);
     if (!gelesen) return zeige({ name: 'anmeldung', code: eingabe.value, fehler: 'Diesen Schülercode gibt es nicht. Er sieht so aus: 5A-K4M2.' });
+    const fehler = (text) => zeige({ name: 'anmeldung', code: eingabe.value, fehler: text });
     try {
-      const ablage = demo ? S.demoAblage(gelesen.klasse) : window.MK_ORDNER ? S.ordnerAblage(window.MK_ORDNER) : await S.waehleOrdner();
-      await melde({ ...gelesen, pin: pinFeld.value }, ablage);
+      if (demo) return await melde({ ...gelesen, pin: pinFeld.value }, S.demoAblage(gelesen.klasse));
+      if (window.MK_ORDNER) return await melde({ ...gelesen, pin: pinFeld.value }, S.ordnerAblage(window.MK_ORDNER));
+      // Der Mathekingdom-Ordner (ADR 0024): aus der Startdatei, gemerkt oder einmal gewählt.
+      let schule = window.MK_WURZEL ? S.ordnerAblage(window.MK_WURZEL) : null;
+      if (!schule && z.gemerkt) {
+        if (await erlaube(z.gemerkt)) schule = S.ordnerAblage(z.gemerkt);
+        else { z.gemerkt = null; return fehler(`Ohne deine Erlaubnis kann Mathekingdom nicht speichern. Klicke noch einmal und wähle den Ordner „Mathekingdom“${pfadHinweis()}.`); }
+      }
+      if (!schule) {
+        const gewaehlt = await S.waehleOrdner();
+        const gefunden = await SCH.findeSchule(gewaehlt);
+        if (gefunden.wurzel) {
+          schule = gefunden.wurzel;
+          await gemerkt.merke('schule', schule.handle);
+          z.gemerkt = schule.handle;
+        } else if (window.MK_SCHULE) {
+          return fehler(`Das ist nicht der richtige Ordner. Wähle den Ordner „Mathekingdom“${pfadHinweis()}.`);
+        } else {
+          // Ohne Schulverzeichnis: wie bisher direkt der Klassenordner (alte Startdateien, Ausprobieren).
+          return await melde({ ...gelesen, pin: pinFeld.value }, gewaehlt);
+        }
+      }
+      await meldeInSchule({ ...gelesen, pin: pinFeld.value }, schule, fehler);
     } catch (e) {
       if (e.name === 'AbortError') return;
-      zeige({ name: 'anmeldung', code: eingabe.value, fehler: `Das hat nicht geklappt: ${e.message}` });
+      fehler(`Das hat nicht geklappt: ${e.message}`);
     }
   };
+  const gemerkt = gemerkteOrdner('mathekingdom-schueler');
+  const ohneWahl = Boolean(window.MK_ORDNER || window.MK_WURZEL || z.gemerkt);
+  if (z.gemerkt === undefined) gemerkt.hole('schule').then((handle) => { z.gemerkt = handle; if (handle && z.ansicht?.name === 'anmeldung') { const k = document.getElementById('ordner'); if (k) k.textContent = 'Aufbrechen'; document.getElementById('ordner-hinweis')?.remove(); } });
   return h('section', { class: 'karte anmeldung' },
     h('h1', {}, 'Mathekingdom'),
     h('p', { class: 'unter' }, 'Der König sucht Kundschafter, die sein Reich erkunden.'),
@@ -290,10 +317,29 @@ function anmeldung() {
     pinFeld,
     a.fehler && h('p', { class: 'fehler', role: 'alert' }, a.fehler),
     S.kannOrdner()
-      ? h('button', { class: 'haupt', id: 'ordner', onclick: () => starte(false) }, window.MK_ORDNER ? 'Aufbrechen' : 'Klassenordner wählen und aufbrechen')
+      ? h('button', { class: 'haupt', id: 'ordner', onclick: () => starte(false) }, ohneWahl ? 'Aufbrechen' : window.MK_SCHULE ? 'Ordner wählen und aufbrechen' : 'Klassenordner wählen und aufbrechen')
       : h('p', { class: 'fehler' }, 'Dieser Browser kann nicht im Klassenordner speichern. Öffne die Datei bitte mit Edge oder Chrome.'),
-    !window.MK_ORDNER && h('p', { class: 'klein' }, 'Im nächsten Fenster wählst du den Ordner deiner Klasse aus und erlaubst das Speichern.'),
+    !ohneWahl && h('p', { class: 'klein', id: 'ordner-hinweis' }, window.MK_SCHULE
+      ? `Nur beim ersten Mal: Im nächsten Fenster wählst du den Ordner „Mathekingdom“${pfadHinweis()} und erlaubst das Speichern.`
+      : 'Im nächsten Fenster wählst du den Ordner deiner Klasse aus und erlaubst das Speichern.'),
     h('button', { class: 'schlicht', id: 'demo', onclick: () => starte(true) }, 'Ohne Ordner ausprobieren'));
+}
+const pfadHinweis = () => (window.MK_PFAD ? ` (${window.MK_PFAD})` : '');
+
+// Anmeldung über den Mathekingdom-Ordner: Schulverzeichnis prüfen, Klassenordner aus dem Code finden.
+async function meldeInSchule(gelesen, schule, fehler) {
+  const v = await SCH.ladeVerzeichnis(schule, window.MK_SCHLUESSEL);
+  if (v.status === 'fehlt') {
+    // Ein gemerkter Ordner, der nicht mehr passt, wird vergessen: Beim nächsten Klick wird neu gewählt.
+    z.gemerkt = null; await gemerkteOrdner('mathekingdom-schueler').vergiss('schule');
+    return fehler(`In diesem Ordner fehlt das Schulverzeichnis. Wähle den Ordner „Mathekingdom“${pfadHinweis()}.`);
+  }
+  if (v.status === 'ungueltig') return fehler('Das Schulverzeichnis wurde verändert und ist ungültig. Sag deiner Lehrkraft Bescheid.');
+  const ort = await SCH.findeKlassenordner(schule, v.daten.schuljahr, gelesen.klasse);
+  if (!ort) return fehler(`Für die Klasse ${gelesen.klasse} gibt es noch keinen Ordner. Sag deiner Lehrkraft Bescheid.`);
+  z.schule = schule;
+  z.klassenSchluessel = v.status === 'ok' ? SCH.schluesselDerKlasse(v.daten, ort.schuljahr, gelesen.klasse) : null;
+  await melde(gelesen, ort.ablage);
 }
 
 async function melde({ code, klasse, pin }, ablage) {
@@ -303,7 +349,7 @@ async function melde({ code, klasse, pin }, ablage) {
   const klassenstufe = parseInt(klasse, 10);
   const { pool, quelle: poolQuelle, grund: poolGrund } = await S.ladePool(ablage, klassenstufe);
   if (!pool) return zeige({ name: 'anmeldung', code, fehler: `Für Klasse ${klassenstufe} gibt es noch keine Aufgaben.` });
-  const gelesen = await S.ladeKlassendatei(ablage);
+  const gelesen = await S.ladeKlassendatei(ablage, ...(z.klassenSchluessel !== undefined ? [z.klassenSchluessel] : []));
   if (gelesen.status === 'fehlt' || gelesen.status === 'ungueltig') {
     return zeige({ name: 'anmeldung', code, fehler: gelesen.status === 'fehlt'
       ? 'In diesem Ordner fehlt die Klassendatei. Sag deiner Lehrkraft Bescheid.'
@@ -349,7 +395,7 @@ function maleStatus() {
 // Alle 10 Sekunden: Vorgaben der Lehrkraft neu lesen und die Warteschlange prüfen.
 async function takt() {
   try {
-    const gelesen = await S.ladeKlassendatei(z.ablage);
+    const gelesen = await S.ladeKlassendatei(z.ablage, ...(z.klassenSchluessel !== undefined ? [z.klassenSchluessel] : []));
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }

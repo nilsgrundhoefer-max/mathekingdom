@@ -341,7 +341,7 @@ _Avoid_: Queue
 ## Speichern
 
 **Startdatei**:
-Die unveränderliche HTML-Datei, die das jeweils aktuelle Dashboard lädt: `Mathekingdom.html` auf dem Schülerlaufwerk für das Schüler-Dashboard, `Mathekingdom-Lehrer.html` auf dem Lehrer-PC für das Lehrer-Dashboard. Ohne Internet startet sie die Kopie aus dem Klassenordner bzw. vom Lehrerlaufwerk.
+Die unveränderliche HTML-Datei, die das jeweils aktuelle Dashboard lädt: `Mathekingdom.html` auf dem Schülerlaufwerk für das Schüler-Dashboard, `Mathekingdom-Lehrer.html` für das Lehrer-Dashboard einer Lehrkraft (mit ihrem Kürzel), `Mathekingdom-Admin.html` für das Administrator-Dashboard. Schüler- und Lehrer-Startdateien erstellt der Administrator; sie enthalten seinen öffentlichen Schlüssel und den Pfad des Mathekingdom-Ordners als Hinweis. Ohne Internet startet die Kopie aus dem Mathekingdom-Ordner.
 _Avoid_: Launcher, Verknüpfung
 
 **Version**:
@@ -420,19 +420,23 @@ _Avoid_: Laufwerk, Share
 Die Datei im Klassenordner, die nur die Lehrkraft schreibt und die Schüler lesen: Freigaben, aktuelles Kapitel, Zielniveaus, Antworten auf Hilferufe. Sie enthält keine Namen.
 _Avoid_: Konfiguration, Einstellungen
 
+**Klassendaten**:
+Die Datei einer Klasse auf dem Lehrertauschlaufwerk (`Mathekingdom/2026-27/5a/klasse.json`) mit allem, was nur Lehrkräfte sehen dürfen: Namensliste, PINs, Einstellungen, Sitzplan, Notizen. Alle Lehrkräfte der Klasse teilen sie.
+_Avoid_: Lehrer-Klassendatei, Lehrerdaten (für diese Datei)
+
 **Lehrerdaten**:
-Die Datei auf dem Lehrerlaufwerk mit allem, was nur die Lehrkraft sehen darf: Namensliste, Notizen, Diagnosen.
+Bis Version 0.20 die eine Datei der Lehrkraft mit allen Klassen (`lehrerdaten.json`); seit 0.21 nur noch Schlüssel und Betriebsprotokoll einer Lehrkraft (`Mathekingdom/<Kürzel>/lehrer.json`).
 _Avoid_: Lehrer-Klassendatei
 
 **Namensliste**:
-Die Zuordnung von Schülercodes zu echten Namen, Teil der Lehrerdaten.
+Die Zuordnung von Schülercodes zu echten Namen, Teil der Klassendaten.
 _Avoid_: Klassenliste (für die Datei)
 
 ## Ergänzungen zum Lehrer-Dashboard
 
 - **Live-Status**: Einschätzung, wie es einem Schüler in der laufenden Stunde geht: Hilferuf, blockiert, lässt nach, beobachten, im Flow, arbeitet, inaktiv, nicht da. Blockiert ist ein Schüler nach mehreren Fehlversuchen in Folge oder wenn er lange an einer Aufgabe sitzt, auch ohne Hilferuf. „Lässt nach“ heißt: Die Quote richtiger Aufgaben ist über zwei Wegstücke hinweg deutlich gesunken; der Schüler selbst bekommt dazu keine Meldung.
 - **Akut-Zone**: Die Liste der Schüler, um die sich die Lehrkraft jetzt kümmern sollte: offene Hilferufe zuerst, dann blockierte Schüler. Ersetzt die frühere reine Hilfe-Warteschlange in der Anzeige; die Hilfe-Warteschlange ist ihr erster Teil.
-- **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Lehrerdaten.
+- **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Klassendaten.
 - **Impuls**: Vorschlag des Lehrer-Dashboards an die Lehrkraft, zum Beispiel ein Mini-Workshop, wenn mehrere Schüler denselben typischen Fehler machen, oder ein Hinweis auf einen Schnellläufer.
 - **Lernbegleiter**: Ein Schüler, der ein Lernziel schon erreicht hat und einem blockierten Mitschüler helfen könnte. Nur ein Vorschlag an die Lehrkraft.
 - **Schnellläufer**: Ein Schüler, der in der laufenden Stunde einen Meilenstein gemeistert hat. Die Lehrkraft kann sein Zielniveau anheben.

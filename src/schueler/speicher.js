@@ -39,6 +39,11 @@ export function ordnerAblage(handle) {
       return namen;
     },
     async unterordner(name) { return ordnerAblage(await handle.getDirectoryHandle(name, { create: true })); },
+    // Wie unterordner, legt aber nichts an: null, wenn es ihn nicht gibt.
+    async ordner(name) {
+      try { return ordnerAblage(await handle.getDirectoryHandle(name)); }
+      catch (e) { if (e.name === 'NotFoundError' || e.name === 'TypeMismatchError') return null; throw e; }
+    },
     async entferne(name) { await handle.removeEntry(name, { recursive: true }); },
   };
 }
@@ -61,6 +66,7 @@ export function speicherAblage(name, baum = { dateien: new Map(), ordner: new Ma
     async liste() { return [...baum.dateien.keys()]; },
     async ordnernamen() { return [...baum.ordner.keys()]; },
     async unterordner(n) { if (!baum.ordner.has(n)) baum.ordner.set(n, { dateien: new Map(), ordner: new Map() }); return speicherAblage(n, baum.ordner.get(n)); },
+    async ordner(n) { return baum.ordner.has(n) ? speicherAblage(n, baum.ordner.get(n)) : null; },
     async entferne(n) { baum.ordner.delete(n); baum.dateien.delete(n); },
   };
 }
@@ -98,12 +104,13 @@ export async function ladeStand(ablage, code) {
 
 // Liest die Klassendatei. Ist ein öffentlicher Schlüssel hinterlegt (window.MK_SCHLUESSEL, aus der Startdatei),
 // zählt sie nur mit gültiger Unterschrift. status: ok | ungeprueft | fehlt | ungueltig
-export async function ladeKlassendatei(ablage) {
+// Mit Schulverzeichnis (ADR 0024) kommt eine Liste erlaubter Schlüssel: Lehrkräfte der Klasse und Administrator.
+export async function ladeKlassendatei(ablage, schluesselListe = window.MK_SCHLUESSEL ? [window.MK_SCHLUESSEL] : null) {
   const text = await ablage.lies(KLASSENDATEI);
-  const schluessel = window.MK_SCHLUESSEL;
-  if (!text) return { daten: null, status: schluessel ? 'fehlt' : 'ungeprueft' };
-  if (!schluessel) return { daten: liesUngeprueft(text), status: 'ungeprueft' };
-  const daten = await pruefeUnterschrift(text, schluessel);
+  if (!text) return { daten: null, status: schluesselListe ? 'fehlt' : 'ungeprueft' };
+  if (!schluesselListe) return { daten: liesUngeprueft(text), status: 'ungeprueft' };
+  let daten = null;
+  for (const s of schluesselListe) if ((daten = await pruefeUnterschrift(text, s))) break;
   return { daten, status: daten ? 'ok' : 'ungueltig' };
 }
 
