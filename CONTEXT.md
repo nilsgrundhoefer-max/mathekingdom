@@ -236,6 +236,14 @@ _Avoid_: Freizeit, Pause
 Die Liste der fünf besten Ergebnisse der Klasse in einem Belohnungsspiel, dazu der eigene Platz. Sie beginnt jeden Montag neu, der eigene Bestwert bleibt. Schüler erscheinen mit Wappen und Beinamen, nie mit Namen oder Code; jeder kann sich ausblenden, die Lehrkraft kann sie pro Klasse abschalten.
 _Avoid_: Rangliste (verwechselbar mit Rang), Highscore
 
+**Ehrentafel**:
+Die Tafel im Schlossgarten mit den fünf besten Schülern der Klasse im laufenden Schuljahr, gemessen an Kronen und Siegeln der aktuellen Klassenstufe: je Meilenstein (auch Abstecher) zählt nur die beste Krone (Bronze 1, Silber 2, Gold 4, Purpur 6 Punkte), jedes Siegel 1 Punkt. Die Wertung ist für alle gleich, unabhängig vom Zielniveau, weil sie Spitzenleistung würdigt. Sie ändert sich laufend und beginnt mit dem Schuljahreswechsel neu. Bei Punktgleichheit entscheiden mehr Purpur-, dann Gold-, dann Silberkronen, sonst teilen sich beide den Platz. Auf die Tafel kommt nur, wer mindestens eine Krone auf Silber oder besser hat; sonst bleibt der Platz „Noch frei“. Schüler sehen je Platz Hoftitel, Wappen, Beinamen, Kronen je Farbe und Siegel, nie Punkte, Namen oder Code. Wer nicht auf der Tafel steht, sieht keinen Platz, nur „Jede Krone bringt dich nach vorn“. Jeder kann sich ausblenden, dann rückt der Nächste nach. Die Lehrkraft kann sie pro Klasse abschalten (standardmäßig an). Ausnahme von „Mathematik ohne Vergleich“, weil nur die Spitze gezeigt wird.
+_Avoid_: Rangliste, Bestenliste (die gehört zu den Belohnungsspielen), Top 5
+
+**Hoftitel**:
+Der Titel, den die Schüler der Ehrentafel tragen, mit eigenem Symbol: Klassenkönig (Krone), Herzog (Zepter), Graf (Schwert), Ritter (Helm), Knappe (Wimpel). Er gilt nur, solange der Platz gehalten wird. Wer einen Titel bekommt oder aufsteigt, sieht einmal eine Meldung; wer ihn verliert, keine. Beim ersten Titel wählt der Schüler die Form (König oder Königin usw.), danach jederzeit kostenlos änderbar. Das Symbol steht in der eigenen Kopfzeile, auf der Ehrentafel und neben dem Beinamen in den Bestenlisten. Ein Hoftitel bringt keine Münzen und kein Ehrenzeichen. Die Königskrone ist anders gezeichnet als die Kronen der Meilensteine.
+_Avoid_: Rang (das ist die Stufe nach Siegeln), Auszeichnung, Platzierung
+
 **Beiname**:
 Der Name, unter dem ein Schüler auf der Bestenliste steht, aus festen Bausteinen gewählt (zum Beispiel „Seeblauer Falke“), nie frei getippt. Die erste eigene Wahl ist kostenlos, jede weitere Änderung kostet 50 Münzen; eine Änderung umfasst immer beide Bausteine.
 _Avoid_: Nickname, Spitzname
