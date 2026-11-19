@@ -913,7 +913,27 @@ async function weiter(seite, wahl = '#weiter') {
   await schueler.fill('#pin', pin);
   await schueler.click('#ordner');
   await schueler.waitForSelector('.regionen');
-  assert.equal(await schueler.locator('.region:not(.gesperrt)').count(), 4);
+  // Neue Klasse: nur Tor 1, dazu das Aktuelle Kapitel 5.4 (ADR 0022). Die anderen Tore fehlen ganz.
+  assert.deepEqual(await schueler.locator('.region').evaluateAll((b) => b.map((x) => x.dataset.kapitel)), ['5.1', '5.4']);
+  assert.match(await schueler.innerText('.region[data-kapitel="5.4"] .nummer'), /Tor 4/i);
+  assert.match(await schueler.innerText('#weitere-tore'), /Weitere Tore öffnet deine Lehrkraft/);
+  assert.equal(await schueler.locator('#neues-tor').count(), 0, 'beim ersten Start keine Ankündigung');
+  await foto(schueler, 'schlossgarten-tore');
+  // Die Lehrkraft öffnet Aylin zusätzlich Tor 3: Die Ankündigung kommt beim nächsten Lesen der Klassendatei.
+  const tabVorher = await lehrer.getAttribute('.bereiche button.aktiv', 'data-tab');
+  await lehrer.click('[data-tab="verwaltung"]');
+  await lehrer.waitForSelector('#tore-karte');
+  assert.equal(await lehrer.locator('[data-tor-klasse="5.4"]').isChecked(), true);
+  await lehrer.check(`[data-tor="5.3|${aylin}"]`);
+  await warteAuf((k) => k.toreEinzeln?.[aylin]?.includes('5.3'));
+  assert.match(await lehrer.innerText('#tore-karte'), /1 von 3 offen/);
+  await lehrer.locator('#tore-karte').screenshot(bilder ? { path: `${bilder}/lehrer-tore.png` } : {});
+  await schueler.waitForSelector('#neues-tor', { timeout: 20000 });
+  assert.match(await schueler.innerText('#neues-tor'), /Addieren und Subtrahieren/);
+  assert.equal(await schueler.locator('.region.neu[data-kapitel="5.3"]').count(), 1);
+  await foto(schueler, 'neues-tor');
+  await lehrer.click(`[data-tab="${tabVorher}"]`);
+  await schueler.locator('.schlosskopf').evaluate((x) => x.scrollIntoView());
   await schueler.click('[data-kapitel="5.4"]');
   assert.match(await schueler.innerText('.unter'), /spielst um Gold/);
   await schueler.click('#aufbrechen');

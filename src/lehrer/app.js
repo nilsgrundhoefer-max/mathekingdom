@@ -77,7 +77,7 @@ async function schreibeKlassendatei() {
   const e = kl().einst;
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
-  const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
+  const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, tore: e.tore, toreEinzeln: e.toreEinzeln ?? {}, codes: Object.keys(kl().namen),
     zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
@@ -118,9 +118,13 @@ async function oeffneKlasse(klasse, ablage) {
   const { pool, quelle: poolQuelle, grund: poolGrund } = await ladePool(ablage, stufe);
   if (poolGrund) notiere('problem', `Aufgaben für Klasse ${stufe} ${P.QUELLE_TEXT[poolQuelle] ?? 'nicht gefunden'}, Grund: ${poolGrund}`, klasse);
   if (!pool) { z.fehler = `Für Klasse ${stufe} gibt es noch keinen Aufgabenpool.`; return male(); }
-  z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } };
+  // Eine neue Klasse hat nur Tor 1 offen (ADR 0022).
+  z.daten.klassen[klasse] ??= { namen: {}, notizen: {}, einst: { aktuellesKapitel: null, tore: [pool.kapitel[0].id], toreEinzeln: {}, spielpause: false, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } };
   const e = z.daten.klassen[klasse].einst;
   e.nachrichten ??= {}; e.sperren ??= {}; e.sonderauftraege ??= {};
+  // Bestehende Klassen ohne Torfreigabe behalten genau die Tore, die bisher offen waren.
+  if (!Array.isArray(e.tore)) e.tore = [...L.toreDerKlasse(e, pool)];
+  e.toreEinzeln ??= {};
   Object.assign(z, { overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null, zweitesGemeldet: false });
   Object.assign(z, { klasse, ordner: ablage, pool, index: L.indexiere(pool), ansicht: 'klasse', fehler: null, warnungen: [], klassendateiText: null, schueler: null, ls: { art: 'klasse' } });
   // Kopien für den Unterricht ohne Internet.
@@ -292,7 +296,7 @@ async function starteBeispiel() {
   const lehrer = S.speicherAblage('lehrer'), ordner = S.speicherAblage('5a');
   await oeffneLehrer(lehrer);
   const pool = window.MK_POOLS[5], bsp = beispielklasse(pool, L.indexiere(pool));
-  z.daten.klassen['5a'] = { namen: bsp.namen, notizen: {}, einst: { aktuellesKapitel: '5.4', spielpause: false, zielniveaus: bsp.zielniveaus, hilfe: {}, nachrichten: {}, sperren: {} } };
+  z.daten.klassen['5a'] = { namen: bsp.namen, notizen: {}, einst: { aktuellesKapitel: '5.4', tore: ['5.1', '5.2', '5.3', '5.4'], toreEinzeln: {}, spielpause: false, zielniveaus: bsp.zielniveaus, hilfe: {}, nachrichten: {}, sperren: {} } };
   for (const { code, stand } of bsp.staende) await ordner.schreibe(`${code}.json`, JSON.stringify(stand));
   await oeffneKlasse('5a', ordner);
 }
@@ -330,8 +334,12 @@ function klassenAnsicht() {
   return h('div', {},
     h('div', { class: 'leiste' },
       h('h1', {}, `Klasse ${z.klasse}`),
-      h('label', {}, 'Aktuelles Kapitel ', h('select', { id: 'kapitel', onchange: (ev) => aendere((k) => { k.einst.aktuellesKapitel = ev.target.value || null; }) },
-        h('option', { value: '' }, 'Alle Kapitel offen'),
+      // Ein Aktuelles Kapitel wählen öffnet sein Tor für die Klasse (ADR 0022).
+      h('label', {}, 'Aktuelles Kapitel ', h('select', { id: 'kapitel', onchange: (ev) => aendere((k) => {
+        k.einst.aktuellesKapitel = ev.target.value || null;
+        if (ev.target.value && !k.einst.tore.includes(ev.target.value)) k.einst.tore = ordneTore([...k.einst.tore, ev.target.value]);
+      }) },
+        h('option', { value: '' }, 'keins gewählt'),
         z.pool.kapitel.map((k, i) => h('option', { value: k.id, selected: e.aktuellesKapitel === k.id }, `${i + 1} ${k.titel}`)))),
       // Spielfreigabe (ADR 0018): aus, nur in der Spielpause oder verdient (Belohnungsspiel nach jedem vierten Wegstück).
       h('label', { title: 'Wann Minispiele gehen. Verdient: Rechenpause immer, ein Belohnungsspiel nach jedem vierten Wegstück.' }, 'Spiele ', h('select', { id: 'spielfreigabe', onchange: (ev) => aendere((k) => { k.einst.spielfreigabe = ev.target.value; }) },
@@ -1227,6 +1235,7 @@ function verwaltung() {
           for (const n of liste.value.split('\n').map((x) => x.trim()).filter(Boolean)) k.namen[A.erzeugeCode(z.klasse, Object.keys(k.namen))] = n;
         }) }, 'Codes erzeugen'),
         codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
+    toreKarte(),
     expeditionKarte(),
     einstiegKarte(),
     h('section', { class: 'karte', id: 'sicherheitsangabe-karte' }, h('h2', {}, 'Sicherheitsangabe (Probe)'),
@@ -1254,6 +1263,57 @@ function verwaltung() {
 
 // ---------- Einstiegscheck (ADR 0014) ----------
 // Freiwillig für die Schüler; die Lehrkraft kann ihn je Kapitel zur Pflicht machen.
+// ---------- Torfreigabe (ADR 0022) ----------
+// Liste Schüler × Tore: Die Zeile „ganze Klasse“ hakt alle an, einzeln kann man nur zusätzlich öffnen.
+const ordneTore = (ids) => z.pool.kapitel.map((k) => k.id).filter((id) => ids.includes(id));
+function toreKarte() {
+  const e = kl().einst;
+  const klasse = new Set(e.tore ?? []);
+  const einzeln = (c) => new Set(e.toreEinzeln?.[c] ?? []);
+  const codes = Object.keys(kl().namen).sort((a, b) => name(a).localeCompare(name(b), 'de'));
+  const gearbeitet = (kapId, wer) => wer.filter((c) => z.staende.find((x) => x.code === c)?.stand?.versuche?.some((v) => L.kapitelVon(v.lernziel ?? '') === kapId)).length;
+  const klassenHaken = (kapId, an) => {
+    if (!an) {
+      const betroffen = codes.filter((c) => !einzeln(c).has(kapId));
+      const n = gearbeitet(kapId, betroffen);
+      if (n > 0 && !confirm(`In diesem Kapitel haben schon ${n} Schüler gearbeitet. Tor trotzdem schließen? Siegel, Kronen und Münzen bleiben erhalten, das Tor ist für sie nur nicht mehr sichtbar.`)) return male();
+    }
+    aendere((k) => {
+      const neu = new Set(k.einst.tore ?? []);
+      if (an) neu.add(kapId); else neu.delete(kapId);
+      k.einst.tore = ordneTore([...neu]);
+      if (!an && k.einst.aktuellesKapitel === kapId) k.einst.aktuellesKapitel = null;
+    });
+  };
+  const einzelHaken = (c, kapId, an) => {
+    if (!an && gearbeitet(kapId, [c]) > 0 && !confirm(`${name(c)} hat in diesem Kapitel schon gearbeitet. Tor trotzdem schließen? Der Fortschritt bleibt erhalten.`)) return male();
+    aendere((k) => {
+      const neu = new Set(k.einst.toreEinzeln?.[c] ?? []);
+      if (an) neu.add(kapId); else neu.delete(kapId);
+      k.einst.toreEinzeln ??= {};
+      if (neu.size) k.einst.toreEinzeln[c] = ordneTore([...neu]); else delete k.einst.toreEinzeln[c];
+    });
+  };
+  const alleOeffnen = () => aendere((k) => { k.einst.tore = z.pool.kapitel.map((x) => x.id); });
+  return h('section', { class: 'karte', id: 'tore-karte' }, h('h2', {}, 'Tore'),
+    h('p', { class: 'klein' }, 'Die Schüler sehen im Schlossgarten nur die Tore, die hier angehakt sind; die anderen fehlen ganz. Die Zeile „ganze Klasse“ öffnet ein Tor für alle. Einzelnen Schülern kannst du zusätzlich Tore öffnen (Haken mit Punkt). Ein Tor wieder zu schließen nimmt niemandem Siegel, Kronen oder Münzen. Ein neues Tor wird den Schülern beim nächsten Start einmal angekündigt.'),
+    h('div', { class: 'reihe' }, h('button', { class: 'schlicht', id: 'alle-tore', disabled: klasse.size === z.pool.kapitel.length, onclick: alleOeffnen }, 'Alle Tore öffnen')),
+    h('div', { class: 'rollbar' }, h('table', { class: 'tabelle tore' },
+      h('thead', {}, h('tr', {}, h('th', {}, ''), z.pool.kapitel.map((k, i) => h('th', { title: k.titel }, `Tor ${i + 1}`, h('br'), h('small', {}, k.titel))))),
+      h('tbody', {},
+        h('tr', { class: 'klassenzeile' }, h('th', {}, 'ganze Klasse'), z.pool.kapitel.map((k) => {
+          const offen = codes.filter((c) => klasse.has(k.id) || einzeln(c).has(k.id)).length;
+          return h('td', {}, h('label', { class: 'torhaken' }, h('input', { type: 'checkbox', 'data-tor-klasse': k.id, checked: klasse.has(k.id), onchange: (ev) => klassenHaken(k.id, ev.target.checked) })),
+            codes.length > 0 && h('small', { class: 'zaehler' }, `${offen} von ${codes.length} offen`));
+        })),
+        codes.map((c) => h('tr', {}, h('th', {}, name(c)), z.pool.kapitel.map((k) => {
+          if (klasse.has(k.id)) return h('td', {}, h('input', { type: 'checkbox', checked: true, disabled: true, title: 'für die ganze Klasse offen', 'data-tor': `${k.id}|${c}` }));
+          const an = einzeln(c).has(k.id);
+          return h('td', { class: an ? 'einzeln' : '' }, h('label', { class: 'torhaken', title: an ? 'einzeln geöffnet' : 'einzeln öffnen' },
+            h('input', { type: 'checkbox', checked: an, 'data-tor': `${k.id}|${c}`, onchange: (ev) => einzelHaken(c, k.id, ev.target.checked) }), an && h('span', { class: 'punkt' }, '•')));
+        })))))));
+}
+
 function einstiegKarte() {
   const pflicht = new Set(kl().einst.einstiegPflicht ?? []);
   const mit = z.pool.kapitel.filter((k) => k.unterkapitel.some((u) => u.lernziele.some((l) => z.index.lernzielMitAufgaben.has(l.id))));
