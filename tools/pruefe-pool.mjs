@@ -17,7 +17,8 @@ const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispi
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
 const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm'];
-const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
+const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
+const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm'];
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
@@ -988,6 +989,10 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   if (!NIVEAUS.includes(a.niveau)) { melde(a.id, `unbekannte Niveaustufe ${a.niveau}`); continue; }
   if (!FORMATE.includes(a.format)) { melde(a.id, `unbekanntes Format ${a.format}`); continue; }
   if (![1, 2, 3].includes(a.afb)) melde(a.id, `Anforderungsbereich fehlt oder ist ungültig: ${a.afb}`);
+  // Prozessbezogene Kompetenz (ADR 0017): eine Haupt- und höchstens eine andere Nebenkompetenz.
+  if (!Array.isArray(a.kompetenz) || a.kompetenz.length < 1 || a.kompetenz.length > 2 || a.kompetenz.some((k) => !KOMPETENZEN.includes(k)) || a.kompetenz[0] === a.kompetenz[1]) {
+    melde(a.id, `prozessbezogene Kompetenz fehlt oder ist ungültig: ${JSON.stringify(a.kompetenz)}`);
+  }
   if (!a.id.startsWith(`${a.lernziel}-${a.niveau}-`)) melde(a.id, 'ID passt nicht zu Lernziel und Niveaustufe');
   if (!a.text?.trim()) { melde(a.id, 'Text fehlt'); continue; }
   if (/undefined|NaN|null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
@@ -1034,7 +1039,18 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.so
   }
   for (const text of [...(u.merkzettel?.regeln ?? []), u.merkzettel?.beispiel ?? '']) for (const g of gleichungenIn(text)) if (!stimmt(g)) melde(u.id, `Merkzettel: Gleichung stimmt nicht: ${g.ganz}`);
 }
-for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (!f.beschreibung || !f.hinweis) melde(id, 'Fehlvorstellung ohne Beschreibung oder Hinweis');
+for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (!f.beschreibung || !f.hinweis || !f.kind) melde(id, 'Fehlvorstellung ohne Beschreibung, Hinweis oder Kindersatz');
+// Kindersätze für Aha-Momente (ADR 0017): einfache Sprache, ein Satz, ohne Fachsprache der Lehrkraft.
+for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (f.kind && (!/^Du /.test(f.kind) || /, (der|die|das|den|dem|wenn|weil|dass|ob|obwohl|durch|mit|in|wo)\b|;/.test(f.kind) || f.kind.length > 110)) melde(id, `Kindersatz nicht in einfacher Sprache: ${f.kind}`);
+for (const k of Object.keys(pool.kompetenzen ?? {})) if (!KOMPETENZEN.includes(k)) melde(k, 'unbekannte prozessbezogene Kompetenz im Pool');
+// Voraussetzungen (ADR 0017): jedes Lernziel hat einen Eintrag, nur bekannte Lernziele, keine Kreise.
+const vorVon = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.voraussetzungen]));
+for (const [id, vor] of vorVon) {
+  if (!Array.isArray(vor)) { melde(id, 'Lernziel ohne Voraussetzungen (leere Liste heißt: Grundschulstoff)'); continue; }
+  for (const v of vor) if (!vorVon.has(v)) melde(id, `unbekannte Voraussetzung ${v}`);
+  const besucht = new Set(), offen = [...vor];
+  while (offen.length) { const v = offen.pop(); if (v === id) { melde(id, 'Voraussetzungen im Kreis'); break; } if (besucht.has(v)) continue; besucht.add(v); offen.push(...(vorVon.get(v) ?? [])); }
+}
 
 return { fehler, mitAufgaben, lernziele, hatBild };
 }

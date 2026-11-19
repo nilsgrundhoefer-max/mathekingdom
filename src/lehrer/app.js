@@ -1,6 +1,6 @@
 // Lehrer-Dashboard: Oberfläche. Die Auswertung steht in auswertung.js.
 import stil from './stil.css';
-import { h } from '../schueler/dom.js';
+import { h, s as svg } from '../schueler/dom.js';
 import * as L from '../schueler/logik.js';
 import * as S from '../schueler/speicher.js';
 import * as A from './auswertung.js';
@@ -697,6 +697,8 @@ function lernstandKlasse() {
       h('h2', {}, 'Lernziele im Vergleich'),
       h('p', { class: 'klein' }, 'Wie viele Schüler bei jedem Lernziel wo stehen. Tippe auf eine Zeile für die Einzelheiten.'),
       lernzielBalken(matrix, lernziele)),
+    h('section', { class: 'karte', id: 'kompetenz-klasse' }, h('h2', {}, 'Kompetenzprofil der Klasse'),
+      h('p', { class: 'klein' }, kompetenzErklaerung), kompetenzNetz(A.kompetenzProfil(versuche, z.index), null, 'Kompetenzprofil der Klasse')),
     selbsteinschaetzungKlasse(staende),
     vorwissenKlasse(staende),
     heftUndSicherheitKlasse(staende),
@@ -830,6 +832,34 @@ function fehlerHeatmap(staende, lernziele) {
     m.nieGezeigt > 0 && h('p', { class: 'klein' }, `${m.nieGezeigt} weitere typische Fehler dieser Kapitel kamen in der Klasse noch nicht vor.`));
 }
 
+// Kompetenzprofil als Netzdiagramm (ADR 0017): fünf Achsen von 0 bis 100 %, der Schüler als Fläche,
+// die Klasse als gestrichelte Linie zum Vergleich. Achsen mit weniger als 6 Aufgaben bleiben grau und ohne Punkt.
+function kompetenzNetz(profil, vergleich = null, titel = 'Kompetenzprofil') {
+  const R = 92, M = 150, reihe = A.KOMPETENZ_REIHE;
+  const winkel = (i) => -Math.PI / 2 + (i * 2 * Math.PI) / reihe.length;
+  const punkt = (i, r) => [M + r * Math.cos(winkel(i)), M + r * Math.sin(winkel(i))].map((x) => Math.round(x * 10) / 10);
+  const flaeche = (p) => reihe.map((k, i) => punkt(i, R * (p[k].quote ?? 0)).join(',')).join(' ');
+  const name = (k) => z.pool.kompetenzen?.[k] ?? k;
+  const kurz = { symbolisch: 'Symbolisch', 'probleme-loesen': 'Probleme lösen', modellieren: 'Modellieren', argumentieren: 'Argumentieren', kommunizieren: 'Kommunizieren' };
+  const leer = reihe.every((k) => profil[k].quote == null);
+  const bild = svg('svg', { viewBox: '-60 10 420 280', class: 'netz', role: 'img', 'aria-label': `${titel}: ${reihe.map((k) => `${name(k)} ${profil[k].quote == null ? 'noch zu wenig' : prozent(profil[k].quote)}`).join(', ')}` },
+    [0.25, 0.5, 0.75, 1].map((f) => svg('polygon', { class: 'ring', points: reihe.map((_, i) => punkt(i, R * f).join(',')).join(' ') })),
+    reihe.map((k, i) => svg('line', { class: `achse${profil[k].quote == null ? ' grau' : ''}`, x1: M, y1: M, x2: punkt(i, R)[0], y2: punkt(i, R)[1] })),
+    vergleich && svg('polygon', { class: 'klasse', points: flaeche(vergleich) }),
+    !leer && svg('polygon', { class: 'schueler', points: flaeche(profil) }),
+    reihe.map((k, i) => profil[k].quote != null && svg('circle', { class: 'punkt', cx: punkt(i, R * profil[k].quote)[0], cy: punkt(i, R * profil[k].quote)[1], r: 5 },
+      svg('title', {}, `${name(k)}: ${prozent(profil[k].quote)} (${profil[k].gut} von ${profil[k].bearbeitet} Aufgaben im ersten Versuch ohne Beispiel und Lösungsschritt)`))),
+    reihe.map((k, i) => { const [x, y] = punkt(i, R + 20); return svg('text', { x, y, class: `beschriftung${profil[k].quote == null ? ' grau' : ''}`, 'text-anchor': x < M - 10 ? 'end' : x > M + 10 ? 'start' : 'middle', 'dominant-baseline': y < M - 10 ? 'auto' : y > M + 10 ? 'hanging' : 'middle' }, kurz[k]); }));
+  return h('div', { class: 'kompetenzprofil' }, bild,
+    h('table', { class: 'tabelle kompetenztabelle' },
+      h('thead', {}, h('tr', {}, h('th', {}, 'Kompetenz'), h('th', {}, vergleich ? 'Schüler' : 'Klasse'), vergleich && h('th', {}, 'Klasse'))),
+      h('tbody', {}, reihe.map((k) => h('tr', {}, h('td', {}, name(k)),
+        h('td', { class: 'zahl' }, profil[k].quote == null ? h('span', { class: 'klein' }, `noch zu wenig (${profil[k].bearbeitet})`) : prozent(profil[k].quote)),
+        vergleich && h('td', { class: 'zahl' }, vergleich[k].quote == null ? '–' : prozent(vergleich[k].quote)))))),
+    vergleich && h('p', { class: 'klein netzlegende' }, h('i', { class: 'muster schueler' }), ' Schüler ', h('i', { class: 'muster klasse' }), ' Klasse'));
+}
+const kompetenzErklaerung = `Anteil der Aufgaben je prozessbezogener Kompetenz, die im ersten Versuch ohne Beispiel und Lösungsschritt richtig waren, über das ganze Schuljahr. Unter ${A.KOMPETENZ_AB} Aufgaben bleibt die Achse grau.`;
+
 const TREND_TEXT = { weniger: 'braucht weniger Hilfe', gleich: 'gleich', mehr: 'braucht mehr Hilfe' };
 const hilfeAnteil = (x) => (x == null ? '–' : prozent(x));
 // Hilfebedarf je Lernziel: Anteil mit Beispiel oder Lösungsschritt in der ersten und zweiten Hälfte der Aufgaben.
@@ -876,7 +906,7 @@ function lernstandLernziel(id) {
   const nachNiveau = L.NIVEAUS.map((n) => { const x = v.filter((y) => y.niveau === n); return { n, bearbeitet: x.length, quote: x.length ? x.filter((y) => y.richtig).length / x.length : 0 }; }).filter((x) => x.bearbeitet);
   const audit = A.aufgabenAudit(staende, z.index, 2).filter((a) => a.lernziel === id).slice(0, 5);
   return h('div', {},
-    h('section', { class: 'karte' }, h('p', { class: 'klein' }, `Meilenstein ${l.milestone}`), h('h2', {}, l.text)),
+    h('section', { class: 'karte' }, h('p', { class: 'klein' }, `Meilenstein ${l.milestone}`), h('h2', {}, l.text), bautAufListe(id, staende)),
     h('section', { class: 'kennzahlen' },
       kennzahl(`${st.erreicht} von ${staende.length}`, 'mit Siegel'),
       kennzahl(prozent(st.quote), 'Lösungsquote', `${st.bearbeitet} Aufgaben`),
@@ -1010,6 +1040,9 @@ function einzelInhalt(code, fuerDruck = false) {
             : h('button', { class: `zelle ${s}`, title: titel, 'aria-label': titel, onclick: () => gehe({ art: 'lernziel', id: l.id }) }, ZUSTAND[s][1]);
         })))))),
     meilensteineVon(code, stand),
+    h('section', { class: 'karte', id: 'kompetenz-schueler' }, h('h2', {}, 'Kompetenzprofil'),
+      h('p', { class: 'klein' }, kompetenzErklaerung),
+      kompetenzNetz(A.kompetenzProfil(stand.versuche, z.index), A.kompetenzProfil(z.staende.flatMap((x) => x.stand.versuche), z.index), `Kompetenzprofil von ${name(code)}`)),
     h('div', { class: 'zweispaltig' },
       h('section', { class: 'karte' }, h('h2', {}, 'Lösungsquote nach Anforderungsbereich'),
         balkenListe([{ name: 'AFB I · Reproduzieren', ...quote(afb[1]) }, { name: 'AFB II · Zusammenhänge', ...quote(afb[2]) }, { name: 'AFB III · Verallgemeinern', ...quote(afb[3]) }], { max: 1, format: prozent })),
@@ -1033,6 +1066,17 @@ function einzelInhalt(code, fuerDruck = false) {
         h('tbody', {}, protokoll.map((v) => h('tr', {}, h('td', {}, new Date(v.t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })),
           h('td', {}, aufgabentext(v.aufgabe)), h('td', {}, chip(v.niveau)), h('td', {}, v.richtig ? 'ja' : 'nein'), h('td', { class: 'zahl' }, v.versuche), h('td', { class: 'zahl' }, v.hilfen),
           h('td', { class: 'zahl' }, `${v.dauer} s`), h('td', {}, (v.fehlvorstellungen ?? []).map((f) => z.pool.fehlvorstellungen[f]?.beschreibung ?? f).join(' ')))))))));
+}
+// Liste „baut auf“ (ADR 0017): Voraussetzungen mit Siegeln der Klasse, dazu was darauf aufbaut.
+function bautAufListe(id, staende) {
+  const b = A.bautAuf(z.pool, id);
+  const mitSiegel = (lz) => staende.filter(({ stand }) => stand.lernziele[lz]).length;
+  const eintrag = (x) => h('li', {}, z.index.lernzielMitAufgaben.has(x.id)
+    ? [h('button', { class: 'link', onclick: () => gehe({ art: 'lernziel', id: x.id }) }, `${x.milestone}: ${x.text}`), h('span', { class: 'klein' }, ` · ${mitSiegel(x.id)} von ${staende.length} mit Siegel`)]
+    : [`${x.milestone}: ${x.text}`, h('span', { class: 'klein' }, ' · noch ohne Aufgaben')]);
+  return h('div', { class: 'bautauf', id: 'baut-auf' },
+    h('div', {}, h('h3', {}, 'Baut auf'), b.auf.length ? h('ul', { class: 'liste' }, b.auf.map(eintrag)) : h('p', { class: 'klein' }, 'Nur auf Grundschulstoff.')),
+    b.darauf.length > 0 && h('div', {}, h('h3', {}, 'Darauf baut auf'), h('ul', { class: 'liste' }, b.darauf.map(eintrag))));
 }
 // Versuchsverlauf (ADR 0017): die letzten 20 Aufgaben mit erstem und zweitem Versuch. Nur für die Lehrkraft.
 const KARTEN_KURZ = { tipp: 'Tipp', beispiel: 'Beispiel', loesungsschritt: 'Lösungsschritt' };

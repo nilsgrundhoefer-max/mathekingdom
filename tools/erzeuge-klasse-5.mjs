@@ -6,7 +6,7 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { kapitel } from './jahresplan-klasse-5.mjs';
-import { aufgaben, fehlvorstellungen, setzeSaat } from './werkzeug.mjs';
+import { aufgaben, fehlvorstellungen, setzeSaat, KOMPETENZEN } from './werkzeug.mjs';
 import { kopfrechnen } from './aufgaben/5-3-1-kopfrechnen.mjs';
 import { addieren } from './aufgaben/5-3-2-addieren.mjs';
 import { subtrahieren } from './aufgaben/5-3-3-subtrahieren.mjs';
@@ -32,6 +32,7 @@ const pool = {
   klassenstufe: 5,
   quelle: 'Bildungsplan 2016 Baden-Württemberg, Kapitelfolge nach Schnittpunkt 5 (Klett)',
   fehlvorstellungen,
+  kompetenzen: KOMPETENZEN,
   kapitel,
   aufgaben,
 };

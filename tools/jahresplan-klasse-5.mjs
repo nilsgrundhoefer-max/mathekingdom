@@ -437,9 +437,60 @@ export const wortspeicher = {
 };
 
 // Voraussetzungen (ADR 0014): Lernziel → Lernziele, auf denen es aufbaut. Daraus schlägt das Schüler-Dashboard eine Brücke vor,
-// wenn ein Lernziel wackelig wird. Vorerst nur Lernziele, zu denen es schon Aufgaben gibt.
+// wenn ein Lernziel wackelig wird; Voraussetzungen ohne Aufgaben bieten keine Brücke an. Jedes Lernziel hat einen Eintrag (ADR 0017).
 // Das kleine Einmaleins (5.4.1-K1, -K2) ist Grundschulstoff und die Basis-Brücke für das Dividieren.
 const voraussetzungen = {
+  // Ergänzt für ADR 0017 (Liste „baut auf“ im Lehrer-Dashboard). Leere Liste: baut nur auf Grundschulstoff auf.
+  '5.1.1-L1': [],
+  '5.1.2-L1': ['5.1.1-L1'],
+  '5.1.3-L1': ['5.1.1-L1', '5.1.2-L1'],
+  '5.1.4-L1': ['5.1.2-L1'],
+  '5.1.5-L1': ['5.1.1-L1'],
+  '5.2.1-L1': [],
+  '5.2.2-L1': ['5.2.1-L1'],
+  '5.2.3-L1': ['5.2.2-L1'],
+  '5.2.4-L1': ['5.2.3-L1'],
+  '5.2.5-L1': ['5.2.1-L1'],
+  '5.2.X1-L1': ['5.2.1-L1'],
+  '5.3.1-K1': ['5.2.1-L1'],
+  '5.3.1-K2': ['5.2.1-L1'],
+  '5.3.1-K3': ['5.3.1-K1', '5.3.1-K2'],
+  '5.3.2-A1': ['5.3.1-K1'],
+  '5.3.3-S1': ['5.3.1-K2'],
+  '5.3.5-R1': ['5.3.1-K1', '5.3.2-A1'],
+  '5.4.1-K1': [],
+  '5.4.2-M1': ['5.4.1-K1'],
+  '5.4.5-D1': ['5.4.1-K2'],
+  '5.5.1-L1': [],
+  '5.5.2-L1': ['5.5.1-L1'],
+  '5.5.3-L1': ['5.5.2-L1'],
+  '5.5.4-L1': ['5.2.1-L1', '5.5.1-L1'],
+  '5.5.5-L1': ['5.5.2-L1'],
+  '5.5.6-L1': ['5.5.2-L1'],
+  '5.5.7-L1': ['5.5.2-L1', '5.5.3-L1'],
+  '5.5.8-L1': ['5.5.3-L1', '5.5.7-L1'],
+  '5.5.9-L1': ['5.5.6-L1', '5.5.8-L1'],
+  '5.6.1-L1': ['5.2.4-L1'],
+  '5.6.2-L1': ['5.3.2-A2', '5.3.3-S2'],
+  '5.6.3-L1': ['5.3.1-K1', '5.3.1-K2'],
+  '5.6.4-L1': ['5.4.1-K3'],
+  '5.6.5-L1': ['5.4.1-K3'],
+  '5.6.6-L1': ['5.6.5-L1', '5.4.2-M2'],
+  '5.6.7-L1': ['5.6.2-L1', '5.4.6-T3'],
+  '5.6.X1-L1': ['5.6.7-L1'],
+  '5.7.1-L1': ['5.6.5-L1'],
+  '5.7.2-L1': ['5.5.1-L1'],
+  '5.7.3-L1': ['5.7.2-L1'],
+  '5.7.4-L1': ['5.7.3-L1'],
+  '5.7.X1-L1': ['5.7.4-L1', '5.5.7-L1'],
+  '5.7.X2-L1': ['5.5.4-L1', '5.7.3-L1'],
+  '5.8.1-L1': ['5.5.7-L1'],
+  '5.8.2-L1': ['5.8.1-L1', '5.4.1-K3'],
+  '5.8.3-L1': ['5.8.2-L1', '5.4.2-M2', '5.5.7-L1'],
+  '5.8.4-L1': ['5.8.3-L1'],
+  '5.9.1-L1': ['5.4.1-K2'],
+  '5.9.2-L1': ['5.9.1-L1', '5.4.5-D2', '5.6.5-L1'],
+  '5.9.3-L1': ['5.9.1-L1', '5.2.2-L1'],
   '5.3.2-A2': ['5.3.1-K1'],
   '5.3.2-A3': ['5.3.2-A2'],
   '5.3.2-A4': ['5.3.2-A2', '5.3.1-K1'],
@@ -536,7 +587,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => {
     unterkapitel: unterkapitel.map((u) => {
       const id = u.extra ? `5.${k + 1}.X${++extraNr}` : `5.${k + 1}.${++nr}`;
       const lernziele = Array.isArray(u.lernziele)
-        ? u.lernziele.map((text, i) => ({ id: `${id}-L${i + 1}`, text }))
+        ? u.lernziele.map((text, i) => ({ id: `${id}-L${i + 1}`, text, ...(voraussetzungen[`${id}-L${i + 1}`] && { voraussetzungen: voraussetzungen[`${id}-L${i + 1}`] }) }))
         : Object.entries(u.lernziele).map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(voraussetzungen[`${id}-${kurz}`] && { voraussetzungen: voraussetzungen[`${id}-${kurz}`] }), ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }) }));
       return { id, titel: u.titel, extra: u.extra, lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
     }),

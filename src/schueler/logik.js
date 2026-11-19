@@ -846,3 +846,18 @@ export function mutSatzFaellig(stand) {
   stand.mutSatz = wegstueck;
   return true;
 }
+
+// Aha-Momente (ADR 0017): überwundene Fehlvorstellungen, neueste zuerst. Ein einmal erreichter Aha-Moment bleibt stehen,
+// auch wenn der Fehler später wieder auftaucht. `neu`: noch nicht beim Wappen angesehen (stand.ahaGesehen).
+export function ahaMomente(stand) {
+  const gesehen = new Set(stand.ahaGesehen ?? []);
+  return fehlvorstellungsStand(stand.versuche).filter((e) => e.ueberwundenAm)
+    .sort((a, b) => String(b.ueberwundenAm).localeCompare(String(a.ueberwundenAm)))
+    .map((e) => ({ fehlvorstellung: e.fehlvorstellung, lernziel: e.lernziel, am: e.ueberwundenAm, neu: !gesehen.has(e.fehlvorstellung) }));
+}
+export function merkeAhaGesehen(stand) {
+  const alle = ahaMomente(stand).map((a) => a.fehlvorstellung);
+  if (alle.every((f) => (stand.ahaGesehen ?? []).includes(f))) return false;
+  stand.ahaGesehen = [...new Set([...(stand.ahaGesehen ?? []), ...alle])];
+  return true;
+}

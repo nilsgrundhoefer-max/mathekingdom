@@ -737,6 +737,10 @@ async function weiter(seite, wahl = '#weiter') {
   assert.ok(await seite.locator('.fehlermap td.fv-ueberwunden').count() > 0);
   await seite.locator('.karte:has(#ls-filter)').screenshot(bilder ? { path: `${bilder}/lehrer-fehlvorstellungen.png` } : {});
   await seite.click('[data-sicht=lernziele]');
+  // Kompetenzprofil der Klasse (ADR 0017): fünf Achsen, Tabelle daneben.
+  assert.equal(await seite.locator('#kompetenz-klasse .kompetenztabelle tbody tr').count(), 5);
+  assert.equal(await seite.locator('#kompetenz-klasse svg.netz polygon.schueler').count(), 1);
+  await seite.locator('#kompetenz-klasse').screenshot(bilder ? { path: `${bilder}/lehrer-kompetenz-klasse.png` } : {});
   // Selbsteinschätzung: Tendenz je Schüler, Impuls bei Carla (dreimal unterschätzt), keine Kronen beim Lehrer.
   assert.equal(await seite.locator('#selbsteinschaetzung tbody tr').count(), 14);
   assert.match(await seite.innerText('#selbsteinschaetzung'), /eher zu niedrig[\s\S]*eher zu hoch|eher zu hoch[\s\S]*eher zu niedrig/);
@@ -750,6 +754,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.waitForSelector('.vierspaltig');
   assert.equal(await seite.locator('.gruppenliste').count(), 6);
   assert.ok(await seite.locator('#hilfebedarf tbody tr').count() > 0);
+  assert.match(await seite.innerText('#baut-auf'), /Baut auf/);
   // Tafelbild: eine Aufgabe mit den häufigsten falschen Antworten, ohne Namen, Lösung auf Knopfdruck.
   await seite.locator('[data-tafelbild]').first().click();
   await seite.waitForSelector('.tafelbild');
@@ -768,6 +773,8 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(await seite.locator('.schuelerseite .kennzahl').count(), 3);
   await foto(seite, 'lehrer-schueler');
   assert.ok(await seite.locator('#versuchsverlauf tbody tr').count() > 0);
+  assert.equal(await seite.locator('#kompetenz-schueler svg.netz polygon.klasse').count(), 1);
+  await seite.locator('#kompetenz-schueler').screenshot(bilder ? { path: `${bilder}/lehrer-kompetenz-schueler.png` } : {});
   assert.match(await seite.innerText('#versuchsverlauf thead'), /1\. Versuch[\s\S]*2\. Versuch/);
   await seite.locator('#versuchsverlauf').screenshot(bilder ? { path: `${bilder}/lehrer-versuchsverlauf.png` } : {});
   assert.match(await seite.innerText('#meilensteine-schueler'), /Gewählt beim Start/);
@@ -1178,6 +1185,10 @@ async function weiter(seite, wahl = '#weiter') {
   stand.versuche = [...k1.slice(0, 3).map((a) => versuch(a, vor(10 * tag), { afb: a.afb })), versuch(k1[3], vor(2 * tag), { seitenblick: true }),
     versuch(k2, vor(3600000), { hilfen: 2, karten: ['tipp', 'beispiel'] })];
   stand.lernziele = { '5.3.1-K1': { erreichtAm: vor(10 * tag) } };
+  // Ein überwundener Fehler für die Aha-Momente: einmal falsch, danach dreimal richtig ohne ihn.
+  const s2 = pool.aufgaben.filter((a) => a.lernziel === '5.3.3-S2' && a.niveau === 'G');
+  stand.versuche.unshift(versuch(s2[0], vor(5 * tag), { richtig: false, versuche: 2, fehlvorstellungen: ['sub-uebertrag-vergessen'] }),
+    ...s2.slice(1, 4).map((a, i) => versuch(a, vor(5 * tag - (i + 1) * 60000))));
   stand.einstieg = { '5.3': { uebersprungen: vor(10 * tag) } };
   await mitStand(seite, stand);
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
@@ -1198,6 +1209,15 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(await seite.innerText('#ohne-hilfe'), /ohne Beispiel und Lösungsschritt/);
   await seite.waitForTimeout(800);
   await foto(seite, 'erstmals-ohne-hilfe');
+  // Aha-Momente beim Wappen: Zeichen in der Kopfzeile, Liste, danach gesehen.
+  await seite.evaluate(() => [...document.querySelectorAll('button')].find((b) => b.textContent.trim() === 'Zur Regionskarte')?.click());
+  await seite.waitForSelector('#aha-neu');
+  assert.match(await seite.innerText('#aha-neu'), /1/);
+  await seite.click('.kopf nav button:has-text("Wappen")');
+  await seite.waitForSelector('#aha');
+  assert.match(await seite.innerText('#aha'), /Du denkst jetzt an den Übertrag in der nächsten Stelle\.[\s\S]*neu/);
+  await seite.locator('#aha').screenshot(bilder ? { path: `${bilder}/aha-momente.png` } : {});
+  assert.equal(await seite.locator('#aha-neu').count(), 0);
   assert.deepEqual(fehler, []);
   await seite.close();
 }

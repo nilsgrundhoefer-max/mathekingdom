@@ -630,3 +630,27 @@ export function versuchsverlauf(stand, anzahl = 20) {
     };
   });
 }
+
+// Kompetenzprofil (ADR 0017): je prozessbezogener Kompetenz der Anteil der Aufgaben, die im ersten Versuch
+// ohne Beispiel und Lösungsschritt richtig waren. Haupt- und Nebenkompetenz zählen beide. Unter 6 Aufgaben: quote null.
+export const KOMPETENZ_AB = 6;
+export const KOMPETENZ_REIHE = ['symbolisch', 'probleme-loesen', 'modellieren', 'argumentieren', 'kommunizieren'];
+export function kompetenzProfil(versuche, index) {
+  const je = Object.fromEntries(KOMPETENZ_REIHE.map((k) => [k, { bearbeitet: 0, gut: 0, quote: null }]));
+  for (const v of versuche) {
+    for (const k of index.aufgabe.get(v.aufgabe)?.kompetenz ?? []) {
+      if (!je[k]) continue;
+      je[k].bearbeitet++;
+      if (v.richtig && v.versuche === 1 && !L.brauchteHilfe(v)) je[k].gut++;
+    }
+  }
+  for (const e of Object.values(je)) e.quote = e.bearbeitet >= KOMPETENZ_AB ? e.gut / e.bearbeitet : null;
+  return je;
+}
+
+// Voraussetzungen eines Lernziels und Lernziele, die darauf aufbauen (Liste „baut auf“, ADR 0017).
+export function bautAuf(pool, lernzielId) {
+  const alle = pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele.map((l) => ({ ...l, milestone: u.titel }))));
+  const von = alle.find((l) => l.id === lernzielId);
+  return { auf: (von?.voraussetzungen ?? []).map((id) => alle.find((l) => l.id === id)).filter(Boolean), darauf: alle.filter((l) => l.voraussetzungen?.includes(lernzielId)) };
+}
