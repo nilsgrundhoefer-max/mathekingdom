@@ -6,6 +6,17 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.24 vom 19.11.2026
+
+### Schüler
+
+- Für dich ändert sich nichts.
+
+### Lehrkraft
+
+- Administrator-Dashboard, Bereich „Betrieb“, neue Karte „Nutzungsstatistik“ (ADR 0025): je Klasse und für alle Klassen aktive Speicherstände, bearbeitete Aufgaben und Lösungsquote, Starts, Starts ohne Netz, technische Probleme sowie die zuletzt genutzte Version und der Browser, für die letzten 7 oder 30 Tage oder das ganze Schuljahr. Gezählt werden Speicherstände, ohne Namen und ohne Lernstand.
+- Administrator-Dashboard, Bereich „Aufgaben“, neue Karten „Auffällige Aufgaben“ und „Je Aufgabentyp“: Auffällig ist eine Aufgabe, wenn mindestens drei Schüler dieselbe falsche Antwort geben, die kein hinterlegter typischer Fehler ist, wenn sie viel seltener gelöst wird als die übrigen Aufgaben desselben Lernziels und Niveaus, oder wenn sie oft abgebrochen wird. Jede auffällige Aufgabe lässt sich gleich sperren. Die Übersicht nennt die Zahl der auffälligen Aufgaben.
+
 ## 0.23 vom 19.11.2026
 
 ### Schüler

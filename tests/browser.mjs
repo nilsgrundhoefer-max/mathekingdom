@@ -1361,6 +1361,10 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.uncheck('#protokoll-probleme');
   await admin.waitForFunction(() => /Lehrkraft NG/.test(document.getElementById('protokoll')?.textContent ?? ''));
   assert.match(await admin.innerText('#protokoll'), /Lena Müller/);
+  // Nutzungsstatistik: je Klasse und für alle, ohne Namen.
+  await admin.waitForSelector('[data-nutzung="5a"]');
+  assert.match(await admin.innerText('#nutzung'), /Alle Klassen/);
+  assert.doesNotMatch(await admin.innerText('#nutzung'), /Lena/);
   await foto(admin, 'admin-betrieb');
   const pfadLena = `S/Mathekingdom/${jahr}/5a/${code}.json`;
   await schreibe(pfadLena, JSON.stringify({ ...JSON.parse(await lies(admin, pfadLena)), muenzen: 99999 }));
@@ -1420,9 +1424,15 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.waitForFunction(() => /Daten der Klasse 5b sind gelöscht/.test(document.getElementById('hinweis')?.textContent ?? ''));
   assert.equal(await lies(admin, `L/Mathekingdom/${jahr}/5b/klasse.json`), null);
   assert.equal(await lies(admin, `S/Mathekingdom/${jahr}/5b/klassendatei.json`), null);
+  // Auffällige Aufgabe: Fünf Schüler geben dieselbe falsche Antwort, die kein typischer Fehler ist.
+  const auffaellig = pool.aufgaben.find((a) => a.format === 'zahl' && a.id !== gemeldet);
+  for (const c of ['AUF1', 'AUF2', 'AUF3', 'AUF4', 'AUF5']) {
+    await schreibe(`S/Mathekingdom/${jahr}/5a/5A-${c}.json`, JSON.stringify({ code: `5A-${c}`, versuche: [{ t: new Date().toISOString(), aufgabe: auffaellig.id, lernziel: auffaellig.lernziel, niveau: auffaellig.niveau, richtig: false, eingaben: ['424242'] }], abbrueche: [] }));
+  }
   await admin.click('[data-tab="uebersicht"]');
   await admin.waitForSelector('#uebersicht');
   assert.match(await admin.innerText('#uebersicht'), /1 offene Aufgabenmeldung/);
+  assert.match(await admin.innerText('#uebersicht'), /1 auffällige Aufgabe/);
   await foto(admin, 'admin-uebersicht');
 
   // Aufgaben: Meldung ansehen, Aufgabe sperren, als behoben markieren.
@@ -1433,6 +1443,10 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.waitForFunction(([k]) => [...document.querySelectorAll('#gesperrt code')].some((c) => c.textContent === k), [gemeldet]);
   assert.deepEqual(JSON.parse(JSON.parse(await lies(admin, 'S/Mathekingdom/schulverzeichnis.json')).inhalt).gesperrt, [gemeldet]);
   await foto(admin, 'admin-aufgaben');
+  await admin.waitForSelector(`[data-auffaellig="${auffaellig.id}"]`);
+  assert.match(await admin.innerText(`[data-auffaellig="${auffaellig.id}"]`), /5 Schüler antworten „424242“/);
+  assert.match(await admin.innerText('#aufgabentypen'), /Zahl eingeben/);
+  if (bilder) await admin.locator('#auffaellig').screenshot({ path: `${bilder}/${String(++nr).padStart(2, '0')}-admin-auffaellig.png` });
   const [exportDatei] = await Promise.all([admin.waitForEvent('download'), admin.click('#meldungen-export')]);
   assert.match(readFileSync(await exportDatei.path(), 'utf8'), new RegExp(`## ${gemeldet.replace(/\./g, '\\.')} \\(gesperrt\\)[\\s\\S]*Lösung im Pool`));
   await admin.selectOption(`[data-status="${gemeldet}"]`, 'behoben');
