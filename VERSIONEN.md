@@ -6,6 +6,18 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.31 vom 19.11.2026
+
+### Schüler
+
+- Keine Änderung im Spiel.
+
+### Lehrkraft
+
+- Die Klassenwahl oben in der Kopfzeile ist wieder lesbar. Bisher stand dort weiße Schrift auf weißem Feld, sodass weder die offene Klasse noch die Liste der Klassen zu sehen war, obwohl man wählen konnte.
+- Mit nur einer eigenen Klasse steht ihr Name jetzt oben in der Kopfzeile, damit immer erkennbar ist, welche Klasse offen ist.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.30 vom 19.11.2026
 
 ### Schüler
