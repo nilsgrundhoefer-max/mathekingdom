@@ -628,11 +628,14 @@ export function trageBrueckeEin(stand, aufgabe, richtig, jetzt) {
 // Die Lehrkraft schickt einem Schüler drei bis fünf Aufgaben zu einem Lernziel über die Klassendatei:
 // { id, lernziel, niveau, aufgaben: [Aufgaben-Ids], satz? }. Zurückziehen heißt: Der Eintrag fehlt.
 // Der Speicherstand merkt sich den laufenden Auftrag (sonderauftrag) und die erledigten (sonderauftraege).
+// Die Belohnung stellt die Lehrkraft je Klasse ein (ADR 0027); sie steht im Auftrag. Fehlt sie (vor 0.27 verschickt), gilt 100.
 export const SONDERAUFTRAG_BONUS = 100;
+export const SONDERAUFTRAG_BELOHNUNGEN = [50, 100, 250, 500, 1000];
+export const sonderauftragBelohnung = (wert) => SONDERAUFTRAG_BELOHNUNGEN.includes(Number(wert)) ? Number(wert) : SONDERAUFTRAG_BONUS;
 export const SONDERAUFTRAG_MIN = 3, SONDERAUFTRAG_MAX = 5;
 function gueltigerAuftrag(a) {
   if (!a?.id || !Array.isArray(a.aufgaben) || a.aufgaben.length === 0) return null;
-  return { id: String(a.id), lernziel: a.lernziel, niveau: a.niveau, aufgaben: a.aufgaben.slice(0, SONDERAUFTRAG_MAX), satz: a.satz ? String(a.satz).slice(0, 200) : null, t: a.t ?? a.id };
+  return { id: String(a.id), lernziel: a.lernziel, niveau: a.niveau, aufgaben: a.aufgaben.slice(0, SONDERAUFTRAG_MAX), satz: a.satz ? String(a.satz).slice(0, 200) : null, t: a.t ?? a.id, belohnung: sonderauftragBelohnung(a.belohnung) };
 }
 const erledigterAuftrag = (stand, id) => (stand.sonderauftraege ?? []).some((x) => x.id === id);
 // Stimmt der laufende Auftrag im Speicherstand nicht mehr mit der Klassendatei überein (zurückgezogen oder ersetzt),
@@ -668,12 +671,33 @@ export function trageSonderauftragEin(stand, auftrag, aufgabe, richtig, jetzt) {
   const ergebnis = { fertig: lauf.erledigt.length >= auftrag.aufgaben.length, nummer: lauf.erledigt.length, gesamt: auftrag.aufgaben.length,
     richtig: lauf.erledigt.filter((e) => e.richtig).length, bonus: 0, zurueck: lauf.zurueck ?? null };
   if (ergebnis.fertig) {
-    ergebnis.bonus = SONDERAUFTRAG_BONUS;
-    stand.muenzen += SONDERAUFTRAG_BONUS;
-    (stand.sonderauftraege ??= []).push({ id: auftrag.id, t: jetzt, lernziel: auftrag.lernziel, niveau: auftrag.niveau, richtig: ergebnis.richtig, gesamt: ergebnis.gesamt, bonus: SONDERAUFTRAG_BONUS });
+    ergebnis.bonus = sonderauftragBelohnung(auftrag.belohnung);
+    stand.muenzen += ergebnis.bonus;
+    (stand.sonderauftraege ??= []).push({ id: auftrag.id, t: jetzt, lernziel: auftrag.lernziel, niveau: auftrag.niveau, richtig: ergebnis.richtig, gesamt: ergebnis.gesamt, bonus: ergebnis.bonus });
     stand.sonderauftrag = null;
   }
   return ergebnis;
+}
+
+// ---------- Münzgabe (ADR 0027) ----------
+// Der Administrator schickt einem Schüler Münzen über die Klassendatei: muenzgaben[code] = [{ id, t, muenzen, satz? }].
+// Gutgeschrieben wird beim Öffnen, genau einmal je Kennung; der Speicherstand merkt sich die geöffneten (muenzgaben).
+// Zurückziehen heißt: Der Eintrag fehlt. Abziehen gibt es nicht.
+export const MUENZGABEN = [50, 100, 250, 500, 1000, 5000];
+export function gueltigeMuenzgaben(liste) {
+  if (!Array.isArray(liste)) return [];
+  return liste.filter((g) => g?.id && MUENZGABEN.includes(Number(g.muenzen)))
+    .map((g) => ({ id: String(g.id), t: g.t ?? g.id, muenzen: Number(g.muenzen), satz: g.satz ? String(g.satz).slice(0, 200) : null }));
+}
+export const geoeffneteMuenzgabe = (stand, id) => (stand.muenzgaben ?? []).find((x) => x.id === id) ?? null;
+// Ungeöffnete Gaben, die älteste zuerst.
+export const offeneMuenzgaben = (stand, gaben) => (gaben ?? []).filter((g) => !geoeffneteMuenzgabe(stand, g.id))
+  .sort((a, b) => String(a.t).localeCompare(String(b.t)));
+export function oeffneMuenzgabe(stand, gabe, jetzt) {
+  if (!gabe || !MUENZGABEN.includes(gabe.muenzen) || geoeffneteMuenzgabe(stand, gabe.id)) return 0;
+  stand.muenzen += gabe.muenzen;
+  (stand.muenzgaben ??= []).push({ id: gabe.id, t: jetzt, muenzen: gabe.muenzen });
+  return gabe.muenzen;
 }
 
 // ---------- Wegstück (ADR 0016) ----------
@@ -1085,6 +1109,7 @@ export function einstellungen(klassendatei, code, pool) {
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,
     sonderauftrag: gueltigerAuftrag(k.sonderauftraege?.[code]), // ADR 0021
+    muenzgaben: gueltigeMuenzgaben(k.muenzgaben?.[code]), // ADR 0027
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst
     meilensteinFreigabe: k.meilensteinFreigabe ?? {}, // ADR 0026: je Kapitel die freigegebenen Meilensteine; fehlt ein Kapitel, ist alles offen
     gesperrteMeilensteine: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([meilenstein]) => meilenstein)),

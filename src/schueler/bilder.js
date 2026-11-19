@@ -93,6 +93,14 @@ export function siegel(groesse = 18, voll = true) {
       : s('circle', { cx: 10, cy: 10, r: 8, fill: 'none', stroke: '#a89d8a', 'stroke-width': 1.3, 'stroke-dasharray': '2.2 2' }));
 }
 
+// Siegel der Münzgabe (ADR 0027): goldenes Wachs mit Münze, damit es nicht wie der Sonderauftrag aussieht.
+export function gabeSiegel(groesse = 44) {
+  return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, 'aria-hidden': 'true', class: 'siegel gabesiegel' },
+    s('path', { d: SIEGELRAND, fill: '#c9962e', stroke: '#7a5a12', 'stroke-width': 0.8, 'stroke-linejoin': 'round' }),
+    s('circle', { cx: 10, cy: 10, r: 5.4, fill: '#e8c766', stroke: '#7a5a12', 'stroke-width': 0.9 }),
+    s('circle', { cx: 10, cy: 10, r: 3, fill: 'none', stroke: '#7a5a12', 'stroke-width': 0.7 }));
+}
+
 // Kleine Zeichen über einem Meilenstein.
 const kompass = (x, y) => s('g', { transform: `translate(${x} ${y})`, class: 'zeichen-kompass' },
   s('circle', { r: 10, fill: PERGAMENT, stroke: SEPIA, 'stroke-width': 1.5 }),

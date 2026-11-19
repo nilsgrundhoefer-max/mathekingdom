@@ -22,6 +22,12 @@ const basis = `http://localhost:${server.address().port}/`;
 const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-5.json', wurzel), 'utf8'));
 const browser = await chromium.launch();
 let nr = 0;
+// Bild eines Elements, das sich alle paar Sekunden neu zeichnet: aus einem Bild der ganzen Seite ausgeschnitten.
+const fotoStabil = async (seite, sel, name) => {
+  if (!bilder) return;
+  const box = await seite.evaluate((q) => { const r = document.querySelector(q)?.getBoundingClientRect(); return r && { x: r.x + scrollX, y: r.y + scrollY, width: r.width, height: r.height }; }, sel);
+  if (box) await seite.screenshot({ path: `${bilder}/${name}.png`, fullPage: true, clip: box });
+};
 const foto = async (seite, name) => { if (bilder) await seite.screenshot({ path: `${bilder}/${String(++nr).padStart(2, '0')}-${name}.png`, fullPage: true }); };
 
 // Der Klassenordner wird im Test durch einen Ordner im privaten Browser-Dateisystem ersetzt.
@@ -1323,6 +1329,72 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.waitForSelector('#weiter:not([disabled])');
   await lehrer.click('#weiter');
   await lehrer.waitForSelector('nav.bereiche');
+
+  // Münzgabe (ADR 0027): Der Administrator schickt Lena 500 Münzen. Sie kommen als Brief, gutgeschrieben beim Öffnen.
+  // Eine zweite Gabe zieht er zurück, bevor sie geöffnet ist. Die Lehrkraft sieht die Gabe im Schülerprofil.
+  await admin.click('[data-tab="klassen"]');
+  await admin.click('[data-namen="5a"]');
+  await admin.waitForSelector(`[data-muenzen="${code}"]`);
+  await admin.click(`[data-muenzen="${code}"]`);
+  await admin.check('input[name="gabe-muenzen"][value="500"]');
+  await admin.fill('#gabe-satz', 'Für deine Hilfe beim Aufräumen.');
+  await admin.click('#gabe-schicken');
+  await admin.waitForFunction(() => /500 Münzen an Lena Müller geschickt/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  await admin.waitForFunction(() => /noch nicht geöffnet/.test(document.getElementById('gaben-liste')?.textContent ?? ''));
+  await admin.locator('#gabe-karte').screenshot(bilder ? { path: `${bilder}/admin-muenzgabe.png` } : {});
+  const klasseMitGabe = JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`));
+  assert.equal(klasseMitGabe.einst.muenzgaben[code][0].muenzen, 500);
+  const vorGabe = JSON.parse(await lies(admin, `S/Mathekingdom/${jahr}/5a/${code}.json`)).muenzen;
+  await schueler.waitForSelector('#gabe', { timeout: 20000 });
+  assert.match(await schueler.innerText('#gabe'), /Eine Gabe des Königs/);
+  assert.doesNotMatch(await schueler.innerText('#gabe'), /Administrator/);
+  await schueler.waitForTimeout(800);
+  await schueler.locator('#gabe').screenshot(bilder ? { path: `${bilder}/gabe-brief.png` } : {});
+  await schueler.click('#gabe-oeffnen');
+  await schueler.waitForSelector('#gabe-geoeffnet');
+  assert.match(await schueler.innerText('#gabe-geoeffnet'), /\+500 Münzen[\s\S]*Für deine Hilfe beim Aufräumen/);
+  await schueler.waitForTimeout(1000);
+  await schueler.locator('#gabe-geoeffnet').screenshot(bilder ? { path: `${bilder}/gabe-geoeffnet.png` } : {});
+  await schueler.click('#gabe-ok');
+  await schueler.waitForFunction(async ([p]) => {
+    let o = await navigator.storage.getDirectory();
+    for (const t of p.slice(0, -1)) o = await o.getDirectoryHandle(t);
+    try { return (JSON.parse(await (await (await o.getFileHandle(p.at(-1))).getFile()).text()).muenzgaben ?? []).length === 1; } catch { return false; }
+  }, [['S', 'Mathekingdom', jahr, '5a', `${code}.json`]], { timeout: 15000 });
+  assert.equal(JSON.parse(await lies(admin, `S/Mathekingdom/${jahr}/5a/${code}.json`)).muenzen, vorGabe + 500);
+  // Geöffnet: kein Zurückziehen mehr. Eine zweite, ungeöffnete Gabe lässt sich zurückziehen.
+  await admin.click(`[data-muenzen="${code}"]`);
+  await admin.waitForFunction(() => /geöffnet am/.test(document.getElementById('gaben-liste')?.textContent ?? ''));
+  assert.equal(await admin.locator('#gaben-liste [data-zurueck]').count(), 0);
+  await admin.check('input[name="gabe-muenzen"][value="50"]');
+  await admin.click('#gabe-schicken');
+  await admin.waitForSelector('#gaben-liste [data-zurueck]');
+  await admin.click('#gaben-liste [data-zurueck]');
+  await admin.waitForFunction(() => /Gabe zurückgezogen/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).einst.muenzgaben[code].length, 1);
+  // Lehrkraft: Belohnung des Sonderauftrags für die Klasse auf 250 stellen, Münzgabe im Schülerprofil sehen.
+  await lehrer.click('[data-tab="klasse"]');
+  await lehrer.click('.abschnitte button:has-text("Unterricht")');
+  await lehrer.waitForSelector('#sonderauftrag-belohnung');
+  assert.equal(await lehrer.inputValue('#sonderauftrag-belohnung'), '100');
+  await lehrer.selectOption('#sonderauftrag-belohnung', '250');
+  await lehrer.waitForFunction(async ([j]) => {
+    let o = await navigator.storage.getDirectory(), k;
+    try {
+      for (const t of ['L', 'Mathekingdom', j, '5a']) o = await o.getDirectoryHandle(t);
+      k = JSON.parse(await (await (await o.getFileHandle('klasse.json')).getFile()).text());
+    } catch { return false; } // gerade im Schreiben
+    return k.einst.sonderauftragBelohnung === 250 && k.einst.muenzgaben?.[Object.keys(k.namen).find((c) => k.namen[c] === 'Lena Müller')]?.length === 1;
+  }, [jahr], { timeout: 15000 });
+  await fotoStabil(lehrer, '#belohnung-karte', 'lehrer-belohnung');
+  await lehrer.click('[data-tab="jetzt"]');
+  await lehrer.click(`.sitzplan [data-schueler="${code}"]`);
+  await lehrer.waitForSelector('#muenzgaben');
+  assert.match(await lehrer.innerText('#muenzgaben'), /Münzgabe \+500, geöffnet am/);
+  await lehrer.click('.overlay details.sonderauftrag summary');
+  assert.match(await lehrer.innerText('.overlay details.sonderauftrag'), /250 Münzen dazu/);
+  await fotoStabil(lehrer, '.overlay-inhalt', 'lehrer-muenzgabe');
+  await lehrer.click('#overlay-zu');
 
   // Aufgabenmeldung (ADR 0025): Die Lehrkraft meldet eine Aufgabe mit ihrer Kennung.
   const gemeldet = pool.aufgaben[0].id;
