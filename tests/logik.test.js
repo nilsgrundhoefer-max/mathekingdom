@@ -693,3 +693,66 @@ test('Grundlagen-Schleife: beginnt auch bei einem wackeligen Lernziel, nicht auf
 test('Jedes Lernziel mit Aufgaben nennt seine Grundlage', () => {
   for (const id of index.lernzielMitAufgaben) assert.ok(index.lernziel.get(id).grundlage, id);
 });
+
+// ---------- Wegstück und Seitenblick (ADR 0016) ----------
+test('Wegstück: fünf Aufgaben, dann Abschluss mit Bilanz; nach jedem vierten Wegstück des Tages eine Rast', () => {
+  const stand = neu();
+  const g = aufgaben(S2, 'G');
+  let e;
+  for (let i = 0; i < 4; i++) {
+    e = L.trageWegstueckEin(stand, g[i], { richtig: i !== 1, muenzen: i !== 1 ? 15 : 0 }, `2026-11-17T10:0${i}:00Z`);
+    assert.equal(e.fertig, false);
+    assert.equal(L.wegstueckNummer(stand), i + 2);
+  }
+  e = L.trageWegstueckEin(stand, g[4], { richtig: true, muenzen: 15 }, '2026-11-17T10:05:00Z');
+  assert.deepEqual({ fertig: e.fertig, richtig: e.richtig, muenzen: e.muenzen, heute: e.heute, rast: e.rast }, { fertig: true, richtig: 4, muenzen: 60, heute: 1, rast: false });
+  assert.deepEqual(e.punkte, [true, false, true, true, true]);
+  assert.equal(stand.wegstueck, null);
+  assert.equal(L.wegstueckNummer(stand), 1);
+  for (let w = 0; w < 3; w++) for (let i = 0; i < 5; i++) e = L.trageWegstueckEin(stand, g[i], { richtig: true }, '2026-11-17T10:30:00Z');
+  assert.equal(e.heute, 4);
+  assert.equal(e.rast, true);
+  // Ein neuer Tag zählt von vorn.
+  for (let i = 0; i < 5; i++) e = L.trageWegstueckEin(stand, g[i], { richtig: true }, '2026-11-18T10:00:00Z');
+  assert.equal(e.heute, 1);
+});
+
+test('Seitenblick: ab der vierten Aufgabe einmal je Wegstück, nur zu besiegelten Lernzielen desselben Kapitels', () => {
+  const stand = neu();
+  const g = aufgaben(S2, 'G');
+  const anderes = [...index.lernzielMitAufgaben].find((id) => id !== S2 && L.kapitelVon(id) === L.kapitelVon(S2));
+  const fremdes = [...index.lernzielMitAufgaben].find((id) => L.kapitelVon(id) !== L.kapitelVon(S2));
+  for (let i = 0; i < 3; i++) { assert.equal(L.seitenblickFaellig(stand), false); L.trageWegstueckEin(stand, g[i], { richtig: true }, 't'); }
+  assert.equal(L.seitenblickFaellig(stand), true);
+  // Ohne Siegel im Kapitel gibt es keinen Seitenblick; ein Siegel in einem anderen Kapitel zählt nicht.
+  stand.lernziele[fremdes] = { erreichtAm: 't' };
+  assert.equal(L.waehleSeitenblick(index, stand, S2, 'G'), null);
+  stand.lernziele[anderes] = { erreichtAm: 't' };
+  const blick = L.waehleSeitenblick(index, stand, S2, 'G');
+  assert.equal(blick.lernziel, anderes);
+  L.trageWegstueckEin(stand, blick, { richtig: true, seitenblick: true }, 't');
+  assert.equal(L.seitenblickFaellig(stand), false);
+});
+
+test('Seitenblick zählt für kein Lernziel, keine Krone, keine Selbsteinschätzung und keine Grundlagen-Schleife', () => {
+  const stand = neu();
+  const m = aufgaben(S2, 'M');
+  for (const a of m.slice(0, 4)) L.verbuche(stand, a, ok(), 'M', 't', index, { seitenblick: true });
+  assert.equal(stand.lernziele[S2], undefined);
+  assert.equal(L.lernzielStand(stand, S2, 'M', index).richtige, 0);
+  assert.equal(L.krone(index, stand, index.meilensteinVon.get(S2)), null);
+  assert.ok(stand.versuche.every((v) => v.seitenblick));
+  assert.ok(stand.versuche.every((v) => v.muenzen > 0), 'Münzen gibt es trotzdem');
+  // Viele falsche Seitenblicke auf G lösen keine Grundlagen-Schleife aus und machen das Lernziel nicht wackelig.
+  const g = aufgaben(S2, 'G');
+  for (const a of g) L.verbuche(stand, a, ok({ geloest: false, versuche: 2, hilfen: 3, karten: ['tipp', 'beispiel', 'loesungsschritt'] }), 'M', 't', index, { seitenblick: true });
+  assert.equal(L.inGrundlage(stand, S2), false);
+  assert.equal(L.istWackelig(stand, S2), false);
+});
+
+test('Klassendatei: Rast standardmäßig an, Ton standardmäßig aus', () => {
+  const ohne = L.einstellungen(null, '5A-K4M2', pool);
+  assert.equal(ohne.rast, true); assert.equal(ohne.ton, false);
+  const mit = L.einstellungen({ rast: false, ton: true }, '5A-K4M2', pool);
+  assert.equal(mit.rast, false); assert.equal(mit.ton, true);
+});

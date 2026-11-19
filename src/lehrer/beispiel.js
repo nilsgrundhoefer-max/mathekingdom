@@ -60,6 +60,7 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
       L.verbuche(stand, aufgabe, { geloest, versuche: geloest && zufall() < 0.8 ? 1 : 2, eingaben: [geloest ? String(aufgabe.loesung ?? '') : '?'],
         fehlvorstellungen: !geloest && fehler.length && zufall() < 0.7 ? [fehler[Math.floor(zufall() * fehler.length)].fehlvorstellung] : [],
         hilfen, dauer }, ziel, new Date(Math.min(zeit, jetzt - 20000)).toISOString());
+      L.trageWegstueckEin(stand, aufgabe, { richtig: geloest, muenzen: stand.versuche.at(-1).muenzen }, new Date(Math.min(zeit, jetzt - 20000)).toISOString()); // ADR 0016
       const vorschlag = L.niveauVorschlag(stand, '5.3', niveau);
       if (vorschlag && i !== 3) { niveau = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)]; L.setzeNiveau(stand, '5.3', niveau); }
     }
@@ -70,6 +71,12 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
     if (i === 3) stand.aktiv = { aufgabe: offene[1].id, seit: new Date(jetzt - 6 * 60000).toISOString(), fehlversuche: 1, hilfen: 2 }; // einer steckt fest
     if (i === 12) stand.aktiv = { aufgabe: offene[2].id, seit: new Date(jetzt - 60000).toISOString(), fehlversuche: 0, hilfen: 1 };    // eine hat einen Tipp gezogen
     if (i === 5) stand.abbrueche.push({ t: new Date(jetzt - 5 * 60000).toISOString(), aufgabe: offene[0].id, fehlversuche: 1, hilfen: 0 });
+    // Eine lässt nach: vier Wegstücke, die letzten zwei deutlich schwächer (ADR 0016). Ohne Zufall, damit der Rest gleich bleibt.
+    if (i === 10) {
+      const tag = L.tagVon(new Date(jetzt).toISOString());
+      stand.wegstuecke = [5, 4, 2, 1].map((richtig, k) => ({ t: new Date(jetzt - (32 - 7 * k) * 60000).toISOString(), bis: new Date(jetzt - (26 - 7 * k) * 60000).toISOString(), tag, richtig, gesamt: 5, muenzen: richtig * 15 }));
+      stand.wegstueck = null;
+    }
     if (i === 11) stand.muenzen += 5000;                // einer hat an seiner Datei gedreht
     staende.push({ code, stand });
   });

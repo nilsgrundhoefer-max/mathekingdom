@@ -8,6 +8,7 @@ import * as L from './logik.js';
 import * as S from './speicher.js';
 import { wappenBild, regionMap, muenze, siegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
+import { klinge } from './ton.js';
 
 const jetzt = () => new Date().toISOString();
 const z = { // Zustand der laufenden Sitzung
@@ -18,7 +19,7 @@ let wurzel;
 
 // ---------- Rahmen ----------
 function zeige(ansicht) {
-  z.ansicht = ansicht;
+  z.ansicht = { ...ansicht, seit: Date.now() };
   if (ansicht.name !== 'aufgabe' && z.stand?.aktiv) {
     // Aufgabe ohne Ergebnis verlassen: für das Aufgaben-Audit der Lehrkraft festhalten.
     const a = z.stand.aktiv;
@@ -41,17 +42,78 @@ function speicherMeldung(status) {
   if (status.ok && vorher?.ok === false) notiere('ok', 'Speichern im Klassenordner klappt wieder');
   maleStatus();
 }
+// Fokus-Modus (ADR 0016): In Aufgabe, Heftcheck und Wegstück-Abschluss bleibt nur das Nötige sichtbar.
+const FOKUS = new Set(['aufgabe', 'heftcheck', 'wegstueck']);
+const imFokus = () => Boolean(z.stand) && FOKUS.has(z.ansicht.name);
 function male() {
-  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wappen: wappenAnsicht, minispiel };
+  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, wappen: wappenAnsicht, minispiel };
+  const fokus = imFokus();
+  wurzel.classList.toggle('fokus', fokus);
   wurzel.replaceChildren(...[
-    z.stand && kopf(),
+    z.stand && (fokus ? fokusKopf() : kopf()),
     z.stand && hilfeBanner(),
     z.stand && nachrichtBanner(),
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
-    versionsHinweis('schueler'),
+    !fokus && versionsHinweis('schueler'),
   ].filter(Boolean));
+  fokussiere();
 }
+
+// Arbeiten ohne Maus: Das erste leere Eingabefeld hat den Fokus, nach dem Ergebnis der Knopf zum Weitergehen.
+function fokussiere() {
+  const n = z.ansicht.name;
+  let ziel = null;
+  if (n === 'aufgabe' && !z.ansicht.ergebnis) {
+    const felder = [...wurzel.querySelectorAll('form.antwort input:not([type=hidden]):not(:disabled), form.antwort select:not(:disabled), form.antwort .bildrahmen [tabindex="0"]')];
+    ziel = felder.find((f) => 'value' in f && f.type !== 'radio' && f.type !== 'checkbox' && f.value === '') ?? felder[0];
+  } else if (FOKUS.has(n)) ziel = wurzel.querySelector('main .haupt:not(:disabled)');
+  if (ziel) setTimeout(() => { if (ziel.isConnected) ziel.focus({ preventScroll: n !== 'aufgabe' }); });
+}
+// Per Tastatur reagiert ein Knopf nach dem Ergebnis erst nach einem kurzen Moment. Sonst überspringt ein doppeltes Enter
+// die Lösung. Ein Mausklick (detail ≥ 1) gilt sofort.
+const BEDENKZEIT_MS = 600;
+const bereit = (tun) => (ev) => { if (ev?.detail === 0 && Date.now() - (z.ansicht.seit ?? 0) < BEDENKZEIT_MS) return; tun(); };
+// Enter ohne Fokus (etwa nach einem Klick ins Leere) drückt den Hauptknopf nach dem Ergebnis.
+if (typeof document !== 'undefined') {
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' || !wurzel || (document.activeElement && document.activeElement !== document.body)) return;
+    const fertig = (z.ansicht.name === 'aufgabe' && z.ansicht.ergebnis) || ['wegstueck', 'heftcheck'].includes(z.ansicht.name);
+    if (fertig) wurzel.querySelector('main .haupt:not(:disabled)')?.click();
+  });
+}
+
+// Schmale Kopfzeile im Fokus-Modus: Wappen als Weg zurück, das laufende Wegstück und eine Speicherwarnung nur im Fehlerfall.
+function zurueckVon(a) {
+  if (a.name === 'aufgabe' && !a.rueckblick) {
+    if (a.einstieg) return { text: 'Regionskarte', tun: () => zeige({ name: 'region', kapitel: a.einstieg }) };
+    const ms = meilensteinVon(a.aufgabe);
+    return { text: ms.titel, tun: () => zeige({ name: 'region', kapitel: L.kapitelVon(a.aufgabe.lernziel), milestone: ms.id }) };
+  }
+  if (a.kapitel) return { text: 'Regionskarte', tun: () => zeige({ name: 'region', kapitel: a.kapitel }) };
+  return { text: 'Schlossgarten', tun: () => zeige({ name: 'schlossgarten' }) };
+}
+function fokusKopf() {
+  const zurueck = zurueckVon(z.ansicht), status = z.speicherstatus;
+  return h('header', { class: 'kopf fokus' },
+    h('button', { class: 'wappenknopf zurueck', id: 'zurueck', title: `Zurück: ${zurueck.text}`, onclick: zurueck.tun }, wappenBild(z.stand.wappen, 30), h('span', {}, `← ${zurueck.text}`)),
+    wegstueckAnzeige(),
+    h('div', { class: 'speicher fehler', id: 'speicherstatus', role: 'status' }, status && !status.ok ? 'Speichern fehlgeschlagen. Sag deiner Lehrkraft Bescheid.' : ''));
+}
+// „Aufgabe 3 von 5“ mit fünf Punkten: grün gelöst, hell nicht gelöst, umrandet die laufende Aufgabe.
+function wegstueckAnzeige() {
+  const a = z.ansicht;
+  if (a.name !== 'aufgabe' || !zaehltFuerWegstueck(a)) return null;
+  const fertig = a.ergebnis?.wegstueck;
+  const punkte = fertig?.punkte ?? (z.stand.wegstueck?.aufgaben ?? []).map((x) => x.richtig);
+  const nummer = fertig ? fertig.nummer : punkte.length + 1;
+  return h('div', { class: 'wegstueck-anzeige', id: 'wegstueck', 'aria-label': `Wegstück: Aufgabe ${nummer} von ${L.WEGSTUECK_AUFGABEN}` },
+    h('span', {}, `Aufgabe ${nummer} von ${L.WEGSTUECK_AUFGABEN}`),
+    h('span', { class: 'wegpunkte' }, Array.from({ length: L.WEGSTUECK_AUFGABEN }, (_, i) => h('i', { class: i < punkte.length
+      ? `${punkte[i] ? 'voll' : 'daneben'}${fertig && i === punkte.length - 1 ? ' neu' : ''}` : !fertig && i === punkte.length ? 'jetzt' : '' }))));
+}
+// Rückblick, Einstiegscheck und Heftcheck sind eigene Päckchen und zählen nicht zum Wegstück (ADR 0016).
+const zaehltFuerWegstueck = (a) => !a.rueckblick && !a.einstieg && !a.heftNachloesen;
 
 function kopf() {
   const anzahl = L.siegel(z.stand), r = L.rang(anzahl);
@@ -181,7 +243,7 @@ async function melde({ code, klasse, pin }, ablage) {
 }
 function maleStatus() {
   const alt = document.getElementById('speicherstatus');
-  if (alt) alt.replaceWith(kopf().querySelector('#speicherstatus'));
+  if (alt) alt.replaceWith((imFokus() ? fokusKopf() : kopf()).querySelector('#speicherstatus'));
 }
 
 // Alle 10 Sekunden: Vorgaben der Lehrkraft neu lesen und die Warteschlange prüfen.
@@ -191,7 +253,7 @@ async function takt() {
     // Eine fehlende oder veränderte Klassendatei ändert nichts: Es gilt weiter die letzte gültige.
     if (gelesen.status === 'ok' || gelesen.status === 'ungeprueft') { z.klassendatei = gelesen.daten; z.klassendateiGemeldet = false; }
     else if (!z.klassendateiGemeldet) { z.klassendateiGemeldet = true; notiere('problem', gelesen.status === 'fehlt' ? 'Klassendatei fehlt im Klassenordner' : 'Klassendatei ungültig (Unterschrift passt nicht), es gilt die zuletzt gültige'); }
-    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, [...e.einstiegPflicht]]);
+    const bild = (e) => JSON.stringify([...e.offeneKapitel, e.spielpause, e.zielniveau, e.hilfeAntwort, e.nachricht, [...e.gesperrteMeilensteine], e.expedition, e.sicherheitsangabe, e.ton, e.rast, [...e.einstiegPflicht]]);
     const vorher = bild(z.einst);
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
@@ -487,6 +549,11 @@ function starteAufgabe(lernzielId, niveau) {
   // Die Kronenwahl beim ersten Start eines Meilensteins ist die Selbsteinschätzung.
   const ms = z.index.meilensteinVon.get(lernzielId);
   if (ms) L.merkeWahl(z.stand, z.index, ms, niveau, jetzt());
+  // Seitenblick (ADR 0016): ab der vierten Aufgabe eines Wegstücks einmal ein schon besiegeltes Lernziel des Kapitels.
+  if (!L.inGrundlage(z.stand, lernzielId) && L.seitenblickFaellig(z.stand)) {
+    const blick = L.waehleSeitenblick(z.index, z.stand, lernzielId, niveau);
+    if (blick) return zeigeAufgabe(blick, { seitenblick: { zurueck: lernzielId, niveau } });
+  }
   zeigeAufgabe(aufgabe);
 }
 function zeigeAufgabe(aufgabe, extra = {}) {
@@ -509,7 +576,7 @@ function aufgabenAnsicht() {
   const meilenstein = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
   const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
   // Eine F-Aufgabe beim Üben am Meilenstein gehört zur Grundlagen-Schleife, außer das Ziel des Kindes ist F (ADR 0015).
-  const grundlage = !a.rueckblick && !a.bruecke && !a.einstieg && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
+  const grundlage = !a.rueckblick && !a.bruecke && !a.einstieg && !a.seitenblick && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
   const training = !grundlage && L.NIVEAUS.indexOf(auf.niveau) < L.NIVEAUS.indexOf(z.einst.zielniveau);
   const punkte = grundlage ? (L.inGrundlage(z.stand, auf.lernziel) ? L.grundlageRichtige(z.stand, auf.lernziel) : L.GRUNDLAGE_RICHTIGE) : st.erreicht ? 3 : st.fortschritt;
   const fertig = Boolean(a.ergebnis);
@@ -522,18 +589,15 @@ function aufgabenAnsicht() {
       h('button', { class: 'haupt hell', id: 'pruefen-unsicher', type: 'submit', 'data-sicher': 'nein' }, 'Prüfen – ich bin unsicher'))
       : !fertig && h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'));
   return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
-    h('p', { class: 'pfad' }, a.rueckblick
-      ? h('button', { class: 'schlicht', onclick: () => zeige({ name: 'schlossgarten' }) }, '← Schlossgarten')
-      : a.einstieg ? h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: a.einstieg }) }, '← Regionskarte')
-      : h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, `← ${meilenstein.titel}`)),
     h('div', { class: 'karte' },
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
+        a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
         a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
           : grundlage ? h('span', { class: 'marke grundlagenmarke', id: 'grundlage-marke' }, 'Grundlage')
           : h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
-        !a.einstieg && training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
+        !a.einstieg && !a.seitenblick && training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
         !a.einstieg && h('span', { class: 'punkte', title: grundlage ? `${punkte} von ${L.GRUNDLAGE_RICHTIGE} Aufgaben zur Grundlage` : `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < punkte ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
@@ -541,6 +605,7 @@ function aufgabenAnsicht() {
       formular,
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
+      !fertig && !a.einstieg && kaertchen(a),
       fertig && ergebnisTafel(a, kapitelId, meilenstein)),
     !fertig && !a.einstieg && hilfen(a, meilenstein));
 }
@@ -640,7 +705,7 @@ function pruefe(formular, sicher = null) {
     // Nach dem ersten Fehlversuch geht der Tipp von selbst auf. Er kostet nichts (ADR 0010). Auf E bleibt er zu (ADR 0015).
     const tippNeu = a.hilfen === 0 && L.tippVonSelbst(auf);
     if (tippNeu) a.hilfen = 1;
-    a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'}${tippNeu ? ' Rechts liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
+    a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'}${tippNeu ? ' Unten liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
     // Sicher, aber falsch: Hier lohnt genaues Hinschauen besonders (Hyperkorrektur, ADR 0014).
     if (a.sicher === true) {
       const typisch = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.beschreibung;
@@ -651,12 +716,15 @@ function pruefe(formular, sicher = null) {
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
     hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000), ...(a.sicher != null && { sicher: a.sicher }) },
-  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick), bruecke: Boolean(a.bruecke) });
+  z.einst.zielniveau, jetzt(), z.index, { rueckblick: Boolean(a.rueckblick), bruecke: Boolean(a.bruecke), seitenblick: Boolean(a.seitenblick) });
   if (a.rueckblick) buchung.rueckblick = L.trageRueckblickEin(z.stand, auf, ergebnis.richtig, jetzt());
   if (a.bruecke) buchung.bruecke = L.trageBrueckeEin(z.stand, auf, ergebnis.richtig, jetzt());
+  if (zaehltFuerWegstueck(a)) buchung.wegstueck = L.trageWegstueckEin(z.stand, auf, { richtig: ergebnis.richtig, muenzen: buchung.muenzen, seitenblick: Boolean(a.seitenblick) }, jetzt());
+  if (ergebnis.richtig && z.einst.ton) klinge(buchung.wegstueck?.fertig || buchung.neuesLernziel ? 'gross' : 'klein');
   buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
   a.ergebnis = { ...buchung, richtig: ergebnis.richtig };
+  a.seit = Date.now();
   geaendert();
   z.dienst.sofort();
   male();
@@ -681,51 +749,131 @@ function loesungstext(auf) {
   }
 }
 
+// Nach dem Ergebnis: Ist gerade ein Wegstück fertig geworden, kommt erst sein Abschluss (ADR 0016).
+function danach(a, fortsetzung) {
+  return bereit(() => {
+    const w = a.ergebnis?.wegstueck;
+    if (!w?.fertig) return fortsetzung();
+    const kapitel = L.kapitelVon(a.aufgabe.lernziel);
+    zeige({ name: 'wegstueck', bilanz: w, fortsetzung, kapitel, rastBis: w.rast && z.einst.rast ? Date.now() + L.RAST_SEKUNDEN * 1000 : null });
+  });
+}
+// Falsch nach zwei Versuchen (ADR 0016): Lösung, dazu Beispiel und Lösungsschritt aufgedeckt. Gibt es beide nicht, der Tipp.
+function soGehtEs(auf) {
+  const felder = ['beispiel', 'loesungsschritt'].filter((f) => auf.hilfen?.[f]);
+  const zeigen = felder.length ? felder : ['tipp'].filter((f) => auf.hilfen?.[f]);
+  if (!zeigen.length) return null;
+  const titel = { tipp: 'Tipp', beispiel: 'Beispiel', loesungsschritt: 'Lösungsschritt' };
+  return h('div', { class: 'so-geht-es', id: 'so-geht-es' }, zeigen.map((f) => h('div', { class: 'kaertchen-offen' }, h('b', {}, titel[f]), h('p', {}, auf.hilfen[f]))));
+}
+// Erste Zeile des Ergebnisses: richtig mit Münzen oder falsch mit Lösung.
+function urteilZeile(e, auf, nachsatz) {
+  return e.richtig
+    ? h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'))
+    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd())];
+}
+// Siegel, Krone und Meilenstein bekommen einen kurzen eigenen Moment, immer nur der wichtigste.
+function moment(e, meilenstein) {
+  const gemeistert = e.neuesLernziel && L.milestoneStatus(z.index, z.stand, meilenstein) === 'gemeistert';
+  const satz = e.einschaetzung ? `Du hattest um ${L.KRONEN[e.einschaetzung.gewaehlt]} gespielt. Geschafft hast du ${L.KRONEN[e.einschaetzung.krone]}.` : null;
+  if (gemeistert || e.neueKrone) {
+    const n = e.neueKrone?.niveau ?? L.krone(z.index, z.stand, meilenstein);
+    return h('div', { class: 'moment', id: e.neueKrone ? 'neue-krone' : 'meilenstein-gemeistert' }, kroneBild(n, 48),
+      h('div', {},
+        h('b', {}, gemeistert ? `Meilenstein „${meilenstein.titel}“ gemeistert!` : `${e.neueKrone.vorher ? 'Krone aufgewertet' : 'Neue Krone'}: ${L.KRONEN[n]}!`),
+        h('p', {}, gemeistert ? (e.neueKrone ? `Deine Krone: ${L.KRONEN[n]}.` : 'Alle Lernziele haben ihr Siegel.')
+          : L.unterZiel(n, z.einst.zielniveau) ? `Am Meilenstein „${meilenstein.titel}“. Für den Meilenstein brauchst du ${L.KRONEN[z.einst.zielniveau]}.` : `Am Meilenstein „${meilenstein.titel}“.`),
+        satz && h('p', { class: 'klein', id: 'einschaetzung' }, satz)));
+  }
+  if (e.neuesLernziel) return h('div', { class: 'moment', id: 'neues-siegel' }, siegel(48), h('div', {}, h('b', {}, 'Lernziel erreicht!'), h('p', {}, 'Du bekommst ein Siegel.')));
+  return null;
+}
 function ergebnisTafel(a, kapitelId, meilenstein) {
   if (a.rueckblick) return rueckblickErgebnis(a);
   if (a.einstieg) return einstiegErgebnis(a);
   if (a.bruecke) return brueckeErgebnis(a, meilenstein);
+  if (a.seitenblick) return seitenblickErgebnis(a, meilenstein);
   const e = a.ergebnis, auf = a.aufgabe;
   const niveau = L.arbeitsniveau(z.stand, kapitelId, z.einst.zielniveau);
   // In der Grundlagen-Schleife gibt es weder Kronenwechsel noch Brücke: Der Weg zurück ist schon festgelegt.
   const schleife = L.inGrundlage(z.stand, auf.lernziel);
   const vorschlag = schleife ? null : L.niveauVorschlag(z.stand, kapitelId, niveau, z.einst.zielniveau);
-  const gemeistert = L.milestoneStatus(z.index, z.stand, meilenstein) === 'gemeistert';
   const weiter = (n = niveau) => {
     const fertig = !schleife && (z.stand.lernziele[auf.lernziel] || L.lernzielStand(z.stand, auf.lernziel, n, z.index).erreicht);
     const lz = fertig ? L.naechstesLernziel(z.index, z.stand, meilenstein, n).id : auf.lernziel;
     starteAufgabe(lz, n);
   };
   const ziel = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)];
-  const bruecke = !schleife && !z.stand.lernziele[auf.lernziel] && brueckeAngebot(auf.lernziel);
+  // Kronenvorschlag und Brücke kommen nacheinander, nie zugleich (ADR 0016).
+  const bruecke = !vorschlag && !schleife && !z.stand.lernziele[auf.lernziel] && brueckeAngebot(auf.lernziel);
+  // Zweite Zeile: was sich jetzt ändert (Grundlage), sonst der Heftcode.
+  const zweite = e.grundlage?.art === 'beginnt' ? h('p', { class: 'grundlage', id: 'grundlage-beginnt' }, h('b', {}, 'Wir üben erst die Grundlage. '), `Die nächsten Aufgaben sind leichter. Nach ${L.GRUNDLAGE_RICHTIGE} richtigen Aufgaben geht es hier weiter.`)
+    : e.grundlage?.art === 'endet' ? h('p', { class: 'grundlage', id: 'grundlage-endet' }, h('b', {}, 'Jetzt klappt auch der nächste Schritt. '), `Du spielst wieder um ${L.KRONEN[niveau]}.`)
+      : heftHinweis(e);
   return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
-    h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
-    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), e.grundlage?.art === 'beginnt' ? '. Schau sie dir in Ruhe an.' : '. Schau sie dir in Ruhe an. Gleich kommt eine ähnliche Aufgabe, bei der du es noch einmal versuchen kannst.'),
-    e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen',
-      e.training && ` (unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger)`),
-    e.richtig && auf.afb === 3 && e.muenzen > 1 && h('p', { class: 'klein' }, 'Knobelaufgabe: Dafür gibt es die Hälfte mehr Münzen.'),
-    heftHinweis(e),
-    e.neuesLernziel && h('p', { class: 'lohn neu' }, siegel(30), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst ein Siegel.'),
+    urteilZeile(e, auf, e.grundlage?.art === 'beginnt' ? null : 'Gleich kommt eine ähnliche Aufgabe.'),
+    zweite,
     e.anspruchFehlt && h('p', { class: 'klein', id: 'anspruch' }, 'Für das Siegel fehlt noch eine Aufgabe, bei der du mehr als nur rechnen musst.'),
-    e.neueKrone && h('p', { class: 'lohn neu', id: 'neue-krone' }, kroneBild(e.neueKrone.niveau, 32),
-      h('b', {}, `${e.neueKrone.vorher ? 'Krone aufgewertet' : 'Neue Krone'}: ${L.KRONEN[e.neueKrone.niveau]}!`), ` Am Meilenstein „${meilenstein.titel}“.`),
-    e.einschaetzung && h('p', { class: 'klein', id: 'einschaetzung' }, `Du hattest um ${L.KRONEN[e.einschaetzung.gewaehlt]} gespielt. Geschafft hast du ${L.KRONEN[e.einschaetzung.krone]}.`),
-    e.neueKrone && L.unterZiel(e.neueKrone.niveau, z.einst.zielniveau) && h('p', { class: 'klein' }, `Für den Meilenstein brauchst du ${L.KRONEN[z.einst.zielniveau]}.`),
-    e.neuesLernziel && gemeistert && h('p', { class: 'lohn neu' }, h('b', {}, `Meilenstein „${meilenstein.titel}“ gemeistert!`)),
-    e.grundlage?.art === 'beginnt' && h('p', { class: 'grundlage', id: 'grundlage-beginnt' }, h('b', {}, 'Wir üben erst die Grundlage. '), `Die nächsten Aufgaben sind leichter. Nach ${L.GRUNDLAGE_RICHTIGE} richtigen Aufgaben geht es hier weiter.`),
-    e.grundlage?.art === 'endet' && h('p', { class: 'grundlage', id: 'grundlage-endet' }, h('b', {}, 'Jetzt klappt auch der nächste Schritt. '), `Du spielst wieder um ${L.KRONEN[niveau]}.`),
+    !e.richtig && soGehtEs(auf),
+    moment(e, meilenstein),
     vorschlag && h('div', { class: 'vorschlag' },
       h('p', {}, vorschlag === 'hoch'
         ? `Das läuft richtig gut. Möchtest du um ${L.KRONEN[ziel]} spielen? Dort sind die Aufgaben anspruchsvoller und bringen mehr Münzen.`
         : `Diese Aufgaben sind gerade ganz schön schwer. Möchtest du um ${L.KRONEN[ziel]} spielen und dort Sicherheit sammeln?`),
-      h('button', { class: 'haupt', id: 'krone-wechseln', onclick: () => { L.setzeNiveau(z.stand, kapitelId, ziel); geaendert(); weiter(ziel); } }, kroneBild(ziel, 20), ` Um ${L.KRONEN[ziel]} spielen`),
-      h('button', { class: 'schlicht', onclick: () => { L.lehneVorschlagAb(z.stand, kapitelId); geaendert(); weiter(); } }, `Bei ${L.KRONEN[niveau]} bleiben`)),
+      h('button', { class: 'haupt', id: 'krone-wechseln', onclick: danach(a, () => { L.setzeNiveau(z.stand, kapitelId, ziel); geaendert(); weiter(ziel); }) }, kroneBild(ziel, 20), ` Um ${L.KRONEN[ziel]} spielen`),
+      h('button', { class: 'schlicht', onclick: danach(a, () => { L.lehneVorschlagAb(z.stand, kapitelId); geaendert(); weiter(); }) }, `Bei ${L.KRONEN[niveau]} bleiben`)),
     bruecke && h('div', { class: 'vorschlag bruecke', id: 'bruecke-angebot' },
       h('p', {}, h('b', {}, 'Wie wäre es mit einer Brücke? '), `Für „${lernzielText(auf.lernziel)}“ hilft es, zuerst „${lernzielText(bruecke.zu)}“ zu festigen. Das sind ${L.BRUECKE_AUFGABEN} kurze Aufgaben um ${L.KRONEN[L.brueckenNiveau(z.einst.zielniveau)]}, danach geht es hier weiter.`),
-      h('button', { class: 'haupt', id: 'bruecke-start', onclick: () => starteBruecke(bruecke) }, 'Brücke gehen'),
+      h('button', { class: 'haupt', id: 'bruecke-start', onclick: danach(a, () => starteBruecke(bruecke)) }, 'Brücke gehen'),
       h('button', { class: 'schlicht', id: 'bruecke-nein', onclick: () => { z.brueckeAbgelehnt.add(auf.lernziel); male(); } }, 'Nein danke')),
-    !vorschlag && h('button', { class: 'haupt', id: 'weiter', onclick: () => weiter() }, 'Nächste Aufgabe'),
-    h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte'));
+    !vorschlag && !bruecke && h('div', { class: 'knoepfe' },
+      h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => weiter()) }, 'Nächste Aufgabe'),
+      h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte')),
+    (vorschlag || bruecke) && h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: kapitelId, milestone: meilenstein.id }) }, 'Zur Regionskarte'));
+}
+// Seitenblick: kurze Rückmeldung, dann zurück zum Lernziel, an dem der Schüler gerade arbeitet.
+function seitenblickErgebnis(a, meilenstein) {
+  const e = a.ergebnis, auf = a.aufgabe, { zurueck, niveau } = a.seitenblick;
+  return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
+    urteilZeile(e, auf, 'Dein Siegel behältst du.'),
+    heftHinweis(e),
+    !e.richtig && soGehtEs(auf),
+    h('div', { class: 'knoepfe' },
+      h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => starteAufgabe(zurueck, niveau)) }, 'Nächste Aufgabe'),
+      h('button', { class: 'schlicht', onclick: () => zeige({ name: 'region', kapitel: L.kapitelVon(auf.lernziel), milestone: meilenstein.id }) }, 'Zur Regionskarte')));
+}
+
+// ---------- Wegstück (ADR 0016) ----------
+// Abschluss nach fünf Aufgaben: Punkte, Münzen, weiter. Nach jedem vierten Wegstück des Tages eine Rast, überspringbar.
+let rastUhr = null;
+function wegstueckAnsicht() {
+  const a = z.ansicht, b = a.bilanz;
+  clearInterval(rastUhr);
+  const rest = () => Math.max(0, Math.ceil((a.rastBis - Date.now()) / 1000));
+  const rast = a.rastBis && !a.rastVorbei;
+  const merke = (wie) => { const w = z.stand.wegstuecke?.at(-1); if (w && !w.rast) { w.rast = wie; geaendert(); z.dienst.sofort(); } };
+  let rastKarte = null;
+  if (rast) {
+    const uhr = h('b', { class: 'uhr', id: 'rast-uhr' }, `${rest()} s`);
+    rastUhr = setInterval(() => {
+      uhr.textContent = `${rest()} s`;
+      if (rest() === 0) { clearInterval(rastUhr); a.rastVorbei = true; merke('gemacht'); male(); }
+    }, 250);
+    rastKarte = h('div', { class: 'rast', id: 'rast' }, sanduhr(),
+      h('div', {}, h('b', {}, 'Zeit für eine Rast.'), h('p', {}, 'Schau eine Minute aus dem Fenster in die Ferne, streck dich und atme tief durch.'), h('p', {}, 'Noch ', uhr)));
+  }
+  return h('section', { class: 'karte wegstueck-ende', id: 'wegstueck-ende' },
+    h('span', { class: 'klein' }, 'Wegstück geschafft'),
+    h('h1', {}, `${b.richtig} von ${b.gesamt} richtig`),
+    h('div', { class: 'wegpunkte gross', 'aria-hidden': 'true' }, b.punkte.map((r) => h('i', { class: r ? 'voll' : 'daneben' }))),
+    b.muenzen > 0 && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${b.muenzen}`), ' Münzen in diesem Wegstück'),
+    rastKarte,
+    h('div', { class: 'knoepfe' },
+      h('button', { class: 'haupt', id: 'weiter', onclick: bereit(() => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); a.fortsetzung(); }) }, rast ? 'Rast überspringen' : 'Nächstes Wegstück'),
+      h('button', { class: 'schlicht', onclick: () => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); zeige({ name: 'region', kapitel: a.kapitel }); } }, 'Zur Regionskarte')));
+}
+function sanduhr() {
+  return h('span', { class: 'sanduhr', 'aria-hidden': 'true' }, '⌛');
 }
 
 // „Rückblick 2 von 4“: Nach der letzten Aufgabe ist der laufende Rückblick schon abgeschlossen.
@@ -740,15 +888,14 @@ function rueckblickErgebnis(a) {
   const e = a.ergebnis, auf = a.aufgabe, r = e.rueckblick;
   const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
   return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
-    h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
-    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. Dein Siegel behältst du. „${lernziel?.text ?? ''}“ kommt beim nächsten Rückblick noch einmal dran.`),
-    e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'),
+    urteilZeile(e, auf, `Dein Siegel behältst du. „${lernziel?.text ?? ''}“ kommt beim nächsten Rückblick noch einmal dran.`),
     heftHinweis(e),
+    !e.richtig && soGehtEs(auf),
     r?.fertig && h('p', { class: 'lohn neu', id: 'rueckblick-fertig' }, h('b', {}, 'Rückblick geschafft!'), ` ${r.richtig} von ${r.gesamt} richtig.`,
       z.einst.expedition && !L.expeditionsStand([z.stand], z.einst.expedition, jetzt()).vorbei ? ' Das bringt der Klasse ein Expeditionszeichen.' : ''),
     r && !r.fertig
-      ? h('button', { class: 'haupt', id: 'weiter', onclick: starteRueckblick }, 'Nächste Aufgabe im Rückblick')
-      : h('button', { class: 'haupt', id: 'weiter', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Zum Schlossgarten'));
+      ? h('button', { class: 'haupt', id: 'weiter', onclick: bereit(starteRueckblick) }, 'Nächste Aufgabe im Rückblick')
+      : h('button', { class: 'haupt', id: 'weiter', onclick: bereit(() => zeige({ name: 'schlossgarten' })) }, 'Zum Schlossgarten'));
 }
 
 // Einstiegscheck: neutrale Rückmeldung je Aufgabe, am Ende der Kronenvorschlag.
@@ -763,7 +910,7 @@ function einstiegErgebnis(a) {
   if (!r?.fertig) {
     return h('div', { class: 'ergebnis neutral', role: 'status' },
       h('p', {}, 'Deine Antwort ist notiert. Am Ende siehst du, wie es gelaufen ist.'),
-      h('button', { class: 'haupt', id: 'weiter', onclick: () => starteEinstieg(kapitel) }, 'Nächste Aufgabe'));
+      h('button', { class: 'haupt', id: 'weiter', onclick: bereit(() => starteEinstieg(kapitel)) }, 'Nächste Aufgabe'));
   }
   const n = r.empfehlung;
   return h('div', { class: 'ergebnis neutral', role: 'status', id: 'einstieg-fertig' },
@@ -789,15 +936,13 @@ function brueckeErgebnis(a, meilenstein) {
     starteAufgabe(r.fuer, L.arbeitsniveau(z.stand, kap, z.einst.zielniveau));
   };
   return h('div', { class: `ergebnis ${e.richtig ? 'richtig' : 'falsch'}`, role: 'status' },
-    h('h2', {}, e.richtig ? 'Richtig!' : 'Das war noch nicht richtig.'),
-    !e.richtig && h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), '. Schau sie dir in Ruhe an.'),
-    e.richtig && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'),
-    heftHinweis(e),
-    e.neuesLernziel && h('p', { class: 'lohn neu' }, siegel(30), h('b', {}, 'Lernziel erreicht!'), ' Du bekommst ein Siegel.'),
-    r?.fertig && h('p', { class: 'lohn neu', id: 'bruecke-fertig' }, h('b', {}, 'Brücke geschafft!'), ` ${r.richtig} von ${r.gesamt} richtig. Jetzt zurück zu „${lernzielText(r.fuer)}“.`),
-    !r ? h('button', { class: 'haupt', id: 'weiter', onclick: () => zeige({ name: 'region', kapitel: L.kapitelVon(auf.lernziel), milestone: meilenstein.id }) }, 'Zur Regionskarte')
-      : r.fertig ? h('button', { class: 'haupt', id: 'weiter', onclick: zurueck }, 'Zurück zum Lernziel')
-        : h('button', { class: 'haupt', id: 'weiter', onclick: () => starteBruecke() }, 'Nächste Aufgabe der Brücke'));
+    urteilZeile(e, auf, 'Schau sie dir in Ruhe an.'),
+    r?.fertig ? h('p', { class: 'lohn neu', id: 'bruecke-fertig' }, h('b', {}, 'Brücke geschafft!'), ` ${r.richtig} von ${r.gesamt} richtig. Jetzt zurück zu „${lernzielText(r.fuer)}“.`) : heftHinweis(e),
+    !e.richtig && soGehtEs(auf),
+    e.neuesLernziel && h('div', { class: 'moment', id: 'neues-siegel' }, siegel(48), h('div', {}, h('b', {}, 'Lernziel erreicht!'), h('p', {}, 'Du bekommst ein Siegel.'))),
+    !r ? h('button', { class: 'haupt', id: 'weiter', onclick: bereit(() => zeige({ name: 'region', kapitel: L.kapitelVon(auf.lernziel), milestone: meilenstein.id })) }, 'Zur Regionskarte')
+      : r.fertig ? h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, zurueck) }, 'Zurück zum Lernziel')
+        : h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => starteBruecke()) }, 'Nächste Aufgabe der Brücke'));
 }
 
 // Heftcode unter jeder gelösten Aufgabe ab Gold.
@@ -828,21 +973,26 @@ function heftcheckAnsicht() {
 
 const kartenVon = (auf) => L.KARTEN.filter((feld) => auf.hilfen[feld]);
 const meilensteinVon = (auf) => z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.some((l) => l.id === auf.lernziel));
-function hilfen(a, meilenstein = meilensteinVon(a.aufgabe)) {
-  // Je Niveaustufe gibt es unterschiedlich viele Kärtchen: F und G drei, M zwei, E eines.
+// Hilfekärtchen liegen in der Aufgabenkarte unter dem Eingabefeld, dort wo gerechnet wird (ADR 0016).
+// Je Niveaustufe gibt es unterschiedlich viele Kärtchen: F und G drei, M zwei, E eines.
+function kaertchen(a) {
   const karten = [
     ['tipp', 'Tipp', 'Ein Denkanstoß. Kostet nichts.'],
     ['beispiel', 'Beispiel', 'Eine ähnliche Aufgabe, vorgerechnet. Kostet weitere Münzen.'],
     ['loesungsschritt', 'Lösungsschritt', 'Der Anfang des Rechenwegs. Danach zählt die Aufgabe nicht mehr für dein Lernziel.'],
   ].filter(([feld]) => a.aufgabe.hilfen[feld]);
+  if (!karten.length) return null;
+  // Zugedeckt zeigt sich nur das nächste Kärtchen; die übrigen stehen klein dahinter.
+  return h('div', { class: 'kaertchen', 'aria-label': 'Hilfekärtchen' }, karten.map(([feld, titel, kosten], i) => i < a.hilfen
+    ? h('div', { class: 'kaertchen-offen' }, h('b', {}, titel), h('p', {}, a.aufgabe.hilfen[feld]))
+    : h('button', { class: `kaertchen-zu${i > a.hilfen ? ' spaeter' : ''}`, type: 'button', disabled: i > a.hilfen, 'data-hilfe': feld, onclick: () => { a.hilfen++; if (z.stand.aktiv) { z.stand.aktiv.hilfen = a.hilfen; geaendert(); } maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); } },
+      h('b', {}, titel), h('span', {}, i > a.hilfen ? 'Erst das Kärtchen davor.' : kosten))));
+}
+// Seitenleiste: Wortspeicher, Merkzettel und der Hilferuf an die Lehrkraft.
+function hilfen(a, meilenstein = meilensteinVon(a.aufgabe)) {
   return h('aside', { class: 'hilfen' },
     wortspeicher(meilenstein, a),
     merkzettel(meilenstein, a),
-    h('h2', {}, 'Hilfekärtchen'),
-    h('div', { class: 'kaertchen' }, karten.map(([feld, titel, kosten], i) => i < a.hilfen
-      ? h('div', { class: 'kaertchen-offen' }, h('b', {}, titel), h('p', {}, a.aufgabe.hilfen[feld]))
-      : h('button', { class: 'kaertchen-zu', disabled: i > a.hilfen, 'data-hilfe': feld, onclick: () => { a.hilfen++; if (z.stand.aktiv) { z.stand.aktiv.hilfen = a.hilfen; geaendert(); } maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); } },
-        h('b', {}, titel), h('span', {}, i > a.hilfen ? 'Erst das Kärtchen davor aufdecken.' : kosten)))),
     !z.stand.hilferuf && h('button', { class: 'schlicht hilferuf', id: 'hilferuf', onclick: () => { L.rufeHilfe(z.stand, a.aufgabe.id, jetzt()); z.wartePlatz = null; geaendert(); z.dienst.sofort(); maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); takt(); } },
       'Ich brauche Hilfe von meiner Lehrkraft'));
 }

@@ -245,6 +245,18 @@ _Avoid_: Schwierigkeit
 Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten Meilensteine und dem nächsten Meilenstein. Sie steht oben auf der Startseite. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
+**Wegstück**:
+Ein Päckchen von fünf Aufgaben, etwa fünf Minuten Arbeit, mit „Aufgabe 3 von 5“ und einem kurzen Abschluss („Wegstück geschafft: 4 von 5“). Es gliedert eine lange Arbeitsphase in kleine, abschließbare Teile; eine Stunde hat etwa zehn bis zwölf Wegstücke.
+_Avoid_: Runde (das ist ein Knopftext), Etappe (das ist das Kapitel), Chunk, Sequenz
+
+**Seitenblick**:
+Die eine Aufgabe in einem Wegstück, die zu einem schon besiegelten Lernziel desselben Kapitels gehört statt zum laufenden. Sie bringt Münzen, zählt für kein Siegel und nimmt keines weg. Gibt es im Kapitel noch kein Siegel, entfällt sie.
+_Avoid_: Rückblick (der ist ein eigenes Päckchen, einmal am Tag), Wiederholungsaufgabe
+
+**Rast**:
+Ein Vorschlag von 60 Sekunden Pause vom Bildschirm nach jedem vierten Wegstück, mit Sanduhr, überspringbar und ohne Münzen. Die Lehrkraft schaltet sie pro Klasse ab; standardmäßig ist sie an.
+_Avoid_: Spielpause (die ist für Minispiele), Pause (allein)
+
 **Hilfekärtchen**:
 Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
@@ -321,7 +333,7 @@ _Avoid_: Klassenliste (für die Datei)
 
 ## Ergänzungen zum Lehrer-Dashboard
 
-- **Live-Status**: Einschätzung, wie es einem Schüler in der laufenden Stunde geht: Hilferuf, blockiert, beobachten, im Flow, arbeitet, inaktiv, nicht da. Blockiert ist ein Schüler nach mehreren Fehlversuchen in Folge oder wenn er lange an einer Aufgabe sitzt, auch ohne Hilferuf.
+- **Live-Status**: Einschätzung, wie es einem Schüler in der laufenden Stunde geht: Hilferuf, blockiert, lässt nach, beobachten, im Flow, arbeitet, inaktiv, nicht da. Blockiert ist ein Schüler nach mehreren Fehlversuchen in Folge oder wenn er lange an einer Aufgabe sitzt, auch ohne Hilferuf. „Lässt nach“ heißt: Die Quote richtiger Aufgaben ist über zwei Wegstücke hinweg deutlich gesunken; der Schüler selbst bekommt dazu keine Meldung.
 - **Akut-Zone**: Die Liste der Schüler, um die sich die Lehrkraft jetzt kümmern sollte: offene Hilferufe zuerst, dann blockierte Schüler. Ersetzt die frühere reine Hilfe-Warteschlange in der Anzeige; die Hilfe-Warteschlange ist ihr erster Teil.
 - **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Lehrerdaten.
 - **Impuls**: Vorschlag des Lehrer-Dashboards an die Lehrkraft, zum Beispiel ein Mini-Workshop, wenn mehrere Schüler denselben typischen Fehler machen, oder ein Hinweis auf einen Schnellläufer.

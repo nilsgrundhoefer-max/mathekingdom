@@ -355,3 +355,21 @@ test('Grundlagen-Hinweis: erst ab dem zweiten Mal, mit dem Baustein des Lernziel
   assert.deepEqual({ ...hinweise[0], baustein: undefined }, { code: '5A-BBBB', lernziel: S2, mal: 2, aktiv: false, baustein: undefined });
   assert.match(hinweise[0].baustein, /Entbündeln/);
 });
+
+test('Lässt nach: die letzten zwei Wegstücke von heute deutlich unter dem Schnitt davor (ADR 0016)', () => {
+  const tag = L.tagVon(JETZT);
+  const mit = (quoten) => ({ ...neu(), wegstuecke: quoten.map((richtig) => ({ t: JETZT, bis: JETZT, tag, richtig, gesamt: 5, muenzen: 0 })) });
+  assert.equal(A.laesstNach(mit([5, 1]), JETZT), null, 'erst ab drei Wegstücken');
+  assert.ok(A.laesstNach(mit([5, 4, 2, 2]), JETZT));
+  assert.equal(A.laesstNach(mit([5, 4, 2, 4]), JETZT), null, 'nur ein schwaches Wegstück');
+  assert.equal(A.laesstNach(mit([4, 3, 3]), JETZT), null, 'nicht deutlich genug');
+  const gestern = mit([5, 5, 1, 1]);
+  gestern.wegstuecke.forEach((w) => { w.tag = '2026-11-16'; });
+  assert.equal(A.laesstNach(gestern, JETZT), null, 'nur heute zählt');
+  // Im Live-Status: arbeitet sonst unauffällig, also „lässt nach“.
+  const stand = mit([5, 5, 2, 2]);
+  const g = aufgaben(S2, 'G');
+  L.verbuche(stand, g[0], b(), 'G', '2026-11-17T10:29:00Z');
+  stand.geaendert = '2026-11-17T10:29:30Z';
+  assert.equal(A.livestatus(stand, 'G', JETZT).status, 'laesstnach');
+});
