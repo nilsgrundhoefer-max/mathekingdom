@@ -10,6 +10,8 @@ import { beispielklasse } from './beispiel.js';
 import { NIVEAU_FARBE } from '../schueler/bilder.js';
 import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
 import * as P from '../gemeinsam/protokoll.js';
+import * as SCH from '../gemeinsam/schule.js';
+import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 
 const LEHRERDATEN = 'lehrerdaten.json';
 const CODE_DATEI = /^(\d{1,2}[A-Z]-[A-Z0-9]{4})\.json$/;
@@ -19,6 +21,8 @@ const z = {
   staende: [], unbekannt: [], warnungen: [], klassendateiText: null, aktualisiert: null, letztesBackup: null,
   ansicht: 'start', tab: 'jetzt', ls: null, schueler: null, fehler: null, backups: null, backupGewaehlt: null,
   overlay: null, sitzplanOffen: false, sitzGewaehlt: null, gesehen: new Set(), pfadKapitel: null,
+  // Mit Schulverzeichnis (ADR 0024): { schueler, lehrer, kuerzel, verzeichnis, schuljahr }. Ohne: alte Lehrerdaten in einer Datei.
+  schule: null, klasseText: null, alleCodes: [], andereOffen: [], wahl: null,
 };
 let wurzel, takt;
 
@@ -35,50 +39,49 @@ const lesbar = (text) => text.replace(/\d+\.\d+\.\w+-\w+/g, (id) => { const l = 
 const lernzieltext = (id) => A.lernzieleMitAufgaben(z.pool, z.index).find((l) => l.id === id)?.text ?? id;
 
 // ---------- Gemerkte Ordner ----------
-const db = () => new Promise((ok, nein) => {
-  const r = indexedDB.open('mathekingdom-lehrer', 1);
-  r.onupgradeneeded = () => r.result.createObjectStore('ordner');
-  r.onsuccess = () => ok(r.result); r.onerror = () => nein(r.error);
-});
-async function merke(schluessel, handle) {
-  try { const d = await db(); d.transaction('ordner', 'readwrite').objectStore('ordner').put(handle, schluessel); } catch { /* dann eben neu wählen */ }
-}
-async function erinnere(schluessel) {
-  try {
-    const d = await db();
-    return await new Promise((ok) => { const r = d.transaction('ordner').objectStore('ordner').get(schluessel); r.onsuccess = () => ok(r.result ?? null); r.onerror = () => ok(null); });
-  } catch { return null; }
-}
-async function erlaube(handle) {
-  return (await handle.queryPermission({ mode: 'readwrite' })) === 'granted' || (await handle.requestPermission({ mode: 'readwrite' })) === 'granted';
-}
+const gemerkt = gemerkteOrdner('mathekingdom-lehrer');
+const merke = (schluessel, handle) => gemerkt.merke(schluessel, handle);
+const erinnere = (schluessel) => gemerkt.hole(schluessel);
 
 // ---------- Dateien ----------
-async function speichereDaten() { await z.lehrer.schreibe(LEHRERDATEN, JSON.stringify(z.daten, null, 1)); }
+// Ohne Schulverzeichnis steht alles in den Lehrerdaten. Mit Schulverzeichnis gehören Schlüssel und Protokoll der
+// Lehrkraft (<Kürzel>/lehrer.json), Namensliste, PINs und Einstellungen der Klasse (Schuljahr/Klasse/klasse.json).
+async function speichereLehrer() {
+  if (!z.schule) return z.lehrer.schreibe(LEHRERDATEN, JSON.stringify(z.daten, null, 1));
+  const ich = await z.schule.lehrer.unterordner(z.schule.kuerzel);
+  await ich.schreibe(SCH.LEHRER_DATEI, JSON.stringify({ kuerzel: z.schule.kuerzel, schluessel: z.daten.schluessel, protokoll: z.daten.protokoll ?? [] }, null, 1));
+}
+const klasseImLehrerlaufwerk = async (klasse = z.klasse) => (await z.schule.lehrer.unterordner(z.schule.schuljahr)).unterordner(klasse);
+// Hat eine andere Lehrkraft die Klassendaten inzwischen geändert, wird die Änderung auf ihre Fassung angewandt (ADR 0024).
+async function speichereKlasse(tun) {
+  const ort = await klasseImLehrerlaufwerk();
+  if (tun) {
+    const liegt = await ort.lies(SCH.KLASSE_DATEI);
+    if (liegt && liegt !== z.klasseText) {
+      try { const frisch = JSON.parse(liegt); tun(frisch); z.daten.klassen[z.klasse] = frisch; } catch { /* halb geschrieben: unsere Fassung gilt */ }
+    }
+  }
+  const text = JSON.stringify(kl(), null, 1);
+  await ort.schreibe(SCH.KLASSE_DATEI, text);
+  z.klasseText = text;
+}
+async function speichereDaten(tun) {
+  if (!z.schule) return speichereLehrer();
+  if (z.klasse && kl()) await speichereKlasse(tun);
+}
+async function ladeKlasseNeu() {
+  const t = await (await klasseImLehrerlaufwerk()).lies(SCH.KLASSE_DATEI);
+  if (t && t !== z.klasseText) { try { z.daten.klassen[z.klasse] = JSON.parse(t); z.klasseText = t; } catch { /* beim nächsten Takt */ } }
+}
+const klassenSchluessel = () => [...SCH.schluesselDerKlasse(z.schule.verzeichnis, z.schule.schuljahr, z.klasse), z.daten.schluessel.oeffentlich];
 // Betriebsprotokoll der Lehrkraft in den Lehrerdaten (ADR 0013). Ein Fehler beim Speichern darf hier nichts aufhalten.
 function notiere(art, text, klasse) {
   P.trage((z.daten.protokoll ??= []), { t: jetzt(), art, text, ...(klasse ? { klasse } : {}) }, P.MAX_LEHRER);
-  return speichereDaten().catch(() => {});
-}
-// Jeder Schüler der Namensliste hat eine PIN. Der langsame Prüfwert wird einmal berechnet und bei den Lehrerdaten gemerkt.
-async function sorgePins() {
-  const pins = (kl().pins ??= {});
-  let neu = false;
-  for (const code of Object.keys(pins)) if (!kl().namen[code]) { delete pins[code]; neu = true; }
-  for (const code of Object.keys(kl().namen)) {
-    if (pins[code]?.wert) continue;
-    const pin = K.neuePin();
-    pins[code] = { pin, ...(await K.pinEintrag(pin)) };
-    neu = true;
-  }
-  if (neu) await speichereDaten();
+  return speichereLehrer().catch(() => {});
 }
 async function schreibeKlassendatei() {
-  const e = kl().einst;
-  await sorgePins();
-  const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
-  const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, tore: e.tore, toreEinzeln: e.toreEinzeln ?? {}, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, ehrentafel: e.ehrentafel !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
+  if (await SCH.sorgePins(kl())) await speichereDaten();
+  const text = await K.unterschreibe(SCH.klassendateiInhalt(z.klasse, kl(), jetzt()), z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -92,7 +95,7 @@ function inSchlange(tun) {
 }
 function aendere(tun) {
   tun(kl());
-  schlange = schlange.then(async () => { await speichereDaten(); await schreibeKlassendatei(); male(); })
+  schlange = schlange.then(async () => { await speichereDaten(tun); await schreibeKlassendatei(); male(); })
     .catch((e) => { z.fehler = `Speichern fehlgeschlagen: ${e.message}`; notiere('problem', `Speichern der Klassendatei oder Lehrerdaten fehlgeschlagen: ${e.message}`, z.klasse); male(); });
   return schlange;
 }
@@ -110,6 +113,51 @@ async function oeffneLehrer(ablage) {
   if (window.MK_LEHRER_PAKET && !ablage.demo) await ablage.schreibe(`${S.SYSTEMORDNER}/lehrer-paket.js`, window.MK_LEHRER_PAKET)
     .catch((e) => notiere('problem', `Kopie des Dashboards aufs Lehrerlaufwerk fehlgeschlagen: ${e.message}`));
   z.ansicht = 'klassen'; z.fehler = null; male();
+}
+
+// Mit Schulverzeichnis (ADR 0024): Mathekingdom-Ordner auf beiden Tauschlaufwerken, Kürzel aus der Startdatei.
+async function oeffneSchule(schueler, lehrer, kuerzel) {
+  const v = await SCH.ladeVerzeichnis(schueler, window.MK_SCHLUESSEL);
+  if (v.status === 'fehlt') throw new Error('Im Mathekingdom-Ordner auf dem Schülertauschlaufwerk fehlt das Schulverzeichnis. Hat der Administrator die Schule schon eingerichtet?');
+  if (v.status === 'ungueltig') throw new Error('Das Schulverzeichnis auf dem Schülertauschlaufwerk ist ungültig: Die Unterschrift des Administrators passt nicht.');
+  if (!v.daten.lehrkraefte?.[kuerzel]) throw new Error(`Das Kürzel ${kuerzel} ist im Schulverzeichnis nicht angelegt. Frag deinen Administrator.`);
+  const ichOrdner = await lehrer.ordner(kuerzel);
+  const text = ichOrdner && await ichOrdner.lies(SCH.LEHRER_DATEI);
+  if (!text) throw new Error(`Auf dem Lehrertauschlaufwerk fehlt der Ordner „${kuerzel}“ mit deinem Schlüssel. Hast du dort den Ordner „Mathekingdom“ gewählt?`);
+  const ich = JSON.parse(text);
+  Object.assign(z, { schule: { schueler, lehrer, kuerzel, verzeichnis: v.daten, schuljahr: v.daten.schuljahr }, lehrer, daten: { version: 2, schluessel: ich.schluessel, protokoll: ich.protokoll ?? [], klassen: {} } });
+  const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND, browser: P.browserName(navigator.userAgent) });
+  await notiere(e.art, e.text);
+  // Kopien für Tage ohne Internet: Lehrer-Dashboard aufs Lehrer-, Schüler-Dashboard aufs Schülertauschlaufwerk.
+  if (window.MK_LEHRER_PAKET) await lehrer.schreibe(`${S.SYSTEMORDNER}/lehrer.js`, window.MK_LEHRER_PAKET)
+    .catch((f) => notiere('problem', `Kopie des Dashboards aufs Lehrertauschlaufwerk fehlgeschlagen: ${f.message}`));
+  if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/schueler.js`, window.MK_SCHUELER_JS)
+    .catch((f) => notiere('problem', `Kopie des Schüler-Dashboards aufs Schülertauschlaufwerk fehlgeschlagen: ${f.message}`));
+  z.ansicht = 'klassen'; z.fehler = null; male();
+}
+async function ladeVerzeichnisNeu() {
+  const v = await SCH.ladeVerzeichnis(z.schule.schueler, window.MK_SCHLUESSEL);
+  if (v.daten && v.status !== 'ungueltig') Object.assign(z.schule, { verzeichnis: v.daten, schuljahr: v.daten.schuljahr });
+}
+// Alle Codes des Schuljahrs: Der hintere Teil eines neuen Codes soll schulweit einmalig sein.
+async function alleCodesImJahr() {
+  const jahr = await z.schule.lehrer.ordner(z.schule.schuljahr);
+  if (!jahr) return [];
+  const codes = [];
+  for (const k of await jahr.ordnernamen()) {
+    const t = await (await jahr.ordner(k))?.lies(SCH.KLASSE_DATEI).catch(() => null);
+    try { codes.push(...Object.keys(JSON.parse(t)?.namen ?? {})); } catch { /* keine Klassendaten */ }
+  }
+  return codes;
+}
+async function oeffneSchulklasse(klasse) {
+  await ladeVerzeichnisNeu();
+  const ordner = await (await z.schule.schueler.unterordner(z.schule.schuljahr)).unterordner(klasse);
+  z.klasse = null; // erst nach dem Laden der Klassendaten wieder schreiben
+  const text = await (await klasseImLehrerlaufwerk(klasse)).lies(SCH.KLASSE_DATEI);
+  if (text) { z.daten.klassen = { [klasse]: JSON.parse(text) }; z.klasseText = text; } else { z.daten.klassen = {}; z.klasseText = null; }
+  Object.assign(z, { alleCodes: await alleCodesImJahr(), andereOffen: [], anwesendGeschrieben: 0 });
+  await oeffneKlasse(klasse, ordner);
 }
 
 async function oeffneKlasse(klasse, ablage) {
@@ -138,11 +186,11 @@ async function oeffneKlasse(klasse, ablage) {
   z.tab = !Object.keys(kl().namen).length ? 'verwaltung' : A.jemandAktiv(z.staende, jetzt()) ? 'jetzt' : 'lernstand';
   clearInterval(takt);
   const frisch = async () => {
-    const vorher = z.warnungen.length;
+    const vorher = z.warnungen.length, vorherOffen = z.andereOffen.join();
     await lade();
     const fokus = document.activeElement?.tagName;
     // Eine neue Warnung wird sofort gezeigt. Sonst nur neu zeichnen, wo es nicht beim Tippen stört.
-    if (z.warnungen.length > vorher || (['jetzt', 'lernstand', 'aufgaben'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open], details.sonderauftrag[open]'))) male();
+    if (z.warnungen.length > vorher || z.andereOffen.join() !== vorherOffen || (['jetzt', 'lernstand', 'aufgaben'].includes(z.tab) && !['SELECT', 'INPUT', 'TEXTAREA'].includes(fokus) && !document.querySelector('details.nachricht[open], details.sonderauftrag[open]'))) male();
   };
   // Dauert das Lesen im Netz länger als 5 Sekunden, wird der nächste Durchgang ausgelassen statt doppelt gestartet.
   let laeuft = false;
@@ -167,6 +215,7 @@ async function ladePool(ablage, stufe) {
 }
 
 async function lade() {
+  if (z.schule) { await inSchlange(ladeKlasseNeu); await anwesend().catch(() => {}); }
   const staende = [], unbekannt = [];
   for (const datei of await z.ordner.liste()) {
     const m = datei.match(CODE_DATEI);
@@ -186,14 +235,32 @@ async function lade() {
   }
 }
 
+// Wer hat die Klasse gerade noch offen? Jedes Dashboard hinterlässt alle halbe Minute eine kleine Datei (ADR 0024).
+async function anwesend() {
+  const ort = await klasseImLehrerlaufwerk();
+  if (Date.now() - (z.anwesendGeschrieben ?? 0) > 30000) { await ort.schreibe(`offen-${z.schule.kuerzel}.json`, JSON.stringify({ t: jetzt() })); z.anwesendGeschrieben = Date.now(); }
+  const andere = [];
+  for (const datei of await ort.liste()) {
+    const m = datei.match(/^offen-(.+)\.json$/);
+    if (!m || m[1] === z.schule.kuerzel) continue;
+    try { if (Date.now() - new Date(JSON.parse(await ort.lies(datei)).t) < 90000) andere.push(m[1]); } catch { /* egal */ }
+  }
+  z.andereOffen = andere.sort();
+}
+
 // Weicht die Klassendatei im Ordner von der zuletzt geschriebenen ab, wird sie wiederhergestellt. Gewarnt wird nur,
 // wenn sie fehlt oder ihre Unterschrift nicht passt. Trägt sie die eigene Unterschrift, stammt sie von einem
 // Lehrer-Dashboard: bei älterem Stand ein Überbleibsel, bei neuerem ein zweites geöffnetes Dashboard.
 async function pruefeKlassendatei() {
   const liegt = await z.ordner.lies(S.KLASSENDATEI);
+  let liegtNeu = false;
   if (z.klassendateiText && liegt !== z.klassendateiText) {
-    const echt = liegt ? await K.pruefeUnterschrift(liegt, z.daten.schluessel.oeffentlich) : null;
-    if (!echt) {
+    const echt = !liegt ? null : z.schule ? await SCH.pruefeMitSchluesseln(liegt, klassenSchluessel()) : await K.pruefeUnterschrift(liegt, z.daten.schluessel.oeffentlich);
+    if (echt && z.schule) {
+      // Eine andere Lehrkraft der Klasse (oder der Administrator) hat geschrieben. Ihre Fassung gilt, die Klassendaten
+      // sind eben schon neu gelesen. Nur eine ältere Fassung (wieder eingespielt) wird überschrieben.
+      if (echt.stand >= (K.liesUngeprueft(z.klassendateiText)?.stand ?? '')) { z.klassendateiText = liegt; liegtNeu = true; }
+    } else if (!echt) {
       z.warnungen.unshift(`${uhr(Date.now())} Uhr: Die Klassendatei ${liegt ? 'wurde von außen verändert' : 'fehlte'}. Sie wurde wiederhergestellt.`);
       notiere('problem', liegt ? 'Klassendatei von außen verändert (Unterschrift passt nicht), wiederhergestellt' : 'Klassendatei fehlte im Klassenordner, neu geschrieben', z.klasse);
     } else if (echt.stand > (K.liesUngeprueft(z.klassendateiText)?.stand ?? '') && !z.zweitesGemeldet) {
@@ -201,7 +268,7 @@ async function pruefeKlassendatei() {
       z.warnungen.unshift(`${uhr(Date.now())} Uhr: Ein zweites Lehrer-Dashboard schreibt in diese Klasse. Lass bitte nur eines offen, sonst überschreiben sie sich gegenseitig.`);
       notiere('problem', 'Ein zweites Lehrer-Dashboard schreibt in diese Klasse', z.klasse);
     }
-    await schreibeKlassendatei();
+    if (!liegtNeu) await schreibeKlassendatei();
   }
   // Antworten auf erledigte oder zurückgezogene Hilferufe entfernen.
   const hilfe = kl().einst.hilfe;
@@ -214,7 +281,7 @@ async function pruefeKlassendatei() {
 }
 
 // ---------- Backup ----------
-const backupOrdner = async () => (await (await z.lehrer.unterordner('backup')).unterordner(z.klasse));
+const backupOrdner = async () => (z.schule ? (await klasseImLehrerlaufwerk()).unterordner('backup') : (await z.lehrer.unterordner('backup')).unterordner(z.klasse));
 async function sichere() {
   if (!z.staende.length) return;
   const d = new Date(), zwei = (n) => String(n).padStart(2, '0');
@@ -222,7 +289,8 @@ async function sichere() {
   const alle = await backupOrdner(), ziel = await alle.unterordner(stempel);
   for (const { code, roh } of [...z.staende, ...z.unbekannt]) await ziel.schreibe(`${code}.json`, roh);
   await ziel.schreibe(S.KLASSENDATEI, z.klassendateiText ?? '');
-  await ziel.schreibe(LEHRERDATEN, JSON.stringify(z.daten));
+  if (z.schule) await ziel.schreibe(SCH.KLASSE_DATEI, JSON.stringify(kl()));
+  else await ziel.schreibe(LEHRERDATEN, JSON.stringify(z.daten));
   for (const alt of A.alteBackups(await alle.ordnernamen(), d)) await alle.entferne(alt);
   z.letztesBackup = Date.now();
   kl().letztesBackup = d.toISOString();
@@ -256,6 +324,7 @@ function drucke(...inhalt) {
   window.print();
 }
 function ladeStartdatei() {
+  if (z.schule) return ladeHerunter('Mathekingdom.html', SCH.fuelleStartdatei(window.MK_STARTDATEI_SCHUELER, { SCHLUESSEL: z.schule.verzeichnis.admin, PFAD: z.schule.verzeichnis.pfade?.schueler || null }), 'text/html');
   ladeHerunter('Mathekingdom.html', window.MK_STARTDATEI.replace('/*SCHLUESSEL*/null', JSON.stringify(z.daten.schluessel.oeffentlich)), 'text/html');
 }
 
@@ -266,6 +335,8 @@ function male() {
   wurzel.replaceChildren(...[
     h('header', { class: 'kopf' }, h('strong', {}, 'Mathekingdom'), h('span', {}, 'Lehrer-Dashboard'),
       z.lehrer?.demo && h('span', { class: 'demo' }, 'Beispieldaten: nichts wird gespeichert'),
+      z.schule && h('span', { class: 'demo' }, `${z.schule.kuerzel} · Schuljahr ${z.schule.schuljahr}`),
+      z.ansicht === 'klasse' && z.andereOffen.length > 0 && h('span', { class: 'demo', id: 'andere-offen' }, `Auch ${z.andereOffen.join(' und ')} ${z.andereOffen.length > 1 ? 'haben' : 'hat'} die Klasse gerade offen`),
       z.ansicht === 'klasse' && h('button', { class: 'schlicht hell', onclick: () => { clearInterval(takt); z.ansicht = 'klassen'; male(); } }, 'Klasse wechseln')),
     z.fehler && h('div', { class: 'meldung fehler', role: 'alert' }, z.fehler),
     h('main', {}, ansichten[z.ansicht]()),
@@ -277,6 +348,7 @@ function male() {
 }
 
 function start() {
+  if (window.MK_SCHULE) return startSchule();
   const knopf = h('button', { class: 'haupt', id: 'lehrerordner', onclick: async () => {
     try { const a = await S.waehleOrdner(); await merke('lehrer', a.handle); await oeffneLehrer(a); }
     catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } }
@@ -292,6 +364,49 @@ function start() {
     h('button', { class: 'schlicht', id: 'beispiel', onclick: starteBeispiel }, 'Mit einer Beispielklasse ausprobieren'));
 }
 
+// Erster Start mit Schulverzeichnis: Kürzel (aus der Startdatei), dann einmal die beiden Mathekingdom-Ordner.
+// Danach sind sie gemerkt, und „Weiter“ fragt höchstens nach der Erlaubnis.
+function startSchule() {
+  if (!z.wahl) {
+    z.wahl = { schueler: null, lehrer: null, geladen: false };
+    Promise.all([erinnere('schule-schueler'), erinnere('schule-lehrer')]).then(([s, l]) => { Object.assign(z.wahl, { schueler: z.wahl.schueler ?? s, lehrer: z.wahl.lehrer ?? l, geladen: true }); male(); });
+  }
+  let kuerzel = window.MK_KUERZEL ?? '';
+  try { kuerzel ||= localStorage.getItem('mk-kuerzel') ?? ''; } catch { /* egal */ }
+  const kuerzelFeld = !window.MK_KUERZEL && h('input', { id: 'kuerzel', type: 'text', value: kuerzel, size: 6, maxLength: 5, placeholder: 'z. B. NG' });
+  const LAUFWERK = { schueler: ['Schülertauschlaufwerk', window.MK_PFAD_SCHUELER], lehrer: ['Lehrertauschlaufwerk', window.MK_PFAD_LEHRER] };
+  const waehle = async (art) => {
+    try {
+      const gewaehlt = S.ordnerAblage(await window.showDirectoryPicker({ id: `mk-${art}`, mode: 'readwrite' }));
+      const { wurzel: w } = await SCH.findeSchule(gewaehlt);
+      if (!w) { z.fehler = `In diesem Ordner liegt kein eingerichtetes Mathekingdom. Wähle auf dem ${LAUFWERK[art][0]} den Ordner „Mathekingdom“${LAUFWERK[art][1] ? ` (${LAUFWERK[art][1]})` : ''}.`; return male(); }
+      z.wahl[art] = w.handle; await merke(`schule-${art}`, w.handle); z.fehler = null; male();
+    } catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } }
+  };
+  const weiter = async () => {
+    const k = (kuerzelFeld ? kuerzelFeld.value : kuerzel).trim().toUpperCase();
+    if (!SCH.istKuerzel(k)) { z.fehler = 'Gib dein Kürzel ein, zum Beispiel NG.'; return male(); }
+    try { localStorage.setItem('mk-kuerzel', k); } catch { /* egal */ }
+    for (const art of ['schueler', 'lehrer']) {
+      if (!(await erlaube(z.wahl[art]))) { z.fehler = `Bitte erlaube den Zugriff auf das ${LAUFWERK[art][0]}. Klicke dazu noch einmal auf „Weiter“.`; return male(); }
+    }
+    try { await oeffneSchule(S.ordnerAblage(z.wahl.schueler), S.ordnerAblage(z.wahl.lehrer), k); }
+    catch (e) { z.fehler = e.message; male(); }
+  };
+  const zeile = (art) => h('li', {}, h('b', {}, LAUFWERK[art][0]), ' ',
+    z.wahl[art] ? h('span', {}, `Ordner „${z.wahl[art].name}“ gemerkt `) : h('span', { class: 'klein' }, `Wähle den Ordner „Mathekingdom“${LAUFWERK[art][1] ? ` (${LAUFWERK[art][1]})` : ''}. `),
+    h('button', { class: z.wahl[art] ? 'schlicht' : 'haupt', id: `wahl-${art}`, onclick: () => waehle(art) }, z.wahl[art] ? 'Anderen Ordner wählen' : 'Ordner wählen'));
+  return h('section', { class: 'karte schmal' },
+    h('h1', {}, 'Willkommen'),
+    window.MK_KUERZEL ? h('p', {}, `Dein Kürzel: `, h('b', {}, window.MK_KUERZEL)) : h('p', {}, h('label', {}, 'Dein Kürzel ', kuerzelFeld)),
+    !S.kannOrdner() ? h('p', { class: 'fehlertext' }, 'Dieser Browser kann nicht in Ordnern speichern. Öffne die Datei bitte mit Edge oder Chrome.')
+      : h('div', {},
+        h('p', { class: 'klein' }, 'Nur beim ersten Mal: Wähle auf beiden Tauschlaufwerken den Ordner „Mathekingdom“. Danach merkt sich der Browser die Ordner.'),
+        h('ul', { class: 'liste' }, zeile('schueler'), zeile('lehrer')),
+        h('button', { class: 'haupt', id: 'weiter', disabled: !(z.wahl.schueler && z.wahl.lehrer), onclick: weiter }, 'Weiter')),
+    h('button', { class: 'schlicht', id: 'beispiel', onclick: starteBeispiel }, 'Mit einer Beispielklasse ausprobieren'));
+}
+
 async function starteBeispiel() {
   const lehrer = S.speicherAblage('lehrer'), ordner = S.speicherAblage('5a');
   await oeffneLehrer(lehrer);
@@ -302,6 +417,7 @@ async function starteBeispiel() {
 }
 
 function klassen() {
+  if (z.schule) return klassenSchule();
   const eingabe = h('input', { id: 'neue-klasse', type: 'text', placeholder: 'z. B. 5a', size: 6, maxLength: 3 });
   const oeffne = async (klasse) => {
     try {
@@ -323,6 +439,18 @@ function klassen() {
       if (!/^\d{1,2}[a-z]$/.test(k)) { z.fehler = 'Ein Klassenname sieht so aus: 5a.'; return male(); }
       oeffne(k);
     } }, 'Klassenordner wählen')));
+}
+
+function klassenSchule() {
+  const v = z.schule.verzeichnis, jahr = z.schule.schuljahr;
+  const meine = SCH.klassenDerLehrkraft(v, jahr, z.schule.kuerzel);
+  const oeffne = (k) => oeffneSchulklasse(k).catch((e) => { z.fehler = `Die Klasse ${k} ließ sich nicht öffnen: ${e.message}`; male(); });
+  return h('section', { class: 'karte schmal' },
+    h('h1', {}, 'Deine Klassen'),
+    h('p', { class: 'klein' }, `Schuljahr ${jahr}. ${v.lehrkraefte?.[z.schule.kuerzel]?.admin ? 'Als Administrator siehst du alle Klassen.' : 'Klassen legt der Administrator an und ordnet sie dir zu.'}`),
+    meine.length ? h('ul', { class: 'klassenliste' }, meine.map((k) => h('li', {}, h('b', {}, k), h('span', {}, (v.klassen[jahr][k].lehrkraefte ?? []).join(', ') || 'keine Lehrkraft'),
+      h('button', { class: 'haupt', 'data-klasse': k, onclick: () => oeffne(k) }, 'Öffnen')))) : h('p', {}, 'Dir ist in diesem Schuljahr noch keine Klasse zugeordnet.'),
+    h('button', { class: 'schlicht', id: 'verzeichnis-neu', onclick: async () => { await ladeVerzeichnisNeu(); male(); } }, 'Neu laden'));
 }
 
 // ---------- Klasse ----------
@@ -614,7 +742,7 @@ function zielWahl(code) {
 }
 function druckeEinzelbericht(code) {
   drucke(h('h1', {}, `${name(code)}, Klasse ${z.klasse}`), h('p', {}, `Diagnosebericht, Stand ${new Date().toLocaleDateString('de-DE')}`), einzelInhalt(code, true),
-    kl().notizen[code] && h('p', {}, h('b', {}, 'Notiz: '), kl().notizen[code]));
+    kl().notizen[code] && h('p', {}, h('b', {}, kl().notizVon?.[code] ? `Notiz (${kl().notizVon[code]}): ` : 'Notiz: '), kl().notizen[code]));
 }
 // Detailansicht über dem Klassenraum: Der Sitzplan bleibt dahinter stehen.
 function overlay() {
@@ -1051,8 +1179,8 @@ function lernstandLernziel(id) {
 }
 
 function lernstandSchueler(code) {
-  const notiz = h('textarea', { rows: 3, placeholder: 'Notiz, nur für dich', value: kl().notizen[code] ?? '',
-    onchange: async (ev) => { kl().notizen[code] = ev.target.value; await speichereDaten(); } });
+  const notiz = h('textarea', { rows: 3, placeholder: z.schule ? 'Notiz, für alle Lehrkräfte der Klasse' : 'Notiz, nur für dich', value: kl().notizen[code] ?? '',
+    onchange: (ev) => { const text = ev.target.value; aendere((k) => { k.notizen[code] = text; if (z.schule) (k.notizVon ??= {})[code] = z.schule.kuerzel; }); } });
   return h('div', {},
     h('section', { class: 'karte' },
       h('div', { class: 'reihe' },
@@ -1241,7 +1369,7 @@ function verwaltung() {
   const codes = Object.keys(kl().namen).sort((a, b) => name(a).localeCompare(name(b), 'de'));
   return h('div', {},
     h('section', { class: 'karte' }, h('h2', {}, 'Namensliste und Schülercodes'),
-      h('p', { class: 'klein' }, 'Die Namen und PINs bleiben in deinem Ordner auf dem Lehrerlaufwerk. Im Klassenordner stehen nur die Codes und zu jeder PIN ein Prüfwert.'),
+      h('p', { class: 'klein' }, z.schule ? 'Die Namen und PINs liegen auf dem Lehrertauschlaufwerk, für alle Lehrkräfte der Klasse. Im Klassenordner der Schüler stehen nur die Codes und zu jeder PIN ein Prüfwert.' : 'Die Namen und PINs bleiben in deinem Ordner auf dem Lehrerlaufwerk. Im Klassenordner stehen nur die Codes und zu jeder PIN ein Prüfwert.'),
       codes.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
         h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'PIN', 'Zielniveau', '', ''].map((t) => h('th', {}, t)))),
         h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, name(c)), h('td', { class: 'code' }, c), h('td', { class: 'code pin' }, kl().pins?.[c]?.pin ?? '…'),
@@ -1251,7 +1379,7 @@ function verwaltung() {
       h('h3', {}, 'Schüler hinzufügen'), liste,
       h('div', { class: 'reihe' },
         h('button', { class: 'haupt', id: 'codes', onclick: () => aendere((k) => {
-          for (const n of liste.value.split('\n').map((x) => x.trim()).filter(Boolean)) k.namen[A.erzeugeCode(z.klasse, Object.keys(k.namen))] = n;
+          for (const n of liste.value.split('\n').map((x) => x.trim()).filter(Boolean)) k.namen[A.erzeugeCode(z.klasse, [...Object.keys(k.namen), ...z.alleCodes])] = n;
         }) }, 'Codes erzeugen'),
         codes.length > 0 && h('button', { class: 'schlicht', id: 'kaertchen', onclick: () => drucke(h('div', { class: 'kaertchen' }, codes.map((c) => h('div', {}, h('small', {}, 'Mathekingdom · Dein Schülercode'), h('b', {}, c), h('small', {}, 'Deine PIN'), h('b', { class: 'pin' }, kl().pins?.[c]?.pin ?? ''), h('span', {}, name(c)))))) }, 'Code-Kärtchen drucken'))),
     toreKarte(),
@@ -1271,7 +1399,7 @@ function verwaltung() {
       h('p', { class: 'klein' }, 'Hoftitel: Die fünf Besten des Schuljahrs nach Kronen und Siegeln sehen oben in ihrer Kopfzeile einen Titel mit Symbol (Klassenkönig, Herzog, Graf, Ritter, Knappe). Die Mitschüler sehen ihn nicht. Wer gerade welchen Titel trägt, steht im Lernstand.'),
       h('label', { class: 'schalter' }, h('input', { id: 'hoftitel-schalter', type: 'checkbox', checked: kl().einst.ehrentafel !== false, onchange: (ev) => aendere((k) => { k.einst.ehrentafel = ev.target.checked; }) }), ' Hoftitel zeigen')),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
-      h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
+      h('p', {}, z.schule ? 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie ist für alle Schüler der Schule gleich und enthält den öffentlichen Schlüssel des Administrators. Normalerweise verteilt sie der Administrator.' : 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),
     h('section', { class: 'karte' }, h('h2', {}, 'Berichte'),
       h('p', { class: 'klein' }, 'Den Diagnosebericht eines einzelnen Schülers findest du auf seiner Seite im Lernstand.'),
@@ -1417,7 +1545,7 @@ function sicherung() {
   const alt = letztes && Date.now() - new Date(letztes) > 7 * 86400000;
   const gewaehlt = z.backupGewaehlt ?? z.backups[0];
   return h('section', { class: 'karte' }, h('h2', {}, 'Backup'),
-    h('p', {}, 'Solange dieses Dashboard offen ist, werden alle Speicherstände, die Klassendatei und deine Lehrerdaten stündlich in den Ordner „backup“ auf deinem Lehrerlaufwerk kopiert.'),
+    h('p', {}, z.schule ? `Solange dieses Dashboard offen ist, werden alle Speicherstände, die Klassendatei und die Klassendaten stündlich in den Ordner „backup“ der Klasse auf dem Lehrertauschlaufwerk kopiert (${z.schule.schuljahr}/${z.klasse}/backup).` : 'Solange dieses Dashboard offen ist, werden alle Speicherstände, die Klassendatei und deine Lehrerdaten stündlich in den Ordner „backup“ auf deinem Lehrerlaufwerk kopiert.'),
     h('p', { class: alt ? 'fehlertext' : '' }, letztes ? `Letztes Backup: ${new Date(letztes).toLocaleString('de-DE')}${alt ? '. Das ist älter als eine Woche.' : ''}` : 'Es gibt noch kein Backup.'),
     h('button', { class: 'haupt', id: 'backup', onclick: async () => { await sichere(); z.backups = null; male(); } }, 'Jetzt sichern'),
     z.backups.length > 0 && h('div', {}, h('h3', {}, 'Einen Speicherstand wiederherstellen'),

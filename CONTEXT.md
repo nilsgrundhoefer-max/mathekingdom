@@ -341,7 +341,7 @@ _Avoid_: Queue
 ## Speichern
 
 **Startdatei**:
-Die unveränderliche HTML-Datei, die das jeweils aktuelle Dashboard lädt: `Mathekingdom.html` auf dem Schülerlaufwerk für das Schüler-Dashboard, `Mathekingdom-Lehrer.html` auf dem Lehrer-PC für das Lehrer-Dashboard. Ohne Internet startet sie die Kopie aus dem Klassenordner bzw. vom Lehrerlaufwerk.
+Die unveränderliche HTML-Datei, die das jeweils aktuelle Dashboard lädt: `Mathekingdom.html` auf dem Schülerlaufwerk für das Schüler-Dashboard, `Mathekingdom-Lehrer.html` für das Lehrer-Dashboard einer Lehrkraft (mit ihrem Kürzel), `Mathekingdom-Admin.html` für das Administrator-Dashboard. Schüler- und Lehrer-Startdateien erstellt der Administrator; sie enthalten seinen öffentlichen Schlüssel und den Pfad des Mathekingdom-Ordners als Hinweis. Ohne Internet startet die Kopie aus dem Mathekingdom-Ordner.
 _Avoid_: Launcher, Verknüpfung
 
 **Version**:
@@ -357,16 +357,44 @@ Die Version, die die Startdateien gerade laden. Er ändert sich nur, wenn die Le
 _Avoid_: Live-Version, Produktion
 
 **Lehrerlaufwerk**:
-Das persönliche Netzlaufwerk der Lehrkraft; nur sie hat Zugriff.
+Das persönliche Netzlaufwerk einer Lehrkraft; nur sie hat Zugriff. Hier liegt der private Schlüssel des Administrators.
 _Avoid_: Lehrer-PC (für Daten)
+
+**Lehrertauschlaufwerk**:
+Das gemeinsame Netzlaufwerk aller Lehrkräfte der Schule; Schüler haben keinen Zugriff. Hier liegen Lehrerdaten und Backups im Mathekingdom-Ordner.
+_Avoid_: Lehrerlaufwerk (für das gemeinsame), Share
 
 **Schülerlaufwerk**:
 Das persönliche Netzlaufwerk eines Schülers, auf dem seine Startdatei liegt.
 _Avoid_: Home-Laufwerk
 
-**Klassenlaufwerk**:
-Das gemeinsame Netzlaufwerk einer Klasse, auf das alle Schüler der Klasse schreiben dürfen.
-_Avoid_: Tauschlaufwerk, Share
+**Schülertauschlaufwerk**:
+Das gemeinsame Netzlaufwerk aller Schüler der Schule, auf dem alle Schüler und Lehrkräfte lesen und schreiben. Hier liegen die Klassenordner im Mathekingdom-Ordner.
+_Avoid_: Klassenlaufwerk, Share
+
+**Mathekingdom-Ordner**:
+Der Ordner `Mathekingdom` auf dem Schülertauschlaufwerk und auf dem Lehrertauschlaufwerk, darin je ein Schuljahresordner und darin die Klassen. Er wird einmal gewählt und danach im Browser gemerkt.
+_Avoid_: Wurzel, Basisordner
+
+**Schuljahresordner**:
+Der Ordner eines Schuljahres im Mathekingdom-Ordner, benannt wie `2026-27`. Welches Schuljahr gilt, legt der Administrator fest.
+_Avoid_: Jahrgang
+
+**Administrator**:
+Eine Lehrkraft mit umfassenden Rechten: Sie legt Schuljahre, Klassen und Lehrkräfte (Kürzel) an, ordnet Lehrkräfte Klassen zu, wechselt das Schuljahr und erstellt die Startdateien. Sie sieht alles, auch Namen und Lernstände.
+_Avoid_: Admin (im Text für Nutzer), Schulleitung
+
+**Administrator-Dashboard**:
+Die dritte Anwendung neben Schüler- und Lehrer-Dashboard, nur für Administratoren. Mit ihr beginnt die Einrichtung.
+_Avoid_: Verwaltung (das ist ein Bereich im Lehrer-Dashboard)
+
+**Kürzel**:
+Das Lehrerkürzel, mit dem der Administrator eine Lehrkraft anlegt; jede Lehrkraft hat einen eigenen Schlüssel.
+_Avoid_: Lehrer-ID, Login
+
+**Schulverzeichnis**:
+Die vom Administrator unterschriebene Datei im Mathekingdom-Ordner des Schülertauschlaufwerks: aktuelles Schuljahr, Klassen und die Schlüssel der Lehrkräfte jeder Klasse. Die Startdatei vertraut nur dem Administrator und über das Schulverzeichnis den Lehrkräften.
+_Avoid_: Konfiguration, schule.json (im Gespräch)
 
 **Speicherstand**:
 Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernstand und sein Versuchsprotokoll enthält.
@@ -385,26 +413,30 @@ Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münze
 _Avoid_: Versetzung, Reset
 
 **Klassenordner**:
-Der Ordner einer Klasse auf dem Klassenlaufwerk, in dem die Speicherstände der Schüler liegen.
+Der Ordner einer Klasse im Schuljahresordner auf dem Schülertauschlaufwerk (z. B. `Mathekingdom/2026-27/5a`), in dem die Speicherstände der Schüler liegen.
 _Avoid_: Laufwerk, Share
 
 **Klassendatei**:
 Die Datei im Klassenordner, die nur die Lehrkraft schreibt und die Schüler lesen: Freigaben, aktuelles Kapitel, Zielniveaus, Antworten auf Hilferufe. Sie enthält keine Namen.
 _Avoid_: Konfiguration, Einstellungen
 
+**Klassendaten**:
+Die Datei einer Klasse auf dem Lehrertauschlaufwerk (`Mathekingdom/2026-27/5a/klasse.json`) mit allem, was nur Lehrkräfte sehen dürfen: Namensliste, PINs, Einstellungen, Sitzplan, Notizen. Alle Lehrkräfte der Klasse teilen sie.
+_Avoid_: Lehrer-Klassendatei, Lehrerdaten (für diese Datei)
+
 **Lehrerdaten**:
-Die Datei auf dem Lehrerlaufwerk mit allem, was nur die Lehrkraft sehen darf: Namensliste, Notizen, Diagnosen.
+Bis Version 0.20 die eine Datei der Lehrkraft mit allen Klassen (`lehrerdaten.json`); seit 0.21 nur noch Schlüssel und Betriebsprotokoll einer Lehrkraft (`Mathekingdom/<Kürzel>/lehrer.json`).
 _Avoid_: Lehrer-Klassendatei
 
 **Namensliste**:
-Die Zuordnung von Schülercodes zu echten Namen, Teil der Lehrerdaten.
+Die Zuordnung von Schülercodes zu echten Namen, Teil der Klassendaten.
 _Avoid_: Klassenliste (für die Datei)
 
 ## Ergänzungen zum Lehrer-Dashboard
 
 - **Live-Status**: Einschätzung, wie es einem Schüler in der laufenden Stunde geht: Hilferuf, blockiert, lässt nach, beobachten, im Flow, arbeitet, inaktiv, nicht da. Blockiert ist ein Schüler nach mehreren Fehlversuchen in Folge oder wenn er lange an einer Aufgabe sitzt, auch ohne Hilferuf. „Lässt nach“ heißt: Die Quote richtiger Aufgaben ist über zwei Wegstücke hinweg deutlich gesunken; der Schüler selbst bekommt dazu keine Meldung.
 - **Akut-Zone**: Die Liste der Schüler, um die sich die Lehrkraft jetzt kümmern sollte: offene Hilferufe zuerst, dann blockierte Schüler. Ersetzt die frühere reine Hilfe-Warteschlange in der Anzeige; die Hilfe-Warteschlange ist ihr erster Teil.
-- **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Lehrerdaten.
+- **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Klassendaten.
 - **Impuls**: Vorschlag des Lehrer-Dashboards an die Lehrkraft, zum Beispiel ein Mini-Workshop, wenn mehrere Schüler denselben typischen Fehler machen, oder ein Hinweis auf einen Schnellläufer.
 - **Lernbegleiter**: Ein Schüler, der ein Lernziel schon erreicht hat und einem blockierten Mitschüler helfen könnte. Nur ein Vorschlag an die Lehrkraft.
 - **Schnellläufer**: Ein Schüler, der in der laufenden Stunde einen Meilenstein gemeistert hat. Die Lehrkraft kann sein Zielniveau anheben.

@@ -1124,56 +1124,205 @@ async function weiter(seite, wahl = '#weiter') {
   await kontext.close();
 }
 
-// ---------- 7. Startdatei der Lehrkraft: online laden, Kopie ablegen, ohne Netz aus der Kopie starten ----------
+// ---------- 7. Administrator, Lehrkraft und Schüler mit gemerkten Ordnern (ADR 0024) ----------
+// Drei Ordner im privaten Browser-Dateisystem spielen die Laufwerke: S (Schülertauschlaufwerk), L (Lehrertauschlaufwerk),
+// P (persönliches Lehrerlaufwerk). Welcher Ordner im Auswahlfenster „gewählt“ wird, steht in localStorage.
 {
   const kontext = await browser.newContext({ viewport: { width: 1400, height: 900 } });
   const fehler = [];
-  const paket = readFileSync(new URL('dist/lehrer-paket.js', wurzel), 'utf8');
   let netz = true;
   await kontext.route(/github\.io/, (r) => {
-    if (netz === '404') return r.fulfill({ status: 404, body: 'nicht da', headers: { 'access-control-allow-origin': '*' } });
-    if (!netz) return r.abort();
-    if (r.request().url().endsWith('dist/lehrer-paket.js')) return r.fulfill({ body: paket, contentType: 'text/javascript', headers: { 'access-control-allow-origin': '*' } });
+    const datei = r.request().url().match(/dist\/(admin|lehrer|schueler)\.js$/)?.[1];
+    if (netz && datei) return r.fulfill({ body: readFileSync(new URL(`dist/${datei}.js`, wurzel), 'utf8'), contentType: 'text/javascript', headers: { 'access-control-allow-origin': '*' } });
+    if (netz && r.request().url().includes('aufgabenpool/klasse-5.json')) return r.fulfill({ body: JSON.stringify(pool), contentType: 'application/json', headers: { 'access-control-allow-origin': '*' } });
     return r.abort();
   });
-  await kontext.addInitScript(ordnerErsatz('lehrer'));
-  const seite = await kontext.newPage();
-  seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.goto(`${basis}dist/Mathekingdom-Lehrer.html`);
-  await seite.waitForSelector('#lehrerordner');
-  const version = readFileSync(new URL('VERSIONEN.md', wurzel), 'utf8').match(/^## (\d+\.\d+)/m)[1];
-  assert.match(await seite.innerText('#version'), new RegExp(`^Version ${version.replace('.', '\\.')} vom \\d\\d\\.\\d\\d\\.\\d{4}$`));
-  await seite.click('#version');
-  assert.ok(await seite.locator('.mk-version-tafel li').count() > 0);
-  await foto(seite, 'lehrer-version');
-  await seite.click('#lehrerordner');
-  await seite.waitForSelector('#neue-klasse');
-  const kopie = await seite.evaluate(async () => {
-    const o = await (await (await navigator.storage.getDirectory()).getDirectoryHandle('lehrer')).getDirectoryHandle('_mathekingdom');
-    return (await (await o.getFileHandle('lehrer-paket.js')).getFile()).size;
+  await kontext.addInitScript(() => {
+    window.showDirectoryPicker = async () => {
+      let o = await navigator.storage.getDirectory();
+      for (const t of (localStorage.getItem('mk-test-wahl') ?? 'X').split('/')) o = await o.getDirectoryHandle(t, { create: true });
+      return o;
+    };
   });
-  assert.equal(kopie, Buffer.byteLength(paket));
+  const lies = (seite, pfad) => seite.evaluate(async (p) => {
+    let o = await navigator.storage.getDirectory();
+    const teile = p.split('/');
+    try {
+      for (const t of teile.slice(0, -1)) o = await o.getDirectoryHandle(t);
+      return await (await (await o.getFileHandle(teile.at(-1))).getFile()).text();
+    } catch { return null; }
+  }, pfad);
+  const waehle = (seite, pfad) => seite.evaluate((p) => localStorage.setItem('mk-test-wahl', p), pfad);
+  // Startdateien, die das Administrator-Dashboard abgelegt hat, unter einer Adresse ausliefern.
+  const dateien = {};
+  await kontext.route(/\/test\//, (r) => r.fulfill({ body: dateien[r.request().url().split('/test/')[1]], contentType: 'text/html' }));
+  const d = new Date(), j = d.getMonth() >= 7 ? d.getFullYear() : d.getFullYear() - 1;
+  const jahr = `${j}-${String((j + 1) % 100).padStart(2, '0')}`, naechstes = `${j + 1}-${String((j + 2) % 100).padStart(2, '0')}`;
 
-  // Ohne Netz: Ordner wählen, die Kopie startet und öffnet gleich die Klassenübersicht.
-  netz = false;
-  await seite.reload();
-  await seite.waitForSelector('#mk-lehrerordner', { timeout: 15000 });
-  await foto(seite, 'lehrer-startdatei-ohne-netz');
-  await seite.click('#mk-lehrerordner');
-  await seite.waitForSelector('#neue-klasse');
-  assert.match(await seite.innerText('#version'), /Kopie vom Lehrerlaufwerk/);
-  // Der Grund steht auf der Seite und im Betriebsprotokoll der Lehrerdaten.
-  const protokoll = await seite.evaluate(async () => {
-    const o = await (await navigator.storage.getDirectory()).getDirectoryHandle('lehrer');
-    return JSON.parse(await (await (await o.getFileHandle('lehrerdaten.json')).getFile()).text()).protokoll;
+  // Administrator: drei Ordner, Lehrkräfte, Pfade, Klasse mit Namen.
+  const admin = await kontext.newPage();
+  admin.on('pageerror', (e) => fehler.push(`admin: ${e.message}`));
+  admin.on('dialog', (dlg) => dlg.accept());
+  await admin.goto(`${basis}dist/Mathekingdom-Admin.html`);
+  await admin.waitForSelector('#wahl-persoenlich');
+  for (const [art, pfad] of [['persoenlich', 'P'], ['schueler', 'S'], ['lehrer', 'L']]) { await waehle(admin, pfad); await admin.click(`#wahl-${art}`); await admin.waitForSelector(`#wahl-${art}.schlicht`); }
+  await admin.click('#weiter');
+  await admin.waitForSelector('#neues-kuerzel');
+  assert.ok(await lies(admin, 'P/mathekingdom-admin.json'));
+  assert.ok(await lies(admin, 'S/Mathekingdom/schulverzeichnis.json'));
+  assert.ok(await lies(admin, 'L/Mathekingdom/schulverzeichnis.json'));
+  for (const k of ['NG', 'HR']) { await admin.fill('#neues-kuerzel', k); await admin.click('#lehrkraft-anlegen'); await admin.waitForSelector(`[data-admin="${k}"]`); }
+  assert.ok(JSON.parse(await lies(admin, 'L/Mathekingdom/NG/lehrer.json')).schluessel.privat);
+  await admin.click('[data-tab="startdateien"]');
+  await admin.fill('#pfad-schueler', 'S:\\Mathekingdom');
+  await admin.fill('#pfad-lehrer', 'L:\\Mathekingdom');
+  await admin.click('#pfade-speichern');
+  await admin.waitForSelector('#hinweis');
+  await admin.click('#schueler-startdatei-ablegen');
+  await admin.waitForFunction(() => document.getElementById('hinweis')?.textContent.includes('kopieren'));
+  await admin.click('[data-tab="klassen"]');
+  await admin.fill('#neue-klasse', '5a');
+  await admin.click('#klasse-anlegen');
+  await admin.waitForSelector('[data-lehrkraft="5a|NG"]');
+  await admin.check('[data-lehrkraft="5a|NG"]');
+  await admin.waitForFunction(() => document.querySelector('[data-lehrkraft="5a|NG"]')?.checked);
+  await admin.click('[data-namen="5a"]');
+  await admin.fill('#namen', 'Lena Müller\nTim Schmidt');
+  await admin.click('#codes');
+  await admin.waitForFunction(() => document.querySelectorAll('#namen-karte td.code.pin').length === 2 && ![...document.querySelectorAll('#namen-karte td.code.pin')].some((t) => t.textContent === '…'));
+  await foto(admin, 'admin-klasse');
+  const zeile = admin.locator('#namen-karte tr', { hasText: 'Lena Müller' });
+  const code = await zeile.locator('td.code').first().innerText(), pin = await zeile.locator('td.pin').innerText();
+  assert.match(code, /^5A-[A-Z0-9]{4}$/);
+  assert.ok(await lies(admin, `S/Mathekingdom/${jahr}/5a/klassendatei.json`));
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).namen[code], 'Lena Müller');
+  const verzeichnis = JSON.parse(JSON.parse(await lies(admin, 'S/Mathekingdom/schulverzeichnis.json')).inhalt);
+  assert.deepEqual(verzeichnis.klassen[jahr]['5a'].lehrkraefte, ['NG']);
+  dateien['Mathekingdom.html'] = await lies(admin, 'S/Mathekingdom/Mathekingdom.html');
+  dateien['Lehrer-NG.html'] = await lies(admin, 'L/Mathekingdom/NG/Mathekingdom-Lehrer.html');
+  assert.ok(dateien['Mathekingdom.html'].includes('S:\\\\Mathekingdom'));
+
+  // Schüler: zuerst der Klassenordner (zu tief), dann das Laufwerk. Danach ohne Auswahlfenster.
+  const schueler = await kontext.newPage();
+  schueler.on('pageerror', (e) => fehler.push(`schüler: ${e.message}`));
+  await schueler.goto(`${basis}test/Mathekingdom.html`);
+  await schueler.waitForSelector('#code');
+  assert.match(await schueler.innerText('#ordner-hinweis'), /Nur beim ersten Mal.*„Mathekingdom“ \(S:\\Mathekingdom\)/);
+  await schueler.fill('#code', code); await schueler.fill('#pin', pin);
+  await waehle(schueler, `S/Mathekingdom/${jahr}/5a`);
+  await schueler.click('#ordner');
+  await schueler.waitForSelector('.fehler[role=alert]');
+  assert.match(await schueler.innerText('.fehler[role=alert]'), /nicht der richtige Ordner.*S:\\Mathekingdom/);
+  await waehle(schueler, 'S');
+  await schueler.fill('#pin', pin);
+  await schueler.click('#ordner');
+  await schueler.waitForSelector('.regionen', { timeout: 15000 });
+  await schueler.waitForFunction(async ([p]) => {
+    let o = await navigator.storage.getDirectory();
+    for (const t of p) o = await o.getDirectoryHandle(t);
+    for await (const [n] of o.entries()) if (/^5A-.{4}\.json$/.test(n)) return true;
+    return false;
+  }, [['S', 'Mathekingdom', jahr, '5a']], { timeout: 15000 });
+  await waehle(schueler, 'X');
+  await schueler.reload();
+  await schueler.waitForSelector('#code');
+  await schueler.waitForFunction(() => document.getElementById('ordner')?.textContent === 'Aufbrechen');
+  await schueler.fill('#code', code); await schueler.fill('#pin', pin);
+  await schueler.click('#ordner');
+  await schueler.waitForSelector('.regionen', { timeout: 15000 });
+  await foto(schueler, 'schueler-gemerkt');
+
+  // Lehrkraft NG: Kürzel aus der Startdatei, zwei Ordner, Klasse ohne Auswahlfenster.
+  const lehrer = await kontext.newPage();
+  lehrer.on('pageerror', (e) => fehler.push(`lehrer: ${e.message}`));
+  lehrer.on('dialog', (dlg) => dlg.accept());
+  await lehrer.goto(`${basis}test/Lehrer-NG.html`);
+  await lehrer.waitForSelector('#wahl-schueler');
+  assert.match(await lehrer.innerText('main'), /Dein Kürzel: NG/);
+  const version = readFileSync(new URL('VERSIONEN.md', wurzel), 'utf8').match(/^## (\d+\.\d+)/m)[1];
+  assert.match(await lehrer.innerText('#version'), new RegExp(`^Version ${version.replace('.', '\\.')} vom`));
+  await waehle(lehrer, 'S/Mathekingdom'); await lehrer.click('#wahl-schueler'); await lehrer.waitForSelector('#wahl-schueler.schlicht');
+  await waehle(lehrer, 'L'); await lehrer.click('#wahl-lehrer'); await lehrer.waitForSelector('#wahl-lehrer.schlicht');
+  await lehrer.click('#weiter');
+  await lehrer.waitForSelector('[data-klasse="5a"]');
+  assert.ok(await lies(lehrer, 'L/Mathekingdom/_mathekingdom/lehrer.js'));
+  assert.ok(await lies(lehrer, 'S/Mathekingdom/_mathekingdom/schueler.js'));
+  await lehrer.click('[data-klasse="5a"]');
+  await lehrer.waitForSelector('nav.bereiche');
+  await lehrer.click('[data-tab="verwaltung"]');
+  await lehrer.waitForSelector('#codes');
+  assert.match(await lehrer.innerText('main'), /Lena Müller/);
+  // Eine zweite Lehrkraft hat die Klasse offen: Das steht oben.
+  await lehrer.evaluate(async ([j]) => {
+    let o = await navigator.storage.getDirectory();
+    for (const t of ['L', 'Mathekingdom', j, '5a']) o = await o.getDirectoryHandle(t);
+    const strom = await (await o.getFileHandle('offen-HR.json', { create: true })).createWritable();
+    await strom.write(JSON.stringify({ t: new Date().toISOString() })); await strom.close();
+  }, [jahr]);
+  await lehrer.waitForSelector('#andere-offen', { timeout: 15000 });
+  assert.match(await lehrer.innerText('#andere-offen'), /Auch HR hat die Klasse gerade offen/);
+  await lehrer.click('#backup');
+  await lehrer.waitForFunction(async ([j]) => {
+    let o = await navigator.storage.getDirectory();
+    try { for (const t of ['L', 'Mathekingdom', j, '5a', 'backup']) o = await o.getDirectoryHandle(t); } catch { return false; }
+    for await (const [, e] of o.entries()) if (e.kind === 'directory') return true;
+    return false;
+  }, [jahr], { timeout: 15000 });
+  await foto(lehrer, 'lehrer-schule');
+  // Nach dem Neuladen sind beide Ordner gemerkt.
+  await lehrer.reload();
+  await lehrer.waitForSelector('#weiter:not([disabled])');
+  await lehrer.click('#weiter');
+  await lehrer.waitForSelector('[data-klasse="5a"]');
+
+  // Administrator: neues Schuljahr, 5a wird 6a.
+  await admin.click('[data-tab="klassen"]');
+  await admin.fill('#neues-schuljahr', naechstes);
+  await admin.click('#schuljahr-anlegen');
+  await admin.waitForSelector('#uebernahme-start');
+  await admin.click('#uebernahme-start');
+  await admin.waitForSelector(`[data-ziel="${code}"]`);
+  assert.equal(await admin.inputValue(`[data-ziel="${code}"]`), '6a');
+  await admin.click('#uebernehmen');
+  await admin.waitForFunction(() => document.getElementById('hinweis')?.textContent.includes('2 Schüler übernommen'));
+  const neuerCode = `6A-${code.split('-')[1]}`;
+  const neu = JSON.parse(await lies(admin, `S/Mathekingdom/${naechstes}/6a/${neuerCode}.json`));
+  assert.equal(neu.code, neuerCode); assert.equal(neu.klasse, '6a');
+  const klasse6 = JSON.parse(await lies(admin, `L/Mathekingdom/${naechstes}/6a/klasse.json`));
+  assert.equal(klasse6.namen[neuerCode], 'Lena Müller');
+  assert.equal(klasse6.pins[neuerCode].pin, pin);
+
+  // Alte Lehrerdaten (bis 0.20) ziehen um: Namensliste und Backups der Klasse 5b.
+  await admin.evaluate(async () => {
+    const schreibe = async (pfad, text) => {
+      let o = await navigator.storage.getDirectory();
+      const teile = pfad.split('/');
+      for (const t of teile.slice(0, -1)) o = await o.getDirectoryHandle(t, { create: true });
+      const strom = await (await o.getFileHandle(teile.at(-1), { create: true })).createWritable();
+      await strom.write(text); await strom.close();
+    };
+    await schreibe('ALT/lehrerdaten.json', JSON.stringify({ version: 1, schluessel: {}, klassen: { '5b': { namen: { '5B-ALT1': 'Ali Alt' }, notizen: {}, pins: {}, einst: { aktuellesKapitel: null, tore: ['5.1'], toreEinzeln: {}, zielniveaus: {}, hilfe: {}, nachrichten: {}, sperren: {} } } } }));
+    await schreibe('ALT/backup/5b/2026-11-01_10-00/5B-ALT1.json', '{"code":"5B-ALT1"}');
   });
-  assert.equal(protokoll.at(-1).art, 'problem');
-  assert.match(protokoll.at(-1).text, /Kopie auf dem Lehrerlaufwerk.*GitHub nicht erreichbar/);
-  // GitHub antwortet, aber Pages fehlt: Die Startdatei nennt 404.
-  netz = '404';
-  await seite.reload();
-  await seite.waitForSelector('#mk-lehrerordner', { timeout: 15000 });
-  assert.match(await seite.innerText('#mk-grund'), /404.*Pages/);
+  await admin.click('[data-tab="alt"]');
+  await waehle(admin, 'ALT');
+  await admin.click('#alt-waehlen');
+  await admin.waitForSelector('[data-alt-uebernehmen="5b"]');
+  await admin.selectOption('[data-alt-lehrkraft="5b"]', 'HR');
+  await admin.click('[data-alt-uebernehmen="5b"]');
+  await admin.waitForFunction(() => document.getElementById('hinweis')?.textContent.includes('Klasse 5b übernommen'));
+  assert.match(await admin.innerText('#hinweis'), /1 Schüler, 1 Backups/);
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5b/klasse.json`)).namen['5B-ALT1'], 'Ali Alt');
+  assert.ok(await lies(admin, `L/Mathekingdom/${jahr}/5b/backup/2026-11-01_10-00/5B-ALT1.json`));
+  assert.ok(await lies(admin, `S/Mathekingdom/${jahr}/5b/klassendatei.json`));
+
+  // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.
+  netz = false;
+  await schueler.reload();
+  await schueler.waitForSelector('#mk-weiter-knopf', { timeout: 15000 });
+  await schueler.click('#mk-weiter-knopf');
+  await schueler.waitForSelector('#code');
+  assert.match(await schueler.innerText('#version'), /Kopie/);
   assert.deepEqual(fehler, []);
   await kontext.close();
 }

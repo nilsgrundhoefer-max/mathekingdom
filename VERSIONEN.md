@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.21 vom 19.11.2026
+
+### Schüler
+
+- Mit der neuen Startdatei wählst du nur beim ersten Mal einen Ordner, und zwar den Ordner „Mathekingdom“ auf dem Schülertauschlaufwerk. Danach merkt sich der Browser ihn. Deine Klasse findet Mathekingdom aus deinem Code.
+
+### Lehrkraft
+
+- Neu: das Administrator-Dashboard (`Mathekingdom-Admin.html`). Damit beginnt die Einrichtung: Schuljahre, Klassen, Lehrkräfte mit Kürzel, Übernahme ins neue Schuljahr (5A-K4M2 wird 6A-K4M2), Startdateien und der Umzug alter Lehrerdaten.
+- Das Lehrer-Dashboard startet mit deinem Kürzel. Beim ersten Mal wählst du die Ordner „Mathekingdom“ auf dem Schüler- und dem Lehrertauschlaufwerk, danach öffnest du jede Klasse ohne Auswahlfenster.
+- Namensliste, PINs, Einstellungen, Notizen und Backups gehören jetzt zur Klasse und liegen auf dem Lehrertauschlaufwerk. Zwei Lehrkräfte können eine Klasse teilen; oben steht, wer sie gerade noch offen hat.
+- Der hintere Teil eines Schülercodes ist jetzt schulweit einmalig.
+
 ## 0.20 vom 19.11.2026
 
 ### Schüler
