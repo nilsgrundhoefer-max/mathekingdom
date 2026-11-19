@@ -6,6 +6,16 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.16 vom 19.11.2026
+
+### Schüler
+
+- Deinen Beinamen für die Bestenliste änderst du jetzt mit dem Knopf „Beiname ändern“. Die erste Änderung ist kostenlos, danach kostet jede Änderung 50 Münzen. Vorher fragt das Dashboard noch einmal nach.
+
+### Lehrkraft
+
+- Beiname ändern kostet nach der ersten Änderung 50 Münzen, damit Schüler nicht dauernd wechseln (ADR 0020). Jeder Schüler hat eine kostenlose Änderung, auch wer schon einen Beinamen gewählt hat. Du musst nichts einstellen.
+
 ## 0.15 vom 19.11.2026
 
 ### Schüler

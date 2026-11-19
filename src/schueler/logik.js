@@ -882,8 +882,20 @@ export function beiname(stand) {
   for (const c of String(stand.code ?? '')) h = (h * 31 + c.charCodeAt(0)) >>> 0;
   return `${BEINAME_VORNE[h % BEINAME_VORNE.length]} ${BEINAME_HINTEN[Math.floor(h / BEINAME_VORNE.length) % BEINAME_HINTEN.length]}`;
 }
-export function setzeBeiname(stand, vorne, hinten) {
-  if (BEINAME_VORNE.includes(vorne) && BEINAME_HINTEN.includes(hinten)) stand.beiname = { vorne, hinten };
+// Die erste eigene Wahl ist kostenlos, jede weitere kostet fest 50 Münzen (ADR 0020).
+// Alte Stände ohne Merker haben die kostenlose Änderung noch, auch wenn sie schon gewählt haben.
+export const BEINAME_PREIS = 50;
+export const preisBeiname = (stand) => (stand.beinameFreiVerbraucht ? BEINAME_PREIS : 0);
+// Ändert beide Bausteine auf einmal. Liefert 'ok', 'gleich', 'ungueltig' oder 'zu-wenig'.
+export function aendereBeiname(stand, vorne, hinten) {
+  if (!BEINAME_VORNE.includes(vorne) || !BEINAME_HINTEN.includes(hinten)) return 'ungueltig';
+  if (beiname(stand) === `${vorne} ${hinten}`) return 'gleich';
+  const preis = preisBeiname(stand);
+  if ((stand.muenzen ?? 0) < preis) return 'zu-wenig';
+  stand.muenzen -= preis;
+  stand.beiname = { vorne, hinten };
+  stand.beinameFreiVerbraucht = true;
+  return 'ok';
 }
 // Montag der Woche von `iso`, als JJJJ-MM-TT in Ortszeit.
 export function wocheVon(iso) {

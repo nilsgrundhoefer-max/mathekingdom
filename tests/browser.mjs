@@ -1304,8 +1304,25 @@ async function weiter(seite, wahl = '#weiter') {
   }
   assert.equal(JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-WAPP.json'))).muenzen, 2000 - 620 - 100 - 100 - 300);
   // Beiname wählen.
+  // Beiname ändern: die erste Änderung ist frei, dann 50 Münzen (ADR 0020).
+  const muenzenVorher = 2000 - 620 - 100 - 100 - 300;
+  const standJetzt = async () => JSON.parse(await seite.evaluate(() => localStorage.getItem("mk-demo-5a/5A-WAPP.json")));
   await seite.selectOption('#beiname-vorne', 'Flinker');
+  assert.doesNotMatch(await seite.innerText('#bestenliste-botenritt'), /Flinker Otter/, 'erst der Knopf speichert');
+  assert.match(await seite.innerText('#beiname-aendern'), /kostenlos/);
+  await seite.click('#beiname-aendern');
+  assert.match(await seite.innerText('#beiname-frage'), /Danach kostet jede Änderung 50 Münzen/);
+  await seite.click('#beiname-ja');
   assert.match(await seite.innerText('#bestenliste-botenritt'), /Flinker Otter/);
+  await seite.selectOption('#beiname-hinten', 'Fuchs');
+  assert.match(await seite.innerText('#beiname-aendern'), /50 Münzen/);
+  await seite.click('#beiname-aendern');
+  await foto(seite, 'beiname-frage');
+  await seite.locator('#beiname').screenshot(bilder ? { path: `${bilder}/beiname-aendern.png` } : {});
+  await seite.click('#beiname-ja');
+  assert.match(await seite.innerText('#bestenliste-botenritt'), /Flinker Fuchs/);
+  await seite.waitForFunction((m) => JSON.parse(localStorage.getItem('mk-demo-5a/5A-WAPP.json')).muenzen === m, muenzenVorher - 50);
+  assert.equal((await standJetzt()).muenzen, muenzenVorher - 50);
   assert.deepEqual(fehler, []);
   await seite.close();
 }
