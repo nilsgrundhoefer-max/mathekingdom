@@ -1317,6 +1317,8 @@ async function weiter(seite, wahl = '#weiter') {
   // Backup und Protokoll gibt es mit Schulverzeichnis nur im Administrator-Dashboard.
   assert.deepEqual(await lehrer.$$eval('.abschnitte button', (b) => b.map((x) => x.textContent)), ['Schüler', 'Unterricht', 'Berichte']);
   assert.equal(await lehrer.locator('#backup, #protokoll, #klassenwahl').count(), 0);
+  // Nur eine eigene Klasse: Statt der Auswahl steht ihr Name oben.
+  assert.equal(await lehrer.innerText('#klassenname'), 'Klasse 5a');
   assert.match(await lehrer.innerText('main'), /Lena Müller/);
   // Eine zweite Lehrkraft hat die Klasse offen: Das steht oben.
   await lehrer.evaluate(async ([j]) => {
@@ -1610,6 +1612,12 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.waitForSelector('#klassenwahl, [data-klasse="5t"]');
   if (await lehrer.locator('#klassenwahl').count()) await lehrer.selectOption('#klassenwahl', '5t'); else await lehrer.click('[data-klasse="5t"]');
   await lehrer.waitForSelector('#testklasse');
+  // Die Klassenwahl im dunklen Kopf ist lesbar: dunkle Schrift auf hellem Feld, auch in der aufgeklappten Liste.
+  if (await lehrer.locator('#klassenwahl').count()) {
+    const farben = await lehrer.$eval('#klassenwahl', (s) => [s, s.options[0]].map((e) => [getComputedStyle(e).color, getComputedStyle(e).backgroundColor]));
+    for (const [schrift, grund] of farben) assert.notEqual(schrift, grund);
+    assert.equal(await lehrer.$eval('#klassenwahl', (s) => s.selectedOptions[0].value), '5t');
+  }
   await lehrer.click('[data-tab="jetzt"]');
   await lehrer.waitForFunction(() => /Ayla/.test(document.querySelector('main')?.textContent ?? '') && /arbeitet|im Flow|beobachten|an dieser Aufgabe|kommt nicht weiter/.test(document.querySelector('main')?.textContent ?? ''), null, { timeout: 30000 });
   await foto(lehrer, 'lehrer-testklasse');

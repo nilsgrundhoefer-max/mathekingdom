@@ -333,10 +333,11 @@ function ladeStartdatei() {
 
 // ---------- Rahmen ----------
 // Zwischen den eigenen Klassen oben wechseln (ADR 0025). Ohne Schulverzeichnis zurück zur Liste.
+// Mit nur einer eigenen Klasse steht ihr Name als Text da, damit oben immer erkennbar ist, welche Klasse offen ist.
 function klassenwahl() {
   if (!z.schule) return h('button', { class: 'schlicht hell', onclick: () => { clearInterval(takt); z.ansicht = 'klassen'; male(); } }, 'Klasse wechseln');
   const meine = SCH.klassenDerLehrkraft(z.schule.verzeichnis, z.schule.schuljahr, z.schule.kuerzel);
-  if (meine.length < 2) return null;
+  if (meine.length < 2) return h('span', { class: 'klassenname', id: 'klassenname' }, `Klasse ${z.klasse}`);
   return h('select', { class: 'klassenwahl', id: 'klassenwahl', 'aria-label': 'Klasse wechseln', onchange: (ev) => {
     clearInterval(takt);
     oeffneSchulklasse(ev.target.value).catch((e) => { z.fehler = `Die Klasse ${ev.target.value} ließ sich nicht öffnen: ${e.message}`; male(); });
