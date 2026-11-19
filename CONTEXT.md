@@ -213,9 +213,29 @@ _Avoid_: Lokführer, Held, Spieler
 
 ## Hilfe und Diagnose
 
+**Prozessbezogene Kompetenz**:
+Eine der fünf Denkweisen des Bildungsplans 2016, die eine Aufgabe neben dem Stoff verlangt: Argumentieren, Probleme lösen, Modellieren, mit symbolischen Elementen umgehen, Kommunizieren. Jede Aufgabe trägt eine als Haupt- und höchstens eine als Nebenkompetenz. Aus ihnen entsteht das Kompetenzprofil.
+_Avoid_: Kompetenz (allein, das ist mehrdeutig mit Lernziel), Skill
+
+**Kompetenzprofil**:
+Die Darstellung eines Schülers oder einer Klasse über die fünf prozessbezogenen Kompetenzen als Netzdiagramm. Zunächst nur im Lehrer-Dashboard.
+_Avoid_: Radar (allein), Kompetenzradar, Stärkenprofil
+
 **Typischer Fehler**:
 Eine vorab bei der Aufgabe hinterlegte falsche Antwort samt der Fehlvorstellung, die sie verrät (z. B. „Zähler und Nenner addiert“).
 _Avoid_: Fehlertyp, Distraktor
+
+**Überwundene Fehlvorstellung**:
+Eine Fehlvorstellung, die ein Schüler gezeigt hat und nach der er drei Aufgaben desselben Lernziels richtig und ohne sie gelöst hat. Taucht sie wieder auf, gilt sie für die Lehrkraft wieder als aktiv.
+_Avoid_: korrigierter Fehler, behobener Fehler
+
+**Aha-Moment**:
+Eine überwundene Fehlvorstellung, wie der Schüler sie in seiner eigenen Sicht beim Wappen sieht: nur Überwundenes, nie offene Fehler, ohne Münzen.
+_Avoid_: Erfolg, Abzeichen, Fehlerliste
+
+**Diskrepanz**:
+Wenn die Einschätzung eines Schülers nicht zu seinen Ergebnissen passt: überschätzt (oft sicher falsch oder in der Selbsteinschätzung zu hoch) oder unterschätzt (oft unsicher richtig oder zu niedrig). Die Lehrkraft filtert danach im Lernstand.
+_Avoid_: Fehleinschätzung, Kalibrierung
 
 **Diagnose**:
 Die Auswertung des Lernstands im Lehrer-Dashboard: was Schüler und Klasse bearbeitet haben, wo sie hängen, welche Hilfen sie nutzen und welche typischen Fehler sie machen.
@@ -346,5 +366,7 @@ _Avoid_: Klassenliste (für die Datei)
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
 - **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
 - **Tafelbild**: Vollbild-Ansicht im Bereich Jetzt, die eine Aufgabe mit den häufigsten falschen Antworten der Klasse am Beamer zeigt, ohne Codes und Namen. Sie wird aus einem Mini-Workshop-Impuls geöffnet.
-- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel oder aufzufrischen. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
+- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
+- **Hilfebedarf**: Wie oft ein Schüler bei einem Lernziel Beispiel- oder Lösungsschritt-Kärtchen braucht, und ob das mit der Zeit weniger wird.
+- **Versuchsverlauf**: Für die Lehrkraft die letzten Aufgaben eines Schülers mit erstem Versuch, zweitem Versuch, Ergebnis und erkannter Fehlvorstellung. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
 
