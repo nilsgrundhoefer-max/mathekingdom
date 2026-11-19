@@ -78,7 +78,7 @@ async function schreibeKlassendatei() {
   await sorgePins();
   const pins = Object.fromEntries(Object.entries(kl().pins).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   const text = await K.unterschreibe({ klasse: z.klasse, stand: jetzt(), aktuellesKapitel: e.aktuellesKapitel, codes: Object.keys(kl().namen),
-    zielniveaus: e.zielniveaus, spielpause: e.spielpause, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
+    zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, hilfe: e.hilfe, nachrichten: e.nachrichten, sperren: e.sperren, expedition: e.expedition ?? null, sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins }, z.daten.schluessel.privat);
   await z.ordner.schreibe(S.KLASSENDATEI, text);
   z.klassendateiText = text;
 }
@@ -333,7 +333,10 @@ function klassenAnsicht() {
       h('label', {}, 'Aktuelles Kapitel ', h('select', { id: 'kapitel', onchange: (ev) => aendere((k) => { k.einst.aktuellesKapitel = ev.target.value || null; }) },
         h('option', { value: '' }, 'Alle Kapitel offen'),
         z.pool.kapitel.map((k, i) => h('option', { value: k.id, selected: e.aktuellesKapitel === k.id }, `${i + 1} ${k.titel}`)))),
-      h('label', { class: 'schalter' }, h('input', { id: 'spielpause', type: 'checkbox', checked: e.spielpause, onchange: (ev) => aendere((k) => { k.einst.spielpause = ev.target.checked; }) }), ' Spielpause erlaubt'),
+      // Spielfreigabe (ADR 0018): aus, nur in der Spielpause oder verdient (Belohnungsspiel nach jedem vierten Wegstück).
+      h('label', { title: 'Wann Minispiele gehen. Verdient: Rechenpause immer, ein Belohnungsspiel nach jedem vierten Wegstück.' }, 'Spiele ', h('select', { id: 'spielfreigabe', onchange: (ev) => aendere((k) => { k.einst.spielfreigabe = ev.target.value; }) },
+        Object.entries({ aus: 'aus', spielpause: 'nur in der Spielpause', verdient: 'verdient (nach 4 Wegstücken)' }).map(([w, t]) => h('option', { value: w, selected: (e.spielfreigabe ?? 'spielpause') === w }, t)))),
+      (e.spielfreigabe ?? 'spielpause') !== 'aus' && h('label', { class: 'schalter' }, h('input', { id: 'spielpause', type: 'checkbox', checked: e.spielpause, onchange: (ev) => aendere((k) => { k.einst.spielpause = ev.target.checked; }) }), ' Spielpause jetzt'),
       h('span', { class: 'klein rechts', id: 'aktualisiert' }, z.aktualisiert ? `Aktualisiert um ${z.aktualisiert.toLocaleTimeString('de-DE')}` : '')),
     z.warnungen.length > 0 && h('div', { class: 'meldung warnung' }, h('ul', {}, z.warnungen.slice(0, 4).map((w) => h('li', {}, w))),
       h('button', { class: 'schlicht', onclick: () => { z.warnungen = []; male(); } }, 'Gelesen')),
@@ -1152,6 +1155,10 @@ function verwaltung() {
       h('p', { class: 'klein' }, 'Die Schüler arbeiten in Wegstücken zu fünf Aufgaben. Nach jedem vierten Wegstück am Tag (etwa 20 Minuten) schlägt das Dashboard eine Rast von einer Minute vor; die Schüler können sie überspringen. Der Ton ist ein kurzer, leiser Klang bei jeder richtigen Aufgabe, sinnvoll nur mit Kopfhörern.'),
       h('label', { class: 'schalter' }, h('input', { id: 'rast', type: 'checkbox', checked: kl().einst.rast !== false, onchange: (ev) => aendere((k) => { k.einst.rast = ev.target.checked; }) }), ' Rast vorschlagen'),
       h('label', { class: 'schalter' }, h('input', { id: 'ton', type: 'checkbox', checked: Boolean(kl().einst.ton), onchange: (ev) => aendere((k) => { k.einst.ton = ev.target.checked; }) }), ' Ton bei richtigen Aufgaben')),
+    h('section', { class: 'karte', id: 'spiele-karte' }, h('h2', {}, 'Spiele und Bestenliste'),
+      h('p', { class: 'klein' }, 'Die Schüler lösen Münzen für Spiele ein: die Rechenpause (Kopfrechen-Sprint, 20 Münzen) und Belohnungsspiele rein zum Spaß (Botenritt, Burgmauer, je 100 Münzen, eine Runde von höchstens 3 Minuten). Oben in der Leiste stellst du ein, wann Spiele gehen: aus, nur in der Spielpause oder verdient. Bei „verdient“ geht die Rechenpause immer und ein Belohnungsspiel nach jedem vierten Wegstück, etwa alle 20 Minuten.'),
+      h('p', { class: 'klein' }, 'Die Bestenliste gibt es nur in den Belohnungsspielen: die besten fünf der Klasse in dieser Woche, mit Wappen und einem Beinamen aus festen Bausteinen, nie mit Namen. Jeder Schüler kann sich ausblenden. Weil die Schüler ihren Speicherstand selbst schreiben, ist ein Bestwert nicht fälschungssicher.'),
+      h('label', { class: 'schalter' }, h('input', { id: 'bestenliste', type: 'checkbox', checked: kl().einst.bestenliste !== false, onchange: (ev) => aendere((k) => { k.einst.bestenliste = ev.target.checked; }) }), ' Bestenliste zeigen')),
     h('section', { class: 'karte' }, h('h2', {}, 'Startdatei für die Schüler'),
       h('p', {}, 'Diese Datei kommt einmal auf jedes Schülerlaufwerk. Sie enthält deinen öffentlichen Schlüssel: Damit erkennen die Schüler-Dashboards, ob die Klassendatei wirklich von dir stammt.'),
       h('button', { class: 'haupt', id: 'startdatei', onclick: ladeStartdatei }, 'Startdatei herunterladen')),

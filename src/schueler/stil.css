@@ -168,6 +168,24 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .gross { font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 #mathekingdom .spiel input { font-size: 2rem; width: 5ch; text-align: center; }
 #mathekingdom .uhr { font-variant-numeric: tabular-nums; }
+#mathekingdom .teil.ehre { border-style: dashed; }
+#mathekingdom .teil.ehre.an, #mathekingdom .teil.an { border-style: solid; }
+#mathekingdom .teil-knoepfe { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+#mathekingdom .teil-knoepfe button { width: 100%; white-space: normal; padding-left: 6px; padding-right: 6px; }
+#mathekingdom .neue-ehre, #mathekingdom .verdient { border-left: 6px solid #c39a2c; }
+#mathekingdom .ausblick { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; color: var(--grau); }
+#mathekingdom .ausblick li { border: 1px dashed var(--rand); border-radius: 10px; padding: 8px 12px; }
+#mathekingdom .spiele-liste { list-style: none; padding: 0; margin: 0 0 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+#mathekingdom .spielkarte h3 { margin: 0 0 6px; }
+#mathekingdom .spielkarte .gesperrt { font-style: italic; }
+#mathekingdom .bestenliste { margin-top: 12px; border-top: 1px solid var(--rand); padding-top: 10px; text-align: left; }
+#mathekingdom .bestenliste ol { list-style: none; padding: 0; margin: 6px 0 0; }
+#mathekingdom .bestenliste li { display: grid; grid-template-columns: 2.2em auto 1fr auto; gap: 8px; align-items: center; padding: 2px 6px; border-radius: 6px; }
+#mathekingdom .bestenliste li.eigen { background: #f3e7c9; font-weight: 600; }
+#mathekingdom .beiname-wahl { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 8px 0; }
+#mathekingdom .spiel.belohnungsspiel { max-width: 540px; }
+#mathekingdom .spielfeld { display: block; margin: 8px auto; max-width: 100%; border: 2px solid var(--nacht); border-radius: 8px; }
+#mathekingdom .spielanzeige { font-variant-numeric: tabular-nums; font-weight: 600; }
 
 @media (max-width: 820px) {
   #mathekingdom .aufgabe { grid-template-columns: 1fr; }

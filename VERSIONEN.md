@@ -6,6 +6,23 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.14 vom 19.11.2026
+
+### Schüler
+
+- Der Wappenschrank ist viel größer: zwölf Farben, darunter Silber und Gold, und zwanzig Zeichen in den Gruppen Formen, Natur, Werkzeuge, Bauwerke und Tiere. Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen.
+- Ehrenzeichen kannst du nicht kaufen, nur verdienen: Purpurrose (erste Purpurkrone), Kapitelband (ein ganzes Kapitel besiegelt), Wegstern (25 Wegstücke mit mindestens 4 von 5 richtig) und die Expeditionsfahne.
+- Neue Ränge bis „Ritter der Karte“: Jetzt gibt es zwölf statt vier.
+- Neu oben: „Spiele“. Die Rechenpause (Kopfrechen-Sprint) kostet 20 Münzen. Die Belohnungsspiele Botenritt und Burgmauer kosten 100 Münzen, eine Runde dauert höchstens 3 Minuten.
+- Bestenliste der Klasse in den Belohnungsspielen, jede Woche neu. Du stehst dort mit deinem Wappen und einem Beinamen, den du dir aussuchst, und kannst dich ausblenden.
+- Auf deinem Zielniveau bringt jede Aufgabe 20 Münzen, egal auf welchem Ziel du spielst. Darüber gibt es 25, darunter 10.
+
+### Lehrkraft
+
+- Münzen einlösen (ADR 0018): Oben in der Leiste stellst du die Spielfreigabe ein: aus, nur in der Spielpause oder verdient. Bei „verdient“ geht die Rechenpause immer und ein Belohnungsspiel nach jedem vierten Wegstück am Tag.
+- Verwaltung, Karte „Spiele und Bestenliste“: Bestenliste pro Klasse abschaltbar. Die Schüler erscheinen dort nie mit Namen oder Code.
+- Münzen hängen jetzt am Zielniveau des Schülers, damit ein teurer Wappenschrank niemanden auf F oder G abhängt. Bereits gekaufte Teile und Guthaben bleiben. Alte Wappen mit mehr als drei Zeichen behalten die drei teuersten.
+
 ## 0.13 vom 19.11.2026
 
 ### Schüler

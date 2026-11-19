@@ -72,7 +72,8 @@ export function demoAblage(klasse) {
     name: klasse, demo: true,
     async lies(pfad) { return localStorage.getItem(schluessel(pfad)); },
     async schreibe(pfad, text) { localStorage.setItem(schluessel(pfad), text); },
-    async liste() { return []; },
+    // Andere Speicherstände derselben Demo-Klasse in diesem Browser (für Expedition und Bestenliste).
+    async liste() { return Object.keys(localStorage).filter((k) => k.startsWith(schluessel(''))).map((k) => k.slice(schluessel('').length)).filter((n) => !n.includes('/')); },
   };
 }
 

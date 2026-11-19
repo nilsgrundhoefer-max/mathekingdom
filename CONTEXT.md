@@ -156,7 +156,7 @@ _Avoid_: Übungsmodus
 ## Belohnung
 
 **Münze**:
-Die ausgebbare Währung für richtig gelöste Aufgaben; höhere Niveaustufen bringen mehr, Training weniger.
+Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
 _Avoid_: Punkte, Coins, Taler
 
 **Siegel**:
@@ -180,20 +180,53 @@ Der Vergleich der Kronenwahl beim ersten Start eines Meilensteins mit der ersten
 _Avoid_: Selbstbewertung, Prognose
 
 **Rang**:
-Die Stufe des Kundschafters (Wanderer, Kundschafter, Wegmeister, Hofkartograf), die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet.
+Die Stufe des Kundschafters, die sich allein aus der Zahl seiner Siegel ergibt und neue Wappen-Teile zum Kauf freischaltet. Es gibt zwölf Ränge über sechs Schuljahre, etwa alle 20 Siegel einen; die ersten vier heißen Wanderer, Kundschafter, Wegmeister und Hofkartograf.
 _Avoid_: Level, Stufe
 
 **Wappen**:
 Das Schild, das ein Schüler selbst gestaltet; Farben und Zeichen kauft er mit Münzen. Ein Wappen-Zeichen heißt nie Krone (das teuerste Zeichen ist die Lilie).
 _Avoid_: Avatar, Lok
 
+**Wappenschrank**:
+Das Angebot an Wappen-Teilen, die ein Schüler mit Münzen kaufen kann. Jede Klassenstufe öffnet beim Schuljahreswechsel einen neuen Wappenbereich; der Schrank einer Klassenstufe reicht für ein Schuljahr. Teile haben einen festen, sichtbaren Preis, nie einen Zufallsinhalt.
+_Avoid_: Shop, Laden, Werkstatt
+
+**Wappenbereich**:
+Ein Teil des Wappens, den eine Klassenstufe neu öffnet: Klasse 5 Farben und Zeichen, Klasse 6 Schildteilung, Klasse 7 Helmzier, Klasse 8 Schildhalter, Klasse 9 Wahlspruch, Klasse 10 Prunkrahmen.
+
+**Hauptzeichen** und **Beizeichen**:
+Ein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen.
+
+**Ehrenzeichen**:
+Ein Wappen-Teil, das man nicht kaufen, sondern nur verdienen kann: Expeditionsfahne (geschaffte Expedition), Purpurrose (erste Purpurkrone), Kapitelband (ganzes Kapitel besiegelt), Wegstern (25 Wegstücke mit mindestens 4 von 5 richtig). Nichts davon belohnt tägliches Erscheinen.
+_Avoid_: Abzeichen, Achievement
+
 **Minispiel**:
-Ein kurzes, mathematiknahes Spiel von höchstens drei Minuten, das Münzen kostet und nur während einer Spielpause spielbar ist.
-_Avoid_: Belohnungsspiel, Game
+Oberbegriff für Rechenpause und Belohnungsspiel: ein kurzes Spiel, das Münzen kostet.
+_Avoid_: Game
+
+**Rechenpause**:
+Ein billiges, kurzes Minispiel mit Mathematik, etwa der Kopfrechen-Sprint. Ohne Bestenliste, nur mit eigenem Bestwert.
+_Avoid_: Kurzpause
+
+**Belohnungsspiel**:
+Ein Minispiel rein zum Spaß, ohne Mathematik, eine Runde von höchstens drei Minuten pro Kauf (zum Beispiel Botenritt, Burgmauer, Kellerjagd). Es kostet deutlich mehr als eine Rechenpause und hat eine Bestenliste.
+_Avoid_: Freispiel, Arcade
+
+**Spielfreigabe**:
+Der Klassenschalter der Lehrkraft, wann Minispiele gehen: aus, nur in der Spielpause oder verdient. Bei „verdient“ geht die Rechenpause immer, ein Belohnungsspiel nach jedem vierten abgeschlossenen Wegstück.
 
 **Spielpause**:
-Ein von der Lehrkraft pro Klasse eingeschaltetes Zeitfenster, in dem Minispiele erlaubt sind; standardmäßig aus.
+Ein von der Lehrkraft pro Klasse eingeschaltetes Zeitfenster, in dem alle Minispiele erlaubt sind; standardmäßig aus.
 _Avoid_: Freizeit, Pause
+
+**Bestenliste**:
+Die Liste der fünf besten Ergebnisse der Klasse in einem Belohnungsspiel, dazu der eigene Platz. Sie beginnt jeden Montag neu, der eigene Bestwert bleibt. Schüler erscheinen mit Wappen und Beinamen, nie mit Namen oder Code; jeder kann sich ausblenden, die Lehrkraft kann sie pro Klasse abschalten.
+_Avoid_: Rangliste (verwechselbar mit Rang), Highscore
+
+**Beiname**:
+Der Name, unter dem ein Schüler auf der Bestenliste steht, aus festen Bausteinen gewählt (zum Beispiel „Seeblauer Falke“), nie frei getippt.
+_Avoid_: Nickname, Spitzname
 
 **Nebel**:
 Die Verhüllung der Regionskarte. Jeder gemeisterte Meilenstein lichtet den Nebel um sich und gibt Zeichnungen der Landschaft frei. Rein optisch, ohne Münzen.
