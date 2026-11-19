@@ -126,12 +126,16 @@ Die Darstellung eines Lernpfads im Stil einer alten Landkarte: ein einziger Weg,
 _Avoid_: Metrokarte, Lernlandkarte, Fortschrittsbalken, Straße
 
 **Meilenstein**:
-Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, also eine Krone auf oder über seinem Zielniveau trägt. Meilensteine gehen nicht nacheinander auf; die Karte zeigt nur eine empfohlene Reihenfolge.
+Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle Lernziele des Unterkapitels erreicht hat, also eine Krone auf oder über seinem Zielniveau trägt. Meilensteine gehen nicht nacheinander auf, außer die Lehrkraft nutzt die Meilensteinfreigabe; die Karte zeigt sonst nur eine empfohlene Reihenfolge.
 _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 
 **Aufgabenführung**:
-Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt: erst alle Lernziele des Meilensteins, an dem er gerade arbeitet, dann der nächste Meilenstein des Lernpfads. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
+Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt: erst alle Lernziele des Meilensteins, an dem er zuletzt gearbeitet hat, bis er dort die Krone in seiner Kronenwahl trägt, dann der nächste nicht gemeisterte Meilenstein des Lernpfads. Abstecher überspringt sie, bietet sie aber an. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
 _Avoid_: Empfehlung, Lernpfad (das ist der Weg durch das Kapitel)
+
+**Meilensteinfreigabe**:
+Die Wahl der Lehrkraft, dass in einem Kapitel für eine Klasse nur bestimmte Meilensteine offen sind. Standard: alle offen. Die übrigen liegen im Nebel und gehen für einen Schüler alle auf einmal auf, sobald er alle freigegebenen Meilensteine gemeistert hat. Ein Abstecher geht auf, wenn der Meilenstein gemeistert ist, an dem er hängt; für die übrigen ist er nicht nötig. Was ein Schüler schon begonnen hat oder wofür er eine Krone hat, bleibt für ihn offen.
+_Avoid_: Freischaltung, Meilensteinsperre (das ist der gesperrte Meilenstein für einen einzelnen Schüler)
 
 **Abstecher**:
 Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist. Er bekommt eine Krone nach derselben Regel.
@@ -173,6 +177,10 @@ _Avoid_: Punkte, Coins, Taler
 
 **Siegel**:
 Eine nicht ausgebbare Auszeichnung, genau eines pro erreichtem Lernziel.
+
+**Das kannst du schon**:
+Die Seite, die sich mit einem Klick auf die Siegelzahl öffnet: alle Lernziele der aktuellen Klassenstufe mit Siegel als „Ich kann“-Sätze, nach Kapitel und Meilenstein geordnet, mit Krone des Meilensteins, Datum des Siegels und der Marke „gefestigt“, oben ein Zähler. Lernziele ohne Siegel stehen dort nicht.
+_Avoid_: Siegelliste, Portfolio
 _Avoid_: Stern, Punkte, Abzeichen
 
 **Krone**:
@@ -249,7 +257,7 @@ Der Name, unter dem ein Schüler auf der Bestenliste steht, aus festen Bausteine
 _Avoid_: Nickname, Spitzname
 
 **Nebel**:
-Die Verhüllung der Regionskarte. Jeder gemeisterte Meilenstein lichtet den Nebel um sich und gibt Zeichnungen der Landschaft frei. Rein optisch, ohne Münzen.
+Die Verhüllung der Regionskarte. Jeder gemeisterte Meilenstein lichtet den Nebel um sich und gibt Zeichnungen der Landschaft frei, ohne Münzen. Ein Meilenstein, den die Meilensteinfreigabe noch zurückhält, liegt im Nebel: nur Umriss und Nummer, ohne Namen, nicht wählbar.
 _Avoid_: Fog of War, Verdeckung
 
 **Expedition**:
@@ -323,7 +331,7 @@ Ein Päckchen von fünf Aufgaben, etwa fünf Minuten Arbeit, mit „Aufgabe 3 vo
 _Avoid_: Runde (das ist ein Knopftext), Etappe (das ist das Kapitel), Chunk, Sequenz
 
 **Seitenblick**:
-Die eine Aufgabe in einem Wegstück, die zu einem schon besiegelten Lernziel desselben Kapitels gehört statt zum laufenden. Sie bringt Münzen, zählt für kein Siegel und nimmt keines weg. Gibt es im Kapitel noch kein Siegel, entfällt sie.
+Die eine Aufgabe in einem Wegstück, die zu einem schon besiegelten Lernziel desselben Kapitels gehört statt zum laufenden. Sie bringt Münzen, zählt für kein Siegel und nimmt keines weg. Gibt es im Kapitel noch kein Siegel, entfällt sie. Sie sagt dazu, wo es danach weitergeht.
 _Avoid_: Rückblick (der ist ein eigenes Päckchen, einmal am Tag), Wiederholungsaufgabe
 
 **Rast**:
