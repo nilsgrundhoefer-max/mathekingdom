@@ -6,6 +6,19 @@ Die erste Ziffer steigt nur, wenn alte Speicherstände oder Klassendateien nicht
 
 Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hier und zeigt sie in beiden Dashboards unten in der Ecke an. Aufbau eines Eintrags: Überschrift `## <Nummer> vom <TT.MM.JJJJ>`, darunter die Abschnitte `### Schüler` und `### Lehrkraft` mit je einer Liste.
 
+## 0.19 vom 19.11.2026
+
+### Schüler
+
+- Im Schlossgarten hängt die Ehrentafel: die fünf Besten der Klasse in diesem Schuljahr, nach Kronen und Siegeln. Purpur zählt am meisten, dann Gold, Silber und Bronze. Auf die Tafel kommst du ab einer Silberkrone.
+- Die fünf tragen einen Hoftitel mit Symbol: Klassenkönig (Krone), Herzog (Zepter), Graf (Schwert), Ritter (Helm), Knappe (Wimpel). Beim ersten Titel wählst du, ob du zum Beispiel König oder Königin heißt; ändern kannst du das jederzeit kostenlos. Dein Symbol steht oben neben deinem Rang und in den Bestenlisten neben deinem Beinamen.
+- Der Titel gilt, solange du deinen Platz hältst. Wer nicht auf der Tafel steht, sieht keinen Platz. Du kannst dich ausblenden; dann rückt der Nächste nach.
+
+### Lehrkraft
+
+- Ehrentafel (ADR 0023): Im Lernstand siehst du die fünf Besten mit Namen, Hoftitel, Punkten und Kronen je Niveaustufe (je Meilenstein die beste Krone: F 1, G 2, M 4, E 6 Punkte, dazu 1 je Siegel), und wer sich ausgeblendet hat. Gezählt wird für alle gleich, unabhängig vom Zielniveau. Die Werte kommen aus den Speicherständen der Schüler und sind nicht fälschungssicher.
+- In der Verwaltung unter „Spiele und Bestenliste“ schaltest du die Ehrentafel je Klasse aus. Standardmäßig ist sie an.
+
 ## 0.18 vom 19.11.2026
 
 ### Schüler

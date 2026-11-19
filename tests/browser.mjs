@@ -719,6 +719,10 @@ async function weiter(seite, wahl = '#weiter') {
   assert.ok(await seite.locator('.heatmap td.zelle.siegel').count() > 0);
   assert.ok(await seite.locator('.stapel li').count() > 5);
   await foto(seite, 'lehrer-lernstand');
+  // Ehrentafel mit Namen und Niveaustufen (ADR 0023).
+  assert.ok(await seite.locator('#ehrentafel-lehrer tbody tr').count() >= 1);
+  assert.match(await seite.innerText('#ehrentafel-lehrer tbody tr >> nth=0'), /^1\s+Klassenkönig/);
+  await seite.locator('#ehrentafel-lehrer').screenshot(bilder ? { path: `${bilder}/lehrer-ehrentafel.png` } : {});
   // Lernen sichtbar machen (ADR 0017): gefestigt, Filter, Heatmap nach Fehlvorstellung.
   assert.ok(await seite.locator('.heatmap td.zelle.gefestigt').count() > 0, 'Rückblick nach mehr als 7 Tagen festigt');
   await seite.click('[data-filter=hilfe]');
@@ -1400,6 +1404,71 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(await seite.innerText('#bestenliste-botenritt'), /Flinker Fuchs/);
   await seite.waitForFunction((m) => JSON.parse(localStorage.getItem('mk-demo-5a/5A-WAPP.json')).muenzen === m, muenzenVorher - 50);
   assert.equal((await standJetzt()).muenzen, muenzenVorher - 50);
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 10. Ehrentafel und Hoftitel (ADR 0023) ----------
+{
+  const L = await import('../src/schueler/logik.js');
+  const index = L.indexiere(pool);
+  const ok = { geloest: true, versuche: 1, eingaben: [], fehlvorstellungen: [], hilfen: 0, dauer: 20 };
+  const meilensteine = pool.kapitel[2].unterkapitel.slice(0, 3);
+  // Kronen entstehen wie im Unterricht aus gelösten Aufgaben: je Lernziel die drei schwersten richtig.
+  const stand = (code, kronen, extra = {}) => {
+    const st = { ...leererStand(code), ...extra };
+    kronen.forEach(([m, n, ziel = 'M']) => meilensteine[m].lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id)).forEach((l) =>
+      [...index.nach.get(`${l.id}|${n}`)].sort((a, b) => b.afb - a.afb).slice(0, 3).forEach((a) => L.verbuche(st, a, ok, ziel, t0, index))));
+    return st;
+  };
+  const heute = new Date(Date.now() - 60000).toISOString();
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await mitStand(seite, stand('5A-EHRE', [[0, 'M']], { beiname: { vorne: 'Kluger', hinten: 'Otter' }, spiele: [{ spiel: 'botenritt', t: heute, punkte: 9 }] }));
+  await mitStand(seite, stand('5A-KKKK', [[0, 'E'], [1, 'M']], { beiname: { vorne: 'Roter', hinten: 'Falke' }, spiele: [{ spiel: 'botenritt', t: heute, punkte: 12 }] }));
+  await mitStand(seite, stand('5A-LLLL', [[0, 'G']], { beiname: { vorne: 'Stiller', hinten: 'Biber' } }));
+  await mitStand(seite, stand('5A-MMMM', [[0, 'E'], [1, 'E'], [2, 'E']], { ehrentafelAus: true }));
+  await mitStand(seite, stand('5A-NNNN', [[0, 'F', 'F']]));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-ehre');
+  await seite.click('#demo');
+  await seite.waitForSelector('#ehrentafel .ehrenliste li');
+  // Neuer Titel: einmal eine Meldung, mit der Frage nach der Form.
+  await seite.waitForSelector('#hoftitel-neu');
+  assert.match(await seite.innerText('#hoftitel-neu'), /Du bist jetzt Herzog der Klasse![\s\S]*Wie möchtest du heißen\?/);
+  await seite.locator('#hoftitel-neu').screenshot(bilder ? { path: `${bilder}/neuer-hoftitel.png` } : {});
+  await seite.click('#hoftitel-neu [data-titelform=w]');
+  assert.match(await seite.innerText('#hoftitel-neu h2'), /Herzogin/);
+  await seite.click('#hoftitel-ok');
+  assert.equal(await seite.locator('#hoftitel-neu').count(), 0);
+  assert.match(await seite.innerText('#hoftitel-kopf'), /Herzogin/);
+  const tafel = await seite.innerText('#ehrentafel');
+  assert.match(tafel, /Klassenkönig\s*Roter Falke[\s\S]*Herzogin\s*Kluger Otter[\s\S]*Graf\s*Stiller Biber[\s\S]*Ritter \/ Ritterin\s*Noch frei[\s\S]*Knappe \/ Knappin\s*Noch frei/);
+  assert.doesNotMatch(tafel, /5A-|Punkte/, 'keine Codes, keine Punkte');
+  assert.equal(await seite.locator('#ehrentafel .ehrenliste li:not(.frei)').count(), 3, 'Ausgeblendete und reine Bronze fehlen');
+  assert.match(await seite.innerText('#ehrentafel-eigen'), /Du bist Herzogin/);
+  await foto(seite, 'ehrentafel');
+  await seite.locator('#ehrentafel').screenshot(bilder ? { path: `${bilder}/ehrentafel.png` } : {});
+  await seite.locator('.kopf').screenshot(bilder ? { path: `${bilder}/kopfzeile-hoftitel.png` } : {});
+  // Das Symbol steht auch neben dem Beinamen in der Bestenliste.
+  await seite.click('#nav-spiele');
+  await seite.waitForSelector('#bestenliste-botenritt li');
+  assert.equal(await seite.locator('#bestenliste-botenritt .hofsymbol-neben').count(), 2);
+  assert.equal(await seite.locator('#bestenliste-botenritt li:has-text("Roter Falke") .hofsymbol-koenig').count(), 1);
+  await seite.locator('#spiel-botenritt').screenshot(bilder ? { path: `${bilder}/bestenliste-hoftitel.png` } : {});
+  // Neu laden: keine zweite Meldung. Vorher abwarten, bis der gemeldete Titel gespeichert ist.
+  await seite.waitForFunction(() => JSON.parse(localStorage.getItem('mk-demo-5a/5A-EHRE.json')).hoftitelGemeldet === 2 && JSON.parse(localStorage.getItem('mk-demo-5a/5A-EHRE.json')).hoftitelForm === 'w');
+  await seite.reload();
+  await seite.fill('#code', '5a-ehre');
+  await seite.click('#demo');
+  await seite.waitForSelector('#ehrentafel .ehrenliste li:not(.frei)');
+  assert.equal(await seite.locator('#hoftitel-neu').count(), 0);
+  // Ausblenden: Der Nächste rückt nach, das Kind erfährt, was es sonst wäre.
+  await seite.check('#ehrentafel-aus');
+  assert.match(await seite.innerText('#ehrentafel-eigen'), /Du bist ausgeblendet\. Sonst wärst du Herzogin\./);
+  assert.match(await seite.innerText('#ehrentafel'), /Herzog\s*Stiller Biber/);
+  assert.equal(await seite.locator('#hoftitel-kopf').count(), 0);
   assert.deepEqual(fehler, []);
   await seite.close();
 }

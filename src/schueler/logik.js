@@ -967,12 +967,12 @@ export function bestenliste(eigener, andere, spielId, jetzt) {
   const besterDerWoche = (st) => Math.max(0, ...(st.spiele ?? []).filter((e) => spielVon(e) === spielId && wocheVon(e.t) === woche).map((e) => e.punkte));
   const eintraege = [eigener, ...andere]
     .filter((st) => st === eigener || !st.bestenlisteAus)
-    .map((st) => ({ beiname: beiname(st), wappen: st.wappen, punkte: besterDerWoche(st), eigen: st === eigener }))
+    .map((st) => ({ beiname: beiname(st), wappen: st.wappen, punkte: besterDerWoche(st), eigen: st === eigener, code: st.code }))
     .filter((e) => e.punkte > 0)
     .sort((a, b) => b.punkte - a.punkte || Number(b.eigen) - Number(a.eigen));
   // Wer sich ausgeblendet hat, sieht seinen Platz, steht aber für die anderen nicht in der Liste.
   const sichtbar = eigener.bestenlisteAus ? eintraege.filter((e) => !e.eigen) : eintraege;
-  const plaetze = sichtbar.slice(0, BESTENLISTE_PLAETZE).map((e, i) => ({ platz: i + 1, beiname: e.beiname, wappen: e.wappen, punkte: e.punkte, eigen: e.eigen }));
+  const plaetze = sichtbar.slice(0, BESTENLISTE_PLAETZE).map((e, i) => ({ platz: i + 1, beiname: e.beiname, wappen: e.wappen, punkte: e.punkte, eigen: e.eigen, code: e.code }));
   const i = eintraege.findIndex((e) => e.eigen);
   return { plaetze, eigenerPlatz: i >= 0 ? i + 1 : null, eigenerWert: i >= 0 ? eintraege[i].punkte : 0, ausgeblendet: Boolean(eigener.bestenlisteAus) };
 }
@@ -1019,6 +1019,7 @@ export function einstellungen(klassendatei, code, pool) {
     spielpause: Boolean(k.spielpause),
     spielfreigabe: SPIELFREIGABEN[k.spielfreigabe] ? k.spielfreigabe : 'spielpause', // ADR 0018
     bestenliste: k.bestenliste !== false, // Bestenliste der Belohnungsspiele, standardmäßig an
+    ehrentafel: k.ehrentafel !== false,   // Ehrentafel mit Hoftiteln, standardmäßig an (ADR 0023)
     expedition: k.expedition ?? null,
     sicherheitsangabe: Boolean(k.sicherheitsangabe),
     ton: Boolean(k.ton),          // dezenter Ton bei richtigen Aufgaben, standardmäßig aus (ADR 0016)
@@ -1121,5 +1122,68 @@ export function merkeAhaGesehen(stand) {
   const alle = ahaMomente(stand).map((a) => a.fehlvorstellung);
   if (alle.every((f) => (stand.ahaGesehen ?? []).includes(f))) return false;
   stand.ahaGesehen = [...new Set([...(stand.ahaGesehen ?? []), ...alle])];
+  return true;
+}
+
+// ---------- Ehrentafel und Hoftitel (ADR 0023) ----------
+// Die fünf Besten des Schuljahrs nach Kronen und Siegeln der aktuellen Klassenstufe, für alle gleich gewertet.
+export const KRONEN_PUNKTE = { F: 1, G: 2, M: 4, E: 6 };
+export const EHRENTAFEL_PLAETZE = 5;
+export const HOFTITEL = [
+  { platz: 1, id: 'koenig', m: 'Klassenkönig', w: 'Klassenkönigin' },
+  { platz: 2, id: 'herzog', m: 'Herzog', w: 'Herzogin' },
+  { platz: 3, id: 'graf', m: 'Graf', w: 'Gräfin' },
+  { platz: 4, id: 'ritter', m: 'Ritter', w: 'Ritterin' },
+  { platz: 5, id: 'knappe', m: 'Knappe', w: 'Knappin' },
+];
+export const hoftitelVon = (platz) => HOFTITEL[platz - 1] ?? null;
+// Bis der Schüler gewählt hat, steht die männliche Form da.
+export const titelName = (titel, form) => (titel ? titel[form === 'w' ? 'w' : 'm'] : null);
+// Kronen je Niveau, Siegel und Punkte eines Speicherstands. Nur der Pool der Klassenstufe zählt.
+export function ehrenwert(pool, index, stand) {
+  const kr = Object.values(kronen(pool, index, stand));
+  const je = Object.fromEntries(NIVEAUS.map((n) => [n, kr.filter((k) => k === n).length]));
+  const ziele = new Set(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele.map((l) => l.id)));
+  const anzahlSiegel = Object.keys(stand.lernziele ?? {}).filter((id) => ziele.has(id)).length;
+  const punkte = NIVEAUS.reduce((p, n) => p + je[n] * KRONEN_PUNKTE[n], 0) + anzahlSiegel;
+  return { kronen: je, siegel: anzahlSiegel, punkte };
+}
+// Auf die Tafel kommt nur, wer mindestens eine Krone auf Silber oder besser hat.
+export const ehrenfaehig = (w) => w.kronen.G + w.kronen.M + w.kronen.E > 0;
+// Gleichstand: zuerst Punkte, dann mehr Purpur, Gold, Silber, Bronze. Danach teilen sich beide den Platz.
+function vergleicheEhre(a, b) {
+  if (b.punkte !== a.punkte) return b.punkte - a.punkte;
+  for (const n of [...NIVEAUS].reverse()) if (b.kronen[n] !== a.kronen[n]) return b.kronen[n] - a.kronen[n];
+  return 0;
+}
+// eintraege: [{ id, stand, wert? }]. Ausgeblendete zählen nicht mit, der Nächste rückt nach.
+// Liefert die Plätze 1 bis 5 (bei geteiltem Platz auch mehr) als [{ id, stand, wert, platz, titel }].
+export function ehrentafel(pool, index, eintraege) {
+  const liste = eintraege
+    .filter((e) => !e.stand.ehrentafelAus)
+    .map((e) => ({ ...e, wert: e.wert ?? ehrenwert(pool, index, e.stand) }))
+    .filter((e) => ehrenfaehig(e.wert))
+    .sort((a, b) => vergleicheEhre(a.wert, b.wert));
+  return liste
+    .map((e) => ({ ...e, platz: 1 + liste.filter((x) => vergleicheEhre(x.wert, e.wert) < 0).length }))
+    .filter((e) => e.platz <= EHRENTAFEL_PLAETZE)
+    .map((e) => ({ ...e, titel: hoftitelVon(e.platz) }));
+}
+// Der Titel, den ein ausgeblendeter Schüler sonst hätte.
+export function titelOhneAusblenden(pool, index, eigener, andere) {
+  const t = ehrentafel(pool, index, [{ id: 'eigen', stand: { ...eigener, ehrentafelAus: false } }, ...andere.map((st, i) => ({ id: i, stand: st }))]);
+  return t.find((e) => e.id === 'eigen')?.titel ?? null;
+}
+// Einmal melden, wer einen Titel bekommt oder aufsteigt; wer ihn verliert, hört nichts.
+export function meldeHoftitel(stand, titel) {
+  const vorher = stand.hoftitelGemeldet ?? null;
+  const jetzt = titel?.platz ?? null;
+  if (vorher === jetzt) return null;
+  stand.hoftitelGemeldet = jetzt;
+  return jetzt !== null && (vorher === null || jetzt < vorher) ? titel : null;
+}
+export function setzeTitelform(stand, form) {
+  if (form !== 'm' && form !== 'w') return false;
+  stand.hoftitelForm = form;
   return true;
 }
