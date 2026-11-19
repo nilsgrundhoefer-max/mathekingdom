@@ -390,7 +390,7 @@ _Avoid_: Administratorrechte
 
 **Administrator-Dashboard**:
 Die dritte Anwendung neben Schüler- und Lehrer-Dashboard, nur für Administratoren. Mit ihr beginnt die Einrichtung.
-_Avoid_: Verwaltung (das ist ein Bereich im Lehrer-Dashboard)
+_Avoid_: Verwaltung, Klasse (das ist ein Bereich im Lehrer-Dashboard)
 
 **Kürzel**:
 Das Lehrerkürzel, mit dem der Administrator eine Lehrkraft anlegt; jede Lehrkraft hat einen eigenen Schlüssel.
@@ -477,7 +477,7 @@ _Avoid_: Statistik (allein), Auswertung
 - **Anforderungsbereich (AFB)**: Einordnung jeder Aufgabe in I (Reproduzieren), II (Zusammenhänge herstellen) oder III (Verallgemeinern und Reflektieren). Unabhängig von der Niveaustufe.
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
-- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Verwaltung (Klasse und Codes, Backup, Berichte). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
+- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Klasse (Schüler, Unterricht, Berichte; bis 0.21 „Verwaltung“). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
 - **Tafelbild**: Vollbild-Ansicht im Bereich Jetzt, die eine Aufgabe mit den häufigsten falschen Antworten der Klasse am Beamer zeigt, ohne Codes und Namen. Sie wird aus einem Mini-Workshop-Impuls geöffnet.
 - **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick oder im Seitenblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
 - **Hilfebedarf**: Wie oft ein Schüler bei einem Lernziel Beispiel- oder Lösungsschritt-Kärtchen braucht, und ob das mit der Zeit weniger wird.
