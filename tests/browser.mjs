@@ -719,6 +719,24 @@ async function weiter(seite, wahl = '#weiter') {
   assert.ok(await seite.locator('.heatmap td.zelle.siegel').count() > 0);
   assert.ok(await seite.locator('.stapel li').count() > 5);
   await foto(seite, 'lehrer-lernstand');
+  // Lernen sichtbar machen (ADR 0017): gefestigt, Filter, Heatmap nach Fehlvorstellung.
+  assert.ok(await seite.locator('.heatmap td.zelle.gefestigt').count() > 0, 'Rückblick nach mehr als 7 Tagen festigt');
+  await seite.click('[data-filter=hilfe]');
+  const hilfeZeilen = await seite.locator('.heatmap tbody tr').count();
+  assert.ok(hilfeZeilen > 0 && hilfeZeilen < 14, `Filter viel Hilfe: ${hilfeZeilen}`);
+  assert.match(await seite.innerText('.filtergruende'), /von \d+\)/);
+  await seite.locator('.karte:has(#ls-filter)').screenshot(bilder ? { path: `${bilder}/lehrer-filter-hilfe.png` } : {});
+  await seite.click('[data-filter=ueber]');
+  assert.match(await seite.innerText('.filtergruende'), /Ida Schneider: \d+-mal sicher falsch/);
+  await seite.click('[data-filter=alle]');
+  assert.equal(await seite.locator('.heatmap tbody tr').count(), 14);
+  await seite.click('[data-sicht=fehler]');
+  await seite.waitForSelector('.fehlermap');
+  assert.equal(await seite.locator('.fehlermap tbody tr').count(), 14);
+  assert.ok(await seite.locator('.fehlermap td.fv-aktiv').count() > 0);
+  assert.ok(await seite.locator('.fehlermap td.fv-ueberwunden').count() > 0);
+  await seite.locator('.karte:has(#ls-filter)').screenshot(bilder ? { path: `${bilder}/lehrer-fehlvorstellungen.png` } : {});
+  await seite.click('[data-sicht=lernziele]');
   // Selbsteinschätzung: Tendenz je Schüler, Impuls bei Carla (dreimal unterschätzt), keine Kronen beim Lehrer.
   assert.equal(await seite.locator('#selbsteinschaetzung tbody tr').count(), 14);
   assert.match(await seite.innerText('#selbsteinschaetzung'), /eher zu niedrig[\s\S]*eher zu hoch|eher zu hoch[\s\S]*eher zu niedrig/);
@@ -730,7 +748,8 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.locator('#vorwissen').screenshot(bilder ? { path: `${bilder}/lehrer-vorwissen.png` } : {});
   await seite.locator('.heatmap [data-lernziel]').first().click();
   await seite.waitForSelector('.vierspaltig');
-  assert.equal(await seite.locator('.gruppenliste').count(), 5);
+  assert.equal(await seite.locator('.gruppenliste').count(), 6);
+  assert.ok(await seite.locator('#hilfebedarf tbody tr').count() > 0);
   // Tafelbild: eine Aufgabe mit den häufigsten falschen Antworten, ohne Namen, Lösung auf Knopfdruck.
   await seite.locator('[data-tafelbild]').first().click();
   await seite.waitForSelector('.tafelbild');
@@ -748,6 +767,9 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.waitForSelector('.weg');
   assert.equal(await seite.locator('.schuelerseite .kennzahl').count(), 3);
   await foto(seite, 'lehrer-schueler');
+  assert.ok(await seite.locator('#versuchsverlauf tbody tr').count() > 0);
+  assert.match(await seite.innerText('#versuchsverlauf thead'), /1\. Versuch[\s\S]*2\. Versuch/);
+  await seite.locator('#versuchsverlauf').screenshot(bilder ? { path: `${bilder}/lehrer-versuchsverlauf.png` } : {});
   assert.match(await seite.innerText('#meilensteine-schueler'), /Gewählt beim Start/);
   await seite.click('#einzelbericht');
   assert.ok(await seite.locator('#mk-druck .kennzahl').count() >= 3);
@@ -1139,6 +1161,43 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(gespeichert.wegstuecke.length, 4);
   assert.equal(gespeichert.wegstuecke.at(-1).rast, 'uebersprungen');
   assert.equal(gespeichert.versuche.filter((v) => v.seitenblick).length, 1);
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
+// ---------- 7b. Lernen sichtbar machen (ADR 0017): gefestigt und erstmals ohne Hilfe ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  const tag = 86400000, vor = (ms) => new Date(Date.now() - ms).toISOString();
+  const stand = leererStand('5A-SICH');
+  const k1 = pool.aufgaben.filter((a) => a.lernziel === '5.3.1-K1' && a.niveau === 'M');
+  const k2 = pool.aufgaben.find((a) => a.lernziel === '5.3.1-K2' && a.niveau === 'M');
+  const versuch = (a, t, extra = {}) => ({ t, aufgabe: a.id, lernziel: a.lernziel, niveau: a.niveau, richtig: true, versuche: 1, eingaben: [String(a.loesung ?? '')], fehlvorstellungen: [], hilfen: 0, dauer: 30, muenzen: 3, ...extra });
+  stand.versuche = [...k1.slice(0, 3).map((a) => versuch(a, vor(10 * tag), { afb: a.afb })), versuch(k1[3], vor(2 * tag), { seitenblick: true }),
+    versuch(k2, vor(3600000), { hilfen: 2, karten: ['tipp', 'beispiel'] })];
+  stand.lernziele = { '5.3.1-K1': { erreichtAm: vor(10 * tag) } };
+  stand.einstieg = { '5.3': { uebersprungen: vor(10 * tag) } };
+  await mitStand(seite, stand);
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-sich');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.waitForSelector('svg.regionskarte');
+  await seite.click('.meilenstein[aria-label^="Meilenstein Kopfrechnen"] .stein');
+  await seite.waitForSelector('.lernziele');
+  assert.equal(await seite.locator('.lernziele li.gefestigt .fest').count(), 1);
+  assert.match(await seite.innerText('.lernziele li.gefestigt'), /gefestigt/);
+  await foto(seite, 'meilenstein-gefestigt');
+  await seite.click('#aufbrechen');
+  await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.3.1-K2"]');
+  await antworte(seite, true);
+  await seite.waitForSelector('.ergebnis.richtig');
+  assert.match(await seite.innerText('#ohne-hilfe'), /ohne Beispiel und Lösungsschritt/);
+  await seite.waitForTimeout(800);
+  await foto(seite, 'erstmals-ohne-hilfe');
   assert.deepEqual(fehler, []);
   await seite.close();
 }

@@ -373,3 +373,7 @@ body { margin: 0; background: #efe6d2; }
   @keyframes mk-stempel { 0% { transform: scale(1.8) rotate(-12deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
   @keyframes mk-drehe { 0%, 40% { transform: rotate(0); } 50%, 90% { transform: rotate(180deg); } 100% { transform: rotate(360deg); } }
 }
+
+/* Lernen sichtbar machen (ADR 0017) */
+#mathekingdom .ergebnis h2 .lernsatz { display: block; flex-basis: 100%; font-family: "Segoe UI", system-ui, sans-serif; font-size: .95rem; font-weight: 600; color: #1f6b43; margin-top: 4px; }
+#mathekingdom .lernziele .fest { display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 99px; font-size: .78rem; font-weight: 700; color: #4a3a00; background: #f5d76e; vertical-align: 1px; }

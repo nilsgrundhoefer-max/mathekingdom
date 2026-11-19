@@ -97,7 +97,7 @@ export function lernzieleMitAufgaben(pool, index) {
 export const WACKELIG_AB = L.WACKELIG_AB;
 // Aufgaben aus dem Einstiegscheck zählen für den Lernzielstand nicht (ADR 0014).
 export function lernzielZustand(stand, lernzielId) {
-  if (stand.lernziele[lernzielId]) return stand.rueckblick?.[lernzielId]?.aufzufrischen ? 'aufzufrischen' : 'siegel';
+  if (stand.lernziele[lernzielId]) return stand.rueckblick?.[lernzielId]?.aufzufrischen ? 'aufzufrischen' : L.istGefestigt(stand, lernzielId) ? 'gefestigt' : 'siegel';
   if (!stand.versuche.some((x) => x.lernziel === lernzielId && !x.einstieg)) return 'offen';
   return L.istWackelig(stand, lernzielId) ? 'wackelig' : 'begonnen';
 }
@@ -322,7 +322,7 @@ export function fehlerVon(stand) {
 
 // ---------- Aufgaben-Audit ----------
 // Je Aufgabe: Schwierigkeit (Lösungsquote), Quote im ersten Versuch, Abbrüche und die häufigste falsche Antwort.
-const alsText = (e) => (e == null ? '' : typeof e === 'string' ? e : Array.isArray(e) ? e.join(' + ') : Object.entries(e).map(([a, b]) => `${a}: ${b}`).join(', '));
+export const alsText = (e) => (e == null ? '' : typeof e === 'string' ? e : Array.isArray(e) ? e.join(' + ') : Object.entries(e).map(([a, b]) => `${a}: ${b}`).join(', '));
 export function aufgabenAudit(staende, index, mindestens = 3) {
   const je = new Map();
   const eintrag = (id) => {
@@ -408,7 +408,7 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   }
   const matrix = [['Name', 'Schülercode', ...lernziele.map((l) => l.id)], ['', 'Lernziel', ...lernziele.map((l) => l.text)]];
   for (const zeile of lernzielmatrix(staende, lernziele, zielniveaus)) {
-    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
+    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'gefestigt' ? 'Siegel, gefestigt' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
   }
   const versuche = [['Name', 'Schülercode', 'Zeitpunkt', 'Aufgabe', 'Lernziel', 'Niveaustufe', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer (s)', 'Münzen', 'Erkannte Fehlvorstellungen', 'Eingaben']];
   for (const { code, stand } of staende) for (const x of stand.versuche) {
@@ -447,8 +447,8 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
 // ---------- Backups aufräumen ----------
 // Behält alles der letzten 14 Tage und danach das jeweils erste Backup jeder Kalenderwoche.
 // namen: Ordnernamen im Format JJJJ-MM-TT_HH-MM. Liefert die Namen, die gelöscht werden dürfen.
-// Siegel zählen auch, wenn sie gerade aufzufrischen sind.
-export const hatSiegel = (status) => status === 'siegel' || status === 'aufzufrischen';
+// Siegel zählen auch, wenn sie gerade aufzufrischen oder schon gefestigt sind.
+export const hatSiegel = (status) => status === 'siegel' || status === 'gefestigt' || status === 'aufzufrischen';
 
 // Expedition: Beitrag jedes Schülers und Stand der Klasse (ADR 0014). Nur die Lehrkraft sieht die Einzelbeiträge.
 export function expeditionUebersicht(staende, expedition, jetzt) {
@@ -559,4 +559,74 @@ export function alteBackups(namen, jetzt, tage = 14) {
     if (!wochen.has(woche(d))) { wochen.add(woche(d)); behalten.add(n); }
   }
   return namen.filter((n) => !behalten.has(n));
+}
+
+// ---------- Lernen sichtbar machen (ADR 0017) ----------
+// Fehlvorstellungen, die in den Aufgaben der gegebenen Lernziele hinterlegt sind (typische Fehler und Auswahl-Antworten).
+export function fehlvorstellungenZu(pool, lernzielIds) {
+  const ids = new Set(lernzielIds), da = new Set();
+  for (const a of pool.aufgaben) {
+    if (!ids.has(a.lernziel)) continue;
+    for (const f of a.typischeFehler ?? []) if (f.fehlvorstellung) da.add(f.fehlvorstellung);
+    for (const o of a.optionen ?? []) if (o.fehlvorstellung) da.add(o.fehlvorstellung);
+  }
+  return da;
+}
+// Heatmap Schüler × Fehlvorstellung für die gegebenen Lernziele. Spalten nur für Fehlvorstellungen, die in der Klasse vorkamen,
+// häufigste zuerst. Zelle: null (nie gezeigt) oder { status: 'aktiv' | 'ueberwunden', anzahl, zuletzt }.
+export function fehlvorstellungsMatrix(staende, pool, lernzielIds) {
+  const ids = new Set(lernzielIds);
+  const moeglich = fehlvorstellungenZu(pool, lernzielIds);
+  const zeilen = staende.map(({ code, stand }) => ({
+    code, stand: new Map(L.fehlvorstellungsStand(stand.versuche.filter((v) => ids.has(v.lernziel))).map((e) => [e.fehlvorstellung, e])),
+  }));
+  const zahl = new Map();
+  for (const z of zeilen) for (const [f, e] of z.stand) {
+    const x = zahl.get(f) ?? { anzahl: 0, aktiv: 0, ueberwunden: 0 };
+    x.anzahl += e.anzahl; x[e.status]++; zahl.set(f, x);
+  }
+  const spalten = [...zahl].sort((a, b) => b[1].aktiv - a[1].aktiv || b[1].anzahl - a[1].anzahl).map(([f, x]) => ({ fehlvorstellung: f, ...x }));
+  return {
+    spalten,
+    nieGezeigt: [...moeglich].filter((f) => !zahl.has(f)).length,
+    zeilen: zeilen.map((z) => ({ code: z.code, zellen: spalten.map((s) => z.stand.get(s.fehlvorstellung) ?? null) })),
+  };
+}
+
+// Lernziele, bei denen ein Schüler viel Hilfe braucht (Beispiel oder Lösungsschritt in mindestens der Hälfte der letzten 10 Aufgaben).
+export function vielHilfe(stand, lernzielIds) {
+  return lernzielIds.map((id) => ({ lernziel: id, ...L.hilfebedarf(stand, id) })).filter((x) => x.viel);
+}
+
+// Diskrepanz: Einschätzung passt nicht zum Ergebnis.
+// Überschätzt: mindestens 3 „sicher falsch“ unter den letzten 20 Aufgaben oder Selbsteinschätzung „eher zu hoch“.
+// Unterschätzt: unter den letzten 20 Aufgaben mindestens 6 „unsicher“, davon mindestens die Hälfte im ersten Versuch richtig,
+// oder Selbsteinschätzung „eher zu niedrig“. Ohne Sicherheitsangabe zählt nur die Selbsteinschätzung.
+export const DISKREPANZ_FENSTER = 20, DISKREPANZ_SICHER_FALSCH = 3, DISKREPANZ_UNSICHER_AB = 6;
+export function diskrepanz(stand, pool) {
+  const letzte = stand.versuche.filter((v) => !v.einstieg).slice(-DISKREPANZ_FENSTER);
+  const sicherFalsch = letzte.filter(L.sicherFalsch).length;
+  const unsicher = letzte.filter((v) => v.sicher === false);
+  const unsicherRichtig = unsicher.filter((v) => v.richtig && v.versuche === 1).length;
+  const tendenz = selbsteinschaetzung(stand, pool).tendenz;
+  const ueber = [], unter = [];
+  if (sicherFalsch >= DISKREPANZ_SICHER_FALSCH) ueber.push(`${sicherFalsch}-mal sicher falsch in den letzten ${letzte.length} Aufgaben`);
+  if (tendenz === 'eher zu hoch') ueber.push('wählt am Meilenstein eher zu hoch');
+  if (unsicher.length >= DISKREPANZ_UNSICHER_AB && unsicherRichtig * 2 >= unsicher.length) unter.push(`${unsicherRichtig} von ${unsicher.length}-mal unsicher, aber richtig`);
+  if (tendenz === 'eher zu niedrig') unter.push('wählt am Meilenstein eher zu niedrig');
+  return { ueberschaetzt: ueber.length > 0, unterschaetzt: unter.length > 0, gruende: { ueber, unter } };
+}
+
+// Versuchsverlauf: die letzten Aufgaben mit erstem und zweitem Versuch, Ergebnis, Fehlvorstellung und Hilfen, neueste zuerst.
+export function versuchsverlauf(stand, anzahl = 20) {
+  const zeitlich = [...stand.versuche].sort((a, b) => String(a.t).localeCompare(String(b.t)));
+  return zeitlich.slice(-anzahl).reverse().map((v) => {
+    const e = v.eingaben ?? [];
+    return {
+      t: v.t, aufgabe: v.aufgabe, lernziel: v.lernziel, niveau: v.niveau, richtig: v.richtig,
+      erster: e.length ? alsText(e[0]) : null, zweiter: e.length > 1 ? alsText(e[1]) : null,
+      fehlvorstellungen: v.fehlvorstellungen ?? [], karten: L.KARTEN.filter((k) => L.hatKarte(v, k)), sicher: v.sicher ?? null,
+      art: v.rueckblick ? 'Rückblick' : v.seitenblick ? 'Seitenblick' : v.bruecke ? 'Brücke' : v.einstieg ? 'Einstiegscheck' : null,
+    };
+  });
 }

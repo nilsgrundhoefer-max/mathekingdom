@@ -33,7 +33,8 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
     }
     // Frühere Tage: drei Meilensteine mit Kronenwahl und Krone, damit die Selbsteinschätzung etwas zeigt (ADR 0012).
     frueher.forEach((u, k) => {
-      const t = new Date(jetzt - (3 - k) * 86400000).toISOString();
+      // Der erste Meilenstein liegt zehn Tage zurück, damit Rückblick und „gefestigt“ etwas zeigen (ADR 0017).
+      const t = new Date(jetzt - (k === 0 ? 10 : 3 - k) * 86400000).toISOString();
       const stufe = L.NIVEAUS.indexOf(ziel) + (koennen > 0.75 ? 1 : koennen < 0.45 ? -1 : 0);
       const geschafft = L.NIVEAUS[Math.max(0, Math.min(3, stufe))];
       const daneben = i === 2 ? -1 : Math.floor(zufall() * 3) - 1;    // Carla traut sich jedes Mal zu wenig zu
@@ -78,6 +79,17 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
       stand.wegstueck = null;
     }
     if (i === 11) stand.muenzen += 5000;                // einer hat an seiner Datei gedreht
+    // Lernen sichtbar machen (ADR 0017), ohne Zufall: Jeder Dritte hat vor zwei Tagen einen Rückblick zum ersten Meilenstein richtig gelöst
+    // (gefestigt), Ida prüft heute immer mit „sicher“ (überschätzt sich, wenn viel falsch ist).
+    if (i % 3 === 0) {
+      const t = new Date(jetzt - 2 * 86400000).toISOString();
+      for (const l of frueher[0].lernziele.filter((x) => stand.lernziele[x.id])) {
+        const a = index.nach.get(`${l.id}|${ziel}`)?.[3] ?? index.nach.get(`${l.id}|G`)[3];
+        L.verbuche(stand, a, { geloest: true, versuche: 1, eingaben: [String(a.loesung ?? '')], fehlvorstellungen: [], hilfen: 0, dauer: 35 }, ziel, t, index, { rueckblick: true });
+        (stand.rueckblick ??= {})[l.id] = { stufe: 2, zuletzt: t };
+      }
+    }
+    if (i === 8) for (const v of stand.versuche.filter((x) => x.t > new Date(jetzt - 3600000).toISOString())) v.sicher = true;
     staende.push({ code, stand });
   });
   return { namen, zielniveaus, staende };
