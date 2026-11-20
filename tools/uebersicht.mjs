@@ -24,11 +24,16 @@ const bild = (b) => {
     stellenwerttafel: () => `Stellenwerttafel ${b.spalten.map((x, i) => `${x}: ${b.plaettchen[i]}`).join(', ')}`,
     streifen: () => `Streifenbild: Ganzes ${wert(b.ganz)}, Teile ${b.teile.map(wert).join(' und ')}`,
     vergleich: () => `Vergleichsbild: ${b.oben.name} ${wert(b.oben.wert)}, ${b.unten.name} ${wert(b.unten.wert)}${b.unterschied != null ? `, Unterschied ${wert(b.unterschied)}` : ''}`,
+    strichliste: () => `Strichliste${b.titel ? ` „${b.titel}“` : ''}: ${b.zeilen.map((x) => `${x.name} ${x.anzahl}${x.striche ? ` (gezeichnet als ${x.striche})` : ''}`).join(', ')}`,
+    saeulen: () => `${b.liegend ? 'Balkendiagramm' : 'Säulendiagramm'} ${b.ohne?.includes('titel') ? 'ohne Titel' : `„${b.titel}“`}${b.ohne?.includes('einheit') ? ', ohne Einheit' : ''}; Achse ${b.ab ?? 0} bis ${b.max}, Linien alle ${b.fein ?? b.schritt}, beschriftet alle ${b.schritt}; ${b.saeulen.map((x) => `${x.name} ${wert(x.wert)}`).join(', ')}`,
+    bilddiagramm: () => `Bilddiagramm „${b.titel}“, ein Bild (${b.symbol}) = ${b.je} ${b.einheit}; ${b.zeilen.map((x) => `${x.name} ${wert(x.wert)}`).join(', ')}`,
     zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
 };
 
+// Kapitel 1: die Antworten einer Umfrage und eine Tabelle zum Ablesen.
+const daten = (a) => [a.urliste && ` _(Antwortkärtchen: ${a.urliste.join(', ')})_`, a.daten && ` _(Tabelle: ${a.daten.kopf.join(' | ')} / ${a.daten.zeilen.map((z) => z.join(' | ')).join(' / ')})_`].filter(Boolean).join('');
 const loesung = (a) => {
   if (a.format === 'zahl') return `Lösung: ${zahl(a)}`;
   if (a.format === 'zahlenstrahl') {
@@ -46,6 +51,8 @@ const loesung = (a) => {
   }
   if (a.format === 'auswahl') return a.optionen.map((o) => `  - ${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join('\n');
   if (a.format === 'luecken') return `Lösung: ${Object.entries(a.luecken).map(([n, l]) => `${n} = **${l.loesung}**`).join(', ')}`;
+  if (a.format === 'strichliste') return `_(Strichliste anlegen, ${a.buendeln === 'auto' ? 'der fünfte Strich wird von selbst quer gesetzt' : 'das Kind setzt den Querstrich selbst'})_ Lösung: ${a.zeilen.map((z) => `${z.name} **${z.loesung}**${z.start ? ` (schon ${z.start})` : ''}`).join(', ')}`;
+  if (a.format === 'zeichnen') { const d = a.diagramm; return `_(Säulen zeichnen „${d.titel}“, Achse 0 bis ${d.max}, Linien alle ${d.fein}, beschriftet alle ${d.schritt})_ Lösung: ${d.saeulen.map((x) => (x.offen ? `${x.name} **${x.wert}**${x.start != null ? ` (steht bei ${x.start})` : ''}` : `${x.name} ${x.wert} (vorgegeben)`)).join(', ')}`; }
   if (a.format === 'zuordnen') return `Lösung: ${a.paare.map((p) => `${p.links} → ${p.rechts}`).join(', ')}`;
   return a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n');
 };
@@ -68,7 +75,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
     md += `Hilfekärtchen der ersten Aufgabe: ${karten(gruppe[0].hilfen)}\n\n`;
     for (const a of gruppe) {
       const mehrzeilig = a.format === 'auswahl' || a.format === 'sachaufgabe';
-      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
+      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
     }
   }
 }

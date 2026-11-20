@@ -355,7 +355,7 @@ export function aufgabenAudit(staende, index, mindestens = 3) {
 
 // ---------- Auswertung nach Aufgaben, Aufgabentyp, AFB und Niveau ----------
 export const FORMAT_NAMEN = { zahl: 'Zahl eingeben', auswahl: 'Auswahl', luecken: 'Lückentext', zuordnen: 'Zuordnen', sachaufgabe: 'Sachaufgabe',
-  zahlenstrahl: 'Zahlenstrahl', diagramm: 'Diagramm', tabelle: 'Tabelle' };
+  zahlenstrahl: 'Zahlenstrahl', diagramm: 'Diagramm', tabelle: 'Tabelle', strichliste: 'Strichliste anlegen', zeichnen: 'Säulen zeichnen' };
 export const AFB_NAMEN = { 1: 'AFB I', 2: 'AFB II', 3: 'AFB III' };
 // Jede Aufgabe des Pools mit ihren Zahlen, auch die nie bearbeiteten. `angeboten` heißt: Im selben Lernziel auf derselben Niveaustufe
 // hat die Klasse schon gearbeitet, die Aufgabe hätte also drankommen können.

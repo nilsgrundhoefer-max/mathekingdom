@@ -16,10 +16,11 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
-  'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm'];
+  'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
+  'zeilen', 'buendeln', 'urliste', 'daten'];
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -124,6 +125,8 @@ const loesungenVon = (a) => [
   ...(typeof a.loesung === 'number' ? [a.loesung] : []),
   ...Object.values(a.luecken ?? {}).map((l) => l.loesung),
   ...(a.teile ?? []).map((t) => t.loesung),
+  ...(a.format === 'strichliste' ? (a.zeilen ?? []).map((z) => z.loesung) : []),
+  ...(a.format === 'zeichnen' ? (a.diagramm?.saeulen ?? []).filter((x) => x.offen).map((x) => x.wert) : []),
 ];
 const wertVon = (x) => (typeof x === 'object' && x !== null ? x.wert : x);
 const istFrage = (x) => typeof x === 'object' && x !== null && x.frage === true;
@@ -166,6 +169,8 @@ function pruefeZahlenraum(a) {
   const zahlen = [...[a.text, ...(a.teile ?? []).map((t) => t.text), ...(a.optionen ?? []).filter((o) => o.richtig).map((o) => o.text)].flatMap(zahlenIn), ...(raster ? [...a.tabelle.rechnung.zahlen, a.tabelle.rechnung.ergebnis] : loesungenVon(a))];
   for (const n of zahlen) {
     let ok = true;
+    // Kapitel 1: F bis 100, G bis 1000, M bis 10 000, E bis 100 000.
+    if (kapitel === '5.1') ok = n <= [100, 1000, 10000, 100000][stufe];
     if (kapitel === '5.3') ok = stufe === 0 ? n <= (raster ? 999 : 100) : n <= 20000;
     // Kapitel 4: Auf F höchstens das Einmaleins bis 12 · 12 und glatte Zehnerzahlen (Nils, 2026-11-18).
     if (kapitel === '5.4') ok = stufe === 0 ? n <= 144 || (n <= 1000 && n % 10 === 0) : stufe === 1 ? n <= 10000 : stufe === 2 ? n <= 100000 : n <= 1000000;
@@ -183,7 +188,176 @@ const permutationen = (liste) => (liste.length <= 1 ? [liste] : liste.flatMap((x
 const kombinationen = (anzahl) => (anzahl === 0 ? [[]] : kombinationen(anzahl - 1).flatMap((k) => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((z) => [...k, z])));
 const einsetzen = (muster, ziffern) => { let i = 0; return muster.replace(/▢/g, () => ziffern[i++]); };
 const gleich = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+// Kapitel 1: Daten aus einem Bild, einer Liste von Antworten (Urliste), einer Tabelle (daten) oder dem vorgegebenen Teil eines Diagramms.
+const TAGNAMEN = { Mo: 'Montag', Di: 'Dienstag', Mi: 'Mittwoch', Do: 'Donnerstag', Fr: 'Freitag', Sa: 'Samstag', So: 'Sonntag' };
+const ohneZeichen = (t) => String(t).replace(/[„“‚‘]/g, '').trim();
+// Welcher Name ist mit einer Antwort gemeint? Wochentage dürfen ausgeschrieben sein.
+const nameIn = (text, namen) => namen.find((n) => ohneZeichen(text) === n || TAGNAMEN[n] === ohneZeichen(text));
+// Striche einer Zeile in der Strichliste. „IIII/“ ist ein richtiges Bündel, „IIIII/“ ein falsches (sechs Striche).
+const strichzahl = (z) => (z.striche ? [...z.striche].filter((c) => c === 'I' || c === '/').length : z.anzahl);
+const richtigGebuendelt = (z) => !z.striche || new RegExp(`^(IIII/)*I{0,4}$`).test(z.striche);
+const DATENBILDER = ['saeulen', 'bilddiagramm', 'strichliste'];
+function datenVon(a, quelle, spalte = 1) {
+  const b = a.bild;
+  const lies = (liste) => new Map((liste ?? []).map((x) => [x.name, istFrage(x.wert) ? null : wertVon(x.wert)]));
+  const q = quelle ?? (DATENBILDER.includes(b?.art) ? 'bild' : a.format === 'zeichnen' ? 'diagramm' : a.daten ? 'daten' : 'urliste');
+  if (q === 'bild') return b?.art === 'saeulen' ? lies(b.saeulen) : b?.art === 'bilddiagramm' ? lies(b.zeilen) : b?.art === 'strichliste' ? new Map(b.zeilen.map((z) => [z.name, strichzahl(z)])) : null;
+  if (q === 'urliste') { if (!a.urliste) return null; const m = new Map(); for (const x of a.urliste) m.set(x, (m.get(x) ?? 0) + 1); return m; }
+  if (q === 'daten') return a.daten ? new Map(a.daten.zeilen.map((z) => [z[0], /^\d[\d\u00a0]*$/.test(String(z[spalte])) ? zahlAus(z[spalte]) : null])) : null;
+  if (q === 'diagramm') return a.diagramm ? new Map(a.diagramm.saeulen.filter((x) => !x.offen).map((x) => [x.name, x.wert])) : null;
+  return null;
+}
+// Stimmt eine Aussage über die Daten? Die Namen stehen in der Reihenfolge des Satzes.
+function aussageWahr(typ, nm, m, wert) {
+  const v = (x) => m.get(x), alle = [...m.values()];
+  if (nm.some((x) => typeof v(x) !== 'number')) return undefined;
+  const einmal = (z) => alle.filter((x) => x === z).length === 1;
+  switch (typ) {
+    case 'meiste': return v(nm[0]) === Math.max(...alle) && einmal(v(nm[0]));
+    case 'wenigste': return v(nm[0]) === Math.min(...alle) && einmal(v(nm[0]));
+    case 'mehr': return v(nm[0]) > v(nm[1]);
+    case 'gleich': return v(nm[0]) === v(nm[1]);
+    case 'anzahl': return v(nm[0]) === wert;
+    case 'summeMehr': return v(nm[0]) + v(nm[1]) > v(nm[2]);
+    case 'doppelt': return v(nm[0]) === 2 * v(nm[1]);
+    case 'mehrAlsDoppelt': return v(nm[0]) > 2 * v(nm[1]);
+    case 'mehrAlsHaelfte': return 2 * v(nm[0]) > alle.reduce((x, y) => x + y, 0);
+    default: return undefined;
+  }
+}
+const NAMEN_JE_AUSSAGE = { meiste: 1, wenigste: 1, anzahl: 1, mehrAlsHaelfte: 1, mehr: 2, gleich: 2, doppelt: 2, mehrAlsDoppelt: 2, summeMehr: 3 };
+// Die Antworten sind Namen aus den Daten. Richtig ist genau der Name, auf den die Bedingung zutrifft.
+function pruefeNamenwahl(a, m, trifft) {
+  const namen = [...m.keys()];
+  const passend = namen.filter(trifft);
+  if (passend.length === 0 || (!a.mehrfach && passend.length !== 1)) return `Bedingung trifft auf ${passend.length} Zeilen zu`;
+  for (const o of a.optionen ?? []) {
+    const n = nameIn(o.text, namen);
+    if (!n) return `Antwort „${o.text}“ ist kein Name aus den Daten`;
+    if (passend.includes(n) !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+  }
+  return null;
+}
+// Achse „In 5er-Schritten bis 40“: passt, wenn jeder Wert auf einer Linie liegt, der größte Wert auf die Achse passt und es höchstens 20 Linien sind.
+const EINTEILUNG = /^In (\d+)er-Schritten bis (\d[\d\u00a0]*)(?:, denn .+)?$/;
+const einteilungPasst = (text, werte) => {
+  const m = text.match(EINTEILUNG);
+  if (!m) return undefined;
+  const [s, max] = [zahlAus(m[1]), zahlAus(m[2])];
+  return max % s === 0 && max >= Math.max(...werte) && max / s <= 20 && werte.every((w) => w % s === 0);
+};
+const MAENGEL = { 'Der Titel fehlt.': 'titel', 'Die Einheit fehlt.': 'einheit', 'Eine Säule fehlt.': 'saeule', 'Die Achse beginnt nicht bei 0.': 'achse', 'Nichts, das Diagramm ist in Ordnung.': 'nichts' };
+
 const SONDER = {
+  // Kapitel 1: Ein Wert wird aus dem Bild, der Liste, der Tabelle oder dem Diagramm abgelesen.
+  ablesen: (n, a) => {
+    const m = datenVon(a, n.quelle, n.spalte);
+    if (!m) return `keine Daten (${n.quelle ?? 'Bild'})`;
+    if (!m.has(n.name)) return `${n.name} steht nicht in den Daten`;
+    return m.get(n.name) === n.wert ? null : `bei ${n.name} steht ${m.get(n.name)}, nicht ${n.wert}`;
+  },
+  // Gesucht ist die Zeile mit dem größten, dem kleinsten, einem bestimmten oder dem mittleren Wert, die falsch übertragene oder die falsch gebündelte.
+  zeile: (n, a) => {
+    if (n.bedingung === 'falschGebuendelt') {
+      if (a.bild?.art !== 'strichliste') return 'braucht eine Strichliste';
+      const falsch = a.bild.zeilen.filter((z) => !richtigGebuendelt(z)).map((z) => z.name);
+      return pruefeNamenwahl(a, new Map(a.bild.zeilen.map((z) => [z.name, strichzahl(z)])), (x) => falsch.includes(x));
+    }
+    if (n.bedingung === 'abweichend') {
+      const ziel = datenVon(a, 'daten'), von = datenVon(a, DATENBILDER.includes(a.bild?.art) ? 'bild' : 'urliste');
+      if (!ziel || !von) return 'braucht zwei Datenquellen';
+      return pruefeNamenwahl(a, von, (x) => ziel.get(x) !== von.get(x));
+    }
+    const m = datenVon(a, n.quelle);
+    if (!m) return 'keine Daten';
+    const alle = [...m.values()], sortiert = [...alle].sort((x, y) => x - y);
+    const ziel = { groesste: Math.max(...alle), kleinste: Math.min(...alle), gleich: n.wert, mitte: alle.length % 2 ? sortiert[(alle.length - 1) / 2] : NaN }[n.bedingung];
+    if (ziel === undefined) return `unbekannte Bedingung ${n.bedingung}`;
+    return pruefeNamenwahl(a, m, (x) => m.get(x) === ziel);
+  },
+  // Bilddiagramm: So viel ist ein Bild wert.
+  schluessel: (n, a) => (a.bild?.art === 'bilddiagramm' && a.bild.je === n.wert ? null : `ein Bild steht nicht für ${n.wert}`),
+  // Säulendiagramm: So viel liegt zwischen zwei Linien.
+  linienabstand: (n, a) => (a.bild?.art === 'saeulen' && (a.bild.fein ?? a.bild.schritt) === n.wert ? null : `die Linien liegen nicht ${n.wert} auseinander`),
+  // Antworten der Form „Rot: 5 · Blau: 3“: Richtig ist genau die Antwort, die alle Werte richtig nennt.
+  datenwahl: (n, a) => {
+    const m = datenVon(a, n.quelle);
+    if (!m) return 'keine Daten';
+    for (const o of a.optionen ?? []) {
+      const teile = o.text.split(' · ').map((t) => t.match(/^(.+): (\d[\d\u00a0]*)$/));
+      if (teile.some((t) => !t)) return `Antwort „${o.text}“ hat nicht die Form Name: Zahl`;
+      const passt = teile.length === m.size && teile.every(([, x, z]) => m.get(nameIn(x, [...m.keys()])) === zahlAus(z));
+      if (passt !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+    }
+    return null;
+  },
+  // Antworten der Form „Rot, Blau, Gelb“: Richtig ist genau die Reihe vom größten zum kleinsten Wert (oder umgekehrt, wenn der Text es so verlangt).
+  rangfolge: (n, a) => {
+    const m = datenVon(a, n.quelle);
+    if (!m) return 'keine Daten';
+    if (new Set(m.values()).size !== m.size) return 'zwei Werte sind gleich';
+    const aufsteigend = /vom kleinsten zum größten/i.test(a.text);
+    const soll = [...m.keys()].sort((x, y) => (aufsteigend ? m.get(x) - m.get(y) : m.get(y) - m.get(x)));
+    for (const o of a.optionen ?? []) {
+      const reihe = o.text.split(', ').map((t) => nameIn(t, [...m.keys()]));
+      if (reihe.some((x) => !x) || reihe.length !== m.size) return `Antwort „${o.text}“ nennt nicht alle Namen`;
+      if (gleich(reihe, soll) !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+    }
+    return null;
+  },
+  // Achseneinteilung zu den Werten der Tabelle: Genau eine Antwort passt.
+  einteilung: (n, a) => {
+    const m = datenVon(a, a.daten ? 'daten' : undefined);
+    if (!m || !gleich([...m.values()], n.werte)) return 'Werte passen nicht zu den Daten';
+    for (const o of a.optionen ?? []) {
+      const p = einteilungPasst(o.text, n.werte);
+      if (p === undefined) return `Antwort „${o.text}“ ist keine Achseneinteilung`;
+      if (p !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+    }
+    return null;
+  },
+  // Was fehlt am Diagramm zur Tabelle? Genau ein Mangel, oder keiner.
+  mangel: (n, a) => {
+    const b = a.bild, t = datenVon(a, 'daten');
+    if (b?.art !== 'saeulen') return 'braucht ein Säulendiagramm';
+    const hat = new Set([...(!b.titel || b.ohne?.includes('titel') ? ['titel'] : []), ...(!b.einheit || b.ohne?.includes('einheit') ? ['einheit'] : []),
+      ...(t && [...t.keys()].some((x) => !b.saeulen.some((sa) => sa.name === x)) ? ['saeule'] : []), ...(b.ab ? ['achse'] : [])]);
+    if (t) for (const sa of b.saeulen) if (t.get(sa.name) !== wertVon(sa.wert)) return `Säule ${sa.name} passt nicht zur Tabelle`;
+    if (hat.size > 1) return 'mehr als ein Mangel';
+    if (hat.size === 0) hat.add('nichts');
+    for (const o of a.optionen ?? []) {
+      if (!MAENGEL[o.text]) return `Antwort „${o.text}“ ist kein bekannter Mangel`;
+      if (hat.has(MAENGEL[o.text]) !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+    }
+    return null;
+  },
+  // Eine Aussage über die Daten (zu einem Urteil „Stimmt das?“).
+  aussage: (n, a) => {
+    const m = datenVon(a, n.quelle);
+    if (!m) return 'keine Daten';
+    const w = aussageWahr(n.typ, n.namen, m, n.wert);
+    if (w === undefined) return `Aussage ${n.typ} lässt sich nicht prüfen`;
+    if (w !== n.stimmt) return `die Aussage ${n.typ} über ${n.namen.join(', ')} ${w ? 'stimmt' : 'stimmt nicht'}`;
+    if (n.typ === 'anzahl' && !zahlenIn(a.text).includes(n.wert)) return `${n.wert} steht nicht im Text`;
+    for (const x of n.namen.slice(0, NAMEN_JE_AUSSAGE[n.typ])) if (!a.text.includes(x) && !a.text.includes(TAGNAMEN[x] ?? '\u0000')) return `${x} steht nicht im Text`;
+    const u = a.nachweis.find((x) => x?.art === 'urteil');
+    if (u && u.stimmt !== n.stimmt) return 'Urteil passt nicht zur Aussage';
+    return null;
+  },
+  // Mehrere Aussagen als Antworten: Richtig sind genau die, die stimmen.
+  aussagen: (n, a) => {
+    const m = datenVon(a, n.quelle);
+    if (!m) return 'keine Daten';
+    for (const o of a.optionen ?? []) {
+      const x = n.liste.find((y) => y.text === o.text);
+      if (!x) return `Antwort „${o.text}“ fehlt in der Liste`;
+      const w = aussageWahr(x.typ, x.namen, m, x.wert);
+      if (w === undefined) return `Aussage „${o.text}“ lässt sich nicht prüfen`;
+      if (w !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+      for (const nm of x.namen) if (!o.text.includes(nm) && !o.text.includes(TAGNAMEN[nm] ?? '\u0000')) return `${nm} steht nicht in „${o.text}“`;
+    }
+    return null;
+  },
   // Ziffernrätsel: Genau eine Belegung der Kästchen macht die Rechnung wahr.
   ziffern: (n, a) => {
     const g = gleichungenIn(n.muster.replace(/▢/g, '0'));
@@ -437,6 +611,7 @@ const ERGEBNIS = {
   ziffern: (n) => n.ziffern, potenz: (n) => [n.basis, n.exponent, n.wert], extremzahlen: (n) => [n.gross, n.klein], anzahlProdukte: (n) => n.anzahl, anzahlTeiler: (n) => n.anzahl,
   ziffernTeilbar: (n) => n.anzahl ?? n.ziffern, ziffernZahlen: (n) => n.anzahl, grenzVielfaches: (n) => n.zahl, vielfachesZwischen: (n) => n.zahl,
   grenzRest: (n) => n.zahl, anzahlMitRest: (n) => n.anzahl, kleinsteMitResten: (n) => n.zahl, teilerZwischen: (n) => n.teiler,
+  ablesen: (n) => n.wert, schluessel: (n) => n.wert, linienabstand: (n) => n.wert,
   kombination: (n) => n.anzahl, uebertrag: (n) => n.aufgaben.filter((_, i) => n.mit[i]).map((x) => x[0]), ersteUnterschreitung: (n) => n.anzahl, quadrat: (n) => n.wurzel, zahlenpaar: (n) => n.paar,
 };
 const zahlenImObjekt = (x) => (typeof x === 'number' ? [x] : typeof x === 'string' ? zahlenIn(x) : x && typeof x === 'object' ? Object.values(x).flatMap(zahlenImObjekt) : []);
@@ -460,12 +635,15 @@ function bildZahlen(b) {
     case 'vergleich': return [...w(b.oben.wert), ...w(b.unten.wert), ...w(b.unterschied)];
     case 'zehnerfeld': return [b.felder, b.belegt, b.dazu ?? 0, b.belegt + (b.dazu ?? 0), b.felder - b.belegt];
     case 'zahlenstrahl': return [b.von, b.bis, ...(b.start != null ? [b.start] : []), ...(b.spruenge ?? []).flatMap((s) => [s.von, s.nach, Math.abs(s.nach - s.von)])];
+    case 'saeulen': return [b.max, b.schritt, b.fein ?? b.schritt, b.ab ?? 0, ...b.saeulen.flatMap((x) => w(x.wert))];
+    case 'bilddiagramm': return [b.je, ...b.zeilen.flatMap((x) => w(x.wert))];
+    case 'strichliste': return b.zeilen.map(strichzahl);
     default: return [];
   }
 }
 
 function pruefeNachweis(a) {
-  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe'].includes(a.format);
+  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen'].includes(a.format);
   if (!a.nachweis) {
     if (pflicht) melde(a.id, 'Nachweis fehlt');
     if ((a.optionen ?? []).some((o) => polaritaet(o.text) !== null) && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -479,7 +657,8 @@ function pruefeNachweis(a) {
   const frei = a.format === 'auswahl' || a.format === 'zuordnen'; // Beispiele zu einer allgemeinen Aussage sind frei wählbar
   const eingesetzt = a.format === 'luecken' ? a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken?.[n]?.loesung ?? '?') : '';
   const bekannt = new Set([10, 100, 1000, ...sichtbareTexte(a).flatMap(zahlenIn), ...bildZahlen(a.bild),
-    ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenIn(eingesetzt),
+    ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenIn(eingesetzt), ...zahlenImObjekt(a.daten),
+    ...(a.format === 'strichliste' ? a.zeilen.map((z) => z.start ?? 0) : []),
     ...(['luecken', 'tabelle'].includes(a.format) ? loesungen : []),
     // Ab M gehören kleine Zahlen zum Text („doppelt“, „dreimal“, „die Hälfte“).
     ...(NIVEAUS.indexOf(a.niveau) >= 2 ? [1, 2, 3, 4, 5, 6, 7, 8, 9] : [])]);
@@ -542,7 +721,7 @@ function pruefeNachweis(a) {
   // Jede Lösung muss sich aus dem Nachweis ergeben.
   if (a.tabelle?.art === 'raster') return;
   for (const l of loesungen) {
-    const menge = ['zahl', 'sachaufgabe', 'diagramm', 'zahlenstrahl'].includes(a.format) ? ergebnisse : vorkommen;
+    const menge = ['zahl', 'sachaufgabe', 'diagramm', 'zahlenstrahl', 'strichliste', 'zeichnen'].includes(a.format) ? ergebnisse : vorkommen;
     if (!menge.has(l)) melde(a.id, `Lösung ${l} ergibt sich nicht aus dem Nachweis`);
   }
   // Lücken ohne eigene Gleichung: Fragt die Lücke nach einem Fachbegriff („Der erste Summand ist ▢“), zählt die Gleichung im Text. Sonst muss die Zahl ein Ergebnis im Nachweis sein.
@@ -564,7 +743,7 @@ function pruefeNachweis(a) {
     if (stellen.length && stellen.every(weiter)) melde(a.id, `Lösung ${a.loesung} ist im Nachweis nur ein Zwischenergebnis`);
   }
   // Jede Zahl aus dem Text gehört zur Rechnung: Sie steht im Nachweis oder im Bild, oder sie ist als Hilfszahl mit Grund genannt.
-  const benutzt = new Set([...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild), ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl)]);
+  const benutzt = new Set([...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild), ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenImObjekt(a.daten)]);
   const mitUrteil = a.nachweis.some((n) => n?.art === 'urteil');
   if (!mitUrteil) for (const z of textZahlen(a)) if (!benutzt.has(z)) melde(a.id, `Zahl ${z} aus dem Text kommt im Nachweis nicht vor`);
   for (const o of (a.optionen ?? []).filter((x) => x.richtig && /^[\d\u00a0]+$/.test(x.text))) {
@@ -595,8 +774,25 @@ function pruefeNachweis(a) {
   }
 }
 
+// Kapitel 1: Fragt eine Aufgabe nur nach dem Wert eines Namens („Wie viele Kinder haben ‚Apfel‘ gewählt?“), ist die Lösung genau der abgelesene Wert.
+const VERGLEICH = /mehr|weniger|zusammen|oder|insgesamt|nicht|alle|beide|ohne|Unterschied|doppelt|Hälfte|fehlen|Bündel|Bilder?\b|danach|dazu/i;
+function pruefeAblesefrage(a) {
+  const m = datenVon(a);
+  if (!m || !m.size) return;
+  if (!DATENBILDER.includes(a.bild?.art) && a.daten?.kopf.length > 2) return; // Tabelle mit mehreren Spalten: Es wird gerechnet.
+  const fragen = a.format === 'zahl' ? [{ text: a.text.split('\n').at(-1), loesung: a.loesung }] : a.format === 'sachaufgabe' ? a.teile : [];
+  const kommtVor = (text, n) => new RegExp(`(^|[^${B_}\\d])${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^${B_}\\d])`).test(text) || (TAGNAMEN[n] && text.includes(TAGNAMEN[n]));
+  for (const f of fragen) {
+    if (!/^Wie viele/.test(f.text) || VERGLEICH.test(f.text)) continue;
+    const namen = [...m.keys()].filter((n) => kommtVor(f.text, n));
+    if (namen.length !== 1 || typeof m.get(namen[0]) !== 'number') continue;
+    if (m.get(namen[0]) !== f.loesung) melde(a.id, `„${f.text}“: abgelesen ist ${m.get(namen[0])}, nicht ${f.loesung}`);
+  }
+}
+
 // Auswahlaufgaben: Die richtige Antwort muss an den Nachweis gebunden sein.
-const ARTEN_AUSWAHL = ['quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt'];
+const ARTEN_AUSWAHL = ['quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
+  'zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen'];
 function pruefeAuswahlNachweis(a, ergebnisse) {
   const arten = a.nachweis.filter((n) => typeof n === 'object').map((n) => n.art);
   const gebunden = arten.some((x) => ARTEN_AUSWAHL.includes(x));
@@ -604,7 +800,7 @@ function pruefeAuswahlNachweis(a, ergebnisse) {
   // Zahlen in der richtigen Antwort stehen im Text oder im Nachweis.
   const erlaubt = new Set([...zahlenIn(a.text), ...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild)]);
   // Rechnet eine Sonderart jede Antwort selbst nach, sind deren Zahlen schon geprüft.
-  const selbstGeprueft = arten.some((x) => ['gleichungen', 'wert', 'extrem', 'zahlenwahl', 'paarsumme', 'gleicheWerte', 'restBleibt', 'quotientUeber', 'ueberschlagVon'].includes(x));
+  const selbstGeprueft = arten.some((x) => ['gleichungen', 'wert', 'extrem', 'zahlenwahl', 'paarsumme', 'gleicheWerte', 'restBleibt', 'quotientUeber', 'ueberschlagVon', 'datenwahl', 'einteilung', 'zeile', 'mangel', 'rangfolge'].includes(x));
   if (!selbstGeprueft) for (const o of richtige) for (const z of zahlenIn(o.text)) if (!erlaubt.has(z)) melde(a.id, `Zahl ${z} in der richtigen Antwort kommt weder im Text noch im Nachweis vor`);
   // Antworten mit Zustimmung oder Ablehnung brauchen ein Urteil.
   if (a.optionen.some((o) => polaritaet(o.text) !== null) && !arten.includes('urteil') && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -743,8 +939,54 @@ function pruefeBild(a) {
       if (b.start != null && b.spruenge?.length && b.spruenge[0].von !== b.start) m('erster Sprung beginnt nicht am Start');
       break;
     }
+    case 'saeulen': {
+      const fein = b.fein ?? b.schritt, ab = b.ab ?? 0;
+      if (!(b.titel || b.ohne?.includes('titel')) || !(b.einheit || b.ohne?.includes('einheit'))) m('Titel oder Einheit fehlt');
+      if (b.ohne?.some((x) => !['titel', 'einheit'].includes(x))) m('unbekannter Teil in ohne');
+      if (!(fein > 0) || !(b.schritt > 0) || b.schritt % fein !== 0 || (b.max - ab) % b.schritt !== 0 || ab % fein !== 0 || !(b.max > ab)) { m('Achse geht nicht auf'); break; }
+      if ((b.max - ab) / fein > 40) m('zu viele Linien');
+      // Achsen beginnen bei 0 (Nils, 2026-11-20). Nur täuschende Diagramme in V2 auf M und E dürfen abgeschnitten sein.
+      if (ab !== 0 && !(/-V2$/.test(a.lernziel) && ['M', 'E'].includes(a.niveau))) m(`Achse beginnt bei ${ab}, nicht bei 0`);
+      if (!Array.isArray(b.saeulen) || b.saeulen.length < 2 || b.saeulen.length > 7) { m('braucht zwei bis sieben Säulen'); break; }
+      if (new Set(b.saeulen.map((x) => x.name)).size !== b.saeulen.length) m('Name doppelt');
+      for (const x of b.saeulen) {
+        const v = wertVon(x.wert);
+        if (istFrage(x.wert)) unbekannte.push(v);
+        // Jeder Wert liegt genau auf einer Linie und auf der Achse.
+        if (!Number.isInteger(v) || v <= ab || v > b.max || (v - ab) % fein !== 0) m(`Wert ${v} bei ${x.name} liegt nicht auf einer Linie`);
+      }
+      break;
+    }
+    case 'bilddiagramm': {
+      if (!b.titel || !b.einheit) m('Titel oder Einheit fehlt');
+      if (!['kind', 'buch', 'schaf', 'apfel'].includes(b.symbol)) m(`unbekanntes Symbol ${b.symbol}`);
+      if (!ganz(b.je, 1, 1000)) { m('Schlüssel fehlt'); break; }
+      if (!Array.isArray(b.zeilen) || b.zeilen.length < 2 || b.zeilen.length > 6) { m('braucht zwei bis sechs Zeilen'); break; }
+      for (const x of b.zeilen) {
+        const v = wertVon(x.wert);
+        if (istFrage(x.wert)) unbekannte.push(v);
+        const halb = v % b.je !== 0;
+        // Halbe Bilder erst ab M, sauber in der Mitte geteilt.
+        if (halb && (b.je % 2 !== 0 || v % b.je !== b.je / 2)) m(`Wert ${v} ist kein Vielfaches eines halben Bildes`);
+        if (halb && NIVEAUS.indexOf(a.niveau) < 2) m(`halbes Bild auf Niveaustufe ${a.niveau}`);
+        if (!(v > 0) || Math.ceil(v / b.je) > 12) m(`Wert ${v}: zu viele Bilder in einer Zeile`);
+      }
+      break;
+    }
+    case 'strichliste': {
+      if (!Array.isArray(b.zeilen) || b.zeilen.length < 1 || b.zeilen.length > 6) { m('braucht eine bis sechs Zeilen'); break; }
+      if (new Set(b.zeilen.map((x) => x.name)).size !== b.zeilen.length) m('Name doppelt');
+      for (const z of b.zeilen) {
+        if (!ganz(z.anzahl, 0, 40)) m(`Anzahl ${z.anzahl} passt nicht`);
+        if (z.striche && (!/^[I/]+$/.test(z.striche) || strichzahl(z) !== z.anzahl)) m(`Striche bei ${z.name} passen nicht zur Anzahl`);
+      }
+      break;
+    }
     default: m('unbekannte Bildart');
   }
+  // Kapitel 1: Nennen Text und Bildtitel eine Klasse, ist es dieselbe.
+  const klassen = (t) => String(t ?? '').match(/\b\d[a-e]\b/g) ?? [];
+  if (klassen(b.titel).length) for (const k of klassen(a.text)) if (!klassen(b.titel).includes(k)) m(`Klasse ${k} im Text, aber ${klassen(b.titel).join(', ')} im Titel`);
   // Das Bild muss zur Aufgabe gehören: Seine Zahlen stehen im Text, in den Antworten, im Nachweis oder sind die Lösung.
   const bekannt = new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...loesungenVon(a), ...zahlenImObjekt(a.nachweis), ...zahlenImObjekt(a.tabelle)]);
   for (const k of kern) {
@@ -757,7 +999,8 @@ function pruefeBild(a) {
   if (unbekannte.length > 1) m('mehr als eine Unbekannte');
 }
 // Formate, die das Dashboard selbst zeichnet (Zahlenstrahl, Diagramm, Rechenraster, Zahlenmauer, Malkreuz), zählen wie ein Bild.
-const hatBild = (a) => Boolean(a.bild) || a.format === 'zahlenstrahl' || a.format === 'diagramm' || ['raster', 'mauer', 'malkreuz'].includes(a.tabelle?.art);
+// Kapitel 1: Strichliste und Säulen zeichnen, auch die Antwortkärtchen einer Umfrage (Urliste).
+const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz'].includes(a.tabelle?.art);
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -869,11 +1112,58 @@ function pruefeFormat(a) {
         if (zeichen === '−' && links - oben !== l) melde(a.id, 'Subtraktionstabelle falsch');
         if (zeichen === '·' && links * oben !== l) melde(a.id, 'Maltabelle falsch');
         if (t.kopf[k] === 'Gesamt' && zeile.slice(1, k).reduce((s, x) => s + zahlAus(String(x)), 0) !== l) melde(a.id, 'Tabelle: Gesamt falsch');
+        // Kapitel 1: Eine Zeile „Gesamt“ ist die Summe der Spalte. Eine Zeile mit Namen enthält den abgelesenen Wert.
+        const wertIn = (r) => (typeof r[k] === 'object' ? a.luecken?.[r[k].luecke]?.loesung : zahlAus(String(r[k])));
+        if (zeile[0] === 'Gesamt' && t.zeilen.filter((r) => r !== zeile).reduce((s, r) => s + wertIn(r), 0) !== l) melde(a.id, 'Tabelle: Zeile Gesamt falsch');
+        const abgelesen = (a.nachweis ?? []).filter((n) => n?.art === 'ablesen' && n.name === zeile[0] && !n.spalte);
+        if (t.kopf.length === 2 && abgelesen.length === 1 && !abgelesen.some((n) => n.wert === l)) melde(a.id, `Tabelle: bei ${zeile[0]} steht ${l}, abgelesen ist ${abgelesen.map((n) => n.wert).join(' oder ')}`);
         if (t.kopf[k] === 'fehlt bis 1000' && 1000 - links !== l) melde(a.id, 'Tabelle: Ergänzung falsch');
         if (t.kopf[k] === 'a − (b + c)' && Number(zeile[0]) - (Number(zeile[1]) + Number(zeile[2])) !== l) melde(a.id, 'Tabelle: Rechenausdruck falsch');
       });
     }
+  } else if (a.format === 'strichliste') {
+    // Bündeln: auf F und G von selbst, ab M setzt das Kind den Querstrich selbst (Nils, 2026-11-20).
+    if (a.buendeln !== (NIVEAUS.indexOf(a.niveau) <= 1 ? 'auto' : 'selbst')) melde(a.id, `Strichliste: Bündeln muss auf ${a.niveau} ${NIVEAUS.indexOf(a.niveau) <= 1 ? 'auto' : 'selbst'} sein`);
+    if (!Array.isArray(a.zeilen) || a.zeilen.length < 2 || a.zeilen.length > 6) { melde(a.id, 'Strichliste: zwei bis sechs Zeilen'); return; }
+    if (new Set(a.zeilen.map((z) => z.name)).size !== a.zeilen.length) melde(a.id, 'Strichliste: Name doppelt');
+    for (const z of a.zeilen) {
+      pruefeZahl(a.id, z, `Zeile ${z.name}`);
+      if (!ganz(z.loesung, 1, 40)) melde(a.id, `Strichliste: ${z.loesung} Striche in einer Zeile`);
+      if (z.start != null && !ganz(z.start, 1, z.loesung - 1)) melde(a.id, `Strichliste: Start ${z.start} bei ${z.name} passt nicht`);
+    }
+    // Die Liste der Antworten ergibt mit den schon vorhandenen Strichen genau die Lösung.
+    if (a.urliste) {
+      const m = datenVon(a, 'urliste');
+      for (const x of m.keys()) if (!a.zeilen.some((z) => z.name === x)) melde(a.id, `Strichliste: Antwort ${x} hat keine Zeile`);
+      for (const z of a.zeilen) if ((m.get(z.name) ?? 0) + (z.start ?? 0) !== z.loesung) melde(a.id, `Strichliste: ${z.name} hat ${(m.get(z.name) ?? 0) + (z.start ?? 0)} Striche, nicht ${z.loesung}`);
+    }
+  } else if (a.format === 'zeichnen') {
+    const d = a.diagramm ?? {};
+    if (!d.titel || !d.einheit || !(d.fein > 0) || !(d.schritt > 0) || d.schritt % d.fein !== 0 || !(d.max > 0) || d.max % d.schritt !== 0) { melde(a.id, 'Zeichnen: Titel, Einheit oder Achse passt nicht'); return; }
+    if (d.max / d.fein > 40) melde(a.id, 'Zeichnen: zu viele Linien zum Einrasten');
+    if (!Array.isArray(d.saeulen) || d.saeulen.length < 2 || d.saeulen.length > 7) { melde(a.id, 'Zeichnen: zwei bis sieben Säulen'); return; }
+    if (!d.saeulen.some((x) => x.offen && x.start !== x.wert)) melde(a.id, 'Zeichnen: keine Säule zu zeichnen');
+    if (new Set(d.saeulen.map((x) => x.name)).size !== d.saeulen.length) melde(a.id, 'Zeichnen: Name doppelt');
+    for (const x of d.saeulen) {
+      // Jede Säule rastet auf einer Linie ein: Lösung und Starthöhe liegen auf dem Raster der Linien.
+      if (!ganz(x.wert, d.fein, d.max) || x.wert % d.fein !== 0) melde(a.id, `Zeichnen: Wert ${x.wert} bei ${x.name} liegt nicht auf einer Linie`);
+      if (x.start != null && (!ganz(x.start, 0, d.max) || x.start % d.fein !== 0)) melde(a.id, `Zeichnen: Start ${x.start} bei ${x.name} passt nicht`);
+      if (x.start != null && !x.offen) melde(a.id, 'Zeichnen: Start bei einer vorgegebenen Säule');
+    }
+    // Steht eine Tabelle dabei, zeigt das fertige Diagramm genau ihre Werte.
+    if (a.daten) {
+      const t = datenVon(a, 'daten');
+      // Eine Zeile „Gesamt“ und ein „?“ in der Tabelle sind erlaubt.
+      const namen = [...t.keys()].filter((x) => x !== 'Gesamt');
+      const werte = a.daten.kopf.length === 2; // Bei mehreren Spalten wird gerechnet, nicht abgelesen.
+      if (namen.length !== d.saeulen.length || d.saeulen.some((x) => !t.has(x.name) || (werte && t.get(x.name) !== null && t.get(x.name) !== x.wert))) melde(a.id, 'Zeichnen: Säulen passen nicht zur Tabelle');
+    }
   } else melde(a.id, `unbekanntes Format ${a.format}`);
+  if (a.daten) {
+    const t = a.daten;
+    if (!Array.isArray(t.kopf) || t.kopf.length < 2 || !Array.isArray(t.zeilen) || t.zeilen.some((z) => z.length !== t.kopf.length)) melde(a.id, 'Daten: Zeilen passen nicht zur Kopfzeile');
+  }
+  if (a.urliste && (!Array.isArray(a.urliste) || a.urliste.length < 3 || a.urliste.length > 60)) melde(a.id, 'Urliste: 3 bis 60 Antworten');
 }
 
 // Stellenraster: Die Ziffern in den Zeilen und die Lösungsziffern müssen genau die Rechnung ergeben.
@@ -1007,6 +1297,9 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   pruefeBegriff(a);
   pruefeNachweis(a);
   pruefeBild(a);
+  pruefeAblesefrage(a);
+  // Kapitel 1 spielt in fünften Klassen: Jede genannte Klasse ist 5a bis 5e.
+  if (a.lernziel.startsWith('5.1.')) for (const k of sichtbareTexte(a).join(' ').match(/\b\d+[a-z]\b/g) ?? []) if (!/^5[a-e]$/.test(k)) melde(a.id, `Klasse ${k} gibt es in Klasse 5 nicht`);
   if (a.niveau === 'F' && !hatBild(a)) melde(a.id, 'auf F braucht jede Aufgabe ein Bild');
   if (a.niveau === 'F' && a.afb === 3) melde(a.id, 'auf F gibt es keinen Anforderungsbereich III');
 }

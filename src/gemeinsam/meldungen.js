@@ -53,6 +53,8 @@ export function loesungVon(a) {
     case 'tabelle': return Object.values(a.luecken).map((l) => l.loesung).join(', ');
     case 'auswahl': return a.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
     case 'zuordnen': return a.paare.map((p) => `${p.links} → ${p.rechts}`).join(', ');
+    case 'strichliste': return a.zeilen.map((z) => `${z.name}: ${z.loesung} Striche`).join(', ');
+    case 'zeichnen': return a.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     default: return '';
   }
 }

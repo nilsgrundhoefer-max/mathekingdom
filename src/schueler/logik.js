@@ -135,8 +135,34 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'luecken': case 'tabelle': return zusammen(Object.entries(aufgabe.luecken).map(([name, l]) => pruefeZahl(l, eingabe?.[name])));
     case 'zuordnen': return { richtig: aufgabe.paare.every((p) => eingabe?.[p.links] === p.rechts), fehlvorstellung: null };
     case 'sachaufgabe': case 'diagramm': return zusammen(aufgabe.teile.map((t, i) => pruefeZahl(t, eingabe?.[i])));
+    case 'strichliste': return pruefeStrichliste(aufgabe, eingabe);
+    case 'zeichnen': return pruefeZeichnung(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
+}
+// Strichliste (Kapitel 1): je Zeile ein Strichmuster aus „I“ und „/“. „IIII/“ ist ein richtiges Bündel.
+// Ab M bündelt das Kind selbst: Ein falsch gesetzter Querstrich ist ein Fehler, auch wenn die Zahl stimmt.
+export const strichAnzahl = (muster) => [...String(muster ?? '')].filter((c) => c === 'I' || c === '/').length;
+export const richtigGebuendelt = (muster) => /^(IIII\/)*I{0,4}$/.test(String(muster ?? ''));
+function pruefeStrichliste(aufgabe, eingabe) {
+  const zeilen = aufgabe.zeilen.map((z, i) => ({ z, m: String(eingabe?.[i] ?? '') }));
+  const zahlStimmt = zeilen.every(({ z, m }) => strichAnzahl(m) === z.loesung);
+  const buendelStimmt = aufgabe.buendeln !== 'selbst' || zeilen.every(({ m }) => richtigGebuendelt(m));
+  if (zahlStimmt && buendelStimmt) return { richtig: true, fehlvorstellung: null };
+  const fehlvorstellung = !buendelStimmt ? 'strich-buendel-falsch'
+    : zeilen.some(({ z, m }) => Math.abs(strichAnzahl(m) - z.loesung) === 1) ? 'liste-verzaehlt' : null;
+  return { richtig: false, fehlvorstellung };
+}
+// Säulen zeichnen (Kapitel 1): je offene Säule die gezogene Höhe.
+function pruefeZeichnung(aufgabe, eingabe) {
+  const d = aufgabe.diagramm, offen = d.saeulen.map((sa, i) => ({ sa, w: Number(eingabe?.[i]) })).filter((x) => x.sa.offen);
+  if (offen.every(({ sa, w }) => w === sa.wert)) return { richtig: true, fehlvorstellung: null };
+  // Linien als Einerschritte gezählt: Die Säule steht bei wert : fein.
+  const einer = d.fein > 1 && offen.some(({ sa, w }) => w !== sa.wert && w === sa.wert / d.fein);
+  // Alle Höhen richtig, aber an den falschen Säulen.
+  const soll = offen.map(({ sa }) => sa.wert).sort((a, b) => a - b), ist = offen.map(({ w }) => w).sort((a, b) => a - b);
+  const vertauscht = offen.length > 1 && soll.every((x, i) => x === ist[i]);
+  return { richtig: false, fehlvorstellung: einer ? 'skala-einerschritte' : vertauscht ? 'diagramm-vertauscht' : null };
 }
 
 // ---------- Lernziele ----------

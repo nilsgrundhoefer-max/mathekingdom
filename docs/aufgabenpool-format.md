@@ -60,6 +60,12 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 
 **`tabelle`**: `tabelle` hat einen `kopf` und `zeilen`. Eine Zelle ist ein Text oder eine Lücke `{ "luecke": "name" }`. `luecken` ordnet jedem Namen `loesung` und `typischeFehler` zu, wie beim Format `luecken`. Alle Lücken müssen stimmen. Mit `art: "raster"` wird die Tabelle als Rechenraster gezeichnet (Spalten H, Z, E, ein Feld je Ziffer); `rechnung` nennt dann `zeichen`, `zahlen` und `ergebnis`, und der Prüfer vergleicht die Ziffern der Lücken mit dem Ergebnis.
 
+**`strichliste`** (Kapitel 1, ADR 0029): Das Kind legt eine Strichliste an. `zeilen` aus `name`, `loesung` (Anzahl der Striche am Ende) und optional `start` (so viele Striche stehen schon da und lassen sich nicht wegnehmen). `buendeln` ist auf F und G `"auto"` (das Programm legt den fünften Strich quer) und ab M `"selbst"` (das Kind setzt den Querstrich, ein falsches Bündel ist ein Fehler). Die Antworten stehen meist als `urliste` dabei; dann ist `start` plus Anzahl in der Urliste die Lösung.
+
+**`zeichnen`** (Kapitel 1, ADR 0029): Das Kind zieht Säulen auf die richtige Höhe. `diagramm` wie beim Bild `saeulen`; Säulen mit `offen: true` sind zu zeichnen, ihr `wert` ist die Lösung, `start` (optional) die Höhe zu Beginn. Jeder Wert und jeder Start liegt auf einer Linie (`fein`), mindestens eine Säule muss bewegt werden. Steht eine Tabelle `daten` dabei, muss das Diagramm zu ihr passen.
+
+Zu jedem Format darf in Kapitel 1 eine `urliste` (Liste der einzelnen Antworten, als Karten zum Abhaken gezeigt) und eine Tabelle `daten` (`kopf`, `zeilen`) stehen. Der Prüfer liest Antworten aus ihnen und aus dem Bild nach (Prüfarten `ablesen`, `zeile`, `aussage`, `aussagen`, `rangfolge`, `datenwahl`, `einteilung`, `mangel`, `schluessel`, `linienabstand`).
+
 Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau eine Ziffer (Ziffernrätsel).
 
 ## Bilder
@@ -77,6 +83,9 @@ Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau e
 | `streifen` | `ganz`, `teile` (das Ganze ist die Summe der Teile) |
 | `vergleich` | `oben` und `unten` mit `name` und `wert`, `unterschied` |
 | `zahlenstrahl` | wie `strahl` beim Format `zahlenstrahl` |
+| `strichliste` | `titel`, `zeilen` aus `name` und `anzahl`, optional `striche` (ein Muster aus `I` und `/`, zum Beispiel für ein falsch gebündeltes `IIIII/`) |
+| `saeulen` | `titel`, `einheit`, `max`, `schritt` (beschriftete Linien), optional `fein` (alle Linien), `ab` (Beginn der Achse, nur V2 auf M und E), `liegend` (Balkendiagramm), `werteZeigen`, `ohne` (fehlende Teile wie `titel`), `saeulen` aus `name` und `wert` |
+| `bilddiagramm` | `titel`, `einheit`, `symbol` (`kind`, `buch`, `schaf`, `apfel`), `je` (so viel steht ein Bild), `zeilen` aus `name` und `wert` |
 
 ## Regeln, die die Prüfung erzwingt
 
@@ -88,6 +97,7 @@ Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau e
 - Jede Gleichung in Aufgabentext, Hilfekärtchen, Merkzettel und Wortspeicher stimmt.
 - Das Bild zeigt nur Zahlen der Aufgabe und passt zur Rechnung.
 - Jedes Lernziel mit Aufgaben nennt seine `grundlage` (ADR 0015).
+- Kapitel 1: Achsen beginnen bei 0 und gehen in gleichen Schritten, jeder Wert liegt auf einer Linie, höchstens 20 Linien. Nur V2 auf M und E darf eine abgeschnittene Achse zeigen. Halbe Bilder im Bilddiagramm erst ab M und genau halb. Auf F und G bündelt das Programm die Strichliste, ab M das Kind. Jede genannte Klasse ist 5a bis 5e, und Text und Bildtitel nennen dieselbe.
 - `tests/pruefer.test.js` baut absichtlich Fehler ein und verlangt, dass die Prüfung sie meldet.
 
 ## Wortspeicher
