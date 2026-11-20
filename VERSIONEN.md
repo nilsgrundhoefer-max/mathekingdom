@@ -8,6 +8,23 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.33 vom 20.11.2026
+
+### Schüler
+
+- Kapitel 1 „Daten und Diagramme“ hat jetzt Aufgaben: 9 Lernziele mit je 6 Aufgaben auf F, G, M und E, zusammen 216. Die Themen sind Strichliste und Häufigkeitstabelle, Säulen-, Balken- und Bilddiagramm lesen, Diagramme zeichnen, Diagramme vergleichen und prüfen sowie eine eigene kleine Umfrage auswerten.
+- Neu ist „Strichliste anlegen“. Mit „+ Strich“ setzt du einen Strich in die passende Zeile. Auf F und G legt das Programm den fünften Strich von selbst quer. Ab M setzt du den Querstrich mit dem Knopf „Querstrich“ selbst, und ein falsches Bündel zählt als Fehler.
+- Neu ist „Säulen zeichnen“. Du ziehst eine Säule an ihrem Griff nach oben oder klickst auf die richtige Höhe. Die Säule rastet auf den Linien ein. Mit der Tastatur geht es über die Pfeiltasten, Bild auf und Bild ab, Pos1 und Ende. Beim Ziehen läuft keine Zahl mit, du liest an der Achse ab. „Säule zurücksetzen“ stellt die gewählte Säule zurück.
+- Säulen- und Balkendiagramme beginnen immer bei 0 und gehen in gleichen Schritten. Auf F ist jede Linie beschriftet, ab G jede zweite oder fünfte. Nur die Aufgaben zu täuschenden Diagrammen auf M und E zeigen absichtlich eine abgeschnittene Achse.
+- Bilddiagramme haben ein Bild je Diagramm und den Schlüssel oben. Halbe Bilder gibt es erst ab M, senkrecht in der Mitte geteilt.
+- Ohne Vorgabe der Lehrkraft beginnt die Etappe auf der Startseite jetzt in Kapitel 1.
+
+### Lehrkraft
+
+- Lernstand, Aufgabenauswertung und Tafelbild kennen die beiden neuen Formate „Strichliste anlegen“ und „Säulen zeichnen“ und zeigen die richtige Lösung als Bild.
+- Die Diagnose kennt die Fehlvorstellungen zu Strichlisten und Diagrammen, zum Beispiel „Bündelt die Strichliste falsch“ und „Zählt die Linien des Diagramms, statt die Zahlen an der Achse zu beachten“.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.32 vom 19.11.2026
 
 Im Schulnetz erprobt am 20.11.2026.

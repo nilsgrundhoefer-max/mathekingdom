@@ -192,6 +192,21 @@ const KIND = {
   'gesetz-auf-division': 'Du weißt jetzt: Beim Teilen darfst du nicht tauschen und keine Klammern verschieben.',
   'muster-falsche-regel': 'Du prüfst deine Regel jetzt an allen Zahlen des Musters.',
   'sach-schritt-vergessen': 'Du denkst jetzt an alle Rechenschritte.',
+  'strich-buendel-falsch': 'Du bündelst jetzt richtig: Der fünfte Strich geht quer.',
+  'strich-buendel-als-vier': 'Du weißt jetzt: Ein Bündel sind 5 Striche.',
+  'liste-verzaehlt': 'Du zählst jetzt sorgfältig und streichst ab, was du schon gezählt hast.',
+  'skala-einerschritte': 'Du schaust jetzt auf die Zahlen an der Achse.',
+  'skala-zwischenwert': 'Du liest jetzt auch Werte zwischen zwei Zahlen genau ab.',
+  'bild-symbole-gezaehlt': 'Du denkst jetzt an den Schlüssel: Ein Bild steht für mehrere.',
+  'bild-halbes-symbol': 'Du weißt jetzt: Ein halbes Bild ist die Hälfte wert.',
+  'diagramm-vertauscht': 'Du ordnest jetzt jeden Wert der richtigen Säule zu.',
+  'extrem-verwechselt': 'Du unterscheidest jetzt sicher zwischen am meisten und am wenigsten.',
+  'achse-abgeschnitten': 'Du schaust jetzt zuerst auf die unterste Zahl an der Achse.',
+  'einteilung-zu-fein': 'Du wählst jetzt nicht zu kleine Schritte für die Achse.',
+  'einteilung-zu-grob': 'Du wählst jetzt Schritte, bei denen jeder Wert auf einer Linie liegt.',
+  'einteilung-zu-kurz': 'Du achtest jetzt darauf: Auch die größte Säule muss auf die Achse passen.',
+  'umfrage-unpassend': 'Du stellst jetzt Fragen mit klaren Antworten zum Zählen.',
+  'anteil-nicht-beachtet': 'Du vergleichst jetzt auch, wie viele insgesamt gefragt wurden.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -241,6 +256,22 @@ export const fehlvorstellungen = {
   'gesetz-auf-division': fv('Überträgt das Vertauschungs- oder Verbindungsgesetz auf die Division.', 'Beim Dividieren darfst du die Zahlen nicht tauschen und die Klammern nicht verschieben. Rechne beide Seiten aus.'),
   'muster-falsche-regel': fv('Setzt ein Zahlenmuster mit einer falschen Regel fort (zum Beispiel immer gleich viel dazu statt immer mal gleich viel).', 'Prüfe deine Regel an allen Zahlen des Musters, nicht nur an den ersten beiden.'),
   'sach-schritt-vergessen': fv('Führt nur einen von mehreren nötigen Rechenschritten aus.', 'Du bist noch nicht fertig: Es fehlt noch ein Rechenschritt.'),
+  // Kapitel 1: Daten und Diagramme
+  'strich-buendel-falsch': fv('Bündelt die Strichliste falsch: Der Querstrich steht nicht als fünfter Strich.', 'Schau dir deine Bündel an: Vier Striche stehen gerade, der fünfte geht quer darüber.'),
+  'strich-buendel-als-vier': fv('Zählt ein Bündel der Strichliste als 4 statt als 5.', 'Zähle in einem Bündel auch den Querstrich mit. Ein Bündel sind 5 Striche.'),
+  'liste-verzaehlt': fv('Verzählt sich beim Auszählen einer Liste um eins oder zwei.', 'Zähle noch einmal und streiche dabei jede Antwort ab, die du schon gezählt hast.'),
+  'skala-einerschritte': fv('Zählt die Linien des Diagramms, statt die Zahlen an der Achse zu beachten.', 'Schau auf die Zahlen an der Achse: In welchen Schritten geht es von Linie zu Linie?'),
+  'skala-zwischenwert': fv('Liest bei einem Wert zwischen zwei beschrifteten Linien die nächste beschriftete Zahl ab.', 'Das Ende liegt zwischen zwei Zahlen. Zähle die feinen Linien in den richtigen Schritten weiter.'),
+  'bild-symbole-gezaehlt': fv('Zählt im Bilddiagramm die Bilder, ohne den Schlüssel zu beachten.', 'Lies den Schlüssel: Ein Bild steht nicht für 1, sondern für mehrere.'),
+  'bild-halbes-symbol': fv('Wertet ein halbes Bild im Bilddiagramm als ganzes oder lässt es weg.', 'Schau genau hin: Ein halbes Bild zählt die Hälfte des Schlüssels.'),
+  'diagramm-vertauscht': fv('Trägt Werte bei der falschen Säule ein (zwei Werte vertauscht).', 'Prüfe Säule für Säule: Gehört der Wert aus der Tabelle wirklich zu diesem Namen?'),
+  'extrem-verwechselt': fv('Verwechselt den größten mit dem kleinsten Wert.', 'Lies die Frage noch einmal: Wird nach am meisten oder nach am wenigsten gefragt?'),
+  'achse-abgeschnitten': fv('Lässt sich von einer Achse täuschen, die nicht bei 0 beginnt, und vergleicht nur die Höhe der Säulen.', 'Schau, bei welcher Zahl die Achse beginnt. Vergleiche die Zahlen, nicht nur die Höhe der Säulen.'),
+  'einteilung-zu-fein': fv('Wählt eine Achseneinteilung mit viel zu kleinen Schritten.', 'Mit so kleinen Schritten wird die Achse sehr lang. Nimm größere Schritte.'),
+  'einteilung-zu-grob': fv('Wählt eine Achseneinteilung, bei der Werte zwischen die Linien fallen.', 'Prüfe jeden Wert: Liegt er genau auf einer Linie?'),
+  'einteilung-zu-kurz': fv('Wählt eine Achse, die vor dem größten Wert endet.', 'Prüfe den größten Wert: Passt seine Säule noch auf die Achse?'),
+  'umfrage-unpassend': fv('Wählt eine Umfragefrage, deren Antworten sich nicht eindeutig zählen lassen.', 'Überlege: Kann jedes Kind genau eine von wenigen Antworten geben?'),
+  'anteil-nicht-beachtet': fv('Vergleicht Anzahlen aus unterschiedlich großen Gruppen, ohne die Gruppengröße zu beachten.', 'Die Gruppen sind verschieden groß. Vergleiche, welcher Teil der Gruppe es jeweils ist.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -275,6 +306,15 @@ export const teil = (text, loesung, einheit, typischeFehler = []) => ({ format: 
 export const sach = (text, teile, hilfen, extra) => ({ format: 'sachaufgabe', text, teile, hilfen, ...mit(extra) });
 // Säulendiagramm: d = { titel, einheit, max, schritt, hilfslinien?, werteZeigen?, saeulen: [[name, wert]] }
 export const diagramm = (text, d, teile, hilfen, extra) => ({ format: 'diagramm', text, diagramm: { ...d, saeulen: d.saeulen.map(([name, wert]) => ({ name, wert })) }, teile, hilfen, ...mit(extra) });
+// Strichliste anlegen: zeilen = [[name, loesung, start?]]. buendeln: 'auto' (der fünfte Strich wird von selbst quer gesetzt, F und G)
+// oder 'selbst' (das Kind setzt den Querstrich selbst, M und E).
+export const strichlisteAnlegen = (text, zeilen, buendeln, hilfen, extra) => ({ format: 'strichliste', text, buendeln,
+  zeilen: zeilen.map(([name, loesung, start]) => ({ name, loesung, ...(start ? { start } : {}) })), hilfen, ...mit(extra) });
+// Säulendiagramm zeichnen: d = { titel, einheit, max, schritt, fein, saeulen: [[name, wert, art]] } mit art 'offen' (zu zeichnen),
+// eine Zahl (offen, steht schon auf dieser falschen Höhe) oder fehlend (vorgegeben).
+export const zeichnen = (text, d, hilfen, extra) => ({ format: 'zeichnen', text,
+  diagramm: { ...d, saeulen: d.saeulen.map((x) => (Array.isArray(x) ? x : null)).map((x, i) => x === null ? { ...d.saeulen[i] } : (([name, wert, art]) => ({ name, wert, ...(art === 'offen' ? { offen: true } : typeof art === 'number' ? { offen: true, start: art } : {}) }))(x)) },
+  hilfen, ...mit(extra) });
 export const zuordnen = (text, paare, hilfen, extra) => ({ format: 'zuordnen', text, paare: paare.map(([links, rechts]) => ({ links: String(links), rechts: String(rechts) })), hilfen, ...mit(extra) });
 export const strahl = (eingabe, text, bild, loesung, typischeFehler, hilfen, extra) => ({ format: 'zahlenstrahl', eingabe, text, strahl: bild, loesung, typischeFehler: typischeFehler ?? [], hilfen, ...mit(extra) });
 
@@ -400,6 +440,12 @@ export const B = {
   paeckchen: (einzeln, paeckchen, je) => ({ art: 'paeckchen', ...(einzeln ? { einzeln } : {}), paeckchen, je }),
   zehnerfeld: (belegt, { dazu = 0, felder = 10 } = {}) => ({ art: 'zehnerfeld', felder, belegt, ...(dazu ? { dazu } : {}) }),
   strahl: (s) => ({ art: 'zahlenstrahl', ...s }),
+  // Kapitel 1. zeilen/saeulen: [[name, wert]]; ein Wert { wert, frage: true } erscheint als Fragezeichen.
+  // Strichliste: [name, anzahl] oder [name, anzahl, striche], striche zeigt eine (falsch) gezeichnete Liste, z. B. 'IIIII/'.
+  strichliste: (zeilen, titel) => ({ art: 'strichliste', ...(titel ? { titel } : {}), zeilen: zeilen.map(([name, anzahl, striche]) => ({ name, anzahl, ...(striche ? { striche } : {}) })) }),
+  // Säulen- oder Balkendiagramm: { titel, einheit, max, schritt (beschriftete Linien), fein (alle Linien), liegend, werteZeigen, ab, ohne }
+  saeulen: (d) => ({ art: 'saeulen', ...d, saeulen: d.saeulen.map(([name, wert]) => ({ name, wert })) }),
+  bilddiagramm: (d) => ({ art: 'bilddiagramm', ...d, zeilen: d.zeilen.map(([name, wert]) => ({ name, wert })) }),
 };
 
 // ---------- Prozessbezogene Kompetenzen (Bildungsplan 2016, ADR 0017) ----------
@@ -415,10 +461,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
-  modellieren: ['5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
+  modellieren: ['5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
-  argumentieren: ['5.4.X1-Z2'],
+  argumentieren: ['5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
@@ -430,7 +476,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = a.format === 'diagramm' || a.format === 'tabelle';
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste'].includes(a.bild?.art);
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';
@@ -442,7 +488,7 @@ export function kompetenzVon(lernziel, a) {
 
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
-const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild].filter(Boolean));
+const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild, a.daten, a.urliste, a.zeilen].filter(Boolean));
 function nachbearbeiten(a, niveau) {
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.

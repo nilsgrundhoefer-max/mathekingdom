@@ -67,6 +67,13 @@ export function falscheTeile(a, eingabe) {
     case 'sachaufgabe': case 'diagramm': return a.teile.flatMap((t, i) => zahl(t, eingabe?.[i], a.teile.length > 1 ? `${'abcdef'[i]}) ` : ''));
     case 'luecken': case 'tabelle': { const n = Object.keys(a.luecken); return n.flatMap((k) => zahl(a.luecken[k], eingabe?.[k], n.length > 1 ? `${k}: ` : '')); }
     case 'auswahl': return (eingabe ?? []).map((t) => a.optionen.find((o) => o.text === t)).filter((o) => o && !o.richtig).map((o) => ({ text: o.text, erwartet: !!o.fehlvorstellung }));
+    // Kapitel 1: Strichliste und Säulen zeichnen, je falsche Zeile oder Säule.
+    case 'strichliste': return a.zeilen.flatMap((z, i) => {
+      const m = String(eingabe?.[i] ?? ''), n = [...m].filter((c) => c === 'I' || c === '/').length;
+      const buendel = a.buendeln === 'selbst' && !/^(IIII\/)*I{0,4}$/.test(m);
+      return n !== z.loesung || buendel ? [{ text: `${z.name}: ${n} Striche${buendel ? ', falsch gebündelt' : ''}`, erwartet: false }] : [];
+    });
+    case 'zeichnen': return a.diagramm.saeulen.flatMap((sa, i) => (sa.offen && Number(eingabe?.[i]) !== sa.wert ? [{ text: `${sa.name}: ${eingabe?.[i] ?? 0}`, erwartet: false }] : []));
     case 'zuordnen': return a.paare.filter((p) => eingabe?.[p.links] && eingabe[p.links] !== p.rechts).map((p) => ({ text: `${p.links} → ${eingabe[p.links]}`, erwartet: false }));
     default: return [];
   }

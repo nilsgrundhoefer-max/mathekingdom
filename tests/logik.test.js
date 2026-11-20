@@ -151,13 +151,13 @@ test('Aufgabenauswahl: erst neue, dann ungelöste, nie zweimal direkt dieselbe',
   }
   const ungeloest = stand.versuche[0].aufgabe;
   assert.equal(L.naechsteAufgabe(index, stand, S2, 'G').id, ungeloest);
-  assert.equal(L.naechsteAufgabe(index, stand, '5.1.1-L1', 'G'), null);
+  assert.equal(L.naechsteAufgabe(index, stand, '5.2.1-L1', 'G'), null);
 });
 
 test('Meilenstein: Status folgt den Lernzielen', () => {
   const stand = neu();
   const station = pool.kapitel[2].unterkapitel[2];
-  assert.equal(L.milestoneStatus(index, stand, pool.kapitel[0].unterkapitel[0]), 'leer');
+  assert.equal(L.milestoneStatus(index, stand, pool.kapitel[1].unterkapitel[0]), 'leer');
   assert.equal(L.milestoneStatus(index, stand, station), 'offen');
   L.verbuche(stand, aufgaben(S2, 'G')[0], ok(), 'G', 't');
   assert.equal(L.milestoneStatus(index, stand, station), 'begonnen');
@@ -342,8 +342,8 @@ test('Etappe der Startseite: Fortschritt und nächster Meilenstein, gesperrte Me
   const stand = neu();
   const frei = L.einstellungen(null, stand.code, pool);
   const start = L.etappe(pool, index, stand, frei);
-  assert.equal(start.kapitel.id, '5.3');
-  assert.deepEqual([start.geschafft, start.gesamt, start.milestone.id], [0, 5, '5.3.1']);
+  assert.equal(start.kapitel.id, '5.1');
+  assert.deepEqual([start.geschafft, start.gesamt, start.milestone.id], [0, 5, '5.1.1']);
   // Die Lehrkraft arbeitet in Kapitel 4: Dort geht es weiter.
   const vier = L.einstellungen({ aktuellesKapitel: '5.4' }, stand.code, pool);
   assert.equal(L.etappe(pool, index, stand, vier).milestone.id, '5.4.1');
@@ -353,7 +353,7 @@ test('Etappe der Startseite: Fortschritt und nächster Meilenstein, gesperrte Me
   assert.deepEqual([mitSperre.gesamt, mitSperre.milestone.id], [4, '5.3.2']);
   // Alle Lernziele des aktuellen Kapitels erreicht: Die Etappe zeigt das nächste offene Kapitel mit Aufgaben.
   for (const u of pool.kapitel.find((k) => k.id === '5.4').unterkapitel) for (const l of u.lernziele) stand.lernziele[l.id] = { t: 'x' };
-  assert.equal(L.etappe(pool, index, stand, vier).kapitel.id, '5.3');
+  assert.equal(L.etappe(pool, index, stand, vier).kapitel.id, '5.1');
 });
 
 test('Jeder Meilenstein mit Aufgaben hat einen Merkzettel', () => {
@@ -759,4 +759,26 @@ test('Klassendatei: Rast standardmäßig an, Ton standardmäßig aus', () => {
   assert.equal(ohne.rast, true); assert.equal(ohne.ton, false);
   const mit = L.einstellungen({ rast: false, ton: true }, '5A-K4M2', pool);
   assert.equal(mit.rast, false); assert.equal(mit.ton, true);
+});
+
+test('Strichliste: Zahl und Bündel zählen, ab M auch der eigene Querstrich', () => {
+  const zeilen = [{ name: 'Hund', loesung: 6 }, { name: 'Katze', loesung: 3 }];
+  const auto = { format: 'strichliste', buendeln: 'auto', zeilen }, selbst = { ...auto, buendeln: 'selbst' };
+  assert.deepEqual(L.pruefeAntwort(auto, ['IIII/I', 'III']), { richtig: true, fehlvorstellung: null });
+  assert.deepEqual(L.pruefeAntwort(selbst, ['IIII/I', 'III']), { richtig: true, fehlvorstellung: null });
+  // Fünf Striche und dann der Querstrich: Die Zahl stimmt, das Bündel nicht.
+  assert.deepEqual(L.pruefeAntwort(selbst, ['IIIII/', 'III']), { richtig: false, fehlvorstellung: 'strich-buendel-falsch' });
+  assert.deepEqual(L.pruefeAntwort(selbst, ['IIII/II', 'III']), { richtig: false, fehlvorstellung: 'liste-verzaehlt' });
+  assert.equal(L.pruefeAntwort(auto, ['IIII/', 'III']).richtig, false);
+  assert.equal(L.richtigGebuendelt('IIII/IIII/II'), true);
+  assert.equal(L.richtigGebuendelt('IIIII'), false);
+});
+
+test('Säulen zeichnen: jede offene Säule muss auf ihrem Wert stehen', () => {
+  const diagramm = { fein: 2, schritt: 10, max: 30, saeulen: [{ name: 'A', wert: 8, offen: true }, { name: 'B', wert: 12 }, { name: 'C', wert: 14, offen: true }] };
+  const a = { format: 'zeichnen', diagramm };
+  assert.deepEqual(L.pruefeAntwort(a, [8, 12, 14]), { richtig: true, fehlvorstellung: null });
+  assert.deepEqual(L.pruefeAntwort(a, [4, 12, 14]), { richtig: false, fehlvorstellung: 'skala-einerschritte' });
+  assert.deepEqual(L.pruefeAntwort(a, [14, 12, 8]), { richtig: false, fehlvorstellung: 'diagramm-vertauscht' });
+  assert.deepEqual(L.pruefeAntwort(a, [10, 12, 14]), { richtig: false, fehlvorstellung: null });
 });

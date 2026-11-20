@@ -56,7 +56,8 @@ test('Eine veränderte Zahl im Aufgabentext oder im Bild fällt fast immer auf',
   assert.ok(textZahl.gemeldet >= textZahl.alle * 0.85, `Textzahl: ${textZahl.gemeldet} von ${textZahl.alle}; nicht gemeldet: ${textZahl.durch}`);
   const bild = quote((a) => {
     if (!a.bild) return false;
-    const k = Object.keys(a.bild).find((n) => typeof a.bild[n] === 'number' && !['von', 'bis', 'schritt', 'beschriftung', 'felder'].includes(n));
+    // Länge und Einteilung einer Achse (Zahlenstrahl, Säulendiagramm) sind frei wählbar; die Werte darauf prüft der Test zu Kapitel 1.
+    const k = Object.keys(a.bild).find((n) => typeof a.bild[n] === 'number' && !['von', 'bis', 'schritt', 'beschriftung', 'felder', 'max', 'fein', 'ab'].includes(n));
     if (!k) return false; a.bild[k] += 1;
   }, 2);
   assert.ok(bild.alle >= 40);
@@ -99,4 +100,27 @@ test('Zahlenmauer, Malkreuz und Rechenraster: falsche Steine, Felder und Zahlen 
       assert.ok(pruefePool(pool).fehler.length > 0, `${a.id}: veränderte Zahl ${zeile[k]} nicht gemeldet`);
     }
   }
+});
+
+test('Kapitel 1 Daten: falsche Striche, Säulen, Achsen und Antworten fallen auf', () => {
+  const kap1 = frisch().aufgaben.map((a, i) => [a, i]).filter(([a]) => a.lernziel.startsWith('5.1.'));
+  const meldet = (i, aendere) => { const pool = frisch(); aendere(pool.aufgaben[i]); return pruefePool(pool).fehler.length > 0; };
+  const alle = (filter, aendere, name) => {
+    const stellen = kap1.filter(([a]) => filter(a));
+    assert.ok(stellen.length >= 5, `${name}: nur ${stellen.length} Aufgaben`);
+    for (const [a, i] of stellen) assert.ok(meldet(i, aendere), `${a.id}: ${name} nicht gemeldet`);
+  };
+  alle((a) => a.format === 'strichliste', (a) => { a.zeilen[0].loesung += 1; }, 'Strichliste mit einem Strich zu viel');
+  alle((a) => a.format === 'strichliste' && ['F', 'G'].includes(a.niveau), (a) => { a.buendeln = 'selbst'; }, 'selbst bündeln auf F oder G');
+  alle((a) => a.format === 'zeichnen' && a.daten?.kopf.length === 2, (a) => { const x = a.diagramm.saeulen.find((s) => s.offen && s.start !== s.wert); x.wert += a.diagramm.fein * (x.wert + a.diagramm.fein <= a.diagramm.max ? 1 : -1); }, 'falsche Säulenhöhe');
+  alle((a) => a.format === 'zeichnen', (a) => { a.diagramm.saeulen.find((s) => s.offen).wert += a.diagramm.fein / 2 || 1; }, 'Säule zwischen zwei Linien');
+  // Achsen beginnen bei 0, außer bei täuschenden Diagrammen in V2 auf M und E.
+  alle((a) => a.bild?.art === 'saeulen' && !/-V2$/.test(a.lernziel), (a) => { a.bild.ab = a.bild.schritt; }, 'abgeschnittene Achse');
+  alle((a) => a.bild?.art === 'saeulen', (a) => { const x = a.bild.saeulen.find((y) => typeof y.wert === 'number'); x.wert += (a.bild.fein ?? a.bild.schritt) / 4; }, 'Wert zwischen den Linien');
+  // Halbe Bilder erst ab M.
+  alle((a) => a.bild?.art === 'bilddiagramm' && ['F', 'G'].includes(a.niveau) && a.bild.je % 2 === 0, (a) => { a.bild.zeilen[0].wert += a.bild.je / 2; }, 'halbes Bild auf F oder G');
+  // Antworten, die der Prüfer an den Daten selbst nachrechnet: Eine falsch angekreuzte fällt immer auf.
+  const GEBUNDEN = ['zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen'];
+  alle((a) => a.format === 'auswahl' && !a.mehrfach && a.nachweis?.some((n) => GEBUNDEN.includes(n?.art)),
+    (a) => { const r = a.optionen.find((o) => o.richtig), f = a.optionen.find((o) => !o.richtig); r.richtig = false; f.richtig = true; delete f.fehlvorstellung; }, 'falsch angekreuzte Antwort');
 });

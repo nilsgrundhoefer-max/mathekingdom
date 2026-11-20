@@ -458,3 +458,65 @@ body { margin: 0; background: #efe6d2; }
   #mathekingdom .muenzregen svg:nth-child(3) { animation-delay: .24s; }
   @keyframes mk-muenzregen { from { opacity: 0; transform: translateY(-28px) rotate(-30deg); } to { opacity: 1; transform: none; } }
 }
+/* Kapitel 1: Daten und Diagramme (datenbilder.js) */
+#mathekingdom .datenbild { margin: 0; }
+#mathekingdom svg.datendiagramm { display: block; width: 100%; min-width: 420px; max-width: 600px; height: auto; touch-action: none; user-select: none; }
+#mathekingdom .datendiagramm .titel { font-size: 16px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .datendiagramm .einheit { font-size: 14px; font-weight: 600; fill: var(--grau); }
+#mathekingdom .datendiagramm .achsenzahl { font-size: 14px; fill: var(--tinte); font-variant-numeric: tabular-nums; }
+#mathekingdom .datendiagramm .gitter { stroke: #e4ddcc; stroke-width: 1; }
+#mathekingdom .datendiagramm .gitter.stark { stroke: #b9ad94; stroke-width: 1.3; }
+#mathekingdom .datendiagramm .grund { stroke: var(--tinte); stroke-width: 2; }
+#mathekingdom .datendiagramm .saeule { fill: #3b6fb5; }
+#mathekingdom .datendiagramm .saeule.gezogen { fill: #3b6fb5; fill-opacity: .85; }
+#mathekingdom .datendiagramm .name { font-size: 15px; fill: var(--tinte); }
+#mathekingdom .datendiagramm .wert { font-size: 14px; font-weight: 700; fill: var(--tinte); }
+#mathekingdom .datendiagramm .frage { font-size: 24px; font-weight: 700; fill: var(--schlecht); }
+#mathekingdom .zeichnen .spalte { fill: transparent; cursor: ns-resize; }
+#mathekingdom .zeichnen.gesperrt .spalte { cursor: default; }
+#mathekingdom .zeichnen .offen:hover .spalte, #mathekingdom .zeichnen .offen.gewaehlt .spalte { fill: rgba(212,164,25,.10); }
+#mathekingdom .zeichnen .offen:focus { outline: none; }
+#mathekingdom .zeichnen .offen:focus-visible .spalte { fill: rgba(212,164,25,.16); stroke: var(--gold); stroke-width: 2; }
+#mathekingdom .zeichnen .platzhalter { fill: none; stroke: #3b6fb5; stroke-width: 1.5; stroke-dasharray: 4 3; }
+#mathekingdom .zeichnen .griff rect { fill: var(--gold); stroke: var(--nacht); stroke-width: 1.5; }
+#mathekingdom .zeichnen .griff line { stroke: var(--nacht); stroke-width: 1.5; }
+#mathekingdom .zeichnen.gesperrt .griff { display: none; }
+#mathekingdom .zeichnen-leiste { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+#mathekingdom .zeichnen-leiste .klein { margin: 0; flex: 1 1 260px; }
+#mathekingdom .bilddiagramm .schluessel { fill: #fff; stroke: var(--rand); stroke-width: 1.5; }
+#mathekingdom .bilddiagramm .schluesseltext { font-size: 15px; font-weight: 600; fill: var(--tinte); }
+#mathekingdom .bilddiagramm .zeilenlinie { stroke: #e4ddcc; stroke-width: 1; }
+#mathekingdom .bilddiagramm .schnitt { stroke: var(--tinte); stroke-width: 1.5; }
+#mathekingdom .symbol .sym-haut { fill: #e8b98f; stroke: #8a5a3b; stroke-width: 1.2; }
+#mathekingdom .symbol .sym-kleid { fill: #3b6fb5; stroke: #2f4f7f; stroke-width: 1.2; }
+#mathekingdom .symbol .sym-einband { fill: #a3302a; stroke: #6b1f1b; stroke-width: 1.2; }
+#mathekingdom .symbol .sym-ruecken { fill: #6b1f1b; }
+#mathekingdom .symbol .sym-zeile { stroke: #f6e2dc; stroke-width: 1.5; }
+#mathekingdom .symbol .sym-wolle { fill: #fff; stroke: #6b5f50; stroke-width: 1.5; }
+#mathekingdom .symbol .sym-kopf { fill: #3a3029; }
+#mathekingdom .symbol .sym-bein { stroke: #3a3029; stroke-width: 2.5; stroke-linecap: round; }
+#mathekingdom .symbol .sym-apfel { fill: #c8372d; stroke: #7d1f19; stroke-width: 1.2; }
+#mathekingdom .symbol .sym-stiel { stroke: #5b4632; stroke-width: 2; stroke-linecap: round; }
+#mathekingdom .symbol .sym-blatt { fill: #4f8a3a; }
+#mathekingdom .datenbild.strichliste .datentitel { font-weight: 700; color: var(--nacht); margin-bottom: 6px; }
+#mathekingdom .strichtabelle { border-collapse: collapse; background: #fff; }
+#mathekingdom .strichtabelle th, #mathekingdom .strichtabelle td { border: 1.5px solid #9aa3b5; padding: 4px 12px; vertical-align: middle; }
+#mathekingdom .strichtabelle th { background: #f1e7cf; color: var(--nacht); text-align: left; font-weight: 600; min-width: 90px; }
+#mathekingdom .striche { display: block; }
+#mathekingdom .striche .strich { stroke: var(--tinte); stroke-width: 2.6; stroke-linecap: round; }
+#mathekingdom .striche .strich.alt { stroke: #6b5f50; }
+#mathekingdom .strichknoepfe { white-space: nowrap; }
+#mathekingdom .strichknopf { font: inherit; font-size: 15px; padding: 4px 10px; margin-right: 6px; border: 1.5px solid var(--nacht); background: var(--hell); color: var(--tinte); border-radius: 6px; cursor: pointer; }
+#mathekingdom .strichknopf.leise { border-color: var(--rand); background: #fff; min-width: 34px; }
+#mathekingdom .strichknopf:disabled { opacity: .4; cursor: default; }
+#mathekingdom .strichknopf:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; }
+#mathekingdom .strichliste-anlegen { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; overflow-x: auto; max-width: 100%; }
+#mathekingdom .urliste { margin-bottom: 18px; }
+#mathekingdom .antwortkarten { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0 0 4px; max-width: 640px; }
+#mathekingdom .antwortkarte { font: inherit; font-size: 15px; padding: 3px 10px; border: 1.5px solid #9aa3b5; border-radius: 6px; background: #fff; color: var(--tinte); cursor: pointer; }
+#mathekingdom .antwortkarte[aria-pressed=true] { background: #e8e3d6; color: var(--grau); text-decoration: line-through; border-style: dashed; }
+#mathekingdom .antwortkarte:disabled { cursor: default; }
+#mathekingdom .datentabelle td.frage { color: var(--schlecht); font-weight: 700; }
+#mathekingdom .datentabelle tr.gesamt th, #mathekingdom .datentabelle tr.gesamt td { border-top: 3px double #9aa3b5; font-weight: 700; }
+#mathekingdom .loesungsbild { margin-top: 10px; }
+#mathekingdom .option input { flex: none; }

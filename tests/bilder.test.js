@@ -27,8 +27,10 @@ test('Jede Bildart des Pools hat einen Zeichner, und jedes Bild hat eine Beschre
   assert.ok(mitBild.length >= 200);
   for (const a of mitBild) {
     assert.ok(BILDARTEN.includes(a.bild.art), `${a.id}: ${a.bild.art}`);
-    const svg = aufgabenBild(a.bild);
-    assert.equal(svg.tag, 'svg', a.id);
+    // Die Bilder aus Kapitel 1 stehen in einer figure; das Bild selbst trägt role="img".
+    const wurzel = aufgabenBild(a.bild), svg = wurzel.tag === 'svg' ? wurzel : wurzel.alle().find((k) => k.attribute.role === 'img');
+    assert.ok(svg, a.id);
+    assert.ok(['svg', 'figure'].includes(svg.tag), a.id);
     assert.equal(svg.getAttribute('role'), 'img', a.id);
     assert.ok(svg.getAttribute('aria-label').length > 5, a.id);
     assert.doesNotMatch(svg.getAttribute('aria-label'), /undefined|NaN|null|false/, a.id);
@@ -75,6 +77,31 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       const texte = svg.texte().map((t) => t.replace(/\s/g, ''));
       for (const w of [b.ganz, ...b.teile]) assert.ok(texte.includes(lesbar(w)), `${a.id}: ${lesbar(w)} fehlt in ${texte}`);
       assert.equal(texte.filter((t) => t === '?').length, [b.ganz, ...b.teile].filter((w) => typeof w === 'object' && w.frage).length, a.id);
+    } else if (b.art === 'strichliste') {
+      // Je Zeile so viele Striche wie die Anzahl, und jeder fünfte liegt quer.
+      const zeilen = svg.alle().filter((k) => k.tag === 'tr');
+      assert.equal(zeilen.length, b.zeilen.length, a.id);
+      b.zeilen.forEach((z, i) => {
+        const st = zeilen[i].klasse('strich');
+        assert.equal(st.length, z.anzahl, `${a.id}: ${z.name}`);
+        if (!z.striche) assert.equal(st.filter((k) => k.attribute.class.includes('quer')).length, Math.floor(z.anzahl / 5), `${a.id}: ${z.name}`);
+      });
+    } else if (b.art === 'saeulen') {
+      // Jede Säule ist genau so hoch (lang), wie ihr Wert über dem Anfang der Achse liegt: gleicher Maßstab für alle.
+      const rects = svg.klasse('saeule'), werte = b.saeulen.filter((x) => typeof x.wert === 'number').map((x) => x.wert);
+      assert.equal(rects.length, werte.filter((w) => w > (b.ab ?? 0)).length, a.id);
+      const laenge = rects.map((r) => Number(r.attribute[b.liegend ? 'width' : 'height']));
+      const mass = laenge.map((l, i) => l / (werte.filter((w) => w > (b.ab ?? 0))[i] - (b.ab ?? 0)));
+      for (const x of mass) assert.ok(Math.abs(x - mass[0]) < 1e-6, `${a.id}: Maßstab ${mass}`);
+      const texte = svg.texte();
+      for (const x of b.saeulen) assert.ok(texte.includes(x.name), `${a.id}: ${x.name}`);
+      assert.equal(texte.filter((t) => t === '?').length, b.saeulen.filter((x) => typeof x.wert === 'object').length, a.id);
+    } else if (b.art === 'bilddiagramm') {
+      // Ganze Bilder plus höchstens ein halbes je Zeile; dazu das eine Bild im Schlüssel.
+      const ganz = b.zeilen.reduce((x, z) => x + (typeof z.wert === 'number' ? Math.floor(z.wert / b.je) : 0), 0);
+      const halb = b.zeilen.filter((z) => typeof z.wert === 'number' && z.wert % b.je).length;
+      assert.equal(svg.klasse('symbol').length, ganz + halb + 1, a.id);
+      assert.equal(svg.klasse('halb').length, halb, a.id);
     } else if (b.art === 'vergleich') {
       const texte = svg.texte().map((t) => t.replace(/\s/g, ''));
       for (const w of [b.oben.wert, b.unten.wert]) assert.ok(texte.some((t) => t.includes(lesbar(w))), `${a.id}: ${lesbar(w)} fehlt in ${texte}`);

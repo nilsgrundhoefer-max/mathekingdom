@@ -1,8 +1,944 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1056 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1272 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
+
+## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
+
+Grundlage, die F übt: Dinge einzeln abzählen und für jedes einen Strich machen, der fünfte Strich geht quer
+
+Baut auf: nur Grundschulstoff
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Bündel sind 5 Striche. Zähle die Bündel in Fünferschritten, dann die einzelnen Striche. *Beispiel:* Ein Bündel und 2 Striche: 5 + 2 = 7. *Lösungsschritt:* Suche die Zeile Ziegen. Zähle dort zuerst die Bündel.
+
+- `01` AFB I · _Kommunizieren_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Er macht eine Strichliste. / Wie viele Ziegen sind auf dem Burghof? _(Bild: Strichliste „Tiere auf dem Burghof“: Ziegen 7, Kühe 10, Gänse 9)_ Lösung: **7**. Typische Fehler: 6 (strich-buendel-als-vier).
+- `02` AFB I · _Kommunizieren_ · Der Kundschafter hat diese Tiere gesehen. / Mache für jedes Tier einen Strich in der passenden Zeile. _(Antwortkärtchen: Ziegen, Gänse, Ziegen, Ziegen, Gänse, Ziegen, Ziegen, Gänse, Ziegen, Gänse, Gänse)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Ziegen **6**, Gänse **5**
+- `03` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Die Strichliste zeigt „Vanille“. / Wie viele Striche sind es zusammen? _(Bild: Strichliste: Vanille 10)_ Lösung: **10**. Typische Fehler: 8 (strich-buendel-als-vier).
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welches Tier magst du am liebsten?“ / Die Lehrerin schreibt eine Strichliste. / In welcher Zeile stehen 2 Striche? _(Bild: Strichliste „Lieblingstiere der 5b“: Hund 9, Pferd 2, Hamster 4)_
+  - ☑ Pferd
+  - ☐ Hund
+  - ☐ Hamster
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Lies die Strichliste ab. _(Bild: Strichliste „Lieblingsobst der 5c“: Apfel 7, Traube 8)_
+  - a) Wie viele Kinder haben „Apfel“ gewählt? **7 Kinder**. Typische Fehler: 6 (strich-buendel-als-vier).
+  - b) Wie viele Kinder haben „Apfel“ oder „Traube“ gewählt? **15 Kinder**. Typische Fehler: 8 (sach-schritt-vergessen).
+- `06` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Mache für jede Antwort einen Strich in der passenden Zeile. _(Antwortkärtchen: Fußball, Fußball, Fußball, Fußball, Fußball, Schwimmen, Tanzen, Schwimmen, Tanzen, Tanzen, Schwimmen, Tanzen, Fußball)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Fußball **6**, Schwimmen **3**, Tanzen **4**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe die Liste von vorne nach hinten durch. Mache bei jeder Antwort einen Strich. *Beispiel:* Drei Antworten „Hund“: In die Zeile „Hund“ kommen 3 Striche. *Lösungsschritt:* In der Liste steht „Vanille“ 8-mal.
+
+- `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5a. / Mache für jede Antwort einen Strich in der passenden Zeile. _(Antwortkärtchen: Zitrone, Vanille, Vanille, Vanille, Vanille, Zitrone, Zitrone, Vanille, Schoko, Vanille, Vanille, Zitrone, Vanille, Zitrone, Schoko, Schoko, Schoko, Schoko, Schoko)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Vanille **8**, Schoko **6**, Zitrone **5**
+- `02` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Wie kommst du zur Schule?“ / Die Lehrerin macht eine Strichliste. / Wie viele Kinder haben „zu Fuß“ gewählt? _(Bild: Strichliste „Schulweg der 5b“: zu Fuß 8, Bus 7, Auto 15, Roller 13)_ Lösung: **8**. Typische Fehler: 7 (strich-buendel-als-vier).
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5b wurden gefragt: „Welchen Sport machst du am liebsten?“ / Lies die Strichliste ab. _(Bild: Strichliste „Lieblingssport der 5b“: Fußball 11, Tanzen 10, Reiten 8)_
+  - a) Wie viele Kinder wurden insgesamt befragt? **29 Kinder**. Typische Fehler: 24 (strich-buendel-als-vier).
+  - b) Wie viele Kinder mehr haben „Fußball“ gewählt als „Reiten“? **3 Kinder**. Typische Fehler: 19 (sach-falsche-rechnung).
+- `04` AFB I · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5c wurden gefragt: „Wie kommst du zur Schule?“ / Schau dir die Zeile „Roller“ an. / Wie viele Striche fehlen bis zum nächsten vollen Bündel? _(Bild: Strichliste „Schulweg der 5c“: zu Fuß 12, Auto 6, Roller 14)_ Lösung: **1**. Typische Fehler: 0 (strich-buendel-als-vier).
+- `05` AFB II · _Kommunizieren_ · In der Strichliste stehen schon Antworten der 5a. / Diese Kinder haben später geantwortet. / Trage ihre Antworten nach. _(Antwortkärtchen: Grün, Gelb, Lila, Gelb, Grün, Gelb, Grün, Gelb, Lila, Grün)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Grün **9** (schon 5), Gelb **16** (schon 12), Lila **11** (schon 9)
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Mara und Tom lesen die Zeile „Vanille“ ab. / Mara sagt: „Es sind 13.“ / Tom sagt: „Es sind 11.“ / Wer hat recht? _(Bild: Strichliste „Lieblingseis der 5c“: Vanille 13, Schoko 7, Zitrone 9)_
+  - ☐ Beide, denn man kann Bündel verschieden zählen.
+  - ☐ Tom, denn ein Bündel sind 4 Striche.
+  - ☑ Mara, denn ein Bündel sind 5 Striche.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache bei jeder Antwort einen Strich. Den fünften Strich setzt du mit „Querstrich“ quer über die vier. *Lösungsschritt:* In der Liste steht „Fußball“ 9-mal.
+
+- `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Mache für jede Antwort einen Strich in der passenden Zeile. _(Antwortkärtchen: Reiten, Reiten, Fußball, Reiten, Turnen, Reiten, Schwimmen, Turnen, Fußball, Fußball, Fußball, Reiten, Fußball, Reiten, Fußball, Fußball, Schwimmen, Reiten, Turnen, Fußball, Turnen, Fußball, Turnen, Turnen, Schwimmen)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Fußball **9**, Schwimmen **3**, Turnen **6**, Reiten **7**
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Werte die Strichliste aus. _(Bild: Strichliste „Tiere auf dem Burghof“: Schafe 17, Ziegen 23, Kühe 22, Gänse 6)_
+  - a) Wie viele Tiere sind es insgesamt? **68 Tiere**. Typische Fehler: 56 (strich-buendel-als-vier).
+  - b) Wie viele Ziegen mehr als Gänse sind auf dem Burghof? **17 Tiere**. Typische Fehler: 29 (sach-falsche-rechnung).
+- `03` AFB II · _Kommunizieren_ · In der Strichliste stehen schon Antworten der 5c. / Diese Kinder haben später geantwortet. / Trage ihre Antworten nach. _(Antwortkärtchen: Hund, Pferd, Hund, Hund, Hund, Hase, Pferd, Katze)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Hund **15** (schon 11), Katze **8** (schon 7), Pferd **6** (schon 4), Hase **11** (schon 10)
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Die Lehrerin macht eine Strichliste. / Wie viele Kinder haben „Rot“ gewählt? _(Bild: Strichliste „Lieblingsfarben der 5c“: Rot 26, Blau 19, Grün 24, Lila 14)_ Lösung: **26**. Typische Fehler: 21 (strich-buendel-als-vier).
+- `05` AFB II · _Kommunizieren_ · Bei „Hamster“ sind es 19 Striche. / Es sind ▢ volle Bündel und ▢ einzelne Striche. Lösung: a = **3**, b = **4**
+- `06` AFB III · _Kommunizieren_ · Paul hat eine Strichliste zur Umfrage „Lieblingssport“ gemacht. / In einer Zeile hat er falsch gebündelt. / In welcher Zeile? _(Bild: Strichliste „Lieblingssport der 5c“: Schwimmen 8, Tanzen 11, Reiten 12 (gezeichnet als IIIII/IIIIII))_
+  - ☑ Reiten
+  - ☐ Tanzen
+  - ☐ Schwimmen
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache bei jeder Antwort einen Strich. Den fünften Strich setzt du mit „Querstrich“ quer über die vier.
+
+- `01` AFB I · _Kommunizieren_ · Der Kundschafter hat diese Tiere gesehen. / Mache für jedes Tier einen Strich in der passenden Zeile. _(Antwortkärtchen: Kühe, Schafe, Schafe, Schafe, Ziegen, Kühe, Hühner, Gänse, Hühner, Hühner, Kühe, Ziegen, Ziegen, Gänse, Hühner, Ziegen, Hühner, Ziegen, Ziegen, Hühner, Hühner, Gänse, Gänse, Kühe, Gänse, Schafe, Hühner, Hühner, Ziegen, Schafe, Gänse, Ziegen, Hühner, Kühe, Schafe, Schafe)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Schafe **7**, Ziegen **8**, Hühner **10**, Kühe **5**, Gänse **6**
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Werte die Strichliste aus. _(Bild: Strichliste „Lieblingsobst der 5b“: Apfel 21, Banane 22, Erdbeere 14, Traube 18)_
+  - a) Wie viele Kinder wurden insgesamt befragt? **75 Kinder**. Typische Fehler: 62 (strich-buendel-als-vier).
+  - b) Wie viele Kinder haben „Apfel“ gewählt? **21 Kinder**. Typische Fehler: 17 (strich-buendel-als-vier).
+  - c) Wie viele Kinder haben nicht „Apfel“ gewählt? **54 Kinder**. Typische Fehler: 75 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · Die Strichliste zur Umfrage „Lieblingsfarben“ ist noch nicht fertig. / Trage die Antworten der Nachzügler nach und bündle richtig. _(Antwortkärtchen: Rot, Rot, Blau, Lila, Grün, Rot, Blau, Rot, Rot, Lila, Lila, Grün, Blau, Rot, Grün, Blau, Blau, Lila)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Rot **20** (schon 14), Blau **21** (schon 16), Grün **12** (schon 9), Lila **23** (schon 19)
+- `04` AFB III · _Kommunizieren_ · In einer Zeile stehen 6 volle Bündel und 2 einzelne Striche. / Es kommen 6 Striche dazu. / Wie viele volle Bündel stehen danach in der Zeile? Lösung: **7**. Typische Fehler: 6 (sach-schritt-vergessen), 9 (strich-buendel-als-vier).
+- `05` AFB II · _Kommunizieren_ · Für „Gelb“ haben 24 Kinder gestimmt. / In der Strichliste sind das ▢ volle Bündel und ▢ einzelne Striche. Lösung: a = **4**, b = **4**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Eine Strichliste hat 5 Zeilen. / In jeder Zeile stehen 3 volle Bündel und sonst nichts. / Lena sagt: „Das sind mehr als 65 Striche.“ / Stimmt das?
+  - ☐ Falsch, es sind nur 15 Striche.
+  - ☐ Das kann man ohne Bild nicht wissen.
+  - ☑ Stimmt, es sind 75 Striche.
+  - ☐ Falsch, es sind nur 60 Striche.
+
+## 5.1.1-H2: Ich kann aus einer Liste oder Strichliste eine Häufigkeitstabelle erstellen.
+
+Grundlage, die F übt: Gleiche Dinge in einer Liste zählen und die Anzahl in eine Tabelle schreiben
+
+Baut auf: 5.1.1-H1 (Ich kann Strichlisten lesen und anlegen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle jede Zeile der Strichliste. Ein Bündel sind 5. *Beispiel:* Ein Bündel und 3 Striche: In die Tabelle kommt 8. *Lösungsschritt:* „Banane“ kommt 5-mal vor.
+
+- `01` AFB I · _Kommunizieren_ · Die Strichliste zeigt die Antworten der 5b. / Schreibe die Anzahl in die Tabelle. _(Bild: Strichliste „Lieblingsobst der 5b“: Banane 5, Erdbeere 2, Kirsche 3)_ 
+
+  | Obst | Anzahl |
+  |---|---|
+  | Banane | **5** |
+  | Erdbeere | **2** |
+  | Kirsche | **3** |
+
+- `02` AFB I · _Kommunizieren_ · Das sind die Antworten der 5c. / Schreibe die Anzahl in die Tabelle. _(Antwortkärtchen: Apfel, Traube, Banane, Apfel, Traube, Banane, Traube, Apfel, Traube)_ 
+
+  | Obst | Anzahl |
+  |---|---|
+  | Apfel | **3** |
+  | Banane | **2** |
+  | Traube | **4** |
+
+- `03` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Wie oft steht „zu Fuß“ in der Liste? _(Antwortkärtchen: Roller, Fahrrad, zu Fuß, zu Fuß, Roller, Roller, Fahrrad, Fahrrad, zu Fuß, Fahrrad, zu Fuß, Fahrrad, Fahrrad)_ Lösung: **4**. Typische Fehler: 5 (liste-verzaehlt).
+- `04` AFB I · _Kommunizieren_ · Welche Tabelle passt zur Strichliste? _(Bild: Strichliste „Tiere auf dem Burghof“: Schafe 7, Ziegen 3, Kühe 6)_
+  - ☐ Schafe: 6 · Ziegen: 3 · Kühe: 5
+  - ☐ Schafe: 3 · Ziegen: 7 · Kühe: 6
+  - ☑ Schafe: 7 · Ziegen: 3 · Kühe: 6
+- `05` AFB II · _Kommunizieren_ · Die Strichliste zeigt die Antworten des Kundschafters. / Fülle die Tabelle aus. / Rechne auch die Zahl für alle zusammen aus. _(Bild: Strichliste „Tiere auf dem Burghof“: Schafe 7, Ziegen 5, Kühe 4)_ 
+
+  | Tier | Anzahl |
+  |---|---|
+  | Schafe | **7** |
+  | Ziegen | **5** |
+  | Kühe | **4** |
+  | Gesamt | **16** |
+
+- `06` AFB I · _Kommunizieren_ · Das sind die Antworten der 5a. / Schreibe die Anzahl in die Tabelle. _(Antwortkärtchen: Lila, Rot, Blau, Lila, Blau, Blau, Rot, Rot, Rot, Rot, Blau, Lila)_ 
+
+  | Farbe | Anzahl |
+  |---|---|
+  | Rot | **5** |
+  | Blau | **4** |
+  | Lila | **3** |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle jede Antwort für sich. Streiche in Gedanken ab, was du gezählt hast. *Beispiel:* In der Liste steht 4-mal „Hund“: In die Tabelle kommt 4. *Lösungsschritt:* „Rot“ kommt 4-mal vor.
+
+- `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Schreibe die Anzahl in die Tabelle. _(Antwortkärtchen: Blau, Blau, Lila, Lila, Gelb, Lila, Lila, Gelb, Rot, Lila, Lila, Gelb, Rot, Blau, Lila, Blau, Gelb, Blau, Blau, Gelb, Rot, Rot)_ 
+
+  | Farbe | Anzahl |
+  |---|---|
+  | Rot | **4** |
+  | Blau | **6** |
+  | Gelb | **5** |
+  | Lila | **7** |
+
+- `02` AFB I · _Kommunizieren_ · Die Strichliste zeigt die Antworten der 5a. / Schreibe die Anzahl in die Tabelle. _(Bild: Strichliste „Schulweg der 5a“: zu Fuß 9, Fahrrad 16, Bus 15, Auto 11)_ 
+
+  | Schulweg | Anzahl |
+  |---|---|
+  | zu Fuß | **9** |
+  | Fahrrad | **16** |
+  | Bus | **15** |
+  | Auto | **11** |
+
+- `03` AFB II · _Kommunizieren_ · Das sind die Antworten der 5c. / Fülle die Tabelle aus. / Rechne auch die Gesamtzahl aus. _(Antwortkärtchen: Traube, Erdbeere, Kirsche, Kirsche, Traube, Erdbeere, Traube, Erdbeere, Kirsche, Kirsche, Erdbeere, Traube, Traube, Erdbeere, Erdbeere, Traube, Kirsche, Erdbeere)_ 
+
+  | Obst | Anzahl |
+  |---|---|
+  | Erdbeere | **7** |
+  | Kirsche | **5** |
+  | Traube | **6** |
+  | Gesamt | **18** |
+
+- `04` AFB I · _Kommunizieren_ · Welche Tabelle passt zur Strichliste? _(Bild: Strichliste „Lieblingsfarben der 5c“: Rot 5, Grün 4, Gelb 14, Lila 8)_
+  - ☑ Rot: 5 · Grün: 4 · Gelb: 14 · Lila: 8
+  - ☐ Rot: 4 · Grün: 5 · Gelb: 14 · Lila: 8
+  - ☐ Rot: 4 · Grün: 4 · Gelb: 12 · Lila: 7
+- `05` AFB II · _Kommunizieren_ · In der Tabelle zur Umfrage „Lieblingsobst“ fehlt eine Zahl. / Insgesamt wurden 19 Kinder befragt. / Welche Zahl fehlt? 
+
+  | Obst | Anzahl |
+  |---|---|
+  | Apfel | 5 |
+  | Kirsche | **6** |
+  | Traube | 8 |
+  | Gesamt | 19 |
+
+- `06` AFB III · _Kommunizieren_ · Ali hat die Strichliste in eine Tabelle übertragen. / Eine Zahl in der Tabelle ist falsch. / In welcher Zeile? _(Bild: Strichliste „Lieblingstiere der 5b“: Hund 4, Pferd 7, Hase 12, Hamster 8)_ _(Tabelle: Tier | Anzahl / Hund | 4 / Pferd | 7 / Hase | 12 / Hamster | 7)_
+  - ☐ Hase
+  - ☑ Hamster
+  - ☐ Hund
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle jede Antwort für sich. Streiche in Gedanken ab, was du gezählt hast. *Lösungsschritt:* „zu Fuß“ kommt 3-mal vor.
+
+- `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5c. / Schreibe die Anzahl in die Tabelle. _(Antwortkärtchen: Bus, Fahrrad, Bus, zu Fuß, Fahrrad, Fahrrad, Auto, zu Fuß, Fahrrad, Auto, Fahrrad, Auto, Auto, Bus, Fahrrad, Bus, zu Fuß, Auto, Fahrrad, Fahrrad, Fahrrad, Bus, Bus)_ 
+
+  | Schulweg | Anzahl |
+  |---|---|
+  | zu Fuß | **3** |
+  | Fahrrad | **9** |
+  | Bus | **6** |
+  | Auto | **5** |
+
+- `02` AFB II · _Kommunizieren_ · Das sind die Antworten der 5c. / Fülle die Tabelle aus. / Rechne auch die Gesamtzahl aus. _(Antwortkärtchen: Turnen, Schwimmen, Schwimmen, Tanzen, Fußball, Schwimmen, Fußball, Tanzen, Tanzen, Fußball, Fußball, Schwimmen, Turnen, Tanzen, Turnen, Tanzen, Fußball, Schwimmen, Schwimmen, Schwimmen, Tanzen, Turnen)_ 
+
+  | Sport | Anzahl |
+  |---|---|
+  | Fußball | **5** |
+  | Schwimmen | **7** |
+  | Turnen | **4** |
+  | Tanzen | **6** |
+  | Gesamt | **22** |
+
+- `03` AFB II · _Kommunizieren_ · Bei der Umfrage „Lieblingssport“ fehlen zwei Zahlen. / Für „Schwimmen“ waren es 2 Kinder mehr als für „Tanzen“. 
+
+  | Sport | Anzahl |
+  |---|---|
+  | Fußball | 10 |
+  | Schwimmen | **6** |
+  | Tanzen | **4** |
+  | Gesamt | 20 |
+
+- `04` AFB I · _Kommunizieren_ · Die Strichliste zeigt die Antworten der 5a. / Schreibe die Anzahl in die Tabelle. _(Bild: Strichliste „Schulweg der 5a“: zu Fuß 8, Fahrrad 14, Bus 4, Auto 3, Roller 10)_ 
+
+  | Schulweg | Anzahl |
+  |---|---|
+  | zu Fuß | **8** |
+  | Fahrrad | **14** |
+  | Bus | **4** |
+  | Auto | **3** |
+  | Roller | **10** |
+
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Umfrage „Lieblingssport“ wurde in zwei Klassen gemacht. / Lies die Tabelle ab. _(Tabelle: Sport | 5a | 5b / Schwimmen | 4 | 4 / Turnen | 5 | 5 / Tanzen | 8 | 6 / Reiten | 7 | 3)_
+  - a) Wie viele Kinder aus beiden Klassen haben „Turnen“ gewählt? **10 Kinder**. Typische Fehler: 5 (sach-schritt-vergessen).
+  - b) Wie viele Kinder der 5a wurden befragt? **24 Kinder**. Typische Fehler: 17 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das sind die Antworten zur Umfrage „Schulweg“. / Ali sagt: „‚Bus‘ kommt öfter vor als ‚Auto‘ und ‚zu Fuß‘ zusammen.“ / Stimmt das? _(Antwortkärtchen: Bus, zu Fuß, zu Fuß, Bus, Bus, zu Fuß, Auto, Bus, Bus, zu Fuß, zu Fuß, zu Fuß, zu Fuß, zu Fuß, Bus, Bus, zu Fuß, zu Fuß, Auto, Auto, Auto, Auto, zu Fuß, zu Fuß, Bus, Bus)_
+  - ☐ Stimmt: 9 ist mehr als 5.
+  - ☑ Falsch: 9 ist nicht mehr als 5 + 12 = 17.
+  - ☐ Das kann man ohne Tabelle nicht sagen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle jede Antwort für sich. Streiche in Gedanken ab, was du gezählt hast.
+
+- `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Fülle die Tabelle aus. / Rechne auch die Gesamtzahl aus. _(Antwortkärtchen: Hase, Pferd, Katze, Hamster, Hamster, Hund, Hund, Hund, Hamster, Katze, Pferd, Hase, Pferd, Hase, Pferd, Katze, Hund, Pferd, Hase, Hase, Hund, Hase, Hund, Hund, Hamster, Pferd, Hund, Hund, Hamster, Hund, Pferd)_ 
+
+  | Tier | Anzahl |
+  |---|---|
+  | Hund | **10** |
+  | Katze | **3** |
+  | Pferd | **7** |
+  | Hase | **6** |
+  | Hamster | **5** |
+  | Gesamt | **31** |
+
+- `02` AFB II · _Kommunizieren_ · Bei der Umfrage „Lieblingsobst“ fehlen zwei Zahlen. / „Banane“ wurde doppelt so oft gewählt wie „Erdbeere“. 
+
+  | Obst | Anzahl |
+  |---|---|
+  | Apfel | 14 |
+  | Banane | **16** |
+  | Erdbeere | **8** |
+  | Traube | 5 |
+  | Gesamt | 43 |
+
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Die Umfrage „Lieblingsfarben“ wurde in zwei Klassen gemacht. / Lies die Tabelle ab. _(Tabelle: Farbe | 5a | 5b / Blau | 10 | 8 / Grün | 4 | 10 / Gelb | 6 | 11 / Lila | 9 | 7)_
+  - a) Wie viele Kinder aus beiden Klassen haben „Lila“ gewählt? **16 Kinder**. Typische Fehler: 9 (sach-schritt-vergessen).
+  - b) Wie viele Kinder der 5a wurden befragt? **29 Kinder**. Typische Fehler: 20 (sach-schritt-vergessen).
+  - c) Wie viele Kinder haben in beiden Klassen zusammen „Blau“ gewählt? **18 Kinder**. Typische Fehler: 8 (sach-schritt-vergessen).
+- `04` AFB III · _Kommunizieren (+ Modellieren)_ · Bei einer Umfrage durfte jedes Kind genau zwei Lieblingstiere nennen. / In der Häufigkeitstabelle stehen zusammen 36 Antworten. / Wie viele Kinder wurden befragt? Lösung: **18**. Typische Fehler: 36 (sach-schritt-vergessen).
+- `05` AFB II · _Kommunizieren_ · Die Strichliste zeigt die Antworten vom Montag zur Umfrage „Lieblingstiere“. / Die Karten sind die Antworten vom Dienstag. / Fülle die Tabelle für beide Tage zusammen aus. _(Bild: Strichliste „Lieblingstiere am Montag“: Hund 7, Katze 9, Hase 8)_ _(Antwortkärtchen: Katze, Katze, Hase, Hund, Hase, Hase, Hase, Katze, Katze, Katze, Hase, Katze, Hund, Hund, Hund)_ 
+
+  | Tier | Anzahl |
+  |---|---|
+  | Hund | **11** |
+  | Katze | **15** |
+  | Hase | **13** |
+  | Gesamt | **39** |
+
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Tabelle zeigt das Ergebnis der Umfrage „Lieblingssport“. / Elif behauptet: „Mehr als die Hälfte der Kinder hat ‚Fußball‘ gewählt.“ / Stimmt das? _(Tabelle: Sport | Kinder / Fußball | 9 / Schwimmen | 5 / Turnen | 7 / Tanzen | 6)_
+  - ☐ Das kann man nicht prüfen.
+  - ☑ Falsch: Von 27 Kindern sind 9 nicht mehr als die Hälfte.
+  - ☐ Stimmt: 9 ist die größte Zahl in der Tabelle.
+
+## 5.1.2-L1: Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.
+
+Grundlage, die F übt: Eine Säule bis zur Linie verfolgen und die Zahl an der Achse ablesen, Einerschritte
+
+Baut auf: nur Grundschulstoff
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waagerecht nach links zur Achse. *Beispiel:* Die Säule endet bei der Linie 6. Die Antwort ist 6. *Lösungsschritt:* Die Linien gehen in 1er-Schritten. Zähle von der letzten Zahl unter dem Ende weiter.
+
+- `01` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welches Tier magst du am liebsten?“ / Wie viele Kinder haben „Hund“ gewählt? _(Bild: Säulendiagramm „Lieblingstiere der 5b“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Hund 10, Katze 6, Pferd 3)_ Lösung: **10**.
+- `02` AFB I · _Kommunizieren_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Wie viele Hühner sind auf dem Burghof? _(Bild: Balkendiagramm „Tiere auf dem Burghof“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Ziegen 7, Hühner 6, Gänse 9)_ Lösung: **6**.
+- `03` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Säulendiagramm „Lieblingsobst der 5b“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Apfel 2, Banane 5, Traube 9)_
+  - ☐ „Apfel“
+  - ☑ „Traube“
+  - ☐ „Banane“
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder haben „Lila“ gewählt? _(Bild: Säulendiagramm „Lieblingsfarben der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Blau 6, Gelb 20, Lila 14)_ Lösung: **14**. Typische Fehler: 7 (skala-einerschritte).
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5c wurden gefragt: „Welchen Sport machst du am liebsten?“ / Lies ab und rechne. _(Bild: Säulendiagramm „Lieblingssport der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schwimmen 10, Turnen 2, Reiten 1)_
+  - a) Wie viele Kinder haben „Schwimmen“ gewählt? **10 Kinder**.
+  - b) Wie viele Kinder haben „Schwimmen“ oder „Turnen“ gewählt? **12 Kinder**. Typische Fehler: 2 (sach-schritt-vergessen).
+- `06` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Was wurde am seltensten gewählt? _(Bild: Balkendiagramm „Lieblingseis der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 2, Erdbeere 3, Nuss 10)_
+  - ☐ „Nuss“
+  - ☑ „Vanille“
+  - ☐ „Erdbeere“
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waagerecht nach links zur Achse. *Beispiel:* Die Linien gehen in 2er-Schritten. Eine Linie über 10 ist 12. *Lösungsschritt:* Die Linien gehen in 2er-Schritten. Zähle von der letzten Zahl unter dem Ende weiter.
+
+- `01` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder haben „Nuss“ gewählt? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Vanille 10, Schoko 38, Erdbeere 24, Nuss 8)_ Lösung: **8**. Typische Fehler: 4 (skala-einerschritte).
+- `02` AFB I · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder haben „Schoko“ gewählt? _(Bild: Balkendiagramm „Lieblingseis der 5a“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Vanille 55, Schoko 95, Zitrone 70, Nuss 20)_ Lösung: **95**. Typische Fehler: 19 (skala-einerschritte), 80 (skala-zwischenwert).
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Tiere auf dem Burghof“; Achse 0 bis 50, Linien alle 5, beschriftet alle 10; Ziegen 25, Hühner 15, Kühe 50)_
+  - a) Wie viele Hühner und Kühe sind es zusammen? **65 Tiere**. Typische Fehler: 35 (sach-falsche-rechnung).
+  - b) Wie viele Kühe mehr als Hühner sind auf dem Burghof? **35 Tiere**. Typische Fehler: 65 (sach-falsche-rechnung).
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Bei welcher Säule sind es genau 28 Kinder? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 28, Erdbeere 16, Nuss 10)_
+  - ☑ „Schoko“
+  - ☐ „Nuss“
+  - ☐ „Erdbeere“
+- `05` AFB II · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder wurden insgesamt befragt? _(Bild: Balkendiagramm „Lieblingsobst der 5c“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Apfel 26, Erdbeere 6, Kirsche 30, Traube 24)_ Lösung: **86**. Typische Fehler: 62 (sach-schritt-vergessen), 43 (skala-einerschritte).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Elif liest bei „Schoko“ 13 ab. / Ole liest 26 ab. / Wer hat recht? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 26, Zitrone 14, Nuss 18)_
+  - ☑ Ole, denn von Linie zu Linie sind es 2.
+  - ☐ Elif, denn jede Linie zählt 1.
+  - ☐ Beide haben recht.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waagerecht nach links zur Achse. *Lösungsschritt:* Die Linien gehen in 25er-Schritten. Zähle von der letzten Zahl unter dem Ende weiter.
+
+- `01` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Museum. / Wie viele Besucher kamen am Mittwoch? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 275, Di 400, Mi 450, Do 150)_ Lösung: **450**. Typische Fehler: 18 (skala-einerschritte), 400 (skala-zwischenwert).
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Lies die Werte ab und rechne. _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 190, Mi 90, Do 110, Fr 150)_
+  - a) Wie viele Besucher kamen am Dienstag und am Freitag zusammen? **340 Besucher**. Typische Fehler: 40 (sach-falsche-rechnung).
+  - b) Wie viele Besucher kamen am Dienstag mehr als am Freitag? **40 Besucher**. Typische Fehler: 340 (sach-falsche-rechnung).
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Museum. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Do 150, Fr 200, Sa 90, So 80)_
+  - a) Wie viele Besucher kamen an allen Tagen zusammen? **520 Besucher**. Typische Fehler: 440 (sach-schritt-vergessen).
+  - b) Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? **120 Besucher**. Typische Fehler: 280 (sach-falsche-rechnung).
+- `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Bei welcher Zeile sind es genau 175 Besucher? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 175, Di 475, Mi 150, Do 100)_
+  - ☐ Dienstag
+  - ☑ Montag
+  - ☐ Donnerstag
+  - ☐ Mittwoch
+- `05` AFB II · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Lies alle Werte ab und trage sie in die Tabelle ein. _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Do 200, Fr 225, Sa 475, So 325)_ 
+
+  | Tag | Besucher |
+  |---|---|
+  | Donnerstag | **200** |
+  | Freitag | **225** |
+  | Samstag | **475** |
+  | Sonntag | **325** |
+
+- `06` AFB III · _Kommunizieren_ · Der Kundschafter notiert für den König die Apfelernte der Höfe. / Insgesamt waren es 1080 Körbe. / Ein Wert fehlt. / Wie viele Körbe hat der Talhof geerntet? _(Bild: Säulendiagramm „Apfelernte im Königreich“; Achse 0 bis 400, Linien alle 20, beschriftet alle 100; Mühlhof 340, Steinhof 160, Rosenhof 380, Talhof ?)_ Lösung: **200**. Typische Fehler: 580 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom Ende des Balkens senkrecht nach unten zur Achse.
+
+- `01` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Wie viele Besucher kamen am Donnerstag? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 1200, Linien alle 50, beschriftet alle 200; Mo 550, Di 800, Mi 900, Do 1100)_ Lösung: **1100**. Typische Fehler: 22 (skala-einerschritte), 1000 (skala-zwischenwert).
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Museum. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Di 1000, Mi 1900, Do 2000, Fr 600, Sa 1400)_
+  - a) Wie viele Besucher kamen an allen Tagen zusammen? **6900 Besucher**. Typische Fehler: 5500 (sach-schritt-vergessen).
+  - b) Wie viele Besucher kamen am Samstag mehr als am Dienstag? **400 Besucher**.
+  - c) Wie viele Besucher waren es ohne Samstag? **5500 Besucher**. Typische Fehler: 6900 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Zoo. / Lies alle Werte ab und trage sie in die Tabelle ein. _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 1000, Linien alle 50, beschriftet alle 250; Mi 700, Do 100, Fr 200, Sa 850, So 900)_ 
+
+  | Tag | Besucher |
+  |---|---|
+  | Mittwoch | **700** |
+  | Donnerstag | **100** |
+  | Freitag | **200** |
+  | Samstag | **850** |
+  | Sonntag | **900** |
+
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Paul sagt: „Am Samstag waren es doppelt so viele Besucher wie am Donnerstag.“ / Stimmt das? _(Bild: Säulendiagramm „Besucher im Zoo“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Do 300, Fr 1400, Sa 600, So 2000)_
+  - ☐ Das kann man nicht ablesen.
+  - ☑ Stimmt: 2 · 300 = 600.
+  - ☐ Falsch: Die Säule ist nicht doppelt so hoch.
+- `05` AFB II · _Kommunizieren_ · Der Kundschafter notiert für den König die Apfelernte der Höfe. / Insgesamt waren es 2600 Körbe. / Ein Wert fehlt. / Wie viele Körbe hat der Rosenhof geerntet? _(Bild: Balkendiagramm „Apfelernte im Königreich“; Achse 0 bis 1200, Linien alle 50, beschriftet alle 200; Eichenhof 550, Mühlhof 700, Steinhof 1100, Rosenhof ?)_ Lösung: **250**. Typische Fehler: 1350 (sach-schritt-vergessen).
+- `06` AFB III · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Am Donnerstag fehlt der Wert. / Es waren 3-mal so viele Besucher wie am Montag. / Wie viele Besucher waren es? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 1000, Linien alle 50, beschriftet alle 250; Mo 300, Di 100, Mi 600, Do ?)_ Lösung: **900**. Typische Fehler: 303 (sach-falsche-rechnung).
+
+## 5.1.2-L2: Ich kann Bilddiagramme mit Schlüssel ablesen.
+
+Grundlage, die F übt: Bilder in einer Reihe zählen und für jedes Bild in Zweierschritten weiterzählen
+
+Baut auf: 5.1.2-L1 (Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst den Schlüssel. Zähle dann für jedes Bild so viele weiter. *Beispiel:* Schlüssel: 1 Bild steht für 5. Drei Bilder sind 5 + 5 + 5 = 15. *Lösungsschritt:* Ein Bild steht für 2. Zähle in 2er-Schritten.
+
+- `01` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welches Tier magst du am liebsten?“ / Wie viele Kinder haben „Hase“ gewählt? _(Bild: Bilddiagramm „Lieblingstiere der 5b“, ein Bild (kind) = 2 Kinder; Pferd 8, Hase 10, Hamster 4)_ Lösung: **10**. Typische Fehler: 5 (bild-symbole-gezaehlt).
+- `02` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welchen Sport machst du am liebsten?“ / Wie viele Kinder haben „Turnen“ gewählt? _(Bild: Bilddiagramm „Lieblingssport der 5b“, ein Bild (kind) = 5 Kinder; Fußball 20, Turnen 15, Tanzen 10)_ Lösung: **15**. Typische Fehler: 3 (bild-symbole-gezaehlt).
+- `03` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Wie kommst du zur Schule?“ / Was wurde am häufigsten gewählt? _(Bild: Bilddiagramm „Schulweg der 5b“, ein Bild (kind) = 2 Kinder; zu Fuß 6, Fahrrad 2, Roller 12)_
+  - ☑ „Roller“
+  - ☐ „zu Fuß“
+  - ☐ „Fahrrad“
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welchen Sport machst du am liebsten?“ / Schau auf den Schlüssel. / Für wie viele Kinder steht ein Bild? _(Bild: Bilddiagramm „Lieblingssport der 5b“, ein Bild (kind) = 2 Kinder; Fußball 12, Schwimmen 10, Tanzen 16)_ Lösung: **2**. Typische Fehler: 1 (bild-symbole-gezaehlt).
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Lies ab und rechne. _(Bild: Bilddiagramm „Lieblingsobst der 5a“, ein Bild (kind) = 2 Kinder; Banane 2, Erdbeere 8, Kirsche 12)_
+  - a) Wie viele Kinder haben „Banane“ gewählt? **2 Kinder**. Typische Fehler: 1 (bild-symbole-gezaehlt).
+  - b) Wie viele Kinder haben „Banane“ oder „Erdbeere“ gewählt? **10 Kinder**. Typische Fehler: 5 (bild-symbole-gezaehlt).
+- `06` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder haben „Rot“ gewählt? _(Bild: Bilddiagramm „Lieblingsfarben der 5c“, ein Bild (kind) = 5 Kinder; Rot 40, Blau 10, Lila 35)_ Lösung: **40**. Typische Fehler: 8 (bild-symbole-gezaehlt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst den Schlüssel. Zähle dann für jedes Bild so viele weiter. *Beispiel:* Schlüssel: 1 Bild steht für 5. Drei Bilder sind 5 + 5 + 5 = 15. *Lösungsschritt:* Ein Bild steht für 10. Zähle in 10er-Schritten.
+
+- `01` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder haben „Schoko“ gewählt? _(Bild: Bilddiagramm „Lieblingseis der 5b“, ein Bild (kind) = 10 Kinder; Vanille 80, Schoko 50, Erdbeere 40, Nuss 10)_ Lösung: **50**. Typische Fehler: 5 (bild-symbole-gezaehlt).
+- `02` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welches Tier magst du am liebsten?“ / Wie viele Kinder haben „Hase“ gewählt? _(Bild: Bilddiagramm „Lieblingstiere der 5c“, ein Bild (kind) = 5 Kinder; Katze 30, Pferd 25, Hase 5, Hamster 15)_ Lösung: **5**. Typische Fehler: 1 (bild-symbole-gezaehlt).
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5c wurden gefragt: „Welchen Sport machst du am liebsten?“ / Lies ab und rechne. _(Bild: Bilddiagramm „Lieblingssport der 5c“, ein Bild (kind) = 10 Kinder; Schwimmen 60, Turnen 40, Tanzen 20)_
+  - a) Wie viele Kinder mehr haben „Schwimmen“ gewählt als „Tanzen“? **40 Kinder**. Typische Fehler: 4 (bild-symbole-gezaehlt).
+  - b) Wie viele Kinder wurden insgesamt befragt? **120 Kinder**. Typische Fehler: 12 (bild-symbole-gezaehlt).
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Welche Farbe magst du am liebsten?“ / In welcher Zeile sind es 5 Kinder? _(Bild: Bilddiagramm „Lieblingsfarben der 5b“, ein Bild (kind) = 5 Kinder; Rot 15, Blau 25, Grün 5)_
+  - ☐ „Blau“
+  - ☑ „Grün“
+  - ☐ „Rot“
+- `05` AFB II · _Kommunizieren_ · In einem Bilddiagramm steht 1 Bild für 10 Kinder. / Für 60 Kinder zeichnet man ▢ Bilder. Lösung: a = **6**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welche Farbe magst du am liebsten?“ / Emre sagt: „Bei ‚Gelb‘ sind es 7.“ / Mia sagt: „Es sind 70.“ / Wer hat recht? _(Bild: Bilddiagramm „Lieblingsfarben der 5b“, ein Bild (kind) = 10 Kinder; Rot 20, Blau 80, Gelb 70)_
+  - ☑ Mia, denn ein Bild steht für 10.
+  - ☐ Beide haben recht.
+  - ☐ Emre, denn man zählt die Bilder.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst den Schlüssel. Zähle dann für jedes Bild so viele weiter. *Lösungsschritt:* Ein Bild steht für 20. Zähle in 20er-Schritten.
+
+- `01` AFB I · _Kommunizieren_ · Die Bücherei zählt die ausgeliehenen Bücher der Klassen. / Wie viele Bücher hat die Klasse 5c ausgeliehen? _(Bild: Bilddiagramm „Ausgeliehene Bücher im Schuljahr“, ein Bild (buch) = 20 Bücher; 5a 40, 5b 120, 5c 50, 5e 90)_ Lösung: **50**. Typische Fehler: 3 (bild-symbole-gezaehlt), 60 (bild-halbes-symbol).
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter notiert für den König die Apfelernte der Höfe. / Lies ab und rechne. _(Bild: Bilddiagramm „Apfelernte im Königreich“, ein Bild (apfel) = 10 Körbe; Eichenhof 15, Mühlhof 50, Rosenhof 45, Talhof 10)_
+  - a) Wie viele Körbe wurden insgesamt geerntet? **120 Körbe**. Typische Fehler: 110 (sach-schritt-vergessen).
+  - b) Wie viele Körbe hat der Mühlhof mehr geerntet als der Talhof? **40 Körbe**.
+- `03` AFB II · _Kommunizieren_ · In einem Bilddiagramm steht 1 Bild für 20 Bücher. / Für 130 Bücher zeichnet man ▢ ganze Bilder und ein halbes Bild. Lösung: a = **6**
+- `04` AFB I · _Kommunizieren_ · Die Bücherei zählt die ausgeliehenen Bücher der Klassen. / Welcher Wert ist am kleinsten? _(Bild: Bilddiagramm „Ausgeliehene Bücher im Schuljahr“, ein Bild (buch) = 10 Bücher; 5a 25, 5b 75, 5d 10, 5e 70)_
+  - ☑ 5d
+  - ☐ 5e
+  - ☐ 5b
+  - ☐ 5a
+- `05` AFB II · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Lies alle Werte ab und trage sie ein. _(Bild: Bilddiagramm „Lieblingsobst der 5a“, ein Bild (kind) = 20 Kinder; Apfel 150, Banane 110, Erdbeere 100, Traube 20)_ 
+
+  | Obst | Kinder |
+  |---|---|
+  | „Apfel“ | **150** |
+  | „Banane“ | **110** |
+  | „Erdbeere“ | **100** |
+  | „Traube“ | **20** |
+
+- `06` AFB III · _Kommunizieren_ · Die Bücherei zählt die ausgeliehenen Bücher der Klassen. / Insgesamt sind es 215 Bücher. / Die Zeile 5e ist noch leer. / Wie viele Bücher gehören in diese Zeile? _(Bild: Bilddiagramm „Ausgeliehene Bücher im Schuljahr“, ein Bild (buch) = 10 Bücher; 5b 55, 5c 65, 5d 45, 5e ?)_ Lösung: **50**. Typische Fehler: 95 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst den Schlüssel. Zähle dann für jedes Bild so viele weiter.
+
+- `01` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher auf der Burg. / Wie viele Besucher kamen am Montag? _(Bild: Bilddiagramm „Besucher auf der Burg“, ein Bild (kind) = 100 Besucher; Mo 750, Di 300, Mi 400, Do 650)_ Lösung: **750**. Typische Fehler: 8 (bild-symbole-gezaehlt), 800 (bild-halbes-symbol).
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher auf der Burg. / Lies ab und rechne. _(Bild: Bilddiagramm „Besucher auf der Burg“, ein Bild (kind) = 100 Besucher; Mi 350, Do 500, Fr 550, Sa 700)_
+  - a) Wie viele Besucher kamen an allen Tagen zusammen? **2100 Besucher**.
+  - b) Wie viele Besucher kamen am Donnerstag mehr als am Mittwoch? **150 Besucher**.
+  - c) Wie viele Besucher sind es ohne Samstag? **1400 Besucher**. Typische Fehler: 2100 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · Der Kundschafter notiert für den König die Apfelernte der Höfe. / Lies alle Werte ab und trage sie ein. _(Bild: Bilddiagramm „Apfelernte im Königreich“, ein Bild (apfel) = 50 Körbe; Eichenhof 300, Mühlhof 150, Steinhof 275, Rosenhof 75, Talhof 125)_ 
+
+  | Hof | Körbe |
+  |---|---|
+  | Eichenhof | **300** |
+  | Mühlhof | **150** |
+  | Steinhof | **275** |
+  | Rosenhof | **75** |
+  | Talhof | **125** |
+
+- `04` AFB III · _Kommunizieren_ · Die Bücherei zählt die ausgeliehenen Bücher der Klassen. / Das Diagramm soll neu gezeichnet werden: 1 Bild steht dann für 25 Bücher. / Wie viele Bilder braucht dann die Zeile 5a? _(Bild: Bilddiagramm „Ausgeliehene Bücher im Schuljahr“, ein Bild (buch) = 50 Bücher; 5a 75, 5c 50, 5d 250, 5e 225)_ Lösung: **3**. Typische Fehler: 2 (bild-symbole-gezaehlt).
+- `05` AFB II · _Kommunizieren_ · In einem Bilddiagramm steht 1 Bild für 20 Besucher. / Für 110 Besucher zeichnet man ▢ ganze Bilder und ein halbes Bild. Lösung: a = **5**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Bücherei zählt die ausgeliehenen Bücher der Klassen. / Finn sagt: „Ein halbes Bild steht hier für 50 Bücher.“ / Stimmt das? _(Bild: Bilddiagramm „Ausgeliehene Bücher im Schuljahr“, ein Bild (buch) = 50 Bücher; 5a 200, 5c 325, 5d 50, 5e 400)_
+  - ☑ Falsch: 50 : 2 = 25.
+  - ☐ Stimmt: Jedes Bild zählt gleich viel.
+  - ☐ Das hängt von der Zeile ab.
+
+## 5.1.3-Z1: Ich kann ein Säulendiagramm zu einer Tabelle zeichnen.
+
+Grundlage, die F übt: Eine Säule bis zur passenden Zahl an der Achse ziehen, Einerschritte
+
+Baut auf: 5.1.1-H2 (Ich kann aus einer Liste oder Strichliste eine Häufigkeitstabelle erstellen.), 5.1.2-L1 (Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Linie ist eine Zahl weiter. Ziehe die Säule bis zu ihrer Zahl. *Beispiel:* In der Tabelle steht 4: Die Säule geht bis zur Linie 4. *Lösungsschritt:* Die erste Säule geht bis 9.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Schulweg“. / Zeichne die fehlenden Säulen. _(Tabelle: Schulweg | Kinder / zu Fuß | 1 / Fahrrad | 9 / Auto | 3)_ _(Säulen zeichnen „Schulweg der 5a“, Achse 0 bis 10, Linien alle 1, beschriftet alle 1)_ Lösung: zu Fuß 1 (vorgegeben), Fahrrad **9**, Auto **3**
+- `02` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Schulweg“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Schulweg | Kinder / zu Fuß | 10 / Fahrrad | 2 / Auto | 1)_ _(Säulen zeichnen „Schulweg der 5a“, Achse 0 bis 10, Linien alle 1, beschriftet alle 1)_ Lösung: zu Fuß **10**, Fahrrad **2**, Auto **1**
+- `03` AFB I · _Kommunizieren_ · Zähle die Striche in jeder Zeile. / Zeichne dann das Säulendiagramm. _(Bild: Strichliste „Lieblingsfarben der 5b“: Grün 6, Gelb 9, Lila 1)_ _(Säulen zeichnen „Lieblingsfarben der 5b“, Achse 0 bis 10, Linien alle 1, beschriftet alle 1)_ Lösung: Grün **6**, Gelb **9**, Lila **1**
+- `04` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Lieblingstiere“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Tier | Kinder / Hund | 16 / Katze | 10 / Hamster | 2)_ _(Säulen zeichnen „Lieblingstiere der 5b“, Achse 0 bis 16, Linien alle 2, beschriftet alle 2)_ Lösung: Hund **16**, Katze **10**, Hamster **2**
+- `05` AFB II · _Kommunizieren_ · Das sind die Antworten der 5a. / Zähle jede Antwort. / Zeichne dann das Säulendiagramm. _(Antwortkärtchen: Schoko, Nuss, Schoko, Nuss, Erdbeere, Erdbeere, Erdbeere, Erdbeere, Erdbeere, Schoko, Erdbeere, Schoko)_ _(Säulen zeichnen „Lieblingseis der 5a“, Achse 0 bis 8, Linien alle 1, beschriftet alle 1)_ Lösung: Schoko **4**, Erdbeere **6**, Nuss **2**
+- `06` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Tiere auf dem Burghof. / Zeichne die fehlenden Säulen. _(Tabelle: Tier | Tiere / Ziegen | 4 / Hühner | 2 / Gänse | 12)_ _(Säulen zeichnen „Tiere auf dem Burghof“, Achse 0 bis 16, Linien alle 2, beschriftet alle 2)_ Lösung: Ziegen 4 (vorgegeben), Hühner **2**, Gänse **12**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Linien gehen in 2er-Schritten. Zähle von der beschrifteten Linie weiter. *Beispiel:* In der Tabelle steht 12: Das ist eine Linie über 10. *Lösungsschritt:* Die erste Säule geht bis 28.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Schulweg“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Schulweg | Kinder / zu Fuß | 28 / Bus | 24 / Auto | 22 / Roller | 8)_ _(Säulen zeichnen „Schulweg der 5c“, Achse 0 bis 30, Linien alle 2, beschriftet alle 10)_ Lösung: zu Fuß **28**, Bus **24**, Auto **22**, Roller **8**
+- `02` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Lieblingseis“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Eissorte | Kinder / Vanille | 15 / Schoko | 35 / Erdbeere | 30 / Zitrone | 40)_ _(Säulen zeichnen „Lieblingseis der 5b“, Achse 0 bis 50, Linien alle 5, beschriftet alle 10)_ Lösung: Vanille **15**, Schoko **35**, Erdbeere **30**, Zitrone **40**
+- `03` AFB II · _Kommunizieren_ · Zähle die Striche in jeder Zeile. / Zeichne dann das Säulendiagramm. _(Bild: Strichliste „Lieblingseis der 5b“: Schoko 16, Erdbeere 4, Zitrone 20, Nuss 18)_ _(Säulen zeichnen „Lieblingseis der 5b“, Achse 0 bis 20, Linien alle 1, beschriftet alle 5)_ Lösung: Schoko **16**, Erdbeere **4**, Zitrone **20**, Nuss **18**
+- `04` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Lieblingssport“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Sport | Kinder / Schwimmen | 15 / Turnen | 95 / Tanzen | 90 / Reiten | 100)_ _(Säulen zeichnen „Lieblingssport der 5b“, Achse 0 bis 100, Linien alle 5, beschriftet alle 25)_ Lösung: Schwimmen **15**, Turnen **95**, Tanzen **90**, Reiten **100**
+- `05` AFB II · _Kommunizieren_ · Das sind die Antworten der 5c. / Zähle jede Antwort. / Zeichne dann das Säulendiagramm. _(Antwortkärtchen: Hund, Hund, Hund, Hase, Hase, Katze, Pferd, Hund, Hund, Pferd, Hase, Hund, Hund, Pferd, Hund, Hund, Pferd, Hund, Katze, Hase, Pferd, Hase, Pferd, Hase, Pferd)_ _(Säulen zeichnen „Lieblingstiere der 5c“, Achse 0 bis 10, Linien alle 1, beschriftet alle 5)_ Lösung: Hund **10**, Katze **2**, Pferd **7**, Hase **6**
+- `06` AFB III · _Kommunizieren_ · Die Tabelle ist nicht vollständig. / Insgesamt sind es 105 Kinder. / Rechne den fehlenden Wert aus und zeichne die Säule „Hase“. _(Tabelle: Tier | Kinder / Hund | 45 / Katze | 15 / Pferd | 20 / Hase | ? / Gesamt | 105)_ _(Säulen zeichnen „Lieblingstiere der 5a“, Achse 0 bis 50, Linien alle 5, beschriftet alle 10)_ Lösung: Hund 45 (vorgegeben), Katze 15 (vorgegeben), Pferd 20 (vorgegeben), Hase **25**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Linien gehen in 10er-Schritten. Zähle von der beschrifteten Linie weiter. *Lösungsschritt:* Die erste Säule geht bis 60.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Besucher im Freibad“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Tag | Besucher / Do | 60 / Fr | 190 / Sa | 40 / So | 120)_ _(Säulen zeichnen „Besucher im Freibad“, Achse 0 bis 200, Linien alle 10, beschriftet alle 50)_ Lösung: Do **60**, Fr **190**, Sa **40**, So **120**
+- `02` AFB II · _Kommunizieren_ · Die Umfrage „Lieblingsfarben“ wurde in der 5a und der 5b gemacht. / Zeichne die Säulen für beide zusammen. _(Tabelle: Farbe | 5a | 5b / Rot | 75 | 50 / Blau | 50 | 100 / Grün | 25 | 75 / Gelb | 250 | 100)_ _(Säulen zeichnen „Lieblingsfarben der 5a und 5b“, Achse 0 bis 400, Linien alle 25, beschriftet alle 100)_ Lösung: Rot **125**, Blau **150**, Grün **100**, Gelb **350**
+- `03` AFB II · _Kommunizieren_ · Das sind die Antworten der 5c. / Zähle jede Antwort. / Zeichne dann das Säulendiagramm. _(Antwortkärtchen: Erdbeere, Erdbeere, Erdbeere, Zitrone, Erdbeere, Schoko, Zitrone, Erdbeere, Nuss, Erdbeere, Schoko, Zitrone, Schoko, Erdbeere, Erdbeere, Schoko, Nuss, Schoko, Nuss, Schoko, Erdbeere, Erdbeere, Erdbeere, Erdbeere, Nuss, Zitrone, Erdbeere, Erdbeere, Zitrone, Schoko, Zitrone, Zitrone, Schoko, Erdbeere, Erdbeere, Schoko, Zitrone, Erdbeere, Erdbeere, Schoko, Schoko, Erdbeere, Erdbeere)_ _(Säulen zeichnen „Lieblingseis der 5c“, Achse 0 bis 20, Linien alle 1, beschriftet alle 5)_ Lösung: Schoko **11**, Erdbeere **20**, Zitrone **8**, Nuss **4**
+- `04` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Besucher im Museum“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Tag | Besucher / Mo | 325 / Di | 400 / Mi | 275 / Do | 250 / Fr | 225)_ _(Säulen zeichnen „Besucher im Museum“, Achse 0 bis 400, Linien alle 25, beschriftet alle 100)_ Lösung: Mo **325**, Di **400**, Mi **275**, Do **250**, Fr **225**
+- `05` AFB II · _Kommunizieren_ · Die Tabelle ist nicht vollständig. / Insgesamt sind es 975 Besucher. / Rechne den fehlenden Wert aus und zeichne die Säule Samstag. _(Tabelle: Tag | Besucher / Mi | 275 / Do | 100 / Fr | 225 / Sa | ? / Gesamt | 975)_ _(Säulen zeichnen „Besucher im Museum“, Achse 0 bis 400, Linien alle 25, beschriftet alle 100)_ Lösung: Mi 275 (vorgegeben), Do 100 (vorgegeben), Fr 225 (vorgegeben), Sa **375**
+- `06` AFB III · _Kommunizieren_ · Zeichne die fehlenden Säulen. / Am Donnerstag waren es doppelt so viele Besucher wie am Dienstag. _(Säulen zeichnen „Besucher im Zoo“, Achse 0 bis 400, Linien alle 25, beschriftet alle 100)_ Lösung: Di 200 (vorgegeben), Mi 375 (vorgegeben), Do **400**, Fr 350 (vorgegeben)
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Linien gehen in 50er-Schritten. Zähle von der beschrifteten Linie weiter.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Umfrage „Besucher im Freibad“. / Zeichne zu jeder Zeile die Säule. _(Tabelle: Tag | Besucher / Mi | 750 / Do | 250 / Fr | 400 / Sa | 950 / So | 900)_ _(Säulen zeichnen „Besucher im Freibad“, Achse 0 bis 1000, Linien alle 50, beschriftet alle 250)_ Lösung: Mi **750**, Do **250**, Fr **400**, Sa **950**, So **900**
+- `02` AFB II · _Kommunizieren_ · Die Tabelle zeigt zwei Wochen. / Zeichne die Säulen für beide zusammen. _(Tabelle: Tag | 1. Woche | 2. Woche / Do | 150 | 150 / Fr | 650 | 250 / Sa | 100 | 350 / So | 50 | 100)_ _(Säulen zeichnen „Besucher im Freibad in zwei Wochen“, Achse 0 bis 1000, Linien alle 50, beschriftet alle 250)_ Lösung: Do **300**, Fr **900**, Sa **450**, So **150**
+- `03` AFB II · _Kommunizieren_ · Die Tabelle ist nicht vollständig. / Insgesamt sind es 7600 Besucher. / Rechne den fehlenden Wert aus und zeichne die Säule Samstag. _(Tabelle: Tag | Besucher / Di | 1500 / Mi | 1600 / Do | 1900 / Fr | 1700 / Sa | ? / Gesamt | 7600)_ _(Säulen zeichnen „Besucher im Freibad“, Achse 0 bis 2000, Linien alle 100, beschriftet alle 500)_ Lösung: Di 1500 (vorgegeben), Mi 1600 (vorgegeben), Do 1900 (vorgegeben), Fr 1700 (vorgegeben), Sa **900**
+- `04` AFB III · _Kommunizieren_ · Zeichne die fehlenden Säulen. / Beim Steinhof waren es doppelt so viele Körbe wie beim Eichenhof. / Beim Talhof waren es 100 Körbe weniger als beim Mühlhof. _(Säulen zeichnen „Apfelernte im Königreich“, Achse 0 bis 1000, Linien alle 50, beschriftet alle 250)_ Lösung: Eichenhof 150 (vorgegeben), Mühlhof 900 (vorgegeben), Steinhof **300**, Talhof **800**
+- `05` AFB II · _Kommunizieren_ · Zähle die Striche in jeder Zeile. / Zeichne dann das Säulendiagramm. _(Bild: Strichliste „Lieblingssport der 5a“: Fußball 2, Turnen 29, Tanzen 16, Reiten 15)_ _(Säulen zeichnen „Lieblingssport der 5a“, Achse 0 bis 30, Linien alle 1, beschriftet alle 5)_ Lösung: Fußball **2**, Turnen **29**, Tanzen **16**, Reiten **15**
+- `06` AFB III · _Kommunizieren_ · Zeichne die letzte Säule. / Sie ist halb so hoch wie die zweite und die dritte Säule zusammen. _(Säulen zeichnen „Besucher auf der Burg“, Achse 0 bis 2000, Linien alle 100, beschriftet alle 500)_ Lösung: Di 800 (vorgegeben), Mi 2000 (vorgegeben), Do 200 (vorgegeben), Fr **1100**
+
+## 5.1.3-Z2: Ich kann eine passende Achseneinteilung wählen und Fehler in Diagrammen finden.
+
+Grundlage, die F übt: Eine Säule mit der Zahl in der Tabelle vergleichen
+
+Baut auf: 5.1.3-Z1 (Ich kann ein Säulendiagramm zu einer Tabelle zeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe jede Säule mit ihrer Zahl in der Tabelle. *Beispiel:* In der Tabelle steht 6, die Säule endet bei 7: Sie ist falsch. *Lösungsschritt:* Die Linien gehen in 1er-Schritten.
+
+- `01` AFB I · _Kommunizieren_ · Noah hat ein Säulendiagramm zur Tabelle gezeichnet. / Eine Säule passt nicht zur Tabelle. / Welche Säule ist falsch? _(Bild: Säulendiagramm „Lieblingsfarben der 5b“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Rot 1, Gelb 8, Lila 4)_ _(Tabelle: Farbe | Kinder / Rot | 1 / Gelb | 8 / Lila | 3)_
+  - ☐ „Gelb“
+  - ☑ „Lila“
+  - ☐ „Rot“
+- `02` AFB I · _Kommunizieren_ · Lina will ein Säulendiagramm zur Strichliste zeichnen. / Welche Achse passt am besten? _(Bild: Strichliste „Lieblingsfarben der 5b“: Rot 2, Blau 8, Grün 11)_
+  - ☐ In 1er-Schritten bis 9
+  - ☑ In 1er-Schritten bis 12
+  - ☐ In 2er-Schritten bis 12
+- `03` AFB I · _Kommunizieren_ · Elif hat ein Säulendiagramm zur Tabelle gezeichnet. / Etwas ist nicht in Ordnung. / Was ist es? _(Bild: Säulendiagramm ohne Titel; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 8, Erdbeere 5, Zitrone 2, Nuss 7)_ _(Tabelle: Eissorte | Kinder / Vanille | 8 / Erdbeere | 5 / Zitrone | 2 / Nuss | 7)_
+  - ☐ Eine Säule fehlt.
+  - ☑ Der Titel fehlt.
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Schau dir die Linien an der Achse an. / Um wie viel geht es von einer Linie zur nächsten weiter? _(Bild: Säulendiagramm „Lieblingsobst der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Banane 12, Erdbeere 8, Traube 20)_ Lösung: **2**. Typische Fehler: 1 (skala-einerschritte).
+- `05` AFB II · _Kommunizieren_ · Tom hat ein Säulendiagramm zur Tabelle gezeichnet. / Eine Säule passt nicht zur Tabelle. / Welche Säule ist falsch? _(Bild: Säulendiagramm „Schulweg der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Bus 7, Auto 2, Roller 9)_ _(Tabelle: Schulweg | Kinder / Bus | 6 / Auto | 2 / Roller | 9)_
+  - ☐ „Auto“
+  - ☑ „Bus“
+  - ☐ „Roller“
+- `06` AFB I · _Kommunizieren_ · Paul will ein Säulendiagramm zur Strichliste zeichnen. / Welche Achse passt am besten? _(Bild: Strichliste „Schulweg der 5b“: zu Fuß 34, Bus 32, Auto 16)_
+  - ☑ In 2er-Schritten bis 34
+  - ☐ In 2er-Schritten bis 30
+  - ☐ In 4er-Schritten bis 36
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe zwei Dinge: Liegt jeder Wert auf einer Linie? Passt die größte Säule auf die Achse? *Beispiel:* Werte 15, 20 und 35: 5er-Schritte bis 40 passen. *Lösungsschritt:* Der größte Wert ist 65. Alle Werte sind Vielfache von 5.
+
+- `01` AFB I · _Kommunizieren_ · Jonas will ein Säulendiagramm zur Tabelle zeichnen. / Welche Achse passt am besten? _(Tabelle: Sport | Kinder / Fußball | 65 / Schwimmen | 60 / Turnen | 15 / Reiten | 45)_
+  - ☐ In 1er-Schritten bis 65
+  - ☐ In 10er-Schritten bis 70
+  - ☑ In 5er-Schritten bis 65
+- `02` AFB I · _Kommunizieren_ · Finn hat ein Säulendiagramm zur Tabelle gezeichnet. / Eine Säule passt nicht zur Tabelle. / Welche Säule ist falsch? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Apfel 38, Banane 20, Erdbeere 16, Traube 28)_ _(Tabelle: Obst | Kinder / Apfel | 36 / Banane | 20 / Erdbeere | 16 / Traube | 28)_
+  - ☐ „Banane“
+  - ☐ „Traube“
+  - ☑ „Apfel“
+- `03` AFB II · _Kommunizieren_ · Paul hat ein Säulendiagramm zur Tabelle gezeichnet. / Etwas ist nicht in Ordnung. / Was ist es? _(Bild: Säulendiagramm „Lieblingstiere der 5b“, ohne Einheit; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Hund 90, Katze 15, Pferd 45, Hamster 20)_ _(Tabelle: Tier | Kinder / Hund | 90 / Katze | 15 / Pferd | 45 / Hamster | 20)_
+  - ☑ Die Einheit fehlt.
+  - ☐ Der Titel fehlt.
+  - ☐ Eine Säule fehlt.
+- `04` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Wie kommst du zur Schule?“ / Schau dir die Linien an der Achse an. / Um wie viel geht es von einer Linie zur nächsten weiter? _(Bild: Säulendiagramm „Schulweg der 5b“; Achse 0 bis 50, Linien alle 5, beschriftet alle 10; zu Fuß 35, Bus 30, Roller 45)_ Lösung: **5**. Typische Fehler: 1 (skala-einerschritte), 10 (skala-zwischenwert).
+- `05` AFB II · _Kommunizieren_ · Sara hat ein Säulendiagramm zur Tabelle gezeichnet. / Eine Säule ist falsch. / Ziehe sie auf die richtige Höhe. _(Tabelle: Eissorte | Kinder / Vanille | 40 / Schoko | 32 / Erdbeere | 6 / Zitrone | 22)_ _(Säulen zeichnen „Lieblingseis der 5c“, Achse 0 bis 40, Linien alle 2, beschriftet alle 10)_ Lösung: Vanille **40** (steht bei 40), Schoko **32** (steht bei 36), Erdbeere **6** (steht bei 6), Zitrone **22** (steht bei 22)
+- `06` AFB III · _Kommunizieren_ · Ole will ein Säulendiagramm zur Tabelle zeichnen. / Welche Achse passt am besten? _(Tabelle: Obst | Kinder / Apfel | 60 / Erdbeere | 160 / Kirsche | 90 / Traube | 110)_
+  - ☐ In 20er-Schritten bis 180, denn mit großen Schritten wird es übersichtlich.
+  - ☑ In 10er-Schritten bis 180, denn alle Werte liegen auf einer Linie.
+  - ☐ In 2er-Schritten bis 180, denn kleine Schritte sind genau.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe zwei Dinge: Liegt jeder Wert auf einer Linie? Passt die größte Säule auf die Achse? *Lösungsschritt:* Der größte Wert ist 425. Alle Werte sind Vielfache von 25.
+
+- `01` AFB I · _Kommunizieren_ · Lena will ein Säulendiagramm zur Tabelle zeichnen. / Welche Achse passt am besten? _(Tabelle: Tag | Besucher / Di | 425 / Mi | 375 / Do | 225 / Fr | 300)_
+  - ☐ In 25er-Schritten bis 375
+  - ☐ In 50er-Schritten bis 450
+  - ☐ In 5er-Schritten bis 425
+  - ☑ In 25er-Schritten bis 425
+- `02` AFB II · _Kommunizieren_ · Lina hat ein Säulendiagramm zur Tabelle gezeichnet. / Zwei Säulen sind falsch. / Ziehe sie auf die richtige Höhe. _(Tabelle: Klasse | Bücher / 5a | 200 / 5b | 120 / 5c | 140 / 5d | 160)_ _(Säulen zeichnen „Ausgeliehene Bücher im Schuljahr“, Achse 0 bis 200, Linien alle 10, beschriftet alle 50)_ Lösung: 5a **200** (steht bei 200), 5b **120** (steht bei 140), 5c **140** (steht bei 160), 5d **160** (steht bei 160)
+- `03` AFB II · _Kommunizieren_ · Sara hat ein Säulendiagramm zur Tabelle gezeichnet. / Zwei Säulen passen nicht zur Tabelle. / Welche? _(Bild: Säulendiagramm „Ausgeliehene Bücher im Schuljahr“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; 5a 475, 5b 175, 5d 125, 5e 425)_ _(Tabelle: Klasse | Bücher / 5a | 500 / 5b | 150 / 5d | 125 / 5e | 425)_
+  - ☐ 5e
+  - ☐ 5d
+  - ☑ 5a
+  - ☑ 5b
+- `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher auf der Burg. / Schau dir die Linien an der Achse an. / Um wie viel geht es von einer Linie zur nächsten weiter? _(Bild: Säulendiagramm „Besucher auf der Burg“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 125, Di 450, Mi 250)_ Lösung: **25**. Typische Fehler: 1 (skala-einerschritte), 100 (skala-zwischenwert).
+- `05` AFB II · _Kommunizieren_ · Mia hat ein Säulendiagramm zur Tabelle gezeichnet. / Etwas ist nicht in Ordnung. / Was ist es? _(Bild: Säulendiagramm „Ausgeliehene Bücher im Schuljahr“; Achse 0 bis 400, Linien alle 20, beschriftet alle 100; 5a 160, 5b 240, 5d 340)_ _(Tabelle: Klasse | Bücher / 5a | 160 / 5b | 240 / 5c | 400 / 5d | 340)_
+  - ☑ Eine Säule fehlt.
+  - ☐ Die Einheit fehlt.
+  - ☐ Der Titel fehlt.
+- `06` AFB III · _Kommunizieren_ · Die Achse geht in 20er-Schritten. / Der Wert 50 liegt nicht auf einer Linie. / Er liegt zwischen ▢ und ▢. Lösung: a = **40**, b = **60**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe zwei Dinge: Liegt jeder Wert auf einer Linie? Passt die größte Säule auf die Achse?
+
+- `01` AFB I · _Kommunizieren_ · Tom will ein Säulendiagramm zur Tabelle zeichnen. / Welche Achse passt am besten? _(Tabelle: Tag | Besucher / Mi | 200 / Do | 800 / Fr | 500 / Sa | 150)_
+  - ☐ In 50er-Schritten bis 700
+  - ☑ In 50er-Schritten bis 850
+  - ☐ In 10er-Schritten bis 850
+  - ☐ In 100er-Schritten bis 900
+- `02` AFB II · _Kommunizieren_ · Elif hat ein Säulendiagramm zur Tabelle gezeichnet. / Drei Säulen sind falsch. / Ziehe sie auf die richtige Höhe. _(Tabelle: Tag | Besucher / Mo | 950 / Di | 750 / Mi | 900 / Do | 300 / Fr | 650)_ _(Säulen zeichnen „Besucher im Museum“, Achse 0 bis 1000, Linien alle 50, beschriftet alle 250)_ Lösung: Mo **950** (steht bei 850), Di **750** (steht bei 750), Mi **900** (steht bei 1000), Do **300** (steht bei 300), Fr **650** (steht bei 750)
+- `03` AFB II · _Kommunizieren_ · Sara hat ein Säulendiagramm zur Tabelle gezeichnet. / Zwei Säulen passen nicht zur Tabelle. / Welche? _(Bild: Säulendiagramm „Ausgeliehene Bücher im Schuljahr“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; 5a 2000, 5b 1500, 5c 1700, 5e 900)_ _(Tabelle: Klasse | Bücher / 5a | 1900 / 5b | 1500 / 5c | 1800 / 5e | 900)_
+  - ☑ 5a
+  - ☐ 5b
+  - ☐ 5e
+  - ☑ 5c
+- `04` AFB III · _Kommunizieren_ · Lena will ein Säulendiagramm zur Tabelle zeichnen. / Welche Achse passt am besten? _(Tabelle: Tag | Besucher / Mo | 100 / Di | 1100 / Mi | 1300 / Do | 700)_
+  - ☐ In 100er-Schritten bis 1100, denn die Achse soll kurz sein.
+  - ☐ In 20er-Schritten bis 1300, denn kleine Schritte sind genau.
+  - ☑ In 100er-Schritten bis 1300, denn alle Werte liegen auf einer Linie.
+  - ☐ In 200er-Schritten bis 1400, denn mit großen Schritten wird es übersichtlich.
+- `05` AFB II · _Kommunizieren_ · Ein Diagramm soll eine Achse in 20er-Schritten bekommen. / Der größte Wert ist 280. / Wie viele Linien braucht man über der Nulllinie mindestens? Lösung: **14**. Typische Fehler: 15 (einteilung-zu-fein).
+- `06` AFB III · _Kommunizieren_ · Die Achse geht in 50er-Schritten. / Der Wert 290 liegt zwischen ▢ und ▢. / Der Wert 80 liegt zwischen ▢ und ▢. Lösung: a = **250**, b = **300**, c = **50**, d = **100**
+
+## 5.1.4-V1: Ich kann Daten vergleichen: Unterschiede, größter und kleinster Wert, Rangfolge.
+
+Grundlage, die F übt: Zwei Säulen vergleichen: Welche ist höher, um wie viel?
+
+Baut auf: 5.1.2-L1 (Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Beispiel:* 8 und 5: 8 − 5 = 3. Es sind 3 mehr. *Lösungsschritt:* Die Werte sind 4 und 1.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Vanille“ gewählt als „Erdbeere“? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 4, Schoko 10, Erdbeere 1)_ Lösung: **3**. Typische Fehler: 5 (sach-falsche-rechnung).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Balkendiagramm „Lieblingsobst der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Apfel 1, Banane 7, Traube 8)_
+  - ☐ „Apfel“
+  - ☐ „Banane“
+  - ☑ „Traube“
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Was wurde am seltensten gewählt? _(Bild: Säulendiagramm „Lieblingsfarben der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Grün 6, Gelb 20, Lila 2)_
+  - ☐ „Gelb“
+  - ☑ „Lila“
+  - ☐ „Grün“
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Kirsche“ gewählt als „Traube“? _(Bild: Strichliste „Lieblingsobst der 5b“: Apfel 7, Kirsche 14, Traube 8)_ Lösung: **6**. Typische Fehler: 22 (sach-falsche-rechnung).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Ordne vom größten zum kleinsten Wert. / Welche Reihe stimmt? _(Bild: Säulendiagramm „Lieblingsfarben der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Rot 4, Blau 6, Gelb 18)_
+  - ☐ „Gelb“, „Rot“, „Blau“
+  - ☐ „Rot“, „Blau“, „Gelb“
+  - ☑ „Gelb“, „Blau“, „Rot“
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Erdbeere“ gewählt als „Kirsche“? _(Bild: Bilddiagramm „Lieblingsobst der 5c“, ein Bild (kind) = 2 Kinder; Banane 2, Erdbeere 14, Kirsche 12)_ Lösung: **2**. Typische Fehler: 26 (sach-falsche-rechnung), 1 (bild-symbole-gezaehlt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Beispiel:* 8 und 5: 8 − 5 = 3. Es sind 3 mehr. *Lösungsschritt:* Die Werte sind 30 und 6.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Schoko“ gewählt als „Nuss“? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 30, Erdbeere 20, Zitrone 26, Nuss 6)_ Lösung: **24**. Typische Fehler: 36 (sach-falsche-rechnung).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Tier magst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Balkendiagramm „Lieblingstiere der 5b“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Katze 95, Pferd 20, Hase 70, Hamster 40)_
+  - ☑ „Katze“
+  - ☐ „Hase“
+  - ☐ „Pferd“
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Ordne vom größten zum kleinsten Wert. / Welche Reihe stimmt? _(Bild: Säulendiagramm „Tiere auf dem Burghof“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Schafe 38, Ziegen 14, Kühe 16, Gänse 32)_
+  - ☐ Schafe, Gänse, Ziegen, Kühe
+  - ☐ Ziegen, Kühe, Gänse, Schafe
+  - ☑ Schafe, Gänse, Kühe, Ziegen
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder mehr haben „Lila“ gewählt als „Rot“? _(Bild: Balkendiagramm „Lieblingsfarben der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Rot 14, Blau 32, Gelb 22, Lila 38)_ Lösung: **24**. Typische Fehler: 52 (sach-falsche-rechnung).
+- `05` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingstiere“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Tier | Jungen | Mädchen / Hund | 6 | 7 / Hase | 4 | 2 / Hamster | 8 | 6)_
+  - a) Wie viele Kinder haben „Hund“ gewählt? **13 Kinder**. Typische Fehler: 6 (sach-schritt-vergessen).
+  - b) Wie viele Jungen mehr als Mädchen haben „Hamster“ gewählt? **2 Kinder**. Typische Fehler: 14 (sach-falsche-rechnung).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Elif sagt: „Bei ‚Apfel‘ sind es doppelt so viele Kinder wie bei ‚Erdbeere‘.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Apfel 8, Erdbeere 6, Kirsche 30)_
+  - ☐ Stimmt: Die Säule ist höher.
+  - ☑ Falsch: 2 · 6 = 12, es sind aber 8.
+  - ☐ Das sieht man nicht.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Lösungsschritt:* Die Werte sind 200 und 70.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 90, Mi 70, Do 200, Fr 150)_ Lösung: **130**. Typische Fehler: 270 (sach-falsche-rechnung).
+- `02` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Welche Rangfolge stimmt, vom größten zum kleinsten Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 475, Di 175, Mi 150, Do 250, Fr 350)_
+  - ☐ Freitag, Montag, Donnerstag, Dienstag, Mittwoch
+  - ☐ Montag, Freitag, Donnerstag, Mittwoch, Dienstag
+  - ☐ Mittwoch, Dienstag, Donnerstag, Freitag, Montag
+  - ☑ Montag, Freitag, Donnerstag, Dienstag, Mittwoch
+- `03` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingsfarben“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Farbe | Jungen | Mädchen / Rot | 5 | 4 / Blau | 10 | 9 / Grün | 14 | 13 / Gelb | 2 | 6)_
+  - a) Wie viele Kinder haben „Gelb“ gewählt? **8 Kinder**. Typische Fehler: 2 (sach-schritt-vergessen).
+  - b) Wie viele Jungen mehr als Mädchen haben „Grün“ gewählt? **1 Kinder**. Typische Fehler: 27 (sach-falsche-rechnung).
+  - c) Wie viele Mädchen wurden befragt? **32 Kinder**. Typische Fehler: 63 (sach-unnoetige-angabe).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Bilddiagramm „Besucher im Museum“, ein Bild (kind) = 20 Besucher; Mo 100, Di 110, Mi 40, Do 80)_ Lösung: **70**. Typische Fehler: 150 (sach-falsche-rechnung).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher liegt der größte Wert vor dem zweitgrößten? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 400, Linien alle 20, beschriftet alle 100; Mi 240, Do 340, Fr 360, Sa 100)_ Lösung: **20**. Typische Fehler: 260 (extrem-verwechselt).
+- `06` AFB III · _Modellieren_ · In der 5a mögen 11 von 22 Kindern „Auto“ am liebsten. / In der 5b sind es 15 von 30 Kindern. / Finn sagt: „In der 5b ist ‚Auto‘ beliebter.“ / Was meinst du?
+  - ☐ Die 5a, denn die Klasse ist kleiner.
+  - ☐ Die 5b, denn 15 ist mehr als 11.
+  - ☑ In beiden Klassen ist es genau die Hälfte: 22 : 2 = 11 und 30 : 2 = 15.
+  - ☐ Das kann man nicht vergleichen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mi 1200, Do 600, Fr 2000, Sa 1500)_ Lösung: **1400**. Typische Fehler: 2600 (sach-falsche-rechnung).
+- `02` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingseis“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Eissorte | Jungen | Mädchen / Vanille | 14 | 7 / Schoko | 9 | 11 / Erdbeere | 4 | 10 / Zitrone | 10 | 4)_
+  - a) Wie viele Kinder haben „Zitrone“ gewählt? **14 Kinder**. Typische Fehler: 10 (sach-schritt-vergessen).
+  - b) Wie viele Mädchen mehr als Jungen haben „Erdbeere“ gewählt? **6 Kinder**. Typische Fehler: 14 (sach-falsche-rechnung).
+  - c) Wie viele Mädchen wurden befragt? **32 Kinder**. Typische Fehler: 69 (sach-unnoetige-angabe).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher auf der Burg. / Wie viele Besucher kamen am Samstag und Sonntag zusammen mehr als am Montag und Dienstag zusammen? _(Bild: Säulendiagramm „Besucher auf der Burg“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mo 1900, Di 400, Sa 1100, So 1800)_ Lösung: **600**. Typische Fehler: 2900 (sach-schritt-vergessen), 5200 (sach-falsche-rechnung).
+- `04` AFB III · _Modellieren_ · In der 5a mögen 9 von 27 Kindern „Hamster“ am liebsten. / In der 5b sind es 12 von 24 Kindern. / In welcher Klasse ist „Hamster“ beliebter?
+  - ☐ Das kann man nicht vergleichen.
+  - ☑ In der 5b: Dort ist es die Hälfte der Klasse, in der 5a nur ein Drittel.
+  - ☐ In beiden gleich.
+  - ☐ In der 5b, denn 12 ist mehr als 9.
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Der Kundschafter notiert für den König die Apfelernte der Höfe. / Welcher Wert steht in der Rangfolge genau in der Mitte? _(Bild: Balkendiagramm „Apfelernte im Königreich“; Achse 0 bis 1200, Linien alle 50, beschriftet alle 200; Eichenhof 500, Mühlhof 550, Steinhof 750, Rosenhof 1200, Talhof 1000)_
+  - ☐ Talhof
+  - ☑ Steinhof
+  - ☐ Rosenhof
+  - ☐ Mühlhof
+  - ☐ Eichenhof
+- `06` AFB III · _Modellieren_ · Das Ergebnis der Umfrage „Lieblingseis“ steht in der Tabelle. / Wie viele Stimmen fehlen „Vanille“, damit es so viele sind wie für „Schoko“ und „Nuss“ zusammen? _(Tabelle: Eissorte | Kinder / Vanille | 4 / Schoko | 12 / Nuss | 8)_ Lösung: **16**. Typische Fehler: 20 (sach-schritt-vergessen).
+
+## 5.1.4-V2: Ich kann Aussagen über Daten prüfen und täuschende Diagramme erkennen.
+
+Grundlage, die F übt: Eine einfache Aussage am Diagramm nachprüfen: höher, niedriger, gleich hoch
+
+Baut auf: 5.1.4-V1 (Ich kann Daten vergleichen: Unterschiede, größter und kleinster Wert, Rangfolge.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche die höchsten Säulen. *Beispiel:* Säulen 6 und 4: 6 ist mehr als 4. *Lösungsschritt:* Lies die Werte ab: „Hund“ 20.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Tier magst du am liebsten?“ / Noah sagt: / „‚Hund‘ wurde am häufigsten gewählt.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingstiere der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Hund 20, Pferd 18, Hamster 16)_
+  - ☐ Falsch.
+  - ☑ Stimmt.
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welchen Sport machst du am liebsten?“ / Lena sagt: / „Bei ‚Schwimmen‘ sind es mehr Kinder als bei ‚Fußball‘.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingssport der 5b“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Fußball 16, Schwimmen 10, Tanzen 14)_
+  - ☑ Falsch.
+  - ☐ Stimmt.
+- `03` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Mara sagt: / „Bei ‚Erdbeere‘ sind es 9 Kinder.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Apfel 6, Erdbeere 9, Kirsche 1)_
+  - ☐ Falsch.
+  - ☑ Stimmt.
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Mia sagt: / „Bei den Schafen sind es mehr Tiere als bei den Ziegen.“ / Stimmt das? _(Bild: Balkendiagramm „Tiere auf dem Burghof“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schafe 1, Ziegen 10, Hühner 2)_
+  - ☐ Stimmt.
+  - ☑ Falsch.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Wie kommst du zur Schule?“ / Ali sagt: / „Bei ‚Roller‘ und bei ‚zu Fuß‘ sind es zusammen mehr Kinder als bei ‚Fahrrad‘.“ / Stimmt das? _(Bild: Säulendiagramm „Schulweg der 5a“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; zu Fuß 3, Fahrrad 5, Roller 9)_
+  - ☐ Falsch.
+  - ☑ Stimmt.
+- `06` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welchen Sport machst du am liebsten?“ / Elif sagt: / „‚Tanzen‘ wurde am häufigsten gewählt.“ / Stimmt das? _(Bild: Balkendiagramm „Lieblingssport der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Fußball 18, Turnen 12, Tanzen 16)_
+  - ☑ Falsch.
+  - ☐ Stimmt.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche die beiden Werte. *Beispiel:* Säulen 6 und 4: 6 ist mehr als 4. *Lösungsschritt:* Lies die Werte ab: „Banane“ 40, „Kirsche“ 26, „Traube“ 28.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Sara sagt: / „Bei ‚Banane‘ sind es mehr Kinder als bei ‚Kirsche‘.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Apfel 6, Banane 40, Kirsche 26, Traube 28)_
+  - ☑ Stimmt.
+  - ☐ Falsch.
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Lena sagt: / „Bei ‚Erdbeere‘ sind es 40 Kinder.“ / Stimmt das? _(Bild: Balkendiagramm „Lieblingseis der 5c“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Vanille 12, Schoko 38, Erdbeere 40, Zitrone 20)_
+  - ☑ Stimmt.
+  - ☐ Falsch.
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Tier magst du am liebsten?“ / Emre sagt: / „Bei ‚Hund‘ und bei ‚Pferd‘ sind es zusammen mehr Kinder als bei ‚Hamster‘.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingstiere der 5c“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Hund 65, Katze 35, Pferd 40, Hamster 95)_
+  - ☐ Falsch.
+  - ☑ Stimmt.
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Lena sagt: / „Bei ‚Traube‘ und bei ‚Erdbeere‘ sind es gleich viele Kinder.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Apfel 34, Erdbeere 36, Kirsche 6, Traube 36)_
+  - ☑ Stimmt.
+  - ☐ Falsch.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Ole sagt: / „Bei den Gänsen sind es doppelt so viele Tiere wie bei den Kühen.“ / Stimmt das? _(Bild: Säulendiagramm „Tiere auf dem Burghof“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Schafe 95, Hühner 25, Kühe 10, Gänse 60)_
+  - ☑ Falsch.
+  - ☐ Stimmt.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Welche Aussage stimmt? _(Bild: Säulendiagramm „Lieblingsobst der 5b“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Apfel 8, Banane 16, Erdbeere 36, Traube 18)_
+  - ☐ Bei „Apfel“ sind es doppelt so viele Kinder wie bei „Banane“.
+  - ☑ „Erdbeere“ wurde am häufigsten gewählt.
+  - ☐ „Apfel“ wurde am häufigsten gewählt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche die beiden Werte. *Lösungsschritt:* Lies die Werte ab: Samstag 75, Mittwoch 30, Donnerstag 55.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Jonas sagt: / „Am Samstag sind es mehr Besucher als am Mittwoch.“ / Stimmt das? _(Bild: Bilddiagramm „Besucher im Zoo“, ein Bild (kind) = 10 Besucher; Mi 30, Do 55, Fr 70, Sa 75)_
+  - ☐ Falsch.
+  - ☑ Stimmt.
+- `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Mara sagt: / „Am Dienstag sind es doppelt so viele Besucher wie am Mittwoch.“ / Stimmt das? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 80, Mi 170, Do 180, Fr 200)_
+  - ☑ Falsch.
+  - ☐ Stimmt.
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Welche Aussage stimmt? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Mo 190, Di 140, Mi 150, Do 160)_
+  - ☐ Am Mittwoch sind es doppelt so viele Besucher wie am Dienstag.
+  - ☑ Am Mittwoch und am Donnerstag sind es zusammen mehr Besucher als am Montag.
+  - ☐ Am Montag sind es doppelt so viele Besucher wie am Donnerstag.
+  - ☐ Am Donnerstag sind es die meisten Besucher.
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Mia sagt: / „Am Montag sind es 160 Besucher.“ / Stimmt das? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 400, Linien alle 20, beschriftet alle 100; Mo 160, Di 360, Mi 200, Do 80)_
+  - ☐ Falsch.
+  - ☑ Stimmt.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Mia sagt: / „Am Mittwoch sind es mehr als die Hälfte aller Besucher.“ / Stimmt das? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Mo 20, Di 140, Mi 160, Do 200)_
+  - ☑ Falsch.
+  - ☐ Stimmt.
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Museum. / Tom sagt: „Am Sonntag kamen mehr als doppelt so viele Besucher wie am Freitag.“ / Stimmt das? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 100 bis 220, Linien alle 10, beschriftet alle 40; Fr 110, Sa 130, So 200)_
+  - ☐ Das kann man nicht ablesen.
+  - ☑ Falsch: Die Achse beginnt bei 100. Es waren 200 und 110 Besucher, und 2 · 110 = 220.
+  - ☐ Stimmt: 200 ist mehr als 110.
+  - ☐ Stimmt: Die Säule ist mehr als doppelt so hoch.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne die beiden Werte zusammen.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Tom sagt: / „Am Donnerstag und am Sonntag sind es zusammen mehr Besucher als am Freitag.“ / Stimmt das? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 1200, Linien alle 50, beschriftet alle 200; Do 1050, Fr 850, Sa 1150, So 700)_
+  - ☑ Stimmt.
+  - ☐ Falsch.
+- `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Emre sagt: / „Am Dienstag sind es mehr als die Hälfte aller Besucher.“ / Stimmt das? _(Bild: Säulendiagramm „Besucher im Zoo“; Achse 0 bis 1000, Linien alle 50, beschriftet alle 250; Mo 550, Di 650, Mi 500, Do 1000)_
+  - ☐ Stimmt.
+  - ☑ Falsch.
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Die Bücherei zählt die ausgeliehenen Bücher der Klassen. / Welche Aussage stimmt? _(Bild: Säulendiagramm „Ausgeliehene Bücher im Schuljahr“; Achse 0 bis 1000, Linien alle 50, beschriftet alle 250; 5a 900, 5c 200, 5d 650, 5e 300)_
+  - ☑ Bei der 5a und bei der 5d sind es zusammen mehr Bücher als bei der 5e.
+  - ☐ Bei der 5c sind es mehr Bücher als bei der 5d.
+  - ☐ Bei der 5e sind es die meisten Bücher.
+  - ☐ Bei der 5a sind es doppelt so viele Bücher wie bei der 5c.
+  - ☐ Bei der 5d sind es doppelt so viele Bücher wie bei der 5e.
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Die Säule für Mittwoch sieht mehr als dreimal so hoch aus wie die für Donnerstag. / Was ist an diesem Diagramm irreführend? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 400 bis 640, Linien alle 20, beschriftet alle 80; Mi 520, Do 420, Fr 500)_
+  - ☐ Die Einheit fehlt.
+  - ☑ Die Achse beginnt nicht bei 0.
+  - ☐ Der Titel fehlt.
+  - ☐ Eine Säule fehlt.
+  - ☐ Nichts, das Diagramm ist in Ordnung.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher auf der Burg. / Tom sagt: / „Am Freitag sind es doppelt so viele Besucher wie am Mittwoch.“ / Stimmt das? _(Bild: Balkendiagramm „Besucher auf der Burg“; Achse 0 bis 1200, Linien alle 50, beschriftet alle 200; Di 350, Mi 600, Do 1100, Fr 1200)_
+  - ☑ Stimmt.
+  - ☐ Falsch.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Die Säule für Samstag sieht viel höher aus als die für Freitag. / Wie viele Besucher kamen am Samstag wirklich mehr? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 400 bis 640, Linien alle 20, beschriftet alle 80; Fr 460, Sa 600, So 500)_ Lösung: **140**. Typische Fehler: 200 (achse-abgeschnitten).
+
+## 5.1.5-U1: Ich kann eine Umfrage planen und auswerten.
+
+Grundlage, die F übt: Antworten einer kleinen Umfrage zählen und eintragen
+
+Baut auf: 5.1.1-H2 (Ich kann aus einer Liste oder Strichliste eine Häufigkeitstabelle erstellen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie? *Beispiel:* Antworten „Rot“ und „Blau“ passen zur Frage nach der Lieblingsfarbe. *Lösungsschritt:* Die Antworten sind „Fußball“, „Tanzen“, „Reiten“.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Finn hat eine Umfrage gemacht. / Das ist die Strichliste. / Welche Frage hat er gestellt? _(Bild: Strichliste: Fußball 9, Tanzen 7, Reiten 2)_
+  - ☑ Welchen Sport machst du am liebsten?
+  - ☐ Welche Farbe magst du am liebsten?
+  - ☐ Wie heißt du?
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Sara fragt die Kinder: / „Welches Tier magst du am liebsten?“ / Mache für jede Antwort einen Strich. _(Antwortkärtchen: Hund, Hase, Hund, Katze, Hund, Hund, Hase, Katze, Hund, Katze, Hund)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Hund **6**, Katze **3**, Hase **2**
+- `03` AFB I · _Modellieren_ · Mia hat die Kinder gefragt: / „Welches Obst isst du am liebsten?“ / Wie viele Kinder haben „Banane“ gesagt? _(Antwortkärtchen: Traube, Kirsche, Kirsche, Traube, Traube, Banane, Banane, Kirsche, Kirsche, Kirsche)_ Lösung: **2**. Typische Fehler: 3 (liste-verzaehlt).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Finn hat gefragt: / „Welche Farbe magst du am liebsten?“ / Welche Antwort kam am häufigsten? _(Bild: Säulendiagramm „Lieblingsfarben“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Rot 2, Grün 5, Lila 7)_
+  - ☑ „Lila“
+  - ☐ „Grün“
+  - ☐ „Rot“
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Noah hat 18 Kinder befragt. / In der Strichliste sind aber nur 16 Striche. / Was ist passiert? _(Bild: Strichliste „Lieblingseis“: Vanille 7, Schoko 5, Zitrone 4)_
+  - ☑ Es fehlen 2 Antworten.
+  - ☐ Es sind 2 Striche zu viel.
+  - ☐ Alles ist richtig.
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schoko 9, Erdbeere 7, Nuss 5)_
+  - ☐ Wie spät ist es?
+  - ☑ Welche Eissorte isst du am liebsten?
+  - ☐ Welches Obst isst du am liebsten?
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie? *Beispiel:* Antworten „Rot“ und „Blau“ passen zur Frage nach der Lieblingsfarbe. *Lösungsschritt:* Die Antworten sind „Vanille“, „Schoko“, „Nuss“.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Ali hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 8, Schoko 5, Nuss 9)_
+  - ☐ Wie alt bist du?
+  - ☐ Welches Tier magst du am liebsten?
+  - ☑ Welche Eissorte isst du am liebsten?
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Sara hat die Kinder gefragt: / „Welches Tier magst du am liebsten?“ / Werte die Antworten in der Tabelle aus. _(Antwortkärtchen: Pferd, Hund, Hase, Hase, Hund, Hamster, Hase, Pferd, Hund, Hund, Hase, Hamster, Pferd, Hase, Pferd, Hund, Hase)_ 
+
+  | Tier | Anzahl |
+  |---|---|
+  | Hund | **5** |
+  | Pferd | **4** |
+  | Hase | **6** |
+  | Hamster | **2** |
+
+- `03` AFB II · _Modellieren_ · Mia will diese Frage stellen: / „Welches Obst isst du am liebsten?“ / Welche Antworten soll er zur Auswahl geben?
+  - ☐ Vanille, Schoko, Zitrone, Erdbeere
+  - ☐ Katze, Hamster, Pferd, Hund
+  - ☑ Traube, Apfel, Banane, Erdbeere
+- `04` AFB I · _Modellieren_ · Das sind die Antworten zur Frage „Wie kommst du zur Schule?“. / Wie viele Kinder haben „Fahrrad“ geantwortet? _(Antwortkärtchen: Roller, Bus, Fahrrad, Bus, Bus, Fahrrad, zu Fuß, Bus, zu Fuß, Fahrrad, Roller, Fahrrad, Bus, Fahrrad, zu Fuß, Fahrrad, zu Fuß)_ Lösung: **6**. Typische Fehler: 7 (liste-verzaehlt).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Ole hat die Kinder der 5a gefragt: / „Welche Eissorte isst du am liebsten?“ / Werte die Strichliste aus. _(Bild: Strichliste „Lieblingseis“: Vanille 12, Schoko 8, Zitrone 11)_
+  - a) Wie viele Kinder haben geantwortet? **31 Kinder**.
+  - b) Wie viele Kinder haben nicht „Zitrone“ gesagt? **20 Kinder**. Typische Fehler: 11 (sach-falsche-rechnung).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Ben will mit einer Strichliste fragen: / „Was machst du am Wochenende?“ / Warum ist diese Frage ungünstig?
+  - ☐ Man darf in der Schule keine Umfragen machen.
+  - ☑ Jedes Kind macht viele verschiedene Dinge.
+  - ☐ Die Frage ist zu kurz.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie? *Lösungsschritt:* Die Antworten sind „Fußball“, „Schwimmen“, „Turnen“.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Mara hat eine Umfrage gemacht. / Das ist die Strichliste. / Welche Frage hat er gestellt? _(Bild: Strichliste: Fußball 6, Schwimmen 2, Turnen 9)_
+  - ☐ Was hast du gestern gemacht?
+  - ☐ Wie spät ist es?
+  - ☑ Welchen Sport machst du am liebsten?
+  - ☐ Welche Farbe magst du am liebsten?
+- `02` AFB II · _Modellieren_ · Das sind die Antworten zur Frage „Welche Farbe magst du am liebsten?“. / Werte die Umfrage aus. _(Antwortkärtchen: Grün, Rot, Blau, Blau, Rot, Gelb, Rot, Rot, Blau, Gelb, Rot, Grün, Gelb, Grün, Blau, Blau, Rot, Rot, Rot, Blau, Blau, Blau, Gelb, Rot, Gelb, Gelb, Gelb)_
+  - a) Wie viele Kinder wurden befragt? **27 Kinder**. Typische Fehler: 26 (liste-verzaehlt).
+  - b) Wie viele Kinder haben „Rot“ gesagt? **9 Kinder**.
+  - c) Wie viele Kinder mehr haben „Rot“ gesagt als „Grün“? **6 Kinder**.
+- `03` AFB II · _Modellieren_ · Finn will eine Umfrage mit Strichliste machen. / Welche Frage eignet sich dafür am besten?
+  - ☐ Was machst du am Wochenende?
+  - ☑ Welche Farbe magst du am liebsten?
+  - ☐ Was isst du gern?
+  - ☐ Wie findest du die Schule?
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das sind die Antworten zur Frage „Wie kommst du zur Schule?“. / Werte sie in der Häufigkeitstabelle aus. _(Antwortkärtchen: Fahrrad, Fahrrad, Roller, Fahrrad, zu Fuß, Auto, Fahrrad, Auto, Bus, Bus, zu Fuß, Roller, Fahrrad, Auto, Roller, Roller, Fahrrad, Bus, Fahrrad, Bus, Auto, Fahrrad, Bus, Bus, zu Fuß, Roller)_ 
+
+  | Schulweg | Anzahl |
+  |---|---|
+  | zu Fuß | **3** |
+  | Fahrrad | **8** |
+  | Bus | **6** |
+  | Auto | **4** |
+  | Roller | **5** |
+  | Gesamt | **26** |
+
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Mia hat die Kinder der 5c gefragt: / „Welche Farbe magst du am liebsten?“ / 5 Kinder haben „weiß nicht“ gesagt. / Werte aus. _(Bild: Strichliste „Lieblingsfarben“: Rot 4, Blau 11, Grün 10)_
+  - a) Wie viele Kinder haben eine der drei Antworten gewählt? **25 Kinder**. Typische Fehler: 30 (sach-unnoetige-angabe).
+  - b) Wie viele Kinder wurden insgesamt befragt? **30 Kinder**. Typische Fehler: 25 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Lena hat nur Kinder im Fußballverein befragt. / Er sagt: „Fußball ist der beliebteste Sport an unserer Schule.“ / Was meinst du dazu?
+  - ☐ Stimmt, denn eine Umfrage hat immer recht.
+  - ☑ Falsch geschlossen: Im Fußballverein ist „Fußball“ natürlich besonders beliebt. Man muss Kinder aus der ganzen Schule fragen.
+  - ☐ Falsch, denn Umfragen sind nie richtig.
+  - ☐ Stimmt, denn er hat viele Kinder gefragt.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie?
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Turnen 2, Tanzen 7, Reiten 6)_
+  - ☐ Wie alt bist du?
+  - ☑ Welchen Sport machst du am liebsten?
+  - ☐ Was hast du gestern gemacht?
+  - ☐ Wie heißt du?
+  - ☐ Welches Tier magst du am liebsten?
+- `02` AFB II · _Modellieren_ · Das sind die Antworten zur Frage „Welchen Sport machst du am liebsten?“. / Werte die Umfrage aus. _(Antwortkärtchen: Schwimmen, Tanzen, Schwimmen, Reiten, Fußball, Schwimmen, Fußball, Schwimmen, Reiten, Fußball, Tanzen, Fußball, Schwimmen, Fußball, Fußball, Fußball, Turnen, Turnen, Schwimmen, Fußball, Turnen, Reiten, Turnen, Turnen)_
+  - a) Wie viele Kinder wurden befragt? **24 Kinder**.
+  - b) Wie viele Kinder mehr haben „Fußball“ gesagt als „Tanzen“? **6 Kinder**.
+  - c) Wie viele Kinder haben weder „Fußball“ noch „Tanzen“ gesagt? **14 Kinder**. Typische Fehler: 16 (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · Tom will eine Umfrage mit Strichliste machen. / Welche Frage eignet sich dafür am besten?
+  - ☐ Was isst du gern?
+  - ☑ Welche Farbe magst du am liebsten?
+  - ☐ Wie findest du die Schule?
+  - ☐ Was machst du am Wochenende?
+- `04` AFB III · _Modellieren_ · Ben will wissen, wie beliebt „Schwimmen“ an der Schule ist. / Er befragt nur Kinder aus dem Schwimmverein. / Was ist das Problem?
+  - ☐ Es gibt kein Problem.
+  - ☑ Diese Kinder antworten besonders oft mit „Schwimmen“. Das Ergebnis gilt nicht für die ganze Schule.
+  - ☐ Er hätte eine Strichliste machen müssen.
+  - ☐ Er hätte zweimal fragen müssen.
+  - ☐ Es sind zu wenige Antworten zum Zählen.
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Lina fragt an zwei Tagen: „Welche Eissorte isst du am liebsten?“ / Die Strichliste zeigt den ersten Tag, die Karten zeigen den zweiten Tag. / Werte beide Tage zusammen aus. _(Bild: Strichliste „Lieblingseis am ersten Tag“: Vanille 4, Schoko 5, Zitrone 9, Nuss 10)_ _(Antwortkärtchen: Schoko, Schoko, Nuss, Zitrone, Nuss, Zitrone, Zitrone, Schoko, Nuss, Schoko, Zitrone, Schoko, Zitrone, Vanille, Zitrone, Vanille)_ 
+
+  | Eissorte | Anzahl |
+  |---|---|
+  | Vanille | **6** |
+  | Schoko | **10** |
+  | Zitrone | **15** |
+  | Nuss | **13** |
+  | Gesamt | **44** |
+
+- `06` AFB III · _Modellieren_ · Bei einer Umfrage nennt jedes Kind genau 3 Lieblingsfarben. / In der Strichliste stehen 12 volle Bündel und 3 einzelne Striche. / Wie viele Kinder wurden befragt? Lösung: **21**. Typische Fehler: 63 (sach-schritt-vergessen).
 
 ## 5.3.1-K1: Ich kann im Kopf addieren.
 
@@ -3825,14 +4761,24 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `gesetz-auf-division` | Überträgt das Vertauschungs- oder Verbindungsgesetz auf die Division. | Beim Dividieren darfst du die Zahlen nicht tauschen und die Klammern nicht verschieben. Rechne beide Seiten aus. | Du weißt jetzt: Beim Teilen darfst du nicht tauschen und keine Klammern verschieben. |
 | `muster-falsche-regel` | Setzt ein Zahlenmuster mit einer falschen Regel fort (zum Beispiel immer gleich viel dazu statt immer mal gleich viel). | Prüfe deine Regel an allen Zahlen des Musters, nicht nur an den ersten beiden. | Du prüfst deine Regel jetzt an allen Zahlen des Musters. |
 | `sach-schritt-vergessen` | Führt nur einen von mehreren nötigen Rechenschritten aus. | Du bist noch nicht fertig: Es fehlt noch ein Rechenschritt. | Du denkst jetzt an alle Rechenschritte. |
+| `strich-buendel-falsch` | Bündelt die Strichliste falsch: Der Querstrich steht nicht als fünfter Strich. | Schau dir deine Bündel an: Vier Striche stehen gerade, der fünfte geht quer darüber. | Du bündelst jetzt richtig: Der fünfte Strich geht quer. |
+| `strich-buendel-als-vier` | Zählt ein Bündel der Strichliste als 4 statt als 5. | Zähle in einem Bündel auch den Querstrich mit. Ein Bündel sind 5 Striche. | Du weißt jetzt: Ein Bündel sind 5 Striche. |
+| `liste-verzaehlt` | Verzählt sich beim Auszählen einer Liste um eins oder zwei. | Zähle noch einmal und streiche dabei jede Antwort ab, die du schon gezählt hast. | Du zählst jetzt sorgfältig und streichst ab, was du schon gezählt hast. |
+| `skala-einerschritte` | Zählt die Linien des Diagramms, statt die Zahlen an der Achse zu beachten. | Schau auf die Zahlen an der Achse: In welchen Schritten geht es von Linie zu Linie? | Du schaust jetzt auf die Zahlen an der Achse. |
+| `skala-zwischenwert` | Liest bei einem Wert zwischen zwei beschrifteten Linien die nächste beschriftete Zahl ab. | Das Ende liegt zwischen zwei Zahlen. Zähle die feinen Linien in den richtigen Schritten weiter. | Du liest jetzt auch Werte zwischen zwei Zahlen genau ab. |
+| `bild-symbole-gezaehlt` | Zählt im Bilddiagramm die Bilder, ohne den Schlüssel zu beachten. | Lies den Schlüssel: Ein Bild steht nicht für 1, sondern für mehrere. | Du denkst jetzt an den Schlüssel: Ein Bild steht für mehrere. |
+| `bild-halbes-symbol` | Wertet ein halbes Bild im Bilddiagramm als ganzes oder lässt es weg. | Schau genau hin: Ein halbes Bild zählt die Hälfte des Schlüssels. | Du weißt jetzt: Ein halbes Bild ist die Hälfte wert. |
+| `diagramm-vertauscht` | Trägt Werte bei der falschen Säule ein (zwei Werte vertauscht). | Prüfe Säule für Säule: Gehört der Wert aus der Tabelle wirklich zu diesem Namen? | Du ordnest jetzt jeden Wert der richtigen Säule zu. |
+| `extrem-verwechselt` | Verwechselt den größten mit dem kleinsten Wert. | Lies die Frage noch einmal: Wird nach am meisten oder nach am wenigsten gefragt? | Du unterscheidest jetzt sicher zwischen am meisten und am wenigsten. |
+| `achse-abgeschnitten` | Lässt sich von einer Achse täuschen, die nicht bei 0 beginnt, und vergleicht nur die Höhe der Säulen. | Schau, bei welcher Zahl die Achse beginnt. Vergleiche die Zahlen, nicht nur die Höhe der Säulen. | Du schaust jetzt zuerst auf die unterste Zahl an der Achse. |
+| `einteilung-zu-fein` | Wählt eine Achseneinteilung mit viel zu kleinen Schritten. | Mit so kleinen Schritten wird die Achse sehr lang. Nimm größere Schritte. | Du wählst jetzt nicht zu kleine Schritte für die Achse. |
+| `einteilung-zu-grob` | Wählt eine Achseneinteilung, bei der Werte zwischen die Linien fallen. | Prüfe jeden Wert: Liegt er genau auf einer Linie? | Du wählst jetzt Schritte, bei denen jeder Wert auf einer Linie liegt. |
+| `einteilung-zu-kurz` | Wählt eine Achse, die vor dem größten Wert endet. | Prüfe den größten Wert: Passt seine Säule noch auf die Achse? | Du achtest jetzt darauf: Auch die größte Säule muss auf die Achse passen. |
+| `umfrage-unpassend` | Wählt eine Umfragefrage, deren Antworten sich nicht eindeutig zählen lassen. | Überlege: Kann jedes Kind genau eine von wenigen Antworten geben? | Du stellst jetzt Fragen mit klaren Antworten zum Zählen. |
+| `anteil-nicht-beachtet` | Vergleicht Anzahlen aus unterschiedlich großen Gruppen, ohne die Gruppengröße zu beachten. | Die Gruppen sind verschieden groß. Vergleiche, welcher Teil der Gruppe es jeweils ist. | Du vergleichst jetzt auch, wie viele insgesamt gefragt wurden. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.1.1-L1 Ich kann mit Strichlisten und Häufigkeitstabellen umgehen. Baut auf: nur Grundschulstoff
-- 5.1.2-L1 Ich kann Informationen aus Diagrammen ablesen. Baut auf: 5.1.1-L1 (Ich kann mit Strichlisten und Häufigkeitstabellen umgehen.)
-- 5.1.3-L1 Ich kann Diagramme anfertigen. Baut auf: 5.1.1-L1 (Ich kann mit Strichlisten und Häufigkeitstabellen umgehen.), 5.1.2-L1 (Ich kann Informationen aus Diagrammen ablesen.)
-- 5.1.4-L1 Ich kann Daten miteinander vergleichen. Baut auf: 5.1.2-L1 (Ich kann Informationen aus Diagrammen ablesen.)
-- 5.1.5-L1 Ich kann Daten erheben. Baut auf: 5.1.1-L1 (Ich kann mit Strichlisten und Häufigkeitstabellen umgehen.)
 - 5.2.1-L1 Ich kann mit natürlichen Zahlen umgehen. Baut auf: nur Grundschulstoff
 - 5.2.2-L1 Ich kann mit großen Zahlen umgehen. Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.)
 - 5.2.3-L1 Ich kann Zahlen runden. Baut auf: 5.2.2-L1 (Ich kann mit großen Zahlen umgehen.)

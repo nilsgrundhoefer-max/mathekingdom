@@ -11,6 +11,7 @@ import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
+import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
 
@@ -879,6 +880,9 @@ function aufgabenAnsicht() {
         !a.einstieg && h('span', { class: 'punkte', title: grundlage ? `${punkte} von ${L.GRUNDLAGE_RICHTIGE} Aufgaben zur Grundlage` : `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < punkte ? 'voll' : '' })))),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
       auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
+      // Kapitel 1: die Antworten einer Umfrage und eine Tabelle, aus denen abgelesen wird.
+      auf.urliste && urlisteBild(auf.urliste, fertig),
+      auf.daten && h('div', { class: 'bildrahmen zumtext' }, datenTabelle(auf.daten)),
       formular,
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
@@ -889,7 +893,8 @@ function aufgabenAnsicht() {
     h('p', { class: 'kennung', id: 'kennung', title: 'Kennung dieser Aufgabe' }, auf.id));
 }
 
-function eingabefelder(auf, a, gesperrt) {
+// Auch für den Bilderbogen (tools/bilderbogen.mjs) ausgeführt.
+export function eingabefelder(auf, a, gesperrt) {
   const zahlfeld = (name, einheit, wert) => h('span', { class: 'zahlfeld' },
     h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 9, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort' }),
     einheit && h('span', { class: 'einheit' }, einheit));
@@ -955,6 +960,8 @@ function eingabefelder(auf, a, gesperrt) {
         ? h('td', {}, auf.tabelle.art === 'raster' ? ziffernfeld(`luecke-${zelle.luecke}`, letzte?.[zelle.luecke], String(auf.luecken[zelle.luecke].loesung).length > 1 ? 2 : 1) : zahlfeld(`luecke-${zelle.luecke}`, null, letzte?.[zelle.luecke]))
         : h(i === 0 ? 'th' : 'td', i === 0 ? { scope: 'row' } : {}, zelle))))))));
     }
+    case 'strichliste': return strichlisteEingabe(auf, letzte, gesperrt);
+    case 'zeichnen': return zeichnenEingabe(auf, letzte, gesperrt);
     default: return null;
   }
 }
@@ -969,6 +976,10 @@ function liesEingabe(auf, formular) {
     case 'luecken': { const v = Object.fromEntries(Object.keys(auf.luecken).map((n) => [n, feld(`luecke-${n}`)])); return { eingabe: v, leer: Object.values(v).some((x) => !x) }; }
     case 'zuordnen': { const v = Object.fromEntries(auf.paare.map((p) => [p.links, feld(`paar-${p.links}`)])); return { eingabe: v, leer: Object.values(v).some((x) => !x) }; }
     case 'sachaufgabe': { const v = auf.teile.map((_, i) => feld(`teil-${i}`)); return { eingabe: v, leer: v.some((x) => !x) }; }
+    // Strichliste: je Zeile das Strichmuster. Leer ist sie, solange noch kein neuer Strich gesetzt ist.
+    case 'strichliste': { const v = auf.zeilen.map((_, i) => feld(`strich-${i}`)); return { eingabe: v, leer: v.every((x, i) => x === buendle(auf.zeilen[i].start ?? 0)) }; }
+    // Säulen zeichnen: je offene Säule die Höhe. Eine Säule auf 0 ist noch nicht gezeichnet.
+    case 'zeichnen': { const v = auf.diagramm.saeulen.map((sa, i) => (sa.offen ? Number(feld(`saeule-${i}`)) : null)); return { eingabe: v, leer: v.some((x, i) => auf.diagramm.saeulen[i].offen && !(x > 0)) }; }
     default: return { eingabe: null, leer: true };
   }
 }
@@ -1038,6 +1049,8 @@ function loesungstext(auf) {
     case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => auf.luecken[n].loesung);
     case 'zuordnen': return auf.paare.map((p) => `${p.links} ist ${p.rechts}`).join(', ');
     case 'sachaufgabe': return auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
+    case 'strichliste': return auf.zeilen.map((x) => `${x.name} ${x.loesung} Striche`).join(', ');
+    case 'zeichnen': return auf.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     default: return '';
   }
 }
@@ -1063,7 +1076,14 @@ function soGehtEs(auf) {
 function urteilZeile(e, auf, nachsatz) {
   return e.richtig
     ? h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e))
-    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd())];
+    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), loesungsbild(auf)];
+}
+// Kapitel 1: Bei Strichliste und Diagramm zeigt ein Bild die Lösung.
+export function loesungsbild(auf) {
+  if (auf.format === 'zeichnen') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, zeichnenLoesung(auf));
+  if (auf.format === 'strichliste') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, h('table', { class: 'strichtabelle' }, h('tbody', {},
+    auf.zeilen.map((x) => h('tr', {}, h('th', { scope: 'row' }, x.name), h('td', {}, striche(buendle(x.loesung))))))));
+  return null;
 }
 // Ein kurzer Satz in der Urteilszeile, wenn sich am Lernen etwas zeigt (ADR 0017). Höchstens einer, damit es zwei Zeilen bleiben.
 function lernsatz(e) {

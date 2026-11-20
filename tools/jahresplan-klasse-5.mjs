@@ -5,11 +5,26 @@ const uk = (titel, lernziele, extra = false) => ({ titel, lernziele, extra });
 
 const roh = [
   ['Daten und Diagramme', [
-    uk('Strichlisten und Häufigkeitstabellen', ['Ich kann mit Strichlisten und Häufigkeitstabellen umgehen.']),
-    uk('Diagramme lesen', ['Ich kann Informationen aus Diagrammen ablesen.']),
-    uk('Diagramme zeichnen', ['Ich kann Diagramme anfertigen.']),
-    uk('Daten vergleichen', ['Ich kann Daten miteinander vergleichen.']),
-    uk('Daten erheben', ['Ich kann Daten erheben.']),
+    // Feinere Lernziele (Nils, 2026-11-20). Das Lernziel zu 1.5 heißt U1 (Umfrage), damit es nicht mit der Niveaustufe E verwechselt wird.
+    uk('Strichlisten und Häufigkeitstabellen', {
+      H1: 'Ich kann Strichlisten lesen und anlegen.',
+      H2: 'Ich kann aus einer Liste oder Strichliste eine Häufigkeitstabelle erstellen.',
+    }),
+    uk('Diagramme lesen', {
+      L1: 'Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.',
+      L2: 'Ich kann Bilddiagramme mit Schlüssel ablesen.',
+    }),
+    uk('Diagramme zeichnen', {
+      Z1: 'Ich kann ein Säulendiagramm zu einer Tabelle zeichnen.',
+      Z2: 'Ich kann eine passende Achseneinteilung wählen und Fehler in Diagrammen finden.',
+    }),
+    uk('Daten vergleichen', {
+      V1: 'Ich kann Daten vergleichen: Unterschiede, größter und kleinster Wert, Rangfolge.',
+      V2: 'Ich kann Aussagen über Daten prüfen und täuschende Diagramme erkennen.',
+    }),
+    uk('Daten erheben', {
+      U1: 'Ich kann eine Umfrage planen und auswerten.',
+    }),
   ]],
   ['Natürliche Zahlen', [
     uk('Natürliche Zahlen', ['Ich kann mit natürlichen Zahlen umgehen.']),
@@ -138,6 +153,56 @@ const roh = [
 // Merkzettel je Station: die Regeln des Unterkapitels in Kürze, ein vorgerechnetes Beispiel und ein Hinweis fürs Heft.
 // Der Merkzettel ist frei zugänglich und kostet keine Münzen.
 export const merkzettel = {
+  '5.1.1': {
+    regeln: [
+      'Strichliste: Für jede Antwort machst du einen Strich in die passende Zeile.',
+      'Bündeln: Vier Striche stehen gerade, der fünfte Strich geht quer darüber. So ein Bündel sind 5 Striche.',
+      'Zählen: Erst die Bündel in Fünferschritten, dann die einzelnen Striche dazu.',
+      'Häufigkeitstabelle: Für jede Antwort steht die Anzahl als Zahl in der Tabelle. Die Gesamtzahl ist die Summe aller Anzahlen.',
+    ],
+    beispiel: '3 Bündel und 2 einzelne Striche: 5 + 5 + 5 + 2 = 17. In der Tabelle steht dann 17.',
+    heft: 'Streiche in einer Liste jede Antwort ab, sobald du sie gezählt hast. So zählst du keine doppelt.',
+  },
+  '5.1.2': {
+    regeln: [
+      'Lies zuerst den Titel und die Einheit an der Achse: Was wird gezählt?',
+      'Schau, in welchen Schritten die Achse geht. Nicht jede Linie hat eine Zahl.',
+      'Verfolge das Ende der Säule oder des Balkens bis zur Achse und lies dort ab.',
+      'Bilddiagramm: Der Schlüssel sagt, für wie viele ein Bild steht. Ein halbes Bild ist die Hälfte davon.',
+    ],
+    beispiel: 'Schlüssel: 1 Bild steht für 10 Kinder. 3 Bilder und ein halbes Bild sind 10 + 10 + 10 + 5 = 35 Kinder.',
+    heft: 'Lege ein Lineal waagerecht an das Ende der Säule. So triffst du die richtige Linie.',
+  },
+  '5.1.3': {
+    regeln: [
+      'Ein Säulendiagramm hat einen Titel, eine Achse mit gleichen Schritten, die bei 0 beginnt, und eine Säule für jede Antwort.',
+      'Wähle die Schritte so, dass alle Werte auf eine Linie fallen und die größte Säule noch Platz hat.',
+      'Zeichne jede Säule genau bis zu ihrem Wert und schreibe den Namen darunter.',
+      'Prüfe danach jede Säule mit der Tabelle.',
+    ],
+    beispiel: 'Werte 15, 20 und 35: Schritte von 5 passen, denn alle Werte liegen auf einer Linie. Die Achse geht bis 40.',
+    heft: 'Zeichne Diagramme im Heft mit Bleistift und Lineal, ein Kästchen für einen Schritt.',
+  },
+  '5.1.4': {
+    regeln: [
+      'Wie viel mehr? Ziehe den kleineren Wert vom größeren ab.',
+      'Rangfolge: Ordne die Werte vom größten zum kleinsten.',
+      'Prüfe eine Aussage immer mit den Zahlen, nicht nur mit dem Aussehen der Säulen.',
+      'Achtung: Beginnt die Achse nicht bei 0, sehen Unterschiede größer aus, als sie sind.',
+    ],
+    beispiel: 'Hund 14 Kinder, Katze 9 Kinder: 14 − 9 = 5. Für Hund sind es 5 Kinder mehr.',
+    heft: 'Schreibe zu jeder Aussage die Rechnung auf, mit der du sie geprüft hast.',
+  },
+  '5.1.5': {
+    regeln: [
+      'Überlege zuerst, was du wissen willst. Daraus wird eine klare Frage.',
+      'Gib passende Antworten zur Auswahl. Jede Antwort zählt in genau einer Zeile.',
+      'Halte jede Antwort sofort fest, zum Beispiel in einer Strichliste.',
+      'Werte danach aus: Zähle, erstelle eine Tabelle und zeichne ein Diagramm.',
+    ],
+    beispiel: 'Frage: Wie kommst du zur Schule? Antworten: zu Fuß, Fahrrad, Bus, Auto. 24 Kinder antworten, also stehen 24 Striche in der Liste.',
+    heft: 'Schreibe die Frage und alle Antworten auf, bevor du mit der Umfrage beginnst.',
+  },
   '5.3.1': {
     regeln: [
       'Rechne in Schritten: erst bis zum nächsten Zehner oder Hunderter, dann den Rest.',
@@ -274,6 +339,50 @@ export const merkzettel = {
 // Eine Aufgabe zeigt nur die Wörter bis zu ihrer eigenen Stufe. Die Aufgabentexte einer Stufe benutzen keine Wörter höherer Stufen.
 const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
 export const wortspeicher = {
+  // Kapitel 1: Ein Wort gilt im ganzen Kapitel ab der frühesten Stufe, die es hier bekommt.
+  '5.1.1': [
+    w('Strichliste', 'F', 'Für jede Antwort machst du einen Strich. Der fünfte Strich geht quer.'),
+    w('Bündel', 'F', 'Vier gerade Striche und ein Querstrich. Ein Bündel sind 5 Striche.'),
+    w('Tabelle', 'F', 'Zeilen und Spalten mit Namen und Zahlen.'),
+    w('Anzahl', 'F', 'Wie viele es sind.'),
+    w('Gesamtzahl', 'G', 'Alle Anzahlen zusammen.'),
+    w('Häufigkeitstabelle', 'G', 'Eine Tabelle, die für jede Antwort die Anzahl zeigt.'),
+    w('Urliste', 'M', 'Die Liste aller Antworten, so wie sie gesammelt wurden, noch ungeordnet.'),
+    w('Häufigkeit', 'M', 'Wie oft eine Antwort vorkommt.'),
+  ],
+  '5.1.2': [
+    w('Säulendiagramm', 'F', 'Ein Bild aus Säulen. Je höher die Säule, desto mehr.'),
+    w('Säule', 'F', 'Ein senkrechter Streifen im Diagramm.'),
+    w('Achse', 'F', 'Die Linie mit den Zahlen am Rand des Diagramms.'),
+    w('Bilddiagramm', 'F', 'Ein Diagramm aus kleinen Bildern. Jedes Bild steht für eine feste Anzahl.'),
+    w('Schlüssel', 'F', 'Er sagt, für wie viele ein Bild steht.'),
+    w('Titel', 'F', 'Die Überschrift. Sie sagt, worum es im Diagramm geht.'),
+    w('Balkendiagramm', 'F', 'Wie ein Säulendiagramm, nur liegen die Balken waagerecht.'),
+    w('Balken', 'F', 'Ein waagerechter Streifen im Diagramm.'),
+    w('Symbol', 'G', 'Ein kleines Bild im Bilddiagramm. Der Schlüssel sagt, wofür es steht.'),
+    w('Einheit', 'F', 'Was gezählt wird, zum Beispiel Kinder oder Besucher.'),
+    w('Einteilung', 'M', 'In welchen Schritten die Zahlen an der Achse weitergehen.'),
+  ],
+  '5.1.3': [
+    w('Säule', 'F', 'Ein senkrechter Streifen im Diagramm.'),
+    w('Linie', 'F', 'Ein waagerechter Strich hinter den Säulen. Er hilft beim Ablesen.'),
+    w('Achse', 'F', 'Die Linie mit den Zahlen am Rand des Diagramms.'),
+    w('Schritt', 'F', 'Der Abstand von einer Linie zur nächsten, zum Beispiel 5.'),
+    w('Beschriftung', 'G', 'Die Zahlen an den Linien der Achse.'),
+    w('Einteilung', 'M', 'In welchen Schritten die Zahlen an der Achse weitergehen.'),
+  ],
+  '5.1.4': [
+    w('Unterschied', 'F', 'Wie viel mehr der eine hat als der andere.'),
+    w('höher', 'F', 'Eine höhere Säule bedeutet mehr.'),
+    w('Aussage', 'G', 'Ein Satz, der stimmen kann oder nicht.'),
+    w('Rangfolge', 'M', 'Die Reihenfolge vom größten zum kleinsten Wert.'),
+  ],
+  '5.1.5': [
+    w('Umfrage', 'F', 'Du stellst vielen Leuten dieselbe Frage und zählst die Antworten.'),
+    w('Antwort', 'F', 'Was ein Kind auf die Frage sagt.'),
+    w('Ergebnis', 'G', 'Was bei der Umfrage herauskommt, zum Beispiel die Antwort, die am häufigsten kam.'),
+    w('auswerten', 'M', 'Die gesammelten Antworten zählen, ordnen und darstellen.'),
+  ],
   '5.3.1': [
     w('plus', 'F', 'So liest du das Zeichen +. Es kommt etwas dazu.'),
     w('minus', 'F', 'So liest du das Zeichen −. Es geht etwas weg.'),
@@ -441,11 +550,15 @@ export const wortspeicher = {
 // Das kleine Einmaleins (5.4.1-K1, -K2) ist Grundschulstoff und die Basis-Brücke für das Dividieren.
 const voraussetzungen = {
   // Ergänzt für ADR 0017 (Liste „baut auf“ im Lehrer-Dashboard). Leere Liste: baut nur auf Grundschulstoff auf.
-  '5.1.1-L1': [],
-  '5.1.2-L1': ['5.1.1-L1'],
-  '5.1.3-L1': ['5.1.1-L1', '5.1.2-L1'],
-  '5.1.4-L1': ['5.1.2-L1'],
-  '5.1.5-L1': ['5.1.1-L1'],
+  '5.1.1-H1': [],
+  '5.1.1-H2': ['5.1.1-H1'],
+  '5.1.2-L1': [],
+  '5.1.2-L2': ['5.1.2-L1'],
+  '5.1.3-Z1': ['5.1.1-H2', '5.1.2-L1'],
+  '5.1.3-Z2': ['5.1.3-Z1'],
+  '5.1.4-V1': ['5.1.2-L1'],
+  '5.1.4-V2': ['5.1.4-V1'],
+  '5.1.5-U1': ['5.1.1-H2'],
   '5.2.1-L1': [],
   '5.2.2-L1': ['5.2.1-L1'],
   '5.2.3-L1': ['5.2.2-L1'],
@@ -531,6 +644,15 @@ const voraussetzungen = {
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F zu diesem Lernziel übt. Das Lehrer-Dashboard nennt ihn,
 // wenn ein Kind zum zweiten Mal auf die Grundlage zurückfällt. Die Zuordnung lehnt sich an „Mathe sicher können“ an.
 const grundlagen = {
+  '5.1.1-H1': 'Dinge einzeln abzählen und für jedes einen Strich machen, der fünfte Strich geht quer',
+  '5.1.1-H2': 'Gleiche Dinge in einer Liste zählen und die Anzahl in eine Tabelle schreiben',
+  '5.1.2-L1': 'Eine Säule bis zur Linie verfolgen und die Zahl an der Achse ablesen, Einerschritte',
+  '5.1.2-L2': 'Bilder in einer Reihe zählen und für jedes Bild in Zweierschritten weiterzählen',
+  '5.1.3-Z1': 'Eine Säule bis zur passenden Zahl an der Achse ziehen, Einerschritte',
+  '5.1.3-Z2': 'Eine Säule mit der Zahl in der Tabelle vergleichen',
+  '5.1.4-V1': 'Zwei Säulen vergleichen: Welche ist höher, um wie viel?',
+  '5.1.4-V2': 'Eine einfache Aussage am Diagramm nachprüfen: höher, niedriger, gleich hoch',
+  '5.1.5-U1': 'Antworten einer kleinen Umfrage zählen und eintragen',
   '5.3.1-K1': 'Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100',
   '5.3.1-K2': 'Wegnehmen und Ergänzen in Schritten bis 100',
   '5.3.1-K3': 'Zahlen, die zusammen 10 oder 100 ergeben',

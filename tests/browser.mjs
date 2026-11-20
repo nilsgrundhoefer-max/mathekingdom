@@ -70,6 +70,24 @@ async function antworte(seite, richtig = true, { taste = false } = {}) {
     for (const [i, p] of auf.paare.entries()) await seite.selectOption(`select[name="paar-${p.links}"]`, richtig ? p.rechts : auf.paare[(i + 1) % auf.paare.length].rechts);
   } else if (auf.format === 'luecken') {
     for (const [n, l] of Object.entries(auf.luecken)) await seite.fill(`input[name="luecke-${n}"]`, wert(l.loesung));
+  } else if (auf.format === 'strichliste') {
+    // Mit der Maus Striche setzen: auf F und G bündelt das Programm, ab M setzt das Kind den Querstrich selbst.
+    for (const [i, z] of auf.zeilen.entries()) {
+      const ziel = 'IIII/'.repeat(Math.floor(z.loesung / 5)) + 'I'.repeat(z.loesung % 5), start = 'IIII/'.repeat(Math.floor((z.start ?? 0) / 5)) + 'I'.repeat((z.start ?? 0) % 5);
+      const knoepfe = auf.buendeln === 'selbst' ? [...ziel.slice(start.length)].map((c) => (c === '/' ? 'quer' : 'plus')) : Array(z.loesung - (z.start ?? 0)).fill('plus');
+      if (!richtig && i === 0) knoepfe.push('plus');
+      for (const k of knoepfe) await seite.click(`button.strichknopf[data-zeile="${i}"][data-knopf="${k}"]`);
+    }
+  } else if (auf.format === 'zeichnen') {
+    // Mit der Tastatur: Pos1 setzt auf 0, jeder Pfeil nach oben eine Linie höher.
+    const d = auf.diagramm;
+    for (const [i, sa] of d.saeulen.entries()) {
+      if (!sa.offen) continue;
+      const ziel = richtig ? sa.wert : sa.wert + (sa.wert + d.fein <= d.max ? d.fein : -d.fein);
+      await seite.focus(`[data-saeule="${i}"]`);
+      await seite.keyboard.press('Home');
+      for (let k = 0; k < ziel / d.fein; k++) await seite.keyboard.press('ArrowUp');
+    }
   } else for (const [i, t] of auf.teile.entries()) await seite.fill(`input[name="teil-${i}"]`, wert(t.loesung));
   // Mit `taste`: Enter im Textfeld prüft, ohne Maus (ADR 0016).
   if (taste && await seite.evaluate(() => document.activeElement?.matches('form.antwort input[type=text]'))) await seite.keyboard.press('Enter');
@@ -161,7 +179,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
   // Startseite: Etappe mit Fortschritt, ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
-  assert.match(await seite.innerText('.etappe'), /Addieren und Subtrahieren: Meilenstein Kopfrechnen[\s\S]*0 von 5 Meilensteinen gemeistert/);
+  assert.match(await seite.innerText('.etappe'), /Daten und Diagramme: Meilenstein Strichlisten und Häufigkeitstabellen[\s\S]*0 von 5 Meilensteinen gemeistert/);
   await foto(seite, 'startseite-etappe');
   // Vor der ersten Aufgabe im Kapitel führt der Weg über den Einstiegscheck, den man überspringen darf.
   await seite.click('#weiter-wandern');
@@ -169,10 +187,10 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.click('#einstieg-ueberspringen');
   assert.equal(await seite.locator('#einstieg').count(), 0);
   await seite.click('#aufbrechen');
-  await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.3.1-K1"]');
+  await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.1.1-H1"]');
   assert.equal(await seite.locator('.merkzettel ul').isVisible(), false);
   await seite.click('.merkzettel summary');
-  assert.match(await seite.innerText('.merkzettel'), /Rechne in Schritten[\s\S]*Beispiel[\s\S]*Im Heft/);
+  assert.match(await seite.innerText('.merkzettel'), /Bündeln: Vier Striche[\s\S]*Beispiel[\s\S]*Im Heft/);
   await seite.click('[data-hilfe=tipp]'); // Neuzeichnen: der Merkzettel bleibt offen
   assert.equal(await seite.locator('.merkzettel ul').isVisible(), true);
   await foto(seite, 'merkzettel');
@@ -468,7 +486,8 @@ async function weiter(seite, wahl = '#weiter') {
   const mitWert = pool.aufgaben.filter((a) => a.niveau === 'M' && a.format === 'zahl' && a.lernziel.startsWith('5.3.2')).slice(0, 8);
   const versuche = mitWert.map((a, i) => ({ t, aufgabe: a.id, lernziel: a.lernziel, niveau: 'M', richtig: true, versuche: 1, eingaben: [String(a.loesung)], fehlvorstellungen: [], hilfen: 0, dauer: 30, muenzen: 20, heft: `H${i + 1}` }));
   const stand = { version: 2, code: '5A-HEFT', klasse: '5a', erstellt: t, geaendert: t, muenzen: 160, niveau: {}, niveauMarke: {}, lernziele: {}, versuche, hilferuf: null, hilferufe: [],
-    wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], heftNr: 8, heftSeitCheck: 8, heftchecks: [] };
+    wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], heftNr: 8, heftSeitCheck: 8, heftchecks: [],
+    einstieg: { '5.1': { uebersprungen: true } } }; // Ohne Vorgabe beginnt die Etappe in Kapitel 1; der Einstiegscheck dort ist übersprungen.
   await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-HEFT.json')) localStorage.setItem('mk-demo-5a/5A-HEFT.json', text); }, JSON.stringify(stand));
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-heft');
@@ -500,6 +519,15 @@ async function weiter(seite, wahl = '#weiter') {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
+  // Kapitel 1 ist schon gemeistert: Die Etappe führt nach Kapitel 3, um dessen Einstiegscheck und Grundlagen es hier geht.
+  {
+    const t = new Date(Date.now() - 86400000).toISOString();
+    const lernziele = Object.fromEntries(pool.kapitel[0].unterkapitel.flatMap((u) => u.lernziele).map((l) => [l.id, { erreichtAm: t }]));
+    const stand = { version: 2, code: '5A-EINS', klasse: '5a', erstellt: t, geaendert: t, muenzen: 0, niveau: {}, niveauMarke: {}, lernziele, versuche: [], hilferuf: null, hilferufe: [],
+      wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], heftNr: 0, heftSeitCheck: 0, heftchecks: [],
+      einstieg: { '5.1': { uebersprungen: true } } };
+    await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-EINS.json')) localStorage.setItem('mk-demo-5a/5A-EINS.json', text); }, JSON.stringify(stand));
+  }
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-eins');
   await seite.click('#demo');
