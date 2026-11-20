@@ -245,6 +245,20 @@ export function gartentor(offen, groesse = 54) {
       : [16, 24, 32, 40, 48].map((xx) => s('path', { d: `M${xx} ${xx === 16 || xx === 48 ? 30 : 20} V56`, stroke: '#6f665a', 'stroke-width': 2 })),
     s('path', { d: 'M10 18 C16 10 24 6 30 6 C36 6 44 10 50 18', fill: 'none', stroke: '#4b6b35', 'stroke-width': 4, 'stroke-linecap': 'round', opacity: 0.8 }));
 }
+// Kleine Bildzeichen für die Knöpfe der Kopfzeile (seit 0.34). In Strichfarbe des Knopfs, damit sie auch auf dem dunklen aktiven Knopf stehen.
+export function turmZeichen(groesse = 20) {
+  const strich = { fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' };
+  return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, 'aria-hidden': 'true', class: 'knopfzeichen turm' },
+    s('path', { d: 'M5 19 V8 H6.8 V6 H8.6 V8 H11.4 V6 H13.2 V8 H15 V19 Z', ...strich }),
+    s('path', { d: 'M8.6 19 V15.4 A1.4 1.4 0 0 1 11.4 15.4 V19', ...strich }),
+    s('path', { d: 'M10 6 V1', ...strich }),
+    s('path', { d: 'M10 1.2 L14.2 2.5 L10 3.8 Z', fill: '#c0392b', stroke: '#c0392b', 'stroke-width': 0.8, 'stroke-linejoin': 'round' }));
+}
+export function wuerfelZeichen(groesse = 20) {
+  return s('svg', { viewBox: '0 0 20 20', width: groesse, height: groesse, 'aria-hidden': 'true', class: 'knopfzeichen wuerfel' },
+    s('rect', { x: 2.5, y: 2.5, width: 15, height: 15, rx: 3.2, fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6 }),
+    [[6.5, 6.5], [13.5, 6.5], [10, 10], [6.5, 13.5], [13.5, 13.5]].map(([cx, cy]) => s('circle', { cx, cy, r: 1.35, fill: 'currentColor' })));
+}
 // Kopfbild des Schlossgartens: Schloss in Federzeichnung, davor Hecken und Wege.
 export function schlossBild() {
   const strich = { fill: 'none', stroke: SEPIA, 'stroke-width': 2, 'stroke-linejoin': 'round' };

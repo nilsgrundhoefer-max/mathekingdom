@@ -33,16 +33,20 @@ body { margin: 0; background: #efe6d2; }
 /* Kopf */
 #mathekingdom .kopf { background: var(--karte); color: var(--tinte); display: flex; align-items: center; gap: 16px; padding: 8px 18px; flex-wrap: wrap; border-bottom: 1px solid var(--rand); box-shadow: inset 0 -3px 0 #e3d6b8; }
 #mathekingdom .wappenknopf { background: transparent; padding: 2px; border-radius: 8px; line-height: 0; }
+#mathekingdom .kopf:not(.fokus) .wappenknopf { position: relative; padding: 4px; border: 2px solid transparent; border-radius: 10px; }
+#mathekingdom .kopf:not(.fokus) .wappenknopf:hover { border-color: var(--rand); background: #f1e7cf; }
+#mathekingdom .kopf:not(.fokus) .wappenknopf.aktiv { border-color: var(--nacht); }
+#mathekingdom .wappenknopf .aha-neu { position: absolute; top: -6px; right: -12px; margin: 0; line-height: 1.4; box-shadow: 0 0 0 2px var(--karte); }
 #mathekingdom .wer { display: flex; flex-direction: column; line-height: 1.25; margin-right: auto; }
 #mathekingdom .wer strong { font-family: var(--schrift-titel); font-size: 1.05rem; }
 #mathekingdom .wer span { font-size: .85rem; color: var(--grau); }
 #mathekingdom .konto { display: flex; gap: 10px; align-items: center; }
 #mathekingdom .wert { display: inline-flex; align-items: center; gap: 6px; border-radius: 99px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
 #mathekingdom .siegelwert { background: #f6e2dc; color: #6e1c18; font-size: 1.05rem; }
-#mathekingdom .siegelwert .wort { font-size: .82rem; }
 #mathekingdom .klein-wert { font-size: .85rem; color: var(--grau); padding: 4px 6px; }
 #mathekingdom .kopf nav { display: flex; gap: 6px; }
-#mathekingdom .kopf nav button { background: transparent; color: var(--nacht); border-color: var(--rand); padding: 6px 14px; }
+#mathekingdom .kopf nav button { background: transparent; color: var(--nacht); border-color: var(--rand); padding: 6px 14px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+#mathekingdom .knopfzeichen { flex: none; }
 #mathekingdom .kopf nav button.aktiv { background: var(--nacht); color: #fff; }
 #mathekingdom .speicher { flex-basis: 100%; font-size: .8rem; color: var(--grau); display: flex; gap: 12px; }
 #mathekingdom .speicher.fehler { color: var(--schlecht); font-weight: 600; }

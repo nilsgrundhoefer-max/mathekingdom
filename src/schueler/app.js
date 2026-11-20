@@ -9,7 +9,7 @@ import * as L from './logik.js';
 import * as S from './speicher.js';
 import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
-import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
+import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { klinge } from './ton.js';
@@ -131,24 +131,28 @@ function kopf() {
   const status = z.speicherstatus;
   // Siegel und Karte stehen vorn, die Münzen klein dahinter (ADR 0010).
   return h('header', { class: 'kopf' },
-    h('button', { class: 'wappenknopf', title: 'Zu deinem Wappen', onclick: () => zeige({ name: 'wappen' }) }, wappenBild(z.stand.wappen, 40)),
+    h('button', { class: `wappenknopf${z.ansicht.name === 'wappen' ? ' aktiv' : ''}`, id: 'wappen-knopf', title: 'Zu deinem Wappen', 'aria-label': 'Zu deinem Wappen', onclick: () => zeige({ name: 'wappen' }) },
+      wappenBild(z.stand.wappen, 40), neuesBeimWappen()),
     h('div', { class: 'wer' },
-      h('strong', {}, `${r.name} ${z.stand.code}`, hoftitelKopf()),
-      h('span', {}, r.naechster ? `Noch ${r.naechster.ab - anzahl} Siegel bis ${r.naechster.name}` : 'Höchster Rang erreicht')),
+      h('strong', {}, `${r.name} ${z.stand.code}`, hoftitelKopf())),
     h('div', { class: 'konto' },
-      h('button', { class: `wert siegelwert${z.ansicht.name === 'koennen' ? ' aktiv' : ''}`, id: 'siegel-knopf', title: 'Klick: Das kannst du schon', onclick: () => zeige({ name: 'koennen' }) }, siegel(24), h('b', { id: 'siegel' }, anzahl), h('span', { class: 'wort' }, 'Siegel')),
+      h('button', { class: `wert siegelwert${z.ansicht.name === 'koennen' ? ' aktiv' : ''}`, id: 'siegel-knopf', title: `${anzahl} Siegel. Klick: Das kannst du schon`, 'aria-label': `${anzahl} Siegel. Das kannst du schon`, onclick: () => zeige({ name: 'koennen' }) }, siegel(24), h('b', { id: 'siegel' }, anzahl)),
       kronenZaehler(),
       h('span', { class: 'wert klein-wert', title: 'Münzen zum Ausgeben' }, muenze(16), h('b', { id: 'muenzen' }, z.stand.muenzen))),
     h('nav', {},
-      h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', onclick: () => zeige({ name: 'schlossgarten' }) }, 'Schlossgarten'),
-      h('button', { class: z.ansicht.name === 'wappen' ? 'aktiv' : '', onclick: () => zeige({ name: 'wappen' }) }, 'Wappen',
-        (() => { const n = z.ansicht.name === 'wappen' ? 0 : L.ahaMomente(z.stand).filter((a) => a.neu).length + (z.stand.neueEhre?.length ?? 0); return n > 0 && h('span', { class: 'aha-neu', id: 'aha-neu', title: `${n} Neues beim Wappen` }, `✦ ${n}`); })()),
-      h('button', { class: ['spiele', 'minispiel'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-spiele', onclick: () => zeige({ name: 'spiele' }) }, 'Spiele')),
+      h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-schlossgarten', onclick: () => zeige({ name: 'schlossgarten' }) }, turmZeichen(20), 'Schlossgarten'),
+      h('button', { class: ['spiele', 'minispiel'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-spiele', onclick: () => zeige({ name: 'spiele' }) }, wuerfelZeichen(20), 'Spiele')),
     h('div', { class: `speicher ${status && !status.ok ? 'fehler' : ''}`, id: 'speicherstatus' },
       !status ? 'Noch nichts zu speichern'
         : status.ok ? `Gespeichert um ${status.um.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
           : 'Speichern fehlgeschlagen. Sag deiner Lehrkraft Bescheid.',
       z.ablage.demo && h('span', { class: 'demo' }, 'Demo: nur in diesem Browser')));
+}
+
+// Neue Aha-Momente und Ehrenzeichen als goldene Marke an der Ecke des Wappens (seit 0.34 gibt es keinen Knopf „Wappen“ mehr).
+function neuesBeimWappen() {
+  const n = z.ansicht.name === 'wappen' ? 0 : L.ahaMomente(z.stand).filter((a) => a.neu).length + (z.stand.neueEhre?.length ?? 0);
+  return n > 0 && h('span', { class: 'aha-neu', id: 'aha-neu', title: `${n} Neues beim Wappen` }, `✦ ${n}`);
 }
 
 // Kronen je Farbe: Bronze, Silber, Gold, Purpur (ADR 0012).
@@ -1375,7 +1379,7 @@ function wappenAnsicht() {
     h('h1', {}, 'Dein Wappen'),
     h('div', { class: 'werkbank' }, wappenBild(w, 150),
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
-        h('p', {}, r.naechster ? `Mit ${r.naechster.ab} Siegeln wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
+        h('p', {}, r.naechster ? `Noch ${r.naechster.ab - L.siegel(z.stand)} Siegel, dann wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
         h('p', { class: 'klein' }, 'Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen. Münzen bekommst du für gelöste Aufgaben, Ehrenzeichen kannst du nur verdienen.'))),
     neueEhre.length > 0 && h('div', { class: 'karte neue-ehre', id: 'neue-ehre', role: 'status' },
       h('b', {}, neueEhre.length === 1 ? 'Neues Ehrenzeichen: ' : 'Neue Ehrenzeichen: '), neueEhre.map((id) => L.teil(id)?.name).join(', '),

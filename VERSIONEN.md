@@ -8,6 +8,19 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.34 vom 20.11.2026
+
+### Schüler
+
+- Die Kopfzeile ist schlanker. Neben dem Siegel steht nur noch die Zahl. Wer mit der Maus darauf zeigt, liest „5 Siegel. Klick: Das kannst du schon“.
+- Den Knopf „Wappen“ gibt es nicht mehr. Ein Klick auf dein Wappen links oben öffnet die Wappen-Seite. Das Wappen bekommt beim Darüberfahren einen hellen Rahmen und, solange die Wappen-Seite offen ist, einen dunklen. Die goldene Marke für Neues beim Wappen sitzt jetzt an der Ecke des Wappens.
+- „Schlossgarten“ hat einen kleinen Burgturm, „Spiele“ einen Würfel.
+- Wie viele Siegel bis zum nächsten Rang fehlen, steht nicht mehr in der Kopfzeile, sondern auf der Wappen-Seite: „Noch 2 Siegel, dann wirst du Kundschafter und schaltest neue Teile frei.“
+
+### Lehrkraft
+
+- Keine Änderung. Die Startdateien musst du nicht neu erstellen.
+
 ## 0.33 vom 20.11.2026
 
 ### Schüler
