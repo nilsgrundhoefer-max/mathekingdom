@@ -365,7 +365,9 @@ function anmeldung() {
     !ohneWahl && h('p', { class: 'klein', id: 'ordner-hinweis' }, window.MK_SCHULE
       ? `Nur beim ersten Mal: Im nächsten Fenster wählst du den Ordner „Mathekingdom“${pfadHinweis()} und erlaubst das Speichern.`
       : 'Im nächsten Fenster wählst du den Ordner deiner Klasse aus und erlaubst das Speichern.'),
-    h('button', { class: 'schlicht', id: 'demo', onclick: () => starte(true) }, 'Ohne Ordner ausprobieren'));
+    // Ausprobieren ohne Ordner nur in der Datei ohne Schuleinrichtung (Version 0.32): Mit der Startdatei des
+    // Administrators würde ein Schüler sonst unbemerkt nur im Browser arbeiten, und die Lehrkraft sähe nichts.
+    !window.MK_SCHULE && h('button', { class: 'schlicht', id: 'demo', onclick: () => starte(true) }, 'Ohne Ordner ausprobieren'));
 }
 const pfadHinweis = () => (window.MK_PFAD ? ` (${window.MK_PFAD})` : '');
 

@@ -28,6 +28,14 @@ _Avoid_: Kurs, Gruppe
 Eine Klasse, die der Administrator zum Ausprobieren anlegt und im Schulverzeichnis als solche markiert. In ihr arbeiten simulierte Schüler und bis zu drei echte Probe-Codes. Sie trägt im Lehrer-Dashboard das Schild „Testklasse“ und zählt nicht in Nutzungsstatistik, Auffällige Aufgaben und Aufgabenmeldungen. Sonst verhält sie sich wie jede Klasse: eine Lehrkraft ist ihr zugeordnet, sie lässt sich zurücksetzen, auflösen und löschen.
 _Avoid_: Demo-Klasse, Beispielklasse (die gibt es nur im Lehrer-Dashboard, ohne Ordner und ohne Bewegung)
 
+**Beispielklasse**:
+Eine erfundene Klasse mit vierzehn Schülern, die das Lehrer-Dashboard auf Knopfdruck zeigt, ohne Ordner und ohne dass etwas gespeichert wird. Sie dient zum Ansehen und Vorführen; nichts in ihr bewegt sich.
+_Avoid_: Testklasse, Demo-Klasse
+
+**Ausprobieren ohne Ordner**:
+Ein Schüler arbeitet, ohne dass sein Speicherstand in den Klassenordner kommt; alles bleibt im Browser dieses einen Geräts, und keine Lehrkraft sieht es. Es gibt das nur in der Schüler-Datei ohne Schuleinrichtung, nie in der Startdatei des Administrators.
+_Avoid_: Demo, Gastmodus
+
 **Simulierter Schüler**:
 Ein erfundener Schüler einer Testklasse, dessen Speicherstand das Administrator-Dashboard schreibt, nach derselben Spiellogik wie bei echten Schülern. Er hat einen Vornamen und ein Profil (etwa sicher, wackelig, rät, blockiert oft), das in seiner Notiz steht, und reagiert auf Freigaben, Sonderaufträge, Münzgaben und Antworten auf Hilferufe.
 _Avoid_: Bot, Testschüler, Dummy
