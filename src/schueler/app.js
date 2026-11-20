@@ -67,6 +67,7 @@ function male() {
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
     !fokus && versionsHinweis('schueler'),
+    z.stand && z.ansicht.name === 'schlossgarten' && speicherHinweis(),
   ].filter(Boolean));
   fokussiere();
 }
@@ -142,11 +143,16 @@ function kopf() {
     h('nav', {},
       h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-schlossgarten', onclick: () => zeige({ name: 'schlossgarten' }) }, turmZeichen(20), 'Schlossgarten'),
       h('button', { class: ['spiele', 'minispiel'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-spiele', onclick: () => zeige({ name: 'spiele' }) }, wuerfelZeichen(20), 'Spiele')),
-    h('div', { class: `speicher ${status && !status.ok ? 'fehler' : ''}`, id: 'speicherstatus' },
-      !status ? 'Noch nichts zu speichern'
-        : status.ok ? `Gespeichert um ${status.um.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
-          : 'Speichern fehlgeschlagen. Sag deiner Lehrkraft Bescheid.',
-      z.ablage.demo && h('span', { class: 'demo' }, 'Demo: nur in diesem Browser')));
+    // Seit 0.35 zeigt die Kopfzeile nur noch Speicherfehler. „Gespeichert um …“ steht klein unten links im Schlossgarten.
+    h('div', { class: 'speicher fehler', id: 'speicherstatus', role: 'status' }, status && !status.ok ? 'Speichern fehlgeschlagen. Sag deiner Lehrkraft Bescheid.' : ''));
+}
+// Klein unten links, wo in einer Aufgabe die Kennung steht, und nur auf der Startseite Schlossgarten.
+function speicherHinweis() {
+  const status = z.speicherstatus;
+  return h('p', { class: 'speicherhinweis', id: 'speicherhinweis' },
+    !status ? 'Noch nichts zu speichern'
+      : status.ok ? `Gespeichert um ${status.um.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}` : '',
+    z.ablage.demo && h('span', { class: 'demo' }, `${status && !status.ok ? '' : ' · '}Demo: nur in diesem Browser`));
 }
 
 // Neue Aha-Momente und Ehrenzeichen als goldene Marke an der Ecke des Wappens (seit 0.34 gibt es keinen Knopf „Wappen“ mehr).
@@ -445,6 +451,7 @@ async function melde({ code, klasse, pin }, ablage) {
 function maleStatus() {
   const alt = document.getElementById('speicherstatus');
   if (alt) alt.replaceWith((imFokus() ? fokusKopf() : kopf()).querySelector('#speicherstatus'));
+  document.getElementById('speicherhinweis')?.replaceWith(speicherHinweis());
 }
 
 // Alle 10 Sekunden: Vorgaben der Lehrkraft neu lesen und die Warteschlange prüfen.

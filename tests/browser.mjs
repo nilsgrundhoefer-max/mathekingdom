@@ -769,14 +769,24 @@ async function weiter(seite, wahl = '#weiter') {
   // Lernstand: Heatmap der Klasse, ein Lernziel, ein Schüler.
   await seite.click('[data-tab=lernstand]');
   await seite.waitForSelector('.heatmap');
+  // Seit 0.35 nur die festen Auswertungen und anfangs das Aktuelle Kapitel; hat dort noch niemand gearbeitet (Beispielklasse: 5.4), die Kapitel mit Daten.
+  assert.equal(await seite.locator('#kompetenz-klasse, #selbsteinschaetzung, #vorwissen, #heft-sicherheit, #hoftitel-lehrer, #meilensteine-sperren').count(), 0);
+  assert.equal(await seite.inputValue('#ls-kapitel'), 'daten');
+  assert.match(await seite.innerText('#ausgeblendet'), /^4 Auswertungen ausgeblendet/);
+  assert.ok(await seite.locator('#foerderung #ls-filter').count());
+  assert.ok(await seite.locator('#wiederholen .stapel li').count() > 0);
+  await foto(seite, 'lehrer-lernstand-schlank');
+  await seite.click('#ansicht-anpassen');
+  assert.equal(await seite.locator('#ansicht fieldset').count(), 3);
+  await foto(seite, 'lehrer-ansicht-anpassen');
+  for (const schalter of await seite.locator('#ansicht input[data-auswertung]').all()) await schalter.check();
+  await seite.click('#ansicht-fertig');
+  assert.equal(await seite.locator('#ausgeblendet').count(), 0);
+  await seite.selectOption('#ls-kapitel', 'daten');
   assert.equal(await seite.locator('.heatmap tbody tr').count(), 14);
   assert.ok(await seite.locator('.heatmap td.zelle.siegel').count() > 0);
   assert.ok(await seite.locator('.stapel li').count() > 5);
   await foto(seite, 'lehrer-lernstand');
-  // Hoftitel mit Namen und Niveaustufen (ADR 0023).
-  assert.ok(await seite.locator('#hoftitel-lehrer tbody tr').count() >= 1);
-  assert.match(await seite.innerText('#hoftitel-lehrer tbody tr >> nth=0'), /^1\s+Klassenkönig/);
-  await seite.locator('#hoftitel-lehrer').screenshot(bilder ? { path: `${bilder}/lehrer-hoftitel.png` } : {});
   // Lernen sichtbar machen (ADR 0017): gefestigt, Filter, Heatmap nach Fehlvorstellung.
   assert.ok(await seite.locator('.heatmap td.zelle.gefestigt').count() > 0, 'Rückblick nach mehr als 7 Tagen festigt');
   await seite.click('[data-filter=hilfe]');
@@ -793,7 +803,7 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(await seite.locator('.fehlermap tbody tr').count(), 14);
   assert.ok(await seite.locator('.fehlermap td.fv-aktiv').count() > 0);
   assert.ok(await seite.locator('.fehlermap td.fv-ueberwunden').count() > 0);
-  await seite.locator('.karte:has(#ls-filter)').screenshot(bilder ? { path: `${bilder}/lehrer-fehlvorstellungen.png` } : {});
+  await seite.locator('#wer-steht-wo').screenshot(bilder ? { path: `${bilder}/lehrer-fehlvorstellungen.png` } : {});
   await seite.click('[data-sicht=lernziele]');
   // Kompetenzprofil der Klasse (ADR 0017): fünf Achsen, Tabelle daneben.
   assert.equal(await seite.locator('#kompetenz-klasse .kompetenztabelle tbody tr').count(), 5);
@@ -838,8 +848,13 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(await seite.innerText('#meilensteine-schueler'), /Gewählt beim Start/);
   await seite.click('#einzelbericht');
   assert.ok(await seite.locator('#mk-druck .kennzahl').count() >= 3);
-  // Meilensteine für eine ganze Gruppe sperren.
-  await seite.click('.brotkrumen button');
+  // Meilensteine für eine ganze Gruppe sperren (seit 0.35 unter Klasse › Unterricht), Hoftitel unter Klasse › Schüler.
+  await seite.click('[data-tab=klasse]');
+  await seite.click('[data-abschnitt=schueler]');
+  assert.ok(await seite.locator('#hoftitel-lehrer tbody tr').count() >= 1);
+  assert.match(await seite.innerText('#hoftitel-lehrer tbody tr >> nth=0'), /^1\s+Klassenkönig/);
+  await seite.locator('#hoftitel-lehrer').screenshot(bilder ? { path: `${bilder}/lehrer-hoftitel.png` } : {});
+  await seite.click('[data-abschnitt=unterricht]');
   await seite.waitForSelector('#meilensteine-sperren:not(.zu)'); // seit 0.32 eine aufklappbare Karte, im Test offen
   await seite.selectOption('#pfad-kapitel', '5.3');
   await seite.selectOption('[data-masse="5.3.3"]', 'zu|alle');
@@ -850,15 +865,26 @@ async function weiter(seite, wahl = '#weiter') {
   // Aufgaben: Auswertung nach AFB, Typ und Linie, Liste mit Sichten und Filtern.
   await seite.click('[data-tab=aufgaben]');
   await seite.waitForSelector('#aufg-liste');
-  assert.equal(await seite.locator('.tabelle.gruppen').count(), 3);
-  assert.match(await seite.innerText('.tabelle.gruppen >> nth=0'), /AFB I[\s\S]*AFB II[\s\S]*AFB III/);
+  // Seit 0.35: oben die Aufgaben zum Ansehen mit Tafelbild, darunter sechs Spalten; Gruppen und weitere Spalten über die Ansicht.
+  assert.ok(await seite.locator('#ansehen li [data-tafelbild]').count() > 0);
+  assert.equal(await seite.locator('#aufg-liste thead th').count(), 6);
+  assert.equal(await seite.locator('.tabelle.gruppen').count(), 0);
+  await foto(seite, 'lehrer-aufgaben-schlank');
+  await seite.click('#ansicht-anpassen');
+  for (const schalter of await seite.locator('#ansicht input[data-auswertung]').all()) await schalter.check();
+  await seite.click('#ansicht-fertig');
+  assert.equal(await seite.locator('#aufg-liste thead th').count(), 11);
+  assert.equal(await seite.locator('.tabelle.gruppen').count(), 1);
+  assert.match(await seite.innerText('.tabelle.gruppen'), /AFB I[\s\S]*AFB II[\s\S]*AFB III/);
+  await seite.click('[data-gruppe=niveau]');
+  assert.match(await seite.innerText('.tabelle.gruppen'), /Förderniveau[\s\S]*Erweitertes Niveau/);
   await foto(seite, 'lehrer-aufgaben');
   const schwierig = await seite.locator('#aufg-liste tbody tr').first().getAttribute('data-aufgabe');
   await seite.selectOption('#aufg-sicht', 'geloest');
   assert.notEqual(await seite.locator('#aufg-liste tbody tr').first().getAttribute('data-aufgabe'), schwierig);
   await seite.selectOption('#aufg-sicht', 'nie');
   await seite.waitForSelector('#aufg-liste');
-  assert.equal(await seite.locator('#aufg-liste tbody tr').first().locator('td.zahl').nth(1).innerText(), '0');
+  assert.equal(await seite.locator('#aufg-liste tbody tr').first().locator('td.zahl').nth(0).innerText(), '0');
   await seite.selectOption('#aufg-niveau', 'G');
   assert.equal(await seite.inputValue('#aufg-sicht'), 'nie'); // Die Auswahl bleibt beim Neuzeichnen erhalten.
   await seite.click('[data-tab=klasse]');
@@ -1090,7 +1116,8 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.click('#overlay-zu');
 
   // Station sperren: Die Schülerin sieht das Schloss und kann dort nichts starten. Öffnen macht es rückgängig.
-  await lehrer.click('[data-tab=lernstand]');
+  await lehrer.click('[data-tab=klasse]');
+  await lehrer.click('[data-abschnitt=unterricht]');
   await lehrer.waitForSelector('#meilensteine-sperren:not(.zu)'); // seit 0.32 eine aufklappbare Karte, im Test offen
   await lehrer.click(`[data-sperre="5.4.1|${aylin}"]`);
   await warteAuf((k) => k.sperren?.['5.4.1']?.includes(aylin));
