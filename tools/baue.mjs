@@ -225,6 +225,9 @@ writeFileSync(new URL('dist/admin.js', wurzel), `${gemeinsam}${admin}`);
 // Nur für die Tests: alles in einer Datei, aktualisiert sich nicht.
 writeFileSync(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel),
   seite(`<script>window.MK_POOLS = ${sicher(JSON.stringify(pools))}; window.MK_QUELLE = 'ohne-netz';</script>\n<script>${sicher(dashboard)}</script>`));
+// Zum Vorzeigen, etwa auf einem Tablet: startet ohne Anmeldung und Ordner direkt im Schüler-Dashboard.
+writeFileSync(new URL('dist/Mathekingdom-Vorzeigen.html', wurzel),
+  seite(`<script>window.MK_POOLS = ${sicher(JSON.stringify(pools))}; window.MK_QUELLE = 'vorzeigen'; window.MK_VORZEIGEN = true;</script>\n<script>${sicher(dashboard)}</script>`));
 writeFileSync(new URL('dist/Mathekingdom-Lehrer-ohne-Netz.html', wurzel), seite(
   `<script>window.MK_QUELLE = 'ohne-netz';</script>\n<script>${sicher(paket)}</script>`, 'Mathekingdom Lehrer', 'mathekingdom-lehrer'));
 writeFileSync(new URL('build/Mathekingdom-Admin-ohne-Netz.html', wurzel), seite(

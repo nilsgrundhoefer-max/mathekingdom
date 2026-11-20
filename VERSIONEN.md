@@ -8,6 +8,17 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.34 vom 20.11.2026
+
+### Schüler
+
+- Keine Änderungen.
+
+### Lehrkraft
+
+- Neue Datei „Mathekingdom-Vorzeigen.html“ zum Vorzeigen, zum Beispiel auf einem Tablet: Sie startet ohne Internet, ohne Schülercode, PIN und Ordnerwahl direkt im Schüler-Dashboard. Der Fortschritt bleibt nur in diesem Browser, die Lehrkraft sieht davon nichts.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.33 vom 20.11.2026
 
 ### Schüler

@@ -1520,6 +1520,8 @@ function minispiel() {
 export function starte(ziel) {
   wurzel = ziel;
   document.head.append(h('style', {}, stil + VERSION_STIL));
+  // Vorzeige-Datei (Version 0.34): ohne Code, PIN und Ordner direkt ins Dashboard, gespeichert nur in diesem Browser.
+  if (window.MK_VORZEIGEN) return void melde({ code: '5A-DEMO', klasse: '5a', pin: '' }, S.demoAblage('5a'));
   male();
   setTimeout(() => wurzel.querySelector('#code')?.focus());
 }
