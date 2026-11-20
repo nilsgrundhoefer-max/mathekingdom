@@ -157,7 +157,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.click('#hilferuf');
   await seite.waitForSelector('.hilfebanner');
   await seite.click('#zurueck');
-  await seite.click('.kopf nav button:has-text("Wappen")');
+  await seite.click('#wappen-knopf');
   await seite.waitForSelector('.werkbank');
   await seite.click('[data-teil=blau]');
   await foto(seite, 'wappen');
@@ -1863,7 +1863,8 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.evaluate(() => [...document.querySelectorAll('button')].find((b) => b.textContent.trim() === 'Zur Regionskarte')?.click());
   await seite.waitForSelector('#aha-neu');
   assert.match(await seite.innerText('#aha-neu'), /1/);
-  await seite.click('.kopf nav button:has-text("Wappen")');
+  await fotoStabil(seite, '.kopf', 'kopfzeile-marke-am-wappen');
+  await seite.click('#wappen-knopf');
   await seite.waitForSelector('#aha');
   assert.match(await seite.innerText('#aha'), /Du denkst jetzt an den Übertrag in der nächsten Stelle\.[\s\S]*neu/);
   await seite.locator('#aha').screenshot(bilder ? { path: `${bilder}/aha-momente.png` } : {});
@@ -1893,7 +1894,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
   assert.match(await seite.innerText('#aha-neu'), /1/, 'ein neues Ehrenzeichen wartet beim Wappen');
-  await seite.click('.kopf nav button:has-text("Wappen")');
+  await seite.click('#wappen-knopf');
   await seite.waitForSelector('#neue-ehre');
   assert.match(await seite.innerText('#neue-ehre'), /Wegstern/);
   // Hauptzeichen und zwei Beizeichen kaufen und anbringen.
@@ -2033,7 +2034,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
   // Siegel oben anklicken: alle Lernziele mit Siegel als Ich-kann-Sätze, nach Kapitel geordnet.
-  assert.equal(await seite.getAttribute('#siegel-knopf', 'title'), 'Klick: Das kannst du schon');
+  assert.match(await seite.getAttribute('#siegel-knopf', 'title'), /^\d+ Siegel\. Klick: Das kannst du schon$/);
   await seite.click('#siegel-knopf');
   await seite.waitForSelector('#koennen');
   const alle = pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).filter((l) => pool.aufgaben.some((a) => a.lernziel === l.id)).length;
