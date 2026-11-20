@@ -376,3 +376,17 @@ body { margin: 0; background: #f4f1ea; }
 /* Administrator: Nutzungsstatistik und auffällige Aufgaben (ADR 0025) */
 #nutzung tr.summe td { border-top: 2px solid #1d2b4f; font-weight: 600; }
 #auffaellig ul.liste, #aufgabenmeldungen ul.liste { margin: 0; padding-left: 16px; }
+/* Ansicht anpassen (0.35): Schalter für ausschaltbare Auswertungen in Lernstand und Aufgaben */
+#mathekingdom-lehrer .ansichtleiste { margin-bottom: 10px; min-height: 34px; }
+#mathekingdom-lehrer .ansichtleiste .brotkrumen { margin: 0; }
+#mathekingdom-lehrer #ansicht-anpassen.aktiv { background: var(--nacht); color: #fff; border-color: var(--nacht); }
+#mathekingdom-lehrer .ansichttafel { background: #fff; border: 1px solid var(--rand); border-radius: 12px; padding: 14px 18px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+#mathekingdom-lehrer .ansichtgruppen { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px 24px; margin: 8px 0 12px; }
+#mathekingdom-lehrer .ansichtgruppen fieldset { border: 0; margin: 0; padding: 0; }
+#mathekingdom-lehrer .ansichtgruppen legend { font-weight: 700; margin-bottom: 6px; padding: 0; }
+#mathekingdom-lehrer .ansichtschalter { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; cursor: pointer; }
+#mathekingdom-lehrer .ansichtschalter input { margin-top: 3px; }
+#mathekingdom-lehrer .ansichtschalter small { display: block; color: var(--grau); line-height: 1.3; }
+#mathekingdom-lehrer .ausgeblendet { text-align: center; margin: 4px 0 18px; }
+#mathekingdom-lehrer ul.ansehen li { margin-bottom: 6px; }
+@media print { #mathekingdom-lehrer .ansichtleiste, #mathekingdom-lehrer .ansichttafel, #mathekingdom-lehrer .ausgeblendet { display: none; } }

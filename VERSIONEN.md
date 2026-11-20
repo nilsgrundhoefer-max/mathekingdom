@@ -8,6 +8,25 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.35 vom 20.11.2026
+
+### Schüler
+
+- „Gespeichert um …“ steht nicht mehr in der Kopfzeile unter dem Wappen, sondern klein unten links und nur noch auf der Startseite Schlossgarten. In einer Aufgabe steht dort die Kennung. Klappt das Speichern nicht, steht die Warnung weiter oben in der Kopfzeile, auf jeder Seite.
+
+### Lehrkraft
+
+- Jeder Bereich beantwortet eine Frage. Lernstand: Was plane ich für die nächste Stunde, wen fördere ich, was wiederhole ich mit allen? Aufgaben: Welche Aufgaben funktionieren nicht, und welche greife ich an der Tafel auf? „Jetzt“ bleibt, wie es war.
+- Neu ist „Ansicht anpassen“ oben in Lernstand und Aufgaben. Dort schaltest du Auswertungen ein, die nicht jeder braucht. Zu jeder steht ein Satz, wofür sie gut ist. Anfangs sind sie aus. Die Ansicht gilt für alle deine Klassen und liegt in deinen Lehrerdaten, sie ist also an jedem Schulrechner gleich. Unten im Bereich steht, wie viele Auswertungen ausgeblendet sind.
+- Lernstand der Klasse, von oben nach unten: Kennzahlen, „Wer braucht Förderung?“ (Auffälligkeiten und die Filter viel Hilfe, überschätzt, unterschätzt mit Namen), „Wer steht wo?“ (die Heatmap) und „Was wiederhole ich mit allen?“ (Lernziele im Vergleich und die häufigsten typischen Fehler der Klasse). Kompetenzprofil, Selbsteinschätzung, Vorwissen aus dem Einstiegscheck sowie Heftcheck und Sicherheitsangabe schaltest du bei Bedarf ein.
+- Der Lernstand zeigt anfangs nur das Aktuelle Kapitel, sobald dort jemand gearbeitet hat. Vorher zeigt er die Kapitel, in denen schon gearbeitet wurde. Die anderen erreichst du über die Auswahl bei „Wer steht wo?“.
+- Hoftitel steht jetzt unter Klasse › Schüler, „Meilensteine öffnen und sperren“ unter Klasse › Unterricht.
+- Seite eines Lernziels: Fest sind „Wer steht wo?“, häufigste typische Fehler und Hilfebedarf. Lösungsquote nach Niveau und schwierigste Aufgaben sind einschaltbar.
+- Seite eines Schülers, auch im Klassenraum: Fest sind Weg über die Lernziele, typische Fehler, Hilfebedarf und Notiz. Meilensteine sind anfangs an. Versuchsverlauf, Kompetenzprofil, Lösungsquote nach Anforderungsbereich, Wirkung der Hilfekärtchen, Niveau der letzten Aufgaben und Versuchsprotokoll sind einschaltbar.
+- Aufgaben: Oben steht „Diese Aufgaben solltest du dir ansehen“ mit den Aufgaben, die zum Prüfen markiert sind, die nie gelöst wurden, und den schwierigsten, jeweils mit Tafelbild. Darunter steht „Alle Aufgaben“ mit sechs Spalten. AFB, Typ, erster Versuch, Abbrüche und Zeit schaltest du als Spalten dazu. Die drei Gruppentabellen sind jetzt eine Karte „Nach Gruppen“ mit Umschalter und anfangs aus. Aufgabenmeldungen stehen oben, solange eine offen ist, sonst unten.
+- Der Diagnosebericht eines Schülers hat immer denselben Inhalt, egal wie die Ansicht eingestellt ist. Kompetenzprofil, Wirkung der Hilfekärtchen und Hilfebedarf sind nicht mehr darin.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.34 vom 20.11.2026
 
 ### Schüler

@@ -51,6 +51,11 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .speicher { flex-basis: 100%; font-size: .8rem; color: var(--grau); display: flex; gap: 12px; }
 #mathekingdom .speicher.fehler { color: var(--schlecht); font-weight: 600; }
 #mathekingdom .speicher .demo { color: #8a6a1c; }
+#mathekingdom .kopf .speicher:empty { display: none; }
+/* 0.35: „Gespeichert um …“ klein unten links, nur im Schlossgarten (dort, wo in einer Aufgabe die Kennung steht) */
+#mathekingdom .speicherhinweis { position: fixed; left: 10px; bottom: 6px; margin: 0; font-size: 0.72rem; color: #9a9389; pointer-events: none; z-index: 5; }
+#mathekingdom .speicherhinweis .demo { color: #8a6a1c; }
+@media print { #mathekingdom .speicherhinweis { display: none; } }
 #mathekingdom .hilfebanner, #mathekingdom .meldung { display: flex; gap: 14px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 10px 16px; background: var(--hell); border-bottom: 1px solid #e0c98c; }
 
 /* Anmeldung */
