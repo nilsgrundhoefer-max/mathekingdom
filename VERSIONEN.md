@@ -17,6 +17,7 @@ Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht dire
 ### Lehrkraft
 
 - Neue Datei „Mathekingdom-Vorzeigen.html“ zum Vorzeigen, zum Beispiel auf einem Tablet: Sie startet ohne Internet, ohne Schülercode, PIN und Ordnerwahl direkt im Schüler-Dashboard. Der Fortschritt bleibt nur in diesem Browser, die Lehrkraft sieht davon nichts.
+- Dazu „Mathekingdom-Lehrer-Vorzeigen.html“: Sie öffnet das Lehrer-Dashboard ohne Internet, Laufwerk und Kürzel direkt mit der Beispielklasse 5a. Du kannst alles anklicken, gespeichert wird nichts.
 - Die Startdateien musst du nicht neu erstellen.
 
 ## 0.33 vom 20.11.2026

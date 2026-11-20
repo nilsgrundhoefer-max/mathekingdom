@@ -345,6 +345,8 @@ function ladeStartdatei() {
 // Zwischen den eigenen Klassen oben wechseln (ADR 0025). Ohne Schulverzeichnis zurück zur Liste.
 // Mit nur einer eigenen Klasse steht ihr Name als Text da, damit oben immer erkennbar ist, welche Klasse offen ist.
 function klassenwahl() {
+  // In der Vorzeige-Datei gibt es nur die Beispielklasse; eine andere Klasse bräuchte einen Ordner.
+  if (window.MK_VORZEIGEN) return null;
   if (!z.schule) return h('button', { class: 'schlicht hell', onclick: () => { clearInterval(takt); z.ansicht = 'klassen'; male(); } }, 'Klasse wechseln');
   const meine = SCH.klassenDerLehrkraft(z.schule.verzeichnis, z.schule.schuljahr, z.schule.kuerzel);
   if (meine.length < 2) return h('span', { class: 'klassenname', id: 'klassenname' }, `Klasse ${z.klasse}`);
@@ -1763,7 +1765,9 @@ if (typeof document !== 'undefined') {
   let geplant = false;
   new MutationObserver(() => { if (!geplant) { geplant = true; queueMicrotask(() => { geplant = false; klappeKarten(); }); } }).observe(wurzel, { childList: true, subtree: true });
   // Kam das Dashboard als Kopie vom Lehrerlaufwerk, ist der Ordner schon gewählt.
-  if (window.MK_LEHRER_ORDNER) merke('lehrer', window.MK_LEHRER_ORDNER).then(() => oeffneLehrer(S.ordnerAblage(window.MK_LEHRER_ORDNER)))
+  // Vorzeige-Datei (Version 0.34): ohne Ordner, Kürzel und Internet direkt die Beispielklasse; nichts wird gespeichert.
+  if (window.MK_VORZEIGEN) starteBeispiel().catch((e) => { z.fehler = e.message; male(); });
+  else if (window.MK_LEHRER_ORDNER) merke('lehrer', window.MK_LEHRER_ORDNER).then(() => oeffneLehrer(S.ordnerAblage(window.MK_LEHRER_ORDNER)))
     .catch((e) => { z.fehler = e.message; male(); });
   else male();
 }

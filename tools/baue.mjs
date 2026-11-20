@@ -230,6 +230,8 @@ writeFileSync(new URL('dist/Mathekingdom-Vorzeigen.html', wurzel),
   seite(`<script>window.MK_POOLS = ${sicher(JSON.stringify(pools))}; window.MK_QUELLE = 'vorzeigen'; window.MK_VORZEIGEN = true;</script>\n<script>${sicher(dashboard)}</script>`));
 writeFileSync(new URL('dist/Mathekingdom-Lehrer-ohne-Netz.html', wurzel), seite(
   `<script>window.MK_QUELLE = 'ohne-netz';</script>\n<script>${sicher(paket)}</script>`, 'Mathekingdom Lehrer', 'mathekingdom-lehrer'));
+writeFileSync(new URL('dist/Mathekingdom-Lehrer-Vorzeigen.html', wurzel), seite(
+  `<script>window.MK_QUELLE = 'vorzeigen'; window.MK_VORZEIGEN = true;</script>\n<script>${sicher(paket)}</script>`, 'Mathekingdom Lehrer', 'mathekingdom-lehrer'));
 writeFileSync(new URL('build/Mathekingdom-Admin-ohne-Netz.html', wurzel), seite(
   `<script>window.MK_QUELLE = 'ohne-netz';</script>\n<script>${sicher(`${gemeinsam}${admin}`)}</script>`, 'Mathekingdom Administrator', 'mathekingdom-lehrer'));
 
