@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 
 // Kleiner Ersatz für das DOM: Die Zeichner brauchen nur createElementNS, setAttribute und append.
 class Knoten {
-  constructor(tag) { this.tag = tag; this.attribute = {}; this.kinder = []; }
+  constructor(tag) { this.tag = tag; this.attribute = {}; this.kinder = []; this.style = {}; }
   setAttribute(name, wert) { this.attribute[name] = String(wert); }
   getAttribute(name) { return this.attribute[name] ?? null; }
   addEventListener() {}
@@ -123,6 +123,24 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       const texte = svg.texte().map((t) => t.replace(/\s/g, ''));
       for (const w of [b.oben.wert, b.unten.wert]) assert.ok(texte.some((t) => t.includes(lesbar(w))), `${a.id}: ${lesbar(w)} fehlt in ${texte}`);
       assert.equal(Math.abs(zahl(b.oben.wert) - zahl(b.unten.wert)), zahl(b.unterschied), a.id);
+    } else if (b.art === 'gitter') {
+      // Kapitel 5: Karolinien, Punkte, Figuren, Linien und gefärbte Kästchen stehen genau so oft im Bild wie in der Aufgabe.
+      const g = b;
+      assert.equal(svg.klasse('karo').length, g.b + g.h + 2, a.id);
+      assert.equal(svg.klasse('punkt').length, g.punkte?.length ?? 0, a.id);
+      assert.equal(svg.klasse('figur').length, g.figuren?.length ?? 0, a.id);
+      assert.equal(svg.klasse('linie').length, g.linien?.length ?? 0, a.id);
+      assert.equal(svg.klasse('zelle').length, g.zellen?.length ?? 0, a.id);
+      assert.equal(svg.klasse('zentrum').length, g.zentrum ? 1 : 0, a.id);
+      assert.equal(svg.klasse('achse').length, (g.achsen ? 2 : 0) + (g.linien ?? []).filter((l) => l.stil === 'achse').length, a.id);
+      for (const p of g.punkte ?? []) if (p.n) assert.ok(svg.texte().includes(p.n), `${a.id}: Punkt ${p.n} ist nicht beschriftet`);
+      if (g.achsen) assert.ok(svg.texte().includes(String(g.b)) || g.b % 2 === 1, `${a.id}: Achsenzahl ${g.b} fehlt`);
+    } else if (b.art === 'lineal') {
+      // Jeder Millimeter hat einen Strich, jeder Zentimeter eine Zahl; die Strecke liegt auf dem Lineal.
+      assert.equal(svg.klasse('mm').length, b.lang + 1, a.id);
+      assert.equal(svg.klasse('cmzahl').length, Math.floor(b.lang / 10) + 1, a.id);
+      assert.ok(b.von >= 0 && b.von < b.bis && b.bis <= b.lang, a.id);
+      assert.equal(svg.klasse('strecke').length, 1, a.id);
     }
   }
   for (const art of BILDARTEN) assert.ok(gezaehlt[art] > 0, `Keine Aufgabe mit Bildart ${art}`);

@@ -7,7 +7,7 @@ Lernplattform für den Mathematikunterricht im Schulnetz. Begriffe stehen in [CO
 | Teil | Stand |
 |---|---|
 | Jahresplan Klasse 5 | [docs/jahresplan-klasse-5.md](docs/jahresplan-klasse-5.md) |
-| Aufgabenpool Klasse 5 | Kapitel 1 Daten und Diagramme, Kapitel 2 Natürliche Zahlen (2.1 bis 2.5 und Abstecher Römische Zahlzeichen), Kapitel 3 Addieren und Subtrahieren und Kapitel 4 Multiplizieren und Dividieren vollständig (3.1 bis 3.5, 4.1 bis 4.7 und Abstecher Zahlenmuster), 1584 Aufgaben, [Übersicht](docs/aufgaben-klasse-5-pilot.md), [Aufbau](docs/aufgabenpool-format.md) |
+| Aufgabenpool Klasse 5 | Kapitel 1 Daten und Diagramme, Kapitel 2 Natürliche Zahlen (2.1 bis 2.5 und Abstecher Römische Zahlzeichen), Kapitel 3 Addieren und Subtrahieren, Kapitel 4 Multiplizieren und Dividieren (3.1 bis 3.5, 4.1 bis 4.7 und Abstecher Zahlenmuster) und Kapitel 5 Geometrische Grundbegriffe und ebene Figuren (5.1 bis 5.9, mit Gitterzeichnen, ADR 0032) vollständig, 1968 Aufgaben, [Übersicht](docs/aufgaben-klasse-5-pilot.md), [Aufbau](docs/aufgabenpool-format.md) |
 | Schüler-Dashboard | erste Version, siehe unten |
 | Lehrer-Dashboard | erste Version, siehe unten |
 

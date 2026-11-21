@@ -13,10 +13,19 @@ const anzahlKontrolliert = pool.aufgaben.filter((a) => haken(a)).length;
 const NAMEN = { F: 'Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)', G: 'Grundlegendes Niveau (Hauptschulabschluss)', M: 'Mittleres Niveau (Realschulabschluss)', E: 'Erweitertes Niveau (Zugabe Richtung Gymnasium)' };
 const flach = (t) => String(t).replace(/\n/g, ' / ');
 const fehler = (liste) => (liste?.length ? ` Typische Fehler: ${liste.map((f) => `${f.wert} (${f.fehlvorstellung})`).join(', ')}.` : '');
-const zahl = (a) => `**${a.loesung}${a.einheit ? ' ' + a.einheit : ''}**.${fehler(a.typischeFehler)}`;
+const zahl = (a) => `**${a.loesung}${a.einheit ? ' ' + a.einheit : ''}**${a.toleranz ? ` (bis ${a.toleranz} ${a.einheit ?? ''} daneben gilt als richtig)` : ''}.${fehler(a.typischeFehler)}`;
 
 // Bild zur Aufgabe in Worten, damit die Durchsicht auch ohne Dashboard sieht, was gezeichnet wird.
 const wert = (w) => (typeof w === 'object' ? (w.frage ? '?' : w.wert) : w);
+// Kapitel 5 (ADR 0032): ein Karogitter in Worten.
+const pt = (p) => `(${p[0]}|${p[1]})`;
+const LINIE = { strecke: 'Strecke', strahl: 'Strahl', gerade: 'Gerade' };
+const gitterText = (g) => [`${g.achsen ? 'Koordinatensystem' : 'Karogitter'} ${g.b} × ${g.h}`,
+  g.punkte?.length && `Punkte ${g.punkte.map((p) => `${p.n ?? ''}${pt([p.x, p.y])}`).join(', ')}`,
+  g.linien?.length && g.linien.map((l) => `${l.stil === 'achse' ? 'Symmetrieachse' : LINIE[l.art]}${l.n ? ` ${l.n}` : ''} durch ${pt(l.a)} und ${pt(l.b)}`).join(', '),
+  g.figuren?.length && g.figuren.map((f) => `Figur${f.n ? ` ${f.n}` : ''} mit den Ecken ${f.ecken.map(pt).join(' ')}`).join(', '),
+  g.zellen?.length && `${g.zellen.length} gefärbte Kästchen ${g.zellen.map(pt).join(' ')}`,
+  g.zentrum && `Symmetriezentrum Z${pt(g.zentrum)}`].filter(Boolean).join('; ');
 const bild = (b) => {
   if (!b) return '';
   const text = {
@@ -36,6 +45,8 @@ const bild = (b) => {
     tafel: () => `Stellenwerttafel${b.basis === 2 ? ' im Zweiersystem' : ''}${b.plaettchen ? ' mit Plättchen' : ''}, Spalten ${b.spalten.join(' ')}: ${[b.werte, ...(b.weitere ?? [])].map((z) => z.map((w) => (w == null ? '·' : typeof w === 'object' ? '?' : w)).join(' ')).join(' / ')}`,
     schaetzbild: () => `Schätzbild mit ${b.felder.flat().reduce((x, y) => x + y, 0)} Symbolen (${b.symbol}) in ${b.felder.length} mal ${b.felder[0].length} Feldern, Raster ${{ fest: 'sichtbar', wahl: 'zum Einschalten', ohne: 'keines' }[b.raster]}${b.markiert ? `, ein Feld markiert${b.gezaehlt ? ' und ausgezählt' : ''}` : ''}; je Feld ${b.felder.map((z) => z.join(' ')).join(' / ')}`,
     zeichentafel: () => `Zeichentafel ${b.zeichen.join(', ')} mit Werten`,
+    gitter: () => gitterText(b),
+    lineal: () => `Lineal, ${b.lang / 10} cm lang; die Strecke ${(b.namen ?? ['A', 'B']).join('')} beginnt bei ${b.von} mm und endet bei ${b.bis} mm`,
     zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.schritt ? `, Teilstriche alle ${b.schritt}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${wert(b.pfeil)}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
@@ -67,6 +78,10 @@ const loesung = (a) => {
   if (a.format === 'ordnen') return `_(Ordnen; die Karten liegen so da: ${a.karten.join(', ')})_ Lösung: **${a.loesung.join(', ')}**`;
   if (a.format === 'zeichen') return `_(Zeichen tippen mit den Tasten ${a.tasten.join(' ')})_ Lösung: **${a.loesung}**`;
   if (a.format === 'schaetzen') return `_(Schätzen)_ Wahre Anzahl: **${a.loesung}**${a.einheit ? ` ${a.einheit}` : ''}, richtig von ${a.bereich[0]} bis ${a.bereich[1]}`;
+  if (a.format === 'gitter') {
+    const was = { punkte: a.offen ? 'alle passenden Punkte antippen' : `${a.loesung?.length === 1 ? 'einen Punkt' : `${a.loesung?.length} Punkte`} antippen`, zellen: 'Kästchen färben', linie: `${LINIE[a.linie] ?? 'Linie'} durch zwei Punkte zeichnen` }[a.eingabe];
+    return `_(Gitterzeichnen, ${was}; ${gitterText(a.gitter)})_ Lösung: **${a.eingabe === 'linie' ? `zum Beispiel durch ${a.beispiel.map(pt).join(' und ')}` : a.loesung.map(pt).join(' ')}**`;
+  }
   return a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n');
 };
 
