@@ -5,6 +5,7 @@ import { s } from './dom.js';
 import { zahlenstrahl } from './bilder.js';
 import { DATENBILDER } from './datenbilder.js';
 import { ZAHLENBILDER } from './zahlenbilder.js';
+import { GEOBILDER } from './geobilder.js';
 
 const DUNKEL = '#2f4f7f';
 const HELL = '#fbf6e9';
@@ -231,7 +232,7 @@ function paeckchenbild({ einzeln = 0, paeckchen, je }) {
   return rahmen(breite, hoehe, titel, teile);
 }
 
-const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }), ...DATENBILDER, ...ZAHLENBILDER };
+const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }), ...DATENBILDER, ...ZAHLENBILDER, ...GEOBILDER };
 export const BILDARTEN = Object.keys(ARTEN);
 export function aufgabenBild(bild) {
   return ARTEN[bild?.art]?.(bild) ?? null;

@@ -1,6 +1,8 @@
 // Reine Auswertungslogik des Schüler-Dashboards: keine Oberfläche, kein Dateizugriff.
 // Begriffe wie in CONTEXT.md.
 
+import { pruefeGitter } from './geo.js';
+
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
 export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
 // Münzen am Zielniveau des Schülers (ADR 0018): auf dem Ziel bekommt jeder gleich viel, darüber mehr, im Training weniger.
@@ -112,7 +114,8 @@ export function leseZahl(text) {
 }
 function pruefeZahl(teil, eingabe) {
   const wert = leseZahl(eingabe);
-  if (wert === teil.loesung) return { richtig: true, fehlvorstellung: null };
+  // Heftaufgaben mit Geodreieck (Kapitel 5): Ein gemessener Kontrollwert darf um die Toleranz abweichen.
+  if (wert === teil.loesung || (teil.toleranz && Math.abs(wert - teil.loesung) <= teil.toleranz)) return { richtig: true, fehlvorstellung: null };
   const treffer = (teil.typischeFehler ?? []).find((f) => f.wert === wert);
   return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
 }
@@ -140,6 +143,7 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'ordnen': return pruefeOrdnung(aufgabe, eingabe);
     case 'zeichen': return pruefeZeichen(aufgabe, eingabe);
     case 'schaetzen': return pruefeSchaetzung(aufgabe, eingabe);
+    case 'gitter': return pruefeGitter(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
 }

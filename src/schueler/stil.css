@@ -577,3 +577,48 @@ body { margin: 0; background: #efe6d2; }
 
 /* 0.37: Aufgabentester im Admin-Dashboard. Weitergehen, Zurück und Hilferuf steuert dort das Admin-Dashboard. */
 #mathekingdom.probe #zurueck, #mathekingdom.probe .ergebnis button, #mathekingdom.probe .ergebnis .vorschlag, #mathekingdom.probe #hilferuf, #mathekingdom.probe .versionshinweis, #mathekingdom.probe .kennung { display: none !important; }
+
+/* Kapitel 5: Karogitter, Gitterzeichnen und Lineal (ADR 0032) */
+#mathekingdom svg.gitterbild { display: block; width: 100%; min-width: 300px; height: auto; user-select: none; }
+#mathekingdom .gitterbild .blatt { fill: #fffdf6; }
+#mathekingdom .gitterbild .karo { stroke: #b9cbe0; stroke-width: 1; }
+#mathekingdom .gitterbild .achse { stroke: var(--tinte); stroke-width: 2.2; }
+#mathekingdom .gitterbild .achsenspitze { fill: var(--tinte); }
+#mathekingdom .gitterbild .achsenzahl { font-size: 13px; fill: var(--tinte); font-variant-numeric: tabular-nums; }
+#mathekingdom .gitterbild .achsenname { font-size: 15px; font-style: italic; font-weight: 700; fill: var(--tinte); }
+#mathekingdom .gitterbild .linie { stroke: var(--nacht); stroke-width: 2.6; stroke-linecap: round; fill: none; }
+#mathekingdom .gitterbild .linie.achse { stroke: var(--siegel); stroke-dasharray: 9 6; }
+#mathekingdom .gitterbild .linie.hilfs { stroke: var(--grau); stroke-width: 1.6; stroke-dasharray: 4 5; }
+#mathekingdom .gitterbild .linie.farbe { stroke: #0072b2; }
+#mathekingdom .gitterbild .linienende { stroke: var(--nacht); stroke-width: 2.6; stroke-linecap: round; }
+#mathekingdom .gitterbild .linienname { font-size: 16px; font-style: italic; font-weight: 700; fill: var(--nacht); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .gitterbild .punkt { stroke: var(--siegel); stroke-width: 2.6; stroke-linecap: round; fill: none; }
+#mathekingdom .gitterbild .punktname, #mathekingdom .linealbild .punktname { font-size: 16px; font-weight: 700; fill: var(--siegel); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .gitterbild .figur { fill: rgba(59,111,181,.22); stroke: #2f4f7f; stroke-width: 2.4; stroke-linejoin: round; }
+#mathekingdom .gitterbild .figur.leer { fill: none; }
+#mathekingdom .gitterbild .figurname { font-size: 17px; font-weight: 700; fill: #1f3a61; paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .gitterbild .zelle { fill: #7fa6d6; }
+#mathekingdom .gitterbild .zelle.gesetzt { fill: #e3b23c; }
+#mathekingdom .gitterbild .rechter { fill: none; stroke: var(--siegel); stroke-width: 1.8; }
+#mathekingdom .gitterbild .rechterpunkt { fill: var(--siegel); }
+#mathekingdom .gitterbild .zentrum { fill: var(--siegel); stroke: #fff; stroke-width: 2; }
+#mathekingdom .gitterbild .masstext { font-size: 14px; font-weight: 600; fill: var(--tinte); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .gitterbild .gesetzterpunkt { fill: var(--gold); stroke: var(--nacht); stroke-width: 2.4; }
+#mathekingdom .gitterbild .linie.gesetzt, #mathekingdom .gitterbild .linienende.gesetzt { stroke: #a8690a; stroke-width: 3.4; }
+#mathekingdom .gitterbild .figur.gesetzt { fill: rgba(227,178,60,.3); stroke: #a8690a; stroke-width: 3; }
+#mathekingdom .gitterbild.loesung .gesetzterpunkt { fill: var(--gut); stroke: #fff; }
+#mathekingdom .gitterbild.loesung .linie.gesetzt, #mathekingdom .gitterbild.loesung .linienende.gesetzt { stroke: var(--gut); }
+#mathekingdom .gitterbild.loesung .figur.gesetzt { fill: rgba(62,107,58,.22); stroke: var(--gut); }
+#mathekingdom .gitterbild.loesung .zelle.gesetzt { fill: #8fb489; }
+#mathekingdom .gitterbild.eingabe { cursor: crosshair; touch-action: manipulation; }
+#mathekingdom .gitterbild.eingabe.gesperrt { cursor: default; }
+#mathekingdom .gitterbild .zeiger { fill: none; stroke: var(--gold); stroke-width: 3; stroke-dasharray: 4 3; }
+#mathekingdom .gitterhinweis { min-height: 1.3em; margin: 4px 0 0; }
+#mathekingdom svg.linealbild { display: block; width: 100%; min-width: 440px; height: auto; }
+#mathekingdom .linealbild .lineal { fill: #f3e3a8; stroke: #a58a3a; stroke-width: 1.5; }
+#mathekingdom .linealbild .mm { stroke: #3a3029; stroke-width: 1; }
+#mathekingdom .linealbild .mm.cm { stroke-width: 1.8; }
+#mathekingdom .linealbild .cmzahl { font-size: 14px; font-weight: 700; fill: #3a3029; }
+#mathekingdom .linealbild .cmwort { font-size: 12px; fill: #6b5f50; }
+#mathekingdom .linealbild .strecke { stroke: var(--nacht); stroke-width: 3; }
+#mathekingdom .linealbild .streckenende { stroke: var(--siegel); stroke-width: 1.6; stroke-dasharray: 3 3; }

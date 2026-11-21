@@ -231,6 +231,23 @@ const KIND = {
   'roemisch-vier-gleiche': 'Du schreibst höchstens drei gleiche Zeichen hintereinander.',
   'roemisch-falsch-abgezogen': 'Du weißt jetzt, welche Zeichen man abziehen darf.',
   'roemisch-zeichen-verwechselt': 'Du kennst jetzt den Wert jedes römischen Zeichens.',
+  'gerade-begrenzt': 'Du hältst Strecke, Strahl und Gerade jetzt auseinander.',
+  'laenge-kaestchen': 'Du weißt jetzt: Zwei Kästchen im Heft sind ein Zentimeter.',
+  'lineal-nicht-null': 'Du schaust jetzt zuerst nach: Beginnt die Strecke am Lineal bei 0?',
+  'einheit-mm-cm': 'Du weißt jetzt: Ein Zentimeter hat 10 Millimeter.',
+  'senkrecht-lotrecht': 'Du weißt jetzt: Senkrecht zueinander heißt im rechten Winkel, egal in welcher Richtung.',
+  'parallel-gleichlang': 'Du weißt jetzt: Parallel heißt überall gleicher Abstand, egal wie lang die Linien sind.',
+  'senkrecht-parallel-verwechselt': 'Du hältst senkrecht und parallel jetzt auseinander.',
+  'koord-vertauscht': 'Du gehst im Koordinatensystem jetzt erst nach rechts und dann nach oben.',
+  'koord-ab-eins': 'Du beginnst im Koordinatensystem jetzt bei 0 zu zählen.',
+  'abstand-schraeg': 'Du misst den Abstand jetzt auf dem kürzesten Weg, im rechten Winkel zur Linie.',
+  'spiegel-verschoben': 'Du spiegelst jetzt und verschiebst die Figur nicht mehr nur.',
+  'spiegel-abstand': 'Du zählst beim Spiegeln jetzt den Abstand zur Symmetrieachse.',
+  'diagonale-als-achse': 'Du prüfst eine Symmetrieachse jetzt durch Falten in Gedanken.',
+  'punkt-achsen-verwechselt': 'Du hältst Spiegeln an einer Achse und Drehen um einen Punkt jetzt auseinander.',
+  'sonderfall-uebersehen': 'Du weißt jetzt: Ein Quadrat ist auch ein besonderes Rechteck.',
+  'lage-prototyp': 'Du erkennst eine Figur jetzt auch in gedrehter Lage.',
+  'viereck-eigenschaft': 'Du prüfst bei einem Viereck jetzt Seiten und rechte Winkel einzeln nach.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -321,6 +338,24 @@ export const fehlvorstellungen = {
   'roemisch-vier-gleiche': fv('Schreibt vier gleiche römische Zeichen hintereinander (IIII statt IV).', 'Höchstens drei gleiche Zeichen stehen hintereinander. Für 4 und 9 ziehst du ab.'),
   'roemisch-falsch-abgezogen': fv('Zieht bei römischen Zahlzeichen ein Zeichen ab, das man nicht abziehen darf (IC für 99, VX für 5).', 'Abgezogen wird nur I vor V und X, X vor L und C, C vor D und M.'),
   'roemisch-zeichen-verwechselt': fv('Verwechselt die Werte der römischen Zeichen (L und C, D und M, V und X).', 'Schau im Merkzettel nach: Welchen Wert hat jedes Zeichen?'),
+  // Kapitel 5: Geometrische Grundbegriffe und ebene Figuren (Nils, 2026-11-21)
+  'gerade-begrenzt': fv('Verwechselt Strecke, Strahl und Gerade oder hält eine Gerade für begrenzt.', 'Eine Strecke hat zwei Endpunkte, ein Strahl einen Anfangspunkt, eine Gerade hat kein Ende.'),
+  'laenge-kaestchen': fv('Zählt Kästchen und gibt sie als Zentimeter an (oder umgekehrt).', 'Im Heft sind 2 Kästchen 1 cm lang. Ein Kästchen ist 5 mm lang.'),
+  'lineal-nicht-null': fv('Liest am Lineal nur das Ende der Strecke ab, obwohl sie nicht bei 0 beginnt.', 'Schau auf den Anfang der Strecke: Bei welcher Zahl liegt er am Lineal?'),
+  'einheit-mm-cm': fv('Rechnet Zentimeter und Millimeter falsch um.', 'Ein Zentimeter sind 10 Millimeter. Rechne zuerst alles in Millimeter um.'),
+  'senkrecht-lotrecht': fv('Meint, „senkrecht“ heißt von oben nach unten, und erkennt rechte Winkel in schräger Lage nicht.', 'Senkrecht zueinander heißt: Die Linien bilden einen rechten Winkel. Dreh das Blatt in Gedanken.'),
+  'parallel-gleichlang': fv('Hält Linien nur für parallel, wenn sie gleich lang sind oder genau untereinander liegen, oder hält Linien für parallel, die sich im Bild nur nicht treffen.', 'Parallele Linien haben überall den gleichen Abstand. Verlängere sie in Gedanken.'),
+  'senkrecht-parallel-verwechselt': fv('Verwechselt die Begriffe senkrecht und parallel.', 'Senkrecht: Die Linien bilden einen rechten Winkel. Parallel: Die Linien treffen sich nie.'),
+  'koord-vertauscht': fv('Vertauscht im Koordinatensystem die beiden Koordinaten (erst nach oben, dann nach rechts).', 'Die erste Zahl sagt, wie weit es nach rechts geht. Die zweite Zahl sagt, wie weit es nach oben geht.'),
+  'koord-ab-eins': fv('Beginnt im Koordinatensystem bei 1 statt bei 0 zu zählen und landet ein Kästchen daneben.', 'Die Achsen beginnen bei 0. Zähle die Schritte, nicht die Linien.'),
+  'abstand-schraeg': fv('Misst den Abstand zu einer Geraden schräg statt auf der Senkrechten.', 'Der Abstand ist der kürzeste Weg. Er steht immer senkrecht auf der Geraden.'),
+  'spiegel-verschoben': fv('Verschiebt die Figur auf die andere Seite der Achse, statt sie zu spiegeln.', 'Beim Spiegeln wird die Figur umgeklappt. Was nah an der Achse liegt, bleibt nah an der Achse.'),
+  'spiegel-abstand': fv('Setzt den Bildpunkt in einem anderen Abstand zur Symmetrieachse als den Punkt.', 'Zähle die Kästchen vom Punkt bis zur Achse. Genauso weit geht es auf der anderen Seite.'),
+  'diagonale-als-achse': fv('Hält die Diagonale eines Rechtecks oder eine Linie durch ein Parallelogramm für eine Symmetrieachse.', 'Falte in Gedanken an der Linie. Liegen beide Hälften genau aufeinander?'),
+  'punkt-achsen-verwechselt': fv('Verwechselt Achsensymmetrie (umklappen) und Punktsymmetrie (halbe Drehung).', 'Achsensymmetrisch: umklappen an einer Linie. Punktsymmetrisch: eine halbe Drehung um einen Punkt.'),
+  'sonderfall-uebersehen': fv('Sieht nicht, dass ein Quadrat auch ein Rechteck ist (oder eine Raute auch ein Parallelogramm).', 'Prüfe die Eigenschaften: Hat die Figur alles, was die andere Figur braucht?'),
+  'lage-prototyp': fv('Erkennt eine Figur nur in der gewohnten Lage (ein gedrehtes Quadrat gilt als Raute).', 'Dreh das Blatt in Gedanken. Die Figur bleibt dieselbe.'),
+  'viereck-eigenschaft': fv('Ordnet einem Viereck Eigenschaften zu, die es nicht hat, oder verwechselt die Namen der Vierecke.', 'Prüfe der Reihe nach: Welche Seiten sind parallel? Welche sind gleich lang? Gibt es rechte Winkel?'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -434,6 +469,23 @@ export const TIEF2 = '₂';
 // Rundet kaufmännisch auf 10, 100, 1000 …
 export const rundeAuf = (n, auf) => Math.floor((n + auf / 2) / auf) * auf;
 export const STELLENNAME = { 10: 'Zehner', 100: 'Hunderter', 1000: 'Tausender', 10000: 'Zehntausender', 100000: 'Hunderttausender', 1000000: 'Millionen' };
+
+// ---------- Kapitel 5: Geometrie auf dem Karogitter (ADR 0032) ----------
+// Ein Gitter ist b Kästchen breit und h hoch. Punkte [x, y] in Kästchen, y nach oben. Mit achsen: true ist es ein Koordinatensystem.
+export const GT = (b, h, teile = {}) => ({ b, h, ...teile });
+export const PT = (n, x, y, pos) => ({ n, x, y, ...(pos ? { pos } : {}) });
+export const LN = (n, a, b, art = 'gerade', stil) => ({ ...(n ? { n } : {}), a, b, art, ...(stil ? { stil } : {}) });
+export const FG = (n, ecken, stil) => ({ ...(n ? { n } : {}), ecken, ...(stil ? { stil } : {}) });
+export const ACHSE = (a, b) => LN(null, a, b, 'gerade', 'achse');
+const fehlerPunkte = (loesung, liste) => (liste ?? []).filter(([punkte]) => punkte.length && JSON.stringify([...punkte].sort()) !== JSON.stringify([...loesung].sort())).map(([punkte, fehlvorstellung]) => ({ punkte, fehlvorstellung }));
+// Gitterzeichnen: Punkte setzen. fehler: [[punkte, fehlvorstellung]]
+export const gitterPunkte = (text, gitter, loesung, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'punkte', text, gitter, loesung, typischeFehler: fehlerPunkte(loesung, fehler), hilfen, ...mit(extra) });
+// Gitterzeichnen: Kästchen färben (linke untere Ecke jedes Kästchens).
+export const gitterZellen = (text, gitter, loesung, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'zellen', text, gitter, loesung, typischeFehler: fehlerPunkte(loesung, fehler), hilfen, ...mit(extra) });
+// Gitterzeichnen: eine Linie durch zwei Punkte. art 'gerade' oder 'strecke', bedingung siehe src/schueler/geo.js, beispiel: zwei Punkte, die sie erfüllen.
+// fehler: [[bedingung, fehlvorstellung, beispiel]]
+export const gitterLinie = (text, gitter, art, bedingung, beispiel, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'linie', linie: art, text, gitter, bedingung, beispiel,
+  typischeFehler: (fehler ?? []).map(([b, fehlvorstellung, bsp]) => ({ bedingung: b, fehlvorstellung, ...(bsp ? { beispiel: bsp } : {}) })), hilfen, ...mit({ nachweis: [{ art: 'linie' }], ...extra }) });
 
 // Stellenraster: schriftliches Rechnen mit einem Feld je Stelle (Niveaustufe F).
 // `zeichen` ist '+' oder '−'. Bei einem Tausch oder Übertrag steht er schon im Raster (`hilfe`: true).
@@ -576,6 +628,9 @@ export const B = {
   // Spickzettel der römischen Zahlzeichen bis zu einem Zeichen: B.zeichentafel('X') zeigt I, V und X mit ihren Werten.
   zeichentafel: (bis) => ({ art: 'zeichentafel', zeichen: ROEMISCH_TASTEN.slice(0, ROEMISCH_TASTEN.indexOf(bis) + 1) }),
   // Schätzbild: felder = Anzahl je Feld (Reihen von oben), raster 'fest' | 'wahl' | 'ohne', markiert [reihe, spalte], gezaehlt zeigt die Anzahl im markierten Feld.
+  // Kapitel 5: Karogitter (siehe GT) und Lineal mit einer Strecke von `von` bis `bis` Millimetern.
+  gitter: (g) => ({ art: 'gitter', ...g }),
+  lineal: (von, bis, lang = 100, namen = null) => ({ art: 'lineal', von, bis, lang, ...(namen ? { namen } : {}) }),
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
@@ -593,10 +648,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
+  kommunizieren: ['5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
   modellieren: ['5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
-  argumentieren: ['5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
+  argumentieren: ['5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
@@ -608,7 +663,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild'].includes(a.bild?.art);
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal'].includes(a.bild?.art);
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';
@@ -620,7 +675,7 @@ export function kompetenzVon(lernziel, a) {
 
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
-const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort()].filter(Boolean));
+const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung].filter(Boolean));
 function nachbearbeiten(a, niveau) {
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.
