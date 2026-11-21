@@ -1,6 +1,6 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1272 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1584 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
@@ -940,11 +940,1124 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
 
 - `06` AFB III · _Modellieren_ · Bei einer Umfrage nennt jedes Kind genau 3 Lieblingsfarben. / In der Strichliste stehen 12 volle Bündel und 3 einzelne Striche. / Wie viele Kinder wurden befragt? Lösung: **21**. Typische Fehler: 63 (sach-schritt-vergessen).
 
+## 5.2.1-N1: Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.
+
+Grundlage, die F übt: Zahlen bis 100 am Zahlenstrahl finden, jeder Zehner ist beschriftet
+
+Baut auf: nur Grundschulstoff
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Zahl links vom Pfeil. Zähle von dort die Striche. *Beispiel:* Der Pfeil steht 3 Striche nach der 20. Das ist die 23. *Lösungsschritt:* Links vom Pfeil steht 60. Zähle von dort weiter.
+
+- `01` AFB I · _Kommunizieren_ · Schau auf den Zahlenstrahl. / Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 50 bis 70, Teilstriche alle 1; Zahl eintragen)_ Lösung: **62**. Typische Fehler: 63 (strahl-einerschritte), 61 (strahl-einerschritte).
+- `02` AFB I · _Kommunizieren_ · Tippe die Zahl 35 an. _(Zahlenstrahl 0 bis 100, Teilstriche alle 5; antippen)_ Lösung: **35**. Typische Fehler: 30 (strahl-einerschritte), 40 (strahl-einerschritte).
+- `03` AFB I · _Kommunizieren_ · Hier ist jeder Schritt 100 groß. / Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0 bis 1000, Teilstriche alle 100; Zahl eintragen)_ Lösung: **100**. Typische Fehler: 1 (strahl-einerschritte).
+- `04` AFB I · _Kommunizieren (+ Modellieren)_ · Die Zahl 52 ist am Zahlenstrahl markiert. / Der Vorgänger ist ▢. / Der Nachfolger ist ▢. _(Bild: Zahlenstrahl 50 bis 60, Teilstriche alle 1, Punkte bei 52)_ Lösung: a = **51**, b = **53**
+- `05` AFB II · _Kommunizieren_ · Schau genau hin: Wie groß ist ein Schritt? / Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 300 bis 500, Teilstriche alle 10; Zahl eintragen)_ Lösung: **410**. Typische Fehler: 401 (strahl-einerschritte).
+- `06` AFB I · _Kommunizieren_ · Hier ist jeder Schritt 50 groß. / Tippe die Zahl 350 an. _(Zahlenstrahl 0 bis 1000, Teilstriche alle 50; antippen)_ Lösung: **350**. Typische Fehler: 300 (strahl-einerschritte), 400 (strahl-einerschritte).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde zuerst heraus, wie groß ein Schritt ist. *Beispiel:* Von 100 bis 150 sind es 10 Schritte. Ein Schritt ist 5 groß. *Lösungsschritt:* Ein Schritt ist 5 groß. Zähle von 400 aus weiter.
+
+- `01` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 400 bis 500, Teilstriche alle 5; Zahl eintragen)_ Lösung: **435**. Typische Fehler: 407 (strahl-einerschritte).
+- `02` AFB I · _Kommunizieren_ · Tippe die Zahl 280 an. _(Zahlenstrahl 0 bis 600, Teilstriche alle 20; antippen)_ Lösung: **280**. Typische Fehler: 204 (strahl-einerschritte).
+- `03` AFB II · _Kommunizieren_ · Schau auf den Zahlenstrahl. / Wie groß ist der Schritt von Teilstrich zu Teilstrich? _(Bild: Zahlenstrahl 1000 bis 3000, Teilstriche alle 250)_ Lösung: **250**. Typische Fehler: 1 (strahl-einerschritte), 1000 (strahl-einerschritte).
+- `04` AFB I · _Kommunizieren_ · Der Zahlenstrahl zeigt nur einen Ausschnitt. / Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 8000 bis 9000, Teilstriche alle 50; Zahl eintragen)_ Lösung: **8650**. Typische Fehler: 8503 (strahl-einerschritte).
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Eine Zahl liegt genau in der Mitte zwischen 800 und 900. / Wie heißt die Zahl? _(Bild: Zahlenstrahl 800 bis 900, Teilstriche alle 10, Ausschnitt mit Bruchzeichen)_ Lösung: **850**. Typische Fehler: 805 (strahl-einerschritte), 855 (stellenwert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Der Pfeil zeigt auf 502.“ / Stimmt das? _(Bild: Zahlenstrahl 500 bis 600, Teilstriche alle 20, Ausschnitt mit Bruchzeichen, Pfeil auf 540)_
+  - ☑ Falsch. / Ein Schritt ist 20 groß. / Der Pfeil zeigt auf 540.
+  - ☐ Falsch. / Der Pfeil zeigt auf 520.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst die Schrittweite: Wie viele Schritte liegen zwischen zwei beschrifteten Teilstrichen? *Lösungsschritt:* Ein Schritt ist 100 groß. Zähle von 2000 aus weiter.
+
+- `01` AFB I · _Kommunizieren_ · Der Zahlenstrahl zeigt einen Ausschnitt. Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 2000 bis 4000, Teilstriche alle 100; Zahl eintragen)_ Lösung: **2300**. Typische Fehler: 2003 (strahl-einerschritte).
+- `02` AFB II · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 30000 bis 50000, Teilstriche alle 500; Zahl eintragen)_ Lösung: **44500**. Typische Fehler: 44001 (strahl-einerschritte), 44100 (strahl-einerschritte).
+- `03` AFB II · _Kommunizieren_ · Markiere die Zahl 76 500 am Zahlenstrahl. _(Zahlenstrahl 70000 bis 80000, Teilstriche alle 500; antippen)_ Lösung: **76500**. Typische Fehler: 76000 (strahl-einerschritte), 77000 (strahl-einerschritte).
+- `04` AFB I · _Kommunizieren_ · Wie groß ist der Schritt von Teilstrich zu Teilstrich? _(Bild: Zahlenstrahl 3000 bis 7000, Teilstriche alle 250, Ausschnitt mit Bruchzeichen)_ Lösung: **250**. Typische Fehler: 1 (strahl-einerschritte), 1000 (strahl-einerschritte), 100 (strahl-einerschritte).
+- `05` AFB II · _Kommunizieren_ · Welche Zahl liegt genau in der Mitte zwischen 8800 und 9800? Lösung: **9300**. Typische Fehler: 500 (begriffe-verwechselt), 9800 (begriffe-verwechselt).
+- `06` AFB III · _Kommunizieren_ · Auf einem Zahlenstrahl sind 6000 und 7200 beschriftet. Dazwischen liegen genau 3 weitere Teilstriche. Wie groß ist ein Schritt? Lösung: **300**. Typische Fehler: 400 (strahl-einerschritte), 1 (strahl-einerschritte).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme die Schrittweite aus zwei beschrifteten Teilstrichen und der Zahl der Schritte dazwischen.
+
+- `01` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 600000 bis 700000, Teilstriche alle 2500; Zahl eintragen)_ Lösung: **670000**. Typische Fehler: 650008 (strahl-einerschritte), 650800 (strahl-einerschritte).
+- `02` AFB II · _Kommunizieren_ · Markiere die Zahl, die genau in der Mitte zwischen 300 000 und 350 000 liegt. _(Zahlenstrahl 200000 bis 400000, Teilstriche alle 5000; antippen)_ Lösung: **325000**.
+- `03` AFB II · _Kommunizieren_ · Auf einem Zahlenstrahl sind 300 000 und 425 000 beschriftet. Dazwischen liegen genau 9 weitere Teilstriche. Wie groß ist ein Schritt? Lösung: **12500**. Typische Fehler: 13889 (strahl-einerschritte).
+- `04` AFB III · _Kommunizieren_ · Auf einem Zahlenstrahl ist ein Schritt von 5000 auf dem Papier genau einen Zentimeter lang. Wie viele Zentimeter ist der Strahl von 0 bis 1 000 000 lang? Lösung: **200 cm**. Typische Fehler: 20 (stellenwert), 2000 (stellenwert).
+- `05` AFB II · _Kommunizieren_ · Der Zahlenstrahl reicht bis zu einer Million. Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0 bis 1000000, Teilstriche alle 25000; Zahl eintragen)_ Lösung: **650000**. Typische Fehler: 500006 (strahl-einerschritte), 506000 (strahl-einerschritte).
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · Noah will die Zahlen 400 und 990 000 auf einem Zahlenstrahl von 0 bis 1 000 000 eintragen. Der Strahl ist im Heft 10 cm lang. Welche Aussage trifft zu?
+  - ☐ Das geht gut: 400 liegt etwa in der Mitte des Strahls.
+  - ☑ Das geht kaum: 400 liegt so dicht bei 0, dass man den Abstand nicht sehen kann.
+  - ☐ Das geht nicht, weil 990 000 größer ist als das Ende des Strahls.
+  - ☐ Das geht gut, wenn man jeden Schritt 1 groß wählt.
+
+## 5.2.1-N2: Ich kann Zahlen vergleichen und ordnen.
+
+Grundlage, die F übt: Zwei Zahlen bis 1000 vergleichen: erst die Hunderter, dann die Zehner, dann die Einer
+
+Baut auf: nur Grundschulstoff
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Weiter rechts am Zahlenstrahl ist die Zahl größer. Die Spitze zeigt zur kleineren Zahl. *Beispiel:* 27 < 72: 27 ist kleiner als 72. *Lösungsschritt:* Schau auf die Zehner: 1 Zehner und 2 Zehner.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 12 ▢ 21 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Punkte bei 12, 21)_
+  - ☐ >
+  - ☑ <
+  - ☐ =
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Drei Zahlen sind am Zahlenstrahl markiert. / Welche Zahl ist am größten? _(Bild: Zahlenstrahl 500 bis 600, Teilstriche alle 5, Punkte bei 545, 570, 520)_
+  - ☐ 520
+  - ☑ 570
+  - ☐ 545
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. _(Bild: Zahlenstrahl 50 bis 100, Teilstriche alle 5, Punkte bei 97, 54, 92)_ _(Ordnen; die Karten liegen so da: 54, 97, 92)_ Lösung: **54, 92, 97**
+- `04` AFB I · _Modellieren_ · Die Zahl 309 ist am Zahlenstrahl markiert. / Wie heißt ihr Nachfolger? _(Bild: Zahlenstrahl 300 bis 310, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 309)_ Lösung: **310**. Typische Fehler: 308 (nachbar-verwechselt), 319 (stellenwert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. _(Bild: Zahlenstrahl 200 bis 700, Teilstriche alle 50, Ausschnitt mit Bruchzeichen, Punkte bei 206, 260, 602, 620)_ _(Ordnen; die Karten liegen so da: 206, 620, 602, 260)_ Lösung: **206, 260, 602, 620**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Reihe stimmt? _(Bild: Zahlenstrahl 600 bis 700, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 630, 660, 670)_
+  - ☐ 660 < 630 < 670
+  - ☐ 630 > 660 > 670
+  - ☑ 630 < 660 < 670
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche von links: erst die Tausender, dann die Hunderter. *Beispiel:* 4072 < 4702: Beide haben 4 Tausender. Aber 0 Hunderter sind weniger als 7 Hunderter. *Lösungsschritt:* Die Tausender sind gleich. Vergleiche die Hunderter: 9 und 3.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 6937 ▢ 6397 _(Bild: Zahlenstrahl 6000 bis 7000, Teilstriche alle 100, Ausschnitt mit Bruchzeichen, Punkte bei 6937, 6397)_
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der größten Zahl. _(Ordnen; die Karten liegen so da: 4895, 4173, 4113, 4731)_ Lösung: **4895, 4731, 4173, 4113**
+- `03` AFB II · _Modellieren_ · Drei Kinder sammeln Punkte in einem Spiel. / Mia hat 8103 Punkte. / Lena hat 8310 Punkte. / Ali hat 8130 Punkte.
+  - a) Wie viele Punkte hat das Kind mit den meisten Punkten? **8310 Punkte**. Typische Fehler: 8103 (zeichen-verwechselt).
+  - b) Wie viele Punkte hat das Kind mit den wenigsten Punkten? **8103 Punkte**. Typische Fehler: 8310 (zeichen-verwechselt).
+- `04` AFB I · _Modellieren_ · Die Zahl 6000 ist am Zahlenstrahl markiert. / Wie heißt ihr Nachfolger? _(Bild: Zahlenstrahl 5990 bis 6010, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 6000)_ Lösung: **6001**. Typische Fehler: 5999 (nachbar-verwechselt), 7000 (stellenwert), 6010 (stellenwert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. / Achte auf die Zahl der Stellen. _(Bild: Zahlenstrahl 800 bis 2000, Teilstriche alle 100, Punkte bei 838, 1308)_ _(Ordnen; die Karten liegen so da: 1308, 1038, 1083, 883, 838)_ Lösung: **838, 883, 1038, 1083, 1308**
+- `06` AFB III · _Argumentieren_ · Sara sagt: „909 ist größer als 1001.“ / „Denn 9 ist größer als 1.“ / Stimmt das?
+  - ☐ Stimmt.
+  - ☐ Falsch. / Die beiden Zahlen sind gleich groß.
+  - ☑ Falsch. / 1001 hat mehr Stellen. / Also ist 1001 größer.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Stellen. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer. *Lösungsschritt:* Die kleinste Zahl hat nur 4 Stellen: 7765.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 7765, 15 827, 16 459, 474 930, 25 351)_ Lösung: **7765, 15 827, 16 459, 25 351, 474 930**
+- `02` AFB II · _Probleme lösen_ · Bilde aus den Ziffern 0, 9, 3, 7 vierstellige Zahlen. Jede Ziffer kommt genau einmal vor. Die größte Zahl ist ▢, die kleinste Zahl ist ▢. Lösung: a = **9730**, b = **3079**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt am nächsten an 22 000?
+  - ☐ 31 600
+  - ☑ 21 970
+  - ☐ 22 080
+  - ☐ 20 700
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 239 837 ▢ 23 983
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Vorgänger von 100 000 ist ▢. Der Nachfolger von 49 999 ist ▢. Lösung: a = **99999**, b = **50000**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Wie viele natürliche Zahlen sind größer als 6993 und kleiner als 7003? Lösung: **9**. Typische Fehler: 10 (begriffe-verwechselt), 11 (begriffe-verwechselt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Alle Zahlen haben gleich viele Stellen. Vergleiche von links, bis sich zwei Ziffern unterscheiden.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. Beginne mit der größten Zahl. _(Ordnen; die Karten liegen so da: 454 151, 415 451, 451 154, 451 451, 415 145)_ Lösung: **454 151, 451 451, 451 154, 415 451, 415 145**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Kette ist richtig?
+  - ☐ 902 016 < 279 720 < 108 833
+  - ☐ 108 833 > 279 720 > 902 016
+  - ☐ 279 720 < 108 833 < 902 016
+  - ☑ 108 833 < 279 720 < 902 016
+  - ☐ 108 833 < 902 016 < 279 720
+- `03` AFB II · _Probleme lösen_ · Bilde aus den Ziffern 2, 0, 6, 5, 8 fünfstellige Zahlen. Jede Ziffer kommt genau einmal vor. Die größte Zahl ist ▢, die kleinste Zahl ist ▢. Lösung: a = **86520**, b = **20568**
+- `04` AFB III · _Modellieren_ · Wie viele fünfstellige Zahlen sind größer als 99 960? Lösung: **39**. Typische Fehler: 40 (begriffe-verwechselt), 38 (begriffe-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt am nächsten an 300 000?
+  - ☐ 295 100
+  - ☐ 214 000
+  - ☐ 304 200
+  - ☐ 309 200
+  - ☑ 300 510
+- `06` AFB III · _Argumentieren_ · Ali behauptet: „Von zwei natürlichen Zahlen ist immer die Zahl mit mehr Stellen die größere.“ Beurteile die Aussage.
+  - ☐ Falsch. 999 ist größer als 1000, denn 9 ist größer als 1.
+  - ☐ Das gilt nur für Zahlen bis 1000.
+  - ☑ Stimmt. Jede vierstellige Zahl ist mindestens 1000, jede dreistellige höchstens 999. So ist es bei jeder Stellenzahl.
+  - ☐ Das gilt nur, wenn auch die erste Ziffer größer ist.
+
+## 5.2.1-N3: Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.
+
+Grundlage, die F übt: Hunderter, Zehner und Einer in der Stellenwerttafel ablesen und eintragen
+
+Baut auf: nur Grundschulstoff
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies von links: erst die Hunderter, dann die Zehner, dann die Einer. *Beispiel:* 4 Hunderter, 2 Zehner und 7 Einer sind die Zahl 427. *Lösungsschritt:* Bei den Hundertern steht 6. Bei den Zehnern steht 2.
+
+- `01` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Welche Zahl steht dort? _(Bild: Stellenwerttafel, Spalten H Z E: 6 2 4)_ Lösung: **624**. Typische Fehler: 426 (tafel-verrutscht).
+- `02` AFB I · _Kommunizieren_ · Trage die Zahl 786 in die Stellenwerttafel ein. 
+
+  | H | Z | E |
+  |---|---|---|
+  | **7** | **8** | **6** |
+
+- `03` AFB I · _Kommunizieren_ · Schau auf die Zahl 528. / Welche Ziffer steht bei den Zehnern? _(Bild: Stellenwerttafel, Spalten H Z E: 5 2 8)_ Lösung: **2**. Typische Fehler: 5 (stellenwert), 8 (stellenwert).
+- `04` AFB I · _Kommunizieren_ · In der Stellenwerttafel liegen Plättchen. / Welche Zahl ist gelegt? _(Bild: Stellenwerttafel mit Plättchen, Spalten H Z E: 4 1 0)_ Lösung: **410**. Typische Fehler: 41 (null-platzhalter), 401 (tafel-verrutscht).
+- `05` AFB II · _Kommunizieren_ · Eine Zahl hat 9 Hunderter und 6 Einer. / Zehner hat sie keine. / Trage die Zahl in die Stellenwerttafel ein. 
+
+  | H | Z | E |
+  |---|---|---|
+  | **9** | **0** | **6** |
+
+- `06` AFB I · _Kommunizieren_ · Trage die Zahl 4600 in die Stellenwerttafel ein. / Achte auf die Nullen. 
+
+  | T | H | Z | E |
+  |---|---|---|---|
+  | **4** | **6** | **0** | **0** |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Welcher Stellenwert fehlt? Dort steht eine 0. *Beispiel:* 4 Tausender, 7 Zehner und 2 Einer: 4072. *Lösungsschritt:* Die Hunderter fehlen. Schreibe dort eine 0.
+
+- `01` AFB I · _Kommunizieren_ · Eine Zahl hat 7 Tausender, 4 Zehner und 1 Einer. / Schreibe die Zahl. Lösung: **7041**. Typische Fehler: 741 (null-platzhalter), 7410 (tafel-verrutscht).
+- `02` AFB I · _Kommunizieren_ · Trage die Zahl 80 181 in die Stellenwerttafel ein. 
+
+  | ZT | T | H | Z | E |
+  |---|---|---|---|---|
+  | **8** | **0** | **1** | **8** | **1** |
+
+- `03` AFB II · _Kommunizieren_ · Schau auf die Zahl 5297. / Welchen Wert hat die Ziffer 2 in dieser Zahl? Lösung: **200**. Typische Fehler: 2 (stellenwert), 20 (stellenwert), 2000 (stellenwert).
+- `04` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Welche Zahl steht dort? _(Bild: Stellenwerttafel, Spalten ZT T H Z E: 5 7 9 0 0)_ Lösung: **57900**. Typische Fehler: 579 (null-platzhalter), 5790 (tafel-verrutscht).
+- `05` AFB II · _Kommunizieren_ · Bei den Zehnern liegen zu viele Plättchen. / 10 Zehner sind 1 Hunderter. / Welche Zahl ist gelegt? _(Bild: Stellenwerttafel mit Plättchen, Spalten H Z E: 2 15 7)_ Lösung: **357**. Typische Fehler: 2157 (stellenwert), 257 (stellenwert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida soll die Zahl neuntausendzwei schreiben. / Ida schreibt 902. / Stimmt das?
+  - ☐ Falsch. / Richtig ist 90002.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Richtig ist 9002.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Stelle, die nicht genannt ist, bekommt eine 0. *Lösungsschritt:* Bei HT steht 6, bei ZT steht 0.
+
+- `01` AFB I · _Kommunizieren_ · Eine Zahl besteht aus 6 Hunderttausendern, 8 Tausendern und 3 Zehnern. Trage sie in die Stellenwerttafel ein. 
+
+  | HT | ZT | T | H | Z | E |
+  |---|---|---|---|---|---|
+  | **6** | **0** | **8** | **0** | **3** | **0** |
+
+- `02` AFB II · _Kommunizieren_ · Wie viele Hunderter sind 98 200 insgesamt? Lösung: **982**. Typische Fehler: 2 (stellenwert).
+- `03` AFB II · _Kommunizieren_ · In der Zahl 13 821 wird die Ziffer an der Tausenderstelle um 2 erhöht. Wie heißt die neue Zahl? Lösung: **15821**. Typische Fehler: 13823 (stellenwert), 33821 (stellenwert), 14021 (stellenwert).
+- `04` AFB I · _Kommunizieren_ · Schreibe als eine Zahl: 9 · 10 000 + 5 · 100 + 4 Lösung: **90504**. Typische Fehler: 954 (null-platzhalter), 9504 (tafel-verrutscht), 95004 (tafel-verrutscht).
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Wie viele Zehner braucht man, um eine Million zu legen? Lösung: **100000**. Typische Fehler: 10000 (stellenwert), 1000000 (stellenwert).
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · In der Zahl 1795 werden die Ziffern an der Hunderterstelle und an der Zehnerstelle vertauscht. Um wie viel wird die Zahl größer? Lösung: **180**. Typische Fehler: 2 (stellenwert), 200 (stellenwert), 20 (stellenwert).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* In jedes Feld passt nur eine Ziffer. 10 Hunderter werden zu einem Tausender gebündelt.
+
+- `01` AFB I · _Kommunizieren_ · Eine Zahl besteht aus 41 Tausendern, 15 Hundertern und 6 Einern. Trage sie in die Stellenwerttafel ein. 
+
+  | ZT | T | H | Z | E |
+  |---|---|---|---|---|
+  | **4** | **2** | **5** | **0** | **6** |
+
+- `02` AFB II · _Kommunizieren_ · Die Zahl 400 000 besteht insgesamt aus ▢ Tausendern. Man kann auch sagen: Sie besteht aus ▢ Zehnern. Lösung: a = **400**, b = **40000**
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Wie heißt die größte fünfstellige Zahl, an deren Zehnerstelle eine 0 steht? Lösung: **99909**. Typische Fehler: 99999 (null-platzhalter), 99099 (tafel-verrutscht), 99990 (tafel-verrutscht).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Römer hatten kein Zeichen für die Null. Warum braucht unser Zehnersystem die Ziffer 0?
+  - ☐ Die 0 macht jede Zahl zehnmal so groß, egal, wo sie steht.
+  - ☑ Die 0 hält eine Stelle frei. Ohne sie könnte man 305 und 35 nicht unterscheiden.
+  - ☐ Die 0 braucht man nur am Ende einer Zahl, in der Mitte kann man sie weglassen.
+  - ☐ Die 0 braucht man eigentlich nicht, sie hat ja keinen Wert.
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Eine Million sind ▢ Hunderter oder ▢ Hunderttausender. Lösung: a = **10000**, b = **10**
+- `06` AFB III · _Kommunizieren_ · Wie viele dreistellige Zahlen haben an der Einerstelle eine 0? Lösung: **90**. Typische Fehler: 9 (stellenwert), 100 (null-platzhalter).
+
+## 5.2.2-B1: Ich kann große Zahlen lesen und in Ziffern schreiben.
+
+Grundlage, die F übt: Zahlen bis zur Million in der Stellenwerttafel lesen: erst die Tausender, dann der Rest
+
+Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies die Zahl in Dreierblöcken: erst die Millionen, dann die Tausender, dann die Einer. *Beispiel:* 2 bei den Millionen, 405 bei den Tausendern, 300 bei den Einern: 2 405 300. *Lösungsschritt:* Bei den Millionen steht 9.
+
+- `01` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Welche Zahl steht dort? _(Bild: Stellenwerttafel, Spalten M HT ZT T H Z E: 9 7 9 8 1 4 2)_ Lösung: **9798142**. Typische Fehler: 9798 (dreierblock-vergessen).
+- `02` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Wie heißt die Zahl? _(Bild: Stellenwerttafel, Spalten M HT ZT T H Z E: 8 0 7 0 0 0 0)_
+  - ☐ acht Millionen siebzig
+  - ☐ achttausendsiebzig
+  - ☑ acht Millionen siebzigtausend
+- `03` AFB I · _Kommunizieren_ · Trage die Zahl 8 307 000 in die Stellenwerttafel ein. 
+
+  | M | HT | ZT | T | H | Z | E |
+  |---|---|---|---|---|---|---|
+  | **8** | **3** | **0** | **7** | **0** | **0** | **0** |
+
+- `04` AFB I · _Kommunizieren_ · In der Stellenwerttafel steht zehn Millionen. / Wie viele Nullen hat die Zahl? _(Bild: Stellenwerttafel, Spalten ZM M HT ZT T H Z E: 1 0 0 0 0 0 0 0)_ Lösung: **7**. Typische Fehler: 3 (million-milliarde), 8 (dreierblock-vergessen), 6 (dreierblock-vergessen).
+- `05` AFB II · _Kommunizieren_ · Trage die Zahl in die Stellenwerttafel ein. / Die Zahl heißt: acht Millionen achtundsechzigtausend 
+
+  | M | HT | ZT | T | H | Z | E |
+  |---|---|---|---|---|---|---|
+  | **8** | **0** | **6** | **8** | **0** | **0** | **0** |
+
+- `06` AFB I · _Kommunizieren_ · Schau auf die Zahl 30 920 000. / Welche Ziffer steht in der Spalte M? _(Bild: Stellenwerttafel, Spalten ZM M HT ZT T H Z E: 3 0 9 2 0 0 0 0)_ Lösung: **0**. Typische Fehler: 3 (tafel-verrutscht), 9 (tafel-verrutscht).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden. *Beispiel:* 4 050 000 000: vier Milliarden fünfzig Millionen. *Lösungsschritt:* Die Zahl hat 4 Blöcke. Ganz links steht 4.
+
+- `01` AFB I · _Kommunizieren_ · Wie liest man die Zahl 4 090 000 000? _(Bild: Stellenwerttafel, Spalten Md HM ZM M HT ZT T H Z E: 4 0 9 0 0 0 0 0 0 0)_
+  - ☑ vier Milliarden neunzig Millionen
+  - ☐ vier Millionen neunzigtausend
+  - ☐ vier Milliarden neunzigtausend
+- `02` AFB I · _Kommunizieren_ · Trage die Zahl 9 015 402 000 in die Stellenwerttafel ein. 
+
+  | Md | HM | ZM | M | HT | ZT | T | H | Z | E |
+  |---|---|---|---|---|---|---|---|---|---|
+  | **9** | **0** | **1** | **5** | **4** | **0** | **2** | **0** | **0** | **0** |
+
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Schreibe die Zahl mit Ziffern. / 406 Mio. Lösung: **406000000**. Typische Fehler: 406000 (million-milliarde), 406000000000 (million-milliarde), 40600000 (dreierblock-vergessen).
+- `04` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Welche Zahl steht dort? _(Bild: Stellenwerttafel, Spalten HM ZM M HT ZT T H Z E: 5 0 4 0 0 0 2 0 0)_ Lösung: **504000200**. Typische Fehler: 542 (null-platzhalter), 504000 (dreierblock-vergessen).
+- `05` AFB II · _Kommunizieren_ · Welche Zahl gehört zu welchem Zahlwort? Lösung: 8 600 000 → acht Millionen sechshunderttausend, 8 060 000 → acht Millionen sechzigtausend, 8 006 000 → acht Millionen sechstausend
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara soll diese Zahl schreiben: neun Millionen viertausend / Sara schreibt 9 400 000. / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Richtig ist 9 004 000.
+  - ☐ Falsch. / Richtig ist 9 000 004.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe für jeden Dreierblock drei Ziffern auf: Milliarden, Millionen, Tausender, Einer. *Lösungsschritt:* Der Block der Millionen heißt 205.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe mit Ziffern: sechs Milliarden zweihundertfünf Millionen Lösung: **6205000000**. Typische Fehler: 625 (null-platzhalter), 6205000 (dreierblock-vergessen).
+- `02` AFB II · _Kommunizieren_ · Wie liest man die Zahl 9 015 000 000 000?
+  - ☐ neun Billionen fünfzehn Millionen
+  - ☐ neunhundert Milliarden fünfzehn Millionen
+  - ☐ neun Milliarden fünfzehn Millionen
+  - ☑ neun Billionen fünfzehn Milliarden
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Wie viele Nullen hat die Zahl 20 Billionen, wenn man sie mit Ziffern schreibt? Lösung: **13**. Typische Fehler: 12 (null-platzhalter), 16 (million-milliarde), 10 (million-milliarde).
+- `04` AFB I · _Kommunizieren_ · Trage die Zahl 205 046 500 000 in die Stellenwerttafel ein. 
+
+  | HMd | ZMd | Md | HM | ZM | M | HT | ZT | T | H | Z | E |
+  |---|---|---|---|---|---|---|---|---|---|---|---|
+  | **2** | **0** | **5** | **0** | **4** | **6** | **5** | **0** | **0** | **0** | **0** | **0** |
+
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · 6 Billionen sind genauso viel wie ▢ Milliarden. Lösung: a = **6000**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul sagt: „Eine Milliarde ist tausendmal so viel wie eine Million.“ Mara sagt: „Eine Milliarde ist eine Million mal tausend.“ Wer hat recht?
+  - ☐ Nur Paul hat recht.
+  - ☑ Beide haben recht: 1000 · 1 000 000 und 1 000 000 · 1000 sind dasselbe.
+  - ☐ Keiner hat recht: Eine Milliarde ist eine Million mal eine Million.
+  - ☐ Nur Mara hat recht.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe für jeden der fünf Dreierblöcke drei Ziffern auf, auch wenn der Block im Zahlwort nicht vorkommt.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe mit Ziffern: neun Billionen dreißig Milliarden sechzig Millionen Lösung: **9030060000000**. Typische Fehler: 9030060000 (dreierblock-vergessen), 936 (null-platzhalter).
+- `02` AFB II · _Kommunizieren_ · Ordne jeder Abkürzung die Zahl zu. Lösung: 70 Mio. → 70 000 000, 7 Mrd. → 7 000 000 000, 700 Mio. → 700 000 000, 70 Mrd. → 70 000 000 000
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Wie viele Stellen hat die Zahl 12 Billionen, wenn man sie mit Ziffern schreibt? Lösung: **14**. Typische Fehler: 13 (null-platzhalter), 17 (million-milliarde), 11 (million-milliarde).
+- `04` AFB III · _Kommunizieren (+ Modellieren)_ · Wie oft passt hunderttausend in eine Billion? Lösung: **10000000**. Typische Fehler: 10000 (million-milliarde), 10000000000 (million-milliarde), 1000 (million-milliarde).
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Schreibe mit Ziffern. Eine Viertelmillion ist ▢, eine Viertelmilliarde ist ▢. Lösung: a = **250000**, b = **250000000**
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · Ein Herz schlägt an einem Tag rund 100 000 Mal. Nach wie vielen Tagen hat es eine Milliarde Mal geschlagen? Lösung: **10000 Tage**. Typische Fehler: 1000 (null-platzhalter), 100000 (null-platzhalter), 10 (million-milliarde).
+
+## 5.2.2-B2: Ich kann große Zahlen vergleichen, ordnen und am Zahlenstrahl einordnen.
+
+Grundlage, die F übt: Zwei große Zahlen in der Stellenwerttafel vergleichen: Welche hat mehr Stellen?
+
+Baut auf: 5.2.1-N2 (Ich kann Zahlen vergleichen und ordnen.), 5.2.2-B1 (Ich kann große Zahlen lesen und in Ziffern schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Zahlen haben gleich viele Stellen. Vergleiche von links Ziffer für Ziffer. *Beispiel:* 2 450 000 < 2 540 000: Die Millionen sind gleich. Danach ist 4 kleiner als 5. *Lösungsschritt:* Die Millionen sind gleich. Vergleiche die nächste Ziffer: 6 und 9.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welches Zeichen passt? / 8 690 000 ▢ 8 960 000 _(Bild: Stellenwerttafel, Spalten M HT ZT T H Z E: 8 6 9 0 0 0 0 / 8 9 6 0 0 0 0)_
+  - ☐ =
+  - ☐ >
+  - ☑ <
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · In der Stellenwerttafel stehen 3 Zahlen. / Welche Zahl ist am größten? _(Bild: Stellenwerttafel, Spalten ZM M HT ZT T H Z E: · 1 5 0 0 0 0 0 / · · 9 6 0 0 0 0 / 3 7 0 0 0 0 0 0)_
+  - ☑ 37 000 000
+  - ☐ 1 500 000
+  - ☐ 960 000
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. _(Bild: Zahlenstrahl 1000000 bis 2000000, Teilstriche alle 100000, Ausschnitt mit Bruchzeichen, Punkte bei 1600000, 1400000, 1300000)_ _(Ordnen; die Karten liegen so da: 1 400 000, 1 300 000, 1 600 000)_ Lösung: **1 300 000, 1 400 000, 1 600 000**
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · In der Stellenwerttafel steht 2 099 999. / Wie heißt der Nachfolger? _(Bild: Stellenwerttafel, Spalten M HT ZT T H Z E: 2 0 9 9 9 9 9)_ Lösung: **2100000**. Typische Fehler: 2099998 (nachbar-verwechselt), 2100009 (stellenwert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. / Achte auf die Zahl der Stellen. _(Bild: Stellenwerttafel, Spalten ZM M HT ZT T H Z E: · · · 8 9 0 0 0 / · 2 2 0 0 0 0 0 / · · 4 4 0 0 0 0 / 1 8 0 0 0 0 0 0)_ _(Ordnen; die Karten liegen so da: 89 000, 2 200 000, 440 000, 18 000 000)_ Lösung: **89 000, 440 000, 2 200 000, 18 000 000**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Hier ist jeder Schritt eine Million groß. / Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0 bis 10000000, Teilstriche alle 1000000; Zahl eintragen)_ Lösung: **2000000**. Typische Fehler: 2 (strahl-einerschritte), 200000 (dreierblock-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer. *Beispiel:* 980 000 000 < 1 200 000 000: Die erste Zahl hat 9 Stellen, die zweite 10. *Lösungsschritt:* 2 800 000 000 hat 10 Stellen. 860 000 000 hat 9 Stellen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 2 800 000 000 ▢ 860 000 000
+  - ☐ <
+  - ☐ =
+  - ☑ >
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: fünfzig Millionen, fünf Millionen, fünfhunderttausend, fünf Milliarden)_ Lösung: **fünfhunderttausend, fünf Millionen, fünfzig Millionen, fünf Milliarden**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0 bis 100000000, Teilstriche alle 10000000; Zahl eintragen)_ Lösung: **80000000**. Typische Fehler: 8 (strahl-einerschritte), 8000000 (dreierblock-vergessen), 53000000 (strahl-einerschritte).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · In der Stellenwerttafel stehen 3 Zahlen. / Welche Zahl ist am größten? _(Bild: Stellenwerttafel, Spalten Md HM ZM M HT ZT T H Z E: · · 6 4 0 0 0 0 0 0 / · 7 1 0 0 0 0 0 0 0 / 1 3 0 0 0 0 0 0 0 0)_
+  - ☐ 64 000 000
+  - ☐ 710 000 000
+  - ☑ 1 300 000 000
+- `05` AFB II · _Modellieren_ · Wie heißt der Vorgänger von 100 000 000? Lösung: **99999999**. Typische Fehler: 100000001 (nachbar-verwechselt), 99999990 (stellenwert), 99000000 (stellenwert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „500 000 000 ist größer als 1 000 000 000.“ / „Denn 5 ist größer als 1.“ / Stimmt das? _(Bild: Stellenwerttafel, Spalten Md HM ZM M HT ZT T H Z E: · 5 0 0 0 0 0 0 0 0 / 1 0 0 0 0 0 0 0 0 0)_
+  - ☐ Stimmt.
+  - ☑ Falsch. / 1 000 000 000 hat mehr Stellen und ist größer.
+  - ☐ Falsch. / Die beiden Zahlen sind gleich groß.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Stellen oder die Dreierblöcke jeder Zahl. *Lösungsschritt:* Die kleinste Zahl ist 3 100 000.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 569 000 000, 3 400 000 000, 3 100 000, 62 000 000, 31 000 000 000)_ Lösung: **3 100 000, 62 000 000, 569 000 000, 3 400 000 000, 31 000 000 000**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere die Zahl 800 000 000 am Zahlenstrahl. _(Zahlenstrahl 0 bis 1000000000, Teilstriche alle 50000000; antippen)_ Lösung: **800000000**. Typische Fehler: 750000000 (strahl-einerschritte), 850000000 (strahl-einerschritte).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt am nächsten an einer Milliarde?
+  - ☐ 1 080 000 000
+  - ☐ 1 009 000 000
+  - ☑ 997 000 000
+  - ☐ 600 000 000
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 5 060 000 000 000 ▢ 506 000 000 000
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Schritt von Teilstrich zu Teilstrich? _(Bild: Zahlenstrahl 0 bis 300000000, Teilstriche alle 25000000)_ Lösung: **25000000**. Typische Fehler: 100000000 (strahl-einerschritte), 25000 (million-milliarde), 1000000 (strahl-einerschritte).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine natürliche Zahl hat zehn Stellen, eine andere hat neun Stellen. Was weißt du sicher?
+  - ☐ Die Zahl mit zehn Stellen ist genau zehnmal so groß.
+  - ☐ Das kommt auf die erste Ziffer an: Beginnt die neunstellige Zahl mit 9, kann sie größer sein.
+  - ☐ Ohne die Zahlen zu kennen, weiß man nichts.
+  - ☑ Die Zahl mit zehn Stellen ist größer. Sie ist mindestens 1 000 000 000, die andere höchstens 999 999 999.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte zuerst auf das größte Zahlwort: Billion vor Milliarde vor Million.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. Beginne mit der größten Zahl. _(Ordnen; die Karten liegen so da: neunhundert Milliarden, neunzig Milliarden drei Millionen, neunhundert Millionen, drei Billionen, achtzig Millionen fünfhunderttausend)_ Lösung: **drei Billionen, neunhundert Milliarden, neunzig Milliarden drei Millionen, neunhundert Millionen, achtzig Millionen fünfhunderttausend**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 4000000000 bis 5000000000, Teilstriche alle 25000000; Zahl eintragen)_ Lösung: **4300000000**. Typische Fehler: 4250000002 (strahl-einerschritte), 4252000000 (strahl-einerschritte).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Kette ist richtig?
+  - ☐ 704 000 000 < 38 000 000 000 < 7 054 000 000
+  - ☐ 704 000 000 > 7 054 000 000 > 38 000 000 000
+  - ☑ 704 000 000 < 7 054 000 000 < 38 000 000 000
+  - ☐ 38 000 000 000 < 7 054 000 000 < 704 000 000
+  - ☐ 7 054 000 000 < 704 000 000 < 38 000 000 000
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Die kleinste Zahl mit sieben Stellen ist ▢. Ihr Vorgänger ist ▢. Lösung: a = **1000000**, b = **999999**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt am nächsten an einer halben Milliarde?
+  - ☐ 420 000 000
+  - ☐ 507 000 000
+  - ☐ 800 000 000
+  - ☐ 497 000 000
+  - ☑ 499 100 000
+- `06` AFB III · _Modellieren_ · Eine Million Sekunden sind rund 12 Tage. Wie viele Tage sind dann eine Milliarde Sekunden? Lösung: **12000 Tage**. Typische Fehler: 1200 (million-milliarde), 12000000 (million-milliarde), 120 (million-milliarde).
+
+## 5.2.3-R1: Ich kann Zahlen auf eine vorgegebene Stelle runden.
+
+Grundlage, die F übt: Die Nachbarzehner einer Zahl am Zahlenstrahl finden: Welcher liegt näher?
+
+Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die beiden Nachbarzehner. Welcher liegt näher? *Beispiel:* 47 liegt näher an 50 als an 40. Also: 47 ≈ 50. *Lösungsschritt:* Die Nachbarzehner sind 90 und 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 94 ist am Zahlenstrahl markiert. / Runde 94 auf Zehner. _(Bild: Zahlenstrahl 90 bis 100, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 94)_ Lösung: **90**. Typische Fehler: 100 (falsch-gerundet).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 64 auf Zehner. / Tippe die gerundete Zahl am Zahlenstrahl an. _(Zahlenstrahl 60 bis 70, Teilstriche alle 1; antippen)_ Lösung: **60**. Typische Fehler: 70 (falsch-gerundet).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 880 ist am Zahlenstrahl markiert. / Runde 880 auf Hunderter. _(Bild: Zahlenstrahl 800 bis 900, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 880)_ Lösung: **900**. Typische Fehler: 800 (falsch-gerundet), 880 (runden-falsche-stelle), 1000 (runden-falsche-stelle), 980 (runden-ziffern-stehen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 85 liegt genau in der Mitte. / Runde 85 auf Zehner. _(Bild: Zahlenstrahl 80 bis 90, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 85)_ Lösung: **90**. Typische Fehler: 80 (runden-fuenf-ab), 100 (runden-falsche-stelle), 95 (runden-ziffern-stehen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Runde die Zahl 318 zweimal. / Auf Zehner: ▢ / Auf Hunderter: ▢ _(Bild: Zahlenstrahl 300 bis 400, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 318)_ Lösung: a = **320**, b = **300**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 94 wird auf Zehner gerundet. / Was passiert? _(Bild: Zahlenstrahl 90 bis 100, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 94)_
+  - ☐ Die Zahl bleibt 94.
+  - ☐ Es wird aufgerundet auf 100.
+  - ☑ Es wird abgerundet auf 90.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Rundungsstelle sind die Hunderter. Schau auf die Ziffer rechts daneben. *Beispiel:* 3482 auf Hunderter: Rechts neben der 4 steht eine 8. Aufrunden: 3500. *Lösungsschritt:* Rechts neben den Hundertern steht 4.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 8047 auf Hunderter. Lösung: **8000**. Typische Fehler: 8100 (falsch-gerundet), 8050 (runden-falsche-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 54 386 ist am Zahlenstrahl markiert. / Runde 54 386 auf Tausender. _(Bild: Zahlenstrahl 54000 bis 55000, Teilstriche alle 100, Ausschnitt mit Bruchzeichen, Punkte bei 54386)_ Lösung: **54000**. Typische Fehler: 55000 (falsch-gerundet), 54400 (runden-falsche-stelle), 50000 (runden-falsche-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Runde die Zahl 1828 dreimal. / Jedes Mal ist eine andere Stelle gefragt. 
+
+  | Zahl | auf Zehner | auf Hunderter | auf Tausender |
+  |---|---|---|---|
+  | 1828 | **1830** | **1800** | **2000** |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 5650 liegt genau in der Mitte. / Runde 5650 auf Hunderter. _(Bild: Zahlenstrahl 5600 bis 5700, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 5650)_ Lösung: **5700**. Typische Fehler: 5600 (runden-fuenf-ab), 5650 (runden-falsche-stelle), 6000 (runden-falsche-stelle), 5750 (runden-ziffern-stehen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl wird auf Hunderter gerundet. / Das Ergebnis ist 600. / Welche Zahl kann es gewesen sein?
+  - ☑ 584
+  - ☐ 692
+  - ☐ 549
+- `06` AFB III · _Argumentieren_ · Emre rundet 6348 auf Hunderter. / Emre rundet zuerst auf Zehner: 6350. / Dann rundet Emre weiter auf Hunderter: 6400. / Stimmt das Ergebnis? _(Bild: Zahlenstrahl 6300 bis 6400, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 6348)_
+  - ☐ Falsch. / Richtig ist 6000.
+  - ☑ Falsch. / Man rundet in einem Schritt. / Richtig ist 6300.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Rundungsstelle und schau nur auf die Ziffer rechts daneben. *Lösungsschritt:* Rechts neben den Zehntausendern steht 4.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 614 498 auf Zehntausender. Lösung: **610000**. Typische Fehler: 620000 (falsch-gerundet), 614000 (runden-falsche-stelle), 600000 (runden-falsche-stelle).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 599 882 auf Tausender. Lösung: **600000**. Typische Fehler: 599000 (falsch-gerundet), 590000 (runden-uebertrag), 591000 (runden-uebertrag).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Runde die Zahl 6 437 658 auf drei verschiedene Stellen. 
+
+  | Zahl | auf Tausender | auf Hunderttausender | auf Millionen |
+  |---|---|---|---|
+  | 6 437 658 | **6438000** | **6400000** | **6000000** |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 27 864 075 auf Millionen. Lösung: **28000000**. Typische Fehler: 27000000 (falsch-gerundet), 27900000 (runden-falsche-stelle), 30000000 (runden-falsche-stelle), 28864075 (runden-ziffern-stehen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl wurde auf Zehner gerundet. Das Ergebnis ist 170. Die kleinste mögliche Zahl ist ▢, die größte mögliche Zahl ist ▢. Lösung: a = **165**, b = **174**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Wie viele natürliche Zahlen ergeben auf Zehner gerundet die Zahl 710? Lösung: **10**. Typische Fehler: 9 (begriffe-verwechselt), 5 (falsch-gerundet), 11 (begriffe-verwechselt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Übertrag kann über mehrere Stellen laufen. Überlege, zwischen welchen beiden Nachbarn die Zahl liegt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 599 990 auf Hunderter. Lösung: **600000**. Typische Fehler: 599900 (falsch-gerundet), 599000 (runden-uebertrag), 590000 (runden-uebertrag).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Aus der Zahl 146 894 wurde durch Runden die Zahl 146 890. Auf welche Stelle wurde gerundet?
+  - ☐ Tausender
+  - ☑ Zehner
+  - ☐ Hunderter
+  - ☐ Hunderttausender
+  - ☐ Zehntausender
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl wurde auf Hunderttausender gerundet. Das Ergebnis ist 1 400 000. Die kleinste mögliche Zahl ist ▢, die größte mögliche Zahl ist ▢. Lösung: a = **1350000**, b = **1449999**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Emre rundet 41 446 in Schritten: erst auf Zehner zu 41 450, dann auf Hunderter zu 41 500, dann auf Tausender zu ▢. Finn rundet 41 446 in einem Schritt auf Tausender und erhält ▢. Nur das Ergebnis von Finn ist richtig. Lösung: a = **42000**, b = **41000**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele natürliche Zahlen ergeben auf Hunderter gerundet die Zahl 3400? Lösung: **100**. Typische Fehler: 99 (begriffe-verwechselt), 50 (falsch-gerundet), 101 (begriffe-verwechselt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Zahl ergibt auf Hunderter gerundet 9300. Wie weit kann sie höchstens von 9300 entfernt sein? Lösung: **50**. Typische Fehler: 49 (runden-fuenf-ab), 100 (falsch-gerundet), 99 (falsch-gerundet).
+
+## 5.2.3-R2: Ich kann sinnvoll runden und gerundete Zahlen deuten.
+
+Grundlage, die F übt: Entscheiden, ob eine Zahl näher am unteren oder am oberen Nachbarzehner liegt
+
+Baut auf: 5.2.3-R1 (Ich kann Zahlen auf eine vorgegebene Stelle runden.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die beiden Hunderter links und rechts. Welcher liegt näher? *Beispiel:* 478 liegt näher an 500 als an 400. *Lösungsschritt:* Die Zahl liegt zwischen 400 und 500.
+
+- `01` AFB I · _Argumentieren_ · Im Stadion sind 448 Menschen. / Runde die Zahl auf Hunderter. _(Bild: Zahlenstrahl 400 bis 500, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 448)_ Lösung: **400 Menschen**. Typische Fehler: 500 (falsch-gerundet), 450 (runden-falsche-stelle).
+- `02` AFB I · _Argumentieren_ · In der Zeitung steht: „Rund 300 Gäste kamen zum Fest.“ / Die Zahl ist auf Hunderter gerundet. / Welche Zahl kann genau stimmen? _(Bild: Zahlenstrahl 200 bis 400, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 300)_
+  - ☑ 305
+  - ☐ 236
+  - ☐ 371
+- `03` AFB I · _Argumentieren_ · Der Weg zur Burg ist 78 km lang. / Runde die Zahl auf Zehner. _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 78)_ Lösung: **80 km**. Typische Fehler: 70 (falsch-gerundet), 100 (runden-falsche-stelle), 88 (runden-ziffern-stehen).
+- `04` AFB I · _Argumentieren_ · Tom sagt: „Ich habe rund 70 Karten.“ / Die Zahl ist auf Zehner gerundet. / Wie viele Karten hat Tom mindestens? _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 70)_ Lösung: **65 Karten**. Typische Fehler: 70 (falsch-gerundet), 66 (runden-fuenf-ab), 60 (falsch-gerundet).
+- `05` AFB II · _Argumentieren_ · Im Stadion sind genau 1637 Menschen. / Auf einem Plakat soll eine runde Zahl stehen. / Welche Angabe passt am besten? _(Bild: Zahlenstrahl 1600 bis 1700, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 1637)_
+  - ☐ rund 1700 Menschen
+  - ☑ rund 1600 Menschen
+  - ☐ rund 4000 Menschen
+- `06` AFB I · _Argumentieren_ · Ein Buch hat 943 Seiten. / Wie viele Seiten sind das ungefähr? / Runde auf Hunderter. _(Bild: Zahlenstrahl 900 bis 1000, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 943)_ Lösung: **900 Seiten**. Typische Fehler: 1000 (falsch-gerundet), 940 (runden-falsche-stelle).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Rundungsstelle sind die Tausender. Schau auf die Hunderter. *Beispiel:* 4720 Gäste sind rund 5000 Gäste. *Lösungsschritt:* Bei den Hundertern steht 2.
+
+- `01` AFB I · _Argumentieren_ · Im Stadion sind 2226 Menschen. / Runde die Zahl auf Tausender. Lösung: **2000 Menschen**. Typische Fehler: 3000 (falsch-gerundet), 2200 (runden-falsche-stelle).
+- `02` AFB I · _Argumentieren_ · Welche Zahl ist genau gezählt?
+  - ☑ In der Klasse 5c sind 23 Kinder.
+  - ☐ Im Stadion sind rund 40 000 Menschen.
+  - ☐ Die Stadt hat etwa 400 000 Einwohner.
+- `03` AFB II · _Argumentieren_ · Eine Schule meldet: „Wir haben rund 900 Kinder.“ / Die Zahl ist auf Hunderter gerundet. / Welche Zahl kann genau stimmen? _(Bild: Zahlenstrahl 800 bis 1000, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 900)_
+  - ☑ 876
+  - ☐ 811
+  - ☐ 960
+- `04` AFB I · _Argumentieren_ · In einer Kiste sind rund 40 Münzen. / Die Zahl ist auf Zehner gerundet. / Es sind mindestens ▢. / Es sind höchstens ▢. _(Bild: Zahlenstrahl 30 bis 50, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 40)_ Lösung: a = **35**, b = **44**
+- `05` AFB II · _Argumentieren_ · Ein Dorf im Königreich hat genau 31 886 Einwohner. / Auf dem Schild am Tor soll eine runde Zahl stehen. / Was passt am besten?
+  - ☑ rund 32 000 Einwohner
+  - ☐ rund 31 000 Einwohner
+  - ☐ rund 100 000 Einwohner
+- `06` AFB III · _Argumentieren_ · In der Zeitung steht: „Rund 400 Besucher.“ / Die Zahl ist auf Hunderter gerundet. / Sara sagt: „Dann waren es mindestens 400.“ / Stimmt das? _(Bild: Zahlenstrahl 300 bis 500, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 400)_
+  - ☑ Falsch. / Es können auch nur 350 gewesen sein.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es waren genau 400.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Für die Tausender entscheidet die Ziffer der Hunderter. *Lösungsschritt:* Bei den Hundertern steht 3.
+
+- `01` AFB I · _Argumentieren_ · Ein Stadion hat 85 389 Plätze. Gib die Zahl auf Tausender gerundet an. Lösung: **85000 Plätze**. Typische Fehler: 86000 (falsch-gerundet), 85400 (runden-falsche-stelle), 90000 (runden-falsche-stelle).
+- `02` AFB II · _Argumentieren_ · Bei welcher Angabe ist Runden nicht sinnvoll?
+  - ☐ bei der Entfernung zwischen zwei Städten
+  - ☑ bei einer Postleitzahl
+  - ☐ bei der Zuschauerzahl eines Spiels
+  - ☐ bei der Einwohnerzahl einer Stadt
+- `03` AFB II · _Argumentieren_ · Ein Verein meldet rund 41 000 Zuschauer. Die Zahl ist auf Tausender gerundet. Es waren mindestens ▢ und höchstens ▢ Zuschauer. Lösung: a = **40500**, b = **41499**
+- `04` AFB I · _Argumentieren_ · In einem Bericht steht statt der genauen Zahl 5589 die Zahl 6000. Auf welche Stelle wurde gerundet?
+  - ☐ Zehntausender
+  - ☐ Zehner
+  - ☑ Tausender
+  - ☐ Hunderter
+- `05` AFB II · _Argumentieren_ · Der König lädt 3757 Gäste ein. In jedes Zelt passen 50 Gäste. Wie viele Zelte braucht er? Lösung: **76 Zelte**. Typische Fehler: 75 (falsch-gerundet), 77 (falsch-gerundet).
+- `06` AFB III · _Argumentieren_ · Zwei Zahlen ergeben auf Tausender gerundet beide 9000. Paul sagt: „Dann unterscheiden sich die beiden Zahlen höchstens um 500.“ Stimmt das?
+  - ☑ Falsch. Sie können fast 1000 auseinanderliegen, zum Beispiel 8500 und 9499.
+  - ☐ Falsch. Sie unterscheiden sich höchstens um 100.
+  - ☐ Stimmt.
+  - ☐ Falsch. Die beiden Zahlen müssen gleich sein.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es entscheidet allein die Ziffer der Hunderttausender.
+
+- `01` AFB I · _Argumentieren_ · Im Königreich leben 5 407 441 Menschen. Gib die Zahl auf Millionen gerundet an. Lösung: **5000000**. Typische Fehler: 6000000 (falsch-gerundet), 5400000 (runden-falsche-stelle), 10000000 (runden-falsche-stelle).
+- `02` AFB II · _Argumentieren_ · Zwei Dörfer haben rund 3000 und rund 9000 Einwohner. Beide Zahlen sind auf Tausender gerundet. Zusammen haben die Dörfer mindestens ▢ und höchstens ▢ Einwohner. Lösung: a = **11000**, b = **12998**
+- `03` AFB II · _Argumentieren_ · Zum Turnier reisen 1139 Fans mit Bussen an. In einen Bus passen 45 Fans. Wie viele Busse werden mindestens gebraucht? Lösung: **26 Busse**. Typische Fehler: 25 (falsch-gerundet).
+- `04` AFB III · _Argumentieren_ · Elif rundet eine Zahl auf Zehner und erhält 650. Jonas rundet dieselbe Zahl auf Hunderter. Welches Ergebnis kann Jonas erhalten?
+  - ☑ 600 oder 700: Bei 645 ergibt sich 600, bei 654 ergibt sich 700.
+  - ☐ Nur 600, denn die Zahl wurde schon einmal gerundet.
+  - ☐ Nur 700, denn bei 5 wird immer aufgerundet.
+  - ☐ Nur 650, denn die Zahl ist schon rund.
+- `05` AFB II · _Argumentieren_ · Im Königreich leben genau 1 277 511 Menschen. Im Bericht des Schreibers steht die Zahl 1 280 000. Mit welcher Genauigkeit hat er gerundet, also auf welche Stelle?
+  - ☑ Zehntausender
+  - ☐ Hunderter
+  - ☐ Millionen
+  - ☐ Hunderttausender
+  - ☐ Tausender
+- `06` AFB III · _Argumentieren_ · Elif behauptet: „Es ist egal, ob ich zwei Zahlen erst auf Zehner runde und dann addiere oder erst addiere und dann runde.“ Beurteile die Aussage.
+  - ☐ Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer.
+  - ☑ Falsch. Gegenbeispiel: 34 + 34 = 68, gerundet 70. Rundet man zuerst, erhält man 30 + 30 = 60.
+  - ☐ Stimmt, solange beide Zahlen abgerundet werden.
+  - ☐ Stimmt immer, denn Runden ändert eine Zahl nur wenig.
+
+## 5.2.4-S1: Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.
+
+Grundlage, die F übt: Ein Feld auszählen und mit der Zahl der Felder malnehmen
+
+Baut auf: 5.2.3-R1 (Ich kann Zahlen auf eine vorgegebene Stelle runden.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne: Anzahl im Feld mal Zahl der Felder. *Beispiel:* Im Feld sind 5. Das Raster hat 6 Felder. Dann sind es ungefähr 5 · 6 = 30. *Lösungsschritt:* Zähle zuerst die Felder. Rechne dann mal 8.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf das Bild. / Im gelben Feld sind 8 Punkte. _(Bild: Schätzbild mit 85 Symbolen (punkt) in 2 mal 5 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 9 9 7 8 8 / 8 9 9 9 9)_
+  - a) Wie viele Felder hat das Raster? **10 Felder**. Typische Fehler: 2 (schaetzen-nicht-hochgerechnet), 5 (schaetzen-nicht-hochgerechnet).
+  - b) Wie viele Punkte sind es ungefähr? **80 Punkte**. Typische Fehler: 8 (schaetzen-nicht-hochgerechnet), 18 (schaetzen-addiert).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Das Raster hat 10 Felder. / Im gelben Feld sind 8 Äpfel. / Wie viele Äpfel sind es ungefähr? _(Bild: Schätzbild mit 79 Symbolen (apfel) in 2 mal 5 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 9 7 9 8 8 / 7 7 8 8 8)_ Lösung: **80 Äpfel**. Typische Fehler: 8 (schaetzen-nicht-hochgerechnet), 18 (schaetzen-addiert).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Im gelben Feld sind 3 Punkte. / Das Raster hat 10 Felder. / Welche Rechnung passt zum Schätzen? _(Bild: Schätzbild mit 33 Symbolen (punkt) in 2 mal 5 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 2 4 4 3 3 / 3 4 2 4 4)_
+  - ☑ 3 · 10
+  - ☐ 10 − 3
+  - ☐ 3 + 10
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Raster hat 4 Felder. / Im gelben Feld sind 10 Sterne. / Wie viele Sterne sind es ungefähr? _(Bild: Schätzbild mit 37 Symbolen (stern) in 2 mal 2 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 10 9 / 9 9)_ Lösung: **40 Sterne**. Typische Fehler: 10 (schaetzen-nicht-hochgerechnet), 14 (schaetzen-addiert).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Emre zählt nur das gelbe Feld. / Emre sagt: „Es sind ungefähr 7 Sterne.“ / Was hat Emre vergessen? _(Bild: Schätzbild mit 62 Symbolen (stern) in 3 mal 3 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 6 6 8 / 6 7 8 / 7 7 7)_
+  - ☐ Emre muss noch die Zahl der Felder dazuzählen.
+  - ☑ Emre muss noch mal die Zahl der Felder rechnen.
+  - ☐ Nichts. / Die Antwort passt so.
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf das Bild. / Zähle die Felder. / Wie viele Äpfel sind es ungefähr? _(Bild: Schätzbild mit 37 Symbolen (apfel) in 2 mal 3 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 6 6 7 / 5 6 7)_ Lösung: **36 Äpfel**. Typische Fehler: 6 (schaetzen-nicht-hochgerechnet), 12 (schaetzen-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld genau. Rechne dann hoch: Anzahl im Feld mal Zahl der Felder. *Beispiel:* Im Feld sind 8. Das Raster hat 12 Felder. Schätzwert: 8 · 12 = 96. *Lösungsschritt:* Das Raster hat 3 Reihen mit je 6 Feldern.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schätze mit dem Raster. / Das gelbe Feld hilft dir. _(Bild: Schätzbild mit 113 Symbolen (stern) in 3 mal 6 Feldern, Raster sichtbar, ein Feld markiert; je Feld 5 6 7 6 8 8 / 5 5 8 8 6 7 / 4 6 5 6 5 8)_
+  - a) Wie viele Sterne zählst du im gelben Feld? **6 Sterne**.
+  - b) Wie viele Felder hat das Raster? **18 Felder**. Typische Fehler: 3 (schaetzen-nicht-hochgerechnet), 6 (schaetzen-nicht-hochgerechnet).
+  - c) Wie viele Sterne sind es ungefähr auf dem ganzen Bild? **108 Sterne**. Typische Fehler: 6 (schaetzen-nicht-hochgerechnet), 24 (schaetzen-addiert).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Zähle das gelbe Feld aus. / Rechne dann hoch. / Wie viele Punkte sind es ungefähr? _(Bild: Schätzbild mit 145 Symbolen (punkt) in 3 mal 6 Feldern, Raster sichtbar, ein Feld markiert; je Feld 6 8 8 10 10 8 / 7 7 10 8 8 7 / 9 6 8 8 9 8)_ Lösung: **144 Punkte**. Typische Fehler: 8 (schaetzen-nicht-hochgerechnet), 26 (schaetzen-addiert).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schätze mit dem Raster. / Gib die Schätzung als runde Zahl an. _(Bild: Schätzbild mit 68 Symbolen (schaf) in 2 mal 6 Feldern, Raster sichtbar, ein Feld markiert; je Feld 5 6 4 5 5 6 / 7 6 5 8 6 5)_
+  - a) Wie viele Schafe zählst du im gelben Feld? **6 Schafe**.
+  - b) Rechne hoch: Wie groß ist der Schätzwert? **72 Schafe**. Typische Fehler: 6 (schaetzen-nicht-hochgerechnet), 18 (schaetzen-addiert).
+  - c) Runde den Schätzwert auf Zehner. **70 Schafe**. Typische Fehler: 100 (runden-falsche-stelle).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Raster hat 20 Felder. / Zähle das gelbe Feld aus. / Wie viele Vögel sind es ungefähr? _(Bild: Schätzbild mit 103 Symbolen (vogel) in 4 mal 5 Feldern, Raster sichtbar, ein Feld markiert; je Feld 5 6 5 4 7 / 5 4 3 4 4 / 7 6 6 3 7 / 6 6 4 7 4)_ Lösung: **100 Vögel**. Typische Fehler: 5 (schaetzen-nicht-hochgerechnet), 25 (schaetzen-addiert).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Im gelben Feld sind 9 Vögel. / Finn rechnet 9 + 16. / Sara rechnet 9 · 16. / Wer rechnet richtig hoch? _(Bild: Schätzbild mit 141 Symbolen (vogel) in 4 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 10 8 7 8 / 11 9 10 7 / 7 9 8 9 / 10 10 8 10)_
+  - ☐ Finn. / Man zählt die Felder dazu.
+  - ☑ Sara. / In jedem der 16 Felder sind ungefähr 9.
+  - ☐ Beide. / Es kommt dasselbe heraus.
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Finn schätzt mit dem Raster: 128 Äpfel. / Dann zählt Finn alle einzeln nach: Es sind genau 123. / Finn sagt: „Dann war meine Schätzung falsch.“ / Stimmt das? _(Bild: Schätzbild mit 123 Symbolen (apfel) in 4 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 8 8 6 6 / 7 8 9 6 / 9 9 9 8 / 7 8 7 8)_
+  - ☑ Falsch. / Eine Schätzung muss nur nah an der genauen Zahl liegen.
+  - ☐ Falsch. / Beim Nachzählen macht man immer Fehler.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld aus, das typisch aussieht, und rechne hoch. *Lösungsschritt:* Schätzwert: Anzahl im Feld mal Zahl der Felder.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schätze: Wie viele Menschen sind auf dem Bild? Blende dazu ein Raster ein. _(Bild: Schätzbild mit 343 Symbolen (kind) in 4 mal 6 Feldern, Raster zum Einschalten; je Feld 13 15 16 14 14 14 / 17 17 11 14 14 16 / 15 14 12 15 11 17 / 17 12 11 16 17 11)_ _(Schätzen)_ Wahre Anzahl: **343** Menschen, richtig von 275 bis 411
+- `02` AFB II · _Modellieren (+ Kommunizieren)_ · Auf dem Bild sind sehr viele Schafe. Schätze ihre Anzahl mit einem Raster. _(Bild: Schätzbild mit 297 Symbolen (schaf) in 4 mal 8 Feldern, Raster zum Einschalten; je Feld 14 12 14 12 7 7 10 6 / 10 6 11 9 8 10 13 6 / 7 7 6 6 11 7 10 11 / 11 6 14 7 7 12 14 6)_ _(Schätzen)_ Wahre Anzahl: **297** Schafe, richtig von 238 bis 356
+- `03` AFB II · _Modellieren_ · Mara zählt in einem Feld 14 Ameisen. Das Raster hat 24 Felder. Der Schätzwert ist ▢. Auf Hunderter gerundet sind das ▢ Ameisen. Lösung: a = **336**, b = **300**
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Hier gibt es kein Raster. Schätze trotzdem: Wie viele Sterne sind es? _(Bild: Schätzbild mit 116 Symbolen (stern) in 3 mal 4 Feldern, Raster keines; je Feld 10 10 10 9 / 9 10 9 9 / 12 8 10 10)_ _(Schätzen)_ Wahre Anzahl: **116** Sterne, richtig von 93 bis 139
+- `05` AFB II · _Modellieren_ · Auf einem Parkplatz stehen in einer Reihe 21 Autos. Der Parkplatz hat 13 Reihen, die etwa gleich voll sind. Wie viele Autos stehen ungefähr auf dem Parkplatz? Lösung: **273 Autos**. Typische Fehler: 21 (schaetzen-nicht-hochgerechnet), 34 (schaetzen-addiert).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul zählt das gelbe Feld aus: 2 Menschen. Paul rechnet 2 · 12 = 24 und sagt: „Auf dem Bild sind ungefähr 24 Menschen.“ Warum ist diese Schätzung schlecht? _(Bild: Schätzbild mit 137 Symbolen (kind) in 3 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 2 7 14 19 / 5 11 12 19 / 3 11 14 20)_
+  - ☐ Paul hätte die beiden Zahlen addieren müssen.
+  - ☐ Das Raster hat zu viele Felder für eine Schätzung.
+  - ☐ Die Schätzung ist gut, denn gerechnet wurde richtig.
+  - ☑ Das Feld ist keine gute Stichprobe: In den meisten anderen Feldern sind viel mehr.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein einzelnes Feld reicht hier nicht. Zähle ein dichtes und ein dünnes Feld und rechne mit einem mittleren Wert.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Sterne sind ungleich verteilt. Schätze ihre Anzahl so gut wie möglich. _(Bild: Schätzbild mit 306 Symbolen (stern) in 4 mal 6 Feldern, Raster zum Einschalten; je Feld 5 9 12 15 17 23 / 6 8 12 14 17 20 / 3 9 12 15 17 20 / 2 8 12 14 16 20)_ _(Schätzen)_ Wahre Anzahl: **306** Sterne, richtig von 245 bis 367
+- `02` AFB II · _Modellieren_ · Auf einem Luftbild sind 4 Felder dicht besetzt mit je etwa 30 Zelten. Weitere 12 Felder sind dünn besetzt mit je etwa 10 Zelten. Wie viele Zelte stehen ungefähr auf dem Platz? Lösung: **240 Zelte**. Typische Fehler: 480 (schaetzen-nicht-hochgerechnet), 160 (schaetzen-nicht-hochgerechnet), 40 (schaetzen-addiert).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Zu diesem Bild gibt es kein Raster. Schätze die Anzahl der Punkte. _(Bild: Schätzbild mit 290 Symbolen (punkt) in 4 mal 6 Feldern, Raster keines; je Feld 15 13 9 10 11 11 / 13 15 10 11 12 13 / 11 13 15 14 13 14 / 12 9 13 9 15 9)_ _(Schätzen)_ Wahre Anzahl: **290** Punkte, richtig von 232 bis 348
+- `04` AFB III · _Modellieren (+ Kommunizieren)_ · Suche im Bild das vollste und das leerste Feld und zähle beide aus. Rechnet man mit dem vollsten Feld hoch, erhält man ▢ Vögel. Rechnet man mit dem leersten Feld hoch, erhält man ▢ Vögel. Die wahre Anzahl liegt dazwischen. _(Bild: Schätzbild mit 217 Symbolen (vogel) in 3 mal 4 Feldern, Raster sichtbar; je Feld 26 22 13 9 / 28 21 14 10 / 27 22 17 8)_ Lösung: a = **336**, b = **96**
+- `05` AFB II · _Modellieren_ · Bei einem Fest stehen die Menschen dicht gedrängt, etwa 4 auf jedem Quadratmeter. Der Platz ist 50 m lang und 25 m breit. Wie viele Menschen sind ungefähr auf dem Platz? Lösung: **5000 Menschen**. Typische Fehler: 1250 (schaetzen-nicht-hochgerechnet), 300 (schaetzen-addiert), 1254 (schaetzen-addiert).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul und Finn schätzen die Anzahl auf demselben Bild. Beide rechnen richtig hoch, aber mit verschiedenen Feldern. Paul erhält 240, Finn erhält 280. Kann beides eine brauchbare Schätzung sein?
+  - ☐ Ja, aber nur, wenn beide zufällig dasselbe Feld gezählt haben.
+  - ☐ Nein. Beim Schätzen mit einem Raster kommt immer dieselbe Zahl heraus.
+  - ☐ Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer verrechnet.
+  - ☑ Ja. Die Felder sind nie genau gleich voll, deshalb führt jedes Feld zu einem etwas anderen Schätzwert.
+
+## 5.2.4-S2: Ich kann Schätzungen beurteilen und gezählt, gerundet und geschätzt unterscheiden.
+
+Grundlage, die F übt: Unterscheiden, ob eine Anzahl genau gezählt oder nur ungefähr angegeben ist
+
+Baut auf: 5.2.4-S1 (Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Felder. Rechne mal die Anzahl im gelben Feld. *Beispiel:* Im Feld sind 5. Bei 6 Feldern sind es ungefähr 30. *Lösungsschritt:* Das Raster hat 6 Felder.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau auf das Bild. / Wie viele Schafe sind es ungefähr? _(Bild: Schätzbild mit 38 Symbolen (schaf) in 2 mal 3 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 7 7 7 / 6 5 6)_
+  - ☐ 10
+  - ☐ 110
+  - ☑ 40
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Finn zählt alle Sterne einzeln: 87. / Sara zählt nur ein Feld und rechnet: 90. / Wer hat geschätzt? _(Bild: Schätzbild mit 87 Symbolen (stern) in 2 mal 5 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 9 8 9 9 9 / 9 8 8 8 10)_
+  - ☐ beide
+  - ☐ Finn
+  - ☑ Sara
+- `03` AFB I · _Argumentieren (+ Kommunizieren)_ · Das Raster hat 9 Felder. / Welche Zahl passt am besten zur Anzahl der Schafe? _(Bild: Schätzbild mit 104 Symbolen (schaf) in 3 mal 3 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 10 12 14 / 12 10 12 / 13 11 10)_
+  - ☐ 25
+  - ☑ 100
+  - ☐ 310
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Paul schätzt mit dem Raster: 72 Schafe. / Nachgezählt sind es genau 71. / Um wie viel liegt die Schätzung daneben? _(Bild: Schätzbild mit 71 Symbolen (schaf) in 2 mal 4 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 8 9 9 9 / 10 9 8 9)_ Lösung: **1**. Typische Fehler: 143 (sub-addiert).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Finn schätzt: „Auf dem Bild sind ungefähr 8 Menschen.“ / Wie ist diese Schätzung? _(Bild: Schätzbild mit 67 Symbolen (kind) in 2 mal 4 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 8 8 8 9 / 8 9 9 8)_
+  - ☐ viel zu groß
+  - ☐ gut
+  - ☑ viel zu klein
+- `06` AFB I · _Argumentieren (+ Kommunizieren)_ · Unter einem Bild steht: „Ungefähr 60 Menschen.“ / Was bedeutet das? _(Bild: Schätzbild mit 59 Symbolen (kind) in 2 mal 5 Feldern, Raster sichtbar, ein Feld markiert und ausgezählt; je Feld 5 6 7 5 7 / 5 7 6 6 5)_
+  - ☐ Die Zahl ist falsch.
+  - ☐ Die Zahl ist genau gezählt.
+  - ☑ Die Zahl ist geschätzt.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Was kann man leicht einzeln zählen? Was nicht? *Beispiel:* Die Kinder im Bus kann man zählen. Die Blumen auf einer Wiese schätzt man. *Lösungsschritt:* Achte auf das Wort etwa.
+
+- `01` AFB I · _Argumentieren_ · Welche Zahl ist geschätzt?
+  - ☑ Auf der Wiese blühen etwa 500 Blumen.
+  - ☐ Eine Woche hat 7 Tage.
+  - ☐ Im Bus sitzen 31 Kinder.
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Schätze mit dem Raster. / Welcher Schätzwert passt am besten zur Anzahl der Äpfel? _(Bild: Schätzbild mit 145 Symbolen (apfel) in 3 mal 6 Feldern, Raster sichtbar, ein Feld markiert; je Feld 7 7 6 6 9 9 / 10 8 9 7 7 8 / 9 10 10 10 6 7)_
+  - ☐ 35
+  - ☑ 150
+  - ☐ 440
+- `03` AFB II · _Argumentieren_ · Was passt zusammen? Lösung: Im Glas sind wohl an die 650 Erbsen. → geschätzt, Am Tor steht statt 626 Einwohnern die Zahl 600. → gerundet, In der Klasse sind 28 Kinder. → genau gezählt
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Emre rechnet mit dem gelben Feld hoch. / Der Schätzwert ist 108. / Nachgezählt sind es genau 115 Menschen. / Wie groß ist der Unterschied? _(Bild: Schätzbild mit 115 Symbolen (kind) in 3 mal 6 Feldern, Raster sichtbar, ein Feld markiert; je Feld 6 8 4 4 7 4 / 7 7 7 7 7 6 / 7 8 7 5 8 6)_ Lösung: **7**. Typische Fehler: 223 (sub-addiert).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · 3 Kinder schätzen die Anzahl auf dem Bild. / Welcher Schätzwert liegt am nächsten an der genauen Zahl? _(Bild: Schätzbild mit 113 Symbolen (stern) in 3 mal 5 Feldern, Raster sichtbar, ein Feld markiert; je Feld 6 8 9 9 7 / 8 8 7 7 9 / 6 5 7 8 9)_
+  - ☑ 100
+  - ☐ 160
+  - ☐ 50
+- `06` AFB III · _Argumentieren_ · In der Zeitung steht: „Ungefähr 400 Gäste kamen zum Fest.“ / Sara sagt: „Das hat jemand einzeln gezählt.“ / Stimmt das?
+  - ☐ Falsch. / Es waren genau 401 Gäste.
+  - ☑ Falsch. / Das Wort ungefähr zeigt: Die Zahl ist geschätzt.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, was genau gezählt wurde und was nur berechnet wurde. *Lösungsschritt:* Gezählt wurde nur die Probefläche.
+
+- `01` AFB I · _Argumentieren (+ Modellieren)_ · Eine Försterin zählt auf einer kleinen Probefläche 19 Bäume. Sie rechnet auf den ganzen Wald hoch und nennt 7600 Bäume. Wie ist diese Zahl entstanden?
+  - ☐ Sie ist geraten, ganz ohne Rechnung.
+  - ☐ Sie ist genau gezählt.
+  - ☐ Sie ist gerundet: Die genaue Zahl war bekannt.
+  - ☑ Sie ist geschätzt: Von einer Stichprobe wurde auf das Ganze geschlossen.
+- `02` AFB II · _Argumentieren_ · Ali zählt in einem Feld 12 Vögel und rechnet mit 24 Feldern hoch. Auf einem Foto werden später genau 301 Vögel gezählt. Um wie viel weicht der Schätzwert von der genauen Zahl ab? Lösung: **13**. Typische Fehler: 288 (begriffe-verwechselt), 589 (sub-addiert).
+- `03` AFB II · _Argumentieren_ · Eine Schätzung gilt hier als gut, wenn sie höchstens ein Fünftel von der genauen Zahl abweicht. Die genaue Zahl ist 350. Der Schätzbereich reicht dann von ▢ bis ▢. Lösung: a = **280**, b = **420**
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Vier Kinder schätzen die Anzahl der Vögel auf dem Bild. Welcher Schätzwert liegt am nächsten an der genauen Zahl? _(Bild: Schätzbild mit 306 Symbolen (vogel) in 4 mal 6 Feldern, Raster zum Einschalten; je Feld 16 15 10 14 12 11 / 15 16 11 11 10 10 / 12 10 14 14 13 15 / 15 12 12 15 13 10)_
+  - ☐ 150
+  - ☐ 20
+  - ☑ 310
+  - ☐ 520
+- `05` AFB II · _Argumentieren_ · Paul zählt drei Felder als Stichprobe aus: 12, 15 und 18 Ameisen. Paul rechnet mit dem mittleren Wert und 20 Feldern hoch. Wie groß ist der Schätzwert? Lösung: **300**. Typische Fehler: 45 (schaetzen-nicht-hochgerechnet), 900 (begriffe-verwechselt), 240 (begriffe-verwechselt).
+- `06` AFB III · _Argumentieren_ · Nach einem Stadtfest schreibt eine Zeitung „etwa 3000 Besucher“, eine andere „etwa 3200 Besucher“. Jemand sagt: „Eine der beiden Zeitungen lügt.“ Stimmt das?
+  - ☐ Falsch. Beide Zeitungen haben die Besucher einzeln gezählt.
+  - ☐ Stimmt. Nur eine Zahl kann die richtige sein.
+  - ☑ Falsch. Beide Zahlen sind Schätzungen. Sie liegen nah beieinander und können beide vernünftig sein.
+  - ☐ Stimmt. Die größere Zahl ist bestimmt übertrieben.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterscheide: Beim Runden kennt man die genaue Zahl, beim Schätzen nicht.
+
+- `01` AFB I · _Argumentieren_ · Der Turm des Königs ist rund 300 Stufen hoch. Wie ist eine solche Angabe am ehesten entstanden?
+  - ☑ Die Größe wurde genau bestimmt und danach gerundet.
+  - ☐ Sie ist genau, das Wort „rund“ hat keine Bedeutung.
+  - ☐ Sie wurde aus einer Stichprobe hochgerechnet.
+  - ☐ Sie wurde mit einem Raster geschätzt.
+- `02` AFB II · _Argumentieren_ · Eine Schätzung gilt als gut, wenn sie höchstens ein Fünftel von der genauen Zahl abweicht. Die genaue Zahl ist 850. Der Schätzbereich reicht von ▢ bis ▢. Lösung: a = **680**, b = **1020**
+- `03` AFB II · _Argumentieren_ · Ein Schätzwert von 624 Sternen wurde mit einem Raster aus 24 Feldern berechnet. Wie viele Sterne wurden im ausgezählten Feld gezählt? Lösung: **26 Sterne**. Typische Fehler: 14976 (begriffe-verwechselt), 600 (schaetzen-addiert).
+- `04` AFB III · _Argumentieren_ · In welchem Fall liefert das Hochrechnen aus einem einzigen Feld eine schlechte Schätzung?
+  - ☐ wenn die Dinge auf dem Bild sehr klein sind
+  - ☐ wenn das Raster aus sehr vielen Feldern besteht
+  - ☐ wenn die Anzahl im Feld eine ungerade Zahl ist
+  - ☑ wenn die Dinge sehr ungleich verteilt sind
+  - ☐ wenn man das Feld besonders sorgfältig auszählt
+- `05` AFB II · _Argumentieren (+ Modellieren)_ · Die genaue Zahl ist 450. Eine Schätzung gilt als gut, wenn sie höchstens ein Fünftel davon abweicht. Zwei Kinder schätzen 340 und 520. Welche Schätzung ist gut?
+  - ☐ beide Schätzungen
+  - ☑ nur die Schätzung 520
+  - ☐ nur die Schätzung 340
+  - ☐ keine der beiden Schätzungen
+- `06` AFB III · _Argumentieren_ · Warum wird eine Schätzung meist besser, wenn man mehrere Felder auszählt und mit ihrem mittleren Wert hochrechnet?
+  - ☑ Ein einzelnes Feld kann zufällig besonders voll oder leer sein. Mehrere Felder gleichen das aus.
+  - ☐ Sie wird nicht besser, denn es bleibt eine Schätzung.
+  - ☐ Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer.
+  - ☐ Weil man die Felderzahl dann nicht mehr braucht.
+
+## 5.2.5-Z1: Ich kann Zahlen aus dem Zweiersystem ins Zehnersystem übersetzen.
+
+Grundlage, die F übt: Plättchen in einer Tafel mit den Spalten 8, 4, 2 und 1 zusammenzählen
+
+Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Werte der Spalten zusammen, in denen ein Plättchen liegt. *Beispiel:* Plättchen bei 8 und bei 2: Das ist 8 + 2 = 10. *Lösungsschritt:* Es liegen Plättchen bei 8 und 2 und 1.
+
+- `01` AFB I · _Kommunizieren_ · In der Tafel liegen Plättchen. / Über jeder Spalte steht ihr Wert. / Welche Zahl ist gelegt? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 8 4 2 1: 1 0 1 1)_ Lösung: **11**. Typische Fehler: 13 (dual-umgedreht), 1011 (dual-zehnerwerte), 14 (dual-gerade-werte).
+- `02` AFB I · _Kommunizieren_ · In der Tafel stehen nur die Ziffern 0 und 1. / 1 heißt: Der Wert der Spalte zählt mit. / Welche Zahl ist es? _(Bild: Stellenwerttafel im Zweiersystem, Spalten 8 4 2 1: 1 0 1 0)_ Lösung: **10**. Typische Fehler: 5 (dual-umgedreht), 1010 (dual-zehnerwerte), 12 (dual-gerade-werte).
+- `03` AFB I · _Kommunizieren (+ Modellieren)_ · In der Tafel liegen 3 Plättchen. / Rechne aus, welche Zahl gelegt ist. / 8 + 2 + 1 = ▢ _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 8 4 2 1: 1 0 1 1)_ Lösung: a = **11**
+- `04` AFB I · _Kommunizieren_ · Schau auf die Tafel. / Welche Zahl zeigt sie? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 8 4 2 1: 1 1 0 0)_
+  - ☐ 3
+  - ☐ 2
+  - ☑ 12
+- `05` AFB II · _Kommunizieren_ · Die Tafel zeigt eine Zahl. / Jetzt kommt ein Plättchen bei 1 dazu. / Welche Zahl ist es danach? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 8 4 2 1: 1 1 0 0)_ Lösung: **13**. Typische Fehler: 12 (dual-zehnerwerte).
+- `06` AFB I · _Kommunizieren (+ Modellieren)_ · Diese Tafel hat nur 3 Spalten. / Welche Zahl ist gelegt? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 4 2 1: 1 1 0)_ Lösung: **6**. Typische Fehler: 3 (dual-umgedreht), 110 (dual-zehnerwerte), 10 (dual-gerade-werte).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Stellenwerte zusammen, bei denen eine 1 steht. *Beispiel:* 1 bei 16, 1 bei 4, 1 bei 2: Das ist 16 + 4 + 2 = 22. *Lösungsschritt:* Eine 1 steht bei 16, 2.
+
+- `01` AFB I · _Kommunizieren_ · Die Tafel zeigt eine Zahl im Zweiersystem. / Wie heißt die Zahl im Zehnersystem? _(Bild: Stellenwerttafel im Zweiersystem, Spalten 16 8 4 2 1: 1 0 0 1 0)_ Lösung: **18**. Typische Fehler: 9 (dual-umgedreht), 10010 (dual-zehnerwerte), 14 (dual-gerade-werte).
+- `02` AFB I · _Kommunizieren (+ Modellieren)_ · Die kleine 2 zeigt: Die Zahl steht im Zweiersystem. / Wie heißt 1100₂ im Zehnersystem? Lösung: **12**. Typische Fehler: 3 (dual-umgedreht), 1100 (dual-zehnerwerte), 14 (dual-gerade-werte).
+- `03` AFB II · _Kommunizieren_ · Zerlege die Zahl 11001₂. / 16 + ▢ + ▢ = ▢ / Schreibe die Stellenwerte der Größe nach. _(Bild: Stellenwerttafel im Zweiersystem, Spalten 16 8 4 2 1: 1 1 0 0 1)_ Lösung: a = **8**, b = **1**, c = **25**
+- `04` AFB I · _Kommunizieren_ · Welche Zahl im Zehnersystem ist 1011₂?
+  - ☐ 13
+  - ☐ 5
+  - ☑ 11
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Tafel zeigt die Zahl 1011₂. / Welche Zahl im Zehnersystem ist um 1 größer? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 16 8 4 2 1: 0 1 0 1 1)_ Lösung: **12**. Typische Fehler: 11 (dual-zehnerwerte), 1012 (dual-zehnerwerte).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ben liest die Zahl 11₂ als elf. / Stimmt das?
+  - ☑ Falsch. / Im Zweiersystem zählen andere Stellenwerte. / Die Zahl ist 3.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Die Zahl ist 2.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe unter jede Ziffer ihren Stellenwert: von rechts 1, 2, 4, 8, 16, 32. *Lösungsschritt:* Die Zahl ist 32 + 8 + 2.
+
+- `01` AFB I · _Kommunizieren_ · Wandle die Dualzahl 101010₂ ins Zehnersystem um. Lösung: **42**. Typische Fehler: 21 (dual-umgedreht), 101010 (dual-zehnerwerte), 24 (dual-gerade-werte).
+- `02` AFB II · _Kommunizieren_ · Wandle die Dualzahl 10000111₂ ins Zehnersystem um. Lösung: **135**. Typische Fehler: 225 (dual-umgedreht), 10000111 (dual-zehnerwerte), 28 (dual-gerade-werte).
+- `03` AFB II · _Kommunizieren_ · Welches Zeichen passt? 100000₂ ▢ 11111₂
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `04` AFB I · _Kommunizieren_ · Ordne jeder Dualzahl die Zahl im Zehnersystem zu. Lösung: 110₂ → 6, 11010₂ → 26, 11100₂ → 28, 11101₂ → 29
+- `05` AFB II · _Kommunizieren_ · Die Stellenwerte im Zweiersystem verdoppeln sich von rechts nach links: 1, 2, 4, 8, 16, ▢, ▢, ▢. Lösung: a = **32**, b = **64**, c = **128**
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · Wie heißt die größte Zahl, die man im Zweiersystem mit 6 Stellen schreiben kann? Gib sie im Zehnersystem an. Lösung: **63**. Typische Fehler: 64 (dual-gerade-werte), 32 (dual-zehnerwerte).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den Stellenwert der Ziffer ganz links, indem du von rechts immer verdoppelst.
+
+- `01` AFB I · _Kommunizieren_ · Wandle die Dualzahl 1111010000₂ ins Zehnersystem um. Lösung: **976**. Typische Fehler: 47 (dual-umgedreht).
+- `02` AFB II · _Kommunizieren_ · Woran erkennt man im Zweiersystem sofort, dass eine Zahl gerade ist?
+  - ☑ Die letzte Ziffer ist eine 0.
+  - ☐ Die Zahl enthält eine gerade Anzahl von Einsen.
+  - ☐ Die Zahl hat eine gerade Anzahl von Stellen.
+  - ☐ Die erste Ziffer ist eine 1.
+  - ☐ Das kann man nicht erkennen, man muss umrechnen.
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Wie viele verschiedene Zahlen kann man im Zweiersystem mit höchstens 7 Stellen schreiben? Die 0 zählt mit. Lösung: **128**. Typische Fehler: 127 (begriffe-verwechselt), 14 (dual-gerade-werte), 49 (dual-gerade-werte).
+- `04` AFB III · _Kommunizieren_ · Die Dualzahl 1011₂ ist im Zehnersystem die Zahl 11. Hängt man rechts eine 0 an, erhält man 10110₂, das ist ▢. Hängt man noch eine 0 an, erhält man 101100₂, das ist ▢. Lösung: a = **22**, b = **44**
+- `05` AFB II · _Kommunizieren_ · Ordne die Dualzahlen. Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 10011₂, 100010₂, 1010₂, 100100₂)_ Lösung: **1010₂, 10011₂, 100010₂, 100100₂**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida behauptet: „Auch im Zweiersystem ist von zwei Zahlen immer die mit mehr Stellen die größere.“ Beurteile die Aussage.
+  - ☐ Das gilt nur, wenn die längere Zahl auf 1 endet.
+  - ☑ Stimmt. Die kleinste Zahl mit fünf Stellen ist 16, die größte mit vier Stellen ist nur 15.
+  - ☐ Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an.
+  - ☐ Falsch. Das gilt nur im Zehnersystem.
+
+## 5.2.5-Z2: Ich kann Zahlen ins Zweiersystem übersetzen.
+
+Grundlage, die F übt: Eine Zahl bis 15 aus 8, 4, 2 und 1 zusammensetzen
+
+Baut auf: 5.2.5-Z1 (Ich kann Zahlen aus dem Zweiersystem ins Zehnersystem übersetzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Werte ergeben zusammen die Zahl? Jeden Wert gibt es nur einmal. *Beispiel:* Die Zahl 5: Du brauchst 4 und 1. In der Tafel steht 0, 1, 0, 1. *Lösungsschritt:* 6 ist 4 + 2.
+
+- `01` AFB I · _Kommunizieren_ · Lege die Zahl 6. / Welche Werte brauchst du? / Schreibe dort 1. / Schreibe 0 in alle anderen Spalten. 
+
+  | 8 | 4 | 2 | 1 |
+  |---|---|---|---|
+  | **0** | **1** | **1** | **0** |
+
+- `02` AFB I · _Kommunizieren_ · Lege die Zahl 10. / Welche Werte brauchst du? / Schreibe dort 1. / Schreibe 0 in alle anderen Spalten. 
+
+  | 8 | 4 | 2 | 1 |
+  |---|---|---|---|
+  | **1** | **0** | **1** | **0** |
+
+- `03` AFB I · _Kommunizieren_ · Die Tafel zeigt die Zahl 12. / Welche Rechnung passt zur Tafel? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 8 4 2 1: 1 1 0 0)_
+  - ☐ 2 + 1
+  - ☐ 8 + 1
+  - ☑ 8 + 4
+- `04` AFB I · _Kommunizieren (+ Modellieren)_ · Diese Tafel hat nur 3 Spalten. / Lege die Zahl 3. / Schreibe 1 oder 0 in jede Spalte. 
+
+  | 4 | 2 | 1 |
+  |---|---|---|
+  | **0** | **1** | **1** |
+
+- `05` AFB II · _Kommunizieren_ · Lege zuerst die Zahl 5. / Lege darunter die Zahl 6. / Schreibe 1 oder 0 in jede Spalte. 
+
+  | 8 | 4 | 2 | 1 |
+  |---|---|---|---|
+  | **0** | **1** | **0** | **1** |
+  | **0** | **1** | **1** | **0** |
+
+- `06` AFB I · _Kommunizieren_ · Lege die Zahl 12. / Schreibe 1 oder 0 in jede Spalte. 
+
+  | 8 | 4 | 2 | 1 |
+  |---|---|---|---|
+  | **1** | **1** | **0** | **0** |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne mit dem größten Stellenwert, der in die Zahl passt. *Beispiel:* Die Zahl 22: 16 passt, Rest 6. Die 8 passt nicht. 4 passt, Rest 2. Also 1, 0, 1, 1, 0. *Lösungsschritt:* 16 passt in 25. Der Rest ist 9.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 25 im Zweiersystem. / Trage in jede Spalte 1 oder 0 ein. 
+
+  | 16 | 8 | 4 | 2 | 1 |
+  |---|---|---|---|---|
+  | **1** | **1** | **0** | **0** | **1** |
+
+- `02` AFB I · _Kommunizieren_ · Schreibe die Zahl 10 im Zweiersystem. / Nicht jede Spalte wird gebraucht. 
+
+  | 16 | 8 | 4 | 2 | 1 |
+  |---|---|---|---|---|
+  | **0** | **1** | **0** | **1** | **0** |
+
+- `03` AFB II · _Kommunizieren_ · Schreibe zuerst die Zahl 6 im Zweiersystem. / Schreibe darunter das Doppelte: die Zahl 12. / Was fällt dir auf? 
+
+  | 16 | 8 | 4 | 2 | 1 |
+  |---|---|---|---|---|
+  | **0** | **0** | **1** | **1** | **0** |
+  | **0** | **1** | **1** | **0** | **0** |
+
+- `04` AFB I · _Kommunizieren_ · Wie schreibt man die Zahl 13 im Zweiersystem?
+  - ☐ 1011₂
+  - ☐ 1010₂
+  - ☑ 1101₂
+- `05` AFB II · _Kommunizieren_ · Eine Zahl ist die Summe 16 + 8 + 1. / Schreibe sie im Zweiersystem. 
+
+  | 16 | 8 | 4 | 2 | 1 |
+  |---|---|---|---|---|
+  | **1** | **1** | **0** | **0** | **1** |
+
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul schreibt die Zahl 14 im Zweiersystem so: 0111₂. / Stimmt das?
+  - ☐ Stimmt.
+  - ☐ Falsch. / Richtig ist 1111₂.
+  - ☑ Falsch. / Paul hat die Stellen umgedreht. / Richtig ist 1110₂.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der größte Stellenwert der Tafel ist 32. Ziehe nacheinander alle Stellenwerte ab, die noch passen. *Lösungsschritt:* 38 − 32 = 6
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 38 als Dualzahl. Die Tafel hat sechs Stellen, die Stellenwerte musst du selbst wissen. 
+
+  |  |  |  |  |  |  |
+  |---|---|---|---|---|---|
+  | **1** | **0** | **0** | **1** | **1** | **0** |
+
+- `02` AFB II · _Kommunizieren_ · Schreibe die Zahl 152 als Dualzahl mit acht Stellen. 
+
+  |  |  |  |  |  |  |  |  |
+  |---|---|---|---|---|---|---|---|
+  | **1** | **0** | **0** | **1** | **1** | **0** | **0** | **0** |
+
+- `03` AFB II · _Kommunizieren_ · Wie viele Stellen hat die Zahl 100, wenn man sie als Dualzahl schreibt? Lösung: **7**. Typische Fehler: 3 (dual-zehnerwerte), 6 (dual-gerade-werte), 8 (dual-gerade-werte).
+- `04` AFB I · _Kommunizieren_ · Wie schreibt man die Zahl 19 als Dualzahl?
+  - ☐ 10010₂
+  - ☐ 11001₂
+  - ☐ 10101₂
+  - ☑ 10011₂
+- `05` AFB II · _Kommunizieren_ · Schreibe die Zahl 15 und ihren Nachfolger 16 als Dualzahlen untereinander. Die Tafel hat sechs Stellen. 
+
+  |  |  |  |  |  |  |
+  |---|---|---|---|---|---|
+  | **0** | **0** | **1** | **1** | **1** | **1** |
+  | **0** | **1** | **0** | **0** | **0** | **0** |
+
+- `06` AFB III · _Kommunizieren_ · Wie viele Einsen braucht man, um die Zahl 63 als Dualzahl zu schreiben? Lösung: **6**. Typische Fehler: 2 (dual-zehnerwerte), 7 (dual-gerade-werte), 1 (dual-zehnerwerte).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe nacheinander die größten passenden Stellenwerte ab und notiere für jeden Stellenwert eine 1 oder eine 0.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 53 als Dualzahl. _(Zeichen tippen mit den Tasten 0 1)_ Lösung: **110101**
+- `02` AFB II · _Kommunizieren_ · Schreibe die Zahl 588 als Dualzahl. _(Zeichen tippen mit den Tasten 0 1)_ Lösung: **1001001100**
+- `03` AFB II · _Kommunizieren_ · Verdopple die Dualzahl 10011₂ und schreibe das Ergebnis wieder als Dualzahl. Versuche es, ohne ins Zehnersystem umzurechnen. _(Zeichen tippen mit den Tasten 0 1)_ Lösung: **100110**
+- `04` AFB III · _Kommunizieren_ · Schreibe den Vorgänger der Dualzahl 100000₂ als Dualzahl. _(Zeichen tippen mit den Tasten 0 1)_ Lösung: **11111**
+- `05` AFB II · _Kommunizieren_ · Eine Zahl ist die Summe 64 + 16 + 2 + 1. Schreibe sie als Dualzahl. _(Zeichen tippen mit den Tasten 0 1)_ Lösung: **1010011**
+- `06` AFB III · _Kommunizieren_ · Wie ändert sich eine Zahl, wenn man im Zweiersystem rechts eine 0 anhängt?
+  - ☑ Sie verdoppelt sich, weil jede Ziffer auf den nächstgrößeren Stellenwert rückt.
+  - ☐ Sie wird zehnmal so groß, wie beim Anhängen einer 0 im Zehnersystem.
+  - ☐ Sie bleibt gleich, denn eine 0 hat keinen Wert.
+  - ☐ Sie wird um 2 größer.
+
+## 5.2.X1-X1: Ich kann römische Zahlzeichen lesen.
+
+Grundlage, die F übt: Die Zeichen I, V und X kennen und zusammenzählen
+
+Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Werte der Zeichen zusammen. Die Werte stehen im Bild. *Beispiel:* VI ist 5 + 1 = 6. *Lösungsschritt:* VIII ist 5 + 1 + 1 + 1.
+
+- `01` AFB I · _Kommunizieren_ · Die Römer schrieben Zahlen mit Zeichen. / Welche Zahl ist VIII? _(Bild: Zeichentafel I, V, X mit Werten)_ Lösung: **8**. Typische Fehler: 4 (roemisch-zeichen-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Welche Zahl ist XI? _(Bild: Zeichentafel I, V, X mit Werten)_
+  - ☑ 11
+  - ☐ 16
+  - ☐ 2
+- `03` AFB I · _Kommunizieren_ · Rechne den Wert von XVII aus. / 10 + 5 + 2 = ▢ _(Bild: Zeichentafel I, V, X mit Werten)_ Lösung: a = **17**
+- `04` AFB I · _Kommunizieren_ · Welche Zahl gehört zu welchen Zeichen? _(Bild: Zeichentafel I, V, X mit Werten)_ Lösung: VIII → 8, XV → 15, XII → 12
+- `05` AFB II · _Kommunizieren_ · Welche Zahl ist am größten? _(Bild: Zeichentafel I, V, X mit Werten)_
+  - ☐ VII
+  - ☑ X
+  - ☐ III
+- `06` AFB I · _Kommunizieren_ · Auf einem alten Stein steht XVII. / Welche Zahl ist das? _(Bild: Zeichentafel I, V, X mit Werten)_ Lösung: **17**. Typische Fehler: 4 (roemisch-zeichen-verwechselt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* L ist 50. Zähle die Werte von links nach rechts zusammen. *Beispiel:* LXII ist 50 + 10 + 1 + 1 = 62. *Lösungsschritt:* LVII ist 50 + 5 + 1 + 1.
+
+- `01` AFB I · _Kommunizieren_ · Hier kommen zwei neue Zeichen dazu: L und C. / Welche Zahl ist LVII? _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ Lösung: **57**. Typische Fehler: 4 (roemisch-zeichen-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Auf einer alten Uhr steht die Stunde IV. / Das kleinere Zeichen steht links. / Welche Stunde ist das? _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ Lösung: **4**. Typische Fehler: 6 (roemisch-nur-addiert), 2 (roemisch-zeichen-verwechselt).
+- `03` AFB II · _Kommunizieren_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ _(Ordnen; die Karten liegen so da: XXI, XVI, XI, XIX)_ Lösung: **XI, XVI, XIX, XXI**
+- `04` AFB I · _Kommunizieren_ · Welche Zahl ist LXIX?
+  - ☐ 71
+  - ☑ 69
+  - ☐ 70
+- `05` AFB II · _Kommunizieren_ · Zerlege LXIV in zwei Teile. / LX ist ▢. / IV ist ▢. / Zusammen: 60 + 4 = ▢ Lösung: a = **60**, b = **4**, c = **64**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas liest IX als elf. / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Das I steht links und wird abgezogen. / Die Zahl ist 9.
+  - ☐ Falsch. / Die Zahl ist 10.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zuerst die Stellen, an denen ein kleineres Zeichen links vor einem größeren steht. Diese beiden Zeichen gehören zusammen. *Lösungsschritt:* Zerlege in Hunderter, Zehner und Einer: CC, XC und IV.
+
+- `01` AFB I · _Kommunizieren_ · Welche Zahl ist CCXCIV? Lösung: **294**. Typische Fehler: 316 (roemisch-nur-addiert), 6 (roemisch-zeichen-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Über dem Tor eines alten Rathauses steht die Jahreszahl MDCCXXXIII. In welchem Jahr wurde das Tor gebaut? Lösung: **1733**. Typische Fehler: 10 (roemisch-zeichen-verwechselt).
+- `03` AFB II · _Kommunizieren_ · Welches Zeichen passt? LX ▢ XL
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `04` AFB I · _Kommunizieren_ · Bei diesen Zahlen wird ein Zeichen abgezogen. Ordne jeder Zeichenfolge ihre Zahl zu. Lösung: XL → 40, XC → 90, CD → 400, CM → 900
+- `05` AFB II · _Kommunizieren_ · Ordne die Zahlen. Beginne mit der größten Zahl. _(Ordnen; die Karten liegen so da: XLIV, CI, XCIX, CX, XC)_ Lösung: **CX, CI, XCIX, XC, XLIV**
+- `06` AFB III · _Kommunizieren_ · Nur eine dieser Schreibweisen für die Zahl 49 ist richtig. Welche?
+  - ☑ XLIX
+  - ☐ IL
+  - ☐ XXXXVIIII
+  - ☐ XLVIIII
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege die Zeichenfolge in Tausender, Hunderter, Zehner und Einer. An jeder Stelle kann ein Zeichen abgezogen sein.
+
+- `01` AFB I · _Kommunizieren_ · Welche Zahl ist MMCCXLIX? Lösung: **2249**. Typische Fehler: 2271 (roemisch-nur-addiert), 8 (roemisch-zeichen-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Auf einem Denkmal steht: „Errichtet im Jahr MDCCLXXIV, erneuert im Jahr MMLV.“ Wie viele Jahre liegen dazwischen? Lösung: **281**. Typische Fehler: 279 (roemisch-nur-addiert).
+- `03` AFB II · _Kommunizieren_ · Drei dieser Zeichenfolgen sind gültige römische Zahlen. Welche ist ungültig?
+  - ☐ CDXCIX
+  - ☐ CMXLIX
+  - ☐ MCMXCIV
+  - ☑ MIM
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Warum kann man mit römischen Zahlzeichen nicht schriftlich untereinander rechnen wie im Zehnersystem?
+  - ☐ Man kann römische Zahlen nur zusammenzählen, aber nie voneinander abziehen.
+  - ☑ Die Zeichen haben keinen Stellenwert. Deshalb stehen gleiche Werte nicht untereinander.
+  - ☐ Es gibt nur sieben verschiedene Zeichen, und das sind zu wenige.
+  - ☐ Römische Zahlen sind immer länger als die Zahlen im Zehnersystem.
+- `05` AFB II · _Kommunizieren_ · Welche dieser Zahlen ist die kleinste?
+  - ☐ MCMXCIX
+  - ☐ MM
+  - ☑ MCMLXXXVIII
+  - ☐ MMI
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Von zwei römischen Zahlen ist immer die mit mehr Zeichen die größere.“ Beurteile die Aussage.
+  - ☐ Stimmt. Das ist genauso wie bei der Zahl der Stellen im Zehnersystem.
+  - ☐ Stimmt, solange in keiner der beiden Zahlen ein Zeichen abgezogen wird.
+  - ☑ Falsch. XXXVIII hat mehr Zeichen als L, ist aber die kleinere Zahl.
+  - ☐ Falsch. Es ist immer die Zahl mit weniger Zeichen die größere.
+
+## 5.2.X1-X2: Ich kann Zahlen mit römischen Zahlzeichen schreiben.
+
+Grundlage, die F übt: Zahlen bis 20 aus den Zeichen I, V und X legen
+
+Baut auf: 5.2.X1-X1 (Ich kann römische Zahlzeichen lesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne mit dem größten Zeichen, das in die Zahl passt. *Beispiel:* Die Zahl 6: Die 5 passt. Es fehlt noch 1. Also VI. *Lösungsschritt:* In 8 passt die 5. Es fehlen noch 3.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 8 mit römischen Zahlzeichen. / Tippe die Zeichen der Reihe nach an. _(Bild: Zeichentafel I, V, X mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **VIII**
+- `02` AFB I · _Kommunizieren_ · Schreibe die Zahl 11 mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **XI**
+- `03` AFB I · _Kommunizieren_ · Wie schreibt man die Zahl 15? _(Bild: Zeichentafel I, V, X mit Werten)_
+  - ☑ XV
+  - ☐ VX
+  - ☐ VVV
+- `04` AFB I · _Kommunizieren_ · Schreibe die Zahl 18 mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **XVIII**
+- `05` AFB II · _Kommunizieren_ · Zähle zusammen: 10 + 5 + 2. / Schreibe das Ergebnis mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **XVII**
+- `06` AFB I · _Kommunizieren_ · Ein altes Buch hat 20 Kapitel. / Schreibe diese Zahl mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **XX**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe zuerst die Zehner, dann die Einer. L ist 50. *Beispiel:* Die Zahl 62: 60 ist LX, 2 ist II. Also LXII. *Lösungsschritt:* 50 ist L. 8 ist VIII.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 58 mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **LVIII**
+- `02` AFB I · _Kommunizieren_ · Schreibe die Zahl 14 mit römischen Zahlzeichen. / Achtung: Hier wird ein Zeichen abgezogen. _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **XIV**
+- `03` AFB II · _Kommunizieren_ · Wie schreibt man die Zahl 64?
+  - ☐ LXIIII
+  - ☐ LXVI
+  - ☑ LXIV
+- `04` AFB I · _Kommunizieren_ · Schreibe die Zahl 100 mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **C**
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Auf einer alten Uhr steht die Stunde VIII. / Schreibe die nächste Stunde mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **IX**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas schreibt die Zahl 40 so: XXXX. / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Das X steht höchstens dreimal hintereinander. / Richtig ist XL.
+  - ☐ Falsch. / Richtig ist LX.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe jede Stelle für sich: erst die Hunderter, dann die Zehner, dann die Einer. *Lösungsschritt:* Die Zehner 40 schreibt man XL, die Einer 4 schreibt man IV.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 144 mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **CXLIV**
+- `02` AFB II · _Kommunizieren_ · Schreibe die Jahreszahl 1972 mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **MCMLXXII**
+- `03` AFB II · _Kommunizieren_ · Schreibe die Zahl 904 mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **CMIV**
+- `04` AFB I · _Kommunizieren_ · Wie schreibt man die Zahl 94?
+  - ☐ LXXXXIIII
+  - ☐ XCIIII
+  - ☑ XCIV
+  - ☐ XCVI
+- `05` AFB II · _Kommunizieren_ · Schreibe den Vorgänger von XC mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **LXXXIX**
+- `06` AFB III · _Kommunizieren_ · Elif schreibt die Zahl 490 als XD. Was ist daran falsch?
+  - ☑ Vor D darf nur C abgezogen werden. Richtig ist CDXC.
+  - ☐ Man darf nie abziehen. Richtig ist CCCCLXXXX.
+  - ☐ Nichts. XD ist eine kurze und gültige Schreibweise.
+  - ☐ Die Zeichen stehen in der falschen Reihenfolge. Richtig ist DX.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe Tausender, Hunderter, Zehner und Einer nacheinander. Prüfe bei jeder Stelle, ob abgezogen wird.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe die Zahl 3344 mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **MMMCCCXLIV**
+- `02` AFB II · _Kommunizieren_ · Addiere MCDXCII und VIII. Schreibe das Ergebnis mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **MD**
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Schreibe den Nachfolger von MCMXCIX mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **MM**
+- `04` AFB III · _Kommunizieren_ · Die Römer hatten sieben Zahlzeichen. Welche dieser Zahlen lässt sich damit nach den Regeln nicht schreiben?
+  - ☑ Die Zahl 0, denn für „nichts“ gibt es kein Zeichen.
+  - ☐ Die Zahl 2888, denn dafür braucht man zu viele Zeichen.
+  - ☐ Die Zahl 3999, denn sie ist zu groß.
+  - ☐ Die Zahl 1444, denn die Ziffer 4 kommt dreimal vor.
+- `05` AFB II · _Kommunizieren_ · Welche zweistellige Zahl braucht die meisten römischen Zahlzeichen? Schreibe sie mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **LXXXVIII**
+- `06` AFB III · _Kommunizieren_ · Schreibe die kleinste Zahl, in der jedes der Zeichen I, V, X und L genau einmal vorkommt. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **XLIV**
+
 ## 5.3.1-K1: Ich kann im Kopf addieren.
 
 Grundlage, die F übt: Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100
 
-Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.)
+Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
@@ -953,9 +2066,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Feld liegen 5 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 5 belegt)_ Lösung: **5**.
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 7 + 6 _(Bild: Zehnerfeld mit 20 Feldern, 7 belegt, 6 dazu)_ Lösung: **13**. Typische Fehler: 3 (stellenwert).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Starte bei 76. / Springe 4 weiter. / Tippe an: Wo landest du? _(Zahlenstrahl 70 bis 90, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 72 (add-subtrahiert).
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 48 + 4 / Erst bis zur 50: 48 + ▢ = 50 / Dann weiter: 50 + ▢ = ▢ _(Bild: Zahlenstrahl 40 bis 60, Sprünge 48 nach 50 (+ 2), 50 nach 52 (+ 2))_ Lösung: a = **2**, b = **2**, c = **52**
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 4 + 5 = ▢ / 14 + 5 = ▢ / 24 + 5 = ▢ / 34 + 5 = ▢ _(Bild: Zahlenstrahl 0 bis 40, Sprünge 4 nach 9 (+ 5), 14 nach 19 (+ 5), 24 nach 29 (+ 5), 34 nach 39 (+ 5))_ Lösung: a = **9**, b = **19**, c = **29**, d = **39**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 40 bis 80, Sprünge 45 nach 65 (+ 20))_
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 48 + 4 / Erst bis zur 50: 48 + ▢ = 50 / Dann weiter: 50 + ▢ = ▢ _(Bild: Zahlenstrahl 40 bis 60, Teilstriche alle 1, Sprünge 48 nach 50 (+ 2), 50 nach 52 (+ 2))_ Lösung: a = **2**, b = **2**, c = **52**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 4 + 5 = ▢ / 14 + 5 = ▢ / 24 + 5 = ▢ / 34 + 5 = ▢ _(Bild: Zahlenstrahl 0 bis 40, Teilstriche alle 1, Sprünge 4 nach 9 (+ 5), 14 nach 19 (+ 5), 24 nach 29 (+ 5), 34 nach 39 (+ 5))_ Lösung: a = **9**, b = **19**, c = **29**, d = **39**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 40 bis 80, Teilstriche alle 5, Sprünge 45 nach 65 (+ 20))_
   - ☐ 45 − 20
   - ☑ 45 + 20
   - ☐ 20 + 65
@@ -965,9 +2078,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier kommen nur Zehner dazu. Die Einer bleiben gleich. *Beispiel:* 46 + 30: 4 Zehner + 3 Zehner = 7 Zehner. Ergebnis 76. *Lösungsschritt:* 3 Zehner + 3 Zehner = 6 Zehner.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 32 + 30 Lösung: **62**. Typische Fehler: 35 (kopf-stellenwert).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 77 + 9 _(Bild: Zahlenstrahl 70 bis 90, Sprünge 77 nach 80 (+ 3), 80 nach 86 (+ 6))_ Lösung: **86**. Typische Fehler: 76 (add-uebertrag-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 77 + 9 _(Bild: Zahlenstrahl 70 bis 90, Teilstriche alle 1, Sprünge 77 nach 80 (+ 3), 80 nach 86 (+ 6))_ Lösung: **86**. Typische Fehler: 76 (add-uebertrag-vergessen).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 38 + 5 = ▢ / 48 + 5 = ▢ / 58 + 5 = ▢ / Setze fort: 68 + 5 = ▢ Lösung: a = **43**, b = **53**, c = **63**, d = **73**
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 53 + 38 _(Bild: Zahlenstrahl 50 bis 100, Sprünge 53 nach 83 (+ 30), 83 nach 91 (+ 8))_ Lösung: **91**. Typische Fehler: 81 (add-uebertrag-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 53 + 38 _(Bild: Zahlenstrahl 50 bis 100, Teilstriche alle 1, Sprünge 53 nach 83 (+ 30), 83 nach 91 (+ 8))_ Lösung: **91**. Typische Fehler: 81 (add-uebertrag-vergessen).
 - `05` AFB II · _Probleme lösen_ · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes ?, Teile 36 und 43)_
   - ☐ 34 + 41
   - ☐ 36 + 41
@@ -1014,18 +2127,18 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere schrittweise: erst die Hunder
 
 Grundlage, die F übt: Wegnehmen und Ergänzen in Schritten bis 100
 
-Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.)
+Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück heißt: nach links. *Beispiel:* Start 30, 4 zurück: Du landest bei 26. *Lösungsschritt:* Zähle von 40 aus 4 Striche nach links.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Starte bei 40. / Springe 4 zurück. / Tippe an: Wo landest du? _(Zahlenstrahl 30 bis 50, Teilstriche alle 1; antippen)_ Lösung: **36**. Typische Fehler: 44 (sub-addiert).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 72 − 5 / Erst bis zur 70: 72 − ▢ = 70 / Dann weiter: 70 − ▢ = ▢ _(Bild: Zahlenstrahl 60 bis 80, Sprünge 72 nach 70 (− 2), 70 nach 67 (− 3))_ Lösung: a = **2**, b = **3**, c = **67**
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 68. / Wie viel fehlt von 68 bis 70? _(Bild: Zahlenstrahl 60 bis 70)_ Lösung: **2**. Typische Fehler: 8 (begriffe-verwechselt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 72 − 5 / Erst bis zur 70: 72 − ▢ = 70 / Dann weiter: 70 − ▢ = ▢ _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Sprünge 72 nach 70 (− 2), 70 nach 67 (− 3))_ Lösung: a = **2**, b = **3**, c = **67**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 68. / Wie viel fehlt von 68 bis 70? _(Bild: Zahlenstrahl 60 bis 70, Teilstriche alle 1)_ Lösung: **2**. Typische Fehler: 8 (begriffe-verwechselt).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Pfeil springt zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 20 bis 60, Teilstriche alle 5, Sprung von 55: − 20; Zahl eintragen)_ Lösung: **35**. Typische Fehler: 75 (sub-addiert), 53 (stellenwert).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 13 − 5 = ▢ / 23 − 5 = ▢ / 33 − 5 = ▢ / 43 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 13 nach 10 (− 3), 10 nach 8 (− 2))_ Lösung: a = **8**, b = **18**, c = **28**, d = **38**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 50 bis 90, Sprünge 85 nach 65 (− 20))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 13 − 5 = ▢ / 23 − 5 = ▢ / 33 − 5 = ▢ / 43 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 13 nach 10 (− 3), 10 nach 8 (− 2))_ Lösung: a = **8**, b = **18**, c = **28**, d = **38**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 50 bis 90, Teilstriche alle 5, Sprünge 85 nach 65 (− 20))_
   - ☐ 65 − 20
   - ☐ 85 + 20
   - ☑ 85 − 20
@@ -1035,12 +2148,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück heißt: nach links. *Beispiel
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier gehen nur Zehner weg. Die Einer bleiben gleich. *Beispiel:* 76 − 30: 7 Zehner − 3 Zehner = 4 Zehner. Ergebnis 46. *Lösungsschritt:* 9 Zehner − 3 Zehner = 6 Zehner.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 98 − 30 Lösung: **68**. Typische Fehler: 95 (kopf-stellenwert), 128 (sub-addiert).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 74 − 9 _(Bild: Zahlenstrahl 60 bis 80, Sprünge 74 nach 70 (− 4), 70 nach 65 (− 5))_ Lösung: **65**. Typische Fehler: 75 (sub-kleiner-von-groesser).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Abziehen oder ergänzen? / Bei welcher Aufgabe ist Ergänzen am leichtesten? _(Bild: Zahlenstrahl 90 bis 110, Sprünge 91 nach 93 (+ 2))_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 74 − 9 _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Sprünge 74 nach 70 (− 4), 70 nach 65 (− 5))_ Lösung: **65**. Typische Fehler: 75 (sub-kleiner-von-groesser).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Abziehen oder ergänzen? / Bei welcher Aufgabe ist Ergänzen am leichtesten? _(Bild: Zahlenstrahl 90 bis 110, Teilstriche alle 1, Sprünge 91 nach 93 (+ 2))_
   - ☐ 93 − 40
   - ☐ 93 − 2
   - ☑ 93 − 91
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 81 − 34 _(Bild: Zahlenstrahl 40 bis 90, Sprünge 81 nach 51 (− 30), 51 nach 47 (− 4))_ Lösung: **47**. Typische Fehler: 53 (sub-kleiner-von-groesser), 115 (sub-addiert).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 81 − 34 _(Bild: Zahlenstrahl 40 bis 90, Teilstriche alle 1, Sprünge 81 nach 51 (− 30), 51 nach 47 (− 4))_ Lösung: **47**. Typische Fehler: 53 (sub-kleiner-von-groesser), 115 (sub-addiert).
 - `05` AFB II · _Probleme lösen_ · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes 82, Teile 31 und ?)_
   - ☐ 80 − 31
   - ☐ 82 − 34
@@ -1094,9 +2207,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Feld liegen 4 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: **6**. Typische Fehler: 4 (begriffe-verwechselt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl passt? / 4 + ▢ = 10 _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: a = **6**
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahlen ergeben zusammen 10? / Ordne zu. _(Bild: Zehnerfeld mit 10 Feldern, 2 belegt, 8 dazu)_ Lösung: 2 → 8, 3 → 7, 4 → 6
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 70. / Wie viel fehlt von 70 bis 100? _(Bild: Zahlenstrahl 0 bis 100)_ Lösung: **30**. Typische Fehler: 3 (stellenwert).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 70. / Wie viel fehlt von 70 bis 100? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10)_ Lösung: **30**. Typische Fehler: 3 (stellenwert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · 6 + 4 = 10 / Mit Zehnern geht es genauso. / 60 + ▢ = 100 _(Bild: Zehnerfeld mit 10 Feldern, 6 belegt, 4 dazu)_ Lösung: a = **40**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl ergibt zusammen mit 30 genau 100? _(Bild: Zahlenstrahl 0 bis 100)_
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl ergibt zusammen mit 30 genau 100? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10)_
   - ☐ 20
   - ☑ 70
   - ☐ 10
@@ -1105,11 +2218,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Zehner. Ergänze dann bis 100. *Beispiel:* Von 64 bis 100: erst 6 bis 70, dann 30 bis 100. Zusammen 36. *Lösungsschritt:* Von 48 bis 50 fehlen 2.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wie viel fehlt von 48 bis 100? _(Bild: Zahlenstrahl 40 bis 100)_ Lösung: **52**. Typische Fehler: 62 (ergaenzen-zu-viel).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wie viel fehlt von 48 bis 100? _(Bild: Zahlenstrahl 40 bis 100, Teilstriche alle 2)_ Lösung: **52**. Typische Fehler: 62 (ergaenzen-zu-viel).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 55 + 19 / Rechne erst 55 + 20. / Ziehe dann 1 ab. Lösung: **74**. Typische Fehler: 75 (geschickt-nicht-ausgeglichen), 76 (geschickt-falsch-ausgeglichen).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 28 + 38 / 28 + 40 = ▢ / Das sind 2 zu viel. / Ergebnis: ▢ _(Bild: Zahlenstrahl 20 bis 70, Sprünge 28 nach 68 (+ 40), 68 nach 66 (− 2))_ Lösung: a = **68**, b = **66**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 28 + 38 / 28 + 40 = ▢ / Das sind 2 zu viel. / Ergebnis: ▢ _(Bild: Zahlenstrahl 20 bis 70, Teilstriche alle 1, Sprünge 28 nach 68 (+ 40), 68 nach 66 (− 2))_ Lösung: a = **68**, b = **66**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 35 + 42 + 15 _(Bild: Streifenbild: Ganzes ?, Teile 35 und 15 und 42)_ Lösung: **92**. Typische Fehler: 77 (sach-schritt-vergessen).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du rechnest 73 − 70. / Welcher Weg ist am leichtesten? _(Bild: Zahlenstrahl 70 bis 90, Sprünge 70 nach 73 (+ 3))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du rechnest 73 − 70. / Welcher Weg ist am leichtesten? _(Bild: Zahlenstrahl 70 bis 90, Teilstriche alle 1, Sprünge 70 nach 73 (+ 3))_
   - ☑ Ergänzen: von 70 bis 73
   - ☐ Abziehen: erst 70 weg, dann 0 weg
   - ☐ Zusammenzählen: 73 + 70
@@ -1337,8 +2450,8 @@ Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9. *Lösungsschritt:* 3 + 4 = 7.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
 - `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Rechne im Raster: 42 + 11 + 23 / Zähle in jeder Spalte 3 Ziffern zusammen.  _(Rechenraster mit Ziffernfeldern)_
 
   |  | Z | E |
@@ -1428,21 +2541,21 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei vier Summanden kann der Übertrag
 
 Grundlage, die F übt: Nachbarzehner finden, Plus mit Minus rückgängig machen
 
-Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.1-K1 (Ich kann im Kopf addieren.)
+Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.1-K1 (Ich kann im Kopf addieren.), 5.2.3-R1 (Ich kann Zahlen auf eine vorgegebene Stelle runden.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Zähle die Striche bis zum Zehner links und rechts. *Beispiel:* 38: Bis 40 sind es 2 Striche, bis 30 sind es 8 Striche. Am nächsten ist 40. *Lösungsschritt:* Bis 60 sind es 8 Striche. Bis 70 sind es 2 Striche.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 68. / Welcher Zehner liegt am nächsten? / Tippe ihn an. _(Zahlenstrahl 60 bis 70, Teilstriche alle 1; antippen)_ Lösung: **70**. Typische Fehler: 60 (falsch-gerundet).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 74. / Welcher Zehner liegt näher an 74? _(Bild: Zahlenstrahl 70 bis 80)_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 74. / Welcher Zehner liegt näher an 74? _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1)_
   - ☐ 80
   - ☐ 75
   - ☑ 70
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 7 + 5 = 12 / Mit Minus kommst du zurück. / 12 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 7 nach 12 (+ 5))_ Lösung: a = **7**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 7 + 5 = 12 / Mit Minus kommst du zurück. / 12 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 7 nach 12 (+ 5))_ Lösung: a = **7**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 79. / Welcher Zehner liegt am nächsten bei 79? / Tippe ihn an. _(Zahlenstrahl 70 bis 80, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 70 (falsch-gerundet).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 9 + 6 = 16 / Prüfe mit Minus. / 16 − 6 = ▢ / Das ist nicht 9. / Richtig ist: 9 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 9 nach 15 (+ 6))_ Lösung: a = **10**, b = **15**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Lena rechnet: 8 + 5 = 13 / Mit welcher Minus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 8 nach 13 (+ 5))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 9 + 6 = 16 / Prüfe mit Minus. / 16 − 6 = ▢ / Das ist nicht 9. / Richtig ist: 9 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 9 nach 15 (+ 6))_ Lösung: a = **10**, b = **15**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Lena rechnet: 8 + 5 = 13 / Mit welcher Minus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 8 nach 13 (+ 5))_
   - ☐ 5 − 13
   - ☐ 8 − 5
   - ☑ 13 − 5
@@ -1451,13 +2564,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Z�
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten Zehner. *Beispiel:* 48 + 31: 48 ist fast 50, 31 ist fast 30. Der Überschlag ist 50 + 30. *Lösungsschritt:* 22 liegt am nächsten bei 20.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 22 + 38? _(Bild: Zahlenstrahl 20 bis 30)_
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 22 + 38? _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1)_
   - ☐ 30 + 40
   - ☑ 20 + 40
   - ☐ 20 + 30
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Probe. / 31 + 11 = 42 / Probe: 42 − ▢ = ▢ Lösung: a = **11**, b = **31**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Überschlage zuerst. / 297 + 314 / Runde beide Zahlen auf Hunderter. / ▢ + ▢ = ▢ Lösung: a = **300**, b = **300**, c = **600**
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 42 + 29 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30)_ Lösung: **70**. Typische Fehler: 71 (ueberschlag-nicht-gerundet).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 42 + 29 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1)_ Lösung: **70**. Typische Fehler: 71 (ueberschlag-nicht-gerundet).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Finn rechnet: 35 + 57 = 92 / Mit welcher Rechnung macht Finn die Probe? _(Bild: Streifenbild: Ganzes 92, Teile 35 und 57)_
   - ☑ 92 − 57
   - ☐ 57 − 35
@@ -1534,7 +2647,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es werden mehr. Das ist plus. *Beispi
   - ☐ 5 − 6
 - `02` AFB I · _Modellieren_ · Auf dem Tisch liegen 6 Stifte. / Ole legt 4 Stifte dazu. / Wie viele Stifte sind es zusammen? _(Bild: Mengenbild: 6 Plättchen, 4 dazu)_ Lösung: **10**. Typische Fehler: 2 (sach-falsche-rechnung).
 - `03` AFB I · _Modellieren_ · Im Bus sitzen 16 Kinder. / 10 Kinder steigen ein. / Wie viele Kinder sitzen jetzt im Bus? _(Bild: Streifenbild: Ganzes ?, Teile 16 und 10)_ Lösung: **26**. Typische Fehler: 6 (sach-falsche-rechnung), 17 (stellenwert).
-- `04` AFB I · _Modellieren_ · Mia hat 30 Euro. / Mia bekommt 7 Euro dazu. / Wie viel Euro hat Mia jetzt? _(Bild: Zahlenstrahl 20 bis 40, Sprünge 30 nach 37 (+ 7))_ Lösung: **37 Euro**. Typische Fehler: 23 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren_ · Mia hat 30 Euro. / Mia bekommt 7 Euro dazu. / Wie viel Euro hat Mia jetzt? _(Bild: Zahlenstrahl 20 bis 40, Teilstriche alle 1, Sprünge 30 nach 37 (+ 7))_ Lösung: **37 Euro**. Typische Fehler: 23 (sach-falsche-rechnung).
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 8 + 5. / Welche Geschichte passt? _(Bild: Mengenbild: 8 Plättchen, 5 dazu)_
   - ☐ 8 Vögel sitzen im Baum. / 5 Vögel fliegen weg.
   - ☑ 8 Vögel sitzen im Baum. / 5 Vögel kommen dazu.
@@ -1784,20 +2897,20 @@ Baut auf: 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.)
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Folge beiden Sprüngen nach links. *Beispiel:* Start 15, erst − 4, dann − 3: Du landest bei 8. *Lösungsschritt:* Nach dem ersten Sprung bist du bei 12.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Pfeil springt 2-mal zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprung von 17: − 5; von 12: − 4; Zahl eintragen)_ Lösung: **8**. Typische Fehler: 12 (sach-schritt-vergessen), 16 (sub-klammerfehler).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne in 2 Schritten: 14 − 5 − 3 / Erst 5 weg: ▢ / Dann noch 3 weg: ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 14 nach 9 (− 5), 9 nach 6 (− 3))_ Lösung: a = **9**, b = **6**
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 30 − 10 − 5 _(Bild: Zahlenstrahl 10 bis 30, Sprünge 30 nach 20 (− 10), 20 nach 15 (− 5))_ Lösung: **15**. Typische Fehler: 25 (sub-klammerfehler), 20 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne in 2 Schritten: 14 − 5 − 3 / Erst 5 weg: ▢ / Dann noch 3 weg: ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 14 nach 9 (− 5), 9 nach 6 (− 3))_ Lösung: a = **9**, b = **6**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 30 − 10 − 5 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 30 nach 20 (− 10), 20 nach 15 (− 5))_ Lösung: **15**. Typische Fehler: 25 (sub-klammerfehler), 20 (sach-schritt-vergessen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Starte bei 26. / Springe erst 6 zurück. / Springe dann 5 zurück. / Tippe an: Wo landest du? _(Zahlenstrahl 10 bis 30, Teilstriche alle 1; antippen)_ Lösung: **15**. Typische Fehler: 20 (sach-schritt-vergessen), 25 (sub-klammerfehler).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mara hat 20 Euro. / Mara kauft ein Heft für 4 Euro. / Mara kauft einen Stift für 4 Euro. / Welche Rechnung passt? _(Bild: Streifenbild: Ganzes 20, Teile 4 und 4 und ?)_
   - ☑ 20 − 4 − 4
   - ☐ 20 − 4 + 4
   - ☐ 20 + 4 + 4
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 18 − 8 − 3 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 18 nach 10 (− 8), 10 nach 7 (− 3))_ Lösung: **7**. Typische Fehler: 13 (sub-klammerfehler), 10 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 18 − 8 − 3 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 18 nach 10 (− 8), 10 nach 7 (− 3))_ Lösung: **7**. Typische Fehler: 13 (sub-klammerfehler), 10 (sach-schritt-vergessen).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe die Zahlen nacheinander ab. *Beispiel:* 75 − 20 − 10: Erst 75 − 20 = 55. Dann 55 − 10 = 45. *Lösungsschritt:* 97 − 30 = 67.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne. / 97 − 30 − 10 _(Bild: Zahlenstrahl 50 bis 100)_ Lösung: **57**. Typische Fehler: 77 (sub-klammerfehler), 67 (sach-schritt-vergessen).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne. / 97 − 30 − 10 _(Bild: Zahlenstrahl 50 bis 100, Teilstriche alle 5)_ Lösung: **57**. Typische Fehler: 77 (sub-klammerfehler), 67 (sach-schritt-vergessen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Subtrahiere schriftlich. / 858 − 206 − 250 Lösung: **402**. Typische Fehler: 902 (sub-klammerfehler), 652 (sach-schritt-vergessen).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · 80 − 29 − 11 / Zähle erst zusammen, was weggeht. / 29 + 11 = ▢ / Ziehe dieses Ergebnis von 80 ab: ▢ _(Bild: Streifenbild: Ganzes 80, Teile 29 und 11 und ?)_ Lösung: a = **40**, b = **40**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Subtrahiere schriftlich. / 863 − 133 − 113 Lösung: **617**. Typische Fehler: 843 (sub-klammerfehler), 730 (sach-schritt-vergessen).
@@ -1850,21 +2963,21 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere zuerst alle Subtrahenden.
 
 Grundlage, die F übt: Minus mit Plus rückgängig machen, Nachbarzehner
 
-Baut auf: 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.), 5.3.2-A4 (Ich kann ein Ergebnis mit Überschlag und Probe prüfen.)
+Baut auf: 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.), 5.3.2-A4 (Ich kann ein Ergebnis mit Überschlag und Probe prüfen.), 5.2.3-R1 (Ich kann Zahlen auf eine vorgegebene Stelle runden.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Zähle die Striche bis zum Zehner links und rechts. *Beispiel:* 38: Bis 40 sind es 2 Striche, bis 30 sind es 8 Striche. Am nächsten ist 40. *Lösungsschritt:* Bis 80 sind es 3 Striche. Bis 90 sind es 7 Striche.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 83. / Welcher Zehner liegt am nächsten? / Tippe ihn an. _(Zahlenstrahl 80 bis 90, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 90 (falsch-gerundet).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 67. / Welcher Zehner liegt näher an 67? _(Bild: Zahlenstrahl 60 bis 70)_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 67. / Welcher Zehner liegt näher an 67? _(Bild: Zahlenstrahl 60 bis 70, Teilstriche alle 1)_
   - ☑ 70
   - ☐ 60
   - ☐ 65
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 18 − 6 = 12 / Mit Plus kommst du zurück. / 12 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 18 nach 12 (− 6))_ Lösung: a = **18**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 18 − 6 = 12 / Mit Plus kommst du zurück. / 12 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 18 nach 12 (− 6))_ Lösung: a = **18**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 79. / Welcher Zehner liegt am nächsten bei 79? / Tippe ihn an. _(Zahlenstrahl 70 bis 80, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 70 (falsch-gerundet).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ida rechnet: 20 − 8 = 11 / Prüfe mit Plus. / 11 + 8 = ▢ / Das ist nicht 20. / Richtig ist: 20 − 8 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 20 nach 12 (− 8))_ Lösung: a = **19**, b = **12**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Finn rechnet: 15 − 7 = 8 / Mit welcher Plus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 15 nach 8 (− 7))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ida rechnet: 20 − 8 = 11 / Prüfe mit Plus. / 11 + 8 = ▢ / Das ist nicht 20. / Richtig ist: 20 − 8 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 20 nach 12 (− 8))_ Lösung: a = **19**, b = **12**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Finn rechnet: 15 − 7 = 8 / Mit welcher Plus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 15 nach 8 (− 7))_
   - ☑ 8 + 7
   - ☐ 15 + 8
   - ☐ 15 + 7
@@ -1873,13 +2986,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Z�
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten Zehner. *Beispiel:* 68 − 31: 68 ist fast 70, 31 ist fast 30. Der Überschlag ist 70 − 30. *Lösungsschritt:* 78 liegt am nächsten bei 80.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 78 − 41? _(Bild: Zahlenstrahl 70 bis 80)_
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 78 − 41? _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1)_
   - ☑ 80 − 40
   - ☐ 80 − 50
   - ☐ 70 − 40
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Probe. / 77 − 21 = 56 / Probe: 56 + ▢ = ▢ Lösung: a = **21**, b = **77**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Überschlage zuerst. / 892 − 389 / Runde beide Zahlen auf Hunderter. / ▢ − ▢ = ▢ Lösung: a = **900**, b = **400**, c = **500**
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 61 − 21 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30)_ Lösung: **40**.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 61 − 21 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1)_ Lösung: **40**.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole rechnet: 95 − 79 = 16 / Mit welcher Rechnung macht Ole die Probe? _(Bild: Streifenbild: Ganzes 95, Teile 79 und 16)_
   - ☑ 16 + 79
   - ☐ 16 − 79
@@ -1956,7 +3069,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es werden weniger. Das ist minus. *Be
   - ☑ 14 − 3
 - `02` AFB I · _Modellieren_ · In der Schale liegen 16 Nüsse. / Finn isst 5 Nüsse auf. / Wie viele Nüsse sind noch da? _(Bild: Mengenbild: 16 Plättchen, 5 durchgestrichen)_ Lösung: **11**. Typische Fehler: 21 (sach-falsche-rechnung).
 - `03` AFB I · _Modellieren_ · Im Bus sitzen 24 Kinder. / 10 Kinder steigen aus. / Wie viele Kinder sitzen noch im Bus? _(Bild: Streifenbild: Ganzes 24, Teile 10 und ?)_ Lösung: **14**. Typische Fehler: 34 (sach-falsche-rechnung), 23 (stellenwert).
-- `04` AFB I · _Modellieren_ · Tom hat 30 Euro. / Tom gibt 5 Euro aus. / Wie viel Euro hat Tom noch? _(Bild: Zahlenstrahl 20 bis 40, Sprünge 30 nach 25 (− 5))_ Lösung: **25 Euro**. Typische Fehler: 35 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren_ · Tom hat 30 Euro. / Tom gibt 5 Euro aus. / Wie viel Euro hat Tom noch? _(Bild: Zahlenstrahl 20 bis 40, Teilstriche alle 1, Sprünge 30 nach 25 (− 5))_ Lösung: **25 Euro**. Typische Fehler: 35 (sach-falsche-rechnung).
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 15 − 8. / Welche Geschichte passt? _(Bild: Mengenbild: 15 Plättchen, 8 durchgestrichen)_
   - ☐ 15 Ballons. / 8 Ballons kommen dazu.
   - ☐ 8 Kinder. / Jedes Kind hat 15 Ballons.
@@ -2126,7 +3239,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Aussteigen heißt minus. Hier steigen
   - ☐ 6 + 5 + 2
   - ☑ 6 + 5 − 2
 - `03` AFB I · _Modellieren_ · Auf dem Tisch liegen 15 Nüsse. / Ida isst 4 Nüsse. / Noah isst 3 Nüsse. / Wie viele Nüsse bleiben? _(Bild: Mengenbild: 15 Plättchen, 7 durchgestrichen)_ Lösung: **8**. Typische Fehler: 11 (sach-schritt-vergessen), 14 (sub-klammerfehler).
-- `04` AFB I · _Modellieren_ · Elif hat 6 Sticker. / Elif bekommt 3 Sticker dazu. / Dann bekommt Elif noch 4 Sticker. / Wie viele Sticker hat Elif jetzt? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 6 nach 9 (+ 3), 9 nach 13 (+ 4))_ Lösung: **13**. Typische Fehler: 9 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · Elif hat 6 Sticker. / Elif bekommt 3 Sticker dazu. / Dann bekommt Elif noch 4 Sticker. / Wie viele Sticker hat Elif jetzt? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 6 nach 9 (+ 3), 9 nach 13 (+ 4))_ Lösung: **13**. Typische Fehler: 9 (sach-schritt-vergessen).
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 12 − 4 − 2. / Welche Geschichte passt? _(Bild: Mengenbild: 12 Plättchen, 6 durchgestrichen)_
   - ☑ 12 Kekse. / Mia isst 4 Kekse. / Tom isst 2 Kekse.
   - ☐ 12 Kekse. / Mia isst 4 Kekse. / Tom bringt 2 Kekse.
@@ -2227,13 +3340,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Plus-Rechnen darfst du die Zahle
   - ☐ 7 − 2
   - ☑ 7 + 2
   - ☐ 2 + 2
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 2 + 14 ist schwer zu zählen. / Tausche die Zahlen. / Rechne 14 + 2. _(Bild: Zahlenstrahl 10 bis 20, Sprünge 14 nach 16 (+ 2))_ Lösung: **16**. Typische Fehler: 12 (add-subtrahiert).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 2 + 14 ist schwer zu zählen. / Tausche die Zahlen. / Rechne 14 + 2. _(Bild: Zahlenstrahl 10 bis 20, Teilstriche alle 1, Sprünge 14 nach 16 (+ 2))_ Lösung: **16**. Typische Fehler: 12 (add-subtrahiert).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? / 5 + 9 = ▢ + 5 _(Bild: Mengenbild: 5 Plättchen, 9 dazu)_ Lösung: a = **9**
 - `05` AFB II · _Probleme lösen_ · Welche 2 Aufgaben haben dasselbe Ergebnis? _(Bild: Mengenbild: 8 Plättchen, 2 dazu)_
   - ☐ 8 + 2 und 8 − 2
   - ☑ 8 + 2 und 2 + 8
   - ☐ 8 + 2 und 8 + 8
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · 30 + 40 = 70 / Wie viel ist 40 + 30? _(Bild: Zahlenstrahl 0 bis 100, Sprünge 0 nach 40 (+ 40), 40 nach 70 (+ 30))_ Lösung: **70**. Typische Fehler: 10 (add-subtrahiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · 30 + 40 = 70 / Wie viel ist 40 + 30? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10, Sprünge 0 nach 40 (+ 40), 40 nach 70 (+ 30))_ Lösung: **70**. Typische Fehler: 10 (add-subtrahiert).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -3047,7 +4160,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beis
   - ☐ 12 : 4 = 4
   - ☐ 12 + 3 = 15
   - ☑ 12 : 3 = 4
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 53 auf Zehner. _(Bild: Zahlenstrahl 50 bis 60)_ Lösung: **50**. Typische Fehler: 60 (falsch-gerundet).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 53 auf Zehner. _(Bild: Zahlenstrahl 50 bis 60, Teilstriche alle 1)_ Lösung: **50**. Typische Fehler: 60 (falsch-gerundet).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Prüfe 5 · 9 = 45. / Rechne 45 : 9. _(Bild: Punktefeld mit 5 Reihen zu je 9 Punkten)_ Lösung: **5**. Typische Fehler: 9 (div-vertauscht), 6 (div-einmaleins).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne ungefähr. / 3 · 28 / Rechne dafür 3 · 30. _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **90**. Typische Fehler: 84 (ueberschlag-nicht-gerundet), 9 (mal-stellenwert).
 - `05` AFB II · _Argumentieren_ · Emre rechnet 3 · 19 = 87. / Ungefähr ist es 3 · 20 = 60. / Kann 87 stimmen? _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_
@@ -3060,7 +4173,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beis
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde die krumme Zahl auf Zehner. Rechne dann im Kopf. *Beispiel:* 38 · 4: 38 wird zu 40. 40 · 4 = 160. *Lösungsschritt:* 87 wird zu 90.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Mache einen Überschlag. / 87 · 7 / Welcher Überschlag passt? _(Bild: Zahlenstrahl 80 bis 90)_
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Mache einen Überschlag. / 87 · 7 / Welcher Überschlag passt? _(Bild: Zahlenstrahl 80 bis 90, Teilstriche alle 1)_
   - ☑ 90 · 7 = 630
   - ☐ 80 · 7 = 560
   - ☐ 87 · 7 = 609
@@ -3765,7 +4878,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Was nicht mehr für eine Gruppe reich
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · 20 : 3 = ▢ Rest ▢ _(Bild: 6 Gruppen mit je 3 Plättchen, 2 einzeln daneben)_ Lösung: q = **6**, r = **2**
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · 5 Kinder bilden 2er-Gruppen. / Wie viele Kinder bleiben übrig? _(Bild: 2 Gruppen mit je 2 Plättchen, 1 einzeln daneben)_ Lösung: **1 Kinder**. Typische Fehler: 2 (div-rest-vergessen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Du hast 16 Plättchen. / Du legst immer 5 zusammen. / Wie viele volle Gruppen sind es? _(Bild: 3 Gruppen mit je 5 Plättchen, 1 einzeln daneben)_ Lösung: **3 Gruppen**. Typische Fehler: 4 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
-- `05` AFB II · _Probleme lösen_ · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 15, Sprünge 0 nach 4 (+ 4), 4 nach 8 (+ 4), 8 nach 12 (+ 4))_
+- `05` AFB II · _Probleme lösen_ · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 15, Teilstriche alle 1, Sprünge 0 nach 4 (+ 4), 4 nach 8 (+ 4), 8 nach 12 (+ 4))_
   - ☐ 12 : 4
   - ☐ 8 : 4
   - ☑ 9 : 4
@@ -3824,7 +4937,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du dein Ergebnis mit einer
 
 Grundlage, die F übt: Geteilt mit Mal rückgängig machen
 
-Baut auf: 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.3.2-A4 (Ich kann ein Ergebnis mit Überschlag und Probe prüfen.)
+Baut auf: 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.3.2-A4 (Ich kann ein Ergebnis mit Überschlag und Probe prüfen.), 5.2.3-R1 (Ich kann Zahlen auf eine vorgegebene Stelle runden.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
@@ -4558,15 +5671,15 @@ Baut auf: 5.4.1-K1 (Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrahl. *Beispiel:* 1, 3, 5, 7: Es kommt immer 2 dazu. Dann kommt 9. *Lösungsschritt:* Es kommt immer 5 dazu.
 
-- `01` AFB I · _Probleme lösen_ · Wie geht es weiter? / 6, 11, 16, 21, ▢ _(Bild: Zahlenstrahl 0 bis 30, Sprünge 6 nach 11 (+ 5), 11 nach 16 (+ 5), 16 nach 21 (+ 5), 21 nach 26 (?))_ Lösung: x = **26**
-- `02` AFB I · _Probleme lösen_ · Wie geht es weiter? / 30, 27, 24, 21, ▢ _(Bild: Zahlenstrahl 10 bis 30, Sprünge 30 nach 27 (− 3), 27 nach 24 (− 3), 24 nach 21 (− 3), 21 nach 18 (?))_ Lösung: x = **18**
+- `01` AFB I · _Probleme lösen_ · Wie geht es weiter? / 6, 11, 16, 21, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 6 nach 11 (+ 5), 11 nach 16 (+ 5), 16 nach 21 (+ 5), 21 nach 26 (?))_ Lösung: x = **26**
+- `02` AFB I · _Probleme lösen_ · Wie geht es weiter? / 30, 27, 24, 21, ▢ _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 30 nach 27 (− 3), 27 nach 24 (− 3), 24 nach 21 (− 3), 21 nach 18 (?))_ Lösung: x = **18**
 - `03` AFB I · _Probleme lösen_ · Jede Reihe hat gleich viele Punkte. / Zähle Reihe für Reihe weiter. / 4, 8, 12, ▢ _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_ Lösung: x = **16**
-- `04` AFB I · _Probleme lösen_ · Welche Zahl kommt als Nächstes? / 4, 9, 14, 19 _(Bild: Zahlenstrahl 0 bis 30, Sprünge 4 nach 9 (+ 5), 9 nach 14 (+ 5), 14 nach 19 (+ 5), 19 nach 24 (?))_
+- `04` AFB I · _Probleme lösen_ · Welche Zahl kommt als Nächstes? / 4, 9, 14, 19 _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 4 nach 9 (+ 5), 9 nach 14 (+ 5), 14 nach 19 (+ 5), 19 nach 24 (?))_
   - ☑ 24
   - ☐ 29
   - ☐ 20
-- `05` AFB II · _Probleme lösen_ · Zwei Zahlen fehlen. / 5, ▢, 13, 17, ▢ _(Bild: Zahlenstrahl 0 bis 30, Sprünge 5 nach 9 (?), 9 nach 13 (?), 13 nach 17 (+ 4), 17 nach 21 (?))_ Lösung: x = **9**, y = **21**
-- `06` AFB I · _Probleme lösen_ · Jede Zahl ist das Doppelte der Zahl davor. / Wie heißt die nächste Zahl? / 3, 6, 12, 24, ▢ _(Bild: Zahlenstrahl 0 bis 50, Sprünge 3 nach 6 (+ 3), 6 nach 12 (+ 6), 12 nach 24 (+ 12), 24 nach 48 (?))_ Lösung: x = **48**
+- `05` AFB II · _Probleme lösen_ · Zwei Zahlen fehlen. / 5, ▢, 13, 17, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 5 nach 9 (?), 9 nach 13 (?), 13 nach 17 (+ 4), 17 nach 21 (?))_ Lösung: x = **9**, y = **21**
+- `06` AFB I · _Probleme lösen_ · Jede Zahl ist das Doppelte der Zahl davor. / Wie heißt die nächste Zahl? / 3, 6, 12, 24, ▢ _(Bild: Zahlenstrahl 0 bis 50, Teilstriche alle 1, Sprünge 3 nach 6 (+ 3), 6 nach 12 (+ 6), 12 nach 24 (+ 12), 24 nach 48 (?))_ Lösung: x = **48**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -4575,9 +5688,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme den Unterschied zwischen zwe
 - `01` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 14, 20, 26, 32, ▢, ▢ Lösung: x = **38**, y = **44**
 - `02` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 2, 6, 18, 54, ▢ Lösung: x = **162**
 - `03` AFB II · _Probleme lösen (+ Modellieren)_ · Das sind Quadratzahlen. / 4 · 4 = 16 / 5 · 5 = 25 / 6 · 6 = 36 / Wie heißt die nächste Quadratzahl? _(Bild: Quadrat aus 6 · 6 Kästchen)_ Lösung: **49**. Typische Fehler: 47 (muster-falsche-regel), 14 (potenz-mal-exponent).
-- `04` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 90, 83, 76, ▢, ▢ _(Bild: Zahlenstrahl 60 bis 90, Sprünge 90 nach 83 (− 7), 83 nach 76 (− 7), 76 nach 69 (?), 69 nach 62 (?))_ Lösung: x = **69**, y = **62**
+- `04` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 90, 83, 76, ▢, ▢ _(Bild: Zahlenstrahl 60 bis 90, Teilstriche alle 1, Sprünge 90 nach 83 (− 7), 83 nach 76 (− 7), 76 nach 69 (?), 69 nach 62 (?))_ Lösung: x = **69**, y = **62**
 - `05` AFB II · _Probleme lösen (+ Kommunizieren)_ · Das ist eine Mal-Mauer. / Jeder Stein ist das Produkt der beiden Steine darunter. / Fülle die leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ **72** / **6** · **12** / 2 · 3 · 4
-- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
+- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
   - ☑ Falsch. / Jede Zahl ist das Doppelte der Zahl davor. / Nach 16 kommt 32.
   - ☐ Falsch. / Es geht abwechselnd plus und mal weiter.
   - ☐ Stimmt. / 2 + 2 = 4.
@@ -4626,11 +5739,11 @@ Baut auf: 5.4.X1-Z1 (Ich kann Zahlenmuster fortsetzen.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrahl. *Beispiel:* 1, 4, 7, 10: Es kommt immer 3 dazu. *Lösungsschritt:* Von 7 bis 9 sind es 2.
 
-- `01` AFB I · _Argumentieren_ · Welche Regel passt? / 7, 9, 11, 13 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 7 nach 9 (+ 2), 9 nach 11 (?), 11 nach 13 (?))_
+- `01` AFB I · _Argumentieren_ · Welche Regel passt? / 7, 9, 11, 13 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 7 nach 9 (+ 2), 9 nach 11 (?), 11 nach 13 (?))_
   - ☑ Immer plus 2.
   - ☐ Immer minus 2.
   - ☐ Immer plus 3.
-- `02` AFB I · _Argumentieren_ · Welche Regel passt? / 40, 37, 34, 31 _(Bild: Zahlenstrahl 30 bis 40, Sprünge 40 nach 37 (− 3), 37 nach 34 (?), 34 nach 31 (?))_
+- `02` AFB I · _Argumentieren_ · Welche Regel passt? / 40, 37, 34, 31 _(Bild: Zahlenstrahl 30 bis 40, Teilstriche alle 1, Sprünge 40 nach 37 (− 3), 37 nach 34 (?), 34 nach 31 (?))_
   - ☐ Immer minus 4.
   - ☑ Immer minus 3.
   - ☐ Immer plus 3.
@@ -4638,21 +5751,21 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrah
   - ☐ Immer das Doppelte.
   - ☐ Immer plus 1.
   - ☑ Immer plus 3.
-- `04` AFB I · _Argumentieren_ · Welche Regel passt? / 2, 4, 8, 16 _(Bild: Zahlenstrahl 0 bis 20, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
+- `04` AFB I · _Argumentieren_ · Welche Regel passt? / 2, 4, 8, 16 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
   - ☐ Immer plus 2.
   - ☑ Jede Zahl ist das Doppelte der Zahl davor.
   - ☐ Immer plus 4.
-- `05` AFB II · _Argumentieren_ · Die Regel heißt: immer plus 4. / Starte bei 1. / 1, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 20, Sprünge 1 nach 5 (?), 5 nach 9 (?), 9 nach 13 (?))_ Lösung: x = **5**, y = **9**, z = **13**
-- `06` AFB I · _Argumentieren_ · Die Regel heißt: immer minus 10. / Starte bei 30. / 30, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 30, Sprünge 30 nach 20 (?), 20 nach 10 (?), 10 nach 0 (?))_ Lösung: x = **20**, y = **10**, z = **0**
+- `05` AFB II · _Argumentieren_ · Die Regel heißt: immer plus 4. / Starte bei 1. / 1, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 1 nach 5 (?), 5 nach 9 (?), 9 nach 13 (?))_ Lösung: x = **5**, y = **9**, z = **13**
+- `06` AFB I · _Argumentieren_ · Die Regel heißt: immer minus 10. / Starte bei 30. / 30, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 30 nach 20 (?), 20 nach 10 (?), 10 nach 0 (?))_ Lösung: x = **20**, y = **10**, z = **0**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne den Unterschied zwischen zwei Nachbarzahlen aus. *Beispiel:* 13, 19, 25: 19 − 13 = 6. *Lösungsschritt:* 17 − 13 = ?
 
-- `01` AFB I · _Argumentieren_ · Ergänze die Regel. / 13, 17, 21, 25 / Die Regel heißt: immer plus ▢. _(Bild: Zahlenstrahl 10 bis 30, Sprünge 13 nach 17 (?), 17 nach 21 (?), 21 nach 25 (?))_ Lösung: x = **4**
+- `01` AFB I · _Argumentieren_ · Ergänze die Regel. / 13, 17, 21, 25 / Die Regel heißt: immer plus ▢. _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 13 nach 17 (?), 17 nach 21 (?), 21 nach 25 (?))_ Lösung: x = **4**
 - `02` AFB I · _Argumentieren_ · Ergänze die Regel. / 5, 15, 45, 135 / Die Regel heißt: immer mal ▢. Lösung: x = **3**
 - `03` AFB II · _Argumentieren_ · Das sind Quadratzahlen. / 16, 25, 36, 49 / Schreibe die Unterschiede auf: ▢, ▢, ▢ _(Bild: Quadrat aus 7 · 7 Kästchen)_ Lösung: a = **9**, b = **11**, c = **13**
-- `04` AFB I · _Argumentieren_ · Ergänze die Regel. / 80, 72, 64, 56 / Die Regel heißt: immer minus ▢. _(Bild: Zahlenstrahl 50 bis 80, Sprünge 80 nach 72 (?), 72 nach 64 (?), 64 nach 56 (?))_ Lösung: x = **8**
+- `04` AFB I · _Argumentieren_ · Ergänze die Regel. / 80, 72, 64, 56 / Die Regel heißt: immer minus ▢. _(Bild: Zahlenstrahl 50 bis 80, Teilstriche alle 1, Sprünge 80 nach 72 (?), 72 nach 64 (?), 64 nach 56 (?))_ Lösung: x = **8**
 - `05` AFB II · _Argumentieren_ · Die Regel heißt: immer mal 4. / Starte bei 3. / Welche Zahlenfolge passt?
   - ☐ 3, 7, 11, 15
   - ☑ 3, 12, 48, 192
@@ -4776,25 +5889,43 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `einteilung-zu-kurz` | Wählt eine Achse, die vor dem größten Wert endet. | Prüfe den größten Wert: Passt seine Säule noch auf die Achse? | Du achtest jetzt darauf: Auch die größte Säule muss auf die Achse passen. |
 | `umfrage-unpassend` | Wählt eine Umfragefrage, deren Antworten sich nicht eindeutig zählen lassen. | Überlege: Kann jedes Kind genau eine von wenigen Antworten geben? | Du stellst jetzt Fragen mit klaren Antworten zum Zählen. |
 | `anteil-nicht-beachtet` | Vergleicht Anzahlen aus unterschiedlich großen Gruppen, ohne die Gruppengröße zu beachten. | Die Gruppen sind verschieden groß. Vergleiche, welcher Teil der Gruppe es jeweils ist. | Du vergleichst jetzt auch, wie viele insgesamt gefragt wurden. |
+| `null-platzhalter` | Lässt die Null als Platzhalter weg (dreitausendfünf wird 35 oder 305). | Prüfe jede Stelle: Wo nichts steht, gehört eine 0 hin. | Du schreibst jetzt eine 0 an jede leere Stelle. |
+| `zahl-nach-gehoer` | Schreibt eine Zahl so, wie sie gesprochen wird (dreihundertfünf wird 3005). | Schreibe die Zahl in die Stellenwerttafel: Jede Stelle bekommt genau eine Ziffer. | Du schreibst Zahlen jetzt Stelle für Stelle und nicht so, wie du sie hörst. |
+| `tafel-verrutscht` | Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein. | Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links. | Du trägst jetzt jede Ziffer in die richtige Spalte ein. |
+| `vergleich-erste-ziffer` | Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten. | Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer. | Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen. |
+| `zeichen-verwechselt` | Verwechselt die Zeichen < und >. | Die Spitze des Zeichens zeigt immer zur kleineren Zahl. | Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl. |
+| `nachbar-verwechselt` | Verwechselt Vorgänger und Nachfolger. | Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach. | Du hältst Vorgänger und Nachfolger jetzt auseinander. |
+| `strahl-einerschritte` | Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen. | Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt? | Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist. |
+| `million-milliarde` | Verwechselt Tausender, Millionen und Milliarden. | Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden. | Du hältst Tausender, Millionen und Milliarden jetzt auseinander. |
+| `dreierblock-vergessen` | Lässt einen Dreierblock aus oder füllt ihn nicht mit Nullen auf. | Jeder Block hat drei Ziffern. Fehlt etwas, kommen Nullen hinein. | Du gibst jetzt jedem Dreierblock seine drei Ziffern. |
+| `runden-fuenf-ab` | Rundet bei der Ziffer 5 ab statt auf. | Schau auf die Ziffer rechts neben der Rundungsstelle: Bei 5 wird schon aufgerundet. | Du weißt jetzt: Bei 5 wird aufgerundet. |
+| `runden-falsche-stelle` | Rundet auf eine andere Stelle als verlangt. | Lies noch einmal: Auf welche Stelle soll gerundet werden? | Du rundest jetzt auf die Stelle aus der Aufgabe. |
+| `runden-ziffern-stehen` | Lässt die Ziffern rechts von der Rundungsstelle stehen, statt Nullen zu schreiben. | Rechts von der Rundungsstelle stehen nach dem Runden nur Nullen. | Du schreibst nach dem Runden jetzt Nullen hinter die Rundungsstelle. |
+| `runden-kette` | Rundet in mehreren Schritten nacheinander (1449 erst auf 1450, dann auf 1500). | Runde in einem Schritt. Es zählt nur die Ziffer direkt rechts neben der Rundungsstelle. | Du rundest jetzt in einem Schritt. |
+| `runden-uebertrag` | Vergisst beim Aufrunden den Übertrag, wenn an der Rundungsstelle eine 9 steht. | An der Rundungsstelle steht eine 9. Wird sie um 1 größer, ändert sich auch die Stelle links davon. | Du denkst beim Aufrunden jetzt daran: Aus 9 wird 10. |
+| `schaetzen-nicht-hochgerechnet` | Zählt beim Schätzen nur ein Feld und rechnet nicht auf alle Felder hoch. | Du hast ein Feld gezählt. Wie viele Felder hat das ganze Bild? | Du rechnest jetzt von einem Feld auf alle Felder hoch. |
+| `schaetzen-addiert` | Addiert beim Schätzen die Anzahl im Feld und die Zahl der Felder, statt zu multiplizieren. | In jedem Feld sind ungefähr gleich viele. Nimm die Anzahl im Feld mal die Zahl der Felder. | Du nimmst die Anzahl im Feld jetzt mal die Zahl der Felder. |
+| `gezaehlt-geschaetzt` | Unterscheidet nicht zwischen gezählten, gerundeten und geschätzten Angaben. | Überlege: Hat hier jemand alles einzeln gezählt, oder ist die Zahl nur ungefähr? | Du unterscheidest jetzt zwischen gezählt, gerundet und geschätzt. |
+| `dual-zehnerwerte` | Liest eine Zahl im Zweiersystem mit den Stellenwerten 1, 10, 100 des Zehnersystems. | Im Zweiersystem sind die Stellen von rechts 1, 2, 4, 8 und 16 wert. | Du weißt jetzt: Im Zweiersystem sind die Stellen 1, 2, 4, 8 und 16 wert. |
+| `dual-gerade-werte` | Nimmt im Zweiersystem die Stellenwerte 2, 4, 6, 8 statt zu verdoppeln. | Die Stellenwerte verdoppeln sich: 1, 2, 4, 8, 16. | Du verdoppelst die Stellenwerte im Zweiersystem jetzt richtig: 1, 2, 4, 8, 16. |
+| `dual-umgedreht` | Liest oder schreibt die Stellen im Zweiersystem in umgekehrter Reihenfolge. | Die Stelle mit dem Wert 1 steht ganz rechts, wie die Einer im Zehnersystem. | Du weißt jetzt: Im Zweiersystem steht die Einerstelle ganz rechts. |
+| `roemisch-nur-addiert` | Zählt bei römischen Zahlzeichen alle Zeichen zusammen und beachtet nicht, dass ein kleineres Zeichen links abgezogen wird (IX wird 11). | Steht ein kleineres Zeichen links vor einem größeren, wird es abgezogen. | Du weißt jetzt: Ein kleineres Zeichen links wird abgezogen. |
+| `roemisch-vier-gleiche` | Schreibt vier gleiche römische Zeichen hintereinander (IIII statt IV). | Höchstens drei gleiche Zeichen stehen hintereinander. Für 4 und 9 ziehst du ab. | Du schreibst höchstens drei gleiche Zeichen hintereinander. |
+| `roemisch-falsch-abgezogen` | Zieht bei römischen Zahlzeichen ein Zeichen ab, das man nicht abziehen darf (IC für 99, VX für 5). | Abgezogen wird nur I vor V und X, X vor L und C, C vor D und M. | Du weißt jetzt, welche Zeichen man abziehen darf. |
+| `roemisch-zeichen-verwechselt` | Verwechselt die Werte der römischen Zeichen (L und C, D und M, V und X). | Schau im Merkzettel nach: Welchen Wert hat jedes Zeichen? | Du kennst jetzt den Wert jedes römischen Zeichens. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.2.1-L1 Ich kann mit natürlichen Zahlen umgehen. Baut auf: nur Grundschulstoff
-- 5.2.2-L1 Ich kann mit großen Zahlen umgehen. Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.)
-- 5.2.3-L1 Ich kann Zahlen runden. Baut auf: 5.2.2-L1 (Ich kann mit großen Zahlen umgehen.)
-- 5.2.4-L1 Ich kann eine Anzahl auf Bildern schätzen. Baut auf: 5.2.3-L1 (Ich kann Zahlen runden.)
-- 5.2.5-L1 Ich kann Zahlen im Zweiersystem verwenden. Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.)
-- 5.2.X1-L1 Ich kann römische Zahlzeichen verwenden. Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.)
 - 5.5.1-L1 Ich kann die Begriffe Strecke und Gerade anwenden. Baut auf: nur Grundschulstoff
 - 5.5.2-L1 Ich kann Senkrechten erkennen und zeichnen. Baut auf: 5.5.1-L1 (Ich kann die Begriffe Strecke und Gerade anwenden.)
 - 5.5.3-L1 Ich kann Parallelen erkennen und zeichnen. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.)
-- 5.5.4-L1 Ich kann Punkte im Koordinatensystem ablesen und darstellen. Baut auf: 5.2.1-L1 (Ich kann mit natürlichen Zahlen umgehen.), 5.5.1-L1 (Ich kann die Begriffe Strecke und Gerade anwenden.)
+- 5.5.4-L1 Ich kann Punkte im Koordinatensystem ablesen und darstellen. Baut auf: 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.), 5.5.1-L1 (Ich kann die Begriffe Strecke und Gerade anwenden.)
 - 5.5.5-L1 Ich kann die Begriffe Entfernung und Abstand richtig anwenden. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.)
 - 5.5.6-L1 Ich kann symmetrische Figuren erkennen und zeichnen. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.)
 - 5.5.7-L1 Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.), 5.5.3-L1 (Ich kann Parallelen erkennen und zeichnen.)
 - 5.5.8-L1 Ich kann Parallelogramm und Raute erkennen, unterscheiden und zeichnen. Baut auf: 5.5.3-L1 (Ich kann Parallelen erkennen und zeichnen.), 5.5.7-L1 (Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen.)
 - 5.5.9-L1 Ich kann Drachen und Trapez erkennen, unterscheiden und zeichnen. Baut auf: 5.5.6-L1 (Ich kann symmetrische Figuren erkennen und zeichnen.), 5.5.8-L1 (Ich kann Parallelogramm und Raute erkennen, unterscheiden und zeichnen.)
-- 5.6.1-L1 Ich kann Größen schätzen. Baut auf: 5.2.4-L1 (Ich kann eine Anzahl auf Bildern schätzen.)
+- 5.6.1-L1 Ich kann Größen schätzen. Baut auf: 5.2.4-S1 (Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.)
 - 5.6.2-L1 Ich kann mit Geldbeträgen und Geldeinheiten rechnen. Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.)
 - 5.6.3-L1 Ich kann mit Zeitpunkten, Zeitspannen und Zeiteinheiten umgehen. Baut auf: 5.3.1-K1 (Ich kann im Kopf addieren.), 5.3.1-K2 (Ich kann im Kopf subtrahieren.)
 - 5.6.4-L1 Ich kann mit Gewichten und Gewichtseinheiten umgehen. Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
@@ -4814,4 +5945,4 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 - 5.8.4-L1 Ich kann die Berechnung von Flächeninhalt und Umfang auch bei zusammengesetzten Figuren durchführen und anwenden. Baut auf: 5.8.3-L1 (Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden.)
 - 5.9.1-L1 Ich kann die Bruchschreibweise verwenden. Baut auf: 5.4.1-K2 (Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.)
 - 5.9.2-L1 Ich kann mit Bruchteilen von Größen umgehen. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann mit Längen und Längeneinheiten umgehen.)
-- 5.9.3-L1 Ich kann die Dezimalschreibweise verwenden. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.2.2-L1 (Ich kann mit großen Zahlen umgehen.)
+- 5.9.3-L1 Ich kann die Dezimalschreibweise verwenden. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.2.2-B1 (Ich kann große Zahlen lesen und in Ziffern schreiben.)

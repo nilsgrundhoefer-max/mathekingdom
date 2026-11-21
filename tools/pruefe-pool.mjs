@@ -995,6 +995,10 @@ function pruefeNachweis(a) {
       if (namen[stelle] !== frage[2] || zahlen[stelle] !== wert) melde(a.id, `Lücke ${n}: ${frage[2]} ist ${zahlen[stelle] ?? 'in der Gleichung nicht zu finden'}, nicht ${wert}`);
     } else if (!ergebnisse.has(wert)) melde(a.id, `Lücke ${n}: ${wert} ist kein Ergebnis im Nachweis`);
   }
+  // Zwei Lücken ohne eigene Gleichung mit derselben Lösung: Dann ließe sich eine falsche Lösung hinter dem Ergebnis der anderen verstecken.
+  { const frei = (a.lueckenOhneGleichung ?? []).filter((n) => ergebnisse.has(a.luecken[n].loesung)).map((n) => a.luecken[n].loesung);
+    // Ausnahme: Division mit Rest, dort dürfen Quotient und Rest gleich sein.
+    if (new Set(frei).size !== frei.length && !(a.nachweis ?? []).some((z) => typeof z === 'string' && / Rest /.test(z))) melde(a.id, 'zwei Lücken ohne eigene Gleichung haben dieselbe Lösung'); }
   // Die Lösung ist das Endergebnis, kein Zwischenergebnis: Sie wird nicht in einer späteren Rechnung zu etwas Neuem weiterverrechnet.
   if (a.format === 'zahl' && !a.nachweis.some((n) => typeof n === 'object' && [ERGEBNIS[n.art]?.(n) ?? []].flat().includes(a.loesung))) {
     const zeilen = offen.filter((z) => z.fertig);

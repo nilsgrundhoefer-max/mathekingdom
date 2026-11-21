@@ -27,7 +27,10 @@ const bild = (b) => {
     strichliste: () => `Strichliste${b.titel ? ` „${b.titel}“` : ''}: ${b.zeilen.map((x) => `${x.name} ${x.anzahl}${x.striche ? ` (gezeichnet als ${x.striche})` : ''}`).join(', ')}`,
     saeulen: () => `${b.liegend ? 'Balkendiagramm' : 'Säulendiagramm'} ${b.ohne?.includes('titel') ? 'ohne Titel' : `„${b.titel}“`}${b.ohne?.includes('einheit') ? ', ohne Einheit' : ''}; Achse ${b.ab ?? 0} bis ${b.max}, Linien alle ${b.fein ?? b.schritt}, beschriftet alle ${b.schritt}; ${b.saeulen.map((x) => `${x.name} ${wert(x.wert)}`).join(', ')}`,
     bilddiagramm: () => `Bilddiagramm „${b.titel}“, ein Bild (${b.symbol}) = ${b.je} ${b.einheit}; ${b.zeilen.map((x) => `${x.name} ${wert(x.wert)}`).join(', ')}`,
-    zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
+    tafel: () => `Stellenwerttafel${b.basis === 2 ? ' im Zweiersystem' : ''}${b.plaettchen ? ' mit Plättchen' : ''}, Spalten ${b.spalten.join(' ')}: ${[b.werte, ...(b.weitere ?? [])].map((z) => z.map((w) => (w == null ? '·' : typeof w === 'object' ? '?' : w)).join(' ')).join(' / ')}`,
+    schaetzbild: () => `Schätzbild mit ${b.felder.flat().reduce((x, y) => x + y, 0)} Symbolen (${b.symbol}) in ${b.felder.length} mal ${b.felder[0].length} Feldern, Raster ${{ fest: 'sichtbar', wahl: 'zum Einschalten', ohne: 'keines' }[b.raster]}${b.markiert ? `, ein Feld markiert${b.gezaehlt ? ' und ausgezählt' : ''}` : ''}; je Feld ${b.felder.map((z) => z.join(' ')).join(' / ')}`,
+    zeichentafel: () => `Zeichentafel ${b.zeichen.join(', ')} mit Werten`,
+    zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.schritt ? `, Teilstriche alle ${b.schritt}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${wert(b.pfeil)}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
 };
@@ -54,6 +57,10 @@ const loesung = (a) => {
   if (a.format === 'strichliste') return `_(Strichliste anlegen, ${a.buendeln === 'auto' ? 'der fünfte Strich wird von selbst quer gesetzt' : 'das Kind setzt den Querstrich selbst'})_ Lösung: ${a.zeilen.map((z) => `${z.name} **${z.loesung}**${z.start ? ` (schon ${z.start})` : ''}`).join(', ')}`;
   if (a.format === 'zeichnen') { const d = a.diagramm; return `_(Säulen zeichnen „${d.titel}“, Achse 0 bis ${d.max}, Linien alle ${d.fein}, beschriftet alle ${d.schritt})_ Lösung: ${d.saeulen.map((x) => (x.offen ? `${x.name} **${x.wert}**${x.start != null ? ` (steht bei ${x.start})` : ''}` : `${x.name} ${x.wert} (vorgegeben)`)).join(', ')}`; }
   if (a.format === 'zuordnen') return `Lösung: ${a.paare.map((p) => `${p.links} → ${p.rechts}`).join(', ')}`;
+  // Kapitel 2 (ADR 0030)
+  if (a.format === 'ordnen') return `_(Ordnen; die Karten liegen so da: ${a.karten.join(', ')})_ Lösung: **${a.loesung.join(', ')}**`;
+  if (a.format === 'zeichen') return `_(Zeichen tippen mit den Tasten ${a.tasten.join(' ')})_ Lösung: **${a.loesung}**`;
+  if (a.format === 'schaetzen') return `_(Schätzen)_ Wahre Anzahl: **${a.loesung}**${a.einheit ? ` ${a.einheit}` : ''}, richtig von ${a.bereich[0]} bis ${a.bereich[1]}`;
   return a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n');
 };
 

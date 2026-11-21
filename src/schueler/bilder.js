@@ -171,7 +171,8 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
         s('rect', { x: 0, y: 0, width: breite, height: hoehe, fill: 'white' }),
         frei.map(([m, j]) => { const [mx, my] = mitteVon(m, j); return s('ellipse', { cx: mx + 45, cy: my - 25, rx: 125, ry: 95, fill: 'black', filter: `url(#${nebelId}-weich)` }); }))),
     s('rect', { x: 4, y: 4, width: breite - 8, height: hoehe - 8, rx: 6, class: 'nebel', mask: `url(#${nebelId})`, 'aria-hidden': 'true', 'data-frei': frei.length }),
-    windrose(breite - 46, hoehe - 46),
+    // Mit Abstecher steht unten rechts dessen Beschriftung; die Windrose rückt dann nach oben.
+    windrose(breite - 46, milestones.some((m) => m.extra) ? 58 : hoehe - 46),
     s('path', { d, class: 'weg-rand' }), s('path', { d, class: 'weg' }));
   // Abstecher: gestrichelt unterhalb des Weges
   milestones.forEach((m, j) => {
