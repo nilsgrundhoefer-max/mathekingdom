@@ -33,6 +33,7 @@ import { parallele } from './aufgaben/5-5-3-parallel.mjs';
 import { koordinatensystem } from './aufgaben/5-5-4-koordinaten.mjs';
 import { entfernungUndAbstand } from './aufgaben/5-5-5-abstand.mjs';
 import { symmetrie } from './aufgaben/5-5-6-symmetrie.mjs';
+import { vierecke } from './aufgaben/5-5-7-vierecke.mjs';
 
 const ERZEUGER = [
   [51151151, datenUndDiagramme],
@@ -46,6 +47,7 @@ const ERZEUGER = [
   [55455455, koordinatensystem],
   [55555155, entfernungUndAbstand],
   [55655655, symmetrie],
+  [55755755, vierecke],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

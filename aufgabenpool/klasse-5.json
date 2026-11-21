@@ -100972,6 +100972,7936 @@
      ]
     }
    ]
+  },
+  {
+   "id": "5.5.7-V1-F-01",
+   "lernziel": "5.5.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist ein Rechteck?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Rechteck hat vier rechte Winkel.",
+    "beispiel": "Prüfe bei jeder Figur alle vier Ecken.",
+    "loesungsschritt": "Nur bei einer Figur sind alle Ecken rechte Winkel."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        1
+       ],
+       [
+        10,
+        2
+       ],
+       [
+        11,
+        5
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        2
+       ],
+       [
+        15,
+        2
+       ],
+       [
+        17,
+        4
+       ],
+       [
+        15,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Rechteck"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-F-02",
+   "lernziel": "5.5.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele rechte Winkel hat es?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem rechten Winkel treffen sich zwei Seiten wie bei einer Heftecke.",
+    "beispiel": "Prüfe jede der vier Ecken einzeln.",
+    "loesungsschritt": "Zähle nur die Ecken, in die eine Heftecke genau passt."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        2,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "rechteWinkel": 4
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-F-03",
+   "lernziel": "5.5.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F an.\nWie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Vierecke haben vier rechte Winkel.",
+    "beispiel": "Im Quadrat sind alle vier Seiten gleich lang.",
+    "loesungsschritt": "Zähle die Kästchen an zwei Seiten und vergleiche."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        7,
+        1
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        4,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Quadrat"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-F-04",
+   "lernziel": "5.5.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken von einem Rechteck sind markiert.\nMarkiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "B",
+      "x": 6,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 5,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 2,
+      "y": 5,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       6,
+       3
+      ],
+      "b": [
+       6,
+       5
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       6,
+       5
+      ],
+      "b": [
+       2,
+       5
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     2,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Ein Rechteck hat vier rechte Winkel.",
+    "beispiel": "Die Seiten gegenüber sind gleich lang.",
+    "loesungsschritt": "Geh von einer Ecke so weit wie die Seite gegenüber."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       2,
+       3
+      ],
+      [
+       6,
+       3
+      ],
+      [
+       6,
+       5
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "typ": "Rechteck"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-F-05",
+   "lernziel": "5.5.7-V1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Du siehst das Rechteck ABCD.\nWie viele Kästchen ist die Seite CD lang?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "koord-ab-eins"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Kästchen zwischen C und D.",
+    "beispiel": "Die Seite CD ist so lang wie die Seite AB.",
+    "loesungsschritt": "Zähle Kästchen für Kästchen von D bis C."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        3,
+        4
+       ],
+       [
+        6,
+        4
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 4,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 4,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 6,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 6,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "strecke",
+     "von": "C",
+     "nach": "D",
+     "wert": 3,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-F-06",
+   "lernziel": "5.5.7-V1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist ein Quadrat?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Quadrat hat vier rechte Winkel.",
+    "beispiel": "Im Quadrat sind alle vier Seiten gleich lang.",
+    "loesungsschritt": "Suche die Figur mit rechten Winkeln und gleich langen Seiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        10,
+        3
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        14,
+        1
+       ],
+       [
+        16,
+        1
+       ],
+       [
+        16,
+        4
+       ],
+       [
+        14,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Quadrat"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-G-01",
+   "lernziel": "5.5.7-V1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck F ist ein Rechteck.\nWelche Eigenschaft hat jedes Rechteck?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Alle vier Seiten sind gleich lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Es hat nur zwei rechte Winkel.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Es hat vier rechte Winkel.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau dir die Ecken des Rechtecks an.",
+    "beispiel": "Vergleiche auch die Längen der Seiten.",
+    "loesungsschritt": "In einem Rechteck sind alle Ecken rechte Winkel."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        4
+       ],
+       [
+        8,
+        4
+       ],
+       [
+        8,
+        6
+       ],
+       [
+        4,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Rechteck",
+     "rechteWinkel": 4,
+     "gleichlang": false
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-G-02",
+   "lernziel": "5.5.7-V1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren",
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Du siehst das Rechteck ABCD.\n2 Kästchen sind 1 cm lang.\nWie lang ist die Seite AB?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "laenge-kaestchen"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "laenge-kaestchen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Kästchen von A bis B.",
+    "beispiel": "Immer 2 Kästchen zusammen sind 1 cm.",
+    "loesungsschritt": "Teile 6 durch 2."
+   },
+   "einheit": "cm",
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        8,
+        2
+       ],
+       [
+        8,
+        7
+       ],
+       [
+        2,
+        7
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 8,
+      "y": 7,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 2,
+      "y": 7,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "2 Kästchen sind 1 cm"
+    },
+    "6 : 2 = 3",
+    {
+     "art": "strecke",
+     "von": "A",
+     "nach": "B",
+     "wert": 3,
+     "einheit": "cm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-G-03",
+   "lernziel": "5.5.7-V1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken eines Quadrats sind markiert.\nMarkiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 7,
+      "y": 4,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 9,
+      "y": 4,
+      "pos": "ru"
+     },
+     {
+      "n": "D",
+      "x": 7,
+      "y": 6,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       7,
+       4
+      ],
+      "b": [
+       9,
+       4
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       7,
+       6
+      ],
+      "b": [
+       7,
+       4
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     9,
+     6
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Im Quadrat sind alle vier Seiten gleich lang.",
+    "beispiel": "Alle Ecken sind rechte Winkel.",
+    "loesungsschritt": "Geh von einer Ecke so viele Kästchen wie eine Seite lang ist."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       7,
+       4
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       9,
+       6
+      ],
+      [
+       7,
+       6
+      ]
+     ],
+     "typ": "Quadrat"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-G-04",
+   "lernziel": "5.5.7-V1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck F steht auf einer Ecke.\nWie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Raute",
+     "richtig": false,
+     "fehlvorstellung": "lage-prototyp"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dreh das Bild in Gedanken.",
+    "beispiel": "Prüfe die Ecken: Sind es rechte Winkel?",
+    "loesungsschritt": "Vier rechte Winkel und vier gleich lange Seiten ergeben ein Quadrat."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        3,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Quadrat"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-G-05",
+   "lernziel": "5.5.7-V1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Mia sagt: „Ein Quadrat ist auch ein Rechteck.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nIm Rechteck sind zwei Seiten länger.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Stimmt.\nEin Quadrat hat vier rechte Winkel.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was braucht ein Viereck, damit es ein Rechteck ist?",
+    "beispiel": "Ein Rechteck braucht vier rechte Winkel.",
+    "loesungsschritt": "Das Quadrat hat vier rechte Winkel und sogar noch gleich lange Seiten."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-G-06",
+   "lernziel": "5.5.7-V1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Drei Ecken des Rechtecks ABCD sind A(3|1), B(9|1) und C(9|5).\nDie Ecke D hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 9,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 1,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Im Rechteck liegen die Seiten gegenüber parallel.",
+    "beispiel": "D liegt genau über A und auf gleicher Höhe wie C.",
+    "loesungsschritt": "D hat die x-Koordinate von A und die y-Koordinate von C: 3 und 5."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 8,
+    "achsen": true,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 1,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 9,
+      "y": 1,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 9,
+      "y": 5,
+      "pos": "ro"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       1
+      ],
+      "b": [
+       9,
+       1
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       9,
+       1
+      ],
+      "b": [
+       9,
+       5
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vierteEcke",
+     "ecken": [
+      "A",
+      "B",
+      "C"
+     ],
+     "x": 3,
+     "y": 5,
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-M-01",
+   "lernziel": "5.5.7-V1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Bild sind die Diagonalen eingezeichnet. Welche Aussagen stimmen für dieses Viereck? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Die Diagonalen sind gleich lang.",
+     "richtig": true
+    },
+    {
+     "text": "Die Diagonalen sind senkrecht zueinander.",
+     "richtig": true
+    },
+    {
+     "text": "Die Diagonalen sind verschieden lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Die Diagonalen halbieren sich.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Diagonale verbindet zwei gegenüberliegende Ecken.",
+    "loesungsschritt": "Im Rechteck sind die Diagonalen gleich lang und halbieren sich. Nur im Quadrat sind sie auch senkrecht zueinander."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        3,
+        4
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 4,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 4,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 5,
+      "y": 6,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 6,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       4
+      ],
+      "b": [
+       5,
+       6
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       5,
+       4
+      ],
+      "b": [
+       3,
+       6
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Quadrat",
+     "diagonalenGleich": true,
+     "diagonalenHalbieren": true,
+     "diagonalenSenkrecht": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-M-02",
+   "lernziel": "5.5.7-V1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Diagonalen des Rechtecks ABCD schneiden sich in einem Punkt. Markiere diesen Punkt.",
+   "gitter": {
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        7,
+        1
+       ],
+       [
+        7,
+        5
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 1,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 1,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 5,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 1,
+      "y": 5,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       7,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       7,
+       1
+      ],
+      "b": [
+       1,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die Diagonalen verbinden A mit C und B mit D.",
+    "loesungsschritt": "Die Diagonalen halbieren sich. Der Schnittpunkt liegt genau in der Mitte des Rechtecks."
+   },
+   "nachweis": [
+    {
+     "art": "mitte",
+     "von": "A",
+     "nach": "C"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-M-03",
+   "lernziel": "5.5.7-V1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken eines Quadrats sind markiert. Das Quadrat steht schräg. Markiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 8,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 6,
+      "pos": "o"
+     },
+     {
+      "n": "D",
+      "x": 6,
+      "y": 4,
+      "pos": "l"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       7,
+       6
+      ],
+      "b": [
+       6,
+       4
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       6,
+       4
+      ],
+      "b": [
+       8,
+       3
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     9,
+     5
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       8,
+       6
+      ]
+     ],
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auch im schrägen Quadrat sind gegenüberliegende Seiten parallel und gleich lang.",
+    "loesungsschritt": "Zähle die Schritte nach rechts und nach oben entlang einer Seite. Die Seite gegenüber hat dieselben Schritte."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       8,
+       3
+      ],
+      [
+       9,
+       5
+      ],
+      [
+       7,
+       6
+      ],
+      [
+       6,
+       4
+      ]
+     ],
+     "typ": "Quadrat"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-M-04",
+   "lernziel": "5.5.7-V1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Namen passen zu dem Viereck F? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Viereck",
+     "richtig": true
+    },
+    {
+     "text": "Dreieck",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Rechteck",
+     "richtig": true
+    },
+    {
+     "text": "Quadrat",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Figur kann mehrere Namen haben.",
+    "loesungsschritt": "Jedes Quadrat ist auch ein Rechteck, und jedes Rechteck ist ein Viereck."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        6,
+        4
+       ],
+       [
+        8,
+        4
+       ],
+       [
+        8,
+        6
+       ],
+       [
+        6,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Quadrat",
+     "rechteWinkel": 4
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-M-05",
+   "lernziel": "5.5.7-V1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ben sagt: „Ein Viereck mit vier gleich langen Seiten ist immer ein Quadrat.“ Schau dir das Viereck F an. Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Vier gleich lange Seiten reichen aus.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Falsch. Ein Quadrat braucht auch vier rechte Winkel.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe am Viereck F beide Eigenschaften eines Quadrats.",
+    "loesungsschritt": "Das Viereck F hat vier gleich lange Seiten, aber keine rechten Winkel."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        4,
+        7
+       ],
+       [
+        3,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Raute",
+     "gleichlang": true,
+     "rechteWinkel": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-M-06",
+   "lernziel": "5.5.7-V1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren",
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Im Rechteck ABCD ist die Seite AB 11 cm lang und die Seite BC 2 cm lang. Wie lang sind die Seiten AB und CD zusammen?",
+   "loesung": 22,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 11,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Rechteck sind gegenüberliegende Seiten gleich lang.",
+    "loesungsschritt": "Die Seite CD liegt gegenüber von AB. Sie ist genauso lang."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    {
+     "zahl": 2,
+     "grund": "Länge der Seite BC"
+    },
+    "11 + 11 = 22"
+   ]
+  },
+  {
+   "id": "5.5.7-V1-E-01",
+   "lernziel": "5.5.7-V1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Drei Ecken des Quadrats ABCD sind A(3|1), B(5|2) und C(4|4). Die Ecke D hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 4,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 1,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Von B nach A geht es 2 nach links und 1 nach unten. Geh von C aus dieselben Schritte."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 10,
+    "achsen": true,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 1,
+      "pos": "u"
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 2,
+      "pos": "r"
+     },
+     {
+      "n": "C",
+      "x": 4,
+      "y": 4,
+      "pos": "o"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       1
+      ],
+      "b": [
+       5,
+       2
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       5,
+       2
+      ],
+      "b": [
+       4,
+       4
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vierteEcke",
+     "ecken": [
+      "A",
+      "B",
+      "C"
+     ],
+     "x": 2,
+     "y": 3,
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-E-02",
+   "lernziel": "5.5.7-V1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Aussage stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Jedes Quadrat ist ein Rechteck.",
+     "richtig": true
+    },
+    {
+     "text": "Jedes Rechteck ist ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Ein Rechteck hat immer zwei längere Seiten.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Kein Quadrat ist ein Rechteck.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Rechteck braucht nur vier rechte Winkel. Prüfe, ob das Quadrat diese Eigenschaft hat."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-E-03",
+   "lernziel": "5.5.7-V1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Wie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Parallelogramm",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Rechteck",
+     "richtig": true
+    },
+    {
+     "text": "Raute",
+     "richtig": false,
+     "fehlvorstellung": "lage-prototyp"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe zuerst die Winkel und vergleiche dann die Schritte entlang zweier Nachbarseiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 9,
+    "achsen": true,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        3,
+        2
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 1,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 4,
+      "pos": "ro"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 5,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 2,
+      "pos": "lu"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Rechteck"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-E-04",
+   "lernziel": "5.5.7-V1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Diagonalen eines Vierecks sind gleich lang und halbieren sich. Welche Figur ist es sicher?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Viereck ohne rechte Winkel.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Ein Rechteck.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Eigenschaft gilt für jedes Rechteck. Ein Quadrat hat zusätzlich senkrechte Diagonalen."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-E-05",
+   "lernziel": "5.5.7-V1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Das Quadrat ABCD steht schräg. Markiere den Schnittpunkt seiner Diagonalen.",
+   "gitter": {
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        4,
+        3
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        6,
+        7
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 3,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 4,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 7,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 6,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       3
+      ],
+      "b": [
+       6,
+       7
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       7,
+       4
+      ],
+      "b": [
+       3,
+       6
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     5,
+     5
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Der Schnittpunkt ist die Mitte zwischen A und C. Geh von A aus die halben Schritte bis C."
+   },
+   "nachweis": [
+    {
+     "art": "mitte",
+     "von": "A",
+     "nach": "C"
+    }
+   ]
+  },
+  {
+   "id": "5.5.7-V1-E-06",
+   "lernziel": "5.5.7-V1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Rechteck ABCD steht schräg. Welche Seiten sind orthogonal zueinander? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "BC und CD",
+     "richtig": true
+    },
+    {
+     "text": "BC und AD",
+     "richtig": false,
+     "fehlvorstellung": "senkrecht-parallel-verwechselt"
+    },
+    {
+     "text": "AB und CD",
+     "richtig": false,
+     "fehlvorstellung": "senkrecht-parallel-verwechselt"
+    },
+    {
+     "text": "AB und BC",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Orthogonal heißt senkrecht. Im Rechteck stehen Nachbarseiten senkrecht aufeinander, gegenüberliegende Seiten sind parallel."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        6,
+        2
+       ],
+       [
+        7,
+        3
+       ],
+       [
+        4,
+        6
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 6,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 4,
+      "y": 6,
+      "pos": "lo"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 5,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Rechteck",
+     "rechteWinkel": 4
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-F-01",
+   "lernziel": "5.5.8-V2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist ein Parallelogramm?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Parallelogramm sind die Seiten gegenüber parallel.",
+    "beispiel": "Das gilt für beide Paare von Seiten.",
+    "loesungsschritt": "Suche die Figur mit zwei Paaren paralleler Seiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        11,
+        1
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        7,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        1
+       ],
+       [
+        16,
+        2
+       ],
+       [
+        17,
+        5
+       ],
+       [
+        14,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-F-02",
+   "lernziel": "5.5.8-V2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F an.\nWie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Parallelogramm",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Raute",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "In beiden Vierecken sind die Seiten gegenüber parallel.",
+    "beispiel": "In der Raute sind alle vier Seiten gleich lang.",
+    "loesungsschritt": "Vergleiche zwei Seiten an einer Ecke."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        5
+       ],
+       [
+        8,
+        6
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        2,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-F-03",
+   "lernziel": "5.5.8-V2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken von einem Parallelogramm sind markiert.\nMarkiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "D",
+      "x": 5,
+      "y": 4,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       2
+      ],
+      "b": [
+       7,
+       2
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       5,
+       4
+      ],
+      "b": [
+       3,
+       2
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     9,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       7,
+       4
+      ]
+     ],
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Parallelogramm sind die Seiten gegenüber parallel.",
+    "beispiel": "Sie sind auch gleich lang.",
+    "loesungsschritt": "Zähle die Schritte an einer Seite und geh sie gegenüber genauso."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       3,
+       2
+      ],
+      [
+       7,
+       2
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       5,
+       4
+      ]
+     ],
+     "typ": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-F-04",
+   "lernziel": "5.5.8-V2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist eine Raute?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "In der Raute sind alle vier Seiten gleich lang.",
+    "beispiel": "Die Seiten gegenüber sind parallel.",
+    "loesungsschritt": "Suche die Figur mit vier gleich langen Seiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        10,
+        3
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        15,
+        1
+       ],
+       [
+        16,
+        4
+       ],
+       [
+        15,
+        5
+       ],
+       [
+        14,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-F-05",
+   "lernziel": "5.5.8-V2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Du siehst das Parallelogramm ABCD.\nWelche Seiten sind parallel?\nKreuze alle Paare an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "BC und AD",
+     "richtig": true
+    },
+    {
+     "text": "AB und BC",
+     "richtig": false,
+     "fehlvorstellung": "senkrecht-parallel-verwechselt"
+    },
+    {
+     "text": "AB und CD",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Parallel sind Seiten mit überall gleichem Abstand.",
+    "beispiel": "Im Parallelogramm gibt es zwei solche Paare.",
+    "loesungsschritt": "Prüfe die Seiten gegenüber: AB und CD, dann BC und AD."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        4,
+        3
+       ],
+       [
+        7,
+        6
+       ],
+       [
+        4,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 3,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 4,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 6,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 4,
+      "y": 6,
+      "pos": "o"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "parallelPaare": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-F-06",
+   "lernziel": "5.5.8-V2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Du siehst das Parallelogramm ABCD.\nWie viele Kästchen ist die Seite CD lang?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "koord-ab-eins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Kästchen zwischen C und D.",
+    "beispiel": "Die Seite CD ist so lang wie die Seite AB.",
+    "loesungsschritt": "Zähle Kästchen für Kästchen von D bis C."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        3,
+        2
+       ],
+       [
+        8,
+        2
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        1,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 6,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 1,
+      "y": 6,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "strecke",
+     "von": "C",
+     "nach": "D",
+     "wert": 5,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-G-01",
+   "lernziel": "5.5.8-V2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele Paare paralleler Seiten hat es?",
+   "loesung": 0,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Paar sind zwei Seiten, die zueinander parallel sind.",
+    "beispiel": "Prüfe erst die Seiten oben und unten, dann links und rechts.",
+    "loesungsschritt": "Zähle nur die Paare, bei denen der Abstand überall gleich bleibt."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        3
+       ],
+       [
+        8,
+        3
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        4,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "parallelPaare": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-G-02",
+   "lernziel": "5.5.8-V2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Drei Ecken des Parallelogramms ABCD sind A(2|2), B(6|2) und C(5|4).\nDie Ecke D hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 1,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 2,
+       "fehlvorstellung": "viereck-eigenschaft"
+      },
+      {
+       "wert": 5,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 2,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Im Parallelogramm sind gegenüberliegende Seiten parallel und gleich lang.",
+    "beispiel": "Die Seite von C nach D verläuft wie die Seite von B nach A.",
+    "loesungsschritt": "Von B nach A geht es 4 nach links. Geh von C aus genauso."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 8,
+    "achsen": true,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 5,
+      "y": 4,
+      "pos": "ro"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       2,
+       2
+      ],
+      "b": [
+       6,
+       2
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       6,
+       2
+      ],
+      "b": [
+       5,
+       4
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vierteEcke",
+     "ecken": [
+      "A",
+      "B",
+      "C"
+     ],
+     "x": 1,
+     "y": 4,
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-G-03",
+   "lernziel": "5.5.8-V2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck F steht schräg im Gitter.\nWie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Parallelogramm",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Raute",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die Längen der Seiten.",
+    "beispiel": "Prüfe dann die Ecken: Sind es rechte Winkel?",
+    "loesungsschritt": "Vier gleich lange Seiten ohne rechte Winkel ergeben eine Raute."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 9,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        8,
+        5
+       ],
+       [
+        5,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-G-04",
+   "lernziel": "5.5.8-V2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken einer Raute sind markiert.\nMarkiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 2,
+      "pos": "u"
+     },
+     {
+      "n": "B",
+      "x": 4,
+      "y": 5,
+      "pos": "r"
+     },
+     {
+      "n": "D",
+      "x": 2,
+      "y": 5,
+      "pos": "l"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       2
+      ],
+      "b": [
+       4,
+       5
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       2,
+       5
+      ],
+      "b": [
+       3,
+       2
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     3,
+     8
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "In der Raute sind alle vier Seiten gleich lang.",
+    "beispiel": "Die Raute ist symmetrisch.",
+    "loesungsschritt": "Die fehlende Ecke liegt genau gegenüber von einer markierten Ecke."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       5
+      ],
+      [
+       3,
+       8
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-G-05",
+   "lernziel": "5.5.8-V2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Tom sagt: „Eine Raute ist auch ein Parallelogramm.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.\nIn der Raute sind gegenüberliegende Seiten parallel.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nIm Parallelogramm sind zwei Seiten länger.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was braucht ein Viereck, damit es ein Parallelogramm ist?",
+    "beispiel": "Ein Parallelogramm braucht zwei Paare paralleler Seiten.",
+    "loesungsschritt": "Die Raute hat zwei Paare paralleler Seiten und sogar noch gleich lange Seiten."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-G-06",
+   "lernziel": "5.5.8-V2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck F ist ein Parallelogramm.\nWas stimmt für jedes Parallelogramm?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Alle vier Seiten sind gleich lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Es hat vier rechte Winkel.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Gegenüberliegende Seiten sind gleich lang.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau dir die Seiten des Parallelogramms an.",
+    "beispiel": "Vergleiche immer die zwei Seiten, die gegenüberliegen.",
+    "loesungsschritt": "Nur die gegenüberliegenden Seiten sind sicher gleich lang."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        4,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Parallelogramm",
+     "gegenGleich": true,
+     "gleichlang": false,
+     "rechteWinkel": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-M-01",
+   "lernziel": "5.5.8-V2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Bild sind die Diagonalen eingezeichnet. Welche Aussagen stimmen für dieses Viereck? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Die Diagonalen halbieren sich.",
+     "richtig": true
+    },
+    {
+     "text": "Die Diagonalen sind senkrecht zueinander.",
+     "richtig": true
+    },
+    {
+     "text": "Die Diagonalen sind gleich lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Beide Diagonalen sind Symmetrieachsen.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Parallelogramm halbieren sich die Diagonalen.",
+    "loesungsschritt": "In der Raute sind die Diagonalen außerdem senkrecht zueinander und Symmetrieachsen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 1,
+      "pos": "u"
+     },
+     {
+      "n": "B",
+      "x": 3,
+      "y": 4,
+      "pos": "r"
+     },
+     {
+      "n": "C",
+      "x": 2,
+      "y": 7,
+      "pos": "o"
+     },
+     {
+      "n": "D",
+      "x": 1,
+      "y": 4,
+      "pos": "l"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       2,
+       1
+      ],
+      "b": [
+       2,
+       7
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       3,
+       4
+      ],
+      "b": [
+       1,
+       4
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Raute",
+     "diagonalenGleich": false,
+     "diagonalenHalbieren": true,
+     "diagonalenSenkrecht": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-M-02",
+   "lernziel": "5.5.8-V2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Diagonalen des Parallelogramms ABCD schneiden sich in einem Punkt. Markiere diesen Punkt.",
+   "gitter": {
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        4,
+        5
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        8,
+        7
+       ],
+       [
+        6,
+        7
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 5,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 5,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 8,
+      "y": 7,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 6,
+      "y": 7,
+      "pos": "o"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       5
+      ],
+      "b": [
+       8,
+       7
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       6,
+       5
+      ],
+      "b": [
+       6,
+       7
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     6,
+     6
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die Diagonalen verbinden A mit C und B mit D.",
+    "loesungsschritt": "Die Diagonalen halbieren sich. Der Schnittpunkt ist die Mitte zwischen A und C."
+   },
+   "nachweis": [
+    {
+     "art": "mitte",
+     "von": "A",
+     "nach": "C"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-M-03",
+   "lernziel": "5.5.8-V2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Symmetrieachsen hat das Viereck F?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 0,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte in Gedanken an jeder Diagonale und an jeder Linie durch die Mitten der Seiten.",
+    "loesungsschritt": "Ein Parallelogramm ohne gleich lange Seiten hat keine Symmetrieachse. Bei der Raute sind beide Diagonalen Symmetrieachsen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        3
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        3,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "achsen": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-M-04",
+   "lernziel": "5.5.8-V2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Namen passen zu dem Viereck F? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Raute",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Viereck kann mehrere Namen haben.",
+    "loesungsschritt": "Prüfe für jeden Namen einzeln: Hat das Viereck alle Eigenschaften, die dieser Name verlangt?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        2
+       ],
+       [
+        6,
+        2
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-M-05",
+   "lernziel": "5.5.8-V2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren",
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Im Parallelogramm ABCD ist die Seite AB 12 cm lang und die Seite BC 3 cm lang. Wie lang sind die Seiten BC und AD zusammen?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Parallelogramm sind gegenüberliegende Seiten gleich lang.",
+    "loesungsschritt": "Die Seite AD liegt gegenüber von BC. Sie ist genauso lang."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    {
+     "zahl": 12,
+     "grund": "Länge der Seite AB"
+    },
+    "3 + 3 = 6"
+   ]
+  },
+  {
+   "id": "5.5.8-V2-M-06",
+   "lernziel": "5.5.8-V2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken eines Parallelogramms sind markiert. Markiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 10,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 5,
+      "y": 5,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 6,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 9,
+      "y": 9,
+      "pos": "ro"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       5,
+       5
+      ],
+      "b": [
+       7,
+       6
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       7,
+       6
+      ],
+      "b": [
+       9,
+       9
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     7,
+     8
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       9,
+       5
+      ]
+     ],
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gegenüberliegende Seiten sind parallel und gleich lang.",
+    "loesungsschritt": "Zähle entlang einer Seite die Schritte nach rechts und nach oben. Die Seite gegenüber hat dieselben Schritte."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       5,
+       5
+      ],
+      [
+       7,
+       6
+      ],
+      [
+       9,
+       9
+      ],
+      [
+       7,
+       8
+      ]
+     ],
+     "typ": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-E-01",
+   "lernziel": "5.5.8-V2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Drei Ecken des Parallelogramms ABCD sind A(2|3), B(5|2) und C(6|4). Die Ecke D hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 2,
+       "fehlvorstellung": "viereck-eigenschaft"
+      },
+      {
+       "wert": 6,
+       "fehlvorstellung": "viereck-eigenschaft"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Von B nach A geht es 3 nach links und 1 nach oben. Geh von C aus dieselben Schritte."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 14,
+    "h": 12,
+    "achsen": true,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 3,
+      "pos": "l"
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 4,
+      "pos": "r"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       2,
+       3
+      ],
+      "b": [
+       5,
+       2
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       5,
+       2
+      ],
+      "b": [
+       6,
+       4
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vierteEcke",
+     "ecken": [
+      "A",
+      "B",
+      "C"
+     ],
+     "x": 3,
+     "y": 5,
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-E-02",
+   "lernziel": "5.5.8-V2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Aussage stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Keine Raute ist ein Parallelogramm.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Jedes Parallelogramm ist eine Raute.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Jede Raute ist ein Parallelogramm.",
+     "richtig": true
+    },
+    {
+     "text": "Ein Parallelogramm hat nie rechte Winkel.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Parallelogramm braucht nur zwei Paare paralleler Seiten. Prüfe, ob die Raute diese Eigenschaft hat."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-E-03",
+   "lernziel": "5.5.8-V2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Vierecke sind punktsymmetrisch? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur D",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dreh jede Figur in Gedanken halb herum. Punktsymmetrisch sind genau die Vierecke mit zwei Paaren paralleler Seiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 12,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        7
+       ],
+       [
+        4,
+        7
+       ],
+       [
+        5,
+        10
+       ],
+       [
+        2,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        7
+       ],
+       [
+        11,
+        7
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        8,
+        11
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        5,
+        3
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        10,
+        3
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "punktsymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-E-04",
+   "lernziel": "5.5.8-V2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Welche Namen passen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Rechteck",
+     "richtig": true
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": true
+    },
+    {
+     "text": "Raute",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe der Reihe nach: Sind gegenüberliegende Seiten parallel? Sind alle Seiten gleich lang? Gibt es rechte Winkel?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 10,
+    "achsen": true,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        5,
+        3
+       ],
+       [
+        6,
+        4
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        2,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 5,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 4,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 3,
+      "y": 7,
+      "pos": "lo"
+     },
+     {
+      "n": "D",
+      "x": 2,
+      "y": 6,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Rechteck"
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-E-05",
+   "lernziel": "5.5.8-V2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Diagonalen eines Parallelogramms sind senkrecht zueinander. Welche Figur ist es sicher?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Ein Rechteck.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Eine Raute.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Senkrechte Diagonalen hat jede Raute. Ein Quadrat ist nur ein Sonderfall davon."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.8-V2-E-06",
+   "lernziel": "5.5.8-V2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Lina sagt: „In jedem Parallelogramm sind die Diagonalen gleich lang.“ Im Bild siehst du ein Parallelogramm mit seinen Diagonalen. Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Gegenüberliegende Seiten sind ja auch gleich lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Falsch. Hier ist eine Diagonale länger als die andere.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die beiden Diagonalen im Bild. Gleich lang sind sie nur im Rechteck."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        6,
+        3
+       ],
+       [
+        8,
+        3
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        5,
+        7
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 6,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 7,
+      "pos": "o"
+     },
+     {
+      "n": "D",
+      "x": 5,
+      "y": 7,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       6,
+       3
+      ],
+      "b": [
+       7,
+       7
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       8,
+       3
+      ],
+      "b": [
+       5,
+       7
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Parallelogramm",
+     "diagonalenGleich": false
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-F-01",
+   "lernziel": "5.5.9-V3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist ein Trapez?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Trapez hat zwei parallele Seiten.",
+    "beispiel": "Die beiden anderen Seiten dürfen schräg sein.",
+    "loesungsschritt": "Suche die Figur mit zwei parallelen Seiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        2,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        10,
+        2
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        2
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        1
+       ],
+       [
+        17,
+        1
+       ],
+       [
+        14,
+        5
+       ],
+       [
+        13,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Trapez"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-F-02",
+   "lernziel": "5.5.9-V3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist ein Drachen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Drachen ist symmetrisch.",
+    "beispiel": "Er hat zwei kurze Seiten nebeneinander und zwei lange Seiten nebeneinander.",
+    "loesungsschritt": "Suche die Figur mit einer Symmetrieachse von Ecke zu Ecke."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        1
+       ],
+       [
+        9,
+        1
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        9,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        1
+       ],
+       [
+        17,
+        1
+       ],
+       [
+        16,
+        4
+       ],
+       [
+        14,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Drachen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-F-03",
+   "lernziel": "5.5.9-V3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F an.\nWie heißt es?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Drachen",
+     "richtig": true
+    },
+    {
+     "text": "Trapez",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Trapez hat zwei parallele Seiten.",
+    "beispiel": "Ein Drachen hat eine Symmetrieachse von Ecke zu Ecke.",
+    "loesungsschritt": "Prüfe zuerst: Gibt es zwei parallele Seiten?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        2
+       ],
+       [
+        8,
+        3
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        2,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Drachen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-F-04",
+   "lernziel": "5.5.9-V3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Du siehst das Trapez ABCD.\nWelche Seiten sind parallel?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "AB und CD",
+     "richtig": true
+    },
+    {
+     "text": "AB und BC",
+     "richtig": false,
+     "fehlvorstellung": "senkrecht-parallel-verwechselt"
+    },
+    {
+     "text": "BC und AD",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Parallel sind Seiten mit überall gleichem Abstand.",
+    "beispiel": "Im Trapez gibt es ein solches Paar.",
+    "loesungsschritt": "Vergleiche die Seite unten mit der Seite oben."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        8,
+        1
+       ],
+       [
+        7,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 1,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 1,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 3,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 2,
+      "y": 3,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "parallelPaare": 1
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-F-05",
+   "lernziel": "5.5.9-V3",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken von einem Drachen sind markiert.\nDer Drachen ist symmetrisch.\nMarkiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 5,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 5,
+      "y": 6,
+      "pos": "o"
+     },
+     {
+      "n": "D",
+      "x": 4,
+      "y": 4,
+      "pos": "l"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       5,
+       6
+      ],
+      "b": [
+       4,
+       4
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       4,
+       4
+      ],
+      "b": [
+       5,
+       3
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     6,
+     4
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die Symmetrieachse geht von der Ecke unten zur Ecke oben.",
+    "beispiel": "Die fehlende Ecke ist das Spiegelbild einer markierten Ecke.",
+    "loesungsschritt": "Zähle die Kästchen bis zur Achse und geh auf der anderen Seite genauso weit."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       5,
+       3
+      ],
+      [
+       6,
+       4
+      ],
+      [
+       5,
+       6
+      ],
+      [
+       4,
+       4
+      ]
+     ],
+     "typ": "Drachen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-F-06",
+   "lernziel": "5.5.9-V3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele Symmetrieachsen hat es?",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 0,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte die Figur in Gedanken.",
+    "beispiel": "Bei einer Symmetrieachse liegen beide Hälften genau aufeinander.",
+    "loesungsschritt": "Probiere die Linie durch die Mitte der Figur."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        2,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "achsen": 1
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-G-01",
+   "lernziel": "5.5.9-V3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele Paare paralleler Seiten hat es?",
+   "loesung": 0,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Paar sind zwei Seiten, die zueinander parallel sind.",
+    "beispiel": "Prüfe erst die Seiten oben und unten, dann links und rechts.",
+    "loesungsschritt": "Ein Trapez hat ein Paar, ein Drachen hat keines."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        3
+       ],
+       [
+        7,
+        6
+       ],
+       [
+        4,
+        7
+       ],
+       [
+        1,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "parallelPaare": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-G-02",
+   "lernziel": "5.5.9-V3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F genau an.\nWie heißt es?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Trapez",
+     "richtig": true
+    },
+    {
+     "text": "Drachen",
+     "richtig": false,
+     "fehlvorstellung": "lage-prototyp"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe zuerst: Gibt es parallele Seiten?",
+    "beispiel": "Ein Rechteck braucht vier rechte Winkel.",
+    "loesungsschritt": "Ein Drachen kann auch auf der Seite liegen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Trapez"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-G-03",
+   "lernziel": "5.5.9-V3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele rechte Winkel hat es?",
+   "loesung": 0,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem rechten Winkel treffen sich zwei Seiten wie bei einer Heftecke.",
+    "beispiel": "Prüfe jede der vier Ecken einzeln.",
+    "loesungsschritt": "Ein Trapez kann zwei rechte Winkel haben."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        3
+       ],
+       [
+        8,
+        3
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        4,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "rechteWinkel": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-G-04",
+   "lernziel": "5.5.9-V3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Drei Ecken eines Drachens sind markiert.\nDer Drachen liegt auf der Seite.\nMarkiere die vierte Ecke.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 4,
+      "pos": "l"
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 9,
+      "y": 4,
+      "pos": "r"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       4
+      ],
+      "b": [
+       8,
+       2
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       8,
+       2
+      ],
+      "b": [
+       9,
+       4
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     8,
+     6
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die Symmetrieachse geht von der Ecke links zur Ecke rechts.",
+    "beispiel": "Die fehlende Ecke ist das Spiegelbild einer markierten Ecke.",
+    "loesungsschritt": "Zähle die Kästchen bis zur Achse und geh auf der anderen Seite genauso weit."
+   },
+   "nachweis": [
+    {
+     "art": "ergaenzen",
+     "ecken": [
+      [
+       4,
+       4
+      ],
+      [
+       8,
+       2
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       8,
+       6
+      ]
+     ],
+     "typ": "Drachen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-G-05",
+   "lernziel": "5.5.9-V3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck F ist ein Drachen.\nWas stimmt für jeden Drachen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Er hat zwei Paare gleich langer Nachbarseiten.",
+     "richtig": true
+    },
+    {
+     "text": "Er hat zwei Paare paralleler Seiten.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Er hat vier rechte Winkel.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nachbarseiten treffen sich an einer Ecke.",
+    "beispiel": "Vergleiche die beiden Seiten oben und die beiden Seiten unten.",
+    "loesungsschritt": "Oben sind zwei Seiten gleich lang, unten auch."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        2
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        4,
+        7
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Drachen",
+     "parallelPaare": 0,
+     "achsen": 1
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-G-06",
+   "lernziel": "5.5.9-V3",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ole sagt: „Jedes Trapez hat eine Symmetrieachse.“\nSchau dir das Trapez F an.\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nDieses Trapez hat keine Symmetrieachse.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.\nJedes Trapez hat eine Symmetrieachse.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte das Trapez F in Gedanken in der Mitte.",
+    "beispiel": "Die beiden schrägen Seiten sind verschieden lang.",
+    "loesungsschritt": "Die Hälften liegen nicht aufeinander."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        5,
+        3
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        3,
+        7
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Trapez",
+     "achsen": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-M-01",
+   "lernziel": "5.5.9-V3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Bild sind die Diagonalen eingezeichnet. Welche Aussagen stimmen für dieses Viereck? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Die Diagonalen sind gleich lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Die Diagonalen sind senkrecht zueinander.",
+     "richtig": true
+    },
+    {
+     "text": "Die Diagonalen halbieren sich.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Beide Diagonalen sind Symmetrieachsen.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Drachen sind die Diagonalen senkrecht zueinander. Nur eine von ihnen ist eine Symmetrieachse.",
+    "loesungsschritt": "Im symmetrischen Trapez sind die Diagonalen gleich lang, aber sie halbieren sich nicht."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        3,
+        4
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        8,
+        4
+       ],
+       [
+        5,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 4,
+      "pos": "l"
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 2,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 8,
+      "y": 4,
+      "pos": "r"
+     },
+     {
+      "n": "D",
+      "x": 5,
+      "y": 6,
+      "pos": "o"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       4
+      ],
+      "b": [
+       8,
+       4
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       5,
+       2
+      ],
+      "b": [
+       5,
+       6
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Drachen",
+     "diagonalenGleich": false,
+     "diagonalenHalbieren": false,
+     "diagonalenSenkrecht": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-M-02",
+   "lernziel": "5.5.9-V3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Namen passen zu dem Viereck F? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Drachen",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Trapez",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Trapez hat mindestens ein Paar paralleler Seiten. Ein Drachen hat zwei Paare gleich langer Nachbarseiten.",
+    "loesungsschritt": "Ein Parallelogramm ist auch ein Trapez. Eine Raute ist auch ein Drachen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        1
+       ],
+       [
+        7,
+        1
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        4,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-M-03",
+   "lernziel": "5.5.9-V3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Das Viereck F ist ein Drachen. Zeichne seine Symmetrieachse ein.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        2
+       ],
+       [
+        7,
+        3
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        3,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "bedingung": {
+    "art": "gerade",
+    "a": [
+     5,
+     2
+    ],
+    "b": [
+     5,
+     6
+    ]
+   },
+   "beispiel": [
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     6
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Beim Drachen geht die Symmetrieachse durch zwei Ecken.",
+    "loesungsschritt": "Falte in Gedanken: Beide Hälften müssen genau aufeinanderliegen."
+   },
+   "nachweis": [
+    {
+     "art": "achseZeichnen",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-M-04",
+   "lernziel": "5.5.9-V3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren",
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Im Drachen ABCD ist die Diagonale AC die Symmetrieachse. Die Seite AB ist 6 cm lang und die Seite BC 8 cm lang. Wie lang sind die Seiten BC und CD zusammen?",
+   "loesung": 16,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Spiegeln an AC landet B auf D.",
+    "loesungsschritt": "Die Seite CD ist das Spiegelbild der Seite CB. Sie ist genauso lang."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    {
+     "zahl": 6,
+     "grund": "Länge der Seite AB"
+    },
+    "8 + 8 = 16"
+   ]
+  },
+  {
+   "id": "5.5.9-V3-M-05",
+   "lernziel": "5.5.9-V3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Vierecke haben genau eine Symmetrieachse? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Figur D",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte jede Figur in Gedanken.",
+    "loesungsschritt": "Ein Drachen und ein symmetrisches Trapez haben je eine Symmetrieachse. Ein Parallelogramm hat keine."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 12,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        8
+       ],
+       [
+        5,
+        8
+       ],
+       [
+        3,
+        10
+       ],
+       [
+        2,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        8
+       ],
+       [
+        11,
+        8
+       ],
+       [
+        9,
+        10
+       ],
+       [
+        7,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        2,
+        2
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        7,
+        1
+       ],
+       [
+        11,
+        1
+       ],
+       [
+        10,
+        5
+       ],
+       [
+        8,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "1 Achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-M-06",
+   "lernziel": "5.5.9-V3",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Tom sagt: „Im Drachen sind die Diagonalen senkrecht zueinander.“ Im Bild siehst du einen Drachen mit seinen Diagonalen. Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Die Diagonalen bilden rechte Winkel.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Die Diagonalen sind nur gleich lang.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Diagonale ist die Symmetrieachse.",
+    "loesungsschritt": "Die andere Diagonale verbindet einen Punkt mit seinem Spiegelbild. Sie steht deshalb senkrecht auf der Achse."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        1,
+        4
+       ],
+       [
+        3,
+        3
+       ],
+       [
+        6,
+        4
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 4,
+      "pos": "l"
+     },
+     {
+      "n": "B",
+      "x": 3,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 4,
+      "pos": "r"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 5,
+      "pos": "o"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       1,
+       4
+      ],
+      "b": [
+       6,
+       4
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       3,
+       3
+      ],
+      "b": [
+       3,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    },
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Drachen",
+     "diagonalenSenkrecht": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-E-01",
+   "lernziel": "5.5.9-V3",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Wie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Raute",
+     "richtig": true
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Drachen",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Trapez",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe zuerst, ob es parallele Seiten gibt. Vergleiche danach die Längen der Nachbarseiten über die Schritte nach rechts und nach oben."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 9,
+    "achsen": true,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        6,
+        3
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 7,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 3,
+      "y": 6,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-E-02",
+   "lernziel": "5.5.9-V3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ein Viereck hat genau ein Paar paralleler Seiten. Welche Figur kann es sein?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Trapez.",
+     "richtig": true
+    },
+    {
+     "text": "Ein Drachen.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Ein Parallelogramm.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Eine Raute.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Parallelogramm und Raute haben zwei Paare paralleler Seiten. Ein Drachen mit parallelen Seiten ist schon eine Raute."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-E-03",
+   "lernziel": "5.5.9-V3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Finn sagt: „Jede Raute ist auch ein Drachen.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. In der Raute sind Nachbarseiten gleich lang.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Ein Drachen hat immer zwei kurze und zwei lange Seiten.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Drachen braucht zwei Paare gleich langer Nachbarseiten. In der Raute sind sogar alle vier Seiten gleich lang."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-E-04",
+   "lernziel": "5.5.9-V3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Das Trapez ABCD ist symmetrisch zur gestrichelten Achse. Die Ecken A, B und C sind markiert. Setze die Ecke D.",
+   "gitter": {
+    "b": 12,
+    "h": 6,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 9,
+      "y": 2,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 4,
+      "pos": "ro"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       1,
+       2
+      ],
+      "b": [
+       9,
+       2
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       9,
+       2
+      ],
+      "b": [
+       6,
+       4
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       5,
+       0
+      ],
+      "b": [
+       5,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       4
+      ]
+     ],
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Ecke D ist das Spiegelbild der Ecke C. Zähle die Kästchen von C bis zur Achse und geh auf der anderen Seite genauso weit."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       6,
+       4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-E-05",
+   "lernziel": "5.5.9-V3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Bei welchen Vierecken sind die Diagonalen orthogonal zueinander? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur D",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zeichne in Gedanken beide Diagonalen ein. Orthogonal sind sie im Drachen und in der Raute, denn dort ist eine Diagonale die Symmetrieachse."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 12,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        7
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        4,
+        10
+       ],
+       [
+        2,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        8
+       ],
+       [
+        11,
+        9
+       ],
+       [
+        9,
+        10
+       ],
+       [
+        7,
+        9
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        2,
+        2
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        7,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "diagonalenSenkrecht"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V3-E-06",
+   "lernziel": "5.5.9-V3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Im Drachen ABCD ist die Diagonale AC die Symmetrieachse. Die Seite AB ist 7 cm lang und die Seite BC 13 cm lang. Wie lang sind alle vier Seiten zusammen?",
+   "loesung": 40,
+   "typischeFehler": [
+    {
+     "wert": 20,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 27,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wegen der Symmetrie ist AD so lang wie AB und CD so lang wie BC. Addiere alle vier Längen."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    "7 + 7 + 13 + 13 = 40"
+   ]
+  },
+  {
+   "id": "5.5.9-V4-F-01",
+   "lernziel": "5.5.9-V4",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F an.\nWie heißt es?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Parallelogramm",
+     "richtig": true
+    },
+    {
+     "text": "Trapez",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe zuerst die parallelen Seiten.",
+    "beispiel": "Prüfe dann die rechten Winkel.",
+    "loesungsschritt": "Zwei Paare paralleler Seiten ohne rechte Winkel ergeben ein Parallelogramm."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        3
+       ],
+       [
+        7,
+        3
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        3,
+        7
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-F-02",
+   "lernziel": "5.5.9-V4",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist ein Quadrat?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "lage-prototyp"
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "lage-prototyp"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Quadrat darf auch auf einer Ecke stehen.",
+    "beispiel": "Es hat vier rechte Winkel und vier gleich lange Seiten.",
+    "loesungsschritt": "Dreh das Bild in Gedanken."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        2,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        10,
+        3
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        15,
+        2
+       ],
+       [
+        16,
+        3
+       ],
+       [
+        15,
+        4
+       ],
+       [
+        14,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Quadrat"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-F-03",
+   "lernziel": "5.5.9-V4",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele rechte Winkel hat es?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem rechten Winkel treffen sich zwei Seiten wie bei einer Heftecke.",
+    "beispiel": "Prüfe jede der vier Ecken einzeln.",
+    "loesungsschritt": "Zähle nur die Ecken, in die eine Heftecke genau passt."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        4,
+        6
+       ],
+       [
+        2,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "rechteWinkel": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-F-04",
+   "lernziel": "5.5.9-V4",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur hat vier gleich lange Seiten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche bei jeder Figur zwei Seiten an einer Ecke.",
+    "beispiel": "Zähle die Kästchen oder die Schritte.",
+    "loesungsschritt": "Bei einer Figur sind alle vier Seiten gleich lang."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        3,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        10,
+        3
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        14,
+        1
+       ],
+       [
+        16,
+        1
+       ],
+       [
+        16,
+        5
+       ],
+       [
+        14,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "gleichlang"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-F-05",
+   "lernziel": "5.5.9-V4",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F an.\nWie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Raute",
+     "richtig": true
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "lage-prototyp"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Vierecke haben vier gleich lange Seiten.",
+    "beispiel": "Nur das Quadrat hat vier rechte Winkel.",
+    "loesungsschritt": "Prüfe eine Ecke mit der Heftecke."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        4
+       ],
+       [
+        7,
+        5
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-F-06",
+   "lernziel": "5.5.9-V4",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur hat keine parallelen Seiten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Parallel sind Seiten mit überall gleichem Abstand.",
+    "beispiel": "Prüfe bei jeder Figur die Seiten gegenüber.",
+    "loesungsschritt": "Beim Drachen laufen alle Seiten schräg zueinander."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        7,
+        2
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        1
+       ],
+       [
+        17,
+        1
+       ],
+       [
+        16,
+        5
+       ],
+       [
+        14,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "nicht Trapez"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-G-01",
+   "lernziel": "5.5.9-V4",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die vier Figuren an.\nWelche Figuren haben zwei Paare paralleler Seiten?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur D",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe bei jeder Figur die Seiten gegenüber.",
+    "beispiel": "Zwei Paare paralleler Seiten hat jedes Parallelogramm.",
+    "loesungsschritt": "Auch das Rechteck hat zwei Paare paralleler Seiten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 12,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        8
+       ],
+       [
+        5,
+        8
+       ],
+       [
+        5,
+        10
+       ],
+       [
+        2,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        7
+       ],
+       [
+        10,
+        10
+       ],
+       [
+        9,
+        11
+       ],
+       [
+        8,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        10,
+        4
+       ],
+       [
+        8,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-G-02",
+   "lernziel": "5.5.9-V4",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Paul sagt: „Jedes Rechteck ist auch ein Parallelogramm.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.\nIm Rechteck sind gegenüberliegende Seiten parallel.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nEin Parallelogramm ist immer schief.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was braucht ein Viereck, damit es ein Parallelogramm ist?",
+    "beispiel": "Ein Parallelogramm braucht zwei Paare paralleler Seiten.",
+    "loesungsschritt": "Das Rechteck hat zwei Paare paralleler Seiten und sogar noch rechte Winkel."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-G-03",
+   "lernziel": "5.5.9-V4",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir das Viereck F an.\nWie heißt es genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Raute",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Paare paralleler Seiten.",
+    "beispiel": "Prüfe dann rechte Winkel und gleich lange Seiten.",
+    "loesungsschritt": "Wähle den Namen, zu dem alle Eigenschaften passen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        7,
+        5
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Parallelogramm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-G-04",
+   "lernziel": "5.5.9-V4",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ein Viereck hat vier rechte Winkel.\nAlle vier Seiten sind gleich lang.\nWie heißt das Viereck genau?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Trapez",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vier rechte Winkel hat jedes Rechteck.",
+    "beispiel": "Vier gleich lange Seiten hat jede Raute.",
+    "loesungsschritt": "Beides zusammen hat nur das Quadrat."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-G-05",
+   "lernziel": "5.5.9-V4",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir das Viereck F an.\nWie viele Symmetrieachsen hat es?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte die Figur in Gedanken an verschiedenen Linien.",
+    "beispiel": "Prüfe Linien durch die Mitten der Seiten und Linien von Ecke zu Ecke.",
+    "loesungsschritt": "Zähle nur die Linien, bei denen beide Hälften genau aufeinanderliegen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "achsen": 4
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-G-06",
+   "lernziel": "5.5.9-V4",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist punktsymmetrisch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dreh jede Figur in Gedanken halb herum.",
+    "beispiel": "Eine punktsymmetrische Figur sieht danach genauso aus wie vorher.",
+    "loesungsschritt": "Das Parallelogramm sieht nach der halben Drehung genauso aus."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        1
+       ],
+       [
+        10,
+        1
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        8,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        15,
+        1
+       ],
+       [
+        16,
+        2
+       ],
+       [
+        15,
+        5
+       ],
+       [
+        14,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "punktsymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-M-01",
+   "lernziel": "5.5.9-V4",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Namen passen zu dem Viereck F? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Trapez",
+     "richtig": true
+    },
+    {
+     "text": "Raute",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Drachen",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Haus der Vierecke erbt jede Figur die Namen der Figuren, die weniger Eigenschaften verlangen.",
+    "loesungsschritt": "Prüfe für jeden Namen einzeln, ob das Viereck F seine Eigenschaften hat."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        5
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        1,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-M-02",
+   "lernziel": "5.5.9-V4",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welches Viereck ist zugleich ein Rechteck und eine Raute?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Drachen",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Trapez",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Rechteck hat vier rechte Winkel, eine Raute hat vier gleich lange Seiten.",
+    "loesungsschritt": "Gesucht ist das Viereck, das beide Eigenschaften zugleich hat."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-M-03",
+   "lernziel": "5.5.9-V4",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Aussagen stimmen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Jede Raute ist ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Jedes Rechteck ist ein Parallelogramm.",
+     "richtig": true
+    },
+    {
+     "text": "Jedes Quadrat ist eine Raute.",
+     "richtig": true
+    },
+    {
+     "text": "Jedes Parallelogramm ist ein Rechteck.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Sonderfall hat alle Eigenschaften der allgemeineren Figur und noch weitere.",
+    "loesungsschritt": "Umgekehrt gilt das nicht: Die allgemeinere Figur hat nicht alle Eigenschaften des Sonderfalls."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-M-04",
+   "lernziel": "5.5.9-V4",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Figuren sind Trapeze? Ein Trapez hat mindestens ein Paar paralleler Seiten. Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur D",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe bei jeder Figur, ob es mindestens ein Paar paralleler Seiten gibt.",
+    "loesungsschritt": "Auch Parallelogramm und Rechteck erfüllen diese Bedingung. Sie sind besondere Trapeze."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 12,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        7
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        4,
+        11
+       ],
+       [
+        2,
+        11
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        7
+       ],
+       [
+        10,
+        10
+       ],
+       [
+        9,
+        11
+       ],
+       [
+        8,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        8,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        8,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Trapez"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-M-05",
+   "lernziel": "5.5.9-V4",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "zuordnen",
+   "text": "Ordne jedem Viereck die passende Beschreibung zu. Jede Beschreibung kommt genau einmal vor.",
+   "paare": [
+    {
+     "links": "Raute",
+     "rechts": "vier gleich lange Seiten"
+    },
+    {
+     "links": "Rechteck",
+     "rechts": "vier rechte Winkel"
+    },
+    {
+     "links": "Drachen",
+     "rechts": "zwei Paare gleich langer Nachbarseiten"
+    },
+    {
+     "links": "Trapez",
+     "rechts": "genau ein Paar paralleler Seiten"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beginne mit dem Viereck, bei dem nur eine Beschreibung passt.",
+    "loesungsschritt": "Auch die Raute hat gleich lange Nachbarseiten. Sie bekommt aber die Beschreibung, die nur zu ihr passt."
+   }
+  },
+  {
+   "id": "5.5.9-V4-M-06",
+   "lernziel": "5.5.9-V4",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Mara sagt: „Ein Viereck mit zwei gleich langen Diagonalen ist immer ein Rechteck.“ Schau dir das Viereck im Bild an. Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Gleich lange Diagonalen gibt es nur im Rechteck.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Falsch. Auch dieses Trapez hat gleich lange Diagonalen.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die beiden Diagonalen im Bild.",
+    "loesungsschritt": "Das symmetrische Trapez hat gleich lange Diagonalen, aber keine vier rechten Winkel."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        8,
+        3
+       ],
+       [
+        7,
+        5
+       ],
+       [
+        2,
+        5
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 3,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 5,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 2,
+      "y": 5,
+      "pos": "lo"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       1,
+       3
+      ],
+      "b": [
+       7,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       8,
+       3
+      ],
+      "b": [
+       2,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Trapez",
+     "diagonalenGleich": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-E-01",
+   "lernziel": "5.5.9-V4",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Welche Namen passen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Trapez",
+     "richtig": true
+    },
+    {
+     "text": "Parallelogramm",
+     "richtig": true
+    },
+    {
+     "text": "Drachen",
+     "richtig": true
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Raute",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme zuerst den genauen Namen über parallele Seiten, Seitenlängen und rechte Winkel. Alle Namen, die weniger verlangen, passen dann auch."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 10,
+    "achsen": true,
+    "figuren": [
+     {
+      "ecken": [
+       [
+        3,
+        2
+       ],
+       [
+        5,
+        3
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        4,
+        4
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 3,
+      "y": 2,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 3,
+      "pos": "ro"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 5,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 4,
+      "y": 4,
+      "pos": "ro"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "ecken": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "typ": "Raute"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-E-02",
+   "lernziel": "5.5.9-V4",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ein Viereck ist zugleich ein Drachen und ein Parallelogramm. Welche Figur ist es sicher?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Ein Viereck ohne parallele Seiten.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Ein Rechteck.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Eine Raute.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Drachen sind Nachbarseiten gleich lang, im Parallelogramm gegenüberliegende Seiten. Zusammen sind alle vier Seiten gleich lang."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-E-03",
+   "lernziel": "5.5.9-V4",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Aussagen stimmen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Jeder Drachen ist eine Raute.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Jede Raute ist ein Drachen.",
+     "richtig": true
+    },
+    {
+     "text": "Jedes Trapez ist ein Parallelogramm.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Jedes Parallelogramm ist ein Trapez.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Sonderfall hat alle Eigenschaften der allgemeineren Figur. Prüfe bei jeder Aussage, welche Figur mehr Eigenschaften verlangt."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-E-04",
+   "lernziel": "5.5.9-V4",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Figuren sind Drachen? Ein Drachen hat zwei Paare gleich langer Nachbarseiten. Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur D",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe an jeder Figur die Nachbarseiten. Auch Raute und Quadrat erfüllen die Bedingung, das Rechteck nicht."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 12,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        3,
+        7
+       ],
+       [
+        5,
+        8
+       ],
+       [
+        4,
+        10
+       ],
+       [
+        2,
+        9
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        9,
+        7
+       ],
+       [
+        11,
+        9
+       ],
+       [
+        9,
+        10
+       ],
+       [
+        7,
+        9
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        9,
+        2
+       ],
+       [
+        11,
+        3
+       ],
+       [
+        9,
+        4
+       ],
+       [
+        7,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "Drachen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-E-05",
+   "lernziel": "5.5.9-V4",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ein Viereck hat genau zwei Symmetrieachsen. Beide gehen durch Ecken. Welche Figur ist es?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Trapez mit genau einem Paar paralleler Seiten.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Ein Rechteck, das kein Quadrat ist.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Eine Raute, die kein Quadrat ist.",
+     "richtig": true
+    },
+    {
+     "text": "Ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Rechteck gehen die Symmetrieachsen durch die Mitten der Seiten. Das Quadrat hat vier Symmetrieachsen."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.9-V4-E-06",
+   "lernziel": "5.5.9-V4",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Lena sagt: „Das Viereck F ist eine Raute.“ Sara sagt: „Das Viereck F ist ein Parallelogramm.“ Wer hat recht?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Keiner von beiden hat recht.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Nur Lena hat recht.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Nur Sara hat recht.",
+     "richtig": false,
+     "fehlvorstellung": "viereck-eigenschaft"
+    },
+    {
+     "text": "Beide haben recht.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe die Eigenschaften beider Namen am Viereck F. Jede Raute ist auch ein Parallelogramm."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 9,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        8,
+        3
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        7
+       ],
+       [
+        7,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "viereck",
+     "figur": "F",
+     "typ": "Raute",
+     "parallelPaare": 2,
+     "gleichlang": true
+    }
+   ]
   }
  ]
 }
