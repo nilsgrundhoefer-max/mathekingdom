@@ -72,6 +72,14 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 
 **`gitter`** (Kapitel 5, ADR 0032): Gitterzeichnen. `gitter` beschreibt das Karogitter wie das Bild `gitter`, `eingabe` ist `punkte`, `linie` oder `zellen`. Bei `punkte` und `zellen` ist `loesung` die Liste der Gitterpunkte oder Kästchen (`[x, y]`, ein Kästchen heißt nach seiner linken unteren Ecke); richtig ist genau diese Menge, die Reihenfolge ist gleichgültig. `typischeFehler` sind Listen aus `punkte` und `fehlvorstellung`. Mit `offen: true` verrät die Eingabe nicht, wie viele Punkte gesucht sind, mit `verbinden: true` verbindet das Dashboard die gesetzten Punkte zu einer Figur. Bei `linie` tippt das Kind zwei Punkte, `linie` nennt die Art (`strecke`, `strahl`, `gerade`), und richtig ist jede Linie, die die `bedingung` erfüllt: `strecke` (`a`, `b`), `gerade` (`a`, `b`), `eine` (`linien`, eine von mehreren Geraden), `senkrecht` (`zu`, optional `durch`), `parallel` (`zu`, optional `durch`, `abstand` in Kästchen) oder `laenge` (`laenge` in Kästchen, optional `von`, `auf`). `beispiel` ist eine richtige Linie für das Lösungsbild; `typischeFehler` sind Listen aus `bedingung` und `fehlvorstellung`. Die Eingabe steht als Text `(3|5) (4|1)` im Speicherstand.
 
+**`groesse`** (Kapitel 6, ADR 0033): Das Kind tippt eine Zahl mit Einheit. `groesse` ist die Größenart (`geld`, `laenge`, `gewicht`, `zeit`), `loesung` der Wert als ganze Zahl in der Grundeinheit (Cent, Millimeter, Milligramm, Sekunde) und `einheit` die Einheit, in der die Lösung gezeigt wird. Mit `einheiten` wählt das Kind die Einheit selbst aus dieser Liste, sonst steht `einheit` fest neben dem Feld. Richtig ist jede Schreibweise mit demselben Wert (2,5 km, 2500 m). Die `wert` der `typischeFehler` stehen ebenfalls in der Grundeinheit. Ohne Einheit oder mit einer Einheit einer anderen Größenart gilt die Fehlvorstellung `einheit-fehlt`.
+
+In einer `sachaufgabe` darf eine Teilaufgabe seit Kapitel 6 Auswahlantworten haben: `optionen` wie bei `auswahl`, wahlweise `mehrfach`, dazu `art` (`angaben`, `rechnung`, `antwort` oder `fehlt`). So kreuzt das Kind die wichtigen Angaben an, wählt die Rechnung und den Antwortsatz.
+
+Eine `tabelle` mit `art: "einheitentafel"` (Kapitel 6) ist eine Einheitentafel zum Eintragen: `gruppen` nennt die Einheiten mit ihrer Spaltenzahl, je Lücke steht genau eine Ziffer, und `ablesen` (`text`, `luecke`, `einheit`) fragt darunter den Wert in der kleineren Einheit ab.
+
+Neben `hilfen` darf `tippBild` stehen: ein Bild, das erst mit dem Tipp erscheint (Kapitel 6: die Einheitentafel auf G).
+
 Bei `zahl` erlaubt `toleranz` eine Abweichung (Kapitel 5: Heftaufgaben mit Kontrollwert, immer 2 mm).
 
 Eine `tabelle` mit `art: "stellentafel"` (Kapitel 2) ist eine Stellenwerttafel zum Eintragen: je Lücke genau eine Ziffer, die Köpfe sind E, Z, H, T und so weiter oder im Zweiersystem 1, 2, 4, 8, ab M auch leer. `gruppen` fasst je drei Spalten zu Tausendern, Millionen und Milliarden zusammen.
@@ -104,6 +112,14 @@ Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau e
 
 | `gitter` | Karogitter (Kapitel 5): `b` und `h` in Kästchen (höchstens 18 und 14), optional `achsen` (Koordinatensystem im ersten Quadranten), `punkte` (`n`, `x`, `y`, optional `pos` für die Lage des Namens), `linien` (`n`, `a`, `b`, `art` Strecke, Strahl oder Gerade, optional `stil` wie `achse` oder `hilfs`), `figuren` (`n`, `ecken`), `zellen` (gefärbte Kästchen), `zentrum` (Symmetriezentrum Z), `rechte` (Zeichen für rechte Winkel), `texte` |
 | `lineal` | Strecke an einem Lineal: `von` und `bis` in Millimetern, `lang` (Länge des Lineals in Millimetern), optional `namen` |
+| `geld` | Münzen und Scheine (Kapitel 6): `stuecke` in Cent, zum Beispiel `[100, 20]` |
+| `uhr` | Zeigeruhren: `uhren` aus `h` und `min`, optional mit Namen |
+| `waage` | Waage im Gleichgewicht: `links` (Name des Gegenstands), `gewichte` (Gewichtsstücke in Gramm) |
+| `einheitentafel` | Einheitentafel mit Ziffern: `gruppen` (`name`, `spalten`), `spalten` (Köpfe), `werte` (eine Ziffer je Spalte, `null` ist leer), optional `weitere` |
+| `vergleichsbild` | Zwei Dinge zum Schätzen: `klein` und `gross` (Formen), `richtung` (`hoch` oder `lang`), `zehntel` (wie oft das Kleine ins Große passt, in Zehnteln), optional `hilfslinien` |
+| `karte` | Orte an einem Lineal: `orte` (`n`, `mm`, `zeichen`), `lang` (Länge des Lineals in Millimetern), dazu `leiste` (`mm`, `text`) oder `massstab` |
+| `grundriss` | Rechteckiger Raum: `name`, `b` und `h` in Millimetern, dazu `leiste` oder `massstab` |
+| `zeitleiste` | Zeitpunkte mit Sprüngen: `punkte` (Uhrzeit oder `wert` mit `frage`), `spruenge` (Zeitspannen zwischen den Punkten) |
 
 Am Bild `zahlenstrahl` gibt es seit Kapitel 2 zusätzlich `punkte` (ein bis sechs benannte Zahlen auf dem Strahl) und `ausschnitt` (der Strahl beginnt nicht bei 0 und zeigt links ein Bruchzeichen).
 
@@ -120,6 +136,7 @@ Am Bild `zahlenstrahl` gibt es seit Kapitel 2 zusätzlich `punkte` (ein bis sech
 - Kapitel 1: Achsen beginnen bei 0 und gehen in gleichen Schritten, jeder Wert liegt auf einer Linie, höchstens 20 Linien. Nur V2 auf M und E darf eine abgeschnittene Achse zeigen. Halbe Bilder im Bilddiagramm erst ab M und genau halb. Auf F und G bündelt das Programm die Strichliste, ab M das Kind. Jede genannte Klasse ist 5a bis 5e, und Text und Bildtitel nennen dieselbe.
 - Kapitel 2: eigener Zahlenraum je Unterkapitel und Niveaustufe (ADR 0030). Zahlwörter, Stellenwerte, gerundete Werte, Reihenfolgen, Dualzahlen und römische Zahlzeichen rechnet die Prüfung selbst nach. Jedes Zeichen einer Aufgabe steht auf ihrer Zeichentafel. Schätzen mit Schätzbereich gibt es erst ab M.
 - Kapitel 5: Koordinaten nur im ersten Quadranten und nach Niveaustufe begrenzt (ADR 0032). Lage, Abstände, Spiegelbilder, Symmetrie und die Namen der Vierecke rechnet die Prüfung selbst nach, mit ganzen Zahlen. Ist ein Punkt gesucht, darf kein zweiter Gitterpunkt die Bedingung erfüllen. Jede Zahl im Text steht im Bild oder im Nachweis. „Diagonale“ und schräge Symmetrieachsen erst ab M, „orthogonal“ nur auf E.
+- Kapitel 6: Größen rechnet die Prüfung in Grundeinheiten nach (ADR 0033): Umwandlungen, Rechnungen, Vergleiche, Maßstab und Einheitentafel. Jede Größe im Text kommt im Nachweis oder im Bild vor. Kommazahlen auf F gibt es nicht, Geld hat ab G zwei Nachkommastellen. Auf F und G steht je Zeile ein Satz mit höchstens 14 Wörtern.
 - `tests/pruefer.test.js` baut absichtlich Fehler ein und verlangt, dass die Prüfung sie meldet.
 
 ## Wortspeicher

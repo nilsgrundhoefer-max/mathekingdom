@@ -124,6 +124,8 @@ Seit Version 0.38 gibt es zu Kapitel 5 Aufgaben (ADR 0032): 16 Lernziele mit je 
 | 6.7 | Sachaufgaben | Ich kann Sachaufgaben sicher lösen. |
 | Extra | Sachaufgaben zu Beruf und Alltag | Ich kann Sachaufgaben zu Beruf und Alltag lösen. |
 
+Seit Version 0.39 gibt es zu Kapitel 6 Aufgaben (ADR 0033): 15 Lernziele mit je 6 Aufgaben auf F, G, M und E. Jedes Unterkapitel 6.1 bis 6.7 hat zwei Lernziele, der Abstecher eines. Gerechnet wird ohne Kommazahlen: Das Komma ist nur eine Schreibweise für zwei Einheiten. Liter und Hohlmaße gehören nicht dazu.
+
 ## Kapitel 7: Kreis und Winkel
 
 | Nr. | Unterkapitel | Lernziel |

@@ -6,6 +6,7 @@
 // Gesperrte Aufgaben stehen im Schulverzeichnis unter `gesperrt` (Liste von Aufgabenkennungen).
 
 import { gitterLoesung } from '../schueler/geo.js';
+import { loesungGroesse } from '../schueler/groessen.js';
 
 export const STATUS_DATEI = 'aufgabenmeldungen.json';
 export const ARTEN = { loesung: 'Lösung falsch', unloesbar: 'nicht lösbar', unklar: 'unklar formuliert', bild: 'Bild falsch' };
@@ -51,7 +52,8 @@ const zahlMitEinheit = (t) => `${gliedere(t.loesung)}${t.einheit ? ` ${t.einheit
 export function loesungVon(a) {
   switch (a.format) {
     case 'zahl': case 'zahlenstrahl': return zahlMitEinheit(a);
-    case 'sachaufgabe': case 'diagramm': return a.teile.map((t, i) => `${'abcdef'[i]}) ${zahlMitEinheit(t)}`).join('   ');
+    case 'sachaufgabe': case 'diagramm': return a.teile.map((t, i) => `${'abcdef'[i]}) ${t.optionen ? t.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ') : zahlMitEinheit(t)}`).join('   ');
+    case 'groesse': return loesungGroesse(a);
     case 'luecken': return a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken[n].loesung);
     case 'tabelle': return Object.values(a.luecken).map((l) => l.loesung).join(', ');
     case 'auswahl': return a.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');

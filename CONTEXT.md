@@ -102,6 +102,22 @@ _Avoid_: Freihandzeichnen, Konstruieren
 Eine Aufgabe, bei der das Kind im Heft mit dem Geodreieck zeichnet und eine nachgemessene Länge in Millimetern eintippt. 2 mm Abweichung gelten als richtig.
 _Avoid_: Konstruktionsaufgabe, Messaufgabe
 
+**Stützgröße**:
+Eine Größe aus dem Alltag, die das Kind auswendig kennt und beim Schätzen als Vergleich nimmt, zum Beispiel eine Tür mit 2 m oder eine Tafel Schokolade mit 100 g.
+_Avoid_: Richtwert, Faustgröße
+
+**Vergleichsgröße**:
+Ein Gegenstand bekannter Größe in einem Bild, an dem das Kind eine unbekannte Größe abschätzt, zum Beispiel ein Kind neben einem Turm.
+_Avoid_: Maßstab (der ist ein festes Verhältnis auf Karten)
+
+**Einheitentafel**:
+Eine Tafel mit einer Spalte je Einheit (km, m, dm, cm, mm oder t, kg, g), in die das Kind die Ziffern einer Größe einträgt, um sie umzuwandeln. Für Zeit gibt es keine, weil 60 nicht zum Zehnersystem passt.
+_Avoid_: Stellenwerttafel (die hat Spalten für Stellenwerte, nicht für Einheiten), Umrechnungstabelle
+
+**Gemischte Schreibweise**:
+Eine Größe mit zwei Einheiten ohne Komma, zum Beispiel „3 € 50 ct“ oder „2 km 500 m“. Die **Kommaschreibweise** („3,50 €“) ist in Klasse 5 nur eine andere Schreibweise dafür und keine Dezimalzahl zum Rechnen.
+_Avoid_: Dezimalzahl (für Größen in Klasse 5)
+
 **Haus der Vierecke**:
 Die Ordnung der Vierecke nach ihren Eigenschaften, in der ein Name den anderen einschließt: Jedes Quadrat ist auch Rechteck und Raute, jedes Rechteck und jede Raute ein Parallelogramm, jedes Parallelogramm ein Trapez, jede Raute ein Drachen. „Genau“ meint den engsten Namen.
 _Avoid_: Vierecksarten, Stammbaum
