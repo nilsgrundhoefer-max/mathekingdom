@@ -194,7 +194,7 @@ test('Aufgabenauswahl: erst neue, dann ungelöste, nie zweimal direkt dieselbe',
   }
   const ungeloest = stand.versuche[0].aufgabe;
   assert.equal(L.naechsteAufgabe(index, stand, S2, 'G').id, ungeloest);
-  assert.equal(L.naechsteAufgabe(index, stand, '5.6.1-L1', 'G'), null);
+  assert.equal(L.naechsteAufgabe(index, stand, '5.7.1-L1', 'G'), null);
 });
 
 test('Meilenstein: Status folgt den Lernzielen', () => {

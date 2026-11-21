@@ -248,6 +248,19 @@ const KIND = {
   'sonderfall-uebersehen': 'Du weißt jetzt: Ein Quadrat ist auch ein besonderes Rechteck.',
   'lage-prototyp': 'Du erkennst eine Figur jetzt auch in gedrehter Lage.',
   'viereck-eigenschaft': 'Du prüfst bei einem Viereck jetzt Seiten und rechte Winkel einzeln nach.',
+  'umrechnungszahl': 'Du nimmst beim Umwandeln jetzt die richtige Umrechnungszahl.',
+  'umrechnungsrichtung': 'Du weißt jetzt: Bei der kleineren Einheit steht die größere Zahl.',
+  'zeit-zehnersystem': 'Du rechnest bei der Zeit jetzt mit 60 Minuten für eine Stunde.',
+  'zeitpunkt-zeitspanne': 'Du unterscheidest jetzt Zeitpunkt und Zeitspanne.',
+  'komma-falsch-gelesen': 'Du liest die Ziffern nach dem Komma jetzt richtig.',
+  'masszahlen-addiert': 'Du wandelst jetzt erst in dieselbe Einheit um und rechnest dann.',
+  'einheit-fehlt': 'Du schreibst jetzt zu jeder Größe die passende Einheit.',
+  'massstab-verkehrt': 'Du weißt jetzt: Von der Karte zur Wirklichkeit rechnest du mal.',
+  'massstab-einheit': 'Du wandelst beim Maßstab das Ergebnis jetzt in die passende Einheit um.',
+  'groesse-ohne-vorstellung': 'Du vergleichst eine Größe jetzt mit Dingen aus dem Alltag.',
+  'vergleich-nicht-genutzt': 'Du rechnest beim Schätzen jetzt mit der Vergleichsgröße weiter.',
+  'sach-frage-verfehlt': 'Du liest am Ende jetzt noch einmal die Frage und prüfst deine Antwort.',
+  'rueckgeld-preis': 'Du rechnest das Rückgeld jetzt als Unterschied aus.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -356,6 +369,20 @@ export const fehlvorstellungen = {
   'sonderfall-uebersehen': fv('Sieht nicht, dass ein Quadrat auch ein Rechteck ist (oder eine Raute auch ein Parallelogramm).', 'Prüfe die Eigenschaften: Hat die Figur alles, was die andere Figur braucht?'),
   'lage-prototyp': fv('Erkennt eine Figur nur in der gewohnten Lage (ein gedrehtes Quadrat gilt als Raute).', 'Dreh das Blatt in Gedanken. Die Figur bleibt dieselbe.'),
   'viereck-eigenschaft': fv('Ordnet einem Viereck Eigenschaften zu, die es nicht hat, oder verwechselt die Namen der Vierecke.', 'Prüfe der Reihe nach: Welche Seiten sind parallel? Welche sind gleich lang? Gibt es rechte Winkel?'),
+  // Kapitel 6: Größen und Sachaufgaben (ADR 0033)
+  'umrechnungszahl': fv('Wandelt mit der falschen Umrechnungszahl um (100 statt 1000, 100 statt 60).', 'Welche Umrechnungszahl gehört zu diesen beiden Einheiten? Schau auf den Merkzettel.'),
+  'umrechnungsrichtung': fv('Rechnet beim Umwandeln in die falsche Richtung (teilt, statt malzunehmen, oder umgekehrt).', 'Ist die neue Einheit kleiner? Dann wird die Zahl davor größer.'),
+  'zeit-zehnersystem': fv('Rechnet bei der Zeit wie im Zehnersystem (1 h als 100 min, 50 min und 20 min als 70 min ohne neue Stunde).', 'Eine Stunde hat 60 Minuten, nicht 100. Rechne bis zur vollen Stunde und dann weiter.'),
+  'zeitpunkt-zeitspanne': fv('Verwechselt Zeitpunkt und Zeitspanne oder rechnet in die falsche Richtung auf der Zeitleiste.', 'Ein Zeitpunkt sagt wann, eine Zeitspanne sagt wie lange. Was ist hier gefragt?'),
+  'komma-falsch-gelesen': fv('Liest die Stellen nach dem Komma falsch (3,5 € als 3 € 5 ct, 1,5 km als 1 km 5 m).', 'Was bedeuten die Ziffern nach dem Komma? Schreibe die Größe mit zwei Einheiten.'),
+  'masszahlen-addiert': fv('Verrechnet die Zahlen verschiedener Einheiten, ohne umzuwandeln (2 m und 50 cm als 52).', 'Die Einheiten sind verschieden. Wandle zuerst in dieselbe Einheit um.'),
+  'einheit-fehlt': fv('Gibt die Einheit nicht an oder wählt eine Einheit, die nicht zur Größe passt.', 'Zu einer Größe gehört eine Einheit. Welche passt hier?'),
+  'massstab-verkehrt': fv('Rechnet beim Maßstab in die falsche Richtung (teilt auf dem Weg zur Wirklichkeit oder umgekehrt).', 'In Wirklichkeit ist alles größer als auf der Karte. Passt dein Ergebnis dazu?'),
+  'massstab-einheit': fv('Rechnet mit dem Maßstab richtig, wandelt das Ergebnis aber nicht oder falsch um.', 'Dein Ergebnis steht noch in der Einheit der Karte. Wandle es in die gefragte Einheit um.'),
+  'groesse-ohne-vorstellung': fv('Hat keine tragfähige Vorstellung von der Größe und wählt eine unpassende Einheit oder Zahl.', 'Vergleiche mit etwas, das du kennst: Eine Tür ist 2 m hoch, eine Tafel Schokolade wiegt 100 g.'),
+  'vergleich-nicht-genutzt': fv('Nennt beim Schätzen nur die Vergleichsgröße oder nur, wie oft sie hineinpasst.', 'Wie oft passt die Vergleichsgröße hinein? Rechne dann mal.'),
+  'sach-frage-verfehlt': fv('Rechnet richtig, beantwortet aber nicht die gestellte Frage (nennt ein Zwischenergebnis oder eine andere Größe).', 'Lies die Frage noch einmal. Was genau ist gesucht?'),
+  'rueckgeld-preis': fv('Nennt beim Rückgeld den Preis oder zählt zusammen, statt abzuziehen.', 'Rückgeld ist das, was übrig bleibt: der gegebene Betrag minus der Preis.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -433,6 +460,39 @@ export function stellentafel(text, spalten, zeilen, werte, hilfen, extra, gruppe
   if (gruppen) t.tabelle.gruppen = gruppen.map(([name, n]) => ({ name, spalten: n }));
   return t;
 }
+// ---------- Kapitel 6: Größen und Sachaufgaben (ADR 0033) ----------
+// Größe eingeben: Die Lösung steht in der kleinsten Einheit (Cent, Millimeter, Milligramm, Sekunde). `einheit` ist die Einheit der Anzeige.
+// extra.einheiten: Das Kind wählt die Einheit selbst aus dieser Liste (ab M). typischeFehler: [[wert in der kleinsten Einheit, fehlvorstellung]]
+export const groesse = (text, art, loesung, einheit, typischeFehler, hilfen, extra) => ({ format: 'groesse', text, groesse: art, loesung, einheit,
+  typischeFehler: fehlerliste(loesung, (typischeFehler ?? []).filter(([w]) => w > 0)), hilfen, ...mit(extra) });
+// Nachweis mit Größen: G('3 · 250 g = 750 g') ist eine Rechnung, G(rechnung, 2) gehört zu Teil 2 einer Sachaufgabe.
+export const G = (rechnung, teil) => (teil ? { art: 'groesse', rechnung, teil } : rechnung);
+// Eine Größe, die das Bild zeigt (Geld, Uhr, Waage, Karte).
+export const BG = (groesseText, teil) => ({ art: 'bildgroesse', groesse: groesseText, ...(teil ? { teil } : {}) });
+export const HILFSGROESSE = (groesseText, grund) => ({ groesse: groesseText, grund });
+export const UEBRIG = (groesseText) => ({ groesse: groesseText, grund: 'überflüssige Angabe' });
+// Auswahl als Teil einer Sachaufgabe: art 'angaben' (wichtige Angaben, mehrfach), 'rechnung', 'antwort' oder 'fehlt'.
+export const teilWahl = (art, text, optionen, mehrfach = false) => ({ art, text, optionen: mische(optionen), ...(mehrfach ? { mehrfach: true } : {}) });
+// Einheitentafel zum Eintragen: gruppen [[einheit, spaltenzahl]], kopf je Spalte ('H', 'Z', 'E' oder ''), zeilen aus Ziffern, '' oder L(name).
+// ablesen: { text, luecke, einheit } fragt unter der Tafel nach der Größe in einer Einheit.
+export function einheitentafel(text, gruppen, kopf, zeilen, werte, hilfen, extra, ablesen) {
+  const t = tabelle(text, kopf, zeilen, werte, hilfen, extra);
+  t.tabelle.art = 'einheitentafel';
+  t.tabelle.gruppen = gruppen.map(([name, n]) => ({ name, spalten: n }));
+  if (ablesen) t.tabelle.ablesen = ablesen;
+  return t;
+}
+// Tabelle, in der jede Zeile dieselbe Größe in den Einheiten der Kopfzeile zeigt.
+export function umwandeltabelle(text, kopf, zeilen, werte, hilfen, extra) {
+  const t = tabelle(text, kopf, zeilen, werte, hilfen, extra);
+  t.tabelle.art = 'umwandeln';
+  return t;
+}
+// Schätzen mit Vergleichsgröße ab M: `loesung` ist das genaue Maß in `einheit`, richtig ist alles im Schätzbereich.
+export const schaetzeGroesse = (text, bild, loesung, einheit, typischeFehler, hilfen, extra) => ({ format: 'schaetzen', text, bild, loesung,
+  bereich: [Math.ceil(loesung - loesung / SCHAETZ_ANTEIL), Math.floor(loesung + loesung / SCHAETZ_ANTEIL)], einheit,
+  typischeFehler: (typischeFehler ?? []).filter(([von, bis]) => von <= bis).map(([von, bis, fehlvorstellung]) => ({ von, bis, fehlvorstellung })), hilfen, ...mit(extra) });
+
 // Stellenwerte bis zur Billion und die Dreierblöcke dazu.
 export const STELLEN15 = ['HB', 'ZB', 'B', 'HMd', 'ZMd', 'Md', 'HM', 'ZM', 'M', 'HT', 'ZT', 'T', 'H', 'Z', 'E'];
 export const BLOCKNAMEN = ['Billionen', 'Milliarden', 'Millionen', 'Tausender', 'Einer'];
@@ -631,6 +691,15 @@ export const B = {
   // Kapitel 5: Karogitter (siehe GT) und Lineal mit einer Strecke von `von` bis `bis` Millimetern.
   gitter: (g) => ({ art: 'gitter', ...g }),
   lineal: (von, bis, lang = 100, namen = null) => ({ art: 'lineal', von, bis, lang, ...(namen ? { namen } : {}) }),
+  // Kapitel 6: Geld in Cent, Uhren { h, min, text }, Waage in Gramm, Einheitentafel, Vergleichsbild zum Schätzen, Karte, Grundriss, Zeitleiste.
+  geld: (stuecke) => ({ art: 'geld', stuecke }),
+  uhr: (...uhren) => ({ art: 'uhr', uhren: uhren.map(([h, min, text]) => ({ h, min, ...(text ? { text } : {}) })) }),
+  waage: (links, gewichte, linksDazu = null) => ({ art: 'waage', links, gewichte, ...(linksDazu ? { linksDazu } : {}) }),
+  etafel: (gruppen, spalten, werte, weitere = null) => ({ art: 'einheitentafel', gruppen: gruppen.map(([name, n]) => ({ name, spalten: n })), spalten, werte, ...(weitere ? { weitere } : {}) }),
+  vergleichsbild: (klein, gross, richtung, zehntel, hilfslinien = false) => ({ art: 'vergleichsbild', klein, gross, richtung, zehntel, ...(hilfslinien ? { hilfslinien: true } : {}) }),
+  karte: (orte, { lang = 100, massstab = null, leiste = null } = {}) => ({ art: 'karte', orte: orte.map(([n, mm, zeichen]) => ({ n, mm, zeichen })), lang, ...(massstab ? { massstab } : {}), ...(leiste ? { leiste: { mm: leiste[0], text: leiste[1] } } : {}) }),
+  grundriss: (name, b, h, { massstab = null, leiste = null } = {}) => ({ art: 'grundriss', name, b, h, ...(massstab ? { massstab } : {}), ...(leiste ? { leiste: { mm: leiste[0], text: leiste[1] } } : {}) }),
+  zeitleiste: (punkte, spruenge) => ({ art: 'zeitleiste', punkte, spruenge }),
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
@@ -649,7 +718,7 @@ export const KOMPETENZEN = {
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
   kommunizieren: ['5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
-  modellieren: ['5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  modellieren: ['5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
   argumentieren: ['5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
@@ -663,7 +732,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal'].includes(a.bild?.art);
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';
@@ -675,7 +744,7 @@ export function kompetenzVon(lernziel, a) {
 
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
-const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung].filter(Boolean));
+const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung, a.teile?.map((t) => t.text)].filter(Boolean));
 function nachbearbeiten(a, niveau) {
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.

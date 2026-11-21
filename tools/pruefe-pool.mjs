@@ -4,6 +4,7 @@
 
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
+import { gGleichungen, GROESSENBILDER, bildMaengel, sprachMaengel, pruefeGroessenNachweis, groesseMaengel, tafelMaengel, umwandelMaengel, schaetzMaengel, teilAuswahlMaengel, einheitFaktor } from './pruefe-groessen.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
 export function pruefePool(pool) {
@@ -16,13 +17,16 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
   'zeilen', 'buendeln', 'urliste', 'daten',
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
-  'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz'];
+  'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz',
+  'groesse', 'einheiten', 'tippBild'];
+// Kapitel 6 (ADR 0033): Dort wird mit Größen gerechnet. Solange eine Aufgabe aus Kapitel 6 geprüft wird, lesen die Gleichungsprüfungen auch Einheiten.
+let groessenModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -69,11 +73,16 @@ const hatZeichen = (s) => /[+−·:]/.test(s);
 const EINHEITEN = /(?<=\d) (?:€|Euro|Cent|ct|cm|mm|km|m|kg|g|l|min|h|Einer|Zehner|Hunderter|Tausender)(?=[\s.,;:!?)]|$)/g;
 const GLEICHUNG = new RegExp(`(?<! [+−·:=≈] )(?<![\\d▢_(\\[A-Za-zÄÖÜäöüß\\u00a0])(${AUSDRUCK})((?: = ${AUSDRUCK})+)(?: Rest (\\d+))?(?! ?[+−·:=▢_\\d]| Rest)`, 'g');
 function gleichungenIn(text) {
-  const t = String(text).replace(EINHEITEN, '');
+  let roh = String(text);
+  const mitGroessen = groessenModus ? gGleichungen(roh) : [];
+  for (const g of mitGroessen) roh = roh.replace(g.ganz, '#'.repeat(g.ganz.length));
+  const t = roh.replace(EINHEITEN, '');
+  if (mitGroessen.length) return [...mitGroessen, ...[...t.matchAll(GLEICHUNG)].map((m) => ({ ganz: m[0], seiten: [m[1], ...m[2].split(' = ').slice(1)], rest: m[3] == null ? null : Number(m[3]), danach: t.slice(m.index + m[0].length, m.index + m[0].length + 1) }))];
   return [...t.matchAll(GLEICHUNG)].map((m) => ({ ganz: m[0], seiten: [m[1], ...m[2].split(' = ').slice(1)], rest: m[3] == null ? null : Number(m[3]), danach: t.slice(m.index + m[0].length, m.index + m[0].length + 1) }));
 }
 // Stimmt die Gleichung? Mit Rest: Dividend : Divisor = Quotient Rest r.
 function stimmt(g) {
+  if (g.groesse) return g.ok;
   if (g.rest != null) {
     const m = g.seiten.length === 2 && g.seiten[0].match(new RegExp(`^(${NUM}) : (${NUM})$`));
     if (!m) return false;
@@ -122,11 +131,11 @@ const pruefeZahl = (id, a, was = 'Lösung') => {
   const werte = (a.typischeFehler ?? []).map((f) => f.wert);
   if (new Set(werte).size !== werte.length) melde(id, 'typischer Fehler doppelt');
 };
-const sichtbareTexte = (a) => [a.text, ...(a.optionen ?? []).map((o) => o.text), ...(a.teile ?? []).map((t) => t.text), ...(a.paare ?? []).flatMap((p) => [p.links, p.rechts])];
+const sichtbareTexte = (a) => [a.text, ...(a.optionen ?? []).map((o) => o.text), ...(a.teile ?? []).flatMap((t) => [t.text, ...(t.optionen ?? []).map((o) => o.text)]), ...(a.paare ?? []).flatMap((p) => [p.links, p.rechts])];
 const loesungenVon = (a) => [
   ...(typeof a.loesung === 'number' ? [a.loesung] : []),
   ...Object.values(a.luecken ?? {}).map((l) => l.loesung),
-  ...(a.teile ?? []).map((t) => t.loesung),
+  ...(a.teile ?? []).filter((t) => !t.optionen).map((t) => t.loesung),
   ...(a.format === 'strichliste' ? (a.zeilen ?? []).map((z) => z.loesung) : []),
   ...(a.format === 'zeichnen' ? (a.diagramm?.saeulen ?? []).filter((x) => x.offen).map((x) => x.wert) : []),
 ];
@@ -159,6 +168,8 @@ function pruefeSprache(a) {
     if (stufe === 0 && mitHilfen.some((t) => /[⊥∥]/.test(t))) melde(a.id, 'die Zeichen ⊥ und ∥ gibt es erst ab G');
     if (mitHilfen.some((t) => /\d,\d/.test(t))) melde(a.id, 'Kapitel 5 kommt ohne Kommazahlen aus');
   }
+  // Kapitel 6 (Nils, 2026-11-21): Komma, Brüche und seltene Einheiten je Niveaustufe.
+  if (a.lernziel.startsWith('5.6.')) for (const x of sprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -175,11 +186,13 @@ function pruefeZahlenraum(a) {
   const raster = a.tabelle?.art === 'raster';
   // Zahlen im Zweiersystem (1011₂) sind keine Zahlen des Zehnersystems und zählen hier nicht.
   const ohneDual = (t) => String(t).replace(/[01]+₂/g, ' ');
-  const zahlen = [...[a.text, ...(a.teile ?? []).map((t) => t.text), ...(a.optionen ?? []).filter((o) => o.richtig).map((o) => o.text)].map(ohneDual).flatMap(zahlenIn), ...(raster ? [...a.tabelle.rechnung.zahlen, a.tabelle.rechnung.ergebnis] : loesungenVon(a))];
+  const zahlen = [...[a.text, ...(a.teile ?? []).map((t) => t.text), ...(a.optionen ?? []).filter((o) => o.richtig).map((o) => o.text)].map(ohneDual).flatMap(zahlenIn), ...(raster ? [...a.tabelle.rechnung.zahlen, a.tabelle.rechnung.ergebnis] : a.format === 'groesse' ? [Math.floor(a.loesung / (einheitFaktor(a.einheit) ?? 1))] : loesungenVon(a))];
   for (const n of zahlen) {
     let ok = true;
     // Kapitel 1: F bis 100, G bis 1000, M bis 10 000, E bis 100 000.
     if (kapitel === '5.1') ok = n <= [100, 1000, 10000, 100000][stufe];
+    // Kapitel 6: Große Maßzahlen entstehen beim Umwandeln (3 km = 3000 m), darum reicht F bis 10 000.
+    if (kapitel === '5.6') ok = n <= [10000, 100000, 10000000, 1000000000][stufe];
     if (kapitel === '5.3') ok = stufe === 0 ? n <= (raster ? 999 : 100) : n <= 20000;
     // Kapitel 4: Auf F höchstens das Einmaleins bis 12 · 12 und glatte Zehnerzahlen (Nils, 2026-11-18).
     if (kapitel === '5.4') ok = stufe === 0 ? n <= 144 || (n <= 1000 && n % 10 === 0) : stufe === 1 ? n <= 10000 : stufe === 2 ? n <= 100000 : n <= 1000000;
@@ -1394,6 +1407,8 @@ function bildZahlen(b) {
 }
 
 function pruefeNachweis(a) {
+  // Kapitel 6 rechnet mit Größen und hat einen eigenen Nachweis (tools/pruefe-groessen.mjs).
+  if (groessenModus) { for (const x of pruefeGroessenNachweis(a)) melde(a.id, x); return; }
   const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter'].includes(a.format);
   if (!a.nachweis) {
     if (pflicht) melde(a.id, 'Nachweis fehlt');
@@ -1535,6 +1550,7 @@ function pruefeNachweis(a) {
 // Kapitel 1: Fragt eine Aufgabe nur nach dem Wert eines Namens („Wie viele Kinder haben ‚Apfel‘ gewählt?“), ist die Lösung genau der abgelesene Wert.
 const VERGLEICH = /mehr|weniger|zusammen|oder|insgesamt|nicht|alle|beide|ohne|Unterschied|doppelt|Hälfte|fehlen|Bündel|Bilder?\b|danach|dazu/i;
 function pruefeAblesefrage(a) {
+  if (groessenModus) return;
   const m = datenVon(a);
   if (!m || !m.size) return;
   if (!DATENBILDER.includes(a.bild?.art) && a.daten?.kopf.length > 2) return; // Tabelle mit mehreren Spalten: Es wird gerechnet.
@@ -1626,6 +1642,8 @@ function pruefeBild(a) {
   const b = a.bild;
   if (!b) return;
   const m = (text) => melde(a.id, `Bild ${b.art}: ${text}`);
+  // Kapitel 6: Bilder mit Größen. Ob ihre Größen zur Aufgabe gehören, prüft der Nachweis.
+  if (GROESSENBILDER.includes(b.art)) { bildMaengel(b, a.niveau).forEach(m); return; }
   const kern = []; // Zahlen, die das Bild zeigt und die zur Aufgabe gehören müssen
   const unbekannte = [];
   const w = (x) => { if (istFrage(x)) unbekannte.push(x.wert); else kern.push(x); return wertVon(x); };
@@ -1822,7 +1840,9 @@ function pruefeBild(a) {
 }
 // Formate, die das Dashboard selbst zeichnet (Zahlenstrahl, Diagramm, Rechenraster, Zahlenmauer, Malkreuz), zählen wie ein Bild.
 // Kapitel 1: Strichliste und Säulen zeichnen, auch die Antwortkärtchen einer Umfrage (Urliste).
-const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel'].includes(a.tabelle?.art);
+const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel', 'einheitentafel'].includes(a.tabelle?.art)
+  // Kapitel 6: Preisliste, Fahrplan und Einkaufszettel sind das Bild der Aufgabe.
+  || (Boolean(a.daten) && a.lernziel.startsWith('5.6.'));
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -1875,7 +1895,7 @@ function pruefeFormat(a) {
       if (new Set(a.paare.map((p) => rechne(p.rechts))).size !== a.paare.length) melde(a.id, 'zwei Paare haben denselben Wert');
     }
     // Mit Nachweis: Zu jedem Paar gehört eine Rechnung, in der seine Zahlen vorkommen.
-    if (a.nachweis) for (const p of a.paare) {
+    if (a.nachweis && !groessenModus) for (const p of a.paare) {
       const z = zahlenIn(`${p.links} ${p.rechts}`);
       // Ein Nachweis mit eigener Art (Zahlwort, römisch, Zweiersystem) prüft das Paar selbst.
       if (z.length && !a.nachweis.some((n) => (typeof n === 'string' ? z.every((x) => zahlenIn(n).includes(x)) : n?.art && z.every((x) => zahlenImObjekt(n).includes(x))))) melde(a.id, `Paar „${p.links}“ und „${p.rechts}“ steht nicht im Nachweis`);
@@ -1883,7 +1903,14 @@ function pruefeFormat(a) {
     for (const p of a.paare) for (const g of gleichungenIn(`${p.links} ${p.rechts}`)) if (!stimmt(g)) melde(a.id, `Gleichung im Paar stimmt nicht: ${g.ganz}`);
   } else if (a.format === 'sachaufgabe') {
     if ((a.teile?.length ?? 0) < 2) melde(a.id, 'Sachaufgabe braucht mindestens zwei Teile');
-    for (const t of a.teile ?? []) { if (!t.text?.trim()) melde(a.id, 'Teilfrage fehlt'); pruefeZahl(a.id, t); }
+    for (const t of a.teile ?? []) {
+      if (!t.text?.trim()) melde(a.id, 'Teilfrage fehlt');
+      // Kapitel 6: Ein Teil kann eine Auswahl sein (wichtige Angaben, passende Rechnung, Antwortsatz).
+      if (t.optionen || t.art) { if (!groessenModus) melde(a.id, 'Auswahl als Teil gibt es nur in Kapitel 6'); for (const x of teilAuswahlMaengel(t, a.niveau, pool.fehlvorstellungen)) melde(a.id, x); } else pruefeZahl(a.id, t);
+    }
+    if (!(a.teile ?? []).some((t) => !t.optionen)) melde(a.id, 'Sachaufgabe braucht mindestens einen Teil mit einer Zahl');
+  } else if (a.format === 'groesse') {
+    for (const x of groesseMaengel(a, pool.fehlvorstellungen)) melde(a.id, x);
   } else if (a.format === 'gitter') {
     // Kapitel 5: Gitterzeichnen. Punkte und Kästchen sind Mengen von Gitterpunkten, eine Linie hat eine Bedingung und ein Beispiel.
     const g = a.gitter, mangel = gitterMangel(g);
@@ -1934,12 +1961,14 @@ function pruefeFormat(a) {
     const t = a.tabelle ?? {};
     const zellen = (t.zeilen ?? []).flat();
     if (t.art !== 'mauer' && (!t.kopf?.length || (t.zeilen ?? []).some((z) => z.length !== t.kopf.length))) melde(a.id, 'Tabelle: Zeilen passen nicht zur Kopfzeile');
-    const namen = [...zellen.filter((c) => typeof c === 'object').map((c) => c.luecke), ...(t.art === 'malkreuz' && t.rechnung?.summe ? [t.rechnung.summe] : [])];
+    const namen = [...zellen.filter((c) => typeof c === 'object').map((c) => c.luecke), ...(t.art === 'malkreuz' && t.rechnung?.summe ? [t.rechnung.summe] : []), ...(t.art === 'einheitentafel' && t.ablesen ? [t.ablesen.luecke] : [])];
     if (namen.length === 0) melde(a.id, 'Tabelle ohne Lücke');
     if (new Set(namen).size !== namen.length) melde(a.id, 'Tabelle: Lücke doppelt');
     for (const n of namen) if (!a.luecken?.[n]) melde(a.id, `Lücke ${n} hat keine Lösung`); else pruefeZahl(a.id, a.luecken[n], `Lücke ${n}`);
     for (const n of Object.keys(a.luecken ?? {})) if (!namen.includes(n)) melde(a.id, `Lösung ${n} ohne Lücke in der Tabelle`);
-    if (t.art === 'stellentafel') {
+    if (t.art === 'einheitentafel') { for (const x of tafelMaengel(a)) melde(a.id, x); }
+    else if (t.art === 'umwandeln') { for (const x of umwandelMaengel(a)) melde(a.id, x); }
+    else if (t.art === 'stellentafel') {
       // Kapitel 2: ein Feld je Ziffer. Die Zahl selbst prüft der Nachweis `tafel`.
       const basis = (a.nachweis ?? []).find((n) => n?.art === 'tafel')?.basis ?? 10;
       for (const c of zellen) if (typeof c === 'object' ? !ganz(a.luecken?.[c.luecke]?.loesung, 0, basis - 1) : !/^\d?$/.test(c)) melde(a.id, 'Stellenwerttafel: Feld mit mehr als einer Ziffer');
@@ -2027,6 +2056,8 @@ function pruefeFormat(a) {
     if (!(a.nachweis ?? []).some((n) => n?.art === (roem ? 'roemisch' : 'dual') && (roem ? n.zeichen : n.dual) === a.loesung)) melde(a.id, 'Zeichen: Nachweis zur Lösung fehlt');
   } else if (a.format === 'schaetzen') {
     // Kapitel 2 (Nils, 2026-11-21): ab M zählt der Schätzbereich, ein Fünftel nach oben und nach unten. Auf F und G zählt der Rechenweg.
+    // Kapitel 6: Schätzen mit einer Vergleichsgröße im Bild.
+    if (a.bild?.art === 'vergleichsbild') { for (const x of schaetzMaengel(a, pool.fehlvorstellungen)) melde(a.id, x); return; }
     if (NIVEAUS.indexOf(a.niveau) < 2) melde(a.id, 'Schätzen mit Schätzbereich gibt es erst ab M');
     if (a.bild?.art !== 'schaetzbild') { melde(a.id, 'Schätzen: Schätzbild fehlt'); return; }
     const n = a.bild.felder.flat().reduce((x, y) => x + y, 0);
@@ -2167,6 +2198,7 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   if (!a.text?.trim()) { melde(a.id, 'Text fehlt'); continue; }
   if (/undefined|NaN|null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
   if (sichtbareTexte(a).concat(Object.values(a.hilfen ?? {})).some((t) => / {2}|^ | $|\d-\d| - /.test(t))) melde(a.id, 'Text mit doppeltem Leerzeichen oder Bindestrich statt Minuszeichen');
+  groessenModus = a.lernziel.startsWith('5.6.');
   const schluessel = `${a.lernziel} ${a.niveau}`;
   if (!gruppen.has(schluessel)) gruppen.set(schluessel, []);
   gruppen.get(schluessel).push(a);
@@ -2178,12 +2210,14 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   pruefeNachweis(a);
   pruefeBild(a);
   pruefeAblesefrage(a);
+  if (a.tippBild && (a.tippBild.art !== 'einheitentafel' || a.niveau !== 'G' || bildMaengel(a.tippBild, a.niveau).length)) melde(a.id, 'Bild im Tipp: nur die Einheitentafel auf G');
   // Kapitel 1 spielt in fünften Klassen: Jede genannte Klasse ist 5a bis 5e.
   if (a.lernziel.startsWith('5.1.')) for (const k of sichtbareTexte(a).join(' ').match(/\b\d+[a-z]\b/g) ?? []) if (!/^5[a-e]$/.test(k)) melde(a.id, `Klasse ${k} gibt es in Klasse 5 nicht`);
   if (a.niveau === 'F' && !hatBild(a)) melde(a.id, 'auf F braucht jede Aufgabe ein Bild');
   if (a.niveau === 'F' && a.afb === 3) melde(a.id, 'auf F gibt es keinen Anforderungsbereich III');
 }
 
+groessenModus = false;
 // Abdeckung: Jedes Lernziel mit Aufgaben hat auf jeder Niveaustufe genau sechs Aufgaben in der festen Folge der Anforderungsbereiche.
 const mitAufgaben = new Set(pool.aufgaben.map((a) => a.lernziel));
 for (const l of mitAufgaben) for (const n of NIVEAUS) {
@@ -2205,6 +2239,7 @@ for (const l of mitAufgaben) for (const n of NIVEAUS) {
 for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele)) if (mitAufgaben.has(l.id) && !l.grundlage) melde(l.id, 'Lernziel ohne Grundlage');
 // Wortspeicher: Jede Station mit Aufgaben braucht einen, mit Wörtern mindestens für F, G und M.
 for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.some((l) => mitAufgaben.has(l.id))) {
+  groessenModus = k.id === '5.6';
   for (const n of ['F', 'G', 'M']) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
   for (const w of u.wortspeicher ?? []) {
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);
@@ -2212,6 +2247,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.so
   }
   for (const text of [...(u.merkzettel?.regeln ?? []), u.merkzettel?.beispiel ?? '']) for (const g of gleichungenIn(text)) if (!stimmt(g)) melde(u.id, `Merkzettel: Gleichung stimmt nicht: ${g.ganz}`);
 }
+groessenModus = false;
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (!f.beschreibung || !f.hinweis || !f.kind) melde(id, 'Fehlvorstellung ohne Beschreibung, Hinweis oder Kindersatz');
 // Kindersätze für Aha-Momente (ADR 0017): einfache Sprache, ein Satz, ohne Fachsprache der Lehrkraft.
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (f.kind && (!/^Du /.test(f.kind) || /, (der|die|das|den|dem|wenn|weil|dass|ob|obwohl|durch|mit|in|wo)\b|;/.test(f.kind) || f.kind.length > 110)) melde(id, `Kindersatz nicht in einfacher Sprache: ${f.kind}`);

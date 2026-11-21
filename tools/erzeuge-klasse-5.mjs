@@ -34,6 +34,14 @@ import { koordinatensystem } from './aufgaben/5-5-4-koordinaten.mjs';
 import { entfernungUndAbstand } from './aufgaben/5-5-5-abstand.mjs';
 import { symmetrie } from './aufgaben/5-5-6-symmetrie.mjs';
 import { vierecke } from './aufgaben/5-5-7-vierecke.mjs';
+import { groessenSchaetzen } from './aufgaben/5-6-1-schaetzen.mjs';
+import { geld } from './aufgaben/5-6-2-geld.mjs';
+import { zeit } from './aufgaben/5-6-3-zeit.mjs';
+import { gewicht } from './aufgaben/5-6-4-gewicht.mjs';
+import { laenge } from './aufgaben/5-6-5-laenge.mjs';
+import { massstab } from './aufgaben/5-6-6-massstab.mjs';
+import { sachaufgaben } from './aufgaben/5-6-7-sachaufgaben.mjs';
+import { alltag } from './aufgaben/5-6-x1-alltag.mjs';
 
 const ERZEUGER = [
   [51151151, datenUndDiagramme],
@@ -48,6 +56,15 @@ const ERZEUGER = [
   [55555155, entfernungUndAbstand],
   [55655655, symmetrie],
   [55755755, vierecke],
+  // Kapitel 6 (ADR 0033)
+  [56156156, groessenSchaetzen],
+  [56256256, geld],
+  [56356356, zeit],
+  [56456456, gewicht],
+  [56556556, laenge],
+  [56656656, massstab],
+  [56756756, sachaufgaben],
+  [56856856, alltag],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 
