@@ -94,6 +94,10 @@ _Avoid_: Wimmelbild, Foto
 Der Bereich um die wahre Anzahl eines Schätzbilds, in dem eine Schätzung ab M als richtig gilt. Auf F und G zählt stattdessen der Rechenweg: Anzahl im Feld mal Zahl der Felder. Nach der Antwort zeigt das Schüler-Dashboard immer die wahre Anzahl.
 _Avoid_: Toleranz, ungefähr richtig
 
+**Gitterzeichnen**:
+Ein Aufgabenformat für die Geometrie: Der Schüler tippt Gitterpunkte auf einem Karogitter an, und das Dashboard verbindet sie zu Strecke, Gerade oder Figur. Geprüft wird die Lage der Punkte, nicht die Linienführung.
+_Avoid_: Freihandzeichnen, Konstruieren
+
 **Rechenraster**:
 Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft. Beim Multiplizieren steht über dem Ergebnis eine Zeile kleiner Übertragsfelder; sie sind Notizhilfe und werden nicht bewertet.
 _Avoid_: Kästchenraster
