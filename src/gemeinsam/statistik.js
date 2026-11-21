@@ -3,6 +3,8 @@
 //
 // klassen: [{ klasse, namen: { code: name }, staende: [{ code, stand }], backups: [stempel] }]
 
+import { pruefeGroesse } from '../schueler/groessen.js';
+
 const TAG = 86400000;
 const anteil = (a, b) => (b ? a / b : null);
 const median = (werte) => {
@@ -64,7 +66,11 @@ export function falscheTeile(a, eingabe) {
   };
   switch (a.format) {
     case 'zahl': case 'zahlenstrahl': return zahl(a, eingabe);
-    case 'sachaufgabe': case 'diagramm': return a.teile.flatMap((t, i) => zahl(t, eingabe?.[i], a.teile.length > 1 ? `${'abcdef'[i]}) ` : ''));
+    case 'sachaufgabe': case 'diagramm': return a.teile.flatMap((t, i) => (t.optionen
+      ? (Array.isArray(eingabe?.[i]) ? eingabe[i] : []).map((x) => t.optionen.find((o) => o.text === x)).filter((o) => o && !o.richtig).map((o) => ({ text: `${'abcdef'[i]}) ${o.text}`, erwartet: !!o.fehlvorstellung }))
+      : zahl(t, eingabe?.[i], a.teile.length > 1 ? `${'abcdef'[i]}) ` : '')));
+    // Kapitel 6: Größe mit Einheit. Erwartet ist ein hinterlegter typischer Fehler oder eine fehlende Einheit.
+    case 'groesse': { const e = pruefeGroesse(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung }]; }
     case 'luecken': case 'tabelle': { const n = Object.keys(a.luecken); return n.flatMap((k) => zahl(a.luecken[k], eingabe?.[k], n.length > 1 ? `${k}: ` : '')); }
     case 'auswahl': return (eingabe ?? []).map((t) => a.optionen.find((o) => o.text === t)).filter((o) => o && !o.richtig).map((o) => ({ text: o.text, erwartet: !!o.fehlvorstellung }));
     // Kapitel 1: Strichliste und Säulen zeichnen, je falsche Zeile oder Säule.

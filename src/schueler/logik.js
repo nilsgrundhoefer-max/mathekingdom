@@ -2,6 +2,7 @@
 // Begriffe wie in CONTEXT.md.
 
 import { pruefeGitter } from './geo.js';
+import { pruefeGroesse } from './groessen.js';
 
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
 export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
@@ -119,6 +120,14 @@ function pruefeZahl(teil, eingabe) {
   const treffer = (teil.typischeFehler ?? []).find((f) => f.wert === wert);
   return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
 }
+// Kapitel 6: Ein Teil einer Sachaufgabe kann eine Auswahl sein. Richtig ist sie, wenn genau die richtigen Antworten angekreuzt sind.
+function pruefeTeil(teil, eingabe) {
+  if (!teil.optionen) return pruefeZahl(teil, eingabe);
+  const gewaehlt = new Set(Array.isArray(eingabe) ? eingabe : []);
+  const richtig = teil.optionen.every((o) => gewaehlt.has(o.text) === o.richtig);
+  const falsche = teil.optionen.find((o) => gewaehlt.has(o.text) && !o.richtig && o.fehlvorstellung);
+  return { richtig, fehlvorstellung: richtig ? null : falsche?.fehlvorstellung ?? null };
+}
 // Fasst Teilergebnisse zusammen: richtig nur, wenn alles stimmt; erste erkannte Fehlvorstellung zählt.
 function zusammen(teile) {
   return {
@@ -137,7 +146,8 @@ export function pruefeAntwort(aufgabe, eingabe) {
     }
     case 'luecken': case 'tabelle': return zusammen(Object.entries(aufgabe.luecken).map(([name, l]) => pruefeZahl(l, eingabe?.[name])));
     case 'zuordnen': return { richtig: aufgabe.paare.every((p) => eingabe?.[p.links] === p.rechts), fehlvorstellung: null };
-    case 'sachaufgabe': case 'diagramm': return zusammen(aufgabe.teile.map((t, i) => pruefeZahl(t, eingabe?.[i])));
+    case 'sachaufgabe': case 'diagramm': return zusammen(aufgabe.teile.map((t, i) => pruefeTeil(t, eingabe?.[i])));
+    case 'groesse': return pruefeGroesse(aufgabe, eingabe);
     case 'strichliste': return pruefeStrichliste(aufgabe, eingabe);
     case 'zeichnen': return pruefeZeichnung(aufgabe, eingabe);
     case 'ordnen': return pruefeOrdnung(aufgabe, eingabe);
@@ -825,6 +835,7 @@ export function heftWert(aufgabe) {
   if (['zahl', 'zahlenstrahl'].includes(aufgabe.format)) return { wert: aufgabe.loesung, einheit: aufgabe.einheit ?? null, fehler: (aufgabe.typischeFehler ?? []).map((f) => f.wert) };
   if (['sachaufgabe', 'diagramm'].includes(aufgabe.format) && aufgabe.teile?.length) {
     const t = aufgabe.teile.at(-1);
+    if (typeof t.loesung !== 'number') return null; // Kapitel 6: Der letzte Teil ist eine Auswahl (Antwortsatz).
     return { wert: t.loesung, einheit: t.einheit ?? null, fehler: (t.typischeFehler ?? []).map((f) => f.wert) };
   }
   return null;

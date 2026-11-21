@@ -622,3 +622,15 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .linealbild .cmwort { font-size: 12px; fill: #6b5f50; }
 #mathekingdom .linealbild .strecke { stroke: var(--nacht); stroke-width: 3; }
 #mathekingdom .linealbild .streckenende { stroke: var(--siegel); stroke-width: 1.6; stroke-dasharray: 3 3; }
+
+/* Kapitel 6: Größen und Sachaufgaben (groessenbilder.js, ADR 0033) */
+#mathekingdom .groessefeld select.einheitwahl { font-size: 1.15rem; padding: 6px 8px; border: 2px solid var(--rand); border-radius: 8px; background: #fff; color: var(--tinte); }
+#mathekingdom .teile li.teil-auswahl > span:first-of-type { display: inline-block; margin-bottom: 8px; }
+#mathekingdom .teile li.teil-auswahl .optionen { margin-top: 4px; }
+#mathekingdom .teile li.teil-auswahl .option { padding: 7px 12px; font-size: 1.05rem; }
+#mathekingdom table.stellentafel.einheitentafel tr.gruppen th { font-size: 1.05rem; min-width: 2.6rem; }
+#mathekingdom table.stellentafel.einheitentafel thead tr:not(.gruppen) th { font-size: .85rem; font-weight: 600; padding: 2px 6px; color: var(--grau); }
+#mathekingdom .tafel-ablesen { margin: 12px 0 0; font-size: 1.15rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+#mathekingdom .bildrahmen.tippbild { margin-top: 8px; }
+#mathekingdom svg.groessenbild text { font-family: inherit; }
+#mathekingdom svg.kartenbild { min-width: 520px; }

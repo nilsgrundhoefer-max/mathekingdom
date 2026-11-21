@@ -15,6 +15,8 @@ import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, date
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
 import { gitterLoesung } from './geo.js';
+import { groesseEingabe, liesGroesse, einheitentafelBild } from './groessenbilder.js';
+import { loesungGroesse } from './groessen.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
 
@@ -926,7 +928,12 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'zuordnen': return h('div', { class: 'zuordnen' }, auf.paare.map((p) => h('label', {}, h('b', {}, p.links),
       h('select', { name: `paar-${p.links}`, disabled: gesperrt }, h('option', { value: '' }, 'bitte wählen'),
         a.reihenfolge.map((r) => h('option', { value: r, selected: letzte?.[p.links] === r }, r))))));
-    case 'sachaufgabe': return h('ol', { class: 'teile' }, auf.teile.map((t, i) => h('li', {}, h('span', {}, t.text), zahlfeld(`teil-${i}`, t.einheit, letzte?.[i]))));
+    // Kapitel 6: Ein Teil kann auch eine Auswahl sein (wichtige Angaben, passende Rechnung, Antwortsatz).
+    case 'sachaufgabe': return h('ol', { class: 'teile' }, auf.teile.map((t, i) => h('li', { class: t.optionen ? 'teil-auswahl' : null }, h('span', {}, t.text), t.optionen
+      ? h('div', { class: 'optionen' }, t.optionen.map((o) => h('label', { class: 'option' },
+        h('input', { type: t.mehrfach ? 'checkbox' : 'radio', name: `teil-${i}`, value: o.text, disabled: gesperrt, checked: Boolean(Array.isArray(letzte?.[i]) && letzte[i].includes(o.text)) }), h('span', {}, o.text))))
+      : zahlfeld(`teil-${i}`, t.einheit, letzte?.[i]))));
+    case 'groesse': return groesseEingabe(auf, letzte, gesperrt);
     case 'diagramm': return h('div', { class: 'mitbild' }, h('div', { class: 'bildrahmen' }, saeulendiagramm(auf.diagramm)),
       h('ol', { class: `teile${auf.teile.length === 1 ? ' einzeln' : ''}` }, auf.teile.map((t, i) => h('li', {}, h('span', {}, t.text), zahlfeld(`teil-${i}`, t.einheit, letzte?.[i])))));
     case 'zahlenstrahl': {
@@ -966,14 +973,16 @@ export function eingabefelder(auf, a, gesperrt) {
           !gesperrt && h('p', { class: 'klein rasterhinweis' }, 'In die kleinen Felder kannst du Überträge schreiben. Sie werden nicht bewertet.'));
       }
       // Stellenwerttafel (Kapitel 2): ein Feld je Ziffer, bei großen Zahlen mit den Dreierblöcken als zweiter Kopfzeile.
-      if (t.art === 'stellentafel') {
+      if (t.art === 'stellentafel' || t.art === 'einheitentafel') {
         let ende = 0;
         const enden = new Set((t.gruppen ?? []).map((g) => (ende += g.spalten) - 1).slice(0, -1));
         const rand = (i) => (enden.has(i) ? 'blockende' : null);
-        return h('div', { class: 'bildrahmen' }, h('table', { class: 'stellentafel eingabe' },
+        return h('div', { class: 'bildrahmen' }, h('table', { class: `stellentafel eingabe${t.art === 'einheitentafel' ? ' einheitentafel' : ''}` },
           h('thead', {}, t.gruppen && h('tr', { class: 'gruppen' }, t.gruppen.map((g) => h('th', { colSpan: g.spalten, scope: 'colgroup' }, g.name))),
-            h('tr', {}, t.kopf.map((k, i) => h('th', { scope: 'col', class: rand(i) }, k)))),
-          h('tbody', {}, t.zeilen.map((zeile) => h('tr', {}, zeile.map((c, i) => h('td', { class: rand(i) }, typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c)))))));
+            t.kopf.some(Boolean) && h('tr', {}, t.kopf.map((k, i) => h('th', { scope: 'col', class: rand(i) }, k)))),
+          h('tbody', {}, t.zeilen.map((zeile) => h('tr', {}, zeile.map((c, i) => h('td', { class: rand(i) }, typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c)))))),
+          // Kapitel 6: Unter der Einheitentafel wird die Größe in einer Einheit abgelesen.
+          t.ablesen && h('p', { class: 'malkreuzsumme tafel-ablesen' }, `${t.ablesen.text} `, zahlfeld(`luecke-${t.ablesen.luecke}`, t.ablesen.einheit, letzte?.[t.ablesen.luecke])));
       }
       return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
       h('thead', {}, h('tr', {}, auf.tabelle.kopf.map((k) => h('th', { scope: 'col' }, k)))),
@@ -1000,7 +1009,8 @@ function liesEingabe(auf, formular) {
     case 'auswahl': { const v = [...formular.querySelectorAll('input[name=option]:checked')].map((i) => i.value); return { eingabe: v, leer: v.length === 0 }; }
     case 'luecken': { const v = Object.fromEntries(Object.keys(auf.luecken).map((n) => [n, feld(`luecke-${n}`)])); return { eingabe: v, leer: Object.values(v).some((x) => !x) }; }
     case 'zuordnen': { const v = Object.fromEntries(auf.paare.map((p) => [p.links, feld(`paar-${p.links}`)])); return { eingabe: v, leer: Object.values(v).some((x) => !x) }; }
-    case 'sachaufgabe': { const v = auf.teile.map((_, i) => feld(`teil-${i}`)); return { eingabe: v, leer: v.some((x) => !x) }; }
+    case 'sachaufgabe': { const v = auf.teile.map((t, i) => (t.optionen ? [...formular.querySelectorAll(`input[name="teil-${i}"]:checked`)].map((x) => x.value) : feld(`teil-${i}`))); return { eingabe: v, leer: v.some((x) => !x || x.length === 0) }; }
+    case 'groesse': return liesGroesse(auf, formular);
     // Strichliste: je Zeile das Strichmuster. Leer ist sie, solange noch kein neuer Strich gesetzt ist.
     case 'strichliste': { const v = auf.zeilen.map((_, i) => feld(`strich-${i}`)); return { eingabe: v, leer: v.every((x, i) => x === buendle(auf.zeilen[i].start ?? 0)) }; }
     // Säulen zeichnen: je offene Säule die Höhe. Eine Säule auf 0 ist noch nicht gezeichnet.
@@ -1079,11 +1089,13 @@ function loesungstext(auf) {
     case 'zeichen': return zahl(auf);
     case 'schaetzen': return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.bereich[0])} bis ${gliedere(auf.bereich[1])})`;
     case 'diagramm': return auf.teile.length === 1 ? zahl(auf.teile[0]) : auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
-    case 'tabelle': if (auf.tabelle.art === 'stellentafel') return 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => auf.luecken[c.luecke].loesung).join(', ')}`;
+    case 'tabelle': if (auf.tabelle.art === 'stellentafel') return 'siehe Tafel';
+      if (auf.tabelle.art === 'einheitentafel') return auf.tabelle.ablesen ? `${auf.tabelle.ablesen.text} ${gliedere(auf.luecken[auf.tabelle.ablesen.luecke].loesung)} ${auf.tabelle.ablesen.einheit} (siehe Tafel)` : 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => auf.luecken[c.luecke].loesung).join(', ')}`;
     case 'auswahl': return auf.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
     case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung));
     case 'zuordnen': return auf.paare.map((p) => `${p.links} ist ${p.rechts}`).join(', ');
-    case 'sachaufgabe': return auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
+    case 'sachaufgabe': return auf.teile.map((t, i) => `${'abcdef'[i]}) ${t.optionen ? t.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ') : zahl(t)}`).join('  ');
+    case 'groesse': return loesungGroesse(auf);
     case 'strichliste': return auf.zeilen.map((x) => `${x.name} ${x.loesung} Striche`).join(', ');
     case 'zeichnen': return auf.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     case 'gitter': return gitterLoesung(auf);
@@ -1106,7 +1118,7 @@ function soGehtEs(auf) {
   const zeigen = felder.length ? felder : ['tipp'].filter((f) => auf.hilfen?.[f]);
   if (!zeigen.length) return null;
   const titel = { tipp: 'Tipp', beispiel: 'Beispiel', loesungsschritt: 'Lösungsschritt' };
-  return h('div', { class: 'so-geht-es', id: 'so-geht-es' }, zeigen.map((f) => h('div', { class: 'kaertchen-offen' }, h('b', {}, titel[f]), h('p', {}, auf.hilfen[f]))));
+  return h('div', { class: 'so-geht-es', id: 'so-geht-es' }, zeigen.map((f) => h('div', { class: 'kaertchen-offen' }, h('b', {}, titel[f]), h('p', {}, auf.hilfen[f]), f === 'tipp' && auf.tippBild && h('div', { class: 'bildrahmen tippbild' }, aufgabenBild(auf.tippBild)))));
 }
 // Erste Zeile des Ergebnisses: richtig mit Münzen oder falsch mit Lösung.
 function urteilZeile(e, auf, nachsatz) {
@@ -1116,6 +1128,8 @@ function urteilZeile(e, auf, nachsatz) {
 }
 // Kapitel 2: Nach jeder Aufgabe mit Schätzbild steht die wahre Anzahl da, damit das Kind seine Schätzung einordnen kann (ADR 0030).
 export function wahreAnzahl(auf) {
+  // Kapitel 6: Nach dem Schätzen mit Vergleichsgröße steht das genaue Maß da.
+  if (auf.format === 'schaetzen' && auf.bild?.art === 'vergleichsbild') return h('p', { class: 'wahre-anzahl', id: 'wahre-anzahl' }, `Nachgemessen: Es sind ${gliedere(auf.loesung)} ${auf.einheit}.`);
   if (auf.bild?.art !== 'schaetzbild') return null;
   const n = auf.bild.felder.flat().reduce((x, y) => x + y, 0);
   return h('p', { class: 'wahre-anzahl', id: 'wahre-anzahl' }, `Nachgezählt: Auf dem Bild sind es genau ${gliedere(n)}.`);
@@ -1126,6 +1140,10 @@ export function loesungsbild(auf) {
   // Kapitel 5: das Gitter mit der eingezeichneten Lösung.
   if (auf.format === 'gitter') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, gitterLoesungBild(auf));
   // Kapitel 2: Die ausgefüllte Stellenwerttafel.
+  if (auf.tabelle?.art === 'einheitentafel') {
+    const t = auf.tabelle;
+    return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, t.zeilen.map((zeile) => einheitentafelBild({ spalten: t.kopf, gruppen: t.gruppen, werte: zeile.map((c) => (typeof c === 'object' ? auf.luecken[c.luecke].loesung : c === '' ? null : c)) })));
+  }
   if (auf.tabelle?.art === 'stellentafel') {
     const t = auf.tabelle;
     return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, t.zeilen.map((zeile) => tafelBild({ spalten: t.kopf, gruppen: t.gruppen, werte: zeile.map((c) => (typeof c === 'object' ? auf.luecken[c.luecke].loesung : c === '' ? null : c)) })));
@@ -1367,7 +1385,7 @@ function kaertchen(a) {
   if (!karten.length) return null;
   // Zugedeckt zeigt sich nur das nächste Kärtchen; die übrigen stehen klein dahinter.
   return h('div', { class: 'kaertchen', 'aria-label': 'Hilfekärtchen' }, karten.map(([feld, titel, kosten], i) => i < a.hilfen
-    ? h('div', { class: 'kaertchen-offen' }, h('b', {}, titel), h('p', {}, a.aufgabe.hilfen[feld]))
+    ? h('div', { class: 'kaertchen-offen' }, h('b', {}, titel), h('p', {}, a.aufgabe.hilfen[feld]), feld === 'tipp' && a.aufgabe.tippBild && h('div', { class: 'bildrahmen tippbild', id: 'tippbild' }, aufgabenBild(a.aufgabe.tippBild)))
     : h('button', { class: `kaertchen-zu${i > a.hilfen ? ' spaeter' : ''}`, type: 'button', disabled: i > a.hilfen, 'data-hilfe': feld, onclick: () => { a.hilfen++; if (z.stand.aktiv) { z.stand.aktiv.hilfen = a.hilfen; geaendert(); } maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); } },
       h('b', {}, titel), h('span', {}, i > a.hilfen ? 'Erst das Kärtchen davor.' : kosten))));
 }
