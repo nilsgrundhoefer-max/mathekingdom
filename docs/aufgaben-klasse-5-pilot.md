@@ -1,10 +1,10 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1584 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1968 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1584).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1968).
 
 ## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
 
@@ -5823,6 +5823,1308 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden nicht immer um glei
   - ☐ Keiner. Die Regel heißt: immer plus 10.
   - ☐ Nur Ida. Bei mal 3 wären die Unterschiede immer gleich.
 
+## 5.5.1-B1: Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.
+
+Grundlage, die F übt: Eine Linie mit zwei Endpunkten von einer Linie ohne Ende unterscheiden
+
+Baut auf: nur Grundschulstoff
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Strecke hat einen Anfang und ein Ende. *Beispiel:* Die Kante deines Tisches ist eine Strecke. Sie hat zwei Enden. *Lösungsschritt:* Suche die Linie mit zwei kleinen Strichen an den Enden.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die Linien an. / Welche Linie ist eine Strecke? _(Bild: Karogitter 12 × 5; Strecke a durch (3|4) und (9|4), Gerade b durch (2|2) und (7|2))_
+  - ☑ Linie a
+  - ☐ Linie b
+- `02` AFB I · _Kommunizieren_ · Schau dir die Linien an. / Welche Linie ist eine Gerade? _(Bild: Karogitter 12 × 7; Strecke a durch (3|6) und (8|6), Strecke b durch (3|4) und (9|4), Gerade c durch (2|2) und (9|2))_
+  - ☐ Linie a
+  - ☑ Linie c
+  - ☐ Linie b
+- `03` AFB I · _Kommunizieren_ · Schau dir die Linien an. / Wie viele Strecken siehst du? _(Bild: Karogitter 12 × 7; Strecke a durch (2|6) und (8|6), Strecke b durch (3|4) und (9|4), Gerade c durch (3|2) und (9|2))_ Lösung: **2**. Typische Fehler: 3 (gerade-begrenzt), 1 (gerade-begrenzt).
+- `04` AFB I · _Kommunizieren_ · Die Linie a geht durch A und B. / Was stimmt? _(Bild: Karogitter 10 × 6; Punkte A(4|4), B(9|4); Gerade a durch (4|4) und (9|4))_
+  - ☐ Die Linie a ist eine Strecke. / Sie hat einen Anfang und ein Ende.
+  - ☑ Die Linie a ist eine Gerade. / Sie hat kein Ende.
+- `05` AFB II · _Kommunizieren_ · Zeichne die Strecke von A nach B. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 6; Punkte A(4|1), B(9|1))_ Lösung: **zum Beispiel durch (4|1) und (9|1)**
+- `06` AFB I · _Kommunizieren_ · Du willst eine Linie mit dem Lineal messen. / Bei welcher Linie geht das? _(Bild: Karogitter 12 × 5; Gerade a durch (3|4) und (9|4), Strecke b durch (1|2) und (6|2))_
+  - ☐ Linie a
+  - ☑ Linie b
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Strahl hat einen Anfangspunkt. Auf der anderen Seite hört er nicht auf. *Beispiel:* Das Licht einer Taschenlampe ist wie ein Strahl: Es beginnt an der Lampe. *Lösungsschritt:* Suche die Linie mit genau einem Endstrich.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die Linien an. / Welche Linie ist ein Strahl? _(Bild: Karogitter 12 × 7; Strecke a durch (2|6) und (7|7), Strahl b durch (2|4) und (7|5), Gerade c durch (3|2) und (9|1))_
+  - ☑ Linie b
+  - ☐ Linie a
+  - ☐ Linie c
+- `02` AFB I · _Kommunizieren_ · Ordne jeder Linie den richtigen Namen zu. _(Bild: Karogitter 12 × 7; Gerade a durch (1|6) und (8|5), Strecke b durch (2|4) und (9|4), Strahl c durch (2|2) und (8|3))_ Lösung: Linie a → Gerade, Linie b → Strecke, Linie c → Strahl
+- `03` AFB II · _Kommunizieren_ · Du siehst die Punkte A, B und C. / Verbinde immer zwei Punkte durch eine Strecke. / Wie viele Strecken entstehen? _(Bild: Karogitter 10 × 6; Punkte A(1|1), B(7|2), C(5|5))_ Lösung: **3**. Typische Fehler: 2 (gerade-begrenzt), 6 (gerade-begrenzt).
+- `04` AFB I · _Kommunizieren_ · Schau dir die Linie a an. / Wie heißt so eine Linie? _(Bild: Karogitter 10 × 6; Punkte A(5|4), B(9|4); Strahl a durch (5|4) und (9|4))_
+  - ☑ Strahl
+  - ☐ Strecke
+  - ☐ Gerade
+- `05` AFB II · _Kommunizieren_ · Die Geraden g und h schneiden sich. / Markiere den Schnittpunkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 6; Gerade g durch (3|1) und (3|5), Gerade h durch (1|5) und (5|1))_ Lösung: **(3|3)**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Finn sagt: „Die Gerade g ist 8 Kästchen lang.“ / Stimmt das? _(Bild: Karogitter 10 × 6; Gerade g durch (1|2) und (9|2))_
+  - ☐ Falsch. / Die Gerade ist 12 Kästchen lang.
+  - ☑ Falsch. / Eine Gerade hat kein Ende. / Sie hat keine Länge.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Strahl hat genau einen Anfangspunkt und kein Ende. *Lösungsschritt:* Prüfe bei jeder Linie, wie viele Endstriche sie hat. Ein Strahl hat genau einen.
+
+- `01` AFB I · _Kommunizieren_ · Welche Linien sind Strahlen? Kreuze alle an. _(Bild: Karogitter 12 × 9; Strecke a durch (3|8) und (8|9), Strecke b durch (2|6) und (9|6), Gerade c durch (2|4) und (7|4), Strahl d durch (3|2) und (9|2))_
+  - ☐ Linie c
+  - ☑ Linie d
+  - ☐ Linie b
+  - ☐ Linie a
+- `02` AFB II · _Kommunizieren_ · Auf der Geraden g liegen die Punkte A, B und C. Wie viele verschiedene Strecken legen diese drei Punkte fest? _(Bild: Karogitter 10 × 6; Punkte A(1|3), B(5|3), C(7|3); Gerade g durch (0|3) und (10|3))_ Lösung: **3**. Typische Fehler: 2 (gerade-begrenzt), 1 (gerade-begrenzt).
+- `03` AFB II · _Kommunizieren_ · Durch je zwei der Punkte A, B, C und D wird eine Gerade gezeichnet. Wie viele Geraden entstehen? _(Bild: Karogitter 10 × 7; Punkte A(1|1), B(8|2), C(7|6), D(2|5))_ Lösung: **6**. Typische Fehler: 4 (gerade-begrenzt), 8 (gerade-begrenzt), 12 (gerade-begrenzt).
+- `04` AFB I · _Kommunizieren_ · Markiere den Schnittpunkt der Geraden g und h. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 7; Gerade g durch (6|1) und (8|5), Gerade h durch (5|5) und (9|1))_ Lösung: **(7|3)**
+- `05` AFB II · _Kommunizieren_ · Ein Strahl beginnt im Punkt A und geht durch den Punkt B. Welcher der Punkte liegt auf diesem Strahl? _(Bild: Karogitter 11 × 7; Punkte A(4|4), B(5|3), C(8|4), D(3|5), E(6|2))_
+  - ☑ Punkt E
+  - ☐ Punkt C
+  - ☐ Punkt D
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas sagt: „Jede Strecke ist ein Teil einer Geraden.“ Emre sagt: „Jede Gerade ist ein Teil einer Strecke.“ Wer hat recht?
+  - ☑ Nur Jonas.
+  - ☐ Nur Emre.
+  - ☐ Keiner von beiden.
+  - ☐ Beide.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle bei jeder Linie die Endpunkte.
+
+- `01` AFB I · _Kommunizieren_ · Welche Linie ist eine Strecke? _(Bild: Karogitter 12 × 9; Strahl a durch (2|8) und (9|9), Strahl b durch (2|6) und (7|5), Strecke c durch (2|4) und (8|4), Gerade d durch (1|2) und (7|3))_
+  - ☐ Linie b
+  - ☐ Linie a
+  - ☑ Linie c
+  - ☐ Linie d
+- `02` AFB II · _Kommunizieren_ · Auf einem Blatt liegen 6 Punkte. Keine drei davon liegen auf einer gemeinsamen Geraden. Wie viele Strecken kann man zwischen je zwei Punkten zeichnen? Lösung: **15**. Typische Fehler: 6 (gerade-begrenzt), 30 (gerade-begrenzt), 12 (gerade-begrenzt).
+- `03` AFB II · _Kommunizieren_ · Welche Punkte liegen auf der Geraden durch A und B? Kreuze alle an. _(Bild: Karogitter 12 × 8; Punkte A(4|2), B(5|3), C(6|4), D(3|1), E(8|7), F(11|7))_
+  - ☐ Punkt F
+  - ☐ Punkt E
+  - ☑ Punkt C
+  - ☑ Punkt D
+- `04` AFB III · _Kommunizieren_ · 4 Geraden werden so gezeichnet, dass möglichst viele Schnittpunkte entstehen. Wie viele Schnittpunkte sind es höchstens? Lösung: **6**. Typische Fehler: 4 (gerade-begrenzt), 3 (gerade-begrenzt), 12 (gerade-begrenzt).
+- `05` AFB II · _Kommunizieren_ · Die Gerade durch A und B schneidet die Gerade durch C und D. Die Geraden sind nicht gezeichnet. Markiere ihren Schnittpunkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(5|0), B(7|2), C(12|1), D(10|2))_ Lösung: **(8|3)**
+- `06` AFB III · _Kommunizieren_ · Wie viele gemeinsame Punkte können zwei verschiedene Geraden haben?
+  - ☐ Beliebig viele.
+  - ☐ Keinen, einen oder zwei.
+  - ☑ Keinen oder genau einen.
+  - ☐ Immer genau einen.
+
+## 5.5.1-B2: Ich kann Strecken messen und in einer vorgegebenen Länge zeichnen.
+
+Grundlage, die F übt: Die Länge einer Strecke am Lineal ablesen, die bei 0 beginnt, in ganzen Zentimetern
+
+Baut auf: 5.5.1-B1 (Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Strecke beginnt bei 0. Lies die Zahl am Ende ab. *Beispiel:* Endet eine Strecke bei der 5, dann ist sie 5 cm lang. *Lösungsschritt:* Schau, bei welcher Zahl der Punkt B liegt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Strecke liegt am Lineal. / Wie lang ist die Strecke von A nach B? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 0 mm und endet bei 50 mm)_ Lösung: **5 cm**. Typische Fehler: 6 (koord-ab-eins), 4 (koord-ab-eins).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zähle die Kästchen. / Wie lang ist die Strecke von A nach B? _(Bild: Karogitter 12 × 5; Punkte A(1|2), B(10|2); Strecke durch (1|2) und (10|2))_ Lösung: **9 Kästchen**. Typische Fehler: 10 (koord-ab-eins), 8 (koord-ab-eins).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Strecke. / Sie beginnt in A. / Sie ist 4 Kästchen lang. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 12 × 6; Punkte A(7|1))_ Lösung: **zum Beispiel durch (7|1) und (11|1)**
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · 2 Kästchen sind 1 cm lang. / Die Strecke ist 6 Kästchen lang. / Wie viele cm sind das? _(Bild: Karogitter 12 × 5; Punkte A(1|4), B(7|4); Strecke durch (1|4) und (7|4))_ Lösung: **3 cm**. Typische Fehler: 6 (laenge-kaestchen), 12 (laenge-kaestchen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Vergleiche die beiden Strecken. / Welche Strecke ist länger? _(Bild: Karogitter 11 × 6; Punkte A(1|5), B(9|5), C(2|1), D(2|4); Strecke durch (1|5) und (9|5), Strecke durch (2|1) und (2|4))_
+  - ☑ Strecke AB
+  - ☐ Strecke CD
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · 2 Kästchen sind 1 cm lang. / Zeichne eine Strecke. / Sie beginnt in A und ist 3 cm lang. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 12 × 6; Punkte A(3|2))_ Lösung: **zum Beispiel durch (3|2) und (9|2)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies erst die ganzen Zentimeter ab. Zähle dann die kleinen Striche dazu. *Beispiel:* Endet eine Strecke 3 kleine Striche nach der 5, ist sie 5 cm 3 mm lang. *Lösungsschritt:* Der Punkt B liegt zwischen 3 und 4.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Strecke liegt am Lineal. / Sie ist ▢ cm und ▢ mm lang. _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 0 mm und endet bei 36 mm)_ Lösung: a = **3**, b = **6**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Strecke liegt am Lineal. / Wie viele mm ist sie lang? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 0 mm und endet bei 26 mm)_ Lösung: **26 mm**. Typische Fehler: 8 (einheit-mm-cm), 2 (einheit-mm-cm), 20 (einheit-mm-cm).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Strecke ist 10 cm 2 mm lang. / Wie viele mm sind das? Lösung: **102 mm**. Typische Fehler: 12 (einheit-mm-cm), 1002 (einheit-mm-cm).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Zeichne eine Strecke von A aus. / Sie ist 5 cm lang. / Denke daran: 2 Kästchen sind 1 cm. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 12 × 6; Punkte A(1|3))_ Lösung: **zum Beispiel durch (1|3) und (11|3)**
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Ein Weg führt von A über B nach C. / 2 Kästchen sind 1 cm lang. / Wie viele cm ist der ganze Weg lang? _(Bild: Karogitter 11 × 6; Punkte A(2|1), B(6|1), C(6|5); Strecke durch (2|1) und (6|1), Strecke durch (6|1) und (6|5))_ Lösung: **4 cm**. Typische Fehler: 8 (laenge-kaestchen), 2 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Mia hat das Lineal nicht bei 0 angelegt. / Wie viele cm ist die Strecke wirklich lang? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 20 mm und endet bei 60 mm)_ Lösung: **4 cm**. Typische Fehler: 6 (lineal-nicht-null).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies Anfang und Ende der Strecke in Millimetern ab. *Lösungsschritt:* Die Strecke beginnt bei 20 mm und endet bei 56 mm. Bilde den Unterschied.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Lineal liegt nicht bei 0 an. Wie viele mm ist die Strecke lang? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 20 mm und endet bei 56 mm)_ Lösung: **36 mm**. Typische Fehler: 56 (lineal-nicht-null), 9 (einheit-mm-cm).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Die Strecke AB ist 6 cm 6 mm lang, die Strecke CD ist 33 mm lang. Um wie viele mm ist AB länger als CD? Lösung: **33 mm**. Typische Fehler: 21 (einheit-mm-cm), 99 (sub-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne mit dem Geodreieck eine Strecke AB, die 9 cm 8 mm lang ist. Markiere auf ihr den Punkt C, der 5 cm 9 mm von A entfernt ist. Miss die Strecke von C nach B in mm. Lösung: **39 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 157 (sub-addiert).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne von A aus eine Strecke, die 5 cm 5 mm lang ist. Ein Kästchen ist 5 mm lang. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 13 × 6; Punkte A(12|5))_ Lösung: **zum Beispiel durch (12|5) und (1|5)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne auf einer Geraden drei Strecken direkt hintereinander. Sie sind 3 cm 5 mm, 39 mm und 2 cm 7 mm lang. Miss die gesamte Länge in mm. Lösung: **101 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 56 (einheit-mm-cm).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Strecke soll genau 6 cm lang werden. Sie beginnt am Lineal bei 2 cm 4 mm. Bei wie vielen mm endet sie? Lösung: **84 mm**. Typische Fehler: 60 (lineal-nicht-null), 30 (einheit-mm-cm).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies Anfang und Ende in Millimetern ab und bilde den Unterschied.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Lineal liegt nicht bei 0 an. Die Strecke ist ▢ cm und ▢ mm lang. _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 26 mm und endet bei 77 mm)_ Lösung: a = **5**, b = **1**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Die Strecke AB ist 12 cm lang. Auf ihr liegt der Punkt C 3 cm 1 mm von A entfernt und der Punkt D 3 cm 5 mm von B entfernt. Wie viele mm ist die Strecke CD lang? Lösung: **54 mm**. Typische Fehler: 89 (sach-schritt-vergessen), 4 (sach-falsche-rechnung).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Strecke AB, die 8 cm 6 mm lang ist. Finde durch Messen ihren Mittelpunkt M. Wie viele mm ist die Strecke AM lang? Lösung: **43 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 86 (sach-schritt-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Strecke wird in 6 gleich lange Teile geteilt. Jeder Teil ist 2 cm 2 mm lang. Die ganze Strecke ist ▢ cm und ▢ mm lang. Lösung: a = **13**, b = **2**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne entlang der Kästchenlinien eine Strecke AB, die 5 cm lang ist und nach rechts verläuft. Zeichne von B aus eine Strecke BC, die 12 cm lang ist und nach oben verläuft. Miss die Strecke AC in mm. Lösung: **130 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 170 (abstand-schraeg).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Drei Strecken a, b und c sind zusammen 12 cm lang. Die Strecke b ist doppelt so lang wie a. Die Strecke c ist 2 cm länger als a. Wie viele mm ist die Strecke a lang? Lösung: **25 mm**. Typische Fehler: 30 (sach-schritt-vergessen), 40 (sach-falsche-rechnung).
+
+## 5.5.2-S1: Ich kann erkennen, ob Linien senkrecht zueinander sind.
+
+Grundlage, die F übt: Einen rechten Winkel am Karogitter erkennen: eine Linie waagerecht, eine senkrecht dazu
+
+Baut auf: 5.5.1-B1 (Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Senkrecht zueinander heißt: Die Linien bilden einen rechten Winkel. *Beispiel:* Die Ecke eines Blattes ist ein rechter Winkel. *Lösungsschritt:* Halte in Gedanken eine Blattecke an jede Kreuzung. Wo passt sie genau?
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die Linien an. / Welche Linie ist senkrecht zu g? _(Bild: Karogitter 12 × 8; Gerade g durch (4|5) und (5|5), Strecke a durch (4|3) und (4|7), Strecke b durch (6|6) und (8|4))_
+  - ☐ Linie b
+  - ☑ Linie a
+- `02` AFB I · _Kommunizieren_ · Die Linien g und h kreuzen sich. / Was stimmt? _(Bild: Karogitter 10 × 7; Gerade g durch (6|2) und (8|2), Gerade h durch (6|1) und (8|3))_
+  - ☑ Sie sind nicht senkrecht zueinander.
+  - ☐ Sie sind senkrecht zueinander.
+- `03` AFB I · _Kommunizieren_ · Die Linie g läuft von oben nach unten. / Welche Linie ist senkrecht zu g? _(Bild: Karogitter 12 × 8; Gerade g durch (2|4) und (2|5), Strecke a durch (1|3) und (3|5), Strecke b durch (0|7) und (4|7))_
+  - ☐ Linie a
+  - ☑ Linie b
+- `04` AFB I · _Kommunizieren_ · Schau dir die Linien a, b und c an. / Wie viele davon sind senkrecht zu g? _(Bild: Karogitter 12 × 8; Gerade g durch (10|1) und (10|2), Strecke a durch (12|1) und (8|1), Strecke b durch (9|3) und (11|5), Strecke c durch (9|6) und (11|8))_ Lösung: **1**. Typische Fehler: 3 (lage-prototyp).
+- `05` AFB II · _Kommunizieren_ · An der Kreuzung siehst du ein kleines Zeichen. / Was bedeutet es? _(Bild: Karogitter 10 × 7; Gerade g durch (3|3) und (3|5), Gerade h durch (2|4) und (4|4))_
+  - ☐ Die Linien sind gleich lang.
+  - ☑ Die Linien bilden einen rechten Winkel.
+  - ☐ Die Linien treffen sich nie.
+- `06` AFB I · _Kommunizieren_ · Du siehst drei Linien. / Welche zwei Linien sind senkrecht zueinander? _(Bild: Karogitter 10 × 7; Gerade k durch (1|1) und (2|1), Gerade g durch (2|3) und (2|4), Gerade h durch (6|2) und (7|3))_
+  - ☐ g und h
+  - ☑ g und k
+  - ☐ h und k
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Auch schräge Linien können senkrecht zueinander sein. *Beispiel:* Senkrecht zueinander heißt nur: Die Linien bilden einen rechten Winkel. *Lösungsschritt:* Dreh das Bild in Gedanken, bis g waagerecht liegt.
+
+- `01` AFB I · _Kommunizieren_ · Die Linie g verläuft schräg. / Welche Linie ist senkrecht zu g? _(Bild: Karogitter 12 × 10; Gerade g durch (5|3) und (6|4), Strecke a durch (3|3) und (7|3), Strecke b durch (8|4) und (8|8), Strecke c durch (12|8) und (10|10))_
+  - ☑ Linie c
+  - ☐ Linie a
+  - ☐ Linie b
+- `02` AFB I · _Kommunizieren_ · Schau dir die Geraden g und h an. / Wie liegen sie zueinander? _(Bild: Karogitter 10 × 7; Gerade g durch (4|2) und (5|2), Gerade h durch (4|4) und (5|4))_
+  - ☐ Sie sind senkrecht zueinander.
+  - ☐ Weder senkrecht noch parallel.
+  - ☑ Sie sind parallel zueinander.
+- `03` AFB II · _Kommunizieren_ · Das Zeichen ⊥ bedeutet: senkrecht zueinander. / Was stimmt? _(Bild: Karogitter 10 × 7; Gerade h durch (4|3) und (5|4), Gerade g durch (6|3) und (7|2), Gerade k durch (9|2) und (9|3))_
+  - ☑ g ⊥ h
+  - ☐ h ⊥ k
+  - ☐ g ⊥ k
+- `04` AFB I · _Kommunizieren_ · Schau dir die Linien a, b, c und d an. / Wie viele davon sind senkrecht zu g? _(Bild: Karogitter 9 × 14; Gerade g durch (5|4) und (5|5), Strecke a durch (4|5) und (6|3), Strecke b durch (4|8) und (6|6), Strecke c durch (4|12) und (6|8), Strecke d durch (7|13) und (3|13))_ Lösung: **1**. Typische Fehler: 4 (lage-prototyp).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Ida sagt: „Senkrecht heißt immer von oben nach unten.“ / Schau dir die Geraden g und h an. / Stimmt das? _(Bild: Karogitter 10 × 7; Gerade g durch (1|1) und (3|3), Gerade h durch (1|3) und (3|1))_
+  - ☐ Stimmt.
+  - ☑ Falsch. / Auch schräge Geraden können senkrecht zueinander sein.
+  - ☐ Falsch. / Senkrecht heißt immer von links nach rechts.
+- `06` AFB III · _Kommunizieren_ · Schau dir das Viereck ABCD an. / Wie viele rechte Winkel hat es? _(Bild: Karogitter 11 × 6; Punkte A(1|1), B(6|1), C(4|3), D(1|3); Figur mit den Ecken (1|1) (6|1) (4|3) (1|3))_ Lösung: **2**. Typische Fehler: 4 (lage-prototyp).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken das Geodreieck mit der Mittellinie auf g. *Lösungsschritt:* Zähle die Kästchen: Geht g 2 nach rechts und 1 nach oben, dann geht die Senkrechte 1 nach links und 2 nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Welche Linie ist senkrecht zur Geraden g? _(Bild: Karogitter 13 × 10; Gerade g durch (4|3) und (6|4), Strecke a durch (5|1) und (3|5), Strecke b durch (8|3) und (8|7), Strecke c durch (11|8) und (13|6))_
+  - ☐ Linie b
+  - ☑ Linie a
+  - ☐ Linie c
+- `02` AFB II · _Kommunizieren_ · Welche Linien sind senkrecht zur Geraden g? Kreuze alle an. _(Bild: Karogitter 13 × 12; Gerade g durch (2|2) und (3|3), Strecke a durch (3|1) und (1|3), Strecke b durch (5|3) und (5|7), Strecke c durch (6|8) und (10|8), Strecke d durch (12|10) und (10|12))_
+  - ☑ Linie d
+  - ☐ Linie c
+  - ☑ Linie a
+  - ☐ Linie b
+- `03` AFB II · _Kommunizieren_ · Im Bild siehst du die Geraden g, h, k und m. Wie viele Paare von Geraden sind senkrecht zueinander? _(Bild: Karogitter 12 × 8; Gerade g durch (1|1) und (2|2), Gerade h durch (5|1) und (6|0), Gerade k durch (10|3) und (10|4), Gerade m durch (2|6) und (3|5))_ Lösung: **2**. Typische Fehler: 3 (senkrecht-lotrecht), 1 (senkrecht-lotrecht).
+- `04` AFB I · _Kommunizieren_ · Die Gerade g geht immer 3 Kästchen nach rechts und 1 Kästchen nach oben. Die Gerade h ist senkrecht zu g. Wie viele Kästchen geht h nach oben, wenn sie 1 Kästchen nach links geht? _(Bild: Karogitter 12 × 8; Gerade g durch (2|3) und (5|4))_ Lösung: **3 Kästchen**. Typische Fehler: 1 (senkrecht-parallel-verwechselt).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Noah sagt: „Die Geraden g und h sind nicht senkrecht zueinander, denn keine von beiden verläuft genau waagerecht.“ Stimmt das? _(Bild: Karogitter 10 × 8; Gerade g durch (5|1) und (9|3), Gerade h durch (8|0) und (6|4))_
+  - ☑ Falsch. Die Geraden bilden einen rechten Winkel. Auf ihre Lage im Heft kommt es nicht an.
+  - ☐ Falsch. Die Geraden sind parallel zueinander.
+  - ☐ Stimmt.
+- `06` AFB III · _Kommunizieren_ · Wie viele rechte Winkel hat das Viereck ABCD? _(Bild: Karogitter 11 × 8; Punkte A(5|1), B(11|4), C(6|4), D(4|3); Figur mit den Ecken (5|1) (11|4) (6|4) (4|3))_ Lösung: **2**. Typische Fehler: 0 (senkrecht-lotrecht), 4 (lage-prototyp).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Verlass dich nicht auf den Augenschein. Zähle bei jeder Linie die Kästchenschritte und vergleiche sie mit denen von g.
+
+- `01` AFB I · _Kommunizieren_ · Genau eine der Linien ist senkrecht zur Geraden g. Welche? _(Bild: Karogitter 13 × 11; Gerade g durch (3|9) und (6|8), Strecke a durch (2|7) und (4|11), Strecke b durch (5|5) und (7|11), Strecke c durch (9|5) und (9|9), Strecke d durch (11|5) und (13|7))_
+  - ☐ Linie a
+  - ☑ Linie b
+  - ☐ Linie c
+  - ☐ Linie d
+- `02` AFB II · _Kommunizieren_ · Zwei Geraden g und h heißen orthogonal. Was bedeutet das?
+  - ☐ Eine verläuft waagerecht, die andere von oben nach unten.
+  - ☐ Sie schneiden sich in einem beliebigen Winkel.
+  - ☑ Sie bilden einen rechten Winkel.
+  - ☐ Sie haben überall den gleichen Abstand.
+- `03` AFB II · _Kommunizieren_ · Die Gerade g geht immer 1 Kästchen nach rechts und 2 Kästchen nach oben. Die Gerade h ist orthogonal zu g. Auf h geht man 6 Kästchen nach links. Wie viele Kästchen geht es dabei nach oben? Lösung: **3 Kästchen**. Typische Fehler: 1 (sach-schritt-vergessen), 6 (senkrecht-parallel-verwechselt).
+- `04` AFB III · _Kommunizieren_ · Bei welcher Ecke hat das Dreieck ABC einen rechten Winkel? _(Bild: Karogitter 11 × 8; Punkte A(1|4), B(2|6), C(5|2); Figur mit den Ecken (1|4) (5|2) (2|6))_
+  - ☐ Bei C.
+  - ☐ Bei B.
+  - ☐ Bei keiner Ecke.
+  - ☑ Bei A.
+- `05` AFB II · _Kommunizieren_ · Die Gerade h geht durch B und ist orthogonal zur Geraden durch A und B. Durch welchen Punkt geht h? _(Bild: Karogitter 12 × 9; Punkte A(3|1), B(5|2), C(5|5), D(2|3), E(5|4), F(4|4))_
+  - ☐ Punkt C
+  - ☐ Punkt E
+  - ☑ Punkt F
+  - ☐ Punkt D
+- `06` AFB III · _Kommunizieren_ · Gegeben sind eine Gerade g und ein Punkt P. Wie viele Geraden durch P sind orthogonal zu g?
+  - ☐ Beliebig viele.
+  - ☐ Keine oder eine, je nach Lage von P.
+  - ☑ Immer genau eine.
+  - ☐ Immer genau zwei.
+
+## 5.5.2-S2: Ich kann Senkrechten zeichnen.
+
+Grundlage, die F übt: Am Karogitter eine Linie entlang der Kästchen senkrecht zu einer anderen zeichnen
+
+Baut auf: 5.5.2-S1 (Ich kann erkennen, ob Linien senkrecht zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die neue Linie bildet mit g einen rechten Winkel. *Beispiel:* Die Linie g läuft von links nach rechts. Eine Linie senkrecht dazu läuft von oben nach unten. *Lösungsschritt:* Tippe auf P. Tippe dann auf einen Punkt genau über P.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie durch den Punkt P. / Sie soll senkrecht zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(8|4); Gerade g durch (5|4) und (6|4))_ Lösung: **zum Beispiel durch (8|4) und (8|5)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Linie g läuft von oben nach unten. / Zeichne eine Linie durch den Punkt P. / Sie soll senkrecht zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(8|4); Gerade g durch (11|1) und (11|2))_ Lösung: **zum Beispiel durch (8|4) und (11|4)**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P liegt nicht auf g. / Zeichne eine Linie durch P. / Sie soll senkrecht zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(8|2); Gerade g durch (6|1) und (7|1))_ Lösung: **zum Beispiel durch (8|2) und (8|1)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie. / Sie soll senkrecht zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 7; Gerade g durch (7|1) und (7|2))_ Lösung: **zum Beispiel durch (1|3) und (2|3)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie durch den Punkt B. / Sie soll senkrecht zur Strecke AB sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte A(5|3), B(9|3); Strecke durch (5|3) und (9|3))_ Lösung: **zum Beispiel durch (9|3) und (9|4)**
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Linie geht durch P. / Sie ist senkrecht zu g. / Markiere den Punkt, an dem sie g trifft. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte P(6|1); Gerade g durch (4|0) und (4|1))_ Lösung: **(4|1)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Gerade g läuft von Ecke zu Ecke schräg durch die Kästchen. *Beispiel:* Die Senkrechte läuft in der anderen Richtung schräg durch die Kästchen. *Lösungsschritt:* Tippe auf P. Geh dann 1 Kästchen nach rechts und 1 nach unten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft schräg. / Der Punkt P liegt auf g. / Zeichne durch P die Senkrechte zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(7|3); Gerade g durch (6|2) und (7|3))_ Lösung: **zum Beispiel durch (7|3) und (6|4)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Gerade h durch den Punkt P. / Es soll gelten: h ⊥ g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(7|6); Gerade g durch (8|4) und (8|5))_ Lösung: **zum Beispiel durch (7|6) und (8|6)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P liegt nicht auf g. / Zeichne durch P die Senkrechte zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(10|2); Gerade g durch (6|4) und (7|5))_ Lösung: **zum Beispiel durch (10|2) und (7|5)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne durch den Punkt A die Senkrechte zur Strecke AB. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte A(4|3), B(8|7); Strecke durch (4|3) und (8|7))_ Lösung: **zum Beispiel durch (4|3) und (3|4)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Senkrechte zu g geht durch P. / Markiere den Punkt, an dem sie g trifft. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte P(5|4); Gerade g durch (5|6) und (6|5))_ Lösung: **(6|5)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft schräg. / Zeichne eine Senkrechte zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 7; Gerade g durch (3|2) und (4|1))_ Lösung: **zum Beispiel durch (8|1) und (9|2)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme, wie viele Kästchen g nach rechts und nach oben geht. *Lösungsschritt:* Bei der Senkrechten tauschen die beiden Schrittzahlen ihre Rollen, und eine Richtung kehrt sich um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P liegt auf der Geraden g. Zeichne durch P die Senkrechte zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 13 × 10; Punkte P(7|7); Gerade g durch (5|8) und (7|7))_ Lösung: **zum Beispiel durch (7|7) und (8|9)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne das Lot vom Punkt P auf die Gerade g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 13 × 10; Punkte P(12|4); Gerade g durch (8|1) und (9|3))_ Lösung: **zum Beispiel durch (12|4) und (10|5)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Strecke AB mit der Länge 4 cm. Zeichne mit dem Geodreieck durch B die Senkrechte zu AB. Markiere auf ihr einen Punkt C, der 3 cm von B entfernt ist. Miss die Strecke AC in mm. Lösung: **50 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 70 (abstand-schraeg).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Markiere den Fußpunkt des Lots vom Punkt P auf die Gerade g. _(Gitterzeichnen, einen Punkt antippen; Karogitter 13 × 10; Punkte P(9|8); Gerade g durch (3|6) und (5|5))_ Lösung: **(7|4)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Strecke AB mit der Länge 12 cm. Zeichne durch A und durch B je eine Senkrechte zu AB. Markiere auf beiden Senkrechten oberhalb von AB je einen Punkt, der 5 cm von AB entfernt ist: D über A und C über B. Miss die Strecke AC in mm. Lösung: **130 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 170 (abstand-schraeg).
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade durch A und B ist nicht gezeichnet. Zeichne durch den Punkt C die Senkrechte zu dieser Geraden. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 9; Punkte A(8|3), B(12|5), C(9|6))_ Lösung: **zum Beispiel durch (9|6) und (8|8)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme das Schrittmuster von g und drehe es um einen rechten Winkel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Gerade durch P, die orthogonal zu g ist. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 11; Punkte P(5|2); Gerade g durch (1|4) und (4|5))_ Lösung: **zum Beispiel durch (5|2) und (4|5)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Strecke AB mit der Länge 12 cm und markiere ihren Mittelpunkt M. Zeichne durch M die Senkrechte zu AB. Markiere auf ihr einen Punkt C, der 4 cm 5 mm von M entfernt ist. Miss die Strecke AC in mm. Lösung: **75 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 105 (abstand-schraeg).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Gerade, die orthogonal zur Strecke AB ist und durch den Mittelpunkt von AB geht. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 9; Punkte A(4|1), B(6|3); Strecke durch (4|1) und (6|3))_ Lösung: **zum Beispiel durch (5|2) und (4|3)**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Gerade g und einen Punkt P, der 4 cm 5 mm von g entfernt ist. Zeichne das Lot von P auf g und nenne den Fußpunkt F. Markiere auf g einen Punkt Q, der 6 cm von F entfernt ist. Miss die Strecke PQ in mm. Lösung: **75 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 105 (abstand-schraeg).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade durch A und B ist nicht gezeichnet. Markiere den Fußpunkt des Lots von P auf diese Gerade. _(Gitterzeichnen, einen Punkt antippen; Karogitter 13 × 10; Punkte A(2|1), B(5|10), P(1|8))_ Lösung: **(4|7)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Die Gerade g geht immer 4 Kästchen nach rechts und 1 Kästchen nach oben. Welches Schrittmuster gehört zu einer Geraden, die orthogonal zu g ist?
+  - ☐ 4 Kästchen nach rechts und 1 Kästchen nach unten
+  - ☐ 1 Kästchen nach rechts und 4 Kästchen nach oben
+  - ☑ 1 Kästchen nach rechts und 4 Kästchen nach unten
+  - ☐ 4 Kästchen nach links und 1 Kästchen nach unten
+
+## 5.5.3-P1: Ich kann erkennen, ob Linien parallel zueinander sind.
+
+Grundlage, die F übt: Am Karogitter erkennen, ob zwei Linien überall gleich weit auseinander liegen
+
+Baut auf: 5.5.2-S1 (Ich kann erkennen, ob Linien senkrecht zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei parallele Linien liegen überall gleich weit auseinander. *Beispiel:* Die beiden Schienen eines Gleises sind parallel zueinander. *Lösungsschritt:* Suche die Linie, die genauso von links nach rechts läuft wie g.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die Linien an. / Welche Linie ist parallel zu g? _(Bild: Karogitter 12 × 8; Strecke g durch (3|7) und (9|7), Strecke a durch (6|0) und (9|0), Strecke b durch (2|0) und (5|3))_
+  - ☑ Linie a
+  - ☐ Linie b
+- `02` AFB I · _Kommunizieren_ · Schau dir die Linien g und h an. / Was stimmt? _(Bild: Karogitter 10 × 7; Gerade g durch (5|2) und (7|2), Gerade h durch (5|4) und (7|4))_
+  - ☑ Sie sind parallel zueinander.
+  - ☐ Sie sind nicht parallel zueinander.
+- `03` AFB I · _Kommunizieren_ · Die Linie g läuft von oben nach unten. / Welche Linie ist parallel zu g? _(Bild: Karogitter 12 × 8; Strecke g durch (9|0) und (9|4), Strecke a durch (1|1) und (5|1), Strecke b durch (10|0) und (10|3))_
+  - ☑ Linie b
+  - ☐ Linie a
+- `04` AFB I · _Kommunizieren_ · Schau dir die Linien a, b und c an. / Wie viele davon sind parallel zu g? _(Bild: Karogitter 12 × 8; Gerade g durch (6|2) und (6|3), Strecke a durch (2|1) und (2|4), Strecke b durch (3|7) und (5|5), Strecke c durch (9|2) und (7|2))_ Lösung: **1**. Typische Fehler: 3 (lage-prototyp).
+- `05` AFB II · _Kommunizieren_ · Die Linien g und h sind parallel zueinander. / Was gilt für parallele Linien? _(Bild: Karogitter 10 × 7; Gerade g durch (5|4) und (5|6), Gerade h durch (3|4) und (3|6))_
+  - ☐ Sie bilden einen rechten Winkel.
+  - ☑ Sie haben überall den gleichen Abstand.
+  - ☐ Sie sind immer gleich lang.
+- `06` AFB I · _Kommunizieren_ · Du siehst drei Linien. / Welche zwei Linien sind parallel zueinander? _(Bild: Karogitter 10 × 7; Gerade g durch (1|2) und (2|2), Gerade h durch (1|6) und (2|6), Gerade k durch (4|2) und (5|3))_
+  - ☐ g und k
+  - ☐ h und k
+  - ☑ g und h
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Auch schräge Linien können parallel zueinander sein. *Beispiel:* Zwei parallele Linien müssen nicht gleich lang sein. *Lösungsschritt:* Suche die Linie mit derselben Richtung wie g.
+
+- `01` AFB I · _Kommunizieren_ · Die Linie g verläuft schräg. / Welche Linie ist parallel zu g? _(Bild: Karogitter 12 × 9; Strecke g durch (8|2) und (12|6), Strecke a durch (4|8) und (8|4), Strecke b durch (2|2) und (6|2), Strecke c durch (10|6) und (12|8))_
+  - ☐ Linie a
+  - ☐ Linie b
+  - ☑ Linie c
+- `02` AFB I · _Kommunizieren_ · Schau dir die Geraden g und h an. / Wie liegen sie zueinander? _(Bild: Karogitter 10 × 7; Gerade g durch (1|5) und (3|3), Gerade h durch (3|7) und (5|5))_
+  - ☐ Sie sind senkrecht zueinander.
+  - ☐ Weder parallel noch senkrecht.
+  - ☑ Sie sind parallel zueinander.
+- `03` AFB II · _Kommunizieren_ · Das Zeichen ∥ bedeutet: parallel zueinander. / Was stimmt? _(Bild: Karogitter 10 × 7; Gerade g durch (1|5) und (2|4), Gerade k durch (5|5) und (6|4), Gerade h durch (4|4) und (4|5))_
+  - ☐ g ∥ h
+  - ☑ g ∥ k
+  - ☐ h ∥ k
+- `04` AFB I · _Kommunizieren_ · Schau dir die Linien a, b, c und d an. / Wie viele davon sind parallel zu g? _(Bild: Karogitter 13 × 9; Gerade g durch (1|7) und (2|8), Strecke a durch (2|2) und (4|3), Strecke b durch (8|4) und (5|7), Strecke c durch (9|1) und (12|4), Strecke d durch (6|3) und (4|5))_ Lösung: **1**. Typische Fehler: 2 (lage-prototyp).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Die Strecken a und b sind nicht parallel.“ / Sara meint: „Sie sind ja nicht gleich lang.“ / Stimmt das? _(Bild: Karogitter 11 × 7; Strecke a durch (8|1) und (8|7), Strecke b durch (6|2) und (6|5))_
+  - ☐ Falsch. / Die Strecken sind senkrecht zueinander.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Parallele Strecken müssen nicht gleich lang sein.
+- `06` AFB III · _Kommunizieren_ · Die Geraden g und h sind parallel zueinander. / Links liegen sie 3 Kästchen auseinander. / Wie viele Kästchen sind es rechts? _(Bild: Karogitter 11 × 7; Gerade g durch (1|2) und (2|2), Gerade h durch (1|5) und (2|5))_ Lösung: **3 Kästchen**. Typische Fehler: 4 (parallel-gleichlang), 2 (parallel-gleichlang).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei parallele Linien haben dasselbe Schrittmuster. *Lösungsschritt:* Zähle bei jeder Linie, wie viele Kästchen sie nach rechts und wie viele sie nach oben oder unten geht.
+
+- `01` AFB I · _Kommunizieren_ · Welche Linie ist parallel zur Geraden g? _(Bild: Karogitter 13 × 10; Gerade g durch (0|2) und (2|1), Strecke a durch (6|4) und (4|8), Strecke b durch (7|10) und (10|9), Strecke c durch (6|2) und (10|0))_
+  - ☑ Linie c
+  - ☐ Linie b
+  - ☐ Linie a
+- `02` AFB II · _Kommunizieren_ · Welche Linien sind parallel zur Geraden g? Kreuze alle an. _(Bild: Karogitter 14 × 11; Gerade g durch (9|1) und (11|2), Strecke a durch (9|9) und (13|11), Strecke b durch (5|1) und (8|2), Strecke c durch (2|7) und (0|11), Strecke d durch (7|6) und (9|7))_
+  - ☑ Linie d
+  - ☐ Linie b
+  - ☐ Linie c
+  - ☑ Linie a
+- `03` AFB II · _Kommunizieren_ · Im Bild siehst du die Geraden g, h, k und m. Wie viele Paare von Geraden sind parallel zueinander? _(Bild: Karogitter 12 × 8; Gerade g durch (1|2) und (2|4), Gerade h durch (5|2) und (6|4), Gerade k durch (1|7) und (3|6), Gerade m durch (5|7) und (7|6))_ Lösung: **2**. Typische Fehler: 3 (lage-prototyp), 1 (lage-prototyp).
+- `04` AFB I · _Kommunizieren_ · Die Gerade g geht immer 1 Kästchen nach rechts und 2 Kästchen nach oben. Die Gerade h ist parallel zu g. Wie viele Kästchen geht h nach oben, wenn sie 3 Kästchen nach rechts geht? _(Bild: Karogitter 12 × 8; Gerade g durch (2|2) und (3|4))_ Lösung: **6 Kästchen**. Typische Fehler: 2 (sach-schritt-vergessen), 3 (sach-falsche-rechnung).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Ole sagt: „Die Geraden g und h sind beide senkrecht zu k. Also sind g und h parallel zueinander.“ Stimmt das? _(Bild: Karogitter 11 × 7; Gerade g durch (1|2) und (2|2), Gerade h durch (1|5) und (2|5), Gerade k durch (7|3) und (7|4))_
+  - ☐ Falsch. Über g und h lässt sich nichts sagen.
+  - ☐ Falsch. Dann sind g und h senkrecht zueinander.
+  - ☑ Stimmt. Zwei Geraden, die senkrecht zur selben Geraden sind, sind parallel zueinander.
+- `06` AFB III · _Kommunizieren_ · Wie viele Paare paralleler Seiten hat das Viereck ABCD? _(Bild: Karogitter 12 × 8; Punkte A(5|3), B(11|1), C(9|5), D(6|6); Figur mit den Ecken (5|3) (11|1) (9|5) (6|6))_ Lösung: **1**. Typische Fehler: 2 (lage-prototyp), 4 (viereck-eigenschaft).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Verlass dich nicht auf den Augenschein. Vergleiche die Schrittmuster aller Linien mit dem von g.
+
+- `01` AFB I · _Kommunizieren_ · Genau eine der Linien ist parallel zur Geraden g. Welche? _(Bild: Karogitter 15 × 12; Gerade g durch (11|9) und (14|11), Strecke a durch (10|10) und (13|12), Strecke b durch (3|0) und (5|1), Strecke c durch (7|9) und (11|12), Strecke d durch (12|5) und (13|6))_
+  - ☑ Linie a
+  - ☐ Linie d
+  - ☐ Linie c
+  - ☐ Linie b
+- `02` AFB II · _Kommunizieren_ · Für drei Geraden gilt: g ∥ h und h ⊥ k. Was folgt daraus für g und k?
+  - ☐ g ∥ k
+  - ☐ g und k haben keinen gemeinsamen Punkt.
+  - ☐ Über g und k lässt sich nichts sagen.
+  - ☑ g ⊥ k
+- `03` AFB II · _Kommunizieren_ · Die Gerade g geht immer 6 Kästchen nach rechts und 2 Kästchen nach oben. Die Gerade h ist parallel zu g. Auf h geht man 9 Kästchen nach rechts. Wie viele Kästchen geht es dabei nach oben? Lösung: **3 Kästchen**. Typische Fehler: 2 (sach-schritt-vergessen), 5 (sach-falsche-rechnung).
+- `04` AFB III · _Kommunizieren_ · Die Gerade h geht durch C und ist parallel zur Geraden durch A und B. Durch welchen Punkt geht h? _(Bild: Karogitter 12 × 9; Punkte A(7|2), B(8|4), C(3|4), D(9|6), E(1|5), F(4|6), G(4|7))_
+  - ☐ Punkt E
+  - ☑ Punkt F
+  - ☐ Punkt G
+  - ☐ Punkt D
+- `05` AFB II · _Kommunizieren_ · 5 Geraden sind parallel zueinander. Zwei weitere Geraden sind ebenfalls parallel zueinander und schneiden jede der 5 Geraden. Wie viele Schnittpunkte gibt es insgesamt? Lösung: **10**. Typische Fehler: 5 (sach-schritt-vergessen), 11 (parallel-gleichlang), 7 (sach-falsche-rechnung).
+- `06` AFB III · _Kommunizieren_ · Zwei verschiedene Geraden auf einem Blatt haben keinen gemeinsamen Punkt, auch wenn man sie beliebig verlängert. Was gilt?
+  - ☐ Das ist nicht möglich.
+  - ☐ Sie sind orthogonal zueinander.
+  - ☐ Sie sind gleich lang.
+  - ☑ Sie sind parallel zueinander.
+
+## 5.5.3-P2: Ich kann Parallelen zeichnen, auch in einem vorgegebenen Abstand.
+
+Grundlage, die F übt: Am Karogitter eine Linie entlang der Kästchen parallel zu einer anderen zeichnen
+
+Baut auf: 5.5.3-P1 (Ich kann erkennen, ob Linien parallel zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die neue Linie läuft in dieselbe Richtung wie g. *Beispiel:* Die Linie g läuft von links nach rechts. Eine parallele Linie läuft auch von links nach rechts. *Lösungsschritt:* Tippe auf P. Tippe dann auf einen Punkt genau neben P.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie durch den Punkt P. / Sie soll parallel zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(3|7); Gerade g durch (3|4) und (4|4))_ Lösung: **zum Beispiel durch (3|7) und (4|7)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Linie g läuft von oben nach unten. / Zeichne eine Linie durch den Punkt P. / Sie soll parallel zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(9|3); Gerade g durch (6|1) und (6|2))_ Lösung: **zum Beispiel durch (9|3) und (9|4)**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie. / Sie soll parallel zu g sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 7; Gerade g durch (3|5) und (4|5))_ Lösung: **zum Beispiel durch (3|3) und (4|3)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie durch den Punkt C. / Sie soll parallel zur Strecke AB sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte A(5|2), B(8|2), C(7|4); Strecke durch (5|2) und (8|2))_ Lösung: **zum Beispiel durch (7|4) und (8|4)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Linie parallel zu g. / Sie soll 3 Kästchen von g entfernt sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Gerade g durch (1|4) und (2|4))_ Lösung: **zum Beispiel durch (1|7) und (2|7)**
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Linie g läuft von oben nach unten. / Zeichne eine Linie parallel zu g. / Sie soll 2 Kästchen von g entfernt sein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Gerade g durch (4|1) und (4|2))_ Lösung: **zum Beispiel durch (2|1) und (2|2)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Parallele hat dieselbe Richtung wie g. *Beispiel:* Die Gerade g läuft von Ecke zu Ecke schräg durch die Kästchen. *Lösungsschritt:* Tippe auf P. Geh dann 1 Kästchen nach rechts und 1 nach oben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft schräg. / Zeichne durch P die Parallele zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(6|6); Gerade g durch (7|1) und (8|2))_ Lösung: **zum Beispiel durch (6|6) und (7|7)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Gerade h durch den Punkt P. / Es soll gelten: h ∥ g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(9|3); Gerade g durch (12|3) und (12|4))_ Lösung: **zum Beispiel durch (9|3) und (9|4)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft schräg. / Zeichne eine Parallele zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 7; Gerade g durch (8|3) und (9|4))_ Lösung: **zum Beispiel durch (11|0) und (12|1)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Strecke AB verläuft schräg. / Zeichne durch C die Parallele zur Strecke AB. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte A(1|2), B(4|5), C(6|1); Strecke durch (1|2) und (4|5))_ Lösung: **zum Beispiel durch (6|1) und (7|2)**
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Zeichne eine Parallele zu g. / Ihr Abstand zu g soll 2 cm sein. / Denke daran: 2 Kästchen sind 1 cm. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Gerade g durch (1|4) und (2|4))_ Lösung: **zum Beispiel durch (1|8) und (2|8)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft schräg. / Der Punkt P liegt neben g. / Zeichne durch P die Parallele zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Punkte P(10|1); Gerade g durch (10|7) und (11|6))_ Lösung: **zum Beispiel durch (10|1) und (11|0)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme, wie viele Kästchen g nach rechts und nach oben geht. *Lösungsschritt:* Setze dasselbe Schrittmuster im Punkt P an.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne durch den Punkt P die Parallele zur Geraden g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 13 × 10; Punkte P(7|9); Gerade g durch (8|6) und (9|8))_ Lösung: **zum Beispiel durch (7|9) und (6|7)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Gerade g und mit dem Geodreieck eine Parallele h zu g im Abstand 4 cm. Zeichne eine Senkrechte zu g. Sie schneidet g im Punkt A und h im Punkt B. Markiere auf h einen Punkt C, der 3 cm von B entfernt ist. Miss die Strecke AC in mm. Lösung: **50 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 70 (abstand-schraeg).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade durch A und B ist nicht gezeichnet. Zeichne durch den Punkt C die Parallele zu dieser Geraden. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 9; Punkte A(4|2), B(10|4), C(11|1))_ Lösung: **zum Beispiel durch (11|1) und (8|0)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne eine Parallele zu g im Abstand 10 mm. Ein Kästchen ist 5 mm breit. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 12 × 8; Gerade g durch (2|1) und (2|2))_ Lösung: **zum Beispiel durch (0|1) und (0|2)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Gerade g. Zeichne oberhalb von g eine Parallele h im Abstand 2 cm 5 mm und unterhalb von g eine Parallele k im Abstand 4 cm. Miss den Abstand der Geraden h und k in mm. Lösung: **65 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 15 (sub-addiert).
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft flach. Zeichne durch den Punkt P die Parallele zu g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte P(12|2); Gerade g durch (4|8) und (7|7))_ Lösung: **zum Beispiel durch (12|2) und (9|3)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Gitterpunkte auf g und bestimme daraus das Schrittmuster.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne durch den Punkt P die Parallele zur Geraden g. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 11; Punkte P(6|10); Gerade g durch (7|2) und (10|4))_ Lösung: **zum Beispiel durch (6|10) und (3|8)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne zwei parallele Geraden g und h im Abstand 8 cm. Zeichne zwischen ihnen eine dritte Parallele k, die 4 cm 5 mm von g entfernt ist. Miss den Abstand der Geraden k und h in mm. Lösung: **35 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 125 (sub-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade k ist orthogonal zu g und geht durch Q. Sie ist nicht gezeichnet. Zeichne durch P die Parallele zu k. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 13 × 10; Punkte Q(6|5), P(13|4); Gerade g durch (6|5) und (8|4))_ Lösung: **zum Beispiel durch (13|4) und (12|2)**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne eine Strecke AB mit der Länge 6 cm. Zeichne durch A die Senkrechte zu AB und markiere auf ihr den Punkt D, der 8 cm von A entfernt ist. Zeichne die Parallele zu AB durch D und die Parallele zu AD durch B. Die beiden Parallelen schneiden sich im Punkt C. Miss die Strecke BD in mm. Lösung: **100 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 140 (abstand-schraeg).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Parallele zu g, die durch den Mittelpunkt der Strecke AB geht. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 13 × 10; Punkte A(3|4), B(3|6); Gerade g durch (7|2) und (9|3), Strecke durch (3|4) und (3|6))_ Lösung: **zum Beispiel durch (3|5) und (5|6)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Die Gerade g geht immer 1 Kästchen nach rechts und 4 Kästchen nach oben. Welches Schrittmuster gehört zu einer Geraden, die parallel zu g ist?
+  - ☑ 2 Kästchen nach rechts und 8 Kästchen nach oben
+  - ☐ 3 Kästchen nach rechts und 6 Kästchen nach oben
+  - ☐ 4 Kästchen nach rechts und 1 Kästchen nach oben
+  - ☐ 1 Kästchen nach rechts und 4 Kästchen nach unten
+
+## 5.5.4-K1: Ich kann Punkte im Koordinatensystem ablesen.
+
+Grundlage, die F übt: Vom Nullpunkt aus die Schritte nach rechts und nach oben zählen
+
+Baut auf: 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Geh zuerst an der x-Achse entlang nach rechts. Geh dann nach oben. *Beispiel:* Für einen Punkt bei (2|4) gehst du 2 nach rechts und 4 nach oben. *Lösungsschritt:* Unter dem Punkt P steht an der x-Achse die Zahl 3.
+
+- `01` AFB I · _Kommunizieren_ · Du startest unten links in der Ecke. / Bis zum Punkt P gehst du ▢ nach rechts und ▢ nach oben. _(Bild: Koordinatensystem 6 × 6; Punkte P(3|1))_ Lösung: x = **3**, y = **1**
+- `02` AFB I · _Kommunizieren_ · Schau dir den Punkt A an. / Wo liegt er? _(Bild: Koordinatensystem 6 × 6; Punkte A(2|5))_
+  - ☐ (5|2)
+  - ☐ (3|6)
+  - ☑ (2|5)
+- `03` AFB I · _Kommunizieren_ · Schau dir die Punkte an. / Welcher Punkt liegt bei (5|3)? _(Bild: Koordinatensystem 6 × 6; Punkte A(3|5), B(5|3), C(1|2))_
+  - ☐ Punkt C
+  - ☐ Punkt A
+  - ☑ Punkt B
+- `04` AFB I · _Kommunizieren_ · Die Karte zeigt einen Schatz beim Punkt S. / Du startest unten links in der Ecke. / Wie viele Schritte gehst du nach oben? _(Bild: Koordinatensystem 6 × 6; Punkte S(4|3))_ Lösung: **3**. Typische Fehler: 4 (koord-vertauscht).
+- `05` AFB II · _Kommunizieren_ · Ordne jedem Punkt seine Stelle zu. _(Bild: Koordinatensystem 6 × 6; Punkte A(2|3), B(2|6), C(6|2))_ Lösung: A → (2|3), B → (2|6), C → (6|2)
+- `06` AFB I · _Kommunizieren_ · Schau dir die Punkte an. / Welcher Punkt liegt auf der y-Achse? _(Bild: Koordinatensystem 6 × 6; Punkte A(5|0), B(0|5), C(4|3))_
+  - ☑ Punkt B
+  - ☐ Punkt C
+  - ☐ Punkt A
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zuerst kommt die x-Koordinate, dann die y-Koordinate. *Beispiel:* Beim Punkt (2|7) ist 2 die x-Koordinate und 7 die y-Koordinate. *Lösungsschritt:* Die x-Koordinate liest du unten ab. Sie ist 10.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir den Punkt P an. / Er hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 10 × 10; Punkte P(10|8))_ Lösung: x = **10**, y = **8**
+- `02` AFB I · _Kommunizieren_ · Schau dir den Punkt Q an. / Welche Koordinaten hat er? _(Bild: Koordinatensystem 10 × 10; Punkte Q(6|2))_
+  - ☐ (2|6)
+  - ☑ (6|2)
+  - ☐ (7|3)
+- `03` AFB II · _Kommunizieren_ · Ordne jedem Punkt seine Koordinaten zu. / Achte auf die Punkte auf den Achsen. _(Bild: Koordinatensystem 10 × 10; Punkte A(4|6), B(10|3), C(8|0), D(6|4), E(0|8))_ Lösung: A → (4|6), B → (10|3), C → (8|0), D → (6|4), E → (0|8)
+- `04` AFB I · _Kommunizieren_ · Die Karte zeigt drei Orte im Königreich. / Welcher Punkt liegt bei (10|3)? _(Bild: Koordinatensystem 10 × 10; Punkte B(10|3), M(9|10), T(3|10))_
+  - ☐ Punkt M
+  - ☐ Punkt T
+  - ☑ Punkt B
+- `05` AFB II · _Kommunizieren_ · Schau dir die Punkte an. / Welcher Punkt hat die y-Koordinate 8? _(Bild: Koordinatensystem 10 × 10; Punkte A(8|4), B(5|4), C(4|8))_
+  - ☐ Punkt A
+  - ☑ Punkt C
+  - ☐ Punkt B
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „Der Punkt P liegt bei (4|1).“ / Stimmt das? _(Bild: Koordinatensystem 10 × 10; Punkte P(1|4))_
+  - ☐ Falsch. / P liegt bei (2|5).
+  - ☑ Falsch. / P liegt bei (1|4).
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Kästchen sind klein. Fahre vom Punkt aus genau nach unten bis zur x-Achse und genau nach links bis zur y-Achse. *Lösungsschritt:* Lies zuerst die x-Koordinate unten ab, dann die y-Koordinate links.
+
+- `01` AFB I · _Kommunizieren_ · Der Punkt P hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 15 × 12; Punkte P(8|11))_ Lösung: x = **8**, y = **11**
+- `02` AFB II · _Kommunizieren_ · Bei welchen Punkten ist die x-Koordinate größer als die y-Koordinate? Kreuze alle an. _(Bild: Koordinatensystem 15 × 12; Punkte A(14|7), B(3|10), C(4|5), D(10|7))_
+  - ☐ Punkt C
+  - ☑ Punkt A
+  - ☑ Punkt D
+  - ☐ Punkt B
+- `03` AFB II · _Kommunizieren_ · Der Mittelpunkt der Strecke AB hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 15 × 12; Punkte A(5|3), B(9|7); Strecke durch (5|3) und (9|7))_ Lösung: x = **7**, y = **5**
+- `04` AFB I · _Kommunizieren_ · Der Punkt Q liegt auf der y-Achse. Welche Koordinaten kann Q haben?
+  - ☐ (1|3)
+  - ☐ (3|0)
+  - ☐ (3|3)
+  - ☑ (0|3)
+- `05` AFB II · _Kommunizieren_ · Ein Ritter startet im Punkt S(1|5). Er reitet 5 Einheiten nach rechts und 3 Einheiten nach oben. Er kommt im Punkt (▢|▢) an. Lösung: x = **6**, y = **8**
+- `06` AFB III · _Kommunizieren_ · Mara soll den Punkt P(3|10) eintragen. Das Bild zeigt, wo Mara den Punkt gezeichnet hat. Welcher Fehler ist passiert? _(Bild: Koordinatensystem 15 × 12; Punkte P(10|3))_
+  - ☑ Die x-Koordinate und die y-Koordinate wurden vertauscht.
+  - ☐ Es ist kein Fehler passiert.
+  - ☐ Es wurde bei 1 statt bei 0 mit dem Zählen begonnen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Untersuche getrennt, wie sich die x-Koordinate und wie sich die y-Koordinate von Punkt zu Punkt ändert.
+
+- `01` AFB I · _Kommunizieren_ · Die Punkte A(2|0), B(4|1) und C(6|2) folgen einem Muster. Der nächste Punkt D hat die Koordinaten (▢|▢). Lösung: x = **8**, y = **3**
+- `02` AFB II · _Kommunizieren_ · Die Punkte A(3|2), B(8|2) und C(8|5) sind drei Ecken des Parallelogramms ABCD. Die vierte Ecke D hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 15 × 12; Punkte A(3|2), B(8|2), C(8|5))_ Lösung: x = **3**, y = **5**
+- `03` AFB II · _Kommunizieren_ · Die Gerade durch A und B und die Gerade durch C und D sind nicht gezeichnet. Sie schneiden sich im Punkt (▢|▢). _(Bild: Koordinatensystem 15 × 12; Punkte A(5|5), B(7|6), C(14|5), D(12|7))_ Lösung: x = **11**, y = **8**
+- `04` AFB III · _Kommunizieren_ · Die Punkte A(3|4) und B(8|4) sind die unteren Ecken eines Quadrats ABCD. Jede Seite ist ▢ Einheiten lang. Die oberen Ecken C und D haben beide die y-Koordinate ▢. Lösung: s = **5**, y = **9**
+- `05` AFB II · _Kommunizieren_ · Ein Bote startet bei der Burg B(3|1). Er reitet 8 Einheiten nach rechts, dann 5 Einheiten nach oben und zuletzt 4 Einheiten nach links. Sein Ziel hat die Koordinaten (▢|▢). Lösung: x = **7**, y = **6**
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · Ein Punkt P hat die Koordinaten (a|0). Die Zahl a ist größer als 0. Wo liegt P?
+  - ☐ Im Ursprung.
+  - ☐ Auf der y-Achse, oberhalb des Ursprungs.
+  - ☐ Das hängt von der Zahl a ab.
+  - ☑ Auf der x-Achse, rechts vom Ursprung.
+
+## 5.5.4-K2: Ich kann Punkte ins Koordinatensystem eintragen und Figuren daraus zeichnen.
+
+Grundlage, die F übt: Einen Punkt eintragen: erst nach rechts gehen, dann nach oben
+
+Baut auf: 5.5.4-K1 (Ich kann Punkte im Koordinatensystem ablesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Du startest unten links in der Ecke. *Beispiel:* Zum Punkt (2|4) gehst du 2 nach rechts und 4 nach oben. *Lösungsschritt:* Geh 4 nach rechts und dann 5 nach oben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage den Punkt A ein. / A liegt bei (4|5). _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 6 × 6)_ Lösung: **(4|5)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage den Punkt B(5|6) ein. / Du gehst 5 nach rechts und 6 nach oben. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 6 × 6)_ Lösung: **(5|6)**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage den Punkt C(0|5) ein. / Achtung: Eine der Zahlen ist 0. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 6 × 6)_ Lösung: **(0|5)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage zwei Punkte ein. / A liegt bei (5|6) und B liegt bei (2|4). _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 6 × 6)_ Lösung: **(5|6) (2|4)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Auf der Karte liegt ein Schatz bei S(6|2). / Markiere die Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 6 × 6)_ Lösung: **(6|2)**
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage die Punkte A(5|2) und B(2|5) ein. / Pass auf: Die beiden Punkte sind verschieden. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 6 × 6)_ Lösung: **(5|2) (2|5)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zuerst kommt die x-Koordinate, dann die y-Koordinate. *Beispiel:* Zum Punkt (2|7) gehst du 2 nach rechts und 7 nach oben. *Lösungsschritt:* Geh vom Punkt (0|0) aus 6 nach rechts und dann 7 nach oben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage den Punkt P(6|7) ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10)_ Lösung: **(6|7)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage die Punkte A(4|0) und B(0|7) ein. / Beide Punkte liegen auf einer Achse. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 10 × 10)_ Lösung: **(4|0) (0|7)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage drei Punkte ein. / Es sind A(1|10), B(6|2) und C(6|5). _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 10 × 10)_ Lösung: **(1|10) (6|2) (6|5)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Burg des Königs liegt bei B(1|8). / Die Mühle liegt bei M(8|9). / Markiere beide Orte auf der Karte. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 10 × 10)_ Lösung: **(1|8) (8|9)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir den Punkt A an. / Der Punkt P liegt 3 Einheiten rechts von A. / Trage P ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10; Punkte A(6|7))_ Lösung: **(9|7)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage vier Punkte ein. / Es sind A(2|1), B(6|1), C(6|3) und D(2|3). / Verbinde sie in Gedanken zu einem Viereck. _(Gitterzeichnen, 4 Punkte antippen; Koordinatensystem 10 × 10)_ Lösung: **(2|1) (6|1) (6|3) (2|3)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Kästchen sind klein. Achte bei großen Zahlen genau auf die richtige Linie. *Lösungsschritt:* Die x-Koordinate steht vorn: Gehe zuerst nach rechts, dann nach oben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage die Punkte A(1|11), B(5|1) und C(11|6) ein. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 15 × 12)_ Lösung: **(1|11) (5|1) (11|6)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage die Punkte P(11|0), Q(0|12) und R(11|12) ein. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 15 × 12)_ Lösung: **(11|0) (0|12) (11|12)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage den Mittelpunkt M der Strecke AB ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte A(7|2), B(11|4); Strecke durch (7|2) und (11|4))_ Lösung: **(9|3)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Punkte A(6|3), B(12|3) und C(12|7) sind drei Ecken eines Rechtecks ABCD. Trage die vierte Ecke D ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte A(6|3), B(12|3), C(12|7))_ Lösung: **(6|7)**
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Burg liegt im Punkt B. Der Brunnen liegt 6 Einheiten rechts von der Burg und 3 Einheiten unterhalb. Trage den Brunnen ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte B(1|6))_ Lösung: **(7|3)**
+- `06` AFB III · _Modellieren (+ Kommunizieren)_ · Drei Ecken eines Quadrats ABCD sind eingezeichnet. Trage die fehlende Ecke C ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte A(5|2), B(9|2), D(5|6))_ Lösung: **(9|6)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Untersuche getrennt, wie sich die x-Koordinate und wie sich die y-Koordinate von Punkt zu Punkt ändert.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Punkte A, B und C folgen einem Muster. Setze das Muster fort und trage die nächsten beiden Punkte D und E ein. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 15 × 12; Punkte A(1|0), B(3|2), C(5|4))_ Lösung: **(7|6) (9|8)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Drei Ecken eines Quadrats ABCD sind eingezeichnet. Das Quadrat liegt schräg. Trage die fehlende Ecke D ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte A(10|7), B(11|9), C(9|10))_ Lösung: **(8|8)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt M ist der Mittelpunkt der Strecke AB. Der Punkt B fehlt. Trage B ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte A(4|4), M(6|5))_ Lösung: **(8|6)**
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Punkte A und C sind gegenüberliegende Ecken eines Rechtecks ABCD. Die Seiten des Rechtecks sind parallel zu den Achsen. Trage die Ecken B und D ein. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 15 × 12; Punkte A(4|1), C(9|9))_ Lösung: **(9|1) (4|9)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade durch A und B und die Gerade durch C und D sind nicht gezeichnet. Trage ihren Schnittpunkt S ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 15 × 12; Punkte A(2|6), B(3|6), C(8|12), D(6|8))_ Lösung: **(5|6)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage alle Gitterpunkte ein, die die x-Koordinate 3 haben und deren y-Koordinate mindestens 3 und höchstens 5 ist. _(Gitterzeichnen, alle passenden Punkte antippen; Koordinatensystem 15 × 12)_ Lösung: **(3|3) (3|4) (3|5)**
+
+## 5.5.5-D1: Ich kann Entfernungen und Abstände bestimmen und unterscheiden.
+
+Grundlage, die F übt: Kästchen zwischen zwei Punkten zählen, die genau nebeneinander oder übereinander liegen
+
+Baut auf: 5.5.2-S2 (Ich kann Senkrechten zeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Entfernung ist der gerade Weg von A nach B. *Beispiel:* Zähle die Kästchen zwischen den Punkten, nicht die Linien. *Lösungsschritt:* Beginne bei A und zähle Kästchen für Kästchen bis B.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die Punkte A und B an. / Wie viele Kästchen sind sie voneinander entfernt? _(Bild: Karogitter 12 × 7; Punkte A(4|1), B(7|1))_ Lösung: **3 Kästchen**. Typische Fehler: 4 (koord-ab-eins), 2 (koord-ab-eins).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir den Punkt P und die Gerade g an. / Wie viele Kästchen ist P von g entfernt? _(Bild: Karogitter 12 × 8; Punkte P(7|5); Gerade g durch (1|0) und (2|0))_ Lösung: **5 Kästchen**. Typische Fehler: 6 (koord-ab-eins), 4 (koord-ab-eins).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Vom Punkt P führen drei Wege zur Geraden g. / Welcher Weg ist am kürzesten? _(Bild: Karogitter 12 × 8; Punkte P(4|3), A(1|6), B(1|3), C(1|5); Gerade g durch (1|1) und (1|2), Strecke durch (4|3) und (1|6), Strecke durch (4|3) und (1|3), Strecke durch (4|3) und (1|5))_
+  - ☑ Strecke PB
+  - ☐ Strecke PC
+  - ☐ Strecke PA
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Geraden g und h sind parallel zueinander. / Wie viele Kästchen liegen sie auseinander? _(Bild: Karogitter 12 × 8; Gerade g durch (2|1) und (2|2), Gerade h durch (5|1) und (5|2))_ Lösung: **3 Kästchen**. Typische Fehler: 4 (koord-ab-eins), 2 (koord-ab-eins).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Das Haus steht im Punkt H und der Baum im Punkt B. / 2 Kästchen sind 1 cm lang. / Wie viele cm sind H und B voneinander entfernt? _(Bild: Karogitter 12 × 7; Punkte H(1|6), B(7|6))_ Lösung: **3 cm**. Typische Fehler: 6 (laenge-kaestchen), 12 (laenge-kaestchen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g ist ein Weg im Schlossgarten. / Im Punkt P steht ein Brunnen. / Wie viele Kästchen ist der Brunnen vom Weg entfernt? _(Bild: Karogitter 12 × 8; Punkte P(6|5); Gerade g durch (1|1) und (1|2))_ Lösung: **5 Kästchen**. Typische Fehler: 6 (koord-ab-eins), 4 (koord-ab-eins).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Kästchen und rechne sie in Zentimeter um. *Beispiel:* 6 Kästchen sind 3 cm, denn 6 : 2 = 3. *Lösungsschritt:* Die Strecke ist 10 Kästchen lang.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Entfernung von A nach B ist die Länge der Strecke AB. / Wie viele cm sind A und B voneinander entfernt? / Denke daran: 2 Kästchen sind 1 cm. _(Bild: Karogitter 12 × 7; Punkte A(1|4), B(11|4); Strecke durch (1|4) und (11|4))_ Lösung: **5 cm**. Typische Fehler: 10 (laenge-kaestchen), 6 (koord-ab-eins).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Der Abstand ist der kürzeste Weg von P zur Geraden g. / Wie viele cm beträgt der Abstand? / Denke daran: 2 Kästchen sind 1 cm. _(Bild: Karogitter 12 × 8; Punkte P(1|2); Gerade g durch (5|1) und (5|2))_ Lösung: **2 cm**. Typische Fehler: 4 (laenge-kaestchen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir den Punkt P und die Gerade g an. / Ein Punkt von g liegt P am nächsten. / Markiere diesen Punkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte P(7|4); Gerade g durch (1|1) und (2|1))_ Lösung: **(7|1)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gerade g verläuft schräg. / Welche Strecke zeigt den Abstand von P zu g? _(Bild: Karogitter 12 × 9; Punkte P(4|7), A(7|6), B(9|8), C(6|5); Gerade g durch (1|0) und (2|1), Strecke durch (4|7) und (7|6), Strecke durch (4|7) und (9|8), Strecke durch (4|7) und (6|5))_
+  - ☑ Strecke PC
+  - ☐ Strecke PB
+  - ☐ Strecke PA
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Geraden g und h sind parallel zueinander. / Wie viele cm beträgt ihr Abstand? / Denke daran: 2 Kästchen sind 1 cm. _(Bild: Karogitter 12 × 8; Gerade g durch (1|2) und (2|2), Gerade h durch (1|8) und (2|8))_ Lösung: **3 cm**. Typische Fehler: 6 (laenge-kaestchen).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Finn misst die Strecke von P nach A. / Sie ist 5 Kästchen lang. / Finn sagt: „Der Abstand von P zu g ist 5 Kästchen.“ / Stimmt das? _(Bild: Karogitter 12 × 8; Punkte P(7|5), A(3|2); Gerade g durch (1|2) und (2|2), Strecke durch (7|5) und (3|2))_
+  - ☑ Falsch. / Der Abstand ist 3 Kästchen. / Man misst senkrecht zu g.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Der Abstand ist 4 Kästchen.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Abstand wird senkrecht zur Geraden gemessen. *Lösungsschritt:* Der Punkt P ist 6 Kästchen von g entfernt. Rechne in mm um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele mm beträgt der Abstand des Punktes P von der Geraden g? Ein Kästchen ist 5 mm breit. _(Bild: Karogitter 13 × 9; Punkte P(5|8); Gerade g durch (1|2) und (2|2))_ Lösung: **30 mm**. Typische Fehler: 6 (laenge-kaestchen), 60 (einheit-mm-cm).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Abstand der Parallelen g und h beträgt ▢ cm und ▢ mm. Ein Kästchen ist 5 mm breit. _(Bild: Karogitter 13 × 9; Gerade g durch (1|2) und (2|2), Gerade h durch (1|9) und (2|9))_ Lösung: a = **3**, b = **5**
+- `03` AFB II · _Modellieren_ · Auf einer Karte des Königreichs liegt die Burg im Punkt B(10|3) und der Turm im Punkt T(10|7). Eine Einheit entspricht 100 m. Wie viele m sind Burg und Turm in Luftlinie voneinander entfernt? Lösung: **400 m**. Typische Fehler: 4 (sach-schritt-vergessen), 1000 (sub-addiert), 700 (lineal-nicht-null).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welcher Punkt hat den größeren Abstand von der Geraden g? _(Bild: Karogitter 12 × 8; Punkte Q(3|6), P(8|3); Gerade g durch (1|1) und (2|1))_
+  - ☐ Beide haben denselben Abstand.
+  - ☐ Punkt P
+  - ☑ Punkt Q
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Ein Weg führt von A über B nach C. Die Luftlinie von A nach C ist 5 cm lang. Um wie viele cm ist die Luftlinie kürzer als der Weg über B? Denke daran: 2 Kästchen sind 1 cm. _(Bild: Karogitter 12 × 10; Punkte A(1|1), B(7|1), C(7|9); Strecke durch (1|1) und (7|1), Strecke durch (7|1) und (7|9), Strecke durch (1|1) und (7|9))_ Lösung: **2 cm**. Typische Fehler: 7 (sach-schritt-vergessen), 4 (laenge-kaestchen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P liegt zwischen den Parallelen g und h. Die Parallelen haben den Abstand 25 mm. Der Punkt P ist 10 mm von g entfernt. Wie viele mm ist P von h entfernt? _(Bild: Karogitter 13 × 9; Punkte P(2|4); Gerade g durch (1|2) und (2|2), Gerade h durch (1|7) und (2|7))_ Lösung: **15 mm**. Typische Fehler: 35 (sub-addiert), 3 (laenge-kaestchen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zu jedem Abstand gibt es Punkte auf beiden Seiten der Geraden. Suche die Punkte, die beide Bedingungen zugleich erfüllen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Markiere alle Gitterpunkte, die von der Geraden g den Abstand 3 Kästchen und von der Geraden h den Abstand 1 Kästchen haben. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 12 × 8; Gerade g durch (1|4) und (2|4), Gerade h durch (7|1) und (7|2))_ Lösung: **(6|1) (6|7) (8|1) (8|7)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Von A nach B sind es 6 cm, von B nach C sind es 3 cm. Die Lage der drei Punkte ist nicht bekannt. Die Entfernung von A nach C beträgt höchstens ▢ cm und mindestens ▢ cm. Lösung: a = **9**, b = **3**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Punkt P hat die Koordinaten (2|6). Sein Abstand von der x-Achse beträgt ▢ Einheiten, sein Abstand von der y-Achse beträgt ▢ Einheiten. Lösung: a = **6**, b = **2**
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Ben sagt: „Der Abstand von P zur Geraden g ist die Entfernung von P zu irgendeinem Punkt auf g.“ Stimmt das? _(Bild: Karogitter 12 × 8; Punkte P(7|7), A(7|3), B(5|3), C(6|3); Gerade g durch (4|3) und (5|3), Strecke durch (7|7) und (7|3), Strecke durch (7|7) und (5|3), Strecke durch (7|7) und (6|3))_
+  - ☐ Stimmt. Alle Punkte auf g sind gleich weit von P entfernt.
+  - ☑ Falsch. Der Abstand ist die kürzeste dieser Entfernungen. Sie wird senkrecht zu g gemessen.
+  - ☐ Falsch. Der Abstand ist die größte dieser Entfernungen.
+  - ☐ Stimmt. Man darf den Punkt auf g frei wählen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Gitterpunkte im Bild sind vom Punkt P genau 10 Kästchen entfernt? Tipp: Eine Strecke, die 3 Kästchen nach rechts und 4 Kästchen nach oben führt, ist genau 5 Kästchen lang. _(Bild: Karogitter 18 × 14; Punkte P(10|10))_ Lösung: **6**. Typische Fehler: 4 (abstand-schraeg), 8 (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Die Geraden g und h sind parallel und haben den Abstand 5 cm. Der Punkt A liegt auf g, der Punkt B liegt auf h. Was gilt für die Länge der Strecke AB?
+  - ☑ Sie ist mindestens 5 cm lang.
+  - ☐ Darüber lässt sich nichts sagen.
+  - ☐ Sie ist immer genau 5 cm lang.
+  - ☐ Sie ist höchstens 5 cm lang.
+
+## 5.5.6-A1: Ich kann Symmetrieachsen erkennen und einzeichnen.
+
+Grundlage, die F übt: In Gedanken falten: Liegen beide Hälften genau aufeinander?
+
+Baut auf: 5.5.2-S1 (Ich kann erkennen, ob Linien senkrecht zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Symmetrieachse teilt die Figur in zwei gleiche Hälften. *Beispiel:* Auf beiden Seiten der Linie liegen gleich viele Kästchen in jeder Reihe. *Lösungsschritt:* Zähle in jeder Reihe die Kästchen links und rechts von g.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Falte die Figur in Gedanken an der Linie g. / Liegen beide Hälften genau aufeinander? _(Bild: Karogitter 8 × 6; Symmetrieachse g durch (4|0) und (4|1); 16 gefärbte Kästchen (3|1) (2|1) (3|2) (2|2) (3|3) (3|4) (2|4) (1|4) (4|1) (5|1) (4|2) (5|2) (4|3) (4|4) (5|4) (6|4))_
+  - ☑ Die Hälften liegen genau aufeinander.
+  - ☐ Die Hälften passen nicht aufeinander.
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur ist symmetrisch? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (2|1) (5|1) (5|2) (3|2) (3|5) (2|5), Figur B mit den Ecken (7|2) (11|2) (11|4) (7|4), Figur C mit den Ecken (13|2) (17|2) (13|5))_
+  - ☐ Figur C
+  - ☐ Figur A
+  - ☑ Figur B
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur ist symmetrisch. / Zeichne ihre Symmetrieachse ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 6 × 5; 10 gefärbte Kästchen (2|1) (2|2) (1|2) (2|3) (1|3) (3|1) (3|2) (4|2) (3|3) (4|3))_ Lösung: **zum Beispiel durch (3|0) und (3|5)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die Figur an. / Wie viele Symmetrieachsen hat sie? _(Bild: Karogitter 7 × 7; 7 gefärbte Kästchen (2|5) (2|4) (2|3) (2|2) (2|1) (3|1) (4|1))_ Lösung: **0**. Typische Fehler: 1 (diagonale-als-achse), 4 (diagonale-als-achse).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Du siehst die Figur F und zwei Linien. / Welche Linie ist die Symmetrieachse? _(Bild: Karogitter 8 × 7; Gerade b durch (4|2) und (4|3), Gerade a durch (0|3) und (1|3); Figur F mit den Ecken (2|2) (6|2) (4|5))_
+  - ☑ Linie b
+  - ☐ Linie a
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur sieht aus wie der Buchstabe T. / Wie viele Symmetrieachsen hat sie? _(Bild: Karogitter 7 × 7; 7 gefärbte Kästchen (2|5) (3|5) (4|5) (3|4) (3|3) (3|2) (3|1))_ Lösung: **1**. Typische Fehler: 2 (diagonale-als-achse).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine achsensymmetrische Figur hat mindestens eine Symmetrieachse. *Beispiel:* Suche bei jeder Figur nach einer Faltlinie. *Lösungsschritt:* Bei einer der Figuren passt keine Faltlinie.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur ist nicht achsensymmetrisch? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (1|2) (5|2) (3|4) (1|4), Figur B mit den Ecken (8|2) (10|2) (10|4) (9|5) (8|4), Figur C mit den Ecken (13|2) (17|2) (16|4) (14|4))_
+  - ☐ Figur B
+  - ☑ Figur A
+  - ☐ Figur C
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die Figur F an. / Wie viele Symmetrieachsen hat sie? _(Bild: Karogitter 8 × 7; Figur F mit den Ecken (3|2) (7|2) (7|4) (3|4))_ Lösung: **2**. Typische Fehler: 4 (diagonale-als-achse), 3 (diagonale-als-achse).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur ist achsensymmetrisch. / Zeichne ihre Symmetrieachse ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 5 × 8; 12 gefärbte Kästchen (1|3) (2|3) (2|2) (2|1) (3|3) (3|2) (1|4) (2|4) (2|5) (2|6) (3|4) (3|5))_ Lösung: **zum Beispiel durch (0|4) und (5|4)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Linie g geht von Ecke zu Ecke. / Ist g eine Symmetrieachse der Figur F? _(Bild: Karogitter 8 × 7; Symmetrieachse g durch (2|4) und (4|5); Figur F mit den Ecken (2|4) (6|4) (6|6) (2|6))_
+  - ☐ Die Linie g ist eine Symmetrieachse.
+  - ☑ Die Linie g ist keine Symmetrieachse.
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Du siehst die Figur F und drei Linien. / Welche Linie ist die Symmetrieachse? _(Bild: Karogitter 9 × 7; Gerade b durch (5|1) und (5|2), Gerade a durch (0|3) und (1|3), Gerade c durch (3|1) und (4|2); Figur F mit den Ecken (3|1) (7|1) (5|4))_
+  - ☑ Linie b
+  - ☐ Linie c
+  - ☐ Linie a
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas sagt: „Dieses Rechteck hat 4 Symmetrieachsen.“ / Stimmt das? _(Bild: Karogitter 8 × 7; Figur F mit den Ecken (3|2) (7|2) (7|4) (3|4))_
+  - ☐ Falsch. / Es hat keine Symmetrieachse.
+  - ☑ Falsch. / Es hat 2 Symmetrieachsen.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Symmetrieachse kann auch schräg durch die Figur laufen. *Lösungsschritt:* Prüfe jede Linie durch die Mitte: Liegt jede Ecke nach dem Falten auf einer anderen Ecke?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Symmetrieachsen hat die Figur F? Denke auch an schräge Achsen. _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (3|2) (7|2) (7|6) (3|6))_ Lösung: **4**. Typische Fehler: 2 (diagonale-als-achse), 3 (lage-prototyp).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur F hat genau eine Symmetrieachse. Sie verläuft schräg. Zeichne sie ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 9 × 8; Figur F mit den Ecken (1|2) (4|2) (4|3) (2|3) (2|5) (1|5))_ Lösung: **zum Beispiel durch (1|2) und (2|3)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur F hat mehrere Symmetrieachsen. Zeichne eine davon ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 9 × 8; Figur F mit den Ecken (1|2) (5|2) (5|4) (1|4))_ Lösung: **zum Beispiel durch (3|2) und (3|3)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche der Linien sind Symmetrieachsen der Figur F? Kreuze alle an. _(Bild: Karogitter 10 × 8; Gerade a durch (3|6) und (5|5), Gerade b durch (3|5) und (4|5), Gerade c durch (3|4) und (5|5), Gerade d durch (5|4) und (5|5); Figur F mit den Ecken (3|4) (7|4) (7|6) (3|6))_
+  - ☑ Linie d
+  - ☑ Linie b
+  - ☐ Linie a
+  - ☐ Linie c
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur hat genau 2 Symmetrieachsen? _(Bild: Karogitter 12 × 13; Figur A mit den Ecken (1|8) (4|8) (5|10) (2|10), Figur B mit den Ecken (7|8) (11|8) (11|10) (7|10), Figur C mit den Ecken (1|1) (5|1) (5|5) (1|5), Figur D mit den Ecken (9|1) (11|4) (9|5) (7|4))_
+  - ☐ Figur C
+  - ☐ Figur D
+  - ☑ Figur B
+  - ☐ Figur A
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ole sagt: „Die Linie g geht durch zwei Ecken des Parallelogramms F. Also ist sie eine Symmetrieachse.“ Stimmt das? _(Bild: Karogitter 9 × 6; Symmetrieachse g durch (4|2) und (8|4); Figur F mit den Ecken (4|2) (7|2) (8|4) (5|4))_
+  - ☐ Stimmt. Die Linie teilt die Figur in zwei gleich große Teile.
+  - ☑ Falsch. Beim Falten an g liegen die beiden anderen Ecken nicht aufeinander.
+  - ☐ Stimmt. Jede Linie durch zwei Ecken ist eine Symmetrieachse.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe der Reihe nach vier Richtungen: von oben nach unten, von links nach rechts und die beiden schrägen Richtungen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Symmetrieachsen hat die Figur F? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|3) (6|3) (6|4) (7|4) (7|5) (6|5) (6|6) (5|6) (5|5) (4|5) (4|4) (5|4))_ Lösung: **4**. Typische Fehler: 5 (diagonale-als-achse), 2 (diagonale-als-achse).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figuren haben genau eine Symmetrieachse? Kreuze alle an. _(Bild: Karogitter 12 × 13; Figur A mit den Ecken (2|8) (4|8) (4|9) (5|9) (5|10) (3|10) (3|9) (2|9), Figur B mit den Ecken (8|8) (10|8) (10|10) (9|11) (8|10), Figur C mit den Ecken (1|2) (3|2) (3|1) (5|3) (3|5) (3|4) (1|4), Figur D mit den Ecken (7|2) (11|2) (11|4) (7|4))_
+  - ☐ Figur D
+  - ☑ Figur C
+  - ☐ Figur A
+  - ☑ Figur B
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Viereck hat die Ecken A(5|4), B(9|4), C(9|6) und D(5|6). Wie viele Symmetrieachsen hat es? _(Bild: Koordinatensystem 10 × 9; Punkte A(5|4), B(9|4), C(9|6), D(5|6); Figur F mit den Ecken (5|4) (9|4) (9|6) (5|6))_ Lösung: **2**. Typische Fehler: 4 (diagonale-als-achse), 0 (diagonale-als-achse).
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur F hat zwei Symmetrieachsen. Beide verlaufen schräg. Zeichne eine davon ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 9 × 8; Figur F mit den Ecken (1|2) (4|3) (5|6) (2|5))_ Lösung: **zum Beispiel durch (1|2) und (2|3)**
+- `05` AFB II · _Modellieren_ · Eine Figur hat genau 3 Symmetrieachsen. Welche Figur kann das sein?
+  - ☐ Ein Quadrat.
+  - ☑ Ein Dreieck mit drei gleich langen Seiten.
+  - ☐ Ein Rechteck, das kein Quadrat ist.
+  - ☐ Ein Dreieck mit zwei gleich langen Seiten.
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Bild siehst du ein Quadrat und ein Rechteck. Wie viele Symmetrieachsen hat das Quadrat mehr als das Rechteck? _(Bild: Karogitter 12 × 7; Figur A mit den Ecken (1|2) (5|2) (5|4) (1|4), Figur B mit den Ecken (7|1) (11|1) (11|5) (7|5))_ Lösung: **2**. Typische Fehler: 0 (diagonale-als-achse), 4 (sach-schritt-vergessen).
+
+## 5.5.6-A2: Ich kann Figuren zu achsensymmetrischen Figuren ergänzen.
+
+Grundlage, die F übt: Ein Kästchen an einer Achse spiegeln: gleich weit weg auf der anderen Seite
+
+Baut auf: 5.5.6-A1 (Ich kann Symmetrieachsen erkennen und einzeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die rote Linie ist die Symmetrieachse. *Beispiel:* Jedes Kästchen bekommt ein Spiegelbild auf der anderen Seite. *Lösungsschritt:* Arbeite Reihe für Reihe: gleich viele Kästchen links und rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur soll symmetrisch werden. / Färbe die fehlenden Kästchen auf der anderen Seite der Achse. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; Symmetrieachse durch (3|0) und (3|1); 4 gefärbte Kästchen (2|1) (2|2) (2|3) (1|3))_ Lösung: **(3|1) (3|2) (3|3) (4|3)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Symmetrieachse läuft von links nach rechts. / Färbe die fehlenden Kästchen auf der anderen Seite der Achse. _(Gitterzeichnen, Kästchen färben; Karogitter 5 × 6; Symmetrieachse durch (0|3) und (1|3); 4 gefärbte Kästchen (1|2) (2|2) (3|2) (3|1))_ Lösung: **(1|3) (2|3) (3|3) (3|4)**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Kästchen ist gefärbt. / Färbe sein Spiegelbild auf der anderen Seite der Achse. _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 5; Symmetrieachse durch (4|0) und (4|1); 1 gefärbte Kästchen (5|2))_ Lösung: **(2|2)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle den Punkt P an der Achse. / Markiere sein Spiegelbild. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 5; Punkte P(9|5); Symmetrieachse durch (5|0) und (5|1))_ Lösung: **(1|5)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P wird an der Achse gespiegelt. / Welcher Punkt ist sein Spiegelbild? _(Bild: Karogitter 12 × 6; Punkte P(0|6), A(11|6), B(12|4), C(12|6); Symmetrieachse durch (6|0) und (6|1))_
+  - ☐ Punkt A
+  - ☐ Punkt B
+  - ☑ Punkt C
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur berührt die Achse nicht. / Färbe ihr Spiegelbild auf der anderen Seite der Achse. _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 5; Symmetrieachse durch (4|0) und (4|1); 4 gefärbte Kästchen (5|1) (5|2) (5|3) (6|3))_ Lösung: **(2|1) (2|2) (2|3) (1|3)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Kästchen bekommt ein Spiegelbild auf der anderen Seite der Achse. *Beispiel:* Das Spiegelbild liegt in derselben Reihe und ist gleich weit von der Achse entfernt. *Lösungsschritt:* Arbeite Reihe für Reihe von der Achse nach außen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur soll achsensymmetrisch werden. / Färbe die fehlenden Kästchen. _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 6; Symmetrieachse durch (4|0) und (4|1); 6 gefärbte Kästchen (3|1) (3|2) (3|3) (3|4) (2|4) (1|4))_ Lösung: **(4|1) (4|2) (4|3) (4|4) (5|4) (6|4)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur berührt die Achse nicht. / Färbe ihr Spiegelbild. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 10; Symmetrieachse durch (0|5) und (1|5); 6 gefärbte Kästchen (1|2) (1|1) (2|2) (2|1) (3|2) (4|2))_ Lösung: **(1|7) (1|8) (2|7) (2|8) (3|7) (4|7)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P(4|8) wird an der Achse gespiegelt. / Der Bildpunkt hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 10 × 8; Punkte P(4|8); Symmetrieachse durch (5|0) und (5|1))_ Lösung: x = **6**, y = **8**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle die Strecke AB an der Achse. / Markiere die Bildpunkte von A und von B. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 10 × 8; Punkte A(10|6), B(6|7); Symmetrieachse durch (5|0) und (5|1), Strecke durch (10|6) und (6|7))_ Lösung: **(0|6) (4|7)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Achse läuft von links nach rechts. / Welcher Punkt ist der Bildpunkt von P? _(Bild: Karogitter 10 × 10; Punkte P(5|0), A(5|10), B(3|10), C(5|9); Symmetrieachse durch (0|5) und (1|5))_
+  - ☐ Punkt B
+  - ☑ Punkt A
+  - ☐ Punkt C
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur soll achsensymmetrisch werden. / Färbe die fehlenden Kästchen. / Achte auf jede Reihe. _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 7; Symmetrieachse durch (4|0) und (4|1); 12 gefärbte Kästchen (3|1) (2|1) (1|1) (3|2) (2|2) (1|2) (3|3) (2|3) (3|4) (2|4) (3|5) (2|5))_ Lösung: **(4|1) (5|1) (6|1) (4|2) (5|2) (6|2) (4|3) (5|3) (4|4) (5|4) (4|5) (5|5)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Spiegle jede Ecke einzeln: senkrecht zur Achse und gleich weit auf die andere Seite. *Lösungsschritt:* Verbinde die Bildpunkte in Gedanken. Das Bilddreieck sieht aus wie das Dreieck in einem Spiegel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle das Dreieck ABC an der Achse. Setze die drei Bildpunkte. _(Gitterzeichnen, 3 Punkte antippen; Karogitter 12 × 8; Punkte A(4|1), B(5|8), C(1|2); Symmetrieachse durch (6|0) und (6|1); Figur mit den Ecken (4|1) (5|8) (1|2))_ Lösung: **(8|1) (7|8) (11|2)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur soll achsensymmetrisch werden. Die linke Hälfte ist gezeichnet. Setze die fehlenden Eckpunkte der rechten Hälfte. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 12 × 8; Symmetrieachse durch (6|0) und (6|1), Strecke durch (6|2) und (4|3), Strecke durch (4|3) und (1|6), Strecke durch (1|6) und (6|8))_ Lösung: **(8|3) (11|6)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Achse verläuft schräg. Spiegle den Punkt P an der Achse. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 9; Punkte P(9|5); Symmetrieachse durch (0|0) und (1|1))_ Lösung: **(5|9)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Achse verläuft schräg. Spiegle das Dreieck ABC an der Achse. _(Gitterzeichnen, 3 Punkte antippen; Karogitter 10 × 10; Punkte A(4|1), B(0|9), C(0|6); Symmetrieachse durch (0|10) und (1|9); Figur mit den Ecken (4|1) (0|9) (0|6))_ Lösung: **(9|6) (1|10) (4|10)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P(5|2) wird an der eingezeichneten Achse gespiegelt. Der Bildpunkt P′ hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 14 × 12; Punkte P(5|2); Symmetrieachse durch (7|0) und (7|1))_ Lösung: x = **9**, y = **2**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle das Viereck ABCD an der Achse. Die Ecke A liegt auf der Achse. Setze die Bildpunkte der anderen Ecken. _(Gitterzeichnen, 3 Punkte antippen; Karogitter 12 × 10; Punkte A(2|5), B(5|6), C(9|8), D(5|8); Symmetrieachse durch (0|5) und (1|5); Figur mit den Ecken (2|5) (5|6) (9|8) (5|8))_ Lösung: **(5|4) (9|2) (5|2)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Spiegle Ecke für Ecke. Der Weg jeder Ecke zur Achse steht senkrecht auf der Achse.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle das Viereck ABCD an der schrägen Achse. Setze die vier Bildpunkte. _(Gitterzeichnen, 4 Punkte antippen; Karogitter 10 × 10; Punkte A(2|2), B(3|5), C(8|1), D(6|1); Symmetrieachse durch (0|10) und (1|9); Figur mit den Ecken (2|2) (3|5) (8|1) (6|1))_ Lösung: **(8|8) (5|7) (9|2) (9|4)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle den Punkt P zuerst an der Geraden g. Spiegle den Bildpunkt danach an der Geraden h. Markiere nur den Endpunkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 14 × 7; Punkte P(1|2); Gerade g durch (3|0) und (3|1), Gerade h durch (5|0) und (5|1))_ Lösung: **(5|2)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt Q ist das Spiegelbild des Punktes P. Die Symmetrieachse fehlt. Zeichne sie ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 10 × 10; Punkte P(8|0), Q(2|0))_ Lösung: **zum Beispiel durch (5|0) und (5|1)**
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Symmetrieachse geht durch die Punkte (0|0) und (1|1). Der Punkt P(3|4) wird an ihr gespiegelt. Der Bildpunkt P′ hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 10 × 10; Punkte P(3|4); Symmetrieachse durch (0|0) und (1|1))_ Lösung: x = **4**, y = **3**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Punkte P′ und Q′ sind Bildpunkte einer Spiegelung an der Achse. Die Punkte P und Q fehlen. Setze sie. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 10 × 10; Punkte P′(1|8), Q′(3|1); Symmetrieachse durch (5|0) und (5|1))_ Lösung: **(9|8) (7|1)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Punkt P liegt genau auf der Symmetrieachse. Wo liegt sein Bildpunkt P′?
+  - ☑ P′ liegt an derselben Stelle wie P.
+  - ☐ Es gibt keinen Bildpunkt.
+  - ☐ P′ liegt gegenüber auf der anderen Seite der Achse.
+  - ☐ Das hängt von der Richtung der Achse ab.
+
+## 5.5.6-A3: Ich kann punktsymmetrische Figuren erkennen und ergänzen.
+
+Grundlage, die F übt: Eine Figur in Gedanken halb herumdrehen und mit vorher vergleichen
+
+Baut auf: 5.5.6-A1 (Ich kann Symmetrieachsen erkennen und einzeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei einer halben Drehung kommt oben nach unten und links nach rechts. *Beispiel:* Dreh dein Heft einmal auf den Kopf. Das ist eine halbe Drehung. *Lösungsschritt:* Vergleiche die Ecke oben links mit der Ecke unten rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Dreh die Figur in Gedanken halb herum. / Wie sieht sie danach aus? _(Bild: Karogitter 7 × 7; 11 gefärbte Kästchen (2|5) (4|5) (2|4) (4|4) (2|3) (4|3) (2|2) (4|2) (2|1) (3|1) (4|1))_
+  - ☑ Sie sieht anders aus als vorher.
+  - ☐ Sie sieht genauso aus wie vorher.
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Dreh jede Figur in Gedanken halb herum. / Welche Figur sieht danach genauso aus wie vorher? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (3|1) (5|4) (3|5) (1|4), Figur B mit den Ecken (7|2) (11|2) (9|5), Figur C mit den Ecken (13|2) (17|2) (17|4) (13|4))_
+  - ☑ Figur C
+  - ☐ Figur B
+  - ☐ Figur A
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur sieht aus wie der Buchstabe C. / Dreh sie in Gedanken halb herum. / Wie sieht sie danach aus? _(Bild: Karogitter 7 × 7; 9 gefärbte Kästchen (2|5) (3|5) (4|5) (2|4) (2|3) (2|2) (2|1) (3|1) (4|1))_
+  - ☑ Sie sieht anders aus als vorher.
+  - ☐ Sie sieht genauso aus wie vorher.
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Dreh die Figur F in Gedanken halb herum. / Wie sieht sie danach aus? _(Bild: Karogitter 8 × 7; Figur F mit den Ecken (2|1) (5|1) (6|3) (3|3))_
+  - ☐ Sie sieht anders aus als vorher.
+  - ☑ Sie sieht genauso aus wie vorher.
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur besteht aus Kästchen. / Dreh sie in Gedanken halb herum. / Wie sieht sie danach aus? _(Bild: Karogitter 7 × 7; 4 gefärbte Kästchen (2|2) (3|2) (3|3) (4|3))_
+  - ☑ Sie sieht genauso aus wie vorher.
+  - ☐ Sie sieht anders aus als vorher.
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Dreh jede Figur in Gedanken halb herum. / Welche Figur sieht danach anders aus als vorher? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (2|2) (4|2) (4|4) (3|5) (2|4), Figur B mit den Ecken (8|2) (10|2) (10|3) (11|3) (11|4) (9|4) (9|3) (8|3), Figur C mit den Ecken (13|2) (17|2) (17|4) (13|4))_
+  - ☐ Figur B
+  - ☑ Figur A
+  - ☐ Figur C
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine punktsymmetrische Figur sieht nach einer halben Drehung genauso aus wie vorher. *Beispiel:* Dreh dein Heft auf den Kopf und vergleiche. *Lösungsschritt:* Eine Symmetrieachse reicht dafür nicht aus.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur ist punktsymmetrisch? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (1|2) (5|2) (3|5), Figur B mit den Ecken (7|2) (10|2) (11|4) (8|4), Figur C mit den Ecken (13|2) (17|2) (16|4) (14|4))_
+  - ☐ Figur A
+  - ☑ Figur B
+  - ☐ Figur C
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau dir die Figur F an. / Was stimmt? _(Bild: Karogitter 8 × 7; Figur F mit den Ecken (2|3) (5|3) (6|5) (3|5))_
+  - ☐ Die Figur ist nicht punktsymmetrisch.
+  - ☑ Die Figur ist punktsymmetrisch.
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur soll punktsymmetrisch zum Punkt Z werden. / Färbe die fehlenden Kästchen. _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 6; 4 gefärbte Kästchen (3|3) (3|4) (2|4) (2|5); Symmetriezentrum Z(4|3))_ Lösung: **(4|2) (4|1) (5|1) (5|0)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P wird halb um den Punkt Z gedreht. / Auf welchem Punkt landet er? _(Bild: Karogitter 10 × 8; Punkte P(8|1), A(2|7), B(8|7), C(2|1); Symmetriezentrum Z(5|4))_
+  - ☑ Punkt A
+  - ☐ Punkt C
+  - ☐ Punkt B
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur sieht aus wie der Buchstabe S. / Was stimmt? _(Bild: Karogitter 7 × 7; 11 gefärbte Kästchen (2|5) (3|5) (4|5) (2|4) (2|3) (3|3) (4|3) (4|2) (2|1) (3|1) (4|1))_
+  - ☑ Die Figur ist punktsymmetrisch.
+  - ☐ Die Figur ist nicht punktsymmetrisch.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: „Die Figur F hat keine Symmetrieachse.“ / Noah meint: „Also ist sie auch nicht punktsymmetrisch.“ / Stimmt das? _(Bild: Karogitter 8 × 7; Figur F mit den Ecken (2|4) (5|4) (6|6) (3|6))_
+  - ☑ Falsch. / Nach einer halben Drehung sieht die Figur genauso aus.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Die Figur hat zwei Symmetrieachsen.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zeichne in Gedanken die Gerade von P durch Z. *Lösungsschritt:* Der Bildpunkt liegt auf dieser Geraden, auf der anderen Seite von Z und gleich weit entfernt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle den Punkt P am Symmetriezentrum Z. Markiere den Bildpunkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte P(10|7); Symmetriezentrum Z(6|4))_ Lösung: **(2|1)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle das Dreieck ABC am Symmetriezentrum Z. Setze die drei Bildpunkte. _(Gitterzeichnen, 3 Punkte antippen; Karogitter 12 × 10; Punkte A(1|0), B(4|4), C(2|7); Figur mit den Ecken (1|0) (4|4) (2|7); Symmetriezentrum Z(6|5))_ Lösung: **(11|10) (8|6) (10|3)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P(7|3) wird am Punkt Z(7|6) gespiegelt. Der Bildpunkt P′ hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 14 × 12; Punkte P(7|3); Symmetriezentrum Z(7|6))_ Lösung: x = **7**, y = **9**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Spiegle die Strecke AB am Symmetriezentrum Z. Setze die Bildpunkte von A und B. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 12 × 10; Punkte A(8|9), B(12|1); Strecke durch (8|9) und (12|1); Symmetriezentrum Z(6|5))_ Lösung: **(4|1) (0|9)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur F ist punktsymmetrisch. Markiere ihr Symmetriezentrum. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Figur F mit den Ecken (2|1) (3|3) (2|5) (1|3))_ Lösung: **(2|3)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Punkt P wird an einem Symmetriezentrum gespiegelt. Sein Bildpunkt ist Q. Markiere das Symmetriezentrum. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 9; Punkte P(5|4), Q(11|2))_ Lösung: **(8|3)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe jede Figur zweimal: erst auf Symmetrieachsen, dann mit einer halben Drehung.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figuren sind punktsymmetrisch, aber nicht achsensymmetrisch? Kreuze alle an. _(Bild: Karogitter 12 × 13; Figur A mit den Ecken (1|7) (5|7) (5|11) (1|11), Figur B mit den Ecken (7|8) (11|8) (9|11), Figur C mit den Ecken (2|2) (4|2) (4|3) (5|3) (5|4) (3|4) (3|3) (2|3), Figur D mit den Ecken (7|2) (11|2) (11|4) (7|4))_
+  - ☐ Figur D
+  - ☐ Figur B
+  - ☐ Figur A
+  - ☑ Figur C
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Viereck ABCD soll punktsymmetrisch zum Punkt Z sein. Die Ecken A und B sind gegeben. Setze die Ecken C und D. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 12 × 10; Punkte A(2|7), B(5|0); Strecke durch (2|7) und (5|0); Symmetriezentrum Z(6|5))_ Lösung: **(10|3) (7|10)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Figur hat genau zwei Symmetrieachsen. Die Achsen sind senkrecht zueinander. Was gilt dann?
+  - ☐ Die Figur ist nicht punktsymmetrisch.
+  - ☑ Die Figur ist auch punktsymmetrisch. Das Symmetriezentrum ist der Schnittpunkt der Achsen.
+  - ☐ Die Figur ist ein Quadrat.
+  - ☐ Darüber lässt sich nichts sagen.
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Viereck hat die Ecken A(5|1), B(6|3), C(5|5) und D(4|3). Welche Aussagen treffen zu? Kreuze alle an. _(Bild: Koordinatensystem 10 × 9; Punkte A(5|1), B(6|3), C(5|5), D(4|3); Figur F mit den Ecken (5|1) (6|3) (5|5) (4|3))_
+  - ☐ Das Viereck hat keine Symmetrieachse.
+  - ☑ Das Viereck ist punktsymmetrisch.
+  - ☑ Das Viereck ist achsensymmetrisch.
+  - ☑ Das Viereck hat genau zwei Symmetrieachsen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Geraden g und h sind senkrecht zueinander. Spiegle den Punkt P zuerst an g und den Bildpunkt danach an h. Markiere nur den Endpunkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte P(2|4); Gerade g durch (4|0) und (4|1), Gerade h durch (0|5) und (1|5))_ Lösung: **(6|6)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bei einer Punktspiegelung wird der Punkt P(3|2) auf den Punkt Q(9|6) abgebildet. Das Symmetriezentrum hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 14 × 12; Punkte P(3|2), Q(9|6))_ Lösung: x = **6**, y = **4**
+
+## 5.5.7-V1: Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.
+
+Grundlage, die F übt: Vierecke mit vier rechten Winkeln am Karogitter erkennen
+
+Baut auf: 5.5.2-S1 (Ich kann erkennen, ob Linien senkrecht zueinander sind.), 5.5.3-P1 (Ich kann erkennen, ob Linien parallel zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Rechteck hat vier rechte Winkel. *Beispiel:* Prüfe bei jeder Figur alle vier Ecken. *Lösungsschritt:* Nur bei einer Figur sind alle Ecken rechte Winkel.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die drei Figuren an. / Welche Figur ist ein Rechteck? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (1|2) (5|2) (5|4) (1|4), Figur B mit den Ecken (7|1) (10|2) (11|5) (8|3), Figur C mit den Ecken (13|2) (15|2) (17|4) (15|4))_
+  - ☐ Figur B
+  - ☑ Figur A
+  - ☐ Figur C
+- `02` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie viele rechte Winkel hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (2|2) (5|2) (5|5) (2|5))_ Lösung: **4**. Typische Fehler: 2 (viereck-eigenschaft), 3 (viereck-eigenschaft).
+- `03` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie heißt es genau? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|1) (7|1) (7|4) (4|4))_
+  - ☐ Rechteck
+  - ☑ Quadrat
+- `04` AFB I · _Kommunizieren_ · Drei Ecken von einem Rechteck sind markiert. / Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte B(6|3), C(6|5), D(2|5); Strecke durch (6|3) und (6|5), Strecke durch (6|5) und (2|5))_ Lösung: **(2|3)**
+- `05` AFB II · _Kommunizieren_ · Du siehst das Rechteck ABCD. / Wie viele Kästchen ist die Seite CD lang? _(Bild: Karogitter 9 × 8; Punkte A(3|4), B(6|4), C(6|6), D(3|6); Figur mit den Ecken (3|4) (6|4) (6|6) (3|6))_ Lösung: **3 Kästchen**. Typische Fehler: 4 (koord-ab-eins), 2 (koord-ab-eins).
+- `06` AFB I · _Kommunizieren_ · Schau dir die drei Figuren an. / Welche Figur ist ein Quadrat? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (2|1) (5|1) (5|4) (2|4), Figur B mit den Ecken (9|1) (10|3) (9|5) (8|3), Figur C mit den Ecken (14|1) (16|1) (16|4) (14|4))_
+  - ☑ Figur A
+  - ☐ Figur C
+  - ☐ Figur B
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Ecken des Rechtecks an. *Beispiel:* Vergleiche auch die Längen der Seiten. *Lösungsschritt:* In einem Rechteck sind alle Ecken rechte Winkel.
+
+- `01` AFB I · _Kommunizieren_ · Das Viereck F ist ein Rechteck. / Welche Eigenschaft hat jedes Rechteck? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|4) (8|4) (8|6) (4|6))_
+  - ☐ Alle vier Seiten sind gleich lang.
+  - ☐ Es hat nur zwei rechte Winkel.
+  - ☑ Es hat vier rechte Winkel.
+- `02` AFB I · _Kommunizieren (+ Modellieren)_ · Du siehst das Rechteck ABCD. / 2 Kästchen sind 1 cm lang. / Wie lang ist die Seite AB? _(Bild: Karogitter 9 × 8; Punkte A(2|2), B(8|2), C(8|7), D(2|7); Figur mit den Ecken (2|2) (8|2) (8|7) (2|7))_ Lösung: **3 cm**. Typische Fehler: 6 (laenge-kaestchen), 12 (laenge-kaestchen).
+- `03` AFB II · _Kommunizieren_ · Drei Ecken eines Quadrats sind markiert. / Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte A(7|4), B(9|4), D(7|6); Strecke durch (7|4) und (9|4), Strecke durch (7|6) und (7|4))_ Lösung: **(9|6)**
+- `04` AFB I · _Kommunizieren_ · Das Viereck F steht auf einer Ecke. / Wie heißt es genau? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|1) (7|2) (6|5) (3|4))_
+  - ☐ Raute
+  - ☑ Quadrat
+  - ☐ Rechteck
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Ein Quadrat ist auch ein Rechteck.“ / Stimmt das?
+  - ☐ Falsch. / Im Rechteck sind zwei Seiten länger.
+  - ☑ Stimmt. / Ein Quadrat hat vier rechte Winkel.
+- `06` AFB III · _Kommunizieren_ · Drei Ecken des Rechtecks ABCD sind A(3|1), B(9|1) und C(9|5). / Die Ecke D hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 10 × 8; Punkte A(3|1), B(9|1), C(9|5); Strecke durch (3|1) und (9|1), Strecke durch (9|1) und (9|5))_ Lösung: x = **3**, y = **5**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Diagonale verbindet zwei gegenüberliegende Ecken. *Lösungsschritt:* Im Rechteck sind die Diagonalen gleich lang und halbieren sich. Nur im Quadrat sind sie auch senkrecht zueinander.
+
+- `01` AFB I · _Kommunizieren_ · Im Bild sind die Diagonalen eingezeichnet. Welche Aussagen stimmen für dieses Viereck? Kreuze alle an. _(Bild: Karogitter 9 × 8; Punkte A(3|4), B(5|4), C(5|6), D(3|6); Strecke durch (3|4) und (5|6), Strecke durch (5|4) und (3|6); Figur mit den Ecken (3|4) (5|4) (5|6) (3|6))_
+  - ☑ Die Diagonalen sind gleich lang.
+  - ☑ Die Diagonalen sind senkrecht zueinander.
+  - ☐ Die Diagonalen sind verschieden lang.
+  - ☑ Die Diagonalen halbieren sich.
+- `02` AFB II · _Kommunizieren_ · Die Diagonalen des Rechtecks ABCD schneiden sich in einem Punkt. Markiere diesen Punkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 8; Punkte A(1|1), B(7|1), C(7|5), D(1|5); Strecke durch (1|1) und (7|5), Strecke durch (7|1) und (1|5); Figur mit den Ecken (1|1) (7|1) (7|5) (1|5))_ Lösung: **(4|3)**
+- `03` AFB II · _Kommunizieren_ · Drei Ecken eines Quadrats sind markiert. Das Quadrat steht schräg. Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte A(8|3), C(7|6), D(6|4); Strecke durch (7|6) und (6|4), Strecke durch (6|4) und (8|3))_ Lösung: **(9|5)**
+- `04` AFB I · _Kommunizieren_ · Welche Namen passen zu dem Viereck F? Kreuze alle an. _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (6|4) (8|4) (8|6) (6|6))_
+  - ☑ Viereck
+  - ☐ Dreieck
+  - ☑ Rechteck
+  - ☑ Quadrat
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Ben sagt: „Ein Viereck mit vier gleich langen Seiten ist immer ein Quadrat.“ Schau dir das Viereck F an. Stimmt das? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|1) (5|4) (4|7) (3|4))_
+  - ☐ Stimmt. Vier gleich lange Seiten reichen aus.
+  - ☑ Falsch. Ein Quadrat braucht auch vier rechte Winkel.
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · Im Rechteck ABCD ist die Seite AB 11 cm lang und die Seite BC 2 cm lang. Wie lang sind die Seiten AB und CD zusammen? Lösung: **22 cm**. Typische Fehler: 13 (viereck-eigenschaft), 11 (viereck-eigenschaft).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Von B nach A geht es 2 nach links und 1 nach unten. Geh von C aus dieselben Schritte.
+
+- `01` AFB I · _Kommunizieren_ · Drei Ecken des Quadrats ABCD sind A(3|1), B(5|2) und C(4|4). Die Ecke D hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 12 × 10; Punkte A(3|1), B(5|2), C(4|4); Strecke durch (3|1) und (5|2), Strecke durch (5|2) und (4|4))_ Lösung: x = **2**, y = **3**
+- `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Welche Aussage stimmt?
+  - ☑ Jedes Quadrat ist ein Rechteck.
+  - ☐ Jedes Rechteck ist ein Quadrat.
+  - ☐ Ein Rechteck hat immer zwei längere Seiten.
+  - ☐ Kein Quadrat ist ein Rechteck.
+- `03` AFB II · _Kommunizieren_ · Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Wie heißt es genau? _(Bild: Koordinatensystem 10 × 9; Punkte A(4|1), B(7|4), C(6|5), D(3|2); Figur mit den Ecken (4|1) (7|4) (6|5) (3|2))_
+  - ☐ Parallelogramm
+  - ☑ Rechteck
+  - ☐ Raute
+  - ☐ Quadrat
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Diagonalen eines Vierecks sind gleich lang und halbieren sich. Welche Figur ist es sicher?
+  - ☐ Ein Viereck ohne rechte Winkel.
+  - ☐ Ein Quadrat.
+  - ☑ Ein Rechteck.
+- `05` AFB II · _Kommunizieren_ · Das Quadrat ABCD steht schräg. Markiere den Schnittpunkt seiner Diagonalen. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 8; Punkte A(4|3), B(7|4), C(6|7), D(3|6); Strecke durch (4|3) und (6|7), Strecke durch (7|4) und (3|6); Figur mit den Ecken (4|3) (7|4) (6|7) (3|6))_ Lösung: **(5|5)**
+- `06` AFB III · _Kommunizieren_ · Das Rechteck ABCD steht schräg. Welche Seiten sind orthogonal zueinander? Kreuze alle an. _(Bild: Karogitter 9 × 8; Punkte A(6|2), B(7|3), C(4|6), D(3|5); Figur mit den Ecken (6|2) (7|3) (4|6) (3|5))_
+  - ☑ BC und CD
+  - ☐ BC und AD
+  - ☐ AB und CD
+  - ☑ AB und BC
+
+## 5.5.8-V2: Ich kann Parallelogramm und Raute erkennen, beschreiben und ergänzen.
+
+Grundlage, die F übt: Am Karogitter prüfen, ob Seiten gegenüber parallel sind
+
+Baut auf: 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Im Parallelogramm sind die Seiten gegenüber parallel. *Beispiel:* Das gilt für beide Paare von Seiten. *Lösungsschritt:* Suche die Figur mit zwei Paaren paralleler Seiten.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die drei Figuren an. / Welche Figur ist ein Parallelogramm? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (1|2) (5|2) (4|4) (2|4), Figur B mit den Ecken (9|1) (11|1) (9|5) (7|5), Figur C mit den Ecken (13|1) (16|2) (17|5) (14|5))_
+  - ☐ Figur A
+  - ☑ Figur B
+  - ☐ Figur C
+- `02` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie heißt es genau? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|5) (8|6) (5|7) (2|6))_
+  - ☐ Parallelogramm
+  - ☑ Raute
+- `03` AFB I · _Kommunizieren_ · Drei Ecken von einem Parallelogramm sind markiert. / Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte A(3|2), B(7|2), D(5|4); Strecke durch (3|2) und (7|2), Strecke durch (5|4) und (3|2))_ Lösung: **(9|4)**
+- `04` AFB I · _Kommunizieren_ · Schau dir die drei Figuren an. / Welche Figur ist eine Raute? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (2|1) (4|1) (5|5) (3|5), Figur B mit den Ecken (9|1) (10|3) (9|5) (8|3), Figur C mit den Ecken (15|1) (16|4) (15|5) (14|4))_
+  - ☐ Figur A
+  - ☐ Figur C
+  - ☑ Figur B
+- `05` AFB II · _Kommunizieren_ · Du siehst das Parallelogramm ABCD. / Welche Seiten sind parallel? / Kreuze alle Paare an. _(Bild: Karogitter 9 × 8; Punkte A(1|3), B(4|3), C(7|6), D(4|6); Figur mit den Ecken (1|3) (4|3) (7|6) (4|6))_
+  - ☑ BC und AD
+  - ☐ AB und BC
+  - ☑ AB und CD
+- `06` AFB I · _Kommunizieren_ · Du siehst das Parallelogramm ABCD. / Wie viele Kästchen ist die Seite CD lang? _(Bild: Karogitter 9 × 8; Punkte A(3|2), B(8|2), C(6|6), D(1|6); Figur mit den Ecken (3|2) (8|2) (6|6) (1|6))_ Lösung: **5 Kästchen**. Typische Fehler: 6 (koord-ab-eins), 4 (koord-ab-eins).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Paar sind zwei Seiten, die zueinander parallel sind. *Beispiel:* Prüfe erst die Seiten oben und unten, dann links und rechts. *Lösungsschritt:* Zähle nur die Paare, bei denen der Abstand überall gleich bleibt.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie viele Paare paralleler Seiten hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (3|3) (8|3) (7|7) (4|5))_ Lösung: **0**. Typische Fehler: 2 (viereck-eigenschaft), 1 (viereck-eigenschaft).
+- `02` AFB I · _Kommunizieren_ · Drei Ecken des Parallelogramms ABCD sind A(2|2), B(6|2) und C(5|4). / Die Ecke D hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 10 × 8; Punkte A(2|2), B(6|2), C(5|4); Strecke durch (2|2) und (6|2), Strecke durch (6|2) und (5|4))_ Lösung: x = **1**, y = **4**
+- `03` AFB II · _Kommunizieren_ · Das Viereck F steht schräg im Gitter. / Wie heißt es genau? _(Bild: Karogitter 10 × 9; Figur F mit den Ecken (4|1) (7|2) (8|5) (5|4))_
+  - ☐ Parallelogramm
+  - ☐ Quadrat
+  - ☑ Raute
+- `04` AFB I · _Kommunizieren_ · Drei Ecken einer Raute sind markiert. / Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte A(3|2), B(4|5), D(2|5); Strecke durch (3|2) und (4|5), Strecke durch (2|5) und (3|2))_ Lösung: **(3|8)**
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Tom sagt: „Eine Raute ist auch ein Parallelogramm.“ / Stimmt das?
+  - ☑ Stimmt. / In der Raute sind gegenüberliegende Seiten parallel.
+  - ☐ Falsch. / Im Parallelogramm sind zwei Seiten länger.
+- `06` AFB III · _Kommunizieren_ · Das Viereck F ist ein Parallelogramm. / Was stimmt für jedes Parallelogramm? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (1|2) (3|2) (6|6) (4|6))_
+  - ☐ Alle vier Seiten sind gleich lang.
+  - ☐ Es hat vier rechte Winkel.
+  - ☑ Gegenüberliegende Seiten sind gleich lang.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Im Parallelogramm halbieren sich die Diagonalen. *Lösungsschritt:* In der Raute sind die Diagonalen außerdem senkrecht zueinander und Symmetrieachsen.
+
+- `01` AFB I · _Kommunizieren_ · Im Bild sind die Diagonalen eingezeichnet. Welche Aussagen stimmen für dieses Viereck? Kreuze alle an. _(Bild: Karogitter 9 × 8; Punkte A(2|1), B(3|4), C(2|7), D(1|4); Strecke durch (2|1) und (2|7), Strecke durch (3|4) und (1|4); Figur mit den Ecken (2|1) (3|4) (2|7) (1|4))_
+  - ☑ Die Diagonalen halbieren sich.
+  - ☑ Die Diagonalen sind senkrecht zueinander.
+  - ☐ Die Diagonalen sind gleich lang.
+  - ☑ Beide Diagonalen sind Symmetrieachsen.
+- `02` AFB II · _Kommunizieren_ · Die Diagonalen des Parallelogramms ABCD schneiden sich in einem Punkt. Markiere diesen Punkt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 8; Punkte A(4|5), B(6|5), C(8|7), D(6|7); Strecke durch (4|5) und (8|7), Strecke durch (6|5) und (6|7); Figur mit den Ecken (4|5) (6|5) (8|7) (6|7))_ Lösung: **(6|6)**
+- `03` AFB II · _Kommunizieren_ · Wie viele Symmetrieachsen hat das Viereck F? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|3) (7|4) (5|5) (3|4))_ Lösung: **2**. Typische Fehler: 4 (diagonale-als-achse), 0 (viereck-eigenschaft).
+- `04` AFB I · _Kommunizieren_ · Welche Namen passen zu dem Viereck F? Kreuze alle an. _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|2) (6|2) (4|4) (2|4))_
+  - ☐ Raute
+  - ☐ Quadrat
+  - ☐ Rechteck
+  - ☑ Parallelogramm
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Im Parallelogramm ABCD ist die Seite AB 12 cm lang und die Seite BC 3 cm lang. Wie lang sind die Seiten BC und AD zusammen? Lösung: **6 cm**. Typische Fehler: 15 (viereck-eigenschaft), 3 (viereck-eigenschaft).
+- `06` AFB III · _Kommunizieren_ · Drei Ecken eines Parallelogramms sind markiert. Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 10; Punkte A(5|5), B(7|6), C(9|9); Strecke durch (5|5) und (7|6), Strecke durch (7|6) und (9|9))_ Lösung: **(7|8)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Von B nach A geht es 3 nach links und 1 nach oben. Geh von C aus dieselben Schritte.
+
+- `01` AFB I · _Kommunizieren_ · Drei Ecken des Parallelogramms ABCD sind A(2|3), B(5|2) und C(6|4). Die Ecke D hat die Koordinaten (▢|▢). _(Bild: Koordinatensystem 14 × 12; Punkte A(2|3), B(5|2), C(6|4); Strecke durch (2|3) und (5|2), Strecke durch (5|2) und (6|4))_ Lösung: x = **3**, y = **5**
+- `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Welche Aussage stimmt?
+  - ☐ Keine Raute ist ein Parallelogramm.
+  - ☐ Jedes Parallelogramm ist eine Raute.
+  - ☑ Jede Raute ist ein Parallelogramm.
+  - ☐ Ein Parallelogramm hat nie rechte Winkel.
+- `03` AFB II · _Kommunizieren_ · Welche Vierecke sind punktsymmetrisch? Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (1|7) (4|7) (5|10) (2|10), Figur B mit den Ecken (7|7) (11|7) (10|11) (8|11), Figur C mit den Ecken (3|1) (5|3) (3|4) (1|3), Figur D mit den Ecken (9|1) (10|3) (9|5) (8|3))_
+  - ☑ Figur D
+  - ☐ Figur B
+  - ☑ Figur A
+  - ☐ Figur C
+- `04` AFB III · _Kommunizieren_ · Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Welche Namen passen? Kreuze alle an. _(Bild: Koordinatensystem 10 × 10; Punkte A(5|3), B(6|4), C(3|7), D(2|6); Figur mit den Ecken (5|3) (6|4) (3|7) (2|6))_
+  - ☑ Rechteck
+  - ☐ Quadrat
+  - ☑ Parallelogramm
+  - ☐ Raute
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Die Diagonalen eines Parallelogramms sind senkrecht zueinander. Welche Figur ist es sicher?
+  - ☐ Ein Quadrat.
+  - ☐ Ein Rechteck.
+  - ☑ Eine Raute.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina sagt: „In jedem Parallelogramm sind die Diagonalen gleich lang.“ Im Bild siehst du ein Parallelogramm mit seinen Diagonalen. Stimmt das? _(Bild: Karogitter 9 × 8; Punkte A(6|3), B(8|3), C(7|7), D(5|7); Strecke durch (6|3) und (7|7), Strecke durch (8|3) und (5|7); Figur mit den Ecken (6|3) (8|3) (7|7) (5|7))_
+  - ☐ Stimmt. Gegenüberliegende Seiten sind ja auch gleich lang.
+  - ☑ Falsch. Hier ist eine Diagonale länger als die andere.
+
+## 5.5.9-V3: Ich kann Drachen und Trapez erkennen, beschreiben und ergänzen.
+
+Grundlage, die F übt: Drachen und Trapez an ihrer Form erkennen
+
+Baut auf: 5.5.6-A1 (Ich kann Symmetrieachsen erkennen und einzeichnen.), 5.5.8-V2 (Ich kann Parallelogramm und Raute erkennen, beschreiben und ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Trapez hat zwei parallele Seiten. *Beispiel:* Die beiden anderen Seiten dürfen schräg sein. *Lösungsschritt:* Suche die Figur mit zwei parallelen Seiten.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die drei Figuren an. / Welche Figur ist ein Trapez? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (1|1) (5|2) (5|4) (2|3), Figur B mit den Ecken (9|1) (10|2) (9|5) (8|2), Figur C mit den Ecken (13|1) (17|1) (14|5) (13|5))_
+  - ☑ Figur C
+  - ☐ Figur B
+  - ☐ Figur A
+- `02` AFB I · _Kommunizieren_ · Schau dir die drei Figuren an. / Welche Figur ist ein Drachen? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (3|1) (4|4) (3|5) (2|4), Figur B mit den Ecken (7|1) (9|1) (11|4) (9|4), Figur C mit den Ecken (13|1) (17|1) (16|4) (14|4))_
+  - ☐ Figur B
+  - ☐ Figur C
+  - ☑ Figur A
+- `03` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie heißt es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|2) (8|3) (5|7) (2|3))_
+  - ☑ Drachen
+  - ☐ Trapez
+- `04` AFB I · _Kommunizieren_ · Du siehst das Trapez ABCD. / Welche Seiten sind parallel? _(Bild: Karogitter 9 × 8; Punkte A(1|1), B(8|1), C(7|3), D(2|3); Figur mit den Ecken (1|1) (8|1) (7|3) (2|3))_
+  - ☑ AB und CD
+  - ☐ AB und BC
+  - ☐ BC und AD
+- `05` AFB II · _Kommunizieren_ · Drei Ecken von einem Drachen sind markiert. / Der Drachen ist symmetrisch. / Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte A(5|3), C(5|6), D(4|4); Strecke durch (5|6) und (4|4), Strecke durch (4|4) und (5|3))_ Lösung: **(6|4)**
+- `06` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie viele Symmetrieachsen hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (1|2) (7|2) (6|5) (2|5))_ Lösung: **1**. Typische Fehler: 2 (diagonale-als-achse), 0 (diagonale-als-achse).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Paar sind zwei Seiten, die zueinander parallel sind. *Beispiel:* Prüfe erst die Seiten oben und unten, dann links und rechts. *Lösungsschritt:* Ein Trapez hat ein Paar, ein Drachen hat keines.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir das Viereck F an. / Wie viele Paare paralleler Seiten hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|3) (7|6) (4|7) (1|6))_ Lösung: **0**. Typische Fehler: 2 (viereck-eigenschaft), 1 (viereck-eigenschaft).
+- `02` AFB I · _Kommunizieren_ · Schau dir das Viereck F genau an. / Wie heißt es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (2|2) (5|2) (4|4) (2|4))_
+  - ☐ Rechteck
+  - ☑ Trapez
+  - ☐ Drachen
+- `03` AFB II · _Kommunizieren_ · Schau dir das Viereck F an. / Wie viele rechte Winkel hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (2|3) (8|3) (6|5) (4|5))_ Lösung: **0**. Typische Fehler: 4 (viereck-eigenschaft), 2 (viereck-eigenschaft).
+- `04` AFB I · _Kommunizieren_ · Drei Ecken eines Drachens sind markiert. / Der Drachen liegt auf der Seite. / Markiere die vierte Ecke. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 9; Punkte A(4|4), B(8|2), C(9|4); Strecke durch (4|4) und (8|2), Strecke durch (8|2) und (9|4))_ Lösung: **(8|6)**
+- `05` AFB II · _Kommunizieren_ · Das Viereck F ist ein Drachen. / Was stimmt für jeden Drachen? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (4|2) (7|4) (4|7) (1|4))_
+  - ☑ Er hat zwei Paare gleich langer Nachbarseiten.
+  - ☐ Er hat zwei Paare paralleler Seiten.
+  - ☐ Er hat vier rechte Winkel.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ole sagt: „Jedes Trapez hat eine Symmetrieachse.“ / Schau dir das Trapez F an. / Stimmt das? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (1|3) (5|3) (5|7) (3|7))_
+  - ☑ Falsch. / Dieses Trapez hat keine Symmetrieachse.
+  - ☐ Stimmt. / Jedes Trapez hat eine Symmetrieachse.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Im Drachen sind die Diagonalen senkrecht zueinander. Nur eine von ihnen ist eine Symmetrieachse. *Lösungsschritt:* Im symmetrischen Trapez sind die Diagonalen gleich lang, aber sie halbieren sich nicht.
+
+- `01` AFB I · _Kommunizieren_ · Im Bild sind die Diagonalen eingezeichnet. Welche Aussagen stimmen für dieses Viereck? Kreuze alle an. _(Bild: Karogitter 9 × 8; Punkte A(3|4), B(5|2), C(8|4), D(5|6); Strecke durch (3|4) und (8|4), Strecke durch (5|2) und (5|6); Figur mit den Ecken (3|4) (5|2) (8|4) (5|6))_
+  - ☐ Die Diagonalen sind gleich lang.
+  - ☑ Die Diagonalen sind senkrecht zueinander.
+  - ☐ Die Diagonalen halbieren sich.
+  - ☐ Beide Diagonalen sind Symmetrieachsen.
+- `02` AFB II · _Kommunizieren_ · Welche Namen passen zu dem Viereck F? Kreuze alle an. _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|1) (7|1) (6|5) (4|5))_
+  - ☐ Drachen
+  - ☑ Trapez
+  - ☐ Rechteck
+  - ☑ Parallelogramm
+- `03` AFB II · _Kommunizieren_ · Das Viereck F ist ein Drachen. Zeichne seine Symmetrieachse ein. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 10 × 9; Figur F mit den Ecken (5|2) (7|3) (5|6) (3|3))_ Lösung: **zum Beispiel durch (5|2) und (5|6)**
+- `04` AFB I · _Kommunizieren (+ Modellieren)_ · Im Drachen ABCD ist die Diagonale AC die Symmetrieachse. Die Seite AB ist 6 cm lang und die Seite BC 8 cm lang. Wie lang sind die Seiten BC und CD zusammen? Lösung: **16 cm**. Typische Fehler: 14 (viereck-eigenschaft), 8 (viereck-eigenschaft).
+- `05` AFB II · _Kommunizieren_ · Welche Vierecke haben genau eine Symmetrieachse? Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (1|8) (5|8) (3|10) (2|10), Figur B mit den Ecken (9|8) (11|8) (9|10) (7|10), Figur C mit den Ecken (3|1) (4|2) (3|4) (2|2), Figur D mit den Ecken (7|1) (11|1) (10|5) (8|5))_
+  - ☐ Figur A
+  - ☑ Figur D
+  - ☐ Figur B
+  - ☑ Figur C
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Tom sagt: „Im Drachen sind die Diagonalen senkrecht zueinander.“ Im Bild siehst du einen Drachen mit seinen Diagonalen. Stimmt das? _(Bild: Karogitter 9 × 8; Punkte A(1|4), B(3|3), C(6|4), D(3|5); Strecke durch (1|4) und (6|4), Strecke durch (3|3) und (3|5); Figur mit den Ecken (1|4) (3|3) (6|4) (3|5))_
+  - ☑ Stimmt. Die Diagonalen bilden rechte Winkel.
+  - ☐ Falsch. Die Diagonalen sind nur gleich lang.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe zuerst, ob es parallele Seiten gibt. Vergleiche danach die Längen der Nachbarseiten über die Schritte nach rechts und nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Wie heißt es genau? _(Bild: Koordinatensystem 10 × 9; Punkte A(2|2), B(6|3), C(7|7), D(3|6); Figur mit den Ecken (2|2) (6|3) (7|7) (3|6))_
+  - ☑ Raute
+  - ☐ Parallelogramm
+  - ☐ Drachen
+  - ☐ Trapez
+- `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Ein Viereck hat genau ein Paar paralleler Seiten. Welche Figur kann es sein?
+  - ☑ Ein Trapez.
+  - ☐ Ein Drachen.
+  - ☐ Ein Parallelogramm.
+  - ☐ Eine Raute.
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Finn sagt: „Jede Raute ist auch ein Drachen.“ Stimmt das?
+  - ☑ Stimmt. In der Raute sind Nachbarseiten gleich lang.
+  - ☐ Falsch. Ein Drachen hat immer zwei kurze und zwei lange Seiten.
+- `04` AFB III · _Kommunizieren_ · Das Trapez ABCD ist symmetrisch zur gestrichelten Achse. Die Ecken A, B und C sind markiert. Setze die Ecke D. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 6; Punkte A(1|2), B(9|2), C(6|4); Strecke durch (1|2) und (9|2), Strecke durch (9|2) und (6|4), Symmetrieachse durch (5|0) und (5|1))_ Lösung: **(4|4)**
+- `05` AFB II · _Kommunizieren_ · Bei welchen Vierecken sind die Diagonalen orthogonal zueinander? Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (1|7) (5|7) (4|10) (2|10), Figur B mit den Ecken (9|8) (11|9) (9|10) (7|9), Figur C mit den Ecken (3|1) (4|2) (3|4) (2|2), Figur D mit den Ecken (7|2) (11|2) (11|4) (7|4))_
+  - ☑ Figur C
+  - ☑ Figur A
+  - ☑ Figur B
+  - ☐ Figur D
+- `06` AFB III · _Kommunizieren_ · Im Drachen ABCD ist die Diagonale AC die Symmetrieachse. Die Seite AB ist 7 cm lang und die Seite BC 13 cm lang. Wie lang sind alle vier Seiten zusammen? Lösung: **40 cm**. Typische Fehler: 20 (viereck-eigenschaft), 27 (viereck-eigenschaft).
+
+## 5.5.9-V4: Ich kann Vierecke nach ihren Eigenschaften ordnen.
+
+Grundlage, die F übt: Zwei Vierecke vergleichen: Was haben sie gemeinsam?
+
+Baut auf: 5.5.9-V3 (Ich kann Drachen und Trapez erkennen, beschreiben und ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe zuerst die parallelen Seiten. *Beispiel:* Prüfe dann die rechten Winkel. *Lösungsschritt:* Zwei Paare paralleler Seiten ohne rechte Winkel ergeben ein Parallelogramm.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau dir das Viereck F an. / Wie heißt es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|3) (7|3) (5|7) (3|7))_
+  - ☑ Parallelogramm
+  - ☐ Trapez
+  - ☐ Rechteck
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur ist ein Quadrat? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (2|1) (5|1) (5|5) (2|5), Figur B mit den Ecken (9|1) (10|3) (9|5) (8|3), Figur C mit den Ecken (15|2) (16|3) (15|4) (14|3))_
+  - ☑ Figur C
+  - ☐ Figur B
+  - ☐ Figur A
+- `03` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau dir das Viereck F an. / Wie viele rechte Winkel hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (2|2) (5|2) (4|6) (2|6))_ Lösung: **2**. Typische Fehler: 4 (viereck-eigenschaft), 1 (viereck-eigenschaft).
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur hat vier gleich lange Seiten? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (2|1) (4|1) (5|4) (3|4), Figur B mit den Ecken (9|1) (10|3) (9|5) (8|3), Figur C mit den Ecken (14|1) (16|1) (16|5) (14|5))_
+  - ☐ Figur C
+  - ☑ Figur B
+  - ☐ Figur A
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Schau dir das Viereck F an. / Wie heißt es genau? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (5|4) (7|5) (5|6) (3|5))_
+  - ☑ Raute
+  - ☐ Quadrat
+- `06` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur hat keine parallelen Seiten? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (3|1) (5|1) (3|5) (1|5), Figur B mit den Ecken (9|1) (11|2) (9|5) (7|2), Figur C mit den Ecken (13|1) (17|1) (16|5) (14|5))_
+  - ☐ Figur A
+  - ☐ Figur C
+  - ☑ Figur B
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe bei jeder Figur die Seiten gegenüber. *Beispiel:* Zwei Paare paralleler Seiten hat jedes Parallelogramm. *Lösungsschritt:* Auch das Rechteck hat zwei Paare paralleler Seiten.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Schau dir die vier Figuren an. / Welche Figuren haben zwei Paare paralleler Seiten? / Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (2|8) (5|8) (5|10) (2|10), Figur B mit den Ecken (9|7) (10|10) (9|11) (8|10), Figur C mit den Ecken (3|1) (5|1) (4|4) (2|4), Figur D mit den Ecken (7|2) (11|2) (10|4) (8|4))_
+  - ☐ Figur B
+  - ☑ Figur A
+  - ☑ Figur C
+  - ☐ Figur D
+- `02` AFB I · _Argumentieren_ · Paul sagt: „Jedes Rechteck ist auch ein Parallelogramm.“ / Stimmt das?
+  - ☑ Stimmt. / Im Rechteck sind gegenüberliegende Seiten parallel.
+  - ☐ Falsch. / Ein Parallelogramm ist immer schief.
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Schau dir das Viereck F an. / Wie heißt es genau? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (1|2) (5|2) (7|5) (3|5))_
+  - ☐ Quadrat
+  - ☐ Raute
+  - ☑ Parallelogramm
+- `04` AFB I · _Argumentieren_ · Ein Viereck hat vier rechte Winkel. / Alle vier Seiten sind gleich lang. / Wie heißt das Viereck genau?
+  - ☐ Rechteck
+  - ☐ Trapez
+  - ☑ Quadrat
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Schau dir das Viereck F an. / Wie viele Symmetrieachsen hat es? _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (1|2) (3|2) (3|4) (1|4))_ Lösung: **4**. Typische Fehler: 2 (diagonale-als-achse), 3 (viereck-eigenschaft).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Schau dir die drei Figuren an. / Welche Figur ist punktsymmetrisch? _(Bild: Karogitter 18 × 6; Figur A mit den Ecken (1|1) (5|1) (4|4) (2|4), Figur B mit den Ecken (7|1) (10|1) (11|4) (8|4), Figur C mit den Ecken (15|1) (16|2) (15|5) (14|2))_
+  - ☐ Figur C
+  - ☑ Figur B
+  - ☐ Figur A
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Im Haus der Vierecke erbt jede Figur die Namen der Figuren, die weniger Eigenschaften verlangen. *Lösungsschritt:* Prüfe für jeden Namen einzeln, ob das Viereck F seine Eigenschaften hat.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Welche Namen passen zu dem Viereck F? Kreuze alle an. _(Bild: Karogitter 9 × 8; Figur F mit den Ecken (3|5) (5|6) (3|7) (1|6))_
+  - ☑ Trapez
+  - ☑ Raute
+  - ☐ Rechteck
+  - ☑ Drachen
+- `02` AFB II · _Argumentieren_ · Welches Viereck ist zugleich ein Rechteck und eine Raute?
+  - ☐ Drachen
+  - ☐ Parallelogramm
+  - ☐ Trapez
+  - ☑ Quadrat
+- `03` AFB II · _Argumentieren_ · Welche Aussagen stimmen? Kreuze alle an.
+  - ☐ Jede Raute ist ein Quadrat.
+  - ☑ Jedes Rechteck ist ein Parallelogramm.
+  - ☑ Jedes Quadrat ist eine Raute.
+  - ☐ Jedes Parallelogramm ist ein Rechteck.
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Welche Figuren sind Trapeze? Ein Trapez hat mindestens ein Paar paralleler Seiten. Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (1|7) (5|7) (4|11) (2|11), Figur B mit den Ecken (9|7) (10|10) (9|11) (8|10), Figur C mit den Ecken (2|1) (4|1) (5|5) (3|5), Figur D mit den Ecken (8|2) (11|2) (11|4) (8|4))_
+  - ☐ Figur B
+  - ☑ Figur C
+  - ☑ Figur A
+  - ☑ Figur D
+- `05` AFB II · _Argumentieren_ · Ordne jedem Viereck die passende Beschreibung zu. Jede Beschreibung kommt genau einmal vor. Lösung: Raute → vier gleich lange Seiten, Rechteck → vier rechte Winkel, Drachen → zwei Paare gleich langer Nachbarseiten, Trapez → genau ein Paar paralleler Seiten
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Ein Viereck mit zwei gleich langen Diagonalen ist immer ein Rechteck.“ Schau dir das Viereck im Bild an. Stimmt das? _(Bild: Karogitter 9 × 8; Punkte A(1|3), B(8|3), C(7|5), D(2|5); Strecke durch (1|3) und (7|5), Strecke durch (8|3) und (2|5); Figur mit den Ecken (1|3) (8|3) (7|5) (2|5))_
+  - ☐ Stimmt. Gleich lange Diagonalen gibt es nur im Rechteck.
+  - ☑ Falsch. Auch dieses Trapez hat gleich lange Diagonalen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den genauen Namen über parallele Seiten, Seitenlängen und rechte Winkel. Alle Namen, die weniger verlangen, passen dann auch.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Das Viereck ABCD ist im Koordinatensystem eingezeichnet. Welche Namen passen? Kreuze alle an. _(Bild: Koordinatensystem 10 × 10; Punkte A(3|2), B(5|3), C(6|5), D(4|4); Figur mit den Ecken (3|2) (5|3) (6|5) (4|4))_
+  - ☑ Trapez
+  - ☑ Parallelogramm
+  - ☑ Drachen
+  - ☐ Quadrat
+  - ☑ Raute
+  - ☐ Rechteck
+- `02` AFB II · _Argumentieren_ · Ein Viereck ist zugleich ein Drachen und ein Parallelogramm. Welche Figur ist es sicher?
+  - ☐ Ein Quadrat.
+  - ☐ Ein Viereck ohne parallele Seiten.
+  - ☐ Ein Rechteck.
+  - ☑ Eine Raute.
+- `03` AFB II · _Argumentieren_ · Welche Aussagen stimmen? Kreuze alle an.
+  - ☐ Jeder Drachen ist eine Raute.
+  - ☑ Jede Raute ist ein Drachen.
+  - ☐ Jedes Trapez ist ein Parallelogramm.
+  - ☑ Jedes Parallelogramm ist ein Trapez.
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Welche Figuren sind Drachen? Ein Drachen hat zwei Paare gleich langer Nachbarseiten. Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (3|7) (5|8) (4|10) (2|9), Figur B mit den Ecken (9|7) (11|9) (9|10) (7|9), Figur C mit den Ecken (1|1) (5|1) (5|4) (1|4), Figur D mit den Ecken (9|2) (11|3) (9|4) (7|3))_
+  - ☐ Figur C
+  - ☑ Figur A
+  - ☑ Figur D
+  - ☑ Figur B
+- `05` AFB II · _Argumentieren_ · Ein Viereck hat genau zwei Symmetrieachsen. Beide gehen durch Ecken. Welche Figur ist es?
+  - ☐ Ein Trapez mit genau einem Paar paralleler Seiten.
+  - ☐ Ein Rechteck, das kein Quadrat ist.
+  - ☑ Eine Raute, die kein Quadrat ist.
+  - ☐ Ein Quadrat.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „Das Viereck F ist eine Raute.“ Sara sagt: „Das Viereck F ist ein Parallelogramm.“ Wer hat recht? _(Bild: Karogitter 10 × 9; Figur F mit den Ecken (8|3) (9|5) (8|7) (7|5))_
+  - ☐ Keiner von beiden hat recht.
+  - ☐ Nur Lena hat recht.
+  - ☐ Nur Sara hat recht.
+  - ☑ Beide haben recht.
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -5915,18 +7217,26 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `roemisch-vier-gleiche` | Schreibt vier gleiche römische Zeichen hintereinander (IIII statt IV). | Höchstens drei gleiche Zeichen stehen hintereinander. Für 4 und 9 ziehst du ab. | Du schreibst höchstens drei gleiche Zeichen hintereinander. |
 | `roemisch-falsch-abgezogen` | Zieht bei römischen Zahlzeichen ein Zeichen ab, das man nicht abziehen darf (IC für 99, VX für 5). | Abgezogen wird nur I vor V und X, X vor L und C, C vor D und M. | Du weißt jetzt, welche Zeichen man abziehen darf. |
 | `roemisch-zeichen-verwechselt` | Verwechselt die Werte der römischen Zeichen (L und C, D und M, V und X). | Schau im Merkzettel nach: Welchen Wert hat jedes Zeichen? | Du kennst jetzt den Wert jedes römischen Zeichens. |
+| `gerade-begrenzt` | Verwechselt Strecke, Strahl und Gerade oder hält eine Gerade für begrenzt. | Eine Strecke hat zwei Endpunkte, ein Strahl einen Anfangspunkt, eine Gerade hat kein Ende. | Du hältst Strecke, Strahl und Gerade jetzt auseinander. |
+| `laenge-kaestchen` | Zählt Kästchen und gibt sie als Zentimeter an (oder umgekehrt). | Im Heft sind 2 Kästchen 1 cm lang. Ein Kästchen ist 5 mm lang. | Du weißt jetzt: Zwei Kästchen im Heft sind ein Zentimeter. |
+| `lineal-nicht-null` | Liest am Lineal nur das Ende der Strecke ab, obwohl sie nicht bei 0 beginnt. | Schau auf den Anfang der Strecke: Bei welcher Zahl liegt er am Lineal? | Du schaust jetzt zuerst nach: Beginnt die Strecke am Lineal bei 0? |
+| `einheit-mm-cm` | Rechnet Zentimeter und Millimeter falsch um. | Ein Zentimeter sind 10 Millimeter. Rechne zuerst alles in Millimeter um. | Du weißt jetzt: Ein Zentimeter hat 10 Millimeter. |
+| `senkrecht-lotrecht` | Meint, „senkrecht“ heißt von oben nach unten, und erkennt rechte Winkel in schräger Lage nicht. | Senkrecht zueinander heißt: Die Linien bilden einen rechten Winkel. Dreh das Blatt in Gedanken. | Du weißt jetzt: Senkrecht zueinander heißt im rechten Winkel, egal in welcher Richtung. |
+| `parallel-gleichlang` | Hält Linien nur für parallel, wenn sie gleich lang sind oder genau untereinander liegen, oder hält Linien für parallel, die sich im Bild nur nicht treffen. | Parallele Linien haben überall den gleichen Abstand. Verlängere sie in Gedanken. | Du weißt jetzt: Parallel heißt überall gleicher Abstand, egal wie lang die Linien sind. |
+| `senkrecht-parallel-verwechselt` | Verwechselt die Begriffe senkrecht und parallel. | Senkrecht: Die Linien bilden einen rechten Winkel. Parallel: Die Linien treffen sich nie. | Du hältst senkrecht und parallel jetzt auseinander. |
+| `koord-vertauscht` | Vertauscht im Koordinatensystem die beiden Koordinaten (erst nach oben, dann nach rechts). | Die erste Zahl sagt, wie weit es nach rechts geht. Die zweite Zahl sagt, wie weit es nach oben geht. | Du gehst im Koordinatensystem jetzt erst nach rechts und dann nach oben. |
+| `koord-ab-eins` | Beginnt im Koordinatensystem bei 1 statt bei 0 zu zählen und landet ein Kästchen daneben. | Die Achsen beginnen bei 0. Zähle die Schritte, nicht die Linien. | Du beginnst im Koordinatensystem jetzt bei 0 zu zählen. |
+| `abstand-schraeg` | Misst den Abstand zu einer Geraden schräg statt auf der Senkrechten. | Der Abstand ist der kürzeste Weg. Er steht immer senkrecht auf der Geraden. | Du misst den Abstand jetzt auf dem kürzesten Weg, im rechten Winkel zur Linie. |
+| `spiegel-verschoben` | Verschiebt die Figur auf die andere Seite der Achse, statt sie zu spiegeln. | Beim Spiegeln wird die Figur umgeklappt. Was nah an der Achse liegt, bleibt nah an der Achse. | Du spiegelst jetzt und verschiebst die Figur nicht mehr nur. |
+| `spiegel-abstand` | Setzt den Bildpunkt in einem anderen Abstand zur Symmetrieachse als den Punkt. | Zähle die Kästchen vom Punkt bis zur Achse. Genauso weit geht es auf der anderen Seite. | Du zählst beim Spiegeln jetzt den Abstand zur Symmetrieachse. |
+| `diagonale-als-achse` | Hält die Diagonale eines Rechtecks oder eine Linie durch ein Parallelogramm für eine Symmetrieachse. | Falte in Gedanken an der Linie. Liegen beide Hälften genau aufeinander? | Du prüfst eine Symmetrieachse jetzt durch Falten in Gedanken. |
+| `punkt-achsen-verwechselt` | Verwechselt Achsensymmetrie (umklappen) und Punktsymmetrie (halbe Drehung). | Achsensymmetrisch: umklappen an einer Linie. Punktsymmetrisch: eine halbe Drehung um einen Punkt. | Du hältst Spiegeln an einer Achse und Drehen um einen Punkt jetzt auseinander. |
+| `sonderfall-uebersehen` | Sieht nicht, dass ein Quadrat auch ein Rechteck ist (oder eine Raute auch ein Parallelogramm). | Prüfe die Eigenschaften: Hat die Figur alles, was die andere Figur braucht? | Du weißt jetzt: Ein Quadrat ist auch ein besonderes Rechteck. |
+| `lage-prototyp` | Erkennt eine Figur nur in der gewohnten Lage (ein gedrehtes Quadrat gilt als Raute). | Dreh das Blatt in Gedanken. Die Figur bleibt dieselbe. | Du erkennst eine Figur jetzt auch in gedrehter Lage. |
+| `viereck-eigenschaft` | Ordnet einem Viereck Eigenschaften zu, die es nicht hat, oder verwechselt die Namen der Vierecke. | Prüfe der Reihe nach: Welche Seiten sind parallel? Welche sind gleich lang? Gibt es rechte Winkel? | Du prüfst bei einem Viereck jetzt Seiten und rechte Winkel einzeln nach. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.5.1-L1 Ich kann die Begriffe Strecke und Gerade anwenden. Baut auf: nur Grundschulstoff
-- 5.5.2-L1 Ich kann Senkrechten erkennen und zeichnen. Baut auf: 5.5.1-L1 (Ich kann die Begriffe Strecke und Gerade anwenden.)
-- 5.5.3-L1 Ich kann Parallelen erkennen und zeichnen. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.)
-- 5.5.4-L1 Ich kann Punkte im Koordinatensystem ablesen und darstellen. Baut auf: 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.), 5.5.1-L1 (Ich kann die Begriffe Strecke und Gerade anwenden.)
-- 5.5.5-L1 Ich kann die Begriffe Entfernung und Abstand richtig anwenden. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.)
-- 5.5.6-L1 Ich kann symmetrische Figuren erkennen und zeichnen. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.)
-- 5.5.7-L1 Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen. Baut auf: 5.5.2-L1 (Ich kann Senkrechten erkennen und zeichnen.), 5.5.3-L1 (Ich kann Parallelen erkennen und zeichnen.)
-- 5.5.8-L1 Ich kann Parallelogramm und Raute erkennen, unterscheiden und zeichnen. Baut auf: 5.5.3-L1 (Ich kann Parallelen erkennen und zeichnen.), 5.5.7-L1 (Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen.)
-- 5.5.9-L1 Ich kann Drachen und Trapez erkennen, unterscheiden und zeichnen. Baut auf: 5.5.6-L1 (Ich kann symmetrische Figuren erkennen und zeichnen.), 5.5.8-L1 (Ich kann Parallelogramm und Raute erkennen, unterscheiden und zeichnen.)
 - 5.6.1-L1 Ich kann Größen schätzen. Baut auf: 5.2.4-S1 (Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.)
 - 5.6.2-L1 Ich kann mit Geldbeträgen und Geldeinheiten rechnen. Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.)
 - 5.6.3-L1 Ich kann mit Zeitpunkten, Zeitspannen und Zeiteinheiten umgehen. Baut auf: 5.3.1-K1 (Ich kann im Kopf addieren.), 5.3.1-K2 (Ich kann im Kopf subtrahieren.)
@@ -5936,14 +7246,14 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 - 5.6.7-L1 Ich kann Sachaufgaben sicher lösen. Baut auf: 5.6.2-L1 (Ich kann mit Geldbeträgen und Geldeinheiten rechnen.), 5.4.6-T3 (Ich kann zu einem Text den passenden Rechenausdruck aufstellen.)
 - 5.6.X1-L1 Ich kann Sachaufgaben zu Beruf und Alltag lösen. Baut auf: 5.6.7-L1 (Ich kann Sachaufgaben sicher lösen.)
 - 5.7.1-L1 Ich kann Kreise anhand verschiedener Vorgaben zeichnen. Baut auf: 5.6.5-L1 (Ich kann mit Längen und Längeneinheiten umgehen.)
-- 5.7.2-L1 Ich kann Winkel zeichnen und Winkelgrößen vergleichen. Baut auf: 5.5.1-L1 (Ich kann die Begriffe Strecke und Gerade anwenden.)
+- 5.7.2-L1 Ich kann Winkel zeichnen und Winkelgrößen vergleichen. Baut auf: 5.5.1-B1 (Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.)
 - 5.7.3-L1 Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen. Baut auf: 5.7.2-L1 (Ich kann Winkel zeichnen und Winkelgrößen vergleichen.)
 - 5.7.4-L1 Ich kann Winkel zeichnen, schätzen und messen. Baut auf: 5.7.3-L1 (Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.)
-- 5.7.X1-L1 Ich kann Dreiecke nach Winkelart oder Seitenbeziehung einteilen und selbst zeichnen. Baut auf: 5.7.4-L1 (Ich kann Winkel zeichnen, schätzen und messen.), 5.5.7-L1 (Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen.)
-- 5.7.X2-L1 Ich kann mithilfe des Gradnetzes Aussagen treffen. Baut auf: 5.5.4-L1 (Ich kann Punkte im Koordinatensystem ablesen und darstellen.), 5.7.3-L1 (Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.)
-- 5.8.1-L1 Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen. Baut auf: 5.5.7-L1 (Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen.)
+- 5.7.X1-L1 Ich kann Dreiecke nach Winkelart oder Seitenbeziehung einteilen und selbst zeichnen. Baut auf: 5.7.4-L1 (Ich kann Winkel zeichnen, schätzen und messen.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
+- 5.7.X2-L1 Ich kann mithilfe des Gradnetzes Aussagen treffen. Baut auf: 5.5.4-K1 (Ich kann Punkte im Koordinatensystem ablesen.), 5.7.3-L1 (Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.)
+- 5.8.1-L1 Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen. Baut auf: 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
 - 5.8.2-L1 Ich kann sicher mit Flächenmaßen umgehen. Baut auf: 5.8.1-L1 (Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.), 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
-- 5.8.3-L1 Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden. Baut auf: 5.8.2-L1 (Ich kann sicher mit Flächenmaßen umgehen.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.), 5.5.7-L1 (Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen.)
+- 5.8.3-L1 Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden. Baut auf: 5.8.2-L1 (Ich kann sicher mit Flächenmaßen umgehen.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
 - 5.8.4-L1 Ich kann die Berechnung von Flächeninhalt und Umfang auch bei zusammengesetzten Figuren durchführen und anwenden. Baut auf: 5.8.3-L1 (Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden.)
 - 5.9.1-L1 Ich kann die Bruchschreibweise verwenden. Baut auf: 5.4.1-K2 (Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.)
 - 5.9.2-L1 Ich kann mit Bruchteilen von Größen umgehen. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann mit Längen und Längeneinheiten umgehen.)

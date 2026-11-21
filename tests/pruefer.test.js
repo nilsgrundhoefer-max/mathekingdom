@@ -56,8 +56,8 @@ test('Eine veränderte Zahl im Aufgabentext oder im Bild fällt fast immer auf',
   assert.ok(textZahl.gemeldet >= textZahl.alle * 0.85, `Textzahl: ${textZahl.gemeldet} von ${textZahl.alle}; nicht gemeldet: ${textZahl.durch}`);
   const bild = quote((a) => {
     if (!a.bild) return false;
-    // Länge und Einteilung einer Achse (Zahlenstrahl, Säulendiagramm) sind frei wählbar; die Werte darauf prüft der Test zu Kapitel 1.
-    const k = Object.keys(a.bild).find((n) => typeof a.bild[n] === 'number' && !['von', 'bis', 'schritt', 'beschriftung', 'felder', 'max', 'fein', 'ab'].includes(n));
+    // Länge und Einteilung einer Achse (Zahlenstrahl, Säulendiagramm) und die Größe eines Gitters sind frei wählbar; die Werte darauf prüft der Test zu Kapitel 1.
+    const k = Object.keys(a.bild).find((n) => typeof a.bild[n] === 'number' && !['von', 'bis', 'schritt', 'beschriftung', 'felder', 'max', 'fein', 'ab', 'b', 'h', 'lang'].includes(n));
     if (!k) return false; a.bild[k] += 1;
   }, 2);
   assert.ok(bild.alle >= 40);
@@ -123,4 +123,31 @@ test('Kapitel 1 Daten: falsche Striche, Säulen, Achsen und Antworten fallen auf
   const GEBUNDEN = ['zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen'];
   alle((a) => a.format === 'auswahl' && !a.mehrfach && a.nachweis?.some((n) => GEBUNDEN.includes(n?.art)),
     (a) => { const r = a.optionen.find((o) => o.richtig), f = a.optionen.find((o) => !o.richtig); r.richtig = false; f.richtig = true; delete f.fehlvorstellung; }, 'falsch angekreuzte Antwort');
+});
+
+test('Kapitel 5 Geometrie: verschobene Punkte, falsche Linien und falsch benannte Figuren fallen auf', () => {
+  const kap5 = frisch().aufgaben.map((a, i) => [a, i]).filter(([a]) => a.lernziel.startsWith('5.5.'));
+  const meldet = (i, aendere) => { const pool = frisch(); aendere(pool.aufgaben[i]); return pruefePool(pool).fehler.length > 0; };
+  const alle = (filter, aendere, name, mindestens = 10) => {
+    const stellen = kap5.filter(([a]) => filter(a));
+    assert.ok(stellen.length >= mindestens, `${name}: nur ${stellen.length} Aufgaben`);
+    for (const [a, i] of stellen) assert.ok(meldet(i, aendere), `${a.id}: ${name} nicht gemeldet`);
+  };
+  const frei = (a, p) => !a.loesung.some((q) => q[0] === p[0] && q[1] === p[1]);
+  // Gitterzeichnen mit Punkten: Ein Punkt der Lösung rutscht ein Kästchen weiter.
+  alle((a) => a.format === 'gitter' && a.eingabe === 'punkte' && !a.offen, (a) => { const [x, y] = a.loesung[0], neu = [[x + 1, y], [x - 1, y], [x, y + 1]].find((p) => p[0] >= 0 && p[0] <= a.gitter.b && p[1] <= a.gitter.h && frei(a, p)); a.loesung[0] = neu; }, 'verschobener Punkt', 40);
+  // Lineal: Die Strecke endet einen Zentimeter weiter rechts als gerechnet.
+  alle((a) => a.bild?.art === 'lineal', (a) => { a.bild.bis += 10; }, 'verschobenes Streckenende am Lineal', 5);
+  // Gefärbte Kästchen: Ein Kästchen der Lösung fehlt.
+  alle((a) => a.format === 'gitter' && a.eingabe === 'zellen', (a) => { a.loesung.pop(); }, 'fehlendes Kästchen', 8);
+  // Linien: Das Beispiel erfüllt die Bedingung nicht mehr.
+  alle((a) => a.format === 'gitter' && a.eingabe === 'linie', (a) => { a.beispiel = [a.beispiel[0], a.beispiel[0]]; }, 'Beispiel ist keine Linie', 30);
+  // Auswahl an Figuren und Vierecksnamen: Eine falsch angekreuzte Antwort fällt immer auf.
+  const GEBUNDEN = ['figurenwahl', 'achsenwahl', 'streckenwahl', 'punktwahl', 'lagewahl'];
+  const NAMEN = ['Quadrat', 'Rechteck', 'Raute', 'Parallelogramm', 'Trapez', 'Drachen'];
+  alle((a) => a.format === 'auswahl' && (a.nachweis?.some((n) => GEBUNDEN.includes(n?.art)) || (a.nachweis?.some((n) => n?.art === 'viereck') && a.optionen.every((o) => NAMEN.includes(o.text)))),
+    (a) => { const f = a.optionen.find((o) => !o.richtig); f.richtig = true; delete f.fehlvorstellung; if (!a.mehrfach) a.optionen.find((o) => o.richtig && o !== f).richtig = false; }, 'falsch angekreuzte Antwort', 40);
+  // Eine Ecke des Vierecks verrutscht: Name oder Eigenschaften stimmen nicht mehr.
+  alle((a) => a.bild?.art === 'gitter' && a.bild.figuren?.length === 1 && a.nachweis?.some((n) => n?.art === 'viereck' && n.typ && n.typ !== 'Viereck' && n.typ !== 'Trapez'),
+    (a) => { const e = a.bild.figuren[0].ecken[1]; e[0] += 1; const p = a.bild.punkte?.find((q) => q.n === 'B'); if (p) p.x += 1; }, 'verschobene Ecke', 20);
 });

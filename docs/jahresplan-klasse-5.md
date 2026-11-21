@@ -109,6 +109,8 @@ Offen: Ob D3 (zweistelliger Divisor) für alle Niveaus gilt oder nur ab M, bitte
 | 5.8 | Parallelogramm und Raute | Ich kann Parallelogramm und Raute erkennen, unterscheiden und zeichnen. |
 | 5.9 | Drachen und Trapez | Ich kann Drachen und Trapez erkennen, unterscheiden und zeichnen. |
 
+Seit Version 0.38 gibt es zu Kapitel 5 Aufgaben (ADR 0032): 16 Lernziele mit je 6 Aufgaben auf F, G, M und E. Zu 5.6 gehört auf Wunsch von Nils auch die Punktsymmetrie (Lernziel A3). 5.9 hat ein zweites Lernziel „Haus der Vierecke“ (V4), das die Vierecke nach ihren Eigenschaften ordnet. Gezeichnet wird am Bildschirm durch Antippen von Gitterpunkten, im Heft mit dem Geodreieck.
+
 ## Kapitel 6: Größen und Sachaufgaben
 
 | Nr. | Unterkapitel | Lernziel |

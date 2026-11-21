@@ -13,6 +13,8 @@ import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor
 import { aufgabenBild } from './aufgabenbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild } from './zahlenbilder.js';
+import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
+import { gitterLoesung } from './geo.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
 
@@ -984,6 +986,7 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'ordnen': return ordnenEingabe(auf, letzte, gesperrt);
     case 'zeichen': return zeichenEingabe(auf, letzte, gesperrt);
     case 'schaetzen': return zahlfeld('zahl', auf.einheit, letzte);
+    case 'gitter': return gitterEingabe(auf, letzte, gesperrt);
     default: return null;
   }
 }
@@ -1006,6 +1009,8 @@ function liesEingabe(auf, formular) {
     case 'ordnen': { const v = liesOrdnung(formular); return { eingabe: v, leer: formular.elements.ordnung?.dataset.bewegt !== '1' }; }
     case 'zeichen': { const v = feld('zeichen'); return { eingabe: v, leer: !v }; }
     case 'schaetzen': { const v = feld('zahl'); return { eingabe: v, leer: !v }; }
+    // Gitterzeichnen: Es fehlt etwas, solange nicht alle Punkte gesetzt sind (bei Kästchen: solange keines gefärbt ist).
+    case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
     default: return { eingabe: null, leer: true };
   }
 }
@@ -1081,6 +1086,7 @@ function loesungstext(auf) {
     case 'sachaufgabe': return auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
     case 'strichliste': return auf.zeilen.map((x) => `${x.name} ${x.loesung} Striche`).join(', ');
     case 'zeichnen': return auf.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
+    case 'gitter': return gitterLoesung(auf);
     default: return '';
   }
 }
@@ -1117,6 +1123,8 @@ export function wahreAnzahl(auf) {
 // Kapitel 1: Bei Strichliste und Diagramm zeigt ein Bild die Lösung.
 export function loesungsbild(auf) {
   if (auf.format === 'zeichnen') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, zeichnenLoesung(auf));
+  // Kapitel 5: das Gitter mit der eingezeichneten Lösung.
+  if (auf.format === 'gitter') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, gitterLoesungBild(auf));
   // Kapitel 2: Die ausgefüllte Stellenwerttafel.
   if (auf.tabelle?.art === 'stellentafel') {
     const t = auf.tabelle;

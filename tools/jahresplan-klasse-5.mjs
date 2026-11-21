@@ -130,15 +130,41 @@ const roh = [
     }, true),
   ]],
   ['Geometrische Grundbegriffe und ebene Figuren', [
-    uk('Strecke und Gerade', ['Ich kann die Begriffe Strecke und Gerade anwenden.']),
-    uk('Senkrechten', ['Ich kann Senkrechten erkennen und zeichnen.']),
-    uk('Parallelen', ['Ich kann Parallelen erkennen und zeichnen.']),
-    uk('Koordinatensystem', ['Ich kann Punkte im Koordinatensystem ablesen und darstellen.']),
-    uk('Entfernung und Abstand', ['Ich kann die Begriffe Entfernung und Abstand richtig anwenden.']),
-    uk('Symmetrie', ['Ich kann symmetrische Figuren erkennen und zeichnen.']),
-    uk('Rechteck und Quadrat', ['Ich kann Rechteck und Quadrat erkennen, unterscheiden und zeichnen.']),
-    uk('Parallelogramm und Raute', ['Ich kann Parallelogramm und Raute erkennen, unterscheiden und zeichnen.']),
-    uk('Drachen und Trapez', ['Ich kann Drachen und Trapez erkennen, unterscheiden und zeichnen.']),
+    // Feinere Lernziele (Nils, 2026-11-21, ADR 0032). Die Buchstaben meiden F, G, M und E, weil das die Niveaustufen sind.
+    uk('Strecke und Gerade', {
+      B1: 'Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.',
+      B2: 'Ich kann Strecken messen und in einer vorgegebenen Länge zeichnen.',
+    }),
+    uk('Senkrechten', {
+      S1: 'Ich kann erkennen, ob Linien senkrecht zueinander sind.',
+      S2: 'Ich kann Senkrechten zeichnen.',
+    }),
+    uk('Parallelen', {
+      P1: 'Ich kann erkennen, ob Linien parallel zueinander sind.',
+      P2: 'Ich kann Parallelen zeichnen, auch in einem vorgegebenen Abstand.',
+    }),
+    uk('Koordinatensystem', {
+      K1: 'Ich kann Punkte im Koordinatensystem ablesen.',
+      K2: 'Ich kann Punkte ins Koordinatensystem eintragen und Figuren daraus zeichnen.',
+    }),
+    uk('Entfernung und Abstand', {
+      D1: 'Ich kann Entfernungen und Abstände bestimmen und unterscheiden.',
+    }),
+    uk('Symmetrie', {
+      A1: 'Ich kann Symmetrieachsen erkennen und einzeichnen.',
+      A2: 'Ich kann Figuren zu achsensymmetrischen Figuren ergänzen.',
+      A3: 'Ich kann punktsymmetrische Figuren erkennen und ergänzen.',
+    }),
+    uk('Rechteck und Quadrat', {
+      V1: 'Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.',
+    }),
+    uk('Parallelogramm und Raute', {
+      V2: 'Ich kann Parallelogramm und Raute erkennen, beschreiben und ergänzen.',
+    }),
+    uk('Drachen und Trapez', {
+      V3: 'Ich kann Drachen und Trapez erkennen, beschreiben und ergänzen.',
+      V4: 'Ich kann Vierecke nach ihren Eigenschaften ordnen.',
+    }),
   ]],
   ['Größen und Sachaufgaben', [
     uk('Größen schätzen', ['Ich kann Größen schätzen.']),
@@ -174,6 +200,98 @@ const roh = [
 // Merkzettel je Station: die Regeln des Unterkapitels in Kürze, ein vorgerechnetes Beispiel und ein Hinweis fürs Heft.
 // Der Merkzettel ist frei zugänglich und kostet keine Münzen.
 export const merkzettel = {
+  // Kapitel 5 (Nils, 2026-11-21). Längen ohne Kommazahlen, im Heft sind 2 Kästchen 1 cm.
+  '5.5.1': {
+    regeln: [
+      'Eine Strecke ist eine gerade Linie mit zwei Endpunkten. Du kannst sie messen.',
+      'Ein Strahl hat einen Anfangspunkt und geht auf der anderen Seite immer weiter. Er heißt auch Halbgerade.',
+      'Eine Gerade hat keinen Anfang und kein Ende. Sie bekommt einen kleinen Buchstaben wie g oder h.',
+      'Die Strecke von A nach B schreibt man AB mit einem Strich darüber.',
+      'Messen: Lege die 0 des Lineals genau an den Anfang der Strecke. 1 cm sind 10 mm.',
+    ],
+    beispiel: 'Eine Strecke ist 4 cm 3 mm lang. Das sind 43 mm, denn 4 · 10 + 3 = 43.',
+    heft: 'Im Heft sind 2 Kästchen genau 1 cm lang. Zeichne immer mit Lineal und spitzem Bleistift.',
+  },
+  '5.5.2': {
+    regeln: [
+      'Zwei Linien sind senkrecht zueinander, wenn sie einen rechten Winkel bilden.',
+      'Senkrecht zueinander heißt nicht „von oben nach unten“. Auch schräge Linien können senkrecht zueinander sein.',
+      'Kurz schreibt man g ⊥ h. Im Bild zeigt ein kleiner Bogen mit Punkt den rechten Winkel.',
+      'Mit dem Geodreieck: Lege die Mittellinie auf die Gerade und zeichne an der langen Kante entlang.',
+    ],
+    beispiel: 'Am Karogitter: Geht eine Linie 2 Kästchen nach rechts und 1 nach oben, dann geht die Senkrechte dazu 1 Kästchen nach links und 2 nach oben.',
+    heft: 'Prüfe einen rechten Winkel mit der Ecke des Geodreiecks.',
+  },
+  '5.5.3': {
+    regeln: [
+      'Zwei Geraden sind parallel zueinander, wenn sie überall den gleichen Abstand haben. Sie schneiden sich nie.',
+      'Kurz schreibt man g ∥ h.',
+      'Parallele Linien müssen nicht gleich lang sein und nicht genau untereinander liegen.',
+      'Sind zwei Geraden senkrecht zu derselben Geraden, dann sind sie parallel zueinander.',
+    ],
+    beispiel: 'Am Karogitter: Gehen zwei Linien beide 3 Kästchen nach rechts und 1 nach oben, dann sind sie parallel.',
+    heft: 'Mit dem Geodreieck: Lege eine der parallelen Hilfslinien auf die Gerade und zeichne an der langen Kante entlang.',
+  },
+  '5.5.4': {
+    regeln: [
+      'Das Koordinatensystem hat zwei Achsen: die x-Achse nach rechts und die y-Achse nach oben.',
+      'Jeder Punkt hat zwei Koordinaten. Man schreibt sie so: P(3|5).',
+      'Die erste Zahl ist die x-Koordinate: so weit geht es nach rechts. Die zweite ist die y-Koordinate: so weit geht es nach oben.',
+      'Du beginnst immer im Ursprung, dem Punkt (0|0).',
+    ],
+    beispiel: 'P(3|5): vom Ursprung 3 nach rechts und dann 5 nach oben. Q(5|3) ist ein anderer Punkt.',
+    heft: 'Zeichne die Achsen mit Lineal, 2 Kästchen für eine Einheit. Beschrifte sie mit x und y.',
+  },
+  '5.5.5': {
+    regeln: [
+      'Die Entfernung zweier Punkte ist die Länge der Strecke zwischen ihnen.',
+      'Der Abstand eines Punktes von einer Geraden ist der kürzeste Weg zur Geraden.',
+      'Der kürzeste Weg steht immer senkrecht auf der Geraden.',
+      'Der Abstand zweier paralleler Geraden ist überall gleich. Du misst ihn auf einer Senkrechten.',
+    ],
+    beispiel: 'Der Punkt P liegt 4 Kästchen über der Geraden g. Sein Abstand von g ist 4 Kästchen, also 2 cm.',
+    heft: 'Miss einen Abstand mit dem Geodreieck: Die Mittellinie liegt auf der Geraden, die lange Kante geht durch den Punkt.',
+  },
+  '5.5.6': {
+    regeln: [
+      'Eine Figur ist achsensymmetrisch, wenn du sie so falten kannst, dass beide Hälften genau aufeinander liegen. Die Faltlinie ist die Symmetrieachse.',
+      'Punkt und Bildpunkt liegen gleich weit von der Symmetrieachse entfernt. Ihre Verbindung ist senkrecht zur Achse.',
+      'Eine Figur ist punktsymmetrisch, wenn sie nach einer halben Drehung um einen Punkt genauso aussieht wie vorher. Der Punkt heißt Symmetriezentrum.',
+      'Bei der Punktsymmetrie liegen Punkt und Bildpunkt auf einer Geraden durch das Symmetriezentrum, gleich weit davon entfernt.',
+    ],
+    beispiel: 'Ein Rechteck hat 2 Symmetrieachsen, ein Quadrat hat 4. Ein Parallelogramm hat keine Symmetrieachse, aber es ist punktsymmetrisch.',
+    heft: 'Spiegle Punkt für Punkt: Zähle die Kästchen bis zur Achse und genauso viele auf der anderen Seite.',
+  },
+  '5.5.7': {
+    regeln: [
+      'Ein Rechteck ist ein Viereck mit vier rechten Winkeln.',
+      'Im Rechteck sind gegenüberliegende Seiten parallel und gleich lang.',
+      'Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten.',
+      'Die Diagonalen eines Rechtecks sind gleich lang und halbieren sich. Im Quadrat sind sie außerdem senkrecht zueinander.',
+    ],
+    beispiel: 'Ein Viereck mit vier rechten Winkeln und den Seitenlängen 4 cm, 4 cm, 4 cm und 4 cm ist ein Quadrat und damit auch ein Rechteck.',
+    heft: 'Die Ecken eines Vierecks benennst du gegen den Uhrzeigersinn mit A, B, C und D.',
+  },
+  '5.5.8': {
+    regeln: [
+      'Ein Parallelogramm ist ein Viereck, bei dem gegenüberliegende Seiten parallel sind. Sie sind dann auch gleich lang.',
+      'Eine Raute ist ein Parallelogramm mit vier gleich langen Seiten.',
+      'Die Diagonalen eines Parallelogramms halbieren sich. In der Raute sind sie außerdem senkrecht zueinander.',
+      'Jedes Rechteck ist auch ein Parallelogramm. Jedes Quadrat ist auch eine Raute.',
+    ],
+    beispiel: 'Parallelogramm ABCD mit A(1|1), B(5|1) und C(7|4): Von B nach C geht es 2 nach rechts und 3 nach oben. Also liegt D bei (3|4).',
+    heft: 'Zeichne ein Parallelogramm am Karogitter: Gegenüberliegende Seiten gehen gleich viele Kästchen nach rechts und nach oben.',
+  },
+  '5.5.9': {
+    regeln: [
+      'Ein Trapez ist ein Viereck mit zwei parallelen Seiten.',
+      'Ein Drachen ist ein Viereck mit zwei Paaren gleich langer Nachbarseiten. Eine Diagonale ist seine Symmetrieachse.',
+      'Im Drachen sind die Diagonalen senkrecht zueinander.',
+      'Haus der Vierecke: Das Quadrat hat die meisten Eigenschaften. Es ist zugleich Rechteck, Raute, Parallelogramm, Trapez und Drachen.',
+    ],
+    beispiel: 'Ein Viereck mit genau einem Paar paralleler Seiten ist ein Trapez, aber kein Parallelogramm.',
+    heft: 'Prüfe ein Viereck der Reihe nach: parallele Seiten, gleich lange Seiten, rechte Winkel, Symmetrieachsen.',
+  },
   // Kapitel 2 (Nils, 2026-11-21). Große Zahlen stehen mit geschützter Lücke zwischen den Dreierblöcken.
   '5.2.1': {
     regeln: [
@@ -421,6 +539,76 @@ export const merkzettel = {
 // Eine Aufgabe zeigt nur die Wörter bis zu ihrer eigenen Stufe. Die Aufgabentexte einer Stufe benutzen keine Wörter höherer Stufen.
 const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
 export const wortspeicher = {
+  // Kapitel 5 (Nils, 2026-11-21): Ein Wort gilt im ganzen Kapitel ab der frühesten Stufe, die es hier bekommt.
+  '5.5.1': [
+    w('Punkt', 'F', 'Eine Stelle ohne Größe. Punkte bekommen große Buchstaben wie A oder P.'),
+    w('Strecke', 'F', 'Eine gerade Linie mit zwei Endpunkten. Man kann sie messen.'),
+    w('Gerade', 'F', 'Eine gerade Linie ohne Anfang und ohne Ende.'),
+    w('Gitterpunkt', 'F', 'Eine Stelle, an der sich zwei Linien des Karogitters kreuzen.'),
+    w('Strahl', 'G', 'Eine gerade Linie mit einem Anfangspunkt. Auf der anderen Seite geht sie immer weiter.'),
+    w('Endpunkt', 'G', 'Der Punkt, an dem eine Strecke aufhört.'),
+    w('Schnittpunkt', 'G', 'Der Punkt, in dem sich zwei Linien treffen.'),
+    w('Halbgerade', 'M', 'Ein anderes Wort für Strahl.'),
+  ],
+  '5.5.2': [
+    w('senkrecht', 'F', 'Zwei Linien sind senkrecht zueinander, wenn sie einen rechten Winkel bilden.'),
+    w('rechter Winkel', 'F', 'Die Ecke eines Blattes Papier. Das Geodreieck hat auch einen.'),
+    w('Geodreieck', 'F', 'Ein Dreieck aus Kunststoff zum Zeichnen und Messen.'),
+    w('Senkrechte', 'G', 'Eine Gerade, die zu einer anderen Geraden senkrecht ist.'),
+    w('Lot', 'M', 'Die Senkrechte durch einen Punkt auf eine Gerade.'),
+    w('orthogonal', 'E', 'Das Fachwort für senkrecht zueinander.'),
+  ],
+  '5.5.3': [
+    w('parallel', 'F', 'Zwei Linien sind parallel zueinander, wenn sie überall gleich weit auseinander liegen.'),
+    w('Parallele', 'G', 'Eine Gerade, die zu einer anderen Geraden parallel ist.'),
+    w('Hilfslinie', 'M', 'Eine dünne Linie, die nur beim Zeichnen hilft. Auf dem Geodreieck gibt es parallele Hilfslinien.'),
+  ],
+  '5.5.4': [
+    w('Koordinatensystem', 'F', 'Ein Gitter mit zwei Achsen. Damit lässt sich jeder Punkt genau angeben.'),
+    w('x-Achse', 'F', 'Die Achse nach rechts.'),
+    w('y-Achse', 'F', 'Die Achse nach oben.'),
+    w('Koordinate', 'G', 'Eine der beiden Zahlen eines Punktes. P(3|5) hat die x-Koordinate 3 und die y-Koordinate 5.'),
+    w('Ursprung', 'M', 'Der Punkt (0|0). Dort treffen sich die beiden Achsen.'),
+    w('Quadrant', 'E', 'Eines der vier Felder, in die die Achsen die Ebene teilen. Hier ist es immer das erste.'),
+  ],
+  '5.5.5': [
+    w('Entfernung', 'F', 'So weit sind zwei Punkte voneinander weg. Es ist die Länge der Strecke zwischen ihnen.'),
+    w('Abstand', 'F', 'Der kürzeste Weg von einem Punkt zu einer Geraden.'),
+    w('Luftlinie', 'G', 'Der gerade Weg zwischen zwei Orten, ohne Umwege.'),
+    w('Fußpunkt', 'M', 'Der Punkt, an dem das Lot die Gerade trifft.'),
+  ],
+  '5.5.6': [
+    w('symmetrisch', 'F', 'Eine Figur ist symmetrisch, wenn zwei Hälften genau zueinander passen.'),
+    w('Symmetrieachse', 'F', 'Die Faltlinie einer symmetrischen Figur.'),
+    w('Spiegelbild', 'F', 'Das, was auf der anderen Seite der Symmetrieachse entsteht.'),
+    w('achsensymmetrisch', 'G', 'Die Figur hat mindestens eine Symmetrieachse.'),
+    w('punktsymmetrisch', 'G', 'Die Figur sieht nach einer halben Drehung genauso aus wie vorher.'),
+    w('Bildpunkt', 'G', 'Der Punkt, der beim Spiegeln aus einem Punkt entsteht.'),
+    w('Symmetriezentrum', 'M', 'Der Punkt, um den eine punktsymmetrische Figur halb gedreht wird.'),
+    w('Punktspiegelung', 'E', 'Das Spiegeln an einem Punkt. Es ist dasselbe wie eine halbe Drehung.'),
+  ],
+  '5.5.7': [
+    w('Viereck', 'F', 'Eine Figur mit vier Ecken und vier Seiten.'),
+    w('Rechteck', 'F', 'Ein Viereck mit vier rechten Winkeln.'),
+    w('Quadrat', 'F', 'Ein Rechteck mit vier gleich langen Seiten.'),
+    w('Seite', 'F', 'Eine Strecke am Rand einer Figur.'),
+    w('Ecke', 'F', 'Ein Punkt, an dem zwei Seiten zusammentreffen.'),
+    w('Eigenschaft', 'G', 'Etwas, das auf eine Figur zutrifft, zum Beispiel: Sie hat vier rechte Winkel.'),
+    w('gegenüberliegend', 'G', 'Zwei Seiten liegen gegenüber, wenn sie keine Ecke gemeinsam haben.'),
+    w('Diagonale', 'M', 'Eine Strecke, die zwei gegenüberliegende Ecken verbindet.'),
+  ],
+  '5.5.8': [
+    w('Parallelogramm', 'F', 'Ein Viereck, bei dem die Seiten gegenüber parallel sind.'),
+    w('Raute', 'F', 'Ein Parallelogramm mit vier gleich langen Seiten.'),
+    w('Nachbarseiten', 'G', 'Zwei Seiten, die an einer Ecke zusammentreffen.'),
+    w('Sonderfall', 'M', 'Eine Figur mit noch mehr Eigenschaften. Das Quadrat ist ein Sonderfall des Rechtecks.'),
+  ],
+  '5.5.9': [
+    w('Trapez', 'F', 'Ein Viereck mit zwei parallelen Seiten.'),
+    w('Drachen', 'F', 'Ein Viereck, das wie ein Drachen zum Steigenlassen aussieht.'),
+    w('Schenkel', 'G', 'Die beiden Seiten eines Trapezes, die nicht parallel sind.'),
+    w('Drachenviereck', 'M', 'Das Fachwort für den Drachen: zwei Paare gleich langer Nachbarseiten.'),
+  ],
   // Kapitel 2: Ein kleingeschriebenes Wort wird als Wortstamm gesucht; deshalb stehen Verben nur ab F oder G.
   '5.2.1': [
     w('natürliche Zahlen', 'F', 'Die Zahlen 0, 1, 2, 3 und so weiter. Mit ihnen zählt man.'),
@@ -709,15 +897,23 @@ const voraussetzungen = {
   '5.4.1-K1': [],
   '5.4.2-M1': ['5.4.1-K1'],
   '5.4.5-D1': ['5.4.1-K2'],
-  '5.5.1-L1': [],
-  '5.5.2-L1': ['5.5.1-L1'],
-  '5.5.3-L1': ['5.5.2-L1'],
-  '5.5.4-L1': ['5.2.1-N1', '5.5.1-L1'],
-  '5.5.5-L1': ['5.5.2-L1'],
-  '5.5.6-L1': ['5.5.2-L1'],
-  '5.5.7-L1': ['5.5.2-L1', '5.5.3-L1'],
-  '5.5.8-L1': ['5.5.3-L1', '5.5.7-L1'],
-  '5.5.9-L1': ['5.5.6-L1', '5.5.8-L1'],
+  // Kapitel 5 (Nils, 2026-11-21): Das Zeichnen baut jeweils auf dem Erkennen auf.
+  '5.5.1-B1': [],
+  '5.5.1-B2': ['5.5.1-B1'],
+  '5.5.2-S1': ['5.5.1-B1'],
+  '5.5.2-S2': ['5.5.2-S1'],
+  '5.5.3-P1': ['5.5.2-S1'],
+  '5.5.3-P2': ['5.5.3-P1'],
+  '5.5.4-K1': ['5.2.1-N1'],
+  '5.5.4-K2': ['5.5.4-K1'],
+  '5.5.5-D1': ['5.5.2-S2'],
+  '5.5.6-A1': ['5.5.2-S1'],
+  '5.5.6-A2': ['5.5.6-A1'],
+  '5.5.6-A3': ['5.5.6-A1'],
+  '5.5.7-V1': ['5.5.2-S1', '5.5.3-P1'],
+  '5.5.8-V2': ['5.5.7-V1'],
+  '5.5.9-V3': ['5.5.6-A1', '5.5.8-V2'],
+  '5.5.9-V4': ['5.5.9-V3'],
   '5.6.1-L1': ['5.2.4-S1'],
   '5.6.2-L1': ['5.3.2-A2', '5.3.3-S2'],
   '5.6.3-L1': ['5.3.1-K1', '5.3.1-K2'],
@@ -727,14 +923,14 @@ const voraussetzungen = {
   '5.6.7-L1': ['5.6.2-L1', '5.4.6-T3'],
   '5.6.X1-L1': ['5.6.7-L1'],
   '5.7.1-L1': ['5.6.5-L1'],
-  '5.7.2-L1': ['5.5.1-L1'],
+  '5.7.2-L1': ['5.5.1-B1'],
   '5.7.3-L1': ['5.7.2-L1'],
   '5.7.4-L1': ['5.7.3-L1'],
-  '5.7.X1-L1': ['5.7.4-L1', '5.5.7-L1'],
-  '5.7.X2-L1': ['5.5.4-L1', '5.7.3-L1'],
-  '5.8.1-L1': ['5.5.7-L1'],
+  '5.7.X1-L1': ['5.7.4-L1', '5.5.7-V1'],
+  '5.7.X2-L1': ['5.5.4-K1', '5.7.3-L1'],
+  '5.8.1-L1': ['5.5.7-V1'],
   '5.8.2-L1': ['5.8.1-L1', '5.4.1-K3'],
-  '5.8.3-L1': ['5.8.2-L1', '5.4.2-M2', '5.5.7-L1'],
+  '5.8.3-L1': ['5.8.2-L1', '5.4.2-M2', '5.5.7-V1'],
   '5.8.4-L1': ['5.8.3-L1'],
   '5.9.1-L1': ['5.4.1-K2'],
   '5.9.2-L1': ['5.9.1-L1', '5.4.5-D2', '5.6.5-L1'],
@@ -779,6 +975,22 @@ const voraussetzungen = {
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F zu diesem Lernziel übt. Das Lehrer-Dashboard nennt ihn,
 // wenn ein Kind zum zweiten Mal auf die Grundlage zurückfällt. Die Zuordnung lehnt sich an „Mathe sicher können“ an.
 const grundlagen = {
+  '5.5.1-B1': 'Eine Linie mit zwei Endpunkten von einer Linie ohne Ende unterscheiden',
+  '5.5.1-B2': 'Die Länge einer Strecke am Lineal ablesen, die bei 0 beginnt, in ganzen Zentimetern',
+  '5.5.2-S1': 'Einen rechten Winkel am Karogitter erkennen: eine Linie waagerecht, eine senkrecht dazu',
+  '5.5.2-S2': 'Am Karogitter eine Linie entlang der Kästchen senkrecht zu einer anderen zeichnen',
+  '5.5.3-P1': 'Am Karogitter erkennen, ob zwei Linien überall gleich weit auseinander liegen',
+  '5.5.3-P2': 'Am Karogitter eine Linie entlang der Kästchen parallel zu einer anderen zeichnen',
+  '5.5.4-K1': 'Vom Nullpunkt aus die Schritte nach rechts und nach oben zählen',
+  '5.5.4-K2': 'Einen Punkt eintragen: erst nach rechts gehen, dann nach oben',
+  '5.5.5-D1': 'Kästchen zwischen zwei Punkten zählen, die genau nebeneinander oder übereinander liegen',
+  '5.5.6-A1': 'In Gedanken falten: Liegen beide Hälften genau aufeinander?',
+  '5.5.6-A2': 'Ein Kästchen an einer Achse spiegeln: gleich weit weg auf der anderen Seite',
+  '5.5.6-A3': 'Eine Figur in Gedanken halb herumdrehen und mit vorher vergleichen',
+  '5.5.7-V1': 'Vierecke mit vier rechten Winkeln am Karogitter erkennen',
+  '5.5.8-V2': 'Am Karogitter prüfen, ob Seiten gegenüber parallel sind',
+  '5.5.9-V3': 'Drachen und Trapez an ihrer Form erkennen',
+  '5.5.9-V4': 'Zwei Vierecke vergleichen: Was haben sie gemeinsam?',
   '5.1.1-H1': 'Dinge einzeln abzählen und für jedes einen Strich machen, der fünfte Strich geht quer',
   '5.1.1-H2': 'Gleiche Dinge in einer Liste zählen und die Anzahl in eine Tabelle schreiben',
   '5.1.2-L1': 'Eine Säule bis zur Linie verfolgen und die Zahl an der Achse ablesen, Einerschritte',

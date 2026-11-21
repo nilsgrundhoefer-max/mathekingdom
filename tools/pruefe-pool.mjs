@@ -16,12 +16,13 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
   'zeilen', 'buendeln', 'urliste', 'daten',
-  'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts'];
+  'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
+  'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz'];
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -115,7 +116,7 @@ const wortMuster = (wort) => (/^[A-ZÄÖÜ]/.test(wort)
 const pruefeZahl = (id, a, was = 'Lösung') => {
   if (!Number.isInteger(a.loesung) || a.loesung < 0) melde(id, `${was} ist keine natürliche Zahl`);
   for (const f of a.typischeFehler ?? []) {
-    if (f.wert === a.loesung) melde(id, 'typischer Fehler ist gleich der Lösung');
+    if (f.wert === a.loesung || (a.toleranz && Math.abs(f.wert - a.loesung) <= a.toleranz)) melde(id, 'typischer Fehler ist gleich der Lösung');
     if (!(f.fehlvorstellung in pool.fehlvorstellungen)) melde(id, `unbekannte Fehlvorstellung ${f.fehlvorstellung}`);
   }
   const werte = (a.typischeFehler ?? []).map((f) => f.wert);
@@ -153,6 +154,11 @@ function pruefeSprache(a) {
     if (stelle) melde(a.id, `Wort „${wort}“ steht erst ab Niveaustufe ${ab} im Wortspeicher („${stelle.replace(/\n/g, ' / ').slice(0, 70)}“)`);
   }
   if (stufe === 0 && mitHilfen.some((t) => /schriftlich/i.test(t))) melde(a.id, 'auf F wird nicht schriftlich gerechnet');
+  // Kapitel 5 (Nils, 2026-11-21): die Zeichen ⊥ und ∥ erst ab G, „orthogonal“ nur auf E, keine Kommazahlen.
+  if (a.lernziel.startsWith('5.5.')) {
+    if (stufe === 0 && mitHilfen.some((t) => /[⊥∥]/.test(t))) melde(a.id, 'die Zeichen ⊥ und ∥ gibt es erst ab G');
+    if (mitHilfen.some((t) => /\d,\d/.test(t))) melde(a.id, 'Kapitel 5 kommt ohne Kommazahlen aus');
+  }
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -340,6 +346,487 @@ function stufeEin(a, trifft, mindestens = 1) {
   }
   return richtige >= mindestens ? null : 'keine Antwort trifft zu';
 }
+
+// ---------- Kapitel 5: Geometrie auf dem Karogitter (ADR 0032) ----------
+// Eigene Rechnung des Prüfers. Ein Punkt ist [x, y] in Kästchen, die y-Achse zeigt nach oben. 1 Kästchen sind 5 mm.
+const gitterVon = (a) => a.gitter ?? (a.bild?.art === 'gitter' ? a.bild : null);
+const V = (p, q) => [q[0] - p[0], q[1] - p[1]];
+const det = (u, v) => u[0] * v[1] - u[1] * v[0];
+const sp = (u, v) => u[0] * v[0] + u[1] * v[1];
+const pGleich = (p, q) => Math.abs(p[0] - q[0]) < 1e-9 && Math.abs(p[1] - q[1]) < 1e-9;
+const mengeGleich = (A, B) => A.length === B.length && A.every((p) => B.some((q) => pGleich(p, q))) && B.every((p) => A.some((q) => pGleich(p, q)));
+const gPunkt = (g, n) => { const p = (g?.punkte ?? []).find((x) => x.n === n); return p ? [p.x, p.y] : null; };
+const gLinie = (g, n) => (g?.linien ?? []).find((l) => l.n === n) ?? null;
+const gFigur = (g, n) => (g?.figuren ?? []).find((f) => f.n === n) ?? null;
+const gAchse = (g) => { const l = (g?.linien ?? []).filter((x) => x.stil === 'achse'); return l.length === 1 ? l[0] : null; };
+const aufLinie = (x, a, b) => Math.abs(det(V(a, b), V(a, x))) < 1e-9;
+const lageZweier = (l1, l2) => { const u = V(l1.a, l1.b), v = V(l2.a, l2.b); return det(u, v) === 0 ? (det(u, V(l1.a, l2.a)) === 0 ? 'gleich' : 'parallel') : sp(u, v) === 0 ? 'senkrecht' : 'schraeg'; };
+const lotfuss = (p, l) => { const d = V(l.a, l.b), t = sp(V(l.a, p), d) / sp(d, d); return [l.a[0] + t * d[0], l.a[1] + t * d[1]]; };
+const spiegleAnLinie = (p, l) => { const f = lotfuss(p, l); return [2 * f[0] - p[0], 2 * f[1] - p[1]]; };
+const spiegleAnPunkt = (p, z) => [2 * z[0] - p[0], 2 * z[1] - p[1]];
+const imGitter = (g, p) => Array.isArray(p) && Number.isInteger(p[0]) && Number.isInteger(p[1]) && p[0] >= 0 && p[1] >= 0 && p[0] <= g.b && p[1] <= g.h;
+const ganzeWurzel = (q) => { const w = Math.round(Math.sqrt(q)); return w * w === q ? w : null; };
+const inEinheit = (k, einheit) => (k == null ? null : einheit === 'mm' ? k * 5 : einheit === 'cm' ? (k % 2 === 0 ? k / 2 : null) : k);
+const kantenBleiben = (ecken, f) => ecken.every((e, i) => { const [p, q] = [f(e), f(ecken[(i + 1) % ecken.length])];
+  return ecken.some((x, k) => { const y = ecken[(k + 1) % ecken.length]; return (pGleich(p, x) && pGleich(q, y)) || (pGleich(p, y) && pGleich(q, x)); }); });
+const schwerpunkt = (punkte) => [punkte.reduce((s_, p) => s_ + p[0], 0) / punkte.length, punkte.reduce((s_, p) => s_ + p[1], 0) / punkte.length];
+// Bildet die Abbildung f die Figur auf sich ab? Vieleck: Ecken auf Ecken und Seiten auf Seiten. Kästchen: Mitten auf Mitten.
+const bleibt = (figur, f) => (figur.zellen ? mengeGleich(figur.zellen.map(f), figur.zellen) : mengeGleich(figur.ecken.map(f), figur.ecken) && kantenBleiben(figur.ecken, f));
+// Eine Figur der Aufgabe: ein benanntes Vieleck oder die gefärbten Kästchen ('zellen', als Mittelpunkte).
+const figurVon = (g, wer) => (wer === 'zellen' ? (g?.zellen?.length ? { zellen: g.zellen.map(([x, y]) => [x + 0.5, y + 0.5]) } : null) : gFigur(g, wer));
+const mittePunkte = (figur) => { const p = figur.zellen ?? figur.ecken, xs = p.map((q) => q[0]), ys = p.map((q) => q[1]);
+  return figur.zellen ? [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2] : schwerpunkt(p); };
+// Alle Symmetrieachsen: Geraden durch die Mitte und eine Ecke oder Seitenmitte (bei Kästchen: waagerecht, senkrecht, beide Diagonalen).
+function achsenVon(figur) {
+  const c = mittePunkte(figur);
+  const ziele = figur.zellen ? [[c[0] + 1, c[1]], [c[0], c[1] + 1], [c[0] + 1, c[1] + 1], [c[0] + 1, c[1] - 1]]
+    : [...figur.ecken, ...figur.ecken.map((e, i) => schwerpunkt([e, figur.ecken[(i + 1) % figur.ecken.length]]))].filter((k) => !pGleich(k, c));
+  const achsen = [];
+  for (const k of ziele) {
+    const l = { a: c, b: k };
+    if (bleibt(figur, (p) => spiegleAnLinie(p, l)) && !achsen.some((x) => Math.abs(det(V(x.a, x.b), V(l.a, l.b))) < 1e-9)) achsen.push(l);
+  }
+  return achsen;
+}
+const istAchse = (figur, l) => bleibt(figur, (p) => spiegleAnLinie(p, l));
+const punktsymmetrisch = (figur) => { const c = mittePunkte(figur); return bleibt(figur, (p) => spiegleAnPunkt(p, c)); };
+// Viereck aus vier Ecken in ihrer Reihenfolge: Eigenschaften und alle Namen, die zutreffen (ein Quadrat ist auch Rechteck, Raute, Parallelogramm, Trapez und Drachen).
+function viereckVon(e) {
+  if (!Array.isArray(e) || e.length !== 4) return null;
+  const s_ = [0, 1, 2, 3].map((i) => V(e[i], e[(i + 1) % 4])), l2 = s_.map((v) => sp(v, v));
+  const k = [0, 1, 2, 3].map((i) => det(s_[i], s_[(i + 1) % 4]));
+  const konvex = k.every((x) => x > 0) || k.every((x) => x < 0);
+  const par = [det(s_[0], s_[2]) === 0, det(s_[1], s_[3]) === 0], rechte = [0, 1, 2, 3].filter((i) => sp(s_[i], s_[(i + 1) % 4]) === 0).length;
+  const gleichlang = l2.every((x) => x === l2[0]), d1 = V(e[0], e[2]), d2 = V(e[1], e[3]);
+  const drachen = (l2[0] === l2[3] && l2[1] === l2[2]) || (l2[0] === l2[1] && l2[2] === l2[3]);
+  const typen = new Set(['Viereck']);
+  if (par[0] || par[1]) typen.add('Trapez');
+  if (par[0] && par[1]) typen.add('Parallelogramm');
+  if (rechte === 4) typen.add('Rechteck');
+  if (gleichlang) typen.add('Raute');
+  if (rechte === 4 && gleichlang) typen.add('Quadrat');
+  if (drachen) typen.add('Drachen');
+  const genau = ['Quadrat', 'Rechteck', 'Raute', 'Parallelogramm', 'Drachen', 'Trapez', 'Viereck'].find((t) => typen.has(t));
+  return { ok: konvex, typen, genau, parallelPaare: par.filter(Boolean).length, rechteWinkel: rechte, gleichlang, gegenGleich: l2[0] === l2[2] && l2[1] === l2[3],
+    diagonalenGleich: sp(d1, d1) === sp(d2, d2), diagonalenSenkrecht: sp(d1, d2) === 0, diagonalenHalbieren: pGleich(schwerpunkt([e[0], e[2]]), schwerpunkt([e[1], e[3]])),
+    achsen: achsenVon({ ecken: e }).length, punktsymmetrisch: punktsymmetrisch({ ecken: e }) };
+}
+// Trifft eine Eigenschaft auf eine Figur zu? „nicht …“ kehrt um, „genau …“ meint den engsten Namen des Vierecks.
+function figurHat(figur, was) {
+  if (was.includes(' und ')) { const w = was.split(' und ').map((x) => figurHat(figur, x)); return w.includes(undefined) ? undefined : w.every(Boolean); }
+  if (was.startsWith('nicht ')) { const w = figurHat(figur, was.slice(6)); return w === undefined ? undefined : !w; }
+  if (was === 'achsensymmetrisch') return achsenVon(figur).length > 0;
+  if (was === 'punktsymmetrisch') return punktsymmetrisch(figur);
+  const m = was.match(/^(\d) Achsen?$/);
+  if (m) return achsenVon(figur).length === Number(m[1]);
+  const v = figur.ecken && viereckVon(figur.ecken);
+  if (!v) return undefined;
+  if (was.startsWith('genau ')) return v.genau === was.slice(6);
+  if (v.typen.has(was) || ['Quadrat', 'Rechteck', 'Raute', 'Parallelogramm', 'Trapez', 'Drachen'].includes(was)) return v.typen.has(was);
+  return typeof v[was] === 'boolean' ? v[was] : undefined;
+}
+// Gitterzeichnen einer Linie: Erfüllen die beiden Punkte die Bedingung?
+function linieErfuellt(bed, p, q) {
+  if (!p || !q || pGleich(p, q)) return false;
+  const r = V(p, q);
+  switch (bed.art) {
+    case 'strecke': return mengeGleich([p, q], [bed.a, bed.b]);
+    case 'gerade': return aufLinie(p, bed.a, bed.b) && aufLinie(q, bed.a, bed.b);
+    case 'eine': return bed.linien.some(([a, b]) => aufLinie(p, a, b) && aufLinie(q, a, b));
+    case 'senkrecht': return sp(r, V(...bed.zu)) === 0 && (!bed.durch || aufLinie(bed.durch, p, q));
+    case 'parallel': { const z = V(...bed.zu);
+      return det(r, z) === 0 && !aufLinie(p, ...bed.zu) && (!bed.durch || aufLinie(bed.durch, p, q)) && (bed.abstand == null || det(z, V(bed.zu[0], p)) ** 2 === bed.abstand ** 2 * sp(z, z)); }
+    case 'laenge': return sp(r, r) === bed.laenge ** 2 && (!bed.von || pGleich(p, bed.von) || pGleich(q, bed.von)) && (!bed.auf || (aufLinie(p, ...bed.auf) && aufLinie(q, ...bed.auf)));
+    default: return false;
+  }
+}
+// Aufbau eines Gitters (als Bild oder als Eingabe). Liefert den ersten Mangel oder null.
+function gitterMangel(g) {
+  if (!ganz(g?.b, 3, 18) || !ganz(g?.h, 3, 14)) return 'Größe passt nicht';
+  const drin = (p) => Array.isArray(p) && p.length === 2 && p.every((x) => Number.isInteger(x * 2)) && p[0] >= 0 && p[1] >= 0 && p[0] <= g.b && p[1] <= g.h;
+  for (const p of g.punkte ?? []) if (!drin([p.x, p.y]) || !/^[A-Z]['′]?$/.test(p.n ?? '')) return `Punkt ${p.n} liegt außerhalb oder hat keinen Namen`;
+  for (const l of g.linien ?? []) { if (!drin(l.a) || !drin(l.b) || pGleich(l.a, l.b)) return 'Linie liegt außerhalb'; if (!['gerade', 'strecke', 'strahl'].includes(l.art)) return 'Linie ohne Art'; }
+  for (const f of g.figuren ?? []) if (!Array.isArray(f.ecken) || f.ecken.length < 3 || !f.ecken.every(drin)) return 'Figur liegt außerhalb';
+  for (const z of g.zellen ?? []) if (!ganz(z?.[0], 0, g.b - 1) || !ganz(z?.[1], 0, g.h - 1)) return 'Kästchen liegt außerhalb';
+  for (const [was, namen] of [['Punkt', (g.punkte ?? []).map((p) => p.n)], ['Linie', (g.linien ?? []).map((l) => l.n).filter(Boolean)], ['Figur', (g.figuren ?? []).map((f) => f.n).filter(Boolean)]]) if (new Set(namen).size !== namen.length) return `${was} doppelt benannt`;
+  for (const r of g.rechte ?? []) if (!drin(r.p) || sp(r.u, r.v) !== 0) return 'Zeichen für den rechten Winkel steht an keinem rechten Winkel';
+  if (g.zentrum && !drin(g.zentrum)) return 'Symmetriezentrum liegt außerhalb';
+  if ((g.linien ?? []).filter((l) => l.stil === 'achse').length > 1) return 'mehr als eine Symmetrieachse';
+  return null;
+}
+const KOORD = /\((\d+)\|(\d+)\)/g;
+const koordIn = (text) => [...String(text).matchAll(KOORD)].map((m) => [Number(m[1]), Number(m[2])]);
+const LAGEWORT = { senkrecht: /senkrecht|Senkrechte|orthogonal|⊥|Lot|rechte[nr]? Winkel/, parallel: /parallel|Parallele|∥/ };
+
+const ARTWORT = { gerade: 'Gerade', strecke: 'Strecke', strahl: 'Strahl' };
+const schnittpunktVon = (l1, l2) => { const u = V(l1.a, l1.b), v = V(l2.a, l2.b), d = det(u, v); if (d === 0) return null; const t = det(V(l1.a, l2.a), v) / d; return [l1.a[0] + t * u[0], l1.a[1] + t * u[1]]; };
+const GEO_SONDER = {
+  // Strecke, Strahl oder Gerade? Antworten nennen Linien („Linie a“) oder die drei Namen. Zuordnen: links die Linie, rechts ihr Name.
+  linienart: (n, a) => {
+    const g = gitterVon(a);
+    if (n.linie) {
+      const l = gLinie(g, n.linie);
+      if (!l || l.art !== n.was) return `Linie ${n.linie} ist ${l?.art ?? 'nicht im Bild'}, nicht ${n.was}`;
+      if (a.format === 'auswahl' && a.optionen.every((o) => Object.values(ARTWORT).includes(o.text))) return stufeEin(a, (t) => t === ARTWORT[n.was]);
+      return null;
+    }
+    if (a.format === 'zuordnen') { for (const p of a.paare) if (ARTWORT[gLinie(g, p.links.replace(/^Linie /, ''))?.art] !== p.rechts) return `${p.links} ist kein(e) ${p.rechts}`; return null; }
+    return stufeEin(a, (t) => { if (/^Kein/.test(t)) return !(g.linien ?? []).some((l) => l.art === n.was); const l = gLinie(g, t.replace(/^Linie /, '')); return l ? l.art === n.was : undefined; });
+  },
+  linienzahl: (n, a) => { const k = (gitterVon(a)?.linien ?? []).filter((l) => l.art === n.was).length; return k === n.wert ? null : `im Bild sind ${k}, nicht ${n.wert}`; },
+  // So viele Verbindungen (Strecken, Geraden, Schnittpunkte) gibt es höchstens zwischen n Dingen: jedes mit jedem.
+  verbindungen: (n, a) => {
+    const k = n.n ?? (gitterVon(a)?.punkte ?? []).length;
+    if (n.n != null && !zahlenIn(a.text).includes(n.n) && !/zwei|drei|vier|fünf|sechs/.test(a.text)) return `${n.n} steht nicht im Text`;
+    return k * (k - 1) / 2 === n.wert ? null : `es sind ${k * (k - 1) / 2}, nicht ${n.wert}`;
+  },
+  // Der Schnittpunkt zweier Linien (benannt oder durch je zwei benannte Punkte) ist ein Gitterpunkt und die Lösung.
+  schnittpunkt: (n, a) => {
+    const g = gitterVon(a), linien = n.linien ? n.linien.map((x) => gLinie(g, x)) : n.punkte.map(([p, q]) => ({ a: gPunkt(g, p), b: gPunkt(g, q) }));
+    if (linien.some((l) => !l?.a || !l?.b)) return 'Linie fehlt im Bild';
+    const sch = schnittpunktVon(...linien);
+    if (!sch || !imGitter(g, sch.map((x) => Math.round(x * 1e6) / 1e6))) return 'kein Schnittpunkt auf einem Gitterpunkt';
+    if (a.format === 'gitter') return mengeGleich([sch], a.loesung) ? null : `der Schnittpunkt ist (${sch})`;
+    if (n.x != null && (n.x !== sch[0] || n.y !== sch[1])) return `der Schnittpunkt ist (${sch}), nicht (${n.x}|${n.y})`;
+    if (n.luecken) { const [lx, ly] = n.luecken.map((k) => a.luecken?.[k]?.loesung); if (lx !== sch[0] || ly !== sch[1]) return 'Lücken passen nicht zum Schnittpunkt'; }
+    if (a.format === 'auswahl' && a.optionen.every((o) => koordIn(o.text).length === 1)) return stufeEin(a, (t) => pGleich(koordIn(t)[0], sch));
+    return null;
+  },
+  // Antworten nennen Punkte oder Koordinaten. Richtig ist jeder, der auf der Linie von `von` durch `durch` liegt (Gerade, Strahl oder Strecke) oder die Bedingung an seine Koordinaten erfüllt.
+  punktwahl: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.von), q = gPunkt(g, n.durch), l = n.linie ? gLinie(g, n.linie) : null;
+    const trifft = (x) => {
+      if (n.linie || n.linienart) {
+        const [a_, b_] = l ? [l.a, l.b] : [p, q], art = l?.art ?? n.linienart;
+        if (!a_ || !b_) return undefined;
+        if (!aufLinie(x, a_, b_)) return false;
+        const t = sp(V(a_, x), V(a_, b_)) / sp(V(a_, b_), V(a_, b_));
+        return art === 'gerade' ? true : art === 'strahl' ? t >= 0 : t >= 0 && t <= 1;
+      }
+      return { x: x[0] === n.wert, y: x[1] === n.wert, 'x=y': x[0] === x[1], 'x>y': x[0] > x[1], 'x<y': x[0] < x[1] }[n.was];
+    };
+    return stufeEin(a, (t) => { if (/^Kein/.test(t)) return !(g.punkte ?? []).some((x) => ![n.von, n.durch].includes(x.n) && trifft([x.x, x.y])); const x = gPunkt(g, t.replace(/^Punkt /, '')) ?? (koordIn(t).length === 1 ? koordIn(t)[0] : null); return x ? trifft(x) : undefined; });
+  },
+  // Schrittmuster am Karogitter: Die Schritte u und v gehören zu senkrechten oder parallelen Linien.
+  schritt: (n) => (n.lage === 'senkrecht' ? sp(n.u, n.v) === 0 : det(n.u, n.v) === 0) && (n.u[0] || n.u[1]) && (n.v[0] || n.v[1]) ? null : `die Schritte (${n.u}) und (${n.v}) sind nicht ${n.lage}`,
+  // Antworten nennen Ecken („Bei A“). Richtig ist die Ecke des Dreiecks mit dem rechten Winkel.
+  rechterWinkel: (n, a) => {
+    const g = gitterVon(a), e = n.ecken.map((x) => gPunkt(g, x));
+    if (e.length !== 3 || e.some((x) => !x)) return 'Dreieck fehlt im Bild';
+    const recht = (i) => sp(V(e[i], e[(i + 1) % 3]), V(e[i], e[(i + 2) % 3])) === 0;
+    return stufeEin(a, (t) => { if (/keiner/.test(t)) return ![0, 1, 2].some(recht); const i = n.ecken.indexOf(t.replace(/^Bei /, '').replace(/\.$/, '')); return i < 0 ? undefined : recht(i); });
+  },
+  // Antworten nennen Punkte. Richtig ist jeder Punkt X, für den die Linie durch `durch` und X zur Linie durch `von` und `durch` die Lage hat.
+  lagepunkt: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.von), q = gPunkt(g, n.durch), b = n.ab ? gPunkt(g, n.ab) : q;
+    if (!p || !q || !b) return 'Punkt fehlt im Bild';
+    return stufeEin(a, (t) => { const x = gPunkt(g, t.replace(/^Punkt /, '')); if (!x || pGleich(x, b)) return undefined; return n.lage === 'senkrecht' ? sp(V(p, q), V(b, x)) === 0 : det(V(p, q), V(b, x)) === 0 && !aufLinie(x, p, q); });
+  },
+  // Zwei benannte Linien stehen senkrecht, parallel oder schräg zueinander. Antworten „senkrecht“, „parallel“, „weder noch“ werden eingestuft.
+  lage: (n, a) => {
+    const g = gitterVon(a), [l1, l2] = (n.linien ?? []).map((x) => gLinie(g, x));
+    if (!l1 || !l2) return 'Linie fehlt im Bild';
+    const ist = lageZweier(l1, l2);
+    if (ist !== n.lage) return `${n.linien.join(' und ')} sind ${ist}, nicht ${n.lage}`;
+    const wort = (t) => (/[Ww]eder|keins|nichts/.test(t) ? 'schraeg' : /^(Sie sind )?senkrecht|^⊥/.test(t) ? 'senkrecht' : /^(Sie sind )?parallel|^∥/.test(t) ? 'parallel' : undefined);
+    if (a.format === 'auswahl' && a.optionen.every((o) => wort(o.text) !== undefined)) return stufeEin(a, (t) => wort(t) === ist);
+    return null;
+  },
+  // Antworten nennen Paare von Linien („g und h“, „g ⊥ h“, „g ∥ h“). Richtig ist ein Paar genau dann, wenn es die Lage hat.
+  lagewahl: (n, a) => {
+    const g = gitterVon(a), benannt = (g?.linien ?? []).filter((l) => l.n);
+    const paare = benannt.flatMap((l1, i) => benannt.slice(i + 1).map((l2) => lageZweier(l1, l2)));
+    return stufeEin(a, (t) => {
+      if (/^Kein/.test(t)) return !paare.includes(n.lage);
+      const m = t.match(/^([a-z]) (und|⊥|∥) ([a-z])(?![a-zäöü])/);
+      if (!m) return undefined;
+      const [l1, l2] = [gLinie(g, m[1]), gLinie(g, m[3])];
+      if (!l1 || !l2) return undefined;
+      const ist = lageZweier(l1, l2);
+      // Ein Zeichen in der Antwort behauptet selbst eine Lage.
+      return m[2] === '⊥' ? ist === 'senkrecht' && n.lage === 'senkrecht' : m[2] === '∥' ? ist === 'parallel' && n.lage === 'parallel' : ist === n.lage;
+    });
+  },
+  // Antworten nennen einzelne Linien. Richtig ist eine Linie genau dann, wenn sie zur genannten Linie die Lage hat.
+  lagezu: (n, a) => {
+    const g = gitterVon(a), zu = gLinie(g, n.zu);
+    if (!zu) return 'Linie fehlt im Bild';
+    return stufeEin(a, (t) => { if (/^Kein/.test(t)) return !(g.linien ?? []).some((l) => l.n && l.n !== n.zu && lageZweier(l, zu) === n.lage); const l = gLinie(g, t.replace(/^(Gerade|Strecke|Linie) /, '')); return l ? lageZweier(l, zu) === n.lage : undefined; });
+  },
+  // So viele der anderen benannten Linien haben zur genannten Linie die Lage.
+  lagezuZahl: (n, a) => {
+    const g = gitterVon(a), zu = gLinie(g, n.zu);
+    if (!zu) return 'Linie fehlt im Bild';
+    const k = (g.linien ?? []).filter((l) => l.n && l.n !== n.zu && lageZweier(l, zu) === n.lage).length;
+    return k === n.wert ? null : `es sind ${k} Linien, nicht ${n.wert}`;
+  },
+  // So viele Paare benannter Linien haben die Lage.
+  lagezahl: (n, a) => {
+    const benannt = (gitterVon(a)?.linien ?? []).filter((l) => l.n);
+    const k = benannt.flatMap((l1, i) => benannt.slice(i + 1).map((l2) => lageZweier(l1, l2))).filter((x) => x === n.lage).length;
+    return k === n.wert ? null : `es sind ${k} Paare, nicht ${n.wert}`;
+  },
+  // Koordinaten eines benannten Punktes. Lücken, Antworten mit Koordinaten oder mit Punktnamen werden daran geprüft.
+  koordinaten: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.punkt);
+    if (!g?.achsen) return 'kein Koordinatensystem';
+    if (!p) return `Punkt ${n.punkt} fehlt im Bild`;
+    if (p[0] !== n.x || p[1] !== n.y) return `${n.punkt} liegt bei (${p[0]}|${p[1]}), nicht bei (${n.x}|${n.y})`;
+    if (n.luecken) { const [lx, ly] = n.luecken.map((k) => a.luecken?.[k]?.loesung); if (lx !== p[0] || ly !== p[1]) return `Lücken ${n.luecken.join(', ')} passen nicht zu (${p[0]}|${p[1]})`; }
+    if (a.format === 'auswahl' && a.optionen.every((o) => koordIn(o.text).length === 1)) return stufeEin(a, (t) => pGleich(koordIn(t)[0], p));
+    if (a.format === 'auswahl' && a.optionen.every((o) => gPunkt(g, o.text.replace(/^Punkt /, '')))) return stufeEin(a, (t) => pGleich(gPunkt(g, t.replace(/^Punkt /, '')), p));
+    return null;
+  },
+  // Zuordnen: links ein Punktname, rechts seine Koordinaten.
+  koordinatenpaare: (n, a) => {
+    const g = gitterVon(a);
+    if (a.format !== 'zuordnen' || !g?.achsen) return 'braucht Zuordnen und ein Koordinatensystem';
+    for (const p of a.paare) { const q = gPunkt(g, p.links), k = koordIn(p.rechts)[0]; if (!q || !k || !pGleich(q, k)) return `${p.links} liegt nicht bei ${p.rechts}`; }
+    return null;
+  },
+  // Die vierte Ecke eines Parallelogramms (also auch Rechtecks) ABCD aus A, B und C: D = A + C − B.
+  vierteEcke: (n, a) => {
+    const g = gitterVon(a), [p, q, r] = n.ecken.map((x) => gPunkt(g, x) ?? koordIn(a.text)[['A', 'B', 'C'].indexOf(x)]);
+    if (!p || !q || !r) return 'Ecke fehlt';
+    const d = [p[0] + r[0] - q[0], p[1] + r[1] - q[1]];
+    if (d[0] !== n.x || d[1] !== n.y) return `die vierte Ecke ist (${d}), nicht (${n.x}|${n.y})`;
+    if (n.luecken) { const [lx, ly] = n.luecken.map((k) => a.luecken?.[k]?.loesung); if (lx !== d[0] || ly !== d[1]) return 'Lücken passen nicht zur vierten Ecke'; }
+    return null;
+  },
+  // Gitterzeichnen: ein Punkt, der von einem benannten Punkt aus um einen Schritt versetzt liegt.
+  versetzt: (n, a) => { const p = gPunkt(a.gitter, n.punkt); return p && a.loesung?.length === 1 && pGleich(a.loesung[0], [p[0] + n.schritt[0], p[1] + n.schritt[1]]) ? null : 'Lösung ist nicht der versetzte Punkt'; },
+  // Gitterzeichnen: Die benannten Punkte haben immer denselben Schritt; einzutragen sind die nächsten `anzahl` Punkte.
+  muster: (n, a) => {
+    const p = n.punkte.map((x) => gPunkt(a.gitter, x));
+    if (p.some((x) => !x) || p.length < 3) return 'Punkte fehlen im Bild';
+    const d = V(p[0], p[1]);
+    if (p.slice(1).some((x, i) => !pGleich(V(p[i], x), d))) return 'die Punkte haben keinen festen Schritt';
+    const soll = Array.from({ length: n.anzahl }, (_, i) => [p.at(-1)[0] + (i + 1) * d[0], p.at(-1)[1] + (i + 1) * d[1]]);
+    return mengeGleich(soll, a.loesung) ? null : 'Lösung setzt das Muster nicht fort';
+  },
+  // Gitterzeichnen: Der Punkt `mitte` ist die Mitte zwischen `von` und dem gesuchten Punkt.
+  mitteUmkehr: (n, a) => { const p = gPunkt(a.gitter, n.von), m_ = gPunkt(a.gitter, n.mitte); return p && m_ && a.loesung?.length === 1 && pGleich(a.loesung[0], spiegleAnPunkt(p, m_)) ? null : 'Lösung ist nicht der zweite Endpunkt'; },
+  // Gitterzeichnen: Rechteck mit Seiten entlang der Achsen aus zwei gegenüberliegenden Ecken.
+  achsenRechteck: (n, a) => { const p = gPunkt(a.gitter, n.a), q = gPunkt(a.gitter, n.c); return p && q && p[0] !== q[0] && p[1] !== q[1] && mengeGleich(a.loesung, [[q[0], p[1]], [p[0], q[1]]]) ? null : 'Lösung sind nicht die beiden fehlenden Ecken'; },
+  // Gitterzeichnen: alle Gitterpunkte mit einer festen Koordinate, die andere liegt zwischen `von` und `bis` (beide eingeschlossen).
+  bereich: (n, a) => { const soll = []; for (let k = n.von; k <= n.bis; k++) soll.push(n.fest === 'x' ? [n.wert, k] : [k, n.wert]); return n.bis > n.von && mengeGleich(soll, a.loesung) ? null : 'Lösung ist nicht genau die Menge der Punkte'; },
+  // Gitterzeichnen: Die Punkte aus dem Text sind einzutragen.
+  eintragen: (n, a) => {
+    if (a.format !== 'gitter' || a.eingabe !== 'punkte') return 'braucht Gitterzeichnen mit Punkten';
+    if (!a.gitter?.achsen) return 'kein Koordinatensystem';
+    const imText = koordIn(a.text);
+    for (const p of n.punkte) if (!imText.some((q) => pGleich(p, q))) return `(${p[0]}|${p[1]}) steht nicht im Text`;
+    return mengeGleich(n.punkte, a.loesung) ? null : 'Lösung ist nicht genau die Menge der Punkte aus dem Text';
+  },
+  // Spiegeln an der Achse oder am Zentrum. von: Urbilder (Punkte oder Ecken im Bild). Bei Kästchen wird die gefärbte Figur gespiegelt.
+  spiegeln: (n, a) => {
+    const g = gitterVon(a), achse = gAchse(g);
+    if (n.an === 'achse' ? !achse : !g?.zentrum) return 'Achse oder Zentrum fehlt im Bild';
+    const f = (p) => (n.an === 'achse' ? spiegleAnLinie(p, achse) : spiegleAnPunkt(p, g.zentrum));
+    if (a.eingabe === 'zellen') {
+      const mitten = g.zellen.map(([x, y]) => [x + 0.5, y + 0.5]), bilder = mitten.map(f).filter((p) => !mitten.some((q) => pGleich(p, q))).map(([x, y]) => [x - 0.5, y - 0.5]);
+      if (bilder.some((p) => !ganz(p[0], 0, g.b - 1) || !ganz(p[1], 0, g.h - 1))) return 'ein Bildkästchen liegt außerhalb';
+      return mengeGleich(bilder, a.loesung) ? null : 'Lösung ist nicht das Spiegelbild der gefärbten Kästchen';
+    }
+    const vorhanden = [...(g.punkte ?? []).map((p) => [p.x, p.y]), ...(g.figuren ?? []).flatMap((x) => x.ecken), ...(g.linien ?? []).filter((l) => l.stil !== 'achse').flatMap((l) => [l.a, l.b])];
+    for (const p of n.von) if (!vorhanden.some((q) => pGleich(p, q))) return `Urbild (${p}) steht nicht im Bild`;
+    const bilder = n.von.map(f);
+    if (bilder.some((p) => !imGitter(g, p))) return 'ein Bildpunkt liegt nicht auf einem Gitterpunkt';
+    if (n.bild) {
+      if (n.von.length !== 1 || !pGleich(bilder[0], n.bild)) return `Bildpunkt ist (${bilder[0]}), nicht (${n.bild})`;
+      if (n.luecken) { const [lx, ly] = n.luecken.map((k) => a.luecken?.[k]?.loesung); if (lx !== n.bild[0] || ly !== n.bild[1]) return 'Lücken passen nicht zum Bildpunkt'; }
+      if (a.format === 'auswahl' && a.optionen.every((o) => koordIn(o.text).length === 1)) return stufeEin(a, (t) => pGleich(koordIn(t)[0], n.bild));
+      if (a.format === 'auswahl' && a.optionen.every((o) => gPunkt(g, o.text.replace(/^Punkt /, '')))) return stufeEin(a, (t) => pGleich(gPunkt(g, t.replace(/^Punkt /, '')), n.bild));
+      return null;
+    }
+    if (a.format !== 'gitter') return 'braucht Gitterzeichnen oder einen Bildpunkt';
+    // Punkte auf der Achse bleiben liegen und werden nicht noch einmal gesetzt.
+    const neu = bilder.filter((p, i) => !pGleich(p, n.von[i]));
+    return mengeGleich(neu, a.loesung) ? null : 'Lösung ist nicht die Menge der Bildpunkte';
+  },
+  // Ein Viereck (oder Vieleck) ergänzen: Die Ecken in ihrer Reihenfolge, genau ein Punkt fehlt, und nur ein Gitterpunkt ergibt die verlangte Figur.
+  ergaenzen: (n, a) => {
+    const g = a.gitter;
+    if (a.format !== 'gitter' || a.eingabe !== 'punkte' || a.loesung.length !== 1) return 'braucht Gitterzeichnen mit genau einem Punkt';
+    const gegeben = (g.punkte ?? []).map((p) => [p.x, p.y]), i = n.ecken.findIndex((e) => pGleich(e, a.loesung[0]));
+    if (i < 0 || n.ecken.length !== 4) return 'der gesuchte Punkt ist keine Ecke';
+    for (const [k, e] of n.ecken.entries()) if (k !== i && !gegeben.some((q) => pGleich(q, e))) return `Ecke (${e}) steht nicht im Bild`;
+    const passt = (p) => { const v = viereckVon(n.ecken.map((e, k) => (k === i ? p : e))); return v.ok && (n.genau ? v.genau === n.typ : v.typen.has(n.typ)); };
+    if (!passt(a.loesung[0])) return `mit der Lösung entsteht kein ${n.typ}`;
+    let andere = 0;
+    for (let x = 0; x <= g.b; x++) for (let y = 0; y <= g.h; y++) if (!pGleich([x, y], a.loesung[0]) && !gegeben.some((q) => pGleich(q, [x, y])) && passt([x, y])) andere++;
+    return andere ? `${andere} weitere Gitterpunkte ergeben auch ein ${n.typ}` : null;
+  },
+  // Der Punkt einer Linie, der einem Punkt am nächsten liegt (Fußpunkt des Lots), oder die Mitte zwischen zwei Punkten.
+  lotfuss: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.punkt), l = n.punkte ? { a: gPunkt(g, n.punkte[0]), b: gPunkt(g, n.punkte[1]) } : gLinie(g, n.linie);
+    if (!p || !l?.a || !l?.b) return 'Punkt oder Linie fehlt im Bild';
+    const f = lotfuss(p, l);
+    if (!imGitter(g, f)) return 'der Fußpunkt ist kein Gitterpunkt';
+    if (a.format === 'gitter') return mengeGleich([f], a.loesung) ? null : `der Fußpunkt ist (${f})`;
+    if (a.format === 'auswahl') return stufeEin(a, (t) => { const q = gPunkt(g, t.replace(/^(Punkt |Strecke [A-Z])/, '').slice(-1)); return q ? pGleich(q, f) : undefined; });
+    return null;
+  },
+  mitte: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.von), q = gPunkt(g, n.nach);
+    if (!p || !q) return 'Punkt fehlt im Bild';
+    const m_ = schwerpunkt([p, q]);
+    if (a.format === 'gitter') return mengeGleich([m_], a.loesung) ? null : `die Mitte ist (${m_})`;
+    if (n.x != null && (n.x !== m_[0] || n.y !== m_[1])) return `die Mitte ist (${m_}), nicht (${n.x}|${n.y})`;
+    if (n.luecken) { const [lx, ly] = n.luecken.map((k) => a.luecken?.[k]?.loesung); if (lx !== m_[0] || ly !== m_[1]) return 'Lücken passen nicht zur Mitte'; }
+    return null;
+  },
+  // Gitterzeichnen einer Linie: Das Beispiel erfüllt die Bedingung, die typischen Fehler erfüllen sie nicht, und alles Genannte steht im Bild.
+  linie: (n, a) => {
+    if (a.format !== 'gitter' || a.eingabe !== 'linie') return 'braucht Gitterzeichnen mit einer Linie';
+    const g = a.gitter, bed = a.bedingung, punkte = (g.punkte ?? []).map((p) => [p.x, p.y]), text = sichtbareTexte(a).join(' ');
+    const imBild = (p) => punkte.some((q) => pGleich(p, q)) || koordIn(text).some((q) => pGleich(p, q)) || (/Mitte|Mittelpunkt/.test(text) && punkte.some((q, i) => punkte.slice(i + 1).some((r) => pGleich(schwerpunkt([q, r]), p))));
+    const linieImBild = ([p, q]) => (g.linien ?? []).some((l) => aufLinie(p, l.a, l.b) && aufLinie(q, l.a, l.b)) || (imBild(p) && imBild(q)) || (g.figuren ?? []).some((f) => f.ecken.some((e, i) => mengeGleich([e, f.ecken[(i + 1) % f.ecken.length]], [p, q])));
+    if (!linieErfuellt(bed, ...a.beispiel)) return 'das Beispiel erfüllt die Bedingung nicht';
+    if (bed.zu && !linieImBild(bed.zu)) return 'die Bezugslinie steht nicht im Bild';
+    if (bed.auf && !linieImBild(bed.auf)) return 'die Linie, auf der gezeichnet wird, steht nicht im Bild';
+    for (const k of ['durch', 'von']) if (bed[k] && !imBild(bed[k])) return `der Punkt (${bed[k]}) steht nicht im Bild`;
+    if (bed.art === 'strecke' && !(imBild(bed.a) && imBild(bed.b))) return 'die Endpunkte stehen nicht im Bild oder im Text';
+    if (LAGEWORT[bed.art] && !LAGEWORT[bed.art].test(text)) return `der Text verlangt keine Linie, die ${bed.art} ist`;
+    for (const k of ['abstand', 'laenge']) if (bed[k] != null && ![bed[k], bed[k] * 5, bed[k] / 2].some((z) => zahlenIn(text).includes(z)) && !(a.nachweis ?? []).some((z) => typeof z === 'string' && z.endsWith(`= ${bed[k]}`))) return `${k === 'abstand' ? 'der Abstand' : 'die Länge'} ${bed[k]} Kästchen steht nicht im Text`;
+    for (const f of a.typischeFehler ?? []) if (f.beispiel && (!linieErfuellt(f.bedingung, ...f.beispiel) || linieErfuellt(bed, ...f.beispiel))) return 'ein typischer Fehler passt nicht zu seinem Beispiel oder ist selbst richtig';
+    return null;
+  },
+  // Die Symmetrieachse(n) einer Figur zeichnen: Die Bedingung nennt genau alle Achsen der Figur.
+  achseZeichnen: (n, a) => {
+    const figur = figurVon(a.gitter, n.figur);
+    if (!figur || a.eingabe !== 'linie') return 'Figur fehlt oder keine Linie verlangt';
+    const achsen = achsenVon(figur), genannt = a.bedingung.art === 'eine' ? a.bedingung.linien : a.bedingung.art === 'gerade' ? [[a.bedingung.a, a.bedingung.b]] : [];
+    if (!achsen.length || achsen.length !== genannt.length) return `die Figur hat ${achsen.length} Achsen, genannt sind ${genannt.length}`;
+    for (const [p, q] of genannt) if (!achsen.some((l) => aufLinie(p, l.a, l.b) && aufLinie(q, l.a, l.b))) return 'eine genannte Linie ist keine Symmetrieachse';
+    return linieErfuellt(a.bedingung, ...a.beispiel) ? null : 'das Beispiel ist keine Achse';
+  },
+  // Länge einer Strecke zwischen zwei benannten Punkten, Abstand eines Punktes von einer Linie, Abstand zweier Parallelen.
+  strecke: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.von), q = gPunkt(g, n.nach);
+    if (!p || !q) return 'Punkt fehlt im Bild';
+    const w = inEinheit(ganzeWurzel(sp(V(p, q), V(p, q))), n.einheit);
+    return w === n.wert ? null : `die Strecke ist ${w ?? 'nicht ganzzahlig'}, nicht ${n.wert}`;
+  },
+  // Antworten nennen Strecken („Strecke AB“). Richtig ist die längste oder die kürzeste.
+  streckenwahl: (n, a) => {
+    const g = gitterVon(a), lang = (t) => { const m_ = t.match(/^Strecke ([A-Z])([A-Z])$/), p = m_ && gPunkt(g, m_[1]), q = m_ && gPunkt(g, m_[2]); return p && q ? sp(V(p, q), V(p, q)) : null; };
+    const alle = a.optionen.map((o) => lang(o.text));
+    if (alle.some((x) => x == null)) return 'eine Antwort ist keine Strecke im Bild';
+    const ziel = n.was === 'laengste' ? Math.max(...alle) : Math.min(...alle);
+    if (alle.filter((x) => x === ziel).length !== 1) return 'nicht eindeutig';
+    return stufeEin(a, (t) => lang(t) === ziel);
+  },
+  abstand: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.punkt), l = gLinie(g, n.linie);
+    if (!p || !l) return 'Punkt oder Linie fehlt im Bild';
+    const f = lotfuss(p, l), q = sp(V(p, f), V(p, f)), w = inEinheit(Math.abs(q - Math.round(q)) < 1e-9 ? ganzeWurzel(Math.round(q)) : null, n.einheit);
+    return w === n.wert ? null : `der Abstand ist ${w ?? 'nicht ganzzahlig'}, nicht ${n.wert}`;
+  },
+  abstandLinien: (n, a) => {
+    const g = gitterVon(a), [l1, l2] = n.linien.map((x) => gLinie(g, x));
+    if (!l1 || !l2 || lageZweier(l1, l2) !== 'parallel') return 'die Linien fehlen oder sind nicht parallel';
+    const f = lotfuss(l1.a, l2), q = sp(V(l1.a, f), V(l1.a, f)), w = inEinheit(Math.abs(q - Math.round(q)) < 1e-9 ? ganzeWurzel(Math.round(q)) : null, n.einheit);
+    return w === n.wert ? null : `der Abstand ist ${w ?? 'nicht ganzzahlig'}, nicht ${n.wert}`;
+  },
+  // Gitterzeichnen: alle Gitterpunkte, die von jeder genannten Linie den genannten Abstand (in Kästchen) haben.
+  abstandspunkte: (n, a) => {
+    const g = a.gitter, soll = [];
+    for (let x = 0; x <= g.b; x++) for (let y = 0; y <= g.h; y++) if (n.bedingungen.every(([name, d]) => { const l = gLinie(g, name); if (!l) return false; const f = lotfuss([x, y], l); return Math.abs(sp(V([x, y], f), V([x, y], f)) - d * d) < 1e-9; })) soll.push([x, y]);
+    return soll.length && mengeGleich(soll, a.loesung) ? null : `Lösung ist nicht genau die Menge der ${soll.length} Punkte`;
+  },
+  // Abstand eines Punktes von den Achsen: von der x-Achse so weit wie seine y-Koordinate und umgekehrt.
+  achsenabstand: (n, a) => { const p = gPunkt(gitterVon(a), n.punkt) ?? koordIn(a.text)[0]; return p && p[1] === n.xAchse && p[0] === n.yAchse ? null : 'Abstände passen nicht zu den Koordinaten'; },
+  // So viele Gitterpunkte des Bildes haben von einem Punkt genau diese Entfernung (in Kästchen).
+  entfernungspunkte: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.punkt); let k = 0;
+    if (!p) return 'Punkt fehlt im Bild';
+    for (let x = 0; x <= g.b; x++) for (let y = 0; y <= g.h; y++) if (sp(V(p, [x, y]), V(p, [x, y])) === n.wert ** 2) k++;
+    return k === n.anzahl ? null : `es sind ${k} Gitterpunkte, nicht ${n.anzahl}`;
+  },
+  // Lineal: Die Strecke ist so lang wie der Unterschied der beiden abgelesenen Stellen.
+  messen: (n, a) => {
+    const b = a.bild;
+    if (b?.art !== 'lineal') return 'kein Lineal';
+    if (b.bis - b.von !== n.wert) return `die Strecke ist ${b.bis - b.von} mm lang, nicht ${n.wert}`;
+    if (n.cm != null && (n.cm * 10 + (n.mm ?? 0) !== n.wert || (n.mm ?? 0) > 9)) return 'cm und mm passen nicht zur Länge';
+    return null;
+  },
+  // Rechtwinkliges Dreieck im Heft: Aus zwei Strecken im rechten Winkel ergibt sich die dritte.
+  dreieck: (n) => (n.a * n.a + n.b * n.b === n.c * n.c && n.a > 0 && n.b > 0 ? null : `${n.a}, ${n.b} und ${n.c} bilden kein rechtwinkliges Dreieck`),
+  // So viele Symmetrieachsen hat die Figur. Ist die Figur punktsymmetrisch? Ist eine benannte Linie eine Symmetrieachse?
+  achsen: (n, a) => {
+    const figur = figurVon(gitterVon(a), n.figur);
+    if (!figur) return 'Figur fehlt im Bild';
+    const k = achsenVon(figur).length;
+    return k === n.wert ? null : `die Figur hat ${k} Symmetrieachsen, nicht ${n.wert}`;
+  },
+  punktsymmetrie: (n, a) => {
+    const figur = figurVon(gitterVon(a), n.figur);
+    if (!figur) return 'Figur fehlt im Bild';
+    return punktsymmetrisch(figur) === n.wert ? null : `die Figur ist ${n.wert ? 'nicht ' : ''}punktsymmetrisch`;
+  },
+  istAchse: (n, a) => {
+    const g = gitterVon(a), figur = figurVon(g, n.figur), l = gLinie(g, n.linie);
+    if (!figur || !l) return 'Figur oder Linie fehlt im Bild';
+    return istAchse(figur, l) === n.wert ? null : `${n.linie} ist ${n.wert ? 'keine' : 'eine'} Symmetrieachse`;
+  },
+  // Gitterzeichnen: ein Punkt, erst an der ersten, dann an der zweiten genannten Linie gespiegelt.
+  doppelspiegelung: (n, a) => {
+    const g = a.gitter, p = gPunkt(g, n.punkt), [l1, l2] = n.linien.map((x) => gLinie(g, x));
+    if (!p || !l1 || !l2) return 'Punkt oder Linie fehlt im Bild';
+    return a.loesung?.length === 1 && pGleich(a.loesung[0], spiegleAnLinie(spiegleAnLinie(p, l1), l2)) ? null : 'Lösung ist nicht der doppelt gespiegelte Punkt';
+  },
+  // Gitterzeichnen einer Linie: die Symmetrieachse zu zwei Punkten (jeder Punkt der Linie ist von beiden gleich weit entfernt).
+  mittelsenkrechte: (n, a) => {
+    const g = a.gitter, p = gPunkt(g, n.von), q = gPunkt(g, n.nach), bed = a.bedingung;
+    if (!p || !q || bed?.art !== 'gerade') return 'Punkte fehlen oder keine Gerade verlangt';
+    const gleichWeit = (x) => sp(V(x, p), V(x, p)) === sp(V(x, q), V(x, q));
+    return gleichWeit(bed.a) && gleichWeit(bed.b) && !pGleich(bed.a, bed.b) && linieErfuellt(bed, ...a.beispiel) ? null : 'die Linie ist nicht die Symmetrieachse der beiden Punkte';
+  },
+  // Gitterzeichnen: das Symmetriezentrum einer punktsymmetrischen Figur.
+  zentrum: (n, a) => {
+    const figur = figurVon(a.gitter, n.figur);
+    if (!figur || !punktsymmetrisch(figur)) return 'Figur fehlt oder ist nicht punktsymmetrisch';
+    return a.loesung?.length === 1 && pGleich(a.loesung[0], mittePunkte(figur)) ? null : 'Lösung ist nicht das Symmetriezentrum';
+  },
+  // Antworten nennen Linien. Richtig ist jede, die Symmetrieachse der Figur ist.
+  achsenwahl: (n, a) => {
+    const g = gitterVon(a), figur = figurVon(g, n.figur);
+    if (!figur) return 'Figur fehlt im Bild';
+    return stufeEin(a, (t) => { if (/^Kein/.test(t)) return !(g.linien ?? []).some((l) => l.n && istAchse(figur, l)); const l = gLinie(g, t.replace(/^(Gerade|Linie) /, '')); return l ? istAchse(figur, l) : undefined; });
+  },
+  // Antworten nennen Figuren („Figur A“). Richtig ist jede, auf die die Eigenschaft zutrifft.
+  figurenwahl: (n, a) => {
+    const g = gitterVon(a);
+    return stufeEin(a, (t) => {
+      if (/^Kein/.test(t)) return !(g.figuren ?? []).some((f) => figurHat(f, n.was));
+      const f = gFigur(g, t.match(/^Figur ([A-Z])$/)?.[1]);
+      return f ? figurHat(f, n.was) : undefined;
+    });
+  },
+  // Ein Viereck im Bild: sein engster Name und seine Eigenschaften. Antworten, die Vierecksnamen sind, werden eingestuft.
+  viereck: (n, a) => {
+    const g = gitterVon(a), f = n.figur ? gFigur(g, n.figur) : null, e = f?.ecken ?? (n.ecken ?? []).map((x) => gPunkt(g, x));
+    if (e.length !== 4 || e.some((x) => !x)) return 'Viereck fehlt im Bild';
+    const v = viereckVon(e);
+    if (!v.ok) return 'kein gewöhnliches Viereck';
+    if (n.typ && v.genau !== n.typ) return `das Viereck ist ein ${v.genau}, kein ${n.typ}`;
+    for (const k of ['parallelPaare', 'rechteWinkel', 'achsen', 'gleichlang', 'gegenGleich', 'diagonalenGleich', 'diagonalenSenkrecht', 'diagonalenHalbieren', 'punktsymmetrisch']) if (n[k] != null && v[k] !== n[k]) return `${k} ist ${v[k]}, nicht ${n[k]}`;
+    const NAMEN = ['Quadrat', 'Rechteck', 'Raute', 'Parallelogramm', 'Trapez', 'Drachen'];
+    if (a.format === 'auswahl' && a.optionen.every((o) => NAMEN.includes(o.text))) return stufeEin(a, (t) => (a.mehrfach ? v.typen.has(t) : v.genau === t));
+    return null;
+  },
+};
+const GEO_ERGEBNIS = {
+  achsenabstand: (n) => [n.xAchse, n.yAchse], entfernungspunkte: (n) => n.anzahl,
+  lagezuZahl: (n) => n.wert,
+  schritt: (n) => n.v.map(Math.abs),
+  linienzahl: (n) => n.wert, verbindungen: (n) => n.wert, schnittpunkt: (n) => [n.x, n.y].filter((x) => x != null), vierteEcke: (n) => [n.x, n.y],
+  lagezahl: (n) => n.wert, koordinaten: (n) => [n.x, n.y], spiegeln: (n) => n.bild ?? [], mitte: (n) => [n.x, n.y].filter((x) => x != null), strecke: (n) => n.wert, abstand: (n) => n.wert, abstandLinien: (n) => n.wert,
+  messen: (n) => [n.wert, n.cm, n.mm].filter((x) => x != null), dreieck: (n) => n.c, achsen: (n) => n.wert,
+  viereck: (n) => ['parallelPaare', 'rechteWinkel', 'achsen'].map((k) => n[k]).filter((x) => typeof x === 'number'),
+};
 
 const SONDER = {
   // Kapitel 2: die Ziffer an einer Stelle der Zahl.
@@ -871,6 +1358,8 @@ const ERGEBNIS = {
   rundungsgrenze: (n) => [n.kleinste, n.groesste].filter((x) => x != null), dual: (n) => n.wert, roemisch: (n) => n.wert, tafel: (n) => n.zahl, bildwert: (n) => n.wert,
   kombination: (n) => n.anzahl, uebertrag: (n) => n.aufgaben.filter((_, i) => n.mit[i]).map((x) => x[0]), ersteUnterschreitung: (n) => n.anzahl, quadrat: (n) => n.wurzel, zahlenpaar: (n) => n.paar,
 };
+Object.assign(SONDER, GEO_SONDER);
+Object.assign(ERGEBNIS, GEO_ERGEBNIS);
 const zahlenImObjekt = (x) => (typeof x === 'number' ? [x] : typeof x === 'string' ? zahlenIn(x) : x && typeof x === 'object' ? Object.values(x).flatMap(zahlenImObjekt) : []);
 
 // Zahlen, die ein Bild zeigt (ohne die Unbekannten).
@@ -897,13 +1386,15 @@ function bildZahlen(b) {
     case 'strichliste': return b.zeilen.map(strichzahl);
     case 'tafel': { const z = b.werte.filter((x) => !istFrage(x)).map((x) => x ?? 0); return [...(b.weitere ?? []).flatMap((zeile) => [...zeile.map((x) => x ?? 0), zeile.reduce((s, x) => s * (b.basis ?? 10) + (x ?? 0), 0)]), ...z, b.werte.some(istFrage) ? null : b.werte.reduce((s, x) => s * (b.basis ?? 10) + (x ?? 0), 0), ...b.spalten.flatMap(zahlenIn)].filter((x) => x != null); }
     case 'schaetzbild': { const alle = b.felder.flat(), n = alle.reduce((x, y) => x + y, 0); return [alle.length, b.felder.length, b.felder[0].length, n, ...(b.markiert ? [b.felder[b.markiert[0]][b.markiert[1]]] : []), ...(b.grob ? [b.grob[0] * b.grob[1]] : [])]; }
+    case 'gitter': return zahlenImObjekt({ ...b, linien: (b.linien ?? []).map((l) => [l.a, l.b]), punkte: (b.punkte ?? []).map((q) => [q.x, q.y]), figuren: (b.figuren ?? []).map((f) => f.ecken) });
+    case 'lineal': return [0, b.von, b.bis, b.bis - b.von, b.lang, b.lang / 10, Math.floor(b.von / 10), Math.floor(b.bis / 10), b.bis % 10, b.von % 10];
     case 'zeichentafel': return b.zeichen.map((z) => ({ I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 })[z]);
     default: return [];
   }
 }
 
 function pruefeNachweis(a) {
-  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen'].includes(a.format);
+  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter'].includes(a.format);
   if (!a.nachweis) {
     if (pflicht) melde(a.id, 'Nachweis fehlt');
     if ((a.optionen ?? []).some((o) => polaritaet(o.text) !== null) && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -917,7 +1408,7 @@ function pruefeNachweis(a) {
   const frei = a.format === 'auswahl' || a.format === 'zuordnen'; // Beispiele zu einer allgemeinen Aussage sind frei wählbar
   const eingesetzt = a.format === 'luecken' ? a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken?.[n]?.loesung ?? '?') : '';
   const bekannt = new Set([10, 100, 1000, ...sichtbareTexte(a).flatMap(zahlenIn), ...bildZahlen(a.bild),
-    ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenIn(eingesetzt), ...zahlenImObjekt(a.daten), ...(a.karten ?? []).flatMap(zahlenIn),
+    ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenIn(eingesetzt), ...zahlenImObjekt(a.daten), ...(a.karten ?? []).flatMap(zahlenIn), ...bildZahlen(a.gitter && { ...a.gitter, art: 'gitter' }), ...zahlenImObjekt(a.bedingung),
     ...(a.format === 'strichliste' ? a.zeilen.map((z) => z.start ?? 0) : []),
     ...(['luecken', 'tabelle'].includes(a.format) ? loesungen : []),
     // Ab M gehören kleine Zahlen zum Text („doppelt“, „dreimal“, „die Hälfte“).
@@ -1007,7 +1498,7 @@ function pruefeNachweis(a) {
     if (stellen.length && stellen.every(weiter)) melde(a.id, `Lösung ${a.loesung} ist im Nachweis nur ein Zwischenergebnis`);
   }
   // Jede Zahl aus dem Text gehört zur Rechnung: Sie steht im Nachweis oder im Bild, oder sie ist als Hilfszahl mit Grund genannt.
-  const benutzt = new Set([...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild), ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenImObjekt(a.daten)]);
+  const benutzt = new Set([...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild), ...bildZahlen(a.gitter && { ...a.gitter, art: 'gitter' }), ...zahlenImObjekt(a.bedingung), ...(a.format === 'gitter' ? zahlenImObjekt(a.loesung) : []), ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenImObjekt(a.daten)]);
   const mitUrteil = a.nachweis.some((n) => n?.art === 'urteil');
   // Kapitel 2: Die 0 ist dort Stoff („von 0 bis 1000“, „eine 0 an der Zehnerstelle“) und keine Rechenzahl.
   const nullFrei = a.lernziel.startsWith('5.2.');
@@ -1058,7 +1549,8 @@ function pruefeAblesefrage(a) {
 }
 
 // Auswahlaufgaben: Die richtige Antwort muss an den Nachweis gebunden sein.
-const ARTEN_AUSWAHL = ['zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
+const ARTEN_GEO = ['vierteEcke', 'lagezuZahl', 'schritt', 'rechterWinkel', 'lagepunkt', 'streckenwahl', 'linienart', 'linienzahl', 'verbindungen', 'schnittpunkt', 'punktwahl', 'lage', 'lagewahl', 'lagezu', 'lagezahl', 'koordinaten', 'spiegeln', 'lotfuss', 'strecke', 'abstand', 'abstandLinien', 'messen', 'achsen', 'punktsymmetrie', 'istAchse', 'achsenwahl', 'figurenwahl', 'viereck'];
+const ARTEN_AUSWAHL = [...ARTEN_GEO, 'zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
   'zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen'];
 function pruefeAuswahlNachweis(a, ergebnisse) {
   const arten = a.nachweis.filter((n) => typeof n === 'object').map((n) => n.art);
@@ -1067,7 +1559,7 @@ function pruefeAuswahlNachweis(a, ergebnisse) {
   // Zahlen in der richtigen Antwort stehen im Text oder im Nachweis.
   const erlaubt = new Set([...zahlenIn(a.text), ...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild)]);
   // Rechnet eine Sonderart jede Antwort selbst nach, sind deren Zahlen schon geprüft.
-  const selbstGeprueft = arten.some((x) => ['zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'extremwert', 'gleichungen', 'wert', 'extrem', 'zahlenwahl', 'paarsumme', 'gleicheWerte', 'restBleibt', 'quotientUeber', 'ueberschlagVon', 'datenwahl', 'einteilung', 'zeile', 'mangel', 'rangfolge'].includes(x));
+  const selbstGeprueft = arten.some((x) => [...ARTEN_GEO, 'zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'extremwert', 'gleichungen', 'wert', 'extrem', 'zahlenwahl', 'paarsumme', 'gleicheWerte', 'restBleibt', 'quotientUeber', 'ueberschlagVon', 'datenwahl', 'einteilung', 'zeile', 'mangel', 'rangfolge'].includes(x));
   if (!selbstGeprueft) for (const o of richtige) for (const z of zahlenIn(o.text)) if (!erlaubt.has(z)) melde(a.id, `Zahl ${z} in der richtigen Antwort kommt weder im Text noch im Nachweis vor`);
   // Antworten mit Zustimmung oder Ablehnung brauchen ein Urteil.
   if (a.optionen.some((o) => polaritaet(o.text) !== null) && !arten.includes('urteil') && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -1307,6 +1799,11 @@ function pruefeBild(a) {
         kern.push({ wert: n, teile: [alle.length, ...(b.markiert ? [b.felder[b.markiert[0]][b.markiert[1]]] : [n])] });
       break;
     }
+    case 'gitter': { const mangel = gitterMangel(b); if (mangel) m(mangel); break; }
+    case 'lineal': {
+      if (!ganz(b.lang, 50, 120) || b.lang % 10 !== 0 || !ganz(b.von, 0, b.lang) || !ganz(b.bis, 1, b.lang) || b.von >= b.bis) m('Strecke passt nicht auf das Lineal');
+      break;
+    }
     default: m('unbekannte Bildart');
   }
   // Kapitel 1: Nennen Text und Bildtitel eine Klasse, ist es dieselbe.
@@ -1325,7 +1822,7 @@ function pruefeBild(a) {
 }
 // Formate, die das Dashboard selbst zeichnet (Zahlenstrahl, Diagramm, Rechenraster, Zahlenmauer, Malkreuz), zählen wie ein Bild.
 // Kapitel 1: Strichliste und Säulen zeichnen, auch die Antwortkärtchen einer Umfrage (Urliste).
-const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel'].includes(a.tabelle?.art);
+const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel'].includes(a.tabelle?.art);
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -1387,6 +1884,23 @@ function pruefeFormat(a) {
   } else if (a.format === 'sachaufgabe') {
     if ((a.teile?.length ?? 0) < 2) melde(a.id, 'Sachaufgabe braucht mindestens zwei Teile');
     for (const t of a.teile ?? []) { if (!t.text?.trim()) melde(a.id, 'Teilfrage fehlt'); pruefeZahl(a.id, t); }
+  } else if (a.format === 'gitter') {
+    // Kapitel 5: Gitterzeichnen. Punkte und Kästchen sind Mengen von Gitterpunkten, eine Linie hat eine Bedingung und ein Beispiel.
+    const g = a.gitter, mangel = gitterMangel(g);
+    if (mangel) { melde(a.id, `Gitter: ${mangel}`); return; }
+    if (a.bild) melde(a.id, 'Gitterzeichnen zeigt schon ein Gitter und braucht kein weiteres Bild');
+    for (const f of a.typischeFehler ?? []) if (!(f.fehlvorstellung in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${f.fehlvorstellung}`);
+    if (a.eingabe === 'linie') {
+      if (!['gerade', 'strecke'].includes(a.linie)) melde(a.id, 'Gitter: linie muss gerade oder strecke sein');
+      if (!a.bedingung?.art || !Array.isArray(a.beispiel) || a.beispiel.length !== 2 || !a.beispiel.every((q) => imGitter(g, q))) melde(a.id, 'Gitter: Bedingung oder Beispiel fehlt');
+      for (const f of a.typischeFehler ?? []) if (!f.bedingung?.art) melde(a.id, 'Gitter: typischer Fehler ohne Bedingung');
+    } else if (a.eingabe === 'punkte' || a.eingabe === 'zellen') {
+      const zellen = a.eingabe === 'zellen', drin = (q) => (zellen ? ganz(q?.[0], 0, g.b - 1) && ganz(q?.[1], 0, g.h - 1) : imGitter(g, q));
+      if (!Array.isArray(a.loesung) || a.loesung.length < 1 || a.loesung.length > (zellen ? 40 : 8) || !a.loesung.every(drin)) melde(a.id, 'Gitter: Lösung liegt nicht im Gitter');
+      else if (new Set(a.loesung.map(String)).size !== a.loesung.length) melde(a.id, 'Gitter: Punkt in der Lösung doppelt');
+      if (zellen && a.loesung.some((q) => (g.zellen ?? []).some((z) => pGleich(q, z)))) melde(a.id, 'Gitter: Ein Kästchen der Lösung ist schon gefärbt');
+      for (const f of a.typischeFehler ?? []) if (!Array.isArray(f.punkte) || !f.punkte.every(drin) || mengeGleich(f.punkte, a.loesung ?? [])) melde(a.id, 'Gitter: typischer Fehler liegt außerhalb oder ist gleich der Lösung');
+    } else melde(a.id, 'Gitter: eingabe muss punkte, linie oder zellen sein');
   } else if (a.format === 'zahlenstrahl') {
     pruefeZahl(a.id, a);
     const st = a.strahl ?? {};

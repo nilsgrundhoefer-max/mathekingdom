@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.38 vom 21.11.2026
+
+### Schüler
+
+- Kapitel 5 „Geometrische Grundbegriffe und ebene Figuren“ ist da: Strecke und Gerade, Senkrechten, Parallelen, Koordinatensystem, Entfernung und Abstand, Symmetrie und die Vierecke. Das sind 384 neue Aufgaben auf allen vier Niveaus.
+- Neu ist das Gitterzeichnen: Du tippst Gitterpunkte an, und das Programm zeichnet die Strecke, die Gerade oder die Figur. Es geht mit der Maus, mit dem Finger oder mit den Pfeiltasten und der Leertaste.
+- Beim Spiegeln färbst du Kästchen oder setzt Eckpunkte. Nach der Aufgabe siehst du die Lösung im Bild.
+- Bei manchen Aufgaben zeichnest du im Heft mit dem Geodreieck und tippst zur Kontrolle eine gemessene Länge ein. 2 mm daneben zählen noch als richtig.
+
+### Lehrkraft
+
+- Kapitel 5 hat 16 Lernziele mit je 6 Aufgaben auf F, G, M und E. Tor 5 öffnen Sie wie gewohnt unter Tore.
+- Gemessen wird am Lineal im Bild und an Kästchen (2 Kästchen sind 1 cm), ohne Kommazahlen. Koordinaten bleiben im ersten Quadranten.
+- Bei 5.5.6 gehört die Punktsymmetrie dazu. Vierecke werden über Seiten, rechte Winkel und Symmetrieachsen beschrieben, Diagonalen erst ab M. Ein Trapez hat mindestens ein Paar paralleler Seiten (Haus der Vierecke).
+- 17 neue Fehlvorstellungen für die Geometrie erscheinen in der Auswertung, zum Beispiel „Diagonale als Symmetrieachse“ und „verschoben statt gespiegelt“.
+
 ## 0.37 vom 21.11.2026
 
 ### Schüler

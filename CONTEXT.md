@@ -94,6 +94,18 @@ _Avoid_: Wimmelbild, Foto
 Der Bereich um die wahre Anzahl eines Schätzbilds, in dem eine Schätzung ab M als richtig gilt. Auf F und G zählt stattdessen der Rechenweg: Anzahl im Feld mal Zahl der Felder. Nach der Antwort zeigt das Schüler-Dashboard immer die wahre Anzahl.
 _Avoid_: Toleranz, ungefähr richtig
 
+**Gitterzeichnen**:
+Ein Aufgabenformat für die Geometrie: Der Schüler tippt Gitterpunkte auf einem Karogitter an, und das Dashboard verbindet sie zu Strecke, Gerade oder Figur. Geprüft wird die Lage der Punkte, nicht die Linienführung.
+_Avoid_: Freihandzeichnen, Konstruieren
+
+**Heftaufgabe mit Kontrollwert**:
+Eine Aufgabe, bei der das Kind im Heft mit dem Geodreieck zeichnet und eine nachgemessene Länge in Millimetern eintippt. 2 mm Abweichung gelten als richtig.
+_Avoid_: Konstruktionsaufgabe, Messaufgabe
+
+**Haus der Vierecke**:
+Die Ordnung der Vierecke nach ihren Eigenschaften, in der ein Name den anderen einschließt: Jedes Quadrat ist auch Rechteck und Raute, jedes Rechteck und jede Raute ein Parallelogramm, jedes Parallelogramm ein Trapez, jede Raute ein Drachen. „Genau“ meint den engsten Namen.
+_Avoid_: Vierecksarten, Stammbaum
+
 **Rechenraster**:
 Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft. Beim Multiplizieren steht über dem Ergebnis eine Zeile kleiner Übertragsfelder; sie sind Notizhilfe und werden nicht bewertet.
 _Avoid_: Kästchenraster

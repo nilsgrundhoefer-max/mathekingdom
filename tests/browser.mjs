@@ -1831,6 +1831,76 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.waitForSelector('#tester-fortschritt');
   assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${pool.aufgaben.length} kontrolliert`);
 
+  // Gitterzeichnen (0.38, ADR 0032): Punkte, Linie und Kästchen, mit der Tastatur und mit dem Zeiger gesetzt.
+  {
+    const rahmenTest = admin.frameLocator('#tester-rahmen');
+    // Das Admin-Dashboard zeichnet sich alle paar Sekunden neu; geht dabei die getippte Kennung verloren, wird sie noch einmal eingegeben.
+    const zeige = async (a) => {
+      for (let versuch = 0; ; versuch++) {
+        await admin.fill('#tester-kennung', a.id);
+        await admin.press('#tester-kennung', 'Enter');
+        const da = await admin.waitForSelector(`#tester-info[data-kennung="${a.id}"]`, { timeout: 8000 }).catch((e) => { if (versuch >= 2) throw e; return null; });
+        if (da) break;
+      }
+      await rahmenTest.locator('svg.gitterbild.eingabe').waitFor();
+    };
+    const tastatur = async (a, punkte) => {
+      const g = a.gitter, zellen = a.eingabe === 'zellen';
+      let z = zellen ? [Math.floor((g.b - 1) / 2), Math.floor((g.h - 1) / 2)] : [Math.round(g.b / 2), Math.round(g.h / 2)];
+      await rahmenTest.locator('svg.gitterbild.eingabe').focus();
+      for (const p of punkte) {
+        for (let k = 0; k < Math.abs(p[0] - z[0]); k++) await admin.keyboard.press(p[0] > z[0] ? 'ArrowRight' : 'ArrowLeft');
+        for (let k = 0; k < Math.abs(p[1] - z[1]); k++) await admin.keyboard.press(p[1] > z[1] ? 'ArrowUp' : 'ArrowDown');
+        await admin.keyboard.press('Space');
+        z = p;
+      }
+    };
+    // Mit dem Zeiger: Die Stelle im Bild folgt aus dem Blatt (Rechteck hinter dem Karo) und der Größe des Bildes.
+    const zeiger = async (a, punkte) => {
+      for (const p of punkte) {
+        const svg = rahmenTest.locator('svg.gitterbild.eingabe');
+        const ort = await svg.evaluate((el, [x, y, b, h, mitte]) => {
+          const blatt = el.querySelector('.blatt'), u = Number(blatt.getAttribute('width')) / b, box = el.getBoundingClientRect(), k = box.width / el.viewBox.baseVal.width;
+          return { x: (Number(blatt.getAttribute('x')) + (x + mitte) * u) * k, y: (Number(blatt.getAttribute('y')) + (h - y - mitte) * u) * k };
+        }, [p[0], p[1], a.gitter.b, a.gitter.h, a.eingabe === 'zellen' ? 0.5 : 0]);
+        await svg.click({ position: ort });
+      }
+    };
+    const loese = async (a, setze, klasse, anzahl) => {
+      await zeige(a);
+      await setze(a, a.eingabe === 'linie' ? a.beispiel : a.loesung);
+      assert.equal(await rahmenTest.locator(`svg.gitterbild.eingabe ${klasse}`).count(), anzahl, `${a.id}: ${klasse}`);
+      assert.equal(await rahmenTest.locator('input[name=gitter]').inputValue(), (a.eingabe === 'linie' ? a.beispiel : a.loesung).map((q) => `(${q[0]}|${q[1]})`).join(' '), a.id);
+      await rahmenTest.locator('#pruefen').click();
+      await rahmenTest.locator('text=Richtig!').waitFor();
+    };
+    const gitter = pool.aufgaben.filter((a) => a.format === 'gitter');
+    const punkte = gitter.find((a) => a.eingabe === 'punkte' && !a.offen && a.loesung.length >= 2);
+    const linie = gitter.find((a) => a.eingabe === 'linie');
+    const zellen = gitter.find((a) => a.eingabe === 'zellen' && a.loesung.length <= 6);
+    await loese(punkte, tastatur, '.gesetzterpunkt', punkte.loesung.length);
+    await loese(linie, tastatur, '.linie.gesetzt', 1);
+    await foto(admin, 'admin-gitterzeichnen-linie');
+    await loese(zellen, tastatur, '.zelle.gesetzt', zellen.loesung.length);
+    const punkte2 = gitter.find((a) => a.eingabe === 'punkte' && !a.offen && a.loesung.length >= 2 && a.id !== punkte.id);
+    await loese(punkte2, zeiger, '.gesetzterpunkt', punkte2.loesung.length);
+    const zellen2 = gitter.find((a) => a.eingabe === 'zellen' && a.loesung.length <= 6 && a.id !== zellen.id);
+    await loese(zellen2, zeiger, '.zelle.gesetzt', zellen2.loesung.length);
+    // Ein zweiter Tipp nimmt einen Punkt wieder weg, „Neu beginnen“ leert das Gitter, und eine falsche Eingabe ist nicht richtig.
+    await zeige(punkte);
+    await zeiger(punkte, [punkte.loesung[0]]);
+    assert.equal(await rahmenTest.locator('svg.gitterbild.eingabe .gesetzterpunkt').count(), 1);
+    await zeiger(punkte, [punkte.loesung[0]]);
+    assert.equal(await rahmenTest.locator('svg.gitterbild.eingabe .gesetzterpunkt').count(), 0);
+    await zeiger(punkte, [punkte.loesung[0]]);
+    await rahmenTest.locator('#gitter-neu').click();
+    assert.equal(await rahmenTest.locator('input[name=gitter]').inputValue(), '');
+    await zeiger(punkte, [punkte.loesung[0]]);
+    await rahmenTest.locator('#pruefen').click();
+    await admin.waitForTimeout(500);
+    assert.equal(await rahmenTest.locator('text=Richtig!').count(), 0);
+  }
+
   // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.
   netz = false;
   await schueler.reload();
