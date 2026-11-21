@@ -45,8 +45,16 @@ export function erfuellt(bed, linie) {
 }
 
 // Gitterzeichnen prüfen. Punkte und Kästchen: genau die verlangte Menge. Linie: die Bedingung der Aufgabe.
+// Kapitel 7 (ADR 0034): Kreis am Gitter. Der erste Punkt ist der Mittelpunkt, der zweite liegt auf der Kreislinie.
+// bedingung { art: 'kreis', m, r } mit r in Kästchen. Ein typischer Fehler nennt einen anderen Mittelpunkt oder Radius.
+const d2 = (p, q) => (p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2;
+export const kreisPasst = (bed, punkte) => punkte.length === 2 && gleich(punkte[0], bed.m) && d2(punkte[0], punkte[1]) === bed.r ** 2;
 export function pruefeGitter(aufgabe, eingabe) {
   const punkte = lesePunkte(eingabe);
+  if (aufgabe.eingabe === 'kreis') {
+    if (kreisPasst(aufgabe.bedingung, punkte)) return { richtig: true, fehlvorstellung: null };
+    return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => kreisPasst({ m: aufgabe.bedingung.m, ...f.bedingung }, punkte))?.fehlvorstellung ?? null };
+  }
   if (aufgabe.eingabe === 'linie') {
     if (erfuellt(aufgabe.bedingung, punkte)) return { richtig: true, fehlvorstellung: null };
     return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => erfuellt(f.bedingung, punkte))?.fehlvorstellung ?? null };
@@ -56,6 +64,7 @@ export function pruefeGitter(aufgabe, eingabe) {
 }
 // Die Lösung in Worten, für Ergebniszeile, Tafelbild und Meldungen.
 export function gitterLoesung(aufgabe) {
+  if (aufgabe.eingabe === 'kreis') return aufgabe.gitter.achsen ? `Kreis um ${punktText(aufgabe.bedingung.m)} durch ${punktText(aufgabe.beispiel[1])}` : 'siehe Bild';
   if (aufgabe.eingabe === 'linie') return !aufgabe.gitter.achsen ? 'siehe Bild' : `zum Beispiel die Linie durch ${alsEingabe(aufgabe.beispiel).replace(' ', ' und ')}`;
   if (aufgabe.eingabe === 'zellen') return `${aufgabe.loesung.length} Kästchen, siehe Bild`;
   return aufgabe.gitter.achsen ? aufgabe.loesung.map(punktText).join(', ') : 'siehe Bild';

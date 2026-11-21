@@ -201,12 +201,31 @@ const roh = [
     }, true),
   ]],
   ['Kreis und Winkel', [
-    uk('Kreise', ['Ich kann Kreise anhand verschiedener Vorgaben zeichnen.']),
-    uk('Winkel vergleichen', ['Ich kann Winkel zeichnen und Winkelgrößen vergleichen.']),
-    uk('Winkelarten', ['Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.']),
-    uk('Winkel messen und zeichnen', ['Ich kann Winkel zeichnen, schätzen und messen.']),
-    uk('Dreiecke', ['Ich kann Dreiecke nach Winkelart oder Seitenbeziehung einteilen und selbst zeichnen.'], true),
-    uk('Gradnetz', ['Ich kann mithilfe des Gradnetzes Aussagen treffen.'], true),
+    // Kapitel 7 (ADR 0034, Grilling mit Nils am 2026-11-21). Die Kürzel meiden F, G, M und E, weil das die Niveaustufen sind.
+    // Das Gradnetz steht vor den Dreiecken: So hängt es als Abstecher an 7.3 (Winkelarten), die Dreiecke hängen an 7.4.
+    uk('Kreise', {
+      R1: 'Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen.',
+      R2: 'Ich kann Kreise und Kreismuster nach Vorgaben zeichnen.',
+    }),
+    uk('Winkel vergleichen', {
+      V1: 'Ich kann Scheitel, Schenkel und Winkel erkennen und benennen.',
+      V2: 'Ich kann Winkel ohne Messen vergleichen.',
+    }),
+    uk('Winkelarten', {
+      A1: 'Ich kann Winkelarten erkennen und benennen.',
+      A2: 'Ich kann Winkelgrößen schätzen.',
+    }),
+    uk('Gradnetz', {
+      N1: 'Ich kann die Lage eines Ortes im Gradnetz ablesen und angeben.',
+    }, true),
+    uk('Winkel messen und zeichnen', {
+      W1: 'Ich kann Winkel mit dem Geodreieck messen.',
+      W2: 'Ich kann Winkel mit dem Geodreieck zeichnen.',
+    }),
+    uk('Dreiecke', {
+      D1: 'Ich kann Dreiecke nach Seiten und nach Winkeln einteilen.',
+      D2: 'Ich kann Dreiecke nach Vorgaben zeichnen.',
+    }, true),
   ]],
   ['Flächeninhalt und Umfang', [
     uk('Flächen vergleichen', ['Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.']),
@@ -358,6 +377,70 @@ export const merkzettel = {
     ],
     beispiel: 'Ein Rezept für 4 Personen braucht 500 g Mehl. Für 8 Personen brauchst du doppelt so viel: 2 · 500 g = 1000 g = 1 kg.',
     heft: 'Unterstreiche in einer Liste die Angaben, die du brauchst.',
+  },
+  // Kapitel 7 (Nils, 2026-11-21): Winkel mit griechischen Buchstaben, ab M auch ∢ASB gegen den Uhrzeigersinn.
+  '5.7.1': {
+    regeln: [
+      'Alle Punkte der Kreislinie sind gleich weit vom Mittelpunkt M entfernt.',
+      'Der Radius r ist die Strecke vom Mittelpunkt bis zur Kreislinie.',
+      'Der Durchmesser d geht durch den Mittelpunkt einmal ganz durch den Kreis. Er ist doppelt so lang wie der Radius: d = 2 · r.',
+      'Mit dem Zirkel: Stelle den Radius am Lineal ein, stich in den Mittelpunkt und drehe einmal herum.',
+    ],
+    beispiel: 'Der Radius ist 3 cm. Dann ist der Durchmesser 2 · 3 cm = 6 cm.',
+    heft: 'Markiere den Mittelpunkt mit einem kleinen Kreuz und schreibe M daneben.',
+  },
+  '5.7.2': {
+    regeln: [
+      'Ein Winkel besteht aus einem Scheitel und zwei Schenkeln. Die Schenkel sind Strahlen, die im Scheitel beginnen.',
+      'Winkel bekommen griechische Buchstaben: α (Alpha), β (Beta), γ (Gamma), δ (Delta).',
+      'Ein Bogen zeigt, welcher Winkel gemeint ist.',
+      'Die Größe eines Winkels hängt nicht von der Länge der Schenkel ab. Es zählt nur, wie weit sich die Schenkel öffnen.',
+      'Ab M: ∢ASB ist der Winkel mit dem Scheitel S. Er geht vom Schenkel SA gegen den Uhrzeigersinn bis zum Schenkel SB.',
+    ],
+    beispiel: 'Zwei Winkel vergleichst du, indem du sie in Gedanken aufeinanderlegst: Scheitel auf Scheitel, ein Schenkel auf den anderen.',
+    heft: 'Zeichne den Bogen mit Farbe und schreibe den Buchstaben hinein.',
+  },
+  '5.7.3': {
+    regeln: [
+      'Winkel misst man in Grad. Ein rechter Winkel hat 90°.',
+      'Ein spitzer Winkel ist kleiner als 90°. Ein stumpfer Winkel liegt zwischen 90° und 180°.',
+      'Ab G: Ein gestreckter Winkel hat 180°. Seine Schenkel bilden eine Gerade. Ein Vollwinkel hat 360°.',
+      'Ab M: Ein überstumpfer Winkel liegt zwischen 180° und 360°.',
+      'Zum Schätzen: Vergleiche mit 90° und mit dem halben rechten Winkel, 45°.',
+    ],
+    beispiel: 'Der Winkel ist etwas größer als ein rechter Winkel. Er ist stumpf und hat ungefähr 100°.',
+    heft: 'Schreibe beim Schätzen „etwa“ vor die Gradzahl.',
+  },
+  '5.7.X1': {
+    regeln: [
+      'Das Gradnetz legt Linien um die Erde. Damit lässt sich jeder Ort genau angeben.',
+      'Die Breitengrade zählen vom Äquator aus nach Norden (N) und nach Süden (S), bis 90°.',
+      'Die Längengrade zählen vom Längengrad 0° aus nach Osten (O) und nach Westen (W), bis 180°. Ab G heißt er Nullmeridian.',
+      'Man nennt zuerst die Breite, dann die Länge.',
+    ],
+    beispiel: 'Berlin liegt bei 52° N, 13° O: 52° nördlich vom Äquator und 13° östlich vom Nullmeridian.',
+    heft: 'Fahre mit dem Finger erst die waagerechte Linie entlang, dann die senkrechte.',
+  },
+  '5.7.4': {
+    regeln: [
+      'Lege den Nullpunkt des Geodreiecks genau auf den Scheitel.',
+      'Lege die lange Seite des Geodreiecks genau auf einen Schenkel.',
+      'Lies auf der Skala ab, die auf diesem Schenkel mit 0 beginnt. Die andere Skala zeigt 180° minus den Winkel.',
+      'Ab M: Einen überstumpfen Winkel misst du über den kleinen Winkel: 360° minus den kleinen Winkel.',
+      'Zeichnen: Zeichne einen Schenkel, lege das Geodreieck an, markiere die Gradzahl und verbinde mit dem Scheitel.',
+    ],
+    beispiel: 'Der kleine Winkel ist 110°. Dann ist der überstumpfe Winkel 360° − 110° = 250°.',
+    heft: 'Prüfe mit einer Schätzung: Spitz oder stumpf? Passt die Zahl dazu?',
+  },
+  '5.7.X2': {
+    regeln: [
+      'Nach den Seiten: Gleichseitig heißt, alle drei Seiten sind gleich lang. Gleichschenklig heißt, mindestens zwei Seiten sind gleich lang. Sonst ist das Dreieck unregelmäßig.',
+      'Ein gleichseitiges Dreieck ist auch gleichschenklig.',
+      'Nach den Winkeln: Rechtwinklig heißt, ein Winkel ist ein rechter Winkel. Ab G: spitzwinklig (alle Winkel spitz) und stumpfwinklig (ein Winkel stumpf).',
+      'Ab E: Die drei Winkel eines Dreiecks ergeben zusammen 180°.',
+    ],
+    beispiel: 'Ein Dreieck hat die Seiten 4 cm, 4 cm und 3 cm. Zwei Seiten sind gleich lang: Es ist gleichschenklig.',
+    heft: 'Zeichne zuerst eine Seite, dann die Winkel an ihren Enden. Beschrifte die Ecken gegen den Uhrzeigersinn mit A, B, C.',
   },
   '5.5.6': {
     regeln: [
@@ -745,6 +828,61 @@ export const wortspeicher = {
     w('Rezept', 'G', 'Eine Liste der Zutaten mit ihren Mengen.'),
     w('Stundenlohn', 'M', 'So viel Geld bekommt jemand für eine Stunde Arbeit.'),
   ],
+  // Kapitel 7 (Nils, 2026-11-21): Ein Wort gilt im ganzen Kapitel ab der frühesten Stufe, die es hier bekommt.
+  '5.7.1': [
+    w('Kreis', 'F', 'Eine runde Figur. Alle Punkte am Rand sind gleich weit vom Mittelpunkt entfernt.'),
+    w('Mittelpunkt', 'F', 'Der Punkt in der Mitte des Kreises. Er heißt M.'),
+    w('Kreislinie', 'F', 'Der runde Rand des Kreises.'),
+    w('Radius', 'F', 'Die Strecke vom Mittelpunkt bis zur Kreislinie. Man schreibt r.'),
+    w('Durchmesser', 'F', 'Die Strecke einmal ganz durch den Kreis, durch den Mittelpunkt. Man schreibt d.'),
+    w('Zirkel', 'F', 'Ein Werkzeug zum Zeichnen von Kreisen.'),
+    w('Kreismuster', 'G', 'Ein Bild aus mehreren Kreisen.'),
+    w('Halbkreis', 'M', 'Die Hälfte eines Kreises.'),
+  ],
+  '5.7.2': [
+    w('Winkel', 'F', 'Zwei Strahlen, die in einem Punkt beginnen, bilden einen Winkel.'),
+    w('Scheitel', 'F', 'Der Punkt, in dem die beiden Schenkel beginnen.'),
+    w('Schenkel', 'F', 'Einer der beiden Strahlen eines Winkels.'),
+    w('Bogen', 'F', 'Der kleine runde Strich, der den Winkel zeigt.'),
+    w('Alpha', 'G', 'Der griechische Buchstabe α.'),
+    w('Scheitelpunkt', 'M', 'Ein anderes Wort für Scheitel.'),
+  ],
+  '5.7.3': [
+    w('Grad', 'F', 'Die Einheit für Winkel. Man schreibt °. Ein rechter Winkel hat 90°.'),
+    w('spitz', 'F', 'Ein spitzer Winkel ist kleiner als ein rechter Winkel.'),
+    w('stumpf', 'F', 'Ein stumpfer Winkel ist größer als ein rechter Winkel, aber kleiner als 180°.'),
+    w('Winkelart', 'G', 'Spitz, recht, stumpf, gestreckt, überstumpf oder voll.'),
+    w('gestreckt', 'G', 'Ein gestreckter Winkel hat 180°. Seine Schenkel bilden eine Gerade.'),
+    w('Vollwinkel', 'G', 'Ein Winkel mit 360°: eine ganze Drehung.'),
+    w('überstumpf', 'M', 'Ein überstumpfer Winkel ist größer als 180° und kleiner als 360°.'),
+  ],
+  '5.7.X1': [
+    w('Gradnetz', 'F', 'Linien auf der Erde, mit denen man jeden Ort angeben kann.'),
+    w('Äquator', 'F', 'Die Linie um die Mitte der Erde. Dort ist die Breite 0°.'),
+    w('Breitengrad', 'F', 'Eine Linie, die parallel zum Äquator um die Erde läuft.'),
+    w('Längengrad', 'F', 'Eine Linie vom Nordpol zum Südpol.'),
+    w('Nullmeridian', 'G', 'Der Längengrad 0°. Er läuft durch London.'),
+    w('Halbkugel', 'G', 'Eine Hälfte der Erde, zum Beispiel die Nordhalbkugel.'),
+    w('Gradunterschied', 'M', 'So viele Grad liegen zwei Orte nach Norden und Süden oder nach Osten und Westen auseinander.'),
+  ],
+  '5.7.4': [
+    w('Nullpunkt', 'F', 'Die 0 in der Mitte der langen Seite des Geodreiecks.'),
+    w('Skala', 'F', 'Die Zahlen und Striche zum Ablesen.'),
+    w('messen', 'F', 'Mit dem Geodreieck bestimmen, wie groß ein Winkel ist.'),
+    w('Grundlinie', 'G', 'Die lange Seite des Geodreiecks. Sie liegt beim Messen auf einem Schenkel.'),
+    w('Gegenskala', 'M', 'Die zweite Skala am Geodreieck. Sie läuft in die andere Richtung.'),
+  ],
+  '5.7.X2': [
+    w('Dreieck', 'F', 'Eine Figur mit drei Ecken und drei Seiten.'),
+    w('gleichseitig', 'F', 'Alle drei Seiten sind gleich lang.'),
+    w('gleichschenklig', 'F', 'Mindestens zwei Seiten sind gleich lang.'),
+    w('rechtwinklig', 'F', 'Ein Winkel ist ein rechter Winkel.'),
+    w('unregelmäßig', 'F', 'Keine zwei Seiten sind gleich lang.'),
+    w('spitzwinklig', 'G', 'Alle drei Winkel sind spitz.'),
+    w('stumpfwinklig', 'G', 'Ein Winkel ist stumpf.'),
+    w('Basis', 'M', 'Die dritte Seite eines gleichschenkligen Dreiecks, zwischen den beiden gleich langen Seiten.'),
+    w('Winkelsumme', 'E', 'Alle Winkel einer Figur zusammen. Im Dreieck sind es 180°.'),
+  ],
   '5.5.6': [
     w('symmetrisch', 'F', 'Eine Figur ist symmetrisch, wenn zwei Hälften genau zueinander passen.'),
     w('Symmetrieachse', 'F', 'Die Faltlinie einer symmetrischen Figur.'),
@@ -1097,12 +1235,18 @@ const voraussetzungen = {
   '5.6.7-A1': ['5.6.2-B2', '5.4.6-T3'],
   '5.6.7-A2': ['5.6.7-A1', '5.6.5-L2'],
   '5.6.X1-X1': ['5.6.7-A2'],
-  '5.7.1-L1': ['5.6.5-L1'],
-  '5.7.2-L1': ['5.5.1-B1'],
-  '5.7.3-L1': ['5.7.2-L1'],
-  '5.7.4-L1': ['5.7.3-L1'],
-  '5.7.X1-L1': ['5.7.4-L1', '5.5.7-V1'],
-  '5.7.X2-L1': ['5.5.4-K1', '5.7.3-L1'],
+  // Kapitel 7 (Nils, 2026-11-21). 5.7.1 hängt am Messen von Strecken, nicht am Umwandeln von Längen.
+  '5.7.1-R1': ['5.5.1-B2'],
+  '5.7.1-R2': ['5.7.1-R1'],
+  '5.7.2-V1': ['5.5.1-B1'],
+  '5.7.2-V2': ['5.7.2-V1'],
+  '5.7.3-A1': ['5.7.2-V1', '5.5.2-S1'],
+  '5.7.3-A2': ['5.7.3-A1'],
+  '5.7.X1-N1': ['5.5.4-K1', '5.7.3-A1'],
+  '5.7.4-W1': ['5.7.3-A1'],
+  '5.7.4-W2': ['5.7.4-W1'],
+  '5.7.X2-D1': ['5.7.4-W1', '5.5.7-V1'],
+  '5.7.X2-D2': ['5.7.X2-D1', '5.7.4-W2'],
   '5.8.1-L1': ['5.5.7-V1'],
   '5.8.2-L1': ['5.8.1-L1', '5.4.1-K3'],
   '5.8.3-L1': ['5.8.2-L1', '5.4.2-M2', '5.5.7-V1'],
@@ -1247,6 +1391,17 @@ const grundlagen = {
   '5.6.7-A1': 'Wichtige Angaben antippen, Rechnung wählen, Ergebnis mit Einheit aufschreiben',
   '5.6.7-A2': 'Zwei Schritte nacheinander: erst das eine ausrechnen, dann damit weiterrechnen',
   '5.6.X1-X1': 'Preise aus einer Preisliste ablesen und zusammenzählen',
+  '5.7.1-R1': 'Am Kreis die Strecke vom Mittelpunkt bis zur Kreislinie zeigen und am Lineal messen',
+  '5.7.1-R2': 'Am Karogitter einen Kreis aus Mittelpunkt und Radius in Kästchen zeichnen',
+  '5.7.2-V1': 'Am Bild Scheitel und Schenkel eines Winkels zeigen',
+  '5.7.2-V2': 'Zwei Winkel vergleichen, indem man in Gedanken einen auf den anderen legt',
+  '5.7.3-A1': 'Einen Winkel mit der Ecke eines Blattes vergleichen: kleiner, gleich oder größer als ein rechter Winkel',
+  '5.7.3-A2': 'Mit dem rechten Winkel (90°) und dem halben rechten Winkel (45°) vergleichen',
+  '5.7.X1-N1': 'Am Gradnetz vom Äquator aus nach Norden zählen und vom Längengrad 0° aus nach Osten',
+  '5.7.4-W1': 'Das Geodreieck anlegen: Nullpunkt auf den Scheitel, lange Seite auf einen Schenkel, auf der Skala ab 0 lesen',
+  '5.7.4-W2': 'Am Geodreieck die Gradzahl auf der Skala ab 0 suchen und den Schenkel dorthin legen',
+  '5.7.X2-D1': 'An einem Dreieck die Seiten vergleichen und den rechten Winkel suchen',
+  '5.7.X2-D2': 'Am Karogitter ein Dreieck aus drei Gitterpunkten zeichnen',
 };
 
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".

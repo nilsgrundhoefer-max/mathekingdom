@@ -15,6 +15,8 @@ import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, date
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
 import { gitterLoesung } from './geo.js';
+import { winkelEingabe, winkelLoesungBild } from './winkelbilder.js';
+import { winkelLoesung } from './winkel.js';
 import { groesseEingabe, liesGroesse, einheitentafelBild } from './groessenbilder.js';
 import { loesungGroesse } from './groessen.js';
 import { klinge } from './ton.js';
@@ -996,6 +998,7 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'zeichen': return zeichenEingabe(auf, letzte, gesperrt);
     case 'schaetzen': return zahlfeld('zahl', auf.einheit, letzte);
     case 'gitter': return gitterEingabe(auf, letzte, gesperrt);
+    case 'winkel': return winkelEingabe(auf, letzte, gesperrt);
     default: return null;
   }
 }
@@ -1020,7 +1023,9 @@ function liesEingabe(auf, formular) {
     case 'zeichen': { const v = feld('zeichen'); return { eingabe: v, leer: !v }; }
     case 'schaetzen': { const v = feld('zahl'); return { eingabe: v, leer: !v }; }
     // Gitterzeichnen: Es fehlt etwas, solange nicht alle Punkte gesetzt sind (bei Kästchen: solange keines gefärbt ist).
-    case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
+    // Winkeldrehen (Kapitel 7): leer, solange der zweite Schenkel noch nicht bewegt wurde.
+    case 'winkel': { const v = feld('winkel'); return { eingabe: v, leer: v === '' }; }
+    case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' || auf.eingabe === 'kreis' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
     default: return { eingabe: null, leer: true };
   }
 }
@@ -1099,6 +1104,7 @@ function loesungstext(auf) {
     case 'strichliste': return auf.zeilen.map((x) => `${x.name} ${x.loesung} Striche`).join(', ');
     case 'zeichnen': return auf.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     case 'gitter': return gitterLoesung(auf);
+    case 'winkel': return winkelLoesung(auf);
     default: return '';
   }
 }
@@ -1130,6 +1136,11 @@ function urteilZeile(e, auf, nachsatz) {
 export function wahreAnzahl(auf) {
   // Kapitel 6: Nach dem Schätzen mit Vergleichsgröße steht das genaue Maß da.
   if (auf.format === 'schaetzen' && auf.bild?.art === 'vergleichsbild') return h('p', { class: 'wahre-anzahl', id: 'wahre-anzahl' }, `Nachgemessen: Es sind ${gliedere(auf.loesung)} ${auf.einheit}.`);
+  // Kapitel 7: Nach dem Schätzen eines Winkels steht seine genaue Größe da (ADR 0034).
+  if (auf.lernziel?.startsWith('5.7.3-A2') && auf.bild?.art === 'winkel') {
+    const name = (auf.nachweis ?? []).find((x) => x?.winkel)?.winkel, w = auf.bild.winkel.find((x) => x.n === name) ?? auf.bild.winkel[0];
+    return h('p', { class: 'wahre-anzahl', id: 'wahre-anzahl' }, `Nachgemessen: Der Winkel ${w.n ? `${w.n} ` : ''}ist genau ${w.groesse}° groß.`);
+  }
   if (auf.bild?.art !== 'schaetzbild') return null;
   const n = auf.bild.felder.flat().reduce((x, y) => x + y, 0);
   return h('p', { class: 'wahre-anzahl', id: 'wahre-anzahl' }, `Nachgezählt: Auf dem Bild sind es genau ${gliedere(n)}.`);
@@ -1139,6 +1150,8 @@ export function loesungsbild(auf) {
   if (auf.format === 'zeichnen') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, zeichnenLoesung(auf));
   // Kapitel 5: das Gitter mit der eingezeichneten Lösung.
   if (auf.format === 'gitter') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, gitterLoesungBild(auf));
+  // Kapitel 7: der Winkel mit dem zweiten Schenkel in der richtigen Lage.
+  if (auf.format === 'winkel') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, winkelLoesungBild(auf));
   // Kapitel 2: Die ausgefüllte Stellenwerttafel.
   if (auf.tabelle?.art === 'einheitentafel') {
     const t = auf.tabelle;

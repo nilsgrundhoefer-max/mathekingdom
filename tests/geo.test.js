@@ -6,7 +6,8 @@ import * as L from '../src/schueler/logik.js';
 import { erfuellt, pruefeGitter, lesePunkte, alsEingabe, gitterLoesung } from '../src/schueler/geo.js';
 
 const pool = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json', import.meta.url), 'utf8'));
-const gitter = pool.aufgaben.filter((a) => a.format === 'gitter');
+// Kreise im Gitter (Kapitel 7) prüft tests/winkel.test.js: Dort zählt die Reihenfolge der Punkte.
+const gitter = pool.aufgaben.filter((a) => a.format === 'gitter' && a.eingabe !== 'kreis');
 const RICHTIG = { richtig: true, fehlvorstellung: null };
 
 test('Punkte als Text: Schreiben und Lesen passen zusammen', () => {
@@ -62,7 +63,8 @@ test('Jede Gitteraufgabe nimmt ihre Lösung an und erkennt ihre typischen Fehler
 });
 
 test('Heftaufgaben mit Kontrollwert: 2 mm Abweichung zählen als richtig, 3 mm nicht', () => {
-  const heft = pool.aufgaben.filter((a) => a.format === 'zahl' && a.toleranz);
+  // Kapitel 7 hat eigene Spielräume in Grad (Schätzen, Messen); sie prüft der Pool-Prüfer.
+  const heft = pool.aufgaben.filter((a) => a.format === 'zahl' && a.toleranz && !a.lernziel.startsWith('5.7.'));
   assert.ok(heft.length >= 12, `nur ${heft.length}`);
   for (const a of heft) {
     assert.equal(a.toleranz, 2, a.id);
