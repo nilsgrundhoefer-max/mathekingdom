@@ -10,6 +10,7 @@ class Knoten {
   getAttribute(name) { return this.attribute[name] ?? null; }
   addEventListener() {}
   append(...kinder) { this.kinder.push(...kinder); }
+  replaceChildren(...kinder) { this.kinder = kinder; }
   alle() { return [this, ...this.kinder.flatMap((k) => (k instanceof Knoten ? k.alle() : []))]; }
   klasse(name) { return this.alle().filter((k) => (k.attribute.class ?? '').split(' ').includes(name)); }
   texte() { return this.alle().filter((k) => k.tag === 'text').map((k) => k.kinder.filter((x) => !(x instanceof Knoten)).join('')); }
@@ -102,6 +103,22 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       const halb = b.zeilen.filter((z) => typeof z.wert === 'number' && z.wert % b.je).length;
       assert.equal(svg.klasse('symbol').length, ganz + halb + 1, a.id);
       assert.equal(svg.klasse('halb').length, halb, a.id);
+    } else if (b.art === 'schaetzbild') {
+      // Kapitel 2: genau so viele Symbole, wie die Felder zusammen nennen. Das feste Raster hat eine Linie je Grenze.
+      assert.equal(svg.klasse('symbol').length, b.felder.flat().reduce((x, y) => x + y, 0), a.id);
+      if (b.raster === 'fest') assert.equal(svg.klasse('rasterlinien')[0].kinder.length, b.felder.length - 1 + b.felder[0].length - 1, a.id);
+      assert.equal(svg.klasse('markiert').length, b.markiert ? 1 : 0, a.id);
+    } else if (b.art === 'tafel') {
+      // Kapitel 2: je Zeile eine Zelle je Spalte; Ziffern stehen lesbar da, Plättchen sind abgezählt.
+      const zeilen = [b.werte, ...(b.weitere ?? [])], zellen = svg.alle().filter((k) => k.tag === 'td');
+      assert.equal(zellen.length, zeilen.length * b.spalten.length, a.id);
+      zeilen.flat().forEach((w, i) => {
+        if (w == null || typeof w === 'object') return;
+        if (b.plaettchen) assert.equal(zellen[i].alle().filter((k) => k.tag === 'circle').length, w, `${a.id}: Zelle ${i}`);
+        else assert.equal(zellen[i].kinder.join(''), String(w), `${a.id}: Zelle ${i}`);
+      });
+    } else if (b.art === 'zeichentafel') {
+      assert.deepEqual(svg.alle().filter((k) => k.tag === 'th').map((k) => k.kinder.join('')), b.zeichen, a.id);
     } else if (b.art === 'vergleich') {
       const texte = svg.texte().map((t) => t.replace(/\s/g, ''));
       for (const w of [b.oben.wert, b.unten.wert]) assert.ok(texte.some((t) => t.includes(lesbar(w))), `${a.id}: ${lesbar(w)} fehlt in ${texte}`);

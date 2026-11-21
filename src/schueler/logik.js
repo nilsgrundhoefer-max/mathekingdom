@@ -137,8 +137,32 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'sachaufgabe': case 'diagramm': return zusammen(aufgabe.teile.map((t, i) => pruefeZahl(t, eingabe?.[i])));
     case 'strichliste': return pruefeStrichliste(aufgabe, eingabe);
     case 'zeichnen': return pruefeZeichnung(aufgabe, eingabe);
+    case 'ordnen': return pruefeOrdnung(aufgabe, eingabe);
+    case 'zeichen': return pruefeZeichen(aufgabe, eingabe);
+    case 'schaetzen': return pruefeSchaetzung(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
+}
+// Ordnen (Kapitel 2): Die Karten müssen genau in der verlangten Reihenfolge liegen.
+// Liegen sie genau andersherum, hat das Kind die Richtung verwechselt.
+function pruefeOrdnung(aufgabe, eingabe) {
+  const ist = (eingabe ?? []).map(String), soll = aufgabe.loesung;
+  if (ist.length === soll.length && soll.every((x, i) => x === ist[i])) return { richtig: true, fehlvorstellung: null };
+  const umgekehrt = ist.length === soll.length && soll.every((x, i) => x === ist[soll.length - 1 - i]);
+  return { richtig: false, fehlvorstellung: umgekehrt ? aufgabe.umgekehrt ?? null : aufgabe.sonst ?? null };
+}
+// Zeichenfolge (Kapitel 2): römische Zahlzeichen und Zahlen im Zweiersystem. Leerzeichen und Kleinschreibung stören nicht.
+export const leseZeichen = (text) => String(text ?? '').replace(/\s/g, '').toUpperCase();
+function pruefeZeichen(aufgabe, eingabe) {
+  const wert = leseZeichen(eingabe);
+  if (wert === aufgabe.loesung) return { richtig: true, fehlvorstellung: null };
+  return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => f.wert === wert)?.fehlvorstellung ?? null };
+}
+// Schätzen (Kapitel 2, ab M): Richtig ist jede Zahl im Schätzbereich. Typische Fehler sind ebenfalls Bereiche.
+function pruefeSchaetzung(aufgabe, eingabe) {
+  const wert = leseZahl(eingabe), [von, bis] = aufgabe.bereich;
+  if (wert >= von && wert <= bis) return { richtig: true, fehlvorstellung: null };
+  return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => wert >= f.von && wert <= f.bis)?.fehlvorstellung ?? null };
 }
 // Strichliste (Kapitel 1): je Zeile ein Strichmuster aus „I“ und „/“. „IIII/“ ist ein richtiges Bündel.
 // Ab M bündelt das Kind selbst: Ein falsch gesetzter Querstrich ist ein Fehler, auch wenn die Zahl stimmt.

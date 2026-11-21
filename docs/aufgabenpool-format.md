@@ -64,6 +64,14 @@ Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.
 
 **`zeichnen`** (Kapitel 1, ADR 0029): Das Kind zieht Säulen auf die richtige Höhe. `diagramm` wie beim Bild `saeulen`; Säulen mit `offen: true` sind zu zeichnen, ihr `wert` ist die Lösung, `start` (optional) die Höhe zu Beginn. Jeder Wert und jeder Start liegt auf einer Linie (`fein`), mindestens eine Säule muss bewegt werden. Steht eine Tabelle `daten` dabei, muss das Diagramm zu ihr passen.
 
+**`ordnen`** (Kapitel 2, ADR 0030): `karten` liegen gemischt da, `loesung` nennt dieselben Karten in der verlangten Reihenfolge (drei bis sechs). Der Text sagt „Beginne mit der kleinsten“ oder „mit der größten“. Optional `umgekehrt` (Fehlvorstellung, wenn genau falsch herum geordnet wurde), `sonst` (Fehlvorstellung für jede andere falsche Reihenfolge), `links` und `rechts` (Beschriftung der Enden). Der Nachweis `ordnung` mit `richtung` und optional `system` (`roemisch`, `dual`, `wort`) ist Pflicht.
+
+**`zeichen`** (Kapitel 2, ADR 0030): Das Kind tippt eine Zeichenfolge über `tasten`, entweder die sieben römischen Zahlzeichen oder `0` und `1`. `loesung` und die `wert` der `typischeFehler` sind Zeichenfolgen aus diesen Tasten. Der Nachweis `roemisch` oder `dual` zur Lösung ist Pflicht.
+
+**`schaetzen`** (Kapitel 2, ADR 0030, erst ab M): `bild` ist ein `schaetzbild`, `loesung` die wahre Anzahl, `bereich` der Schätzbereich aus kleinstem und größtem richtigen Wert (ein Fünftel darunter und darüber). `typischeFehler` sind Bereiche aus `von`, `bis` und `fehlvorstellung`. Nach der Antwort zeigt das Dashboard immer die wahre Anzahl.
+
+Eine `tabelle` mit `art: "stellentafel"` (Kapitel 2) ist eine Stellenwerttafel zum Eintragen: je Lücke genau eine Ziffer, die Köpfe sind E, Z, H, T und so weiter oder im Zweiersystem 1, 2, 4, 8, ab M auch leer. `gruppen` fasst je drei Spalten zu Tausendern, Millionen und Milliarden zusammen.
+
 Zu jedem Format darf in Kapitel 1 eine `urliste` (Liste der einzelnen Antworten, als Karten zum Abhaken gezeigt) und eine Tabelle `daten` (`kopf`, `zeilen`) stehen. Der Prüfer liest Antworten aus ihnen und aus dem Bild nach (Prüfarten `ablesen`, `zeile`, `aussage`, `aussagen`, `rangfolge`, `datenwahl`, `einteilung`, `mangel`, `schluessel`, `linienabstand`).
 
 Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau eine Ziffer (Ziffernrätsel).
@@ -86,6 +94,11 @@ Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau e
 | `strichliste` | `titel`, `zeilen` aus `name` und `anzahl`, optional `striche` (ein Muster aus `I` und `/`, zum Beispiel für ein falsch gebündeltes `IIIII/`) |
 | `saeulen` | `titel`, `einheit`, `max`, `schritt` (beschriftete Linien), optional `fein` (alle Linien), `ab` (Beginn der Achse, nur V2 auf M und E), `liegend` (Balkendiagramm), `werteZeigen`, `ohne` (fehlende Teile wie `titel`), `saeulen` aus `name` und `wert` |
 | `bilddiagramm` | `titel`, `einheit`, `symbol` (`kind`, `buch`, `schaf`, `apfel`), `je` (so viel steht ein Bild), `zeilen` aus `name` und `wert` |
+| `tafel` | Stellenwerttafel mit Ziffern (Kapitel 2): `spalten` (Namen der Spalten), `werte` (eine Ziffer je Spalte, `null` ist ein leeres Feld), optional `weitere` (weitere Zeilen), `basis` (2 für das Zweiersystem), `plaettchen` (Plättchen statt Ziffern), `gruppen` (Name und Zahl der Spalten je Block) |
+| `schaetzbild` | `symbol` (`punkt`, `schaf`, `apfel`, `kind`, `vogel`, `stern`), `felder` (Anzahl je Feld, 2 bis 6 Reihen und 2 bis 8 Spalten), `saat` (Startwert der Streuung), `raster` (`fest`, `wahl` mit Schalter, `ohne`), optional, `markiert` (Reihe und Spalte eines hervorgehobenen Feldes), `gezaehlt` (die Zahl steht im markierten Feld), `grob` (gröbere Einteilung) |
+| `zeichentafel` | `zeichen`: die römischen Zahlzeichen, die mit ihrem Wert gezeigt werden, in der Reihenfolge I, V, X, L, C, D, M |
+
+Am Bild `zahlenstrahl` gibt es seit Kapitel 2 zusätzlich `punkte` (ein bis sechs benannte Zahlen auf dem Strahl) und `ausschnitt` (der Strahl beginnt nicht bei 0 und zeigt links ein Bruchzeichen).
 
 ## Regeln, die die Prüfung erzwingt
 
@@ -98,6 +111,7 @@ Bei `luecken` macht `ziffernfelder: true` aus jeder Lücke ein Feld für genau e
 - Das Bild zeigt nur Zahlen der Aufgabe und passt zur Rechnung.
 - Jedes Lernziel mit Aufgaben nennt seine `grundlage` (ADR 0015).
 - Kapitel 1: Achsen beginnen bei 0 und gehen in gleichen Schritten, jeder Wert liegt auf einer Linie, höchstens 20 Linien. Nur V2 auf M und E darf eine abgeschnittene Achse zeigen. Halbe Bilder im Bilddiagramm erst ab M und genau halb. Auf F und G bündelt das Programm die Strichliste, ab M das Kind. Jede genannte Klasse ist 5a bis 5e, und Text und Bildtitel nennen dieselbe.
+- Kapitel 2: eigener Zahlenraum je Unterkapitel und Niveaustufe (ADR 0030). Zahlwörter, Stellenwerte, gerundete Werte, Reihenfolgen, Dualzahlen und römische Zahlzeichen rechnet die Prüfung selbst nach. Jedes Zeichen einer Aufgabe steht auf ihrer Zeichentafel. Schätzen mit Schätzbereich gibt es erst ab M.
 - `tests/pruefer.test.js` baut absichtlich Fehler ein und verlangt, dass die Prüfung sie meldet.
 
 ## Wortspeicher

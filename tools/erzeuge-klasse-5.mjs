@@ -8,6 +8,12 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { kapitel } from './jahresplan-klasse-5.mjs';
 import { aufgaben, fehlvorstellungen, setzeSaat, KOMPETENZEN } from './werkzeug.mjs';
 import { datenUndDiagramme } from './aufgaben/5-1-daten.mjs';
+import { zahlenstrahlUndStellenwerte } from './aufgaben/5-2-1-zahlenstrahl.mjs';
+import { grosseZahlen } from './aufgaben/5-2-2-grosse-zahlen.mjs';
+import { rundenAufgaben } from './aufgaben/5-2-3-runden.mjs';
+import { schaetzenAufgaben } from './aufgaben/5-2-4-schaetzen.mjs';
+import { zweiersystem } from './aufgaben/5-2-5-zweiersystem.mjs';
+import { roemischeZahlzeichen } from './aufgaben/5-2-x1-roemisch.mjs';
 import { kopfrechnen } from './aufgaben/5-3-1-kopfrechnen.mjs';
 import { addieren } from './aufgaben/5-3-2-addieren.mjs';
 import { subtrahieren } from './aufgaben/5-3-3-subtrahieren.mjs';
@@ -24,6 +30,7 @@ import { zahlenmuster } from './aufgaben/5-4-x1-zahlenmuster.mjs';
 
 const ERZEUGER = [
   [51151151, datenUndDiagramme],
+  [52152152, zahlenstrahlUndStellenwerte], [52252252, grosseZahlen], [52352352, rundenAufgaben], [52452452, schaetzenAufgaben], [52552552, zweiersystem], [52952952, roemischeZahlzeichen],
   [53153153, kopfrechnen], [53253253, addieren], [53353353, subtrahieren], [53453453, klammern], [53553553, rechengesetze],
   [54154154, einmaleins], [54254254, multiplizieren], [54354354, rechenvorteile], [54454454, potenzen], [54554554, dividieren], [54654654, punktVorStrich], [54754754, verteilungsgesetz], [54954954, zahlenmuster],
 ];

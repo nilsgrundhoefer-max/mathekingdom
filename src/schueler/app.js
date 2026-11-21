@@ -12,6 +12,7 @@ import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
+import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild } from './zahlenbilder.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
 
@@ -907,7 +908,8 @@ function aufgabenAnsicht() {
 // Auch für den Bilderbogen (tools/bilderbogen.mjs) ausgeführt.
 export function eingabefelder(auf, a, gesperrt) {
   const zahlfeld = (name, einheit, wert) => h('span', { class: 'zahlfeld' },
-    h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 9, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort' }),
+    h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+      oninput: (e) => gliedereEingabe(e.target) }),
     einheit && h('span', { class: 'einheit' }, einheit));
   // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
   const ziffernfeld = (name, wert, stellen = 1) => h('input', { class: 'ziffer', name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: stellen, maxLength: stellen, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Fehlende Ziffer' });
@@ -965,6 +967,16 @@ export function eingabefelder(auf, a, gesperrt) {
         return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle raster malraster${t.zeilen.length === 2 ? ' ohne-teile' : ''}` }, h('tbody', {}, zeilen)),
           !gesperrt && h('p', { class: 'klein rasterhinweis' }, 'In die kleinen Felder kannst du Überträge schreiben. Sie werden nicht bewertet.'));
       }
+      // Stellenwerttafel (Kapitel 2): ein Feld je Ziffer, bei großen Zahlen mit den Dreierblöcken als zweiter Kopfzeile.
+      if (t.art === 'stellentafel') {
+        let ende = 0;
+        const enden = new Set((t.gruppen ?? []).map((g) => (ende += g.spalten) - 1).slice(0, -1));
+        const rand = (i) => (enden.has(i) ? 'blockende' : null);
+        return h('div', { class: 'bildrahmen' }, h('table', { class: 'stellentafel eingabe' },
+          h('thead', {}, t.gruppen && h('tr', { class: 'gruppen' }, t.gruppen.map((g) => h('th', { colSpan: g.spalten, scope: 'colgroup' }, g.name))),
+            h('tr', {}, t.kopf.map((k, i) => h('th', { scope: 'col', class: rand(i) }, k)))),
+          h('tbody', {}, t.zeilen.map((zeile) => h('tr', {}, zeile.map((c, i) => h('td', { class: rand(i) }, typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c)))))));
+      }
       return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle${auf.tabelle.art === 'raster' ? ' raster' : ''}` },
       h('thead', {}, h('tr', {}, auf.tabelle.kopf.map((k) => h('th', { scope: 'col' }, k)))),
       h('tbody', {}, auf.tabelle.zeilen.map((zeile) => h('tr', {}, zeile.map((zelle, i) => (typeof zelle === 'object'
@@ -973,6 +985,9 @@ export function eingabefelder(auf, a, gesperrt) {
     }
     case 'strichliste': return strichlisteEingabe(auf, letzte, gesperrt);
     case 'zeichnen': return zeichnenEingabe(auf, letzte, gesperrt);
+    case 'ordnen': return ordnenEingabe(auf, letzte, gesperrt);
+    case 'zeichen': return zeichenEingabe(auf, letzte, gesperrt);
+    case 'schaetzen': return zahlfeld('zahl', auf.einheit, letzte);
     default: return null;
   }
 }
@@ -991,6 +1006,10 @@ function liesEingabe(auf, formular) {
     case 'strichliste': { const v = auf.zeilen.map((_, i) => feld(`strich-${i}`)); return { eingabe: v, leer: v.every((x, i) => x === buendle(auf.zeilen[i].start ?? 0)) }; }
     // Säulen zeichnen: je offene Säule die Höhe. Eine Säule auf 0 ist noch nicht gezeichnet.
     case 'zeichnen': { const v = auf.diagramm.saeulen.map((sa, i) => (sa.offen ? Number(feld(`saeule-${i}`)) : null)); return { eingabe: v, leer: v.some((x, i) => auf.diagramm.saeulen[i].offen && !(x > 0)) }; }
+    // Ordnen: Leer ist die Eingabe, solange noch keine Karte bewegt wurde.
+    case 'ordnen': { const v = liesOrdnung(formular); return { eingabe: v, leer: formular.elements.ordnung?.dataset.bewegt !== '1' }; }
+    case 'zeichen': { const v = feld('zeichen'); return { eingabe: v, leer: !v }; }
+    case 'schaetzen': { const v = feld('zahl'); return { eingabe: v, leer: !v }; }
     default: return { eingabe: null, leer: true };
   }
 }
@@ -1051,13 +1070,16 @@ function maleMitEntwurf(eingabe) {
 }
 
 function loesungstext(auf) {
-  const zahl = (t) => `${t.loesung}${t.einheit ? ` ${t.einheit}` : ''}`;
+  const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? ` ${t.einheit}` : ''}`;
   switch (auf.format) {
     case 'zahl': case 'zahlenstrahl': return zahl(auf);
+    case 'ordnen': return auf.loesung.join(', ');
+    case 'zeichen': return zahl(auf);
+    case 'schaetzen': return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.bereich[0])} bis ${gliedere(auf.bereich[1])})`;
     case 'diagramm': return auf.teile.length === 1 ? zahl(auf.teile[0]) : auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
-    case 'tabelle': return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => auf.luecken[c.luecke].loesung).join(', ')}`;
+    case 'tabelle': if (auf.tabelle.art === 'stellentafel') return 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => auf.luecken[c.luecke].loesung).join(', ')}`;
     case 'auswahl': return auf.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
-    case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => auf.luecken[n].loesung);
+    case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung));
     case 'zuordnen': return auf.paare.map((p) => `${p.links} ist ${p.rechts}`).join(', ');
     case 'sachaufgabe': return auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
     case 'strichliste': return auf.zeilen.map((x) => `${x.name} ${x.loesung} Striche`).join(', ');
@@ -1086,12 +1108,23 @@ function soGehtEs(auf) {
 // Erste Zeile des Ergebnisses: richtig mit Münzen oder falsch mit Lösung.
 function urteilZeile(e, auf, nachsatz) {
   return e.richtig
-    ? h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e))
-    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), loesungsbild(auf)];
+    ? [h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e)), wahreAnzahl(auf)]
+    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), wahreAnzahl(auf), loesungsbild(auf)];
+}
+// Kapitel 2: Nach jeder Aufgabe mit Schätzbild steht die wahre Anzahl da, damit das Kind seine Schätzung einordnen kann (ADR 0030).
+export function wahreAnzahl(auf) {
+  if (auf.bild?.art !== 'schaetzbild') return null;
+  const n = auf.bild.felder.flat().reduce((x, y) => x + y, 0);
+  return h('p', { class: 'wahre-anzahl', id: 'wahre-anzahl' }, `Nachgezählt: Auf dem Bild sind es genau ${gliedere(n)}.`);
 }
 // Kapitel 1: Bei Strichliste und Diagramm zeigt ein Bild die Lösung.
 export function loesungsbild(auf) {
   if (auf.format === 'zeichnen') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, zeichnenLoesung(auf));
+  // Kapitel 2: Die ausgefüllte Stellenwerttafel.
+  if (auf.tabelle?.art === 'stellentafel') {
+    const t = auf.tabelle;
+    return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, t.zeilen.map((zeile) => tafelBild({ spalten: t.kopf, gruppen: t.gruppen, werte: zeile.map((c) => (typeof c === 'object' ? auf.luecken[c.luecke].loesung : c === '' ? null : c)) })));
+  }
   if (auf.format === 'strichliste') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, h('table', { class: 'strichtabelle' }, h('tbody', {},
     auf.zeilen.map((x) => h('tr', {}, h('th', { scope: 'row' }, x.name), h('td', {}, striche(buendle(x.loesung))))))));
   return null;
