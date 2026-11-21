@@ -2,6 +2,7 @@
 // Begriffe wie in CONTEXT.md.
 
 import { pruefeGitter } from './geo.js';
+import { pruefeWinkel } from './winkel.js';
 import { pruefeGroesse } from './groessen.js';
 
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
@@ -154,6 +155,7 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'zeichen': return pruefeZeichen(aufgabe, eingabe);
     case 'schaetzen': return pruefeSchaetzung(aufgabe, eingabe);
     case 'gitter': return pruefeGitter(aufgabe, eingabe);
+    case 'winkel': return pruefeWinkel(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
 }

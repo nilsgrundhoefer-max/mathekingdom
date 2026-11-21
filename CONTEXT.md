@@ -98,6 +98,14 @@ _Avoid_: Toleranz, ungefähr richtig
 Ein Aufgabenformat für die Geometrie: Der Schüler tippt Gitterpunkte auf einem Karogitter an, und das Dashboard verbindet sie zu Strecke, Gerade oder Figur. Geprüft wird die Lage der Punkte, nicht die Linienführung.
 _Avoid_: Freihandzeichnen, Konstruieren
 
+**Winkeldrehen**:
+Ein Aufgabenformat zum Zeichnen von Winkeln: Ein Schenkel liegt fest, am aufgelegten Geodreieck dreht der Schüler den zweiten Schenkel, bis er die verlangte Gradzahl auf der Skala trifft. Das Dashboard zeigt die Gradzahl dabei nicht an. 2° Abweichung gelten als richtig.
+_Avoid_: Winkelregler, Schieberegler
+
+**Kreis am Gitter**:
+Gitterzeichnen für Kreise: Der Schüler tippt den Mittelpunkt und einen Punkt auf der Kreislinie an, das Dashboard zeichnet den Kreis. Geprüft werden Mittelpunkt und Radius.
+_Avoid_: Zirkel am Bildschirm
+
 **Heftaufgabe mit Kontrollwert**:
 Eine Aufgabe, bei der das Kind im Heft mit dem Geodreieck zeichnet und eine nachgemessene Länge in Millimetern eintippt. 2 mm Abweichung gelten als richtig.
 _Avoid_: Konstruktionsaufgabe, Messaufgabe

@@ -5,6 +5,7 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { gGleichungen, GROESSENBILDER, bildMaengel, sprachMaengel, pruefeGroessenNachweis, groesseMaengel, tafelMaengel, umwandelMaengel, schaetzMaengel, teilAuswahlMaengel, einheitFaktor } from './pruefe-groessen.mjs';
+import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
 export function pruefePool(pool) {
@@ -17,14 +18,14 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse', 'winkel'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
   'zeilen', 'buendeln', 'urliste', 'daten',
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
   'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz',
-  'groesse', 'einheiten', 'tippBild'];
+  'groesse', 'einheiten', 'tippBild', 'winkelfeld'];
 // Kapitel 6 (ADR 0033): Dort wird mit Größen gerechnet. Solange eine Aufgabe aus Kapitel 6 geprüft wird, lesen die Gleichungsprüfungen auch Einheiten.
 let groessenModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
@@ -170,6 +171,7 @@ function pruefeSprache(a) {
   }
   // Kapitel 6 (Nils, 2026-11-21): Komma, Brüche und seltene Einheiten je Niveaustufe.
   if (a.lernziel.startsWith('5.6.')) for (const x of sprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
+  if (a.lernziel.startsWith('5.7.')) for (const x of winkelSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -460,6 +462,8 @@ function gitterMangel(g) {
   for (const p of g.punkte ?? []) if (!drin([p.x, p.y]) || !/^[A-Z]['′]?$/.test(p.n ?? '')) return `Punkt ${p.n} liegt außerhalb oder hat keinen Namen`;
   for (const l of g.linien ?? []) { if (!drin(l.a) || !drin(l.b) || pGleich(l.a, l.b)) return 'Linie liegt außerhalb'; if (!['gerade', 'strecke', 'strahl'].includes(l.art)) return 'Linie ohne Art'; }
   for (const f of g.figuren ?? []) if (!Array.isArray(f.ecken) || f.ecken.length < 3 || !f.ecken.every(drin)) return 'Figur liegt außerhalb';
+  // Kapitel 7: Kreise im Gitter liegen ganz im Gitter.
+  for (const k of g.kreise ?? []) if (!drin(k.m) || !(k.r > 0) || k.m[0] - k.r < 0 || k.m[1] - k.r < 0 || k.m[0] + k.r > g.b || k.m[1] + k.r > g.h) return 'Kreis liegt außerhalb';
   for (const z of g.zellen ?? []) if (!ganz(z?.[0], 0, g.b - 1) || !ganz(z?.[1], 0, g.h - 1)) return 'Kästchen liegt außerhalb';
   for (const [was, namen] of [['Punkt', (g.punkte ?? []).map((p) => p.n)], ['Linie', (g.linien ?? []).map((l) => l.n).filter(Boolean)], ['Figur', (g.figuren ?? []).map((f) => f.n).filter(Boolean)]]) if (new Set(namen).size !== namen.length) return `${was} doppelt benannt`;
   for (const r of g.rechte ?? []) if (!drin(r.p) || sp(r.u, r.v) !== 0) return 'Zeichen für den rechten Winkel steht an keinem rechten Winkel';
@@ -1373,11 +1377,15 @@ const ERGEBNIS = {
 };
 Object.assign(SONDER, GEO_SONDER);
 Object.assign(ERGEBNIS, GEO_ERGEBNIS);
+// Kapitel 7 (ADR 0034): Winkel, Kreise, Dreiecke und Gradnetz.
+Object.assign(SONDER, WINKEL_SONDER);
+Object.assign(ERGEBNIS, WINKEL_ERGEBNIS);
 const zahlenImObjekt = (x) => (typeof x === 'number' ? [x] : typeof x === 'string' ? zahlenIn(x) : x && typeof x === 'object' ? Object.values(x).flatMap(zahlenImObjekt) : []);
 
 // Zahlen, die ein Bild zeigt (ohne die Unbekannten).
 function bildZahlen(b) {
   if (!b) return [];
+  if (WINKELBILDER.includes(b.art)) return winkelBildZahlen(b);
   const w = (x) => (istFrage(x) ? [] : [wertVon(x)]);
   switch (b.art) {
     case 'stellenwerttafel': return [...b.plaettchen, b.plaettchen.reduce((s, x, i) => s + x * 10 ** (b.plaettchen.length - 1 - i), 0)];
@@ -1409,7 +1417,7 @@ function bildZahlen(b) {
 function pruefeNachweis(a) {
   // Kapitel 6 rechnet mit Größen und hat einen eigenen Nachweis (tools/pruefe-groessen.mjs).
   if (groessenModus) { for (const x of pruefeGroessenNachweis(a)) melde(a.id, x); return; }
-  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter'].includes(a.format);
+  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'winkel'].includes(a.format);
   if (!a.nachweis) {
     if (pflicht) melde(a.id, 'Nachweis fehlt');
     if ((a.optionen ?? []).some((o) => polaritaet(o.text) !== null) && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -1487,7 +1495,7 @@ function pruefeNachweis(a) {
   // Jede Lösung muss sich aus dem Nachweis ergeben.
   if (a.tabelle?.art === 'raster') return;
   for (const l of loesungen) {
-    const menge = ['zahl', 'sachaufgabe', 'diagramm', 'zahlenstrahl', 'strichliste', 'zeichnen', 'schaetzen'].includes(a.format) ? ergebnisse : vorkommen;
+    const menge = ['zahl', 'winkel', 'sachaufgabe', 'diagramm', 'zahlenstrahl', 'strichliste', 'zeichnen', 'schaetzen'].includes(a.format) ? ergebnisse : vorkommen;
     if (!menge.has(l)) melde(a.id, `Lösung ${l} ergibt sich nicht aus dem Nachweis`);
   }
   // Lücken ohne eigene Gleichung: Fragt die Lücke nach einem Fachbegriff („Der erste Summand ist ▢“), zählt die Gleichung im Text. Sonst muss die Zahl ein Ergebnis im Nachweis sein.
@@ -1506,7 +1514,7 @@ function pruefeNachweis(a) {
     // Ausnahme: Division mit Rest, dort dürfen Quotient und Rest gleich sein.
     if (new Set(frei).size !== frei.length && !(a.nachweis ?? []).some((z) => typeof z === 'string' && / Rest /.test(z))) melde(a.id, 'zwei Lücken ohne eigene Gleichung haben dieselbe Lösung'); }
   // Die Lösung ist das Endergebnis, kein Zwischenergebnis: Sie wird nicht in einer späteren Rechnung zu etwas Neuem weiterverrechnet.
-  if (a.format === 'zahl' && !a.nachweis.some((n) => typeof n === 'object' && [ERGEBNIS[n.art]?.(n) ?? []].flat().includes(a.loesung))) {
+  if (['zahl', 'winkel'].includes(a.format) && !a.nachweis.some((n) => typeof n === 'object' && [ERGEBNIS[n.art]?.(n) ?? []].flat().includes(a.loesung))) {
     const zeilen = offen.filter((z) => z.fertig);
     const stellen = zeilen.map((z, i) => ((z.werte ?? [z.wert]).includes(a.loesung) ? i : -1)).filter((i) => i >= 0);
     const weiter = (i) => zeilen.slice(i + 1).some((z) => z.ein.includes(a.loesung) && !gegeben.has(z.wert) && z.wert !== a.loesung);
@@ -1565,7 +1573,7 @@ function pruefeAblesefrage(a) {
 }
 
 // Auswahlaufgaben: Die richtige Antwort muss an den Nachweis gebunden sein.
-const ARTEN_GEO = ['vierteEcke', 'lagezuZahl', 'schritt', 'rechterWinkel', 'lagepunkt', 'streckenwahl', 'linienart', 'linienzahl', 'verbindungen', 'schnittpunkt', 'punktwahl', 'lage', 'lagewahl', 'lagezu', 'lagezahl', 'koordinaten', 'spiegeln', 'lotfuss', 'strecke', 'abstand', 'abstandLinien', 'messen', 'achsen', 'punktsymmetrie', 'istAchse', 'achsenwahl', 'figurenwahl', 'viereck'];
+const ARTEN_GEO = ['vierteEcke', 'lagezuZahl', 'schritt', 'rechterWinkel', 'lagepunkt', 'streckenwahl', 'linienart', 'linienzahl', 'verbindungen', 'schnittpunkt', 'punktwahl', 'lage', 'lagewahl', 'lagezu', 'lagezahl', 'koordinaten', 'spiegeln', 'lotfuss', 'strecke', 'abstand', 'abstandLinien', 'messen', 'achsen', 'punktsymmetrie', 'istAchse', 'achsenwahl', 'figurenwahl', 'viereck', ...WINKEL_ARTEN];
 const ARTEN_AUSWAHL = [...ARTEN_GEO, 'zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
   'zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen'];
 function pruefeAuswahlNachweis(a, ergebnisse) {
@@ -1643,7 +1651,10 @@ function pruefeBild(a) {
   if (!b) return;
   const m = (text) => melde(a.id, `Bild ${b.art}: ${text}`);
   // Kapitel 6: Bilder mit Größen. Ob ihre Größen zur Aufgabe gehören, prüft der Nachweis.
-  if (GROESSENBILDER.includes(b.art)) { bildMaengel(b, a.niveau).forEach(m); return; }
+  // Kapitel 7 zeigt an der Zeigeruhr Winkel zwischen den Zeigern, auf jeder Niveaustufe.
+  if (GROESSENBILDER.includes(b.art)) { bildMaengel(b, b.art === 'uhr' && a.lernziel.startsWith('5.7.') ? 'F' : a.niveau).forEach(m); return; }
+  // Kapitel 7: Winkel mit Geodreieck, Kreis am Lineal, Gradnetz. Was sie zeigen, rechnet der Nachweis nach.
+  if (WINKELBILDER.includes(b.art)) { winkelBildMaengel(b, a).forEach(m); return; }
   const kern = []; // Zahlen, die das Bild zeigt und die zur Aufgabe gehören müssen
   const unbekannte = [];
   const w = (x) => { if (istFrage(x)) unbekannte.push(x.wert); else kern.push(x); return wertVon(x); };
@@ -1840,7 +1851,7 @@ function pruefeBild(a) {
 }
 // Formate, die das Dashboard selbst zeichnet (Zahlenstrahl, Diagramm, Rechenraster, Zahlenmauer, Malkreuz), zählen wie ein Bild.
 // Kapitel 1: Strichliste und Säulen zeichnen, auch die Antwortkärtchen einer Umfrage (Urliste).
-const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel', 'einheitentafel'].includes(a.tabelle?.art)
+const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter', 'winkel'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel', 'einheitentafel'].includes(a.tabelle?.art)
   // Kapitel 6: Preisliste, Fahrplan und Einkaufszettel sind das Bild der Aufgabe.
   || (Boolean(a.daten) && a.lernziel.startsWith('5.6.'));
 
@@ -1909,6 +1920,10 @@ function pruefeFormat(a) {
       if (t.optionen || t.art) { if (!groessenModus) melde(a.id, 'Auswahl als Teil gibt es nur in Kapitel 6'); for (const x of teilAuswahlMaengel(t, a.niveau, pool.fehlvorstellungen)) melde(a.id, x); } else pruefeZahl(a.id, t);
     }
     if (!(a.teile ?? []).some((t) => !t.optionen)) melde(a.id, 'Sachaufgabe braucht mindestens einen Teil mit einer Zahl');
+  } else if (a.format === 'winkel') {
+    // Kapitel 7: Winkeldrehen. Die Lösung ist eine Gradzahl gegen den Uhrzeigersinn.
+    pruefeZahl(a.id, a);
+    for (const x of winkelfeldMaengel(a, pool.fehlvorstellungen)) melde(a.id, `Winkeldrehen: ${x}`);
   } else if (a.format === 'groesse') {
     for (const x of groesseMaengel(a, pool.fehlvorstellungen)) melde(a.id, x);
   } else if (a.format === 'gitter') {
@@ -1921,13 +1936,15 @@ function pruefeFormat(a) {
       if (!['gerade', 'strecke'].includes(a.linie)) melde(a.id, 'Gitter: linie muss gerade oder strecke sein');
       if (!a.bedingung?.art || !Array.isArray(a.beispiel) || a.beispiel.length !== 2 || !a.beispiel.every((q) => imGitter(g, q))) melde(a.id, 'Gitter: Bedingung oder Beispiel fehlt');
       for (const f of a.typischeFehler ?? []) if (!f.bedingung?.art) melde(a.id, 'Gitter: typischer Fehler ohne Bedingung');
+    } else if (a.eingabe === 'kreis') {
+      for (const x of kreisMaengel(a)) melde(a.id, `Gitter: ${x}`);
     } else if (a.eingabe === 'punkte' || a.eingabe === 'zellen') {
       const zellen = a.eingabe === 'zellen', drin = (q) => (zellen ? ganz(q?.[0], 0, g.b - 1) && ganz(q?.[1], 0, g.h - 1) : imGitter(g, q));
       if (!Array.isArray(a.loesung) || a.loesung.length < 1 || a.loesung.length > (zellen ? 40 : 8) || !a.loesung.every(drin)) melde(a.id, 'Gitter: Lösung liegt nicht im Gitter');
       else if (new Set(a.loesung.map(String)).size !== a.loesung.length) melde(a.id, 'Gitter: Punkt in der Lösung doppelt');
       if (zellen && a.loesung.some((q) => (g.zellen ?? []).some((z) => pGleich(q, z)))) melde(a.id, 'Gitter: Ein Kästchen der Lösung ist schon gefärbt');
       for (const f of a.typischeFehler ?? []) if (!Array.isArray(f.punkte) || !f.punkte.every(drin) || mengeGleich(f.punkte, a.loesung ?? [])) melde(a.id, 'Gitter: typischer Fehler liegt außerhalb oder ist gleich der Lösung');
-    } else melde(a.id, 'Gitter: eingabe muss punkte, linie oder zellen sein');
+    } else melde(a.id, 'Gitter: eingabe muss punkte, linie, zellen oder kreis sein');
   } else if (a.format === 'zahlenstrahl') {
     pruefeZahl(a.id, a);
     const st = a.strahl ?? {};

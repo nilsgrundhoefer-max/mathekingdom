@@ -26,7 +26,8 @@ const gitterText = (g) => [`${g.achsen ? 'Koordinatensystem' : 'Karogitter'} ${g
   g.linien?.length && g.linien.map((l) => `${l.stil === 'achse' ? 'Symmetrieachse' : LINIE[l.art]}${l.n ? ` ${l.n}` : ''} durch ${pt(l.a)} und ${pt(l.b)}`).join(', '),
   g.figuren?.length && g.figuren.map((f) => `Figur${f.n ? ` ${f.n}` : ''} mit den Ecken ${f.ecken.map(pt).join(' ')}`).join(', '),
   g.zellen?.length && `${g.zellen.length} gefärbte Kästchen ${g.zellen.map(pt).join(' ')}`,
-  g.zentrum && `Symmetriezentrum Z${pt(g.zentrum)}`].filter(Boolean).join('; ');
+  g.zentrum && `Symmetriezentrum Z${pt(g.zentrum)}`,
+  g.kreise?.length && g.kreise.map((k) => `Kreis um ${pt(k.m)} mit Radius ${k.r} Kästchen`).join(', ')].filter(Boolean).join('; ');
 const bild = (b) => {
   if (!b) return '';
   const text = {
@@ -50,6 +51,10 @@ const bild = (b) => {
     lineal: () => `Lineal, ${b.lang / 10} cm lang; die Strecke ${(b.namen ?? ['A', 'B']).join('')} beginnt bei ${b.von} mm und endet bei ${b.bis} mm`,
     // Kapitel 6 (ADR 0033)
     geld: () => `Geld: ${b.stuecke.map((x) => (x >= 100 ? `${x / 100} €` : `${x} ct`)).join(', ')}`,
+    // Kapitel 7 (ADR 0034)
+    kreislineal: () => `Kreis am Lineal (${b.lang / 10} cm): Durchmesser von ${b.von} mm bis ${b.bis} mm`,
+    winkel: () => `Winkel ${b.winkel.map((w) => `${w.n ?? (w.punkte ? `∢${w.punkte.a}${w.punkte.s}${w.punkte.b}` : '')} ${w.groesse}°`.trim()).join(', ')}${b.geo ? `; Geodreieck angelegt${b.geo.versatz ? ', aber verschoben' : ''}` : ''}`,
+    gradnetz: () => `Gradnetz ${b.breite[0]}° bis ${b.breite[1]}° Breite, ${b.laenge[0]}° bis ${b.laenge[1]}° Länge, Linien alle ${b.schritt}°: ${b.orte.map((o) => o.n).join(', ')}`,
     uhr: () => `${b.uhren.length > 1 ? 'Zeigeruhren' : 'Zeigeruhr'}: ${b.uhren.map((u) => `${u.text ? `${u.text} ` : ''}${u.h}:${String(u.min).padStart(2, '0')} Uhr`).join(', ')}`,
     waage: () => `Balkenwaage im Gleichgewicht: links ${b.links}${b.linksDazu ? ` und ${b.linksDazu.map((x) => `${x} g`).join(', ')}` : ''}, rechts ${b.gewichte.map((x) => `${x} g`).join(', ')}`,
     einheitentafel: () => `Einheitentafel ${b.gruppen.map((g) => g.name).join(' | ')}, Spalten ${b.spalten.join(' ')}: ${[b.werte, ...(b.weitere ?? [])].map((z) => z.map((w) => (w == null ? '·' : typeof w === 'object' ? '?' : w)).join(' ')).join(' / ')}`,
@@ -92,6 +97,9 @@ const loesung = (a) => {
   if (a.format === 'ordnen') return `_(Ordnen; die Karten liegen so da: ${a.karten.join(', ')})_ Lösung: **${a.loesung.join(', ')}**`;
   if (a.format === 'zeichen') return `_(Zeichen tippen mit den Tasten ${a.tasten.join(' ')})_ Lösung: **${a.loesung}**`;
   if (a.format === 'schaetzen') return `_(Schätzen)_ Wahre Anzahl: **${a.loesung}**${a.einheit ? ` ${a.einheit}` : ''}, richtig von ${a.bereich[0]} bis ${a.bereich[1]}`;
+  // Kapitel 7 (ADR 0034): Winkel am Geodreieck einstellen, Kreis im Gitter zeichnen.
+  if (a.format === 'winkel') return `_(Schenkel drehen, fester Schenkel in Richtung ${a.winkelfeld.von}°)_ Lösung: ${zahl({ ...a, einheit: '°' })}`;
+  if (a.format === 'gitter' && a.eingabe === 'kreis') return `_(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; ${gitterText(a.gitter)})_ Lösung: **Kreis um ${pt(a.bedingung.m)} mit Radius ${a.bedingung.r} Kästchen**, zum Beispiel durch ${pt(a.beispiel[1])}`;
   if (a.format === 'gitter') {
     const was = { punkte: a.offen ? 'alle passenden Punkte antippen' : `${a.loesung?.length === 1 ? 'einen Punkt' : `${a.loesung?.length} Punkte`} antippen`, zellen: 'Kästchen färben', linie: `${LINIE[a.linie] ?? 'Linie'} durch zwei Punkte zeichnen` }[a.eingabe];
     return `_(Gitterzeichnen, ${was}; ${gitterText(a.gitter)})_ Lösung: **${a.eingabe === 'linie' ? `zum Beispiel durch ${a.beispiel.map(pt).join(' und ')}` : a.loesung.map(pt).join(' ')}**`;

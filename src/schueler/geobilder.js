@@ -76,6 +76,8 @@ export function gitterSvg(g, dazu = {}) {
     svg.append(s('polygon', { points: eckenText(m, f.ecken), class: `figur${f.stil ? ` ${f.stil}` : ''}` }));
     if (f.n) { const c = f.ecken.reduce((a, e) => [a[0] + e[0] / f.ecken.length, a[1] + e[1] / f.ecken.length], [0, 0]); svg.append(s('text', { x: X(c[0]), y: Y(c[1]) + 6, 'text-anchor': 'middle', class: 'figurname' }, f.n)); }
   }
+  // Kapitel 7: Kreise (Mittelpunkt und Radius in Kästchen).
+  for (const k of g.kreise ?? []) svg.append(s('circle', { cx: X(k.m[0]), cy: Y(k.m[1]), r: k.r * u, class: `kreis${k.stil ? ` ${k.stil}` : ''}` }));
   for (const l of g.linien ?? []) svg.append(...linieSvg(g, m, l));
   for (const r of g.rechte ?? []) {
     const e = (v) => { const len = Math.hypot(v[0], v[1]); return [v[0] / len * 0.45, v[1] / len * 0.45]; }, a = e(r.u), b = e(r.v), p = r.p;
@@ -88,6 +90,10 @@ export function gitterSvg(g, dazu = {}) {
   // Was das Kind gezeichnet hat (oder die Lösung): Vieleck, Linie, Punkte.
   if (dazu.vieleck?.length > 1) svg.append(s(dazu.vieleck.length > 2 ? 'polygon' : 'polyline', { points: eckenText(m, dazu.vieleck), class: 'figur gesetzt' }));
   if (dazu.linie) svg.append(...linieSvg(g, m, { a: dazu.linie.p, b: dazu.linie.q, art: dazu.linie.art }, 'gesetzt'));
+  if (dazu.kreis) {
+    const [p, q] = dazu.kreis, r = Math.hypot(q[0] - p[0], q[1] - p[1]) * u;
+    svg.append(s('circle', { cx: X(p[0]), cy: Y(p[1]), r, class: 'kreis gesetzt' }), s('line', { x1: X(p[0]), y1: Y(p[1]), x2: X(q[0]), y2: Y(q[1]), class: 'linie hilfs gesetzt' }));
+  }
   for (const p of dazu.punkte ?? []) svg.append(s('circle', { cx: X(p[0]), cy: Y(p[1]), r: 7, class: 'gesetzterpunkt' }));
   return svg;
 }
@@ -101,7 +107,7 @@ export const gitterBild = (g) => h('figure', { class: 'datenbild geobild' }, git
 export function gitterEingabe(auf, letzte, gesperrt) {
   const g = auf.gitter, m = masse(g), art = auf.eingabe, zellen = art === 'zellen';
   // offen: Die Aufgabe verrät nicht, wie viele Punkte es sind („Markiere alle Punkte, die …“).
-  const soll = art === 'linie' ? 2 : zellen || auf.offen ? Infinity : auf.loesung.length;
+  const soll = art === 'linie' || art === 'kreis' ? 2 : zellen || auf.offen ? Infinity : auf.loesung.length;
   let gesetzt = lesePunkte(letzte);
   let zeiger = zellen ? [Math.floor((g.b - 1) / 2), Math.floor((g.h - 1) / 2)] : [Math.round(g.b / 2), Math.round(g.h / 2)];
   let zeigerAn = false;
@@ -109,14 +115,15 @@ export function gitterEingabe(auf, letzte, gesperrt) {
   const meldung = h('p', { class: 'klein gitterhinweis', 'aria-live': 'polite' });
   const rahmen = h('figure', { class: 'datenbild geobild' });
   const anweisung = { punkte: auf.offen ? 'Tippe alle passenden Gitterpunkte an. Ein zweiter Tipp auf einen Punkt nimmt ihn wieder weg.' : soll === 1 ? 'Tippe auf den Gitterpunkt, an dem der Punkt liegen soll.' : `Tippe ${soll} Gitterpunkte an. Ein zweiter Tipp auf einen Punkt nimmt ihn wieder weg.`,
-    linie: 'Tippe zwei Gitterpunkte an. Das Programm zeichnet die Linie durch beide Punkte.', zellen: 'Tippe die Kästchen an, die gefärbt sein sollen. Ein zweiter Tipp macht ein Kästchen wieder leer.' }[art];
-  const stand = () => (zellen ? `${gesetzt.length} Kästchen gefärbt` : art === 'linie' ? (gesetzt.length === 2 ? 'Die Linie ist gezeichnet. Ein neuer Tipp beginnt von vorn.' : gesetzt.length === 1 ? 'Ein Punkt ist gesetzt. Tippe den zweiten an.' : '')
+    linie: 'Tippe zwei Gitterpunkte an. Das Programm zeichnet die Linie durch beide Punkte.',
+    kreis: 'Tippe zuerst den Mittelpunkt an und dann einen Punkt auf der Kreislinie. Das Programm zeichnet den Kreis.', zellen: 'Tippe die Kästchen an, die gefärbt sein sollen. Ein zweiter Tipp macht ein Kästchen wieder leer.' }[art];
+  const stand = () => (zellen ? `${gesetzt.length} Kästchen gefärbt` : art === 'kreis' ? (gesetzt.length === 2 ? 'Der Kreis ist gezeichnet. Ein neuer Tipp beginnt von vorn.' : gesetzt.length === 1 ? 'Der Mittelpunkt ist gesetzt. Tippe einen Punkt auf der Kreislinie an.' : '') : art === 'linie' ? (gesetzt.length === 2 ? 'Die Linie ist gezeichnet. Ein neuer Tipp beginnt von vorn.' : gesetzt.length === 1 ? 'Ein Punkt ist gesetzt. Tippe den zweiten an.' : '')
     : auf.offen ? `${gesetzt.length} ${gesetzt.length === 1 ? 'Punkt' : 'Punkte'} gesetzt` : soll > 1 ? `${gesetzt.length} von ${soll} Punkten gesetzt` : '');
   const tippe = (p) => {
     if (gesperrt) return;
     const i = gesetzt.findIndex((q) => gleich(p, q));
     let hinweis = null;
-    if (art === 'linie') { if (i >= 0) return; gesetzt = gesetzt.length >= 2 ? [p] : [...gesetzt, p]; }
+    if (art === 'linie' || art === 'kreis') { if (i >= 0) return; gesetzt = gesetzt.length >= 2 ? [p] : [...gesetzt, p]; }
     else if (i >= 0) gesetzt = gesetzt.filter((_, k) => k !== i);
     else if (soll === 1) gesetzt = [p];
     else if (gesetzt.length >= soll) hinweis = `Du hast schon ${soll} Punkte gesetzt. Tippe einen davon an, dann ist er wieder weg.`;
@@ -125,7 +132,7 @@ export function gitterEingabe(auf, letzte, gesperrt) {
     zeichne(hinweis);
   };
   const zeichne = (hinweis = null) => {
-    const dazu = zellen ? { zellen: gesetzt } : art === 'linie' ? { punkte: gesetzt, linie: gesetzt.length === 2 ? { p: gesetzt[0], q: gesetzt[1], art: auf.linie ?? 'gerade' } : null }
+    const dazu = zellen ? { zellen: gesetzt } : art === 'kreis' ? { punkte: gesetzt, kreis: gesetzt.length === 2 ? gesetzt : null } : art === 'linie' ? { punkte: gesetzt, linie: gesetzt.length === 2 ? { p: gesetzt[0], q: gesetzt[1], art: auf.linie ?? 'gerade' } : null }
       : { punkte: gesetzt, vieleck: auf.verbinden ? gesetzt : null };
     const svg = gitterSvg(g, { ...dazu, klasse: `eingabe${gesperrt ? ' gesperrt' : ''}` });
     svg.setAttribute('role', 'application');
@@ -162,6 +169,7 @@ export function gitterEingabe(auf, letzte, gesperrt) {
 // Das Gitter mit eingezeichneter Lösung.
 export function gitterLoesungBild(auf) {
   const dazu = auf.eingabe === 'zellen' ? { zellen: auf.loesung }
+    : auf.eingabe === 'kreis' ? { punkte: auf.beispiel, kreis: auf.beispiel }
     : auf.eingabe === 'linie' ? { punkte: auf.beispiel, linie: { p: auf.beispiel[0], q: auf.beispiel[1], art: auf.linie ?? 'gerade' } }
       : { punkte: auf.loesung, vieleck: auf.verbinden ? auf.loesung : null };
   return h('figure', { class: 'datenbild geobild' }, gitterSvg(auf.gitter, { ...dazu, klasse: 'loesung' }));

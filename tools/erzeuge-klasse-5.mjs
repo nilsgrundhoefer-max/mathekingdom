@@ -42,6 +42,12 @@ import { laenge } from './aufgaben/5-6-5-laenge.mjs';
 import { massstab } from './aufgaben/5-6-6-massstab.mjs';
 import { sachaufgaben } from './aufgaben/5-6-7-sachaufgaben.mjs';
 import { alltag } from './aufgaben/5-6-x1-alltag.mjs';
+import { kreise } from './aufgaben/5-7-1-kreise.mjs';
+import { winkelVergleichen } from './aufgaben/5-7-2-winkel.mjs';
+import { winkelarten } from './aufgaben/5-7-3-winkelarten.mjs';
+import { gradnetz } from './aufgaben/5-7-x1-gradnetz.mjs';
+import { messenUndZeichnen } from './aufgaben/5-7-4-messen.mjs';
+import { dreiecke } from './aufgaben/5-7-x2-dreiecke.mjs';
 
 const ERZEUGER = [
   [51151151, datenUndDiagramme],
@@ -65,6 +71,13 @@ const ERZEUGER = [
   [56656656, massstab],
   [56756756, sachaufgaben],
   [56856856, alltag],
+  // Kapitel 7 (ADR 0034)
+  [57157157, kreise],
+  [57257257, winkelVergleichen],
+  [57357357, winkelarten],
+  [57957957, gradnetz],
+  [57457457, messenUndZeichnen],
+  [57857857, dreiecke],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

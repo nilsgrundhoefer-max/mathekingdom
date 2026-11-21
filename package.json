@@ -5,6 +5,7 @@
   "scripts": {
     "pool": "node tools/erzeuge-klasse-5.mjs && node tools/pruefe-pool.mjs && node tools/uebersicht.mjs",
     "build": "node tools/baue.mjs",
+    "layout": "node tools/pruefe-layout.mjs",
     "test": "node --test tests/*.test.js"
   },
   "devDependencies": {

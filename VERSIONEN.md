@@ -8,6 +8,23 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.40 vom 21.11.2026
+
+### Schüler
+
+- Kapitel 7 „Kreis und Winkel“ ist da: Kreise, Winkel vergleichen, Winkelarten, Winkel schätzen, messen und zeichnen, dazu Dreiecke und das Gradnetz. Das sind 264 neue Aufgaben auf allen vier Niveaus.
+- Neu ist das Winkeldrehen: Das Geodreieck liegt am festen Schenkel, du drehst den zweiten Schenkel, bis der Winkel stimmt.
+- Kreise zeichnest du im Gitter: erst auf den Mittelpunkt tippen, dann auf einen Punkt der Kreislinie.
+- Neue Bilder: Winkel mit farbigem Bogen, Geodreieck mit beiden Skalen, Kreis am Lineal und das Gradnetz mit echten Städten.
+
+### Lehrkraft
+
+- Kapitel 7 hat 11 Lernziele mit je 6 Aufgaben auf F, G, M und E. Tor 7 öffnen Sie wie gewohnt unter Tore.
+- Gemessen wird am Geodreieck: F in Zehnerschritten, G in Fünferschritten, M gradgenau mit überstumpfen Winkeln, E sucht Fehler beim Anlegen. Beim Messen und Zeichnen gelten 2° Spielraum.
+- Winkelarten: spitz, recht und stumpf ab F, gestreckt und Vollwinkel ab G, überstumpf ab M. Die Winkelsumme im Dreieck kommt nur auf E vor.
+- 16 neue Fehlvorstellungen erscheinen in der Auswertung, zum Beispiel „Radius und Durchmesser verwechselt“, „lange Schenkel, großer Winkel“ und „falsche Skala am Geodreieck“.
+- Die Zeigeruhr hat etwas kleinere Ziffern, damit der Stundenzeiger sie nicht verdeckt.
+
 ## 0.39 vom 21.11.2026
 
 ### Schüler
