@@ -8,6 +8,20 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.37 vom 21.11.2026
+
+### Schüler
+
+- Wappen, Siegel, Kronen, Münzen und Hoftitel in der Kopfzeile sind größer und besser zu erkennen.
+- Im Schlossgarten führt jetzt ein Knopf „Weitermachen“ direkt zur nächsten Aufgabe. Daneben steht klein, wohin es geht.
+- Hast du die Lösung einer Aufgabe schon gesehen, zählt sie am selben Tag nicht für dein Siegel und bringt 1 Münze. Ab dem nächsten Tag zählt sie wieder.
+
+### Lehrkraft
+
+- Eine Aufgabe zählt am selben Tag nicht fürs Lernziel, wenn das Kind ihre Lösung schon gesehen hat, nach zwei Fehlversuchen oder mit dem Lösungsschritt-Kärtchen. Durchklicken bringt keine Siegel.
+- Neue Auffälligkeit „Lösungen durchgeklickt“: mindestens 5 der letzten 10 Aufgaben mit gesehener Lösung, jede in unter 30 Sekunden.
+- Der Administrator hat unter Aufgaben einen Aufgabentester. Er sieht jede Aufgabe wie ein Schüler, hakt sie als kontrolliert ab oder meldet einen Fehler. Für die Schüler ändert sich dadurch nichts.
+
 ## 0.36 vom 21.11.2026
 
 ### Schüler

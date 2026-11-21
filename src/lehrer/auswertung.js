@@ -11,6 +11,9 @@ const minutenSeit = (zeit, jetzt) => (zeit ? Math.max(0, Math.round((new Date(je
 
 export const INAKTIV_MINUTEN = 5;
 export const RATEN_SEKUNDEN = 6;
+// „Lösungen durchgeklickt“ (ADR 0031): mindestens 5 der letzten 10 Aufgaben mit gesehener Lösung, jede in unter 30 Sekunden.
+export const DURCHKLICKEN_AB = 5;
+export const DURCHKLICKEN_SEKUNDEN = 30;
 
 // ---------- Schülercodes ----------
 // Ohne leicht verwechselbare Zeichen (0/O, 1/I/L) und nicht aufzählbar.
@@ -58,6 +61,12 @@ export function auffaelligkeiten(stand, zielniveau, jetzt, sitzungLaeuft = true)
   }
   const letzte = v.slice(-10);
   const geraten = letzte.filter((x) => !x.richtig && x.dauer <= RATEN_SEKUNDEN).length;
+  // Wer schnell falsch rät, bekommt schon „Rät vermutlich“. „Durchgeklickt“ erfasst vor allem das Lösungsschritt-Kärtchen.
+  const geklickt = letzte.filter((x) => L.loesungGesehen(x) && (x.dauer ?? Infinity) < DURCHKLICKEN_SEKUNDEN);
+  if (geklickt.length >= DURCHKLICKEN_AB && geraten < 3) {
+    const am = new Date(geklickt.at(-1).t).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+    liste.push({ art: 'durchgeklickt', text: `Lösungen durchgeklickt: ${geklickt.length} der letzten ${letzte.length} Aufgaben mit gesehener Lösung, jede in unter ${DURCHKLICKEN_SEKUNDEN} Sekunden (zuletzt am ${am})` });
+  }
   if (geraten >= 3) liste.push({ art: 'raten', text: `Rät vermutlich: ${geraten} der letzten ${letzte.length} Aufgaben in wenigen Sekunden falsch` });
   if (v.length >= 8 && k.trainingAnteil >= 0.6) liste.push({ art: 'training', text: `Arbeitet überwiegend unter dem Zielniveau (${Math.round(k.trainingAnteil * 100)} % Training)` });
   const jeLernziel = new Map();

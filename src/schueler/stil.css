@@ -43,7 +43,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .konto { display: flex; gap: 10px; align-items: center; }
 #mathekingdom .wert { display: inline-flex; align-items: center; gap: 6px; border-radius: 99px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
 #mathekingdom .siegelwert { background: #f6e2dc; color: #6e1c18; font-size: 1.05rem; }
-#mathekingdom .klein-wert { font-size: .85rem; color: var(--grau); padding: 4px 6px; }
+#mathekingdom .muenzwert { font-size: 1rem; color: var(--tinte); padding: 4px 6px; }
 #mathekingdom .kopf nav { display: flex; gap: 6px; }
 #mathekingdom .kopf nav button { background: transparent; color: var(--nacht); border-color: var(--rand); padding: 6px 14px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
 #mathekingdom .knopfzeichen { flex: none; }
@@ -289,15 +289,11 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .aufgabentabelle.raster tbody tr:last-child th, #mathekingdom .aufgabentabelle.raster tbody tr:last-child td { border-top: 3px solid var(--nacht); }
 
 /* Startseite: Etappe */
-#mathekingdom .etappe { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; border-left: 8px solid var(--gold); margin-bottom: 22px; }
-#mathekingdom .etappe h2 { margin: 2px 0 10px; font-size: 1.3rem; }
-#mathekingdom .etappe .klein { text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; font-weight: 700; color: var(--grau); }
-#mathekingdom .etappe-text { flex: 1 1 320px; min-width: 0; }
-#mathekingdom .etappe .balken { display: flex; gap: 5px; max-width: 420px; }
-#mathekingdom .etappe .balken i { flex: 1; height: 12px; border-radius: 6px; background: #e8dcc2; border: 1px solid var(--rand); }
-#mathekingdom .etappe .balken i.voll { background: var(--gut); border-color: var(--gut); }
-#mathekingdom .etappe-stand { display: block; margin-top: 6px; font-size: .9rem; color: var(--grau); }
-#mathekingdom .etappe .haupt { font-size: 1.15rem; padding: 14px 26px; }
+/* 0.37: Weitermachen als ein Knopf mit kleiner Zielzeile */
+#mathekingdom .etappe { display: flex; gap: 6px 14px; align-items: center; flex-wrap: wrap; margin-bottom: 22px; }
+#mathekingdom .etappe .haupt { font-size: 1.1rem; padding: 10px 22px; display: inline-flex; align-items: center; gap: 10px; }
+#mathekingdom .etappe .weiter-pfeil { font-size: .9em; }
+#mathekingdom .etappe-ziel { font-size: .92rem; color: var(--grau); min-width: 0; }
 
 /* Merkzettel */
 #mathekingdom .merkzettel { background: #f1f2e4; border: 1px solid #cfd2b4; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; }
@@ -578,3 +574,6 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .zahlenstrahl .punktzahl { font-size: 15px; font-weight: 700; fill: currentColor; }
 #mathekingdom table.zeichentafel th { font-family: var(--schrift-titel); font-size: 1.4rem; }
 #mathekingdom table.zeichentafel td { font-size: 1.05rem; font-weight: 600; height: auto; }
+
+/* 0.37: Aufgabentester im Admin-Dashboard. Weitergehen, Zurück und Hilferuf steuert dort das Admin-Dashboard. */
+#mathekingdom.probe #zurueck, #mathekingdom.probe .ergebnis button, #mathekingdom.probe .ergebnis .vorschlag, #mathekingdom.probe #hilferuf, #mathekingdom.probe .versionshinweis, #mathekingdom.probe .kennung { display: none !important; }

@@ -2,8 +2,14 @@
 // Aufruf: node tools/uebersicht.mjs
 
 import { readFileSync, writeFileSync } from 'node:fs';
+import { zustand } from '../src/gemeinsam/kontrolle.js';
 
 const pool = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json', import.meta.url), 'utf8'));
+// Kontrollliste (0.37): ✔ vor jeder Aufgabe, die der Administrator im Aufgabentester kontrolliert hat und die sich seitdem nicht geändert hat.
+let kontrolliert = {};
+try { kontrolliert = JSON.parse(readFileSync(new URL('../aufgabenpool/kontrolliert.json', import.meta.url), 'utf8')).aufgaben ?? {}; } catch { /* noch keine */ }
+const haken = (a) => (zustand(a, kontrolliert).kontrolliert ? '✔ ' : '');
+const anzahlKontrolliert = pool.aufgaben.filter((a) => haken(a)).length;
 const NAMEN = { F: 'Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)', G: 'Grundlegendes Niveau (Hauptschulabschluss)', M: 'Mittleres Niveau (Realschulabschluss)', E: 'Erweitertes Niveau (Zugabe Richtung Gymnasium)' };
 const flach = (t) => String(t).replace(/\n/g, ' / ');
 const fehler = (liste) => (liste?.length ? ` Typische Fehler: ${liste.map((f) => `${f.wert} (${f.fehlvorstellung})`).join(', ')}.` : '');
@@ -67,7 +73,7 @@ const loesung = (a) => {
 const alleLernziele = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.text]));
 // Prozessbezogene Kompetenz (ADR 0017): Haupt, in Klammern die Nebenkompetenz.
 const kompetenzText = (a) => `${pool.kompetenzen[a.kompetenz[0]]}${a.kompetenz[1] ? ` (+ ${pool.kompetenzen[a.kompetenz[1]]})` : ''}`;
-let md = `# Aufgaben Klasse 5: Übersicht zur Durchsicht\n\nAutomatisch erzeugt aus \`aufgabenpool/klasse-5.json\` (${pool.aufgaben.length} Aufgaben). Nicht von Hand bearbeiten.\n\nBei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.\n`;
+let md = `# Aufgaben Klasse 5: Übersicht zur Durchsicht\n\nAutomatisch erzeugt aus \`aufgabenpool/klasse-5.json\` (${pool.aufgaben.length} Aufgaben). Nicht von Hand bearbeiten.\n\nBei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.\n\n✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (${anzahlKontrolliert} von ${pool.aufgaben.length}).\n`;
 for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.lernziele) {
   const eigene = pool.aufgaben.filter((a) => a.lernziel === l.id);
   if (!eigene.length) continue;
@@ -82,7 +88,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
     md += `Hilfekärtchen der ersten Aufgabe: ${karten(gruppe[0].hilfen)}\n\n`;
     for (const a of gruppe) {
       const mehrzeilig = a.format === 'auswahl' || a.format === 'sachaufgabe';
-      md += `- \`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
+      md += `- ${haken(a)}\`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
     }
   }
 }

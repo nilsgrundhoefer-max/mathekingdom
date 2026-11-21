@@ -15,6 +15,7 @@ import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 import { testklassenKarte } from './testklasse.js';
+import { aufgabentesterKarte, TESTER_STIL, ADMIN_MELDUNGEN } from './aufgabentester.js';
 import { aufklapper, AUFKLAPP_STIL } from '../gemeinsam/aufklappen.js';
 import { laufwerkSchild, LAUFWERK_STIL } from '../gemeinsam/laufwerke.js';
 
@@ -608,6 +609,8 @@ async function ladeBetrieb() {
       meldungen[kz] = (l.meldungen ?? []).filter((m) => !SCH.istTestklasse(v, jahr, m.klasse)); // Testklassen zählen nicht (ADR 0028)
     } catch { /* noch nie gestartet */ }
   }
+  // Meldungen aus dem Aufgabentester (0.37) stehen beim Administrator selbst.
+  try { const eigene = JSON.parse(await z.lehrer.lies(ADMIN_MELDUNGEN)); if (eigene?.length) meldungen.Administrator = eigene; } catch { /* noch keine */ }
   eintraege.sort((a, b) => (a.t < b.t ? 1 : a.t > b.t ? -1 : 0));
   let status = {};
   try { status = JSON.parse(await z.lehrer.lies(M.STATUS_DATEI)) ?? {}; } catch { /* noch keine */ }
@@ -845,6 +848,9 @@ function sperrenKarte() {
 // ---------- Testklassen (ADR 0028) ----------
 const testApi = { z, tue, male: () => male(), ladeKlasse, speichereKlasse, klassenOrdner, speichereVerzeichnis, alleCodes, drucke };
 
+// ---------- Aufgabentester (0.37) ----------
+const testerApi = { z, tue, male: () => male(), jetzt, ladeHerunter, setzeSperre, formatName: (f) => FORMAT_NAMEN[f] ?? f };
+
 // ---------- Rahmen ----------
 // Fünf Bereiche (ADR 0025).
 const TABS = [['uebersicht', 'Übersicht'], ['schule', 'Schule'], ['klassen', 'Klassen und Lehrkräfte'], ['betrieb', 'Betrieb'], ['aufgaben', 'Aufgaben']];
@@ -854,7 +860,7 @@ function hauptansicht() {
     schule: () => [schuljahrKarte(), uebernahmeKarte(), startdateien(), altKarte()],
     klassen: () => [lehrkraefte(), klassenKarte(), z.klasse && namenKarte(), testklassenKarte(testApi), aufgeloesteKarte()],
     betrieb: () => [nutzungKarte(), backupKarte(), protokollKarte()],
-    aufgaben: () => [meldungenKarte(), auffaelligKarte(), typenKarte(), sperrenKarte()],
+    aufgaben: () => [meldungenKarte(), aufgabentesterKarte(testerApi), auffaelligKarte(), typenKarte(), sperrenKarte()],
   }[z.tab];
   return h('div', {},
     h('nav', { class: 'tabs bereiche' }, TABS.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; z.hinweis = null; if (id !== 'schule' && id !== 'klassen') z.betrieb = null; male(); } }, titel)),
@@ -874,7 +880,7 @@ function male() {
 
 if (typeof document !== 'undefined') {
   wurzel = document.getElementById('mathekingdom-lehrer') ?? document.body.appendChild(h('div', { id: 'mathekingdom-lehrer' }));
-  document.head.append(h('style', {}, stil + VERSION_STIL + AUFKLAPP_STIL + LAUFWERK_STIL));
+  document.head.append(h('style', {}, stil + VERSION_STIL + AUFKLAPP_STIL + LAUFWERK_STIL + TESTER_STIL));
   klapp.binde(wurzel);
   // Auch spät nachgeladene Karten (Namensliste, Betrieb) werden aufklappbar.
   let geplant = false;

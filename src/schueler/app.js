@@ -131,16 +131,16 @@ const zaehltFuerWegstueck = (a) => !a.rueckblick && !a.einstieg && !a.heftNachlo
 function kopf() {
   const anzahl = L.siegel(z.stand), r = L.rang(anzahl);
   const status = z.speicherstatus;
-  // Siegel und Karte stehen vorn, die Münzen klein dahinter (ADR 0010).
+  // Siegel und Karte stehen vorn, die Münzen dahinter als kleinstes Symbol (ADR 0010). Seit 0.37 sind alle Symbole etwa ein Viertel größer.
   return h('header', { class: 'kopf' },
     h('button', { class: `wappenknopf${z.ansicht.name === 'wappen' ? ' aktiv' : ''}`, id: 'wappen-knopf', title: 'Zu deinem Wappen', 'aria-label': 'Zu deinem Wappen', onclick: () => zeige({ name: 'wappen' }) },
-      wappenBild(z.stand.wappen, 40), neuesBeimWappen()),
+      wappenBild(z.stand.wappen, 48), neuesBeimWappen()),
     h('div', { class: 'wer' },
       h('strong', {}, `${r.name} ${z.stand.code}`, hoftitelKopf())),
     h('div', { class: 'konto' },
-      h('button', { class: `wert siegelwert${z.ansicht.name === 'koennen' ? ' aktiv' : ''}`, id: 'siegel-knopf', title: `${anzahl} Siegel. Klick: Das kannst du schon`, 'aria-label': `${anzahl} Siegel. Das kannst du schon`, onclick: () => zeige({ name: 'koennen' }) }, siegel(24), h('b', { id: 'siegel' }, anzahl)),
+      h('button', { class: `wert siegelwert${z.ansicht.name === 'koennen' ? ' aktiv' : ''}`, id: 'siegel-knopf', title: `${anzahl} Siegel. Klick: Das kannst du schon`, 'aria-label': `${anzahl} Siegel. Das kannst du schon`, onclick: () => zeige({ name: 'koennen' }) }, siegel(30), h('b', { id: 'siegel' }, anzahl)),
       kronenZaehler(),
-      h('span', { class: 'wert klein-wert', title: 'Münzen zum Ausgeben' }, muenze(16), h('b', { id: 'muenzen' }, z.stand.muenzen))),
+      h('span', { class: 'wert muenzwert', title: 'Münzen zum Ausgeben' }, muenze(22), h('b', { id: 'muenzen' }, z.stand.muenzen))),
     h('nav', {},
       h('button', { class: ['schlossgarten', 'region'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-schlossgarten', onclick: () => zeige({ name: 'schlossgarten' }) }, turmZeichen(20), 'Schlossgarten'),
       h('button', { class: ['spiele', 'minispiel'].includes(z.ansicht.name) ? 'aktiv' : '', id: 'nav-spiele', onclick: () => zeige({ name: 'spiele' }) }, wuerfelZeichen(20), 'Spiele')),
@@ -167,7 +167,7 @@ function kronenZaehler() {
   const alle = Object.values(L.kronen(z.pool, z.index, z.stand));
   const je = Object.fromEntries(L.NIVEAUS.map((n) => [n, alle.filter((k) => k === n).length]));
   return h('span', { class: 'wert kronenwert', id: 'kronen', title: `Kronen: ${L.NIVEAUS.map((n) => `${je[n]} ${L.KRONEN[n]}`).join(', ')}` },
-    L.NIVEAUS.map((n) => h('span', { class: `je${je[n] ? '' : ' null'}`, 'data-krone': n }, kroneBild(n, 20), h('b', {}, je[n]))));
+    L.NIVEAUS.map((n) => h('span', { class: `je${je[n] ? '' : ' null'}`, 'data-krone': n }, kroneBild(n, 26), h('b', {}, je[n]))));
 }
 
 function nachrichtBanner() {
@@ -547,16 +547,12 @@ function etappenKarte() {
     const n = L.arbeitsniveau(z.stand, k.id, z.einst.zielniveau);
     starteAufgabe(L.naechstesLernziel(z.index, z.stand, e.milestone, n).id, n);
   };
-  return h('div', { class: 'karte etappe' },
-    h('div', { class: 'etappe-text' },
-      h('span', { class: 'klein' }, fertig ? 'Etappe geschafft' : 'Hier geht es weiter'),
-      h('h2', {}, fertig ? `${k.titel}: alle Meilensteine gemeistert` : `${k.titel}: Meilenstein ${e.milestone.titel}`),
-      h('div', { class: 'balken', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': e.gesamt, 'aria-valuenow': e.geschafft, 'aria-label': 'Etappenziel' },
-        Array.from({ length: e.gesamt }, (_, i) => h('i', { class: i < e.geschafft ? 'voll' : '' }))),
-      h('span', { class: 'etappe-stand' }, `${e.geschafft} von ${e.gesamt} Meilensteinen gemeistert`)),
+  // Seit 0.37 nur ein Knopf mit einer kleinen Zeile, wohin er führt. Ziel wie bisher: Aktuelles Kapitel, nächstes offenes Lernziel.
+  return h('div', { class: 'etappe', id: 'etappe' },
     fertig
       ? h('button', { class: 'schlicht', id: 'weiter-wandern', onclick: () => zeige({ name: 'region', kapitel: k.id }) }, 'Zur Regionskarte')
-      : h('button', { class: 'haupt', id: 'weiter-wandern', onclick: los }, 'Weiter wandern'));
+      : h('button', { class: 'haupt', id: 'weiter-wandern', onclick: los }, h('span', { class: 'weiter-pfeil', 'aria-hidden': 'true' }, '▶'), 'Weitermachen'),
+    h('span', { class: 'etappe-ziel' }, fertig ? `${k.titel}: alle Meilensteine gemeistert` : `${k.titel} · ${e.milestone.titel}`));
 }
 
 // ---------- Rückblick (ADR 0014) ----------
@@ -661,7 +657,7 @@ function eigenerTitel() {
 function hoftitelKopf() {
   const titel = eigenerTitel();
   if (!titel) return null;
-  return h('span', { class: 'hoftitel-kopf', id: 'hoftitel-kopf', title: `${titel.name}: einer der fünf Besten der Klasse in diesem Schuljahr` }, hoftitelBild(titel.id, 20, { titel: titel.name }), titel.name);
+  return h('span', { class: 'hoftitel-kopf', id: 'hoftitel-kopf', title: `${titel.name}: einer der fünf Besten der Klasse in diesem Schuljahr` }, hoftitelBild(titel.id, 26, { titel: titel.name }), titel.name);
 }
 // Lädt die Stände der Mitschüler höchstens einmal pro Minute, damit die Kopfzeile den Titel kennt.
 function hoftitelLaden() {
@@ -1059,6 +1055,7 @@ function pruefe(formular, sicher = null) {
   z.stand.aktiv = null;
   a.ergebnis = { ...buchung, richtig: ergebnis.richtig };
   a.seit = Date.now();
+  if (z.probe) window.parent?.postMessage({ mkProbeErgebnis: { kennung: z.probe, richtig: ergebnis.richtig } }, '*');
   geaendert();
   z.dienst.sofort();
   male();
@@ -1131,6 +1128,8 @@ export function loesungsbild(auf) {
 }
 // Ein kurzer Satz in der Urteilszeile, wenn sich am Lernen etwas zeigt (ADR 0017). Höchstens einer, damit es zwei Zeilen bleiben.
 function lernsatz(e) {
+  // ADR 0031: Lösung heute schon gesehen. Ohne den Satz wundert sich das Kind über die eine Münze.
+  if (e.bekannt) return h('small', { class: 'lernsatz', id: 'kanntest-du' }, 'Diese Aufgabe kanntest du schon. Ab morgen zählt sie wieder für dein Siegel.');
   const text = e.ohneHilfe ? 'Diesmal ganz ohne Beispiel und Lösungsschritt!' : e.mut ? 'Du warst unsicher, aber es stimmt. Du kannst mehr, als du denkst.' : null;
   return text && h('small', { class: 'lernsatz', id: e.ohneHilfe ? 'ohne-hilfe' : 'mut-satz' }, text);
 }
@@ -1560,10 +1559,39 @@ function minispiel() {
   return h('section', { class: 'karte spiel' }, h('p', {}, 'Zeit: ', uhr, ' · Richtig: ', h('b', {}, a.punkte)), formular);
 }
 
+// ---------- Aufgabentester (0.37) ----------
+// Im Admin-Dashboard läuft dieses Dashboard in einem Rahmen (window.MK_PROBE). Es zeigt eine Aufgabe nach ihrer Kennung so,
+// wie ein Schüler sie sieht und bedient, mit einem frischen Speicherstand, der nirgends gespeichert wird.
+// Das Admin-Dashboard schickt { mkProbe: kennung }; nach dem Prüfen meldet der Rahmen { mkProbeErgebnis: { kennung, richtig } }.
+function probeAblage(klasse) {
+  const dateien = new Map();
+  return { name: klasse, demo: true, probe: true, lies: async (p) => dateien.get(p) ?? null, schreibe: async (p, t) => { dateien.set(p, t); }, liste: async () => [] };
+}
+export function zeigeProbe(kennung) {
+  const pool = Object.values(window.MK_POOLS ?? {}).find((p) => p.aufgaben.some((a) => a.id === kennung));
+  const aufgabe = pool?.aufgaben.find((a) => a.id === kennung);
+  if (!aufgabe) { wurzel.replaceChildren(h('p', { class: 'karte' }, `Die Aufgabe ${kennung} steht nicht im Aufgabenpool.`)); return; }
+  const klasse = `${pool.klassenstufe}a`, code = `${pool.klassenstufe}A-PROB`;
+  // Zielniveau = Niveau der Aufgabe, damit sie weder als Training noch als Grundlage erscheint.
+  const klassendatei = { zielniveaus: { [code]: aufgabe.niveau }, aktuellesKapitel: L.kapitelVon(aufgabe.lernziel), tore: pool.kapitel.map((k) => k.id) };
+  Object.assign(z, { probe: kennung, ablage: probeAblage(klasse), pool, index: L.indexiere(pool), klassendatei, einst: L.einstellungen(klassendatei, code, pool),
+    stand: L.neuerSpeicherstand(code, klasse, jetzt()), speicherstatus: null, meldung: null });
+  z.einst.spielpause = true;
+  z.dienst = { markiere() {}, sofort() {} };
+  zeigeAufgabe(aufgabe);
+}
+
 // ---------- Start ----------
 export function starte(ziel) {
   wurzel = ziel;
   document.head.append(h('style', {}, stil + VERSION_STIL));
+  if (window.MK_PROBE) {
+    wurzel.classList.add('probe');
+    window.addEventListener('message', (ev) => { if (ev.source === window.parent && typeof ev.data?.mkProbe === 'string') zeigeProbe(ev.data.mkProbe); });
+    window.parent?.postMessage({ mkProbeBereit: true }, '*');
+    if (typeof window.MK_PROBE === 'string') zeigeProbe(window.MK_PROBE);
+    return;
+  }
   male();
   setTimeout(() => wurzel.querySelector('#code')?.focus());
 }

@@ -178,7 +178,7 @@ Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist.
 _Avoid_: Zusatzstation, Extra
 
 **Lernziel**:
-Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III.
+Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III. Eine Aufgabe, deren Lösung er am selben Tag schon gesehen hat, zählt dabei nicht (ADR 0031).
 _Avoid_: Kompetenz (allein), Ziel
 
 **Rückblick**:
@@ -363,7 +363,7 @@ Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge
 _Avoid_: Schwierigkeit
 
 **Etappe**:
-Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten Meilensteine und dem nächsten Meilenstein. Sie steht oben auf der Startseite. Gesperrte Meilensteine zählen nicht mit.
+Das Kapitel, an dem ein Schüler gerade arbeitet, mit dem nächsten Meilenstein. Sie steht oben auf der Startseite als Knopf „Weitermachen“ mit einer kleinen Zeile, wohin er führt. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Wegstück**:
@@ -377,6 +377,13 @@ _Avoid_: Rückblick (der ist ein eigenes Päckchen, einmal am Tag), Wiederholung
 **Rast**:
 Ein Vorschlag von 60 Sekunden Pause vom Bildschirm nach jedem vierten Wegstück, mit Sanduhr, überspringbar und ohne Münzen. Die Lehrkraft schaltet sie pro Klasse ab; standardmäßig ist sie an.
 _Avoid_: Spielpause (die ist für Minispiele), Pause (allein)
+
+**Gesehene Lösung**:
+Ein Schüler hat die Lösung einer Aufgabe gesehen, wenn er sie nach zwei Fehlversuchen nicht gelöst hat (dann steht die Lösung da) oder das Lösungsschritt-Kärtchen geöffnet hat. Tipp und Beispiel zählen nicht dazu. Löst er dieselbe Aufgabe am selben Tag, bringt sie 1 Münze und zählt nicht fürs Siegel; ab dem nächsten Tag zählt sie wieder normal (ADR 0031).
+_Avoid_: abgeschrieben, geschummelt
+
+**Lösungen durchgeklickt**:
+Eine Auffälligkeit für die Lehrkraft: Mindestens 5 der letzten 10 Aufgaben eines Schülers endeten mit gesehener Lösung, jede in unter 30 Sekunden.
 
 **Hilfekärtchen**:
 Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
@@ -495,6 +502,17 @@ _Avoid_: Support-Protokoll, Ticket, Fehlermeldung
 **Auffällige Aufgabe**:
 Eine Aufgabe, die über alle Klassen hinweg an ihren Zahlen auffällt, ohne dass jemand sie gemeldet hat: etwa viele gleiche falsche Antworten, die kein typischer Fehler sind, oder eine viel niedrigere Lösungsquote als die übrigen Aufgaben ihres Lernziels. Nur der Administrator sieht diese Liste, ohne Namen.
 _Avoid_: schwierige Aufgabe (das zeigt das Lehrer-Dashboard je Klasse)
+
+**Aufgabentester**:
+Die Karte im Admin-Dashboard unter Aufgaben, in der der Administrator jede Aufgabe einmal so sieht und bedient, wie ein Schüler sie sieht, mit Lösung, typischen Fehlern und Aufgabenkennung daneben. Er hakt sie als kontrolliert ab, meldet einen Fehler oder überspringt sie.
+_Avoid_: Aufgabenprüfung, Testmodus
+
+**Kontrolliert**:
+Eine Aufgabe, die der Administrator im Aufgabentester von Hand durchgesehen und bestätigt hat. Das Häkchen gilt für genau diesen Inhalt: Ändern sich Text, Lösung, Hilfen oder Bild, ist die Aufgabe wieder nicht kontrolliert. Schüler bekommen kontrollierte und nicht kontrollierte Aufgaben gleichermaßen; nur der Administrator und die Aufgabenübersicht zeigen den Zustand.
+_Avoid_: geprüft (Prüfen ist das Auswerten einer Antwort), freigegeben
+
+**Kontrollliste**:
+Die Datei, die der Administrator aus dem Aufgabentester exportiert: alle kontrollierten Aufgaben mit ihrer Aufgabenkennung. Sie wird in den Aufgabenpool übernommen, damit das Häkchen auch die nächste Version überdauert.
 
 **Namensliste**:
 Die Zuordnung von Schülercodes zu echten Namen, Teil der Klassendaten.
