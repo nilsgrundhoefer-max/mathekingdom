@@ -3,6 +3,7 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { zustand } from '../src/gemeinsam/kontrolle.js';
+import { schreibe } from '../src/schueler/groessen.js';
 
 const pool = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json', import.meta.url), 'utf8'));
 // Kontrollliste (0.37): ✔ vor jeder Aufgabe, die der Administrator im Aufgabentester kontrolliert hat und die sich seitdem nicht geändert hat.
@@ -47,6 +48,15 @@ const bild = (b) => {
     zeichentafel: () => `Zeichentafel ${b.zeichen.join(', ')} mit Werten`,
     gitter: () => gitterText(b),
     lineal: () => `Lineal, ${b.lang / 10} cm lang; die Strecke ${(b.namen ?? ['A', 'B']).join('')} beginnt bei ${b.von} mm und endet bei ${b.bis} mm`,
+    // Kapitel 6 (ADR 0033)
+    geld: () => `Geld: ${b.stuecke.map((x) => (x >= 100 ? `${x / 100} €` : `${x} ct`)).join(', ')}`,
+    uhr: () => `${b.uhren.length > 1 ? 'Zeigeruhren' : 'Zeigeruhr'}: ${b.uhren.map((u) => `${u.text ? `${u.text} ` : ''}${u.h}:${String(u.min).padStart(2, '0')} Uhr`).join(', ')}`,
+    waage: () => `Balkenwaage im Gleichgewicht: links ${b.links}${b.linksDazu ? ` und ${b.linksDazu.map((x) => `${x} g`).join(', ')}` : ''}, rechts ${b.gewichte.map((x) => `${x} g`).join(', ')}`,
+    einheitentafel: () => `Einheitentafel ${b.gruppen.map((g) => g.name).join(' | ')}, Spalten ${b.spalten.join(' ')}: ${[b.werte, ...(b.weitere ?? [])].map((z) => z.map((w) => (w == null ? '·' : typeof w === 'object' ? '?' : w)).join(' ')).join(' / ')}`,
+    vergleichsbild: () => `Vergleichsbild: ${b.klein} als Vergleichsgröße neben ${b.gross}, ${b.richtung === 'hoch' ? 'Höhe' : 'Länge'} ${String(b.zehntel / 10).replace('.', ',')}-mal so groß${b.hilfslinien ? ', mit Hilfslinien' : ''}`,
+    karte: () => `Karte mit Lineal (${b.lang / 10} cm): ${b.orte.map((o) => `${o.n} bei ${o.mm / 10} cm`).join(', ')}${b.massstab ? `; Maßstab 1:${b.massstab}` : ''}${b.leiste ? `; Maßstabsleiste: ${b.leiste.mm / 10} cm sind ${b.leiste.text}` : ''}`,
+    grundriss: () => `Plan „${b.name}“: ${b.b / 10} cm lang und ${b.h / 10} cm breit${b.massstab ? `; Maßstab 1:${b.massstab}` : ''}${b.leiste ? `; Maßstabsleiste: ${b.leiste.mm / 10} cm sind ${b.leiste.text}` : ''}`,
+    zeitleiste: () => `Zeitleiste: ${b.punkte.map((x) => (typeof x === 'object' ? '?' : `${x} Uhr`)).join(' → ')}; Zeitspannen ${b.spruenge.map((x) => (typeof x === 'object' ? '?' : x)).join(', ')}`,
     zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.schritt ? `, Teilstriche alle ${b.schritt}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${wert(b.pfeil)}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
@@ -56,6 +66,9 @@ const bild = (b) => {
 const daten = (a) => [a.urliste && ` _(Antwortkärtchen: ${a.urliste.join(', ')})_`, a.daten && ` _(Tabelle: ${a.daten.kopf.join(' | ')} / ${a.daten.zeilen.map((z) => z.join(' | ')).join(' / ')})_`].filter(Boolean).join('');
 const loesung = (a) => {
   if (a.format === 'zahl') return `Lösung: ${zahl(a)}`;
+  // Kapitel 6 (ADR 0033): Größe mit Einheit. Richtig ist jede Schreibweise mit demselben Wert.
+  if (a.format === 'groesse') return `_(Größe eingeben${a.einheiten ? `, Einheit wählen aus ${a.einheiten.join(', ')}` : `, Einheit ${a.einheit} steht fest`})_ Lösung: **${schreibe(a.loesung, a.einheit)}**.${a.typischeFehler?.length ? ` Typische Fehler: ${a.typischeFehler.map((f) => `${schreibe(f.wert, a.einheit)} (${f.fehlvorstellung})`).join(', ')}.` : ''}`;
+
   if (a.format === 'zahlenstrahl') {
     const st = a.strahl;
     return `_(Zahlenstrahl ${st.von} bis ${st.bis}, Teilstriche alle ${st.schritt}${st.spruenge ? `, Sprung ${st.spruenge.map((x) => `von ${x.von}: ${x.text}`).join('; ')}` : ''}; ${a.eingabe === 'markieren' ? 'antippen' : 'Zahl eintragen'})_ Lösung: ${zahl(a)}`;
@@ -67,6 +80,7 @@ const loesung = (a) => {
     if (t.art === 'mauer') return `_(${t.rechenart === '·' ? 'Mal-Mauer' : 'Zahlenmauer'}, von oben nach unten; fett = Eingabefeld)_ ${t.zeilen.map((r) => r.map(zelle).join(' · ')).join(' / ')}`;
     if (t.art === 'malkreuz') return `_(Malkreuz; fett = Eingabefeld)_\n\n  | ${t.kopf.join(' | ')} |\n  |${t.kopf.map(() => '---').join('|')}|\n${t.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n\n  ${t.rechnung.faktoren.join(' · ')} = **${a.luecken[t.rechnung.summe].loesung}**\n`;
     if (t.art === 'raster' && t.rechnung?.zeichen === '·') return ` _(Rechenraster wie im Heft, hier mit Lösung)_\n\n\`\`\`\n${t.zeilen.map((z) => z.map((c) => (typeof c === 'object' ? a.luecken[c.luecke].loesung : c || ' ')).join(' ')).join('\n')}\n\`\`\`\n`;
+    if (t.art === 'einheitentafel') return ` _(Einheitentafel ${t.gruppen.map((g) => g.name).join(' | ')} zum Eintragen; fett = Eingabefeld)_\n\n  | ${t.kopf.join(' | ')} |\n  |${t.kopf.map(() => '---').join('|')}|\n${t.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n${t.ablesen ? `\n  ${t.ablesen.text} **${a.luecken[t.ablesen.luecke].loesung}** ${t.ablesen.einheit}.\n` : ''}`;
     return `${a.tabelle.art === 'raster' ? ' _(Rechenraster mit Ziffernfeldern)_' : ''}\n\n  | ${a.tabelle.kopf.join(' | ')} |\n  |${a.tabelle.kopf.map(() => '---').join('|')}|\n${a.tabelle.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n`;
   }
   if (a.format === 'auswahl') return a.optionen.map((o) => `  - ${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join('\n');
@@ -82,7 +96,7 @@ const loesung = (a) => {
     const was = { punkte: a.offen ? 'alle passenden Punkte antippen' : `${a.loesung?.length === 1 ? 'einen Punkt' : `${a.loesung?.length} Punkte`} antippen`, zellen: 'Kästchen färben', linie: `${LINIE[a.linie] ?? 'Linie'} durch zwei Punkte zeichnen` }[a.eingabe];
     return `_(Gitterzeichnen, ${was}; ${gitterText(a.gitter)})_ Lösung: **${a.eingabe === 'linie' ? `zum Beispiel durch ${a.beispiel.map(pt).join(' und ')}` : a.loesung.map(pt).join(' ')}**`;
   }
-  return a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n');
+  return a.teile.map((t, i) => (t.optionen ? `  - ${'abcdef'[i]}) ${flach(t.text)}${t.mehrfach ? ' _(mehrere antippen)_' : ''} ${t.optionen.map((o) => `${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join(' · ')}` : `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`)).join('\n');
 };
 
 const alleLernziele = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.text]));
@@ -103,7 +117,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
     md += `Hilfekärtchen der ersten Aufgabe: ${karten(gruppe[0].hilfen)}\n\n`;
     for (const a of gruppe) {
       const mehrzeilig = a.format === 'auswahl' || a.format === 'sachaufgabe';
-      md += `- ${haken(a)}\`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
+      md += `- ${haken(a)}\`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${a.tippBild ? bild(a.tippBild).replace('(Bild:', '(Bild im Tipp:') : ''}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
     }
   }
 }

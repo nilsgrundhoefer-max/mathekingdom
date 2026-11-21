@@ -1,10 +1,10 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1968 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (2328 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1968).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2328).
 
 ## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
 
@@ -7125,6 +7125,1248 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den genauen Namen üb
   - ☐ Nur Sara hat recht.
   - ☑ Beide haben recht.
 
+## 5.6.1-S1: Ich kann zu einer Größe die passende Einheit und einen Vergleich aus dem Alltag nennen.
+
+Grundlage, die F übt: Dinge aus dem Alltag mit ihrer Größe verbinden: Tür 2 m, Tafel Schokolade 100 g
+
+Baut auf: 5.2.4-S1 (Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Einheit in der Tabelle. *Beispiel:* Die Einheit cm steht bei der Länge. Mit cm misst du also eine Länge. *Lösungsschritt:* Suche € in der rechten Spalte. Lies links ab.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Was misst du mit der Einheit €? _(Tabelle: Das misst du | Einheiten / Länge | mm, cm, m, km / Gewicht | g, kg, t / Zeit | s, min, h / Geld | ct, €)_
+  - ☐ Zeit
+  - ☑ Geld
+  - ☐ Gewicht
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft dir beim Vergleichen. / Wie lang ist ein neuer Bleistift ungefähr? _(Tabelle: Das kennst du | So groß ist es / Fußballfeld | 100 m / Auto | 4 m / Tür | 2 m)_
+  - ☐ 180 cm
+  - ☑ 18 cm
+  - ☐ 18 m
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft dir beim Vergleichen. / Wie viel wiegt ein Fahrrad ungefähr? _(Tabelle: Das kennst du | So groß ist es / Elefant | 5 t / Ei | 60 g / Tafel Schokolade | 100 g)_
+  - ☐ 15 g
+  - ☑ 15 kg
+  - ☐ 150 g
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Welche Einheit passt? / Ein Fußballspiel dauert ohne Pause 90 ▢. _(Tabelle: Das misst du | Einheiten / Länge | mm, cm, m, km / Gewicht | g, kg, t / Zeit | s, min, h / Geld | ct, €)_
+  - ☑ min
+  - ☐ s
+  - ☐ h
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Was passt zusammen? _(Tabelle: Das misst du | Einheiten / Länge | mm, cm, m, km / Gewicht | g, kg, t / Zeit | s, min, h / Geld | ct, €)_ Lösung: Tür → 2 m, Nachtschlaf → 10 h, Schulranzen → 5 kg
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist ungefähr 2 m lang oder hoch? _(Tabelle: Das misst du | Einheiten / Länge | mm, cm, m, km / Gewicht | g, kg, t / Zeit | s, min, h / Geld | ct, €)_
+  - ☐ Fingerbreite
+  - ☐ Fußballfeld
+  - ☑ Tür
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst. *Beispiel:* Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m. *Lösungsschritt:* Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft dir beim Vergleichen. / Wie lange dauert ein Schultag ungefähr? _(Tabelle: Das kennst du | So groß ist es / Zähneputzen | 3 min / Händeklatschen | 1 s / Fußballspiel | 90 min)_
+  - ☐ 60 h
+  - ☑ 6 h
+  - ☐ 6 s
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Was wiegt ungefähr 1 kg? _(Tabelle: Das misst du | Einheiten / Länge | mm, cm, m, km / Gewicht | g, kg, t / Zeit | s, min, h / Geld | ct, €)_
+  - ☐ Auto
+  - ☐ Elefant
+  - ☑ Liter Milch
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Was passt zusammen? _(Tabelle: Das misst du | Einheiten / Länge | mm, cm, m, km / Gewicht | g, kg, t / Zeit | s, min, h / Geld | ct, €)_ Lösung: Auto → 1 t, Bus → 12 m, Fußballspiel → 90 min
+- `04` AFB I · _Modellieren_ · Welche Einheit passt? / Eine Fingerbreite ist ungefähr 1 ▢.
+  - ☐ m
+  - ☐ mm
+  - ☑ cm
+- `05` AFB II · _Modellieren_ · Welche Angaben können stimmen? / Kreuze alle an.
+  - ☐ Zähneputzen: 30 h
+  - ☑ Tür: 2 m
+  - ☐ Fußballspiel: 90 s
+  - ☐ Apfel: 20 kg
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul sagt: / „Ein Fußballspiel dauert ohne Pause 9 h.“ / Stimmt das?
+  - ☐ Falsch. / Es sind ungefähr 90 s.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es sind ungefähr 90 min.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst. *Lösungsschritt:* Streiche zuerst, was viel zu klein oder viel zu groß ist.
+
+- `01` AFB I · _Modellieren_ · Wie viel wiegt ein voller Schulranzen ungefähr?
+  - ☐ 50 kg
+  - ☑ 5 kg
+  - ☐ 5 t
+  - ☐ 50 g
+- `02` AFB II · _Modellieren_ · Was passt zusammen? Lösung: Brötchen → 50 ct, Nachtschlaf → 10 h, Schulranzen → 5 kg, Bleistift → 18 cm
+- `03` AFB II · _Modellieren_ · Welche Angaben können stimmen? / Kreuze alle an.
+  - ☑ Tafel Schokolade: 100 g
+  - ☐ Fußballfeld: 100 km
+  - ☑ Fußballspiel: 90 min
+  - ☐ Kinokarte: 80 ct
+  - ☐ Ei: 6 kg
+- `04` AFB I · _Modellieren_ · Welche Einheit ist sinnvoll? / Ein Zimmer ist 250 ▢ hoch.
+  - ☐ km
+  - ☐ mm
+  - ☑ cm
+  - ☐ m
+- `05` AFB II · _Modellieren_ · Was wiegt ungefähr 1 t?
+  - ☐ Tafel Schokolade
+  - ☐ Ei
+  - ☐ Elefant
+  - ☑ Auto
+- `06` AFB III · _Modellieren_ · Wie viele Tafeln Schokolade wiegen zusammen so viel wie ein Liter Milch? Lösung: **10 Tafeln**. Typische Fehler: 100 (sach-falsche-rechnung), 1 (umrechnungszahl).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst.
+
+- `01` AFB I · _Modellieren_ · Wie viel kostet eine Kinokarte ungefähr?
+  - ☑ 8 €
+  - ☐ 80 €
+  - ☐ 800 €
+  - ☐ 80 ct
+  - ☐ 8 ct
+- `02` AFB II · _Modellieren_ · Welche Angaben können stimmen? / Kreuze alle an.
+  - ☐ Fahrrad: 150 g
+  - ☐ Händeklatschen: 10 s
+  - ☑ Ei: 60 g
+  - ☑ Brötchen: 50 ct
+  - ☑ Schulstunde: 45 min
+  - ☑ Bus: 12 m
+- `03` AFB II · _Modellieren_ · Was passt zusammen? Lösung: Liter Milch → 1 kg, Zähneputzen → 3 min, Kinokarte → 8 €, Fußballfeld → 100 m, Elefant → 5 t
+- `04` AFB III · _Argumentieren (+ Modellieren)_ · Noah sagt: / „Ein Fahrrad wiegt ungefähr 15 g.“ / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. Es sind ungefähr 15 kg.
+  - ☐ Falsch. Es sind ungefähr 15 t.
+- `05` AFB II · _Modellieren_ · Wie viele Fahrräder wiegen zusammen ungefähr so viel wie ein Elefant mit 6 t? Lösung: **400 Fahrräder**. Typische Fehler: 90 (sach-falsche-rechnung), 4000 (umrechnungszahl), 40 (umrechnungszahl).
+- `06` AFB III · _Modellieren_ · Wie viele Schulstunden dauern zusammen so lange wie zwei Fußballspiele ohne Pause? Lösung: **4 Schulstunden**. Typische Fehler: 8100 (sach-falsche-rechnung), 40 (umrechnungszahl).
+
+## 5.6.1-S2: Ich kann Größen mit einer Vergleichsgröße schätzen.
+
+Grundlage, die F übt: Abzählen, wie oft eine bekannte Größe in ein Bild passt
+
+Baut auf: 5.6.1-S1 (Ich kann zu einer Größe die passende Einheit und einen Vergleich aus dem Alltag nennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle, wie oft die Vergleichsgröße hineinpasst. Rechne dann mal. *Beispiel:* Die Tür ist 2 m hoch. Sie passt 3-mal hinein. Dann sind es ungefähr 3 · 2 m = 6 m. *Lösungsschritt:* Die Vergleichsgröße passt 4-mal hinein. Rechne 4 mal 2 m.
+
+- `01` AFB I · _Modellieren_ · Schau auf das Bild. / Die Tür ist 2 m hoch. _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben turm, Höhe 4-mal so groß, mit Hilfslinien)_
+  - a) Wie oft passt die Tür in den Turm? **4 mal**. Typische Fehler: 5 (vergleich-nicht-genutzt), 3 (vergleich-nicht-genutzt).
+  - b) Wie hoch ist der Turm ungefähr? **8 m**. Typische Fehler: 2 (vergleich-nicht-genutzt), 4 (vergleich-nicht-genutzt), 6 (schaetzen-addiert).
+- `02` AFB I · _Modellieren_ · Die Tür ist 2 m hoch. / Die Tür passt 2-mal in den Leuchtturm. / Wie hoch ist der Leuchtturm ungefähr? _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben leuchtturm, Höhe 2-mal so groß, mit Hilfslinien)_ Lösung: **4 m**. Typische Fehler: 2 (vergleich-nicht-genutzt).
+- `03` AFB I · _Modellieren_ · Das Auto ist 4 m lang. / Das Auto passt 6-mal in das Schiff. / Welche Rechnung passt zum Schätzen? _(Bild: Vergleichsbild: auto als Vergleichsgröße neben schiff, Länge 6-mal so groß, mit Hilfslinien)_
+  - ☐ 4 m + 6 m
+  - ☑ 6 · 4 m
+  - ☐ 24 m : 6
+- `04` AFB I · _Modellieren_ · Das Auto ist 4 m lang. / Das Auto passt 3-mal in das Schiff. / Wie lang ist das Schiff ungefähr? _(Bild: Vergleichsbild: auto als Vergleichsgröße neben schiff, Länge 3-mal so groß, mit Hilfslinien)_ Lösung: **12 m**. Typische Fehler: 4 (vergleich-nicht-genutzt), 7 (schaetzen-addiert).
+- `05` AFB II · _Modellieren_ · Das Kind ist 150 cm groß. / Das Kind passt 2-mal in das Haus. / Wie hoch ist das Haus ungefähr? _(Bild: Vergleichsbild: kind als Vergleichsgröße neben haus, Höhe 2-mal so groß, mit Hilfslinien)_ Lösung: **300 cm**. Typische Fehler: 150 (vergleich-nicht-genutzt), 152 (schaetzen-addiert).
+- `06` AFB I · _Modellieren_ · Schau auf das Bild. / Das Auto ist 4 m lang. _(Bild: Vergleichsbild: auto als Vergleichsgröße neben bruecke, Länge 5-mal so groß, mit Hilfslinien)_
+  - a) Wie oft passt das Auto in die Brücke? **5 mal**. Typische Fehler: 6 (vergleich-nicht-genutzt), 4 (vergleich-nicht-genutzt).
+  - b) Wie lang ist die Brücke ungefähr? **20 m**. Typische Fehler: 4 (vergleich-nicht-genutzt), 5 (vergleich-nicht-genutzt), 9 (schaetzen-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle, wie oft die Vergleichsgröße hineinpasst. Rechne dann mal. *Beispiel:* Die Tür ist 2 m hoch. Sie passt 3-mal hinein. Dann sind es ungefähr 3 · 2 m = 6 m. *Lösungsschritt:* Die Vergleichsgröße passt 4-mal hinein. Rechne 4 mal 2 m.
+
+- `01` AFB I · _Modellieren_ · Schau auf das Bild. / Die Tür ist 2 m hoch. _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben baum, Höhe 4-mal so groß)_
+  - a) Wie oft passt die Tür in den Baum? **4 mal**. Typische Fehler: 5 (vergleich-nicht-genutzt), 3 (vergleich-nicht-genutzt).
+  - b) Wie hoch ist der Baum ungefähr? **8 m**. Typische Fehler: 2 (vergleich-nicht-genutzt), 4 (vergleich-nicht-genutzt), 6 (schaetzen-addiert).
+- `02` AFB I · _Modellieren_ · Der Bus ist 12 m lang. / Der Bus passt 4-mal in das Schiff. / Wie lang ist das Schiff ungefähr? _(Bild: Vergleichsbild: bus als Vergleichsgröße neben schiff, Länge 4-mal so groß, mit Hilfslinien)_ Lösung: **48 m**. Typische Fehler: 12 (vergleich-nicht-genutzt), 16 (schaetzen-addiert).
+- `03` AFB II · _Modellieren_ · Das Kind ist 150 cm groß. / Das Kind passt 4-mal in den Turm. / Wie hoch ist der Turm ungefähr? _(Bild: Vergleichsbild: kind als Vergleichsgröße neben turm, Höhe 4-mal so groß)_ Lösung: **6 m**. Typische Fehler: 150 (vergleich-nicht-genutzt), 154 (schaetzen-addiert), 600 (einheit-fehlt).
+- `04` AFB I · _Modellieren_ · Schau auf das Bild. / Das Kind ist 150 cm groß. _(Bild: Vergleichsbild: kind als Vergleichsgröße neben mast, Höhe 3-mal so groß, mit Hilfslinien)_
+  - a) Wie oft passt das Kind in den Fahnenmast? **3 mal**. Typische Fehler: 4 (vergleich-nicht-genutzt), 2 (vergleich-nicht-genutzt).
+  - b) Wie hoch ist der Fahnenmast ungefähr? **450 cm**. Typische Fehler: 150 (vergleich-nicht-genutzt), 3 (vergleich-nicht-genutzt), 153 (schaetzen-addiert).
+- `05` AFB II · _Modellieren_ · Der Lastwagen ist 16 m lang. / Das Auto passt 4-mal hinein. / Wie lang ist das Auto ungefähr? _(Bild: Vergleichsbild: auto als Vergleichsgröße neben lkw, Länge 4-mal so groß)_ Lösung: **4 m**. Typische Fehler: 64 (umrechnungsrichtung), 12 (sach-falsche-rechnung).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Die Tür ist 2 m hoch. / Finn schätzt: Der Fahnenmast ist ungefähr 12 m hoch. / Stimmt das? _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben mast, Höhe 6-mal so groß, mit Hilfslinien)_
+  - ☐ Falsch. / Es sind ungefähr 2 m.
+  - ☑ Stimmt. / Das passt zum Bild.
+  - ☐ Falsch. / Es sind ungefähr 24 m.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie oft passt die Vergleichsgröße hinein? Rechne dann mal. *Lösungsschritt:* Miss mit dem Finger am Bildschirm ab. Auch eine halbe Vergleichsgröße zählt.
+
+- `01` AFB I · _Modellieren_ · Die Tür ist 2 m hoch. / Wie hoch ist der Turm ungefähr? _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben turm, Höhe 3-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **6** m, richtig von 5 bis 7
+- `02` AFB II · _Modellieren_ · Das Auto ist 4 m lang. / Wie lang ist das Schiff ungefähr? _(Bild: Vergleichsbild: auto als Vergleichsgröße neben schiff, Länge 4-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **16** m, richtig von 13 bis 19
+- `03` AFB II · _Modellieren_ · Das Kind ist 150 cm groß. / Wie hoch ist der Turm ungefähr? _(Bild: Vergleichsbild: kind als Vergleichsgröße neben turm, Höhe 5,5-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **825** cm, richtig von 660 bis 990
+- `04` AFB I · _Modellieren_ · Der Bus ist 12 m lang. / Wie lang ist das Schiff ungefähr? _(Bild: Vergleichsbild: bus als Vergleichsgröße neben schiff, Länge 4-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **48** m, richtig von 39 bis 57
+- `05` AFB II · _Modellieren_ · Das Auto ist 4 m lang. / Wie lang ist der Lastwagen ungefähr? / Welche Schätzung passt am besten? _(Bild: Vergleichsbild: auto als Vergleichsgröße neben lkw, Länge 2,5-mal so groß)_
+  - ☐ 30 m
+  - ☐ 4 m
+  - ☑ 10 m
+  - ☐ 100 m
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Die Tür ist 2 m hoch. / Mia schätzt: Der Turm ist ungefähr 13 m hoch. / Stimmt das? _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben turm, Höhe 6,5-mal so groß)_
+  - ☐ Falsch. Es sind ungefähr 2 m.
+  - ☑ Stimmt. Das passt zum Bild.
+  - ☐ Falsch. Es sind ungefähr 26 m.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie oft passt die Vergleichsgröße hinein? Rechne dann mal.
+
+- `01` AFB I · _Modellieren_ · Das Kind ist 150 cm groß. / Wie hoch ist das Haus ungefähr? _(Bild: Vergleichsbild: kind als Vergleichsgröße neben haus, Höhe 3,4-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **510** cm, richtig von 408 bis 612
+- `02` AFB II · _Modellieren_ · Das Auto ist 4 m lang. / Wie lang ist das Schiff ungefähr? _(Bild: Vergleichsbild: auto als Vergleichsgröße neben schiff, Länge 2,5-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **1000** cm, richtig von 800 bis 1200
+- `03` AFB II · _Modellieren_ · Der Bus ist 12 m lang. / Wie lang ist die Brücke ungefähr? _(Bild: Vergleichsbild: bus als Vergleichsgröße neben bruecke, Länge 4-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **480** dm, richtig von 384 bis 576
+- `04` AFB III · _Argumentieren (+ Modellieren)_ · Das Kind ist 150 cm groß. / Tom schätzt: Der Baum ist ungefähr 1500 cm hoch. / Stimmt das? _(Bild: Vergleichsbild: kind als Vergleichsgröße neben baum, Höhe 2,5-mal so groß)_
+  - ☐ Falsch. Es sind ungefähr 150 cm.
+  - ☑ Falsch. Es sind ungefähr 375 cm.
+  - ☐ Stimmt. Das passt zum Bild.
+- `05` AFB II · _Modellieren_ · Die Tür ist 2 m hoch. / Wie hoch ist das Haus ungefähr? _(Bild: Vergleichsbild: tuer als Vergleichsgröße neben haus, Höhe 11,7-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **234** dm, richtig von 188 bis 280
+- `06` AFB III · _Modellieren_ · Das Kind ist 150 cm groß. / Um wie viele Zentimeter ist das Haus ungefähr höher als das Kind? _(Bild: Vergleichsbild: kind als Vergleichsgröße neben haus, Höhe 7-mal so groß)_ _(Schätzen)_ Wahre Anzahl: **900** cm, richtig von 720 bis 1080
+
+## 5.6.2-B1: Ich kann Geldbeträge in Euro und Cent schreiben und umwandeln.
+
+Grundlage, die F übt: Münzen und Scheine zählen, 1 € sind 100 ct
+
+Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 € sind 100 ct. *Beispiel:* 2 € 30 ct sind 200 ct + 30 ct = 230 ct. *Lösungsschritt:* Rechne die Euro in Cent um. Zähle dann die Cent dazu.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf das Geld. / Wie viel Cent sind das? _(Bild: Geld: 1 €, 20 ct)_ Lösung: **120 ct**. Typische Fehler: 21 (masszahlen-addiert), 20 (umrechnungszahl).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf das Geld. / Es sind ▢ € ▢ ct. _(Bild: Geld: 10 €, 2 €, 1 €, 10 ct, 5 ct)_ Lösung: a = **13**, b = **15**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 1 € 40 ct = ▢ ct _(Bild: Geld: 1 €, 20 ct, 20 ct)_ Lösung: a = **140**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / 280 ct = ▢ € ▢ ct _(Bild: Einheitentafel € | ct, Spalten Z E Z E: · 2 8 0)_ Lösung: a = **2**, b = **80**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Münze. / Welche Münzen sind zusammen auch 2 €? _(Bild: Geld: 2 €)_
+  - ☐ 1 € + 20 ct + 20 ct
+  - ☐ 1 € + 50 ct + 20 ct
+  - ☑ 1 € + 1 €
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 1 € 2 ct in die Tafel ein. / Lies dann in Cent ab.  _(Einheitentafel € | ct zum Eintragen; fett = Eingabefeld)_
+
+  | Z | E | Z | E |
+  |---|---|---|---|
+  |  | **1** | **0** | **2** |
+
+  Das sind **102** ct.
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vor dem Komma stehen die Euro. Nach dem Komma stehen die Cent, immer mit zwei Ziffern. *Beispiel:* 4 € 5 ct schreibst du 4,05 €. *Lösungsschritt:* Bei weniger als 10 ct steht nach dem Komma zuerst eine 0.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe den Betrag mit Komma. / 13 € 9 ct _(Bild: Geld: 10 €, 2 €, 1 €, 5 ct, 2 ct, 2 ct)_ _(Größe eingeben, Einheit € steht fest)_ Lösung: **13,09 €**. Typische Fehler: 13,90 € (komma-falsch-gelesen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 4,70 € = ▢ € ▢ ct _(Bild: Einheitentafel € | ct, Spalten Z E Z E: · 4 7 0)_ Lösung: a = **4**, b = **70**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Was ist gleich viel? Lösung: 3,05 € → 3 € 5 ct, 3,50 € → 3 € 50 ct, 0,35 € → 35 ct
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe in Euro. / 465 ct _(Bild: Geld: 2 €, 2 €, 50 ct, 10 ct, 5 ct)_ _(Größe eingeben, Einheit € steht fest)_ Lösung: **4,65 €**. Typische Fehler: 465 € (umrechnungsrichtung), 46,50 € (umrechnungszahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Beträge. / Beginne mit dem kleinsten Betrag. _(Ordnen; die Karten liegen so da: 2,95 €, 3 € 50 ct, 3 € 5 ct, 3,95 €)_ Lösung: **2,95 €, 3 € 5 ct, 3 € 50 ct, 3,95 €**
+- `06` AFB III · _Argumentieren_ · Elif sagt: 9,08 € = 9 € 8 ct. / Stimmt das?
+  - ☑ Stimmt.
+  - ☐ Falsch. / 9,08 € sind 9 € 80 ct.
+  - ☐ Falsch. / 9,08 € sind 90 € 8 ct.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mit Komma: Nach dem Komma stehen immer zwei Ziffern. *Lösungsschritt:* Bei weniger als 10 ct steht nach dem Komma zuerst eine 0.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe als einen Betrag. / 85 € 9 ct _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **85,09 €**. Typische Fehler: 85,90 € (komma-falsch-gelesen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 0,08 € = ▢ ct / 0,80 € = ▢ ct / 8,08 € = ▢ ct Lösung: a = **8**, b = **80**, c = **808**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Beträge sind gleich 4,04 €? / Kreuze alle an.
+  - ☑ 4 € 4 ct
+  - ☐ 44 ct
+  - ☐ 40 € 4 ct
+  - ☐ 4 € 40 ct
+  - ☑ 404 ct
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe in Euro. / 7594 ct _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **75,94 €**. Typische Fehler: 7594 € (umrechnungsrichtung), 759,40 € (umrechnungszahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Beträge. / Beginne mit dem größten Betrag. _(Ordnen; die Karten liegen so da: 0,29 €, 2 € 1 ct, 209 ct, 2,10 €, 1,99 €)_ Lösung: **2,10 €, 209 ct, 2 € 1 ct, 1,99 €, 0,29 €**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Wie viele Münzen zu 20 ct ergeben zusammen 2,40 €? Lösung: **12 Münzen**. Typische Fehler: 120 (umrechnungszahl).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte auf die zwei Ziffern nach dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Umwandlung ist falsch?
+  - ☐ 5 € 4 ct = 5,04 €
+  - ☐ 0,50 € = 50 ct
+  - ☑ 540 ct = 54,00 €
+  - ☐ 5,40 € = 540 ct
+  - ☐ 5004 ct = 50,04 €
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe in Euro. / 44 190 ct _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **441,90 €**. Typische Fehler: 4419 € (umrechnungszahl), 44 € (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Beträge. / Beginne mit dem kleinsten Betrag. _(Ordnen; die Karten liegen so da: 50 € 1 ct, 5,09 €, 4 € 99 ct, 59 ct, 510 ct, 5,01 €)_ Lösung: **59 ct, 4 € 99 ct, 5,01 €, 5,09 €, 510 ct, 50 € 1 ct**
+- `04` AFB III · _Argumentieren_ · Lina behauptet: 2607 ct = 26,07 €. / Stimmt das?
+  - ☐ Stimmt, denn nach dem Komma darf man eine 0 weglassen.
+  - ☑ Stimmt, denn die letzten zwei Ziffern sind die Cent.
+  - ☐ Falsch, denn 26,07 € sind 267 ct.
+  - ☐ Falsch, denn 26,07 € sind 2670 ct.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · In einer Spardose liegen 350 Münzen zu 2 ct. Wie viel Geld ist das? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **7 €**. Typische Fehler: 700 € (umrechnungsrichtung), 70 € (umrechnungszahl).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Wie viele Münzen zu 5 ct braucht man für 11,05 €? Lösung: **221 Münzen**. Typische Fehler: 2210 (umrechnungszahl), 11 (einheit-fehlt).
+
+## 5.6.2-B2: Ich kann mit Geldbeträgen rechnen.
+
+Grundlage, die F übt: Beträge in Euro und Cent getrennt zusammenzählen
+
+Baut auf: 5.6.2-B1 (Ich kann Geldbeträge in Euro und Cent schreiben und umwandeln.), 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne alles in Cent um. Rechne dann wie immer. *Beispiel:* 1 € 20 ct + 50 ct sind 120 ct + 50 ct = 170 ct. *Lösungsschritt:* Wandle zuerst die Euro in Cent um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Jonas hat dieses Geld. / Jonas bekommt 60 ct dazu. / Wie viel Cent sind es jetzt? _(Bild: Geld: 1 €, 10 ct)_ Lösung: **170 ct**. Typische Fehler: 71 (masszahlen-addiert), 110 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Preisliste. / Lena kauft: Kleber und Bleistift. / Das kostet zusammen ▢ € ▢ ct. _(Tabelle: Ware | Preis / Kleber | 1 € 90 ct / Bleistift | 60 ct / Apfel | 50 ct)_ Lösung: a = **2**, b = **50**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt den Preis für 1 Brötchen. / Ben kauft 2 Stück. / Wie viel Cent kostet das? _(Bild: Geld: 20 ct, 20 ct)_ Lösung: **80 ct**. Typische Fehler: 42 (1x1-addiert), 40 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Mara zahlt mit diesem Geld. / Der Einkauf kostet 2 € 80 ct. / Wie viel Cent bekommt Mara zurück? _(Bild: Geld: 5 €)_ Lösung: **220 ct**. Typische Fehler: 280 (rueckgeld-preis), 780 (rueckgeld-preis).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Elif kauft: Bleistift und Brezel. / Elif zahlt mit 5 €. _(Tabelle: Ware | Preis / Bleistift | 60 ct / Brezel | 80 ct / Brötchen | 40 ct)_
+  - a) Wie viel Cent kostet der Einkauf? **140 ct**. Typische Fehler: 60 (sach-schritt-vergessen).
+  - b) Wie viel Cent bekommt Elif zurück? **360 ct**. Typische Fehler: 140 (rueckgeld-preis), 640 (rueckgeld-preis).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Mia hat dieses Geld. / Ein Buch kostet 5 €. / Wie viel Cent fehlen noch? _(Bild: Geld: 2 €, 1 €, 50 ct)_ Lösung: **150 ct**. Typische Fehler: 350 (rueckgeld-preis), 850 (sub-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Beträge untereinander: Komma unter Komma. *Beispiel:* 2,80 € + 1,50 € sind 280 ct + 150 ct = 430 ct. Das sind 4,30 €. *Lösungsschritt:* Du kannst auch alles in Cent umrechnen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Preisliste. / Elif kauft: Käse und Brot. / Wie viel kostet das zusammen? _(Tabelle: Ware | Preis / Käse | 2,80 € / Brot | 3,20 € / Lineal | 1,30 €)_ _(Größe eingeben, Einheit € steht fest)_ Lösung: **6 €**. Typische Fehler: 5 € (add-uebertrag-vergessen), 2,80 € (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Preisliste. / Mia kauft: Radiergummi. / Mia zahlt mit 5 €. / Wie viel Rückgeld gibt es? _(Tabelle: Ware | Preis / Radiergummi | 0,70 € / Kleber | 1,90 € / Saft | 1,20 €)_ _(Größe eingeben, Einheit € steht fest)_ Lösung: **4,30 €**. Typische Fehler: 0,70 € (rueckgeld-preis), 5,70 € (rueckgeld-preis).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Ali kauft 2-mal Saft und dazu Radiergummi. _(Tabelle: Ware | Preis / Saft | 1,20 € / Radiergummi | 0,70 € / Heft | 0,90 €)_
+  - a) Wie viel Cent kostet 2-mal Saft? **240 ct**. Typische Fehler: 120 (sach-schritt-vergessen), 122 (1x1-addiert).
+  - b) Wie viel Cent kostet alles zusammen? **310 ct**. Typische Fehler: 190 (sach-schritt-vergessen), 240 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Kugel Eis kostet 1,25 €. / Noah kauft 8 Kugeln. / Wie viel Euro kostet das? Lösung: **10 €**. Typische Fehler: 8 (komma-falsch-gelesen), 1000 (einheit-fehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 3 Hefte kosten zusammen 2,40 €. / Wie viel kostet 1 Heft? _(Größe eingeben, Einheit € steht fest)_ Lösung: **0,80 €**. Typische Fehler: 2,40 € (sach-schritt-vergessen), 7,20 € (div-falsche-rechenart).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Schau in die Preisliste. / Ben kauft 2-mal Bleistift und dazu Radiergummi. / Ben rechnet: Das kostet zusammen 1,90 €. / Stimmt das? _(Tabelle: Ware | Preis / Bleistift | 0,60 € / Radiergummi | 0,70 € / Eis | 1,50 €)_
+  - ☐ Falsch. / Es kostet 1,30 €.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es kostet 2,50 €.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Beträge untereinander: Komma unter Komma. *Lösungsschritt:* Du kannst auch alles in Cent umrechnen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Finn kauft Käse für 2,80 €, Brezel für 0,80 € und Bleistift für 0,60 €. / Wie viel kostet das zusammen? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **4,20 €**. Typische Fehler: 3,60 € (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Lina kauft Eis für 1,50 € und Kleber für 1,90 €. / Lina zahlt mit 20 €. / Wie viel Rückgeld gibt es? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **16,60 €**. Typische Fehler: 3,40 € (sach-frage-verfehlt), 18,50 € (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 5 Brezeln kosten zusammen 4,25 €. / Wie viel kostet eine Brezel? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **0,85 €**. Typische Fehler: 4,25 € (sach-schritt-vergessen), 8,50 € (komma-falsch-gelesen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Jonas hat 14,40 €. / Ein Heft kostet 2,40 €. / Wie viele Hefte kann Jonas kaufen? Lösung: **6 Hefte**. Typische Fehler: 60 (umrechnungszahl), 7 (div-einmaleins).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Einkauf: 2,95 €, 3,10 € und 4,89 €. / Überschlage: Wie viel kostet das ungefähr?
+  - ☐ ungefähr 110 €
+  - ☑ ungefähr 11 €
+  - ☐ ungefähr 14 €
+  - ☐ ungefähr 9 €
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ole hat 20 €. / Ole kauft 5 Hefte zu je 1,90 € und ein Lineal für 1,30 €. / Wie viel Geld bleibt übrig? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **9,20 €**. Typische Fehler: 10,80 € (sach-frage-verfehlt), 16,80 € (sach-schritt-vergessen), 10,50 € (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alles in dieselbe Einheit um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne: 0,60 € + 85 ct + 1,90 € _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **3,35 €**. Typische Fehler: 87,50 € (masszahlen-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ben kauft 3 Packungen Stifte zu je 3,65 € und zahlt mit 20 €. Wie viel Rückgeld gibt es? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **9,05 €**. Typische Fehler: 10,95 € (sach-frage-verfehlt), 16,35 € (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 4 Kinokarten und 2 Getränke zu je 2,50 € kosten zusammen 35 €. Wie viel kostet eine Kinokarte? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **7,50 €**. Typische Fehler: 8,75 € (sach-schritt-vergessen), 16,25 € (sach-falsche-rechnung).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Paul rechnet: 2,50 € + 90 ct = 92,50 €. Welcher Fehler steckt in der Rechnung?
+  - ☐ Der Übertrag wurde vergessen. Richtig sind 2,40 €.
+  - ☑ Euro und Cent wurden zusammengezählt, ohne umzuwandeln. Richtig sind 3,40 €.
+  - ☐ Es wurde abgezogen statt zusammengezählt. Richtig sind 4,40 €.
+  - ☐ Die Rechnung enthält keinen Fehler.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Tom spart jede Woche 2,50 €. Nach wie vielen Wochen sind 70 € zusammen? Lösung: **28**. Typische Fehler: 280 (umrechnungszahl), 14 (komma-falsch-gelesen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Drei Freunde teilen sich eine Rechnung über 28,50 € gerecht. Jeder gibt 10 €. Wie viel bekommt jeder zurück? _(Größe eingeben, Einheit wählen aus ct, €, m, kg)_ Lösung: **0,50 €**. Typische Fehler: 9,50 € (sach-frage-verfehlt), 1,50 € (sach-schritt-vergessen).
+
+## 5.6.3-Z1: Ich kann Zeiteinheiten umwandeln.
+
+Grundlage, die F übt: 1 h sind 60 min, 1 min sind 60 s, 1 Tag sind 24 h
+
+Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 h sind 60 min. *Beispiel:* 2 h sind 2 · 60 min = 120 min. *Lösungsschritt:* Rechne die Stunden mal 60.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / 5 h = ▢ min _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **300**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / 5 min = ▢ s _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **300**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / 3 h 30 min = ▢ min _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **210**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist genauso viel wie 2 h? _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_
+  - ☐ 20 min
+  - ☑ 120 min
+  - ☐ 200 min
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / 155 min = ▢ h ▢ min _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **2**, b = **35**
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist gleich viel? _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: 3 h → 180 min, 4 min → 240 s, 2 Tage → 48 h
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 h sind 60 min. *Beispiel:* 2 h sind 2 · 60 min = 120 min. *Lösungsschritt:* Rechne die Stunden mal 60.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 8 h = ▢ min _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **480**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 300 min = ▢ h / 2 d = ▢ h _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **5**, b = **48**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 3 h 30 min = ▢ min / 130 min = ▢ h ▢ min _(Tabelle: Merke |  / 1 h | 60 min / 1 min | 60 s / 1 Tag | 24 h)_ Lösung: a = **210**, b = **2**, c = **10**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Fülle die Tabelle aus. 
+
+  | h | min |
+  |---|---|
+  | 3 | **180** |
+  | **9** | 540 |
+  | 12 | **720** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zeitspannen. / Beginne mit der kürzesten Zeitspanne. _(Ordnen; die Karten liegen so da: 4 h, 170 min, 3 h 5 min, 210 min)_ Lösung: **170 min, 3 h 5 min, 210 min, 4 h**
+- `06` AFB III · _Argumentieren_ · Elif sagt: 2 h 50 min = 250 min. / Stimmt das?
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es sind 70 min.
+  - ☑ Falsch. / Es sind 170 min.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe über die Einheit dazwischen: erst in Minuten, dann in Sekunden. *Lösungsschritt:* 1 h sind 60 min. 1 min sind 60 s. Also sind 1 h genau 3600 s.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 2 h = ▢ s / 2 d = ▢ min Lösung: a = **7200**, b = **2880**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / ¼ h = ▢ min / 3¾ h = ▢ min Lösung: a = **15**, b = **225**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 3 d 15 h = ▢ h / 86 h = ▢ d ▢ h Lösung: a = **87**, b = **3**, c = **14**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wie viel s sind 13 min 40 s? Lösung: **820 s**. Typische Fehler: 1340 (zeit-zehnersystem), 53 (masszahlen-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zeitspannen. / Beginne mit der kürzesten Zeitspanne. _(Ordnen; die Karten liegen so da: 1¼ h, 4000 s, ½ h, 2000 s, 25 min)_ Lösung: **25 min, ½ h, 2000 s, 4000 s, 1¼ h**
+- `06` AFB III · _Modellieren_ · Ali rechnet: 2 h 50 min = 250 min. / Welcher Fehler steckt in der Rechnung?
+  - ☐ Die Rechnung enthält keinen Fehler.
+  - ☑ Es wurde mit 100 statt mit 60 gerechnet. Richtig sind 170 min.
+  - ☐ Es wurde mit 60 statt mit 24 gerechnet. Richtig sind 98 min.
+  - ☐ Die Minuten wurden vergessen. Richtig sind 120 min.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 0,5 h ist eine halbe Stunde, 0,25 h ist eine Viertelstunde. Die Zahl nach dem Komma zählt keine Minuten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 1,5 h = ▢ min / 0,25 h = ▢ min Lösung: a = **90**, b = **15**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Umwandlung ist falsch?
+  - ☐ 4,5 h = 270 min
+  - ☑ 4,5 h = 4 h 50 min
+  - ☐ 4 d = 96 h
+  - ☐ 285 min = 4 h 45 min
+  - ☐ 5 h = 300 min
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um: 7945 s = ▢ h ▢ min ▢ s Lösung: a = **2**, b = **12**, c = **25**
+- `04` AFB III · _Argumentieren_ · Mara behauptet: 3,5 h = 3 h 30 min. Stimmt das?
+  - ☐ Falsch, denn 3,5 h sind 350 min.
+  - ☑ Stimmt, denn 0,5 h sind 30 min.
+  - ☐ Stimmt, denn nach dem Komma stehen die Minuten.
+  - ☐ Falsch, denn 3,5 h sind 3 h 50 min.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 0,75 h ▢ 45 min
+  - ☑ =
+  - ☐ >
+  - ☐ <
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Lied dauert 3 min 45 s. Es läuft ohne Pause immer wieder. Wie oft läuft es in 2 h ganz durch? Lösung: **32 mal**. Typische Fehler: 16 (sach-schritt-vergessen).
+
+## 5.6.3-Z2: Ich kann Zeitpunkte und Zeitspannen berechnen.
+
+Grundlage, die F übt: Uhrzeiten an der Zeigeruhr ablesen, Zeitspannen an der Zeitleiste abzählen
+
+Baut auf: 5.6.3-Z1 (Ich kann Zeiteinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der kurze Zeiger zeigt die Stunde. Der lange Zeiger zeigt die Minuten. *Beispiel:* Der lange Zeiger steht auf der 3. Das sind 15 min. *Lösungsschritt:* Jede Zahl auf der Uhr steht für 5 min beim langen Zeiger.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Uhr. / Es ist Vormittag. / Wie spät ist es? _(Bild: Zeigeruhr: 9:25 Uhr)_
+  - ☑ 9:25 Uhr
+  - ☐ 9:05 Uhr
+  - ☐ 5:45 Uhr
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Probe beginnt um 13:25 Uhr. / Sie dauert 20 min. / Sie endet um ▢:▢ Uhr. _(Bild: Zeitleiste: 13:25 Uhr → ?; Zeitspannen 20 min)_ Lösung: a = **13**, b = **45**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Bus fährt um 10:05 Uhr ab. / Er kommt um 10:20 Uhr an. / Wie lange dauert die Fahrt? _(Bild: Zeitleiste: 10:05 Uhr → 10:20 Uhr; Zeitspannen ?)_ Lösung: **15 min**. Typische Fehler: 25 (sub-addiert), 20 (zeitpunkt-zeitspanne).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Uhren. / Der Ausflug beginnt um 7:00 Uhr. / Er endet um 12:00 Uhr. / Wie viele Stunden sind das? _(Bild: Zeigeruhren: Beginn 7:00 Uhr, Ende 12:00 Uhr)_ Lösung: **5 h**. Typische Fehler: 12 (zeitpunkt-zeitspanne), 19 (sub-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Probe dauert 10 min. / Sie endet um 17:50 Uhr. / Sie beginnt um ▢:▢ Uhr. _(Bild: Zeitleiste: ? → 17:50 Uhr; Zeitspannen 10 min)_ Lösung: a = **17**, b = **40**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Uhren. / Es ist Vormittag. / Wie viele Minuten liegen zwischen den Uhrzeiten? _(Bild: Zeigeruhren: vorher 9:05 Uhr, nachher 9:30 Uhr)_ Lösung: **25 min**. Typische Fehler: 30 (zeitpunkt-zeitspanne), 5 (liste-verzaehlt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Zeitspanne zur Uhrzeit dazu. *Beispiel:* 16:10 Uhr + 25 min = 16:35 Uhr *Lösungsschritt:* Zähle die Minuten zusammen. Die Stunde bleibt gleich.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Probe beginnt um 8:15 Uhr. / Sie dauert 25 min. / Sie endet um ▢:▢ Uhr. _(Bild: Zeitleiste: 8:15 Uhr → ?; Zeitspannen 25 min)_ Lösung: a = **8**, b = **40**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Bus fährt um 10:07 Uhr ab. / Er kommt um 10:28 Uhr an. / Wie lange dauert die Fahrt? _(Bild: Zeitleiste: 10:07 Uhr → 10:28 Uhr; Zeitspannen ?)_ Lösung: **21 min**. Typische Fehler: 35 (sub-addiert), 28 (zeitpunkt-zeitspanne).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Flug dauert 2 h. / Die Ankunft ist um 18:20 Uhr. / Der Start war um ▢:▢ Uhr. _(Bild: Zeitleiste: ? → 18:20 Uhr; Zeitspannen 2 h)_ Lösung: a = **16**, b = **20**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Laden öffnet um 7:30 Uhr. / Er schließt um 16:30 Uhr. / Wie viele Stunden ist geöffnet? Lösung: **9 h**. Typische Fehler: 16 (zeitpunkt-zeitspanne), 10 (liste-verzaehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Zug fährt um 12:20 Uhr ab. / Er fährt 20 min bis zum nächsten Halt. / Dort steht er 10 min. / Er fährt um ▢:▢ Uhr weiter. _(Bild: Zeitleiste: 12:20 Uhr → 12:40 Uhr → ?; Zeitspannen 20 min, 10 min)_ Lösung: a = **12**, b = **50**
+- `06` AFB III · _Argumentieren_ · Tom sagt: Von 15:10 Uhr bis 15:35 Uhr sind es 45 min. / Stimmt das?
+  - ☑ Falsch. / Es sind 25 min.
+  - ☐ Falsch. / Es sind 35 min.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in Schritten: erst bis zur vollen Stunde, dann die ganzen Stunden, dann den Rest. *Lösungsschritt:* Zeichne eine Zeitleiste und trage die Schritte als Bögen ein.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Bus fährt um 15:55 Uhr am Halt Brücke ab. / Er kommt um 17:30 Uhr am Halt Wald an. / Die Fahrt dauert ▢ h ▢ min. Lösung: a = **1**, b = **35**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Training beginnt um 14:40 Uhr. / Es dauert 2 h 50 min. / Es endet um ▢:▢ Uhr. Lösung: a = **17**, b = **30**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Nachtzug fährt um 22:10 Uhr ab. / Er kommt am nächsten Morgen um 6:05 Uhr an. / Die Fahrt dauert ▢ h ▢ min. Lösung: a = **7**, b = **55**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Film dauert 45 min. / Er endet um 14:05 Uhr. / Er beginnt um ▢:▢ Uhr. Lösung: a = **13**, b = **20**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in den Fahrplan. / Wie viele Minuten fährt der Bus von Burg bis Wald? _(Tabelle: Halt | Abfahrt / Turm | 12:57 / Burg | 13:11 / Wald | 14:03)_ Lösung: **52 min**. Typische Fehler: 66 (sach-frage-verfehlt), 14 (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Noah muss um 8:40 Uhr in der Schule sein. / Der Schulweg dauert 15 min. / Vorher braucht Noah 45 min zum Waschen, Anziehen und Frühstücken. / Noah muss spätestens um ▢:▢ Uhr aufstehen. Lösung: a = **7**, b = **40**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne erst bis Mitternacht und dann ab 0:00 Uhr weiter.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Nachtbus fährt um 23:36 Uhr los und ist um 3:22 Uhr am Ziel. Die Fahrt dauert ▢ h ▢ min. Lösung: a = **3**, b = **46**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Du fährst mit Zug A von Hafen nach Burg und steigst dort in Zug B nach Mühle um. Die ganze Reise dauert ▢ h ▢ min. _(Tabelle: Zug | Strecke | Abfahrt | Ankunft / A | Hafen bis Burg | 7:36 | 8:19 / B | Burg bis Mühle | 8:26 | 8:58 / C | Burg bis Mühle | 8:56 | 9:28)_ Lösung: a = **1**, b = **22**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Du kommst mit Zug A in Hafen an und fährst mit Zug B weiter. Wie viele Minuten hast du zum Umsteigen? _(Tabelle: Zug | Strecke | Abfahrt | Ankunft / A | Dorf bis Hafen | 7:15 | 8:10 / B | Hafen bis Wald | 8:24 | 9:01 / C | Hafen bis Wald | 8:54 | 9:31)_ Lösung: **14 min**. Typische Fehler: 69 (sach-frage-verfehlt), 44 (sach-frage-verfehlt).
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Du kommst mit Zug A in Mühle an. Für den Weg zum anderen Bahnsteig brauchst du 16 min. Mit welchem Zug kommst du in Brücke an, und wann? _(Tabelle: Zug | Strecke | Abfahrt | Ankunft / A | Wald bis Mühle | 7:43 | 8:34 / B | Mühle bis Brücke | 8:45 | 9:19 / C | Mühle bis Brücke | 9:15 | 9:49)_
+  - ☑ mit Zug C um 9:49 Uhr
+  - ☐ mit Zug C um 9:15 Uhr
+  - ☐ mit Zug B um 8:45 Uhr
+  - ☐ mit Zug B um 9:19 Uhr
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Wanderung beginnt um 8:30 Uhr. Die reine Gehzeit beträgt 2,5 h, dazu kommen 20 min Pause. Die Gruppe ist um ▢:▢ Uhr am Ziel. Lösung: a = **11**, b = **20**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Zeltlager beginnt am Mittwoch um 15:00 Uhr und endet am Sonntag derselben Woche um 10:00 Uhr. Wie viele Stunden dauert das Zeltlager? Lösung: **91 h**. Typische Fehler: 96 (sach-schritt-vergessen), 101 (sub-addiert), 5 (sach-schritt-vergessen).
+
+## 5.6.4-W1: Ich kann Gewichtseinheiten umwandeln.
+
+Grundlage, die F übt: 1 kg sind 1000 g, 1 t sind 1000 kg, mit der Einheitentafel
+
+Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 t sind 1000 kg. *Beispiel:* 2 t sind 2 · 1000 kg = 2000 kg. *Lösungsschritt:* In der kleineren Einheit wird die Zahl größer. Rechne mal 1000.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / 8 t = ▢ kg _(Bild: Einheitentafel t | kg, Spalten Z E H Z E: · 8 0 0 0)_ Lösung: a = **8000**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 2 t 5 kg in die Tafel ein. / Lies dann in kg ab.  _(Einheitentafel t | kg zum Eintragen; fett = Eingabefeld)_
+
+  | Z | E | H | Z | E |
+  |---|---|---|---|---|
+  |  | **2** | **0** | **0** | **5** |
+
+  Das sind **2005** kg.
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 8 t 600 kg = ▢ kg _(Tabelle: Merke |  / 1 kg | 1000 g / 1 t | 1000 kg)_ Lösung: a = **8600**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / 5850 g = ▢ kg ▢ g _(Bild: Einheitentafel kg | g, Spalten Z E H Z E: · 5 8 5 0)_ Lösung: a = **5**, b = **850**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist genauso viel wie 6 kg? _(Tabelle: Merke |  / 1 kg | 1000 g / 1 t | 1000 kg)_
+  - ☑ 6000 g
+  - ☐ 600 g
+  - ☐ 60 g
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist gleich viel? _(Tabelle: Merke |  / 1 kg | 1000 g / 1 t | 1000 kg)_ Lösung: 4 kg → 4000 g, 5 t → 5000 kg, 40 kg → 40000 g
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 kg sind 1000 g. *Beispiel:* 2 kg sind 2 · 1000 g = 2000 g. *Lösungsschritt:* In der kleineren Einheit wird die Zahl größer. Rechne mal 1000.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 14 kg = ▢ g _(Bild im Tipp: Einheitentafel kg | g, Spalten Z E H Z E: · 7 0 0 0)_ _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: a = **14000**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 16 000 kg = ▢ t _(Bild im Tipp: Einheitentafel t | kg, Spalten Z E H Z E: · 4 0 0 0)_ _(Tabelle: Merke |  / 1 t | 1000 kg)_ Lösung: a = **16**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 8 kg 40 g = ▢ g / 3001 g = ▢ kg ▢ g _(Bild im Tipp: Einheitentafel kg | g, Spalten Z E H Z E: · 3 0 0 5)_ _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: a = **8040**, b = **3**, c = **1**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Fülle die Tabelle aus. 
+
+  | kg | g |
+  |---|---|
+  | 4 | **4000** |
+  | **35** | 35000 |
+  | 48 | **48000** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 3 t 500 kg, 4100 kg, 3 t, 2900 kg)_ Lösung: **2900 kg, 3 t, 3 t 500 kg, 4100 kg**
+- `06` AFB III · _Argumentieren_ · Ole sagt: 8 kg = 800 g. / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / 8 kg sind 8000 g.
+  - ☐ Falsch. / 8 kg sind 800000 g.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma stehen die g. Bei kg und g gehören 3 Stellen nach dem Komma. *Lösungsschritt:* Fülle fehlende Stellen nach dem Komma mit Nullen auf.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma in kg. / 9 kg 5 g _(Größe eingeben, Einheit kg steht fest)_ Lösung: **9,005 kg**. Typische Fehler: 9,5 kg (komma-falsch-gelesen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 9 kg = ▢ mg / 3 000 000 g = ▢ t Lösung: a = **9000000**, b = **3**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viel kg sind 9,05 t? Lösung: **9050 kg**. Typische Fehler: 9005 (komma-falsch-gelesen), 90500 (umrechnungszahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 5,005 kg = ▢ kg ▢ g Lösung: a = **5**, b = **5**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der größten Größe. _(Ordnen; die Karten liegen so da: 3250 g, 2900 g, 3 kg 500 g, 3,05 kg, 3,2 kg)_ Lösung: **3 kg 500 g, 3250 g, 3,2 kg, 3,05 kg, 2900 g**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 5,05 t? / Kreuze alle an.
+  - ☐ 5500 kg
+  - ☑ 5 t 50 kg
+  - ☐ 505 kg
+  - ☐ 5 t 5 kg
+  - ☑ 5050 kg
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte auf die Umrechnungszahl und auf die Stellen nach dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Umwandlung ist falsch?
+  - ☐ 9 t = 9 000 000 g
+  - ☐ 8,5 t = 8500 kg
+  - ☐ 8 t 5 kg = 8,005 t
+  - ☐ 250 kg = 0,25 t
+  - ☑ 800 kg = 8 t
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel g sind 7,05 t? Lösung: **7050000 g**. Typische Fehler: 705000 (umrechnungszahl), 70500000 (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 6055 g, 6,005 kg, 6 kg 50 g, 5999 g, 6,5 kg, 0,6 kg)_ Lösung: **0,6 kg, 5999 g, 6,005 kg, 6 kg 50 g, 6055 g, 6,5 kg**
+- `04` AFB III · _Argumentieren_ · Tom behauptet: 2,05 kg = 2500 g. Stimmt das?
+  - ☑ Falsch, denn 2,05 kg sind 2050 g.
+  - ☐ Stimmt, denn Nullen nach dem Komma darf man weglassen.
+  - ☐ Falsch, denn 2,05 kg sind 205 g.
+  - ☐ Stimmt, denn nach dem Komma stehen drei Stellen für g.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 6,05 kg ▢ 6005 g
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `06` AFB III · _Probleme lösen_ · Welches Gewicht ist am größten?
+  - ☐ 6300 g
+  - ☐ 58 kg
+  - ☐ 6 000 000 mg
+  - ☑ 0,06 t
+
+## 5.6.4-W2: Ich kann mit Gewichten rechnen.
+
+Grundlage, die F übt: Gewichtsstücke an der Waage zusammenzählen
+
+Baut auf: 5.6.4-W1 (Ich kann Gewichtseinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Seiten sind gleich schwer. Zähle die Gewichtsstücke zusammen. *Beispiel:* 500 g + 100 g = 600 g *Lösungsschritt:* Rechne alle Gewichtsstücke zusammen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Waage. / Die Waage ist im Gleichgewicht. / Wie schwer ist der Sack? _(Bild: Balkenwaage im Gleichgewicht: links Sack, rechts 500 g, 200 g)_ Lösung: **700 g**. Typische Fehler: 2 (liste-verzaehlt), 500 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die erste Tüte wiegt 40 g. / Die zweite Tüte wiegt 30 g. / Wie schwer sind beide Tüten zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 40 und 30)_ Lösung: **70 g**. Typische Fehler: 10 (add-subtrahiert), 40 (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Beutel wiegt 50 g. / Im Korb liegen 3 Beutel. / Wie schwer sind alle Beutel zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 50 und 50 und 50)_ Lösung: **150 g**. Typische Fehler: 53 (1x1-addiert), 50 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Die erste Tüte wiegt 1 kg 150 g. / Die zweite Tüte wiegt 250 g. / Wie schwer sind beide Tüten zusammen in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **1400 g**. Typische Fehler: 401 (masszahlen-addiert), 400 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Im Eimer sind 3 kg Futter. / Die Pferde fressen 650 g. _(Tabelle: Merke |  / 1 kg | 1000 g)_
+  - a) Wie viel g sind 3 kg? **3000 g**. Typische Fehler: 300 (umrechnungszahl).
+  - b) Wie viel Futter bleibt im Eimer? **2350 g**. Typische Fehler: 647 (masszahlen-addiert), 3650 (sub-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Käse wiegt 100 g. / Er wird in 2 gleiche Stücke geteilt. / Wie schwer ist ein Stück? _(Bild: Streifenbild: Ganzes 100, Teile ? und 50)_ Lösung: **50 g**. Typische Fehler: 100 (sach-schritt-vergessen), 98 (div-falsche-rechenart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alles in g um. *Beispiel:* 2 kg 300 g sind 2300 g. *Lösungsschritt:* 1 kg sind 1000 g.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Paket wiegt 7 kg 600 g. / Der Karton dazu wiegt 700 g. / Wie schwer ist beides zusammen in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **8300 g**. Typische Fehler: 1307 (masszahlen-addiert), 2000 (umrechnungszahl).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Sack sind 5 kg Mehl. / Der Bäcker nimmt 1 kg 400 g heraus. / Wie viel Mehl bleibt im Sack in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **3600 g**. Typische Fehler: 4400 (sub-kleiner-von-groesser), 406 (masszahlen-addiert).
+- `03` AFB II · _Modellieren_ · Der Müller füllt 7 Beutel mit je 750 g. / Er verkauft davon 800 g. _(Bild: Streifenbild: Ganzes 5250, Teile 800 und ?)_
+  - a) Wie schwer sind alle Beutel zusammen? **5250 g**. Typische Fehler: 757 (1x1-addiert).
+  - b) Wie viel bleibt übrig? **4450 g**. Typische Fehler: 6050 (sub-addiert), 5250 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Beutel wiegt 800 g. / Im Korb liegen 9 Beutel. / Das sind zusammen ▢ kg ▢ g. Lösung: a = **7**, b = **200**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Teig wiegt 4 kg. / Die Bäckerin formt daraus 8 gleiche Brote. / Wie schwer ist ein Brot in g? Lösung: **500 g**. Typische Fehler: 4000 (sach-schritt-vergessen), 50 (umrechnungszahl).
+- `06` AFB III · _Argumentieren_ · Jonas rechnet: 3 kg + 200 g = 203 g. / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es sind 3200 g.
+  - ☐ Falsch. / Es sind 500 g.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst in dieselbe Einheit um. *Lösungsschritt:* Rechne am besten in g.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Korb liegen 1,2 kg Äpfel. / Dazu kommen 600 g Birnen. / Wie schwer ist das Obst zusammen? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **1,8 kg**. Typische Fehler: 1,2 kg (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Eimer sind 4 kg Futter. / Die Pferde fressen 2 kg. / Wie viel Futter bleibt im Eimer? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **2 kg**. Typische Fehler: 6 kg (sub-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Brot wiegt 0,75 kg. / Der Bäcker liefert 4 Brote. / Wie schwer ist die Lieferung? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **3 kg**. Typische Fehler: 0,75 kg (sach-schritt-vergessen), 30 kg (komma-falsch-gelesen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Im Sack sind 2 kg Reis. / In jede Tüte kommen 500 g. / Wie viele Tüten werden voll? Lösung: **4 Tüten**. Typische Fehler: 40 (umrechnungszahl), 2000 (sach-falsche-rechnung).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Auf dem Wagen liegen 3 Säcke mit je 1,2 kg und 2 Beutel mit je 400 g. / Wie schwer ist die Ladung? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **4,4 kg**. Typische Fehler: 1,6 kg (sach-schritt-vergessen), 3,6 kg (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Drei Pakete wiegen 1,9 kg, 4,1 kg und 0,95 kg. / Überschlage: Wie viel ist das zusammen ungefähr?
+  - ☐ ungefähr 70 kg
+  - ☑ ungefähr 7 kg
+  - ☐ ungefähr 5 kg
+  - ☐ ungefähr 10 kg
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alles in dieselbe Einheit um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne: 3,4 kg + 150 g + 3 kg 50 g _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **6,6 kg**. Typische Fehler: 6,45 kg (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Aus einem Fass mit 9 kg Mehl nimmt die Bäckerin erst 1750 g und dann 0,6 kg. Wie viel Mehl bleibt im Fass? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **6,65 kg**. Typische Fehler: 7,25 kg (sach-schritt-vergessen), 8,4 kg (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Müller hat 6 kg Mehl gemahlen. In jeden Beutel füllt er 250 g. Wie viele Beutel werden voll? Lösung: **24 Beutel**. Typische Fehler: 240 (umrechnungszahl).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Paul rechnet: 2 kg + 300 g = 302 g. Welcher Fehler steckt in der Rechnung?
+  - ☐ Es wurde mit der falschen Umrechnungszahl gerechnet. Richtig sind 500 g.
+  - ☑ Die Zahlen wurden zusammengezählt, ohne umzuwandeln. Richtig sind 2300 g.
+  - ☐ Die Rechnung enthält keinen Fehler.
+  - ☐ Das Ergebnis hat die falsche Einheit. Richtig sind 302 kg.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Teig von 3,2 kg wird zu 8 gleichen Broten geformt. Ein Kunde kauft 5 Brote. Wie schwer ist sein Einkauf? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **2000 g**. Typische Fehler: 400 g (sach-schritt-vergessen), 3200 g (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · 6 gleiche Säcke liegen in einer Kiste von 4,2 kg. Zusammen wiegt alles 8,7 kg. Wie schwer ist ein Sack? _(Größe eingeben, Einheit wählen aus g, kg, t, m)_ Lösung: **750 g**. Typische Fehler: 4500 g (sach-schritt-vergessen), 1450 g (sach-schritt-vergessen).
+
+## 5.6.5-L1: Ich kann Längeneinheiten umwandeln.
+
+Grundlage, die F übt: 1 cm sind 10 mm, 1 m sind 100 cm, 1 km sind 1000 m, mit der Einheitentafel
+
+Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 km sind 1000 m. *Beispiel:* 2 km sind 2 · 1000 m = 2000 m. *Lösungsschritt:* In der kleineren Einheit wird die Zahl größer. Rechne mal 1000.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / 9 km = ▢ m _(Bild: Einheitentafel km | m, Spalten Z E H Z E: · 9 0 0 0)_ Lösung: a = **9000**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 9 cm 1 mm in die Tafel ein. / Lies dann in mm ab.  _(Einheitentafel cm | mm zum Eintragen; fett = Eingabefeld)_
+
+  | Z | E | E |
+  |---|---|---|
+  |  | **9** | **1** |
+
+  Das sind **91** mm.
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 8 km 650 m = ▢ m _(Tabelle: Merke |  / 1 m | 100 cm / 1 cm | 10 mm / 1 km | 1000 m)_ Lösung: a = **8650**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / 9200 m = ▢ km ▢ m _(Bild: Einheitentafel km | m, Spalten Z E H Z E: · 9 2 0 0)_ Lösung: a = **9**, b = **200**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist genauso viel wie 3 km? _(Tabelle: Merke |  / 1 m | 100 cm / 1 cm | 10 mm / 1 km | 1000 m)_
+  - ☑ 3000 m
+  - ☐ 300 m
+  - ☐ 30 m
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Was ist gleich viel? _(Tabelle: Merke |  / 1 m | 100 cm / 1 cm | 10 mm / 1 km | 1000 m)_ Lösung: 4 m → 400 cm, 5 cm → 50 mm, 6 km → 6000 m
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 dm sind 10 cm. *Beispiel:* 2 dm sind 2 · 10 cm = 20 cm. *Lösungsschritt:* In der kleineren Einheit wird die Zahl größer. Rechne mal 10.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 37 dm = ▢ cm _(Tabelle: Merke |  / 1 dm | 10 cm)_ Lösung: a = **370**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 30 000 m = ▢ km _(Bild im Tipp: Einheitentafel km | m, Spalten Z E H Z E: · 4 0 0 0)_ _(Tabelle: Merke |  / 1 km | 1000 m)_ Lösung: a = **30**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 6 km 15 m = ▢ m / 11 020 m = ▢ km ▢ m _(Bild im Tipp: Einheitentafel km | m, Spalten Z E H Z E: · 3 0 0 5)_ _(Tabelle: Merke |  / 1 km | 1000 m)_ Lösung: a = **6015**, b = **11**, c = **20**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Fülle die Tabelle aus. 
+
+  | dm | cm |
+  |---|---|
+  | 2 | **20** |
+  | **16** | 160 |
+  | 85 | **850** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 2 km 500 m, 2 km, 1900 m, 3100 m)_ Lösung: **1900 m, 2 km, 2 km 500 m, 3100 m**
+- `06` AFB III · _Argumentieren_ · Emre sagt: 2 km = 200 m. / Stimmt das?
+  - ☐ Falsch. / 2 km sind 200000 m.
+  - ☐ Stimmt.
+  - ☑ Falsch. / 2 km sind 2000 m.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma stehen die mm. Bei cm und mm gehören 1 Stellen nach dem Komma. *Lösungsschritt:* Fülle fehlende Stellen nach dem Komma mit Nullen auf.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma in cm. / 8 cm 2 mm _(Größe eingeben, Einheit cm steht fest)_ Lösung: **8,2 cm**.
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 7 km = ▢ dm / 6000 mm = ▢ m Lösung: a = **70000**, b = **6**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viel cm sind 9,08 m? Lösung: **908 cm**. Typische Fehler: 9080 (umrechnungszahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 1,75 km = ▢ km ▢ m Lösung: a = **1**, b = **750**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der größten Größe. _(Ordnen; die Karten liegen so da: 5250 m, 5,05 km, 5,2 km, 5 km 500 m, 4900 m)_ Lösung: **5 km 500 m, 5250 m, 5,2 km, 5,05 km, 4900 m**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 6,05 km? / Kreuze alle an.
+  - ☑ 6 km 50 m
+  - ☐ 6500 m
+  - ☑ 6050 m
+  - ☐ 605 m
+  - ☐ 6 km 5 m
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte auf die Umrechnungszahl und auf die Stellen nach dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Umwandlung ist falsch?
+  - ☑ 300 m = 3 km
+  - ☐ 3 km 5 m = 3,005 km
+  - ☐ 4 km = 40 000 dm
+  - ☐ 3,5 km = 3500 m
+  - ☐ 250 m = 0,25 km
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel mm sind 2,5 dm? Lösung: **250 mm**. Typische Fehler: 25 (umrechnungszahl), 2500 (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 0,7 km, 6999 m, 7 km 50 m, 7,005 km, 7,5 km, 7055 m)_ Lösung: **0,7 km, 6999 m, 7,005 km, 7 km 50 m, 7055 m, 7,5 km**
+- `04` AFB III · _Argumentieren_ · Emre behauptet: 4,05 km = 4500 m. Stimmt das?
+  - ☐ Stimmt, denn nach dem Komma stehen drei Stellen für m.
+  - ☑ Falsch, denn 4,05 km sind 4050 m.
+  - ☐ Stimmt, denn Nullen nach dem Komma darf man weglassen.
+  - ☐ Falsch, denn 4,05 km sind 405 m.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 4,5 km ▢ 4500 m
+  - ☑ =
+  - ☐ >
+  - ☐ <
+- `06` AFB III · _Probleme lösen_ · Welche Länge ist am größten?
+  - ☐ 6000 cm
+  - ☐ 0,06 km
+  - ☑ 630 dm
+  - ☐ 58 m
+
+## 5.6.5-L2: Ich kann mit Längen rechnen.
+
+Grundlage, die F übt: Längen in derselben Einheit zusammenzählen und abziehen
+
+Baut auf: 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Strich beginnt nicht bei 0. Ziehe den Anfang vom Ende ab. *Beispiel:* Von 2 cm bis 7 cm sind es 7 cm − 2 cm = 5 cm. *Lösungsschritt:* Rechne 7 − 1.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau auf das Lineal. / Der Strich beginnt bei 1 cm. / Er endet bei 7 cm. / Wie lang ist der Strich? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 10 mm und endet bei 70 mm)_ Lösung: **6 cm**. Typische Fehler: 7 (sach-schritt-vergessen), 8 (sub-addiert).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das rote Band ist 40 cm lang. / Das blaue Band ist 45 cm lang. / Wie lang sind beide Bänder zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 40 und 45)_ Lösung: **85 cm**. Typische Fehler: 5 (add-subtrahiert), 40 (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Regalbrett ist 90 cm lang. / Die Tischlerin legt 3 Bretter hintereinander. / Wie lang ist die Reihe? _(Bild: Streifenbild: Ganzes ?, Teile 90 und 90 und 90)_ Lösung: **270 cm**. Typische Fehler: 93 (1x1-addiert), 90 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Das erste Brett ist 2 m 15 cm lang. / Das zweite Brett ist 45 cm lang. / Wie lang sind beide Bretter zusammen in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **260 cm**. Typische Fehler: 62 (masszahlen-addiert), 60 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Ein Brett ist 4 m lang. / Der Tischler sägt 65 cm ab. _(Tabelle: Merke |  / 1 m | 100 cm)_
+  - a) Wie viel cm sind 4 m? **400 cm**. Typische Fehler: 4000 (umrechnungszahl).
+  - b) Wie lang ist das Brett jetzt? **335 cm**. Typische Fehler: 61 (masszahlen-addiert), 465 (sub-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Leiste ist 240 cm lang. / Der Tischler sägt daraus 4 gleiche Stücke. / Wie lang ist ein Stück? _(Bild: Streifenbild: Ganzes 240, Teile ? und 60 und 60 und 60)_ Lösung: **60 cm**. Typische Fehler: 240 (sach-schritt-vergessen), 236 (div-falsche-rechenart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alles in cm um. *Beispiel:* 2 m 300 cm sind 500 cm. *Lösungsschritt:* 1 m sind 100 cm.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das rote Band ist 5 m 60 cm lang. / Das blaue Band ist 70 cm lang. / Wie lang sind beide Bänder zusammen in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **630 cm**. Typische Fehler: 135 (masszahlen-addiert), 5130 (umrechnungszahl).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Brett ist 9 m lang. / Der Tischler sägt 1 m 25 cm ab. / Wie lang ist das Brett jetzt in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **775 cm**. Typische Fehler: 825 (sub-kleiner-von-groesser), 35 (masszahlen-addiert).
+- `03` AFB II · _Modellieren_ · Ein Weg hat 8 Platten mit je 75 cm. / Davon sind schon 40 cm verlegt. _(Bild: Streifenbild: Ganzes 600, Teile 40 und ?)_
+  - a) Wie lang ist der Weg? **600 cm**. Typische Fehler: 83 (1x1-addiert).
+  - b) Wie viel fehlt noch? **560 cm**. Typische Fehler: 640 (sub-addiert), 600 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Fliese ist 60 cm lang. / In einer Reihe liegen 8 Fliesen. / Das sind zusammen ▢ m ▢ cm. Lösung: a = **4**, b = **80**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Seil ist 2 m lang. / Es wird in 5 gleiche Stücke geschnitten. / Wie lang ist ein Stück in cm? Lösung: **40 cm**. Typische Fehler: 200 (sach-schritt-vergessen), 400 (umrechnungszahl).
+- `06` AFB III · _Argumentieren_ · Ali rechnet: 3 m + 45 cm = 345 cm. / Stimmt das?
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es sind 3045 cm.
+  - ☐ Falsch. / Es sind 48 cm.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst in dieselbe Einheit um. *Lösungsschritt:* Rechne am besten in cm.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das erste Brett ist 8,2 m lang. / Das zweite Brett ist 55 cm lang. / Wie lang sind beide Bretter zusammen? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **8,75 m**. Typische Fehler: 8,2 m (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Auf der Rolle sind 3 m Schnur. / Die Gärtnerin schneidet 0,75 m ab. / Wie viel Schnur bleibt auf der Rolle? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **2,25 m**. Typische Fehler: 3,75 m (sub-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Bahn Stoff ist 0,45 m breit. / Die Schneiderin näht 6 Bahnen nebeneinander. / Wie breit ist das Tuch? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **2,7 m**. Typische Fehler: 0,45 m (sach-schritt-vergessen), 27 m (komma-falsch-gelesen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Leiste ist 3 m lang. / Der Tischler sägt Stücke von 50 cm ab. / Wie viele Stücke bekommt er? Lösung: **6 Stücke**. Typische Fehler: 60 (umrechnungszahl), 300 (sach-falsche-rechnung).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Gärtner steckt 3 Zäune mit je 1,8 m und 2 Tore mit je 40 cm aneinander. / Wie lang ist alles zusammen? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **6,2 m**. Typische Fehler: 2,2 m (sach-schritt-vergessen), 5,4 m (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Drei Stoffreste sind 2,9 m, 3,1 m und 1,95 m lang. / Überschlage: Wie viel ist das zusammen ungefähr?
+  - ☐ ungefähr 6 m
+  - ☐ ungefähr 11 m
+  - ☐ ungefähr 80 m
+  - ☑ ungefähr 8 m
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alles in dieselbe Einheit um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne: 7,4 m + 45 cm + 3 m 5 cm _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **10,9 m**. Typische Fehler: 10,45 m (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Von einem Balken mit 5 m sägt der Zimmermann erst 175 cm und dann 0,8 m ab. Wie lang ist der Balken jetzt? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **2,45 m**. Typische Fehler: 3,25 m (sach-schritt-vergessen), 4,2 m (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Regal ist 1,35 m breit. Ein Buch ist 5 cm dick. Wie viele Bücher passen nebeneinander? Lösung: **27 Bücher**. Typische Fehler: 270 (umrechnungszahl).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ben rechnet: 6 m + 30 cm = 36 cm. Welcher Fehler steckt in der Rechnung?
+  - ☐ Es wurde mit der falschen Umrechnungszahl gerechnet. Richtig sind 90 cm.
+  - ☑ Die Zahlen wurden zusammengezählt, ohne umzuwandeln. Richtig sind 630 cm.
+  - ☐ Das Ergebnis hat die falsche Einheit. Richtig sind 36 m.
+  - ☐ Die Rechnung enthält keinen Fehler.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Seil von 1,75 m wird in 5 gleiche Stücke geschnitten. Davon werden 3 Stücke aneinandergeknotet. Wie lang sind diese Stücke zusammen? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **105 cm**. Typische Fehler: 35 cm (sach-schritt-vergessen), 175 cm (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · 3 gleiche Zaunfelder und eine Mauer von 8,5 m sind zusammen 14,5 m lang. Wie lang ist ein Zaunfeld? _(Größe eingeben, Einheit wählen aus mm, cm, m, km, kg)_ Lösung: **200 cm**. Typische Fehler: 600 cm (sach-schritt-vergessen).
+
+## 5.6.6-K1: Ich kann mit dem Maßstab aus einer Länge auf der Karte die Länge in Wirklichkeit bestimmen.
+
+Grundlage, die F übt: Mit der Maßstabsleiste: 1 cm auf der Karte sind 100 m in Wirklichkeit
+
+Baut auf: 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Leiste zeigt: So viel ist 1 cm auf der Karte in Wirklichkeit. *Beispiel:* 3 cm auf der Karte sind 3 · 100 m = 300 m. *Lösungsschritt:* Miss die Strecke in cm. Rechne dann für jeden cm einmal die Länge der Leiste.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / 1 cm auf der Karte sind 50 m in Wirklichkeit. / Wie weit ist es von der Burg bis zum Dorf? _(Bild: Karte mit Lineal (10 cm): Burg bei 1 cm, Dorf bei 6 cm; Maßstabsleiste: 1 cm sind 50 m)_ Lösung: **250 m**. Typische Fehler: 5 (massstab-einheit), 55 (masszahlen-addiert), 300 (liste-verzaehlt).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Vom Turm bis zur Burg sind es auf der Karte ▢ cm. / In Wirklichkeit sind das ▢ m. _(Bild: Karte mit Lineal (10 cm): Turm bei 1 cm, Burg bei 5 cm; Maßstabsleiste: 1 cm sind 100 m)_ Lösung: a = **4**, b = **400**
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / 1 cm auf der Karte ist 1 km in Wirklichkeit. / Wie weit ist es von der Burg bis zum Hafen? _(Bild: Karte mit Lineal (11 cm): Burg bei 2 cm, Hafen bei 9 cm; Maßstabsleiste: 1 cm sind 1 km)_ Lösung: **7 km**. Typische Fehler: 9 (liste-verzaehlt), 70 (umrechnungszahl).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf den Plan. / 1 cm im Plan ist 1 m in Wirklichkeit. / Wie lang ist der Saal in Wirklichkeit? _(Bild: Plan „Saal“: 5 cm lang und 3 cm breit; Maßstabsleiste: 1 cm sind 1 m)_ Lösung: **5 m**. Typische Fehler: 3 (sach-frage-verfehlt), 500 (umrechnungszahl).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Der Weg führt von der Burg über den Hafen bis zum Wald. _(Bild: Karte mit Lineal (10 cm): Burg bei 0 cm, Hafen bei 2 cm, Wald bei 4 cm; Maßstabsleiste: 1 cm sind 100 m)_
+  - a) Wie viele cm ist der ganze Weg auf der Karte lang? **4 cm**. Typische Fehler: 2 (sach-schritt-vergessen).
+  - b) Wie viele m sind das in Wirklichkeit? **400 m**. Typische Fehler: 4 (massstab-einheit).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Wie weit ist es von der Burg bis zum Wald? _(Bild: Karte mit Lineal (10 cm): Burg bei 2 cm, Wald bei 9 cm; Maßstabsleiste: 1 cm sind 100 m)_
+  - ☐ 107 m
+  - ☐ 7 m
+  - ☑ 700 m
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Maßstab 1:100 heißt: 1 cm im Plan sind 100 cm in Wirklichkeit. *Beispiel:* 3 cm im Plan sind 3 cm · 100 = 300 cm. Das sind 3 m. *Lösungsschritt:* Rechne die Länge im Plan mal 100. Wandle dann in m um.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf den Plan. / Der Plan hat den Maßstab 1:100. / Wie viele m ist die lange Seite in Wirklichkeit? _(Bild: Plan „Garten“: 7 cm lang und 6 cm breit; Maßstab 1:100)_ Lösung: **7 m**. Typische Fehler: 700 (massstab-einheit), 6 (sach-frage-verfehlt).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Eine Karte hat den Maßstab 1:1000. / 2 cm · 1000 = ▢ cm = ▢ m _(Tabelle: Maßstab | 1 cm im Plan sind in Wirklichkeit / 1:100 | 1 m / 1:1000 | 10 m)_ Lösung: a = **2000**, b = **20**
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / Die Karte hat den Maßstab 1:1000. / Wie viele m sind es vom Hafen bis zum Dorf? _(Bild: Karte mit Lineal (10 cm): Hafen bei 0 cm, Dorf bei 7 cm; Maßstab 1:1000)_ Lösung: **70 m**. Typische Fehler: 7000 (massstab-einheit), 700 (umrechnungszahl), 7 (umrechnungszahl).
+- `04` AFB I · _Modellieren_ · Ein Plan hat den Maßstab 1:100. / Eine Tür ist im Plan 9 mm breit. / Wie viele cm sind das in Wirklichkeit? Lösung: **90 cm**. Typische Fehler: 900 (massstab-einheit), 9 (umrechnungszahl).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf den Plan. / Der Plan hat den Maßstab 1:100. _(Bild: Plan „Saal“: 5 cm lang und 3 cm breit; Maßstab 1:100)_
+  - a) Wie viele m ist die lange Seite in Wirklichkeit? **5 m**. Typische Fehler: 500 (massstab-einheit).
+  - b) Wie viele m ist die kurze Seite in Wirklichkeit? **3 m**. Typische Fehler: 300 (massstab-einheit).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Eine Karte hat den Maßstab 1:1000. / Ole sagt: 3 cm auf der Karte sind 300 m in Wirklichkeit. / Stimmt das?
+  - ☐ Falsch. / Es sind 3 m.
+  - ☑ Falsch. / Es sind 30 m.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne die Länge auf der Karte mal die Maßstabszahl. *Lösungsschritt:* Wandle das Ergebnis aus cm erst in m und dann in km um.
+
+- `01` AFB I · _Modellieren_ · Eine Wanderkarte hat den Maßstab 1:25 000. / Ein Weg ist auf der Karte 12 cm lang. / Wie lang ist der Weg in Wirklichkeit? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **3 km**. Typische Fehler: 30 km (umrechnungszahl), 0,3 km (umrechnungszahl).
+- `02` AFB II · _Modellieren_ · Eine Karte hat den Maßstab 1:50 000. / Zwei Orte liegen auf der Karte 9 cm auseinander. / Wie weit sind sie in Wirklichkeit voneinander entfernt? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **4,5 km**. Typische Fehler: 45 km (umrechnungszahl), 0,45 km (umrechnungszahl).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf die Karte. / Wie weit ist es in Wirklichkeit von der Mühle bis zum Wald? _(Bild: Karte mit Lineal (11 cm): Mühle bei 1 cm, Turm bei 5 cm, Wald bei 8 cm; Maßstab 1:25000)_ _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **1,75 km**. Typische Fehler: 1 km (sach-frage-verfehlt), 0,75 km (sach-frage-verfehlt).
+- `04` AFB I · _Modellieren_ · Wie lang ist 1 cm auf der Karte in Wirklichkeit? / Ordne jedem Maßstab die passende Länge zu. Lösung: 1:10 000 → 100 m, 1:50 000 → 500 m, 1:1000 → 10 m, 1:25 000 → 250 m
+- `05` AFB II · _Modellieren_ · Auf einer Karte im Maßstab 1:25 000 ist der Weg zum See 10 cm lang. / Auf einer Karte im Maßstab 1:50 000 ist der Weg zur Hütte 7 cm lang. / Um wie viel ist einer der Wege in Wirklichkeit länger als der andere? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **1 km**. Typische Fehler: 0,75 km (sach-schritt-vergessen), 6 km (sub-addiert).
+- `06` AFB III · _Modellieren_ · Eine Wanderung ist auf einer Karte im Maßstab 1:50 000 genau 16 cm lang. / Die Gruppe macht nach jeweils 2 km eine Rast, auch am Ziel. / Wie oft rastet die Gruppe? Lösung: **4 mal**. Typische Fehler: 40 (umrechnungszahl), 8 (massstab-einheit).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mal die Maßstabszahl und wandle in eine passende Einheit um.
+
+- `01` AFB I · _Modellieren_ · Eine Karte hat den Maßstab 1:25 000. Ein Radweg ist auf der Karte 5 cm lang. Wie lang ist er in Wirklichkeit? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **1,25 km**. Typische Fehler: 12,5 km (umrechnungszahl), 0,125 km (umrechnungszahl).
+- `02` AFB II · _Modellieren_ · Auf einer Karte sind zwei Orte 6 cm voneinander entfernt. In Wirklichkeit sind es 3 km. Welchen Maßstab hat die Karte?
+  - ☐ 1:500 000
+  - ☐ 1:300 000
+  - ☐ 50 000:1
+  - ☐ 1:5000
+  - ☑ 1:50 000
+- `03` AFB II · _Modellieren_ · Ein Bild zeigt einen Käfer vergrößert im Maßstab 10:1. Auf dem Bild ist das Tier 4 cm lang. Wie lang ist es in Wirklichkeit? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **4 mm**. Typische Fehler: 400 mm (massstab-verkehrt), 40 mm (sach-schritt-vergessen).
+- `04` AFB III · _Argumentieren (+ Modellieren)_ · Ein Weg von 4 km ist auf einer Karte im Maßstab 1:50 000 genau 8 cm lang. Ole behauptet: „Auf einer Karte im Maßstab 1:25 000 ist derselbe Weg 16 cm lang.“ Stimmt das?
+  - ☐ Stimmt, denn der Weg ist auf jeder Karte gleich lang.
+  - ☐ Falsch, denn der Weg ist dort 4 cm lang.
+  - ☐ Falsch, denn der Weg ist dort 160 cm lang.
+  - ☑ Stimmt, denn bei der kleineren Maßstabszahl wird alles größer gezeichnet.
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf den Plan und auf die Maßstabsleiste. Welchen Maßstab hat der Plan? _(Bild: Plan „Saal“: 5 cm lang und 3 cm breit; Maßstabsleiste: 2 cm sind 4 m)_
+  - ☐ 1:20
+  - ☐ 200:1
+  - ☑ 1:200
+  - ☐ 1:2000
+  - ☐ 1:400
+- `06` AFB III · _Modellieren_ · Ein Weg ist auf einer Karte im Maßstab 1:50 000 genau 8 cm lang. Auf einer zweiten Karte ist derselbe Weg 16 cm lang. Welchen Maßstab hat die zweite Karte?
+  - ☐ 1:2500
+  - ☐ 1:250 000
+  - ☑ 1:25 000
+  - ☐ 1:100 000
+  - ☐ 1:50 000
+
+## 5.6.6-K2: Ich kann Längen aus der Wirklichkeit in einen Maßstab umrechnen und einen Maßstab bestimmen.
+
+Grundlage, die F übt: Mit der Maßstabsleiste rückwärts: Wie viele Zentimeter auf der Karte?
+
+Baut auf: 5.6.6-K1 (Ich kann mit dem Maßstab aus einer Länge auf der Karte die Länge in Wirklichkeit bestimmen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Tabelle zeigt: So viel ist 1 cm auf der Karte in Wirklichkeit. *Beispiel:* 300 m in Wirklichkeit sind 3 cm auf der Karte. *Lösungsschritt:* Wie oft passt die Länge für 1 cm in die ganze Strecke?
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Ein Weg ist in Wirklichkeit 500 m lang. / Wie viele cm ist der Weg auf der Karte lang? _(Tabelle: Auf der Karte | In Wirklichkeit / 1 cm | 100 m / 2 cm | 200 m / 3 cm | 300 m)_ Lösung: **5 cm**. Typische Fehler: 500 (massstab-verkehrt), 50 (umrechnungszahl).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / 1 cm auf der Karte sind 50 m in Wirklichkeit. / 300 m in Wirklichkeit sind ▢ cm auf der Karte. / 200 m in Wirklichkeit sind ▢ cm auf der Karte. _(Tabelle: Auf der Karte | In Wirklichkeit / 1 cm | 50 m / 2 cm | 100 m / 3 cm | 150 m)_ Lösung: a = **6**, b = **4**
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Eine Straße ist in Wirklichkeit 900 m lang. / Wie lang ist sie auf der Karte? _(Tabelle: Auf der Karte | In Wirklichkeit / 1 cm | 100 m / 2 cm | 200 m / 3 cm | 300 m)_
+  - ☐ 900 cm
+  - ☐ 90 cm
+  - ☑ 9 cm
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / 1 cm auf der Karte ist 1 km in Wirklichkeit. / Zwei Dörfer liegen 3 km auseinander. / Wie viele cm sind das auf der Karte? _(Tabelle: Auf der Karte | In Wirklichkeit / 1 cm | 1 km / 2 cm | 2 km / 3 cm | 3 km)_ Lösung: **3 cm**. Typische Fehler: 3000 (massstab-verkehrt), 30 (umrechnungszahl).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Vom Dorf bis zum Wald sind es 400 m. / Von dort bis zum Turm sind es noch 500 m. _(Tabelle: Auf der Karte | In Wirklichkeit / 1 cm | 100 m / 2 cm | 200 m / 3 cm | 300 m)_
+  - a) Wie viele m ist der ganze Weg in Wirklichkeit lang? **900 m**. Typische Fehler: 400 (sach-schritt-vergessen).
+  - b) Wie viele cm ist der ganze Weg auf der Karte lang? **9 cm**. Typische Fehler: 900 (massstab-verkehrt).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / 1 cm auf der Karte sind 100 m in Wirklichkeit. / Was gehört zusammen? _(Tabelle: Auf der Karte | In Wirklichkeit / 1 cm | 100 m / 2 cm | 200 m / 3 cm | 300 m)_ Lösung: 600 m in Wirklichkeit → 6 cm auf der Karte, 900 m in Wirklichkeit → 9 cm auf der Karte, 200 m in Wirklichkeit → 2 cm auf der Karte
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Maßstab 1:100 heißt: Im Plan ist alles durch 100 geteilt. *Beispiel:* 3 m sind 300 cm. Dann 300 cm : 100 = 3 cm. *Lösungsschritt:* Wandle in cm um. Teile dann durch 100.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Ein Plan hat den Maßstab 1:100. / Das Zimmer ist in Wirklichkeit 3 m lang. / Wie viele cm sind das im Plan? _(Tabelle: Maßstab | 1 cm im Plan sind in Wirklichkeit / 1:100 | 1 m / 1:1000 | 10 m)_ Lösung: **3 cm**. Typische Fehler: 300 (massstab-verkehrt), 30 (umrechnungszahl).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Eine Karte hat den Maßstab 1:1000. / Eine Brücke ist in Wirklichkeit 50 m lang. / Wie viele cm sind das auf der Karte? _(Tabelle: Maßstab | 1 cm im Plan sind in Wirklichkeit / 1:100 | 1 m / 1:1000 | 10 m)_ Lösung: **5 cm**. Typische Fehler: 50 (umrechnungszahl), 500 (massstab-verkehrt).
+- `03` AFB II · _Modellieren_ · Ein Zimmer wird im Maßstab 1:100 gezeichnet. / Es ist 7 m lang und 5 m breit.
+  - a) Wie viele cm ist das Zimmer im Plan lang? **7 cm**. Typische Fehler: 700 (massstab-verkehrt).
+  - b) Wie viele cm ist das Zimmer im Plan breit? **5 cm**. Typische Fehler: 500 (massstab-verkehrt).
+- `04` AFB I · _Modellieren_ · Ein Plan hat den Maßstab 1:100. / Ein Tisch ist in Wirklichkeit 90 cm breit. / Wie viele mm sind das im Plan? Lösung: **9 mm**. Typische Fehler: 90 (umrechnungszahl).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Eine Karte hat den Maßstab 1:1000. / 60 m in Wirklichkeit sind ▢ cm auf der Karte. / 6 cm auf der Karte sind ▢ m in Wirklichkeit. _(Tabelle: Maßstab | 1 cm im Plan sind in Wirklichkeit / 1:100 | 1 m / 1:1000 | 10 m)_ Lösung: a = **6**, b = **60**
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul zeichnet einen Schulhof im Maßstab 1:100. / Der Schulhof ist in Wirklichkeit 60 m lang. / Paul sagt: Im Plan ist er 6 cm lang. / Stimmt das?
+  - ☑ Falsch. / Es sind 60 cm.
+  - ☐ Falsch. / Es sind 6000 cm.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle die Länge in cm um und teile durch die Maßstabszahl. *Lösungsschritt:* 1 km sind 100 000 cm.
+
+- `01` AFB I · _Modellieren_ · Eine Karte hat den Maßstab 1:25 000. / Ein See ist in Wirklichkeit 3 km lang. / Wie lang ist der See auf der Karte? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **12 cm**. Typische Fehler: 1,2 cm (umrechnungszahl), 120 cm (umrechnungszahl).
+- `02` AFB II · _Modellieren_ · Eine Karte hat den Maßstab 1:50 000. / Zwei Orte sind in Wirklichkeit 4 km voneinander entfernt. / Wie weit liegen sie auf der Karte auseinander? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **8 cm**. Typische Fehler: 80 cm (umrechnungszahl), 16 cm (sach-falsche-rechnung).
+- `03` AFB II · _Modellieren_ · Im Heft: Ein Weg ist in Wirklichkeit 300 m lang. Zeichne ihn als Strecke im Maßstab 1:5000. Wie viele mm ist deine Strecke lang? Lösung: **60 mm**. Typische Fehler: 600 (umrechnungszahl), 6 (umrechnungszahl).
+- `04` AFB I · _Modellieren_ · Ein Stadtplan hat den Maßstab 1:10 000. / Eine Straße ist in Wirklichkeit 1,4 km lang. / Wie lang ist die Straße auf dem Stadtplan? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **14 cm**. Typische Fehler: 140 cm (umrechnungszahl), 1,4 cm (umrechnungszahl).
+- `05` AFB II · _Modellieren_ · Im Heft: Ein Zimmer ist 10 m lang und 6 m breit. Zeichne seinen Grundriss im Maßstab 1:200. Wie viele cm sind alle vier Seiten deiner Zeichnung zusammen lang? Lösung: **16 cm**. Typische Fehler: 8 (sach-schritt-vergessen), 32 (massstab-einheit).
+- `06` AFB III · _Modellieren_ · Zwei Orte sind in Wirklichkeit 5 km voneinander entfernt. / Karte A hat den Maßstab 1:25 000, Karte B den Maßstab 1:50 000. / Um wie viel ist die Strecke auf Karte A länger als auf Karte B? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **10 cm**. Typische Fehler: 20 cm (sach-schritt-vergessen), 30 cm (sub-addiert).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle beide Längen in dieselbe Einheit um und teile die Wirklichkeit durch den Plan.
+
+- `01` AFB I · _Modellieren_ · Ein Zimmer ist in Wirklichkeit 6 m lang. In einem Plan ist es 3 cm lang. Welchen Maßstab hat der Plan?
+  - ☐ 1:2000
+  - ☐ 1:18
+  - ☐ 200:1
+  - ☑ 1:200
+  - ☐ 1:20 000
+- `02` AFB II · _Modellieren_ · Eine Strecke von 5 km ist auf einer Karte 10 cm lang. Welchen Maßstab hat die Karte?
+  - ☐ 1:500 000
+  - ☐ 1:500
+  - ☐ 1:5000
+  - ☐ 50 000:1
+  - ☑ 1:50 000
+- `03` AFB II · _Modellieren_ · Im Heft: Eine Turnhalle ist 36 m lang und 24 m breit. Zeichne ihren Grundriss im Maßstab 1:400. Wie viele mm sind alle vier Seiten deiner Zeichnung zusammen lang? Lösung: **300 mm**. Typische Fehler: 150 (sach-schritt-vergessen), 30 (umrechnungszahl).
+- `04` AFB III · _Modellieren_ · Im Heft: Zeichne ein Rechteck mit 7 cm Länge und 4 cm Breite. Es zeigt einen Garten im Maßstab 1:500. Wie lang ist der Zaun, der in Wirklichkeit um den ganzen Garten führt? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **110 m**. Typische Fehler: 55 m (sach-schritt-vergessen), 0,22 m (massstab-einheit).
+- `05` AFB II · _Modellieren_ · Eine Ameise ist in Wirklichkeit 6 mm lang. Für ein Plakat wird sie vergrößert im Maßstab 10:1 gezeichnet. Wie lang ist die Zeichnung? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **6 cm**. Typische Fehler: 0,6 cm (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Ein Modell eines Autos ist 9 cm lang. Das echte Auto ist 4,5 m lang und 1,5 m hoch. Wie hoch ist das Modell? _(Größe eingeben, Einheit wählen aus mm, cm, m, km)_ Lösung: **3 cm**. Typische Fehler: 30 cm (umrechnungszahl).
+
+## 5.6.7-A1: Ich kann Sachaufgaben Schritt für Schritt lösen: wichtige Angaben, Rechnung, Antwort.
+
+Grundlage, die F übt: Wichtige Angaben antippen, Rechnung wählen, Ergebnis mit Einheit aufschreiben
+
+Baut auf: 5.6.2-B2 (Ich kann mit Geldbeträgen rechnen.), 5.4.6-T3 (Ich kann zu einem Text den passenden Rechenausdruck aufstellen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst die Frage. Was sollst du herausfinden? *Beispiel:* Für 3 Hefte zu je 50 ct rechnest du 3 · 50 ct = 150 ct. *Lösungsschritt:* Suche die Angaben, die zur Frage gehören. Rechne dann.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Ali kauft 3 Brötchen. / Wie viel zahlt Ali? _(Tabelle: Ware | Preis / Brötchen | 40 ct / Radiergummi | 70 ct / Brezel | 80 ct)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☐ 70 ct · ☑ 40 ct · ☑ 3
+  - b) Welche Rechnung passt? ☑ 3 · 40 ct · ☐ 40 ct : 3 · ☐ 3 ct + 40 ct
+  - c) Rechne aus. **120 ct**. Typische Fehler: 43 (1x1-addiert), 210 (sach-unnoetige-angabe).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Mara kauft 1 Heft und 1 Radiergummi. / Wie viel zahlt Mara? _(Tabelle: Ware | Preis / Heft | 90 ct / Radiergummi | 70 ct / Apfel | 50 ct)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 90 ct · ☑ 70 ct · ☐ 50 ct
+  - b) Welche Rechnung passt? ☐ 90 ct − 70 ct · ☑ 90 ct + 70 ct · ☐ 90 ct + 50 ct
+  - c) Rechne aus. **160 ct**. Typische Fehler: 20 (add-subtrahiert), 140 (sach-unnoetige-angabe).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Der Bauer lädt 5 Säcke Mehl auf den Wagen. / Wie schwer ist die Ladung? _(Tabelle: Ding | Gewicht / Sack Mehl | 10 kg / Kiste Rüben | 8 kg / Eimer Futter | 6 kg)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☐ 8 kg · ☑ 10 kg · ☑ 5
+  - b) Welche Rechnung passt? ☐ 10 kg + 8 kg · ☐ 5 kg + 10 kg · ☑ 5 · 10 kg
+  - c) Rechne aus. **50 kg**. Typische Fehler: 15 (1x1-addiert), 40 (sach-unnoetige-angabe).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Der Zug fährt um 10:20 Uhr ab. / Er kommt um 10:50 Uhr an. / Die Fahrt kostet 2 €. / Wie lange dauert die Fahrt? _(Bild: Zeitleiste: 10:20 Uhr → 10:50 Uhr; Zeitspannen ?)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 10:20 Uhr · ☐ 2 € · ☑ 10:50 Uhr
+  - b) Welche Rechnung passt? ☐ 10:50 Uhr − 2 € · ☐ 10:50 Uhr + 10:20 Uhr · ☑ 10:50 Uhr − 10:20 Uhr
+  - c) Rechne aus. **30 min**. Typische Fehler: 70 (sub-addiert), 50 (zeitpunkt-zeitspanne).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Sara kauft 1 Eis. / Sara bezahlt mit 2 €. / Wie viel Geld bekommt Sara zurück? _(Tabelle: Ware | Preis / Eis | 1 € 50 ct / Lineal | 1 € 30 ct / Saft | 1 € 20 ct)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 1 € 50 ct · ☑ 2 € · ☐ 1 € 30 ct
+  - b) Welche Rechnung passt? ☐ 2 € − 1 € 30 ct · ☐ 2 € + 1 € 50 ct · ☑ 2 € − 1 € 50 ct
+  - c) Rechne aus. **50 ct**. Typische Fehler: 350 (sub-addiert), 150 (rueckgeld-preis), 70 (sach-unnoetige-angabe).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Sara schneidet das gelbe Band in 4 gleiche Stücke. / Wie lang ist ein Stück? _(Tabelle: Band | Länge / das gelbe Band | 80 cm / das grüne Band | 40 cm / das weiße Band | 120 cm)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 4 · ☑ 80 cm · ☐ 40 cm
+  - b) Welche Rechnung passt? ☐ 80 cm − 4 cm · ☑ 80 cm : 4 · ☐ 80 cm · 4
+  - c) Rechne aus. **20 cm**. Typische Fehler: 76 (div-falsche-rechenart), 320 (div-falsche-rechenart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies die Frage genau. Nicht jede Zahl gehört in die Rechnung. *Beispiel:* Für 4 Säfte zu je 1,20 € rechnest du 4 · 120 ct = 480 ct. *Lösungsschritt:* Wähle zuerst die Angaben, dann die Rechnung. Rechne mit derselben Einheit.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Finn kauft 2 Säfte. / Wie viel zahlt Finn? _(Tabelle: Ware | Preis / Saft | 1,20 € / Brot | 3,20 € / Lineal | 1,30 €)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 1,20 € · ☐ 3,20 € · ☑ 2
+  - b) Welche Rechnung passt? ☐ 2 € + 1,20 € · ☐ 1,20 € + 3,20 € · ☑ 2 · 1,20 €
+  - c) Schreibe das Ergebnis in ct. **240 ct**. Typische Fehler: 320 (1x1-addiert), 120 (sach-schritt-vergessen).
+  - d) Welcher Antwortsatz passt zur Frage? ☑ Finn zahlt 2,40 €. · ☐ 1 Saft kostet 2,40 €. · ☐ Finn kauft 240 Säfte.
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Paul legt 1 Sack Zwiebeln und 1 Melone in den Korb. / Wie schwer ist beides zusammen? _(Tabelle: Ding | Gewicht / Sack Zwiebeln | 1 kg 800 g / Melone | 2 kg 500 g / Kürbis | 3 kg)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 2 kg 500 g · ☑ 1 kg 800 g · ☐ 3 kg
+  - b) Welche Rechnung passt? ☑ 1 kg 800 g + 2 kg 500 g · ☐ 1 kg 800 g + 3 kg · ☐ 2 kg 500 g − 1 kg 800 g
+  - c) Schreibe das Ergebnis in g. **4300 g**. Typische Fehler: 4800 (sach-unnoetige-angabe), 700 (add-subtrahiert).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Der Korb kostet 4300 g. · ☑ Beides zusammen wiegt 4300 g. · ☐ Beides zusammen wiegt 4800 g.
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Mia kauft 1 Eis. / Mia bezahlt mit 5 €. / Wie viel Rückgeld gibt es? _(Tabelle: Ware | Preis / Eis | 1,50 € / Brot | 3,20 € / Kleber | 1,90 €)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 5 € · ☑ 1,50 € · ☐ 3,20 €
+  - b) Welche Rechnung passt? ☐ 5 € − 3,20 € · ☑ 5 € − 1,50 € · ☐ 5 € + 1,50 €
+  - c) Schreibe das Ergebnis in ct. **350 ct**. Typische Fehler: 650 (sub-addiert), 150 (rueckgeld-preis).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Mia bekommt 1,50 € Rückgeld. · ☐ 1 Eis kostet 3,50 €. · ☑ Mia bekommt 3,50 € Rückgeld.
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Der Kurs beginnt um 14:10 Uhr. / Er endet um 14:45 Uhr. / Es kommen 15 Kinder. / Wie lange dauert der Kurs? _(Bild: Zeitleiste: 14:10 Uhr → 14:45 Uhr; Zeitspannen ?)_
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 14:45 Uhr · ☐ 15 · ☑ 14:10 Uhr
+  - b) Welche Rechnung passt? ☑ 14:45 Uhr − 14:10 Uhr · ☐ 14:45 Uhr − 15 min · ☐ 14:45 Uhr + 14:10 Uhr
+  - c) Rechne aus. **35 min**. Typische Fehler: 55 (sub-addiert), 20 (sach-unnoetige-angabe).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Es kommen 35 Kinder. · ☐ Der Kurs endet um 35 min. · ☑ Der Kurs dauert 35 min.
+- `05` AFB II · _Modellieren_ · Ein Zaunfeld ist 2 m 50 cm lang. / Der Gärtner baut 4 Zaunfelder auf. / Jedes Zaunfeld kostet 30 €. / Wie lang ist der Zaun?
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☑ 4 · ☑ 2 m 50 cm · ☐ 30 €
+  - b) Welche Rechnung passt? ☐ 4 m + 2 m 50 cm · ☑ 4 · 2 m 50 cm · ☐ 4 · 30 €
+  - c) Schreibe das Ergebnis in m. **10 m**. Typische Fehler: 120 (sach-unnoetige-angabe), 8 (sach-schritt-vergessen).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Ein Zaunfeld ist 10 m lang. · ☑ Der Zaun ist 10 m lang. · ☐ Der Zaun kostet 10 m.
+- `06` AFB III · _Modellieren_ · Ein Zug mit 9 Wagen fährt 3 Stunden lang. / In jeder Stunde schafft er 60 km. / Im Zug sitzen 260 Fahrgäste. / Wie weit fährt der Zug?
+  - a) Welche Angaben brauchst du für die Rechnung? _(mehrere antippen)_ ☐ 260 · ☑ 60 km · ☑ 3 Stunden · ☐ 9
+  - b) Welche Rechnung passt? ☑ 3 · 60 km · ☐ 9 · 60 km · ☐ 3 km + 60 km
+  - c) Rechne aus. **180 km**. Typische Fehler: 540 (sach-unnoetige-angabe), 63 (1x1-addiert).
+  - d) Welcher Antwortsatz passt zur Frage? ☑ Der Zug fährt 180 km weit. · ☐ Der Zug fährt 180 Stunden lang. · ☐ Im Zug sitzen 180 Fahrgäste.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe auf, was gesucht ist und was du weißt. *Lösungsschritt:* Rechne Schritt für Schritt und schreibe zu jedem Ergebnis die Einheit.
+
+- `01` AFB I · _Modellieren_ · 1 kg Äpfel kostet 2,50 €. / Tom kauft 6 kg Äpfel. / Wie viel zahlt Tom?
+  - a) Welche Rechnung passt? ☑ 6 · 2,50 € · ☐ 6 kg · 1 kg · ☐ 6 kg + 2,50 € · ☐ 2,50 € : 6
+  - b) Rechne aus. **15 €**.
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Tom kauft 15 € Äpfel. · ☐ 1 kg Äpfel kostet 15 €. · ☑ Tom zahlt 15 €. · ☐ Tom zahlt 15 kg.
+- `02` AFB II · _Modellieren_ · Eine Tischlerin bekommt für 1 h Arbeit 42 €. / Die Arbeit dauert 7 h. / Wie viel kostet die Arbeit?
+  - a) Welche Rechnung passt? ☐ 42 € : 7 · ☑ 7 · 42 € · ☐ 7 h + 42 € · ☐ 42 € − 7 €
+  - b) Rechne aus. **294 €**. Typische Fehler: 49 (1x1-addiert), 42 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Die Arbeit dauert 294 h. · ☐ Für 1 h bekommt man 294 €. · ☑ Die Arbeit kostet 294 €. · ☐ Die Arbeit kostet 49 €.
+- `03` AFB II · _Modellieren_ · Eine Radfahrerin schafft in 1 h eine Strecke von 12 km. / Die Tour dauert 4 h. / Wie lang ist die Tour?
+  - a) Welche Rechnung passt? ☐ 4 h + 12 km · ☐ 12 km : 4 · ☐ 12 km − 4 km · ☑ 4 · 12 km
+  - b) Rechne aus. **48 km**. Typische Fehler: 16 (1x1-addiert), 12 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Die Tour dauert 48 h. · ☐ Die Tour ist 16 km lang. · ☐ In 1 h schafft man 48 km. · ☑ Die Tour ist 48 km lang.
+- `04` AFB I · _Modellieren_ · Ein Sack enthält 12 kg Futter für die Hühner. / Für eine Fütterung braucht der Bauer 500 g. / Für wie viele Fütterungen reicht der Sack?
+  - a) Welche Rechnung passt? ☐ 500 g : 12 kg · ☐ 12 kg − 500 g · ☐ 12 kg · 500 g · ☑ 12 kg : 500 g
+  - b) Rechne aus. **24 Fütterungen**. Typische Fehler: 240 (umrechnungszahl).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Der Bauer hat 24 Hühner. · ☐ Eine Fütterung braucht 24 g. · ☐ Der Sack wiegt 24 kg. · ☑ Der Sack reicht für 24 Fütterungen.
+- `05` AFB II · _Modellieren_ · Im Parkhaus kostet 1 h Parken 1,50 €. / Ein Auto steht von 9:15 Uhr bis 11:15 Uhr im Parkhaus. / Wie viel kostet das Parken?
+  - a) Wie viele h steht das Auto im Parkhaus? **2 h**. Typische Fehler: 3 (liste-verzaehlt).
+  - b) Wie viel ct kostet das Parken? **300 ct**. Typische Fehler: 150 (sach-schritt-vergessen), 450 (liste-verzaehlt).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ 1 h Parken kostet 3 €. · ☑ Das Parken kostet 3 €. · ☐ Das Auto parkt 3 € lang. · ☐ Das Parken kostet 1,50 €.
+- `06` AFB III · _Modellieren_ · Im Laden A kosten 3 Stifte zusammen 2,70 €. / Im Laden B kosten 6 Stifte zusammen 4,80 €. / In welchem Laden ist ein Stück billiger, und um wie viel?
+  - a) Wie viel ct kostet ein Stück im Laden A? **90 ct**. Typische Fehler: 270 (sach-schritt-vergessen).
+  - b) Wie viel ct kostet ein Stück im Laden B? **80 ct**. Typische Fehler: 480 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ In beiden Läden kostet ein Stück gleich viel. · ☐ Im Laden A ist alles um 2,10 € billiger. · ☑ Im Laden B ist ein Stück um 10 ct billiger. · ☐ Im Laden A ist ein Stück um 10 ct billiger.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe jede Angabe: Brauchst du sie für die Frage? Ein Überschlag zeigt, ob dein Ergebnis stimmen kann.
+
+- `01` AFB I · _Modellieren_ · Finn ist 10 Jahre alt und wohnt 2 km von der Schule entfernt. Im Schreibwarenladen kauft Finn 5 Hefte zu je 1,20 €. Wie viel muss Finn bezahlen?
+  - a) Welche Angaben sind wichtig für die Frage? _(mehrere antippen)_ ☐ 10 · ☑ 5 · ☐ 2 km · ☑ 1,20 €
+  - b) Wie viel ct muss bezahlt werden? **600 ct**. Typische Fehler: 120 (sach-schritt-vergessen), 1200 (sach-unnoetige-angabe).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Finn ist 6 € alt. · ☐ Finn kauft 600 Hefte. · ☐ Ein Heft kostet 6 €. · ☑ Finn muss 6 € bezahlen.
+- `02` AFB II · _Modellieren_ · Ben kauft 5 Hefte und bezahlt mit einem Schein im Wert von 10 €. Wie viel Rückgeld bekommt Ben?
+  - a) Welche Angabe fehlt, damit du die Frage beantworten kannst? ☐ die Anzahl der Hefte · ☐ der Wert des Scheins · ☑ der Preis für ein Heft · ☐ die Farbe der Hefte · ☐ das Alter von Ben
+  - b) Ein Heft kostet 1,10 €. Wie viel ct Rückgeld gibt es? **450 ct**. Typische Fehler: 890 (sach-schritt-vergessen), 550 (rueckgeld-preis).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Ben bezahlt 4,50 €. · ☐ Ben bekommt 5,50 € Rückgeld. · ☑ Ben bekommt 4,50 € Rückgeld. · ☐ Ein Heft kostet 4,50 €.
+- `03` AFB II · _Modellieren_ · Jonas hat 10 € dabei und möchte drei Dinge kaufen. Sie kosten 2,95 €, 4,20 € und 1,95 €. Reicht das Geld?
+  - a) Welcher Überschlag passt? ☑ 3 € + 4 € + 2 € · ☐ 3 € · 4 € · 2 € · ☐ 4 € + 5 € + 3 € · ☐ 10 € + 3 € + 4 €
+  - b) Wie viel € kostet der Einkauf ungefähr? **9 €**. Typische Fehler: 12 (schaetzen-addiert).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Das kann man ohne genaue Rechnung nicht sagen. · ☑ Ja, das Geld reicht. Es bleibt ungefähr 1 € übrig. · ☐ Ja, das Geld reicht. Es bleiben ungefähr 9 € übrig. · ☐ Nein, es fehlt ungefähr 1 €.
+- `04` AFB III · _Modellieren_ · Auf dem Markt gibt es 3 Stände. Jonas wartet 26 min an einem Stand und kauft dann 4 kg Kirschen. 1 kg kostet 2,50 €. Wie viel bezahlt Jonas?
+  - a) Welche Angaben sind wichtig für die Frage? _(mehrere antippen)_ ☑ 2,50 € · ☐ 3 · ☐ 26 min · ☑ 1 kg · ☑ 4 kg
+  - b) Wie viel € bezahlt das Kind? **10 €**.
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Jonas kauft 10 kg Kirschen. · ☐ 1 kg Kirschen kostet 10 €. · ☐ Jonas wartet 10 €. · ☑ Jonas bezahlt 10 €.
+- `05` AFB II · _Modellieren_ · Eine Schulklasse bricht morgens auf und ist um 11:55 Uhr am Ziel. Wie lange war die Gruppe unterwegs?
+  - a) Welche Angabe fehlt, damit du die Frage beantworten kannst? ☐ die Uhrzeit am Ziel · ☑ die Uhrzeit beim Aufbruch · ☐ das Wetter · ☐ die Zahl der Personen · ☐ die Länge der Strecke
+  - b) Die Gruppe ist um 8:40 Uhr aufgebrochen. Wie viele min war sie unterwegs? **195 min**. Typische Fehler: 135 (sub-kleiner-von-groesser), 255 (add-uebertrag-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Die Gruppe ist um 3 h 15 min angekommen. · ☐ Die Strecke ist 195 min lang. · ☑ Die Gruppe war 3 h 15 min unterwegs. · ☐ Die Gruppe war 11:55 Uhr unterwegs.
+- `06` AFB III · _Modellieren_ · Ein Lastenaufzug trägt höchstens 800 kg. Drei Kisten wiegen 205 kg, 215 kg und 190 kg. Ein Arbeiter mit ungefähr 100 kg fährt mit. Darf der Aufzug so fahren?
+  - a) Welcher Überschlag passt? ☑ 200 kg + 200 kg + 200 kg + 100 kg · ☐ 200 kg · 3 − 100 kg · ☐ 800 kg + 100 kg · ☐ 200 kg + 200 kg + 200 kg
+  - b) Wie viel kg sind das ungefähr zusammen? **700 kg**. Typische Fehler: 600 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Ja, denn die Kisten wiegen zusammen nur ungefähr 600 kg. · ☑ Ja, mit ungefähr 700 kg bleibt der Aufzug unter 800 kg. · ☐ Das kann man ohne Waage nicht sagen. · ☐ Nein, ungefähr 700 kg sind mehr als 800 kg.
+
+## 5.6.7-A2: Ich kann Sachaufgaben mit mehreren Schritten lösen und überflüssige Angaben erkennen.
+
+Grundlage, die F übt: Zwei Schritte nacheinander: erst das eine ausrechnen, dann damit weiterrechnen
+
+Baut auf: 5.6.7-A1 (Ich kann Sachaufgaben Schritt für Schritt lösen: wichtige Angaben, Rechnung, Antwort.), 5.6.5-L2 (Ich kann mit Längen rechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in zwei Schritten. Das erste Ergebnis brauchst du für den zweiten Schritt. *Beispiel:* 3 Hefte zu je 50 ct kosten 150 ct. Mit einem Stift für 60 ct sind es 150 ct + 60 ct = 210 ct. *Lösungsschritt:* Beantworte zuerst die erste Frage. Rechne dann mit dem Ergebnis weiter.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Finn kauft 2 Radiergummis und 1 Heft. _(Tabelle: Ware | Preis / Radiergummi | 70 ct / Heft | 90 ct / Brötchen | 40 ct)_
+  - a) Wie viel kosten die 2 Radiergummis? **140 ct**. Typische Fehler: 72 (1x1-addiert), 70 (sach-schritt-vergessen).
+  - b) Wie viel kostet alles zusammen? **230 ct**. Typische Fehler: 160 (sach-schritt-vergessen), 140 (sach-schritt-vergessen).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Tom kauft 1 Radiergummi und 1 Heft. / Tom bezahlt mit 2 €. _(Tabelle: Ware | Preis / Radiergummi | 70 ct / Heft | 90 ct / Apfel | 50 ct)_
+  - a) Wie viel kostet beides zusammen? **160 ct**. Typische Fehler: 20 (add-subtrahiert).
+  - b) Wie viel Geld bekommt Tom zurück? **40 ct**. Typische Fehler: 130 (sach-schritt-vergessen), 160 (rueckgeld-preis).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Der Bauer lädt 3 Säcke Kartoffeln und 1 Eimer Futter auf. _(Tabelle: Ding | Gewicht / Sack Kartoffeln | 5 kg / Eimer Futter | 6 kg / Sack Mehl | 10 kg)_
+  - a) Wie schwer sind die 3 Säcke Kartoffeln? **15 kg**. Typische Fehler: 8 (1x1-addiert).
+  - b) Wie schwer ist die ganze Ladung? **21 kg**. Typische Fehler: 11 (sach-schritt-vergessen), 15 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Sara schneidet vom weißen Band 2 Stücke ab. / Jedes Stück ist 10 cm lang. _(Tabelle: Band | Länge / das weiße Band | 120 cm / das gelbe Band | 80 cm / das blaue Band | 90 cm)_
+  - a) Wie viel cm schneidet das Kind zusammen ab? **20 cm**. Typische Fehler: 12 (1x1-addiert), 10 (sach-schritt-vergessen).
+  - b) Wie lang ist das Band danach noch? **100 cm**. Typische Fehler: 110 (sach-schritt-vergessen), 140 (sub-addiert).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Mia übt Rechnen. / Am Dienstag übt Mia 15 min länger als am Montag. _(Tabelle: Tag | Übezeit / Montag | 25 min / Dienstag | ?)_
+  - a) Wie viele min übt Mia am Dienstag? **40 min**. Typische Fehler: 10 (add-subtrahiert), 15 (sach-frage-verfehlt).
+  - b) Wie viele min übt Mia an beiden Tagen zusammen? **65 min**. Typische Fehler: 40 (sach-schritt-vergessen), 55 (sach-falsche-rechnung).
+- `06` AFB I · _Modellieren_ · Schau auf das Geld. / So viel Taschengeld bekommt Noah jede Woche. / Noah spart das Geld 6-mal. / Dann kauft Noah ein Buch für 7 €. _(Bild: Geld: 2 €, 2 €)_
+  - a) Wie viel € sind gespart? **24 €**. Typische Fehler: 10 (1x1-addiert).
+  - b) Wie viel € bleiben nach dem Kauf übrig? **17 €**. Typische Fehler: 31 (sub-addiert), 3 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in zwei Schritten und schreibe das erste Ergebnis mit Einheit auf. *Beispiel:* 3 Säfte zu je 1,20 € kosten 360 ct. Mit einem Brot für 3,20 € sind es 360 ct + 320 ct = 680 ct. *Lösungsschritt:* Rechne mit derselben Einheit. Bei Geld rechnest du am besten in Cent.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Jonas kauft 3 Eis und 1 Kleber. _(Tabelle: Ware | Preis / Eis | 1,50 € / Kleber | 1,90 € / Saft | 1,20 €)_
+  - a) Wie viel ct kosten die 3 Eis? **450 ct**. Typische Fehler: 150 (sach-schritt-vergessen).
+  - b) Wie viel ct kostet alles zusammen? **640 ct**. Typische Fehler: 340 (sach-schritt-vergessen), 450 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Jonas zahlt zusammen 4,50 €. · ☐ 1 Kleber kostet 6,40 €. · ☑ Jonas zahlt zusammen 6,40 €.
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Elif kauft 1 Kleber und 1 Eis. / Elif bezahlt mit 10 €. _(Tabelle: Ware | Preis / Kleber | 1,90 € / Eis | 1,50 € / Saft | 1,20 €)_
+  - a) Wie viel ct kostet beides zusammen? **340 ct**. Typische Fehler: 40 (add-subtrahiert).
+  - b) Wie viel ct Rückgeld gibt es? **660 ct**. Typische Fehler: 810 (sach-schritt-vergessen), 340 (rueckgeld-preis).
+  - c) Welcher Antwortsatz passt zur Frage? ☑ Elif bekommt 6,60 € Rückgeld. · ☐ Elif bekommt 3,40 € Rückgeld. · ☐ Beides zusammen kostet 6,60 €.
+- `03` AFB II · _Modellieren_ · In einer Kiste stehen 8 Gläser Honig. / Jedes Glas wiegt 250 g. / Die leere Kiste wiegt 1 kg 500 g.
+  - a) Wie viel g wiegen alle Gläser zusammen? **2000 g**. Typische Fehler: 250 (sach-schritt-vergessen).
+  - b) Wie viel g wiegt die volle Kiste? **3500 g**. Typische Fehler: 2501 (masszahlen-addiert), 1750 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☑ Die volle Kiste wiegt 3500 g. · ☐ Die volle Kiste wiegt 2000 g. · ☐ Ein Glas wiegt 3500 g.
+- `04` AFB I · _Modellieren_ · Für ein Regal braucht die Tischlerin 4 Bretter. / Jedes Brett ist 80 cm lang. / Sie sägt alle Bretter von einem Balken mit 4 m Länge ab.
+  - a) Wie viel cm braucht sie für alle Bretter zusammen? **320 cm**. Typische Fehler: 80 (sach-schritt-vergessen).
+  - b) Wie viel cm bleiben vom Balken übrig? **80 cm**. Typische Fehler: 320 (sach-schritt-vergessen), 316 (masszahlen-addiert).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Vom Balken bleiben 320 cm übrig. · ☐ Ein Brett ist 80 cm lang. · ☑ Vom Balken bleiben 80 cm übrig.
+- `05` AFB II · _Modellieren_ · Das Training dauert 70 min. / Zuerst wärmen sich alle 10 min lang auf. / Dann gibt es 2 Spiele mit je 25 min. / Der Rest der Zeit ist Pause. _(Bild: Streifenbild: Ganzes 70, Teile 10 und 25 und 25 und ?)_
+  - a) Wie viele min dauern beide Spiele zusammen? **50 min**. Typische Fehler: 25 (sach-schritt-vergessen).
+  - b) Wie viele min Pause gibt es? **10 min**. Typische Fehler: 20 (sach-schritt-vergessen), 35 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Es gibt 50 min Pause. · ☐ Die Pause beginnt um 10 Uhr. · ☑ Es gibt 10 min Pause.
+- `06` AFB III · _Modellieren_ · 24 Kinder machen einen Ausflug. / Der Bus kostet für alle zusammen 192 €. / Der Eintritt kostet für jedes Kind 4 €.
+  - a) Wie viel € kostet der Bus für ein Kind? **8 €**. Typische Fehler: 192 (sach-schritt-vergessen).
+  - b) Wie viel € kostet der Ausflug für ein Kind? **12 €**. Typische Fehler: 196 (sach-schritt-vergessen), 4 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Jedes Kind zahlt 196 €. · ☑ Jedes Kind zahlt 12 €. · ☐ Alle Kinder zahlen zusammen 12 €.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe auf, was gesucht ist und was du weißt. *Lösungsschritt:* Rechne Schritt für Schritt und schreibe zu jedem Ergebnis die Einheit.
+
+- `01` AFB I · _Modellieren_ · Lina kauft 5 kg Kartoffeln und ein Brot für 2,80 €. / 1 kg Kartoffeln kostet 1,20 €. / Wie viel zahlt Lina?
+  - a) Wie viel ct kosten die Kartoffeln? **600 ct**. Typische Fehler: 120 (sach-schritt-vergessen).
+  - b) Wie viel ct kostet der ganze Einkauf? **880 ct**. Typische Fehler: 400 (sach-schritt-vergessen), 600 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Lina kauft 8,80 € Kartoffeln. · ☐ 1 kg Kartoffeln kostet 8,80 €. · ☑ Lina zahlt 8,80 €. · ☐ Lina zahlt 6 €.
+- `02` AFB II · _Modellieren_ · Ein Maler arbeitet 6 h und bekommt für 1 h Arbeit 40 €. / Dazu kommt Material für 120 €. / Wie hoch ist die Rechnung?
+  - a) Wie viel € kostet die Arbeit? **240 €**. Typische Fehler: 40 (sach-schritt-vergessen).
+  - b) Wie viel € kostet alles zusammen? **360 €**. Typische Fehler: 160 (sach-schritt-vergessen), 960 (sach-falsche-rechnung).
+  - c) Welcher Antwortsatz passt zur Frage? ☑ Die Rechnung beträgt 360 €. · ☐ Die Arbeit dauert 360 h. · ☐ Die Rechnung beträgt 240 €. · ☐ Das Material kostet 360 €.
+- `03` AFB II · _Modellieren_ · Ein Zug fährt um 7:50 Uhr ab und kommt um 9:50 Uhr an. / In 1 h schafft er 70 km. / Wie lang ist die Strecke?
+  - a) Wie viele h dauert die Fahrt? **2 h**. Typische Fehler: 3 (liste-verzaehlt).
+  - b) Wie viele km ist die Strecke lang? **140 km**. Typische Fehler: 70 (sach-schritt-vergessen), 210 (liste-verzaehlt).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Die Fahrt dauert 140 h. · ☑ Die Strecke ist 140 km lang. · ☐ In 1 h schafft der Zug 140 km. · ☐ Die Strecke ist 70 km lang.
+- `04` AFB I · _Modellieren_ · Ein Rezept für 4 Personen braucht 500 g Mehl. / Es soll für 16 Personen gekocht werden. / Mehl gibt es in Packungen zu 500 g. / Wie viele Packungen werden gebraucht?
+  - a) Wie viel g Mehl werden gebraucht? **2000 g**. Typische Fehler: 500 (sach-schritt-vergessen), 8000 (sach-falsche-rechnung).
+  - b) Wie viele Packungen sind das? **4 Packungen**. Typische Fehler: 1 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Es kommen 4 Personen. · ☐ Eine Packung wiegt 4 g. · ☑ Es werden 4 Packungen Mehl gebraucht. · ☐ Es werden 2000 Packungen Mehl gebraucht.
+- `05` AFB II · _Modellieren_ · Eine Dose Farbe reicht für 6 m Zaun und kostet 12,50 €. / Der Zaun ist 30 m lang. / Wie viel kostet die Farbe für den ganzen Zaun?
+  - a) Wie viele Dosen werden gebraucht? **5 Dosen**. Typische Fehler: 30 (sach-schritt-vergessen).
+  - b) Wie viel ct kosten alle Dosen zusammen? **6250 ct**. Typische Fehler: 1250 (sach-schritt-vergessen), 7500 (sach-falsche-rechnung).
+  - c) Welcher Antwortsatz passt zur Frage? ☑ Die Farbe kostet 62,50 €. · ☐ Die Farbe kostet 12,50 €. · ☐ Der Zaun ist 62,50 € lang. · ☐ Es werden 62,50 € Dosen gebraucht.
+- `06` AFB III · _Modellieren_ · Im Schwimmbad kostet eine Einzelkarte 4,50 €. / Eine 10er-Karte kostet 35 €. / Eine Familie geht in den Ferien 9-mal schwimmen. / Was ist günstiger, und um wie viel?
+  - a) Wie viel ct kosten 9 Einzelkarten? **4050 ct**. Typische Fehler: 450 (sach-schritt-vergessen), 4500 (sach-falsche-rechnung).
+  - b) Wie viel ct beträgt der Unterschied zur 10er-Karte? **550 ct**. Typische Fehler: 7550 (sub-addiert).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Die Einzelkarten sind um 5,50 € günstiger. · ☐ Beides kostet 5,50 €. · ☐ Beides kostet gleich viel. · ☑ Die 10er-Karte ist um 5,50 € günstiger.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe jede Angabe: Brauchst du sie für die Frage? Ein Überschlag zeigt, ob dein Ergebnis stimmen kann.
+
+- `01` AFB I · _Modellieren_ · Emre ist 11 Jahre alt und fährt 23 min mit dem Rad zum Markt. Dort kauft Emre 5 Körbe Erdbeeren zu je 3,20 € und bezahlt mit einem Schein im Wert von 20 €. Wie viel Rückgeld bekommt Emre?
+  - a) Welche Angaben sind wichtig für die Frage? _(mehrere antippen)_ ☑ 20 € · ☐ 11 · ☑ 3,20 € · ☐ 23 min · ☑ 5
+  - b) Wie viel ct kosten die Erdbeeren? **1600 ct**. Typische Fehler: 320 (sach-schritt-vergessen).
+  - c) Wie viel ct Rückgeld gibt es? **400 ct**. Typische Fehler: 1680 (sach-schritt-vergessen), 1600 (rueckgeld-preis).
+  - d) Welcher Antwortsatz passt zur Frage? ☑ Emre bekommt 4 € Rückgeld. · ☐ Die Erdbeeren kosten 4 €. · ☐ Emre fährt 4 € zum Markt. · ☐ Emre bekommt 16 € Rückgeld.
+- `02` AFB II · _Modellieren_ · Eine Radgruppe startet um 9:30 Uhr zu einer Tour und fährt ohne Pause bis 12:30 Uhr. Wie lang ist die Tour?
+  - a) Welche Angabe fehlt, damit du die Frage beantworten kannst? ☑ die Strecke, die die Gruppe in 1 h schafft · ☐ die Uhrzeit am Ziel · ☐ die Uhrzeit beim Start · ☐ die Zahl der Räder · ☐ der Name der Gruppe
+  - b) Wie viele h ist die Gruppe unterwegs? **3 h**. Typische Fehler: 4 (liste-verzaehlt).
+  - c) In 1 h schafft die Gruppe 18 km. Wie viele km ist die Tour lang? **54 km**. Typische Fehler: 18 (sach-schritt-vergessen).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Die Tour ist 18 km lang. · ☑ Die Tour ist 54 km lang. · ☐ Die Tour dauert 54 h. · ☐ Die Gruppe schafft in 1 h 54 km.
+- `03` AFB II · _Modellieren_ · Für einen Ausflug zahlen 31 Kinder je 4,90 € in die Klassenkasse. Der Ausflug kostet 138 €. Reicht das Geld?
+  - a) Welcher Überschlag passt? ☐ 138 € : 30 · ☑ 30 · 5 € · ☐ 30 + 5 € · ☐ 30 · 138 €
+  - b) Wie viel € kommen ungefähr zusammen? **150 €**. Typische Fehler: 15 (umrechnungszahl), 1500 (umrechnungszahl).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Nein, es kommen nur ungefähr 15 € zusammen. · ☐ Ja, es bleiben ungefähr 150 € übrig. · ☐ Das kann man ohne genaue Rechnung nicht sagen. · ☑ Ja, es kommen ungefähr 150 € zusammen. Das ist mehr als 138 €.
+- `04` AFB III · _Modellieren_ · Ein Paket darf höchstens 12 kg wiegen. In den Karton, der leer 3 kg wiegt, kommen 6 Bücher mit je 750 g. Jedes Buch hat 6 € gekostet. Wie schwer ist das Paket, und darf es so verschickt werden?
+  - a) Welche Angaben sind wichtig für die Frage? _(mehrere antippen)_ ☑ 6 · ☐ 6 € · ☑ 3 kg · ☑ 750 g · ☑ 12 kg
+  - b) Wie viel g wiegen alle Bücher zusammen? **4500 g**. Typische Fehler: 750 (sach-schritt-vergessen).
+  - c) Wie viel g wiegt das ganze Paket? **7500 g**. Typische Fehler: 4503 (masszahlen-addiert), 4500 (sach-schritt-vergessen).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Das Paket wiegt 7500 g und ist zu schwer. · ☐ Das Paket wiegt 4500 g und darf verschickt werden. · ☐ Das Paket kostet 7500 g. · ☑ Das Paket wiegt 7500 g und darf verschickt werden.
+- `05` AFB II · _Modellieren_ · Ein Zaun von 18 m Länge bekommt alle 300 cm einen Pfosten, auch am Anfang und am Ende. Ein Pfosten kostet 12,50 €. Wie viel kosten alle Pfosten zusammen?
+  - a) Wie viele Abstände zwischen den Pfosten gibt es? **6 Abstände**. Typische Fehler: 60 (umrechnungszahl).
+  - b) Wie viele Pfosten werden gebraucht? **7 Pfosten**. Typische Fehler: 6 (liste-verzaehlt), 5 (liste-verzaehlt).
+  - c) Wie viel ct kosten alle Pfosten zusammen? **8750 ct**. Typische Fehler: 7500 (liste-verzaehlt).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Ein Pfosten kostet 87,50 €. · ☐ Es werden 87,50 € Pfosten gebraucht. · ☑ Alle Pfosten kosten zusammen 87,50 €. · ☐ Alle Pfosten kosten zusammen 75 €.
+- `06` AFB III · _Modellieren_ · Ida hat 50 € gespart und möchte eine Hose für 19,80 €, Schuhe für 30,50 € und ein Buch für 8,80 € kaufen. Reicht das Geld, und wie viel bleibt ungefähr übrig oder fehlt?
+  - a) Welcher Überschlag passt? ☐ 30 € + 40 € + 20 € · ☐ 20 € + 30 € · ☐ 50 € + 20 € + 30 € · ☑ 20 € + 30 € + 10 €
+  - b) Wie viel € kostet alles ungefähr? **60 €**. Typische Fehler: 50 (sach-schritt-vergessen).
+  - c) Wie viel € fehlen ungefähr? **10 €**. Typische Fehler: 110 (sub-addiert).
+  - d) Welcher Antwortsatz passt zur Frage? ☑ Das Geld reicht nicht. Es fehlen ungefähr 10 €. · ☐ Das Geld reicht. Es bleiben ungefähr 10 € übrig. · ☐ Alles zusammen kostet ungefähr 10 €. · ☐ Das kann man ohne genaue Rechnung nicht sagen.
+
+## 5.6.X1-X1: Ich kann Sachaufgaben zu Beruf und Alltag lösen.
+
+Grundlage, die F übt: Preise aus einer Preisliste ablesen und zusammenzählen
+
+Baut auf: 5.6.7-A2 (Ich kann Sachaufgaben mit mehreren Schritten lösen und überflüssige Angaben erkennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der Tabelle die Zeilen, die zur Frage passen. *Beispiel:* Ein Heft für 90 ct und ein Stift für 60 ct kosten zusammen 150 ct. *Lösungsschritt:* Schreibe die Angaben heraus. Rechne dann.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Auf dem Einkaufszettel von Paul stehen 1 Radiergummi und 1 Brötchen. / Wie viel kostet der Einkauf? _(Tabelle: Ware | Preis / Radiergummi | 70 ct / Brötchen | 40 ct / Heft | 90 ct)_ Lösung: **110 ct**. Typische Fehler: 160 (sach-unnoetige-angabe), 200 (sach-unnoetige-angabe).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf den Einkaufszettel. / Wie viel kosten alle Brezeln zusammen? _(Tabelle: Ware | Anzahl | Preis für 1 Stück / Brezeln | 3 | 80 ct / Äpfel | 2 | 50 ct)_ Lösung: **240 ct**. Typische Fehler: 80 (sach-schritt-vergessen), 83 (1x1-addiert), 100 (sach-frage-verfehlt).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in den Plan. / Sara spart Taschengeld für ein Spiel. / Wie viel Geld ist zusammen gespart? _(Tabelle: Monat | Gespart / Mai | 2 € / Juni | 3 € / Juli | 2 €)_ Lösung: **7 €**. Typische Fehler: 5 (sach-schritt-vergessen), 2 (sach-frage-verfehlt).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Es ist 11:05 Uhr. / Du willst mit dem Bus zum Hafen fahren. / Wie lange musst du warten? _(Tabelle: Bus nach | Abfahrt / Hafen | 11:40 / Burg | 11:00 / Wald | 12:20)_ Lösung: **35 min**. Typische Fehler: 40 (zeitpunkt-zeitspanne), 45 (sub-addiert).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Alle Zutaten kommen in eine Schüssel. / Wie schwer sind die Zutaten zusammen? _(Tabelle: Zutat | Menge / Butter | 125 g / Haferflocken | 150 g / Zucker | 100 g)_ Lösung: **375 g**. Typische Fehler: 275 (sach-schritt-vergessen), 250 (sach-schritt-vergessen).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Preisliste. / Familie Berger bestellt zwei Arbeiten: Wand streichen und Regal aufbauen. / Wie viel kostet das zusammen? _(Tabelle: Arbeit | Preis / Wand streichen | 40 € / Regal aufbauen | 30 € / Lampe anbringen | 25 €)_ Lösung: **70 €**. Typische Fehler: 95 (sach-unnoetige-angabe), 65 (sach-unnoetige-angabe).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Zeile mit der Ware. Rechne Anzahl mal Preis. *Beispiel:* 3 Säfte zu je 1,20 € kosten 3 · 120 ct = 360 ct. *Lösungsschritt:* Rechne in Cent. Dann brauchst du kein Komma.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf den Einkaufszettel. / Wie viel ct kosten alle Lineale zusammen? _(Tabelle: Ware | Anzahl | Preis für 1 Stück / Lineale | 3 | 1,30 € / Käse | 4 | 2,80 €)_ Lösung: **390 ct**. Typische Fehler: 130 (sach-schritt-vergessen), 1120 (sach-frage-verfehlt), 430 (1x1-addiert).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in das Rezept. / Es wird für 12 Personen gebacken. / Wie viel g Mehl werden gebraucht? _(Tabelle: Rezept für 4 Personen | Menge / Mehl | 250 g / Zucker | 100 g / Butter | 125 g)_ Lösung: **750 g**. Typische Fehler: 250 (sach-schritt-vergessen), 3000 (sach-falsche-rechnung), 300 (sach-frage-verfehlt).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Beide Busse fahren vom Dorf zum Hafen. _(Tabelle: Bus | Abfahrt | Ankunft / A | 8:05 | 8:30 / B | 9:15 | 9:35)_
+  - a) Wie viele min braucht Bus A? **25 min**. Typische Fehler: 30 (zeitpunkt-zeitspanne).
+  - b) Wie viele min braucht Bus B? **20 min**. Typische Fehler: 35 (zeitpunkt-zeitspanne).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Beide Busse sind gleich schnell. · ☐ Bus A ist 5 min schneller als Bus B. · ☑ Bus B ist 5 min schneller als Bus A.
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in den Plan. / Ali schreibt alles Geld für einen Monat auf. / Wie viel € bleiben am Ende übrig? _(Tabelle: Was | Betrag / Taschengeld bekommen | 8 € / Zeitungen austragen | 5 € / Kino bezahlt | 4 €)_ Lösung: **9 €**. Typische Fehler: 17 (sub-addiert), 13 (sach-schritt-vergessen), 4 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf die Rechnung vom Maler. / Frau Berger bezahlt mit 250 €. _(Tabelle: Rechnung | Betrag / Arbeit | 160 € / Material | 45 € / Anfahrt | 20 €)_
+  - a) Wie viel € kostet alles zusammen? **225 €**. Typische Fehler: 205 (sach-schritt-vergessen).
+  - b) Wie viel € Rückgeld bekommt Frau Berger? **25 €**. Typische Fehler: 90 (sach-schritt-vergessen), 225 (rueckgeld-preis).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Frau Berger bekommt 225 € Rückgeld. · ☑ Frau Berger bekommt 25 € Rückgeld. · ☐ Die Rechnung beträgt 25 €.
+- `06` AFB III · _Modellieren (+ Kommunizieren)_ · Schau auf den Einkaufszettel. / Elif hat 6 € dabei. / Reicht das Geld für alles? _(Tabelle: Ware | Anzahl | Preis für 1 Stück / Lineale | 2 | 1,30 € / Kleber | 1 | 1,90 €)_
+  - a) Wie viel ct kostet alles zusammen? **450 ct**. Typische Fehler: 320 (sach-schritt-vergessen), 260 (sach-schritt-vergessen).
+  - b) Welcher Antwortsatz passt? ☑ Ja, es bleiben 1,50 € übrig. · ☐ Nein, es fehlen 1,50 €. · ☐ Ja, es bleiben 6 € übrig.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zuerst die Zeile und die Spalte, die zur Frage passen. *Lösungsschritt:* Rechne Schritt für Schritt und schreibe Zwischenergebnisse mit Einheit auf.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf die Handwerkerrechnung. / Der Stundenlohn gilt für 1 h Arbeit. / Wie hoch ist die Rechnung? _(Tabelle: Rechnung |  / Arbeitszeit | 2 h / Stundenlohn | 42 € / Material | 85 €)_ _(Größe eingeben, Einheit wählen aus ct, €, kg, h)_ Lösung: **169 €**. Typische Fehler: 127 € (sach-schritt-vergessen), 84 € (sach-schritt-vergessen).
+- `02` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in das Rezept. / Für ein Fest wird für 12 Personen gebacken. / Welche Menge Nüsse braucht man? _(Tabelle: Rezept für 4 Personen | Menge / Zucker | 100 g / Nüsse | 75 g / Butter | 125 g / Haferflocken | 150 g)_ _(Größe eingeben, Einheit wählen aus g, kg, t, cm)_ Lösung: **225 g**. Typische Fehler: 75 g (sach-schritt-vergessen), 900 g (sach-falsche-rechnung).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in den Fahrplan. / Die Fahrt von der Brücke bis zum Turm dauert ▢ h ▢ min. _(Tabelle: Halt | Abfahrt / Brücke | 11:42 / Hafen | 12:17 / Turm | 12:59)_ Lösung: a = **1**, b = **17**
+- `04` AFB I · _Modellieren_ · Lina möchte Kopfhörer für 20 € kaufen. / Laut Taschengeld-Plan legt Lina jede Woche 2,50 € zurück. / Nach wie vielen Wochen reicht das Geld? Lösung: **8 Wochen**. Typische Fehler: 80 (umrechnungszahl), 9 (liste-verzaehlt).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf den Einkaufszettel für den Markt. / Wie viel kostet der ganze Einkauf? _(Tabelle: Ware | Menge | Preis für 1 kg / Äpfel | 3 kg | 2,80 € / Kartoffeln | 6 kg | 1,60 €)_ _(Größe eingeben, Einheit wählen aus ct, €, kg, h)_ Lösung: **18 €**. Typische Fehler: 4,40 € (sach-schritt-vergessen), 8,40 € (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren (+ Kommunizieren)_ · Schau auf die beiden Angebote. / Die Arbeit dauert 5 h. Der Stundenlohn gilt für 1 h Arbeit. / Welcher Betrieb ist günstiger, und um wie viel? _(Tabelle: Betrieb | Stundenlohn | Anfahrt / A | 42 € | 25 € / B | 48 € | kostenlos)_
+  - a) Wie viel € kostet die Arbeit bei Betrieb A? **235 €**. Typische Fehler: 210 (sach-schritt-vergessen), 67 (sach-schritt-vergessen).
+  - b) Wie viel € kostet die Arbeit bei Betrieb B? **240 €**. Typische Fehler: 48 (sach-schritt-vergessen).
+  - c) Welcher Antwortsatz passt zur Frage? ☐ Betrieb A ist um 25 € günstiger. · ☐ Betrieb B ist um 5 € günstiger. · ☑ Betrieb A ist um 5 € günstiger. · ☐ Beide Betriebe kosten gleich viel.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies die Tabelle genau. Überlege, welche Angaben du brauchst und in welcher Reihenfolge du rechnest.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Schau auf die Handwerkerrechnung. Der Stundenlohn gilt für eine volle Stunde, jede halbe Stunde kostet die Hälfte. Wie hoch ist die Rechnung? _(Tabelle: Rechnung |  / Arbeitszeit | 3 h 30 min / Stundenlohn | 44 € / Material | 37 €)_ _(Größe eingeben, Einheit wählen aus ct, €, kg, h)_ Lösung: **191 €**. Typische Fehler: 169 € (sach-schritt-vergessen), 154 € (sach-schritt-vergessen).
+- `02` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in das Rezept. Es soll nur für 4 Personen gebacken werden. Wie viel Mehl wird gebraucht? _(Tabelle: Rezept für 6 Personen | Menge / Mehl | 450 g / Zucker | 150 g / Butter | 210 g / Nüsse | 90 g)_ _(Größe eingeben, Einheit wählen aus g, kg, t, cm)_ Lösung: **300 g**. Typische Fehler: 450 g (sach-schritt-vergessen), 75 g (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Familie Berger fährt mit 2 Erwachsenen und 4 Kindern mit dem Zug von der Brücke zum Wald. Kinder zahlen die Hälfte. Wie viel kosten alle Fahrkarten zusammen? _(Tabelle: Fahrplan und Preise |  / Abfahrt | 10:25 / Ankunft | 12:00 / Fahrkarte für Erwachsene | 8,60 €)_ _(Größe eingeben, Einheit wählen aus ct, €, kg, h)_ Lösung: **34,40 €**. Typische Fehler: 51,60 € (sach-schritt-vergessen), 17,20 € (sach-schritt-vergessen).
+- `04` AFB III · _Modellieren (+ Kommunizieren)_ · Schau in den Taschengeld-Plan. Ali spart auf ein Zelt für 45 €. Nach wie vielen Wochen reicht das Geld? _(Tabelle: Jede Woche | Betrag / Taschengeld | 7 € / Ausgaben | 2,50 €)_ Lösung: **10 Wochen**. Typische Fehler: 7 (sach-schritt-vergessen), 11 (liste-verzaehlt).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau auf den Einkaufszettel. An der Kasse wird mit einem Schein im Wert von 20 € bezahlt. Wie viel Rückgeld gibt es? _(Tabelle: Ware | Anzahl | Preis für 1 Stück / Äpfel | 2 | 2,49 € / Brot | 2 | 3,45 € / Käse | 1 | 5,89 €)_ _(Größe eingeben, Einheit wählen aus ct, €, kg, h)_ Lösung: **2,23 €**. Typische Fehler: 17,77 € (rueckgeld-preis), 8,17 € (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren (+ Kommunizieren)_ · Auf einer Handwerkerrechnung ist eine Zeile nicht mehr lesbar. Wie hoch ist die Rechnung? _(Tabelle: Rechnung |  / Arbeitszeit | 3 h / Stundenlohn | nicht lesbar / Material | 80 €)_
+  - a) Welche Angabe fehlt, damit du die Frage beantworten kannst? ☐ der Preis für das Material · ☐ die Arbeitszeit · ☐ der Name des Betriebs · ☑ der Stundenlohn · ☐ das Datum
+  - b) Der Stundenlohn beträgt 46 € für 1 h Arbeit. Wie viel € kostet die Arbeit? **138 €**. Typische Fehler: 46 (sach-schritt-vergessen).
+  - c) Wie viel € beträgt die ganze Rechnung? **218 €**. Typische Fehler: 126 (sach-schritt-vergessen).
+  - d) Welcher Antwortsatz passt zur Frage? ☐ Der Stundenlohn beträgt 218 €. · ☑ Die Rechnung beträgt 218 €. · ☐ Die Rechnung beträgt 138 €. · ☐ Die Arbeit dauert 218 h.
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -7234,18 +8476,23 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `sonderfall-uebersehen` | Sieht nicht, dass ein Quadrat auch ein Rechteck ist (oder eine Raute auch ein Parallelogramm). | Prüfe die Eigenschaften: Hat die Figur alles, was die andere Figur braucht? | Du weißt jetzt: Ein Quadrat ist auch ein besonderes Rechteck. |
 | `lage-prototyp` | Erkennt eine Figur nur in der gewohnten Lage (ein gedrehtes Quadrat gilt als Raute). | Dreh das Blatt in Gedanken. Die Figur bleibt dieselbe. | Du erkennst eine Figur jetzt auch in gedrehter Lage. |
 | `viereck-eigenschaft` | Ordnet einem Viereck Eigenschaften zu, die es nicht hat, oder verwechselt die Namen der Vierecke. | Prüfe der Reihe nach: Welche Seiten sind parallel? Welche sind gleich lang? Gibt es rechte Winkel? | Du prüfst bei einem Viereck jetzt Seiten und rechte Winkel einzeln nach. |
+| `umrechnungszahl` | Wandelt mit der falschen Umrechnungszahl um (100 statt 1000, 100 statt 60). | Welche Umrechnungszahl gehört zu diesen beiden Einheiten? Schau auf den Merkzettel. | Du nimmst beim Umwandeln jetzt die richtige Umrechnungszahl. |
+| `umrechnungsrichtung` | Rechnet beim Umwandeln in die falsche Richtung (teilt, statt malzunehmen, oder umgekehrt). | Ist die neue Einheit kleiner? Dann wird die Zahl davor größer. | Du weißt jetzt: Bei der kleineren Einheit steht die größere Zahl. |
+| `zeit-zehnersystem` | Rechnet bei der Zeit wie im Zehnersystem (1 h als 100 min, 50 min und 20 min als 70 min ohne neue Stunde). | Eine Stunde hat 60 Minuten, nicht 100. Rechne bis zur vollen Stunde und dann weiter. | Du rechnest bei der Zeit jetzt mit 60 Minuten für eine Stunde. |
+| `zeitpunkt-zeitspanne` | Verwechselt Zeitpunkt und Zeitspanne oder rechnet in die falsche Richtung auf der Zeitleiste. | Ein Zeitpunkt sagt wann, eine Zeitspanne sagt wie lange. Was ist hier gefragt? | Du unterscheidest jetzt Zeitpunkt und Zeitspanne. |
+| `komma-falsch-gelesen` | Liest die Stellen nach dem Komma falsch (3,5 € als 3 € 5 ct, 1,5 km als 1 km 5 m). | Was bedeuten die Ziffern nach dem Komma? Schreibe die Größe mit zwei Einheiten. | Du liest die Ziffern nach dem Komma jetzt richtig. |
+| `masszahlen-addiert` | Verrechnet die Zahlen verschiedener Einheiten, ohne umzuwandeln (2 m und 50 cm als 52). | Die Einheiten sind verschieden. Wandle zuerst in dieselbe Einheit um. | Du wandelst jetzt erst in dieselbe Einheit um und rechnest dann. |
+| `einheit-fehlt` | Gibt die Einheit nicht an oder wählt eine Einheit, die nicht zur Größe passt. | Zu einer Größe gehört eine Einheit. Welche passt hier? | Du schreibst jetzt zu jeder Größe die passende Einheit. |
+| `massstab-verkehrt` | Rechnet beim Maßstab in die falsche Richtung (teilt auf dem Weg zur Wirklichkeit oder umgekehrt). | In Wirklichkeit ist alles größer als auf der Karte. Passt dein Ergebnis dazu? | Du weißt jetzt: Von der Karte zur Wirklichkeit rechnest du mal. |
+| `massstab-einheit` | Rechnet mit dem Maßstab richtig, wandelt das Ergebnis aber nicht oder falsch um. | Dein Ergebnis steht noch in der Einheit der Karte. Wandle es in die gefragte Einheit um. | Du wandelst beim Maßstab das Ergebnis jetzt in die passende Einheit um. |
+| `groesse-ohne-vorstellung` | Hat keine tragfähige Vorstellung von der Größe und wählt eine unpassende Einheit oder Zahl. | Vergleiche mit etwas, das du kennst: Eine Tür ist 2 m hoch, eine Tafel Schokolade wiegt 100 g. | Du vergleichst eine Größe jetzt mit Dingen aus dem Alltag. |
+| `vergleich-nicht-genutzt` | Nennt beim Schätzen nur die Vergleichsgröße oder nur, wie oft sie hineinpasst. | Wie oft passt die Vergleichsgröße hinein? Rechne dann mal. | Du rechnest beim Schätzen jetzt mit der Vergleichsgröße weiter. |
+| `sach-frage-verfehlt` | Rechnet richtig, beantwortet aber nicht die gestellte Frage (nennt ein Zwischenergebnis oder eine andere Größe). | Lies die Frage noch einmal. Was genau ist gesucht? | Du liest am Ende jetzt noch einmal die Frage und prüfst deine Antwort. |
+| `rueckgeld-preis` | Nennt beim Rückgeld den Preis oder zählt zusammen, statt abzuziehen. | Rückgeld ist das, was übrig bleibt: der gegebene Betrag minus der Preis. | Du rechnest das Rückgeld jetzt als Unterschied aus. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.6.1-L1 Ich kann Größen schätzen. Baut auf: 5.2.4-S1 (Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.)
-- 5.6.2-L1 Ich kann mit Geldbeträgen und Geldeinheiten rechnen. Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.)
-- 5.6.3-L1 Ich kann mit Zeitpunkten, Zeitspannen und Zeiteinheiten umgehen. Baut auf: 5.3.1-K1 (Ich kann im Kopf addieren.), 5.3.1-K2 (Ich kann im Kopf subtrahieren.)
-- 5.6.4-L1 Ich kann mit Gewichten und Gewichtseinheiten umgehen. Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
-- 5.6.5-L1 Ich kann mit Längen und Längeneinheiten umgehen. Baut auf: 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
-- 5.6.6-L1 Ich kann mit Maßstäben und maßstäblichen Zeichnungen umgehen. Baut auf: 5.6.5-L1 (Ich kann mit Längen und Längeneinheiten umgehen.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.)
-- 5.6.7-L1 Ich kann Sachaufgaben sicher lösen. Baut auf: 5.6.2-L1 (Ich kann mit Geldbeträgen und Geldeinheiten rechnen.), 5.4.6-T3 (Ich kann zu einem Text den passenden Rechenausdruck aufstellen.)
-- 5.6.X1-L1 Ich kann Sachaufgaben zu Beruf und Alltag lösen. Baut auf: 5.6.7-L1 (Ich kann Sachaufgaben sicher lösen.)
-- 5.7.1-L1 Ich kann Kreise anhand verschiedener Vorgaben zeichnen. Baut auf: 5.6.5-L1 (Ich kann mit Längen und Längeneinheiten umgehen.)
+- 5.7.1-L1 Ich kann Kreise anhand verschiedener Vorgaben zeichnen. Baut auf: 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
 - 5.7.2-L1 Ich kann Winkel zeichnen und Winkelgrößen vergleichen. Baut auf: 5.5.1-B1 (Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.)
 - 5.7.3-L1 Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen. Baut auf: 5.7.2-L1 (Ich kann Winkel zeichnen und Winkelgrößen vergleichen.)
 - 5.7.4-L1 Ich kann Winkel zeichnen, schätzen und messen. Baut auf: 5.7.3-L1 (Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.)
@@ -7256,5 +8503,5 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 - 5.8.3-L1 Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden. Baut auf: 5.8.2-L1 (Ich kann sicher mit Flächenmaßen umgehen.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
 - 5.8.4-L1 Ich kann die Berechnung von Flächeninhalt und Umfang auch bei zusammengesetzten Figuren durchführen und anwenden. Baut auf: 5.8.3-L1 (Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden.)
 - 5.9.1-L1 Ich kann die Bruchschreibweise verwenden. Baut auf: 5.4.1-K2 (Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.)
-- 5.9.2-L1 Ich kann mit Bruchteilen von Größen umgehen. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann mit Längen und Längeneinheiten umgehen.)
+- 5.9.2-L1 Ich kann mit Bruchteilen von Größen umgehen. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
 - 5.9.3-L1 Ich kann die Dezimalschreibweise verwenden. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.2.2-B1 (Ich kann große Zahlen lesen und in Ziffern schreiben.)

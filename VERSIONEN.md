@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.39 vom 21.11.2026
+
+### Schüler
+
+- Kapitel 6 „Größen und Sachaufgaben“ ist da: Größen schätzen, Geld, Zeit, Gewicht, Länge, Maßstab und Sachaufgaben. Das sind 360 neue Aufgaben auf allen vier Niveaus.
+- Neu ist die Antwort mit Einheit: Du tippst die Zahl und wählst die Einheit. 2,5 km und 2500 m sind beide richtig.
+- Bei Sachaufgaben kreuzt du zuerst die wichtigen Angaben an, wählst die Rechnung, rechnest und wählst den Antwortsatz.
+- Neue Bilder helfen dir: Münzen und Scheine, Uhr, Waage, Einheitentafel, Karte mit Lineal und Zeitleiste.
+
+### Lehrkraft
+
+- Kapitel 6 hat 15 Lernziele mit je 6 Aufgaben auf F, G, M und E. Tor 6 öffnen Sie wie gewohnt unter Tore.
+- Gerechnet wird ohne Kommazahlen. Das Komma ist nur eine Schreibweise: Geld auf F gemischt („3 € 50 ct“), ab G mit Komma, Länge und Gewicht mit Komma ab M. Brüche wie ½ h und das Milligramm ab M.
+- Maßstab: F mit Maßstabsleiste, G 1:100 und 1:1000, M 1:25 000 und 1:50 000, E Maßstab bestimmen. Auf M und E gibt es je zwei Heftaufgaben mit Kontrollwert. Liter kommen nicht vor.
+- 13 neue Fehlvorstellungen erscheinen in der Auswertung, zum Beispiel „Einheit fehlt“, „falsche Umrechnungszahl“ und „Zeit im Zehnersystem gerechnet“.
+
 ## 0.38 vom 21.11.2026
 
 ### Schüler

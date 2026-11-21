@@ -141,6 +141,35 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       assert.equal(svg.klasse('cmzahl').length, Math.floor(b.lang / 10) + 1, a.id);
       assert.ok(b.von >= 0 && b.von < b.bis && b.bis <= b.lang, a.id);
       assert.equal(svg.klasse('strecke').length, 1, a.id);
+    } else if (b.art === 'geld') {
+      // Kapitel 6 (ADR 0033): jedes Stück genau einmal, Scheine ab 5 €.
+      assert.equal(svg.klasse('schein').length + svg.klasse('muenzbild').length, b.stuecke.length, a.id);
+      assert.equal(svg.klasse('schein').length, b.stuecke.filter((x) => x >= 500).length, a.id);
+    } else if (b.art === 'uhr') {
+      assert.equal(svg.klasse('uhr').length, b.uhren.length, a.id);
+      assert.equal(svg.klasse('stundenzeiger').length, b.uhren.length, a.id);
+      assert.equal(svg.klasse('minutenzeiger').length, b.uhren.length, a.id);
+    } else if (b.art === 'waage') {
+      assert.equal(svg.klasse('gewichtsstueck').length, b.gewichte.length + (b.linksDazu?.length ?? 0), a.id);
+      assert.equal(svg.klasse('wiegegut').length, 1, a.id);
+    } else if (b.art === 'karte') {
+      assert.equal(svg.klasse('ort').length, b.orte.length, a.id);
+      assert.equal(svg.klasse('cmzahl').length, b.lang / 10 + 1, a.id);
+      assert.equal(svg.klasse('massstabsleiste').length, b.leiste ? 1 : 0, a.id);
+      for (const o of b.orte) assert.ok(svg.texte().includes(o.n), `${a.id}: ${o.n}`);
+    } else if (b.art === 'grundriss') {
+      assert.equal(svg.klasse('massstabsleiste').length, b.leiste ? 1 : 0, a.id);
+      assert.ok(svg.texte().some((t) => t.includes(b.name)), a.id);
+    } else if (b.art === 'zeitleiste') {
+      assert.equal(svg.klasse('bildfrage').length, 1, a.id);
+      assert.equal(svg.texte().filter((t) => t.endsWith(' Uhr')).length, b.punkte.filter((x) => typeof x !== 'object').length, a.id);
+    } else if (b.art === 'vergleichsbild') {
+      assert.equal(svg.klasse('vergleich-klein').length, 1, a.id);
+      assert.equal(svg.klasse('vergleich-gross').length, 1, a.id);
+      assert.equal(svg.klasse('hilfslinie').length > 0, Boolean(b.hilfslinien), a.id);
+    } else if (b.art === 'einheitentafel') {
+      const zeilen = [b.werte, ...(b.weitere ?? [])], zellen = svg.alle().filter((k) => k.tag === 'td');
+      assert.equal(zellen.length, zeilen.length * b.spalten.length, a.id);
     }
   }
   for (const art of BILDARTEN) assert.ok(gezaehlt[art] > 0, `Keine Aufgabe mit Bildart ${art}`);

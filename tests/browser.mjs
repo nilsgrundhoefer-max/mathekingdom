@@ -4,6 +4,7 @@ import { createRequire } from 'node:module';
 import { createServer } from 'node:http';
 import { readFileSync, mkdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import { schreibe, artVon, faktorVon, EINHEITEN } from '../src/schueler/groessen.js';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
@@ -48,6 +49,15 @@ const leererStand = (code, grundlage = []) => ({ version: 2, code, klasse: '5a',
   wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [],
   grundlage: Object.fromEntries(grundlage.map((id) => [id, { aktiv: true, ab: 0, mal: 1, t: t0 }])) });
 const mitStand = (seite, stand) => seite.addInitScript(([name, text]) => { if (!localStorage.getItem(name)) localStorage.setItem(name, text); }, [`mk-demo-5a/${stand.code}.json`, JSON.stringify(stand)]);
+
+// Kapitel 6: tippt eine Größe als Zahl mit Einheit ein. Geht der Wert in der Einheit der Aufgabe nicht als Kommazahl auf (Zeit), nimmt der Test eine kleinere.
+async function tippeGroesse(ziel, auf, wert) {
+  const passt = (e) => /^[\d\s\u00a0,]+\s\S+$/.test(schreibe(wert, e)) && schreibe(wert, e).split(/\s/).at(-1) === e;
+  const einheit = passt(auf.einheit) ? auf.einheit : Object.keys(EINHEITEN).find((e) => artVon(e) === auf.groesse && (!auf.einheiten || auf.einheiten.includes(e)) && passt(e));
+  assert.ok(einheit, `${auf.id}: keine Einheit für die Eingabe`);
+  await ziel.locator('input[name=zahl]').fill(schreibe(wert, einheit).replace(/\s\S+$/, ''));
+  if (auf.einheiten) await ziel.locator('select[name=einheit]').selectOption(einheit);
+}
 
 // Löst die gerade angezeigte Aufgabe richtig (oder absichtlich falsch).
 async function antworte(seite, richtig = true, { taste = false } = {}) {
@@ -109,7 +119,13 @@ async function antworte(seite, richtig = true, { taste = false } = {}) {
       await seite.keyboard.press('Home');
       for (let k = 0; k < ziel / d.fein; k++) await seite.keyboard.press('ArrowUp');
     }
-  } else for (const [i, t] of auf.teile.entries()) await seite.fill(`input[name="teil-${i}"]`, wert(t.loesung));
+  } else if (auf.format === 'groesse') {
+    await tippeGroesse(seite, auf, richtig ? auf.loesung : auf.loesung + faktorVon(auf.einheit));
+  } else for (const [i, t] of auf.teile.entries()) {
+    // Kapitel 6: Teilaufgaben einer Sachaufgabe können auch angekreuzt werden.
+    if (t.optionen) for (const o of t.optionen) await seite.locator(`input[name="teil-${i}"][value="${o.text}"]`).setChecked(o.richtig === richtig).catch(() => {});
+    else await seite.fill(`input[name="teil-${i}"]`, wert(t.loesung));
+  }
   // Mit `taste`: Enter im Textfeld prüft, ohne Maus (ADR 0016).
   if (taste && await seite.evaluate(() => document.activeElement?.matches('form.antwort input[type=text]'))) await seite.keyboard.press('Enter');
   else await seite.click('#pruefen');
@@ -1899,6 +1915,61 @@ async function weiter(seite, wahl = '#weiter') {
     await rahmenTest.locator('#pruefen').click();
     await admin.waitForTimeout(500);
     assert.equal(await rahmenTest.locator('text=Richtig!').count(), 0);
+  }
+
+  // Kapitel 6 (0.39, ADR 0033): Größen mit Einheit, Sachaufgaben zum Ankreuzen und die neuen Bilder.
+  {
+    const rahmenTest = admin.frameLocator('#tester-rahmen');
+    const zeige = async (a) => {
+      for (let versuch = 0; ; versuch++) {
+        await admin.fill('#tester-kennung', a.id);
+        await admin.press('#tester-kennung', 'Enter');
+        const da = await admin.waitForSelector(`#tester-info[data-kennung="${a.id}"]`, { timeout: 8000 }).catch((e) => { if (versuch >= 2) throw e; return null; });
+        if (da) break;
+      }
+      await rahmenTest.locator(`section.aufgabe[data-aufgabe="${a.id}"]`).waitFor();
+    };
+    const kapitel6 = pool.aufgaben.filter((a) => a.lernziel.startsWith('5.6.'));
+    // Größe mit Einheitenwahl: erst ohne Einheit (zählt nicht als richtig), dann mit der richtigen.
+    const mitWahl = kapitel6.find((a) => a.format === 'groesse' && a.einheiten);
+    await zeige(mitWahl);
+    assert.equal(await rahmenTest.locator('select[name=einheit] option').count(), mitWahl.einheiten.length + 1, 'Einheitenwahl');
+    await rahmenTest.locator('input[name=zahl]').fill('1');
+    await rahmenTest.locator('#pruefen').click();
+    await admin.waitForTimeout(500);
+    assert.equal(await rahmenTest.locator('text=Richtig!').count(), 0, 'ohne Einheit ist es nicht richtig');
+    await zeige(mitWahl);
+    await tippeGroesse(rahmenTest, mitWahl, mitWahl.loesung);
+    await rahmenTest.locator('#pruefen').click();
+    await rahmenTest.locator('text=Richtig!').waitFor();
+    await foto(admin, 'admin-groesse-einheitenwahl');
+    // Größe mit fester Einheit.
+    const fest = kapitel6.find((a) => a.format === 'groesse' && !a.einheiten);
+    await zeige(fest);
+    assert.equal(await rahmenTest.locator('select[name=einheit]').count(), 0);
+    await tippeGroesse(rahmenTest, fest, fest.loesung);
+    await rahmenTest.locator('#pruefen').click();
+    await rahmenTest.locator('text=Richtig!').waitFor();
+    // Sachaufgabe: Angaben und Rechnung ankreuzen, dann rechnen.
+    const sach = kapitel6.find((a) => a.format === 'sachaufgabe' && a.teile.some((t) => t.optionen?.length && t.mehrfach) && a.teile.some((t) => !t.optionen));
+    await zeige(sach);
+    for (const [i, t] of sach.teile.entries()) {
+      if (t.optionen) for (const o of t.optionen) await rahmenTest.locator(`input[name="teil-${i}"][value="${o.text}"]`).setChecked(o.richtig).catch(() => {});
+      else await rahmenTest.locator(`input[name="teil-${i}"]`).fill(String(t.loesung));
+    }
+    await foto(admin, 'admin-sachaufgabe-ankreuzen');
+    await rahmenTest.locator('#pruefen').click();
+    await rahmenTest.locator('text=Richtig!').waitFor();
+    // Jede neue Bildart wird gezeichnet und hat eine Beschreibung in Worten.
+    for (const art of ['geld', 'uhr', 'waage', 'einheitentafel', 'vergleichsbild', 'karte', 'grundriss', 'zeitleiste']) {
+      const a = kapitel6.find((x) => x.bild?.art === art);
+      assert.ok(a, `kein Bild der Art ${art}`);
+      await zeige(a);
+      const bild = rahmenTest.locator('section.aufgabe [role=img]').first();
+      await bild.waitFor();
+      assert.ok((await bild.getAttribute('aria-label'))?.length > 10, `${a.id}: Beschreibung fehlt`);
+      await foto(admin, `admin-bild-${art}`);
+    }
   }
 
   // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.

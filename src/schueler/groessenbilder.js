@@ -121,7 +121,7 @@ const FORM = {
     [0.3, 0.6].map((t) => s('path', { d: `M${x + w * (0.22 - 0.22 * ((t - 0.14) / 0.86))} ${y + hh * t} H${x + w * (0.78 + 0.22 * ((t - 0.14) / 0.86))} V${y + hh * (t + 0.14)} H${x + w * (0.22 - 0.22 * ((t + 0.14 - 0.14) / 0.86))} Z`, fill: '#a3302a', opacity: 0.85 })),
     s('rect', { x: x + w * 0.25, y, width: w * 0.5, height: hh * 0.14, fill: GOLD, stroke: LINIE, 'stroke-width': 2 })],
   bus: (x, y, w, hh) => [s('rect', { x, y, width: w, height: hh * 0.82, rx: 8, fill: '#e2b23c', stroke: LINIE, 'stroke-width': 2 }),
-    Array.from({ length: Math.max(3, Math.round(w / 46)) }, (_, i, a) => s('rect', { x: x + 8 + i * ((w - 16) / a.length), y: y + hh * 0.14, width: (w - 16) / a.length - 6, height: hh * 0.28, fill: '#dfe7f3', stroke: LINIE, 'stroke-width': 1 })),
+    Array.from({ length: Math.max(3, Math.round(w / 46)) }, (_, i) => { const n = Math.max(3, Math.round(w / 46)); return s('rect', { x: x + 8 + i * ((w - 16) / n), y: y + hh * 0.14, width: (w - 16) / n - 6, height: hh * 0.28, fill: '#dfe7f3', stroke: LINIE, 'stroke-width': 1 }); }),
     s('circle', { cx: x + w * 0.16, cy: y + hh * 0.82, r: hh * 0.18, fill: '#2b2118' }), s('circle', { cx: x + w * 0.84, cy: y + hh * 0.82, r: hh * 0.18, fill: '#2b2118' })],
   lkw: (x, y, w, hh) => [s('rect', { x, y, width: w * 0.78, height: hh * 0.8, fill: '#cfd6dd', stroke: LINIE, 'stroke-width': 2 }),
     s('path', { d: `M${x + w * 0.8} ${y + hh * 0.8} V${y + hh * 0.3} H${x + w * 0.92} L${x + w} ${y + hh * 0.55} V${y + hh * 0.8} Z`, fill: '#2f4f7f', stroke: LINIE, 'stroke-width': 2 }),
@@ -129,7 +129,7 @@ const FORM = {
   schiff: (x, y, w, hh) => [s('path', { d: `M${x} ${y + hh * 0.5} H${x + w} L${x + w * 0.9} ${y + hh} H${x + w * 0.08} Z`, fill: '#8a5a3b', stroke: LINIE, 'stroke-width': 2 }),
     s('rect', { x: x + w * 0.3, y: y + hh * 0.2, width: w * 0.4, height: hh * 0.3, fill: '#fffdf6', stroke: LINIE, 'stroke-width': 1.5 }), s('rect', { x: x + w * 0.46, y, width: w * 0.08, height: hh * 0.2, fill: '#a3302a', stroke: LINIE, 'stroke-width': 1.2 })],
   bruecke: (x, y, w, hh) => [s('rect', { x, y, width: w, height: hh * 0.3, fill: '#cfc6b4', stroke: LINIE, 'stroke-width': 2 }),
-    Array.from({ length: Math.max(2, Math.round(w / 90)) }, (_, i, a) => { const b0 = w / a.length, x0 = x + i * b0; return s('path', { d: `M${x0 + 6} ${y + hh} V${y + hh * 0.3} M${x0 + b0 - 6} ${y + hh * 0.3} V${y + hh} M${x0 + 6} ${y + hh} Q${x0 + b0 / 2} ${y + hh * 0.2} ${x0 + b0 - 6} ${y + hh}`, fill: 'none', stroke: LINIE, 'stroke-width': 2 }); })],
+    Array.from({ length: Math.max(2, Math.round(w / 90)) }, (_, i) => { const b0 = w / Math.max(2, Math.round(w / 90)), x0 = x + i * b0; return s('path', { d: `M${x0 + 6} ${y + hh} V${y + hh * 0.3} M${x0 + b0 - 6} ${y + hh * 0.3} V${y + hh} M${x0 + 6} ${y + hh} Q${x0 + b0 / 2} ${y + hh * 0.2} ${x0 + b0 - 6} ${y + hh}`, fill: 'none', stroke: LINIE, 'stroke-width': 2 }); })],
 };
 export const VERGLEICH_NAMEN = { kind: 'Kind', tuer: 'Tür', auto: 'Auto', turm: 'Turm', baum: 'Baum', haus: 'Haus', mast: 'Fahnenmast', leuchtturm: 'Leuchtturm', bus: 'Bus', lkw: 'Lastwagen', schiff: 'Schiff', bruecke: 'Brücke' };
 // Breite je Höhe (hoch) oder Höhe je Länge (lang) der Formen.
