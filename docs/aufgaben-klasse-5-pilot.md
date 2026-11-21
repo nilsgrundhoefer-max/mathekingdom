@@ -1,10 +1,10 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (2328 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (2592 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2328).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2592).
 
 ## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
 
@@ -8367,6 +8367,1003 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies die Tabelle genau. Überlege, we
   - c) Wie viel € beträgt die ganze Rechnung? **218 €**. Typische Fehler: 126 (sach-schritt-vergessen).
   - d) Welcher Antwortsatz passt zur Frage? ☐ Der Stundenlohn beträgt 218 €. · ☑ Die Rechnung beträgt 218 €. · ☐ Die Rechnung beträgt 138 €. · ☐ Die Arbeit dauert 218 h.
 
+## 5.7.1-R1: Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen.
+
+Grundlage, die F übt: Am Kreis die Strecke vom Mittelpunkt bis zur Kreislinie zeigen und am Lineal messen
+
+Baut auf: 5.5.1-B2 (Ich kann Strecken messen und in einer vorgegebenen Länge zeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Durchmesser geht einmal quer durch den Kreis. *Beispiel:* Schau, wo der Kreis links und rechts endet. *Lösungsschritt:* Zähle die Millimeter vom linken bis zum rechten Rand.
+
+- `01` AFB I · _Kommunizieren_ · Der Kreis liegt über einem Lineal. / Wie lang ist sein Durchmesser? _(Bild: Kreis am Lineal (10 cm): Durchmesser von 10 mm bis 30 mm)_ Lösung: **20 mm**. Typische Fehler: 10 (radius-durchmesser), 30 (lineal-nicht-null).
+- `02` AFB I · _Kommunizieren_ · Der Kreis hat den Mittelpunkt M. / Wie lang ist der Radius? _(Bild: Karogitter 9 × 8; Punkte M(5|4); Strecke durch (5|4) und (8|4); Kreis um (5|4) mit Radius 3 Kästchen)_ Lösung: **3 Kästchen**. Typische Fehler: 6 (radius-durchmesser), 4 (kreis-mittelpunkt).
+- `03` AFB I · _Kommunizieren_ · Schau dir den Kreis an. / Welcher Punkt ist der Mittelpunkt? _(Bild: Karogitter 11 × 10; Punkte B(6|5), C(3|5), D(8|4); Kreis um (6|5) mit Radius 3 Kästchen)_
+  - ☑ B
+  - ☐ C
+  - ☐ D
+- `04` AFB I · _Kommunizieren_ · Der Kreis liegt über einem Lineal. / Die Linie im Kreis ist sein Durchmesser. / Wie lang ist der Radius? _(Bild: Kreis am Lineal (10 cm): Durchmesser von 0 mm bis 40 mm)_ Lösung: **20 mm**. Typische Fehler: 40 (radius-durchmesser).
+- `05` AFB II · _Kommunizieren_ · Die Linie im Kreis ist ein Radius. / Wie lang ist der Durchmesser? _(Bild: Karogitter 12 × 10; Punkte M(7|5); Strecke durch (7|5) und (3|5); Kreis um (7|5) mit Radius 4 Kästchen)_ Lösung: **8 Kästchen**. Typische Fehler: 4 (radius-durchmesser), 9 (kreis-mittelpunkt).
+- `06` AFB I · _Kommunizieren_ · Schau dir den Kreis um M an. / Welche Punkte liegen auf der Kreislinie? / Kreuze alle an. _(Bild: Karogitter 12 × 10; Punkte M(6|5), A(3|5), C(6|2), B(7|1), D(5|4); Kreis um (6|5) mit Radius 3 Kästchen)_
+  - ☐ B
+  - ☑ C
+  - ☐ D
+  - ☑ A
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies ab, wo der Kreis links und rechts endet. *Beispiel:* Der Unterschied ist der Durchmesser. *Lösungsschritt:* Der Radius ist die Hälfte davon.
+
+- `01` AFB I · _Kommunizieren_ · Der Kreis liegt über einem Lineal. / Wie groß ist sein Radius? _(Bild: Kreis am Lineal (10 cm): Durchmesser von 5 mm bis 31 mm)_ Lösung: **13 mm**. Typische Fehler: 26 (radius-durchmesser), 31 (lineal-nicht-null).
+- `02` AFB I · _Kommunizieren (+ Modellieren)_ · Im Gitter sind 2 Kästchen 1 cm. / Wie lang ist der Radius in cm? _(Bild: Karogitter 10 × 10; Punkte M(5|5); Strecke durch (5|5) und (1|5); Kreis um (5|5) mit Radius 4 Kästchen)_ Lösung: **2 cm**. Typische Fehler: 4 (radius-durchmesser).
+- `03` AFB II · _Kommunizieren (+ Modellieren)_ · Das runde Turmfenster hat einen Durchmesser von 62 cm. / Wie groß ist sein Radius? Lösung: **31 cm**. Typische Fehler: 62 (radius-durchmesser), 124 (radius-durchmesser).
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Linie im Bild geht vom Mittelpunkt M bis zur Kreislinie. / Wie heißt sie? _(Bild: Karogitter 9 × 8; Punkte M(5|4); Strecke durch (5|4) und (5|7); Kreis um (5|4) mit Radius 3 Kästchen)_
+  - ☐ Kreislinie
+  - ☐ Durchmesser
+  - ☑ Radius
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Das runde Turmfenster hat einen Radius von 34 cm. / Wie groß ist sein Durchmesser? Lösung: **68 cm**. Typische Fehler: 34 (radius-durchmesser), 17 (radius-durchmesser).
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · In eine quadratische Schachtel passt genau ein runder Käse. / Die Schachtel ist 12 cm breit. / Wie groß ist der Radius des Käses? Lösung: **6 cm**. Typische Fehler: 12 (radius-durchmesser), 24 (radius-durchmesser).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies den linken und den rechten Rand des Kreises ab. Der Unterschied ist der Durchmesser. *Lösungsschritt:* Der Radius ist halb so lang wie der Durchmesser.
+
+- `01` AFB I · _Kommunizieren_ · Der Kreis liegt über einem Lineal. Wie groß ist sein Radius in Millimetern? _(Bild: Kreis am Lineal (10 cm): Durchmesser von 23 mm bis 65 mm)_ Lösung: **21 mm**. Typische Fehler: 42 (radius-durchmesser), 65 (lineal-nicht-null).
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Im Gitter sind 2 Kästchen 1 cm. Wie lang ist der Durchmesser des Kreises in cm? _(Bild: Karogitter 10 × 10; Punkte M(5|5); Strecke durch (5|5) und (5|9); Kreis um (5|5) mit Radius 4 Kästchen)_ Lösung: **4 cm**. Typische Fehler: 2 (radius-durchmesser), 8 (laenge-kaestchen).
+- `03` AFB II · _Kommunizieren_ · Der runde Springbrunnen im Schlossgarten hat einen Durchmesser von 6 m. Wie groß ist sein Radius in cm? Lösung: **300 cm**. Typische Fehler: 600 (radius-durchmesser), 1200 (radius-durchmesser), 30 (umrechnungszahl).
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Welche Aussagen über einen Kreis stimmen? Kreuze alle an.
+  - ☐ Ein Kreis hat genau einen Radius.
+  - ☐ Der Radius ist doppelt so lang wie der Durchmesser.
+  - ☑ Jeder Durchmesser geht durch den Mittelpunkt.
+  - ☑ Der Durchmesser ist doppelt so lang wie der Radius.
+- `05` AFB II · _Kommunizieren_ · 4 gleich große Münzen liegen in einer Reihe nebeneinander und berühren sich. Die Reihe ist 112 mm lang. Wie groß ist der Radius einer Münze? Lösung: **14 mm**. Typische Fehler: 28 (radius-durchmesser), 56 (radius-durchmesser).
+- `06` AFB III · _Kommunizieren_ · Zwei Kreise berühren sich von außen. Der eine hat den Radius 3 cm, der andere den Durchmesser 4 cm. Wie weit sind die beiden Mittelpunkte voneinander entfernt? Lösung: **5 cm**. Typische Fehler: 7 (radius-durchmesser), 10 (radius-durchmesser).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Ränder genau ab und bilde den Unterschied. Das ist der Durchmesser.
+
+- `01` AFB I · _Kommunizieren_ · Wie groß ist der Radius des Kreises über dem Lineal in Millimetern? _(Bild: Kreis am Lineal (10 cm): Durchmesser von 13 mm bis 51 mm)_ Lösung: **19 mm**. Typische Fehler: 38 (radius-durchmesser), 51 (lineal-nicht-null).
+- `02` AFB II · _Kommunizieren_ · Ein Kreis hat den Radius 5 cm. Wie lang ist sein Durchmesser in mm? Lösung: **100 mm**. Typische Fehler: 50 (radius-durchmesser), 10 (umrechnungszahl).
+- `03` AFB II · _Kommunizieren_ · In eine 12 cm lange Dose passen genau 2 Tennisbälle hintereinander. Sie berühren sich und die Enden der Dose. Wie groß ist der Radius eines Balls? Lösung: **3 cm**. Typische Fehler: 6 (radius-durchmesser).
+- `04` AFB III · _Kommunizieren_ · Der Kreis hat den Mittelpunkt M(6|6) und den Radius 5 Kästchen. Welcher der Punkte A, B und C liegt genau auf der Kreislinie? _(Bild: Koordinatensystem 12 × 12; Punkte M(6|6), A(3|2), B(5|1), C(11|5); Kreis um (6|6) mit Radius 5 Kästchen)_
+  - ☐ C
+  - ☐ B
+  - ☑ A
+- `05` AFB II · _Kommunizieren_ · Wie viele Kreise mit dem Radius 3 cm passen in einer Reihe auf eine 48 cm lange Strecke, wenn sie sich nur berühren? Lösung: **8**. Typische Fehler: 16 (radius-durchmesser), 7 (radius-durchmesser).
+- `06` AFB III · _Kommunizieren_ · In einem großen Kreis mit dem Radius 15 cm liegen 5 kleine, gleich große Kreise auf einem Durchmesser in einer Reihe. Sie berühren sich und den großen Kreis. Wie groß ist der Radius eines kleinen Kreises? Lösung: **3 cm**. Typische Fehler: 6 (radius-durchmesser).
+
+## 5.7.1-R2: Ich kann Kreise und Kreismuster nach Vorgaben zeichnen.
+
+Grundlage, die F übt: Am Karogitter einen Kreis aus Mittelpunkt und Radius in Kästchen zeichnen
+
+Baut auf: 5.7.1-R1 (Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Mittelpunkt M bleibt fest wie die Zirkelspitze. *Beispiel:* Zähle von M aus die Kästchen nach rechts. *Lösungsschritt:* Dort liegt ein Punkt der Kreislinie.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne einen Kreis um M. / Der Radius ist 2 Kästchen lang. / Tippe zuerst auf M, dann auf einen Punkt der Kreislinie. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 7 × 7; Punkte M(4|4))_ Lösung: **Kreis um (4|4) mit Radius 2 Kästchen**, zum Beispiel durch (6|4)
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne einen Kreis um den Punkt A. / Der Radius ist 3 Kästchen lang. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 10 × 9; Punkte A(6|4), B(2|5))_ Lösung: **Kreis um (6|4) mit Radius 3 Kästchen**, zum Beispiel durch (9|4)
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Zeichne einen Kreis um M. / Der Radius ist 1 cm lang. / Im Gitter sind 2 Kästchen 1 cm. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 8 × 7; Punkte M(3|3))_ Lösung: **Kreis um (3|3) mit Radius 2 Kästchen**, zum Beispiel durch (5|3)
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne einen Kreis um M. / Er soll durch den Punkt P gehen. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 13 × 10; Punkte M(7|5), P(11|5))_ Lösung: **Kreis um (7|5) mit Radius 4 Kästchen**, zum Beispiel durch (11|5)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Durchmesser eines Kreises ist 4 Kästchen lang. / Zeichne den Kreis um M. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 7 × 7; Punkte M(3|4))_ Lösung: **Kreis um (3|4) mit Radius 2 Kästchen**, zum Beispiel durch (5|4)
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Kreise bilden ein Muster. / Zeichne den nächsten Kreis um M. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 10 × 4; Punkte M(7|2); Kreis um (1|2) mit Radius 1 Kästchen, Kreis um (3|2) mit Radius 1 Kästchen, Kreis um (5|2) mit Radius 1 Kästchen)_ Lösung: **Kreis um (7|2) mit Radius 1 Kästchen**, zum Beispiel durch (7|3)
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne den Radius in Kästchen um. *Beispiel:* 2 cm sind 4 Kästchen. *Lösungsschritt:* Zähle von M aus so viele Kästchen.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Zeichne einen Kreis um M mit dem Radius 3 cm. / Im Gitter sind 2 Kästchen 1 cm. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 14 × 14; Punkte M(7|7))_ Lösung: **Kreis um (7|7) mit Radius 6 Kästchen**, zum Beispiel durch (13|7)
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Zeichne einen Kreis um M mit dem Radius 15 mm. / Ein Kästchen ist 5 mm lang. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 9 × 8; Punkte M(5|4))_ Lösung: **Kreis um (5|4) mit Radius 3 Kästchen**, zum Beispiel durch (8|4)
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die drei Kreise um M bilden ein Kreismuster. / Jeder Kreis ist ein Kästchen größer als der vorige. / Zeichne den nächsten Kreis. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 12 × 12; Punkte M(6|6); Kreis um (6|6) mit Radius 2 Kästchen, Kreis um (6|6) mit Radius 3 Kästchen, Kreis um (6|6) mit Radius 4 Kästchen)_ Lösung: **Kreis um (6|6) mit Radius 5 Kästchen**, zum Beispiel durch (11|6)
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Zeichne einen Kreis um den Punkt B. / Der Radius ist 3 cm lang. / Im Gitter sind 2 Kästchen 1 cm. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 16 × 14; Punkte B(7|7), A(10|8))_ Lösung: **Kreis um (7|7) mit Radius 6 Kästchen**, zum Beispiel durch (13|7)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Kreis hat den Durchmesser 4 Kästchen. / Zeichne ihn um M. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 8 × 7; Punkte M(5|3))_ Lösung: **Kreis um (5|3) mit Radius 2 Kästchen**, zum Beispiel durch (7|3)
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Kreise bilden ein Kreismuster. / Finde die Regel. / Zeichne den nächsten Kreis um M. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 10 × 4; Punkte M(7|2); Kreis um (1|2) mit Radius 1 Kästchen, Kreis um (3|2) mit Radius 1 Kästchen, Kreis um (5|2) mit Radius 1 Kästchen)_ Lösung: **Kreis um (7|2) mit Radius 1 Kästchen**, zum Beispiel durch (7|3)
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zuerst den Mittelpunkt im Koordinatensystem. *Lösungsschritt:* Gehe von M aus so viele Einheiten nach rechts. Dort liegt ein Punkt der Kreislinie.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne den Kreis um M(4|3) mit dem Radius 2 Einheiten. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Koordinatensystem 8 × 6; Punkte M(4|3))_ Lösung: **Kreis um (4|3) mit Radius 2 Kästchen**, zum Beispiel durch (6|3)
+- `02` AFB II · _Modellieren (+ Kommunizieren)_ · Zeichne einen Kreis mit dem Durchmesser 20 mm um M. Ein Kästchen ist 5 mm lang. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 6 × 7; Punkte M(3|4))_ Lösung: **Kreis um (3|4) mit Radius 2 Kästchen**, zum Beispiel durch (5|4)
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft zwei Kreise mit dem Radius 5 cm. Ihre Mittelpunkte sollen 8 cm voneinander entfernt sein. Die Kreise schneiden sich in zwei Punkten. Wie weit liegen die beiden Schnittpunkte auseinander? Miss in mm. Lösung: **60 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 100 (radius-durchmesser), 80 (kreis-mittelpunkt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Kreise um M bilden ein Kreismuster. Jeder Kreis hat einen um 1 Kästchen größeren Radius. Zeichne den nächsten Kreis. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 10 × 10; Punkte M(5|5); Kreis um (5|5) mit Radius 1 Kästchen, Kreis um (5|5) mit Radius 2 Kästchen, Kreis um (5|5) mit Radius 3 Kästchen)_ Lösung: **Kreis um (5|5) mit Radius 4 Kästchen**, zum Beispiel durch (9|5)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne einen Kreis um M, der durch den Punkt P geht. Gib nur den Mittelpunkt und einen Punkt der Kreislinie an. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 15 × 13; Punkte M(9|6), P(14|6))_ Lösung: **Kreis um (9|6) mit Radius 5 Kästchen**, zum Beispiel durch (14|6)
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft eine Strecke AB von 6 cm. Zeichne Kreise um A und um B mit dem Radius 5 cm. Verbinde die beiden Schnittpunkte. Wie lang ist diese Verbindung in mm? Lösung: **80 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 100 (radius-durchmesser), 60 (kreis-mittelpunkt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Abstand von M bis zu dem Punkt ist der Radius.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne den Kreis um M(4|4), der durch den Punkt (6|4) geht. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Koordinatensystem 7 × 7; Punkte M(4|4))_ Lösung: **Kreis um (4|4) mit Radius 2 Kästchen**, zum Beispiel durch (6|4)
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft zwei Kreise mit dem Radius 6 cm 5 mm, deren Mittelpunkte 5 cm auseinanderliegen. Wie weit sind die beiden Schnittpunkte voneinander entfernt? Miss in mm. Lösung: **120 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 130 (radius-durchmesser), 50 (kreis-mittelpunkt).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Zeichne einen Kreis mit dem Durchmesser 4 cm um M. Im Gitter sind 2 Kästchen 1 cm. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 13 × 11; Punkte M(7|5))_ Lösung: **Kreis um (7|5) mit Radius 4 Kästchen**, zum Beispiel durch (11|5)
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne um M den Kreis, der die Gerade g genau berührt. Er hat mit g nur einen Punkt gemeinsam. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 11 × 8; Punkte M(6|4); Gerade g durch (0|1) und (11|1))_ Lösung: **Kreis um (6|4) mit Radius 3 Kästchen**, zum Beispiel durch (6|1)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Kreise bilden ein Kreismuster. Finde die Regel und zeichne den nächsten Kreis um M. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 14 × 4; Punkte M(10|2); Kreis um (1|2) mit Radius 1 Kästchen, Kreis um (4|2) mit Radius 1 Kästchen, Kreis um (7|2) mit Radius 1 Kästchen)_ Lösung: **Kreis um (10|2) mit Radius 1 Kästchen**, zum Beispiel durch (10|3)
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft eine Strecke AB von 6 cm. Zeichne um A und um B Kreise mit dem Radius 5 cm. Wie lang ist die Strecke zwischen den beiden Schnittpunkten in mm? Lösung: **80 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 100 (radius-durchmesser), 60 (kreis-mittelpunkt).
+
+## 5.7.2-V1: Ich kann Scheitel, Schenkel und Winkel erkennen und benennen.
+
+Grundlage, die F übt: Am Bild Scheitel und Schenkel eines Winkels zeigen
+
+Baut auf: 5.5.1-B1 (Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel ist die Spitze des Winkels. *Beispiel:* Dort beginnen beide Schenkel. *Lösungsschritt:* Suche den Punkt, an dem die zwei Linien zusammenstoßen.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welcher Punkt ist der Scheitel? _(Bild: Winkel α 40°)_
+  - ☑ S
+  - ☐ Q
+  - ☐ P
+- `02` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welche Linien sind die Schenkel? _(Bild: Winkel α 30°)_
+  - ☐ PR und OR
+  - ☑ OP und OR
+  - ☐ PR und OP
+- `03` AFB I · _Kommunizieren_ · Im Bild siehst du drei Winkel. / Welcher Winkel hat den Scheitel K? _(Bild: Winkel α 40°, β 60°, γ 90°)_
+  - ☑ β
+  - ☐ γ
+  - ☐ α
+- `04` AFB I · _Kommunizieren_ · Im Bogen steht ein griechischer Buchstabe. / Wie heißt der Winkel? _(Bild: Winkel γ 70°)_
+  - ☑ γ
+  - ☐ α
+  - ☐ β
+- `05` AFB II · _Kommunizieren_ · Die Winkel α und β liegen nebeneinander. / Welcher Punkt ist der Scheitel von beiden? _(Bild: Winkel α 50°, β 60°)_
+  - ☑ M
+  - ☐ L
+  - ☐ K
+- `06` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Wie heißen seine Schenkel? _(Bild: Winkel α 100°)_
+  - ☑ BA und BC
+  - ☐ AB und AC
+  - ☐ AC und BC
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Winkel liegt schräg. *Beispiel:* Der Scheitel ist trotzdem die Spitze. *Lösungsschritt:* Dort beginnen beide Schenkel.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welcher Punkt ist der Scheitel? _(Bild: Winkel α 60°)_
+  - ☐ A
+  - ☑ M
+  - ☐ B
+- `02` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welche Linien sind die Schenkel? _(Bild: Winkel α 85°)_
+  - ☐ PO und PR
+  - ☐ PR und OR
+  - ☑ OP und OR
+- `03` AFB II · _Kommunizieren_ · Drei Winkel liegen nebeneinander. / Welcher Winkel liegt zwischen OQ und OR? _(Bild: Winkel α 65°, β 40°, γ 35°)_
+  - ☑ β
+  - ☐ α
+  - ☐ γ
+- `04` AFB I · _Kommunizieren_ · Im Bild siehst du drei Winkel. / Welcher Winkel hat den Scheitel T? _(Bild: Winkel α 55°, β 90°, γ 135°)_
+  - ☑ γ
+  - ☐ α
+  - ☐ β
+- `05` AFB II · _Kommunizieren_ · Die Winkel α und β liegen nebeneinander. / Welche Linien sind die Schenkel von β? _(Bild: Winkel α 60°, β 65°)_
+  - ☐ QR und OQ
+  - ☐ QO und QR
+  - ☑ OQ und OR
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „Der Scheitel von α ist A.“ / Hat das Kind recht? _(Bild: Winkel α 135°)_
+  - ☐ Ja. / A steht als erster Buchstabe da.
+  - ☑ Nein. / A liegt am Ende eines Schenkels. / Der Scheitel ist B.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht immer in der Mitte. *Lösungsschritt:* Vorne steht der Punkt auf dem Schenkel, von dem du gegen den Uhrzeigersinn losgehst.
+
+- `01` AFB I · _Kommunizieren_ · Wie heißt der Winkel α mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel. _(Bild: Winkel α 115°)_
+  - ☐ ∢BAC
+  - ☐ ∢BCA
+  - ☐ ∢ACB
+  - ☑ ∢ABC
+- `02` AFB II · _Kommunizieren_ · Drei Winkel liegen an einem Scheitel nebeneinander. Welcher Winkel ist ∢POQ? _(Bild: Winkel α 60°, β 65°, γ 60°)_
+  - ☑ α
+  - ☐ γ
+  - ☐ β
+- `03` AFB II · _Kommunizieren_ · Wie heißt der Winkel β mit drei Buchstaben? _(Bild: Winkel α 60°, β 55°)_
+  - ☐ ∢SBC
+  - ☑ ∢BSC
+  - ☐ ∢BCS
+  - ☐ ∢CSB
+- `04` AFB I · _Kommunizieren_ · Welche Strecken sind die Schenkel des Winkels α? _(Bild: Winkel α 115°)_
+  - ☐ AS und AB
+  - ☐ AB und SA
+  - ☐ AB und SB
+  - ☑ SA und SB
+- `05` AFB II · _Kommunizieren_ · Wie heißen die Schenkel von γ? _(Bild: Winkel α 70°, β 45°, γ 50°)_
+  - ☐ RT und OR
+  - ☑ OR und OT
+  - ☐ RO und RT
+  - ☐ RT und OT
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina schreibt für den Winkel α: ∢BSA. Hat das Kind recht? _(Bild: Winkel α 40°)_
+  - ☐ Ja. Die Reihenfolge der Buchstaben ist egal.
+  - ☐ Nein. Der Scheitel muss vorne stehen. Richtig ist ∢SAB.
+  - ☑ Nein. Gegen den Uhrzeigersinn geht es von SA nach SB. Richtig ist ∢ASB.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht in der Mitte, gelesen wird gegen den Uhrzeigersinn.
+
+- `01` AFB I · _Kommunizieren_ · Wie heißt der Winkel α mit drei Buchstaben? _(Bild: Winkel α 140°)_
+  - ☐ ∢SQP
+  - ☐ ∢QSP
+  - ☐ ∢PQS
+  - ☐ ∢SPQ
+  - ☑ ∢PSQ
+- `02` AFB II · _Kommunizieren_ · Welcher der drei Winkel ist ∢ROT? _(Bild: Winkel α 55°, β 35°, γ 70°)_
+  - ☐ β
+  - ☐ α
+  - ☑ γ
+- `03` AFB II · _Kommunizieren_ · Wie heißt der Winkel γ mit drei Buchstaben? _(Bild: Winkel α 50°, β 55°, γ 50°)_
+  - ☐ ∢OTR
+  - ☐ ∢ORT
+  - ☐ ∢TOR
+  - ☐ ∢RTO
+  - ☑ ∢ROT
+- `04` AFB III · _Kommunizieren_ · Der Winkel ∢QOT setzt sich aus Winkeln im Bild zusammen. Aus welchen? Kreuze alle an. _(Bild: Winkel α 70°, β 60°, γ 55°)_
+  - ☑ γ
+  - ☑ β
+  - ☐ α
+- `05` AFB II · _Kommunizieren_ · Wie heißen die Schenkel des Winkels β? _(Bild: Winkel α 70°, β 40°, γ 35°)_
+  - ☑ SB und SC
+  - ☐ BS und BC
+  - ☐ BC und SC
+  - ☐ BC und SB
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: „∢ASB und ∢BSA sind gleich groß, sie haben ja dieselben Schenkel.“ Stimmt das? _(Bild: Winkel α 70°)_
+  - ☑ Nein. ∢BSA ist der überstumpfe Winkel außen herum.
+  - ☐ Ja. Es kommt nur auf die Schenkel an.
+
+## 5.7.2-V2: Ich kann Winkel ohne Messen vergleichen.
+
+Grundlage, die F übt: Zwei Winkel vergleichen, indem man in Gedanken einen auf den anderen legt
+
+Baut auf: 5.7.2-V1 (Ich kann Scheitel, Schenkel und Winkel erkennen und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lange Schenkel machen einen Winkel nicht größer. *Beispiel:* Schau, wie weit sich die Schenkel öffnen. *Lösungsschritt:* Der Winkel mit der größeren Öffnung ist größer.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau dir die beiden Winkel an. / Welcher Winkel ist größer? _(Bild: Winkel α 120°, β 80°)_
+  - ☐ β
+  - ☑ α
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schau dir die beiden Winkel an. / Welcher Winkel ist kleiner? _(Bild: Winkel α 30°, β 150°)_
+  - ☑ α
+  - ☐ β
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schau dir die drei Winkel an. / Welcher Winkel ist am größten? _(Bild: Winkel α 50°, β 80°, γ 150°)_
+  - ☐ β
+  - ☑ γ
+  - ☐ α
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schau dir die beiden Winkel an. / Welcher Winkel ist größer? _(Bild: Winkel α 90°, β 50°)_
+  - ☑ α
+  - ☐ β
+  - ☐ Beide sind gleich groß.
+- `05` AFB II · _Argumentieren_ · Noah sagt: „α hat die längeren Schenkel.“ / „Also ist α größer.“ / Stimmt das? _(Bild: Winkel α 40°, β 140°)_
+  - ☑ Nein. / β öffnet sich weiter. / Also ist β größer.
+  - ☐ Ja. / Lange Schenkel machen einen Winkel groß.
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau dir die drei Winkel an. / Welcher Winkel ist am kleinsten? _(Bild: Winkel α 30°, β 120°, γ 70°)_
+  - ☐ γ
+  - ☑ α
+  - ☐ β
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh die Winkel in Gedanken. *Beispiel:* Lege einen Schenkel immer waagerecht. *Lösungsschritt:* Vergleiche dann die Öffnungen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die drei Winkel liegen verschieden. / Welcher Winkel ist am größten? _(Bild: Winkel α 135°, β 110°, γ 65°)_
+  - ☐ β
+  - ☐ γ
+  - ☑ α
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die drei Winkel liegen verschieden. / Welcher Winkel ist am kleinsten? _(Bild: Winkel α 30°, β 150°, γ 125°)_
+  - ☑ α
+  - ☐ β
+  - ☐ γ
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei der Winkel sind gleich groß. / Welche sind es? / Kreuze beide an. _(Bild: Winkel α 85°, β 130°, γ 35°, δ 85°)_
+  - ☑ δ
+  - ☐ β
+  - ☐ γ
+  - ☑ α
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schau dir die beiden Winkel an. / Welcher Winkel ist größer? _(Bild: Winkel α 100°, β 75°)_
+  - ☐ β
+  - ☑ α
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Winkel sind kleiner als ein rechter Winkel? / Kreuze alle an. _(Bild: Winkel α 50°, β 70°, γ 150°)_
+  - ☑ β
+  - ☑ α
+  - ☐ γ
+- `06` AFB III · _Argumentieren_ · Ida sagt: „Der Bogen von α ist größer.“ / „Also ist α der größere Winkel.“ / Hat das Kind recht? _(Bild: Winkel α 60°, β 130°)_
+  - ☐ Ja. / Ein großer Bogen gehört zu einem großen Winkel.
+  - ☑ Nein. / Die Größe des Bogens ist egal. / β öffnet sich weiter.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lage, Schenkellänge und Bogen sind egal. *Lösungsschritt:* Dreh die Winkel in Gedanken so, dass ein Schenkel waagerecht liegt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher der vier Winkel ist am größten? _(Bild: Winkel α 123°, β 136°, γ 73°, δ 49°)_
+  - ☐ α
+  - ☐ γ
+  - ☑ β
+  - ☐ δ
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei der vier Winkel sind gleich groß. Kreuze beide an. _(Bild: Winkel α 72°, β 96°, γ 140°, δ 72°)_
+  - ☐ β
+  - ☑ α
+  - ☑ δ
+  - ☐ γ
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Winkel sind größer als α? Kreuze alle an. _(Bild: Winkel α 119°, β 70°, γ 145°, δ 48°)_
+  - ☐ δ
+  - ☑ γ
+  - ☐ β
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher der vier Winkel ist am kleinsten? _(Bild: Winkel α 116°, β 147°, γ 45°, δ 37°)_
+  - ☐ α
+  - ☐ γ
+  - ☐ β
+  - ☑ δ
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Winkel sind kleiner als δ? Kreuze alle an. _(Bild: Winkel α 90°, β 40°, γ 158°, δ 116°)_
+  - ☐ γ
+  - ☑ β
+  - ☑ α
+- `06` AFB III · _Argumentieren_ · Paul legt die Winkel α und β mit dem Scheitel und einem Schenkel aufeinander. Der zweite Schenkel von α liegt innerhalb von β. Was folgt daraus? _(Bild: Winkel α 80°, β 112°)_
+  - ☐ Man kann es nicht sagen, denn die Schenkel sind verschieden lang.
+  - ☑ α ist kleiner als β.
+  - ☐ α ist größer als β, denn seine Schenkel sind länger.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lage, Schenkellänge und Bogen sind egal. Vergleiche nur die Öffnungen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher der vier Winkel ist am größten? _(Bild: Winkel α 118°, β 34°, γ 161°, δ 82°)_
+  - ☐ α
+  - ☐ δ
+  - ☑ γ
+  - ☐ β
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei der vier Winkel sind gleich groß. Kreuze beide an. _(Bild: Winkel α 65°, β 65°, γ 74°, δ 114°)_
+  - ☑ β
+  - ☐ δ
+  - ☑ α
+  - ☐ γ
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Winkel sind größer als β? Kreuze alle an. _(Bild: Winkel α 76°, β 135°, γ 158°, δ 115°)_
+  - ☐ α
+  - ☐ δ
+  - ☑ γ
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Welcher Winkel ist der zweitgrößte? _(Bild: Winkel α 155°, β 129°, γ 82°, δ 164°)_
+  - ☐ γ
+  - ☐ δ
+  - ☐ β
+  - ☑ α
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher der vier Winkel ist am kleinsten? _(Bild: Winkel α 34°, β 95°, γ 53°, δ 83°)_
+  - ☐ δ
+  - ☑ α
+  - ☐ γ
+  - ☐ β
+- `06` AFB III · _Argumentieren_ · Mara sagt: „Ein Winkel mit kurzen Schenkeln kann größer sein als ein Winkel mit langen Schenkeln.“ Stimmt das? _(Bild: Winkel α 32°, β 135°)_
+  - ☐ Nein. Kurze Schenkel gehören immer zu kleinen Winkeln.
+  - ☑ Ja. Die Größe hängt nur von der Öffnung ab. Im Bild ist β größer als α.
+
+## 5.7.3-A1: Ich kann Winkelarten erkennen und benennen.
+
+Grundlage, die F übt: Einen Winkel mit der Ecke eines Blattes vergleichen: kleiner, gleich oder größer als ein rechter Winkel
+
+Baut auf: 5.7.2-V1 (Ich kann Scheitel, Schenkel und Winkel erkennen und benennen.), 5.5.2-S1 (Ich kann erkennen, ob Linien senkrecht zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit einer Heftecke. *Beispiel:* Ein spitzer Winkel ist kleiner als die Heftecke. *Lösungsschritt:* Passt α ganz in die Heftecke?
+
+- `01` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welche Art von Winkel ist α? _(Bild: Winkel α 40°)_
+  - ☐ stumpfer Winkel
+  - ☑ spitzer Winkel
+  - ☐ rechter Winkel
+- `02` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welche Art von Winkel ist α? _(Bild: Winkel α 140°)_
+  - ☐ rechter Winkel
+  - ☑ stumpfer Winkel
+  - ☐ spitzer Winkel
+- `03` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welche Art von Winkel ist α? _(Bild: Winkel α 90°)_
+  - ☐ spitzer Winkel
+  - ☑ rechter Winkel
+  - ☐ stumpfer Winkel
+- `04` AFB I · _Kommunizieren_ · Schau dir die drei Winkel an. / Welcher Winkel ist stumpf? _(Bild: Winkel α 50°, β 90°, γ 140°)_
+  - ☑ γ
+  - ☐ β
+  - ☐ α
+- `05` AFB II · _Kommunizieren_ · Welche Winkel sind spitz? / Kreuze alle an. _(Bild: Winkel α 150°, β 30°, γ 40°)_
+  - ☑ β
+  - ☑ γ
+  - ☐ α
+- `06` AFB I · _Kommunizieren_ · Schau dir die drei Winkel an. / Welcher ist ein rechter Winkel? _(Bild: Winkel α 90°, β 40°, γ 130°)_
+  - ☐ γ
+  - ☑ α
+  - ☐ β
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Schenkel bilden zusammen eine gerade Linie. *Beispiel:* Das ist ein halber Kreis um den Scheitel. *Lösungsschritt:* Ein solcher Winkel hat 180°.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir den Winkel α an. / Welche Winkelart ist α? _(Bild: Winkel α 180°)_
+  - ☐ spitzer Winkel
+  - ☑ gestreckter Winkel
+  - ☐ stumpfer Winkel
+- `02` AFB I · _Kommunizieren_ · Der Winkel α liegt schräg. / Welche Winkelart ist α? _(Bild: Winkel α 90°)_
+  - ☐ stumpfer Winkel
+  - ☐ spitzer Winkel
+  - ☑ rechter Winkel
+- `03` AFB II · _Kommunizieren_ · Ein Winkel ist 95° groß. / Welche Winkelart ist das?
+  - ☐ gestreckter Winkel
+  - ☐ spitzer Winkel
+  - ☑ stumpfer Winkel
+- `04` AFB I · _Kommunizieren_ · Welche Winkel sind stumpf? / Kreuze alle an. _(Bild: Winkel α 65°, β 90°, γ 110°, δ 115°)_
+  - ☐ β
+  - ☑ δ
+  - ☑ γ
+  - ☐ α
+- `05` AFB II · _Kommunizieren_ · Ein Winkel ist 360° groß. / Welche Aussage stimmt? _(Bild: Winkel α 360°)_
+  - ☐ Das ist kein Winkel. / Die Schenkel liegen auf einer Linie.
+  - ☑ Das ist ein Vollwinkel.
+  - ☐ Das ist ein stumpfer Winkel.
+- `06` AFB III · _Kommunizieren_ · Die Uhr zeigt 10 Uhr. / Welche Winkelart bilden die beiden Zeiger? _(Bild: Zeigeruhr: 10:00 Uhr)_
+  - ☑ spitzer Winkel
+  - ☐ rechter Winkel
+  - ☐ gestreckter Winkel
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Bogen zeigt, welcher Winkel gemeint ist: hier der große Winkel außen herum. *Lösungsschritt:* Ein überstumpfer Winkel ist größer als 180° und kleiner als 360°.
+
+- `01` AFB I · _Kommunizieren_ · Welche Winkelart ist α? Achte auf den Bogen. _(Bild: Winkel α 339°)_
+  - ☐ spitzer Winkel
+  - ☐ stumpfer Winkel
+  - ☐ gestreckter Winkel
+  - ☑ überstumpfer Winkel
+- `02` AFB II · _Kommunizieren_ · Ein Winkel ist 327° groß. Welche Winkelart ist das?
+  - ☐ gestreckter Winkel
+  - ☑ überstumpfer Winkel
+  - ☐ stumpfer Winkel
+  - ☐ Vollwinkel
+- `03` AFB II · _Kommunizieren_ · Welche Winkel sind überstumpf? Kreuze alle an. _(Bild: Winkel α 22°, β 165°, γ 326°, δ 236°)_
+  - ☐ β
+  - ☑ δ
+  - ☑ γ
+  - ☐ α
+- `04` AFB I · _Kommunizieren_ · Welche Winkelart ist α? _(Bild: Winkel α 90°)_
+  - ☐ stumpfer Winkel
+  - ☐ spitzer Winkel
+  - ☐ gestreckter Winkel
+  - ☑ rechter Winkel
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Der Winkel α ist 148° groß. Der Winkel β ergänzt α zu einem Vollwinkel. Wie groß ist β? _(Bild: Winkel α 148°, β 212°)_ Lösung: **212 °**. Typische Fehler: 148 (ueberstumpf-klein), 32 (winkelart-grenze).
+- `06` AFB III · _Kommunizieren_ · Welche Winkelart bilden die beiden Zeiger der Uhr um 8:30 Uhr? _(Bild: Zeigeruhr: 8:30 Uhr)_
+  - ☐ gestreckter Winkel
+  - ☐ stumpfer Winkel
+  - ☐ rechter Winkel
+  - ☑ spitzer Winkel
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte darauf, welchen Winkel der Bogen zeigt.
+
+- `01` AFB I · _Kommunizieren_ · Welche Winkelart ist α? _(Bild: Winkel α 90°)_
+  - ☐ stumpfer Winkel
+  - ☑ rechter Winkel
+  - ☐ überstumpfer Winkel
+  - ☐ gestreckter Winkel
+  - ☐ spitzer Winkel
+- `02` AFB II · _Kommunizieren_ · Ein Winkel ist um 3° kleiner als ein rechter Winkel. Welche Winkelart ist das?
+  - ☐ überstumpfer Winkel
+  - ☑ spitzer Winkel
+  - ☐ stumpfer Winkel
+  - ☐ gestreckter Winkel
+  - ☐ rechter Winkel
+- `03` AFB II · _Kommunizieren_ · Welche Winkelgrößen gehören zu stumpfen Winkeln? Kreuze alle an.
+  - ☐ 46°
+  - ☑ 146°
+  - ☑ 179°
+  - ☐ 90°
+  - ☐ 207°
+- `04` AFB III · _Kommunizieren_ · Welche Winkelart bilden die Zeiger der Uhr um 3:15 Uhr? _(Bild: Zeigeruhr: 3:15 Uhr)_
+  - ☐ stumpfer Winkel
+  - ☐ rechter Winkel
+  - ☑ spitzer Winkel
+  - ☐ gestreckter Winkel
+  - ☐ überstumpfer Winkel
+- `05` AFB II · _Kommunizieren_ · Die Winkel α und β liegen nebeneinander und bilden zusammen einen gestreckten Winkel. α ist 20° groß. Welche Winkelart ist β?
+  - ☐ gestreckter Winkel
+  - ☐ spitzer Winkel
+  - ☐ rechter Winkel
+  - ☐ überstumpfer Winkel
+  - ☑ stumpfer Winkel
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Zwei spitze Winkel liegen mit gemeinsamem Scheitel nebeneinander. Welche Winkelart kann der Winkel sein, den sie zusammen bilden? Kreuze alle an, die möglich sind.
+  - ☑ rechter Winkel
+  - ☐ überstumpfer Winkel
+  - ☑ stumpfer Winkel
+  - ☐ gestreckter Winkel
+  - ☑ spitzer Winkel
+
+## 5.7.3-A2: Ich kann Winkelgrößen schätzen.
+
+Grundlage, die F übt: Mit dem rechten Winkel (90°) und dem halben rechten Winkel (45°) vergleichen
+
+Baut auf: 5.7.3-A1 (Ich kann Winkelarten erkennen und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit einer Heftecke. *Beispiel:* Eine Heftecke hat 90°. *Lösungsschritt:* Ist α viel kleiner, etwas kleiner oder größer?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schätze den Winkel α. / Welche Größe passt am besten? _(Bild: Winkel α 26°)_
+  - ☑ etwa 30°
+  - ☐ etwa 120°
+  - ☐ etwa 90°
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schätze den Winkel α. / Welche Größe passt am besten? _(Bild: Winkel α 142°)_
+  - ☑ etwa 140°
+  - ☐ etwa 90°
+  - ☐ etwa 60°
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schätze den Winkel α. / Welche Größe passt am besten? _(Bild: Winkel α 76°)_
+  - ☐ etwa 20°
+  - ☑ etwa 80°
+  - ☐ etwa 30°
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Winkel α ungefähr? _(Bild: Winkel α 30°)_
+  - ☐ etwa 90°
+  - ☑ etwa 30°
+  - ☐ etwa 120°
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau dir die drei Winkel an. / Welcher Winkel ist etwa 90° groß? _(Bild: Winkel α 85°, β 160°, γ 25°)_
+  - ☐ β
+  - ☑ α
+  - ☐ γ
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Winkel α ungefähr? _(Bild: Winkel α 148°)_
+  - ☐ etwa 90°
+  - ☑ etwa 150°
+  - ☐ etwa 20°
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit 90°. *Beispiel:* Die Hälfte von 90° sind 45°. *Lösungsschritt:* Schätze dann in Zehnerschritten.
+
+- `01` AFB I · _Modellieren_ · Schätze den Winkel α. / Du darfst bis zu 20° daneben liegen. _(Bild: Winkel α 65°)_ Lösung: **65 °** (bis 20 ° daneben gilt als richtig). Typische Fehler: 115 (winkel-ohne-stuetze), 295 (ueberstumpf-klein).
+- `02` AFB I · _Modellieren_ · Schätze den Winkel α. / Du darfst bis zu 20° daneben liegen. _(Bild: Winkel α 140°)_ Lösung: **140 °** (bis 20 ° daneben gilt als richtig). Typische Fehler: 40 (winkel-ohne-stuetze), 220 (ueberstumpf-klein).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Winkel ist etwa 45° groß? _(Bild: Winkel α 115°, β 45°, γ 80°)_
+  - ☐ α
+  - ☐ γ
+  - ☑ β
+- `04` AFB I · _Modellieren_ · Wie groß ist der Winkel α ungefähr? / Du darfst bis zu 20° daneben liegen. _(Bild: Winkel α 30°)_ Lösung: **30 °** (bis 20 ° daneben gilt als richtig). Typische Fehler: 150 (winkel-ohne-stuetze), 330 (ueberstumpf-klein).
+- `05` AFB II · _Modellieren_ · β ist ein rechter Winkel. / Schätze mit seiner Hilfe den Winkel α. / Du darfst bis zu 20° daneben liegen. _(Bild: Winkel α 80°, β 90°)_ Lösung: **80 °** (bis 20 ° daneben gilt als richtig). Typische Fehler: 280 (ueberstumpf-klein).
+- `06` AFB III · _Argumentieren_ · Jonas schätzt den Winkel α auf 20°. / Was ist der Fehler? _(Bild: Winkel α 160°)_
+  - ☑ α ist stumpf. / Er ist größer als 90°. / 20° ist viel zu klein.
+  - ☐ α ist spitz. / 20° ist zu groß.
+  - ☐ Kein Fehler. / 20° passt gut.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit 90° und mit 45°, der Hälfte davon. *Lösungsschritt:* Schätze dann so genau wie möglich.
+
+- `01` AFB I · _Modellieren_ · Schätze den Winkel α. Du darfst bis zu 10° daneben liegen. _(Bild: Winkel α 67°)_ Lösung: **67 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 113 (winkel-ohne-stuetze), 293 (ueberstumpf-klein).
+- `02` AFB II · _Modellieren_ · Schätze den überstumpfen Winkel α. Du darfst bis zu 10° daneben liegen. _(Bild: Winkel α 330°)_ Lösung: **330 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 30 (ueberstumpf-klein).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Winkel ist etwa 120° groß? _(Bild: Winkel α 159°, β 115°, γ 30°)_
+  - ☐ α
+  - ☑ β
+  - ☐ γ
+- `04` AFB I · _Modellieren_ · Wie groß ist der Winkel α ungefähr? Du darfst bis zu 10° daneben liegen. _(Bild: Winkel α 170°)_ Lösung: **170 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 10 (winkel-ohne-stuetze), 190 (ueberstumpf-klein).
+- `05` AFB II · _Modellieren_ · β ist ein rechter Winkel. Schätze mit seiner Hilfe den Winkel α. Du darfst bis zu 10° daneben liegen. _(Bild: Winkel α 91°, β 90°)_ Lösung: **91 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 269 (ueberstumpf-klein).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Der Winkel α ist 42° groß. Welcher der Winkel ist etwa doppelt so groß wie α? _(Bild: Winkel α 39°, β 157°, γ 87°)_
+  - ☐ β
+  - ☐ α
+  - ☑ γ
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Liegt α näher an 45° oder an 90°?
+
+- `01` AFB I · _Modellieren_ · Ein halber rechter Winkel hat 45°. Nutze ihn als Stütze und schätze α auf 10° genau. _(Bild: Winkel α 51°)_ Lösung: **51 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 129 (winkel-ohne-stuetze), 309 (ueberstumpf-klein).
+- `02` AFB II · _Modellieren_ · Schätze den überstumpfen Winkel α auf 10° genau. _(Bild: Winkel α 273°)_ Lösung: **273 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 87 (ueberstumpf-klein).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Winkel ist etwa 135° groß? _(Bild: Winkel α 130°, β 27°, γ 88°)_
+  - ☐ β
+  - ☑ α
+  - ☐ γ
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Der Winkel α ist 96° groß. Welcher der Winkel ist etwa halb so groß wie α? _(Bild: Winkel α 95°, β 40°, γ 136°)_
+  - ☑ β
+  - ☐ α
+  - ☐ γ
+- `05` AFB II · _Modellieren_ · β ist ein rechter Winkel. Schätze α auf 10° genau. _(Bild: Winkel α 122°, β 90°)_ Lösung: **122 °** (bis 10 ° daneben gilt als richtig). Typische Fehler: 58 (winkel-ohne-stuetze), 238 (ueberstumpf-klein).
+- `06` AFB III · _Modellieren_ · Wie groß ist der Winkel zwischen den beiden Zeigern um 4 Uhr? Nutze als Stütze: Von einer Zahl zur nächsten sind es 30°. _(Bild: Zeigeruhr: 4:00 Uhr)_ Lösung: **120 °**. Typische Fehler: 240 (ueberstumpf-klein), 150 (winkel-ohne-stuetze), 90 (winkel-ohne-stuetze).
+
+## 5.7.X1-N1: Ich kann die Lage eines Ortes im Gradnetz ablesen und angeben.
+
+Grundlage, die F übt: Am Gradnetz vom Äquator aus nach Norden zählen und vom Längengrad 0° aus nach Osten
+
+Baut auf: 5.5.4-K1 (Ich kann Punkte im Koordinatensystem ablesen.), 5.7.3-A1 (Ich kann Winkelarten erkennen und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Breitengrade laufen waagerecht von links nach rechts. *Beispiel:* Ihre Zahlen stehen am linken Rand. *Lösungsschritt:* Folge der Linie durch die Stadt nach links.
+
+- `01` AFB I · _Kommunizieren_ · Schau dir Krakau im Gradnetz an. / Auf welchem Breitengrad liegt die Stadt? _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Minsk, Krakau, Bukarest, Helsinki)_ Lösung: **50 ° N**. Typische Fehler: 20 (gradnetz-vertauscht), 60 (gradnetz-vertauscht), 40 (gradnetz-vertauscht).
+- `02` AFB I · _Kommunizieren_ · Schau dir Krakau im Gradnetz an. / Auf welchem Längengrad liegt die Stadt? _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Krakau, Riga, Athen, Tiflis)_ Lösung: **20 ° O**. Typische Fehler: 50 (gradnetz-vertauscht), 30 (gradnetz-vertauscht), 10 (gradnetz-vertauscht).
+- `03` AFB I · _Kommunizieren_ · Wo liegt Krakau? / Zuerst kommt die Breite, dann die Länge. _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Kopenhagen, Athen, Krakau, Tiflis)_
+  - ☐ 50° N, 30° O
+  - ☐ 20° N, 50° O
+  - ☑ 50° N, 20° O
+- `04` AFB I · _Kommunizieren_ · Welche Stadt liegt am weitesten im Norden? _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Tiflis, Bukarest, Athen)_
+  - ☐ Athen
+  - ☐ Tiflis
+  - ☑ Bukarest
+- `05` AFB II · _Kommunizieren_ · Welche Stadt liegt bei 60° N, 30° O? _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Riga, Prag, Sankt Petersburg)_
+  - ☐ Riga
+  - ☐ Prag
+  - ☑ Sankt Petersburg
+- `06` AFB I · _Kommunizieren_ · Welche Stadt liegt am weitesten im Osten? _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Baku, Helsinki, Kopenhagen, Wien)_
+  - ☑ Baku
+  - ☐ Wien
+  - ☐ Kopenhagen
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Über dem Äquator heißt es N, darunter S. *Beispiel:* Rechts vom Nullmeridian heißt es O, links W. *Lösungsschritt:* Schreibe zuerst die Breite.
+
+- `01` AFB I · _Kommunizieren_ · Wo liegt Lagos ungefähr? / Achte auf N, S, O und W. _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Lagos, Kairo, Kapstadt, Casablanca)_
+  - ☐ 3° N, 7° O
+  - ☑ 7° N, 3° O
+  - ☐ 7° S, 3° O
+- `02` AFB I · _Kommunizieren_ · Welche Stadt liegt am weitesten im Süden? _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Johannesburg, Kapstadt, Daressalam)_
+  - ☑ Kapstadt
+  - ☐ Daressalam
+  - ☐ Johannesburg
+- `03` AFB II · _Kommunizieren_ · Welche Städte liegen auf der Südhalbkugel? / Kreuze alle an. _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Riad, Daressalam, Antananarivo, Luanda)_
+  - ☑ Daressalam
+  - ☑ Luanda
+  - ☐ Riad
+  - ☑ Antananarivo
+- `04` AFB I · _Kommunizieren_ · Wo liegt Recife ungefähr? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Recife, Miami, Caracas, Bogotá)_
+  - ☑ 8° S, 35° W
+  - ☐ 8° N, 35° W
+  - ☐ 8° S, 35° O
+- `05` AFB II · _Kommunizieren_ · Welche Stadt liegt bei 15° N, 17° W? _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Kapstadt, Dakar, Lagos)_
+  - ☐ Lagos
+  - ☑ Dakar
+  - ☐ Kapstadt
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „Recife liegt bei 8° N, 35° W.“ / Hat das Kind recht? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Recife, Buenos Aires, Rio de Janeiro, Havanna)_
+  - ☐ Ja. / Die Angabe stimmt.
+  - ☑ Nein. / Recife liegt südlich vom Äquator. / Richtig ist 8° S, 35° W.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst die Breite ab und dann die Länge. *Lösungsschritt:* Achte auf N oder S und auf O oder W.
+
+- `01` AFB I · _Kommunizieren_ · Wo liegt Jakarta? Wähle die Angabe, die am besten passt. _(Bild: Gradnetz -40° bis 40° Breite, 100° bis 180° Länge, Linien alle 20°: Hongkong, Jakarta, Sydney, Darwin)_
+  - ☐ 6° S, 107° W
+  - ☐ 6° N, 107° O
+  - ☐ 107° S, 6° O
+  - ☑ 6° S, 107° O
+- `02` AFB II · _Kommunizieren_ · Athen liegt bei 38° N, 24° O, Riga bei 57° N, 24° O. Wie viele Grad liegen die beiden Städte in der Breite auseinander? _(Bild: Gradnetz 30° bis 70° Breite, 0° bis 60° Länge, Linien alle 10°: Athen, Riga, Oslo)_ Lösung: **19 °**. Typische Fehler: 0 (gradnetz-vertauscht).
+- `03` AFB II · _Kommunizieren_ · Dakar liegt bei 15° N, 17° W, Kapstadt bei 34° S, 18° O. Wie viele Grad liegen die beiden Städte in der Länge auseinander? _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Dakar, Kapstadt, Riad)_ Lösung: **35 °**. Typische Fehler: 1 (gradnetz-richtung), 49 (gradnetz-vertauscht).
+- `04` AFB I · _Kommunizieren_ · Welche Städte liegen auf der Westhalbkugel? Kreuze alle an. _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Casablanca, Lagos, Antananarivo, Daressalam)_
+  - ☑ Casablanca
+  - ☐ Antananarivo
+  - ☐ Lagos
+  - ☐ Daressalam
+- `05` AFB II · _Kommunizieren_ · Perth liegt bei 32° S, 116° O, Tokio bei 36° N, 140° O. Wie groß ist der Gradunterschied in der Breite? _(Bild: Gradnetz -40° bis 40° Breite, 100° bis 180° Länge, Linien alle 20°: Perth, Tokio, Jakarta)_ Lösung: **68 °**. Typische Fehler: 4 (gradnetz-richtung), 24 (gradnetz-vertauscht).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ein Schiff liegt bei 20° S, 70° O. Es fährt genau 30° nach Norden. Wo ist es dann?
+  - ☐ 70° N, 10° O
+  - ☑ 10° N, 70° O
+  - ☐ 10° S, 70° O
+  - ☐ 50° N, 70° O
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst die Breite mit N oder S ab, dann die Länge mit O oder W.
+
+- `01` AFB I · _Kommunizieren_ · Wo liegt Hongkong? Wähle die Angabe, die am besten passt. _(Bild: Gradnetz -40° bis 40° Breite, 100° bis 180° Länge, Linien alle 20°: Manila, Tokio, Hongkong, Darwin)_
+  - ☐ 22° N, 114° W
+  - ☐ 22° S, 114° O
+  - ☐ 114° N, 22° O
+  - ☑ 22° N, 114° O
+- `02` AFB II · _Kommunizieren_ · Sydney liegt bei 34° S, 151° O, Hongkong bei 22° N, 114° O. Wie groß ist der Gradunterschied in der Breite? _(Bild: Gradnetz -40° bis 40° Breite, 100° bis 180° Länge, Linien alle 20°: Sydney, Hongkong, Perth)_ Lösung: **56 °**. Typische Fehler: 12 (gradnetz-richtung), 37 (gradnetz-vertauscht).
+- `03` AFB II · _Kommunizieren_ · München liegt bei 48° N, 12° O, Madrid bei 40° N, 4° W. Wie groß ist der Gradunterschied in der Länge? _(Bild: Gradnetz 20° bis 80° Breite, -100° bis 20° Länge, Linien alle 20°: München, Madrid, Toronto)_ Lösung: **16 °**. Typische Fehler: 8 (gradnetz-richtung).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Ole schreibt für Rio de Janeiro: „43° W, 23° S“. Was ist der Fehler? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Rio de Janeiro, Bogotá, Santiago, Buenos Aires)_
+  - ☑ Breite und Länge sind vertauscht. Zuerst kommt die Breite.
+  - ☐ Nord und Süd sind verwechselt. Rio de Janeiro liegt südlich vom Äquator.
+  - ☐ Nichts. Die Angabe ist richtig.
+  - ☐ Ost und West sind verwechselt. Rio de Janeiro liegt westlich vom Nullmeridian.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Ole gibt die Lage von Dakar mit „15° N, 17° O“ an. Was ist falsch? _(Bild: Gradnetz -40° bis 40° Breite, -20° bis 60° Länge, Linien alle 20°: Dakar, Lagos, Daressalam, Riad)_
+  - ☐ Breite und Länge sind vertauscht. Zuerst kommt die Breite.
+  - ☑ Ost und West sind verwechselt. Dakar liegt westlich vom Nullmeridian.
+  - ☐ Nichts. Die Angabe ist richtig.
+  - ☐ Nord und Süd sind verwechselt. Dakar liegt nördlich vom Äquator.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ein Flugzeug startet bei 10° N, 40° W. Es fliegt 40° nach Süden und dann 60° nach Osten. Wo landet es?
+  - ☑ 30° S, 20° O
+  - ☐ 20° S, 30° O
+  - ☐ 50° S, 100° O
+  - ☐ 30° N, 20° W
+
+## 5.7.4-W1: Ich kann Winkel mit dem Geodreieck messen.
+
+Grundlage, die F übt: Das Geodreieck anlegen: Nullpunkt auf den Scheitel, lange Seite auf einen Schenkel, auf der Skala ab 0 lesen
+
+Baut auf: 5.7.3-A1 (Ich kann Winkelarten erkennen und benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nullpunkt liegt auf dem Scheitel. *Beispiel:* Ein Schenkel liegt auf der langen Seite. *Lösungsschritt:* Lies am zweiten Schenkel ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Lies ab: Wie groß ist α? _(Bild: Winkel α 20°; Geodreieck angelegt)_ Lösung: **20 °**. Typische Fehler: 160 (skala-falsch).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Lies ab: Wie groß ist α? _(Bild: Winkel α 150°; Geodreieck angelegt)_ Lösung: **150 °**. Typische Fehler: 30 (skala-falsch).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Wie viel Grad zeigt das Geodreieck? _(Bild: Winkel α 110°; Geodreieck angelegt)_ Lösung: **110 °**. Typische Fehler: 70 (skala-falsch).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Wie viel Grad zeigt das Geodreieck? _(Bild: Winkel α 60°; Geodreieck angelegt)_ Lösung: **60 °**. Typische Fehler: 120 (skala-falsch).
+- `05` AFB II · _Argumentieren_ · Ole misst den Winkel α. / Das Kind liest 20° ab. / Stimmt das? _(Bild: Winkel α 160°; Geodreieck angelegt)_
+  - ☑ Nein. / α ist stumpf. / Es sind 160°.
+  - ☐ Ja. / α ist 20° groß.
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Wie groß ist α? _(Bild: Winkel α 70°; Geodreieck angelegt)_ Lösung: **70 °**. Typische Fehler: 110 (skala-falsch).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh das Bild in Gedanken. *Beispiel:* Der Nullpunkt liegt auf dem Scheitel. *Lösungsschritt:* Lies auf der Skala ab, die am Schenkel bei 0 beginnt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt schräg am Winkel α. / Wie groß ist α? _(Bild: Winkel α 25°; Geodreieck angelegt)_ Lösung: **25 °**. Typische Fehler: 155 (skala-falsch).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Lies am Geodreieck ab. _(Bild: Winkel α 135°; Geodreieck angelegt)_ Lösung: **135 °**. Typische Fehler: 45 (skala-falsch).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der zweite Schenkel liegt auf der langen Seite. / Wie groß ist α? _(Bild: Winkel α 45°; Geodreieck angelegt)_ Lösung: **45 °**. Typische Fehler: 135 (skala-falsch).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Wie groß ist α? _(Bild: Winkel α 55°; Geodreieck angelegt)_ Lösung: **55 °**. Typische Fehler: 125 (skala-falsch).
+- `05` AFB II · _Argumentieren_ · Jonas misst den Winkel α. / Das Kind liest 60° ab. / Hat es recht? _(Bild: Winkel α 120°; Geodreieck angelegt)_
+  - ☐ Ja. / Das Geodreieck zeigt 60°.
+  - ☑ Nein. / α ist stumpf. / Richtig sind 120°.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben hat α gemessen und 35° abgelesen. / Was hat das Kind falsch gemacht? _(Bild: Winkel α 145°; Geodreieck angelegt)_
+  - ☑ Auf der falschen Skala abgelesen.
+  - ☐ Nichts. / Es ist alles richtig.
+  - ☐ Die lange Seite liegt auf keinem Schenkel.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies auf der Skala ab, die am Schenkel unter der langen Seite bei 0 beginnt. *Lösungsschritt:* Zähle die kleinen Striche nach der letzten Zehnerzahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α gradgenau. _(Bild: Winkel α 154°; Geodreieck angelegt)_ Lösung: **154 °**. Typische Fehler: 26 (skala-falsch).
+- `02` AFB II · _Modellieren_ · Der Bogen zeigt den überstumpfen Winkel α. Das Geodreieck misst den Winkel außen herum. Wie groß ist α? _(Bild: Winkel α 340°; Geodreieck angelegt)_ Lösung: **340 °**. Typische Fehler: 20 (ueberstumpf-klein), 200 (skala-falsch), 160 (skala-falsch).
+- `03` AFB II · _Modellieren_ · Zeichne in dein Heft ein Koordinatensystem mit 1 cm je Einheit. Zeichne A(1|3), B(7|4) und C(2|8) und verbinde A mit B und A mit C. Miss den Winkel bei A. Lösung: **69 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 111 (skala-falsch).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Winkel α? Miss gradgenau. _(Bild: Winkel α 67°; Geodreieck angelegt)_ Lösung: **67 °**. Typische Fehler: 113 (skala-falsch).
+- `05` AFB II · _Modellieren_ · Zeichne die Punkte A(2|1), B(6|2) und C(1|9) in ein Koordinatensystem mit 1 cm je Einheit. Wie groß ist der Winkel zwischen AB und AC? Lösung: **83 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 97 (skala-falsch).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht? _(Bild: Winkel α 131°; Geodreieck angelegt, aber verschoben)_
+  - ☐ Die lange Seite liegt auf keinem Schenkel.
+  - ☑ Der Nullpunkt liegt nicht auf dem Scheitel.
+  - ☐ Auf der falschen Skala abgelesen.
+  - ☐ Nichts. Es ist alles richtig.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies auf der Skala ab, die am Schenkel unter der langen Seite bei 0 beginnt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α gradgenau. _(Bild: Winkel α 115°; Geodreieck angelegt)_ Lösung: **115 °**. Typische Fehler: 65 (skala-falsch).
+- `02` AFB II · _Modellieren_ · Wie groß ist der überstumpfe Winkel α? _(Bild: Winkel α 341°; Geodreieck angelegt)_ Lösung: **341 °**. Typische Fehler: 19 (ueberstumpf-klein), 199 (skala-falsch), 161 (skala-falsch).
+- `03` AFB II · _Modellieren_ · Das Dreieck ABC hat die Ecken A(2|3), B(7|1) und C(2|7) (1 cm je Einheit). Zeichne es in dein Heft und miss den Winkel bei A. Lösung: **112 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 68 (skala-falsch).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ida misst den Winkel α so wie im Bild. Was ist falsch? _(Bild: Winkel α 122°; Geodreieck angelegt)_
+  - ☐ Nichts. Es ist alles richtig.
+  - ☑ Die lange Seite liegt auf keinem Schenkel.
+  - ☐ Der Nullpunkt liegt nicht auf dem Scheitel.
+  - ☐ Auf der falschen Skala abgelesen.
+- `05` AFB II · _Modellieren_ · Zeichne A(3|2), B(8|3) und C(8|8) in ein Koordinatensystem mit 1 cm je Einheit. Miss den Winkel ∢BAC. Lösung: **39 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 141 (skala-falsch).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Finn misst α und liest 113° ab. Welcher Fehler ist passiert? _(Bild: Winkel α 67°; Geodreieck angelegt)_
+  - ☐ Die lange Seite liegt auf keinem Schenkel.
+  - ☐ Der Nullpunkt liegt nicht auf dem Scheitel.
+  - ☑ Auf der falschen Skala abgelesen.
+  - ☐ Nichts. Es ist alles richtig.
+
+## 5.7.4-W2: Ich kann Winkel mit dem Geodreieck zeichnen.
+
+Grundlage, die F übt: Am Geodreieck die Gradzahl auf der Skala ab 0 suchen und den Schenkel dorthin legen
+
+Baut auf: 5.7.4-W1 (Ich kann Winkel mit dem Geodreieck messen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nullpunkt liegt auf dem Scheitel. *Beispiel:* Suche die Zahl auf der Skala, die am festen Schenkel bei 0 beginnt. *Lösungsschritt:* Drehe den Schenkel bis zu dieser Zahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne am festen Schenkel einen Winkel von 20°. / Drehe dazu den zweiten Schenkel. _(Schenkel drehen, fester Schenkel in Richtung 0°)_ Lösung: **20 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 160 (skala-falsch).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 160°. / Drehe den zweiten Schenkel. _(Schenkel drehen, fester Schenkel in Richtung 0°)_ Lösung: **160 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 20 (skala-falsch).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 30°. _(Schenkel drehen, fester Schenkel in Richtung 0°)_ Lösung: **30 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 150 (skala-falsch).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen rechten Winkel. / Drehe dazu den zweiten Schenkel. _(Schenkel drehen, fester Schenkel in Richtung 0°)_ Lösung: **90 °** (bis 2 ° daneben gilt als richtig).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne einen stumpfen Winkel von 120°. / Prüfe danach: Ist er größer als eine Heftecke? _(Schenkel drehen, fester Schenkel in Richtung 0°)_ Lösung: **120 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 60 (skala-falsch).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen spitzen Winkel von 70°. _(Schenkel drehen, fester Schenkel in Richtung 0°)_ Lösung: **70 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 110 (skala-falsch).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Geodreieck liegt schon richtig. *Beispiel:* Nimm die Skala, die am festen Schenkel bei 0 beginnt. *Lösungsschritt:* Die kleinen Striche zeigen Fünferschritte.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 80°. / Der feste Schenkel liegt schräg. _(Schenkel drehen, fester Schenkel in Richtung 205°)_ Lösung: **80 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 100 (skala-falsch).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 165°. _(Schenkel drehen, fester Schenkel in Richtung 170°)_ Lösung: **165 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 15 (skala-falsch).
+- `03` AFB II · _Modellieren_ · Der Winkel α ist 110° groß. / Zeichne den Winkel β. / α und β ergeben zusammen einen gestreckten Winkel. _(Schenkel drehen, fester Schenkel in Richtung 190°)_ Lösung: **70 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 110 (skala-falsch).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 140°. _(Schenkel drehen, fester Schenkel in Richtung 220°)_ Lösung: **140 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 40 (skala-falsch).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 105°. / Prüfe danach mit der Heftecke. _(Schenkel drehen, fester Schenkel in Richtung 25°)_ Lösung: **105 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 75 (skala-falsch).
+- `06` AFB III · _Modellieren_ · Ein Winkel ist 45° groß. / Zeichne einen doppelt so großen Winkel. _(Schenkel drehen, fester Schenkel in Richtung 25°)_ Lösung: **90 °** (bis 2 ° daneben gilt als richtig).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm die Skala, die am festen Schenkel bei 0 beginnt. *Lösungsschritt:* Zähle die Gradstriche einzeln.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 62°. _(Schenkel drehen, fester Schenkel in Richtung 172°)_ Lösung: **62 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 118 (skala-falsch).
+- `02` AFB II · _Modellieren_ · Zeichne einen überstumpfen Winkel von 334°. Lege dazu das Geodreieck um. _(Schenkel drehen, fester Schenkel in Richtung 20°)_ Lösung: **334 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 26 (ueberstumpf-klein), 206 (skala-falsch).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft einen Winkel von 127°. Beide Schenkel sollen 7 cm lang sein. Verbinde die Endpunkte der Schenkel. Wie lang ist diese Strecke in mm? Lösung: **125 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 62 (skala-falsch).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen stumpfen Winkel von 117°. _(Schenkel drehen, fester Schenkel in Richtung 187°)_ Lösung: **117 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 63 (skala-falsch).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel mit 52° und zwei 4 cm langen Schenkeln in dein Heft. Miss die Strecke zwischen den Endpunkten in mm. Lösung: **35 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 72 (skala-falsch).
+- `06` AFB III · _Modellieren_ · Der Winkel α ist 147° groß. Zeichne den Winkel β, der α zu einem Vollwinkel ergänzt. _(Schenkel drehen, fester Schenkel in Richtung 213°)_ Lösung: **213 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 147 (ueberstumpf-klein), 327 (skala-falsch).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte auf die richtige Skala.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 166°. _(Schenkel drehen, fester Schenkel in Richtung 189°)_ Lösung: **166 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 14 (skala-falsch).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne einen Winkel von 33° mit zwei Schenkeln von je 7 cm in dein Heft. Wie lang ist die Verbindung der Endpunkte in mm? Lösung: **40 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 134 (skala-falsch).
+- `03` AFB II · _Modellieren_ · Zeichne den kleineren Winkel zwischen den Zeigern einer Uhr um 8 Uhr. Von einer Zahl zur nächsten sind es 30°. _(Schenkel drehen, fester Schenkel in Richtung 219°)_ Lösung: **120 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 60 (skala-falsch).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Dreieck hat die Winkel 65° und 73°. Zeichne den dritten Winkel. Die drei Winkel ergeben zusammen 180°. _(Schenkel drehen, fester Schenkel in Richtung 133°)_ Lösung: **42 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 138 (skala-falsch).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne ins Heft einen Winkel von 76°, beide Schenkel 6 cm lang. Miss die Verbindung der Endpunkte in mm. Lösung: **74 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 95 (skala-falsch).
+- `06` AFB III · _Modellieren_ · Zeichne den Winkel, der zusammen mit 43° einen Vollwinkel ergibt. _(Schenkel drehen, fester Schenkel in Richtung 13°)_ Lösung: **317 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 43 (ueberstumpf-klein), 223 (skala-falsch).
+
+## 5.7.X2-D1: Ich kann Dreiecke nach Seiten und nach Winkeln einteilen.
+
+Grundlage, die F übt: An einem Dreieck die Seiten vergleichen und den rechten Winkel suchen
+
+Baut auf: 5.7.4-W1 (Ich kann Winkel mit dem Geodreieck messen.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein rechter Winkel ist so groß wie eine Heftecke. *Beispiel:* Prüfe jede Ecke der Dreiecke. *Lösungsschritt:* Folge den Gitterlinien: Treffen sich zwei Seiten wie eine Heftecke?
+
+- `01` AFB I · _Kommunizieren_ · Schau dir die drei Dreiecke an. / Welches Dreieck hat einen rechten Winkel? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (2|2) (4|2) (4|5), Figur B mit den Ecken (11|5) (7|3) (11|1), Figur C mit den Ecken (13|1) (17|2) (17|5))_
+  - ☑ Dreieck A
+  - ☐ Dreieck C
+  - ☐ Dreieck B
+- `02` AFB I · _Kommunizieren_ · Schau dir die drei Dreiecke an. / Welches Dreieck hat zwei gleich lange Seiten? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (2|2) (5|2) (2|5), Figur B mit den Ecken (7|2) (11|2) (7|5), Figur C mit den Ecken (14|1) (17|1) (14|5))_
+  - ☐ Dreieck C
+  - ☐ Dreieck B
+  - ☑ Dreieck A
+- `03` AFB I · _Kommunizieren_ · Schau dir das Dreieck an. / Wie heißt es nach seinen Seiten? _(Bild: Karogitter 7 × 6; Figur mit den Ecken (5|5) (1|3) (5|1))_
+  - ☑ gleichschenklig
+  - ☐ gleichseitig
+  - ☐ unregelmäßig
+- `04` AFB I · _Kommunizieren_ · Schau dir das Dreieck an. / Wie heißt es nach seinen Seiten? _(Bild: Karogitter 7 × 5; Figur mit den Ecken (1|1) (5|1) (1|4))_
+  - ☐ gleichseitig
+  - ☐ gleichschenklig
+  - ☑ unregelmäßig
+- `05` AFB II · _Kommunizieren_ · Welche Wörter passen zu dem Dreieck? / Kreuze alle an. _(Bild: Karogitter 5 × 4; Figur mit den Ecken (1|1) (3|1) (1|3))_
+  - ☑ rechtwinklig
+  - ☑ gleichschenklig
+  - ☐ gleichseitig
+  - ☐ unregelmäßig
+- `06` AFB I · _Kommunizieren_ · Schau dir die drei Dreiecke an. / Welches Dreieck ist unregelmäßig? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (2|2) (5|2) (2|4), Figur B mit den Ecken (11|4) (7|3) (11|2), Figur C mit den Ecken (17|4) (14|3) (17|2))_
+  - ☐ Dreieck B
+  - ☑ Dreieck A
+  - ☐ Dreieck C
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh das Bild in Gedanken. *Beispiel:* Prüfe jede Ecke mit einer Heftecke. *Lösungsschritt:* Ein rechter Winkel bleibt in jeder Lage ein rechter Winkel.
+
+- `01` AFB I · _Kommunizieren_ · Das Dreieck liegt schräg. / Wie heißt es nach seinen Winkeln? _(Bild: Karogitter 7 × 4; Figur mit den Ecken (2|1) (4|2) (1|3))_
+  - ☐ spitzwinklig
+  - ☐ stumpfwinklig
+  - ☑ rechtwinklig
+- `02` AFB I · _Kommunizieren_ · Schau dir die drei Dreiecke an. / Welches Dreieck ist stumpfwinklig? _(Bild: Karogitter 18 × 7; Figur A mit den Ecken (2|2) (5|2) (1|4), Figur B mit den Ecken (7|1) (11|2) (8|5), Figur C mit den Ecken (15|2) (17|3) (14|4))_
+  - ☐ Dreieck C
+  - ☑ Dreieck A
+  - ☐ Dreieck B
+- `03` AFB II · _Kommunizieren_ · Ein Dreieck hat drei Seiten von je 7 cm. / Wie heißt es nach seinen Seiten?
+  - ☐ rechtwinklig
+  - ☑ gleichseitig
+  - ☐ unregelmäßig
+- `04` AFB I · _Kommunizieren_ · Welche Dreiecke sind rechtwinklig? / Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (1|7) (5|9) (3|11), Figur B mit den Ecken (9|8) (11|9) (8|10), Figur C mit den Ecken (1|2) (5|4) (3|5), Figur D mit den Ecken (7|1) (11|1) (7|5))_
+  - ☑ Dreieck B
+  - ☑ Dreieck D
+  - ☐ Dreieck A
+  - ☐ Dreieck C
+- `05` AFB II · _Kommunizieren_ · Welche Namen passen zu dem Dreieck? / Kreuze alle an. _(Bild: Karogitter 9 × 5; Figur mit den Ecken (4|1) (8|1) (3|4))_
+  - ☑ stumpfwinklig
+  - ☐ gleichschenklig
+  - ☐ spitzwinklig
+  - ☑ unregelmäßig
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina sagt: „Ein gleichseitiges Dreieck ist auch gleichschenklig.“ / Stimmt das?
+  - ☑ Stimmt. / Es hat sogar drei gleich lange Seiten. / Also hat es auch zwei.
+  - ☐ Falsch. / Gleichschenklig heißt genau zwei gleich lange Seiten.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Entscheidend ist der größte Winkel. *Lösungsschritt:* Ist er kleiner als 90°, ist das Dreieck spitzwinklig.
+
+- `01` AFB I · _Kommunizieren_ · Ein Dreieck hat die Winkel 76°, 42° und 62°. Wie heißt es nach seinen Winkeln?
+  - ☑ spitzwinklig
+  - ☐ rechtwinklig
+  - ☐ stumpfwinklig
+- `02` AFB II · _Kommunizieren_ · Welche Namen passen zu dem Dreieck? Kreuze alle an. _(Bild: Karogitter 6 × 6; Figur mit den Ecken (3|1) (5|2) (1|5))_
+  - ☑ rechtwinklig
+  - ☐ spitzwinklig
+  - ☐ stumpfwinklig
+  - ☐ gleichschenklig
+  - ☑ unregelmäßig
+- `03` AFB II · _Kommunizieren_ · Welche Dreiecke sind gleichschenklig? Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (5|11) (2|9) (5|7), Figur B mit den Ecken (7|7) (11|7) (7|11), Figur C mit den Ecken (3|1) (5|2) (1|5), Figur D mit den Ecken (8|2) (11|2) (8|4))_
+  - ☐ Dreieck D
+  - ☐ Dreieck C
+  - ☑ Dreieck A
+  - ☑ Dreieck B
+- `04` AFB I · _Kommunizieren_ · Wie heißt das Dreieck nach seinen Winkeln? _(Bild: Karogitter 5 × 5; Figur mit den Ecken (1|1) (4|2) (2|4))_
+  - ☐ stumpfwinklig
+  - ☑ spitzwinklig
+  - ☐ rechtwinklig
+  - ☐ gleichschenklig
+- `05` AFB II · _Kommunizieren_ · Ein Dreieck hat die Seiten 5 cm, 3 cm und 3 cm. Welche Namen passen? Kreuze alle an.
+  - ☐ unregelmäßig
+  - ☑ gleichschenklig
+  - ☐ gleichseitig
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?
+  - ☐ Ja. Zum Beispiel, wenn man ein Quadrat halbiert.
+  - ☑ Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.
+  - ☐ Ja, aber nur bei einem gleichseitigen Dreieck.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die drei Winkel eines Dreiecks ergeben zusammen 180°.
+
+- `01` AFB I · _Kommunizieren (+ Modellieren)_ · Zwei Winkel eines Dreiecks sind 82° und 76° groß. Wie groß ist der dritte Winkel? Lösung: **22 °**. Typische Fehler: 202 (winkelsumme), 158 (winkelsumme).
+- `02` AFB II · _Kommunizieren (+ Modellieren)_ · Ein Dreieck hat die Winkel 65° und 50°. Welche Namen passen? Kreuze alle an.
+  - ☐ gleichseitig
+  - ☑ spitzwinklig
+  - ☑ gleichschenklig
+  - ☐ rechtwinklig
+  - ☐ stumpfwinklig
+- `03` AFB II · _Kommunizieren_ · Welche Namen passen zu dem Dreieck? Kreuze alle an. _(Bild: Karogitter 7 × 5; Figur mit den Ecken (3|1) (6|2) (2|4))_
+  - ☐ spitzwinklig
+  - ☑ gleichschenklig
+  - ☐ unregelmäßig
+  - ☑ rechtwinklig
+  - ☐ gleichseitig
+- `04` AFB III · _Kommunizieren (+ Modellieren)_ · In einem gleichschenkligen Dreieck ist der Winkel an der Spitze 104° groß. Wie groß ist ein Basiswinkel? Lösung: **38 °**. Typische Fehler: 76 (winkelsumme), 104 (dreieck-art), 128 (winkelsumme).
+- `05` AFB II · _Kommunizieren_ · Welche Dreiecke sind stumpfwinklig? Kreuze alle an. _(Bild: Karogitter 12 × 12; Figur A mit den Ecken (2|8) (4|8) (2|10), Figur B mit den Ecken (7|8) (10|8) (11|10), Figur C mit den Ecken (1|2) (3|2) (5|4), Figur D mit den Ecken (11|4) (7|3) (11|2))_
+  - ☑ Dreieck B
+  - ☐ Dreieck D
+  - ☑ Dreieck C
+  - ☐ Dreieck A
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ole zeichnet ein Dreieck mit den Winkeln 90°, 50° und 45°. Geht das?
+  - ☐ Ja. Es ist ein stumpfwinkliges Dreieck.
+  - ☑ Nein. Die Winkel ergeben zusammen 185°, nicht 180°.
+  - ☐ Ja. Jeder Winkel ist kleiner als 180°.
+
+## 5.7.X2-D2: Ich kann Dreiecke nach Vorgaben zeichnen.
+
+Grundlage, die F übt: Am Karogitter ein Dreieck aus drei Gitterpunkten zeichnen
+
+Baut auf: 5.7.X2-D1 (Ich kann Dreiecke nach Seiten und nach Winkeln einteilen.), 5.7.4-W2 (Ich kann Winkel mit dem Geodreieck zeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein rechter Winkel bei A: AC steht wie eine Heftecke auf AB. *Beispiel:* Gehe von A aus senkrecht nach oben. *Lösungsschritt:* Zähle 3 Kästchen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC hat bei A einen rechten Winkel. / Die Seite AC ist 3 Kästchen lang. / C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(3|2), B(10|2); Strecke durch (3|2) und (10|2))_ Lösung: **(3|5)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC soll gleichschenklig sein. / AC und BC sind gleich lang. / C liegt 3 Kästchen über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(2|2), B(6|2); Strecke durch (2|2) und (6|2))_ Lösung: **(4|5)**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC hat bei B einen rechten Winkel. / Die Seite BC ist 3 Kästchen lang. / C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(3|1), B(10|1); Strecke durch (3|1) und (10|1))_ Lösung: **(10|4)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / AC und BC sollen gleich lang sein. / C liegt 2 Kästchen über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(3|1), B(9|1); Strecke durch (3|1) und (9|1))_ Lösung: **(6|3)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC soll rechtwinklig und gleichschenklig sein. / Der rechte Winkel liegt bei A. / C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(3|1), B(8|1); Strecke durch (3|1) und (8|1))_ Lösung: **(3|6)**
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC hat bei A einen rechten Winkel. / AC ist 4 Kästchen lang. / C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(4|1), B(10|1); Strecke durch (4|1) und (10|1))_ Lösung: **(4|5)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* AB liegt schräg. *Beispiel:* Drehe den Weg von A nach B um eine Heftecke. *Lösungsschritt:* Gehe diesen gedrehten Weg von A aus.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC hat bei A einen rechten Winkel. / AC ist so lang wie AB. / C liegt links von AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 9; Punkte A(2|1), B(6|2); Strecke durch (2|1) und (6|2))_ Lösung: **(1|5)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC hat bei A einen rechten Winkel. / AC ist 2 cm lang. / C liegt über AB. / Im Gitter sind 2 Kästchen 1 cm. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(5|1), B(11|1); Strecke durch (5|1) und (11|1))_ Lösung: **(5|5)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC soll gleichschenklig sein. / AC und BC sind gleich lang. / Der Winkel bei C ist ein rechter Winkel. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(7|2), B(11|2); Strecke durch (7|2) und (11|2))_ Lösung: **(9|4)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Das Dreieck ABC ist gleichschenklig mit AC gleich BC. / C liegt 3 Kästchen über AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(1|2), B(7|2); Strecke durch (1|2) und (7|2))_ Lösung: **(4|5)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / AC und BC sind gleich lang. / C liegt 1 cm über AB. / Im Gitter sind 2 Kästchen 1 cm. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 8; Punkte A(5|2), B(11|2); Strecke durch (5|2) und (11|2))_ Lösung: **(8|4)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Setze den Punkt C. / Der rechte Winkel liegt bei A. / AC ist so lang wie AB. / C liegt links von AB. _(Gitterzeichnen, einen Punkt antippen; Karogitter 12 × 9; Punkte A(4|3), B(7|5); Strecke durch (4|3) und (7|5))_ Lösung: **(2|6)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* AC steht senkrecht auf AB. *Lösungsschritt:* Gehe von A aus 4 Einheiten nach oben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(6|1) und B(9|1). Setze C so, dass das Dreieck ABC bei A einen rechten Winkel hat, AC 4 Einheiten lang ist und C über AB liegt. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 8; Punkte A(6|1), B(9|1); Strecke durch (6|1) und (9|1))_ Lösung: **(6|5)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft ein Dreieck ABC mit c = 6 cm, α = 66° und β = 55°. Miss die Seite a in mm. Lösung: **64 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 6 (einheit-mm-cm).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft ein Dreieck ABC mit b = 4 cm, c = 6 cm und α = 104°. Wie lang ist die Seite a in mm? Lösung: **80 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 8 (einheit-mm-cm).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(2|2) und B(8|2). Setze C so, dass AC und BC gleich lang sind und der Winkel bei C ein rechter Winkel ist. C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 8; Punkte A(2|2), B(8|2); Strecke durch (2|2) und (8|2))_ Lösung: **(5|5)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(4|2) und B(6|3). Setze C so, dass das Dreieck ABC bei A einen rechten Winkel hat, AC so lang wie AB ist und C links von AB liegt. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 9; Punkte A(4|2), B(6|3); Strecke durch (4|2) und (6|3))_ Lösung: **(3|4)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zeichne in dein Heft ein Dreieck mit den Seiten a = 5 cm, b = 9 cm und c = 7 cm. Miss den Winkel γ bei C. Lösung: **51 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 129 (skala-falsch).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Drehe den Weg von A nach B um einen rechten Winkel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(4|1) und B(7|2). Setze C so, dass ABC bei A rechtwinklig und gleichschenklig ist und C links von AB liegt. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 9; Punkte A(4|1), B(7|2); Strecke durch (4|1) und (7|2))_ Lösung: **(3|4)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne ein Dreieck ABC mit b = 7 cm, c = 8 cm und α = 99° in dein Heft. Miss a in mm. Lösung: **114 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 11 (einheit-mm-cm).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Zeichne ein Dreieck ABC mit c = 6 cm, α = 62° und β = 33° in dein Heft. Miss a in mm. Lösung: **53 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 5 (einheit-mm-cm).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zeichne ein Dreieck aus den Seiten a = 8 cm, b = 7 cm und c = 4 cm. Miss den Winkel γ. Lösung: **30 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 150 (skala-falsch).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(2|1) und B(9|1). Setze C so, dass ABC bei B rechtwinklig ist, BC 4 Einheiten lang ist und C über AB liegt. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 8; Punkte A(2|1), B(9|1); Strecke durch (2|1) und (9|1))_ Lösung: **(9|5)**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(2|2) und B(6|2). Setze C so, dass ABC gleichschenklig ist und bei C einen rechten Winkel hat. C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 8; Punkte A(2|2), B(6|2); Strecke durch (2|2) und (6|2))_ Lösung: **(4|4)**
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -8489,15 +9486,25 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `vergleich-nicht-genutzt` | Nennt beim Schätzen nur die Vergleichsgröße oder nur, wie oft sie hineinpasst. | Wie oft passt die Vergleichsgröße hinein? Rechne dann mal. | Du rechnest beim Schätzen jetzt mit der Vergleichsgröße weiter. |
 | `sach-frage-verfehlt` | Rechnet richtig, beantwortet aber nicht die gestellte Frage (nennt ein Zwischenergebnis oder eine andere Größe). | Lies die Frage noch einmal. Was genau ist gesucht? | Du liest am Ende jetzt noch einmal die Frage und prüfst deine Antwort. |
 | `rueckgeld-preis` | Nennt beim Rückgeld den Preis oder zählt zusammen, statt abzuziehen. | Rückgeld ist das, was übrig bleibt: der gegebene Betrag minus der Preis. | Du rechnest das Rückgeld jetzt als Unterschied aus. |
+| `radius-durchmesser` | Verwechselt Radius und Durchmesser und nimmt das Doppelte oder die Hälfte. | Der Radius geht vom Mittelpunkt bis zur Kreislinie. Der Durchmesser geht einmal ganz durch den Kreis. | Du hältst Radius und Durchmesser jetzt auseinander. |
+| `kreis-mittelpunkt` | Zeichnet den Kreis nicht um den verlangten Mittelpunkt oder misst den Radius nicht vom Mittelpunkt aus. | Die Zirkelspitze gehört in den Mittelpunkt. Jeder Punkt der Kreislinie ist gleich weit davon entfernt. | Du setzt den Zirkel jetzt im Mittelpunkt ein. |
+| `winkel-schenkellaenge` | Hält einen Winkel für größer, weil seine Schenkel länger sind oder sein Bogen größer gezeichnet ist. | Die Größe eines Winkels hängt nicht von der Länge der Schenkel ab. Schau, wie weit sich die Schenkel öffnen. | Du weißt jetzt: Lange Schenkel machen einen Winkel nicht größer. |
+| `winkel-bezeichnung` | Liest die Bezeichnung eines Winkels falsch (Scheitel nicht in der Mitte von ∢ASB, Scheitel und Schenkel verwechselt). | Der Scheitel ist der Punkt, in dem beide Schenkel beginnen. In einem Winkelnamen aus drei Buchstaben steht er in der Mitte. | Du liest Namen von Winkeln jetzt richtig. |
+| `winkelart-grenze` | Ordnet einen Winkel der falschen Winkelart zu, vor allem an den Grenzen 90° und 180°. | Vergleiche mit 90° und 180°. Spitz ist kleiner als 90°, stumpf liegt zwischen 90° und 180°. | Du ordnest Winkel jetzt sicher der richtigen Art zu. |
+| `gestreckt-kein-winkel` | Hält einen gestreckten Winkel oder einen Vollwinkel nicht für einen Winkel. | Auch 180° und 360° sind Winkel. Die Schenkel bilden dann eine Gerade oder liegen aufeinander. | Du weißt jetzt: Auch 180° und 360° sind Winkel. |
+| `rechter-winkel-lage` | Erkennt einen rechten Winkel nur, wenn ein Schenkel waagerecht liegt. | Dreh das Bild in Gedanken. Ein rechter Winkel bleibt ein rechter Winkel. | Du erkennst rechte Winkel jetzt in jeder Lage. |
+| `winkel-ohne-stuetze` | Schätzt einen Winkel deutlich daneben, ohne mit dem rechten Winkel zu vergleichen. | Vergleiche mit einem rechten Winkel: Ist der Winkel kleiner oder größer als 90°? Um wie viel ungefähr? | Du vergleichst beim Schätzen jetzt mit dem rechten Winkel. |
+| `skala-falsch` | Liest am Geodreieck die falsche Skala ab und erhält 180° minus den Winkel. | Lies auf der Skala ab, die auf dem einen Schenkel bei 0 beginnt. Passt die Zahl zu spitz oder stumpf? | Du liest am Geodreieck jetzt auf der richtigen Skala ab. |
+| `geodreieck-angelegt` | Legt das Geodreieck falsch an: Der Nullpunkt liegt nicht auf dem Scheitel, oder die lange Seite liegt nicht auf einem Schenkel. | Der Nullpunkt gehört genau auf den Scheitel. Die lange Seite liegt genau auf einem Schenkel. | Du legst das Geodreieck jetzt richtig an. |
+| `ueberstumpf-klein` | Gibt bei einem überstumpfen Winkel den kleinen Winkel an und rechnet nicht 360° minus. | Der Bogen zeigt den großen Winkel. Miss den kleinen Winkel und rechne 360° minus. | Du rechnest bei überstumpfen Winkeln jetzt 360° minus. |
+| `gradnetz-vertauscht` | Vertauscht im Gradnetz Breite und Länge. | Zuerst kommt die Breite: Wie weit nördlich oder südlich vom Äquator? Dann kommt die Länge. | Du nennst im Gradnetz jetzt zuerst die Breite und dann die Länge. |
+| `gradnetz-richtung` | Verwechselt im Gradnetz Nord und Süd oder Ost und West. | Nördlich vom Äquator heißt N, südlich heißt S. Östlich vom Längengrad 0° heißt O, westlich heißt W. | Du hältst Nord, Süd, Ost und West im Gradnetz jetzt auseinander. |
+| `dreieck-sonderfall` | Sieht nicht, dass ein gleichseitiges Dreieck auch gleichschenklig ist. | Prüfe die Eigenschaft: Hat das Dreieck mindestens zwei gleich lange Seiten? | Du weißt jetzt: Ein gleichseitiges Dreieck ist auch gleichschenklig. |
+| `dreieck-art` | Teilt ein Dreieck falsch ein oder verwechselt die Einteilung nach Seiten mit der nach Winkeln. | Prüfe der Reihe nach: Welche Seiten sind gleich lang? Gibt es einen rechten oder einen stumpfen Winkel? | Du teilst Dreiecke jetzt richtig nach Seiten und Winkeln ein. |
+| `winkelsumme` | Rechnet im Dreieck mit einer falschen Winkelsumme (zum Beispiel 360°). | In jedem Dreieck ergeben die drei Winkel zusammen 180°. | Du weißt jetzt: Die drei Winkel im Dreieck ergeben zusammen 180°. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.7.1-L1 Ich kann Kreise anhand verschiedener Vorgaben zeichnen. Baut auf: 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
-- 5.7.2-L1 Ich kann Winkel zeichnen und Winkelgrößen vergleichen. Baut auf: 5.5.1-B1 (Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.)
-- 5.7.3-L1 Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen. Baut auf: 5.7.2-L1 (Ich kann Winkel zeichnen und Winkelgrößen vergleichen.)
-- 5.7.4-L1 Ich kann Winkel zeichnen, schätzen und messen. Baut auf: 5.7.3-L1 (Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.)
-- 5.7.X1-L1 Ich kann Dreiecke nach Winkelart oder Seitenbeziehung einteilen und selbst zeichnen. Baut auf: 5.7.4-L1 (Ich kann Winkel zeichnen, schätzen und messen.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
-- 5.7.X2-L1 Ich kann mithilfe des Gradnetzes Aussagen treffen. Baut auf: 5.5.4-K1 (Ich kann Punkte im Koordinatensystem ablesen.), 5.7.3-L1 (Ich kann Winkelarten angeben sowie Winkelgrößen schätzen und auch bestimmen.)
 - 5.8.1-L1 Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen. Baut auf: 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
 - 5.8.2-L1 Ich kann sicher mit Flächenmaßen umgehen. Baut auf: 5.8.1-L1 (Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.), 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
 - 5.8.3-L1 Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden. Baut auf: 5.8.2-L1 (Ich kann sicher mit Flächenmaßen umgehen.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)

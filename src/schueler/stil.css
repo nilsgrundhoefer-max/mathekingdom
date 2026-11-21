@@ -637,3 +637,40 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .bildrahmen.tippbild { margin-top: 8px; }
 #mathekingdom svg.groessenbild text { font-family: inherit; }
 #mathekingdom svg.kartenbild { min-width: 520px; }
+
+/* Kapitel 7: Kreis und Winkel (winkelbilder.js, ADR 0034) */
+#mathekingdom svg.winkelbild { display: block; width: 100%; min-width: 300px; height: auto; user-select: none; }
+#mathekingdom .winkelbild .blatt { fill: #fffdf6; }
+#mathekingdom .winkelbild .schenkel { stroke: var(--nacht); stroke-width: 2.6; stroke-linecap: round; }
+#mathekingdom .winkelbild .schenkel.gedreht { stroke: #a8690a; stroke-width: 3; }
+#mathekingdom .winkelbild.loesung .schenkel.gedreht { stroke: var(--gut); }
+#mathekingdom .winkelbild .scheitel { fill: var(--nacht); }
+#mathekingdom .winkelbild .winkelflaeche { fill-opacity: .16; stroke: none; }
+#mathekingdom .winkelbild .winkelbogen { fill: none; stroke-width: 2.4; }
+#mathekingdom .winkelbild .winkelname { font-size: 18px; font-weight: 700; font-style: italic; paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .winkelbild .punktname, #mathekingdom .kreislineal .punktname { font-size: 16px; font-weight: 700; fill: var(--siegel); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .winkelbild .bildtext { font-size: 14px; font-weight: 600; fill: var(--tinte); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .winkelbild .geodreieck { fill: rgba(150, 196, 226, .28); stroke: #3f6f96; stroke-width: 1.4; stroke-linejoin: round; }
+#mathekingdom .winkelbild .geo-mm, #mathekingdom .winkelbild .geo-grad { stroke: #2b4f6e; stroke-width: .8; }
+#mathekingdom .winkelbild .geo-grad.zehn { stroke-width: 1.3; }
+#mathekingdom .winkelbild .geo-null { stroke: #2b4f6e; stroke-width: 1.6; }
+#mathekingdom .winkelbild .geo-zahl { font-size: 11px; fill: #1f3a61; font-variant-numeric: tabular-nums; }
+#mathekingdom .winkelbild .geo-zahl.aussen { font-weight: 700; }
+#mathekingdom .winkelbild .geo-zahl.innen { font-size: 10px; fill: #4f6782; }
+#mathekingdom .winkelbild.eingabe { cursor: grab; touch-action: none; }
+#mathekingdom .winkelbild.eingabe.gesperrt { cursor: default; touch-action: auto; }
+#mathekingdom .winkelbild .griff { fill: rgba(227, 178, 60, .35); stroke: #a8690a; stroke-width: 2.4; }
+#mathekingdom .gitterbild .kreis, #mathekingdom .kreislineal .kreis { fill: none; stroke: #2f4f7f; stroke-width: 2.4; }
+#mathekingdom .gitterbild .kreis.gesetzt { stroke: #a8690a; stroke-width: 3; }
+#mathekingdom .gitterbild.loesung .kreis.gesetzt { stroke: var(--gut); }
+#mathekingdom .kreislineal .mittelpunkt { fill: var(--siegel); }
+#mathekingdom .kreislineal .radius { stroke: #2f4f7f; stroke-width: 2; stroke-dasharray: 6 4; }
+#mathekingdom .kreislineal .streckenende.hilfs { stroke: var(--grau); }
+#mathekingdom svg.gradnetzbild { display: block; width: 100%; min-width: 320px; height: auto; }
+#mathekingdom .gradnetzbild .meer { fill: #eef4f8; stroke: #6b7f90; stroke-width: 1.2; }
+#mathekingdom .gradnetzbild .gradlinie { stroke: #9fb3c4; stroke-width: 1; }
+#mathekingdom .gradnetzbild .aequator, #mathekingdom .gradnetzbild .nullmeridian { stroke: var(--siegel); stroke-width: 2.2; }
+#mathekingdom .gradnetzbild .gradzahl { font-size: 12px; fill: var(--tinte); font-variant-numeric: tabular-nums; }
+#mathekingdom .gradnetzbild .netzname { font-size: 13px; font-weight: 700; fill: var(--siegel); paint-order: stroke; stroke: #eef4f8; stroke-width: 4px; }
+#mathekingdom .gradnetzbild .ort { fill: var(--nacht); stroke: #fff; stroke-width: 1.5; }
+#mathekingdom .gradnetzbild .ortsname { font-size: 14px; font-weight: 700; fill: var(--nacht); paint-order: stroke; stroke: #eef4f8; stroke-width: 4px; }

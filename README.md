@@ -71,6 +71,7 @@ Beide Dashboards tragen dieselbe Versionsnummer und zeigen sie unten rechts an; 
 ```
 npm install
 npm run pool     # Aufgabenpool erzeugen, prüfen, Übersicht schreiben
+npm run layout -- 5.7.   # Bilder eines Kapitels bei 420 und 1200 px auf Überlappung prüfen und Winkel nachmessen
 npm test         # Auswertungslogik testen
 npm run build    # dist/ bauen
 NODE_PATH=<Pfad zu Playwright> node tests/browser.mjs   # Dashboard im Browser durchfahren

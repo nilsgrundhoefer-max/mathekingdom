@@ -261,6 +261,22 @@ const KIND = {
   'vergleich-nicht-genutzt': 'Du rechnest beim Schätzen jetzt mit der Vergleichsgröße weiter.',
   'sach-frage-verfehlt': 'Du liest am Ende jetzt noch einmal die Frage und prüfst deine Antwort.',
   'rueckgeld-preis': 'Du rechnest das Rückgeld jetzt als Unterschied aus.',
+  'radius-durchmesser': 'Du hältst Radius und Durchmesser jetzt auseinander.',
+  'kreis-mittelpunkt': 'Du setzt den Zirkel jetzt im Mittelpunkt ein.',
+  'winkel-schenkellaenge': 'Du weißt jetzt: Lange Schenkel machen einen Winkel nicht größer.',
+  'winkel-bezeichnung': 'Du liest Namen von Winkeln jetzt richtig.',
+  'winkelart-grenze': 'Du ordnest Winkel jetzt sicher der richtigen Art zu.',
+  'gestreckt-kein-winkel': 'Du weißt jetzt: Auch 180° und 360° sind Winkel.',
+  'rechter-winkel-lage': 'Du erkennst rechte Winkel jetzt in jeder Lage.',
+  'winkel-ohne-stuetze': 'Du vergleichst beim Schätzen jetzt mit dem rechten Winkel.',
+  'skala-falsch': 'Du liest am Geodreieck jetzt auf der richtigen Skala ab.',
+  'geodreieck-angelegt': 'Du legst das Geodreieck jetzt richtig an.',
+  'ueberstumpf-klein': 'Du rechnest bei überstumpfen Winkeln jetzt 360° minus.',
+  'gradnetz-vertauscht': 'Du nennst im Gradnetz jetzt zuerst die Breite und dann die Länge.',
+  'gradnetz-richtung': 'Du hältst Nord, Süd, Ost und West im Gradnetz jetzt auseinander.',
+  'dreieck-sonderfall': 'Du weißt jetzt: Ein gleichseitiges Dreieck ist auch gleichschenklig.',
+  'dreieck-art': 'Du teilst Dreiecke jetzt richtig nach Seiten und Winkeln ein.',
+  'winkelsumme': 'Du weißt jetzt: Die drei Winkel im Dreieck ergeben zusammen 180°.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -383,6 +399,23 @@ export const fehlvorstellungen = {
   'vergleich-nicht-genutzt': fv('Nennt beim Schätzen nur die Vergleichsgröße oder nur, wie oft sie hineinpasst.', 'Wie oft passt die Vergleichsgröße hinein? Rechne dann mal.'),
   'sach-frage-verfehlt': fv('Rechnet richtig, beantwortet aber nicht die gestellte Frage (nennt ein Zwischenergebnis oder eine andere Größe).', 'Lies die Frage noch einmal. Was genau ist gesucht?'),
   'rueckgeld-preis': fv('Nennt beim Rückgeld den Preis oder zählt zusammen, statt abzuziehen.', 'Rückgeld ist das, was übrig bleibt: der gegebene Betrag minus der Preis.'),
+  // Kapitel 7: Kreis und Winkel (ADR 0034)
+  'radius-durchmesser': fv('Verwechselt Radius und Durchmesser und nimmt das Doppelte oder die Hälfte.', 'Der Radius geht vom Mittelpunkt bis zur Kreislinie. Der Durchmesser geht einmal ganz durch den Kreis.'),
+  'kreis-mittelpunkt': fv('Zeichnet den Kreis nicht um den verlangten Mittelpunkt oder misst den Radius nicht vom Mittelpunkt aus.', 'Die Zirkelspitze gehört in den Mittelpunkt. Jeder Punkt der Kreislinie ist gleich weit davon entfernt.'),
+  'winkel-schenkellaenge': fv('Hält einen Winkel für größer, weil seine Schenkel länger sind oder sein Bogen größer gezeichnet ist.', 'Die Größe eines Winkels hängt nicht von der Länge der Schenkel ab. Schau, wie weit sich die Schenkel öffnen.'),
+  'winkel-bezeichnung': fv('Liest die Bezeichnung eines Winkels falsch (Scheitel nicht in der Mitte von ∢ASB, Scheitel und Schenkel verwechselt).', 'Der Scheitel ist der Punkt, in dem beide Schenkel beginnen. In einem Winkelnamen aus drei Buchstaben steht er in der Mitte.'),
+  'winkelart-grenze': fv('Ordnet einen Winkel der falschen Winkelart zu, vor allem an den Grenzen 90° und 180°.', 'Vergleiche mit 90° und 180°. Spitz ist kleiner als 90°, stumpf liegt zwischen 90° und 180°.'),
+  'gestreckt-kein-winkel': fv('Hält einen gestreckten Winkel oder einen Vollwinkel nicht für einen Winkel.', 'Auch 180° und 360° sind Winkel. Die Schenkel bilden dann eine Gerade oder liegen aufeinander.'),
+  'rechter-winkel-lage': fv('Erkennt einen rechten Winkel nur, wenn ein Schenkel waagerecht liegt.', 'Dreh das Bild in Gedanken. Ein rechter Winkel bleibt ein rechter Winkel.'),
+  'winkel-ohne-stuetze': fv('Schätzt einen Winkel deutlich daneben, ohne mit dem rechten Winkel zu vergleichen.', 'Vergleiche mit einem rechten Winkel: Ist der Winkel kleiner oder größer als 90°? Um wie viel ungefähr?'),
+  'skala-falsch': fv('Liest am Geodreieck die falsche Skala ab und erhält 180° minus den Winkel.', 'Lies auf der Skala ab, die auf dem einen Schenkel bei 0 beginnt. Passt die Zahl zu spitz oder stumpf?'),
+  'geodreieck-angelegt': fv('Legt das Geodreieck falsch an: Der Nullpunkt liegt nicht auf dem Scheitel, oder die lange Seite liegt nicht auf einem Schenkel.', 'Der Nullpunkt gehört genau auf den Scheitel. Die lange Seite liegt genau auf einem Schenkel.'),
+  'ueberstumpf-klein': fv('Gibt bei einem überstumpfen Winkel den kleinen Winkel an und rechnet nicht 360° minus.', 'Der Bogen zeigt den großen Winkel. Miss den kleinen Winkel und rechne 360° minus.'),
+  'gradnetz-vertauscht': fv('Vertauscht im Gradnetz Breite und Länge.', 'Zuerst kommt die Breite: Wie weit nördlich oder südlich vom Äquator? Dann kommt die Länge.'),
+  'gradnetz-richtung': fv('Verwechselt im Gradnetz Nord und Süd oder Ost und West.', 'Nördlich vom Äquator heißt N, südlich heißt S. Östlich vom Längengrad 0° heißt O, westlich heißt W.'),
+  'dreieck-sonderfall': fv('Sieht nicht, dass ein gleichseitiges Dreieck auch gleichschenklig ist.', 'Prüfe die Eigenschaft: Hat das Dreieck mindestens zwei gleich lange Seiten?'),
+  'dreieck-art': fv('Teilt ein Dreieck falsch ein oder verwechselt die Einteilung nach Seiten mit der nach Winkeln.', 'Prüfe der Reihe nach: Welche Seiten sind gleich lang? Gibt es einen rechten oder einen stumpfen Winkel?'),
+  'winkelsumme': fv('Rechnet im Dreieck mit einer falschen Winkelsumme (zum Beispiel 360°).', 'In jedem Dreieck ergeben die drei Winkel zusammen 180°.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -547,6 +580,16 @@ export const gitterZellen = (text, gitter, loesung, fehler, hilfen, extra) => ({
 export const gitterLinie = (text, gitter, art, bedingung, beispiel, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'linie', linie: art, text, gitter, bedingung, beispiel,
   typischeFehler: (fehler ?? []).map(([b, fehlvorstellung, bsp]) => ({ bedingung: b, fehlvorstellung, ...(bsp ? { beispiel: bsp } : {}) })), hilfen, ...mit({ nachweis: [{ art: 'linie' }], ...extra }) });
 
+// ---------- Kapitel 7: Kreis und Winkel (ADR 0034) ----------
+// Gitterzeichnen: ein Kreis. Erst der Mittelpunkt m, dann ein Punkt auf der Kreislinie. r in Kästchen. fehler: [[{ r, m? }, fehlvorstellung]]
+export const gitterKreis = (text, gitter, m, r, beispiel, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'kreis', text, gitter, bedingung: { art: 'kreis', m, r }, beispiel: [m, beispiel],
+  // Derselbe falsche Kreis zählt nur einmal (bei r = 1 ist der doppelte Radius auch r + 1); der richtige Kreis ist nie ein Fehler.
+  typischeFehler: (fehler ?? []).filter(([b], i, l) => (b.r !== r || (b.m && String(b.m) !== String(m))) && l.findIndex(([x]) => x.r === b.r && String(x.m ?? m) === String(b.m ?? m)) === i)
+    .map(([b, fehlvorstellung]) => ({ bedingung: b, fehlvorstellung })), hilfen, ...mit(extra) });
+// Winkeldrehen: feld { b, h, s, von, l, punkte?, umlegen? }, loesung in Grad gegen den Uhrzeigersinn. typischeFehler: [[grad, fehlvorstellung]]
+export const winkelDrehen = (text, feld, loesung, typischeFehler, hilfen, extra) => ({ format: 'winkel', text, winkelfeld: feld, loesung, toleranz: 2,
+  typischeFehler: (typischeFehler ?? []).filter(([w]) => Math.min(Math.abs(w - loesung), 360 - Math.abs(w - loesung)) > 2).filter(([w], i, l) => l.findIndex(([x]) => x === w) === i).map(([wert, fehlvorstellung]) => ({ wert, fehlvorstellung })), hilfen, ...mit(extra) });
+
 // Stellenraster: schriftliches Rechnen mit einem Feld je Stelle (Niveaustufe F).
 // `zeichen` ist '+' oder '−'. Bei einem Tausch oder Übertrag steht er schon im Raster (`hilfe`: true).
 const STELLEN = ['E', 'Z', 'H', 'T'];
@@ -700,6 +743,10 @@ export const B = {
   karte: (orte, { lang = 100, massstab = null, leiste = null } = {}) => ({ art: 'karte', orte: orte.map(([n, mm, zeichen]) => ({ n, mm, zeichen })), lang, ...(massstab ? { massstab } : {}), ...(leiste ? { leiste: { mm: leiste[0], text: leiste[1] } } : {}) }),
   grundriss: (name, b, h, { massstab = null, leiste = null } = {}) => ({ art: 'grundriss', name, b, h, ...(massstab ? { massstab } : {}), ...(leiste ? { leiste: { mm: leiste[0], text: leiste[1] } } : {}) }),
   zeitleiste: (punkte, spruenge) => ({ art: 'zeitleiste', punkte, spruenge }),
+  // Kapitel 7: Winkel (Pixel, y nach oben) mit Geodreieck, Kreis am Lineal, Gradnetz.
+  winkel: (b, h, winkel, { geo = null, texte = null } = {}) => ({ art: 'winkel', b, h, winkel, ...(geo ? { geo } : {}), ...(texte ? { texte } : {}) }),
+  kreislineal: (von, bis, { lang = 100, radius = false, durchmesser = false } = {}) => ({ art: 'kreislineal', von, bis, lang, ...(radius ? { radius: true } : {}), ...(durchmesser ? { durchmesser: true } : {}) }),
+  gradnetz: (breite, laenge, schritt, orte, { namen = false } = {}) => ({ art: 'gradnetz', breite, laenge, schritt, ...(namen ? { namen: true } : {}), orte }),
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
@@ -717,7 +764,7 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
+  kommunizieren: ['5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
   modellieren: ['5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
   argumentieren: ['5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
@@ -732,7 +779,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel', 'gradnetz', 'kreislineal'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';

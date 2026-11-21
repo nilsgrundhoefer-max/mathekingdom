@@ -48,9 +48,9 @@ function uhrBild(b) {
       const w = (k * 6 * Math.PI) / 180, lang = k % 5 === 0 ? 9 : 4;
       el.push(s('line', { x1: cx + Math.sin(w) * (r - 4), y1: cy - Math.cos(w) * (r - 4), x2: cx + Math.sin(w) * (r - 4 - lang), y2: cy - Math.cos(w) * (r - 4 - lang), stroke: LINIE, 'stroke-width': k % 5 === 0 ? 2.2 : 1 }));
     }
-    for (let z = 1; z <= 12; z++) { const w = (z * 30 * Math.PI) / 180; el.push(text(cx + Math.sin(w) * (r - 24), cy - Math.cos(w) * (r - 24) + 5.5, String(z), { 'font-size': 15, 'font-weight': 700, fill: '#3a3029' })); }
+    for (let z = 1; z <= 12; z++) { const w = (z * 30 * Math.PI) / 180; el.push(text(cx + Math.sin(w) * (r - 23), cy - Math.cos(w) * (r - 23) + 4.5, String(z), { 'font-size': 13, 'font-weight': 700, fill: '#3a3029' })); }
     const wm = (u.min * 6 * Math.PI) / 180, wh = (((u.h % 12) + u.min / 60) * 30 * Math.PI) / 180;
-    el.push(s('line', { class: 'stundenzeiger', x1: cx, y1: cy, x2: cx + Math.sin(wh) * (r - 34), y2: cy - Math.cos(wh) * (r - 34), stroke: DUNKEL, 'stroke-width': 6, 'stroke-linecap': 'round' }),
+    el.push(s('line', { class: 'stundenzeiger', x1: cx, y1: cy, x2: cx + Math.sin(wh) * (r - 37), y2: cy - Math.cos(wh) * (r - 37), stroke: DUNKEL, 'stroke-width': 6, 'stroke-linecap': 'round' }),
       s('line', { class: 'minutenzeiger', x1: cx, y1: cy, x2: cx + Math.sin(wm) * (r - 13), y2: cy - Math.cos(wm) * (r - 13), stroke: '#a3302a', 'stroke-width': 3.5, 'stroke-linecap': 'round' }),
       s('circle', { cx, cy, r: 4.5, fill: LINIE }));
     if (u.text) el.push(text(cx, 2 * r + 34, u.text, { class: 'bildname' }));
