@@ -90308,7 +90308,14 @@
    "hilfen": {
     "tipp": "Überlege, wie weit ein Punkt auf der y-Achse nach rechts geht.",
     "loesungsschritt": "Auf einer Achse ist immer eine der beiden Koordinaten 0."
-   }
+   },
+   "nachweis": [
+    {
+     "art": "punktwahl",
+     "was": "x",
+     "wert": 0
+    }
+   ]
   },
   {
    "id": "5.5.4-K1-M-05",

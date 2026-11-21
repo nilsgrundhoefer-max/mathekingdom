@@ -1834,10 +1834,14 @@ async function weiter(seite, wahl = '#weiter') {
   // Gitterzeichnen (0.38, ADR 0032): Punkte, Linie und Kästchen, mit der Tastatur und mit dem Zeiger gesetzt.
   {
     const rahmenTest = admin.frameLocator('#tester-rahmen');
+    // Das Admin-Dashboard zeichnet sich alle paar Sekunden neu; geht dabei die getippte Kennung verloren, wird sie noch einmal eingegeben.
     const zeige = async (a) => {
-      await admin.fill('#tester-kennung', a.id);
-      await admin.press('#tester-kennung', 'Enter');
-      await admin.waitForSelector(`#tester-info[data-kennung="${a.id}"]`);
+      for (let versuch = 0; ; versuch++) {
+        await admin.fill('#tester-kennung', a.id);
+        await admin.press('#tester-kennung', 'Enter');
+        const da = await admin.waitForSelector(`#tester-info[data-kennung="${a.id}"]`, { timeout: 8000 }).catch((e) => { if (versuch >= 2) throw e; return null; });
+        if (da) break;
+      }
       await rahmenTest.locator('svg.gitterbild.eingabe').waitFor();
     };
     const tastatur = async (a, punkte) => {

@@ -56,8 +56,8 @@ test('Eine veränderte Zahl im Aufgabentext oder im Bild fällt fast immer auf',
   assert.ok(textZahl.gemeldet >= textZahl.alle * 0.85, `Textzahl: ${textZahl.gemeldet} von ${textZahl.alle}; nicht gemeldet: ${textZahl.durch}`);
   const bild = quote((a) => {
     if (!a.bild) return false;
-    // Länge und Einteilung einer Achse (Zahlenstrahl, Säulendiagramm) sind frei wählbar; die Werte darauf prüft der Test zu Kapitel 1.
-    const k = Object.keys(a.bild).find((n) => typeof a.bild[n] === 'number' && !['von', 'bis', 'schritt', 'beschriftung', 'felder', 'max', 'fein', 'ab'].includes(n));
+    // Länge und Einteilung einer Achse (Zahlenstrahl, Säulendiagramm) und die Größe eines Gitters sind frei wählbar; die Werte darauf prüft der Test zu Kapitel 1.
+    const k = Object.keys(a.bild).find((n) => typeof a.bild[n] === 'number' && !['von', 'bis', 'schritt', 'beschriftung', 'felder', 'max', 'fein', 'ab', 'b', 'h', 'lang'].includes(n));
     if (!k) return false; a.bild[k] += 1;
   }, 2);
   assert.ok(bild.alle >= 40);
@@ -136,6 +136,8 @@ test('Kapitel 5 Geometrie: verschobene Punkte, falsche Linien und falsch benannt
   const frei = (a, p) => !a.loesung.some((q) => q[0] === p[0] && q[1] === p[1]);
   // Gitterzeichnen mit Punkten: Ein Punkt der Lösung rutscht ein Kästchen weiter.
   alle((a) => a.format === 'gitter' && a.eingabe === 'punkte' && !a.offen, (a) => { const [x, y] = a.loesung[0], neu = [[x + 1, y], [x - 1, y], [x, y + 1]].find((p) => p[0] >= 0 && p[0] <= a.gitter.b && p[1] <= a.gitter.h && frei(a, p)); a.loesung[0] = neu; }, 'verschobener Punkt', 40);
+  // Lineal: Die Strecke endet einen Zentimeter weiter rechts als gerechnet.
+  alle((a) => a.bild?.art === 'lineal', (a) => { a.bild.bis += 10; }, 'verschobenes Streckenende am Lineal', 5);
   // Gefärbte Kästchen: Ein Kästchen der Lösung fehlt.
   alle((a) => a.format === 'gitter' && a.eingabe === 'zellen', (a) => { a.loesung.pop(); }, 'fehlendes Kästchen', 8);
   // Linien: Das Beispiel erfüllt die Bedingung nicht mehr.

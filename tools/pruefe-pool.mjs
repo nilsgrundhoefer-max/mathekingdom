@@ -492,7 +492,7 @@ const GEO_SONDER = {
     if (a.format === 'auswahl' && a.optionen.every((o) => koordIn(o.text).length === 1)) return stufeEin(a, (t) => pGleich(koordIn(t)[0], sch));
     return null;
   },
-  // Antworten nennen Punkte. Richtig ist jeder, der auf der Linie von `von` durch `durch` liegt (Gerade, Strahl oder Strecke) oder die Bedingung an seine Koordinaten erfüllt.
+  // Antworten nennen Punkte oder Koordinaten. Richtig ist jeder, der auf der Linie von `von` durch `durch` liegt (Gerade, Strahl oder Strecke) oder die Bedingung an seine Koordinaten erfüllt.
   punktwahl: (n, a) => {
     const g = gitterVon(a), p = gPunkt(g, n.von), q = gPunkt(g, n.durch), l = n.linie ? gLinie(g, n.linie) : null;
     const trifft = (x) => {
@@ -505,7 +505,7 @@ const GEO_SONDER = {
       }
       return { x: x[0] === n.wert, y: x[1] === n.wert, 'x=y': x[0] === x[1], 'x>y': x[0] > x[1], 'x<y': x[0] < x[1] }[n.was];
     };
-    return stufeEin(a, (t) => { if (/^Kein/.test(t)) return !(g.punkte ?? []).some((x) => ![n.von, n.durch].includes(x.n) && trifft([x.x, x.y])); const x = gPunkt(g, t.replace(/^Punkt /, '')); return x ? trifft(x) : undefined; });
+    return stufeEin(a, (t) => { if (/^Kein/.test(t)) return !(g.punkte ?? []).some((x) => ![n.von, n.durch].includes(x.n) && trifft([x.x, x.y])); const x = gPunkt(g, t.replace(/^Punkt /, '')) ?? (koordIn(t).length === 1 ? koordIn(t)[0] : null); return x ? trifft(x) : undefined; });
   },
   // Schrittmuster am Karogitter: Die Schritte u und v gehören zu senkrechten oder parallelen Linien.
   schritt: (n) => (n.lage === 'senkrecht' ? sp(n.u, n.v) === 0 : det(n.u, n.v) === 0) && (n.u[0] || n.u[1]) && (n.v[0] || n.v[1]) ? null : `die Schritte (${n.u}) und (${n.v}) sind nicht ${n.lage}`,
