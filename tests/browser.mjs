@@ -540,13 +540,13 @@ async function weiter(seite, wahl = '#weiter') {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  // Kapitel 1 ist schon gemeistert: Die Etappe führt nach Kapitel 3, um dessen Einstiegscheck und Grundlagen es hier geht.
+  // Kapitel 1 und 2 sind schon gemeistert: Die Etappe führt nach Kapitel 3, um dessen Einstiegscheck und Grundlagen es hier geht.
   {
     const t = new Date(Date.now() - 86400000).toISOString();
-    const lernziele = Object.fromEntries(pool.kapitel[0].unterkapitel.flatMap((u) => u.lernziele).map((l) => [l.id, { erreichtAm: t }]));
+    const lernziele = Object.fromEntries(pool.kapitel.slice(0, 2).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, { erreichtAm: t }]));
     const stand = { version: 2, code: '5A-EINS', klasse: '5a', erstellt: t, geaendert: t, muenzen: 0, niveau: {}, niveauMarke: {}, lernziele, versuche: [], hilferuf: null, hilferufe: [],
       wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], heftNr: 0, heftSeitCheck: 0, heftchecks: [],
-      einstieg: { '5.1': { uebersprungen: true } } };
+      einstieg: { '5.1': { uebersprungen: true }, '5.2': { uebersprungen: true } } };
     await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-EINS.json')) localStorage.setItem('mk-demo-5a/5A-EINS.json', text); }, JSON.stringify(stand));
   }
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
