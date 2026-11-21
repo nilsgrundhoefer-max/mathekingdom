@@ -16,11 +16,12 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
-  'zeilen', 'buendeln', 'urliste', 'daten'];
+  'zeilen', 'buendeln', 'urliste', 'daten',
+  'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts'];
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -166,7 +167,9 @@ function pruefeZahlenraum(a) {
   const kapitel = kapitelVon.get(a.lernziel)?.id;
   const stufe = NIVEAUS.indexOf(a.niveau);
   const raster = a.tabelle?.art === 'raster';
-  const zahlen = [...[a.text, ...(a.teile ?? []).map((t) => t.text), ...(a.optionen ?? []).filter((o) => o.richtig).map((o) => o.text)].flatMap(zahlenIn), ...(raster ? [...a.tabelle.rechnung.zahlen, a.tabelle.rechnung.ergebnis] : loesungenVon(a))];
+  // Zahlen im Zweiersystem (1011₂) sind keine Zahlen des Zehnersystems und zählen hier nicht.
+  const ohneDual = (t) => String(t).replace(/[01]+₂/g, ' ');
+  const zahlen = [...[a.text, ...(a.teile ?? []).map((t) => t.text), ...(a.optionen ?? []).filter((o) => o.richtig).map((o) => o.text)].map(ohneDual).flatMap(zahlenIn), ...(raster ? [...a.tabelle.rechnung.zahlen, a.tabelle.rechnung.ergebnis] : loesungenVon(a))];
   for (const n of zahlen) {
     let ok = true;
     // Kapitel 1: F bis 100, G bis 1000, M bis 10 000, E bis 100 000.
@@ -174,6 +177,14 @@ function pruefeZahlenraum(a) {
     if (kapitel === '5.3') ok = stufe === 0 ? n <= (raster ? 999 : 100) : n <= 20000;
     // Kapitel 4: Auf F höchstens das Einmaleins bis 12 · 12 und glatte Zehnerzahlen (Nils, 2026-11-18).
     if (kapitel === '5.4') ok = stufe === 0 ? n <= 144 || (n <= 1000 && n % 10 === 0) : stufe === 1 ? n <= 10000 : stufe === 2 ? n <= 100000 : n <= 1000000;
+    // Kapitel 2 (Nils, 2026-11-21): Hier ist die Zahlengröße selbst der Stoff.
+    const uk = a.lernziel.split('-')[0];
+    if (uk === '5.2.1') ok = n <= (stufe === 0 ? 10000 : 1000000);
+    if (uk === '5.2.2') ok = stufe === 0 ? n < 1e9 : n < 1e15;
+    if (uk === '5.2.3') ok = n <= (stufe <= 1 ? 100000 : 100000000);
+    if (uk === '5.2.4') ok = n <= [200, 1000, 100000, 100000][stufe];
+    if (uk === '5.2.5') ok = n <= [16, 32, 256, 1024][stufe];
+    if (uk === '5.2.X1') ok = n <= [20, 100, 3000, 3999][stufe];
     if (!ok) melde(a.id, `Zahl ${n} liegt außerhalb des Zahlenraums der Niveaustufe ${a.niveau}`);
   }
 }
@@ -248,7 +259,251 @@ const einteilungPasst = (text, werte) => {
 };
 const MAENGEL = { 'Der Titel fehlt.': 'titel', 'Die Einheit fehlt.': 'einheit', 'Eine Säule fehlt.': 'saeule', 'Die Achse beginnt nicht bei 0.': 'achse', 'Nichts, das Diagramm ist in Ordnung.': 'nichts' };
 
+// ---------- Kapitel 2: Natürliche Zahlen ----------
+// Alles wird hier unabhängig vom Erzeuger nachgerechnet: Stellen, Zahlwörter (vom Wort zur Zahl), Runden, Zweiersystem, römische Zahlzeichen.
+const STELLEN = ['E', 'Z', 'H', 'T', 'ZT', 'HT', 'M', 'ZM', 'HM', 'Md', 'ZMd', 'HMd', 'B', 'ZB', 'HB'];
+const STELLENWORT = { 10: 'Zehner', 100: 'Hunderter', 1000: 'Tausender', 10000: 'Zehntausender', 100000: 'Hunderttausender', 1000000: 'Million' };
+const istStufe = (x) => /^10+$/.test(String(x));
+const gerundet = (zahl, auf) => { const rest = zahl % auf; return rest * 2 >= auf ? zahl - rest + auf : zahl - rest; };
+// Vom Zahlwort zur Zahl. null, wenn das Wort keine Zahl ist.
+const WORT_EINER = { ein: 1, eins: 1, zwei: 2, drei: 3, vier: 4, fünf: 5, sechs: 6, sieben: 7, acht: 8, neun: 9, zehn: 10, elf: 11, zwölf: 12, dreizehn: 13, vierzehn: 14, fünfzehn: 15, sechzehn: 16, siebzehn: 17, achtzehn: 18, neunzehn: 19 };
+const WORT_ZEHNER = { zwanzig: 20, dreißig: 30, vierzig: 40, fünfzig: 50, sechzig: 60, siebzig: 70, achtzig: 80, neunzig: 90 };
+function unterTausend(w) {
+  if (w === '') return 0;
+  let rest = w, wert = 0;
+  const hundert = rest.match(/^(ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun)hundert/);
+  if (hundert) { wert += WORT_EINER[hundert[1]] * 100; rest = rest.slice(hundert[0].length); }
+  if (rest === '') return wert;
+  if (rest in WORT_EINER) return wert + WORT_EINER[rest];
+  if (rest in WORT_ZEHNER) return wert + WORT_ZEHNER[rest];
+  const m = rest.match(/^(ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun)und(\w+)$/u);
+  if (m && m[2] in WORT_ZEHNER) return wert + WORT_EINER[m[1]] + WORT_ZEHNER[m[2]];
+  return null;
+}
+function zahlAusWort(wort) {
+  if (wort === 'null') return 0;
+  const teile = String(wort).split(' ');
+  let wert = 0, i = 0, letzte = Infinity;
+  const GROSS = [[/^Billion(en)?$/, 1e12], [/^Milliarden?$/, 1e9], [/^Million(en)?$/, 1e6]];
+  while (i < teile.length) {
+    const stufe = GROSS.find(([muster]) => muster.test(teile[i + 1] ?? ''));
+    if (stufe) {
+      const k = teile[i] === 'eine' ? 1 : unterTausend(teile[i]);
+      if (k == null || k < 1 || stufe[1] >= letzte || (k === 1) !== /(Billion|Milliarde|Million)$/.test(teile[i + 1])) return null;
+      wert += k * stufe[1]; letzte = stufe[1]; i += 2;
+      continue;
+    }
+    if (i !== teile.length - 1) return null;
+    const [vor, nach] = teile[i].includes('tausend') ? teile[i].split('tausend') : ['', teile[i]];
+    const t = teile[i].includes('tausend') ? unterTausend(vor) : 0, e = unterTausend(nach);
+    if (t == null || e == null || (teile[i].includes('tausend') && t < 1) || t + e === 0) return null;
+    // Am Wortende heißt es „eins“, davor „ein“.
+    if (/ein$/.test(nach) || /eins/.test(vor) || /eins(?!$)/.test(nach)) return null;
+    wert += t * 1000 + e; i++;
+  }
+  return wert;
+}
+// Römische Zahlzeichen: Wert einer Zeichenfolge und die eine gültige Schreibweise einer Zahl.
+const ROEM_WERT = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+function roemischZuZahl(t) {
+  if (!/^[IVXLCDM]+$/.test(t)) return null;
+  const w = [...t].map((c) => ROEM_WERT[c]);
+  return w.reduce((sum, x, i) => (x < (w[i + 1] ?? 0) ? sum - x : sum + x), 0);
+}
+function zahlZuRoemisch(n) {
+  const stelle = (z, eins, fuenf, zehn) => [``, eins, eins + eins, eins + eins + eins, eins + fuenf, fuenf, fuenf + eins, fuenf + eins + eins, fuenf + eins + eins + eins, eins + zehn][z];
+  if (!Number.isInteger(n) || n < 1 || n > 3999) return null;
+  return 'M'.repeat(Math.floor(n / 1000)) + stelle(Math.floor(n / 100) % 10, 'C', 'D', 'M') + stelle(Math.floor(n / 10) % 10, 'X', 'L', 'C') + stelle(n % 10, 'I', 'V', 'X');
+}
+const roemischGueltig = (t) => { const w = roemischZuZahl(t); return w != null && zahlZuRoemisch(w) === t; };
+const dualZuZahl = (t) => (/^[01]+$/.test(t) ? [...t].reduce((w, c) => w * 2 + Number(c), 0) : null);
+// Wert einer Karte oder Antwort in einem der drei Zahlsysteme.
+const wertIn = (text, system) => {
+  const t = String(text).trim();
+  if (system === 'roemisch') return roemischZuZahl(t);
+  if (system === 'dual') return dualZuZahl(t.replace(/₂$/, ''));
+  if (system === 'wort') return zahlAusWort(t);
+  return /^\d[\d ]*$/.test(t) ? zahlAus(t) : null;
+};
+// Was die Aufgabe dem Kind zeigt: Zahlen in Text, Antworten, Bild, Tabelle, Zahlenstrahl und Karten.
+const gezeigt = (a) => new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...bildZahlen(a.bild), ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.strahl), ...(a.karten ?? []).flatMap(zahlenIn), ...zahlenImObjekt(a.daten)]);
+const strahlVon = (a) => a.strahl ?? (a.bild?.art === 'zahlenstrahl' ? a.bild : null);
+const schaetzSumme = (b) => b.felder.flat().reduce((x, y) => x + y, 0);
+// Jede Antwort wird einzeln eingestuft: richtig genau dann, wenn `trifft` es sagt. undefined heißt: Die Antwort lässt sich nicht lesen.
+function stufeEin(a, trifft, mindestens = 1) {
+  let richtige = 0;
+  for (const o of a.optionen ?? []) {
+    const w = trifft(o.text);
+    if (w === undefined) return `Antwort „${o.text}“ lässt sich nicht prüfen`;
+    if (w !== o.richtig) return `Antwort „${o.text}“ ist falsch eingestuft`;
+    if (w) richtige++;
+  }
+  return richtige >= mindestens ? null : 'keine Antwort trifft zu';
+}
+
 const SONDER = {
+  // Kapitel 2: die Ziffer an einer Stelle der Zahl.
+  stelle: (n, a) => {
+    const i = STELLEN.indexOf(n.stelle);
+    if (i < 0) return `unbekannte Stelle ${n.stelle}`;
+    if (!gezeigt(a).has(n.zahl)) return `${n.zahl} steht nicht in der Aufgabe`;
+    const z = Math.floor(n.zahl / 10 ** i) % 10;
+    return z === n.ziffer ? null : `an der Stelle ${n.stelle} von ${n.zahl} steht ${z}, nicht ${n.ziffer}`;
+  },
+  // Wie viele Stellen oder wie viele Nullen eine Zahl hat.
+  ziffernzahl: (n) => {
+    const t = String(n.zahl), ist = n.was === 'nullen' ? [...t].filter((c) => c === '0').length : t.length;
+    return ist === n.anzahl ? null : `${n.zahl} hat ${ist} ${n.was === 'nullen' ? 'Nullen' : 'Stellen'}, nicht ${n.anzahl}`;
+  },
+  // Zahlwort und Zahl gehören zusammen. Bei einer Auswahl ist genau die Antwort richtig, die dieselbe Zahl nennt.
+  zahlwort: (n, a) => {
+    const w = zahlAusWort(n.wort);
+    if (w !== n.zahl) return `„${n.wort}“ ist ${w ?? 'kein Zahlwort'}, nicht ${n.zahl}`;
+    const texte = sichtbareTexte(a).join('\n');
+    if (!texte.includes(n.wort) && !texte.toLowerCase().includes(n.wort.toLowerCase())) return `„${n.wort}“ steht nicht in der Aufgabe`;
+    if (a.format === 'auswahl') return stufeEin(a, (t) => { const x = /^\d[\d ]*$/.test(t) ? zahlAus(t) : zahlAusWort(t.charAt(0).toLowerCase() + t.slice(1)) ?? zahlAusWort(t); return x == null ? undefined : x === n.zahl; });
+    if (a.format === 'zuordnen' && !a.paare.some((p) => [p.links, p.rechts].some((x) => x.toLowerCase() === n.wort.toLowerCase()) && [p.links, p.rechts].some((x) => /^\d[\d ]*$/.test(x) && zahlAus(x) === n.zahl))) return `kein Paar verbindet „${n.wort}“ mit ${n.zahl}`;
+    return null;
+  },
+  // Zwei Zahlen vergleichen. Die Antworten einer Auswahl sind die Zeichen <, > und =.
+  vergleich: (n, a) => {
+    const [l, r] = [wertIn(n.links, n.system), wertIn(n.rechts, n.system)];
+    if (l == null || r == null) return 'Zahlen lassen sich nicht lesen';
+    const zeichen = l < r ? '<' : l > r ? '>' : '=';
+    if (zeichen !== n.zeichen) return `${n.links} ${zeichen} ${n.rechts}, nicht ${n.zeichen}`;
+    const texte = sichtbareTexte(a).join('\n') + JSON.stringify(a.bild ?? '');
+    for (const x of [n.links, n.rechts]) if (!norm(texte).includes(norm(x)) && !bildZahlen(a.bild).includes(wertIn(x, n.system))) return `${x} steht nicht in der Aufgabe`;
+    if (a.format === 'auswahl' && a.optionen.every((o) => ['<', '>', '='].includes(o.text))) return stufeEin(a, (t) => t === zeichen);
+    return null;
+  },
+  // Antworten der Form „412 < 421 < 430“: Richtig ist genau die Kette, in der jeder Vergleich stimmt.
+  ketten: (n, a) => stufeEin(a, (t) => {
+    const teile = t.split(/ ([<>]) /);
+    if (teile.length < 3) return undefined;
+    for (let i = 1; i < teile.length; i += 2) {
+      const [l, r] = [wertIn(teile[i - 1], n.system), wertIn(teile[i + 1], n.system)];
+      if (l == null || r == null) return undefined;
+      if (teile[i] === '<' ? !(l < r) : !(l > r)) return false;
+    }
+    return true;
+  }),
+  // Ordnen: Die Lösung ist die Reihenfolge vom kleinsten zum größten Wert (oder umgekehrt), so wie der Text es verlangt.
+  ordnung: (n, a) => {
+    if (a.format !== 'ordnen') return 'braucht das Format ordnen';
+    const werte = a.loesung.map((k) => wertIn(k, n.system));
+    if (werte.some((w) => w == null)) return 'eine Karte lässt sich nicht lesen';
+    for (let i = 1; i < werte.length; i++) if (n.richtung === 'auf' ? !(werte[i - 1] < werte[i]) : !(werte[i - 1] > werte[i])) return `Reihenfolge stimmt nicht bei ${a.loesung[i - 1]} und ${a.loesung[i]}`;
+    const verlangt = /kleinsten/.test(a.text) ? 'auf' : /größten/.test(a.text) ? 'ab' : null;
+    return verlangt === n.richtung ? null : 'der Text verlangt eine andere Richtung (Beginne mit der kleinsten oder der größten Zahl)';
+  },
+  // Die größte oder kleinste von mehreren Zahlen. Die Zahlen sind die Antworten oder stehen im Text.
+  extremwert: (n, a) => {
+    const zahlen = n.zahlen ?? (a.optionen ?? []).map((o) => wertIn(o.text, n.system));
+    if (zahlen.length < 2 || zahlen.some((x) => x == null)) return 'Zahlen lassen sich nicht lesen';
+    if (n.zahlen) { const da = gezeigt(a); for (const x of n.zahlen) if (!da.has(x)) return `${x} steht nicht in der Aufgabe`; }
+    const ziel = n.was === 'groesste' ? Math.max(...zahlen) : Math.min(...zahlen);
+    if (zahlen.filter((x) => x === ziel).length !== 1) return 'der Wert kommt doppelt vor';
+    if (ziel !== n.wert) return `${n.was === 'groesste' ? 'größte' : 'kleinste'} Zahl ist ${ziel}, nicht ${n.wert}`;
+    if (a.format === 'auswahl' && n.system) return stufeEin(a, (t) => wertIn(t, n.system) === ziel);
+    return null;
+  },
+  // Zahlenstrahl: Der Pfeil zeigt auf den Wert (ablesen), oder der Wert aus dem Text liegt auf einem Teilstrich (markieren).
+  strahl: (n, a) => {
+    const st = strahlVon(a);
+    if (!st) return 'kein Zahlenstrahl';
+    if (n.wert < st.von || n.wert > st.bis || (n.wert - st.von) % st.schritt !== 0) return `${n.wert} liegt nicht auf einem Teilstrich`;
+    if (a.format === 'zahlenstrahl' && a.eingabe === 'markieren') return sichtbareTexte(a).flatMap(zahlenIn).includes(n.wert) || n.wort ? null : `${n.wert} steht nicht im Text`;
+    return st.pfeil === n.wert ? null : `der Pfeil zeigt auf ${st.pfeil}, nicht auf ${n.wert}`;
+  },
+  // So groß ist der Schritt von Teilstrich zu Teilstrich.
+  schrittweite: (n, a) => (strahlVon(a)?.schritt === n.wert ? null : `der Schritt ist ${strahlVon(a)?.schritt}, nicht ${n.wert}`),
+  // Runden auf eine Stelle. Nennt der Text die Stelle nicht mit Namen, steht `frei: true` dabei (sinnvolles Runden).
+  runden: (n, a) => {
+    if (!istStufe(n.auf) || n.auf < 10) return `${n.auf} ist keine Rundungsstelle`;
+    const w = gerundet(n.zahl, n.auf);
+    if (w !== n.wert) return `${n.zahl} auf ${n.auf} gerundet ist ${w}, nicht ${n.wert}`;
+    if (!gezeigt(a).has(n.zahl)) return `${n.zahl} steht nicht in der Aufgabe`;
+    const texte = [...sichtbareTexte(a), ...(a.tabelle?.kopf ?? [])].join(' ');
+    if (!n.frei && STELLENWORT[n.auf] && !new RegExp(`(?<![A-Za-zäöü])${STELLENWORT[n.auf]}`).test(texte)) return `der Text nennt die Stelle ${STELLENWORT[n.auf]} nicht`;
+    return null;
+  },
+  // Die kleinste und die größte Zahl, die gerundet den Wert ergibt.
+  rundungsgrenze: (n, a) => {
+    if (!istStufe(n.auf) || n.wert % n.auf !== 0) return 'Wert passt nicht zur Rundungsstelle';
+    let k = n.wert, g = n.wert;
+    while (k > 0 && gerundet(k - 1, n.auf) === n.wert) k--;
+    while (gerundet(g + 1, n.auf) === n.wert) g++;
+    if (n.kleinste != null && n.kleinste !== k) return `kleinste Zahl ist ${k}, nicht ${n.kleinste}`;
+    if (n.groesste != null && n.groesste !== g) return `größte Zahl ist ${g}, nicht ${n.groesste}`;
+    return gezeigt(a).has(n.wert) ? null : `${n.wert} steht nicht in der Aufgabe`;
+  },
+  // Jede Antwort ist eine Zahl. Richtig ist sie genau dann, wenn sie gerundet den Wert ergibt.
+  rundenwahl: (n, a) => (istStufe(n.auf) ? stufeEin(a, (t) => { const x = wertIn(t); return x == null ? undefined : gerundet(x, n.auf) === n.wert; }) : 'keine Rundungsstelle'),
+  // Auf welche Stelle wurde gerundet? Genau eine der genannten Stellen passt.
+  rundungsstelle: (n, a) => {
+    if (gerundet(n.zahl, n.auf) !== n.wert) return `${n.zahl} auf ${n.auf} gerundet ist nicht ${n.wert}`;
+    const da = gezeigt(a);
+    if (!da.has(n.zahl) || !da.has(n.wert)) return 'Zahlen stehen nicht in der Aufgabe';
+    return stufeEin(a, (t) => { const auf = Object.keys(STELLENWORT).find((k) => t.startsWith(STELLENWORT[k])); return auf == null ? undefined : gerundet(n.zahl, Number(auf)) === n.wert; });
+  },
+  // Zweiersystem: Zeichenfolge und Wert gehören zusammen.
+  dual: (n, a) => {
+    const w = dualZuZahl(n.dual);
+    if (w !== n.wert) return `${n.dual} im Zweiersystem ist ${w}, nicht ${n.wert}`;
+    if (a.format === 'zeichen' && !n.nurWert && a.loesung !== n.dual) return 'Lösung ist nicht diese Zeichenfolge';
+    if (a.format === 'auswahl' && !n.nurWert) return stufeEin(a, (t) => { const x = /₂$/.test(t) ? wertIn(t, 'dual') : wertIn(t); return x == null ? undefined : x === w; });
+    return null;
+  },
+  // Römische Zahlzeichen: Zeichenfolge und Wert gehören zusammen, und die Schreibweise ist die gültige.
+  roemisch: (n, a) => {
+    if (zahlZuRoemisch(n.wert) !== n.zeichen) return `${n.wert} schreibt man ${zahlZuRoemisch(n.wert)}, nicht ${n.zeichen}`;
+    if (a.format === 'zeichen' && !n.nurWert && a.loesung !== n.zeichen) return 'Lösung ist nicht diese Zeichenfolge';
+    if (a.format !== 'zeichen' && !sichtbareTexte(a).join(' ').includes(n.zeichen) && !sichtbareTexte(a).flatMap(zahlenIn).includes(n.wert)) return `${n.zeichen} steht nicht in der Aufgabe`;
+    if (a.format === 'auswahl' && !n.nurWert) return stufeEin(a, (t) => { const x = /^[IVXLCDM]+$/.test(t) ? (roemischGueltig(t) ? roemischZuZahl(t) : -1) : wertIn(t); return x == null ? undefined : x === n.wert; });
+    return null;
+  },
+  // Jede Antwort ist eine Zeichenfolge. Richtig sind genau die gültig geschriebenen (oder mit `falsche: true` die ungültigen).
+  roemischGueltig: (n, a) => stufeEin(a, (t) => (/^[IVXLCDM]+$/.test(t) ? roemischGueltig(t) !== Boolean(n.falsche) : undefined)),
+  // Stellenwerttafel: Die Ziffern der Zeile (vorgegeben oder einzutragen) ergeben die Zahl. Bild oder Tabelle zum Eintragen.
+  tafel: (n, a) => {
+    const basis = n.basis ?? 10;
+    const lies = (ziffern) => ziffern.reduce((w, z) => w * basis + (z ?? 0), 0);
+    if (a.tabelle?.art === 'stellentafel') {
+      const zeile = a.tabelle.zeilen[n.zeile ?? 0];
+      const ziffern = zeile.map((c) => (typeof c === 'object' ? a.luecken?.[c.luecke]?.loesung : c === '' ? null : Number(c)));
+      if (ziffern.some((z) => z != null && (!Number.isInteger(z) || z < 0 || z >= basis))) return 'Feld mit mehr als einer Ziffer';
+      if (lies(ziffern) !== n.zahl) return `die Tafel zeigt ${lies(ziffern)}, nicht ${n.zahl}`;
+      // Führende Stellen bleiben leer, innere Nullen stehen da.
+      const erste = ziffern.findIndex((z) => z != null);
+      if (ziffern.slice(erste).some((z) => z == null) || (ziffern[erste] === 0 && ziffern.length - erste > 1 && basis === 10)) return 'leeres Feld mitten in der Zahl oder führende Null';
+      if (!gleich(n.ziffern, ziffern.filter((z) => z != null))) return 'Ziffern im Nachweis passen nicht zur Tafel';
+      return null;
+    }
+    if (a.bild?.art !== 'tafel') return 'keine Stellenwerttafel';
+    const wert = lies(a.bild.werte.map(wertVon));
+    return wert === n.zahl ? null : `die Tafel zeigt ${wert}, nicht ${n.zahl}`;
+  },
+  // Schätzbild: Anzahl im markierten Feld, Zahl der Felder, alle zusammen, das vollste oder leerste Feld.
+  bildwert: (n, a) => {
+    const b = a.bild;
+    if (b?.art !== 'schaetzbild') return 'kein Schätzbild';
+    const alle = b.felder.flat();
+    const ist = { feld: b.markiert ? b.felder[b.markiert[0]]?.[b.markiert[1]] : undefined, felder: alle.length, gesamt: schaetzSumme(b), groesstes: Math.max(...alle), kleinstes: Math.min(...alle),
+      grobfelder: b.grob ? b.grob[0] * b.grob[1] : undefined }[n.was];
+    return ist === n.wert ? null : `${n.was} ist ${ist}, nicht ${n.wert}`;
+  },
+  // Jede Antwort ist eine Zahl. Richtig ist genau die, die am nächsten am Ziel liegt (ohne Ziel: an der wahren Anzahl im Schätzbild).
+  naechste: (n, a) => {
+    const ziel = n.ziel ?? (a.bild?.art === 'schaetzbild' ? schaetzSumme(a.bild) : null);
+    if (ziel == null) return 'kein Ziel';
+    if (n.ziel != null && !gezeigt(a).has(n.ziel) && !n.frei) return `${n.ziel} steht nicht in der Aufgabe`;
+    const abstand = (t) => { const x = wertIn(t.replace(/^(etwa|rund|ungefähr) /, '')); return x == null ? null : Math.abs(x - ziel); };
+    const alle = (a.optionen ?? []).map((o) => abstand(o.text));
+    if (alle.some((x) => x == null)) return 'eine Antwort ist keine Zahl';
+    const klein = Math.min(...alle);
+    if (alle.filter((x) => x === klein).length !== 1) return 'zwei Antworten liegen gleich nah';
+    return stufeEin(a, (t) => abstand(t) === klein);
+  },
   // Kapitel 1: Ein Wert wird aus dem Bild, der Liste, der Tabelle oder dem Diagramm abgelesen.
   ablesen: (n, a) => {
     const m = datenVon(a, n.quelle, n.spalte);
@@ -612,6 +867,8 @@ const ERGEBNIS = {
   ziffernTeilbar: (n) => n.anzahl ?? n.ziffern, ziffernZahlen: (n) => n.anzahl, grenzVielfaches: (n) => n.zahl, vielfachesZwischen: (n) => n.zahl,
   grenzRest: (n) => n.zahl, anzahlMitRest: (n) => n.anzahl, kleinsteMitResten: (n) => n.zahl, teilerZwischen: (n) => n.teiler,
   ablesen: (n) => n.wert, schluessel: (n) => n.wert, linienabstand: (n) => n.wert,
+  stelle: (n) => n.ziffer, ziffernzahl: (n) => n.anzahl, zahlwort: (n) => n.zahl, extremwert: (n) => n.wert, strahl: (n) => n.wert, schrittweite: (n) => n.wert, runden: (n) => n.wert,
+  rundungsgrenze: (n) => [n.kleinste, n.groesste].filter((x) => x != null), dual: (n) => n.wert, roemisch: (n) => n.wert, tafel: (n) => n.zahl, bildwert: (n) => n.wert,
   kombination: (n) => n.anzahl, uebertrag: (n) => n.aufgaben.filter((_, i) => n.mit[i]).map((x) => x[0]), ersteUnterschreitung: (n) => n.anzahl, quadrat: (n) => n.wurzel, zahlenpaar: (n) => n.paar,
 };
 const zahlenImObjekt = (x) => (typeof x === 'number' ? [x] : typeof x === 'string' ? zahlenIn(x) : x && typeof x === 'object' ? Object.values(x).flatMap(zahlenImObjekt) : []);
@@ -634,16 +891,19 @@ function bildZahlen(b) {
     case 'streifen': return [...w(b.ganz), ...b.teile.flatMap(w)];
     case 'vergleich': return [...w(b.oben.wert), ...w(b.unten.wert), ...w(b.unterschied)];
     case 'zehnerfeld': return [b.felder, b.belegt, b.dazu ?? 0, b.belegt + (b.dazu ?? 0), b.felder - b.belegt];
-    case 'zahlenstrahl': return [b.von, b.bis, ...(b.start != null ? [b.start] : []), ...(b.spruenge ?? []).flatMap((s) => [s.von, s.nach, Math.abs(s.nach - s.von)])];
+    case 'zahlenstrahl': return [b.von, b.bis, ...(b.punkte ?? []), ...(b.start != null ? [b.start] : []), ...(b.spruenge ?? []).flatMap((s) => [s.von, s.nach, Math.abs(s.nach - s.von)])];
     case 'saeulen': return [b.max, b.schritt, b.fein ?? b.schritt, b.ab ?? 0, ...b.saeulen.flatMap((x) => w(x.wert))];
     case 'bilddiagramm': return [b.je, ...b.zeilen.flatMap((x) => w(x.wert))];
     case 'strichliste': return b.zeilen.map(strichzahl);
+    case 'tafel': { const z = b.werte.filter((x) => !istFrage(x)).map((x) => x ?? 0); return [...(b.weitere ?? []).flatMap((zeile) => [...zeile.map((x) => x ?? 0), zeile.reduce((s, x) => s * (b.basis ?? 10) + (x ?? 0), 0)]), ...z, b.werte.some(istFrage) ? null : b.werte.reduce((s, x) => s * (b.basis ?? 10) + (x ?? 0), 0), ...b.spalten.flatMap(zahlenIn)].filter((x) => x != null); }
+    case 'schaetzbild': { const alle = b.felder.flat(), n = alle.reduce((x, y) => x + y, 0); return [alle.length, b.felder.length, b.felder[0].length, n, ...(b.markiert ? [b.felder[b.markiert[0]][b.markiert[1]]] : []), ...(b.grob ? [b.grob[0] * b.grob[1]] : [])]; }
+    case 'zeichentafel': return b.zeichen.map((z) => ({ I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 })[z]);
     default: return [];
   }
 }
 
 function pruefeNachweis(a) {
-  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen'].includes(a.format);
+  const pflicht = ['zahl', 'luecken', 'tabelle', 'sachaufgabe', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen'].includes(a.format);
   if (!a.nachweis) {
     if (pflicht) melde(a.id, 'Nachweis fehlt');
     if ((a.optionen ?? []).some((o) => polaritaet(o.text) !== null) && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -657,7 +917,7 @@ function pruefeNachweis(a) {
   const frei = a.format === 'auswahl' || a.format === 'zuordnen'; // Beispiele zu einer allgemeinen Aussage sind frei wählbar
   const eingesetzt = a.format === 'luecken' ? a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken?.[n]?.loesung ?? '?') : '';
   const bekannt = new Set([10, 100, 1000, ...sichtbareTexte(a).flatMap(zahlenIn), ...bildZahlen(a.bild),
-    ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenIn(eingesetzt), ...zahlenImObjekt(a.daten),
+    ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenIn(eingesetzt), ...zahlenImObjekt(a.daten), ...(a.karten ?? []).flatMap(zahlenIn),
     ...(a.format === 'strichliste' ? a.zeilen.map((z) => z.start ?? 0) : []),
     ...(['luecken', 'tabelle'].includes(a.format) ? loesungen : []),
     // Ab M gehören kleine Zahlen zum Text („doppelt“, „dreimal“, „die Hälfte“).
@@ -721,7 +981,7 @@ function pruefeNachweis(a) {
   // Jede Lösung muss sich aus dem Nachweis ergeben.
   if (a.tabelle?.art === 'raster') return;
   for (const l of loesungen) {
-    const menge = ['zahl', 'sachaufgabe', 'diagramm', 'zahlenstrahl', 'strichliste', 'zeichnen'].includes(a.format) ? ergebnisse : vorkommen;
+    const menge = ['zahl', 'sachaufgabe', 'diagramm', 'zahlenstrahl', 'strichliste', 'zeichnen', 'schaetzen'].includes(a.format) ? ergebnisse : vorkommen;
     if (!menge.has(l)) melde(a.id, `Lösung ${l} ergibt sich nicht aus dem Nachweis`);
   }
   // Lücken ohne eigene Gleichung: Fragt die Lücke nach einem Fachbegriff („Der erste Summand ist ▢“), zählt die Gleichung im Text. Sonst muss die Zahl ein Ergebnis im Nachweis sein.
@@ -735,6 +995,10 @@ function pruefeNachweis(a) {
       if (namen[stelle] !== frage[2] || zahlen[stelle] !== wert) melde(a.id, `Lücke ${n}: ${frage[2]} ist ${zahlen[stelle] ?? 'in der Gleichung nicht zu finden'}, nicht ${wert}`);
     } else if (!ergebnisse.has(wert)) melde(a.id, `Lücke ${n}: ${wert} ist kein Ergebnis im Nachweis`);
   }
+  // Zwei Lücken ohne eigene Gleichung mit derselben Lösung: Dann ließe sich eine falsche Lösung hinter dem Ergebnis der anderen verstecken.
+  { const frei = (a.lueckenOhneGleichung ?? []).filter((n) => ergebnisse.has(a.luecken[n].loesung)).map((n) => a.luecken[n].loesung);
+    // Ausnahme: Division mit Rest, dort dürfen Quotient und Rest gleich sein.
+    if (new Set(frei).size !== frei.length && !(a.nachweis ?? []).some((z) => typeof z === 'string' && / Rest /.test(z))) melde(a.id, 'zwei Lücken ohne eigene Gleichung haben dieselbe Lösung'); }
   // Die Lösung ist das Endergebnis, kein Zwischenergebnis: Sie wird nicht in einer späteren Rechnung zu etwas Neuem weiterverrechnet.
   if (a.format === 'zahl' && !a.nachweis.some((n) => typeof n === 'object' && [ERGEBNIS[n.art]?.(n) ?? []].flat().includes(a.loesung))) {
     const zeilen = offen.filter((z) => z.fertig);
@@ -745,8 +1009,11 @@ function pruefeNachweis(a) {
   // Jede Zahl aus dem Text gehört zur Rechnung: Sie steht im Nachweis oder im Bild, oder sie ist als Hilfszahl mit Grund genannt.
   const benutzt = new Set([...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild), ...zahlenImObjekt(a.tabelle), ...zahlenImObjekt(a.diagramm), ...zahlenImObjekt(a.strahl), ...zahlenImObjekt(a.daten)]);
   const mitUrteil = a.nachweis.some((n) => n?.art === 'urteil');
-  if (!mitUrteil) for (const z of textZahlen(a)) if (!benutzt.has(z)) melde(a.id, `Zahl ${z} aus dem Text kommt im Nachweis nicht vor`);
-  for (const o of (a.optionen ?? []).filter((x) => x.richtig && /^[\d\u00a0]+$/.test(x.text))) {
+  // Kapitel 2: Die 0 ist dort Stoff („von 0 bis 1000“, „eine 0 an der Zehnerstelle“) und keine Rechenzahl.
+  const nullFrei = a.lernziel.startsWith('5.2.');
+  if (!mitUrteil) for (const z of textZahlen(a)) if (!benutzt.has(z) && !(z === 0 && nullFrei)) melde(a.id, `Zahl ${z} aus dem Text kommt im Nachweis nicht vor`);
+  const antwortenGeprueft = a.nachweis.some((n) => ['naechste', 'rundenwahl'].includes(n?.art)); // dort stuft der Prüfer jede Antwort selbst ein
+  for (const o of antwortenGeprueft ? [] : (a.optionen ?? []).filter((x) => x.richtig && /^[\d\u00a0]+$/.test(x.text))) {
     if (!vorkommen.has(zahlAus(o.text))) melde(a.id, `richtige Antwort ${o.text} ergibt sich nicht aus dem Nachweis`);
   }
   if (a.format === 'auswahl') pruefeAuswahlNachweis(a, ergebnisse);
@@ -791,7 +1058,7 @@ function pruefeAblesefrage(a) {
 }
 
 // Auswahlaufgaben: Die richtige Antwort muss an den Nachweis gebunden sein.
-const ARTEN_AUSWAHL = ['quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
+const ARTEN_AUSWAHL = ['zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
   'zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen'];
 function pruefeAuswahlNachweis(a, ergebnisse) {
   const arten = a.nachweis.filter((n) => typeof n === 'object').map((n) => n.art);
@@ -800,7 +1067,7 @@ function pruefeAuswahlNachweis(a, ergebnisse) {
   // Zahlen in der richtigen Antwort stehen im Text oder im Nachweis.
   const erlaubt = new Set([...zahlenIn(a.text), ...zahlenImObjekt(a.nachweis), ...bildZahlen(a.bild)]);
   // Rechnet eine Sonderart jede Antwort selbst nach, sind deren Zahlen schon geprüft.
-  const selbstGeprueft = arten.some((x) => ['gleichungen', 'wert', 'extrem', 'zahlenwahl', 'paarsumme', 'gleicheWerte', 'restBleibt', 'quotientUeber', 'ueberschlagVon', 'datenwahl', 'einteilung', 'zeile', 'mangel', 'rangfolge'].includes(x));
+  const selbstGeprueft = arten.some((x) => ['zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'extremwert', 'gleichungen', 'wert', 'extrem', 'zahlenwahl', 'paarsumme', 'gleicheWerte', 'restBleibt', 'quotientUeber', 'ueberschlagVon', 'datenwahl', 'einteilung', 'zeile', 'mangel', 'rangfolge'].includes(x));
   if (!selbstGeprueft) for (const o of richtige) for (const z of zahlenIn(o.text)) if (!erlaubt.has(z)) melde(a.id, `Zahl ${z} in der richtigen Antwort kommt weder im Text noch im Nachweis vor`);
   // Antworten mit Zustimmung oder Ablehnung brauchen ein Urteil.
   if (a.optionen.some((o) => polaritaet(o.text) !== null) && !arten.includes('urteil') && !a.begriffGeprueft) melde(a.id, 'Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
@@ -937,6 +1204,12 @@ function pruefeBild(a) {
         if (s.von === s.nach) m('Sprung ohne Länge');
       }
       if (b.start != null && b.spruenge?.length && b.spruenge[0].von !== b.start) m('erster Sprung beginnt nicht am Start');
+      // Markierte Zahlen (Kapitel 2) liegen im Bereich des Strahls und kommen in der Aufgabe vor.
+      if (b.punkte) {
+        const da = new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...(a.karten ?? []).flatMap(zahlenIn)]);
+        if (!Array.isArray(b.punkte) || b.punkte.length < 1 || b.punkte.length > 6 || new Set(b.punkte).size !== b.punkte.length) m('Punkte passen nicht');
+        else for (const p of b.punkte) { if (!(p >= b.von && p <= b.bis)) m(`Punkt ${p} liegt nicht auf dem Strahl`); if (!da.has(p)) m(`Punkt ${p} kommt in der Aufgabe nicht vor`); }
+      }
       break;
     }
     case 'saeulen': {
@@ -982,13 +1255,65 @@ function pruefeBild(a) {
       }
       break;
     }
+    case 'tafel': {
+      const basis = b.basis ?? 10;
+      if (![10, 2].includes(basis)) { m('Basis muss 10 oder 2 sein'); break; }
+      if (!Array.isArray(b.spalten) || !Array.isArray(b.werte) || b.spalten.length !== b.werte.length || b.spalten.length < 2 || b.spalten.length > 15) { m('Spalten und Werte passen nicht'); break; }
+      // Die Spalten heißen wie die Stellenwerte: E, Z, H, T … oder im Zweiersystem 1, 2, 4, 8 …
+      const soll = basis === 2 ? b.spalten.map((_, i) => String(2 ** (b.spalten.length - 1 - i))) : STELLEN.slice(0, b.spalten.length).reverse();
+      if (!gleich(b.spalten, soll)) m(`Spalten heißen ${b.spalten.join(', ')} statt ${soll.join(', ')}`);
+      if (b.gruppen && b.gruppen.reduce((n, g) => n + g.spalten, 0) !== b.spalten.length) m('Dreierblöcke passen nicht zu den Spalten');
+      if (b.gruppen && b.gruppen.slice(1).some((g) => g.spalten !== 3)) m('ein Block hat nicht drei Stellen');
+      const werte = b.werte.map((x) => (istFrage(x) ? (unbekannte.push(x.wert), x.wert) : x));
+      if (werte.some((x) => x != null && !ganz(x, 0, b.plaettchen && basis === 10 ? 19 : basis - 1))) m('Wert passt nicht in ein Feld');
+      const erste = werte.findIndex((x) => x != null);
+      if (erste < 0 || (basis === 10 && !b.plaettchen && werte.slice(erste).some((x) => x == null))) m('leeres Feld mitten in der Zahl');
+      if (!b.werte.some(istFrage)) kern.push(werte.reduce((s, x) => s * basis + (x ?? 0), 0));
+      // Weitere Zeilen zum Vergleichen: gleich breit, lückenlos, und jede Zahl kommt in der Aufgabe vor.
+      for (const zeile of b.weitere ?? []) {
+        const da = new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...(a.karten ?? []).flatMap(zahlenIn)]);
+        if (!Array.isArray(zeile) || zeile.length !== b.spalten.length || zeile.some((x) => x != null && !ganz(x, 0, basis - 1))) { m('weitere Zeile passt nicht zu den Spalten'); continue; }
+        const e = zeile.findIndex((x) => x != null);
+        if (e < 0 || zeile.slice(e).some((x) => x == null)) m('leeres Feld mitten in der Zahl');
+        const wert = zeile.reduce((s, x) => s * basis + (x ?? 0), 0);
+        if (!da.has(wert)) m(`Zahl ${wert} der Tafel kommt in der Aufgabe nicht vor`);
+      }
+      if (b.weitere && !new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...(a.karten ?? []).flatMap(zahlenIn)]).has(werte.reduce((s, x) => s * basis + (x ?? 0), 0))) m('Zahl der ersten Zeile kommt in der Aufgabe nicht vor');
+      break;
+    }
+    case 'zeichentafel': {
+      // Spickzettel der römischen Zahlzeichen: eine Auswahl in der Reihenfolge I, V, X, L, C, D, M.
+      const alle = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+      if (!Array.isArray(b.zeichen) || b.zeichen.length < 2 || b.zeichen.some((z) => !alle.includes(z)) || !gleich(b.zeichen, alle.filter((z) => b.zeichen.includes(z)))) m('Zeichen passen nicht');
+      // Die Zeichen der Aufgabe stehen alle auf dem Spickzettel.
+      else for (const z of new Set([a.text, ...(a.optionen ?? []).map((o) => o.text), ...(a.karten ?? []), typeof a.loesung === 'string' ? a.loesung : ''].flatMap((t) => String(t).match(/\b[IVXLCDM]+\b/g) ?? []).join(''))) if (!b.zeichen.includes(z)) m(`Zeichen ${z} fehlt auf der Zeichentafel`);
+      break;
+    }
+    case 'schaetzbild': {
+      if (!['punkt', 'schaf', 'apfel', 'kind', 'vogel', 'stern'].includes(b.symbol)) m(`unbekanntes Symbol ${b.symbol}`);
+      if (!Array.isArray(b.felder) || b.felder.length < 2 || b.felder.length > 6 || b.felder.some((z) => !Array.isArray(z) || z.length !== b.felder[0].length) || b.felder[0].length < 2 || b.felder[0].length > 8) { m('Felder passen nicht (2 bis 6 Reihen, 2 bis 8 Spalten)'); break; }
+      const alle = b.felder.flat(), n = alle.reduce((x, y) => x + y, 0), stufe = NIVEAUS.indexOf(a.niveau);
+      if (alle.some((x) => !ganz(x, 0, 40))) m('zu viele Symbole in einem Feld');
+      if (typeof b.saat !== 'string' || !/^\d+$/.test(b.saat)) m('Saat fehlt');
+      // Raster (Nils, 2026-11-21): auf F und G fest eingezeichnet, ab M blendet das Kind es selbst ein.
+      if (!['fest', 'wahl', 'ohne'].includes(b.raster)) m('Raster muss fest, wahl oder ohne sein');
+      if (stufe <= 1 && b.raster !== 'fest') m(`auf ${a.niveau} ist das Raster fest eingezeichnet`);
+      if (stufe >= 2 && b.raster === 'fest' && !b.fest) m(`ab M blendet das Kind das Raster selbst ein`);
+      if (b.gezaehlt && (stufe !== 0 || !b.markiert)) m('die Anzahl im Feld steht nur auf F dabei, und nur am markierten Feld');
+      if (b.markiert && !(ganz(b.markiert[0], 0, b.felder.length - 1) && ganz(b.markiert[1], 0, b.felder[0].length - 1))) { m('markiertes Feld gibt es nicht'); break; }
+      if (b.grob && (b.felder[0].length % b.grob[0] !== 0 || b.felder.length % b.grob[1] !== 0 || b.grob[0] * b.grob[1] >= alle.length)) m('grobes Raster passt nicht zum feinen');
+      // Rechnet der Nachweis selbst mit dem Bild (wahre Anzahl, vollstes Feld), gehört es damit schon zur Aufgabe.
+      if (!(a.nachweis ?? []).some((x) => (x?.art === 'naechste' && x.ziel == null) || (x?.art === 'bildwert' && ['gesamt', 'groesstes', 'kleinstes'].includes(x.was))))
+        kern.push({ wert: n, teile: [alle.length, ...(b.markiert ? [b.felder[b.markiert[0]][b.markiert[1]]] : [n])] });
+      break;
+    }
     default: m('unbekannte Bildart');
   }
   // Kapitel 1: Nennen Text und Bildtitel eine Klasse, ist es dieselbe.
   const klassen = (t) => String(t ?? '').match(/\b\d[a-e]\b/g) ?? [];
   if (klassen(b.titel).length) for (const k of klassen(a.text)) if (!klassen(b.titel).includes(k)) m(`Klasse ${k} im Text, aber ${klassen(b.titel).join(', ')} im Titel`);
   // Das Bild muss zur Aufgabe gehören: Seine Zahlen stehen im Text, in den Antworten, im Nachweis oder sind die Lösung.
-  const bekannt = new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...loesungenVon(a), ...zahlenImObjekt(a.nachweis), ...zahlenImObjekt(a.tabelle)]);
+  const bekannt = new Set([...sichtbareTexte(a).flatMap(zahlenIn), ...loesungenVon(a), ...zahlenImObjekt(a.nachweis), ...zahlenImObjekt(a.tabelle), ...(a.karten ?? []).flatMap(zahlenIn)]);
   for (const k of kern) {
     if (k.faktoren) { const [x, y] = k.faktoren; if (!bekannt.has(x * y) || !(bekannt.has(x) || bekannt.has(y))) m(`${x} mal ${y} kommt in der Aufgabe nicht vor`); }
     else if (typeof k === 'object') { if (!bekannt.has(k.wert) && !k.teile.every((x) => bekannt.has(x))) m(`${k.wert} kommt in der Aufgabe nicht vor`); }
@@ -1000,7 +1325,7 @@ function pruefeBild(a) {
 }
 // Formate, die das Dashboard selbst zeichnet (Zahlenstrahl, Diagramm, Rechenraster, Zahlenmauer, Malkreuz), zählen wie ein Bild.
 // Kapitel 1: Strichliste und Säulen zeichnen, auch die Antwortkärtchen einer Umfrage (Urliste).
-const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz'].includes(a.tabelle?.art);
+const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel'].includes(a.tabelle?.art);
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -1055,7 +1380,8 @@ function pruefeFormat(a) {
     // Mit Nachweis: Zu jedem Paar gehört eine Rechnung, in der seine Zahlen vorkommen.
     if (a.nachweis) for (const p of a.paare) {
       const z = zahlenIn(`${p.links} ${p.rechts}`);
-      if (z.length && !a.nachweis.some((n) => typeof n === 'string' && z.every((x) => zahlenIn(n).includes(x)))) melde(a.id, `Paar „${p.links}“ und „${p.rechts}“ steht nicht im Nachweis`);
+      // Ein Nachweis mit eigener Art (Zahlwort, römisch, Zweiersystem) prüft das Paar selbst.
+      if (z.length && !a.nachweis.some((n) => (typeof n === 'string' ? z.every((x) => zahlenIn(n).includes(x)) : n?.art && z.every((x) => zahlenImObjekt(n).includes(x))))) melde(a.id, `Paar „${p.links}“ und „${p.rechts}“ steht nicht im Nachweis`);
     }
     for (const p of a.paare) for (const g of gleichungenIn(`${p.links} ${p.rechts}`)) if (!stimmt(g)) melde(a.id, `Gleichung im Paar stimmt nicht: ${g.ganz}`);
   } else if (a.format === 'sachaufgabe') {
@@ -1099,7 +1425,14 @@ function pruefeFormat(a) {
     if (new Set(namen).size !== namen.length) melde(a.id, 'Tabelle: Lücke doppelt');
     for (const n of namen) if (!a.luecken?.[n]) melde(a.id, `Lücke ${n} hat keine Lösung`); else pruefeZahl(a.id, a.luecken[n], `Lücke ${n}`);
     for (const n of Object.keys(a.luecken ?? {})) if (!namen.includes(n)) melde(a.id, `Lösung ${n} ohne Lücke in der Tabelle`);
-    if (t.art === 'raster') (t.rechnung?.zeichen === '·' ? pruefeRasterMal : pruefeRaster)(a);
+    if (t.art === 'stellentafel') {
+      // Kapitel 2: ein Feld je Ziffer. Die Zahl selbst prüft der Nachweis `tafel`.
+      const basis = (a.nachweis ?? []).find((n) => n?.art === 'tafel')?.basis ?? 10;
+      for (const c of zellen) if (typeof c === 'object' ? !ganz(a.luecken?.[c.luecke]?.loesung, 0, basis - 1) : !/^\d?$/.test(c)) melde(a.id, 'Stellenwerttafel: Feld mit mehr als einer Ziffer');
+      if (t.gruppen && t.gruppen.reduce((n, g) => n + g.spalten, 0) !== t.kopf.length) melde(a.id, 'Stellenwerttafel: Dreierblöcke passen nicht zu den Spalten');
+      const zeilenMitNachweis = new Set((a.nachweis ?? []).filter((n) => n?.art === 'tafel').map((n) => n.zeile ?? 0));
+      t.zeilen.forEach((_, i) => { if (!zeilenMitNachweis.has(i)) melde(a.id, `Stellenwerttafel: Zeile ${i + 1} ohne Nachweis`); });
+    } else if (t.art === 'raster') (t.rechnung?.zeichen === '·' ? pruefeRasterMal : pruefeRaster)(a);
     else if (t.art === 'mauer') pruefeMauer(a);
     else if (t.art === 'malkreuz') pruefeMalkreuz(a);
     else {
@@ -1158,6 +1491,39 @@ function pruefeFormat(a) {
       const werte = a.daten.kopf.length === 2; // Bei mehreren Spalten wird gerechnet, nicht abgelesen.
       if (namen.length !== d.saeulen.length || d.saeulen.some((x) => !t.has(x.name) || (werte && t.get(x.name) !== null && t.get(x.name) !== x.wert))) melde(a.id, 'Zeichnen: Säulen passen nicht zur Tabelle');
     }
+  } else if (a.format === 'ordnen') {
+    // Kapitel 2: Die Karten liegen gemischt da; die Lösung nennt dieselben Karten in der verlangten Reihenfolge.
+    if (!Array.isArray(a.karten) || a.karten.length < 3 || a.karten.length > 6 || a.karten.some((k) => typeof k !== 'string' || !k.trim())) { melde(a.id, 'Ordnen: drei bis sechs Karten'); return; }
+    if (new Set(a.karten.map(norm)).size !== a.karten.length) melde(a.id, 'Ordnen: Karte doppelt');
+    if (!Array.isArray(a.loesung) || !gleich([...a.loesung].sort(), [...a.karten].sort())) melde(a.id, 'Ordnen: Lösung nennt nicht genau die Karten');
+    if (gleich(a.loesung, a.karten)) melde(a.id, 'Ordnen: Die Karten liegen schon richtig');
+    for (const f of [a.umgekehrt, a.sonst]) if (f && !(f in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${f}`);
+    if (!(a.nachweis ?? []).some((n) => n?.art === 'ordnung')) melde(a.id, 'Ordnen: Nachweis der Reihenfolge fehlt');
+  } else if (a.format === 'zeichen') {
+    // Kapitel 2: römische Zahlzeichen oder Zweiersystem. Die Lösung besteht nur aus den Zeichen der Tasten.
+    if (!Array.isArray(a.tasten) || a.tasten.length < 2 || a.tasten.some((t) => typeof t !== 'string' || t.length !== 1)) { melde(a.id, 'Zeichen: Tasten fehlen'); return; }
+    const roem = gleich(a.tasten, ['I', 'V', 'X', 'L', 'C', 'D', 'M']), zwei = gleich(a.tasten, ['0', '1']);
+    if (!roem && !zwei) melde(a.id, 'Zeichen: Tasten sind weder die römischen Zahlzeichen noch 0 und 1');
+    if (typeof a.loesung !== 'string' || !a.loesung || [...a.loesung].some((c) => !a.tasten.includes(c))) melde(a.id, 'Zeichen: Lösung besteht nicht aus den Tasten');
+    for (const f of a.typischeFehler ?? []) {
+      if (f.wert === a.loesung) melde(a.id, 'typischer Fehler ist gleich der Lösung');
+      if (typeof f.wert !== 'string' || [...f.wert].some((c) => !a.tasten.includes(c))) melde(a.id, 'Zeichen: typischer Fehler besteht nicht aus den Tasten');
+      if (!(f.fehlvorstellung in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${f.fehlvorstellung}`);
+    }
+    if (!(a.nachweis ?? []).some((n) => n?.art === (roem ? 'roemisch' : 'dual') && (roem ? n.zeichen : n.dual) === a.loesung)) melde(a.id, 'Zeichen: Nachweis zur Lösung fehlt');
+  } else if (a.format === 'schaetzen') {
+    // Kapitel 2 (Nils, 2026-11-21): ab M zählt der Schätzbereich, ein Fünftel nach oben und nach unten. Auf F und G zählt der Rechenweg.
+    if (NIVEAUS.indexOf(a.niveau) < 2) melde(a.id, 'Schätzen mit Schätzbereich gibt es erst ab M');
+    if (a.bild?.art !== 'schaetzbild') { melde(a.id, 'Schätzen: Schätzbild fehlt'); return; }
+    const n = a.bild.felder.flat().reduce((x, y) => x + y, 0);
+    if (a.loesung !== n) melde(a.id, `Schätzen: Auf dem Bild sind ${n}, nicht ${a.loesung}`);
+    if (!gleich(a.bereich, [Math.ceil(n * 0.8), Math.floor(n * 1.2)])) melde(a.id, `Schätzen: Schätzbereich ist ${Math.ceil(n * 0.8)} bis ${Math.floor(n * 1.2)}`);
+    if (n < 40) melde(a.id, 'Schätzen: zu wenige Symbole, die kann man zählen');
+    for (const f of a.typischeFehler ?? []) {
+      if (!(f.von <= f.bis) || (f.von <= a.bereich?.[1] && f.bis >= a.bereich?.[0])) melde(a.id, 'Schätzen: typischer Fehler liegt im Schätzbereich');
+      if (!(f.fehlvorstellung in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${f.fehlvorstellung}`);
+    }
+    if (!(a.nachweis ?? []).some((x) => x?.art === 'bildwert' && x.was === 'gesamt')) melde(a.id, 'Schätzen: Nachweis der Anzahl fehlt');
   } else melde(a.id, `unbekanntes Format ${a.format}`);
   if (a.daten) {
     const t = a.daten;

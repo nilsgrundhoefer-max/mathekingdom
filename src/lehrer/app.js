@@ -920,6 +920,7 @@ function tafelbildAnsicht() {
     a.format === 'auswahl' && h('ul', { class: 'tafel-optionen' }, a.optionen.map((o) => h('li', {}, o.text))),
     a.format === 'zuordnen' && h('ul', { class: 'tafel-optionen' }, a.paare.map((p) => h('li', {}, p.links))),
     a.format === 'strichliste' && h('ul', { class: 'tafel-optionen' }, a.zeilen.map((x) => h('li', {}, x.name))),
+    a.format === 'ordnen' && h('ul', { class: 'tafel-optionen' }, a.karten.map((x) => h('li', {}, x))),
     a.format === 'zeichnen' && h('ul', { class: 'tafel-optionen' }, a.diagramm.saeulen.filter((x) => x.offen).map((x) => h('li', {}, `Säule ${x.name}`))),
     a.teile && h('ol', { class: 'tafel-optionen' }, a.teile.map((x) => h('li', {}, x.text))),
     h('h2', {}, 'Antworten aus der Klasse'),

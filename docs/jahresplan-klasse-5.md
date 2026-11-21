@@ -22,12 +22,14 @@ Mit „Extra“ markierte Unterkapitel sind im Buch Zusatzstoff. Vorschlag: Sie 
 
 | Nr. | Unterkapitel | Lernziel |
 |---|---|---|
-| 2.1 | Natürliche Zahlen | Ich kann mit natürlichen Zahlen umgehen. |
+| 2.1 | Zahlenstrahl und Stellenwerte | Ich kann mit natürlichen Zahlen umgehen. |
 | 2.2 | Große Zahlen | Ich kann mit großen Zahlen umgehen. |
 | 2.3 | Runden | Ich kann Zahlen runden. |
 | 2.4 | Schätzen | Ich kann eine Anzahl auf Bildern schätzen. |
 | 2.5 | Zweiersystem | Ich kann Zahlen im Zweiersystem verwenden. |
 | Extra | Römische Zahlzeichen | Ich kann römische Zahlzeichen verwenden. |
+
+Im Buch heißt 2.1 „Natürliche Zahlen“. Im Dashboard heißt es „Zahlenstrahl und Stellenwerte“, damit Tor und erster Meilenstein nicht gleich heißen. Die 13 feineren Lernziele und ihre Aufgaben beschreibt ADR 0030.
 
 ## Kapitel 3: Addieren und Subtrahieren
 

@@ -207,6 +207,30 @@ const KIND = {
   'einteilung-zu-kurz': 'Du achtest jetzt darauf: Auch die größte Säule muss auf die Achse passen.',
   'umfrage-unpassend': 'Du stellst jetzt Fragen mit klaren Antworten zum Zählen.',
   'anteil-nicht-beachtet': 'Du vergleichst jetzt auch, wie viele insgesamt gefragt wurden.',
+  'null-platzhalter': 'Du schreibst jetzt eine 0 an jede leere Stelle.',
+  'zahl-nach-gehoer': 'Du schreibst Zahlen jetzt Stelle für Stelle und nicht so, wie du sie hörst.',
+  'tafel-verrutscht': 'Du trägst jetzt jede Ziffer in die richtige Spalte ein.',
+  'vergleich-erste-ziffer': 'Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen.',
+  'zeichen-verwechselt': 'Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl.',
+  'nachbar-verwechselt': 'Du hältst Vorgänger und Nachfolger jetzt auseinander.',
+  'strahl-einerschritte': 'Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist.',
+  'million-milliarde': 'Du hältst Tausender, Millionen und Milliarden jetzt auseinander.',
+  'dreierblock-vergessen': 'Du gibst jetzt jedem Dreierblock seine drei Ziffern.',
+  'runden-fuenf-ab': 'Du weißt jetzt: Bei 5 wird aufgerundet.',
+  'runden-falsche-stelle': 'Du rundest jetzt auf die Stelle aus der Aufgabe.',
+  'runden-ziffern-stehen': 'Du schreibst nach dem Runden jetzt Nullen hinter die Rundungsstelle.',
+  'runden-kette': 'Du rundest jetzt in einem Schritt.',
+  'runden-uebertrag': 'Du denkst beim Aufrunden jetzt daran: Aus 9 wird 10.',
+  'schaetzen-nicht-hochgerechnet': 'Du rechnest jetzt von einem Feld auf alle Felder hoch.',
+  'schaetzen-addiert': 'Du nimmst die Anzahl im Feld jetzt mal die Zahl der Felder.',
+  'gezaehlt-geschaetzt': 'Du unterscheidest jetzt zwischen gezählt, gerundet und geschätzt.',
+  'dual-zehnerwerte': 'Du weißt jetzt: Im Zweiersystem sind die Stellen 1, 2, 4, 8 und 16 wert.',
+  'dual-gerade-werte': 'Du verdoppelst die Stellenwerte im Zweiersystem jetzt richtig: 1, 2, 4, 8, 16.',
+  'dual-umgedreht': 'Du weißt jetzt: Im Zweiersystem steht die Einerstelle ganz rechts.',
+  'roemisch-nur-addiert': 'Du weißt jetzt: Ein kleineres Zeichen links wird abgezogen.',
+  'roemisch-vier-gleiche': 'Du schreibst höchstens drei gleiche Zeichen hintereinander.',
+  'roemisch-falsch-abgezogen': 'Du weißt jetzt, welche Zeichen man abziehen darf.',
+  'roemisch-zeichen-verwechselt': 'Du kennst jetzt den Wert jedes römischen Zeichens.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -272,6 +296,31 @@ export const fehlvorstellungen = {
   'einteilung-zu-kurz': fv('Wählt eine Achse, die vor dem größten Wert endet.', 'Prüfe den größten Wert: Passt seine Säule noch auf die Achse?'),
   'umfrage-unpassend': fv('Wählt eine Umfragefrage, deren Antworten sich nicht eindeutig zählen lassen.', 'Überlege: Kann jedes Kind genau eine von wenigen Antworten geben?'),
   'anteil-nicht-beachtet': fv('Vergleicht Anzahlen aus unterschiedlich großen Gruppen, ohne die Gruppengröße zu beachten.', 'Die Gruppen sind verschieden groß. Vergleiche, welcher Teil der Gruppe es jeweils ist.'),
+  // Kapitel 2: Natürliche Zahlen (Nils, 2026-11-21)
+  'null-platzhalter': fv('Lässt die Null als Platzhalter weg (dreitausendfünf wird 35 oder 305).', 'Prüfe jede Stelle: Wo nichts steht, gehört eine 0 hin.'),
+  'zahl-nach-gehoer': fv('Schreibt eine Zahl so, wie sie gesprochen wird (dreihundertfünf wird 3005).', 'Schreibe die Zahl in die Stellenwerttafel: Jede Stelle bekommt genau eine Ziffer.'),
+  'tafel-verrutscht': fv('Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein.', 'Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links.'),
+  'vergleich-erste-ziffer': fv('Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten.', 'Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer.'),
+  'zeichen-verwechselt': fv('Verwechselt die Zeichen < und >.', 'Die Spitze des Zeichens zeigt immer zur kleineren Zahl.'),
+  'nachbar-verwechselt': fv('Verwechselt Vorgänger und Nachfolger.', 'Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.'),
+  'strahl-einerschritte': fv('Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen.', 'Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt?'),
+  'million-milliarde': fv('Verwechselt Tausender, Millionen und Milliarden.', 'Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden.'),
+  'dreierblock-vergessen': fv('Lässt einen Dreierblock aus oder füllt ihn nicht mit Nullen auf.', 'Jeder Block hat drei Ziffern. Fehlt etwas, kommen Nullen hinein.'),
+  'runden-fuenf-ab': fv('Rundet bei der Ziffer 5 ab statt auf.', 'Schau auf die Ziffer rechts neben der Rundungsstelle: Bei 5 wird schon aufgerundet.'),
+  'runden-falsche-stelle': fv('Rundet auf eine andere Stelle als verlangt.', 'Lies noch einmal: Auf welche Stelle soll gerundet werden?'),
+  'runden-ziffern-stehen': fv('Lässt die Ziffern rechts von der Rundungsstelle stehen, statt Nullen zu schreiben.', 'Rechts von der Rundungsstelle stehen nach dem Runden nur Nullen.'),
+  'runden-kette': fv('Rundet in mehreren Schritten nacheinander (1449 erst auf 1450, dann auf 1500).', 'Runde in einem Schritt. Es zählt nur die Ziffer direkt rechts neben der Rundungsstelle.'),
+  'runden-uebertrag': fv('Vergisst beim Aufrunden den Übertrag, wenn an der Rundungsstelle eine 9 steht.', 'An der Rundungsstelle steht eine 9. Wird sie um 1 größer, ändert sich auch die Stelle links davon.'),
+  'schaetzen-nicht-hochgerechnet': fv('Zählt beim Schätzen nur ein Feld und rechnet nicht auf alle Felder hoch.', 'Du hast ein Feld gezählt. Wie viele Felder hat das ganze Bild?'),
+  'schaetzen-addiert': fv('Addiert beim Schätzen die Anzahl im Feld und die Zahl der Felder, statt zu multiplizieren.', 'In jedem Feld sind ungefähr gleich viele. Nimm die Anzahl im Feld mal die Zahl der Felder.'),
+  'gezaehlt-geschaetzt': fv('Unterscheidet nicht zwischen gezählten, gerundeten und geschätzten Angaben.', 'Überlege: Hat hier jemand alles einzeln gezählt, oder ist die Zahl nur ungefähr?'),
+  'dual-zehnerwerte': fv('Liest eine Zahl im Zweiersystem mit den Stellenwerten 1, 10, 100 des Zehnersystems.', 'Im Zweiersystem sind die Stellen von rechts 1, 2, 4, 8 und 16 wert.'),
+  'dual-gerade-werte': fv('Nimmt im Zweiersystem die Stellenwerte 2, 4, 6, 8 statt zu verdoppeln.', 'Die Stellenwerte verdoppeln sich: 1, 2, 4, 8, 16.'),
+  'dual-umgedreht': fv('Liest oder schreibt die Stellen im Zweiersystem in umgekehrter Reihenfolge.', 'Die Stelle mit dem Wert 1 steht ganz rechts, wie die Einer im Zehnersystem.'),
+  'roemisch-nur-addiert': fv('Zählt bei römischen Zahlzeichen alle Zeichen zusammen und beachtet nicht, dass ein kleineres Zeichen links abgezogen wird (IX wird 11).', 'Steht ein kleineres Zeichen links vor einem größeren, wird es abgezogen.'),
+  'roemisch-vier-gleiche': fv('Schreibt vier gleiche römische Zeichen hintereinander (IIII statt IV).', 'Höchstens drei gleiche Zeichen stehen hintereinander. Für 4 und 9 ziehst du ab.'),
+  'roemisch-falsch-abgezogen': fv('Zieht bei römischen Zahlzeichen ein Zeichen ab, das man nicht abziehen darf (IC für 99, VX für 5).', 'Abgezogen wird nur I vor V und X, X vor L und C, C vor D und M.'),
+  'roemisch-zeichen-verwechselt': fv('Verwechselt die Werte der römischen Zeichen (L und C, D und M, V und X).', 'Schau im Merkzettel nach: Welchen Wert hat jedes Zeichen?'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -317,6 +366,74 @@ export const zeichnen = (text, d, hilfen, extra) => ({ format: 'zeichnen', text,
   hilfen, ...mit(extra) });
 export const zuordnen = (text, paare, hilfen, extra) => ({ format: 'zuordnen', text, paare: paare.map(([links, rechts]) => ({ links: String(links), rechts: String(rechts) })), hilfen, ...mit(extra) });
 export const strahl = (eingabe, text, bild, loesung, typischeFehler, hilfen, extra) => ({ format: 'zahlenstrahl', eingabe, text, strahl: bild, loesung, typischeFehler: typischeFehler ?? [], hilfen, ...mit(extra) });
+
+// ---------- Kapitel 2: Natürliche Zahlen ----------
+// Ordnen: `richtig` ist die verlangte Reihenfolge (Texte). Die Karten liegen gemischt da, nie schon richtig.
+// extra: { umgekehrt (Fehlvorstellung, wenn genau falsch herum sortiert), links, rechts (Beschriftung der Enden) }
+export function ordnen(text, richtig, hilfen, extra) {
+  const loesung = richtig.map(String);
+  let karten = mische(loesung);
+  for (let i = 0; i < 50 && (karten.join() === loesung.join() || karten.join() === [...loesung].reverse().join()); i++) karten = mische(loesung);
+  return { format: 'ordnen', text, karten, loesung, hilfen, ...mit(extra) };
+}
+// Zeichenfolge: römische Zahlzeichen oder eine Zahl im Zweiersystem. typischeFehler: [[zeichen, fehlvorstellung]]
+export const ROEMISCH_TASTEN = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+export function zeichen(text, loesung, tasten, typischeFehler, hilfen, extra) {
+  const gesehen = new Set([loesung]);
+  const fehler = (typischeFehler ?? []).filter(([w]) => w && !gesehen.has(w) && gesehen.add(w)).map(([wert, fehlvorstellung]) => ({ wert, fehlvorstellung }));
+  return { format: 'zeichen', text, loesung, tasten, typischeFehler: fehler, hilfen, ...mit(extra) };
+}
+// Schätzen ab M: Die Lösung ist die wahre Anzahl im Schätzbild, richtig ist alles im Schätzbereich (20 % nach oben und unten).
+// typischeFehler: [[von, bis, fehlvorstellung]]
+export const SCHAETZ_ANTEIL = 5; // ein Fünftel
+export function schaetzen(text, bild, einheit, typischeFehler, hilfen, extra) {
+  const n = summe(bild.felder.flat());
+  return { format: 'schaetzen', text, bild, loesung: n, bereich: [Math.ceil(n - n / SCHAETZ_ANTEIL), Math.floor(n + n / SCHAETZ_ANTEIL)], einheit,
+    typischeFehler: (typischeFehler ?? []).map(([von, bis, fehlvorstellung]) => ({ von, bis, fehlvorstellung })), hilfen, ...mit(extra) };
+}
+// Stellenwerttafel zum Eintragen: spalten = Namen, zeilen = Ziffern, '' oder L(name). gruppen: [[name, spaltenzahl]] für die Dreierblöcke.
+export function stellentafel(text, spalten, zeilen, werte, hilfen, extra, gruppen) {
+  const t = tabelle(text, spalten, zeilen, werte, hilfen, extra);
+  t.tabelle.art = 'stellentafel';
+  if (gruppen) t.tabelle.gruppen = gruppen.map(([name, n]) => ({ name, spalten: n }));
+  return t;
+}
+// Stellenwerte bis zur Billion und die Dreierblöcke dazu.
+export const STELLEN15 = ['HB', 'ZB', 'B', 'HMd', 'ZMd', 'Md', 'HM', 'ZM', 'M', 'HT', 'ZT', 'T', 'H', 'Z', 'E'];
+export const BLOCKNAMEN = ['Billionen', 'Milliarden', 'Millionen', 'Tausender', 'Einer'];
+export const stellenFuer = (anzahl) => STELLEN15.slice(-anzahl);
+export const bloeckeFuer = (anzahl) => { const n = Math.ceil(anzahl / 3); return BLOCKNAMEN.slice(-n).map((name, i) => [name, i === 0 ? anzahl - 3 * (n - 1) : 3]); };
+// Zahlwort nach deutscher Rechtschreibung: bis 999 999 zusammen, Millionen und mehr als eigene Wörter.
+const EINER = ['', 'ein', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'elf', 'zwölf', 'dreizehn', 'vierzehn', 'fünfzehn', 'sechzehn', 'siebzehn', 'achtzehn', 'neunzehn'];
+const ZEHNER = ['', '', 'zwanzig', 'dreißig', 'vierzig', 'fünfzig', 'sechzig', 'siebzig', 'achtzig', 'neunzig'];
+const bis999 = (n, ende) => {
+  const h = Math.floor(n / 100), r = n % 100;
+  const rest = r === 0 ? '' : r === 1 ? (ende ? 'eins' : 'ein') : r < 20 ? EINER[r] : `${r % 10 ? `${EINER[r % 10]}und` : ''}${ZEHNER[Math.floor(r / 10)]}`;
+  return `${h ? `${EINER[h]}hundert` : ''}${rest}`;
+};
+export function zahlwort(n) {
+  if (n === 0) return 'null';
+  const teile = [];
+  for (const [wert, eins, viele] of [[1e12, 'eine Billion', 'Billionen'], [1e9, 'eine Milliarde', 'Milliarden'], [1e6, 'eine Million', 'Millionen']]) {
+    const k = Math.floor(n / wert) % 1000;
+    if (k) teile.push(k === 1 ? eins : `${bis999(k, false)} ${viele}`);
+  }
+  const t = Math.floor(n / 1000) % 1000, e = n % 1000;
+  const klein = `${t ? `${bis999(t, false)}tausend` : ''}${e ? bis999(e, true) : ''}`;
+  if (klein) teile.push(klein);
+  return teile.join(' ');
+}
+// Römische Zahlzeichen (1 bis 3999) und Zweiersystem.
+const ROEM = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+export const roemisch = (n) => { let t = ''; for (const [w, z] of ROEM) while (n >= w) { t += z; n -= w; } return t; };
+// Typischer Fehler: nur zusammenzählen, ohne abzuziehen (9 wird VIIII, 40 wird XXXX).
+export const roemischNurAddiert = (n) => { let t = ''; for (const [w, z] of ROEM.filter(([, x]) => x.length === 1)) while (n >= w) { t += z; n -= w; } return t; };
+export const roemWert = (t) => [...t].reduce((s, c) => s + ROEM.find(([, z]) => z === c)[0], 0);
+export const dual = (n) => n.toString(2);
+export const TIEF2 = '₂';
+// Rundet kaufmännisch auf 10, 100, 1000 …
+export const rundeAuf = (n, auf) => Math.floor((n + auf / 2) / auf) * auf;
+export const STELLENNAME = { 10: 'Zehner', 100: 'Hunderter', 1000: 'Tausender', 10000: 'Zehntausender', 100000: 'Hunderttausender', 1000000: 'Millionen' };
 
 // Stellenraster: schriftliches Rechnen mit einem Feld je Stelle (Niveaustufe F).
 // `zeichen` ist '+' oder '−'. Bei einem Tausch oder Übertrag steht er schon im Raster (`hilfe`: true).
@@ -446,6 +563,21 @@ export const B = {
   // Säulen- oder Balkendiagramm: { titel, einheit, max, schritt (beschriftete Linien), fein (alle Linien), liegend, werteZeigen, ab, ohne }
   saeulen: (d) => ({ art: 'saeulen', ...d, saeulen: d.saeulen.map(([name, wert]) => ({ name, wert })) }),
   bilddiagramm: (d) => ({ art: 'bilddiagramm', ...d, zeilen: d.zeilen.map(([name, wert]) => ({ name, wert })) }),
+  // Kapitel 2. Stellenwerttafel mit Ziffern (oder Plättchen): werte je Spalte, null ist ein leeres Feld. gruppen: [[name, spaltenzahl]].
+  ziffern: (spalten, werte, { plaettchen = false, gruppen = null, basis = 10 } = {}) => ({ art: 'tafel', spalten, werte, ...(plaettchen ? { plaettchen: true } : {}),
+    ...(basis !== 10 ? { basis } : {}), ...(gruppen ? { gruppen: gruppen.map(([name, n]) => ({ name, spalten: n })) } : {}) }),
+  // Die Zahl n in einer Stellenwerttafel, mit Dreierblöcken ab fünf Stellen.
+  zahlTafel: (n, stellen = String(n).length) => B.ziffern(stellenFuer(stellen), String(n).padStart(stellen, ' ').split('').map((c) => (c === ' ' ? null : Number(c))), { gruppen: stellen > 4 ? bloeckeFuer(stellen) : null }),
+  // Mehrere Zahlen untereinander in einer Tafel, rechtsbündig (zum Vergleichen).
+  zahlenTafel: (zahlen) => { const stellen = Math.max(...zahlen.map((n) => String(n).length)), zeile = (n) => String(n).padStart(stellen, ' ').split('').map((c) => (c === ' ' ? null : Number(c)));
+    return { ...B.ziffern(stellenFuer(stellen), zeile(zahlen[0]), { gruppen: stellen > 4 ? bloeckeFuer(stellen) : null }), weitere: zahlen.slice(1).map(zeile) }; },
+  // Zweiersystem: Spalten 16, 8, 4, 2, 1 mit Plättchen (0 oder 1 je Spalte) oder Ziffern.
+  dualTafel: (n, stellen, plaettchen = true) => B.ziffern(Array.from({ length: stellen }, (_, i) => String(2 ** (stellen - 1 - i))), n.toString(2).padStart(stellen, '0').split('').map(Number), { plaettchen, basis: 2 }),
+  // Spickzettel der römischen Zahlzeichen bis zu einem Zeichen: B.zeichentafel('X') zeigt I, V und X mit ihren Werten.
+  zeichentafel: (bis) => ({ art: 'zeichentafel', zeichen: ROEMISCH_TASTEN.slice(0, ROEMISCH_TASTEN.indexOf(bis) + 1) }),
+  // Schätzbild: felder = Anzahl je Feld (Reihen von oben), raster 'fest' | 'wahl' | 'ohne', markiert [reihe, spalte], gezaehlt zeigt die Anzahl im markierten Feld.
+  schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
+    ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
 
 // ---------- Prozessbezogene Kompetenzen (Bildungsplan 2016, ADR 0017) ----------
@@ -461,10 +593,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
-  modellieren: ['5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1'],
+  modellieren: ['5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
-  argumentieren: ['5.1.4-V2', '5.4.X1-Z2'],
+  argumentieren: ['5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
@@ -476,7 +608,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste'].includes(a.bild?.art);
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild'].includes(a.bild?.art);
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';
@@ -488,7 +620,7 @@ export function kompetenzVon(lernziel, a) {
 
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
-const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild, a.daten, a.urliste, a.zeilen].filter(Boolean));
+const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort()].filter(Boolean));
 function nachbearbeiten(a, niveau) {
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.

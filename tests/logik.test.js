@@ -61,6 +61,49 @@ test('Lücken, Zuordnen und Sachaufgabe: alles muss stimmen', () => {
   assert.equal(L.pruefeAntwort(s, [String(s.teile[0].loesung), ...s.teile.slice(1).map((t) => String(t.loesung + 1))]).richtig, false);
 });
 
+test('Ordnen: nur die verlangte Reihenfolge ist richtig, genau andersherum meldet die Richtung', () => {
+  const a = pool.aufgaben.find((x) => x.format === 'ordnen' && x.umgekehrt && x.sonst);
+  assert.deepEqual(L.pruefeAntwort(a, a.loesung), { richtig: true, fehlvorstellung: null });
+  assert.deepEqual(L.pruefeAntwort(a, [...a.loesung].reverse()), { richtig: false, fehlvorstellung: a.umgekehrt });
+  const vertauscht = [a.loesung[1], a.loesung[0], ...a.loesung.slice(2)];
+  assert.deepEqual(L.pruefeAntwort(a, vertauscht), { richtig: false, fehlvorstellung: a.sonst });
+  assert.equal(L.pruefeAntwort(a, a.karten).richtig, false, 'die Karten liegen nie schon richtig da');
+});
+
+test('Zeichen: römische Zahlzeichen und Dualzahlen, Kleinschreibung und Leerzeichen stören nicht', () => {
+  const roem = pool.aufgaben.find((x) => x.format === 'zeichen' && x.tasten.includes('X') && x.typischeFehler.length);
+  assert.equal(L.pruefeAntwort(roem, roem.loesung).richtig, true);
+  assert.equal(L.pruefeAntwort(roem, ` ${roem.loesung.toLowerCase().split('').join(' ')} `).richtig, true);
+  const f = roem.typischeFehler[0];
+  assert.deepEqual(L.pruefeAntwort(roem, f.wert), { richtig: false, fehlvorstellung: f.fehlvorstellung });
+  assert.deepEqual(L.pruefeAntwort(roem, 'MMMM'), { richtig: false, fehlvorstellung: null });
+  const zwei = pool.aufgaben.find((x) => x.format === 'zeichen' && x.tasten.join('') === '01');
+  assert.equal(L.pruefeAntwort(zwei, zwei.loesung).richtig, true);
+  assert.equal(L.pruefeAntwort(zwei, `${zwei.loesung}0`).richtig, false);
+});
+
+test('Schätzen: jeder Wert im Schätzbereich ist richtig, knapp daneben nicht', () => {
+  const alle = pool.aufgaben.filter((x) => x.format === 'schaetzen');
+  assert.ok(alle.length >= 3);
+  for (const a of alle) {
+    const [von, bis] = a.bereich;
+    assert.ok(['M', 'E'].includes(a.niveau), 'Schätzbereich erst ab M');
+    assert.ok(von <= a.loesung && a.loesung <= bis);
+    assert.ok(a.loesung - von <= a.loesung / 5 && bis - a.loesung <= a.loesung / 5, 'höchstens ein Fünftel daneben');
+    for (const w of [von, a.loesung, bis]) assert.equal(L.pruefeAntwort(a, String(w)).richtig, true);
+    for (const w of [von - 1, bis + 1]) assert.equal(L.pruefeAntwort(a, String(w)).richtig, false);
+    for (const f of a.typischeFehler) assert.deepEqual(L.pruefeAntwort(a, String(f.von)), { richtig: false, fehlvorstellung: f.fehlvorstellung });
+  }
+});
+
+test('Kapitel 2: 13 Lernziele mit je 24 Aufgaben, der Abstecher zählt nicht für den Abschluss', () => {
+  const k2 = pool.kapitel.find((k) => k.id === '5.2');
+  const lernziele = k2.unterkapitel.flatMap((u) => u.lernziele.map((l) => l.id));
+  assert.equal(lernziele.length, 13);
+  for (const lz of lernziele) for (const n of ['F', 'G', 'M', 'E']) assert.equal(aufgaben(lz, n).length, 6, `${lz} ${n}`);
+  assert.equal(k2.unterkapitel.find((u) => u.id === '5.2.X1').extra, true);
+});
+
 test('Lernziel: drei richtige Aufgaben auf dem Zielniveau erreichen es', () => {
   const stand = neu();
   const [a, b, c] = aufgaben(S2, 'G');
@@ -151,13 +194,13 @@ test('Aufgabenauswahl: erst neue, dann ungelöste, nie zweimal direkt dieselbe',
   }
   const ungeloest = stand.versuche[0].aufgabe;
   assert.equal(L.naechsteAufgabe(index, stand, S2, 'G').id, ungeloest);
-  assert.equal(L.naechsteAufgabe(index, stand, '5.2.1-L1', 'G'), null);
+  assert.equal(L.naechsteAufgabe(index, stand, '5.5.1-L1', 'G'), null);
 });
 
 test('Meilenstein: Status folgt den Lernzielen', () => {
   const stand = neu();
   const station = pool.kapitel[2].unterkapitel[2];
-  assert.equal(L.milestoneStatus(index, stand, pool.kapitel[1].unterkapitel[0]), 'leer');
+  assert.equal(L.milestoneStatus(index, stand, pool.kapitel[4].unterkapitel[0]), 'leer');
   assert.equal(L.milestoneStatus(index, stand, station), 'offen');
   L.verbuche(stand, aufgaben(S2, 'G')[0], ok(), 'G', 't');
   assert.equal(L.milestoneStatus(index, stand, station), 'begonnen');
@@ -601,8 +644,8 @@ test('Brücke: Vorschlag erst bei wackelig, drei Aufgaben eine Stufe tiefer, ein
 
 test('Brücke: Lernziele ohne Voraussetzungen mit Aufgaben bekommen keine', () => {
   const stand = neu();
-  const lz = '5.3.1-K1';
-  // 5.3.1-K1 baut auf 5.2.1 (Natürliche Zahlen) auf; dazu gibt es noch keine Aufgaben, also auch keine Brücke (ADR 0017).
+  const lz = '5.2.1-N1';
+  // 5.2.1-N1 ist der Anfang von Kapitel 2 und baut auf nichts auf, also gibt es auch keine Brücke (ADR 0017).
   assert.deepEqual((index.lernziel.get(lz).voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id)), []);
   for (const a of aufgaben(lz, 'G').slice(0, 4)) L.verbuche(stand, a, ok({ geloest: false, versuche: 2 }), 'G', '2026-11-17T10:05:00Z');
   assert.equal(L.brueckeVorschlag(stand, index, lz, '2026-11-17T10:08:00Z'), null);

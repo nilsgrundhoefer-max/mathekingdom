@@ -74,6 +74,10 @@ export function falscheTeile(a, eingabe) {
       return n !== z.loesung || buendel ? [{ text: `${z.name}: ${n} Striche${buendel ? ', falsch gebündelt' : ''}`, erwartet: false }] : [];
     });
     case 'zeichnen': return a.diagramm.saeulen.flatMap((sa, i) => (sa.offen && Number(eingabe?.[i]) !== sa.wert ? [{ text: `${sa.name}: ${eingabe?.[i] ?? 0}`, erwartet: false }] : []));
+    // Kapitel 2: Reihenfolge der Karten, Zeichenfolge, Schätzung außerhalb des Schätzbereichs.
+    case 'ordnen': return Array.isArray(eingabe) && eingabe.join() !== a.loesung.join() ? [{ text: eingabe.join(', '), erwartet: false }] : [];
+    case 'zeichen': { const n = String(eingabe ?? '').replace(/\s/g, '').toUpperCase(); return !n || n === a.loesung ? [] : [{ text: n, erwartet: (a.typischeFehler ?? []).some((f) => f.wert === n) }]; }
+    case 'schaetzen': { const n = Number(norm(eingabe)); return !norm(eingabe) || (n >= a.bereich[0] && n <= a.bereich[1]) ? [] : [{ text: norm(eingabe), erwartet: (a.typischeFehler ?? []).some((f) => n >= f.von && n <= f.bis) }]; }
     case 'zuordnen': return a.paare.filter((p) => eingabe?.[p.links] && eingabe[p.links] !== p.rechts).map((p) => ({ text: `${p.links} → ${eingabe[p.links]}`, erwartet: false }));
     default: return [];
   }

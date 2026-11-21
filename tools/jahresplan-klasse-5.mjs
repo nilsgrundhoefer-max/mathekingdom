@@ -27,12 +27,33 @@ const roh = [
     }),
   ]],
   ['Natürliche Zahlen', [
-    uk('Natürliche Zahlen', ['Ich kann mit natürlichen Zahlen umgehen.']),
-    uk('Große Zahlen', ['Ich kann mit großen Zahlen umgehen.']),
-    uk('Runden', ['Ich kann Zahlen runden.']),
-    uk('Schätzen', ['Ich kann eine Anzahl auf Bildern schätzen.']),
-    uk('Zweiersystem', ['Ich kann Zahlen im Zweiersystem verwenden.']),
-    uk('Römische Zahlzeichen', ['Ich kann römische Zahlzeichen verwenden.'], true),
+    // Feinere Lernziele (Nils, 2026-11-21). 2.1 heißt „Zahlenstrahl und Stellenwerte“, damit Tor und erster Meilenstein nicht gleich heißen.
+    // Die Lernziele zu 2.2 heißen B1 und B2 (Billion), damit sie nicht mit der Niveaustufe G verwechselt werden.
+    uk('Zahlenstrahl und Stellenwerte', {
+      N1: 'Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.',
+      N2: 'Ich kann Zahlen vergleichen und ordnen.',
+      N3: 'Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.',
+    }),
+    uk('Große Zahlen', {
+      B1: 'Ich kann große Zahlen lesen und in Ziffern schreiben.',
+      B2: 'Ich kann große Zahlen vergleichen, ordnen und am Zahlenstrahl einordnen.',
+    }),
+    uk('Runden', {
+      R1: 'Ich kann Zahlen auf eine vorgegebene Stelle runden.',
+      R2: 'Ich kann sinnvoll runden und gerundete Zahlen deuten.',
+    }),
+    uk('Schätzen', {
+      S1: 'Ich kann eine Anzahl auf einem Bild mit einem Raster schätzen.',
+      S2: 'Ich kann Schätzungen beurteilen und gezählt, gerundet und geschätzt unterscheiden.',
+    }),
+    uk('Zweiersystem', {
+      Z1: 'Ich kann Zahlen aus dem Zweiersystem ins Zehnersystem übersetzen.',
+      Z2: 'Ich kann Zahlen ins Zweiersystem übersetzen.',
+    }),
+    uk('Römische Zahlzeichen', {
+      X1: 'Ich kann römische Zahlzeichen lesen.',
+      X2: 'Ich kann Zahlen mit römischen Zahlzeichen schreiben.',
+    }, true),
   ]],
   ['Addieren und Subtrahieren', [
     uk('Kopfrechnen', {
@@ -153,6 +174,67 @@ const roh = [
 // Merkzettel je Station: die Regeln des Unterkapitels in Kürze, ein vorgerechnetes Beispiel und ein Hinweis fürs Heft.
 // Der Merkzettel ist frei zugänglich und kostet keine Münzen.
 export const merkzettel = {
+  // Kapitel 2 (Nils, 2026-11-21). Große Zahlen stehen mit geschützter Lücke zwischen den Dreierblöcken.
+  '5.2.1': {
+    regeln: [
+      'Zahlenstrahl: Finde zuerst heraus, wie groß der Schritt von Strich zu Strich ist.',
+      'Vergleichen: Die Zahl mit mehr Stellen ist größer. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer.',
+      'Das Zeichen < heißt „ist kleiner als“, das Zeichen > heißt „ist größer als“. Die Spitze zeigt immer zur kleineren Zahl.',
+      'Stellenwerttafel: Jede Ziffer hat ihren Platz. Ist eine Stelle leer, steht dort eine 0.',
+    ],
+    beispiel: '4 Tausender, 0 Hunderter, 7 Zehner und 2 Einer sind die Zahl 4072. Es gilt 4072 < 4702, denn bei den Hundertern ist 0 kleiner als 7.',
+    heft: 'Zeichne für große Zahlen eine Stellenwerttafel ins Heft und trage die Ziffern von rechts ein.',
+  },
+  '5.2.2': {
+    regeln: [
+      'Große Zahlen liest du in Dreierblöcken von rechts: Einer, Tausender, Millionen, Milliarden, Billionen.',
+      'Tausend Tausender sind eine Million. Tausend Millionen sind eine Milliarde. Tausend Milliarden sind eine Billion.',
+      'Beim Schreiben bekommt jeder Block drei Ziffern. Fehlt etwas, füllst du mit Nullen auf.',
+      'Abkürzungen: Mio. für Million, Mrd. für Milliarde.',
+    ],
+    beispiel: 'Zwölf Millionen vierzigtausend: bei den Millionen 12, bei den Tausendern 040, bei den Einern 000. Die Zahl ist 12\u00a0040\u00a0000.',
+    heft: 'Lass zwischen den Dreierblöcken eine kleine Lücke. So kannst du die Zahl leichter lesen.',
+  },
+  '5.2.3': {
+    regeln: [
+      'Suche die Rundungsstelle und schau auf die Ziffer rechts daneben.',
+      'Bei 0, 1, 2, 3 oder 4 rundest du ab: Die Rundungsstelle bleibt, wie sie ist.',
+      'Bei 5, 6, 7, 8 oder 9 rundest du auf: Die Rundungsstelle wird um 1 größer.',
+      'Alle Ziffern rechts von der Rundungsstelle werden zu 0. Runde immer in einem Schritt.',
+    ],
+    beispiel: '3482 auf Hunderter: Rechts neben den Hundertern steht eine 8. Also wird aufgerundet: 3482 ≈ 3500.',
+    heft: 'Unterstreiche die Rundungsstelle und kreise die Ziffer rechts daneben ein.',
+  },
+  '5.2.4': {
+    regeln: [
+      'Lege ein Raster aus gleich großen Feldern über das Bild.',
+      'Zähle ein Feld genau aus. Nimm ein Feld, das typisch aussieht.',
+      'Rechne: Anzahl im Feld mal Zahl der Felder.',
+      'Eine Schätzung ist nie ganz genau. Gib sie als runde Zahl an.',
+    ],
+    beispiel: 'In einem Feld sind 8 Vögel. Das Raster hat 12 Felder. Schätzung: 8 · 12 = 96, also etwa 100 Vögel.',
+    heft: 'Schreibe zu jeder Schätzung auf, wie du gerechnet hast.',
+  },
+  '5.2.5': {
+    regeln: [
+      'Im Zweiersystem gibt es nur die Ziffern 0 und 1.',
+      'Die Stellenwerte verdoppeln sich von rechts nach links: 1, 2, 4, 8, 16, 32 und so weiter.',
+      'Vom Zweiersystem ins Zehnersystem: Zähle die Stellenwerte zusammen, bei denen eine 1 steht.',
+      'Vom Zehnersystem ins Zweiersystem: Beginne mit dem größten Stellenwert, der in die Zahl passt.',
+    ],
+    beispiel: 'Die Zahl 1011₂ hat eine 1 bei 8, bei 2 und bei 1. Also ist sie 8 + 2 + 1 = 11.',
+    heft: 'Schreibe die Stellenwerte 16, 8, 4, 2, 1 als Kopfzeile über deine Tafel.',
+  },
+  '5.2.X1': {
+    regeln: [
+      'Die Zeichen: I ist 1, V ist 5, X ist 10, L ist 50, C ist 100, D ist 500, M ist 1000.',
+      'Steht ein gleiches oder kleineres Zeichen rechts, wird es dazugezählt: VI ist 6, XX ist 20.',
+      'Steht I, X oder C links vor einem größeren Zeichen, wird es abgezogen: IV ist 4, IX ist 9, XL ist 40.',
+      'I, X, C und M stehen höchstens dreimal hintereinander. V, L und D stehen nur einmal.',
+    ],
+    beispiel: 'XLVII: XL ist 40, V ist 5, II ist 2. Zusammen sind das 40 + 5 + 2 = 47.',
+    heft: 'Zerlege die Zahl erst in Tausender, Hunderter, Zehner und Einer. Schreibe dann jede Stelle einzeln.',
+  },
   '5.1.1': {
     regeln: [
       'Strichliste: Für jede Antwort machst du einen Strich in die passende Zeile.',
@@ -339,6 +421,51 @@ export const merkzettel = {
 // Eine Aufgabe zeigt nur die Wörter bis zu ihrer eigenen Stufe. Die Aufgabentexte einer Stufe benutzen keine Wörter höherer Stufen.
 const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
 export const wortspeicher = {
+  // Kapitel 2: Ein kleingeschriebenes Wort wird als Wortstamm gesucht; deshalb stehen Verben nur ab F oder G.
+  '5.2.1': [
+    w('natürliche Zahlen', 'F', 'Die Zahlen 0, 1, 2, 3 und so weiter. Mit ihnen zählt man.'),
+    w('Zahlenstrahl', 'F', 'Eine Linie mit Strichen. Nach rechts werden die Zahlen immer größer.'),
+    w('Stellenwerttafel', 'F', 'Eine Tabelle mit Spalten für Einer, Zehner, Hunderter und Tausender.'),
+    w('Ziffer', 'F', 'Die Zeichen 0, 1, 2, 3, 4, 5, 6, 7, 8 und 9. Aus Ziffern werden Zahlen gebaut.'),
+    w('Vorgänger', 'F', 'Die Zahl direkt davor. Sie ist um 1 kleiner.'),
+    w('Nachfolger', 'F', 'Die Zahl direkt danach. Sie ist um 1 größer.'),
+    w('Stellenwert', 'G', 'Der Wert einer Ziffer an ihrem Platz: Einer, Zehner, Hunderter oder Tausender.'),
+    w('Teilstrich', 'G', 'Ein Strich am Zahlenstrahl. Von Teilstrich zu Teilstrich ist es immer gleich weit.'),
+    w('Stufenzahl', 'M', 'Die Zahlen 1, 10, 100, 1000 und so weiter. Jede ist zehnmal so groß wie die davor.'),
+  ],
+  '5.2.2': [
+    w('Million', 'F', 'Tausend Tausender. Eine Million schreibt man mit 6 Nullen.'),
+    w('Dreierblock', 'F', 'Drei Ziffern nebeneinander. Große Zahlen liest man in Dreierblöcken.'),
+    w('Milliarde', 'G', 'Tausend Millionen. Eine Milliarde schreibt man mit 9 Nullen.'),
+    w('Billion', 'G', 'Tausend Milliarden. Eine Billion schreibt man mit 12 Nullen.'),
+    w('Mio.', 'G', 'Die Abkürzung für Million.'),
+    w('Mrd.', 'G', 'Die Abkürzung für Milliarde.'),
+    w('Größenordnung', 'M', 'Ob eine Zahl bei den Tausendern, den Millionen oder den Milliarden liegt.'),
+  ],
+  '5.2.3': [
+    w('runden', 'F', 'Eine Zahl durch eine glatte Zahl in der Nähe ersetzen.'),
+    w('Nachbarzehner', 'F', 'Die beiden Zehnerzahlen links und rechts von einer Zahl.'),
+    w('Rundungsstelle', 'G', 'Die Stelle, auf die gerundet wird, zum Beispiel die Hunderter.'),
+    w('Rundungsregel', 'G', 'Bei 0 bis 4 wird abgerundet, bei 5 bis 9 wird aufgerundet.'),
+    w('Genauigkeit', 'M', 'Wie fein eine Zahl angegeben ist: auf Zehner, Hunderter oder Tausender genau.'),
+  ],
+  '5.2.4': [
+    w('schätzen', 'F', 'Eine Anzahl ungefähr angeben, ohne alles zu zählen.'),
+    w('Raster', 'F', 'Gleich große Felder, die über einem Bild liegen.'),
+    w('hochrechnen', 'G', 'Von einem Feld auf alle Felder schließen: Anzahl im Feld mal Zahl der Felder.'),
+    w('Schätzwert', 'G', 'Das Ergebnis einer Schätzung.'),
+    w('Stichprobe', 'M', 'Ein kleiner Teil, den man genau zählt, um auf das Ganze zu schließen.'),
+  ],
+  '5.2.5': [
+    w('Zweiersystem', 'F', 'Ein Zahlsystem mit nur zwei Ziffern: 0 und 1.'),
+    w('Zehnersystem', 'G', 'Unser Zahlsystem mit den Ziffern 0 bis 9. Jede Stelle ist zehnmal so viel wert wie die rechts daneben.'),
+    w('Dualzahl', 'M', 'Eine Zahl im Zweiersystem, zum Beispiel 101₂.'),
+  ],
+  '5.2.X1': [
+    w('römische Zahlzeichen', 'F', 'Die Zeichen der alten Römer für Zahlen: I, V, X, L, C, D und M.'),
+    w('Zifferblatt', 'G', 'Die Scheibe einer Uhr mit den Zahlen 1 bis 12.'),
+    w('Subtraktionsregel', 'M', 'Steht ein kleineres Zeichen links vor einem größeren, wird es abgezogen: IV ist 4.'),
+  ],
   // Kapitel 1: Ein Wort gilt im ganzen Kapitel ab der frühesten Stufe, die es hier bekommt.
   '5.1.1': [
     w('Strichliste', 'F', 'Für jede Antwort machst du einen Strich. Der fünfte Strich geht quer.'),
@@ -559,14 +686,22 @@ const voraussetzungen = {
   '5.1.4-V1': ['5.1.2-L1'],
   '5.1.4-V2': ['5.1.4-V1'],
   '5.1.5-U1': ['5.1.1-H2'],
-  '5.2.1-L1': [],
-  '5.2.2-L1': ['5.2.1-L1'],
-  '5.2.3-L1': ['5.2.2-L1'],
-  '5.2.4-L1': ['5.2.3-L1'],
-  '5.2.5-L1': ['5.2.1-L1'],
-  '5.2.X1-L1': ['5.2.1-L1'],
-  '5.3.1-K1': ['5.2.1-L1'],
-  '5.3.1-K2': ['5.2.1-L1'],
+  // Kapitel 2 (Nils, 2026-11-21).
+  '5.2.1-N1': [],
+  '5.2.1-N2': [],
+  '5.2.1-N3': [],
+  '5.2.2-B1': ['5.2.1-N3'],
+  '5.2.2-B2': ['5.2.1-N2', '5.2.2-B1'],
+  '5.2.3-R1': ['5.2.1-N3'],
+  '5.2.3-R2': ['5.2.3-R1'],
+  '5.2.4-S1': ['5.2.3-R1'],
+  '5.2.4-S2': ['5.2.4-S1'],
+  '5.2.5-Z1': ['5.2.1-N3'],
+  '5.2.5-Z2': ['5.2.5-Z1'],
+  '5.2.X1-X1': ['5.2.1-N3'],
+  '5.2.X1-X2': ['5.2.X1-X1'],
+  '5.3.1-K1': ['5.2.1-N3'],
+  '5.3.1-K2': ['5.2.1-N3'],
   '5.3.1-K3': ['5.3.1-K1', '5.3.1-K2'],
   '5.3.2-A1': ['5.3.1-K1'],
   '5.3.3-S1': ['5.3.1-K2'],
@@ -577,13 +712,13 @@ const voraussetzungen = {
   '5.5.1-L1': [],
   '5.5.2-L1': ['5.5.1-L1'],
   '5.5.3-L1': ['5.5.2-L1'],
-  '5.5.4-L1': ['5.2.1-L1', '5.5.1-L1'],
+  '5.5.4-L1': ['5.2.1-N1', '5.5.1-L1'],
   '5.5.5-L1': ['5.5.2-L1'],
   '5.5.6-L1': ['5.5.2-L1'],
   '5.5.7-L1': ['5.5.2-L1', '5.5.3-L1'],
   '5.5.8-L1': ['5.5.3-L1', '5.5.7-L1'],
   '5.5.9-L1': ['5.5.6-L1', '5.5.8-L1'],
-  '5.6.1-L1': ['5.2.4-L1'],
+  '5.6.1-L1': ['5.2.4-S1'],
   '5.6.2-L1': ['5.3.2-A2', '5.3.3-S2'],
   '5.6.3-L1': ['5.3.1-K1', '5.3.1-K2'],
   '5.6.4-L1': ['5.4.1-K3'],
@@ -603,14 +738,14 @@ const voraussetzungen = {
   '5.8.4-L1': ['5.8.3-L1'],
   '5.9.1-L1': ['5.4.1-K2'],
   '5.9.2-L1': ['5.9.1-L1', '5.4.5-D2', '5.6.5-L1'],
-  '5.9.3-L1': ['5.9.1-L1', '5.2.2-L1'],
+  '5.9.3-L1': ['5.9.1-L1', '5.2.2-B1'],
   '5.3.2-A2': ['5.3.1-K1'],
   '5.3.2-A3': ['5.3.2-A2'],
-  '5.3.2-A4': ['5.3.2-A2', '5.3.1-K1'],
+  '5.3.2-A4': ['5.3.2-A2', '5.3.1-K1', '5.2.3-R1'],
   '5.3.2-A5': ['5.3.2-A2'],
   '5.3.3-S2': ['5.3.1-K2', '5.3.2-A2'],
   '5.3.3-S3': ['5.3.3-S2'],
-  '5.3.3-S4': ['5.3.3-S2', '5.3.2-A4'],
+  '5.3.3-S4': ['5.3.3-S2', '5.3.2-A4', '5.2.3-R1'],
   '5.3.3-S5': ['5.3.3-S2'],
   '5.3.4-B1': ['5.3.1-K1', '5.3.1-K2'],
   '5.3.4-B2': ['5.3.4-B1'],
@@ -618,7 +753,7 @@ const voraussetzungen = {
   '5.4.5-D2': ['5.4.1-K2', '5.4.5-D1', '5.3.1-K2'],
   '5.4.5-D3': ['5.4.5-D2', '5.4.1-K1'],
   '5.4.5-D4': ['5.4.5-D2', '5.4.1-K2'],
-  '5.4.5-D5': ['5.4.5-D2', '5.3.2-A4'],
+  '5.4.5-D5': ['5.4.5-D2', '5.3.2-A4', '5.2.3-R1'],
   '5.4.5-D6': ['5.4.5-D2', '5.4.5-D4'],
   '5.4.1-K2': ['5.4.1-K1'],
   '5.4.1-K3': ['5.4.1-K1', '5.4.1-K2'],
@@ -653,6 +788,19 @@ const grundlagen = {
   '5.1.4-V1': 'Zwei Säulen vergleichen: Welche ist höher, um wie viel?',
   '5.1.4-V2': 'Eine einfache Aussage am Diagramm nachprüfen: höher, niedriger, gleich hoch',
   '5.1.5-U1': 'Antworten einer kleinen Umfrage zählen und eintragen',
+  '5.2.1-N1': 'Zahlen bis 100 am Zahlenstrahl finden, jeder Zehner ist beschriftet',
+  '5.2.1-N2': 'Zwei Zahlen bis 1000 vergleichen: erst die Hunderter, dann die Zehner, dann die Einer',
+  '5.2.1-N3': 'Hunderter, Zehner und Einer in der Stellenwerttafel ablesen und eintragen',
+  '5.2.2-B1': 'Zahlen bis zur Million in der Stellenwerttafel lesen: erst die Tausender, dann der Rest',
+  '5.2.2-B2': 'Zwei große Zahlen in der Stellenwerttafel vergleichen: Welche hat mehr Stellen?',
+  '5.2.3-R1': 'Die Nachbarzehner einer Zahl am Zahlenstrahl finden: Welcher liegt näher?',
+  '5.2.3-R2': 'Entscheiden, ob eine Zahl näher am unteren oder am oberen Nachbarzehner liegt',
+  '5.2.4-S1': 'Ein Feld auszählen und mit der Zahl der Felder malnehmen',
+  '5.2.4-S2': 'Unterscheiden, ob eine Anzahl genau gezählt oder nur ungefähr angegeben ist',
+  '5.2.5-Z1': 'Plättchen in einer Tafel mit den Spalten 8, 4, 2 und 1 zusammenzählen',
+  '5.2.5-Z2': 'Eine Zahl bis 15 aus 8, 4, 2 und 1 zusammensetzen',
+  '5.2.X1-X1': 'Die Zeichen I, V und X kennen und zusammenzählen',
+  '5.2.X1-X2': 'Zahlen bis 20 aus den Zeichen I, V und X legen',
   '5.3.1-K1': 'Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100',
   '5.3.1-K2': 'Wegnehmen und Ergänzen in Schritten bis 100',
   '5.3.1-K3': 'Zahlen, die zusammen 10 oder 100 ergeben',

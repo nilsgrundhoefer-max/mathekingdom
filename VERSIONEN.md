@@ -8,6 +8,24 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.36 vom 21.11.2026
+
+### Schüler
+
+- Kapitel 2 „Natürliche Zahlen“ ist da: Zahlenstrahl und Stellenwerte, Große Zahlen, Runden, Schätzen, Zweiersystem und der Abstecher Römische Zahlzeichen. Das sind 312 neue Aufgaben auf allen vier Niveaus.
+- Neu ist das Ordnen: Du bringst Karten in die richtige Reihenfolge, mit der Maus oder mit den Pfeiltasten.
+- Beim Schätzen siehst du ein Bild mit vielen Dingen. Ab Niveau M zählt jede Antwort, die nah genug dran ist. Danach erfährst du immer die genaue Anzahl.
+- Römische Zahlzeichen und Zahlen im Zweiersystem tippst du über Tasten auf dem Bildschirm.
+- Große Zahlen gliedert das Zahlenfeld beim Tippen in Dreierblöcke: 1 250 000.
+
+### Lehrkraft
+
+- Kapitel 2 hat 13 Lernziele in fünf Meilensteinen und einem Abstecher. Der Abstecher Römische Zahlzeichen zählt nicht für den Abschluss des Kapitels.
+- Tor 2 ist für deine Klasse geschlossen, bis du es unter Klasse › Unterricht öffnest.
+- Auf F und G zählt beim Schätzen der Rechenweg und ist eindeutig. Ab M ist jede Antwort im Schätzbereich richtig, ein Fünftel über oder unter der wahren Anzahl.
+- Auswertung, typische Fehler und Tafelbild kennen die neuen Eingaben Ordnen, Zeichen tippen und Schätzen.
+- Die Startdateien musst du nicht neu erstellen.
+
 ## 0.35 vom 20.11.2026
 
 ### Schüler

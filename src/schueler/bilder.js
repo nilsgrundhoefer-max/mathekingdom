@@ -171,7 +171,8 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
         s('rect', { x: 0, y: 0, width: breite, height: hoehe, fill: 'white' }),
         frei.map(([m, j]) => { const [mx, my] = mitteVon(m, j); return s('ellipse', { cx: mx + 45, cy: my - 25, rx: 125, ry: 95, fill: 'black', filter: `url(#${nebelId}-weich)` }); }))),
     s('rect', { x: 4, y: 4, width: breite - 8, height: hoehe - 8, rx: 6, class: 'nebel', mask: `url(#${nebelId})`, 'aria-hidden': 'true', 'data-frei': frei.length }),
-    windrose(breite - 46, hoehe - 46),
+    // Mit Abstecher steht unten rechts dessen Beschriftung; die Windrose rückt dann nach oben.
+    windrose(breite - 46, milestones.some((m) => m.extra) ? 58 : hoehe - 46),
     s('path', { d, class: 'weg-rand' }), s('path', { d, class: 'weg' }));
   // Abstecher: gestrichelt unterhalb des Weges
   milestones.forEach((m, j) => {
@@ -290,12 +291,15 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
   const svg = s('svg', { class: 'zahlenstrahl', viewBox: `0 0 ${B} 138`, role: beiWahl ? 'group' : 'img', 'aria-label': `Zahlenstrahl von ${von} bis ${bis}` },
     s('line', { x1: links - 14, y1: y, x2: B - 14, y2: y, class: 'achse' }),
     s('path', { d: `M${B - 16} ${y - 7} L${B - 2} ${y} L${B - 16} ${y + 7} Z`, class: 'spitze' }));
+  // Ausschnitt (Kapitel 2): Der Strahl beginnt nicht bei 0. Zwei schräge Striche zeigen die Unterbrechung.
+  if (strahl.ausschnitt) svg.append(s('path', { d: `M${links - 17} ${y + 8} l6 -16 M${links - 11} ${y + 8} l6 -16`, class: 'unterbrechung' }));
+  const lang = String(gliedere(bis)).length > 7;
   const breite = x(von + schritt) - x(von);
   for (let w = von; w <= bis; w += schritt) {
     const gross = (w - von) % beschriftung === 0;
     const g = s('g', { class: `strich${gross ? ' gross' : ''}${w === gewaehlt ? ' gewaehlt' : ''}`, 'data-wert': w },
       s('line', { x1: x(w), y1: y - (gross ? 12 : 7), x2: x(w), y2: y + (gross ? 12 : 7) }),
-      gross && s('text', { x: x(w), y: y + 32, 'text-anchor': 'middle' }, gliedere(w)),
+      gross && s('text', { x: x(w), y: y + 32, 'text-anchor': 'middle', class: lang ? 'lang' : null }, gliedere(w)),
       w === gewaehlt && s('circle', { cx: x(w), cy: y, r: 9, class: 'marke' }));
     if (beiWahl) {
       const waehle = () => beiWahl(w);
@@ -310,6 +314,12 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
     svg.append(s('circle', { cx: x(strahl.start), cy: y, r: 7, class: 'start' }));
     if (startwort) svg.append(s('text', { x: x(strahl.start), y: y + 52, 'text-anchor': 'middle', class: 'startwort' }, 'Start'));
   }
+  // Punkte (Kapitel 2): Zahlen, die am Strahl markiert und beschriftet sind. Sie müssen nicht auf einem Teilstrich liegen.
+  [...(strahl.punkte ?? [])].sort((p, q) => p - q).forEach((p, i) => {
+    const hoch = y - 26 - (i % 2) * 20;
+    svg.append(s('line', { x1: x(p), y1: y - 6, x2: x(p), y2: hoch + 5, class: 'punktlinie' }), s('circle', { cx: x(p), cy: y, r: 6, class: 'punkt' }),
+      s('text', { x: x(p), y: hoch, 'text-anchor': 'middle', class: 'punktzahl' }, gliedere(p)));
+  });
   for (const sp of strahl.spruenge ?? []) {
     const a = x(sp.von), b = x(sp.nach), hoch = Math.min(46, 16 + Math.abs(b - a) / 6);
     svg.append(s('path', { d: `M${a} ${y - 12} Q${(a + b) / 2} ${y - 12 - hoch * 1.6} ${b} ${y - 12}`, class: 'sprung' }),

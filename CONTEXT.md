@@ -82,6 +82,18 @@ _Avoid_: Rechenmauer, Zahlenpyramide
 Ein Aufgabenformat für das Multiplizieren durch Zerlegen: Die Faktoren stehen zerlegt am Rand einer Tabelle (· | 20 | 3 und 4), die Teilprodukte und ihre Summe trägt der Schüler in die Felder ein.
 _Avoid_: Malkreuz-Bild, Multiplikationstabelle
 
+**Ordnen**:
+Ein Aufgabenformat, bei dem der Schüler Zahlenkarten in die verlangte Reihenfolge bringt, mit Maus oder Tastatur. Richtig ist nur die ganze Reihenfolge.
+_Avoid_: Sortieren, Reihenfolge-Aufgabe
+
+**Schätzbild**:
+Ein Aufgabenbild aus vielen kleinen Symbolen, deren Anzahl geschätzt und nicht gezählt werden soll. Jedes Kind sieht dasselbe Bild. Auf F und G ist ein Raster eingezeichnet, ab M blendet der Schüler es selbst ein.
+_Avoid_: Wimmelbild, Foto
+
+**Schätzbereich**:
+Der Bereich um die wahre Anzahl eines Schätzbilds, in dem eine Schätzung ab M als richtig gilt. Auf F und G zählt stattdessen der Rechenweg: Anzahl im Feld mal Zahl der Felder. Nach der Antwort zeigt das Schüler-Dashboard immer die wahre Anzahl.
+_Avoid_: Toleranz, ungefähr richtig
+
 **Rechenraster**:
 Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft. Beim Multiplizieren steht über dem Ergebnis eine Zeile kleiner Übertragsfelder; sie sind Notizhilfe und werden nicht bewertet.
 _Avoid_: Kästchenraster

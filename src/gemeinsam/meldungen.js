@@ -44,7 +44,8 @@ export function sammle(lehrkraefte, statusListe = {}, gesperrt = []) {
 }
 
 // Die Lösung einer Aufgabe in einer Zeile, für Tafelbild und Export.
-const zahlMitEinheit = (t) => `${t.loesung}${t.einheit ? ` ${t.einheit}` : ''}`;
+const gliedere = (n) => (Number(n) >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, '\u00a0') : String(n));
+const zahlMitEinheit = (t) => `${gliedere(t.loesung)}${t.einheit ? ` ${t.einheit}` : ''}`;
 export function loesungVon(a) {
   switch (a.format) {
     case 'zahl': case 'zahlenstrahl': return zahlMitEinheit(a);
@@ -54,6 +55,9 @@ export function loesungVon(a) {
     case 'auswahl': return a.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
     case 'zuordnen': return a.paare.map((p) => `${p.links} → ${p.rechts}`).join(', ');
     case 'strichliste': return a.zeilen.map((z) => `${z.name}: ${z.loesung} Striche`).join(', ');
+    case 'ordnen': return a.loesung.join(', ');
+    case 'zeichen': return zahlMitEinheit(a);
+    case 'schaetzen': return `${zahlMitEinheit(a)} (richtig von ${gliedere(a.bereich[0])} bis ${gliedere(a.bereich[1])})`;
     case 'zeichnen': return a.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     default: return '';
   }

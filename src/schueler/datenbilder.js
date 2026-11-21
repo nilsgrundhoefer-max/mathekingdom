@@ -246,7 +246,7 @@ export function zeichnenLoesung(auf) {
 }
 
 // ---------- Bilddiagramm ----------
-const SYMBOLE = {
+export const SYMBOLE = {
   // Kind: Kopf und Körper.
   kind: () => [s('circle', { cx: 14, cy: 7, r: 5.5, class: 'sym-haut' }), s('path', { d: 'M5 27 Q5 14 14 14 Q23 14 23 27 Z', class: 'sym-kleid' })],
   // Buch: Einband mit Rücken und Seiten.

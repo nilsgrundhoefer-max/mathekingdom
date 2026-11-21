@@ -529,3 +529,52 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .datentabelle tr.gesamt th, #mathekingdom .datentabelle tr.gesamt td { border-top: 3px double #9aa3b5; font-weight: 700; }
 #mathekingdom .loesungsbild { margin-top: 10px; }
 #mathekingdom .option input { flex: none; }
+
+/* ---------- Kapitel 2: Natürliche Zahlen (ADR 0030) ---------- */
+#mathekingdom .zahlfeld input.lang { width: 17ch; letter-spacing: .02em; }
+#mathekingdom .zahlenstrahl .unterbrechung { stroke: var(--tinte); stroke-width: 2.5; fill: none; stroke-linecap: round; }
+#mathekingdom .zahlenstrahl text.lang { font-size: 12.5px; }
+#mathekingdom table.stellentafel { border-collapse: collapse; margin: 4px 0; font-variant-numeric: tabular-nums; }
+#mathekingdom table.stellentafel th, #mathekingdom table.stellentafel td { border: 1.5px solid #5b4632; min-width: 2.6rem; text-align: center; padding: 6px 8px; }
+#mathekingdom table.stellentafel th { background: #f1e7cf; font-weight: 700; }
+#mathekingdom table.stellentafel tr.gruppen th { background: #e6d8b4; font-size: .95rem; }
+#mathekingdom table.stellentafel td { background: #fff; font-size: 1.5rem; font-weight: 700; height: 2.6rem; }
+#mathekingdom table.stellentafel .blockende { border-right: 4px solid #5b4632; }
+#mathekingdom table.stellentafel.mit-plaettchen td { vertical-align: top; min-width: 126px; padding: 8px 4px; }
+#mathekingdom .tafelplaettchen { display: block; margin: 0 auto; }
+#mathekingdom .tafelplaettchen circle { fill: #2f4f7f; stroke: #2f4f7f; stroke-width: 2; }
+#mathekingdom table.stellentafel.eingabe input.ziffer { width: 1.7rem; height: 2rem; margin: 0; padding: 0; font-size: 1.3rem; }
+#mathekingdom .loesungsbild table.stellentafel { margin-bottom: 8px; }
+#mathekingdom .schaetzfigur { margin: 0; }
+#mathekingdom svg.schaetzbild { display: block; width: 100%; min-width: 480px; max-width: 700px; height: auto; }
+#mathekingdom .schaetzbild .flaeche { fill: #eef3e2; }
+#mathekingdom .schaetzbild .rand { fill: none; stroke: #5b4632; stroke-width: 3; }
+#mathekingdom .schaetzbild .rasterlinien line { stroke: #5b4632; stroke-width: 2; }
+#mathekingdom .schaetzbild .markiert { fill: rgba(240,190,40,.35); stroke: #b8860b; stroke-width: 5; }
+#mathekingdom .schaetzbild .sym-punkt { fill: #2f4f7f; }
+#mathekingdom .schaetzbild .sym-vogel { fill: none; stroke: #3a3029; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+#mathekingdom .schaetzbild .sym-stern { fill: #c98a12; stroke: #7a5408; stroke-width: 1.5; }
+#mathekingdom .schaetzhinweis { margin-top: 6px; font-weight: 700; }
+#mathekingdom .rasterwahl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+#mathekingdom .rasterknopf[aria-pressed=true] { background: var(--nacht); color: #fff; }
+#mathekingdom .ordnenfeld { display: grid; gap: 6px; }
+#mathekingdom .ordnenrand { display: flex; justify-content: space-between; max-width: 100%; }
+#mathekingdom ol.ordnen { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
+#mathekingdom .ordnenkarte { display: flex; align-items: stretch; border: 2px solid var(--nacht); border-radius: 10px; background: #fffdf6; overflow: hidden; }
+#mathekingdom .ordnenkarte .kartenwert { padding: 10px 12px; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#mathekingdom .ordnenkarte .kartenwert:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+#mathekingdom .ordnenkarte .schieb { border: none; background: #efe6d2; padding: 0 9px; cursor: pointer; font-size: 1rem; color: var(--nacht); min-height: 0; border-radius: 0; }
+#mathekingdom .ordnenkarte .schieb:disabled { opacity: .3; cursor: default; }
+#mathekingdom .ordnenkarte .schieb:not(:disabled):hover { background: var(--gold); }
+#mathekingdom .zeicheneingabe { display: grid; gap: 10px; justify-items: start; }
+#mathekingdom .zeichenfeld { font-size: 1.4rem; width: 13ch; letter-spacing: .08em; font-weight: 700; }
+#mathekingdom .zeichentasten { display: flex; flex-wrap: wrap; gap: 6px; }
+#mathekingdom .zeichentaste { min-width: 2.8rem; font-size: 1.2rem; font-weight: 700; }
+#mathekingdom .wahre-anzahl { font-weight: 700; }
+
+/* Zahlenstrahl: markierte Zahlen (Kapitel 2) */
+#mathekingdom .zahlenstrahl .punkt { fill: var(--siegel); stroke: #fff; stroke-width: 2; }
+#mathekingdom .zahlenstrahl .punktlinie { stroke: var(--siegel); stroke-width: 1.5; }
+#mathekingdom .zahlenstrahl .punktzahl { font-size: 15px; font-weight: 700; fill: currentColor; }
+#mathekingdom table.zeichentafel th { font-family: var(--schrift-titel); font-size: 1.4rem; }
+#mathekingdom table.zeichentafel td { font-size: 1.05rem; font-weight: 600; height: auto; }

@@ -78,6 +78,27 @@ async function antworte(seite, richtig = true, { taste = false } = {}) {
       if (!richtig && i === 0) knoepfe.push('plus');
       for (const k of knoepfe) await seite.click(`button.strichknopf[data-zeile="${i}"][data-knopf="${k}"]`);
     }
+  } else if (auf.format === 'ordnen') {
+    // Kapitel 2: Karte für Karte mit dem Knopf „nach links“ an ihren Platz schieben. Falsch ist die umgekehrte Reihenfolge.
+    const ziel = richtig ? auf.loesung : [...auf.loesung].reverse();
+    for (const [platz, karte] of ziel.entries()) {
+      for (let k = 0; k < auf.karten.length; k++) {
+        const jetzt = JSON.parse(await seite.inputValue('input[name=ordnung]'));
+        const i = jetzt.indexOf(karte);
+        if (i <= platz) break;
+        await seite.click(`ol.ordnen li:nth-child(${i + 1}) button.links`);
+      }
+    }
+    // Lag schon alles richtig, zählt erst eine Bewegung als Eingabe: einmal hin und zurück.
+    if (await seite.evaluate(() => document.querySelector('input[name=ordnung]').dataset.bewegt !== '1')) {
+      await seite.click('ol.ordnen li:nth-child(1) button.rechts');
+      await seite.click('ol.ordnen li:nth-child(2) button.links');
+    }
+  } else if (auf.format === 'zeichen') {
+    // Kapitel 2: über die Tasten auf dem Bildschirm tippen.
+    for (const c of richtig ? auf.loesung : auf.loesung + auf.tasten[0]) await seite.locator('.zeichentasten button', { hasText: c }).first().click();
+  } else if (auf.format === 'schaetzen') {
+    await seite.fill('input[name=zahl]', String(richtig ? auf.loesung : auf.bereich[1] + 1));
   } else if (auf.format === 'zeichnen') {
     // Mit der Tastatur: Pos1 setzt auf 0, jeder Pfeil nach oben eine Linie höher.
     const d = auf.diagramm;
@@ -519,13 +540,13 @@ async function weiter(seite, wahl = '#weiter') {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  // Kapitel 1 ist schon gemeistert: Die Etappe führt nach Kapitel 3, um dessen Einstiegscheck und Grundlagen es hier geht.
+  // Kapitel 1 und 2 sind schon gemeistert: Die Etappe führt nach Kapitel 3, um dessen Einstiegscheck und Grundlagen es hier geht.
   {
     const t = new Date(Date.now() - 86400000).toISOString();
-    const lernziele = Object.fromEntries(pool.kapitel[0].unterkapitel.flatMap((u) => u.lernziele).map((l) => [l.id, { erreichtAm: t }]));
+    const lernziele = Object.fromEntries(pool.kapitel.slice(0, 2).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, { erreichtAm: t }]));
     const stand = { version: 2, code: '5A-EINS', klasse: '5a', erstellt: t, geaendert: t, muenzen: 0, niveau: {}, niveauMarke: {}, lernziele, versuche: [], hilferuf: null, hilferufe: [],
       wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], heftNr: 0, heftSeitCheck: 0, heftchecks: [],
-      einstieg: { '5.1': { uebersprungen: true } } };
+      einstieg: { '5.1': { uebersprungen: true }, '5.2': { uebersprungen: true } } };
     await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-EINS.json')) localStorage.setItem('mk-demo-5a/5A-EINS.json', text); }, JSON.stringify(stand));
   }
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
