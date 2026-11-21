@@ -496,6 +496,17 @@ _Avoid_: Support-Protokoll, Ticket, Fehlermeldung
 Eine Aufgabe, die über alle Klassen hinweg an ihren Zahlen auffällt, ohne dass jemand sie gemeldet hat: etwa viele gleiche falsche Antworten, die kein typischer Fehler sind, oder eine viel niedrigere Lösungsquote als die übrigen Aufgaben ihres Lernziels. Nur der Administrator sieht diese Liste, ohne Namen.
 _Avoid_: schwierige Aufgabe (das zeigt das Lehrer-Dashboard je Klasse)
 
+**Aufgabentester**:
+Die Karte im Admin-Dashboard unter Aufgaben, in der der Administrator jede Aufgabe einmal so sieht und bedient, wie ein Schüler sie sieht, mit Lösung, typischen Fehlern und Aufgabenkennung daneben. Er hakt sie als kontrolliert ab, meldet einen Fehler oder überspringt sie.
+_Avoid_: Aufgabenprüfung, Testmodus
+
+**Kontrolliert**:
+Eine Aufgabe, die der Administrator im Aufgabentester von Hand durchgesehen und bestätigt hat. Das Häkchen gilt für genau diesen Inhalt: Ändern sich Text, Lösung, Hilfen oder Bild, ist die Aufgabe wieder nicht kontrolliert. Schüler bekommen kontrollierte und nicht kontrollierte Aufgaben gleichermaßen; nur der Administrator und die Aufgabenübersicht zeigen den Zustand.
+_Avoid_: geprüft (Prüfen ist das Auswerten einer Antwort), freigegeben
+
+**Kontrollliste**:
+Die Datei, die der Administrator aus dem Aufgabentester exportiert: alle kontrollierten Aufgaben mit ihrer Aufgabenkennung. Sie wird in den Aufgabenpool übernommen, damit das Häkchen auch die nächste Version überdauert.
+
 **Namensliste**:
 Die Zuordnung von Schülercodes zu echten Namen, Teil der Klassendaten.
 _Avoid_: Klassenliste (für die Datei)
