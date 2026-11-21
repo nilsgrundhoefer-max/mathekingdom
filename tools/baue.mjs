@@ -211,7 +211,11 @@ for (const name of readdirSync(new URL('aufgabenpool/', wurzel))) {
   const m = name.match(/^klasse-(\d+)\.json$/);
   if (m) pools[m[1]] = JSON.parse(readFileSync(new URL(`aufgabenpool/${name}`, wurzel), 'utf8'));
 }
+// Kontrollliste (0.37): vom Administrator im Aufgabentester abgehakte Aufgaben, { kennung: fingerabdruck }.
+let kontrolliert = {};
+try { kontrolliert = JSON.parse(readFileSync(new URL('aufgabenpool/kontrolliert.json', wurzel), 'utf8')).aufgaben ?? {}; } catch { /* noch keine */ }
 const gemeinsam = `window.MK_POOLS = ${JSON.stringify(pools)};
+window.MK_KONTROLLIERT = ${JSON.stringify(kontrolliert)};
 window.MK_BASIS = ${JSON.stringify(BASIS)};
 window.MK_SCHUELER_JS = ${JSON.stringify(dashboard)};
 window.MK_STARTDATEI = ${JSON.stringify(alteStartdatei)};

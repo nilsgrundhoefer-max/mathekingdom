@@ -191,7 +191,8 @@ function pruefeZeichnung(aufgabe, eingabe) {
 
 // ---------- Lernziele ----------
 // Mit Lösungsschritt-Kärtchen gelöst zählt nicht, Aufgaben aus dem Einstiegscheck (ADR 0014) und Seitenblicke (ADR 0016) zählen nie.
-const zaehlt = (v) => v.richtig && !v.einstieg && !v.seitenblick && !hatKarte(v, 'loesungsschritt');
+// Seit 0.37 zählt auch eine Aufgabe nicht, deren Lösung der Schüler am selben Tag schon gesehen hatte (ADR 0031).
+const zaehlt = (v) => v.richtig && !v.einstieg && !v.seitenblick && !v.bekannt && !hatKarte(v, 'loesungsschritt');
 // Wackelig: mindestens 4 Aufgaben zum Lernziel, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
 export const WACKELIG_AB = 4;
 export function istWackelig(stand, lernzielId) {
@@ -381,9 +382,20 @@ export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.
   return null;
 }
 
+// ---------- Gesehene Lösung (ADR 0031) ----------
+// Die Lösung hat gesehen, wer eine Aufgabe nach zwei Fehlversuchen nicht gelöst hat (dann steht die Lösung da)
+// oder das Lösungsschritt-Kärtchen geöffnet hat. Tipp und Beispiel zählen nicht. Der Einstiegscheck zeigt keine Lösung.
+export const loesungGesehen = (v) => !v.einstieg && (!v.richtig || hatKarte(v, 'loesungsschritt'));
+// Kennt der Schüler die Lösung dieser Aufgabe von heute? Dann bringt sie 1 Münze und zählt nicht fürs Siegel. Ab dem nächsten Tag zählt sie wieder.
+export function kenntLoesung(stand, aufgabeId, jetzt) {
+  const heute = tagVon(jetzt);
+  return stand.versuche.some((v) => v.aufgabe === aufgabeId && loesungGesehen(v) && v.t && tagVon(v.t) === heute);
+}
+
 // ---------- Münzen ----------
 export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
   if (!bearbeitung.geloest) return 0;
+  if (bearbeitung.bekannt) return 1; // Lösung heute schon gesehen (ADR 0031)
   if (stand.versuche.some((v) => v.aufgabe === aufgabe.id && v.richtig)) return 1; // Wiederholung
   if (hatKarte(bearbeitung, 'loesungsschritt')) return 1;
   const abstand = NIVEAUS.indexOf(aufgabe.niveau) - NIVEAUS.indexOf(zielniveau);
@@ -403,7 +415,8 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 // Mit `{ sonderauftrag: id }` zählt sie wie die Brücke fürs Lernziel, aber nicht für Selbsteinschätzung und Grundlagen-Schleife (ADR 0021).
 export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false, sonderauftrag = null } = {}) {
   const eigen = !rueckblick && !bruecke && !seitenblick && !sonderauftrag;
-  const muenzen = muenzenFuer(stand, aufgabe, bearbeitung, zielniveau);
+  const bekannt = bearbeitung.geloest && kenntLoesung(stand, aufgabe.id, jetzt);
+  const muenzen = muenzenFuer(stand, aufgabe, { ...bearbeitung, bekannt }, zielniveau);
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
   stand.versuche.push({
@@ -411,7 +424,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     richtig: bearbeitung.geloest, versuche: bearbeitung.versuche, eingaben: bearbeitung.eingaben,
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
-    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(seitenblick && { seitenblick: true }), ...(sonderauftrag && { sonderauftrag }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }),
+    ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(seitenblick && { seitenblick: true }), ...(sonderauftrag && { sonderauftrag }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }), ...(bekannt && { bekannt: true }),
   });
   // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
   let heft = null;
@@ -440,7 +453,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   const grundlage = eigen && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
   // Erstmals ohne Beispiel und Lösungsschritt (ADR 0017): nur beim Üben am Meilenstein.
   const ohneHilfe = eigen && erstmalsOhneHilfe(stand);
-  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe };
+  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe, bekannt };
 }
 
 // ---------- Rückblick (ADR 0014) ----------

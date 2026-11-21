@@ -4,6 +4,8 @@ Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (1584 Aufgaben). Nicht von 
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1584).
+
 ## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
 
 Grundlage, die F übt: Dinge einzeln abzählen und für jedes einen Strich machen, der fünfte Strich geht quer

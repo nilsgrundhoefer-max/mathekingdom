@@ -1,0 +1,5 @@
+{
+ "art": "mathekingdom-kontrollliste",
+ "hinweis": "Vom Administrator im Aufgabentester kontrollierte Aufgaben: Kennung und Fingerabdruck des Inhalts. Übernommen mit node tools/kontrollliste.mjs <Datei>. Ändert sich eine Aufgabe, passt ihr Fingerabdruck nicht mehr, und sie gilt wieder als nicht kontrolliert.",
+ "aufgaben": {}
+}

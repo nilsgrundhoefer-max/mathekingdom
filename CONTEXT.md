@@ -178,7 +178,7 @@ Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist.
 _Avoid_: Zusatzstation, Extra
 
 **Lernziel**:
-Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III.
+Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III. Eine Aufgabe, deren Lösung er am selben Tag schon gesehen hat, zählt dabei nicht (ADR 0031).
 _Avoid_: Kompetenz (allein), Ziel
 
 **Rückblick**:
@@ -363,7 +363,7 @@ Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge
 _Avoid_: Schwierigkeit
 
 **Etappe**:
-Das Kapitel, an dem ein Schüler gerade arbeitet, mit der Zahl der gemeisterten Meilensteine und dem nächsten Meilenstein. Sie steht oben auf der Startseite. Gesperrte Meilensteine zählen nicht mit.
+Das Kapitel, an dem ein Schüler gerade arbeitet, mit dem nächsten Meilenstein. Sie steht oben auf der Startseite als Knopf „Weitermachen“ mit einer kleinen Zeile, wohin er führt. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Wegstück**:
@@ -377,6 +377,13 @@ _Avoid_: Rückblick (der ist ein eigenes Päckchen, einmal am Tag), Wiederholung
 **Rast**:
 Ein Vorschlag von 60 Sekunden Pause vom Bildschirm nach jedem vierten Wegstück, mit Sanduhr, überspringbar und ohne Münzen. Die Lehrkraft schaltet sie pro Klasse ab; standardmäßig ist sie an.
 _Avoid_: Spielpause (die ist für Minispiele), Pause (allein)
+
+**Gesehene Lösung**:
+Ein Schüler hat die Lösung einer Aufgabe gesehen, wenn er sie nach zwei Fehlversuchen nicht gelöst hat (dann steht die Lösung da) oder das Lösungsschritt-Kärtchen geöffnet hat. Tipp und Beispiel zählen nicht dazu. Löst er dieselbe Aufgabe am selben Tag, bringt sie 1 Münze und zählt nicht fürs Siegel; ab dem nächsten Tag zählt sie wieder normal (ADR 0031).
+_Avoid_: abgeschrieben, geschummelt
+
+**Lösungen durchgeklickt**:
+Eine Auffälligkeit für die Lehrkraft: Mindestens 5 der letzten 10 Aufgaben eines Schülers endeten mit gesehener Lösung, jede in unter 30 Sekunden.
 
 **Hilfekärtchen**:
 Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.

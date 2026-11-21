@@ -199,8 +199,9 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.fill('#code', '5a-form');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
-  // Startseite: Etappe mit Fortschritt, ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
-  assert.match(await seite.innerText('.etappe'), /Daten und Diagramme: Meilenstein Strichlisten und Häufigkeitstabellen[\s\S]*0 von 5 Meilensteinen gemeistert/);
+  // Startseite: Knopf „Weitermachen“ mit kleiner Zielzeile (0.37), ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
+  assert.match(await seite.innerText('.etappe'), /Weitermachen[\s\S]*Daten und Diagramme · Strichlisten und Häufigkeitstabellen/);
+  assert.equal(await seite.locator('.etappe .balken').count(), 0);
   await foto(seite, 'startseite-etappe');
   // Vor der ersten Aufgabe im Kapitel führt der Weg über den Einstiegscheck, den man überspringen darf.
   await seite.click('#weiter-wandern');
@@ -1781,6 +1782,54 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.waitForTimeout(5500);
   assert.equal(await lehrer.locator('main section.klappbar.zu').count(), 0);
   await foto(lehrer, 'lehrer-aufgaben-aufgeklappt');
+
+  // Aufgabentester (0.37): Der Administrator sieht die Aufgabe wie ein Schüler, probiert sie aus und hakt sie ab.
+  await admin.click('#alle-auf');
+  await admin.waitForSelector('#tester-rahmen');
+  const erste = await admin.getAttribute('#tester-info', 'data-kennung');
+  assert.equal(erste, '5.1.1-H1-F-01');
+  assert.equal(await admin.innerText('#tester-fortschritt'), `0 von ${pool.aufgaben.length} kontrolliert`);
+  assert.match(await admin.innerText('#tester-loesung'), /^7/);
+  const probe = admin.frameLocator('#tester-rahmen');
+  await probe.locator('form.antwort input').first().fill('7');
+  await probe.locator('#pruefen').click();
+  await probe.locator('text=Richtig!').waitFor();
+  assert.equal(await probe.locator('#weiter').count() ? await probe.locator('#weiter').isVisible() : false, false, 'Weitergehen steuert das Admin-Dashboard');
+  await foto(admin, 'admin-aufgabentester');
+  await admin.click('#tester-kontrolliert');
+  await admin.waitForSelector(`#tester-info:not([data-kennung="${erste}"])`);
+  assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${pool.aufgaben.length} kontrolliert`);
+  const zweite = await admin.getAttribute('#tester-info', 'data-kennung');
+  await probe.locator('form.antwort').waitFor();
+  // Fehler melden: wird eine Aufgabenmeldung des Administrators, auf Wunsch gleich gesperrt.
+  await admin.click('#tester-fehler');
+  await admin.fill('#tester-melden [name=satz]', 'Probe aus dem Aufgabentester');
+  await admin.click('#tester-melden-ok');
+  await admin.waitForSelector(`#tester-info:not([data-kennung="${zweite}"])`);
+  assert.match(await admin.innerText('#hinweis'), new RegExp(`Aufgabe ${zweite.replace(/\./g, '\\.')} ist gemeldet und gesperrt`));
+  await admin.waitForSelector(`[data-meldung="${zweite}"]`);
+  assert.match(await admin.innerText(`[data-meldung="${zweite}"]`), /Administrator: Lösung falsch\. Probe aus dem Aufgabentester/);
+  // Export: alle Häkchen, als Datei für Claude.
+  const [kontrollliste] = await Promise.all([admin.waitForEvent('download'), admin.click('#kontrollliste-export')]);
+  const liste = JSON.parse(readFileSync(await kontrollliste.path(), 'utf8'));
+  assert.equal(liste.art, 'mathekingdom-kontrollliste');
+  assert.deepEqual(Object.keys(liste.aufgaben), [erste]);
+  // Häkchen zurücknehmen: über die Kennung zur Aufgabe springen.
+  await admin.fill('#tester-kennung', erste);
+  await admin.press('#tester-kennung', 'Enter');
+  await admin.waitForSelector(`#tester-info[data-kennung="${erste}"] #tester-zurueck`);
+  await admin.click('#tester-zurueck');
+  await admin.waitForSelector(`#tester-info[data-kennung="${erste}"] #tester-kontrolliert`);
+  assert.equal(await admin.innerText('#tester-fortschritt'), `0 von ${pool.aufgaben.length} kontrolliert`);
+  // Die Häkchen liegen auf dem Lehrertauschlaufwerk und überstehen das Neuladen.
+  await admin.click('#tester-kontrolliert');
+  await admin.waitForFunction((n) => document.querySelector('#tester-fortschritt')?.textContent === `1 von ${n} kontrolliert`, pool.aufgaben.length);
+  await admin.reload();
+  await admin.waitForSelector('nav.bereiche');
+  await admin.click('[data-tab="aufgaben"]');
+  await admin.click('#alle-auf');
+  await admin.waitForSelector('#tester-fortschritt');
+  assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${pool.aufgaben.length} kontrolliert`);
 
   // Schüler ohne Internet: Die Startdatei nimmt die Kopie aus dem gemerkten Mathekingdom-Ordner.
   netz = false;
