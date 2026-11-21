@@ -100,17 +100,18 @@ export const gitterBild = (g) => h('figure', { class: 'datenbild geobild' }, git
 // zellen: Kästchen an- und abwählen.
 export function gitterEingabe(auf, letzte, gesperrt) {
   const g = auf.gitter, m = masse(g), art = auf.eingabe, zellen = art === 'zellen';
-  const soll = art === 'linie' ? 2 : zellen ? Infinity : auf.loesung.length;
+  // offen: Die Aufgabe verrät nicht, wie viele Punkte es sind („Markiere alle Punkte, die …“).
+  const soll = art === 'linie' ? 2 : zellen || auf.offen ? Infinity : auf.loesung.length;
   let gesetzt = lesePunkte(letzte);
   let zeiger = zellen ? [Math.floor((g.b - 1) / 2), Math.floor((g.h - 1) / 2)] : [Math.round(g.b / 2), Math.round(g.h / 2)];
   let zeigerAn = false;
   const feld = h('input', { type: 'hidden', name: 'gitter', value: alsEingabe(gesetzt) });
   const meldung = h('p', { class: 'klein gitterhinweis', 'aria-live': 'polite' });
   const rahmen = h('figure', { class: 'datenbild geobild' });
-  const anweisung = { punkte: soll === 1 ? 'Tippe auf den Gitterpunkt, an dem der Punkt liegen soll.' : `Tippe ${soll} Gitterpunkte an. Ein zweiter Tipp auf einen Punkt nimmt ihn wieder weg.`,
+  const anweisung = { punkte: auf.offen ? 'Tippe alle passenden Gitterpunkte an. Ein zweiter Tipp auf einen Punkt nimmt ihn wieder weg.' : soll === 1 ? 'Tippe auf den Gitterpunkt, an dem der Punkt liegen soll.' : `Tippe ${soll} Gitterpunkte an. Ein zweiter Tipp auf einen Punkt nimmt ihn wieder weg.`,
     linie: 'Tippe zwei Gitterpunkte an. Das Programm zeichnet die Linie durch beide Punkte.', zellen: 'Tippe die Kästchen an, die gefärbt sein sollen. Ein zweiter Tipp macht ein Kästchen wieder leer.' }[art];
   const stand = () => (zellen ? `${gesetzt.length} Kästchen gefärbt` : art === 'linie' ? (gesetzt.length === 2 ? 'Die Linie ist gezeichnet. Ein neuer Tipp beginnt von vorn.' : gesetzt.length === 1 ? 'Ein Punkt ist gesetzt. Tippe den zweiten an.' : '')
-    : soll > 1 ? `${gesetzt.length} von ${soll} Punkten gesetzt` : '');
+    : auf.offen ? `${gesetzt.length} ${gesetzt.length === 1 ? 'Punkt' : 'Punkte'} gesetzt` : soll > 1 ? `${gesetzt.length} von ${soll} Punkten gesetzt` : '');
   const tippe = (p) => {
     if (gesperrt) return;
     const i = gesetzt.findIndex((q) => gleich(p, q));

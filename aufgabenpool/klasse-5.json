@@ -92381,6 +92381,7 @@
    "hilfen": {
     "tipp": "Überlege zuerst, auf welcher Linie alle gesuchten Punkte liegen. Die Grenzen gehören dazu."
    },
+   "offen": true,
    "nachweis": [
     {
      "art": "bereich",
@@ -92388,6 +92389,8587 @@
      "wert": 3,
      "von": 3,
      "bis": 5
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-F-01",
+   "lernziel": "5.5.5-D1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir die Punkte A und B an.\nWie viele Kästchen sind sie voneinander entfernt?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "koord-ab-eins"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Entfernung ist der gerade Weg von A nach B.",
+    "beispiel": "Zähle die Kästchen zwischen den Punkten, nicht die Linien.",
+    "loesungsschritt": "Beginne bei A und zähle Kästchen für Kästchen bis B."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 7,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 1,
+      "pos": "lo"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 1,
+      "pos": "ro"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "strecke",
+     "von": "A",
+     "nach": "B",
+     "wert": 3,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-F-02",
+   "lernziel": "5.5.5-D1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir den Punkt P und die Gerade g an.\nWie viele Kästchen ist P von g entfernt?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "koord-ab-eins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Geh von P auf dem kürzesten Weg zu g.",
+    "beispiel": "Der kürzeste Weg führt gerade nach unten oder gerade nach oben.",
+    "loesungsschritt": "Zähle die Kästchen von P bis zur Geraden."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       0
+      ],
+      "b": [
+       2,
+       0
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 7,
+      "y": 5,
+      "pos": "ro"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 5,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-F-03",
+   "lernziel": "5.5.5-D1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Vom Punkt P führen drei Wege zur Geraden g.\nWelcher Weg ist am kürzesten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Strecke PB",
+     "richtig": true
+    },
+    {
+     "text": "Strecke PC",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Strecke PA",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der kürzeste Weg trifft die Gerade im rechten Winkel.",
+    "beispiel": "Ein schräger Weg ist immer länger als der gerade Weg.",
+    "loesungsschritt": "Suche den Weg, der senkrecht zu g ist."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       1,
+       2
+      ],
+      "art": "gerade"
+     },
+     {
+      "a": [
+       4,
+       3
+      ],
+      "b": [
+       1,
+       6
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       4,
+       3
+      ],
+      "b": [
+       1,
+       3
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       4,
+       3
+      ],
+      "b": [
+       1,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 4,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "A",
+      "x": 1,
+      "y": 6,
+      "pos": "o"
+     },
+     {
+      "n": "B",
+      "x": 1,
+      "y": 3,
+      "pos": "o"
+     },
+     {
+      "n": "C",
+      "x": 1,
+      "y": 5,
+      "pos": "o"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "lotfuss",
+     "punkt": "P",
+     "linie": "g"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-F-04",
+   "lernziel": "5.5.5-D1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Die Geraden g und h sind parallel zueinander.\nWie viele Kästchen liegen sie auseinander?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "koord-ab-eins"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zwei parallele Geraden haben überall den gleichen Abstand.",
+    "beispiel": "Zähle die Kästchen auf dem kürzesten Weg von g nach h.",
+    "loesungsschritt": "Geh im rechten Winkel von g zu h und zähle die Kästchen."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       2,
+       1
+      ],
+      "b": [
+       2,
+       2
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       5,
+       1
+      ],
+      "b": [
+       5,
+       2
+      ],
+      "art": "gerade"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "abstandLinien",
+     "linien": [
+      "g",
+      "h"
+     ],
+     "wert": 3,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-F-05",
+   "lernziel": "5.5.5-D1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Das Haus steht im Punkt H und der Baum im Punkt B.\n2 Kästchen sind 1 cm lang.\nWie viele cm sind H und B voneinander entfernt?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "laenge-kaestchen"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "laenge-kaestchen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Kästchen zwischen H und B.",
+    "beispiel": "Immer 2 Kästchen zusammen sind 1 cm.",
+    "loesungsschritt": "Es sind 6 Kästchen. Teile durch 2."
+   },
+   "einheit": "cm",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 7,
+    "punkte": [
+     {
+      "n": "H",
+      "x": 1,
+      "y": 6,
+      "pos": "lo"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 6,
+      "pos": "ro"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "2 Kästchen sind 1 cm"
+    },
+    "6 : 2 = 3",
+    {
+     "art": "strecke",
+     "von": "H",
+     "nach": "B",
+     "wert": 3,
+     "einheit": "cm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-F-06",
+   "lernziel": "5.5.5-D1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Die Gerade g ist ein Weg im Schlossgarten.\nIm Punkt P steht ein Brunnen.\nWie viele Kästchen ist der Brunnen vom Weg entfernt?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "koord-ab-eins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Geh vom Brunnen auf dem kürzesten Weg zum Weg.",
+    "beispiel": "Der kürzeste Weg führt gerade nach links oder gerade nach rechts.",
+    "loesungsschritt": "Zähle die Kästchen von P bis zur Geraden."
+   },
+   "einheit": "Kästchen",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       1,
+       2
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 6,
+      "y": 5,
+      "pos": "o"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 5,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-G-01",
+   "lernziel": "5.5.5-D1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Die Entfernung von A nach B ist die Länge der Strecke AB.\nWie viele cm sind A und B voneinander entfernt?\nDenke daran: 2 Kästchen sind 1 cm.",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "laenge-kaestchen"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "koord-ab-eins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Kästchen und rechne sie in Zentimeter um.",
+    "beispiel": "6 Kästchen sind 3 cm, denn 6 : 2 = 3.",
+    "loesungsschritt": "Die Strecke ist 10 Kästchen lang."
+   },
+   "einheit": "cm",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 7,
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 4,
+      "pos": "lo"
+     },
+     {
+      "n": "B",
+      "x": 11,
+      "y": 4,
+      "pos": "ro"
+     }
+    ],
+    "linien": [
+     {
+      "a": [
+       1,
+       4
+      ],
+      "b": [
+       11,
+       4
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "2 Kästchen sind 1 cm"
+    },
+    "10 : 2 = 5",
+    {
+     "art": "strecke",
+     "von": "A",
+     "nach": "B",
+     "wert": 5,
+     "einheit": "cm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-G-02",
+   "lernziel": "5.5.5-D1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der Abstand ist der kürzeste Weg von P zur Geraden g.\nWie viele cm beträgt der Abstand?\nDenke daran: 2 Kästchen sind 1 cm.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "laenge-kaestchen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Miss den Abstand immer senkrecht zur Geraden.",
+    "beispiel": "4 Kästchen sind 2 cm, denn 4 : 2 = 2.",
+    "loesungsschritt": "Der Punkt P ist 4 Kästchen von g entfernt."
+   },
+   "einheit": "cm",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       5,
+       1
+      ],
+      "b": [
+       5,
+       2
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 1,
+      "y": 2,
+      "pos": "o"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "2 Kästchen sind 1 cm"
+    },
+    "4 : 2 = 2",
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 2,
+     "einheit": "cm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-G-03",
+   "lernziel": "5.5.5-D1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Schau dir den Punkt P und die Gerade g an.\nEin Punkt von g liegt P am nächsten.\nMarkiere diesen Punkt.",
+   "gitter": {
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       2,
+       1
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 7,
+      "y": 4,
+      "pos": "ro"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     7,
+     1
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       8,
+       1
+      ]
+     ],
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "punkte": [
+      [
+       6,
+       1
+      ]
+     ],
+     "fehlvorstellung": "abstand-schraeg"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der nächste Punkt liegt genau gegenüber von P.",
+    "beispiel": "Der kürzeste Weg von P zu g ist senkrecht zu g.",
+    "loesungsschritt": "Geh von P aus im rechten Winkel auf g zu."
+   },
+   "nachweis": [
+    {
+     "art": "lotfuss",
+     "punkt": "P",
+     "linie": "g"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-G-04",
+   "lernziel": "5.5.5-D1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Gerade g verläuft schräg.\nWelche Strecke zeigt den Abstand von P zu g?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Strecke PC",
+     "richtig": true
+    },
+    {
+     "text": "Strecke PB",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Strecke PA",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Abstand ist der kürzeste Weg von P zu g.",
+    "beispiel": "Der kürzeste Weg ist senkrecht zu g.",
+    "loesungsschritt": "Suche die Strecke mit einem rechten Winkel zu g."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 9,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       0
+      ],
+      "b": [
+       2,
+       1
+      ],
+      "art": "gerade"
+     },
+     {
+      "a": [
+       4,
+       7
+      ],
+      "b": [
+       7,
+       6
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       4,
+       7
+      ],
+      "b": [
+       9,
+       8
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       4,
+       7
+      ],
+      "b": [
+       6,
+       5
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 4,
+      "y": 7,
+      "pos": "o"
+     },
+     {
+      "n": "A",
+      "x": 7,
+      "y": 6,
+      "pos": "u"
+     },
+     {
+      "n": "B",
+      "x": 9,
+      "y": 8,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 5,
+      "pos": "u"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "lotfuss",
+     "punkt": "P",
+     "linie": "g"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-G-05",
+   "lernziel": "5.5.5-D1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Die Geraden g und h sind parallel zueinander.\nWie viele cm beträgt ihr Abstand?\nDenke daran: 2 Kästchen sind 1 cm.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "laenge-kaestchen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Den Abstand misst du senkrecht zu beiden Geraden.",
+    "beispiel": "6 Kästchen sind 3 cm, denn 6 : 2 = 3.",
+    "loesungsschritt": "Die Geraden liegen 6 Kästchen auseinander."
+   },
+   "einheit": "cm",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       2
+      ],
+      "b": [
+       2,
+       2
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       1,
+       8
+      ],
+      "b": [
+       2,
+       8
+      ],
+      "art": "gerade"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "2 Kästchen sind 1 cm"
+    },
+    "6 : 2 = 3",
+    {
+     "art": "abstandLinien",
+     "linien": [
+      "g",
+      "h"
+     ],
+     "wert": 3,
+     "einheit": "cm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-G-06",
+   "lernziel": "5.5.5-D1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Finn misst die Strecke von P nach A.\nSie ist 5 Kästchen lang.\nFinn sagt: „Der Abstand von P zu g ist 5 Kästchen.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nDer Abstand ist 3 Kästchen.\nMan misst senkrecht zu g.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Falsch.\nDer Abstand ist 4 Kästchen.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Abstand ist der kürzeste Weg von P zu g.",
+    "beispiel": "Ein schräger Weg ist länger als der Weg im rechten Winkel.",
+    "loesungsschritt": "Geh von P aus im rechten Winkel auf g zu und zähle die Kästchen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       2
+      ],
+      "b": [
+       2,
+       2
+      ],
+      "art": "gerade"
+     },
+     {
+      "a": [
+       7,
+       5
+      ],
+      "b": [
+       3,
+       2
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 7,
+      "y": 5,
+      "pos": "o"
+     },
+     {
+      "n": "A",
+      "x": 3,
+      "y": 2,
+      "pos": "u"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 3,
+     "einheit": "kaestchen"
+    },
+    {
+     "art": "strecke",
+     "von": "P",
+     "nach": "A",
+     "wert": 5,
+     "einheit": "kaestchen"
+    },
+    {
+     "zahl": 4,
+     "grund": "Kästchen vom Fußpunkt bis A"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-M-01",
+   "lernziel": "5.5.5-D1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Wie viele mm beträgt der Abstand des Punktes P von der Geraden g? Ein Kästchen ist 5 mm breit.",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "laenge-kaestchen"
+    },
+    {
+     "wert": 60,
+     "fehlvorstellung": "einheit-mm-cm"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Abstand wird senkrecht zur Geraden gemessen.",
+    "loesungsschritt": "Der Punkt P ist 6 Kästchen von g entfernt. Rechne in mm um."
+   },
+   "einheit": "mm",
+   "bild": {
+    "art": "gitter",
+    "b": 13,
+    "h": 9,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       2
+      ],
+      "b": [
+       2,
+       2
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 5,
+      "y": 8,
+      "pos": "ro"
+     }
+    ]
+   },
+   "nachweis": [
+    "6 · 5 = 30",
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 30,
+     "einheit": "mm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-M-02",
+   "lernziel": "5.5.5-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Abstand der Parallelen g und h beträgt {{a}} cm und {{b}} mm. Ein Kästchen ist 5 mm breit.",
+   "luecken": {
+    "a": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 7,
+       "fehlvorstellung": "laenge-kaestchen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 5,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Zähle die Kästchen auf einer Senkrechten zu beiden Geraden.",
+    "loesungsschritt": "Es sind 7 Kästchen, also 35 mm."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 13,
+    "h": 9,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       2
+      ],
+      "b": [
+       2,
+       2
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       1,
+       9
+      ],
+      "b": [
+       2,
+       9
+      ],
+      "art": "gerade"
+     }
+    ]
+   },
+   "nachweis": [
+    "7 · 5 = 35",
+    "35 : 10 = 3 Rest 5",
+    {
+     "art": "abstandLinien",
+     "linien": [
+      "g",
+      "h"
+     ],
+     "wert": 35,
+     "einheit": "mm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-M-03",
+   "lernziel": "5.5.5-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Auf einer Karte des Königreichs liegt die Burg im Punkt B(10|3) und der Turm im Punkt T(10|7). Eine Einheit entspricht 100 m. Wie viele m sind Burg und Turm in Luftlinie voneinander entfernt?",
+   "loesung": 400,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 1000,
+     "fehlvorstellung": "sub-addiert"
+    },
+    {
+     "wert": 700,
+     "fehlvorstellung": "lineal-nicht-null"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Punkte haben dieselbe x-Koordinate. Sie liegen genau übereinander.",
+    "loesungsschritt": "Die Entfernung beträgt 7 − 3 Einheiten."
+   },
+   "einheit": "m",
+   "nachweis": [
+    "7 − 3 = 4",
+    "4 · 100 = 400",
+    {
+     "zahl": 10,
+     "grund": "Beide Punkte haben dieselbe x-Koordinate."
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-M-04",
+   "lernziel": "5.5.5-D1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welcher Punkt hat den größeren Abstand von der Geraden g?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Beide haben denselben Abstand.",
+     "richtig": false
+    },
+    {
+     "text": "Punkt P",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Punkt Q",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auf die Lage links oder rechts kommt es nicht an.",
+    "loesungsschritt": "Miss für beide Punkte den Abstand senkrecht zu g und vergleiche."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       2,
+       1
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "Q",
+      "x": 3,
+      "y": 6
+     },
+     {
+      "n": "P",
+      "x": 8,
+      "y": 3
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "abstand",
+     "punkt": "Q",
+     "linie": "g",
+     "wert": 5,
+     "einheit": "kaestchen"
+    },
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 2,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-M-05",
+   "lernziel": "5.5.5-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Weg führt von A über B nach C. Die Luftlinie von A nach C ist 5 cm lang. Um wie viele cm ist die Luftlinie kürzer als der Weg über B? Denke daran: 2 Kästchen sind 1 cm.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "laenge-kaestchen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme zuerst die Längen der Strecken AB und BC in cm.",
+    "loesungsschritt": "Der Weg über B ist 3 cm + 4 cm lang."
+   },
+   "einheit": "cm",
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 10,
+    "linien": [
+     {
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       7,
+       1
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       7,
+       1
+      ],
+      "b": [
+       7,
+       9
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       1,
+       1
+      ],
+      "b": [
+       7,
+       9
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 1,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 7,
+      "y": 1,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 7,
+      "y": 9,
+      "pos": "ro"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "zahl": 1,
+     "grund": "2 Kästchen sind 1 cm"
+    },
+    {
+     "art": "strecke",
+     "von": "A",
+     "nach": "B",
+     "wert": 3,
+     "einheit": "cm"
+    },
+    {
+     "art": "strecke",
+     "von": "B",
+     "nach": "C",
+     "wert": 4,
+     "einheit": "cm"
+    },
+    {
+     "art": "strecke",
+     "von": "A",
+     "nach": "C",
+     "wert": 5,
+     "einheit": "cm"
+    },
+    "3 + 4 = 7",
+    "7 − 5 = 2"
+   ]
+  },
+  {
+   "id": "5.5.5-D1-M-06",
+   "lernziel": "5.5.5-D1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der Punkt P liegt zwischen den Parallelen g und h. Die Parallelen haben den Abstand 25 mm. Der Punkt P ist 10 mm von g entfernt. Wie viele mm ist P von h entfernt?",
+   "loesung": 15,
+   "typischeFehler": [
+    {
+     "wert": 35,
+     "fehlvorstellung": "sub-addiert"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "laenge-kaestchen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Abstände von P zu g und zu h ergeben zusammen den Abstand der Parallelen.",
+    "loesungsschritt": "Rechne 25 mm − 10 mm."
+   },
+   "einheit": "mm",
+   "bild": {
+    "art": "gitter",
+    "b": 13,
+    "h": 9,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       2
+      ],
+      "b": [
+       2,
+       2
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       1,
+       7
+      ],
+      "b": [
+       2,
+       7
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 2,
+      "y": 4
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "abstandLinien",
+     "linien": [
+      "g",
+      "h"
+     ],
+     "wert": 25,
+     "einheit": "mm"
+    },
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 10,
+     "einheit": "mm"
+    },
+    "25 − 10 = 15",
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "h",
+     "wert": 15,
+     "einheit": "mm"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-E-01",
+   "lernziel": "5.5.5-D1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Markiere alle Gitterpunkte, die von der Geraden g den Abstand 3 Kästchen und von der Geraden h den Abstand 1 Kästchen haben.",
+   "gitter": {
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       1,
+       4
+      ],
+      "b": [
+       2,
+       4
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       7,
+       1
+      ],
+      "b": [
+       7,
+       2
+      ],
+      "art": "gerade"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       4,
+       3
+      ],
+      [
+       4,
+       5
+      ],
+      [
+       10,
+       3
+      ],
+      [
+       10,
+       5
+      ]
+     ],
+     "fehlvorstellung": "koord-vertauscht"
+    },
+    {
+     "punkte": [
+      [
+       8,
+       7
+      ]
+     ],
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "punkte": [
+      [
+       6,
+       7
+      ],
+      [
+       8,
+       7
+      ]
+     ],
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zu jedem Abstand gibt es Punkte auf beiden Seiten der Geraden. Suche die Punkte, die beide Bedingungen zugleich erfüllen."
+   },
+   "offen": true,
+   "nachweis": [
+    {
+     "art": "abstandspunkte",
+     "bedingungen": [
+      [
+       "g",
+       3
+      ],
+      [
+       "h",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-E-02",
+   "lernziel": "5.5.5-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Von A nach B sind es 6 cm, von B nach C sind es 3 cm. Die Lage der drei Punkte ist nicht bekannt. Die Entfernung von A nach C beträgt höchstens {{a}} cm und mindestens {{b}} cm.",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 0,
+       "fehlvorstellung": "sach-falsche-rechnung"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Stell dir vor, die drei Punkte liegen auf einer Geraden: einmal B zwischen A und C, einmal C zwischen A und B."
+   },
+   "nachweis": [
+    "6 + 3 = 9",
+    "6 − 3 = 3"
+   ]
+  },
+  {
+   "id": "5.5.5-D1-E-03",
+   "lernziel": "5.5.5-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Der Punkt P hat die Koordinaten (2|6). Sein Abstand von der x-Achse beträgt {{a}} Einheiten, sein Abstand von der y-Achse beträgt {{b}} Einheiten.",
+   "luecken": {
+    "a": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Abstand von der x-Achse wird senkrecht zur x-Achse gemessen, also nach oben."
+   },
+   "nachweis": [
+    {
+     "art": "achsenabstand",
+     "xAchse": 6,
+     "yAchse": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-E-04",
+   "lernziel": "5.5.5-D1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ben sagt: „Der Abstand von P zur Geraden g ist die Entfernung von P zu irgendeinem Punkt auf g.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Alle Punkte auf g sind gleich weit von P entfernt.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Falsch. Der Abstand ist die kürzeste dieser Entfernungen. Sie wird senkrecht zu g gemessen.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Der Abstand ist die größte dieser Entfernungen.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Stimmt. Man darf den Punkt auf g frei wählen.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche im Bild die drei Strecken von P zur Geraden."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       4,
+       3
+      ],
+      "b": [
+       5,
+       3
+      ],
+      "art": "gerade"
+     },
+     {
+      "a": [
+       7,
+       7
+      ],
+      "b": [
+       7,
+       3
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       7,
+       7
+      ],
+      "b": [
+       5,
+       3
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     },
+     {
+      "a": [
+       7,
+       7
+      ],
+      "b": [
+       6,
+       3
+      ],
+      "art": "strecke",
+      "stil": "hilfs"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 7,
+      "y": 7,
+      "pos": "o"
+     },
+     {
+      "n": "A",
+      "x": 7,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 3,
+      "pos": "u"
+     },
+     {
+      "n": "C",
+      "x": 6,
+      "y": 3,
+      "pos": "u"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "abstand",
+     "punkt": "P",
+     "linie": "g",
+     "wert": 4,
+     "einheit": "kaestchen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-E-05",
+   "lernziel": "5.5.5-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Gitterpunkte im Bild sind vom Punkt P genau 10 Kästchen entfernt? Tipp: Eine Strecke, die 3 Kästchen nach rechts und 4 Kästchen nach oben führt, ist genau 5 Kästchen lang.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Es gibt Punkte genau neben, über und unter P und außerdem schräg liegende Punkte. Nutze den Tipp für alle Richtungen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 14,
+    "punkte": [
+     {
+      "n": "P",
+      "x": 10,
+      "y": 10
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "entfernungspunkte",
+     "punkt": "P",
+     "wert": 10,
+     "anzahl": 6
+    },
+    {
+     "art": "dreieck",
+     "a": 3,
+     "b": 4,
+     "c": 5
+    }
+   ]
+  },
+  {
+   "id": "5.5.5-D1-E-06",
+   "lernziel": "5.5.5-D1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Geraden g und h sind parallel und haben den Abstand 5 cm. Der Punkt A liegt auf g, der Punkt B liegt auf h. Was gilt für die Länge der Strecke AB?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Sie ist mindestens 5 cm lang.",
+     "richtig": true
+    },
+    {
+     "text": "Darüber lässt sich nichts sagen.",
+     "richtig": false
+    },
+    {
+     "text": "Sie ist immer genau 5 cm lang.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    },
+    {
+     "text": "Sie ist höchstens 5 cm lang.",
+     "richtig": false,
+     "fehlvorstellung": "abstand-schraeg"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Überlege, wann die Strecke AB am kürzesten ist und was geschieht, wenn du B auf h verschiebst."
+   },
+   "nachweis": [
+    {
+     "zahl": 5,
+     "grund": "Abstand der Parallelen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-F-01",
+   "lernziel": "5.5.6-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Falte die Figur in Gedanken an der Linie g.\nLiegen beide Hälften genau aufeinander?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Die Hälften liegen genau aufeinander.",
+     "richtig": true
+    },
+    {
+     "text": "Die Hälften passen nicht aufeinander.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Symmetrieachse teilt die Figur in zwei gleiche Hälften.",
+    "beispiel": "Auf beiden Seiten der Linie liegen gleich viele Kästchen in jeder Reihe.",
+    "loesungsschritt": "Zähle in jeder Reihe die Kästchen links und rechts von g."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 6,
+    "zellen": [
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      5,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      5,
+      4
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "istAchse",
+     "figur": "zellen",
+     "linie": "g",
+     "wert": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-F-02",
+   "lernziel": "5.5.6-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist symmetrisch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false
+    },
+    {
+     "text": "Figur A",
+     "richtig": false
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine symmetrische Figur kannst du in der Mitte falten.",
+    "beispiel": "Beide Hälften liegen dann genau aufeinander.",
+    "loesungsschritt": "Suche die Figur mit zwei gleichen Hälften."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        2,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        7,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        2
+       ],
+       [
+        17,
+        2
+       ],
+       [
+        13,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "achsensymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-F-03",
+   "lernziel": "5.5.6-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Die Figur ist symmetrisch.\nZeichne ihre Symmetrieachse ein.",
+   "gitter": {
+    "b": 6,
+    "h": 5,
+    "zellen": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      4,
+      3
+     ]
+    ]
+   },
+   "bedingung": {
+    "art": "gerade",
+    "a": [
+     3,
+     0
+    ],
+    "b": [
+     3,
+     1
+    ]
+   },
+   "beispiel": [
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "bedingung": {
+      "art": "gerade",
+      "a": [
+       2,
+       0
+      ],
+      "b": [
+       2,
+       1
+      ]
+     },
+     "fehlvorstellung": "spiegel-abstand"
+    },
+    {
+     "bedingung": {
+      "art": "gerade",
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ]
+     },
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Symmetrieachse liegt genau in der Mitte der Figur.",
+    "beispiel": "Links und rechts von der Achse liegen gleich viele Kästchen.",
+    "loesungsschritt": "Tippe zwei Punkte auf der Linie in der Mitte an: einen oben und einen unten."
+   },
+   "nachweis": [
+    {
+     "art": "achseZeichnen",
+     "figur": "zellen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-F-04",
+   "lernziel": "5.5.6-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir die Figur an.\nWie viele Symmetrieachsen hat sie?",
+   "loesung": 0,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Probiere in Gedanken verschiedene Faltlinien aus.",
+    "beispiel": "Du kannst von links nach rechts falten oder von oben nach unten.",
+    "loesungsschritt": "Prüfe erst die Linie von oben nach unten, dann die Linie von links nach rechts."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 7,
+    "h": 7,
+    "zellen": [
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "zellen",
+     "wert": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-F-05",
+   "lernziel": "5.5.6-A1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Du siehst die Figur F und zwei Linien.\nWelche Linie ist die Symmetrieachse?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Linie b",
+     "richtig": true
+    },
+    {
+     "text": "Linie a",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "An der Symmetrieachse kannst du die Figur falten.",
+    "beispiel": "Beide Hälften liegen dann genau aufeinander.",
+    "loesungsschritt": "Prüfe bei jeder Linie: Sehen beide Seiten gleich aus?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        6,
+        2
+       ],
+       [
+        4,
+        5
+       ]
+      ]
+     }
+    ],
+    "linien": [
+     {
+      "n": "b",
+      "a": [
+       4,
+       2
+      ],
+      "b": [
+       4,
+       3
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     },
+     {
+      "n": "a",
+      "a": [
+       0,
+       3
+      ],
+      "b": [
+       1,
+       3
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsenwahl",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-F-06",
+   "lernziel": "5.5.6-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Die Figur sieht aus wie der Buchstabe T.\nWie viele Symmetrieachsen hat sie?",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Probiere in Gedanken verschiedene Faltlinien aus.",
+    "beispiel": "Du kannst von links nach rechts falten oder von oben nach unten.",
+    "loesungsschritt": "Prüfe beide Faltlinien einzeln."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 7,
+    "h": 7,
+    "zellen": [
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "zellen",
+     "wert": 1
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-G-01",
+   "lernziel": "5.5.6-A1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist nicht achsensymmetrisch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine achsensymmetrische Figur hat mindestens eine Symmetrieachse.",
+    "beispiel": "Suche bei jeder Figur nach einer Faltlinie.",
+    "loesungsschritt": "Bei einer der Figuren passt keine Faltlinie."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        8,
+        2
+       ],
+       [
+        10,
+        2
+       ],
+       [
+        10,
+        4
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        8,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        2
+       ],
+       [
+        17,
+        2
+       ],
+       [
+        16,
+        4
+       ],
+       [
+        14,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "nicht achsensymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-G-02",
+   "lernziel": "5.5.6-A1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau dir die Figur F an.\nWie viele Symmetrieachsen hat sie?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede mögliche Faltlinie einzeln.",
+    "beispiel": "Eine Linie von Ecke zu Ecke ist nicht immer eine Symmetrieachse.",
+    "loesungsschritt": "Falte in Gedanken: Liegen wirklich alle Ecken aufeinander?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        2
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        3,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-G-03",
+   "lernziel": "5.5.6-A1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Die Figur ist achsensymmetrisch.\nZeichne ihre Symmetrieachse ein.",
+   "gitter": {
+    "b": 5,
+    "h": 8,
+    "zellen": [
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      3,
+      5
+     ]
+    ]
+   },
+   "bedingung": {
+    "art": "gerade",
+    "a": [
+     0,
+     4
+    ],
+    "b": [
+     1,
+     4
+    ]
+   },
+   "beispiel": [
+    [
+     0,
+     4
+    ],
+    [
+     5,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "bedingung": {
+      "art": "gerade",
+      "a": [
+       0,
+       3
+      ],
+      "b": [
+       1,
+       3
+      ]
+     },
+     "fehlvorstellung": "spiegel-abstand"
+    },
+    {
+     "bedingung": {
+      "art": "gerade",
+      "a": [
+       0,
+       5
+      ],
+      "b": [
+       1,
+       5
+      ]
+     },
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Symmetrieachse muss nicht von oben nach unten laufen.",
+    "beispiel": "Über und unter der Achse liegen gleich viele Kästchen.",
+    "loesungsschritt": "Tippe zwei Punkte auf der Linie in der Mitte an: einen links und einen rechts."
+   },
+   "nachweis": [
+    {
+     "art": "achseZeichnen",
+     "figur": "zellen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-G-04",
+   "lernziel": "5.5.6-A1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Linie g geht von Ecke zu Ecke.\nIst g eine Symmetrieachse der Figur F?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Die Linie g ist eine Symmetrieachse.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Die Linie g ist keine Symmetrieachse.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte die Figur in Gedanken an der Linie g.",
+    "beispiel": "Bei einer Symmetrieachse liegt jede Ecke genau auf einer anderen Ecke.",
+    "loesungsschritt": "Beim Falten an g stehen zwei Ecken über den Rand hinaus."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        4
+       ],
+       [
+        6,
+        4
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        2,
+        6
+       ]
+      ]
+     }
+    ],
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       2,
+       4
+      ],
+      "b": [
+       4,
+       5
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "istAchse",
+     "figur": "F",
+     "linie": "g",
+     "wert": false
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-G-05",
+   "lernziel": "5.5.6-A1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Du siehst die Figur F und drei Linien.\nWelche Linie ist die Symmetrieachse?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Linie b",
+     "richtig": true
+    },
+    {
+     "text": "Linie c",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Linie a",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "An der Symmetrieachse kannst du die Figur falten.",
+    "beispiel": "Beide Hälften liegen dann genau aufeinander.",
+    "loesungsschritt": "Prüfe bei jeder Linie: Sehen beide Seiten gleich aus?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        7,
+        1
+       ],
+       [
+        5,
+        4
+       ]
+      ]
+     }
+    ],
+    "linien": [
+     {
+      "n": "b",
+      "a": [
+       5,
+       1
+      ],
+      "b": [
+       5,
+       2
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     },
+     {
+      "n": "a",
+      "a": [
+       0,
+       3
+      ],
+      "b": [
+       1,
+       3
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     },
+     {
+      "n": "c",
+      "a": [
+       3,
+       1
+      ],
+      "b": [
+       4,
+       2
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsenwahl",
+     "figur": "F"
+    },
+    {
+     "zahl": 4,
+     "grund": "Breite der Figur"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-G-06",
+   "lernziel": "5.5.6-A1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jonas sagt: „Dieses Rechteck hat 4 Symmetrieachsen.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs hat keine Symmetrieachse.",
+     "richtig": false
+    },
+    {
+     "text": "Falsch.\nEs hat 2 Symmetrieachsen.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe auch die Linien von Ecke zu Ecke.",
+    "beispiel": "Beim Falten von Ecke zu Ecke liegen die Hälften nicht aufeinander.",
+    "loesungsschritt": "Nur die beiden Linien durch die Mitten der Seiten sind Symmetrieachsen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        2
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        3,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-M-01",
+   "lernziel": "5.5.6-A1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Symmetrieachsen hat die Figur F? Denke auch an schräge Achsen.",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "lage-prototyp"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Symmetrieachse kann auch schräg durch die Figur laufen.",
+    "loesungsschritt": "Prüfe jede Linie durch die Mitte: Liegt jede Ecke nach dem Falten auf einer anderen Ecke?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        2
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        7,
+        6
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 4
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-M-02",
+   "lernziel": "5.5.6-A1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Die Figur F hat genau eine Symmetrieachse. Sie verläuft schräg. Zeichne sie ein.",
+   "gitter": {
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        4,
+        3
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "bedingung": {
+    "art": "gerade",
+    "a": [
+     1,
+     2
+    ],
+    "b": [
+     2,
+     3
+    ]
+   },
+   "beispiel": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Suche eine Ecke, die beim Falten auf sich selbst liegen bleibt.",
+    "loesungsschritt": "Die Achse läuft von Ecke zu Ecke schräg durch die Kästchen."
+   },
+   "nachweis": [
+    {
+     "art": "achseZeichnen",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-M-03",
+   "lernziel": "5.5.6-A1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Die Figur F hat mehrere Symmetrieachsen. Zeichne eine davon ein.",
+   "gitter": {
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "bedingung": {
+    "art": "eine",
+    "linien": [
+     [
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ]
+    ]
+   },
+   "beispiel": [
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Eine Symmetrieachse geht immer durch die Mitte der Figur.",
+    "loesungsschritt": "Probiere die Linie von oben nach unten durch die Mitte."
+   },
+   "nachweis": [
+    {
+     "art": "achseZeichnen",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-M-04",
+   "lernziel": "5.5.6-A1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche der Linien sind Symmetrieachsen der Figur F? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Linie d",
+     "richtig": true
+    },
+    {
+     "text": "Linie b",
+     "richtig": true
+    },
+    {
+     "text": "Linie a",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Linie c",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Linie einzeln durch Falten in Gedanken.",
+    "loesungsschritt": "Im Rechteck sind die Linien von Ecke zu Ecke keine Symmetrieachsen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        3,
+        4
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        7,
+        6
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ],
+    "linien": [
+     {
+      "n": "a",
+      "a": [
+       3,
+       6
+      ],
+      "b": [
+       5,
+       5
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     },
+     {
+      "n": "b",
+      "a": [
+       3,
+       5
+      ],
+      "b": [
+       4,
+       5
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     },
+     {
+      "n": "c",
+      "a": [
+       3,
+       4
+      ],
+      "b": [
+       5,
+       5
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     },
+     {
+      "n": "d",
+      "a": [
+       5,
+       4
+      ],
+      "b": [
+       5,
+       5
+      ],
+      "art": "gerade",
+      "stil": "hilfs"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsenwahl",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-M-05",
+   "lernziel": "5.5.6-A1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Figur hat genau 2 Symmetrieachsen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Figur D",
+     "richtig": false
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme für jede Figur die Anzahl der Symmetrieachsen.",
+    "loesungsschritt": "Das Quadrat hat mehr als 2 Symmetrieachsen, das Parallelogramm hat keine."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 13,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        8
+       ],
+       [
+        4,
+        8
+       ],
+       [
+        5,
+        10
+       ],
+       [
+        2,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        8
+       ],
+       [
+        11,
+        8
+       ],
+       [
+        11,
+        10
+       ],
+       [
+        7,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        9,
+        1
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        9,
+        5
+       ],
+       [
+        7,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "2 Achsen"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-M-06",
+   "lernziel": "5.5.6-A1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ole sagt: „Die Linie g geht durch zwei Ecken des Parallelogramms F. Also ist sie eine Symmetrieachse.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Die Linie teilt die Figur in zwei gleich große Teile.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Falsch. Beim Falten an g liegen die beiden anderen Ecken nicht aufeinander.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Jede Linie durch zwei Ecken ist eine Symmetrieachse.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zwei gleich große Teile reichen nicht. Die Teile müssen beim Falten genau aufeinander liegen.",
+    "loesungsschritt": "Spiegle eine der beiden anderen Ecken an g und prüfe, wo sie landet."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 6,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        4,
+        2
+       ],
+       [
+        7,
+        2
+       ],
+       [
+        8,
+        4
+       ],
+       [
+        5,
+        4
+       ]
+      ]
+     }
+    ],
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       4,
+       2
+      ],
+      "b": [
+       8,
+       4
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "istAchse",
+     "figur": "F",
+     "linie": "g",
+     "wert": false
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-E-01",
+   "lernziel": "5.5.6-A1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Symmetrieachsen hat die Figur F?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe der Reihe nach vier Richtungen: von oben nach unten, von links nach rechts und die beiden schrägen Richtungen."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        3
+       ],
+       [
+        6,
+        3
+       ],
+       [
+        6,
+        4
+       ],
+       [
+        7,
+        4
+       ],
+       [
+        7,
+        5
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        4,
+        5
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        5,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 4
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-E-02",
+   "lernziel": "5.5.6-A1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Figuren haben genau eine Symmetrieachse? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur D",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme für jede Figur alle Symmetrieachsen, bevor du ankreuzt."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 13,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        8
+       ],
+       [
+        4,
+        8
+       ],
+       [
+        4,
+        9
+       ],
+       [
+        5,
+        9
+       ],
+       [
+        5,
+        10
+       ],
+       [
+        3,
+        10
+       ],
+       [
+        3,
+        9
+       ],
+       [
+        2,
+        9
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        8,
+        8
+       ],
+       [
+        10,
+        8
+       ],
+       [
+        10,
+        10
+       ],
+       [
+        9,
+        11
+       ],
+       [
+        8,
+        10
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        5,
+        3
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        7,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "1 Achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-E-03",
+   "lernziel": "5.5.6-A1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Viereck hat die Ecken A(5|4), B(9|4), C(9|6) und D(5|6). Wie viele Symmetrieachsen hat es?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 0,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zeichne das Viereck in dein Heft und prüfe auch die Linien von Ecke zu Ecke."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 9,
+    "achsen": true,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        4
+       ],
+       [
+        9,
+        4
+       ],
+       [
+        9,
+        6
+       ],
+       [
+        5,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 5,
+      "y": 4,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 9,
+      "y": 4,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 9,
+      "y": 6,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 5,
+      "y": 6,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-E-04",
+   "lernziel": "5.5.6-A1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Die Figur F hat zwei Symmetrieachsen. Beide verlaufen schräg. Zeichne eine davon ein.",
+   "gitter": {
+    "b": 9,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        4,
+        3
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        2,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "bedingung": {
+    "art": "eine",
+    "linien": [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      [
+       4,
+       3
+      ],
+      [
+       3,
+       4
+      ]
+     ]
+    ]
+   },
+   "beispiel": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die beiden Achsen laufen durch gegenüberliegende Ecken."
+   },
+   "nachweis": [
+    {
+     "art": "achseZeichnen",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-E-05",
+   "lernziel": "5.5.6-A1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Eine Figur hat genau 3 Symmetrieachsen. Welche Figur kann das sein?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Ein Dreieck mit drei gleich langen Seiten.",
+     "richtig": true
+    },
+    {
+     "text": "Ein Rechteck, das kein Quadrat ist.",
+     "richtig": false
+    },
+    {
+     "text": "Ein Dreieck mit zwei gleich langen Seiten.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Überlege für jede Figur, durch welche Ecken und Seitenmitten eine Symmetrieachse laufen kann."
+   },
+   "nachweis": [
+    {
+     "zahl": 3,
+     "grund": "Ein gleichseitiges Dreieck hat durch jede Ecke eine Symmetrieachse."
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A1-E-06",
+   "lernziel": "5.5.6-A1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Im Bild siehst du ein Quadrat und ein Rechteck. Wie viele Symmetrieachsen hat das Quadrat mehr als das Rechteck?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 0,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme für beide Figuren alle Symmetrieachsen. Achte auf die Linien von Ecke zu Ecke."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        1
+       ],
+       [
+        11,
+        1
+       ],
+       [
+        11,
+        5
+       ],
+       [
+        7,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "B",
+     "wert": 4
+    },
+    {
+     "art": "achsen",
+     "figur": "A",
+     "wert": 2
+    },
+    "4 − 2 = 2"
+   ]
+  },
+  {
+   "id": "5.5.6-A2-F-01",
+   "lernziel": "5.5.6-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Figur soll symmetrisch werden.\nFärbe die fehlenden Kästchen auf der anderen Seite der Achse.",
+   "gitter": {
+    "b": 6,
+    "h": 5,
+    "zellen": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       3,
+       0
+      ],
+      "b": [
+       3,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       4,
+       1
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       4,
+       3
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die rote Linie ist die Symmetrieachse.",
+    "beispiel": "Jedes Kästchen bekommt ein Spiegelbild auf der anderen Seite.",
+    "loesungsschritt": "Arbeite Reihe für Reihe: gleich viele Kästchen links und rechts."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-F-02",
+   "lernziel": "5.5.6-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Symmetrieachse läuft von links nach rechts.\nFärbe die fehlenden Kästchen auf der anderen Seite der Achse.",
+   "gitter": {
+    "b": 5,
+    "h": 6,
+    "zellen": [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       0,
+       3
+      ],
+      "b": [
+       1,
+       3
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Hier spiegelst du nach oben oder nach unten.",
+    "beispiel": "Jedes Kästchen bekommt ein Spiegelbild auf der anderen Seite.",
+    "loesungsschritt": "Arbeite Spalte für Spalte: gleich viele Kästchen über und unter der Achse."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-F-03",
+   "lernziel": "5.5.6-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Kästchen ist gefärbt.\nFärbe sein Spiegelbild auf der anderen Seite der Achse.",
+   "gitter": {
+    "b": 8,
+    "h": 5,
+    "zellen": [
+     [
+      5,
+      2
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     2,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "spiegel-abstand"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       2
+      ]
+     ],
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Spiegelbild ist genauso weit von der Achse entfernt.",
+    "beispiel": "Liegt ein Kästchen 2 Kästchen links von der Achse, liegt sein Spiegelbild 2 Kästchen rechts davon.",
+    "loesungsschritt": "Zähle die freien Kästchen zwischen dem gefärbten Kästchen und der Achse."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-F-04",
+   "lernziel": "5.5.6-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle den Punkt P an der Achse.\nMarkiere sein Spiegelbild.",
+   "gitter": {
+    "b": 10,
+    "h": 5,
+    "linien": [
+     {
+      "a": [
+       5,
+       0
+      ],
+      "b": [
+       5,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 9,
+      "y": 5
+     }
+    ]
+   },
+   "loesung": [
+    [
+     1,
+     5
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Das Spiegelbild liegt auf der anderen Seite der Achse.",
+    "beispiel": "Es ist genauso weit von der Achse entfernt wie der Punkt P.",
+    "loesungsschritt": "Zähle die Kästchen von P bis zur Achse. Geh genauso weit auf der anderen Seite weiter."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       9,
+       5
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-F-05",
+   "lernziel": "5.5.6-A2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Punkt P wird an der Achse gespiegelt.\nWelcher Punkt ist sein Spiegelbild?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Punkt A",
+     "richtig": false,
+     "fehlvorstellung": "spiegel-abstand"
+    },
+    {
+     "text": "Punkt B",
+     "richtig": false,
+     "fehlvorstellung": "spiegel-verschoben"
+    },
+    {
+     "text": "Punkt C",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punkt und Spiegelbild liegen gleich weit von der Achse entfernt.",
+    "beispiel": "Beide liegen auf derselben Höhe.",
+    "loesungsschritt": "Zähle die Kästchen von P bis zur Achse."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 6,
+    "linien": [
+     {
+      "a": [
+       6,
+       0
+      ],
+      "b": [
+       6,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 0,
+      "y": 6,
+      "pos": "lo"
+     },
+     {
+      "n": "A",
+      "x": 11,
+      "y": 6
+     },
+     {
+      "n": "B",
+      "x": 12,
+      "y": 4
+     },
+     {
+      "n": "C",
+      "x": 12,
+      "y": 6
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       0,
+       6
+      ]
+     ],
+     "bild": [
+      12,
+      6
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-F-06",
+   "lernziel": "5.5.6-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Figur berührt die Achse nicht.\nFärbe ihr Spiegelbild auf der anderen Seite der Achse.",
+   "gitter": {
+    "b": 8,
+    "h": 5,
+    "zellen": [
+     [
+      5,
+      1
+     ],
+     [
+      5,
+      2
+     ],
+     [
+      5,
+      3
+     ],
+     [
+      6,
+      3
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auch der Abstand zur Achse wird gespiegelt.",
+    "beispiel": "Zwischen der Figur und der Achse ist 1 Kästchen frei. Beim Spiegelbild ist es genauso.",
+    "loesungsschritt": "Beginne mit dem Kästchen, das der Achse am nächsten liegt."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-G-01",
+   "lernziel": "5.5.6-A2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Figur soll achsensymmetrisch werden.\nFärbe die fehlenden Kästchen.",
+   "gitter": {
+    "b": 8,
+    "h": 6,
+    "zellen": [
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     6,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       6,
+       1
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       6,
+       3
+      ],
+      [
+       6,
+       4
+      ],
+      [
+       5,
+       4
+      ],
+      [
+       4,
+       4
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jedes Kästchen bekommt ein Spiegelbild auf der anderen Seite der Achse.",
+    "beispiel": "Das Spiegelbild liegt in derselben Reihe und ist gleich weit von der Achse entfernt.",
+    "loesungsschritt": "Arbeite Reihe für Reihe von der Achse nach außen."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-G-02",
+   "lernziel": "5.5.6-A2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Figur berührt die Achse nicht.\nFärbe ihr Spiegelbild.",
+   "gitter": {
+    "b": 6,
+    "h": 10,
+    "zellen": [
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       0,
+       5
+      ],
+      "b": [
+       1,
+       5
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       8
+      ],
+      [
+       1,
+       7
+      ],
+      [
+       2,
+       8
+      ],
+      [
+       2,
+       7
+      ],
+      [
+       3,
+       8
+      ],
+      [
+       4,
+       8
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       5
+      ],
+      [
+       1,
+       6
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       2,
+       6
+      ],
+      [
+       3,
+       5
+      ],
+      [
+       4,
+       5
+      ]
+     ],
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auch der Abstand zur Achse wird gespiegelt.",
+    "beispiel": "Jedes Kästchen ist nach dem Spiegeln genauso weit von der Achse entfernt wie vorher.",
+    "loesungsschritt": "Beginne mit den Kästchen, die der Achse am nächsten liegen."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-G-03",
+   "lernziel": "5.5.6-A2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Punkt P(4|8) wird an der Achse gespiegelt.\nDer Bildpunkt hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 8,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 4,
+       "fehlvorstellung": "spiegel-verschoben"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 8,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Bildpunkt liegt auf derselben Höhe wie P.",
+    "beispiel": "Nur die x-Koordinate ändert sich.",
+    "loesungsschritt": "Zähle die Kästchen von P bis zur Achse und geh genauso weit weiter."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 8,
+    "achsen": true,
+    "linien": [
+     {
+      "a": [
+       5,
+       0
+      ],
+      "b": [
+       5,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 4,
+      "y": 8
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       4,
+       8
+      ]
+     ],
+     "bild": [
+      6,
+      8
+     ],
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-G-04",
+   "lernziel": "5.5.6-A2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle die Strecke AB an der Achse.\nMarkiere die Bildpunkte von A und von B.",
+   "gitter": {
+    "b": 10,
+    "h": 8,
+    "linien": [
+     {
+      "a": [
+       5,
+       0
+      ],
+      "b": [
+       5,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     },
+     {
+      "a": [
+       10,
+       6
+      ],
+      "b": [
+       6,
+       7
+      ],
+      "art": "strecke"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 10,
+      "y": 6
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 7
+     }
+    ]
+   },
+   "loesung": [
+    [
+     0,
+     6
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Spiegle jeden Endpunkt einzeln.",
+    "beispiel": "Ein Bildpunkt ist genauso weit von der Achse entfernt wie sein Punkt.",
+    "loesungsschritt": "Beginne mit A: Zähle die Kästchen bis zur Achse."
+   },
+   "verbinden": true,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       10,
+       6
+      ],
+      [
+       6,
+       7
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-G-05",
+   "lernziel": "5.5.6-A2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Achse läuft von links nach rechts.\nWelcher Punkt ist der Bildpunkt von P?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Punkt B",
+     "richtig": false,
+     "fehlvorstellung": "spiegel-verschoben"
+    },
+    {
+     "text": "Punkt A",
+     "richtig": true
+    },
+    {
+     "text": "Punkt C",
+     "richtig": false,
+     "fehlvorstellung": "spiegel-abstand"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punkt und Bildpunkt liegen genau übereinander.",
+    "beispiel": "Beide sind gleich weit von der Achse entfernt.",
+    "loesungsschritt": "Zähle die Kästchen von P bis zur Achse."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 10,
+    "linien": [
+     {
+      "a": [
+       0,
+       5
+      ],
+      "b": [
+       1,
+       5
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 5,
+      "y": 0,
+      "pos": "lo"
+     },
+     {
+      "n": "A",
+      "x": 5,
+      "y": 10
+     },
+     {
+      "n": "B",
+      "x": 3,
+      "y": 10
+     },
+     {
+      "n": "C",
+      "x": 5,
+      "y": 9
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       5,
+       0
+      ]
+     ],
+     "bild": [
+      5,
+      10
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-G-06",
+   "lernziel": "5.5.6-A2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Figur soll achsensymmetrisch werden.\nFärbe die fehlenden Kästchen.\nAchte auf jede Reihe.",
+   "gitter": {
+    "b": 8,
+    "h": 7,
+    "zellen": [
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      2,
+      5
+     ]
+    ],
+    "linien": [
+     {
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       6,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       5,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       6,
+       3
+      ],
+      [
+       5,
+       3
+      ],
+      [
+       6,
+       4
+      ],
+      [
+       5,
+       4
+      ],
+      [
+       6,
+       5
+      ],
+      [
+       5,
+       5
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle in jeder Reihe die gefärbten Kästchen.",
+    "beispiel": "Auf der anderen Seite der Achse sind es in dieser Reihe genauso viele.",
+    "loesungsschritt": "Arbeite Reihe für Reihe von der Achse nach außen."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-M-01",
+   "lernziel": "5.5.6-A2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle das Dreieck ABC an der Achse. Setze die drei Bildpunkte.",
+   "gitter": {
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "a": [
+       6,
+       0
+      ],
+      "b": [
+       6,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "figuren": [
+     {
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        8
+       ],
+       [
+        1,
+        2
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 1
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 8
+     },
+     {
+      "n": "C",
+      "x": 1,
+      "y": 2
+     }
+    ]
+   },
+   "loesung": [
+    [
+     8,
+     1
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     11,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       8,
+       1
+      ],
+      [
+       9,
+       8
+      ],
+      [
+       5,
+       2
+      ]
+     ],
+     "fehlvorstellung": "spiegel-verschoben"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Spiegle jede Ecke einzeln: senkrecht zur Achse und gleich weit auf die andere Seite.",
+    "loesungsschritt": "Verbinde die Bildpunkte in Gedanken. Das Bilddreieck sieht aus wie das Dreieck in einem Spiegel."
+   },
+   "verbinden": true,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       8
+      ],
+      [
+       1,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-M-02",
+   "lernziel": "5.5.6-A2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Figur soll achsensymmetrisch werden. Die linke Hälfte ist gezeichnet. Setze die fehlenden Eckpunkte der rechten Hälfte.",
+   "gitter": {
+    "b": 12,
+    "h": 8,
+    "linien": [
+     {
+      "a": [
+       6,
+       0
+      ],
+      "b": [
+       6,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     },
+     {
+      "a": [
+       6,
+       2
+      ],
+      "b": [
+       4,
+       3
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       4,
+       3
+      ],
+      "b": [
+       1,
+       6
+      ],
+      "art": "strecke"
+     },
+     {
+      "a": [
+       1,
+       6
+      ],
+      "b": [
+       6,
+       8
+      ],
+      "art": "strecke"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     8,
+     3
+    ],
+    [
+     11,
+     6
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       8,
+       3
+      ]
+     ],
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Punkte auf der Achse bleiben, wo sie sind.",
+    "loesungsschritt": "Spiegle die beiden Ecken, die nicht auf der Achse liegen."
+   },
+   "verbinden": false,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       6,
+       2
+      ],
+      [
+       4,
+       3
+      ],
+      [
+       1,
+       6
+      ],
+      [
+       6,
+       8
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-M-03",
+   "lernziel": "5.5.6-A2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Achse verläuft schräg. Spiegle den Punkt P an der Achse.",
+   "gitter": {
+    "b": 9,
+    "h": 9,
+    "linien": [
+     {
+      "a": [
+       0,
+       0
+      ],
+      "b": [
+       1,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 9,
+      "y": 5
+     }
+    ]
+   },
+   "loesung": [
+    [
+     5,
+     9
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Die Verbindung von Punkt und Bildpunkt ist senkrecht zur Achse.",
+    "loesungsschritt": "Gehe von P aus schräg von Ecke zu Ecke bis zur Achse und genauso weit weiter."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       9,
+       5
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-M-04",
+   "lernziel": "5.5.6-A2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Achse verläuft schräg. Spiegle das Dreieck ABC an der Achse.",
+   "gitter": {
+    "b": 10,
+    "h": 10,
+    "linien": [
+     {
+      "a": [
+       0,
+       10
+      ],
+      "b": [
+       1,
+       9
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "figuren": [
+     {
+      "ecken": [
+       [
+        4,
+        1
+       ],
+       [
+        0,
+        9
+       ],
+       [
+        0,
+        6
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 4,
+      "y": 1
+     },
+     {
+      "n": "B",
+      "x": 0,
+      "y": 9
+     },
+     {
+      "n": "C",
+      "x": 0,
+      "y": 6
+     }
+    ]
+   },
+   "loesung": [
+    [
+     9,
+     6
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     4,
+     10
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Spiegle jede Ecke einzeln. Der Weg zur Achse ist senkrecht zur Achse.",
+    "loesungsschritt": "Bei einer Achse von links unten nach rechts oben tauschen die Schritte nach rechts und nach oben ihre Rollen."
+   },
+   "verbinden": true,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       4,
+       1
+      ],
+      [
+       0,
+       9
+      ],
+      [
+       0,
+       6
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-M-05",
+   "lernziel": "5.5.6-A2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Punkt P(5|2) wird an der eingezeichneten Achse gespiegelt. Der Bildpunkt P′ hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 5,
+       "fehlvorstellung": "spiegel-verschoben"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Bestimme den Abstand von P zur Achse.",
+    "loesungsschritt": "Der Bildpunkt hat auf der anderen Seite denselben Abstand. Eine der beiden Koordinaten bleibt gleich."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 14,
+    "h": 12,
+    "achsen": true,
+    "linien": [
+     {
+      "a": [
+       7,
+       0
+      ],
+      "b": [
+       7,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 5,
+      "y": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       5,
+       2
+      ]
+     ],
+     "bild": [
+      9,
+      2
+     ],
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-M-06",
+   "lernziel": "5.5.6-A2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle das Viereck ABCD an der Achse. Die Ecke A liegt auf der Achse. Setze die Bildpunkte der anderen Ecken.",
+   "gitter": {
+    "b": 12,
+    "h": 10,
+    "linien": [
+     {
+      "a": [
+       0,
+       5
+      ],
+      "b": [
+       1,
+       5
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "figuren": [
+     {
+      "ecken": [
+       [
+        2,
+        5
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        9,
+        8
+       ],
+       [
+        5,
+        8
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 5
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 6
+     },
+     {
+      "n": "C",
+      "x": 9,
+      "y": 8
+     },
+     {
+      "n": "D",
+      "x": 5,
+      "y": 8
+     }
+    ]
+   },
+   "loesung": [
+    [
+     5,
+     4
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       5,
+       4
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       5,
+       2
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Punkt auf der Achse ist sein eigener Bildpunkt.",
+    "loesungsschritt": "Spiegle B, C und D einzeln: senkrecht zur Achse und gleich weit auf die andere Seite."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       2,
+       5
+      ],
+      [
+       5,
+       6
+      ],
+      [
+       9,
+       8
+      ],
+      [
+       5,
+       8
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-E-01",
+   "lernziel": "5.5.6-A2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle das Viereck ABCD an der schrägen Achse. Setze die vier Bildpunkte.",
+   "gitter": {
+    "b": 10,
+    "h": 10,
+    "linien": [
+     {
+      "a": [
+       0,
+       10
+      ],
+      "b": [
+       1,
+       9
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "figuren": [
+     {
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        8,
+        1
+       ],
+       [
+        6,
+        1
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 2
+     },
+     {
+      "n": "B",
+      "x": 3,
+      "y": 5
+     },
+     {
+      "n": "C",
+      "x": 8,
+      "y": 1
+     },
+     {
+      "n": "D",
+      "x": 6,
+      "y": 1
+     }
+    ]
+   },
+   "loesung": [
+    [
+     8,
+     8
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     4
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Spiegle Ecke für Ecke. Der Weg jeder Ecke zur Achse steht senkrecht auf der Achse."
+   },
+   "verbinden": true,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       5
+      ],
+      [
+       8,
+       1
+      ],
+      [
+       6,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-E-02",
+   "lernziel": "5.5.6-A2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle den Punkt P zuerst an der Geraden g. Spiegle den Bildpunkt danach an der Geraden h. Markiere nur den Endpunkt.",
+   "gitter": {
+    "b": 14,
+    "h": 7,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       3,
+       0
+      ],
+      "b": [
+       3,
+       1
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       5,
+       0
+      ],
+      "b": [
+       5,
+       1
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 1,
+      "y": 2,
+      "pos": "lo"
+     }
+    ]
+   },
+   "loesung": [
+    [
+     5,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       9,
+       2
+      ]
+     ],
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Markiere den ersten Bildpunkt in Gedanken und spiegle von dort aus weiter. Vergleiche am Ende den Weg von P zum Endpunkt mit dem Abstand der beiden Geraden."
+   },
+   "nachweis": [
+    {
+     "art": "doppelspiegelung",
+     "punkt": "P",
+     "linien": [
+      "g",
+      "h"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-E-03",
+   "lernziel": "5.5.6-A2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "linie",
+   "linie": "gerade",
+   "text": "Der Punkt Q ist das Spiegelbild des Punktes P. Die Symmetrieachse fehlt. Zeichne sie ein.",
+   "gitter": {
+    "b": 10,
+    "h": 10,
+    "punkte": [
+     {
+      "n": "P",
+      "x": 8,
+      "y": 0
+     },
+     {
+      "n": "Q",
+      "x": 2,
+      "y": 0
+     }
+    ]
+   },
+   "bedingung": {
+    "art": "gerade",
+    "a": [
+     5,
+     0
+    ],
+    "b": [
+     5,
+     1
+    ]
+   },
+   "beispiel": [
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "bedingung": {
+      "art": "gerade",
+      "a": [
+       8,
+       0
+      ],
+      "b": [
+       2,
+       0
+      ]
+     },
+     "fehlvorstellung": "senkrecht-parallel-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Achse geht durch die Mitte der Strecke PQ und steht senkrecht auf ihr."
+   },
+   "nachweis": [
+    {
+     "art": "mittelsenkrechte",
+     "von": "P",
+     "nach": "Q"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-E-04",
+   "lernziel": "5.5.6-A2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Die Symmetrieachse geht durch die Punkte (0|0) und (1|1). Der Punkt P(3|4) wird an ihr gespiegelt. Der Bildpunkt P′ hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Untersuche an einem einfachen Punkt, was diese Spiegelung mit den beiden Koordinaten macht."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 10,
+    "achsen": true,
+    "linien": [
+     {
+      "a": [
+       0,
+       0
+      ],
+      "b": [
+       1,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 3,
+      "y": 4
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       3,
+       4
+      ]
+     ],
+     "bild": [
+      4,
+      3
+     ],
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-E-05",
+   "lernziel": "5.5.6-A2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Punkte P′ und Q′ sind Bildpunkte einer Spiegelung an der Achse. Die Punkte P und Q fehlen. Setze sie.",
+   "gitter": {
+    "b": 10,
+    "h": 10,
+    "linien": [
+     {
+      "a": [
+       5,
+       0
+      ],
+      "b": [
+       5,
+       1
+      ],
+      "art": "gerade",
+      "stil": "achse"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P′",
+      "x": 1,
+      "y": 8
+     },
+     {
+      "n": "Q′",
+      "x": 3,
+      "y": 1
+     }
+    ]
+   },
+   "loesung": [
+    [
+     9,
+     8
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Eine Spiegelung lässt sich umkehren: Spiegelt man einen Bildpunkt noch einmal an derselben Achse, erhält man den ursprünglichen Punkt."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "achse",
+     "von": [
+      [
+       1,
+       8
+      ],
+      [
+       3,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A2-E-06",
+   "lernziel": "5.5.6-A2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Punkt P liegt genau auf der Symmetrieachse. Wo liegt sein Bildpunkt P′?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "P′ liegt an derselben Stelle wie P.",
+     "richtig": true
+    },
+    {
+     "text": "Es gibt keinen Bildpunkt.",
+     "richtig": false
+    },
+    {
+     "text": "P′ liegt gegenüber auf der anderen Seite der Achse.",
+     "richtig": false,
+     "fehlvorstellung": "spiegel-verschoben"
+    },
+    {
+     "text": "Das hängt von der Richtung der Achse ab.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Überlege, wie groß der Abstand von P zur Achse ist und was das für den Bildpunkt bedeutet."
+   }
+  },
+  {
+   "id": "5.5.6-A3-F-01",
+   "lernziel": "5.5.6-A3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Dreh die Figur in Gedanken halb herum.\nWie sieht sie danach aus?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Sie sieht anders aus als vorher.",
+     "richtig": true
+    },
+    {
+     "text": "Sie sieht genauso aus wie vorher.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer halben Drehung kommt oben nach unten und links nach rechts.",
+    "beispiel": "Dreh dein Heft einmal auf den Kopf. Das ist eine halbe Drehung.",
+    "loesungsschritt": "Vergleiche die Ecke oben links mit der Ecke unten rechts."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 7,
+    "h": 7,
+    "zellen": [
+     [
+      2,
+      5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "punktsymmetrie",
+     "figur": "zellen",
+     "wert": false
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-F-02",
+   "lernziel": "5.5.6-A3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Dreh jede Figur in Gedanken halb herum.\nWelche Figur sieht danach genauso aus wie vorher?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer halben Drehung steht die Figur auf dem Kopf.",
+    "beispiel": "Dreh dein Heft einmal auf den Kopf. Das ist eine halbe Drehung.",
+    "loesungsschritt": "Eine Figur mit einer Spitze oben zeigt danach nach unten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        9,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        2
+       ],
+       [
+        17,
+        2
+       ],
+       [
+        17,
+        4
+       ],
+       [
+        13,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "punktsymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-F-03",
+   "lernziel": "5.5.6-A3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Figur sieht aus wie der Buchstabe C.\nDreh sie in Gedanken halb herum.\nWie sieht sie danach aus?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Sie sieht anders aus als vorher.",
+     "richtig": true
+    },
+    {
+     "text": "Sie sieht genauso aus wie vorher.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer halben Drehung steht die Figur auf dem Kopf.",
+    "beispiel": "Schreib den Buchstaben auf und dreh das Blatt auf den Kopf.",
+    "loesungsschritt": "Vergleiche die Ecke oben links mit der Ecke unten rechts."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 7,
+    "h": 7,
+    "zellen": [
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "punktsymmetrie",
+     "figur": "zellen",
+     "wert": false
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-F-04",
+   "lernziel": "5.5.6-A3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Dreh die Figur F in Gedanken halb herum.\nWie sieht sie danach aus?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Sie sieht anders aus als vorher.",
+     "richtig": false
+    },
+    {
+     "text": "Sie sieht genauso aus wie vorher.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer halben Drehung kommt oben nach unten und links nach rechts.",
+    "beispiel": "Dreh dein Heft einmal auf den Kopf. Das ist eine halbe Drehung.",
+    "loesungsschritt": "Schau auf die Ecken: Wo landet die Ecke oben links?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        3
+       ],
+       [
+        3,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "punktsymmetrie",
+     "figur": "F",
+     "wert": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-F-05",
+   "lernziel": "5.5.6-A3",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Figur besteht aus Kästchen.\nDreh sie in Gedanken halb herum.\nWie sieht sie danach aus?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Sie sieht genauso aus wie vorher.",
+     "richtig": true
+    },
+    {
+     "text": "Sie sieht anders aus als vorher.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer halben Drehung steht die Figur auf dem Kopf.",
+    "beispiel": "Dreh dein Heft einmal auf den Kopf. Das ist eine halbe Drehung.",
+    "loesungsschritt": "Vergleiche das erste Kästchen unten links mit dem letzten oben rechts."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 7,
+    "h": 7,
+    "zellen": [
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      4,
+      3
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "punktsymmetrie",
+     "figur": "zellen",
+     "wert": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-F-06",
+   "lernziel": "5.5.6-A3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Dreh jede Figur in Gedanken halb herum.\nWelche Figur sieht danach anders aus als vorher?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer halben Drehung steht die Figur auf dem Kopf.",
+    "beispiel": "Dreh dein Heft einmal auf den Kopf. Das ist eine halbe Drehung.",
+    "loesungsschritt": "Eine Figur mit einer Spitze oben zeigt danach nach unten."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        2,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        8,
+        2
+       ],
+       [
+        10,
+        2
+       ],
+       [
+        10,
+        3
+       ],
+       [
+        11,
+        3
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        9,
+        4
+       ],
+       [
+        9,
+        3
+       ],
+       [
+        8,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        2
+       ],
+       [
+        17,
+        2
+       ],
+       [
+        17,
+        4
+       ],
+       [
+        13,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "nicht punktsymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-G-01",
+   "lernziel": "5.5.6-A3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die drei Figuren an.\nWelche Figur ist punktsymmetrisch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine punktsymmetrische Figur sieht nach einer halben Drehung genauso aus wie vorher.",
+    "beispiel": "Dreh dein Heft auf den Kopf und vergleiche.",
+    "loesungsschritt": "Eine Symmetrieachse reicht dafür nicht aus."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 18,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        2
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        10,
+        2
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        8,
+        4
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        13,
+        2
+       ],
+       [
+        17,
+        2
+       ],
+       [
+        16,
+        4
+       ],
+       [
+        14,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "punktsymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-G-02",
+   "lernziel": "5.5.6-A3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Schau dir die Figur F an.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Die Figur ist nicht punktsymmetrisch.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Die Figur ist punktsymmetrisch.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dreh die Figur in Gedanken halb herum.",
+    "beispiel": "Punktsymmetrisch heißt: Nach der halben Drehung sieht die Figur genauso aus.",
+    "loesungsschritt": "Schau auf die Ecken: Wo landet die Ecke oben links?"
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        3
+       ],
+       [
+        5,
+        3
+       ],
+       [
+        6,
+        5
+       ],
+       [
+        3,
+        5
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "punktsymmetrie",
+     "figur": "F",
+     "wert": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-G-03",
+   "lernziel": "5.5.6-A3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Die Figur soll punktsymmetrisch zum Punkt Z werden.\nFärbe die fehlenden Kästchen.",
+   "gitter": {
+    "b": 8,
+    "h": 6,
+    "zellen": [
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ]
+    ],
+    "zentrum": [
+     4,
+     3
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       4,
+       3
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       5,
+       4
+      ],
+      [
+       5,
+       5
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jedes Kästchen wandert bei der halben Drehung auf die andere Seite von Z.",
+    "beispiel": "Ein Kästchen links oben von Z landet rechts unten von Z.",
+    "loesungsschritt": "Geh von einem Kästchen aus durch Z hindurch und genauso weit weiter."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-G-04",
+   "lernziel": "5.5.6-A3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Punkt P wird halb um den Punkt Z gedreht.\nAuf welchem Punkt landet er?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Punkt A",
+     "richtig": true
+    },
+    {
+     "text": "Punkt C",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Punkt B",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Bildpunkt liegt genau gegenüber von P, auf der anderen Seite von Z.",
+    "beispiel": "P, Z und der Bildpunkt liegen auf einer Geraden.",
+    "loesungsschritt": "Geh von P aus durch Z hindurch und genauso weit weiter."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 8,
+    "zentrum": [
+     5,
+     4
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 8,
+      "y": 1,
+      "pos": "lo"
+     },
+     {
+      "n": "A",
+      "x": 2,
+      "y": 7
+     },
+     {
+      "n": "B",
+      "x": 8,
+      "y": 7
+     },
+     {
+      "n": "C",
+      "x": 2,
+      "y": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum",
+     "von": [
+      [
+       8,
+       1
+      ]
+     ],
+     "bild": [
+      2,
+      7
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-G-05",
+   "lernziel": "5.5.6-A3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Figur sieht aus wie der Buchstabe S.\nWas stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Die Figur ist punktsymmetrisch.",
+     "richtig": true
+    },
+    {
+     "text": "Die Figur ist nicht punktsymmetrisch.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dreh die Figur in Gedanken halb herum.",
+    "beispiel": "Schreib den Buchstaben auf und dreh das Blatt auf den Kopf.",
+    "loesungsschritt": "Vergleiche die Ecke oben links mit der Ecke unten rechts."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 7,
+    "h": 7,
+    "zellen": [
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "punktsymmetrie",
+     "figur": "zellen",
+     "wert": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-G-06",
+   "lernziel": "5.5.6-A3",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Noah sagt: „Die Figur F hat keine Symmetrieachse.“\nNoah meint: „Also ist sie auch nicht punktsymmetrisch.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nNach einer halben Drehung sieht die Figur genauso aus.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Falsch.\nDie Figur hat zwei Symmetrieachsen.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Punktsymmetrie und Achsensymmetrie sind zwei verschiedene Dinge.",
+    "beispiel": "Eine Figur kann punktsymmetrisch sein, ohne eine Symmetrieachse zu haben.",
+    "loesungsschritt": "Dreh die Figur in Gedanken halb herum und vergleiche."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 8,
+    "h": 7,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        4
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        3,
+        6
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "punktsymmetrie",
+     "figur": "F",
+     "wert": true
+    },
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 0
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-M-01",
+   "lernziel": "5.5.6-A3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle den Punkt P am Symmetriezentrum Z. Markiere den Bildpunkt.",
+   "gitter": {
+    "b": 12,
+    "h": 8,
+    "zentrum": [
+     6,
+     4
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 10,
+      "y": 7
+     }
+    ]
+   },
+   "loesung": [
+    [
+     2,
+     1
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       2,
+       7
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       10,
+       1
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zeichne in Gedanken die Gerade von P durch Z.",
+    "loesungsschritt": "Der Bildpunkt liegt auf dieser Geraden, auf der anderen Seite von Z und gleich weit entfernt."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum",
+     "von": [
+      [
+       10,
+       7
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-M-02",
+   "lernziel": "5.5.6-A3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle das Dreieck ABC am Symmetriezentrum Z. Setze die drei Bildpunkte.",
+   "gitter": {
+    "b": 12,
+    "h": 10,
+    "zentrum": [
+     6,
+     5
+    ],
+    "figuren": [
+     {
+      "ecken": [
+       [
+        1,
+        0
+       ],
+       [
+        4,
+        4
+       ],
+       [
+        2,
+        7
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 1,
+      "y": 0
+     },
+     {
+      "n": "B",
+      "x": 4,
+      "y": 4
+     },
+     {
+      "n": "C",
+      "x": 2,
+      "y": 7
+     }
+    ]
+   },
+   "loesung": [
+    [
+     11,
+     10
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     10,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       11,
+       0
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       10,
+       7
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       10
+      ],
+      [
+       4,
+       6
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Spiegle jede Ecke einzeln an Z.",
+    "loesungsschritt": "Zähle die Schritte von einer Ecke bis Z nach rechts und nach oben. Gehe von Z aus dieselben Schritte weiter."
+   },
+   "verbinden": true,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum",
+     "von": [
+      [
+       1,
+       0
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       2,
+       7
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-M-03",
+   "lernziel": "5.5.6-A3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Punkt P(7|3) wird am Punkt Z(7|6) gespiegelt. Der Bildpunkt P′ hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 7,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 7,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "punkt-achsen-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Beim Spiegeln am Symmetriezentrum ändern sich beide Koordinaten.",
+    "loesungsschritt": "Bestimme die Schritte von P nach Z und gehe von Z aus dieselben Schritte weiter."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 14,
+    "h": 12,
+    "achsen": true,
+    "zentrum": [
+     7,
+     6
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 7,
+      "y": 3
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum",
+     "von": [
+      [
+       7,
+       3
+      ]
+     ],
+     "bild": [
+      7,
+      9
+     ],
+     "luecken": [
+      "x",
+      "y"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-M-04",
+   "lernziel": "5.5.6-A3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Spiegle die Strecke AB am Symmetriezentrum Z. Setze die Bildpunkte von A und B.",
+   "gitter": {
+    "b": 12,
+    "h": 10,
+    "zentrum": [
+     6,
+     5
+    ],
+    "linien": [
+     {
+      "a": [
+       8,
+       9
+      ],
+      "b": [
+       12,
+       1
+      ],
+      "art": "strecke"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 8,
+      "y": 9
+     },
+     {
+      "n": "B",
+      "x": 12,
+      "y": 1
+     }
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     1
+    ],
+    [
+     0,
+     9
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       4,
+       9
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       8,
+       1
+      ],
+      [
+       12,
+       9
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Spiegle beide Endpunkte einzeln an Z.",
+    "loesungsschritt": "Die Bildstrecke ist parallel zur Strecke AB und gleich lang."
+   },
+   "verbinden": true,
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum",
+     "von": [
+      [
+       8,
+       9
+      ],
+      [
+       12,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-M-05",
+   "lernziel": "5.5.6-A3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Figur F ist punktsymmetrisch. Markiere ihr Symmetriezentrum.",
+   "gitter": {
+    "b": 12,
+    "h": 8,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        3
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "loesung": [
+    [
+     2,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Symmetriezentrum liegt genau in der Mitte der Figur.",
+    "loesungsschritt": "Verbinde in Gedanken gegenüberliegende Ecken. Die beiden Linien schneiden sich im Symmetriezentrum."
+   },
+   "nachweis": [
+    {
+     "art": "zentrum",
+     "figur": "F"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-M-06",
+   "lernziel": "5.5.6-A3",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Der Punkt P wird an einem Symmetriezentrum gespiegelt. Sein Bildpunkt ist Q. Markiere das Symmetriezentrum.",
+   "gitter": {
+    "b": 12,
+    "h": 9,
+    "punkte": [
+     {
+      "n": "P",
+      "x": 5,
+      "y": 4
+     },
+     {
+      "n": "Q",
+      "x": 11,
+      "y": 2
+     }
+    ]
+   },
+   "loesung": [
+    [
+     8,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Punkt und Bildpunkt sind vom Symmetriezentrum gleich weit entfernt.",
+    "loesungsschritt": "Das Symmetriezentrum ist der Mittelpunkt der Strecke PQ."
+   },
+   "nachweis": [
+    {
+     "art": "mitte",
+     "von": "P",
+     "nach": "Q"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-E-01",
+   "lernziel": "5.5.6-A3",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Figuren sind punktsymmetrisch, aber nicht achsensymmetrisch? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur D",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Figur zweimal: erst auf Symmetrieachsen, dann mit einer halben Drehung."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 12,
+    "h": 13,
+    "figuren": [
+     {
+      "n": "A",
+      "ecken": [
+       [
+        1,
+        7
+       ],
+       [
+        5,
+        7
+       ],
+       [
+        5,
+        11
+       ],
+       [
+        1,
+        11
+       ]
+      ]
+     },
+     {
+      "n": "B",
+      "ecken": [
+       [
+        7,
+        8
+       ],
+       [
+        11,
+        8
+       ],
+       [
+        9,
+        11
+       ]
+      ]
+     },
+     {
+      "n": "C",
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        4,
+        3
+       ],
+       [
+        5,
+        3
+       ],
+       [
+        5,
+        4
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        3,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ]
+     },
+     {
+      "n": "D",
+      "ecken": [
+       [
+        7,
+        2
+       ],
+       [
+        11,
+        2
+       ],
+       [
+        11,
+        4
+       ],
+       [
+        7,
+        4
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurenwahl",
+     "was": "punktsymmetrisch und nicht achsensymmetrisch"
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-E-02",
+   "lernziel": "5.5.6-A3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Das Viereck ABCD soll punktsymmetrisch zum Punkt Z sein. Die Ecken A und B sind gegeben. Setze die Ecken C und D.",
+   "gitter": {
+    "b": 12,
+    "h": 10,
+    "zentrum": [
+     6,
+     5
+    ],
+    "linien": [
+     {
+      "a": [
+       2,
+       7
+      ],
+      "b": [
+       5,
+       0
+      ],
+      "art": "strecke"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 2,
+      "y": 7
+     },
+     {
+      "n": "B",
+      "x": 5,
+      "y": 0
+     }
+    ]
+   },
+   "loesung": [
+    [
+     10,
+     3
+    ],
+    [
+     7,
+     10
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       10,
+       7
+      ],
+      [
+       7,
+       0
+      ]
+     ],
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Ecke C ist der Bildpunkt von A, die Ecke D ist der Bildpunkt von B. Es entsteht ein Parallelogramm."
+   },
+   "nachweis": [
+    {
+     "art": "spiegeln",
+     "an": "zentrum",
+     "von": [
+      [
+       2,
+       7
+      ],
+      [
+       5,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-E-03",
+   "lernziel": "5.5.6-A3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Eine Figur hat genau zwei Symmetrieachsen. Die Achsen sind senkrecht zueinander. Was gilt dann?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Die Figur ist nicht punktsymmetrisch.",
+     "richtig": false,
+     "fehlvorstellung": "punkt-achsen-verwechselt"
+    },
+    {
+     "text": "Die Figur ist auch punktsymmetrisch. Das Symmetriezentrum ist der Schnittpunkt der Achsen.",
+     "richtig": true
+    },
+    {
+     "text": "Die Figur ist ein Quadrat.",
+     "richtig": false,
+     "fehlvorstellung": "sonderfall-uebersehen"
+    },
+    {
+     "text": "Darüber lässt sich nichts sagen.",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Spiegle einen Punkt nacheinander an beiden Achsen und vergleiche mit einer halben Drehung um den Schnittpunkt."
+   }
+  },
+  {
+   "id": "5.5.6-A3-E-04",
+   "lernziel": "5.5.6-A3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Viereck hat die Ecken A(5|1), B(6|3), C(5|5) und D(4|3). Welche Aussagen treffen zu? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Das Viereck hat keine Symmetrieachse.",
+     "richtig": false,
+     "fehlvorstellung": "diagonale-als-achse"
+    },
+    {
+     "text": "Das Viereck ist punktsymmetrisch.",
+     "richtig": true
+    },
+    {
+     "text": "Das Viereck ist achsensymmetrisch.",
+     "richtig": true
+    },
+    {
+     "text": "Das Viereck hat genau zwei Symmetrieachsen.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe Achsensymmetrie und Punktsymmetrie getrennt voneinander."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 10,
+    "h": 9,
+    "achsen": true,
+    "figuren": [
+     {
+      "n": "F",
+      "ecken": [
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        3
+       ],
+       [
+        5,
+        5
+       ],
+       [
+        4,
+        3
+       ]
+      ]
+     }
+    ],
+    "punkte": [
+     {
+      "n": "A",
+      "x": 5,
+      "y": 1,
+      "pos": "lu"
+     },
+     {
+      "n": "B",
+      "x": 6,
+      "y": 3,
+      "pos": "ru"
+     },
+     {
+      "n": "C",
+      "x": 5,
+      "y": 5,
+      "pos": "ro"
+     },
+     {
+      "n": "D",
+      "x": 4,
+      "y": 3,
+      "pos": "lo"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "achsen",
+     "figur": "F",
+     "wert": 2
+    },
+    {
+     "art": "punktsymmetrie",
+     "figur": "F",
+     "wert": true
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-E-05",
+   "lernziel": "5.5.6-A3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "punkte",
+   "text": "Die Geraden g und h sind senkrecht zueinander. Spiegle den Punkt P zuerst an g und den Bildpunkt danach an h. Markiere nur den Endpunkt.",
+   "gitter": {
+    "b": 10,
+    "h": 9,
+    "linien": [
+     {
+      "n": "g",
+      "a": [
+       4,
+       0
+      ],
+      "b": [
+       4,
+       1
+      ],
+      "art": "gerade"
+     },
+     {
+      "n": "h",
+      "a": [
+       0,
+       5
+      ],
+      "b": [
+       1,
+       5
+      ],
+      "art": "gerade"
+     }
+    ],
+    "punkte": [
+     {
+      "n": "P",
+      "x": 2,
+      "y": 4
+     }
+    ]
+   },
+   "loesung": [
+    [
+     6,
+     6
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       6,
+       4
+      ]
+     ],
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "punkte": [
+      [
+       2,
+       6
+      ]
+     ],
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Führe beide Spiegelungen nacheinander aus. Vergleiche danach die Lage des Endpunkts mit einer Punktspiegelung am Schnittpunkt der Geraden."
+   },
+   "nachweis": [
+    {
+     "art": "doppelspiegelung",
+     "punkt": "P",
+     "linien": [
+      "g",
+      "h"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5.6-A3-E-06",
+   "lernziel": "5.5.6-A3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Bei einer Punktspiegelung wird der Punkt P(3|2) auf den Punkt Q(9|6) abgebildet. Das Symmetriezentrum hat die Koordinaten ({{x}}|{{y}}).",
+   "luecken": {
+    "x": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    },
+    "y": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "koord-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Das Symmetriezentrum liegt genau in der Mitte zwischen einem Punkt und seinem Bildpunkt."
+   },
+   "bild": {
+    "art": "gitter",
+    "b": 14,
+    "h": 12,
+    "achsen": true,
+    "punkte": [
+     {
+      "n": "P",
+      "x": 3,
+      "y": 2
+     },
+     {
+      "n": "Q",
+      "x": 9,
+      "y": 6
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "mitte",
+     "von": "P",
+     "nach": "Q",
+     "x": 6,
+     "y": 4,
+     "luecken": [
+      "x",
+      "y"
+     ]
     }
    ]
   }

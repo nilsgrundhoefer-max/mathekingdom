@@ -14,7 +14,7 @@ export const aufGerade = (p, a, b) => kreuz(richtung(a, b), richtung(a, p)) === 
 const gleicheMenge = (a, b) => a.length === b.length && a.every((p) => b.some((q) => gleich(p, q))) && b.every((p) => a.some((q) => gleich(p, q)));
 
 // Erfüllt die gezeichnete Linie durch p und q die Bedingung? Arten:
-// strecke { a, b }: genau diese Strecke. gerade { a, b }: irgendzwei Punkte dieser Geraden.
+// strecke { a, b }: genau diese Strecke. gerade { a, b }: irgendzwei Punkte dieser Geraden. eine { linien: [[a, b], …] }: eine dieser Geraden.
 // senkrecht { zu: [a, b], durch? }, parallel { zu: [a, b], durch?, abstand? (in Kästchen) }: Lage zu einer Linie, nie die Linie selbst.
 // laenge { laenge (in Kästchen), von?, auf?: [a, b] }: eine Strecke dieser Länge, mit festem Anfang oder auf einer Linie.
 export function erfuellt(bed, linie) {
@@ -24,6 +24,7 @@ export function erfuellt(bed, linie) {
   switch (bed.art) {
     case 'strecke': return (gleich(p, bed.a) && gleich(q, bed.b)) || (gleich(p, bed.b) && gleich(q, bed.a));
     case 'gerade': return aufGerade(p, bed.a, bed.b) && aufGerade(q, bed.a, bed.b);
+    case 'eine': return bed.linien.some(([a, b]) => aufGerade(p, a, b) && aufGerade(q, a, b));
     case 'senkrecht': return skalar(r, richtung(...bed.zu)) === 0 && (!bed.durch || aufGerade(bed.durch, p, q));
     case 'parallel': {
       const z = richtung(...bed.zu);

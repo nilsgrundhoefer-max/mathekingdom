@@ -171,6 +171,6 @@ export function koordinatensystem() {
     () => { const fest = wahl(['x', 'y']), w = zz(3, 11), von = zz(1, 4), bis = von + zz(2, 4), soll = []; for (let k = von; k <= bis; k++) soll.push(fest === 'x' ? [w, k] : [k, w]);
       const quer = []; for (let k = von; k <= bis; k++) quer.push(fest === 'x' ? [k, w] : [w, k]);
       return gitterPunkte(`Trage alle Gitterpunkte ein, die die ${fest}-Koordinate ${w} haben und deren ${fest === 'x' ? 'y' : 'x'}-Koordinate mindestens ${von} und höchstens ${bis} ist.`, KS(15, 12), soll, [[quer, 'koord-vertauscht'], [soll.slice(1, -1), 'sach-schritt-vergessen']],
-        h1('Überlege zuerst, auf welcher Linie alle gesuchten Punkte liegen. Die Grenzen gehören dazu.'), { nachweis: [{ art: 'bereich', fest, wert: w, von, bis }] }); },
+        h1('Überlege zuerst, auf welcher Linie alle gesuchten Punkte liegen. Die Grenzen gehören dazu.'), { offen: true, nachweis: [{ art: 'bereich', fest, wert: w, von, bis }] }); },
   ]);
 }

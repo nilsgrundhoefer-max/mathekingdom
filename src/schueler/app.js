@@ -1010,7 +1010,7 @@ function liesEingabe(auf, formular) {
     case 'zeichen': { const v = feld('zeichen'); return { eingabe: v, leer: !v }; }
     case 'schaetzen': { const v = feld('zahl'); return { eingabe: v, leer: !v }; }
     // Gitterzeichnen: Es fehlt etwas, solange nicht alle Punkte gesetzt sind (bei Kästchen: solange keines gefärbt ist).
-    case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' ? 2 : auf.eingabe === 'zellen' ? 1 : auf.loesung.length) }; }
+    case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
     default: return { eingabe: null, leer: true };
   }
 }

@@ -22,7 +22,7 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
   'zeilen', 'buendeln', 'urliste', 'daten',
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
-  'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'toleranz'];
+  'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz'];
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -413,6 +413,7 @@ function viereckVon(e) {
 }
 // Trifft eine Eigenschaft auf eine Figur zu? „nicht …“ kehrt um, „genau …“ meint den engsten Namen des Vierecks.
 function figurHat(figur, was) {
+  if (was.includes(' und ')) { const w = was.split(' und ').map((x) => figurHat(figur, x)); return w.includes(undefined) ? undefined : w.every(Boolean); }
   if (was.startsWith('nicht ')) { const w = figurHat(figur, was.slice(6)); return w === undefined ? undefined : !w; }
   if (was === 'achsensymmetrisch') return achsenVon(figur).length > 0;
   if (was === 'punktsymmetrisch') return punktsymmetrisch(figur);
@@ -728,6 +729,21 @@ const GEO_SONDER = {
     const f = lotfuss(l1.a, l2), q = sp(V(l1.a, f), V(l1.a, f)), w = inEinheit(Math.abs(q - Math.round(q)) < 1e-9 ? ganzeWurzel(Math.round(q)) : null, n.einheit);
     return w === n.wert ? null : `der Abstand ist ${w ?? 'nicht ganzzahlig'}, nicht ${n.wert}`;
   },
+  // Gitterzeichnen: alle Gitterpunkte, die von jeder genannten Linie den genannten Abstand (in Kästchen) haben.
+  abstandspunkte: (n, a) => {
+    const g = a.gitter, soll = [];
+    for (let x = 0; x <= g.b; x++) for (let y = 0; y <= g.h; y++) if (n.bedingungen.every(([name, d]) => { const l = gLinie(g, name); if (!l) return false; const f = lotfuss([x, y], l); return Math.abs(sp(V([x, y], f), V([x, y], f)) - d * d) < 1e-9; })) soll.push([x, y]);
+    return soll.length && mengeGleich(soll, a.loesung) ? null : `Lösung ist nicht genau die Menge der ${soll.length} Punkte`;
+  },
+  // Abstand eines Punktes von den Achsen: von der x-Achse so weit wie seine y-Koordinate und umgekehrt.
+  achsenabstand: (n, a) => { const p = gPunkt(gitterVon(a), n.punkt) ?? koordIn(a.text)[0]; return p && p[1] === n.xAchse && p[0] === n.yAchse ? null : 'Abstände passen nicht zu den Koordinaten'; },
+  // So viele Gitterpunkte des Bildes haben von einem Punkt genau diese Entfernung (in Kästchen).
+  entfernungspunkte: (n, a) => {
+    const g = gitterVon(a), p = gPunkt(g, n.punkt); let k = 0;
+    if (!p) return 'Punkt fehlt im Bild';
+    for (let x = 0; x <= g.b; x++) for (let y = 0; y <= g.h; y++) if (sp(V(p, [x, y]), V(p, [x, y])) === n.wert ** 2) k++;
+    return k === n.anzahl ? null : `es sind ${k} Gitterpunkte, nicht ${n.anzahl}`;
+  },
   // Lineal: Die Strecke ist so lang wie der Unterschied der beiden abgelesenen Stellen.
   messen: (n, a) => {
     const b = a.bild;
@@ -754,6 +770,25 @@ const GEO_SONDER = {
     const g = gitterVon(a), figur = figurVon(g, n.figur), l = gLinie(g, n.linie);
     if (!figur || !l) return 'Figur oder Linie fehlt im Bild';
     return istAchse(figur, l) === n.wert ? null : `${n.linie} ist ${n.wert ? 'keine' : 'eine'} Symmetrieachse`;
+  },
+  // Gitterzeichnen: ein Punkt, erst an der ersten, dann an der zweiten genannten Linie gespiegelt.
+  doppelspiegelung: (n, a) => {
+    const g = a.gitter, p = gPunkt(g, n.punkt), [l1, l2] = n.linien.map((x) => gLinie(g, x));
+    if (!p || !l1 || !l2) return 'Punkt oder Linie fehlt im Bild';
+    return a.loesung?.length === 1 && pGleich(a.loesung[0], spiegleAnLinie(spiegleAnLinie(p, l1), l2)) ? null : 'Lösung ist nicht der doppelt gespiegelte Punkt';
+  },
+  // Gitterzeichnen einer Linie: die Symmetrieachse zu zwei Punkten (jeder Punkt der Linie ist von beiden gleich weit entfernt).
+  mittelsenkrechte: (n, a) => {
+    const g = a.gitter, p = gPunkt(g, n.von), q = gPunkt(g, n.nach), bed = a.bedingung;
+    if (!p || !q || bed?.art !== 'gerade') return 'Punkte fehlen oder keine Gerade verlangt';
+    const gleichWeit = (x) => sp(V(x, p), V(x, p)) === sp(V(x, q), V(x, q));
+    return gleichWeit(bed.a) && gleichWeit(bed.b) && !pGleich(bed.a, bed.b) && linieErfuellt(bed, ...a.beispiel) ? null : 'die Linie ist nicht die Symmetrieachse der beiden Punkte';
+  },
+  // Gitterzeichnen: das Symmetriezentrum einer punktsymmetrischen Figur.
+  zentrum: (n, a) => {
+    const figur = figurVon(a.gitter, n.figur);
+    if (!figur || !punktsymmetrisch(figur)) return 'Figur fehlt oder ist nicht punktsymmetrisch';
+    return a.loesung?.length === 1 && pGleich(a.loesung[0], mittePunkte(figur)) ? null : 'Lösung ist nicht das Symmetriezentrum';
   },
   // Antworten nennen Linien. Richtig ist jede, die Symmetrieachse der Figur ist.
   achsenwahl: (n, a) => {
@@ -784,6 +819,7 @@ const GEO_SONDER = {
   },
 };
 const GEO_ERGEBNIS = {
+  achsenabstand: (n) => [n.xAchse, n.yAchse], entfernungspunkte: (n) => n.anzahl,
   lagezuZahl: (n) => n.wert,
   schritt: (n) => n.v.map(Math.abs),
   linienzahl: (n) => n.wert, verbindungen: (n) => n.wert, schnittpunkt: (n) => [n.x, n.y].filter((x) => x != null), vierteEcke: (n) => [n.x, n.y],
