@@ -126,6 +126,10 @@ _Avoid_: Stellenwerttafel (die hat Spalten für Stellenwerte, nicht für Einheit
 Eine Größe mit zwei Einheiten ohne Komma, zum Beispiel „3 € 50 ct“ oder „2 km 500 m“. Die **Kommaschreibweise** („3,50 €“) ist in Klasse 5 nur eine andere Schreibweise dafür und keine Dezimalzahl zum Rechnen.
 _Avoid_: Dezimalzahl (für Größen in Klasse 5)
 
+**Zentimeterraster**:
+Ein Karogitter im Aufgabenbild, bei dem ein Feld 1 cm² und eine Feldseite 1 cm darstellt. Es gilt ab den Flächenmaßen; im Heft sind 1 cm² vier Kästchen, weil dort 2 Kästchen 1 cm sind. Vorher zählt das Kind Flächen nur in Kästchen, ohne Einheit.
+_Avoid_: Millimeterpapier, Kästchen (für das Feld eines Zentimeterrasters)
+
 **Haus der Vierecke**:
 Die Ordnung der Vierecke nach ihren Eigenschaften, in der ein Name den anderen einschließt: Jedes Quadrat ist auch Rechteck und Raute, jedes Rechteck und jede Raute ein Parallelogramm, jedes Parallelogramm ein Trapez, jede Raute ein Drachen. „Genau“ meint den engsten Namen.
 _Avoid_: Vierecksarten, Stammbaum
