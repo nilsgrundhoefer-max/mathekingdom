@@ -9035,7 +9035,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst die Breite ab und dann di
   - ☐ Lagos
   - ☐ Daressalam
 - `05` AFB II · _Kommunizieren_ · Perth liegt bei 32° S, 116° O, Tokio bei 36° N, 140° O. Wie groß ist der Gradunterschied in der Breite? _(Bild: Gradnetz -40° bis 40° Breite, 100° bis 180° Länge, Linien alle 20°: Perth, Tokio, Jakarta)_ Lösung: **68 °**. Typische Fehler: 4 (gradnetz-richtung), 24 (gradnetz-vertauscht).
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ein Schiff liegt bei 20° S, 70° O. Es fährt genau 30° nach Norden. Wo ist es dann?
+- `06` AFB III · _Kommunizieren_ · Ein Schiff liegt bei 20° S, 70° O. Es fährt genau 30° nach Norden. Wo ist es dann?
   - ☐ 70° N, 10° O
   - ☑ 10° N, 70° O
   - ☐ 10° S, 70° O
@@ -9062,7 +9062,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies zuerst die Breite mit N oder S a
   - ☑ Ost und West sind verwechselt. Dakar liegt westlich vom Nullmeridian.
   - ☐ Nichts. Die Angabe ist richtig.
   - ☐ Nord und Süd sind verwechselt. Dakar liegt nördlich vom Äquator.
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ein Flugzeug startet bei 10° N, 40° W. Es fliegt 40° nach Süden und dann 60° nach Osten. Wo landet es?
+- `06` AFB III · _Kommunizieren_ · Ein Flugzeug startet bei 10° N, 40° W. Es fliegt 40° nach Süden und dann 60° nach Osten. Wo landet es?
   - ☑ 30° S, 20° O
   - ☐ 20° S, 30° O
   - ☐ 50° S, 100° O

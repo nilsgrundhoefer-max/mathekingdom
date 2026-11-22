@@ -126,7 +126,7 @@ export function gradnetz() {
     () => { const b0 = 10 * zz(1, 4), l0 = 10 * zz(1, 8), weg = b0 + 10 * zz(1, 4), b1 = weg - b0, w = zz(0, 1);
       const ziel = `${b1}° N, ${l0}° ${w ? 'W' : 'O'}`;
       return auswahl(`Ein Schiff liegt bei ${b0}° S, ${l0}° ${w ? 'W' : 'O'}. Es fährt genau ${weg}° nach Norden. Wo ist es dann?`, [opt(ziel, true), opt(`${weg + b0}° N, ${l0}° ${w ? 'W' : 'O'}`, false, 'gradnetz-richtung'), opt(`${b1}° S, ${l0}° ${w ? 'W' : 'O'}`, false, 'gradnetz-richtung'), opt(`${l0}° N, ${b1}° ${w ? 'W' : 'O'}`, false, 'gradnetz-vertauscht')],
-        h2('Bis zum Äquator fährt das Schiff erst ein Stück nach Norden.', 'Den Rest fährt es auf der Nordhalbkugel weiter.'), { nachweis: [U(true), ...N(`${weg} − ${b0}`)] }); },
+        h2('Bis zum Äquator fährt das Schiff erst ein Stück nach Norden.', 'Den Rest fährt es auf der Nordhalbkugel weiter.'), { nachweis: [{ art: 'gradfahrt', von: [-b0, w ? -l0 : l0], nord: weg }, ...N(`${weg} − ${b0}`)] }); },
   ]);
   sechs(N1, 'E', [
     () => lageFrage((n) => `Wo liegt ${n}? Wähle die Angabe, die am besten passt.`, 'asien', h1('Lies zuerst die Breite mit N oder S ab, dann die Länge mit O oder W.')),
@@ -136,6 +136,6 @@ export function gradnetz() {
     () => fehler((k, n, f) => `${k} gibt die Lage von ${n} mit „${f}“ an. Was ist falsch?`, wahl(['afrika', 'amerika', 'asien']), wahl(['ns', 'ow']), h1('Vergleiche die Angabe mit dem Gradnetz: Über oder unter dem Äquator? Links oder rechts vom Nullmeridian?')),
     () => { const b0 = 10 * zz(1, 3), l0 = 10 * zz(1, 4), s = 10 * zz(b0 / 10 + 1, 5), o = 10 * zz(l0 / 10 + 1, 8), b1 = s - b0, l1 = o - l0;
       return auswahl(`Ein Flugzeug startet bei ${b0}° N, ${l0}° W. Es fliegt ${s}° nach Süden und dann ${o}° nach Osten. Wo landet es?`, [opt(`${b1}° S, ${l1}° O`, true), opt(`${b1}° N, ${l1}° W`, false, 'gradnetz-richtung'), opt(`${l1}° S, ${b1}° O`, false, 'gradnetz-vertauscht'), opt(`${s + b0}° S, ${o + l0}° O`, false, 'gradnetz-richtung')].filter((x, i, l) => l.findIndex((y) => y.text === x.text) === i),
-        h1('Zerlege jeden Weg in das Stück bis zum Äquator oder Nullmeridian und den Rest.'), { nachweis: [U(true), ...N(`${s} − ${b0}`, `${o} − ${l0}`)] }); },
+        h1('Zerlege jeden Weg in das Stück bis zum Äquator oder Nullmeridian und den Rest.'), { nachweis: [{ art: 'gradfahrt', von: [b0, -l0], nord: -s, ost: o }, ...N(`${s} − ${b0}`, `${o} − ${l0}`)] }); },
   ]);
 }
