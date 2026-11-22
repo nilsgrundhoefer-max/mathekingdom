@@ -394,6 +394,7 @@ export function pruefeGroessenNachweis(a) {
         break;
       case 'einheitentafel': { const v = gRechne(n.groesse); if (!v) m.push('Nachweis: Größe der Einheitentafel lässt sich nicht lesen'); nutze(v); bindungen.push(n); break; }
       case 'figurwahl': bindungen.push(n); break;
+      case 'anschluss': { const v = gRechne(n.ab); if (!v || v.art !== 'uhr') m.push('Anschluss: Die Uhrzeit am Bahnsteig lässt sich nicht lesen'); nutze(v); bindungen.push(n); break; }
       case 'groessenart': case 'gleichwert':
       case 'stuetzgroesse': case 'extrem': case 'rechnungswahl': case 'gleichungswahl': case 'massstab': case 'vergleich': case 'urteil': case 'ordnung': case 'umwandeln':
         for (const k of ['groesse', 'plan', 'wirklich', 'links', 'rechts', 'behauptet']) if (typeof n[k] === 'string') nutze(gRechne(n[k]));
@@ -497,6 +498,16 @@ export function pruefeGroessenNachweis(a) {
         if (!gleich && werte.filter(([, v]) => v.w === ziel).length !== 1) { m.push('Figurwahl: zwei Figuren teilen sich den Platz'); break; }
         if ((b.ziel === 'groesste' ? /größer|größten|länger|längsten|mehr/ : /kleiner|kleinsten|kürzer|kürzesten|weniger/).test(a.text) === false) m.push('Figurwahl: Der Text verlangt eine andere Richtung');
         stufeEin((t) => (/^(Beide|Alle)/.test(t) ? gleich : werte.some(([n]) => n === t) ? !gleich && werte.find(([n]) => n === t)[1].w === ziel : undefined));
+      } else if ((b = bindung('anschluss'))) {
+        // Fahrplan: Ab der Uhrzeit am Bahnsteig fährt der früheste Zug, der dort abfährt. Richtig ist „mit Zug X um <seine Ankunft> Uhr“.
+        const min = (t) => { const x = String(t).match(/^(\d{1,2}):(\d\d)/); return x ? Number(x[1]) * 60 + Number(x[2]) : null; };
+        const zeilen_ = a.daten?.zeilen ?? [], kommt = zeilen_.find((z) => z[0] === b.zug);
+        if (!kommt || !istErgebnis(gRechne(b.ab))) { m.push('Anschluss: Zug oder Uhrzeit am Bahnsteig passen nicht zum Nachweis'); break; }
+        const ort = String(kommt[1]).split(' bis ')[1], ab = min(b.ab);
+        const moeglich = zeilen_.filter((z) => String(z[1]).split(' bis ')[0] === ort && min(z[2]) >= ab).sort((x, y) => min(x[2]) - min(y[2]));
+        if (!moeglich.length) { m.push('Anschluss: Kein Zug fährt danach ab'); break; }
+        const [zug, , , an] = moeglich[0];
+        stufeEin((t) => { const x = t.match(/^mit Zug (\w+) um (\d{1,2}:\d\d) Uhr$/); return x ? x[1] === zug && x[2] === an : undefined; });
       } else if ((b = bindung('gleichwert'))) {
         // Richtig ist jede Antwort, die so viel wert ist wie die Größe aus dem Text.
         const v = gRechne(b.groesse);

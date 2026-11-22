@@ -116703,6 +116703,11 @@
    "nachweis": [
     "8:34 Uhr + 16 min = 8:50 Uhr",
     {
+     "art": "anschluss",
+     "zug": "A",
+     "ab": "8:50 Uhr"
+    },
+    {
      "groesse": "9:49 Uhr",
      "grund": "Ankunft des erreichten Zuges laut Fahrplan"
     }
@@ -140589,7 +140594,6 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "argumentieren",
     "kommunizieren"
    ],
    "format": "auswahl",
@@ -140622,8 +140626,12 @@
    },
    "nachweis": [
     {
-     "art": "urteil",
-     "stimmt": true
+     "art": "gradfahrt",
+     "von": [
+      -20,
+      70
+     ],
+     "nord": 30
     },
     "30 − 20 = 10"
    ]
@@ -141062,7 +141070,6 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "argumentieren",
     "kommunizieren"
    ],
    "format": "auswahl",
@@ -141094,8 +141101,13 @@
    },
    "nachweis": [
     {
-     "art": "urteil",
-     "stimmt": true
+     "art": "gradfahrt",
+     "von": [
+      10,
+      -40
+     ],
+     "nord": -40,
+     "ost": 60
     },
     "40 − 10 = 30",
     "60 − 40 = 20"

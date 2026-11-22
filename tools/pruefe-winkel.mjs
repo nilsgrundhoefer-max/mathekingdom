@@ -241,6 +241,16 @@ export const WINKEL_SONDER = {
     }
     return null;
   },
+  // Gradnetz: eine Fahrt von einem Startpunkt. von [Breite, Länge] mit Nord und Ost positiv, nord und ost sind die gefahrenen Grad (Süd und West negativ).
+  // Richtig ist genau die Antwort, die den Zielpunkt mit N/S und O/W in dieser Reihenfolge nennt.
+  gradfahrt: (n, a) => {
+    const ziel = [n.von[0] + (n.nord ?? 0), n.von[1] + (n.ost ?? 0)];
+    const nenne = (b, l) => `${Math.abs(b)}° ${b < 0 ? 'S' : 'N'}, ${Math.abs(l)}° ${l < 0 ? 'W' : 'O'}`;
+    if (!a.text.includes(nenne(...n.von))) return `der Start ${nenne(...n.von)} steht nicht im Text`;
+    for (const [w, r] of [[n.nord, w0 => (w0 < 0 ? 'Süden' : 'Norden')], [n.ost, w0 => (w0 < 0 ? 'Westen' : 'Osten')]]) if (w && !a.text.includes(`${Math.abs(w)}° nach ${r(w)}`)) return `die Fahrt ${Math.abs(w)}° nach ${r(w)} steht nicht im Text`;
+    if (a.format !== 'auswahl') return null;
+    return einstufen(a, (t) => { const { z, arten } = koordIn(t); return z.length === 2 && /[NS]/.test(arten[0]) && /[OW]/.test(arten[1]) ? z[0] === ziel[0] && z[1] === ziel[1] : undefined; });
+  },
   // Gradnetz: Welcher Ort passt? Die Antworten sind Ortsnamen.
   ortwahl: (n, a) => {
     const orte = a.bild?.art === 'gradnetz' ? a.bild.orte : [];
@@ -393,7 +403,7 @@ function punktLagen(alle) {
 export const WINKEL_ERGEBNIS = {
   groesse: (n) => n.wert ?? [], geoAblesen: (n) => n.wert, kreislineal: (n) => n.wert, kreisGitter: (n) => [n.r, n.cm, n.mm].filter((x) => x != null),
   heftWinkel: (n) => n.wert, heftDreieck: (n) => n.wert, kreisschnitt: (n) => n.wert, gradunterschied: (n) => n.wert, uhrwinkel: (n) => n.wert, drehen: (n) => n.wert,
-  gradnetz: (n) => [n.b, n.l].filter((x) => x != null).map(Math.abs), kreisBild: (n) => n.wert ?? [], heftKoordWinkel: (n) => n.wert,
+  gradnetz: (n) => [n.b, n.l].filter((x) => x != null).map(Math.abs), gradfahrt: (n) => [n.von[0] + (n.nord ?? 0), n.von[1] + (n.ost ?? 0)].map(Math.abs), kreisBild: (n) => n.wert ?? [], heftKoordWinkel: (n) => n.wert,
 };
 export const WINKEL_ARTEN = Object.keys(WINKEL_SONDER);
 
