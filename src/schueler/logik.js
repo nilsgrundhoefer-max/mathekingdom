@@ -4,6 +4,7 @@
 import { pruefeGitter } from './geo.js';
 import { pruefeWinkel } from './winkel.js';
 import { pruefeGroesse } from './groessen.js';
+import { pruefeDezimal, pruefeBruch, pruefeFaerben } from './bruch.js';
 
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
 export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
@@ -115,6 +116,8 @@ export function leseZahl(text) {
   return /^\d+$/.test(s) ? Number(s) : NaN;
 }
 function pruefeZahl(teil, eingabe) {
+  // Kapitel 9: Eine Lösung als Text („0,25“) ist eine Dezimalzahl.
+  if (typeof teil.loesung === 'string') return pruefeDezimal(teil, eingabe);
   const wert = leseZahl(eingabe);
   // Heftaufgaben mit Geodreieck (Kapitel 5): Ein gemessener Kontrollwert darf um die Toleranz abweichen.
   if (wert === teil.loesung || (teil.toleranz && Math.abs(wert - teil.loesung) <= teil.toleranz)) return { richtig: true, fehlvorstellung: null };
@@ -156,6 +159,8 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'schaetzen': return pruefeSchaetzung(aufgabe, eingabe);
     case 'gitter': return pruefeGitter(aufgabe, eingabe);
     case 'winkel': return pruefeWinkel(aufgabe, eingabe);
+    case 'bruch': return pruefeBruch(aufgabe, eingabe);
+    case 'faerben': return pruefeFaerben(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
 }

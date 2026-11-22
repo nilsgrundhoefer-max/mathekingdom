@@ -53,6 +53,9 @@ import { flaechenmasse } from './aufgaben/5-8-2-flaechenmasse.mjs';
 import { flaechenSchaetzen } from './aufgaben/5-8-x1-schaetzen.mjs';
 import { rechteck } from './aufgaben/5-8-3-rechteck.mjs';
 import { zusammengesetzt } from './aufgaben/5-8-4-zusammengesetzt.mjs';
+import { bruchschreibweise } from './aufgaben/5-9-1-bruchschreibweise.mjs';
+import { bruchteile } from './aufgaben/5-9-2-bruchteile.mjs';
+import { dezimalschreibweise } from './aufgaben/5-9-3-dezimal.mjs';
 
 const ERZEUGER = [
   [51151151, datenUndDiagramme],
@@ -89,6 +92,10 @@ const ERZEUGER = [
   [58958958, flaechenSchaetzen],
   [58358358, rechteck],
   [58458458, zusammengesetzt],
+  // Kapitel 9 (ADR 0036)
+  [59159159, bruchschreibweise],
+  [59259259, bruchteile],
+  [59359359, dezimalschreibweise],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

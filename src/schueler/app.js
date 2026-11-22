@@ -19,6 +19,8 @@ import { winkelEingabe, winkelLoesungBild } from './winkelbilder.js';
 import { winkelLoesung } from './winkel.js';
 import { groesseEingabe, liesGroesse, einheitentafelBild } from './groessenbilder.js';
 import { loesungGroesse } from './groessen.js';
+import { bruchEingabe, liesBruch, faerbenEingabe, faerbenLoesungBild } from './bruchbilder.js';
+import { faerbenLoesung, bruchLoesung } from './bruch.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
 
@@ -910,7 +912,7 @@ function aufgabenAnsicht() {
 // Auch für den Bilderbogen (tools/bilderbogen.mjs) ausgeführt.
 export function eingabefelder(auf, a, gesperrt) {
   const zahlfeld = (name, einheit, wert) => h('span', { class: 'zahlfeld' },
-    h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+    h('input', { name, type: 'text', inputMode: auf.lernziel?.startsWith('5.9.3') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => gliedereEingabe(e.target) }),
     einheit && h('span', { class: 'einheit' }, einheit));
   // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
@@ -978,7 +980,7 @@ export function eingabefelder(auf, a, gesperrt) {
       if (t.art === 'stellentafel' || t.art === 'einheitentafel') {
         let ende = 0;
         const enden = new Set((t.gruppen ?? []).map((g) => (ende += g.spalten) - 1).slice(0, -1));
-        const rand = (i) => (enden.has(i) ? 'blockende' : null);
+        const rand = (i) => (t.komma === i ? 'blockende kommaspalte' : enden.has(i) ? 'blockende' : null);
         return h('div', { class: 'bildrahmen' }, h('table', { class: `stellentafel eingabe${t.art === 'einheitentafel' ? ' einheitentafel' : ''}` },
           h('thead', {}, t.gruppen && h('tr', { class: 'gruppen' }, t.gruppen.map((g) => h('th', { colSpan: g.spalten, scope: 'colgroup' }, g.name))),
             t.kopf.some(Boolean) && h('tr', {}, t.kopf.map((k, i) => h('th', { scope: 'col', class: rand(i) }, k)))),
@@ -999,6 +1001,8 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'schaetzen': return zahlfeld('zahl', auf.einheit, letzte);
     case 'gitter': return gitterEingabe(auf, letzte, gesperrt);
     case 'winkel': return winkelEingabe(auf, letzte, gesperrt);
+    case 'bruch': return bruchEingabe(auf, letzte, gesperrt);
+    case 'faerben': return faerbenEingabe(auf, letzte, gesperrt);
     default: return null;
   }
 }
@@ -1025,6 +1029,9 @@ function liesEingabe(auf, formular) {
     // Gitterzeichnen: Es fehlt etwas, solange nicht alle Punkte gesetzt sind (bei Kästchen: solange keines gefärbt ist).
     // Winkeldrehen (Kapitel 7): leer, solange der zweite Schenkel noch nicht bewegt wurde.
     case 'winkel': { const v = feld('winkel'); return { eingabe: v, leer: v === '' }; }
+    // Kapitel 9: Bruch aus Zähler und Nenner; beim Färben fehlt etwas, solange kein Teil gefärbt ist.
+    case 'bruch': return liesBruch(auf, formular);
+    case 'faerben': { const v = feld('faerben'); return { eingabe: v, leer: v === '' }; }
     case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' || auf.eingabe === 'kreis' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
     default: return { eingabe: null, leer: true };
   }
@@ -1089,7 +1096,15 @@ function maleMitEntwurf(eingabe) {
 function loesungstext(auf) {
   const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? ` ${t.einheit}` : ''}`;
   switch (auf.format) {
-    case 'zahl': case 'zahlenstrahl': return zahl(auf);
+    case 'zahlenstrahl': {
+      // Kapitel 9: Am Strahl mit Teiler ist die Lösung die Nummer des Teilstrichs. Gezeigt wird die Zahl, die dort steht.
+      const T = auf.strahl?.teiler ?? 1;
+      if (T === 1 || typeof auf.loesung !== 'number') return zahl(auf);
+      if (!/^10*$/.test(String(T))) return auf.loesung % T === 0 ? String(auf.loesung / T) : `${auf.loesung}\u2044${T}`;
+      const nach = String(auf.loesung % T).padStart(String(T).length - 1, '0').replace(/0+$/, '');
+      return `${Math.floor(auf.loesung / T)}${nach ? `,${nach}` : ''}`;
+    }
+    case 'zahl': return zahl(auf);
     case 'ordnen': return auf.loesung.join(', ');
     case 'zeichen': return zahl(auf);
     case 'schaetzen': return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.bereich[0])} bis ${gliedere(auf.bereich[1])})`;
@@ -1105,6 +1120,8 @@ function loesungstext(auf) {
     case 'zeichnen': return auf.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     case 'gitter': return gitterLoesung(auf);
     case 'winkel': return winkelLoesung(auf);
+    case 'bruch': return `${bruchLoesung(auf)}${auf.einheit ? ` ${auf.einheit}` : ''}`;
+    case 'faerben': return faerbenLoesung(auf);
     default: return '';
   }
 }
@@ -1152,6 +1169,7 @@ export function loesungsbild(auf) {
   if (auf.format === 'gitter') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, gitterLoesungBild(auf));
   // Kapitel 7: der Winkel mit dem zweiten Schenkel in der richtigen Lage.
   if (auf.format === 'winkel') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, winkelLoesungBild(auf));
+  if (auf.format === 'faerben') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, faerbenLoesungBild(auf));
   // Kapitel 2: Die ausgefüllte Stellenwerttafel.
   if (auf.tabelle?.art === 'einheitentafel') {
     const t = auf.tabelle;
@@ -1159,7 +1177,7 @@ export function loesungsbild(auf) {
   }
   if (auf.tabelle?.art === 'stellentafel') {
     const t = auf.tabelle;
-    return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, t.zeilen.map((zeile) => tafelBild({ spalten: t.kopf, gruppen: t.gruppen, werte: zeile.map((c) => (typeof c === 'object' ? auf.luecken[c.luecke].loesung : c === '' ? null : c)) })));
+    return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, t.zeilen.map((zeile) => tafelBild({ spalten: t.kopf, gruppen: t.gruppen, komma: t.komma, werte: zeile.map((c) => (typeof c === 'object' ? auf.luecken[c.luecke].loesung : c === '' ? null : c)) })));
   }
   if (auf.format === 'strichliste') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, h('table', { class: 'strichtabelle' }, h('tbody', {},
     auf.zeilen.map((x) => h('tr', {}, h('th', { scope: 'row' }, x.name), h('td', {}, striche(buendle(x.loesung))))))));

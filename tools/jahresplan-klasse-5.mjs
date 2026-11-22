@@ -250,9 +250,21 @@ const roh = [
     }),
   ]],
   ['Brüche und Dezimalzahlen', [
-    uk('Bruchschreibweise', ['Ich kann die Bruchschreibweise verwenden.']),
-    uk('Bruchteile von Größen', ['Ich kann mit Bruchteilen von Größen umgehen.']),
-    uk('Dezimalschreibweise', ['Ich kann die Dezimalschreibweise verwenden.']),
+    // Kapitel 9 (ADR 0036, Grilling mit Nils am 2026-11-22). Kein Kürzen, kein Erweitern, kein Rechnen mit Brüchen: Das ist Stoff der Klasse 6.
+    uk('Bruchschreibweise', {
+      B1: 'Ich kann Bruchteile an Bildern erkennen und mit Zähler und Nenner benennen.',
+      B2: 'Ich kann Bruchteile darstellen und einen Bruchteil zum Ganzen ergänzen.',
+      B3: 'Ich kann Brüche vergleichen und ordnen.',
+    }),
+    uk('Bruchteile von Größen', {
+      T1: 'Ich kann den Bruchteil einer Größe berechnen.',
+      T2: 'Ich kann das Ganze oder den Anteil bestimmen und Sachaufgaben mit Bruchteilen lösen.',
+    }),
+    uk('Dezimalschreibweise', {
+      K1: 'Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Brüche mit dem Nenner 10, 100 oder 1000 als Dezimalzahl schreiben.',
+      K2: 'Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.',
+      K3: 'Ich kann Größen in Kommaschreibweise in eine andere Einheit umwandeln.',
+    }),
   ]],
 ];
 
@@ -792,6 +804,44 @@ export const merkzettel = {
     beispiel: 'Ein L aus einem Rechteck mit 6 cm² und einem mit 4 cm² hat 6 cm² + 4 cm² = 10 cm².',
     heft: 'Nummeriere die Teilflächen und schreibe zu jeder Nummer eine Rechnung.',
   },
+  // Kapitel 9 (Nils, 2026-11-22): Brüche stehen mit Bruchstrich, gerechnet wird mit ihnen noch nicht.
+  '5.9.1': {
+    regeln: [
+      'Ein Ganzes wird in gleich große Teile geteilt. Ein Bruch sagt, wie viele Teile gemeint sind.',
+      'Der Nenner steht unten. Er sagt, in wie viele gleich große Teile das Ganze geteilt ist.',
+      'Der Zähler steht oben. Er zählt die Teile, die gemeint sind.',
+      'Sind die Teile nicht gleich groß, ist es kein Bruchteil.',
+      'Bei gleichem Nenner ist der Bruch mit dem größeren Zähler größer.',
+      'Ab G: Je größer der Nenner, desto kleiner ist ein Teil. 1⁄8 ist kleiner als 1⁄4.',
+      'Ab M: Mehr als ein Ganzes schreibt man als gemischte Zahl, zum Beispiel 1 1⁄2.',
+    ],
+    beispiel: 'Eine Pizza ist in 8 gleich große Stücke geteilt. 3 Stücke sind gegessen. Das sind 3⁄8 der Pizza. Übrig sind 5⁄8.',
+    heft: 'Zeichne den Bruchstrich mit dem Lineal. Schreibe den Zähler darüber und den Nenner darunter.',
+  },
+  '5.9.2': {
+    regeln: [
+      'Einen Bruchteil einer Größe berechnest du in zwei Schritten.',
+      'Erst teilst du durch den Nenner. Dann weißt du, wie groß ein Teil ist.',
+      'Dann nimmst du mit dem Zähler mal.',
+      'Ab M: Wandle die Größe zuerst in eine kleinere Einheit um, wenn es sonst nicht aufgeht.',
+      'Ab M rückwärts: Kennst du einen Teil, findest du das Ganze durch Malnehmen mit dem Nenner.',
+    ],
+    beispiel: '3⁄4 von 20 kg: Erst 20 kg : 4 = 5 kg. Dann 3 · 5 kg = 15 kg.',
+    heft: 'Schreibe beide Schritte untereinander. Vergiss die Einheit nicht.',
+  },
+  '5.9.3': {
+    regeln: [
+      'Eine Dezimalzahl hat ein Komma. Vor dem Komma stehen die Ganzen.',
+      'Die erste Stelle nach dem Komma sind die Zehntel: 0,7 = 7⁄10.',
+      'Ab G: Die zweite Stelle sind die Hundertstel: 0,25 = 25⁄100.',
+      'Ab M: Die dritte Stelle sind die Tausendstel: 0,125 = 125⁄1000.',
+      'Man liest Ziffer für Ziffer: 0,25 heißt „null Komma zwei fünf“.',
+      'Ab G: Eine Null am Ende ändert den Wert nicht: 0,5 = 0,50.',
+      'Vergleiche Stelle für Stelle von links: erst die Ganzen, dann die Zehntel, dann die Hundertstel.',
+    ],
+    beispiel: '0,5 ist größer als 0,15. Denn 0,5 hat 5 Zehntel, und 0,15 hat nur 1 Zehntel.',
+    heft: 'Schreibe Dezimalzahlen zum Vergleichen untereinander, Komma unter Komma.',
+  },
 };
 
 // Wortspeicher je Station: Wort, Erklärung in einfacher Sprache und die Niveaustufe, ab der das Wort verwendet wird.
@@ -1270,6 +1320,35 @@ export const wortspeicher = {
     w('Skizze', 'M', 'Eine Zeichnung mit Maßen, die nicht genau maßstäblich ist.'),
     w('Rahmen', 'E', 'Eine Figur mit einem Loch in der Mitte, wie ein Bilderrahmen.'),
   ],
+  // Kapitel 9 (Nils, 2026-11-22)
+  '5.9.1': [
+    w('Bruch', 'F', 'Eine Zahl aus Zähler und Nenner mit einem Bruchstrich dazwischen. Sie nennt einen Teil vom Ganzen.'),
+    w('Zähler', 'F', 'Die Zahl über dem Bruchstrich. Sie zählt die Teile.'),
+    w('Nenner', 'F', 'Die Zahl unter dem Bruchstrich. Sie sagt, in wie viele gleich große Teile das Ganze geteilt ist.'),
+    w('Bruchstrich', 'F', 'Der Strich zwischen Zähler und Nenner.'),
+    w('Ganzes', 'F', 'Alles zusammen, bevor geteilt wird: die ganze Pizza, der ganze Streifen.'),
+    w('Bruchteil', 'F', 'Ein Teil vom Ganzen, mit einem Bruch angegeben.'),
+    w('Stammbruch', 'G', 'Ein Bruch mit dem Zähler 1, zum Beispiel 1⁄4.'),
+    w('gemischt', 'M', 'Eine gemischte Zahl besteht aus Ganzen und einem Bruch, zum Beispiel 1 1⁄2.'),
+    w('gleichwertig', 'E', 'Zwei Brüche sind gleichwertig, wenn sie gleich viel vom Ganzen sind: 1⁄2 und 2⁄4.'),
+    w('unechter Bruch', 'E', 'Ein Bruch, der größer als ein Ganzes ist: Der Zähler ist größer als der Nenner.'),
+  ],
+  '5.9.2': [
+    w('Anteil', 'F', 'Der Teil vom Ganzen, um den es geht.'),
+    w('gerecht teilen', 'F', 'So teilen, dass alle Teile gleich groß sind.'),
+    w('umwandeln', 'F', 'Eine Größe in einer anderen Einheit schreiben: 1 km = 1000 m.'),
+    w('Maßzahl', 'G', 'Die Zahl vor der Einheit. Bei 20 kg ist 20 die Maßzahl.'),
+    w('rückwärts', 'M', 'Vom Teil zurück zum Ganzen rechnen.'),
+  ],
+  '5.9.3': [
+    w('Dezimalzahl', 'F', 'Eine Zahl mit Komma, zum Beispiel 0,7.'),
+    w('Komma', 'F', 'Das Zeichen zwischen den Ganzen und den Zehnteln.'),
+    w('Zehntel', 'F', 'Ein Teil von zehn gleich großen Teilen. Man schreibt 0,1.'),
+    w('Hundertstel', 'G', 'Ein Teil von hundert gleich großen Teilen. Man schreibt 0,01.'),
+    w('Nachkommastelle', 'G', 'Eine Ziffer rechts vom Komma.'),
+    w('Tausendstel', 'M', 'Ein Teil von tausend gleich großen Teilen. Man schreibt 0,001.'),
+    w('Endnull', 'G', 'Eine Null am Ende einer Dezimalzahl. Sie ändert den Wert nicht.'),
+  ],
 };
 
 // Voraussetzungen (ADR 0014): Lernziel → Lernziele, auf denen es aufbaut. Daraus schlägt das Schüler-Dashboard eine Brücke vor,
@@ -1363,9 +1442,15 @@ const voraussetzungen = {
   '5.8.3-R2': ['5.8.3-R1', '5.8.2-H2'],
   '5.8.4-S1': ['5.8.3-R1'],
   '5.8.4-S2': ['5.8.4-S1', '5.8.3-R2'],
-  '5.9.1-L1': ['5.4.1-K2'],
-  '5.9.2-L1': ['5.9.1-L1', '5.4.5-D2', '5.6.5-L1'],
-  '5.9.3-L1': ['5.9.1-L1', '5.2.2-B1'],
+  // Kapitel 9 (Nils, 2026-11-22).
+  '5.9.1-B1': ['5.4.1-K2'],
+  '5.9.1-B2': ['5.9.1-B1'],
+  '5.9.1-B3': ['5.9.1-B2'],
+  '5.9.2-T1': ['5.9.1-B1', '5.4.5-D2', '5.6.5-L1'],
+  '5.9.2-T2': ['5.9.2-T1'],
+  '5.9.3-K1': ['5.9.1-B1', '5.2.2-B1'],
+  '5.9.3-K2': ['5.9.3-K1', '5.2.1-N1'],
+  '5.9.3-K3': ['5.9.3-K1', '5.6.2-B1', '5.6.5-L1'],
   '5.3.2-A2': ['5.3.1-K1'],
   '5.3.2-A3': ['5.3.2-A2'],
   '5.3.2-A4': ['5.3.2-A2', '5.3.1-K1', '5.2.3-R1'],
@@ -1524,6 +1609,15 @@ const grundlagen = {
   '5.8.3-R2': 'Rückwärts: Wie viele Felder hat eine Reihe, wenn es 3 Reihen und 12 Felder sind?',
   '5.8.4-S1': 'Eine Figur am Raster in zwei Rechtecke zerlegen und beide zählen',
   '5.8.4-S2': 'Den äußeren Rand einer Figur am Raster nachfahren und die Seiten zählen',
+  // Kapitel 9 (Nils, 2026-11-22)
+  '5.9.1-B1': 'An einem Kreis aus gleich großen Teilen zählen: Wie viele Teile gibt es, wie viele sind gefärbt?',
+  '5.9.1-B2': 'In einem Streifen aus gleich großen Teilen so viele Teile färben, wie der Zähler sagt',
+  '5.9.1-B3': 'Zwei Bruchbilder mit gleich vielen Teilen vergleichen: Wo ist mehr gefärbt?',
+  '5.9.2-T1': 'Eine Größe gerecht in gleich große Teile teilen: Wie groß ist ein Teil?',
+  '5.9.2-T2': 'Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?',
+  '5.9.3-K1': 'Einen Streifen aus zehn Teilen lesen: Ein Teil ist ein Zehntel, geschrieben 0,1',
+  '5.9.3-K2': 'Am Zahlenstrahl von 0 bis 1 die Zehntel abzählen',
+  '5.9.3-K3': 'Geld mit Komma lesen: 2,50 € sind 2 € und 50 ct',
 };
 
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".

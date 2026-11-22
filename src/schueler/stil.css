@@ -220,6 +220,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .mitbild { display: flex; flex-direction: column; gap: 12px; align-self: stretch; align-items: flex-start; }
 #mathekingdom .bildrahmen { align-self: stretch; overflow-x: auto; }
 #mathekingdom svg.zahlenstrahl { display: block; width: 100%; min-width: 560px; max-width: 760px; height: auto; }
+#mathekingdom svg.zahlenstrahl.kurz { min-width: 320px; max-width: 520px; }
 #mathekingdom .zahlenstrahl .achse { stroke: var(--tinte); stroke-width: 2.5; }
 #mathekingdom .zahlenstrahl .spitze { fill: var(--tinte); }
 #mathekingdom .zahlenstrahl .strich line { stroke: var(--tinte); stroke-width: 1.5; }
@@ -694,3 +695,37 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .gradnetzbild .netzname { font-size: 13px; font-weight: 700; fill: var(--siegel); paint-order: stroke; stroke: #eef4f8; stroke-width: 4px; }
 #mathekingdom .gradnetzbild .ort { fill: var(--nacht); stroke: #fff; stroke-width: 1.5; }
 #mathekingdom .gradnetzbild .ortsname { font-size: 14px; font-weight: 700; fill: var(--nacht); paint-order: stroke; stroke: #eef4f8; stroke-width: 4px; }
+
+/* Kapitel 9: gestapelte Brüche im Text (dom.js, ADR 0036) */
+#mathekingdom .bruch, .bruch { display: inline-flex; flex-direction: column; align-items: stretch; vertical-align: middle; text-align: center; font-size: .82em; line-height: 1.12; margin: 0 .14em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#mathekingdom .bruch .bz, .bruch .bz { border-bottom: .09em solid currentColor; padding: 0 .22em .04em; min-width: .9em; }
+#mathekingdom .bruch .bn, .bruch .bn { padding: .04em .22em 0; }
+#mathekingdom .gemischt, .gemischt { white-space: nowrap; }
+#mathekingdom .bruchsatz, .bruchsatz { white-space: nowrap; }
+#mathekingdom .gemischt .bruch, .gemischt .bruch { margin-left: .08em; }
+/* Eine Zeile mit Bruch ist höher. Damit die Zeilen nicht springen, bekommt der ganze Absatz diese Höhe. */
+#mathekingdom .aufgabentext:has(.bruch), #mathekingdom .kaertchen:has(.bruch) p, #mathekingdom .hinweis:has(.bruch) { line-height: 2.15; }
+#mathekingdom .option span:has(.bruch) { line-height: 2.05; }
+#mathekingdom .ordnenkarte .kartenwert:has(.bruch) { padding-top: 4px; padding-bottom: 4px; }
+/* Brucheingabe: Zähler über Nenner */
+#mathekingdom .brucheingabe { display: inline-flex; align-items: center; gap: 10px; margin: 6px 0 14px; }
+#mathekingdom .brucheingabe input { width: 3.4rem; text-align: center; font-size: 1.3rem; padding: 6px 4px; margin: 0; }
+#mathekingdom .brucheingabe .bruchfelder { display: inline-flex; flex-direction: column; align-items: stretch; gap: 5px; }
+#mathekingdom .brucheingabe .bruchstrich { height: 3px; background: var(--tinte); border-radius: 2px; }
+#mathekingdom .brucheingabe > input { align-self: center; }
+/* Bruchbilder und Teile färben */
+#mathekingdom svg.bruchbild { display: block; width: 100%; height: auto; user-select: none; }
+#mathekingdom .bruchbild .blatt { fill: #fffdf6; }
+#mathekingdom .bruchbild .bruchteil { fill: #ffffff; stroke: var(--nacht); stroke-width: 1.6; stroke-linejoin: round; }
+#mathekingdom .bruchbild .bruchteil.voll { fill: #e8a33d; }
+#mathekingdom .bruchbild .umriss { fill: none; stroke: var(--nacht); stroke-width: 2.6; pointer-events: none; }
+#mathekingdom .bruchbild .zehnerlinie { stroke: var(--nacht); stroke-width: 1.8; pointer-events: none; }
+#mathekingdom .bruchbild [data-form=hundert] .bruchteil { stroke-width: .7; }
+#mathekingdom .bruchbild .figurname { font-size: 17px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .bruchbild.eingabe .bruchteil { cursor: pointer; }
+#mathekingdom .bruchbild.eingabe .bruchteil:hover { fill: #fbe7c2; }
+#mathekingdom .bruchbild.eingabe .bruchteil.voll:hover { fill: #d9932b; }
+#mathekingdom .bruchbild.eingabe .bruchteil:focus-visible { outline: none; stroke: var(--gold); stroke-width: 4; }
+/* Stellenwerttafel mit Komma: Es steht unten auf der Trennlinie nach den Einern. */
+#mathekingdom table.stellentafel td.kommaspalte { position: relative; }
+#mathekingdom table.stellentafel td.kommaspalte::after { content: ','; position: absolute; right: -.34em; bottom: -.12em; font-size: 2.1rem; font-weight: 700; line-height: 1; color: var(--siegel); z-index: 1; pointer-events: none; }
