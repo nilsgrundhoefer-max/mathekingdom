@@ -34,6 +34,8 @@ export function tafelBild(b) {
 }
 // Dicke Linie zwischen den Dreierblöcken einer großen Stellenwerttafel.
 function blockRand(b, i) {
+  // Kapitel 9: Nach den Einern steht das Komma auf einer kräftigen Trennlinie.
+  if (b.komma === i) return 'blockende kommaspalte';
   if (!b.gruppen) return null;
   let ende = 0;
   for (const g of b.gruppen) { ende += g.spalten; if (i === ende - 1 && ende < b.spalten.length) return 'blockende'; }

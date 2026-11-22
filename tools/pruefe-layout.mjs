@@ -4,6 +4,11 @@
 // - Punkt-, Winkel- und Ortsnamen liegen nicht auf einer Linie (Schenkel, Strecke, Breitenkreis im Gradnetz),
 //   Maße, Figurnamen und Teilnummern in Kapitel 8 (ADR 0035) liegen nicht auf dem Rand einer Figur,
 // - jeder gezeichnete Winkel hat nachgemessen die Größe aus dem Aufgabenpool (auf 0,5° genau).
+// Kapitel 9 (ADR 0036) wird mit Text und Eingabe gezeichnet. Dort gilt zusätzlich:
+// - jedes Bruchbild hat so viele Teile und so viele gefärbte Teile wie im Aufgabenpool,
+// - beim Färben ist jedes Teil groß genug zum Antippen (mindestens 24 Pixel),
+// - jeder Bruch im Text steht gestapelt mit waagerechtem Bruchstrich, nichts ragt über die Karte hinaus,
+// - ein kurzer Bruchstrahl ist ohne Schieben ganz zu sehen, die Stellenwerttafel mit Komma zeigt ihr Komma.
 // Aufruf: node tools/pruefe-layout.mjs [Kapitelanfang, z. B. 5.7.]
 import { build } from 'esbuild';
 import { readFileSync } from 'node:fs';
@@ -23,14 +28,50 @@ window.zeichne = (aufgaben) => {
   document.head.append(h('style', {}, stil));
   const halter = document.getElementById('mathekingdom');
   halter.replaceChildren(...aufgaben.map((auf) => h('section', { class: 'karte', 'data-aufgabe': auf.id },
+    auf.lernziel.startsWith('5.9') && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
     auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
-    ['winkel', 'gitter'].includes(auf.format) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [] }, false)))));
+    (['winkel', 'gitter'].includes(auf.format) || auf.lernziel.startsWith('5.9')) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
 };
 // Prüft alle Bilder einer Aufgabe und liefert Mängel als Text.
 window.pruefe = (soll) => {
   const maengel = [];
   for (const sec of document.querySelectorAll('section[data-aufgabe]')) {
     const id = sec.dataset.aufgabe, auf = soll[id];
+    if (auf?.lernziel.startsWith('5.9')) {
+      const karte = sec.getBoundingClientRect();
+      // Bruchbilder nachzählen.
+      const zaehle = (svg, figuren, was) => {
+        const gruppen = [...svg.querySelectorAll('g.bruchfigur')];
+        if (gruppen.length !== figuren.length) { maengel.push(id + ': ' + was + ' zeigt ' + gruppen.length + ' statt ' + figuren.length + ' Figuren'); return; }
+        figuren.forEach((f, i) => {
+          const je = f.form === 'rechteck' ? f.reihen * f.spalten : f.form === 'hundert' ? 100 : f.teile, soll = je * (f.ganze ?? 1);
+          const teile = gruppen[i].querySelectorAll('.bruchteil').length, voll = gruppen[i].querySelectorAll('.bruchteil.voll').length;
+          if (teile !== soll) maengel.push(id + ': ' + was + ', Figur ' + (f.n ?? i + 1) + ' hat ' + teile + ' statt ' + soll + ' Teile');
+          if (voll !== (f.gefaerbt ?? []).length) maengel.push(id + ': ' + was + ', Figur ' + (f.n ?? i + 1) + ' hat ' + voll + ' statt ' + (f.gefaerbt ?? []).length + ' gefärbte Teile');
+        });
+      };
+      if (auf.bild?.art === 'bruch') { const svg = sec.querySelector('.bildrahmen.zumtext svg.bruchbild'); if (svg) zaehle(svg, auf.bild.figuren, 'Bruchbild'); else maengel.push(id + ': Bruchbild fehlt'); }
+      if (auf.format === 'faerben') {
+        const svg = sec.querySelector('form svg.bruchbild.eingabe');
+        if (!svg) maengel.push(id + ': Bild zum Färben fehlt');
+        else { zaehle(svg, [{ ...auf.faerben, gefaerbt: [] }], 'Färbebild');
+          for (const el of svg.querySelectorAll('.bruchteil')) { const r = el.getBoundingClientRect(); if (Math.min(r.width, r.height) < 24) { maengel.push(id + ': Teil zum Antippen ist nur ' + Math.round(Math.min(r.width, r.height)) + ' Pixel groß'); break; } } }
+      }
+      if (auf.format === 'bruch' && sec.querySelectorAll('.brucheingabe input').length !== (auf.gemischt ? 3 : 2)) maengel.push(id + ': Brucheingabe hat nicht die erwarteten Felder');
+      // Brüche im Text: gestapelt, nie mit schrägem Strich (außer in Auswahllisten).
+      const lauf = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT);
+      for (let n = lauf.nextNode(); n; n = lauf.nextNode()) if (n.data.includes('\u2044') && !n.parentElement.closest('option, svg')) { maengel.push(id + ': Bruch „' + n.data.trim() + '“ steht nicht gestapelt'); break; }
+      for (const b of sec.querySelectorAll('.bruch')) { const z = b.querySelector('.bz').getBoundingClientRect(), n = b.querySelector('.bn').getBoundingClientRect(); if (!(n.top >= z.bottom - 1)) { maengel.push(id + ': Bruch ' + b.textContent + ' ist nicht gestapelt'); break; } }
+      for (const s of sec.querySelectorAll('.bruchsatz, .gemischt')) if (new Set([...s.getClientRects()].map((r) => Math.round(r.bottom / 8))).size > 1 && Math.max(...[...s.getClientRects()].map((r) => r.top)) - Math.min(...[...s.getClientRects()].map((r) => r.top)) > 12) { maengel.push(id + ': Bruch „' + s.textContent + '“ ist umgebrochen'); break; }
+      // Nichts ragt aus der Karte (Bilder mit eigenem Schieberahmen ausgenommen).
+      for (const el of sec.querySelectorAll('.aufgabentext, .bruch, input, select, label, .brucheingabe, svg.bruchbild, table, .karte-ordnen, button')) {
+        if (el.closest('.bildrahmen') && !el.matches('svg.bruchbild')) continue;
+        const r = el.getBoundingClientRect(); if (r.width && (r.right > karte.right + 1 || r.left < karte.left - 1)) { maengel.push(id + ': ' + (el.className?.baseVal ?? el.className ?? el.tagName) + ' ragt aus der Karte'); break; }
+      }
+      for (const svg of sec.querySelectorAll('svg.zahlenstrahl.kurz')) { const rahmen = svg.closest('.bildrahmen'); if (rahmen && rahmen.scrollWidth > rahmen.clientWidth + 1) maengel.push(id + ': kurzer Zahlenstrahl passt nicht in die Breite'); }
+      const mitKomma = (auf.bild?.art === 'tafel' && auf.bild.komma != null ? 1 : 0) + (auf.tabelle?.art === 'stellentafel' && auf.tabelle.komma != null ? 1 : 0);
+      if (mitKomma && !sec.querySelector('.kommaspalte')) maengel.push(id + ': Stellenwerttafel zeigt kein Komma');
+    }
     for (const svg of sec.querySelectorAll('svg')) {
       const rahmen = svg.getBoundingClientRect();
       const texte = [...svg.querySelectorAll('text')].filter((t) => t.textContent.trim() && getComputedStyle(t).display !== 'none');

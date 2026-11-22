@@ -117,6 +117,16 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
         if (b.plaettchen) assert.equal(zellen[i].alle().filter((k) => k.tag === 'circle').length, w, `${a.id}: Zelle ${i}`);
         else assert.equal(zellen[i].kinder.join(''), String(w), `${a.id}: Zelle ${i}`);
       });
+    } else if (b.art === 'bruch') {
+      // Kapitel 9 (ADR 0036): Jede Figur hat so viele Teile und so viele gefärbte Teile wie in der Aufgabe.
+      const figuren = svg.klasse('bruchfigur');
+      assert.equal(figuren.length, b.figuren.length, a.id);
+      b.figuren.forEach((f, i) => {
+        const je = f.form === 'rechteck' ? f.reihen * f.spalten : f.form === 'hundert' ? 100 : f.teile;
+        assert.equal(figuren[i].klasse('bruchteil').length, je * (f.ganze ?? 1), a.id);
+        assert.equal(figuren[i].klasse('voll').length, f.gefaerbt.length, a.id);
+        assert.ok(f.gefaerbt.every((nr) => nr >= 0 && nr < je * (f.ganze ?? 1)), a.id);
+      });
     } else if (b.art === 'zeichentafel') {
       assert.deepEqual(svg.alle().filter((k) => k.tag === 'th').map((k) => k.kinder.join('')), b.zeichen, a.id);
     } else if (b.art === 'vergleich') {

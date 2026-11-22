@@ -712,6 +712,56 @@
    "beschreibung": "Zieht bei einer Figur mit Loch das Loch nicht vom Flächeninhalt ab.",
    "hinweis": "Rechne zuerst die ganze Fläche aus. Ziehe dann das Loch ab.",
    "kind": "Du ziehst das Loch jetzt vom Flächeninhalt ab."
+  },
+  "bruch-vertauscht": {
+   "beschreibung": "Vertauscht Zähler und Nenner.",
+   "hinweis": "Der Nenner steht unten und nennt alle Teile. Der Zähler steht oben und zählt die gemeinten Teile.",
+   "kind": "Du schreibst den Zähler jetzt oben und den Nenner unten."
+  },
+  "bruch-teil-zu-rest": {
+   "beschreibung": "Vergleicht die gefärbten Teile mit den ungefärbten statt mit allen Teilen (3 von 8 gefärbt als drei Fünftel).",
+   "hinweis": "Zähle für den Nenner alle Teile des Ganzen, die gefärbten und die weißen.",
+   "kind": "Du zählst beim Nenner jetzt alle Teile des Ganzen."
+  },
+  "bruch-ungleiche-teile": {
+   "beschreibung": "Zählt ungleich große Teile als Bruchteil.",
+   "hinweis": "Ein Bruch braucht gleich große Teile. Schau genau hin: Sind alle Teile gleich groß?",
+   "kind": "Du achtest jetzt auf gleich große Teile."
+  },
+  "bruch-nenner-groesse": {
+   "beschreibung": "Hält den Bruch mit dem größeren Nenner für größer (ein Achtel größer als ein Viertel).",
+   "hinweis": "Bei mehr Teilen wird jedes Teil kleiner. Stell dir eine Pizza für 4 und eine für 8 Kinder vor.",
+   "kind": "Du weißt jetzt: Ein größerer Nenner macht die Teile kleiner."
+  },
+  "bruchteil-zaehler-vergessen": {
+   "beschreibung": "Teilt beim Bruchteil einer Größe nur durch den Nenner und nimmt nicht mit dem Zähler mal.",
+   "hinweis": "Du hast erst einen Teil. Wie viele Teile sind gemeint? Nimm mit dem Zähler mal.",
+   "kind": "Du nimmst nach dem Teilen jetzt noch mit dem Zähler mal."
+  },
+  "bruch-ganzes-teil": {
+   "beschreibung": "Verwechselt das Ganze mit dem Teil oder rechnet in die falsche Richtung.",
+   "hinweis": "Was ist gegeben: das Ganze oder ein Teil davon? Das Ganze ist größer als sein Teil.",
+   "kind": "Du hältst das Ganze und den Teil jetzt auseinander."
+  },
+  "dezimal-wie-natuerlich": {
+   "beschreibung": "Liest die Nachkommastellen wie eine natürliche Zahl (0,15 größer als 0,5, weil 15 größer als 5 ist).",
+   "hinweis": "Vergleiche Stelle für Stelle: zuerst die Zehntel, dann die Hundertstel.",
+   "kind": "Du vergleichst Dezimalzahlen jetzt Stelle für Stelle."
+  },
+  "dezimal-stelle": {
+   "beschreibung": "Verwechselt die Stellen nach dem Komma (0,5 als fünf Hundertstel, 0,05 als fünf Zehntel).",
+   "hinweis": "Die erste Stelle nach dem Komma sind die Zehntel, die zweite die Hundertstel.",
+   "kind": "Du hältst Zehntel und Hundertstel jetzt auseinander."
+  },
+  "dezimal-endnull": {
+   "beschreibung": "Meint, eine Null am Ende ändere den Wert der Dezimalzahl (0,50 größer als 0,5).",
+   "hinweis": "0,5 und 0,50 sind gleich viel: 5 Zehntel sind 50 Hundertstel.",
+   "kind": "Du weißt jetzt: Eine Null am Ende ändert die Dezimalzahl nicht."
+  },
+  "bruch-als-komma": {
+   "beschreibung": "Schreibt Zähler und Nenner einfach mit Komma hintereinander (ein Viertel als 0,4 oder 1,4).",
+   "hinweis": "Wie viele Zehntel oder Hundertstel sind es? Erst dann kannst du die Dezimalzahl schreiben.",
+   "kind": "Du schreibst einen Bruch jetzt über Zehntel oder Hundertstel als Dezimalzahl."
   }
  },
  "kompetenzen": {
@@ -4564,11 +4614,93 @@
      "extra": false,
      "lernziele": [
       {
-       "id": "5.9.1-L1",
-       "text": "Ich kann die Bruchschreibweise verwenden.",
+       "id": "5.9.1-B1",
+       "text": "Ich kann Bruchteile an Bildern erkennen und mit Zähler und Nenner benennen.",
        "voraussetzungen": [
         "5.4.1-K2"
-       ]
+       ],
+       "grundlage": "An einem Kreis aus gleich großen Teilen zählen: Wie viele Teile gibt es, wie viele sind gefärbt?"
+      },
+      {
+       "id": "5.9.1-B2",
+       "text": "Ich kann Bruchteile darstellen und einen Bruchteil zum Ganzen ergänzen.",
+       "voraussetzungen": [
+        "5.9.1-B1"
+       ],
+       "grundlage": "In einem Streifen aus gleich großen Teilen so viele Teile färben, wie der Zähler sagt"
+      },
+      {
+       "id": "5.9.1-B3",
+       "text": "Ich kann Brüche vergleichen und ordnen.",
+       "voraussetzungen": [
+        "5.9.1-B2"
+       ],
+       "grundlage": "Zwei Bruchbilder mit gleich vielen Teilen vergleichen: Wo ist mehr gefärbt?"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Ein Ganzes wird in gleich große Teile geteilt. Ein Bruch sagt, wie viele Teile gemeint sind.",
+       "Der Nenner steht unten. Er sagt, in wie viele gleich große Teile das Ganze geteilt ist.",
+       "Der Zähler steht oben. Er zählt die Teile, die gemeint sind.",
+       "Sind die Teile nicht gleich groß, ist es kein Bruchteil.",
+       "Bei gleichem Nenner ist der Bruch mit dem größeren Zähler größer.",
+       "Ab G: Je größer der Nenner, desto kleiner ist ein Teil. 1⁄8 ist kleiner als 1⁄4.",
+       "Ab M: Mehr als ein Ganzes schreibt man als gemischte Zahl, zum Beispiel 1 1⁄2."
+      ],
+      "beispiel": "Eine Pizza ist in 8 gleich große Stücke geteilt. 3 Stücke sind gegessen. Das sind 3⁄8 der Pizza. Übrig sind 5⁄8.",
+      "heft": "Zeichne den Bruchstrich mit dem Lineal. Schreibe den Zähler darüber und den Nenner darunter."
+     },
+     "wortspeicher": [
+      {
+       "wort": "Bruch",
+       "ab": "F",
+       "erklaerung": "Eine Zahl aus Zähler und Nenner mit einem Bruchstrich dazwischen. Sie nennt einen Teil vom Ganzen."
+      },
+      {
+       "wort": "Zähler",
+       "ab": "F",
+       "erklaerung": "Die Zahl über dem Bruchstrich. Sie zählt die Teile."
+      },
+      {
+       "wort": "Nenner",
+       "ab": "F",
+       "erklaerung": "Die Zahl unter dem Bruchstrich. Sie sagt, in wie viele gleich große Teile das Ganze geteilt ist."
+      },
+      {
+       "wort": "Bruchstrich",
+       "ab": "F",
+       "erklaerung": "Der Strich zwischen Zähler und Nenner."
+      },
+      {
+       "wort": "Ganzes",
+       "ab": "F",
+       "erklaerung": "Alles zusammen, bevor geteilt wird: die ganze Pizza, der ganze Streifen."
+      },
+      {
+       "wort": "Bruchteil",
+       "ab": "F",
+       "erklaerung": "Ein Teil vom Ganzen, mit einem Bruch angegeben."
+      },
+      {
+       "wort": "Stammbruch",
+       "ab": "G",
+       "erklaerung": "Ein Bruch mit dem Zähler 1, zum Beispiel 1⁄4."
+      },
+      {
+       "wort": "gemischt",
+       "ab": "M",
+       "erklaerung": "Eine gemischte Zahl besteht aus Ganzen und einem Bruch, zum Beispiel 1 1⁄2."
+      },
+      {
+       "wort": "gleichwertig",
+       "ab": "E",
+       "erklaerung": "Zwei Brüche sind gleichwertig, wenn sie gleich viel vom Ganzen sind: 1⁄2 und 2⁄4."
+      },
+      {
+       "wort": "unechter Bruch",
+       "ab": "E",
+       "erklaerung": "Ein Bruch, der größer als ein Ganzes ist: Der Zähler ist größer als der Nenner."
       }
      ]
     },
@@ -4578,13 +4710,60 @@
      "extra": false,
      "lernziele": [
       {
-       "id": "5.9.2-L1",
-       "text": "Ich kann mit Bruchteilen von Größen umgehen.",
+       "id": "5.9.2-T1",
+       "text": "Ich kann den Bruchteil einer Größe berechnen.",
        "voraussetzungen": [
-        "5.9.1-L1",
+        "5.9.1-B1",
         "5.4.5-D2",
         "5.6.5-L1"
-       ]
+       ],
+       "grundlage": "Eine Größe gerecht in gleich große Teile teilen: Wie groß ist ein Teil?"
+      },
+      {
+       "id": "5.9.2-T2",
+       "text": "Ich kann das Ganze oder den Anteil bestimmen und Sachaufgaben mit Bruchteilen lösen.",
+       "voraussetzungen": [
+        "5.9.2-T1"
+       ],
+       "grundlage": "Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Einen Bruchteil einer Größe berechnest du in zwei Schritten.",
+       "Erst teilst du durch den Nenner. Dann weißt du, wie groß ein Teil ist.",
+       "Dann nimmst du mit dem Zähler mal.",
+       "Ab M: Wandle die Größe zuerst in eine kleinere Einheit um, wenn es sonst nicht aufgeht.",
+       "Ab M rückwärts: Kennst du einen Teil, findest du das Ganze durch Malnehmen mit dem Nenner."
+      ],
+      "beispiel": "3⁄4 von 20 kg: Erst 20 kg : 4 = 5 kg. Dann 3 · 5 kg = 15 kg.",
+      "heft": "Schreibe beide Schritte untereinander. Vergiss die Einheit nicht."
+     },
+     "wortspeicher": [
+      {
+       "wort": "Anteil",
+       "ab": "F",
+       "erklaerung": "Der Teil vom Ganzen, um den es geht."
+      },
+      {
+       "wort": "gerecht teilen",
+       "ab": "F",
+       "erklaerung": "So teilen, dass alle Teile gleich groß sind."
+      },
+      {
+       "wort": "umwandeln",
+       "ab": "F",
+       "erklaerung": "Eine Größe in einer anderen Einheit schreiben: 1 km = 1000 m."
+      },
+      {
+       "wort": "Maßzahl",
+       "ab": "G",
+       "erklaerung": "Die Zahl vor der Einheit. Bei 20 kg ist 20 die Maßzahl."
+      },
+      {
+       "wort": "rückwärts",
+       "ab": "M",
+       "erklaerung": "Vom Teil zurück zum Ganzen rechnen."
       }
      ]
     },
@@ -4594,12 +4773,82 @@
      "extra": false,
      "lernziele": [
       {
-       "id": "5.9.3-L1",
-       "text": "Ich kann die Dezimalschreibweise verwenden.",
+       "id": "5.9.3-K1",
+       "text": "Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Brüche mit dem Nenner 10, 100 oder 1000 als Dezimalzahl schreiben.",
        "voraussetzungen": [
-        "5.9.1-L1",
+        "5.9.1-B1",
         "5.2.2-B1"
-       ]
+       ],
+       "grundlage": "Einen Streifen aus zehn Teilen lesen: Ein Teil ist ein Zehntel, geschrieben 0,1"
+      },
+      {
+       "id": "5.9.3-K2",
+       "text": "Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.",
+       "voraussetzungen": [
+        "5.9.3-K1",
+        "5.2.1-N1"
+       ],
+       "grundlage": "Am Zahlenstrahl von 0 bis 1 die Zehntel abzählen"
+      },
+      {
+       "id": "5.9.3-K3",
+       "text": "Ich kann Größen in Kommaschreibweise in eine andere Einheit umwandeln.",
+       "voraussetzungen": [
+        "5.9.3-K1",
+        "5.6.2-B1",
+        "5.6.5-L1"
+       ],
+       "grundlage": "Geld mit Komma lesen: 2,50 € sind 2 € und 50 ct"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Eine Dezimalzahl hat ein Komma. Vor dem Komma stehen die Ganzen.",
+       "Die erste Stelle nach dem Komma sind die Zehntel: 0,7 = 7⁄10.",
+       "Ab G: Die zweite Stelle sind die Hundertstel: 0,25 = 25⁄100.",
+       "Ab M: Die dritte Stelle sind die Tausendstel: 0,125 = 125⁄1000.",
+       "Man liest Ziffer für Ziffer: 0,25 heißt „null Komma zwei fünf“.",
+       "Ab G: Eine Null am Ende ändert den Wert nicht: 0,5 = 0,50.",
+       "Vergleiche Stelle für Stelle von links: erst die Ganzen, dann die Zehntel, dann die Hundertstel."
+      ],
+      "beispiel": "0,5 ist größer als 0,15. Denn 0,5 hat 5 Zehntel, und 0,15 hat nur 1 Zehntel.",
+      "heft": "Schreibe Dezimalzahlen zum Vergleichen untereinander, Komma unter Komma."
+     },
+     "wortspeicher": [
+      {
+       "wort": "Dezimalzahl",
+       "ab": "F",
+       "erklaerung": "Eine Zahl mit Komma, zum Beispiel 0,7."
+      },
+      {
+       "wort": "Komma",
+       "ab": "F",
+       "erklaerung": "Das Zeichen zwischen den Ganzen und den Zehnteln."
+      },
+      {
+       "wort": "Zehntel",
+       "ab": "F",
+       "erklaerung": "Ein Teil von zehn gleich großen Teilen. Man schreibt 0,1."
+      },
+      {
+       "wort": "Hundertstel",
+       "ab": "G",
+       "erklaerung": "Ein Teil von hundert gleich großen Teilen. Man schreibt 0,01."
+      },
+      {
+       "wort": "Nachkommastelle",
+       "ab": "G",
+       "erklaerung": "Eine Ziffer rechts vom Komma."
+      },
+      {
+       "wort": "Tausendstel",
+       "ab": "M",
+       "erklaerung": "Ein Teil von tausend gleich großen Teilen. Man schreibt 0,001."
+      },
+      {
+       "wort": "Endnull",
+       "ab": "G",
+       "erklaerung": "Eine Null am Ende einer Dezimalzahl. Sie ändert den Wert nicht."
       }
      ]
     }
@@ -160791,6 +161040,8677 @@
     "2 · 12 cm + 2 · 10 cm = 44 cm",
     "44 cm + 2 · 7 cm = 58 cm",
     "58 cm − 44 cm = 14 cm"
+   ]
+  },
+  {
+   "id": "5.9.1-B1-F-01",
+   "lernziel": "5.9.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Kreis ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄4",
+     "richtig": false
+    },
+    {
+     "text": "1⁄3",
+     "richtig": false
+    },
+    {
+     "text": "2⁄3",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Teile: Das ist der Nenner. Zähle die gefärbten Teile: Das ist der Zähler.",
+    "beispiel": "Von 2 gleich großen Teilen ist 1 Teil gefärbt. Der Bruch heißt 1⁄2.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Teile über den Bruchstrich. Schreibe die Zahl aller Teile darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄3",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "2⁄3",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-F-02",
+   "lernziel": "5.9.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Das Rechteck ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?\nSchreibe den Bruch.",
+   "loesung": "1⁄3",
+   "typischeFehler": [
+    {
+     "wert": "3⁄1",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "1⁄2",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Teile: Das ist der Nenner. Zähle die gefärbten Teile: Das ist der Zähler.",
+    "beispiel": "Von 2 gleich großen Teilen ist 1 Teil gefärbt. Der Bruch heißt 1⁄2.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Teile über den Bruchstrich. Schreibe die Zahl aller Teile darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 1,
+      "spalten": 3,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "1⁄3",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-F-03",
+   "lernziel": "5.9.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Kreis hat {{a}} gleich große Teile.\n{{b}} Teile davon sind gefärbt.",
+   "luecken": {
+    "a": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "bruch-teil-zu-rest"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "bruch-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Zähle zuerst alle Teile. Zähle dann nur die gefärbten Teile.",
+    "beispiel": "Ein Streifen hat 2 Teile. 1 Teil ist gefärbt.",
+    "loesungsschritt": "Alle Teile zählen mit: die gefärbten und die weißen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "was": "teile",
+     "zahl": 3
+    },
+    {
+     "art": "bild",
+     "was": "gefaerbt",
+     "zahl": 2
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-F-04",
+   "lernziel": "5.9.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Bild sind 2⁄3 gefärbt.\nWie heißt die Zahl unter dem Bruchstrich?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Zähler",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "text": "Nenner",
+     "richtig": true
+    },
+    {
+     "text": "Bruchstrich",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner steht unten. Der Zähler steht oben.",
+    "beispiel": "Im Bruch 1⁄2 ist 1 der Zähler und 2 der Nenner.",
+    "loesungsschritt": "Der Nenner nennt alle Teile. Der Zähler zählt die gefärbten Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄3",
+     "form": true
+    },
+    {
+     "art": "frei",
+     "grund": "Begriffe Zähler und Nenner"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-F-05",
+   "lernziel": "5.9.1-B1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welcher Figur ist 1⁄2 gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "Figur C",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle bei jeder Figur alle Teile. Das ist der Nenner.",
+    "beispiel": "Bei 1⁄2 hat die Figur 2 Teile. 1 Teil ist gefärbt.",
+    "loesungsschritt": "Suche die Figur mit 2 gleich großen Teilen. Davon ist 1 Teil gefärbt."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-F-06",
+   "lernziel": "5.9.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Alle Kugeln zusammen sind das Ganze.\nWelcher Bruchteil der Kugeln ist gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3⁄4",
+     "richtig": false
+    },
+    {
+     "text": "1⁄4",
+     "richtig": false
+    },
+    {
+     "text": "2⁄4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Kugeln: Das ist der Nenner. Zähle die gefärbten Kugeln: Das ist der Zähler.",
+    "beispiel": "Von 2 Kugeln ist 1 Kugel gefärbt. Der Bruch heißt 1⁄2.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Kugeln über den Bruchstrich. Schreibe die Zahl aller Kugeln darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "menge",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄4",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "2⁄4",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-G-01",
+   "lernziel": "5.9.1-B1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Der Kreis ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?",
+   "loesung": "2⁄5",
+   "typischeFehler": [
+    {
+     "wert": "5⁄2",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "2⁄3",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die gefärbten Teile müssen nicht nebeneinander liegen. Zähle sie einzeln.",
+    "beispiel": "Von 6 gleich großen Teilen sind 5 Teile gefärbt. Der Bruch heißt 5⁄6.",
+    "loesungsschritt": "Zähle alle Teile für den Nenner. Zähle die gefärbten Teile für den Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 5,
+      "gefaerbt": [
+       2,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄5",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-G-02",
+   "lernziel": "5.9.1-B1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Streifen ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "7⁄8",
+     "richtig": false
+    },
+    {
+     "text": "6⁄8",
+     "richtig": true
+    },
+    {
+     "text": "2⁄8",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die gefärbten Teile müssen nicht nebeneinander liegen. Zähle sie einzeln.",
+    "beispiel": "Von 6 gleich großen Teilen sind 5 Teile gefärbt. Der Bruch heißt 5⁄6.",
+    "loesungsschritt": "Zähle alle Teile für den Nenner. Zähle die gefärbten Teile für den Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 8,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       4,
+       5,
+       7
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "6⁄8",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "6⁄8",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-G-03",
+   "lernziel": "5.9.1-B1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welcher Figur ist 1⁄3 gefärbt?\nAchte auf gleich große Teile.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ungleiche-teile"
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch braucht gleich große Teile. Schau genau hin.",
+    "beispiel": "Ein Kreis hat 2 Teile, aber ein Teil ist viel größer. Dann ist kein Teil 1⁄2.",
+    "loesungsschritt": "Streiche zuerst die Figur mit ungleich großen Teilen. Zähle dann bei den anderen alle Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       2
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       3
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ],
+      "ungleich": true
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "1⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-G-04",
+   "lernziel": "5.9.1-B1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Schau auf den Bruch 3⁄5.\nDer Zähler ist {{a}}.\nDer Nenner ist {{b}}.",
+   "luecken": {
+    "a": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "bruch-vertauscht"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "bruch-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Zähler steht über dem Bruchstrich. Der Nenner steht darunter.",
+    "beispiel": "Im Bruch 5⁄6 ist 5 der Zähler und 6 der Nenner.",
+    "loesungsschritt": "Lies zuerst die obere Zahl. Das ist der Zähler."
+   },
+   "nachweis": [
+    {
+     "art": "teil",
+     "bruch": "3⁄5",
+     "was": "zaehler",
+     "zahl": 3
+    },
+    {
+     "art": "teil",
+     "bruch": "3⁄5",
+     "was": "nenner",
+     "zahl": 5
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-G-05",
+   "lernziel": "5.9.1-B1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Der Kreis ist in gleich große Teile geteilt.\nWelcher Bruchteil ist weiß?",
+   "loesung": "2⁄6",
+   "typischeFehler": [
+    {
+     "wert": "4⁄6",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "6⁄2",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gefragt ist nach den weißen Teilen. Zähle sie für den Zähler.",
+    "beispiel": "Von 6 Teilen ist 1 Teil gefärbt. Dann sind 5⁄6 weiß.",
+    "loesungsschritt": "Der Nenner bleibt die Zahl aller Teile. Der Zähler ist die Zahl der weißen Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       1,
+       2,
+       3,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄6",
+     "form": true,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-G-06",
+   "lernziel": "5.9.1-B1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welchen Figuren ist 1⁄4 gefärbt?\nKreuze alle passenden Figuren an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "Figur D",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ungleiche-teile"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Form ist egal. Wichtig sind gleich große Teile und ihre Anzahl.",
+    "beispiel": "Ein Kreis und ein Rechteck können beide 1⁄2 zeigen.",
+    "loesungsschritt": "Prüfe jede Figur einzeln: Sind die Teile gleich groß? Wie viele Teile sind es?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "rechteck",
+      "reihen": 1,
+      "spalten": 5,
+      "gefaerbt": [
+       2
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ],
+      "ungleich": true
+     },
+     {
+      "n": "D",
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "1⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-M-01",
+   "lernziel": "5.9.1-B1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Das Rechteck ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?",
+   "loesung": "4⁄8",
+   "typischeFehler": [
+    {
+     "wert": "8⁄4",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "4⁄4",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Teile eines Ganzen: Das ist der Nenner. Zähle dann alle gefärbten Teile.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Teile über den Bruchstrich und die Zahl der Teile eines Ganzen darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 4,
+      "gefaerbt": [
+       0,
+       1,
+       5,
+       7
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "4⁄8",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-M-02",
+   "lernziel": "5.9.1-B1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nWie viel ist gefärbt? Schreibe als gemischte Zahl.",
+   "loesung": "1 2⁄4",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "6⁄8",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "1 4⁄2",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Kreis ist ganz gefärbt: Das ist 1 Ganzes. Welcher Bruchteil ist im zweiten Kreis gefärbt?",
+    "loesungsschritt": "Schreibe zuerst die Ganzen und dahinter den Bruchteil des zweiten Kreises."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "1 2⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-M-03",
+   "lernziel": "5.9.1-B1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jeder Kreis ist ein Ganzes.\nWelcher Bruch gibt an, wie viel gefärbt ist?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄4",
+     "richtig": false
+    },
+    {
+     "text": "4⁄6",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "text": "6⁄4",
+     "richtig": true
+    },
+    {
+     "text": "6⁄8",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner zählt die Teile eines Ganzen, nicht die Teile beider Figuren zusammen.",
+    "loesungsschritt": "Ein Ganzes hat 4 Teile. Gefärbt sind 6 Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "6⁄4",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "6⁄4",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-M-04",
+   "lernziel": "5.9.1-B1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche gemischte Zahl ist genauso groß wie 5⁄3?\nDas Bild hilft dir.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1 2⁄5",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "text": "2 1⁄3",
+     "richtig": false
+    },
+    {
+     "text": "1 1⁄3",
+     "richtig": false
+    },
+    {
+     "text": "1 2⁄3",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "3 Drittel sind ein Ganzes. Wie viele Drittel bleiben dann noch übrig?",
+    "loesungsschritt": "5⁄3 = 3⁄3 + 2⁄3. Schreibe das Ganze als 1 und den Rest als Bruch dahinter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    "5⁄3 = 1 2⁄3",
+    {
+     "art": "wert",
+     "wert": "1 2⁄3",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-M-05",
+   "lernziel": "5.9.1-B1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Bild siehst du 10 Kugeln. 4 Kugeln sind gefärbt.\nWelcher Bruchteil der Kugeln ist nicht gefärbt?",
+   "loesung": "6⁄10",
+   "typischeFehler": [
+    {
+     "wert": "4⁄10",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "6⁄4",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "10⁄6",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gefragt ist nach den Kugeln, die nicht gefärbt sind. Wie viele sind das?",
+    "loesungsschritt": "Rechne 10 − 4 = 6. Das ist der Zähler, der Nenner bleibt 10."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "menge",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "10 − 4 = 6",
+    {
+     "art": "bild",
+     "bruch": "6⁄10",
+     "form": true,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-M-06",
+   "lernziel": "5.9.1-B1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Streifen sind schon 4 Teile gefärbt. Noah färbt noch 6 weitere Teile.\nWelcher Bruchteil des Streifens ist dann gefärbt?",
+   "loesung": "10⁄12",
+   "typischeFehler": [
+    {
+     "wert": "6⁄12",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "10⁄2",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "12⁄10",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Teile sind am Ende gefärbt? Der Nenner bleibt gleich, denn der Streifen hat immer noch gleich viele Teile.",
+    "loesungsschritt": "Rechne 4 + 6 = 10. Das ist der neue Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "4⁄12 + 6⁄12 = 10⁄12"
+   ]
+  },
+  {
+   "id": "5.9.1-B1-E-01",
+   "lernziel": "5.9.1-B1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Rechteck ist in gleich große Teile geteilt.\nWelche Brüche geben den gefärbten Bruchteil an? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "12⁄16",
+     "richtig": true
+    },
+    {
+     "text": "6⁄8",
+     "richtig": true
+    },
+    {
+     "text": "2⁄3",
+     "richtig": false
+    },
+    {
+     "text": "3⁄4",
+     "richtig": true
+    },
+    {
+     "text": "12⁄4",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Fasse gleich große Teile zu größeren Teilen zusammen, zum Beispiel immer eine ganze Spalte. Dann siehst du gleichwertige Brüche."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 4,
+      "spalten": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       4,
+       5,
+       6,
+       8,
+       9,
+       10,
+       12,
+       13,
+       14
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "12⁄16",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "12⁄16"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-E-02",
+   "lernziel": "5.9.1-B1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welchen Figuren ist 2⁄3 gefärbt?\nKreuze alle passenden Figuren an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false
+    },
+    {
+     "text": "Figur D",
+     "richtig": false
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruchteil kann aus mehr und kleineren Teilen bestehen. Vergleiche die gefärbte Fläche mit der ganzen Figur."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "rechteck",
+      "reihen": 3,
+      "spalten": 4,
+      "gefaerbt": [
+       0,
+       2,
+       4,
+       5,
+       7,
+       8,
+       10,
+       11
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       3,
+       4,
+       5
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 8,
+      "gefaerbt": [
+       0,
+       1,
+       4,
+       5,
+       6,
+       7
+      ]
+     },
+     {
+      "n": "D",
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 3,
+      "gefaerbt": [
+       1,
+       3,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "2⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-E-03",
+   "lernziel": "5.9.1-B1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nWie viel ist gefärbt? Schreibe als unechten Bruch.",
+   "loesung": "10⁄8",
+   "typischeFehler": [
+    {
+     "wert": "10⁄16",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "8⁄10",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner zählt die Teile eines Ganzen. Der Zähler zählt alle gefärbten Teile in allen Figuren."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 8,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "10⁄8",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-E-04",
+   "lernziel": "5.9.1-B1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ein unechter Bruch ist größer als 1.\nWelche Brüche sind unechte Brüche? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "10⁄6",
+     "richtig": true
+    },
+    {
+     "text": "15⁄12",
+     "richtig": true
+    },
+    {
+     "text": "7⁄8",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "text": "12⁄9",
+     "richtig": true
+    },
+    {
+     "text": "18⁄20",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Zähler und Nenner: Sind es mehr Teile, als ein Ganzes hat?"
+   },
+   "nachweis": [
+    {
+     "art": "schwelle",
+     "zeichen": ">",
+     "wert": "1"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B1-E-05",
+   "lernziel": "5.9.1-B1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Immer zwei Teile untereinander gehören zusammen.\nErgänze: 4⁄6 = {{a}} Drittel",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "bruch-teil-zu-rest"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "bruch-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Zwei kleine Teile sind zusammen ein größeres Teil. Wie viele größere Teile hat das ganze Rechteck, und wie viele davon sind gefärbt?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 3,
+      "gefaerbt": [
+       0,
+       1,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "4⁄6",
+     "form": true
+    },
+    "4⁄6 = 2 Drittel"
+   ]
+  },
+  {
+   "id": "5.9.1-B1-E-06",
+   "lernziel": "5.9.1-B1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Tom sagt: „1⁄3 und 2⁄6 sind gleichwertig.“ Stimmt das? Die Figuren helfen dir.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 1⁄3 < 2⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "Falsch. Es gilt 1⁄3 > 2⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche in beiden Figuren, wie weit die gefärbte Fläche reicht. Die Teile in Figur B sind halb so groß wie in Figur A."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "1⁄3 = 2⁄6"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-F-01",
+   "lernziel": "5.9.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 1⁄3 des Streifens.",
+   "faerben": {
+    "form": "streifen",
+    "teile": 3
+   },
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: So viele Teile hat das Ganze. Der Zähler sagt: So viele Teile färbst du.",
+    "beispiel": "Für 1⁄2 färbst du 1 von 2 Teilen.",
+    "loesungsschritt": "Lies den Zähler. Färbe genau so viele Teile."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "1⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-F-02",
+   "lernziel": "5.9.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 3⁄4 des Kreises.",
+   "faerben": {
+    "form": "kreis",
+    "teile": 4
+   },
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: So viele Teile hat das Ganze. Der Zähler sagt: So viele Teile färbst du.",
+    "beispiel": "Für 1⁄2 färbst du 1 von 2 Teilen.",
+    "loesungsschritt": "Lies den Zähler. Färbe genau so viele Teile."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "3⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-F-03",
+   "lernziel": "5.9.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 2⁄4 des Rechtecks.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 1,
+    "spalten": 4
+   },
+   "loesung": 2,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: So viele Teile hat das Ganze. Der Zähler sagt: So viele Teile färbst du.",
+    "beispiel": "Für 1⁄2 färbst du 1 von 2 Teilen.",
+    "loesungsschritt": "Lies den Zähler. Färbe genau so viele Teile."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "2⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-F-04",
+   "lernziel": "5.9.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Kreis ist 1⁄4 gefärbt.\nWelcher Bruchteil fehlt bis zum Ganzen?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄4",
+     "richtig": false
+    },
+    {
+     "text": "3⁄4",
+     "richtig": true
+    },
+    {
+     "text": "1⁄4",
+     "richtig": false,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Ganze sind alle Teile zusammen. Zähle die weißen Teile.",
+    "beispiel": "Ist 1⁄2 gefärbt, dann fehlt noch 1⁄2 bis zum Ganzen.",
+    "loesungsschritt": "Der Nenner bleibt gleich. Der Zähler ist die Zahl der weißen Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "1⁄4",
+     "form": true
+    },
+    {
+     "art": "bild",
+     "bruch": "3⁄4",
+     "form": true,
+     "rest": true
+    },
+    {
+     "art": "wert",
+     "wert": "3⁄4",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-F-05",
+   "lernziel": "5.9.1-B2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Alle Kugeln zusammen sind das Ganze.\nFärbe 1⁄2 der Kugeln.",
+   "faerben": {
+    "form": "menge",
+    "teile": 4
+   },
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile die Kugeln zuerst gerecht in gleich große Gruppen auf.",
+    "beispiel": "Für 1⁄2 von 2 Kugeln färbst du 1 Kugel.",
+    "loesungsschritt": "Bilde 2 gleich große Gruppen. Färbe eine Gruppe."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-F-06",
+   "lernziel": "5.9.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Im Streifen sind 2 Viertel gefärbt.\nBis zum Ganzen fehlen noch {{a}} Viertel.",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "bruch-ganzes-teil"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Zähle die weißen Teile im Bild.",
+    "beispiel": "2 Halbe sind ein Ganzes. Ist 1 Halbes gefärbt, fehlt noch 1 Halbes.",
+    "loesungsschritt": "Ein Ganzes hat 4 Viertel. Wie viele davon sind noch weiß?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "was": "weiss",
+     "zahl": 2
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-G-01",
+   "lernziel": "5.9.1-B2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 4⁄6 des Kreises.",
+   "faerben": {
+    "form": "kreis",
+    "teile": 6
+   },
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner nennt alle Teile. Der Zähler sagt, wie viele Teile du färbst.",
+    "beispiel": "Für 5⁄6 färbst du 5 von 6 Teilen.",
+    "loesungsschritt": "Welche Teile du färbst, ist egal. Nur die Anzahl muss stimmen."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "4⁄6"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-G-02",
+   "lernziel": "5.9.1-B2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 6⁄10 des Streifens.",
+   "faerben": {
+    "form": "streifen",
+    "teile": 10
+   },
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner nennt alle Teile. Der Zähler sagt, wie viele Teile du färbst.",
+    "beispiel": "Für 5⁄6 färbst du 5 von 6 Teilen.",
+    "loesungsschritt": "Welche Teile du färbst, ist egal. Nur die Anzahl muss stimmen."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "6⁄10"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-G-03",
+   "lernziel": "5.9.1-B2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Streifen sind 2⁄6 gefärbt.\nWelcher Bruchteil fehlt bis zum Ganzen?",
+   "loesung": "4⁄6",
+   "typischeFehler": [
+    {
+     "wert": "2⁄6",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "6⁄4",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Ganze sind alle Teile zusammen. Zähle die weißen Teile.",
+    "beispiel": "Sind 5⁄6 gefärbt, dann fehlt noch 1⁄6 bis zum Ganzen.",
+    "loesungsschritt": "Der Nenner bleibt gleich. Der Zähler ist die Zahl der weißen Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "4⁄6",
+     "form": true,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-G-04",
+   "lernziel": "5.9.1-B2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 6⁄10 des Rechtecks.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 2,
+    "spalten": 5
+   },
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner nennt alle Teile. Der Zähler sagt, wie viele Teile du färbst.",
+    "beispiel": "Für 5⁄6 färbst du 5 von 6 Teilen.",
+    "loesungsschritt": "Welche Teile du färbst, ist egal. Nur die Anzahl muss stimmen."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "6⁄10"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-G-05",
+   "lernziel": "5.9.1-B2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Es sollen 4⁄10 des Streifens gefärbt sein.\nWie viele Teile musst du noch färben?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zähler sagt, wie viele Teile am Ende gefärbt sind. Zähle die Teile, die schon gefärbt sind.",
+    "beispiel": "Für 5⁄6 brauchst du 5 gefärbte Teile. Sind schon 2 gefärbt, fehlen noch 3.",
+    "loesungsschritt": "Am Ende sind 4 Teile gefärbt. Ziehe die schon gefärbten Teile ab."
+   },
+   "einheit": "Teile",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "teil",
+     "bruch": "4⁄10",
+     "was": "zaehler",
+     "zahl": 4
+    },
+    {
+     "art": "bild",
+     "was": "gefaerbt",
+     "zahl": 2
+    },
+    "4 − 2 = 2"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-G-06",
+   "lernziel": "5.9.1-B2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Streifen sind 5⁄8 gefärbt.\nTom sagt: „Bis zum Ganzen fehlen noch 5⁄8.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 5⁄8 + 3⁄8 = 1.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "text": "Falsch.\nEs gilt 5⁄8 + 2⁄8 = 1.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die weißen Teile im Bild. So viele Teile fehlen bis zum Ganzen.",
+    "beispiel": "Sind 5⁄6 gefärbt, dann fehlt noch 1⁄6. Denn 5⁄6 + 1⁄6 = 1.",
+    "loesungsschritt": "Das Ganze hat 8 Teile. Gefärbt sind 5 Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 8,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "5⁄8 + 5⁄8 = 1"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-M-01",
+   "lernziel": "5.9.1-B2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Das Rechteck hat 12 gleich große Teile.\nFärbe 3⁄4 des Rechtecks.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 3,
+    "spalten": 4
+   },
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile die Figur zuerst in so viele gleich große Gruppen, wie der Nenner sagt.",
+    "loesungsschritt": "Zähle die Teile einer Gruppe. Nimm so viele Gruppen, wie der Zähler sagt."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "3⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-M-02",
+   "lernziel": "5.9.1-B2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Jeder Kreis ist ein Ganzes.\nFärbe 4⁄3.",
+   "faerben": {
+    "form": "kreis",
+    "teile": 3,
+    "ganze": 2
+   },
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Zahl ist größer als 1. Du brauchst also einen ganzen Kreis und einen Teil des zweiten Kreises.",
+    "loesungsschritt": "Färbe einen Kreis ganz. Färbe im zweiten Kreis noch 1 Teil."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "4⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-M-03",
+   "lernziel": "5.9.1-B2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft ein Rechteck: 6 Kästchen lang und 4 Kästchen breit.\nFärbe 5⁄6 des Rechtecks.\nWie viele Kästchen hast du gefärbt?",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 24,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Kästchen hat das ganze Rechteck? Teile es dann in so viele gleich große Gruppen, wie der Nenner sagt.",
+    "loesungsschritt": "Das Rechteck hat 6 · 4 = 24 Kästchen. Rechne 24 : 6 und nimm das Ergebnis mal 5."
+   },
+   "einheit": "Kästchen",
+   "nachweis": [
+    "6 · 4 = 24",
+    "5⁄6 von 24 = 20"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-M-04",
+   "lernziel": "5.9.1-B2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft einen Streifen aus 10 Kästchen.\nFärbe 3⁄5 des Streifens.\nWie viele Kästchen hast du gefärbt?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den Streifen in so viele gleich große Stücke, wie der Nenner sagt. Wie viele Kästchen hat ein Stück?",
+    "loesungsschritt": "Ein Stück hat 10 : 5 = 2 Kästchen. Du färbst 3 Stücke."
+   },
+   "einheit": "Kästchen",
+   "nachweis": [
+    "3⁄5 von 10 = 6"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-M-05",
+   "lernziel": "5.9.1-B2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nGefärbt sind 1 1⁄3.\nWelcher Bruchteil fehlt noch bis 2?",
+   "loesung": "2⁄3",
+   "typischeFehler": [
+    {
+     "wert": "1⁄3",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "5⁄3",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der erste Kreis ist schon ganz gefärbt. Schau nur auf den zweiten Kreis.",
+    "loesungsschritt": "Zähle die weißen Teile im zweiten Kreis. Der Nenner bleibt gleich."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    "2 − 1 1⁄3 = 2⁄3"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-M-06",
+   "lernziel": "5.9.1-B2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der gefärbte Teil eines Streifens ist 6 Kästchen lang. Das sind 3⁄5 des Streifens.\nWie viele Kästchen lang ist der ganze Streifen? Zeichne ihn zur Kontrolle in dein Heft.",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 30,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "6 Kästchen sind 3 gleich große Teile. Wie lang ist dann ein Teil?",
+    "loesungsschritt": "Ein Teil hat 6 : 3 = 2 Kästchen. Der ganze Streifen hat 5 solche Teile."
+   },
+   "einheit": "Kästchen",
+   "nachweis": [
+    "6 : 3 = 2",
+    "2 · 5 = 10"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-E-01",
+   "lernziel": "5.9.1-B2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 7⁄9 des Rechtecks.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 3,
+    "spalten": 6
+   },
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile das Rechteck zuerst in so viele gleich große Gruppen, wie der Nenner sagt. Wie viele Kästchen hat eine Gruppe?"
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "7⁄9"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-E-02",
+   "lernziel": "5.9.1-B2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft ein Rechteck: 5 Kästchen lang und 4 Kästchen breit.\nFärbe 1⁄2 des Rechtecks rot und 1⁄5 blau. Kein Kästchen bekommt zwei Farben.\nWie viele Kästchen bleiben weiß?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 16,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie viele Kästchen das ganze Rechteck hat. Bestimme dann die Zahl der roten und der blauen Kästchen."
+   },
+   "einheit": "Kästchen",
+   "nachweis": [
+    "5 · 4 = 20",
+    "1⁄2 von 20 = 10",
+    "1⁄5 von 20 = 4",
+    "20 − 10 − 4 = 6"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-E-03",
+   "lernziel": "5.9.1-B2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Der Kreis hat 12 gleich große Teile.\nFärbe 1⁄6 des Kreises.",
+   "faerben": {
+    "form": "kreis",
+    "teile": 12
+   },
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele der 12 Teile gehören zu einem Teil des Bruchs? Teile 12 durch den Nenner."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "1⁄6"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-E-04",
+   "lernziel": "5.9.1-B2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft zwei Streifen aus je 12 Kästchen.\nFärbe im ersten Streifen 2⁄3 und im zweiten Streifen 3⁄4.\nWie viele Kästchen sind in dem einen Streifen mehr gefärbt als in dem anderen?",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 17,
+     "fehlvorstellung": "sub-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne für jeden Streifen aus, wie viele Kästchen gefärbt sind. Vergleiche dann die beiden Zahlen."
+   },
+   "einheit": "Kästchen",
+   "nachweis": [
+    "2⁄3 von 12 = 8",
+    "3⁄4 von 12 = 9",
+    "9 − 8 = 1"
+   ]
+  },
+  {
+   "id": "5.9.1-B2-E-05",
+   "lernziel": "5.9.1-B2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Jedes Rechteck ist ein Ganzes.\nFärbe 4⁄3.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 2,
+    "spalten": 3,
+    "ganze": 2
+   },
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Zahl ist größer als 1: Eine Figur wird ganz gefärbt. Überlege dann, wie viele Teile der zweiten Figur zum Rest gehören."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "4⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B2-E-06",
+   "lernziel": "5.9.1-B2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "In einem Streifen aus Kästchen sind 3⁄10 gefärbt. 21 Kästchen sind weiß.\nAus wie vielen Kästchen besteht der ganze Streifen?",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 70,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welcher Bruchteil des Streifens ist weiß? Von diesem Bruchteil kennst du die Zahl der Kästchen."
+   },
+   "einheit": "Kästchen",
+   "nachweis": [
+    "1 − 3⁄10 = 7⁄10",
+    "10 − 3 = 7",
+    "21 : 7 = 3",
+    "3 · 10 = 30"
+   ]
+  },
+  {
+   "id": "5.9.1-B3-F-01",
+   "lernziel": "5.9.1-B3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Figur A zeigt 1⁄4.\nFigur B zeigt 3⁄4.\nWelches Zeichen passt?\n1⁄4 ▢ 3⁄4",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "=",
+     "richtig": false
+    },
+    {
+     "text": "<",
+     "richtig": true
+    },
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "zeichen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
+    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "1⁄4",
+     "form": true,
+     "figur": "A"
+    },
+    {
+     "art": "bild",
+     "bruch": "3⁄4",
+     "form": true,
+     "figur": "B"
+    },
+    {
+     "art": "vergleich",
+     "links": "1⁄4",
+     "rechts": "3⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-F-02",
+   "lernziel": "5.9.1-B3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welcher Figur ist am meisten gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Alle Kreise haben gleich große Teile. Zähle die gefärbten Teile.",
+    "beispiel": "In einem Kreis sind 2 Teile gefärbt, im anderen 1 Teil. Im ersten ist mehr gefärbt.",
+    "loesungsschritt": "Zähle bei jeder Figur die gefärbten Teile. Vergleiche die Zahlen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurextrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-F-03",
+   "lernziel": "5.9.1-B3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "probleme-loesen",
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Streifen zeigen drei Brüche.\nWelcher Bruch ist am größten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3⁄4",
+     "richtig": false
+    },
+    {
+     "text": "2⁄4",
+     "richtig": false
+    },
+    {
+     "text": "4⁄4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
+    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "n": "C",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-F-04",
+   "lernziel": "5.9.1-B3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "ordnen",
+   "text": "Die Streifen zeigen die Brüche.\nOrdne die Brüche.\nBeginne mit dem kleinsten.",
+   "karten": [
+    "1⁄4",
+    "4⁄4",
+    "2⁄4",
+    "3⁄4"
+   ],
+   "loesung": [
+    "1⁄4",
+    "2⁄4",
+    "3⁄4",
+    "4⁄4"
+   ],
+   "hilfen": {
+    "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
+    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "n": "C",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "D",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.1-B3-F-05",
+   "lernziel": "5.9.1-B3",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Lina sagt: „1⁄3 ist größer als 2⁄3.“\nStimmt das?\nSchau auf die Figuren.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "zeichen-verwechselt"
+    },
+    {
+     "text": "Falsch.\nEs gilt 1⁄3 = 2⁄3.",
+     "richtig": false
+    },
+    {
+     "text": "Falsch.\nEs gilt 1⁄3 < 2⁄3.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
+    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "1⁄3 > 2⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-F-06",
+   "lernziel": "5.9.1-B3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "probleme-loesen",
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Streifen zeigen drei Brüche.\nWelcher Bruch ist am kleinsten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3⁄4",
+     "richtig": false
+    },
+    {
+     "text": "2⁄4",
+     "richtig": false
+    },
+    {
+     "text": "1⁄4",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
+    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "C",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "kleinste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-G-01",
+   "lernziel": "5.9.1-B3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n6⁄8 ▢ 2⁄8",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false
+    },
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "zeichen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner ist gleich: Die Teile sind gleich groß. Vergleiche die Zähler.",
+    "beispiel": "Es gilt 3⁄8 < 5⁄8. Denn 3 Teile sind weniger als 5 Teile.",
+    "loesungsschritt": "Mehr Teile von gleicher Größe sind mehr."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "6⁄8",
+     "rechts": "2⁄8"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-G-02",
+   "lernziel": "5.9.1-B3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Brüche.\nBeginne mit dem kleinsten.",
+   "karten": [
+    "4⁄10",
+    "6⁄10",
+    "3⁄10",
+    "2⁄10"
+   ],
+   "loesung": [
+    "2⁄10",
+    "3⁄10",
+    "4⁄10",
+    "6⁄10"
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner ist gleich: Die Teile sind gleich groß. Vergleiche die Zähler.",
+    "beispiel": "Es gilt 3⁄8 < 5⁄8. Denn 3 Teile sind weniger als 5 Teile.",
+    "loesungsschritt": "Mehr Teile von gleicher Größe sind mehr."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.1-B3-G-03",
+   "lernziel": "5.9.1-B3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Figur A zeigt 1⁄6.\nFigur B zeigt 1⁄2.\nWelches Zeichen passt?\n1⁄6 ▢ 1⁄2",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "=",
+     "richtig": false
+    },
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "<",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei mehr Teilen wird jedes Teil kleiner.",
+    "beispiel": "Es gilt 1⁄2 > 1⁄4. Eine halbe Pizza ist mehr als ein Viertel.",
+    "loesungsschritt": "Der Zähler ist gleich. Der Bruch mit dem kleineren Nenner ist größer."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "1⁄6",
+     "form": true,
+     "figur": "A"
+    },
+    {
+     "art": "bild",
+     "bruch": "1⁄2",
+     "form": true,
+     "figur": "B"
+    },
+    {
+     "art": "vergleich",
+     "links": "1⁄6",
+     "rechts": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-G-04",
+   "lernziel": "5.9.1-B3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "probleme-loesen",
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Streifen zeigen drei Stammbrüche.\nWelcher Bruch ist am größten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1⁄4",
+     "richtig": false
+    },
+    {
+     "text": "1⁄5",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "1⁄3",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei mehr Teilen wird jedes Teil kleiner.",
+    "beispiel": "Es gilt 1⁄2 > 1⁄4. Eine halbe Pizza ist mehr als ein Viertel.",
+    "loesungsschritt": "Der Zähler ist gleich. Der Bruch mit dem kleineren Nenner ist größer."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "C",
+      "form": "streifen",
+      "teile": 5,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-G-05",
+   "lernziel": "5.9.1-B3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Stammbrüche.\nBeginne mit dem kleinsten.",
+   "karten": [
+    "1⁄3",
+    "1⁄4",
+    "1⁄10",
+    "1⁄6"
+   ],
+   "loesung": [
+    "1⁄10",
+    "1⁄6",
+    "1⁄4",
+    "1⁄3"
+   ],
+   "hilfen": {
+    "tipp": "Bei mehr Teilen wird jedes Teil kleiner.",
+    "beispiel": "Es gilt 1⁄2 > 1⁄4. Eine halbe Pizza ist mehr als ein Viertel.",
+    "loesungsschritt": "Der Zähler ist gleich. Der Bruch mit dem kleineren Nenner ist größer."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "bruch-nenner-groesse"
+  },
+  {
+   "id": "5.9.1-B3-G-06",
+   "lernziel": "5.9.1-B3",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Emre sagt: „1⁄5 ist größer als 1⁄8.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 1⁄5 = 1⁄8.",
+     "richtig": false
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nEs gilt 1⁄5 < 1⁄8.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei mehr Teilen wird jedes Teil kleiner.",
+    "beispiel": "Es gilt 1⁄2 > 1⁄4. Eine halbe Pizza ist mehr als ein Viertel.",
+    "loesungsschritt": "Der Zähler ist gleich. Der Bruch mit dem kleineren Nenner ist größer."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 5,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 8,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "1⁄5 > 1⁄8"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-M-01",
+   "lernziel": "5.9.1-B3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n5⁄10 ▢ 5⁄8",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "<",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Zähler sind gleich: Es sind gleich viele Teile. Bei welchem Bruch sind die Teile größer?",
+    "loesungsschritt": "Der Bruch mit dem kleineren Nenner hat die größeren Teile. Er ist größer."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "5⁄10",
+     "rechts": "5⁄8"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-M-02",
+   "lernziel": "5.9.1-B3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche sind größer als 1⁄2?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "1⁄6",
+     "richtig": false
+    },
+    {
+     "text": "3⁄9",
+     "richtig": false
+    },
+    {
+     "text": "1⁄5",
+     "richtig": false
+    },
+    {
+     "text": "8⁄12",
+     "richtig": true
+    },
+    {
+     "text": "5⁄8",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme für jeden Bruch die Hälfte des Nenners. Ist der Zähler größer als diese Hälfte?",
+    "loesungsschritt": "Beispiel: Die Hälfte von 8 ist 4. Bei 5⁄8 ist der Zähler größer als 4, also ist der Bruch größer als die Hälfte."
+   },
+   "nachweis": [
+    {
+     "art": "schwelle",
+     "zeichen": ">",
+     "wert": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-M-03",
+   "lernziel": "5.9.1-B3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 1 2⁄3 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 3,
+    "teiler": 3
+   },
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In wie viele Teile ist die Strecke von 0 bis 1 geteilt? Das passt zum Nenner.",
+    "loesungsschritt": "Gehe zuerst bis zur 1. Gehe dann noch 2 Teilstriche weiter."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1 2⁄3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-M-04",
+   "lernziel": "5.9.1-B3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche sind größer als 1?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "11⁄8",
+     "richtig": true
+    },
+    {
+     "text": "7⁄4",
+     "richtig": true
+    },
+    {
+     "text": "6⁄3",
+     "richtig": true
+    },
+    {
+     "text": "4⁄6",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Ganzes hat so viele Teile, wie der Nenner sagt. Sind es mehr Teile als ein Ganzes?",
+    "loesungsschritt": "Ist der Zähler größer als der Nenner, dann ist der Bruch größer als 1."
+   },
+   "nachweis": [
+    {
+     "art": "schwelle",
+     "zeichen": ">",
+     "wert": "1"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-M-05",
+   "lernziel": "5.9.1-B3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nSchreibe die Zahl als Bruch.",
+   "loesung": "5⁄6",
+   "typischeFehler": [
+    {
+     "wert": "5⁄1",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "6⁄5",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In wie viele gleich große Teile ist die Strecke von 0 bis 1 geteilt? Das ist der Nenner.",
+    "loesungsschritt": "Die Strecke von 0 bis 1 hat 6 Teile. Zähle die Teile von 0 bis zum Pfeil für den Zähler."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 6,
+    "pfeil": 5,
+    "teiler": 6
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "5⁄6"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-M-06",
+   "lernziel": "5.9.1-B3",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Zahlen.\nBeginne mit der kleinsten.",
+   "karten": [
+    "1 1⁄2",
+    "1 1⁄4",
+    "1 1⁄8",
+    "1 3⁄4",
+    "3⁄8"
+   ],
+   "loesung": [
+    "3⁄8",
+    "1 1⁄8",
+    "1 1⁄4",
+    "1 1⁄2",
+    "1 3⁄4"
+   ],
+   "hilfen": {
+    "tipp": "Sortiere zuerst grob: Welche Zahlen sind kleiner als 1, welche größer?",
+    "loesungsschritt": "Schreibe alle Zahlen in Achteln, zum Beispiel am Zahlenstrahl: 1⁄2 sind 4 Achtel, 3⁄4 sind 6 Achtel, 1 sind 8 Achtel."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.1-B3-E-01",
+   "lernziel": "5.9.1-B3",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n9⁄10 ▢ 19⁄20",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "=",
+     "richtig": false
+    },
+    {
+     "text": "<",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beiden Brüchen fehlt genau ein Teil bis zum Ganzen. Bei welchem Bruch ist das fehlende Teil kleiner?"
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "9⁄10",
+     "rechts": "19⁄20"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-E-02",
+   "lernziel": "5.9.1-B3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "probleme-loesen",
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Jedem Bruch fehlt ein Teil bis zum Ganzen.\nWelcher Bruch ist am kleinsten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄3",
+     "richtig": true
+    },
+    {
+     "text": "19⁄20",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "11⁄12",
+     "richtig": false
+    },
+    {
+     "text": "5⁄6",
+     "richtig": false
+    },
+    {
+     "text": "9⁄10",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die fehlenden Teile: Je kleiner das fehlende Teil ist, desto näher liegt der Bruch an 1."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "kleinste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-E-03",
+   "lernziel": "5.9.1-B3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Brüche.\nBeginne mit dem kleinsten.",
+   "karten": [
+    "5⁄6",
+    "2⁄3",
+    "3⁄4",
+    "11⁄12"
+   ],
+   "loesung": [
+    "2⁄3",
+    "3⁄4",
+    "5⁄6",
+    "11⁄12"
+   ],
+   "hilfen": {
+    "tipp": "Jedem Bruch fehlt genau ein Teil bis zum Ganzen. Je kleiner dieses Teil ist, desto größer ist der Bruch."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "bruch-nenner-groesse"
+  },
+  {
+   "id": "5.9.1-B3-E-04",
+   "lernziel": "5.9.1-B3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Mia ordnet drei Brüche: 2⁄9 < 2⁄10 < 2⁄15. Stimmt die Reihenfolge?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Richtig ist 2⁄15 < 2⁄10 < 2⁄9.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Richtig ist 2⁄10 < 2⁄15 < 2⁄9.",
+     "richtig": false
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Alle Brüche haben denselben Zähler. Überlege, bei welchem Nenner die Teile am größten sind."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "2⁄9 < 2⁄10 < 2⁄15"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-E-05",
+   "lernziel": "5.9.1-B3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Aussagen stimmen?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "4⁄5 > 5⁄6",
+     "richtig": false
+    },
+    {
+     "text": "1⁄8 < 1⁄10",
+     "richtig": false
+    },
+    {
+     "text": "7⁄10 > 1⁄2",
+     "richtig": true
+    },
+    {
+     "text": "7⁄6 < 1",
+     "richtig": false
+    },
+    {
+     "text": "5⁄10 = 1⁄2",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Aussage einzeln. Vergleiche mit 1⁄2 und mit 1, oder überlege, wie groß die Teile sind."
+   },
+   "nachweis": [
+    {
+     "art": "aussagen"
+    }
+   ]
+  },
+  {
+   "id": "5.9.1-B3-E-06",
+   "lernziel": "5.9.1-B3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "probleme-loesen",
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche liegen zwischen 1⁄2 und 1?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "7⁄10",
+     "richtig": true
+    },
+    {
+     "text": "2⁄3",
+     "richtig": true
+    },
+    {
+     "text": "5⁄8",
+     "richtig": true
+    },
+    {
+     "text": "7⁄6",
+     "richtig": false
+    },
+    {
+     "text": "5⁄4",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche jeden Bruch mit beiden Grenzen. Ein Zahlenstrahl im Heft hilft dir dabei."
+   },
+   "nachweis": [
+    {
+     "art": "zwischen",
+     "von": "1⁄2",
+     "bis": "1"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-F-01",
+   "lernziel": "5.9.2-T1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Die Bäuerin hat 36 kg Mehl.\nDie Bäuerin gibt 1⁄4 davon der Köchin.\nWie viel kg sind das?",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 32,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 36,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Teile wird geteilt.",
+    "beispiel": "1⁄2 von 8 kg: 8 kg : 2 = 4 kg.",
+    "loesungsschritt": "Teile die Größe durch den Nenner."
+   },
+   "einheit": "kg",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄4 von 36 kg = 9 kg"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-F-02",
+   "lernziel": "5.9.2-T1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Lina hat 18 €.\n1⁄3 davon gibt Lina auf dem Markt aus.\nWie viel Euro sind das?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Teile wird geteilt.",
+    "beispiel": "1⁄2 von 8 kg: 8 kg : 2 = 4 kg.",
+    "loesungsschritt": "Teile die Größe durch den Nenner."
+   },
+   "einheit": "€",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄3 von 18 € = 6 €"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-F-03",
+   "lernziel": "5.9.2-T1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Teile gerecht.\n1⁄3 von 27 m = {{a}} m",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 24,
+       "fehlvorstellung": "div-falsche-rechenart"
+      },
+      {
+       "wert": 81,
+       "fehlvorstellung": "bruch-ganzes-teil"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Teile wird geteilt.",
+    "beispiel": "1⁄2 von 8 kg: 8 kg : 2 = 4 kg.",
+    "loesungsschritt": "Teile die Größe durch den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄3 von 27 m = 9 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-F-04",
+   "lernziel": "5.9.2-T1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Du suchst 1⁄4 von 20 €.\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "20 € − 4 €",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "20 € : 4",
+     "richtig": true
+    },
+    {
+     "text": "20 € · 4",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Teile wird geteilt.",
+    "beispiel": "1⁄2 von 8 kg: 8 kg : 2 = 4 kg.",
+    "loesungsschritt": "Teile die Größe durch den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄4 von 20 € = 5 €",
+    {
+     "art": "wert",
+     "wert": "5 €"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-F-05",
+   "lernziel": "5.9.2-T1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Eine Schnur ist 36 m lang.\nLina schneidet 1⁄4 davon ab.\nWie viele Meter bleiben übrig?",
+   "loesung": 27,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 32,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst das Stück aus, das abgeschnitten wird. Ziehe es dann ab.",
+    "beispiel": "1⁄2 von 8 m sind 4 m. Es bleiben 8 m − 4 m = 4 m.",
+    "loesungsschritt": "Teile die Länge durch den Nenner. Ziehe das Ergebnis von der ganzen Länge ab."
+   },
+   "einheit": "m",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄4 von 36 m = 9 m",
+    "36 m − 9 m = 27 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-F-06",
+   "lernziel": "5.9.2-T1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der Film dauert 120 min.\nWie viele Minuten sind 1⁄4 davon?",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 116,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 40,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Teile wird geteilt.",
+    "beispiel": "1⁄2 von 8 kg: 8 kg : 2 = 4 kg.",
+    "loesungsschritt": "Teile die Größe durch den Nenner."
+   },
+   "einheit": "min",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄4 von 120 min = 30 min"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-G-01",
+   "lernziel": "5.9.2-T1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Tuch ist 50 m lang.\nWie viel sind 7⁄10 davon?",
+   "loesung": 35,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
+    "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+    "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
+   },
+   "einheit": "m",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "7⁄10 von 50 m = 35 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-G-02",
+   "lernziel": "5.9.2-T1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Berechne 3⁄4 von 8 m in zwei Schritten.\nEin Teil: 8 m : 4 = {{a}} m\n3 Teile: 3⁄4 von 8 m = {{b}} m",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "div-falsche-rechenart"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "bruchteil-zaehler-vergessen"
+      },
+      {
+       "wert": 5,
+       "fehlvorstellung": "sach-falsche-rechnung"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
+    "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+    "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "8 m : 4 = 2 m",
+    "3⁄4 von 8 m = 6 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-G-03",
+   "lernziel": "5.9.2-T1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der Weg zur Burg ist 400 m lang.\nLina ist schon 3⁄8 des Weges gegangen.\nWie viele Meter fehlen noch?",
+   "loesung": 250,
+   "typischeFehler": [
+    {
+     "wert": 150,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 50,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 350,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie weit der Weg schon gegangen ist. Ziehe das vom ganzen Weg ab.",
+    "beispiel": "3⁄4 von 800 m sind 600 m. Es fehlen noch 800 m − 600 m = 200 m.",
+    "loesungsschritt": "Teile durch den Nenner und nimm mit dem Zähler mal. Ziehe das Ergebnis vom ganzen Weg ab."
+   },
+   "einheit": "m",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 8,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "3⁄8 von 400 m = 150 m",
+    "400 m − 150 m = 250 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-G-04",
+   "lernziel": "5.9.2-T1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Eine Stunde hat 60 min.\nWie viele Minuten sind 2⁄5 davon?",
+   "loesung": 24,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 25,
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "wert": 36,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
+    "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+    "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
+   },
+   "einheit": "min",
+   "nachweis": [
+    "2⁄5 von 60 min = 24 min"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-G-05",
+   "lernziel": "5.9.2-T1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Mara hat 50 € gespart.\n3⁄10 davon gibt Mara für ein Geschenk aus.\nWie viel Euro hat Mara noch?",
+   "loesung": 35,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 45,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie viel Geld ausgegeben wird. Ziehe es dann ab.",
+    "beispiel": "3⁄4 von 8 € sind 6 €. Es bleiben 8 € − 6 € = 2 €.",
+    "loesungsschritt": "Teile durch den Nenner und nimm mit dem Zähler mal. Ziehe das Ergebnis vom Ersparten ab."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "3⁄10 von 50 € = 15 €",
+    "50 € − 15 € = 35 €"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-G-06",
+   "lernziel": "5.9.2-T1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Mia rechnet: 3⁄5 von 15 kg = 3 kg\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 3⁄5 von 15 kg = 9 kg.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "text": "Falsch.\nEs gilt 3⁄5 von 15 kg = 10 kg.",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe beide Schritte: teilen durch den Nenner, dann mal den Zähler.",
+    "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+    "loesungsschritt": "Rechne 15 : 5. Nimm das Ergebnis mal 3."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "3⁄5 von 15 kg = 3 kg"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-M-01",
+   "lernziel": "5.9.2-T1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Meter sind 3⁄4 km?",
+   "loesung": 750,
+   "typischeFehler": [
+    {
+     "wert": 250,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 75,
+     "fehlvorstellung": "umrechnungszahl"
+    },
+    {
+     "wert": 340,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst um: 1 km = 1000 m. Dann kannst du teilen.",
+    "loesungsschritt": "Teile durch den Nenner und nimm das Ergebnis mit dem Zähler mal."
+   },
+   "einheit": "m",
+   "nachweis": [
+    "1 km = 1000 m",
+    "3⁄4 von 1000 m = 750 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-M-02",
+   "lernziel": "5.9.2-T1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Minuten sind 4⁄5 h?",
+   "loesung": 48,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 80,
+     "fehlvorstellung": "umrechnungszahl"
+    },
+    {
+     "wert": 45,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst um: 1 h = 60 min. Dann kannst du teilen.",
+    "loesungsschritt": "Teile durch den Nenner und nimm das Ergebnis mit dem Zähler mal."
+   },
+   "einheit": "min",
+   "nachweis": [
+    "1 h = 60 min",
+    "4⁄5 von 60 min = 48 min"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-M-03",
+   "lernziel": "5.9.2-T1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Gramm sind 2 3⁄4 kg?",
+   "loesung": 2750,
+   "typischeFehler": [
+    {
+     "wert": 750,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 2250,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine gemischte Zahl besteht aus Ganzen und einem Bruchteil. Wandle beide einzeln um: 1 kg = 1000 g.",
+    "loesungsschritt": "Rechne zuerst 3⁄4 von 1000 g. Zähle dann 2 · 1000 g für die Ganzen dazu."
+   },
+   "einheit": "g",
+   "nachweis": [
+    "1 kg = 1000 g",
+    "2 3⁄4 kg = 2750 g"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-M-04",
+   "lernziel": "5.9.2-T1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zuordnen",
+   "text": "Welche Größen sind gleich?\nOrdne zu.",
+   "paare": [
+    {
+     "links": "3⁄4 kg",
+     "rechts": "750 g"
+    },
+    {
+     "links": "5⁄8 kg",
+     "rechts": "625 g"
+    },
+    {
+     "links": "1⁄10 kg",
+     "rechts": "100 g"
+    },
+    {
+     "links": "3⁄5 kg",
+     "rechts": "600 g"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst um: 1 kg = 1000 g. Dann kannst du teilen.",
+    "loesungsschritt": "Teile durch den Nenner und nimm das Ergebnis mit dem Zähler mal."
+   },
+   "nachweis": [
+    {
+     "art": "paare"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-M-05",
+   "lernziel": "5.9.2-T1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Eine Wanderung dauert 3 h. Nach 3⁄5 der Zeit macht die Gruppe Rast. Nach wie vielen Minuten ist das?",
+   "loesung": 108,
+   "typischeFehler": [
+    {
+     "wert": 36,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 72,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle die Dauer zuerst in Minuten um.",
+    "loesungsschritt": "3 h sind 180 min. Teile durch den Nenner und nimm mit dem Zähler mal."
+   },
+   "einheit": "min",
+   "nachweis": [
+    "3 h = 180 min",
+    "3⁄5 von 180 min = 108 min"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-M-06",
+   "lernziel": "5.9.2-T1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Angabe ist am kleinsten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "9⁄10 h",
+     "richtig": false
+    },
+    {
+     "text": "51 min",
+     "richtig": false
+    },
+    {
+     "text": "3⁄5 h",
+     "richtig": true
+    },
+    {
+     "text": "38 min",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in Minuten um, dann kannst du vergleichen.",
+    "loesungsschritt": "1 h = 60 min. Rechne die beiden Bruchteile davon aus."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "kleinste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-E-01",
+   "lernziel": "5.9.2-T1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Meter sind 3⁄4 von 2 km?",
+   "loesung": 1500,
+   "typischeFehler": [
+    {
+     "wert": 750,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 500,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle 2 km zuerst in Meter um. Berechne dann den Bruchteil."
+   },
+   "einheit": "m",
+   "nachweis": [
+    "2 km = 2000 m",
+    "3⁄4 von 2000 m = 1500 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-E-02",
+   "lernziel": "5.9.2-T1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n4⁄5 von 60 kg ▢ 3⁄4 von 48 kg",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Bruchteile aus. Vergleiche erst dann."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "4⁄5 von 60 kg",
+     "rechts": "3⁄4 von 48 kg"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-E-03",
+   "lernziel": "5.9.2-T1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Brett ist 4 m lang. 3⁄4 davon werden abgesägt. Wie viele Zentimeter bleiben übrig?",
+   "loesung": 100,
+   "typischeFehler": [
+    {
+     "wert": 300,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 25,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle die Länge in Zentimeter um. Berechne den Bruchteil und ziehe ihn von der ganzen Länge ab."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    "4 m = 400 cm",
+    "3⁄4 von 400 cm = 300 cm",
+    "400 cm − 300 cm = 100 cm"
+   ]
+  },
+  {
+   "id": "5.9.2-T1-E-04",
+   "lernziel": "5.9.2-T1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Finn sagt: „1⁄4 h sind 14 min.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 1⁄4 h = 15 min.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Stunde hat 60 min. Berechne den Bruchteil von 60 min."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "1⁄4 h = 14 min"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T1-E-05",
+   "lernziel": "5.9.2-T1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Größen.\nBeginne mit der kleinsten.",
+   "karten": [
+    "150 m",
+    "9⁄10 km",
+    "7⁄10 km",
+    "950 m",
+    "1⁄5 km"
+   ],
+   "loesung": [
+    "150 m",
+    "1⁄5 km",
+    "7⁄10 km",
+    "9⁄10 km",
+    "950 m"
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Bruchteile in Meter um. Dann kannst du die Zahlen vergleichen."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.2-T1-E-06",
+   "lernziel": "5.9.2-T1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Die Burgmauer ist 180 m lang. 2⁄3 davon sind fertig gebaut. Vom fertigen Stück ist 1⁄2 schon verputzt. Wie viele Meter sind verputzt?",
+   "loesung": 60,
+   "typischeFehler": [
+    {
+     "wert": 120,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 90,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne in zwei Schritten: zuerst den ersten Bruchteil von der ganzen Länge, dann den zweiten Bruchteil von diesem Ergebnis."
+   },
+   "einheit": "m",
+   "nachweis": [
+    "2⁄3 von 180 m = 120 m",
+    "1⁄2 von 120 m = 60 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-F-01",
+   "lernziel": "5.9.2-T2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Auf der Burg leben 12 Ritter.\n1⁄2 der Ritter reitet zum Turnier.\nWie viele Ritter sind das?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Gruppen wird geteilt.",
+    "beispiel": "1⁄2 von 8 Kindern: 8 : 2 = 4. Es sind 4 Kinder.",
+    "loesungsschritt": "Teile die Anzahl durch den Nenner."
+   },
+   "einheit": "Ritter",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄2 von 12 = 6"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-F-02",
+   "lernziel": "5.9.2-T2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Buch kostet 6 €.\nTom hat schon 1⁄3 davon gespart.\nWie viel Euro sind das?",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Gruppen wird geteilt.",
+    "beispiel": "1⁄2 von 8 Kindern: 8 : 2 = 4. Es sind 4 Kinder.",
+    "loesungsschritt": "Teile die Anzahl durch den Nenner."
+   },
+   "einheit": "€",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄3 von 6 € = 2 €"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-F-03",
+   "lernziel": "5.9.2-T2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Im Korb liegen 12 Birnen.\n1⁄3 davon ist gelb.\nRechnung: 12 : 3 = {{a}}\nEs sind {{b}} gelbe Birnen.",
+   "luecken": {
+    "a": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "div-falsche-rechenart"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 8,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Gruppen wird geteilt.",
+    "beispiel": "1⁄2 von 8 Kindern: 8 : 2 = 4. Es sind 4 Kinder.",
+    "loesungsschritt": "Teile die Anzahl durch den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "menge",
+      "teile": 12,
+      "gefaerbt": []
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄3 von 12 = 4"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-F-04",
+   "lernziel": "5.9.2-T2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "15 Kinder spielen im Hof.\n1⁄3 von ihnen spielt Fangen.\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "15 − 3",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    },
+    {
+     "text": "15 · 3",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "text": "15 : 3",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Gruppen wird geteilt.",
+    "beispiel": "1⁄2 von 8 Kindern: 8 : 2 = 4. Es sind 4 Kinder.",
+    "loesungsschritt": "Teile die Anzahl durch den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄3 von 15 = 5",
+    {
+     "art": "wert",
+     "wert": "5"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T2-F-05",
+   "lernziel": "5.9.2-T2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "1⁄2 des Streifens ist gefärbt.\nDieses Teil ist 3 m lang.\nWie lang ist der ganze Streifen?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der ganze Streifen besteht aus lauter gleich langen Teilen. Zähle sie im Bild.",
+    "beispiel": "Ein Teil ist 3 cm lang. 2 Teile sind 3 cm · 2 = 6 cm lang.",
+    "loesungsschritt": "Nimm die Länge eines Teils mal den Nenner."
+   },
+   "einheit": "m",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "3 m · 2 = 6 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-F-06",
+   "lernziel": "5.9.2-T2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Das Fest dauert 60 min.\n1⁄2 der Zeit wird getanzt.\nWie viele Minuten sind das?",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 58,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt: In so viele gleich große Gruppen wird geteilt.",
+    "beispiel": "1⁄2 von 8 Kindern: 8 : 2 = 4. Es sind 4 Kinder.",
+    "loesungsschritt": "Teile die Anzahl durch den Nenner."
+   },
+   "einheit": "min",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄2 von 60 min = 30 min"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-G-01",
+   "lernziel": "5.9.2-T2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "In der Klasse sind 30 Kinder.\n5⁄6 der Kinder haben ein Haustier.\nWie viele Kinder sind das?",
+   "loesung": 25,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
+    "beispiel": "3⁄4 von 8 Kindern: 8 : 4 = 2 und 2 · 3 = 6.",
+    "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
+   },
+   "einheit": "Kinder",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "5⁄6 von 30 = 25"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-G-02",
+   "lernziel": "5.9.2-T2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "sachaufgabe",
+   "text": "Im Stall der Burg stehen 36 Tiere.\n5⁄6 davon sind Pferde.",
+   "teile": [
+    {
+     "format": "zahl",
+     "text": "Wie viele Tiere sind 1⁄6 davon?",
+     "loesung": 6,
+     "einheit": "Tiere",
+     "typischeFehler": [
+      {
+       "wert": 30,
+       "fehlvorstellung": "div-falsche-rechenart"
+      }
+     ]
+    },
+    {
+     "format": "zahl",
+     "text": "Wie viele Pferde sind es?",
+     "loesung": 30,
+     "einheit": "Pferde",
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "bruchteil-zaehler-vergessen"
+      }
+     ]
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
+    "beispiel": "3⁄4 von 8 Kindern: 8 : 4 = 2 und 2 · 3 = 6.",
+    "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1⁄6 von 36 = 6",
+    "5⁄6 von 36 = 30"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-G-03",
+   "lernziel": "5.9.2-T2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Buch hat 36 Seiten.\nLina hat schon 2⁄3 davon gelesen.\nWie viele Seiten fehlen noch?",
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 24,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die gelesenen Seiten aus. Ziehe sie dann von allen Seiten ab.",
+    "beispiel": "3⁄4 von 8 Seiten sind 6 Seiten. Es fehlen noch 8 − 6 = 2 Seiten.",
+    "loesungsschritt": "Teile durch den Nenner und nimm mit dem Zähler mal. Ziehe das Ergebnis ab."
+   },
+   "einheit": "Seiten",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "2⁄3 von 36 = 24",
+    "36 − 24 = 12"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-G-04",
+   "lernziel": "5.9.2-T2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "5⁄8 von 32 Kindern fahren mit dem Rad.\nWelche Rechnung passt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "32 : 8",
+     "richtig": false,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "text": "32 : 8 · 5",
+     "richtig": true
+    },
+    {
+     "text": "32 − 8 · 5",
+     "richtig": false,
+     "fehlvorstellung": "div-falsche-rechenart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
+    "beispiel": "3⁄4 von 8 Kindern: 8 : 4 = 2 und 2 · 3 = 6.",
+    "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
+   },
+   "nachweis": [
+    "5⁄8 von 32 = 20",
+    {
+     "art": "wert",
+     "wert": "20"
+    }
+   ]
+  },
+  {
+   "id": "5.9.2-T2-G-05",
+   "lernziel": "5.9.2-T2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "1⁄8 der Mauer ist 50 m lang.\nWie lang ist die ganze Mauer?",
+   "loesung": 400,
+   "typischeFehler": [
+    {
+     "wert": 50,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 58,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Ganze besteht aus lauter gleich langen Teilen. Wie viele sind es?",
+    "beispiel": "Ein Teil ist 3 m lang. 5 Teile sind 3 m · 5 = 15 m lang.",
+    "loesungsschritt": "Nimm die Länge eines Teils mal den Nenner."
+   },
+   "einheit": "m",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 8,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "50 m · 8 = 400 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-G-06",
+   "lernziel": "5.9.2-T2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Mia und Jonas haben je 40 €.\nMia gibt 3⁄4 davon aus.\nJonas gibt 3⁄5 davon aus.\nWie viel Euro gibt Mia mehr aus als Jonas?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 30,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 24,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 54,
+     "fehlvorstellung": "sub-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne für jedes Kind einzeln aus, wie viel Geld es ausgibt. Vergleiche dann.",
+    "beispiel": "3⁄4 von 8 € sind 6 €. 1⁄2 von 8 € sind 4 €. Der Unterschied ist 2 €.",
+    "loesungsschritt": "Rechne beide Bruchteile aus. Ziehe den kleineren Betrag vom größeren ab."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "3⁄4 von 40 € = 30 €",
+    "3⁄5 von 40 € = 24 €",
+    "30 € − 24 € = 6 €"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-M-01",
+   "lernziel": "5.9.2-T2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "5⁄8 eines Weges sind 1500 m lang. Wie lang ist der ganze Weg?",
+   "loesung": 2400,
+   "typischeFehler": [
+    {
+     "wert": 300,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 12000,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Bruchteil besteht aus mehreren gleich großen Teilen. Rechne zuerst einen Teil aus: Teile durch den Zähler.",
+    "loesungsschritt": "Das Ganze hat so viele Teile, wie der Nenner sagt. Nimm einen Teil mal den Nenner."
+   },
+   "einheit": "m",
+   "nachweis": [
+    "1500 m : 5 = 300 m",
+    "300 m · 8 = 2400 m"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-M-02",
+   "lernziel": "5.9.2-T2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Sack Mehl wiegt 2 kg. 9⁄10 davon werden verbacken. Wie viel Gramm bleiben übrig?",
+   "loesung": 200,
+   "typischeFehler": [
+    {
+     "wert": 1800,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 20,
+     "fehlvorstellung": "umrechnungszahl"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst in Gramm um: 1 kg = 1000 g. Berechne dann den Bruchteil.",
+    "loesungsschritt": "2 kg sind 2000 g. Rechne 9⁄10 davon aus und ziehe das Ergebnis von 2000 g ab."
+   },
+   "einheit": "g",
+   "nachweis": [
+    "2 kg = 2000 g",
+    "9⁄10 von 2000 g = 1800 g",
+    "2000 g − 1800 g = 200 g"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-M-03",
+   "lernziel": "5.9.2-T2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Ali hat schon 2⁄5 des Preises gespart, das sind 10 €. Wie viel kostet das Fahrrad?",
+   "loesung": 25,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 50,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Bruchteil besteht aus mehreren gleich großen Teilen. Rechne zuerst einen Teil aus: Teile durch den Zähler.",
+    "loesungsschritt": "Das Ganze hat so viele Teile, wie der Nenner sagt. Nimm einen Teil mal den Nenner."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "10 € : 2 = 5 €",
+    "5 € · 5 = 25 €"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-M-04",
+   "lernziel": "5.9.2-T2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "sachaufgabe",
+   "text": "Auf dem Hof leben 60 Tiere. 1⁄4 davon sind Kühe, 3⁄5 sind Schafe.",
+   "teile": [
+    {
+     "format": "zahl",
+     "text": "Wie viele Kühe sind es?",
+     "loesung": 15,
+     "einheit": "Kühe",
+     "typischeFehler": [
+      {
+       "wert": 56,
+       "fehlvorstellung": "div-falsche-rechenart"
+      }
+     ]
+    },
+    {
+     "format": "zahl",
+     "text": "Wie viele Schafe sind es?",
+     "loesung": 36,
+     "einheit": "Schafe",
+     "typischeFehler": [
+      {
+       "wert": 12,
+       "fehlvorstellung": "bruchteil-zaehler-vergessen"
+      }
+     ]
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne jeden Bruchteil einzeln von allen Tieren aus.",
+    "loesungsschritt": "Teile durch den Nenner und nimm das Ergebnis mit dem Zähler mal."
+   },
+   "nachweis": [
+    "1⁄4 von 60 = 15",
+    "3⁄5 von 60 = 36"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-M-05",
+   "lernziel": "5.9.2-T2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Auf dem Hof leben 12 Tiere. 1⁄4 davon sind Kühe, 1⁄3 sind Schafe. Der Rest sind Hühner. Wie viele Hühner sind es?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst die beiden Bruchteile aus.",
+    "loesungsschritt": "Es sind 3 Kühe und 4 Schafe. Ziehe beide Zahlen von 12 ab."
+   },
+   "einheit": "Hühner",
+   "nachweis": [
+    "1⁄4 von 12 = 3",
+    "1⁄3 von 12 = 4",
+    "12 − 3 − 4 = 5"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-M-06",
+   "lernziel": "5.9.2-T2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Paul hat schon 3⁄8 eines Buches gelesen, das sind 90 Seiten. Wie viele Seiten muss Paul noch lesen?",
+   "loesung": 150,
+   "typischeFehler": [
+    {
+     "wert": 240,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 30,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 90,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst rückwärts zum Ganzen: Wie viele Seiten hat ein Teil, wie viele das ganze Buch?",
+    "loesungsschritt": "Ein Teil sind 90 : 3 = 30 Seiten. Das Buch hat 8 solche Teile. Ziehe am Ende die gelesenen Seiten ab."
+   },
+   "einheit": "Seiten",
+   "nachweis": [
+    "90 : 3 = 30",
+    "30 · 8 = 240",
+    "240 − 90 = 150"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-E-01",
+   "lernziel": "5.9.2-T2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "bruch",
+   "text": "Welcher Bruchteil einer Stunde sind 15 min?",
+   "loesung": "1⁄4",
+   "typischeFehler": [
+    {
+     "wert": "15⁄100",
+     "fehlvorstellung": "umrechnungszahl"
+    },
+    {
+     "wert": "4⁄1",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Stunde hat 60 min. Wie oft passt die Zeit in eine Stunde, oder in wie viele gleich große Teile kannst du die Stunde teilen?"
+   },
+   "nachweis": [
+    "1 h = 60 min",
+    "15 min : 60 min = 1⁄4"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-E-02",
+   "lernziel": "5.9.2-T2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "bruch",
+   "text": "Von 12 Kindern kommen 8 mit dem Bus. Welcher Bruchteil ist das?",
+   "loesung": "8⁄12",
+   "typischeFehler": [
+    {
+     "wert": "8⁄4",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "12⁄8",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "4⁄12",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Ganze sind alle zusammen: Diese Zahl ist der Nenner. Der Zähler ist die Zahl derer, um die es geht."
+   },
+   "nachweis": [
+    "8 : 12 = 8⁄12"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-E-03",
+   "lernziel": "5.9.2-T2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "5⁄8 der Ladung sind 500 kg. Wie schwer ist die ganze Ladung?",
+   "loesung": 800,
+   "typischeFehler": [
+    {
+     "wert": 100,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 300,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 4000,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Berechne zuerst einen einzelnen Teil: Teile durch den Zähler. Das Ganze hat so viele Teile, wie der Nenner sagt."
+   },
+   "einheit": "kg",
+   "nachweis": [
+    "500 kg : 5 = 100 kg",
+    "100 kg · 8 = 800 kg"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-E-04",
+   "lernziel": "5.9.2-T2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "bruch",
+   "text": "Ein Brett ist 2 m lang. Emre sägt 50 cm ab. Welcher Bruchteil ist das?",
+   "loesung": "1⁄4",
+   "typischeFehler": [
+    {
+     "wert": "50⁄100",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst in dieselbe Einheit um. Überlege dann: Wie oft passen 50 cm in das Ganze?"
+   },
+   "nachweis": [
+    "2 m = 200 cm",
+    "50 cm : 200 cm = 1⁄4"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-E-05",
+   "lernziel": "5.9.2-T2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Eine Wanderung ist 24 km lang. Vor der Rast schafft die Gruppe 1⁄4 der Strecke, nach der Rast noch einmal 1⁄6 der Strecke. Wie viele Kilometer fehlen dann noch?",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 18,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 20,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Bruchteile beziehen sich auf die ganze Strecke. Rechne beide aus und ziehe sie von der ganzen Strecke ab."
+   },
+   "einheit": "km",
+   "nachweis": [
+    "1⁄4 von 24 km = 6 km",
+    "1⁄6 von 24 km = 4 km",
+    "24 km − 6 km − 4 km = 14 km"
+   ]
+  },
+  {
+   "id": "5.9.2-T2-E-06",
+   "lernziel": "5.9.2-T2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Ida gibt 3⁄8 des Taschengelds aus. Danach sind noch 25 € übrig. Wie viel Taschengeld hatte Ida am Anfang?",
+   "loesung": 40,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Welcher Bruchteil des Taschengelds ist noch übrig? Von diesem Bruchteil kennst du den Betrag."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "1 − 3⁄8 = 5⁄8",
+    "8 − 3 = 5",
+    "25 € : 5 = 5 €",
+    "5 € · 8 = 40 €"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-F-01",
+   "lernziel": "5.9.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Streifen hat 10 gleich große Teile.\nWelche Dezimalzahl passt zum gefärbten Teil?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "0,6",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "0,4",
+     "richtig": true
+    },
+    {
+     "text": "4,0",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die erste Stelle nach dem Komma zählt die Zehntel.",
+    "beispiel": "3⁄10 = 0,3. Das sind 0 Einer und 3 Zehntel.",
+    "loesungsschritt": "Schreibe zuerst die Einer, dann das Komma, dann die Zehntel."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "4⁄10",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "0,4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-F-02",
+   "lernziel": "5.9.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "tabelle",
+   "text": "Trage 9,3 in die Stellenwerttafel ein.\nE heißt Einer, z heißt Zehntel.",
+   "tabelle": {
+    "kopf": [
+     "E",
+     "z"
+    ],
+    "zeilen": [
+     [
+      {
+       "luecke": "a"
+      },
+      {
+       "luecke": "b"
+      }
+     ]
+    ],
+    "art": "stellentafel",
+    "komma": 0
+   },
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "dezimal-stelle"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "dezimal-stelle"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Vor dem Komma stehen die Einer. Nach dem Komma stehen die Zehntel.",
+    "beispiel": "Bei 2,5 trägst du 2 bei den Einern ein und 5 bei den Zehnteln.",
+    "loesungsschritt": "Lies die Zahl von links nach rechts. Das Komma ist die Grenze."
+   },
+   "nachweis": [
+    {
+     "art": "tafel",
+     "zeile": 0,
+     "zahl": "9,3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-F-03",
+   "lernziel": "5.9.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Schreibe als Dezimalzahl.\n3⁄10 = {{a}}",
+   "luecken": {
+    "a": {
+     "loesung": "0,3",
+     "typischeFehler": [
+      {
+       "wert": "3,1",
+       "fehlvorstellung": "bruch-als-komma"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "dezimal-stelle"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die erste Stelle nach dem Komma zählt die Zehntel.",
+    "beispiel": "3⁄10 = 0,3. Das sind 0 Einer und 3 Zehntel.",
+    "loesungsschritt": "Schreibe zuerst die Einer, dann das Komma, dann die Zehntel."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "3⁄10 = 0,3"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-F-04",
+   "lernziel": "5.9.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Welche Dezimalzahl steht in der Stellenwerttafel?\nE heißt Einer, z heißt Zehntel.",
+   "loesung": "1,7",
+   "typischeFehler": [
+    {
+     "wert": "7,1",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": 17,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Komma steht nach den Einern.",
+    "beispiel": "Stehen 2 Einer und 5 Zehntel in der Tafel, heißt die Zahl 2,5.",
+    "loesungsschritt": "Schreibe die Einer, dann das Komma, dann die Zehntel."
+   },
+   "bild": {
+    "art": "tafel",
+    "spalten": [
+     "E",
+     "z"
+    ],
+    "werte": [
+     1,
+     7
+    ],
+    "komma": 0
+   },
+   "nachweis": [
+    {
+     "art": "tafelbild",
+     "zahl": "1,7"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-F-05",
+   "lernziel": "5.9.3-K1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Streifen sind 0,3 gefärbt.\nSchreibe 0,3 als Bruch.",
+   "loesung": "3⁄10",
+   "typischeFehler": [
+    {
+     "wert": "10⁄3",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "3⁄100",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "3⁄7",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Stelle nach dem Komma zählt die Zehntel. Zehntel haben den Nenner 10.",
+    "beispiel": "0,3 sind 3 Zehntel. Als Bruch: 3⁄10.",
+    "loesungsschritt": "Der Zähler ist die Ziffer nach dem Komma. Der Nenner ist 10."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "0,3 = 3⁄10"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-F-06",
+   "lernziel": "5.9.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zuordnen",
+   "text": "Was gehört zusammen?\nOrdne zu.",
+   "paare": [
+    {
+     "links": "3 Zehntel",
+     "rechts": "0,3"
+    },
+    {
+     "links": "9⁄10",
+     "rechts": "0,9"
+    },
+    {
+     "links": "6⁄10",
+     "rechts": "0,6"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau in die Tabelle: So schreibst du Zehntel mit Komma.",
+    "beispiel": "1 Zehntel ist 1⁄10 oder 0,1.",
+    "loesungsschritt": "Die Ziffer nach dem Komma zählt die Zehntel."
+   },
+   "daten": {
+    "kopf": [
+     "Bruch",
+     "Dezimalzahl"
+    ],
+    "zeilen": [
+     [
+      "1⁄10",
+      "0,1"
+     ],
+     [
+      "10⁄10",
+      "1"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "paare"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-G-01",
+   "lernziel": "5.9.3-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Das Quadrat hat 100 gleich große Felder.\nWelche Dezimalzahl passt zum gefärbten Teil?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "0,8",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "8,0",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "0,08",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jedes Feld ist ein Hundertstel. Eine volle Spalte hat 10 Felder: Das ist ein Zehntel.",
+    "beispiel": "7 Felder sind 7⁄100 = 0,07.",
+    "loesungsschritt": "Zähle die vollen Spalten für die Zehntel. Zähle die einzelnen Felder für die Hundertstel."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "8⁄100",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "0,08"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-G-02",
+   "lernziel": "5.9.3-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "tabelle",
+   "text": "Trage 6,08 in die Stellenwerttafel ein.\nDie Spalte h zählt die Hundertstel.",
+   "tabelle": {
+    "kopf": [
+     "E",
+     "z",
+     "h"
+    ],
+    "zeilen": [
+     [
+      {
+       "luecke": "a0"
+      },
+      {
+       "luecke": "a1"
+      },
+      {
+       "luecke": "a2"
+      }
+     ]
+    ],
+    "art": "stellentafel",
+    "komma": 0
+   },
+   "luecken": {
+    "a0": {
+     "loesung": 6,
+     "typischeFehler": []
+    },
+    "a1": {
+     "loesung": 0,
+     "typischeFehler": []
+    },
+    "a2": {
+     "loesung": 8,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Nach dem Komma stehen zuerst die Zehntel, dann die Hundertstel.",
+    "beispiel": "Bei 2,05 trägst du ein: 2 Einer, 0 Zehntel, 5 Hundertstel.",
+    "loesungsschritt": "Jede Ziffer bekommt ihr eigenes Feld. Auch die 0 wird eingetragen."
+   },
+   "nachweis": [
+    {
+     "art": "tafel",
+     "zeile": 0,
+     "zahl": "6,08"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-G-03",
+   "lernziel": "5.9.3-K1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Schreibe als Dezimalzahl.\n32⁄100 = {{a}}",
+   "luecken": {
+    "a": {
+     "loesung": "0,32",
+     "typischeFehler": [
+      {
+       "wert": "3,2",
+       "fehlvorstellung": "dezimal-stelle"
+      },
+      {
+       "wert": "32,1",
+       "fehlvorstellung": "bruch-als-komma"
+      },
+      {
+       "wert": 32,
+       "fehlvorstellung": "dezimal-stelle"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die erste Stelle nach dem Komma zählt die Zehntel, die zweite die Hundertstel.",
+    "beispiel": "7⁄100 = 0,07. Das sind 0 Zehntel und 7 Hundertstel.",
+    "loesungsschritt": "Schreibe Hundertstel immer mit zwei Stellen nach dem Komma."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "32⁄100 = 0,32"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-G-04",
+   "lernziel": "5.9.3-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 0,68 als Bruch mit dem Nenner 100.",
+   "loesung": "68⁄100",
+   "typischeFehler": [
+    {
+     "wert": "68⁄10",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "100⁄68",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Hundertstel haben den Nenner 100. Sie stehen an der zweiten Stelle nach dem Komma.",
+    "beispiel": "0,3 sind 3 Zehntel. Das sind 30 Hundertstel: 30⁄100.",
+    "loesungsschritt": "Schreibe die Zahl mit zwei Stellen nach dem Komma. Diese zwei Ziffern sind der Zähler."
+   },
+   "genau": true,
+   "nachweis": [
+    "0,68 = 68⁄100"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-G-05",
+   "lernziel": "5.9.3-K1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau auf die Zahl 8,49.\nWelche Ziffer steht an der Stelle der Hundertstel?",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Stellen nach dem Komma: zuerst Zehntel, dann Hundertstel.",
+    "beispiel": "In 2,05 steht 0 bei den Zehnteln und 5 bei den Hundertsteln.",
+    "loesungsschritt": "Die erste Ziffer nach dem Komma gehört zu den Zehnteln."
+   },
+   "nachweis": [
+    {
+     "art": "stelle",
+     "zahl": "8,49",
+     "stelle": "h",
+     "ziffer": 9
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-G-06",
+   "lernziel": "5.9.3-K1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Elif sagt: „0,2 und 0,20 sind gleich viel.“\nStimmt das?\nDie Stellenwerttafel hilft dir.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 0,2 < 0,20.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-endnull"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nEs gilt 0,2 > 0,20.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-endnull"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Trage beide Zahlen in die Stellenwerttafel ein. Vergleiche Stelle für Stelle.",
+    "beispiel": "0,2 und 0,20 haben beide 2 Zehntel und 0 Hundertstel. Es gilt 0,2 = 0,20.",
+    "loesungsschritt": "Eine Endnull ändert die Zahl nicht. Eine Null direkt nach dem Komma ändert sie."
+   },
+   "bild": {
+    "art": "tafel",
+    "spalten": [
+     "E",
+     "z",
+     "h"
+    ],
+    "werte": [
+     0,
+     2,
+     null
+    ],
+    "komma": 0,
+    "weitere": [
+     [
+      0,
+      2,
+      0
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "0,2 = 0,20"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-M-01",
+   "lernziel": "5.9.3-K1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Schreibe als Dezimalzahl.\n919⁄1000 = {{a}}",
+   "luecken": {
+    "a": {
+     "loesung": "0,919",
+     "typischeFehler": [
+      {
+       "wert": "9,19",
+       "fehlvorstellung": "dezimal-stelle"
+      },
+      {
+       "wert": "91,9",
+       "fehlvorstellung": "dezimal-stelle"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Die Stellen nach dem Komma heißen der Reihe nach Zehntel, Hundertstel, Tausendstel.",
+    "loesungsschritt": "Tausendstel brauchen drei Stellen nach dem Komma. Fülle leere Stellen mit 0 auf."
+   },
+   "nachweis": [
+    "919⁄1000 = 0,919"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-M-02",
+   "lernziel": "5.9.3-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "tabelle",
+   "text": "Trage die beiden Zahlen in die Stellenwerttafel ein: oben 3,077, unten 0,909.",
+   "tabelle": {
+    "kopf": [
+     "E",
+     "z",
+     "h",
+     "t"
+    ],
+    "zeilen": [
+     [
+      {
+       "luecke": "a0"
+      },
+      {
+       "luecke": "a1"
+      },
+      {
+       "luecke": "a2"
+      },
+      {
+       "luecke": "a3"
+      }
+     ],
+     [
+      {
+       "luecke": "b0"
+      },
+      {
+       "luecke": "b1"
+      },
+      {
+       "luecke": "b2"
+      },
+      {
+       "luecke": "b3"
+      }
+     ]
+    ],
+    "art": "stellentafel",
+    "komma": 0
+   },
+   "luecken": {
+    "a0": {
+     "loesung": 3,
+     "typischeFehler": []
+    },
+    "a1": {
+     "loesung": 0,
+     "typischeFehler": []
+    },
+    "a2": {
+     "loesung": 7,
+     "typischeFehler": []
+    },
+    "a3": {
+     "loesung": 7,
+     "typischeFehler": []
+    },
+    "b0": {
+     "loesung": 0,
+     "typischeFehler": []
+    },
+    "b1": {
+     "loesung": 9,
+     "typischeFehler": []
+    },
+    "b2": {
+     "loesung": 0,
+     "typischeFehler": []
+    },
+    "b3": {
+     "loesung": 9,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Jede Ziffer bekommt ihr eigenes Feld. Die Spalte t zählt die Tausendstel.",
+    "loesungsschritt": "Beginne bei den Einern vor dem Komma. Auch jede 0 wird eingetragen."
+   },
+   "nachweis": [
+    {
+     "art": "tafel",
+     "zeile": 0,
+     "zahl": "3,077"
+    },
+    {
+     "art": "tafel",
+     "zeile": 1,
+     "zahl": "0,909"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-M-03",
+   "lernziel": "5.9.3-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 0,713 als Bruch mit dem Nenner 1000.",
+   "loesung": "713⁄1000",
+   "typischeFehler": [
+    {
+     "wert": "713⁄100",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "1000⁄713",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Tausendstel haben den Nenner 1000. Sie stehen an der dritten Stelle nach dem Komma.",
+    "loesungsschritt": "Schreibe die Zahl mit drei Stellen nach dem Komma. Diese drei Ziffern sind der Zähler, führende Nullen fallen weg."
+   },
+   "genau": true,
+   "nachweis": [
+    "0,713 = 713⁄1000"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-M-04",
+   "lernziel": "5.9.3-K1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schreibe als Dezimalzahl: 6 Einer und 5 Tausendstel.",
+   "loesung": "6,005",
+   "typischeFehler": [
+    {
+     "wert": "6,5",
+     "fehlvorstellung": "null-platzhalter"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Stellen nach dem Komma heißen der Reihe nach Zehntel, Hundertstel, Tausendstel.",
+    "loesungsschritt": "Tausendstel brauchen drei Stellen nach dem Komma. Fülle leere Stellen mit 0 auf."
+   },
+   "nachweis": [
+    "6 Einer + 5 Tausendstel = 6,005"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-M-05",
+   "lernziel": "5.9.3-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Im Hunderterfeld sind 2⁄5 gefärbt.\nSchreibe 2⁄5 als Dezimalzahl.",
+   "loesung": "0,4",
+   "typischeFehler": [
+    {
+     "wert": "0,5",
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "wert": "2,5",
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "wert": "0,25",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle im Hunderterfeld: Wie viele Hundertstel sind gefärbt?",
+    "loesungsschritt": "Es sind 40 von 100 Feldern gefärbt, also 40⁄100. Schreibe diese Hundertstel mit Komma."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "2⁄5 = 40⁄100",
+    "40⁄100 = 0,4"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-M-06",
+   "lernziel": "5.9.3-K1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Gleichungen stimmen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "0,80 = 0,8",
+     "richtig": true
+    },
+    {
+     "text": "0,5 = 5⁄10",
+     "richtig": true
+    },
+    {
+     "text": "1⁄2 = 0,5",
+     "richtig": true
+    },
+    {
+     "text": "4⁄1000 = 0,004",
+     "richtig": true
+    },
+    {
+     "text": "31⁄100 = 0,031",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Gleichung mit der Stellenwerttafel: An welcher Stelle steht die Ziffer?",
+    "loesungsschritt": "Zehntel stehen an der ersten, Hundertstel an der zweiten, Tausendstel an der dritten Stelle nach dem Komma."
+   },
+   "nachweis": [
+    {
+     "art": "aussagen"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-E-01",
+   "lernziel": "5.9.3-K1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "tabelle",
+   "text": "Trage 24,005 in die Stellenwerttafel ein.",
+   "tabelle": {
+    "kopf": [
+     "Z",
+     "E",
+     "z",
+     "h",
+     "t"
+    ],
+    "zeilen": [
+     [
+      {
+       "luecke": "a0"
+      },
+      {
+       "luecke": "a1"
+      },
+      {
+       "luecke": "a2"
+      },
+      {
+       "luecke": "a3"
+      },
+      {
+       "luecke": "a4"
+      }
+     ]
+    ],
+    "art": "stellentafel",
+    "komma": 1
+   },
+   "luecken": {
+    "a0": {
+     "loesung": 2,
+     "typischeFehler": []
+    },
+    "a1": {
+     "loesung": 4,
+     "typischeFehler": []
+    },
+    "a2": {
+     "loesung": 0,
+     "typischeFehler": []
+    },
+    "a3": {
+     "loesung": 0,
+     "typischeFehler": []
+    },
+    "a4": {
+     "loesung": 5,
+     "typischeFehler": []
+    }
+   },
+   "hilfen": {
+    "tipp": "Suche zuerst das Komma: Links davon stehen die Einer. Jede Stelle bekommt eine Ziffer, auch wenn sie 0 ist."
+   },
+   "nachweis": [
+    {
+     "art": "tafel",
+     "zeile": 0,
+     "zahl": "24,005"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-E-02",
+   "lernziel": "5.9.3-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schreibe als Dezimalzahl: 9 Einer, 7 Hundertstel und 2 Tausendstel.",
+   "loesung": "9,072",
+   "typischeFehler": [
+    {
+     "wert": "9,72",
+     "fehlvorstellung": "null-platzhalter"
+    },
+    {
+     "wert": "97,2",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stelle dir die Stellenwerttafel vor. Welche Stelle wird nicht genannt? Dort steht eine 0."
+   },
+   "nachweis": [
+    "9 Einer + 7 Hundertstel + 2 Tausendstel = 9,072"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-E-03",
+   "lernziel": "5.9.3-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 1,07 als gemischte Zahl.",
+   "loesung": "1 7⁄100",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "1 7⁄10",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "107⁄1000",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Ziffern vor dem Komma sind die Ganzen. Die Ziffern nach dem Komma sind Hundertstel."
+   },
+   "nachweis": [
+    "1,07 = 1 7⁄100"
+   ]
+  },
+  {
+   "id": "5.9.3-K1-E-04",
+   "lernziel": "5.9.3-K1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Emre schreibt: 9⁄1000 = 0,009. Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Es gilt 9⁄1000 = 0,0009.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "Falsch. Es gilt 9⁄1000 = 0,09.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt, an welcher Stelle nach dem Komma die letzte Ziffer stehen muss."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "9⁄1000 = 0,009"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-E-05",
+   "lernziel": "5.9.3-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Vier Gleichungen stimmen, eine ist falsch. Welche Gleichung ist falsch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "9⁄10 = 0,9",
+     "richtig": false
+    },
+    {
+     "text": "7⁄100 = 0,07",
+     "richtig": false
+    },
+    {
+     "text": "7,50 = 7 1⁄2",
+     "richtig": false
+    },
+    {
+     "text": "463⁄1000 = 4,63",
+     "richtig": true
+    },
+    {
+     "text": "58⁄100 = 0,58",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe bei jeder Gleichung, ob die letzte Ziffer an der Stelle steht, die der Nenner nennt."
+   },
+   "nachweis": [
+    {
+     "art": "aussagen",
+     "falsche": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K1-E-06",
+   "lernziel": "5.9.3-K1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Gesucht ist eine Dezimalzahl mit drei Nachkommastellen. Sie hat 2 Zehntel und 9 Tausendstel, aber keine Hundertstel. Die Ziffer der Einer ist doppelt so groß wie die Ziffer der Zehntel. Wie heißt die Zahl?",
+   "loesung": "4,209",
+   "typischeFehler": [
+    {
+     "wert": "4,29",
+     "fehlvorstellung": "null-platzhalter"
+    },
+    {
+     "wert": "2,409",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "4,029",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zeichne eine Stellenwerttafel mit den Spalten E, z, h und t in dein Heft. Trage ein, was du weißt."
+   },
+   "nachweis": [
+    "2 · 2 = 4",
+    "4 Einer + 2 Zehntel + 9 Tausendstel = 4,209"
+   ]
+  },
+  {
+   "id": "5.9.3-K2-F-01",
+   "lernziel": "5.9.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "ablesen",
+   "text": "Auf welche Zahl zeigt der Pfeil?",
+   "strahl": {
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10,
+    "pfeil": 6
+   },
+   "loesung": "0,6",
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von 0 bis 1 gibt es 10 gleiche Schritte. Jeder Schritt ist ein Zehntel.",
+    "beispiel": "Der dritte Teilstrich nach der 0 ist 0,3.",
+    "loesungsschritt": "Zähle die Teilstriche ab der letzten beschrifteten Zahl."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,6"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-F-02",
+   "lernziel": "5.9.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 0,8 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 10,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10
+   },
+   "loesung": 8,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Von 0 bis 1 gibt es 10 gleiche Schritte. Jeder Schritt ist ein Zehntel.",
+    "beispiel": "Der dritte Teilstrich nach der 0 ist 0,3.",
+    "loesungsschritt": "Zähle die Teilstriche ab der letzten beschrifteten Zahl."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,8"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-F-03",
+   "lernziel": "5.9.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Beide Zahlen sind am Zahlenstrahl markiert.\nWelches Zeichen passt?\n0,9 ▢ 0,2",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "zeichen-verwechselt"
+    },
+    {
+     "text": ">",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "zeichen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Am Zahlenstrahl steht die größere Zahl weiter rechts.",
+    "beispiel": "Es gilt 0,3 < 0,8. Denn 3 Zehntel sind weniger als 8 Zehntel.",
+    "loesungsschritt": "Vergleiche zuerst die Einer. Sind sie gleich, vergleiche die Zehntel."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 10,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10,
+    "punkte": [
+     9,
+     2
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "0,9",
+     "rechts": "0,2"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-F-04",
+   "lernziel": "5.9.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Dezimalzahlen.\nBeginne mit der kleinsten.\nDer Zahlenstrahl hilft dir.",
+   "karten": [
+    "0,2",
+    "1,8",
+    "1,9",
+    "0,6"
+   ],
+   "loesung": [
+    "0,2",
+    "0,6",
+    "1,8",
+    "1,9"
+   ],
+   "hilfen": {
+    "tipp": "Am Zahlenstrahl steht die größere Zahl weiter rechts.",
+    "beispiel": "Es gilt 0,3 < 0,8. Denn 3 Zehntel sind weniger als 8 Zehntel.",
+    "loesungsschritt": "Vergleiche zuerst die Einer. Sind sie gleich, vergleiche die Zehntel."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.3-K2-F-05",
+   "lernziel": "5.9.3-K2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 2,1 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 30,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10
+   },
+   "loesung": 21,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "stellenwert"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zuerst die Einer am Zahlenstrahl. Gehe dann in Zehntelschritten weiter.",
+    "beispiel": "Für 1,3 gehst du zur 1 und dann 3 Teilstriche nach rechts.",
+    "loesungsschritt": "Die Ziffer vor dem Komma nennt die Einer. Die Ziffer nach dem Komma nennt die Zehntel."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2,1"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-F-06",
+   "lernziel": "5.9.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Zahl ist am größten?\nDer Zahlenstrahl hilft dir.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1,4",
+     "richtig": false
+    },
+    {
+     "text": "1,7",
+     "richtig": true
+    },
+    {
+     "text": "1,5",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Am Zahlenstrahl steht die größere Zahl weiter rechts.",
+    "beispiel": "Es gilt 0,3 < 0,8. Denn 3 Zehntel sind weniger als 8 Zehntel.",
+    "loesungsschritt": "Vergleiche zuerst die Einer. Sind sie gleich, vergleiche die Zehntel."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-G-01",
+   "lernziel": "5.9.3-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "ablesen",
+   "text": "Auf welche Zahl zeigt der Pfeil?",
+   "strahl": {
+    "von": 80,
+    "bis": 100,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 100,
+    "ausschnitt": true,
+    "pfeil": 93
+   },
+   "loesung": "0,93",
+   "typischeFehler": [
+    {
+     "wert": "9,3",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "9,03",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zwischen zwei Zehnteln liegen 10 kleine Schritte. Jeder Schritt ist ein Hundertstel.",
+    "beispiel": "Der dritte Teilstrich nach 0,2 ist 0,23.",
+    "loesungsschritt": "Lies zuerst die beschriftete Zahl davor. Zähle dann die Hundertstel dazu."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,93"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-G-02",
+   "lernziel": "5.9.3-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 0,14 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 100
+   },
+   "loesung": 14,
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Zwischen zwei Zehnteln liegen 10 kleine Schritte. Jeder Schritt ist ein Hundertstel.",
+    "beispiel": "Der dritte Teilstrich nach 0,2 ist 0,23.",
+    "loesungsschritt": "Lies zuerst die beschriftete Zahl davor. Zähle dann die Hundertstel dazu."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,14"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-G-03",
+   "lernziel": "5.9.3-K2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n0,67 ▢ 0,76",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "<",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Stelle für Stelle von links: Einer, Zehntel, Hundertstel.",
+    "beispiel": "Es gilt 0,47 < 0,52. Denn 4 Zehntel sind weniger als 5 Zehntel.",
+    "loesungsschritt": "Sind die Zehntel gleich, entscheiden die Hundertstel."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "0,67",
+     "rechts": "0,76"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-G-04",
+   "lernziel": "5.9.3-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Dezimalzahlen.\nBeginne mit der kleinsten.",
+   "karten": [
+    "0,55",
+    "0,01",
+    "0,41",
+    "0,35"
+   ],
+   "loesung": [
+    "0,01",
+    "0,35",
+    "0,41",
+    "0,55"
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Stelle für Stelle von links: Einer, Zehntel, Hundertstel.",
+    "beispiel": "Es gilt 0,47 < 0,52. Denn 4 Zehntel sind weniger als 5 Zehntel.",
+    "loesungsschritt": "Sind die Zehntel gleich, entscheiden die Hundertstel."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.3-K2-G-05",
+   "lernziel": "5.9.3-K2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Die Stellenwerttafel zeigt beide Zahlen.\nWelches Zeichen passt?\n3,10 ▢ 3,1",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-endnull"
+    },
+    {
+     "text": "<",
+     "richtig": false
+    },
+    {
+     "text": "=",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Trage beide Zahlen in die Stellenwerttafel ein. Vergleiche Stelle für Stelle.",
+    "beispiel": "0,2 und 0,20 haben beide 2 Zehntel und 0 Hundertstel. Es gilt 0,2 = 0,20.",
+    "loesungsschritt": "Eine Endnull ändert die Zahl nicht."
+   },
+   "bild": {
+    "art": "tafel",
+    "spalten": [
+     "E",
+     "z",
+     "h"
+    ],
+    "werte": [
+     3,
+     1,
+     0
+    ],
+    "komma": 0,
+    "weitere": [
+     [
+      3,
+      1,
+      null
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "3,10",
+     "rechts": "3,1"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-G-06",
+   "lernziel": "5.9.3-K2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Zahlen liegen zwischen 0,2 und 0,3?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "0,26",
+     "richtig": true
+    },
+    {
+     "text": "0,17",
+     "richtig": false
+    },
+    {
+     "text": "0,27",
+     "richtig": true
+    },
+    {
+     "text": "0,62",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Grenzen mit zwei Stellen nach dem Komma. Dann kannst du gut vergleichen.",
+    "beispiel": "Es gilt 0,2 = 0,20 und 0,3 = 0,30. Dazwischen liegt zum Beispiel 0,25.",
+    "loesungsschritt": "Prüfe bei jeder Zahl zuerst die Zehntel."
+   },
+   "nachweis": [
+    {
+     "art": "zwischen",
+     "von": "0,2",
+     "bis": "0,3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-M-01",
+   "lernziel": "5.9.3-K2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n0,13 ▢ 0,5",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    },
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    },
+    {
+     "text": "<",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Stelle für Stelle von links. Die Zahl mit mehr Ziffern ist nicht automatisch größer.",
+    "loesungsschritt": "Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma, zum Beispiel 0,5 = 0,50. Dann vergleiche."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "0,13",
+     "rechts": "0,5"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-M-02",
+   "lernziel": "5.9.3-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "ablesen",
+   "text": "Auf welche Zahl zeigt der Pfeil?",
+   "strahl": {
+    "von": 480,
+    "bis": 500,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 1000,
+    "ausschnitt": true,
+    "pfeil": 495
+   },
+   "loesung": "0,495",
+   "typischeFehler": [
+    {
+     "wert": "4,95",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "4,905",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Abstand zwischen zwei beschrifteten Zahlen ist ein Hundertstel. Er ist in 10 Schritte geteilt.",
+    "loesungsschritt": "Jeder kleine Schritt ist ein Tausendstel. Lies die beschriftete Zahl vor dem Pfeil und zähle die Tausendstel dazu."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,495"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-M-03",
+   "lernziel": "5.9.3-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Dezimalzahlen.\nBeginne mit der kleinsten.",
+   "karten": [
+    "0,196",
+    "0,26",
+    "0,206",
+    "0,2",
+    "0,25"
+   ],
+   "loesung": [
+    "0,196",
+    "0,2",
+    "0,206",
+    "0,25",
+    "0,26"
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Stelle für Stelle von links. Die Zahl mit mehr Ziffern ist nicht automatisch größer.",
+    "loesungsschritt": "Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma, zum Beispiel 0,5 = 0,50. Dann vergleiche."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "dezimal-wie-natuerlich"
+  },
+  {
+   "id": "5.9.3-K2-M-04",
+   "lernziel": "5.9.3-K2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 0,95 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 100,
+    "schritt": 5,
+    "beschriftung": 20,
+    "teiler": 100
+   },
+   "loesung": 95,
+   "typischeFehler": [
+    {
+     "wert": 100,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie groß ist ein Schritt zwischen zwei Teilstrichen? Von 0 bis 0,2 sind es 4 Schritte.",
+    "loesungsschritt": "Ein Schritt ist 0,05 groß. Gehe von der letzten beschrifteten Zahl aus weiter."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,95"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-M-05",
+   "lernziel": "5.9.3-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Zahl ist am kleinsten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "0,306",
+     "richtig": false
+    },
+    {
+     "text": "0,4",
+     "richtig": false
+    },
+    {
+     "text": "0,265",
+     "richtig": true
+    },
+    {
+     "text": "0,3",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Stelle für Stelle von links. Die Zahl mit mehr Ziffern ist nicht automatisch größer.",
+    "loesungsschritt": "Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma, zum Beispiel 0,5 = 0,50. Dann vergleiche."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "kleinste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-M-06",
+   "lernziel": "5.9.3-K2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Zahlen liegen zwischen 0,2 und 0,3?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "0,29",
+     "richtig": true
+    },
+    {
+     "text": "0,291",
+     "richtig": true
+    },
+    {
+     "text": "0,197",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    },
+    {
+     "text": "0,021",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    },
+    {
+     "text": "0,35",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche Stelle für Stelle von links. Die Zahl mit mehr Ziffern ist nicht automatisch größer.",
+    "loesungsschritt": "Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma, zum Beispiel 0,5 = 0,50. Dann vergleiche."
+   },
+   "nachweis": [
+    {
+     "art": "zwischen",
+     "von": "0,2",
+     "bis": "0,3"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-E-01",
+   "lernziel": "5.9.3-K2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Dezimalzahlen.\nBeginne mit der größten.",
+   "karten": [
+    "0,47",
+    "0,4705",
+    "0,74",
+    "0,407",
+    "0,0475"
+   ],
+   "loesung": [
+    "0,74",
+    "0,4705",
+    "0,47",
+    "0,407",
+    "0,0475"
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen mit gleich vielen Nachkommastellen, indem du Endnullen anhängst. Vergleiche dann Stelle für Stelle."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "ab"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "dezimal-wie-natuerlich"
+  },
+  {
+   "id": "5.9.3-K2-E-02",
+   "lernziel": "5.9.3-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "ablesen",
+   "text": "Auf welche Zahl zeigt der Pfeil?",
+   "strahl": {
+    "von": 900,
+    "bis": 1000,
+    "schritt": 5,
+    "beschriftung": 50,
+    "teiler": 1000,
+    "ausschnitt": true,
+    "pfeil": 970
+   },
+   "loesung": "0,97",
+   "typischeFehler": [
+    {
+     "wert": "1,04",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "0,914",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme zuerst die Schrittweite: Wie viele Schritte liegen zwischen den beiden beschrifteten Zahlen, und wie groß ist ihr Abstand?"
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,97"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-E-03",
+   "lernziel": "5.9.3-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 0,23 am Zahlenstrahl.",
+   "strahl": {
+    "von": 20,
+    "bis": 40,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 100,
+    "ausschnitt": true
+   },
+   "loesung": 23,
+   "typischeFehler": [
+    {
+     "wert": 27,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nicht jedes Zehntel ist beschriftet. Überlege zuerst, welche Zahlen an den längeren Teilstrichen stehen müssten."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "0,23"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-E-04",
+   "lernziel": "5.9.3-K2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Paul sagt: „0,257 ist größer als 0,5, denn 257 ist größer als 5.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 0,257 = 0,5.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-endnull"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    },
+    {
+     "text": "Falsch. Es gilt 0,257 < 0,5.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei Dezimalzahlen entscheidet nicht die Zahl der Ziffern. Vergleiche zuerst die Zehntel."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "0,257 > 0,5"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K2-E-05",
+   "lernziel": "5.9.3-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Welche Zahl liegt genau in der Mitte zwischen 0,63 und 0,64?",
+   "loesung": "0,635",
+   "typischeFehler": [
+    {
+     "wert": "0,0635",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "0,631",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "1,27",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den Abstand zwischen den beiden Zahlen in zwei gleiche Hälften. Eine weitere Nachkommastelle hilft dir."
+   },
+   "nachweis": [
+    "0,63 + 0,64 = 1,27",
+    "1,27 : 2 = 0,635"
+   ]
+  },
+  {
+   "id": "5.9.3-K2-E-06",
+   "lernziel": "5.9.3-K2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Dezimalzahlen liegen zwischen 1⁄2 und 3⁄4?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "0,74",
+     "richtig": true
+    },
+    {
+     "text": "0,076",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-wie-natuerlich"
+    },
+    {
+     "text": "0,705",
+     "richtig": true
+    },
+    {
+     "text": "0,34",
+     "richtig": false,
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "text": "0,12",
+     "richtig": false,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die beiden Brüche zuerst als Dezimalzahlen. Dafür brauchst du Zehntel oder Hundertstel."
+   },
+   "nachweis": [
+    {
+     "art": "zwischen",
+     "von": "1⁄2",
+     "bis": "3⁄4"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-F-01",
+   "lernziel": "5.9.3-K3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\n5,6 cm = {{a}} mm",
+   "luecken": {
+    "a": {
+     "loesung": 56,
+     "typischeFehler": [
+      {
+       "wert": 11,
+       "fehlvorstellung": "masszahlen-addiert"
+      },
+      {
+       "wert": 560,
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 506,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "1 cm sind 10 mm. Die Stelle nach dem Komma zählt die Millimeter.",
+    "beispiel": "1,5 cm = 15 mm. Das sind 1 cm und 5 mm.",
+    "loesungsschritt": "Vor dem Komma stehen die Zentimeter. Nach dem Komma stehen die Millimeter."
+   },
+   "daten": {
+    "kopf": [
+     "Merke",
+     ""
+    ],
+    "zeilen": [
+     [
+      "1 cm",
+      "10 mm"
+     ]
+    ]
+   },
+   "nachweis": [
+    "5,6 cm = 56 mm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-F-02",
+   "lernziel": "5.9.3-K3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Schreibe mit Euro und Cent.\n8,05 € = {{a}} € {{b}} ct",
+   "luecken": {
+    "a": {
+     "loesung": 8,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 50,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Bei Euro stehen nach dem Komma die Cent. Es sind immer zwei Stellen.",
+    "beispiel": "2,50 € = 2 € 50 ct.",
+    "loesungsschritt": "Lies vor dem Komma die Euro und nach dem Komma die Cent."
+   },
+   "daten": {
+    "kopf": [
+     "Merke",
+     ""
+    ],
+    "zeilen": [
+     [
+      "1 €",
+      "100 ct"
+     ]
+    ]
+   },
+   "nachweis": [
+    "8,05 € = 8 € 5 ct"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-F-03",
+   "lernziel": "5.9.3-K3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Wandle in Cent um.\n1,10 € = {{a}} ct",
+   "luecken": {
+    "a": {
+     "loesung": 110,
+     "typischeFehler": [
+      {
+       "wert": 11,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      },
+      {
+       "wert": 1010,
+       "fehlvorstellung": "umrechnungszahl"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Bei Euro stehen nach dem Komma die Cent. Es sind immer zwei Stellen.",
+    "beispiel": "2,50 € = 2 € 50 ct.",
+    "loesungsschritt": "Lies vor dem Komma die Euro und nach dem Komma die Cent."
+   },
+   "daten": {
+    "kopf": [
+     "Merke",
+     ""
+    ],
+    "zeilen": [
+     [
+      "1 €",
+      "100 ct"
+     ]
+    ]
+   },
+   "nachweis": [
+    "1,10 € = 110 ct"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-F-04",
+   "lernziel": "5.9.3-K3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Schreibe mit Komma.\n6 cm 4 mm = {{a}} cm",
+   "luecken": {
+    "a": {
+     "loesung": "6,4",
+     "typischeFehler": [
+      {
+       "wert": 64,
+       "fehlvorstellung": "umrechnungsrichtung"
+      },
+      {
+       "wert": "4,6",
+       "fehlvorstellung": "komma-falsch-gelesen"
+      },
+      {
+       "wert": 10,
+       "fehlvorstellung": "masszahlen-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "1 cm sind 10 mm. Die Stelle nach dem Komma zählt die Millimeter.",
+    "beispiel": "1,5 cm = 15 mm. Das sind 1 cm und 5 mm.",
+    "loesungsschritt": "Vor dem Komma stehen die Zentimeter. Nach dem Komma stehen die Millimeter."
+   },
+   "daten": {
+    "kopf": [
+     "Merke",
+     ""
+    ],
+    "zeilen": [
+     [
+      "1 cm",
+      "10 mm"
+     ]
+    ]
+   },
+   "nachweis": [
+    "6 cm 4 mm = 6,4 cm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-F-05",
+   "lernziel": "5.9.3-K3",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n7,9 cm ▢ 79 mm",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "umrechnungszahl"
+    },
+    {
+     "text": "=",
+     "richtig": true
+    },
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "umrechnungszahl"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleichen kannst du erst in derselben Einheit. Wandle in Millimeter um.",
+    "beispiel": "1,5 cm = 15 mm. Es gilt 15 mm < 20 mm.",
+    "loesungsschritt": "Schau in die Tabelle: 1 cm sind 10 mm."
+   },
+   "daten": {
+    "kopf": [
+     "Merke",
+     ""
+    ],
+    "zeilen": [
+     [
+      "1 cm",
+      "10 mm"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "7,9 cm",
+     "rechts": "79 mm"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-F-06",
+   "lernziel": "5.9.3-K3",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zuordnen",
+   "text": "Was gehört zusammen?\nOrdne zu.",
+   "paare": [
+    {
+     "links": "0,84 €",
+     "rechts": "84 ct"
+    },
+    {
+     "links": "4,08 €",
+     "rechts": "4 € 8 ct"
+    },
+    {
+     "links": "4,80 €",
+     "rechts": "4 € 80 ct"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nach dem Komma stehen bei Euro immer zwei Stellen für die Cent.",
+    "beispiel": "2,05 € = 2 € 5 ct. Aber 2,50 € = 2 € 50 ct.",
+    "loesungsschritt": "Lies die zwei Ziffern nach dem Komma zusammen als Cent."
+   },
+   "daten": {
+    "kopf": [
+     "Merke",
+     ""
+    ],
+    "zeilen": [
+     [
+      "1 €",
+      "100 ct"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "paare"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-G-01",
+   "lernziel": "5.9.3-K3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\nDie Einheitentafel hilft dir.\n6,90 m = {{a}} cm",
+   "luecken": {
+    "a": {
+     "loesung": 690,
+     "typischeFehler": [
+      {
+       "wert": 150,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      },
+      {
+       "wert": 6900,
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 96,
+       "fehlvorstellung": "masszahlen-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "1 m sind 100 cm. Nach dem Komma stehen zwei Stellen für die Zentimeter.",
+    "beispiel": "1,25 m = 125 cm. Das sind 1 m und 25 cm.",
+    "loesungsschritt": "Trage die Größe in die Einheitentafel ein. Lies sie dann ohne Komma in der kleineren Einheit."
+   },
+   "bild": {
+    "art": "einheitentafel",
+    "gruppen": [
+     {
+      "name": "m",
+      "spalten": 2
+     },
+     {
+      "name": "cm",
+      "spalten": 2
+     }
+    ],
+    "spalten": [
+     "Z",
+     "E",
+     "Z",
+     "E"
+    ],
+    "werte": [
+     null,
+     6,
+     9,
+     0
+    ]
+   },
+   "nachweis": [
+    "6,90 m = 690 cm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-G-02",
+   "lernziel": "5.9.3-K3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\nDie Einheitentafel hilft dir.\n9,85 kg = {{a}} g",
+   "luecken": {
+    "a": {
+     "loesung": 9850,
+     "typischeFehler": [
+      {
+       "wert": 985,
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 175,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "1 kg sind 1000 g. Drei Stellen nach dem Komma gehören zu den Gramm.",
+    "beispiel": "1,5 kg = 1500 g. Das sind 1 kg und 500 g.",
+    "loesungsschritt": "Trage die Größe in die Einheitentafel ein. Fülle leere Stellen mit 0 auf."
+   },
+   "bild": {
+    "art": "einheitentafel",
+    "gruppen": [
+     {
+      "name": "kg",
+      "spalten": 2
+     },
+     {
+      "name": "g",
+      "spalten": 3
+     }
+    ],
+    "spalten": [
+     "Z",
+     "E",
+     "H",
+     "Z",
+     "E"
+    ],
+    "werte": [
+     null,
+     9,
+     8,
+     5,
+     0
+    ]
+   },
+   "nachweis": [
+    "9,85 kg = 9850 g"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-G-03",
+   "lernziel": "5.9.3-K3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\n607 cm = {{a}} m",
+   "luecken": {
+    "a": {
+     "loesung": "6,07",
+     "typischeFehler": [
+      {
+       "wert": "60,7",
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": "0,607",
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 60700,
+       "fehlvorstellung": "umrechnungsrichtung"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "100 cm sind 1 m. Die letzten zwei Ziffern sind die Zentimeter nach dem Komma.",
+    "beispiel": "125 cm = 1,25 m. Das sind 1 m und 25 cm.",
+    "loesungsschritt": "Setze das Komma so, dass zwei Stellen dahinter stehen."
+   },
+   "nachweis": [
+    "607 cm = 6,07 m"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-G-04",
+   "lernziel": "5.9.3-K3",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Schreibe mit zwei Einheiten.\n2,09 m = {{a}} m {{b}} cm",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": []
+    },
+    "b": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 90,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "1 m sind 100 cm. Nach dem Komma stehen zwei Stellen für die Zentimeter.",
+    "beispiel": "1,25 m = 125 cm. Das sind 1 m und 25 cm.",
+    "loesungsschritt": "Trage die Größe in die Einheitentafel ein. Lies sie dann ohne Komma in der kleineren Einheit."
+   },
+   "nachweis": [
+    "2,09 m = 2 m 9 cm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-G-05",
+   "lernziel": "5.9.3-K3",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Brett ist 3,10 m lang.\nElif sägt 50 cm ab.\nWie viele Zentimeter bleiben übrig?",
+   "loesung": 260,
+   "typischeFehler": [
+    {
+     "wert": 310,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 360,
+     "fehlvorstellung": "sub-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechnen kannst du erst in derselben Einheit. Wandle die Länge in Zentimeter um.",
+    "beispiel": "1,50 m = 150 cm. Dann rechnest du 150 cm − 30 cm = 120 cm.",
+    "loesungsschritt": "Wandle zuerst um. Ziehe dann ab."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    "3,10 m = 310 cm",
+    "310 cm − 50 cm = 260 cm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-G-06",
+   "lernziel": "5.9.3-K3",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Finn sagt: „1,9 m sind 1 m 9 cm.“\nStimmt das?\nDie Einheitentafel hilft dir.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 1,9 m = 19 cm.",
+     "richtig": false,
+     "fehlvorstellung": "umrechnungszahl"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "komma-falsch-gelesen"
+    },
+    {
+     "text": "Falsch.\nEs gilt 1,9 m = 1 m 90 cm.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Trage die Größe in die Einheitentafel ein. Zentimeter brauchen zwei Stellen.",
+    "beispiel": "1,5 m = 1,50 m. Das sind 1 m 50 cm.",
+    "loesungsschritt": "Hänge eine Endnull an. Lies dann die zwei Stellen nach dem Komma als Zentimeter."
+   },
+   "bild": {
+    "art": "einheitentafel",
+    "gruppen": [
+     {
+      "name": "m",
+      "spalten": 2
+     },
+     {
+      "name": "cm",
+      "spalten": 2
+     }
+    ],
+    "spalten": [
+     "Z",
+     "E",
+     "Z",
+     "E"
+    ],
+    "werte": [
+     null,
+     1,
+     9,
+     0
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "1,9 m = 1 m 9 cm"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-M-01",
+   "lernziel": "5.9.3-K3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\n7,08 m = {{a}} cm",
+   "luecken": {
+    "a": {
+     "loesung": 708,
+     "typischeFehler": [
+      {
+       "wert": 78,
+       "fehlvorstellung": "null-platzhalter"
+      },
+      {
+       "wert": 780,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      },
+      {
+       "wert": 7008,
+       "fehlvorstellung": "umrechnungszahl"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Überlege zuerst die Umrechnungszahl: 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g.",
+    "loesungsschritt": "Bei 100 gehören zwei Stellen nach dem Komma zur kleineren Einheit, bei 1000 sind es drei. Fülle leere Stellen mit 0 auf."
+   },
+   "nachweis": [
+    "7,08 m = 708 cm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-M-02",
+   "lernziel": "5.9.3-K3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\n450 g = {{a}} kg",
+   "luecken": {
+    "a": {
+     "loesung": "0,45",
+     "typischeFehler": [
+      {
+       "wert": "4,5",
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 450000,
+       "fehlvorstellung": "umrechnungsrichtung"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Überlege zuerst die Umrechnungszahl: 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g.",
+    "loesungsschritt": "Bei 100 gehören zwei Stellen nach dem Komma zur kleineren Einheit, bei 1000 sind es drei. Fülle leere Stellen mit 0 auf."
+   },
+   "nachweis": [
+    "450 g = 0,45 kg"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-M-03",
+   "lernziel": "5.9.3-K3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Wandle um.\n9,7 km = {{a}} m\n850 m = {{b}} km",
+   "luecken": {
+    "a": {
+     "loesung": 9700,
+     "typischeFehler": [
+      {
+       "wert": 970,
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 9007,
+       "fehlvorstellung": "komma-falsch-gelesen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": "0,85",
+     "typischeFehler": [
+      {
+       "wert": "8,5",
+       "fehlvorstellung": "umrechnungszahl"
+      },
+      {
+       "wert": 850000,
+       "fehlvorstellung": "umrechnungsrichtung"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Überlege zuerst die Umrechnungszahl: 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g.",
+    "loesungsschritt": "Bei 100 gehören zwei Stellen nach dem Komma zur kleineren Einheit, bei 1000 sind es drei. Fülle leere Stellen mit 0 auf."
+   },
+   "nachweis": [
+    "9,7 km = 9700 m",
+    "850 m = 0,85 km"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-M-04",
+   "lernziel": "5.9.3-K3",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zuordnen",
+   "text": "Welche Größen sind gleich?\nOrdne zu.",
+   "paare": [
+    {
+     "links": "3 kg",
+     "rechts": "3000 g"
+    },
+    {
+     "links": "0,03 kg",
+     "rechts": "30 g"
+    },
+    {
+     "links": "0,003 kg",
+     "rechts": "3 g"
+    },
+    {
+     "links": "0,3 kg",
+     "rechts": "300 g"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Überlege zuerst die Umrechnungszahl: 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g.",
+    "loesungsschritt": "Bei 100 gehören zwei Stellen nach dem Komma zur kleineren Einheit, bei 1000 sind es drei. Fülle leere Stellen mit 0 auf."
+   },
+   "nachweis": [
+    {
+     "art": "paare"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-M-05",
+   "lernziel": "5.9.3-K3",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Müller lädt drei Säcke. Sie wiegen 3,5 kg, 750 g und 0,25 kg. Wie viel Gramm wiegen sie zusammen?",
+   "loesung": 4500,
+   "typischeFehler": [
+    {
+     "wert": 3750,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 1125,
+     "fehlvorstellung": "umrechnungszahl"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst alle Gewichte in Gramm um.",
+    "loesungsschritt": "3,5 kg sind 3500 g. Wandle auch das dritte Gewicht um und addiere dann."
+   },
+   "einheit": "g",
+   "nachweis": [
+    "3,5 kg = 3500 g",
+    "0,25 kg = 250 g",
+    "3500 g + 750 g + 250 g = 4500 g"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-M-06",
+   "lernziel": "5.9.3-K3",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Längen.\nBeginne mit der kleinsten.",
+   "karten": [
+    "71 cm",
+    "0,606 m",
+    "0,6 m",
+    "6,6 m",
+    "66 cm"
+   ],
+   "loesung": [
+    "0,6 m",
+    "0,606 m",
+    "66 cm",
+    "71 cm",
+    "6,6 m"
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Längen in dieselbe Einheit um, am besten in Zentimeter.",
+    "loesungsschritt": "1 m = 100 cm. Verschiebe das Komma um zwei Stellen und fülle mit 0 auf."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt"
+  },
+  {
+   "id": "5.9.3-K3-E-01",
+   "lernziel": "5.9.3-K3",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welches Zeichen passt?\n0,125 km ▢ 140 m",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "<",
+     "richtig": true
+    },
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "komma-falsch-gelesen"
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "komma-falsch-gelesen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleichen kannst du erst in derselben Einheit. Wandle die Größe mit Komma in die kleinere Einheit um."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "0,125 km",
+     "rechts": "140 m"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-E-02",
+   "lernziel": "5.9.3-K3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Jonas sagt: „3,5 h sind 3 h 5 min.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 3,5 h = 3 h 50 min.",
+     "richtig": false,
+     "fehlvorstellung": "umrechnungszahl"
+    },
+    {
+     "text": "Falsch. Es gilt 3,5 h = 3 h 30 min.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "komma-falsch-gelesen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Stunde hat 60 min, nicht 100. Überlege: Welcher Bruchteil einer Stunde steht nach dem Komma?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "3,5 h = 3 h 5 min"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-E-03",
+   "lernziel": "5.9.3-K3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Länge ist am kleinsten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "350 mm",
+     "richtig": true
+    },
+    {
+     "text": "3 m 75 cm 5 mm",
+     "richtig": false
+    },
+    {
+     "text": "3,05 m",
+     "richtig": false
+    },
+    {
+     "text": "35,5 cm",
+     "richtig": false
+    },
+    {
+     "text": "3,5 m",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Längen in Millimeter um. Achte auf die Null nach dem Komma."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "kleinste"
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-E-04",
+   "lernziel": "5.9.3-K3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Vier Umwandlungen stimmen, eine ist falsch. Welche Umwandlung ist falsch?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "0,41 m = 41 cm",
+     "richtig": false
+    },
+    {
+     "text": "2,5 kg = 2005 g",
+     "richtig": true
+    },
+    {
+     "text": "4,6 km = 4600 m",
+     "richtig": false
+    },
+    {
+     "text": "0,06 € = 6 ct",
+     "richtig": false
+    },
+    {
+     "text": "9,05 m = 905 cm",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe bei jeder Umwandlung die Umrechnungszahl: Wie viele Stellen nach dem Komma gehören zur kleineren Einheit?"
+   },
+   "nachweis": [
+    {
+     "art": "aussagen",
+     "falsche": true
+    }
+   ]
+  },
+  {
+   "id": "5.9.3-K3-E-05",
+   "lernziel": "5.9.3-K3",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Paul legt drei Bretter aneinander: 1,1 m, 85 cm und 0,8 m. Wie viele Zentimeter sind sie zusammen lang?",
+   "loesung": 275,
+   "typischeFehler": [
+    {
+     "wert": 190,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 104,
+     "fehlvorstellung": "komma-falsch-gelesen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Längen in Zentimeter um. Achtung: 0,4 m sind nicht 4 cm."
+   },
+   "einheit": "cm",
+   "nachweis": [
+    "1,1 m = 110 cm",
+    "0,8 m = 80 cm",
+    "110 cm + 85 cm + 80 cm = 275 cm"
+   ]
+  },
+  {
+   "id": "5.9.3-K3-E-06",
+   "lernziel": "5.9.3-K3",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ben ist 1,55 m groß. Der Bruder ist 4 cm größer. Wie groß ist der Bruder? Gib die Größe in Metern an.",
+   "loesung": "1,59",
+   "typischeFehler": [
+    {
+     "wert": "1,95",
+     "fehlvorstellung": "komma-falsch-gelesen"
+    },
+    {
+     "wert": "5,55",
+     "fehlvorstellung": "masszahlen-addiert"
+    },
+    {
+     "wert": 159,
+     "fehlvorstellung": "umrechnungsrichtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle die Körpergröße zuerst in Zentimeter um. Rechne dann und schreibe das Ergebnis wieder mit Komma."
+   },
+   "einheit": "m",
+   "nachweis": [
+    "1,55 m + 4 cm = 1,59 m"
    ]
   }
  ]

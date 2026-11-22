@@ -390,3 +390,11 @@ body { margin: 0; background: #f4f1ea; }
 #mathekingdom-lehrer .ausgeblendet { text-align: center; margin: 4px 0 18px; }
 #mathekingdom-lehrer ul.ansehen li { margin-bottom: 6px; }
 @media print { #mathekingdom-lehrer .ansichtleiste, #mathekingdom-lehrer .ansichttafel, #mathekingdom-lehrer .ausgeblendet { display: none; } }
+
+/* Kapitel 9: gestapelte Brüche im Text (dom.js, ADR 0036) */
+.bruch { display: inline-flex; flex-direction: column; align-items: stretch; vertical-align: middle; text-align: center; font-size: .82em; line-height: 1.12; margin: 0 .14em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bruch .bz { border-bottom: .09em solid currentColor; padding: 0 .22em .04em; min-width: .9em; }
+.bruch .bn { padding: .04em .22em 0; }
+.gemischt { white-space: nowrap; }
+.bruchsatz { white-space: nowrap; }
+.gemischt .bruch { margin-left: .08em; }

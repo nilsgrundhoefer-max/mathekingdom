@@ -200,7 +200,8 @@ test('Aufgabenauswahl: erst neue, dann ungelöste, nie zweimal direkt dieselbe',
 test('Meilenstein: Status folgt den Lernzielen', () => {
   const stand = neu();
   const station = pool.kapitel[2].unterkapitel[2];
-  assert.equal(L.milestoneStatus(index, stand, pool.kapitel[8].unterkapitel[0]), 'leer');
+  // Seit Kapitel 9 (0.42) hat jede Etappe Aufgaben. Eine Etappe ohne Aufgaben gibt es nur noch gedacht.
+  assert.equal(L.milestoneStatus(index, stand, { id: '5.99.1', lernziele: [{ id: '5.99.1-X1' }] }), 'leer');
   assert.equal(L.milestoneStatus(index, stand, station), 'offen');
   L.verbuche(stand, aufgaben(S2, 'G')[0], ok(), 'G', 't');
   assert.equal(L.milestoneStatus(index, stand, station), 'begonnen');

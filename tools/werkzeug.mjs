@@ -288,6 +288,17 @@ const KIND = {
   'innere-linie-im-umfang': 'Du zählst beim Umfang jetzt nur den äußeren Rand.',
   'teilflaeche-doppelt': 'Du zählst jede Teilfläche jetzt genau einmal.',
   'loch-nicht-abgezogen': 'Du ziehst das Loch jetzt vom Flächeninhalt ab.',
+  // Kapitel 9 (ADR 0036)
+  'bruch-vertauscht': 'Du schreibst den Zähler jetzt oben und den Nenner unten.',
+  'bruch-teil-zu-rest': 'Du zählst beim Nenner jetzt alle Teile des Ganzen.',
+  'bruch-ungleiche-teile': 'Du achtest jetzt auf gleich große Teile.',
+  'bruch-nenner-groesse': 'Du weißt jetzt: Ein größerer Nenner macht die Teile kleiner.',
+  'bruchteil-zaehler-vergessen': 'Du nimmst nach dem Teilen jetzt noch mit dem Zähler mal.',
+  'bruch-ganzes-teil': 'Du hältst das Ganze und den Teil jetzt auseinander.',
+  'dezimal-wie-natuerlich': 'Du vergleichst Dezimalzahlen jetzt Stelle für Stelle.',
+  'dezimal-stelle': 'Du hältst Zehntel und Hundertstel jetzt auseinander.',
+  'dezimal-endnull': 'Du weißt jetzt: Eine Null am Ende ändert die Dezimalzahl nicht.',
+  'bruch-als-komma': 'Du schreibst einen Bruch jetzt über Zehntel oder Hundertstel als Dezimalzahl.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -438,6 +449,17 @@ export const fehlvorstellungen = {
   'innere-linie-im-umfang': fv('Zählt bei zusammengesetzten Figuren Linien im Inneren zum Umfang.', 'Der Umfang ist nur der äußere Rand. Die Linien, mit denen du zerlegt hast, gehören nicht dazu.'),
   'teilflaeche-doppelt': fv('Zählt beim Zerlegen eine Teilfläche doppelt oder lässt eine weg.', 'Färbe oder nummeriere jede Teilfläche. Jede wird genau einmal gezählt.'),
   'loch-nicht-abgezogen': fv('Zieht bei einer Figur mit Loch das Loch nicht vom Flächeninhalt ab.', 'Rechne zuerst die ganze Fläche aus. Ziehe dann das Loch ab.'),
+  // Kapitel 9 „Brüche und Dezimalzahlen“ (Grilling mit Nils, 2026-11-22)
+  'bruch-vertauscht': fv('Vertauscht Zähler und Nenner.', 'Der Nenner steht unten und nennt alle Teile. Der Zähler steht oben und zählt die gemeinten Teile.'),
+  'bruch-teil-zu-rest': fv('Vergleicht die gefärbten Teile mit den ungefärbten statt mit allen Teilen (3 von 8 gefärbt als drei Fünftel).', 'Zähle für den Nenner alle Teile des Ganzen, die gefärbten und die weißen.'),
+  'bruch-ungleiche-teile': fv('Zählt ungleich große Teile als Bruchteil.', 'Ein Bruch braucht gleich große Teile. Schau genau hin: Sind alle Teile gleich groß?'),
+  'bruch-nenner-groesse': fv('Hält den Bruch mit dem größeren Nenner für größer (ein Achtel größer als ein Viertel).', 'Bei mehr Teilen wird jedes Teil kleiner. Stell dir eine Pizza für 4 und eine für 8 Kinder vor.'),
+  'bruchteil-zaehler-vergessen': fv('Teilt beim Bruchteil einer Größe nur durch den Nenner und nimmt nicht mit dem Zähler mal.', 'Du hast erst einen Teil. Wie viele Teile sind gemeint? Nimm mit dem Zähler mal.'),
+  'bruch-ganzes-teil': fv('Verwechselt das Ganze mit dem Teil oder rechnet in die falsche Richtung.', 'Was ist gegeben: das Ganze oder ein Teil davon? Das Ganze ist größer als sein Teil.'),
+  'dezimal-wie-natuerlich': fv('Liest die Nachkommastellen wie eine natürliche Zahl (0,15 größer als 0,5, weil 15 größer als 5 ist).', 'Vergleiche Stelle für Stelle: zuerst die Zehntel, dann die Hundertstel.'),
+  'dezimal-stelle': fv('Verwechselt die Stellen nach dem Komma (0,5 als fünf Hundertstel, 0,05 als fünf Zehntel).', 'Die erste Stelle nach dem Komma sind die Zehntel, die zweite die Hundertstel.'),
+  'dezimal-endnull': fv('Meint, eine Null am Ende ändere den Wert der Dezimalzahl (0,50 größer als 0,5).', '0,5 und 0,50 sind gleich viel: 5 Zehntel sind 50 Hundertstel.'),
+  'bruch-als-komma': fv('Schreibt Zähler und Nenner einfach mit Komma hintereinander (ein Viertel als 0,4 oder 1,4).', 'Wie viele Zehntel oder Hundertstel sind es? Erst dann kannst du die Dezimalzahl schreiben.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -613,6 +635,31 @@ export const gitterKreis = (text, gitter, m, r, beispiel, fehler, hilfen, extra)
 // `beispiel` sind Kästchen, die die Bedingung erfüllen (für das Lösungsbild). fehler: [[bedingung, fehlvorstellung]]
 export const gitterFlaeche = (text, gitter, bedingung, beispiel, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'zellen', text, gitter, bedingung: { art: 'flaeche', ...bedingung }, loesung: beispiel,
   typischeFehler: (fehler ?? []).map(([b, fehlvorstellung]) => ({ bedingung: { art: 'flaeche', ...b }, fehlvorstellung })), hilfen, ...mit({ nachweis: [{ art: 'zellen' }], ...extra }) });
+// ---------- Kapitel 9: Brüche und Dezimalzahlen (ADR 0036) ----------
+// Ein Bruch steht im Text als „3⁄4“ (Bruchstrich U+2044), eine gemischte Zahl als „1 3⁄4“ mit schmalem geschütztem Leerzeichen.
+export const br = (z, n, g = 0) => `${g ? `${g}\u202f` : ''}${z}\u2044${n}`;
+// Brucheingabe: Lösung als Bruchtext. typischeFehler: [[bruchtext, fehlvorstellung]]. extra: { genau, einheit, bild, nachweis }
+export function bruch(text, loesung, typischeFehler, hilfen, extra) {
+  const gesehen = new Set([loesung]);
+  const fehler = (typischeFehler ?? []).filter(([w]) => w && !gesehen.has(w) && gesehen.add(w)).map(([wert, fehlvorstellung]) => ({ wert, fehlvorstellung }));
+  return { format: 'bruch', text, loesung, ...(loesung.includes('\u202f') ? { gemischt: true } : {}), typischeFehler: fehler, hilfen, ...mit(extra) };
+}
+// Teile färben: figur { form, teile | reihen + spalten, ganze? }, ziel ist der Bruch aus dem Text, loesung die Anzahl der Teile.
+export const faerben = (text, figur, ziel, loesung, typischeFehler, hilfen, extra) => ({ format: 'faerben', text, faerben: figur, loesung,
+  typischeFehler: fehlerliste(loesung, typischeFehler ?? []), hilfen, ...mit({ nachweis: [{ art: 'faerben', ziel }], ...extra }) });
+// Dezimalzahl eingeben: Lösung als Text („0,25“). typischeFehler: [[text, fehlvorstellung]] oder fertige Einträge { wert, fehlvorstellung }
+export function dezimal(text, loesung, typischeFehler, hilfen, extra) {
+  const gesehen = new Set([loesung]);
+  const fehler = (typischeFehler ?? []).map((f) => (Array.isArray(f) ? { wert: f[0], fehlvorstellung: f[1] } : f)).filter((f) => f.wert != null && !gesehen.has(String(f.wert)) && gesehen.add(String(f.wert)));
+  return { format: 'zahl', text, loesung, typischeFehler: fehler, hilfen, ...mit(extra) };
+}
+// Stellenwerttafel mit Komma zum Eintragen: spalten wie ['Z', 'E', 'z', 'h'], das Komma steht nach der Spalte E.
+export function kommatafel(text, spalten, zeilen, werte, hilfen, extra) {
+  const t = tabelle(text, spalten, zeilen, werte, hilfen, extra);
+  t.tabelle.art = 'stellentafel';
+  t.tabelle.komma = spalten.indexOf('E');
+  return t;
+}
 // Winkeldrehen: feld { b, h, s, von, l, punkte?, umlegen? }, loesung in Grad gegen den Uhrzeigersinn. typischeFehler: [[grad, fehlvorstellung]]
 export const winkelDrehen = (text, feld, loesung, typischeFehler, hilfen, extra) => ({ format: 'winkel', text, winkelfeld: feld, loesung, toleranz: 2,
   typischeFehler: (typischeFehler ?? []).filter(([w]) => Math.min(Math.abs(w - loesung), 360 - Math.abs(w - loesung)) > 2).filter(([w], i, l) => l.findIndex(([x]) => x === w) === i).map(([wert, fehlvorstellung]) => ({ wert, fehlvorstellung })), hilfen, ...mit(extra) });
@@ -777,6 +824,9 @@ export const B = {
   // Kapitel 8 (ADR 0035): Figuren aus Rechtecken [x0, y0, x1, y1] mit Löchern, auf einem Raster ('kaestchen' oder 'cm') oder als Skizze.
   // f: { raster, b, h (Felder des Rasters), einheit (der Koordinaten und Maße), figuren: [{ n?, rechtecke, loecher?, zerlegt? }], masse?: [{ p, q, text?, frage? }], skizze? }
   flaeche: (f) => ({ art: 'flaeche', ...f }),
+  // Kapitel 9 (ADR 0036): Bruchbild aus Figuren { n?, form, teile | reihen + spalten, ganze?, gefaerbt, ungleich? } und Stellenwerttafel mit Komma.
+  bruch: (...figuren) => ({ art: 'bruch', figuren }),
+  kommaTafel: (spalten, werte, weitere = null) => ({ art: 'tafel', spalten, werte, komma: spalten.indexOf('E'), ...(weitere ? { weitere } : {}) }),
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
@@ -794,10 +844,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
-  modellieren: ['5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
+  modellieren: ['5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
-  argumentieren: ['5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
+  argumentieren: ['5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
@@ -809,7 +859,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel', 'gradnetz', 'kreislineal', 'flaeche'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter', 'faerben'].includes(a.format) || a.bild?.art === 'bruch' || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel', 'gradnetz', 'kreislineal', 'flaeche'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';
@@ -821,7 +871,7 @@ export function kompetenzVon(lernziel, a) {
 
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
-const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung, a.teile?.map((t) => t.text)].filter(Boolean));
+const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung, a.faerben, a.teile?.map((t) => t.text)].filter(Boolean));
 function nachbearbeiten(a, niveau) {
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.

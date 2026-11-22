@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.42 vom 22.11.2026
+
+### Schüler
+
+- Kapitel 9 „Brüche und Dezimalzahlen“ ist da: Bruchteile erkennen, färben und vergleichen, Bruchteile von Größen berechnen und Dezimalzahlen lesen, ordnen und umwandeln. Das sind 192 neue Aufgaben auf allen vier Niveaus.
+- Neu: Einen Bruch gibst du mit Zähler über Nenner ein. Bei „Teile färben“ tippst du die Teile an, die du färben willst.
+- Brüche stehen überall mit waagerechtem Bruchstrich. Die Stellenwerttafel hat jetzt ein Komma und Spalten für Zehntel, Hundertstel und Tausendstel.
+- Am Handy passt eine Aufgabe mit Zahlenstrahl jetzt auf den Bildschirm.
+
+### Lehrkraft
+
+- Kapitel 9 hat 8 Lernziele mit je 6 Aufgaben auf F, G, M und E. Tor 9 öffnen Sie wie gewohnt unter Tore.
+- Nenner: F 2, 3 und 4, G bis 8 und 10, M bis 12 und 100, E bis 20. Brüche über 1 gibt es ab M. Gekürzt, erweitert und gerechnet wird mit Brüchen nicht.
+- Bei der Brucheingabe zählt jeder gleichwertige Bruch, beim Färben jede Auswahl mit der richtigen Anzahl. Dezimalzahlen: F Zehntel, G Hundertstel, M Tausendstel.
+- 10 neue Fehlvorstellungen erscheinen in der Auswertung, zum Beispiel „Zähler und Nenner vertauscht“, „größerer Nenner, größerer Bruch“ und „0,15 größer als 0,5“.
+
 ## 0.41 vom 22.11.2026
 
 ### Schüler

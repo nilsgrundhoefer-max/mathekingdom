@@ -123,8 +123,23 @@ Eine Tafel mit einer Spalte je Einheit (km, m, dm, cm, mm oder t, kg, g), in die
 _Avoid_: Stellenwerttafel (die hat Spalten für Stellenwerte, nicht für Einheiten), Umrechnungstabelle
 
 **Gemischte Schreibweise**:
-Eine Größe mit zwei Einheiten ohne Komma, zum Beispiel „3 € 50 ct“ oder „2 km 500 m“. Die **Kommaschreibweise** („3,50 €“) ist in Klasse 5 nur eine andere Schreibweise dafür und keine Dezimalzahl zum Rechnen.
-_Avoid_: Dezimalzahl (für Größen in Klasse 5)
+Eine Größe mit zwei Einheiten ohne Komma, zum Beispiel „3 € 50 ct“ oder „2 km 500 m“. Die **Kommaschreibweise** („3,50 €“) ist bei den Größen nur eine andere Schreibweise dafür.
+_Avoid_: Dezimalzahl (für Größen vor dem Kapitel Brüche und Dezimalzahlen)
+
+**Dezimalzahl**:
+Eine Zahl mit Komma, deren Stellen nach dem Komma Zehntel, Hundertstel und Tausendstel sind. Sie heißt erst ab der Dezimalschreibweise so; gesprochen wird Ziffer für Ziffer („null Komma zwei fünf“). In Klasse 5 wird mit ihr nicht gerechnet.
+_Avoid_: Kommazahl, Dezimalbruch
+
+**Bruchbild**:
+Ein Aufgabenbild, das ein Ganzes in Teile zerlegt zeigt: Kreis, Rechteck, Streifen oder Mengenbild. Gefärbte Teile stehen für den Zähler, alle Teile für den Nenner.
+_Avoid_: Tortendiagramm, Kreisdiagramm
+
+**Brucheingabe**:
+Die Eingabe eines Bruchs mit zwei Feldern übereinander und Bruchstrich. Ein gleichwertiger Bruch zählt als richtig, außer die Aufgabe verlangt einen bestimmten Nenner.
+_Avoid_: Schrägstrich-Schreibweise (3/4)
+
+**Teile färben**:
+Die Eingabe, bei der das Kind Teile eines Bruchbilds antippt, um einen Bruchteil darzustellen. Jede Auswahl mit der richtigen Anzahl ist richtig.
 
 **Zentimeterraster**:
 Ein Karogitter im Aufgabenbild, bei dem ein Feld 1 cm² und eine Feldseite 1 cm darstellt. Es gilt ab den Flächenmaßen; im Heft sind 1 cm² vier Kästchen, weil dort 2 Kästchen 1 cm sind. Vorher zählt das Kind Flächen nur in Kästchen, ohne Einheit.

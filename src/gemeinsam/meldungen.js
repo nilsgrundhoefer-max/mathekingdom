@@ -7,6 +7,7 @@
 
 import { gitterLoesung } from '../schueler/geo.js';
 import { loesungGroesse } from '../schueler/groessen.js';
+import { faerbenLoesung, bruchLoesung } from '../schueler/bruch.js';
 
 export const STATUS_DATEI = 'aufgabenmeldungen.json';
 export const ARTEN = { loesung: 'Lösung falsch', unloesbar: 'nicht lösbar', unklar: 'unklar formuliert', bild: 'Bild falsch' };
@@ -64,6 +65,8 @@ export function loesungVon(a) {
     case 'schaetzen': return `${zahlMitEinheit(a)} (richtig von ${gliedere(a.bereich[0])} bis ${gliedere(a.bereich[1])})`;
     case 'zeichnen': return a.diagramm.saeulen.filter((x) => x.offen).map((x) => `${x.name} bis ${x.wert}`).join(', ');
     case 'gitter': return gitterLoesung(a);
+    case 'bruch': return `${bruchLoesung(a)}${a.einheit ? ` ${a.einheit}` : ''}`;
+    case 'faerben': return faerbenLoesung(a);
     default: return '';
   }
 }

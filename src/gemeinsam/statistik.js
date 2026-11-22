@@ -4,6 +4,7 @@
 // klassen: [{ klasse, namen: { code: name }, staende: [{ code, stand }], backups: [stempel] }]
 
 import { pruefeGroesse } from '../schueler/groessen.js';
+import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseTeile } from '../schueler/bruch.js';
 
 const TAG = 86400000;
 const anteil = (a, b) => (b ? a / b : null);
@@ -61,6 +62,8 @@ export function falscheTeile(a, eingabe) {
   if (!a) return als(eingabe) ? [{ text: als(eingabe), erwartet: false }] : [];
   const zahl = (teil, wert, vor = '') => {
     const n = norm(wert);
+    // Kapitel 9: Dezimalzahl als Lösung („0,5“ und „0,50“ sind gleich viel).
+    if (typeof teil.loesung === 'string' && /,/.test(teil.loesung)) { const e = pruefeDezimal(teil, wert); return !n || n === '?' || e.richtig ? [] : [{ text: `${vor}${n}`, erwartet: !!e.fehlvorstellung }]; }
     if (!n || n === '?' || Number(n) === teil.loesung || n === String(teil.loesung) || (teil.toleranz && Math.abs(Number(n) - teil.loesung) <= teil.toleranz)) return [];
     return [{ text: `${vor}${n}`, erwartet: (teil.typischeFehler ?? []).some((f) => String(f.wert) === n) }];
   };
@@ -86,6 +89,9 @@ export function falscheTeile(a, eingabe) {
     case 'schaetzen': { const n = Number(norm(eingabe)); return !norm(eingabe) || (n >= a.bereich[0] && n <= a.bereich[1]) ? [] : [{ text: norm(eingabe), erwartet: (a.typischeFehler ?? []).some((f) => n >= f.von && n <= f.bis) }]; }
     // Kapitel 5: Gitterzeichnen. Die Eingabe ist schon ein lesbarer Text aus Punkten.
     case 'gitter': return eingabe ? [{ text: String(eingabe), erwartet: false }] : [];
+    // Kapitel 9: Brucheingabe und Teile färben.
+    case 'bruch': { const e = pruefeBruch(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung }]; }
+    case 'faerben': { const e = pruefeFaerben(a, eingabe); return eingabe == null || e.richtig ? [] : [{ text: `${leseTeile(eingabe).length} Teile gefärbt`, erwartet: !!e.fehlvorstellung }]; }
     case 'zuordnen': return a.paare.filter((p) => eingabe?.[p.links] && eingabe[p.links] !== p.rechts).map((p) => ({ text: `${p.links} → ${eingabe[p.links]}`, erwartet: false }));
     default: return [];
   }
