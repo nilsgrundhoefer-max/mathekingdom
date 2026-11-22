@@ -64,7 +64,7 @@ test('Lernzielmatrix und Statistik der Klasse', () => {
   L.verbuche(zwei, aufgaben(S2, 'G')[0], b({ geloest: false, fehlvorstellungen: ['sub-uebertrag-vergessen'] }), 'G', JETZT);
   const staende = [{ code: '5A-AAAA', stand: eins }, { code: '5A-BBBB', stand: zwei }];
   const lernziele = A.lernzieleMitAufgaben(pool, index);
-  assert.equal(lernziele.length, 108);
+  assert.equal(lernziele.length, 117);
   const spalte = lernziele.findIndex((l) => l.id === S2);
   const matrix = A.lernzielmatrix(staende, lernziele, {});
   assert.equal(matrix[0].zellen[spalte].status, 'siegel');

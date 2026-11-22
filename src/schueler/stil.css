@@ -638,6 +638,26 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom svg.groessenbild text { font-family: inherit; }
 #mathekingdom svg.kartenbild { min-width: 520px; }
 
+/* Kapitel 8: Flächeninhalt und Umfang (flaechenbilder.js, ADR 0035) */
+#mathekingdom svg.flaechenbild { display: block; width: 100%; min-width: 300px; height: auto; user-select: none; }
+#mathekingdom .flaechenbild .blatt { fill: #fffdf6; }
+#mathekingdom .flaechenbild .rasterlinie { stroke: #b9cbe0; stroke-width: 1; }
+#mathekingdom .flaechenbild .rasterlinie.auf { stroke: #8fa6c0; stroke-width: 0.8; }
+#mathekingdom .flaechenbild .flaechenfuell { stroke-width: 1; } /* Rand in der Füllfarbe: keine helle Naht zwischen zwei Rechtecken */
+#mathekingdom .flaechenbild .loch { fill: #ffffff; stroke: none; }
+#mathekingdom .flaechenbild .zerlegung { fill: none; stroke: var(--nacht); stroke-width: 2.4; stroke-dasharray: 7 5; }
+#mathekingdom .flaechenbild .kante { stroke: var(--nacht); stroke-width: 3; stroke-linecap: square; }
+#mathekingdom .flaechenbild .teilkreis { fill: #fffdf6; stroke: var(--nacht); stroke-width: 1.2; }
+#mathekingdom .flaechenbild .teilnummer { font-size: 14px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .flaechenbild .figurname { font-size: 16px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .flaechenbild .masszahl { font-size: 15px; fill: var(--tinte); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; font-variant-numeric: tabular-nums; }
+#mathekingdom .flaechenbild .masszahl.frage { font-weight: 700; fill: var(--siegel); }
+#mathekingdom .flaechenbild .legendenfeld { fill: #f6d7a7; stroke: var(--nacht); stroke-width: 1.2; }
+#mathekingdom .flaechenbild .bildtext { font-size: 14px; fill: var(--grau); }
+#mathekingdom .flaechenbild .skizzenhinweis { font-style: italic; }
+#mathekingdom .gitterbild .legendenfeld { fill: #fffdf6; stroke: var(--nacht); stroke-width: 1.2; }
+#mathekingdom .gitterbild .bildtext { font-size: 14px; fill: var(--grau); }
+
 /* Kapitel 7: Kreis und Winkel (winkelbilder.js, ADR 0034) */
 #mathekingdom svg.winkelbild { display: block; width: 100%; min-width: 300px; height: auto; user-select: none; }
 #mathekingdom .winkelbild .blatt { fill: #fffdf6; }
