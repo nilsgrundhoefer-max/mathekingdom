@@ -1,10 +1,10 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (2808 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (3000 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2808).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 3000).
 
 ## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
 
@@ -9987,6 +9987,645 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiebe die Stufen in Gedanken nac
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Weide hat diese Form. Sie bekommt einen Zaun. Es gibt ein Tor für den Traktor, 4 m breit, und ein Tor für Menschen, 1 m breit. Wie viel m Zaun braucht man? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 47 × 19, 26 × 33 (in m); Maße 47 m, 52 m, 26 m, 19 m)_ Lösung: **193 m**. Typische Fehler: 198 (sach-schritt-vergessen), 194 (sach-schritt-vergessen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Aus einem Rechteck, 12 cm lang und 10 cm breit, wird an einer langen Seite in der Mitte ein Stück herausgeschnitten: 8 cm breit und 7 cm tief. Um wie viel cm wird der Umfang länger? Lösung: **14 cm**. Typische Fehler: 56 (umfang-flaeche-verwechselt), 7 (sach-schritt-vergessen).
 
+## 5.9.1-B1: Ich kann Bruchteile an Bildern erkennen und mit Zähler und Nenner benennen.
+
+Grundlage, die F übt: An einem Kreis aus gleich großen Teilen zählen: Wie viele Teile gibt es, wie viele sind gefärbt?
+
+Baut auf: 5.4.1-K2 (Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Teile: Das ist der Nenner. Zähle die gefärbten Teile: Das ist der Zähler. *Beispiel:* Von 2 gleich großen Teilen ist 1 Teil gefärbt. Der Bruch heißt 1⁄2. *Lösungsschritt:* Schreibe die Zahl der gefärbten Teile über den Bruchstrich. Schreibe die Zahl aller Teile darunter.
+
+- `01` AFB I · _Kommunizieren_ · Der Kreis ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? _(Bild: Bruchbild: Kreis mit 3 Teilen, 2 gefärbt)_
+  - ☐ 2⁄4
+  - ☐ 1⁄3
+  - ☑ 2⁄3
+- `02` AFB I · _Kommunizieren_ · Das Rechteck ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? / Schreibe den Bruch. _(Bild: Bruchbild: Rechteck 1 × 3 mit 3 Teilen, 1 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **1⁄3**. Typische Fehler: 3⁄1 (bruch-vertauscht), 1⁄2 (bruch-teil-zu-rest).
+- `03` AFB I · _Kommunizieren_ · Der Kreis hat ▢ gleich große Teile. / ▢ Teile davon sind gefärbt. _(Bild: Bruchbild: Kreis mit 3 Teilen, 2 gefärbt)_ Lösung: a = **3**, b = **2**
+- `04` AFB I · _Kommunizieren_ · Im Bild sind 2⁄3 gefärbt. / Wie heißt die Zahl unter dem Bruchstrich? _(Bild: Bruchbild: Streifen mit 3 Teilen, 2 gefärbt)_
+  - ☐ Zähler
+  - ☑ Nenner
+  - ☐ Bruchstrich
+- `05` AFB II · _Kommunizieren_ · In welcher Figur ist 1⁄2 gefärbt? _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 3 Teilen, 1 gefärbt; C: Kreis mit 4 Teilen, 1 gefärbt)_
+  - ☑ Figur A
+  - ☐ Figur B
+  - ☐ Figur C
+- `06` AFB I · _Kommunizieren_ · Alle Kugeln zusammen sind das Ganze. / Welcher Bruchteil der Kugeln ist gefärbt? _(Bild: Bruchbild: Kugeln mit 4 Teilen, 2 gefärbt)_
+  - ☐ 3⁄4
+  - ☐ 1⁄4
+  - ☑ 2⁄4
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die gefärbten Teile müssen nicht nebeneinander liegen. Zähle sie einzeln. *Beispiel:* Von 6 gleich großen Teilen sind 5 Teile gefärbt. Der Bruch heißt 5⁄6. *Lösungsschritt:* Zähle alle Teile für den Nenner. Zähle die gefärbten Teile für den Zähler.
+
+- `01` AFB I · _Kommunizieren_ · Der Kreis ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? _(Bild: Bruchbild: Kreis mit 5 Teilen, 2 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **2⁄5**. Typische Fehler: 5⁄2 (bruch-vertauscht), 2⁄3 (bruch-teil-zu-rest).
+- `02` AFB I · _Kommunizieren_ · Der Streifen ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? _(Bild: Bruchbild: Streifen mit 8 Teilen, 6 gefärbt)_
+  - ☐ 7⁄8
+  - ☑ 6⁄8
+  - ☐ 2⁄8
+- `03` AFB II · _Kommunizieren_ · In welcher Figur ist 1⁄3 gefärbt? / Achte auf gleich große Teile. _(Bild: Bruchbild: A: Kreis mit 3 Teilen, 1 gefärbt; B: Kreis mit 4 Teilen, 1 gefärbt; C: Kreis mit 3 ungleich großen Teilen, 1 gefärbt)_
+  - ☐ Figur C
+  - ☐ Figur B
+  - ☑ Figur A
+- `04` AFB I · _Kommunizieren_ · Schau auf den Bruch 3⁄5. / Der Zähler ist ▢. / Der Nenner ist ▢. Lösung: a = **3**, b = **5**
+- `05` AFB II · _Kommunizieren_ · Der Kreis ist in gleich große Teile geteilt. / Welcher Bruchteil ist weiß? _(Bild: Bruchbild: Kreis mit 6 Teilen, 4 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **2⁄6**. Typische Fehler: 4⁄6 (sach-frage-verfehlt), 6⁄2 (bruch-vertauscht).
+- `06` AFB III · _Kommunizieren_ · In welchen Figuren ist 1⁄4 gefärbt? / Kreuze alle passenden Figuren an. _(Bild: Bruchbild: A: Kreis mit 4 Teilen, 1 gefärbt; B: Rechteck 1 × 5 mit 5 Teilen, 1 gefärbt; C: Kreis mit 4 ungleich großen Teilen, 1 gefärbt; D: Rechteck 2 × 2 mit 4 Teilen, 1 gefärbt)_
+  - ☑ Figur A
+  - ☐ Figur B
+  - ☑ Figur D
+  - ☐ Figur C
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Teile eines Ganzen: Das ist der Nenner. Zähle dann alle gefärbten Teile. *Lösungsschritt:* Schreibe die Zahl der gefärbten Teile über den Bruchstrich und die Zahl der Teile eines Ganzen darunter.
+
+- `01` AFB I · _Kommunizieren_ · Das Rechteck ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? _(Bild: Bruchbild: Rechteck 2 × 4 mit 8 Teilen, 4 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **4⁄8**. Typische Fehler: 8⁄4 (bruch-vertauscht), 4⁄4 (bruch-teil-zu-rest).
+- `02` AFB II · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? Schreibe als gemischte Zahl. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 4 Teilen, 6 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; jeder gleichwertige Bruch ist richtig)_ Lösung: **1 2⁄4**. Typische Fehler: 6⁄8 (bruch-ganzes-teil), 1 4⁄2 (bruch-vertauscht).
+- `03` AFB II · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Welcher Bruch gibt an, wie viel gefärbt ist? _(Bild: Bruchbild: 2 Ganze, je Kreis mit 4 Teilen, 6 gefärbt)_
+  - ☐ 2⁄4
+  - ☐ 4⁄6
+  - ☑ 6⁄4
+  - ☐ 6⁄8
+- `04` AFB I · _Kommunizieren_ · Welche gemischte Zahl ist genauso groß wie 5⁄3? / Das Bild hilft dir. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 3 Teilen, 5 gefärbt)_
+  - ☐ 1 2⁄5
+  - ☐ 2 1⁄3
+  - ☐ 1 1⁄3
+  - ☑ 1 2⁄3
+- `05` AFB II · _Kommunizieren_ · Im Bild siehst du 10 Kugeln. 4 Kugeln sind gefärbt. / Welcher Bruchteil der Kugeln ist nicht gefärbt? _(Bild: Bruchbild: Kugeln mit 10 Teilen, 4 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **6⁄10**. Typische Fehler: 4⁄10 (sach-frage-verfehlt), 6⁄4 (bruch-teil-zu-rest), 10⁄6 (bruch-vertauscht).
+- `06` AFB III · _Kommunizieren_ · Im Streifen sind schon 4 Teile gefärbt. Noah färbt noch 6 weitere Teile. / Welcher Bruchteil des Streifens ist dann gefärbt? _(Bild: Bruchbild: Streifen mit 12 Teilen, 4 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **10⁄12**. Typische Fehler: 6⁄12 (sach-schritt-vergessen), 10⁄2 (bruch-teil-zu-rest), 12⁄10 (bruch-vertauscht).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fasse gleich große Teile zu größeren Teilen zusammen, zum Beispiel immer eine ganze Spalte. Dann siehst du gleichwertige Brüche.
+
+- `01` AFB I · _Kommunizieren_ · Das Rechteck ist in gleich große Teile geteilt. / Welche Brüche geben den gefärbten Bruchteil an? Kreuze alle an. _(Bild: Bruchbild: Rechteck 4 × 4 mit 16 Teilen, 12 gefärbt)_
+  - ☑ 12⁄16
+  - ☑ 6⁄8
+  - ☐ 2⁄3
+  - ☑ 3⁄4
+  - ☐ 12⁄4
+- `02` AFB II · _Kommunizieren_ · In welchen Figuren ist 2⁄3 gefärbt? / Kreuze alle passenden Figuren an. _(Bild: Bruchbild: A: Rechteck 3 × 4 mit 12 Teilen, 8 gefärbt; B: Kreis mit 6 Teilen, 4 gefärbt; C: Kreis mit 8 Teilen, 6 gefärbt; D: Rechteck 2 × 3 mit 6 Teilen, 3 gefärbt)_
+  - ☐ Figur C
+  - ☐ Figur D
+  - ☑ Figur B
+  - ☑ Figur A
+- `03` AFB II · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? Schreibe als unechten Bruch. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 8 Teilen, 10 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **10⁄8**. Typische Fehler: 10⁄16 (bruch-ganzes-teil), 8⁄10 (bruch-vertauscht).
+- `04` AFB III · _Kommunizieren_ · Ein unechter Bruch ist größer als 1. / Welche Brüche sind unechte Brüche? Kreuze alle an.
+  - ☑ 10⁄6
+  - ☑ 15⁄12
+  - ☐ 7⁄8
+  - ☑ 12⁄9
+  - ☐ 18⁄20
+- `05` AFB II · _Kommunizieren_ · Immer zwei Teile untereinander gehören zusammen. / Ergänze: 4⁄6 = ▢ Drittel _(Bild: Bruchbild: Rechteck 2 × 3 mit 6 Teilen, 4 gefärbt)_ Lösung: a = **2**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Tom sagt: „1⁄3 und 2⁄6 sind gleichwertig.“ Stimmt das? Die Figuren helfen dir. _(Bild: Bruchbild: A: Streifen mit 3 Teilen, 1 gefärbt; B: Streifen mit 6 Teilen, 2 gefärbt)_
+  - ☐ Falsch. Es gilt 1⁄3 < 2⁄6.
+  - ☐ Falsch. Es gilt 1⁄3 > 2⁄6.
+  - ☑ Stimmt.
+
+## 5.9.1-B2: Ich kann Bruchteile darstellen und einen Bruchteil zum Ganzen ergänzen.
+
+Grundlage, die F übt: In einem Streifen aus gleich großen Teilen so viele Teile färben, wie der Zähler sagt
+
+Baut auf: 5.9.1-B1 (Ich kann Bruchteile an Bildern erkennen und mit Zähler und Nenner benennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner sagt: So viele Teile hat das Ganze. Der Zähler sagt: So viele Teile färbst du. *Beispiel:* Für 1⁄2 färbst du 1 von 2 Teilen. *Lösungsschritt:* Lies den Zähler. Färbe genau so viele Teile.
+
+- `01` AFB I · _Kommunizieren_ · Färbe 1⁄3 des Streifens. _(Teile färben: Streifen mit 3 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **1 Teile gefärbt**. Typische Fehler: 2 (bruch-teil-zu-rest).
+- `02` AFB I · _Kommunizieren_ · Färbe 3⁄4 des Kreises. _(Teile färben: Kreis mit 4 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **3 Teile gefärbt**. Typische Fehler: 1 (bruch-teil-zu-rest).
+- `03` AFB I · _Kommunizieren_ · Färbe 2⁄4 des Rechtecks. _(Teile färben: Rechteck 1 × 4 mit 4 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **2 Teile gefärbt**.
+- `04` AFB I · _Kommunizieren_ · Im Kreis ist 1⁄4 gefärbt. / Welcher Bruchteil fehlt bis zum Ganzen? _(Bild: Bruchbild: Kreis mit 4 Teilen, 1 gefärbt)_
+  - ☐ 2⁄4
+  - ☑ 3⁄4
+  - ☐ 1⁄4
+- `05` AFB II · _Kommunizieren_ · Alle Kugeln zusammen sind das Ganze. / Färbe 1⁄2 der Kugeln. _(Teile färben: Kugeln mit 4 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **2 Teile gefärbt**. Typische Fehler: 1 (bruch-ganzes-teil).
+- `06` AFB I · _Kommunizieren_ · Im Streifen sind 2 Viertel gefärbt. / Bis zum Ganzen fehlen noch ▢ Viertel. _(Bild: Bruchbild: Streifen mit 4 Teilen, 2 gefärbt)_ Lösung: a = **2**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner nennt alle Teile. Der Zähler sagt, wie viele Teile du färbst. *Beispiel:* Für 5⁄6 färbst du 5 von 6 Teilen. *Lösungsschritt:* Welche Teile du färbst, ist egal. Nur die Anzahl muss stimmen.
+
+- `01` AFB I · _Kommunizieren_ · Färbe 4⁄6 des Kreises. _(Teile färben: Kreis mit 6 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **4 Teile gefärbt**. Typische Fehler: 2 (bruch-teil-zu-rest).
+- `02` AFB I · _Kommunizieren_ · Färbe 6⁄10 des Streifens. _(Teile färben: Streifen mit 10 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **6 Teile gefärbt**. Typische Fehler: 4 (bruch-teil-zu-rest).
+- `03` AFB II · _Kommunizieren_ · Im Streifen sind 2⁄6 gefärbt. / Welcher Bruchteil fehlt bis zum Ganzen? _(Bild: Bruchbild: Streifen mit 6 Teilen, 2 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **4⁄6**. Typische Fehler: 2⁄6 (sach-frage-verfehlt), 6⁄4 (bruch-vertauscht).
+- `04` AFB I · _Kommunizieren_ · Färbe 6⁄10 des Rechtecks. _(Teile färben: Rechteck 2 × 5 mit 10 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **6 Teile gefärbt**. Typische Fehler: 4 (bruch-teil-zu-rest).
+- `05` AFB II · _Kommunizieren_ · Es sollen 4⁄10 des Streifens gefärbt sein. / Wie viele Teile musst du noch färben? _(Bild: Bruchbild: Streifen mit 10 Teilen, 2 gefärbt)_ Lösung: **2 Teile**. Typische Fehler: 4 (sach-schritt-vergessen), 8 (bruch-teil-zu-rest), 6 (sach-frage-verfehlt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Im Streifen sind 5⁄8 gefärbt. / Tom sagt: „Bis zum Ganzen fehlen noch 5⁄8.“ / Stimmt das? _(Bild: Bruchbild: Streifen mit 8 Teilen, 5 gefärbt)_
+  - ☑ Falsch. / Es gilt 5⁄8 + 3⁄8 = 1.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 5⁄8 + 2⁄8 = 1.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile die Figur zuerst in so viele gleich große Gruppen, wie der Nenner sagt. *Lösungsschritt:* Zähle die Teile einer Gruppe. Nimm so viele Gruppen, wie der Zähler sagt.
+
+- `01` AFB I · _Kommunizieren_ · Das Rechteck hat 12 gleich große Teile. / Färbe 3⁄4 des Rechtecks. _(Teile färben: Rechteck 3 × 4 mit 12 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **9 Teile gefärbt**. Typische Fehler: 3 (bruchteil-zaehler-vergessen).
+- `02` AFB II · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Färbe 4⁄3. _(Teile färben: 2 Ganze, je Kreis mit 3 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **4 Teile gefärbt**. Typische Fehler: 1 (bruch-ganzes-teil).
+- `03` AFB II · _Kommunizieren_ · Zeichne in dein Heft ein Rechteck: 6 Kästchen lang und 4 Kästchen breit. / Färbe 5⁄6 des Rechtecks. / Wie viele Kästchen hast du gefärbt? Lösung: **20 Kästchen**. Typische Fehler: 4 (bruchteil-zaehler-vergessen), 24 (sach-schritt-vergessen).
+- `04` AFB I · _Kommunizieren_ · Zeichne in dein Heft einen Streifen aus 10 Kästchen. / Färbe 3⁄5 des Streifens. / Wie viele Kästchen hast du gefärbt? Lösung: **6 Kästchen**. Typische Fehler: 2 (bruchteil-zaehler-vergessen), 3 (bruch-ganzes-teil), 4 (bruch-teil-zu-rest).
+- `05` AFB II · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Gefärbt sind 1 1⁄3. / Welcher Bruchteil fehlt noch bis 2? _(Bild: Bruchbild: 2 Ganze, je Kreis mit 3 Teilen, 4 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **2⁄3**. Typische Fehler: 1⁄3 (sach-frage-verfehlt), 5⁄3 (bruch-ganzes-teil).
+- `06` AFB III · _Kommunizieren_ · Der gefärbte Teil eines Streifens ist 6 Kästchen lang. Das sind 3⁄5 des Streifens. / Wie viele Kästchen lang ist der ganze Streifen? Zeichne ihn zur Kontrolle in dein Heft. Lösung: **10 Kästchen**. Typische Fehler: 2 (sach-schritt-vergessen), 30 (bruchteil-zaehler-vergessen), 4 (sach-frage-verfehlt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile das Rechteck zuerst in so viele gleich große Gruppen, wie der Nenner sagt. Wie viele Kästchen hat eine Gruppe?
+
+- `01` AFB I · _Kommunizieren_ · Färbe 7⁄9 des Rechtecks. _(Teile färben: Rechteck 3 × 6 mit 18 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **14 Teile gefärbt**. Typische Fehler: 2 (bruchteil-zaehler-vergessen), 7 (bruch-ganzes-teil).
+- `02` AFB II · _Kommunizieren_ · Zeichne in dein Heft ein Rechteck: 5 Kästchen lang und 4 Kästchen breit. / Färbe 1⁄2 des Rechtecks rot und 1⁄5 blau. Kein Kästchen bekommt zwei Farben. / Wie viele Kästchen bleiben weiß? Lösung: **6 Kästchen**. Typische Fehler: 14 (sach-frage-verfehlt), 10 (sach-schritt-vergessen), 16 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · Der Kreis hat 12 gleich große Teile. / Färbe 1⁄6 des Kreises. _(Teile färben: Kreis mit 12 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **2 Teile gefärbt**. Typische Fehler: 1 (bruch-ganzes-teil).
+- `04` AFB III · _Kommunizieren_ · Zeichne in dein Heft zwei Streifen aus je 12 Kästchen. / Färbe im ersten Streifen 2⁄3 und im zweiten Streifen 3⁄4. / Wie viele Kästchen sind in dem einen Streifen mehr gefärbt als in dem anderen? Lösung: **1 Kästchen**. Typische Fehler: 9 (sach-schritt-vergessen), 8 (sach-schritt-vergessen), 17 (sub-addiert).
+- `05` AFB II · _Kommunizieren_ · Jedes Rechteck ist ein Ganzes. / Färbe 4⁄3. _(Teile färben: 2 Ganze, je Rechteck 2 × 3 mit 6 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **8 Teile gefärbt**. Typische Fehler: 4 (bruch-ganzes-teil), 2 (bruch-ganzes-teil).
+- `06` AFB III · _Kommunizieren_ · In einem Streifen aus Kästchen sind 3⁄10 gefärbt. 21 Kästchen sind weiß. / Aus wie vielen Kästchen besteht der ganze Streifen? Lösung: **30 Kästchen**. Typische Fehler: 9 (sach-frage-verfehlt), 3 (sach-schritt-vergessen), 70 (bruch-ganzes-teil).
+
+## 5.9.1-B3: Ich kann Brüche vergleichen und ordnen.
+
+Grundlage, die F übt: Zwei Bruchbilder mit gleich vielen Teilen vergleichen: Wo ist mehr gefärbt?
+
+Baut auf: 5.9.1-B2 (Ich kann Bruchteile darstellen und einen Bruchteil zum Ganzen ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr. *Beispiel:* Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile. *Lösungsschritt:* Der Nenner ist gleich. Vergleiche nur die Zähler.
+
+- `01` AFB I · _Argumentieren (+ Kommunizieren)_ · Figur A zeigt 1⁄4. / Figur B zeigt 3⁄4. / Welches Zeichen passt? / 1⁄4 ▢ 3⁄4 _(Bild: Bruchbild: A: Streifen mit 4 Teilen, 1 gefärbt; B: Streifen mit 4 Teilen, 3 gefärbt)_
+  - ☐ =
+  - ☑ <
+  - ☐ >
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · In welcher Figur ist am meisten gefärbt? _(Bild: Bruchbild: A: Kreis mit 4 Teilen, 2 gefärbt; B: Kreis mit 4 Teilen, 1 gefärbt; C: Kreis mit 4 Teilen, 3 gefärbt)_
+  - ☐ Figur B
+  - ☑ Figur C
+  - ☐ Figur A
+- `03` AFB I · _Probleme lösen (+ Argumentieren)_ · Die Streifen zeigen drei Brüche. / Welcher Bruch ist am größten? _(Bild: Bruchbild: A: Streifen mit 4 Teilen, 4 gefärbt; B: Streifen mit 4 Teilen, 3 gefärbt; C: Streifen mit 4 Teilen, 2 gefärbt)_
+  - ☐ 3⁄4
+  - ☐ 2⁄4
+  - ☑ 4⁄4
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Die Streifen zeigen die Brüche. / Ordne die Brüche. / Beginne mit dem kleinsten. _(Bild: Bruchbild: A: Streifen mit 4 Teilen, 3 gefärbt; B: Streifen mit 4 Teilen, 4 gefärbt; C: Streifen mit 4 Teilen, 1 gefärbt; D: Streifen mit 4 Teilen, 2 gefärbt)_ _(Ordnen; die Karten liegen so da: 1⁄4, 4⁄4, 2⁄4, 3⁄4)_ Lösung: **1⁄4, 2⁄4, 3⁄4, 4⁄4**
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Lina sagt: „1⁄3 ist größer als 2⁄3.“ / Stimmt das? / Schau auf die Figuren. _(Bild: Bruchbild: A: Kreis mit 3 Teilen, 1 gefärbt; B: Kreis mit 3 Teilen, 2 gefärbt)_
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 1⁄3 = 2⁄3.
+  - ☑ Falsch. / Es gilt 1⁄3 < 2⁄3.
+- `06` AFB I · _Probleme lösen (+ Argumentieren)_ · Die Streifen zeigen drei Brüche. / Welcher Bruch ist am kleinsten? _(Bild: Bruchbild: A: Streifen mit 4 Teilen, 3 gefärbt; B: Streifen mit 4 Teilen, 1 gefärbt; C: Streifen mit 4 Teilen, 2 gefärbt)_
+  - ☐ 3⁄4
+  - ☐ 2⁄4
+  - ☑ 1⁄4
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner ist gleich: Die Teile sind gleich groß. Vergleiche die Zähler. *Beispiel:* Es gilt 3⁄8 < 5⁄8. Denn 3 Teile sind weniger als 5 Teile. *Lösungsschritt:* Mehr Teile von gleicher Größe sind mehr.
+
+- `01` AFB I · _Argumentieren_ · Welches Zeichen passt? / 6⁄8 ▢ 2⁄8
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `02` AFB I · _Argumentieren_ · Ordne die Brüche. / Beginne mit dem kleinsten. _(Ordnen; die Karten liegen so da: 4⁄10, 6⁄10, 3⁄10, 2⁄10)_ Lösung: **2⁄10, 3⁄10, 4⁄10, 6⁄10**
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Figur A zeigt 1⁄6. / Figur B zeigt 1⁄2. / Welches Zeichen passt? / 1⁄6 ▢ 1⁄2 _(Bild: Bruchbild: A: Kreis mit 6 Teilen, 1 gefärbt; B: Kreis mit 2 Teilen, 1 gefärbt)_
+  - ☐ =
+  - ☐ >
+  - ☑ <
+- `04` AFB I · _Probleme lösen (+ Argumentieren)_ · Die Streifen zeigen drei Stammbrüche. / Welcher Bruch ist am größten? _(Bild: Bruchbild: A: Streifen mit 4 Teilen, 1 gefärbt; B: Streifen mit 3 Teilen, 1 gefärbt; C: Streifen mit 5 Teilen, 1 gefärbt)_
+  - ☐ 1⁄4
+  - ☐ 1⁄5
+  - ☑ 1⁄3
+- `05` AFB II · _Argumentieren_ · Ordne die Stammbrüche. / Beginne mit dem kleinsten. _(Ordnen; die Karten liegen so da: 1⁄3, 1⁄4, 1⁄10, 1⁄6)_ Lösung: **1⁄10, 1⁄6, 1⁄4, 1⁄3**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „1⁄5 ist größer als 1⁄8.“ / Stimmt das? _(Bild: Bruchbild: A: Kreis mit 5 Teilen, 1 gefärbt; B: Kreis mit 8 Teilen, 1 gefärbt)_
+  - ☐ Falsch. / Es gilt 1⁄5 = 1⁄8.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es gilt 1⁄5 < 1⁄8.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zähler sind gleich: Es sind gleich viele Teile. Bei welchem Bruch sind die Teile größer? *Lösungsschritt:* Der Bruch mit dem kleineren Nenner hat die größeren Teile. Er ist größer.
+
+- `01` AFB I · _Argumentieren_ · Welches Zeichen passt? / 5⁄10 ▢ 5⁄8
+  - ☐ >
+  - ☑ <
+  - ☐ =
+- `02` AFB II · _Argumentieren_ · Welche Brüche sind größer als 1⁄2? / Kreuze alle an.
+  - ☐ 1⁄6
+  - ☐ 3⁄9
+  - ☐ 1⁄5
+  - ☑ 8⁄12
+  - ☑ 5⁄8
+- `03` AFB II · _Argumentieren_ · Markiere 1 2⁄3 am Zahlenstrahl. _(Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄3; antippen)_ Lösung: **5⁄3**. Typische Fehler: 2⁄3 (bruch-ganzes-teil), 1⁄3 (bruch-teil-zu-rest).
+- `04` AFB I · _Argumentieren_ · Welche Brüche sind größer als 1? / Kreuze alle an.
+  - ☑ 11⁄8
+  - ☑ 7⁄4
+  - ☑ 6⁄3
+  - ☐ 4⁄6
+- `05` AFB II · _Argumentieren_ · Auf welche Zahl zeigt der Pfeil? / Schreibe die Zahl als Bruch. _(Bild: Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄6, Pfeil auf 5⁄6)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **5⁄6**. Typische Fehler: 5⁄1 (bruch-teil-zu-rest), 6⁄5 (bruch-vertauscht).
+- `06` AFB III · _Argumentieren_ · Ordne die Zahlen. / Beginne mit der kleinsten. _(Ordnen; die Karten liegen so da: 1 1⁄2, 1 1⁄4, 1 1⁄8, 1 3⁄4, 3⁄8)_ Lösung: **3⁄8, 1 1⁄8, 1 1⁄4, 1 1⁄2, 1 3⁄4**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beiden Brüchen fehlt genau ein Teil bis zum Ganzen. Bei welchem Bruch ist das fehlende Teil kleiner?
+
+- `01` AFB I · _Argumentieren_ · Welches Zeichen passt? / 9⁄10 ▢ 19⁄20
+  - ☐ >
+  - ☐ =
+  - ☑ <
+- `02` AFB II · _Probleme lösen (+ Argumentieren)_ · Jedem Bruch fehlt ein Teil bis zum Ganzen. / Welcher Bruch ist am kleinsten?
+  - ☑ 2⁄3
+  - ☐ 19⁄20
+  - ☐ 11⁄12
+  - ☐ 5⁄6
+  - ☐ 9⁄10
+- `03` AFB II · _Argumentieren_ · Ordne die Brüche. / Beginne mit dem kleinsten. _(Ordnen; die Karten liegen so da: 5⁄6, 2⁄3, 3⁄4, 11⁄12)_ Lösung: **2⁄3, 3⁄4, 5⁄6, 11⁄12**
+- `04` AFB III · _Argumentieren_ · Mia ordnet drei Brüche: 2⁄9 < 2⁄10 < 2⁄15. Stimmt die Reihenfolge?
+  - ☑ Falsch. Richtig ist 2⁄15 < 2⁄10 < 2⁄9.
+  - ☐ Falsch. Richtig ist 2⁄10 < 2⁄15 < 2⁄9.
+  - ☐ Stimmt.
+- `05` AFB II · _Argumentieren_ · Welche Aussagen stimmen? / Kreuze alle an.
+  - ☐ 4⁄5 > 5⁄6
+  - ☐ 1⁄8 < 1⁄10
+  - ☑ 7⁄10 > 1⁄2
+  - ☐ 7⁄6 < 1
+  - ☑ 5⁄10 = 1⁄2
+- `06` AFB III · _Probleme lösen (+ Argumentieren)_ · Welche Brüche liegen zwischen 1⁄2 und 1? / Kreuze alle an.
+  - ☑ 7⁄10
+  - ☑ 2⁄3
+  - ☑ 5⁄8
+  - ☐ 7⁄6
+  - ☐ 5⁄4
+
+## 5.9.2-T1: Ich kann den Bruchteil einer Größe berechnen.
+
+Grundlage, die F übt: Eine Größe gerecht in gleich große Teile teilen: Wie groß ist ein Teil?
+
+Baut auf: 5.9.1-B1 (Ich kann Bruchteile an Bildern erkennen und mit Zähler und Nenner benennen.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner sagt: In so viele gleich große Teile wird geteilt. *Beispiel:* 1⁄2 von 8 kg: 8 kg : 2 = 4 kg. *Lösungsschritt:* Teile die Größe durch den Nenner.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Bäuerin hat 36 kg Mehl. / Die Bäuerin gibt 1⁄4 davon der Köchin. / Wie viel kg sind das? _(Bild: Bruchbild: Streifen mit 4 Teilen, 1 gefärbt)_ Lösung: **9 kg**. Typische Fehler: 32 (div-falsche-rechenart), 36 (bruch-ganzes-teil).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Lina hat 18 €. / 1⁄3 davon gibt Lina auf dem Markt aus. / Wie viel Euro sind das? _(Bild: Bruchbild: Streifen mit 3 Teilen, 1 gefärbt)_ Lösung: **6 €**. Typische Fehler: 15 (div-falsche-rechenart), 12 (sach-frage-verfehlt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Teile gerecht. / 1⁄3 von 27 m = ▢ m _(Bild: Bruchbild: Streifen mit 3 Teilen, 1 gefärbt)_ Lösung: a = **9**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Du suchst 1⁄4 von 20 €. / Welche Rechnung passt? _(Bild: Bruchbild: Streifen mit 4 Teilen, 1 gefärbt)_
+  - ☐ 20 € − 4 €
+  - ☑ 20 € : 4
+  - ☐ 20 € · 4
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Schnur ist 36 m lang. / Lina schneidet 1⁄4 davon ab. / Wie viele Meter bleiben übrig? _(Bild: Bruchbild: Streifen mit 4 Teilen, 1 gefärbt)_ Lösung: **27 m**. Typische Fehler: 9 (sach-schritt-vergessen), 32 (div-falsche-rechenart).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Film dauert 120 min. / Wie viele Minuten sind 1⁄4 davon? _(Bild: Bruchbild: Streifen mit 4 Teilen, 1 gefärbt)_ Lösung: **30 min**. Typische Fehler: 116 (div-falsche-rechenart), 40 (bruch-als-komma).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal. *Beispiel:* 3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg. *Lösungsschritt:* Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Tuch ist 50 m lang. / Wie viel sind 7⁄10 davon? _(Bild: Bruchbild: Streifen mit 10 Teilen, 7 gefärbt)_ Lösung: **35 m**. Typische Fehler: 5 (bruchteil-zaehler-vergessen), 15 (sach-frage-verfehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne 3⁄4 von 8 m in zwei Schritten. / Ein Teil: 8 m : 4 = ▢ m / 3 Teile: 3⁄4 von 8 m = ▢ m _(Bild: Bruchbild: Streifen mit 4 Teilen, 3 gefärbt)_ Lösung: a = **2**, b = **6**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Weg zur Burg ist 400 m lang. / Lina ist schon 3⁄8 des Weges gegangen. / Wie viele Meter fehlen noch? _(Bild: Bruchbild: Streifen mit 8 Teilen, 3 gefärbt)_ Lösung: **250 m**. Typische Fehler: 150 (sach-schritt-vergessen), 50 (bruchteil-zaehler-vergessen), 350 (bruchteil-zaehler-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Stunde hat 60 min. / Wie viele Minuten sind 2⁄5 davon? Lösung: **24 min**. Typische Fehler: 12 (bruchteil-zaehler-vergessen), 25 (bruch-als-komma), 36 (sach-frage-verfehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mara hat 50 € gespart. / 3⁄10 davon gibt Mara für ein Geschenk aus. / Wie viel Euro hat Mara noch? Lösung: **35 €**. Typische Fehler: 15 (sach-schritt-vergessen), 45 (bruchteil-zaehler-vergessen), 5 (bruchteil-zaehler-vergessen).
+- `06` AFB III · _Argumentieren_ · Mia rechnet: 3⁄5 von 15 kg = 3 kg / Stimmt das?
+  - ☑ Falsch. / Es gilt 3⁄5 von 15 kg = 9 kg.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 3⁄5 von 15 kg = 10 kg.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst um: 1 km = 1000 m. Dann kannst du teilen. *Lösungsschritt:* Teile durch den Nenner und nimm das Ergebnis mit dem Zähler mal.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wie viele Meter sind 3⁄4 km? Lösung: **750 m**. Typische Fehler: 250 (bruchteil-zaehler-vergessen), 75 (umrechnungszahl), 340 (bruch-als-komma).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele Minuten sind 4⁄5 h? Lösung: **48 min**. Typische Fehler: 12 (bruchteil-zaehler-vergessen), 80 (umrechnungszahl), 45 (bruch-als-komma).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele Gramm sind 2 3⁄4 kg? Lösung: **2750 g**. Typische Fehler: 750 (bruch-ganzes-teil), 2250 (bruchteil-zaehler-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Größen sind gleich? / Ordne zu. Lösung: 3⁄4 kg → 750 g, 5⁄8 kg → 625 g, 1⁄10 kg → 100 g, 3⁄5 kg → 600 g
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Wanderung dauert 3 h. Nach 3⁄5 der Zeit macht die Gruppe Rast. Nach wie vielen Minuten ist das? Lösung: **108 min**. Typische Fehler: 36 (bruchteil-zaehler-vergessen), 72 (sach-frage-verfehlt).
+- `06` AFB III · _Probleme lösen_ · Welche Angabe ist am kleinsten?
+  - ☐ 9⁄10 h
+  - ☐ 51 min
+  - ☑ 3⁄5 h
+  - ☐ 38 min
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle 2 km zuerst in Meter um. Berechne dann den Bruchteil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wie viele Meter sind 3⁄4 von 2 km? Lösung: **1500 m**. Typische Fehler: 750 (sach-schritt-vergessen), 500 (bruchteil-zaehler-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 4⁄5 von 60 kg ▢ 3⁄4 von 48 kg
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Brett ist 4 m lang. 3⁄4 davon werden abgesägt. Wie viele Zentimeter bleiben übrig? Lösung: **100 cm**. Typische Fehler: 300 (sach-schritt-vergessen), 25 (sach-schritt-vergessen).
+- `04` AFB III · _Argumentieren_ · Finn sagt: „1⁄4 h sind 14 min.“ Stimmt das?
+  - ☑ Falsch. Es gilt 1⁄4 h = 15 min.
+  - ☐ Stimmt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der kleinsten. _(Ordnen; die Karten liegen so da: 150 m, 9⁄10 km, 7⁄10 km, 950 m, 1⁄5 km)_ Lösung: **150 m, 1⁄5 km, 7⁄10 km, 9⁄10 km, 950 m**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Die Burgmauer ist 180 m lang. 2⁄3 davon sind fertig gebaut. Vom fertigen Stück ist 1⁄2 schon verputzt. Wie viele Meter sind verputzt? Lösung: **60 m**. Typische Fehler: 120 (sach-schritt-vergessen), 90 (sach-schritt-vergessen).
+
+## 5.9.2-T2: Ich kann das Ganze oder den Anteil bestimmen und Sachaufgaben mit Bruchteilen lösen.
+
+Grundlage, die F übt: Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?
+
+Baut auf: 5.9.2-T1 (Ich kann den Bruchteil einer Größe berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner sagt: In so viele gleich große Gruppen wird geteilt. *Beispiel:* 1⁄2 von 8 Kindern: 8 : 2 = 4. Es sind 4 Kinder. *Lösungsschritt:* Teile die Anzahl durch den Nenner.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Auf der Burg leben 12 Ritter. / 1⁄2 der Ritter reitet zum Turnier. / Wie viele Ritter sind das? _(Bild: Bruchbild: Streifen mit 2 Teilen, 1 gefärbt)_ Lösung: **6 Ritter**. Typische Fehler: 10 (div-falsche-rechenart).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Ein Buch kostet 6 €. / Tom hat schon 1⁄3 davon gespart. / Wie viel Euro sind das? _(Bild: Bruchbild: Streifen mit 3 Teilen, 1 gefärbt)_ Lösung: **2 €**. Typische Fehler: 3 (div-falsche-rechenart), 4 (sach-frage-verfehlt).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Im Korb liegen 12 Birnen. / 1⁄3 davon ist gelb. / Rechnung: 12 : 3 = ▢ / Es sind ▢ gelbe Birnen. _(Bild: Bruchbild: Kugeln mit 12 Teilen, 0 gefärbt)_ Lösung: a = **4**, b = **4**
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · 15 Kinder spielen im Hof. / 1⁄3 von ihnen spielt Fangen. / Welche Rechnung passt? _(Bild: Bruchbild: Streifen mit 3 Teilen, 1 gefärbt)_
+  - ☐ 15 − 3
+  - ☐ 15 · 3
+  - ☑ 15 : 3
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · 1⁄2 des Streifens ist gefärbt. / Dieses Teil ist 3 m lang. / Wie lang ist der ganze Streifen? _(Bild: Bruchbild: Streifen mit 2 Teilen, 1 gefärbt)_ Lösung: **6 m**. Typische Fehler: 3 (bruch-ganzes-teil), 5 (sach-falsche-rechnung).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Das Fest dauert 60 min. / 1⁄2 der Zeit wird getanzt. / Wie viele Minuten sind das? _(Bild: Bruchbild: Streifen mit 2 Teilen, 1 gefärbt)_ Lösung: **30 min**. Typische Fehler: 58 (div-falsche-rechenart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal. *Beispiel:* 3⁄4 von 8 Kindern: 8 : 4 = 2 und 2 · 3 = 6. *Lösungsschritt:* Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · In der Klasse sind 30 Kinder. / 5⁄6 der Kinder haben ein Haustier. / Wie viele Kinder sind das? _(Bild: Bruchbild: Streifen mit 6 Teilen, 5 gefärbt)_ Lösung: **25 Kinder**. Typische Fehler: 5 (bruchteil-zaehler-vergessen).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Im Stall der Burg stehen 36 Tiere. / 5⁄6 davon sind Pferde. _(Bild: Bruchbild: Streifen mit 6 Teilen, 5 gefärbt)_
+  - a) Wie viele Tiere sind 1⁄6 davon? **6 Tiere**. Typische Fehler: 30 (div-falsche-rechenart).
+  - b) Wie viele Pferde sind es? **30 Pferde**. Typische Fehler: 6 (bruchteil-zaehler-vergessen).
+- `03` AFB II · _Modellieren (+ Kommunizieren)_ · Ein Buch hat 36 Seiten. / Lina hat schon 2⁄3 davon gelesen. / Wie viele Seiten fehlen noch? _(Bild: Bruchbild: Streifen mit 3 Teilen, 2 gefärbt)_ Lösung: **12 Seiten**. Typische Fehler: 24 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · 5⁄8 von 32 Kindern fahren mit dem Rad. / Welche Rechnung passt?
+  - ☐ 32 : 8
+  - ☑ 32 : 8 · 5
+  - ☐ 32 − 8 · 5
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · 1⁄8 der Mauer ist 50 m lang. / Wie lang ist die ganze Mauer? _(Bild: Bruchbild: Streifen mit 8 Teilen, 1 gefärbt)_ Lösung: **400 m**. Typische Fehler: 50 (bruch-ganzes-teil), 58 (sach-falsche-rechnung).
+- `06` AFB III · _Modellieren_ · Mia und Jonas haben je 40 €. / Mia gibt 3⁄4 davon aus. / Jonas gibt 3⁄5 davon aus. / Wie viel Euro gibt Mia mehr aus als Jonas? Lösung: **6 €**. Typische Fehler: 30 (sach-schritt-vergessen), 24 (sach-schritt-vergessen), 54 (sub-addiert).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Bruchteil besteht aus mehreren gleich großen Teilen. Rechne zuerst einen Teil aus: Teile durch den Zähler. *Lösungsschritt:* Das Ganze hat so viele Teile, wie der Nenner sagt. Nimm einen Teil mal den Nenner.
+
+- `01` AFB I · _Modellieren_ · 5⁄8 eines Weges sind 1500 m lang. Wie lang ist der ganze Weg? Lösung: **2400 m**. Typische Fehler: 300 (sach-schritt-vergessen), 12000 (bruchteil-zaehler-vergessen).
+- `02` AFB II · _Modellieren_ · Ein Sack Mehl wiegt 2 kg. 9⁄10 davon werden verbacken. Wie viel Gramm bleiben übrig? Lösung: **200 g**. Typische Fehler: 1800 (sach-schritt-vergessen), 20 (umrechnungszahl).
+- `03` AFB II · _Modellieren_ · Ali hat schon 2⁄5 des Preises gespart, das sind 10 €. Wie viel kostet das Fahrrad? Lösung: **25 €**. Typische Fehler: 5 (sach-schritt-vergessen), 15 (sach-frage-verfehlt), 50 (bruchteil-zaehler-vergessen).
+- `04` AFB I · _Modellieren_ · Auf dem Hof leben 60 Tiere. 1⁄4 davon sind Kühe, 3⁄5 sind Schafe.
+  - a) Wie viele Kühe sind es? **15 Kühe**. Typische Fehler: 56 (div-falsche-rechenart).
+  - b) Wie viele Schafe sind es? **36 Schafe**. Typische Fehler: 12 (bruchteil-zaehler-vergessen).
+- `05` AFB II · _Modellieren_ · Auf dem Hof leben 12 Tiere. 1⁄4 davon sind Kühe, 1⁄3 sind Schafe. Der Rest sind Hühner. Wie viele Hühner sind es? Lösung: **5 Hühner**. Typische Fehler: 7 (sach-frage-verfehlt), 9 (sach-schritt-vergessen), 8 (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Paul hat schon 3⁄8 eines Buches gelesen, das sind 90 Seiten. Wie viele Seiten muss Paul noch lesen? Lösung: **150 Seiten**. Typische Fehler: 240 (sach-frage-verfehlt), 30 (sach-schritt-vergessen), 90 (bruch-ganzes-teil).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Stunde hat 60 min. Wie oft passt die Zeit in eine Stunde, oder in wie viele gleich große Teile kannst du die Stunde teilen?
+
+- `01` AFB I · _Modellieren_ · Welcher Bruchteil einer Stunde sind 15 min? _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **1⁄4**. Typische Fehler: 15⁄100 (umrechnungszahl), 4⁄1 (bruch-vertauscht).
+- `02` AFB II · _Modellieren_ · Von 12 Kindern kommen 8 mit dem Bus. Welcher Bruchteil ist das? _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **8⁄12**. Typische Fehler: 8⁄4 (bruch-teil-zu-rest), 12⁄8 (bruch-vertauscht), 4⁄12 (sach-frage-verfehlt).
+- `03` AFB II · _Modellieren_ · 5⁄8 der Ladung sind 500 kg. Wie schwer ist die ganze Ladung? Lösung: **800 kg**. Typische Fehler: 100 (sach-schritt-vergessen), 300 (sach-frage-verfehlt), 4000 (bruchteil-zaehler-vergessen).
+- `04` AFB III · _Modellieren_ · Ein Brett ist 2 m lang. Emre sägt 50 cm ab. Welcher Bruchteil ist das? _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **1⁄4**. Typische Fehler: 50⁄100 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren_ · Eine Wanderung ist 24 km lang. Vor der Rast schafft die Gruppe 1⁄4 der Strecke, nach der Rast noch einmal 1⁄6 der Strecke. Wie viele Kilometer fehlen dann noch? Lösung: **14 km**. Typische Fehler: 10 (sach-frage-verfehlt), 18 (sach-schritt-vergessen), 20 (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Ida gibt 3⁄8 des Taschengelds aus. Danach sind noch 25 € übrig. Wie viel Taschengeld hatte Ida am Anfang? Lösung: **40 €**. Typische Fehler: 15 (sach-frage-verfehlt), 5 (sach-schritt-vergessen).
+
+## 5.9.3-K1: Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Brüche mit dem Nenner 10, 100 oder 1000 als Dezimalzahl schreiben.
+
+Grundlage, die F übt: Einen Streifen aus zehn Teilen lesen: Ein Teil ist ein Zehntel, geschrieben 0,1
+
+Baut auf: 5.9.1-B1 (Ich kann Bruchteile an Bildern erkennen und mit Zähler und Nenner benennen.), 5.2.2-B1 (Ich kann große Zahlen lesen und in Ziffern schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die erste Stelle nach dem Komma zählt die Zehntel. *Beispiel:* 3⁄10 = 0,3. Das sind 0 Einer und 3 Zehntel. *Lösungsschritt:* Schreibe zuerst die Einer, dann das Komma, dann die Zehntel.
+
+- `01` AFB I · _Kommunizieren_ · Der Streifen hat 10 gleich große Teile. / Welche Dezimalzahl passt zum gefärbten Teil? _(Bild: Bruchbild: Streifen mit 10 Teilen, 4 gefärbt)_
+  - ☐ 0,6
+  - ☑ 0,4
+  - ☐ 4,0
+- `02` AFB I · _Kommunizieren_ · Trage 9,3 in die Stellenwerttafel ein. / E heißt Einer, z heißt Zehntel.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | E | z |
+  |---|---|
+  | **9** | **3** |
+
+- `03` AFB I · _Kommunizieren_ · Schreibe als Dezimalzahl. / 3⁄10 = ▢ _(Bild: Bruchbild: Streifen mit 10 Teilen, 3 gefärbt)_ Lösung: a = **0,3**
+- `04` AFB I · _Kommunizieren_ · Welche Dezimalzahl steht in der Stellenwerttafel? / E heißt Einer, z heißt Zehntel. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z: 1 7)_ Lösung: **1,7**. Typische Fehler: 7,1 (dezimal-stelle), 17 (dezimal-stelle).
+- `05` AFB II · _Kommunizieren_ · Im Streifen sind 0,3 gefärbt. / Schreibe 0,3 als Bruch. _(Bild: Bruchbild: Streifen mit 10 Teilen, 3 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **3⁄10**. Typische Fehler: 10⁄3 (bruch-vertauscht), 3⁄100 (dezimal-stelle), 3⁄7 (bruch-teil-zu-rest).
+- `06` AFB I · _Kommunizieren_ · Was gehört zusammen? / Ordne zu. _(Tabelle: Bruch | Dezimalzahl / 1⁄10 | 0,1 / 10⁄10 | 1)_ Lösung: 3 Zehntel → 0,3, 9⁄10 → 0,9, 6⁄10 → 0,6
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Feld ist ein Hundertstel. Eine volle Spalte hat 10 Felder: Das ist ein Zehntel. *Beispiel:* 7 Felder sind 7⁄100 = 0,07. *Lösungsschritt:* Zähle die vollen Spalten für die Zehntel. Zähle die einzelnen Felder für die Hundertstel.
+
+- `01` AFB I · _Kommunizieren_ · Das Quadrat hat 100 gleich große Felder. / Welche Dezimalzahl passt zum gefärbten Teil? _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 8 gefärbt)_
+  - ☐ 0,8
+  - ☐ 8,0
+  - ☑ 0,08
+- `02` AFB I · _Kommunizieren_ · Trage 6,08 in die Stellenwerttafel ein. / Die Spalte h zählt die Hundertstel.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | E | z | h |
+  |---|---|---|
+  | **6** | **0** | **8** |
+
+- `03` AFB II · _Kommunizieren_ · Schreibe als Dezimalzahl. / 32⁄100 = ▢ _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 32 gefärbt)_ Lösung: a = **0,32**
+- `04` AFB I · _Kommunizieren_ · Schreibe 0,68 als Bruch mit dem Nenner 100. _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **68⁄100**. Typische Fehler: 68⁄10 (dezimal-stelle), 100⁄68 (bruch-vertauscht).
+- `05` AFB II · _Kommunizieren_ · Schau auf die Zahl 8,49. / Welche Ziffer steht an der Stelle der Hundertstel? Lösung: **9**. Typische Fehler: 4 (dezimal-stelle), 8 (dezimal-stelle).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „0,2 und 0,20 sind gleich viel.“ / Stimmt das? / Die Stellenwerttafel hilft dir. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 0 2 · / 0 2 0)_
+  - ☐ Falsch. / Es gilt 0,2 < 0,20.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es gilt 0,2 > 0,20.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Stellen nach dem Komma heißen der Reihe nach Zehntel, Hundertstel, Tausendstel. *Lösungsschritt:* Tausendstel brauchen drei Stellen nach dem Komma. Fülle leere Stellen mit 0 auf.
+
+- `01` AFB I · _Kommunizieren_ · Schreibe als Dezimalzahl. / 919⁄1000 = ▢ Lösung: a = **0,919**
+- `02` AFB II · _Kommunizieren_ · Trage die beiden Zahlen in die Stellenwerttafel ein: oben 3,077, unten 0,909.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | E | z | h | t |
+  |---|---|---|---|
+  | **3** | **0** | **7** | **7** |
+  | **0** | **9** | **0** | **9** |
+
+- `03` AFB II · _Kommunizieren_ · Schreibe 0,713 als Bruch mit dem Nenner 1000. _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **713⁄1000**. Typische Fehler: 713⁄100 (dezimal-stelle), 1000⁄713 (bruch-vertauscht).
+- `04` AFB I · _Kommunizieren_ · Schreibe als Dezimalzahl: 6 Einer und 5 Tausendstel. Lösung: **6,005**. Typische Fehler: 6,5 (null-platzhalter).
+- `05` AFB II · _Kommunizieren_ · Im Hunderterfeld sind 2⁄5 gefärbt. / Schreibe 2⁄5 als Dezimalzahl. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 40 gefärbt)_ Lösung: **0,4**. Typische Fehler: 0,5 (bruch-als-komma), 2,5 (bruch-als-komma), 0,25 (bruch-als-komma).
+- `06` AFB III · _Kommunizieren_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 0,80 = 0,8
+  - ☑ 0,5 = 5⁄10
+  - ☑ 1⁄2 = 0,5
+  - ☑ 4⁄1000 = 0,004
+  - ☐ 31⁄100 = 0,031
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zuerst das Komma: Links davon stehen die Einer. Jede Stelle bekommt eine Ziffer, auch wenn sie 0 ist.
+
+- `01` AFB I · _Kommunizieren_ · Trage 24,005 in die Stellenwerttafel ein.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | Z | E | z | h | t |
+  |---|---|---|---|---|
+  | **2** | **4** | **0** | **0** | **5** |
+
+- `02` AFB II · _Kommunizieren_ · Schreibe als Dezimalzahl: 9 Einer, 7 Hundertstel und 2 Tausendstel. Lösung: **9,072**. Typische Fehler: 9,72 (null-platzhalter), 97,2 (dezimal-stelle).
+- `03` AFB II · _Kommunizieren_ · Schreibe 1,07 als gemischte Zahl. _(Brucheingabe mit Feld für die Ganzen; jeder gleichwertige Bruch ist richtig)_ Lösung: **1 7⁄100**. Typische Fehler: 1 7⁄10 (dezimal-stelle), 107⁄1000 (dezimal-stelle).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre schreibt: 9⁄1000 = 0,009. Stimmt das?
+  - ☑ Stimmt.
+  - ☐ Falsch. Es gilt 9⁄1000 = 0,0009.
+  - ☐ Falsch. Es gilt 9⁄1000 = 0,09.
+- `05` AFB II · _Kommunizieren_ · Vier Gleichungen stimmen, eine ist falsch. Welche Gleichung ist falsch?
+  - ☐ 9⁄10 = 0,9
+  - ☐ 7⁄100 = 0,07
+  - ☐ 7,50 = 7 1⁄2
+  - ☑ 463⁄1000 = 4,63
+  - ☐ 58⁄100 = 0,58
+- `06` AFB III · _Kommunizieren_ · Gesucht ist eine Dezimalzahl mit drei Nachkommastellen. Sie hat 2 Zehntel und 9 Tausendstel, aber keine Hundertstel. Die Ziffer der Einer ist doppelt so groß wie die Ziffer der Zehntel. Wie heißt die Zahl? Lösung: **4,209**. Typische Fehler: 4,29 (null-platzhalter), 2,409 (dezimal-stelle), 4,029 (dezimal-stelle).
+
+## 5.9.3-K2: Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.
+
+Grundlage, die F übt: Am Zahlenstrahl von 0 bis 1 die Zehntel abzählen
+
+Baut auf: 5.9.3-K1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Brüche mit dem Nenner 10, 100 oder 1000 als Dezimalzahl schreiben.), 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Von 0 bis 1 gibt es 10 gleiche Schritte. Jeder Schritt ist ein Zehntel. *Beispiel:* Der dritte Teilstrich nach der 0 ist 0,3. *Lösungsschritt:* Zähle die Teilstriche ab der letzten beschrifteten Zahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0 bis 2, Teilstriche alle 0,1, Pfeil auf 0,6; Zahl eintragen)_ Lösung: **0,6**. Typische Fehler: 0,6 (dezimal-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 0,8 am Zahlenstrahl. _(Zahlenstrahl 0 bis 1, Teilstriche alle 0,1; antippen)_ Lösung: **0,8**.
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Beide Zahlen sind am Zahlenstrahl markiert. / Welches Zeichen passt? / 0,9 ▢ 0,2 _(Bild: Zahlenstrahl 0 bis 1, Teilstriche alle 0,1, Punkte bei 0,9, 0,2)_
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Dezimalzahlen. / Beginne mit der kleinsten. / Der Zahlenstrahl hilft dir. _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 0,1)_ _(Ordnen; die Karten liegen so da: 0,2, 1,8, 1,9, 0,6)_ Lösung: **0,2, 0,6, 1,8, 1,9**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 2,1 am Zahlenstrahl. _(Zahlenstrahl 0 bis 3, Teilstriche alle 0,1; antippen)_ Lösung: **2,1**. Typische Fehler: 0,1 (stellenwert), 1,2 (dezimal-stelle).
+- `06` AFB I · _Probleme lösen_ · Welche Zahl ist am größten? / Der Zahlenstrahl hilft dir. _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 0,1)_
+  - ☐ 1,4
+  - ☑ 1,7
+  - ☐ 1,5
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei Zehnteln liegen 10 kleine Schritte. Jeder Schritt ist ein Hundertstel. *Beispiel:* Der dritte Teilstrich nach 0,2 ist 0,23. *Lösungsschritt:* Lies zuerst die beschriftete Zahl davor. Zähle dann die Hundertstel dazu.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0,8 bis 1, Teilstriche alle 0,01, Ausschnitt, Pfeil auf 0,93; Zahl eintragen)_ Lösung: **0,93**. Typische Fehler: 9,3 (dezimal-stelle), 9,03 (dezimal-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 0,14 am Zahlenstrahl. _(Zahlenstrahl 0 bis 0,2, Teilstriche alle 0,01; antippen)_ Lösung: **0,14**.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 0,67 ▢ 0,76
+  - ☐ >
+  - ☑ <
+  - ☐ =
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Dezimalzahlen. / Beginne mit der kleinsten. _(Ordnen; die Karten liegen so da: 0,55, 0,01, 0,41, 0,35)_ Lösung: **0,01, 0,35, 0,41, 0,55**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Stellenwerttafel zeigt beide Zahlen. / Welches Zeichen passt? / 3,10 ▢ 3,1 _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 3 1 0 / 3 1 ·)_
+  - ☐ >
+  - ☐ <
+  - ☑ =
+- `06` AFB III · _Probleme lösen_ · Welche Zahlen liegen zwischen 0,2 und 0,3? / Kreuze alle an.
+  - ☑ 0,26
+  - ☐ 0,17
+  - ☑ 0,27
+  - ☐ 0,62
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche Stelle für Stelle von links. Die Zahl mit mehr Ziffern ist nicht automatisch größer. *Lösungsschritt:* Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma, zum Beispiel 0,5 = 0,50. Dann vergleiche.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 0,13 ▢ 0,5
+  - ☐ =
+  - ☐ >
+  - ☑ <
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0,48 bis 0,5, Teilstriche alle 0,001, Ausschnitt, Pfeil auf 0,495; Zahl eintragen)_ Lösung: **0,495**. Typische Fehler: 4,95 (dezimal-stelle), 4,905 (dezimal-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Dezimalzahlen. / Beginne mit der kleinsten. _(Ordnen; die Karten liegen so da: 0,196, 0,26, 0,206, 0,2, 0,25)_ Lösung: **0,196, 0,2, 0,206, 0,25, 0,26**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 0,95 am Zahlenstrahl. _(Zahlenstrahl 0 bis 1, Teilstriche alle 0,05; antippen)_ Lösung: **0,95**. Typische Fehler: 1 (dezimal-stelle).
+- `05` AFB II · _Probleme lösen_ · Welche Zahl ist am kleinsten?
+  - ☐ 0,306
+  - ☐ 0,4
+  - ☑ 0,265
+  - ☐ 0,3
+- `06` AFB III · _Probleme lösen_ · Welche Zahlen liegen zwischen 0,2 und 0,3? / Kreuze alle an.
+  - ☑ 0,29
+  - ☑ 0,291
+  - ☐ 0,197
+  - ☐ 0,021
+  - ☐ 0,35
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen mit gleich vielen Nachkommastellen, indem du Endnullen anhängst. Vergleiche dann Stelle für Stelle.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Dezimalzahlen. / Beginne mit der größten. _(Ordnen; die Karten liegen so da: 0,47, 0,4705, 0,74, 0,407, 0,0475)_ Lösung: **0,74, 0,4705, 0,47, 0,407, 0,0475**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Auf welche Zahl zeigt der Pfeil? _(Zahlenstrahl 0,9 bis 1, Teilstriche alle 0,005, Ausschnitt, Pfeil auf 0,97; Zahl eintragen)_ Lösung: **0,97**. Typische Fehler: 1,04 (dezimal-stelle), 0,914 (dezimal-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 0,23 am Zahlenstrahl. _(Zahlenstrahl 0,2 bis 0,4, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **0,23**. Typische Fehler: 0,27 (dezimal-stelle).
+- `04` AFB III · _Argumentieren_ · Paul sagt: „0,257 ist größer als 0,5, denn 257 ist größer als 5.“ Stimmt das?
+  - ☐ Falsch. Es gilt 0,257 = 0,5.
+  - ☐ Stimmt.
+  - ☑ Falsch. Es gilt 0,257 < 0,5.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt genau in der Mitte zwischen 0,63 und 0,64? Lösung: **0,635**. Typische Fehler: 0,0635 (dezimal-stelle), 0,631 (dezimal-stelle), 1,27 (sach-schritt-vergessen).
+- `06` AFB III · _Probleme lösen_ · Welche Dezimalzahlen liegen zwischen 1⁄2 und 3⁄4? / Kreuze alle an.
+  - ☑ 0,74
+  - ☐ 0,076
+  - ☑ 0,705
+  - ☐ 0,34
+  - ☐ 0,12
+
+## 5.9.3-K3: Ich kann Größen in Kommaschreibweise in eine andere Einheit umwandeln.
+
+Grundlage, die F übt: Geld mit Komma lesen: 2,50 € sind 2 € und 50 ct
+
+Baut auf: 5.9.3-K1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Brüche mit dem Nenner 10, 100 oder 1000 als Dezimalzahl schreiben.), 5.6.2-B1 (Ich kann Geldbeträge in Euro und Cent schreiben und umwandeln.), 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 cm sind 10 mm. Die Stelle nach dem Komma zählt die Millimeter. *Beispiel:* 1,5 cm = 15 mm. Das sind 1 cm und 5 mm. *Lösungsschritt:* Vor dem Komma stehen die Zentimeter. Nach dem Komma stehen die Millimeter.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 5,6 cm = ▢ mm _(Tabelle: Merke |  / 1 cm | 10 mm)_ Lösung: a = **56**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Euro und Cent. / 8,05 € = ▢ € ▢ ct _(Tabelle: Merke |  / 1 € | 100 ct)_ Lösung: a = **8**, b = **5**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle in Cent um. / 1,10 € = ▢ ct _(Tabelle: Merke |  / 1 € | 100 ct)_ Lösung: a = **110**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma. / 6 cm 4 mm = ▢ cm _(Tabelle: Merke |  / 1 cm | 10 mm)_ Lösung: a = **6,4**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 7,9 cm ▢ 79 mm _(Tabelle: Merke |  / 1 cm | 10 mm)_
+  - ☐ <
+  - ☑ =
+  - ☐ >
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Was gehört zusammen? / Ordne zu. _(Tabelle: Merke |  / 1 € | 100 ct)_ Lösung: 0,84 € → 84 ct, 4,08 € → 4 € 8 ct, 4,80 € → 4 € 80 ct
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 m sind 100 cm. Nach dem Komma stehen zwei Stellen für die Zentimeter. *Beispiel:* 1,25 m = 125 cm. Das sind 1 m und 25 cm. *Lösungsschritt:* Trage die Größe in die Einheitentafel ein. Lies sie dann ohne Komma in der kleineren Einheit.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / Die Einheitentafel hilft dir. / 6,90 m = ▢ cm _(Bild: Einheitentafel m | cm, Spalten Z E Z E: · 6 9 0)_ Lösung: a = **690**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / Die Einheitentafel hilft dir. / 9,85 kg = ▢ g _(Bild: Einheitentafel kg | g, Spalten Z E H Z E: · 9 8 5 0)_ Lösung: a = **9850**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 607 cm = ▢ m Lösung: a = **6,07**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 2,09 m = ▢ m ▢ cm Lösung: a = **2**, b = **9**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Brett ist 3,10 m lang. / Elif sägt 50 cm ab. / Wie viele Zentimeter bleiben übrig? Lösung: **260 cm**. Typische Fehler: 310 (sach-schritt-vergessen), 360 (sub-addiert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Finn sagt: „1,9 m sind 1 m 9 cm.“ / Stimmt das? / Die Einheitentafel hilft dir. _(Bild: Einheitentafel m | cm, Spalten Z E Z E: · 1 9 0)_
+  - ☐ Falsch. / Es gilt 1,9 m = 19 cm.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es gilt 1,9 m = 1 m 90 cm.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege zuerst die Umrechnungszahl: 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g. *Lösungsschritt:* Bei 100 gehören zwei Stellen nach dem Komma zur kleineren Einheit, bei 1000 sind es drei. Fülle leere Stellen mit 0 auf.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 7,08 m = ▢ cm Lösung: a = **708**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 450 g = ▢ kg Lösung: a = **0,45**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 9,7 km = ▢ m / 850 m = ▢ km Lösung: a = **9700**, b = **0,85**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Größen sind gleich? / Ordne zu. Lösung: 3 kg → 3000 g, 0,03 kg → 30 g, 0,003 kg → 3 g, 0,3 kg → 300 g
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Müller lädt drei Säcke. Sie wiegen 3,5 kg, 750 g und 0,25 kg. Wie viel Gramm wiegen sie zusammen? Lösung: **4500 g**. Typische Fehler: 3750 (sach-schritt-vergessen), 1125 (umrechnungszahl).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ordne die Längen. / Beginne mit der kleinsten. _(Ordnen; die Karten liegen so da: 71 cm, 0,606 m, 0,6 m, 6,6 m, 66 cm)_ Lösung: **0,6 m, 0,606 m, 66 cm, 71 cm, 6,6 m**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleichen kannst du erst in derselben Einheit. Wandle die Größe mit Komma in die kleinere Einheit um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 0,125 km ▢ 140 m
+  - ☑ <
+  - ☐ >
+  - ☐ =
+- `02` AFB II · _Argumentieren_ · Jonas sagt: „3,5 h sind 3 h 5 min.“ Stimmt das?
+  - ☐ Falsch. Es gilt 3,5 h = 3 h 50 min.
+  - ☑ Falsch. Es gilt 3,5 h = 3 h 30 min.
+  - ☐ Stimmt.
+- `03` AFB II · _Probleme lösen_ · Welche Länge ist am kleinsten?
+  - ☑ 350 mm
+  - ☐ 3 m 75 cm 5 mm
+  - ☐ 3,05 m
+  - ☐ 35,5 cm
+  - ☐ 3,5 m
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Vier Umwandlungen stimmen, eine ist falsch. Welche Umwandlung ist falsch?
+  - ☐ 0,41 m = 41 cm
+  - ☑ 2,5 kg = 2005 g
+  - ☐ 4,6 km = 4600 m
+  - ☐ 0,06 € = 6 ct
+  - ☐ 9,05 m = 905 cm
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Paul legt drei Bretter aneinander: 1,1 m, 85 cm und 0,8 m. Wie viele Zentimeter sind sie zusammen lang? Lösung: **275 cm**. Typische Fehler: 190 (sach-schritt-vergessen), 104 (komma-falsch-gelesen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben ist 1,55 m groß. Der Bruder ist 4 cm größer. Wie groß ist der Bruder? Gib die Größe in Metern an. Lösung: **1,59 m**. Typische Fehler: 1,95 (komma-falsch-gelesen), 5,55 (masszahlen-addiert), 159 (umrechnungsrichtung).
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -10135,9 +10774,16 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `innere-linie-im-umfang` | Zählt bei zusammengesetzten Figuren Linien im Inneren zum Umfang. | Der Umfang ist nur der äußere Rand. Die Linien, mit denen du zerlegt hast, gehören nicht dazu. | Du zählst beim Umfang jetzt nur den äußeren Rand. |
 | `teilflaeche-doppelt` | Zählt beim Zerlegen eine Teilfläche doppelt oder lässt eine weg. | Färbe oder nummeriere jede Teilfläche. Jede wird genau einmal gezählt. | Du zählst jede Teilfläche jetzt genau einmal. |
 | `loch-nicht-abgezogen` | Zieht bei einer Figur mit Loch das Loch nicht vom Flächeninhalt ab. | Rechne zuerst die ganze Fläche aus. Ziehe dann das Loch ab. | Du ziehst das Loch jetzt vom Flächeninhalt ab. |
+| `bruch-vertauscht` | Vertauscht Zähler und Nenner. | Der Nenner steht unten und nennt alle Teile. Der Zähler steht oben und zählt die gemeinten Teile. | Du schreibst den Zähler jetzt oben und den Nenner unten. |
+| `bruch-teil-zu-rest` | Vergleicht die gefärbten Teile mit den ungefärbten statt mit allen Teilen (3 von 8 gefärbt als drei Fünftel). | Zähle für den Nenner alle Teile des Ganzen, die gefärbten und die weißen. | Du zählst beim Nenner jetzt alle Teile des Ganzen. |
+| `bruch-ungleiche-teile` | Zählt ungleich große Teile als Bruchteil. | Ein Bruch braucht gleich große Teile. Schau genau hin: Sind alle Teile gleich groß? | Du achtest jetzt auf gleich große Teile. |
+| `bruch-nenner-groesse` | Hält den Bruch mit dem größeren Nenner für größer (ein Achtel größer als ein Viertel). | Bei mehr Teilen wird jedes Teil kleiner. Stell dir eine Pizza für 4 und eine für 8 Kinder vor. | Du weißt jetzt: Ein größerer Nenner macht die Teile kleiner. |
+| `bruchteil-zaehler-vergessen` | Teilt beim Bruchteil einer Größe nur durch den Nenner und nimmt nicht mit dem Zähler mal. | Du hast erst einen Teil. Wie viele Teile sind gemeint? Nimm mit dem Zähler mal. | Du nimmst nach dem Teilen jetzt noch mit dem Zähler mal. |
+| `bruch-ganzes-teil` | Verwechselt das Ganze mit dem Teil oder rechnet in die falsche Richtung. | Was ist gegeben: das Ganze oder ein Teil davon? Das Ganze ist größer als sein Teil. | Du hältst das Ganze und den Teil jetzt auseinander. |
+| `dezimal-wie-natuerlich` | Liest die Nachkommastellen wie eine natürliche Zahl (0,15 größer als 0,5, weil 15 größer als 5 ist). | Vergleiche Stelle für Stelle: zuerst die Zehntel, dann die Hundertstel. | Du vergleichst Dezimalzahlen jetzt Stelle für Stelle. |
+| `dezimal-stelle` | Verwechselt die Stellen nach dem Komma (0,5 als fünf Hundertstel, 0,05 als fünf Zehntel). | Die erste Stelle nach dem Komma sind die Zehntel, die zweite die Hundertstel. | Du hältst Zehntel und Hundertstel jetzt auseinander. |
+| `dezimal-endnull` | Meint, eine Null am Ende ändere den Wert der Dezimalzahl (0,50 größer als 0,5). | 0,5 und 0,50 sind gleich viel: 5 Zehntel sind 50 Hundertstel. | Du weißt jetzt: Eine Null am Ende ändert die Dezimalzahl nicht. |
+| `bruch-als-komma` | Schreibt Zähler und Nenner einfach mit Komma hintereinander (ein Viertel als 0,4 oder 1,4). | Wie viele Zehntel oder Hundertstel sind es? Erst dann kannst du die Dezimalzahl schreiben. | Du schreibst einen Bruch jetzt über Zehntel oder Hundertstel als Dezimalzahl. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.9.1-L1 Ich kann die Bruchschreibweise verwenden. Baut auf: 5.4.1-K2 (Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.)
-- 5.9.2-L1 Ich kann mit Bruchteilen von Größen umgehen. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
-- 5.9.3-L1 Ich kann die Dezimalschreibweise verwenden. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.2.2-B1 (Ich kann große Zahlen lesen und in Ziffern schreiben.)

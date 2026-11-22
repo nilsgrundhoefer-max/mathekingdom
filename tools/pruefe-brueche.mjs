@@ -237,6 +237,26 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       const namen = a.bild.figuren.map((f) => f.n ?? '');
       if (a.bild.figuren.length > 1 && (namen.some((n) => !/^[A-D]$/.test(n)) || new Set(namen).size !== namen.length)) M('Bruchbild: Mehrere Figuren brauchen die Namen A, B, C');
       if (stufe === 0 && a.bild.figuren.some((f) => f.ganze)) M('Bruchbild: mehrere Ganze erst ab M');
+      // Jede Figur muss zur Aufgabe passen: Ihr gefärbter Bruchteil steht im Aufgabentext (ohne Bruch im Text: in den Antworten oder der Lösung).
+      // Liest der Nachweis das Bild selbst ab oder wählt das Kind unter den Figuren, ist das Bild die Angabe und wird dort geprüft.
+      const amBild = nachweis.some((n) => ['bild', 'figurwahl', 'figurextrem'].includes(n?.art));
+      if (!amBild) {
+        const werteIn = (liste) => liste.flatMap(atome).filter((v) => v.w && v.art === 'zahl' && (v.w.n !== 1 || /\u2044/.test(v.roh))).map((v) => ({ w: v.w, roh: v.roh }));
+        const imText = werteIn([a.text]);
+        const quellen = imText.length ? imText : werteIn([...texte.slice(1), typeof a.loesung === 'string' ? a.loesung : '']);
+        const frei = quellen.map((q) => q.w);
+        for (const f of a.bild.figuren) {
+          const k = f.gefaerbt?.length ?? 0, n = jeGanzes(f);
+          if (f.ungleich) continue;
+          if (!k) { if (f.form !== 'menge') M(`Bruchbild: Figur ${f.n ?? ''} ist ganz weiß`); continue; }
+          // Jede Figur braucht ihre eigene Angabe: Zwei Figuren mit demselben Bruchteil brauchen ihn zweimal.
+          const i = frei.findIndex((w) => qVgl(w, Q(k, n)) === 0);
+          // Oder die Aufgabe nennt beide Anzahlen als Zahlen („4 Teile sind gefärbt“, Nenner der Lösung).
+          const ganzeZahlen = (x) => (String(x).match(/\d+/g) ?? []).map(Number);
+          if (i < 0 && ganzeZahlen(a.text).includes(k) && [...ganzeZahlen(a.text), ...ganzeZahlen(typeof a.loesung === 'string' ? a.loesung : '')].includes(n)) continue;
+          if (i < 0) M(`Bruchbild: Figur ${f.n ?? ''} zeigt ${k} von ${n} Teilen, das kommt in der Aufgabe nicht vor`); else if (a.bild.figuren.length > 1) frei.splice(i, 1);
+        }
+      }
     }
   } else if (a.bild?.art === 'tafel') {
     for (const x of tafelMaengel(a.bild.spalten, a.bild.komma)) M(x);

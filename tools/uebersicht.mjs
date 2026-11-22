@@ -16,6 +16,12 @@ const flach = (t) => String(t).replace(/\n/g, ' / ');
 const fehler = (liste) => (liste?.length ? ` Typische Fehler: ${liste.map((f) => `${f.wert} (${f.fehlvorstellung})`).join(', ')}.` : '');
 const zahl = (a) => `**${a.loesung}${a.einheit ? ' ' + a.einheit : ''}**${a.toleranz ? ` (bis ${a.toleranz} ${a.einheit ?? ''} daneben gilt als richtig)` : ''}.${fehler(a.typischeFehler)}`;
 
+// Kapitel 9 (ADR 0036): ein Bruchbild und ein Bruchstrahl in Worten.
+const FORMWORT = { kreis: 'Kreis', rechteck: 'Rechteck', streifen: 'Streifen', menge: 'Kugeln', hundert: 'Hunderterfeld' };
+const figurText = (f, leer = false) => { const je = f.form === 'rechteck' ? f.reihen * f.spalten : f.form === 'hundert' ? 100 : f.teile;
+  return `${f.n ? `${f.n}: ` : ''}${f.ganze > 1 ? `${f.ganze} Ganze, je ` : ''}${FORMWORT[f.form]}${f.form === 'rechteck' ? ` ${f.reihen} × ${f.spalten}` : ''} mit ${je} ${f.ungleich ? 'ungleich großen ' : ''}Teilen${leer ? '' : `, ${(f.gefaerbt ?? []).length} gefärbt`}`; };
+const amStrahl = (st, w) => { const T = st.teiler ?? 1; if (T === 1 || typeof w !== 'number') return w; if (!/^10*$/.test(String(T))) return w % T === 0 ? String(w / T) : `${w}⁄${T}`;
+  const nach = String(w % T).padStart(String(T).length - 1, '0').replace(/0+$/, ''); return `${Math.floor(w / T)}${nach ? `,${nach}` : ''}`; };
 // Bild zur Aufgabe in Worten, damit die Durchsicht auch ohne Dashboard sieht, was gezeichnet wird.
 const wert = (w) => (typeof w === 'object' ? (w.frage ? '?' : w.wert) : w);
 // Kapitel 5 (ADR 0032): ein Karogitter in Worten.
@@ -44,7 +50,8 @@ const bild = (b) => {
     strichliste: () => `Strichliste${b.titel ? ` „${b.titel}“` : ''}: ${b.zeilen.map((x) => `${x.name} ${x.anzahl}${x.striche ? ` (gezeichnet als ${x.striche})` : ''}`).join(', ')}`,
     saeulen: () => `${b.liegend ? 'Balkendiagramm' : 'Säulendiagramm'} ${b.ohne?.includes('titel') ? 'ohne Titel' : `„${b.titel}“`}${b.ohne?.includes('einheit') ? ', ohne Einheit' : ''}; Achse ${b.ab ?? 0} bis ${b.max}, Linien alle ${b.fein ?? b.schritt}, beschriftet alle ${b.schritt}; ${b.saeulen.map((x) => `${x.name} ${wert(x.wert)}`).join(', ')}`,
     bilddiagramm: () => `Bilddiagramm „${b.titel}“, ein Bild (${b.symbol}) = ${b.je} ${b.einheit}; ${b.zeilen.map((x) => `${x.name} ${wert(x.wert)}`).join(', ')}`,
-    tafel: () => `Stellenwerttafel${b.basis === 2 ? ' im Zweiersystem' : ''}${b.plaettchen ? ' mit Plättchen' : ''}, Spalten ${b.spalten.join(' ')}: ${[b.werte, ...(b.weitere ?? [])].map((z) => z.map((w) => (w == null ? '·' : typeof w === 'object' ? '?' : w)).join(' ')).join(' / ')}`,
+    bruch: () => `Bruchbild: ${b.figuren.map((f) => figurText(f)).join('; ')}`,
+    tafel: () => `Stellenwerttafel${b.basis === 2 ? ' im Zweiersystem' : ''}${b.plaettchen ? ' mit Plättchen' : ''}${b.komma != null ? ` mit Komma nach ${b.spalten[b.komma]}` : ''}, Spalten ${b.spalten.join(' ')}: ${[b.werte, ...(b.weitere ?? [])].map((z) => z.map((w) => (w == null ? '·' : typeof w === 'object' ? '?' : w)).join(' ')).join(' / ')}`,
     schaetzbild: () => `Schätzbild mit ${b.felder.flat().reduce((x, y) => x + y, 0)} Symbolen (${b.symbol}) in ${b.felder.length} mal ${b.felder[0].length} Feldern, Raster ${{ fest: 'sichtbar', wahl: 'zum Einschalten', ohne: 'keines' }[b.raster]}${b.markiert ? `, ein Feld markiert${b.gezaehlt ? ' und ausgezählt' : ''}` : ''}; je Feld ${b.felder.map((z) => z.join(' ')).join(' / ')}`,
     zeichentafel: () => `Zeichentafel ${b.zeichen.join(', ')} mit Werten`,
     gitter: () => gitterText(b),
@@ -70,7 +77,7 @@ const bild = (b) => {
       const masse = (b.masse ?? []).map((x) => (x.frage ? '?' : x.text ?? `${Math.abs(x.q[0] - x.p[0]) + Math.abs(x.q[1] - x.p[1])} ${e}`));
       return `${b.skizze ? 'Skizze, nicht maßstäblich' : `${{ kaestchen: 'Kästchenraster', cm: 'Zentimeterraster, 1 Feld = 1 cm²', m: 'Raster, 1 Feld = 1 m²' }[b.raster] ?? 'Raster'}${b.legende ? `, 1 Kästchen = ${b.legende}` : ''}`}; ${b.figuren.map(figur).join('; ')}${b.skizze ? ` (in ${e})` : ''}${masse.length ? `; Maße ${masse.join(', ')}` : ''}`;
     },
-    zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.schritt ? `, Teilstriche alle ${b.schritt}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${wert(b.pfeil)}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
+    zahlenstrahl: () => `Zahlenstrahl ${amStrahl(b, b.von)} bis ${amStrahl(b, b.bis)}${b.schritt ? `, Teilstriche alle ${amStrahl(b, b.schritt)}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${amStrahl(b, wert(b.pfeil))}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.map((x) => amStrahl(b, x)).join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
 };
@@ -84,8 +91,12 @@ const loesung = (a) => {
 
   if (a.format === 'zahlenstrahl') {
     const st = a.strahl;
+    if (st.teiler) return `_(Zahlenstrahl ${amStrahl(st, st.von)} bis ${amStrahl(st, st.bis)}, Teilstriche alle ${amStrahl(st, st.schritt)}${st.ausschnitt ? ', Ausschnitt' : ''}${st.pfeil != null ? `, Pfeil auf ${amStrahl(st, st.pfeil)}` : ''}; ${a.eingabe === 'markieren' ? 'antippen' : 'Zahl eintragen'})_ Lösung: **${amStrahl(st, a.loesung)}**.${a.typischeFehler?.length ? ` Typische Fehler: ${a.typischeFehler.map((f) => `${amStrahl(st, f.wert)} (${f.fehlvorstellung})`).join(', ')}.` : ''}`;
     return `_(Zahlenstrahl ${st.von} bis ${st.bis}, Teilstriche alle ${st.schritt}${st.spruenge ? `, Sprung ${st.spruenge.map((x) => `von ${x.von}: ${x.text}`).join('; ')}` : ''}; ${a.eingabe === 'markieren' ? 'antippen' : 'Zahl eintragen'})_ Lösung: ${zahl(a)}`;
   }
+  // Kapitel 9 (ADR 0036): Brucheingabe und „Teile färben“.
+  if (a.format === 'bruch') return `_(Brucheingabe${a.gemischt ? ' mit Feld für die Ganzen' : ''}; ${a.genau ? 'nur genau dieser Bruch ist richtig' : 'jeder gleichwertige Bruch ist richtig'})_ Lösung: ${zahl(a)}`;
+  if (a.format === 'faerben') return `_(Teile färben: ${figurText(a.faerben, true)}; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **${a.loesung} Teile gefärbt**.${fehler(a.typischeFehler)}`;
   if (a.format === 'diagramm') return `\n  _(Säulendiagramm „${a.diagramm.titel}“: ${a.diagramm.saeulen.map((x) => `${x.name} ${x.wert}`).join(', ')}; Werte ${a.diagramm.werteZeigen ? 'stehen an den Säulen' : 'müssen abgelesen werden'})_\n${a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n')}`;
   if (a.format === 'tabelle') {
     const zelle = (c) => (typeof c === 'object' ? `**${a.luecken[c.luecke].loesung}**` : c);
@@ -94,7 +105,7 @@ const loesung = (a) => {
     if (t.art === 'malkreuz') return `_(Malkreuz; fett = Eingabefeld)_\n\n  | ${t.kopf.join(' | ')} |\n  |${t.kopf.map(() => '---').join('|')}|\n${t.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n\n  ${t.rechnung.faktoren.join(' · ')} = **${a.luecken[t.rechnung.summe].loesung}**\n`;
     if (t.art === 'raster' && t.rechnung?.zeichen === '·') return ` _(Rechenraster wie im Heft, hier mit Lösung)_\n\n\`\`\`\n${t.zeilen.map((z) => z.map((c) => (typeof c === 'object' ? a.luecken[c.luecke].loesung : c || ' ')).join(' ')).join('\n')}\n\`\`\`\n`;
     if (t.art === 'einheitentafel') return ` _(Einheitentafel ${t.gruppen.map((g) => g.name).join(' | ')} zum Eintragen; fett = Eingabefeld)_\n\n  | ${t.kopf.join(' | ')} |\n  |${t.kopf.map(() => '---').join('|')}|\n${t.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n${t.ablesen ? `\n  ${t.ablesen.text} **${a.luecken[t.ablesen.luecke].loesung}** ${t.ablesen.einheit}.\n` : ''}`;
-    return `${a.tabelle.art === 'raster' ? ' _(Rechenraster mit Ziffernfeldern)_' : ''}\n\n  | ${a.tabelle.kopf.join(' | ')} |\n  |${a.tabelle.kopf.map(() => '---').join('|')}|\n${a.tabelle.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n`;
+    return `${a.tabelle.art === 'raster' ? ' _(Rechenraster mit Ziffernfeldern)_' : ''}${a.tabelle.art === 'stellentafel' && a.tabelle.komma != null ? ` _(Stellenwerttafel mit Komma nach ${a.tabelle.kopf[a.tabelle.komma]}; fett = Eingabefeld)_` : ''}\n\n  | ${a.tabelle.kopf.join(' | ')} |\n  |${a.tabelle.kopf.map(() => '---').join('|')}|\n${a.tabelle.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n`;
   }
   if (a.format === 'auswahl') return a.optionen.map((o) => `  - ${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join('\n');
   if (a.format === 'luecken') return `Lösung: ${Object.entries(a.luecken).map(([n, l]) => `${n} = **${l.loesung}**`).join(', ')}`;

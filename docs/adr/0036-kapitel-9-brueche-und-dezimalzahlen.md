@@ -1,0 +1,27 @@
+# Kapitel 9 „Brüche und Dezimalzahlen“: Bruchbilder, Brucheingabe, Teile färben, Stellenwerttafel mit Komma
+
+Nils bat am 22.11.2026 um die Aufgaben zu Klasse 5, Kapitel 9. Zwei Fragerunden, alle Empfehlungen übernommen, danach das Gesamtbild freigegeben. Sein Auftrag aus Kapitel 7 gilt weiter: „Achte besonders auf die korrekte Darstellung und das Layout der Aufgaben.“
+
+**Umfang.** Acht Lernziele, je sechs Aufgaben auf F, G, M und E, zusammen 192: 5.9.1-B1, B2 und B3 (Bruchteile an Bildern erkennen; darstellen und zum Ganzen ergänzen; vergleichen und ordnen), 5.9.2-T1 und T2 (Bruchteil einer Größe berechnen; Ganzes oder Anteil bestimmen und Sachaufgaben), 5.9.3-K1, K2 und K3 (Stellenwerttafel und Bruch als Dezimalzahl; Zahlenstrahl, vergleichen und ordnen; Größen mit Komma umwandeln). Der Pool wächst von 2808 auf 3000 Aufgaben. Meilensteine 9.1 bis 9.3, Tor 9 bleibt zu, bis die Lehrkraft es öffnet.
+
+**Was nicht vorkommt.** Kürzen, Erweitern und Rechnen mit Brüchen oder Dezimalzahlen gehören in Klasse 6. Gleichwertige Brüche gibt es nur am Bild und nur auf E. Zeit steht nie mit Komma, außer als Fehlersuche auf E (3,5 h sind nicht 3 h 5 min).
+
+**Staffel.** Nenner: F 2, 3 und 4; G bis 8 und 10; M bis 12 und 100; E bis 20. Brüche über 1 gibt es ab M als gemischte Zahl, die Wörter „unechter Bruch“ und „gleichwertig“ erst auf E. Bruchteile von Größen (Geld, Zeit, Gewicht, Länge) gehen immer auf: F Stammbrüche, G mehrere Teile, M mit Umwandeln (3⁄4 km in Metern), E Ganzes oder Anteil gesucht. Dezimalzahlen: F Zehntel, G Hundertstel und Endnullen, M Tausendstel und der Vergleich 0,15 gegen 0,5, E Fehlersuche. Der Begriff heißt „Dezimalzahl“.
+
+**Schreibweise.** Ein Bruch steht im Text als „3⁄4“ mit dem Bruchstrich-Zeichen U+2044, eine gemischte Zahl mit schmalem geschütztem Leerzeichen davor. Das Dashboard zeichnet jeden Bruch gestapelt mit waagerechtem Bruchstrich (`mitBruch` in `src/schueler/dom.js`); nur in Auswahllisten (`option`) und in Zeichnungen bleibt er Text. Ein Satzzeichen direkt nach dem Bruch bleibt in derselben Zeile. Dezimalzahlen sind im Pool Texte mit Komma („0,25“), gerechnet wird überall mit ganzen Zählern und Nennern, nie mit Kommazahlen des Rechners (`src/schueler/bruch.js`).
+
+**Neue Eingaben.** Die Brucheingabe hat ein Feld für den Zähler über einem Feld für den Nenner, bei gemischten Zahlen davor ein Feld für die Ganzen. Jeder gleichwertige Bruch ist richtig, außer die Aufgabe verlangt mit `genau` einen bestimmten Nenner (0,68 als Bruch mit dem Nenner 100). Bei „Teile färben“ tippt das Kind Teile an; richtig ist jede Auswahl mit der verlangten Anzahl. Eine Zahl, deren Lösung ein Text mit Komma ist, wird als Dezimalzahl geprüft: Komma oder Punkt, Endnullen ändern nichts.
+
+**Bildregeln.** Ein Bruchbild zeigt ein Ganzes in gleich großen Teilen: Kreis (erste Teillinie oben, höchstens 12 Teile), Rechteck und Streifen (höchstens 20), Mengenbild (höchstens 20 Kugeln in Reihen), Hunderterfeld. Gefärbt ist eine Farbe mit Rand, der Rest weiß. Auf F liegen die gefärbten Teile nebeneinander, ab G auch verstreut; „ungleich geteilte“ Figuren sind ab G eine Falle. Zwei Ganze stehen nebeneinander, Streifen untereinander, vier Figuren in zwei Reihen. Die Stellenwerttafel ist um z, h und t verlängert, das Komma hängt rot an der kräftigen Trennlinie hinter den Einern. Der Zahlenstrahl zählt mit `teiler` in Bruchteilen; ein Strahl mit höchstens zehn Teilstrichen ist schmal gezeichnet und am Handy ohne Schieben ganz zu sehen.
+
+**Prüfung.** `tools/pruefe-brueche.mjs` rechnet jede Aufgabe unabhängig vom Erzeuger mit rationalen Zahlen nach und prüft Nenner, Nachkommastellen, Wortspeicher und einfache Sprache je Niveau. Neu ist die Regel, dass jedes Bruchbild zur Aufgabe passen muss: Der gefärbte Bruchteil steht im Text, in den Antworten oder in der Lösung. `node tools/pruefe-layout.mjs 5.9.` zeichnet alle 192 Aufgaben mit Text und Eingabe bei 420 und 1200 Pixel Breite, zählt Teile und gefärbte Teile nach, misst die Größe der Teile zum Antippen (mindestens 24 Pixel) und meldet jeden Bruch, der nicht gestapelt steht oder umbricht. `tests/browser-kapitel-9.mjs` löst jede Aufgabe im gebauten Schüler-Dashboard über die Oberfläche. Claude hat jede der 192 Aufgaben im Bilderbogen angesehen.
+
+**Fehlvorstellungen.** Zehn neue: Zähler und Nenner vertauscht, gefärbt zu ungefärbt, ungleiche Teile, größerer Nenner gleich größerer Bruch, Zähler vergessen, Ganzes und Teil verwechselt, Nachkommastellen wie eine natürliche Zahl gelesen, Zehntel und Hundertstel verwechselt, Endnull ändert den Wert, Bruch als Komma geschrieben (1⁄4 = 0,4). „Komma als Trenner zwischen Einheiten“ nutzt das vorhandene `komma-falsch-gelesen` aus Kapitel 6.
+
+## Consequences
+
+- Rechnen mit Brüchen und Dezimalzahlen gehört in `src/schueler/bruch.js`, die Bilder und die Eingabe „Teile färben“ in `src/schueler/bruchbilder.js`.
+- Eine Lösung als Text mit Komma ist eine Dezimalzahl. Das gilt für Zahl, Lücken, Tabelle und Zahlenstrahl; ganze Zahlen bleiben Zahlen.
+- Wer einen Bruch in einen Aufgabentext schreibt, nimmt `br(z, n)` aus `tools/werkzeug.mjs`. Ein schräger Strich „/“ wird nicht gestapelt.
+- Nebenbei behoben: Aufgaben mit Zahlenstrahl-Eingabe machten die Seite am Handy breiter als den Bildschirm (auch in Kapitel 2 und 3). Die Aufgabenkarte darf jetzt schrumpfen, der Strahl lässt sich in seinem Rahmen schieben.
+- Klasse 6 kann auf diesem Modell aufbauen (Kürzen, Erweitern, Rechnen). Dafür braucht die Brucheingabe dann die Regel „vollständig gekürzt“.

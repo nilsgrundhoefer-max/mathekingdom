@@ -133,7 +133,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .aufgabenkopf .kronenmarke { display: inline-flex; align-items: center; gap: 6px; color: var(--tinte); font-weight: 700; border: 1px solid var(--rand); background: #f6efdf; border-radius: 99px; padding: 2px 12px 2px 8px; }
 #mathekingdom .aufgabenkopf .ziel { flex: 1 1 200px; }
 #mathekingdom .aufgabentext { font-size: 1.3rem; line-height: 1.45; margin-bottom: 18px; max-width: 34em; white-space: pre-line; }
-#mathekingdom .antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+#mathekingdom .antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; min-width: 0; }
 #mathekingdom .zahlfeld { display: inline-flex; align-items: center; gap: 8px; }
 #mathekingdom .zahlfeld input { font-size: 1.3rem; width: 9ch; text-align: right; }
 #mathekingdom .luecken .zahlfeld input { width: 5ch; margin: 0 4px; }
@@ -217,7 +217,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .hilfebanner.nachricht { background: #e9eef0; border-bottom-color: #c3cdd1; }
 
 /* Bilder in Aufgaben */
-#mathekingdom .mitbild { display: flex; flex-direction: column; gap: 12px; align-self: stretch; align-items: flex-start; }
+#mathekingdom section.aufgabe > * { min-width: 0; }
+#mathekingdom .mitbild { display: flex; flex-direction: column; gap: 12px; align-self: stretch; align-items: flex-start; min-width: 0; max-width: 100%; }
 #mathekingdom .bildrahmen { align-self: stretch; overflow-x: auto; }
 #mathekingdom svg.zahlenstrahl { display: block; width: 100%; min-width: 560px; max-width: 760px; height: auto; }
 #mathekingdom svg.zahlenstrahl.kurz { min-width: 320px; max-width: 520px; }
@@ -228,6 +229,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .zahlenstrahl text { font-size: 15px; fill: var(--tinte); font-variant-numeric: tabular-nums; }
 #mathekingdom .zahlenstrahl .treffer { fill: transparent; cursor: pointer; }
 #mathekingdom .zahlenstrahl .strich[role=button]:hover .treffer { fill: rgba(212,164,25,.22); }
+#mathekingdom .zahlenstrahl .strich[role=button]:focus { outline: none; }
 #mathekingdom .zahlenstrahl .strich[role=button]:focus-visible { outline: none; }
 #mathekingdom .zahlenstrahl .strich[role=button]:focus-visible .treffer { fill: rgba(212,164,25,.22); stroke: var(--gold); stroke-width: 2; }
 #mathekingdom .zahlenstrahl .marke { fill: var(--gold); stroke: var(--nacht); stroke-width: 2.5; }
@@ -725,6 +727,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .bruchbild.eingabe .bruchteil { cursor: pointer; }
 #mathekingdom .bruchbild.eingabe .bruchteil:hover { fill: #fbe7c2; }
 #mathekingdom .bruchbild.eingabe .bruchteil.voll:hover { fill: #d9932b; }
+#mathekingdom .bruchbild.eingabe .bruchteil:focus { outline: none; }
 #mathekingdom .bruchbild.eingabe .bruchteil:focus-visible { outline: none; stroke: var(--gold); stroke-width: 4; }
 /* Stellenwerttafel mit Komma: Es steht unten auf der Trennlinie nach den Einern. */
 #mathekingdom table.stellentafel td.kommaspalte { position: relative; }

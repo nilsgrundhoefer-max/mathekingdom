@@ -46,8 +46,6 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
   const liste = figuren.map((f) => ({ f, g: ganzes(f), ganze: f.ganze ?? 1 }));
   const unter = liste.some((x) => x.f.form === 'streifen') && liste.length > 1;
   const namen = liste.some((x) => x.f.n);
-  const svg = s('svg', { class: `bruchbild${beiWahl ? ' eingabe' : ''}`, role: beiWahl ? 'group' : 'img' });
-  const texte = [];
   // Platz jeder Figur: Streifen untereinander, sonst nebeneinander. Vier Figuren stehen in zwei Reihen, damit sie am Handy groß bleiben.
   for (const e of liste) { e.breite = e.ganze * e.g.b + (e.ganze - 1) * ABSTAND; }
   const proZeile = unter ? 1 : liste.length >= 4 ? 2 : liste.length;
@@ -56,6 +54,11 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
   const LUECKE = ABSTAND + 8, kopf = !unter && namen ? KOPF : 0, rand = unter && namen ? 26 : 0;
   const B = RAND + rand + spaltenB.reduce((a, b) => a + b, 0) + (proZeile - 1) * LUECKE;
   const H = RAND + zeilenH.reduce((a, b) => a + b + kopf, 0) + (zeilenH.length - 1) * 18;
+  // Schmale Bilder werden nicht über die ganze Breite gezogen: Die Teile sollen so groß sein wie gezeichnet.
+  const svg = s('svg', { class: `bruchbild${beiWahl ? ' eingabe' : ''}`, role: beiWahl ? 'group' : 'img', viewBox: `0 0 ${Z(B + RAND)} ${Z(H + RAND)}` },
+    s('rect', { x: 0, y: 0, width: Z(B + RAND), height: Z(H + RAND), class: 'blatt' }));
+  svg.style.maxWidth = `${Math.round((B + RAND) * 1.25)}px`;
+  const texte = [];
   liste.forEach(({ f, g, ganze, breite }, nrFigur) => {
     const c = nrFigur % proZeile, r = Math.floor(nrFigur / proZeile);
     const x = RAND + spaltenB.slice(0, c).reduce((a, b) => a + b + LUECKE, 0), y = RAND + zeilenH.slice(0, r).reduce((a, b) => a + b + kopf + 18, 0);
@@ -71,7 +74,7 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
         const el = t.d ? s('path', { d: t.d, class: `bruchteil${an ? ' voll' : ''}` }) : s('circle', { cx: t.cx, cy: t.cy, r: t.r, class: `bruchteil kugel${an ? ' voll' : ''}` });
         if (beiWahl) {
           el.setAttribute('role', 'button'); el.setAttribute('tabindex', '0'); el.setAttribute('aria-pressed', an ? 'true' : 'false'); el.setAttribute('aria-label', `Teil ${nr + 1} von ${n * ganze}`);
-          el.dataset.nr = nr;
+          el.setAttribute('data-nr', nr);
           el.addEventListener('click', () => beiWahl(nr));
           el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); beiWahl(nr); } });
         }
@@ -86,11 +89,7 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
     const gefaerbt = [...voll].length;
     texte.push(`${f.n ? `${f.n}: ` : ''}${FORMNAME[f.form]}${ganze > 1 ? ` (${ganze} Ganze)` : ''} mit ${n} ${f.ungleich ? 'ungleich großen ' : ''}Teilen${beiWahl ? '' : `, ${gefaerbt} gefärbt`}`);
   });
-  svg.setAttribute('viewBox', `0 0 ${Z(B + RAND)} ${Z(H + RAND)}`);
   svg.setAttribute('aria-label', `Bruchbild: ${texte.join('; ')}`);
-  // Schmale Bilder werden nicht über die ganze Breite gezogen: Die Teile sollen so groß sein wie gezeichnet.
-  svg.style.maxWidth = `${Math.round((B + RAND) * 1.25)}px`;
-  svg.prepend(s('rect', { x: 0, y: 0, width: Z(B + RAND), height: Z(H + RAND), class: 'blatt' }));
   return svg;
 }
 export const BRUCHBILDER = { bruch: (b) => bruchSvg(b.figuren) };
