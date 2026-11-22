@@ -228,10 +228,26 @@ const roh = [
     }, true),
   ]],
   ['Flächeninhalt und Umfang', [
-    uk('Flächen vergleichen', ['Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.']),
-    uk('Flächenmaße', ['Ich kann sicher mit Flächenmaßen umgehen.']),
-    uk('Rechteck', ['Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden.']),
-    uk('Zusammengesetzte Figuren', ['Ich kann die Berechnung von Flächeninhalt und Umfang auch bei zusammengesetzten Figuren durchführen und anwenden.']),
+    // Kapitel 8 (ADR 0035, Grilling mit Nils am 2026-11-22). Der Abstecher „Flächen schätzen“ steht hinter 8.2, weil er die Flächeneinheiten braucht.
+    uk('Flächen vergleichen', {
+      Z1: 'Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.',
+      Z2: 'Ich kann den Umfang einer Figur bestimmen und vom Flächeninhalt unterscheiden.',
+    }),
+    uk('Flächenmaße', {
+      H1: 'Ich kann Flächeneinheiten nennen und zu einer Fläche die passende Einheit wählen.',
+      H2: 'Ich kann Flächeneinheiten umwandeln.',
+    }),
+    uk('Flächen schätzen', {
+      A1: 'Ich kann Flächeninhalte mit Stützgrößen schätzen.',
+    }, true),
+    uk('Rechteck', {
+      R1: 'Ich kann Flächeninhalt und Umfang von Rechtecken und Quadraten berechnen.',
+      R2: 'Ich kann fehlende Seiten berechnen und Sachaufgaben zu Rechtecken lösen.',
+    }),
+    uk('Zusammengesetzte Figuren', {
+      S1: 'Ich kann den Flächeninhalt zusammengesetzter Figuren durch Zerlegen oder Ergänzen berechnen.',
+      S2: 'Ich kann den Umfang zusammengesetzter Figuren berechnen und Sachaufgaben dazu lösen.',
+    }),
   ]],
   ['Brüche und Dezimalzahlen', [
     uk('Bruchschreibweise', ['Ich kann die Bruchschreibweise verwenden.']),
@@ -723,6 +739,59 @@ export const merkzettel = {
     beispiel: '3, 6, 12, 24: Jede Zahl ist das Doppelte der Zahl davor. Die nächste Zahl ist 48. Bei 1, 4, 9, 16 werden die Unterschiede 3, 5, 7 immer um 2 größer.',
     heft: 'Schreibe die Unterschiede klein über die Zahlen.',
   },
+  // Kapitel 8 (Nils, 2026-11-22): Flächen ohne Komma. In 8.1 wird in Kästchen gezählt, ab 8.2 ist ein Feld des Rasters 1 cm².
+  '5.8.1': {
+    regeln: [
+      'Der Flächeninhalt sagt, wie viel Platz eine Fläche hat. Du zählst die Kästchen, die sie bedeckt.',
+      'Zwei Flächen vergleichst du, indem du ihre Kästchen zählst. Mehr Kästchen heißt größerer Flächeninhalt.',
+      'Der Umfang ist die Länge des Randes einmal ganz herum. Du zählst die Kästchenseiten auf dem Rand.',
+      'Gleicher Umfang heißt nicht gleicher Flächeninhalt.',
+    ],
+    beispiel: 'Ein Rechteck ist 4 Kästchen lang und 3 Kästchen breit. Es bedeckt 4 · 3 = 12 Kästchen. Sein Umfang ist 4 + 3 + 4 + 3 = 14 Kästchenseiten.',
+    heft: 'Fahre beim Umfang mit dem Bleistift den Rand entlang und mache an jeder Kästchenseite einen kleinen Strich.',
+  },
+  '5.8.2': {
+    regeln: [
+      'Flächeninhalte misst man in Flächeneinheiten: mm², cm², dm², m², a, ha, km².',
+      'Ein Quadrat mit 1 cm Seitenlänge hat den Flächeninhalt 1 cm². Im Heft sind das 4 Kästchen.',
+      'Die Umrechnungszahl ist bei Flächen 100: 1 cm² = 100 mm², 1 dm² = 100 cm², 1 m² = 100 dm².',
+      'Ab G: 1 km² = 100 ha. Ab M: 1 ha = 100 a und 1 a = 100 m².',
+      'Flächen schreibst du ohne Komma, zum Beispiel 3 m² 25 dm².',
+    ],
+    beispiel: '3 m² 25 dm² sind 3 · 100 dm² + 25 dm² = 325 dm².',
+    heft: 'Eine Einheitentafel für Flächen hat für jede Einheit zwei Spalten.',
+  },
+  '5.8.X1': {
+    regeln: [
+      'Beim Schätzen vergleichst du mit einer Fläche, die du kennst: einer Stützgröße.',
+      'Eine Briefmarke hat etwa 4 cm², eine Heftseite etwa 6 dm², ein Klassenzimmer etwa 60 m².',
+      'Überlege: Wie oft passt die Stützgröße ungefähr hinein?',
+    ],
+    beispiel: 'Ein Tisch ist so groß wie etwa 10 Heftseiten. Er hat also etwa 10 · 6 dm² = 60 dm².',
+    heft: 'Schreibe beim Schätzen „etwa“ vor das Ergebnis.',
+  },
+  '5.8.3': {
+    regeln: [
+      'Flächeninhalt eines Rechtecks: Länge mal Breite. Ab G: A = a · b.',
+      'Umfang eines Rechtecks: alle vier Seiten zusammen. Ab G: u = 2 · a + 2 · b.',
+      'Beim Quadrat sind alle Seiten gleich lang: A = a · a und u = 4 · a.',
+      'Beide Seiten müssen dieselbe Einheit haben. Sonst wandelst du zuerst um.',
+      'Ab M rückwärts: Kennst du A und eine Seite, rechnest du A geteilt durch diese Seite.',
+    ],
+    beispiel: 'Ein Rechteck ist 5 cm lang und 3 cm breit. A = 5 cm · 3 cm = 15 cm² und u = 2 · 5 cm + 2 · 3 cm = 16 cm.',
+    heft: 'Schreibe zuerst die Formel auf, dann die Zahlen mit Einheit.',
+  },
+  '5.8.4': {
+    regeln: [
+      'Eine zusammengesetzte Figur zerlegst du in Rechtecke. Du rechnest jeden Teil aus und zählst die Teile zusammen.',
+      'Ab M auch Ergänzen: Ergänze die Figur zu einem großen Rechteck und ziehe das Stück ab, das zu viel ist.',
+      'Fehlende Seiten erschließt du aus den anderen Seiten.',
+      'Der Umfang ist nur der äußere Rand. Die Linien vom Zerlegen gehören nicht dazu.',
+      'Bei einem Rahmen ziehst du das Loch ab.',
+    ],
+    beispiel: 'Ein L aus einem Rechteck mit 6 cm² und einem mit 4 cm² hat 6 cm² + 4 cm² = 10 cm².',
+    heft: 'Nummeriere die Teilflächen und schreibe zu jeder Nummer eine Rechnung.',
+  },
 };
 
 // Wortspeicher je Station: Wort, Erklärung in einfacher Sprache und die Niveaustufe, ab der das Wort verwendet wird.
@@ -1164,6 +1233,43 @@ export const wortspeicher = {
     w('Quadratzahl', 'G', 'Eine Zahl mal sich selbst. 4 · 4 = 16, also ist 16 eine Quadratzahl.'),
     w('Vielfaches', 'M', 'Eine Zahl aus der Mal-Reihe einer Zahl. 12 ist ein Vielfaches von 3.'),
   ],
+  // Kapitel 8 (Nils, 2026-11-22): Ein Wort gilt im ganzen Kapitel ab der frühesten Stufe, die es hier bekommt.
+  '5.8.1': [
+    w('Flächeninhalt', 'F', 'So viel Platz hat eine Fläche. Man zählt, wie viele Kästchen sie bedeckt.'),
+    w('Umfang', 'F', 'Die Länge des Randes einer Figur, einmal ganz herum.'),
+    w('Kästchen', 'F', 'Ein kleines Quadrat im Karogitter.'),
+    w('Kästchenseite', 'F', 'Eine Seite eines Kästchens. Beim Umfang zählt man sie auf dem Rand.'),
+    w('Rand', 'F', 'Die Linie außen um eine Figur herum.'),
+    w('Randlänge', 'G', 'Ein anderes Wort für Umfang: wie lang der Rand einmal ganz herum ist.'),
+    w('Flächenvergleich', 'M', 'Zwei Flächen nebeneinanderstellen und herausfinden, welche größer ist.'),
+  ],
+  '5.8.2': [
+    w('Quadratzentimeter', 'F', 'Eine Flächeneinheit: ein Quadrat mit 1 cm Seitenlänge. Man schreibt cm².'),
+    w('Quadratmeter', 'F', 'Ein Quadrat mit 1 m Seitenlänge. Man schreibt m².'),
+    w('Flächeneinheit', 'G', 'Eine Einheit für Flächeninhalte, zum Beispiel cm² oder m².'),
+    w('Umrechnungszahl', 'G', 'Mit dieser Zahl wandelt man um. Bei Flächen ist sie 100.'),
+    w('Ar', 'M', 'Eine Flächeneinheit für Gärten und Felder. Man schreibt a. 1 a = 100 m².'),
+    w('Hektar', 'M', 'Eine Flächeneinheit für große Felder und Wälder. Man schreibt ha. 1 ha = 100 a.'),
+  ],
+  '5.8.X1': [
+    w('schätzen', 'F', 'Ungefähr angeben, ohne genau zu messen.'),
+    w('Stützgröße', 'G', 'Eine Fläche, die du kennst und zum Vergleichen nimmst, zum Beispiel eine Heftseite.'),
+    w('Schätzwert', 'M', 'Eine Zahl, die man geschätzt und nicht genau gemessen hat.'),
+  ],
+  '5.8.3': [
+    w('Länge', 'F', 'Die längere Seite eines Rechtecks. Man schreibt a.'),
+    w('Breite', 'F', 'Die kürzere Seite eines Rechtecks. Man schreibt b.'),
+    w('Formel', 'G', 'Eine Rechenregel mit Buchstaben, zum Beispiel A = a · b.'),
+    w('Seitenlänge', 'M', 'Wie lang eine Seite ist.'),
+    w('verdoppelt', 'E', 'Doppelt so groß wie vorher. Aus 5 wird 10.'),
+  ],
+  '5.8.4': [
+    w('Teilfläche', 'F', 'Ein Stück einer Figur nach dem Zerlegen.'),
+    w('zerlegen', 'G', 'Eine Figur in Rechtecke teilen.'),
+    w('ergänzen', 'M', 'Eine Figur zu einem großen Rechteck vervollständigen.'),
+    w('Skizze', 'M', 'Eine Zeichnung mit Maßen, die nicht genau maßstäblich ist.'),
+    w('Rahmen', 'E', 'Eine Figur mit einem Loch in der Mitte, wie ein Bilderrahmen.'),
+  ],
 };
 
 // Voraussetzungen (ADR 0014): Lernziel → Lernziele, auf denen es aufbaut. Daraus schlägt das Schüler-Dashboard eine Brücke vor,
@@ -1247,10 +1353,16 @@ const voraussetzungen = {
   '5.7.4-W2': ['5.7.4-W1'],
   '5.7.X2-D1': ['5.7.4-W1', '5.5.7-V1'],
   '5.7.X2-D2': ['5.7.X2-D1', '5.7.4-W2'],
-  '5.8.1-L1': ['5.5.7-V1'],
-  '5.8.2-L1': ['5.8.1-L1', '5.4.1-K3'],
-  '5.8.3-L1': ['5.8.2-L1', '5.4.2-M2', '5.5.7-V1'],
-  '5.8.4-L1': ['5.8.3-L1'],
+  // Kapitel 8 (Nils, 2026-11-22).
+  '5.8.1-Z1': ['5.5.7-V1'],
+  '5.8.1-Z2': ['5.8.1-Z1'],
+  '5.8.2-H1': ['5.8.1-Z1', '5.6.5-L1'],
+  '5.8.2-H2': ['5.8.2-H1', '5.4.1-K3'],
+  '5.8.X1-A1': ['5.8.2-H1', '5.6.1-S1'],
+  '5.8.3-R1': ['5.8.2-H1', '5.8.1-Z2', '5.4.2-M2'],
+  '5.8.3-R2': ['5.8.3-R1', '5.8.2-H2'],
+  '5.8.4-S1': ['5.8.3-R1'],
+  '5.8.4-S2': ['5.8.4-S1', '5.8.3-R2'],
   '5.9.1-L1': ['5.4.1-K2'],
   '5.9.2-L1': ['5.9.1-L1', '5.4.5-D2', '5.6.5-L1'],
   '5.9.3-L1': ['5.9.1-L1', '5.2.2-B1'],
@@ -1402,6 +1514,16 @@ const grundlagen = {
   '5.7.4-W2': 'Am Geodreieck die Gradzahl auf der Skala ab 0 suchen und den Schenkel dorthin legen',
   '5.7.X2-D1': 'An einem Dreieck die Seiten vergleichen und den rechten Winkel suchen',
   '5.7.X2-D2': 'Am Karogitter ein Dreieck aus drei Gitterpunkten zeichnen',
+  // Kapitel 8 (Nils, 2026-11-22)
+  '5.8.1-Z1': 'Kästchen einer Figur zählen, Reihe für Reihe',
+  '5.8.1-Z2': 'Mit dem Finger den Rand entlangfahren und die Kästchenseiten zählen',
+  '5.8.2-H1': 'Ein Feld mit 1 cm Seitenlänge ist 1 cm²: Felder einer Figur zählen',
+  '5.8.2-H2': 'Mit 100 malnehmen: von einer Flächeneinheit in die nächstkleinere',
+  '5.8.X1-A1': 'Eine bekannte Fläche (Heftseite) mehrmals nebeneinanderlegen',
+  '5.8.3-R1': 'Ein Rechteck am Raster: Reihen mal Felder in einer Reihe',
+  '5.8.3-R2': 'Rückwärts: Wie viele Felder hat eine Reihe, wenn es 3 Reihen und 12 Felder sind?',
+  '5.8.4-S1': 'Eine Figur am Raster in zwei Rechtecke zerlegen und beide zählen',
+  '5.8.4-S2': 'Den äußeren Rand einer Figur am Raster nachfahren und die Seiten zählen',
 };
 
 // IDs: Kapitel "5.3", Unterkapitel "5.3.3" (Extras "5.2.X1"), Lernziel "5.3.3-S2".

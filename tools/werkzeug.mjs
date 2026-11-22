@@ -277,6 +277,17 @@ const KIND = {
   'dreieck-sonderfall': 'Du weißt jetzt: Ein gleichseitiges Dreieck ist auch gleichschenklig.',
   'dreieck-art': 'Du teilst Dreiecke jetzt richtig nach Seiten und Winkeln ein.',
   'winkelsumme': 'Du weißt jetzt: Die drei Winkel im Dreieck ergeben zusammen 180°.',
+  // Kapitel 8 (ADR 0035)
+  'umfang-flaeche-verwechselt': 'Du hältst Flächeninhalt und Umfang jetzt auseinander.',
+  'gleicher-umfang-gleiche-flaeche': 'Du weißt jetzt: Gleicher Umfang heißt nicht gleich große Fläche.',
+  'umfang-halb': 'Du zählst beim Umfang jetzt alle vier Seiten.',
+  'randkaestchen-gezaehlt': 'Du zählst beim Umfang jetzt die Kästchenseiten am Rand.',
+  'flaecheneinheit-laenge': 'Du schreibst bei Flächen jetzt cm² und bei Längen cm.',
+  'umrechnungszahl-flaeche': 'Du nimmst bei Flächen jetzt die Umrechnungszahl 100.',
+  'einheiten-gemischt-multipliziert': 'Du wandelst die Seiten jetzt erst in dieselbe Einheit um.',
+  'innere-linie-im-umfang': 'Du zählst beim Umfang jetzt nur den äußeren Rand.',
+  'teilflaeche-doppelt': 'Du zählst jede Teilfläche jetzt genau einmal.',
+  'loch-nicht-abgezogen': 'Du ziehst das Loch jetzt vom Flächeninhalt ab.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -416,6 +427,17 @@ export const fehlvorstellungen = {
   'dreieck-sonderfall': fv('Sieht nicht, dass ein gleichseitiges Dreieck auch gleichschenklig ist.', 'Prüfe die Eigenschaft: Hat das Dreieck mindestens zwei gleich lange Seiten?'),
   'dreieck-art': fv('Teilt ein Dreieck falsch ein oder verwechselt die Einteilung nach Seiten mit der nach Winkeln.', 'Prüfe der Reihe nach: Welche Seiten sind gleich lang? Gibt es einen rechten oder einen stumpfen Winkel?'),
   'winkelsumme': fv('Rechnet im Dreieck mit einer falschen Winkelsumme (zum Beispiel 360°).', 'In jedem Dreieck ergeben die drei Winkel zusammen 180°.'),
+  // Kapitel 8 „Flächeninhalt und Umfang“ (Grilling mit Nils, 2026-11-22)
+  'umfang-flaeche-verwechselt': fv('Verwechselt Umfang und Flächeninhalt: rechnet den einen, wenn der andere gefragt ist.', 'Der Flächeninhalt sagt, wie viel Platz die Fläche hat. Der Umfang ist die Länge des Randes einmal ganz herum.'),
+  'gleicher-umfang-gleiche-flaeche': fv('Meint, dass Figuren mit gleichem Umfang auch gleich großen Flächeninhalt haben (oder umgekehrt).', 'Zähle bei beiden Figuren nach. Ein langes, schmales Rechteck kann denselben Umfang haben wie ein Quadrat und trotzdem viel kleiner sein.'),
+  'umfang-halb': fv('Rechnet beim Umfang nur a + b statt 2 · a + 2 · b und vergisst die beiden anderen Seiten.', 'Ein Rechteck hat vier Seiten. Zwei sind a lang, zwei sind b lang.'),
+  'randkaestchen-gezaehlt': fv('Zählt beim Umfang die Kästchen am Rand statt der Kästchenseiten auf dem Rand.', 'Fahre mit dem Finger auf dem Rand entlang und zähle die Kästchenseiten. An einer Ecke zählen zwei Seiten.'),
+  'flaecheneinheit-laenge': fv('Verwechselt Längen- und Flächeneinheiten: cm beim Flächeninhalt oder cm² beim Umfang.', 'Ein Flächeninhalt hat eine Einheit mit ², zum Beispiel cm². Ein Umfang ist eine Länge, zum Beispiel cm.'),
+  'umrechnungszahl-flaeche': fv('Wandelt Flächeneinheiten mit der Umrechnungszahl 10 oder 1000 um statt mit 100.', 'Bei Flächen ist die Umrechnungszahl 100: 1 cm² sind 100 mm², 1 m² sind 100 dm².'),
+  'einheiten-gemischt-multipliziert': fv('Multipliziert Seiten in verschiedenen Einheiten, ohne umzuwandeln (2 m · 50 cm = 100).', 'Die Seiten haben verschiedene Einheiten. Wandle zuerst beide in dieselbe Einheit um.'),
+  'innere-linie-im-umfang': fv('Zählt bei zusammengesetzten Figuren Linien im Inneren zum Umfang.', 'Der Umfang ist nur der äußere Rand. Die Linien, mit denen du zerlegt hast, gehören nicht dazu.'),
+  'teilflaeche-doppelt': fv('Zählt beim Zerlegen eine Teilfläche doppelt oder lässt eine weg.', 'Färbe oder nummeriere jede Teilfläche. Jede wird genau einmal gezählt.'),
+  'loch-nicht-abgezogen': fv('Zieht bei einer Figur mit Loch das Loch nicht vom Flächeninhalt ab.', 'Rechne zuerst die ganze Fläche aus. Ziehe dann das Loch ab.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -586,6 +608,11 @@ export const gitterKreis = (text, gitter, m, r, beispiel, fehler, hilfen, extra)
   // Derselbe falsche Kreis zählt nur einmal (bei r = 1 ist der doppelte Radius auch r + 1); der richtige Kreis ist nie ein Fehler.
   typischeFehler: (fehler ?? []).filter(([b], i, l) => (b.r !== r || (b.m && String(b.m) !== String(m))) && l.findIndex(([x]) => x.r === b.r && String(x.m ?? m) === String(b.m ?? m)) === i)
     .map(([b, fehlvorstellung]) => ({ bedingung: b, fehlvorstellung })), hilfen, ...mit(extra) });
+// ---------- Kapitel 8: Flächeninhalt und Umfang (ADR 0035) ----------
+// Kästchen färben mit einer Bedingung statt einer festen Lösung: bedingung { art: 'flaeche', n?, umfang?, rechteck? }.
+// `beispiel` sind Kästchen, die die Bedingung erfüllen (für das Lösungsbild). fehler: [[bedingung, fehlvorstellung]]
+export const gitterFlaeche = (text, gitter, bedingung, beispiel, fehler, hilfen, extra) => ({ format: 'gitter', eingabe: 'zellen', text, gitter, bedingung: { art: 'flaeche', ...bedingung }, loesung: beispiel,
+  typischeFehler: (fehler ?? []).map(([b, fehlvorstellung]) => ({ bedingung: { art: 'flaeche', ...b }, fehlvorstellung })), hilfen, ...mit({ nachweis: [{ art: 'zellen' }], ...extra }) });
 // Winkeldrehen: feld { b, h, s, von, l, punkte?, umlegen? }, loesung in Grad gegen den Uhrzeigersinn. typischeFehler: [[grad, fehlvorstellung]]
 export const winkelDrehen = (text, feld, loesung, typischeFehler, hilfen, extra) => ({ format: 'winkel', text, winkelfeld: feld, loesung, toleranz: 2,
   typischeFehler: (typischeFehler ?? []).filter(([w]) => Math.min(Math.abs(w - loesung), 360 - Math.abs(w - loesung)) > 2).filter(([w], i, l) => l.findIndex(([x]) => x === w) === i).map(([wert, fehlvorstellung]) => ({ wert, fehlvorstellung })), hilfen, ...mit(extra) });
@@ -747,6 +774,9 @@ export const B = {
   winkel: (b, h, winkel, { geo = null, texte = null } = {}) => ({ art: 'winkel', b, h, winkel, ...(geo ? { geo } : {}), ...(texte ? { texte } : {}) }),
   kreislineal: (von, bis, { lang = 100, radius = false, durchmesser = false } = {}) => ({ art: 'kreislineal', von, bis, lang, ...(radius ? { radius: true } : {}), ...(durchmesser ? { durchmesser: true } : {}) }),
   gradnetz: (breite, laenge, schritt, orte, { namen = false } = {}) => ({ art: 'gradnetz', breite, laenge, schritt, ...(namen ? { namen: true } : {}), orte }),
+  // Kapitel 8 (ADR 0035): Figuren aus Rechtecken [x0, y0, x1, y1] mit Löchern, auf einem Raster ('kaestchen' oder 'cm') oder als Skizze.
+  // f: { raster, b, h (Felder des Rasters), einheit (der Koordinaten und Maße), figuren: [{ n?, rechtecke, loecher?, zerlegt? }], masse?: [{ p, q, text?, frage? }], skizze? }
+  flaeche: (f) => ({ art: 'flaeche', ...f }),
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
@@ -779,7 +809,7 @@ export function kompetenzVon(lernziel, a) {
   const arten = new Set((Array.isArray(a.nachweis) ? a.nachweis : []).filter((e) => e && typeof e === 'object').map((e) => e.art ?? (e.zahl != null ? 'hilfszahl' : '')));
   const vomLernziel = Object.entries(KOMPETENZ_LERNZIEL).find(([, ids]) => ids.includes(lernziel))?.[0] ?? 'symbolisch';
   const sach = a.format === 'sachaufgabe' || arten.has('hilfszahl');
-  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel', 'gradnetz', 'kreislineal'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
+  const darstellung = ['diagramm', 'tabelle', 'strichliste', 'zeichnen', 'gitter'].includes(a.format) || ['saeulen', 'bilddiagramm', 'strichliste', 'tafel', 'schaetzbild', 'gitter', 'lineal', 'karte', 'grundriss', 'zeitleiste', 'einheitentafel', 'gradnetz', 'kreislineal', 'flaeche'].includes(a.bild?.art) || Boolean(a.daten && lernziel.startsWith('5.6.'));
   let haupt = vomLernziel;
   if (arten.has('urteil') || BEGRUENDEN.test(a.text)) haupt = 'argumentieren';
   else if ([...arten].some((x) => KNOBELN.has(x))) haupt = 'probleme-loesen';

@@ -2,6 +2,7 @@
 // im Browser gezeichnet, bei 420 und bei 1200 Pixel Breite. Geprüft wird, was man im Bild sieht:
 // - Beschriftungen überlappen einander nicht und ragen nicht aus dem Bild,
 // - Punkt-, Winkel- und Ortsnamen liegen nicht auf einer Linie (Schenkel, Strecke, Breitenkreis im Gradnetz),
+//   Maße, Figurnamen und Teilnummern in Kapitel 8 (ADR 0035) liegen nicht auf dem Rand einer Figur,
 // - jeder gezeichnete Winkel hat nachgemessen die Größe aus dem Aufgabenpool (auf 0,5° genau).
 // Aufruf: node tools/pruefe-layout.mjs [Kapitelanfang, z. B. 5.7.]
 import { build } from 'esbuild';
@@ -36,7 +37,7 @@ window.pruefe = (soll) => {
       const kasten = (t) => { const r = t.getBoundingClientRect(); return { x0: r.left, y0: r.top, x1: r.right, y1: r.bottom, t, k: t.getAttribute('class') ?? '' }; };
       const k = texte.map(kasten);
       const geo = (x) => /geo-|gradzahl|cmwort|mmzahl|lineal/.test(x.k);
-      const name = (x) => /punktname|winkelname|ortsname|bildtext|netzname/.test(x.k);
+      const name = (x) => /punktname|winkelname|ortsname|bildtext|netzname|masszahl|figurname|teilnummer/.test(x.k);
       for (const x of k) if (x.x0 < rahmen.left - 1 || x.x1 > rahmen.right + 1 || x.y0 < rahmen.top - 1 || x.y1 > rahmen.bottom + 1) maengel.push(id + ': „' + x.t.textContent + '“ ragt aus dem Bild');
       const ueber = (a, b, r = 1) => Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0) > r && Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0) > r;
       for (let i = 0; i < k.length; i++) for (let j = i + 1; j < k.length; j++) {
@@ -49,12 +50,17 @@ window.pruefe = (soll) => {
       const P = (x, y) => { const p = svg.createSVGPoint(); p.x = x; p.y = y; const q = p.matrixTransform(m); return [q.x, q.y]; };
       // Im Gradnetz zählen nur die Breitenkreise (waagerecht); senkrechte Linien verdeckt der helle Rand der Ortsnamen.
       const breitenkreis = (l) => !l.matches('line.gradlinie, line.aequator') || l.getAttribute('y1') === l.getAttribute('y2');
-      const linien = [...svg.querySelectorAll('line.schenkel, line.strecke, line.linie, line.radius, line.gradlinie, line.aequator')].filter(breitenkreis).map((l) => [P(+l.getAttribute('x1'), +l.getAttribute('y1')), P(+l.getAttribute('x2'), +l.getAttribute('y2'))]);
+      const linien = [...svg.querySelectorAll('line.schenkel, line.strecke, line.linie, line.radius, line.gradlinie, line.aequator, line.kante')].filter(breitenkreis).map((l) => [P(+l.getAttribute('x1'), +l.getAttribute('y1')), P(+l.getAttribute('x2'), +l.getAttribute('y2'))]);
       const schneidet = (b, [p, q]) => { // Strecke gegen Rechteck (etwas verkleinert)
         const x0 = b.x0 + 2, x1 = b.x1 - 2, y0 = b.y0 + 3, y1 = b.y1 - 3;
         for (let s = 0; s <= 40; s++) { const x = p[0] + (q[0] - p[0]) * s / 40, y = p[1] + (q[1] - p[1]) * s / 40; if (x > x0 && x < x1 && y > y0 && y < y1) return true; }
         return false; };
-      for (const x of k.filter((y) => /punktname|winkelname|ortsname/.test(y.k))) if (linien.some((l) => schneidet(x, l))) maengel.push(id + ': „' + x.t.textContent + '“ liegt auf einer Linie');
+      for (const x of k.filter((y) => /punktname|winkelname|ortsname|masszahl|figurname|teilnummer/.test(y.k))) if (linien.some((l) => schneidet(x, l))) maengel.push(id + ': „' + x.t.textContent + '“ liegt auf einer Linie');
+      // Kapitel 8: Ein Maß steht außen an der Figur, nie auf einer Fläche (außer im weißen Loch).
+      const flaechen = [...svg.querySelectorAll('path.flaechenfuell')].map(kasten), loecher = [...svg.querySelectorAll('path.loch')].map(kasten);
+      const in_ = (b, x, y) => x > b.x0 + 1 && x < b.x1 - 1 && y > b.y0 + 1 && y < b.y1 - 1;
+      for (const x of k.filter((y) => /masszahl/.test(y.k))) { const cx = (x.x0 + x.x1) / 2, cy = (x.y0 + x.y1) / 2;
+        if (flaechen.some((f) => in_(f, cx, cy)) && !loecher.some((f) => in_(f, cx, cy))) maengel.push(id + ': Maß „' + x.t.textContent + '“ steht auf der Fläche'); }
       // Winkel nachmessen.
       const bild = auf?.bild?.art === 'winkel' ? auf.bild : null;
       if (bild && svg.closest('.bildrahmen')) bild.winkel.forEach((w, i) => {

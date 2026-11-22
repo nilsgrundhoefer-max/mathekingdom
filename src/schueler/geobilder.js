@@ -14,7 +14,8 @@ import { lesePunkte, alsEingabe, gleich } from './geo.js';
 const RAND = 1; // ein Kästchen Rand für Namen und Achsenzahlen
 function masse(g) {
   const u = Math.max(22, Math.min(40, Math.floor(600 / (g.b + 2 * RAND))));
-  return { u, B: (g.b + 2 * RAND) * u, H: (g.h + 2 * RAND) * u, X: (x) => (x + RAND) * u, Y: (y) => (g.h - y + RAND) * u };
+  // Kapitel 8: Mit Legende („▢ = 1 cm²“) bekommt das Gitter unten eine Zeile mehr.
+  return { u, B: (g.b + 2 * RAND) * u, H: (g.h + 2 * RAND + (g.legende ? 1 : 0)) * u, X: (x) => (x + RAND) * u, Y: (y) => (g.h - y + RAND) * u };
 }
 // Eine Gerade durch a und b, bis zum Rand des Gitters verlängert. strahl: nur über b hinaus.
 function bisZumRand(g, a, b, strahl = false) {
@@ -87,6 +88,10 @@ export function gitterSvg(g, dazu = {}) {
   if (g.zentrum) svg.append(s('circle', { cx: X(g.zentrum[0]), cy: Y(g.zentrum[1]), r: 5, class: 'zentrum' }), s('text', { x: X(g.zentrum[0] + 0.32), y: Y(g.zentrum[1] + 0.3) + 5, 'text-anchor': 'middle', class: 'punktname' }, 'Z'));
   for (const t of g.texte ?? []) svg.append(s('text', { x: X(t.x), y: Y(t.y) + 5, 'text-anchor': 'middle', class: 'masstext' }, t.t));
   for (const p of g.punkte ?? []) svg.append(...punktSvg(m, p));
+  if (g.legende) {
+    const y = Y(-1) + u * 0.2, k = u * 0.8;
+    svg.append(s('rect', { x: X(0), y: y - k / 2, width: k, height: k, class: 'legendenfeld' }), s('text', { x: X(0) + k + 8, y: y + 5, class: 'bildtext' }, `= ${g.legende}`));
+  }
   // Was das Kind gezeichnet hat (oder die Lösung): Vieleck, Linie, Punkte.
   if (dazu.vieleck?.length > 1) svg.append(s(dazu.vieleck.length > 2 ? 'polygon' : 'polyline', { points: eckenText(m, dazu.vieleck), class: 'figur gesetzt' }));
   if (dazu.linie) svg.append(...linieSvg(g, m, { a: dazu.linie.p, b: dazu.linie.q, art: dazu.linie.art }, 'gesetzt'));

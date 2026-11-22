@@ -1,10 +1,10 @@
 # Aufgaben Klasse 5: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (2592 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-5.json` (2808 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2592).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2808).
 
 ## 5.1.1-H1: Ich kann Strichlisten lesen und anlegen.
 
@@ -9364,6 +9364,629 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Drehe den Weg von A nach B um einen r
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(2|1) und B(9|1). Setze C so, dass ABC bei B rechtwinklig ist, BC 4 Einheiten lang ist und C über AB liegt. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 8; Punkte A(2|1), B(9|1); Strecke durch (2|1) und (9|1))_ Lösung: **(9|5)**
 - `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Koordinatensystem ist A(2|2) und B(6|2). Setze C so, dass ABC gleichschenklig ist und bei C einen rechten Winkel hat. C liegt über AB. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 8; Punkte A(2|2), B(6|2); Strecke durch (2|2) und (6|2))_ Lösung: **(4|4)**
 
+## 5.8.1-Z1: Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.
+
+Grundlage, die F übt: Kästchen einer Figur zählen, Reihe für Reihe
+
+Baut auf: 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Kästchen Reihe für Reihe. *Beispiel:* Eine Reihe hat 4 Kästchen. 3 Reihen sind 3 · 4 = 12 Kästchen. *Lösungsschritt:* Zähle die Kästchen in einer Reihe. Rechne dann mal die Anzahl der Reihen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zähle die Kästchen. / Wie viele Kästchen bedeckt das Rechteck? _(Bild: Kästchenraster; Rechteck 3 × 2)_ Lösung: **6 Kästchen**. Typische Fehler: 10 (umfang-flaeche-verwechselt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur besteht aus zwei Teilen. / Wie viele Kästchen bedeckt sie? _(Bild: Kästchenraster; Figur aus den Rechtecken 5 × 2, 2 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **14 Kästchen**. Typische Fehler: 18 (umfang-flaeche-verwechselt), 10 (teilflaeche-doppelt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur ist größer? / Zähle die Kästchen. _(Bild: Kästchenraster; A: Rechteck 2 × 3; B: Figur aus den Rechtecken 4 × 1, 1 × 1)_
+  - ☐ Beide sind gleich groß.
+  - ☐ B
+  - ☑ A
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe 12 Kästchen. / Sie sollen ein Rechteck bilden. _(Gitterzeichnen, Kästchen färben; Karogitter 10 × 7)_ Lösung: **jedes Rechteck mit 12 Kästchen**, zum Beispiel (1|1) (2|1) (3|1) (4|1) (5|1) (6|1) (1|2) (2|2) (3|2) (4|2) (5|2) (6|2)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zähle die Kästchen von A und von B. / Wie viele Kästchen hat A mehr als B? _(Bild: Kästchenraster; A: Rechteck 3 × 3; B: Rechteck 2 × 2)_ Lösung: **5 Kästchen**. Typische Fehler: 13 (sub-addiert), 4 (umfang-flaeche-verwechselt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zähle die Kästchen. / Wie viele Kästchen bedeckt die Figur? _(Bild: Kästchenraster; Figur aus den Rechtecken 1 × 2, 4 × 1)_ Lösung: **6 Kästchen**. Typische Fehler: 14 (umfang-flaeche-verwechselt), 2 (teilflaeche-doppelt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Kästchen Reihe für Reihe. *Beispiel:* Eine Reihe hat 4 Kästchen. 3 Reihen sind 3 · 4 = 12 Kästchen. *Lösungsschritt:* Rechne: Kästchen in einer Reihe mal Anzahl der Reihen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen bedeckt das Rechteck? _(Bild: Kästchenraster; Rechteck 4 × 4)_ Lösung: **16 Kästchen**.
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen bedeckt die Figur? _(Bild: Kästchenraster; Figur aus den Rechtecken 3 × 1, 1 × 2)_ Lösung: **5 Kästchen**. Typische Fehler: 12 (umfang-flaeche-verwechselt), 3 (teilflaeche-doppelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur ist am größten? _(Bild: Kästchenraster; A: Rechteck 2 × 2; B: Figur aus den Rechtecken 3 × 2, 1 × 1; C: Figur aus den Rechtecken 1 × 2, 4 × 1)_
+  - ☑ B
+  - ☐ A
+  - ☐ C
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe eine Figur aus 10 Kästchen. / Die Kästchen sollen mit einer Seite aneinanderstoßen. _(Gitterzeichnen, Kästchen färben; Karogitter 12 × 7)_ Lösung: **jede zusammenhängende Figur mit 10 Kästchen**, zum Beispiel (1|1) (2|1) (1|2) (2|2) (1|3) (2|3) (1|4) (2|4) (1|5) (2|5)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen hat Figur A mehr als Figur B? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 7 × 2, 4 × 2; B: Rechteck 4 × 4)_ Lösung: **6 Kästchen**. Typische Fehler: 38 (sub-addiert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ali hat die Kästchen der Figur gezählt. / Ali sagt: Es sind 25 Kästchen. / Stimmt das? _(Bild: Kästchenraster; Figur aus den Rechtecken 4 × 1, 7 × 3)_
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es sind 24 Kästchen.
+  - ☐ Falsch. / Es sind 26 Kästchen.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile die Figur in Rechtecke und zähle jedes für sich. *Lösungsschritt:* Rechne bei jedem Rechteck Kästchen in einer Reihe mal Anzahl der Reihen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen bedeckt die Figur? _(Bild: Kästchenraster; Figur aus den Rechtecken 6 × 3, 2 × 1, 2 × 1)_ Lösung: **22 Kästchen**. Typische Fehler: 18 (teilflaeche-doppelt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur ist am kleinsten? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 3 × 1, 1 × 3; B: Figur aus den Rechtecken 1 × 3, 5 × 1; C: Rechteck 2 × 4)_
+  - ☑ A
+  - ☐ C
+  - ☐ Alle sind gleich groß.
+  - ☐ B
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen muss man dazufärben, damit aus der Figur ein Rechteck wird? _(Bild: Kästchenraster; Figur aus den Rechtecken 5 × 2, 3 × 2)_ Lösung: **4 Kästchen**. Typische Fehler: 20 (sach-schritt-vergessen), 16 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe eine Figur aus 15 Kästchen, deren Kästchen mit einer Seite aneinanderstoßen. _(Gitterzeichnen, Kästchen färben; Karogitter 12 × 8)_ Lösung: **jede zusammenhängende Figur mit 15 Kästchen**, zum Beispiel (1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (1|3) (2|3) (3|3) (1|4) (2|4) (3|4) (1|5) (2|5) (3|5)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen hat Figur A mehr als Figur B? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 5 × 2, 1 × 2, 1 × 2; B: Figur aus den Rechtecken 1 × 1, 7 × 1)_ Lösung: **6 Kästchen**. Typische Fehler: 22 (sub-addiert), 4 (umfang-flaeche-verwechselt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck besteht aus 16 Kästchen. / Es ist 2 Kästchen breit. / Wie viele Kästchen ist es lang? Lösung: **8 Kästchen**. Typische Fehler: 14 (div-falsche-rechenart), 32 (div-falsche-rechenart).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile die Figur in Rechtecke.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen bedeckt die Figur? _(Bild: Kästchenraster; Figur aus den Rechtecken 6 × 1, 4 × 1, 2 × 1)_ Lösung: **12 Kästchen**. Typische Fehler: 18 (umfang-flaeche-verwechselt), 6 (teilflaeche-doppelt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur ist am größten? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 3 × 1, 1 × 3, 1 × 3; B: Figur aus den Rechtecken 3 × 3, 1 × 2; C: Figur aus den Rechtecken 2 × 1, 4 × 1)_
+  - ☑ B
+  - ☐ A
+  - ☐ Alle sind gleich groß.
+  - ☐ C
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie viele Kästchen fehlen der Figur zu einem Rechteck? _(Bild: Kästchenraster; Figur aus den Rechtecken 7 × 2, 3 × 4)_ Lösung: **16 Kästchen**. Typische Fehler: 42 (sach-schritt-vergessen), 26 (sach-frage-verfehlt).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck besteht aus 12 Kästchen und ist 2 Kästchen breit. / Ein zweites Rechteck ist genauso lang, aber 2 Kästchen breiter. / Aus wie vielen Kästchen besteht das zweite Rechteck? Lösung: **24 Kästchen**. Typische Fehler: 14 (sach-schritt-vergessen), 16 (sach-falsche-rechnung).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Um wie viele Kästchen ist Figur A größer als Figur B? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 6 × 2, 4 × 2, 2 × 2; B: Figur aus den Rechtecken 5 × 3, 1 × 3)_ Lösung: **6 Kästchen**. Typische Fehler: 42 (sub-addiert), 2 (umfang-flaeche-verwechselt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif hat die Kästchen der Figur gezählt und sagt: Es sind 26 Kästchen. Stimmt das? _(Bild: Kästchenraster; Figur aus den Rechtecken 6 × 1, 1 × 3, 1 × 3)_
+  - ☑ Falsch. Es sind 12 Kästchen.
+  - ☐ Stimmt.
+  - ☐ Falsch. Es sind 13 Kästchen.
+
+## 5.8.1-Z2: Ich kann den Umfang einer Figur bestimmen und vom Flächeninhalt unterscheiden.
+
+Grundlage, die F übt: Mit dem Finger den Rand entlangfahren und die Kästchenseiten zählen
+
+Baut auf: 5.8.1-Z1 (Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fahre mit dem Finger den Rand entlang. *Beispiel:* Ein Rechteck mit 3 und 2 Kästchen hat 3 + 2 + 3 + 2 = 10 Kästchenseiten Rand. *Lösungsschritt:* Zähle jede Kästchenseite auf dem Rand. An einer Ecke zählen zwei Seiten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Rand des Rechtecks? / Zähle die Kästchenseiten. _(Bild: Kästchenraster; Rechteck 4 × 2)_ Lösung: **12 Kästchenseiten**. Typische Fehler: 8 (umfang-flaeche-verwechselt), 6 (umfang-halb).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Rand der Figur? / Zähle die Kästchenseiten. _(Bild: Kästchenraster; Figur aus den Rechtecken 5 × 2, 2 × 1)_ Lösung: **16 Kästchenseiten**. Typische Fehler: 12 (umfang-flaeche-verwechselt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Rand des Quadrats? / Zähle die Kästchenseiten. _(Bild: Kästchenraster; Rechteck 5 × 5)_ Lösung: **20 Kästchenseiten**. Typische Fehler: 25 (umfang-flaeche-verwechselt), 10 (umfang-halb), 16 (randkaestchen-gezaehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe ein Rechteck. / Sein Rand soll 14 Kästchenseiten lang sein. _(Gitterzeichnen, Kästchen färben; Karogitter 10 × 7)_ Lösung: **jedes Rechteck mit einem Rand von 14 Kästchenseiten**, zum Beispiel (1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (1|3) (2|3) (3|3) (1|4) (2|4) (3|4)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur hat den längeren Rand? / Zähle die Kästchenseiten. _(Bild: Kästchenraster; A: Rechteck 4 × 4; B: Rechteck 7 × 2)_
+  - ☑ B
+  - ☐ Beide sind gleich lang.
+  - ☐ A
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zähle beim Rechteck. / Kästchen: ▢ / Kästchenseiten am Rand: ▢ _(Bild: Kästchenraster; Rechteck 2 × 3)_ Lösung: a = **6**, b = **10**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fahre mit dem Finger den Rand entlang. *Beispiel:* Ein Rechteck mit 3 und 2 Kästchen hat 3 + 2 + 3 + 2 = 10 Kästchenseiten Rand. *Lösungsschritt:* Zähle jede Kästchenseite auf dem Rand. An einer Ecke zählen zwei Seiten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist der Umfang des Rechtecks? / Gib ihn in Kästchenseiten an. _(Bild: Kästchenraster; Rechteck 6 × 4)_ Lösung: **20 Kästchenseiten**. Typische Fehler: 24 (umfang-flaeche-verwechselt), 10 (umfang-halb), 16 (randkaestchen-gezaehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist der Umfang der Figur? _(Bild: Kästchenraster; Figur aus den Rechtecken 3 × 2, 6 × 2)_ Lösung: **20 Kästchenseiten**. Typische Fehler: 18 (umfang-flaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme Flächeninhalt und Umfang. / Flächeninhalt: ▢ Kästchen / Umfang: ▢ Kästchenseiten _(Bild: Kästchenraster; Figur aus den Rechtecken 4 × 2, 1 × 3)_ Lösung: a = **11**, b = **18**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe ein Rechteck mit dem Umfang 14 Kästchenseiten. _(Gitterzeichnen, Kästchen färben; Karogitter 10 × 7)_ Lösung: **jedes Rechteck mit einem Rand von 14 Kästchenseiten**, zum Beispiel (1|1) (2|1) (3|1) (4|1) (1|2) (2|2) (3|2) (4|2) (1|3) (2|3) (3|3) (4|3)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur hat den größeren Umfang? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 3 × 2, 1 × 1; B: Rechteck 2 × 2; C: Figur aus den Rechtecken 1 × 2, 4 × 1)_
+  - ☐ A
+  - ☑ C
+  - ☐ B
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · A und B haben den gleichen Umfang. / Welche Figur hat den größeren Flächeninhalt? _(Bild: Kästchenraster; A: Rechteck 4 × 2; B: Rechteck 3 × 3)_
+  - ☐ A
+  - ☐ Beide sind gleich groß.
+  - ☑ B
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle jede Kästchenseite auf dem Rand. *Lösungsschritt:* Mache an einer Ecke einen Punkt und fahre einmal ganz herum.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist der Umfang der Figur in Kästchenseiten? _(Bild: Kästchenraster; Figur aus den Rechtecken 1 × 3, 6 × 3)_ Lösung: **24 Kästchenseiten**. Typische Fehler: 21 (umfang-flaeche-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist der Umfang der Figur in Kästchenseiten? _(Bild: Kästchenraster; Figur aus den Rechtecken 5 × 3, 1 × 2, 1 × 2)_ Lösung: **24 Kästchenseiten**. Typische Fehler: 19 (umfang-flaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme Flächeninhalt und Umfang der Figur. / Flächeninhalt: ▢ Kästchen / Umfang: ▢ Kästchenseiten _(Bild: Kästchenraster; Figur aus den Rechtecken 4 × 1, 1 × 3, 1 × 3)_ Lösung: a = **10**, b = **22**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe eine Figur aus 8 Kästchen mit dem Umfang 12 Kästchenseiten. _(Gitterzeichnen, Kästchen färben; Karogitter 10 × 7)_ Lösung: **jede zusammenhängende Figur mit 8 Kästchen und einem Rand von 12 Kästchenseiten**, zum Beispiel (1|1) (2|1) (1|2) (2|2) (1|3) (2|3) (1|4) (2|4)
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · A und B haben den gleichen Umfang. Welche Figur hat den größeren Flächeninhalt? _(Bild: Kästchenraster; A: Rechteck 3 × 3; B: Rechteck 2 × 4)_
+  - ☐ B
+  - ☐ Beide sind gleich groß.
+  - ☑ A
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck besteht aus 24 Kästchen. / Es ist 4 Kästchen breit. / Wie viele Kästchenseiten ist sein Umfang? Lösung: **20 Kästchenseiten**. Typische Fehler: 10 (umfang-halb), 24 (umfang-flaeche-verwechselt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fahre einmal ganz herum, auch in die Lücke hinein.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist der Umfang der Figur in Kästchenseiten? _(Bild: Kästchenraster; Figur aus den Rechtecken 4 × 1, 1 × 4, 1 × 4)_ Lösung: **26 Kästchenseiten**. Typische Fehler: 12 (umfang-flaeche-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Figur hat den kleinsten Umfang? _(Bild: Kästchenraster; A: Figur aus den Rechtecken 3 × 1, 1 × 2, 1 × 2; B: Figur aus den Rechtecken 4 × 3, 2 × 1; C: Rechteck 2 × 4)_
+  - ☐ B
+  - ☐ A
+  - ☑ C
+  - ☐ Alle sind gleich lang.
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Färbe eine Figur aus 10 Kästchen mit dem Umfang 14 Kästchenseiten. _(Gitterzeichnen, Kästchen färben; Karogitter 12 × 8)_ Lösung: **jede zusammenhängende Figur mit 10 Kästchen und einem Rand von 14 Kästchenseiten**, zum Beispiel (1|1) (2|1) (1|2) (2|2) (1|3) (2|3) (1|4) (2|4) (1|5) (2|5)
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck hat den Umfang 30 Kästchenseiten. / Es ist 9 Kästchen lang. / Aus wie vielen Kästchen besteht es? Lösung: **54 Kästchen**. Typische Fehler: 189 (umfang-halb), 30 (umfang-flaeche-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme den Flächeninhalt in Kästchen und den Umfang in Kästchenseiten: ▢ Kästchen, ▢ Kästchenseiten _(Bild: Kästchenraster; Figur aus den Rechtecken 3 × 2, 2 × 2, 1 × 2)_ Lösung: a = **12**, b = **18**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ali sagt: A und B haben den gleichen Umfang, also sind sie gleich groß. Welche Figur hat den größeren Flächeninhalt? _(Bild: Kästchenraster; A: Rechteck 5 × 3; B: Rechteck 6 × 2)_
+  - ☐ Beide sind gleich groß.
+  - ☐ B
+  - ☑ A
+
+## 5.8.2-H1: Ich kann Flächeneinheiten nennen und zu einer Fläche die passende Einheit wählen.
+
+Grundlage, die F übt: Ein Feld mit 1 cm Seitenlänge ist 1 cm²: Felder einer Figur zählen
+
+Baut auf: 5.8.1-Z1 (Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.), 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Felder. Jedes Feld ist 1 cm². *Beispiel:* Ein Rechteck mit 6 Feldern ist 6 cm² groß. *Lösungsschritt:* Zähle die Felder in einer Reihe. Rechne mal die Anzahl der Reihen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Feld ist 1 cm² groß. / Wie groß ist das Rechteck? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 3 × 2)_ Lösung: **6 cm²**.
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Postkarte ist ungefähr 150 ▢ groß. / Welche Einheit passt? _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_
+  - ☐ m²
+  - ☑ cm²
+  - ☐ dm²
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_ Lösung: Briefmarke → 6 cm², Tafel → 5 m², Heftseite → 6 dm²
+- `04` AFB I · _Probleme lösen_ · Welche Fläche ist am größten? / Schau in die Tabelle. _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_
+  - ☐ 9 dm²
+  - ☐ 9 cm²
+  - ☑ 9 m²
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Feld ist 1 cm² groß. / Wie viel cm² ist A größer als B? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; A: Rechteck 5 × 3; B: Figur aus den Rechtecken 3 × 2, 1 × 2)_ Lösung: **7 cm²**. Typische Fehler: 23 (sub-addiert), 15 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist eine Postkarte ungefähr? / Wähle die passende Angabe. _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_
+  - ☐ 150 m²
+  - ☐ 150 dm²
+  - ☑ 150 cm²
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Flächen, km² für sehr große. *Beispiel:* Ein Fingernagel ist ungefähr 80 mm² groß. *Lösungsschritt:* Stell dir das Ding vor. Ist es sehr klein oder sehr groß?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Tischplatte ist ungefähr 80 ▢ groß. / Welche Einheit passt? _(Tabelle: Einheit | So groß ist etwa / mm² | ein Stecknadelkopf / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt / km² | ein Dorf mit Feldern)_
+  - ☐ mm²
+  - ☑ dm²
+  - ☐ m²
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. Lösung: Klassenzimmer → 60 m², Postkarte → 150 cm², Heftseite → 6 dm²
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Feld ist 1 cm² groß. / Wie groß ist die Figur? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 7 × 2, 3 × 3)_ Lösung: **23 cm²**.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Flächen. / Beginne mit der kleinsten Fläche. _(Ordnen; die Karten liegen so da: 3 m², 3 mm², 3 cm², 3 km², 3 dm²)_ Lösung: **3 mm², 3 cm², 3 dm², 3 m², 3 km²**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wie groß ist eine Stadt ungefähr? / Wähle die passende Angabe. _(Tabelle: Einheit | So groß ist etwa / mm² | ein Stecknadelkopf / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt / km² | ein Dorf mit Feldern)_
+  - ☐ 90 m²
+  - ☑ 90 km²
+  - ☐ 90 dm²
+- `06` AFB III · _Argumentieren_ · Paul sagt: Ein Klassenzimmer ist ungefähr 60 cm² groß. / Stimmt das?
+  - ☑ Falsch. / Es sind ungefähr 60 m².
+  - ☐ Falsch. / Es sind ungefähr 60 dm².
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite. *Lösungsschritt:* Stell dir das Ding vor und vergleiche.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Fußballfeld ist ungefähr 70 ▢ groß. / Welche Einheit passt?
+  - ☐ km²
+  - ☑ a
+  - ☐ ha
+  - ☐ m²
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. Lösung: Heftseite → 6 dm², Tafel → 5 m², Fußballfeld → 70 a, Briefmarke → 6 cm²
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Flächen. Beginne mit der größten Fläche. _(Ordnen; die Karten liegen so da: 7 a, 7 dm², 7 km², 7 ha, 7 m²)_ Lösung: **7 km², 7 ha, 7 a, 7 m², 7 dm²**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quadrat ist 10 m lang und 10 m breit. / Wie groß ist seine Fläche? / Gib sie in Ar an. _(Größe eingeben, Einheit a steht fest)_ Lösung: **1 a**. Typische Fehler: 20 m² (umfang-halb), 40 m² (umfang-flaeche-verwechselt), 100 a (umrechnungszahl-flaeche).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Angabe passt zu einem Bauernhof?
+  - ☐ 40 km²
+  - ☐ 40 m²
+  - ☐ 40 a
+  - ☑ 40 ha
+- `06` AFB III · _Argumentieren_ · Lena sagt: Eine Tischplatte ist ungefähr 80 m² groß. Stimmt das?
+  - ☑ Falsch. Es sind ungefähr 80 dm².
+  - ☐ Stimmt.
+  - ☐ Falsch. Es sind ungefähr 80 mm².
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Flächen, die du kennst.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Garten ist ungefähr 4 ▢ groß. / Welche Einheit passt?
+  - ☐ m²
+  - ☐ km²
+  - ☐ dm²
+  - ☐ ha
+  - ☑ a
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Flächen. Beginne mit der kleinsten Fläche. _(Ordnen; die Karten liegen so da: 90 ha, 1 km², 9990 a, 99 ha)_ Lösung: **90 ha, 99 ha, 9990 a, 1 km²**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. Lösung: Postkarte → 150 cm², Schulhof → 20 a, Klassenzimmer → 60 m², Heftseite → 6 dm², Bodensee → 536 km²
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Feld ist 400 m lang und 200 m breit. Wie groß ist es? Gib die Fläche in Hektar an. _(Größe eingeben, Einheit ha steht fest)_ Lösung: **8 ha**. Typische Fehler: 800 ha (umrechnungszahl-flaeche), 8 a (umrechnungszahl-flaeche), 12 a (umfang-flaeche-verwechselt).
+- `05` AFB II · _Probleme lösen_ · Welche Fläche ist am größten?
+  - ☐ 999 000 m²
+  - ☐ 99 ha
+  - ☐ 9000 a
+  - ☑ 1 km²
+- `06` AFB III · _Argumentieren_ · Lina sagt: Ein Garten ist ungefähr 4 a groß. Also gilt 4 a = 400 m². Stimmt das?
+  - ☐ Falsch, denn 4 a sind 40 m².
+  - ☑ Stimmt, denn 1 a sind 100 m².
+  - ☐ Falsch, denn 4 a sind 4000 m².
+
+## 5.8.2-H2: Ich kann Flächeneinheiten umwandeln.
+
+Grundlage, die F übt: Mit 100 malnehmen: von einer Flächeneinheit in die nächstkleinere
+
+Baut auf: 5.8.2-H1 (Ich kann Flächeneinheiten nennen und zu einer Fläche die passende Einheit wählen.), 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 m² sind 100 dm². *Beispiel:* 3 m² sind 3 · 100 dm² = 300 dm². *Lösungsschritt:* In der kleineren Einheit wird die Zahl größer. Rechne mal 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 6 m² = ▢ dm² _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm²)_ Lösung: a = **600**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 200 cm² = ▢ dm² _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm²)_ Lösung: a = **2**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schau in die Tabelle. / Was ist genauso viel wie 7 m²? _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm²)_
+  - ☐ 70 dm²
+  - ☑ 700 dm²
+  - ☐ 7000 dm²
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schau in die Tabelle. / Was ist gleich viel? _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm²)_ Lösung: 5 m² → 500 dm², 3 dm² → 300 cm², 4 m² → 400 dm²
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Fülle die Tabelle aus. _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm²)_ 
+
+  | dm² | cm² |
+  |---|---|
+  | 5 | **500** |
+  | **14** | 1400 |
+  | 23 | **2300** |
+
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 2 m² = ▢ dm² / 8 dm² = ▢ cm² _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm²)_ Lösung: a = **200**, b = **800**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 cm² sind 100 mm². *Beispiel:* 3 cm² sind 3 · 100 mm² = 300 mm². *Lösungsschritt:* In der kleineren Einheit wird die Zahl größer. Rechne mal 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 31 cm² = ▢ mm² _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm² / 1 cm² | 100 mm²)_ Lösung: a = **3100**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 5 m² 17 dm² = ▢ dm² _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm² / 1 cm² | 100 mm²)_ Lösung: a = **517**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 681 dm² = ▢ m² ▢ dm² _(Tabelle: Merke |  / 1 m² | 100 dm² / 1 dm² | 100 cm² / 1 cm² | 100 mm²)_ Lösung: a = **6**, b = **81**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Fülle die Tabelle aus. _(Tabelle: Merke |  / 1 dm² | 100 cm²)_ 
+
+  | dm² | cm² |
+  |---|---|
+  | 2 | **200** |
+  | **29** | 2900 |
+  | 64 | **6400** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Flächen. / Beginne mit der kleinsten Fläche. _(Ordnen; die Karten liegen so da: 430 mm², 4 cm² 5 mm², 390 mm², 4 cm² 95 mm²)_ Lösung: **390 mm², 4 cm² 5 mm², 430 mm², 4 cm² 95 mm²**
+- `06` AFB III · _Argumentieren_ · Noah sagt: 3 m² = 30 dm². / Stimmt das?
+  - ☐ Falsch. / 3 m² sind 3000 dm².
+  - ☐ Stimmt.
+  - ☑ Falsch. / 3 m² sind 300 dm².
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe über die Einheit dazwischen. *Lösungsschritt:* Bei jedem Schritt rechnest du mal 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 9 km² = ▢ a Lösung: a = **90000**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 69 800 m² = ▢ ha ▢ a Lösung: a = **6**, b = **98**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 3 km² = ▢ ha / 22 ha = ▢ a Lösung: a = **300**, b = **2200**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 3 ha? / Kreuze alle an.
+  - ☐ 3000 m²
+  - ☑ 30 000 m²
+  - ☑ 300 a
+  - ☐ 30 a
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Flächen. Beginne mit der größten Fläche. _(Ordnen; die Karten liegen so da: 8 ha 5 a, 8 ha, 790 a, 79 500 m²)_ Lösung: **8 ha 5 a, 8 ha, 79 500 m², 790 a**
+- `06` AFB III · _Probleme lösen_ · Welche Fläche ist am größten?
+  - ☐ 150 a
+  - ☐ 1 ha 90 a
+  - ☑ 25 000 m²
+  - ☐ 2 ha
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte auf die Umrechnungszahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Umwandlung ist falsch?
+  - ☐ 900 m² = 9 a
+  - ☑ 7 dm² = 70 cm²
+  - ☐ 9 ha = 900 a
+  - ☐ 8 cm² = 800 mm²
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel cm² sind 8 m² 45 dm²? Lösung: **84500 cm²**. Typische Fehler: 845 (umrechnungsrichtung), 8450 (umrechnungszahl-flaeche), 80045 (masszahlen-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 7 m² = ▢ mm² Lösung: a = **7000000**
+- `04` AFB III · _Argumentieren_ · Ole rechnet: 7 ha 2 a = 72 a. Stimmt das?
+  - ☐ Falsch, denn 7 ha 2 a sind 720 a.
+  - ☑ Falsch, denn 7 ha 2 a sind 702 a.
+  - ☐ Stimmt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? / 5 m² ▢ 5000 cm²
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Quadrat ist 3 m lang und 3 m breit. Wie viel dm² ist es groß? Lösung: **900 dm²**. Typische Fehler: 90 (umrechnungszahl-flaeche), 9 (umrechnungsrichtung), 120 (umfang-flaeche-verwechselt).
+
+## 5.8.X1-A1: Ich kann Flächeninhalte mit Stützgrößen schätzen.
+
+Grundlage, die F übt: Eine bekannte Fläche (Heftseite) mehrmals nebeneinanderlegen
+
+Baut auf: 5.8.2-H1 (Ich kann Flächeneinheiten nennen und zu einer Fläche die passende Einheit wählen.), 5.6.1-S1 (Ich kann zu einer Größe die passende Einheit und einen Vergleich aus dem Alltag nennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle, wie oft das Ding hineinpasst. *Beispiel:* Passen 10 Heftseiten auf den Tisch, sind es 10 · 6 dm² = 60 dm². *Lösungsschritt:* Rechne: Anzahl mal die Größe eines Dings.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tischplatte ist mit Heftseiten ausgelegt. / Eine Heftseite ist ungefähr 6 dm² groß. / Wie groß ist die Tischplatte ungefähr? _(Bild: Kästchenraster, 1 Kästchen = 1 Heftseite; Rechteck 7 × 2)_ Lösung: **84 dm²**. Typische Fehler: 14 (schaetzen-nicht-hochgerechnet), 20 (schaetzen-addiert).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist ein Klassenzimmer ungefähr? / Wähle die passende Angabe. _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_
+  - ☐ 60 dm²
+  - ☑ 60 m²
+  - ☐ 60 cm²
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Boden des Kinderzimmers ist mit Zeitungen ausgelegt. / Eine aufgeklappte Zeitung ist ungefähr 1 m² groß. / Wie groß ist der Boden des Kinderzimmers ungefähr? _(Bild: Kästchenraster, 1 Kästchen = 1 Zeitung; Rechteck 8 × 2)_ Lösung: **16 m²**. Typische Fehler: 17 (schaetzen-addiert).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_ Lösung: Briefmarke → 6 cm², Klassenzimmer → 60 m², Heftseite → 6 dm²
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Brett ist mit Postkarten ausgelegt. / Eine Postkarte ist ungefähr 150 cm² groß. / Wie groß ist das Brett ungefähr? _(Bild: Kästchenraster, 1 Kästchen = 1 Postkarte; Rechteck 2 × 2)_ Lösung: **600 cm²**. Typische Fehler: 4 (schaetzen-nicht-hochgerechnet), 154 (schaetzen-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Kinderzimmer ist ungefähr 12 ▢ groß. / Welche Einheit passt? _(Tabelle: Einheit | So groß ist etwa / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt)_
+  - ☐ cm²
+  - ☑ m²
+  - ☐ dm²
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Kästchen. Jedes Kästchen ist ein Ding. *Beispiel:* Passen 12 Zeitungen auf den Boden, sind es 12 · 1 m² = 12 m². *Lösungsschritt:* Rechne: Anzahl mal die Größe eines Dings.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Boden des Kinderzimmers ist mit Zeitungen ausgelegt. / Eine aufgeklappte Zeitung ist ungefähr 1 m² groß. / Wie groß ist der Boden des Kinderzimmers ungefähr? _(Bild: Kästchenraster, 1 Kästchen = 1 Zeitung; Rechteck 3 × 6)_ Lösung: **18 m²**. Typische Fehler: 19 (schaetzen-addiert).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Stadt ist ungefähr 90 ▢ groß. / Welche Einheit passt? _(Tabelle: Einheit | So groß ist etwa / mm² | ein Stecknadelkopf / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt / km² | ein Dorf mit Feldern)_
+  - ☐ dm²
+  - ☑ km²
+  - ☐ m²
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Briefmarke ist ungefähr 6 cm² groß. / Ein Blatt ist ungefähr 120 cm² groß. / Wie viele Briefmarken passen ungefähr auf das Blatt? Lösung: **20**. Typische Fehler: 720 (div-falsche-rechenart), 2000 (umrechnungszahl-flaeche).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Brett ist mit Postkarten ausgelegt. / Eine Postkarte ist ungefähr 150 cm² groß. / Wie groß ist das Brett ungefähr? _(Bild: Kästchenraster, 1 Kästchen = 1 Postkarte; Rechteck 2 × 2)_ Lösung: **600 cm²**. Typische Fehler: 4 (schaetzen-nicht-hochgerechnet), 154 (schaetzen-addiert).
+- `05` AFB II · _Argumentieren_ · Mara sagt: Ein Klassenzimmer ist ungefähr 60 m² groß. / Stimmt das?
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es sind ungefähr 60 dm².
+  - ☐ Falsch. / Es sind ungefähr 60 cm².
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Klassenzimmer ist ungefähr 80 m² groß. / Ein Sportplatz ist ungefähr 4000 m² groß. / Wie viele Klassenzimmer passen ungefähr auf den Sportplatz? Lösung: **50**. Typische Fehler: 320000 (div-falsche-rechenart), 5000 (umrechnungszahl-flaeche).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Flächen, die du kennst. *Lösungsschritt:* Ein Klassenzimmer hat etwa 60 m², ein Fußballfeld etwa 70 a.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Garten ist ungefähr 4 ▢ groß. / Welche Einheit passt?
+  - ☐ km²
+  - ☐ ha
+  - ☐ m²
+  - ☑ a
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Fußballfeld ist ungefähr 70 a groß, ein Klassenzimmer ungefähr 70 m². Wie viele Klassenzimmer passen ungefähr auf ein Fußballfeld? Lösung: **100**. Typische Fehler: 4900 (div-falsche-rechenart), 1 (umrechnungszahl-flaeche), 10000 (umrechnungszahl-flaeche).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Tisch ist so groß wie 11 Heftseiten. Eine Heftseite ist ungefähr 6 dm² groß. Gib einen Schätzwert für die Fläche des Tisches an. Wähle dazu eine passende Einheit. _(Größe eingeben, Einheit wählen aus cm², dm², m²)_ Lösung: **66 dm²**. Typische Fehler: 11 dm² (schaetzen-nicht-hochgerechnet), 17 dm² (schaetzen-addiert).
+- `04` AFB I · _Argumentieren_ · Jonas sagt: Ein Schulhof ist ungefähr 20 m² groß. Stimmt das?
+  - ☐ Stimmt.
+  - ☐ Falsch. Es sind ungefähr 20 km².
+  - ☑ Falsch. Es sind ungefähr 20 a.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. Lösung: Fußballfeld → 70 a, Stadt → 90 km², Bauernhof → 40 ha, Tischplatte → 80 dm²
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Schulhof ist ungefähr 28 a groß. Ein Klassenzimmer ist ungefähr 70 m² groß. Wie viele Klassenzimmer passen ungefähr auf den Schulhof? Lösung: **40**. Typische Fehler: 1960 (div-falsche-rechenart), 4000 (umrechnungszahl-flaeche).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Flächen, die du kennst.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Garten ist ungefähr 4 ▢ groß. / Welche Einheit passt?
+  - ☐ m²
+  - ☐ ha
+  - ☐ dm²
+  - ☐ km²
+  - ☑ a
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Der Bodensee ist ungefähr 540 km² groß. Eine Stadt ist ungefähr 90 km² groß. Wie viele solcher Städte hätten ungefähr im Bodensee Platz? Lösung: **6**. Typische Fehler: 48600 (div-falsche-rechenart), 600 (umrechnungszahl-flaeche).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Wald ist ungefähr so groß wie 200 Fußballfelder. Ein Fußballfeld ist ungefähr 70 a groß. Wie groß ist der Wald ungefähr? Wähle eine passende Einheit. _(Größe eingeben, Einheit wählen aus a, ha, km²)_ Lösung: **140 ha**. Typische Fehler: 2 ha (schaetzen-nicht-hochgerechnet), 1 ha 40 a (umrechnungszahl-flaeche).
+- `04` AFB III · _Argumentieren_ · Finn sagt: Der Wald ist ungefähr 30 m² groß. Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. Es sind ungefähr 30 km².
+  - ☐ Falsch. Es sind ungefähr 30 dm².
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Fläche passt zu welchem Ding? / Ordne zu. Lösung: Fingernagel → 80 mm², Stadt → 90 km², Tischplatte → 80 dm², Postkarte → 150 cm², Bauernhof → 40 ha
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Tafel ist ungefähr 3 m² groß. Eine Heftseite ist ungefähr 6 dm² groß. Wie viele Heftseiten braucht man ungefähr, um die Tafel ganz zu bedecken? Lösung: **50**. Typische Fehler: 18 (div-falsche-rechenart), 5000 (umrechnungszahl-flaeche).
+
+## 5.8.3-R1: Ich kann Flächeninhalt und Umfang von Rechtecken und Quadraten berechnen.
+
+Grundlage, die F übt: Ein Rechteck am Raster: Reihen mal Felder in einer Reihe
+
+Baut auf: 5.8.2-H1 (Ich kann Flächeneinheiten nennen und zu einer Fläche die passende Einheit wählen.), 5.8.1-Z2 (Ich kann den Umfang einer Figur bestimmen und vom Flächeninhalt unterscheiden.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Flächeninhalt ist Länge mal Breite. *Beispiel:* Ein Rechteck, 4 cm lang und 3 cm breit: 4 cm · 3 cm = 12 cm². *Lösungsschritt:* Zähle die Felder in einer Reihe und die Reihen. Rechne dann mal.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Rechteck ist 4 cm lang und 2 cm breit. / Wie groß ist sein Flächeninhalt? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 4 × 2; Maße 4 cm, 2 cm)_ Lösung: **8 cm²**. Typische Fehler: 12 (umfang-flaeche-verwechselt), 6 (umfang-flaeche-verwechselt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Rechteck ist 3 cm lang und 2 cm breit. / Wie lang ist sein Umfang? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 3 × 2; Maße 3 cm, 2 cm)_ Lösung: **10 cm**. Typische Fehler: 5 (umfang-halb), 6 (umfang-flaeche-verwechselt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Quadrat ist 6 cm lang und 6 cm breit. / Wie groß ist sein Flächeninhalt? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 6 × 6; Maße 6 cm, 6 cm)_ Lösung: **36 cm²**. Typische Fehler: 24 (umfang-flaeche-verwechselt), 12 (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme beim Rechteck: / Flächeninhalt: ▢ cm² / Umfang: ▢ cm _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 8 × 5; Maße 8 cm, 5 cm)_ Lösung: a = **40**, b = **26**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt ein Beet im Burggarten. / Das Beet ist 9 m lang und 4 m breit. / Wie groß ist das Beet? _(Bild: Raster, 1 Feld = 1 m²; Rechteck 9 × 4; Maße 9 m, 4 m)_ Lösung: **36 m²**. Typische Fehler: 26 (umfang-flaeche-verwechselt), 13 (umfang-flaeche-verwechselt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Quadrat ist 8 cm lang und 8 cm breit. / Wie lang ist sein Umfang? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 8 × 8; Maße 8 cm, 8 cm)_ Lösung: **32 cm**. Typische Fehler: 16 (umfang-halb), 64 (umfang-flaeche-verwechselt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* A = a · b: Länge mal Breite. *Beispiel:* a = 6 cm, b = 4 cm: A = 6 cm · 4 cm = 24 cm². *Lösungsschritt:* Setze die Maße in die Formel ein.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Flächeninhalt A des Rechtecks. / Rechne mit A = a · b. _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 6 × 4; Maße 6 cm, 4 cm)_ Lösung: **24 cm²**. Typische Fehler: 20 (umfang-flaeche-verwechselt), 10 (umfang-flaeche-verwechselt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Umfang u des Rechtecks. / Rechne mit u = 2 · a + 2 · b. _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 11 × 3; Maße 11 cm, 3 cm)_ Lösung: **28 cm**. Typische Fehler: 14 (umfang-halb), 33 (umfang-flaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Rechteck ist 70 cm lang und 7 cm breit. / A = ▢ cm² / u = ▢ cm Lösung: a = **490**, b = **154**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt einen Hof der Burg. / Er ist ein Quadrat. / Wie groß ist der Hof? _(Bild: Raster, 1 Feld = 1 m²; Rechteck 4 × 4; Maße 4 m, 4 m)_ Lösung: **16 m²**. Typische Fehler: 8 (umfang-flaeche-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · A und B haben den gleichen Umfang. / Welches Rechteck hat den größeren Flächeninhalt? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; A: Rechteck 3 × 5; B: Rechteck 6 × 2; Maße 3 cm, 5 cm, 6 cm, 2 cm)_
+  - ☐ Beide sind gleich groß.
+  - ☐ B
+  - ☑ A
+- `06` AFB III · _Argumentieren_ · Ein Rechteck ist 70 cm lang und 20 cm breit. / Ali sagt: Der Umfang ist 90 cm. / Stimmt das?
+  - ☑ Falsch. / Der Umfang ist 180 cm.
+  - ☐ Falsch. / Der Umfang ist 1400 cm.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* A = a · b. Rechne schriftlich, wenn nötig. *Lösungsschritt:* Achte auf die Einheit: m · m ergibt m².
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Flächeninhalt des Grundstücks. _(Bild: Skizze, nicht maßstäblich; Rechteck 19 × 13 (in m); Maße 19 m, 13 m)_ _(Größe eingeben, Einheit wählen aus m², a, dm²)_ Lösung: **247 m²**. Typische Fehler: 64 m² (umfang-flaeche-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne ein Rechteck, das 9 cm lang und 2 cm 5 mm breit ist. Miss alle vier Seiten. Wie viele mm ist der Umfang lang? Lösung: **230 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 115 (umfang-halb), 2300 (einheit-mm-cm).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Flächeninhalt der Tischplatte. Achte auf die Einheiten. _(Bild: Skizze, nicht maßstäblich; Rechteck 250 × 80 (in cm); Maße 2 m 50 cm, 80 cm)_ _(Größe eingeben, Einheit wählen aus cm², dm², m²)_ Lösung: **200 dm²**. Typische Fehler: 1 dm² 60 cm² (einheiten-gemischt-multipliziert), 6 dm² 60 cm² (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Um den Acker kommt ein Zaun. Wie lang wird der Zaun? _(Bild: Skizze, nicht maßstäblich; Rechteck 156 × 58 (in m); Maße 156 m, 58 m)_ Lösung: **428 m**. Typische Fehler: 214 (umfang-halb), 9048 (umfang-flaeche-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne ein Quadrat mit der Seitenlänge 6 cm 5 mm. Miss alle vier Seiten. Wie viele mm ist der Umfang lang? Lösung: **260 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 130 (umfang-halb), 2600 (einheit-mm-cm).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck ist 16 m lang und 8 m breit. Ein Quadrat hat die Seitenlänge 12 m. Beide haben den gleichen Umfang. Um wie viel m² ist das Quadrat größer? Lösung: **16 m²**. Typische Fehler: 0 (gleicher-umfang-gleiche-flaeche), 144 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* A = a · b, danach in eine passende Einheit umwandeln.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Flächeninhalt der Wiese. Wähle eine passende Einheit. _(Bild: Skizze, nicht maßstäblich; Rechteck 250 × 80 (in m); Maße 250 m, 80 m)_ _(Größe eingeben, Einheit wählen aus m², a, ha)_ Lösung: **200 a**. Typische Fehler: 6 a 60 m² (umfang-flaeche-verwechselt), 20 000 a (umrechnungszahl-flaeche).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne ein Rechteck, das 4 cm 5 mm breit und doppelt so lang wie breit ist. Wie viele mm ist der Umfang lang? Lösung: **270 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 135 (umfang-halb), 2700 (einheit-mm-cm).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Um das Beet kommt eine Kante aus Holz. Wie viele cm ist sie lang? _(Bild: Skizze, nicht maßstäblich; Rechteck 320 × 84 (in cm); Maße 3 m 20 cm, 84 cm)_ Lösung: **808 cm**. Typische Fehler: 174 (einheiten-gemischt-multipliziert), 404 (umfang-halb).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck ist 9 cm lang und 8 cm breit. Länge und Breite werden verdoppelt. Wie oft passt das alte Rechteck in das neue? Lösung: **4**. Typische Fehler: 2 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Platz ist ein Quadrat. Wie lang ist der Weg einmal ganz um den Platz? Wähle eine passende Einheit. _(Bild: Skizze, nicht maßstäblich; Rechteck 208 × 208 (in m); Maße 208 m, 208 m)_ _(Größe eingeben, Einheit wählen aus cm, m, km)_ Lösung: **832 m**. Typische Fehler: 416 m (umfang-halb), 43 264 m (umfang-flaeche-verwechselt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Im Heft: Zeichne ein Rechteck, das 6 cm lang und 18 cm² groß ist. Wie viele mm ist der Umfang lang? Lösung: **180 mm** (bis 2 mm daneben gilt als richtig). Typische Fehler: 90 (umfang-halb), 18 (einheit-mm-cm).
+
+## 5.8.3-R2: Ich kann fehlende Seiten berechnen und Sachaufgaben zu Rechtecken lösen.
+
+Grundlage, die F übt: Rückwärts: Wie viele Felder hat eine Reihe, wenn es 3 Reihen und 12 Felder sind?
+
+Baut auf: 5.8.3-R1 (Ich kann Flächeninhalt und Umfang von Rechtecken und Quadraten berechnen.), 5.8.2-H2 (Ich kann Flächeneinheiten umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Flächeninhalt = Länge mal Breite. Rechne rückwärts mit Geteilt. *Beispiel:* 12 cm² und 4 cm lang: 12 : 4 = 3. Es ist 3 cm breit. *Lösungsschritt:* Wie oft passt die Länge in den Flächeninhalt?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Rechteck ist 12 cm² groß und 6 cm lang. / Wie breit ist es? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 6 × 2; Maße 6 cm, ?)_ Lösung: **2 cm**. Typische Fehler: 6 (div-falsche-rechenart), 72 (div-falsche-rechenart).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Rechteck hat einen Umfang von 20 cm. / Es ist 6 cm lang. / Wie breit ist es? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 6 × 4; Maße 6 cm, ?)_ Lösung: **4 cm**. Typische Fehler: 14 (umfang-halb), 8 (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt ein Beet. / Es ist 6 m lang und 2 m breit. / Um das Beet kommt ein Zaun. / Wie lang ist der Zaun? _(Bild: Raster, 1 Feld = 1 m²; Rechteck 6 × 2; Maße 6 m, 2 m)_ Lösung: **16 m**. Typische Fehler: 8 (umfang-halb), 12 (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Quadrat hat einen Umfang von 12 cm. / Wie lang ist eine Seite? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 3 × 3)_ Lösung: **3 cm**. Typische Fehler: 6 (umfang-halb), 8 (div-falsche-rechenart).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Burghof ist 7 m lang und 5 m breit. / Er wird mit Platten belegt. / Jede Platte ist 1 m² groß. / Wie viele Platten braucht man? _(Bild: Raster, 1 Feld = 1 m²; Rechteck 7 × 5; Maße 7 m, 5 m)_ Lösung: **35 Platten**. Typische Fehler: 24 (umfang-flaeche-verwechselt), 12 (umfang-flaeche-verwechselt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Rechteck ist 28 cm² groß und 4 cm breit. / Wie lang ist es? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 7 × 4; Maße ?, 4 cm)_ Lösung: **7 cm**. Typische Fehler: 24 (div-falsche-rechenart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* A = a · b. Rückwärts: b = A : a. *Beispiel:* A = 24 cm², a = 6 cm: b = 24 cm² : 6 cm = 4 cm. *Lösungsschritt:* Teile den Flächeninhalt durch die Länge.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Rechteck hat A = 66 cm². / Es ist a = 11 cm lang. / Wie breit ist es? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 11 × 6; Maße 11 cm, ?)_ Lösung: **6 cm**. Typische Fehler: 55 (div-falsche-rechenart).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Garten ist 12 m lang und 3 m breit. / Um den Garten kommt ein Zaun. / Das Tor ist 2 m breit und braucht keinen Zaun. / Wie viel m Zaun braucht man? _(Bild: Raster, 1 Feld = 1 m²; Rechteck 12 × 3; Maße 12 m, 3 m)_ Lösung: **28 m**. Typische Fehler: 30 (sach-schritt-vergessen), 13 (umfang-halb).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Rechteck hat A = 250 cm² und ist 50 cm lang. / Wie breit ist es? Lösung: **5 cm**. Typische Fehler: 200 (div-falsche-rechenart), 50 (div-falsche-rechenart).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt einen quadratischen Platz. / Sein Umfang ist 28 m. / Wie groß ist der Platz? _(Bild: Raster, 1 Feld = 1 m²; Rechteck 7 × 7)_ Lösung: **49 m²**. Typische Fehler: 28 (umfang-flaeche-verwechselt), 7 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Feld ist 30 m lang und 30 m breit. / Auf 1 m² wachsen 2 Kohlköpfe. / Wie viele Kohlköpfe wachsen auf dem Feld? Lösung: **1800 Kohlköpfe**. Typische Fehler: 900 (sach-schritt-vergessen), 240 (umfang-flaeche-verwechselt).
+- `06` AFB III · _Argumentieren_ · Ein Quadrat hat den Umfang 24 cm. / Tom sagt: Dann ist sein Flächeninhalt 24 cm². / Stimmt das?
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es sind 36 cm².
+  - ☐ Falsch. / Es sind 48 cm².
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* b = A : a. *Lösungsschritt:* Rechne schriftlich und mache die Probe mit a · b.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Grundstück ist 252 m² groß und 18 m lang. Wie breit ist es? _(Bild: Skizze, nicht maßstäblich; Rechteck 18 × 14 (in m); Maße 18 m, ?)_ Lösung: **14 m**. Typische Fehler: 234 (div-falsche-rechenart).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Um einen Garten kommt ein Zaun. Das Tor ist 3 m breit. Wie viel m Zaun braucht man? _(Bild: Skizze, nicht maßstäblich; Rechteck 23 × 17 (in m); Maße 23 m, 17 m)_ Lösung: **77 m**. Typische Fehler: 80 (sach-schritt-vergessen), 37 (umfang-halb).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Zimmer wird mit Teppichfliesen ausgelegt. Eine Fliese ist 50 cm lang und 50 cm breit. Wie viele Fliesen braucht man? _(Bild: Skizze, nicht maßstäblich; Rechteck 600 × 300 (in cm); Maße 6 m, 3 m)_ Lösung: **72 Fliesen**. Typische Fehler: 18 (einheiten-gemischt-multipliziert), 36 (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quadrat hat den Umfang 48 m. Wie groß ist sein Flächeninhalt? Lösung: **144 m²**. Typische Fehler: 48 (umfang-flaeche-verwechselt), 576 (umfang-halb).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Rechteck hat den Umfang 72 cm und ist 20 cm lang. Wie groß ist sein Flächeninhalt? _(Bild: Skizze, nicht maßstäblich; Rechteck 20 × 16 (in cm); Maße 20 cm, ?)_ Lösung: **320 cm²**. Typische Fehler: 1040 (umfang-halb), 72 (umfang-flaeche-verwechselt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Rechtecke haben den Flächeninhalt 48 cm²? Kreuze alle Rechnungen an, die passen.
+  - ☑ 16 cm · 3 cm
+  - ☐ 17 cm · 2 cm
+  - ☐ 25 cm · 1 cm
+  - ☑ 24 cm · 2 cm
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst die Fläche in m² um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Feld ist 4 ha groß und 400 m lang. Wie breit ist es? Lösung: **100 m**. Typische Fehler: 1000 (umrechnungszahl-flaeche).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Zimmer ist 6 m lang und 5 m breit. Darin liegt ein Teppich, 2 m lang und 250 cm breit. Wie viel m² Boden sind nicht bedeckt? Lösung: **25 m²**. Typische Fehler: 30 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quadrat und ein Rechteck haben beide den Umfang 40 cm. Das Rechteck ist 12 cm lang. Um wie viel cm² ist das Quadrat größer? Lösung: **4 cm²**. Typische Fehler: 0 (gleicher-umfang-gleiche-flaeche), 100 (sach-schritt-vergessen).
+- `04` AFB III · _Argumentieren_ · Ein Quadrat hat den Umfang 32 cm. Lina verdoppelt den Umfang auf 64 cm und sagt: Jetzt ist der Flächeninhalt 128 cm². Stimmt das?
+  - ☑ Falsch, denn die Seite ist jetzt 16 cm lang und der Flächeninhalt 256 cm².
+  - ☐ Stimmt, denn der Flächeninhalt verdoppelt sich auch.
+  - ☐ Falsch, denn der Flächeninhalt ist 64 cm².
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Sportplatz ist 105 m lang und 70 m breit. Lena läuft 4 Runden um den Platz. Wie viele m läuft sie? Lösung: **1400 m**. Typische Fehler: 700 (umfang-halb), 350 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechteck hat den Umfang 54 cm. Es ist doppelt so lang wie breit. Wie groß ist sein Flächeninhalt? Lösung: **162 cm²**. Typische Fehler: 54 (umfang-flaeche-verwechselt).
+
+## 5.8.4-S1: Ich kann den Flächeninhalt zusammengesetzter Figuren durch Zerlegen oder Ergänzen berechnen.
+
+Grundlage, die F übt: Eine Figur am Raster in zwei Rechtecke zerlegen und beide zählen
+
+Baut auf: 5.8.3-R1 (Ich kann Flächeninhalt und Umfang von Rechtecken und Quadraten berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Teilfläche für sich aus. *Beispiel:* Teilfläche 1: 4 cm · 2 cm = 8 cm², Teilfläche 2: 2 cm · 3 cm = 6 cm². Zusammen 14 cm². *Lösungsschritt:* Zähle die Teilflächen dann zusammen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur besteht aus zwei Teilflächen. / Wie groß ist die ganze Figur? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 2, 1 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **8 cm²**. Typische Fehler: 14 (umfang-flaeche-verwechselt), 6 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur besteht aus zwei Teilflächen. / Wie groß ist die ganze Figur? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 2 × 1, 4 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **10 cm²**. Typische Fehler: 14 (umfang-flaeche-verwechselt), 2 (sach-schritt-vergessen).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Rechne mit den Teilflächen. / Teilfläche 1: ▢ cm² / Teilfläche 2: ▢ cm² / Ganze Figur: ▢ cm² _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 4 × 3, 1 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: a = **12**, b = **2**, c = **14**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur besteht aus drei Teilflächen. / Wie groß ist die ganze Figur? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 1, 1 × 2, 1 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **7 cm²**. Typische Fehler: 16 (umfang-flaeche-verwechselt), 3 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt den Kräutergarten der Burg. / Er besteht aus zwei Teilflächen. / Wie groß ist der Garten? _(Bild: Raster, 1 Feld = 1 m²; Figur aus den Rechtecken 6 × 3, 1 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **20 m²**. Typische Fehler: 22 (umfang-flaeche-verwechselt), 18 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Treppe besteht aus drei Teilflächen. / Wie groß ist sie? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 2, 2 × 2, 1 × 2 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **12 cm²**. Typische Fehler: 18 (umfang-flaeche-verwechselt), 6 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege die Figur in Rechtecke. *Beispiel:* Ein L: unten 5 cm · 2 cm = 10 cm², oben 2 cm · 3 cm = 6 cm². Zusammen 16 cm². *Lösungsschritt:* Rechne jedes Rechteck mit A = a · b und zähle zusammen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Figur? / Zerlege sie in Rechtecke. _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 7 × 2, 1 × 2)_ Lösung: **16 cm²**. Typische Fehler: 22 (umfang-flaeche-verwechselt), 14 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Figur? / Zerlege sie in Rechtecke. _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 1 × 1, 5 × 1)_ Lösung: **6 cm²**. Typische Fehler: 14 (umfang-flaeche-verwechselt), 1 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt den Burghof. / Wie groß ist er? _(Bild: Raster, 1 Feld = 1 m²; Figur aus den Rechtecken 6 × 1, 2 × 3, 2 × 3)_ Lösung: **18 m²**. Typische Fehler: 26 (umfang-flaeche-verwechselt), 6 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Treppe? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 2, 2 × 2, 1 × 2)_ Lösung: **12 cm²**. Typische Fehler: 18 (umfang-flaeche-verwechselt), 6 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Aus dem Rechteck ist ein Stück ausgeschnitten. / Wie groß ist die Fläche jetzt? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Rechteck 7 × 6, Loch 2 × 1)_ Lösung: **40 cm²**. Typische Fehler: 42 (loch-nicht-abgezogen), 32 (umfang-flaeche-verwechselt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: Die Figur ist 29 cm² groß. / Stimmt das? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 7 × 2, 3 × 3)_
+  - ☐ Falsch. / Sie ist 35 cm² groß.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Sie ist 23 cm² groß.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst die fehlende Seite aus. *Lösungsschritt:* Zerlege dann in zwei Rechtecke und zähle die Flächen zusammen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Fläche? Zerlege sie in zwei Rechtecke. _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 27 × 8, 7 × 13 (in m); Maße 27 m, 21 m, 7 m, 8 m)_ Lösung: **307 m²**. Typische Fehler: 96 (umfang-flaeche-verwechselt), 216 (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Fläche? Ergänze sie zu einem Rechteck und ziehe das fehlende Stück ab. _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 30 × 13, 13 × 8 (in cm); Maße 30 cm, 21 cm, 13 cm, 13 cm)_ Lösung: **494 cm²**. Typische Fehler: 102 (umfang-flaeche-verwechselt), 390 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Aus einer Platte ist ein Rechteck ausgeschnitten. Wie groß ist die Fläche, die übrig bleibt? _(Bild: Skizze, nicht maßstäblich; Rechteck 38 × 29, Loch 28 × 19 (in cm); Maße 38 cm, 29 cm, 28 cm, 19 cm)_ Lösung: **570 cm²**. Typische Fehler: 1102 (loch-nicht-abgezogen), 228 (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Fläche? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 6 × 8, 23 × 6 (in m); Maße 23 m, 6 m, 6 m, 8 m, 3 m)_ Lösung: **186 m²**. Typische Fehler: 74 (umfang-flaeche-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Fläche? Rechne zuerst die fehlende Seite aus. _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 18 × 6, 6 × 7, 6 × 7 (in m); Maße 18 m, 13 m, 6 m, 7 m)_ Lösung: **192 m²**. Typische Fehler: 76 (umfang-flaeche-verwechselt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Grundstück hat diese Form. Wie groß ist es? Wähle eine passende Einheit. _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 30 × 10, 10 × 10 (in m); Maße 30 m, 20 m, 10 m, 10 m)_ _(Größe eingeben, Einheit wählen aus m², a, ha)_ Lösung: **400 m²**. Typische Fehler: 100 m² (umfang-flaeche-verwechselt), 600 m² (loch-nicht-abgezogen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rahmen ist das große Rechteck ohne das Bild in der Mitte.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Bild hat einen Rahmen. Wie groß ist die Fläche des Rahmens? _(Bild: Skizze, nicht maßstäblich; Rechteck 48 × 44, Loch 38 × 34 (in cm); Maße 48 cm, 44 cm, 38 cm, 34 cm)_ Lösung: **820 cm²**. Typische Fehler: 2112 (loch-nicht-abgezogen), 1292 (sach-frage-verfehlt), 328 (umfang-flaeche-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Fläche? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 40 × 16, 8 × 31, 8 × 31 (in m); Maße 40 m, 47 m, 8 m, 31 m)_ Lösung: **1136 m²**. Typische Fehler: 236 (umfang-flaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie groß ist die Fläche der Treppe? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 42 × 12, 28 × 12, 14 × 12 (in cm); Maße 42 cm, 36 cm, 14 cm, 12 cm)_ Lösung: **1008 cm²**. Typische Fehler: 156 (umfang-flaeche-verwechselt).
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Rechne auf zwei Wegen. / Zerlegen: ▢ m² + ▢ m² = ▢ m² / Ergänzen: ▢ m² − ▢ m² = ▢ m² _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 25 × 5, 8 × 23 (in m); Maße 25 m, 28 m, 8 m, 5 m)_ Lösung: a = **125**, b = **184**, c = **309**, d = **700**, e = **391**, f = **309**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Um ein Fenster liegt ein Rahmen aus Holz. Wie groß ist die Fläche des Rahmens? Wähle eine passende Einheit. _(Bild: Skizze, nicht maßstäblich; Rechteck 60 × 50, Loch 50 × 40 (in cm); Maße 60 cm, 50 cm, 50 cm, 40 cm)_ _(Größe eingeben, Einheit wählen aus cm², dm², m²)_ Lösung: **1000 cm²**. Typische Fehler: 3000 cm² (loch-nicht-abgezogen), 400 cm² (umfang-flaeche-verwechselt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Tom sagt: Die Fläche ist 228 cm² groß. Stimmt das? _(Bild: Skizze, nicht maßstäblich; Rechteck 27 × 17, Loch 21 × 11 (in cm); Maße 27 cm, 17 cm, 21 cm, 11 cm)_
+  - ☑ Stimmt, denn das Loch ist schon abgezogen.
+  - ☐ Falsch, denn es sind 152 cm².
+  - ☐ Falsch, denn das Loch muss noch abgezogen werden. Es sind 228 cm².
+
+## 5.8.4-S2: Ich kann den Umfang zusammengesetzter Figuren berechnen und Sachaufgaben dazu lösen.
+
+Grundlage, die F übt: Den äußeren Rand einer Figur am Raster nachfahren und die Seiten zählen
+
+Baut auf: 5.8.4-S1 (Ich kann den Flächeninhalt zusammengesetzter Figuren durch Zerlegen oder Ergänzen berechnen.), 5.8.3-R2 (Ich kann fehlende Seiten berechnen und Sachaufgaben zu Rechtecken lösen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fahre einmal um die ganze Figur herum. *Beispiel:* Ein L mit den Seiten 4, 2, 2, 3, 2 und 5 cm hat zusammen 18 cm Umfang. *Lösungsschritt:* Zähle jede Seite auf dem Rand. Linien innen gehören nicht dazu.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Figur? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 2, 1 × 2)_ Lösung: **14 cm**. Typische Fehler: 8 (umfang-flaeche-verwechselt), 16 (innere-linie-im-umfang).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Figur? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 2, 6 × 1)_ Lösung: **18 cm**. Typische Fehler: 12 (umfang-flaeche-verwechselt), 24 (innere-linie-im-umfang).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt ein Beet. / Um das Beet kommt ein Zaun. / Wie lang ist der Zaun? _(Bild: Raster, 1 Feld = 1 m²; Figur aus den Rechtecken 4 × 3, 2 × 1)_ Lösung: **16 m**. Typische Fehler: 14 (umfang-flaeche-verwechselt), 20 (innere-linie-im-umfang).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme bei der Figur: / Flächeninhalt: ▢ cm² / Umfang: ▢ cm _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 3 × 1, 1 × 1)_ Lösung: a = **4**, b = **10**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Treppe? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 6 × 1, 4 × 1, 2 × 1)_ Lösung: **18 cm**. Typische Fehler: 12 (umfang-flaeche-verwechselt), 30 (innere-linie-im-umfang).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Figur besteht aus zwei Teilflächen. / Wie lang ist ihr Umfang? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 5 × 2, 1 × 1 (Zerlegung gestrichelt, Teilflächen nummeriert))_ Lösung: **16 cm**. Typische Fehler: 11 (umfang-flaeche-verwechselt), 18 (innere-linie-im-umfang).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fahre einmal um die Figur. Linien innen zählen nicht. *Beispiel:* Ein U mit Lücke: Auch die Seiten in der Lücke gehören zum Rand. *Lösungsschritt:* Schreibe alle Seiten am Rand auf und zähle zusammen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Umfang der Figur. _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 7 × 2, 2 × 3, 2 × 3)_ Lösung: **30 cm**. Typische Fehler: 26 (umfang-flaeche-verwechselt), 38 (innere-linie-im-umfang).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt den Burghof. / Wie lang ist die Mauer um den Hof? _(Bild: Raster, 1 Feld = 1 m²; Figur aus den Rechtecken 4 × 1, 6 × 2)_ Lösung: **18 m**. Typische Fehler: 16 (umfang-flaeche-verwechselt), 26 (innere-linie-im-umfang).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Plan zeigt einen Garten. / Um den Garten kommt ein Zaun. / Das Tor ist 2 m breit und braucht keinen Zaun. / Wie viel m Zaun braucht man? _(Bild: Raster, 1 Feld = 1 m²; Figur aus den Rechtecken 3 × 1, 1 × 2)_ Lösung: **10 m**. Typische Fehler: 12 (sach-schritt-vergessen), 3 (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Berechne den Umfang der Figur. _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 4 × 4, 1 × 3)_ Lösung: **22 cm**. Typische Fehler: 19 (umfang-flaeche-verwechselt), 24 (innere-linie-im-umfang).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme bei der Treppe: / A = ▢ cm² / u = ▢ cm _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 6 × 2, 4 × 2, 2 × 2)_ Lösung: a = **24**, b = **24**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina sagt: Der Umfang ist 32 cm. / Stimmt das? _(Bild: Zentimeterraster, 1 Feld = 1 cm²; Figur aus den Rechtecken 6 × 3, 4 × 3 (Zerlegung gestrichelt, Teilflächen nummeriert))_
+  - ☐ Stimmt.
+  - ☐ Falsch. / Der Umfang ist 30 cm.
+  - ☑ Falsch. / Der Umfang ist 24 cm.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei Seiten fehlen. Rechne sie aus der ganzen Länge und Breite aus. *Lösungsschritt:* Zähle dann alle sechs Seiten zusammen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Figur? Rechne zuerst die fehlenden Seiten aus. _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 22 × 10, 7 × 7 (in m); Maße 22 m, 17 m, 7 m, 10 m)_ Lösung: **78 m**. Typische Fehler: 269 (umfang-flaeche-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Figur? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 8 × 14, 27 × 4 (in cm); Maße 27 cm, 4 cm, 8 cm, 14 cm, 4 cm)_ Lösung: **90 cm**. Typische Fehler: 220 (umfang-flaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Grundstück hat diese Form. Es bekommt einen Zaun mit einem Tor, das 3 m breit ist. Wie viel m Zaun braucht man? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 29 × 8, 7 × 26 (in m); Maße 29 m, 34 m, 7 m, 8 m)_ Lösung: **123 m**. Typische Fehler: 126 (sach-schritt-vergessen), 414 (umfang-flaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Figur? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 18 × 7, 5 × 9, 5 × 9 (in cm); Maße 18 cm, 16 cm, 5 cm, 9 cm)_ Lösung: **86 cm**. Typische Fehler: 216 (umfang-flaeche-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bestimme bei der Figur: / A = ▢ cm² / u = ▢ cm _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 22 × 10, 7 × 4 (in cm); Maße 22 cm, 14 cm, 7 cm, 10 cm)_ Lösung: a = **248**, b = **72**
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Zimmer hat diese Form. An allen Wänden kommt eine Leiste an den Boden, nur nicht an der Tür. Die Tür ist 1 m breit. Wie viel m Leiste braucht man? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 6 × 3, 3 × 4 (in m); Maße 6 m, 7 m, 3 m, 3 m)_ Lösung: **25 m**. Typische Fehler: 26 (sach-schritt-vergessen), 29 (umfang-flaeche-verwechselt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiebe die Stufen in Gedanken nach außen. Dann siehst du ein Rechteck.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Treppe? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 114 × 16, 76 × 16, 38 × 16 (in m); Maße 114 m, 48 m, 38 m, 16 m)_ Lösung: **324 m**. Typische Fehler: 3648 (umfang-flaeche-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Rahmen bekommt außen und innen eine goldene Kante. Wie viele cm Kante braucht man? _(Bild: Skizze, nicht maßstäblich; Rechteck 51 × 28, Loch 41 × 18 (in cm); Maße 51 cm, 28 cm, 41 cm, 18 cm)_ Lösung: **276 cm**. Typische Fehler: 158 (sach-schritt-vergessen), 690 (umfang-flaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wie lang ist der Umfang der Figur? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 64 × 16, 12 × 22, 12 × 22 (in m); Maße 64 m, 38 m, 12 m, 22 m)_ Lösung: **248 m**. Typische Fehler: 1552 (umfang-flaeche-verwechselt).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Ali rechnet den Umfang aus und erhält 106 m. Stimmt das? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 12 × 11, 36 × 6 (in m); Maße 36 m, 6 m, 12 m, 11 m, 10 m)_
+  - ☐ Falsch. Der Umfang ist 130 m.
+  - ☐ Falsch. Der Umfang ist 72 m.
+  - ☑ Stimmt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Weide hat diese Form. Sie bekommt einen Zaun. Es gibt ein Tor für den Traktor, 4 m breit, und ein Tor für Menschen, 1 m breit. Wie viel m Zaun braucht man? _(Bild: Skizze, nicht maßstäblich; Figur aus den Rechtecken 47 × 19, 26 × 33 (in m); Maße 47 m, 52 m, 26 m, 19 m)_ Lösung: **193 m**. Typische Fehler: 198 (sach-schritt-vergessen), 194 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Aus einem Rechteck, 12 cm lang und 10 cm breit, wird an einer langen Seite in der Mitte ein Stück herausgeschnitten: 8 cm breit und 7 cm tief. Um wie viel cm wird der Umfang länger? Lösung: **14 cm**. Typische Fehler: 56 (umfang-flaeche-verwechselt), 7 (sach-schritt-vergessen).
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -9502,13 +10125,19 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `dreieck-sonderfall` | Sieht nicht, dass ein gleichseitiges Dreieck auch gleichschenklig ist. | Prüfe die Eigenschaft: Hat das Dreieck mindestens zwei gleich lange Seiten? | Du weißt jetzt: Ein gleichseitiges Dreieck ist auch gleichschenklig. |
 | `dreieck-art` | Teilt ein Dreieck falsch ein oder verwechselt die Einteilung nach Seiten mit der nach Winkeln. | Prüfe der Reihe nach: Welche Seiten sind gleich lang? Gibt es einen rechten oder einen stumpfen Winkel? | Du teilst Dreiecke jetzt richtig nach Seiten und Winkeln ein. |
 | `winkelsumme` | Rechnet im Dreieck mit einer falschen Winkelsumme (zum Beispiel 360°). | In jedem Dreieck ergeben die drei Winkel zusammen 180°. | Du weißt jetzt: Die drei Winkel im Dreieck ergeben zusammen 180°. |
+| `umfang-flaeche-verwechselt` | Verwechselt Umfang und Flächeninhalt: rechnet den einen, wenn der andere gefragt ist. | Der Flächeninhalt sagt, wie viel Platz die Fläche hat. Der Umfang ist die Länge des Randes einmal ganz herum. | Du hältst Flächeninhalt und Umfang jetzt auseinander. |
+| `gleicher-umfang-gleiche-flaeche` | Meint, dass Figuren mit gleichem Umfang auch gleich großen Flächeninhalt haben (oder umgekehrt). | Zähle bei beiden Figuren nach. Ein langes, schmales Rechteck kann denselben Umfang haben wie ein Quadrat und trotzdem viel kleiner sein. | Du weißt jetzt: Gleicher Umfang heißt nicht gleich große Fläche. |
+| `umfang-halb` | Rechnet beim Umfang nur a + b statt 2 · a + 2 · b und vergisst die beiden anderen Seiten. | Ein Rechteck hat vier Seiten. Zwei sind a lang, zwei sind b lang. | Du zählst beim Umfang jetzt alle vier Seiten. |
+| `randkaestchen-gezaehlt` | Zählt beim Umfang die Kästchen am Rand statt der Kästchenseiten auf dem Rand. | Fahre mit dem Finger auf dem Rand entlang und zähle die Kästchenseiten. An einer Ecke zählen zwei Seiten. | Du zählst beim Umfang jetzt die Kästchenseiten am Rand. |
+| `flaecheneinheit-laenge` | Verwechselt Längen- und Flächeneinheiten: cm beim Flächeninhalt oder cm² beim Umfang. | Ein Flächeninhalt hat eine Einheit mit ², zum Beispiel cm². Ein Umfang ist eine Länge, zum Beispiel cm. | Du schreibst bei Flächen jetzt cm² und bei Längen cm. |
+| `umrechnungszahl-flaeche` | Wandelt Flächeneinheiten mit der Umrechnungszahl 10 oder 1000 um statt mit 100. | Bei Flächen ist die Umrechnungszahl 100: 1 cm² sind 100 mm², 1 m² sind 100 dm². | Du nimmst bei Flächen jetzt die Umrechnungszahl 100. |
+| `einheiten-gemischt-multipliziert` | Multipliziert Seiten in verschiedenen Einheiten, ohne umzuwandeln (2 m · 50 cm = 100). | Die Seiten haben verschiedene Einheiten. Wandle zuerst beide in dieselbe Einheit um. | Du wandelst die Seiten jetzt erst in dieselbe Einheit um. |
+| `innere-linie-im-umfang` | Zählt bei zusammengesetzten Figuren Linien im Inneren zum Umfang. | Der Umfang ist nur der äußere Rand. Die Linien, mit denen du zerlegt hast, gehören nicht dazu. | Du zählst beim Umfang jetzt nur den äußeren Rand. |
+| `teilflaeche-doppelt` | Zählt beim Zerlegen eine Teilfläche doppelt oder lässt eine weg. | Färbe oder nummeriere jede Teilfläche. Jede wird genau einmal gezählt. | Du zählst jede Teilfläche jetzt genau einmal. |
+| `loch-nicht-abgezogen` | Zieht bei einer Figur mit Loch das Loch nicht vom Flächeninhalt ab. | Rechne zuerst die ganze Fläche aus. Ziehe dann das Loch ab. | Du ziehst das Loch jetzt vom Flächeninhalt ab. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 5.8.1-L1 Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen. Baut auf: 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
-- 5.8.2-L1 Ich kann sicher mit Flächenmaßen umgehen. Baut auf: 5.8.1-L1 (Ich kann Flächeninhalte durch Abzählen von Kästchen angeben und vergleichen.), 5.4.1-K3 (Ich kann mit Stufenzahlen und Zehnerzahlen im Kopf multiplizieren und dividieren.)
-- 5.8.3-L1 Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden. Baut auf: 5.8.2-L1 (Ich kann sicher mit Flächenmaßen umgehen.), 5.4.2-M2 (Ich kann schriftlich mit einer einstelligen Zahl multiplizieren.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
-- 5.8.4-L1 Ich kann die Berechnung von Flächeninhalt und Umfang auch bei zusammengesetzten Figuren durchführen und anwenden. Baut auf: 5.8.3-L1 (Ich kann die Berechnung von Flächeninhalt und Umfang bei Rechtecken sicher durchführen und anwenden.)
 - 5.9.1-L1 Ich kann die Bruchschreibweise verwenden. Baut auf: 5.4.1-K2 (Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.)
 - 5.9.2-L1 Ich kann mit Bruchteilen von Größen umgehen. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.), 5.6.5-L1 (Ich kann Längeneinheiten umwandeln.)
 - 5.9.3-L1 Ich kann die Dezimalschreibweise verwenden. Baut auf: 5.9.1-L1 (Ich kann die Bruchschreibweise verwenden.), 5.2.2-B1 (Ich kann große Zahlen lesen und in Ziffern schreiben.)

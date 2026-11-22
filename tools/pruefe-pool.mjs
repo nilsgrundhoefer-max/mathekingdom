@@ -5,6 +5,8 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { gGleichungen, GROESSENBILDER, bildMaengel, sprachMaengel, pruefeGroessenNachweis, groesseMaengel, tafelMaengel, umwandelMaengel, schaetzMaengel, teilAuswahlMaengel, einheitFaktor } from './pruefe-groessen.mjs';
+import { flaecheBildMaengel, zellenMaengel, flaecheSprachMaengel } from './pruefe-flaechen.mjs';
+import { gRechne } from './pruefe-groessen.mjs';
 import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
@@ -171,6 +173,7 @@ function pruefeSprache(a) {
   }
   // Kapitel 6 (Nils, 2026-11-21): Komma, Brüche und seltene Einheiten je Niveaustufe.
   if (a.lernziel.startsWith('5.6.')) for (const x of sprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
+  if (a.lernziel.startsWith('5.8.')) for (const x of flaecheSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   if (a.lernziel.startsWith('5.7.')) for (const x of winkelSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
@@ -1655,6 +1658,8 @@ function pruefeBild(a) {
   if (GROESSENBILDER.includes(b.art)) { bildMaengel(b, b.art === 'uhr' && a.lernziel.startsWith('5.7.') ? 'F' : a.niveau).forEach(m); return; }
   // Kapitel 7: Winkel mit Geodreieck, Kreis am Lineal, Gradnetz. Was sie zeigen, rechnet der Nachweis nach.
   if (WINKELBILDER.includes(b.art)) { winkelBildMaengel(b, a).forEach(m); return; }
+  // Kapitel 8: Figuren aus Rechtecken. Flächeninhalt und Umfang rechnet der Nachweis nach.
+  if (b.art === 'flaeche') { flaecheBildMaengel(b, a, gRechne).forEach(m); return; }
   const kern = []; // Zahlen, die das Bild zeigt und die zur Aufgabe gehören müssen
   const unbekannte = [];
   const w = (x) => { if (istFrage(x)) unbekannte.push(x.wert); else kern.push(x); return wertVon(x); };
@@ -1853,7 +1858,7 @@ function pruefeBild(a) {
 // Kapitel 1: Strichliste und Säulen zeichnen, auch die Antwortkärtchen einer Umfrage (Urliste).
 const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter', 'winkel'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel', 'einheitentafel'].includes(a.tabelle?.art)
   // Kapitel 6: Preisliste, Fahrplan und Einkaufszettel sind das Bild der Aufgabe.
-  || (Boolean(a.daten) && a.lernziel.startsWith('5.6.'));
+  || (Boolean(a.daten) && (a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.')));
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -1938,6 +1943,9 @@ function pruefeFormat(a) {
       for (const f of a.typischeFehler ?? []) if (!f.bedingung?.art) melde(a.id, 'Gitter: typischer Fehler ohne Bedingung');
     } else if (a.eingabe === 'kreis') {
       for (const x of kreisMaengel(a)) melde(a.id, `Gitter: ${x}`);
+    } else if (a.eingabe === 'zellen' && a.bedingung?.art === 'flaeche') {
+      // Kapitel 8: Kästchen färben mit Bedingung (Anzahl, Umfang, Rechteck).
+      for (const x of zellenMaengel(a, pool.fehlvorstellungen)) melde(a.id, `Gitter: ${x}`);
     } else if (a.eingabe === 'punkte' || a.eingabe === 'zellen') {
       const zellen = a.eingabe === 'zellen', drin = (q) => (zellen ? ganz(q?.[0], 0, g.b - 1) && ganz(q?.[1], 0, g.h - 1) : imGitter(g, q));
       if (!Array.isArray(a.loesung) || a.loesung.length < 1 || a.loesung.length > (zellen ? 40 : 8) || !a.loesung.every(drin)) melde(a.id, 'Gitter: Lösung liegt nicht im Gitter');
@@ -2215,7 +2223,7 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   if (!a.text?.trim()) { melde(a.id, 'Text fehlt'); continue; }
   if (/undefined|NaN|null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
   if (sichtbareTexte(a).concat(Object.values(a.hilfen ?? {})).some((t) => / {2}|^ | $|\d-\d| - /.test(t))) melde(a.id, 'Text mit doppeltem Leerzeichen oder Bindestrich statt Minuszeichen');
-  groessenModus = a.lernziel.startsWith('5.6.');
+  groessenModus = a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.');
   const schluessel = `${a.lernziel} ${a.niveau}`;
   if (!gruppen.has(schluessel)) gruppen.set(schluessel, []);
   gruppen.get(schluessel).push(a);
@@ -2256,7 +2264,7 @@ for (const l of mitAufgaben) for (const n of NIVEAUS) {
 for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele)) if (mitAufgaben.has(l.id) && !l.grundlage) melde(l.id, 'Lernziel ohne Grundlage');
 // Wortspeicher: Jede Station mit Aufgaben braucht einen, mit Wörtern mindestens für F, G und M.
 for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.some((l) => mitAufgaben.has(l.id))) {
-  groessenModus = k.id === '5.6';
+  groessenModus = k.id === '5.6' || k.id === '5.8';
   for (const n of ['F', 'G', 'M']) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
   for (const w of u.wortspeicher ?? []) {
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);

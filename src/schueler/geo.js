@@ -2,6 +2,8 @@
 // Ein Punkt ist [x, y] in Kästchen, die y-Achse zeigt nach oben. Alles hier ist reine Rechnung ohne Oberfläche.
 // Eine Eingabe im Gitterzeichnen ist ein Text aus Punkten: „(3|5) (4|1)“. So bleibt sie im Protokoll und in der Auswertung lesbar.
 
+import { zellenErfuellt } from './flaeche.js';
+
 export const punktText = (p) => `(${p[0]}|${p[1]})`;
 export const alsEingabe = (punkte) => punkte.map(punktText).join(' ');
 export const lesePunkte = (text) => [...String(text ?? '').matchAll(/\((-?\d+)\|(-?\d+)\)/g)].map((m) => [Number(m[1]), Number(m[2])]);
@@ -59,6 +61,11 @@ export function pruefeGitter(aufgabe, eingabe) {
     if (erfuellt(aufgabe.bedingung, punkte)) return { richtig: true, fehlvorstellung: null };
     return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => erfuellt(f.bedingung, punkte))?.fehlvorstellung ?? null };
   }
+  // Kapitel 8 (ADR 0035): Kästchen färben mit Bedingung (so viele Kästchen, dieser Umfang, ein Rechteck). Jede passende Figur zählt.
+  if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'flaeche') {
+    if (zellenErfuellt(aufgabe.bedingung, punkte)) return { richtig: true, fehlvorstellung: null };
+    return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => zellenErfuellt(f.bedingung, punkte))?.fehlvorstellung ?? null };
+  }
   if (gleicheMenge(punkte, aufgabe.loesung)) return { richtig: true, fehlvorstellung: null };
   return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => gleicheMenge(punkte, f.punkte))?.fehlvorstellung ?? null };
 }
@@ -66,6 +73,7 @@ export function pruefeGitter(aufgabe, eingabe) {
 export function gitterLoesung(aufgabe) {
   if (aufgabe.eingabe === 'kreis') return aufgabe.gitter.achsen ? `Kreis um ${punktText(aufgabe.bedingung.m)} durch ${punktText(aufgabe.beispiel[1])}` : 'siehe Bild';
   if (aufgabe.eingabe === 'linie') return !aufgabe.gitter.achsen ? 'siehe Bild' : `zum Beispiel die Linie durch ${alsEingabe(aufgabe.beispiel).replace(' ', ' und ')}`;
+  if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'flaeche') return `zum Beispiel ${aufgabe.loesung.length} Kästchen wie im Bild`;
   if (aufgabe.eingabe === 'zellen') return `${aufgabe.loesung.length} Kästchen, siehe Bild`;
   return aufgabe.gitter.achsen ? aufgabe.loesung.map(punktText).join(', ') : 'siehe Bild';
 }

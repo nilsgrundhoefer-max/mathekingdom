@@ -10,13 +10,15 @@ const EINHEIT = {
   s: ['zeit', 1], Sekunde: ['zeit', 1], Sekunden: ['zeit', 1], min: ['zeit', 60], Minute: ['zeit', 60], Minuten: ['zeit', 60],
   h: ['zeit', 3600], Stunde: ['zeit', 3600], Stunden: ['zeit', 3600], d: ['zeit', 86400], Tag: ['zeit', 86400], Tage: ['zeit', 86400], Tagen: ['zeit', 86400],
   Woche: ['zeit', 604800], Wochen: ['zeit', 604800],
+  // Kapitel 8 (ADR 0035): Flächen in Quadratmillimetern.
+  'mm²': ['flaeche', 1], 'cm²': ['flaeche', 100], 'dm²': ['flaeche', 10000], 'm²': ['flaeche', 1000000], a: ['flaeche', 100000000], ha: ['flaeche', 10000000000], 'km²': ['flaeche', 1000000000000],
 };
 export const einheitArt = (e) => EINHEIT[e]?.[0] ?? null;
 export const einheitFaktor = (e) => EINHEIT[e]?.[1] ?? null;
 const EINH = Object.keys(EINHEIT).sort((x, y) => y.length - x.length).join('|');
 const ZAHLK = '\\d+(?:\\u00a0\\d{3})*(?:,\\d+)?';
 const BRUCH = '\\d*[½¼¾]';
-const GTEIL = `(?:${BRUCH}|${ZAHLK}) (?:${EINH})(?![${B_}])`;
+const GTEIL = `(?:${BRUCH}|${ZAHLK}) (?:${EINH})(?![${B_}²])`;
 const GROESSE = `${GTEIL}(?: ${GTEIL})*`;
 const UHR = '\\d{1,2}:\\d{2} Uhr|\\d{1,2} Uhr';
 const MASSSTAB = '\\d+(?:\\u00a0\\d{3})*:\\d+(?:\\u00a0\\d{3})*';
@@ -30,6 +32,7 @@ const norm = (s) => String(s).replace(/[\s  ]/g, '');
 // Ein Stück einer Größe: „2,5 km“, „¾ h“, „1 250 g“. null, wenn es in der kleinsten Einheit nicht aufgeht.
 function gTeil(text) {
   const m = text.match(new RegExp(`^(${BRUCH}|${ZAHLK}) (${EINH})$`));
+  if (m && EINHEIT[m[2]][0] === 'flaeche' && m[1].includes(',')) return null; // Flächen stehen nie mit Komma (Kapitel 8)
   if (!m) return null;
   const [art, f] = EINHEIT[m[2]];
   const bruch = m[1].match(/^(\d*)([½¼¾])$/);
@@ -63,7 +66,7 @@ function gUhr(text) {
 const zahlWert = (text) => (text.includes(',') ? null : { art: 'zahl', w: ganzeZahl(text) });
 
 // Rechnet einen Ausdruck mit Größen aus: „3 · 250 g“, „14:35 Uhr + 50 min“, „6 m : 50 cm“. null, wenn er nicht aufgeht oder die Größen nicht zusammenpassen.
-const GROESSEN = ['geld', 'laenge', 'gewicht', 'zeit'];
+const GROESSEN = ['geld', 'laenge', 'gewicht', 'zeit', 'flaeche'];
 function strichRechnung(x, y, plus) {
   if (!x || !y) return null;
   if (x.art === 'uhr' && y.art === 'zeit') return { art: 'uhr', w: (((plus ? x.w + y.w : x.w - y.w) % 86400) + 86400) % 86400 };
@@ -75,11 +78,14 @@ function strichRechnung(x, y, plus) {
 function punktRechnung(x, y, mal) {
   if (!x || !y || x.art === 'uhr' || y.art === 'uhr') return null;
   if (mal) {
+    // Kapitel 8: Länge mal Länge ist eine Fläche (mm · mm = mm²).
+    if (x.art === 'laenge' && y.art === 'laenge') return { art: 'flaeche', w: x.w * y.w };
     if (x.art !== 'zahl' && y.art !== 'zahl') return null;
     return { art: x.art === 'zahl' ? y.art : x.art, w: x.w * y.w };
   }
   if (y.w === 0 || x.w % y.w !== 0) return null;
   if (y.art === 'zahl') return { art: x.art, w: x.w / y.w };
+  if (x.art === 'flaeche' && y.art === 'laenge') return { art: 'laenge', w: x.w / y.w };
   return x.art === y.art ? { art: 'zahl', w: x.w / y.w } : null;
 }
 export function gRechne(ausdruck) {
@@ -155,17 +161,23 @@ export const STUETZ = {
   'Büroklammer': ber('500 mg', '2 g'), 'Brief': ber('10 g', '30 g'), 'Ei': ber('50 g', '70 g'), 'Tafel Schokolade': ber('100 g', '100 g'), 'Apfel': ber('120 g', '250 g'), 'Packung Butter': ber('250 g', '250 g'),
   'Liter Milch': ber('1 kg', '1 kg'), 'Packung Mehl': ber('1 kg', '1 kg'), 'Schulranzen': ber('3 kg', '7 kg'), 'Fahrrad': ber('10 kg', '20 kg'), 'Kind (Gewicht)': ber('30 kg', '50 kg'),
   'Auto (Gewicht)': ber('1 t', '2 t'), 'Elefant': ber('3 t', '6 t'), 'Pferd': ber('400 kg', '800 kg'), 'Feder': ber('1 mg', '100 mg'),
+  // Kapitel 8: Flächen. Der Zusatz „(Fläche)“ trennt sie von Längen desselben Dings.
+  'Briefmarke': ber('2 cm²', '8 cm²'), 'Fingernagel': ber('50 mm²', '2 cm²'), 'Postkarte': ber('120 cm²', '180 cm²'), 'Handfläche': ber('80 cm²', '2 dm²'), 'Heftseite': ber('5 dm²', '7 dm²'),
+  'Tischplatte': ber('40 dm²', '150 dm²'), 'Tür (Fläche)': ber('150 dm²', '3 m²'), 'Tafel': ber('3 m²', '8 m²'), 'Bett': ber('150 dm²', '4 m²'), 'Klassenzimmer': ber('50 m²', '80 m²'),
+  'Kinderzimmer': ber('8 m²', '20 m²'), 'Garten': ber('1 a', '8 a'), 'Schulhof': ber('10 a', '40 a'), 'Fußballfeld (Fläche)': ber('60 a', '75 a'), 'Bauernhof': ber('10 ha', '80 ha'),
+  'Wald': ber('50 ha', '50 km²'), 'Stadt': ber('20 km²', '900 km²'), 'Bodensee': ber('500 km²', '550 km²'),
   'Händeklatschen': ber('1 s', '1 s'), 'Zähneputzen': ber('2 min', '3 min'), 'Schulstunde': ber('45 min', '45 min'), 'große Pause': ber('15 min', '25 min'), 'Fußballspiel': ber('90 min', '90 min'),
   'Nachtschlaf': ber('8 h', '11 h'), 'Schultag': ber('5 h', '7 h'), 'Sommerferien': ber('6 Wochen', '6 Wochen'), 'Spielfilm': ber('80 min', '2 h'),
   'Brötchen': ber('30 ct', '90 ct'), 'Kugel Eis': ber('1 €', '250 ct'), 'Kinokarte': ber('6 €', '12 €'), 'Fahrrad (Preis)': ber('150 €', '900 €'), 'Schulheft (Preis)': ber('50 ct', '2 €'), 'Brot': ber('2 €', '5 €'),
 };
 // „Auto“ hat eine Länge, ein Gewicht und einen Preis: Es zählt der Eintrag, der zur Größenart passt.
-const stuetzVon = (ding, art) => [ding, `${ding} (Gewicht)`, `${ding} (Preis)`].map((k) => STUETZ[k]).find((b) => b && (!art || b[0].art === art)) ?? null;
-const imBereich = (ding, v) => { if (!v || ![ding, `${ding} (Gewicht)`, `${ding} (Preis)`].some((k) => STUETZ[k])) return undefined; const b = stuetzVon(ding, v.art); return b ? v.w >= b[0].w && v.w <= b[1].w : false; };
-const ART_NAME = { geld: 'Geld', laenge: 'Länge', gewicht: 'Gewicht', zeit: 'Zeit' };
+const stuetzVon = (ding, art) => [ding, `${ding} (Gewicht)`, `${ding} (Preis)`, `${ding} (Fläche)`].map((k) => STUETZ[k]).find((b) => b && (!art || b[0].art === art)) ?? null;
+const imBereich = (ding, v) => { if (!v || ![ding, `${ding} (Gewicht)`, `${ding} (Preis)`, `${ding} (Fläche)`].some((k) => STUETZ[k])) return undefined; const b = stuetzVon(ding, v.art); return b ? v.w >= b[0].w && v.w <= b[1].w : false; };
+const ART_NAME = { geld: 'Geld', laenge: 'Länge', gewicht: 'Gewicht', zeit: 'Zeit', flaeche: 'Flächeninhalt' };
 
 // ---------- Bilder ----------
 export const GROESSENBILDER = ['geld', 'uhr', 'waage', 'einheitentafel', 'vergleichsbild', 'karte', 'grundriss', 'zeitleiste'];
+import { flaecheGroessen, figurGroesse } from './pruefe-flaechen.mjs';
 const ganz = (x, von, bis) => Number.isInteger(x) && x >= von && x <= bis;
 const istFrage = (x) => typeof x === 'object' && x !== null && x.frage === true;
 const STUECKE = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
@@ -256,6 +268,7 @@ export function bildGroessen(b) {
       return [...liste, ...massstabGroessen(b)]; }
     case 'grundriss': return [G('laenge', b.b), G('laenge', b.h), ...massstabGroessen(b)];
     case 'lineal': return [G('laenge', b.bis - b.von), G('laenge', b.von), G('laenge', b.bis)];
+    case 'flaeche': return flaecheGroessen(b);
     case 'zeitleiste': return [...b.punkte.filter((x) => !istFrage(x)).map((x) => gUhr(String(x))), ...b.spruenge.filter((x) => !istFrage(x)).map((x) => gRechne(String(x)))].filter(Boolean);
     default: return [];
   }
@@ -306,7 +319,8 @@ export function pruefeGroessenNachweis(a) {
   if (!Array.isArray(a.nachweis) || a.nachweis.length === 0) return ['Nachweis ist leer'];
 
   // Bekannt ist, was die Aufgabe zeigt: Text, Teilfragen, Tabellen, Bild; beim Zuordnen und Ordnen auch die Karten.
-  const bekannt = new Set(['zahl:10', 'zahl:100', 'zahl:1000', ...(stufe >= 2 ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => `zahl:${x}`) : [])]);
+  // Kapitel 8: 2 und 4 gehören zum Umfang (zwei Längen und zwei Breiten, vier gleiche Seiten beim Quadrat).
+  const bekannt = new Set(['zahl:10', 'zahl:100', 'zahl:1000', ...(stufe >= 2 ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => `zahl:${x}`) : []), ...(a.lernziel?.startsWith('5.8.') ? ['zahl:2', 'zahl:4'] : [])]);
   const gezeigt = new Set();
   const zeige = (v) => { if (v && v.art !== 'fehler') { bekannt.add(gKey(v)); gezeigt.add(gKey(v)); } };
   const eingesetzt = a.format === 'luecken' ? a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken?.[n]?.loesung ?? '?') : a.text;
@@ -364,7 +378,22 @@ export function pruefeGroessenNachweis(a) {
         }
         break;
       }
+      // Kapitel 8: Flächeninhalt oder Umfang einer Figur im Bild, vom Prüfer selbst nachgerechnet.
+      case 'flaeche': {
+        const v = /^\d+$/.test(String(n.groesse)) ? { art: 'zahl', w: Number(n.groesse) } : gRechne(String(n.groesse)), soll = a.bild?.art === 'flaeche' ? figurGroesse(a.bild, n.was, n.figur) : null;
+        if (!soll) { m.push('Nachweis: Figur für den Flächennachweis fehlt'); break; }
+        if (!gGleich(v, soll)) m.push(`Nachweis: ${n.was === 'inhalt' ? 'Flächeninhalt' : 'Umfang'} der Figur${n.figur ? ` ${n.figur}` : ''} ist ${gKey(soll)}, nicht ${n.groesse}`);
+        nutze(soll);
+        if (!n.nurPruefen) { ende = soll; zeilen.push({ wert: soll, teil: n.teil ?? null, erste: null, alle: [soll] }); }
+        break;
+      }
+      // Kästchen färben mit Bedingung: Die Zahlen der Bedingung gehören zur Aufgabe (geprüft in pruefe-flaechen.mjs).
+      case 'zellen':
+        for (const z of [a.bedingung?.n, a.bedingung?.umfang]) if (z != null) nutze({ art: 'zahl', w: z });
+        bindungen.push(n);
+        break;
       case 'einheitentafel': { const v = gRechne(n.groesse); if (!v) m.push('Nachweis: Größe der Einheitentafel lässt sich nicht lesen'); nutze(v); bindungen.push(n); break; }
+      case 'figurwahl': bindungen.push(n); break;
       case 'groessenart': case 'gleichwert':
       case 'stuetzgroesse': case 'extrem': case 'rechnungswahl': case 'gleichungswahl': case 'massstab': case 'vergleich': case 'urteil': case 'ordnung': case 'umwandeln':
         for (const k of ['groesse', 'plan', 'wirklich', 'links', 'rechts', 'behauptet']) if (typeof n[k] === 'string') nutze(gRechne(n[k]));
@@ -460,6 +489,14 @@ export function pruefeGroessenNachweis(a) {
         // Was misst man mit dieser Einheit? Die Antworten nennen Länge, Gewicht, Zeit und Geld.
         if (!EINHEIT[b.einheit] || !new RegExp(`(?<![${B_}])${b.einheit}(?![${B_}])`).test(a.text)) { m.push('Größenart: Die Einheit steht nicht im Text'); break; }
         stufeEin((t) => (Object.values(ART_NAME).includes(t) ? t === ART_NAME[EINHEIT[b.einheit][0]] : undefined));
+      } else if ((b = bindung('figurwahl'))) {
+        // Kapitel 8: Welche Figur ist größer oder hat den längeren Rand? Antworten sind Figurnamen oder „Beide/Alle … gleich …“.
+        const werte = (a.bild?.figuren ?? []).map((f) => [f.n, figurGroesse(a.bild, b.was, f.n)]);
+        if (werte.length < 2 || werte.some(([n, v]) => !n || !v)) { m.push('Figurwahl: Figuren mit Namen fehlen'); break; }
+        const ziel = (b.ziel === 'groesste' ? Math.max : Math.min)(...werte.map(([, v]) => v.w)), gleich = werte.every(([, v]) => v.w === werte[0][1].w);
+        if (!gleich && werte.filter(([, v]) => v.w === ziel).length !== 1) { m.push('Figurwahl: zwei Figuren teilen sich den Platz'); break; }
+        if ((b.ziel === 'groesste' ? /größer|größten|länger|längsten|mehr/ : /kleiner|kleinsten|kürzer|kürzesten|weniger/).test(a.text) === false) m.push('Figurwahl: Der Text verlangt eine andere Richtung');
+        stufeEin((t) => (/^(Beide|Alle)/.test(t) ? gleich : werte.some(([n]) => n === t) ? !gleich && werte.find(([n]) => n === t)[1].w === ziel : undefined));
       } else if ((b = bindung('gleichwert'))) {
         // Richtig ist jede Antwort, die so viel wert ist wie die Größe aus dem Text.
         const v = gRechne(b.groesse);
@@ -526,7 +563,8 @@ export function pruefeGroessenNachweis(a) {
 export function groesseMaengel(a, fehlvorstellungen) {
   const m = [];
   if (!GROESSEN.includes(a.groesse)) return ['Größe: unbekannte Größenart'];
-  if (einheitArt(a.einheit) !== a.groesse || !['ct', '€', 'mm', 'cm', 'dm', 'm', 'km', 'mg', 'g', 'kg', 't', 's', 'min', 'h', 'd'].includes(a.einheit)) m.push('Größe: Einheit passt nicht zur Größenart');
+  if (einheitArt(a.einheit) !== a.groesse || !['ct', '€', 'mm', 'cm', 'dm', 'm', 'km', 'mg', 'g', 'kg', 't', 's', 'min', 'h', 'd', 'mm²', 'cm²', 'dm²', 'm²', 'a', 'ha', 'km²'].includes(a.einheit)) m.push('Größe: Einheit passt nicht zur Größenart');
+  if (a.groesse === 'flaeche' && a.loesung % einheitFaktor(a.einheit) !== 0) m.push('Größe: Eine Fläche als Lösung geht in ihrer Einheit auf (ohne Komma)');
   if (!Number.isInteger(a.loesung) || a.loesung <= 0) m.push('Größe: Lösung ist keine natürliche Zahl in der kleinsten Einheit');
   else if (a.groesse !== 'zeit' && (a.loesung * 1000) % einheitFaktor(a.einheit) !== 0) m.push('Größe: Lösung hat in ihrer Einheit mehr als drei Stellen nach dem Komma');
   if (a.einheiten) {

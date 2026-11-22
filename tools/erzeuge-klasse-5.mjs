@@ -48,6 +48,11 @@ import { winkelarten } from './aufgaben/5-7-3-winkelarten.mjs';
 import { gradnetz } from './aufgaben/5-7-x1-gradnetz.mjs';
 import { messenUndZeichnen } from './aufgaben/5-7-4-messen.mjs';
 import { dreiecke } from './aufgaben/5-7-x2-dreiecke.mjs';
+import { flaechenVergleichen } from './aufgaben/5-8-1-vergleichen.mjs';
+import { flaechenmasse } from './aufgaben/5-8-2-flaechenmasse.mjs';
+import { flaechenSchaetzen } from './aufgaben/5-8-x1-schaetzen.mjs';
+import { rechteck } from './aufgaben/5-8-3-rechteck.mjs';
+import { zusammengesetzt } from './aufgaben/5-8-4-zusammengesetzt.mjs';
 
 const ERZEUGER = [
   [51151151, datenUndDiagramme],
@@ -78,6 +83,12 @@ const ERZEUGER = [
   [57957957, gradnetz],
   [57457457, messenUndZeichnen],
   [57857857, dreiecke],
+  // Kapitel 8 (ADR 0035)
+  [58158158, flaechenVergleichen],
+  [58258258, flaechenmasse],
+  [58958958, flaechenSchaetzen],
+  [58358358, rechteck],
+  [58458458, zusammengesetzt],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

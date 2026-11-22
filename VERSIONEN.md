@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.41 vom 22.11.2026
+
+### Schüler
+
+- Kapitel 8 „Flächeninhalt und Umfang“ ist da: Kästchen zählen, Umfang bestimmen, Flächeneinheiten, Rechteck und Quadrat berechnen und zusammengesetzte Figuren. Das sind 216 neue Aufgaben auf allen vier Niveaus.
+- Neu beim Kästchenfärben: Du färbst eine Figur mit so vielen Kästchen oder mit diesem Umfang. Jede passende Figur ist richtig.
+- Neue Bilder: Figuren auf dem Zentimeterraster, zerlegte Figuren mit nummerierten Teilflächen und ab M Skizzen mit Maßen.
+
+### Lehrkraft
+
+- Kapitel 8 hat 9 Lernziele mit je 6 Aufgaben auf F, G, M und E, dazu den Abstecher „Flächen schätzen“. Tor 8 öffnen Sie wie gewohnt unter Tore.
+- Einheiten: F cm², dm² und m², G dazu mm² und km², ab M dazu a und ha. Bis G stehen Figuren maßstäblich auf dem Raster, ab M als Skizze.
+- Zusammengesetzte Figuren bestehen nur aus Rechtecken: F zeigt die Zerlegung, G zerlegt selbst, M hat fehlende Seiten, E rechnet auf zwei Wegen.
+- 10 neue Fehlvorstellungen erscheinen in der Auswertung, zum Beispiel „Umfang und Flächeninhalt verwechselt“, „Umrechnungszahl 10 statt 100“ und „Loch nicht abgezogen“.
+
 ## 0.40 vom 21.11.2026
 
 ### Schüler

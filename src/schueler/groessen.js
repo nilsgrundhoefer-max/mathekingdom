@@ -1,4 +1,4 @@
-// Rechnen mit Größen (Kapitel 6, ADR 0033): Geld, Länge, Gewicht und Zeit.
+// Rechnen mit Größen (Kapitel 6, ADR 0033): Geld, Länge, Gewicht und Zeit. Kapitel 8 (ADR 0035): Flächeninhalt in mm² bis km².
 // Jede Größe wird als ganze Zahl in ihrer Grundeinheit geführt: Cent, Millimeter, Milligramm, Sekunde.
 // So braucht das Programm keine Kommazahlen. Das Komma ist nur eine Schreibweise für zwei Einheiten (3,50 € sind 350 ct).
 
@@ -7,8 +7,10 @@ export const EINHEITEN = {
   mm: ['laenge', 1], cm: ['laenge', 10], dm: ['laenge', 100], m: ['laenge', 1000], km: ['laenge', 1000000],
   mg: ['gewicht', 1], g: ['gewicht', 1000], kg: ['gewicht', 1000000], t: ['gewicht', 1000000000],
   s: ['zeit', 1], min: ['zeit', 60], h: ['zeit', 3600], d: ['zeit', 86400],
+  // Kapitel 8: Grundeinheit ist der Quadratmillimeter, die Umrechnungszahl 100.
+  'mm²': ['flaeche', 1], 'cm²': ['flaeche', 100], 'dm²': ['flaeche', 10000], 'm²': ['flaeche', 1000000], a: ['flaeche', 100000000], ha: ['flaeche', 10000000000], 'km²': ['flaeche', 1000000000000],
 };
-export const ART_NAMEN = { geld: 'Geld', laenge: 'Länge', gewicht: 'Gewicht', zeit: 'Zeit' };
+export const ART_NAMEN = { geld: 'Geld', laenge: 'Länge', gewicht: 'Gewicht', zeit: 'Zeit', flaeche: 'Flächeninhalt' };
 export const artVon = (einheit) => EINHEITEN[einheit]?.[0] ?? null;
 export const faktorVon = (einheit) => EINHEITEN[einheit]?.[1] ?? null;
 const gliedere = (n) => (n >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ') : String(n));
@@ -27,7 +29,7 @@ export function inGrundeinheit(text, einheit) {
 }
 // Trennt eine Eingabe wie „2,5 km“ in Zahl und Einheit. Ohne Einheit bleibt sie leer.
 export function teileEingabe(eingabe) {
-  const t = String(eingabe ?? '').trim(), m = t.match(/^(.*?)\s*(€|[a-z]+)$/);
+  const t = String(eingabe ?? '').trim(), m = t.match(/^(.*?)\s*(€|[a-z]+²?)$/);
   return m && EINHEITEN[m[2]] ? { zahl: m[1].trim(), einheit: m[2] } : { zahl: t, einheit: '' };
 }
 
@@ -37,6 +39,11 @@ export function schreibe(wert, einheit) {
   const [art, f] = EINHEITEN[einheit];
   if (wert % f === 0) return `${gliedere(wert / f)} ${einheit}`;
   if (art === 'zeit') return gemischt(wert, Object.keys(EINHEITEN).filter((e) => artVon(e) === 'zeit' && faktorVon(e) <= f).reverse());
+  // Flächen stehen in Klasse 5 nie mit Komma (ADR 0035), sondern gemischt: „3 m² 25 dm²“.
+  if (art === 'flaeche') {
+    const kleiner = Object.keys(EINHEITEN).filter((e) => artVon(e) === 'flaeche' && faktorVon(e) < f).sort((x, y) => faktorVon(y) - faktorVon(x));
+    return gemischt(wert, [einheit, kleiner.find((e) => wert % faktorVon(e) === 0)]);
+  }
   let nach = String(wert % f).padStart(String(f).length - 1, '0').replace(/0+$/, '');
   if (einheit === '€') nach = nach.padEnd(2, '0');
   return `${gliedere(Math.floor(wert / f))},${nach} ${einheit}`;

@@ -62,6 +62,14 @@ const bild = (b) => {
     karte: () => `Karte mit Lineal (${b.lang / 10} cm): ${b.orte.map((o) => `${o.n} bei ${o.mm / 10} cm`).join(', ')}${b.massstab ? `; Maßstab 1:${b.massstab}` : ''}${b.leiste ? `; Maßstabsleiste: ${b.leiste.mm / 10} cm sind ${b.leiste.text}` : ''}`,
     grundriss: () => `Plan „${b.name}“: ${b.b / 10} cm lang und ${b.h / 10} cm breit${b.massstab ? `; Maßstab 1:${b.massstab}` : ''}${b.leiste ? `; Maßstabsleiste: ${b.leiste.mm / 10} cm sind ${b.leiste.text}` : ''}`,
     zeitleiste: () => `Zeitleiste: ${b.punkte.map((x) => (typeof x === 'object' ? '?' : `${x} Uhr`)).join(' → ')}; Zeitspannen ${b.spruenge.map((x) => (typeof x === 'object' ? '?' : x)).join(', ')}`,
+    // Kapitel 8 (ADR 0035): Figuren aus Rechtecken am Raster oder als Skizze mit Maßen.
+    flaeche: () => {
+      const e = { kaestchen: 'Kästchen', cm: 'cm', m: 'm' }[b.einheit] ?? b.einheit;
+      const masz = (r) => `${r[2] - r[0]} × ${r[3] - r[1]}`;
+      const figur = (f) => `${f.n ? `${f.n}: ` : ''}${f.rechtecke.length === 1 ? `Rechteck ${masz(f.rechtecke[0])}` : `Figur aus den Rechtecken ${f.rechtecke.map(masz).join(', ')}${f.zerlegt ? ' (Zerlegung gestrichelt, Teilflächen nummeriert)' : ''}`}${f.loecher?.length ? `, Loch ${f.loecher.map(masz).join(', ')}` : ''}`;
+      const masse = (b.masse ?? []).map((x) => (x.frage ? '?' : x.text ?? `${Math.abs(x.q[0] - x.p[0]) + Math.abs(x.q[1] - x.p[1])} ${e}`));
+      return `${b.skizze ? 'Skizze, nicht maßstäblich' : `${{ kaestchen: 'Kästchenraster', cm: 'Zentimeterraster, 1 Feld = 1 cm²', m: 'Raster, 1 Feld = 1 m²' }[b.raster] ?? 'Raster'}${b.legende ? `, 1 Kästchen = ${b.legende}` : ''}`}; ${b.figuren.map(figur).join('; ')}${b.skizze ? ` (in ${e})` : ''}${masse.length ? `; Maße ${masse.join(', ')}` : ''}`;
+    },
     zahlenstrahl: () => `Zahlenstrahl ${b.von} bis ${b.bis}${b.schritt ? `, Teilstriche alle ${b.schritt}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${wert(b.pfeil)}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
@@ -102,6 +110,11 @@ const loesung = (a) => {
   if (a.format === 'gitter' && a.eingabe === 'kreis') return `_(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; ${gitterText(a.gitter)})_ Lösung: **Kreis um ${pt(a.bedingung.m)} mit Radius ${a.bedingung.r} Kästchen**, zum Beispiel durch ${pt(a.beispiel[1])}`;
   if (a.format === 'gitter') {
     const was = { punkte: a.offen ? 'alle passenden Punkte antippen' : `${a.loesung?.length === 1 ? 'einen Punkt' : `${a.loesung?.length} Punkte`} antippen`, zellen: 'Kästchen färben', linie: `${LINIE[a.linie] ?? 'Linie'} durch zwei Punkte zeichnen` }[a.eingabe];
+    // Kapitel 8 (ADR 0035): Kästchen färben mit Bedingung, jede passende Figur ist richtig.
+    if (a.bedingung?.art === 'flaeche') {
+      const bd = a.bedingung, regel = [bd.n && `${bd.n} Kästchen`, bd.umfang && `einem Rand von ${bd.umfang} Kästchenseiten`].filter(Boolean).join(' und ');
+      return `_(Gitterzeichnen, ${was}; ${gitterText(a.gitter)})_ Lösung: **${bd.rechteck ? 'jedes Rechteck' : 'jede zusammenhängende Figur'} mit ${regel}**, zum Beispiel ${a.loesung.map(pt).join(' ')}`;
+    }
     return `_(Gitterzeichnen, ${was}; ${gitterText(a.gitter)})_ Lösung: **${a.eingabe === 'linie' ? `zum Beispiel durch ${a.beispiel.map(pt).join(' und ')}` : a.loesung.map(pt).join(' ')}**`;
   }
   return a.teile.map((t, i) => (t.optionen ? `  - ${'abcdef'[i]}) ${flach(t.text)}${t.mehrfach ? ' _(mehrere antippen)_' : ''} ${t.optionen.map((o) => `${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join(' · ')}` : `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`)).join('\n');
