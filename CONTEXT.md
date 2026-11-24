@@ -135,7 +135,7 @@ Ein Aufgabenbild, das ein Ganzes in Teile zerlegt zeigt: Kreis, Rechteck, Streif
 _Avoid_: Tortendiagramm, Kreisdiagramm
 
 **Brucheingabe**:
-Die Eingabe eines Bruchs mit zwei Feldern übereinander und Bruchstrich. Ein gleichwertiger Bruch zählt als richtig, außer die Aufgabe verlangt einen bestimmten Nenner.
+Die Eingabe eines Bruchs mit zwei Feldern übereinander und Bruchstrich. Ein gleichwertiger Bruch zählt als richtig, außer die Aufgabe verlangt einen bestimmten Nenner. Ab dem Meilenstein „Brüche kürzen“ in Klasse 6 muss das Ergebnis vollständig gekürzt sein: Ein richtiger, aber ungekürzter Bruch ist fast richtig, bekommt den Hinweis „Kürze noch“ und kostet keinen Versuch. Unechter Bruch und gemischte Zahl zählen gleich, außer die Aufgabe verlangt eine der beiden Formen.
 _Avoid_: Schrägstrich-Schreibweise (3/4)
 
 **Teile färben**:
@@ -231,6 +231,10 @@ _Avoid_: Freischaltung, Meilensteinsperre (das ist der gesperrte Meilenstein fü
 **Abstecher**:
 Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist. Er bekommt eine Krone nach derselben Regel.
 _Avoid_: Zusatzstation, Extra
+
+**Niveau-Meilenstein**:
+Ein Meilenstein, den das Lehrwerk mit M oder E markiert und der deshalb nur Aufgaben ab dieser Niveaustufe hat (M: auf M und E; E: nur auf E). Für Schüler mit einem Zielniveau darunter ist er ein Abstecher und für den Kapitelabschluss nicht nötig; sie dürfen ihn freiwillig versuchen.
+_Avoid_: Zusatzstoff, Extra, Erweiterung
 
 **Lernziel**:
 Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III. Eine Aufgabe, deren Lösung er am selben Tag schon gesehen hat, zählt dabei nicht (ADR 0031).
