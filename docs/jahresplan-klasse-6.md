@@ -1,9 +1,9 @@
-# Jahresplan Klasse 6 (Entwurf zur Prüfung)
+# Jahresplan Klasse 6
 
 Grundlage: Inhaltsverzeichnis von Schnittpunkt Mathematik 6, Differenzierende Ausgabe Baden-Württemberg (ISBN 978-3-12-745361-4), von der Lehrkraft am 24.11.2026 als Bild geliefert.
 
 Was aus der Quelle stammt: Reihenfolge und Titel der Kapitel, Nummern und Titel der Lerneinheiten, die Marken MK, M und E.
-Was von mir stammt und geprüft werden muss: alle „Ich kann“-Sätze. Zu dieser Ausgabe habe ich kein Raster des Verlags gefunden; die Sätze lehnen sich an den Bildungsplan 2016 (Klassen 5/6) an. Die feineren Lernziele entstehen wie in Klasse 5 erst in der Fragerunde zum jeweiligen Kapitel.
+Was von mir stammt: alle „Ich kann“-Sätze, angelehnt an den Bildungsplan 2016 (Klassen 5/6), weil es zu dieser Ausgabe kein Raster des Verlags gibt. Die Lehrkraft hat den Plan am 24.11.2026 geprüft und freigegeben. Die feineren Lernziele entstehen wie in Klasse 5 erst in der Fragerunde zum jeweiligen Kapitel.
 
 ## Regeln für die Marken im Buch
 
