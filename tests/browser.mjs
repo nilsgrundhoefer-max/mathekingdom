@@ -21,6 +21,8 @@ const server = createServer((req, res) => {
 }).listen(0);
 const basis = `http://localhost:${server.address().port}/`;
 const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-5.json', wurzel), 'utf8'));
+// Der Aufgabentester des Administrators zählt die Aufgaben aller Klassenstufen (seit 0.43 auch Klasse 6).
+const alleAufgaben = pool.aufgaben.length + JSON.parse(readFileSync(new URL('aufgabenpool/klasse-6.json', wurzel), 'utf8')).aufgaben.length;
 const browser = await chromium.launch();
 // Seit 0.32 sind die Karten in Lehrer- und Administrator-Dashboard anfangs zugeklappt. Die Tests arbeiten mit allem
 // offen; das Auf- und Zuklappen selbst prüft Teil 8.
@@ -1804,7 +1806,7 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.waitForSelector('#tester-rahmen');
   const erste = await admin.getAttribute('#tester-info', 'data-kennung');
   assert.equal(erste, '5.1.1-H1-F-01');
-  assert.equal(await admin.innerText('#tester-fortschritt'), `0 von ${pool.aufgaben.length} kontrolliert`);
+  assert.equal(await admin.innerText('#tester-fortschritt'), `0 von ${alleAufgaben} kontrolliert`);
   assert.match(await admin.innerText('#tester-loesung'), /^7/);
   const probe = admin.frameLocator('#tester-rahmen');
   await probe.locator('form.antwort input').first().fill('7');
@@ -1814,7 +1816,7 @@ async function weiter(seite, wahl = '#weiter') {
   await foto(admin, 'admin-aufgabentester');
   await admin.click('#tester-kontrolliert');
   await admin.waitForSelector(`#tester-info:not([data-kennung="${erste}"])`);
-  assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${pool.aufgaben.length} kontrolliert`);
+  assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${alleAufgaben} kontrolliert`);
   const zweite = await admin.getAttribute('#tester-info', 'data-kennung');
   await probe.locator('form.antwort').waitFor();
   // Fehler melden: wird eine Aufgabenmeldung des Administrators, auf Wunsch gleich gesperrt.
@@ -1836,16 +1838,16 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.waitForSelector(`#tester-info[data-kennung="${erste}"] #tester-zurueck`);
   await admin.click('#tester-zurueck');
   await admin.waitForSelector(`#tester-info[data-kennung="${erste}"] #tester-kontrolliert`);
-  assert.equal(await admin.innerText('#tester-fortschritt'), `0 von ${pool.aufgaben.length} kontrolliert`);
+  assert.equal(await admin.innerText('#tester-fortschritt'), `0 von ${alleAufgaben} kontrolliert`);
   // Die Häkchen liegen auf dem Lehrertauschlaufwerk und überstehen das Neuladen.
   await admin.click('#tester-kontrolliert');
-  await admin.waitForFunction((n) => document.querySelector('#tester-fortschritt')?.textContent === `1 von ${n} kontrolliert`, pool.aufgaben.length);
+  await admin.waitForFunction((n) => document.querySelector('#tester-fortschritt')?.textContent === `1 von ${n} kontrolliert`, alleAufgaben);
   await admin.reload();
   await admin.waitForSelector('nav.bereiche');
   await admin.click('[data-tab="aufgaben"]');
   await admin.click('#alle-auf');
   await admin.waitForSelector('#tester-fortschritt');
-  assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${pool.aufgaben.length} kontrolliert`);
+  assert.equal(await admin.innerText('#tester-fortschritt'), `1 von ${alleAufgaben} kontrolliert`);
 
   // Gitterzeichnen (0.38, ADR 0032): Punkte, Linie und Kästchen, mit der Tastatur und mit dem Zeiger gesetzt.
   {
