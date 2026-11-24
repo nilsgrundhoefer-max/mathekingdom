@@ -1,7 +1,8 @@
 // Gezeichnete Bausteine im Stil alter Kartografie: Münze, Siegel, Wappen, Regionskarte, Schlossgarten (ADR 0010).
 import { s } from './dom.js';
-import { NIVEAUS, KRONEN, WAPPEN_TEILE } from './logik.js';
+import { NIVEAUS, KRONEN, WAPPEN_TEILE, zweiteFarbe } from './logik.js';
 import { ZEICHNER } from './wappenzeichen.js';
+import { TEILUNGEN, vollesWappen } from './wappenteile.js';
 
 // Gedämpfte Farben der Niveaustufen für das Lehrer-Dashboard (dort nur als Buchstaben-Chips).
 export const NIVEAU_FARBE = { F: '#9a6a1f', G: '#4b6b35', M: '#2f4f7f', E: '#7b2d43' };
@@ -114,20 +115,38 @@ const schloss = (x, y) => s('g', { transform: `translate(${x} ${y})`, class: 'ze
 // Auf hellen Metallfarben (Silber, Gold) stehen die Zeichen dunkel, sonst hell.
 const SCHILD = 'M10 8 H90 V48 C90 78 68 96 50 104 C32 96 10 78 10 48 Z';
 const ORTE = [{ x: 50, y: 60, m: 0.92 }, { x: 27, y: 25, m: 0.34 }, { x: 73, y: 25, m: 0.34 }];
-export function wappenBild(wappen, breite = 60) {
+// Seit ADR 0039 kann der Schild geteilt sein: Die Flächen der Schildteilung tragen die zweite Farbe, und die Zeichen
+// bekommen einen dunklen Rand, damit sie auf beiden Farben zu sehen sind.
+function schild(wappen) {
   const feld = WAPPEN_TEILE.find((w) => w.id === wappen.farbe) ?? WAPPEN_TEILE[0];
+  const zweite = TEILUNGEN[wappen.teilung] ? WAPPEN_TEILE.find((w) => w.id === zweiteFarbe(wappen)) : null;
   const zeichenFarbe = feld.metall ? '#2f2820' : '#f3e7c9';
   const zeichen = (wappen.zeichen ?? []).filter((id) => ZEICHNER[id]).slice(0, ORTE.length);
   const id = `mk-schild-${Math.random().toString(36).slice(2, 8)}`;
-  return s('svg', { viewBox: '0 -12 100 124', width: breite, height: (breite * 124) / 100, role: 'img', 'aria-label': 'Dein Wappen', class: 'wappen' },
-    s('defs', {}, s('clipPath', { id }, s('path', { d: SCHILD }))),
+  const bild = s('g', { class: 'schild', ...(zweite && { 'data-teilung': wappen.teilung }) },
+    s('defs', {}, s('clipPath', { id }, s('path', { d: SCHILD })),
+      zweite && s('filter', { id: `${id}-rand`, x: '-20%', y: '-20%', width: '140%', height: '140%' },
+        s('feMorphology', { in: 'SourceAlpha', operator: 'dilate', radius: 1.6, result: 'breit' }),
+        s('feFlood', { 'flood-color': feld.metall ? '#f3e7c9' : '#2f2820' }), s('feComposite', { in2: 'breit', operator: 'in' }),
+        s('feMerge', {}, s('feMergeNode', {}), s('feMergeNode', { in: 'SourceGraphic' })))),
     s('path', { d: SCHILD, fill: feld.wert }),
-    s('g', { 'clip-path': `url(#${id})` }, zeichen.map((z, i) => {
+    zweite && s('path', { d: TEILUNGEN[wappen.teilung], fill: zweite.wert, 'clip-path': `url(#${id})`, class: 'teilung' }),
+    s('g', { 'clip-path': `url(#${id})`, ...(zweite && { filter: `url(#${id}-rand)` }) }, zeichen.map((z, i) => {
       // Nur ein Hauptzeichen: Es steht in der Mitte. Mit Beizeichen rückt es etwas nach unten.
       const ort = i === 0 && zeichen.length === 1 ? { x: 50, y: 54, m: 1 } : ORTE[i];
       return s('g', { transform: `translate(${ort.x} ${ort.y}) scale(${ort.m})`, class: `zeichen-${z}` }, ZEICHNER[z](zeichenFarbe, feld.wert));
     })),
     s('path', { d: SCHILD, fill: 'none', stroke: '#2f2820', 'stroke-width': 3, 'stroke-linejoin': 'round' }));
+  return { bild, farbe: feld.wert, farbe2: (zweite ?? WAPPEN_TEILE.find((w) => w.id === zweiteFarbe(wappen)))?.wert ?? null };
+}
+// Das kleine Wappen (Kopfzeile, Regionskarte, Bestenliste): nur der Schild mit Teilung und Zeichen.
+export function wappenBild(wappen, breite = 60) {
+  return s('svg', { viewBox: '0 -12 100 124', width: breite, height: (breite * 124) / 100, role: 'img', 'aria-label': 'Dein Wappen', class: 'wappen' }, schild(wappen).bild);
+}
+// Das volle Wappen (Wappenseite): der Schild mit Helmzier, Schildhaltern, Wahlspruch und Prunkrahmen.
+export function wappenVoll(wappen, breite = 240) {
+  const { bild, farbe, farbe2 } = schild(wappen);
+  return vollesWappen(wappen, { schild: bild, farbe, farbe2, spruch: WAPPEN_TEILE.find((w) => w.id === wappen.spruch && w.art === 'spruch')?.name ?? null, breite });
 }
 
 // ---------- Regionskarte (region_map) ----------

@@ -932,15 +932,18 @@ export function wartePlatz(stand, andereHilferufe) {
 
 // ---------- Wappen (ADR 0018) ----------
 // Der Wappenschrank wächst mit der Klassenstufe: Jede öffnet beim Schuljahreswechsel einen neuen Wappenbereich.
-// Gebaut ist bisher der Bereich von Klasse 5 (Farben und Zeichen); die späteren zeigt der Schrank nur als Ausblick.
+// Seit ADR 0039 sind alle sechs Bereiche gebaut. Bereiche über der eigenen Klassenstufe zeigt der Schrank als Ausblick mit Vorschaubild.
+// `arten`: die Teilearten des Bereichs mit ihrer Überschrift im Schrank.
 export const WAPPENBEREICHE = [
   { klasse: 5, name: 'Farben und Zeichen' },
-  { klasse: 6, name: 'Schildteilung' },
-  { klasse: 7, name: 'Helmzier' },
-  { klasse: 8, name: 'Schildhalter' },
-  { klasse: 9, name: 'Wahlspruch' },
-  { klasse: 10, name: 'Prunkrahmen' },
+  { klasse: 6, name: 'Schildteilung', arten: { teilung: 'Schildteilung' }, satz: 'Dein Schild bekommt zwei Farben.' },
+  { klasse: 7, name: 'Helmzier', arten: { helm: 'Helm', helmdecke: 'Helmdecke', helmschmuck: 'Helmschmuck' }, satz: 'Über deinem Schild sitzt ein Helm mit Decke und Schmuck.' },
+  { klasse: 8, name: 'Schildhalter', arten: { halter: 'Schildhalter' }, satz: 'Zwei Tiere halten deinen Schild.' },
+  { klasse: 9, name: 'Wahlspruch', arten: { spruch: 'Wahlspruch' }, satz: 'Unter deinem Schild steht dein Wahlspruch auf einem Band.' },
+  { klasse: 10, name: 'Prunkrahmen', arten: { prunk: 'Prunkrahmen' }, satz: 'Mantel, Kranz, Kette und Postament rahmen dein Wappen.' },
 ];
+// Teilearten, von denen das Wappen höchstens eines trägt: Das Feld im Wappen heißt wie die Art.
+export const EINZELTEILE = ['teilung', 'helm', 'helmdecke', 'helmschmuck', 'spruch'];
 export const ZEICHEN_GRUPPEN = { formen: 'Formen', natur: 'Natur', werkzeuge: 'Werkzeuge', bauwerke: 'Bauwerke', tiere: 'Tiere', ehre: 'Ehrenzeichen' };
 // Ein Wappen trägt ein Hauptzeichen und bis zu zwei Beizeichen: zeichen[0] ist das Hauptzeichen.
 export const MAX_ZEICHEN = 3;
@@ -986,6 +989,54 @@ export const WAPPEN_TEILE = [
   { id: 'wegstern', art: 'zeichen', gruppe: 'ehre', klasse: 5, name: 'Wegstern', preis: null, rang: 0, ehre: 'Für 25 Wegstücke mit mindestens 4 von 5 richtig' },
 ];
 export const WEGSTERN_WEGSTUECKE = 25;
+// ---------- Wappenbereiche Klasse 6 bis 10 (ADR 0039) ----------
+// Je Klassenstufe etwa 5.000 Münzen. Spätere Bereiche haben weniger Teile, die dafür mehr kosten. Nichts davon heißt „Krone“.
+const T6 = [['gespalten', 'Gespalten', 300, 3], ['geteilt', 'Geteilt', 300, 3], ['schraeg', 'Schräg geteilt', 400, 3], ['schraeglinks', 'Schräglinks geteilt', 400, 3], ['pfahl', 'Pfahl', 500, 4],
+  ['schildhaupt', 'Schildhaupt', 500, 4], ['geviert', 'Geviert', 550, 4], ['sparren', 'Sparren', 600, 5], ['schach', 'Geschacht', 700, 5], ['gestaendert', 'Geständert', 750, 5]];
+const T7 = [['helm', 'topfhelm', 'Topfhelm', 550, 4], ['helm', 'stechhelm', 'Stechhelm', 600, 5], ['helm', 'spangenhelm', 'Spangenhelm', 650, 6], ['helmdecke', 'decke-schlicht', 'Schlichte Helmdecke', 500, 4],
+  ['helmdecke', 'decke-gezaddelt', 'Gezaddelte Helmdecke', 650, 5], ['helmschmuck', 'federbusch', 'Federbusch', 600, 5], ['helmschmuck', 'fluegel', 'Flügel', 700, 6], ['helmschmuck', 'hoerner', 'Hörner', 750, 6]];
+const T8 = [['loewe', 'Löwe', 800, 5], ['hirsch', 'Hirsch', 900, 6], ['baer', 'Bär', 1000, 6], ['greif', 'Greif', 1100, 7], ['einhorn', 'Einhorn', 1200, 8]];
+// Wahlsprüche: eine feste Liste, kein Freitext. Die lateinischen stehen mit Übersetzung im Schrank.
+const T9 = ['Schritt für Schritt', 'Mut tut gut', 'Übung macht den Meister', 'Wer fragt, gewinnt', 'Immer weiter', 'Mit Herz und Verstand', 'Fehler sind Helfer', 'Erst denken, dann rechnen',
+  'Gemeinsam stark', 'Nie aufgeben', 'Neugier führt weit', 'Klug und kühn', 'Stein auf Stein', 'Mit Ruhe und Kraft', 'Ich schaffe das', 'Der Weg ist das Ziel', 'Wissen ist Macht',
+  'Ehrlich währt am längsten', 'Treu und tapfer', 'Kopf hoch', 'Heute besser als gestern', 'Wer wagt, gewinnt', 'Geduld bringt Rosen', 'Ohne Fleiß kein Preis',
+  ['Per aspera ad astra', 'Durch Mühe zu den Sternen'], ['Carpe diem', 'Nutze den Tag'], ['Sapere aude', 'Wage es, zu denken'], ['Veni, vidi, vici', 'Ich kam, sah und siegte'],
+  ['Festina lente', 'Eile mit Weile'], ['Nil desperandum', 'Nur nicht verzweifeln']];
+const T10 = [['lorbeer', 'Lorbeerkranz', 1100, 8], ['kette', 'Kette', 1200, 9], ['postament', 'Postament', 1300, 10], ['mantel', 'Wappenmantel', 1400, 11]];
+WAPPEN_TEILE.push(
+  ...T6.map(([id, name, preis, rang]) => ({ id, art: 'teilung', klasse: 6, name, preis, rang })),
+  ...T7.map(([art, id, name, preis, rang]) => ({ id, art, klasse: 7, name, preis, rang })),
+  ...T8.map(([id, name, preis, rang]) => ({ id: `halter-${id}`, art: 'halter', klasse: 8, name, preis, rang })),
+  ...T9.map((t, i) => (Array.isArray(t) ? { id: `spruch-${i + 1}`, art: 'spruch', klasse: 9, name: t[0], deutsch: t[1], preis: 230, rang: i < 27 ? 8 : 9 }
+    : { id: `spruch-${i + 1}`, art: 'spruch', klasse: 9, name: t, preis: 150, rang: i < 12 ? 6 : 7 })),
+  ...T10.map(([id, name, preis, rang]) => ({ id, art: 'prunk', klasse: 10, name, preis, rang })),
+);
+// Die zweite Farbe eines geteilten Schildes: die gewählte, sonst die erste gekaufte, die nicht die Schildfarbe ist. Ohne zweite Farbe: null.
+export function zweiteFarbe(wappen) {
+  const farben = (wappen.gekauft ?? []).filter((id) => id !== wappen.farbe && WAPPEN_TEILE.some((t) => t.id === id && t.art === 'farbe'));
+  return farben.includes(wappen.farbe2) ? wappen.farbe2 : farben[0] ?? null;
+}
+export function waehleZweiteFarbe(stand, id) {
+  const t = teil(id), w = stand.wappen;
+  if (t?.art === 'farbe' && w.gekauft.includes(id) && id !== w.farbe) w.farbe2 = id;
+}
+// Schildhalter stehen links und rechts, gleich oder verschieden. Noch einmal wählen nimmt das Tier von dieser Seite.
+export function stelleHalter(stand, id, seite) {
+  const t = teil(id), w = stand.wappen;
+  if (t?.art !== 'halter' || !w.gekauft.includes(id) || !['links', 'rechts'].includes(seite)) return;
+  w.halter = { ...(w.halter ?? {}) };
+  if (w.halter[seite] === id) delete w.halter[seite]; else w.halter[seite] = id;
+}
+// Trägt das Wappen dieses Teil gerade?
+export function traegt(wappen, id) {
+  const t = teil(id);
+  if (!t) return false;
+  if (t.art === 'farbe') return wappen.farbe === id;
+  if (t.art === 'zeichen') return (wappen.zeichen ?? []).includes(id);
+  if (EINZELTEILE.includes(t.art)) return wappen[t.art] === id;
+  if (t.art === 'halter') return wappen.halter?.links === id || wappen.halter?.rechts === id;
+  return (wappen.prunk ?? []).includes(id);
+}
 export const klassenstufe = (stand) => Number.parseInt(stand?.klasse, 10) || 5;
 export const teil = (id) => WAPPEN_TEILE.find((w) => w.id === id) ?? null;
 
@@ -1001,6 +1052,7 @@ export function kaufe(stand, id) {
   stand.wappen.gekauft.push(id);
   return 'ok';
 }
+// Farbe wählen; ein Zeichen anbringen oder abnehmen. Teile der späteren Bereiche (ADR 0039): anlegen oder wieder abnehmen.
 // Farbe wählen; ein Zeichen anbringen oder abnehmen. Ein neues Zeichen wird Hauptzeichen, wenn noch keines da ist,
 // sonst Beizeichen; sind schon zwei Beizeichen da, ersetzt es das letzte.
 export function legeAn(stand, id) {
@@ -1008,6 +1060,14 @@ export function legeAn(stand, id) {
   if (!t || !stand.wappen.gekauft.includes(id)) return;
   const w = stand.wappen;
   if (t.art === 'farbe') w.farbe = id;
+  else if (EINZELTEILE.includes(t.art)) { if (w[t.art] === id) delete w[t.art]; else w[t.art] = id; }
+  // Ein neuer Schildhalter stellt sich auf beide Seiten, wenn noch keiner da ist; sonst nimmt „Abnehmen“ ihn von beiden Seiten.
+  else if (t.art === 'halter') {
+    const h = { ...(w.halter ?? {}) };
+    if (h.links === id || h.rechts === id) { for (const seite of ['links', 'rechts']) if (h[seite] === id) delete h[seite]; }
+    else { for (const seite of ['links', 'rechts']) if (!h[seite]) h[seite] = id; if (h.links !== id && h.rechts !== id) h.links = h.rechts = id; }
+    w.halter = h;
+  } else if (t.art === 'prunk') w.prunk = (w.prunk ?? []).includes(id) ? w.prunk.filter((x) => x !== id) : [...(w.prunk ?? []), id];
   else if (w.zeichen.includes(id)) w.zeichen = w.zeichen.filter((x) => x !== id);
   else if (w.zeichen.length < MAX_ZEICHEN) w.zeichen.push(id);
   else w.zeichen[MAX_ZEICHEN - 1] = id;

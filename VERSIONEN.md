@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.45 vom 24.11.2026
+
+### Schüler
+
+- Dein Wappenschrank wächst mit dir: In Klasse 6 öffnet sich die Schildteilung. Du teilst deinen Schild in zwei Farben, zum Beispiel gespalten, geviert oder geschacht. Die zweite Farbe suchst du dir aus deinen gekauften Farben aus.
+- In den nächsten Klassen kommen dazu: Helm mit Helmdecke und Helmschmuck (Klasse 7), zwei Tiere als Schildhalter (Klasse 8), ein Wahlspruch auf einem Band (Klasse 9) und der Prunkrahmen mit Mantel, Kranz, Kette und Postament (Klasse 10).
+- Unter „Später im Wappenschrank“ siehst du an deinem eigenen Wappen, wie jeder spätere Bereich aussieht.
+
+### Lehrkraft
+
+- Alle Wappenbereiche bis Klasse 10 sind gebaut. Ein Bereich öffnet sich mit der Klassenstufe der Klasse, ein Teil darin mit dem Rang. Jeder Bereich kostet zusammen etwa 5.000 Münzen.
+- Klasse 6: zehn Schildteilungen (Rang 3 bis 5). Klasse 7: drei Helme, zwei Helmdecken, dreimal Helmschmuck. Klasse 8: Löwe, Hirsch, Bär, Greif und Einhorn als Schildhalter. Klasse 9: 30 feste Wahlsprüche, sechs davon lateinisch mit Übersetzung; Schüler tippen nichts selbst. Klasse 10: Lorbeerkranz, Kette, Postament und Wappenmantel (bis Rang 11).
+- Das volle Wappen erscheint nur groß auf der Wappenseite. In der Kopfzeile, auf der Regionskarte und in der Bestenliste steht weiter nur der Schild, jetzt mit Schildteilung.
+- Die Bereiche für Klasse 7 bis 10 werden erst nutzbar, wenn es für diese Klassenstufen Aufgaben gibt. Bis dahin sind sie nur als Ausblick zu sehen.
+
 ## 0.44 vom 24.11.2026
 
 ### Schüler
