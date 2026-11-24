@@ -1469,6 +1469,40 @@ async function weiter(seite, wahl = '#weiter') {
     await ohne.waitForSelector('nav.bereiche');
     await ohne.close();
   }
+  // Zu Hause (Version 0.46): Die gemerkten Ordner liegen auf Tauschlaufwerken, die nicht erreichbar sind, und der
+  // Browser antwortet auf die Frage nach der Erlaubnis nie. Dann bleibt nicht „Mathekingdom öffnet …“ stehen.
+  {
+    const weg = await kontext.newPage();
+    weg.on('pageerror', (e) => fehler.push(`lehrer ohne Laufwerk: ${e.message}`));
+    await weg.addInitScript(() => {
+      FileSystemHandle.prototype.queryPermission = () => new Promise(() => {});
+      FileSystemHandle.prototype.requestPermission = () => new Promise(() => {});
+    });
+    await weg.goto(`${basis}test/Lehrer-NG.html`);
+    // Nach der Frist kommt die Karte mit den hinterlegten Ordnern.
+    await weg.waitForSelector('#hinterlegt', { timeout: 10000 });
+    // Ein Klick darauf hängt wieder: Nach einer Weile kommt die Wahl der Ordner mit dem Schritt, der klemmt.
+    await weg.click('#hinterlegt h1');
+    await weg.waitForSelector('.meldung.fehler', { timeout: 20000 });
+    assert.match(await weg.innerText('.meldung.fehler'), /kommt beim Schritt „Zugriff auf die Ordner prüfen“ nicht weiter/);
+    assert.ok(await weg.locator('#wahl-schueler').count());
+    assert.doesNotMatch(await weg.innerText('main'), /Mathekingdom öffnet/);
+    await foto(weg, 'lehrer-laufwerk-nicht-erreichbar');
+    await weg.close();
+    const adminWeg = await kontext.newPage();
+    adminWeg.on('pageerror', (e) => fehler.push(`admin ohne Laufwerk: ${e.message}`));
+    await adminWeg.addInitScript(() => {
+      FileSystemHandle.prototype.queryPermission = () => new Promise(() => {});
+      FileSystemHandle.prototype.requestPermission = () => new Promise(() => {});
+    });
+    await adminWeg.goto(`${basis}dist/Mathekingdom-Admin.html`);
+    await adminWeg.waitForSelector('#hinterlegt', { timeout: 10000 });
+    await adminWeg.click('#hinterlegt h1');
+    await adminWeg.waitForSelector('.meldung.fehler, .fehler', { timeout: 20000 });
+    assert.match(await adminWeg.innerText('body'), /kommt beim Schritt „Zugriff auf die Ordner prüfen“ nicht weiter/);
+    assert.ok(await adminWeg.locator('#wahl-schueler').count());
+    await adminWeg.close();
+  }
 
   // Münzgabe (ADR 0027): Der Administrator schickt Lena 500 Münzen. Sie kommen als Brief, gutgeschrieben beim Öffnen.
   // Eine zweite Gabe zieht er zurück, bevor sie geöffnet ist. Die Lehrkraft sieht die Gabe im Schülerprofil.
