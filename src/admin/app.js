@@ -10,10 +10,11 @@ import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
 import * as M from '../gemeinsam/meldungen.js';
 import * as ST from '../gemeinsam/statistik.js';
+import * as AN from '../gemeinsam/aufgabenanalyse.js';
 import * as L from '../schueler/logik.js';
 import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
 import { gemerkteOrdner, zugriff, startwache, haengerText, ordnersaetze, gleicherOrdner, stummText } from '../gemeinsam/gemerkt.js';
-import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
+import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
 import { testklassenKarte } from './testklasse.js';
 import { aufgabentesterKarte, TESTER_STIL, ADMIN_MELDUNGEN } from './aufgabentester.js';
 import { aufklapper, AUFKLAPP_STIL } from '../gemeinsam/aufklappen.js';
@@ -696,7 +697,7 @@ async function ladeBetrieb() {
     for (const [code, gaben] of Object.entries(daten?.einst?.muenzgaben ?? {})) for (const g of gaben)
       eintraege.push({ t: g.t, art: 'ok', text: `Münzgabe +${g.muenzen} Münzen an ${code}`, klasse: k, code, wer: 'Administrator' });
     const bo = lJahr && await (await lJahr.ordner(k))?.ordner('backup');
-    klassen.push({ klasse: k, test: Boolean(v.klassen[jahr][k].test), lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
+    klassen.push({ klasse: k, test: Boolean(v.klassen[jahr][k].test), lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, feedback: daten?.einst?.feedback ?? null, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
   }
   const meldungen = {};
   for (const kz of Object.keys(v.lehrkraefte)) {
@@ -915,6 +916,99 @@ function auffaelligKarte() {
           })))));
   });
 }
+// ---------- Teststunde: Feedbackfragen und Aufgabenanalyse (ADR 0042) ----------
+// Gemeinsamer Filter für Feedback, Aufgabenanalyse und Export: welche Klassen, welcher Tag.
+const heuteTag = () => L.tagVon(new Date().toISOString());
+function analyseFilter(b) {
+  const f = (z.analyse ??= { klasse: '', zeitraum: 'heute', datum: heuteTag() });
+  const klassen = f.klasse ? b.klassen.filter((k) => k.klasse === f.klasse) : echteKlassen(b);
+  const zeitraum = f.zeitraum === 'alles' ? {} : { tag: f.zeitraum === 'heute' ? heuteTag() : f.datum };
+  const datum = (tag) => new Date(`${tag}T12:00:00`).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  return { f, klassen, zeitraum, klassenText: f.klasse ? `Klasse ${f.klasse}${b.klassen.find((k) => k.klasse === f.klasse)?.test ? ' (Testklasse)' : ''}` : 'alle Klassen außer Testklassen',
+    zeitraumText: zeitraum.tag ? `${f.zeitraum === 'heute' ? 'heute, ' : ''}${datum(zeitraum.tag)}` : 'das ganze Schuljahr' };
+}
+function teststundeKarte() {
+  return mitBetrieb((b) => {
+    const { f, klassen, zeitraum, klassenText, zeitraumText } = analyseFilter(b);
+    const neu = () => male();
+    const exportieren = () => {
+      const analyse = AN.aufgabenanalyse(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), allePoolAufgaben(), zeitraum);
+      const feedback = AN.feedbackAuswertung(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), zeitraum);
+      const text = AN.teststundeMarkdown({ klassen: klassenText, zeitraum: zeitraumText, version: versionstext(), erstellt: new Date().toLocaleString('de-DE') }, analyse, feedback, aufgabeZu);
+      ladeHerunter(`Mathekingdom_Teststunde_${f.klasse || 'alle'}_${zeitraum.tag ?? 'schuljahr'}.md`, text, 'text/markdown;charset=utf-8');
+      z.hinweis = 'Teststunde exportiert. Die Datei enthält keine Namen und keine Schülercodes; du kannst sie so bei Claude hochladen.';
+      male();
+    };
+    return h('section', { class: 'karte', id: 'teststunde' }, h('div', { class: 'reihe' }, h('h2', {}, 'Teststunde'), h('span', { class: 'rechts' }, neuLaden())),
+      h('p', { class: 'klein' }, 'Wähle Klasse und Tag. Feedback und Aufgabenanalyse darunter zeigen dann genau diese Stunde, und der Export enthält beides als eine Datei für Claude, ohne Namen und Schülercodes.'),
+      h('div', { class: 'reihe' },
+        h('label', {}, 'Klasse ', h('select', { id: 'analyse-klasse', onchange: (e) => { f.klasse = e.target.value; neu(); } },
+          h('option', { value: '', selected: !f.klasse }, 'alle Klassen außer Testklassen'),
+          b.klassen.map((k) => h('option', { value: k.klasse, selected: f.klasse === k.klasse }, `${k.klasse}${k.test ? ' (Testklasse)' : ''}`)))),
+        h('label', {}, 'Zeitraum ', h('select', { id: 'analyse-zeitraum', onchange: (e) => { f.zeitraum = e.target.value; neu(); } },
+          [['heute', 'heute'], ['tag', 'ein Tag'], ['alles', 'ganzes Schuljahr']].map(([w, t]) => h('option', { value: w, selected: f.zeitraum === w }, t)))),
+        f.zeitraum === 'tag' && h('input', { type: 'date', id: 'analyse-datum', value: f.datum, onchange: (e) => { f.datum = e.target.value || heuteTag(); neu(); } }),
+        h('button', { class: 'haupt', id: 'teststunde-export', onclick: exportieren }, 'Teststunde exportieren')),
+      h('p', { class: 'klein' }, `Gezeigt: ${klassenText}, ${zeitraumText}.`));
+  });
+}
+function feedbackKarte() {
+  return mitBetrieb((b) => {
+    const { klassen, zeitraum } = analyseFilter(b);
+    const fb = AN.feedbackAuswertung(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), zeitraum);
+    const stelle = (k, neu) => tue(async () => {
+      const daten = await ladeKlasse(k.klasse);
+      if (!daten) throw new Error(`Die Klasse ${k.klasse} ließ sich nicht lesen.`);
+      const alt = daten.einst.feedback ?? { an: false, alle: L.FEEDBACK_STANDARD };
+      daten.einst.feedback = { ...alt, ...neu };
+      await speichereKlasse(k.klasse, daten);
+      k.feedback = daten.einst.feedback;
+      z.hinweis = `Feedbackfragen in Klasse ${k.klasse}: ${daten.einst.feedback.an ? `an, nach jeder ${daten.einst.feedback.alle}. Aufgabe` : 'aus'}.`;
+    });
+    const balken = (zahlen) => {
+      const summe = zahlen[0] + zahlen[1];
+      return h('div', { class: 'fb-balken', 'aria-hidden': 'true' }, h('span', { class: 'eins', style: `width:${summe ? (100 * zahlen[0]) / summe : 0}%` }), h('span', { class: 'zwei', style: `width:${summe ? (100 * zahlen[1]) / summe : 0}%` }));
+    };
+    return h('section', { class: 'karte', id: 'feedback' }, h('h2', {}, 'Feedback der Schüler'),
+      h('p', { class: 'klein' }, 'Ist die Abfrage an, bekommt jeder Schüler der Klasse nach jeder n-ten Aufgabe eine kurze Frage mit zwei Antworten, nie mitten in einer Aufgabe, im Rückblick oder im Einstiegscheck. Er muss antworten, bekommt dafür aber nichts. Die Fragen kommen reihum. Die Antworten siehst nur du, ohne Namen.'),
+      h('div', { class: 'rollbar' }, h('table', { class: 'tabelle', id: 'feedback-einstellung' },
+        h('thead', {}, h('tr', {}, ['Klasse', 'Abfrage', 'Nach jeder'].map((t) => h('th', {}, t)))),
+        h('tbody', {}, b.klassen.map((k) => h('tr', { 'data-feedback-klasse': k.klasse }, h('td', {}, `${k.klasse}${k.test ? ' (Testklasse)' : ''}`),
+          h('td', {}, h('label', { class: 'schalter' }, h('input', { type: 'checkbox', 'data-feedback-an': k.klasse, checked: Boolean(k.feedback?.an), onchange: (e) => stelle(k, { an: e.target.checked })() }), ' an')),
+          h('td', {}, h('select', { 'data-feedback-alle': k.klasse, disabled: !k.feedback?.an, onchange: (e) => stelle(k, { alle: Number(e.target.value) })() },
+            L.FEEDBACK_ABSTAENDE.map((n) => h('option', { value: n, selected: (k.feedback?.alle ?? L.FEEDBACK_STANDARD) === n }, `${n}. Aufgabe`))))))))),
+      h('h3', {}, `Antworten (${fb.antworten})`),
+      !fb.antworten ? h('p', { class: 'klein', id: 'feedback-leer' }, 'Im gewählten Zeitraum gibt es noch keine Antworten.')
+        : h('table', { class: 'tabelle', id: 'feedback-antworten' },
+          h('thead', {}, h('tr', {}, ['Frage', 'Antworten', ''].map((t) => h('th', {}, t)))),
+          h('tbody', {}, fb.fragen.filter((x) => x.zahlen[0] + x.zahlen[1]).map((x) => h('tr', { 'data-frage': x.id }, h('td', {}, x.text),
+            h('td', { class: 'zahl' }, `${x.antworten[0]} ${x.zahlen[0]} · ${x.antworten[1]} ${x.zahlen[1]}`), h('td', {}, balken(x.zahlen)))))));
+  });
+}
+function aufgabenanalyseKarte() {
+  return mitBetrieb((b) => {
+    const { klassen, zeitraum } = analyseFilter(b);
+    const an = AN.aufgabenanalyse(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), allePoolAufgaben(), zeitraum);
+    const alle = Boolean(z.analyseAlle), zeilen = alle ? an.zeilen : an.zeilen.slice(0, 25);
+    const p = (x) => (x == null ? '–' : `${Math.round(x * 100)} %`), s = (x) => (x == null ? '–' : `${Math.round(x)} s`);
+    const kurz = (t) => { const x = t.replace(/\{\{\w+\}\}/g, '▢').replace(/\s*\n\s*/g, ' '); return x.length > 80 ? `${x.slice(0, 78)} …` : x; };
+    return h('section', { class: 'karte', id: 'aufgabenanalyse' }, h('h2', {}, `Aufgabenanalyse (${an.zeilen.length} Aufgaben, ${an.auffaellig} auffällig)`),
+      h('p', { class: 'klein' }, `Je Aufgabe aus den Speicherständen berechnet, ohne Namen. Auffällig ist eine Aufgabe ab ${AN.MIN_BEARBEITUNGEN} Bearbeitungen, wenn sie mindestens doppelt so lange dauert wie die übrigen Aufgaben ihres Lernziels und Niveaus, wenn sie deutlich seltener gelöst wird, wenn sie oft abgebrochen wird oder im Feedback oft „zu schwer“ heißt. ${an.aktiv} von ${an.schueler} Schülern haben im Zeitraum gearbeitet, ${an.bearbeitungen} Bearbeitungen.`),
+      !an.zeilen.length ? h('p', { id: 'analyse-leer' }, 'Im gewählten Zeitraum wurde keine Aufgabe bearbeitet.')
+        : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
+          h('thead', {}, h('tr', {}, ['Kennung', 'Aufgabe', 'Bearbeitet', 'Gelöst', '1. Versuch', 'Dauer', 'Vergleich', 'Hilfen', 'Abbrüche', 'Zu schwer', 'Auffällig'].map((t) => h('th', {}, t)))),
+          h('tbody', {}, zeilen.map((x) => {
+            const a = aufgabeZu(x.aufgabe);
+            return h('tr', { 'data-analyse': x.aufgabe, class: x.gruende.length ? 'auffaellig' : '' }, h('td', {}, h('code', { class: 'kennung' }, x.aufgabe)),
+              h('td', {}, a ? kurz(a.text) : '', x.falsch[0] && h('div', { class: 'klein' }, `Häufigste falsche Antwort: „${x.falsch[0][0]}“ (${x.falsch[0][1]})`)),
+              h('td', { class: 'zahl' }, `${x.bearbeitet} (${x.schueler})`), h('td', { class: 'zahl' }, p(x.quote)), h('td', { class: 'zahl' }, p(x.ersterVersuch)),
+              h('td', { class: 'zahl' }, s(x.dauer)), h('td', { class: 'zahl' }, s(x.vergleichDauer)), h('td', { class: 'zahl' }, x.hilfen == null ? '–' : x.hilfen.toFixed(1)),
+              h('td', { class: 'zahl' }, String(x.abbrueche)), h('td', { class: 'zahl' }, x.zuSchwer.ja + x.zuSchwer.nein ? `${x.zuSchwer.ja} von ${x.zuSchwer.ja + x.zuSchwer.nein}` : '–'),
+              h('td', {}, x.gruende.length ? h('ul', { class: 'liste klein' }, x.gruende.map((g) => h('li', {}, g))) : ''));
+          })))),
+      an.zeilen.length > 25 && h('button', { class: 'schlicht', id: 'analyse-alle', onclick: () => { z.analyseAlle = !alle; male(); } }, alle ? 'Nur die ersten 25 zeigen' : `Alle ${an.zeilen.length} Aufgaben zeigen`));
+  });
+}
 function typenKarte() {
   return mitBetrieb((b) => {
     const typen = ST.jeAufgabentyp(alleStaendeVon(b), allePoolAufgaben(), auffaelligeVon(b), FORMAT_NAMEN);
@@ -957,7 +1051,7 @@ function hauptansicht() {
     schule: () => [schuljahrKarte(), uebernahmeKarte(), startdateien(), altKarte()],
     klassen: () => [lehrkraefte(), klassenKarte(), z.klasse && namenKarte(), testklassenKarte(testApi), aufgeloesteKarte()],
     betrieb: () => [nutzungKarte(), backupKarte(), protokollKarte()],
-    aufgaben: () => [meldungenKarte(), aufgabentesterKarte(testerApi), auffaelligKarte(), typenKarte(), sperrenKarte()],
+    aufgaben: () => [meldungenKarte(), teststundeKarte(), feedbackKarte(), aufgabenanalyseKarte(), aufgabentesterKarte(testerApi), auffaelligKarte(), typenKarte(), sperrenKarte()],
   }[z.tab];
   return h('div', {},
     h('nav', { class: 'tabs bereiche' }, TABS.map(([id, titel]) => h('button', { class: z.tab === id ? 'aktiv' : '', 'data-tab': id, onclick: () => { z.tab = id; z.hinweis = null; if (id !== 'schule' && id !== 'klassen') z.betrieb = null; male(); } }, titel)),

@@ -1,0 +1,13 @@
+# Feedbackfragen und Aufgabenanalyse für Teststunden
+
+Nach dem ersten Test mit einer ganzen Klasse (24.11.2026) möchte Nils aus jeder weiteren Erprobung zwei Dinge mitnehmen: die Meinung der Schüler und Zahlen dazu, welche Aufgaben nicht funktionieren. Beides soll er nach der Stunde als Datei bei Claude hochladen und auswerten lassen können. Zwei Fragerunden.
+
+**Feedbackfragen kommen nach jeder n-ten Aufgabe, als Pflicht und ohne Münzen.** Der Administrator schaltet sie je Klasse ein (anfangs aus) und wählt n aus 3, 5, 10 und 20 (Standard 5). Gezählt werden alle Aufgaben außer Rückblick und Einstiegscheck. Die Frage kommt nach dem Ergebnis, vor allem anderen, also auch vor dem Abschluss eines Wegstücks, nie mitten in einer Aufgabe. Es gibt keinen Knopf zum Überspringen, aber auch keine Münzen, damit niemand schnell klickt, um etwas zu bekommen. Jede Frage hat genau zwei Antworten, weil eine Mitte in der Klasse fast immer gewählt wird und wenig sagt.
+
+**Eine feste Liste von zehn Fragen, reihum.** Fragen zur Aufgabe merken sich deren Kennung, damit „zu schwer“ in die Aufgabenanalyse eingeht. Fragen, die nicht passen (Tipp nicht offen, Aufgabe ohne Bild), werden übersprungen. Eine im Dashboard bearbeitbare Fragenliste wurde verworfen: Für die Erprobung reicht die feste Liste, und neue Fragen kommen mit einer neuen Version.
+
+**Die Antworten liegen im Speicherstand des Schülers.** So braucht es keine zweite Datei, die mehrere Schüler gleichzeitig beschreiben müssten. Das Administrator-Dashboard liest sie mit den übrigen Speicherständen.
+
+**Die Aufgabenanalyse wird beim Öffnen berechnet und erst beim Export gespeichert.** Die Rohdaten liegen ohnehin in den Speicherständen; ein eigener Bericht auf dem Lehrerlaufwerk wäre eine zweite Stelle, die veralten kann. Auffällig ist eine Aufgabe ab drei Bearbeitungen, wenn ihr Median der Dauer mindestens doppelt so hoch und 20 Sekunden höher ist als bei den übrigen Aufgaben desselben Lernziels und Niveaus, wenn sie 35 Prozentpunkte seltener gelöst wird als diese (oder höchstens 40 % gelöst sind), wenn sie oft abgebrochen wird oder im Feedback mehrheitlich „zu schwer“ heißt. Anders als bei den Auffälligen Aufgaben (ADR 0025) lassen sich eine einzelne Klasse, auch eine Testklasse, und ein einzelner Tag wählen, denn es geht um eine Teststunde und nicht um das ganze Schuljahr.
+
+**Der Export ist eine Markdown-Datei ohne Namen und Schülercodes.** Sie enthält Klasse, Zeitraum, Version, das Feedback je Frage, die auffälligen Aufgaben mit Text und Gründen und eine Tabelle aller bearbeiteten Aufgaben. Markdown, weil Claude es direkt lesen kann und Nils es ohne Programm ansehen kann.

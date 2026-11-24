@@ -126,7 +126,7 @@ export function klassendateiInhalt(klasse, k, stand) {
   const pins = Object.fromEntries(Object.entries(k.pins ?? {}).map(([code, p]) => [code, { salz: p.salz, wert: p.wert }]));
   return { klasse, stand, aktuellesKapitel: e.aktuellesKapitel, tore: e.tore, toreEinzeln: e.toreEinzeln ?? {}, codes: Object.keys(k.namen),
     zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, ehrentafel: e.ehrentafel !== false,
-    hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, muenzgaben: e.muenzgaben ?? {}, sperren: e.sperren, meilensteinFreigabe: e.meilensteinFreigabe ?? {}, expedition: e.expedition ?? null,
+    hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, muenzgaben: e.muenzgaben ?? {}, ...(e.feedback && { feedback: e.feedback }), sperren: e.sperren, meilensteinFreigabe: e.meilensteinFreigabe ?? {}, expedition: e.expedition ?? null,
     sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins };
 }
 

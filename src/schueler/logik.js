@@ -1298,11 +1298,55 @@ export function einstellungen(klassendatei, code, pool) {
     nachricht: k.nachrichten?.[code] ?? null,
     sonderauftrag: gueltigerAuftrag(k.sonderauftraege?.[code]), // ADR 0021
     muenzgaben: gueltigeMuenzgaben(k.muenzgaben?.[code]), // ADR 0027
+    feedback: gueltigesFeedback(k.feedback), // ADR 0042: null oder { alle }
     pin: k.pins?.[code] ?? null, // { salz, wert }: Prüfwert der PIN, nicht die PIN selbst
     meilensteinFreigabe: k.meilensteinFreigabe ?? {}, // ADR 0026: je Kapitel die freigegebenen Meilensteine; fehlt ein Kapitel, ist alles offen
     gesperrteMeilensteine: new Set(Object.entries(k.sperren ?? {}).filter(([, codes]) => codes.includes(code)).map(([meilenstein]) => meilenstein)),
     codeBekannt: k.codes ? k.codes.includes(code) : true,
   };
+}
+
+// ---------- Feedbackfragen (ADR 0042) ----------
+// In der Erprobung fragt das Schüler-Dashboard nach jeder n-ten Aufgabe eine kurze Frage mit zwei Antworten.
+// Der Administrator schaltet das je Klasse ein (anfangs aus) und wählt n. Die Antworten liegen im Speicherstand (stand.feedback).
+export const FEEDBACK_ABSTAENDE = [3, 5, 10, 20];
+export const FEEDBACK_STANDARD = 5;
+export const FEEDBACK_FRAGEN = [
+  { id: 'aussehen', text: 'Wie gefällt dir das Aussehen von Mathekingdom?', antworten: ['Gut', 'Nicht gut'] },
+  { id: 'schwer', text: 'War diese Aufgabe zu schwer?', antworten: ['Ja', 'Nein'], zurAufgabe: true },
+  { id: 'leicht', text: 'War diese Aufgabe zu leicht?', antworten: ['Ja', 'Nein'], zurAufgabe: true },
+  { id: 'text', text: 'Hast du den Aufgabentext verstanden?', antworten: ['Ja', 'Nein'], zurAufgabe: true },
+  { id: 'spass', text: 'Macht dir Mathekingdom gerade Spaß?', antworten: ['Ja', 'Nein'] },
+  { id: 'tipp', text: 'Hat dir der Tipp geholfen?', antworten: ['Ja', 'Nein'], zurAufgabe: true, nur: 'tipp' },
+  { id: 'karte', text: 'Findest du dich auf der Karte zurecht?', antworten: ['Ja', 'Nein'] },
+  { id: 'bild', text: 'Ist das Bild in der Aufgabe gut zu erkennen?', antworten: ['Ja', 'Nein'], zurAufgabe: true, nur: 'bild' },
+  { id: 'eingabe', text: 'Hat das Eingeben der Antwort gut geklappt?', antworten: ['Ja', 'Nein'], zurAufgabe: true },
+  { id: 'weiter', text: 'Möchtest du so weiterarbeiten?', antworten: ['Ja', 'Lieber etwas anderes'] },
+];
+export function gueltigesFeedback(f) {
+  if (!f || f.an !== true) return null;
+  return { alle: FEEDBACK_ABSTAENDE.includes(Number(f.alle)) ? Number(f.alle) : FEEDBACK_STANDARD };
+}
+// Nach jeder Aufgabe außer Rückblick und Einstiegscheck: einen weiter zählen. Nur wenn die Abfrage an ist.
+export function zaehleFuerFeedback(stand, feedback) {
+  if (!feedback) return;
+  stand.feedbackSeit = (stand.feedbackSeit ?? 0) + 1;
+}
+export const feedbackFaellig = (stand, feedback) => Boolean(feedback) && (stand.feedbackSeit ?? 0) >= feedback.alle;
+// Reihum die nächste passende Frage. kontext: { tipp: Tipp war offen, bild: Aufgabe hat ein Bild }.
+export function naechsteFeedbackFrage(stand, kontext = {}) {
+  const start = stand.feedbackNaechste ?? 0;
+  for (let i = 0; i < FEEDBACK_FRAGEN.length; i++) {
+    const nr = (start + i) % FEEDBACK_FRAGEN.length, f = FEEDBACK_FRAGEN[nr];
+    if (f.nur && !kontext[f.nur]) continue;
+    return { ...f, nr };
+  }
+  return null;
+}
+export function trageFeedbackEin(stand, frage, antwort, aufgabeId, jetzt) {
+  (stand.feedback ??= []).push({ t: jetzt, frage: frage.id, antwort: Number(antwort) === 1 ? 1 : 0, ...(frage.zurAufgabe && aufgabeId && { aufgabe: aufgabeId }) });
+  stand.feedbackSeit = 0;
+  stand.feedbackNaechste = (frage.nr + 1) % FEEDBACK_FRAGEN.length;
 }
 
 // ---------- Lernen sichtbar machen (ADR 0017) ----------
