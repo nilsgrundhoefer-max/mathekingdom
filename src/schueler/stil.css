@@ -717,8 +717,10 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .brucheingabe > input { align-self: center; }
 /* Klasse 6 (ADR 0037): Lücke im Zähler oder im Nenner. Der Bruch ist gestapelt, das Feld steht an seinem Platz. */
 #mathekingdom .luecken .lueckenbruch { font-size: 1em; line-height: 1.2; margin: 6px .25em; }
-#mathekingdom .luecken .lueckenbruch .bz { border-bottom: 3px solid var(--tinte); padding: 0 4px 5px; }
-#mathekingdom .luecken .lueckenbruch .bn { padding: 5px 4px 0; }
+/* Zähler und Nenner sind gleich hoch, damit der Bruchstrich immer auf der Höhe des Gleichheitszeichens liegt. */
+#mathekingdom .luecken .lueckenbruch .bz, #mathekingdom .luecken .lueckenbruch .bn { display: flex; justify-content: center; box-sizing: border-box; min-height: 2.5em; }
+#mathekingdom .luecken .lueckenbruch .bz { align-items: flex-end; border-bottom: 3px solid var(--tinte); padding: 0 4px 5px; }
+#mathekingdom .luecken .lueckenbruch .bn { align-items: flex-start; padding: 5px 4px 0; }
 #mathekingdom .luecken .lueckenbruch .zahlfeld input { width: 4.4ch; margin: 0; text-align: center; padding: 5px 2px; }
 #mathekingdom .luecken .gemischt:has(.lueckenbruch) { white-space: nowrap; }
 /* Bruchbilder und Teile färben */

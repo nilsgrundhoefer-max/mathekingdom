@@ -867,8 +867,10 @@ function zeigeAufgabe(aufgabe, extra = {}) {
 function aufgabenAnsicht() {
   const a = z.ansicht, auf = a.aufgabe;
   const kapitelId = L.kapitelVon(auf.lernziel);
-  const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
-  const meilenstein = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
+  // Klasse 6 (ADR 0037): Eine Brückenaufgabe aus der Vorstufe hat keinen Meilenstein in dieser Klasse.
+  // Sie gehört dann zum Meilenstein des Lernziels, von dem die Brücke ausgeht (Wortspeicher, Merkzettel, Rückweg).
+  const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel) ?? z.index.lernziel.get(auf.lernziel);
+  const meilenstein = meilensteinVon(auf);
   const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
   // Eine F-Aufgabe beim Üben am Meilenstein gehört zur Grundlagen-Schleife, außer das Ziel des Kindes ist F (ADR 0015).
   const grundlage = !a.rueckblick && !a.bruecke && !a.sonderauftrag && !a.einstieg && !a.seitenblick && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
@@ -1420,7 +1422,7 @@ function heftcheckAnsicht() {
 }
 
 const kartenVon = (auf) => L.KARTEN.filter((feld) => auf.hilfen[feld]);
-const meilensteinVon = (auf) => z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.some((l) => l.id === auf.lernziel));
+const meilensteinVon = (auf) => z.index.meilensteinVon.get(auf.lernziel) ?? z.index.meilensteinVon.get(z.stand.brueckeAktiv?.fuer ?? z.ansicht?.bruecke?.fuer ?? z.ansicht?.ergebnis?.bruecke?.fuer) ?? z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.merkzettel) ?? z.pool.kapitel[0].unterkapitel[0];
 // Hilfekärtchen liegen in der Aufgabenkarte unter dem Eingabefeld, dort wo gerechnet wird (ADR 0016).
 // Je Niveaustufe gibt es unterschiedlich viele Kärtchen: F und G drei, M zwei, E eines.
 function kaertchen(a) {

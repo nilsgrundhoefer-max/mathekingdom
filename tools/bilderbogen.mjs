@@ -7,7 +7,7 @@ import { createRequire } from 'node:module';
 
 const [anfang = '5.1.', ausgabe = 'build/bilderbogen.pdf', einzeln] = process.argv.slice(2);
 const wurzel = new URL('../', import.meta.url);
-const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-5.json', wurzel), 'utf8'));
+const pool = JSON.parse(readFileSync(new URL(`aufgabenpool/klasse-${parseInt(anfang, 10)}.json`, wurzel), 'utf8'));
 const aufgaben = pool.aufgaben.filter((a) => a.id.startsWith(anfang));
 const lernziele = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.text]));
 

@@ -256,6 +256,10 @@ _Avoid_: Vorwissen (für die Verknüpfung)
 Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard auf M und E vorschlägt, wenn ein Lernziel wackelig wird. Auf G greift stattdessen die Grundlagen-Schleife. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
 _Avoid_: Förderaufgabe, Rückweg
 
+**Vorstufe**:
+Die Lernziele und Aufgaben einer früheren Klassenstufe, auf die ein Lernziel der eigenen Klassenstufe als Voraussetzung zeigt. Ein Schüler begegnet ihnen nur in einer Brücke, nie als eigenem Stoff auf der Karte.
+_Avoid_: Wiederholungskapitel, Klasse-5-Teil
+
 **Sonderauftrag**:
 Drei bis fünf Aufgaben zu einem Lernziel, die die Lehrkraft einem einzelnen Schüler im Schülerprofil schickt, auf einer Niveaustufe, die sie frei wählt (F bis E). Er kommt als versiegelter Brief des Königs, nie mitten in einer Aufgabe, und bleibt sichtbar, bis er erledigt ist oder die Lehrkraft ihn zurückzieht; höchstens einer ist offen. Freiwillig, ohne Ablaufdatum. Seine Aufgaben zählen wie sonst für Lernziel und Wegstück; sind alle bearbeitet, gibt es eine Belohnung in Münzen dazu, egal wie viele richtig sind. Wie hoch sie ist, stellt die Lehrkraft für ihre Klasse ein (50, 100, 250, 500 oder 1000, Standard 100); der Brief nennt den Betrag, der beim Abschicken galt. Danach geht es zurück an die Stelle, an der der Schüler war. Mitschüler erfahren nichts davon.
 _Avoid_: Bonusquest, Quest, Förderbrief, Bonuspunkte

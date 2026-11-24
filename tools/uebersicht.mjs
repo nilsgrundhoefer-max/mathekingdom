@@ -1,11 +1,12 @@
 // Schreibt eine lesbare Übersicht aller Aufgaben zur Durchsicht durch die Lehrkraft.
-// Aufruf: node tools/uebersicht.mjs
+// Aufruf: node tools/uebersicht.mjs [Klassenstufe, z. B. 6]
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { zustand } from '../src/gemeinsam/kontrolle.js';
 import { schreibe } from '../src/schueler/groessen.js';
 
-const pool = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json', import.meta.url), 'utf8'));
+const stufe = parseInt(process.argv[2] ?? '5', 10);
+const pool = JSON.parse(readFileSync(new URL(`../aufgabenpool/klasse-${stufe}.json`, import.meta.url), 'utf8'));
 // Kontrollliste (0.37): ✔ vor jeder Aufgabe, die der Administrator im Aufgabentester kontrolliert hat und die sich seitdem nicht geändert hat.
 let kontrolliert = {};
 try { kontrolliert = JSON.parse(readFileSync(new URL('../aufgabenpool/kontrolliert.json', import.meta.url), 'utf8')).aufgaben ?? {}; } catch { /* noch keine */ }
@@ -95,7 +96,7 @@ const loesung = (a) => {
     return `_(Zahlenstrahl ${st.von} bis ${st.bis}, Teilstriche alle ${st.schritt}${st.spruenge ? `, Sprung ${st.spruenge.map((x) => `von ${x.von}: ${x.text}`).join('; ')}` : ''}; ${a.eingabe === 'markieren' ? 'antippen' : 'Zahl eintragen'})_ Lösung: ${zahl(a)}`;
   }
   // Kapitel 9 (ADR 0036): Brucheingabe und „Teile färben“.
-  if (a.format === 'bruch') return `_(Brucheingabe${a.gemischt ? ' mit Feld für die Ganzen' : ''}; ${a.genau ? 'nur genau dieser Bruch ist richtig' : 'jeder gleichwertige Bruch ist richtig'})_ Lösung: ${zahl(a)}`;
+  if (a.format === 'bruch') return `_(Brucheingabe${a.gemischt ? ' mit Feld für die Ganzen' : ''}; ${a.genau ? 'nur genau dieser Bruch ist richtig' : a.gekuerzt ? 'nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“' : a.form === 'gemischt' ? 'nur als gemischte Zahl richtig, sonst Hinweis „fast richtig“' : 'jeder gleichwertige Bruch ist richtig'})_ Lösung: ${zahl(a)}`;
   if (a.format === 'faerben') return `_(Teile färben: ${figurText(a.faerben, true)}; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **${a.loesung} Teile gefärbt**.${fehler(a.typischeFehler)}`;
   if (a.format === 'diagramm') return `\n  _(Säulendiagramm „${a.diagramm.titel}“: ${a.diagramm.saeulen.map((x) => `${x.name} ${x.wert}`).join(', ')}; Werte ${a.diagramm.werteZeigen ? 'stehen an den Säulen' : 'müssen abgelesen werden'})_\n${a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n')}`;
   if (a.format === 'tabelle') {
@@ -131,10 +132,11 @@ const loesung = (a) => {
   return a.teile.map((t, i) => (t.optionen ? `  - ${'abcdef'[i]}) ${flach(t.text)}${t.mehrfach ? ' _(mehrere antippen)_' : ''} ${t.optionen.map((o) => `${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join(' · ')}` : `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`)).join('\n');
 };
 
-const alleLernziele = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.text]));
+// Voraussetzungen können in der Vorstufe liegen (Klasse 6 baut auf Klasse 5, ADR 0037).
+const alleLernziele = new Map([...(pool.vorstufe?.lernziele ?? []), ...pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele)].map((l) => [l.id, l.text]));
 // Prozessbezogene Kompetenz (ADR 0017): Haupt, in Klammern die Nebenkompetenz.
 const kompetenzText = (a) => `${pool.kompetenzen[a.kompetenz[0]]}${a.kompetenz[1] ? ` (+ ${pool.kompetenzen[a.kompetenz[1]]})` : ''}`;
-let md = `# Aufgaben Klasse 5: Übersicht zur Durchsicht\n\nAutomatisch erzeugt aus \`aufgabenpool/klasse-5.json\` (${pool.aufgaben.length} Aufgaben). Nicht von Hand bearbeiten.\n\nBei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.\n\n✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (${anzahlKontrolliert} von ${pool.aufgaben.length}).\n`;
+let md = `# Aufgaben Klasse ${stufe}: Übersicht zur Durchsicht\n\nAutomatisch erzeugt aus \`aufgabenpool/klasse-${stufe}.json\` (${pool.aufgaben.length} Aufgaben). Nicht von Hand bearbeiten.\n\nBei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.\n\n✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (${anzahlKontrolliert} von ${pool.aufgaben.length}).\n`;
 for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.lernziele) {
   const eigene = pool.aufgaben.filter((a) => a.lernziel === l.id);
   if (!eigene.length) continue;
@@ -160,5 +162,6 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
   if (pool.aufgaben.some((a) => a.lernziel === l.id)) continue;
   md += `- ${l.id} ${l.text} Baut auf: ${l.voraussetzungen?.length ? l.voraussetzungen.map((v) => `${v} (${alleLernziele.get(v)})`).join(', ') : 'nur Grundschulstoff'}\n`;
 }
-writeFileSync(new URL('../docs/aufgaben-klasse-5-pilot.md', import.meta.url), md);
-console.log('Übersicht geschrieben.');
+const ziel = stufe === 5 ? 'aufgaben-klasse-5-pilot.md' : `aufgaben-klasse-${stufe}.md`;
+writeFileSync(new URL(`../docs/${ziel}`, import.meta.url), md);
+console.log(`Übersicht geschrieben: docs/${ziel}`);

@@ -16,7 +16,7 @@ import { createRequire } from 'node:module';
 
 const [anfang = '5.7.'] = process.argv.slice(2);
 const wurzel = new URL('../', import.meta.url);
-const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-5.json', wurzel), 'utf8'));
+const pool = JSON.parse(readFileSync(new URL(`aufgabenpool/klasse-${parseInt(anfang, 10)}.json`, wurzel), 'utf8'));
 const aufgaben = pool.aufgaben.filter((a) => a.id.startsWith(anfang));
 
 const eingang = `
@@ -28,16 +28,16 @@ window.zeichne = (aufgaben) => {
   document.head.append(h('style', {}, stil));
   const halter = document.getElementById('mathekingdom');
   halter.replaceChildren(...aufgaben.map((auf) => h('section', { class: 'karte', 'data-aufgabe': auf.id },
-    auf.lernziel.startsWith('5.9') && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
+    /^(5\\.9|6\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
     auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
-    (['winkel', 'gitter'].includes(auf.format) || auf.lernziel.startsWith('5.9')) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
+    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
 };
 // Prüft alle Bilder einer Aufgabe und liefert Mängel als Text.
 window.pruefe = (soll) => {
   const maengel = [];
   for (const sec of document.querySelectorAll('section[data-aufgabe]')) {
     const id = sec.dataset.aufgabe, auf = soll[id];
-    if (auf?.lernziel.startsWith('5.9')) {
+    if (/^(5\\.9|6\\.1)\\./.test(auf?.lernziel ?? '')) {
       const karte = sec.getBoundingClientRect();
       // Bruchbilder nachzählen.
       const zaehle = (svg, figuren, was) => {

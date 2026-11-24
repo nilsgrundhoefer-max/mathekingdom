@@ -25,3 +25,19 @@ Nils bat am 24.11.2026 darum, mit den Kapiteln in Klasse 6 weiterzumachen. Drei 
 **Heftaufgaben.** Nur im Lernziel „Brüche eintragen“ (1.6): auf M und E je zwei von sechs, der Zahlenstrahl wird im Heft selbst eingeteilt.
 
 **Lieferung.** Kapitel 1 kommt mit dem Unterbau für die zweite Klassenstufe als Version 0.43. Der Wappenbereich Klasse 6 (Schildteilung) ist ein eigener, späterer Auftrag.
+
+## Nachtrag zum Bau von Version 0.43 (24.11.2026)
+
+Entscheidungen, die beim Bauen fielen und nicht in den Fragerunden standen:
+
+**Vorstufe im Pool.** `klasse-6.json` trägt unter `vorstufe` Kopien der Aufgaben aus Klasse 5 (Niveaus F, G und M) zu genau den Lernzielen, auf die eine Voraussetzung aus Klasse 6 zeigt. So braucht das Schüler-Dashboard für eine Brücke keine zweite Datei, auch nicht im Schulnetz und ohne Netz. Die Alternative, beide Pools zu laden, hätte jeden Sechstklässler den ganzen Pool der Klasse 5 laden lassen und die Abhängigkeit unsichtbar gemacht. Die Prüfung stellt sicher, dass jede Kopie der Aufgabe im Pool der Klasse 5 gleicht. Lernziele der Vorstufe sind kein eigener Stoff der Klasse: Sie erscheinen auf keiner Karte und in keinem Lernstand.
+
+**Fast richtig ist begrenzt.** Der Hinweis „Fast richtig“ kostet keinen Versuch, aber höchstens zweimal je Aufgabe. Danach zählt die Eingabe als Fehlversuch mit der Fehlvorstellung „nicht vollständig gekürzt“ oder „gemischte Zahl nicht umgewandelt“. Ohne Grenze ließe sich eine Aufgabe beliebig oft ohne Folgen abschicken.
+
+**Größere Nenner beim Erweitern und Kürzen.** Die Staffel der Nenner gilt für die Brüche, mit denen eine Aufgabe beginnt. Der erweiterte oder ungekürzte Bruch darf größer sein: F bis 100, G bis 200, M bis 600, E bis 1000. Sonst ließe sich auf F nicht einmal 3/4 mit 5 erweitern.
+
+**Brüche über 1 auf F** gibt es nur im Lernziel „gemischte Zahl und unechter Bruch“, weil es ohne sie leer wäre.
+
+**Niveau-Meilensteine** sind in Kapitel 1 nicht nötig (keine Lerneinheit mit M oder E). Ihre Logik wird mit Kapitel 2 gebaut.
+
+**Kennungen der Lernziele:** B1, B2 (Brüche), W1, W2 (Erweitern), K1, K2 (Kürzen), V1, V2 (Vergleichen), T1, T2 (Brüche und Größen), Z1, Z2 (Zahlenstrahl).
