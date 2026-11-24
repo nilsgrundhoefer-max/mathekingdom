@@ -797,6 +797,51 @@
    "beschreibung": "Zählt am Zahlenstrahl die Teilstriche statt der Abstände und nennt deshalb einen falschen Nenner.",
    "hinweis": "Zähle die Abstände von 0 bis 1, nicht die Striche. So viele Teile hat das Ganze.",
    "kind": "Du zählst am Zahlenstrahl jetzt die Abstände bis zur 1."
+  },
+  "bruch-add-zaehler-nenner": {
+   "beschreibung": "Addiert oder subtrahiert Zähler und Nenner getrennt (ein Halbes plus ein Drittel als zwei Fünftel).",
+   "hinweis": "Der Nenner sagt nur, wie groß die Teile sind. Er wird nicht mitgerechnet. Sind die Brüche gleichnamig?",
+   "kind": "Du lässt beim Addieren jetzt den Nenner stehen und rechnest nur mit den Zählern."
+  },
+  "bruch-add-ungleichnamig": {
+   "beschreibung": "Addiert oder subtrahiert die Zähler, ohne die Brüche vorher gleichnamig zu machen, oder erweitert dabei nur den Nenner.",
+   "hinweis": "Die Teile sind verschieden groß. Erweitere zuerst so, dass beide Brüche denselben Nenner haben.",
+   "kind": "Du machst Brüche jetzt erst gleichnamig und addierst dann."
+  },
+  "bruch-mal-nenner-mit": {
+   "beschreibung": "Nimmt beim Vervielfachen auch den Nenner mit der Zahl mal (dreimal zwei Fünftel als sechs Fünfzehntel).",
+   "hinweis": "Die Teile bleiben gleich groß, es werden nur mehr. Nimm nur den Zähler mal.",
+   "kind": "Du nimmst beim Vervielfachen jetzt nur den Zähler mal."
+  },
+  "bruch-mal-wie-plus": {
+   "beschreibung": "Überträgt die Regel vom Addieren auf das Multiplizieren: macht gleichnamig und multipliziert nur die Zähler, oder addiert statt zu multiplizieren.",
+   "hinweis": "Beim Malnehmen brauchst du keinen gemeinsamen Nenner: Zähler mal Zähler und Nenner mal Nenner.",
+   "kind": "Du rechnest beim Malnehmen jetzt Zähler mal Zähler und Nenner mal Nenner."
+  },
+  "bruch-teilen-nenner-geteilt": {
+   "beschreibung": "Teilt beim Dividieren durch eine Zahl den Nenner oder nimmt den Zähler mal, statt den Zähler zu teilen oder den Nenner malzunehmen.",
+   "hinweis": "Beim Teilen wird jeder Anteil kleiner. Teile den Zähler, oder nimm den Nenner mal.",
+   "kind": "Du weißt jetzt: Beim Teilen wird der Nenner größer oder der Zähler kleiner."
+  },
+  "bruch-kehrwert": {
+   "beschreibung": "Bildet beim Dividieren keinen Kehrwert, den Kehrwert vom falschen Bruch oder von beiden Brüchen.",
+   "hinweis": "Nur der Bruch hinter dem Geteiltzeichen wird umgedreht. Dann wird malgenommen.",
+   "kind": "Du drehst beim Teilen jetzt den zweiten Bruch um."
+  },
+  "gemischt-getrennt-mal": {
+   "beschreibung": "Multipliziert oder dividiert bei gemischten Zahlen die Ganzen und die Bruchteile getrennt.",
+   "hinweis": "Wandle die gemischte Zahl zuerst in einen Bruch um. Rechne erst dann.",
+   "kind": "Du wandelst gemischte Zahlen vor dem Malnehmen jetzt in Brüche um."
+  },
+  "gemischt-kleiner-von-groesser": {
+   "beschreibung": "Zieht bei gemischten Zahlen den kleineren Bruchteil vom größeren ab, statt ein Ganzes umzuwandeln.",
+   "hinweis": "Der Bruch reicht nicht zum Abziehen. Wandle ein Ganzes in Bruchteile um.",
+   "kind": "Du wandelst beim Abziehen jetzt ein Ganzes um."
+  },
+  "mal-macht-groesser": {
+   "beschreibung": "Meint, Multiplizieren vergrößert immer und Dividieren verkleinert immer.",
+   "hinweis": "Die Hälfte von etwas ist weniger. Malnehmen mit einem Bruch unter 1 macht kleiner, Teilen durch ihn macht größer.",
+   "kind": "Du weißt jetzt: Malnehmen mit einem Bruch unter 1 macht kleiner."
   }
  },
  "kompetenzen": {

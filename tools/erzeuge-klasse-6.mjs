@@ -11,6 +11,13 @@ import { kuerzen } from './aufgaben/6-1-3-kuerzen.mjs';
 import { vergleichen } from './aufgaben/6-1-4-vergleichen.mjs';
 import { bruecheUndGroessen } from './aufgaben/6-1-5-groessen.mjs';
 import { bruecheAmZahlenstrahl } from './aufgaben/6-1-6-zahlenstrahl.mjs';
+import { gleichnamig } from './aufgaben/6-2-1-gleichnamig.mjs';
+import { ungleichnamig } from './aufgaben/6-2-2-ungleichnamig.mjs';
+import { vervielfachen } from './aufgaben/6-2-3-vervielfachen.mjs';
+import { teilen } from './aufgaben/6-2-4-teilen.mjs';
+import { multiplizieren } from './aufgaben/6-2-5-multiplizieren.mjs';
+import { dividieren } from './aufgaben/6-2-6-dividieren.mjs';
+import { ausdruecke } from './aufgaben/6-2-7-ausdruecke.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -20,6 +27,14 @@ const ERZEUGER = [
   [61461461, vergleichen],
   [61561561, bruecheUndGroessen],
   [61661661, bruecheAmZahlenstrahl],
+  // Kapitel 2 (ADR 0038)
+  [62162162, gleichnamig],
+  [62262262, ungleichnamig],
+  [62362362, vervielfachen],
+  [62462462, teilen],
+  [62562562, multiplizieren],
+  [62662662, dividieren],
+  [62762762, ausdruecke],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

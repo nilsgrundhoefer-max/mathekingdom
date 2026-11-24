@@ -11,6 +11,7 @@ const EINHEIT = {
   mm: ['laenge', 1, 1], cm: ['laenge', 10, 1], dm: ['laenge', 100, 1], m: ['laenge', 1000, 1], km: ['laenge', 1000000, 1],
   mg: ['gewicht', 1, 1], g: ['gewicht', 1000, 1], kg: ['gewicht', 1000000, 1], t: ['gewicht', 1000000000, 1],
   s: ['zeit', 1, 1], min: ['zeit', 60, 1], h: ['zeit', 3600, 1],
+  ml: ['volumen', 1, 1], l: ['volumen', 1000, 1],
   // Stellenwerte als Wörter: „7 Zehntel“ ist 7⁄10.
   Zehntel: ['zahl', 1, 10], Hundertstel: ['zahl', 1, 100], Tausendstel: ['zahl', 1, 1000], Einer: ['zahl', 1, 1], Zehner: ['zahl', 10, 1], Hunderter: ['zahl', 100, 1],
   // Bruchwörter: „3 Viertel“ ist 3⁄4.
@@ -129,7 +130,8 @@ export function bGleichungen(text) {
 // ---------- Bilder ----------
 const ganz = (x, von, bis) => Number.isInteger(x) && x >= von && x <= bis;
 const jeGanzes = (f) => (f.form === 'rechteck' ? f.reihen * f.spalten : f.form === 'hundert' ? 100 : f.teile);
-const HOECHSTENS = { kreis: 12, rechteck: 20, streifen: 20, menge: 20, hundert: 100 };
+// Der Akku (Klasse 6, Kapitel 2, ADR 0038) ist ein Ladebalken aus höchstens zehn Feldern.
+const HOECHSTENS = { kreis: 12, rechteck: 20, streifen: 20, menge: 20, hundert: 100, akku: 10 };
 function figurMaengel(f, zumFaerben = false) {
   const m = [];
   if (!(f.form in HOECHSTENS)) return [`unbekannte Form ${f.form}`];
@@ -142,6 +144,8 @@ function figurMaengel(f, zumFaerben = false) {
   if (zumFaerben) { if (f.gefaerbt || f.ungleich || f.n || f.form === 'hundert') m.push('zum Färben: ohne Vorgabe, ohne Namen, mit gleich großen Teilen'); return m; }
   const alle = n * (f.ganze ?? 1);
   if (!Array.isArray(f.gefaerbt) || f.gefaerbt.some((i) => !ganz(i, 0, alle - 1)) || new Set(f.gefaerbt).size !== f.gefaerbt.length) m.push('gefärbte Teile passen nicht zur Figur');
+  // Rechteckbild (ADR 0038): hell gefärbte Felder zeigen den ersten Bruchteil, die kräftig gefärbten den Bruchteil davon.
+  if (f.hell != null && (f.form !== 'rechteck' || f.ganze || !Array.isArray(f.hell) || f.hell.some((i) => !ganz(i, 0, alle - 1) || (f.gefaerbt ?? []).includes(i)) || new Set(f.hell).size !== f.hell.length)) m.push('hell gefärbte Felder gibt es nur im Rechteck, neben den kräftig gefärbten');
   return m;
 }
 // Der Bruchteil, den eine Figur zeigt. null bei ungleich großen Teilen: Die zeigen keinen Bruchteil.
@@ -192,14 +196,18 @@ export function bruchSprachMaengel(a, texte) {
   const m = [], stufe = ['F', 'G', 'M', 'E'].indexOf(a.niveau), dezimal = a.lernziel.startsWith('5.9.3');
   // Klasse 6, Kapitel 1 (ADR 0037): Nenner F bis 10, G bis 20, M bis 50 und 100, E bis 200. Beim Erweitern und Kürzen (6.1.2, 6.1.3)
   // darf der erweiterte Bruch darüber liegen. Brüche über 1 gibt es ab G, auf F nur beim Umwandeln (6.1.1-B2).
-  const k6 = a.lernziel.startsWith('6.1.'), umformen = /^6\.1\.[23]-/.test(a.lernziel);
+  // Klasse 6, Kapitel 2 (ADR 0038): Gerechnet wird mit Nennern bis 12 (F), 20 (G), 30 (M) und 60 (E). Hauptnenner und Produkte
+  // dürfen größer sein, deshalb gilt für alles, was dasteht: F bis 24, G bis 60, M bis 150, E bis 400. Brüche über 1 gibt es überall.
+  const k62 = a.lernziel.startsWith('6.2.');
+  const k6 = a.lernziel.startsWith('6.1.') || k62, umformen = /^6\.1\.[23]-/.test(a.lernziel);
   const alle = texte.join(' \n ');
   if (/(?<![\d⁄])\d+\/\d+/.test(alle)) m.push('ein Bruch steht mit Schrägstrich statt mit Bruchstrich');
   if (/[½¼¾]/.test(alle)) m.push('Brüche stehen als Zähler und Nenner, nicht als einzelnes Zeichen');
   const erlaubt = dezimal ? [(n) => n === 10, (n) => [2, 10, 100].includes(n), (n) => [2, 4, 5, 10, 100, 1000].includes(n), (n) => n <= 1000][stufe]
+    : k62 ? [(n) => n <= 24, (n) => n <= 60, (n) => n <= 150, (n) => n <= 400][stufe]
     : k6 ? (umformen ? [(n) => n <= 100, (n) => n <= 200, (n) => n <= 600, (n) => n <= 1000] : [(n) => n <= 10, (n) => n <= 20, (n) => n <= 50 || n === 100, (n) => n <= 200])[stufe]
     : [(n) => n <= 4, (n) => n <= 8 || n === 10, (n) => n <= 12 || n === 100, (n) => n <= 20 || n === 100][stufe];
-  const ueber1Ab = k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
+  const ueber1Ab = k62 ? 0 : k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
   for (const x of alle.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) {
     const [g, z, n] = [Number(x[1] ?? 0), Number(x[2]), Number(x[3])];
     if (n < 2) m.push(`Bruch mit Nenner ${n}`);
@@ -241,7 +249,7 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       for (const f of a.bild.figuren) for (const x of figurMaengel(f)) M(`Bruchbild: ${x}`);
       const namen = a.bild.figuren.map((f) => f.n ?? '');
       if (a.bild.figuren.length > 1 && (namen.some((n) => !/^[A-D]$/.test(n)) || new Set(namen).size !== namen.length)) M('Bruchbild: Mehrere Figuren brauchen die Namen A, B, C');
-      if (stufe === 0 && a.lernziel !== '6.1.1-B2' && a.bild.figuren.some((f) => f.ganze)) M('Bruchbild: mehrere Ganze erst ab M');
+      if (stufe === 0 && a.lernziel !== '6.1.1-B2' && !a.lernziel.startsWith('6.2.') && a.bild.figuren.some((f) => f.ganze)) M('Bruchbild: mehrere Ganze erst ab M');
       // Jede Figur muss zur Aufgabe passen: Ihr gefärbter Bruchteil steht im Aufgabentext (ohne Bruch im Text: in den Antworten oder der Lösung).
       // Liest der Nachweis das Bild selbst ab oder wählt das Kind unter den Figuren, ist das Bild die Angabe und wird dort geprüft.
       const amBild = nachweis.some((n) => ['bild', 'figurwahl', 'figurextrem'].includes(n?.art));
@@ -556,7 +564,7 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       if (a.gekuerzt != null && a.gekuerzt !== true) M('Brucheingabe: gekuerzt ist true oder fehlt');
       if (a.gekuerzt && a.genau) M('Brucheingabe: genau und gekuerzt schließen sich aus');
       if (a.gekuerzt && ggt(teileL[1], teileL[2]) !== 1) M(`Brucheingabe: Die Lösung ${a.loesung} ist nicht vollständig gekürzt`);
-      const abKuerzen = /^6\.1\.(3-K2|[456]-)/.test(a.lernziel);
+      const abKuerzen = /^6\.1\.(3-K2|[456]-)|^6\.[2-9]\./.test(a.lernziel);
       if (abKuerzen && !a.gekuerzt && !a.genau) M('Brucheingabe: Ab „Brüche kürzen“ muss das Ergebnis vollständig gekürzt sein (gekuerzt: true)');
       if (!abKuerzen && a.gekuerzt) M('Brucheingabe: Vor „Brüche kürzen“ zählt jeder gleichwertige Bruch');
       if (a.form != null && (a.form !== 'gemischt' || !teileL[0] || teileL[1] >= teileL[2])) M('Brucheingabe: form „gemischt“ braucht eine gemischte Zahl mit echtem Bruch als Lösung');

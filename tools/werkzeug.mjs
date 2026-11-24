@@ -307,6 +307,16 @@ const KIND = {
   'bruch-nur-zaehler-verglichen': 'Du schaust beim Vergleichen jetzt auf Zähler und Nenner.',
   'gemischt-umwandeln': 'Du rechnest die Ganzen jetzt erst in Bruchteile um.',
   'bruchstrahl-striche': 'Du zählst am Zahlenstrahl jetzt die Abstände bis zur 1.',
+  // Klasse 6, Kapitel 2 (ADR 0038)
+  'bruch-add-zaehler-nenner': 'Du lässt beim Addieren jetzt den Nenner stehen und rechnest nur mit den Zählern.',
+  'bruch-add-ungleichnamig': 'Du machst Brüche jetzt erst gleichnamig und addierst dann.',
+  'bruch-mal-nenner-mit': 'Du nimmst beim Vervielfachen jetzt nur den Zähler mal.',
+  'bruch-mal-wie-plus': 'Du rechnest beim Malnehmen jetzt Zähler mal Zähler und Nenner mal Nenner.',
+  'bruch-teilen-nenner-geteilt': 'Du weißt jetzt: Beim Teilen wird der Nenner größer oder der Zähler kleiner.',
+  'bruch-kehrwert': 'Du drehst beim Teilen jetzt den zweiten Bruch um.',
+  'gemischt-getrennt-mal': 'Du wandelst gemischte Zahlen vor dem Malnehmen jetzt in Brüche um.',
+  'gemischt-kleiner-von-groesser': 'Du wandelst beim Abziehen jetzt ein Ganzes um.',
+  'mal-macht-groesser': 'Du weißt jetzt: Malnehmen mit einem Bruch unter 1 macht kleiner.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -476,6 +486,16 @@ export const fehlvorstellungen = {
   'bruch-nur-zaehler-verglichen': fv('Vergleicht Brüche nur über die Zähler oder die Zahlen einzeln, ohne auf die Größe der Teile zu achten.', 'Schau auf beide Zahlen: Der Nenner sagt, wie groß die Teile sind. Der Zähler sagt, wie viele es sind.'),
   'gemischt-umwandeln': fv('Wandelt gemischte Zahl und Bruch falsch um: schreibt die Ziffern nebeneinander oder zählt die Ganzen nur zum Zähler dazu.', 'Ein Ganzes hat so viele Teile, wie der Nenner sagt. Rechne die Ganzen zuerst in solche Teile um.'),
   'bruchstrahl-striche': fv('Zählt am Zahlenstrahl die Teilstriche statt der Abstände und nennt deshalb einen falschen Nenner.', 'Zähle die Abstände von 0 bis 1, nicht die Striche. So viele Teile hat das Ganze.'),
+  // Klasse 6, Kapitel 2 (ADR 0038)
+  'bruch-add-zaehler-nenner': fv('Addiert oder subtrahiert Zähler und Nenner getrennt (ein Halbes plus ein Drittel als zwei Fünftel).', 'Der Nenner sagt nur, wie groß die Teile sind. Er wird nicht mitgerechnet. Sind die Brüche gleichnamig?'),
+  'bruch-add-ungleichnamig': fv('Addiert oder subtrahiert die Zähler, ohne die Brüche vorher gleichnamig zu machen, oder erweitert dabei nur den Nenner.', 'Die Teile sind verschieden groß. Erweitere zuerst so, dass beide Brüche denselben Nenner haben.'),
+  'bruch-mal-nenner-mit': fv('Nimmt beim Vervielfachen auch den Nenner mit der Zahl mal (dreimal zwei Fünftel als sechs Fünfzehntel).', 'Die Teile bleiben gleich groß, es werden nur mehr. Nimm nur den Zähler mal.'),
+  'bruch-mal-wie-plus': fv('Überträgt die Regel vom Addieren auf das Multiplizieren: macht gleichnamig und multipliziert nur die Zähler, oder addiert statt zu multiplizieren.', 'Beim Malnehmen brauchst du keinen gemeinsamen Nenner: Zähler mal Zähler und Nenner mal Nenner.'),
+  'bruch-teilen-nenner-geteilt': fv('Teilt beim Dividieren durch eine Zahl den Nenner oder nimmt den Zähler mal, statt den Zähler zu teilen oder den Nenner malzunehmen.', 'Beim Teilen wird jeder Anteil kleiner. Teile den Zähler, oder nimm den Nenner mal.'),
+  'bruch-kehrwert': fv('Bildet beim Dividieren keinen Kehrwert, den Kehrwert vom falschen Bruch oder von beiden Brüchen.', 'Nur der Bruch hinter dem Geteiltzeichen wird umgedreht. Dann wird malgenommen.'),
+  'gemischt-getrennt-mal': fv('Multipliziert oder dividiert bei gemischten Zahlen die Ganzen und die Bruchteile getrennt.', 'Wandle die gemischte Zahl zuerst in einen Bruch um. Rechne erst dann.'),
+  'gemischt-kleiner-von-groesser': fv('Zieht bei gemischten Zahlen den kleineren Bruchteil vom größeren ab, statt ein Ganzes umzuwandeln.', 'Der Bruch reicht nicht zum Abziehen. Wandle ein Ganzes in Bruchteile um.'),
+  'mal-macht-groesser': fv('Meint, Multiplizieren vergrößert immer und Dividieren verkleinert immer.', 'Die Hälfte von etwas ist weniger. Malnehmen mit einem Bruch unter 1 macht kleiner, Teilen durch ihn macht größer.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -861,7 +881,7 @@ export const KOMPETENZEN = {
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
   kommunizieren: ['6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
-  modellieren: ['6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  modellieren: ['6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
   argumentieren: ['6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
@@ -902,8 +922,9 @@ function nachbearbeiten(a, niveau) {
   return a;
 }
 // Sechs Plätze je Lernziel und Niveaustufe. Jeder Platz ist ein Erzeuger; der Anforderungsbereich folgt aus dem Platz.
-export function sechs(lernziel, niveau, plaetze) {
-  if (plaetze.length !== PRO_GRUPPE) throw new Error(`${lernziel} ${niveau}: ${plaetze.length} statt ${PRO_GRUPPE} Plätze`);
+// Niveau-Meilensteine (ADR 0037, 0038) haben auf M und E zwölf oder auf E 24 Plätze: Die Folge der Anforderungsbereiche wiederholt sich.
+export function sechs(lernziel, niveau, plaetze, anzahl = PRO_GRUPPE) {
+  if (plaetze.length !== anzahl || anzahl % PRO_GRUPPE !== 0) throw new Error(`${lernziel} ${niveau}: ${plaetze.length} statt ${anzahl} Plätze`);
   const gesehen = new Set();
   plaetze.forEach((erzeuge, i) => {
     for (let versuch = 0; ; versuch++) {
@@ -915,12 +936,13 @@ export function sechs(lernziel, niveau, plaetze) {
       const k = schluessel(a);
       if (gesehen.has(k)) continue;
       gesehen.add(k);
-      aufgaben.push({ id: `${lernziel}-${niveau}-${String(i + 1).padStart(2, '0')}`, lernziel, niveau, afb: AFB_FOLGE[niveau][i], kompetenz: a.kompetenz ?? kompetenzVon(lernziel, a), ...a });
+      aufgaben.push({ id: `${lernziel}-${niveau}-${String(i + 1).padStart(2, '0')}`, lernziel, niveau, afb: AFB_FOLGE[niveau][i % PRO_GRUPPE], kompetenz: a.kompetenz ?? kompetenzVon(lernziel, a), ...a });
       break;
     }
   });
 }
 // Für Erzeuger, die je Anforderungsbereich Varianten liefern: je[afb](k), k zählt die Aufgaben desselben Bereichs.
+export const zwoelf = (lernziel, niveau, plaetze) => sechs(lernziel, niveau, plaetze, 2 * PRO_GRUPPE);
 export function stufen(lernziel, niveau, je) {
   const folge = AFB_FOLGE[niveau];
   sechs(lernziel, niveau, folge.map((afb, i) => () => je[afb](folge.slice(0, i).filter((x) => x === afb).length)));

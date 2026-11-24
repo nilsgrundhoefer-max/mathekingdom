@@ -3,6 +3,8 @@
 // Die Nummern der Unterkapitel stehen wie im Buch. Lerneinheiten mit der Marke MK (Medienkompetenz) fehlen, deshalb gibt es Lücken.
 // `ab`: Marke M oder E des Buchs (Niveau-Meilenstein, ADR 0037). Das Dashboard wertet sie aus, sobald es dazu Aufgaben gibt.
 
+import { merkzettel2, wortspeicher2, voraussetzungen2, grundlagen2 } from './jahresplan-6-2.mjs';
+
 const uk = (nr, titel, lernziele, ab = null) => ({ nr, titel, lernziele, ab });
 
 const roh = [
@@ -34,13 +36,35 @@ const roh = [
     }),
   ]],
   ['Rechnen mit Brüchen', [
-    uk(1, 'Gleichnamige Brüche addieren und subtrahieren', ['Ich kann gleichnamige Brüche addieren und subtrahieren.']),
-    uk(2, 'Ungleichnamige Brüche addieren und subtrahieren', ['Ich kann ungleichnamige Brüche gleichnamig machen und dann addieren und subtrahieren.']),
-    uk(3, 'Brüche vervielfachen', ['Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren.']),
-    uk(4, 'Brüche teilen', ['Ich kann einen Bruch durch eine natürliche Zahl dividieren.']),
-    uk(5, 'Brüche multiplizieren', ['Ich kann Brüche miteinander multiplizieren.']),
-    uk(6, 'Brüche dividieren', ['Ich kann durch einen Bruch dividieren.'], 'M'),
-    uk(7, 'Punkt vor Strich und Klammern', ['Ich kann beim Rechnen mit Brüchen die Regeln „Klammern zuerst“ und „Punkt vor Strich“ anwenden.']),
+    // Feinere Lernziele (Nils, 2026-11-24, ADR 0038). 2.6 trägt im Buch die Marke M: ein Niveau-Meilenstein mit Aufgaben nur auf M und E.
+    uk(1, 'Gleichnamige Brüche addieren und subtrahieren', {
+      A1: 'Ich kann gleichnamige Brüche addieren und subtrahieren.',
+      A2: 'Ich kann gemischte Zahlen mit gleichem Nenner addieren und subtrahieren und zum Ganzen ergänzen.',
+    }),
+    uk(2, 'Ungleichnamige Brüche addieren und subtrahieren', {
+      U1: 'Ich kann ungleichnamige Brüche addieren und subtrahieren, wenn ein Nenner ein Vielfaches des anderen ist.',
+      U2: 'Ich kann zu ungleichnamigen Brüchen einen gemeinsamen Nenner finden und sie dann addieren und subtrahieren.',
+    }),
+    uk(3, 'Brüche vervielfachen', {
+      V1: 'Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren.',
+      V2: 'Ich kann gemischte Zahlen vervielfachen und Sachaufgaben dazu lösen.',
+    }),
+    uk(4, 'Brüche teilen', {
+      T1: 'Ich kann einen Bruch durch eine natürliche Zahl dividieren.',
+      T2: 'Ich kann Sachaufgaben lösen, in denen ein Bruchteil gerecht verteilt wird.',
+    }),
+    uk(5, 'Brüche multiplizieren', {
+      P1: 'Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.',
+      P2: 'Ich kann den Bruchteil von einem Bruchteil bestimmen und Sachaufgaben dazu lösen.',
+    }),
+    uk(6, 'Brüche dividieren', {
+      D1: 'Ich kann durch einen Bruch dividieren.',
+      D2: 'Ich kann mit gemischten Zahlen dividieren und Sachaufgaben dazu lösen.',
+    }, 'M'),
+    uk(7, 'Punkt vor Strich und Klammern', {
+      R1: 'Ich kann beim Rechnen mit Brüchen die Regel „Punkt vor Strich“ anwenden.',
+      R2: 'Ich kann Rechenausdrücke mit Brüchen und Klammern berechnen und geschickt rechnen.',
+    }),
   ]],
   ['Körper', [
     uk(1, 'Quader und ihre Netze', ['Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen.']),
@@ -174,6 +198,7 @@ export const merkzettel = {
     beispiel: 'Von 0 bis 1 sind es 4 Abstände. Der dritte Strich nach der 0 ist 3⁄4. Zwei Striche hinter der 1 liegt 1 2⁄4 = 1 1⁄2.',
     heft: 'Wähle die Länge für ein Ganzes so, dass sie sich gut teilen lässt: für Viertel zum Beispiel 4 oder 8 Kästchen.',
   },
+  ...merkzettel2,
 };
 
 // Wortspeicher je Unterkapitel: Wort, Niveaustufe, ab der es gezeigt und benutzt wird, und Erklärung.
@@ -228,6 +253,7 @@ export const wortspeicher = {
     w('Einteilung', 'G', 'In wie viele Abstände ein Ganzes am Zahlenstrahl geteilt ist.'),
     w('verfeinern', 'M', 'Jeden Abstand noch einmal teilen. Aus Vierteln werden so Achtel.'),
   ],
+  ...wortspeicher2,
 };
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 liegen (ADR 0037).
@@ -244,6 +270,7 @@ const voraussetzungen = {
   '6.1.5-T2': ['6.1.5-T1', '5.9.2-T2'],
   '6.1.6-Z1': ['6.1.1-B2', '5.2.1-N1'],
   '6.1.6-Z2': ['6.1.6-Z1', '6.1.2-W2'],
+  ...voraussetzungen2,
 };
 
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F übt. Er steht im Hinweis für die Lehrkraft.
@@ -260,6 +287,7 @@ const grundlagen = {
   '6.1.5-T2': 'Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?',
   '6.1.6-Z1': 'Am Zahlenstrahl von 0 bis 1 die Abstände zählen und einen Bruch ablesen',
   '6.1.6-Z2': 'Am Zahlenstrahl von 0 bis 1 so viele Abstände gehen, wie der Zähler sagt',
+  ...grundlagen2,
 };
 
 // IDs: Kapitel "6.1", Unterkapitel "6.1.3", Lernziel "6.1.3-K2". Unterkapitel ohne feine Lernziele haben "6.2.1-L1".
