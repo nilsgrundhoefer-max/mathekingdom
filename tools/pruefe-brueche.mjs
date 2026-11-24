@@ -605,7 +605,9 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       const falsche = (text) => text.split('\n').filter((z) => !/rechnet|behauptet|sagt|meint/.test(z)).flatMap(bGleichungen).filter((g) => !g.ok);
       for (const g of falsche(setze(null))) M(`mit den Lösungen stimmt die Gleichung nicht: ${g.ganz}`);
       // Eine Lücke, die in keiner Gleichung des Textes steht, muss ein Ergebnis im Nachweis sein.
-      for (const n of namen) if (falsche(setze(n)).length === 0 && !istErgebnis(rechne(String(a.luecken[n].loesung)))) M(`Lücke ${n}: ${a.luecken[n].loesung} ist kein Ergebnis im Nachweis`);
+      // Steht hinter der Lücke eine Einheit („▢ kg“), zählt auch die Größe als Ergebnis.
+      const mitLueckenEinheit = (n) => { const e = a.text.match(new RegExp(`\\{\\{${n}\\}\\}[ \\u00a0](${EINH})(?![${B_}²])`)); return e ? rechne(`${a.luecken[n].loesung} ${e[1]}`) : null; };
+      for (const n of namen) if (falsche(setze(n)).length === 0 && !istErgebnis(rechne(String(a.luecken[n].loesung))) && !istErgebnis(mitLueckenEinheit(n))) M(`Lücke ${n}: ${a.luecken[n].loesung} ist kein Ergebnis im Nachweis`);
       break;
     }
     case 'tabelle': {
