@@ -19,13 +19,13 @@ export function leseDezimal(text) {
   return m ? { z: (minus(m[1]) ? -1 : 1) * Number(m[2] + (m[3] ?? '')), n: 10 ** (m[3]?.length ?? 0), stellen: m[3]?.length ?? 0 } : null;
 }
 // „3⁄4“, „3/4“, „1 3⁄4“ oder eine ganze Zahl als { g, z, n }: Ganze, Zähler, Nenner. null, wenn es kein Bruch ist.
-// Mit Vorzeichen („−3⁄4“, „−1 3⁄4“) kommt v: -1 dazu; das Minus gilt für die ganze Zahl.
+// Mit Vorzeichen („−3⁄4“, „−1 3⁄4“) kommt v: -1 dazu, sonst fehlt v; das Minus gilt für die ganze Zahl.
 export function leseBruch(text) {
   const s = String(text ?? '').trim().replace(/\//g, STRICH).replace(/[\s\u00a0\u202f]+/g, ' ');
   const m = s.match(new RegExp(`^(${VORZEICHEN}?) ?(?:(\\d+) )?(\\d+) ?${STRICH} ?(\\d+)$`));
-  if (m) return Number(m[4]) > 0 ? { g: Number(m[2] ?? 0), z: Number(m[3]), n: Number(m[4]), v: minus(m[1]) ? -1 : 1 } : null;
+  if (m) return Number(m[4]) > 0 ? { g: Number(m[2] ?? 0), z: Number(m[3]), n: Number(m[4]), ...(minus(m[1]) ? { v: -1 } : {}) } : null;
   const g = s.match(new RegExp(`^(${VORZEICHEN}?) ?(\\d+)$`));
-  return g ? { g: Number(g[2]), z: 0, n: 1, v: minus(g[1]) && Number(g[2]) !== 0 ? -1 : 1 } : null;
+  return g ? { g: Number(g[2]), z: 0, n: 1, ...(minus(g[1]) && Number(g[2]) !== 0 ? { v: -1 } : {}) } : null;
 }
 export const alsWert = (b) => (b ? { z: (b.v ?? 1) * (b.g * b.n + b.z), n: b.n } : null);
 // Wert eines Textes: Bruch, gemischte Zahl, Dezimalzahl oder natürliche Zahl.

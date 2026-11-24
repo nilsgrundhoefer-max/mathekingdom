@@ -35,6 +35,11 @@ const ERZEUGER = [
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 
+// Layout (Nils, 2026-11-21: „korrekte Darstellung und das Layout der Aufgaben“): Steht hinter einer Rechnung noch ein Auftrag
+// („Kürze vollständig.“), beginnt er auf einer neuen Zeile. Sonst liest man ihn als Teil der Rechnung.
+const AUFTRAG = /([^.?!:\n]) (Kürze vollständig|Gib das Ergebnis als|Kreuze alle an\.|Schreibe (?:das Ergebnis|eine|einen|sie) )/g;
+for (const a of aufgaben) if (typeof a.text === 'string') a.text = a.text.replace(AUFTRAG, '$1\n$2');
+
 // Vorstufe (ADR 0037): Eine Brücke darf zu einem Lernziel aus Klasse 5 oder 6 führen. Die Aufgaben dieser Lernziele (Niveaustufen F, G und M)
 // liegen als Kopie im Pool. Zuerst müssen deshalb die Pools der Klassen 5 und 6 erzeugt sein (npm run pool).
 const mitAufgaben = new Set(aufgaben.map((a) => a.lernziel));

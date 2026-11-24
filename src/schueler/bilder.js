@@ -316,7 +316,7 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
   // Kapitel 9: Mit `teiler` zählt der Strahl in Bruchteilen. teiler 10 heißt: Die Zahl 7 steht für 0,7. Bei anderen Teilern (Viertel) stehen nur die Ganzen am Strahl.
   const T = strahl.teiler ?? 1, zehner = /^10*$/.test(String(T));
   // Klasse 7 (ADR 0043): Der Strahl darf links von der Null beginnen (Zahlengerade). Negative Zahlen tragen das echte Minuszeichen.
-  const ohneZeichen = (w) => (T === 1 ? gliedereZahl(w) : zehner ? (w % T === 0 ? String(w / T) : `${Math.floor(w / T)},${String(w % T).padStart(String(T).length - 1, '0').replace(/0+$/, '')}`) : String(w / T));
+  const ohneZeichen = (w) => (T === 1 ? gliedereZahl(w) : zehner ? (w % T === 0 ? String(w / T) : `${Math.floor(w / T)},${String(w % T).padStart(String(T).length - 1, '0').replace(/0+$/, '')}`) : w % T === 0 ? String(w / T) : `${w > T ? `${Math.floor(w / T)} ` : ''}${w % T}/${T}`);
   const gliedere = (w) => (w < 0 ? `−${ohneZeichen(-w)}` : ohneZeichen(w));
   // Kapitel 9: Ein Bruchstrahl mit wenigen Teilstrichen ist schmal gezeichnet, damit er am Handy ohne Schieben ganz zu sehen ist.
   const kurz = T !== 1 && (bis - von) / schritt <= 10;
@@ -354,12 +354,38 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
     svg.append(s('line', { x1: x(p), y1: y - 6, x2: x(p), y2: hoch + 5, class: 'punktlinie' }), s('circle', { cx: x(p), cy: y, r: 6, class: 'punkt' }),
       s('text', { x: x(p), y: hoch, 'text-anchor': 'middle', class: 'punktzahl' }, gliedere(p)));
   });
+  // Sprünge. Klasse 7 (ADR 0043): Gehen Sprünge hin und zurück, liegen ihre Bögen übereinander.
+  // Dann wird der spätere Bogen höher gezeichnet, damit keine Beschriftung eine andere überdeckt. Das Bild wächst dafür nach oben.
+  const schilder = [], boegen = [];
+  let ueber = 0;
+  // Ein Punkt auf dem Bogen (quadratische Kurve) und der Test, ob ein Punkt in einem Schild liegt.
+  const auf = (a, b, hoch, t) => [(1 - t) * (1 - t) * a + 2 * (1 - t) * t * ((a + b) / 2) + t * t * b, y - 12 - 2 * (1 - t) * t * hoch * 1.6];
+  const bogen = (a, b, hoch) => Array.from({ length: 33 }, (_, i) => auf(a, b, hoch, i / 32));
+  const trifft = (k, [px, py]) => Math.abs(px - k.x) < k.breit / 2 + 3 && py > k.y - 15 && py < k.y + 5;
   for (const sp of strahl.spruenge ?? []) {
-    const a = x(sp.von), b = x(sp.nach), hoch = Math.min(46, 16 + Math.abs(b - a) / 6);
+    const a = x(sp.von), b = x(sp.nach);
+    const breit = 8 + String(sp.text).length * 9;
+    // Gesucht: die niedrigste Bogenhöhe und eine Stelle am Bogen, an der das Schild frei steht (zuerst in der Mitte).
+    let hoch = Math.min(46, 16 + Math.abs(b - a) / 6), schild = null;
+    for (; !schild && hoch < 160; hoch += schild ? 0 : 6) {
+      const linie = bogen(a, b, hoch);
+      if (schilder.some((v) => linie.some((p) => trifft(v, p)))) continue;
+      for (const t of [0.5, 0.38, 0.62, 0.26, 0.74]) {
+        const [px, py] = auf(a, b, hoch, t), k = { x: px, y: py - 6, breit };
+        if (schilder.some((v) => Math.abs(v.x - k.x) < (v.breit + breit) / 2 + 3 && Math.abs(v.y - k.y) < 17) || boegen.some((l) => l.some((q) => trifft(k, q)))) continue;
+        schild = k; break;
+      }
+      if (schild) break;
+    }
+    schild ??= { x: (a + b) / 2, y: y - 18 - hoch * 0.8, breit };
+    schilder.push(schild);
+    boegen.push(bogen(a, b, hoch));
+    ueber = Math.max(ueber, 16 - schild.y);
     svg.append(s('path', { d: `M${a} ${y - 12} Q${(a + b) / 2} ${y - 12 - hoch * 1.6} ${b} ${y - 12}`, class: 'sprung' }),
       s('path', { d: `M${b} ${y - 12} l${b > a ? -9 : 9} -3 l${b > a ? 3 : -3} -8 Z`, class: 'sprungspitze' }),
-      s('text', { x: (a + b) / 2, y: y - 18 - hoch * 0.8, 'text-anchor': 'middle', class: 'sprungtext' }, sp.text));
+      s('text', { x: schild.x, y: schild.y, 'text-anchor': 'middle', class: 'sprungtext' }, sp.text));
   }
+  if (ueber > 0) svg.setAttribute('viewBox', `0 ${-Math.ceil(ueber)} ${B} ${138 + Math.ceil(ueber)}`);
   if (strahl.pfeil != null) {
     svg.append(s('text', { x: x(strahl.pfeil), y: y + 54, 'text-anchor': 'middle', class: 'frage' }, '?'),
       s('path', { d: `M${x(strahl.pfeil)} ${y + 38} l-6 -12 h12 Z`, class: 'fragepfeil' }));

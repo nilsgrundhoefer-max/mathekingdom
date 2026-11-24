@@ -8,13 +8,14 @@ const mz = (n) => (n < 0 ? `−${-n}` : String(n));
 
 export function thermometerBild(b) {
   const oben = 34, unten = 52, hoch = 250, breit = 132, rohr = 18;
-  const B = breit * b.saeulen.length, H = oben + hoch + unten;
+  // Stehen Namen unter den Thermometern, bekommt das Bild unten eine Zeile dazu. Sonst läge der Name auf der Kugel.
+  const fuss = oben + hoch + unten, B = breit * b.saeulen.length, H = fuss + (b.saeulen.some((t) => t.name) ? 20 : 0);
   const y = (w) => oben + ((b.bis - w) / (b.bis - b.von)) * hoch;
   const svg = s('svg', { class: 'thermometer', viewBox: `0 0 ${B} ${H}`, role: 'img',
     'aria-label': `Thermometer von ${mz(b.von)} bis ${mz(b.bis)} Grad Celsius: ${b.saeulen.map((t) => `${t.name ? `${t.name} ` : ''}${mz(t.wert)} Grad`).join(', ')}` });
   svg.style.maxWidth = `${B * 1.5}px`;
   b.saeulen.forEach((t, i) => {
-    const x = i * breit + 34, mitte = x + rohr / 2, kugel = H - 26;
+    const x = i * breit + 34, mitte = x + rohr / 2, kugel = fuss - 26;
     const g = s('g', { class: 'thermo' });
     // Röhre mit Kugel, darin die Flüssigkeit bis zum Wert.
     g.append(s('path', { d: `M${x} ${y(b.bis) - 10} a${rohr / 2} ${rohr / 2} 0 0 1 ${rohr} 0 V${kugel - 14} a17 17 0 1 1 ${-rohr} 0 Z`, class: 'glas' }),

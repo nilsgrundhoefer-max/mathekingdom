@@ -163,9 +163,10 @@ export function rechenvorteile() {
       if (a === c || b === d) return null;
       const t = ohneKlammern([bt(Q(-a, N)), bt(Q(b, N)), bt(Q(-c, N)), bt(Q(d, N))]);
       if ([a, b, c, d].some((x) => Q(x, N)[1] !== N)) return null;
+      if (b + d === a + c) return null; // Das Ergebnis soll ein Bruch sein, nicht null.
       return antwort(`Berechne geschickt: ${t} Kürze vollständig.`, z, 'b', [[neg(z), 'vorzeichen-vergessen'], [Q(a + b + c + d, N), 'betraege-addiert'], [Q(b + d, N), 'sach-schritt-vergessen']], H(2, 'Fasse die beiden negativen Brüche zusammen. Sie ergeben hier ein Ganzes.', 'Addiere erst die Zähler mit Minus, dann die Zähler mit Plus. Der Nenner bleibt.'), [`${t} = ${bt(z)}`]); },
     () => { const n = 2 * zz(6, 15);
-      return antwort(`Berechne geschickt: 1 − 2 + 3 − 4 + … + ${n - 1} − ${n} Bilde dazu Paare.`, -n / 2, 'd', [[n / 2, 'vorzeichen-vergessen'], [-n, 'sach-schritt-vergessen'], [-1, 'sach-schritt-vergessen']],
+      return antwort(`Berechne geschickt: 1 − 2 + 3 − 4 + … + ${n - 1} − ${n}\nBilde dazu Paare.`, -n / 2, 'd', [[n / 2, 'vorzeichen-vergessen'], [-n, 'sach-schritt-vergessen'], [-1, 'sach-schritt-vergessen']],
         H(2, 'Fasse immer zwei Nachbarn zu einem Paar zusammen: 1 − 2, dann 3 − 4 und so weiter.', 'Jedes Paar ergibt −1. Zähle, wie viele Paare es sind.'), [`${n} : 2 · (1 − 2) = ${zt(-n / 2)}`]); },
   ]);
   sechs(R2, 'E', [

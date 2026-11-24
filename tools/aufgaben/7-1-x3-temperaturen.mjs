@@ -77,7 +77,7 @@ export function temperaturen() {
     () => { const [o1, o2] = mische(ORTE).slice(0, 2), t1 = D(zz(12, 58)), n1 = D(-zz(21, 88)), t2 = D(-zz(5, 35)), n2 = D(-zz(95, 168));
       if ([t1, n1, t2, n2].some(istGanz)) return null;
       const d1 = minus(t1, n1), d2 = minus(t2, n2);
-      return luecken(`${o1}: am Tag ${dt(t1)} °C, in der Nacht ${dt(n1)} °C. ${o2}: am Tag ${dt(t2)} °C, in der Nacht ${dt(n2)} °C. Der Temperaturunterschied ist in ${o1} {{a}} Grad und in ${o2} {{b}} Grad.`, { a: lkd(d1, [[minus(t1, betrag(n1)), 'abstand-ueber-null'], [plus(t1, n1), 'minus-minus-uebersehen']]), b: lkd(d2, [[plus(betrag(t2), betrag(n2)), 'betraege-addiert'], [plus(t2, n2), 'minus-minus-uebersehen']]) },
+      return luecken(`${o1}: am Tag ${dt(t1)} °C, in der Nacht ${dt(n1)} °C.\n${o2}: am Tag ${dt(t2)} °C, in der Nacht ${dt(n2)} °C.\nTemperaturunterschied in ${o1}: {{a}} Grad\nTemperaturunterschied in ${o2}: {{b}} Grad`, { a: lkd(d1, [[minus(t1, betrag(n1)), 'abstand-ueber-null'], [plus(t1, n1), 'minus-minus-uebersehen']]), b: lkd(d2, [[plus(betrag(t2), betrag(n2)), 'betraege-addiert'], [plus(t2, n2), 'minus-minus-uebersehen']]) },
         H(2, 'Temperaturunterschied: höhere Temperatur minus tiefere Temperatur.', 'Sind beide Temperaturen negativ, liegt keine Null dazwischen. Dann subtrahierst du die Beträge.'), { nachweis: [`${dt(t1)} − (${dt(n1)}) = ${dt(d1)}`, `${dt(t2)} − (${dt(n2)}) = ${dt(d2)}`] }); },
   ]);
   sechs(C1, 'E', [

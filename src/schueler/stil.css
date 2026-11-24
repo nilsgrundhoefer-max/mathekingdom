@@ -331,6 +331,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .wortspeicher dt { font-weight: 700; margin-top: 6px; }
 #mathekingdom .wortspeicher dd { margin: 0; }
 #mathekingdom .option span { white-space: pre-line; }
+/* Ein Bruch mit Vorzeichen, Klammer oder Satzzeichen bleibt auch in einer Antwort zusammen (ADR 0043). */
+#mathekingdom .option span.bruchsatz, #mathekingdom .option span.gemischt, #mathekingdom .option .bruch span { white-space: nowrap; }
 
 /* Größere Tippflächen auf Touch-Bildschirmen */
 @media (pointer: coarse) {
@@ -791,3 +793,6 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .thermometer .name { font-size: 15px; font-weight: 700; fill: var(--nacht); }
 #mathekingdom .datentabelle.auszug td, #mathekingdom .datentabelle.auszug th { font-variant-numeric: tabular-nums; }
 #mathekingdom .datentabelle.auszug td { text-align: right; white-space: nowrap; }
+
+/* Klasse 7 (ADR 0043): Rechenzeichen, Klammer und Lücke bleiben in einer Zeile. */
+#mathekingdom .luecken .lueckensatz { white-space: nowrap; }

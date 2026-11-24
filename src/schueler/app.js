@@ -943,7 +943,9 @@ export function eingabefelder(auf, a, gesperrt) {
         h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
     case 'luecken': {
       const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name]));
-      const mitLuecken = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });
+      const einfach = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });
+      // Klasse 7 (ADR 0043): Rechenzeichen, Klammer und Lücke bleiben beim Umbruch zusammen. Eine Zeile endet so nie mit „=“ oder „(“.
+      const mitLuecken = (text) => (mitVorzeichen(auf) ? text.split(/((?:[=+−·:<>] )?\(?\{\{\w+\}\}\)?(?: (?:€|°C|°F|K|Grad|m|cm|km)(?![\wäöü]))?[.,;!?]?)/).map((stueck, i) => (i % 2 ? h('span', { class: 'lueckensatz' }, einfach(stueck)) : stueck)) : einfach(text));
       // Klasse 6 (ADR 0037): Steht eine Lücke im Zähler oder im Nenner, wird der Bruch gestapelt gezeichnet, mit dem Feld an seinem Platz.
       const BRUCH = /((?:\d+\u202f)?(?:\{\{\w+\}\}|\d+)\u2044(?:\{\{\w+\}\}|\d+))/;
       return h('p', { class: 'aufgabentext luecken' }, auf.text.split(BRUCH).map((stueck, i) => {
@@ -1132,9 +1134,11 @@ function loesungstext(auf) {
       // Kapitel 9: Am Strahl mit Teiler ist die Lösung die Nummer des Teilstrichs. Gezeigt wird die Zahl, die dort steht.
       const T = auf.strahl?.teiler ?? 1;
       if (T === 1 || typeof auf.loesung !== 'number') return zahl(auf);
-      if (!/^10*$/.test(String(T))) return auf.loesung % T === 0 ? String(auf.loesung / T) : `${auf.loesung}\u2044${T}`;
-      const nach = String(auf.loesung % T).padStart(String(T).length - 1, '0').replace(/0+$/, '');
-      return `${Math.floor(auf.loesung / T)}${nach ? `,${nach}` : ''}`;
+      // Klasse 7 (ADR 0043): Links von der Null steht das Minus vor der Zahl, gerechnet wird mit dem Abstand zur Null.
+      const minus = auf.loesung < 0 ? '−' : '', n = Math.abs(auf.loesung);
+      if (!/^10*$/.test(String(T))) return minus + (n % T === 0 ? String(n / T) : `${n}\u2044${T}`);
+      const nach = String(n % T).padStart(String(T).length - 1, '0').replace(/0+$/, '');
+      return `${minus}${Math.floor(n / T)}${nach ? `,${nach}` : ''}`;
     }
     case 'zahl': return zahl(auf);
     case 'ordnen': return auf.loesung.join(', ');
@@ -1142,7 +1146,7 @@ function loesungstext(auf) {
     case 'schaetzen': return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.bereich[0])} bis ${gliedere(auf.bereich[1])})`;
     case 'diagramm': return auf.teile.length === 1 ? zahl(auf.teile[0]) : auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
     case 'tabelle': if (auf.tabelle.art === 'stellentafel') return 'siehe Tafel';
-      if (auf.tabelle.art === 'einheitentafel') return auf.tabelle.ablesen ? `${auf.tabelle.ablesen.text} ${gliedere(auf.luecken[auf.tabelle.ablesen.luecke].loesung)} ${auf.tabelle.ablesen.einheit} (siehe Tafel)` : 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => auf.luecken[c.luecke].loesung).join(', ')}`;
+      if (auf.tabelle.art === 'einheitentafel') return auf.tabelle.ablesen ? `${auf.tabelle.ablesen.text} ${gliedere(auf.luecken[auf.tabelle.ablesen.luecke].loesung)} ${auf.tabelle.ablesen.einheit} (siehe Tafel)` : 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => gliedere(auf.luecken[c.luecke].loesung)).join(', ')}`;
     case 'auswahl': return auf.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
     case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung));
     case 'zuordnen': return auf.paare.map((p) => `${p.links} ist ${p.rechts}`).join(', ');

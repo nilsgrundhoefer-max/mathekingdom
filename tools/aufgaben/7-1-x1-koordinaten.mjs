@@ -10,7 +10,8 @@ const K1 = '7.1.X1-K1';
 const tausch = ([x, y]) => [y, x];
 // Ein Punkt in einem der Quadranten II, III oder IV (oder in einem bestimmten), mit verschiedenen Beträgen.
 const VZ = { I: [1, 1], II: [-1, 1], III: [-1, -1], IV: [1, -1] };
-const punkt = (r, quadranten = ['II', 'III', 'IV']) => { for (;;) { const [vx, vy] = VZ[wahl(quadranten)], x = zz(1, r), y = zz(1, r); if (x !== y) return [vx * x, vy * y]; } };
+// Ein Punkt mit x = −1 läge im Bild auf den Zahlen der y-Achse. Er wird deshalb nicht gezogen.
+const punkt = (r, quadranten = ['II', 'III', 'IV']) => { for (;;) { const [vx, vy] = VZ[wahl(quadranten)], x = zz(1, r), y = zz(1, r); if (x !== y && vx * x !== -1) return [vx * x, vy * y]; } };
 const pos = ([x, y]) => (y >= 0 ? (x >= 0 ? 'ro' : 'lo') : x >= 0 ? 'ru' : 'lu');
 const P = (n, p) => [n, p[0], p[1], pos(p)];
 const drin = (r) => ([x, y]) => Math.abs(x) <= r && Math.abs(y) <= r;

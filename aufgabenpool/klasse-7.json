@@ -4175,18 +4175,18 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "(1|2)",
+     "text": "(4|3)",
      "richtig": false,
      "fehlvorstellung": "koord-vorzeichen"
     },
     {
-     "text": "(2|−1)",
-     "richtig": false,
-     "fehlvorstellung": "koord-vertauscht"
+     "text": "(−4|3)",
+     "richtig": true
     },
     {
-     "text": "(−1|2)",
-     "richtig": true
+     "text": "(3|−4)",
+     "richtig": false,
+     "fehlvorstellung": "koord-vertauscht"
     }
    ],
    "hilfen": {
@@ -4206,8 +4206,8 @@
     "punkte": [
      {
       "n": "A",
-      "x": -1,
-      "y": 2,
+      "x": -4,
+      "y": 3,
       "pos": "lo"
      }
     ]
@@ -4229,7 +4229,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Trage den Punkt P(2|−1) ein.\nTippe dazu auf die richtige Stelle.",
+   "text": "Trage den Punkt P(4|−3) ein.\nTippe dazu auf die richtige Stelle.",
    "gitter": {
     "b": 10,
     "h": 10,
@@ -4241,16 +4241,16 @@
    },
    "loesung": [
     [
-     2,
-     -1
+     4,
+     -3
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -1,
-       2
+       -3,
+       4
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -4258,8 +4258,8 @@
     {
      "punkte": [
       [
-       -2,
-       -1
+       -4,
+       -3
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -4267,8 +4267,8 @@
     {
      "punkte": [
       [
-       2,
-       1
+       4,
+       3
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -4297,27 +4297,27 @@
    "text": "Schau auf den Punkt A.\nSchreibe seine Koordinaten auf.\nA({{x}}|{{y}})",
    "luecken": {
     "x": {
-     "loesung": 4,
+     "loesung": -3,
+     "typischeFehler": [
+      {
+       "wert": -1,
+       "fehlvorstellung": "koord-vertauscht"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "koord-vorzeichen"
+      }
+     ]
+    },
+    "y": {
+     "loesung": -1,
      "typischeFehler": [
       {
        "wert": -3,
        "fehlvorstellung": "koord-vertauscht"
       },
       {
-       "wert": -4,
-       "fehlvorstellung": "koord-vorzeichen"
-      }
-     ]
-    },
-    "y": {
-     "loesung": -3,
-     "typischeFehler": [
-      {
-       "wert": 4,
-       "fehlvorstellung": "koord-vertauscht"
-      },
-      {
-       "wert": 3,
+       "wert": 1,
        "fehlvorstellung": "koord-vorzeichen"
       }
      ]
@@ -4340,21 +4340,21 @@
     "punkte": [
      {
       "n": "A",
-      "x": 4,
-      "y": -3,
-      "pos": "ru"
+      "x": -3,
+      "y": -1,
+      "pos": "lu"
      }
     ]
    },
    "nachweis": [
     {
      "art": "bild",
-     "wert": "4",
+     "wert": "−3",
      "punkt": "A"
     },
     {
      "art": "bild",
-     "wert": "−3",
+     "wert": "−1",
      "punkt": "A"
     }
    ]
@@ -4369,7 +4369,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Trage den Punkt P(−3|−1) ein.\nTippe dazu auf die richtige Stelle.",
+   "text": "Trage den Punkt P(−3|−2) ein.\nTippe dazu auf die richtige Stelle.",
    "gitter": {
     "b": 10,
     "h": 10,
@@ -4382,14 +4382,14 @@
    "loesung": [
     [
      -3,
-     -1
+     -2
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -1,
+       -2,
        -3
       ]
      ],
@@ -4399,7 +4399,7 @@
      "punkte": [
       [
        3,
-       -1
+       -2
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -4408,7 +4408,7 @@
      "punkte": [
       [
        -3,
-       1
+       2
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -4434,11 +4434,11 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Schau auf die Punkte A, B und C.\nWelcher Punkt hat die Koordinaten (3|−2)?",
+   "text": "Schau auf die Punkte A, B und C.\nWelcher Punkt hat die Koordinaten (1|−2)?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "A",
+     "text": "B",
      "richtig": false,
      "fehlvorstellung": "koord-vorzeichen"
     },
@@ -4448,7 +4448,7 @@
      "fehlvorstellung": "koord-vertauscht"
     },
     {
-     "text": "B",
+     "text": "A",
      "richtig": true
     }
    ],
@@ -4469,20 +4469,20 @@
     "punkte": [
      {
       "n": "A",
-      "x": 3,
-      "y": 2,
-      "pos": "ro"
-     },
-     {
-      "n": "B",
-      "x": 3,
+      "x": 1,
       "y": -2,
       "pos": "ru"
      },
      {
+      "n": "B",
+      "x": 1,
+      "y": 2,
+      "pos": "ro"
+     },
+     {
       "n": "C",
       "x": -2,
-      "y": 3,
+      "y": 1,
       "pos": "lo"
      }
     ]
@@ -4491,7 +4491,7 @@
     {
      "art": "punktwahl",
      "punkt": [
-      3,
+      1,
       -2
      ]
     }
@@ -4507,7 +4507,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Trage den Punkt P(−1|0) ein.\nTippe dazu auf die richtige Stelle.",
+   "text": "Trage den Punkt P(0|−3) ein.\nTippe dazu auf die richtige Stelle.",
    "gitter": {
     "b": 10,
     "h": 10,
@@ -4519,16 +4519,16 @@
    },
    "loesung": [
     [
-     -1,
-     0
+     0,
+     -3
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       0,
-       -1
+       -3,
+       0
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -4536,8 +4536,8 @@
     {
      "punkte": [
       [
-       1,
-       0
+       0,
+       3
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -4566,27 +4566,27 @@
    "text": "Schau auf den Punkt A.\nSchreibe seine Koordinaten auf.\nA({{x}}|{{y}})",
    "luecken": {
     "x": {
-     "loesung": -4,
+     "loesung": -5,
      "typischeFehler": [
       {
-       "wert": -3,
+       "wert": 1,
        "fehlvorstellung": "koord-vertauscht"
       },
       {
-       "wert": 4,
+       "wert": 5,
        "fehlvorstellung": "koord-vorzeichen"
       }
      ]
     },
     "y": {
-     "loesung": -3,
+     "loesung": 1,
      "typischeFehler": [
       {
-       "wert": -4,
+       "wert": -5,
        "fehlvorstellung": "koord-vertauscht"
       },
       {
-       "wert": 3,
+       "wert": -1,
        "fehlvorstellung": "koord-vorzeichen"
       }
      ]
@@ -4609,21 +4609,21 @@
     "punkte": [
      {
       "n": "A",
-      "x": -4,
-      "y": -3,
-      "pos": "lu"
+      "x": -5,
+      "y": 1,
+      "pos": "lo"
      }
     ]
    },
    "nachweis": [
     {
      "art": "bild",
-     "wert": "−4",
+     "wert": "−5",
      "punkt": "A"
     },
     {
      "art": "bild",
-     "wert": "−3",
+     "wert": "1",
      "punkt": "A"
     }
    ]
@@ -4638,7 +4638,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Trage die Punkte A(−5|1) und B(1|−5) ein.\nTippe dazu auf die richtigen Stellen.",
+   "text": "Trage die Punkte A(−2|3) und B(6|−4) ein.\nTippe dazu auf die richtigen Stellen.",
    "gitter": {
     "b": 12,
     "h": 12,
@@ -4650,15 +4650,29 @@
    },
    "loesung": [
     [
-     -5,
-     1
+     -2,
+     3
     ],
     [
-     1,
-     -5
+     6,
+     -4
     ]
    ],
-   "typischeFehler": [],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       3,
+       -2
+      ],
+      [
+       -4,
+       6
+      ]
+     ],
+     "fehlvorstellung": "koord-vertauscht"
+    }
+   ],
    "hilfen": {
     "tipp": "Die erste Zahl sagt: nach rechts oder links. Die zweite Zahl sagt: nach oben oder unten.",
     "beispiel": "Für (−2|−4) gehst du 2 nach links und 4 nach unten.",
@@ -4680,7 +4694,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Starte beim Punkt A.\nGehe 7 Kästchen nach unten.\nTrage den Punkt ein, bei dem du landest.",
+   "text": "Starte beim Punkt A.\nGehe 5 Kästchen nach unten.\nTrage den Punkt ein, bei dem du landest.",
    "gitter": {
     "b": 12,
     "h": 12,
@@ -4701,14 +4715,14 @@
    "loesung": [
     [
      1,
-     -5
+     -3
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -5,
+       -3,
        1
       ]
      ],
@@ -4726,7 +4740,7 @@
      "name": "A",
      "um": [
       0,
-      -7
+      -5
      ]
     }
    ]
@@ -4744,16 +4758,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "(−1|−3)",
+     "text": "(−1|−6)",
      "richtig": false,
      "fehlvorstellung": "koord-vorzeichen"
     },
     {
-     "text": "(1|−3)",
+     "text": "(1|−6)",
      "richtig": true
     },
     {
-     "text": "(−3|1)",
+     "text": "(−6|1)",
      "richtig": false,
      "fehlvorstellung": "koord-vertauscht"
     }
@@ -4776,7 +4790,7 @@
      {
       "n": "B",
       "x": 1,
-      "y": -3,
+      "y": -6,
       "pos": "ru"
      }
     ]
@@ -4798,7 +4812,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Trage die Punkte A(−5|−1), B(−3|4) und C(1|2) ein.\nTippe dazu auf die richtigen Stellen.",
+   "text": "Trage die Punkte A(−3|−4), B(−2|5) und C(1|5) ein.\nTippe dazu auf die richtigen Stellen.",
    "gitter": {
     "b": 12,
     "h": 12,
@@ -4810,31 +4824,31 @@
    },
    "loesung": [
     [
-     -5,
-     -1
+     -3,
+     -4
     ],
     [
-     -3,
-     4
+     -2,
+     5
     ],
     [
      1,
-     2
+     5
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -1,
-       -5
-      ],
-      [
-       4,
+       -4,
        -3
       ],
       [
-       2,
+       5,
+       -2
+      ],
+      [
+       5,
        1
       ]
      ],
@@ -4861,22 +4875,22 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Ida soll den Punkt (1|−5) eintragen.\nIda zeichnet aber den Punkt Q.\nWelche Koordinaten hat Q wirklich?",
+   "text": "Jonas soll den Punkt (4|−6) eintragen.\nJonas zeichnet aber den Punkt Q.\nWelche Koordinaten hat Q wirklich?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "(1|−5)",
+     "text": "(6|−4)",
+     "richtig": false,
+     "fehlvorstellung": "koord-vorzeichen"
+    },
+    {
+     "text": "(4|−6)",
      "richtig": false,
      "fehlvorstellung": "koord-vertauscht"
     },
     {
-     "text": "(−1|−5)",
+     "text": "(−6|4)",
      "richtig": true
-    },
-    {
-     "text": "(1|5)",
-     "richtig": false,
-     "fehlvorstellung": "koord-vorzeichen"
     }
    ],
    "hilfen": {
@@ -4896,9 +4910,9 @@
     "punkte": [
      {
       "n": "Q",
-      "x": -1,
-      "y": -5,
-      "pos": "lu"
+      "x": -6,
+      "y": 4,
+      "pos": "lo"
      }
     ]
    },
@@ -4918,7 +4932,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "In welchem Quadranten liegt der Punkt P(−2|6)?",
+   "text": "In welchem Quadranten liegt der Punkt P(−9|1)?",
    "mehrfach": false,
    "optionen": [
     {
@@ -4926,7 +4940,7 @@
      "richtig": true
     },
     {
-     "text": "IV. Quadrant",
+     "text": "I. Quadrant",
      "richtig": false,
      "fehlvorstellung": "koord-vertauscht"
     },
@@ -4936,7 +4950,7 @@
      "fehlvorstellung": "koord-vorzeichen"
     },
     {
-     "text": "I. Quadrant",
+     "text": "IV. Quadrant",
      "richtig": false,
      "fehlvorstellung": "koord-vertauscht"
     }
@@ -4949,8 +4963,8 @@
     {
      "art": "quadrant",
      "punkt": [
-      -2,
-      6
+      -9,
+      1
      ]
     }
    ]
@@ -4977,19 +4991,19 @@
     "punkte": [
      {
       "n": "A",
-      "x": -6,
-      "y": -3,
+      "x": -2,
+      "y": -2,
       "pos": "lu"
      },
      {
       "n": "B",
-      "x": 5,
-      "y": -3,
+      "x": 1,
+      "y": -2,
       "pos": "ru"
      },
      {
       "n": "C",
-      "x": 5,
+      "x": 1,
       "y": 2,
       "pos": "ro"
      }
@@ -4997,7 +5011,7 @@
    },
    "loesung": [
     [
-     -6,
+     -2,
      2
     ]
    ],
@@ -5006,7 +5020,7 @@
      "punkte": [
       [
        2,
-       -6
+       -2
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5014,7 +5028,7 @@
     {
      "punkte": [
       [
-       6,
+       2,
        2
       ]
      ],
@@ -5040,24 +5054,24 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Wo liegt der Punkt P(2|0)?",
+   "text": "Wo liegt der Punkt P(0|−7)?",
    "mehrfach": false,
    "optionen": [
     {
      "text": "auf der x-Achse",
-     "richtig": true
-    },
-    {
-     "text": "IV. Quadrant",
-     "richtig": false
-    },
-    {
-     "text": "auf der y-Achse",
      "richtig": false,
      "fehlvorstellung": "koord-vertauscht"
     },
     {
-     "text": "I. Quadrant",
+     "text": "auf der y-Achse",
+     "richtig": true
+    },
+    {
+     "text": "II. Quadrant",
+     "richtig": false
+    },
+    {
+     "text": "III. Quadrant",
      "richtig": false
     }
    ],
@@ -5069,8 +5083,8 @@
     {
      "art": "quadrant",
      "punkt": [
-      2,
-      0
+      0,
+      -7
      ]
     }
    ]
@@ -5085,7 +5099,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Trage die Punkte A(−8|6), B(−5|−3) und C(2|−6) ins Koordinatensystem ein.",
+   "text": "Trage die Punkte A(−5|3), B(−2|−6) und C(6|−8) ins Koordinatensystem ein.",
    "gitter": {
     "b": 16,
     "h": 16,
@@ -5097,32 +5111,32 @@
    },
    "loesung": [
     [
-     -8,
-     6
-    ],
-    [
      -5,
-     -3
+     3
     ],
     [
-     2,
+     -2,
      -6
+    ],
+    [
+     6,
+     -8
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       6,
-       -8
-      ],
-      [
-       -3,
+       3,
        -5
       ],
       [
        -6,
-       2
+       -2
+      ],
+      [
+       -8,
+       6
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5148,7 +5162,7 @@
    ],
    "format": "gitter",
    "eingabe": "punkte",
-   "text": "Der Punkt A wird um 11 Einheiten nach links verschoben. Trage den neuen Punkt ein.",
+   "text": "Der Punkt A wird um 10 Einheiten nach links verschoben. Trage den neuen Punkt ein.",
    "gitter": {
     "b": 16,
     "h": 16,
@@ -5160,24 +5174,24 @@
     "punkte": [
      {
       "n": "A",
-      "x": 4,
-      "y": -4,
+      "x": 5,
+      "y": -1,
       "pos": "ru"
      }
     ]
    },
    "loesung": [
     [
-     -7,
-     -4
+     -5,
+     -1
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -4,
-       -7
+       -1,
+       -5
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5192,7 +5206,7 @@
      "art": "verschieben",
      "name": "A",
      "um": [
-      -11,
+      -10,
       0
      ]
     }
@@ -5220,14 +5234,14 @@
     "punkte": [
      {
       "n": "A",
-      "x": -5,
-      "y": -4,
+      "x": -7,
+      "y": -2,
       "pos": "lu"
      },
      {
       "n": "C",
       "x": 5,
-      "y": 7,
+      "y": 5,
       "pos": "ro"
      }
     ]
@@ -5235,23 +5249,23 @@
    "loesung": [
     [
      5,
-     -4
+     -2
     ],
     [
-     -5,
-     7
+     -7,
+     5
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -4,
+       -2,
        5
       ],
       [
-       7,
-       -5
+       5,
+       -7
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5289,24 +5303,24 @@
     "punkte": [
      {
       "n": "A",
-      "x": -1,
-      "y": -5,
+      "x": -2,
+      "y": -3,
       "pos": "lu"
      }
     ]
    },
    "loesung": [
     [
-     -1,
-     5
+     -2,
+     3
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       1,
-       -5
+       2,
+       -3
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5314,8 +5328,8 @@
     {
      "punkte": [
       [
-       1,
-       5
+       2,
+       3
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -5353,24 +5367,24 @@
     "punkte": [
      {
       "n": "A",
-      "x": -2,
-      "y": -3,
-      "pos": "lu"
+      "x": 6,
+      "y": 7,
+      "pos": "ro"
      }
     ]
    },
    "loesung": [
     [
-     2,
-     -3
+     -6,
+     7
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -2,
-       3
+       6,
+       -7
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5378,8 +5392,8 @@
     {
      "punkte": [
       [
-       2,
-       3
+       -6,
+       -7
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -5417,52 +5431,52 @@
     "punkte": [
      {
       "n": "A",
-      "x": -6,
-      "y": 7,
+      "x": -7,
+      "y": 1,
       "pos": "lo"
      },
      {
       "n": "B",
-      "x": -7,
-      "y": -1,
+      "x": -4,
+      "y": -2,
       "pos": "lu"
      },
      {
       "n": "C",
-      "x": -6,
-      "y": 4,
+      "x": -4,
+      "y": 1,
       "pos": "lo"
      }
     ]
    },
    "loesung": [
     [
-     6,
-     7
-    ],
-    [
      7,
-     -1
+     1
     ],
     [
-     6,
-     4
+     4,
+     -2
+    ],
+    [
+     4,
+     1
     ]
    ],
    "typischeFehler": [
     {
      "punkte": [
       [
-       -6,
-       -7
-      ],
-      [
        -7,
-       1
+       -1
       ],
       [
-       -6,
-       -4
+       -4,
+       2
+      ],
+      [
+       -4,
+       -1
       ]
      ],
      "fehlvorstellung": "koord-vertauscht"
@@ -5470,16 +5484,16 @@
     {
      "punkte": [
       [
-       6,
-       -7
-      ],
-      [
        7,
-       1
+       -1
       ],
       [
-       6,
-       -4
+       4,
+       2
+      ],
+      [
+       4,
+       -1
       ]
      ],
      "fehlvorstellung": "koord-vorzeichen"
@@ -5517,15 +5531,15 @@
     "punkte": [
      {
       "n": "A",
-      "x": 4,
+      "x": -6,
       "y": 1,
-      "pos": "ro"
+      "pos": "lo"
      }
     ]
    },
    "loesung": [
     [
-     -4,
+     6,
      -1
     ]
    ],
@@ -5533,7 +5547,7 @@
     {
      "punkte": [
       [
-       4,
+       -6,
        -1
       ]
      ],
@@ -5559,27 +5573,27 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Der Punkt P(−11|1) wird an der x-Achse gespiegelt. Welche Koordinaten hat der Spiegelpunkt?",
+   "text": "Der Punkt P(3|8) wird an der y-Achse gespiegelt. Welche Koordinaten hat der Spiegelpunkt?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "(1|−11)",
-     "richtig": false,
-     "fehlvorstellung": "koord-vertauscht"
+     "text": "(−3|8)",
+     "richtig": true
     },
     {
-     "text": "(11|−1)",
+     "text": "(−3|−8)",
      "richtig": false,
      "fehlvorstellung": "koord-vorzeichen"
     },
     {
-     "text": "(11|1)",
+     "text": "(8|3)",
      "richtig": false,
      "fehlvorstellung": "koord-vertauscht"
     },
     {
-     "text": "(−11|−1)",
-     "richtig": true
+     "text": "(3|−8)",
+     "richtig": false,
+     "fehlvorstellung": "koord-vertauscht"
     }
    ],
    "hilfen": {
@@ -5589,10 +5603,10 @@
     {
      "art": "spiegelwahl",
      "punkt": [
-      -11,
-      1
+      3,
+      8
      ],
-     "achse": "x"
+     "achse": "y"
     }
    ]
   },
@@ -5605,7 +5619,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Der Punkt P(−8|11) wird an der x-Achse gespiegelt. In welchem Quadranten liegt der Spiegelpunkt?",
+   "text": "Der Punkt P(2|10) wird an der y-Achse gespiegelt. In welchem Quadranten liegt der Spiegelpunkt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -5614,12 +5628,12 @@
      "fehlvorstellung": "koord-vertauscht"
     },
     {
-     "text": "II. Quadrant",
+     "text": "III. Quadrant",
      "richtig": false,
      "fehlvorstellung": "koord-vorzeichen"
     },
     {
-     "text": "III. Quadrant",
+     "text": "II. Quadrant",
      "richtig": true
     },
     {
@@ -5635,14 +5649,14 @@
     {
      "art": "quadrant",
      "punkt": [
-      -8,
-      -11
+      -2,
+      10
      ],
      "von": [
-      -8,
-      11
+      2,
+      10
      ],
-     "achse": "x"
+     "achse": "y"
     }
    ]
   },
@@ -6390,7 +6404,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Welche Zahlen passen in das Kästchen? −2 < ▢ < −1,7 Kreuze alle an.",
+   "text": "Welche Zahlen passen in das Kästchen? −2 < ▢ < −1,7\nKreuze alle an.",
    "mehrfach": true,
    "optionen": [
     {
@@ -6511,7 +6525,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Welche Zahlen passen in das Kästchen? −3⁄4 < ▢ < −1⁄2 Kreuze alle an.",
+   "text": "Welche Zahlen passen in das Kästchen? −3⁄4 < ▢ < −1⁄2\nKreuze alle an.",
    "mehrfach": true,
    "optionen": [
     {
@@ -6595,7 +6609,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Welche Ziffern können im Kästchen stehen? −4,▢5 > −4,35 Kreuze alle an.",
+   "text": "Welche Ziffern können im Kästchen stehen? −4,▢5 > −4,35\nKreuze alle an.",
    "mehrfach": true,
    "optionen": [
     {
@@ -7449,15 +7463,29 @@
    "kompetenz": [
     "symbolisch"
    ],
-   "format": "zahl",
-   "text": "Welche Zahl liegt genau in der Mitte zwischen −3⁄5 und 3⁄5? Kürze vollständig.",
-   "loesung": 0,
-   "typischeFehler": [],
+   "format": "bruch",
+   "text": "Welche Zahl liegt genau in der Mitte zwischen −3⁄8 und 3⁄4? Kürze vollständig.",
+   "loesung": "3⁄16",
+   "typischeFehler": [
+    {
+     "wert": "9⁄16",
+     "fehlvorstellung": "abstand-ueber-null"
+    },
+    {
+     "wert": "−3⁄16",
+     "fehlvorstellung": "vorzeichen-vergessen"
+    },
+    {
+     "wert": "3⁄8",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
    "hilfen": {
     "tipp": "Addiere beide Brüche und halbiere die Summe."
    },
+   "gekuerzt": true,
    "nachweis": [
-    "(−3⁄5 + 3⁄5) : 2 = 0"
+    "(−3⁄8 + 3⁄4) : 2 = 3⁄16"
    ]
   },
   {
@@ -7468,26 +7496,24 @@
    "kompetenz": [
     "symbolisch"
    ],
-   "format": "bruch",
-   "text": "Wie groß ist der Abstand zwischen −1⁄4 und 5⁄6? Kürze vollständig.",
-   "loesung": "1 1⁄12",
-   "gemischt": true,
+   "format": "zahl",
+   "text": "Wie groß ist der Abstand zwischen −1⁄2 und 1⁄2? Kürze vollständig.",
+   "loesung": 1,
    "typischeFehler": [
     {
-     "wert": "7⁄12",
+     "wert": 0,
      "fehlvorstellung": "abstand-ueber-null"
     },
     {
-     "wert": "−1 1⁄12",
+     "wert": -1,
      "fehlvorstellung": "vorzeichen-vergessen"
     }
    ],
    "hilfen": {
     "tipp": "Über die Null hinweg addieren sich die Beträge. Mache die Brüche zuerst gleichnamig."
    },
-   "gekuerzt": true,
    "nachweis": [
-    "5⁄6 − (−1⁄4) = 1 1⁄12"
+    "1⁄2 − (−1⁄2) = 1"
    ]
   },
   {
@@ -7499,19 +7525,19 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Zahl −3,1 liegt genau in der Mitte zwischen −6,3 und einer zweiten Zahl. Wie heißt die zweite Zahl?",
-   "loesung": "0,1",
+   "text": "Die Zahl −2,7 liegt genau in der Mitte zwischen −4,5 und einer zweiten Zahl. Wie heißt die zweite Zahl?",
+   "loesung": "−0,9",
    "typischeFehler": [
     {
-     "wert": "−9,5",
+     "wert": "−6,3",
      "fehlvorstellung": "richtung-vertauscht"
     },
     {
-     "wert": "3,2",
+     "wert": "1,8",
      "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
-     "wert": "−0,1",
+     "wert": "0,9",
      "fehlvorstellung": "vorzeichen-vergessen"
     }
    ],
@@ -7519,7 +7545,7 @@
     "tipp": "Die zweite Zahl ist von der Mitte genauso weit entfernt wie die erste, nur auf der anderen Seite."
    },
    "nachweis": [
-    "2 · (−3,1) − (−6,3) = 0,1"
+    "2 · (−2,7) − (−4,5) = −0,9"
    ]
   },
   {
@@ -7531,15 +7557,15 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Das Ufer des Toten Meeres liegt bei −265 m, ein Berggipfel bei 2682 m. Wie groß ist der Höhenunterschied?",
-   "loesung": 2947,
+   "text": "Das Ufer des Toten Meeres liegt bei −377 m, ein Berggipfel bei 4775 m. Wie groß ist der Höhenunterschied?",
+   "loesung": 5152,
    "typischeFehler": [
     {
-     "wert": 2417,
+     "wert": 4398,
      "fehlvorstellung": "abstand-ueber-null"
     },
     {
-     "wert": -2947,
+     "wert": -5152,
      "fehlvorstellung": "vorzeichen-vergessen"
     }
    ],
@@ -7547,7 +7573,7 @@
     "tipp": "Der Höhenunterschied geht über die Höhe 0 hinweg."
    },
    "nachweis": [
-    "2682 − (−265) = 2947"
+    "4775 − (−377) = 5152"
    ],
    "einheit": "m"
   },
@@ -7560,30 +7586,30 @@
     "symbolisch"
    ],
    "format": "luecken",
-   "text": "Zwei Zahlen haben von −3 den Abstand 4,73. Die kleinere Zahl ist {{a}}, die größere Zahl ist {{b}}.",
+   "text": "Zwei Zahlen haben von −0,9 den Abstand 1,53. Die kleinere Zahl ist {{a}}, die größere Zahl ist {{b}}.",
    "luecken": {
     "a": {
-     "loesung": "−7,73",
+     "loesung": "−2,43",
      "typischeFehler": [
       {
-       "wert": "−1,73",
+       "wert": "−0,63",
        "fehlvorstellung": "vorzeichen-vergessen"
       },
       {
-       "wert": "1,73",
+       "wert": "0,63",
        "fehlvorstellung": "richtung-vertauscht"
       }
      ]
     },
     "b": {
-     "loesung": "1,73",
+     "loesung": "0,63",
      "typischeFehler": [
       {
-       "wert": "−7,73",
+       "wert": "−2,43",
        "fehlvorstellung": "richtung-vertauscht"
       },
       {
-       "wert": "7,73",
+       "wert": "2,43",
        "fehlvorstellung": "vorzeichen-vergessen"
       }
      ]
@@ -7593,8 +7619,8 @@
     "tipp": "Gehe von der Zahl aus einmal nach links und einmal nach rechts."
    },
    "nachweis": [
-    "−3 − 4,73 = −7,73",
-    "−3 + 4,73 = 1,73"
+    "−0,9 − 1,53 = −2,43",
+    "−0,9 + 1,53 = 0,63"
    ]
   },
   {
@@ -10280,7 +10306,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−9⁄11) + (−8⁄11) Kürze vollständig.",
+   "text": "Berechne: (−9⁄11) + (−8⁄11)\nKürze vollständig.",
    "loesung": "−1 6⁄11",
    "gemischt": true,
    "typischeFehler": [
@@ -10315,7 +10341,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−1 5⁄8) + (+3⁄8) Kürze vollständig.",
+   "text": "Berechne: (−1 5⁄8) + (+3⁄8)\nKürze vollständig.",
    "loesung": "−1 1⁄4",
    "gemischt": true,
    "typischeFehler": [
@@ -10448,7 +10474,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−1⁄2) + (+4⁄5) Kürze vollständig.",
+   "text": "Berechne: (−1⁄2) + (+4⁄5)\nKürze vollständig.",
    "loesung": "3⁄10",
    "typischeFehler": [
     {
@@ -10485,7 +10511,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: −7⁄8 + 0,25 Gib das Ergebnis als vollständig gekürzten Bruch an.",
+   "text": "Berechne: −7⁄8 + 0,25\nGib das Ergebnis als vollständig gekürzten Bruch an.",
    "loesung": "−5⁄8",
    "typischeFehler": [
     {
@@ -10556,7 +10582,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Welche Zahl fehlt? ▢ + (−1 1⁄2) = 2⁄3 Kürze vollständig und schreibe als gemischte Zahl.",
+   "text": "Welche Zahl fehlt? ▢ + (−1 1⁄2) = 2⁄3\nKürze vollständig und schreibe als gemischte Zahl.",
    "loesung": "2 1⁄6",
    "gemischt": true,
    "typischeFehler": [
@@ -12159,7 +12185,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (+3⁄5) − (+4⁄5) Kürze vollständig.",
+   "text": "Berechne: (+3⁄5) − (+4⁄5)\nKürze vollständig.",
    "loesung": "−1⁄5",
    "typischeFehler": [
     {
@@ -12193,7 +12219,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−5⁄9) − (−1 2⁄9) Kürze vollständig.",
+   "text": "Berechne: (−5⁄9) − (−1 2⁄9)\nKürze vollständig.",
    "loesung": "2⁄3",
    "typischeFehler": [
     {
@@ -12326,7 +12352,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (+1⁄3) − (+1⁄2) Kürze vollständig.",
+   "text": "Berechne: (+1⁄3) − (+1⁄2)\nKürze vollständig.",
    "loesung": "−1⁄6",
    "typischeFehler": [
     {
@@ -12359,7 +12385,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: −7⁄8 − 0,25 Gib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an.",
+   "text": "Berechne: −7⁄8 − 0,25\nGib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an.",
    "loesung": "−1 1⁄8",
    "gemischt": true,
    "typischeFehler": [
@@ -12431,7 +12457,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Welche Zahl fehlt? ▢ − (−1 1⁄4) = 1⁄3 Kürze vollständig.",
+   "text": "Welche Zahl fehlt? ▢ − (−1 1⁄4) = 1⁄3\nKürze vollständig.",
    "loesung": "−11⁄12",
    "typischeFehler": [
     {
@@ -13281,7 +13307,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−10⁄13) − (−4⁄13) + (−3⁄13) Kürze vollständig.",
+   "text": "Berechne: (−10⁄13) − (−4⁄13) + (−3⁄13)\nKürze vollständig.",
    "loesung": "−9⁄13",
    "typischeFehler": [
     {
@@ -13406,7 +13432,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: −1⁄2 − (1⁄5 − 9⁄10) Kürze vollständig.",
+   "text": "Berechne: −1⁄2 − (1⁄5 − 9⁄10)\nKürze vollständig.",
    "loesung": "1⁄5",
    "typischeFehler": [
     {
@@ -14335,16 +14361,20 @@
    "kompetenz": [
     "symbolisch"
    ],
-   "format": "zahl",
-   "text": "Berechne geschickt: −3⁄13 + 8⁄13 − 10⁄13 + 5⁄13 Kürze vollständig.",
-   "loesung": 0,
+   "format": "bruch",
+   "text": "Berechne geschickt: −12⁄13 + 4⁄13 − 1⁄13 + 2⁄13\nKürze vollständig.",
+   "loesung": "−7⁄13",
    "typischeFehler": [
     {
-     "wert": 2,
+     "wert": "7⁄13",
+     "fehlvorstellung": "vorzeichen-vergessen"
+    },
+    {
+     "wert": "1 6⁄13",
      "fehlvorstellung": "betraege-addiert"
     },
     {
-     "wert": 1,
+     "wert": "6⁄13",
      "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
@@ -14352,8 +14382,9 @@
     "tipp": "Fasse die beiden negativen Brüche zusammen. Sie ergeben hier ein Ganzes.",
     "loesungsschritt": "Addiere erst die Zähler mit Minus, dann die Zähler mit Plus. Der Nenner bleibt."
    },
+   "gekuerzt": true,
    "nachweis": [
-    "−3⁄13 + 8⁄13 − 10⁄13 + 5⁄13 = 0"
+    "−12⁄13 + 4⁄13 − 1⁄13 + 2⁄13 = −7⁄13"
    ]
   },
   {
@@ -14365,15 +14396,15 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Berechne geschickt: 1 − 2 + 3 − 4 + … + 19 − 20 Bilde dazu Paare.",
-   "loesung": -10,
+   "text": "Berechne geschickt: 1 − 2 + 3 − 4 + … + 21 − 22\nBilde dazu Paare.",
+   "loesung": -11,
    "typischeFehler": [
     {
-     "wert": 10,
+     "wert": 11,
      "fehlvorstellung": "vorzeichen-vergessen"
     },
     {
-     "wert": -20,
+     "wert": -22,
      "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
@@ -14386,7 +14417,7 @@
     "loesungsschritt": "Jedes Paar ergibt −1. Zähle, wie viele Paare es sind."
    },
    "nachweis": [
-    "20 : 2 · (1 − 2) = −10"
+    "22 : 2 · (1 − 2) = −11"
    ]
   },
   {
@@ -14398,15 +14429,15 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Berechne geschickt: −11,73 + 6,3 − 10,27 + 11,7 − 4,761",
-   "loesung": "−8,761",
+   "text": "Berechne geschickt: −13,71 + 5,6 − 15,29 + 9,4 − 3,441",
+   "loesung": "−17,441",
    "typischeFehler": [
     {
-     "wert": "8,761",
+     "wert": "17,441",
      "fehlvorstellung": "vorzeichen-vergessen"
     },
     {
-     "wert": "44,761",
+     "wert": "47,441",
      "fehlvorstellung": "betraege-addiert"
     }
    ],
@@ -14414,7 +14445,7 @@
     "tipp": "Suche Zahlen mit gleichem Vorzeichen, die zusammen eine ganze Zahl ergeben."
    },
    "nachweis": [
-    "−11,73 + 6,3 − 10,27 + 11,7 − 4,761 = −8,761"
+    "−13,71 + 5,6 − 15,29 + 9,4 − 3,441 = −17,441"
    ]
   },
   {
@@ -14426,20 +14457,16 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne geschickt: −2⁄3 + 5⁄8 − 1⁄3 + 1⁄8 Kürze vollständig.",
-   "loesung": "−1⁄4",
+   "text": "Berechne geschickt: −1⁄7 + 1⁄4 − 6⁄7 + 1⁄4\nKürze vollständig.",
+   "loesung": "−1⁄2",
    "typischeFehler": [
     {
-     "wert": "1⁄4",
+     "wert": "1⁄2",
      "fehlvorstellung": "vorzeichen-vergessen"
     },
     {
-     "wert": "1 3⁄4",
+     "wert": "1 1⁄2",
      "fehlvorstellung": "betraege-addiert"
-    },
-    {
-     "wert": "3⁄4",
-     "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
    "hilfen": {
@@ -14447,7 +14474,7 @@
    },
    "gekuerzt": true,
    "nachweis": [
-    "−2⁄3 + 5⁄8 − 1⁄3 + 1⁄8 = −1⁄4"
+    "−1⁄7 + 1⁄4 − 6⁄7 + 1⁄4 = −1⁄2"
    ]
   },
   {
@@ -14459,19 +14486,19 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Berechne geschickt: −1440 + 2900 − 560 + 5100",
-   "loesung": 6000,
+   "text": "Berechne geschickt: −1450 + 3030 − 2550 + 1970",
+   "loesung": 1000,
    "typischeFehler": [
     {
-     "wert": -6000,
+     "wert": -1000,
      "fehlvorstellung": "vorzeichen-vergessen"
     },
     {
-     "wert": 10000,
+     "wert": 9000,
      "fehlvorstellung": "betraege-addiert"
     },
     {
-     "wert": 7120,
+     "wert": 6100,
      "fehlvorstellung": "vorzeichen-vergessen"
     }
    ],
@@ -14479,7 +14506,7 @@
     "tipp": "Fasse erst die negativen und dann die positiven Zahlen zu glatten Tausendern zusammen."
    },
    "nachweis": [
-    "−1440 + 2900 − 560 + 5100 = 6000"
+    "−1450 + 3030 − 2550 + 1970 = 1000"
    ]
   },
   {
@@ -14491,8 +14518,8 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Berechne die Summe aller ganzen Zahlen von −25 bis 27.",
-   "loesung": 53,
+   "text": "Berechne die Summe aller ganzen Zahlen von −42 bis 44.",
+   "loesung": 87,
    "typischeFehler": [
     {
      "wert": 2,
@@ -14503,7 +14530,7 @@
      "fehlvorstellung": "betrag-gegenzahl"
     },
     {
-     "wert": 27,
+     "wert": 44,
      "fehlvorstellung": "sach-schritt-vergessen"
     }
    ],
@@ -14511,7 +14538,7 @@
     "tipp": "Jede Zahl hebt sich mit ihrer Gegenzahl auf. Übrig bleiben nur die Zahlen, die keinen Partner haben."
    },
    "nachweis": [
-    "27 − 1 + 27 = 53"
+    "44 − 1 + 44 = 87"
    ]
   },
   {
@@ -14523,7 +14550,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Noah stellt um: 58 − 70 + 39 = 70 − 58 + 39. Stimmt das?",
+   "text": "Paul stellt um: 59 − 91 + 38 = 91 − 59 + 38. Stimmt das?",
    "mehrfach": false,
    "optionen": [
     {
@@ -14532,11 +14559,11 @@
      "fehlvorstellung": "vorzeichen-vergessen"
     },
     {
-     "text": "Falsch. Richtig ist: 58 − 70 + 39 = 58 + 39 − 70.",
+     "text": "Falsch. Richtig ist: 59 − 91 + 38 = 59 + 38 − 91.",
      "richtig": true
     },
     {
-     "text": "Falsch. Richtig ist: 58 − 70 + 39 = 58 − 39 + 70.",
+     "text": "Falsch. Richtig ist: 59 − 91 + 38 = 59 − 38 + 91.",
      "richtig": false,
      "fehlvorstellung": "vorzeichen-vergessen"
     }
@@ -14548,7 +14575,7 @@
     {
      "art": "urteil",
      "stimmt": false,
-     "behauptung": "58 − 70 + 39 = 70 − 58 + 39"
+     "behauptung": "59 − 91 + 38 = 91 − 59 + 38"
     }
    ]
   },
@@ -14561,15 +14588,15 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Welche Zahl fehlt? −4,8 + ▢ − 5,2 + 3,7 = 0",
-   "loesung": "6,3",
+   "text": "Welche Zahl fehlt? −1,9 + ▢ − 8,1 + 3,1 = 0",
+   "loesung": "6,9",
    "typischeFehler": [
     {
-     "wert": "−6,3",
+     "wert": "−6,9",
      "fehlvorstellung": "vorzeichen-vergessen"
     },
     {
-     "wert": "13,7",
+     "wert": "13,1",
      "fehlvorstellung": "betraege-addiert"
     },
     {
@@ -14581,7 +14608,7 @@
     "tipp": "Fasse zuerst alle bekannten Zahlen zusammen. Die fehlende Zahl ist die Gegenzahl dieser Summe."
    },
    "nachweis": [
-    "4,8 + 5,2 − 3,7 = 6,3"
+    "1,9 + 8,1 − 3,1 = 6,9"
    ]
   },
   {
@@ -16245,7 +16272,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−2⁄5) · (−4⁄7) Kürze vollständig.",
+   "text": "Berechne: (−2⁄5) · (−4⁄7)\nKürze vollständig.",
    "loesung": "8⁄35",
    "typischeFehler": [
     {
@@ -16404,7 +16431,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−1 1⁄4) · 2⁄5 Kürze vollständig.",
+   "text": "Berechne: (−1 1⁄4) · 2⁄5\nKürze vollständig.",
    "loesung": "−1⁄2",
    "typischeFehler": [
     {
@@ -16433,7 +16460,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−2⁄5) · 1,5 Gib das Ergebnis als vollständig gekürzten Bruch an.",
+   "text": "Berechne: (−2⁄5) · 1,5\nGib das Ergebnis als vollständig gekürzten Bruch an.",
    "loesung": "−3⁄5",
    "typischeFehler": [
     {
@@ -16552,7 +16579,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Welche Zahl fehlt? ▢ · (−1 1⁄3) = 2⁄3 Kürze vollständig.",
+   "text": "Welche Zahl fehlt? ▢ · (−1 1⁄3) = 2⁄3\nKürze vollständig.",
    "loesung": "−1⁄2",
    "typischeFehler": [
     {
@@ -18222,7 +18249,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−6⁄7) : 3 Kürze vollständig.",
+   "text": "Berechne: (−6⁄7) : 3\nKürze vollständig.",
    "loesung": "−2⁄7",
    "typischeFehler": [
     {
@@ -18252,7 +18279,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−2⁄3) : 4⁄9 Kürze vollständig.",
+   "text": "Berechne: (−2⁄3) : 4⁄9\nKürze vollständig.",
    "loesung": "−1 1⁄2",
    "gemischt": true,
    "typischeFehler": [
@@ -18402,7 +18429,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−7⁄8) : 0,5 Gib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an.",
+   "text": "Berechne: (−7⁄8) : 0,5\nGib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an.",
    "loesung": "−1 3⁄4",
    "gemischt": true,
    "typischeFehler": [
@@ -18432,7 +18459,7 @@
     "symbolisch"
    ],
    "format": "bruch",
-   "text": "Berechne: (−2⁄3) : 1⁄6 : (−3) Kürze vollständig.",
+   "text": "Berechne: (−2⁄3) : 1⁄6 : (−3)\nKürze vollständig.",
    "loesung": "1 1⁄3",
    "gemischt": true,
    "typischeFehler": [
@@ -21458,7 +21485,7 @@
     "modellieren"
    ],
    "format": "luecken",
-   "text": "Wien: am Tag 5,3 °C, in der Nacht −5,3 °C. Kiruna: am Tag −2,1 °C, in der Nacht −15,8 °C. Der Temperaturunterschied ist in Wien {{a}} Grad und in Kiruna {{b}} Grad.",
+   "text": "Wien: am Tag 5,3 °C, in der Nacht −5,3 °C.\nKiruna: am Tag −2,1 °C, in der Nacht −15,8 °C.\nTemperaturunterschied in Wien: {{a}} Grad\nTemperaturunterschied in Kiruna: {{b}} Grad",
    "luecken": {
     "a": {
      "loesung": "10,6",
@@ -22596,7 +22623,7 @@
     "modellieren"
    ],
    "format": "luecken",
-   "text": "Auf dem Kontoauszug steht S für Soll und H für Haben. Alle Buchungen im Soll ergeben zusammen {{a}} €. Alle Buchungen im Haben ergeben zusammen {{b}} €. Der Kontostand ändert sich insgesamt um {{c}} €.",
+   "text": "Auf dem Kontoauszug steht S für Soll und H für Haben.\nAlle Buchungen im Soll: {{a}} €\nAlle Buchungen im Haben: {{b}} €\nÄnderung des Kontostands insgesamt: {{c}} €",
    "luecken": {
     "a": {
      "loesung": 405,

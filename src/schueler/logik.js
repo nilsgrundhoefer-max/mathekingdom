@@ -124,7 +124,7 @@ export function indexiere(pool) {
 export function leseZahl(text) {
   const m = String(text ?? '').replace(/[\s\u00a0\u202f.']/g, '').match(/^([+\-−–]?)(\d+)$/);
   if (!m) return NaN;
-  return m[1] && m[1] !== '+' ? -Number(m[2]) : Number(m[2]);
+  return m[1] && m[1] !== '+' ? -Number(m[2]) || 0 : Number(m[2]);
 }
 function pruefeZahl(teil, eingabe) {
   // Kapitel 9: Eine Lösung als Text („0,25“) ist eine Dezimalzahl.

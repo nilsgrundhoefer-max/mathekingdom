@@ -165,6 +165,7 @@ export function vergleichen() {
     () => { const ws = mische([[Q(-2, 3), 'b'], [Q(-3, 4), 'b'], [Q(-5, 6), 'b'], [D(-zz(68, 73), 2), 'd'], [Q(-3, 5), 'b'], [D(-zz(77, 82), 2), 'd'], [Q(-7, 8), 'b']]).slice(0, 5), form = new Map(ws.map(([x, f]) => [String(x), f]));
       return ordne(ws.map(([x]) => x), 'd', H(3, 'Mache die Brüche gleichnamig oder wandle alles in Dezimalzahlen um.'), { ab: true, text: (x) => T(x, form.get(String(x))) }); },
     () => { const [n1, n2] = wahl([[4, 2], [3, 6], [8, 4], [5, 10], [3, 4]]), a = Q(-zz(1, n1 - 1), n1), b = Q(zz(1, n2 - 1), n2);
+      if (durch(plus(a, b), 2)[1] === 1 || b[1] !== n2 || a[1] !== n1) return null; // Die Mitte soll ein echter Bruch sein, beide Brüche stehen gekürzt da.
       return mitte(`Welche Zahl liegt genau in der Mitte zwischen ${bt(a)} und ${bt(b)}? Kürze vollständig.`, a, b, 'b', H(3, 'Addiere beide Brüche und halbiere die Summe.')); },
     () => { const [n1, n2] = wahl([[3, 4], [2, 5], [4, 6], [3, 8], [5, 6]]), a = Q(-zz(1, n1 - 1), n1), b = Q(zz(1, n2 - 1), n2);
       return abstand(`Wie groß ist der Abstand zwischen ${bt(a)} und ${bt(b)}? Kürze vollständig.`, a, b, 'b', H(3, 'Über die Null hinweg addieren sich die Beträge. Mache die Brüche zuerst gleichnamig.')); },

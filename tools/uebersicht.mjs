@@ -21,14 +21,14 @@ const zahl = (a) => `**${a.loesung}${a.einheit ? ' ' + a.einheit : ''}**${a.tole
 const FORMWORT = { kreis: 'Kreis', rechteck: 'Rechteck', streifen: 'Streifen', menge: 'Kugeln', hundert: 'Hunderterfeld' };
 const figurText = (f, leer = false) => { const je = f.form === 'rechteck' ? f.reihen * f.spalten : f.form === 'hundert' ? 100 : f.teile;
   return `${f.n ? `${f.n}: ` : ''}${f.ganze > 1 ? `${f.ganze} Ganze, je ` : ''}${FORMWORT[f.form]}${f.form === 'rechteck' ? ` ${f.reihen} × ${f.spalten}` : ''} mit ${je} ${f.ungleich ? 'ungleich großen ' : ''}Teilen${leer ? '' : `, ${(f.gefaerbt ?? []).length} gefärbt`}`; };
-const amStrahl = (st, w) => { const T = st.teiler ?? 1; if (T === 1 || typeof w !== 'number') return w; if (!/^10*$/.test(String(T))) return w % T === 0 ? String(w / T) : `${w}⁄${T}`;
+const amStrahl = (st, w) => { const T = st.teiler ?? 1; if (T === 1 || typeof w !== 'number') return w; if (w < 0) return `−${amStrahl(st, -w)}`; if (!/^10*$/.test(String(T))) return w % T === 0 ? String(w / T) : `${w}⁄${T}`;
   const nach = String(w % T).padStart(String(T).length - 1, '0').replace(/0+$/, ''); return `${Math.floor(w / T)}${nach ? `,${nach}` : ''}`; };
 // Bild zur Aufgabe in Worten, damit die Durchsicht auch ohne Dashboard sieht, was gezeichnet wird.
 const wert = (w) => (typeof w === 'object' ? (w.frage ? '?' : w.wert) : w);
 // Kapitel 5 (ADR 0032): ein Karogitter in Worten.
 const pt = (p) => `(${p[0]}|${p[1]})`;
 const LINIE = { strecke: 'Strecke', strahl: 'Strahl', gerade: 'Gerade' };
-const gitterText = (g) => [`${g.achsen ? 'Koordinatensystem' : 'Karogitter'} ${g.b} × ${g.h}`,
+const gitterText = (g) => [`${g.achsen ? 'Koordinatensystem' : 'Karogitter'} ${g.b} × ${g.h}${g.ursprung ? ` mit vier Quadranten, Nullpunkt bei Kästchen ${g.ursprung.join('|')}` : ''}`,
   g.punkte?.length && `Punkte ${g.punkte.map((p) => `${p.n ?? ''}${pt([p.x, p.y])}`).join(', ')}`,
   g.linien?.length && g.linien.map((l) => `${l.stil === 'achse' ? 'Symmetrieachse' : LINIE[l.art]}${l.n ? ` ${l.n}` : ''} durch ${pt(l.a)} und ${pt(l.b)}`).join(', '),
   g.figuren?.length && g.figuren.map((f) => `Figur${f.n ? ` ${f.n}` : ''} mit den Ecken ${f.ecken.map(pt).join(' ')}`).join(', '),
@@ -78,7 +78,9 @@ const bild = (b) => {
       const masse = (b.masse ?? []).map((x) => (x.frage ? '?' : x.text ?? `${Math.abs(x.q[0] - x.p[0]) + Math.abs(x.q[1] - x.p[1])} ${e}`));
       return `${b.skizze ? 'Skizze, nicht maßstäblich' : `${{ kaestchen: 'Kästchenraster', cm: 'Zentimeterraster, 1 Feld = 1 cm²', m: 'Raster, 1 Feld = 1 m²' }[b.raster] ?? 'Raster'}${b.legende ? `, 1 Kästchen = ${b.legende}` : ''}`}; ${b.figuren.map(figur).join('; ')}${b.skizze ? ` (in ${e})` : ''}${masse.length ? `; Maße ${masse.join(', ')}` : ''}`;
     },
-    zahlenstrahl: () => `Zahlenstrahl ${amStrahl(b, b.von)} bis ${amStrahl(b, b.bis)}${b.schritt ? `, Teilstriche alle ${amStrahl(b, b.schritt)}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${amStrahl(b, wert(b.pfeil))}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.map((x) => amStrahl(b, x)).join(', ')}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${x.von} nach ${x.nach} (${x.text})`).join(', ')}` : ''}`,
+    // Klasse 7 Kapitel 1 (ADR 0043)
+    thermometer: () => `${b.saeulen.length > 1 ? `${b.saeulen.length} Thermometer` : 'Thermometer'} von ${b.von} °C bis ${b.bis} °C, Striche alle ${b.schritt} Grad: ${b.saeulen.map((x) => `${x.n ?? x.name ?? x.text ?? ''} ${x.wert == null || typeof x.wert === 'object' ? '?' : `${x.wert} °C`}`.trim()).join(', ')}`,
+    zahlenstrahl: () => `${b.von < 0 ? 'Zahlengerade' : 'Zahlenstrahl'} ${amStrahl(b, b.von)} bis ${amStrahl(b, b.bis)}${b.schritt ? `, Teilstriche alle ${amStrahl(b, b.schritt)}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${amStrahl(b, wert(b.pfeil))}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.map((x) => amStrahl(b, x)).join(', ')}` : ''}${b.start != null ? `, Startpunkt ${amStrahl(b, b.start)}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${amStrahl(b, x.von)} nach ${amStrahl(b, x.nach)} (${x.text})`).join(', ')}` : ''}`,
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
 };
@@ -162,6 +164,8 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
   if (pool.aufgaben.some((a) => a.lernziel === l.id)) continue;
   md += `- ${l.id} ${l.text} Baut auf: ${l.voraussetzungen?.length ? l.voraussetzungen.map((v) => `${v} (${alleLernziele.get(v)})`).join(', ') : 'nur Grundschulstoff'}\n`;
 }
+// Ab Klasse 7 (ADR 0043) stehen negative Zahlen mit dem echten Minuszeichen in der Übersicht, so wie die App sie zeigt.
+if (stufe >= 7) md = md.replace(/(?<![\w−-])-(?=\d)/g, '−');
 const ziel = stufe === 5 ? 'aufgaben-klasse-5-pilot.md' : `aufgaben-klasse-${stufe}.md`;
 writeFileSync(new URL(`../docs/${ziel}`, import.meta.url), md);
 console.log(`Übersicht geschrieben: docs/${ziel}`);
