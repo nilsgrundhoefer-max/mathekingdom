@@ -65,7 +65,7 @@ function speicherMeldung(status) {
 const FOKUS = new Set(['aufgabe', 'heftcheck', 'wegstueck']);
 const imFokus = () => Boolean(z.stand) && FOKUS.has(z.ansicht.name);
 function male() {
-  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, wappen: wappenAnsicht, koennen: koennenAnsicht, spiele: spieleAnsicht, minispiel };
+  const ansichten = { anmeldung, schlossgarten, region: regionsAnsicht, aufgabe: aufgabenAnsicht, heftcheck: heftcheckAnsicht, wegstueck: wegstueckAnsicht, feedback: feedbackAnsicht, wappen: wappenAnsicht, koennen: koennenAnsicht, spiele: spieleAnsicht, minispiel };
   const fokus = imFokus();
   wurzel.classList.toggle('fokus', fokus);
   // Neu verdiente Ehrenzeichen (ADR 0018) zeigt das Zeichen am Knopf „Wappen“ an. Nicht mitten in einer Aufgabe prüfen.
@@ -1104,6 +1104,8 @@ function pruefe(formular, sicher = null) {
   if (zaehltFuerWegstueck(a)) buchung.wegstueck = L.trageWegstueckEin(z.stand, auf, { richtig: ergebnis.richtig, muenzen: buchung.muenzen, seitenblick: Boolean(a.seitenblick) }, jetzt());
   // „Du kannst mehr, als du denkst“ (ADR 0017): nach „unsicher“ und richtig, höchstens einmal je Wegstück.
   if (zaehltFuerWegstueck(a)) buchung.mut = L.mutSatzFaellig(z.stand);
+  // Feedbackfrage (ADR 0042): Rückblick und Einstiegscheck zählen nicht.
+  if (!a.rueckblick && !a.einstieg && !a.heftNachloesen) L.zaehleFuerFeedback(z.stand, z.einst.feedback);
   if (ergebnis.richtig && z.einst.ton) klinge(buchung.wegstueck?.fertig || buchung.neuesLernziel ? 'gross' : 'klein');
   buchung.anspruchFehlt = !buchung.neuesLernziel && L.lernzielStand(z.stand, auf.lernziel, z.einst.zielniveau, z.index).anspruchFehlt;
   z.stand.aktiv = null;
@@ -1156,6 +1158,11 @@ function loesungstext(auf) {
 // Nach dem Ergebnis: Ist gerade ein Wegstück fertig geworden, kommt erst sein Abschluss (ADR 0016).
 function danach(a, fortsetzung) {
   return bereit(() => {
+    // Feedbackfrage nach dem Ergebnis, vor allem anderen (ADR 0042). Danach geht es weiter wie ohne sie.
+    if (!a.rueckblick && !a.einstieg && L.feedbackFaellig(z.stand, z.einst.feedback)) {
+      const frage = L.naechsteFeedbackFrage(z.stand, { tipp: (a.hilfen ?? 0) >= 1, bild: Boolean(a.aufgabe?.bild) });
+      if (frage) return zeige({ name: 'feedback', frage, aufgabe: a.aufgabe.id, kapitel: L.kapitelVon(a.aufgabe.lernziel), weiter: () => danach(a, fortsetzung)() });
+    }
     const w = a.ergebnis?.wegstueck;
     if (!w?.fertig) return fortsetzung();
     const kapitel = L.kapitelVon(a.aufgabe.lernziel);
@@ -1303,6 +1310,17 @@ function seitenblickErgebnis(a, meilenstein) {
 // ---------- Wegstück (ADR 0016) ----------
 // Abschluss nach fünf Aufgaben: Punkte, Münzen, weiter. Nach jedem vierten Wegstück des Tages eine Rast, überspringbar.
 let rastUhr = null;
+// Feedbackfrage (ADR 0042): eine Frage, zwei Knöpfe, kein Überspringen, keine Münzen.
+function feedbackAnsicht() {
+  const a = z.ansicht, f = a.frage;
+  const antworte = (nr) => { L.trageFeedbackEin(z.stand, f, nr, a.aufgabe, jetzt()); geaendert(); z.dienst.sofort(); a.weiter(); };
+  return h('section', { class: 'karte feedbackfrage', id: 'feedbackfrage' },
+    h('span', { class: 'klein' }, 'Kurze Frage'),
+    h('h1', {}, f.text),
+    f.zurAufgabe && h('p', { class: 'klein' }, 'Es geht um die Aufgabe, die du gerade gelöst hast.'),
+    h('div', { class: 'knoepfe' }, f.antworten.map((t, nr) => h('button', { class: nr === 0 ? 'haupt' : 'schlicht', 'data-feedback': nr, onclick: () => antworte(nr) }, t))),
+    h('p', { class: 'klein' }, 'Deine Antwort hilft, Mathekingdom besser zu machen. Sie zählt nicht für Siegel oder Münzen.'));
+}
 function wegstueckAnsicht() {
   const a = z.ansicht, b = a.bilanz;
   clearInterval(rastUhr);

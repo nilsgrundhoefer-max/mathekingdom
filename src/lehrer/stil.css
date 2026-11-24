@@ -402,3 +402,8 @@ body { margin: 0; background: #f4f1ea; }
 .gemischt .bruch { margin-left: .08em; }
 #mathekingdom-lehrer .marke.hilfegrund { background: #eef2ff; color: #2b3a8a; border-color: #c7d0f5; }
 #mathekingdom-lehrer .marke.grund-technik { background: #f1f1f1; color: #333; border-color: #ccc; }
+/* Feedback und Aufgabenanalyse im Administrator-Dashboard (ADR 0042) */
+#mathekingdom-lehrer .fb-balken { display: flex; width: 160px; height: 12px; border-radius: 6px; overflow: hidden; background: #eceae4; }
+#mathekingdom-lehrer .fb-balken .eins { background: var(--gut); }
+#mathekingdom-lehrer .fb-balken .zwei { background: #c9a27a; }
+#mathekingdom-lehrer tr.auffaellig td { background: var(--hell); }

@@ -736,6 +736,39 @@ async function weiter(seite, wahl = '#weiter') {
   await kontext.close();
 }
 
+// ---------- 2b. Feedbackfrage (ADR 0042): nach jeder dritten Aufgabe eine Frage mit zwei Antworten ----------
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 800 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  await mitStand(seite, { ...leererStand('5A-FEED'), einstieg: { '5.3': { uebersprungen: true } } });
+  await seite.addInitScript(() => { if (!localStorage.getItem('mk-demo-5a/klassendatei.json')) localStorage.setItem('mk-demo-5a/klassendatei.json', JSON.stringify({ aktuellesKapitel: '5.3', feedback: { an: true, alle: 3 } })); });
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-feed');
+  await seite.click('#demo');
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.click('#aufbrechen');
+  for (let i = 0; i < 3; i++) {
+    await seite.waitForSelector('section.aufgabe #pruefen');
+    assert.equal(await seite.locator('#feedbackfrage').count(), 0);
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+    await seite.waitForTimeout(700);
+    await seite.click('#weiter');
+  }
+  await seite.waitForSelector('#feedbackfrage');
+  assert.match(await seite.innerText('#feedbackfrage'), /Wie gefällt dir das Aussehen/);
+  assert.equal(await seite.locator('#feedbackfrage [data-feedback]').count(), 2);
+  await foto(seite, 'feedbackfrage');
+  await seite.click('#feedbackfrage [data-feedback="0"]');
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  const st = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-FEED.json')));
+  assert.deepEqual(st.feedback.map((f) => [f.frage, f.antwort]), [['aussehen', 0]]);
+  assert.equal(st.feedbackSeit, 0);
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 3. Startdatei ohne Netz: Dashboard und Pool kommen aus dem Klassenordner ----------
 {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
@@ -1626,6 +1659,26 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.click('#klassengaben-liste [data-klassengabe-zurueck]');
   await admin.waitForFunction(() => /Briefe? zurückgezogen/.test(document.getElementById('hinweis')?.textContent ?? ''));
   assert.equal(Object.values(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).einst.muenzgaben).flat().filter((g) => g.anKlasse).length, 0);
+  // Teststunde (ADR 0042): Feedback je Klasse einschalten, Aufgabenanalyse von heute, Export ohne Namen und Codes.
+  await admin.click('[data-tab="aufgaben"]');
+  await admin.waitForSelector('#teststunde');
+  await admin.check('[data-feedback-an="5a"]');
+  await admin.waitForFunction(() => /Feedbackfragen in Klasse 5a: an, nach jeder 5\. Aufgabe/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  await admin.selectOption('[data-feedback-alle="5a"]', '10');
+  await admin.waitForFunction(() => /nach jeder 10\. Aufgabe/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  assert.deepEqual(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).einst.feedback, { an: true, alle: 10 });
+  assert.deepEqual(JSON.parse(JSON.parse(await lies(admin, `S/Mathekingdom/${jahr}/5a/klassendatei.json`)).inhalt).feedback, { an: true, alle: 10 });
+  await admin.waitForSelector('#aufgabenanalyse');
+  await admin.locator('#teststunde').screenshot(bilder ? { path: `${bilder}/admin-teststunde.png` } : {});
+  await admin.locator('#feedback').screenshot(bilder ? { path: `${bilder}/admin-feedback.png` } : {});
+  await admin.locator('#aufgabenanalyse').screenshot(bilder ? { path: `${bilder}/admin-aufgabenanalyse.png` } : {});
+  const [download] = await Promise.all([admin.waitForEvent('download'), admin.click('#teststunde-export')]);
+  const export_ = readFileSync(await download.path(), 'utf8');
+  assert.match(download.suggestedFilename(), /^Mathekingdom_Teststunde_alle_\d{4}-\d\d-\d\d\.md$/);
+  assert.match(export_, /# Mathekingdom: Teststunde[\s\S]*## Alle Aufgaben/);
+  assert.doesNotMatch(export_, new RegExp(`Lena|Müller|${code}`), 'ohne Namen und Codes');
+  await admin.uncheck('[data-feedback-an="5a"]');
+  await admin.waitForFunction(() => /Feedbackfragen in Klasse 5a: aus/.test(document.getElementById('hinweis')?.textContent ?? ''));
   // Lehrkraft: Belohnung des Sonderauftrags für die Klasse auf 250 stellen, Münzgabe im Schülerprofil sehen.
   await lehrer.click('[data-tab="klasse"]');
   await lehrer.click('.abschnitte button:has-text("Unterricht")');
@@ -1862,6 +1915,17 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.click('[data-tab="betrieb"]');
   await admin.waitForSelector('#nutzung');
   assert.equal(await admin.locator('[data-nutzung="5t"]').count(), 0);
+  // Die Aufgabenanalyse lässt eine Testklasse gezielt wählen (ADR 0042).
+  await admin.click('[data-tab="aufgaben"]');
+  await admin.waitForSelector('#analyse-klasse');
+  await admin.selectOption('#analyse-klasse', '5t');
+  await admin.waitForFunction(() => /Klasse 5t \(Testklasse\)/.test(document.getElementById('teststunde')?.textContent ?? ''));
+  await admin.selectOption('#analyse-zeitraum', 'alles');
+  await admin.waitForFunction(() => /das ganze Schuljahr/.test(document.getElementById('teststunde')?.textContent ?? ''));
+  await admin.waitForSelector('#aufgabenanalyse [data-analyse]');
+  assert.match(await admin.innerText('#teststunde'), /Klasse 5t \(Testklasse\), das ganze Schuljahr/);
+  await admin.locator('#aufgabenanalyse').screenshot(bilder ? { path: `${bilder}/admin-aufgabenanalyse-testklasse.png` } : {});
+  await admin.selectOption('#analyse-klasse', '');
   await admin.click('[data-tab="klassen"]');
   await admin.waitForSelector('#sim-anhalten');
   await admin.click('#sim-anhalten');

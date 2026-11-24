@@ -759,3 +759,8 @@ body { margin: 0; background: #efe6d2; }
 /* Stellenwerttafel mit Komma: Es steht unten auf der Trennlinie nach den Einern. */
 #mathekingdom table.stellentafel td.kommaspalte { position: relative; }
 #mathekingdom table.stellentafel td.kommaspalte::after { content: ','; position: absolute; right: -.34em; bottom: -.12em; font-size: 2.1rem; font-weight: 700; line-height: 1; color: var(--siegel); z-index: 1; pointer-events: none; }
+/* Feedbackfrage (ADR 0042) */
+#mathekingdom .feedbackfrage { max-width: 620px; margin: 4vh auto 0; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+#mathekingdom .feedbackfrage h1 { font-size: 1.45rem; margin: 4px 0; }
+#mathekingdom .feedbackfrage .knoepfe { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 12px 0 6px; }
+#mathekingdom .feedbackfrage .knoepfe button { min-width: 150px; font-size: 1.1rem; padding: 12px 24px; }

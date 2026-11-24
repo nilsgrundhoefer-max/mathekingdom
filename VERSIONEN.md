@@ -8,6 +8,18 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.49 vom 24.11.2026
+
+### Schüler
+
+- In einer Erprobung fragt Mathekingdom nach einigen Aufgaben kurz nach deiner Meinung, zum Beispiel ob dir das Aussehen gefällt oder ob die Aufgabe zu schwer war. Du klickst eine von zwei Antworten. Das zählt nicht für Siegel oder Münzen.
+
+### Lehrkraft
+
+- Im Administrator-Dashboard gibt es unter „Aufgaben“ die neue Karte „Teststunde“: Klasse und Tag wählen, darunter Feedback und Aufgabenanalyse genau dieser Stunde, dazu „Teststunde exportieren“. Die Datei enthält keine Namen und keine Schülercodes und lässt sich direkt bei Claude hochladen.
+- Feedbackfragen schaltest du je Klasse ein (anfangs aus) und stellst ein, nach jeder wievielten Aufgabe sie kommen (3, 5, 10 oder 20, Standard 5).
+- Die Aufgabenanalyse zeigt je Aufgabe Bearbeitungen, Lösungsquote, ersten Versuch, Dauer im Vergleich zu den übrigen Aufgaben des Lernziels, Hilfekärtchen, Abbrüche, „zu schwer“ aus dem Feedback und die häufigste falsche Antwort. Auffällige Aufgaben stehen oben (ADR 0042).
+
 ## 0.48 vom 24.11.2026
 
 ### Schüler
