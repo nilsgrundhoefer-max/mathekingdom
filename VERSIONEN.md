@@ -8,6 +8,20 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.50 vom 24.11.2026
+
+### Schüler
+
+- Klasse 7 hat ihr erstes Kapitel: „Rationale Zahlen“ mit 8 Meilensteinen und 4 Abstechern (Koordinatensystem, Auf Zahlen gehen, Celsius und Fahrenheit, Girokonto), zusammen 480 Aufgaben.
+- Neben jedem Zahlenfeld steht der Knopf „±“. Er setzt das Minus vor deine Zahl. Du kannst das Minus auch mit dem Bindestrich tippen.
+- Neue Bilder: die Zahlengerade mit negativen Zahlen, das Thermometer, das Koordinatensystem mit vier Quadranten und der Kontoauszug.
+
+### Lehrkraft
+
+- Neuer Aufgabenpool `klasse-7.json` mit dem Jahresplan nach Schnittpunkt 7 (8 Kapitel, 61 Lernziele). Gebaut ist Kapitel 1, die übrigen Tore bleiben zu.
+- Wird ein Lernziel wackelig, führen die Brücken in Klasse 5 und Klasse 6 zurück.
+- Die Zahl ohne Minuszeichen ist als eigene Fehlvorstellung hinterlegt („Vorzeichen vergessen“) und erscheint so in der Diagnose (ADR 0043).
+
 ## 0.49 vom 24.11.2026
 
 ### Schüler

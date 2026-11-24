@@ -842,6 +842,61 @@
    "beschreibung": "Meint, Multiplizieren vergrößert immer und Dividieren verkleinert immer.",
    "hinweis": "Die Hälfte von etwas ist weniger. Malnehmen mit einem Bruch unter 1 macht kleiner, Teilen durch ihn macht größer.",
    "kind": "Du weißt jetzt: Malnehmen mit einem Bruch unter 1 macht kleiner."
+  },
+  "negativ-groesser": {
+   "beschreibung": "Hält bei negativen Zahlen die mit dem größeren Betrag für größer (−8 > −3).",
+   "hinweis": "Schau auf die Zahlengerade: Die Zahl weiter links ist kleiner. Bei −8 ist es kälter als bei −3.",
+   "kind": "Du weißt jetzt: Links auf der Zahlengeraden steht die kleinere Zahl."
+  },
+  "betrag-gegenzahl": {
+   "beschreibung": "Verwechselt Betrag und Gegenzahl oder gibt einen negativen Betrag an.",
+   "hinweis": "Der Betrag ist der Abstand zur Null, er ist nie negativ. Die Gegenzahl liegt auf der anderen Seite der Null.",
+   "kind": "Du unterscheidest jetzt den Abstand zur Null und die Gegenzahl."
+  },
+  "betraege-addiert": {
+   "beschreibung": "Addiert bei verschiedenen Vorzeichen die Beträge (−5 + 3 wird zu 8 oder −8).",
+   "hinweis": "Starte auf der Zahlengeraden bei der ersten Zahl. Plus geht nach rechts. Wo landest du?",
+   "kind": "Du schaust beim Addieren jetzt auf die Vorzeichen."
+  },
+  "minus-minus-uebersehen": {
+   "beschreibung": "Übersieht beim Subtrahieren einer negativen Zahl das doppelte Minus (3 − (−5) wird zu −2).",
+   "hinweis": "Eine negative Zahl abziehen heißt: ihre Gegenzahl addieren. Aus − (−5) wird + 5.",
+   "kind": "Du machst aus Minus und Minus jetzt ein Plus."
+  },
+  "minus-mal-minus": {
+   "beschreibung": "Rechnet Minus mal Minus zu Minus.",
+   "hinweis": "Bestimme zuerst das Vorzeichen: Zwei gleiche Vorzeichen ergeben Plus, zwei verschiedene ergeben Minus.",
+   "kind": "Du weißt jetzt: Minus mal Minus ergibt Plus."
+  },
+  "vorzeichen-division": {
+   "beschreibung": "Teilt nur die Beträge und setzt beim Dividieren das falsche oder kein Vorzeichen.",
+   "hinweis": "Beim Dividieren gilt dieselbe Regel wie beim Multiplizieren: gleiche Vorzeichen Plus, verschiedene Vorzeichen Minus.",
+   "kind": "Du bestimmst beim Teilen jetzt zuerst das Vorzeichen."
+  },
+  "minusklammer": {
+   "beschreibung": "Lässt beim Auflösen einer Minusklammer die Zeichen in der Klammer stehen.",
+   "hinweis": "Steht ein Minus vor der Klammer, drehen sich alle Zeichen in der Klammer um.",
+   "kind": "Du drehst nach einem Minus vor der Klammer jetzt jedes Zeichen um."
+  },
+  "vorzeichen-vergessen": {
+   "beschreibung": "Rechnet mit den Beträgen richtig, gibt das Ergebnis aber ohne oder mit falschem Vorzeichen an.",
+   "hinweis": "Der Betrag stimmt. Prüfe noch das Vorzeichen: Liegt das Ergebnis links oder rechts von der Null?",
+   "kind": "Du schreibst jetzt das Vorzeichen zum Ergebnis."
+  },
+  "richtung-vertauscht": {
+   "beschreibung": "Geht an der Zahlengeraden in die falsche Richtung (Plus nach links, Minus nach rechts) oder verwechselt Zunahme und Abnahme.",
+   "hinweis": "Plus heißt: nach rechts, es wird mehr. Minus heißt: nach links, es wird weniger.",
+   "kind": "Du gehst bei Plus jetzt nach rechts und bei Minus nach links."
+  },
+  "abstand-ueber-null": {
+   "beschreibung": "Zieht beim Abstand zweier Zahlen mit verschiedenen Vorzeichen die Beträge voneinander ab, statt über die Null zu zählen.",
+   "hinweis": "Zähle die Schritte auf der Zahlengeraden: erst bis zur Null, dann weiter bis zur zweiten Zahl.",
+   "kind": "Du zählst den Abstand jetzt über die Null hinweg."
+  },
+  "koord-vorzeichen": {
+   "beschreibung": "Achtet im Koordinatensystem nicht auf das Vorzeichen einer Koordinate (links und rechts oder oben und unten verwechselt).",
+   "hinweis": "Eine negative x-Koordinate liegt links vom Nullpunkt. Eine negative y-Koordinate liegt unter dem Nullpunkt.",
+   "kind": "Du achtest bei jedem Punkt jetzt auf das Vorzeichen der Koordinaten."
   }
  },
  "kompetenzen": {

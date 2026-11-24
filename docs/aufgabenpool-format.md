@@ -163,3 +163,21 @@ Im Format `luecken` wird eine Lücke im Zähler oder Nenner (`{{a}}⁄12`, `3⁄
 Im Format `groesse` wählt der Schüler auf M und E die Einheit aus `einheiten` (mindestens drei). Die Lösung steht in der Grundeinheit (mm, mg, s, ct).
 
 Neue Arten im `nachweis`, nachgerechnet von `tools/pruefe-brueche.mjs`: `erweiterbar`, `kuerzbar`, `gemeinsameTeiler`, `ggt`, `kgv`, `gekuerztwahl`, `abstaende`, `ganze`, `teil`, `schwelle`, `zwischen`, dazu `strahl` mit `rechnung: true`.
+
+## Klasse 7, Kapitel 1 „Rationale Zahlen“ (ADR 0043)
+
+Zahlen mit Vorzeichen: Im Format `zahl` ist `loesung` eine ganze Zahl, auch negativ, oder eine Dezimalzahl als Text mit dem echten Minuszeichen (`"−0,23"`). In `luecken` und `tabelle` gilt dasselbe. Im Format `bruch` steht das Minus vor der ganzen Zahl (`"−1 3⁄4"`). In allen sichtbaren Texten steht „−“ (U+2212), nie der Bindestrich; eine negative Zahl nach einem Rechenzeichen steht in Klammern. `einheit: "€"` lässt einen Betrag mit und ohne Endnull gelten.
+
+| Feld | Inhalt |
+|---|---|
+| `strahl` mit `von` unter 0 | Zahlengerade; `teiler` für Brüche an den Strichen, `spruenge` für Rechenpfeile, `punkte` für Pfeile mit Namen |
+| `gitter.ursprung` | Lage des Ursprungs in Kästchen, zum Beispiel `[5, 5]` in einem Gitter mit `b` und `h` 10: Koordinatensystem mit vier Quadranten. `loesung` und `typischeFehler[].punkte` stehen in Koordinaten, auch negativ. |
+| `bild.art: "thermometer"` | `von`, `bis`, `schritt`, `beschriftung`, `saeulen` aus `wert` und optional `name` (bis zu drei Thermometer nebeneinander) |
+| `daten.art: "auszug"` | Kontoauszug: `kopf` und `zeilen` wie bei einer Tabelle, `"?"` markiert die gesuchte Zelle |
+
+Die Zahlenmauer ist das Format `tabelle` mit `tabelle.art: "mauer"`.
+
+Benannte Arten im `nachweis`, nachgerechnet von `tools/pruefe-rational.mjs`: `bild`, `angabe`, `kontext`, `wert`, `thermowahl`, `frei`, `luecken`, `urteil`, `paare`, `nullfern`, `bereich`, `betragwahl`, `aussagen`, `punkt`, `eintragen`, `punktwahl`, `verschieben`, `quadrant`, `rechteck`, `spiegeln`, `spiegelwahl`, `vergleich`, `extrem`, `einsetzen`, `zaehle`, `ordnung`, `mauer`. Eine Gleichung als Text (`"−5 + 3 = −2"`) rechnet die Prüfung mit Vorzeichen, Brüchen und Dezimalzahlen nach.
+
+Die Vorstufe dieses Pools enthält Lernziele aus Klasse 5 und Klasse 6. Statt `vorstufe.klassenstufe` steht dort `vorstufe.klassenstufen` mit beiden Zahlen.
+

@@ -252,12 +252,24 @@ _Avoid_: Eingangstest, Vortest, Diagnosetest
 Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln, aus einer früheren Klassenstufe oder aus dem Grundschulstoff. Eine Brücke darf deshalb Aufgaben einer früheren Klassenstufe zeigen; die Niveaustufen der eigenen Kapitel richten sich immer nach der eigenen Klassenstufe.
 _Avoid_: Vorwissen (für die Verknüpfung)
 
+**Zahlengerade**:
+Der Zahlenstrahl, sobald er negative Zahlen zeigt (ab Klasse 7). Die Null ist hervorgehoben. In Klasse 5 und 6 heißt das Bild weiter Zahlenstrahl.
+_Avoid_: Zahlenstrahl (für negative Zahlen), Zahlenlinie
+
+**Vorzeichenknopf**:
+Der Knopf „±“ neben jedem Zahlenfeld und jeder Brucheingabe der Klasse 7. Er setzt das Minus vor die Zahl und nimmt es wieder weg. Getippt zählen Bindestrich, Minuszeichen und Halbgeviertstrich gleich.
+_Avoid_: Minus-Taste, Plusminus-Feld
+
+**Kontoauszug**:
+Die Tabelle aus Buchungen und Kontostand im Abstecher „Girokonto“. Eine Gutschrift ist positiv, eine Abbuchung negativ; ab M auch mit Spalte „S/H“ für Soll und Haben.
+_Avoid_: Kontotabelle, Bankauszug
+
 **Brücke**:
 Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard auf M und E vorschlägt, wenn ein Lernziel wackelig wird. Auf G greift stattdessen die Grundlagen-Schleife. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
 _Avoid_: Förderaufgabe, Rückweg
 
 **Vorstufe**:
-Die Lernziele und Aufgaben einer früheren Klassenstufe, auf die ein Lernziel der eigenen Klassenstufe als Voraussetzung zeigt. Ein Schüler begegnet ihnen nur in einer Brücke, nie als eigenem Stoff auf der Karte.
+Die Lernziele und Aufgaben früherer Klassenstufen, auf die ein Lernziel der eigenen Klassenstufe als Voraussetzung zeigt. Ein Schüler begegnet ihnen nur in einer Brücke, nie als eigenem Stoff auf der Karte. Ab Klasse 7 kann die Vorstufe aus mehreren Klassenstufen stammen.
 _Avoid_: Wiederholungskapitel, Klasse-5-Teil
 
 **Sonderauftrag**:

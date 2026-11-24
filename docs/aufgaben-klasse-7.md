@@ -158,72 +158,72 @@ Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahleng
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom Nullpunkt erst nach rechts oder links. Gehe dann nach oben oder unten. *Beispiel:* Der Punkt (−3|2) liegt 3 nach links und 2 nach oben. *Lösungsschritt:* Die erste Zahl gehört zur x-Achse. Links vom Nullpunkt ist sie negativ.
 
-- `01` AFB I · _Kommunizieren_ · Schau auf den Punkt A. / Welche Koordinaten hat A? _(Bild: Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5; Punkte A(−1|2))_
-  - ☐ (1|2)
-  - ☐ (2|−1)
-  - ☑ (−1|2)
-- `02` AFB I · _Kommunizieren_ · Trage den Punkt P(2|−1) ein. / Tippe dazu auf die richtige Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5)_ Lösung: **(2|−1)**
-- `03` AFB I · _Kommunizieren_ · Schau auf den Punkt A. / Schreibe seine Koordinaten auf. / A(▢|▢) _(Bild: Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5; Punkte A(4|−3))_ Lösung: x = **4**, y = **−3**
-- `04` AFB I · _Kommunizieren_ · Trage den Punkt P(−3|−1) ein. / Tippe dazu auf die richtige Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5)_ Lösung: **(−3|−1)**
-- `05` AFB II · _Kommunizieren_ · Schau auf die Punkte A, B und C. / Welcher Punkt hat die Koordinaten (3|−2)? _(Bild: Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5; Punkte A(3|2), B(3|−2), C(−2|3))_
-  - ☐ A
+- `01` AFB I · _Kommunizieren_ · Schau auf den Punkt A. / Welche Koordinaten hat A? _(Bild: Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5; Punkte A(−4|3))_
+  - ☐ (4|3)
+  - ☑ (−4|3)
+  - ☐ (3|−4)
+- `02` AFB I · _Kommunizieren_ · Trage den Punkt P(4|−3) ein. / Tippe dazu auf die richtige Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5)_ Lösung: **(4|−3)**
+- `03` AFB I · _Kommunizieren_ · Schau auf den Punkt A. / Schreibe seine Koordinaten auf. / A(▢|▢) _(Bild: Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5; Punkte A(−3|−1))_ Lösung: x = **−3**, y = **−1**
+- `04` AFB I · _Kommunizieren_ · Trage den Punkt P(−3|−2) ein. / Tippe dazu auf die richtige Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5)_ Lösung: **(−3|−2)**
+- `05` AFB II · _Kommunizieren_ · Schau auf die Punkte A, B und C. / Welcher Punkt hat die Koordinaten (1|−2)? _(Bild: Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5; Punkte A(1|−2), B(1|2), C(−2|1))_
+  - ☐ B
   - ☐ C
-  - ☑ B
-- `06` AFB I · _Kommunizieren_ · Trage den Punkt P(−1|0) ein. / Tippe dazu auf die richtige Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5)_ Lösung: **(−1|0)**
+  - ☑ A
+- `06` AFB I · _Kommunizieren_ · Trage den Punkt P(0|−3) ein. / Tippe dazu auf die richtige Stelle. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 10 × 10 mit vier Quadranten, Nullpunkt bei Kästchen 5|5)_ Lösung: **(0|−3)**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom Nullpunkt erst nach rechts oder links. Gehe dann nach oben oder unten. *Beispiel:* Der Punkt (−3|2) liegt 3 nach links und 2 nach oben. *Lösungsschritt:* Die erste Zahl gehört zur x-Achse. Links vom Nullpunkt ist sie negativ.
 
-- `01` AFB I · _Kommunizieren_ · Schau auf den Punkt A. / Schreibe seine Koordinaten auf. / A(▢|▢) _(Bild: Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte A(−4|−3))_ Lösung: x = **−4**, y = **−3**
-- `02` AFB I · _Kommunizieren_ · Trage die Punkte A(−5|1) und B(1|−5) ein. / Tippe dazu auf die richtigen Stellen. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6)_ Lösung: **(−5|1) (1|−5)**
-- `03` AFB II · _Kommunizieren_ · Starte beim Punkt A. / Gehe 7 Kästchen nach unten. / Trage den Punkt ein, bei dem du landest. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte A(1|2))_ Lösung: **(1|−5)**
-- `04` AFB I · _Kommunizieren_ · Schau auf den Punkt B. / Welche Koordinaten hat B? _(Bild: Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte B(1|−3))_
-  - ☐ (−1|−3)
-  - ☑ (1|−3)
-  - ☐ (−3|1)
-- `05` AFB II · _Kommunizieren_ · Trage die Punkte A(−5|−1), B(−3|4) und C(1|2) ein. / Tippe dazu auf die richtigen Stellen. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6)_ Lösung: **(−5|−1) (−3|4) (1|2)**
-- `06` AFB III · _Kommunizieren_ · Ida soll den Punkt (1|−5) eintragen. / Ida zeichnet aber den Punkt Q. / Welche Koordinaten hat Q wirklich? _(Bild: Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte Q(−1|−5))_
-  - ☐ (1|−5)
-  - ☑ (−1|−5)
-  - ☐ (1|5)
+- `01` AFB I · _Kommunizieren_ · Schau auf den Punkt A. / Schreibe seine Koordinaten auf. / A(▢|▢) _(Bild: Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte A(−5|1))_ Lösung: x = **−5**, y = **1**
+- `02` AFB I · _Kommunizieren_ · Trage die Punkte A(−2|3) und B(6|−4) ein. / Tippe dazu auf die richtigen Stellen. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6)_ Lösung: **(−2|3) (6|−4)**
+- `03` AFB II · _Kommunizieren_ · Starte beim Punkt A. / Gehe 5 Kästchen nach unten. / Trage den Punkt ein, bei dem du landest. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte A(1|2))_ Lösung: **(1|−3)**
+- `04` AFB I · _Kommunizieren_ · Schau auf den Punkt B. / Welche Koordinaten hat B? _(Bild: Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte B(1|−6))_
+  - ☐ (−1|−6)
+  - ☑ (1|−6)
+  - ☐ (−6|1)
+- `05` AFB II · _Kommunizieren_ · Trage die Punkte A(−3|−4), B(−2|5) und C(1|5) ein. / Tippe dazu auf die richtigen Stellen. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6)_ Lösung: **(−3|−4) (−2|5) (1|5)**
+- `06` AFB III · _Kommunizieren_ · Jonas soll den Punkt (4|−6) eintragen. / Jonas zeichnet aber den Punkt Q. / Welche Koordinaten hat Q wirklich? _(Bild: Koordinatensystem 12 × 12 mit vier Quadranten, Nullpunkt bei Kästchen 6|6; Punkte Q(−6|4))_
+  - ☐ (6|−4)
+  - ☐ (4|−6)
+  - ☑ (−6|4)
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Quadranten zählt man oben rechts beginnend gegen den Uhrzeigersinn: I, II, III, IV. *Lösungsschritt:* Schau auf die Vorzeichen: Ist x negativ, liegt der Punkt links. Ist y negativ, liegt er unten.
 
-- `01` AFB I · _Kommunizieren_ · In welchem Quadranten liegt der Punkt P(−2|6)?
+- `01` AFB I · _Kommunizieren_ · In welchem Quadranten liegt der Punkt P(−9|1)?
   - ☑ II. Quadrant
-  - ☐ IV. Quadrant
+  - ☐ I. Quadrant
   - ☐ III. Quadrant
-  - ☐ I. Quadrant
-- `02` AFB II · _Kommunizieren_ · A, B und C sind drei Ecken eines Rechtecks ABCD. Trage die vierte Ecke D ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 14 × 14 mit vier Quadranten, Nullpunkt bei Kästchen 7|7; Punkte A(−6|−3), B(5|−3), C(5|2))_ Lösung: **(−6|2)**
-- `03` AFB II · _Kommunizieren_ · Wo liegt der Punkt P(2|0)?
-  - ☑ auf der x-Achse
   - ☐ IV. Quadrant
-  - ☐ auf der y-Achse
-  - ☐ I. Quadrant
-- `04` AFB I · _Kommunizieren_ · Trage die Punkte A(−8|6), B(−5|−3) und C(2|−6) ins Koordinatensystem ein. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8)_ Lösung: **(−8|6) (−5|−3) (2|−6)**
-- `05` AFB II · _Kommunizieren_ · Der Punkt A wird um 11 Einheiten nach links verschoben. Trage den neuen Punkt ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(4|−4))_ Lösung: **(−7|−4)**
-- `06` AFB III · _Kommunizieren_ · A und C sind gegenüberliegende Ecken eines Rechtecks ABCD. Seine Seiten sind parallel zu den Achsen. Trage B und D ein. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−5|−4), C(5|7))_ Lösung: **(5|−4) (−5|7)**
+- `02` AFB II · _Kommunizieren_ · A, B und C sind drei Ecken eines Rechtecks ABCD. Trage die vierte Ecke D ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 14 × 14 mit vier Quadranten, Nullpunkt bei Kästchen 7|7; Punkte A(−2|−2), B(1|−2), C(1|2))_ Lösung: **(−2|2)**
+- `03` AFB II · _Kommunizieren_ · Wo liegt der Punkt P(0|−7)?
+  - ☐ auf der x-Achse
+  - ☑ auf der y-Achse
+  - ☐ II. Quadrant
+  - ☐ III. Quadrant
+- `04` AFB I · _Kommunizieren_ · Trage die Punkte A(−5|3), B(−2|−6) und C(6|−8) ins Koordinatensystem ein. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8)_ Lösung: **(−5|3) (−2|−6) (6|−8)**
+- `05` AFB II · _Kommunizieren_ · Der Punkt A wird um 10 Einheiten nach links verschoben. Trage den neuen Punkt ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(5|−1))_ Lösung: **(−5|−1)**
+- `06` AFB III · _Kommunizieren_ · A und C sind gegenüberliegende Ecken eines Rechtecks ABCD. Seine Seiten sind parallel zu den Achsen. Trage B und D ein. _(Gitterzeichnen, 2 Punkte antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−7|−2), C(5|5))_ Lösung: **(5|−2) (−7|5)**
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Spiegeln an der x-Achse wechselt die y-Koordinate ihr Vorzeichen, beim Spiegeln an der y-Achse die x-Koordinate.
 
-- `01` AFB I · _Kommunizieren_ · Spiegle den Punkt A an der x-Achse. Trage den Spiegelpunkt ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−1|−5))_ Lösung: **(−1|5)**
-- `02` AFB II · _Kommunizieren_ · Spiegle den Punkt A an der y-Achse. Trage den Spiegelpunkt ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−2|−3))_ Lösung: **(2|−3)**
-- `03` AFB II · _Kommunizieren_ · Das Dreieck ABC wird an der y-Achse gespiegelt. Trage die drei Spiegelpunkte ein. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−6|7), B(−7|−1), C(−6|4))_ Lösung: **(6|7) (7|−1) (6|4)**
-- `04` AFB III · _Kommunizieren_ · Spiegle den Punkt A zuerst an der x-Achse und das Ergebnis dann an der y-Achse. Trage den Punkt ein, der am Ende entsteht. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(4|1))_ Lösung: **(−4|−1)**
-- `05` AFB II · _Kommunizieren_ · Der Punkt P(−11|1) wird an der x-Achse gespiegelt. Welche Koordinaten hat der Spiegelpunkt?
-  - ☐ (1|−11)
-  - ☐ (11|−1)
-  - ☐ (11|1)
-  - ☑ (−11|−1)
-- `06` AFB III · _Kommunizieren_ · Der Punkt P(−8|11) wird an der x-Achse gespiegelt. In welchem Quadranten liegt der Spiegelpunkt?
+- `01` AFB I · _Kommunizieren_ · Spiegle den Punkt A an der x-Achse. Trage den Spiegelpunkt ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−2|−3))_ Lösung: **(−2|3)**
+- `02` AFB II · _Kommunizieren_ · Spiegle den Punkt A an der y-Achse. Trage den Spiegelpunkt ein. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(6|7))_ Lösung: **(−6|7)**
+- `03` AFB II · _Kommunizieren_ · Das Dreieck ABC wird an der y-Achse gespiegelt. Trage die drei Spiegelpunkte ein. _(Gitterzeichnen, 3 Punkte antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−7|1), B(−4|−2), C(−4|1))_ Lösung: **(7|1) (4|−2) (4|1)**
+- `04` AFB III · _Kommunizieren_ · Spiegle den Punkt A zuerst an der x-Achse und das Ergebnis dann an der y-Achse. Trage den Punkt ein, der am Ende entsteht. _(Gitterzeichnen, einen Punkt antippen; Koordinatensystem 16 × 16 mit vier Quadranten, Nullpunkt bei Kästchen 8|8; Punkte A(−6|1))_ Lösung: **(6|−1)**
+- `05` AFB II · _Kommunizieren_ · Der Punkt P(3|8) wird an der y-Achse gespiegelt. Welche Koordinaten hat der Spiegelpunkt?
+  - ☑ (−3|8)
+  - ☐ (−3|−8)
+  - ☐ (8|3)
+  - ☐ (3|−8)
+- `06` AFB III · _Kommunizieren_ · Der Punkt P(2|10) wird an der y-Achse gespiegelt. In welchem Quadranten liegt der Spiegelpunkt?
   - ☐ IV. Quadrant
-  - ☐ II. Quadrant
-  - ☑ III. Quadrant
+  - ☐ III. Quadrant
+  - ☑ II. Quadrant
   - ☐ I. Quadrant
 
 ## 7.1.2-V1: Ich kann rationale Zahlen vergleichen.
@@ -310,7 +310,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche zuerst ohne Vorzeichen, St
   - ☐ =
   - ☐ >
   - ☑ <
-- `05` AFB II · _Argumentieren_ · Welche Zahlen passen in das Kästchen? −2 < ▢ < −1,7 Kreuze alle an.
+- `05` AFB II · _Argumentieren_ · Welche Zahlen passen in das Kästchen? −2 < ▢ < −1,7 / Kreuze alle an.
   - ☑ −1,8
   - ☐ −1,65
   - ☑ −1,71
@@ -329,7 +329,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig. Bei zw
   - ☐ =
   - ☑ <
   - ☐ >
-- `02` AFB II · _Argumentieren_ · Welche Zahlen passen in das Kästchen? −3⁄4 < ▢ < −1⁄2 Kreuze alle an.
+- `02` AFB II · _Argumentieren_ · Welche Zahlen passen in das Kästchen? −3⁄4 < ▢ < −1⁄2 / Kreuze alle an.
   - ☑ −0,55
   - ☐ −4⁄5
   - ☑ −3⁄5
@@ -339,7 +339,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig. Bei zw
   - ☑ <
   - ☐ =
   - ☐ >
-- `04` AFB III · _Argumentieren_ · Welche Ziffern können im Kästchen stehen? −4,▢5 > −4,35 Kreuze alle an.
+- `04` AFB III · _Argumentieren_ · Welche Ziffern können im Kästchen stehen? −4,▢5 > −4,35 / Kreuze alle an.
   - ☐ 5
   - ☐ 3
   - ☐ 9
@@ -396,11 +396,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ordne zuerst die negativen Zahlen. Je
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig oder wandle alles in Dezimalzahlen um.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der größten zur kleinsten Zahl. _(Ordnen; die Karten liegen so da: −2⁄3, −3⁄4, −5⁄6, −0,8, −0,73)_ Lösung: **−2⁄3, −0,73, −3⁄4, −0,8, −5⁄6**
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt genau in der Mitte zwischen −3⁄5 und 3⁄5? Kürze vollständig. Lösung: **0**.
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Abstand zwischen −1⁄4 und 5⁄6? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄12**. Typische Fehler: 7⁄12 (abstand-ueber-null), −1 1⁄12 (vorzeichen-vergessen).
-- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Die Zahl −3,1 liegt genau in der Mitte zwischen −6,3 und einer zweiten Zahl. Wie heißt die zweite Zahl? Lösung: **0,1**. Typische Fehler: −9,5 (richtung-vertauscht), 3,2 (sach-schritt-vergessen), −0,1 (vorzeichen-vergessen).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Ufer des Toten Meeres liegt bei −265 m, ein Berggipfel bei 2682 m. Wie groß ist der Höhenunterschied? Lösung: **2947 m**. Typische Fehler: 2417 (abstand-ueber-null), −2947 (vorzeichen-vergessen).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben von −3 den Abstand 4,73. Die kleinere Zahl ist ▢, die größere Zahl ist ▢. Lösung: a = **−7,73**, b = **1,73**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt genau in der Mitte zwischen −3⁄8 und 3⁄4? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄16**. Typische Fehler: 9⁄16 (abstand-ueber-null), −3⁄16 (vorzeichen-vergessen), 3⁄8 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Abstand zwischen −1⁄2 und 1⁄2? Kürze vollständig. Lösung: **1**. Typische Fehler: 0 (abstand-ueber-null), −1 (vorzeichen-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Die Zahl −2,7 liegt genau in der Mitte zwischen −4,5 und einer zweiten Zahl. Wie heißt die zweite Zahl? Lösung: **−0,9**. Typische Fehler: −6,3 (richtung-vertauscht), 1,8 (sach-schritt-vergessen), 0,9 (vorzeichen-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Ufer des Toten Meeres liegt bei −377 m, ein Berggipfel bei 4775 m. Wie groß ist der Höhenunterschied? Lösung: **5152 m**. Typische Fehler: 4398 (abstand-ueber-null), −5152 (vorzeichen-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben von −0,9 den Abstand 1,53. Die kleinere Zahl ist ▢, die größere Zahl ist ▢. Lösung: a = **−2,43**, b = **0,63**
 
 ## 7.1.X2-W1: Ich kann Wege auf der Zahlengeraden gehen: Start, Schritte und Ziel bestimmen.
 
@@ -562,8 +562,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dezimalzahlen addierst du wie ganze Z
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe beide Zahlen mit zwei Nachkommastellen. *Lösungsschritt:* Verschiedene Vorzeichen: Ziehe den kleineren Betrag vom größeren ab. Das Vorzeichen kommt von der Zahl mit dem größeren Betrag.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−1,63) + (+1,4) Lösung: **−0,23**. Typische Fehler: 0,23 (vorzeichen-vergessen), 3,03 (betraege-addiert), −3,03 (betraege-addiert).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−9⁄11) + (−8⁄11) Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 6⁄11**. Typische Fehler: 1 6⁄11 (vorzeichen-vergessen), −1⁄11 (richtung-vertauscht), −17⁄22 (bruch-add-zaehler-nenner).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−1 5⁄8) + (+3⁄8) Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄4**. Typische Fehler: 1 1⁄4 (vorzeichen-vergessen), −5⁄8 (bruch-add-zaehler-nenner).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−9⁄11) + (−8⁄11) / Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 6⁄11**. Typische Fehler: 1 6⁄11 (vorzeichen-vergessen), −1⁄11 (richtung-vertauscht), −17⁄22 (bruch-add-zaehler-nenner).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−1 5⁄8) + (+3⁄8) / Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄4**. Typische Fehler: 1 1⁄4 (vorzeichen-vergessen), −5⁄8 (bruch-add-zaehler-nenner).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−0,93) + (+1,7) + (−1,76) Lösung: **−0,99**. Typische Fehler: 0,99 (vorzeichen-vergessen), 4,39 (betraege-addiert), 0,77 (sach-schritt-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ + (−2,73) = −2 Lösung: **0,73**. Typische Fehler: −4,73 (richtung-vertauscht), −0,73 (vorzeichen-vergessen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Rechnungen stimmen? Kreuze alle an.
@@ -576,13 +576,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe beide Zahlen mit zwei Nachko
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig. Achte dann auf die Vorzeichen der Zähler.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−1⁄2) + (+4⁄5) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄10**. Typische Fehler: −3⁄10 (vorzeichen-vergessen), 1 3⁄10 (betraege-addiert), −1 3⁄10 (betraege-addiert), 3⁄7 (bruch-add-zaehler-nenner).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: −7⁄8 + 0,25 Gib das Ergebnis als vollständig gekürzten Bruch an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−5⁄8**. Typische Fehler: 5⁄8 (vorzeichen-vergessen), 1 1⁄8 (betraege-addiert), −1 1⁄8 (betraege-addiert).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−1⁄2) + (+4⁄5) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄10**. Typische Fehler: −3⁄10 (vorzeichen-vergessen), 1 3⁄10 (betraege-addiert), −1 3⁄10 (betraege-addiert), 3⁄7 (bruch-add-zaehler-nenner).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: −7⁄8 + 0,25 / Gib das Ergebnis als vollständig gekürzten Bruch an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−5⁄8**. Typische Fehler: 5⁄8 (vorzeichen-vergessen), 1 1⁄8 (betraege-addiert), −1 1⁄8 (betraege-addiert).
 - `03` AFB II · _Argumentieren_ · Ali rechnet: (−7⁄10) + (+1⁄5) = −2⁄5. Stimmt das?
   - ☐ Stimmt.
   - ☑ Falsch. Richtig ist: (−7⁄10) + (+1⁄5) = −1⁄2.
   - ☐ Falsch. Richtig ist: (−7⁄10) + (+1⁄5) = 1⁄2.
-- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ + (−1 1⁄2) = 2⁄3 Kürze vollständig und schreibe als gemischte Zahl. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄6**. Typische Fehler: −5⁄6 (richtung-vertauscht), −2 1⁄6 (vorzeichen-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ + (−1 1⁄2) = 2⁄3 / Kürze vollständig und schreibe als gemischte Zahl. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄6**. Typische Fehler: −5⁄6 (richtung-vertauscht), −2 1⁄6 (vorzeichen-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−18,47) + (+9,6) + (−4,079) + (+1,09) Lösung: **−11,859**. Typische Fehler: 11,859 (vorzeichen-vergessen), 33,239 (betraege-addiert).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Konto hat den Stand −115,63 €. Es kommen 67,38 € dazu, dann gehen 46,97 € ab. Wie viel Euro müssen danach eingezahlt werden, damit der Kontostand genau 0 € ist? Lösung: **95,22 €**. Typische Fehler: −95,22 (vorzeichen-vergessen), 48,25 (sach-schritt-vergessen), 1,28 (richtung-vertauscht).
 
@@ -687,8 +687,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine positive Zahl subtrahieren heiß
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe beide Zahlen mit zwei Nachkommastellen. *Lösungsschritt:* Der Subtrahend ist größer. Ziehe die kleinere Zahl von der größeren ab und schreibe ein Minus davor.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (+3,7) − (+4,87) Lösung: **−1,17**. Typische Fehler: 8,57 (richtung-vertauscht), 1,17 (vorzeichen-vergessen), −8,57 (betraege-addiert).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (+3⁄5) − (+4⁄5) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄5**. Typische Fehler: 1 2⁄5 (richtung-vertauscht), 1⁄5 (vorzeichen-vergessen), −1 2⁄5 (betraege-addiert).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−5⁄9) − (−1 2⁄9) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: −1 7⁄9 (minus-minus-uebersehen), −2⁄3 (vorzeichen-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (+3⁄5) − (+4⁄5) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄5**. Typische Fehler: 1 2⁄5 (richtung-vertauscht), 1⁄5 (vorzeichen-vergessen), −1 2⁄5 (betraege-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−5⁄9) − (−1 2⁄9) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: −1 7⁄9 (minus-minus-uebersehen), −2⁄3 (vorzeichen-vergessen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−0,23) − (+3,4) − (−1,83) Lösung: **−1,8**. Typische Fehler: −5,46 (minus-minus-uebersehen), 1,8 (vorzeichen-vergessen), −3,63 (sach-schritt-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ − (−2,63) = 2,4 Lösung: **−0,23**. Typische Fehler: 5,03 (minus-minus-uebersehen), 0,23 (vorzeichen-vergessen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Rechnungen stimmen? Kreuze alle an.
@@ -701,13 +701,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe beide Zahlen mit zwei Nachko
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig. Ist der zweite Zähler größer, wird das Ergebnis negativ.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (+1⁄3) − (+1⁄2) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄6**. Typische Fehler: 5⁄6 (richtung-vertauscht), 1⁄6 (vorzeichen-vergessen), −5⁄6 (betraege-addiert).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: −7⁄8 − 0,25 Gib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄8**. Typische Fehler: −5⁄8 (richtung-vertauscht), 1 1⁄8 (vorzeichen-vergessen), 5⁄8 (betraege-addiert).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (+1⁄3) − (+1⁄2) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄6**. Typische Fehler: 5⁄6 (richtung-vertauscht), 1⁄6 (vorzeichen-vergessen), −5⁄6 (betraege-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: −7⁄8 − 0,25 / Gib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄8**. Typische Fehler: −5⁄8 (richtung-vertauscht), 1 1⁄8 (vorzeichen-vergessen), 5⁄8 (betraege-addiert).
 - `03` AFB II · _Argumentieren_ · Ben rechnet: (−5⁄8) − (−1⁄4) = −3⁄8. Stimmt das?
   - ☐ Falsch. Richtig ist: (−5⁄8) − (−1⁄4) = 3⁄8.
   - ☑ Stimmt.
   - ☐ Falsch. Richtig ist: (−5⁄8) − (−1⁄4) = −7⁄8.
-- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ − (−1 1⁄4) = 1⁄3 Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−11⁄12**. Typische Fehler: 1 7⁄12 (minus-minus-uebersehen), 11⁄12 (vorzeichen-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ − (−1 1⁄4) = 1⁄3 / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−11⁄12**. Typische Fehler: 1 7⁄12 (minus-minus-uebersehen), 11⁄12 (vorzeichen-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−15,73) − (+5,8) − (−4,519) − (+1,93) Lösung: **−18,941**. Typische Fehler: 18,941 (vorzeichen-vergessen), −27,979 (minus-minus-uebersehen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Auf einem Konto sind 237,03 €. Es werden 258,36 € und 133,33 € abgebucht. Um wie viel Euro ist das Konto danach überzogen? Lösung: **154,66 €**. Typische Fehler: −154,66 (vorzeichen-vergessen), 21,33 (sach-schritt-vergessen), 628,72 (richtung-vertauscht).
 
@@ -762,7 +762,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Aufgabe zuerst ohne Klam
   - ☐ (−30) − (+9) + (−13) = −30 − 9 + 13
   - ☑ (−30) − (+9) + (−13) = −30 − 9 − 13
   - ☐ (−30) − (+9) + (−13) = −30 + 9 − 13
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−10⁄13) − (−4⁄13) + (−3⁄13) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−9⁄13**. Typische Fehler: −1 4⁄13 (minus-minus-uebersehen), 9⁄13 (vorzeichen-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−10⁄13) − (−4⁄13) + (−3⁄13) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−9⁄13**. Typische Fehler: −1 4⁄13 (minus-minus-uebersehen), 9⁄13 (vorzeichen-vergessen).
 - `06` AFB III · _Argumentieren_ · Ole rechnet: 76 − (20 + (−36)) = 20. Stimmt das?
   - ☐ Falsch. Richtig ist: 76 − (20 + (−36)) = 60.
   - ☐ Stimmt.
@@ -774,7 +774,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Aufgabe ohne Klammern. F
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−11,17) − (+6,17) + (−6,37) − (−9,2) Lösung: **−14,51**. Typische Fehler: −32,91 (minus-minus-uebersehen), 14,51 (vorzeichen-vergessen).
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: 170 − (72 − (112 − 134)) Lösung: **76**. Typische Fehler: −148 (minusklammer), 120 (minusklammer).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: −1⁄2 − (1⁄5 − 9⁄10) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: −1 3⁄5 (minusklammer), −1⁄5 (vorzeichen-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: −1⁄2 − (1⁄5 − 9⁄10) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: −1 3⁄5 (minusklammer), −1⁄5 (vorzeichen-vergessen).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Wo muss die Klammer stehen, damit die Rechnung stimmt?
   - ☐ 36 − (9 − 3 + 5) = 19
   - ☑ 36 − 9 − (3 + 5) = 19
@@ -834,22 +834,22 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Fasse alle Zahlen mit Minus zusammen.
   - ☐ 22 − 85 + 15 = 22 − 15 + 85
   - ☑ 22 − 85 + 15 = 22 + 15 − 85
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: (−74) + (+150) + (+74) + (−26) Lösung: **124**. Typische Fehler: 272 (vorzeichen-vergessen), 176 (minus-minus-uebersehen), −124 (vorzeichen-vergessen).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −3⁄13 + 8⁄13 − 10⁄13 + 5⁄13 Kürze vollständig. Lösung: **0**. Typische Fehler: 2 (betraege-addiert), 1 (sach-schritt-vergessen).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: 1 − 2 + 3 − 4 + … + 19 − 20 Bilde dazu Paare. Lösung: **−10**. Typische Fehler: 10 (vorzeichen-vergessen), −20 (sach-schritt-vergessen), −1 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −12⁄13 + 4⁄13 − 1⁄13 + 2⁄13 / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−7⁄13**. Typische Fehler: 7⁄13 (vorzeichen-vergessen), 1 6⁄13 (betraege-addiert), 6⁄13 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: 1 − 2 + 3 − 4 + … + 21 − 22 / Bilde dazu Paare. Lösung: **−11**. Typische Fehler: 11 (vorzeichen-vergessen), −22 (sach-schritt-vergessen), −1 (sach-schritt-vergessen).
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen mit gleichem Vorzeichen, die zusammen eine ganze Zahl ergeben.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −11,73 + 6,3 − 10,27 + 11,7 − 4,761 Lösung: **−8,761**. Typische Fehler: 8,761 (vorzeichen-vergessen), 44,761 (betraege-addiert).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −2⁄3 + 5⁄8 − 1⁄3 + 1⁄8 Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄4**. Typische Fehler: 1⁄4 (vorzeichen-vergessen), 1 3⁄4 (betraege-addiert), 3⁄4 (sach-schritt-vergessen).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −1440 + 2900 − 560 + 5100 Lösung: **6000**. Typische Fehler: −6000 (vorzeichen-vergessen), 10000 (betraege-addiert), 7120 (vorzeichen-vergessen).
-- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne die Summe aller ganzen Zahlen von −25 bis 27. Lösung: **53**. Typische Fehler: 2 (sach-schritt-vergessen), 0 (betrag-gegenzahl), 27 (sach-schritt-vergessen).
-- `05` AFB II · _Argumentieren_ · Noah stellt um: 58 − 70 + 39 = 70 − 58 + 39. Stimmt das?
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −13,71 + 5,6 − 15,29 + 9,4 − 3,441 Lösung: **−17,441**. Typische Fehler: 17,441 (vorzeichen-vergessen), 47,441 (betraege-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −1⁄7 + 1⁄4 − 6⁄7 + 1⁄4 / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄2**. Typische Fehler: 1⁄2 (vorzeichen-vergessen), 1 1⁄2 (betraege-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −1450 + 3030 − 2550 + 1970 Lösung: **1000**. Typische Fehler: −1000 (vorzeichen-vergessen), 9000 (betraege-addiert), 6100 (vorzeichen-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne die Summe aller ganzen Zahlen von −42 bis 44. Lösung: **87**. Typische Fehler: 2 (sach-schritt-vergessen), 0 (betrag-gegenzahl), 44 (sach-schritt-vergessen).
+- `05` AFB II · _Argumentieren_ · Paul stellt um: 59 − 91 + 38 = 91 − 59 + 38. Stimmt das?
   - ☐ Stimmt.
-  - ☑ Falsch. Richtig ist: 58 − 70 + 39 = 58 + 39 − 70.
-  - ☐ Falsch. Richtig ist: 58 − 70 + 39 = 58 − 39 + 70.
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? −4,8 + ▢ − 5,2 + 3,7 = 0 Lösung: **6,3**. Typische Fehler: −6,3 (vorzeichen-vergessen), 13,7 (betraege-addiert), 10 (sach-schritt-vergessen).
+  - ☑ Falsch. Richtig ist: 59 − 91 + 38 = 59 + 38 − 91.
+  - ☐ Falsch. Richtig ist: 59 − 91 + 38 = 59 − 38 + 91.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? −1,9 + ▢ − 8,1 + 3,1 = 0 Lösung: **6,9**. Typische Fehler: −6,9 (vorzeichen-vergessen), 13,1 (betraege-addiert), 10 (sach-schritt-vergessen).
 
 ## 7.1.6-P1: Ich kann ganze Zahlen multiplizieren.
 
@@ -961,7 +961,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Malnehmen heißt: mehrmals denselben 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiedene Vorzeichen ergeben Minus. *Lösungsschritt:* Multipliziere ohne Komma und ohne Vorzeichen. Setze dann das Komma und das Minus.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−3,2) · 0,3 Lösung: **−0,96**. Typische Fehler: 0,96 (vorzeichen-vergessen), −2,9 (1x1-addiert).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄5) · (−4⁄7) Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄35**. Typische Fehler: −8⁄35 (minus-mal-minus), 2⁄3 (bruch-mal-nenner-mit).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄5) · (−4⁄7) / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄35**. Typische Fehler: −8⁄35 (minus-mal-minus), 2⁄3 (bruch-mal-nenner-mit).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−1,5) · 6 · (−2,5) Lösung: **22,5**. Typische Fehler: −22,5 (minus-mal-minus).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄3) · 9 Lösung: **−6**. Typische Fehler: 6 (vorzeichen-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Entscheide ohne zu rechnen. Welches Zeichen passt? (−2,5) · (−5) · 0,4 · 4 ▢ 0
@@ -978,15 +978,15 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiedene Vorzeichen ergeben Minus
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle die gemischte Zahl zuerst in einen Bruch um. Kürze über Kreuz, bevor du multiplizierst.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−1 1⁄4) · 2⁄5 Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄2**. Typische Fehler: 1⁄2 (vorzeichen-vergessen), −1 1⁄10 (gemischt-getrennt-mal).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄5) · 1,5 Gib das Ergebnis als vollständig gekürzten Bruch an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−3⁄5**. Typische Fehler: 3⁄5 (vorzeichen-vergessen).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−1 1⁄4) · 2⁄5 / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄2**. Typische Fehler: 1⁄2 (vorzeichen-vergessen), −1 1⁄10 (gemischt-getrennt-mal).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄5) · 1,5 / Gib das Ergebnis als vollständig gekürzten Bruch an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−3⁄5**. Typische Fehler: 3⁄5 (vorzeichen-vergessen).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne die Potenz: (−0,2)³ Lösung: **−0,008**. Typische Fehler: 0,008 (minus-mal-minus), −0,6 (potenz-mal-exponent), −0,08 (dezimal-stelle).
 - `04` AFB III · _Argumentieren_ · Ben rechnet: (−4⁄7) · (−7⁄8) = 1⁄2. Stimmt das?
   - ☐ Falsch. Richtig ist: (−4⁄7) · (−7⁄8) = −1⁄2.
   - ☑ Stimmt.
   - ☐ Falsch. Richtig ist: (−4⁄7) · (−7⁄8) = 1 13⁄15.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: (−2) · 0,5 · (−4) · (−2,5) · 3 Lösung: **−30**. Typische Fehler: 30 (minus-mal-minus).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ · (−1 1⁄3) = 2⁄3 Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄2**. Typische Fehler: 1⁄2 (vorzeichen-division), −8⁄9 (bruch-kehrwert).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ · (−1 1⁄3) = 2⁄3 / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄2**. Typische Fehler: 1⁄2 (vorzeichen-division), −8⁄9 (bruch-kehrwert).
 
 ## 7.1.7-D1: Ich kann ganze Zahlen dividieren.
 
@@ -1094,8 +1094,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Teilen heißt: Der Weg wird in gleich
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiedene Vorzeichen ergeben Minus. *Lösungsschritt:* Dividiere wie gewohnt und setze das Komma. Schreibe dann das Minus davor.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−26,94) : 6 Lösung: **−4,49**. Typische Fehler: 4,49 (vorzeichen-division).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−6⁄7) : 3 Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−2⁄7**. Typische Fehler: 2⁄7 (vorzeichen-division), −2 4⁄7 (bruch-kehrwert).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄3) : 4⁄9 Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄2**. Typische Fehler: 1 1⁄2 (vorzeichen-division), −8⁄27 (bruch-kehrwert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−6⁄7) : 3 / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−2⁄7**. Typische Fehler: 2⁄7 (vorzeichen-division), −2 4⁄7 (bruch-kehrwert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄3) : 4⁄9 / Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄2**. Typische Fehler: 1 1⁄2 (vorzeichen-division), −8⁄27 (bruch-kehrwert).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: 1,4 : (−7) Lösung: **−0,2**. Typische Fehler: 0,2 (vorzeichen-division).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? ▢ : (−2,5) = 2,6 Lösung: **−6,5**. Typische Fehler: 6,5 (vorzeichen-vergessen), −1,04 (probe-falsche-umkehr).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Rechnungen stimmen? Kreuze alle an.
@@ -1109,8 +1109,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiedene Vorzeichen ergeben Minus
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle die gemischten Zahlen in Brüche um. Multipliziere dann mit dem Kehrwert.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne: (−2 1⁄2) : (−1 1⁄4) Lösung: **2**. Typische Fehler: −2 (vorzeichen-division).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−7⁄8) : 0,5 Gib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 3⁄4**. Typische Fehler: 1 3⁄4 (vorzeichen-division), −7⁄16 (bruch-kehrwert).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄3) : 1⁄6 : (−3) Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄3**. Typische Fehler: −1 1⁄3 (vorzeichen-division).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−7⁄8) : 0,5 / Gib das Ergebnis als vollständig gekürzten Bruch oder als gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 3⁄4**. Typische Fehler: 1 3⁄4 (vorzeichen-division), −7⁄16 (bruch-kehrwert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: (−2⁄3) : 1⁄6 : (−3) / Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄3**. Typische Fehler: −1 1⁄3 (vorzeichen-division).
 - `04` AFB III · _Argumentieren_ · Ali rechnet: (−2⁄3) : (−4) = 2 2⁄3. Stimmt das?
   - ☑ Falsch. Richtig ist: (−2⁄3) : (−4) = 1⁄6.
   - ☐ Falsch. Richtig ist: (−2⁄3) : (−4) = −1⁄6.
@@ -1292,7 +1292,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Unterschied ist: hohe Temperatur 
 - `03` AFB II · _Modellieren_ · Um 18 Uhr sind es 3,4 °C. In den nächsten 10 Stunden fällt die Temperatur gleichmäßig auf −1,6 °C. Um wie viel Grad fällt sie pro Stunde? Lösung: **0,5 Grad**. Typische Fehler: 0,18 (abstand-ueber-null), 5 (sach-schritt-vergessen).
 - `04` AFB I · _Modellieren_ · In der Wissenschaft misst man Temperaturen in Kelvin. Die Formel für die Umrechnung ist: K = °C + 273. Wie viel Kelvin sind −19 °C? Lösung: **254 K**. Typische Fehler: 292 (vorzeichen-vergessen), −292 (richtung-vertauscht).
 - `05` AFB II · _Modellieren_ · Die Temperatur steigt erst um 5,4 Grad und fällt dann um 12,8 Grad. Danach sind es −2,8 °C. Wie warm war es am Anfang? Lösung: **4,6 °C**. Typische Fehler: −10,2 (richtung-vertauscht), 10 (sach-schritt-vergessen), −4,6 (vorzeichen-vergessen).
-- `06` AFB III · _Modellieren_ · Wien: am Tag 5,3 °C, in der Nacht −5,3 °C. Kiruna: am Tag −2,1 °C, in der Nacht −15,8 °C. Der Temperaturunterschied ist in Wien ▢ Grad und in Kiruna ▢ Grad. Lösung: a = **10,6**, b = **13,7**
+- `06` AFB III · _Modellieren_ · Wien: am Tag 5,3 °C, in der Nacht −5,3 °C. / Kiruna: am Tag −2,1 °C, in der Nacht −15,8 °C. / Temperaturunterschied in Wien: ▢ Grad / Temperaturunterschied in Kiruna: ▢ Grad Lösung: a = **10,6**, b = **13,7**
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -1348,7 +1348,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Soll heißt: Geld geht ab. Haben hei�
 - `02` AFB II · _Modellieren_ · Im Kontoauszug fehlt eine Buchung. Wie hoch ist sie? Schreibe eine Abbuchung mit Minus. _(Tabelle: Buchung | Euro / alter Kontostand | −165 / Gutschrift Nebenjob | 295 / fehlende Buchung | ? / Abbuchung Kleidung | −145 / neuer Kontostand | −110)_ Lösung: **−95 €**. Typische Fehler: 95 (vorzeichen-vergessen), 55 (sach-schritt-vergessen), −425 (minus-minus-uebersehen).
 - `03` AFB II · _Modellieren_ · Ein Konto darf um höchstens 800 € überzogen werden. Der Kontoauszug zeigt den Kontostand. Wie viel Euro können noch abgehoben werden? _(Tabelle: Buchung | Euro / Kontostand | −160)_ Lösung: **640 €**. Typische Fehler: 960 (minus-minus-uebersehen), 160 (sach-frage-verfehlt), 800 (sach-schritt-vergessen).
 - `04` AFB I · _Modellieren_ · Berechne den neuen Kontostand. _(Tabelle: Buchung | Euro / alter Kontostand | −530 / Gutschrift Kindergeld | 500 / Abbuchung Tanken | −130 / Abbuchung Kleidung | −60 / Gutschrift Lohn | 1130)_ Lösung: **910 €**. Typische Fehler: −910 (vorzeichen-vergessen), 1970 (vorzeichen-vergessen).
-- `05` AFB II · _Modellieren_ · Auf dem Kontoauszug steht S für Soll und H für Haben. Alle Buchungen im Soll ergeben zusammen ▢ €. Alle Buchungen im Haben ergeben zusammen ▢ €. Der Kontostand ändert sich insgesamt um ▢ €. _(Tabelle: Buchung | Euro | S/H / Möbel | 155 | S / Kleidung | 250 | S / Nebenjob | 130 | H / Lohn | 540 | H)_ Lösung: a = **405**, b = **670**, c = **265**
+- `05` AFB II · _Modellieren_ · Auf dem Kontoauszug steht S für Soll und H für Haben. / Alle Buchungen im Soll: ▢ € / Alle Buchungen im Haben: ▢ € / Änderung des Kontostands insgesamt: ▢ € _(Tabelle: Buchung | Euro | S/H / Möbel | 155 | S / Kleidung | 250 | S / Nebenjob | 130 | H / Lohn | 540 | H)_ Lösung: a = **405**, b = **670**, c = **265**
 - `06` AFB III · _Modellieren_ · Der Kontoauszug zeigt den Kontostand. Jeden Monat gibt es eine Gutschrift von 150 € und eine Abbuchung von 40 €. Nach wie vielen Monaten ist das Konto ausgeglichen? _(Tabelle: Buchung | Euro / Kontostand | −1320)_ Lösung: **12**. Typische Fehler: −12 (vorzeichen-vergessen).
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
