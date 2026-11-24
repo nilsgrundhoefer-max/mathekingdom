@@ -324,6 +324,18 @@ Die Aufteilung des Schildes in Felder mit einer zweiten Farbe aus den schon geka
 Ein Spruch auf dem Band unter dem Schild, den der Schüler aus einer festen Liste wählt. Er tippt ihn nie selbst.
 _Avoid_: Motto, Freitext
 
+**Helmzier**:
+Der Helm über dem Schild mit Helmdecke (zwei Tücher in den Schildfarben) und Helmschmuck (Federbusch, Flügel oder Hörner). Decke und Schmuck zeigen sich nur mit einem Helm.
+
+**Schildhalter**:
+Die Tiere, die links und rechts vom Schild stehen und ihn halten. Sie dürfen gleich oder verschieden sein.
+
+**Prunkrahmen**:
+Was das ganze Wappen rahmt: Wappenmantel, Lorbeerkranz, Kette und Postament.
+
+**Volles Wappen**:
+Das Wappen mit allem, was um den Schild herum angelegt ist (Helmzier, Schildhalter, Wahlspruch, Prunkrahmen). Es erscheint nur groß auf der Wappenseite. Überall sonst steht das kleine Wappen: nur der Schild mit Schildteilung und Zeichen.
+
 **Hauptzeichen** und **Beizeichen**:
 Ein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen.
 

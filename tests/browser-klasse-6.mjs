@@ -208,5 +208,47 @@ if (bilder) {
   assert.match(id, /^6\.2\.6-D1-M-/, 'die Aufgabe kommt von Gold');
   assert.deepEqual(fehlerN, []);
 }
+// Wappenbereich Klasse 6 (ADR 0039): Schildteilung kaufen, zweite Farbe wählen; die späteren Bereiche stehen als Ausblick mit Vorschaubild da.
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 }, deviceScaleFactor: bilder ? 2 : 1 });
+  const fehlerW = [];
+  seite.on('pageerror', (e) => fehlerW.push(e.message));
+  const t0 = new Date(Date.now() - 60000).toISOString();
+  // 50 Siegel (Rang Fährtenleser) und 3.000 Münzen, dazu zwei gekaufte Farben.
+  const stand = { version: 2, code: '6A-WAPP', klasse: '6a', erstellt: t0, geaendert: t0, muenzen: 3000, niveau: {}, niveauMarke: {}, versuche: [], hilferuf: null, hilferufe: [],
+    lernziele: Object.fromEntries(Array.from({ length: 50 }, (_, i) => [`x.${i}`, { erreichtAm: t0 }])),
+    wappen: { farbe: 'blau', zeichen: ['lilie'], gekauft: ['rot', 'blau', 'gold', 'silber', 'lilie'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [], grundlage: {} };
+  await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-6a/6A-WAPP.json')) localStorage.setItem('mk-demo-6a/6A-WAPP.json', text); }, JSON.stringify(stand));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '6a-wapp');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('#wappen-knopf');
+  await seite.waitForSelector('#bereich-6');
+  assert.equal(await seite.locator('#bereich-6 ~ .teile-liste li.teil').count(), 10);
+  assert.equal(await seite.locator('.werkbank svg .teilung').count(), 0);
+  await seite.click('[data-teil=geviert]:has-text("kaufen")');
+  assert.equal(await seite.innerText('#muenzen'), String(3000 - 550));
+  assert.equal(await seite.locator('.werkbank svg .schild[data-teilung=geviert] .teilung').count(), 1, 'der Schild ist geviert');
+  assert.equal(await seite.locator('#kopf svg.wappen .teilung, header svg.wappen .teilung').count() >= 1, true, 'auch das kleine Wappen in der Kopfzeile zeigt die Teilung');
+  // Zweite Farbe: voreingestellt die erste gekaufte, die nicht die Schildfarbe ist; wählbar ist jede andere gekaufte.
+  const farbe2 = () => seite.getAttribute('.werkbank svg .teilung', 'fill');
+  const vorher = await farbe2();
+  await seite.click('[data-farbe2=gold]');
+  assert.equal(await farbe2(), '#d2a93c');
+  assert.notEqual(vorher, '#d2a93c');
+  assert.equal(await seite.locator('[data-farbe2=blau]').count(), 0, 'die Schildfarbe steht nicht zur Wahl');
+  // Teile über dem Rang sind noch nicht kaufbar; Teile späterer Klassenstufen stehen nur im Ausblick.
+  assert.match(await seite.innerText('li:has([data-teil=geviert]) ~ li:has-text("Geständert")'), /Ab Rang Landvermesser/);
+  assert.equal(await seite.locator('[data-teil=topfhelm]').count(), 0);
+  assert.equal(await seite.locator('#ausblick li').count(), 4);
+  assert.equal(await seite.locator('#ausblick li svg.volles-wappen').count(), 4, 'jeder spätere Bereich hat ein Vorschaubild');
+  assert.match(await seite.innerText('#ausblick'), /Helmzier öffnet sich in Klasse 7[\s\S]*Prunkrahmen öffnet sich in Klasse 10/);
+  assert.doesNotMatch(await seite.innerText('#ausblick'), /Krone/);
+  if (bilder) await seite.screenshot({ path: `${bilder}/wappenschrank-klasse-6.png`, fullPage: true });
+  await seite.click('[data-teil=geviert]');
+  assert.equal(await seite.locator('.werkbank svg .teilung').count(), 0, 'Abnehmen macht den Schild wieder einfarbig');
+  assert.deepEqual(fehlerW, []);
+}
 await browser.close();
-console.log(`Klasse 6 im Browser in Ordnung: ${neun.length} Aufgaben gelöst, ${falschGeprueft} typische Fehler als falsch erkannt, „Fast richtig“, eine Brücke in die Klasse 5 und der Niveau-Meilenstein geprüft.`);
+console.log(`Klasse 6 im Browser in Ordnung: ${neun.length} Aufgaben gelöst, ${falschGeprueft} typische Fehler als falsch erkannt, „Fast richtig“, eine Brücke in die Klasse 5, der Niveau-Meilenstein und der Wappenbereich geprüft.`);

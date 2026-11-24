@@ -9,7 +9,7 @@ import * as L from './logik.js';
 import * as S from './speicher.js';
 import * as SCH from '../gemeinsam/schule.js';
 import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
-import { wappenBild, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
+import { wappenBild, wappenVoll, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild } from './zahlenbilder.js';
@@ -1476,28 +1476,59 @@ function wappenAnsicht() {
   if (neueEhre.length) { z.stand.neueEhre = []; geaendert(); }
   const teilKarte = (teil) => {
     const gekauft = w.gekauft.includes(teil.id);
-    const platz = teil.art === 'farbe' ? -1 : w.zeichen.indexOf(teil.id);
-    const an = teil.art === 'farbe' ? w.farbe === teil.id : platz >= 0;
+    const platz = teil.art === 'zeichen' ? w.zeichen.indexOf(teil.id) : -1;
+    const an = L.traegt(w, teil.id), neuerBereich = teil.klasse > 5;
+    // Vorschau eines Teils der späteren Bereiche (ADR 0039): der eigene Schild mit genau diesem Teil.
+    const probe = () => (teil.art === 'teilung' ? wappenBild({ ...w, teilung: teil.id }, 50)
+      : teil.art === 'helm' ? wappenVoll({ farbe: w.farbe, gekauft: w.gekauft, zeichen: [], helm: teil.id }, 54)
+        : teil.art === 'helmdecke' ? wappenVoll({ farbe: w.farbe, farbe2: w.farbe2, gekauft: w.gekauft, zeichen: [], helm: w.helm ?? 'topfhelm', helmdecke: teil.id }, 78)
+          : teil.art === 'helmschmuck' ? wappenVoll({ farbe: w.farbe, farbe2: w.farbe2, gekauft: w.gekauft, zeichen: [], helm: w.helm ?? 'topfhelm', helmschmuck: teil.id }, 50)
+            : teil.art === 'halter' ? wappenVoll({ farbe: w.farbe, gekauft: w.gekauft, zeichen: [], halter: { links: teil.id } }, 84)
+              : teil.art === 'prunk' ? wappenVoll({ farbe: w.farbe, gekauft: w.gekauft, zeichen: [], prunk: [teil.id] }, 96) : null);
+    const seite = (name, wort) => h('button', { class: w.halter?.[name] === teil.id ? 'haupt' : 'schlicht', 'data-halter': `${teil.id}|${name}`, 'aria-pressed': String(w.halter?.[name] === teil.id),
+      onclick: () => { L.stelleHalter(z.stand, teil.id, name); geaendert(); male(); } }, wort);
     const rangFehlt = r.stufe < teil.rang;
     const kaufen = () => { if (L.kaufe(z.stand, teil.id) === 'ok') { L.legeAn(z.stand, teil.id); geaendert(); male(); } };
     const lege = () => { L.legeAn(z.stand, teil.id); geaendert(); male(); };
-    return h('li', { class: `teil ${an ? 'an' : ''} ${teil.ehre ? 'ehre' : ''}` },
-      teil.art === 'farbe' ? h('span', { class: 'farbfeld', style: `background:${teil.wert}` }) : h('span', { class: 'vorschau' }, wappenBild({ farbe: w.farbe, zeichen: [teil.id] }, 44)),
-      h('b', {}, teil.name),
+    return h('li', { class: `teil ${an ? 'an' : ''} ${teil.ehre ? 'ehre' : ''} ${teil.art === 'spruch' ? 'spruch' : ''}` },
+      teil.art === 'farbe' ? h('span', { class: 'farbfeld', style: `background:${teil.wert}` })
+        : neuerBereich ? (teil.art !== 'spruch' && h('span', { class: 'vorschau' }, probe()))
+          : h('span', { class: 'vorschau' }, wappenBild({ farbe: w.farbe, zeichen: [teil.id] }, 44)),
+      h('b', {}, teil.art === 'spruch' ? `„${teil.name}“` : teil.name),
+      teil.deutsch && h('span', { class: 'klein' }, `Latein: ${teil.deutsch}`),
       an && platz >= 0 && h('span', { class: 'klein' }, platz === 0 ? 'Hauptzeichen' : 'Beizeichen'),
       gekauft
         ? h('div', { class: 'teil-knoepfe' },
-          h('button', { class: an ? 'haupt' : 'schlicht', 'data-teil': teil.id, onclick: lege }, teil.art === 'farbe' ? (an ? 'Gewählt' : 'Wählen') : (an ? 'Abnehmen' : 'Anbringen')),
+          teil.art === 'halter' ? [seite('links', 'Links'), seite('rechts', 'Rechts')]
+            : h('button', { class: an ? 'haupt' : 'schlicht', 'data-teil': teil.id, onclick: lege }, teil.art === 'farbe' ? (an ? 'Gewählt' : 'Wählen') : (an ? 'Abnehmen' : 'Anbringen')),
           platz > 0 && h('button', { class: 'schlicht', 'data-haupt': teil.id, onclick: () => { L.macheHauptzeichen(z.stand, teil.id); geaendert(); male(); } }, 'Als Hauptzeichen'))
         : teil.ehre ? h('span', { class: 'klein' }, teil.ehre)
           : rangFehlt ? h('span', { class: 'klein' }, `Ab Rang ${L.RAENGE[teil.rang].name}`)
             : h('button', { class: 'schlicht', 'data-teil': teil.id, disabled: z.stand.muenzen < teil.preis, onclick: kaufen }, muenze(16), ` ${teil.preis} kaufen`));
   };
   const imSchrank = L.WAPPEN_TEILE.filter((t) => t.klasse <= stufe);
+  // Die Bereiche ab Klasse 6 (ADR 0039): je Teileart eine Liste. Was noch nicht offen ist, steht unten als Ausblick mit Vorschaubild.
+  const zweite = L.zweiteFarbe(w), farben = w.gekauft.map(L.teil).filter((t) => t?.art === 'farbe' && t.id !== w.farbe);
+  const hinweis = { teilung: !zweite && 'Für eine Schildteilung brauchst du eine zweite Farbe. Kaufe oben noch eine Farbe.',
+    helmdecke: !w.helm && 'Die Helmdecke zeigt sich, sobald dein Wappen einen Helm trägt.', helmschmuck: !w.helm && 'Der Helmschmuck zeigt sich, sobald dein Wappen einen Helm trägt.',
+    halter: 'Stelle ein Tier nach links, nach rechts oder auf beide Seiten.', spruch: 'Wähle einen Wahlspruch für das Band unter deinem Schild.' };
+  const bereich = (b) => [h('h2', { id: `bereich-${b.klasse}` }, b.name),
+    Object.entries(b.arten).map(([art, titel]) => [
+      Object.keys(b.arten).length > 1 && h('h3', {}, titel),
+      hinweis[art] && h('p', { class: 'klein' }, hinweis[art]),
+      art === 'teilung' && farben.length > 1 && h('div', { class: 'zweite-farbe', id: 'zweite-farbe', role: 'group', 'aria-label': 'Zweite Farbe' }, h('b', {}, 'Zweite Farbe'),
+        farben.map((f) => h('button', { class: `farbwahl${f.id === zweite ? ' an' : ''}`, 'data-farbe2': f.id, 'aria-pressed': String(f.id === zweite), title: f.name, style: `background:${f.wert}`,
+          onclick: () => { L.waehleZweiteFarbe(z.stand, f.id); geaendert(); male(); } }))),
+      h('ul', { class: `teile-liste${art === 'spruch' ? ' sprueche' : ''}` }, imSchrank.filter((t) => t.art === art).map(teilKarte))])];
+  const BEISPIEL = { 6: { teilung: 'geviert' }, 7: { helm: 'spangenhelm', helmdecke: 'decke-gezaddelt', helmschmuck: 'federbusch' }, 8: { halter: { links: 'halter-loewe', rechts: 'halter-einhorn' } },
+    9: { spruch: 'spruch-1' }, 10: { prunk: ['lorbeer', 'kette', 'postament'] } };
+  // Das Vorschaubild zeigt das eigene Wappen mit einem Beispiel aus dem Bereich. Fehlt die zweite Farbe, leiht es sich Gold oder Silber.
+  const vorschau = (b) => wappenVoll({ ...w, gekauft: [...w.gekauft, w.farbe === 'gold' ? 'silber' : 'gold'], ...(b.klasse > 6 && !w.teilung ? {} : { farbe2: zweite ?? (w.farbe === 'gold' ? 'silber' : 'gold') }), ...BEISPIEL[b.klasse] }, 120);
+  const voll = Boolean(w.helm || w.spruch || w.prunk?.length || w.halter?.links || w.halter?.rechts);
   const gruppen = Object.entries(L.ZEICHEN_GRUPPEN).map(([id, titel]) => [titel, imSchrank.filter((t) => t.art === 'zeichen' && t.gruppe === id)]).filter(([, liste]) => liste.length);
   return h('section', {},
     h('h1', {}, 'Dein Wappen'),
-    h('div', { class: 'werkbank' }, wappenBild(w, 150),
+    h('div', { class: 'werkbank' }, voll ? wappenVoll(w, 270) : wappenBild(w, 150),
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
         h('p', {}, r.naechster ? `Noch ${r.naechster.ab - L.siegel(z.stand)} Siegel, dann wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
         h('p', { class: 'klein' }, 'Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen. Münzen bekommst du für gelöste Aufgaben, Ehrenzeichen kannst du nur verdienen.'))),
@@ -1507,8 +1538,10 @@ function wappenAnsicht() {
     ahaKarte(),
     h('h2', {}, 'Farben'), h('ul', { class: 'teile-liste' }, imSchrank.filter((x) => x.art === 'farbe').map(teilKarte)),
     gruppen.map(([titel, liste]) => [h('h2', {}, titel), h('ul', { class: 'teile-liste' }, liste.map(teilKarte))]),
-    h('h2', {}, 'Später im Wappenschrank'),
-    h('ul', { class: 'ausblick', id: 'ausblick' }, L.WAPPENBEREICHE.filter((b) => b.klasse > stufe).map((b) => h('li', {}, h('b', {}, b.name), ` öffnet sich in Klasse ${b.klasse}.`))));
+    L.WAPPENBEREICHE.filter((b) => b.arten && b.klasse <= stufe).map(bereich),
+    stufe < 10 && h('h2', {}, 'Später im Wappenschrank'),
+    stufe < 10 && h('ul', { class: 'ausblick', id: 'ausblick' }, L.WAPPENBEREICHE.filter((b) => b.klasse > stufe).map((b) => h('li', { 'data-bereich': b.klasse },
+      h('span', { class: 'vorschau' }, vorschau(b)), h('span', {}, h('b', {}, b.name), ` öffnet sich in Klasse ${b.klasse}. `, b.satz)))));
 }
 
 // ---------- Spiele (ADR 0018) ----------
