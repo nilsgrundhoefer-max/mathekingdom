@@ -100,7 +100,7 @@ const zielVon = (zielniveaus, code) => zielniveaus?.[code] ?? L.STANDARD_ZIELNIV
 export function lernzieleMitAufgaben(pool, index) {
   return pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele
     .filter((l) => index.lernzielMitAufgaben.has(l.id))
-    .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, milestone: u.titel }))));
+    .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, milestone: u.titel, ...(u.ab && { ab: u.ab }) }))));
 }
 
 // Lernzielstand eines Schülers: siegel | aufzufrischen | wackelig | begonnen | offen.
@@ -118,9 +118,11 @@ export function lernzielmatrix(staende, lernziele, zielniveaus) {
   return staende.map(({ code, stand }) => ({
     code,
     zellen: lernziele.map((l) => {
-      const st = L.lernzielStand(stand, l.id, zielVon(zielniveaus, code));
+      // Niveau-Meilenstein (ADR 0038): Es gilt mindestens seine Marke. Für ein Zielniveau darunter ist er ein Abstecher, keine Lücke.
+      const ziel = zielVon(zielniveaus, code);
+      const st = L.lernzielStand(stand, l.id, L.stufeAb(ziel, l.ab));
       const bearbeitet = stand.versuche.filter((x) => x.lernziel === l.id).length;
-      return { lernziel: l.id, status: lernzielZustand(stand, l.id), fortschritt: st.fortschritt, bearbeitet };
+      return { lernziel: l.id, status: lernzielZustand(stand, l.id), fortschritt: st.fortschritt, bearbeitet, ...(L.istNiveauAbstecher(l, ziel) && { abstecher: true }) };
     }),
   }));
 }
@@ -421,7 +423,7 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   }
   const matrix = [['Name', 'Schülercode', ...lernziele.map((l) => l.id)], ['', 'Lernziel', ...lernziele.map((l) => l.text)]];
   for (const zeile of lernzielmatrix(staende, lernziele, zielniveaus)) {
-    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'gefestigt' ? 'Siegel, gefestigt' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : ''))]);
+    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'gefestigt' ? 'Siegel, gefestigt' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : c.abstecher ? 'Abstecher' : ''))]);
   }
   const versuche = [['Name', 'Schülercode', 'Zeitpunkt', 'Aufgabe', 'Lernziel', 'Niveaustufe', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer (s)', 'Münzen', 'Erkannte Fehlvorstellungen', 'Eingaben']];
   for (const { code, stand } of staende) for (const x of stand.versuche) {

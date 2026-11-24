@@ -106,7 +106,8 @@ export function indexiere(pool) {
   const aufgabe = new Map(pool.aufgaben.map((a) => [a.id, a]));
   const lernziel = new Map((pool.kapitel ?? []).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l]));
   // Lernziele, die auf jeder Niveaustufe Aufgaben aus AFB II oder III haben: Nur dort kann das Siegel eine solche Aufgabe verlangen.
-  const mitAnspruch = new Set([...lernzielMitAufgaben].filter((l) => NIVEAUS.every((n) => (nach.get(`${l}|${n}`) ?? []).some((a) => a.afb >= AFB_FUER_STERN))));
+  // An einem Niveau-Meilenstein (ADR 0038) zählen nur die Niveaustufen, auf denen es Aufgaben gibt.
+  const mitAnspruch = new Set([...lernzielMitAufgaben].filter((l) => NIVEAUS.filter((n) => nach.has(`${l}|${n}`)).every((n) => nach.get(`${l}|${n}`).some((a) => a.afb >= AFB_FUER_STERN))));
   // Klasse 6 (ADR 0037): Aufgaben der vorigen Klassenstufe, nur für Brücken. Sie zählen nicht als Lernziele dieser Klassenstufe.
   const vorstufe = new Set();
   for (const a of pool.vorstufe?.aufgaben ?? []) {
@@ -230,10 +231,20 @@ export function istWackelig(stand, lernzielId) {
   const schritte = v.filter((x) => hatKarte(x, 'loesungsschritt')).length;
   return (v.length >= WACKELIG_AB && geloest / v.length < 0.5) || schritte >= 2;
 }
+// ---------- Niveau-Meilenstein (ADR 0038) ----------
+// Ein Niveau-Meilenstein trägt eine Marke (`ab`: M oder E) und hat nur ab dieser Niveaustufe Aufgaben.
+// Wer ein Zielniveau darunter hat, erlebt ihn als Abstecher: Er zählt nicht für das Kapitel, und gearbeitet wird auf der Marke.
+export const stufeAb = (niveau, ab) => (ab && NIVEAUS.indexOf(niveau) < NIVEAUS.indexOf(ab) ? ab : niveau);
+export const stufeFuer = (index, lernzielId, niveau) => stufeAb(niveau, index?.meilensteinVon.get(lernzielId)?.ab);
+export const istNiveauAbstecher = (u, zielniveau) => Boolean(u.ab && zielniveau && NIVEAUS.indexOf(zielniveau) < NIVEAUS.indexOf(u.ab));
+export const istAbstecher = (u, zielniveau) => Boolean(u.extra) || istNiveauAbstecher(u, zielniveau);
+
 // Mit `index` gilt zusätzlich: Mindestens eine der richtigen Aufgaben stammt aus AFB II oder III,
 // sofern das Lernziel solche Aufgaben hat. Ohne `index` (reine Anzeige) wird das nicht geprüft.
 // Auf F gilt diese Bedingung nicht: Bronze gibt es für drei richtige Aufgaben (ADR 0015).
+// An einem Niveau-Meilenstein gilt mindestens seine Marke: Siegel und Krone gibt es dort erst ab dieser Niveaustufe.
 export function lernzielStand(stand, lernzielId, zielniveau, index = null) {
+  zielniveau = stufeFuer(index, lernzielId, zielniveau);
   const ziel = NIVEAUS.indexOf(zielniveau);
   const alle = new Set(), aufZiel = new Set();
   let anspruch = zielniveau === 'F' || !index?.mitAnspruch.has(lernzielId);
@@ -310,9 +321,9 @@ export function trageSiegelNach(stand, index, zielniveau, jetzt) {
 const hatAufgabenIn = (index, u) => u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id));
 // Eigene Arbeit an einem Meilenstein zählt nach eigenerVersuch (weiter unten): ohne Einstiegscheck, Sonderauftrag, Rückblick, Seitenblick, Brücke.
 // Der Meilenstein auf dem Weg, an dem ein Abstecher hängt: der letzte davor, der kein Abstecher ist.
-export function wirtVon(kapitel, abstecher) {
+export function wirtVon(kapitel, abstecher, zielniveau = null) {
   const i = kapitel.unterkapitel.findIndex((u) => u.id === abstecher.id);
-  for (let j = i - 1; j >= 0; j--) if (!kapitel.unterkapitel[j].extra) return kapitel.unterkapitel[j];
+  for (let j = i - 1; j >= 0; j--) if (!istAbstecher(kapitel.unterkapitel[j], zielniveau)) return kapitel.unterkapitel[j];
   return null;
 }
 // Meilensteine eines Kapitels, die für diesen Schüler noch im Nebel liegen. Ohne Meilensteinfreigabe: keine.
@@ -323,12 +334,13 @@ export function imNebel(index, stand, kapitel, einst) {
   if (!Array.isArray(frei)) return new Set();
   const offen = new Set(frei), zu = einst.gesperrteMeilensteine ?? new Set();
   const gemeistert = (u) => milestoneStatus(index, stand, u) === 'gemeistert';
-  const erledigt = kapitel.unterkapitel.filter((u) => !u.extra && offen.has(u.id) && !zu.has(u.id) && hatAufgabenIn(index, u)).every(gemeistert);
+  const ziel = einst.zielniveau;
+  const erledigt = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel) && offen.has(u.id) && !zu.has(u.id) && hatAufgabenIn(index, u)).every(gemeistert);
   const angefangen = new Set(stand.versuche.filter(eigenerVersuch).map((v) => index.meilensteinVon.get(v.lernziel)?.id).filter(Boolean));
   const nebel = new Set();
   for (const u of kapitel.unterkapitel) {
     if (offen.has(u.id) || angefangen.has(u.id)) continue;
-    if (u.extra) { const w = wirtVon(kapitel, u); if (w && gemeistert(w)) continue; } else if (erledigt) continue;
+    if (istAbstecher(u, ziel)) { const w = wirtVon(kapitel, u, ziel); if (w && gemeistert(w)) continue; } else if (erledigt) continue;
     nebel.add(u.id);
   }
   return nebel;
@@ -350,24 +362,26 @@ export function fuehrungsMeilenstein(index, stand, kapitel, einst, niveau) {
     const v = stand.versuche[i];
     if (eigenerVersuch(v) && kapitelVon(v.lernziel ?? '') === kapitel.id) zuletzt = index.meilensteinVon.get(v.lernziel) ?? null;
   }
-  if (zuletzt && offen(zuletzt)) return zuletzt;
-  const weg = kapitel.unterkapitel.filter((u) => !u.extra);
-  const ab = zuletzt ? Math.max(0, weg.indexOf(zuletzt.extra ? wirtVon(kapitel, zuletzt) : zuletzt) + 1) : 0;
+  // Von einem Niveau-Meilenstein über dem Zielniveau führt der Weg von selbst zurück auf das Kapitel (ADR 0038).
+  const ziel = einst.zielniveau;
+  if (zuletzt && !istNiveauAbstecher(zuletzt, ziel) && offen(zuletzt)) return zuletzt;
+  const weg = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel));
+  const ab = zuletzt ? Math.max(0, weg.indexOf(istAbstecher(zuletzt, ziel) ? wirtVon(kapitel, zuletzt, ziel) : zuletzt) + 1) : 0;
   return [...weg.slice(ab), ...weg.slice(0, ab)].find(offen) ?? null;
 }
 // Abstecher, die an diesem Meilenstein hängen und noch offen sind: Sie bietet die Führung nach dem Meilenstein an.
 export function abstecherAm(index, stand, kapitel, unterkapitel, einst, niveau) {
   const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
-  return kapitel.unterkapitel.filter((u) => u.extra && wirtVon(kapitel, u)?.id === unterkapitel.id && !zu.has(u.id) && !nebel.has(u.id)
+  return kapitel.unterkapitel.filter((u) => istAbstecher(u, einst.zielniveau) && wirtVon(kapitel, u, einst.zielniveau)?.id === unterkapitel.id && !zu.has(u.id) && !nebel.has(u.id)
     && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau));
 }
 
 // Etappe für die Startseite: das Kapitel, an dem gerade gearbeitet wird, mit Fortschritt und nächstem Meilenstein.
-// Gesperrte Meilensteine und Meilensteine ohne Aufgaben zählen nicht mit.
+// Gesperrte Meilensteine, Meilensteine ohne Aufgaben und Niveau-Meilensteine über dem Zielniveau zählen nicht mit.
 export function etappe(pool, index, stand, einst) {
   const zu = einst.gesperrteMeilensteine ?? new Set();
   const lage = (k) => {
-    const meilensteine = k.unterkapitel.filter((u) => !zu.has(u.id) && milestoneStatus(index, stand, u) !== 'leer');
+    const meilensteine = k.unterkapitel.filter((u) => !zu.has(u.id) && !istNiveauAbstecher(u, einst.zielniveau) && milestoneStatus(index, stand, u) !== 'leer');
     const offen = meilensteine.filter((u) => milestoneStatus(index, stand, u) !== 'gemeistert');
     const naechste = einst.zielniveau ? fuehrungsMeilenstein(index, stand, k, einst, arbeitsniveau(stand, k.id, einst.zielniveau))
       : offen.find((u) => milestoneStatus(index, stand, u) === 'begonnen') ?? offen[0] ?? null;
@@ -389,8 +403,9 @@ export function naechstesLernziel(index, stand, unterkapitel, niveau = null) {
 
 // ---------- Aufgabe auswählen ----------
 // Reihenfolge: noch nie bearbeitet, dann bearbeitet aber nicht gelöst, dann schon gelöst.
+// An einem Niveau-Meilenstein kommen die Aufgaben mindestens von seiner Marke.
 export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.random) {
-  const kandidaten = index.nach.get(`${lernzielId}|${niveau}`) ?? [];
+  const kandidaten = index.nach.get(`${lernzielId}|${stufeFuer(index, lernzielId, niveau)}`) ?? [];
   if (kandidaten.length === 0) return null;
   const geloest = new Set(), bearbeitet = new Set();
   for (const v of stand.versuche) { if (v.einstieg) continue; bearbeitet.add(v.aufgabe); if (v.richtig) geloest.add(v.aufgabe); }
@@ -523,7 +538,7 @@ export function stelleRueckblick(stand, index, zielniveau, jetzt, zufall = Math.
   const gewaehlt = [];
   for (let i = 0; gewaehlt.length < anzahl && i < anzahl * 3; i++) {
     const lz = faellig[i % faellig.length];
-    const alle = (index.nach.get(`${lz}|${zielniveau}`) ?? []).filter((a) => !gewaehlt.includes(a.id));
+    const alle = (index.nach.get(`${lz}|${stufeFuer(index, lz, zielniveau)}`) ?? []).filter((a) => !gewaehlt.includes(a.id));
     const frisch = alle.filter((a) => !bearbeitet.has(a.id));
     const auswahl = frisch.length ? frisch : alle;
     if (auswahl.length) gewaehlt.push(auswahl[Math.floor(zufall() * auswahl.length)].id);
@@ -1006,12 +1021,13 @@ export function macheHauptzeichen(stand, id) {
 
 // Ehrenzeichen vergeben, die der Schüler inzwischen verdient hat. Liefert die neuen Ids.
 // Die Expeditionsfahne kommt über holeBelohnung.
-export function vergebeEhrenzeichen(stand, pool, index) {
+// Niveau-Meilensteine über dem Zielniveau zählen nicht für das Kapitelband (ADR 0038).
+export function vergebeEhrenzeichen(stand, pool, index, zielniveau = null) {
   const neu = [];
   const gib = (id) => { if (!stand.wappen.gekauft.includes(id)) { stand.wappen.gekauft.push(id); neu.push(id); } };
   if (Object.values(kronen(pool, index, stand)).includes('E')) gib('purpurrose');
   const ganz = pool.kapitel.some((k) => {
-    const ziele = k.unterkapitel.flatMap((u) => u.lernziele).filter((l) => index.lernzielMitAufgaben.has(l.id));
+    const ziele = k.unterkapitel.filter((u) => !istNiveauAbstecher(u, zielniveau)).flatMap((u) => u.lernziele).filter((l) => index.lernzielMitAufgaben.has(l.id));
     return ziele.length > 0 && ziele.every((l) => stand.lernziele[l.id]);
   });
   if (ganz) gib('kapitelband');

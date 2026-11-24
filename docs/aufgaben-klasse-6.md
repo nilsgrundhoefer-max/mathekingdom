@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (288 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (624 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 288).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 624).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -906,6 +906,1027 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere den Bruch auf den Nenner de
 - `05` AFB II · _Kommunizieren_ · Die Strecke von 0 bis 2 ist in 7 gleich große Abstände geteilt. Markiere 6⁄7. _(Zahlenstrahl 0 bis 2, Teilstriche alle 2⁄7; antippen)_ Lösung: **6⁄7**. Typische Fehler: 4⁄7 (bruchstrahl-striche), 8⁄7 (bruchstrahl-striche).
 - `06` AFB III · _Kommunizieren_ · Ein Ganzes hat hier 18 Abstände. Markiere die Zahl, die doppelt so weit von der 0 entfernt ist wie 1⁄6. _(Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄18; antippen)_ Lösung: **6⁄18**. Typische Fehler: 5⁄18 (bruchstrahl-striche), 7⁄18 (bruchstrahl-striche), 3⁄18 (sach-schritt-vergessen).
 
+## 6.2.1-A1: Ich kann gleichnamige Brüche addieren und subtrahieren.
+
+Grundlage, die F übt: An zwei Kreisen mit gleich vielen Teilen die gefärbten Teile zusammenzählen: zwei Achtel und drei Achtel
+
+Baut auf: 6.1.1-B1 (Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.), 6.1.3-K2 (Ich kann einen Bruch vollständig kürzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Teile sind gleich groß. Zähle nur die Zähler zusammen. *Beispiel:* 2⁄7 + 3⁄7 = 5⁄7, denn 2 + 3 = 5. Der Nenner bleibt 7. *Lösungsschritt:* Rechne mit den beiden Zählern. Schreibe den Nenner ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 1⁄7. / Kreis B zeigt 5⁄7. / Zähle die gefärbten Teile zusammen. / 1⁄7 + 5⁄7 = ▢⁄7 _(Bild: Bruchbild: A: Kreis mit 7 Teilen, 1 gefärbt; B: Kreis mit 7 Teilen, 5 gefärbt)_ Lösung: a = **6**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 3⁄8. / Kreis B zeigt 2⁄8. / Rechne 3⁄8 + 2⁄8. _(Bild: Bruchbild: A: Kreis mit 8 Teilen, 3 gefärbt; B: Kreis mit 8 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄8**. Typische Fehler: 5⁄16 (bruch-add-zaehler-nenner), 1⁄8 (add-subtrahiert).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄7. / Streifen B zeigt 2⁄7. / Wie viel ist 1⁄7 + 2⁄7? _(Bild: Bruchbild: A: Streifen mit 7 Teilen, 1 gefärbt; B: Streifen mit 7 Teilen, 2 gefärbt)_
+  - ☐ 1⁄7
+  - ☐ 3⁄14
+  - ☑ 3⁄7
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 6⁄7 gefärbt. / Davon nimmst du 4⁄7 weg. / 6⁄7 − 4⁄7 = ▢⁄7 _(Bild: Bruchbild: Streifen mit 7 Teilen, 6 gefärbt)_ Lösung: a = **2**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Akku ist zu 8⁄10 voll. / Ali spielt und verbraucht 7⁄10 vom ganzen Akku. / Wie voll ist der Akku jetzt? _(Bild: Bruchbild: undefined mit 10 Teilen, 8 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄10**. Typische Fehler: 15⁄10 (sub-addiert), 7⁄10 (sach-frage-verfehlt), 2⁄10 (sach-frage-verfehlt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 1⁄6. / Kreis B zeigt 2⁄6. / Rechne 1⁄6 + 2⁄6. / Kürze das Ergebnis. _(Bild: Bruchbild: A: Kreis mit 6 Teilen, 1 gefärbt; B: Kreis mit 6 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 3⁄12 (bruch-add-zaehler-nenner), 1⁄6 (add-subtrahiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit den Zählern. Der Nenner bleibt gleich. Kürze am Ende. *Beispiel:* 7⁄12 − 1⁄12 = 6⁄12 = 1⁄2. *Lösungsschritt:* Schreibe zuerst das Ergebnis mit dem alten Nenner. Kürze dann so weit wie möglich.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 9⁄14 + 3⁄14. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **6⁄7**. Typische Fehler: 12⁄28 (bruch-add-zaehler-nenner).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 11⁄12 gefärbt. / Rechne 11⁄12 − 5⁄12. / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Streifen mit 12 Teilen, 11 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 16⁄12 (sub-addiert), 1⁄12 (bruch-teil-zu-rest).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 7⁄8 gefärbt. / Welcher Zähler fehlt? / 3⁄8 + ▢⁄8 = 7⁄8 _(Bild: Bruchbild: Streifen mit 8 Teilen, 7 gefärbt)_ Lösung: a = **4**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 5⁄9 + 1⁄9 + 2⁄9. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄9**. Typische Fehler: 8⁄27 (bruch-add-zaehler-nenner), 6⁄9 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Akku ist zu 9⁄10 voll. / Tom hört Musik und verbraucht 7⁄10 vom ganzen Akku. / Wie voll ist der Akku jetzt? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: undefined mit 10 Teilen, 9 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: 16⁄10 (sub-addiert), 7⁄10 (sach-frage-verfehlt), 1⁄10 (sach-frage-verfehlt).
+- `06` AFB III · _Argumentieren_ · Tom rechnet: 4⁄6 + 1⁄6 = 5⁄6 / Stimmt das?
+  - ☐ Falsch. / Es gilt 4⁄6 + 1⁄6 = 6⁄6.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es gilt 4⁄6 + 1⁄6 = 5⁄12.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei gleichnamigen Brüchen rechnest du nur mit den Zählern, der Nenner bleibt. *Lösungsschritt:* Rechne 9 + 7 − 4. Schreibe das Ergebnis über den Nenner 18 und kürze.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 9⁄18 + 7⁄18 − 4⁄18 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: 20⁄18 (sub-addiert), 16⁄18 (sach-schritt-vergessen), 2⁄18 (add-subtrahiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welchen Bruch musst du zu 1⁄30 addieren, um 23⁄30 zu erhalten? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄15**. Typische Fehler: 24⁄30 (sub-addiert), 23⁄30 (sach-frage-verfehlt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Blechkuchen ist in 20 gleich große Stücke geschnitten. Ben nimmt 7⁄20 des Kuchens mit, Tom nimmt 3⁄20. Welcher Bruchteil des Kuchens bleibt übrig? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 13⁄20 (sach-schritt-vergessen), 17⁄20 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 21⁄24 + 17⁄24. Schreibe das Ergebnis als gemischte Zahl und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄12**. Typische Fehler: 38⁄48 (bruch-add-zaehler-nenner), 4⁄24 (add-subtrahiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 4⁄10 − 3⁄10 = 1⁄10
+  - ☐ 3⁄10 − 1⁄10 = 2⁄11
+  - ☑ 5⁄10 + 4⁄10 = 9⁄10
+  - ☐ 5⁄10 + 2⁄10 = 7⁄20
+- `06` AFB III · _Argumentieren_ · Warum bleibt der Nenner gleich, wenn du gleichnamige Brüche addierst?
+  - ☐ Der Nenner zählt die gefärbten Teile, und die ändern sich nicht.
+  - ☑ Die Teile bleiben gleich groß, es werden nur mehr Teile.
+  - ☐ Die Nenner heben sich beim Addieren gegenseitig auf.
+  - ☐ Der Nenner ist immer die größere Zahl und darf sich deshalb nicht ändern.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fasse zuerst alle Zähler zusammen. Wandle erst am Ende um und kürze.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 41⁄45 + 39⁄45 − 6⁄45 − 8⁄45. Gib das Ergebnis als vollständig gekürzte gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄15**. Typische Fehler: 94⁄45 (sub-addiert), 82⁄45 (sub-klammerfehler).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zu einem Bruch wird 23⁄45 addiert. Das Ergebnis ist 1 18⁄45. Wie heißt der Bruch? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄9**. Typische Fehler: 86⁄45 (sub-addiert), 5⁄45 (gemischt-umwandeln).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? 8⁄24 + ▢⁄24 = 5⁄6 Lösung: a = **12**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei gleichnamige Brüche haben die Summe 12⁄25 und die Differenz 6⁄25. Wie heißt der größere der beiden Brüche? _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **9⁄25**. Typische Fehler: 3⁄25 (sach-frage-verfehlt), 12⁄25 (sach-schritt-vergessen), 18⁄25 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Akku ist morgens zu 23⁄24 geladen. Am Vormittag werden 4⁄24 der ganzen Ladung verbraucht, am Nachmittag 2⁄24. Danach wird der Akku kurz um 5⁄24 nachgeladen. Wie voll ist er jetzt? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄12**. Typische Fehler: 17⁄24 (sach-schritt-vergessen), 12⁄24 (sach-falsche-rechnung), 6⁄24 (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☐ 16⁄20 + 11⁄20 = 1 2⁄5
+  - ☑ 12⁄20 + 6⁄20 = 9⁄10
+  - ☑ 16⁄20 − 5⁄20 = 11⁄20
+  - ☐ 16⁄20 + 7⁄20 = 1 1⁄5
+  - ☑ 18⁄20 + 15⁄20 = 1 13⁄20
+
+## 6.2.1-A2: Ich kann gemischte Zahlen mit gleichem Nenner addieren und subtrahieren und zum Ganzen ergänzen.
+
+Grundlage, die F übt: An ganzen und angeschnittenen Kreisen zählen: ein Ganzes und ein Viertel und noch zwei Viertel
+
+Baut auf: 6.2.1-A1 (Ich kann gleichnamige Brüche addieren und subtrahieren.), 6.1.1-B2 (Ich kann gemischte Zahlen und Brüche ineinander umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Ganzes hat so viele Teile, wie der Nenner sagt. *Beispiel:* Von 3⁄8 bis zum Ganzen fehlen 5⁄8, denn 3 + 5 = 8. *Lösungsschritt:* Zähle die weißen Teile im Bild.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Kreis ist 3⁄6 gefärbt. / Wie viel fehlt bis zum Ganzen? / 3⁄6 + ▢⁄6 = 1 _(Bild: Bruchbild: Kreis mit 6 Teilen, 3 gefärbt)_ Lösung: a = **3**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 1⁄5 gefärbt. / Rechne 1 − 1⁄5. _(Bild: Bruchbild: Streifen mit 5 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 1⁄5 (bruch-teil-zu-rest).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bild A zeigt 1 4⁄6. / Bild B zeigt 1⁄6. / Rechne 1 4⁄6 + 1⁄6. _(Bild: Bruchbild: A: 2 Ganze, je Kreis mit 6 Teilen, 10 gefärbt; B: Kreis mit 6 Teilen, 1 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 5⁄6**. Typische Fehler: 5⁄6 (sach-schritt-vergessen), 11⁄12 (bruch-add-zaehler-nenner).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Bild A zeigt 2 2⁄5. / Bild B zeigt 1 2⁄5. / Wie viel ist 2 2⁄5 + 1 2⁄5? _(Bild: Bruchbild: A: 3 Ganze, je Kreis mit 5 Teilen, 12 gefärbt; B: 2 Ganze, je Kreis mit 5 Teilen, 7 gefärbt)_
+  - ☑ 3 4⁄5
+  - ☐ 1 9⁄10
+  - ☐ 2 4⁄5
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Auf dem Tisch stehen 1 2⁄5 Pizzen. / Die Kinder essen davon 1⁄5 Pizzen. / Wie viel bleibt übrig? _(Bild: Bruchbild: 2 Ganze, je Kreis mit 5 Teilen, 7 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄5**. Typische Fehler: 8⁄5 (sub-addiert), 1⁄5 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Bild zeigt 1 3⁄8. / Wie viel fehlt bis 2? / Kürze das Ergebnis. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 8 Teilen, 11 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄8**. Typische Fehler: 3⁄8 (bruch-teil-zu-rest), 13⁄8 (gemischt-umwandeln).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne die Ganzen und die Brüche einzeln. Aus zu vielen Teilen wird ein neues Ganzes. *Beispiel:* 1 3⁄5 + 2 4⁄5 = 3 + 7⁄5 = 4 2⁄5. *Lösungsschritt:* Die Brüche ergeben zusammen 14⁄10. Darin steckt ein Ganzes.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 1 7⁄10 + 3 7⁄10. / Kürze das Ergebnis vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5 2⁄5**. Typische Fehler: 44⁄10 (gemischt-umwandeln), 94⁄20 (bruch-add-zaehler-nenner).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Bild zeigt 1 4⁄6. / Rechne 1 4⁄6 − 1⁄6. / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 6 Teilen, 10 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄2**. Typische Fehler: 11⁄6 (sub-addiert), 3⁄6 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Bild zeigt 2 1⁄5. / Wandle zuerst in einen Bruch um. / Rechne dann mit den Zählern. / 2 1⁄5 − 2⁄5 = ▢⁄5 − 2⁄5 = ▢⁄5 _(Bild: Bruchbild: 3 Ganze, je Kreis mit 5 Teilen, 11 gefärbt)_ Lösung: a = **11**, b = **9**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 5 − 3 3⁄5. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 2⁄5**. Typische Fehler: 13⁄5 (gemischt-kleiner-von-groesser), 12⁄5 (gemischt-umwandeln), 43⁄5 (sub-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Brett ist 2 4⁄8 m lang. / Mara sägt 1 7⁄8 m ab. / Wie lang ist der Rest? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄8 m**. Typische Fehler: 11⁄8 (gemischt-kleiner-von-groesser), 35⁄8 (sub-addiert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Bild zeigt 2 3⁄6. / Sara rechnet: 2 3⁄6 − 5⁄6 = 2 2⁄6 / Stimmt das? _(Bild: Bruchbild: 3 Ganze, je Kreis mit 6 Teilen, 15 gefärbt)_
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es gilt 2 3⁄6 − 5⁄6 = 1 4⁄6.
+  - ☐ Falsch. / Es gilt 2 3⁄6 − 5⁄6 = 2 2⁄6.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der erste Bruch ist kleiner als der zweite. Wandle deshalb ein Ganzes in Bruchteile um. *Lösungsschritt:* Schreibe 8 1⁄18 als 7 Ganze und 19⁄18. Ziehe dann die Ganzen und die Brüche einzeln ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 8 1⁄18 − 2 15⁄18 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5 2⁄9**. Typische Fehler: 122⁄18 (gemischt-kleiner-von-groesser), 98⁄9 (sub-addiert), 112⁄18 (gemischt-umwandeln).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 2 5⁄10 + 2 8⁄10 − 1 5⁄10 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 4⁄5**. Typische Fehler: 68⁄10 (sub-addiert), 53⁄10 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl musst du zu 3 7⁄8 addieren, um 5 zu erhalten? _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄8**. Typische Fehler: 17⁄8 (gemischt-kleiner-von-groesser), 71⁄8 (sub-addiert), 1⁄8 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 2 14⁄16 + 3 6⁄16 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **6 1⁄4**. Typische Fehler: 84⁄16 (gemischt-umwandeln), 180⁄32 (bruch-add-zaehler-nenner).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mara trainiert in dieser Woche 3 1⁄4 h, Lena trainiert 1 3⁄4 h. Wie viel länger trainiert Mara? Gib das Ergebnis als Bruchteil einer Stunde oder als gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄2 h**. Typische Fehler: 10⁄4 (gemischt-kleiner-von-groesser).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Mara rechnet 4 1⁄6 − 1 3⁄6 = 3 2⁄6. Welchen Fehler macht Mara?
+  - ☐ Die Ganzen werden falsch voneinander abgezogen.
+  - ☑ Bei den Brüchen wird der kleinere vom größeren abgezogen, statt ein Ganzes umzuwandeln.
+  - ☐ Die Nenner hätten auch voneinander abgezogen werden müssen.
+  - ☐ Das Ergebnis ist richtig, es ist nur nicht gekürzt.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne von links nach rechts. Mit unechten Brüchen vermeidest du Fehler beim Umwandeln.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 7 10⁄36 − 2 19⁄36 + 3 21⁄36 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8 1⁄3**. Typische Fehler: 42⁄36 (sub-klammerfehler), 19⁄4 (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Von einer Zahl wird 3 11⁄12 subtrahiert. Das Ergebnis ist 3 10⁄12. Wie heißt die Zahl? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7 3⁄4**. Typische Fehler: 1⁄12 (sach-falsche-rechnung), 81⁄12 (gemischt-umwandeln).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · In einem Kanister sind 4 5⁄8 l Farbe. Tom verbraucht 1 7⁄8 l für den Zaun, Ali verbraucht 5⁄8 l für die Tür. Wie viele Liter Farbe sind noch im Kanister? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄8 l**. Typische Fehler: 11⁄4 (sach-schritt-vergessen), 5⁄2 (sach-frage-verfehlt).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Zahl liegt genau in der Mitte zwischen 1 1⁄10 und 3 9⁄10? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄2**. Typische Fehler: 14⁄5 (sach-falsche-rechnung).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du beginnst bei 2 1⁄5 und addierst immer wieder 2⁄5. Nach wie vielen Schritten erreichst du die Zahl 5? Lösung: **7**. Typische Fehler: 8 (sach-schritt-vergessen), 6 (sach-schritt-vergessen), 14 (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 3 6⁄12 + 2 11⁄12 = 6 5⁄12
+  - ☐ 4 8⁄12 + 1 2⁄12 = 4 5⁄6
+  - ☐ 2 10⁄12 + 2 6⁄12 = 4 1⁄3
+  - ☑ 3 5⁄12 − 2 11⁄12 = 1⁄2
+  - ☑ 5 11⁄12 + 2 5⁄12 = 8 1⁄3
+
+## 6.2.2-U1: Ich kann ungleichnamige Brüche addieren und subtrahieren, wenn ein Nenner ein Vielfaches des anderen ist.
+
+Grundlage, die F übt: Am Streifen aus einem Halben zwei Viertel machen und dann die Viertel zusammenzählen
+
+Baut auf: 6.2.1-A1 (Ich kann gleichnamige Brüche addieren und subtrahieren.), 6.1.2-W2 (Ich kann einen Bruch auf einen gegebenen Nenner erweitern und gleichwertige Brüche erkennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Teile sind verschieden groß. Mache zuerst aus den großen Teilen kleine Teile. *Beispiel:* 1⁄2 + 1⁄4 = 2⁄4 + 1⁄4 = 3⁄4. Aus einem Halben werden zwei Viertel. *Lösungsschritt:* Erweitere den Bruch mit dem kleineren Nenner. Rechne dann mit den Zählern.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄2. / Streifen B zeigt 1⁄8. / Erweitere zuerst den ersten Bruch. / 1⁄2 + 1⁄8 = ▢⁄8 + 1⁄8 = ▢⁄8 _(Bild: Bruchbild: A: Streifen mit 2 Teilen, 1 gefärbt; B: Streifen mit 8 Teilen, 1 gefärbt)_ Lösung: a = **4**, b = **5**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 1⁄2 gefärbt. / Jedes Teil wird in 2 gleich große Teile geteilt. / 1⁄2 = ▢⁄4 _(Bild: Bruchbild: Streifen mit 2 Teilen, 1 gefärbt)_ Lösung: a = **2**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄2. / Streifen B zeigt 1⁄4. / Erweitere zuerst den ersten Bruch. / 1⁄2 − 1⁄4 = ▢⁄4 − 1⁄4 = ▢⁄4 _(Bild: Bruchbild: A: Streifen mit 2 Teilen, 1 gefärbt; B: Streifen mit 4 Teilen, 1 gefärbt)_ Lösung: a = **2**, b = **1**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 1⁄2. / Kreis B zeigt 1⁄4. / Wie viel ist 1⁄2 + 1⁄4? _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 4 Teilen, 1 gefärbt)_
+  - ☐ 2⁄4
+  - ☑ 3⁄4
+  - ☐ 2⁄6
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ida isst 1⁄2 Pizza. / Tom isst 1⁄6 Pizza. / Wie viel Pizza essen beide zusammen? _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 6 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: 2⁄8 (bruch-add-zaehler-nenner), 2⁄6 (bruch-add-ungleichnamig).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 1⁄2. / Kreis B zeigt 1⁄6. / Rechne 1⁄2 + 1⁄6. / Kürze das Ergebnis. _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 6 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: 2⁄8 (bruch-add-zaehler-nenner), 2⁄6 (bruch-add-ungleichnamig).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der größere Nenner ist der gemeinsame Nenner. Erweitere nur den anderen Bruch. *Beispiel:* 2⁄3 + 1⁄12 = 8⁄12 + 1⁄12 = 9⁄12 = 3⁄4. *Lösungsschritt:* Überlege: Mit welcher Zahl musst du den kleineren Nenner malnehmen? Erweitere damit.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Erweitere zuerst den ersten Bruch. / Addiere dann. / 1⁄2 + 7⁄18 = ▢⁄18 + 7⁄18 = ▢⁄18 Lösung: a = **9**, b = **16**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 4⁄5 gefärbt. / Rechne 4⁄5 − 4⁄15. / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Streifen mit 5 Teilen, 4 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄15**. Typische Fehler: 16⁄15 (sub-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Akku ist zu 4⁄5 voll. / Ole verbraucht beim Spielen 3⁄10 vom ganzen Akku. / Wie voll ist der Akku jetzt? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: undefined mit 10 Teilen, 8 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 11⁄10 (sub-addiert), 1⁄10 (bruch-add-ungleichnamig), 3⁄10 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Erweitere zuerst den ersten Bruch. / Subtrahiere dann. / 9⁄10 − 13⁄20 = ▢⁄20 − 13⁄20 = ▢⁄20 Lösung: a = **18**, b = **5**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne 1⁄2 + 1⁄4 + 1⁄8. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄8**. Typische Fehler: 3⁄14 (bruch-add-zaehler-nenner), 3⁄8 (bruch-add-ungleichnamig), 3⁄4 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Kreis A zeigt 2⁄3. / Kreis B zeigt 2⁄9. / Tom rechnet: 2⁄3 + 2⁄9 = 4⁄12 / Stimmt das? _(Bild: Bruchbild: A: Kreis mit 3 Teilen, 2 gefärbt; B: Kreis mit 9 Teilen, 2 gefärbt)_
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 2⁄3 + 2⁄9 = 4⁄9.
+  - ☑ Falsch. / Es gilt 2⁄3 + 2⁄9 = 8⁄9.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Nenner ist ein Vielfaches des anderen. Er ist der Hauptnenner. *Lösungsschritt:* Erweitere 5⁄6 auf den Nenner 30. Rechne dann mit den Zählern und kürze.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 5⁄6 + 17⁄30. Gib das Ergebnis als vollständig gekürzte gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 2⁄5**. Typische Fehler: 22⁄36 (bruch-add-zaehler-nenner), 22⁄30 (bruch-add-ungleichnamig), 12⁄29 (gemischt-umwandeln).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 3 1⁄3 − 1 17⁄18 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄18**. Typische Fehler: 47⁄18 (gemischt-kleiner-von-groesser), 95⁄18 (sub-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Mia wandert zuerst 2 1⁄4 km zur Mühle und dann 3 3⁄8 km weiter zum Aussichtsturm. Wie viele Kilometer sind das zusammen? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5 5⁄8 km**. Typische Fehler: 64⁄12 (bruch-add-zaehler-nenner), 9⁄8 (sach-falsche-rechnung).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 7⁄10 − 9⁄20 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄4**. Typische Fehler: 2⁄20 (bruch-add-ungleichnamig), 23⁄20 (sub-addiert), 5⁄19 (kuerzen-nicht-vollstaendig).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welchen Bruch musst du von 3⁄5 subtrahieren, um 13⁄25 zu erhalten? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄25**. Typische Fehler: 28⁄25 (sub-addiert), 10⁄25 (bruch-add-ungleichnamig).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 1⁄8 + 7⁄16 = 9⁄16
+  - ☑ 3⁄4 + 1⁄12 = 5⁄6
+  - ☐ 1⁄4 + 7⁄16 = 1⁄2
+  - ☑ 2⁄5 + 2⁄15 = 8⁄15
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der größte Nenner ist ein Vielfaches der beiden anderen. Erweitere alle Brüche auf ihn.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 1⁄4 + 7⁄12 − 1⁄36 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **29⁄36**. Typische Fehler: 31⁄36 (sub-addiert), 5⁄6 (sach-schritt-vergessen), 7⁄36 (bruch-add-ungleichnamig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Von einer Zahl wird 3 7⁄12 subtrahiert. Das Ergebnis ist 2 1⁄6. Wie heißt die Zahl? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5 3⁄4**. Typische Fehler: 17⁄12 (sach-falsche-rechnung), 98⁄18 (bruch-add-zaehler-nenner).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Vom Taschengeld sind 4⁄5 für ein Buch verplant und 3⁄20 für ein Geschenk. Der Rest ist noch frei. Welcher Bruchteil ist noch frei? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄20**. Typische Fehler: 19⁄20 (sach-frage-verfehlt), 1⁄5 (sach-schritt-vergessen), 7⁄25 (bruch-add-zaehler-nenner).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne die Summe 1⁄2 + 1⁄4 + 1⁄8 + 1⁄16 + 1⁄32. Wie viel fehlt dann noch bis 1? _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄32**. Typische Fehler: 31⁄32 (sach-frage-verfehlt), 1⁄64 (sach-schritt-vergessen), 5⁄62 (bruch-add-zaehler-nenner).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? ▢⁄12 − 7⁄12 = 1⁄4 Lösung: a = **10**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Emre rechnet 1⁄2 + 1⁄14 = 2⁄16. Woran erkennst du ohne Rechnung, dass das Ergebnis nicht stimmen kann?
+  - ☑ Das Ergebnis ist kleiner als der größere der beiden Brüche, obwohl etwas dazukommt.
+  - ☐ Das Ergebnis ist größer als 1, obwohl beide Brüche kleiner als ein Halbes sind.
+  - ☐ Der Zähler des Ergebnisses darf nie größer sein als die Zähler der beiden Brüche.
+  - ☐ Der Nenner des Ergebnisses muss immer eine gerade Zahl sein.
+
+## 6.2.2-U2: Ich kann zu ungleichnamigen Brüchen einen gemeinsamen Nenner finden und sie dann addieren und subtrahieren.
+
+Grundlage, die F übt: Zwei Streifen auf dieselbe Einteilung bringen, wenn der gemeinsame Nenner genannt ist
+
+Baut auf: 6.2.2-U1 (Ich kann ungleichnamige Brüche addieren und subtrahieren, wenn ein Nenner ein Vielfaches des anderen ist.), 6.1.4-V2 (Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitern heißt: Zähler und Nenner mit derselben Zahl malnehmen. *Beispiel:* 1⁄2 = 3⁄6, denn 1 · 3 = 3 und 2 · 3 = 6. *Lösungsschritt:* Überlege bei jedem Bruch: Mit welcher Zahl wurde der Nenner malgenommen?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄2. / Streifen B zeigt 1⁄5. / Der gemeinsame Nenner ist 10. / 1⁄2 = ▢⁄10 / 1⁄5 = ▢⁄10 _(Bild: Bruchbild: A: Streifen mit 2 Teilen, 1 gefärbt; B: Streifen mit 5 Teilen, 1 gefärbt)_ Lösung: a = **5**, b = **2**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄2. / Streifen B zeigt 1⁄5. / Der gemeinsame Nenner ist 10. / 1⁄2 + 1⁄5 = ▢⁄10 + ▢⁄10 = ▢⁄10 _(Bild: Bruchbild: A: Streifen mit 2 Teilen, 1 gefärbt; B: Streifen mit 5 Teilen, 1 gefärbt)_ Lösung: a = **5**, b = **2**, c = **7**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 1⁄3. / Kreis B zeigt 1⁄4. / Der gemeinsame Nenner ist 12. / Wie viel ist 1⁄3 + 1⁄4? _(Bild: Bruchbild: A: Kreis mit 3 Teilen, 1 gefärbt; B: Kreis mit 4 Teilen, 1 gefärbt)_
+  - ☑ 7⁄12
+  - ☐ 2⁄7
+  - ☐ 2⁄12
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄2. / Streifen B zeigt 1⁄5. / Der gemeinsame Nenner ist 10. / 1⁄2 − 1⁄5 = ▢⁄10 − ▢⁄10 = ▢⁄10 _(Bild: Bruchbild: A: Streifen mit 2 Teilen, 1 gefärbt; B: Streifen mit 5 Teilen, 1 gefärbt)_ Lösung: a = **5**, b = **2**, c = **3**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jonas trinkt 1⁄2 l Tee. / Ali trinkt 1⁄3 l Tee. / Der gemeinsame Nenner ist 6. / Wie viel trinken beide zusammen? _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 3 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄6 l**. Typische Fehler: 2⁄5 (bruch-add-zaehler-nenner), 2⁄6 (bruch-add-ungleichnamig).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreis A zeigt 1⁄2. / Kreis B zeigt 1⁄3. / Der gemeinsame Nenner ist 6. / Rechne 1⁄2 − 1⁄3. _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 3 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄6**. Typische Fehler: 5⁄6 (sub-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm die beiden Nenner miteinander mal. Das ist ein gemeinsamer Nenner. *Beispiel:* 2⁄3 + 1⁄5: Der gemeinsame Nenner ist 3 · 5 = 15. Dann 10⁄15 + 3⁄15 = 13⁄15. *Lösungsschritt:* Erweitere jeden Bruch mit dem Nenner des anderen Bruchs. Rechne dann mit den Zählern.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Brüche gleichnamig. / Addiere dann. / 1⁄2 + 2⁄7 = ▢⁄14 + ▢⁄14 = ▢⁄14 Lösung: a = **7**, b = **4**, c = **11**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄3. / Streifen B zeigt 1⁄8. / Mache die Brüche gleichnamig. / 1⁄3 − 1⁄8 = ▢⁄24 − ▢⁄24 = ▢⁄24 _(Bild: Bruchbild: A: Streifen mit 3 Teilen, 1 gefärbt; B: Streifen mit 8 Teilen, 1 gefärbt)_ Lösung: a = **8**, b = **3**, c = **5**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Du willst 1⁄2 und 2⁄3 addieren. / Wie heißt der kleinste gemeinsame Nenner? Lösung: **6**. Typische Fehler: 5 (bruch-add-zaehler-nenner), 3 (bruch-add-ungleichnamig), 12 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 2⁄3 − 1⁄4. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄12**. Typische Fehler: 1⁄12 (bruch-add-ungleichnamig), 11⁄12 (sub-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Für einen Teig braucht man 2⁄3 l Milch. / Dazu kommen 1⁄8 l Wasser. / Wie viel Flüssigkeit ist das zusammen? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: A: Kreis mit 3 Teilen, 2 gefärbt; B: Kreis mit 8 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **19⁄24 l**. Typische Fehler: 3⁄11 (bruch-add-zaehler-nenner), 3⁄24 (bruch-add-ungleichnamig).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Kreis A zeigt 1⁄2. / Kreis B zeigt 2⁄7. / Mara rechnet: 1⁄2 + 2⁄7 = 11⁄14 / Stimmt das? _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 7 Teilen, 2 gefärbt)_
+  - ☐ Falsch. / Es gilt 1⁄2 + 2⁄7 = 3⁄9.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es gilt 1⁄2 + 2⁄7 = 3⁄14.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche den Hauptnenner: das kleinste Vielfache, das beide Nenner gemeinsam haben. *Lösungsschritt:* Die Vielfachen von 10 sind 10, 20, 30 … Das erste, in das auch die 6 passt, ist 30.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 1⁄6 + 3⁄10 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄15**. Typische Fehler: 4⁄16 (bruch-add-zaehler-nenner), 4⁄30 (bruch-add-ungleichnamig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Bestimme den Hauptnenner der Brüche 1⁄2, 1⁄3 und 7⁄8. Lösung: **24**. Typische Fehler: 48 (sach-frage-verfehlt), 13 (bruch-add-zaehler-nenner), 8 (bruch-add-ungleichnamig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 4 4⁄9 − 2 7⁄15 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 44⁄45**. Typische Fehler: 311⁄45 (sub-addiert), 91⁄45 (gemischt-kleiner-von-groesser).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 5⁄6 − 3⁄8 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄24**. Typische Fehler: 2⁄2 (bruch-add-zaehler-nenner), 2⁄24 (bruch-add-ungleichnamig), 29⁄24 (sub-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mara fährt vor der Pause 1 1⁄3 km mit dem Rad und nach der Pause 2 7⁄10 km. Wie viele Kilometer sind das zusammen? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4 1⁄30 km**. Typische Fehler: 41⁄30 (sach-falsche-rechnung), 47⁄13 (bruch-add-zaehler-nenner).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben und Mara berechnen 1⁄10 + 13⁄15. Ben nimmt als gemeinsamen Nenner das Produkt 150, Mara nimmt den Hauptnenner 30. Wer rechnet richtig?
+  - ☐ Keiner von beiden, denn die Nenner müssen addiert werden.
+  - ☐ Nur Ben rechnet richtig, denn der gemeinsame Nenner ist immer das Produkt.
+  - ☑ Beide rechnen richtig. Ben muss am Ende nur mehr kürzen.
+  - ☐ Nur Mara rechnet richtig, denn es gibt nur einen gemeinsamen Nenner.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme den Hauptnenner aller drei Brüche. Mit dem Produkt der Nenner werden die Zahlen unnötig groß.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 11⁄12 + 1⁄16 − 1⁄24 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **15⁄16**. Typische Fehler: 49⁄48 (sub-addiert), 47⁄48 (sach-schritt-vergessen), 11⁄48 (bruch-add-ungleichnamig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Zu welcher Zahl musst du 13⁄16 addieren, um 1 17⁄24 zu erhalten? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **43⁄48**. Typische Fehler: 121⁄48 (sub-addiert), 28⁄48 (bruch-add-ungleichnamig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 1⁄3 eines Grundstücks sind Garten, 1⁄8 sind Haus und 5⁄12 sind Terrasse. Welcher Bruchteil bleibt für alles andere übrig? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄8**. Typische Fehler: 7⁄8 (sach-frage-verfehlt), 13⁄24 (sach-schritt-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Jeder Bruch lässt sich als Summe von Brüchen mit dem Zähler 1 schreiben. Welcher Nenner fehlt? 2⁄3 = 1⁄2 + 1⁄▢ Lösung: a = **6**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 11⁄15 + 11⁄20 ▢ 1 4⁄15
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 2⁄9 + 2⁄15 = 16⁄45
+  - ☑ 1⁄4 + 3⁄14 = 13⁄28
+  - ☑ 1⁄8 + 7⁄12 = 17⁄24
+  - ☐ 7⁄10 + 2⁄15 = 3⁄10
+  - ☐ 7⁄12 + 3⁄20 = 1⁄6
+
+## 6.2.3-V1: Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren.
+
+Grundlage, die F übt: Denselben Bruch mehrmals nebeneinander legen und die Teile zählen: dreimal zwei Siebtel
+
+Baut auf: 6.2.1-A1 (Ich kann gleichnamige Brüche addieren und subtrahieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Bruch wird mehrmals genommen. Zähle alle gefärbten Teile. *Beispiel:* 3 · 2⁄7 = 6⁄7, denn 3 · 2 = 6. Der Nenner bleibt 7. *Lösungsschritt:* Nimm nur den Zähler mal. Schreibe den Nenner ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Streifen zeigt 1⁄10. / Es sind 2 Streifen. / 2 · 1⁄10 = ▢⁄10 _(Bild: Bruchbild: A: Streifen mit 10 Teilen, 1 gefärbt; B: Streifen mit 10 Teilen, 1 gefärbt)_ Lösung: a = **2**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis zeigt 2⁄7. / Rechne 2 · 2⁄7. _(Bild: Bruchbild: A: Kreis mit 7 Teilen, 2 gefärbt; B: Kreis mit 7 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄7**. Typische Fehler: 4⁄14 (bruch-mal-nenner-mit).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Streifen zeigt 1⁄5. / Wie viel ist 2 · 1⁄5? _(Bild: Bruchbild: A: Streifen mit 5 Teilen, 1 gefärbt; B: Streifen mit 5 Teilen, 1 gefärbt)_
+  - ☑ 2⁄5
+  - ☐ 3⁄5
+  - ☐ 2⁄10
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis zeigt 1⁄12. / Schreibe als Malaufgabe. / 1⁄12 + 1⁄12 + 1⁄12 = ▢ · 1⁄12 = ▢⁄12 _(Bild: Bruchbild: A: Kreis mit 12 Teilen, 1 gefärbt; B: Kreis mit 12 Teilen, 1 gefärbt; C: Kreis mit 12 Teilen, 1 gefärbt)_ Lösung: a = **3**, b = **3**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · In ein Glas passt 1⁄8 l Milch. / Ole füllt 3 Gläser. / Wie viel Milch ist das zusammen? _(Bild: Bruchbild: A: Streifen mit 8 Teilen, 1 gefärbt; B: Streifen mit 8 Teilen, 1 gefärbt; C: Streifen mit 8 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄8 l**. Typische Fehler: 3⁄24 (bruch-mal-nenner-mit), 4⁄8 (1x1-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis zeigt 1⁄10. / Rechne 2 · 1⁄10. / Kürze das Ergebnis. _(Bild: Bruchbild: A: Kreis mit 10 Teilen, 1 gefärbt; B: Kreis mit 10 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: 2⁄20 (bruch-mal-nenner-mit), 3⁄10 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm nur den Zähler mal. Der Nenner bleibt. Kürze am Ende. *Beispiel:* 4 · 3⁄10 = 12⁄10 = 6⁄5 = 1 1⁄5. *Lösungsschritt:* Schreibe zuerst das Ergebnis mit dem alten Nenner. Kürze dann und schreibe als gemischte Zahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 3 · 4⁄15. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 12⁄45 (bruch-mal-nenner-mit), 7⁄15 (1x1-addiert).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis zeigt 4⁄5. / Es sind 3 Kreise. / 3 · 4⁄5 = ▢⁄5 _(Bild: Bruchbild: A: Kreis mit 5 Teilen, 4 gefärbt; B: Kreis mit 5 Teilen, 4 gefärbt; C: Kreis mit 5 Teilen, 4 gefärbt)_ Lösung: a = **12**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 3⁄8 gefärbt. / Welche Zahl fehlt? / ▢ · 1⁄8 = 3⁄8 _(Bild: Bruchbild: Streifen mit 8 Teilen, 3 gefärbt)_ Lösung: a = **3**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 4 · 7⁄12. / Kürze das Ergebnis vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄3**. Typische Fehler: 28⁄48 (bruch-mal-nenner-mit), 16⁄11 (gemischt-umwandeln).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne 11⁄12 · 6. / Kürze das Ergebnis vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5 1⁄2**. Typische Fehler: 66⁄72 (bruch-mal-nenner-mit), 11⁄72 (bruch-mal-nenner-mit).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jeder Kreis zeigt 2⁄9. / Sara rechnet: 2 · 2⁄9 = 4⁄9 / Stimmt das? _(Bild: Bruchbild: A: Kreis mit 9 Teilen, 2 gefärbt; B: Kreis mit 9 Teilen, 2 gefärbt)_
+  - ☐ Falsch. / Es gilt 2 · 2⁄9 = 4⁄9.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es gilt 2 · 2⁄9 = 4⁄18.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Multipliziere nur den Zähler. Du kannst vorher die Zahl mit dem Nenner kürzen. *Lösungsschritt:* Kürze 9 und 18 mit 9. Multipliziere dann und schreibe das Ergebnis als gemischte Zahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 9 · 7⁄18 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 1⁄2**. Typische Fehler: 63⁄162 (bruch-mal-nenner-mit), 16⁄18 (1x1-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 5 · 1 5⁄6 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **9 1⁄6**. Typische Fehler: 35⁄6 (gemischt-getrennt-mal), 55⁄30 (bruch-mal-nenner-mit).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Mit welcher Zahl musst du 7⁄9 multiplizieren, um 3 1⁄9 zu erhalten? Lösung: **4**. Typische Fehler: 28 (sach-frage-verfehlt), 5 (sach-schritt-vergessen), 9 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 45 · 2⁄9. Lösung: **10**. Typische Fehler: 90 (sach-schritt-vergessen), 5 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 6 · 11⁄16 ▢ 4
+  - ☐ <
+  - ☐ =
+  - ☑ >
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☐ 6 · 3⁄16 = 2 1⁄8
+  - ☑ 5 · 9⁄16 = 2 13⁄16
+  - ☐ 4 · 11⁄20 = 3 1⁄5
+  - ☐ 6 · 13⁄16 = 5 7⁄8
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle in einen unechten Bruch um und kürze vor dem Multiplizieren.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 9 · 3 1⁄15 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **27 3⁄5**. Typische Fehler: 406⁄15 (gemischt-getrennt-mal), 414⁄135 (bruch-mal-nenner-mit).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Faktor fehlt? ▢ · 33⁄40 = 11 11⁄20 Lösung: a = **14**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? 6 · ▢⁄45 = 3 1⁄15 Lösung: a = **23**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein vollständig gekürzter Bruch wird mit einer natürlichen Zahl multipliziert. Wann ist das Ergebnis eine natürliche Zahl?
+  - ☐ Immer, denn beim Multiplizieren verschwindet der Nenner.
+  - ☑ Wenn die Zahl ein Vielfaches des Nenners ist.
+  - ☐ Wenn die Zahl größer ist als der Nenner.
+  - ☐ Wenn die Zahl ein Vielfaches des Zählers ist.
+  - ☐ Nie, denn ein Bruch bleibt immer ein Bruch.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 7 · 3⁄13 ▢ 3 · 6⁄13
+  - ☑ >
+  - ☐ <
+  - ☐ =
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☐ 8 · 3 7⁄10 = 30 3⁄5
+  - ☑ 7 · 3 1⁄6 = 22 1⁄6
+  - ☑ 4 · 3 1⁄8 = 12 1⁄2
+  - ☐ 5 · 3 5⁄6 = 20 1⁄6
+  - ☐ 5 · 1 7⁄9 = 9 8⁄9
+
+## 6.2.3-V2: Ich kann gemischte Zahlen vervielfachen und Sachaufgaben dazu lösen.
+
+Grundlage, die F übt: Mehrere gleiche Portionen als Bild zusammenzählen: dreimal ein halber Liter
+
+Baut auf: 6.2.3-V1 (Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren.), 6.1.1-B2 (Ich kann gemischte Zahlen und Brüche ineinander umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle gefärbten Teile. Aus vollen Kreisen werden Ganze. *Beispiel:* 2 · 3⁄4 = 6⁄4. Das ist ein Ganzes und 2⁄4, also 1 1⁄2. *Lösungsschritt:* Nimm den Zähler mal. Schreibe das Ergebnis dann als gemischte Zahl.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Jeder Kreis zeigt 4⁄5. / Es sind 2 Kreise. / 2 · 4⁄5 = ▢⁄5 _(Bild: Bruchbild: A: Kreis mit 5 Teilen, 4 gefärbt; B: Kreis mit 5 Teilen, 4 gefärbt)_ Lösung: a = **8**
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Ole trinkt 3 Gläser Wasser. / In jedem Glas ist 1⁄2 l. / Wie viel Wasser ist das zusammen? _(Bild: Bruchbild: A: Streifen mit 2 Teilen, 1 gefärbt; B: Streifen mit 2 Teilen, 1 gefärbt; C: Streifen mit 2 Teilen, 1 gefärbt)_
+  - ☑ 1 1⁄2 l
+  - ☐ 2 l
+  - ☐ 3⁄6 l
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Ein Schritt von Finn ist 4⁄5 m lang. / Finn macht 2 Schritte. / Wie weit kommt Finn? _(Bild: Bruchbild: A: Streifen mit 5 Teilen, 4 gefärbt; B: Streifen mit 5 Teilen, 4 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 3⁄5 m**. Typische Fehler: 8⁄10 (bruch-mal-nenner-mit), 6⁄5 (1x1-addiert).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Jeder Kreis zeigt 3⁄5. / Rechne 3 · 3⁄5. / Schreibe das Ergebnis als gemischte Zahl. _(Bild: Bruchbild: A: Kreis mit 5 Teilen, 3 gefärbt; B: Kreis mit 5 Teilen, 3 gefärbt; C: Kreis mit 5 Teilen, 3 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 4⁄5**. Typische Fehler: 9⁄15 (bruch-mal-nenner-mit), 6⁄5 (1x1-addiert).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Jedes Kind isst 3⁄4 Pizza. / Es sind 3 Kinder. / Wie viel Pizza essen sie zusammen? _(Bild: Bruchbild: A: Kreis mit 4 Teilen, 3 gefärbt; B: Kreis mit 4 Teilen, 3 gefärbt; C: Kreis mit 4 Teilen, 3 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄4**. Typische Fehler: 9⁄12 (bruch-mal-nenner-mit), 6⁄4 (1x1-addiert).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Jeder Kreis zeigt 1⁄2. / Rechne 2 · 1⁄2. / Das Ergebnis ist eine natürliche Zahl. _(Bild: Bruchbild: A: Kreis mit 2 Teilen, 1 gefärbt; B: Kreis mit 2 Teilen, 1 gefärbt)_ Lösung: **1**. Typische Fehler: 2 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nimm den Bruch so oft, wie die Aufgabe sagt. Kürze am Ende. *Beispiel:* 5 Runden mit je 3⁄4 km sind 5 · 3⁄4 km = 15⁄4 km = 3 3⁄4 km. *Lösungsschritt:* Nimm nur den Zähler mal. Schreibe das Ergebnis als gemischte Zahl.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Eine Runde im Park ist 3⁄4 km lang. / Ben läuft 3 Runden. / Wie viele Kilometer sind das? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: A: Streifen mit 4 Teilen, 3 gefärbt; B: Streifen mit 4 Teilen, 3 gefärbt; C: Streifen mit 4 Teilen, 3 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄4 km**. Typische Fehler: 9⁄12 (bruch-mal-nenner-mit), 6⁄4 (1x1-addiert).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Jeder Kreis zeigt 9⁄10. / Rechne 2 · 9⁄10. / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: A: Kreis mit 10 Teilen, 9 gefärbt; B: Kreis mit 10 Teilen, 9 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 4⁄5**. Typische Fehler: 18⁄20 (bruch-mal-nenner-mit), 8⁄9 (gemischt-umwandeln).
+- `03` AFB II · _Modellieren_ · Eine Stunde Videoschauen verbraucht 7⁄20 vom Akku. / Ali nutzt das Handy so 2 Stunden lang. / Welcher Bruchteil vom Akku ist dann verbraucht? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄10**. Typische Fehler: 14⁄40 (bruch-mal-nenner-mit), 6⁄20 (sach-frage-verfehlt).
+- `04` AFB I · _Modellieren_ · Für einen Kuchen braucht man 3⁄10 kg Mehl. / Lena macht davon die 6-fache Menge. / Wie viel Mehl braucht Lena? / Kürze das Ergebnis vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 4⁄5 kg**. Typische Fehler: 18⁄60 (bruch-mal-nenner-mit), 9⁄10 (1x1-addiert).
+- `05` AFB II · _Modellieren_ · Für eine Schleife braucht Mara 3⁄10 m Band. / Mara bindet 6 Schleifen. / Das Band ist 1 m lang. / Welches Zeichen passt? 6 · 3⁄10 m ▢ 1 m
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Das Bild zeigt 1 2⁄3. / Paul rechnet: 2 · 1 2⁄3 = 2 2⁄3 / Stimmt das? _(Bild: Bruchbild: 2 Ganze, je Kreis mit 3 Teilen, 5 gefärbt)_
+  - ☑ Falsch. / Es gilt 2 · 1 2⁄3 = 3 1⁄3.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 2 · 1 2⁄3 = 4 1⁄3.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle die gemischte Zahl zuerst in einen Bruch um. *Lösungsschritt:* 3 1⁄12 = 37⁄12. Kürze 6 mit dem Nenner 12, bevor du multiplizierst.
+
+- `01` AFB I · _Modellieren_ · Berechne 6 · 3 1⁄12 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **18 1⁄2**. Typische Fehler: 217⁄12 (gemischt-getrennt-mal), 222⁄72 (bruch-mal-nenner-mit).
+- `02` AFB II · _Modellieren_ · Ein Lied dauert 3 2⁄3 min. Lena hört es 4-mal hintereinander. Wie viele Minuten sind das? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **14 2⁄3 min**. Typische Fehler: 38⁄3 (gemischt-getrennt-mal), 23⁄3 (1x1-addiert).
+- `03` AFB II · _Modellieren_ · Für eine Portion Pfannkuchen braucht man 1⁄8 l Milch und 3⁄8 l Wasser. Wie viel Flüssigkeit braucht man für 3 Portionen? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄2 l**. Typische Fehler: 3⁄8 (sach-schritt-vergessen), 4⁄8 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · Berechne das 6-Fache von 2 1⁄5 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **13 1⁄5**. Typische Fehler: 61⁄5 (gemischt-getrennt-mal), 41⁄5 (1x1-addiert).
+- `05` AFB II · _Modellieren_ · Ein Kanister fasst 6 l. Es werden 3 Flaschen mit je 2 1⁄4 l hineingegossen. Welches Zeichen passt? 3 · 2 1⁄4 l ▢ 6 l
+  - ☐ <
+  - ☐ =
+  - ☑ >
+- `06` AFB III · _Modellieren_ · Lina rechnet 4 · 3 1⁄8 = 12 1⁄8. Welchen Fehler macht Lina?
+  - ☑ Nur die Ganzen werden multipliziert, der Bruch dahinter nicht.
+  - ☐ Der Nenner hätte auch multipliziert werden müssen.
+  - ☐ Das Ergebnis ist richtig, es ist nur nicht gekürzt.
+  - ☐ Die Ganzen hätten addiert werden müssen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Kürze vor dem Multiplizieren. Du kannst auch die Ganzen und den Bruch einzeln vervielfachen und dann addieren.
+
+- `01` AFB I · _Modellieren_ · Berechne 12 · 4 5⁄24 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **50 1⁄2**. Typische Fehler: 1157⁄24 (gemischt-getrennt-mal), 1212⁄288 (bruch-mal-nenner-mit).
+- `02` AFB II · _Modellieren_ · Ein Radfahrer fährt in jeder Minute 7⁄16 km. Wie viele Kilometer sind das in einer Viertelstunde? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **6 9⁄16 km**. Typische Fehler: 7⁄4 (sach-falsche-rechnung), 105⁄4 (sach-frage-verfehlt).
+- `03` AFB II · _Modellieren_ · Welcher Faktor fehlt? ▢ · 3 1⁄6 = 25 1⁄3 Lösung: a = **8**
+- `04` AFB III · _Argumentieren (+ Modellieren)_ · Eine gemischte Zahl wird mit einer natürlichen Zahl multipliziert. Du multiplizierst die Ganzen und den Bruch einzeln und addierst die Ergebnisse. Warum ist das erlaubt?
+  - ☐ Weil die Ganzen und der Bruch nichts miteinander zu tun haben.
+  - ☐ Das gilt nur, wenn der Bruch den Zähler 1 hat.
+  - ☐ Weil beim Multiplizieren der Nenner unverändert bleibt.
+  - ☑ Eine gemischte Zahl ist eine Summe, und jeder Summand wird multipliziert.
+  - ☐ Das ist nicht erlaubt, man muss immer zuerst in einen Bruch umwandeln.
+- `05` AFB II · _Modellieren_ · Paket A enthält 6 Flaschen mit je 1⁄2 l. Paket B enthält 4 Flaschen mit je 1 3⁄5 l. Wie viele Liter enthält das vollere Paket mehr als das andere? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 2⁄5 l**. Typische Fehler: 47⁄5 (sach-falsche-rechnung), 32⁄5 (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 4 · 4 14⁄15 = 19 11⁄15
+  - ☑ 10 · 2 7⁄9 = 27 7⁄9
+  - ☑ 8 · 4 5⁄9 = 36 4⁄9
+  - ☑ 10 · 2 5⁄12 = 24 1⁄6
+  - ☐ 9 · 4 5⁄12 = 36 5⁄12
+
+## 6.2.4-T1: Ich kann einen Bruch durch eine natürliche Zahl dividieren.
+
+Grundlage, die F übt: Gefärbte Teile gerecht verteilen: sechs Achtel an drei Kinder, jedes bekommt zwei Achtel
+
+Baut auf: 6.1.2-W1 (Ich kann einen Bruch mit einer gegebenen Zahl erweitern.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die gefärbten Teile werden gerecht verteilt. Teile den Zähler. *Beispiel:* 6⁄7 : 3 = 2⁄7, denn 6 : 3 = 2. Der Nenner bleibt 7. *Lösungsschritt:* Teile den Zähler durch die Zahl. Schreibe den Nenner ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 4⁄5 gefärbt. / Teile durch 2. / 4⁄5 : 2 = ▢⁄5 _(Bild: Bruchbild: Streifen mit 5 Teilen, 4 gefärbt)_ Lösung: a = **2**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Kreis ist 2⁄7 gefärbt. / Rechne 2⁄7 : 2. _(Bild: Bruchbild: Kreis mit 7 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄7**. Typische Fehler: 4⁄7 (bruch-teilen-nenner-geteilt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Kreis ist 1⁄2 gefärbt. / Teile durch 3. / 1⁄2 : 3 = 1⁄▢ _(Bild: Bruchbild: Kreis mit 2 Teilen, 1 gefärbt)_ Lösung: a = **6**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 1⁄2 gefärbt. / Wie viel ist 1⁄2 : 3? _(Bild: Bruchbild: Streifen mit 2 Teilen, 1 gefärbt)_
+  - ☐ 1⁄5
+  - ☐ 3⁄2
+  - ☑ 1⁄6
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 3⁄4 gefärbt. / Rechne 3⁄4 : 2. _(Bild: Bruchbild: Streifen mit 4 Teilen, 3 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄8**. Typische Fehler: 6⁄4 (bruch-teilen-nenner-geteilt), 3⁄6 (1x1-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Kreis ist 2⁄3 gefärbt. / Rechne 2⁄3 : 6. / Kürze das Ergebnis. _(Bild: Bruchbild: Kreis mit 3 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄9**. Typische Fehler: 12⁄3 (bruch-teilen-nenner-geteilt), 2⁄9 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile den Zähler. Geht das nicht, dann nimm den Nenner mal. *Beispiel:* 8⁄9 : 4 = 2⁄9. Und 3⁄4 : 2 = 3⁄8. *Lösungsschritt:* Prüfe zuerst: Lässt sich der Zähler durch die Zahl teilen?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 6⁄7 : 3. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄7**. Typische Fehler: 18⁄7 (bruch-teilen-nenner-geteilt), 3⁄7 (div-falsche-rechenart).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 4⁄5 gefärbt. / Teile durch 3. / 4⁄5 : 3 = 4⁄▢ _(Bild: Bruchbild: Streifen mit 5 Teilen, 4 gefärbt)_ Lösung: a = **15**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne und mache die Probe. / 2⁄3 : 3 = 2⁄▢ / Probe: 3 · 2⁄9 = ▢⁄9 Lösung: a = **9**, b = **6**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Kreis ist 3⁄4 gefärbt. / Rechne 3⁄4 : 4. / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Kreis mit 4 Teilen, 3 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄16**. Typische Fehler: 12⁄4 (bruch-teilen-nenner-geteilt), 3⁄8 (1x1-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne 9⁄10 : 6. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄20**. Typische Fehler: 54⁄10 (bruch-teilen-nenner-geteilt), 9⁄16 (1x1-addiert).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Im Streifen ist 9⁄10 gefärbt. / Lina rechnet: 9⁄10 : 3 = 27⁄10 / Stimmt das? _(Bild: Bruchbild: Streifen mit 10 Teilen, 9 gefärbt)_
+  - ☐ Falsch. / Es gilt 9⁄10 : 3 = 9⁄13.
+  - ☑ Falsch. / Es gilt 9⁄10 : 3 = 3⁄10.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle die gemischte Zahl zuerst in einen Bruch um. *Lösungsschritt:* 3 1⁄5 = 16⁄5. Der Zähler 16 lässt sich durch 4 teilen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 3 1⁄5 : 4 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 64⁄5 (bruch-teilen-nenner-geteilt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 4⁄7 : 12 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄21**. Typische Fehler: 48⁄7 (bruch-teilen-nenner-geteilt), 4⁄19 (1x1-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Durch welche Zahl musst du 4⁄9 dividieren, um 4⁄63 zu erhalten? Lösung: **7**. Typische Fehler: 63 (sach-frage-verfehlt), 54 (1x1-addiert), 9 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 3 1⁄6 : 2 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄12**. Typische Fehler: 38⁄6 (bruch-teilen-nenner-geteilt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 5⁄6 : 2 ▢ 5⁄6
+  - ☑ <
+  - ☐ =
+  - ☐ >
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Bruch wird durch eine natürliche Zahl dividiert, die größer als 1 ist. Was gilt für das Ergebnis?
+  - ☐ Es ist gleich groß, denn Zähler und Nenner ändern sich beide.
+  - ☑ Es ist kleiner als der Bruch, denn jeder Anteil wird kleiner.
+  - ☐ Es ist größer als der Bruch, denn der Nenner wird größer.
+  - ☐ Das hängt davon ab, ob der Zähler teilbar ist.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle in einen unechten Bruch um und kürze den Zähler mit dem Divisor.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 7 1⁄9 : 12 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **16⁄27**. Typische Fehler: 768⁄9 (bruch-teilen-nenner-geteilt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl wird durch 5 dividiert. Das Ergebnis ist 2 7⁄9. Wie heißt die Zahl? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **13 8⁄9**. Typische Fehler: 5⁄9 (probe-falsche-umkehr), 97⁄9 (gemischt-getrennt-mal).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Divisor fehlt? 1 1⁄3 : ▢ = 1⁄6 Lösung: a = **8**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Durch eine natürliche Zahl zu dividieren ist dasselbe wie …
+  - ☑ mit ihrem Kehrwert zu multiplizieren.
+  - ☐ Zähler und Nenner mit dieser Zahl zu multiplizieren.
+  - ☐ den Zähler mit dieser Zahl zu multiplizieren.
+  - ☐ den Nenner durch diese Zahl zu dividieren.
+  - ☐ Zähler und Nenner durch diese Zahl zu dividieren.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Halbiere die Zahl 5 1⁄3 zweimal nacheinander. Welche Zahl erhältst du? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄3**. Typische Fehler: 8⁄3 (sach-schritt-vergessen), 64⁄3 (bruch-teilen-nenner-geteilt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 1 1⁄4 : 5 = 1⁄4
+  - ☑ 4 7⁄8 : 4 = 1 7⁄32
+  - ☐ 4 4⁄5 : 6 = 2 2⁄11
+  - ☑ 2 5⁄6 : 2 = 1 5⁄12
+  - ☐ 1 1⁄3 : 5 = 6 2⁄3
+
+## 6.2.4-T2: Ich kann Sachaufgaben lösen, in denen ein Bruchteil gerecht verteilt wird.
+
+Grundlage, die F übt: Eine halbe Pizza am Bild an zwei Kinder verteilen
+
+Baut auf: 6.2.4-T1 (Ich kann einen Bruch durch eine natürliche Zahl dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gerecht verteilen heißt teilen. Teile den Bruch durch die Anzahl. *Beispiel:* 6⁄8 Pizza für 3 Kinder: 6⁄8 : 3 = 2⁄8. Jedes Kind bekommt 2⁄8 Pizza. *Lösungsschritt:* Teile den Zähler. Geht das nicht, dann nimm den Nenner mal.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Auf dem Teller liegt 6⁄7 Pizza. / 3 Kinder teilen gerecht. / 6⁄7 : 3 = ▢⁄7 _(Bild: Bruchbild: Kreis mit 7 Teilen, 6 gefärbt)_ Lösung: a = **2**
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Auf dem Teller liegt 1⁄3 Torte. / 3 Kinder teilen gerecht. / Wie viel Torte bekommt jedes Kind? _(Bild: Bruchbild: Kreis mit 3 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄9**. Typische Fehler: 3⁄3 (bruch-teilen-nenner-geteilt), 1⁄6 (1x1-addiert).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Im Krug ist 3⁄10 l Saft. / Er wird auf 3 Gläser gleich verteilt. / Wie viel Saft ist in jedem Glas? _(Bild: Bruchbild: Streifen mit 10 Teilen, 3 gefärbt)_
+  - ☐ 6⁄10 l
+  - ☑ 1⁄10 l
+  - ☐ 9⁄10 l
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Ein Seil ist 4⁄5 m lang. / Lena schneidet 4 gleich lange Stücke daraus. / Wie lang ist ein Stück? _(Bild: Bruchbild: Streifen mit 5 Teilen, 4 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5 m**. Typische Fehler: 16⁄5 (bruch-teilen-nenner-geteilt).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Der Akku ist zu 4⁄5 voll. / Das reicht genau für 2 Stunden Musikhören. / Welcher Bruchteil vom Akku wird in einer Stunde verbraucht? _(Bild: Bruchbild: undefined mit 5 Teilen, 4 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄5**. Typische Fehler: 8⁄5 (bruch-teilen-nenner-geteilt), 1⁄5 (sach-frage-verfehlt).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Es ist noch 2⁄3 Kuchen da. / 4 Kinder teilen gerecht. / Wie viel Kuchen bekommt jedes Kind? / Kürze das Ergebnis. _(Bild: Bruchbild: Kreis mit 3 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄6**. Typische Fehler: 8⁄3 (bruch-teilen-nenner-geteilt), 2⁄7 (1x1-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gerecht verteilen heißt teilen. Kürze am Ende. *Beispiel:* 3⁄4 kg auf 6 Tüten: 3⁄4 kg : 6 = 3⁄24 kg = 1⁄8 kg. *Lösungsschritt:* Teile den Zähler. Geht das nicht, dann nimm den Nenner mal. Kürze dann.
+
+- `01` AFB I · _Modellieren_ · 3⁄10 kg Rosinen werden auf 6 Tüten gleich verteilt. / Wie viel Kilogramm sind in einer Tüte? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄20 kg**. Typische Fehler: 18⁄10 (bruch-teilen-nenner-geteilt), 3⁄16 (1x1-addiert).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Im Krug ist 3⁄5 l Saft. / 2 Kinder teilen gerecht. / Wie viel bekommt jedes Kind? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Streifen mit 5 Teilen, 3 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄10 l**. Typische Fehler: 6⁄5 (bruch-teilen-nenner-geteilt), 3⁄7 (1x1-addiert).
+- `03` AFB II · _Modellieren_ · Ein Brett ist 3⁄10 m lang. / Ali sägt es in 6 gleich lange Teile. / Wie lang ist ein Teil? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄20 m**. Typische Fehler: 18⁄10 (bruch-teilen-nenner-geteilt).
+- `04` AFB I · _Modellieren_ · Ein Staffellauf ist 3⁄4 km lang. / 4 Kinder laufen gleich lange Stücke. / Wie viele Kilometer läuft jedes Kind? _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄16 km**. Typische Fehler: 12⁄4 (bruch-teilen-nenner-geteilt), 3⁄8 (1x1-addiert).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Das Bild zeigt 2 1⁄2 Pizzen. / 3 Kinder teilen gerecht. / Wie viel Pizza bekommt jedes Kind? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: 3 Ganze, je Kreis mit 2 Teilen, 5 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄6**. Typische Fehler: 15⁄2 (bruch-teilen-nenner-geteilt).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Im Streifen ist 5⁄8 gefärbt. / Mia verteilt 5⁄8 l Saft auf 2 Gläser. / Mia rechnet: 5⁄8 : 2 = 1 1⁄4 / Stimmt das? _(Bild: Bruchbild: Streifen mit 8 Teilen, 5 gefärbt)_
+  - ☐ Falsch. / Es gilt 5⁄8 : 2 = 1⁄2.
+  - ☑ Falsch. / Es gilt 5⁄8 : 2 = 5⁄16.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle die gemischte Zahl in einen Bruch um und dividiere dann. *Lösungsschritt:* 3 3⁄5 = 18⁄5. Kürze 18 und 8 mit 2, bevor du den Nenner multiplizierst.
+
+- `01` AFB I · _Modellieren_ · 3 3⁄5 l Limonade werden gerecht an 8 Personen verteilt. Wie viel Liter bekommt jede Person? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **9⁄20 l**. Typische Fehler: 144⁄5 (bruch-teilen-nenner-geteilt).
+- `02` AFB II · _Modellieren_ · Ein Seil ist 4 3⁄4 m lang. Emre schneidet es in 3 gleich lange Stücke. Wie lang ist ein Stück? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄12 m**. Typische Fehler: 57⁄4 (bruch-teilen-nenner-geteilt).
+- `03` AFB II · _Modellieren_ · In einem Eimer sind 8 l Farbe. Davon werden 2 1⁄4 l verbraucht. Der Rest wird gleichmäßig auf 5 Dosen verteilt. Wie viel Liter sind in jeder Dose? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 3⁄20 l**. Typische Fehler: 8⁄5 (sach-schritt-vergessen), 23⁄4 (sach-schritt-vergessen), 9⁄20 (sach-frage-verfehlt).
+- `04` AFB I · _Modellieren_ · Ein Film dauert 1 1⁄2 h. Er wird in 5 gleich lange Teile geschnitten. Welchen Bruchteil einer Stunde dauert jeder Teil? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄10 h**. Typische Fehler: 15⁄2 (bruch-teilen-nenner-geteilt).
+- `05` AFB II · _Modellieren_ · 1⁄4 kg Kaffee werden gleichmäßig in Dosen gefüllt. In jeder Dose sind danach 1⁄12 kg. Wie viele Dosen sind es? Lösung: **3**. Typische Fehler: 4 (sach-schritt-vergessen), 12 (sach-frage-verfehlt).
+- `06` AFB III · _Modellieren_ · Emre verteilt 6 2⁄3 l Saft gerecht auf 3 Krüge und rechnet 6 2⁄3 : 3 = 2 2⁄3. Welchen Fehler macht Emre?
+  - ☑ Nur die Ganzen werden dividiert, der Bruch dahinter nicht.
+  - ☐ Die Ganzen hätten multipliziert werden müssen.
+  - ☐ Der Nenner hätte dividiert werden müssen.
+  - ☐ Das Ergebnis ist richtig, es ist nur nicht gekürzt.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle in einen unechten Bruch um und kürze vor dem Rechnen.
+
+- `01` AFB I · _Modellieren_ · Eine Wanderung von 12 4⁄5 km wird in 12 gleich lange Etappen eingeteilt. Wie viele Kilometer hat eine Etappe? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄15 km**. Typische Fehler: 9⁄5 (gemischt-getrennt-mal), 768⁄5 (bruch-teilen-nenner-geteilt).
+- `02` AFB II · _Modellieren_ · In einem Kanister sind 5 1⁄2 l Saft. 1⁄4 l bleiben im Kanister, der Rest wird gleichmäßig auf 3 Flaschen verteilt. Wie viel Liter sind in jeder Flasche? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 3⁄4 l**. Typische Fehler: 11⁄6 (sach-schritt-vergessen), 21⁄4 (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · Eine Leiste wird in 4 gleich lange Stücke geschnitten. Jedes Stück ist 2 5⁄8 m lang. Wie lang war die Leiste vorher? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **10 1⁄2 m**. Typische Fehler: 21⁄32 (probe-falsche-umkehr), 69⁄8 (gemischt-getrennt-mal).
+- `04` AFB III · _Modellieren_ · Eine Menge wird zuerst gerecht auf einige Gruppen verteilt. Danach verteilt jede Gruppe ihren Anteil gerecht an ihre Kinder. Jede Gruppe hat gleich viele Kinder. Wie findest du den Anteil eines Kindes in einem Schritt?
+  - ☐ Das geht nicht in einem Schritt.
+  - ☐ Die Menge durch die Gruppenzahl dividieren und mit der Kinderzahl multiplizieren.
+  - ☐ Die Menge durch die Summe aus Gruppenzahl und Kinderzahl dividieren.
+  - ☐ Die Menge mit der Gruppenzahl und mit der Kinderzahl multiplizieren.
+  - ☑ Die Menge durch das Produkt aus Gruppenzahl und Kinderzahl dividieren.
+- `05` AFB II · _Modellieren_ · Ole fährt an vier Tagen 3 1⁄2 km, 3 3⁄4 km, 1 1⁄2 km und 2 km. Wie viele Kilometer sind das im Durchschnitt pro Tag? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 11⁄16 km**. Typische Fehler: 43⁄4 (sach-schritt-vergessen), 43⁄12 (sach-falsche-rechnung).
+- `06` AFB III · _Modellieren_ · Bei Fest A teilen sich 3 Gäste 4 1⁄2 l Punsch, bei Fest B teilen sich 5 Gäste 7 1⁄4 l. Vergleiche, wie viel ein Gast bekommt. Welches Zeichen passt? 4 1⁄2 l : 3 ▢ 7 1⁄4 l : 5
+  - ☑ >
+  - ☐ =
+  - ☐ <
+
+## 6.2.5-P1: Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.
+
+Grundlage, die F übt: Im Rechteckbild die doppelt gefärbten Felder zählen
+
+Baut auf: 6.2.3-V1 (Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren.), 6.1.3-K2 (Ich kann einen Bruch vollständig kürzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Rechteck hat so viele Felder wie Nenner mal Nenner. *Beispiel:* 1⁄2 · 3⁄4 = 3⁄8. Von 8 Feldern sind 3 kräftig gefärbt. *Lösungsschritt:* Zähle nur die kräftig gefärbten Felder.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt sind 2⁄3 vom Rechteck. / Kräftig gefärbt sind 3⁄4 davon. / Zähle die kräftig gefärbten Felder. / 3⁄4 · 2⁄3 = ▢⁄12 _(Bild: Bruchbild: Rechteck 4 × 3 mit 12 Teilen, 6 gefärbt)_ Lösung: a = **6**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt ist 1⁄4 vom Rechteck. / Kräftig gefärbt ist 1⁄2 davon. / Rechne 1⁄2 · 1⁄4. _(Bild: Bruchbild: Rechteck 2 × 4 mit 8 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄8**. Typische Fehler: 2⁄6 (bruch-mal-wie-plus), 1⁄4 (bruch-mal-wie-plus).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt ist 1⁄4 vom Rechteck. / Kräftig gefärbt ist 1⁄2 davon. / Wie viel ist 1⁄2 · 1⁄4? _(Bild: Bruchbild: Rechteck 2 × 4 mit 8 Teilen, 1 gefärbt)_
+  - ☑ 1⁄8
+  - ☐ 2⁄6
+  - ☐ 1⁄6
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt sind 3⁄4 vom Rechteck. / Kräftig gefärbt ist 1⁄3 davon. / Rechne Zähler mal Zähler und Nenner mal Nenner. / 1⁄3 · 3⁄4 = ▢⁄▢ _(Bild: Bruchbild: Rechteck 3 × 4 mit 12 Teilen, 3 gefärbt)_ Lösung: a = **3**, b = **12**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt sind 2⁄3 vom Rechteck. / Kräftig gefärbt sind 2⁄5 davon. / Rechne 2⁄5 · 2⁄3. _(Bild: Bruchbild: Rechteck 5 × 3 mit 15 Teilen, 4 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄15**. Typische Fehler: 4⁄8 (bruch-mal-wie-plus), 4⁄5 (bruch-mal-wie-plus).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt ist 1⁄4 vom Rechteck. / Kräftig gefärbt sind 2⁄3 davon. / Rechne 2⁄3 · 1⁄4. / Kürze das Ergebnis. _(Bild: Bruchbild: Rechteck 3 × 4 mit 12 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄6**. Typische Fehler: 3⁄7 (bruch-mal-wie-plus), 2⁄4 (bruch-mal-wie-plus).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähler mal Zähler und Nenner mal Nenner. Kürze am Ende. *Beispiel:* 3⁄4 · 2⁄5 = 6⁄20 = 3⁄10. *Lösungsschritt:* Schreibe zuerst das Ergebnis ohne Kürzen. Kürze dann so weit wie möglich.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt sind 2⁄3 vom Rechteck. / Kräftig gefärbt ist 1⁄4 davon. / Rechne 1⁄4 · 2⁄3. / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Rechteck 4 × 3 mit 12 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄6**. Typische Fehler: 3⁄7 (bruch-mal-wie-plus), 2⁄4 (bruch-mal-wie-plus).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gefärbt sind 3⁄4 vom Rechteck. / Kräftig gefärbt sind 4⁄5 davon. / 4⁄5 · 3⁄4 = ▢⁄▢ _(Bild: Bruchbild: Rechteck 5 × 4 mit 20 Teilen, 12 gefärbt)_ Lösung: a = **12**, b = **20**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? / 3⁄4 · ▢⁄5 = 9⁄20 Lösung: a = **3**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 4⁄5 · 5⁄6. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: 9⁄11 (bruch-mal-wie-plus), 20⁄6 (bruch-mal-wie-plus).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne 1⁄3 · 4⁄5 · 3⁄4. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: 8⁄12 (bruch-mal-wie-plus), 4⁄15 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Gefärbt ist 1⁄4 vom Rechteck. / Kräftig gefärbt ist 1⁄4 davon. / Mara rechnet: 1⁄4 · 1⁄4 = 1⁄4 / Stimmt das? _(Bild: Bruchbild: Rechteck 4 × 4 mit 16 Teilen, 1 gefärbt)_
+  - ☑ Falsch. / Es gilt 1⁄4 · 1⁄4 = 1⁄16.
+  - ☐ Falsch. / Es gilt 1⁄4 · 1⁄4 = 2⁄4.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Kürze vor dem Multiplizieren über Kreuz: einen Zähler mit einem Nenner. *Lösungsschritt:* Kürze 4 und 10 mit 2 sowie 3 und 15 mit 3. Multipliziere dann.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 4⁄15 · 3⁄10 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄25**. Typische Fehler: 7⁄25 (bruch-mal-wie-plus), 12⁄15 (bruch-mal-wie-plus).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 2 1⁄2 · 1 1⁄2 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 3⁄4**. Typische Fehler: 9⁄4 (gemischt-getrennt-mal), 15⁄2 (bruch-mal-wie-plus).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 2⁄3 · 1⁄4 · 3⁄5 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄10**. Typische Fehler: 1⁄6 (sach-schritt-vergessen), 6⁄12 (bruch-mal-wie-plus).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 1 1⁄3 · 3⁄8 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 9⁄8 (gemischt-getrennt-mal), 12⁄8 (bruch-mal-wie-plus).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 1⁄5 · 1⁄6 ▢ 1⁄5
+  - ☐ >
+  - ☐ =
+  - ☑ <
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Du multiplizierst eine Zahl mit einem Bruch, der kleiner als 1 ist. Was gilt für das Ergebnis?
+  - ☑ Es ist kleiner als die Zahl, denn du nimmst nur einen Teil von ihr.
+  - ☐ Das hängt vom Nenner des Bruchs ab.
+  - ☐ Es ist größer als die Zahl, denn Multiplizieren vergrößert immer.
+  - ☐ Es ist genauso groß wie die Zahl.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle um, schreibe alles auf einen Bruchstrich und kürze, bevor du multiplizierst.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 3 1⁄3 · 1 1⁄4 · 5⁄6 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 17⁄36**. Typische Fehler: 25⁄6 (sach-schritt-vergessen), 185⁄72 (gemischt-getrennt-mal).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? ▢⁄6 · 8⁄15 = 4⁄9 Lösung: a = **5**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 5⁄6 · 1 1⁄4 ▢ 1
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei echte Brüche werden miteinander multipliziert. Was gilt immer für das Produkt?
+  - ☐ Darüber lässt sich nichts sagen.
+  - ☑ Es ist kleiner als jeder der beiden Brüche.
+  - ☐ Es ist größer als jeder der beiden Brüche.
+  - ☐ Es ist größer als der kleinere und kleiner als die Summe der beiden Brüche.
+  - ☐ Es liegt zwischen den beiden Brüchen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mit welcher Zahl musst du 5⁄6 multiplizieren, um genau 1 zu erhalten? _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄5**. Typische Fehler: 1⁄6 (add-subtrahiert), 5⁄6 (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 1 1⁄3 · 2⁄3 = 8⁄9
+  - ☑ 3⁄4 · 1 7⁄8 = 1 13⁄32
+  - ☑ 1 1⁄4 · 1⁄3 = 5⁄12
+  - ☐ 2 3⁄4 · 1 7⁄8 = 2 21⁄32
+  - ☐ 1 1⁄6 · 1 2⁄3 = 5 5⁄6
+
+## 6.2.5-P2: Ich kann den Bruchteil von einem Bruchteil bestimmen und Sachaufgaben dazu lösen.
+
+Grundlage, die F übt: Am Bild die Hälfte von einem halben Streifen finden
+
+Baut auf: 6.2.5-P1 (Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.), 6.1.5-T1 (Ich kann den Bruchteil einer Größe berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Wort „von“ bedeutet mal. *Beispiel:* 1⁄2 von 3⁄4 ist 1⁄2 · 3⁄4 = 3⁄8. *Lösungsschritt:* Schreibe die Malaufgabe auf. Rechne Zähler mal Zähler und Nenner mal Nenner.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Gefärbt sind 2⁄3 vom Rechteck. / Kräftig gefärbt sind 2⁄5 davon. / Wie viel ist 2⁄5 von 2⁄3? / 2⁄5 · 2⁄3 = ▢⁄15 _(Bild: Bruchbild: Rechteck 5 × 3 mit 15 Teilen, 4 gefärbt)_ Lösung: a = **4**
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Vom Blechkuchen ist noch 1⁄4 da. / Ali isst 1⁄2 davon. / Welchen Bruchteil vom ganzen Kuchen isst Ali? _(Bild: Bruchbild: Rechteck 2 × 4 mit 8 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄8**. Typische Fehler: 2⁄6 (bruch-mal-wie-plus), 1⁄4 (sach-frage-verfehlt).
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Gefärbt ist 1⁄3 vom Rechteck. / Kräftig gefärbt ist 1⁄4 davon. / Wie viel ist 1⁄4 von 1⁄3? _(Bild: Bruchbild: Rechteck 4 × 3 mit 12 Teilen, 1 gefärbt)_
+  - ☐ 2⁄7
+  - ☐ 1⁄7
+  - ☑ 1⁄12
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · 2⁄3 vom Garten sind Beete. / Auf 1⁄3 davon wachsen Tomaten. / Auf welchem Bruchteil vom ganzen Garten wachsen Tomaten? _(Bild: Bruchbild: Rechteck 3 × 3 mit 9 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄9**. Typische Fehler: 3⁄6 (bruch-mal-wie-plus), 2⁄3 (sach-frage-verfehlt).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Der Akku ist zu 1⁄4 voll. / Ein Spiel verbraucht 1⁄2 davon. / Welcher Bruchteil vom ganzen Akku ist das? _(Bild: Bruchbild: undefined mit 4 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄8**. Typische Fehler: 2⁄6 (bruch-mal-wie-plus), 1⁄2 (sach-frage-verfehlt).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Gefärbt sind 2⁄3 vom Rechteck. / Kräftig gefärbt ist 1⁄2 davon. / Wie viel ist 1⁄2 von 2⁄3? / Kürze das Ergebnis. _(Bild: Bruchbild: Rechteck 2 × 3 mit 6 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄3**. Typische Fehler: 3⁄5 (bruch-mal-wie-plus), 2⁄3 (bruch-mal-wie-plus).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Wort „davon“ bedeutet mal. Kürze am Ende. *Beispiel:* 2⁄3 von 3⁄4 l sind 2⁄3 · 3⁄4 l = 6⁄12 l = 1⁄2 l. *Lösungsschritt:* Schreibe die Malaufgabe auf. Kürze vor oder nach dem Malnehmen.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Im Krug ist 1⁄3 l Milch. / Jonas braucht 3⁄4 davon. / Wie viel Liter braucht Jonas? / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Rechteck 4 × 3 mit 12 Teilen, 3 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄4 l**. Typische Fehler: 4⁄7 (bruch-mal-wie-plus), 1⁄3 (sach-frage-verfehlt).
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Gefärbt sind 2⁄3 vom Rechteck. / Kräftig gefärbt sind 4⁄5 davon. / 4⁄5 von 2⁄3 ist ▢⁄▢. _(Bild: Bruchbild: Rechteck 5 × 3 mit 15 Teilen, 8 gefärbt)_ Lösung: a = **8**, b = **15**
+- `03` AFB II · _Modellieren_ · Der Schulweg von Lena ist 3⁄4 km lang. / 2⁄3 davon fährt Lena mit dem Bus. / Wie viele Kilometer sind das? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2 km**. Typische Fehler: 5⁄7 (bruch-mal-wie-plus), 1⁄4 (sach-frage-verfehlt).
+- `04` AFB I · _Modellieren_ · Das Training dauert 3⁄4 h. / 2⁄5 davon ist Aufwärmen. / Wie lange dauert das Aufwärmen? / Gib das Ergebnis als Bruchteil einer Stunde an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄10 h**. Typische Fehler: 5⁄9 (bruch-mal-wie-plus), 9⁄20 (sach-frage-verfehlt).
+- `05` AFB II · _Modellieren_ · Vom Kuchen ist noch 2⁄3 da. / Die Gäste essen 1⁄2 davon. / Welcher Bruchteil vom ganzen Kuchen bleibt übrig? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄3**. Typische Fehler: 1⁄2 (sach-falsche-rechnung).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Gefärbt sind 3⁄4 vom Rechteck. / Kräftig gefärbt ist 1⁄2 davon. / Mia rechnet: 1⁄2 · 3⁄4 = 4⁄6 / Stimmt das? _(Bild: Bruchbild: Rechteck 2 × 4 mit 8 Teilen, 3 gefärbt)_
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 1⁄2 · 3⁄4 = 3⁄5.
+  - ☑ Falsch. / Es gilt 1⁄2 · 3⁄4 = 3⁄8.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* „Davon“ bedeutet mal. Wandle die gemischte Zahl vorher in einen Bruch um. *Lösungsschritt:* Rechne 1⁄6 · 4⁄3. Kürze 6 mit 4.
+
+- `01` AFB I · _Modellieren_ · In einem Kanister sind 1 1⁄3 l Wasser. Jonas verbraucht 1⁄6 davon. Wie viel Liter verbraucht Jonas? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄9 l**. Typische Fehler: 10⁄9 (sach-frage-verfehlt), 19⁄18 (gemischt-getrennt-mal).
+- `02` AFB II · _Modellieren_ · 5⁄6 der Kinder einer Schule sind in einem Verein. 4⁄5 davon sind in einem Sportverein, und 1⁄4 von diesen Kindern spielen Fußball. Welcher Bruchteil aller Kinder der Schule spielt im Verein Fußball? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄6**. Typische Fehler: 2⁄3 (sach-schritt-vergessen), 1⁄5 (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · In einer Tüte sind 2 1⁄2 kg Reis. 1⁄4 des Inhalts werden verbraucht. Wie viel Kilogramm bleiben übrig? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄8 kg**. Typische Fehler: 5⁄8 (sach-schritt-vergessen), 9⁄4 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren_ · Wie viel sind 1⁄3 von 3 1⁄2 km? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄6 km**. Typische Fehler: 19⁄6 (gemischt-getrennt-mal).
+- `05` AFB II · _Modellieren_ · Welches Zeichen passt? 1⁄2 · 1⁄3 ▢ 1⁄2
+  - ☐ >
+  - ☐ =
+  - ☑ <
+- `06` AFB III · _Modellieren_ · Ben nimmt die Hälfte von einem Drittel einer Tafel Schokolade. Mia nimmt ein Drittel von der Hälfte einer gleich großen Tafel. Wer bekommt mehr?
+  - ☑ Beide bekommen gleich viel, denn die Faktoren dürfen vertauscht werden.
+  - ☐ Mia bekommt mehr, denn die Hälfte ist das größere Stück.
+  - ☐ Das lässt sich ohne die Größe der Tafel nicht sagen.
+  - ☐ Ben bekommt mehr, denn die Hälfte ist mehr als ein Drittel.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Bruchteil bezieht sich auf den Teil davor. Multipliziere alle drei Brüche und kürze vorher.
+
+- `01` AFB I · _Modellieren_ · 2⁄9 eines Grundstücks sind Garten. 1⁄4 des Gartens sind Rasen, und 4⁄5 des Rasens sind schon gemäht. Welcher Bruchteil des Grundstücks ist gemähter Rasen? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄45**. Typische Fehler: 1⁄18 (sach-schritt-vergessen), 1⁄5 (sach-schritt-vergessen).
+- `02` AFB II · _Modellieren_ · Elif gibt 4⁄5 des Taschengelds für ein Buch aus und 1⁄6 vom Rest für ein Geschenk. Welcher Bruchteil des Taschengelds ist danach noch übrig? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄6**. Typische Fehler: 1⁄30 (anteil-nicht-beachtet).
+- `03` AFB II · _Modellieren_ · In einer Kanne sind 3 2⁄3 l Milch. 5⁄6 davon werden in einen Krug gegossen, und 2⁄3 vom Inhalt des Krugs werden getrunken. Wie viel Liter werden getrunken? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄27 l**. Typische Fehler: 55⁄18 (sach-schritt-vergessen), 22⁄9 (sach-schritt-vergessen).
+- `04` AFB III · _Modellieren_ · Von einer Menge nimmst du einen Bruchteil und davon wieder einen Bruchteil. Beide Brüche sind kleiner als 1. Was gilt für das Ergebnis?
+  - ☑ Es ist kleiner als jeder der beiden einzelnen Bruchteile der Menge.
+  - ☐ Das hängt davon ab, welcher Bruchteil zuerst genommen wird.
+  - ☐ Es ist größer als der erste Bruchteil, weil noch einmal multipliziert wird.
+  - ☐ Es ist so groß wie die Summe der beiden Bruchteile.
+  - ☐ Es liegt zwischen den beiden Bruchteilen.
+- `05` AFB II · _Modellieren_ · In der Klasse A sind 2⁄3 der Kinder in einem Verein, 2⁄5 davon in einem Sportverein. In der Klasse B sind 1⁄5 in einem Verein, 1⁄4 davon in einem Sportverein. Vergleiche die Bruchteile der Kinder im Sportverein. Welches Zeichen passt? 2⁄5 · 2⁄3 ▢ 1⁄4 · 1⁄5
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `06` AFB III · _Modellieren_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 1⁄3 · 1⁄6 = 1⁄18
+  - ☐ 4⁄5 · 2 1⁄8 = 8 1⁄2
+  - ☐ 1⁄2 · 3⁄4 = 2⁄3
+  - ☐ 1⁄4 · 1 2⁄5 = 1 2⁄5
+  - ☐ 1⁄2 · 5⁄6 = 5⁄6
+
+## 6.2.6-D1: Ich kann durch einen Bruch dividieren.
+
+Grundlage, die F übt: Zählen, wie oft ein Viertel in drei Viertel passt
+
+Baut auf: 6.2.5-P1 (Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividieren heißt hier: zählen, wie oft der zweite Bruch in den ersten passt. *Lösungsschritt:* Lege Stücke der Größe 1⁄5 nebeneinander, bis 3⁄5 erreicht ist.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 3⁄5 gefärbt. Wie oft passt 1⁄5 in 3⁄5? _(Bild: Bruchbild: Streifen mit 5 Teilen, 3 gefärbt)_ Lösung: **3**. Typische Fehler: 5 (sach-frage-verfehlt), 4 (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Der Kehrwert von 5⁄6 ist ▢⁄▢. Lösung: a = **6**, b = **5**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze den Rechenweg: 1⁄7 : 2⁄3 = 1⁄7 · ▢⁄▢ = ▢⁄14 Lösung: a = **3**, b = **2**, c = **3**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 1⁄3 : 7⁄12 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄7**. Typische Fehler: 7⁄36 (bruch-kehrwert), 7⁄4 (bruch-kehrwert), 36⁄7 (bruch-kehrwert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 10 : 5⁄8. Lösung: **16**. Typische Fehler: 50 (bruch-kehrwert), 2 (sach-schritt-vergessen), 80 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Du dividierst eine Zahl durch einen Bruch, der kleiner als 1 ist. Was gilt für das Ergebnis?
+  - ☑ Es ist größer als die Zahl, denn der kleine Bruch passt öfter als einmal hinein.
+  - ☐ Es ist immer eine natürliche Zahl.
+  - ☐ Es ist genauso groß wie die Zahl.
+  - ☐ Es ist kleiner als die Zahl, denn Dividieren verkleinert immer.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 1⁄2 : 3⁄8. Gib das Ergebnis als vollständig gekürzte gemischte Zahl an. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄3**. Typische Fehler: 3⁄16 (bruch-kehrwert), 3⁄4 (bruch-kehrwert).
+- `08` AFB II · _Argumentieren_ · Paul rechnet: 3⁄5 : 1⁄2 = 1 1⁄5 / Stimmt das?
+  - ☑ Stimmt.
+  - ☐ Falsch. Es gilt 3⁄5 : 1⁄2 = 5⁄6.
+  - ☐ Falsch. Es gilt 3⁄5 : 1⁄2 = 3⁄10.
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 3⁄14 : 9⁄16 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄21**. Typische Fehler: 27⁄224 (bruch-kehrwert), 21⁄8 (bruch-kehrwert).
+- `10` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 7⁄9 : 5⁄9 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 2⁄5**. Typische Fehler: 35⁄81 (bruch-kehrwert), 5⁄7 (bruch-kehrwert), 2⁄9 (div-falsche-rechenart).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 3⁄4 : 1 1⁄2 ▢ 3⁄4
+  - ☐ =
+  - ☑ <
+  - ☐ >
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 3⁄4 : 5⁄8 = 1 1⁄5
+  - ☐ 2⁄5 : 1⁄6 = 5⁄12
+  - ☑ 4⁄5 : 5⁄8 = 1 7⁄25
+  - ☐ 1⁄3 : 1⁄4 = 1⁄12
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Multipliziere mit dem Kehrwert und kürze über Kreuz, bevor du rechnest.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 5⁄12 : 10⁄21 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄8**. Typische Fehler: 25⁄126 (bruch-kehrwert), 8⁄7 (bruch-kehrwert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? 1⁄6 : ▢⁄3 = 1⁄4 Lösung: a = **2**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Zähler eines Doppelbruchs steht 1⁄12, im Nenner steht 4⁄5. Welchen Wert hat der Doppelbruch? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄48**. Typische Fehler: 1⁄15 (bruch-kehrwert), 48⁄5 (bruch-kehrwert).
+- `04` AFB III · _Argumentieren_ · Warum führt die Multiplikation mit dem Kehrwert zum selben Ergebnis wie die Division durch den Bruch?
+  - ☐ Weil beim Kehrwert Zähler und Nenner gleich groß werden.
+  - ☐ Weil beide Brüche dabei umgedreht werden.
+  - ☑ Weil die Division die Multiplikation umkehrt und ein Bruch mal sein Kehrwert genau eins ergibt.
+  - ☐ Weil der Kehrwert immer kleiner ist als der Bruch.
+  - ☐ Weil man bei Brüchen grundsätzlich nicht dividieren kann.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 1⁄6 : 1⁄5 : 5⁄9 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄2**. Typische Fehler: 25⁄54 (klammer-falsch-gesetzt), 5⁄6 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ 7⁄9 : 11⁄12 = 28⁄33
+  - ☐ 1⁄4 : 7⁄9 = 5⁄14
+  - ☑ 3⁄5 : 1⁄6 = 3 3⁄5
+  - ☐ 2⁄5 : 5⁄6 = 2 1⁄12
+  - ☐ 11⁄12 : 3⁄5 = 11⁄20
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 14 : 4⁄9 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **31 1⁄2**. Typische Fehler: 56⁄9 (bruch-kehrwert), 2⁄63 (bruch-kehrwert).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl wird mit 5⁄8 multipliziert. Das Ergebnis ist 1⁄3. Wie heißt die Zahl? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8⁄15**. Typische Fehler: 5⁄24 (probe-falsche-umkehr), 15⁄8 (bruch-kehrwert).
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Durch welchen Bruch musst du 1⁄3 dividieren, um 8⁄21 zu erhalten? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄8**. Typische Fehler: 8⁄63 (probe-falsche-umkehr), 8⁄7 (bruch-kehrwert).
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Lena rechnet 3⁄5 : 5⁄7 = 5⁄3 · 5⁄7 = 1 4⁄21. Welchen Fehler macht Lena?
+  - ☐ Die Nenner hätten zuerst gleichnamig gemacht werden müssen.
+  - ☐ Die Rechnung stimmt, das Ergebnis ist nur nicht gekürzt.
+  - ☑ Es wurde der Kehrwert des ersten Bruchs gebildet statt des zweiten.
+  - ☐ Es hätten beide Brüche umgedreht werden müssen.
+  - ☐ Es hätte gar kein Kehrwert gebildet werden dürfen.
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 4⁄5 : 7⁄8 ▢ 4⁄5 · 7⁄8
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei Brüche werden dividiert. Wann ist das Ergebnis kleiner als 1?
+  - ☐ Nie, denn Dividieren durch einen Bruch vergrößert.
+  - ☐ Wenn beide Brüche kleiner als 1 sind.
+  - ☐ Immer, denn Dividieren verkleinert.
+  - ☐ Wenn der zweite Bruch kleiner ist als der erste.
+  - ☑ Wenn der erste Bruch kleiner ist als der zweite.
+
+## 6.2.6-D2: Ich kann mit gemischten Zahlen dividieren und Sachaufgaben dazu lösen.
+
+Grundlage, die F übt: Zählen, wie viele halbe Liter in drei Liter passen
+
+Baut auf: 6.2.6-D1 (Ich kann durch einen Bruch dividieren.), 6.1.1-B2 (Ich kann gemischte Zahlen und Brüche ineinander umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gefragt ist, wie oft der Bruch in die Menge passt. Das ist eine Division. *Lösungsschritt:* In einen Liter passen 8 Gläser. Rechne 4 · 8.
+
+- `01` AFB I · _Modellieren_ · Wie viele Gläser mit je 1⁄8 l lassen sich aus 4 l Saft füllen? Lösung: **32**. Typische Fehler: 8 (sach-schritt-vergessen), 4 (sach-frage-verfehlt), 12 (1x1-addiert).
+- `02` AFB II · _Modellieren_ · Berechne 2 3⁄4 : 3⁄4 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 2⁄3**. Typische Fehler: 33⁄16 (bruch-kehrwert).
+- `03` AFB II · _Modellieren_ · Eine Leiste ist 2 2⁄5 m lang. Mia schneidet Stücke von je 4⁄5 m Länge ab. Wie viele Stücke erhält Mia? Lösung: **3**. Typische Fehler: 2 (sach-frage-verfehlt), 4 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · Berechne 1 4⁄5 : 2 1⁄4 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 81⁄20 (bruch-kehrwert), 5⁄4 (bruch-kehrwert).
+- `05` AFB II · _Modellieren_ · Der Akku ist zu 1⁄2 voll. Eine Stunde Musikhören verbraucht 1⁄4 vom ganzen Akku. Für wie viele Stunden reicht der Akku noch? Lösung: **2**. Typische Fehler: 3 (sach-schritt-vergessen), 4 (sach-frage-verfehlt).
+- `06` AFB III · _Modellieren_ · Ali rechnet 2 1⁄7 : 1⁄3 und dividiert dabei nur die 2 Ganzen durch 1⁄3. Den Bruch 1⁄7 schreibt Ali einfach dahinter. Was ist daran falsch?
+  - ☑ Auch der Bruch hinter den Ganzen muss dividiert werden.
+  - ☐ Nichts, so rechnet man mit gemischten Zahlen.
+  - ☐ Die Ganzen dürfen gar nicht dividiert werden.
+  - ☐ Der Bruch dahinter hätte multipliziert werden müssen.
+- `07` AFB I · _Modellieren_ · Aus 3⁄5 l Milch werden Becher mit je 1⁄5 l gefüllt. Für wie viele Becher reicht das? Lösung: **3**. Typische Fehler: 5 (sach-frage-verfehlt), 4 (sach-schritt-vergessen).
+- `08` AFB II · _Modellieren_ · Eine Schnecke kommt in jeder Minute 4⁄5 m weit. Wie viele Minuten braucht das Tier für 3 m? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 3⁄4**. Typische Fehler: 12⁄5 (bruch-kehrwert), 4⁄15 (bruch-kehrwert).
+- `09` AFB II · _Modellieren_ · Berechne 5 : 2 2⁄5 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄12**. Typische Fehler: 12⁄25 (bruch-kehrwert).
+- `10` AFB I · _Modellieren_ · Für einen Kuchen braucht man 3⁄10 kg Mehl. Im Schrank sind 2 1⁄10 kg Mehl. Für wie viele Kuchen reicht das? Lösung: **7**. Typische Fehler: 2 (sach-frage-verfehlt), 8 (sach-schritt-vergessen), 6 (sach-schritt-vergessen).
+- `11` AFB II · _Modellieren_ · Welches Zeichen passt? 2 : 1⁄3 ▢ 2
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `12` AFB III · _Modellieren_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☐ 3 1⁄3 : 3⁄4 = 3 4⁄9
+  - ☑ 3 1⁄4 : 4⁄5 = 4 1⁄16
+  - ☑ 1 1⁄4 : 3⁄5 = 2 1⁄12
+  - ☑ 3 1⁄2 : 5⁄6 = 4 1⁄5
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle beide Zahlen in unechte Brüche um und kürze über Kreuz.
+
+- `01` AFB I · _Modellieren_ · Berechne 4 7⁄8 : 1 7⁄8 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 3⁄5**. Typische Fehler: 585⁄64 (bruch-kehrwert), 5⁄13 (bruch-kehrwert).
+- `02` AFB II · _Modellieren_ · Eine Radfahrerin legt in 3⁄5 h eine Strecke von 6 1⁄2 km zurück. Wie viele Kilometer wären das bei gleichem Tempo in einer ganzen Stunde? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **10 5⁄6 km**. Typische Fehler: 39⁄10 (bruch-kehrwert), 13⁄2 (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · In einem Kanister sind 3 1⁄2 l Saft. Davon werden 1⁄2 l sofort verbraucht. Der Rest wird in Flaschen mit je 3⁄4 l gefüllt. Wie viele Flaschen werden voll? Lösung: **4**. Typische Fehler: 5 (sach-schritt-vergessen), 3 (sach-schritt-vergessen).
+- `04` AFB III · _Modellieren_ · Eine Menge wird in gleich große Portionen abgefüllt. Die Portionen werden jetzt nur noch halb so groß gewählt. Was passiert mit der Anzahl der Portionen?
+  - ☐ Das hängt von der Menge ab.
+  - ☐ Sie wird um eine Portion größer.
+  - ☐ Sie bleibt gleich.
+  - ☐ Sie halbiert sich.
+  - ☑ Sie verdoppelt sich.
+- `05` AFB II · _Modellieren_ · Eine Zahl wird durch 1 1⁄3 dividiert. Das Ergebnis ist 1 3⁄5. Wie heißt die Zahl? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 2⁄15**. Typische Fehler: 6⁄5 (probe-falsche-umkehr), 5⁄6 (probe-falsche-umkehr).
+- `06` AFB III · _Modellieren_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☐ 4 2⁄3 : 5⁄6 = 5⁄28
+  - ☑ 2 1⁄4 : 2⁄5 = 5 5⁄8
+  - ☑ 4 3⁄4 : 1 1⁄6 = 4 1⁄14
+  - ☑ 4 3⁄4 : 3⁄5 = 7 11⁄12
+  - ☑ 3 1⁄3 : 1 3⁄4 = 1 19⁄21
+- `07` AFB I · _Modellieren_ · Berechne 5 3⁄4 : 1 3⁄4 : 4⁄5 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4 3⁄28**. Typische Fehler: 92⁄35 (klammer-falsch-gesetzt), 23⁄7 (sach-schritt-vergessen).
+- `08` AFB II · _Modellieren_ · Ein Stapel aus gleich dicken Brettern ist 11 1⁄4 cm hoch. Jedes Teil ist 2 1⁄4 cm dick. Aus wie vielen Teilen besteht der Stapel? Lösung: **5**. Typische Fehler: 6 (sach-schritt-vergessen), 4 (sach-schritt-vergessen), 11 (sach-frage-verfehlt).
+- `09` AFB II · _Modellieren_ · 4⁄5 einer Wanderstrecke sind 3 3⁄5 km. Wie lang ist die ganze Strecke? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4 1⁄2 km**. Typische Fehler: 72⁄25 (bruch-kehrwert), 108⁄25 (anteil-nicht-beachtet).
+- `10` AFB III · _Modellieren_ · Ohne zu rechnen: Was gilt für das Ergebnis von 4 3⁄4 : 1⁄3?
+  - ☐ Es ist kleiner als die erste Zahl, denn Dividieren verkleinert.
+  - ☐ Es ist genauso groß wie die erste Zahl.
+  - ☑ Es ist größer als die erste Zahl, denn der Divisor ist kleiner als eins.
+  - ☐ Es ist kleiner als eins, denn der Divisor ist ein Bruch.
+- `11` AFB II · _Modellieren_ · Im Zähler eines Doppelbruchs steht 3 1⁄2, im Nenner steht 1 5⁄8. Welchen Wert hat der Doppelbruch? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 2⁄13**. Typische Fehler: 91⁄16 (bruch-kehrwert), 13⁄28 (bruch-kehrwert).
+- `12` AFB III · _Modellieren_ · 3⁄5 einer Akkuladung reichen für 2 1⁄2 h Musik. Wie viele Stunden reicht ein voller Akku bei gleichem Verbrauch? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4 1⁄6 h**. Typische Fehler: 3⁄2 (bruch-kehrwert), 5⁄2 (sach-schritt-vergessen).
+
+## 6.2.7-R1: Ich kann beim Rechnen mit Brüchen die Regel „Punkt vor Strich“ anwenden.
+
+Grundlage, die F übt: In einer Rechnung mit Plus und Mal zuerst die Malaufgabe unterstreichen und rechnen
+
+Baut auf: 6.2.2-U2 (Ich kann zu ungleichnamigen Brüchen einen gemeinsamen Nenner finden und sie dann addieren und subtrahieren.), 6.2.5-P1 (Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.), 5.4.6-T1 (Ich kann die Regel „Punkt vor Strich“ anwenden.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Punkt vor Strich: Rechne zuerst die Malaufgabe. *Beispiel:* 1⁄7 + 2 · 2⁄7 = 1⁄7 + 4⁄7 = 5⁄7. *Lösungsschritt:* Unterstreiche die Malaufgabe. Rechne sie zuerst aus.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 1⁄7 gefärbt. / Rechne zuerst die Malaufgabe. / 1⁄7 + 2 · 2⁄7 = 1⁄7 + ▢⁄7 = ▢⁄7 _(Bild: Bruchbild: Streifen mit 7 Teilen, 1 gefärbt)_ Lösung: a = **4**, b = **5**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 4⁄11 gefärbt. / Rechne 4⁄11 − 2 · 1⁄11. _(Bild: Bruchbild: Streifen mit 11 Teilen, 4 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄11**. Typische Fehler: 6⁄11 (punkt-vor-strich), 3⁄11 (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 4⁄11 gefärbt. / Wie viel ist 4⁄11 + 3 · 2⁄11? _(Bild: Bruchbild: Streifen mit 11 Teilen, 4 gefärbt)_
+  - ☑ 10⁄11
+  - ☐ 6⁄11
+  - ☐ 1 7⁄11
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 1⁄9 gefärbt. / Rechne zuerst die Malaufgabe. / 3 · 1⁄9 + 4⁄9 = ▢⁄9 + 4⁄9 = ▢⁄9 _(Bild: Bruchbild: Streifen mit 9 Teilen, 1 gefärbt)_ Lösung: a = **3**, b = **7**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Lena trinkt 1⁄7 l Saft. / Ben trinkt 3 Gläser mit je 1⁄7 l. / Wie viel trinken beide zusammen? _(Bild: Bruchbild: Streifen mit 7 Teilen, 1 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄7 l**. Typische Fehler: 6⁄7 (punkt-vor-strich), 2⁄7 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 7⁄11 gefärbt. / Rechne 7⁄11 − 10⁄11 : 2. _(Bild: Bruchbild: Streifen mit 11 Teilen, 7 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄11**.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Punkt vor Strich: Rechne zuerst die Malaufgabe. Kürze am Ende. *Beispiel:* 3⁄4 − 1⁄2 · 1⁄2 = 3⁄4 − 1⁄4 = 2⁄4 = 1⁄2. *Lösungsschritt:* Unterstreiche die Malaufgabe. Rechne sie zuerst aus.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 1⁄2 · 1⁄5 + 7⁄10. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 9⁄20 (punkt-vor-strich), 1⁄10 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 5⁄6 gefärbt. / Rechne zuerst die Malaufgabe. / 5⁄6 − 1⁄2 · 1⁄3 = 5⁄6 − ▢⁄6 = ▢⁄6 _(Bild: Bruchbild: Streifen mit 6 Teilen, 5 gefärbt)_ Lösung: a = **1**, b = **4**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Kreis zeigt 1⁄4. / 3 Kinder essen je 1⁄4 Pizza. / Ein Kind isst 1⁄2 Pizza. / Welche Rechnung passt dazu? _(Bild: Bruchbild: Kreis mit 4 Teilen, 1 gefärbt)_
+  - ☐ 3 + 1⁄4 + 1⁄2
+  - ☑ 3 · 1⁄4 + 1⁄2
+  - ☐ 3 · (1⁄4 + 1⁄2)
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne 3 · 1⁄12 − 1⁄6. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄12**. Typische Fehler: 1⁄4 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Noah kauft 1⁄2 kg Mehl. / Dazu kommen 3 Tüten Zucker mit je 1⁄8 kg. / Wie schwer ist der Einkauf zusammen? / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄8 kg**. Typische Fehler: 15⁄8 (punkt-vor-strich), 5⁄8 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Im Streifen ist 4⁄9 gefärbt. / Lina rechnet: 4⁄9 + 1⁄9 · 2 = 1 1⁄9 / Stimmt das? _(Bild: Bruchbild: Streifen mit 9 Teilen, 4 gefärbt)_
+  - ☐ Falsch. / Es gilt 4⁄9 + 1⁄9 · 2 = 5⁄9.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es gilt 4⁄9 + 1⁄9 · 2 = 2⁄3.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Punkt vor Strich: Berechne zuerst das Produkt. *Lösungsschritt:* 7⁄8 · 2⁄3 = 7⁄12. Addiere dann 2⁄3 mit dem Hauptnenner.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 2⁄3 + 7⁄8 · 2⁄3 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄4**. Typische Fehler: 37⁄36 (punkt-vor-strich), 7⁄12 (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 3⁄4 − 1⁄3 : 2⁄3 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄4**. Typische Fehler: 5⁄8 (punkt-vor-strich), 19⁄36 (bruch-kehrwert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 1⁄3 · 3⁄4 + 7⁄8 · 1⁄2 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄16**. Typische Fehler: 13⁄48 (punkt-vor-strich), 1⁄4 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 7⁄8 : 3 + 5⁄6 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄8**. Typische Fehler: 21⁄92 (punkt-vor-strich), 7⁄24 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? 1⁄4 + 5⁄6 · 1⁄3 ▢ 5⁄18 + 1⁄4
+  - ☐ >
+  - ☑ =
+  - ☐ <
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Lena rechnet 1⁄6 + 1⁄2 · 3⁄4 = 2⁄3 · 3⁄4 = 1⁄2. Welchen Fehler macht Lena?
+  - ☐ Es gibt keinen Fehler, die Rechnung stimmt.
+  - ☐ Beim Multiplizieren wurde nicht gekürzt.
+  - ☑ Es wurde zuerst addiert, obwohl die Multiplikation Vorrang hat.
+  - ☐ Die Brüche wurden falsch gleichnamig gemacht.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst das Produkt mit unechten Brüchen. Rechne danach von links nach rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 3 3⁄4 − 3⁄4 · 1 2⁄5 + 1⁄4 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 19⁄20**. Typische Fehler: 89⁄20 (punkt-vor-strich), 49⁄20 (sub-klammerfehler).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 5⁄6 : 1⁄2 − 1⁄8 · 2 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 5⁄12**. Typische Fehler: 37⁄12 (punkt-vor-strich), 1⁄6 (bruch-kehrwert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welcher Zähler fehlt? 2⁄3 + 1⁄2 · ▢⁄5 = 13⁄15 Lösung: a = **2**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechenausdruck ohne Klammern enthält eine Addition und eine Multiplikation. Die Addition steht vorn. Was gilt?
+  - ☐ Das hängt davon ab, welcher Bruch größer ist.
+  - ☐ Die Reihenfolge ist egal, das Ergebnis bleibt gleich.
+  - ☑ Die Multiplikation wird trotzdem zuerst berechnet.
+  - ☐ Es wird von links nach rechts gerechnet, also zuerst addiert.
+  - ☐ Bei Brüchen wird immer zuerst gleichnamig gemacht und addiert.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Für eine Soße werden 2 Becher Milch mit je 1⁄4 l und 2 Becher Sahne mit je 1⁄2 l verrührt. Wie viel Liter Soße sind das? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄2 l**. Typische Fehler: 3⁄4 (sach-schritt-vergessen), 1⁄2 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☐ 2⁄3 − 2⁄5 · 3⁄4 = 1⁄5
+  - ☑ 2⁄3 − 1⁄2 · 2⁄3 = 1⁄3
+  - ☑ 1⁄4 + 2⁄3 · 1⁄2 = 7⁄12
+  - ☐ 1⁄2 + 4⁄5 · 1⁄3 = 13⁄30
+  - ☐ 3⁄4 − 2⁄3 · 5⁄6 = 5⁄72
+
+## 6.2.7-R2: Ich kann Rechenausdrücke mit Brüchen und Klammern berechnen und geschickt rechnen.
+
+Grundlage, die F übt: In einer Rechnung zuerst die Klammer ausrechnen, bei gleichnamigen Brüchen
+
+Baut auf: 6.2.7-R1 (Ich kann beim Rechnen mit Brüchen die Regel „Punkt vor Strich“ anwenden.), 5.4.6-T2 (Ich kann Rechenausdrücke mit Klammern berechnen, auch mit einer Klammer in der Klammer.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Klammer kommt zuerst. *Beispiel:* (1⁄7 + 2⁄7) · 2 = 3⁄7 · 2 = 6⁄7. *Lösungsschritt:* Rechne zuerst aus, was in der Klammer steht. Rechne dann weiter.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄9. / Streifen B zeigt 2⁄9. / Rechne zuerst die Klammer. / (1⁄9 + 2⁄9) · 2 = ▢⁄9 · 2 = ▢⁄9 _(Bild: Bruchbild: A: Streifen mit 9 Teilen, 1 gefärbt; B: Streifen mit 9 Teilen, 2 gefärbt)_ Lösung: a = **3**, b = **6**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 6⁄11 gefärbt. / Rechne (6⁄11 − 4⁄11) : 2. _(Bild: Bruchbild: Streifen mit 11 Teilen, 6 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄11**. Typische Fehler: 2⁄11 (sach-schritt-vergessen), 8⁄22 (klammer-ignoriert).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 1⁄7. / Streifen B zeigt 2⁄7. / Wie viel ist 2 · (1⁄7 + 2⁄7)? _(Bild: Bruchbild: A: Streifen mit 7 Teilen, 1 gefärbt; B: Streifen mit 7 Teilen, 2 gefärbt)_
+  - ☐ 3⁄7
+  - ☐ 4⁄7
+  - ☑ 6⁄7
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 9⁄11 gefärbt. / Rechne zuerst die Klammer. / 9⁄11 − (3⁄11 + 1⁄11) = 9⁄11 − ▢⁄11 = ▢⁄11 _(Bild: Bruchbild: Streifen mit 11 Teilen, 9 gefärbt)_ Lösung: a = **4**, b = **5**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · In einer Tüte sind 1⁄7 kg Nüsse und 2⁄7 kg Rosinen. / Paul kauft 2 Tüten. / Wie viel Kilogramm sind das zusammen? _(Bild: Bruchbild: A: Streifen mit 7 Teilen, 1 gefärbt; B: Streifen mit 7 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **6⁄7 kg**. Typische Fehler: 4⁄7 (verteilung-halb), 3⁄7 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Streifen A zeigt 4⁄9. / Streifen B zeigt 1⁄9. / Rechne (4⁄9 + 1⁄9) · 2. / Schreibe das Ergebnis als gemischte Zahl. _(Bild: Bruchbild: A: Streifen mit 9 Teilen, 4 gefärbt; B: Streifen mit 9 Teilen, 1 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄9**. Typische Fehler: 6⁄9 (klammer-ignoriert), 5⁄9 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Klammer kommt zuerst. Kürze am Ende. *Beispiel:* (1⁄2 + 1⁄4) · 2⁄3 = 3⁄4 · 2⁄3 = 6⁄12 = 1⁄2. *Lösungsschritt:* Rechne zuerst aus, was in der Klammer steht. Rechne dann weiter.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne (2⁄3 + 1⁄12) · 1⁄3. / Kürze das Ergebnis vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄4**. Typische Fehler: 25⁄36 (klammer-ignoriert), 3⁄4 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 4⁄5 gefärbt. / Rechne zuerst die Klammer. / (4⁄5 − 3⁄5) · 1⁄2 = ▢⁄5 · 1⁄2 = ▢⁄10 _(Bild: Bruchbild: Streifen mit 5 Teilen, 4 gefärbt)_ Lösung: a = **1**, b = **1**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Kreis zeigt 1⁄8. / Jedes Kind isst 1⁄8 Pizza mit Salami und 1⁄4 Pizza mit Käse. / Es sind 3 Kinder. / Welche Rechnung passt dazu? _(Bild: Bruchbild: Kreis mit 8 Teilen, 1 gefärbt)_
+  - ☐ 3 + 1⁄8 + 1⁄4
+  - ☑ 3 · (1⁄8 + 1⁄4)
+  - ☐ 3 · 1⁄8 + 1⁄4
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 5⁄6 gefärbt. / Rechne 5⁄6 − (2⁄3 − 7⁄12). / Kürze das Ergebnis vollständig. _(Bild: Bruchbild: Streifen mit 6 Teilen, 5 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄4**. Typische Fehler: 1⁄12 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Nimm jeden Bruch in der Klammer mal. / 8 · (1⁄2 + 3⁄4) = 8 · 1⁄2 + 8 · 3⁄4 = ▢ + ▢ = ▢ Lösung: a = **4**, b = **6**, c = **10**
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Im Streifen ist 1⁄3 gefärbt. / Ole rechnet: (1⁄3 + 5⁄12) · 2 = 1 1⁄6 / Stimmt das? _(Bild: Bruchbild: Streifen mit 3 Teilen, 1 gefärbt)_
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt (1⁄3 + 5⁄12) · 2 = 3⁄4.
+  - ☑ Falsch. / Es gilt (1⁄3 + 5⁄12) · 2 = 1 1⁄2.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Klammer mit dem Hauptnenner. *Lösungsschritt:* 1⁄3 − 1⁄6 = 1⁄6. Dividiere dann durch 1⁄3: mit dem Kehrwert multiplizieren.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (1⁄3 − 1⁄6) : 1⁄3 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 1⁄18 (bruch-kehrwert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 1 1⁄3 · (1⁄6 + 1⁄4) und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄9**. Typische Fehler: 17⁄36 (verteilung-halb), 5⁄12 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: 4⁄5 · 7⁄11 + 4⁄5 · 4⁄11 _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 28⁄55 (verteilung-halb), 16⁄25 (verteilung-halb).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (3⁄4 + 5⁄6) : (1⁄2 − 1⁄3) und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **9 1⁄2**. Typische Fehler: 19⁄72 (bruch-kehrwert), 2⁄19 (bruch-kehrwert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welches Zeichen passt? (1⁄3 + 1⁄4) · 12 ▢ 1⁄3 + 1⁄4 · 12
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Du sollst das Produkt aus einer natürlichen Zahl und einer Summe von zwei Brüchen berechnen. Die Zahl ist ein Vielfaches beider Nenner. Welcher Weg ist geschickt?
+  - ☑ Die Zahl mit jedem Bruch einzeln multiplizieren, denn dann kürzen sich die Nenner weg.
+  - ☐ Zuerst die Zahl zu den Zählern addieren.
+  - ☐ Die Zahl nur mit dem ersten Bruch multiplizieren und den zweiten addieren.
+  - ☐ Die Klammer weglassen, denn Punkt vor Strich regelt die Reihenfolge.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst beide Klammern. Rechne danach von links nach rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (2 1⁄2 − 1 1⁄4) : (1⁄2 + 1⁄3) · 5⁄6 und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄4**. Typische Fehler: 9⁄5 (klammer-falsch-gesetzt), 3⁄2 (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: 5⁄7 · 2 2⁄5 − 5⁄7 · 2⁄5 _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 3⁄7**. Typische Fehler: 12⁄7 (verteilung-halb), 8⁄7 (sub-klammerfehler).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · In der Rechnung 1⁄3 + 1⁄4 · 1⁄3 − 1⁄6 fehlen Klammern. Mit welchen Klammern hat der Ausdruck den Wert 3⁄8?
+  - ☐ (1⁄3 + 1⁄4) · (1⁄3 − 1⁄6)
+  - ☐ (1⁄3 + 1⁄4) · 1⁄3 − 1⁄6
+  - ☑ 1⁄3 + 1⁄4 · (1⁄3 − 1⁄6)
+  - ☐ 1⁄3 + 1⁄4 · 1⁄3 − 1⁄6
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Rechenausdruck hat die Form: Bruch mal erste Zahl plus derselbe Bruch mal zweite Zahl. Wann lohnt sich das Ausklammern besonders?
+  - ☑ Wenn die Summe der beiden Zahlen eine natürliche Zahl ist oder sich gut mit dem Nenner kürzen lässt.
+  - ☐ Nur wenn beide Zahlen gleich sind.
+  - ☐ Immer, denn Ausklammern verändert das Ergebnis zum Einfacheren.
+  - ☐ Nur wenn der Bruch den Zähler eins hat.
+  - ☐ Nie, denn zuerst müssen die Produkte berechnet werden.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas wandert an 3 Tagen jeden Vormittag 1 1⁄2 km und jeden Nachmittag 2 1⁄4 km. Wie viele Kilometer sind das insgesamt? Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11 1⁄4 km**. Typische Fehler: 27⁄4 (verteilung-halb), 15⁄4 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
+  - ☑ (1⁄3 + 3⁄4) · 4⁄5 = 13⁄15
+  - ☑ (1⁄2 + 5⁄6) · 2⁄5 = 8⁄15
+  - ☐ (1⁄2 + 1⁄4) : 2⁄5 = 1 1⁄8
+  - ☑ (1⁄3 + 1⁄4) · 4⁄5 = 7⁄15
+  - ☑ (2⁄3 + 1⁄4) : 1⁄3 = 2 3⁄4
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -1071,16 +2092,18 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `bruch-nur-zaehler-verglichen` | Vergleicht Brüche nur über die Zähler oder die Zahlen einzeln, ohne auf die Größe der Teile zu achten. | Schau auf beide Zahlen: Der Nenner sagt, wie groß die Teile sind. Der Zähler sagt, wie viele es sind. | Du schaust beim Vergleichen jetzt auf Zähler und Nenner. |
 | `gemischt-umwandeln` | Wandelt gemischte Zahl und Bruch falsch um: schreibt die Ziffern nebeneinander oder zählt die Ganzen nur zum Zähler dazu. | Ein Ganzes hat so viele Teile, wie der Nenner sagt. Rechne die Ganzen zuerst in solche Teile um. | Du rechnest die Ganzen jetzt erst in Bruchteile um. |
 | `bruchstrahl-striche` | Zählt am Zahlenstrahl die Teilstriche statt der Abstände und nennt deshalb einen falschen Nenner. | Zähle die Abstände von 0 bis 1, nicht die Striche. So viele Teile hat das Ganze. | Du zählst am Zahlenstrahl jetzt die Abstände bis zur 1. |
+| `bruch-add-zaehler-nenner` | Addiert oder subtrahiert Zähler und Nenner getrennt (ein Halbes plus ein Drittel als zwei Fünftel). | Der Nenner sagt nur, wie groß die Teile sind. Er wird nicht mitgerechnet. Sind die Brüche gleichnamig? | Du lässt beim Addieren jetzt den Nenner stehen und rechnest nur mit den Zählern. |
+| `bruch-add-ungleichnamig` | Addiert oder subtrahiert die Zähler, ohne die Brüche vorher gleichnamig zu machen, oder erweitert dabei nur den Nenner. | Die Teile sind verschieden groß. Erweitere zuerst so, dass beide Brüche denselben Nenner haben. | Du machst Brüche jetzt erst gleichnamig und addierst dann. |
+| `bruch-mal-nenner-mit` | Nimmt beim Vervielfachen auch den Nenner mit der Zahl mal (dreimal zwei Fünftel als sechs Fünfzehntel). | Die Teile bleiben gleich groß, es werden nur mehr. Nimm nur den Zähler mal. | Du nimmst beim Vervielfachen jetzt nur den Zähler mal. |
+| `bruch-mal-wie-plus` | Überträgt die Regel vom Addieren auf das Multiplizieren: macht gleichnamig und multipliziert nur die Zähler, oder addiert statt zu multiplizieren. | Beim Malnehmen brauchst du keinen gemeinsamen Nenner: Zähler mal Zähler und Nenner mal Nenner. | Du rechnest beim Malnehmen jetzt Zähler mal Zähler und Nenner mal Nenner. |
+| `bruch-teilen-nenner-geteilt` | Teilt beim Dividieren durch eine Zahl den Nenner oder nimmt den Zähler mal, statt den Zähler zu teilen oder den Nenner malzunehmen. | Beim Teilen wird jeder Anteil kleiner. Teile den Zähler, oder nimm den Nenner mal. | Du weißt jetzt: Beim Teilen wird der Nenner größer oder der Zähler kleiner. |
+| `bruch-kehrwert` | Bildet beim Dividieren keinen Kehrwert, den Kehrwert vom falschen Bruch oder von beiden Brüchen. | Nur der Bruch hinter dem Geteiltzeichen wird umgedreht. Dann wird malgenommen. | Du drehst beim Teilen jetzt den zweiten Bruch um. |
+| `gemischt-getrennt-mal` | Multipliziert oder dividiert bei gemischten Zahlen die Ganzen und die Bruchteile getrennt. | Wandle die gemischte Zahl zuerst in einen Bruch um. Rechne erst dann. | Du wandelst gemischte Zahlen vor dem Malnehmen jetzt in Brüche um. |
+| `gemischt-kleiner-von-groesser` | Zieht bei gemischten Zahlen den kleineren Bruchteil vom größeren ab, statt ein Ganzes umzuwandeln. | Der Bruch reicht nicht zum Abziehen. Wandle ein Ganzes in Bruchteile um. | Du wandelst beim Abziehen jetzt ein Ganzes um. |
+| `mal-macht-groesser` | Meint, Multiplizieren vergrößert immer und Dividieren verkleinert immer. | Die Hälfte von etwas ist weniger. Malnehmen mit einem Bruch unter 1 macht kleiner, Teilen durch ihn macht größer. | Du weißt jetzt: Malnehmen mit einem Bruch unter 1 macht kleiner. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.2.1-L1 Ich kann gleichnamige Brüche addieren und subtrahieren. Baut auf: nur Grundschulstoff
-- 6.2.2-L1 Ich kann ungleichnamige Brüche gleichnamig machen und dann addieren und subtrahieren. Baut auf: nur Grundschulstoff
-- 6.2.3-L1 Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren. Baut auf: nur Grundschulstoff
-- 6.2.4-L1 Ich kann einen Bruch durch eine natürliche Zahl dividieren. Baut auf: nur Grundschulstoff
-- 6.2.5-L1 Ich kann Brüche miteinander multiplizieren. Baut auf: nur Grundschulstoff
-- 6.2.6-L1 Ich kann durch einen Bruch dividieren. Baut auf: nur Grundschulstoff
-- 6.2.7-L1 Ich kann beim Rechnen mit Brüchen die Regeln „Klammern zuerst“ und „Punkt vor Strich“ anwenden. Baut auf: nur Grundschulstoff
 - 6.3.1-L1 Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen. Baut auf: nur Grundschulstoff
 - 6.3.2-L1 Ich kann Schrägbilder von Quadern lesen und im Gitter vervollständigen. Baut auf: nur Grundschulstoff
 - 6.3.3-L1 Ich kann Ansichten von Körpern zuordnen und zeichnen. Baut auf: nur Grundschulstoff
