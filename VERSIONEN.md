@@ -8,6 +8,19 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.47 vom 24.11.2026
+
+### Schüler
+
+- Antwortet der gemerkte Ordner „Mathekingdom“ nicht, etwa weil das Tauschlaufwerk nicht verbunden ist, bleibt die Anmeldung nicht mehr stehen. Unter dem Knopf steht, dass der Ordner nicht antwortet, und du wählst den Ordner, mit dem du gerade arbeitest.
+- Neu ist der Knopf „Anderen Ordner wählen“, auch wenn schon ein Ordner gemerkt ist.
+
+### Lehrkraft
+
+- Jedes Dashboard merkt sich zwei Ordnersätze, zum Beispiel einen für die Schule und einen für zu Hause. Beim Öffnen nimmt es den Satz, dessen Ordner antworten. Wählst du zu Hause neue Ordner, bleiben die Ordner der Schule gemerkt.
+- Antwortet ein hinterlegter Ordner nicht, erscheint sofort die Wahl der Ordner mit dem Laufwerk, das nicht antwortet. Die Frage nach der Erlaubnis wird dann gar nicht erst gestellt, sie blieb bisher ohne Antwort hängen.
+- Behoben: Im Administrator-Dashboard tat „Weiter“ nach dem Neuwählen der Ordner zu Hause nichts.
+
 ## 0.46 vom 24.11.2026
 
 ### Schüler

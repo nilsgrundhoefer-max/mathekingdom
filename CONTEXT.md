@@ -517,6 +517,10 @@ _Avoid_: Klassenlaufwerk, Share
 Der Ordner `Mathekingdom` auf dem Schülertauschlaufwerk und auf dem Lehrertauschlaufwerk, darin je ein Schuljahresordner und darin die Klassen. Er wird einmal gewählt und danach im Browser gemerkt.
 _Avoid_: Wurzel, Basisordner
 
+**Ordnersatz**:
+Die Ordner, mit denen ein Dashboard an einem Ort arbeitet, etwa die Mathekingdom-Ordner auf den Tauschlaufwerken in der Schule oder Ordner zu Hause. Der Browser merkt sich je Dashboard bis zu zwei Ordnersätze und öffnet mit dem, dessen Ordner antworten.
+_Avoid_: Profil, Standort
+
 **Schuljahresordner**:
 Der Ordner eines Schuljahres im Mathekingdom-Ordner, benannt wie `2026-27`. Welches Schuljahr gilt, legt der Administrator fest.
 _Avoid_: Jahrgang
