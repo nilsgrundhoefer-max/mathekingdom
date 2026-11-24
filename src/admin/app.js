@@ -12,7 +12,7 @@ import * as M from '../gemeinsam/meldungen.js';
 import * as ST from '../gemeinsam/statistik.js';
 import * as L from '../schueler/logik.js';
 import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
-import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
+import { gemerkteOrdner, erlaube, startwache, haengerText } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 import { testklassenKarte } from './testklasse.js';
 import { aufgabentesterKarte, TESTER_STIL, ADMIN_MELDUNGEN } from './aufgabentester.js';
@@ -96,7 +96,10 @@ async function waehle(art) {
   z.wahl[art] = ablage.handle; z.wahl.zeigeWahl = true; // wer selbst wählt, bleibt bei der Wahl
   await gemerkt.merke(art, ablage.handle);
 }
+let wache = null;
+const schritt = (s) => wache?.schritt(s);
 async function weiter(fragen = true) {
+  schritt('Zugriff auf die Ordner prüfen');
   for (const art of Object.keys(LAUFWERKE)) {
     if (!(await erlaube(z.wahl[art], fragen))) {
       if (!fragen) return false;
@@ -104,7 +107,9 @@ async function weiter(fragen = true) {
     }
   }
   const persoenlich = S.ordnerAblage(z.wahl.persoenlich), schueler = S.ordnerAblage(z.wahl.schueler), lehrer = S.ordnerAblage(z.wahl.lehrer);
+  schritt('Schulverzeichnis auf dem Schülertauschlaufwerk lesen');
   const vorhanden = await schueler.lies(SCH.VERZEICHNIS);
+  schritt('Administrator-Schlüssel im persönlichen Ordner lesen');
   let adminText = await persoenlich.lies(SCH.ADMIN_DATEI);
   if (!adminText) {
     // Beim Öffnen von selbst keine Rückfrage: Dann lieber die Wahl der Ordner zeigen.
@@ -116,6 +121,7 @@ async function weiter(fragen = true) {
   }
   const admin = JSON.parse(adminText);
   let v;
+  schritt('Schulverzeichnis prüfen');
   if (vorhanden) {
     v = await K.pruefeUnterschrift(vorhanden, admin.schluessel.oeffentlich);
     if (!v) throw new Error('Das Schulverzeichnis passt nicht zu deinem Administrator-Schlüssel. Hast du die richtige Schlüsseldatei?');
@@ -123,7 +129,9 @@ async function weiter(fragen = true) {
   Object.assign(z, { persoenlich, schueler, lehrer, admin, v, jahr: v.schuljahr });
   if (!vorhanden) { await jahrOrdner(schueler); await jahrOrdner(lehrer); await speichereVerzeichnis(); z.hinweis = `Mathekingdom ist eingerichtet, Schuljahr ${v.schuljahr}. Lege jetzt die Lehrkräfte an, dann die Klassen.`; z.tab = 'klassen'; }
   // Kopie für Tage ohne Internet, damit Schüler-Startdateien auch dann starten.
+  schritt('Kopie des Schüler-Dashboards aufs Schülertauschlaufwerk schreiben');
   if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_SCHUELER}`, window.MK_SCHUELER_JS).catch(() => {});
+  schritt('Laufwerke prüfen');
   z.laufwerke = await pruefeLaufwerke();
   return true;
 }
@@ -139,11 +147,15 @@ async function pruefeLaufwerke() {
 // Ordner sind hinterlegt (Version 0.32): mit Erlaubnis gleich hinein, sonst die Karte, deren Klick die Erlaubnis holt.
 // Geht etwas schief, kommt die Wahl der Ordner.
 async function oeffneGemerkt(fragen) {
+  wache ??= neueWache();
   try { z.fehler = null; if (await weiter(fragen)) return male(); }
   catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; if (!/erlaube/.test(e.message)) z.wahl.zeigeWahl = true; } }
+  finally { wache?.fertig(); wache = null; }
   z.wahl.geprueft = true;
   male();
 }
+// Hängt ein Schritt (Version 0.46), kommt nach einer Weile die Wahl der Ordner mit dem Schritt, der klemmt.
+const neueWache = () => startwache(12000, (s) => { if (!z.v) { z.fehler = haengerText(s); z.wahl.geprueft = true; z.wahl.zeigeWahl = true; male(); } });
 async function andererOrdner(art) {
   try { await waehle(art); location.reload(); } catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } }
 }
@@ -151,11 +163,13 @@ async function andererOrdner(art) {
 function start() {
   if (!z.wahl) {
     z.wahl = { persoenlich: null, schueler: null, lehrer: null, geladen: false, geprueft: false, zeigeWahl: false };
+    wache = neueWache();
     Promise.all(Object.keys(LAUFWERKE).map((a) => gemerkt.hole(a))).then(async ([p, s, l]) => {
       z.wahl.persoenlich ??= p; z.wahl.schueler ??= s; z.wahl.lehrer ??= l; z.wahl.geladen = true;
       if (p && s && l && S.kannOrdner()) return oeffneGemerkt(false);
       z.wahl.geprueft = true; male();
-    });
+    }).catch((e) => { z.fehler = e.message; z.wahl.geprueft = true; z.wahl.zeigeWahl = true; male(); })
+      .finally(() => { wache?.fertig(); wache = null; });
   }
   const alle = Object.keys(LAUFWERKE).every((a) => z.wahl[a]);
   if (!z.wahl.geprueft) return h('section', { class: 'karte schmal' }, h('p', { class: 'klein' }, 'Mathekingdom öffnet …'));

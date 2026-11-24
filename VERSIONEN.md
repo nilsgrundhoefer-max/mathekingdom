@@ -8,6 +8,17 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.46 vom 24.11.2026
+
+### Schüler
+
+- Keine Änderungen für Schüler.
+
+### Lehrkraft
+
+- Lehrer- und Administrator-Dashboard bleiben nicht mehr bei „Mathekingdom öffnet …“ hängen, wenn die gemerkten Ordner gerade nicht erreichbar sind, etwa zu Hause ohne Tauschlaufwerke. Nach einigen Sekunden kommt die Karte mit den hinterlegten Ordnern oder die Wahl der Ordner.
+- Klemmt ein Schritt beim Öffnen länger, steht oben, welcher es ist, zum Beispiel „Zugriff auf die Ordner prüfen“ oder „Speicherstände der Klasse lesen“. Die Daten auf den Laufwerken bleiben dabei unverändert.
+
 ## 0.45 vom 24.11.2026
 
 ### Schüler

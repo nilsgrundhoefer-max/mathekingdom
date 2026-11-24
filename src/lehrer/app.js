@@ -13,7 +13,7 @@ import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
 import * as M from '../gemeinsam/meldungen.js';
 import * as SCH from '../gemeinsam/schule.js';
-import { gemerkteOrdner, erlaube } from '../gemeinsam/gemerkt.js';
+import { gemerkteOrdner, erlaube, startwache, haengerText } from '../gemeinsam/gemerkt.js';
 import { aufklapper, AUFKLAPP_STIL } from '../gemeinsam/aufklappen.js';
 import { laufwerkSchild, LAUFWERK_STIL } from '../gemeinsam/laufwerke.js';
 
@@ -129,10 +129,12 @@ async function oeffneLehrer(ablage) {
 
 // Mit Schulverzeichnis (ADR 0024): Mathekingdom-Ordner auf beiden Tauschlaufwerken, Kürzel aus der Startdatei.
 async function oeffneSchule(schueler, lehrer, kuerzel) {
+  schritt('Schulverzeichnis auf dem Schülertauschlaufwerk lesen');
   const v = await SCH.ladeVerzeichnis(schueler, window.MK_SCHLUESSEL);
   if (v.status === 'fehlt') throw new Error('Im Mathekingdom-Ordner auf dem Schülertauschlaufwerk fehlt das Schulverzeichnis. Hat der Administrator die Schule schon eingerichtet?');
   if (v.status === 'ungueltig') throw new Error('Das Schulverzeichnis auf dem Schülertauschlaufwerk ist ungültig: Die Unterschrift des Administrators passt nicht.');
   if (!v.daten.lehrkraefte?.[kuerzel]) throw new Error(`Das Kürzel ${kuerzel} ist im Schulverzeichnis nicht angelegt. Frag deinen Administrator.`);
+  schritt('deinen Schlüssel auf dem Lehrertauschlaufwerk lesen');
   const ichOrdner = await lehrer.ordner(kuerzel);
   const text = ichOrdner && await ichOrdner.lies(SCH.LEHRER_DATEI);
   if (!text) throw new Error(`Auf dem Lehrertauschlaufwerk fehlt der Ordner „${kuerzel}“ mit deinem Schlüssel. Hast du dort den Ordner „Mathekingdom“ gewählt?`);
@@ -141,6 +143,7 @@ async function oeffneSchule(schueler, lehrer, kuerzel) {
   const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND, browser: P.browserName(navigator.userAgent) });
   await notiere(e.art, e.text);
   // Kopien für Tage ohne Internet: Lehrer-Dashboard aufs Lehrer-, Schüler-Dashboard aufs Schülertauschlaufwerk.
+  schritt('Kopien der Dashboards auf die Tauschlaufwerke schreiben');
   if (window.MK_LEHRER_PAKET) await lehrer.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_LEHRER}`, window.MK_LEHRER_PAKET)
     .catch((f) => notiere('problem', `Kopie des Dashboards aufs Lehrertauschlaufwerk fehlgeschlagen: ${f.message}`));
   if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_SCHUELER}`, window.MK_SCHUELER_JS)
@@ -167,6 +170,7 @@ async function alleCodesImJahr() {
   return codes;
 }
 async function oeffneSchulklasse(klasse) {
+  schritt(`Klasse ${klasse} öffnen`);
   await ladeVerzeichnisNeu();
   const ordner = await (await z.schule.schueler.unterordner(z.schule.schuljahr)).unterordner(klasse);
   z.klasse = null; // erst nach dem Laden der Klassendaten wieder schreiben
@@ -179,6 +183,7 @@ async function oeffneSchulklasse(klasse) {
 async function oeffneKlasse(klasse, ablage) {
   if (ablage.name.toLowerCase() !== klasse) { z.fehler = `Der gewählte Ordner heißt „${ablage.name}“. Für die Klasse ${klasse} muss er „${klasse}“ heißen.`; return male(); }
   const stufe = parseInt(klasse, 10);
+  schritt(`Aufgaben für Klasse ${stufe} laden`);
   const { pool, quelle: poolQuelle, grund: poolGrund } = await ladePool(ablage, stufe);
   if (poolGrund) notiere('problem', `Aufgaben für Klasse ${stufe} ${P.QUELLE_TEXT[poolQuelle] ?? 'nicht gefunden'}, Grund: ${poolGrund}`, klasse);
   if (!pool) { z.fehler = `Für Klasse ${stufe} gibt es noch keinen Aufgabenpool.`; return male(); }
@@ -198,8 +203,10 @@ async function oeffneKlasse(klasse, ablage) {
   if (window.MK_SCHUELER_JS && !z.schule) await ablage.schreibe(`${S.SYSTEMORDNER}/schueler-dashboard.js`, window.MK_SCHUELER_JS)
     .catch((e) => notiere('problem', `Kopie des Schüler-Dashboards in den Klassenordner fehlgeschlagen: ${e.message}`, klasse));
   clearInterval(takt);
+  schritt(`Klassendatei ${klasse} schreiben`);
   await speichereDaten();
   await inSchlange(schreibeKlassendatei);
+  schritt(`Speicherstände der Klasse ${klasse} lesen`);
   await lade();
   // Im Unterricht zuerst der Raum, sonst der Lernstand. Ohne Namensliste der Bereich Klasse.
   if (!Object.keys(kl().namen).length) z.abschnitt = 'schueler';
@@ -412,7 +419,21 @@ async function waehleLaufwerk(art) {
     return true;
   } catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } return false; }
 }
+// Hängt ein Schritt beim Öffnen (Version 0.46), etwa weil ein Tauschlaufwerk nicht erreichbar ist: Nach einer Weile
+// kommt statt „Mathekingdom öffnet …“ die Wahl der Ordner mit dem Schritt, der klemmt.
+let wache = null;
+const schritt = (s) => wache?.schritt(s);
+const neueWache = () => startwache(12000, (s) => {
+  z.fehler = haengerText(s);
+  if (z.ansicht === 'start') Object.assign(z.wahl, { geladen: true, geprueft: true, zeigeWahl: true });
+  male();
+});
 async function oeffneGemerkteSchule(kuerzel, fragen = true) {
+  wache ??= neueWache();
+  try { return await oeffneGemerkteSchuleMitWache(kuerzel, fragen); } finally { wache?.fertig(); wache = null; }
+}
+async function oeffneGemerkteSchuleMitWache(kuerzel, fragen) {
+  schritt('Zugriff auf die Ordner prüfen');
   try { localStorage.setItem('mk-kuerzel', kuerzel); } catch { /* egal */ }
   for (const art of ['schueler', 'lehrer']) {
     if (!(await erlaube(z.wahl[art], fragen))) {
@@ -427,13 +448,15 @@ async function oeffneGemerkteSchule(kuerzel, fragen = true) {
 function startSchule() {
   if (!z.wahl) {
     z.wahl = { schueler: null, lehrer: null, geladen: false, zeigeWahl: false, geprueft: false };
+    wache = neueWache();
     Promise.all([erinnere('schule-schueler'), erinnere('schule-lehrer')]).then(async ([s, l]) => {
       Object.assign(z.wahl, { schueler: z.wahl.schueler ?? s, lehrer: z.wahl.lehrer ?? l, geladen: true });
       const k = bekanntesKuerzel();
       // Erlaubnis noch da: gleich hinein, ohne Zwischenschritt.
       if (k && s && l) await oeffneGemerkteSchule(k, false);
-      if (!z.schule) { z.wahl.geprueft = true; male(); }
-    });
+      if (z.ansicht === 'start') { z.wahl.geprueft = true; male(); }
+    }).catch((e) => { z.fehler = e.message; z.wahl.geprueft = true; z.wahl.zeigeWahl = true; male(); })
+      .finally(() => { wache?.fertig(); wache = null; });
   }
   const kuerzel = bekanntesKuerzel();
   if (!z.wahl.geladen || (!z.wahl.geprueft && kuerzel && z.wahl.schueler && z.wahl.lehrer)) return h('section', { class: 'karte schmal' }, h('p', { class: 'klein' }, 'Mathekingdom öffnet …'));
