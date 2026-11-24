@@ -245,7 +245,7 @@ Sechs bis acht Aufgaben über alle Meilensteine eines Kapitels, angeboten auf de
 _Avoid_: Eingangstest, Vortest, Diagnosetest
 
 **Voraussetzung**:
-Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln oder aus dem Grundschulstoff.
+Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln, aus einer früheren Klassenstufe oder aus dem Grundschulstoff. Eine Brücke darf deshalb Aufgaben einer früheren Klassenstufe zeigen; die Niveaustufen der eigenen Kapitel richten sich immer nach der eigenen Klassenstufe.
 _Avoid_: Vorwissen (für die Verknüpfung)
 
 **Brücke**:
