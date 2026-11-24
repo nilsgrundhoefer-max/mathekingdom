@@ -190,16 +190,21 @@ function gezeigt(a) {
 // Nenner, Nachkommastellen und Brüche über 1 je Niveaustufe (Grilling mit Nils, 2026-11-22).
 export function bruchSprachMaengel(a, texte) {
   const m = [], stufe = ['F', 'G', 'M', 'E'].indexOf(a.niveau), dezimal = a.lernziel.startsWith('5.9.3');
+  // Klasse 6, Kapitel 1 (ADR 0037): Nenner F bis 10, G bis 20, M bis 50 und 100, E bis 200. Beim Erweitern und Kürzen (6.1.2, 6.1.3)
+  // darf der erweiterte Bruch darüber liegen. Brüche über 1 gibt es ab G, auf F nur beim Umwandeln (6.1.1-B2).
+  const k6 = a.lernziel.startsWith('6.1.'), umformen = /^6\.1\.[23]-/.test(a.lernziel);
   const alle = texte.join(' \n ');
   if (/(?<![\d⁄])\d+\/\d+/.test(alle)) m.push('ein Bruch steht mit Schrägstrich statt mit Bruchstrich');
   if (/[½¼¾]/.test(alle)) m.push('Brüche stehen als Zähler und Nenner, nicht als einzelnes Zeichen');
   const erlaubt = dezimal ? [(n) => n === 10, (n) => [2, 10, 100].includes(n), (n) => [2, 4, 5, 10, 100, 1000].includes(n), (n) => n <= 1000][stufe]
+    : k6 ? (umformen ? [(n) => n <= 100, (n) => n <= 200, (n) => n <= 600, (n) => n <= 1000] : [(n) => n <= 10, (n) => n <= 20, (n) => n <= 50 || n === 100, (n) => n <= 200])[stufe]
     : [(n) => n <= 4, (n) => n <= 8 || n === 10, (n) => n <= 12 || n === 100, (n) => n <= 20 || n === 100][stufe];
+  const ueber1Ab = k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
   for (const x of alle.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) {
     const [g, z, n] = [Number(x[1] ?? 0), Number(x[2]), Number(x[3])];
     if (n < 2) m.push(`Bruch mit Nenner ${n}`);
     else if (!erlaubt(n)) m.push(`Nenner ${n} gibt es auf Niveaustufe ${a.niveau} hier noch nicht`);
-    if (!dezimal && stufe < 2 && (g > 0 || z > n)) m.push(`Brüche über 1 gibt es erst ab M („${x[0]}“)`);
+    if (!dezimal && stufe < ueber1Ab && (g > 0 || z > n)) m.push(`Brüche über 1 gibt es erst ab ${'FGME'[ueber1Ab]} („${x[0]}“)`);
     if (g > 0 && z >= n) m.push(`gemischte Zahl mit unechtem Bruch („${x[0]}“)`);
   }
   // Geld steht immer mit zwei Stellen nach dem Komma („2,50 €“).
@@ -236,7 +241,7 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       for (const f of a.bild.figuren) for (const x of figurMaengel(f)) M(`Bruchbild: ${x}`);
       const namen = a.bild.figuren.map((f) => f.n ?? '');
       if (a.bild.figuren.length > 1 && (namen.some((n) => !/^[A-D]$/.test(n)) || new Set(namen).size !== namen.length)) M('Bruchbild: Mehrere Figuren brauchen die Namen A, B, C');
-      if (stufe === 0 && a.bild.figuren.some((f) => f.ganze)) M('Bruchbild: mehrere Ganze erst ab M');
+      if (stufe === 0 && a.lernziel !== '6.1.1-B2' && a.bild.figuren.some((f) => f.ganze)) M('Bruchbild: mehrere Ganze erst ab M');
       // Jede Figur muss zur Aufgabe passen: Ihr gefärbter Bruchteil steht im Aufgabentext (ohne Bruch im Text: in den Antworten oder der Lösung).
       // Liest der Nachweis das Bild selbst ab oder wählt das Kind unter den Figuren, ist das Bild die Angabe und wird dort geprüft.
       const amBild = nachweis.some((n) => ['bild', 'figurwahl', 'figurextrem'].includes(n?.art));
@@ -283,6 +288,8 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
   for (const t of texte) for (const b of String(t).matchAll(/(?:(\d+)\u202f)?(\d+)\u2044(\d+)/g)) for (const x of [b[1], b[2], b[3]]) if (x != null) kenne(zahl(Number(x)));
   for (const n of [1, 10, 100, 1000, ...(stufe >= 2 ? [2, 3, 4, 5, 6, 7, 8, 9] : [])]) kenne(zahl(n));
   if (a.format === 'luecken') for (const v of atome(a.text.replace(/\{\{(\w+)\}\}/g, (_, n) => a.luecken?.[n]?.loesung ?? '?'))) kenne(v);
+  // Steht eine Lücke im Bruch („▢⁄25“), ist die Zahl auf der anderen Seite des Bruchstrichs bekannt.
+  if (a.format === 'luecken') for (const b of a.text.matchAll(/\}\}\u2044(\d+)|(\d+)\u2044\{\{/g)) kenne(zahl(Number(b[1] ?? b[2])));
   // Ein Bruch aus zwei bekannten Zahlen („3 von 8 Kugeln“) ist bekannt. Eine Einheit allein („1 km“) ist immer bekannt.
   const istBekannt = (v) => bekannt.has(schluessel(v)) || ergebnisse.has(schluessel(v))
     || (v.art !== 'zahl' && Object.values(EINHEIT).some(([art, mal]) => art === v.art && v.w.n === 1 && v.w.z === mal))
@@ -336,6 +343,69 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
         ergibt(zahl(n.zahl), String(n.zahl));
         break;
       }
+      case 'umformen': { // Erweitern oder Kürzen mit einer Zahl: Zähler und Nenner werden beide malgenommen oder geteilt (Klasse 6, ADR 0037).
+        const lies = (t) => { const x = String(t ?? '').match(/^(\d+)⁄(\d+)$/); return x ? [Number(x[1]), Number(x[2])] : null; };
+        const von = lies(n.von), nach = lies(n.nach), k = n.mit;
+        if (!von || !nach || !ganz(k, 2, 100) || !['erweitern', 'kuerzen'].includes(n.wie)) { M('Nachweis umformen: von, nach, mit oder wie fehlt'); break; }
+        brauche(n.von, 'umformen');
+        const soll = n.wie === 'erweitern' ? [von[0] * k, von[1] * k] : [von[0] / k, von[1] / k];
+        if (soll[0] !== nach[0] || soll[1] !== nach[1]) M(`Nachweis umformen: ${n.von} mit ${k} ${n.wie === 'erweitern' ? 'erweitert' : 'gekürzt'} ist ${soll[0]}⁄${soll[1]}, nicht ${n.nach}`);
+        // Die Zahl steht in der Aufgabe, oder sie ist gesucht.
+        if (n.gesucht) ergibt(zahl(k), String(k)); else if (!istBekannt(zahl(k))) M(`Nachweis umformen: Die Zahl ${k} kommt in der Aufgabe nicht vor`); else benutzt.add(schluessel(zahl(k)));
+        ergibt(rechne(n.nach), n.nach); ergibt(zahl(nach[0]), String(nach[0])); ergibt(zahl(nach[1]), String(nach[1]));
+        for (const x of atome(n.nach)) benutzt.add(schluessel(x));
+        break;
+      }
+      case 'erweiterbar': { // Richtig sind die Brüche, die sich auf diesen Nenner erweitern lassen.
+        if (!ganz(n.nenner, 2, 100000) || !atome(a.text).some((x) => gleich(x, zahl(n.nenner)))) { M('Nachweis erweiterbar: Der Nenner fehlt oder steht nicht im Text'); break; }
+        stufeEin((o) => { const x = o.text.trim().match(/^(\d+)\u2044(\d+)$/); return x ? n.nenner % Number(x[2]) === 0 : null; }, 'erweiterbar'); gebunden = true;
+        benutzt.add(schluessel(zahl(n.nenner)));
+        for (const o of optionen) for (const v of atome(o.text)) benutzt.add(schluessel(v));
+        break;
+      }
+      case 'kuerzbar': { // Die Antworten sind Zahlen. Richtig sind die, mit denen sich der Bruch kürzen lässt.
+        const x = String(n.bruch ?? '').match(/^(\d+)\u2044(\d+)$/);
+        if (!x) { M('Nachweis kuerzbar: Bruch fehlt'); break; }
+        wert(n.bruch);
+        stufeEin((o) => (/^\d+$/.test(o.text.trim()) && Number(o.text) > 1 ? Number(x[1]) % Number(o.text) === 0 && Number(x[2]) % Number(o.text) === 0 : null), 'kuerzbar'); gebunden = true;
+        break;
+      }
+      case 'gemeinsameTeiler': { // Wie viele Zahlen größer als 1 teilen Zähler und Nenner?
+        const x = String(n.bruch ?? '').match(/^(\d+)\u2044(\d+)$/);
+        if (!x) { M('Nachweis gemeinsameTeiler: Bruch fehlt'); break; }
+        wert(n.bruch);
+        let anzahl = 0;
+        for (let t = 2; t <= Number(x[1]); t++) if (Number(x[1]) % t === 0 && Number(x[2]) % t === 0) anzahl++;
+        if (anzahl !== n.zahl) M(`Nachweis gemeinsameTeiler: Es sind ${anzahl}, nicht ${n.zahl}`);
+        ergibt(zahl(n.zahl), String(n.zahl));
+        break;
+      }
+      case 'ggt': case 'kgv': { // Größter gemeinsamer Teiler oder kleinstes gemeinsames Vielfaches von Zahlen aus der Aufgabe.
+        if (!Array.isArray(n.zahlen) || n.zahlen.length < 2 || n.zahlen.some((x) => !ganz(x, 1, 100000))) { M(`Nachweis ${n.art}: Zahlen fehlen`); break; }
+        for (const x of n.zahlen) { if (!istBekannt(zahl(x))) M(`Nachweis ${n.art}: ${x} kommt in der Aufgabe nicht vor`); benutzt.add(schluessel(zahl(x))); }
+        const g = n.zahlen.reduce((x, y) => ggt(x, y)), k = n.zahlen.reduce((x, y) => (x * y) / ggt(x, y));
+        if ((n.art === 'ggt' ? g : k) !== n.zahl) M(`Nachweis ${n.art}: Es ist ${n.art === 'ggt' ? g : k}, nicht ${n.zahl}`);
+        ergibt(zahl(n.zahl), String(n.zahl));
+        break;
+      }
+      case 'gekuerztwahl': { // Richtig sind die Brüche, die sich nicht mehr kürzen lassen.
+        stufeEin((o) => { const x = o.text.trim().match(/^(?:\d+\u202f)?(\d+)\u2044(\d+)$/); return x ? ggt(Number(x[1]), Number(x[2])) === 1 : null; }, 'gekuerztwahl'); gebunden = true;
+        for (const o of optionen) for (const v of atome(o.text)) benutzt.add(schluessel(v));
+        break;
+      }
+      case 'abstaende': { // In wie viele Abstände ein Ganzes am Zahlenstrahl geteilt ist.
+        if (!st || (st.teiler ?? 1) % st.schritt !== 0 || (st.teiler ?? 1) / st.schritt !== n.zahl) M(`Nachweis abstaende: Ein Ganzes hat am Strahl nicht ${n.zahl} Abstände`);
+        ergibt(zahl(n.zahl), String(n.zahl));
+        break;
+      }
+      case 'ganze': { // Die Ganzen, die in einem Bruch stecken (abgerundet), oder der Zähler, der übrig bleibt.
+        const v = wert(n.bruch);
+        if (!v || v.art !== 'zahl' || !ganz(n.zahl, 0, 100000)) { M('Nachweis ganze: Bruch oder Zahl fehlt'); break; }
+        const g = Math.floor(v.w.z / v.w.n);
+        if (g !== n.zahl) M(`Nachweis ganze: In ${n.bruch} stecken ${g} Ganze, nicht ${n.zahl}`);
+        ergibt(zahl(n.zahl), String(n.zahl));
+        break;
+      }
       case 'faerben': { // Teile färben: Die Anzahl ist der Bruchteil aller Teile eines Ganzen.
         const v = wert(n.ziel), je = a.faerben ? jeGanzes(a.faerben) : 0;
         if (a.format !== 'faerben' || !v) { M('Nachweis faerben: passt nicht zum Format'); break; }
@@ -367,7 +437,8 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
         if (!st || !v || v.art !== 'zahl') { M('Nachweis strahl: Zahlenstrahl oder Zahl fehlt'); break; }
         const T = st.teiler ?? 1, stelle = a.format === 'zahlenstrahl' && a.eingabe === 'markieren' ? a.loesung : st.pfeil;
         if (stelle == null || qVgl(v.w, Q(stelle, T)) !== 0) M(`Nachweis strahl: ${n.zahl} liegt nicht an der Stelle ${stelle}`);
-        if (a.format === 'zahlenstrahl' && a.eingabe === 'markieren') { if (!atome(a.text).some((x) => gleich(x, v))) M(`Nachweis strahl: ${n.zahl} steht nicht im Text`); gebunden = true; }
+        // Die Zahl steht im Text, oder sie ist das Ergebnis einer Rechnung im Nachweis (rechnung: true).
+        if (a.format === 'zahlenstrahl' && a.eingabe === 'markieren') { if (n.rechnung ? !ergebnisse.has(schluessel(v)) : !atome(a.text).some((x) => gleich(x, v))) M(`Nachweis strahl: ${n.zahl} steht nicht im Text`); gebunden = true; }
         ergibt(v, n.zahl); for (const x of atome(String(n.zahl))) benutzt.add(schluessel(x));
         break;
       }
@@ -480,6 +551,26 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       const v = a.einheit && EINHEIT[a.einheit] ? rechne(`${a.loesung} ${a.einheit}`) : soll;
       if (!istErgebnis(v)) M(`Lösung ${a.loesung} ergibt sich nicht aus dem Nachweis`);
       if (a.genau && !formen.has(norm(a.loesung)) && !formen.has(norm(`${a.loesung} ${a.einheit ?? ''}`))) M(`Brucheingabe: Verlangt ist genau ${a.loesung}, im Nachweis steht diese Schreibweise nicht`);
+      // Klasse 6 (ADR 0037): Ab „Brüche kürzen“ ist das Ergebnis vollständig gekürzt, außer die Aufgabe verlangt genau einen Bruch.
+      const teileL = String(a.loesung).match(/^(?:(\d+)\u202f)?(\d+)\u2044(\d+)$/).slice(1).map((x) => Number(x ?? 0));
+      if (a.gekuerzt != null && a.gekuerzt !== true) M('Brucheingabe: gekuerzt ist true oder fehlt');
+      if (a.gekuerzt && a.genau) M('Brucheingabe: genau und gekuerzt schließen sich aus');
+      if (a.gekuerzt && ggt(teileL[1], teileL[2]) !== 1) M(`Brucheingabe: Die Lösung ${a.loesung} ist nicht vollständig gekürzt`);
+      const abKuerzen = /^6\.1\.(3-K2|[456]-)/.test(a.lernziel);
+      if (abKuerzen && !a.gekuerzt && !a.genau) M('Brucheingabe: Ab „Brüche kürzen“ muss das Ergebnis vollständig gekürzt sein (gekuerzt: true)');
+      if (!abKuerzen && a.gekuerzt) M('Brucheingabe: Vor „Brüche kürzen“ zählt jeder gleichwertige Bruch');
+      if (a.form != null && (a.form !== 'gemischt' || !teileL[0] || teileL[1] >= teileL[2])) M('Brucheingabe: form „gemischt“ braucht eine gemischte Zahl mit echtem Bruch als Lösung');
+      break;
+    }
+    case 'groesse': { // Größe mit Einheit (Klasse 6, ADR 0037): Lösung in der kleinsten Einheit, ab M wählt das Kind die Einheit.
+      const e = EINHEIT[a.einheit];
+      if (!e || e[0] === 'zahl' || e[0] !== a.groesse) { M('Größe: Einheit passt nicht zur Größenart'); break; }
+      if (!ganz(a.loesung, 1, Number.MAX_SAFE_INTEGER)) M('Größe: Lösung ist keine natürliche Zahl in der kleinsten Einheit');
+      if (a.einheiten && (!Array.isArray(a.einheiten) || a.einheiten.length < 3 || a.einheiten.length > 6 || !a.einheiten.includes(a.einheit) || a.einheiten.some((x) => !EINHEIT[x] || EINHEIT[x][0] === 'zahl') || new Set(a.einheiten).size !== a.einheiten.length)) M('Größe: Auswahl der Einheiten passt nicht');
+      if (a.einheiten && stufe < 2) M('Größe: Die Einheit wählt das Kind erst ab M selbst');
+      for (const f of a.typischeFehler ?? []) { fvOk(f.fehlvorstellung); if (!ganz(f.wert, 1, Number.MAX_SAFE_INTEGER) || f.wert === a.loesung) M('Größe: typischer Fehler ist gleich der Lösung oder keine Größe'); }
+      if (new Set((a.typischeFehler ?? []).map((f) => f.wert)).size !== (a.typischeFehler ?? []).length) M('Größe: typischer Fehler doppelt');
+      if (!istErgebnis({ art: a.groesse, w: Q(a.loesung) })) M(`Lösung ${a.loesung} (in der kleinsten Einheit) ergibt sich nicht aus dem Nachweis`);
       break;
     }
     case 'faerben': {

@@ -299,6 +299,14 @@ const KIND = {
   'dezimal-stelle': 'Du hältst Zehntel und Hundertstel jetzt auseinander.',
   'dezimal-endnull': 'Du weißt jetzt: Eine Null am Ende ändert die Dezimalzahl nicht.',
   'bruch-als-komma': 'Du schreibst einen Bruch jetzt über Zehntel oder Hundertstel als Dezimalzahl.',
+  // Klasse 6, Kapitel 1 (ADR 0037)
+  'erweitern-nur-ein-teil': 'Du rechnest beim Erweitern und Kürzen jetzt mit Zähler und Nenner.',
+  'erweitern-addiert': 'Du nimmst beim Erweitern jetzt mal und zählst nichts dazu.',
+  'erweitern-kuerzen-verwechselt': 'Du weißt jetzt: Erweitern heißt malnehmen und Kürzen heißt teilen.',
+  'kuerzen-nicht-vollstaendig': 'Du kürzt jetzt so weit wie möglich.',
+  'bruch-nur-zaehler-verglichen': 'Du schaust beim Vergleichen jetzt auf Zähler und Nenner.',
+  'gemischt-umwandeln': 'Du rechnest die Ganzen jetzt erst in Bruchteile um.',
+  'bruchstrahl-striche': 'Du zählst am Zahlenstrahl jetzt die Abstände bis zur 1.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -460,6 +468,14 @@ export const fehlvorstellungen = {
   'dezimal-stelle': fv('Verwechselt die Stellen nach dem Komma (0,5 als fünf Hundertstel, 0,05 als fünf Zehntel).', 'Die erste Stelle nach dem Komma sind die Zehntel, die zweite die Hundertstel.'),
   'dezimal-endnull': fv('Meint, eine Null am Ende ändere den Wert der Dezimalzahl (0,50 größer als 0,5).', '0,5 und 0,50 sind gleich viel: 5 Zehntel sind 50 Hundertstel.'),
   'bruch-als-komma': fv('Schreibt Zähler und Nenner einfach mit Komma hintereinander (ein Viertel als 0,4 oder 1,4).', 'Wie viele Zehntel oder Hundertstel sind es? Erst dann kannst du die Dezimalzahl schreiben.'),
+  // Klasse 6, Kapitel 1 „Brüche“ (Grilling mit Nils, 2026-11-24)
+  'erweitern-nur-ein-teil': fv('Erweitert oder kürzt nur den Zähler oder nur den Nenner.', 'Zähler und Nenner gehören zusammen. Rechne bei beiden mit derselben Zahl.'),
+  'erweitern-addiert': fv('Zählt beim Erweitern dieselbe Zahl zu Zähler und Nenner dazu, statt malzunehmen (aus drei Vierteln werden fünf Sechstel).', 'Beim Erweitern nimmst du Zähler und Nenner mit derselben Zahl mal. Dazuzählen ändert den Wert.'),
+  'erweitern-kuerzen-verwechselt': fv('Verwechselt Erweitern und Kürzen oder rechnet in die falsche Richtung.', 'Erweitern heißt malnehmen: Die Zahlen werden größer. Kürzen heißt teilen: Die Zahlen werden kleiner.'),
+  'kuerzen-nicht-vollstaendig': fv('Kürzt nicht vollständig: Zähler und Nenner haben noch einen gemeinsamen Teiler.', 'Prüfe noch einmal: Lassen sich Zähler und Nenner noch durch dieselbe Zahl teilen?'),
+  'bruch-nur-zaehler-verglichen': fv('Vergleicht Brüche nur über die Zähler oder die Zahlen einzeln, ohne auf die Größe der Teile zu achten.', 'Schau auf beide Zahlen: Der Nenner sagt, wie groß die Teile sind. Der Zähler sagt, wie viele es sind.'),
+  'gemischt-umwandeln': fv('Wandelt gemischte Zahl und Bruch falsch um: schreibt die Ziffern nebeneinander oder zählt die Ganzen nur zum Zähler dazu.', 'Ein Ganzes hat so viele Teile, wie der Nenner sagt. Rechne die Ganzen zuerst in solche Teile um.'),
+  'bruchstrahl-striche': fv('Zählt am Zahlenstrahl die Teilstriche statt der Abstände und nennt deshalb einen falschen Nenner.', 'Zähle die Abstände von 0 bis 1, nicht die Striche. So viele Teile hat das Ganze.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -844,10 +860,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
-  modellieren: ['5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
+  modellieren: ['6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
-  argumentieren: ['5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
+  argumentieren: ['6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',

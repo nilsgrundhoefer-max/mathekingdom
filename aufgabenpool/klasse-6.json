@@ -1,0 +1,6795 @@
+{
+ "version": 3,
+ "klassenstufe": 6,
+ "quelle": "Bildungsplan 2016 Baden-Württemberg, Kapitelfolge nach Schnittpunkt Mathematik 6, Differenzierende Ausgabe (Klett)",
+ "fehlvorstellungen": {
+  "begriffe-verwechselt": {
+   "beschreibung": "Verwechselt die Fachbegriffe der Rechenart.",
+   "hinweis": "Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?",
+   "kind": "Du weißt jetzt, welche Zahl wie heißt."
+  },
+  "sub-kleiner-von-groesser": {
+   "beschreibung": "Zieht in jeder Stelle die kleinere von der größeren Ziffer ab, statt zu tauschen.",
+   "hinweis": "Achte auf die Reihenfolge: Es wird immer die untere von der oberen Ziffer abgezogen. Geht das nicht, musst du tauschen.",
+   "kind": "Du tauschst jetzt richtig beim schriftlichen Minus."
+  },
+  "sub-uebertrag-vergessen": {
+   "beschreibung": "Tauscht richtig, berücksichtigt den Übertrag in der nächsten Stelle aber nicht.",
+   "hinweis": "Schau dir deine Überträge noch einmal an. Hast du sie in der nächsten Stelle mitgerechnet?",
+   "kind": "Du denkst jetzt an den Übertrag in der nächsten Stelle."
+  },
+  "sub-addiert": {
+   "beschreibung": "Addiert, statt zu subtrahieren.",
+   "hinweis": "Schau auf das Rechenzeichen: Hier wird abgezogen.",
+   "kind": "Du achtest jetzt auf das Minuszeichen."
+  },
+  "sub-klammerfehler": {
+   "beschreibung": "Rechnet a − (b − c) statt a − b − c: Der zweite Subtrahend wird addiert.",
+   "hinweis": "Jede Zahl hinter einem Minus wird abgezogen. Prüfe, ob du eine davon addiert hast.",
+   "kind": "Du ziehst jetzt jede Zahl hinter einem Minus ab."
+  },
+  "add-uebertrag-vergessen": {
+   "beschreibung": "Addiert stellenweise, berücksichtigt den Übertrag aber nicht.",
+   "hinweis": "Schau dir deine Überträge noch einmal an. Hast du sie in der nächsten Stelle mitgerechnet?",
+   "kind": "Du denkst jetzt an den Übertrag in der nächsten Stelle."
+  },
+  "add-subtrahiert": {
+   "beschreibung": "Subtrahiert, statt zu addieren.",
+   "hinweis": "Schau auf das Rechenzeichen: Hier wird addiert.",
+   "kind": "Du achtest jetzt auf das Pluszeichen."
+  },
+  "stellenwert": {
+   "beschreibung": "Verwechselt Stellenwerte (Einer, Zehner, Hunderter).",
+   "hinweis": "Prüfe die Stellen: Welche Ziffer steht bei den Einern, welche bei den Zehnern?",
+   "kind": "Du hältst jetzt Einer, Zehner und Hunderter auseinander."
+  },
+  "kopf-stellenwert": {
+   "beschreibung": "Verrechnet sich beim Kopfrechnen um eine Stelle.",
+   "hinweis": "Prüfe die Stellen: Rechnest du mit Einern, Zehnern oder Hundertern?",
+   "kind": "Du rechnest im Kopf jetzt an der richtigen Stelle."
+  },
+  "ergaenzen-zu-viel": {
+   "beschreibung": "Ergänzt jede Stelle einzeln bis zur vollen Zehn und erhält dadurch zu viel.",
+   "hinweis": "Nur die Einer werden bis 10 ergänzt. Alle anderen Stellen ergänzt du bis 9.",
+   "kind": "Du ergänzt jetzt richtig: die Einer bis 10, alle anderen Stellen bis 9."
+  },
+  "geschickt-nicht-ausgeglichen": {
+   "beschreibung": "Rechnet mit der glatten Nachbarzahl, gleicht danach aber nicht aus.",
+   "hinweis": "Du hast mit einer glatten Zahl gerechnet. Jetzt musst du noch ausgleichen.",
+   "kind": "Du gleichst jetzt nach dem Rechnen mit der glatten Zahl aus."
+  },
+  "geschickt-falsch-ausgeglichen": {
+   "beschreibung": "Gleicht nach dem Rechnen mit der glatten Nachbarzahl in die falsche Richtung aus.",
+   "hinweis": "Überlege: Hast du zu viel oder zu wenig gerechnet? In welche Richtung musst du ausgleichen?",
+   "kind": "Du gleichst jetzt in die richtige Richtung aus."
+  },
+  "ueberschlag-nicht-gerundet": {
+   "beschreibung": "Rechnet genau, statt mit gerundeten Zahlen zu überschlagen.",
+   "hinweis": "Du hast genau gerechnet. Beim Überschlag rundest du zuerst und rechnest dann.",
+   "kind": "Du rundest jetzt zuerst und überschlägst dann."
+  },
+  "falsch-gerundet": {
+   "beschreibung": "Rundet immer ab, statt nach der Rundungsregel zu runden.",
+   "hinweis": "Prüfe dein Runden: Bei 5, 6, 7, 8 und 9 wird aufgerundet.",
+   "kind": "Du rundest jetzt richtig: Bei 5 bis 9 wird aufgerundet."
+  },
+  "probe-falsche-umkehr": {
+   "beschreibung": "Wählt für die Probe nicht die Umkehraufgabe.",
+   "hinweis": "Die Probe macht die Rechnung rückgängig. Sie muss wieder zur ersten Zahl der Aufgabe führen.",
+   "kind": "Du findest jetzt die richtige Umkehraufgabe für die Probe."
+  },
+  "klammer-ignoriert": {
+   "beschreibung": "Rechnet von links nach rechts und beachtet die Klammer nicht.",
+   "hinweis": "Was in der Klammer steht, wird zuerst berechnet.",
+   "kind": "Du rechnest jetzt die Klammer zuerst."
+  },
+  "klammer-falsch-gesetzt": {
+   "beschreibung": "Setzt die Klammer an die falsche Stelle.",
+   "hinweis": "Lies genau: Was soll zuerst zusammengefasst werden? Das gehört in die Klammer.",
+   "kind": "Du setzt die Klammer jetzt an die richtige Stelle."
+  },
+  "gesetz-auf-subtraktion": {
+   "beschreibung": "Überträgt das Vertauschungs- oder Verbindungsgesetz auf die Subtraktion.",
+   "hinweis": "Die beiden Gesetze gelten nur für die Addition. Rechne beide Seiten aus.",
+   "kind": "Du weißt jetzt: Beim Minus darfst du nicht tauschen."
+  },
+  "div-null-vergessen": {
+   "beschreibung": "Lässt eine Null im Quotienten aus.",
+   "hinweis": "Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 ins Ergebnis.",
+   "kind": "Du denkst jetzt an die Null im Ergebnis."
+  },
+  "div-stellenwert": {
+   "beschreibung": "Irrt sich beim Stellenwert des Quotienten (eine Null zu viel oder zu wenig).",
+   "hinweis": "Prüfe mit einem Überschlag, wie viele Stellen dein Ergebnis haben muss.",
+   "kind": "Du prüfst jetzt mit dem Überschlag, wie viele Stellen das Ergebnis hat."
+  },
+  "div-rest-nicht-gedeutet": {
+   "beschreibung": "Berechnet den Quotienten richtig, deutet den Rest aber nicht im Sachzusammenhang.",
+   "hinweis": "Deine Rechnung stimmt. Überlege jetzt, was mit dem Rest in dieser Situation passiert.",
+   "kind": "Du überlegst jetzt, was der Rest in der Geschichte bedeutet."
+  },
+  "div-rest-vergessen": {
+   "beschreibung": "Gibt den Rest nicht oder falsch an.",
+   "hinweis": "Prüfe den Rest: Was bleibt übrig, wenn du Ergebnis mal Divisor vom Dividenden abziehst?",
+   "kind": "Du gibst den Rest jetzt richtig an."
+  },
+  "div-vertauscht": {
+   "beschreibung": "Vertauscht bei der Division die beiden Zahlen.",
+   "hinweis": "Beim Teilen darfst du die Zahlen nicht tauschen. Die erste Zahl wird geteilt.",
+   "kind": "Du weißt jetzt: Beim Teilen darfst du nicht tauschen."
+  },
+  "div-falsche-rechenart": {
+   "beschreibung": "Wählt statt der Division eine andere Rechenart.",
+   "hinweis": "Überlege: Wird hier gerecht verteilt oder in gleiche Gruppen aufgeteilt? Dann wird geteilt.",
+   "kind": "Du erkennst jetzt, wann geteilt wird."
+  },
+  "div-rest-zu-gross": {
+   "beschreibung": "Lässt einen Rest stehen, der so groß wie der Divisor oder größer ist.",
+   "hinweis": "Der Rest muss kleiner sein als die Zahl, durch die du teilst. Passt sie noch einmal hinein?",
+   "kind": "Du weißt jetzt: Der Rest ist immer kleiner als die Zahl hinter dem Geteiltzeichen."
+  },
+  "div-einmaleins": {
+   "beschreibung": "Irrt sich im kleinen Einmaleins.",
+   "hinweis": "Prüfe mit der Mal-Aufgabe: Ergebnis mal die zweite Zahl muss die erste Zahl ergeben.",
+   "kind": "Du prüfst Geteilt-Aufgaben jetzt mit dem Einmaleins."
+  },
+  "teilbar-summe": {
+   "beschreibung": "Erkennt nicht, dass die Summe zweier Vielfacher wieder ein Vielfaches ist.",
+   "hinweis": "Zerlege in Päckchen: Was passiert, wenn du zu vollen Päckchen weitere volle Päckchen legst?",
+   "kind": "Du weißt jetzt: Volle Päckchen und volle Päckchen ergeben wieder volle Päckchen."
+  },
+  "1x1-nachbar": {
+   "beschreibung": "Irrt sich im Einmaleins um eine Reihe (Ergebnis der Nachbaraufgabe).",
+   "hinweis": "Geh von einer Kernaufgabe aus, zum Beispiel 5 mal. Rechne dann eine Reihe weiter.",
+   "kind": "Du triffst im Einmaleins jetzt die richtige Reihe."
+  },
+  "1x1-addiert": {
+   "beschreibung": "Addiert, statt zu multiplizieren.",
+   "hinweis": "Schau auf das Zeichen ·. Hier wird mal gerechnet, nicht plus.",
+   "kind": "Du achtest jetzt auf das Malzeichen."
+  },
+  "1x1-null": {
+   "beschreibung": "Meint, eine Zahl mal 0 ergibt die Zahl selbst.",
+   "hinweis": "Stell dir 0 Päckchen vor. Wie viel ist dann darin?",
+   "kind": "Du weißt jetzt: Mal 0 ergibt immer 0."
+  },
+  "div-durch-sich-selbst": {
+   "beschreibung": "Meint, eine Zahl geteilt durch sich selbst ergibt 0.",
+   "hinweis": "Verteile 4 Äpfel an 4 Kinder. Wie viele bekommt jedes Kind?",
+   "kind": "Du weißt jetzt: Eine Zahl geteilt durch sich selbst ergibt 1."
+  },
+  "sach-falsche-rechnung": {
+   "beschreibung": "Wählt eine Rechnung, die nicht zur Situation passt.",
+   "hinweis": "Lies die Frage noch einmal: Kommt etwas dazu, oder geht etwas weg?",
+   "kind": "Du findest jetzt die passende Rechnung zur Geschichte."
+  },
+  "sach-unnoetige-angabe": {
+   "beschreibung": "Verrechnet eine Angabe, die für die Frage nicht gebraucht wird.",
+   "hinweis": "Nicht jede Zahl im Text wird gebraucht. Welche Angaben gehören wirklich zur Frage?",
+   "kind": "Du erkennst jetzt, welche Zahlen du wirklich brauchst."
+  },
+  "mal-uebertrag-vergessen": {
+   "beschreibung": "Multipliziert stellenweise, nimmt den Übertrag aber nicht in die nächste Stelle mit.",
+   "hinweis": "Schau dir deine Überträge an: Den Zehner aus einer Stelle musst du bei der nächsten Stelle dazurechnen.",
+   "kind": "Du nimmst den Übertrag jetzt in die nächste Stelle mit."
+  },
+  "mal-null-vergessen": {
+   "beschreibung": "Übersieht eine Null im Faktor und lässt die Stelle im Ergebnis aus.",
+   "hinweis": "Auch die Null wird malgenommen. 0 mal eine Zahl ist 0, und die Stelle bleibt im Ergebnis stehen.",
+   "kind": "Du denkst jetzt auch an die Null im Faktor."
+  },
+  "mal-nicht-eingerueckt": {
+   "beschreibung": "Schreibt die Teilprodukte nicht stellengerecht untereinander.",
+   "hinweis": "Jedes Teilprodukt endet unter der Ziffer, mit der du gerade malnimmst. Prüfe mit einem Überschlag.",
+   "kind": "Du schreibst die Teilergebnisse jetzt an die richtige Stelle."
+  },
+  "mal-stellenwert": {
+   "beschreibung": "Irrt sich bei der Zahl der Nullen (Stellenwert) im Produkt.",
+   "hinweis": "Zähle die Nullen der Faktoren. Prüfe dann mit einer leichten Aufgabe ohne Nullen.",
+   "kind": "Du zählst die Nullen jetzt richtig."
+  },
+  "mal-zerlegung-halb": {
+   "beschreibung": "Multipliziert beim Zerlegen nur einen Teil und addiert den anderen Teil einfach dazu.",
+   "hinweis": "Beide Teile müssen malgenommen werden. Schau dir das Malkreuz an.",
+   "kind": "Du nimmst jetzt beide Teile mal."
+  },
+  "punkt-vor-strich": {
+   "beschreibung": "Rechnet von links nach rechts und beachtet „Punkt vor Strich“ nicht.",
+   "hinweis": "Mal und geteilt kommen vor plus und minus. Unterstreiche zuerst die Punktrechnung.",
+   "kind": "Du rechnest jetzt Punkt vor Strich."
+  },
+  "klammer-innen-aussen": {
+   "beschreibung": "Löst eine Klammer in der Klammer in der falschen Reihenfolge auf.",
+   "hinweis": "Bei einer Klammer in der Klammer beginnst du ganz innen.",
+   "kind": "Du beginnst jetzt bei der innersten Klammer."
+  },
+  "potenz-mal-exponent": {
+   "beschreibung": "Rechnet bei einer Potenz Basis mal Exponent (2³ = 6).",
+   "hinweis": "Der Exponent sagt, wie oft die Basis malgenommen wird. 2³ ist 2 · 2 · 2.",
+   "kind": "Du weißt jetzt: 2³ heißt 2 · 2 · 2."
+  },
+  "potenz-vertauscht": {
+   "beschreibung": "Vertauscht bei einer Potenz Basis und Exponent.",
+   "hinweis": "Die große Zahl ist die Basis. Die kleine Zahl oben sagt, wie oft sie vorkommt.",
+   "kind": "Du hältst Basis und Exponent jetzt auseinander."
+  },
+  "potenz-nullen": {
+   "beschreibung": "Zählt bei einer Zehnerpotenz die Nullen falsch.",
+   "hinweis": "Der Exponent sagt, wie viele Nullen die Zehnerpotenz hat. 10³ = 1000 hat 3 Nullen.",
+   "kind": "Du zählst die Nullen bei Zehnerpotenzen jetzt richtig."
+  },
+  "verteilung-halb": {
+   "beschreibung": "Multipliziert beim Ausmultiplizieren nur den ersten Summanden in der Klammer.",
+   "hinweis": "Jeder Teil in der Klammer wird mit der Zahl vor der Klammer malgenommen.",
+   "kind": "Du nimmst jetzt jeden Teil in der Klammer mal."
+  },
+  "gesetz-auf-division": {
+   "beschreibung": "Überträgt das Vertauschungs- oder Verbindungsgesetz auf die Division.",
+   "hinweis": "Beim Dividieren darfst du die Zahlen nicht tauschen und die Klammern nicht verschieben. Rechne beide Seiten aus.",
+   "kind": "Du weißt jetzt: Beim Teilen darfst du nicht tauschen und keine Klammern verschieben."
+  },
+  "muster-falsche-regel": {
+   "beschreibung": "Setzt ein Zahlenmuster mit einer falschen Regel fort (zum Beispiel immer gleich viel dazu statt immer mal gleich viel).",
+   "hinweis": "Prüfe deine Regel an allen Zahlen des Musters, nicht nur an den ersten beiden.",
+   "kind": "Du prüfst deine Regel jetzt an allen Zahlen des Musters."
+  },
+  "sach-schritt-vergessen": {
+   "beschreibung": "Führt nur einen von mehreren nötigen Rechenschritten aus.",
+   "hinweis": "Du bist noch nicht fertig: Es fehlt noch ein Rechenschritt.",
+   "kind": "Du denkst jetzt an alle Rechenschritte."
+  },
+  "strich-buendel-falsch": {
+   "beschreibung": "Bündelt die Strichliste falsch: Der Querstrich steht nicht als fünfter Strich.",
+   "hinweis": "Schau dir deine Bündel an: Vier Striche stehen gerade, der fünfte geht quer darüber.",
+   "kind": "Du bündelst jetzt richtig: Der fünfte Strich geht quer."
+  },
+  "strich-buendel-als-vier": {
+   "beschreibung": "Zählt ein Bündel der Strichliste als 4 statt als 5.",
+   "hinweis": "Zähle in einem Bündel auch den Querstrich mit. Ein Bündel sind 5 Striche.",
+   "kind": "Du weißt jetzt: Ein Bündel sind 5 Striche."
+  },
+  "liste-verzaehlt": {
+   "beschreibung": "Verzählt sich beim Auszählen einer Liste um eins oder zwei.",
+   "hinweis": "Zähle noch einmal und streiche dabei jede Antwort ab, die du schon gezählt hast.",
+   "kind": "Du zählst jetzt sorgfältig und streichst ab, was du schon gezählt hast."
+  },
+  "skala-einerschritte": {
+   "beschreibung": "Zählt die Linien des Diagramms, statt die Zahlen an der Achse zu beachten.",
+   "hinweis": "Schau auf die Zahlen an der Achse: In welchen Schritten geht es von Linie zu Linie?",
+   "kind": "Du schaust jetzt auf die Zahlen an der Achse."
+  },
+  "skala-zwischenwert": {
+   "beschreibung": "Liest bei einem Wert zwischen zwei beschrifteten Linien die nächste beschriftete Zahl ab.",
+   "hinweis": "Das Ende liegt zwischen zwei Zahlen. Zähle die feinen Linien in den richtigen Schritten weiter.",
+   "kind": "Du liest jetzt auch Werte zwischen zwei Zahlen genau ab."
+  },
+  "bild-symbole-gezaehlt": {
+   "beschreibung": "Zählt im Bilddiagramm die Bilder, ohne den Schlüssel zu beachten.",
+   "hinweis": "Lies den Schlüssel: Ein Bild steht nicht für 1, sondern für mehrere.",
+   "kind": "Du denkst jetzt an den Schlüssel: Ein Bild steht für mehrere."
+  },
+  "bild-halbes-symbol": {
+   "beschreibung": "Wertet ein halbes Bild im Bilddiagramm als ganzes oder lässt es weg.",
+   "hinweis": "Schau genau hin: Ein halbes Bild zählt die Hälfte des Schlüssels.",
+   "kind": "Du weißt jetzt: Ein halbes Bild ist die Hälfte wert."
+  },
+  "diagramm-vertauscht": {
+   "beschreibung": "Trägt Werte bei der falschen Säule ein (zwei Werte vertauscht).",
+   "hinweis": "Prüfe Säule für Säule: Gehört der Wert aus der Tabelle wirklich zu diesem Namen?",
+   "kind": "Du ordnest jetzt jeden Wert der richtigen Säule zu."
+  },
+  "extrem-verwechselt": {
+   "beschreibung": "Verwechselt den größten mit dem kleinsten Wert.",
+   "hinweis": "Lies die Frage noch einmal: Wird nach am meisten oder nach am wenigsten gefragt?",
+   "kind": "Du unterscheidest jetzt sicher zwischen am meisten und am wenigsten."
+  },
+  "achse-abgeschnitten": {
+   "beschreibung": "Lässt sich von einer Achse täuschen, die nicht bei 0 beginnt, und vergleicht nur die Höhe der Säulen.",
+   "hinweis": "Schau, bei welcher Zahl die Achse beginnt. Vergleiche die Zahlen, nicht nur die Höhe der Säulen.",
+   "kind": "Du schaust jetzt zuerst auf die unterste Zahl an der Achse."
+  },
+  "einteilung-zu-fein": {
+   "beschreibung": "Wählt eine Achseneinteilung mit viel zu kleinen Schritten.",
+   "hinweis": "Mit so kleinen Schritten wird die Achse sehr lang. Nimm größere Schritte.",
+   "kind": "Du wählst jetzt nicht zu kleine Schritte für die Achse."
+  },
+  "einteilung-zu-grob": {
+   "beschreibung": "Wählt eine Achseneinteilung, bei der Werte zwischen die Linien fallen.",
+   "hinweis": "Prüfe jeden Wert: Liegt er genau auf einer Linie?",
+   "kind": "Du wählst jetzt Schritte, bei denen jeder Wert auf einer Linie liegt."
+  },
+  "einteilung-zu-kurz": {
+   "beschreibung": "Wählt eine Achse, die vor dem größten Wert endet.",
+   "hinweis": "Prüfe den größten Wert: Passt seine Säule noch auf die Achse?",
+   "kind": "Du achtest jetzt darauf: Auch die größte Säule muss auf die Achse passen."
+  },
+  "umfrage-unpassend": {
+   "beschreibung": "Wählt eine Umfragefrage, deren Antworten sich nicht eindeutig zählen lassen.",
+   "hinweis": "Überlege: Kann jedes Kind genau eine von wenigen Antworten geben?",
+   "kind": "Du stellst jetzt Fragen mit klaren Antworten zum Zählen."
+  },
+  "anteil-nicht-beachtet": {
+   "beschreibung": "Vergleicht Anzahlen aus unterschiedlich großen Gruppen, ohne die Gruppengröße zu beachten.",
+   "hinweis": "Die Gruppen sind verschieden groß. Vergleiche, welcher Teil der Gruppe es jeweils ist.",
+   "kind": "Du vergleichst jetzt auch, wie viele insgesamt gefragt wurden."
+  },
+  "null-platzhalter": {
+   "beschreibung": "Lässt die Null als Platzhalter weg (dreitausendfünf wird 35 oder 305).",
+   "hinweis": "Prüfe jede Stelle: Wo nichts steht, gehört eine 0 hin.",
+   "kind": "Du schreibst jetzt eine 0 an jede leere Stelle."
+  },
+  "zahl-nach-gehoer": {
+   "beschreibung": "Schreibt eine Zahl so, wie sie gesprochen wird (dreihundertfünf wird 3005).",
+   "hinweis": "Schreibe die Zahl in die Stellenwerttafel: Jede Stelle bekommt genau eine Ziffer.",
+   "kind": "Du schreibst Zahlen jetzt Stelle für Stelle und nicht so, wie du sie hörst."
+  },
+  "tafel-verrutscht": {
+   "beschreibung": "Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein.",
+   "hinweis": "Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links.",
+   "kind": "Du trägst jetzt jede Ziffer in die richtige Spalte ein."
+  },
+  "vergleich-erste-ziffer": {
+   "beschreibung": "Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten.",
+   "hinweis": "Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer.",
+   "kind": "Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen."
+  },
+  "zeichen-verwechselt": {
+   "beschreibung": "Verwechselt die Zeichen < und >.",
+   "hinweis": "Die Spitze des Zeichens zeigt immer zur kleineren Zahl.",
+   "kind": "Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl."
+  },
+  "nachbar-verwechselt": {
+   "beschreibung": "Verwechselt Vorgänger und Nachfolger.",
+   "hinweis": "Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.",
+   "kind": "Du hältst Vorgänger und Nachfolger jetzt auseinander."
+  },
+  "strahl-einerschritte": {
+   "beschreibung": "Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen.",
+   "hinweis": "Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt?",
+   "kind": "Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist."
+  },
+  "million-milliarde": {
+   "beschreibung": "Verwechselt Tausender, Millionen und Milliarden.",
+   "hinweis": "Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden.",
+   "kind": "Du hältst Tausender, Millionen und Milliarden jetzt auseinander."
+  },
+  "dreierblock-vergessen": {
+   "beschreibung": "Lässt einen Dreierblock aus oder füllt ihn nicht mit Nullen auf.",
+   "hinweis": "Jeder Block hat drei Ziffern. Fehlt etwas, kommen Nullen hinein.",
+   "kind": "Du gibst jetzt jedem Dreierblock seine drei Ziffern."
+  },
+  "runden-fuenf-ab": {
+   "beschreibung": "Rundet bei der Ziffer 5 ab statt auf.",
+   "hinweis": "Schau auf die Ziffer rechts neben der Rundungsstelle: Bei 5 wird schon aufgerundet.",
+   "kind": "Du weißt jetzt: Bei 5 wird aufgerundet."
+  },
+  "runden-falsche-stelle": {
+   "beschreibung": "Rundet auf eine andere Stelle als verlangt.",
+   "hinweis": "Lies noch einmal: Auf welche Stelle soll gerundet werden?",
+   "kind": "Du rundest jetzt auf die Stelle aus der Aufgabe."
+  },
+  "runden-ziffern-stehen": {
+   "beschreibung": "Lässt die Ziffern rechts von der Rundungsstelle stehen, statt Nullen zu schreiben.",
+   "hinweis": "Rechts von der Rundungsstelle stehen nach dem Runden nur Nullen.",
+   "kind": "Du schreibst nach dem Runden jetzt Nullen hinter die Rundungsstelle."
+  },
+  "runden-kette": {
+   "beschreibung": "Rundet in mehreren Schritten nacheinander (1449 erst auf 1450, dann auf 1500).",
+   "hinweis": "Runde in einem Schritt. Es zählt nur die Ziffer direkt rechts neben der Rundungsstelle.",
+   "kind": "Du rundest jetzt in einem Schritt."
+  },
+  "runden-uebertrag": {
+   "beschreibung": "Vergisst beim Aufrunden den Übertrag, wenn an der Rundungsstelle eine 9 steht.",
+   "hinweis": "An der Rundungsstelle steht eine 9. Wird sie um 1 größer, ändert sich auch die Stelle links davon.",
+   "kind": "Du denkst beim Aufrunden jetzt daran: Aus 9 wird 10."
+  },
+  "schaetzen-nicht-hochgerechnet": {
+   "beschreibung": "Zählt beim Schätzen nur ein Feld und rechnet nicht auf alle Felder hoch.",
+   "hinweis": "Du hast ein Feld gezählt. Wie viele Felder hat das ganze Bild?",
+   "kind": "Du rechnest jetzt von einem Feld auf alle Felder hoch."
+  },
+  "schaetzen-addiert": {
+   "beschreibung": "Addiert beim Schätzen die Anzahl im Feld und die Zahl der Felder, statt zu multiplizieren.",
+   "hinweis": "In jedem Feld sind ungefähr gleich viele. Nimm die Anzahl im Feld mal die Zahl der Felder.",
+   "kind": "Du nimmst die Anzahl im Feld jetzt mal die Zahl der Felder."
+  },
+  "gezaehlt-geschaetzt": {
+   "beschreibung": "Unterscheidet nicht zwischen gezählten, gerundeten und geschätzten Angaben.",
+   "hinweis": "Überlege: Hat hier jemand alles einzeln gezählt, oder ist die Zahl nur ungefähr?",
+   "kind": "Du unterscheidest jetzt zwischen gezählt, gerundet und geschätzt."
+  },
+  "dual-zehnerwerte": {
+   "beschreibung": "Liest eine Zahl im Zweiersystem mit den Stellenwerten 1, 10, 100 des Zehnersystems.",
+   "hinweis": "Im Zweiersystem sind die Stellen von rechts 1, 2, 4, 8 und 16 wert.",
+   "kind": "Du weißt jetzt: Im Zweiersystem sind die Stellen 1, 2, 4, 8 und 16 wert."
+  },
+  "dual-gerade-werte": {
+   "beschreibung": "Nimmt im Zweiersystem die Stellenwerte 2, 4, 6, 8 statt zu verdoppeln.",
+   "hinweis": "Die Stellenwerte verdoppeln sich: 1, 2, 4, 8, 16.",
+   "kind": "Du verdoppelst die Stellenwerte im Zweiersystem jetzt richtig: 1, 2, 4, 8, 16."
+  },
+  "dual-umgedreht": {
+   "beschreibung": "Liest oder schreibt die Stellen im Zweiersystem in umgekehrter Reihenfolge.",
+   "hinweis": "Die Stelle mit dem Wert 1 steht ganz rechts, wie die Einer im Zehnersystem.",
+   "kind": "Du weißt jetzt: Im Zweiersystem steht die Einerstelle ganz rechts."
+  },
+  "roemisch-nur-addiert": {
+   "beschreibung": "Zählt bei römischen Zahlzeichen alle Zeichen zusammen und beachtet nicht, dass ein kleineres Zeichen links abgezogen wird (IX wird 11).",
+   "hinweis": "Steht ein kleineres Zeichen links vor einem größeren, wird es abgezogen.",
+   "kind": "Du weißt jetzt: Ein kleineres Zeichen links wird abgezogen."
+  },
+  "roemisch-vier-gleiche": {
+   "beschreibung": "Schreibt vier gleiche römische Zeichen hintereinander (IIII statt IV).",
+   "hinweis": "Höchstens drei gleiche Zeichen stehen hintereinander. Für 4 und 9 ziehst du ab.",
+   "kind": "Du schreibst höchstens drei gleiche Zeichen hintereinander."
+  },
+  "roemisch-falsch-abgezogen": {
+   "beschreibung": "Zieht bei römischen Zahlzeichen ein Zeichen ab, das man nicht abziehen darf (IC für 99, VX für 5).",
+   "hinweis": "Abgezogen wird nur I vor V und X, X vor L und C, C vor D und M.",
+   "kind": "Du weißt jetzt, welche Zeichen man abziehen darf."
+  },
+  "roemisch-zeichen-verwechselt": {
+   "beschreibung": "Verwechselt die Werte der römischen Zeichen (L und C, D und M, V und X).",
+   "hinweis": "Schau im Merkzettel nach: Welchen Wert hat jedes Zeichen?",
+   "kind": "Du kennst jetzt den Wert jedes römischen Zeichens."
+  },
+  "gerade-begrenzt": {
+   "beschreibung": "Verwechselt Strecke, Strahl und Gerade oder hält eine Gerade für begrenzt.",
+   "hinweis": "Eine Strecke hat zwei Endpunkte, ein Strahl einen Anfangspunkt, eine Gerade hat kein Ende.",
+   "kind": "Du hältst Strecke, Strahl und Gerade jetzt auseinander."
+  },
+  "laenge-kaestchen": {
+   "beschreibung": "Zählt Kästchen und gibt sie als Zentimeter an (oder umgekehrt).",
+   "hinweis": "Im Heft sind 2 Kästchen 1 cm lang. Ein Kästchen ist 5 mm lang.",
+   "kind": "Du weißt jetzt: Zwei Kästchen im Heft sind ein Zentimeter."
+  },
+  "lineal-nicht-null": {
+   "beschreibung": "Liest am Lineal nur das Ende der Strecke ab, obwohl sie nicht bei 0 beginnt.",
+   "hinweis": "Schau auf den Anfang der Strecke: Bei welcher Zahl liegt er am Lineal?",
+   "kind": "Du schaust jetzt zuerst nach: Beginnt die Strecke am Lineal bei 0?"
+  },
+  "einheit-mm-cm": {
+   "beschreibung": "Rechnet Zentimeter und Millimeter falsch um.",
+   "hinweis": "Ein Zentimeter sind 10 Millimeter. Rechne zuerst alles in Millimeter um.",
+   "kind": "Du weißt jetzt: Ein Zentimeter hat 10 Millimeter."
+  },
+  "senkrecht-lotrecht": {
+   "beschreibung": "Meint, „senkrecht“ heißt von oben nach unten, und erkennt rechte Winkel in schräger Lage nicht.",
+   "hinweis": "Senkrecht zueinander heißt: Die Linien bilden einen rechten Winkel. Dreh das Blatt in Gedanken.",
+   "kind": "Du weißt jetzt: Senkrecht zueinander heißt im rechten Winkel, egal in welcher Richtung."
+  },
+  "parallel-gleichlang": {
+   "beschreibung": "Hält Linien nur für parallel, wenn sie gleich lang sind oder genau untereinander liegen, oder hält Linien für parallel, die sich im Bild nur nicht treffen.",
+   "hinweis": "Parallele Linien haben überall den gleichen Abstand. Verlängere sie in Gedanken.",
+   "kind": "Du weißt jetzt: Parallel heißt überall gleicher Abstand, egal wie lang die Linien sind."
+  },
+  "senkrecht-parallel-verwechselt": {
+   "beschreibung": "Verwechselt die Begriffe senkrecht und parallel.",
+   "hinweis": "Senkrecht: Die Linien bilden einen rechten Winkel. Parallel: Die Linien treffen sich nie.",
+   "kind": "Du hältst senkrecht und parallel jetzt auseinander."
+  },
+  "koord-vertauscht": {
+   "beschreibung": "Vertauscht im Koordinatensystem die beiden Koordinaten (erst nach oben, dann nach rechts).",
+   "hinweis": "Die erste Zahl sagt, wie weit es nach rechts geht. Die zweite Zahl sagt, wie weit es nach oben geht.",
+   "kind": "Du gehst im Koordinatensystem jetzt erst nach rechts und dann nach oben."
+  },
+  "koord-ab-eins": {
+   "beschreibung": "Beginnt im Koordinatensystem bei 1 statt bei 0 zu zählen und landet ein Kästchen daneben.",
+   "hinweis": "Die Achsen beginnen bei 0. Zähle die Schritte, nicht die Linien.",
+   "kind": "Du beginnst im Koordinatensystem jetzt bei 0 zu zählen."
+  },
+  "abstand-schraeg": {
+   "beschreibung": "Misst den Abstand zu einer Geraden schräg statt auf der Senkrechten.",
+   "hinweis": "Der Abstand ist der kürzeste Weg. Er steht immer senkrecht auf der Geraden.",
+   "kind": "Du misst den Abstand jetzt auf dem kürzesten Weg, im rechten Winkel zur Linie."
+  },
+  "spiegel-verschoben": {
+   "beschreibung": "Verschiebt die Figur auf die andere Seite der Achse, statt sie zu spiegeln.",
+   "hinweis": "Beim Spiegeln wird die Figur umgeklappt. Was nah an der Achse liegt, bleibt nah an der Achse.",
+   "kind": "Du spiegelst jetzt und verschiebst die Figur nicht mehr nur."
+  },
+  "spiegel-abstand": {
+   "beschreibung": "Setzt den Bildpunkt in einem anderen Abstand zur Symmetrieachse als den Punkt.",
+   "hinweis": "Zähle die Kästchen vom Punkt bis zur Achse. Genauso weit geht es auf der anderen Seite.",
+   "kind": "Du zählst beim Spiegeln jetzt den Abstand zur Symmetrieachse."
+  },
+  "diagonale-als-achse": {
+   "beschreibung": "Hält die Diagonale eines Rechtecks oder eine Linie durch ein Parallelogramm für eine Symmetrieachse.",
+   "hinweis": "Falte in Gedanken an der Linie. Liegen beide Hälften genau aufeinander?",
+   "kind": "Du prüfst eine Symmetrieachse jetzt durch Falten in Gedanken."
+  },
+  "punkt-achsen-verwechselt": {
+   "beschreibung": "Verwechselt Achsensymmetrie (umklappen) und Punktsymmetrie (halbe Drehung).",
+   "hinweis": "Achsensymmetrisch: umklappen an einer Linie. Punktsymmetrisch: eine halbe Drehung um einen Punkt.",
+   "kind": "Du hältst Spiegeln an einer Achse und Drehen um einen Punkt jetzt auseinander."
+  },
+  "sonderfall-uebersehen": {
+   "beschreibung": "Sieht nicht, dass ein Quadrat auch ein Rechteck ist (oder eine Raute auch ein Parallelogramm).",
+   "hinweis": "Prüfe die Eigenschaften: Hat die Figur alles, was die andere Figur braucht?",
+   "kind": "Du weißt jetzt: Ein Quadrat ist auch ein besonderes Rechteck."
+  },
+  "lage-prototyp": {
+   "beschreibung": "Erkennt eine Figur nur in der gewohnten Lage (ein gedrehtes Quadrat gilt als Raute).",
+   "hinweis": "Dreh das Blatt in Gedanken. Die Figur bleibt dieselbe.",
+   "kind": "Du erkennst eine Figur jetzt auch in gedrehter Lage."
+  },
+  "viereck-eigenschaft": {
+   "beschreibung": "Ordnet einem Viereck Eigenschaften zu, die es nicht hat, oder verwechselt die Namen der Vierecke.",
+   "hinweis": "Prüfe der Reihe nach: Welche Seiten sind parallel? Welche sind gleich lang? Gibt es rechte Winkel?",
+   "kind": "Du prüfst bei einem Viereck jetzt Seiten und rechte Winkel einzeln nach."
+  },
+  "umrechnungszahl": {
+   "beschreibung": "Wandelt mit der falschen Umrechnungszahl um (100 statt 1000, 100 statt 60).",
+   "hinweis": "Welche Umrechnungszahl gehört zu diesen beiden Einheiten? Schau auf den Merkzettel.",
+   "kind": "Du nimmst beim Umwandeln jetzt die richtige Umrechnungszahl."
+  },
+  "umrechnungsrichtung": {
+   "beschreibung": "Rechnet beim Umwandeln in die falsche Richtung (teilt, statt malzunehmen, oder umgekehrt).",
+   "hinweis": "Ist die neue Einheit kleiner? Dann wird die Zahl davor größer.",
+   "kind": "Du weißt jetzt: Bei der kleineren Einheit steht die größere Zahl."
+  },
+  "zeit-zehnersystem": {
+   "beschreibung": "Rechnet bei der Zeit wie im Zehnersystem (1 h als 100 min, 50 min und 20 min als 70 min ohne neue Stunde).",
+   "hinweis": "Eine Stunde hat 60 Minuten, nicht 100. Rechne bis zur vollen Stunde und dann weiter.",
+   "kind": "Du rechnest bei der Zeit jetzt mit 60 Minuten für eine Stunde."
+  },
+  "zeitpunkt-zeitspanne": {
+   "beschreibung": "Verwechselt Zeitpunkt und Zeitspanne oder rechnet in die falsche Richtung auf der Zeitleiste.",
+   "hinweis": "Ein Zeitpunkt sagt wann, eine Zeitspanne sagt wie lange. Was ist hier gefragt?",
+   "kind": "Du unterscheidest jetzt Zeitpunkt und Zeitspanne."
+  },
+  "komma-falsch-gelesen": {
+   "beschreibung": "Liest die Stellen nach dem Komma falsch (3,5 € als 3 € 5 ct, 1,5 km als 1 km 5 m).",
+   "hinweis": "Was bedeuten die Ziffern nach dem Komma? Schreibe die Größe mit zwei Einheiten.",
+   "kind": "Du liest die Ziffern nach dem Komma jetzt richtig."
+  },
+  "masszahlen-addiert": {
+   "beschreibung": "Verrechnet die Zahlen verschiedener Einheiten, ohne umzuwandeln (2 m und 50 cm als 52).",
+   "hinweis": "Die Einheiten sind verschieden. Wandle zuerst in dieselbe Einheit um.",
+   "kind": "Du wandelst jetzt erst in dieselbe Einheit um und rechnest dann."
+  },
+  "einheit-fehlt": {
+   "beschreibung": "Gibt die Einheit nicht an oder wählt eine Einheit, die nicht zur Größe passt.",
+   "hinweis": "Zu einer Größe gehört eine Einheit. Welche passt hier?",
+   "kind": "Du schreibst jetzt zu jeder Größe die passende Einheit."
+  },
+  "massstab-verkehrt": {
+   "beschreibung": "Rechnet beim Maßstab in die falsche Richtung (teilt auf dem Weg zur Wirklichkeit oder umgekehrt).",
+   "hinweis": "In Wirklichkeit ist alles größer als auf der Karte. Passt dein Ergebnis dazu?",
+   "kind": "Du weißt jetzt: Von der Karte zur Wirklichkeit rechnest du mal."
+  },
+  "massstab-einheit": {
+   "beschreibung": "Rechnet mit dem Maßstab richtig, wandelt das Ergebnis aber nicht oder falsch um.",
+   "hinweis": "Dein Ergebnis steht noch in der Einheit der Karte. Wandle es in die gefragte Einheit um.",
+   "kind": "Du wandelst beim Maßstab das Ergebnis jetzt in die passende Einheit um."
+  },
+  "groesse-ohne-vorstellung": {
+   "beschreibung": "Hat keine tragfähige Vorstellung von der Größe und wählt eine unpassende Einheit oder Zahl.",
+   "hinweis": "Vergleiche mit etwas, das du kennst: Eine Tür ist 2 m hoch, eine Tafel Schokolade wiegt 100 g.",
+   "kind": "Du vergleichst eine Größe jetzt mit Dingen aus dem Alltag."
+  },
+  "vergleich-nicht-genutzt": {
+   "beschreibung": "Nennt beim Schätzen nur die Vergleichsgröße oder nur, wie oft sie hineinpasst.",
+   "hinweis": "Wie oft passt die Vergleichsgröße hinein? Rechne dann mal.",
+   "kind": "Du rechnest beim Schätzen jetzt mit der Vergleichsgröße weiter."
+  },
+  "sach-frage-verfehlt": {
+   "beschreibung": "Rechnet richtig, beantwortet aber nicht die gestellte Frage (nennt ein Zwischenergebnis oder eine andere Größe).",
+   "hinweis": "Lies die Frage noch einmal. Was genau ist gesucht?",
+   "kind": "Du liest am Ende jetzt noch einmal die Frage und prüfst deine Antwort."
+  },
+  "rueckgeld-preis": {
+   "beschreibung": "Nennt beim Rückgeld den Preis oder zählt zusammen, statt abzuziehen.",
+   "hinweis": "Rückgeld ist das, was übrig bleibt: der gegebene Betrag minus der Preis.",
+   "kind": "Du rechnest das Rückgeld jetzt als Unterschied aus."
+  },
+  "radius-durchmesser": {
+   "beschreibung": "Verwechselt Radius und Durchmesser und nimmt das Doppelte oder die Hälfte.",
+   "hinweis": "Der Radius geht vom Mittelpunkt bis zur Kreislinie. Der Durchmesser geht einmal ganz durch den Kreis.",
+   "kind": "Du hältst Radius und Durchmesser jetzt auseinander."
+  },
+  "kreis-mittelpunkt": {
+   "beschreibung": "Zeichnet den Kreis nicht um den verlangten Mittelpunkt oder misst den Radius nicht vom Mittelpunkt aus.",
+   "hinweis": "Die Zirkelspitze gehört in den Mittelpunkt. Jeder Punkt der Kreislinie ist gleich weit davon entfernt.",
+   "kind": "Du setzt den Zirkel jetzt im Mittelpunkt ein."
+  },
+  "winkel-schenkellaenge": {
+   "beschreibung": "Hält einen Winkel für größer, weil seine Schenkel länger sind oder sein Bogen größer gezeichnet ist.",
+   "hinweis": "Die Größe eines Winkels hängt nicht von der Länge der Schenkel ab. Schau, wie weit sich die Schenkel öffnen.",
+   "kind": "Du weißt jetzt: Lange Schenkel machen einen Winkel nicht größer."
+  },
+  "winkel-bezeichnung": {
+   "beschreibung": "Liest die Bezeichnung eines Winkels falsch (Scheitel nicht in der Mitte von ∢ASB, Scheitel und Schenkel verwechselt).",
+   "hinweis": "Der Scheitel ist der Punkt, in dem beide Schenkel beginnen. In einem Winkelnamen aus drei Buchstaben steht er in der Mitte.",
+   "kind": "Du liest Namen von Winkeln jetzt richtig."
+  },
+  "winkelart-grenze": {
+   "beschreibung": "Ordnet einen Winkel der falschen Winkelart zu, vor allem an den Grenzen 90° und 180°.",
+   "hinweis": "Vergleiche mit 90° und 180°. Spitz ist kleiner als 90°, stumpf liegt zwischen 90° und 180°.",
+   "kind": "Du ordnest Winkel jetzt sicher der richtigen Art zu."
+  },
+  "gestreckt-kein-winkel": {
+   "beschreibung": "Hält einen gestreckten Winkel oder einen Vollwinkel nicht für einen Winkel.",
+   "hinweis": "Auch 180° und 360° sind Winkel. Die Schenkel bilden dann eine Gerade oder liegen aufeinander.",
+   "kind": "Du weißt jetzt: Auch 180° und 360° sind Winkel."
+  },
+  "rechter-winkel-lage": {
+   "beschreibung": "Erkennt einen rechten Winkel nur, wenn ein Schenkel waagerecht liegt.",
+   "hinweis": "Dreh das Bild in Gedanken. Ein rechter Winkel bleibt ein rechter Winkel.",
+   "kind": "Du erkennst rechte Winkel jetzt in jeder Lage."
+  },
+  "winkel-ohne-stuetze": {
+   "beschreibung": "Schätzt einen Winkel deutlich daneben, ohne mit dem rechten Winkel zu vergleichen.",
+   "hinweis": "Vergleiche mit einem rechten Winkel: Ist der Winkel kleiner oder größer als 90°? Um wie viel ungefähr?",
+   "kind": "Du vergleichst beim Schätzen jetzt mit dem rechten Winkel."
+  },
+  "skala-falsch": {
+   "beschreibung": "Liest am Geodreieck die falsche Skala ab und erhält 180° minus den Winkel.",
+   "hinweis": "Lies auf der Skala ab, die auf dem einen Schenkel bei 0 beginnt. Passt die Zahl zu spitz oder stumpf?",
+   "kind": "Du liest am Geodreieck jetzt auf der richtigen Skala ab."
+  },
+  "geodreieck-angelegt": {
+   "beschreibung": "Legt das Geodreieck falsch an: Der Nullpunkt liegt nicht auf dem Scheitel, oder die lange Seite liegt nicht auf einem Schenkel.",
+   "hinweis": "Der Nullpunkt gehört genau auf den Scheitel. Die lange Seite liegt genau auf einem Schenkel.",
+   "kind": "Du legst das Geodreieck jetzt richtig an."
+  },
+  "ueberstumpf-klein": {
+   "beschreibung": "Gibt bei einem überstumpfen Winkel den kleinen Winkel an und rechnet nicht 360° minus.",
+   "hinweis": "Der Bogen zeigt den großen Winkel. Miss den kleinen Winkel und rechne 360° minus.",
+   "kind": "Du rechnest bei überstumpfen Winkeln jetzt 360° minus."
+  },
+  "gradnetz-vertauscht": {
+   "beschreibung": "Vertauscht im Gradnetz Breite und Länge.",
+   "hinweis": "Zuerst kommt die Breite: Wie weit nördlich oder südlich vom Äquator? Dann kommt die Länge.",
+   "kind": "Du nennst im Gradnetz jetzt zuerst die Breite und dann die Länge."
+  },
+  "gradnetz-richtung": {
+   "beschreibung": "Verwechselt im Gradnetz Nord und Süd oder Ost und West.",
+   "hinweis": "Nördlich vom Äquator heißt N, südlich heißt S. Östlich vom Längengrad 0° heißt O, westlich heißt W.",
+   "kind": "Du hältst Nord, Süd, Ost und West im Gradnetz jetzt auseinander."
+  },
+  "dreieck-sonderfall": {
+   "beschreibung": "Sieht nicht, dass ein gleichseitiges Dreieck auch gleichschenklig ist.",
+   "hinweis": "Prüfe die Eigenschaft: Hat das Dreieck mindestens zwei gleich lange Seiten?",
+   "kind": "Du weißt jetzt: Ein gleichseitiges Dreieck ist auch gleichschenklig."
+  },
+  "dreieck-art": {
+   "beschreibung": "Teilt ein Dreieck falsch ein oder verwechselt die Einteilung nach Seiten mit der nach Winkeln.",
+   "hinweis": "Prüfe der Reihe nach: Welche Seiten sind gleich lang? Gibt es einen rechten oder einen stumpfen Winkel?",
+   "kind": "Du teilst Dreiecke jetzt richtig nach Seiten und Winkeln ein."
+  },
+  "winkelsumme": {
+   "beschreibung": "Rechnet im Dreieck mit einer falschen Winkelsumme (zum Beispiel 360°).",
+   "hinweis": "In jedem Dreieck ergeben die drei Winkel zusammen 180°.",
+   "kind": "Du weißt jetzt: Die drei Winkel im Dreieck ergeben zusammen 180°."
+  },
+  "umfang-flaeche-verwechselt": {
+   "beschreibung": "Verwechselt Umfang und Flächeninhalt: rechnet den einen, wenn der andere gefragt ist.",
+   "hinweis": "Der Flächeninhalt sagt, wie viel Platz die Fläche hat. Der Umfang ist die Länge des Randes einmal ganz herum.",
+   "kind": "Du hältst Flächeninhalt und Umfang jetzt auseinander."
+  },
+  "gleicher-umfang-gleiche-flaeche": {
+   "beschreibung": "Meint, dass Figuren mit gleichem Umfang auch gleich großen Flächeninhalt haben (oder umgekehrt).",
+   "hinweis": "Zähle bei beiden Figuren nach. Ein langes, schmales Rechteck kann denselben Umfang haben wie ein Quadrat und trotzdem viel kleiner sein.",
+   "kind": "Du weißt jetzt: Gleicher Umfang heißt nicht gleich große Fläche."
+  },
+  "umfang-halb": {
+   "beschreibung": "Rechnet beim Umfang nur a + b statt 2 · a + 2 · b und vergisst die beiden anderen Seiten.",
+   "hinweis": "Ein Rechteck hat vier Seiten. Zwei sind a lang, zwei sind b lang.",
+   "kind": "Du zählst beim Umfang jetzt alle vier Seiten."
+  },
+  "randkaestchen-gezaehlt": {
+   "beschreibung": "Zählt beim Umfang die Kästchen am Rand statt der Kästchenseiten auf dem Rand.",
+   "hinweis": "Fahre mit dem Finger auf dem Rand entlang und zähle die Kästchenseiten. An einer Ecke zählen zwei Seiten.",
+   "kind": "Du zählst beim Umfang jetzt die Kästchenseiten am Rand."
+  },
+  "flaecheneinheit-laenge": {
+   "beschreibung": "Verwechselt Längen- und Flächeneinheiten: cm beim Flächeninhalt oder cm² beim Umfang.",
+   "hinweis": "Ein Flächeninhalt hat eine Einheit mit ², zum Beispiel cm². Ein Umfang ist eine Länge, zum Beispiel cm.",
+   "kind": "Du schreibst bei Flächen jetzt cm² und bei Längen cm."
+  },
+  "umrechnungszahl-flaeche": {
+   "beschreibung": "Wandelt Flächeneinheiten mit der Umrechnungszahl 10 oder 1000 um statt mit 100.",
+   "hinweis": "Bei Flächen ist die Umrechnungszahl 100: 1 cm² sind 100 mm², 1 m² sind 100 dm².",
+   "kind": "Du nimmst bei Flächen jetzt die Umrechnungszahl 100."
+  },
+  "einheiten-gemischt-multipliziert": {
+   "beschreibung": "Multipliziert Seiten in verschiedenen Einheiten, ohne umzuwandeln (2 m · 50 cm = 100).",
+   "hinweis": "Die Seiten haben verschiedene Einheiten. Wandle zuerst beide in dieselbe Einheit um.",
+   "kind": "Du wandelst die Seiten jetzt erst in dieselbe Einheit um."
+  },
+  "innere-linie-im-umfang": {
+   "beschreibung": "Zählt bei zusammengesetzten Figuren Linien im Inneren zum Umfang.",
+   "hinweis": "Der Umfang ist nur der äußere Rand. Die Linien, mit denen du zerlegt hast, gehören nicht dazu.",
+   "kind": "Du zählst beim Umfang jetzt nur den äußeren Rand."
+  },
+  "teilflaeche-doppelt": {
+   "beschreibung": "Zählt beim Zerlegen eine Teilfläche doppelt oder lässt eine weg.",
+   "hinweis": "Färbe oder nummeriere jede Teilfläche. Jede wird genau einmal gezählt.",
+   "kind": "Du zählst jede Teilfläche jetzt genau einmal."
+  },
+  "loch-nicht-abgezogen": {
+   "beschreibung": "Zieht bei einer Figur mit Loch das Loch nicht vom Flächeninhalt ab.",
+   "hinweis": "Rechne zuerst die ganze Fläche aus. Ziehe dann das Loch ab.",
+   "kind": "Du ziehst das Loch jetzt vom Flächeninhalt ab."
+  },
+  "bruch-vertauscht": {
+   "beschreibung": "Vertauscht Zähler und Nenner.",
+   "hinweis": "Der Nenner steht unten und nennt alle Teile. Der Zähler steht oben und zählt die gemeinten Teile.",
+   "kind": "Du schreibst den Zähler jetzt oben und den Nenner unten."
+  },
+  "bruch-teil-zu-rest": {
+   "beschreibung": "Vergleicht die gefärbten Teile mit den ungefärbten statt mit allen Teilen (3 von 8 gefärbt als drei Fünftel).",
+   "hinweis": "Zähle für den Nenner alle Teile des Ganzen, die gefärbten und die weißen.",
+   "kind": "Du zählst beim Nenner jetzt alle Teile des Ganzen."
+  },
+  "bruch-ungleiche-teile": {
+   "beschreibung": "Zählt ungleich große Teile als Bruchteil.",
+   "hinweis": "Ein Bruch braucht gleich große Teile. Schau genau hin: Sind alle Teile gleich groß?",
+   "kind": "Du achtest jetzt auf gleich große Teile."
+  },
+  "bruch-nenner-groesse": {
+   "beschreibung": "Hält den Bruch mit dem größeren Nenner für größer (ein Achtel größer als ein Viertel).",
+   "hinweis": "Bei mehr Teilen wird jedes Teil kleiner. Stell dir eine Pizza für 4 und eine für 8 Kinder vor.",
+   "kind": "Du weißt jetzt: Ein größerer Nenner macht die Teile kleiner."
+  },
+  "bruchteil-zaehler-vergessen": {
+   "beschreibung": "Teilt beim Bruchteil einer Größe nur durch den Nenner und nimmt nicht mit dem Zähler mal.",
+   "hinweis": "Du hast erst einen Teil. Wie viele Teile sind gemeint? Nimm mit dem Zähler mal.",
+   "kind": "Du nimmst nach dem Teilen jetzt noch mit dem Zähler mal."
+  },
+  "bruch-ganzes-teil": {
+   "beschreibung": "Verwechselt das Ganze mit dem Teil oder rechnet in die falsche Richtung.",
+   "hinweis": "Was ist gegeben: das Ganze oder ein Teil davon? Das Ganze ist größer als sein Teil.",
+   "kind": "Du hältst das Ganze und den Teil jetzt auseinander."
+  },
+  "dezimal-wie-natuerlich": {
+   "beschreibung": "Liest die Nachkommastellen wie eine natürliche Zahl (0,15 größer als 0,5, weil 15 größer als 5 ist).",
+   "hinweis": "Vergleiche Stelle für Stelle: zuerst die Zehntel, dann die Hundertstel.",
+   "kind": "Du vergleichst Dezimalzahlen jetzt Stelle für Stelle."
+  },
+  "dezimal-stelle": {
+   "beschreibung": "Verwechselt die Stellen nach dem Komma (0,5 als fünf Hundertstel, 0,05 als fünf Zehntel).",
+   "hinweis": "Die erste Stelle nach dem Komma sind die Zehntel, die zweite die Hundertstel.",
+   "kind": "Du hältst Zehntel und Hundertstel jetzt auseinander."
+  },
+  "dezimal-endnull": {
+   "beschreibung": "Meint, eine Null am Ende ändere den Wert der Dezimalzahl (0,50 größer als 0,5).",
+   "hinweis": "0,5 und 0,50 sind gleich viel: 5 Zehntel sind 50 Hundertstel.",
+   "kind": "Du weißt jetzt: Eine Null am Ende ändert die Dezimalzahl nicht."
+  },
+  "bruch-als-komma": {
+   "beschreibung": "Schreibt Zähler und Nenner einfach mit Komma hintereinander (ein Viertel als 0,4 oder 1,4).",
+   "hinweis": "Wie viele Zehntel oder Hundertstel sind es? Erst dann kannst du die Dezimalzahl schreiben.",
+   "kind": "Du schreibst einen Bruch jetzt über Zehntel oder Hundertstel als Dezimalzahl."
+  },
+  "erweitern-nur-ein-teil": {
+   "beschreibung": "Erweitert oder kürzt nur den Zähler oder nur den Nenner.",
+   "hinweis": "Zähler und Nenner gehören zusammen. Rechne bei beiden mit derselben Zahl.",
+   "kind": "Du rechnest beim Erweitern und Kürzen jetzt mit Zähler und Nenner."
+  },
+  "erweitern-addiert": {
+   "beschreibung": "Zählt beim Erweitern dieselbe Zahl zu Zähler und Nenner dazu, statt malzunehmen (aus drei Vierteln werden fünf Sechstel).",
+   "hinweis": "Beim Erweitern nimmst du Zähler und Nenner mit derselben Zahl mal. Dazuzählen ändert den Wert.",
+   "kind": "Du nimmst beim Erweitern jetzt mal und zählst nichts dazu."
+  },
+  "erweitern-kuerzen-verwechselt": {
+   "beschreibung": "Verwechselt Erweitern und Kürzen oder rechnet in die falsche Richtung.",
+   "hinweis": "Erweitern heißt malnehmen: Die Zahlen werden größer. Kürzen heißt teilen: Die Zahlen werden kleiner.",
+   "kind": "Du weißt jetzt: Erweitern heißt malnehmen und Kürzen heißt teilen."
+  },
+  "kuerzen-nicht-vollstaendig": {
+   "beschreibung": "Kürzt nicht vollständig: Zähler und Nenner haben noch einen gemeinsamen Teiler.",
+   "hinweis": "Prüfe noch einmal: Lassen sich Zähler und Nenner noch durch dieselbe Zahl teilen?",
+   "kind": "Du kürzt jetzt so weit wie möglich."
+  },
+  "bruch-nur-zaehler-verglichen": {
+   "beschreibung": "Vergleicht Brüche nur über die Zähler oder die Zahlen einzeln, ohne auf die Größe der Teile zu achten.",
+   "hinweis": "Schau auf beide Zahlen: Der Nenner sagt, wie groß die Teile sind. Der Zähler sagt, wie viele es sind.",
+   "kind": "Du schaust beim Vergleichen jetzt auf Zähler und Nenner."
+  },
+  "gemischt-umwandeln": {
+   "beschreibung": "Wandelt gemischte Zahl und Bruch falsch um: schreibt die Ziffern nebeneinander oder zählt die Ganzen nur zum Zähler dazu.",
+   "hinweis": "Ein Ganzes hat so viele Teile, wie der Nenner sagt. Rechne die Ganzen zuerst in solche Teile um.",
+   "kind": "Du rechnest die Ganzen jetzt erst in Bruchteile um."
+  },
+  "bruchstrahl-striche": {
+   "beschreibung": "Zählt am Zahlenstrahl die Teilstriche statt der Abstände und nennt deshalb einen falschen Nenner.",
+   "hinweis": "Zähle die Abstände von 0 bis 1, nicht die Striche. So viele Teile hat das Ganze.",
+   "kind": "Du zählst am Zahlenstrahl jetzt die Abstände bis zur 1."
+  }
+ },
+ "kompetenzen": {
+  "argumentieren": "Argumentieren",
+  "probleme-loesen": "Probleme lösen",
+  "modellieren": "Modellieren",
+  "symbolisch": "Mit symbolischen Elementen umgehen",
+  "kommunizieren": "Kommunizieren"
+ },
+ "kapitel": [
+  {
+   "id": "6.1",
+   "titel": "Brüche",
+   "unterkapitel": [
+    {
+     "id": "6.1.1",
+     "titel": "Brüche",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.1.1-B1",
+       "text": "Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.",
+       "voraussetzungen": [
+        "5.9.1-B1",
+        "5.9.1-B2"
+       ],
+       "grundlage": "An Kreis und Streifen zählen: Wie viele Teile hat ein Ganzes, wie viele sind gefärbt?"
+      },
+      {
+       "id": "6.1.1-B2",
+       "text": "Ich kann gemischte Zahlen und Brüche ineinander umwandeln.",
+       "voraussetzungen": [
+        "6.1.1-B1",
+        "5.4.5-D4"
+       ],
+       "grundlage": "An zwei Kreisen sehen: Ein ganzer Kreis und ein Viertel sind zusammen fünf Viertel"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Ein Bruch nennt einen Teil vom Ganzen. Der Nenner sagt, in wie viele gleich große Teile das Ganze geteilt ist. Der Zähler zählt die Teile.",
+       "Ist der Zähler so groß wie der Nenner, ist es genau ein Ganzes: 4⁄4 = 1.",
+       "Ist der Zähler größer als der Nenner, ist es mehr als ein Ganzes: 5⁄4.",
+       "Mehr als ein Ganzes schreibst du auch als gemischte Zahl: 5⁄4 = 1 1⁄4.",
+       "Von der gemischten Zahl zum Bruch: Ganze mal Nenner, dann den Zähler dazu. 2 3⁄4 = 11⁄4, denn 2 · 4 + 3 = 11.",
+       "Vom Bruch zur gemischten Zahl: Teile den Zähler durch den Nenner. Das Ergebnis sind die Ganzen, der Rest bleibt als Zähler."
+      ],
+      "beispiel": "Drei Kinder essen zusammen 7 Viertel Pizza. Das sind 7⁄4 = 1 3⁄4 Pizzen: eine ganze Pizza und noch drei Viertel.",
+      "heft": "Zeichne den Bruchstrich mit dem Lineal. Bei einer gemischten Zahl stehen die Ganzen groß vor dem Bruch."
+     },
+     "wortspeicher": [
+      {
+       "wort": "Bruch",
+       "ab": "F",
+       "erklaerung": "Eine Zahl aus Zähler und Nenner mit einem Bruchstrich dazwischen. Sie nennt einen Teil vom Ganzen."
+      },
+      {
+       "wort": "Zähler",
+       "ab": "F",
+       "erklaerung": "Die Zahl über dem Bruchstrich. Sie zählt die Teile."
+      },
+      {
+       "wort": "Nenner",
+       "ab": "F",
+       "erklaerung": "Die Zahl unter dem Bruchstrich. Sie sagt, in wie viele gleich große Teile das Ganze geteilt ist."
+      },
+      {
+       "wort": "Ganzes",
+       "ab": "F",
+       "erklaerung": "Alles zusammen, bevor geteilt wird: die ganze Pizza, der ganze Streifen."
+      },
+      {
+       "wort": "gemischte Zahl",
+       "ab": "F",
+       "erklaerung": "Eine Zahl aus Ganzen und einem Bruch, zum Beispiel 1 1⁄2."
+      },
+      {
+       "wort": "Stammbruch",
+       "ab": "G",
+       "erklaerung": "Ein Bruch mit dem Zähler 1, zum Beispiel 1⁄4."
+      },
+      {
+       "wort": "unechter Bruch",
+       "ab": "G",
+       "erklaerung": "Ein Bruch, der größer als ein Ganzes ist: Der Zähler ist größer als der Nenner."
+      },
+      {
+       "wort": "umwandeln",
+       "ab": "G",
+       "erklaerung": "Dieselbe Zahl anders schreiben: 5⁄4 = 1 1⁄4."
+      },
+      {
+       "wort": "Scheinbruch",
+       "ab": "M",
+       "erklaerung": "Ein Bruch, der eine natürliche Zahl ist, zum Beispiel 8⁄4 = 2."
+      }
+     ]
+    },
+    {
+     "id": "6.1.2",
+     "titel": "Brüche erweitern",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.1.2-W1",
+       "text": "Ich kann einen Bruch mit einer gegebenen Zahl erweitern.",
+       "voraussetzungen": [
+        "6.1.1-B1",
+        "5.4.1-K1"
+       ],
+       "grundlage": "Am Streifen jedes Teil halbieren: Aus einem Halben werden zwei Viertel, der gefärbte Teil bleibt gleich groß"
+      },
+      {
+       "id": "6.1.2-W2",
+       "text": "Ich kann einen Bruch auf einen gegebenen Nenner erweitern und gleichwertige Brüche erkennen.",
+       "voraussetzungen": [
+        "6.1.2-W1",
+        "5.4.1-K2"
+       ],
+       "grundlage": "Zwei Streifen untereinander vergleichen: Welche Brüche färben gleich viel?"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Erweitern heißt: Zähler und Nenner mit derselben Zahl malnehmen.",
+       "Der Wert des Bruchs bleibt gleich. Es sind nur mehr und kleinere Teile.",
+       "3⁄4 mit 2 erweitert ist 6⁄8, denn 3 · 2 = 6 und 4 · 2 = 8.",
+       "Ab G: Suchst du einen bestimmten Nenner, dann überlege: Mit welcher Zahl muss ich den alten Nenner malnehmen?",
+       "Ab G: Brüche mit gleichem Wert heißen gleichwertig."
+      ],
+      "beispiel": "Eine halbe Pizza ist genauso viel wie zwei Viertel oder vier Achtel: 1⁄2 = 2⁄4 = 4⁄8.",
+      "heft": "Schreibe die Zahl, mit der du erweiterst, klein über das Gleichheitszeichen."
+     },
+     "wortspeicher": [
+      {
+       "wort": "erweitern",
+       "ab": "F",
+       "erklaerung": "Zähler und Nenner mit derselben Zahl malnehmen. Der Wert bleibt gleich."
+      },
+      {
+       "wort": "Wert",
+       "ab": "F",
+       "erklaerung": "Wie viel ein Bruch vom Ganzen ist."
+      },
+      {
+       "wort": "gleichwertig",
+       "ab": "G",
+       "erklaerung": "Zwei Brüche sind gleichwertig, wenn sie gleich viel vom Ganzen sind: 1⁄2 und 2⁄4."
+      },
+      {
+       "wort": "Erweiterungszahl",
+       "ab": "G",
+       "erklaerung": "Die Zahl, mit der du Zähler und Nenner malnimmst."
+      },
+      {
+       "wort": "Vielfaches",
+       "ab": "M",
+       "erklaerung": "Das Ergebnis, wenn du eine Zahl mit 1, 2, 3 und so weiter malnimmst. 12 ist ein Vielfaches von 4."
+      }
+     ]
+    },
+    {
+     "id": "6.1.3",
+     "titel": "Brüche kürzen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.1.3-K1",
+       "text": "Ich kann einen Bruch mit einer gegebenen Zahl kürzen.",
+       "voraussetzungen": [
+        "6.1.2-W1",
+        "5.4.1-K2"
+       ],
+       "grundlage": "Am Streifen je zwei Teile zusammenfassen: Aus zwei Vierteln wird ein Halbes"
+      },
+      {
+       "id": "6.1.3-K2",
+       "text": "Ich kann einen Bruch vollständig kürzen.",
+       "voraussetzungen": [
+        "6.1.3-K1"
+       ],
+       "grundlage": "Zähler und Nenner durch 2 teilen, solange beide gerade sind"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Kürzen heißt: Zähler und Nenner durch dieselbe Zahl teilen.",
+       "Der Wert des Bruchs bleibt gleich. Es sind nur weniger und größere Teile.",
+       "6⁄8 mit 2 gekürzt ist 3⁄4, denn 6 : 2 = 3 und 8 : 2 = 4.",
+       "Kürze so weit wie möglich. Du darfst auch in mehreren Schritten kürzen.",
+       "Durch 2 geht es bei geraden Zahlen. Durch 5 geht es, wenn hinten 0 oder 5 steht. Durch 10 geht es, wenn hinten 0 steht.",
+       "Ab G: Durch 3 geht es, wenn die Quersumme durch 3 teilbar ist."
+      ],
+      "beispiel": "12⁄18 in zwei Schritten: erst mit 2 gekürzt 6⁄9, dann mit 3 gekürzt 2⁄3. Weiter geht es nicht.",
+      "heft": "Schreibe jeden Schritt hin. Ein Ergebnis ist erst fertig, wenn du nicht mehr kürzen kannst."
+     },
+     "wortspeicher": [
+      {
+       "wort": "kürzen",
+       "ab": "F",
+       "erklaerung": "Zähler und Nenner durch dieselbe Zahl teilen. Der Wert bleibt gleich."
+      },
+      {
+       "wort": "teilbar",
+       "ab": "F",
+       "erklaerung": "Eine Zahl ist durch eine andere teilbar, wenn beim Teilen kein Rest bleibt."
+      },
+      {
+       "wort": "Kürzungszahl",
+       "ab": "G",
+       "erklaerung": "Die Zahl, durch die du Zähler und Nenner teilst."
+      },
+      {
+       "wort": "vollständig",
+       "ab": "G",
+       "erklaerung": "Ein Bruch ist vollständig gekürzt, wenn du nicht mehr weiter kürzen kannst."
+      },
+      {
+       "wort": "Quersumme",
+       "ab": "G",
+       "erklaerung": "Die Summe aller Ziffern einer Zahl. Die Quersumme von 27 ist 2 + 7 = 9."
+      },
+      {
+       "wort": "Teiler",
+       "ab": "M",
+       "erklaerung": "Eine Zahl, durch die sich eine andere ohne Rest teilen lässt. 3 ist ein Teiler von 12."
+      },
+      {
+       "wort": "ggT",
+       "ab": "E",
+       "erklaerung": "Der größte gemeinsame Teiler von zwei Zahlen. Kürzt du mit ihm, ist der Bruch in einem Schritt vollständig gekürzt."
+      }
+     ]
+    },
+    {
+     "id": "6.1.4",
+     "titel": "Brüche vergleichen und ordnen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.1.4-V1",
+       "text": "Ich kann Brüche mit gleichem Nenner oder gleichem Zähler vergleichen.",
+       "voraussetzungen": [
+        "6.1.1-B1",
+        "5.9.1-B3"
+       ],
+       "grundlage": "Zwei Streifen mit gleich vielen Teilen vergleichen: Wo ist mehr gefärbt?"
+      },
+      {
+       "id": "6.1.4-V2",
+       "text": "Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen.",
+       "voraussetzungen": [
+        "6.1.4-V1",
+        "6.1.2-W2"
+       ],
+       "grundlage": "Zwei Brüche an Streifen untereinander vergleichen, bei denen ein Nenner das Doppelte des anderen ist"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Gleicher Nenner: Der Bruch mit dem größeren Zähler ist größer. 5⁄8 ist größer als 3⁄8.",
+       "Gleicher Zähler: Der Bruch mit dem kleineren Nenner ist größer, denn seine Teile sind größer. 3⁄4 ist größer als 3⁄8.",
+       "Ab G: Verschiedene Nenner: Erweitere so, dass beide Brüche denselben Nenner haben. Vergleiche dann die Zähler.",
+       "Ab M: Brüche mit gleichem Nenner heißen gleichnamig.",
+       "Ab E: Manchmal geht es schneller: Vergleiche mit 1⁄2 oder mit 1, oder schau, wie viel bis zum Ganzen fehlt."
+      ],
+      "beispiel": "2⁄3 oder 3⁄4? Mit dem Nenner 12 sind es 8⁄12 und 9⁄12. Also ist 3⁄4 größer.",
+      "heft": "Schreibe die erweiterten Brüche unter die alten. Setze erst dann das Zeichen < oder >."
+     },
+     "wortspeicher": [
+      {
+       "wort": "vergleichen",
+       "ab": "F",
+       "erklaerung": "Herausfinden, welcher Bruch größer oder kleiner ist."
+      },
+      {
+       "wort": "ordnen",
+       "ab": "F",
+       "erklaerung": "Brüche der Größe nach in eine Reihe bringen."
+      },
+      {
+       "wort": "Zeichen",
+       "ab": "F",
+       "erklaerung": "Das Zeichen < heißt „kleiner als“, das Zeichen > heißt „größer als“. Die Spitze zeigt zur kleineren Zahl."
+      },
+      {
+       "wort": "gemeinsamer Nenner",
+       "ab": "G",
+       "erklaerung": "Ein Nenner, auf den du beide Brüche erweitern kannst."
+      },
+      {
+       "wort": "gleichnamig",
+       "ab": "M",
+       "erklaerung": "Brüche mit demselben Nenner heißen gleichnamig."
+      },
+      {
+       "wort": "Hauptnenner",
+       "ab": "E",
+       "erklaerung": "Der kleinste gemeinsame Nenner von zwei oder mehr Brüchen."
+      }
+     ]
+    },
+    {
+     "id": "6.1.5",
+     "titel": "Brüche und Größen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.1.5-T1",
+       "text": "Ich kann den Bruchteil einer Größe berechnen.",
+       "voraussetzungen": [
+        "6.1.1-B1",
+        "5.9.2-T1"
+       ],
+       "grundlage": "Eine Größe gerecht teilen und mehrere Teile nehmen: drei Viertel von 8 kg"
+      },
+      {
+       "id": "6.1.5-T2",
+       "text": "Ich kann vom Bruchteil auf das Ganze schließen und Anteile als Bruch angeben.",
+       "voraussetzungen": [
+        "6.1.5-T1",
+        "5.9.2-T2"
+       ],
+       "grundlage": "Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Einen Bruchteil einer Größe berechnest du in zwei Schritten: erst durch den Nenner teilen, dann mit dem Zähler malnehmen.",
+       "Geht es nicht auf, wandle zuerst in eine kleinere Einheit um: 3⁄4 km sind 3⁄4 von 1000 m.",
+       "Rückwärts zum Ganzen: Teile den Bruchteil durch den Zähler. So groß ist ein Teil. Nimm dann mit dem Nenner mal.",
+       "Ein Anteil ist ein Bruch: Teil durch Ganzes. 15 von 20 Kindern sind 15⁄20 = 3⁄4."
+      ],
+      "beispiel": "3⁄4 von 2 km: 2 km = 2000 m, dann 2000 m : 4 = 500 m und 500 m · 3 = 1500 m.",
+      "heft": "Schreibe beide Schritte untereinander. Vergiss die Einheit nicht."
+     },
+     "wortspeicher": [
+      {
+       "wort": "Anteil",
+       "ab": "F",
+       "erklaerung": "Der Teil vom Ganzen, um den es geht, als Bruch geschrieben."
+      },
+      {
+       "wort": "Bruchteil",
+       "ab": "F",
+       "erklaerung": "Ein Teil vom Ganzen, mit einem Bruch angegeben."
+      },
+      {
+       "wort": "Einheit",
+       "ab": "F",
+       "erklaerung": "Das Maß hinter der Zahl, zum Beispiel m, kg oder min."
+      },
+      {
+       "wort": "Maßzahl",
+       "ab": "G",
+       "erklaerung": "Die Zahl vor der Einheit. Bei 20 kg ist 20 die Maßzahl."
+      },
+      {
+       "wort": "rückwärts",
+       "ab": "M",
+       "erklaerung": "Vom Teil zurück zum Ganzen rechnen."
+      }
+     ]
+    },
+    {
+     "id": "6.1.6",
+     "titel": "Brüche am Zahlenstrahl",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.1.6-Z1",
+       "text": "Ich kann Brüche am Zahlenstrahl ablesen.",
+       "voraussetzungen": [
+        "6.1.1-B2",
+        "5.2.1-N1"
+       ],
+       "grundlage": "Am Zahlenstrahl von 0 bis 1 die Abstände zählen und einen Bruch ablesen"
+      },
+      {
+       "id": "6.1.6-Z2",
+       "text": "Ich kann Brüche am Zahlenstrahl eintragen.",
+       "voraussetzungen": [
+        "6.1.6-Z1",
+        "6.1.2-W2"
+       ],
+       "grundlage": "Am Zahlenstrahl von 0 bis 1 so viele Abstände gehen, wie der Zähler sagt"
+      }
+     ],
+     "merkzettel": {
+      "regeln": [
+       "Am Zahlenstrahl sagt der Nenner, in wie viele gleich große Abstände die Strecke von 0 bis 1 geteilt ist.",
+       "Zähle die Abstände, nicht die Striche.",
+       "Der Zähler sagt, wie viele Abstände du von 0 aus gehst.",
+       "Brüche, die größer als 1 sind, liegen rechts von der 1.",
+       "Gleichwertige Brüche liegen an derselben Stelle: 1⁄2 und 2⁄4."
+      ],
+      "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der dritte Strich nach der 0 ist 3⁄4. Zwei Striche hinter der 1 liegt 1 2⁄4 = 1 1⁄2.",
+      "heft": "Wähle die Länge für ein Ganzes so, dass sie sich gut teilen lässt: für Viertel zum Beispiel 4 oder 8 Kästchen."
+     },
+     "wortspeicher": [
+      {
+       "wort": "Zahlenstrahl",
+       "ab": "F",
+       "erklaerung": "Eine Linie mit Strichen in gleichen Abständen. Jede Zahl hat darauf ihren Platz."
+      },
+      {
+       "wort": "Teilstrich",
+       "ab": "F",
+       "erklaerung": "Ein kleiner Strich am Zahlenstrahl."
+      },
+      {
+       "wort": "Abstand",
+       "ab": "F",
+       "erklaerung": "Das Stück zwischen zwei Teilstrichen."
+      },
+      {
+       "wort": "Einteilung",
+       "ab": "G",
+       "erklaerung": "In wie viele Abstände ein Ganzes am Zahlenstrahl geteilt ist."
+      },
+      {
+       "wort": "verfeinern",
+       "ab": "M",
+       "erklaerung": "Jeden Abstand noch einmal teilen. Aus Vierteln werden so Achtel."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.2",
+   "titel": "Rechnen mit Brüchen",
+   "unterkapitel": [
+    {
+     "id": "6.2.1",
+     "titel": "Gleichnamige Brüche addieren und subtrahieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.2.1-L1",
+       "text": "Ich kann gleichnamige Brüche addieren und subtrahieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.2.2",
+     "titel": "Ungleichnamige Brüche addieren und subtrahieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.2.2-L1",
+       "text": "Ich kann ungleichnamige Brüche gleichnamig machen und dann addieren und subtrahieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.2.3",
+     "titel": "Brüche vervielfachen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.2.3-L1",
+       "text": "Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.2.4",
+     "titel": "Brüche teilen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.2.4-L1",
+       "text": "Ich kann einen Bruch durch eine natürliche Zahl dividieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.2.5",
+     "titel": "Brüche multiplizieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.2.5-L1",
+       "text": "Ich kann Brüche miteinander multiplizieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.2.6",
+     "titel": "Brüche dividieren",
+     "extra": false,
+     "ab": "M",
+     "lernziele": [
+      {
+       "id": "6.2.6-L1",
+       "text": "Ich kann durch einen Bruch dividieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.2.7",
+     "titel": "Punkt vor Strich und Klammern",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.2.7-L1",
+       "text": "Ich kann beim Rechnen mit Brüchen die Regeln „Klammern zuerst“ und „Punkt vor Strich“ anwenden.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3",
+   "titel": "Körper",
+   "unterkapitel": [
+    {
+     "id": "6.3.1",
+     "titel": "Quader und ihre Netze",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.1-L1",
+       "text": "Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.3.2",
+     "titel": "Schrägbilder von Quadern",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.2-L1",
+       "text": "Ich kann Schrägbilder von Quadern lesen und im Gitter vervollständigen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.3.3",
+     "titel": "Grundriss und Aufriss",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.3-L1",
+       "text": "Ich kann Ansichten von Körpern zuordnen und zeichnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.3.4",
+     "titel": "Prisma",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.4-L1",
+       "text": "Ich kann Prismen und ihre Netze erkennen und beschreiben.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.3.5",
+     "titel": "Pyramide",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.5-L1",
+       "text": "Ich kann Pyramiden und ihre Netze erkennen und beschreiben.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.3.6",
+     "titel": "Zylinder, Kegel und Kugel",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.6-L1",
+       "text": "Ich kann Zylinder, Kegel und Kugel erkennen und beschreiben.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.3.8",
+     "titel": "Kopfgeometrie im Raum",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.3.8-L1",
+       "text": "Ich kann mir Körper, Netze und Würfelbauten im Kopf vorstellen.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.4",
+   "titel": "Dezimalzahlen",
+   "unterkapitel": [
+    {
+     "id": "6.4.1",
+     "titel": "Dezimalschreibweise",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.4.1-L1",
+       "text": "Ich kann Dezimalzahlen lesen, schreiben und in die Stellenwerttafel eintragen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.4.2",
+     "titel": "Dezimalzahlen vergleichen und ordnen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.4.2-L1",
+       "text": "Ich kann Dezimalzahlen vergleichen, ordnen und am Zahlenstrahl darstellen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.4.3",
+     "titel": "Dezimalzahlen runden",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.4.3-L1",
+       "text": "Ich kann Dezimalzahlen und Größen sinnvoll runden.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.4.5",
+     "titel": "Umwandeln durch Erweitern und Kürzen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.4.5-L1",
+       "text": "Ich kann Brüche durch Erweitern oder Kürzen in Dezimalzahlen umwandeln und umgekehrt.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.4.6",
+     "titel": "Umwandeln durch Dividieren",
+     "extra": false,
+     "ab": "M",
+     "lernziele": [
+      {
+       "id": "6.4.6-L1",
+       "text": "Ich kann einen Bruch durch Dividieren in eine Dezimalzahl umwandeln, auch in eine periodische.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.4.7",
+     "titel": "Dezimalzahlen, Brüche und Prozentangaben",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.4.7-L1",
+       "text": "Ich kann Anteile als Bruch, Dezimalzahl und in Prozent angeben.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.5",
+   "titel": "Rechnen mit Dezimalzahlen",
+   "unterkapitel": [
+    {
+     "id": "6.5.1",
+     "titel": "Dezimalzahlen addieren und subtrahieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.5.1-L1",
+       "text": "Ich kann Dezimalzahlen im Kopf und schriftlich addieren und subtrahieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.5.2",
+     "titel": "Mit Stufenzahlen multiplizieren und dividieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.5.2-L1",
+       "text": "Ich kann Dezimalzahlen mit Stufenzahlen multiplizieren und durch sie dividieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.5.3",
+     "titel": "Dezimalzahlen multiplizieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.5.3-L1",
+       "text": "Ich kann Dezimalzahlen multiplizieren und das Ergebnis mit einem Überschlag prüfen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.5.4",
+     "titel": "Dezimalzahlen dividieren",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.5.4-L1",
+       "text": "Ich kann Dezimalzahlen dividieren und das Ergebnis mit einem Überschlag prüfen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.5.5",
+     "titel": "Verbindung der Rechenarten",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.5.5-L1",
+       "text": "Ich kann beim Rechnen mit Dezimalzahlen die Rechenregeln anwenden und geschickt rechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.6",
+   "titel": "Berechnungen am Quader",
+   "unterkapitel": [
+    {
+     "id": "6.6.1",
+     "titel": "Oberflächeninhalt des Quaders",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.6.1-L1",
+       "text": "Ich kann den Oberflächeninhalt von Quader und Würfel berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.6.2",
+     "titel": "Volumen vergleichen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.6.2-L1",
+       "text": "Ich kann Volumen durch Auszählen von Einheitswürfeln bestimmen und vergleichen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.6.3",
+     "titel": "Volumeneinheiten",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.6.3-L1",
+       "text": "Ich kann Volumeneinheiten umwandeln, auch Liter und Milliliter.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.6.4",
+     "titel": "Volumen des Quaders",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.6.4-L1",
+       "text": "Ich kann das Volumen von Quader und Würfel berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.6.5",
+     "titel": "Zusammengesetzte Körper",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.6.5-L1",
+       "text": "Ich kann Volumen und Oberflächeninhalt von Körpern berechnen, die aus Quadern zusammengesetzt sind.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.7",
+   "titel": "Zuordnungen",
+   "unterkapitel": [
+    {
+     "id": "6.7.1",
+     "titel": "Zuordnungen und ihre Darstellungen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.7.1-L1",
+       "text": "Ich kann Zuordnungen in Tabelle, Schaubild und Text lesen und ineinander überführen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.7.2",
+     "titel": "Proportionale Zuordnungen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.7.2-L1",
+       "text": "Ich kann proportionale Zuordnungen erkennen und Tabellen dazu ergänzen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.7.5",
+     "titel": "Schaubilder proportionaler Zuordnungen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.7.5-L1",
+       "text": "Ich kann proportionale Zuordnungen am Schaubild erkennen und Werte ablesen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.7.6",
+     "titel": "Dreisatz",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.7.6-L1",
+       "text": "Ich kann Sachaufgaben mit dem Dreisatz lösen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.7.7",
+     "titel": "Antiproportionale Zuordnungen",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.7.7-L1",
+       "text": "Ich kann antiproportionale Zuordnungen erkennen und Tabellen dazu ergänzen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.7.8",
+     "titel": "Dreisatz bei antiproportionalen Zuordnungen",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.7.8-L1",
+       "text": "Ich kann den Dreisatz bei antiproportionalen Zuordnungen anwenden und entscheiden, welche Zuordnung vorliegt.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.8",
+   "titel": "Daten auswerten und darstellen",
+   "unterkapitel": [
+    {
+     "id": "6.8.1",
+     "titel": "Daten erheben und Stichproben auswählen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.8.1-L1",
+       "text": "Ich kann beurteilen, wie Daten erhoben werden und ob eine Stichprobe geeignet ist.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.8.2",
+     "titel": "Daten mithilfe von Kenngrößen auswerten",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.8.2-L1",
+       "text": "Ich kann Minimum, Maximum, Spannweite, Mittelwert und Zentralwert bestimmen und deuten.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.8.4",
+     "titel": "Absolute und relative Häufigkeit",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.8.4-L1",
+       "text": "Ich kann absolute und relative Häufigkeiten bestimmen und als Bruch, Dezimalzahl oder in Prozent angeben.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.8.5",
+     "titel": "Kreis- und Streifendiagramme lesen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.8.5-L1",
+       "text": "Ich kann Anteile aus Kreis- und Streifendiagrammen ablesen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.8.6",
+     "titel": "Daten darstellen",
+     "extra": false,
+     "ab": "M",
+     "lernziele": [
+      {
+       "id": "6.8.6-L1",
+       "text": "Ich kann Daten in einem passenden Diagramm darstellen, auch im Streifen- und Kreisdiagramm.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.9",
+   "titel": "Rationale Zahlen",
+   "unterkapitel": [
+    {
+     "id": "6.9.1",
+     "titel": "Ganze Zahlen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.9.1-L1",
+       "text": "Ich kann ganze Zahlen an der Zahlengerade darstellen und im Sachzusammenhang deuten.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.9.2",
+     "titel": "Rationale Zahlen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.9.2-L1",
+       "text": "Ich kann negative Brüche und Dezimalzahlen an der Zahlengerade darstellen und deuten.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.9.3",
+     "titel": "Rationale Zahlen vergleichen und ordnen",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.9.3-L1",
+       "text": "Ich kann rationale Zahlen vergleichen und ordnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.9.4",
+     "titel": "Zunahme und Abnahme",
+     "extra": false,
+     "lernziele": [
+      {
+       "id": "6.9.4-L1",
+       "text": "Ich kann Zunahmen und Abnahmen an der Zahlengerade und im Sachzusammenhang berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.9.5",
+     "titel": "Rationale Zahlen addieren und subtrahieren",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.9.5-L1",
+       "text": "Ich kann rationale Zahlen addieren und subtrahieren.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.9.6",
+     "titel": "Rationale Zahlen multiplizieren und dividieren",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.9.6-L1",
+       "text": "Ich kann rationale Zahlen multiplizieren und dividieren.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.10",
+   "titel": "Flächenberechnungen",
+   "unterkapitel": [
+    {
+     "id": "6.10.1",
+     "titel": "Dreieck",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.10.1-L1",
+       "text": "Ich kann den Flächeninhalt von Dreiecken berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.10.2",
+     "titel": "Parallelogramm",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.10.2-L1",
+       "text": "Ich kann den Flächeninhalt von Parallelogrammen berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.10.3",
+     "titel": "Trapez",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.10.3-L1",
+       "text": "Ich kann den Flächeninhalt von Trapezen berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.10.4",
+     "titel": "Kreis",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.10.4-L1",
+       "text": "Ich kann Umfang und Flächeninhalt von Kreisen berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    },
+    {
+     "id": "6.10.5",
+     "titel": "Zusammengesetzte Figuren",
+     "extra": false,
+     "ab": "E",
+     "lernziele": [
+      {
+       "id": "6.10.5-L1",
+       "text": "Ich kann den Flächeninhalt zusammengesetzter Figuren berechnen.",
+       "voraussetzungen": []
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "aufgaben": [
+  {
+   "id": "6.1.1-B1-F-01",
+   "lernziel": "6.1.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Kreis ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3⁄10",
+     "richtig": true
+    },
+    {
+     "text": "7⁄10",
+     "richtig": false
+    },
+    {
+     "text": "3⁄7",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Teile: Das ist der Nenner. Zähle die gefärbten Teile: Das ist der Zähler.",
+    "beispiel": "Von 5 gleich großen Teilen sind 2 Teile gefärbt. Der Bruch heißt 2⁄5.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Teile über den Bruchstrich. Schreibe die Zahl aller Teile darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 10,
+      "gefaerbt": [
+       1,
+       7,
+       8
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "3⁄10",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "3⁄10",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-F-02",
+   "lernziel": "6.1.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Das Rechteck ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?\nSchreibe den Bruch.",
+   "loesung": "2⁄8",
+   "typischeFehler": [
+    {
+     "wert": "8⁄2",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "2⁄6",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Teile: Das ist der Nenner. Zähle die gefärbten Teile: Das ist der Zähler.",
+    "beispiel": "Von 5 gleich großen Teilen sind 2 Teile gefärbt. Der Bruch heißt 2⁄5.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Teile über den Bruchstrich. Schreibe die Zahl aller Teile darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 4,
+      "gefaerbt": [
+       2,
+       7
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄8",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-F-03",
+   "lernziel": "6.1.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 3⁄5 des Streifens.\nTippe die Teile an.",
+   "faerben": {
+    "form": "streifen",
+    "teile": 5
+   },
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zähler sagt, wie viele Teile du färbst.",
+    "beispiel": "Für 2⁄5 färbst du 2 von 5 Teilen.",
+    "loesungsschritt": "Der Zähler ist 3. Färbe 3 Teile."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "3⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-F-04",
+   "lernziel": "6.1.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Im Kreis ist 2⁄6 gefärbt.\nWie viele Teile sind weiß?",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner nennt alle Teile. Der Zähler zählt die gefärbten Teile.",
+    "beispiel": "Bei 2⁄5 sind 2 von 5 Teilen gefärbt. Dann sind 3 Teile weiß.",
+    "loesungsschritt": "Rechne 6 − 2."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "was": "weiss",
+     "zahl": 4
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-F-05",
+   "lernziel": "6.1.1-B1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welcher Figur ist 2⁄6 gefärbt?\nAchte auf gleich große Teile.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ungleiche-teile"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch braucht gleich große Teile. Schau genau hin.",
+    "beispiel": "Ein Kreis hat 2 Teile, aber ein Teil ist viel größer. Dann ist kein Teil 1⁄2.",
+    "loesungsschritt": "Streiche zuerst die Figur mit ungleich großen Teilen. Zähle dann bei den anderen alle Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 8,
+      "gefaerbt": [
+       2,
+       6
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       1,
+       5
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       2,
+       4
+      ],
+      "ungleich": true
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "2⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-F-06",
+   "lernziel": "6.1.1-B1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Färbe 2⁄4 des Rechtecks.\nTippe die Teile an.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 2,
+    "spalten": 2
+   },
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst alle Teile des Rechtecks. Das ist der Nenner.",
+    "beispiel": "Für 3⁄4 färbst du 3 von 4 Teilen.",
+    "loesungsschritt": "Färbe 2 Teile. Welche Teile du nimmst, ist egal."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "2⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-G-01",
+   "lernziel": "6.1.1-B1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nWie viel ist gefärbt?\nSchreibe als Bruch.",
+   "loesung": "5⁄4",
+   "typischeFehler": [
+    {
+     "wert": "5⁄8",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "4⁄5",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile.",
+    "beispiel": "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.",
+    "loesungsschritt": "Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "5⁄4",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-G-02",
+   "lernziel": "6.1.1-B1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Streifen ist in gleich große Teile geteilt.\nWelcher Bruchteil ist gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "14⁄6",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "6⁄20",
+     "richtig": false
+    },
+    {
+     "text": "14⁄20",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die gefärbten Teile liegen verstreut. Zähle sie einzeln.",
+    "beispiel": "Von 12 Teilen sind 5 Teile gefärbt. Der Bruch heißt 5⁄12.",
+    "loesungsschritt": "Zähle alle Teile für den Nenner. Zähle die gefärbten Teile für den Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 20,
+      "gefaerbt": [
+       0,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       16,
+       17,
+       19
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "14⁄20",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "14⁄20",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-G-03",
+   "lernziel": "6.1.1-B1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Jeder Kreis ist ein Ganzes.\nFärbe 4⁄3.",
+   "faerben": {
+    "form": "kreis",
+    "teile": 3,
+    "ganze": 2
+   },
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zähler ist größer als der Nenner. Du brauchst also mehr als ein Ganzes.",
+    "beispiel": "Für 5⁄4 färbst du 4 Teile im ersten Kreis und noch 1 Teil im zweiten.",
+    "loesungsschritt": "Färbe ein Ganzes voll. Färbe dann noch 1 Teil im zweiten."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "4⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-G-04",
+   "lernziel": "6.1.1-B1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Bild siehst du 12 Kugeln.\nWelcher Bruchteil der Kugeln ist nicht gefärbt?",
+   "loesung": "8⁄12",
+   "typischeFehler": [
+    {
+     "wert": "4⁄12",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "8⁄4",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "12⁄8",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gefragt ist nach den weißen Kugeln. Zähle sie für den Zähler.",
+    "beispiel": "Von 12 Kugeln sind 5 gefärbt. Dann sind 7⁄12 nicht gefärbt.",
+    "loesungsschritt": "Der Nenner bleibt die Zahl aller Kugeln. Der Zähler ist die Zahl der weißen Kugeln."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "menge",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "8⁄12",
+     "form": true,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-G-05",
+   "lernziel": "6.1.1-B1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welchen Figuren ist 1⁄4 gefärbt?\nKreuze alle passenden Figuren an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur D",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ungleiche-teile"
+    },
+    {
+     "text": "Figur C",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "Figur B",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Form ist egal. Auch die Zahl der Teile darf anders sein.",
+    "beispiel": "2⁄4 eines Rechtecks sind genauso viel wie 1⁄2.",
+    "loesungsschritt": "Prüfe jede Figur: Sind die Teile gleich groß? Ist gleich viel gefärbt?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 4,
+      "gefaerbt": [
+       0,
+       4
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       2
+      ]
+     },
+     {
+      "n": "C",
+      "form": "rechteck",
+      "reihen": 1,
+      "spalten": 5,
+      "gefaerbt": [
+       4
+      ]
+     },
+     {
+      "n": "D",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       1
+      ],
+      "ungleich": true
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "1⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-G-06",
+   "lernziel": "6.1.1-B1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jeder Kreis ist ein Ganzes.\nIda zählt 8⁄10.\nFinn zählt 8⁄5.\nWelcher Bruch stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "8⁄10",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "text": "5⁄8",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "text": "8⁄5",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Ganzes ist ein Kreis, nicht beide zusammen.",
+    "beispiel": "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4 und nicht 5⁄8.",
+    "loesungsschritt": "Ein Kreis hat 5 Teile. Das ist der Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 5,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "8⁄5",
+     "form": true
+    },
+    {
+     "art": "wert",
+     "wert": "8⁄5",
+     "form": true
+    },
+    {
+     "wert": "8⁄10",
+     "grund": "falsch gezählter Bruch aus dem Text"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-M-01",
+   "lernziel": "6.1.1-B1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jedes Rechteck ist ein Ganzes. Wie viel ist gefärbt?\nSchreibe als Bruch.",
+   "loesung": "30⁄12",
+   "typischeFehler": [
+    {
+     "wert": "30⁄36",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "12⁄30",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "6⁄12",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Teile eines Ganzen: Das ist der Nenner. Zähle dann alle gefärbten Teile.",
+    "loesungsschritt": "Schreibe die Zahl der gefärbten Teile über den Bruchstrich und die Zahl der Teile eines Ganzen darunter."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29
+      ],
+      "ganze": 3
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "30⁄12",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-M-02",
+   "lernziel": "6.1.1-B1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Das Rechteck hat 20 gleich große Teile. Färbe 7⁄10 des Rechtecks.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 4,
+    "spalten": 5
+   },
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner ist 10, das Rechteck hat aber 20 Teile. Wie viele Teile gehören zu einem Zehntel?",
+    "loesungsschritt": "Rechne 20 : 10 = 2. Nimm das Ergebnis mit 7 mal und färbe so viele Teile."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "7⁄10"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-M-03",
+   "lernziel": "6.1.1-B1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Im Hunderterfeld sollen 13⁄25 gefärbt werden. Wie viele Kästchen sind das?",
+   "loesung": 52,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 48,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Kästchen gehören zu einem Teil, wenn 100 Kästchen in 25 gleich große Teile geteilt werden?",
+    "loesungsschritt": "Rechne 100 : 25 = 4. Nimm das Ergebnis mit 13 mal."
+   },
+   "nachweis": [
+    "13⁄25 von 100 = 52"
+   ]
+  },
+  {
+   "id": "6.1.1-B1-M-04",
+   "lernziel": "6.1.1-B1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jedes Rechteck ist ein Ganzes. Welcher Bruch gibt an, wie viel weiß geblieben ist?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "11⁄40",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "text": "9⁄20",
+     "richtig": false
+    },
+    {
+     "text": "29⁄20",
+     "richtig": false,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "text": "11⁄20",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gefragt ist nach den weißen Teilen. Der Nenner zählt trotzdem nur die Teile eines Ganzen.",
+    "loesungsschritt": "Ein Ganzes hat 20 Teile. Weiß sind 11 Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 4,
+      "spalten": 5,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "was": "weiss",
+     "zahl": 11
+    },
+    "11 : 20 = 11⁄20",
+    {
+     "art": "wert",
+     "wert": "11⁄20",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-M-05",
+   "lernziel": "6.1.1-B1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Ein Kalender hat 40 gleich große Türchen. Ben öffnet zuerst 14 und dann noch 5 Türchen. Welcher Bruchteil ist das zusammen?",
+   "loesung": "19⁄40",
+   "typischeFehler": [
+    {
+     "wert": "5⁄40",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "14⁄40",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "19⁄21",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "21⁄40",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst zusammen, wie viele es am Ende sind. Der Nenner ist die Zahl aller Teile.",
+    "loesungsschritt": "Rechne 14 + 5 = 19. Das ist der Zähler."
+   },
+   "nachweis": [
+    "14 + 5 = 19",
+    "19 : 40 = 19⁄40"
+   ]
+  },
+  {
+   "id": "6.1.1-B1-M-06",
+   "lernziel": "6.1.1-B1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welchen Bildern ist 4⁄3 gefärbt? Bei zwei gleichen Figuren ist jede ein Ganzes. Kreuze alle passenden an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "Figur A",
+     "richtig": true
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur D",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "4⁄3 ist mehr als ein Ganzes. Welche Bilder zeigen überhaupt mehr als ein Ganzes?",
+    "loesungsschritt": "Ein Ganzes sind 3⁄3. Dazu kommen noch 1⁄3. Auch feinere Teile können gleich viel zeigen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ],
+      "ganze": 2
+     },
+     {
+      "n": "B",
+      "form": "rechteck",
+      "reihen": 1,
+      "spalten": 3,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "C",
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "ganze": 2
+     },
+     {
+      "n": "D",
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "4⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-E-01",
+   "lernziel": "6.1.1-B1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jedes Rechteck ist ein Ganzes. Welcher Bruchteil ist weiß geblieben? Schreibe als Bruch.",
+   "loesung": "5⁄18",
+   "typischeFehler": [
+    {
+     "wert": "5⁄54",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "49⁄18",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "13⁄18",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner zählt die Teile eines Ganzen. Der Zähler zählt hier die weißen Teile."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 3,
+      "spalten": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48
+      ],
+      "ganze": 3
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "was": "weiss",
+     "zahl": 5
+    },
+    "5 : 18 = 5⁄18"
+   ]
+  },
+  {
+   "id": "6.1.1-B1-E-02",
+   "lernziel": "6.1.1-B1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Jedes Hunderterfeld ist ein Ganzes. Wie viele Kästchen musst du färben, um 34⁄25 darzustellen?",
+   "loesung": 136,
+   "typischeFehler": [
+    {
+     "wert": 36,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 34,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 64,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Teil sind 100 : 25 Kästchen. Der Zähler sagt, wie viele solche Teile du brauchst."
+   },
+   "nachweis": [
+    "34⁄25 von 100 = 136"
+   ]
+  },
+  {
+   "id": "6.1.1-B1-E-03",
+   "lernziel": "6.1.1-B1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Ein Mosaik hat 120 gleich große Steine. Tom hat schon 75 Steine gelegt und legt heute noch 10 dazu. Welcher Bruchteil des Mosaiks fehlt dann noch?",
+   "loesung": "35⁄120",
+   "typischeFehler": [
+    {
+     "wert": "85⁄120",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "45⁄120",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "35⁄85",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie viele Steine am Ende fehlen. Der Nenner ist die Zahl aller Steine."
+   },
+   "nachweis": [
+    "120 − 75 − 10 = 35",
+    "35 : 120 = 35⁄120"
+   ]
+  },
+  {
+   "id": "6.1.1-B1-E-04",
+   "lernziel": "6.1.1-B1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jeder Kreis ist ein Ganzes, gefärbt ist 4⁄3. Ben sagt: „Das ist genauso viel wie 4⁄6.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 4⁄3 > 4⁄6.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Es gilt 4⁄3 < 4⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nenner-groesse"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir vor, jedes Teil wird noch einmal geteilt. Wie ändern sich dann Zähler und Nenner?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "4⁄3 = 4⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B1-E-05",
+   "lernziel": "6.1.1-B1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Streifen hat 20 gleich große Teile. 1⁄2 des Streifens ist rot und 1⁄5 ist blau gefärbt, kein Teil hat zwei Farben. Wie viele Teile sind weiß?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne beide Bruchteile in Teile des Streifens um. Ziehe beide von allen Teilen ab."
+   },
+   "nachweis": [
+    "1⁄2 von 20 = 10",
+    "1⁄5 von 20 = 4",
+    "20 − 10 − 4 = 6"
+   ]
+  },
+  {
+   "id": "6.1.1-B1-E-06",
+   "lernziel": "6.1.1-B1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Jeder Kreis ist in 6 gleich große Teile geteilt. Du sollst 16⁄6 färben. Wie viele Kreise brauchst du mindestens?",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 16,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie viele Kreise werden ganz voll? Für die übrigen Teile brauchst du noch einen weiteren Kreis."
+   },
+   "nachweis": [
+    {
+     "art": "ganze",
+     "bruch": "16⁄6",
+     "zahl": 2
+    },
+    "2 + 1 = 3"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-F-01",
+   "lernziel": "6.1.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jeder Kreis ist ein Ganzes.\nWelche gemischte Zahl passt zum Bild?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2 1⁄4",
+     "richtig": false
+    },
+    {
+     "text": "1 1⁄4",
+     "richtig": true
+    },
+    {
+     "text": "5⁄8",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein voller Kreis ist ein Ganzes. Zähle die vollen Kreise. Schau dann auf den Rest.",
+    "beispiel": "Ein voller Kreis und 1 von 4 Teilen: Das ist 1 1⁄4.",
+    "loesungsschritt": "Schreibe zuerst die Ganzen. Schreibe dahinter den Bruch für den Rest."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "1 1⁄4"
+    },
+    {
+     "art": "wert",
+     "wert": "1 1⁄4",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-F-02",
+   "lernziel": "6.1.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jedes Rechteck ist ein Ganzes.\nWie viel ist gefärbt?\nSchreibe als gemischte Zahl.",
+   "loesung": "2 2⁄4",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "10⁄12",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "2 4⁄2",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein voller Kreis ist ein Ganzes. Zähle die vollen Kreise. Schau dann auf den Rest.",
+    "beispiel": "Ein voller Kreis und 1 von 4 Teilen: Das ist 1 1⁄4.",
+    "loesungsschritt": "Schreibe zuerst die Ganzen. Schreibe dahinter den Bruch für den Rest."
+   },
+   "form": "gemischt",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "rechteck",
+      "reihen": 2,
+      "spalten": 2,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "ganze": 3
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2 2⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-F-03",
+   "lernziel": "6.1.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Das Bild zeigt eine gemischte Zahl.\nSchreibe sie als Bruch.\n1 1⁄3 = {{a}}⁄3",
+   "luecken": {
+    "a": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 11,
+       "fehlvorstellung": "gemischt-umwandeln"
+      },
+      {
+       "wert": 2,
+       "fehlvorstellung": "gemischt-umwandeln"
+      },
+      {
+       "wert": 1,
+       "fehlvorstellung": "gemischt-umwandeln"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Ein Ganzes hat so viele Teile, wie der Nenner sagt. Zähle alle gefärbten Teile.",
+    "beispiel": "1 1⁄4 sind 4 Viertel und noch 1 Viertel. Das sind 5⁄4.",
+    "loesungsschritt": "Zähle im Bild alle gefärbten Teile. Das ist der Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    "1 1⁄3 = 4⁄3"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-F-04",
+   "lernziel": "6.1.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nWie viel ist gefärbt?\nSchreibe als Bruch.",
+   "loesung": "3⁄2",
+   "typischeFehler": [
+    {
+     "wert": "3⁄4",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "1⁄2",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner zählt die Teile von einem Kreis. Der Zähler zählt alle gefärbten Teile.",
+    "beispiel": "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.",
+    "loesungsschritt": "Zähle alle gefärbten Teile in allen Kreisen. Das ist der Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 2,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "3⁄2",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-F-05",
+   "lernziel": "6.1.1-B2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "faerben",
+   "text": "Jedes Rechteck ist ein Ganzes.\nFärbe 1 2⁄5.",
+   "faerben": {
+    "form": "rechteck",
+    "reihen": 1,
+    "spalten": 5,
+    "ganze": 2
+   },
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die 1 vor dem Bruch heißt: ein ganzes Stück. Der Bruch kommt noch dazu.",
+    "beispiel": "Für 1 1⁄4 färbst du einen ganzen Kreis und noch 1 von 4 Teilen.",
+    "loesungsschritt": "Färbe das erste Ganze voll. Färbe dann 2 Teile im zweiten."
+   },
+   "nachweis": [
+    {
+     "art": "faerben",
+     "ziel": "1 2⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-F-06",
+   "lernziel": "6.1.1-B2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Jeder Kreis ist ein Ganzes.\nIm Bild sind 2 Ganze gefärbt.\nWie viele Viertel sind das?",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle gefärbten Teile in allen Kreisen.",
+    "beispiel": "Ein Kreis mit 4 Teilen sind 4 Viertel. Zwei Kreise sind 8 Viertel.",
+    "loesungsschritt": "Ein Kreis hat 4 Teile. Rechne 2 · 4."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "was": "gefaerbt",
+     "zahl": 8
+    },
+    {
+     "wert": "2",
+     "grund": "Anzahl der Kreise"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-G-01",
+   "lernziel": "6.1.1-B2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nSchreibe 9⁄4 als gemischte Zahl.",
+   "loesung": "2 1⁄4",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "1 9⁄4",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "3 1⁄4",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie oft passt der Nenner in den Zähler? So viele Ganze sind es. Der Rest bleibt als Zähler.",
+    "beispiel": "7⁄3 = 2 1⁄3, denn die 3 passt 2-mal in die 7 und 1 bleibt übrig.",
+    "loesungsschritt": "Teile den Zähler durch den Nenner. Der Rest ist der neue Zähler."
+   },
+   "form": "gemischt",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "ganze": 3
+     }
+    ]
+   },
+   "nachweis": [
+    "9⁄4 = 2 1⁄4"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-G-02",
+   "lernziel": "6.1.1-B2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 2 2⁄4 als Bruch.",
+   "loesung": "10⁄4",
+   "typischeFehler": [
+    {
+     "wert": "22⁄4",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "4⁄4",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ganze mal Nenner, dann den Zähler dazu: So wird aus der gemischten Zahl ein Bruch.",
+    "beispiel": "2 1⁄3 = 7⁄3, denn 2 · 3 + 1 = 7.",
+    "loesungsschritt": "Rechne die Ganzen in Bruchteile um. Zähle dann den Zähler dazu."
+   },
+   "nachweis": [
+    "2 2⁄4 = 10⁄4"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-G-03",
+   "lernziel": "6.1.1-B2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jeder Kreis ist ein Ganzes.\nWelcher Bruch ist genauso groß wie 2 2⁄3?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "22⁄3",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "4⁄3",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "8⁄3",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ganze mal Nenner, dann den Zähler dazu: So wird aus der gemischten Zahl ein Bruch.",
+    "beispiel": "2 1⁄3 = 7⁄3, denn 2 · 3 + 1 = 7.",
+    "loesungsschritt": "Rechne die Ganzen in Bruchteile um. Zähle dann den Zähler dazu."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "ganze": 3
+     }
+    ]
+   },
+   "nachweis": [
+    "2 2⁄3 = 8⁄3",
+    {
+     "art": "wert",
+     "wert": "8⁄3",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-G-04",
+   "lernziel": "6.1.1-B2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Jeder Kreis ist ein Ganzes.\nSchreibe auf zwei Arten.\n8⁄3 = {{g}} + {{k}}⁄3",
+   "luecken": {
+    "g": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "gemischt-umwandeln"
+      }
+     ]
+    },
+    "k": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 8,
+       "fehlvorstellung": "gemischt-umwandeln"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Wie oft passt der Nenner in den Zähler? So viele Ganze sind es. Der Rest bleibt als Zähler.",
+    "beispiel": "7⁄3 = 2 1⁄3, denn die 3 passt 2-mal in die 7 und 1 bleibt übrig.",
+    "loesungsschritt": "Teile den Zähler durch den Nenner. Der Rest ist der neue Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "ganze": 3
+     }
+    ]
+   },
+   "nachweis": [
+    "8⁄3 = 2 2⁄3",
+    {
+     "art": "ganze",
+     "bruch": "8⁄3",
+     "zahl": 2
+    },
+    "8 − 2 · 3 = 2"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-G-05",
+   "lernziel": "6.1.1-B2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kuchen hat 6 gleich große Stücke.\nDie Gäste essen 7 Stücke.\nWie viele Kuchen sind das?\nSchreibe als gemischte Zahl.",
+   "loesung": "1 1⁄6",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "2 1⁄6",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "1 7⁄6",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Stücke sind Bruchteile. Der Nenner ist die Zahl der Stücke in einem Ganzen.",
+    "beispiel": "7 Stücke von Pizzen mit je 4 Stücken sind 7⁄4 = 1 3⁄4 Pizzen.",
+    "loesungsschritt": "Wie oft passt die 6 in die 7? Das sind die Ganzen. Der Rest bleibt als Zähler."
+   },
+   "form": "gemischt",
+   "nachweis": [
+    "7⁄6 = 1 1⁄6"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-G-06",
+   "lernziel": "6.1.1-B2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Elif rechnet: 1 3⁄6 = 9⁄6\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nEs gilt 1 3⁄6 = 13⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "Falsch.\nEs gilt 1 3⁄6 = 4⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ganze mal Nenner, dann den Zähler dazu: So wird aus der gemischten Zahl ein Bruch.",
+    "beispiel": "2 1⁄3 = 7⁄3, denn 2 · 3 + 1 = 7.",
+    "loesungsschritt": "Rechne die Ganzen in Bruchteile um. Zähle dann den Zähler dazu."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "1 3⁄6 = 9⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-M-01",
+   "lernziel": "6.1.1-B2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 139⁄15 als gemischte Zahl.",
+   "loesung": "9 4⁄15",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "10 4⁄15",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "8 4⁄15",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie oft passt der Nenner in den Zähler? So viele Ganze sind es.",
+    "loesungsschritt": "Die 15 passt 9-mal in die 139, und 4 bleiben übrig. Die 9 sind die Ganzen, der Rest bleibt als Zähler."
+   },
+   "form": "gemischt",
+   "nachweis": [
+    "139⁄15 = 9 4⁄15"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-M-02",
+   "lernziel": "6.1.1-B2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 6 1⁄9 als Bruch.",
+   "loesung": "55⁄9",
+   "typischeFehler": [
+    {
+     "wert": "61⁄9",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "7⁄9",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "54⁄9",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne die Ganzen in Bruchteile um: Ein Ganzes hat so viele Teile, wie der Nenner sagt.",
+    "loesungsschritt": "Rechne 6 · 9 + 1 = 55. Das ist der neue Zähler."
+   },
+   "nachweis": [
+    "6 1⁄9 = 55⁄9"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-M-03",
+   "lernziel": "6.1.1-B2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Zahlen. Beginne mit der kleinsten.",
+   "karten": [
+    "6⁄4",
+    "7⁄4",
+    "1 1⁄4",
+    "13⁄4"
+   ],
+   "loesung": [
+    "1 1⁄4",
+    "6⁄4",
+    "7⁄4",
+    "13⁄4"
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Zahlen in dieselbe Schreibweise um, zum Beispiel alle in Brüche.",
+    "loesungsschritt": "Alle Zahlen haben den Nenner 4. Vergleiche dann nur noch die Zähler."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "gemischt-umwandeln"
+  },
+  {
+   "id": "6.1.1-B2-M-04",
+   "lernziel": "6.1.1-B2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Zwischen welchen beiden natürlichen Zahlen liegt 185⁄20? Gib die kleinere der beiden Zahlen an.",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 18,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle den Bruch in eine gemischte Zahl um. Die Ganzen sagen dir, wo die Zahl liegt.",
+    "loesungsschritt": "Die 20 passt 9-mal in die 185. Die Zahl liegt also zwischen 9 und 10."
+   },
+   "nachweis": [
+    {
+     "art": "ganze",
+     "bruch": "185⁄20",
+     "zahl": 9
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-M-05",
+   "lernziel": "6.1.1-B2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Eine Pizza hat 8 gleich große Stücke. 9 Kinder essen je 2 Stücke. Wie viele Pizzen sind das zusammen? Schreibe als gemischte Zahl.",
+   "loesung": "2 2⁄8",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "3 2⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "9 2⁄8",
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie viele Stücke gegessen werden. Die Stücke sind Bruchteile mit dem Nenner der Stückzahl.",
+    "loesungsschritt": "Es sind 9 · 2 = 18 Stücke, also 18⁄8. Teile 18 durch 8."
+   },
+   "form": "gemischt",
+   "nachweis": [
+    "9 · 2 = 18",
+    "18⁄8 = 2 2⁄8"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-M-06",
+   "lernziel": "6.1.1-B2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welche Gleichungen stimmen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "5 3⁄6 = 53⁄6",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "4 5⁄9 = 50⁄9",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "6 1⁄11 = 67⁄11",
+     "richtig": true
+    },
+    {
+     "text": "6 7⁄9 = 70⁄9",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne bei jeder Gleichung nach: Ganze mal Nenner plus Zähler.",
+    "loesungsschritt": "Prüfe jede Gleichung einzeln und kreuze nur die an, bei denen der Zähler stimmt."
+   },
+   "nachweis": [
+    {
+     "art": "aussagen"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-E-01",
+   "lernziel": "6.1.1-B2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 187⁄30 als gemischte Zahl.",
+   "loesung": "6 7⁄30",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "7 7⁄30",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "5 7⁄30",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den Zähler durch den Nenner. Das Ergebnis sind die Ganzen, der Rest bleibt als Zähler."
+   },
+   "form": "gemischt",
+   "nachweis": [
+    "187⁄30 = 6 7⁄30"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-E-02",
+   "lernziel": "6.1.1-B2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Scheinbruch 168⁄12 ist eine natürliche Zahl. Welche?",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 168,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruchstrich ist auch ein Geteiltzeichen. Teile den Zähler durch den Nenner."
+   },
+   "nachweis": [
+    "168⁄12 = 14"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-E-03",
+   "lernziel": "6.1.1-B2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Welcher Zähler fehlt? {{a}}⁄30 = 9 15⁄30",
+   "luecken": {
+    "a": {
+     "loesung": 285,
+     "typischeFehler": [
+      {
+       "wert": 105,
+       "fehlvorstellung": "gemischt-umwandeln"
+      },
+      {
+       "wert": 24,
+       "fehlvorstellung": "gemischt-umwandeln"
+      },
+      {
+       "wert": 270,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne die Ganzen in Bruchteile um und zähle den Zähler dazu."
+   },
+   "nachweis": [
+    "9 15⁄30 = 285⁄30"
+   ]
+  },
+  {
+   "id": "6.1.1-B2-E-04",
+   "lernziel": "6.1.1-B2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Welche Zahl ist am größten?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "25⁄6",
+     "richtig": false
+    },
+    {
+     "text": "4 5⁄6",
+     "richtig": false
+    },
+    {
+     "text": "3 7⁄8",
+     "richtig": false
+    },
+    {
+     "text": "39⁄8",
+     "richtig": false
+    },
+    {
+     "text": "5 1⁄8",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Zahlen in gemischte Zahlen um. Vergleiche zuerst die Ganzen."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "6.1.1-B2-E-05",
+   "lernziel": "6.1.1-B2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Zahlen. Beginne mit der größten.",
+   "karten": [
+    "5 5⁄6",
+    "6 5⁄6",
+    "39⁄6",
+    "6 1⁄6",
+    "43⁄6"
+   ],
+   "loesung": [
+    "43⁄6",
+    "6 5⁄6",
+    "39⁄6",
+    "6 1⁄6",
+    "5 5⁄6"
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen als Brüche mit demselben Nenner. Dann zählen nur noch die Zähler."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "ab"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "gemischt-umwandeln"
+  },
+  {
+   "id": "6.1.1-B2-E-06",
+   "lernziel": "6.1.1-B2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Bruch hat den Nenner 7 und liegt zwischen 5 und 6. Er ist keine natürliche Zahl. Wie viele solche Brüche gibt es?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe 5 und 6 als Brüche mit dem Nenner 7. Welche Zähler liegen dazwischen?"
+   },
+   "nachweis": [
+    "5 · 7 = 35",
+    "6 · 7 = 42",
+    "42 − 35 − 1 = 6"
+   ]
+  },
+  {
+   "id": "6.1.2-W1-F-01",
+   "lernziel": "6.1.2-W1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nErweitere mit 5.\n3⁄4 = {{a}}⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 15,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 8,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 20,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 9,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Erweitern heißt: Nimm den Zähler und den Nenner mit derselben Zahl mal.",
+    "beispiel": "1⁄2 mit 3 erweitert: 1 · 3 = 3 und 2 · 3 = 6. Also 1⁄2 = 3⁄6.",
+    "loesungsschritt": "Rechne zuerst den Zähler mal die Zahl. Rechne dann den Nenner mal die Zahl."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 20,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄4",
+     "mit": 5,
+     "wie": "erweitern",
+     "nach": "15⁄20"
+    },
+    {
+     "art": "bild",
+     "bruch": "15⁄20",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-F-02",
+   "lernziel": "6.1.2-W1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Erweitere 1⁄5 mit 3.\nWelcher Bruch stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1⁄15",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "4⁄8",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "3⁄15",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitern heißt: Nimm den Zähler und den Nenner mit derselben Zahl mal.",
+    "beispiel": "1⁄2 mit 3 erweitert: 1 · 3 = 3 und 2 · 3 = 6. Also 1⁄2 = 3⁄6.",
+    "loesungsschritt": "Rechne zuerst den Zähler mal die Zahl. Rechne dann den Nenner mal die Zahl."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 5,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "1⁄5",
+     "mit": 3,
+     "wie": "erweitern",
+     "nach": "3⁄15"
+    },
+    {
+     "art": "wert",
+     "wert": "3⁄15",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-F-03",
+   "lernziel": "6.1.2-W1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nErweitere mit 5.\n1⁄3 = {{a}}⁄15",
+   "luecken": {
+    "a": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 6,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 15,
+       "fehlvorstellung": "bruch-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Nenner ist schon erweitert. Jetzt fehlt noch der Zähler.",
+    "beispiel": "1⁄2 mit 3 erweitert: 1 · 3 = 3 und 2 · 3 = 6. Also 1⁄2 = 3⁄6.",
+    "loesungsschritt": "Rechne den Zähler mal 5."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 15,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "1⁄3",
+     "mit": 5,
+     "wie": "erweitern",
+     "nach": "5⁄15"
+    },
+    {
+     "art": "bild",
+     "bruch": "5⁄15",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-F-04",
+   "lernziel": "6.1.2-W1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 1⁄2 mit 10.\nSchreibe den neuen Bruch.",
+   "loesung": "10⁄20",
+   "typischeFehler": [
+    {
+     "wert": "1⁄20",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "10⁄2",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "11⁄12",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitern heißt: Nimm den Zähler und den Nenner mit derselben Zahl mal.",
+    "beispiel": "1⁄2 mit 3 erweitert: 1 · 3 = 3 und 2 · 3 = 6. Also 1⁄2 = 3⁄6.",
+    "loesungsschritt": "Rechne zuerst den Zähler mal die Zahl. Rechne dann den Nenner mal die Zahl."
+   },
+   "genau": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "1⁄2",
+     "mit": 10,
+     "wie": "erweitern",
+     "nach": "10⁄20"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-F-05",
+   "lernziel": "6.1.2-W1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Streifen ist 2⁄3 gefärbt.\nJedes Teil wird in 2 gleich große Teile geteilt.\nWelcher Bruch ist jetzt gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4⁄6",
+     "richtig": true
+    },
+    {
+     "text": "4⁄5",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "2⁄6",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Aus jedem Teil werden mehrere kleine Teile. Das gilt auch für die gefärbten Teile.",
+    "beispiel": "Teilst du bei 1⁄2 jedes Teil in 3 Teile, dann sind 3 von 6 Teilen gefärbt.",
+    "loesungsschritt": "Rechne den Zähler mal 2 und den Nenner mal 2."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "2⁄3",
+     "mit": 2,
+     "wie": "erweitern",
+     "nach": "4⁄6"
+    },
+    {
+     "art": "wert",
+     "wert": "4⁄6",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-F-06",
+   "lernziel": "6.1.2-W1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Du erweiterst 1⁄2 mit 10.\nWie heißt der neue Nenner?",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner steht unter dem Bruchstrich. Auch er wird malgenommen.",
+    "beispiel": "1⁄2 mit 3 erweitert: Der neue Nenner ist 2 · 3 = 6.",
+    "loesungsschritt": "Rechne 2 · 10."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "1⁄2",
+     "mit": 10,
+     "wie": "erweitern",
+     "nach": "10⁄20"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-G-01",
+   "lernziel": "6.1.2-W1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 8⁄9 mit 8.",
+   "loesung": "64⁄72",
+   "typischeFehler": [
+    {
+     "wert": "8⁄72",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "64⁄9",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "16⁄17",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nimm den Zähler und den Nenner mit der Erweiterungszahl mal.",
+    "beispiel": "2⁄3 mit 4 erweitert: 2 · 4 = 8 und 3 · 4 = 12. Also 2⁄3 = 8⁄12.",
+    "loesungsschritt": "Rechne zuerst den neuen Zähler aus. Rechne dann den neuen Nenner aus."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "8⁄9",
+     "mit": 8,
+     "wie": "erweitern",
+     "nach": "64⁄72"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-G-02",
+   "lernziel": "6.1.2-W1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Im Kreis ist 7⁄12 gefärbt.\nErweitere mit 5.\n7⁄12 = {{a}}⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 35,
+     "typischeFehler": [
+      {
+       "wert": 7,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 12,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 60,
+     "typischeFehler": [
+      {
+       "wert": 12,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 17,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Nimm den Zähler und den Nenner mit der Erweiterungszahl mal.",
+    "beispiel": "2⁄3 mit 4 erweitert: 2 · 4 = 8 und 3 · 4 = 12. Also 2⁄3 = 8⁄12.",
+    "loesungsschritt": "Rechne zuerst den neuen Zähler aus. Rechne dann den neuen Nenner aus."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "7⁄12",
+     "mit": 5,
+     "wie": "erweitern",
+     "nach": "35⁄60"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-G-03",
+   "lernziel": "6.1.2-W1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "2⁄7 wurde erweitert zu 12⁄42.\nWie heißt die Erweiterungszahl?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 35,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die beiden Nenner. Mit welcher Zahl wurde malgenommen?",
+    "beispiel": "2⁄3 = 8⁄12: Aus der 3 wurde 12. Die Erweiterungszahl ist 4.",
+    "loesungsschritt": "Rechne 42 : 7."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "2⁄7",
+     "mit": 6,
+     "wie": "erweitern",
+     "nach": "12⁄42",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-G-04",
+   "lernziel": "6.1.2-W1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Streifen ist 5⁄6 gefärbt.\nErweitere mit 6.\nWelcher Bruch stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "5⁄36",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "30⁄36",
+     "richtig": true
+    },
+    {
+     "text": "11⁄12",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nimm den Zähler und den Nenner mit der Erweiterungszahl mal.",
+    "beispiel": "2⁄3 mit 4 erweitert: 2 · 4 = 8 und 3 · 4 = 12. Also 2⁄3 = 8⁄12.",
+    "loesungsschritt": "Rechne zuerst den neuen Zähler aus. Rechne dann den neuen Nenner aus."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄6",
+     "mit": 6,
+     "wie": "erweitern",
+     "nach": "30⁄36"
+    },
+    {
+     "art": "wert",
+     "wert": "30⁄36",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-G-05",
+   "lernziel": "6.1.2-W1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Jeder Kreis ist ein Ganzes.\nGefärbt ist 6⁄5.\nErweitere den Bruch mit 3.",
+   "loesung": "18⁄15",
+   "typischeFehler": [
+    {
+     "wert": "6⁄15",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "18⁄5",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "9⁄8",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auch ein Bruch über 1 wird so erweitert: Zähler und Nenner mal dieselbe Zahl.",
+    "beispiel": "5⁄4 mit 2 erweitert: 5 · 2 = 10 und 4 · 2 = 8. Also 5⁄4 = 10⁄8.",
+    "loesungsschritt": "Rechne 6 · 3 und 5 · 3."
+   },
+   "genau": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 5,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "ganze": 2
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "6⁄5",
+     "mit": 3,
+     "wie": "erweitern",
+     "nach": "18⁄15"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-G-06",
+   "lernziel": "6.1.2-W1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Sara erweitert 7⁄8 mit 8.\nSara rechnet: 7⁄8 = 56⁄8\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Falsch.\nEs gilt 7⁄8 = 7⁄64.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Falsch.\nEs gilt 7⁄8 = 56⁄64.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Erweitern ändern sich immer beide Zahlen: der Zähler und der Nenner.",
+    "beispiel": "1⁄2 mit 3 erweitert ist 3⁄6. Die Brüche 3⁄2 und 1⁄6 sind falsch.",
+    "loesungsschritt": "Prüfe: Ist der Zähler 7 · 8? Ist der Nenner 8 · 8?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "7⁄8 = 56⁄8"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-M-01",
+   "lernziel": "6.1.2-W1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 5⁄13 mit 9.",
+   "loesung": "45⁄117",
+   "typischeFehler": [
+    {
+     "wert": "5⁄117",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "45⁄13",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "14⁄22",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Erweitern nimmst du Zähler und Nenner mit derselben Zahl mal.",
+    "loesungsschritt": "Rechne 5 · 9 für den Zähler und 13 · 9 für den Nenner."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄13",
+     "mit": 9,
+     "wie": "erweitern",
+     "nach": "45⁄117"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-M-02",
+   "lernziel": "6.1.2-W1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 5⁄8 zuerst mit 2. Erweitere das Ergebnis dann mit 7. Wie heißt der Bruch am Ende?",
+   "loesung": "70⁄112",
+   "typischeFehler": [
+    {
+     "wert": "10⁄16",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "45⁄72",
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": "5⁄112",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitere in zwei Schritten. Schreibe das Zwischenergebnis auf.",
+    "loesungsschritt": "Nach dem ersten Schritt heißt der Bruch 10⁄16. Erweitere ihn jetzt mit 7."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄8",
+     "mit": 2,
+     "wie": "erweitern",
+     "nach": "10⁄16"
+    },
+    {
+     "art": "umformen",
+     "von": "10⁄16",
+     "mit": 7,
+     "wie": "erweitern",
+     "nach": "70⁄112"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-M-03",
+   "lernziel": "6.1.2-W1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "5⁄16 wurde erweitert. Herausgekommen ist 30⁄96. Mit welcher Zahl wurde erweitert?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 80,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 25,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die beiden Nenner oder die beiden Zähler: Mit welcher Zahl wurde malgenommen?",
+    "loesungsschritt": "Rechne 96 : 16. Prüfe das Ergebnis am Zähler."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄16",
+     "mit": 6,
+     "wie": "erweitern",
+     "nach": "30⁄96",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-M-04",
+   "lernziel": "6.1.2-W1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Erweitere mit 10: 12⁄13 = {{a}}⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 120,
+     "typischeFehler": [
+      {
+       "wert": 12,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 22,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 130,
+     "typischeFehler": [
+      {
+       "wert": 13,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 23,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Beim Erweitern nimmst du Zähler und Nenner mit derselben Zahl mal.",
+    "loesungsschritt": "Rechne 12 · 10 und 13 · 10."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "12⁄13",
+     "mit": 10,
+     "wie": "erweitern",
+     "nach": "120⁄130"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-M-05",
+   "lernziel": "6.1.2-W1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Ein Blechkuchen ist in 10 gleich große Stücke geschnitten, 1 davon sind noch übrig. Jetzt wird jedes Stück in 2 gleich große Teile geteilt. Welcher Bruchteil ist übrig? Schreibe den Bruch mit dem neuen Nenner.",
+   "loesung": "2⁄20",
+   "typischeFehler": [
+    {
+     "wert": "1⁄10",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "1⁄20",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "3⁄12",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Übrig ist zuerst ein Bruch mit dem Nenner der Stückzahl. Das Teilen der Stücke erweitert diesen Bruch.",
+    "loesungsschritt": "Übrig sind 1⁄10. Erweitere mit 2."
+   },
+   "genau": true,
+   "nachweis": [
+    "1 : 10 = 1⁄10",
+    {
+     "art": "umformen",
+     "von": "1⁄10",
+     "mit": 2,
+     "wie": "erweitern",
+     "nach": "2⁄20"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-M-06",
+   "lernziel": "6.1.2-W1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Noah rechnet 3⁄7 = 7⁄11 und sagt: „Ich habe oben und unten 4 dazugezählt.“ Stimmt die Gleichung?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 3⁄7 = 12⁄7.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "Falsch. Es gilt 3⁄7 = 3⁄28.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "Falsch. Es gilt 3⁄7 = 12⁄28.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Wert eines Bruchs bleibt nur gleich, wenn Zähler und Nenner mit derselben Zahl malgenommen werden.",
+    "loesungsschritt": "Prüfe mit einem einfachen Bruch: 1⁄2 ist die Hälfte. Zählst du oben und unten 1 dazu, wird daraus 2⁄3, und das ist mehr als die Hälfte."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "3⁄7 = 7⁄11"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-E-01",
+   "lernziel": "6.1.2-W1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 11⁄24 mit 13.",
+   "loesung": "143⁄312",
+   "typischeFehler": [
+    {
+     "wert": "11⁄312",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "143⁄24",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "24⁄37",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nimm Zähler und Nenner mit derselben Zahl mal. Rechne schriftlich, wenn die Zahlen groß sind."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "11⁄24",
+     "mit": 13,
+     "wie": "erweitern",
+     "nach": "143⁄312"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-E-02",
+   "lernziel": "6.1.2-W1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Bruch wird zuerst mit 5 und dann mit 7 erweitert. Mit welcher einen Zahl hättest du ihn gleich erweitern können?",
+   "loesung": 35,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 40,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Probiere es mit 1⁄2 aus: Vergleiche den Nenner am Anfang mit dem Nenner am Ende."
+   },
+   "nachweis": [
+    "5 · 7 = 35"
+   ]
+  },
+  {
+   "id": "6.1.2-W1-E-03",
+   "lernziel": "6.1.2-W1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 3⁄4 nacheinander mit 4, mit 5 und mit 2. Wie heißt der Bruch am Ende?",
+   "loesung": "120⁄160",
+   "typischeFehler": [
+    {
+     "wert": "60⁄80",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "33⁄44",
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": "3⁄160",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe jedes Zwischenergebnis auf. Oder überlege, mit welcher einen Zahl du gleich erweitern kannst."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄4",
+     "mit": 4,
+     "wie": "erweitern",
+     "nach": "12⁄16"
+    },
+    {
+     "art": "umformen",
+     "von": "12⁄16",
+     "mit": 5,
+     "wie": "erweitern",
+     "nach": "60⁄80"
+    },
+    {
+     "art": "umformen",
+     "von": "60⁄80",
+     "mit": 2,
+     "wie": "erweitern",
+     "nach": "120⁄160"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-E-04",
+   "lernziel": "6.1.2-W1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Elif behauptet: „45⁄54 ist genauso groß wie 5⁄6, denn der Bruch wurde nur mit 9 erweitert.“ Stimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Es gilt 45⁄54 < 5⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nur-zaehler-verglichen"
+    },
+    {
+     "text": "Falsch. Es gilt 45⁄54 > 5⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-nur-zaehler-verglichen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitern verfeinert nur die Einteilung. Was passiert dabei mit dem Wert des Bruchs?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "45⁄54 = 5⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-E-05",
+   "lernziel": "6.1.2-W1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "In einem Mosaik ist 9⁄40 der Fläche blau. Die Fläche wird in ein Raster mit 600 gleich großen Feldern geteilt. Wie viele Felder sind blau?",
+   "loesung": 135,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 465,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitere den Bruch auf den Nenner 600. Der neue Zähler ist die gesuchte Zahl der Felder."
+   },
+   "nachweis": [
+    "600 : 40 = 15",
+    {
+     "art": "umformen",
+     "von": "9⁄40",
+     "mit": 15,
+     "wie": "erweitern",
+     "nach": "135⁄600"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W1-E-06",
+   "lernziel": "6.1.2-W1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Bruch mit dem Nenner 7 wird erweitert. Der neue Bruch heißt 48⁄56. Wie hieß der Zähler vorher?",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 48,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Finde zuerst die Erweiterungszahl: Vergleiche dazu die beiden Nenner."
+   },
+   "nachweis": [
+    "56 : 7 = 8",
+    "48 : 8 = 6"
+   ]
+  },
+  {
+   "id": "6.1.2-W2-F-01",
+   "lernziel": "6.1.2-W2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nWelcher Zähler fehlt?\n4⁄5 = {{a}}⁄10",
+   "luecken": {
+    "a": {
+     "loesung": 8,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 9,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 2,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schau auf die Nenner. Mit welcher Zahl wurde malgenommen?",
+    "beispiel": "1⁄2 = 3⁄6: Aus der 2 wurde 6. Das ist mal 3. Also auch 1 · 3 = 3.",
+    "loesungsschritt": "Nimm den Zähler mit derselben Zahl mal wie den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 5,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "8⁄10",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-F-02",
+   "lernziel": "6.1.2-W2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "In welcher Figur ist genauso viel gefärbt wie 1⁄3?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Figur B",
+     "richtig": false
+    },
+    {
+     "text": "Figur C",
+     "richtig": true
+    },
+    {
+     "text": "Figur A",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Teile sind hier kleiner. Dafür brauchst du mehr davon.",
+    "beispiel": "1⁄2 ist die Hälfte. Bei 6 Teilen ist die Hälfte 3⁄6.",
+    "loesungsschritt": "Aus 3 Teilen werden 9 Teile. Das ist mal 3."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 9,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 9,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     },
+     {
+      "n": "C",
+      "form": "kreis",
+      "teile": 9,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "1⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-F-03",
+   "lernziel": "6.1.2-W2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Kreis ist 1⁄2 gefärbt.\nWelcher Bruch ist genauso groß?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1⁄6",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "3⁄6",
+     "richtig": true
+    },
+    {
+     "text": "2⁄3",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau auf die Nenner. Mit welcher Zahl wurde malgenommen?",
+    "beispiel": "1⁄2 = 3⁄6: Aus der 2 wurde 6. Das ist mal 3. Also auch 1 · 3 = 3.",
+    "loesungsschritt": "Nimm den Zähler mit derselben Zahl mal wie den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-F-04",
+   "lernziel": "6.1.2-W2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "In beiden Kreisen ist gleich viel gefärbt.\nWelcher Zähler fehlt?\n1⁄4 = {{a}}⁄8",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 5,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schau auf die Nenner. Mit welcher Zahl wurde malgenommen?",
+    "beispiel": "1⁄2 = 3⁄6: Aus der 2 wurde 6. Das ist mal 3. Also auch 1 · 3 = 3.",
+    "loesungsschritt": "Nimm den Zähler mit derselben Zahl mal wie den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "kreis",
+      "teile": 4,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "kreis",
+      "teile": 8,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄8",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-F-05",
+   "lernziel": "6.1.2-W2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche sind genauso groß wie 1⁄3?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "1⁄6",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "2⁄4",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "2⁄6",
+     "richtig": true
+    },
+    {
+     "text": "5⁄15",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch bleibt gleich groß, wenn du ihn erweiterst.",
+    "beispiel": "1⁄2 = 2⁄4 = 5⁄10. Alle drei Brüche sind die Hälfte.",
+    "loesungsschritt": "Prüfe jeden Bruch: Wurden Zähler und Nenner mit derselben Zahl malgenommen?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 3,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": "1⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-F-06",
+   "lernziel": "6.1.2-W2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nWelcher Nenner fehlt?\n1⁄5 = 2⁄{{a}}",
+   "luecken": {
+    "a": {
+     "loesung": 10,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 6,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schau auf die Zähler. Mit welcher Zahl wurde malgenommen?",
+    "beispiel": "1⁄2 = 3⁄6: Aus der 1 wurde 3. Das ist mal 3. Also auch 2 · 3 = 6.",
+    "loesungsschritt": "Nimm den Nenner mit derselben Zahl mal wie den Zähler."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 5,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄10",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-G-01",
+   "lernziel": "6.1.2-W2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nErweitere 2⁄5 auf den Nenner 15.\n2⁄5 = {{a}}⁄15",
+   "luecken": {
+    "a": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 12,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile den neuen Nenner durch den alten Nenner. Das ist die Erweiterungszahl.",
+    "beispiel": "2⁄3 auf den Nenner 12: 12 : 3 = 4. Also 2⁄3 = 8⁄12.",
+    "loesungsschritt": "Nimm den Zähler mit der Erweiterungszahl mal."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 5,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 15,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "6⁄15",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-G-02",
+   "lernziel": "6.1.2-W2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 4⁄9 auf den Nenner 72.",
+   "loesung": "32⁄72",
+   "typischeFehler": [
+    {
+     "wert": "4⁄72",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "67⁄72",
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": "8⁄72",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den neuen Nenner durch den alten Nenner. Das ist die Erweiterungszahl.",
+    "beispiel": "2⁄3 auf den Nenner 12: 12 : 3 = 4. Also 2⁄3 = 8⁄12.",
+    "loesungsschritt": "Nimm den Zähler mit der Erweiterungszahl mal."
+   },
+   "genau": true,
+   "nachweis": [
+    "72 : 9 = 8",
+    {
+     "art": "umformen",
+     "von": "4⁄9",
+     "mit": 8,
+     "wie": "erweitern",
+     "nach": "32⁄72"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-G-03",
+   "lernziel": "6.1.2-W2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Kreis ist 1⁄2 gefärbt.\nWelche Brüche sind dazu gleichwertig?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "6⁄12",
+     "richtig": true
+    },
+    {
+     "text": "7⁄16",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "3⁄6",
+     "richtig": true
+    },
+    {
+     "text": "8⁄9",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gleichwertige Brüche haben denselben Wert. Sie entstehen durch Erweitern.",
+    "beispiel": "2⁄3 = 4⁄6 = 10⁄15. Alle drei Brüche sind gleichwertig.",
+    "loesungsschritt": "Prüfe jeden Bruch: Wurden Zähler und Nenner mit derselben Zahl malgenommen?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-G-04",
+   "lernziel": "6.1.2-W2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Welcher Nenner fehlt?\n7⁄9 = 56⁄{{a}}",
+   "luecken": {
+    "a": {
+     "loesung": 72,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 58,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 8,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile den neuen Zähler durch den alten Zähler. Das ist die Erweiterungszahl.",
+    "beispiel": "2⁄3 = 8⁄12: 8 : 2 = 4. Also 3 · 4 = 12.",
+    "loesungsschritt": "Rechne 56 : 7. Nimm den Nenner mit dem Ergebnis mal."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "7⁄9",
+     "mit": 8,
+     "wie": "erweitern",
+     "nach": "56⁄72",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-G-05",
+   "lernziel": "6.1.2-W2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Alle drei Streifen sind gleich weit gefärbt.\nWelche Zähler fehlen?\n1⁄2 = {{a}}⁄6 = {{b}}⁄12",
+   "luecken": {
+    "a": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 5,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 11,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Vergleiche jeden Nenner mit dem ersten Nenner. Mit welcher Zahl wurde malgenommen?",
+    "beispiel": "1⁄2 = 2⁄4 = 4⁄8. Alle drei Brüche sind gleichwertig.",
+    "loesungsschritt": "Nimm den Zähler mit derselben Zahl mal wie den Nenner."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "n": "C",
+      "form": "streifen",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "3⁄6",
+     "form": true,
+     "figur": "B"
+    },
+    {
+     "art": "bild",
+     "bruch": "6⁄12",
+     "form": true,
+     "figur": "C"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-G-06",
+   "lernziel": "6.1.2-W2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Kreis ist 5⁄6 gefärbt.\nNoah sagt: 5⁄6 = 10⁄18\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 5⁄6 = 5⁄18.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Falsch.\nEs gilt 5⁄6 = 15⁄18.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Finde die Erweiterungszahl am Nenner. Prüfe sie am Zähler.",
+    "beispiel": "2⁄3 = 8⁄12: 12 : 3 = 4 und 2 · 4 = 8. Das stimmt.",
+    "loesungsschritt": "Rechne 18 : 6. Nimm den Zähler mit dem Ergebnis mal."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "5⁄6 = 10⁄18"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-M-01",
+   "lernziel": "6.1.2-W2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Erweitere auf den Nenner 192: 13⁄16 = {{a}}⁄192",
+   "luecken": {
+    "a": {
+     "loesung": 156,
+     "typischeFehler": [
+      {
+       "wert": 13,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 189,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 12,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Finde zuerst die Erweiterungszahl: Teile den neuen Nenner durch den alten.",
+    "loesungsschritt": "Rechne 192 : 16 = 12. Nimm den Zähler mit 12 mal."
+   },
+   "nachweis": [
+    "192 : 16 = 12",
+    {
+     "art": "umformen",
+     "von": "13⁄16",
+     "mit": 12,
+     "wie": "erweitern",
+     "nach": "156⁄192"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-M-02",
+   "lernziel": "6.1.2-W2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Die drei Brüche sind gleichwertig. Welche Zahlen fehlen? 5⁄9 = {{a}}⁄36 = 45⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 20,
+     "typischeFehler": [
+      {
+       "wert": 5,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 32,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 81,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 36,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 49,
+       "fehlvorstellung": "erweitern-addiert"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Vergleiche jeden Bruch mit dem ersten. Einmal findest du die Erweiterungszahl am Nenner, einmal am Zähler.",
+    "loesungsschritt": "Rechne 36 : 9 für die erste Lücke und 45 : 5 für die zweite."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄9",
+     "mit": 4,
+     "wie": "erweitern",
+     "nach": "20⁄36",
+     "gesucht": true
+    },
+    {
+     "art": "umformen",
+     "von": "5⁄9",
+     "mit": 9,
+     "wie": "erweitern",
+     "nach": "45⁄81",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-M-03",
+   "lernziel": "6.1.2-W2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche lassen sich auf den Nenner 48 erweitern? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "5⁄6",
+     "richtig": true
+    },
+    {
+     "text": "6⁄7",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "21⁄25",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "9⁄14",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "1⁄12",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch lässt sich nur dann auf den Nenner 48 erweitern, wenn 48 ein Vielfaches seines Nenners ist.",
+    "loesungsschritt": "Prüfe bei jedem Bruch: Geht 48 geteilt durch den Nenner ohne Rest auf?"
+   },
+   "nachweis": [
+    {
+     "art": "erweiterbar",
+     "nenner": 48
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-M-04",
+   "lernziel": "6.1.2-W2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Erweitere 18⁄25 auf den Nenner 100.",
+   "loesung": "72⁄100",
+   "typischeFehler": [
+    {
+     "wert": "18⁄100",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "4⁄100",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "93⁄100",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Finde zuerst die Erweiterungszahl: Wie oft passt der alte Nenner in die 100?",
+    "loesungsschritt": "Rechne 100 : 25 = 4. Nimm den Zähler mit 4 mal."
+   },
+   "genau": true,
+   "nachweis": [
+    "100 : 25 = 4",
+    {
+     "art": "umformen",
+     "von": "18⁄25",
+     "mit": 4,
+     "wie": "erweitern",
+     "nach": "72⁄100"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-M-05",
+   "lernziel": "6.1.2-W2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Bringe beide Brüche auf den Nenner 20.\n1⁄4 = {{a}}⁄20\n4⁄5 = {{b}}⁄20",
+   "luecken": {
+    "a": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 4,
+       "fehlvorstellung": "sach-falsche-rechnung"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 16,
+     "typischeFehler": [
+      {
+       "wert": 4,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 20,
+       "fehlvorstellung": "sach-falsche-rechnung"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Jeder Bruch hat seine eigene Erweiterungszahl: neuer Nenner geteilt durch alten Nenner.",
+    "loesungsschritt": "Rechne 20 : 4 = 5 für den ersten Bruch und 20 : 5 = 4 für den zweiten."
+   },
+   "nachweis": [
+    "20 : 4 = 5",
+    {
+     "art": "umformen",
+     "von": "1⁄4",
+     "mit": 5,
+     "wie": "erweitern",
+     "nach": "5⁄20"
+    },
+    "20 : 5 = 4",
+    {
+     "art": "umformen",
+     "von": "4⁄5",
+     "mit": 4,
+     "wie": "erweitern",
+     "nach": "16⁄20"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-M-06",
+   "lernziel": "6.1.2-W2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Zwei Brüche haben die Nenner 6 und 8. Auf welchen gemeinsamen Nenner kannst du beide erweitern? Gib den kleinsten an.",
+   "loesung": 24,
+   "typischeFehler": [
+    {
+     "wert": 48,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 14,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der gemeinsame Nenner muss ein Vielfaches von beiden Nennern sein.",
+    "loesungsschritt": "Schreibe die Vielfachen von 8 auf. Das erste, in dem auch die 6 aufgeht, ist die Lösung."
+   },
+   "nachweis": [
+    {
+     "art": "kgv",
+     "zahlen": [
+      6,
+      8
+     ],
+     "zahl": 24
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-E-01",
+   "lernziel": "6.1.2-W2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Erweitere auf den Nenner 224: 11⁄14 = {{a}}⁄224",
+   "luecken": {
+    "a": {
+     "loesung": 176,
+     "typischeFehler": [
+      {
+       "wert": 11,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 221,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 16,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile den neuen Nenner durch den alten. Mit dem Ergebnis erweiterst du."
+   },
+   "nachweis": [
+    "224 : 14 = 16",
+    {
+     "art": "umformen",
+     "von": "11⁄14",
+     "mit": 16,
+     "wie": "erweitern",
+     "nach": "176⁄224"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-E-02",
+   "lernziel": "6.1.2-W2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Welcher Zähler fehlt? {{a}}⁄25 = 228⁄300",
+   "luecken": {
+    "a": {
+     "loesung": 19,
+     "typischeFehler": [
+      {
+       "wert": 228,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 12,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Hier wurde von links nach rechts erweitert. Finde die Erweiterungszahl an den Nennern."
+   },
+   "nachweis": [
+    "300 : 25 = 12",
+    "228 : 12 = 19"
+   ]
+  },
+  {
+   "id": "6.1.2-W2-E-03",
+   "lernziel": "6.1.2-W2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche sind gleichwertig zu 3⁄8? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "36⁄96",
+     "richtig": true
+    },
+    {
+     "text": "22⁄56",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "27⁄80",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "24⁄64",
+     "richtig": true
+    },
+    {
+     "text": "33⁄88",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile bei jedem Bruch den Nenner durch den Nenner des ersten Bruchs. Passt dieselbe Zahl auch beim Zähler?"
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": "3⁄8"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-E-04",
+   "lernziel": "6.1.2-W2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche lassen sich auf den Nenner 120 erweitern? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "37⁄48",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "1⁄8",
+     "richtig": true
+    },
+    {
+     "text": "15⁄16",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "17⁄30",
+     "richtig": true
+    },
+    {
+     "text": "5⁄18",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "text": "14⁄45",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nur wenn 120 ein Vielfaches des Nenners ist, gibt es eine Erweiterungszahl."
+   },
+   "nachweis": [
+    {
+     "art": "erweiterbar",
+     "nenner": 120
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-E-05",
+   "lernziel": "6.1.2-W2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Bruch ist gleichwertig zu 7⁄13 und hat den Zähler 91. Wie heißt sein Nenner?",
+   "loesung": 169,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 97,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Finde die Erweiterungszahl an den beiden Zählern. Erweitere dann den Nenner."
+   },
+   "nachweis": [
+    "91 : 7 = 13",
+    {
+     "art": "umformen",
+     "von": "7⁄13",
+     "mit": 13,
+     "wie": "erweitern",
+     "nach": "91⁄169"
+    }
+   ]
+  },
+  {
+   "id": "6.1.2-W2-E-06",
+   "lernziel": "6.1.2-W2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wie viele Brüche mit einem Nenner von höchstens 81 sind gleichwertig zu 4⁄9? Zähle 4⁄9 selbst mit, und zähle nur Brüche, die durch Erweitern entstehen.",
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 72,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Erweiterungszahl gibt einen neuen Nenner. Wie viele Vielfache des Nenners sind erlaubt?"
+   },
+   "nachweis": [
+    "81 : 9 = 9",
+    {
+     "wert": "4⁄9",
+     "grund": "Ausgangsbruch, alle gezählten Brüche sind zu ihm gleichwertig"
+    }
+   ]
+  }
+ ]
+}
