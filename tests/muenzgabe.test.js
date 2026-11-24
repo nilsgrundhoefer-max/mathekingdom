@@ -82,3 +82,15 @@ test('Prüfung des Speicherstands: Münzgaben und Sonderauftrag-Belohnungen zäh
   stand.muenzen += 1;
   assert.equal(A.pruefeStand(stand, 'M').filter((m) => /Münzen/.test(m)).length, 1);
 });
+
+test('Münzgabe an die ganze Klasse: eigener Brief je Schüler, die Lehrkraft sieht „an die ganze Klasse“ (ADR 0041)', () => {
+  const k = { codes: [CODE], muenzgaben: { [CODE]: [gabe('g1-5A-K4M2', 250, { anKlasse: 'g1', satz: 'Fürs Testen' }), gabe('e1', 100)] } };
+  const e = L.einstellungen(k, CODE, pool);
+  assert.equal(e.muenzgaben[0].anKlasse, 'g1');
+  assert.equal(e.muenzgaben[1].anKlasse, undefined);
+  const stand = neu();
+  assert.equal(L.oeffneMuenzgabe(stand, e.muenzgaben[0], '2026-11-24T10:00:00Z'), 250);
+  const liste = A.muenzgabenStand(stand, e.muenzgaben);
+  assert.equal(liste.find((g) => g.id === 'g1-5A-K4M2').anKlasse, true);
+  assert.equal(liste.find((g) => g.id === 'e1').anKlasse, false);
+});

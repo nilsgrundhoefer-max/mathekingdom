@@ -321,7 +321,7 @@ test('Vorwissen: Anteil gelöster Einstiegsaufgaben je Meilenstein, Empfehlungen
   const v = A.vorwissen([{ code: 'a', stand: a }, { code: 'c', stand: c }], pool, '5.3');
   assert.equal(v.fertig, 1);
   assert.equal(v.uebersprungen, 1);
-  assert.deepEqual(v.empfehlungen, { E: 1 });
+  assert.deepEqual(v.empfehlungen, { M: 1 }, 'ohne Fehler wird Gold empfohlen, nie Purpur (ADR 0041)');
   assert.ok(v.meilensteine.length >= 3);
   assert.ok(v.meilensteine.every((m) => m.quote === 1));
   assert.equal(v.meilensteine.reduce((n, m) => n + m.gesamt, 0), e.aufgaben.length);
@@ -367,4 +367,14 @@ test('Lässt nach: die letzten zwei Wegstücke von heute deutlich unter dem Schn
   L.verbuche(stand, g[0], b(), 'G', '2026-11-17T10:29:00Z');
   stand.geaendert = '2026-11-17T10:29:30Z';
   assert.equal(A.livestatus(stand, 'G', JETZT).status, 'laesstnach');
+});
+
+test('Hilferuf-Grund: Warteschlange und Live-Status nennen den Anlass (ADR 0041)', () => {
+  const a = neu('5A-AAAA');
+  L.rufeHilfe(a, index.aufgaben?.[0]?.id ?? 'x', JETZT, 'schwer');
+  const [ruf] = A.warteschlange([{ code: '5A-AAAA', stand: a }], index, JETZT);
+  assert.equal(ruf.anlass, 'schwer');
+  const st = A.livestatus(a, 'M', JETZT);
+  assert.equal(st.status, 'hilfe');
+  assert.match(st.text, /zu schwer/);
 });

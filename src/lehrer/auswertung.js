@@ -177,7 +177,7 @@ export function jemandAktiv(staende, jetzt, minuten = 10) {
 // Hilfe-Warteschlange: offene Hilferufe nach Eingang. `gleiche` zählt Rufe zum selben Lernziel.
 export function warteschlange(staende, index, jetzt) {
   const rufe = staende.filter(({ stand }) => stand.hilferuf).map(({ code, stand }) => ({
-    code, seit: stand.hilferuf.seit, aufgabe: stand.hilferuf.aufgabe,
+    code, seit: stand.hilferuf.seit, aufgabe: stand.hilferuf.aufgabe, anlass: stand.hilferuf.anlass ?? null,
     lernziel: index.aufgabe.get(stand.hilferuf.aufgabe)?.lernziel ?? null,
     wartetMinuten: minutenSeit(stand.hilferuf.seit, jetzt),
   })).sort((a, b) => (a.seit < b.seit ? -1 : 1));
@@ -234,7 +234,10 @@ export function livestatus(stand, zielniveau, jetzt) {
   const lernziel = stand.aktiv ? null : heute.at(-1)?.lernziel ?? null;
   const kontext = [KAERTCHEN[Math.min(hilfen, 3)], fehl ? `${fehl} Fehlversuche in Folge` : '', anAufgabe >= 2 ? `seit ${anAufgabe} min an dieser Aufgabe` : ''].filter(Boolean).join(', ');
   const basis = { aufgabe, lernziel, kontext, fehlversuche: fehl, hilfen, minuten: anAufgabe };
-  if (stand.hilferuf) return { ...basis, status: 'hilfe', text: 'braucht Hilfe', seit: stand.hilferuf.seit, minuten: minutenSeit(stand.hilferuf.seit, jetzt) };
+  if (stand.hilferuf) {
+    const anlass = stand.hilferuf.anlass ?? null;
+    return { ...basis, status: 'hilfe', anlass, text: anlass && L.HILFERUF_GRUENDE[anlass] ? `braucht Hilfe: ${L.HILFERUF_GRUENDE[anlass].kurz}` : 'braucht Hilfe', seit: stand.hilferuf.seit, minuten: minutenSeit(stand.hilferuf.seit, jetzt) };
+  }
   if (fehl >= BLOCKIERT_FEHLVERSUCHE) return { ...basis, status: 'blockiert', text: 'kommt nicht weiter', seit: heute.at(-ungeloest)?.t ?? stand.aktiv?.seit };
   if (anAufgabe != null && anAufgabe >= BLOCKIERT_MINUTEN) return { ...basis, status: 'blockiert', text: `seit ${anAufgabe} min an einer Aufgabe`, seit: stand.aktiv.seit };
   if (!stand.aktiv && k.minutenStill >= INAKTIV_MINUTEN) return { ...basis, status: 'inaktiv', text: `still seit ${k.minutenStill} min` };
@@ -708,7 +711,7 @@ export function sonderauftragAufgaben(index, stand, lernziel, niveau, anzahl, oh
 // Auch Gaben, die nicht mehr in der Klassendatei stehen, aber geöffnet wurden, bleiben sichtbar.
 export function muenzgabenStand(stand, gaben = []) {
   const geoeffnet = new Map((stand?.muenzgaben ?? []).map((g) => [g.id, g]));
-  const liste = gaben.map((g) => ({ id: g.id, t: g.t, muenzen: g.muenzen, satz: g.satz ?? null, geoeffnet: geoeffnet.get(g.id)?.t ?? null }));
+  const liste = gaben.map((g) => ({ id: g.id, t: g.t, muenzen: g.muenzen, satz: g.satz ?? null, anKlasse: Boolean(g.anKlasse), geoeffnet: geoeffnet.get(g.id)?.t ?? null }));
   for (const [id, g] of geoeffnet) if (!liste.some((x) => x.id === id)) liste.push({ id, t: null, muenzen: g.muenzen, satz: null, geoeffnet: g.t });
   return liste.sort((a, b) => String(b.geoeffnet ?? b.t).localeCompare(String(a.geoeffnet ?? a.t)));
 }

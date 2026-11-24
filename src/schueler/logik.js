@@ -501,13 +501,19 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
 }
 
 // ---------- Rückblick (ADR 0014) ----------
-// Verteiltes, gemischtes Wiederholen: Etwa 2, 7 und 21 Tage nach dem Siegel kommt ein Lernziel in den Rückblick.
+// Verteiltes, gemischtes Wiederholen: Etwa 14, 35 und 90 Tage nach dem Siegel kommt ein Lernziel in den Rückblick (seit 0.48, ADR 0041).
 // Ein Fehler nimmt nie ein Siegel weg; das Lernziel kommt im nächsten Rückblick wieder und gilt als aufzufrischen.
-export const RUECKBLICK_TAGE = [2, 7, 21];
+export const RUECKBLICK_TAGE = [14, 35, 90];
+// Auffrischen (Rückblick und Seitenblick) kommt erst ab 10 Siegeln in der aktuellen Klassenstufe, damit wer gerade anfängt nach vorn kommt.
+export const AUFFRISCHEN_AB_SIEGELN = 10;
+export const SEITENBLICK_AB_SIEGELN_IM_KAPITEL = 3;
+export const siegelDerKlassenstufe = (stand) => Object.keys(stand.lernziele ?? {}).filter((id) => Number.parseInt(id, 10) === klassenstufe(stand)).length;
+export const auffrischenErlaubt = (stand) => siegelDerKlassenstufe(stand) >= AUFFRISCHEN_AB_SIEGELN;
 export const RUECKBLICK_MIN = 3, RUECKBLICK_MAX = 5;
 const TAG_MS = 86400000;
 export const tagVon = (iso) => new Date(iso).toLocaleDateString('sv-SE'); // JJJJ-MM-TT in Ortszeit
 export function faelligeLernziele(stand, index, jetzt) {
+  if (!auffrischenErlaubt(stand)) return [];
   const r = stand.rueckblick ?? {};
   const faellig = [];
   for (const [id, { erreichtAm }] of Object.entries(stand.lernziele)) {
@@ -629,12 +635,12 @@ export const naechsteEinstiegsAufgabe = (stand, kapitelId) => {
   const e = stand.einstieg?.[kapitelId];
   return e && !e.fertig ? e.aufgaben.find((id) => !e.erledigt.some((x) => x.aufgabe === id)) ?? null : null;
 };
-// Vorschlag für die Kronenwahl aus den Ergebnissen: alles richtig → E, M mindestens zur Hälfte → M, G mindestens zur Hälfte → G, sonst F.
+// Vorschlag für die Kronenwahl aus den Ergebnissen: M mindestens zur Hälfte → M, sonst G.
 // Die unterste Empfehlung ist G. F wird nie empfohlen: Dorthin führt nur die Grundlagen-Schleife (ADR 0015).
+// Purpur wird nie empfohlen, auch nicht ohne Fehler: Purpur wählt das Kind selbst (ADR 0041).
 export function einstiegsEmpfehlung(erledigt) {
   const quote = (n) => { const x = erledigt.filter((e) => e.niveau === n); return x.length ? x.filter((e) => e.richtig).length / x.length : 0; };
-  const g = quote('G'), m = quote('M');
-  if (g === 1 && m === 1) return 'E';
+  const m = quote('M');
   if (m >= 0.5) return 'M';
   return 'G';
 }
@@ -794,7 +800,7 @@ export const MUENZGABEN = [50, 100, 250, 500, 1000, 5000];
 export function gueltigeMuenzgaben(liste) {
   if (!Array.isArray(liste)) return [];
   return liste.filter((g) => g?.id && MUENZGABEN.includes(Number(g.muenzen)))
-    .map((g) => ({ id: String(g.id), t: g.t ?? g.id, muenzen: Number(g.muenzen), satz: g.satz ? String(g.satz).slice(0, 200) : null }));
+    .map((g) => ({ id: String(g.id), t: g.t ?? g.id, muenzen: Number(g.muenzen), satz: g.satz ? String(g.satz).slice(0, 200) : null, ...(g.anKlasse && { anKlasse: String(g.anKlasse) }) }));
 }
 export const geoeffneteMuenzgabe = (stand, id) => (stand.muenzgaben ?? []).find((x) => x.id === id) ?? null;
 // Ungeöffnete Gaben, die älteste zuerst.
@@ -837,13 +843,15 @@ export function trageWegstueckEin(stand, aufgabe, { richtig, muenzen = 0, seiten
   return ergebnis;
 }
 // Ein Seitenblick ist fällig ab der vierten Aufgabe, solange das laufende Wegstück noch keinen hatte.
+// Erst ab 10 Siegeln in der Klassenstufe (ADR 0041); die 3 Siegel im Kapitel prüft waehleSeitenblick.
 export function seitenblickFaellig(stand) {
   const w = stand.wegstueck;
-  return Boolean(w) && w.aufgaben.length >= SEITENBLICK_AB && !w.aufgaben.some((a) => a.seitenblick);
+  return Boolean(w) && w.aufgaben.length >= SEITENBLICK_AB && !w.aufgaben.some((a) => a.seitenblick) && auffrischenErlaubt(stand);
 }
 // Aufgabe zu einem schon besiegelten Lernziel desselben Kapitels, das am längsten nicht mehr dran war. Ohne Siegel: null.
 export function waehleSeitenblick(index, stand, lernzielId, niveau, zufall = Math.random) {
   const kapitel = kapitelVon(lernzielId);
+  if (Object.keys(stand.lernziele).filter((id) => kapitelVon(id) === kapitel).length < SEITENBLICK_AB_SIEGELN_IM_KAPITEL) return null;
   const kandidaten = Object.keys(stand.lernziele).filter((id) => id !== lernzielId && kapitelVon(id) === kapitel && (index.nach.get(`${id}|${niveau}`) ?? []).length);
   if (!kandidaten.length) return null;
   const zuletzt = new Map(kandidaten.map((id) => [id, '']));
@@ -897,14 +905,16 @@ export const arbeitsniveau = (stand, kapitelId, zielniveau) => {
   const n = stand.niveau[kapitelId] ?? zielniveau;
   return wahlNiveaus(zielniveau).includes(n) ? n : 'G';
 };
-// 'hoch' nach 4 von 5 guten Aufgaben, 'runter' nach 3 nicht gelösten in Folge, sonst null.
+// 'hoch' nach 8 guten von 10 Aufgaben, 'runter', wenn 3 der letzten 5 nicht gelöst sind, sonst null (ADR 0041).
+// 'hoch' führt nie zu Purpur: Purpur wählt das Kind selbst.
 // 'runter' gibt es nur zu einer Krone, die zur Wahl steht: nie von Silber auf Bronze, außer das Ziel ist F.
+export const HOCH_NACH = 10, HOCH_GUTE = 8, RUNTER_AUS = 5, RUNTER_FALSCH = 3;
 export function niveauVorschlag(stand, kapitelId, niveau, zielniveau = STANDARD_ZIELNIVEAU) {
   const seit = stand.niveauMarke[kapitelId] ?? 0;
   const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && !v.seitenblick && !v.sonderauftrag && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
   const stufe = NIVEAUS.indexOf(niveau);
-  if (stufe < 3 && eigene.length >= 5 && eigene.slice(-5).filter(zaehlt).length >= 4) return 'hoch';
-  if (stufe > NIVEAUS.indexOf(wahlNiveaus(zielniveau)[0]) && eigene.length >= 3 && eigene.slice(-3).every((v) => !v.richtig)) return 'runter';
+  if (stufe < NIVEAUS.indexOf('M') && eigene.length >= HOCH_NACH && eigene.slice(-HOCH_NACH).filter(zaehlt).length >= HOCH_GUTE) return 'hoch';
+  if (stufe > NIVEAUS.indexOf(wahlNiveaus(zielniveau)[0]) && eigene.slice(-RUNTER_AUS).filter((v) => !v.richtig).length >= RUNTER_FALSCH) return 'runter';
   return null;
 }
 export function setzeNiveau(stand, kapitelId, niveau) {
@@ -916,8 +926,17 @@ export function lehneVorschlagAb(stand, kapitelId) {
 }
 
 // ---------- Hilferuf ----------
-export function rufeHilfe(stand, aufgabeId, jetzt) {
-  if (!stand.hilferuf) stand.hilferuf = { seit: jetzt, aufgabe: aufgabeId };
+// Seit 0.48 wählt das Kind einen Grund (ADR 0041), gespeichert als `anlass`, weil `grund` im Verlauf sagt, wie der Ruf endete.
+// Ältere Hilferufe ohne Anlass bleiben gültig.
+export const HILFERUF_GRUENDE = {
+  verstehe: { text: 'Ich verstehe die Aufgabe nicht.', kurz: 'versteht die Aufgabe nicht', zeichen: '?' },
+  schwer: { text: 'Die Aufgabe ist mir zu schwer.', kurz: 'Aufgabe zu schwer', zeichen: '▲' },
+  falsch: { text: 'Ich glaube, die Aufgabe ist falsch.', kurz: 'Aufgabe falsch?', zeichen: '!' },
+  technik: { text: 'Technisches Problem.', kurz: 'Technik', zeichen: '⚙' },
+  anderes: { text: 'Etwas anderes.', kurz: 'etwas anderes', zeichen: '…' },
+};
+export function rufeHilfe(stand, aufgabeId, jetzt, anlass = null) {
+  if (!stand.hilferuf) stand.hilferuf = { seit: jetzt, aufgabe: aufgabeId, ...(HILFERUF_GRUENDE[anlass] && { anlass }) };
 }
 export function beendeHilferuf(stand, grund, jetzt) {
   if (!stand.hilferuf) return;

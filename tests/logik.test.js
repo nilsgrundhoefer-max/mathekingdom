@@ -160,21 +160,35 @@ test('Münzen am eigenen Zielniveau: auf dem Ziel gleich viel, darüber mehr, Tr
   assert.equal(stand.muenzen, 20);
 });
 
-test('Niveauvorschlag: hoch nach 4 von 5, runter nach 3 Fehlern, Ruhe nach Ablehnung', () => {
+test('Niveauvorschlag: hoch nach 8 von 10, runter bei 3 von 5 ungelöst, nie zu Purpur, Ruhe nach Ablehnung', () => {
   const stand = neu();
   const g = aufgaben(S2, 'G');
-  for (let i = 0; i < 4; i++) L.verbuche(stand, g[i], ok(), 'G', 't');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null);
-  L.verbuche(stand, g[4], ok({ geloest: false }), 'G', 't');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), 'hoch');
+  for (let i = 0; i < 9; i++) L.verbuche(stand, g[i % g.length], ok(), 'G', 't');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null, 'neun Aufgaben reichen nicht');
+  L.verbuche(stand, g[3], ok({ geloest: false }), 'G', 't');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), 'hoch', '9 gute von 10');
   L.lehneVorschlagAb(stand, '5.3');
   assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null);
   for (let i = 0; i < 3; i++) L.verbuche(stand, g[i], ok({ geloest: false }), 'G', 't');
   assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null, 'von Silber geht es nicht hinunter auf Bronze (ADR 0015)');
   assert.equal(L.niveauVorschlag(stand, '5.3', 'G', 'F'), 'runter', 'außer das Ziel des Kindes ist F');
   const m = aufgaben(S2, 'M');
-  for (let i = 0; i < 3; i++) L.verbuche(stand, m[i], ok({ geloest: false }), 'M', 't');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'M'), 'runter');
+  L.lehneVorschlagAb(stand, '5.3');
+  L.verbuche(stand, m[0], ok({ geloest: false }), 'M', 't');
+  L.verbuche(stand, m[1], ok(), 'M', 't');
+  L.verbuche(stand, m[2], ok({ geloest: false }), 'M', 't');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'M'), null, 'zwei ungelöste reichen nicht');
+  L.verbuche(stand, m[3], ok(), 'M', 't');
+  L.verbuche(stand, m[4], ok({ geloest: false }), 'M', 't');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'M'), 'runter', '3 der letzten 5 ungelöst, auch nicht in Folge');
+  L.lehneVorschlagAb(stand, '5.3');
+  for (let i = 0; i < 12; i++) L.verbuche(stand, m[i % m.length], ok(), 'M', 't');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'M'), null, 'von Gold kommt nie ein Vorschlag zu Purpur (ADR 0041)');
+  const e = aufgaben(S2, 'E');
+  if (e.length) {
+    for (let i = 0; i < 3; i++) L.verbuche(stand, e[i], ok({ geloest: false }), 'E', 't');
+    assert.equal(L.niveauVorschlag(stand, '5.3', 'E'), 'runter', 'von Purpur auf Gold');
+  }
   L.setzeNiveau(stand, '5.3', 'F');
   assert.equal(L.arbeitsniveau(stand, '5.3', 'M'), 'G', 'eine alte Bronze-Wahl wird zu Silber');
   assert.equal(L.arbeitsniveau(stand, '5.3', 'F'), 'F');
@@ -462,39 +476,52 @@ test('AFB III bringt die Hälfte mehr Münzen, Wortspeicher wächst mit der Stuf
 });
 
 // ---------- Rückblick und Expedition (ADR 0014) ----------
-const mitSiegeln = (ids, erreichtAm) => { const st = neu(); for (const id of ids) st.lernziele[id] = { erreichtAm }; return st; };
+// Ausgedachte Lernziele ohne Aufgaben füllen auf 10 Siegel auf: Auffrischen kommt erst ab 10 Siegeln (ADR 0041).
+const fuelleSiegel = (st, bis = L.AUFFRISCHEN_AB_SIEGELN) => { for (let i = 0; Object.keys(st.lernziele).length < bis; i++) st.lernziele[`5.99.${i}-X1`] = { erreichtAm: '2026-11-01T10:00:00Z' }; return st; };
+const mitSiegeln = (ids, erreichtAm, auffuellen = true) => { const st = neu(); for (const id of ids) st.lernziele[id] = { erreichtAm }; return auffuellen ? fuelleSiegel(st) : st; };
 const rbZiele = [...index.lernzielMitAufgaben].slice(0, 6);
 
-test('Rückblick: fällig nach 2, 7 und 21 Tagen, höchstens einmal am Tag', () => {
+test('Rückblick: erst ab 10 Siegeln in der Klassenstufe', () => {
+  const st = mitSiegeln(rbZiele.slice(0, 2), '2026-11-01T10:00:00Z', false);
+  fuelleSiegel(st, 9);
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-12-01T11:00:00Z'), [], 'neun Siegel reichen nicht');
+  assert.equal(L.rueckblickAngebot(st, index, '2026-12-01T11:00:00Z'), null);
+  st.lernziele['6.99.1-X1'] = { erreichtAm: '2026-11-01T10:00:00Z' };
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-12-01T11:00:00Z'), [], 'ein Siegel einer anderen Klassenstufe zählt nicht');
+  fuelleSiegel(st, 11);
+  assert.equal(L.faelligeLernziele(st, index, '2026-12-01T11:00:00Z').length, 2);
+});
+
+test('Rückblick: fällig nach 14, 35 und 90 Tagen, höchstens einmal am Tag', () => {
   const st = mitSiegeln(rbZiele.slice(0, 2), '2026-11-01T10:00:00Z');
-  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-02T10:00:00Z'), []);
-  assert.equal(L.faelligeLernziele(st, index, '2026-11-03T11:00:00Z').length, 2);
-  const r = L.stelleRueckblick(st, index, 'M', '2026-11-03T11:00:00Z', () => 0);
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-14T10:00:00Z'), []);
+  assert.equal(L.faelligeLernziele(st, index, '2026-11-15T11:00:00Z').length, 2);
+  const r = L.stelleRueckblick(st, index, 'M', '2026-11-15T11:00:00Z', () => 0);
   assert.equal(r.aufgaben.length, L.RUECKBLICK_MIN);
   assert.equal(new Set(r.aufgaben).size, r.aufgaben.length);
   // gemischt: die ersten beiden Aufgaben stammen aus verschiedenen LernrbZielen
   assert.notEqual(index.aufgabe.get(r.aufgaben[0]).lernziel, index.aufgabe.get(r.aufgaben[1]).lernziel);
   assert.ok(r.aufgaben.every((id) => index.aufgabe.get(id).niveau === 'M'));
-  for (const id of r.aufgaben) L.trageRueckblickEin(st, index.aufgabe.get(id), true, '2026-11-03T11:10:00Z');
+  for (const id of r.aufgaben) L.trageRueckblickEin(st, index.aufgabe.get(id), true, '2026-11-15T11:10:00Z');
   assert.equal(st.rueckblickAktiv, null);
-  assert.equal(L.rueckblickAngebot(st, index, '2026-11-03T15:00:00Z'), null); // heute schon einer
+  assert.equal(L.rueckblickAngebot(st, index, '2026-11-15T15:00:00Z'), null); // heute schon einer
   assert.equal(st.rueckblick[rbZiele[0]].stufe, 1);
-  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-05T10:00:00Z'), []); // nächste Stufe erst ab Tag 7
-  assert.equal(L.faelligeLernziele(st, index, '2026-11-08T11:00:00Z').length, 2);
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-12-05T10:00:00Z'), []); // nächste Stufe erst ab Tag 35
+  assert.equal(L.faelligeLernziele(st, index, '2026-12-06T11:00:00Z').length, 2);
 });
 
 test('Rückblick: Ein Fehler nimmt kein Siegel weg, das Lernziel kommt wieder und ist aufzufrischen', () => {
   const st = mitSiegeln([rbZiele[0]], '2026-11-01T10:00:00Z');
-  const r = L.stelleRueckblick(st, index, 'M', '2026-11-04T10:00:00Z', () => 0);
+  const r = L.stelleRueckblick(st, index, 'M', '2026-11-16T10:00:00Z', () => 0);
   const [erste, ...rest] = r.aufgaben.map((id) => index.aufgabe.get(id));
-  assert.equal(L.trageRueckblickEin(st, erste, false, '2026-11-04T10:01:00Z').fertig, false);
+  assert.equal(L.trageRueckblickEin(st, erste, false, '2026-11-16T10:01:00Z').fertig, false);
   let ende;
-  for (const a of rest) ende = L.trageRueckblickEin(st, a, true, '2026-11-04T10:05:00Z');
+  for (const a of rest) ende = L.trageRueckblickEin(st, a, true, '2026-11-16T10:05:00Z');
   assert.deepEqual(ende.aufzufrischen, [rbZiele[0]]);
   assert.ok(st.lernziele[rbZiele[0]]);
   assert.equal(st.rueckblick[rbZiele[0]].stufe, 0);
-  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-05T08:00:00Z'), [rbZiele[0]]);
-  assert.equal(L.rueckblickAngebot(st, index, '2026-11-05T08:00:00Z').art, 'neu');
+  assert.deepEqual(L.faelligeLernziele(st, index, '2026-11-17T08:00:00Z'), [rbZiele[0]]);
+  assert.equal(L.rueckblickAngebot(st, index, '2026-11-17T08:00:00Z').art, 'neu');
 });
 
 test('Rückblick: Aufgaben zählen nicht zur Selbsteinschätzung und bringen normale Münzen', () => {
@@ -596,7 +623,7 @@ test('Einstiegscheck: zählt für kein Lernziel, bringt keine Münzen und schlä
   const ms = index.meilensteinVon.get(lz);
   L.merkeWahl(stand, index, ms, 'G', '2026-11-17T10:10:00Z');
   assert.equal(stand.einschaetzung[ms.id].gewaehlt, 'G');
-  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }]), 'E');
+  assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }]), 'M', 'Purpur wird nie empfohlen (ADR 0041)');
   assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: true }, { niveau: 'M', richtig: true }, { niveau: 'M', richtig: false }]), 'M');
   assert.equal(L.einstiegsEmpfehlung([{ niveau: 'G', richtig: false }, { niveau: 'M', richtig: false }]), 'G', 'F wird nie empfohlen (ADR 0015)');
 });
@@ -771,11 +798,18 @@ test('Seitenblick: ab der vierten Aufgabe einmal je Wegstück, nur zu besiegelte
   const anderes = [...index.lernzielMitAufgaben].find((id) => id !== S2 && L.kapitelVon(id) === L.kapitelVon(S2));
   const fremdes = [...index.lernzielMitAufgaben].find((id) => L.kapitelVon(id) !== L.kapitelVon(S2));
   for (let i = 0; i < 3; i++) { assert.equal(L.seitenblickFaellig(stand), false); L.trageWegstueckEin(stand, g[i], { richtig: true }, 't'); }
-  assert.equal(L.seitenblickFaellig(stand), true);
-  // Ohne Siegel im Kapitel gibt es keinen Seitenblick; ein Siegel in einem anderen Kapitel zählt nicht.
+  assert.equal(L.seitenblickFaellig(stand), false, 'erst ab 10 Siegeln in der Klassenstufe (ADR 0041)');
   stand.lernziele[fremdes] = { erreichtAm: 't' };
+  fuelleSiegel(stand);
+  assert.equal(L.seitenblickFaellig(stand), true);
+  // Unter 3 Siegeln im Kapitel gibt es keinen Seitenblick; Siegel in einem anderen Kapitel zählen nicht.
   assert.equal(L.waehleSeitenblick(index, stand, S2, 'G'), null);
   stand.lernziele[anderes] = { erreichtAm: 't' };
+  stand.lernziele[S2] = { erreichtAm: 't' };
+  assert.equal(L.waehleSeitenblick(index, stand, S2, 'G'), null, 'zwei Siegel im Kapitel reichen nicht');
+  const drittes = [...index.lernzielMitAufgaben].find((id) => ![S2, anderes].includes(id) && L.kapitelVon(id) === L.kapitelVon(S2));
+  stand.lernziele[drittes] = { erreichtAm: '2026-11-20T10:00:00Z' };
+  stand.versuche.push({ t: '2026-11-20T10:00:00Z', lernziel: drittes });
   const blick = L.waehleSeitenblick(index, stand, S2, 'G');
   assert.equal(blick.lernziel, anderes);
   L.trageWegstueckEin(stand, blick, { richtig: true, seitenblick: true }, 't');
@@ -825,4 +859,17 @@ test('Säulen zeichnen: jede offene Säule muss auf ihrem Wert stehen', () => {
   assert.deepEqual(L.pruefeAntwort(a, [4, 12, 14]), { richtig: false, fehlvorstellung: 'skala-einerschritte' });
   assert.deepEqual(L.pruefeAntwort(a, [14, 12, 8]), { richtig: false, fehlvorstellung: 'diagramm-vertauscht' });
   assert.deepEqual(L.pruefeAntwort(a, [10, 12, 14]), { richtig: false, fehlvorstellung: null });
+});
+
+test('Hilferuf mit Grund: nur bekannte Gründe, ein Ruf ohne Grund bleibt gültig (ADR 0041)', () => {
+  const stand = neu();
+  L.rufeHilfe(stand, 'x', '2026-11-24T10:00:00Z', 'technik');
+  assert.equal(stand.hilferuf.anlass, 'technik');
+  L.rufeHilfe(stand, 'y', '2026-11-24T10:01:00Z', 'schwer');
+  assert.equal(stand.hilferuf.aufgabe, 'x', 'ein zweiter Ruf ersetzt den offenen nicht');
+  L.beendeHilferuf(stand, 'erledigt', '2026-11-24T10:05:00Z');
+  assert.deepEqual([stand.hilferufe.at(-1).anlass, stand.hilferufe.at(-1).grund], ['technik', 'erledigt'], 'der Anlass bleibt im Verlauf');
+  L.rufeHilfe(stand, 'z', '2026-11-24T10:06:00Z', 'quatsch');
+  assert.equal(stand.hilferuf.anlass, undefined);
+  assert.deepEqual(Object.keys(L.HILFERUF_GRUENDE), ['verstehe', 'schwer', 'falsch', 'technik', 'anderes']);
 });

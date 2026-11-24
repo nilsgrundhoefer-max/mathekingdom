@@ -758,12 +758,14 @@ function akutZone(status) {
       const helfer = A.lernbegleiter(z.staende, lz, kl().einst.zielniveaus, jetzt(), code);
       return h('li', { class: `${ruf ? 'ruf' : 'blockiert'}${unterwegs ? ' unterwegs' : ''}` },
         h('div', {}, h('button', { class: 'link', onclick: () => { z.overlay = code; male(); } }, name(code)),
-          h('span', { class: `marke ${ruf ? 'warn' : 'schlecht'}` }, ruf ? `Hilferuf seit ${st.minuten} min` : st.text)),
+          h('span', { class: `marke ${ruf ? 'warn' : 'schlecht'}` }, ruf ? `Hilferuf seit ${st.minuten} min` : st.text),
+          ruf && st.anlass && L.HILFERUF_GRUENDE[st.anlass] && h('span', { class: `marke hilfegrund grund-${st.anlass}`, 'data-hilfegrund': st.anlass }, `${L.HILFERUF_GRUENDE[st.anlass].zeichen} ${L.HILFERUF_GRUENDE[st.anlass].kurz}`)),
         st.aufgabe && h('div', {}, aufgabentext(st.aufgabe), ' ', kennungMitMelden(st.aufgabe)),
         st.kontext && h('div', { class: 'klein' }, st.kontext),
         helfer.length > 0 && h('div', { class: 'klein' }, `Könnte helfen: ${helfer.map(name).join(', ')}`),
         h('div', { class: 'reihe' },
           ruf && !unterwegs && h('button', { class: 'haupt', 'data-komme': code, onclick: () => aendere((k) => { k.einst.hilfe[code] = { zu: st.seit, status: 'unterwegs' }; }) }, 'Ich komme'),
+          ruf && st.anlass === 'falsch' && st.aufgabe && z.schule && h('button', { class: 'schlicht', 'data-ruf-melden': code, onclick: () => { z.melden = { kennung: st.aufgabe, art: '', satz: 'Aus einem Hilferuf: Ein Schüler hält die Aufgabe für falsch.' }; male(); } }, 'Als Aufgabenmeldung übernehmen'),
           ruf && h('button', { class: 'schlicht', 'data-erledigt': code, onclick: () => aendere((k) => { k.einst.hilfe[code] = { zu: st.seit, status: 'erledigt' }; }) }, 'Erledigt'),
           !ruf && h('button', { class: 'schlicht', 'data-kuemmere': code, onclick: () => { z.gesehen.add(`${code}|${st.seit}`); male(); } }, 'Ich kümmere mich')),
         nachrichtFeld(code));
@@ -878,7 +880,7 @@ function muenzgabenZeile(code) {
   if (!liste.length) return null;
   const tag = (t) => new Date(t).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
   return h('div', { class: 'muenzgaben', id: 'muenzgaben' },
-    liste.map((g) => h('p', {}, h('b', {}, `Münzgabe +${g.muenzen}`), g.geoeffnet ? `, geöffnet am ${tag(g.geoeffnet)}` : `, noch nicht geöffnet (geschickt am ${tag(g.t)})`,
+    liste.map((g) => h('p', {}, h('b', {}, `Münzgabe +${g.muenzen}`), g.anKlasse && ' an die ganze Klasse', g.geoeffnet ? `, geöffnet am ${tag(g.geoeffnet)}` : `, noch nicht geöffnet (geschickt am ${tag(g.t)})`,
       g.satz && h('span', { class: 'klein' }, ` „${g.satz}“`))),
     h('p', { class: 'klein' }, 'Münzgaben schickt der Administrator. Du kannst sie nicht ändern.'));
 }

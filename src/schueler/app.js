@@ -540,10 +540,12 @@ function schlossgarten() {
   const verborgen = offene.length < z.pool.kapitel.length;
   const neuTitel = offene.filter(({ k }) => z.toreNeu?.has(k.id)).map(({ k }) => k.titel);
   hoftitelLaden();
+  // Seit 0.48 leuchtet das Tor der Etappe statt eines Knopfs „Weitermachen“ (ADR 0041): das Aktuelle Kapitel, solange es dort etwas gibt.
+  const etappe = L.etappe(z.pool, z.index, z.stand, z.einst);
+  const leuchtet = etappe?.milestone ? etappe.kapitel.id : null;
   return h('section', {},
     neuTitel.length > 0 && h('div', { class: 'karte neues-tor', id: 'neues-tor', role: 'status' },
       h('p', {}, h('strong', {}, neuTitel.length === 1 ? 'Ein neues Tor hat sich geöffnet: ' : 'Neue Tore haben sich geöffnet: '), neuTitel.join(', '))),
-    etappenKarte(),
     rueckblickKarte(),
     brueckeKarte(),
     expeditionKarte(),
@@ -553,9 +555,10 @@ function schlossgarten() {
     h('ol', { class: 'regionen' }, offene.map(({ k, nr }) => {
       const mit = k.unterkapitel.filter((u) => !L.istNiveauAbstecher(u, z.einst.zielniveau) && L.milestoneStatus(z.index, z.stand, u) !== 'leer');
       const gemeistert = mit.filter((u) => L.milestoneStatus(z.index, z.stand, u) === 'gemeistert').length;
-      return h('li', {}, h('button', { class: `region${z.toreNeu?.has(k.id) ? ' neu' : ''}`, 'data-kapitel': k.id, onclick: () => zeige({ name: 'region', kapitel: k.id }) },
+      const hier = k.id === leuchtet;
+      return h('li', {}, h('button', { class: `region${z.toreNeu?.has(k.id) ? ' neu' : ''}${hier ? ' leuchtet' : ''}`, 'data-kapitel': k.id, ...(hier && { 'aria-current': 'step', id: 'tor-hier' }), onclick: () => zeige({ name: 'region', kapitel: k.id }) },
         gartentor(true),
-        h('span', { class: 'nummer' }, `Tor ${nr}`),
+        h('span', { class: 'nummer' }, `Tor ${nr}`, hier && h('span', { class: 'hier-weiter' }, ' · Hier geht es weiter')),
         h('span', { class: 'titel' }, k.titel),
         k.id === z.einst.aktuellesKapitel && h('span', { class: 'marke' }, 'Aktuelles Kapitel'),
         h('span', { class: 'stand' }, mit.length === 0 ? 'Aufgaben folgen' : `${gemeistert} von ${mit.length} Meilensteinen gemeistert`)));
@@ -564,25 +567,6 @@ function schlossgarten() {
 }
 
 // Startseite: Wo stehe ich, was tue ich jetzt? Ein Tipp führt direkt zur nächsten Aufgabe.
-function etappenKarte() {
-  const e = L.etappe(z.pool, z.index, z.stand, z.einst);
-  if (!e) return null;
-  const k = e.kapitel, fertig = !e.milestone;
-  const los = () => {
-    // Ein offener Einstiegscheck kommt vor der ersten Aufgabe des Kapitels: dafür auf die Regionskarte.
-    if (L.einstiegsZustand(z.stand, z.index, k)) return zeige({ name: 'region', kapitel: k.id });
-    z.ansicht = { name: 'region', kapitel: k.id, milestone: e.milestone.id };
-    const n = L.arbeitsniveau(z.stand, k.id, z.einst.zielniveau);
-    starteAufgabe(L.naechstesLernziel(z.index, z.stand, e.milestone, n).id, n);
-  };
-  // Seit 0.37 nur ein Knopf mit einer kleinen Zeile, wohin er führt. Ziel wie bisher: Aktuelles Kapitel, nächstes offenes Lernziel.
-  return h('div', { class: 'etappe', id: 'etappe' },
-    fertig
-      ? h('button', { class: 'schlicht', id: 'weiter-wandern', onclick: () => zeige({ name: 'region', kapitel: k.id }) }, 'Zur Regionskarte')
-      : h('button', { class: 'haupt', id: 'weiter-wandern', onclick: los }, h('span', { class: 'weiter-pfeil', 'aria-hidden': 'true' }, '▶'), 'Weitermachen'),
-    h('span', { class: 'etappe-ziel' }, fertig ? `${k.titel}: alle Meilensteine gemeistert` : `${k.titel} · ${e.milestone.titel}`));
-}
-
 // ---------- Rückblick (ADR 0014) ----------
 // Gemischte Aufgaben zu älteren Siegeln. Freiwillig, höchstens einmal am Tag. Siegel gehen nie verloren.
 function rueckblickKarte() {
@@ -1468,8 +1452,19 @@ function hilfen(a, meilenstein = meilensteinVon(a.aufgabe)) {
   return h('aside', { class: 'hilfen' },
     wortspeicher(meilenstein, a),
     merkzettel(meilenstein, a),
-    !z.stand.hilferuf && h('button', { class: 'schlicht hilferuf', id: 'hilferuf', onclick: () => { L.rufeHilfe(z.stand, a.aufgabe.id, jetzt()); z.wartePlatz = null; geaendert(); z.dienst.sofort(); maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); takt(); } },
-      'Ich brauche Hilfe von meiner Lehrkraft'));
+    !z.stand.hilferuf && hilferufKnopf(a));
+}
+// Erst der Knopf, dann die Wahl des Grundes (Pflicht, ADR 0041). Der Entwurf in der Aufgabe bleibt erhalten.
+function hilferufKnopf(a) {
+  const neuMalen = () => maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe);
+  if (z.hilfeGrundWahl !== a.aufgabe.id) {
+    return h('button', { class: 'schlicht hilferuf', id: 'hilferuf', onclick: () => { z.hilfeGrundWahl = a.aufgabe.id; neuMalen(); } }, 'Ich brauche Hilfe von meiner Lehrkraft');
+  }
+  const rufe = (grund) => { L.rufeHilfe(z.stand, a.aufgabe.id, jetzt(), grund); z.hilfeGrundWahl = null; z.wartePlatz = null; geaendert(); z.dienst.sofort(); neuMalen(); takt(); };
+  return h('div', { class: 'hilfegrund', id: 'hilfegrund', role: 'group', 'aria-label': 'Warum rufst du deine Lehrkraft?' },
+    h('b', {}, 'Warum rufst du deine Lehrkraft?'),
+    Object.entries(L.HILFERUF_GRUENDE).map(([grund, g]) => h('button', { class: 'schlicht', type: 'button', 'data-hilfegrund': grund, onclick: () => rufe(grund) }, h('span', { class: 'hilfegrund-zeichen', 'aria-hidden': 'true' }, g.zeichen), g.text)),
+    h('button', { class: 'link klein', type: 'button', id: 'hilfegrund-abbrechen', onclick: () => { z.hilfeGrundWahl = null; neuMalen(); } }, 'Doch nicht'));
 }
 
 // ---------- Wappen ----------
