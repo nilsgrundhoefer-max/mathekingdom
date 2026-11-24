@@ -10,19 +10,24 @@ export const kuerze = ({ z, n }) => { const g = ggt(z, n) || 1; return { z: z / 
 export const wertGleich = (a, b) => Boolean(a && b) && a.z * b.n === b.z * a.n;
 
 // „2,5“, „2.5“ oder „12“ als Bruch: 2,5 ist 25 Zehntel. Höchstens vier Nachkommastellen.
+// Klasse 7 (ADR 0043): Ein Vorzeichen davor zählt mit („−2,5“, „-2,5“, „+3“). Der Zähler trägt es.
+const VORZEICHEN = '[+\\-−–]';
+const minus = (zeichen) => Boolean(zeichen) && zeichen !== '+';
 export function leseDezimal(text) {
-  const s = String(text ?? '').replace(/[\s  ']/g, '').replace('.', ',');
-  const m = s.match(/^(\d+)(?:,(\d{1,4}))?$/);
-  return m ? { z: Number(m[1] + (m[2] ?? '')), n: 10 ** (m[2]?.length ?? 0), stellen: m[2]?.length ?? 0 } : null;
+  const s = String(text ?? '').replace(/[\s\u00a0\u202f']/g, '').replace('.', ',');
+  const m = s.match(new RegExp(`^(${VORZEICHEN}?)(\\d+)(?:,(\\d{1,4}))?$`));
+  return m ? { z: (minus(m[1]) ? -1 : 1) * Number(m[2] + (m[3] ?? '')), n: 10 ** (m[3]?.length ?? 0), stellen: m[3]?.length ?? 0 } : null;
 }
 // „3⁄4“, „3/4“, „1 3⁄4“ oder eine ganze Zahl als { g, z, n }: Ganze, Zähler, Nenner. null, wenn es kein Bruch ist.
+// Mit Vorzeichen („−3⁄4“, „−1 3⁄4“) kommt v: -1 dazu, sonst fehlt v; das Minus gilt für die ganze Zahl.
 export function leseBruch(text) {
-  const s = String(text ?? '').trim().replace(/\//g, STRICH).replace(/[\s  ]+/g, ' ');
-  const m = s.match(new RegExp(`^(?:(\\d+) )?(\\d+) ?${STRICH} ?(\\d+)$`));
-  if (m) return Number(m[3]) > 0 ? { g: Number(m[1] ?? 0), z: Number(m[2]), n: Number(m[3]) } : null;
-  return /^\d+$/.test(s) ? { g: Number(s), z: 0, n: 1 } : null;
+  const s = String(text ?? '').trim().replace(/\//g, STRICH).replace(/[\s\u00a0\u202f]+/g, ' ');
+  const m = s.match(new RegExp(`^(${VORZEICHEN}?) ?(?:(\\d+) )?(\\d+) ?${STRICH} ?(\\d+)$`));
+  if (m) return Number(m[4]) > 0 ? { g: Number(m[2] ?? 0), z: Number(m[3]), n: Number(m[4]), ...(minus(m[1]) ? { v: -1 } : {}) } : null;
+  const g = s.match(new RegExp(`^(${VORZEICHEN}?) ?(\\d+)$`));
+  return g ? { g: Number(g[2]), z: 0, n: 1, ...(minus(g[1]) && Number(g[2]) !== 0 ? { v: -1 } : {}) } : null;
 }
-export const alsWert = (b) => (b ? { z: b.g * b.n + b.z, n: b.n } : null);
+export const alsWert = (b) => (b ? { z: (b.v ?? 1) * (b.g * b.n + b.z), n: b.n } : null);
 // Wert eines Textes: Bruch, gemischte Zahl, Dezimalzahl oder natürliche Zahl.
 export const wertVon = (text) => (String(text).includes(',') || String(text).includes('.') ? leseDezimal(text) : alsWert(leseBruch(text)));
 export const bruchText = (z, n, g = 0) => `${g ? `${g}${SCHMAL}` : ''}${z}${STRICH}${n}`;
@@ -40,7 +45,7 @@ export function pruefeDezimal(teil, eingabe) {
 // Unechter Bruch und gemischte Zahl zählen gleich, solange keine Form verlangt ist.
 export function pruefeBruch(aufgabe, eingabe) {
   const ist = leseBruch(eingabe), soll = leseBruch(aufgabe.loesung);
-  const gleicheForm = (a, b) => a.g === b.g && a.z === b.z && a.n === b.n;
+  const gleicheForm = (a, b) => a.g === b.g && a.z === b.z && a.n === b.n && (a.v ?? 1) === (b.v ?? 1);
   if (ist && soll && (aufgabe.genau ? gleicheForm(ist, soll) : wertGleich(alsWert(ist), alsWert(soll)))) {
     const echt = ist.z < ist.n;
     if (aufgabe.form === 'gemischt' && !(ist.g > 0 && echt)) return { richtig: false, fehlvorstellung: 'gemischt-umwandeln', nachbessern: 'gemischt' };

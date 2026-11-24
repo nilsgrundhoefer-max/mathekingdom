@@ -2068,9 +2068,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Feld liegen 5 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 5 belegt)_ Lösung: **5**.
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 7 + 6 _(Bild: Zehnerfeld mit 20 Feldern, 7 belegt, 6 dazu)_ Lösung: **13**. Typische Fehler: 3 (stellenwert).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Starte bei 76. / Springe 4 weiter. / Tippe an: Wo landest du? _(Zahlenstrahl 70 bis 90, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 72 (add-subtrahiert).
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 48 + 4 / Erst bis zur 50: 48 + ▢ = 50 / Dann weiter: 50 + ▢ = ▢ _(Bild: Zahlenstrahl 40 bis 60, Teilstriche alle 1, Sprünge 48 nach 50 (+ 2), 50 nach 52 (+ 2))_ Lösung: a = **2**, b = **2**, c = **52**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 48 + 4 / Erst bis zur 50: 48 + ▢ = 50 / Dann weiter: 50 + ▢ = ▢ _(Bild: Zahlenstrahl 40 bis 60, Teilstriche alle 1, Startpunkt 48, Sprünge 48 nach 50 (+ 2), 50 nach 52 (+ 2))_ Lösung: a = **2**, b = **2**, c = **52**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 4 + 5 = ▢ / 14 + 5 = ▢ / 24 + 5 = ▢ / 34 + 5 = ▢ _(Bild: Zahlenstrahl 0 bis 40, Teilstriche alle 1, Sprünge 4 nach 9 (+ 5), 14 nach 19 (+ 5), 24 nach 29 (+ 5), 34 nach 39 (+ 5))_ Lösung: a = **9**, b = **19**, c = **29**, d = **39**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 40 bis 80, Teilstriche alle 5, Sprünge 45 nach 65 (+ 20))_
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 40 bis 80, Teilstriche alle 5, Startpunkt 45, Sprünge 45 nach 65 (+ 20))_
   - ☐ 45 − 20
   - ☑ 45 + 20
   - ☐ 20 + 65
@@ -2080,9 +2080,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier kommen nur Zehner dazu. Die Einer bleiben gleich. *Beispiel:* 46 + 30: 4 Zehner + 3 Zehner = 7 Zehner. Ergebnis 76. *Lösungsschritt:* 3 Zehner + 3 Zehner = 6 Zehner.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 32 + 30 Lösung: **62**. Typische Fehler: 35 (kopf-stellenwert).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 77 + 9 _(Bild: Zahlenstrahl 70 bis 90, Teilstriche alle 1, Sprünge 77 nach 80 (+ 3), 80 nach 86 (+ 6))_ Lösung: **86**. Typische Fehler: 76 (add-uebertrag-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 77 + 9 _(Bild: Zahlenstrahl 70 bis 90, Teilstriche alle 1, Startpunkt 77, Sprünge 77 nach 80 (+ 3), 80 nach 86 (+ 6))_ Lösung: **86**. Typische Fehler: 76 (add-uebertrag-vergessen).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 38 + 5 = ▢ / 48 + 5 = ▢ / 58 + 5 = ▢ / Setze fort: 68 + 5 = ▢ Lösung: a = **43**, b = **53**, c = **63**, d = **73**
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 53 + 38 _(Bild: Zahlenstrahl 50 bis 100, Teilstriche alle 1, Sprünge 53 nach 83 (+ 30), 83 nach 91 (+ 8))_ Lösung: **91**. Typische Fehler: 81 (add-uebertrag-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 53 + 38 _(Bild: Zahlenstrahl 50 bis 100, Teilstriche alle 1, Startpunkt 53, Sprünge 53 nach 83 (+ 30), 83 nach 91 (+ 8))_ Lösung: **91**. Typische Fehler: 81 (add-uebertrag-vergessen).
 - `05` AFB II · _Probleme lösen_ · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes ?, Teile 36 und 43)_
   - ☐ 34 + 41
   - ☐ 36 + 41
@@ -2136,11 +2136,11 @@ Baut auf: 5.2.1-N3 (Ich kann Zahlen in der Stellenwerttafel darstellen, lesen un
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück heißt: nach links. *Beispiel:* Start 30, 4 zurück: Du landest bei 26. *Lösungsschritt:* Zähle von 40 aus 4 Striche nach links.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Starte bei 40. / Springe 4 zurück. / Tippe an: Wo landest du? _(Zahlenstrahl 30 bis 50, Teilstriche alle 1; antippen)_ Lösung: **36**. Typische Fehler: 44 (sub-addiert).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 72 − 5 / Erst bis zur 70: 72 − ▢ = 70 / Dann weiter: 70 − ▢ = ▢ _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Sprünge 72 nach 70 (− 2), 70 nach 67 (− 3))_ Lösung: a = **2**, b = **3**, c = **67**
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 68. / Wie viel fehlt von 68 bis 70? _(Bild: Zahlenstrahl 60 bis 70, Teilstriche alle 1)_ Lösung: **2**. Typische Fehler: 8 (begriffe-verwechselt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 72 − 5 / Erst bis zur 70: 72 − ▢ = 70 / Dann weiter: 70 − ▢ = ▢ _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Startpunkt 72, Sprünge 72 nach 70 (− 2), 70 nach 67 (− 3))_ Lösung: a = **2**, b = **3**, c = **67**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 68. / Wie viel fehlt von 68 bis 70? _(Bild: Zahlenstrahl 60 bis 70, Teilstriche alle 1, Startpunkt 68)_ Lösung: **2**. Typische Fehler: 8 (begriffe-verwechselt).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Pfeil springt zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 20 bis 60, Teilstriche alle 5, Sprung von 55: − 20; Zahl eintragen)_ Lösung: **35**. Typische Fehler: 75 (sub-addiert), 53 (stellenwert).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 13 − 5 = ▢ / 23 − 5 = ▢ / 33 − 5 = ▢ / 43 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 13 nach 10 (− 3), 10 nach 8 (− 2))_ Lösung: a = **8**, b = **18**, c = **28**, d = **38**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 50 bis 90, Teilstriche alle 5, Sprünge 85 nach 65 (− 20))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne der Reihe nach. / 13 − 5 = ▢ / 23 − 5 = ▢ / 33 − 5 = ▢ / 43 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 13, Sprünge 13 nach 10 (− 3), 10 nach 8 (− 2))_ Lösung: a = **8**, b = **18**, c = **28**, d = **38**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf den Zahlenstrahl. / Welche Rechnung zeigt der Pfeil? _(Bild: Zahlenstrahl 50 bis 90, Teilstriche alle 5, Startpunkt 85, Sprünge 85 nach 65 (− 20))_
   - ☐ 65 − 20
   - ☐ 85 + 20
   - ☑ 85 − 20
@@ -2150,12 +2150,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zurück heißt: nach links. *Beispiel
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier gehen nur Zehner weg. Die Einer bleiben gleich. *Beispiel:* 76 − 30: 7 Zehner − 3 Zehner = 4 Zehner. Ergebnis 46. *Lösungsschritt:* 9 Zehner − 3 Zehner = 6 Zehner.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 98 − 30 Lösung: **68**. Typische Fehler: 95 (kopf-stellenwert), 128 (sub-addiert).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 74 − 9 _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Sprünge 74 nach 70 (− 4), 70 nach 65 (− 5))_ Lösung: **65**. Typische Fehler: 75 (sub-kleiner-von-groesser).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Abziehen oder ergänzen? / Bei welcher Aufgabe ist Ergänzen am leichtesten? _(Bild: Zahlenstrahl 90 bis 110, Teilstriche alle 1, Sprünge 91 nach 93 (+ 2))_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 74 − 9 _(Bild: Zahlenstrahl 60 bis 80, Teilstriche alle 1, Startpunkt 74, Sprünge 74 nach 70 (− 4), 70 nach 65 (− 5))_ Lösung: **65**. Typische Fehler: 75 (sub-kleiner-von-groesser).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Abziehen oder ergänzen? / Bei welcher Aufgabe ist Ergänzen am leichtesten? _(Bild: Zahlenstrahl 90 bis 110, Teilstriche alle 1, Startpunkt 91, Sprünge 91 nach 93 (+ 2))_
   - ☐ 93 − 40
   - ☐ 93 − 2
   - ☑ 93 − 91
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 81 − 34 _(Bild: Zahlenstrahl 40 bis 90, Teilstriche alle 1, Sprünge 81 nach 51 (− 30), 51 nach 47 (− 4))_ Lösung: **47**. Typische Fehler: 53 (sub-kleiner-von-groesser), 115 (sub-addiert).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf. / 81 − 34 _(Bild: Zahlenstrahl 40 bis 90, Teilstriche alle 1, Startpunkt 81, Sprünge 81 nach 51 (− 30), 51 nach 47 (− 4))_ Lösung: **47**. Typische Fehler: 53 (sub-kleiner-von-groesser), 115 (sub-addiert).
 - `05` AFB II · _Probleme lösen_ · Überlege zuerst. / Welche Aufgabe hat das größte Ergebnis? _(Bild: Streifenbild: Ganzes 82, Teile 31 und ?)_
   - ☐ 80 − 31
   - ☐ 82 − 34
@@ -2209,9 +2209,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:*
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Feld liegen 4 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: **6**. Typische Fehler: 4 (begriffe-verwechselt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl passt? / 4 + ▢ = 10 _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: a = **6**
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahlen ergeben zusammen 10? / Ordne zu. _(Bild: Zehnerfeld mit 10 Feldern, 2 belegt, 8 dazu)_ Lösung: 2 → 8, 3 → 7, 4 → 6
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 70. / Wie viel fehlt von 70 bis 100? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10)_ Lösung: **30**. Typische Fehler: 3 (stellenwert).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 70. / Wie viel fehlt von 70 bis 100? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10, Startpunkt 70)_ Lösung: **30**. Typische Fehler: 3 (stellenwert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · 6 + 4 = 10 / Mit Zehnern geht es genauso. / 60 + ▢ = 100 _(Bild: Zehnerfeld mit 10 Feldern, 6 belegt, 4 dazu)_ Lösung: a = **40**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl ergibt zusammen mit 30 genau 100? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10)_
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl ergibt zusammen mit 30 genau 100? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10, Startpunkt 30)_
   - ☐ 20
   - ☑ 70
   - ☐ 10
@@ -2222,9 +2222,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Zehne
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wie viel fehlt von 48 bis 100? _(Bild: Zahlenstrahl 40 bis 100, Teilstriche alle 2)_ Lösung: **52**. Typische Fehler: 62 (ergaenzen-zu-viel).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 55 + 19 / Rechne erst 55 + 20. / Ziehe dann 1 ab. Lösung: **74**. Typische Fehler: 75 (geschickt-nicht-ausgeglichen), 76 (geschickt-falsch-ausgeglichen).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 28 + 38 / 28 + 40 = ▢ / Das sind 2 zu viel. / Ergebnis: ▢ _(Bild: Zahlenstrahl 20 bis 70, Teilstriche alle 1, Sprünge 28 nach 68 (+ 40), 68 nach 66 (− 2))_ Lösung: a = **68**, b = **66**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 28 + 38 / 28 + 40 = ▢ / Das sind 2 zu viel. / Ergebnis: ▢ _(Bild: Zahlenstrahl 20 bis 70, Teilstriche alle 1, Startpunkt 28, Sprünge 28 nach 68 (+ 40), 68 nach 66 (− 2))_ Lösung: a = **68**, b = **66**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 35 + 42 + 15 _(Bild: Streifenbild: Ganzes ?, Teile 35 und 15 und 42)_ Lösung: **92**. Typische Fehler: 77 (sach-schritt-vergessen).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du rechnest 73 − 70. / Welcher Weg ist am leichtesten? _(Bild: Zahlenstrahl 70 bis 90, Teilstriche alle 1, Sprünge 70 nach 73 (+ 3))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du rechnest 73 − 70. / Welcher Weg ist am leichtesten? _(Bild: Zahlenstrahl 70 bis 90, Teilstriche alle 1, Startpunkt 70, Sprünge 70 nach 73 (+ 3))_
   - ☑ Ergänzen: von 70 bis 73
   - ☐ Abziehen: erst 70 weg, dann 0 weg
   - ☐ Zusammenzählen: 73 + 70
@@ -2452,8 +2452,8 @@ Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9. *Lösungsschritt:* 3 + 4 = 7.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 3, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Startpunkt 10, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
 - `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Rechne im Raster: 42 + 11 + 23 / Zähle in jeder Spalte 3 Ziffern zusammen.  _(Rechenraster mit Ziffernfeldern)_
 
   |  | Z | E |
@@ -2550,14 +2550,14 @@ Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.), 5.3.1-K
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Zähle die Striche bis zum Zehner links und rechts. *Beispiel:* 38: Bis 40 sind es 2 Striche, bis 30 sind es 8 Striche. Am nächsten ist 40. *Lösungsschritt:* Bis 60 sind es 8 Striche. Bis 70 sind es 2 Striche.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 68. / Welcher Zehner liegt am nächsten? / Tippe ihn an. _(Zahlenstrahl 60 bis 70, Teilstriche alle 1; antippen)_ Lösung: **70**. Typische Fehler: 60 (falsch-gerundet).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 74. / Welcher Zehner liegt näher an 74? _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1)_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 74. / Welcher Zehner liegt näher an 74? _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1, Startpunkt 74)_
   - ☐ 80
   - ☐ 75
   - ☑ 70
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 7 + 5 = 12 / Mit Minus kommst du zurück. / 12 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 7 nach 12 (+ 5))_ Lösung: a = **7**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 7 + 5 = 12 / Mit Minus kommst du zurück. / 12 − 5 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 7, Sprünge 7 nach 12 (+ 5))_ Lösung: a = **7**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 79. / Welcher Zehner liegt am nächsten bei 79? / Tippe ihn an. _(Zahlenstrahl 70 bis 80, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 70 (falsch-gerundet).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 9 + 6 = 16 / Prüfe mit Minus. / 16 − 6 = ▢ / Das ist nicht 9. / Richtig ist: 9 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 9 nach 15 (+ 6))_ Lösung: a = **10**, b = **15**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Lena rechnet: 8 + 5 = 13 / Mit welcher Minus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 8 nach 13 (+ 5))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 9 + 6 = 16 / Prüfe mit Minus. / 16 − 6 = ▢ / Das ist nicht 9. / Richtig ist: 9 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 9, Sprünge 9 nach 15 (+ 6))_ Lösung: a = **10**, b = **15**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Lena rechnet: 8 + 5 = 13 / Mit welcher Minus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 8, Sprünge 8 nach 13 (+ 5))_
   - ☐ 5 − 13
   - ☐ 8 − 5
   - ☑ 13 − 5
@@ -2566,13 +2566,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Z�
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten Zehner. *Beispiel:* 48 + 31: 48 ist fast 50, 31 ist fast 30. Der Überschlag ist 50 + 30. *Lösungsschritt:* 22 liegt am nächsten bei 20.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 22 + 38? _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1)_
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 22 + 38? _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1, Startpunkt 22)_
   - ☐ 30 + 40
   - ☑ 20 + 40
   - ☐ 20 + 30
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Probe. / 31 + 11 = 42 / Probe: 42 − ▢ = ▢ Lösung: a = **11**, b = **31**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Überschlage zuerst. / 297 + 314 / Runde beide Zahlen auf Hunderter. / ▢ + ▢ = ▢ Lösung: a = **300**, b = **300**, c = **600**
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 42 + 29 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1)_ Lösung: **70**. Typische Fehler: 71 (ueberschlag-nicht-gerundet).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 42 + 29 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1, Startpunkt 29)_ Lösung: **70**. Typische Fehler: 71 (ueberschlag-nicht-gerundet).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Finn rechnet: 35 + 57 = 92 / Mit welcher Rechnung macht Finn die Probe? _(Bild: Streifenbild: Ganzes 92, Teile 35 und 57)_
   - ☑ 92 − 57
   - ☐ 57 − 35
@@ -2649,7 +2649,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es werden mehr. Das ist plus. *Beispi
   - ☐ 5 − 6
 - `02` AFB I · _Modellieren_ · Auf dem Tisch liegen 6 Stifte. / Ole legt 4 Stifte dazu. / Wie viele Stifte sind es zusammen? _(Bild: Mengenbild: 6 Plättchen, 4 dazu)_ Lösung: **10**. Typische Fehler: 2 (sach-falsche-rechnung).
 - `03` AFB I · _Modellieren_ · Im Bus sitzen 16 Kinder. / 10 Kinder steigen ein. / Wie viele Kinder sitzen jetzt im Bus? _(Bild: Streifenbild: Ganzes ?, Teile 16 und 10)_ Lösung: **26**. Typische Fehler: 6 (sach-falsche-rechnung), 17 (stellenwert).
-- `04` AFB I · _Modellieren_ · Mia hat 30 Euro. / Mia bekommt 7 Euro dazu. / Wie viel Euro hat Mia jetzt? _(Bild: Zahlenstrahl 20 bis 40, Teilstriche alle 1, Sprünge 30 nach 37 (+ 7))_ Lösung: **37 Euro**. Typische Fehler: 23 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren_ · Mia hat 30 Euro. / Mia bekommt 7 Euro dazu. / Wie viel Euro hat Mia jetzt? _(Bild: Zahlenstrahl 20 bis 40, Teilstriche alle 1, Startpunkt 30, Sprünge 30 nach 37 (+ 7))_ Lösung: **37 Euro**. Typische Fehler: 23 (sach-falsche-rechnung).
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 8 + 5. / Welche Geschichte passt? _(Bild: Mengenbild: 8 Plättchen, 5 dazu)_
   - ☐ 8 Vögel sitzen im Baum. / 5 Vögel fliegen weg.
   - ☑ 8 Vögel sitzen im Baum. / 5 Vögel kommen dazu.
@@ -2899,14 +2899,14 @@ Baut auf: 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.)
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Folge beiden Sprüngen nach links. *Beispiel:* Start 15, erst − 4, dann − 3: Du landest bei 8. *Lösungsschritt:* Nach dem ersten Sprung bist du bei 12.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Pfeil springt 2-mal zurück. / Bei welcher Zahl landet er? _(Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprung von 17: − 5; von 12: − 4; Zahl eintragen)_ Lösung: **8**. Typische Fehler: 12 (sach-schritt-vergessen), 16 (sub-klammerfehler).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne in 2 Schritten: 14 − 5 − 3 / Erst 5 weg: ▢ / Dann noch 3 weg: ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 14 nach 9 (− 5), 9 nach 6 (− 3))_ Lösung: a = **9**, b = **6**
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 30 − 10 − 5 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 30 nach 20 (− 10), 20 nach 15 (− 5))_ Lösung: **15**. Typische Fehler: 25 (sub-klammerfehler), 20 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne in 2 Schritten: 14 − 5 − 3 / Erst 5 weg: ▢ / Dann noch 3 weg: ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 14, Sprünge 14 nach 9 (− 5), 9 nach 6 (− 3))_ Lösung: a = **9**, b = **6**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 30 − 10 − 5 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Startpunkt 30, Sprünge 30 nach 20 (− 10), 20 nach 15 (− 5))_ Lösung: **15**. Typische Fehler: 25 (sub-klammerfehler), 20 (sach-schritt-vergessen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Starte bei 26. / Springe erst 6 zurück. / Springe dann 5 zurück. / Tippe an: Wo landest du? _(Zahlenstrahl 10 bis 30, Teilstriche alle 1; antippen)_ Lösung: **15**. Typische Fehler: 20 (sach-schritt-vergessen), 25 (sub-klammerfehler).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mara hat 20 Euro. / Mara kauft ein Heft für 4 Euro. / Mara kauft einen Stift für 4 Euro. / Welche Rechnung passt? _(Bild: Streifenbild: Ganzes 20, Teile 4 und 4 und ?)_
   - ☑ 20 − 4 − 4
   - ☐ 20 − 4 + 4
   - ☐ 20 + 4 + 4
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 18 − 8 − 3 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 18 nach 10 (− 8), 10 nach 7 (− 3))_ Lösung: **7**. Typische Fehler: 13 (sub-klammerfehler), 10 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 18 − 8 − 3 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 18, Sprünge 18 nach 10 (− 8), 10 nach 7 (− 3))_ Lösung: **7**. Typische Fehler: 13 (sub-klammerfehler), 10 (sach-schritt-vergessen).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -2972,14 +2972,14 @@ Baut auf: 5.3.3-S2 (Ich kann schriftlich subtrahieren, auch mit Übertrag.), 5.3
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Zähle die Striche bis zum Zehner links und rechts. *Beispiel:* 38: Bis 40 sind es 2 Striche, bis 30 sind es 8 Striche. Am nächsten ist 40. *Lösungsschritt:* Bis 80 sind es 3 Striche. Bis 90 sind es 7 Striche.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 83. / Welcher Zehner liegt am nächsten? / Tippe ihn an. _(Zahlenstrahl 80 bis 90, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 90 (falsch-gerundet).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 67. / Welcher Zehner liegt näher an 67? _(Bild: Zahlenstrahl 60 bis 70, Teilstriche alle 1)_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 67. / Welcher Zehner liegt näher an 67? _(Bild: Zahlenstrahl 60 bis 70, Teilstriche alle 1, Startpunkt 67)_
   - ☑ 70
   - ☐ 60
   - ☐ 65
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 18 − 6 = 12 / Mit Plus kommst du zurück. / 12 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 18 nach 12 (− 6))_ Lösung: a = **18**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 18 − 6 = 12 / Mit Plus kommst du zurück. / 12 + 6 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 18, Sprünge 18 nach 12 (− 6))_ Lösung: a = **18**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 79. / Welcher Zehner liegt am nächsten bei 79? / Tippe ihn an. _(Zahlenstrahl 70 bis 80, Teilstriche alle 1; antippen)_ Lösung: **80**. Typische Fehler: 70 (falsch-gerundet).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ida rechnet: 20 − 8 = 11 / Prüfe mit Plus. / 11 + 8 = ▢ / Das ist nicht 20. / Richtig ist: 20 − 8 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 20 nach 12 (− 8))_ Lösung: a = **19**, b = **12**
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Finn rechnet: 15 − 7 = 8 / Mit welcher Plus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 15 nach 8 (− 7))_
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ida rechnet: 20 − 8 = 11 / Prüfe mit Plus. / 11 + 8 = ▢ / Das ist nicht 20. / Richtig ist: 20 − 8 = ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 20, Sprünge 20 nach 12 (− 8))_ Lösung: a = **19**, b = **12**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Finn rechnet: 15 − 7 = 8 / Mit welcher Plus-Aufgabe kommst du zurück zum Start? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 15, Sprünge 15 nach 8 (− 7))_
   - ☑ 8 + 7
   - ☐ 15 + 8
   - ☐ 15 + 7
@@ -2988,13 +2988,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zehner sind Zahlen wie 10, 20, 30. Z�
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten Zehner. *Beispiel:* 68 − 31: 68 ist fast 70, 31 ist fast 30. Der Überschlag ist 70 − 30. *Lösungsschritt:* 78 liegt am nächsten bei 80.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 78 − 41? _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1)_
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Welcher Überschlag passt zu 78 − 41? _(Bild: Zahlenstrahl 70 bis 80, Teilstriche alle 1, Startpunkt 78)_
   - ☑ 80 − 40
   - ☐ 80 − 50
   - ☐ 70 − 40
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Probe. / 77 − 21 = 56 / Probe: 56 + ▢ = ▢ Lösung: a = **21**, b = **77**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Überschlage zuerst. / 892 − 389 / Runde beide Zahlen auf Hunderter. / ▢ − ▢ = ▢ Lösung: a = **900**, b = **400**, c = **500**
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 61 − 21 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1)_ Lösung: **40**.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Überschlage: 61 − 21 / Rechne mit den Zehnern in der Nähe. _(Bild: Zahlenstrahl 20 bis 30, Teilstriche alle 1, Startpunkt 21)_ Lösung: **40**.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole rechnet: 95 − 79 = 16 / Mit welcher Rechnung macht Ole die Probe? _(Bild: Streifenbild: Ganzes 95, Teile 79 und 16)_
   - ☑ 16 + 79
   - ☐ 16 − 79
@@ -3071,7 +3071,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es werden weniger. Das ist minus. *Be
   - ☑ 14 − 3
 - `02` AFB I · _Modellieren_ · In der Schale liegen 16 Nüsse. / Finn isst 5 Nüsse auf. / Wie viele Nüsse sind noch da? _(Bild: Mengenbild: 16 Plättchen, 5 durchgestrichen)_ Lösung: **11**. Typische Fehler: 21 (sach-falsche-rechnung).
 - `03` AFB I · _Modellieren_ · Im Bus sitzen 24 Kinder. / 10 Kinder steigen aus. / Wie viele Kinder sitzen noch im Bus? _(Bild: Streifenbild: Ganzes 24, Teile 10 und ?)_ Lösung: **14**. Typische Fehler: 34 (sach-falsche-rechnung), 23 (stellenwert).
-- `04` AFB I · _Modellieren_ · Tom hat 30 Euro. / Tom gibt 5 Euro aus. / Wie viel Euro hat Tom noch? _(Bild: Zahlenstrahl 20 bis 40, Teilstriche alle 1, Sprünge 30 nach 25 (− 5))_ Lösung: **25 Euro**. Typische Fehler: 35 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren_ · Tom hat 30 Euro. / Tom gibt 5 Euro aus. / Wie viel Euro hat Tom noch? _(Bild: Zahlenstrahl 20 bis 40, Teilstriche alle 1, Startpunkt 30, Sprünge 30 nach 25 (− 5))_ Lösung: **25 Euro**. Typische Fehler: 35 (sach-falsche-rechnung).
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 15 − 8. / Welche Geschichte passt? _(Bild: Mengenbild: 15 Plättchen, 8 durchgestrichen)_
   - ☐ 15 Ballons. / 8 Ballons kommen dazu.
   - ☐ 8 Kinder. / Jedes Kind hat 15 Ballons.
@@ -3241,7 +3241,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Aussteigen heißt minus. Hier steigen
   - ☐ 6 + 5 + 2
   - ☑ 6 + 5 − 2
 - `03` AFB I · _Modellieren_ · Auf dem Tisch liegen 15 Nüsse. / Ida isst 4 Nüsse. / Noah isst 3 Nüsse. / Wie viele Nüsse bleiben? _(Bild: Mengenbild: 15 Plättchen, 7 durchgestrichen)_ Lösung: **8**. Typische Fehler: 11 (sach-schritt-vergessen), 14 (sub-klammerfehler).
-- `04` AFB I · _Modellieren_ · Elif hat 6 Sticker. / Elif bekommt 3 Sticker dazu. / Dann bekommt Elif noch 4 Sticker. / Wie viele Sticker hat Elif jetzt? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 6 nach 9 (+ 3), 9 nach 13 (+ 4))_ Lösung: **13**. Typische Fehler: 9 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · Elif hat 6 Sticker. / Elif bekommt 3 Sticker dazu. / Dann bekommt Elif noch 4 Sticker. / Wie viele Sticker hat Elif jetzt? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 6, Sprünge 6 nach 9 (+ 3), 9 nach 13 (+ 4))_ Lösung: **13**. Typische Fehler: 9 (sach-schritt-vergessen).
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 12 − 4 − 2. / Welche Geschichte passt? _(Bild: Mengenbild: 12 Plättchen, 6 durchgestrichen)_
   - ☑ 12 Kekse. / Mia isst 4 Kekse. / Tom isst 2 Kekse.
   - ☐ 12 Kekse. / Mia isst 4 Kekse. / Tom bringt 2 Kekse.
@@ -3342,13 +3342,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Plus-Rechnen darfst du die Zahle
   - ☐ 7 − 2
   - ☑ 7 + 2
   - ☐ 2 + 2
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 2 + 14 ist schwer zu zählen. / Tausche die Zahlen. / Rechne 14 + 2. _(Bild: Zahlenstrahl 10 bis 20, Teilstriche alle 1, Sprünge 14 nach 16 (+ 2))_ Lösung: **16**. Typische Fehler: 12 (add-subtrahiert).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 2 + 14 ist schwer zu zählen. / Tausche die Zahlen. / Rechne 14 + 2. _(Bild: Zahlenstrahl 10 bis 20, Teilstriche alle 1, Startpunkt 14, Sprünge 14 nach 16 (+ 2))_ Lösung: **16**. Typische Fehler: 12 (add-subtrahiert).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? / 5 + 9 = ▢ + 5 _(Bild: Mengenbild: 5 Plättchen, 9 dazu)_ Lösung: a = **9**
 - `05` AFB II · _Probleme lösen_ · Welche 2 Aufgaben haben dasselbe Ergebnis? _(Bild: Mengenbild: 8 Plättchen, 2 dazu)_
   - ☐ 8 + 2 und 8 − 2
   - ☑ 8 + 2 und 2 + 8
   - ☐ 8 + 2 und 8 + 8
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · 30 + 40 = 70 / Wie viel ist 40 + 30? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10, Sprünge 0 nach 40 (+ 40), 40 nach 70 (+ 30))_ Lösung: **70**. Typische Fehler: 10 (add-subtrahiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · 30 + 40 = 70 / Wie viel ist 40 + 30? _(Bild: Zahlenstrahl 0 bis 100, Teilstriche alle 10, Startpunkt 0, Sprünge 0 nach 40 (+ 40), 40 nach 70 (+ 30))_ Lösung: **70**. Typische Fehler: 10 (add-subtrahiert).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -4162,7 +4162,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beis
   - ☐ 12 : 4 = 4
   - ☐ 12 + 3 = 15
   - ☑ 12 : 3 = 4
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 53 auf Zehner. _(Bild: Zahlenstrahl 50 bis 60, Teilstriche alle 1)_ Lösung: **50**. Typische Fehler: 60 (falsch-gerundet).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 53 auf Zehner. _(Bild: Zahlenstrahl 50 bis 60, Teilstriche alle 1, Startpunkt 53)_ Lösung: **50**. Typische Fehler: 60 (falsch-gerundet).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Prüfe 5 · 9 = 45. / Rechne 45 : 9. _(Bild: Punktefeld mit 5 Reihen zu je 9 Punkten)_ Lösung: **5**. Typische Fehler: 9 (div-vertauscht), 6 (div-einmaleins).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne ungefähr. / 3 · 28 / Rechne dafür 3 · 30. _(Bild: Zehnermaterial: 3 Zehnerstangen, 0 Einerwürfel)_ Lösung: **90**. Typische Fehler: 84 (ueberschlag-nicht-gerundet), 9 (mal-stellenwert).
 - `05` AFB II · _Argumentieren_ · Emre rechnet 3 · 19 = 87. / Ungefähr ist es 3 · 20 = 60. / Kann 87 stimmen? _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_
@@ -4175,7 +4175,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beis
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde die krumme Zahl auf Zehner. Rechne dann im Kopf. *Beispiel:* 38 · 4: 38 wird zu 40. 40 · 4 = 160. *Lösungsschritt:* 87 wird zu 90.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Mache einen Überschlag. / 87 · 7 / Welcher Überschlag passt? _(Bild: Zahlenstrahl 80 bis 90, Teilstriche alle 1)_
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Mache einen Überschlag. / 87 · 7 / Welcher Überschlag passt? _(Bild: Zahlenstrahl 80 bis 90, Teilstriche alle 1, Startpunkt 87)_
   - ☑ 90 · 7 = 630
   - ☐ 80 · 7 = 560
   - ☐ 87 · 7 = 609
@@ -4880,7 +4880,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Was nicht mehr für eine Gruppe reich
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · 20 : 3 = ▢ Rest ▢ _(Bild: 6 Gruppen mit je 3 Plättchen, 2 einzeln daneben)_ Lösung: q = **6**, r = **2**
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · 5 Kinder bilden 2er-Gruppen. / Wie viele Kinder bleiben übrig? _(Bild: 2 Gruppen mit je 2 Plättchen, 1 einzeln daneben)_ Lösung: **1 Kinder**. Typische Fehler: 2 (div-rest-vergessen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Du hast 16 Plättchen. / Du legst immer 5 zusammen. / Wie viele volle Gruppen sind es? _(Bild: 3 Gruppen mit je 5 Plättchen, 1 einzeln daneben)_ Lösung: **3 Gruppen**. Typische Fehler: 4 (div-rest-nicht-gedeutet), 1 (div-rest-vergessen).
-- `05` AFB II · _Probleme lösen_ · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 15, Teilstriche alle 1, Sprünge 0 nach 4 (+ 4), 4 nach 8 (+ 4), 8 nach 12 (+ 4))_
+- `05` AFB II · _Probleme lösen_ · Bei welcher Aufgabe bleibt ein Rest? _(Bild: Zahlenstrahl 0 bis 15, Teilstriche alle 1, Startpunkt 0, Sprünge 0 nach 4 (+ 4), 4 nach 8 (+ 4), 8 nach 12 (+ 4))_
   - ☐ 12 : 4
   - ☐ 8 : 4
   - ☑ 9 : 4
@@ -5673,15 +5673,15 @@ Baut auf: 5.4.1-K1 (Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrahl. *Beispiel:* 1, 3, 5, 7: Es kommt immer 2 dazu. Dann kommt 9. *Lösungsschritt:* Es kommt immer 5 dazu.
 
-- `01` AFB I · _Probleme lösen_ · Wie geht es weiter? / 6, 11, 16, 21, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 6 nach 11 (+ 5), 11 nach 16 (+ 5), 16 nach 21 (+ 5), 21 nach 26 (?))_ Lösung: x = **26**
-- `02` AFB I · _Probleme lösen_ · Wie geht es weiter? / 30, 27, 24, 21, ▢ _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 30 nach 27 (− 3), 27 nach 24 (− 3), 24 nach 21 (− 3), 21 nach 18 (?))_ Lösung: x = **18**
+- `01` AFB I · _Probleme lösen_ · Wie geht es weiter? / 6, 11, 16, 21, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Startpunkt 6, Sprünge 6 nach 11 (+ 5), 11 nach 16 (+ 5), 16 nach 21 (+ 5), 21 nach 26 (?))_ Lösung: x = **26**
+- `02` AFB I · _Probleme lösen_ · Wie geht es weiter? / 30, 27, 24, 21, ▢ _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Startpunkt 30, Sprünge 30 nach 27 (− 3), 27 nach 24 (− 3), 24 nach 21 (− 3), 21 nach 18 (?))_ Lösung: x = **18**
 - `03` AFB I · _Probleme lösen_ · Jede Reihe hat gleich viele Punkte. / Zähle Reihe für Reihe weiter. / 4, 8, 12, ▢ _(Bild: Punktefeld mit 3 Reihen zu je 4 Punkten)_ Lösung: x = **16**
-- `04` AFB I · _Probleme lösen_ · Welche Zahl kommt als Nächstes? / 4, 9, 14, 19 _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 4 nach 9 (+ 5), 9 nach 14 (+ 5), 14 nach 19 (+ 5), 19 nach 24 (?))_
+- `04` AFB I · _Probleme lösen_ · Welche Zahl kommt als Nächstes? / 4, 9, 14, 19 _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Startpunkt 4, Sprünge 4 nach 9 (+ 5), 9 nach 14 (+ 5), 14 nach 19 (+ 5), 19 nach 24 (?))_
   - ☑ 24
   - ☐ 29
   - ☐ 20
-- `05` AFB II · _Probleme lösen_ · Zwei Zahlen fehlen. / 5, ▢, 13, 17, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 5 nach 9 (?), 9 nach 13 (?), 13 nach 17 (+ 4), 17 nach 21 (?))_ Lösung: x = **9**, y = **21**
-- `06` AFB I · _Probleme lösen_ · Jede Zahl ist das Doppelte der Zahl davor. / Wie heißt die nächste Zahl? / 3, 6, 12, 24, ▢ _(Bild: Zahlenstrahl 0 bis 50, Teilstriche alle 1, Sprünge 3 nach 6 (+ 3), 6 nach 12 (+ 6), 12 nach 24 (+ 12), 24 nach 48 (?))_ Lösung: x = **48**
+- `05` AFB II · _Probleme lösen_ · Zwei Zahlen fehlen. / 5, ▢, 13, 17, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Startpunkt 5, Sprünge 5 nach 9 (?), 9 nach 13 (?), 13 nach 17 (+ 4), 17 nach 21 (?))_ Lösung: x = **9**, y = **21**
+- `06` AFB I · _Probleme lösen_ · Jede Zahl ist das Doppelte der Zahl davor. / Wie heißt die nächste Zahl? / 3, 6, 12, 24, ▢ _(Bild: Zahlenstrahl 0 bis 50, Teilstriche alle 1, Startpunkt 3, Sprünge 3 nach 6 (+ 3), 6 nach 12 (+ 6), 12 nach 24 (+ 12), 24 nach 48 (?))_ Lösung: x = **48**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -5690,9 +5690,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme den Unterschied zwischen zwe
 - `01` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 14, 20, 26, 32, ▢, ▢ Lösung: x = **38**, y = **44**
 - `02` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 2, 6, 18, 54, ▢ Lösung: x = **162**
 - `03` AFB II · _Probleme lösen (+ Modellieren)_ · Das sind Quadratzahlen. / 4 · 4 = 16 / 5 · 5 = 25 / 6 · 6 = 36 / Wie heißt die nächste Quadratzahl? _(Bild: Quadrat aus 6 · 6 Kästchen)_ Lösung: **49**. Typische Fehler: 47 (muster-falsche-regel), 14 (potenz-mal-exponent).
-- `04` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 90, 83, 76, ▢, ▢ _(Bild: Zahlenstrahl 60 bis 90, Teilstriche alle 1, Sprünge 90 nach 83 (− 7), 83 nach 76 (− 7), 76 nach 69 (?), 69 nach 62 (?))_ Lösung: x = **69**, y = **62**
+- `04` AFB I · _Probleme lösen_ · Setze die Zahlenfolge fort. / 90, 83, 76, ▢, ▢ _(Bild: Zahlenstrahl 60 bis 90, Teilstriche alle 1, Startpunkt 90, Sprünge 90 nach 83 (− 7), 83 nach 76 (− 7), 76 nach 69 (?), 69 nach 62 (?))_ Lösung: x = **69**, y = **62**
 - `05` AFB II · _Probleme lösen (+ Kommunizieren)_ · Das ist eine Mal-Mauer. / Jeder Stein ist das Produkt der beiden Steine darunter. / Fülle die leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ **72** / **6** · **12** / 2 · 3 · 4
-- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
+- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 2, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
   - ☑ Falsch. / Jede Zahl ist das Doppelte der Zahl davor. / Nach 16 kommt 32.
   - ☐ Falsch. / Es geht abwechselnd plus und mal weiter.
   - ☐ Stimmt. / 2 + 2 = 4.
@@ -5741,11 +5741,11 @@ Baut auf: 5.4.X1-Z1 (Ich kann Zahlenmuster fortsetzen.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrahl. *Beispiel:* 1, 4, 7, 10: Es kommt immer 3 dazu. *Lösungsschritt:* Von 7 bis 9 sind es 2.
 
-- `01` AFB I · _Argumentieren_ · Welche Regel passt? / 7, 9, 11, 13 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 7 nach 9 (+ 2), 9 nach 11 (?), 11 nach 13 (?))_
+- `01` AFB I · _Argumentieren_ · Welche Regel passt? / 7, 9, 11, 13 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 7, Sprünge 7 nach 9 (+ 2), 9 nach 11 (?), 11 nach 13 (?))_
   - ☑ Immer plus 2.
   - ☐ Immer minus 2.
   - ☐ Immer plus 3.
-- `02` AFB I · _Argumentieren_ · Welche Regel passt? / 40, 37, 34, 31 _(Bild: Zahlenstrahl 30 bis 40, Teilstriche alle 1, Sprünge 40 nach 37 (− 3), 37 nach 34 (?), 34 nach 31 (?))_
+- `02` AFB I · _Argumentieren_ · Welche Regel passt? / 40, 37, 34, 31 _(Bild: Zahlenstrahl 30 bis 40, Teilstriche alle 1, Startpunkt 40, Sprünge 40 nach 37 (− 3), 37 nach 34 (?), 34 nach 31 (?))_
   - ☐ Immer minus 4.
   - ☑ Immer minus 3.
   - ☐ Immer plus 3.
@@ -5753,21 +5753,21 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Sprünge am Zahlenstrah
   - ☐ Immer das Doppelte.
   - ☐ Immer plus 1.
   - ☑ Immer plus 3.
-- `04` AFB I · _Argumentieren_ · Welche Regel passt? / 2, 4, 8, 16 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
+- `04` AFB I · _Argumentieren_ · Welche Regel passt? / 2, 4, 8, 16 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 2, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
   - ☐ Immer plus 2.
   - ☑ Jede Zahl ist das Doppelte der Zahl davor.
   - ☐ Immer plus 4.
-- `05` AFB II · _Argumentieren_ · Die Regel heißt: immer plus 4. / Starte bei 1. / 1, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Sprünge 1 nach 5 (?), 5 nach 9 (?), 9 nach 13 (?))_ Lösung: x = **5**, y = **9**, z = **13**
-- `06` AFB I · _Argumentieren_ · Die Regel heißt: immer minus 10. / Starte bei 30. / 30, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Sprünge 30 nach 20 (?), 20 nach 10 (?), 10 nach 0 (?))_ Lösung: x = **20**, y = **10**, z = **0**
+- `05` AFB II · _Argumentieren_ · Die Regel heißt: immer plus 4. / Starte bei 1. / 1, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 1, Sprünge 1 nach 5 (?), 5 nach 9 (?), 9 nach 13 (?))_ Lösung: x = **5**, y = **9**, z = **13**
+- `06` AFB I · _Argumentieren_ · Die Regel heißt: immer minus 10. / Starte bei 30. / 30, ▢, ▢, ▢ _(Bild: Zahlenstrahl 0 bis 30, Teilstriche alle 1, Startpunkt 30, Sprünge 30 nach 20 (?), 20 nach 10 (?), 10 nach 0 (?))_ Lösung: x = **20**, y = **10**, z = **0**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne den Unterschied zwischen zwei Nachbarzahlen aus. *Beispiel:* 13, 19, 25: 19 − 13 = 6. *Lösungsschritt:* 17 − 13 = ?
 
-- `01` AFB I · _Argumentieren_ · Ergänze die Regel. / 13, 17, 21, 25 / Die Regel heißt: immer plus ▢. _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Sprünge 13 nach 17 (?), 17 nach 21 (?), 21 nach 25 (?))_ Lösung: x = **4**
+- `01` AFB I · _Argumentieren_ · Ergänze die Regel. / 13, 17, 21, 25 / Die Regel heißt: immer plus ▢. _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Startpunkt 13, Sprünge 13 nach 17 (?), 17 nach 21 (?), 21 nach 25 (?))_ Lösung: x = **4**
 - `02` AFB I · _Argumentieren_ · Ergänze die Regel. / 5, 15, 45, 135 / Die Regel heißt: immer mal ▢. Lösung: x = **3**
 - `03` AFB II · _Argumentieren_ · Das sind Quadratzahlen. / 16, 25, 36, 49 / Schreibe die Unterschiede auf: ▢, ▢, ▢ _(Bild: Quadrat aus 7 · 7 Kästchen)_ Lösung: a = **9**, b = **11**, c = **13**
-- `04` AFB I · _Argumentieren_ · Ergänze die Regel. / 80, 72, 64, 56 / Die Regel heißt: immer minus ▢. _(Bild: Zahlenstrahl 50 bis 80, Teilstriche alle 1, Sprünge 80 nach 72 (?), 72 nach 64 (?), 64 nach 56 (?))_ Lösung: x = **8**
+- `04` AFB I · _Argumentieren_ · Ergänze die Regel. / 80, 72, 64, 56 / Die Regel heißt: immer minus ▢. _(Bild: Zahlenstrahl 50 bis 80, Teilstriche alle 1, Startpunkt 80, Sprünge 80 nach 72 (?), 72 nach 64 (?), 64 nach 56 (?))_ Lösung: x = **8**
 - `05` AFB II · _Argumentieren_ · Die Regel heißt: immer mal 4. / Starte bei 3. / Welche Zahlenfolge passt?
   - ☐ 3, 7, 11, 15
   - ☑ 3, 12, 48, 192
@@ -10800,6 +10800,17 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `gemischt-getrennt-mal` | Multipliziert oder dividiert bei gemischten Zahlen die Ganzen und die Bruchteile getrennt. | Wandle die gemischte Zahl zuerst in einen Bruch um. Rechne erst dann. | Du wandelst gemischte Zahlen vor dem Malnehmen jetzt in Brüche um. |
 | `gemischt-kleiner-von-groesser` | Zieht bei gemischten Zahlen den kleineren Bruchteil vom größeren ab, statt ein Ganzes umzuwandeln. | Der Bruch reicht nicht zum Abziehen. Wandle ein Ganzes in Bruchteile um. | Du wandelst beim Abziehen jetzt ein Ganzes um. |
 | `mal-macht-groesser` | Meint, Multiplizieren vergrößert immer und Dividieren verkleinert immer. | Die Hälfte von etwas ist weniger. Malnehmen mit einem Bruch unter 1 macht kleiner, Teilen durch ihn macht größer. | Du weißt jetzt: Malnehmen mit einem Bruch unter 1 macht kleiner. |
+| `negativ-groesser` | Hält bei negativen Zahlen die mit dem größeren Betrag für größer (−8 > −3). | Schau auf die Zahlengerade: Die Zahl weiter links ist kleiner. Bei −8 ist es kälter als bei −3. | Du weißt jetzt: Links auf der Zahlengeraden steht die kleinere Zahl. |
+| `betrag-gegenzahl` | Verwechselt Betrag und Gegenzahl oder gibt einen negativen Betrag an. | Der Betrag ist der Abstand zur Null, er ist nie negativ. Die Gegenzahl liegt auf der anderen Seite der Null. | Du unterscheidest jetzt den Abstand zur Null und die Gegenzahl. |
+| `betraege-addiert` | Addiert bei verschiedenen Vorzeichen die Beträge (−5 + 3 wird zu 8 oder −8). | Starte auf der Zahlengeraden bei der ersten Zahl. Plus geht nach rechts. Wo landest du? | Du schaust beim Addieren jetzt auf die Vorzeichen. |
+| `minus-minus-uebersehen` | Übersieht beim Subtrahieren einer negativen Zahl das doppelte Minus (3 − (−5) wird zu −2). | Eine negative Zahl abziehen heißt: ihre Gegenzahl addieren. Aus − (−5) wird + 5. | Du machst aus Minus und Minus jetzt ein Plus. |
+| `minus-mal-minus` | Rechnet Minus mal Minus zu Minus. | Bestimme zuerst das Vorzeichen: Zwei gleiche Vorzeichen ergeben Plus, zwei verschiedene ergeben Minus. | Du weißt jetzt: Minus mal Minus ergibt Plus. |
+| `vorzeichen-division` | Teilt nur die Beträge und setzt beim Dividieren das falsche oder kein Vorzeichen. | Beim Dividieren gilt dieselbe Regel wie beim Multiplizieren: gleiche Vorzeichen Plus, verschiedene Vorzeichen Minus. | Du bestimmst beim Teilen jetzt zuerst das Vorzeichen. |
+| `minusklammer` | Lässt beim Auflösen einer Minusklammer die Zeichen in der Klammer stehen. | Steht ein Minus vor der Klammer, drehen sich alle Zeichen in der Klammer um. | Du drehst nach einem Minus vor der Klammer jetzt jedes Zeichen um. |
+| `vorzeichen-vergessen` | Rechnet mit den Beträgen richtig, gibt das Ergebnis aber ohne oder mit falschem Vorzeichen an. | Der Betrag stimmt. Prüfe noch das Vorzeichen: Liegt das Ergebnis links oder rechts von der Null? | Du schreibst jetzt das Vorzeichen zum Ergebnis. |
+| `richtung-vertauscht` | Geht an der Zahlengeraden in die falsche Richtung (Plus nach links, Minus nach rechts) oder verwechselt Zunahme und Abnahme. | Plus heißt: nach rechts, es wird mehr. Minus heißt: nach links, es wird weniger. | Du gehst bei Plus jetzt nach rechts und bei Minus nach links. |
+| `abstand-ueber-null` | Zieht beim Abstand zweier Zahlen mit verschiedenen Vorzeichen die Beträge voneinander ab, statt über die Null zu zählen. | Zähle die Schritte auf der Zahlengeraden: erst bis zur Null, dann weiter bis zur zweiten Zahl. | Du zählst den Abstand jetzt über die Null hinweg. |
+| `koord-vorzeichen` | Achtet im Koordinatensystem nicht auf das Vorzeichen einer Koordinate (links und rechts oder oben und unten verwechselt). | Eine negative x-Koordinate liegt links vom Nullpunkt. Eine negative y-Koordinate liegt unter dem Nullpunkt. | Du achtest bei jedem Punkt jetzt auf das Vorzeichen der Koordinaten. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 

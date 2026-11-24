@@ -19,8 +19,10 @@ globalThis.SVGElement = Knoten;
 globalThis.document = { createElementNS: (_, tag) => new Knoten(tag), createElement: (tag) => new Knoten(tag) };
 const { aufgabenBild, BILDARTEN, teilBreiten } = await import('../src/schueler/aufgabenbilder.js');
 
-const pool = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json', import.meta.url), 'utf8'));
-const mitBild = pool.aufgaben.filter((a) => a.bild);
+const lies = (n) => JSON.parse(readFileSync(new URL(`../aufgabenpool/klasse-${n}.json`, import.meta.url), 'utf8'));
+const pool = lies(5);
+// Klasse 7 (ADR 0043) bringt das Thermometer und die Zahlengerade mit negativen Zahlen mit.
+const mitBild = [...pool.aufgaben, ...lies(7).aufgaben].filter((a) => a.bild);
 const zahl = (x) => (typeof x === 'object' ? x.wert : x);
 const lesbar = (x) => (typeof x === 'object' && x.frage ? '?' : String(x));
 
@@ -144,7 +146,9 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       assert.equal(svg.klasse('zentrum').length, g.zentrum ? 1 : 0, a.id);
       assert.equal(svg.klasse('achse').length, (g.achsen ? 2 : 0) + (g.linien ?? []).filter((l) => l.stil === 'achse').length, a.id);
       for (const p of g.punkte ?? []) if (p.n) assert.ok(svg.texte().includes(p.n), `${a.id}: Punkt ${p.n} ist nicht beschriftet`);
-      if (g.achsen) assert.ok(svg.texte().includes(String(g.b)) || g.b % 2 === 1, `${a.id}: Achsenzahl ${g.b} fehlt`);
+      // Klasse 7 (ADR 0043): Mit ursprung liegt der Nullpunkt im Gitter. Die Achsen tragen dann auch negative Zahlen mit echtem Minuszeichen.
+      if (g.achsen && g.ursprung) { const links = g.ursprung[0] - (g.ursprung[0] % 2); assert.ok(svg.texte().includes(`−${links}`), `${a.id}: Achsenzahl −${links} fehlt`); }
+      else if (g.achsen) assert.ok(svg.texte().includes(String(g.b)) || g.b % 2 === 1, `${a.id}: Achsenzahl ${g.b} fehlt`);
     } else if (b.art === 'lineal') {
       // Jeder Millimeter hat einen Strich, jeder Zentimeter eine Zahl; die Strecke liegt auf dem Lineal.
       assert.equal(svg.klasse('mm').length, b.lang + 1, a.id);
@@ -177,6 +181,12 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       assert.equal(svg.klasse('vergleich-klein').length, 1, a.id);
       assert.equal(svg.klasse('vergleich-gross').length, 1, a.id);
       assert.equal(svg.klasse('hilfslinie').length > 0, Boolean(b.hilfslinien), a.id);
+    } else if (b.art === 'thermometer') {
+      assert.equal(svg.klasse('glas').length, b.saeulen.length, a.id);
+      assert.equal(svg.klasse('stand').length, b.saeulen.length, a.id);
+      assert.equal(svg.klasse('name').length, b.saeulen.filter((t) => t.name).length, a.id);
+      assert.equal(svg.klasse('skala').filter((k) => k.attribute.class.includes('null')).length, b.saeulen.length, `${a.id}: Die Null ist hervorgehoben`);
+      assert.ok(svg.texte().includes('−10') || b.von > -10, `${a.id}: echtes Minuszeichen an der Skala`);
     } else if (b.art === 'einheitentafel') {
       const zeilen = [b.werte, ...(b.weitere ?? [])], zellen = svg.alle().filter((k) => k.tag === 'td');
       assert.equal(zellen.length, zeilen.length * b.spalten.length, a.id);

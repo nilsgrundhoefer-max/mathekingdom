@@ -9,6 +9,7 @@
 // Eine Figur: { n?, form: 'kreis' | 'rechteck' | 'streifen' | 'menge' | 'hundert' | 'akku', teile | reihen + spalten, ganze?, gefaerbt: [Nummern der Teile], ungleich? }
 import { h, s } from './dom.js';
 import { leseTeile } from './bruch.js';
+import { mitVorzeichen, MINUS } from './zahlenbilder.js';
 
 const Z = (x) => Math.round(x * 100) / 100;
 const ABSTAND = 28, RAND = 14, KOPF = 26;
@@ -122,15 +123,22 @@ export const faerbenLoesungBild = (auf) => bruchSvg([auf.faerben], { gewaehlt: A
 
 // Brucheingabe: Zähler über Nenner mit Bruchstrich, bei gemischten Zahlen davor ein Feld für die Ganzen.
 export function bruchEingabe(auf, letzte, gesperrt) {
-  const m = String(letzte ?? '').match(/^(?:(\d*) )?(\d*)\/(\d*)$/) ?? [];
+  const m = String(letzte ?? '').match(/^(-?)(?:(\d*) )?(\d*)\/(\d*)$/) ?? [];
   const feld = (name, wert, etikett) => h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 3, maxLength: 4, disabled: gesperrt, value: wert ?? '', 'aria-label': etikett });
+  // Klasse 7 (ADR 0043): Der Knopf „±“ setzt ein Minus vor den ganzen Bruch.
+  const vorzeichen = mitVorzeichen(auf);
+  const v = h('input', { type: 'hidden', name: 'bruch-v', value: m[1] ?? '' });
+  const zeichen = h('span', { class: 'bruchvorzeichen', 'aria-live': 'polite' }, v.value ? MINUS : '');
+  const knopf = h('button', { type: 'button', class: 'schlicht vorzeichen', disabled: gesperrt, 'aria-label': 'Vorzeichen wechseln', title: 'Vorzeichen wechseln',
+    onclick: () => { v.value = v.value ? '' : '-'; zeichen.textContent = v.value ? MINUS : ''; } }, '±');
   return h('span', { class: 'brucheingabe' },
-    auf.gemischt && feld('bruch-g', m[1], 'Ganze'),
-    h('span', { class: 'bruchfelder' }, feld('bruch-z', m[2], 'Zähler'), h('span', { class: 'bruchstrich', 'aria-hidden': 'true' }), feld('bruch-n', m[3], 'Nenner')),
+    vorzeichen && knopf, vorzeichen && v, vorzeichen && zeichen,
+    auf.gemischt && feld('bruch-g', m[2], 'Ganze'),
+    h('span', { class: 'bruchfelder' }, feld('bruch-z', m[3], 'Zähler'), h('span', { class: 'bruchstrich', 'aria-hidden': 'true' }), feld('bruch-n', m[4], 'Nenner')),
     auf.einheit && h('span', { class: 'einheit' }, auf.einheit));
 }
 export function liesBruch(auf, formular) {
   const w = (n) => formular.elements[n]?.value.trim() ?? '';
   const g = auf.gemischt ? w('bruch-g') : '', z = w('bruch-z'), n = w('bruch-n');
-  return { eingabe: `${g ? `${g} ` : ''}${z}/${n}`, leer: !z || !n };
+  return { eingabe: `${w('bruch-v')}${g ? `${g} ` : ''}${z}/${n}`, leer: !z || !n };
 }

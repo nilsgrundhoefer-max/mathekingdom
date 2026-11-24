@@ -9,6 +9,8 @@
 // - beim Färben ist jedes Teil groß genug zum Antippen (mindestens 24 Pixel),
 // - jeder Bruch im Text steht gestapelt mit waagerechtem Bruchstrich, nichts ragt über die Karte hinaus,
 // - ein kurzer Bruchstrahl ist ohne Schieben ganz zu sehen, die Stellenwerttafel mit Komma zeigt ihr Komma.
+// Klasse 7 Kapitel 1 (ADR 0043) wird ebenso mit Text, Kontoauszug und Eingabe gezeichnet. Dort gilt zusätzlich:
+// - an Zahlengerade, Thermometer und Koordinatensystem überdeckt keine Beschriftung eine andere, nichts ragt über die Karte hinaus.
 // Aufruf: node tools/pruefe-layout.mjs [Kapitelanfang, z. B. 5.7.]
 import { build } from 'esbuild';
 import { readFileSync } from 'node:fs';
@@ -23,21 +25,23 @@ const eingang = `
 import stil from './src/schueler/stil.css';
 import { h } from './src/schueler/dom.js';
 import { aufgabenBild } from './src/schueler/aufgabenbilder.js';
+import { datenTabelle } from './src/schueler/datenbilder.js';
 import { eingabefelder } from './src/schueler/app.js';
 window.zeichne = (aufgaben) => {
   document.head.append(h('style', {}, stil));
   const halter = document.getElementById('mathekingdom');
   halter.replaceChildren(...aufgaben.map((auf) => h('section', { class: 'karte', 'data-aufgabe': auf.id },
-    /^(5\\.9|6\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
+    /^(5\\.9|6\\.1|7\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
     auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
-    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
+    auf.daten && /^7\\.1\\./.test(auf.lernziel) && h('div', { class: 'bildrahmen zumtext' }, datenTabelle(auf.daten)),
+    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1|7\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
 };
 // Prüft alle Bilder einer Aufgabe und liefert Mängel als Text.
 window.pruefe = (soll) => {
   const maengel = [];
   for (const sec of document.querySelectorAll('section[data-aufgabe]')) {
     const id = sec.dataset.aufgabe, auf = soll[id];
-    if (/^(5\\.9|6\\.1)\\./.test(auf?.lernziel ?? '')) {
+    if (/^(5\\.9|6\\.1|7\\.1)\\./.test(auf?.lernziel ?? '')) {
       const karte = sec.getBoundingClientRect();
       // Bruchbilder nachzählen.
       const zaehle = (svg, figuren, was) => {
@@ -57,12 +61,12 @@ window.pruefe = (soll) => {
         else { zaehle(svg, [{ ...auf.faerben, gefaerbt: [] }], 'Färbebild');
           for (const el of svg.querySelectorAll('.bruchteil')) { const r = el.getBoundingClientRect(); if (Math.min(r.width, r.height) < 24) { maengel.push(id + ': Teil zum Antippen ist nur ' + Math.round(Math.min(r.width, r.height)) + ' Pixel groß'); break; } } }
       }
-      if (auf.format === 'bruch' && sec.querySelectorAll('.brucheingabe input').length !== (auf.gemischt ? 3 : 2)) maengel.push(id + ': Brucheingabe hat nicht die erwarteten Felder');
+      if (auf.format === 'bruch' && sec.querySelectorAll('.brucheingabe input:not([type=hidden])').length !== (auf.gemischt ? 3 : 2)) maengel.push(id + ': Brucheingabe hat nicht die erwarteten Felder');
       // Brüche im Text: gestapelt, nie mit schrägem Strich (außer in Auswahllisten).
       const lauf = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT);
       for (let n = lauf.nextNode(); n; n = lauf.nextNode()) if (n.data.includes('\u2044') && !n.parentElement.closest('option, svg')) { maengel.push(id + ': Bruch „' + n.data.trim() + '“ steht nicht gestapelt'); break; }
       for (const b of sec.querySelectorAll('.bruch')) { const z = b.querySelector('.bz').getBoundingClientRect(), n = b.querySelector('.bn').getBoundingClientRect(); if (!(n.top >= z.bottom - 1)) { maengel.push(id + ': Bruch ' + b.textContent + ' ist nicht gestapelt'); break; } }
-      for (const s of sec.querySelectorAll('.bruchsatz, .gemischt')) if (new Set([...s.getClientRects()].map((r) => Math.round(r.bottom / 8))).size > 1 && Math.max(...[...s.getClientRects()].map((r) => r.top)) - Math.min(...[...s.getClientRects()].map((r) => r.top)) > 12) { maengel.push(id + ': Bruch „' + s.textContent + '“ ist umgebrochen'); break; }
+      for (const s of sec.querySelectorAll('.bruchsatz, .gemischt')) if (new Set([...s.getClientRects()].filter((r) => r.width > 1).map((r) => Math.round(r.bottom / 8))).size > 1 && Math.max(...[...s.getClientRects()].filter((r) => r.width > 1).map((r) => r.top)) - Math.min(...[...s.getClientRects()].filter((r) => r.width > 1).map((r) => r.top)) > 12) { maengel.push(id + ': Bruch „' + s.textContent + '“ ist umgebrochen'); break; }
       // Nichts ragt aus der Karte (Bilder mit eigenem Schieberahmen ausgenommen).
       for (const el of sec.querySelectorAll('.aufgabentext, .bruch, input, select, label, .brucheingabe, svg.bruchbild, table, .karte-ordnen, button')) {
         if (el.closest('.bildrahmen') && !el.matches('svg.bruchbild')) continue;
@@ -83,7 +87,8 @@ window.pruefe = (soll) => {
       const ueber = (a, b, r = 1) => Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0) > r && Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0) > r;
       for (let i = 0; i < k.length; i++) for (let j = i + 1; j < k.length; j++) {
         if (geo(k[i]) && geo(k[j])) continue; // Skalen des Geodreiecks und Lineals sind gestaltet
-        if (!name(k[i]) && !name(k[j])) continue;
+        // Klasse 7 Kapitel 1 (ADR 0043): An Zahlengerade, Thermometer und Koordinatensystem darf keine Beschriftung eine andere überdecken.
+        if (!name(k[i]) && !name(k[j]) && !/^7\\.1\\./.test(auf?.lernziel ?? '')) continue;
         if (ueber(k[i], k[j])) maengel.push(id + ': „' + k[i].t.textContent + '“ überdeckt „' + k[j].t.textContent + '“');
       }
       // Namen gegen Linien: Ein Name darf keine Linie schneiden (Schenkel, Strecken, Kreise im Gitter).

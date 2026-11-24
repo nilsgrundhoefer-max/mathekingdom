@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "pool": "node tools/erzeuge-klasse-5.mjs && node tools/erzeuge-klasse-6.mjs && node tools/pruefe-pool.mjs && node tools/pruefe-pool.mjs aufgabenpool/klasse-6.json && node tools/uebersicht.mjs && node tools/uebersicht.mjs 6",
+    "pool": "node tools/erzeuge-klasse-5.mjs && node tools/erzeuge-klasse-6.mjs && node tools/erzeuge-klasse-7.mjs && node tools/pruefe-pool.mjs && node tools/pruefe-pool.mjs aufgabenpool/klasse-6.json && node tools/pruefe-pool.mjs aufgabenpool/klasse-7.json && node tools/uebersicht.mjs && node tools/uebersicht.mjs 6 && node tools/uebersicht.mjs 7",
     "build": "node tools/baue.mjs",
     "layout": "node tools/pruefe-layout.mjs",
     "test": "node --test tests/*.test.js"

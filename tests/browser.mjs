@@ -22,7 +22,7 @@ const server = createServer((req, res) => {
 const basis = `http://localhost:${server.address().port}/`;
 const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-5.json', wurzel), 'utf8'));
 // Der Aufgabentester des Administrators zählt die Aufgaben aller Klassenstufen (seit 0.43 auch Klasse 6).
-const alleAufgaben = pool.aufgaben.length + JSON.parse(readFileSync(new URL('aufgabenpool/klasse-6.json', wurzel), 'utf8')).aufgaben.length;
+const alleAufgaben = pool.aufgaben.length + [6, 7].reduce((n, k) => n + JSON.parse(readFileSync(new URL(`aufgabenpool/klasse-${k}.json`, wurzel), 'utf8')).aufgaben.length, 0);
 const browser = await chromium.launch();
 // Seit 0.32 sind die Karten in Lehrer- und Administrator-Dashboard anfangs zugeklappt. Die Tests arbeiten mit allem
 // offen; das Auf- und Zuklappen selbst prüft Teil 8.

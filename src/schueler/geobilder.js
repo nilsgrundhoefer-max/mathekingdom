@@ -12,17 +12,22 @@ import { lesePunkte, alsEingabe, gleich } from './geo.js';
 //      zellen?: [[x, y]], zentrum?: [x, y], rechte?: [{ p, u, v }], texte?: [{ x, y, t }] }
 // dazu (für Eingabe und Lösung): { punkte, linie: { p, q, art }, zellen, vieleck, klasse }
 const RAND = 1; // ein Kästchen Rand für Namen und Achsenzahlen
+// Klasse 7 (ADR 0043): Mit `ursprung: [ox, oy]` liegt der Nullpunkt nicht unten links, sondern ox Kästchen nach rechts und oy nach oben.
+// Alle Koordinaten zählen dann vom Nullpunkt aus und dürfen negativ sein (Koordinatensystem mit vier Quadranten).
+const bereich = (g) => { const [ox, oy] = g.ursprung ?? [0, 0]; return { x0: -ox, x1: g.b - ox, y0: -oy, y1: g.h - oy }; };
+const mz = (n) => (n < 0 ? `−${-n}` : String(n));
 function masse(g) {
   const u = Math.max(22, Math.min(40, Math.floor(600 / (g.b + 2 * RAND))));
+  const { x0, y1 } = bereich(g);
   // Kapitel 8: Mit Legende („▢ = 1 cm²“) bekommt das Gitter unten eine Zeile mehr.
-  return { u, B: (g.b + 2 * RAND) * u, H: (g.h + 2 * RAND + (g.legende ? 1 : 0)) * u, X: (x) => (x + RAND) * u, Y: (y) => (g.h - y + RAND) * u };
+  return { u, B: (g.b + 2 * RAND) * u, H: (g.h + 2 * RAND + (g.legende ? 1 : 0)) * u, X: (x) => (x - x0 + RAND) * u, Y: (y) => (y1 - y + RAND) * u };
 }
 // Eine Gerade durch a und b, bis zum Rand des Gitters verlängert. strahl: nur über b hinaus.
 function bisZumRand(g, a, b, strahl = false) {
   const d = [b[0] - a[0], b[1] - a[1]], grenzen = [];
-  const lo = -0.6, hx = g.b + 0.6, hy = g.h + 0.6;
-  for (const [i, lim] of [[0, lo], [0, hx], [1, lo], [1, hy]]) if (d[i] !== 0) grenzen.push((lim - a[i]) / d[i]);
-  const drin = grenzen.filter((t) => { const x = a[0] + t * d[0], y = a[1] + t * d[1]; return x >= lo - 1e-9 && x <= hx + 1e-9 && y >= lo - 1e-9 && y <= hy + 1e-9; }).sort((p, q) => p - q);
+  const r = bereich(g), lo = r.x0 - 0.6, hx = r.x1 + 0.6, ly = r.y0 - 0.6, hy = r.y1 + 0.6;
+  for (const [i, lim] of [[0, lo], [0, hx], [1, ly], [1, hy]]) if (d[i] !== 0) grenzen.push((lim - a[i]) / d[i]);
+  const drin = grenzen.filter((t) => { const x = a[0] + t * d[0], y = a[1] + t * d[1]; return x >= lo - 1e-9 && x <= hx + 1e-9 && y >= ly - 1e-9 && y <= hy + 1e-9; }).sort((p, q) => p - q);
   const t0 = strahl ? 0 : drin[0], t1 = drin.at(-1);
   return [[a[0] + t0 * d[0], a[1] + t0 * d[1]], [a[0] + t1 * d[0], a[1] + t1 * d[1]]];
 }
@@ -50,7 +55,7 @@ function punktSvg(m, p, klasse = 'punkt') {
 }
 const eckenText = (m, ecken) => ecken.map(([x, y]) => `${m.X(x)},${m.Y(y)}`).join(' ');
 const beschreibung = (g) => [g.achsen ? 'Koordinatensystem' : 'Karogitter',
-  g.punkte?.length && `Punkte ${g.punkte.map((p) => (g.achsen ? `${p.n ?? ''}(${p.x}|${p.y})` : p.n)).filter(Boolean).join(', ')}`,
+  g.punkte?.length && `Punkte ${g.punkte.map((p) => (g.achsen ? `${p.n ?? ''}(${mz(p.x)}|${mz(p.y)})` : p.n)).filter(Boolean).join(', ')}`,
   g.linien?.some((l) => l.n) && `Linien ${g.linien.filter((l) => l.n).map((l) => l.n).join(', ')}`,
   g.figuren?.length && `${g.figuren.length === 1 ? 'eine Figur' : `${g.figuren.length} Figuren`}`,
   g.zellen?.length && `${g.zellen.length} gefärbte Kästchen`].filter(Boolean).join(', ');
@@ -59,19 +64,23 @@ export function gitterSvg(g, dazu = {}) {
   const m = masse(g), { u, X, Y } = m;
   const svg = s('svg', { class: `gitterbild${g.achsen ? ' mit-achsen' : ''}${dazu.klasse ? ` ${dazu.klasse}` : ''}`, viewBox: `0 0 ${m.B} ${m.H}`, role: 'img', 'aria-label': beschreibung(g) });
   svg.style.maxWidth = `${m.B}px`;
-  svg.append(s('rect', { x: X(0), y: Y(g.h), width: g.b * u, height: g.h * u, class: 'blatt' }));
+  const r = bereich(g);
+  svg.append(s('rect', { x: X(r.x0), y: Y(r.y1), width: g.b * u, height: g.h * u, class: 'blatt' }));
   // Gefärbte Kästchen liegen unter den Karolinien.
   for (const [x, y] of g.zellen ?? []) svg.append(s('rect', { x: X(x), y: Y(y + 1), width: u, height: u, class: 'zelle' }));
   for (const [x, y] of dazu.zellen ?? []) svg.append(s('rect', { x: X(x), y: Y(y + 1), width: u, height: u, class: 'zelle gesetzt' }));
-  for (let x = 0; x <= g.b; x++) svg.append(s('line', { x1: X(x), y1: Y(0), x2: X(x), y2: Y(g.h), class: 'karo' }));
-  for (let y = 0; y <= g.h; y++) svg.append(s('line', { x1: X(0), y1: Y(y), x2: X(g.b), y2: Y(y), class: 'karo' }));
+  for (let x = r.x0; x <= r.x1; x++) svg.append(s('line', { x1: X(x), y1: Y(r.y0), x2: X(x), y2: Y(r.y1), class: 'karo' }));
+  for (let y = r.y0; y <= r.y1; y++) svg.append(s('line', { x1: X(r.x0), y1: Y(y), x2: X(r.x1), y2: Y(y), class: 'karo' }));
   if (g.achsen) {
     const jede = Math.max(g.b, g.h) > 16 ? 2 : 1;
-    svg.append(s('line', { x1: X(0), y1: Y(0), x2: X(g.b) + u * 0.7, y2: Y(0), class: 'achse' }), s('line', { x1: X(0), y1: Y(0), x2: X(0), y2: Y(g.h) - u * 0.7, class: 'achse' }),
-      s('path', { d: `M${X(g.b) + u * 0.7} ${Y(0)} l-9 -5 v10 Z`, class: 'achsenspitze' }), s('path', { d: `M${X(0)} ${Y(g.h) - u * 0.7} l-5 9 h10 Z`, class: 'achsenspitze' }),
-      s('text', { x: X(g.b) + u * 0.72, y: Y(0) + 20, 'text-anchor': 'middle', class: 'achsenname' }, 'x'), s('text', { x: X(0) - 14, y: Y(g.h) - u * 0.55, 'text-anchor': 'middle', class: 'achsenname' }, 'y'));
-    for (let x = 0; x <= g.b; x += jede) svg.append(s('text', { x: X(x), y: Y(0) + 19, 'text-anchor': 'middle', class: 'achsenzahl' }, String(x)));
-    for (let y = jede; y <= g.h; y += jede) svg.append(s('text', { x: X(0) - 9, y: Y(y) + 5, 'text-anchor': 'end', class: 'achsenzahl' }, String(y)));
+    svg.append(s('line', { x1: X(r.x0), y1: Y(0), x2: X(r.x1) + u * 0.7, y2: Y(0), class: 'achse' }), s('line', { x1: X(0), y1: Y(r.y0), x2: X(0), y2: Y(r.y1) - u * 0.7, class: 'achse' }),
+      s('path', { d: `M${X(r.x1) + u * 0.7} ${Y(0)} l-9 -5 v10 Z`, class: 'achsenspitze' }), s('path', { d: `M${X(0)} ${Y(r.y1) - u * 0.7} l-5 9 h10 Z`, class: 'achsenspitze' }),
+      s('text', { x: X(r.x1) + u * 0.72, y: Y(0) + 20, 'text-anchor': 'middle', class: 'achsenname' }, 'x'), s('text', { x: X(0) - 14, y: Y(r.y1) - u * 0.55, 'text-anchor': 'middle', class: 'achsenname' }, 'y'));
+    // Mit vier Quadranten steht die Null nur einmal, links unter dem Nullpunkt.
+    const mitte = r.x0 < 0 || r.y0 < 0;
+    for (let x = r.x0; x <= r.x1; x++) if (x % jede === 0 && !(mitte && x === 0)) svg.append(s('text', { x: X(x), y: Y(0) + 19, 'text-anchor': 'middle', class: 'achsenzahl' }, mz(x)));
+    for (let y = r.y0; y <= r.y1; y++) if (y % jede === 0 && y !== 0) svg.append(s('text', { x: X(0) - 9, y: Y(y) + 5, 'text-anchor': 'end', class: 'achsenzahl' }, mz(y)));
+    if (mitte) svg.append(s('text', { x: X(0) - 9, y: Y(0) + 19, 'text-anchor': 'end', class: 'achsenzahl' }, '0'));
   }
   for (const f of g.figuren ?? []) {
     svg.append(s('polygon', { points: eckenText(m, f.ecken), class: `figur${f.stil ? ` ${f.stil}` : ''}` }));
@@ -114,7 +123,8 @@ export function gitterEingabe(auf, letzte, gesperrt) {
   // offen: Die Aufgabe verrät nicht, wie viele Punkte es sind („Markiere alle Punkte, die …“).
   const soll = art === 'linie' || art === 'kreis' ? 2 : zellen || auf.offen ? Infinity : auf.loesung.length;
   let gesetzt = lesePunkte(letzte);
-  let zeiger = zellen ? [Math.floor((g.b - 1) / 2), Math.floor((g.h - 1) / 2)] : [Math.round(g.b / 2), Math.round(g.h / 2)];
+  const r = bereich(g);
+  let zeiger = zellen ? [r.x0 + Math.floor((g.b - 1) / 2), r.y0 + Math.floor((g.h - 1) / 2)] : [r.x0 + Math.round(g.b / 2), r.y0 + Math.round(g.h / 2)];
   let zeigerAn = false;
   const feld = h('input', { type: 'hidden', name: 'gitter', value: alsEingabe(gesetzt) });
   const meldung = h('p', { class: 'klein gitterhinweis', 'aria-live': 'polite' });
@@ -147,16 +157,16 @@ export function gitterEingabe(auf, letzte, gesperrt) {
       if (zeigerAn) svg.append(zellen ? s('rect', { x: m.X(zeiger[0]) + 3, y: m.Y(zeiger[1] + 1) + 3, width: m.u - 6, height: m.u - 6, class: 'zeiger' }) : s('circle', { cx: m.X(zeiger[0]), cy: m.Y(zeiger[1]), r: 11, class: 'zeiger' }));
       svg.addEventListener('pointerdown', (e) => {
         const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
-        const q = p.matrixTransform(svg.getScreenCTM().inverse()), x = q.x / m.u - RAND, y = g.h - (q.y / m.u - RAND);
+        const q = p.matrixTransform(svg.getScreenCTM().inverse()), x = q.x / m.u - RAND + r.x0, y = r.y1 - (q.y / m.u - RAND);
         const ziel = zellen ? [Math.floor(x), Math.floor(y)] : [Math.round(x), Math.round(y)];
-        const max = zellen ? [g.b - 1, g.h - 1] : [g.b, g.h];
-        if (ziel[0] < 0 || ziel[1] < 0 || ziel[0] > max[0] || ziel[1] > max[1]) return;
+        const max = zellen ? [r.x1 - 1, r.y1 - 1] : [r.x1, r.y1];
+        if (ziel[0] < r.x0 || ziel[1] < r.y0 || ziel[0] > max[0] || ziel[1] > max[1]) return;
         e.preventDefault(); zeiger = ziel; zeigerAn = false; tippe(ziel);
       });
       svg.addEventListener('keydown', (e) => {
         const schritt = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }[e.key];
-        const max = zellen ? [g.b - 1, g.h - 1] : [g.b, g.h];
-        if (schritt) { e.preventDefault(); zeigerAn = true; zeiger = [Math.max(0, Math.min(max[0], zeiger[0] + schritt[0])), Math.max(0, Math.min(max[1], zeiger[1] + schritt[1]))]; zeichne(); }
+        const max = zellen ? [r.x1 - 1, r.y1 - 1] : [r.x1, r.y1];
+        if (schritt) { e.preventDefault(); zeigerAn = true; zeiger = [Math.max(r.x0, Math.min(max[0], zeiger[0] + schritt[0])), Math.max(r.y0, Math.min(max[1], zeiger[1] + schritt[1]))]; zeichne(); }
         else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); zeigerAn = true; tippe(zeiger); }
       });
     }

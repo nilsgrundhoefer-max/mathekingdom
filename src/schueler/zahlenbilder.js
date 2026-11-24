@@ -9,7 +9,8 @@ import { h, s } from './dom.js';
 import { SYMBOLE } from './datenbilder.js';
 
 // Tausenderlücke ab fünf Stellen, wie im Aufgabentext.
-export const gliedere = (n) => (Number(n) >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ') : String(n));
+// Klasse 7 (ADR 0043): Eine negative Zahl bekommt das echte Minuszeichen.
+export const gliedere = (n) => (typeof n === 'number' && n < 0 ? `−${gliedere(-n)}` : Number(n) >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ') : String(n));
 const istFrage = (x) => typeof x === 'object' && x !== null && x.frage === true;
 
 // ---------- Stellenwerttafel ----------
@@ -175,6 +176,15 @@ export function zeichentafelBild(b) {
   return h('figure', { class: 'datenbild', role: 'img', 'aria-label': `Römische Zahlzeichen: ${b.zeichen.map((z) => `${z} ist ${ROEMISCH_WERT[z]}`).join(', ')}` }, h('table', { class: 'stellentafel zeichentafel' },
     h('thead', {}, h('tr', {}, b.zeichen.map((z) => h('th', { scope: 'col' }, z)))),
     h('tbody', {}, h('tr', {}, b.zeichen.map((z) => h('td', {}, String(ROEMISCH_WERT[z])))))));
+}
+
+// ---------- Vorzeichen (Klasse 7, ADR 0043) ----------
+// Die Zifferntastatur am Handy hat kein Minuszeichen. Der Knopf „±“ neben dem Feld wechselt das Vorzeichen der Eingabe.
+export const MINUS = '−';
+export const mitVorzeichen = (auf) => parseInt(auf?.lernziel, 10) >= 7;
+export function vorzeichenKnopf(feld, gesperrt) {
+  return h('button', { type: 'button', class: 'schlicht vorzeichen', disabled: gesperrt, 'aria-label': 'Vorzeichen wechseln', title: 'Vorzeichen wechseln',
+    onclick: () => { const v = feld.value.trim(); feld.value = /^[-−–]/.test(v) ? v.replace(/^[-−–]\s*/, '') : `${MINUS}${v.replace(/^\+\s*/, '')}`; feld.focus(); } }, '±');
 }
 
 export const ZAHLENBILDER = { tafel: tafelBild, schaetzbild: schaetzBild, zeichentafel: zeichentafelBild };
