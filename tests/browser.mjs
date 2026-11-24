@@ -1469,39 +1469,91 @@ async function weiter(seite, wahl = '#weiter') {
     await ohne.waitForSelector('nav.bereiche');
     await ohne.close();
   }
-  // Zu Hause (Version 0.46): Die gemerkten Ordner liegen auf Tauschlaufwerken, die nicht erreichbar sind, und der
-  // Browser antwortet auf die Frage nach der Erlaubnis nie. Dann bleibt nicht „Mathekingdom öffnet …“ stehen.
+  // Zu Hause (Version 0.47, ADR 0040): Die Tauschlaufwerke sind nicht erreichbar, und der Browser antwortet auf keine
+  // Frage zu diesen Ordnern, auch nicht auf den Vergleich zweier Ordner. Gewählt werden Ordner zu Hause, in einen
+  // zweiten Ordnersatz. In der Schule öffnen danach wieder die alten, zu Hause die neuen, ohne neue Wahl.
   {
-    const weg = await kontext.newPage();
-    weg.on('pageerror', (e) => fehler.push(`lehrer ohne Laufwerk: ${e.message}`));
-    await weg.addInitScript(() => {
-      FileSystemHandle.prototype.queryPermission = () => new Promise(() => {});
-      FileSystemHandle.prototype.requestPermission = () => new Promise(() => {});
-    });
-    await weg.goto(`${basis}test/Lehrer-NG.html`);
-    // Nach der Frist kommt die Karte mit den hinterlegten Ordnern.
-    await weg.waitForSelector('#hinterlegt', { timeout: 10000 });
-    // Ein Klick darauf hängt wieder: Nach einer Weile kommt die Wahl der Ordner mit dem Schritt, der klemmt.
-    await weg.click('#hinterlegt h1');
-    await weg.waitForSelector('.meldung.fehler', { timeout: 20000 });
-    assert.match(await weg.innerText('.meldung.fehler'), /kommt beim Schritt „Zugriff auf die Ordner prüfen“ nicht weiter/);
-    assert.ok(await weg.locator('#wahl-schueler').count());
-    assert.doesNotMatch(await weg.innerText('main'), /Mathekingdom öffnet/);
-    await foto(weg, 'lehrer-laufwerk-nicht-erreichbar');
-    await weg.close();
-    const adminWeg = await kontext.newPage();
-    adminWeg.on('pageerror', (e) => fehler.push(`admin ohne Laufwerk: ${e.message}`));
-    await adminWeg.addInitScript(() => {
-      FileSystemHandle.prototype.queryPermission = () => new Promise(() => {});
-      FileSystemHandle.prototype.requestPermission = () => new Promise(() => {});
-    });
-    await adminWeg.goto(`${basis}dist/Mathekingdom-Admin.html`);
-    await adminWeg.waitForSelector('#hinterlegt', { timeout: 10000 });
-    await adminWeg.click('#hinterlegt h1');
-    await adminWeg.waitForSelector('.meldung.fehler, .fehler', { timeout: 20000 });
-    assert.match(await adminWeg.innerText('body'), /kommt beim Schritt „Zugriff auf die Ordner prüfen“ nicht weiter/);
-    assert.ok(await adminWeg.locator('#wahl-schueler').count());
-    await adminWeg.close();
+    const weg = (liste) => lehrer.evaluate((l) => localStorage.setItem('mk-weg', l), liste);
+    const sperre = () => {
+      const wurzel = navigator.storage.getDirectory();
+      const haengt = async (h) => { const aus = (localStorage.getItem('mk-weg') ?? '').split(',').filter(Boolean); const p = await (await wurzel).resolve(h); return Boolean(p && aus.includes(p[0])); };
+      for (const n of ['queryPermission', 'requestPermission', 'isSameEntry']) {
+        const echt = FileSystemHandle.prototype[n];
+        FileSystemHandle.prototype[n] = async function (...a) { if (await haengt(this)) return new Promise(() => {}); return echt.apply(this, a); };
+      }
+    };
+    const kopiere = (von, nach) => lehrer.evaluate(async ([v, n]) => {
+      const w = await navigator.storage.getDirectory();
+      const rein = async (q, z) => {
+        for await (const [name, e] of q.entries()) {
+          if (e.kind === 'directory') await rein(e, await z.getDirectoryHandle(name, { create: true }));
+          else { const st = await (await z.getFileHandle(name, { create: true })).createWritable(); await st.write(await e.getFile()); await st.close(); }
+        }
+      };
+      await rein(await w.getDirectoryHandle(v), await w.getDirectoryHandle(n, { create: true }));
+    }, [von, nach]);
+    for (const o of ['P', 'S', 'L']) await kopiere(o, `${o}2`);
+    await weg('P,S,L');
+    const neu = async (name) => { const p = await kontext.newPage(); p.on('pageerror', (e) => fehler.push(`${name} zu Hause: ${e.message}`)); p.on('dialog', (d) => d.accept()); await p.addInitScript(sperre); return p; };
+
+    // Administrator: gleich die Wahl mit dem Hinweis, welche Ordner nicht antworten. Keine Karte, kein Hänger.
+    const adm = await neu('admin');
+    await adm.goto(`${basis}dist/Mathekingdom-Admin.html`);
+    await adm.waitForSelector('#stumm', { timeout: 10000 });
+    assert.match(await adm.innerText('#stumm'), /antworten gerade nicht: Dein persönliches Lehrerlaufwerk \(Ordner „P“\), Schülertauschlaufwerk \(Ordner „Mathekingdom“\)/);
+    assert.doesNotMatch(await adm.innerText('body'), /kommt beim Schritt/);
+    assert.equal(await adm.locator('#hinterlegt').count(), 0);
+    await foto(adm, 'admin-zu-hause');
+    for (const [art, pfad] of [['persoenlich', 'P2'], ['schueler', 'S2'], ['lehrer', 'L2']]) { await waehle(adm, pfad); await adm.click(`#wahl-${art}`); await adm.waitForSelector(`#wahl-${art}.schlicht`); }
+    await adm.click('#weiter');
+    await adm.waitForSelector('#laufwerke', { timeout: 10000 });
+    assert.match(await adm.getAttribute('#laufwerke', 'title'), /Ordner „P2“/);
+    // Zu Hause noch einmal: ohne Wahl.
+    await adm.reload();
+    await adm.waitForSelector('#laufwerke', { timeout: 10000 });
+    assert.match(await adm.getAttribute('#laufwerke', 'title'), /Ordner „P2“/);
+
+    // Lehrkraft: ebenso.
+    const leh = await neu('lehrer');
+    await leh.goto(`${basis}test/Lehrer-NG.html`);
+    await leh.waitForSelector('#stumm', { timeout: 10000 });
+    assert.match(await leh.innerText('#stumm'), /Schülertauschlaufwerk \(Ordner „Mathekingdom“\)/);
+    await waehle(leh, 'S2/Mathekingdom'); await leh.click('#wahl-schueler'); await leh.waitForSelector('#wahl-schueler.schlicht');
+    await waehle(leh, 'L2'); await leh.click('#wahl-lehrer'); await leh.waitForSelector('#wahl-lehrer.schlicht');
+    await leh.click('#weiter');
+    await leh.waitForSelector('nav.bereiche', { timeout: 15000 });
+    await leh.close();
+
+    // Schüler: Unter dem Knopf steht, dass der gemerkte Ordner nicht antwortet; der Klick wählt einen anderen.
+    const sch = await neu('schüler');
+    await sch.goto(`${basis}test/Mathekingdom.html`);
+    await sch.waitForSelector('#ordner-stumm', { timeout: 10000 });
+    assert.match(await sch.innerText('#ordner-stumm'), /„Mathekingdom“ antwortet gerade nicht/);
+    await sch.fill('#code', code); await sch.fill('#pin', pin);
+    await waehle(sch, 'S2');
+    await sch.click('#ordner');
+    await sch.waitForSelector('.regionen', { timeout: 15000 });
+    await foto(sch, 'schueler-zu-hause');
+
+    // Wieder in der Schule: Die Ordner von zu Hause antworten nicht, die alten öffnen ohne Wahl.
+    await weg('P2,S2,L2');
+    await adm.reload();
+    await adm.waitForSelector('#laufwerke', { timeout: 10000 });
+    assert.match(await adm.getAttribute('#laufwerke', 'title'), /Ordner „P“/);
+    await adm.close();
+    await sch.reload();
+    await sch.waitForFunction(() => document.getElementById('ordner')?.textContent === 'Aufbrechen', null, { timeout: 10000 });
+    assert.equal(await sch.locator('#ordner-stumm').count(), 0);
+    await sch.fill('#code', code); await sch.fill('#pin', pin);
+    await waehle(sch, 'X');
+    await sch.click('#ordner');
+    await sch.waitForSelector('.regionen', { timeout: 15000 });
+    await sch.close();
+    const leh2 = await neu('lehrer schule');
+    await leh2.goto(`${basis}test/Lehrer-NG.html`);
+    await leh2.waitForSelector('nav.bereiche', { timeout: 15000 });
+    await leh2.close();
+    await weg('');
   }
 
   // Münzgabe (ADR 0027): Der Administrator schickt Lena 500 Münzen. Sie kommen als Brief, gutgeschrieben beim Öffnen.

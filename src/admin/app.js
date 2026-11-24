@@ -12,7 +12,7 @@ import * as M from '../gemeinsam/meldungen.js';
 import * as ST from '../gemeinsam/statistik.js';
 import * as L from '../schueler/logik.js';
 import { erzeugeCode, FORMAT_NAMEN } from '../lehrer/auswertung.js';
-import { gemerkteOrdner, erlaube, startwache, haengerText } from '../gemeinsam/gemerkt.js';
+import { gemerkteOrdner, zugriff, startwache, haengerText, ordnersaetze, gleicherOrdner, stummText } from '../gemeinsam/gemerkt.js';
 import { versionsHinweis, VERSION_STIL } from '../gemeinsam/version.js';
 import { testklassenKarte } from './testklasse.js';
 import { aufgabentesterKarte, TESTER_STIL, ADMIN_MELDUNGEN } from './aufgabentester.js';
@@ -23,6 +23,8 @@ import { laufwerkSchild, LAUFWERK_STIL } from '../gemeinsam/laufwerke.js';
 const klapp = aufklapper('admin');
 
 const gemerkt = gemerkteOrdner('mathekingdom-admin');
+// Zwei Ordnersätze, etwa Schule und zu Hause (Version 0.47, ADR 0040).
+const saetze = ordnersaetze(gemerkt, ['persoenlich', 'schueler', 'lehrer']);
 const LAUFWERKE = {
   persoenlich: ['Dein persönliches Lehrerlaufwerk', 'Hier liegt dein Administrator-Schlüssel. Nur du darfst Zugriff haben.'],
   schueler: ['Schülertauschlaufwerk', 'Wähle den Ordner „Mathekingdom“ oder das Laufwerk; fehlt der Ordner, wird er angelegt.'],
@@ -91,17 +93,23 @@ async function waehle(art) {
     if (await ablage.lies(SCH.VERZEICHNIS)) throw new Error('Das ist ein Mathekingdom-Ordner auf einem Tauschlaufwerk. Für den Schlüssel brauchst du einen Ordner, auf den nur du Zugriff hast.');
   } else ablage = await SCH.mathekingdomOrdner(ablage);
   for (const andere of Object.keys(LAUFWERKE)) {
-    if (andere !== art && z.wahl[andere] && await z.wahl[andere].isSameEntry(ablage.handle)) throw new Error(`Diesen Ordner hast du schon für das ${LAUFWERKE[andere][0]} gewählt.`);
+    if (andere !== art && z.wahl[andere] && await gleicherOrdner(z.wahl[andere], ablage.handle)) throw new Error(`Diesen Ordner hast du schon für das ${LAUFWERKE[andere][0]} gewählt.`);
   }
   z.wahl[art] = ablage.handle; z.wahl.zeigeWahl = true; // wer selbst wählt, bleibt bei der Wahl
-  await gemerkt.merke(art, ablage.handle);
+  await saetze.merke(z.wahl.nr, art, ablage.handle);
 }
 let wache = null;
 const schritt = (s) => wache?.schritt(s);
 async function weiter(fragen = true) {
   schritt('Zugriff auf die Ordner prüfen');
   for (const art of Object.keys(LAUFWERKE)) {
-    if (!(await erlaube(z.wahl[art], fragen))) {
+    const stand = await zugriff(z.wahl[art], fragen);
+    if (stand === 'stumm') {
+      // Laufwerk nicht erreichbar (Version 0.47): nicht weiter fragen, sondern neu wählen lassen.
+      z.wahl.zeigeWahl = true;
+      throw new Error(`${LAUFWERKE[art][0]} antwortet gerade nicht (Ordner „${z.wahl[art].name}“). Prüfe, ob das Laufwerk verbunden ist, oder wähle hier einen anderen Ordner.`);
+    }
+    if (stand !== 'ja') {
       if (!fragen) return false;
       throw new Error(`Bitte erlaube den Zugriff auf „${LAUFWERKE[art][0]}“. Klicke dazu noch einmal.`);
     }
@@ -133,6 +141,7 @@ async function weiter(fragen = true) {
   if (window.MK_SCHUELER_JS) await schueler.schreibe(`${S.SYSTEMORDNER}/${S.KOPIE_SCHUELER}`, window.MK_SCHUELER_JS).catch(() => {});
   schritt('Laufwerke prüfen');
   z.laufwerke = await pruefeLaufwerke();
+  await saetze.benutzt(z.wahl.nr);
   return true;
 }
 // Für das Schild oben rechts: Was auf den drei Laufwerken gefunden wurde.
@@ -162,11 +171,12 @@ async function andererOrdner(art) {
 
 function start() {
   if (!z.wahl) {
-    z.wahl = { persoenlich: null, schueler: null, lehrer: null, geladen: false, geprueft: false, zeigeWahl: false };
+    z.wahl = { persoenlich: null, schueler: null, lehrer: null, nr: 0, stumm: [], geladen: false, geprueft: false, zeigeWahl: false };
     wache = neueWache();
-    Promise.all(Object.keys(LAUFWERKE).map((a) => gemerkt.hole(a))).then(async ([p, s, l]) => {
-      z.wahl.persoenlich ??= p; z.wahl.schueler ??= s; z.wahl.lehrer ??= l; z.wahl.geladen = true;
-      if (p && s && l && S.kannOrdner()) return oeffneGemerkt(false);
+    saetze.finde().then(async ({ nr, ordner: { persoenlich: p, schueler: s, lehrer: l }, stumm }) => {
+      z.wahl.persoenlich ??= p; z.wahl.schueler ??= s; z.wahl.lehrer ??= l; Object.assign(z.wahl, { nr, stumm, geladen: true });
+      if (stumm.length) z.wahl.zeigeWahl = true;
+      else if (p && s && l && S.kannOrdner()) return oeffneGemerkt(false);
       z.wahl.geprueft = true; male();
     }).catch((e) => { z.fehler = e.message; z.wahl.geprueft = true; z.wahl.zeigeWahl = true; male(); })
       .finally(() => { wache?.fertig(); wache = null; });
@@ -185,7 +195,8 @@ function start() {
     h('h1', {}, 'Mathekingdom einrichten'),
     !S.kannOrdner() ? h('p', { class: 'fehlertext' }, 'Dieser Browser kann nicht in Ordnern speichern. Öffne die Datei bitte mit Edge oder Chrome.')
       : h('div', {},
-        h('p', { class: 'klein' }, 'Nur beim ersten Mal: drei Ordner wählen. Danach merkt sich der Browser sie.'),
+        z.wahl.stumm.length ? h('div', { class: 'meldung warnung', id: 'stumm' }, stummText(z.wahl.stumm, (a) => LAUFWERKE[a][0]))
+          : h('p', { class: 'klein' }, 'Nur beim ersten Mal: drei Ordner wählen. Danach merkt sich der Browser sie.'),
         h('ul', { class: 'liste' }, Object.entries(LAUFWERKE).map(([art, [titel, text]]) => h('li', {},
           h('b', {}, titel), ' ', z.wahl[art] ? h('span', {}, `Ordner „${z.wahl[art].name}“ gemerkt `) : h('span', { class: 'klein' }, `${text} `),
           h('button', { class: z.wahl[art] ? 'schlicht' : 'haupt', id: `wahl-${art}`, onclick: tue(() => waehle(art)) }, z.wahl[art] ? 'Anderen Ordner wählen' : 'Ordner wählen')))),

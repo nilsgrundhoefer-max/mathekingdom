@@ -33,12 +33,62 @@ export function gemerkteOrdner(name) {
   };
 }
 // Ist der Zugriff schon erlaubt? Sonst fragen (geht nur direkt nach einem Klick).
-export async function erlaube(handle, fragen = true) {
+// Antwortet der Ordner nicht (Laufwerk nicht erreichbar, Version 0.47), wird gar nicht erst gefragt: Die Frage nach
+// der Erlaubnis bliebe sonst ohne Antwort hängen.
+export async function zugriff(handle, fragen = true) {
   try {
-    if ((await mitFrist(handle.queryPermission({ mode: 'readwrite' }), FRIST, 'prompt')) === 'granted') return true;
-    return fragen && (await handle.requestPermission({ mode: 'readwrite' })) === 'granted';
-  } catch { return false; }
+    const stand = await antwort(handle);
+    if (stand === STUMM) return 'stumm';
+    if (stand === 'granted') return 'ja';
+    return fragen && (await handle.requestPermission({ mode: 'readwrite' })) === 'granted' ? 'ja' : 'nein';
+  } catch { return 'nein'; }
 }
+export const erlaube = async (handle, fragen = true) => (await zugriff(handle, fragen)) === 'ja';
+// Wie steht es um die Erlaubnis? STUMM, wenn der Ordner in der Frist gar nicht antwortet.
+export const STUMM = 'stumm';
+export const antwort = (handle) => mitFrist(Promise.resolve().then(() => handle.queryPermission({ mode: 'readwrite' })), FRIST, STUMM);
+// Derselbe Ordner? Antwortet einer nicht, gilt er als ein anderer.
+export const gleicherOrdner = (a, b) => mitFrist(Promise.resolve().then(() => a.isSameEntry(b)), FRIST, false).catch(() => false);
+
+// ---------- Ordnersätze (Version 0.47, ADR 0040) ----------
+// Jedes Dashboard merkt sich bis zu zwei Ordnersätze, etwa einen für die Schule und einen für zu Hause. Beim Öffnen
+// werden alle Ordner beider Sätze zugleich gefragt; genommen wird ein vollständiger Satz, dessen Ordner alle antworten,
+// der zuletzt benutzte zuerst. Antwortet keiner, wird neu gewählt, und zwar in einen freien Satz oder in den, der
+// länger nicht benutzt wurde. Der andere Satz bleibt gemerkt.
+export const SAETZE = 2;
+const schluesselIn = (art, nr) => (nr === 0 ? art : `${art}#${nr + 1}`);
+export function ordnersaetze(gemerkt, arten) {
+  return {
+    // Liefert { nr, ordner: { art: handle }, erlaubt, stumm: [{ art, name }] }.
+    async finde() {
+      const saetze = await Promise.all([...Array(SAETZE).keys()].map(async (nr) => {
+        const ordner = {};
+        for (const art of arten) ordner[art] = await gemerkt.hole(schluesselIn(art, nr));
+        return { nr, ordner };
+      }));
+      const zuletzt = Number(await gemerkt.hole('satz-zuletzt')) || 0;
+      await Promise.all(saetze.flatMap((s) => arten.filter((a) => s.ordner[a]).map(async (a) => { (s.antwort ??= {})[a] = await antwort(s.ordner[a]); })));
+      for (const s of saetze) {
+        s.voll = arten.every((a) => s.ordner[a]);
+        s.leer = arten.every((a) => !s.ordner[a]);
+        s.stumm = arten.filter((a) => s.ordner[a] && s.antwort[a] === STUMM);
+      }
+      const reihe = [...saetze].sort((a, b) => (b.nr === zuletzt) - (a.nr === zuletzt));
+      const gut = reihe.find((s) => s.voll && !s.stumm.length);
+      const stumm = saetze.flatMap((s) => s.stumm.map((a) => ({ art: a, name: s.ordner[a].name })));
+      if (gut) return { nr: gut.nr, ordner: gut.ordner, erlaubt: arten.every((a) => gut.antwort[a] === 'granted'), stumm: [] };
+      // Kein Satz geht: weiter am angefangenen Satz, sonst ein freier, sonst der länger nicht benutzte.
+      const ziel = reihe.find((s) => !s.leer && !s.voll && !s.stumm.length) ?? saetze.find((s) => s.leer) ?? reihe.find((s) => s.nr !== zuletzt) ?? saetze[0];
+      const ordner = Object.fromEntries(arten.map((a) => [a, ziel.stumm.includes(a) ? null : ziel.ordner[a]]));
+      return { nr: ziel.nr, ordner, erlaubt: false, stumm };
+    },
+    merke: (nr, art, handle) => gemerkt.merke(schluesselIn(art, nr), handle),
+    vergiss: (nr, art) => gemerkt.vergiss(schluesselIn(art, nr)),
+    benutzt: (nr) => gemerkt.merke('satz-zuletzt', nr),
+  };
+}
+// Hinweis über Ordner, die beim Öffnen nicht geantwortet haben. titel(art) nennt das Laufwerk.
+export const stummText = (stumm, titel) => `${stumm.length > 1 ? 'Diese hinterlegten Ordner antworten' : 'Dieser hinterlegte Ordner antwortet'} gerade nicht: ${stumm.map((s) => `${titel(s.art)} (Ordner „${s.name}“)`).join(', ')}. Bist du nicht in der Schule? Dann wähle hier die Ordner, mit denen du jetzt arbeitest. Die hinterlegten bleiben gemerkt, und dort, wo sie erreichbar sind, öffnet Mathekingdom wieder mit ihnen.`;
 
 // ---------- Start ohne Hängenbleiben (Version 0.46) ----------
 // Im Schulnetz kann ein Schritt beim Öffnen ewig dauern, etwa wenn ein Tauschlaufwerk gerade nicht erreichbar ist

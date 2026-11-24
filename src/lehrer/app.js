@@ -13,7 +13,7 @@ import * as P from '../gemeinsam/protokoll.js';
 import * as B from '../gemeinsam/backup.js';
 import * as M from '../gemeinsam/meldungen.js';
 import * as SCH from '../gemeinsam/schule.js';
-import { gemerkteOrdner, erlaube, startwache, haengerText } from '../gemeinsam/gemerkt.js';
+import { gemerkteOrdner, erlaube, zugriff, startwache, haengerText, ordnersaetze, stummText } from '../gemeinsam/gemerkt.js';
 import { aufklapper, AUFKLAPP_STIL } from '../gemeinsam/aufklappen.js';
 import { laufwerkSchild, LAUFWERK_STIL } from '../gemeinsam/laufwerke.js';
 
@@ -54,6 +54,8 @@ const lernzieltext = (id) => A.lernzieleMitAufgaben(z.pool, z.index).find((l) =>
 const gemerkt = gemerkteOrdner('mathekingdom-lehrer');
 const merke = (schluessel, handle) => gemerkt.merke(schluessel, handle);
 const erinnere = (schluessel) => gemerkt.hole(schluessel);
+// Mit Schulverzeichnis zwei Ordnersätze, etwa Schule und zu Hause (Version 0.47, ADR 0040).
+const saetze = ordnersaetze(gemerkt, ['schule-schueler', 'schule-lehrer']);
 
 // ---------- Dateien ----------
 // Ohne Schulverzeichnis steht alles in den Lehrerdaten. Mit Schulverzeichnis gehören Schlüssel und Protokoll der
@@ -415,7 +417,7 @@ async function waehleLaufwerk(art) {
     const gewaehlt = S.ordnerAblage(await window.showDirectoryPicker({ id: `mk-${art}`, mode: 'readwrite' }));
     const { wurzel: w } = await SCH.findeSchule(gewaehlt);
     if (!w) { z.fehler = `In diesem Ordner liegt kein eingerichtetes Mathekingdom. Wähle auf dem ${LAUFWERK[art][0]} den Ordner „Mathekingdom“${pfadText(art)}.`; male(); return false; }
-    z.wahl[art] = w.handle; z.wahl.zeigeWahl = true; await merke(`schule-${art}`, w.handle); z.fehler = null; male();
+    z.wahl[art] = w.handle; z.wahl.zeigeWahl = true; await saetze.merke(z.wahl.nr, `schule-${art}`, w.handle); z.fehler = null; male();
     return true;
   } catch (e) { if (e.name !== 'AbortError') { z.fehler = e.message; male(); } return false; }
 }
@@ -436,24 +438,32 @@ async function oeffneGemerkteSchuleMitWache(kuerzel, fragen) {
   schritt('Zugriff auf die Ordner prüfen');
   try { localStorage.setItem('mk-kuerzel', kuerzel); } catch { /* egal */ }
   for (const art of ['schueler', 'lehrer']) {
-    if (!(await erlaube(z.wahl[art], fragen))) {
+    const stand = await zugriff(z.wahl[art], fragen);
+    if (stand === 'stumm') {
+      // Laufwerk nicht erreichbar (Version 0.47): nicht weiter fragen, sondern neu wählen lassen.
+      z.fehler = `Das ${LAUFWERK[art][0]} antwortet gerade nicht (Ordner „${z.wahl[art].name}“). Prüfe, ob das Laufwerk verbunden ist, oder wähle hier einen anderen Ordner.`;
+      z.wahl.zeigeWahl = true; male(); return false;
+    }
+    if (stand !== 'ja') {
       if (!fragen) return false;
       z.fehler = `Bitte erlaube den Zugriff auf das ${LAUFWERK[art][0]}. Klicke dazu noch einmal.`; male(); return false;
     }
   }
-  try { await oeffneSchule(S.ordnerAblage(z.wahl.schueler), S.ordnerAblage(z.wahl.lehrer), kuerzel); return true; }
+  try { await oeffneSchule(S.ordnerAblage(z.wahl.schueler), S.ordnerAblage(z.wahl.lehrer), kuerzel); await saetze.benutzt(z.wahl.nr); return true; }
   // Fehlt etwas oder ist ein Ordner falsch: zurück zur Wahl.
   catch (e) { z.fehler = e.message; z.wahl.zeigeWahl = true; male(); return false; }
 }
 function startSchule() {
   if (!z.wahl) {
-    z.wahl = { schueler: null, lehrer: null, geladen: false, zeigeWahl: false, geprueft: false };
+    z.wahl = { schueler: null, lehrer: null, nr: 0, stumm: [], geladen: false, zeigeWahl: false, geprueft: false };
     wache = neueWache();
-    Promise.all([erinnere('schule-schueler'), erinnere('schule-lehrer')]).then(async ([s, l]) => {
-      Object.assign(z.wahl, { schueler: z.wahl.schueler ?? s, lehrer: z.wahl.lehrer ?? l, geladen: true });
+    saetze.finde().then(async ({ nr, ordner, stumm }) => {
+      const s = ordner['schule-schueler'], l = ordner['schule-lehrer'];
+      Object.assign(z.wahl, { schueler: z.wahl.schueler ?? s, lehrer: z.wahl.lehrer ?? l, nr, stumm, geladen: true });
+      if (stumm.length) z.wahl.zeigeWahl = true;
       const k = bekanntesKuerzel();
       // Erlaubnis noch da: gleich hinein, ohne Zwischenschritt.
-      if (k && s && l) await oeffneGemerkteSchule(k, false);
+      if (k && s && l && !stumm.length) await oeffneGemerkteSchule(k, false);
       if (z.ansicht === 'start') { z.wahl.geprueft = true; male(); }
     }).catch((e) => { z.fehler = e.message; z.wahl.geprueft = true; z.wahl.zeigeWahl = true; male(); })
       .finally(() => { wache?.fertig(); wache = null; });
@@ -476,7 +486,8 @@ function startSchule() {
     window.MK_KUERZEL ? h('p', {}, `Dein Kürzel: `, h('b', {}, window.MK_KUERZEL)) : h('p', {}, h('label', {}, 'Dein Kürzel ', kuerzelFeld)),
     !S.kannOrdner() ? h('p', { class: 'fehlertext' }, 'Dieser Browser kann nicht in Ordnern speichern. Öffne die Datei bitte mit Edge oder Chrome.')
       : h('div', {},
-        h('p', { class: 'klein' }, 'Nur beim ersten Mal: Wähle auf beiden Tauschlaufwerken den Ordner „Mathekingdom“. Danach merkt sich der Browser die Ordner.'),
+        z.wahl.stumm.length ? h('div', { class: 'meldung warnung', id: 'stumm' }, stummText(z.wahl.stumm, (a) => LAUFWERK[a.replace('schule-', '')][0]))
+          : h('p', { class: 'klein' }, 'Nur beim ersten Mal: Wähle auf beiden Tauschlaufwerken den Ordner „Mathekingdom“. Danach merkt sich der Browser die Ordner.'),
         h('ul', { class: 'liste' }, zeile('schueler'), zeile('lehrer')),
         h('button', { class: 'haupt', id: 'weiter', disabled: !(z.wahl.schueler && z.wahl.lehrer), onclick: weiter }, 'Weiter')),
     h('button', { class: 'schlicht', id: 'beispiel', onclick: starteBeispiel }, 'Mit einer Beispielklasse ausprobieren'));
