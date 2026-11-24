@@ -82,6 +82,12 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .region.neu { border-color: #c79a2b; box-shadow: 0 0 0 3px #f1dc9c; animation: torleuchten 1.6s ease-in-out 2; }
 @keyframes torleuchten { 50% { box-shadow: 0 0 0 7px #f6e7b6; } }
 @media (prefers-reduced-motion: reduce) { #mathekingdom .region.neu { animation: none; } }
+/* Tor der Etappe (ADR 0041): ein ruhiger goldener Schimmer statt eines Knopfs „Weitermachen“. */
+#mathekingdom .region.leuchtet { border: 2px solid #c79a2b; background: linear-gradient(110deg, #fff6dc 0%, #fffdf6 40%, #fbe9b8 50%, #fffdf6 60%, #fff6dc 100%); background-size: 250% 100%; box-shadow: 0 0 0 3px #f1dc9c, 0 4px 14px rgba(199, 154, 43, .28); animation: torschimmer 3.2s ease-in-out infinite; }
+#mathekingdom .region.leuchtet:hover:not(:disabled) { border-color: var(--nacht); }
+#mathekingdom .region .hier-weiter { color: #8a6412; letter-spacing: .02em; text-transform: none; }
+@keyframes torschimmer { 0% { background-position: 100% 0; } 60%, 100% { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { #mathekingdom .region.leuchtet { animation: none; background: #fff6dc; } }
 #mathekingdom .weitere-tore { text-align: center; color: var(--grau); margin-top: 14px; font-style: italic; }
 
 /* Regionskarte */
@@ -171,6 +177,10 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .kaertchen-offen { background: linear-gradient(#f8efd6, #f8efd6) padding-box; border: 2px solid #d9c48d; border-left-width: 8px; border-right-width: 8px; border-radius: 10px; padding: 12px 14px; box-shadow: inset 0 6px 0 -3px #efe1b8, inset 0 -6px 0 -3px #efe1b8; }
 #mathekingdom .kaertchen-offen p { margin: 4px 0 0; }
 #mathekingdom .hilferuf { white-space: normal; margin-top: 14px; width: 100%; justify-content: center; }
+#mathekingdom .hilfegrund { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; background: var(--karte); border: 2px solid var(--rand); border-radius: 12px; padding: 10px; }
+#mathekingdom .hilfegrund > button.schlicht { justify-content: flex-start; text-align: left; white-space: normal; gap: 8px; }
+#mathekingdom .hilfegrund-zeichen { display: inline-flex; width: 1.4em; justify-content: center; font-weight: 700; }
+#mathekingdom .hilfegrund .link { align-self: center; }
 
 /* Wappen und Spiel */
 #mathekingdom .werkbank { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; background: var(--karte); border: 1px solid var(--rand); border-radius: 14px; padding: 16px 24px; }
@@ -304,10 +314,6 @@ body { margin: 0; background: #efe6d2; }
 
 /* Startseite: Etappe */
 /* 0.37: Weitermachen als ein Knopf mit kleiner Zielzeile */
-#mathekingdom .etappe { display: flex; gap: 6px 14px; align-items: center; flex-wrap: wrap; margin-bottom: 22px; }
-#mathekingdom .etappe .haupt { font-size: 1.1rem; padding: 10px 22px; display: inline-flex; align-items: center; gap: 10px; }
-#mathekingdom .etappe .weiter-pfeil { font-size: .9em; }
-#mathekingdom .etappe-ziel { font-size: .92rem; color: var(--grau); min-width: 0; }
 
 /* Merkzettel */
 #mathekingdom .merkzettel { background: #f1f2e4; border: 1px solid #cfd2b4; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; }
@@ -590,7 +596,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom table.zeichentafel td { font-size: 1.05rem; font-weight: 600; height: auto; }
 
 /* 0.37: Aufgabentester im Admin-Dashboard. Weitergehen, Zurück und Hilferuf steuert dort das Admin-Dashboard. */
-#mathekingdom.probe #zurueck, #mathekingdom.probe .ergebnis button, #mathekingdom.probe .ergebnis .vorschlag, #mathekingdom.probe #hilferuf, #mathekingdom.probe .versionshinweis, #mathekingdom.probe .kennung { display: none !important; }
+#mathekingdom.probe #zurueck, #mathekingdom.probe .ergebnis button, #mathekingdom.probe .ergebnis .vorschlag, #mathekingdom.probe #hilferuf, #mathekingdom.probe #hilfegrund, #mathekingdom.probe .versionshinweis, #mathekingdom.probe .kennung { display: none !important; }
 
 /* Kapitel 5: Karogitter, Gitterzeichnen und Lineal (ADR 0032) */
 #mathekingdom svg.gitterbild { display: block; width: 100%; min-width: 300px; height: auto; user-select: none; }

@@ -285,6 +285,8 @@ function namenKarte() {
           }) }, 'Entfernen')),
           h('td', {}, h('button', { class: 'schlicht gefahr', 'data-loeschen': c, onclick: tue(() => loescheSchueler(klasse, daten, c)) }, 'Löschen')),
           h('td', {}, h('button', { class: 'schlicht', 'data-muenzen': c, onclick: () => { z.gabe = { code: c, muenzen: 100 }; male(); } }, 'Münzen schicken'))))))),
+      codes.length > 0 && h('div', { class: 'reihe' }, h('button', { class: 'schlicht', id: 'klassengabe', onclick: () => { z.gabe = { klasse: true, muenzen: 100 }; male(); } }, 'Münzen an die ganze Klasse schicken')),
+      z.gabe?.klasse && klassengabeKarte(klasse, daten),
       z.gabe && daten.namen[z.gabe.code] && gabeKarte(klasse, daten),
       h('p', { class: 'klein' }, '„Entfernen“ nimmt einen Schüler nur aus der Namensliste, sein Speicherstand bleibt. „Löschen“ löscht auch den Speicherstand und seine Backups endgültig, etwa bei einem Schulwechsel.'),
       h('h3', {}, 'Schüler hinzufügen'), liste,
@@ -316,6 +318,76 @@ async function schickeGabe(klasse, code, muenzen, satz) {
   ((daten.einst.muenzgaben ??= {})[code] ??= []).push({ id: neueGabeId(), t: jetzt(), muenzen, ...(satz ? { satz: satz.slice(0, 200) } : {}) });
   await speichereKlasse(klasse, daten);
   return daten;
+}
+// Münzgabe an die ganze Klasse (ADR 0041): jeder Schüler der Namensliste bekommt einen eigenen Brief mit eigener Kennung;
+// `anKlasse` verbindet die Briefe, damit sie sich gemeinsam zurückziehen lassen.
+async function schickeKlassengabe(klasse, muenzen, satz) {
+  if (!L.MUENZGABEN.includes(muenzen)) throw new Error('Diese Menge gibt es nicht.');
+  const daten = await ladeKlasse(klasse);
+  const codes = Object.keys(daten?.namen ?? {});
+  if (!codes.length) throw new Error('In dieser Klasse stehen noch keine Schüler.');
+  const t = jetzt(), gruppe = neueGabeId();
+  for (const code of codes) ((daten.einst.muenzgaben ??= {})[code] ??= []).push({ id: `${gruppe}-${code}`, t, muenzen, anKlasse: gruppe, ...(satz ? { satz: satz.slice(0, 200) } : {}) });
+  await speichereKlasse(klasse, daten);
+  return codes.length;
+}
+// Klassengaben mit ihrem Stand: je Gruppe wie viele Briefe geöffnet sind.
+async function klassengaben(klasse, daten) {
+  const gruppen = new Map();
+  for (const [code, gaben] of Object.entries(daten.einst.muenzgaben ?? {})) for (const g of gaben) {
+    if (!g.anKlasse) continue;
+    if (!gruppen.has(g.anKlasse)) gruppen.set(g.anKlasse, { gruppe: g.anKlasse, t: g.t, muenzen: g.muenzen, satz: g.satz ?? '', briefe: [] });
+    gruppen.get(g.anKlasse).briefe.push({ code, id: g.id });
+  }
+  for (const gr of gruppen.values()) for (const b of gr.briefe) b.offen = !L.geoeffneteMuenzgabe((await ladeStand(klasse, b.code)) ?? {}, b.id);
+  return [...gruppen.values()].sort((a, b) => String(b.t).localeCompare(String(a.t)));
+}
+// Zieht alle noch ungeöffneten Briefe einer Klassengabe zurück; geöffnete gehören dem Schüler.
+async function zieheKlassengabeZurueck(klasse, gruppe) {
+  const daten = await ladeKlasse(klasse);
+  let zurueck = 0;
+  for (const [code, gaben] of Object.entries(daten?.einst.muenzgaben ?? {})) {
+    const stand = (await ladeStand(klasse, code)) ?? {};
+    const bleiben = gaben.filter((g) => g.anKlasse !== gruppe || L.geoeffneteMuenzgabe(stand, g.id));
+    zurueck += gaben.length - bleiben.length;
+    if (bleiben.length) daten.einst.muenzgaben[code] = bleiben; else delete daten.einst.muenzgaben[code];
+  }
+  await speichereKlasse(klasse, daten);
+  return zurueck;
+}
+function klassengabeKarte(klasse, daten) {
+  const g = z.gabe, anzahl = Object.keys(daten.namen).length;
+  const satz = h('input', { type: 'text', id: 'gabe-satz', maxlength: 200, style: 'width: 100%; max-width: 560px', placeholder: 'Ein kurzer Satz, zum Beispiel: Für das Testen der neuen Spiele.', value: g.satz ?? '', oninput: (e) => { g.satz = e.target.value; } });
+  const stufen = h('div', { class: 'reihe', role: 'radiogroup', 'aria-label': 'Münzen' }, L.MUENZGABEN.map((m) => h('label', { class: 'wahl' },
+    h('input', { type: 'radio', name: 'gabe-muenzen', value: m, checked: g.muenzen === m, onchange: () => { g.muenzen = m; } }), ` ${m.toLocaleString('de-DE')}${m === 5000 ? ' (zum Testen)' : ''}`)));
+  const liste = h('div', { id: 'klassengaben-liste' }, h('p', { class: 'klein' }, 'Lade …'));
+  klassengaben(klasse, daten).then((gruppen) => {
+    liste.replaceChildren(gruppen.length ? h('table', { class: 'tabelle' },
+      h('thead', {}, h('tr', {}, ['Geschickt', 'Münzen', 'Satz', 'Stand', ''].map((t) => h('th', {}, t)))),
+      h('tbody', {}, gruppen.map((x) => {
+        const offen = x.briefe.filter((b) => b.offen).length;
+        return h('tr', { 'data-klassengabe': x.gruppe }, h('td', {}, datumZeit(x.t)), h('td', {}, `+${x.muenzen} je Schüler`), h('td', {}, x.satz),
+          h('td', {}, `${x.briefe.length - offen} von ${x.briefe.length} geöffnet`),
+          h('td', {}, offen ? h('button', { class: 'schlicht', 'data-klassengabe-zurueck': x.gruppe, onclick: tue(async () => {
+            if (!confirm(`Die ${offen} ungeöffneten Briefe über je ${x.muenzen} Münzen zurückziehen? Geöffnete Briefe bleiben beim Schüler.`)) return;
+            const n = await zieheKlassengabeZurueck(klasse, x.gruppe);
+            z.hinweis = `${n} ${n === 1 ? 'Brief' : 'Briefe'} zurückgezogen.`;
+          }) }, 'Ungeöffnete zurückziehen') : ''));
+      }))) : h('p', { class: 'klein' }, 'Noch keine Münzgabe an die ganze Klasse.'));
+  });
+  return h('div', { class: 'karte innen', id: 'gabe-karte' },
+    h('h3', {}, `Münzen schicken an die ganze Klasse ${klasse} (${anzahl} Schüler)`),
+    h('p', { class: 'klein' }, 'Jeder Schüler der Namensliste bekommt einen eigenen Brief „Eine Gabe des Königs“, auch wer heute fehlt; er bekommt ihn beim nächsten Öffnen. Die Münzen gibt es beim Öffnen. Ungeöffnete Briefe kannst du alle auf einmal zurückziehen. Die Lehrkraft sieht die Gabe im Schülerprofil.'),
+    stufen, satz,
+    h('div', { class: 'reihe' },
+      h('button', { class: 'haupt', id: 'klassengabe-schicken', onclick: tue(async () => {
+        if (!confirm(`Je ${g.muenzen.toLocaleString('de-DE')} Münzen an alle ${anzahl} Schüler der Klasse ${klasse} schicken?`)) return;
+        const n = await schickeKlassengabe(klasse, g.muenzen, (g.satz ?? '').trim());
+        z.hinweis = `Je ${g.muenzen.toLocaleString('de-DE')} Münzen an ${n} Schüler der Klasse ${klasse} geschickt.`;
+        g.satz = '';
+      }) }, 'An alle schicken'),
+      h('button', { class: 'schlicht', onclick: () => { z.gabe = null; male(); } }, 'Schließen')),
+    h('h4', {}, 'Bisherige Gaben an die ganze Klasse'), liste);
 }
 async function zieheGabeZurueck(klasse, code, id) {
   const stand = await ladeStand(klasse, code);

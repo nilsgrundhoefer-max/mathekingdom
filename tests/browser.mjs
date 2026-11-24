@@ -194,6 +194,11 @@ async function weiter(seite, wahl = '#weiter') {
   // Hilferuf und Werkstatt.
   await weiter(seite, '#weiter');
   await seite.click('#hilferuf');
+  // Seit 0.48 wählt das Kind einen Grund (ADR 0041).
+  await seite.waitForSelector('#hilfegrund');
+  assert.equal(await seite.locator('[data-hilfegrund]').count(), 5);
+  await foto(seite, 'hilferuf-grund');
+  await seite.click('[data-hilfegrund=schwer]');
   await seite.waitForSelector('.hilfebanner');
   await seite.click('#zurueck');
   await seite.click('#wappen-knopf');
@@ -217,12 +222,13 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.fill('#code', '5a-form');
   await seite.click('#demo');
   await seite.waitForSelector('.regionen');
-  // Startseite: Knopf „Weitermachen“ mit kleiner Zielzeile (0.37), ein Tipp führt direkt in die nächste Aufgabe. Dort liegt der Merkzettel bereit.
-  assert.match(await seite.innerText('.etappe'), /Weitermachen[\s\S]*Daten und Diagramme · Strichlisten und Häufigkeitstabellen/);
-  assert.equal(await seite.locator('.etappe .balken').count(), 0);
+  // Startseite (0.48, ADR 0041): kein Knopf „Weitermachen“ mehr, das Tor der Etappe schimmert.
+  assert.equal(await seite.locator('#weiter-wandern, .etappe').count(), 0);
+  assert.match(await seite.innerText('#tor-hier'), /Hier geht es weiter[\s\S]*Daten und Diagramme/);
+  assert.equal(await seite.locator('.region.leuchtet').count(), 1);
   await foto(seite, 'startseite-etappe');
   // Vor der ersten Aufgabe im Kapitel führt der Weg über den Einstiegscheck, den man überspringen darf.
-  await seite.click('#weiter-wandern');
+  await seite.click('#tor-hier');
   await seite.waitForSelector('#einstieg');
   await seite.click('#einstieg-ueberspringen');
   assert.equal(await seite.locator('#einstieg').count(), 0);
@@ -476,9 +482,11 @@ async function weiter(seite, wahl = '#weiter') {
   seite.on('pageerror', (e) => fehler.push(e.message));
   // Vorbereiteter Speicherstand: alle Lernziele von 5.3.1 vor drei Tagen erreicht, der Meilenstein ist gemeistert.
   const ms = pool.kapitel.find((k) => k.id === '5.3').unterkapitel[0];
-  const vor3Tagen = new Date(Date.now() - 3 * 86400000).toISOString();
+  // Seit 0.48 (ADR 0041) kommt der Rückblick erst ab 10 Siegeln und frühestens 14 Tage nach dem Siegel; die übrigen Siegel sind frisch.
+  const vor3Tagen = new Date(Date.now() - 15 * 86400000).toISOString(), gestern = new Date(Date.now() - 86400000).toISOString();
+  const frische = pool.kapitel.filter((k) => k.id !== '5.3').flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele)).slice(0, 10);
   const stand = { version: 2, code: '5A-RUEK', klasse: '5a', erstellt: vor3Tagen, geaendert: vor3Tagen, muenzen: 0, niveau: {}, niveauMarke: {},
-    lernziele: Object.fromEntries(ms.lernziele.map((l) => [l.id, { erreichtAm: vor3Tagen }])), versuche: [], hilferuf: null, hilferufe: [],
+    lernziele: { ...Object.fromEntries(frische.map((l) => [l.id, { erreichtAm: gestern }])), ...Object.fromEntries(ms.lernziele.map((l) => [l.id, { erreichtAm: vor3Tagen }])) }, versuche: [], hilferuf: null, hilferufe: [],
     wappen: { farbe: 'rot', zeichen: [], gekauft: ['rot'] }, spiele: [], aktiv: null, abbrueche: [], gelesen: null, einschaetzung: {}, betrieb: [] };
   await seite.addInitScript((text) => { if (!localStorage.getItem('mk-demo-5a/5A-RUEK.json')) localStorage.setItem('mk-demo-5a/5A-RUEK.json', text); }, JSON.stringify(stand));
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
@@ -501,7 +509,7 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(await seite.innerText('#rueckblick-fertig'), /Rückblick geschafft!\s+2 von 3 richtig/);
   await weiter(seite, '#weiter');
   await seite.waitForSelector('.regionen');
-  assert.equal(await seite.innerText('#siegel'), String(ms.lernziele.length));
+  assert.equal(await seite.innerText('#siegel'), String(ms.lernziele.length + frische.length));
   assert.equal(await seite.locator('#rueckblick').count(), 0, 'höchstens ein Rückblick am Tag');
   // Nebel: Der gemeisterte Meilenstein lichtet ihn, die Landschaft liegt darunter.
   await seite.click('[data-kapitel="5.3"]');
@@ -532,7 +540,8 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-heft');
   await seite.click('#demo');
-  await seite.click('#weiter-wandern');
+  await seite.click('#tor-hier');
+  await seite.click('#aufbrechen');
   await seite.waitForSelector('.heftcheck');
   const heft = (await seite.innerText('.heftcheck h1')).match(/H\d+/)[0];
   const gefragt = mitWert[Number(heft.slice(1)) - 1];
@@ -571,7 +580,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
   await seite.fill('#code', '5a-eins');
   await seite.click('#demo');
-  await seite.click('#weiter-wandern');
+  await seite.click('#tor-hier');
   await seite.waitForSelector('#einstieg');
   await foto(seite, 'einstieg-angebot');
   await seite.click('#einstieg-start');
@@ -1070,12 +1079,13 @@ async function weiter(seite, wahl = '#weiter') {
   await schueler.waitForSelector('.ergebnis.richtig');
   await weiter(schueler, '#weiter');
   await schueler.click('#hilferuf');
+  await schueler.click('[data-hilfegrund=falsch]');
   await schueler.waitForSelector('.hilfebanner');
 
   // Der Hilferuf erscheint bei der Lehrkraft, die Antwort beim Schüler.
   await lehrer.click('[data-tab=jetzt]');
   await lehrer.waitForSelector(`[data-komme="${aylin}"]`, { timeout: 8000 });
-  assert.match(await lehrer.innerText('.schlange'), /Aylin Kaya/);
+  assert.match(await lehrer.innerText('.schlange'), /Aylin Kaya[\s\S]*Aufgabe falsch\?/);
   await foto(lehrer, 'lehrer-hilferuf');
   await lehrer.click(`[data-komme="${aylin}"]`);
   await lehrer.waitForSelector('.schlange li.unterwegs');
@@ -1217,7 +1227,8 @@ async function weiter(seite, wahl = '#weiter') {
   await lehrer.check('[data-einstieg-pflicht="5.4"]');
   await warteAuf((k) => k.einstiegPflicht?.includes('5.4'));
   await schueler.waitForTimeout(11000); // das Schüler-Dashboard liest die Klassendatei alle 10 Sekunden
-  await schueler.click('#weiter-wandern');
+  await schueler.click('#tor-hier');
+  await schueler.click('#aufbrechen');
   await schueler.waitForSelector('#pruefen-unsicher', { timeout: 15000 });
   await antworte(schueler, false);
   await schueler.waitForSelector('#ueberraschung');
@@ -1598,6 +1609,23 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.click('#gaben-liste [data-zurueck]');
   await admin.waitForFunction(() => /Gabe zurückgezogen/.test(document.getElementById('hinweis')?.textContent ?? ''));
   assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).einst.muenzgaben[code].length, 1);
+  // Münzgabe an die ganze Klasse (ADR 0041): ein Brief je Schüler, ungeöffnete gemeinsam zurückziehen.
+  await admin.click('#klassengabe');
+  await admin.check('input[name="gabe-muenzen"][value="250"]');
+  await admin.fill('#gabe-satz', 'Für das Testen der neuen Spiele.');
+  await admin.click('#klassengabe-schicken');
+  await admin.waitForFunction(() => /Je 250 Münzen an \d+ Schüler der Klasse 5a geschickt/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  const mitKlassengabe = JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`));
+  const briefe = Object.values(mitKlassengabe.einst.muenzgaben).flat().filter((g) => g.anKlasse);
+  assert.equal(briefe.length, Object.keys(mitKlassengabe.namen).length, 'jeder Schüler bekommt einen eigenen Brief');
+  assert.equal(new Set(briefe.map((g) => g.id)).size, briefe.length);
+  await admin.click('#klassengabe');
+  await admin.waitForSelector('#klassengaben-liste [data-klassengabe-zurueck]');
+  assert.match(await admin.innerText('#klassengaben-liste'), /\+250 je Schüler[\s\S]*0 von \d+ geöffnet/);
+  await admin.locator('#gabe-karte').screenshot(bilder ? { path: `${bilder}/admin-klassengabe.png` } : {});
+  await admin.click('#klassengaben-liste [data-klassengabe-zurueck]');
+  await admin.waitForFunction(() => /Briefe? zurückgezogen/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  assert.equal(Object.values(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).einst.muenzgaben).flat().filter((g) => g.anKlasse).length, 0);
   // Lehrkraft: Belohnung des Sonderauftrags für die Klasse auf 250 stellen, Münzgabe im Schülerprofil sehen.
   await lehrer.click('[data-tab="klasse"]');
   await lehrer.click('.abschnitte button:has-text("Unterricht")');
@@ -2079,7 +2107,10 @@ async function weiter(seite, wahl = '#weiter') {
   const ms = pool.kapitel.find((k) => k.id === '5.3').unterkapitel.find((u) => u.id === '5.3.3');
   const [erstes] = ms.lernziele.filter((l) => pool.aufgaben.some((a) => a.lernziel === l.id && a.niveau === 'M'));
   const tag = new Date().toLocaleDateString('sv-SE');
-  const stand = { ...leererStand('5A-FOKU'), lernziele: { [erstes.id]: { erreichtAm: t0 } },
+  // Seitenblick erst ab 10 Siegeln, davon 3 im Kapitel (ADR 0041): zwei weitere aus 5.3, der Rest aus anderen Kapiteln.
+  const weitere53 = pool.kapitel.find((k) => k.id === '5.3').unterkapitel.filter((u) => u.id !== '5.3.3').flatMap((u) => u.lernziele).slice(0, 2);
+  const andere = pool.kapitel.filter((k) => k.id !== '5.3').flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele)).slice(0, 7);
+  const stand = { ...leererStand('5A-FOKU'), lernziele: Object.fromEntries([erstes, ...weitere53, ...andere].map((l) => [l.id, { erreichtAm: t0 }])),
     wegstuecke: [0, 1, 2].map(() => ({ t: t0, bis: t0, tag, richtig: 5, gesamt: 5, muenzen: 100 })) };
   await mitStand(seite, stand);
   await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);

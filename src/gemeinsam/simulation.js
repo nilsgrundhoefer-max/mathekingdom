@@ -23,6 +23,8 @@ export const PROFILE = {
   traeumer: { text: 'wird oft inaktiv', ziel: 'M', koennen: 0.68, tempo: [40, 120], karten: 0.15, hilferuf: 0.02, raten: 0, still: 0.12, haengt: 0, wahl: 0 },
 };
 // Reihenfolge der Profile beim Anlegen: Die ersten acht decken jedes Profil ab, danach wird es eine übliche Klasse.
+// Gründe der simulierten Hilferufe reihum, ohne Zufall, damit ein Lauf wiederholbar bleibt.
+const SIM_GRUENDE = ['schwer', 'verstehe', 'schwer', 'falsch', 'technik', 'verstehe'];
 const FOLGE = ['sicher', 'durchschnitt', 'wackelig', 'raet', 'blockiert', 'hilferufer', 'traeumer', 'schnell',
   'durchschnitt', 'sicher', 'durchschnitt', 'wackelig', 'durchschnitt', 'sicher', 'traeumer', 'durchschnitt',
   'wackelig', 'durchschnitt', 'hilferufer', 'sicher', 'durchschnitt', 'blockiert', 'durchschnitt', 'raet', 'wackelig',
@@ -258,7 +260,7 @@ function beendeVersuch(bot, ctx, einst, t) {
     s.aktiv = { ...s.aktiv, fehlversuche: 1, hilfen: lauf.hilfen };
     (lauf.eingaben ??= []).push(eingabe);
     // Hilferuf nach dem ersten Fehlversuch; im Vorlauf seltener.
-    if (!lauf.raet && z() < p.hilferuf * (ctx.vorlauf ? 0.3 : 1)) L.rufeHilfe(s, a.id, iso(t));
+    if (!lauf.raet && z() < p.hilferuf * (ctx.vorlauf ? 0.3 : 1)) L.rufeHilfe(s, a.id, iso(t), SIM_GRUENDE[(s.hilferufe?.length ?? 0) % SIM_GRUENDE.length]);
     lauf.raet = lauf.raet && z() < 0.8;
     lauf.haengt = false;
     aenderung(bot, t);

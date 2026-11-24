@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.48 vom 24.11.2026
+
+### Schüler
+
+- Auf der Startseite gibt es keinen Knopf „Weitermachen“ mehr. Stattdessen schimmert das Tor des Kapitels, an dem deine Klasse gerade arbeitet. Auf der Regionskarte zeigt „Hier weiter“, wo es weitergeht.
+- Aufgaben zu Lernzielen, die du schon kannst, kommen erst, wenn du 10 Siegel hast. Bis dahin geht es nur vorwärts. Der Rückblick kommt frühestens zwei Wochen nach einem Siegel.
+- Rufst du deine Lehrkraft, wählst du kurz, warum: Du verstehst die Aufgabe nicht, sie ist dir zu schwer, du glaubst, sie ist falsch, es gibt ein technisches Problem oder etwas anderes.
+- Purpur wird dir nicht mehr vorgeschlagen. Wenn du um Purpur spielen willst, wählst du es selbst. Der Vorschlag, um Gold zu spielen, kommt erst nach 8 guten von 10 Aufgaben. Der Vorschlag, wieder um Silber zu spielen, kommt schon, wenn 3 der letzten 5 Aufgaben nicht geklappt haben.
+
+### Lehrkraft
+
+- In der Akut-Zone steht bei jedem Hilferuf, warum der Schüler ruft. Hält er die Aufgabe für falsch, machst du daraus mit einem Klick eine Aufgabenmeldung.
+- Im Administrator-Dashboard kannst du unter „Namen und Codes“ Münzen an die ganze Klasse schicken. Jeder Schüler bekommt einen eigenen Brief, auch wer gerade fehlt. Ungeöffnete Briefe ziehst du alle auf einmal zurück. Im Schülerprofil steht bei der Münzgabe „an die ganze Klasse“.
+- Seitenblick und Rückblick kommen erst ab 10 Siegeln, der Rückblick nach 14, 35 und 90 Tagen (ADR 0041).
+
 ## 0.47 vom 24.11.2026
 
 ### Schüler

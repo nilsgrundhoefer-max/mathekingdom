@@ -400,3 +400,5 @@ body { margin: 0; background: #f4f1ea; }
 .gemischt { white-space: nowrap; }
 .bruchsatz { white-space: nowrap; }
 .gemischt .bruch { margin-left: .08em; }
+#mathekingdom-lehrer .marke.hilfegrund { background: #eef2ff; color: #2b3a8a; border-color: #c7d0f5; }
+#mathekingdom-lehrer .marke.grund-technik { background: #f1f1f1; color: #333; border-color: #ccc; }
