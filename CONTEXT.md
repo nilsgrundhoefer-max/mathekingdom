@@ -275,7 +275,7 @@ Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniv
 _Avoid_: Punkte, Coins, Taler
 
 **Münzgabe**:
-Münzen, die der Administrator einem einzelnen Schüler schickt, ohne Aufgabe: zum Testen oder als besondere Anerkennung. Fest wählbar sind 50, 100, 250, 500, 1000 und 5.000 Münzen, dazu ein kurzer Satz. Der Schüler bekommt sie als Brief „Eine Gabe des Königs“ mit eigenem Siegel, ohne Absender, nie mitten in einer Aufgabe; gutgeschrieben wird beim Öffnen. Ungeöffnet kann der Administrator sie zurückziehen, danach gehören die Münzen dem Schüler. Münzen abziehen kann niemand. Die Lehrkraft der Klasse sieht die Münzgabe im Schülerprofil, ändern kann sie sie nicht.
+Münzen, die der Administrator einem einzelnen Schüler oder allen Schülern einer Klasse schickt, ohne Aufgabe: zum Testen oder als besondere Anerkennung. Fest wählbar sind 50, 100, 250, 500, 1000 und 5.000 Münzen, dazu ein kurzer Satz. Der Schüler bekommt sie als Brief „Eine Gabe des Königs“ mit eigenem Siegel, ohne Absender, nie mitten in einer Aufgabe; gutgeschrieben wird beim Öffnen. Eine Münzgabe an die Klasse kommt bei jedem Schüler als eigener Brief an, auch bei denen, die gerade fehlen. Ungeöffnet kann der Administrator sie zurückziehen, bei einer Klassen-Münzgabe alle Briefe auf einmal, danach gehören die Münzen dem Schüler. Münzen abziehen kann niemand. Die Lehrkraft der Klasse sieht die Münzgabe im Schülerprofil, ändern kann sie sie nicht.
 _Avoid_: Geschenk, Bonus, Gutschrift
 
 **Siegel**:
@@ -295,7 +295,7 @@ Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (
 _Avoid_: Kronenstufe, Lila, Purple
 
 **Kronenwahl**:
-Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F.
+Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F. Purpur schlägt das Schüler-Dashboard nie vor, weder nach guten Aufgaben auf Gold noch nach dem Einstiegscheck: Purpur wählt der Schüler selbst, oder die Lehrkraft setzt sein Zielniveau auf E.
 _Avoid_: Straße wechseln, Niveauwahl (auf dem Bildschirm)
 
 **Selbsteinschätzung**:
@@ -445,7 +445,7 @@ Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge
 _Avoid_: Schwierigkeit
 
 **Etappe**:
-Das Kapitel, an dem ein Schüler gerade arbeitet, mit dem nächsten Meilenstein. Sie steht oben auf der Startseite als Knopf „Weitermachen“ mit einer kleinen Zeile, wohin er führt. Gesperrte Meilensteine zählen nicht mit.
+Das Aktuelle Kapitel mit dem nächsten Meilenstein, den die Aufgabenführung vorschlägt. Auf der Startseite leuchtet sein Tor; einen eigenen Knopf „Weitermachen“ gibt es nicht. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Wegstück**:
@@ -453,7 +453,7 @@ Ein Päckchen von fünf Aufgaben, etwa fünf Minuten Arbeit, mit „Aufgabe 3 vo
 _Avoid_: Runde (das ist ein Knopftext), Etappe (das ist das Kapitel), Chunk, Sequenz
 
 **Seitenblick**:
-Die eine Aufgabe in einem Wegstück, die zu einem schon besiegelten Lernziel desselben Kapitels gehört statt zum laufenden. Sie bringt Münzen, zählt für kein Siegel und nimmt keines weg. Gibt es im Kapitel noch kein Siegel, entfällt sie. Sie sagt dazu, wo es danach weitergeht.
+Die eine Aufgabe in einem Wegstück, die zu einem schon besiegelten Lernziel desselben Kapitels gehört statt zum laufenden. Sie bringt Münzen, zählt für kein Siegel und nimmt keines weg. Sie kommt erst, wenn der Schüler in der aktuellen Klassenstufe mindestens 10 Siegel und im selben Kapitel mindestens 3 Siegel hat; vorher entfällt sie. Sie sagt dazu, wo es danach weitergeht.
 _Avoid_: Rückblick (der ist ein eigenes Päckchen, einmal am Tag), Wiederholungsaufgabe
 
 **Rast**:
@@ -472,7 +472,11 @@ Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beis
 _Avoid_: Joker, Hinweis
 
 **Hilferuf**:
-Die Bitte eines Schülers um persönliche Hilfe durch die Lehrkraft, jederzeit und unabhängig von Hilfekärtchen möglich.
+Die Bitte eines Schülers um persönliche Hilfe durch die Lehrkraft, aus einer Aufgabe heraus und unabhängig von Hilfekärtchen. Der Schüler muss einen Hilferuf-Grund wählen.
+
+**Hilferuf-Grund**:
+Der Anlass eines Hilferufs, den der Schüler mit einem Klick wählt und die Lehrkraft sofort sieht: Ich verstehe die Aufgabe nicht, Die Aufgabe ist mir zu schwer, Ich glaube, die Aufgabe ist falsch, Technisches Problem, Etwas anderes. Aus „Aufgabe ist falsch“ kann die Lehrkraft mit einem Klick eine Aufgabenmeldung machen.
+_Avoid_: Kategorie, Hilfeart
 _Avoid_: Meldung, Ticket
 
 **Hilfe-Warteschlange**:
@@ -588,6 +592,14 @@ _Avoid_: Support-Protokoll, Ticket, Fehlermeldung
 **Auffällige Aufgabe**:
 Eine Aufgabe, die über alle Klassen hinweg an ihren Zahlen auffällt, ohne dass jemand sie gemeldet hat: etwa viele gleiche falsche Antworten, die kein typischer Fehler sind, oder eine viel niedrigere Lösungsquote als die übrigen Aufgaben ihres Lernziels. Nur der Administrator sieht diese Liste, ohne Namen.
 _Avoid_: schwierige Aufgabe (das zeigt das Lehrer-Dashboard je Klasse)
+
+**Aufgabenanalyse**:
+Die Auswertung im Administrator-Dashboard, die zu jeder Aufgabe Bearbeitungen, Lösungsquoten, Dauer, Hilfekärtchen, Abbrüche, häufigste falsche Antwort und Feedback zeigt, gefiltert nach Klasse und Zeitraum, etwa einer einzelnen Teststunde. Auffällig markiert ist eine Aufgabe, die viel länger dauert oder viel öfter falsch ist als die übrigen ihres Lernziels und Niveaus. Sie wird beim Öffnen aus den Speicherständen berechnet und erst beim Export als Datei abgelegt, ohne Namen und Schülercodes.
+_Avoid_: Statistik, Aufgabenstatistik, Analyse (allein)
+
+**Feedbackfrage**:
+Eine kurze Frage an den Schüler mit zwei Antworten, etwa zum Design oder dazu, ob die gerade gelöste Aufgabe zu schwer war. Sie kommt nach dem Ergebnis einer Aufgabe, nie mitten in einer Aufgabe, im Rückblick oder im Einstiegscheck, muss beantwortet werden und bringt keine Münzen. Ob und nach wie vielen Aufgaben sie kommt, stellt der Administrator je Klasse ein. Die Antworten sieht nur der Administrator, ohne Namen.
+_Avoid_: Umfrage, Bewertung, Rückmeldung (das ist die Antwort des Dashboards auf eine Aufgabe)
 
 **Aufgabentester**:
 Die Karte im Admin-Dashboard unter Aufgaben, in der der Administrator jede Aufgabe einmal so sieht und bedient, wie ein Schüler sie sieht, mit Lösung, typischen Fehlern und Aufgabenkennung daneben. Er hakt sie als kontrolliert ab, meldet einen Fehler oder überspringt sie.
