@@ -2308,6 +2308,22 @@ for (const [id, vor] of vorVon) {
   while (offen.length) { const v = offen.pop(); if (v === id) { melde(id, 'Voraussetzungen im Kreis'); break; } if (besucht.has(v)) continue; besucht.add(v); offen.push(...(vorVon.get(v) ?? [])); }
 }
 
+// Vorstufe (ADR 0037): Kopien von Aufgaben der vorigen Klassenstufe, nur für Brücken. Jede Kopie gleicht der Aufgabe im früheren Pool,
+// und jede Voraussetzung aus einer früheren Klassenstufe hat dort Aufgaben auf F, G und M (eine Brücke liegt eine Stufe unter dem Zielniveau).
+const fruehereAufgaben = new Map(vorstufen.flatMap((p) => p.aufgaben).map((a) => [a.id, a]));
+const kopien = pool.vorstufe?.aufgaben ?? [];
+if (new Set(kopien.map((a) => a.id)).size !== kopien.length) melde('vorstufe', 'Aufgabe doppelt');
+for (const a of kopien) {
+  if (a.niveau === 'E') melde(a.id, 'Vorstufe: Aufgaben auf E braucht keine Brücke');
+  if (vorstufen.length && JSON.stringify(fruehereAufgaben.get(a.id)) !== JSON.stringify(a)) melde(a.id, 'Vorstufe: Die Kopie gleicht nicht der Aufgabe im Pool der früheren Klassenstufe (Pool neu erzeugen)');
+}
+const kopiert = new Set(kopien.map((a) => `${a.lernziel}|${a.niveau}`)), benannt = new Set((pool.vorstufe?.lernziele ?? []).map((l) => l.id));
+for (const [id, vor] of vorVon) if (mitAufgaben.has(id)) for (const v of vor ?? []) if (!vorVon.has(v)) {
+  if (!benannt.has(v)) melde(id, `Vorstufe: Lernziel ${v} fehlt in der Liste der Vorstufe`);
+  for (const n of ['F', 'G', 'M']) if (!kopiert.has(`${v}|${n}`)) melde(id, `Vorstufe: Für die Voraussetzung ${v} fehlen Aufgaben auf ${n}`);
+}
+for (const l of pool.vorstufe?.lernziele ?? []) if (!l.text || vorVon.has(l.id) || (vorstufen.length && !frueher.has(l.id))) melde(l.id, 'Vorstufe: Lernziel ohne Text oder nicht aus einer früheren Klassenstufe');
+
 return { fehler, mitAufgaben, lernziele, hatBild };
 }
 

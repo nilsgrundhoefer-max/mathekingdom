@@ -95,7 +95,7 @@ export function alsText(gruppen, aufgabe, jetzt) {
 export function ohneGesperrte(pool, gesperrt) {
   if (!gesperrt?.length) return pool;
   const sperre = new Set(gesperrt);
-  return { ...pool, aufgaben: pool.aufgaben.filter((a) => !sperre.has(a.id)) };
+  return { ...pool, aufgaben: pool.aufgaben.filter((a) => !sperre.has(a.id)), ...(pool.vorstufe && { vorstufe: { ...pool.vorstufe, aufgaben: pool.vorstufe.aufgaben.filter((a) => !sperre.has(a.id)) } }) };
 }
 // Nimmt gesperrte Aufgaben aus angefangenen Rückblicken, Brücken und Einstiegschecks und markiert frühere
 // Fehlversuche an ihnen, damit sie nicht zählen (etwa für „wackelig“). Liefert true, wenn sich etwas geändert hat.
