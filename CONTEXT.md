@@ -241,7 +241,7 @@ Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem 
 _Avoid_: Kompetenz (allein), Ziel
 
 **Rückblick**:
-Ein freiwilliges Päckchen aus drei bis fünf gemischten Aufgaben zu Lernzielen, deren Siegel etwa 2, 7 und 21 Tage alt sind. Er steht höchstens einmal am Tag oben auf der Startseite und bringt die normalen Münzen. Ein Fehler nimmt kein Siegel weg; die Aufgabe kommt im nächsten Rückblick wieder, und das Lernziel gilt für die Lehrkraft als aufzufrischen.
+Ein freiwilliges Päckchen aus drei bis fünf gemischten Aufgaben zu Lernzielen, deren Siegel etwa 14, 35 und 90 Tage alt sind. Er kommt erst, wenn der Schüler in der aktuellen Klassenstufe mindestens 10 Siegel hat. Er steht höchstens einmal am Tag oben auf der Startseite und bringt die normalen Münzen. Ein Fehler nimmt kein Siegel weg; die Aufgabe kommt im nächsten Rückblick wieder, und das Lernziel gilt für die Lehrkraft als aufzufrischen.
 _Avoid_: Wiederholung (allein), Auffrischen, Review
 
 **Einstiegscheck**:
@@ -445,7 +445,7 @@ Die Art des Denkens, die eine Aufgabe verlangt: I wiedergeben, II Zusammenhänge
 _Avoid_: Schwierigkeit
 
 **Etappe**:
-Das Aktuelle Kapitel mit dem nächsten Meilenstein, den die Aufgabenführung vorschlägt. Auf der Startseite leuchtet sein Tor; einen eigenen Knopf „Weitermachen“ gibt es nicht. Gesperrte Meilensteine zählen nicht mit.
+Das Aktuelle Kapitel mit dem nächsten Meilenstein, den die Aufgabenführung vorschlägt. Auf der Startseite leuchtet sein Tor, auf seiner Regionskarte der nächste Meilenstein; einen eigenen Knopf „Weitermachen“ gibt es nicht. Ist das Aktuelle Kapitel gemeistert oder keines gesetzt, leuchtet das Kapitel, das die Aufgabenführung wählt; ist alles gemeistert, leuchtet nichts. Gesperrte Meilensteine zählen nicht mit.
 _Avoid_: Wochenmission, Wochenziel
 
 **Wegstück**:
