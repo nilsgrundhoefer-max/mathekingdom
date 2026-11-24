@@ -728,6 +728,11 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .bruchbild .blatt { fill: #fffdf6; }
 #mathekingdom .bruchbild .bruchteil { fill: #ffffff; stroke: var(--nacht); stroke-width: 1.6; stroke-linejoin: round; }
 #mathekingdom .bruchbild .bruchteil.voll { fill: #e8a33d; }
+#mathekingdom .bruchbild .bruchteil.hell { fill: #fbe3b5; }
+#mathekingdom .bruchbild .akkupol { fill: var(--nacht); }
+#mathekingdom .bruchbild [data-form=akku] .bruchteil { stroke-width: 1.2; }
+#mathekingdom .marke.niveaumarke { background: #fbf1cf; color: #7a5b00; border-color: #e3c466; }
+#mathekingdom .niveau-abstecher { border-left: 4px solid #e3c466; padding: 6px 10px; background: #fffaf0; border-radius: 6px; }
 #mathekingdom .bruchbild .umriss { fill: none; stroke: var(--nacht); stroke-width: 2.6; pointer-events: none; }
 #mathekingdom .bruchbild .zehnerlinie { stroke: var(--nacht); stroke-width: 1.8; pointer-events: none; }
 #mathekingdom .bruchbild [data-form=hundert] .bruchteil { stroke-width: .7; }

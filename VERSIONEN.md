@@ -8,6 +8,25 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.44 vom 24.11.2026
+
+### Schüler
+
+- Klasse 6, Kapitel 2 „Rechnen mit Brüchen“ ist da: Du addierst und subtrahierst Brüche, vervielfachst und teilst sie, multiplizierst und dividierst sie und rechnest mit Punkt vor Strich und Klammern. Das sind 336 neue Aufgaben.
+- Neu: „Brüche dividieren“ ist ein Meilenstein ab Gold. Spielst du um Bronze oder Silber, ist er für dich ein freiwilliger Abstecher: Dein Kapitel schaffst du auch ohne ihn. Gehst du ihn trotzdem, kannst du dir dort eine goldene Krone holen.
+- Neue Bilder: der Akku mit Ladebalken und das Rechteckbild, an dem du siehst, was ein Bruch von einem Bruch ist.
+
+### Lehrkraft
+
+- Kapitel 2 „Rechnen mit Brüchen“ folgt den Lerneinheiten 1 bis 7 im Schnittpunkt 6: 14 Lernziele mit je 24 Aufgaben. Tor 2 öffnen Sie wie gewohnt unter Tore.
+- Staffel: F mit Nennern bis 12, ungleichnamig nur, wenn ein Nenner ein Vielfaches des anderen ist. G: Hauptnenner ist das Produkt. M: Hauptnenner kleiner als das Produkt, gemischte Zahlen mit Übertrag. E: drei Brüche, große Nenner, Fehlersuche und Rückwärtsaufgaben.
+- Jedes Ergebnis muss vollständig gekürzt sein („Fast richtig“ höchstens zweimal). Ein unechter Bruch zählt wie die gemischte Zahl. Auf F und G haben Aufgaben mit ungleichnamigen Brüchen zwei Schritte, ab M zählt nur das Ergebnis.
+- Neu: der Niveau-Meilenstein. „Brüche dividieren“ ist im Buch mit M markiert und hat nur Aufgaben auf M und E (je 12 je Lernziel). Für Schüler mit Zielniveau F oder G ist er ein Abstecher: Er zählt nicht für den Kapitelabschluss und erscheint bei ihnen als „Abstecher“, nie als Lücke. Geht ein Schüler ihn freiwillig, arbeitet er auf M und kann dort eine goldene Krone holen; Sie sehen sie in seiner Übersicht.
+- Ändern Sie das Zielniveau eines Schülers, wechselt der Niveau-Meilenstein sofort die Rolle. Kronen und Siegel bleiben.
+- In „Punkt vor Strich und Klammern“ kommt auf F und G keine Division durch einen Bruch vor, auf M und E schon.
+- Sachaufgaben stammen aus dem Alltag (Rezepte, Wege, Zeit, Akku), ohne Dezimalzahlen. Heftaufgaben gibt es in diesem Kapitel nicht.
+- 9 neue Fehlvorstellungen erscheinen in der Auswertung, zum Beispiel „Zähler und Nenner getrennt addiert“ und „beim Dividieren keinen Kehrwert gebildet“.
+
 ## 0.43 vom 24.11.2026
 
 ### Schüler

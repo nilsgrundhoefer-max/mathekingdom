@@ -13,12 +13,105 @@ const index = L.indexiere(pool);
 const lernziele = pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele);
 
 test('Kapitel 1 hat 12 Lernziele mit je 24 Aufgaben, 6 je Niveau', () => {
-  assert.equal(pool.aufgaben.length, 288);
+  const eins = pool.aufgaben.filter((a) => a.id.startsWith('6.1.'));
+  assert.equal(eins.length, 288);
   const je = {};
-  for (const a of pool.aufgaben) je[`${a.lernziel} ${a.niveau}`] = (je[`${a.lernziel} ${a.niveau}`] ?? 0) + 1;
+  for (const a of eins) je[`${a.lernziel} ${a.niveau}`] = (je[`${a.lernziel} ${a.niveau}`] ?? 0) + 1;
   assert.equal(Object.keys(je).length, 48);
   assert.ok(Object.values(je).every((n) => n === 6));
-  assert.ok(pool.aufgaben.every((a) => a.id.startsWith('6.1.')));
+});
+
+// ---------- Kapitel 2 „Rechnen mit Brüchen“ und der Niveau-Meilenstein (ADR 0038) ----------
+const kap2 = pool.kapitel.find((k) => k.id === '6.2');
+const dividieren = kap2.unterkapitel.find((u) => u.ab);
+const einstFuer = (zielniveau, mehr = {}) => ({ zielniveau, offeneKapitel: new Set(['6.2']), gesperrteMeilensteine: new Set(), ...mehr });
+const leer = () => ({ versuche: [], lernziele: {}, niveau: {}, niveauMarke: {}, muenzen: 0, wappen: { gekauft: [], zeichen: [] } });
+// Löst je Lernziel die ersten drei Aufgaben der Niveaustufe (darunter eine aus AFB II) und trägt die Siegel nach.
+function loese(stand, u, niveau, zielniveau) {
+  for (const l of u.lernziele) {
+    const alle = index.nach.get(`${l.id}|${L.stufeAb(niveau, u.ab)}`);
+    for (const a of [...alle.filter((x) => x.afb >= 2).slice(0, 1), ...alle.filter((x) => x.afb < 2).slice(0, 2)]) {
+      stand.versuche.push({ t: '2026-11-24T08:00:00.000Z', aufgabe: a.id, lernziel: l.id, niveau: a.niveau, afb: a.afb, richtig: true, versuche: 1, hilfen: 0, muenzen: 1 });
+    }
+  }
+  L.trageSiegelNach(stand, index, zielniveau, '2026-11-24T08:00:00.000Z');
+}
+
+test('Kapitel 2 hat 14 Lernziele mit je 24 Aufgaben; „Brüche dividieren“ hat nur M und E, je 12', () => {
+  const zwei = pool.aufgaben.filter((a) => a.id.startsWith('6.2.'));
+  assert.equal(zwei.length, 336);
+  assert.equal(kap2.unterkapitel.length, 7);
+  assert.equal(dividieren.titel, 'Brüche dividieren');
+  assert.equal(dividieren.ab, 'M');
+  for (const u of kap2.unterkapitel) for (const l of u.lernziele) {
+    const je = L.NIVEAUS.map((n) => (index.nach.get(`${l.id}|${n}`) ?? []).length);
+    assert.deepEqual(je, u.ab ? [0, 0, 12, 12] : [6, 6, 6, 6], l.id);
+  }
+});
+
+test('Niveau-Meilenstein: Für F und G ist er ein Abstecher an „Brüche multiplizieren“, für M und E ein Meilenstein', () => {
+  for (const n of ['F', 'G']) {
+    assert.equal(L.istAbstecher(dividieren, n), true, n);
+    assert.equal(L.wirtVon(kap2, dividieren, n).titel, 'Brüche multiplizieren');
+  }
+  for (const n of ['M', 'E']) assert.equal(L.istAbstecher(dividieren, n), false, n);
+  // Der letzte Meilenstein hängt für niemanden am Abstecher.
+  assert.equal(L.istAbstecher(kap2.unterkapitel.at(-1), 'F'), false);
+});
+
+test('Niveau-Meilenstein: Die Aufgaben kommen mindestens von der Marke, auch wenn um Silber gespielt wird', () => {
+  const stand = leer(), lz = dividieren.lernziele[0].id;
+  for (const n of ['F', 'G', 'M']) assert.equal(L.naechsteAufgabe(index, stand, lz, n, () => 0).niveau, 'M', n);
+  assert.equal(L.naechsteAufgabe(index, stand, lz, 'E', () => 0).niveau, 'E');
+  assert.equal(L.stufeFuer(index, kap2.unterkapitel[0].lernziele[0].id, 'F'), 'F', 'andere Meilensteine bleiben, wie sie sind');
+});
+
+test('Niveau-Meilenstein: Das Kapitel ist für G ohne ihn geschafft, die Führung geht an ihm vorbei', () => {
+  const stand = leer(), einst = einstFuer('G');
+  for (const u of kap2.unterkapitel.filter((x) => !x.ab)) loese(stand, u, 'G', 'G');
+  const e = L.etappe(pool, index, stand, { ...einst, aktuellesKapitel: '6.2' });
+  assert.equal(e.gesamt, 6);
+  assert.equal(e.geschafft, 6);
+  assert.equal(e.milestone, null, 'nichts mehr offen');
+  assert.equal(L.fuehrungsMeilenstein(index, stand, kap2, einst, 'G'), null);
+  // Angeboten wird der Abstecher nach „Brüche multiplizieren“.
+  const wirt = L.wirtVon(kap2, dividieren, 'G');
+  assert.deepEqual(L.abstecherAm(index, stand, kap2, wirt, einst, 'G').map((u) => u.id), [dividieren.id]);
+  // Das Kapitelband gibt es ohne den Abstecher, aber nur für dieses Zielniveau.
+  const nur2 = { ...pool, kapitel: [kap2] };
+  assert.ok(L.vergebeEhrenzeichen(leerMit(stand), nur2, index, 'G').includes('kapitelband'));
+  assert.ok(!L.vergebeEhrenzeichen(leerMit(stand), nur2, index, 'M').includes('kapitelband'));
+});
+function leerMit(stand) { return { ...structuredClone(stand), wappen: { gekauft: [], zeichen: [] } }; }
+
+test('Niveau-Meilenstein: Für M zählt er zum Kapitel und liegt auf dem Weg', () => {
+  const stand = leer(), einst = einstFuer('M');
+  for (const u of kap2.unterkapitel.filter((x) => !x.ab)) loese(stand, u, 'M', 'M');
+  const e = L.etappe(pool, index, stand, { ...einst, aktuellesKapitel: '6.2' });
+  assert.equal(e.gesamt, 7);
+  assert.equal(e.geschafft, 6);
+  assert.equal(e.milestone.id, dividieren.id);
+});
+
+test('Niveau-Meilenstein: Freiwillig geschafft gibt es die Krone in Gold, nie darunter; Kronen bleiben beim Wechsel des Zielniveaus', () => {
+  const stand = leer();
+  loese(stand, dividieren, 'G', 'G'); // spielt um Silber, bekommt Aufgaben von M
+  assert.equal(L.krone(index, stand, dividieren), 'M');
+  assert.equal(L.milestoneStatus(index, stand, dividieren), 'gemeistert');
+  assert.equal(L.krone(index, stand, dividieren), 'M', 'nach einem Wechsel auf M oder zurück auf F bleibt die Krone');
+  // Zwei richtige Aufgaben reichen nicht, auch nicht für Bronze.
+  const wenig = leer(), a = index.nach.get(`${dividieren.lernziele[0].id}|M`).slice(0, 2);
+  for (const x of a) wenig.versuche.push({ t: '2026-11-24T08:00:00.000Z', aufgabe: x.id, lernziel: x.lernziel, niveau: 'M', afb: x.afb, richtig: true, versuche: 1, hilfen: 0 });
+  assert.equal(L.lernzielStand(wenig, a[0].lernziel, 'F', index).erreicht, false);
+  assert.equal(L.krone(index, wenig, dividieren), null);
+});
+
+test('Niveau-Meilenstein mit Meilensteinfreigabe: Der Abstecher lichtet sich mit seinem Wirt, nicht mit dem ganzen Kapitel', () => {
+  const stand = leer(), wirt = L.wirtVon(kap2, dividieren, 'G');
+  const einst = einstFuer('G', { meilensteinFreigabe: { '6.2': kap2.unterkapitel.filter((u) => !u.ab).map((u) => u.id) } });
+  assert.ok(L.imNebel(index, stand, kap2, einst).has(dividieren.id));
+  loese(stand, wirt, 'G', 'G');
+  assert.ok(!L.imNebel(index, stand, kap2, einst).has(dividieren.id));
 });
 
 test('Der Pool der Klasse 6 besteht die Prüfung, jede Aufgabe ist nachgerechnet', () => {
@@ -89,7 +182,7 @@ test('Gesperrte Aufgaben fallen auch aus der Vorstufe', () => {
   const id = pool.vorstufe.aufgaben[0].id;
   const p = ohneGesperrte(pool, [id, pool.aufgaben[0].id]);
   assert.equal(p.vorstufe.aufgaben.length, pool.vorstufe.aufgaben.length - 1);
-  assert.equal(p.aufgaben.length, 287);
+  assert.equal(p.aufgaben.length, pool.aufgaben.length - 1);
 });
 
 // Eine simulierte Klasse 6 arbeitet drei Wochen in Kapitel 1; danach laufen die Auswertungen der Lehrkraft auch mit Versuchen aus der Vorstufe.
@@ -123,4 +216,21 @@ test('Simulierte Klasse 6: Schüler arbeiten in Kapitel 1, die Lehrerauswertung 
     A.voraussetzungenVon(index, eigene.map((l) => l.id));
     for (const s of staende) { A.kennzahlen(s.stand, zielniveaus[s.code], jetzt); A.livestatus(s.stand, zielniveaus[s.code], jetzt); A.afbProfil(s.stand, index); A.kompetenzProfil(s.stand.versuche, index); A.schwaechsteLernziele(s.stand, index); A.selbsteinschaetzung(s.stand, pool); A.diskrepanz(s.stand, pool); }
   });
+});
+
+test('Lehrer-Dashboard: Der Niveau-Meilenstein ist bei Zielniveau G ein Abstecher und keine Lücke, bei M ein gewöhnliches Lernziel', async () => {
+  const A = await import('../src/lehrer/auswertung.js');
+  const ziele = A.lernzieleMitAufgaben(pool, index).filter((l) => l.kapitel === '6.2');
+  assert.deepEqual(ziele.filter((l) => l.ab).map((l) => l.ab), ['M', 'M']);
+  const freiwillig = leer();
+  loese(freiwillig, dividieren, 'G', 'G');
+  const staende = [{ code: '6A-AAAA', stand: leer() }, { code: '6A-BBBB', stand: leer() }, { code: '6A-CCCC', stand: freiwillig }];
+  const matrix = A.lernzielmatrix(staende, ziele, { '6A-AAAA': 'G', '6A-BBBB': 'M', '6A-CCCC': 'G' });
+  const zelle = (i) => matrix[i].zellen.find((c) => c.lernziel === dividieren.lernziele[0].id);
+  assert.equal(zelle(0).abstecher, true);
+  assert.equal(zelle(0).status, 'offen');
+  assert.equal(zelle(1).abstecher, undefined);
+  assert.equal(zelle(2).abstecher, true);
+  assert.equal(zelle(2).status, 'siegel', 'eine freiwillig geschaffte Krone ist sichtbar');
+  assert.ok(matrix[0].zellen.filter((c) => c.abstecher).length === 2);
 });

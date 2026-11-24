@@ -1,4 +1,4 @@
-// Klasse 6, Kapitel 1 (ADR 0037) im echten Browser: Jede der 288 Aufgaben wird im gebauten Schüler-Dashboard (Probeansicht des Aufgabentesters)
+// Klasse 6 (ADR 0037 und 0038) im echten Browser: Jede Aufgabe wird im gebauten Schüler-Dashboard (Probeansicht des Aufgabentesters)
 // gezeigt und über die Oberfläche gelöst, bei 420 Pixel Breite. Die richtige Lösung muss als richtig gelten, der erste typische Fehler als falsch.
 // Aufruf: node tools/baue.mjs && node tests/browser-klasse-6.mjs   (braucht Playwright; BILDER=Ordner speichert Bildschirmfotos)
 import { createRequire } from 'node:module';
@@ -9,10 +9,13 @@ import { schreibe } from '../src/schueler/groessen.js';
 const { chromium } = createRequire(import.meta.url)('playwright');
 const wurzel = new URL('../', import.meta.url);
 const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-6.json', wurzel), 'utf8'));
-const neun = pool.aufgaben.filter((a) => a.lernziel.startsWith('6.1.'));
+// KAPITEL=2 prüft nur die Aufgaben eines Kapitels, ohne Angabe alle.
+const neun = pool.aufgaben.filter((a) => process.env.KAPITEL === "0" ? false : !process.env.KAPITEL || a.lernziel.startsWith(`6.${process.env.KAPITEL}.`));
 const bilder = process.env.BILDER;
 if (bilder) mkdirSync(bilder, { recursive: true });
-const FOTOS = { '6.1.1-B2-G-04': 'gemischte-zahl-G', '6.1.2-W1-F-01': 'erweitern-F', '6.1.3-K2-F-04': 'kuerzen-in-schritten-F', '6.1.4-V1-F-04': 'ordnen-F', '6.1.4-V2-M-02': 'gleichnamig-M', '6.1.5-T1-M-01': 'groesse-einheit-waehlen-M', '6.1.6-Z1-F-06': 'zahlenstrahl-ablesen-F', '6.1.6-Z2-M-04': 'zahlenstrahl-eintragen-M' };
+const FOTOS = { '6.2.1-A1-F-05': 'akku-F', '6.2.1-A2-F-03': 'ueber-ein-ganzes-F', '6.2.2-U1-F-01': 'zwei-schritte-F', '6.2.2-U1-M-01': 'hauptnenner-M', '6.2.3-V1-F-01': 'vervielfachen-F', '6.2.4-T1-F-01': 'teilen-F',
+  '6.2.5-P1-F-01': 'rechteckbild-F', '6.2.6-D1-M-04': 'dividieren-M', '6.2.6-D2-E-01': 'dividieren-E', '6.2.7-R1-G-01': 'punkt-vor-strich-G', '6.2.7-R2-E-01': 'klammern-E',
+  '6.1.1-B2-G-04': 'gemischte-zahl-G', '6.1.2-W1-F-01': 'erweitern-F', '6.1.3-K2-F-04': 'kuerzen-in-schritten-F', '6.1.4-V1-F-04': 'ordnen-F', '6.1.4-V2-M-02': 'gleichnamig-M', '6.1.5-T1-M-01': 'groesse-einheit-waehlen-M', '6.1.6-Z1-F-06': 'zahlenstrahl-ablesen-F', '6.1.6-Z2-M-04': 'zahlenstrahl-eintragen-M' };
 
 const browser = await chromium.launch();
 const seiteMit = async (breite) => {
@@ -76,7 +79,8 @@ for (const auf of neun) {
 }
 assert.deepEqual(fehler, []);
 // Fast richtig (ADR 0037): Ein ungekürzter Bruch mit richtigem Wert bekommt zweimal den Hinweis und kostet keinen Versuch, beim dritten Mal zählt er als Fehlversuch.
-const kurz = neun.find((a) => a.format === 'bruch' && a.gekuerzt && !a.gemischt && /^\d+⁄\d+$/.test(a.loesung));
+const eins = pool.aufgaben.filter((a) => a.lernziel.startsWith('6.1.'));
+const kurz = eins.find((a) => a.format === 'bruch' && a.gekuerzt && !a.gemischt && /^\d+⁄\d+$/.test(a.loesung));
 const k = teileBruch(kurz.loesung);
 await zeige(seite, kurz.id);
 for (let mal = 1; mal <= 2; mal++) {
@@ -96,7 +100,7 @@ await seite.click('#pruefen');
 await seite.waitForFunction(() => window.ergebnisse.length > 0);
 assert.equal(await seite.evaluate(() => window.ergebnisse.at(-1).richtig), true);
 // Eine Lücke im Zähler oder Nenner steht im gestapelten Bruch: Feld über oder unter dem Bruchstrich.
-const luecke = neun.find((a) => a.format === 'luecken' && /\{\{\w+\}\}⁄\d/.test(a.text));
+const luecke = eins.find((a) => a.format === 'luecken' && /\{\{\w+\}\}⁄\d/.test(a.text));
 await zeige(seite, luecke.id);
 assert.ok(await seite.evaluate(() => { const b = document.querySelector('.lueckenbruch'); if (!b) return false; const z = b.querySelector('.bz input')?.getBoundingClientRect(), n = b.querySelector('.bn').getBoundingClientRect(); return z && n.top >= z.bottom - 1; }), `${luecke.id}: Lücke steht nicht über dem Bruchstrich`);
 if (bilder) {
@@ -175,5 +179,34 @@ if (bilder) {
   await seite.waitForSelector('svg.regionskarte');
   assert.deepEqual(fehlerB, []);
 }
+// Niveau-Meilenstein (ADR 0038): Mit Zielniveau Silber ist „Brüche dividieren“ ein freiwilliger Abstecher mit Aufgaben von Gold.
+{
+  const seite = await browser.newPage({ viewport: { width: 420, height: 900 }, deviceScaleFactor: bilder ? 2 : 1 });
+  const fehlerN = [];
+  seite.on('pageerror', (e) => fehlerN.push(e.message));
+  // Die Klassendatei der Demo-Klasse setzt das Zielniveau dieses Schülers auf Silber.
+  await seite.addInitScript(() => localStorage.setItem('mk-demo-6a/klassendatei.json', JSON.stringify({ zielniveaus: { '6A-ZWEI': 'G' } })));
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '6a-zwei');
+  await seite.click('#demo');
+  await seite.waitForSelector('.regionen');
+  await seite.click('[data-kapitel="6.2"]');
+  await seite.waitForSelector('svg.regionskarte');
+  if (await seite.locator('#einstieg-ueberspringen').count()) await seite.click('#einstieg-ueberspringen');
+  assert.equal(await seite.locator('svg.regionskarte .meilenstein').count(), 7);
+  assert.equal(await seite.locator('svg.regionskarte path.abstecher').count(), 1, 'der Niveau-Meilenstein hängt als Abstecher unter dem Weg');
+  assert.deepEqual(await seite.locator('svg.regionskarte .steinnummer').allTextContents(), ['1', '2', '3', '4', '5', '6'], 'der Weg zählt ohne den Abstecher');
+  if (bilder) await seite.locator('.kartenrahmen').screenshot({ path: `${bilder}/regionskarte-niveau-abstecher-420.png` });
+  await seite.locator('svg.regionskarte .meilenstein[aria-label*="Brüche dividieren"] .stein').click();
+  await seite.waitForSelector('#niveau-abstecher');
+  assert.equal(await seite.locator('#niveau-marke').innerText(), 'ab Gold');
+  assert.equal(await seite.locator('.tafel .kronenwahl').count(), 0, 'am Abstecher gibt es keine Kronenwahl');
+  if (bilder) await seite.locator('.karte.tafel').screenshot({ path: `${bilder}/tafel-niveau-abstecher-420.png` });
+  await seite.click('#aufbrechen');
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
+  assert.match(id, /^6\.2\.6-D1-M-/, 'die Aufgabe kommt von Gold');
+  assert.deepEqual(fehlerN, []);
+}
 await browser.close();
-console.log(`Klasse 6 Kapitel 1 im Browser in Ordnung: ${neun.length} Aufgaben gelöst, ${falschGeprueft} typische Fehler als falsch erkannt, „Fast richtig“ und eine Brücke in die Klasse 5 geprüft.`);
+console.log(`Klasse 6 im Browser in Ordnung: ${neun.length} Aufgaben gelöst, ${falschGeprueft} typische Fehler als falsch erkannt, „Fast richtig“, eine Brücke in die Klasse 5 und der Niveau-Meilenstein geprüft.`);

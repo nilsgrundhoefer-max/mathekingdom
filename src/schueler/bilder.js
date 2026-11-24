@@ -136,12 +136,18 @@ export function wappenBild(wappen, breite = 60) {
 // milestones: [{ id, titel, extra, status, krone }]; status: leer | gesperrt | offen | begonnen | gemeistert
 export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenstein }) {
   const ABSTAND = 150, LINKS = 90, OBEN = 96, STUFE = 52, HOCH = 40;
-  const haupt = milestones.filter((m) => !m.extra).length;
-  const breite = LINKS + (milestones.length - 1) * ABSTAND + 150;
-  const hoehe = OBEN + (haupt > 3 ? STUFE : 0) + HOCH + (milestones.length > haupt ? 70 : 0) + 120;
+  // Spalten: Jeder Meilenstein hat seine Spalte. Ein Abstecher hängt unter dem Weg an seinem Wirt, dem letzten Meilenstein davor,
+  // der kein Abstecher ist. Der Weg läuft durch seine Spalte weiter (Niveau-Meilenstein mitten im Kapitel, ADR 0038).
+  const wirt = milestones.map((m, j) => { for (let i = m.extra ? j - 1 : j; i >= 0; i--) if (!milestones[i].extra) return i; return 0; });
+  const haupt = milestones.reduce((letzte, m, j) => (m.extra ? letzte : j), 0) + 1; // Spalten bis zum letzten Meilenstein auf dem Weg
+  const hatAbstecher = milestones.some((m) => m.extra);
+  const breite = Math.ceil(Math.max(LINKS + (milestones.length - 1) * ABSTAND + 150, ...milestones.map((m, j) => LINKS + j * ABSTAND + 40 + m.titel.length * 6.4)));
   const x = (j) => LINKS + j * ABSTAND;
   const versatz = (j) => (Math.floor(j / 3) % 2) * STUFE; // alle drei Meilensteine biegt der Weg ab
   const y = (j) => OBEN + versatz(j) + HOCH / 2;
+  // Die Namen stehen schräg unter den Meilensteinen. Lange Namen (Klasse 6) brauchen mehr Platz nach unten.
+  const namenTiefe = Math.max(0, ...milestones.map((m, j) => (m.extra ? y(wirt[j]) + 70 : y(j)) + HOCH / 2 + 30 + m.titel.length * 4.3));
+  const hoehe = Math.max(OBEN + (haupt > 3 ? STUFE : 0) + HOCH + (hatAbstecher ? 70 : 0) + 120, Math.ceil(namenTiefe));
 
   let d = `M${x(0) - 60} ${y(0)}`;
   for (let j = 0; j < haupt; j++) {
@@ -155,8 +161,8 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
 
   const svg = s('svg', { viewBox: `0 0 ${breite} ${hoehe}`, width: breite, height: hoehe, class: 'regionskarte', role: 'group', 'aria-label': 'Regionskarte' },
     s('rect', { x: 3, y: 3, width: breite - 6, height: hoehe - 6, rx: 6, class: 'kartenrand' }));
-  const unten = y(haupt - 1) + 70;
-  const mitteVon = (m, j) => [x(j), m.extra ? unten : y(j)];
+  const unten = (j) => y(wirt[j]) + 70;
+  const mitteVon = (m, j) => [x(j), m.extra ? unten(j) : y(j)];
   // Landschaft und Nebel (ADR 0014): Jeder gemeisterte Meilenstein lichtet den Nebel um sich und gibt die Zeichnung daneben frei.
   svg.append(s('g', { class: 'landschaft', 'aria-hidden': 'true' }, milestones.map((m, j) => {
     const [mx, my] = mitteVon(m, j);
@@ -177,13 +183,14 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
   // Abstecher: gestrichelt unterhalb des Weges
   milestones.forEach((m, j) => {
     if (!m.extra) return;
-    svg.append(s('path', { d: `M${x(haupt - 1)} ${y(haupt - 1)} C${x(haupt - 1)} ${unten} ${x(j) - 40} ${unten} ${x(j)} ${unten}`, class: 'abstecher' }));
+    const w = wirt[j], u = unten(j);
+    svg.append(s('path', { d: `M${x(w)} ${y(w)} C${x(w)} ${u} ${x(j) - 40} ${u} ${x(j)} ${u}`, class: 'abstecher' }));
   });
   milestones.forEach((m, j) => {
-    const mitte = m.extra ? unten : y(j);
+    const mitte = m.extra ? unten(j) : y(j);
     const oben = mitte - HOCH / 2;
     const hier = m.id === standort && ['offen', 'begonnen'].includes(m.status);
-    const nummer = m.extra ? null : j + 1;
+    const nummer = m.extra ? null : milestones.slice(0, j + 1).filter((v) => !v.extra).length;
     const zustand = m.status === 'gemeistert' ? ', gemeistert' : m.status === 'gesperrt' ? ', gesperrt' : m.status === 'imnebel' ? ', noch im Nebel' : '';
     const kroneText = m.krone ? `, Krone ${KRONEN[m.krone]}` : '';
     const g = s('g', { class: `meilenstein ${m.status}${m.id === gewaehlt ? ' gewaehlt' : ''}${hier ? ' standort' : ''}`, tabindex: 0, role: 'button',
@@ -204,7 +211,7 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
   // Das eigene Wappen steht am empfohlenen Meilenstein auf dem Weg.
   const ort = Math.max(0, milestones.findIndex((m) => m.id === standort));
   const bild = wappenBild(wappen, 26);
-  const ortY = milestones[ort]?.extra ? unten : y(ort);
+  const ortY = milestones[ort]?.extra ? unten(ort) : y(ort);
   bild.setAttribute('x', x(ort) - 52); bild.setAttribute('y', ortY - 16);
   bild.setAttribute('class', 'wappen standwappen');
   svg.append(bild);

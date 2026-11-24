@@ -212,6 +212,8 @@ body { margin: 0; background: #f4f1ea; }
 /* Vier Zustände: Farbe plus Zeichen, damit nichts an der Farbe allein hängt. */
 .zelle { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 .zelle.offen { background: #ece9e2; color: #6b7280; }
+.zelle.abstecher { background: #fff; color: #8a7a4a; border: 1px dashed #d8c890; }
+#mathekingdom-lehrer .niveaumarke { display: inline-block; font-size: .72rem; font-weight: 700; border-radius: 99px; padding: 0 7px; background: #fbf1cf; color: #7a5b00; border: 1px solid #e3c466; white-space: nowrap; }
 .zelle.begonnen { background: #5f97cf; color: #fff; }
 .zelle.wackelig { background: #dd8526; color: #1f2533; font-weight: 800; }
 .zelle.siegel { background: #2a7a50; color: #fff; font-weight: 700; }

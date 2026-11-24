@@ -233,7 +233,7 @@ Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist.
 _Avoid_: Zusatzstation, Extra
 
 **Niveau-Meilenstein**:
-Ein Meilenstein, den das Lehrwerk mit M oder E markiert und der deshalb nur Aufgaben ab dieser Niveaustufe hat (M: auf M und E; E: nur auf E). Für Schüler mit einem Zielniveau darunter ist er ein Abstecher und für den Kapitelabschluss nicht nötig; sie dürfen ihn freiwillig versuchen.
+Ein Meilenstein, den das Lehrwerk mit M oder E markiert und der deshalb nur Aufgaben ab dieser Niveaustufe hat (M: auf M und E; E: nur auf E). Für Schüler mit einem Zielniveau darunter ist er ein Abstecher und für den Kapitelabschluss nicht nötig; sie dürfen ihn freiwillig versuchen. Dann arbeiten sie auf der niedrigsten Niveaustufe, die er hat. Für Schüler ab diesem Zielniveau ist er ein gewöhnlicher Meilenstein auf dem Weg. Ändert die Lehrkraft das Zielniveau, wechselt er sofort die Rolle; verdiente Kronen bleiben.
 _Avoid_: Zusatzstoff, Extra, Erweiterung
 
 **Lernziel**:
@@ -315,7 +315,14 @@ Das Angebot an Wappen-Teilen, die ein Schüler mit Münzen kaufen kann. Jede Kla
 _Avoid_: Shop, Laden, Werkstatt
 
 **Wappenbereich**:
-Ein Teil des Wappens, den eine Klassenstufe neu öffnet: Klasse 5 Farben und Zeichen, Klasse 6 Schildteilung, Klasse 7 Helmzier, Klasse 8 Schildhalter, Klasse 9 Wahlspruch, Klasse 10 Prunkrahmen.
+Ein Teil des Wappens, den eine Klassenstufe neu öffnet: Klasse 5 Farben und Zeichen, Klasse 6 Schildteilung, Klasse 7 Helmzier, Klasse 8 Schildhalter, Klasse 9 Wahlspruch, Klasse 10 Prunkrahmen. Ein Teil eines Wappenbereichs heißt nie Krone.
+
+**Schildteilung**:
+Die Aufteilung des Schildes in Felder mit einer zweiten Farbe aus den schon gekauften Farben (gespalten, geteilt, geviert, schräg, Sparren, Pfahl, Schach).
+
+**Wahlspruch**:
+Ein Spruch auf dem Band unter dem Schild, den der Schüler aus einer festen Liste wählt. Er tippt ihn nie selbst.
+_Avoid_: Motto, Freitext
 
 **Hauptzeichen** und **Beizeichen**:
 Ein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen.

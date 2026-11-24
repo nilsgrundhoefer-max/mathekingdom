@@ -32,7 +32,7 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'groesse', 'einheiten', 'tippBild', 'winkelfeld',
   'faerben', 'genau', 'gemischt', 'gekuerzt', 'form'];
 // Kapitel, in denen mit Brüchen gerechnet wird: Klasse 5 Kapitel 9 und Klasse 6 Kapitel 1 (ADR 0037).
-const BRUCHKAPITEL = ['5.9', '6.1'];
+const BRUCHKAPITEL = ['5.9', '6.1', '6.2'];
 const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`));
 // Kapitel 6 (ADR 0033): Dort wird mit Größen gerechnet. Solange eine Aufgabe aus Kapitel 6 geprüft wird, lesen die Gleichungsprüfungen auch Einheiten.
 let groessenModus = false;
@@ -2264,11 +2264,17 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
 groessenModus = false;
 // Abdeckung: Jedes Lernziel mit Aufgaben hat auf jeder Niveaustufe genau sechs Aufgaben in der festen Folge der Anforderungsbereiche.
 const mitAufgaben = new Set(pool.aufgaben.map((a) => a.lernziel));
+// Niveau-Meilenstein (ADR 0037, 0038): Mit der Marke M gibt es je zwölf Aufgaben auf M und E, mit der Marke E 24 auf E, darunter keine.
+// Die Folge der Anforderungsbereiche wiederholt sich dann.
+for (const u of pool.kapitel.flatMap((k) => k.unterkapitel)) if (u.ab != null && (!['M', 'E'].includes(u.ab) || u.extra)) melde(u.id, 'Niveau-Meilenstein: Die Marke ist M oder E, und er ist kein fester Abstecher');
+const sollAnzahl = (l, n) => { const ab = lernziele.get(l)?.ab; return !ab ? PRO_GRUPPE : NIVEAUS.indexOf(n) < NIVEAUS.indexOf(ab) ? 0 : (4 * PRO_GRUPPE) / (NIVEAUS.length - NIVEAUS.indexOf(ab)); };
 for (const l of mitAufgaben) for (const n of NIVEAUS) {
   const gruppe = (gruppen.get(`${l} ${n}`) ?? []).sort((a, b) => a.id.localeCompare(b.id));
-  if (gruppe.length !== PRO_GRUPPE) { melde(`${l} ${n}`, `${gruppe.length} Aufgaben statt ${PRO_GRUPPE}`); continue; }
-  const folge = gruppe.map((a) => a.afb);
-  if (folge.join() !== AFB_FOLGE[n].join()) melde(`${l} ${n}`, `Anforderungsbereiche ${folge.join(', ')} statt ${AFB_FOLGE[n].join(', ')}`);
+  const soll = sollAnzahl(l, n);
+  if (gruppe.length !== soll) { melde(`${l} ${n}`, `${gruppe.length} Aufgaben statt ${soll}`); continue; }
+  if (!soll) continue;
+  const folge = gruppe.map((a) => a.afb), sollFolge = Array.from({ length: soll }, (_, i) => AFB_FOLGE[n][i % PRO_GRUPPE]);
+  if (folge.join() !== sollFolge.join()) melde(`${l} ${n}`, `Anforderungsbereiche ${folge.join(', ')} statt ${sollFolge.join(', ')}`);
   const bilder = gruppe.filter(hatBild).length;
   if (bilder < (BILDER_JE_GRUPPE[n] ?? 0)) melde(`${l} ${n}`, `nur ${bilder} Aufgaben mit Bild, nötig sind ${BILDER_JE_GRUPPE[n]}`);
   // Keine zwei Aufgaben einer Gruppe mit demselben Text und denselben Antworten.
@@ -2285,7 +2291,7 @@ for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.ler
 for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.some((l) => mitAufgaben.has(l.id))) {
   groessenModus = k.id === '5.6' || k.id === '5.8';
   bruchModus = BRUCHKAPITEL.includes(k.id);
-  for (const n of ['F', 'G', 'M']) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
+  for (const n of ['F', 'G', 'M'].filter((x) => !u.ab || NIVEAUS.indexOf(x) >= NIVEAUS.indexOf(u.ab))) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
   for (const w of u.wortspeicher ?? []) {
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);
     for (const g of gleichungenIn(w.erklaerung)) if (!stimmt(g)) melde(u.id, `Wortspeicher: Gleichung stimmt nicht: ${g.ganz}`);

@@ -4,7 +4,9 @@
 // - Kreis: Die erste Teillinie zeigt nach oben, höchstens 12 Teile. Rechteck und Streifen höchstens 20 Teile, Mengenbild höchstens 20 Kugeln in Reihen.
 // - Zwei Ganze stehen nebeneinander mit Abstand. Mehrere Figuren tragen die Namen A, B, C über dem Bild.
 // - „Ungleich“ geteilte Figuren sind eine Falle: Ihre Teile sind deutlich verschieden groß.
-// Eine Figur: { n?, form: 'kreis' | 'rechteck' | 'streifen' | 'menge' | 'hundert', teile | reihen + spalten, ganze?, gefaerbt: [Nummern der Teile], ungleich? }
+// Klasse 6, Kapitel 2 (ADR 0038): Der Akku ist ein Ladebalken in gleich großen Teilen. Im Rechteckbild für „Bruch von Bruch“
+// sind die Felder des ersten Bruchteils hell gefärbt (`hell`), die des Bruchteils davon kräftig.
+// Eine Figur: { n?, form: 'kreis' | 'rechteck' | 'streifen' | 'menge' | 'hundert' | 'akku', teile | reihen + spalten, ganze?, gefaerbt: [Nummern der Teile], ungleich? }
 import { h, s } from './dom.js';
 import { leseTeile } from './bruch.js';
 
@@ -27,6 +29,10 @@ function ganzes(f) {
     const je = f.teile <= 5 ? f.teile : f.teile <= 12 ? Math.ceil(f.teile / 2) : Math.ceil(f.teile / (f.teile > 15 ? 4 : 3)), k = 34, r = 13;
     return { b: je * k, h: Math.ceil(f.teile / je) * k, teile: Array.from({ length: f.teile }, (_, i) => ({ cx: (i % je) * k + k / 2, cy: Math.floor(i / je) * k + k / 2, r })) };
   }
+  if (f.form === 'akku') {
+    const B = Math.min(300, Math.max(170, f.teile * 40)), H = 76, innen = 8, spalt = 4, w = (B - 2 * innen - (f.teile - 1) * spalt) / f.teile;
+    return { b: B + 12, h: H, akku: B, teile: Array.from({ length: f.teile }, (_, i) => ({ d: `M${Z(innen + i * (w + spalt))} ${innen} h${Z(w)} v${H - 2 * innen} h${Z(-w)} Z` })) };
+  }
   if (f.form === 'hundert') {
     const k = 17;
     // Spaltenweise gezählt: Jede volle Spalte ist ein Zehntel.
@@ -39,7 +45,7 @@ function ganzes(f) {
   return { b: B, h: H, teile };
 }
 const jeGanzes = (f) => (f.form === 'rechteck' ? f.reihen * f.spalten : f.form === 'hundert' ? 100 : f.teile);
-const FORMNAME = { kreis: 'Kreis', rechteck: 'Rechteck', streifen: 'Streifen', menge: 'Kugeln', hundert: 'Hunderterfeld' };
+const FORMNAME = { kreis: 'Kreis', rechteck: 'Rechteck', streifen: 'Streifen', menge: 'Kugeln', hundert: 'Hunderterfeld', akku: 'Akku' };
 
 // Zeichnet die Figuren nebeneinander (Streifen untereinander). beiWahl(nummer) macht die Teile der ersten Figur antippbar.
 export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
@@ -62,7 +68,7 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
   liste.forEach(({ f, g, ganze, breite }, nrFigur) => {
     const c = nrFigur % proZeile, r = Math.floor(nrFigur / proZeile);
     const x = RAND + spaltenB.slice(0, c).reduce((a, b) => a + b + LUECKE, 0), y = RAND + zeilenH.slice(0, r).reduce((a, b) => a + b + kopf + 18, 0);
-    const voll = new Set(gewaehlt ?? f.gefaerbt ?? []), n = jeGanzes(f);
+    const voll = new Set(gewaehlt ?? f.gefaerbt ?? []), hell = new Set(gewaehlt ? [] : f.hell ?? []), n = jeGanzes(f);
     const links = unter ? x + rand : x + (spaltenB[c] - breite) / 2, oben = y + kopf + (unter ? 0 : (zeilenH[r] - g.h) / 2);
     if (f.n) svg.append(unter ? s('text', { x: x + 8, y: Z(oben + g.h / 2 + 6), 'text-anchor': 'middle', class: 'figurname' }, f.n) : s('text', { x: Z(links + breite / 2), y: y + 16, 'text-anchor': 'middle', class: 'figurname' }, f.n));
     const gruppe = s('g', { class: 'bruchfigur', 'data-teile': n * ganze, 'data-form': f.form });
@@ -71,7 +77,7 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
       const ganz = s('g', { transform: `translate(${Z(dx)} ${Z(oben)})`, class: 'ganzes' });
       g.teile.forEach((t, i) => {
         const nr = w * n + i, an = voll.has(nr);
-        const el = t.d ? s('path', { d: t.d, class: `bruchteil${an ? ' voll' : ''}` }) : s('circle', { cx: t.cx, cy: t.cy, r: t.r, class: `bruchteil kugel${an ? ' voll' : ''}` });
+        const el = t.d ? s('path', { d: t.d, class: `bruchteil${an ? ' voll' : hell.has(nr) ? ' hell' : ''}` }) : s('circle', { cx: t.cx, cy: t.cy, r: t.r, class: `bruchteil kugel${an ? ' voll' : ''}` });
         if (beiWahl) {
           el.setAttribute('role', 'button'); el.setAttribute('tabindex', '0'); el.setAttribute('aria-pressed', an ? 'true' : 'false'); el.setAttribute('aria-label', `Teil ${nr + 1} von ${n * ganze}`);
           el.setAttribute('data-nr', nr);
@@ -82,12 +88,13 @@ export function bruchSvg(figuren, { beiWahl = null, gewaehlt = null } = {}) {
       });
       // Das Hunderterfeld bekommt kräftige Linien zwischen den Zehnerspalten, der Umriss jedes Ganzen ist immer kräftig.
       if (f.form === 'hundert') for (let c = 1; c < 10; c++) ganz.append(s('line', { x1: c * g.zehner, y1: 0, x2: c * g.zehner, y2: g.h, class: 'zehnerlinie' }));
-      if (f.form !== 'menge' && f.form !== 'kreis') ganz.append(s('rect', { x: 0, y: 0, width: g.b, height: g.h, class: 'umriss' }));
+      if (f.form === 'akku') ganz.append(s('rect', { x: 0, y: 0, width: g.akku, height: g.h, rx: 9, class: 'umriss' }), s('rect', { x: g.akku, y: g.h / 2 - 14, width: 10, height: 28, rx: 3, class: 'akkupol' }));
+      else if (f.form !== 'menge' && f.form !== 'kreis') ganz.append(s('rect', { x: 0, y: 0, width: g.b, height: g.h, class: 'umriss' }));
       gruppe.append(ganz);
     }
     svg.append(gruppe);
     const gefaerbt = [...voll].length;
-    texte.push(`${f.n ? `${f.n}: ` : ''}${FORMNAME[f.form]}${ganze > 1 ? ` (${ganze} Ganze)` : ''} mit ${n} ${f.ungleich ? 'ungleich großen ' : ''}Teilen${beiWahl ? '' : `, ${gefaerbt} gefärbt`}`);
+    texte.push(`${f.n ? `${f.n}: ` : ''}${FORMNAME[f.form]}${ganze > 1 ? ` (${ganze} Ganze)` : ''} mit ${n} ${f.ungleich ? 'ungleich großen ' : ''}Teilen${beiWahl ? '' : hell.size ? `, ${hell.size + gefaerbt} hell gefärbt, davon ${gefaerbt} kräftig` : `, ${gefaerbt} gefärbt`}`);
   });
   svg.setAttribute('aria-label', `Bruchbild: ${texte.join('; ')}`);
   return svg;
