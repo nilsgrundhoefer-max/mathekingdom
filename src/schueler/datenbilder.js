@@ -308,7 +308,7 @@ export function urlisteBild(liste, gesperrt = false) {
     !gesperrt && h('p', { class: 'klein' }, 'Tipp: Klicke ein Kärtchen an, wenn du es gezählt hast.'));
 }
 export function datenTabelle(t) {
-  return h('table', { class: 'aufgabentabelle datentabelle' },
+  return h('table', { class: `aufgabentabelle datentabelle${t.art ? ` ${t.art}` : ''}` },
     h('thead', {}, h('tr', {}, t.kopf.map((k) => h('th', { scope: 'col' }, k)))),
     h('tbody', {}, t.zeilen.map((z) => h('tr', { class: z[0] === 'Gesamt' ? 'gesamt' : null }, z.map((c, i) => (i === 0 ? h('th', { scope: 'row' }, c) : h('td', { class: c === '?' ? 'frage' : null }, c)))))));
 }

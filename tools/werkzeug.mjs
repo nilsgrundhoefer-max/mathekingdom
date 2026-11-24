@@ -317,6 +317,18 @@ const KIND = {
   'gemischt-getrennt-mal': 'Du wandelst gemischte Zahlen vor dem Malnehmen jetzt in Brüche um.',
   'gemischt-kleiner-von-groesser': 'Du wandelst beim Abziehen jetzt ein Ganzes um.',
   'mal-macht-groesser': 'Du weißt jetzt: Malnehmen mit einem Bruch unter 1 macht kleiner.',
+  // Klasse 7, Kapitel 1 (ADR 0043)
+  'negativ-groesser': 'Du weißt jetzt: Links auf der Zahlengeraden steht die kleinere Zahl.',
+  'betrag-gegenzahl': 'Du unterscheidest jetzt den Abstand zur Null und die Gegenzahl.',
+  'betraege-addiert': 'Du schaust beim Addieren jetzt auf die Vorzeichen.',
+  'minus-minus-uebersehen': 'Du machst aus Minus und Minus jetzt ein Plus.',
+  'minus-mal-minus': 'Du weißt jetzt: Minus mal Minus ergibt Plus.',
+  'vorzeichen-division': 'Du bestimmst beim Teilen jetzt zuerst das Vorzeichen.',
+  'minusklammer': 'Du drehst nach einem Minus vor der Klammer jetzt jedes Zeichen um.',
+  'vorzeichen-vergessen': 'Du schreibst jetzt das Vorzeichen zum Ergebnis.',
+  'richtung-vertauscht': 'Du gehst bei Plus jetzt nach rechts und bei Minus nach links.',
+  'abstand-ueber-null': 'Du zählst den Abstand jetzt über die Null hinweg.',
+  'koord-vorzeichen': 'Du achtest bei jedem Punkt jetzt auf das Vorzeichen der Koordinaten.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -496,6 +508,18 @@ export const fehlvorstellungen = {
   'gemischt-getrennt-mal': fv('Multipliziert oder dividiert bei gemischten Zahlen die Ganzen und die Bruchteile getrennt.', 'Wandle die gemischte Zahl zuerst in einen Bruch um. Rechne erst dann.'),
   'gemischt-kleiner-von-groesser': fv('Zieht bei gemischten Zahlen den kleineren Bruchteil vom größeren ab, statt ein Ganzes umzuwandeln.', 'Der Bruch reicht nicht zum Abziehen. Wandle ein Ganzes in Bruchteile um.'),
   'mal-macht-groesser': fv('Meint, Multiplizieren vergrößert immer und Dividieren verkleinert immer.', 'Die Hälfte von etwas ist weniger. Malnehmen mit einem Bruch unter 1 macht kleiner, Teilen durch ihn macht größer.'),
+  // Klasse 7, Kapitel 1 „Rationale Zahlen“ (Grilling mit Nils, 2026-11-24, ADR 0043)
+  'negativ-groesser': fv('Hält bei negativen Zahlen die mit dem größeren Betrag für größer (−8 > −3).', 'Schau auf die Zahlengerade: Die Zahl weiter links ist kleiner. Bei −8 ist es kälter als bei −3.'),
+  'betrag-gegenzahl': fv('Verwechselt Betrag und Gegenzahl oder gibt einen negativen Betrag an.', 'Der Betrag ist der Abstand zur Null, er ist nie negativ. Die Gegenzahl liegt auf der anderen Seite der Null.'),
+  'betraege-addiert': fv('Addiert bei verschiedenen Vorzeichen die Beträge (−5 + 3 wird zu 8 oder −8).', 'Starte auf der Zahlengeraden bei der ersten Zahl. Plus geht nach rechts. Wo landest du?'),
+  'minus-minus-uebersehen': fv('Übersieht beim Subtrahieren einer negativen Zahl das doppelte Minus (3 − (−5) wird zu −2).', 'Eine negative Zahl abziehen heißt: ihre Gegenzahl addieren. Aus − (−5) wird + 5.'),
+  'minus-mal-minus': fv('Rechnet Minus mal Minus zu Minus.', 'Bestimme zuerst das Vorzeichen: Zwei gleiche Vorzeichen ergeben Plus, zwei verschiedene ergeben Minus.'),
+  'vorzeichen-division': fv('Teilt nur die Beträge und setzt beim Dividieren das falsche oder kein Vorzeichen.', 'Beim Dividieren gilt dieselbe Regel wie beim Multiplizieren: gleiche Vorzeichen Plus, verschiedene Vorzeichen Minus.'),
+  'minusklammer': fv('Lässt beim Auflösen einer Minusklammer die Zeichen in der Klammer stehen.', 'Steht ein Minus vor der Klammer, drehen sich alle Zeichen in der Klammer um.'),
+  'vorzeichen-vergessen': fv('Rechnet mit den Beträgen richtig, gibt das Ergebnis aber ohne oder mit falschem Vorzeichen an.', 'Der Betrag stimmt. Prüfe noch das Vorzeichen: Liegt das Ergebnis links oder rechts von der Null?'),
+  'richtung-vertauscht': fv('Geht an der Zahlengeraden in die falsche Richtung (Plus nach links, Minus nach rechts) oder verwechselt Zunahme und Abnahme.', 'Plus heißt: nach rechts, es wird mehr. Minus heißt: nach links, es wird weniger.'),
+  'abstand-ueber-null': fv('Zieht beim Abstand zweier Zahlen mit verschiedenen Vorzeichen die Beträge voneinander ab, statt über die Null zu zählen.', 'Zähle die Schritte auf der Zahlengeraden: erst bis zur Null, dann weiter bis zur zweiten Zahl.'),
+  'koord-vorzeichen': fv('Achtet im Koordinatensystem nicht auf das Vorzeichen einer Koordinate (links und rechts oder oben und unten verwechselt).', 'Eine negative x-Koordinate liegt links vom Nullpunkt. Eine negative y-Koordinate liegt unter dem Nullpunkt.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -880,10 +904,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
-  modellieren: ['6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['7.1.1-Z1', '7.1.X1-K1', '7.1.X2-W1', '6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
+  modellieren: ['7.1.X3-C1', '7.1.X4-B1', '6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['5.4.X1-Z1'],
-  argumentieren: ['6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
+  argumentieren: ['7.1.2-V1', '6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',

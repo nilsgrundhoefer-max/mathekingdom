@@ -4,7 +4,7 @@
 import { pruefeGitter } from './geo.js';
 import { pruefeWinkel } from './winkel.js';
 import { pruefeGroesse } from './groessen.js';
-import { pruefeDezimal, pruefeBruch, pruefeFaerben } from './bruch.js';
+import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseDezimal } from './bruch.js';
 
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
 export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
@@ -120,14 +120,18 @@ export function indexiere(pool) {
 }
 
 // ---------- Antworten prüfen ----------
+// Klasse 7 (ADR 0043): Ein Vorzeichen vor der Zahl zählt mit. „-5“, „−5“ und „– 5“ sind minus fünf, „+7“ ist 7.
 export function leseZahl(text) {
-  const s = String(text ?? '').replace(/[\s .']/g, '');
-  return /^\d+$/.test(s) ? Number(s) : NaN;
+  const m = String(text ?? '').replace(/[\s\u00a0\u202f.']/g, '').match(/^([+\-−–]?)(\d+)$/);
+  if (!m) return NaN;
+  return m[1] && m[1] !== '+' ? -Number(m[2]) : Number(m[2]);
 }
 function pruefeZahl(teil, eingabe) {
   // Kapitel 9: Eine Lösung als Text („0,25“) ist eine Dezimalzahl.
   if (typeof teil.loesung === 'string') return pruefeDezimal(teil, eingabe);
-  const wert = leseZahl(eingabe);
+  let wert = leseZahl(eingabe);
+  // Eine ganze Zahl mit Komma geschrieben („−4,0“) hat denselben Wert.
+  if (Number.isNaN(wert)) { const d = leseDezimal(eingabe); if (d && d.z % d.n === 0) wert = d.z / d.n; }
   // Heftaufgaben mit Geodreieck (Kapitel 5): Ein gemessener Kontrollwert darf um die Toleranz abweichen.
   if (wert === teil.loesung || (teil.toleranz && Math.abs(wert - teil.loesung) <= teil.toleranz)) return { richtig: true, fehlvorstellung: null };
   const treffer = (teil.typischeFehler ?? []).find((f) => f.wert === wert);

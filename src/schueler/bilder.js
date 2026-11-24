@@ -305,7 +305,7 @@ export function schlossBild() {
 }
 
 // ---------- Bilder in Aufgaben ----------
-const gliedere = (n) => (n >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ') : String(n));
+const gliedere = (n) => (n < 0 ? `−${gliedere(-n)}` : n >= 10000 ? String(n).replace(/\B(?=(\d{3})+$)/g, ' ') : String(n));
 const gliedereZahl = gliedere;
 
 // Zahlenstrahl. strahl: { von, bis, schritt, beschriftung, start?, spruenge?: [{ von, nach, text }], pfeil? }
@@ -315,13 +315,15 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
   const { von, bis, schritt, beschriftung } = strahl;
   // Kapitel 9: Mit `teiler` zählt der Strahl in Bruchteilen. teiler 10 heißt: Die Zahl 7 steht für 0,7. Bei anderen Teilern (Viertel) stehen nur die Ganzen am Strahl.
   const T = strahl.teiler ?? 1, zehner = /^10*$/.test(String(T));
-  const gliedere = (w) => (T === 1 ? gliedereZahl(w) : zehner ? (w % T === 0 ? String(w / T) : `${Math.floor(w / T)},${String(w % T).padStart(String(T).length - 1, '0').replace(/0+$/, '')}`) : String(w / T));
+  // Klasse 7 (ADR 0043): Der Strahl darf links von der Null beginnen (Zahlengerade). Negative Zahlen tragen das echte Minuszeichen.
+  const ohneZeichen = (w) => (T === 1 ? gliedereZahl(w) : zehner ? (w % T === 0 ? String(w / T) : `${Math.floor(w / T)},${String(w % T).padStart(String(T).length - 1, '0').replace(/0+$/, '')}`) : String(w / T));
+  const gliedere = (w) => (w < 0 ? `−${ohneZeichen(-w)}` : ohneZeichen(w));
   // Kapitel 9: Ein Bruchstrahl mit wenigen Teilstrichen ist schmal gezeichnet, damit er am Handy ohne Schieben ganz zu sehen ist.
   const kurz = T !== 1 && (bis - von) / schritt <= 10;
   const B = kurz ? 460 : 720, links = 34, rechts = 44, y = 78;
   const x = (w) => links + ((w - von) / (bis - von)) * (B - links - rechts);
-  const svg = s('svg', { class: `zahlenstrahl${kurz ? ' kurz' : ''}`, viewBox: `0 0 ${B} 138`, role: beiWahl ? 'group' : 'img', 'aria-label': `Zahlenstrahl von ${gliedere(von)} bis ${gliedere(bis)}` },
-    s('line', { x1: links - 14, y1: y, x2: B - 14, y2: y, class: 'achse' }),
+  const svg = s('svg', { class: `zahlenstrahl${kurz ? ' kurz' : ''}`, viewBox: `0 0 ${B} 138`, role: beiWahl ? 'group' : 'img', 'aria-label': `${von < 0 ? 'Zahlengerade' : 'Zahlenstrahl'} von ${gliedere(von)} bis ${gliedere(bis)}` },
+    s('line', { x1: links - (von < 0 ? 26 : 14), y1: y, x2: B - 14, y2: y, class: 'achse' }),
     s('path', { d: `M${B - 16} ${y - 7} L${B - 2} ${y} L${B - 16} ${y + 7} Z`, class: 'spitze' }));
   // Ausschnitt (Kapitel 2): Der Strahl beginnt nicht bei 0. Zwei schräge Striche zeigen die Unterbrechung.
   if (strahl.ausschnitt) svg.append(s('path', { d: `M${links - 17} ${y + 8} l6 -16 M${links - 11} ${y + 8} l6 -16`, class: 'unterbrechung' }));
@@ -331,12 +333,12 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
     const gross = (w - von) % beschriftung === 0;
     const g = s('g', { class: `strich${gross ? ' gross' : ''}${w === gewaehlt ? ' gewaehlt' : ''}`, 'data-wert': w },
       s('line', { x1: x(w), y1: y - (gross ? 12 : 7), x2: x(w), y2: y + (gross ? 12 : 7) }),
-      gross && s('text', { x: x(w), y: y + 32, 'text-anchor': 'middle', class: lang ? 'lang' : null }, gliedere(w)),
+      gross && s('text', { x: x(w), y: y + 32, 'text-anchor': 'middle', class: [lang && 'lang', von < 0 && w === 0 && 'null'].filter(Boolean).join(' ') || null }, gliedere(w)),
       w === gewaehlt && s('circle', { cx: x(w), cy: y, r: 9, class: 'marke' }));
     if (beiWahl) {
       const waehle = () => beiWahl(w);
       g.append(s('rect', { x: x(w) - breite / 2, y: y - 30, width: breite, height: 70, class: 'treffer' }));
-      g.setAttribute('role', 'button'); g.setAttribute('tabindex', '0'); g.setAttribute('aria-label', `Teilstrich ${w === gewaehlt ? '(gewählt)' : ''} ${strahl.verdeckt || T !== 1 ? '' : w}`.trim());
+      g.setAttribute('role', 'button'); g.setAttribute('tabindex', '0'); g.setAttribute('aria-label', `Teilstrich ${w === gewaehlt ? '(gewählt)' : ''} ${strahl.verdeckt || T !== 1 ? '' : gliedere(w)}`.trim());
       g.addEventListener('click', waehle);
       g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); waehle(); } });
     }

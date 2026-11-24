@@ -764,3 +764,30 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .feedbackfrage h1 { font-size: 1.45rem; margin: 4px 0; }
 #mathekingdom .feedbackfrage .knoepfe { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 12px 0 6px; }
 #mathekingdom .feedbackfrage .knoepfe button { min-width: 150px; font-size: 1.1rem; padding: 12px 24px; }
+
+/* Klasse 7, Kapitel 1 „Rationale Zahlen“ (ADR 0043): Vorzeichenknopf, Zahlengerade, Thermometer, Kontoauszug */
+#mathekingdom .zahlfeld.mit-vorzeichen { gap: 6px; }
+#mathekingdom button.vorzeichen { min-width: 2.6rem; min-height: 2.6rem; padding: 2px 8px; font-size: 1.25rem; font-weight: 700; line-height: 1; border-radius: 8px; flex: none; }
+#mathekingdom .luecken .zahlfeld.mit-vorzeichen { gap: 2px; margin: 2px 2px; vertical-align: middle; }
+#mathekingdom .luecken .zahlfeld.mit-vorzeichen input { width: 5.5ch; margin: 0 2px; }
+#mathekingdom .luecken button.vorzeichen, #mathekingdom .aufgabentabelle button.vorzeichen, #mathekingdom .stein button.vorzeichen { min-width: 2rem; min-height: 2.2rem; padding: 0 5px; font-size: 1.05rem; }
+#mathekingdom .stein .zahlfeld.mit-vorzeichen { gap: 2px; }
+#mathekingdom .stein .zahlfeld.mit-vorzeichen input { width: 3.3rem; }
+#mathekingdom .mauer .stein:has(.mit-vorzeichen), #mathekingdom .mauer:has(.mit-vorzeichen) .stein { width: 6.6rem; }
+#mathekingdom .aufgabentabelle td .zahlfeld.mit-vorzeichen { gap: 3px; }
+#mathekingdom .brucheingabe .bruchvorzeichen { min-width: .9rem; font-size: 1.6rem; font-weight: 700; text-align: center; }
+#mathekingdom .vorzeichenbruch { white-space: nowrap; }
+#mathekingdom .zahlenstrahl text.null { font-weight: 700; }
+#mathekingdom svg.thermometer { display: block; width: 100%; height: auto; margin: 0 auto; }
+#mathekingdom .thermometer .glas { fill: #fffdf6; stroke: var(--tinte); stroke-width: 2; }
+#mathekingdom .thermometer .saft { fill: #c0392b; }
+#mathekingdom .thermometer .stand { stroke: #7d1f15; stroke-width: 2; }
+#mathekingdom .thermometer .teil { stroke: var(--tinte); stroke-width: 1.3; }
+#mathekingdom .thermometer .teil.gross { stroke-width: 2.2; }
+#mathekingdom .thermometer .teil.null { stroke: #0072b2; stroke-width: 3; }
+#mathekingdom .thermometer .skala { font-size: 15px; fill: var(--tinte); font-variant-numeric: tabular-nums; }
+#mathekingdom .thermometer .skala.null { font-weight: 700; fill: #005a8c; }
+#mathekingdom .thermometer .einheit { font-size: 14px; font-weight: 700; fill: var(--grau); }
+#mathekingdom .thermometer .name { font-size: 15px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .datentabelle.auszug td, #mathekingdom .datentabelle.auszug th { font-variant-numeric: tabular-nums; }
+#mathekingdom .datentabelle.auszug td { text-align: right; white-space: nowrap; }

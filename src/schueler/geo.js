@@ -4,9 +4,11 @@
 
 import { zellenErfuellt } from './flaeche.js';
 
-export const punktText = (p) => `(${p[0]}|${p[1]})`;
+// Klasse 7 (ADR 0043): Koordinaten dürfen negativ sein. Geschrieben werden sie mit dem echten Minuszeichen, gelesen auch mit Bindestrich.
+const mz = (n) => (n < 0 ? `−${-n}` : String(n));
+export const punktText = (p) => `(${mz(p[0])}|${mz(p[1])})`;
 export const alsEingabe = (punkte) => punkte.map(punktText).join(' ');
-export const lesePunkte = (text) => [...String(text ?? '').matchAll(/\((-?\d+)\|(-?\d+)\)/g)].map((m) => [Number(m[1]), Number(m[2])]);
+export const lesePunkte = (text) => [...String(text ?? '').matchAll(/\(([-−]?\d+)\|([-−]?\d+)\)/g)].map((m) => [Number(m[1].replace('−', '-')), Number(m[2].replace('−', '-'))]);
 
 export const gleich = (p, q) => p[0] === q[0] && p[1] === q[1];
 const richtung = (a, b) => [b[0] - a[0], b[1] - a[1]];

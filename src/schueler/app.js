@@ -14,7 +14,7 @@ const satzSchule = ordnersaetze(gemerkteOrdner('mathekingdom-schueler'), ['schul
 import { wappenBild, wappenVoll, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
-import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild } from './zahlenbilder.js';
+import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild, mitVorzeichen, vorzeichenKnopf } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
 import { gitterLoesung } from './geo.js';
 import { winkelEingabe, winkelLoesungBild } from './winkelbilder.js';
@@ -925,10 +925,13 @@ function aufgabenAnsicht() {
 
 // Auch für den Bilderbogen (tools/bilderbogen.mjs) ausgeführt.
 export function eingabefelder(auf, a, gesperrt) {
-  const zahlfeld = (name, einheit, wert) => h('span', { class: 'zahlfeld' },
-    h('input', { name, type: 'text', inputMode: auf.lernziel?.startsWith('5.9.3') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
-      oninput: (e) => gliedereEingabe(e.target) }),
-    einheit && h('span', { class: 'einheit' }, einheit));
+  // Klasse 7 (ADR 0043): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
+  const vorzeichen = mitVorzeichen(auf);
+  const zahlfeld = (name, einheit, wert) => {
+    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+      oninput: (e) => gliedereEingabe(e.target) });
+    return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
+  };
   // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
   const ziffernfeld = (name, wert, stellen = 1) => h('input', { class: 'ziffer', name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: stellen, maxLength: stellen, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Fehlende Ziffer' });
   const letzte = a.eingaben.at(-1);

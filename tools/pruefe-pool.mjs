@@ -8,6 +8,7 @@ import { gGleichungen, GROESSENBILDER, bildMaengel, sprachMaengel, pruefeGroesse
 import { flaecheBildMaengel, zellenMaengel, flaecheSprachMaengel } from './pruefe-flaechen.mjs';
 import { gRechne } from './pruefe-groessen.mjs';
 import { bGleichungen, bruchSprachMaengel, pruefeBruchAufgabe, bruchHatBild } from './pruefe-brueche.mjs';
+import { rGleichungen, rationalSprachMaengel, pruefeRationalAufgabe, rationalHatBild } from './pruefe-rational.mjs';
 import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
@@ -38,6 +39,10 @@ const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`)
 let groessenModus = false;
 // Kapitel 9 (ADR 0036): Dort wird mit Brüchen und Dezimalzahlen gerechnet. Gleichungen, Format und Nachweis prüft tools/pruefe-brueche.mjs.
 let bruchModus = false;
+// Klasse 7, Kapitel 1 (ADR 0043): Dort wird mit Vorzeichen gerechnet. Gleichungen, Format und Nachweis prüft tools/pruefe-rational.mjs.
+const RATIONALKAPITEL = ['7.1'];
+const istRationalLernziel = (id) => RATIONALKAPITEL.some((k) => id.startsWith(`${k}.`));
+let rationalModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -85,6 +90,7 @@ const EINHEITEN = /(?<=\d) (?:€|Euro|Cent|ct|cm|mm|km|m|kg|g|l|min|h|Einer|Zeh
 const GLEICHUNG = new RegExp(`(?<! [+−·:=≈] )(?<![\\d▢_(\\[A-Za-zÄÖÜäöüß\\u00a0])(${AUSDRUCK})((?: = ${AUSDRUCK})+)(?: Rest (\\d+))?(?! ?[+−·:=▢_\\d]| Rest)`, 'g');
 function gleichungenIn(text) {
   if (bruchModus) return bGleichungen(text);
+  if (rationalModus) return rGleichungen(text);
   let roh = String(text);
   const mitGroessen = groessenModus ? gGleichungen(roh) : [];
   for (const g of mitGroessen) roh = roh.replace(g.ganz, '#'.repeat(g.ganz.length));
@@ -185,6 +191,7 @@ function pruefeSprache(a) {
   if (a.lernziel.startsWith('5.8.')) for (const x of flaecheSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   if (a.lernziel.startsWith('5.7.')) for (const x of winkelSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   if (istBruchLernziel(a.lernziel)) for (const x of bruchSprachMaengel(a, mitHilfen)) melde(a.id, x);
+  if (istRationalLernziel(a.lernziel)) for (const x of rationalSprachMaengel(a, mitHilfen)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -1869,7 +1876,8 @@ function pruefeBild(a) {
 const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter', 'winkel'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel', 'einheitentafel'].includes(a.tabelle?.art)
   // Kapitel 6: Preisliste, Fahrplan und Einkaufszettel sind das Bild der Aufgabe.
   || (Boolean(a.daten) && (a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.')))
-  || (istBruchLernziel(a.lernziel) && bruchHatBild(a));
+  || (istBruchLernziel(a.lernziel) && bruchHatBild(a))
+  || (istRationalLernziel(a.lernziel) && rationalHatBild(a));
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -2232,18 +2240,26 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   }
   if (!a.id.startsWith(`${a.lernziel}-${a.niveau}-`)) melde(a.id, 'ID passt nicht zu Lernziel und Niveaustufe');
   if (!a.text?.trim()) { melde(a.id, 'Text fehlt'); continue; }
-  if (/undefined|NaN|(?<![A-Za-zäöü])null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
+  if (/undefined|NaN|(?<![A-Za-zäöü])(?<![A-Za-zÄÖÜäöüß] )null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
   if (sichtbareTexte(a).concat(Object.values(a.hilfen ?? {})).some((t) => / {2}|^ | $|\d-\d| - /.test(t))) melde(a.id, 'Text mit doppeltem Leerzeichen oder Bindestrich statt Minuszeichen');
   groessenModus = a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.');
   const schluessel = `${a.lernziel} ${a.niveau}`;
   if (!gruppen.has(schluessel)) gruppen.set(schluessel, []);
   gruppen.get(schluessel).push(a);
   bruchModus = istBruchLernziel(a.lernziel);
+  rationalModus = istRationalLernziel(a.lernziel);
   pruefeHilfen(a);
   pruefeSprache(a);
   if (bruchModus) {
     for (const x of pruefeBruchAufgabe(a, pool.fehlvorstellungen)) melde(a.id, x);
     bruchModus = false;
+    if (a.niveau === 'F' && !hatBild(a)) melde(a.id, 'auf F braucht jede Aufgabe ein Bild');
+    if (a.niveau === 'F' && a.afb === 3) melde(a.id, 'auf F gibt es keinen Anforderungsbereich III');
+    continue;
+  }
+  if (rationalModus) {
+    for (const x of pruefeRationalAufgabe(a, pool.fehlvorstellungen)) melde(a.id, x);
+    rationalModus = false;
     if (a.niveau === 'F' && !hatBild(a)) melde(a.id, 'auf F braucht jede Aufgabe ein Bild');
     if (a.niveau === 'F' && a.afb === 3) melde(a.id, 'auf F gibt es keinen Anforderungsbereich III');
     continue;
@@ -2291,6 +2307,7 @@ for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.ler
 for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.some((l) => mitAufgaben.has(l.id))) {
   groessenModus = k.id === '5.6' || k.id === '5.8';
   bruchModus = BRUCHKAPITEL.includes(k.id);
+  rationalModus = RATIONALKAPITEL.includes(k.id);
   for (const n of ['F', 'G', 'M'].filter((x) => !u.ab || NIVEAUS.indexOf(x) >= NIVEAUS.indexOf(u.ab))) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
   for (const w of u.wortspeicher ?? []) {
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);
@@ -2300,6 +2317,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.so
 }
 groessenModus = false;
 bruchModus = false;
+rationalModus = false;
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (!f.beschreibung || !f.hinweis || !f.kind) melde(id, 'Fehlvorstellung ohne Beschreibung, Hinweis oder Kindersatz');
 // Kindersätze für Aha-Momente (ADR 0017): einfache Sprache, ein Satz, ohne Fachsprache der Lehrkraft.
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (f.kind && (!/^Du /.test(f.kind) || /, (der|die|das|den|dem|wenn|weil|dass|ob|obwohl|durch|mit|in|wo)\b|;/.test(f.kind) || f.kind.length > 110)) melde(id, `Kindersatz nicht in einfacher Sprache: ${f.kind}`);
