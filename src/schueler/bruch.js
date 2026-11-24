@@ -35,14 +35,29 @@ export function pruefeDezimal(teil, eingabe) {
   return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
 }
 // Brucheingabe: Die Eingabe ist ein Text wie „3/4“ oder „1 3/4“. Ein gleichwertiger Bruch zählt, außer die Aufgabe verlangt `genau` diesen Bruch.
+// Klasse 6 (ADR 0037): Mit `gekuerzt` muss der Bruch vollständig gekürzt sein, mit `form: 'gemischt'` eine gemischte Zahl.
+// Stimmt nur der Wert, meldet `nachbessern`, was noch fehlt ('kuerzen' oder 'gemischt'): Das Dashboard gibt dann einen Hinweis, ohne einen Versuch zu zählen.
+// Unechter Bruch und gemischte Zahl zählen gleich, solange keine Form verlangt ist.
 export function pruefeBruch(aufgabe, eingabe) {
   const ist = leseBruch(eingabe), soll = leseBruch(aufgabe.loesung);
   const gleicheForm = (a, b) => a.g === b.g && a.z === b.z && a.n === b.n;
-  if (ist && soll && (aufgabe.genau ? gleicheForm(ist, soll) : wertGleich(alsWert(ist), alsWert(soll)))) return { richtig: true, fehlvorstellung: null };
+  if (ist && soll && (aufgabe.genau ? gleicheForm(ist, soll) : wertGleich(alsWert(ist), alsWert(soll)))) {
+    const echt = ist.z < ist.n;
+    if (aufgabe.form === 'gemischt' && !(ist.g > 0 && echt)) return { richtig: false, fehlvorstellung: 'gemischt-umwandeln', nachbessern: 'gemischt' };
+    if (aufgabe.gekuerzt && ist.g > 0 && !echt) return { richtig: false, fehlvorstellung: 'gemischt-umwandeln', nachbessern: 'gemischt' };
+    if (aufgabe.gekuerzt && ist.z > 0 && ggt(ist.z, ist.n) !== 1) return { richtig: false, fehlvorstellung: 'kuerzen-nicht-vollstaendig', nachbessern: 'kuerzen' };
+    return { richtig: true, fehlvorstellung: null };
+  }
   const fehler = (aufgabe.typischeFehler ?? []).map((f) => ({ ...f, b: leseBruch(f.wert) })).filter((f) => f.b);
   const treffer = ist && (fehler.find((f) => gleicheForm(f.b, ist)) ?? fehler.find((f) => wertGleich(alsWert(f.b), alsWert(ist))));
   return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
 }
+// Hinweise zum Nachbessern. Sie kosten keinen Versuch (höchstens zweimal je Aufgabe, danach zählt die Eingabe als Fehlversuch).
+export const NACHBESSERN = {
+  kuerzen: 'Fast richtig: Dein Bruch hat den richtigen Wert. Kürze ihn noch so weit wie möglich. Das kostet dich keinen Versuch.',
+  gemischt: 'Fast richtig: Der Wert stimmt. Schreibe die Zahl noch als gemischte Zahl: erst die Ganzen, dahinter einen Bruch, der kleiner als 1 ist. Das kostet dich keinen Versuch.',
+};
+export const NACHBESSERN_HOECHSTENS = 2;
 // Teile färben: Die Eingabe nennt die gefärbten Teile („0 3 5“). Richtig ist jede Auswahl mit der verlangten Anzahl.
 export const leseTeile = (text) => [...new Set(String(text ?? '').split(/\s+/).filter((x) => /^\d+$/.test(x)).map(Number))].sort((a, b) => a - b);
 export function pruefeFaerben(aufgabe, eingabe) {

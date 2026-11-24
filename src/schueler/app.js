@@ -20,6 +20,7 @@ import { winkelLoesung } from './winkel.js';
 import { groesseEingabe, liesGroesse, einheitentafelBild } from './groessenbilder.js';
 import { loesungGroesse } from './groessen.js';
 import { bruchEingabe, liesBruch, faerbenEingabe, faerbenLoesungBild } from './bruchbilder.js';
+import { NACHBESSERN, NACHBESSERN_HOECHSTENS } from './bruch.js';
 import { faerbenLoesung, bruchLoesung } from './bruch.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
@@ -629,6 +630,8 @@ function brueckeAngebot(lernzielId) {
   if (L.NIVEAUS.indexOf(L.arbeitsniveau(z.stand, L.kapitelVon(lernzielId), z.einst.zielniveau)) < L.NIVEAUS.indexOf('M')) return null;
   if ((z.brueckeAbgelehnt ??= new Set()).has(lernzielId)) return null;
   const v = L.brueckeVorschlag(z.stand, z.index, lernzielId, jetzt());
+  // Klasse 6 (ADR 0037): Eine Brücke darf zu einem Lernziel der vorigen Klassenstufe führen. Das ist immer offen.
+  if (v && z.index.vorstufe.has(v.zu)) return v;
   if (!v || !z.einst.offeneKapitel.has(L.kapitelVon(v.zu))) return null;
   const ms = z.index.meilensteinVon.get(v.zu);
   return ms && z.einst.gesperrteMeilensteine.has(ms.id) ? null : v;
@@ -864,8 +867,10 @@ function zeigeAufgabe(aufgabe, extra = {}) {
 function aufgabenAnsicht() {
   const a = z.ansicht, auf = a.aufgabe;
   const kapitelId = L.kapitelVon(auf.lernziel);
-  const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel);
-  const meilenstein = z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.includes(lernziel));
+  // Klasse 6 (ADR 0037): Eine Brückenaufgabe aus der Vorstufe hat keinen Meilenstein in dieser Klasse.
+  // Sie gehört dann zum Meilenstein des Lernziels, von dem die Brücke ausgeht (Wortspeicher, Merkzettel, Rückweg).
+  const lernziel = z.pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).find((l) => l.id === auf.lernziel) ?? z.index.lernziel.get(auf.lernziel);
+  const meilenstein = meilensteinVon(auf);
   const st = L.lernzielStand(z.stand, auf.lernziel, auf.niveau, z.index); // Fortschritt zur Krone dieser Farbe
   // Eine F-Aufgabe beim Üben am Meilenstein gehört zur Grundlagen-Schleife, außer das Ziel des Kindes ist F (ADR 0015).
   const grundlage = !a.rueckblick && !a.bruecke && !a.sonderauftrag && !a.einstieg && !a.seitenblick && auf.niveau === 'F' && z.einst.zielniveau !== 'F';
@@ -924,11 +929,18 @@ export function eingabefelder(auf, a, gesperrt) {
       auf.mehrfach && h('p', { class: 'klein' }, 'Kreuze alle passenden Antworten an.'),
       auf.optionen.map((o) => h('label', { class: 'option' },
         h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
-    case 'luecken': return h('p', { class: 'aufgabentext luecken' }, auf.text.split(/(\{\{\w+\}\})/).map((stueck) => {
-      const m = stueck.match(/^\{\{(\w+)\}\}$/);
-      if (!m) return stueck;
-      return auf.ziffernfelder ? ziffernfeld(`luecke-${m[1]}`, letzte?.[m[1]]) : zahlfeld(`luecke-${m[1]}`, null, letzte?.[m[1]]);
-    }));
+    case 'luecken': {
+      const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name]));
+      const mitLuecken = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });
+      // Klasse 6 (ADR 0037): Steht eine Lücke im Zähler oder im Nenner, wird der Bruch gestapelt gezeichnet, mit dem Feld an seinem Platz.
+      const BRUCH = /((?:\d+\u202f)?(?:\{\{\w+\}\}|\d+)\u2044(?:\{\{\w+\}\}|\d+))/;
+      return h('p', { class: 'aufgabentext luecken' }, auf.text.split(BRUCH).map((stueck, i) => {
+        if (i % 2 === 0 || !stueck.includes('{{')) return mitLuecken(stueck);
+        const [, ganze, oben, unten] = stueck.match(/^(?:(\d+)\u202f)?(.+)\u2044(.+)$/);
+        const bruch = h('span', { class: 'bruch lueckenbruch' }, h('span', { class: 'bz' }, mitLuecken(oben)), h('span', { class: 'bn' }, mitLuecken(unten)));
+        return ganze ? h('span', { class: 'gemischt' }, ganze, bruch) : bruch;
+      }));
+    }
     case 'zuordnen': return h('div', { class: 'zuordnen' }, auf.paare.map((p) => h('label', {}, h('b', {}, p.links),
       h('select', { name: `paar-${p.links}`, disabled: gesperrt }, h('option', { value: '' }, 'bitte wählen'),
         a.reihenfolge.map((r) => h('option', { value: r, selected: letzte?.[p.links] === r }, r))))));
@@ -1043,6 +1055,12 @@ function pruefe(formular, sicher = null) {
   if (leer) { a.hinweis = 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
   if (a.versuch === 0 && sicher != null) a.sicher = sicher;
   const ergebnis = L.pruefeAntwort(auf, eingabe);
+  // Klasse 6 (ADR 0037): Der Wert stimmt, aber der Bruch ist noch nicht gekürzt oder keine gemischte Zahl. Das ist „fast richtig“ und kostet keinen Versuch.
+  if (ergebnis.nachbessern && (a.nachbesserungen ?? 0) < NACHBESSERN_HOECHSTENS) {
+    a.nachbesserungen = (a.nachbesserungen ?? 0) + 1;
+    a.hinweis = NACHBESSERN[ergebnis.nachbessern];
+    return maleMitEntwurf(eingabe);
+  }
   a.versuch++;
   a.eingaben.push(eingabe);
   if (ergebnis.fehlvorstellung) a.fehlvorstellungen.push(ergebnis.fehlvorstellung);
@@ -1404,7 +1422,7 @@ function heftcheckAnsicht() {
 }
 
 const kartenVon = (auf) => L.KARTEN.filter((feld) => auf.hilfen[feld]);
-const meilensteinVon = (auf) => z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.lernziele.some((l) => l.id === auf.lernziel));
+const meilensteinVon = (auf) => z.index.meilensteinVon.get(auf.lernziel) ?? z.index.meilensteinVon.get(z.stand.brueckeAktiv?.fuer ?? z.ansicht?.bruecke?.fuer ?? z.ansicht?.ergebnis?.bruecke?.fuer) ?? z.pool.kapitel.flatMap((k) => k.unterkapitel).find((u) => u.merkzettel) ?? z.pool.kapitel[0].unterkapitel[0];
 // Hilfekärtchen liegen in der Aufgabenkarte unter dem Eingabefeld, dort wo gerechnet wird (ADR 0016).
 // Je Niveaustufe gibt es unterschiedlich viele Kärtchen: F und G drei, M zwei, E eines.
 function kaertchen(a) {

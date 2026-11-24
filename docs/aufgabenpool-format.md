@@ -8,9 +8,12 @@ Die Datei wird nicht von Hand geschrieben, sondern erzeugt:
 
 ```
 node tools/erzeuge-klasse-5.mjs   # schreibt aufgabenpool/klasse-5.json
-node tools/pruefe-pool.mjs        # prüft Aufbau, Abdeckung und rechnet Rechenaufgaben nach
-node tools/uebersicht.mjs         # schreibt docs/aufgaben-klasse-5-pilot.md zur Durchsicht
+node tools/erzeuge-klasse-6.mjs   # schreibt aufgabenpool/klasse-6.json, braucht die Datei der Klasse 5 für die Vorstufe
+node tools/pruefe-pool.mjs [Datei] # prüft Aufbau, Abdeckung und rechnet Rechenaufgaben nach (ohne Angabe: Klasse 5)
+node tools/uebersicht.mjs [6]     # schreibt docs/aufgaben-klasse-5-pilot.md oder docs/aufgaben-klasse-6.md zur Durchsicht
 ```
+
+`npm run pool` erledigt alles für beide Klassenstufen. Bilderbogen und Layoutprüfung wählen die Datei nach dem Kapitelanfang: `node tools/bilderbogen.mjs 6.1.` und `node tools/pruefe-layout.mjs 6.1.`.
 
 Der Zufall im Erzeuger ist fest geimpft: Gleicher Code ergibt dieselbe Datei. Einzelne Aufgaben korrigiert man deshalb im Erzeuger, nicht in der JSON-Datei. Der Jahresplan steht in `tools/jahresplan-klasse-5.mjs`.
 
@@ -24,6 +27,7 @@ Der Zufall im Erzeuger ist fest geimpft: Gleicher Code ergibt dieselbe Datei. Ei
 | `kompetenzen` | Die fünf prozessbezogenen Kompetenzen: Kürzel → Name (ADR 0017) |
 | `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele. Jedes Lernziel trägt `voraussetzungen` (Liste, leer heißt: nur Grundschulstoff). Ein Unterkapitel mit Aufgaben trägt einen `merkzettel` mit `regeln` (Liste), `beispiel` und `heft`. Die Texte stehen in `tools/jahresplan-klasse-5.mjs`. |
 | `aufgaben` | Liste aller Aufgaben |
+| `vorstufe` | Nur ab Klasse 6 (ADR 0037): `klassenstufe`, `lernziele` (Kennung und Text) und `aufgaben`. Das sind unveränderte Kopien der Aufgaben der früheren Klassenstufe auf F, G und M zu den Lernzielen, auf die eine Voraussetzung zeigt. Das Schüler-Dashboard nimmt sie nur für Brücken. |
 
 Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.3-S2`, Aufgabe `5.3.3-S2-G-01`.
 
@@ -142,3 +146,20 @@ Am Bild `zahlenstrahl` gibt es seit Kapitel 2 zusätzlich `punkte` (ein bis sech
 ## Wortspeicher
 
 Ein Unterkapitel kann `wortspeicher` tragen: eine Liste aus `{ wort, ab, erklaerung }`. `ab` ist die Niveaustufe, ab der das Wort gezeigt wird und in Aufgaben und Hilfekärtchen vorkommen darf. Zeilenumbrüche (`\n`) im Aufgabentext sind auf F und G gewollt: jeder Satz steht in einer eigenen Zeile.
+
+## Klasse 6, Kapitel 1 „Brüche“ (ADR 0037)
+
+Zusätzliche Felder einer Aufgabe im Format `bruch`:
+
+| Feld | Inhalt |
+|---|---|
+| `gekuerzt: true` | Richtig ist nur der vollständig gekürzte Bruch (bei Werten über 1 auch die gemischte Zahl mit gekürztem Bruch). Ein gleichwertiger, ungekürzter Bruch ist „fast richtig“. Pflicht in 6.1.3-K2 und in 6.1.4 bis 6.1.6, außer die Aufgabe trägt `genau`. |
+| `form: 'gemischt'` | Richtig ist nur eine gemischte Zahl mit echtem Bruch. Ein unechter Bruch mit richtigem Wert ist „fast richtig“. |
+
+„Fast richtig“ zeigt einen Hinweis und kostet keinen Versuch, höchstens zweimal je Aufgabe.
+
+Im Format `luecken` wird eine Lücke im Zähler oder Nenner (`{{a}}⁄12`, `3⁄{{b}}`, auch `{{a}}⁄{{b}}` und mit Ganzen davor) als gestapelter Bruch mit Eingabefeld gezeichnet.
+
+Im Format `groesse` wählt der Schüler auf M und E die Einheit aus `einheiten` (mindestens drei). Die Lösung steht in der Grundeinheit (mm, mg, s, ct).
+
+Neue Arten im `nachweis`, nachgerechnet von `tools/pruefe-brueche.mjs`: `erweiterbar`, `kuerzbar`, `gemeinsameTeiler`, `ggt`, `kgv`, `gekuerztwahl`, `abstaende`, `ganze`, `teil`, `schwelle`, `zwischen`, dazu `strahl` mit `rechnung: true`.

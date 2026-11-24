@@ -135,7 +135,7 @@ Ein Aufgabenbild, das ein Ganzes in Teile zerlegt zeigt: Kreis, Rechteck, Streif
 _Avoid_: Tortendiagramm, Kreisdiagramm
 
 **Brucheingabe**:
-Die Eingabe eines Bruchs mit zwei Feldern übereinander und Bruchstrich. Ein gleichwertiger Bruch zählt als richtig, außer die Aufgabe verlangt einen bestimmten Nenner.
+Die Eingabe eines Bruchs mit zwei Feldern übereinander und Bruchstrich. Ein gleichwertiger Bruch zählt als richtig, außer die Aufgabe verlangt einen bestimmten Nenner. Ab dem Meilenstein „Brüche kürzen“ in Klasse 6 muss das Ergebnis vollständig gekürzt sein: Ein richtiger, aber ungekürzter Bruch ist fast richtig, bekommt den Hinweis „Kürze noch“ und kostet keinen Versuch. Unechter Bruch und gemischte Zahl zählen gleich, außer die Aufgabe verlangt eine der beiden Formen.
 _Avoid_: Schrägstrich-Schreibweise (3/4)
 
 **Teile färben**:
@@ -232,6 +232,10 @@ _Avoid_: Freischaltung, Meilensteinsperre (das ist der gesperrte Meilenstein fü
 Ein zusätzlicher Meilenstein, der abseits des Weges gestrichelt angehängt ist. Er bekommt eine Krone nach derselben Regel.
 _Avoid_: Zusatzstation, Extra
 
+**Niveau-Meilenstein**:
+Ein Meilenstein, den das Lehrwerk mit M oder E markiert und der deshalb nur Aufgaben ab dieser Niveaustufe hat (M: auf M und E; E: nur auf E). Für Schüler mit einem Zielniveau darunter ist er ein Abstecher und für den Kapitelabschluss nicht nötig; sie dürfen ihn freiwillig versuchen.
+_Avoid_: Zusatzstoff, Extra, Erweiterung
+
 **Lernziel**:
 Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III. Eine Aufgabe, deren Lösung er am selben Tag schon gesehen hat, zählt dabei nicht (ADR 0031).
 _Avoid_: Kompetenz (allein), Ziel
@@ -245,12 +249,16 @@ Sechs bis acht Aufgaben über alle Meilensteine eines Kapitels, angeboten auf de
 _Avoid_: Eingangstest, Vortest, Diagnosetest
 
 **Voraussetzung**:
-Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln oder aus dem Grundschulstoff.
+Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln, aus einer früheren Klassenstufe oder aus dem Grundschulstoff. Eine Brücke darf deshalb Aufgaben einer früheren Klassenstufe zeigen; die Niveaustufen der eigenen Kapitel richten sich immer nach der eigenen Klassenstufe.
 _Avoid_: Vorwissen (für die Verknüpfung)
 
 **Brücke**:
 Drei Aufgaben zu einer Voraussetzung, eine Niveaustufe unter dem Zielniveau, die das Schüler-Dashboard auf M und E vorschlägt, wenn ein Lernziel wackelig wird. Auf G greift stattdessen die Grundlagen-Schleife. Höchstens eine je Lernziel und Tag, freiwillig; die Lehrkraft bekommt dazu einen Impuls.
 _Avoid_: Förderaufgabe, Rückweg
+
+**Vorstufe**:
+Die Lernziele und Aufgaben einer früheren Klassenstufe, auf die ein Lernziel der eigenen Klassenstufe als Voraussetzung zeigt. Ein Schüler begegnet ihnen nur in einer Brücke, nie als eigenem Stoff auf der Karte.
+_Avoid_: Wiederholungskapitel, Klasse-5-Teil
 
 **Sonderauftrag**:
 Drei bis fünf Aufgaben zu einem Lernziel, die die Lehrkraft einem einzelnen Schüler im Schülerprofil schickt, auf einer Niveaustufe, die sie frei wählt (F bis E). Er kommt als versiegelter Brief des Königs, nie mitten in einer Aufgabe, und bleibt sichtbar, bis er erledigt ist oder die Lehrkraft ihn zurückzieht; höchstens einer ist offen. Freiwillig, ohne Ablaufdatum. Seine Aufgaben zählen wie sonst für Lernziel und Wegstück; sind alle bearbeitet, gibt es eine Belohnung in Münzen dazu, egal wie viele richtig sind. Wie hoch sie ist, stellt die Lehrkraft für ihre Klasse ein (50, 100, 250, 500 oder 1000, Standard 100); der Brief nennt den Betrag, der beim Abschicken galt. Danach geht es zurück an die Stelle, an der der Schüler war. Mitschüler erfahren nichts davon.

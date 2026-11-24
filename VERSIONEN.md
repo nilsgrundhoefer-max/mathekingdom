@@ -8,6 +8,27 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.43 vom 24.11.2026
+
+### Schüler
+
+- Klasse 6 beginnt: Kapitel 1 „Brüche“ ist da. Du erkennst Brüche über 1, wandelst gemischte Zahlen um, erweiterst und kürzt, vergleichst Brüche, rechnest Bruchteile von Größen aus und arbeitest am Zahlenstrahl. Das sind 288 neue Aufgaben auf allen vier Niveaus.
+- Neu: Fehlt in einem Bruch der Zähler oder der Nenner, steht das Feld genau an dieser Stelle im Bruch.
+- Neu: Stimmt dein Bruch, ist aber noch nicht vollständig gekürzt, liest du „Fast richtig“ und darfst nachbessern. Das kostet dich keinen Versuch.
+- Wird ein Lernziel wackelig, kann dich eine Brücke auch zu Aufgaben aus Klasse 5 führen.
+
+### Lehrkraft
+
+- Klasse 6 hat eine eigene Aufgabendatei. Eine Klasse, deren Name mit 6 beginnt (zum Beispiel 6a), sieht nur die Tore von Klasse 6. Tor 1 öffnen Sie wie gewohnt unter Tore.
+- Kapitel 1 „Brüche“ folgt den Lerneinheiten 1 bis 6 im Schnittpunkt 6: 12 Lernziele mit je 6 Aufgaben auf F, G, M und E.
+- Nenner in den Aufgaben: F bis 10, G bis 20, M bis 50 und 100, E bis 200. Beim Erweitern und Kürzen entstehen größere Nenner (F bis 100, G bis 200, M bis 600, E bis 1000).
+- Ab „Vollständig kürzen“ zählt nur der vollständig gekürzte Bruch. Ein ungekürzter Bruch mit richtigem Wert bekommt höchstens zweimal je Aufgabe den Hinweis „Fast richtig“ ohne Abzug, danach zählt er als Fehlversuch. Bis „Erweitern“ zählt jeder gleichwertige Bruch.
+- Bruchteile von Größen: Die Ergebnisse sind ganze Zahlen in der kleineren Einheit. Auf M und E wählt der Schüler die Einheit selbst.
+- Heftaufgaben gibt es nur bei „Brüche am Zahlenstrahl eintragen“, auf M und E je zwei von sechs.
+- Brücken und Voraussetzungen reichen in die Klasse 5 zurück, zum Beispiel zum kleinen Einmaleins und zu den Bruchteilen aus Kapitel 9.
+- 7 neue Fehlvorstellungen erscheinen in der Auswertung, zum Beispiel „nicht vollständig gekürzt“ und „nur den Zähler erweitert“.
+- Noch nicht enthalten: Die Niveau-Meilensteine (Lerneinheiten nur für M oder E) kommen mit Kapitel 2, der Wappenbereich für Klasse 6 später.
+
 ## 0.42 vom 22.11.2026
 
 ### Schüler

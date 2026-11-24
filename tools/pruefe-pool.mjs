@@ -2,7 +2,7 @@
 // Der Prüfer rechnet alles selbst nach und benutzt nichts aus den Erzeugern (tools/werkzeug.mjs, tools/aufgaben/).
 // Aufruf: node tools/pruefe-pool.mjs [aufgabenpool/klasse-5.json]
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { gGleichungen, GROESSENBILDER, bildMaengel, sprachMaengel, pruefeGroessenNachweis, groesseMaengel, tafelMaengel, umwandelMaengel, schaetzMaengel, teilAuswahlMaengel, einheitFaktor } from './pruefe-groessen.mjs';
 import { flaecheBildMaengel, zellenMaengel, flaecheSprachMaengel } from './pruefe-flaechen.mjs';
@@ -11,7 +11,8 @@ import { bGleichungen, bruchSprachMaengel, pruefeBruchAufgabe, bruchHatBild } fr
 import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
-export function pruefePool(pool) {
+// vorstufen: Pools früherer Klassenstufen. Voraussetzungen dürfen auf ihre Lernziele zeigen (ADR 0037).
+export function pruefePool(pool, vorstufen = []) {
 const fehler = [];
 const melde = (id, text) => fehler.push(`${id}: ${text}`);
 
@@ -29,7 +30,10 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
   'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz',
   'groesse', 'einheiten', 'tippBild', 'winkelfeld',
-  'faerben', 'genau', 'gemischt'];
+  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form'];
+// Kapitel, in denen mit Brüchen gerechnet wird: Klasse 5 Kapitel 9 und Klasse 6 Kapitel 1 (ADR 0037).
+const BRUCHKAPITEL = ['5.9', '6.1'];
+const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`));
 // Kapitel 6 (ADR 0033): Dort wird mit Größen gerechnet. Solange eine Aufgabe aus Kapitel 6 geprüft wird, lesen die Gleichungsprüfungen auch Einheiten.
 let groessenModus = false;
 // Kapitel 9 (ADR 0036): Dort wird mit Brüchen und Dezimalzahlen gerechnet. Gleichungen, Format und Nachweis prüft tools/pruefe-brueche.mjs.
@@ -180,7 +184,7 @@ function pruefeSprache(a) {
   if (a.lernziel.startsWith('5.6.')) for (const x of sprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   if (a.lernziel.startsWith('5.8.')) for (const x of flaecheSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
   if (a.lernziel.startsWith('5.7.')) for (const x of winkelSprachMaengel(a.niveau, mitHilfen)) melde(a.id, x);
-  if (a.lernziel.startsWith('5.9.')) for (const x of bruchSprachMaengel(a, mitHilfen)) melde(a.id, x);
+  if (istBruchLernziel(a.lernziel)) for (const x of bruchSprachMaengel(a, mitHilfen)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -1865,7 +1869,7 @@ function pruefeBild(a) {
 const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichliste', 'zeichnen', 'gitter', 'winkel'].includes(a.format) || Boolean(a.urliste) || ['raster', 'mauer', 'malkreuz', 'stellentafel', 'einheitentafel'].includes(a.tabelle?.art)
   // Kapitel 6: Preisliste, Fahrplan und Einkaufszettel sind das Bild der Aufgabe.
   || (Boolean(a.daten) && (a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.')))
-  || (a.lernziel.startsWith('5.9.') && bruchHatBild(a));
+  || (istBruchLernziel(a.lernziel) && bruchHatBild(a));
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -2234,7 +2238,7 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   const schluessel = `${a.lernziel} ${a.niveau}`;
   if (!gruppen.has(schluessel)) gruppen.set(schluessel, []);
   gruppen.get(schluessel).push(a);
-  bruchModus = a.lernziel.startsWith('5.9.');
+  bruchModus = istBruchLernziel(a.lernziel);
   pruefeHilfen(a);
   pruefeSprache(a);
   if (bruchModus) {
@@ -2280,7 +2284,7 @@ for (const l of pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.ler
 // Wortspeicher: Jede Station mit Aufgaben braucht einen, mit Wörtern mindestens für F, G und M.
 for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.some((l) => mitAufgaben.has(l.id))) {
   groessenModus = k.id === '5.6' || k.id === '5.8';
-  bruchModus = k.id === '5.9';
+  bruchModus = BRUCHKAPITEL.includes(k.id);
   for (const n of ['F', 'G', 'M']) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
   for (const w of u.wortspeicher ?? []) {
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);
@@ -2295,20 +2299,40 @@ for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (!f.beschreibun
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (f.kind && (!/^Du /.test(f.kind) || /, (der|die|das|den|dem|wenn|weil|dass|ob|obwohl|durch|mit|in|wo)\b|;/.test(f.kind) || f.kind.length > 110)) melde(id, `Kindersatz nicht in einfacher Sprache: ${f.kind}`);
 for (const k of Object.keys(pool.kompetenzen ?? {})) if (!KOMPETENZEN.includes(k)) melde(k, 'unbekannte prozessbezogene Kompetenz im Pool');
 // Voraussetzungen (ADR 0017): jedes Lernziel hat einen Eintrag, nur bekannte Lernziele, keine Kreise.
+const frueher = new Set(vorstufen.flatMap((p) => p.kapitel).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => l.id));
 const vorVon = new Map(pool.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l.voraussetzungen]));
 for (const [id, vor] of vorVon) {
   if (!Array.isArray(vor)) { melde(id, 'Lernziel ohne Voraussetzungen (leere Liste heißt: Grundschulstoff)'); continue; }
-  for (const v of vor) if (!vorVon.has(v)) melde(id, `unbekannte Voraussetzung ${v}`);
+  for (const v of vor) if (!vorVon.has(v) && !frueher.has(v)) melde(id, `unbekannte Voraussetzung ${v}`);
   const besucht = new Set(), offen = [...vor];
   while (offen.length) { const v = offen.pop(); if (v === id) { melde(id, 'Voraussetzungen im Kreis'); break; } if (besucht.has(v)) continue; besucht.add(v); offen.push(...(vorVon.get(v) ?? [])); }
 }
+
+// Vorstufe (ADR 0037): Kopien von Aufgaben der vorigen Klassenstufe, nur für Brücken. Jede Kopie gleicht der Aufgabe im früheren Pool,
+// und jede Voraussetzung aus einer früheren Klassenstufe hat dort Aufgaben auf F, G und M (eine Brücke liegt eine Stufe unter dem Zielniveau).
+const fruehereAufgaben = new Map(vorstufen.flatMap((p) => p.aufgaben).map((a) => [a.id, a]));
+const kopien = pool.vorstufe?.aufgaben ?? [];
+if (new Set(kopien.map((a) => a.id)).size !== kopien.length) melde('vorstufe', 'Aufgabe doppelt');
+for (const a of kopien) {
+  if (a.niveau === 'E') melde(a.id, 'Vorstufe: Aufgaben auf E braucht keine Brücke');
+  if (vorstufen.length && JSON.stringify(fruehereAufgaben.get(a.id)) !== JSON.stringify(a)) melde(a.id, 'Vorstufe: Die Kopie gleicht nicht der Aufgabe im Pool der früheren Klassenstufe (Pool neu erzeugen)');
+}
+const kopiert = new Set(kopien.map((a) => `${a.lernziel}|${a.niveau}`)), benannt = new Set((pool.vorstufe?.lernziele ?? []).map((l) => l.id));
+for (const [id, vor] of vorVon) if (mitAufgaben.has(id)) for (const v of vor ?? []) if (!vorVon.has(v)) {
+  if (!benannt.has(v)) melde(id, `Vorstufe: Lernziel ${v} fehlt in der Liste der Vorstufe`);
+  for (const n of ['F', 'G', 'M']) if (!kopiert.has(`${v}|${n}`)) melde(id, `Vorstufe: Für die Voraussetzung ${v} fehlen Aufgaben auf ${n}`);
+}
+for (const l of pool.vorstufe?.lernziele ?? []) if (!l.text || vorVon.has(l.id) || (vorstufen.length && !frueher.has(l.id))) melde(l.id, 'Vorstufe: Lernziel ohne Text oder nicht aus einer früheren Klassenstufe');
 
 return { fehler, mitAufgaben, lernziele, hatBild };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const pool = JSON.parse(readFileSync(process.argv[2] ?? 'aufgabenpool/klasse-5.json', 'utf8'));
-  const { fehler, mitAufgaben, lernziele, hatBild } = pruefePool(pool);
+  // Die Pools der früheren Klassenstufen liegen daneben.
+  const vorstufen = [];
+  for (let k = 5; k < pool.klassenstufe; k++) if (existsSync(`aufgabenpool/klasse-${k}.json`)) vorstufen.push(JSON.parse(readFileSync(`aufgabenpool/klasse-${k}.json`, 'utf8')));
+  const { fehler, mitAufgaben, lernziele, hatBild } = pruefePool(pool, vorstufen);
   if (fehler.length) { console.error(fehler.join('\n')); console.error(`\n${fehler.length} Fehler.`); process.exit(1); }
   const mitNachweis = pool.aufgaben.filter((a) => a.nachweis).length, mitBild = pool.aufgaben.filter(hatBild).length;
   console.log(`In Ordnung: ${pool.aufgaben.length} Aufgaben zu ${mitAufgaben.size} Lernzielen, ${mitNachweis} nachgerechnet, ${mitBild} mit Bild, ${lernziele.size} Lernziele im Jahresplan.`);

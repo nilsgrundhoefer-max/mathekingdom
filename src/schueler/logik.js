@@ -107,7 +107,15 @@ export function indexiere(pool) {
   const lernziel = new Map((pool.kapitel ?? []).flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l]));
   // Lernziele, die auf jeder Niveaustufe Aufgaben aus AFB II oder III haben: Nur dort kann das Siegel eine solche Aufgabe verlangen.
   const mitAnspruch = new Set([...lernzielMitAufgaben].filter((l) => NIVEAUS.every((n) => (nach.get(`${l}|${n}`) ?? []).some((a) => a.afb >= AFB_FUER_STERN))));
-  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon, lernziel };
+  // Klasse 6 (ADR 0037): Aufgaben der vorigen Klassenstufe, nur für Brücken. Sie zählen nicht als Lernziele dieser Klassenstufe.
+  const vorstufe = new Set();
+  for (const a of pool.vorstufe?.aufgaben ?? []) {
+    const k = `${a.lernziel}|${a.niveau}`;
+    if (!nach.has(k)) nach.set(k, []);
+    nach.get(k).push(a); aufgabe.set(a.id, a); vorstufe.add(a.lernziel);
+  }
+  for (const l of pool.vorstufe?.lernziele ?? []) if (!lernziel.has(l.id)) lernziel.set(l.id, l);
+  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon, lernziel, vorstufe };
 }
 
 // ---------- Antworten prüfen ----------
@@ -674,7 +682,7 @@ export const BRUECKE_AUFGABEN = 3;
 export function brueckeVorschlag(stand, index, lernzielId, jetzt) {
   if (stand.brueckeAktiv || inGrundlage(stand, lernzielId) || !istWackelig(stand, lernzielId)) return null;
   if ((stand.bruecken ?? []).some((b) => b.fuer === lernzielId && b.tag === tagVon(jetzt))) return null;
-  const vor = (index.lernziel?.get(lernzielId)?.voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id));
+  const vor = (index.lernziel?.get(lernzielId)?.voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id) || index.vorstufe?.has(id));
   if (!vor.length) return null;
   const zu = vor.find((id) => !stand.lernziele[id] || stand.rueckblick?.[id]?.aufzufrischen) ?? vor[0];
   return { fuer: lernzielId, zu, text: index.lernziel.get(zu)?.text ?? zu };
