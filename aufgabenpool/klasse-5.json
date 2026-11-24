@@ -762,6 +762,41 @@
    "beschreibung": "Schreibt Zähler und Nenner einfach mit Komma hintereinander (ein Viertel als 0,4 oder 1,4).",
    "hinweis": "Wie viele Zehntel oder Hundertstel sind es? Erst dann kannst du die Dezimalzahl schreiben.",
    "kind": "Du schreibst einen Bruch jetzt über Zehntel oder Hundertstel als Dezimalzahl."
+  },
+  "erweitern-nur-ein-teil": {
+   "beschreibung": "Erweitert oder kürzt nur den Zähler oder nur den Nenner.",
+   "hinweis": "Zähler und Nenner gehören zusammen. Rechne bei beiden mit derselben Zahl.",
+   "kind": "Du rechnest beim Erweitern und Kürzen jetzt mit Zähler und Nenner."
+  },
+  "erweitern-addiert": {
+   "beschreibung": "Zählt beim Erweitern dieselbe Zahl zu Zähler und Nenner dazu, statt malzunehmen (aus drei Vierteln werden fünf Sechstel).",
+   "hinweis": "Beim Erweitern nimmst du Zähler und Nenner mit derselben Zahl mal. Dazuzählen ändert den Wert.",
+   "kind": "Du nimmst beim Erweitern jetzt mal und zählst nichts dazu."
+  },
+  "erweitern-kuerzen-verwechselt": {
+   "beschreibung": "Verwechselt Erweitern und Kürzen oder rechnet in die falsche Richtung.",
+   "hinweis": "Erweitern heißt malnehmen: Die Zahlen werden größer. Kürzen heißt teilen: Die Zahlen werden kleiner.",
+   "kind": "Du weißt jetzt: Erweitern heißt malnehmen und Kürzen heißt teilen."
+  },
+  "kuerzen-nicht-vollstaendig": {
+   "beschreibung": "Kürzt nicht vollständig: Zähler und Nenner haben noch einen gemeinsamen Teiler.",
+   "hinweis": "Prüfe noch einmal: Lassen sich Zähler und Nenner noch durch dieselbe Zahl teilen?",
+   "kind": "Du kürzt jetzt so weit wie möglich."
+  },
+  "bruch-nur-zaehler-verglichen": {
+   "beschreibung": "Vergleicht Brüche nur über die Zähler oder die Zahlen einzeln, ohne auf die Größe der Teile zu achten.",
+   "hinweis": "Schau auf beide Zahlen: Der Nenner sagt, wie groß die Teile sind. Der Zähler sagt, wie viele es sind.",
+   "kind": "Du schaust beim Vergleichen jetzt auf Zähler und Nenner."
+  },
+  "gemischt-umwandeln": {
+   "beschreibung": "Wandelt gemischte Zahl und Bruch falsch um: schreibt die Ziffern nebeneinander oder zählt die Ganzen nur zum Zähler dazu.",
+   "hinweis": "Ein Ganzes hat so viele Teile, wie der Nenner sagt. Rechne die Ganzen zuerst in solche Teile um.",
+   "kind": "Du rechnest die Ganzen jetzt erst in Bruchteile um."
+  },
+  "bruchstrahl-striche": {
+   "beschreibung": "Zählt am Zahlenstrahl die Teilstriche statt der Abstände und nennt deshalb einen falschen Nenner.",
+   "hinweis": "Zähle die Abstände von 0 bis 1, nicht die Striche. So viele Teile hat das Ganze.",
+   "kind": "Du zählst am Zahlenstrahl jetzt die Abstände bis zur 1."
   }
  },
  "kompetenzen": {

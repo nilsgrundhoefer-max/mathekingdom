@@ -12211,7 +12211,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne die Ganzen und den Bruch einzeln um. Zähle dann zusammen.",
-    "beispiel": "1 1⁄2 m: 1 m = 100 cm und 1⁄2 m = 50 cm. Zusammen 150 cm.",
+    "beispiel": "1 1⁄2 m: 1 m = 100 cm und 1⁄2 m = 50 cm. Zusammen 150 cm.",
     "loesungsschritt": "Rechne 4 m in Zentimeter um. Rechne dann 2⁄5 von 100 cm dazu."
    },
    "einheit": "cm",
@@ -13347,9 +13347,9 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch.\nEs gilt 6 · 9 = 9.",
+     "text": "Falsch.\nEs gilt 6 · 9 = 60.",
      "richtig": false,
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "sach-falsche-rechnung"
     },
     {
      "text": "Stimmt.",
@@ -13773,6 +13773,2244 @@
     "5⁄8 von 320 = 200",
     "200 : 5 = 40",
     "6 · 40 = 240"
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-F-01",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nSchreibe die Zahl als Bruch.",
+   "loesung": "1⁄3",
+   "typischeFehler": [
+    {
+     "wert": "1⁄4",
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": "2⁄3",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "3⁄1",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände von 0 bis 1. Das ist der Nenner.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 3 Abständen. Das ist 3⁄4.",
+    "loesungsschritt": "Zähle dann die Abstände von 0 bis zum Pfeil. Das ist der Zähler."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 3,
+    "schritt": 1,
+    "beschriftung": 3,
+    "teiler": 3,
+    "pfeil": 1
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-F-02",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau auf den Zahlenstrahl.\nWie viele Abstände sind es von 0 bis 1?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände zwischen den Strichen, nicht die Striche.",
+    "beispiel": "Bei 5 Strichen von 0 bis 1 sind es 4 Abstände.",
+    "loesungsschritt": "Tippe beim Zählen auf jeden Abstand. Beginne bei der 0."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 5,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5,
+    "pfeil": 3
+   },
+   "nachweis": [
+    {
+     "art": "abstaende",
+     "zahl": 5
+    },
+    {
+     "wert": "0",
+     "grund": "Anfang der Strecke"
+    },
+    {
+     "wert": "1",
+     "grund": "Ende der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-F-03",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Welcher Bruch gehört zum Pfeil?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄5",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "3⁄5",
+     "richtig": true
+    },
+    {
+     "text": "3⁄6",
+     "richtig": false,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände von 0 bis 1. Das ist der Nenner.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 3 Abständen. Das ist 3⁄4.",
+    "loesungsschritt": "Zähle dann die Abstände von 0 bis zum Pfeil. Das ist der Zähler."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 5,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5,
+    "pfeil": 3
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "3⁄5"
+    },
+    {
+     "art": "wert",
+     "wert": "3⁄5",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-F-04",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nSchreibe die Zahl als Bruch.",
+   "loesung": "1⁄8",
+   "typischeFehler": [
+    {
+     "wert": "1⁄9",
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": "7⁄8",
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "wert": "8⁄1",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände von 0 bis 1. Das ist der Nenner.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 3 Abständen. Das ist 3⁄4.",
+    "loesungsschritt": "Zähle dann die Abstände von 0 bis zum Pfeil. Das ist der Zähler."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 8,
+    "schritt": 1,
+    "beschriftung": 8,
+    "teiler": 8,
+    "pfeil": 1
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1⁄8"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-F-05",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nSchreibe die Zahl als Bruch.\nKürze so weit wie möglich.",
+   "loesung": "1⁄2",
+   "typischeFehler": [
+    {
+     "wert": "2⁄5",
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": "4⁄2",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Lies zuerst den Bruch ab. Kürze ihn dann.",
+    "beispiel": "Der Pfeil steht bei 2⁄4. Gekürzt ist das 1⁄2.",
+    "loesungsschritt": "Der Pfeil steht bei 2⁄4. Teile Zähler und Nenner durch 2."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 4,
+    "schritt": 1,
+    "beschriftung": 4,
+    "teiler": 4,
+    "pfeil": 2
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-F-06",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Pfeil zeigt auf einen Bruch.\nDer Zähler heißt {{a}}.\nDer Nenner heißt {{b}}.",
+   "luecken": {
+    "a": {
+     "loesung": 4,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "bruch-teil-zu-rest"
+      },
+      {
+       "wert": 5,
+       "fehlvorstellung": "bruchstrahl-striche"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "bruchstrahl-striche"
+      },
+      {
+       "wert": 4,
+       "fehlvorstellung": "bruch-vertauscht"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Zähle die Abstände von 0 bis 1. Das ist der Nenner.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 3 Abständen. Das ist 3⁄4.",
+    "loesungsschritt": "Zähle dann die Abstände von 0 bis zum Pfeil. Das ist der Zähler."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 5,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5,
+    "pfeil": 4
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "4⁄5"
+    },
+    {
+     "art": "abstaende",
+     "zahl": 5
+    },
+    {
+     "art": "teil",
+     "bruch": "4⁄5",
+     "was": "zaehler",
+     "zahl": 4
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-G-01",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nSchreibe als gemischte Zahl.",
+   "loesung": "2 1⁄4",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "2 1⁄5",
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": "2 1⁄12",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände von 0 bis 1. Das ist der Nenner. Er gilt auch hinter der 1.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht 3 Abstände hinter der 1. Das ist 1 3⁄4.",
+    "loesungsschritt": "Schreibe zuerst die Ganzen. Zähle dann die Abstände vom letzten Ganzen bis zum Pfeil."
+   },
+   "gekuerzt": true,
+   "form": "gemischt",
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 12,
+    "schritt": 1,
+    "beschriftung": 4,
+    "teiler": 4,
+    "pfeil": 9
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2 1⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-G-02",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nSchreibe als Bruch.",
+   "loesung": "5⁄3",
+   "typischeFehler": [
+    {
+     "wert": "5⁄6",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "2⁄3",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "3⁄5",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle alle Abstände von 0 bis zum Pfeil. Das ist der Zähler.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 7 Abständen. Das ist 7⁄4.",
+    "loesungsschritt": "Der Nenner ist die Zahl der Abstände von 0 bis 1."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 3,
+    "teiler": 3,
+    "pfeil": 5
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "5⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-G-03",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil?\nKürze vollständig.",
+   "loesung": "1⁄2",
+   "typischeFehler": [
+    {
+     "wert": "3⁄7",
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Lies zuerst ab. Kürze dann den Bruch.",
+    "beispiel": "Der Pfeil steht bei 6⁄8. Gekürzt ist das 3⁄4.",
+    "loesungsschritt": "Der Pfeil steht bei 3⁄6. Kürze den Bruch mit 3."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 6,
+    "teiler": 6,
+    "pfeil": 3
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "3⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-G-04",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schau auf den Zahlenstrahl.\nIn wie viele Abstände ist ein Ganzes geteilt?",
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 24,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": 11,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Ganzes reicht von 0 bis 1. Zähle dort die Abstände.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Die Einteilung ist in Viertel.",
+    "loesungsschritt": "Zähle nur von 0 bis 1 und nicht weiter."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 24,
+    "schritt": 1,
+    "beschriftung": 12,
+    "teiler": 12,
+    "pfeil": 13
+   },
+   "nachweis": [
+    {
+     "art": "abstaende",
+     "zahl": 12
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-G-05",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Ben liest am Pfeil 4⁄6 ab.\nLena liest 4⁄3 ab.\nWelcher Bruch stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "4⁄3",
+     "richtig": true
+    },
+    {
+     "text": "4⁄4",
+     "richtig": false,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "text": "4⁄6",
+     "richtig": false,
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner zählt die Abstände von 0 bis 1 und nicht bis 2.",
+    "beispiel": "Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 5 Abständen. Das ist 5⁄4 und nicht 5⁄8.",
+    "loesungsschritt": "Zähle zuerst die Abstände von 0 bis 1. Zähle dann von 0 bis zum Pfeil."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 3,
+    "teiler": 3,
+    "pfeil": 4
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "4⁄3"
+    },
+    {
+     "art": "wert",
+     "wert": "4⁄3",
+     "form": true
+    },
+    {
+     "wert": "4⁄6",
+     "grund": "falsch abgelesener Bruch aus dem Text"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-G-06",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Der Pfeil zeigt auf 5⁄3.\nIda sagt: „Das ist dasselbe wie 1 2⁄3.“\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch.\nEs gilt 5⁄3 = 2 2⁄3.",
+     "richtig": false,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "text": "Falsch.\nEs gilt 5⁄3 = 1 1⁄3.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Am Zahlenstrahl siehst du die Ganzen. Zähle die Abstände hinter dem letzten Ganzen.",
+    "beispiel": "7⁄4 liegt 3 Abstände hinter der 1. Also 7⁄4 = 1 3⁄4.",
+    "loesungsschritt": "Suche das letzte Ganze vor dem Pfeil. Zähle von dort die Abstände."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 3,
+    "teiler": 3,
+    "pfeil": 5
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "5⁄3 = 1 2⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-M-01",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Der Zahlenstrahl zeigt einen Ausschnitt. Auf welche Zahl zeigt der Pfeil? Schreibe als gemischte Zahl.",
+   "loesung": "8 1⁄8",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "8 1⁄9",
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": "1⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "9 1⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Strahl beginnt nicht bei 0. Zähle die Abstände zwischen zwei benachbarten Ganzen: Das ist der Nenner.",
+    "loesungsschritt": "Zwischen zwei Ganzen liegen 8 Abstände. Schreibe das letzte Ganze vor dem Pfeil auf und zähle von dort die Abstände bis zum Pfeil."
+   },
+   "gekuerzt": true,
+   "form": "gemischt",
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 64,
+    "bis": 72,
+    "schritt": 1,
+    "beschriftung": 8,
+    "teiler": 8,
+    "ausschnitt": true,
+    "pfeil": 65
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "8 1⁄8"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-M-02",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil? Kürze vollständig.",
+   "loesung": "2⁄3",
+   "typischeFehler": [
+    {
+     "wert": "8⁄13",
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Lies zuerst mit dem Nenner der Einteilung ab und kürze dann vollständig.",
+    "loesungsschritt": "Ein Ganzes hat 12 Abstände. Der Pfeil steht bei 8⁄12. Kürze den Bruch mit 4."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 24,
+    "schritt": 1,
+    "beschriftung": 12,
+    "teiler": 12,
+    "pfeil": 8
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "8⁄12"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-M-03",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Der Pfeil zeigt auf einen Bruch. Schreibe ihn mit dem Nenner 9: {{a}}⁄9",
+   "luecken": {
+    "a": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 8,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Lies zuerst den Bruch ab. Erweitere ihn dann auf den verlangten Nenner.",
+    "loesungsschritt": "Der Pfeil steht bei 2⁄3. Erweitere mit 3."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 3,
+    "schritt": 1,
+    "beschriftung": 3,
+    "teiler": 3,
+    "pfeil": 2
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2⁄3"
+    },
+    "9 : 3 = 3",
+    {
+     "art": "umformen",
+     "von": "2⁄3",
+     "mit": 3,
+     "wie": "erweitern",
+     "nach": "6⁄9"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-M-04",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Auf welche Zahl zeigt der Pfeil? Schreibe als Bruch.",
+   "loesung": "14⁄5",
+   "typischeFehler": [
+    {
+     "wert": "14⁄15",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "4⁄5",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "5⁄14",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner ist die Zahl der Abstände von 0 bis 1. Der Zähler zählt alle Abstände von 0 bis zum Pfeil.",
+    "loesungsschritt": "Ein Ganzes hat 5 Abstände. Vor dem Pfeil liegen 2 Ganze und noch 4 Abstände."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 15,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5,
+    "pfeil": 14
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "14⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-M-05",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Der Pfeil zeigt auf eine Zahl. Wie weit ist es von dieser Zahl bis zur 2? Schreibe als Bruch oder gemischte Zahl und kürze vollständig.",
+   "loesung": "1 1⁄4",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "3⁄4",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände vom Pfeil bis zur 2. Der Nenner ist die Zahl der Abstände in einem Ganzen.",
+    "loesungsschritt": "Vom Pfeil bis zur 2 sind es 5 Abstände. Ein Ganzes hat 4 Abstände."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 8,
+    "schritt": 1,
+    "beschriftung": 4,
+    "teiler": 4,
+    "pfeil": 3
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "3⁄4"
+    },
+    "2 − 3⁄4 = 1 1⁄4"
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-M-06",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Zwischen 0 und 1 liegen an einem Zahlenstrahl 11 Teilstriche in gleichen Abständen. Auf welche Zahl zeigt der 11. Teilstrich nach der 0?",
+   "loesung": "11⁄12",
+   "typischeFehler": [
+    {
+     "wert": "11⁄13",
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zwischen 0 und 1 gibt es einen Abstand mehr als Teilstriche. Die Zahl der Abstände ist der Nenner.",
+    "loesungsschritt": "Es sind 11 + 1 = 12 Abstände. Der 11. Teilstrich liegt 11 Abstände hinter der 0."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "11 + 1 = 12",
+    "11 : 12 = 11⁄12",
+    {
+     "wert": "0",
+     "grund": "Anfang der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-E-01",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Die Strecke von 0 bis 3 ist in 5 gleich große Abstände geteilt. Auf welche Zahl zeigt der Pfeil? Kürze vollständig.",
+   "loesung": "2 2⁄5",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "4⁄5",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "4⁄6",
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie lang ist ein Abstand, wenn 3 Ganze in 5 gleich große Abstände geteilt werden? Zähle dann die Abstände bis zum Pfeil."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 15,
+    "schritt": 3,
+    "beschriftung": 15,
+    "teiler": 5,
+    "pfeil": 12
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2 2⁄5"
+    },
+    {
+     "wert": "3",
+     "grund": "Ende des Strahls"
+    },
+    {
+     "wert": "5",
+     "grund": "Anzahl der Abstände"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-E-02",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Der Zahlenstrahl zeigt einen Ausschnitt. Auf welche Zahl zeigt der Pfeil? Schreibe als vollständig gekürzte gemischte Zahl.",
+   "loesung": "4 5⁄8",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "5 5⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "5⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Abstände zwischen zwei benachbarten Ganzen. Lies ab und kürze den Bruchteil vollständig."
+   },
+   "gekuerzt": true,
+   "form": "gemischt",
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 64,
+    "bis": 80,
+    "schritt": 1,
+    "beschriftung": 16,
+    "teiler": 16,
+    "ausschnitt": true,
+    "pfeil": 74
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "4 10⁄16"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-E-03",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Der Pfeil zeigt auf eine Zahl. Welche Zahl liegt genau in der Mitte zwischen dieser Zahl und 1? Kürze vollständig.",
+   "loesung": "4⁄5",
+   "typischeFehler": [
+    {
+     "wert": "3⁄5",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Liegt kein Teilstrich genau in der Mitte, dann verfeinere die Einteilung: Teile jeden Abstand in zwei gleich große Abstände."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 5,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5,
+    "pfeil": 3
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "3⁄5"
+    },
+    "(3⁄5 + 1) : 2 = 4⁄5"
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-E-04",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "An einem Zahlenstrahl liegen zwischen 8 und 9 genau 9 Teilstriche in gleichen Abständen. Auf welche Zahl zeigt der 7. Teilstrich nach der 8? Schreibe als gemischte Zahl.",
+   "loesung": "8 7⁄10",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "8 7⁄9",
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": "8 7⁄11",
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zwischen zwei Ganzen gibt es einen Abstand mehr als Teilstriche."
+   },
+   "gekuerzt": true,
+   "form": "gemischt",
+   "nachweis": [
+    "9 + 1 = 10",
+    "7 : 10 = 7⁄10",
+    "8 + 7⁄10 = 8 7⁄10",
+    {
+     "wert": "9",
+     "grund": "das nächste Ganze"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-E-05",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der Pfeil zeigt auf eine Zahl. Jetzt wird die Einteilung verfeinert: Jeder Abstand wird in 2 gleich große Abstände geteilt. Der wievielte Teilstrich nach der 0 ist dann der Strich am Pfeil?",
+   "loesung": 22,
+   "typischeFehler": [
+    {
+     "wert": 11,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Verfeinern ist Erweitern: Aus jedem Abstand werden mehrere, also wachsen Zähler und Nenner mit derselben Zahl."
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 12,
+    "schritt": 1,
+    "beschriftung": 6,
+    "teiler": 6,
+    "pfeil": 11
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "11⁄6"
+    },
+    {
+     "art": "umformen",
+     "von": "11⁄6",
+     "mit": 2,
+     "wie": "erweitern",
+     "nach": "22⁄12"
+    },
+    {
+     "wert": "0",
+     "grund": "Anfang des Strahls"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z1-E-06",
+   "lernziel": "6.1.6-Z1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Der Pfeil zeigt auf eine Zahl. Wie viele Abstände weiter rechts liegt 1 1⁄2?",
+   "loesung": 13,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 18,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe 1 1⁄2 mit dem Nenner der Einteilung. Der wievielte Teilstrich ist das?"
+   },
+   "bild": {
+    "art": "zahlenstrahl",
+    "von": 0,
+    "bis": 24,
+    "schritt": 1,
+    "beschriftung": 12,
+    "teiler": 12,
+    "pfeil": 5
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "5⁄12"
+    },
+    {
+     "wert": "1⁄12",
+     "grund": "ein Abstand am Zahlenstrahl"
+    },
+    "(1 1⁄2 − 5⁄12) : 1⁄12 = 13"
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-F-01",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 2⁄4 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 4,
+    "schritt": 1,
+    "beschriftung": 4,
+    "teiler": 4
+   },
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt, in wie viele Abstände die Strecke von 0 bis 1 geteilt ist.",
+    "beispiel": "Für 3⁄4 gehst du von 0 aus 3 Abstände weit.",
+    "loesungsschritt": "Gehe von 0 aus so viele Abstände, wie der Zähler sagt."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-F-02",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 5⁄7 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 7,
+    "schritt": 1,
+    "beschriftung": 7,
+    "teiler": 7
+   },
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt, in wie viele Abstände die Strecke von 0 bis 1 geteilt ist.",
+    "beispiel": "Für 3⁄4 gehst du von 0 aus 3 Abstände weit.",
+    "loesungsschritt": "Gehe von 0 aus so viele Abstände, wie der Zähler sagt."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "5⁄7"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-F-03",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 1⁄6 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 6,
+    "schritt": 1,
+    "beschriftung": 6,
+    "teiler": 6
+   },
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 0,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zähler ist 1. Du gehst nur einen Abstand weit.",
+    "beispiel": "1⁄4 liegt einen Abstand hinter der 0.",
+    "loesungsschritt": "Gehe von 0 aus einen Abstand nach rechts."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-F-04",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 7⁄8 am Zahlenstrahl.\nDer Bruch liegt nahe bei der 1.",
+   "strahl": {
+    "von": 0,
+    "bis": 8,
+    "schritt": 1,
+    "beschriftung": 8,
+    "teiler": 8
+   },
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Fast alle Abstände bis zur 1 gehören dazu. Nur einer fehlt.",
+    "beispiel": "3⁄4 liegt einen Abstand vor der 1.",
+    "loesungsschritt": "Gehe von der 1 aus einen Abstand nach links."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "7⁄8"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-F-05",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Der Zahlenstrahl hat 9 Abstände von 0 bis 1.\nMarkiere 1⁄3.",
+   "strahl": {
+    "von": 0,
+    "bis": 9,
+    "schritt": 1,
+    "beschriftung": 9,
+    "teiler": 9
+   },
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zahlenstrahl hat mehr Abstände als der Nenner sagt. Erweitere den Bruch.",
+    "beispiel": "1⁄2 = 4⁄8. Bei 8 Abständen gehst du 4 Abstände weit.",
+    "loesungsschritt": "Erweitere 1⁄3 mit 3. Gehe dann von 0 aus so viele Abstände."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-F-06",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Von 0 bis 1 sind es 5 Abstände.\nMarkiere 2⁄5 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 5,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5
+   },
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Nenner sagt, in wie viele Abstände die Strecke von 0 bis 1 geteilt ist.",
+    "beispiel": "Für 3⁄4 gehst du von 0 aus 3 Abstände weit.",
+    "loesungsschritt": "Gehe von 0 aus so viele Abstände, wie der Zähler sagt."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-G-01",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 1 1⁄2 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 4,
+    "schritt": 1,
+    "beschriftung": 2,
+    "teiler": 2
+   },
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe zuerst zu den Ganzen. Gehe von dort so viele Abstände weiter, wie der Zähler sagt.",
+    "beispiel": "1 3⁄4: Gehe zur 1 und dann noch 3 Abstände weiter.",
+    "loesungsschritt": "Suche zuerst das Ganze. Zähle dann die Abstände dahinter."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1 1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-G-02",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 7⁄6 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 12,
+    "schritt": 1,
+    "beschriftung": 6,
+    "teiler": 6
+   },
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zähler ist größer als der Nenner. Der Bruch liegt hinter der 1.",
+    "beispiel": "5⁄4: Gehe von 0 aus 5 Abstände weit. Das ist 1 Abstand hinter der 1.",
+    "loesungsschritt": "Zähle von 0 aus so viele Abstände, wie der Zähler sagt."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "7⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-G-03",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Ein Ganzes hat hier 10 Abstände.\nMarkiere 2⁄5.",
+   "strahl": {
+    "von": 0,
+    "bis": 10,
+    "schritt": 1,
+    "beschriftung": 10,
+    "teiler": 10
+   },
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitere den Bruch auf den Nenner der Einteilung.",
+    "beispiel": "3⁄4 = 6⁄8. Bei Achteln gehst du 6 Abstände weit.",
+    "loesungsschritt": "Erweitere 2⁄5 mit 2. Gehe dann von 0 aus so viele Abstände."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "2⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-G-04",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 1 4⁄5 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 15,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5
+   },
+   "loesung": 9,
+   "typischeFehler": [
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe zuerst zu den Ganzen. Gehe von dort so viele Abstände weiter, wie der Zähler sagt.",
+    "beispiel": "1 3⁄4: Gehe zur 1 und dann noch 3 Abstände weiter.",
+    "loesungsschritt": "Suche zuerst das Ganze. Zähle dann die Abstände dahinter."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1 4⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-G-05",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Ein Ganzes hat hier 6 Abstände.\nMarkiere 1 2⁄3.",
+   "strahl": {
+    "von": 0,
+    "bis": 12,
+    "schritt": 1,
+    "beschriftung": 6,
+    "teiler": 6
+   },
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 11,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe zuerst zur 1. Erweitere dann den Bruch auf den Nenner der Einteilung.",
+    "beispiel": "1 1⁄2 bei Vierteln: Gehe zur 1. Dann 1⁄2 = 2⁄4, also noch 2 Abstände.",
+    "loesungsschritt": "Erweitere 2⁄3 mit 2. Gehe von der 1 aus so viele Abstände."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "1 2⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-G-06",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere eine Zahl am Zahlenstrahl.\nSie ist um 3⁄7 größer als 2⁄7.",
+   "strahl": {
+    "von": 0,
+    "bis": 7,
+    "schritt": 1,
+    "beschriftung": 7,
+    "teiler": 7
+   },
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zuerst den zweiten Bruch am Zahlenstrahl. Gehe von dort weiter nach rechts.",
+    "beispiel": "Um 2⁄8 größer als 3⁄8: Gehe von 3⁄8 aus 2 Abstände weiter.",
+    "loesungsschritt": "Gehe von 2⁄7 aus 3 Abstände nach rechts."
+   },
+   "nachweis": [
+    "2⁄7 + 3⁄7 = 5⁄7",
+    {
+     "art": "strahl",
+     "zahl": "5⁄7",
+     "rechnung": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-M-01",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Ein Ganzes hat hier 20 Abstände. Markiere 3⁄5 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 20,
+    "schritt": 1,
+    "beschriftung": 20,
+    "teiler": 20
+   },
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 11,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 13,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Einteilung ist feiner als der Bruch. Erweitere den Bruch auf den Nenner der Einteilung.",
+    "loesungsschritt": "Erweitere 3⁄5 mit 4. Gehe dann von 0 aus so viele Abstände, wie der neue Zähler sagt."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "3⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-M-02",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Markiere 6⁄4 am Zahlenstrahl.",
+   "strahl": {
+    "von": 0,
+    "bis": 12,
+    "schritt": 1,
+    "beschriftung": 4,
+    "teiler": 4
+   },
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Bruch ist größer als 1. Wie viele Ganze stecken darin?",
+    "loesungsschritt": "Ein Ganzes hat 4 Abstände. In 6⁄4 stecken 1 Ganze, dazu kommen noch 2 Abstände."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "6⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-M-03",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 18 Kästchen lang sein. Trage 5⁄6 ein. Beim wievielten Kästchen nach der 0 liegt 5⁄6?",
+   "loesung": 15,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jedes Kästchen ist ein Abstand. Erweitere den Bruch auf den Nenner der Kästchenzahl.",
+    "loesungsschritt": "Rechne 18 : 6 = 3. So viele Kästchen gehören zu einem Teil. Nimm das mit 5 mal."
+   },
+   "nachweis": [
+    "5⁄6 von 18 = 15",
+    {
+     "wert": "0",
+     "grund": "Anfang des Strahls"
+    },
+    {
+     "wert": "1",
+     "grund": "Ende der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-M-04",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Der Zahlenstrahl zeigt einen Ausschnitt. Markiere 8 3⁄5.",
+   "strahl": {
+    "von": 35,
+    "bis": 45,
+    "schritt": 1,
+    "beschriftung": 5,
+    "teiler": 5,
+    "ausschnitt": true
+   },
+   "loesung": 43,
+   "typischeFehler": [
+    {
+     "wert": 42,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 44,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zuerst das Ganze am Strahl. Gehe von dort so viele Abstände weiter, wie der Zähler sagt.",
+    "loesungsschritt": "Gehe zur 8. Von dort sind es noch 3 Abstände."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "8 3⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-M-05",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 10 Kästchen lang sein. Trage 1 2⁄5 ein. Beim wievielten Kästchen nach der 0 liegt 1 2⁄5?",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jedes Ganze ist so viele Kästchen lang wie die Strecke von 0 bis 1. Dazu kommt der Bruchteil.",
+    "loesungsschritt": "Ein Ganzes ist 10 Kästchen. Dazu kommen 2⁄5 von 10 Kästchen."
+   },
+   "nachweis": [
+    "1 2⁄5 von 10 = 14",
+    {
+     "wert": "0",
+     "grund": "Anfang des Strahls"
+    },
+    {
+     "wert": "1",
+     "grund": "Ende der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-M-06",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Du willst 3⁄4 und 5⁄6 am selben Zahlenstrahl eintragen. Beide Brüche sollen genau auf einem Teilstrich liegen. In wie viele Abstände teilst du die Strecke von 0 bis 1 mindestens?",
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 24,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Zahl der Abstände muss ein gemeinsamer Nenner beider Brüche sein.",
+    "loesungsschritt": "Gesucht ist das kleinste gemeinsame Vielfache von 4 und 6."
+   },
+   "nachweis": [
+    {
+     "art": "kgv",
+     "zahlen": [
+      4,
+      6
+     ],
+     "zahl": 12
+    },
+    {
+     "wert": "3⁄4",
+     "grund": "erster Bruch"
+    },
+    {
+     "wert": "5⁄6",
+     "grund": "zweiter Bruch"
+    },
+    {
+     "wert": "0",
+     "grund": "Anfang der Strecke"
+    },
+    {
+     "wert": "1",
+     "grund": "Ende der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-E-01",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Ein Ganzes hat hier 28 Abstände. Markiere 3⁄4.",
+   "strahl": {
+    "von": 0,
+    "bis": 28,
+    "schritt": 1,
+    "beschriftung": 28,
+    "teiler": 28
+   },
+   "loesung": 21,
+   "typischeFehler": [
+    {
+     "wert": 20,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 22,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "bruchteil-zaehler-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitere den Bruch auf den Nenner der Einteilung. Die Zahlen am Strahl helfen beim Abzählen wenig, rechne lieber."
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "3⁄4"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-E-02",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Ein Ganzes hat hier 12 Abstände. Markiere die Zahl, die genau in der Mitte zwischen 1⁄2 und 2⁄3 liegt.",
+   "strahl": {
+    "von": 0,
+    "bis": 12,
+    "schritt": 1,
+    "beschriftung": 12,
+    "teiler": 12
+   },
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zuerst beide Brüche am Zahlenstrahl. Erweitere sie dazu auf den Nenner der Einteilung."
+   },
+   "nachweis": [
+    "(1⁄2 + 2⁄3) : 2 = 7⁄12",
+    {
+     "art": "strahl",
+     "zahl": "7⁄12",
+     "rechnung": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-E-03",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 24 Kästchen lang sein. Trage 1⁄3 und 5⁄8 ein. Wie viele Kästchen liegen zwischen den beiden Brüchen?",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 23,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne für jeden Bruch aus, beim wievielten Kästchen er liegt. Bilde dann den Unterschied."
+   },
+   "nachweis": [
+    "1⁄3 von 24 = 8",
+    "5⁄8 von 24 = 15",
+    "15 − 8 = 7",
+    {
+     "wert": "0",
+     "grund": "Anfang des Strahls"
+    },
+    {
+     "wert": "1",
+     "grund": "Ende der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-E-04",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Zeichne in dein Heft einen Zahlenstrahl. Du sollst 3⁄4, 2⁄5 und 7⁄10 eintragen. Alle drei Brüche sollen genau auf einer Kästchenlinie liegen. Wie viele Kästchen lang zeichnest du die Strecke von 0 bis 1 mindestens?",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 200,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 19,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 10,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Kästchenzahl muss ein gemeinsamer Nenner aller drei Brüche sein. Gesucht ist der kleinste, also der Hauptnenner."
+   },
+   "nachweis": [
+    {
+     "art": "kgv",
+     "zahlen": [
+      4,
+      5,
+      10
+     ],
+     "zahl": 20
+    },
+    {
+     "wert": "3⁄4",
+     "grund": "erster Bruch"
+    },
+    {
+     "wert": "2⁄5",
+     "grund": "zweiter Bruch"
+    },
+    {
+     "wert": "7⁄10",
+     "grund": "dritter Bruch"
+    },
+    {
+     "wert": "0",
+     "grund": "Anfang der Strecke"
+    },
+    {
+     "wert": "1",
+     "grund": "Ende der Strecke"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-E-05",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Die Strecke von 0 bis 2 ist in 7 gleich große Abstände geteilt. Markiere 6⁄7.",
+   "strahl": {
+    "von": 0,
+    "bis": 14,
+    "schritt": 2,
+    "beschriftung": 14,
+    "teiler": 7
+   },
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "bruchstrahl-striche"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wie lang ist ein Abstand, wenn 2 Ganze in 7 gleich große Abstände geteilt werden? Der wievielte Teilstrich passt dann zum Bruch?"
+   },
+   "nachweis": [
+    {
+     "art": "strahl",
+     "zahl": "6⁄7"
+    },
+    {
+     "wert": "2",
+     "grund": "Ende des Strahls"
+    },
+    {
+     "wert": "7",
+     "grund": "Anzahl der Abstände"
+    },
+    {
+     "wert": "0",
+     "grund": "Anfang des Strahls"
+    }
+   ]
+  },
+  {
+   "id": "6.1.6-Z2-E-06",
+   "lernziel": "6.1.6-Z2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "kommunizieren"
+   ],
+   "format": "zahlenstrahl",
+   "eingabe": "markieren",
+   "text": "Ein Ganzes hat hier 18 Abstände. Markiere die Zahl, die doppelt so weit von der 0 entfernt ist wie 1⁄6.",
+   "strahl": {
+    "von": 0,
+    "bis": 18,
+    "schritt": 1,
+    "beschriftung": 18,
+    "teiler": 18
+   },
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "bruchstrahl-striche"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche zuerst den Bruch am Zahlenstrahl. Gehe dann von der 0 aus doppelt so viele Abstände."
+   },
+   "nachweis": [
+    "2 · 1⁄6 = 1⁄3",
+    {
+     "wert": "0",
+     "grund": "Anfang des Strahls"
+    },
+    {
+     "art": "strahl",
+     "zahl": "1⁄3",
+     "rechnung": true
+    }
    ]
   }
  ]

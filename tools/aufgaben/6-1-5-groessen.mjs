@@ -48,7 +48,7 @@ export function bruecheUndGroessen() {
         { bild: streifen(z, n), nachweis: [`${G} ${gross} = ${G * 1000} ${klein}`, `${br(z, n)} von ${G * 1000} ${klein} = ${x} ${klein}`] }); },
     () => { const n = wahl([2, 4, 5, 10]), z = wahl(vorn(n - 1, 1).filter((k) => ggt(k, n) === 1)), g = zz(1, 4), x = g * 100 + (100 / n) * z;
       return zahl(Z(`Wie viele Zentimeter sind ${br(z, n, g)} m?`), x, fehlerliste(x, [[(100 / n) * z, 'gemischt-umwandeln'], [g * 100 + z * 10 + n, 'bruch-als-komma'], [g * 100 + 100 / n, 'bruchteil-zaehler-vergessen']]),
-        h3('Rechne die Ganzen und den Bruch einzeln um. Zähle dann zusammen.', '1 1⁄2 m: 1 m = 100 cm und 1⁄2 m = 50 cm. Zusammen 150 cm.', `Rechne ${g} m in Zentimeter um. Rechne dann ${br(z, n)} von 100 cm dazu.`), { einheit: 'cm', nachweis: [`${br(z, n, g)} m = ${x} cm`] }); },
+        h3('Rechne die Ganzen und den Bruch einzeln um. Zähle dann zusammen.', '1 1⁄2 m: 1 m = 100 cm und 1⁄2 m = 50 cm. Zusammen 150 cm.', `Rechne ${g} m in Zentimeter um. Rechne dann ${br(z, n)} von 100 cm dazu.`), { einheit: 'cm', nachweis: [`${br(z, n, g)} m = ${x} cm`] }); },
     () => { const [z, n] = gekuerzt([4, 5, 8, 10], 2), G = zz(2, 5), x = (G * 1000 * z) / n, kn = kind();
       return zahl(Z(`Ein Wanderweg ist ${G} km lang.`, `${kn} hat schon ${br(z, n)} davon geschafft.`, 'Wie viele Meter sind das?'), x, fehlerliste(x, [[(G * 1000) / n, 'bruchteil-zaehler-vergessen'], [G * 1000 - x, 'sach-frage-verfehlt'], [x / 10, 'umrechnungszahl']]), tT1G,
         { einheit: 'm', bild: streifen(z, n), nachweis: [`${G} km = ${G * 1000} m`, `${br(z, n)} von ${G * 1000} m = ${x} m`] }); },
@@ -143,7 +143,7 @@ export function bruecheUndGroessen() {
       return zahl(Z(`${kn} hat ${br(z, n)} eines Buches gelesen.`, `Das sind ${T} Seiten.`, 'Wie viele Seiten hat das Buch?'), G, fehlerliste(G, [[e, 'sach-schritt-vergessen'], [T * n, 'sach-schritt-vergessen'], [(T * z) / n, 'bruch-ganzes-teil'], [G - T, 'sach-frage-verfehlt']]), tT2z, { nachweis: [`${T} : ${z} = ${e}`, `${n} · ${e} = ${G}`] }); },
     () => { const n = wahl([3, 4, 5, 6]), e = zz(4, 9), kn = kind(), stimmt = wahl([true, false, false]), gesagt = stimmt ? n * e : n + e;
       if (n * e === n + e) return null;
-      return auswahl(Z(`${br(1, n)} der Klasse sind ${e} Kinder.`, `${kn} sagt: „Die Klasse hat ${gesagt} Kinder.“`, 'Stimmt das?'), [opt('Stimmt.', stimmt, stimmt ? undefined : 'sach-falsche-rechnung'), opt(`Falsch. Es gilt ${n} · ${e} = ${stimmt ? n + e : n * e}.`, !stimmt, stimmt ? 'sach-falsche-rechnung' : undefined), opt(`Falsch. Es gilt ${n} · ${e} = ${e}.`, false, 'bruch-ganzes-teil')], tT2,
+      return auswahl(Z(`${br(1, n)} der Klasse sind ${e} Kinder.`, `${kn} sagt: „Die Klasse hat ${gesagt} Kinder.“`, 'Stimmt das?'), [opt('Stimmt.', stimmt, stimmt ? undefined : 'sach-falsche-rechnung'), opt(`Falsch. Es gilt ${n} · ${e} = ${stimmt ? n + e : n * e}.`, !stimmt, stimmt ? 'sach-falsche-rechnung' : undefined), opt(`Falsch. Es gilt ${n} · ${e} = ${n * e + n}.`, false, 'sach-falsche-rechnung')], tT2,
         { bild: streifen(1, n), nachweis: [{ art: 'urteil', stimmt, behauptung: `${n} · ${e} = ${gesagt}` }] }); },
   ]);
   sechs(T2, 'M', [
