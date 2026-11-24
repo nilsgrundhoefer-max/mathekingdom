@@ -6790,6 +6790,2433 @@
      "grund": "Ausgangsbruch, alle gezählten Brüche sind zu ihm gleichwertig"
     }
    ]
+  },
+  {
+   "id": "6.1.3-K1-F-01",
+   "lernziel": "6.1.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nKürze mit 5.\n10⁄15 = {{a}}⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 10,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 50,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 15,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 75,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Kürzen heißt: Teile den Zähler und den Nenner durch dieselbe Zahl.",
+    "beispiel": "4⁄6 mit 2 gekürzt: 4 : 2 = 2 und 6 : 2 = 3. Also 4⁄6 = 2⁄3.",
+    "loesungsschritt": "Teile zuerst den Zähler durch die Zahl. Teile dann den Nenner durch die Zahl."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 15,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 3,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "10⁄15",
+     "mit": 5,
+     "wie": "kuerzen",
+     "nach": "2⁄3"
+    },
+    {
+     "art": "bild",
+     "bruch": "2⁄3",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-F-02",
+   "lernziel": "6.1.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Kürze 6⁄15 mit 3.\nWelcher Bruch stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄15",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "3⁄12",
+     "richtig": false
+    },
+    {
+     "text": "2⁄5",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürzen heißt: Teile den Zähler und den Nenner durch dieselbe Zahl.",
+    "beispiel": "4⁄6 mit 2 gekürzt: 4 : 2 = 2 und 6 : 2 = 3. Also 4⁄6 = 2⁄3.",
+    "loesungsschritt": "Teile zuerst den Zähler durch die Zahl. Teile dann den Nenner durch die Zahl."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 15,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "6⁄15",
+     "mit": 3,
+     "wie": "kuerzen",
+     "nach": "2⁄5"
+    },
+    {
+     "art": "wert",
+     "wert": "2⁄5",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-F-03",
+   "lernziel": "6.1.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Kürze 6⁄10 mit 2.\nSchreibe den neuen Bruch.",
+   "loesung": "3⁄5",
+   "typischeFehler": [
+    {
+     "wert": "3⁄10",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "12⁄20",
+     "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürzen heißt: Teile den Zähler und den Nenner durch dieselbe Zahl.",
+    "beispiel": "4⁄6 mit 2 gekürzt: 4 : 2 = 2 und 6 : 2 = 3. Also 4⁄6 = 2⁄3.",
+    "loesungsschritt": "Teile zuerst den Zähler durch die Zahl. Teile dann den Nenner durch die Zahl."
+   },
+   "genau": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 10,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "6⁄10",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "3⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-F-04",
+   "lernziel": "6.1.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Beide Streifen sind gleich weit gefärbt.\nKürze mit 2.\n2⁄4 = {{a}}⁄2",
+   "luecken": {
+    "a": {
+     "loesung": 1,
+     "typischeFehler": [
+      {
+       "wert": 2,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 4,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Der Nenner ist schon gekürzt. Jetzt fehlt noch der Zähler.",
+    "beispiel": "4⁄6 mit 2 gekürzt: 4 : 2 = 2 und 6 : 2 = 3. Also 4⁄6 = 2⁄3.",
+    "loesungsschritt": "Teile den Zähler durch 2."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "n": "A",
+      "form": "streifen",
+      "teile": 4,
+      "gefaerbt": [
+       0,
+       1
+      ]
+     },
+     {
+      "n": "B",
+      "form": "streifen",
+      "teile": 2,
+      "gefaerbt": [
+       0
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "2⁄4",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "1⁄2"
+    },
+    {
+     "art": "bild",
+     "bruch": "1⁄2",
+     "form": true,
+     "figur": "B"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-F-05",
+   "lernziel": "6.1.3-K1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Streifen ist 4⁄6 gefärbt.\nImmer 2 Teile werden zu einem Teil zusammengefasst.\nWelcher Bruch ist jetzt gefärbt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄4",
+     "richtig": false
+    },
+    {
+     "text": "2⁄3",
+     "richtig": true
+    },
+    {
+     "text": "2⁄6",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Aus mehreren kleinen Teilen wird ein großes Teil. Das gilt auch für die gefärbten Teile.",
+    "beispiel": "Fasst du bei 4⁄6 immer 2 Teile zusammen, dann sind 2 von 3 Teilen gefärbt.",
+    "loesungsschritt": "Teile den Zähler durch 2 und den Nenner durch 2."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "4⁄6",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "2⁄3"
+    },
+    {
+     "art": "wert",
+     "wert": "2⁄3",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-F-06",
+   "lernziel": "6.1.3-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Du kürzt 15⁄18 mit 3.\nWie heißt der neue Zähler?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": 45,
+     "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Zähler steht über dem Bruchstrich. Auch er wird geteilt.",
+    "beispiel": "4⁄6 mit 2 gekürzt: Der neue Zähler ist 4 : 2 = 2.",
+    "loesungsschritt": "Rechne 15 : 3."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 18,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "15⁄18",
+     "mit": 3,
+     "wie": "kuerzen",
+     "nach": "5⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-G-01",
+   "lernziel": "6.1.3-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 24⁄54 mit 6.",
+   "loesung": "4⁄9",
+   "typischeFehler": [
+    {
+     "wert": "4⁄54",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "144⁄324",
+     "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den Zähler und den Nenner durch die Kürzungszahl.",
+    "beispiel": "12⁄18 mit 6 gekürzt: 12 : 6 = 2 und 18 : 6 = 3. Also 12⁄18 = 2⁄3.",
+    "loesungsschritt": "Rechne zuerst den neuen Zähler aus. Rechne dann den neuen Nenner aus."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "24⁄54",
+     "mit": 6,
+     "wie": "kuerzen",
+     "nach": "4⁄9"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-G-02",
+   "lernziel": "6.1.3-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Im Streifen ist 3⁄6 gefärbt.\nKürze mit 3.\n3⁄6 = {{a}}⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 1,
+     "typischeFehler": [
+      {
+       "wert": 3,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 9,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 2,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 18,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile den Zähler und den Nenner durch die Kürzungszahl.",
+    "beispiel": "12⁄18 mit 6 gekürzt: 12 : 6 = 2 und 18 : 6 = 3. Also 12⁄18 = 2⁄3.",
+    "loesungsschritt": "Rechne zuerst den neuen Zähler aus. Rechne dann den neuen Nenner aus."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄6",
+     "mit": 3,
+     "wie": "kuerzen",
+     "nach": "1⁄2"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-G-03",
+   "lernziel": "6.1.3-K1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "35⁄60 wurde gekürzt zu 7⁄12.\nWie heißt die Kürzungszahl?",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 48,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 28,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die beiden Nenner. Durch welche Zahl wurde geteilt?",
+    "beispiel": "12⁄18 = 2⁄3: Aus der 18 wurde 3. Die Kürzungszahl ist 6.",
+    "loesungsschritt": "Rechne 60 : 12."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "35⁄60",
+     "mit": 5,
+     "wie": "kuerzen",
+     "nach": "7⁄12",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-G-04",
+   "lernziel": "6.1.3-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Streifen ist 6⁄15 gefärbt.\nKürze mit 3.\nWelcher Bruch stimmt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄5",
+     "richtig": true
+    },
+    {
+     "text": "2⁄15",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "3⁄12",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den Zähler und den Nenner durch die Kürzungszahl.",
+    "beispiel": "12⁄18 mit 6 gekürzt: 12 : 6 = 2 und 18 : 6 = 3. Also 12⁄18 = 2⁄3.",
+    "loesungsschritt": "Rechne zuerst den neuen Zähler aus. Rechne dann den neuen Nenner aus."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 15,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "6⁄15",
+     "mit": 3,
+     "wie": "kuerzen",
+     "nach": "2⁄5"
+    },
+    {
+     "art": "wert",
+     "wert": "2⁄5",
+     "form": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-G-05",
+   "lernziel": "6.1.3-K1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Streifen ist 4⁄12 gefärbt.\nMit welchen Zahlen kannst du den Bruch kürzen?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "2",
+     "richtig": true
+    },
+    {
+     "text": "4",
+     "richtig": true
+    },
+    {
+     "text": "5",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "6",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Kürzungszahl muss in den Zähler und in den Nenner passen.",
+    "beispiel": "12⁄18 lässt sich mit 6 kürzen: 12 : 6 = 2 und 18 : 6 = 3.",
+    "loesungsschritt": "Prüfe jede Zahl: Ist 4 durch sie teilbar? Ist auch 12 durch sie teilbar?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "kuerzbar",
+     "bruch": "4⁄12"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-G-06",
+   "lernziel": "6.1.3-K1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ole kürzt 30⁄48 mit 6.\nOle rechnet: 30⁄48 = 5⁄48\nStimmt das?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 30⁄48 = 30⁄96.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Falsch.\nEs gilt 30⁄48 = 5⁄8.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Kürzen ändern sich immer beide Zahlen: der Zähler und der Nenner.",
+    "beispiel": "4⁄6 mit 2 gekürzt ist 2⁄3. Der Bruch 2⁄6 ist falsch.",
+    "loesungsschritt": "Prüfe: Ist der Zähler 30 : 6? Ist der Nenner 48 : 6?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "30⁄48 = 5⁄48"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-M-01",
+   "lernziel": "6.1.3-K1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 48⁄54 mit 6.",
+   "loesung": "8⁄9",
+   "typischeFehler": [
+    {
+     "wert": "8⁄54",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "288⁄324",
+     "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl.",
+    "loesungsschritt": "Rechne 48 : 6 für den Zähler und 54 : 6 für den Nenner."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "48⁄54",
+     "mit": 6,
+     "wie": "kuerzen",
+     "nach": "8⁄9"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-M-02",
+   "lernziel": "6.1.3-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 40⁄60 zuerst mit 5. Kürze das Ergebnis dann mit 4. Wie heißt der Bruch am Ende?",
+   "loesung": "2⁄3",
+   "typischeFehler": [
+    {
+     "wert": "8⁄12",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "2⁄60",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "8⁄60",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze in zwei Schritten. Schreibe das Zwischenergebnis auf.",
+    "loesungsschritt": "Nach dem ersten Schritt heißt der Bruch 8⁄12. Kürze ihn jetzt mit 4."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "40⁄60",
+     "mit": 5,
+     "wie": "kuerzen",
+     "nach": "8⁄12"
+    },
+    {
+     "art": "umformen",
+     "von": "8⁄12",
+     "mit": 4,
+     "wie": "kuerzen",
+     "nach": "2⁄3"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-M-03",
+   "lernziel": "6.1.3-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "72⁄200 wurde gekürzt. Herausgekommen ist 9⁄25. Mit welcher Zahl wurde gekürzt?",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 175,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 63,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die beiden Nenner oder die beiden Zähler: Durch welche Zahl wurde geteilt?",
+    "loesungsschritt": "Rechne 200 : 25. Prüfe das Ergebnis am Zähler."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "72⁄200",
+     "mit": 8,
+     "wie": "kuerzen",
+     "nach": "9⁄25",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-M-04",
+   "lernziel": "6.1.3-K1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Kürze mit 10: 90⁄200 = {{a}}⁄{{b}}",
+   "luecken": {
+    "a": {
+     "loesung": 9,
+     "typischeFehler": [
+      {
+       "wert": 90,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 900,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 20,
+     "typischeFehler": [
+      {
+       "wert": 200,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 2000,
+       "fehlvorstellung": "erweitern-kuerzen-verwechselt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl.",
+    "loesungsschritt": "Rechne 90 : 10 und 200 : 10."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "90⁄200",
+     "mit": 10,
+     "wie": "kuerzen",
+     "nach": "9⁄20"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-M-05",
+   "lernziel": "6.1.3-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Mit welchen Zahlen lässt sich 40⁄60 kürzen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "5",
+     "richtig": true
+    },
+    {
+     "text": "9",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "10",
+     "richtig": true
+    },
+    {
+     "text": "4",
+     "richtig": true
+    },
+    {
+     "text": "8",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Kürzungszahl muss ein Teiler vom Zähler und vom Nenner sein.",
+    "loesungsschritt": "Prüfe jede Zahl mit den Teilbarkeitsregeln: Geht 40 auf und geht auch 60 auf?"
+   },
+   "nachweis": [
+    {
+     "art": "kuerzbar",
+     "bruch": "40⁄60"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-M-06",
+   "lernziel": "6.1.3-K1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ida kürzt 50⁄60 so: Den Zähler teilt Ida durch 10, den Nenner durch 10. Das Ergebnis ist 5⁄6. Stimmt die Gleichung 50⁄60 = 5⁄6?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Falsch. Es gilt 50⁄60 = 5⁄60.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Falsch. Es gilt 50⁄60 = 10⁄6.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "Falsch. Es gilt 50⁄60 = 5⁄12.",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Wert eines Bruchs bleibt nur gleich, wenn Zähler und Nenner durch dieselbe Zahl geteilt werden.",
+    "loesungsschritt": "Kürze selbst: Teile 50 und 60 beide durch 10."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true,
+     "behauptung": "50⁄60 = 5⁄6"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-E-01",
+   "lernziel": "6.1.3-K1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 288⁄336 nacheinander mit 2, mit 6 und mit 4. Wie heißt der Bruch am Ende?",
+   "loesung": "6⁄7",
+   "typischeFehler": [
+    {
+     "wert": "24⁄28",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "144⁄168",
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": "6⁄336",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe jedes Zwischenergebnis auf. Oder überlege, mit welcher einen Zahl du gleich kürzen kannst."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "288⁄336",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "144⁄168"
+    },
+    {
+     "art": "umformen",
+     "von": "144⁄168",
+     "mit": 6,
+     "wie": "kuerzen",
+     "nach": "24⁄28"
+    },
+    {
+     "art": "umformen",
+     "von": "24⁄28",
+     "mit": 4,
+     "wie": "kuerzen",
+     "nach": "6⁄7"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-E-02",
+   "lernziel": "6.1.3-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Bruch wird zuerst mit 9 und dann mit 8 gekürzt. Mit welcher einen Zahl hättest du ihn gleich kürzen können?",
+   "loesung": 72,
+   "typischeFehler": [
+    {
+     "wert": 17,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 81,
+     "fehlvorstellung": "sach-falsche-rechnung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Probiere es mit einem Bruch aus, der sich so kürzen lässt. Vergleiche den Nenner am Anfang mit dem Nenner am Ende."
+   },
+   "nachweis": [
+    "9 · 8 = 72"
+   ]
+  },
+  {
+   "id": "6.1.3-K1-E-03",
+   "lernziel": "6.1.3-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "299⁄345 wurde in einem Schritt zu 13⁄15 gekürzt. Mit welcher Zahl?",
+   "loesung": 23,
+   "typischeFehler": [
+    {
+     "wert": 330,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 286,
+     "fehlvorstellung": "erweitern-addiert"
+    },
+    {
+     "wert": 24,
+     "fehlvorstellung": "div-einmaleins"
+    },
+    {
+     "wert": 21,
+     "fehlvorstellung": "div-einmaleins"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile den alten Nenner durch den neuen Nenner. Prüfe das Ergebnis am Zähler."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "299⁄345",
+     "mit": 23,
+     "wie": "kuerzen",
+     "nach": "13⁄15",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-E-04",
+   "lernziel": "6.1.3-K1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Mit welchen Zahlen lässt sich 108⁄180 kürzen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "4",
+     "richtig": true
+    },
+    {
+     "text": "2",
+     "richtig": true
+    },
+    {
+     "text": "24",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "9",
+     "richtig": true
+    },
+    {
+     "text": "14",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "12",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zerlege große Zahlen: Durch 12 ist eine Zahl teilbar, wenn sie durch 3 und durch 4 teilbar ist."
+   },
+   "nachweis": [
+    {
+     "art": "kuerzbar",
+     "bruch": "108⁄180"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-E-05",
+   "lernziel": "6.1.3-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Ein Bruch wurde mit 7 gekürzt. Herausgekommen ist 3⁄8. Wie hieß der Bruch vorher?",
+   "loesung": "21⁄56",
+   "typischeFehler": [
+    {
+     "wert": "3⁄56",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "21⁄8",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "10⁄15",
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürzen lässt sich durch Erweitern rückgängig machen."
+   },
+   "genau": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄8",
+     "mit": 7,
+     "wie": "erweitern",
+     "nach": "21⁄56"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K1-E-06",
+   "lernziel": "6.1.3-K1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Mit wie vielen verschiedenen Zahlen kannst du 45⁄75 kürzen? Zähle nur Zahlen, die größer als 1 sind.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Kürzungszahl ist ein gemeinsamer Teiler von Zähler und Nenner. Schreibe alle gemeinsamen Teiler auf."
+   },
+   "nachweis": [
+    {
+     "art": "gemeinsameTeiler",
+     "bruch": "45⁄75",
+     "zahl": 3
+    },
+    {
+     "wert": "1",
+     "grund": "Kürzen mit 1 ändert den Bruch nicht"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-F-01",
+   "lernziel": "6.1.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Streifen ist 3⁄18 gefärbt.\nKürze so weit wie möglich.",
+   "loesung": "1⁄6",
+   "typischeFehler": [
+    {
+     "wert": "1⁄18",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "3⁄6",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche eine Zahl, die in den Zähler und in den Nenner passt. Teile beide durch sie.",
+    "beispiel": "6⁄8: Beide Zahlen sind gerade. 6 : 2 = 3 und 8 : 2 = 4. Also 6⁄8 = 3⁄4.",
+    "loesungsschritt": "Prüfe am Ende: Passt noch eine Zahl in beide? Dann kürze weiter."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 18,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄18",
+     "mit": 3,
+     "wie": "kuerzen",
+     "nach": "1⁄6",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-F-02",
+   "lernziel": "6.1.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Im Kreis ist 6⁄12 gefärbt.\nAlle drei Brüche sind gleich groß.\nWelcher Bruch ist so weit wie möglich gekürzt?",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1⁄2",
+     "richtig": true
+    },
+    {
+     "text": "3⁄6",
+     "richtig": false,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    },
+    {
+     "text": "6⁄12",
+     "richtig": false,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist fertig gekürzt: Keine Zahl außer 1 passt in Zähler und Nenner.",
+    "beispiel": "2⁄4 ist noch nicht fertig, denn 2 passt in beide Zahlen. 1⁄2 ist fertig.",
+    "loesungsschritt": "Prüfe jeden Bruch: Passt die 2 oder die 3 in beide Zahlen?"
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "kreis",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gekuerztwahl"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-F-03",
+   "lernziel": "6.1.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Welcher Bruchteil ist gefärbt?\nKürze so weit wie möglich.",
+   "loesung": "1⁄6",
+   "typischeFehler": [
+    {
+     "wert": "1⁄12",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "2⁄6",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst alle Teile und die gefärbten Teile. Kürze dann den Bruch.",
+    "beispiel": "Von 8 Teilen sind 6 gefärbt. 6⁄8 = 3⁄4.",
+    "loesungsschritt": "Im Bild ist 2⁄12 gefärbt. Teile beide Zahlen durch 2."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       9
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "2⁄12",
+     "form": true
+    },
+    {
+     "art": "umformen",
+     "von": "2⁄12",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "1⁄6",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-F-04",
+   "lernziel": "6.1.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Im Streifen ist 12⁄20 gefärbt.\nKürze zweimal mit 2.\n12⁄20 = {{a}}⁄10 = {{b}}⁄5",
+   "luecken": {
+    "a": {
+     "loesung": 6,
+     "typischeFehler": [
+      {
+       "wert": 12,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 3,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 3,
+     "typischeFehler": [
+      {
+       "wert": 6,
+       "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+      },
+      {
+       "wert": 12,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Kürze Schritt für Schritt. Teile jedes Mal Zähler und Nenner durch 2.",
+    "beispiel": "4⁄8 = 2⁄4 = 1⁄2. Zweimal wurde mit 2 gekürzt.",
+    "loesungsschritt": "Rechne 12 : 2. Teile das Ergebnis noch einmal durch 2."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 20,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "12⁄20",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "6⁄10"
+    },
+    {
+     "art": "umformen",
+     "von": "6⁄10",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "3⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-F-05",
+   "lernziel": "6.1.3-K2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Elif kürzt 6⁄12 mit 2.\nDas Ergebnis ist 3⁄6.\nKürze weiter, so weit es geht.",
+   "loesung": "1⁄2",
+   "typischeFehler": [
+    {
+     "wert": "1⁄6",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "3⁄2",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Bruch ist noch nicht fertig. Suche noch eine Zahl für Zähler und Nenner.",
+    "beispiel": "4⁄8 = 2⁄4. Jetzt passt die 2 noch einmal in beide Zahlen: 2⁄4 = 1⁄2.",
+    "loesungsschritt": "Teile 3 und 6 beide durch 3."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 6,
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "6⁄12",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "3⁄6"
+    },
+    {
+     "art": "umformen",
+     "von": "3⁄6",
+     "mit": 3,
+     "wie": "kuerzen",
+     "nach": "1⁄2",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-F-06",
+   "lernziel": "6.1.3-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Hunderterfeld ist 30⁄100 gefärbt.\nKürze so weit wie möglich.",
+   "loesung": "3⁄10",
+   "typischeFehler": [
+    {
+     "wert": "3⁄100",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beide Zahlen enden auf 0. Dann passt die 10 in beide.",
+    "beispiel": "20⁄100: 20 : 10 = 2 und 100 : 10 = 10. Also 20⁄100 = 2⁄10. Das geht noch weiter.",
+    "loesungsschritt": "Teile 30 und 100 beide durch 10."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "30⁄100",
+     "mit": 10,
+     "wie": "kuerzen",
+     "nach": "3⁄10"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-G-01",
+   "lernziel": "6.1.3-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 45⁄54 vollständig.",
+   "loesung": "5⁄6",
+   "typischeFehler": [
+    {
+     "wert": "5⁄54",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "45⁄6",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze Schritt für Schritt. Durch 2 teilbar: Die letzte Ziffer ist gerade. Durch 5 teilbar: Die letzte Ziffer ist 0 oder 5. Durch 3 teilbar: Die Quersumme ist durch 3 teilbar.",
+    "beispiel": "24⁄36 = 12⁄18 = 6⁄9 = 2⁄3. Jetzt passt keine Zahl mehr in beide.",
+    "loesungsschritt": "Kürze zuerst mit einer kleinen Zahl. Prüfe das Ergebnis und kürze weiter."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "45⁄54",
+     "mit": 9,
+     "wie": "kuerzen",
+     "nach": "5⁄6",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-G-02",
+   "lernziel": "6.1.3-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Streifen ist 6⁄12 gefärbt.\nKürze den Bruch vollständig.",
+   "loesung": "1⁄2",
+   "typischeFehler": [
+    {
+     "wert": "1⁄12",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "6⁄2",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze Schritt für Schritt. Durch 2 teilbar: Die letzte Ziffer ist gerade. Durch 5 teilbar: Die letzte Ziffer ist 0 oder 5. Durch 3 teilbar: Die Quersumme ist durch 3 teilbar.",
+    "beispiel": "24⁄36 = 12⁄18 = 6⁄9 = 2⁄3. Jetzt passt keine Zahl mehr in beide.",
+    "loesungsschritt": "Kürze zuerst mit einer kleinen Zahl. Prüfe das Ergebnis und kürze weiter."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "streifen",
+      "teile": 12,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "6⁄12",
+     "mit": 6,
+     "wie": "kuerzen",
+     "nach": "1⁄2",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-G-03",
+   "lernziel": "6.1.3-K2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Kürze in zwei Schritten.\nKürze zuerst mit 2 und dann mit 2.\n28⁄32 = {{a}}⁄16 = {{b}}⁄8",
+   "luecken": {
+    "a": {
+     "loesung": 14,
+     "typischeFehler": [
+      {
+       "wert": 28,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 7,
+       "fehlvorstellung": "sach-schritt-vergessen"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 7,
+     "typischeFehler": [
+      {
+       "wert": 14,
+       "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+      },
+      {
+       "wert": 28,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Teile bei jedem Schritt den Zähler durch dieselbe Zahl wie den Nenner.",
+    "beispiel": "12⁄18 = 6⁄9 = 2⁄3. Erst wurde mit 2 gekürzt, dann mit 3.",
+    "loesungsschritt": "Rechne 28 : 2. Teile das Ergebnis dann durch 2."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "28⁄32",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "14⁄16"
+    },
+    {
+     "art": "umformen",
+     "von": "14⁄16",
+     "mit": 2,
+     "wie": "kuerzen",
+     "nach": "7⁄8"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-G-04",
+   "lernziel": "6.1.3-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Hunderterfeld ist 40⁄100 gefärbt.\nKürze den Bruch vollständig.",
+   "loesung": "2⁄5",
+   "typischeFehler": [
+    {
+     "wert": "2⁄100",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Endet der Zähler auf 0 oder 5? Dann passt die 5 in beide Zahlen.",
+    "beispiel": "15⁄100: 15 : 5 = 3 und 100 : 5 = 20. Also 15⁄100 = 3⁄20.",
+    "loesungsschritt": "Kürze mit 5. Prüfe das Ergebnis und kürze weiter."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "40⁄100",
+     "mit": 20,
+     "wie": "kuerzen",
+     "nach": "2⁄5",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-G-05",
+   "lernziel": "6.1.3-K2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Im Bild siehst du 16 Kugeln.\nWelcher Bruchteil der Kugeln ist gefärbt?\nKürze vollständig.",
+   "loesung": "3⁄4",
+   "typischeFehler": [
+    {
+     "wert": "4⁄16",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "3⁄16",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die gefärbten Kugeln. Der Nenner ist die Zahl aller Kugeln.",
+    "beispiel": "Von 12 Kugeln sind 8 gefärbt. 8⁄12 = 4⁄6 = 2⁄3.",
+    "loesungsschritt": "Der Bruch heißt zuerst 12⁄16. Kürze ihn Schritt für Schritt."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "menge",
+      "teile": 16,
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "12⁄16",
+     "form": true
+    },
+    {
+     "art": "umformen",
+     "von": "12⁄16",
+     "mit": 4,
+     "wie": "kuerzen",
+     "nach": "3⁄4",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-G-06",
+   "lernziel": "6.1.3-K2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche sind vollständig gekürzt?\nKreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "7⁄18",
+     "richtig": true
+    },
+    {
+     "text": "21⁄28",
+     "richtig": false,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    },
+    {
+     "text": "10⁄15",
+     "richtig": false,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    },
+    {
+     "text": "14⁄21",
+     "richtig": false,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche bei jedem Bruch eine Zahl für Zähler und Nenner. Durch 2 teilbar: Die letzte Ziffer ist gerade. Durch 5 teilbar: Die letzte Ziffer ist 0 oder 5. Durch 3 teilbar: Die Quersumme ist durch 3 teilbar.",
+    "beispiel": "9⁄12 ist nicht fertig: Die 3 passt in 9 und in 12. 5⁄8 ist fertig.",
+    "loesungsschritt": "Prüfe bei jedem Bruch die 2, die 3 und die 5."
+   },
+   "nachweis": [
+    {
+     "art": "gekuerztwahl"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-M-01",
+   "lernziel": "6.1.3-K2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 48⁄132 vollständig.",
+   "loesung": "4⁄11",
+   "typischeFehler": [
+    {
+     "wert": "4⁄132",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "48⁄11",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze Schritt für Schritt, bis keine Zahl außer 1 mehr in Zähler und Nenner passt. Durch 2 teilbar: Die letzte Ziffer ist gerade. Durch 5 teilbar: Die letzte Ziffer ist 0 oder 5. Durch 3 teilbar: Die Quersumme ist durch 3 teilbar.",
+    "loesungsschritt": "Beginne mit 2. Prüfe das Ergebnis und kürze weiter."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "48⁄132",
+     "mit": 12,
+     "wie": "kuerzen",
+     "nach": "4⁄11",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-M-02",
+   "lernziel": "6.1.3-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Von 128 Fahrrädern sind 56 Mountainbikes. Welcher Anteil der Fahrräder ist das? Kürze vollständig.",
+   "loesung": "7⁄16",
+   "typischeFehler": [
+    {
+     "wert": "72⁄128",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "16⁄7",
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": "7⁄128",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Anteil ist ein Bruch: Der Teil steht im Zähler, das Ganze im Nenner.",
+    "loesungsschritt": "Der Bruch heißt zuerst 56⁄128. Kürze ihn Schritt für Schritt."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "56 : 128 = 7⁄16"
+   ]
+  },
+  {
+   "id": "6.1.3-K2-M-03",
+   "lernziel": "6.1.3-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 318⁄54 als gemischte Zahl und kürze vollständig.",
+   "loesung": "5 8⁄9",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "6 8⁄9",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "4 8⁄9",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Du kannst zuerst kürzen und dann umwandeln oder umgekehrt. Am Ende steht hinter den Ganzen ein vollständig gekürzter echter Bruch.",
+    "loesungsschritt": "Kürze zuerst mit 6: Das ergibt 53⁄9. Wie oft passt die 9 in die 53?"
+   },
+   "gekuerzt": true,
+   "form": "gemischt",
+   "nachweis": [
+    "318⁄54 = 5 8⁄9"
+   ]
+  },
+  {
+   "id": "6.1.3-K2-M-04",
+   "lernziel": "6.1.3-K2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 40⁄100 vollständig.",
+   "loesung": "2⁄5",
+   "typischeFehler": [
+    {
+     "wert": "2⁄100",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die 100 lässt sich nur durch 2, 4, 5, 10, 20, 25 und 50 teilen. Welche dieser Zahlen passt auch in den Zähler?",
+    "loesungsschritt": "Kürze mit 20."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "40⁄100",
+     "mit": 20,
+     "wie": "kuerzen",
+     "nach": "2⁄5",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-M-05",
+   "lernziel": "6.1.3-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Welche Brüche ergeben vollständig gekürzt 3⁄5? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "18⁄30",
+     "richtig": true
+    },
+    {
+     "text": "45⁄75",
+     "richtig": true
+    },
+    {
+     "text": "36⁄55",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "30⁄45",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "24⁄45",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze jeden Bruch vollständig und vergleiche mit 3⁄5.",
+    "loesungsschritt": "Teile bei jedem Bruch den Zähler durch 3 und den Nenner durch 5. Kommt beide Male dieselbe Zahl heraus?"
+   },
+   "nachweis": [
+    {
+     "art": "wert",
+     "wert": "3⁄5"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-M-06",
+   "lernziel": "6.1.3-K2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Der Bruch ergibt vollständig gekürzt 4⁄9. Welcher Nenner fehlt? 40⁄{{a}} = 4⁄9",
+   "luecken": {
+    "a": {
+     "loesung": 90,
+     "typischeFehler": [
+      {
+       "wert": 9,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      },
+      {
+       "wert": 45,
+       "fehlvorstellung": "erweitern-addiert"
+      },
+      {
+       "wert": 10,
+       "fehlvorstellung": "sach-frage-verfehlt"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Finde die Kürzungszahl an den beiden Zählern.",
+    "loesungsschritt": "Rechne 40 : 4 = 10. Der fehlende Nenner ist 10-mal so groß wie 9."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "4⁄9",
+     "mit": 10,
+     "wie": "erweitern",
+     "nach": "40⁄90",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-E-01",
+   "lernziel": "6.1.3-K2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Kürze 90⁄225 vollständig.",
+   "loesung": "2⁄5",
+   "typischeFehler": [
+    {
+     "wert": "2⁄225",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "wert": "90⁄5",
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze in mehreren Schritten oder suche den größten gemeinsamen Teiler von Zähler und Nenner."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "90⁄225",
+     "mit": 45,
+     "wie": "kuerzen",
+     "nach": "2⁄5",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-E-02",
+   "lernziel": "6.1.3-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Mit welcher größten Zahl kannst du 54⁄72 kürzen?",
+   "loesung": 18,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "kuerzen-nicht-vollstaendig"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gesucht ist der größte gemeinsame Teiler (ggT) von Zähler und Nenner. Kürze schrittweise und nimm alle Kürzungszahlen miteinander mal."
+   },
+   "nachweis": [
+    {
+     "art": "ggt",
+     "zahlen": [
+      54,
+      72
+     ],
+     "zahl": 18
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-E-03",
+   "lernziel": "6.1.3-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 264⁄64 als vollständig gekürzte gemischte Zahl.",
+   "loesung": "4 1⁄8",
+   "gemischt": true,
+   "typischeFehler": [
+    {
+     "wert": "5 1⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    },
+    {
+     "wert": "3 1⁄8",
+     "fehlvorstellung": "gemischt-umwandeln"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze zuerst vollständig. Teile dann den Zähler durch den Nenner: Das Ergebnis sind die Ganzen, der Rest bleibt als Zähler."
+   },
+   "gekuerzt": true,
+   "form": "gemischt",
+   "nachweis": [
+    "264⁄64 = 4 1⁄8"
+   ]
+  },
+  {
+   "id": "6.1.3-K2-E-04",
+   "lernziel": "6.1.3-K2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Hier wurde gekürzt. Welche Gleichungen stimmen? Kreuze alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "42⁄56 = 3⁄5",
+     "richtig": false,
+     "fehlvorstellung": "erweitern-nur-ein-teil"
+    },
+    {
+     "text": "56⁄88 = 7⁄11",
+     "richtig": true
+    },
+    {
+     "text": "27⁄72 = 3⁄8",
+     "richtig": true
+    },
+    {
+     "text": "45⁄120 = 3⁄8",
+     "richtig": true
+    },
+    {
+     "text": "70⁄98 = 5⁄7",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erweitere den rechten Bruch zur Probe: Mit welcher Zahl kommst du auf den linken Nenner? Passt dann auch der Zähler?"
+   },
+   "nachweis": [
+    {
+     "art": "aussagen"
+    }
+   ]
+  },
+  {
+   "id": "6.1.3-K2-E-05",
+   "lernziel": "6.1.3-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Von 240 Aufgaben sind 100 schon gelöst. Welcher Anteil ist noch übrig? Kürze vollständig.",
+   "loesung": "7⁄12",
+   "typischeFehler": [
+    {
+     "wert": "5⁄12",
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": "12⁄7",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rechne zuerst aus, wie viele noch übrig sind. Der Anteil ist dann ein Bruch mit der Gesamtzahl im Nenner."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "240 − 100 = 140",
+    "140 : 240 = 7⁄12"
+   ]
+  },
+  {
+   "id": "6.1.3-K2-E-06",
+   "lernziel": "6.1.3-K2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Bruch ergibt vollständig gekürzt 7⁄9. Sein Zähler und sein Nenner haben zusammen die Summe 128. Wie heißt der Zähler dieses Bruchs?",
+   "loesung": 56,
+   "typischeFehler": [
+    {
+     "wert": 72,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "sach-schritt-vergessen"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "sach-frage-verfehlt"
+    },
+    {
+     "wert": 121,
+     "fehlvorstellung": "erweitern-addiert"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Erweitern von 7⁄9 wächst auch die Summe aus Zähler und Nenner mit der Erweiterungszahl."
+   },
+   "nachweis": [
+    "7 + 9 = 16",
+    "128 : 16 = 8",
+    "7 · 8 = 56"
+   ]
   }
  ]
 }
