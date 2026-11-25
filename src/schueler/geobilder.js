@@ -84,7 +84,7 @@ export function gitterSvg(g, dazu = {}) {
   for (let y = r.y0; y <= r.y1; y++) svg.append(s('line', { x1: X(r.x0), y1: Y(y), x2: X(r.x1), y2: Y(y), class: 'karo' }));
   if (g.skala) {
     const sk = g.skala;
-    svg.classList.add('schaubild');
+    svg.setAttribute('class', `${svg.getAttribute('class') ?? ''} schaubild`.trim());
     svg.append(s('line', { x1: X(0), y1: Y(0), x2: X(r.x1) + u * 0.7, y2: Y(0), class: 'achse' }), s('line', { x1: X(0), y1: Y(0), x2: X(0), y2: Y(r.y1) - u * 0.7, class: 'achse' }),
       s('path', { d: `M${X(r.x1) + u * 0.7} ${Y(0)} l-9 -5 v10 Z`, class: 'achsenspitze' }), s('path', { d: `M${X(0)} ${Y(r.y1) - u * 0.7} l-5 9 h10 Z`, class: 'achsenspitze' }),
       s('text', { x: X(r.x1) + u * 0.9, y: Y(0) + u * 1.75, 'text-anchor': 'end', class: 'achsenname' }, sk.x.name), s('text', { x: X(0) - u * 0.9, y: Y(r.y1) - u * 0.95, 'text-anchor': 'start', class: 'achsenname' }, sk.y.name));

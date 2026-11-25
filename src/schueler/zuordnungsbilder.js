@@ -8,13 +8,14 @@ import { h } from './dom.js';
 
 const zelle = (c, feld) => (typeof c === 'object' && c !== null ? (feld ? feld(c.luecke, c.einheit ?? null) : h('span', { class: 'frage' }, c.einheit ? `? ${c.einheit}` : '?')) : c);
 
+const wort = (c) => (typeof c === 'object' && c !== null ? `gesucht${c.einheit ? ` in ${c.einheit}` : ''}` : String(c));
 // t: { zeilen: [[name, wert, wert, …], [name, wert, …]] }. Ein Wert ist ein Text oder { luecke, einheit? }.
 export function werteTabelle(t, feld = null) {
   return h('table', { class: 'aufgabentabelle wertetabelle' }, t.n && h('caption', {}, t.n),
     h('tbody', {}, t.zeilen.map((z) => h('tr', {}, z.map((c, i) => (i === 0 ? h('th', { scope: 'row' }, c) : h('td', { class: c === '?' ? 'frage' : null }, zelle(c, feld))))))));
 }
 // b: { art: 'wertetabellen', tabellen: [{ n?, zeilen }] }
-export const werteTabellenBild = (b) => h('figure', { class: `datenbild wertetabellen${b.tabellen.length > 1 ? ' mehrere' : ''}` }, b.tabellen.map((t) => werteTabelle(t)));
+export const werteTabellenBild = (b) => h('figure', { class: `datenbild wertetabellen${b.tabellen.length > 1 ? ' mehrere' : ''}`, role: 'img', 'aria-label': `${b.tabellen.length > 1 ? `${b.tabellen.length} Wertetabellen` : 'Wertetabelle'}: ${b.tabellen.map((t) => `${t.n ? `${t.n}: ` : ''}${t.zeilen.map((z) => `${z[0]}: ${z.slice(1).map(wort).join(', ')}`).join('; ')}`).join('. ')}` }, b.tabellen.map((t) => werteTabelle(t)));
 
 // Rechenpfeil: Text („: 4“) oder { zeichen, luecke } (das Kind trägt die Zahl ein) oder null (kein Pfeil).
 function pfeil(p, seite, feld) {
@@ -30,6 +31,6 @@ export function dreisatzTabelle(t, feld = null) {
   return h('div', { class: 'dreisatz', role: 'group', 'aria-label': `Dreisatztabelle: ${t.kopf.join(' und ')}` }, teile);
 }
 // b: { art: 'dreisatz', kopf, zeilen, pfeile }
-export const dreisatzBild = (b) => h('figure', { class: 'datenbild dreisatzbild' }, dreisatzTabelle(b));
+export const dreisatzBild = (b) => h('figure', { class: 'datenbild dreisatzbild', role: 'img', 'aria-label': `Dreisatztabelle ${b.kopf.join(' und ')}: ${b.zeilen.map((z) => z.map(wort).join(' → ')).join('; ')}` }, dreisatzTabelle(b));
 
 export const ZUORDNUNGSBILDER = { wertetabellen: werteTabellenBild, dreisatz: dreisatzBild };
