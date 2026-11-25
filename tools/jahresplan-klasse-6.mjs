@@ -8,6 +8,7 @@ import { lernziele3, merkzettel3, wortspeicher3, voraussetzungen3, grundlagen3, 
 import { lernziele4, merkzettel4, wortspeicher4, voraussetzungen4, grundlagen4, bp4 } from './jahresplan-6-4.mjs';
 import { lernziele5, merkzettel5, wortspeicher5, voraussetzungen5, grundlagen5, bp5 } from './jahresplan-6-5.mjs';
 import { lernziele66, merkzettel66, wortspeicher66, voraussetzungen66, grundlagen66, bp66 } from './jahresplan-6-6.mjs';
+import { lernziele67, merkzettel67, wortspeicher67, voraussetzungen67, grundlagen67, bp67 } from './jahresplan-6-7.mjs';
 
 // `pflicht` (ADR 0044, 0045): Ein Meilenstein ist erst ab dieser Stufe verbindlich, hat aber Aufgaben auf allen Stufen.
 // `bp`: der Standard im Bildungsplan 2016 je Lernziel (ADR 0045, Quelle docs/quellen/niveaustufen-klasse-6.md).
@@ -107,12 +108,12 @@ const roh = [
     uk(5, 'Zusammengesetzte Körper', lernziele66[5]),
   ]],
   ['Zuordnungen', [
-    uk(1, 'Zuordnungen und ihre Darstellungen', ['Ich kann Zuordnungen in Tabelle, Schaubild und Text lesen und ineinander überführen.']),
-    uk(2, 'Proportionale Zuordnungen', ['Ich kann proportionale Zuordnungen erkennen und Tabellen dazu ergänzen.']),
-    uk(5, 'Schaubilder proportionaler Zuordnungen', ['Ich kann proportionale Zuordnungen am Schaubild erkennen und Werte ablesen.']),
-    uk(6, 'Dreisatz', ['Ich kann Sachaufgaben mit dem Dreisatz lösen.']),
-    uk(7, 'Antiproportionale Zuordnungen', ['Ich kann antiproportionale Zuordnungen erkennen und Tabellen dazu ergänzen.'], 'E'),
-    uk(8, 'Dreisatz bei antiproportionalen Zuordnungen', ['Ich kann den Dreisatz bei antiproportionalen Zuordnungen anwenden und entscheiden, welche Zuordnung vorliegt.'], 'E'),
+    uk(1, 'Zuordnungen und ihre Darstellungen', lernziele67[1]),
+    uk(2, 'Proportionale Zuordnungen', lernziele67[2]),
+    uk(5, 'Schaubilder proportionaler Zuordnungen', lernziele67[5]),
+    uk(6, 'Dreisatz', lernziele67[6], null, { pflicht: 'M' }),
+    uk(7, 'Antiproportionale Zuordnungen', lernziele67[7], 'E'),
+    uk(8, 'Dreisatz bei antiproportionalen Zuordnungen', lernziele67[8], 'E'),
   ]],
   ['Daten auswerten und darstellen', [
     uk(1, 'Daten erheben und Stichproben auswählen', ['Ich kann beurteilen, wie Daten erhoben werden und ob eine Stichprobe geeignet ist.']),
@@ -212,6 +213,7 @@ export const merkzettel = {
   ...merkzettel4,
   ...merkzettel5,
   ...merkzettel66,
+  ...merkzettel67,
 };
 
 // Wortspeicher je Unterkapitel: Wort, Niveaustufe, ab der es gezeigt und benutzt wird, und Erklärung.
@@ -271,6 +273,7 @@ export const wortspeicher = {
   ...wortspeicher4,
   ...wortspeicher5,
   ...wortspeicher66,
+  ...wortspeicher67,
 };
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 liegen (ADR 0037).
@@ -292,6 +295,7 @@ const voraussetzungen = {
   ...voraussetzungen4,
   ...voraussetzungen5,
   ...voraussetzungen66,
+  ...voraussetzungen67,
 };
 
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F übt. Er steht im Hinweis für die Lehrkraft.
@@ -313,6 +317,7 @@ const grundlagen = {
   ...grundlagen4,
   ...grundlagen5,
   ...grundlagen66,
+  ...grundlagen67,
 };
 
 // IDs: Kapitel "6.1", Unterkapitel "6.1.3", Lernziel "6.1.3-K2". Unterkapitel ohne feine Lernziele haben "6.2.1-L1".
@@ -322,7 +327,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => ({
   unterkapitel: unterkapitel.map((u) => {
     const id = `6.${k + 1}.${u.nr}`;
     const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] }) }));
+    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] }) }));
     return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
   }),
 }));

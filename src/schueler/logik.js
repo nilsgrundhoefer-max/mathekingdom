@@ -181,7 +181,13 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'ordnen': return pruefeOrdnung(aufgabe, eingabe);
     case 'zeichen': return pruefeZeichen(aufgabe, eingabe);
     case 'schaetzen': return pruefeSchaetzung(aufgabe, eingabe);
-    case 'gitter': return pruefeGitter(aufgabe, eingabe);
+    case 'gitter': {
+      // Klasse 6, Kapitel 7 (ADR 0050): Punkte im Schaubild mit Nachfrage. Die Antwort steht in eckigen Klammern hinter den Punkten.
+      if (!aufgabe.nachfrage) return pruefeGitter(aufgabe, eingabe);
+      const [, punkte, antwort] = String(eingabe ?? '').match(/^(.*?)(?: \[(.*)\])?$/s);
+      const p = pruefeGitter(aufgabe, punkte), o = aufgabe.nachfrage.optionen.find((x) => x.text === antwort);
+      return zusammen([p, { richtig: Boolean(o?.richtig), fehlvorstellung: o && !o.richtig ? o.fehlvorstellung ?? null : null }]);
+    }
     case 'winkel': return pruefeWinkel(aufgabe, eingabe);
     case 'bruch': return pruefeBruch(aufgabe, eingabe);
     case 'faerben': return pruefeFaerben(aufgabe, eingabe);

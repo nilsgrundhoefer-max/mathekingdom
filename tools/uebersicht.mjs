@@ -28,7 +28,21 @@ const wert = (w) => (typeof w === 'object' ? (w.frage ? '?' : w.wert) : w);
 // Kapitel 5 (ADR 0032): ein Karogitter in Worten.
 const pt = (p) => `(${p[0]}|${p[1]})`;
 const LINIE = { strecke: 'Strecke', strahl: 'Strahl', gerade: 'Gerade' };
-const gitterText = (g) => [`${g.achsen ? 'Koordinatensystem' : 'Karogitter'} ${g.b} × ${g.h}${g.ursprung ? ` mit vier Quadranten, Nullpunkt bei Kästchen ${g.ursprung.join('|')}` : ''}`,
+// Klasse 6, Kapitel 7 (ADR 0050): Schaubild mit Achsennamen und Einteilung. Punkte und Linien stehen in Werten, nicht in Kästchen.
+const skZahl = (a, k) => String(Math.round(k * a.schritt * 1000) / 1000).replace('.', ',');
+const skPunkt = (sk, p) => `(${skZahl(sk.x, p.x ?? p[0])}|${skZahl(sk.y, p.y ?? p[1])})`;
+const zugText = (sk, z) => { const p = z.punkte, name = z.n ? ` ${z.n}` : '';
+  if (p.length > 8) return `gekrümmte Kurve${name} von ${skPunkt(sk, p[0])} bis ${skPunkt(sk, p[p.length - 1])}`;
+  if (p.length === 2) return `${p[0][0] === 0 && p[0][1] === 0 ? 'Gerade durch den Nullpunkt' : 'Gerade'}${name} von ${skPunkt(sk, p[0])} bis ${skPunkt(sk, p[1])}`;
+  return `Linienzug${name} ${p.map((q) => skPunkt(sk, q)).join(' → ')}`; };
+const schaubildText = (g) => [`Schaubild: nach rechts „${g.skala.x.name}“ bis ${skZahl(g.skala.x, g.b)} (ein Kästchen = ${skZahl(g.skala.x, 1)}), nach oben „${g.skala.y.name}“ bis ${skZahl(g.skala.y, g.h)} (ein Kästchen = ${skZahl(g.skala.y, 1)})`,
+  g.punkte?.length && `Punkte ${g.punkte.map((p) => skPunkt(g.skala, p)).join(', ')}`,
+  g.zuege?.length && g.zuege.map((z) => zugText(g.skala, z)).join('; ')].filter(Boolean).join('; ');
+const wtabText = (b) => b.tabellen.map((t) => `${t.n ? `${t.n}: ` : ''}${t.zeilen.map((z) => `${z[0]}: ${z.slice(1).map((c) => (typeof c === 'object' ? '?' : c)).join(' | ')}`).join(' / ')}`).join('; ');
+const dsZelle = (c) => (typeof c === 'object' ? `? ${c.einheit ?? ''}`.trim() : c);
+const dsPfeil = (p) => (typeof p === 'object' ? `${p.zeichen} ▫` : p);
+const dsText = (b) => `${b.kopf.join(' | ')}: ${b.zeilen.map((z) => z.map(dsZelle).join(' → ')).join(' / ')}${b.pfeile?.length ? `; Rechenpfeile ${b.pfeile.map((p) => (p.links === p.rechts || typeof p.links === 'object' ? dsPfeil(p.links) : `links ${p.links}, rechts ${p.rechts}`)).join(', dann ')}` : ''}`;
+const gitterText = (g) => g.skala ? schaubildText(g) : [`${g.achsen ? 'Koordinatensystem' : 'Karogitter'} ${g.b} × ${g.h}${g.ursprung ? ` mit vier Quadranten, Nullpunkt bei Kästchen ${g.ursprung.join('|')}` : ''}`,
   g.punkte?.length && `Punkte ${g.punkte.map((p) => `${p.n ?? ''}${pt([p.x, p.y])}`).join(', ')}`,
   g.linien?.length && g.linien.map((l) => `${l.stil === 'achse' ? 'Symmetrieachse' : LINIE[l.art]}${l.n ? ` ${l.n}` : ''} durch ${pt(l.a)} und ${pt(l.b)}`).join(', '),
   g.figuren?.length && g.figuren.map((f) => `Figur${f.n ? ` ${f.n}` : ''} mit den Ecken ${f.ecken.map(pt).join(' ')}`).join(', '),
@@ -56,6 +70,8 @@ const bild = (b) => {
     schaetzbild: () => `Schätzbild mit ${b.felder.flat().reduce((x, y) => x + y, 0)} Symbolen (${b.symbol}) in ${b.felder.length} mal ${b.felder[0].length} Feldern, Raster ${{ fest: 'sichtbar', wahl: 'zum Einschalten', ohne: 'keines' }[b.raster]}${b.markiert ? `, ein Feld markiert${b.gezaehlt ? ' und ausgezählt' : ''}` : ''}; je Feld ${b.felder.map((z) => z.join(' ')).join(' / ')}`,
     zeichentafel: () => `Zeichentafel ${b.zeichen.join(', ')} mit Werten`,
     gitter: () => gitterText(b),
+    wertetabellen: () => `${b.tabellen.length > 1 ? `${b.tabellen.length} Wertetabellen` : 'Wertetabelle'}: ${wtabText(b)}`,
+    dreisatz: () => `Dreisatztabelle ${dsText(b)}`,
     lineal: () => `Lineal, ${b.lang / 10} cm lang; die Strecke ${(b.namen ?? ['A', 'B']).join('')} beginnt bei ${b.von} mm und endet bei ${b.bis} mm`,
     // Kapitel 6 (ADR 0033)
     geld: () => `Geld: ${b.stuecke.map((x) => (x >= 100 ? `${x / 100} €` : `${x} ct`)).join(', ')}`,
@@ -111,6 +127,10 @@ const loesung = (a) => {
   if (a.format === 'tabelle') {
     const zelle = (c) => (typeof c !== 'object' ? c : c.endnull ? '_0_' : c.notiz ? '▫' : `**${a.luecken[c.luecke].loesung}**`);
     const t = a.tabelle;
+    // Klasse 6, Kapitel 7 (ADR 0050): waagrechte Wertetabelle und Dreisatztabelle mit Rechenpfeilen (▫ = Feld im Rechenpfeil).
+    if (t.art === 'werte') return ` _(Wertetabelle; fett = Eingabefeld)_\n\n  | ${t.zeilen[0].map((c, i) => (i ? zelle(c) : `**${c}**`)).join(' | ')} |\n  |${t.zeilen[0].map(() => '---').join('|')}|\n${t.zeilen.slice(1).map((z) => `  | ${z.map((c, i) => (i ? zelle(c) : `**${c}**`)).join(' | ')} |`).join('\n')}\n`;
+    if (t.art === 'dreisatz') { const pf = (p) => (typeof p === 'object' ? `${p.zeichen} **${a.luecken[p.luecke].loesung}**` : p ?? ''), ze = (c) => (typeof c === 'object' ? `${zelle(c)}${c.einheit ? ` ${c.einheit}` : ''}` : c);
+      return ` _(Dreisatztabelle; fett = Eingabefeld${t.pfeile?.some((p) => typeof p.links === 'object') ? ', auch in den Rechenpfeilen' : t.pfeile?.length ? ', Rechenpfeile vorgegeben' : ', ohne Rechenpfeile'})_\n\n  | Rechenpfeil | ${t.kopf.join(' | ')} | Rechenpfeil |\n  |---|---|---|---|\n${t.zeilen.map((z, i) => `  | ${i ? pf(t.pfeile?.[i - 1]?.links) : ''} | ${z.map(ze).join(' | ')} | ${i ? pf(t.pfeile?.[i - 1]?.rechts) : ''} |`).join('\n')}\n`; }
     if (t.art === 'mauer') return `_(${t.rechenart === '·' ? 'Mal-Mauer' : 'Zahlenmauer'}, von oben nach unten; fett = Eingabefeld)_ ${t.zeilen.map((r) => r.map(zelle).join(' · ')).join(' / ')}`;
     if (t.art === 'malkreuz') return `_(Malkreuz; fett = Eingabefeld)_\n\n  | ${t.kopf.join(' | ')} |\n  |${t.kopf.map(() => '---').join('|')}|\n${t.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n\n  ${t.rechnung.faktoren.join(' · ')} = **${a.luecken[t.rechnung.summe].loesung}**\n`;
     if (t.art === 'raster' && t.rechnung?.zeichen === '·') return ` _(Rechenraster wie im Heft, hier mit Lösung)_\n\n\`\`\`\n${t.zeilen.map((z) => z.map((c) => (typeof c === 'object' ? a.luecken[c.luecke].loesung : c || ' ')).join(' ')).join('\n')}\n\`\`\`\n${t.ablesen ? `\n  Komma setzen: ${t.ablesen.text} **${a.luecken[t.ablesen.luecke].loesung}**\n` : ''}`;
@@ -131,6 +151,8 @@ const loesung = (a) => {
   // Kapitel 7 (ADR 0034): Winkel am Geodreieck einstellen, Kreis im Gitter zeichnen.
   if (a.format === 'winkel') return `_(Schenkel drehen, fester Schenkel in Richtung ${a.winkelfeld.von}°)_ Lösung: ${zahl({ ...a, einheit: '°' })}`;
   if (a.format === 'gitter' && a.eingabe === 'kreis') return `_(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; ${gitterText(a.gitter)})_ Lösung: **Kreis um ${pt(a.bedingung.m)} mit Radius ${a.bedingung.r} Kästchen**, zum Beispiel durch ${pt(a.beispiel[1])}`;
+  if (a.format === 'gitter' && a.gitter.skala) { const g = a.gitter, nf = a.nachfrage;
+    return `_(Punkte im Schaubild antippen; ${gitterText(g)})_ Lösung: **${a.loesung.map((p) => skPunkt(g.skala, p)).join(' ')}**${nf ? `\n  - Nachfrage: ${flach(nf.text)} ${nf.optionen.map((o) => `${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join(' ')}` : ''}`; }
   if (a.format === 'gitter') {
     const was = { punkte: a.offen ? 'alle passenden Punkte antippen' : `${a.loesung?.length === 1 ? 'einen Punkt' : `${a.loesung?.length} Punkte`} antippen`, zellen: 'Kästchen färben', linie: `${LINIE[a.linie] ?? 'Linie'} durch zwei Punkte zeichnen` }[a.eingabe];
     // Kapitel 8 (ADR 0035): Kästchen färben mit Bedingung, jede passende Figur ist richtig.

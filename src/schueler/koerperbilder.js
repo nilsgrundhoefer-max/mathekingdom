@@ -16,6 +16,7 @@
 // b: { art: 'netz', flaechen: [{ ecken: [[x, y]], n?, farbe? }], kreise?: [{ m, r, n? }], sektoren?: [{ m, r, von, bis, n? }], titel? }  (Einheit Kästchen)
 // b: { art: 'risse', risse: [{ n, b, h, zellen: [[x, y]], zahlen?: [[x, y, z]] }] }  (Kästchen, x nach rechts, y nach oben)
 import { h, s } from './dom.js';
+import { gitterSvg } from './geobilder.js';
 
 const Z = (x) => Math.round(x * 100) / 100;
 export const TIEFE = 0.5; // 1 cm nach hinten wird eine halbe Kästchendiagonale, also 0,5 cm nach rechts und 0,5 cm nach oben
@@ -363,5 +364,7 @@ export function kartenBild(b) {
   if (b.art === 'risse') return risseSvg(b, { klein: true });
   if (b.art === 'koerper' && b.form === 'wuerfelbau') return wuerfelbauBild(b, { klein: true });
   if (b.art === 'koerper') { const svg = koerperSvg(b); svg.classList.add('klein'); return svg; }
+  // Klasse 6, Kapitel 7 (ADR 0050): Schaubilder als Bildkarten.
+  if (b.art === 'gitter') { const svg = gitterSvg(b); svg.classList.add('klein'); return svg; }
   return null;
 }

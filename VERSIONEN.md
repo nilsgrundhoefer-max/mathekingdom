@@ -8,6 +8,23 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.58 vom 25.11.2026
+
+### Schüler
+
+- Klasse 6 hat ihr siebtes Kapitel: „Zuordnungen“ mit 6 Meilensteinen, zusammen 288 Aufgaben.
+- Du liest Schaubilder mit Achsennamen und Einteilung und trägst Punkte selbst ein.
+- Neu ist die Dreisatztabelle mit Rechenpfeilen. Ab Silber trägst du die Rechenpfeile selbst ein.
+- Du prüfst an Tabellen und Schaubildern, ob eine Zuordnung proportional ist.
+- Im Spiel um Purpur kommen antiproportionale Zuordnungen dazu.
+
+### Lehrkraft
+
+- Klasse 6, Kapitel 7 „Zuordnungen“: Darstellungen, proportionale Zuordnungen, Schaubilder, Dreisatz, antiproportionale Zuordnungen (ADR 0050).
+- 7.7 und 7.8 (antiproportional) sind Niveau-Meilensteine nur für E. Der Dreisatz ist Pflicht ab M, F und G üben ihn freiwillig an der Tabelle.
+- Heftaufgaben gibt es nur auf M und E (20 von 288), jede mit Kontrollwert.
+- Die Auswertung unterscheidet unter anderem „Dreisatz falsch herum“, „Zwischenwert als Ergebnis“, „Achsen vertauscht“ und „Einteilung übersehen“.
+
 ## 0.57 vom 25.11.2026
 
 ### Schüler

@@ -396,6 +396,18 @@ const KIND = {
   'liter-nicht-dm3': 'Du weißt jetzt: 1 Liter ist 1 dm³.',
   'deckel-mitgerechnet': 'Du lässt die offene Fläche jetzt weg.',
   'volumen-waechst-wie-kante': 'Du weißt jetzt: Doppelte Kanten geben das achtfache Volumen.',
+  // Klasse 6, Kapitel 7 „Zuordnungen“ (ADR 0050)
+  'je-mehr-proportional': 'Du prüfst jetzt: Gehört zum Doppelten wirklich das Doppelte?',
+  'prop-addiert': 'Du rechnest in der Tabelle jetzt oben und unten mal dieselbe Zahl.',
+  'dreisatz-falsch-herum': 'Du teilst im Dreisatz jetzt zuerst und nimmst dann mal.',
+  'dreisatz-zwischenwert': 'Du rechnest im Dreisatz jetzt bis zur dritten Zeile.',
+  'schaubild-achsen-vertauscht': 'Du liest im Schaubild jetzt an der richtigen Achse ab.',
+  'achse-ungleichmaessig': 'Du teilst eine Achse jetzt in gleich große Schritte ein.',
+  'einteilung-uebersehen': 'Du schaust jetzt zuerst nach: Wie viel ist ein Kästchen wert?',
+  'tabelle-falsche-zeile': 'Du liest in der Tabelle jetzt genau in der richtigen Spalte ab.',
+  'grundgebuehr-uebersehen': 'Du achtest jetzt auf feste Beträge wie eine Grundgebühr.',
+  'anti-proportional-gerechnet': 'Du erkennst jetzt: Mehr Helfer brauchen weniger Zeit.',
+  'prop-antiproportional-gerechnet': 'Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner?',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -654,6 +666,18 @@ export const fehlvorstellungen = {
   'liter-nicht-dm3': fv('Weiß nicht, dass 1 Liter 1 dm³ ist, oder setzt 1 Liter mit 1 cm³ oder 1 m³ gleich.', '1 Liter ist 1 dm³: ein Würfel mit 10 cm Kante. 1 Milliliter ist 1 cm³.'),
   'deckel-mitgerechnet': fv('Rechnet bei einem offenen Körper (ohne Deckel) alle sechs Flächen.', 'Lies noch einmal: Welche Fläche fehlt? Sie gehört nicht dazu.'),
   'volumen-waechst-wie-kante': fv('Meint, bei doppelter Kantenlänge verdoppeln sich auch Volumen und Oberflächeninhalt.', 'Probiere es an einem Würfel mit 1 cm und mit 2 cm Kante aus. Zähle die kleinen Würfel im großen.'),
+  // Klasse 6, Kapitel 7 „Zuordnungen“ (ADR 0050). Dazu aus früheren Kapiteln: sach-schritt-vergessen.
+  'je-mehr-proportional': fv('Hält jede Zuordnung „je mehr, desto mehr“ für proportional (auch mit Grundgebühr, Rabatt oder Alter und Größe).', 'Prüfe mit Zahlen: Gehört zum Doppelten genau das Doppelte? Nur dann ist die Zuordnung proportional.'),
+  'prop-addiert': fv('Ergänzt eine proportionale Tabelle durch Addieren derselben Zahl statt durch Vervielfachen (2 → 5, also 4 → 7).', 'Wird der erste Wert doppelt so groß, wird auch der zweite doppelt so groß. Rechne mal, nicht plus.'),
+  'dreisatz-falsch-herum': fv('Rechnet im Dreisatz falsch herum: multipliziert, wo dividiert werden muss, oder umgekehrt.', 'Erst auf 1 zurück: Dafür teilst du. Dann auf den gesuchten Wert hoch: Dafür nimmst du mal.'),
+  'dreisatz-zwischenwert': fv('Gibt den Wert für 1 (den Zwischenschritt) als Ergebnis an.', 'Das ist erst der Wert für 1. Lies noch einmal, für wie viele gefragt ist, und rechne die dritte Zeile.'),
+  'schaubild-achsen-vertauscht': fv('Vertauscht im Schaubild die beiden Achsen: liest den Wert an der falschen Achse ab oder trägt Punkte vertauscht ein.', 'Der erste Wert steht an der Achse nach rechts, der zugeordnete Wert an der Achse nach oben.'),
+  'achse-ungleichmaessig': fv('Teilt eine Achse ungleichmäßig ein oder trägt die Tabellenwerte in gleichen Abständen an die Achse.', 'An einer Achse ist jeder Schritt gleich viel wert. Zähle in gleichen Schritten: 0, 2, 4, 6.'),
+  'einteilung-uebersehen': fv('Beachtet die Einteilung der Achse nicht und zählt jedes Kästchen als 1.', 'Lies die Zahlen an der Achse: Wie viel ist ein Kästchen wert?'),
+  'tabelle-falsche-zeile': fv('Liest in der Tabelle oder im Schaubild den Wert einer benachbarten Spalte oder Stelle ab.', 'Fahre mit dem Finger von dem gegebenen Wert genau nach unten oder nach oben.'),
+  'grundgebuehr-uebersehen': fv('Übersieht einen festen Betrag (Grundgebühr) und rechnet, als wäre die Zuordnung proportional.', 'Im Preis steckt ein fester Betrag, der nicht mitwächst. Rechne ihn getrennt.'),
+  'anti-proportional-gerechnet': fv('Rechnet eine antiproportionale Zuordnung proportional (mehr Pumpen brauchen angeblich mehr Zeit).', 'Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Pumpen brauchen weniger Zeit.'),
+  'prop-antiproportional-gerechnet': fv('Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger).', 'Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -1099,10 +1123,10 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['6.6.2-W1', '6.3.1-Q1', '6.3.2-S1', '6.3.2-S2', '6.3.3-A1', '6.3.3-A2', '6.3.4-P1', '6.3.5-Y1', '6.3.6-R1', '7.1.1-Z1', '7.1.X1-K1', '7.1.X2-W1', '6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
-  modellieren: ['6.6.1-O2', '6.6.4-V2', '7.1.X3-C1', '7.1.X4-B1', '6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['6.7.1-D1', '6.7.1-D2', '6.7.5-S1', '6.7.5-S2', '6.6.2-W1', '6.3.1-Q1', '6.3.2-S1', '6.3.2-S2', '6.3.3-A1', '6.3.3-A2', '6.3.4-P1', '6.3.5-Y1', '6.3.6-R1', '7.1.1-Z1', '7.1.X1-K1', '7.1.X2-W1', '6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
+  modellieren: ['6.7.6-R2', '6.7.8-U1', '6.6.1-O2', '6.6.4-V2', '7.1.X3-C1', '7.1.X4-B1', '6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['6.3.8-K1', '6.3.8-K2', '5.4.X1-Z1'],
-  argumentieren: ['7.1.2-V1', '6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
+  argumentieren: ['6.7.2-P1', '6.7.7-A1', '6.7.8-U2', '7.1.2-V1', '6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
 const KNOBELN = new Set(['alleQuader', 'extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',

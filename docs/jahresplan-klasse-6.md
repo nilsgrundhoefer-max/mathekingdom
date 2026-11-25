@@ -106,9 +106,11 @@ Gebaut in Version 0.57 (ADR 0049): 10 Lernziele mit je 24 Aufgaben. Die Größen
 | 7.3 | Tabellenkalkulation: Proportionale Zuordnungen | MK | entfällt |
 | 7.4 | Ein Rechenschieber für die Zukunft | MK | entfällt |
 | 7.5 | Schaubilder proportionaler Zuordnungen | | Ich kann proportionale Zuordnungen am Schaubild erkennen und Werte ablesen. |
-| 7.6 | Dreisatz | | Ich kann Sachaufgaben mit dem Dreisatz lösen. |
+| 7.6 | Dreisatz | Pflicht ab M | Ich kann Sachaufgaben mit dem Dreisatz lösen. |
 | 7.7 | Antiproportionale Zuordnungen | E | Ich kann antiproportionale Zuordnungen erkennen und Tabellen dazu ergänzen. |
 | 7.8 | Dreisatz bei antiproportionalen Zuordnungen | E | Ich kann den Dreisatz bei antiproportionalen Zuordnungen anwenden und entscheiden, welche Zuordnung vorliegt. |
+
+Gebaut in Version 0.58 (ADR 0050): 12 Lernziele mit je 24 Aufgaben. Neu sind das Schaubild mit Achsennamen und Einteilung, die Wertetabelle und die Dreisatztabelle mit Rechenpfeilen. 7.7 und 7.8 sind Niveau-Meilensteine nur für E, der Dreisatz ist Pflicht ab M. Heftaufgaben gibt es nur auf M und E.
 
 ## Kapitel 8: Daten auswerten und darstellen
 

@@ -23,7 +23,7 @@ const lies = (n) => JSON.parse(readFileSync(new URL(`../aufgabenpool/klasse-${n}
 const pool = lies(5);
 // Klasse 7 (ADR 0043) bringt das Thermometer und die Zahlengerade mit negativen Zahlen mit.
 // Klasse 6 Kapitel 3 (ADR 0045) bringt Körper, Netze und Ansichten mit.
-const mitBild = [...pool.aufgaben, ...lies(6).aufgaben.filter((a) => a.id.startsWith('6.3.') || a.id.startsWith('6.4.') || a.id.startsWith('6.5.') || a.id.startsWith('6.6.')), ...lies(7).aufgaben].filter((a) => a.bild);
+const mitBild = [...pool.aufgaben, ...lies(6).aufgaben.filter((a) => a.id.startsWith('6.3.') || a.id.startsWith('6.4.') || a.id.startsWith('6.5.') || a.id.startsWith('6.6.') || a.id.startsWith('6.7.')), ...lies(7).aufgaben].filter((a) => a.bild);
 const zahl = (x) => (typeof x === 'object' ? x.wert : x);
 const lesbar = (x) => (typeof x === 'object' && x.frage ? '?' : String(x));
 
@@ -142,13 +142,17 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       assert.equal(svg.klasse('karo').length, g.b + g.h + 2, a.id);
       assert.equal(svg.klasse('punkt').length, g.punkte?.length ?? 0, a.id);
       assert.equal(svg.klasse('figur').length, g.figuren?.length ?? 0, a.id);
-      assert.equal(svg.klasse('linie').length, g.linien?.length ?? 0, a.id);
+      // Klasse 6 Kapitel 7 (ADR 0050): Im Schaubild kommen die Linienzüge dazu, und beide Achsennamen stehen im Bild.
+      assert.equal(svg.klasse('linie').length, (g.linien?.length ?? 0) + (g.zuege?.length ?? 0), a.id);
+      assert.equal(svg.klasse('zug').length, g.zuege?.length ?? 0, a.id);
+      if (g.skala) for (const n of [g.skala.x.name, g.skala.y.name]) assert.ok(svg.texte().includes(n), `${a.id}: Achsenname ${n} fehlt`);
       assert.equal(svg.klasse('zelle').length, g.zellen?.length ?? 0, a.id);
       assert.equal(svg.klasse('zentrum').length, g.zentrum ? 1 : 0, a.id);
       assert.equal(svg.klasse('achse').length, (g.achsen ? 2 : 0) + (g.linien ?? []).filter((l) => l.stil === 'achse').length, a.id);
       for (const p of g.punkte ?? []) if (p.n) assert.ok(svg.texte().includes(p.n), `${a.id}: Punkt ${p.n} ist nicht beschriftet`);
       // Klasse 7 (ADR 0043): Mit ursprung liegt der Nullpunkt im Gitter. Die Achsen tragen dann auch negative Zahlen mit echtem Minuszeichen.
       if (g.achsen && g.ursprung) { const links = g.ursprung[0] - (g.ursprung[0] % 2); assert.ok(svg.texte().includes(`−${links}`), `${a.id}: Achsenzahl −${links} fehlt`); }
+      else if (g.achsen && g.skala) { const sk = g.skala.x, k = g.b - (g.b % (sk.jede ?? 1)), z = (k * sk.schritt).toFixed(sk.stellen ?? 0).replace('.', ','); assert.ok(svg.texte().includes(z), `${a.id}: Achsenzahl ${z} fehlt`); }
       else if (g.achsen) assert.ok(svg.texte().includes(String(g.b)) || g.b % 2 === 1, `${a.id}: Achsenzahl ${g.b} fehlt`);
     } else if (b.art === 'lineal') {
       // Jeder Millimeter hat einen Strich, jeder Zentimeter eine Zahl; die Strecke liegt auf dem Lineal.

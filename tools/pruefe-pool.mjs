@@ -11,6 +11,7 @@ import { bGleichungen, bruchSprachMaengel, pruefeBruchAufgabe, bruchHatBild } fr
 import { rGleichungen, rationalSprachMaengel, pruefeRationalAufgabe, rationalHatBild } from './pruefe-rational.mjs';
 import { FIGURBILD, DREIECK_SONDER, DREIECK_ERGEBNIS, DREIECK_ARTEN, figurBildMaengel, figurBildZahlen, dreieckSprachMaengel } from './pruefe-dreiecke.mjs';
 import { pruefeQuaderAufgabe, qGleichungen } from './pruefe-quader.mjs';
+import { pruefeZuordnungAufgabe, zGleichungen, zuordnungHatBild } from './pruefe-zuordnungen.mjs';
 import { KOERPERBILDER, KOERPER_SONDER, KOERPER_ERGEBNIS, KOERPER_ARTEN, koerperBildMaengel, koerperBildZahlen, koerperSprachMaengel, operatorMaengel, setzeUrteil } from './pruefe-koerper.mjs';
 import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
@@ -34,7 +35,7 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
   'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz',
   'groesse', 'einheiten', 'tippBild', 'winkelfeld',
-  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form', 'heftaufgabe', 'division', 'nenner', 'verlangt', 'reihenfolgeEgal'];
+  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form', 'heftaufgabe', 'division', 'nenner', 'verlangt', 'reihenfolgeEgal', 'nachfrage'];
 // Kapitel, in denen mit Brüchen gerechnet wird: Klasse 5 Kapitel 9 und Klasse 6 Kapitel 1 (ADR 0037).
 const BRUCHKAPITEL = ['5.9', '6.1', '6.2', '6.4', '6.5'];
 const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`));
@@ -56,6 +57,9 @@ let koerperModus = false;
 // Klasse 6, Kapitel 6 (ADR 0049): Länge, Fläche und Volumen am Quader. Gleichungen, Format, Bild und Nachweis prüft tools/pruefe-quader.mjs.
 const istQuaderLernziel = (id) => id.startsWith('6.6.');
 let quaderModus = false;
+// Klasse 6, Kapitel 7 (ADR 0050): Zuordnungen. Tabellen, Dreisatz, Schaubilder und Nachweise prüft tools/pruefe-zuordnungen.mjs.
+const istZuordnungLernziel = (id) => id.startsWith('6.7.');
+let zuordnungModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // Ein Satz, der fürs Heft beauftragt: „Im Heft: …“ oder ein Auftrag (Verb am Satzanfang) mit „ins Heft“, „in dein Heft“, „im Heft“.
@@ -107,6 +111,7 @@ const GLEICHUNG = new RegExp(`(?<! [+−·:=≈] )(?<![\\d▢_(\\[A-Za-zÄÖÜä
 function gleichungenIn(text) {
   if (bruchModus) return bGleichungen(text);
   if (quaderModus) return qGleichungen(text);
+  if (zuordnungModus) return zGleichungen(text);
   if (rationalModus) return rGleichungen(text);
   // Klasse 7 Kapitel 2: Das Gradzeichen zählt beim Rechnen nicht mit („180° − 40° = 140°“).
   let roh = String(text).replace(/°/g, '');
@@ -212,7 +217,7 @@ function pruefeSprache(a) {
   if (istRationalLernziel(a.lernziel)) for (const x of rationalSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istDreieckLernziel(a.lernziel)) for (const x of dreieckSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istKoerperLernziel(a.lernziel)) for (const x of koerperSprachMaengel(a)) melde(a.id, x);
-  if (/^6\.[456]\./.test(a.lernziel)) for (const x of operatorMaengel(a)) melde(a.id, x);
+  if (/^6\.[4567]\./.test(a.lernziel)) for (const x of operatorMaengel(a)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -1923,6 +1928,7 @@ const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichli
   || (Boolean(a.daten) && (a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.')))
   || (istBruchLernziel(a.lernziel) && bruchHatBild(a))
   || (istRationalLernziel(a.lernziel) && rationalHatBild(a))
+  || (istZuordnungLernziel(a.lernziel) && zuordnungHatBild(a))
   // Klasse 6 Kapitel 3: Bildkarten sind das Bild der Aufgabe.
   || (a.optionen ?? []).some((o) => o.bild);
 
@@ -2304,6 +2310,7 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   dreieckModus = istDreieckLernziel(a.lernziel);
   koerperModus = istKoerperLernziel(a.lernziel);
   quaderModus = istQuaderLernziel(a.lernziel);
+  zuordnungModus = istZuordnungLernziel(a.lernziel);
   setzeUrteil(a);
   pruefeHilfen(a);
   pruefeSprache(a);
@@ -2317,6 +2324,13 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   if (quaderModus) {
     for (const x of pruefeQuaderAufgabe(a, pool.fehlvorstellungen)) melde(a.id, x);
     quaderModus = false;
+    if (a.niveau === 'F' && !hatBild(a)) melde(a.id, 'auf F braucht jede Aufgabe ein Bild');
+    if (a.niveau === 'F' && a.afb === 3) melde(a.id, 'auf F gibt es keinen Anforderungsbereich III');
+    continue;
+  }
+  if (zuordnungModus) {
+    for (const x of pruefeZuordnungAufgabe(a, pool.fehlvorstellungen)) melde(a.id, x);
+    zuordnungModus = false;
     if (a.niveau === 'F' && !hatBild(a)) melde(a.id, 'auf F braucht jede Aufgabe ein Bild');
     if (a.niveau === 'F' && a.afb === 3) melde(a.id, 'auf F gibt es keinen Anforderungsbereich III');
     continue;
@@ -2376,6 +2390,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.so
   bruchModus = BRUCHKAPITEL.includes(k.id);
   rationalModus = RATIONALKAPITEL.includes(k.id);
   quaderModus = k.id === '6.6';
+  zuordnungModus = k.id === '6.7';
   for (const n of ['F', 'G', 'M'].filter((x) => !u.ab || NIVEAUS.indexOf(x) >= NIVEAUS.indexOf(u.ab))) if (!(u.wortspeicher ?? []).some((w) => w.ab === n && w.wort && w.erklaerung)) melde(u.id, `Wortspeicher ohne Wörter ab Niveaustufe ${n}`);
   for (const w of u.wortspeicher ?? []) {
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);
@@ -2387,6 +2402,7 @@ groessenModus = false;
 bruchModus = false;
 rationalModus = false;
 quaderModus = false;
+zuordnungModus = false;
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (!f.beschreibung || !f.hinweis || !f.kind) melde(id, 'Fehlvorstellung ohne Beschreibung, Hinweis oder Kindersatz');
 // Kindersätze für Aha-Momente (ADR 0017): einfache Sprache, ein Satz, ohne Fachsprache der Lehrkraft.
 for (const [id, f] of Object.entries(pool.fehlvorstellungen)) if (f.kind && (!/^Du /.test(f.kind) || /, (der|die|das|den|dem|wenn|weil|dass|ob|obwohl|durch|mit|in|wo)\b|;/.test(f.kind) || f.kind.length > 110)) melde(id, `Kindersatz nicht in einfacher Sprache: ${f.kind}`);

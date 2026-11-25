@@ -256,3 +256,19 @@ Bilder `geld` sind in 6.5 erlaubt. Typische Fehler einer Zahlenlücke dürfen De
 Nachweise in 6.6: Gleichungen mit Einheiten als Text („4 cm · 3 cm · 2 cm = 24 cm³“), `quader` (Kanten, `was`: volumen oder oberflaeche, `wert`), `bild` (Wert aus dem Körperbild: volumen, oberflaeche, wuerfel, aussen), `wert`, `urteil`, `vergleich`, `extrem`, `karten` (Bildkarten: max, min, gleich), `ordnen`, `einheitentafel`, `einheitenart`, `alleQuader` (alle Quader mit ganzen Kanten zu einem Volumen) und `frei` für Begründungen. Ein Hilfswert `{ wert, grund }` steht vor der Gleichung, die ihn benutzt.
 
 Sprachregeln, die die Prüfung erzwingt: „Volumen“ statt „Rauminhalt“, kein a³, auf F und G kein Komma im Text, hl erst ab M, höchstens drei Stellen nach dem Komma.
+
+## Klasse 6, Kapitel 7 „Zuordnungen“ (ADR 0050)
+
+| Feld | Inhalt |
+|---|---|
+| `gitter.skala` / `bild.skala` | Macht aus dem Koordinatengitter ein Schaubild: `{ x: { name, schritt, jede?, stellen? }, y: { … } }`. `name` ist der Achsenname mit Einheit („Preis in €“), `schritt` der Wert eines Kästchens (1, 2, 5, 10 und Zehnfache, ab G auch 0,5), `jede` beschriftet nur jeden n-ten Strich, `stellen` die Nachkommastellen der Beschriftung. Punkte und Linien stehen weiter in Kästchen. |
+| `bild.zuege` | Linien im Schaubild: `[{ punkte: [[x, y], …], n?, stil? }]`. Zwei Punkte sind eine Gerade, viele Punkte eine Kurve. `stil: "zweite"` zeichnet die zweite Linie in einer zweiten Farbe, `n` schreibt ihren Namen an die Linie. |
+| `nachfrage` | Bei `format: "gitter"`: `{ text, optionen: [{ text, richtig, fehlvorstellung? }] }`. Die Frage steht unter dem Schaubild und gehört zur Antwort. In der Eingabe steht die gewählte Antwort in eckigen Klammern hinter den Punkten. |
+| `tabelle.art: "werte"` | Waagrechte Wertetabelle: `zeilen` mit zwei Zeilen, die erste Zelle ist der Zeilenname, Lücken als `{ luecke }`. `kopf` ist leer. |
+| `tabelle.art: "dreisatz"` | Dreisatztabelle: `kopf` mit zwei Namen, `zeilen` mit Text oder `{ luecke, einheit }`, `pfeile` je Zeilenwechsel `{ links, rechts }`: Text („: 4“) oder `{ zeichen, luecke }` zum Eintragen. |
+| `bild.art: "wertetabellen"` | Eine oder mehrere Wertetabellen als Bild: `tabellen: [{ n?, zeilen }]`. |
+| `bild.art: "dreisatz"` | Dreisatztabelle als Bild, eine Zelle `{ luecke: "offen", einheit }` zeigt ein Fragezeichen. |
+
+Nachweise in 6.7: Gleichungen als Text, `tabelle` (Regel `prop`, `anti`, `bild` oder `{ m, b, fallend? }`), `dreisatz` (Regel, `von`, `x`, `y`, `gesucht?`), `einordnung` (Wertepaare und Antwort je Art), `bildart` (Art des Schaubilds), `ablesen` (Wert auf einer Linie oder an einem Punkt), `punkte`, `tabellenwert`, `tabwahl`, `kartenpaare`, `karte`, `bildextrem`, `flach`, `steilst`, `wert`, `urteil` und `frei` für Begründungen.
+
+Sprachregeln, die die Prüfung erzwingt: „antiproportional“ und „Produkt“ nur auf E, „Quotient“ ab M, „Wertepaar“ und „Einteilung“ ab G, „Nullpunkt“ statt „Ursprung“, kein Proportionalitätsfaktor, jeder Achsenname nennt seine Einheit.
