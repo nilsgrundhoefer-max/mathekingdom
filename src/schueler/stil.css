@@ -851,6 +851,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .koerperbild .netzflaeche { fill: #e3ecf6; stroke: var(--nacht); stroke-width: 2.2; stroke-linejoin: round; }
 #mathekingdom .koerperbild .netzflaeche.farbe-1 { fill: #f6d79a; }
 #mathekingdom .koerperbild .netzflaeche.farbe-2 { fill: #c9e4c5; }
+#mathekingdom .koerperbild .netzflaeche.farbe-grund { fill: #c3d5ea; } /* Grundflächen in Prismen- und Pyramidennetzen */
 #mathekingdom .koerperbild .netzname { font-size: 16px; font-weight: 700; fill: var(--nacht); }
 #mathekingdom .koerperbild .risszelle { fill: #c9d8ea; }
 #mathekingdom .koerperbild .rissrand { stroke: var(--nacht); stroke-width: 2.4; stroke-linecap: round; }

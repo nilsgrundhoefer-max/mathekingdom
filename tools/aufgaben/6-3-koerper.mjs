@@ -33,6 +33,7 @@ export const SICHT = (was, wert, extra = {}) => ({ art: 'sichtbar', was, verdeck
 export const KL = (kante, wert, extra = {}) => ({ art: 'kantenlaenge', kante, wert, ...extra });
 export const LAGE = (zu, lage, extra = {}) => ({ art: 'kantenlage', zu, lage, ...extra }); // lage: parallel, senkrecht, gleich
 export const NT = (wert, extra = {}) => ({ art: 'netzteile', wert, ...extra }); // extra: ecken (3, 4) oder kreise: true
+export const EIG = (welche) => ({ art: 'eigenschaft', welche }); // gekruemmt, spitze, ohneEcke, nurEben, eineKante
 export const QF = (zu, lage) => ({ art: 'quaderflaeche', zu, lage }); // lage: gegenueber, nachbar
 
 // ---------- Körperbilder ----------
@@ -119,13 +120,13 @@ export function prismaNetz(n, s, h, { unten = 0, oben = null, gleicheSeite = fal
   const f = [];
   for (let i = 0; i < seiten; i++) f.push(rechteck(i * s, 0, s, h));
   const o = oben ?? Math.min(seiten - 1, Math.floor(seiten / 2)), u2 = (unten + 2) % seiten;
-  const darunter = (i) => ({ ecken: vieleckAn([i * s + s, 0], [i * s, 0], eckenzahl) }), darueber = (i) => ({ ecken: vieleckAn([i * s, h], [i * s + s, h], eckenzahl) });
+  const darunter = (i) => ({ ecken: vieleckAn([i * s + s, 0], [i * s, 0], eckenzahl), farbe: 'grund' }), darueber = (i) => ({ ecken: vieleckAn([i * s, h], [i * s + s, h], eckenzahl), farbe: 'grund' });
   f.push(darunter(unten), gleicheSeite ? darunter(u2) : darueber(o));
   return { art: 'netz', flaechen: f };
 }
 // Pyramidennetz (Stern): regelmäßiges n-Eck mit Seite s, an jeder Seite ein gleichschenkliges Dreieck mit Höhe hd. fehlt: so viele Dreiecke fehlen.
 export function pyramideNetz(n, s, hd, { fehlt = 0, extra = 0 } = {}) {
-  const grund = vieleckAn([0, 0], [s, 0], n), f = [{ ecken: grund }];
+  const grund = vieleckAn([0, 0], [s, 0], n), f = [{ ecken: grund, farbe: 'grund' }];
   for (let i = 0; i < n - fehlt; i++) {
     const p = grund[i], q = grund[(i + 1) % n], m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2], d = [q[0] - p[0], q[1] - p[1]], l = Math.hypot(...d), nrm = [d[1] / l, -d[0] / l];
     f.push({ ecken: [q, p, [R2(m[0] + hd * nrm[0]), R2(m[1] + hd * nrm[1])]] });
@@ -141,10 +142,10 @@ export function zylinderNetz(r, h, { gleicheSeite = false, umfang = null } = {})
   const u = R2(umfang ?? 2 * Math.PI * r), mx = R2(u / 2);
   return { art: 'netz', flaechen: [rechteck(0, 0, u, h)], kreise: [{ m: [gleicheSeite ? R2(mx - r - 0.2) : mx, gleicheSeite ? R2(h + r) : R2(-r)], r }, { m: [gleicheSeite ? R2(mx + r + 0.2) : mx, R2(h + r)], r }] };
 }
-// Kegelnetz: Kreisausschnitt mit Radius s und Winkel 360 · r : s, darunter der Kreis mit Radius r. falschR: Kreis mit anderem Radius.
+// Kegelnetz: Kreisausschnitt mit Radius s und Winkel 360 · r : s (Spitze unten), darüber am Bogen der Kreis mit Radius r. falschR: Kreis mit anderem Radius.
 export function kegelNetz(r, s, { falschR = null } = {}) {
   const w = R2((360 * r) / s), von = R2(90 - w / 2), bis = R2(90 + w / 2), rk = falschR ?? r;
-  return { art: 'netz', sektoren: [{ m: [0, 0], r: s, von, bis }], kreise: [{ m: [0, R2(-rk)], r: rk }] };
+  return { art: 'netz', sektoren: [{ m: [0, 0], r: s, von, bis }], kreise: [{ m: [0, R2(s + rk)], r: rk }] }; // der Kreis berührt den Bogen oben
 }
 
 // ---------- Ansichten von Würfelbauten ----------

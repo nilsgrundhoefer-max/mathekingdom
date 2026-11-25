@@ -246,6 +246,8 @@ const quaderVon = (a, n) => n.quader ?? (a.bild?.art === 'koerper' && a.bild.for
 const wuerfelVon = (a, n) => n.wuerfel ?? (a.bild?.art === 'koerper' && a.bild.form === 'wuerfelbau' ? a.bild.wuerfel : null);
 const gitterVon = (a) => a.gitter ?? (a.bild?.art === 'gitter' ? a.bild : null);
 
+// Eigenschaften für Aufgaben „Kreuze alle Körper an, die …“ (Festlegung: Der Kegel hat eine Spitze, aber keine Ecke).
+const EIGENSCHAFT = { gekruemmt: ['zylinder', 'kegel', 'kugel'], spitze: ['kegel', 'pyramide'], ohneEcke: ['zylinder', 'kegel', 'kugel'], nurEben: ['quader', 'wuerfel', 'prisma', 'pyramide'], eineKante: ['kegel'] };
 export const KOERPER_SONDER = {
   // Ecken, Kanten oder Flächen eines Körpers. Mit `bild` muss der Körper im Bild dieselbe Form haben.
   koerperzahl: (n, a) => {
@@ -263,7 +265,7 @@ export const KOERPER_SONDER = {
     if (n.netz) { const f = netzFalten(a.bild); if (!f?.faltbar || !passtForm(soll, f)) return 'aus dem Netz lässt sich dieser Körper nicht falten'; }
     const o = optionenVon(a, n);
     if (!o) return null;
-    return stufe(o, (t, opt) => (opt.bild ? passtForm(soll, opt.bild.art === 'netz' ? netzFalten(opt.bild) : formVonBild(opt.bild)) && (opt.bild.art !== 'netz' || netzFalten(opt.bild).faltbar) : (() => { const k = koerperIn(t); return k === undefined ? undefined : passtForm(soll, k) || (soll.form === 'quader' && k.form === 'quader'); })()));
+    return stufe(o, (t, opt) => (opt.bild ? passtForm(soll, opt.bild.art === 'netz' ? netzFalten(opt.bild) : formVonBild(opt.bild)) && (opt.bild.art !== 'netz' || netzFalten(opt.bild).faltbar) : formDesGegenstands(t) ? formDesGegenstands(t) === soll.form : (() => { const k = koerperIn(t); return k === undefined ? undefined : passtForm(soll, k) || (soll.form === 'quader' && k.form === 'quader'); })()));
   },
   // Netze: Bildkarten, ein Netz im Bild (mit Ja/Nein-Antworten oder `faltbar`) oder ein Netz im Gitter ergänzen.
   netz: (n, a) => {
@@ -434,6 +436,13 @@ export const KOERPER_SONDER = {
     const ist = n.verdeckt === false ? s.alle[n.was] - s[n.was] : s[n.was];
     if (ist !== n.wert) return `im Bild sind ${ist} ${n.was} ${n.verdeckt === false ? 'sichtbar' : 'verdeckt'}, nicht ${n.wert}`;
     return mitZahl(a, n, n.wert);
+  },
+  // Eigenschaften von Körpern: Antworten sind Namen, Gegenstände, Körperbilder oder Netze (nur faltbare zählen).
+  eigenschaft: (n, a) => {
+    const liste = EIGENSCHAFT[n.welche];
+    if (!liste) return `unbekannte Eigenschaft ${n.welche}`;
+    const formVon = (t, x) => (x.bild ? (x.bild.art === 'netz' ? (netzFalten(x.bild)?.faltbar ? netzFalten(x.bild).form : 'keine') : formVonBild(x.bild)?.form) : formDesGegenstands(t) ?? koerperIn(t)?.form);
+    return stufe(optionenVon(a, n), (t, x) => { const f = formVon(t, x); return f == null ? undefined : liste.includes(f); });
   },
   // Teile eines Netzes im Bild zählen: Flächen mit `ecken` Ecken (3 Dreiecke, 4 Vierecke), Kreise (`kreise: true`) oder alle Flächen.
   netzteile: (n, a) => {

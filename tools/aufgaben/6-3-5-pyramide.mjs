@@ -7,7 +7,7 @@ import { sechs } from '../werkzeug.mjs';
 import { zz, wahl, Z, H, zahl, opt, auswahl, kind, U, KZ, KA, NETZ, AF, NT, prisma, pyramide, quader, rund, bildkarten, pyramideNetz, ECK } from './6-3-koerper.mjs';
 
 const Y1 = '6.3.5-Y1', Y2 = '6.3.5-Y2';
-const NETZMASS = { 4: [2, 2.2], 5: [1.6, 2.2], 6: [1.4, 2] };
+const NETZMASS = { 4: [2, 2.2], 5: [1.6, 1.6], 6: [1.4, 1.5] }; // niedrig genug, dass die Grundfläche im Stern gut zu sehen ist
 const FLACH = { 4: 0.7, 5: 0.7, 6: 0.8 };
 const netz = (n, o = {}) => pyramideNetz(n, ...NETZMASS[n], o);
 const flach = (n) => pyramideNetz(n, NETZMASS[n][0], FLACH[n]);

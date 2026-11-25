@@ -23,6 +23,7 @@ import { schraegbilder } from './aufgaben/6-3-2-schraegbild.mjs';
 import { ansichten } from './aufgaben/6-3-3-ansichten.mjs';
 import { prismen } from './aufgaben/6-3-4-prisma.mjs';
 import { pyramiden } from './aufgaben/6-3-5-pyramide.mjs';
+import { rundeKoerper } from './aufgaben/6-3-6-rund.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -46,6 +47,7 @@ const ERZEUGER = [
   [63363363, ansichten],
   [63463463, prismen],
   [63563563, pyramiden],
+  [63663663, rundeKoerper],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

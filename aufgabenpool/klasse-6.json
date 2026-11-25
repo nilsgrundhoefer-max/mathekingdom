@@ -53319,7 +53319,8 @@
         1,
         -1.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -53335,7 +53336,8 @@
         3,
         4.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -53450,7 +53452,8 @@
         1,
         -1.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -53466,7 +53469,8 @@
         3,
         4.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -53570,7 +53574,8 @@
           1,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -53586,7 +53591,8 @@
           3,
           4.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -53652,7 +53658,8 @@
           1,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -53668,7 +53675,8 @@
           3,
           4.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -53754,7 +53762,8 @@
           1,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -53770,7 +53779,8 @@
           5,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -53901,7 +53911,8 @@
         1,
         -1.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -53917,7 +53928,8 @@
         5,
         -1.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -54040,7 +54052,8 @@
         3,
         -1.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -54056,7 +54069,8 @@
         5,
         4.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -54198,7 +54212,8 @@
         1,
         -1.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -54214,7 +54229,8 @@
         3,
         4.73
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -54348,7 +54364,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -54372,7 +54389,8 @@
           2.54,
           4.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -54505,7 +54523,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -54529,7 +54548,8 @@
           2.54,
           4.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -54663,7 +54683,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -54687,7 +54708,8 @@
           4.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -54838,7 +54860,8 @@
         1.96,
         -1.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -54862,7 +54885,8 @@
         2.54,
         4.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -55033,7 +55057,8 @@
         1.96,
         -1.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -55057,7 +55082,8 @@
         2.54,
         4.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -55225,7 +55251,8 @@
         1.96,
         -1.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -55249,7 +55276,8 @@
         2.54,
         4.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -55439,7 +55467,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -55463,7 +55492,8 @@
           2.54,
           4.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -55620,7 +55650,8 @@
           2.1,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -55648,7 +55679,8 @@
           3.5,
           3.81
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -55806,7 +55838,8 @@
           2.1,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -55834,7 +55867,8 @@
           4.9,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -56011,7 +56045,8 @@
         3.46,
         -1.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -56035,7 +56070,8 @@
         2.54,
         4.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -56227,7 +56263,8 @@
         6.3,
         -1.21
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -56255,7 +56292,8 @@
         4.9,
         3.81
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -56436,7 +56474,8 @@
           6.3,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -56464,7 +56503,8 @@
           3.5,
           3.81
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -56618,7 +56658,8 @@
           1.83,
           -1.33
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -56642,7 +56683,8 @@
           3.77,
           3.93
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -56800,7 +56842,8 @@
           2.1,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -56828,7 +56871,8 @@
           4.9,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -56962,7 +57006,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -56986,7 +57031,8 @@
           2.54,
           4.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -57149,7 +57195,8 @@
           1,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -57165,7 +57212,8 @@
           3,
           4.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -57251,7 +57299,8 @@
           1,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -57267,7 +57316,8 @@
           5,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -57352,7 +57402,8 @@
           5,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -57368,7 +57419,8 @@
           1,
           4.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -57453,7 +57505,8 @@
           1,
           -1.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -57469,7 +57522,8 @@
           3,
           4.73
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -57677,7 +57731,8 @@
         3.46,
         -1.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -57701,7 +57756,8 @@
         2.54,
         4.43
        ]
-      ]
+      ],
+      "farbe": "grund"
      }
     ]
    },
@@ -57857,7 +57913,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -57881,7 +57938,8 @@
           2.54,
           4.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -58039,7 +58097,8 @@
           2.1,
           -1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -58067,7 +58126,8 @@
           3.5,
           3.81
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -58201,7 +58261,8 @@
           1.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -58225,7 +58286,8 @@
           4.96,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -58363,7 +58425,8 @@
           2.25,
           -1.3
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -58391,7 +58454,8 @@
           2.25,
           4.3
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -58524,7 +58588,8 @@
           6.46,
           -1.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -58548,7 +58613,8 @@
           1.04,
           4.43
          ]
-        ]
+        ],
+        "farbe": "grund"
        }
       ]
      }
@@ -59983,7 +60049,8 @@
         0,
         2
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -60110,7 +60177,8 @@
         0,
         2
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -60222,7 +60290,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -60300,7 +60369,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -60409,7 +60479,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -60547,7 +60618,8 @@
         0,
         2
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -60686,7 +60758,8 @@
         0,
         2
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -60810,7 +60883,8 @@
         0,
         2
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -60920,7 +60994,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -60934,7 +61009,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -60949,8 +61024,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -60965,8 +61040,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -60981,8 +61056,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        },
@@ -60997,8 +61072,8 @@
           1.52
          ],
          [
-          -2.34,
-          0.08
+          -1.77,
+          0.27
          ]
         ]
        },
@@ -61006,15 +61081,15 @@
         "ecken": [
          [
           0.8,
-          -2.2
+          -1.6
          ],
          [
           0,
           0
          ],
          [
-          -0.73,
-          -1.51
+          -0.67,
+          -1.34
          ]
         ]
        }
@@ -61049,7 +61124,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -61063,7 +61139,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -61078,8 +61154,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -61094,8 +61170,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -61110,8 +61186,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        },
@@ -61126,8 +61202,8 @@
           1.52
          ],
          [
-          -2.34,
-          0.08
+          -1.77,
+          0.27
          ]
         ]
        }
@@ -61167,7 +61243,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -61181,7 +61258,7 @@
          ],
          [
           0.7,
-          -2
+          -1.5
          ]
         ]
        },
@@ -61196,8 +61273,8 @@
           0
          ],
          [
-          3.48,
-          -0.4
+          3.05,
+          -0.15
          ]
         ]
        },
@@ -61212,8 +61289,8 @@
           1.21
          ],
          [
-          3.48,
-          2.82
+          3.05,
+          2.57
          ]
         ]
        },
@@ -61229,7 +61306,7 @@
          ],
          [
           0.7,
-          4.42
+          3.92
          ]
         ]
        },
@@ -61244,8 +61321,8 @@
           2.42
          ],
          [
-          -2.08,
-          2.82
+          -1.65,
+          2.57
          ]
         ]
        },
@@ -61260,8 +61337,8 @@
           1.21
          ],
          [
-          -2.08,
-          -0.4
+          -1.65,
+          -0.15
          ]
         ]
        }
@@ -61334,7 +61411,8 @@
         -0.49,
         1.52
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -61348,7 +61426,7 @@
        ],
        [
         0.8,
-        -2.2
+        -1.6
        ]
       ]
      },
@@ -61363,8 +61441,8 @@
         0
        ],
        [
-        3.94,
-        0.08
+        3.37,
+        0.27
        ]
       ]
      },
@@ -61379,8 +61457,8 @@
         1.52
        ],
        [
-        2.74,
-        3.77
+        2.39,
+        3.28
        ]
       ]
      },
@@ -61395,8 +61473,8 @@
         2.46
        ],
        [
-        -1.14,
-        3.77
+        -0.79,
+        3.28
        ]
       ]
      }
@@ -61475,7 +61553,8 @@
         -0.7,
         1.21
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -61489,7 +61568,7 @@
        ],
        [
         0.7,
-        -2
+        -1.5
        ]
       ]
      },
@@ -61504,8 +61583,8 @@
         0
        ],
        [
-        3.48,
-        -0.4
+        3.05,
+        -0.15
        ]
       ]
      },
@@ -61520,8 +61599,8 @@
         1.21
        ],
        [
-        3.48,
-        2.82
+        3.05,
+        2.57
        ]
       ]
      },
@@ -61537,7 +61616,7 @@
        ],
        [
         0.7,
-        4.42
+        3.92
        ]
       ]
      },
@@ -61552,8 +61631,8 @@
         2.42
        ],
        [
-        -2.08,
-        2.82
+        -1.65,
+        2.57
        ]
       ]
      },
@@ -61568,8 +61647,8 @@
         1.21
        ],
        [
-        -2.08,
-        -0.4
+        -1.65,
+        -0.15
        ]
       ]
      }
@@ -61639,7 +61718,8 @@
         -0.49,
         1.52
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -61653,7 +61733,7 @@
        ],
        [
         0.8,
-        -2.2
+        -1.6
        ]
       ]
      },
@@ -61668,8 +61748,8 @@
         0
        ],
        [
-        3.94,
-        0.08
+        3.37,
+        0.27
        ]
       ]
      },
@@ -61684,8 +61764,8 @@
         1.52
        ],
        [
-        2.74,
-        3.77
+        2.39,
+        3.28
        ]
       ]
      },
@@ -61700,8 +61780,8 @@
         2.46
        ],
        [
-        -1.14,
-        3.77
+        -0.79,
+        3.28
        ]
       ]
      },
@@ -61716,8 +61796,8 @@
         1.52
        ],
        [
-        -2.34,
-        0.08
+        -1.77,
+        0.27
        ]
       ]
      }
@@ -61811,7 +61891,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -61825,7 +61906,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -61840,8 +61921,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -61856,8 +61937,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -61872,8 +61953,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        },
@@ -61888,8 +61969,8 @@
           1.52
          ],
          [
-          -2.34,
-          0.08
+          -1.77,
+          0.27
          ]
         ]
        }
@@ -61929,7 +62010,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -61943,7 +62025,7 @@
          ],
          [
           0.7,
-          -2
+          -1.5
          ]
         ]
        },
@@ -61958,8 +62040,8 @@
           0
          ],
          [
-          3.48,
-          -0.4
+          3.05,
+          -0.15
          ]
         ]
        },
@@ -61974,8 +62056,8 @@
           1.21
          ],
          [
-          3.48,
-          2.82
+          3.05,
+          2.57
          ]
         ]
        },
@@ -61991,7 +62073,7 @@
          ],
          [
           0.7,
-          4.42
+          3.92
          ]
         ]
        },
@@ -62006,8 +62088,8 @@
           2.42
          ],
          [
-          -2.08,
-          2.82
+          -1.65,
+          2.57
          ]
         ]
        }
@@ -62046,7 +62128,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -62060,7 +62143,7 @@
          ],
          [
           0.7,
-          -2
+          -1.5
          ]
         ]
        },
@@ -62075,8 +62158,8 @@
           0
          ],
          [
-          3.48,
-          -0.4
+          3.05,
+          -0.15
          ]
         ]
        },
@@ -62091,8 +62174,8 @@
           1.21
          ],
          [
-          3.48,
-          2.82
+          3.05,
+          2.57
          ]
         ]
        },
@@ -62108,7 +62191,7 @@
          ],
          [
           0.7,
-          4.42
+          3.92
          ]
         ]
        },
@@ -62123,8 +62206,8 @@
           2.42
          ],
          [
-          -2.08,
-          2.82
+          -1.65,
+          2.57
          ]
         ]
        },
@@ -62139,8 +62222,8 @@
           1.21
          ],
          [
-          -2.08,
-          -0.4
+          -1.65,
+          -0.15
          ]
         ]
        }
@@ -62227,7 +62310,8 @@
         -0.7,
         1.21
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -62241,7 +62325,7 @@
        ],
        [
         0.7,
-        -2
+        -1.5
        ]
       ]
      },
@@ -62256,8 +62340,8 @@
         0
        ],
        [
-        3.48,
-        -0.4
+        3.05,
+        -0.15
        ]
       ]
      },
@@ -62272,8 +62356,8 @@
         1.21
        ],
        [
-        3.48,
-        2.82
+        3.05,
+        2.57
        ]
       ]
      },
@@ -62289,7 +62373,7 @@
        ],
        [
         0.7,
-        4.42
+        3.92
        ]
       ]
      },
@@ -62304,8 +62388,8 @@
         2.42
        ],
        [
-        -2.08,
-        2.82
+        -1.65,
+        2.57
        ]
       ]
      }
@@ -62381,7 +62465,8 @@
         -0.7,
         1.21
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -62395,7 +62480,7 @@
        ],
        [
         0.7,
-        -2
+        -1.5
        ]
       ]
      },
@@ -62410,8 +62495,8 @@
         0
        ],
        [
-        3.48,
-        -0.4
+        3.05,
+        -0.15
        ]
       ]
      },
@@ -62426,8 +62511,8 @@
         1.21
        ],
        [
-        3.48,
-        2.82
+        3.05,
+        2.57
        ]
       ]
      },
@@ -62443,7 +62528,7 @@
        ],
        [
         0.7,
-        4.42
+        3.92
        ]
       ]
      },
@@ -62458,8 +62543,8 @@
         2.42
        ],
        [
-        -2.08,
-        2.82
+        -1.65,
+        2.57
        ]
       ]
      },
@@ -62474,8 +62559,8 @@
         1.21
        ],
        [
-        -2.08,
-        -0.4
+        -1.65,
+        -0.15
        ]
       ]
      },
@@ -62483,15 +62568,15 @@
       "ecken": [
        [
         0.7,
-        -2
+        -1.5
        ],
        [
         0,
         0
        ],
        [
-        -0.78,
-        -1.4
+        -0.74,
+        -1.26
        ]
       ]
      }
@@ -62547,7 +62632,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -62645,7 +62731,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -62659,7 +62746,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -62674,8 +62761,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -62690,8 +62777,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -62706,8 +62793,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        },
@@ -62722,8 +62809,8 @@
           1.52
          ],
          [
-          -2.34,
-          0.08
+          -1.77,
+          0.27
          ]
         ]
        },
@@ -62731,15 +62818,15 @@
         "ecken": [
          [
           0.8,
-          -2.2
+          -1.6
          ],
          [
           0,
           0
          ],
          [
-          -0.73,
-          -1.51
+          -0.67,
+          -1.34
          ]
         ]
        }
@@ -62775,7 +62862,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -62789,7 +62877,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -62804,8 +62892,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -62820,8 +62908,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -62836,8 +62924,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        }
@@ -62872,7 +62960,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -62886,7 +62975,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -62901,8 +62990,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -62917,8 +63006,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -62933,8 +63022,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        },
@@ -62949,8 +63038,8 @@
           1.52
          ],
          [
-          -2.34,
-          0.08
+          -1.77,
+          0.27
          ]
         ]
        }
@@ -63090,7 +63179,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -63188,7 +63278,8 @@
           -0.49,
           1.52
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -63202,7 +63293,7 @@
          ],
          [
           0.8,
-          -2.2
+          -1.6
          ]
         ]
        },
@@ -63217,8 +63308,8 @@
           0
          ],
          [
-          3.94,
-          0.08
+          3.37,
+          0.27
          ]
         ]
        },
@@ -63233,8 +63324,8 @@
           1.52
          ],
          [
-          2.74,
-          3.77
+          2.39,
+          3.28
          ]
         ]
        },
@@ -63249,8 +63340,8 @@
           2.46
          ],
          [
-          -1.14,
-          3.77
+          -0.79,
+          3.28
          ]
         ]
        },
@@ -63265,8 +63356,8 @@
           1.52
          ],
          [
-          -2.34,
-          0.08
+          -1.77,
+          0.27
          ]
         ]
        }
@@ -63297,7 +63388,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -63391,7 +63483,8 @@
           0,
           2
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -63512,7 +63605,8 @@
         -0.49,
         1.52
        ]
-      ]
+      ],
+      "farbe": "grund"
      },
      {
       "ecken": [
@@ -63694,7 +63788,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -63708,7 +63803,7 @@
          ],
          [
           0.7,
-          -2
+          -1.5
          ]
         ]
        },
@@ -63723,8 +63818,8 @@
           0
          ],
          [
-          3.48,
-          -0.4
+          3.05,
+          -0.15
          ]
         ]
        },
@@ -63739,8 +63834,8 @@
           1.21
          ],
          [
-          3.48,
-          2.82
+          3.05,
+          2.57
          ]
         ]
        },
@@ -63756,7 +63851,7 @@
          ],
          [
           0.7,
-          4.42
+          3.92
          ]
         ]
        },
@@ -63771,8 +63866,8 @@
           2.42
          ],
          [
-          -2.08,
-          2.82
+          -1.65,
+          2.57
          ]
         ]
        },
@@ -63787,8 +63882,8 @@
           1.21
          ],
          [
-          -2.08,
-          -0.4
+          -1.65,
+          -0.15
          ]
         ]
        },
@@ -63796,15 +63891,15 @@
         "ecken": [
          [
           0.7,
-          -2
+          -1.5
          ],
          [
           0,
           0
          ],
          [
-          -0.78,
-          -1.4
+          -0.74,
+          -1.26
          ]
         ]
        }
@@ -63843,7 +63938,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -63857,7 +63953,7 @@
          ],
          [
           0.7,
-          -2
+          -1.5
          ]
         ]
        },
@@ -63872,8 +63968,8 @@
           0
          ],
          [
-          3.48,
-          -0.4
+          3.05,
+          -0.15
          ]
         ]
        },
@@ -63888,8 +63984,8 @@
           1.21
          ],
          [
-          3.48,
-          2.82
+          3.05,
+          2.57
          ]
         ]
        },
@@ -63905,7 +64001,7 @@
          ],
          [
           0.7,
-          4.42
+          3.92
          ]
         ]
        },
@@ -63920,8 +64016,8 @@
           2.42
          ],
          [
-          -2.08,
-          2.82
+          -1.65,
+          2.57
          ]
         ]
        },
@@ -63936,8 +64032,8 @@
           1.21
          ],
          [
-          -2.08,
-          -0.4
+          -1.65,
+          -0.15
          ]
         ]
        }
@@ -63976,7 +64072,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -64110,7 +64207,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -64244,7 +64342,8 @@
           -0.7,
           1.21
          ]
-        ]
+        ],
+        "farbe": "grund"
        },
        {
         "ecken": [
@@ -64258,7 +64357,7 @@
          ],
          [
           0.7,
-          -2
+          -1.5
          ]
         ]
        },
@@ -64273,8 +64372,8 @@
           0
          ],
          [
-          3.48,
-          -0.4
+          3.05,
+          -0.15
          ]
         ]
        },
@@ -64289,8 +64388,8 @@
           1.21
          ],
          [
-          3.48,
-          2.82
+          3.05,
+          2.57
          ]
         ]
        },
@@ -64306,7 +64405,7 @@
          ],
          [
           0.7,
-          4.42
+          3.92
          ]
         ]
        },
@@ -64321,8 +64420,8 @@
           2.42
          ],
          [
-          -2.08,
-          2.82
+          -1.65,
+          2.57
          ]
         ]
        }
@@ -64465,6 +64564,3370 @@
      "grund": "Grundflächen"
     }
    ]
+  },
+  {
+   "id": "6.3.6-R1-F-01",
+   "lernziel": "6.3.6-R1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Denk an eine Trommel.\nKreuze die passende Form an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "kegel",
+      "r": 1.5,
+      "h": 3
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir den Gegenstand vor dir vor.",
+    "beispiel": "Läuft er oben spitz zu? Hat er oben und unten einen Kreis? Ist er ganz rund?",
+    "loesungsschritt": "Spitz: Kegel. Zwei Kreise: Zylinder. Ganz rund: Kugel."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder",
+     "gegenstand": "Trommel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-F-02",
+   "lernziel": "6.3.6-R1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Bild zeigt einen Körper.\nKreuze seinen Namen an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kegel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Zylinder",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau, ob der Körper oben spitz zuläuft.",
+    "beispiel": "Schau, ob oben und unten ein Kreis ist.",
+    "loesungsschritt": "Eine Kugel ist überall rund."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "zylinder",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder",
+     "bild": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-F-03",
+   "lernziel": "6.3.6-R1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze den Kegel an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kegel",
+      "r": 1.5,
+      "h": 3
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Kegel läuft oben spitz zu.",
+    "beispiel": "Ein Zylinder hat oben und unten einen Kreis.",
+    "loesungsschritt": "Eine Kugel ist ganz rund."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-F-04",
+   "lernziel": "6.3.6-R1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Zylinder.\nZähle seine Flächen.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-kein-quader"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Oben ist ein Kreis.",
+    "beispiel": "Unten ist auch ein Kreis.",
+    "loesungsschritt": "Dazu kommt die runde Fläche rundherum."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "zylinder",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "koerperzahl",
+     "form": "zylinder",
+     "was": "flaechen",
+     "wert": 3,
+     "bild": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-F-05",
+   "lernziel": "6.3.6-R1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von oben auf den Zylinder.\nKreuze die Form der Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Kreis",
+     "richtig": true
+    },
+    {
+     "text": "Dreieck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von oben siehst du den Deckel.",
+    "beispiel": "Der Deckel ist rund.",
+    "loesungsschritt": "Welche Form ist rund?"
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "zylinder",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "ansichtform",
+     "form": "zylinder",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-F-06",
+   "lernziel": "6.3.6-R1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Kegel.\nZähle seine Flächen.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Unten ist ein Kreis.",
+    "beispiel": "Dazu kommt die runde Fläche bis nach oben.",
+    "loesungsschritt": "Zähle beide Flächen."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "kegel",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "flaechen",
+     "wert": 2,
+     "bild": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-G-01",
+   "lernziel": "6.3.6-R1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Zylinder.\nGib an, wie viele Kanten er hat.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "ecken-kanten-verwechselt"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Kante ist da, wo zwei Flächen zusammenstoßen.",
+    "beispiel": "Oben stößt der Kreis an die gekrümmte Fläche.",
+    "loesungsschritt": "Unten auch."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "zylinder",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "koerperzahl",
+     "form": "zylinder",
+     "was": "kanten",
+     "wert": 2,
+     "bild": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-G-02",
+   "lernziel": "6.3.6-R1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Gegenstände in Form eines Kegels an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Ball",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Pylon",
+     "richtig": true
+    },
+    {
+     "text": "Rolle Küchenpapier",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Partyhut",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir jeden Gegenstand vor.",
+    "beispiel": "Ein Kegel hat einen Kreis und eine Spitze.",
+    "loesungsschritt": "Kreuze nur die passenden an."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-G-03",
+   "lernziel": "6.3.6-R1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von vorne auf den Kegel.\nKreuze die Form der Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Kreis",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Dreieck",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von vorne siehst du seinen Umriss.",
+    "beispiel": "Unten ist er breit, oben spitz.",
+    "loesungsschritt": "Welche Form ist unten breit und oben spitz?"
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "kegel",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "ansichtform",
+     "form": "kegel",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-G-04",
+   "lernziel": "6.3.6-R1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Kegel.\nGib an, wie viele Kanten er hat.",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Kante ist da, wo zwei Flächen zusammenstoßen.",
+    "beispiel": "Der Kreis unten stößt an die gekrümmte Fläche.",
+    "loesungsschritt": "Die Spitze ist keine Kante."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "kegel",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "kanten",
+     "wert": 1,
+     "bild": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-G-05",
+   "lernziel": "6.3.6-R1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper mit einer gekrümmten Fläche an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Zylinder",
+     "richtig": true
+    },
+    {
+     "text": "Prisma",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Quader",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kugel",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine gekrümmte Fläche ist nicht eben.",
+    "beispiel": "Ein Körper damit kann rollen.",
+    "loesungsschritt": "Quader und Prisma haben nur ebene Flächen."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "gekruemmt"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-G-06",
+   "lernziel": "6.3.6-R1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Gegenstand heißt Pylon.\nKreuze seine Form an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Kegel",
+     "richtig": true
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir den Gegenstand vor.",
+    "beispiel": "Hat er eine Spitze?",
+    "loesungsschritt": "Hat er oben und unten einen Kreis?"
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel",
+     "gegenstand": "Pylon"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-M-01",
+   "lernziel": "6.3.6-R1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von oben auf den Kegel. Kreuze die Form der Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Dreieck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Kreis",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Quadrat",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von oben siehst du den Kreis unten, die Spitze liegt in der Mitte.",
+    "loesungsschritt": "Der Umriss ist rund."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "kegel",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "ansichtform",
+     "form": "kegel",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-M-02",
+   "lernziel": "6.3.6-R1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Ole sagt: „Die Spitze eines Kegels ist eine Ecke.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Alles Spitze ist eine Ecke.",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "text": "Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Der Kegel hat eine Ecke und zwei Kanten.",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einer Pyramide treffen sich an der Spitze Kanten.",
+    "loesungsschritt": "Wie ist das beim Kegel?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "kanten",
+     "wert": 1,
+     "zwischen": true
+    },
+    {
+     "zahl": 2,
+     "grund": "falsche Begründung"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-M-03",
+   "lernziel": "6.3.6-R1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze den Körper mit genau zwei Flächen an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen",
+     "bild": {
+      "art": "koerper",
+      "form": "pyramide",
+      "n": 4,
+      "r": 1.6,
+      "h": 3
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen",
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kegel",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen",
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle bei jedem Körper die ebenen und die gekrümmten Flächen.",
+    "loesungsschritt": "Der Zylinder hat drei, die Kugel nur eine."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel"
+    },
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "flaechen",
+     "wert": 2,
+     "zwischen": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-M-04",
+   "lernziel": "6.3.6-R1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper an, die rollen können.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "quader",
+      "a": 3,
+      "b": 2,
+      "c": 2
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "prisma",
+      "n": 5,
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "D",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kegel",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "E",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Körper kann rollen, wenn er eine gekrümmte Fläche hat.",
+    "loesungsschritt": "Auch ein Kegel rollt, aber nur im Kreis."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "gekruemmt"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-M-05",
+   "lernziel": "6.3.6-R1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Eine Kerze hat die Form eines Zylinders. Gib an, wie viele Kanten sie hat.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "ecken-kanten-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kanten sind dort, wo zwei Flächen aneinanderstoßen.",
+    "loesungsschritt": "Oben und unten stößt je ein Kreis an die gekrümmte Fläche."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder",
+     "gegenstand": "Kerze"
+    },
+    {
+     "art": "koerperzahl",
+     "form": "zylinder",
+     "was": "kanten",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-M-06",
+   "lernziel": "6.3.6-R1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Lina sagt: „Ein Zylinder hat eine Spitze.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Jeder runde Körper hat eine Spitze.",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Stimmt nicht. Oben und unten ist je eine Kreisfläche.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Die Spitze ist in der Mitte des Deckels.",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir den Körper genau vor oder nimm einen Gegenstand in die Hand.",
+    "loesungsschritt": "Wo stoßen Flächen aneinander?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-E-01",
+   "lernziel": "6.3.6-R1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper an, die eine Spitze haben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Prisma",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kegel",
+     "richtig": true
+    },
+    {
+     "text": "Pyramide",
+     "richtig": true
+    },
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Quader",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Spitze ist ein Punkt, an dem der Körper zusammenläuft."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "spitze"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-E-02",
+   "lernziel": "6.3.6-R1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper an, die nur ebene Flächen haben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Pyramide",
+     "richtig": true
+    },
+    {
+     "text": "Quader",
+     "richtig": true
+    },
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Prisma",
+     "richtig": true
+    },
+    {
+     "text": "Kegel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine ebene Fläche ist flach wie ein Blatt Papier."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "nurEben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-E-03",
+   "lernziel": "6.3.6-R1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Lena sagt: „Zylinder und Kegel haben gleich viele Kanten.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt nicht. Der Zylinder hat 2 Kanten, der Kegel nur 1.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Beide haben 2 Kanten.",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "text": "Stimmt. Runde Körper haben keine Kanten.",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Stellen, an denen ein Kreis an die gekrümmte Fläche stößt."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "koerperzahl",
+     "form": "zylinder",
+     "was": "kanten",
+     "wert": 2,
+     "zwischen": true
+    },
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "kanten",
+     "wert": 1,
+     "zwischen": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-E-04",
+   "lernziel": "6.3.6-R1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Turm besteht aus einem Zylinder. Oben sitzt ein Kegel als Dach genau auf dem Deckel. Gib an, wie viele Flächen man am Turm von außen sieht, den Boden mitgezählt.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wo Kegel und Zylinder aufeinandersitzen, verschwinden zwei Kreise."
+   },
+   "nachweis": [
+    {
+     "art": "koerperzahl",
+     "form": "zylinder",
+     "was": "flaechen",
+     "wert": 3,
+     "zwischen": true
+    },
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "flaechen",
+     "wert": 2,
+     "zwischen": true
+    },
+    "3 + 2 − 2 = 3"
+   ]
+  },
+  {
+   "id": "6.3.6-R1-E-05",
+   "lernziel": "6.3.6-R1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Körper sieht von vorne aus wie ein Rechteck. Von oben sieht er aus wie ein Kreis. Kreuze den Körper an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Zylinder",
+     "richtig": true
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kegel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe für jeden Körper beide Ansichten."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R1-E-06",
+   "lernziel": "6.3.6-R1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Gegenstände in Form eines Zylinders an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Brotdose",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Eistüte",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Rolle Küchenpapier",
+     "richtig": true
+    },
+    {
+     "text": "Kerze",
+     "richtig": true
+    },
+    {
+     "text": "Litfaßsäule",
+     "richtig": true
+    },
+    {
+     "text": "Seifenblase",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Zylinder hat zwei gleiche Kreise und dazwischen eine gekrümmte Fläche."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-F-01",
+   "lernziel": "6.3.6-R2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Netz gehört zu einer Dose.\nZähle die Kreise im Netz.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kreise sind rund.",
+    "beispiel": "Einer liegt oben, einer unten.",
+    "loesungsschritt": "Zähle sie."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        5.03,
+        0
+       ],
+       [
+        5.03,
+        2.5
+       ],
+       [
+        0,
+        2.5
+       ]
+      ]
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       2.52,
+       -0.8
+      ],
+      "r": 0.8
+     },
+     {
+      "m": [
+       2.52,
+       3.3
+      ],
+      "r": 0.8
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netzteile",
+     "wert": 2,
+     "kreise": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-F-02",
+   "lernziel": "6.3.6-R2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Bild zeigt eine Dose.\nKreuze das Netz an, aus dem du sie falten kannst.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         3.5
+        ],
+        "r": 1
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         1.52,
+         3.3
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         3.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         2.52,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         2.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Dose ist ein Zylinder.",
+    "beispiel": "Sie hat einen Deckel und einen Boden.",
+    "loesungsschritt": "Ein Kreis muss oben, einer unten liegen."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "zylinder",
+    "r": 1.5,
+    "h": 3
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-F-03",
+   "lernziel": "6.3.6-R2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du faltest das Netz.\nKreuze den passenden Körper an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kegel",
+     "richtig": true
+    },
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das große Stück wird rund gebogen.",
+    "beispiel": "Es läuft oben spitz zu.",
+    "loesungsschritt": "Unten kommt der Kreis dran."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.5
+      ],
+      "r": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel",
+     "netz": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-F-04",
+   "lernziel": "6.3.6-R2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Netz gehört zu einer Eistüte mit Deckel.\nZähle alle Teile im Netz.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Teil ist ein Kreis.",
+    "beispiel": "Das andere Teil sieht aus wie ein Stück Kuchen.",
+    "loesungsschritt": "Zähle beide Teile."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.5
+      ],
+      "r": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netzteile",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-F-05",
+   "lernziel": "6.3.6-R2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Du willst aus dem Netz eine Dose falten.\nKreuze die richtige Antwort an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein.\nBeide Kreise liegen oben.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "text": "Ja.\nOben und unten liegt ein Kreis.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Rolle das Rechteck in Gedanken zu einer Röhre.",
+    "beispiel": "Oben und unten braucht die Röhre einen Kreis.",
+    "loesungsschritt": "Schau, wo die Kreise liegen."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        5.03,
+        0
+       ],
+       [
+        5.03,
+        2.5
+       ],
+       [
+        0,
+        2.5
+       ]
+      ]
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       2.52,
+       -0.8
+      ],
+      "r": 0.8
+     },
+     {
+      "m": [
+       2.52,
+       3.3
+      ],
+      "r": 0.8
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "zylinder",
+     "faltbar": true
+    },
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-F-06",
+   "lernziel": "6.3.6-R2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Manche Körper können rollen.\nKreuze sie alle an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "quader",
+      "a": 2,
+      "b": 2,
+      "c": 2
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "quader",
+      "a": 4,
+      "b": 2,
+      "c": 2
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "D",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Körper rollt, wenn er rund ist.",
+    "beispiel": "Ein Würfel hat nur flache Flächen.",
+    "loesungsschritt": "Kreuze die runden Körper an."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "gekruemmt"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-G-01",
+   "lernziel": "6.3.6-R2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das Netz eines Kegels an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         4.1
+        ],
+        "r": 1.6
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         2.52,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         2.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         3.5
+        ],
+        "r": 1
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Kegel hat eine gekrümmte Fläche und einen Kreis.",
+    "beispiel": "Die gekrümmte Fläche sieht im Netz aus wie ein Stück Kuchen.",
+    "loesungsschritt": "Der Kreis muss so groß sein, dass er unten passt."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-G-02",
+   "lernziel": "6.3.6-R2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Du willst das Netz zu einem Kegel falten.\nKreuze die richtige Antwort an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein.\nDer Kreis passt nicht.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "text": "Ja, es lässt sich falten.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der runde Rand der gekrümmten Fläche wird zum Kreisrand.",
+    "beispiel": "Beide müssen gleich lang sein.",
+    "loesungsschritt": "Ist der Kreis viel größer, passt er nicht."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.5
+      ],
+      "r": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "kegel",
+     "faltbar": true
+    },
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-G-03",
+   "lernziel": "6.3.6-R2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Netz gehört zu einem Zylinder.\nGib an, wie viele Flächen das Netz hat.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Kreise.",
+    "beispiel": "Zähle das Rechteck dazu.",
+    "loesungsschritt": "Das Rechteck wird zur gekrümmten Fläche."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        5.03,
+        0
+       ],
+       [
+        5.03,
+        2.5
+       ],
+       [
+        0,
+        2.5
+       ]
+      ]
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       2.52,
+       -0.8
+      ],
+      "r": 0.8
+     },
+     {
+      "m": [
+       2.52,
+       3.3
+      ],
+      "r": 0.8
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netzteile",
+     "wert": 3
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-G-04",
+   "lernziel": "6.3.6-R2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper ohne gekrümmte Fläche an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Würfel",
+     "richtig": true
+    },
+    {
+     "text": "Pyramide",
+     "richtig": true
+    },
+    {
+     "text": "Kegel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ohne gekrümmte Fläche heißt: alle Flächen sind eben.",
+    "beispiel": "Ebene Flächen sind flach.",
+    "loesungsschritt": "Kegel und Kugel sind teilweise rund."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "nurEben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-G-05",
+   "lernziel": "6.3.6-R2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper mit gekrümmter Fläche an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "prisma",
+      "n": 3,
+      "r": 1.2,
+      "h": 4,
+      "liegend": true
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "pyramide",
+      "n": 4,
+      "r": 1.6,
+      "h": 3
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche Körper mit runden Teilen.",
+    "beispiel": "Eine gekrümmte Fläche ist nicht flach.",
+    "loesungsschritt": "Prisma und Pyramide haben nur ebene Flächen."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "gekruemmt"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-G-06",
+   "lernziel": "6.3.6-R2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Aus dem Netz entsteht ein Körper.\nKreuze seinen Namen an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kegel",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle die Kreise im Netz.",
+    "beispiel": "Zwei Kreise und ein Rechteck: Zylinder.",
+    "loesungsschritt": "Ein Kreis und ein Stück Kuchen: Kegel."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.5
+      ],
+      "r": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel",
+     "netz": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-M-01",
+   "lernziel": "6.3.6-R2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Im Netz eines Kegels ist die gekrümmte Fläche ein Kreisausschnitt. Gib an, wie viele Flächen das Netz hat.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zum Kreisausschnitt kommt die Grundfläche.",
+    "loesungsschritt": "Die Grundfläche ist ein Kreis."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.5
+      ],
+      "r": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netzteile",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-M-02",
+   "lernziel": "6.3.6-R2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Prüfe, ob sich das Netz zu einem Zylinder falten lässt. Kreuze die richtige Antwort an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein, das Rechteck ist zu schmal für den Rand der Kreise.",
+     "richtig": true
+    },
+    {
+     "text": "Ja, es lässt sich falten.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "text": "Nein, beide Kreise liegen an derselben Seite.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Rechteck wird zur Röhre gerollt.",
+    "loesungsschritt": "Seine Breite muss so lang sein wie der Rand eines Kreises."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        2.2,
+        0
+       ],
+       [
+        2.2,
+        2.5
+       ],
+       [
+        0,
+        2.5
+       ]
+      ]
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       1.1,
+       -0.8
+      ],
+      "r": 0.8
+     },
+     {
+      "m": [
+       1.1,
+       3.3
+      ],
+      "r": 0.8
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "zylinder",
+     "faltbar": false,
+     "gruende": true
+    },
+    {
+     "art": "urteil",
+     "stimmt": false
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-M-03",
+   "lernziel": "6.3.6-R2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das Netz eines Zylinders an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         1.52,
+         3.3
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         3.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          2.2,
+          0
+         ],
+         [
+          2.2,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         1.1,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         1.1,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         2.52,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         2.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         3.5
+        ],
+        "r": 1
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe die Lage der Kreise und die Breite des Rechtecks.",
+    "loesungsschritt": "Das Rechteck muss um den Kreis ganz herumreichen."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-M-04",
+   "lernziel": "6.3.6-R2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ali sagt: „Das Netz eines Kegels besteht aus einem Dreieck und einem Kreis.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Von vorne sieht der Kegel aus wie ein Dreieck.",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Stimmt nicht. Die gekrümmte Fläche ist im Netz ein Kreisausschnitt.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Das Dreieck wird zur Spitze gefaltet.",
+     "richtig": false,
+     "fehlvorstellung": "prisma-pyramide"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Dreieck hat gerade Seiten.",
+    "loesungsschritt": "Kann es den runden Rand des Kreises umschließen?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-M-05",
+   "lernziel": "6.3.6-R2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper an, die keine Ecke haben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kegel",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "kugel",
+      "r": 1.5
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "zylinder",
+      "r": 1.5,
+      "h": 3
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen",
+     "bild": {
+      "art": "koerper",
+      "form": "pyramide",
+      "n": 4,
+      "r": 1.6,
+      "h": 3
+     }
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen",
+     "bild": {
+      "art": "koerper",
+      "form": "quader",
+      "a": 2,
+      "b": 2,
+      "c": 2
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Ecke entsteht, wo sich Kanten treffen.",
+    "loesungsschritt": "Die Spitze des Kegels zählt nicht als Ecke."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "ohneEcke"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-M-06",
+   "lernziel": "6.3.6-R2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Aus dem Netz entsteht ein Körper. Kreuze seinen Namen an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Kegel",
+     "richtig": true
+    },
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt"
+    },
+    {
+     "text": "Pyramide",
+     "richtig": false,
+     "fehlvorstellung": "prisma-pyramide"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Kreisausschnitt wird zu einer Fläche mit Spitze.",
+    "loesungsschritt": "Ein Rechteck wird zu einer Röhre."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.5
+      ],
+      "r": 1
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "kegel",
+     "netz": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-E-01",
+   "lernziel": "6.3.6-R2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Prüfe, ob sich das Netz zu einem Kegel falten lässt. Kreuze die richtige Antwort an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Nein, der Kreis ist zu klein für den Rand des Kreisausschnitts.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "text": "Nein, der Kreis ist zu groß für den Rand des Kreisausschnitts.",
+     "richtig": true
+    },
+    {
+     "text": "Ja, es lässt sich falten.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der gebogene Rand des Kreisausschnitts muss genau einmal um den Kreis passen."
+   },
+   "bild": {
+    "art": "netz",
+    "sektoren": [
+     {
+      "m": [
+       0,
+       0
+      ],
+      "r": 2.5,
+      "von": 18,
+      "bis": 162
+     }
+    ],
+    "kreise": [
+     {
+      "m": [
+       0,
+       3.9
+      ],
+      "r": 1.4
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "kegel",
+     "faltbar": false,
+     "gruende": true
+    },
+    {
+     "art": "urteil",
+     "stimmt": false
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-E-02",
+   "lernziel": "6.3.6-R2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Netze an, aus denen sich ein Zylinder falten lässt.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1.6,
+          0
+         ],
+         [
+          1.6,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0.8,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         0.8,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          3.77,
+          0
+         ],
+         [
+          3.77,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         1.89,
+         -0.6
+        ],
+        "r": 0.6
+       },
+       {
+        "m": [
+         1.89,
+         2.6
+        ],
+        "r": 0.6
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         2.52,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         2.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         1.52,
+         3.3
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         3.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         3.5
+        ],
+        "r": 1
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe Lage der Kreise und Breite des Rechtecks bei jedem Netz."
+   },
+   "nachweis": [
+    {
+     "art": "koerperart",
+     "form": "zylinder"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-E-03",
+   "lernziel": "6.3.6-R2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Körper an, die genau eine Kante haben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "Zylinder",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "text": "Würfel",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "text": "Kugel",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "text": "Kegel",
+     "richtig": true
+    },
+    {
+     "text": "Pyramide",
+     "richtig": false,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Eine Kante entsteht, wo zwei Flächen zusammenstoßen. Zähle bei jedem Körper."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "eineKante"
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-E-04",
+   "lernziel": "6.3.6-R2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Elif sagt: „Im Netz eines Zylinders ist das Rechteck genau so breit, wie der Rand eines Kreises lang ist.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt nicht. Das Rechteck ist so breit wie der Kreis.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "text": "Stimmt nicht. Das Rechteck ist doppelt so breit wie der Rand.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "text": "Stimmt. Das Rechteck wird einmal um den Kreis herumgerollt.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wickle in Gedanken ein Blatt Papier einmal um eine Dose."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.6-R2-E-05",
+   "lernziel": "6.3.6-R2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib an, wie viele Flächen ein Zylinder, ein Kegel und eine Kugel zusammen haben.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "runde-koerper-zaehlen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst für jeden Körper einzeln."
+   },
+   "nachweis": [
+    {
+     "art": "koerperzahl",
+     "form": "zylinder",
+     "was": "flaechen",
+     "wert": 3,
+     "zwischen": true
+    },
+    {
+     "art": "koerperzahl",
+     "form": "kegel",
+     "was": "flaechen",
+     "wert": 2,
+     "zwischen": true
+    },
+    {
+     "art": "koerperzahl",
+     "form": "kugel",
+     "was": "flaechen",
+     "wert": 1,
+     "zwischen": true
+    },
+    "3 + 2 + 1 = 6"
+   ]
+  },
+  {
+   "id": "6.3.6-R2-E-06",
+   "lernziel": "6.3.6-R2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Netze an, aus denen ein Körper mit Spitze entsteht.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         4
+        ],
+        "r": 1.5
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "farbe": "grund"
+       },
+       {
+        "ecken": [
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          -2.2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          4.2,
+          1
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          4.2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          0,
+          2
+         ],
+         [
+          -2.2,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "sektoren": [
+       {
+        "m": [
+         0,
+         0
+        ],
+        "r": 2.5,
+        "von": 18,
+        "bis": 162
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         0,
+         3.5
+        ],
+        "r": 1
+       }
+      ]
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "prisma-pyramide",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          2,
+          0
+         ],
+         [
+          4,
+          0
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          2,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          4,
+          0
+         ],
+         [
+          6,
+          0
+         ],
+         [
+          6,
+          3
+         ],
+         [
+          4,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          -1.73
+         ]
+        ],
+        "farbe": "grund"
+       },
+       {
+        "ecken": [
+         [
+          2,
+          3
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          3,
+          4.73
+         ]
+        ],
+        "farbe": "grund"
+       }
+      ]
+     }
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "koerper-verwechselt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          5.03,
+          0
+         ],
+         [
+          5.03,
+          2.5
+         ],
+         [
+          0,
+          2.5
+         ]
+        ]
+       }
+      ],
+      "kreise": [
+       {
+        "m": [
+         2.52,
+         -0.8
+        ],
+        "r": 0.8
+       },
+       {
+        "m": [
+         2.52,
+         3.3
+        ],
+        "r": 0.8
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte jedes Netz in Gedanken. Achte auch darauf, ob es sich überhaupt falten lässt."
+   },
+   "nachweis": [
+    {
+     "art": "eigenschaft",
+     "welche": "spitze"
+    }
+   ]
   }
  ],
  "vorstufe": {
@@ -64501,6 +67964,10 @@
    {
     "id": "5.5.7-V1",
     "text": "Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen."
+   },
+   {
+    "id": "5.7.1-R1",
+    "text": "Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen."
    },
    {
     "id": "5.7.X2-D1",
@@ -71641,6 +75108,943 @@
       "grund": "Länge der Seite BC"
      },
      "11 + 11 = 22"
+    ]
+   },
+   {
+    "id": "5.7.1-R1-F-01",
+    "lernziel": "5.7.1-R1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Der Kreis liegt über einem Lineal.\nWie lang ist sein Durchmesser?",
+    "loesung": 20,
+    "typischeFehler": [
+     {
+      "wert": 10,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 30,
+      "fehlvorstellung": "lineal-nicht-null"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Durchmesser geht einmal quer durch den Kreis.",
+     "beispiel": "Schau, wo der Kreis links und rechts endet.",
+     "loesungsschritt": "Zähle die Millimeter vom linken bis zum rechten Rand."
+    },
+    "einheit": "mm",
+    "bild": {
+     "art": "kreislineal",
+     "von": 10,
+     "bis": 30,
+     "lang": 100
+    },
+    "nachweis": [
+     {
+      "art": "kreislineal",
+      "was": "d",
+      "wert": 20
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-F-02",
+    "lernziel": "5.7.1-R1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Der Kreis hat den Mittelpunkt M.\nWie lang ist der Radius?",
+    "loesung": 3,
+    "typischeFehler": [
+     {
+      "wert": 6,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 4,
+      "fehlvorstellung": "kreis-mittelpunkt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Radius geht vom Mittelpunkt bis zur Kreislinie.",
+     "beispiel": "Die Linie im Bild ist ein Radius.",
+     "loesungsschritt": "Zähle die Kästchen entlang dieser Linie."
+    },
+    "einheit": "Kästchen",
+    "bild": {
+     "art": "gitter",
+     "b": 9,
+     "h": 8,
+     "kreise": [
+      {
+       "m": [
+        5,
+        4
+       ],
+       "r": 3
+      }
+     ],
+     "punkte": [
+      {
+       "n": "M",
+       "x": 5,
+       "y": 4,
+       "pos": "lu"
+      }
+     ],
+     "linien": [
+      {
+       "a": [
+        5,
+        4
+       ],
+       "b": [
+        8,
+        4
+       ],
+       "art": "strecke"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "kreisBild",
+      "was": "r",
+      "einheit": "kaestchen",
+      "wert": 3
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-F-03",
+    "lernziel": "5.7.1-R1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "auswahl",
+    "text": "Schau dir den Kreis an.\nWelcher Punkt ist der Mittelpunkt?",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "B",
+      "richtig": true
+     },
+     {
+      "text": "C",
+      "richtig": false,
+      "fehlvorstellung": "kreis-mittelpunkt"
+     },
+     {
+      "text": "D",
+      "richtig": false,
+      "fehlvorstellung": "kreis-mittelpunkt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Mittelpunkt liegt genau in der Mitte des Kreises.",
+     "beispiel": "Von dort ist es überall gleich weit bis zur Kreislinie.",
+     "loesungsschritt": "Zähle von jedem Punkt die Kästchen nach links und nach rechts."
+    },
+    "bild": {
+     "art": "gitter",
+     "b": 11,
+     "h": 10,
+     "kreise": [
+      {
+       "m": [
+        6,
+        5
+       ],
+       "r": 3
+      }
+     ],
+     "punkte": [
+      {
+       "n": "B",
+       "x": 6,
+       "y": 5,
+       "pos": "ro"
+      },
+      {
+       "n": "C",
+       "x": 3,
+       "y": 5,
+       "pos": "l"
+      },
+      {
+       "n": "D",
+       "x": 8,
+       "y": 4,
+       "pos": "ru"
+      }
+     ],
+     "linien": []
+    },
+    "nachweis": [
+     {
+      "art": "kreisBild",
+      "was": "mittelpunkt"
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-F-04",
+    "lernziel": "5.7.1-R1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Der Kreis liegt über einem Lineal.\nDie Linie im Kreis ist sein Durchmesser.\nWie lang ist der Radius?",
+    "loesung": 20,
+    "typischeFehler": [
+     {
+      "wert": 40,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Radius ist halb so lang wie der Durchmesser.",
+     "beispiel": "Lies zuerst den Durchmesser am Lineal ab.",
+     "loesungsschritt": "Teile den Durchmesser durch 2."
+    },
+    "einheit": "mm",
+    "bild": {
+     "art": "kreislineal",
+     "von": 0,
+     "bis": 40,
+     "lang": 100
+    },
+    "nachweis": [
+     {
+      "art": "kreislineal",
+      "was": "r",
+      "wert": 20
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-F-05",
+    "lernziel": "5.7.1-R1",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Die Linie im Kreis ist ein Radius.\nWie lang ist der Durchmesser?",
+    "loesung": 8,
+    "typischeFehler": [
+     {
+      "wert": 4,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 9,
+      "fehlvorstellung": "kreis-mittelpunkt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Durchmesser ist doppelt so lang wie der Radius.",
+     "beispiel": "Zähle zuerst die Kästchen des Radius.",
+     "loesungsschritt": "Nimm die Zahl mal 2."
+    },
+    "einheit": "Kästchen",
+    "bild": {
+     "art": "gitter",
+     "b": 12,
+     "h": 10,
+     "kreise": [
+      {
+       "m": [
+        7,
+        5
+       ],
+       "r": 4
+      }
+     ],
+     "punkte": [
+      {
+       "n": "M",
+       "x": 7,
+       "y": 5,
+       "pos": "lu"
+      }
+     ],
+     "linien": [
+      {
+       "a": [
+        7,
+        5
+       ],
+       "b": [
+        3,
+        5
+       ],
+       "art": "strecke"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "kreisBild",
+      "was": "d",
+      "einheit": "kaestchen",
+      "wert": 8
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-F-06",
+    "lernziel": "5.7.1-R1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "auswahl",
+    "text": "Schau dir den Kreis um M an.\nWelche Punkte liegen auf der Kreislinie?\nKreuze alle an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "B",
+      "richtig": false,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "text": "C",
+      "richtig": true
+     },
+     {
+      "text": "D",
+      "richtig": false,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "text": "A",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ein Punkt auf der Kreislinie liegt genau auf dem Rand.",
+     "beispiel": "Schau bei jedem Punkt genau hin.",
+     "loesungsschritt": "Punkte innen oder außen gehören nicht dazu."
+    },
+    "bild": {
+     "art": "gitter",
+     "b": 12,
+     "h": 10,
+     "kreise": [
+      {
+       "m": [
+        6,
+        5
+       ],
+       "r": 3
+      }
+     ],
+     "punkte": [
+      {
+       "n": "M",
+       "x": 6,
+       "y": 5,
+       "pos": "lu"
+      },
+      {
+       "n": "A",
+       "x": 3,
+       "y": 5,
+       "pos": "l"
+      },
+      {
+       "n": "C",
+       "x": 6,
+       "y": 2,
+       "pos": "u"
+      },
+      {
+       "n": "B",
+       "x": 7,
+       "y": 1,
+       "pos": "ru"
+      },
+      {
+       "n": "D",
+       "x": 5,
+       "y": 4,
+       "pos": "lu"
+      }
+     ],
+     "linien": []
+    },
+    "nachweis": [
+     {
+      "art": "kreisBild",
+      "was": "aufKreis"
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-G-01",
+    "lernziel": "5.7.1-R1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Der Kreis liegt über einem Lineal.\nWie groß ist sein Radius?",
+    "loesung": 13,
+    "typischeFehler": [
+     {
+      "wert": 26,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 31,
+      "fehlvorstellung": "lineal-nicht-null"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Lies ab, wo der Kreis links und rechts endet.",
+     "beispiel": "Der Unterschied ist der Durchmesser.",
+     "loesungsschritt": "Der Radius ist die Hälfte davon."
+    },
+    "einheit": "mm",
+    "bild": {
+     "art": "kreislineal",
+     "von": 5,
+     "bis": 31,
+     "lang": 100
+    },
+    "nachweis": [
+     {
+      "art": "kreislineal",
+      "was": "r",
+      "wert": 13
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-G-02",
+    "lernziel": "5.7.1-R1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren",
+     "modellieren"
+    ],
+    "format": "zahl",
+    "text": "Im Gitter sind 2 Kästchen 1 cm.\nWie lang ist der Radius in cm?",
+    "loesung": 2,
+    "typischeFehler": [
+     {
+      "wert": 4,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zähle zuerst die Kästchen des Radius.",
+     "beispiel": "2 Kästchen sind 1 cm.",
+     "loesungsschritt": "Teile die Zahl der Kästchen durch 2."
+    },
+    "einheit": "cm",
+    "bild": {
+     "art": "gitter",
+     "b": 10,
+     "h": 10,
+     "kreise": [
+      {
+       "m": [
+        5,
+        5
+       ],
+       "r": 4
+      }
+     ],
+     "punkte": [
+      {
+       "n": "M",
+       "x": 5,
+       "y": 5,
+       "pos": "lu"
+      }
+     ],
+     "linien": [
+      {
+       "a": [
+        5,
+        5
+       ],
+       "b": [
+        1,
+        5
+       ],
+       "art": "strecke"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "zahl": 1,
+      "grund": "2 Kästchen sind 1 cm"
+     },
+     "4 : 2 = 2",
+     {
+      "art": "kreisBild",
+      "was": "r",
+      "einheit": "cm",
+      "wert": 2
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-G-03",
+    "lernziel": "5.7.1-R1",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "kommunizieren",
+     "modellieren"
+    ],
+    "format": "zahl",
+    "text": "Das runde Turmfenster hat einen Durchmesser von 62 cm.\nWie groß ist sein Radius?",
+    "loesung": 31,
+    "typischeFehler": [
+     {
+      "wert": 62,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 124,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Radius ist halb so lang wie der Durchmesser.",
+     "beispiel": "Ein Durchmesser von 10 cm gehört zu einem Radius von 5 cm.",
+     "loesungsschritt": "Rechne 62 : 2."
+    },
+    "einheit": "cm",
+    "nachweis": [
+     {
+      "zahl": 2,
+      "grund": "Der Durchmesser ist doppelt so lang wie der Radius"
+     },
+     "62 : 2 = 31"
+    ]
+   },
+   {
+    "id": "5.7.1-R1-G-04",
+    "lernziel": "5.7.1-R1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "argumentieren",
+     "kommunizieren"
+    ],
+    "format": "auswahl",
+    "text": "Die Linie im Bild geht vom Mittelpunkt M bis zur Kreislinie.\nWie heißt sie?",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Kreislinie",
+      "richtig": false,
+      "fehlvorstellung": "kreis-mittelpunkt"
+     },
+     {
+      "text": "Durchmesser",
+      "richtig": false,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "text": "Radius",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Denk an den Zirkel.",
+     "beispiel": "Die Spitze steht im Mittelpunkt, die Mine malt die Kreislinie.",
+     "loesungsschritt": "Der Abstand zwischen Spitze und Mine ist der Radius."
+    },
+    "bild": {
+     "art": "gitter",
+     "b": 9,
+     "h": 8,
+     "kreise": [
+      {
+       "m": [
+        5,
+        4
+       ],
+       "r": 3
+      }
+     ],
+     "punkte": [
+      {
+       "n": "M",
+       "x": 5,
+       "y": 4,
+       "pos": "lu"
+      }
+     ],
+     "linien": [
+      {
+       "a": [
+        5,
+        4
+       ],
+       "b": [
+        5,
+        7
+       ],
+       "art": "strecke"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "urteil",
+      "stimmt": true
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-G-05",
+    "lernziel": "5.7.1-R1",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "kommunizieren",
+     "modellieren"
+    ],
+    "format": "zahl",
+    "text": "Das runde Turmfenster hat einen Radius von 34 cm.\nWie groß ist sein Durchmesser?",
+    "loesung": 68,
+    "typischeFehler": [
+     {
+      "wert": 34,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 17,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Durchmesser ist doppelt so lang wie der Radius.",
+     "beispiel": "Zu einem Radius von 5 cm gehört ein Durchmesser von 10 cm.",
+     "loesungsschritt": "Rechne 2 · 34."
+    },
+    "einheit": "cm",
+    "nachweis": [
+     {
+      "zahl": 2,
+      "grund": "Der Durchmesser ist doppelt so lang wie der Radius"
+     },
+     "2 · 34 = 68"
+    ]
+   },
+   {
+    "id": "5.7.1-R1-G-06",
+    "lernziel": "5.7.1-R1",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "kommunizieren",
+     "modellieren"
+    ],
+    "format": "zahl",
+    "text": "In eine quadratische Schachtel passt genau ein runder Käse.\nDie Schachtel ist 12 cm breit.\nWie groß ist der Radius des Käses?",
+    "loesung": 6,
+    "typischeFehler": [
+     {
+      "wert": 12,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 24,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Käse berührt die Schachtel links und rechts.",
+     "beispiel": "Die Breite der Schachtel ist also der Durchmesser.",
+     "loesungsschritt": "Rechne 12 : 2."
+    },
+    "einheit": "cm",
+    "nachweis": [
+     {
+      "zahl": 2,
+      "grund": "Der Durchmesser ist doppelt so lang wie der Radius"
+     },
+     "12 : 2 = 6"
+    ]
+   },
+   {
+    "id": "5.7.1-R1-M-01",
+    "lernziel": "5.7.1-R1",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Der Kreis liegt über einem Lineal. Wie groß ist sein Radius in Millimetern?",
+    "loesung": 21,
+    "typischeFehler": [
+     {
+      "wert": 42,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 65,
+      "fehlvorstellung": "lineal-nicht-null"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Lies den linken und den rechten Rand des Kreises ab. Der Unterschied ist der Durchmesser.",
+     "loesungsschritt": "Der Radius ist halb so lang wie der Durchmesser."
+    },
+    "einheit": "mm",
+    "bild": {
+     "art": "kreislineal",
+     "von": 23,
+     "bis": 65,
+     "lang": 100
+    },
+    "nachweis": [
+     {
+      "art": "kreislineal",
+      "was": "r",
+      "wert": 21
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-M-02",
+    "lernziel": "5.7.1-R1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "kommunizieren",
+     "modellieren"
+    ],
+    "format": "zahl",
+    "text": "Im Gitter sind 2 Kästchen 1 cm. Wie lang ist der Durchmesser des Kreises in cm?",
+    "loesung": 4,
+    "typischeFehler": [
+     {
+      "wert": 2,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 8,
+      "fehlvorstellung": "laenge-kaestchen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zähle die Kästchen des Radius. Der Durchmesser ist doppelt so lang.",
+     "loesungsschritt": "Teile die Kästchen des Durchmessers durch 2, dann hast du cm."
+    },
+    "einheit": "cm",
+    "bild": {
+     "art": "gitter",
+     "b": 10,
+     "h": 10,
+     "kreise": [
+      {
+       "m": [
+        5,
+        5
+       ],
+       "r": 4
+      }
+     ],
+     "punkte": [
+      {
+       "n": "M",
+       "x": 5,
+       "y": 5,
+       "pos": "lu"
+      }
+     ],
+     "linien": [
+      {
+       "a": [
+        5,
+        5
+       ],
+       "b": [
+        5,
+        9
+       ],
+       "art": "strecke"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "zahl": 1,
+      "grund": "2 Kästchen sind 1 cm"
+     },
+     "8 : 2 = 4",
+     {
+      "art": "kreisBild",
+      "was": "d",
+      "einheit": "cm",
+      "wert": 4
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-M-03",
+    "lernziel": "5.7.1-R1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Der runde Springbrunnen im Schlossgarten hat einen Durchmesser von 6 m. Wie groß ist sein Radius in cm?",
+    "loesung": 300,
+    "typischeFehler": [
+     {
+      "wert": 600,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 1200,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 30,
+      "fehlvorstellung": "umrechnungszahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Rechne den Durchmesser zuerst in cm um: 1 m sind 100 cm.",
+     "loesungsschritt": "6 m sind 600 cm. Der Radius ist die Hälfte davon."
+    },
+    "einheit": "cm",
+    "nachweis": [
+     "6 · 100 = 600",
+     "600 : 2 = 300"
+    ]
+   },
+   {
+    "id": "5.7.1-R1-M-04",
+    "lernziel": "5.7.1-R1",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "argumentieren",
+     "kommunizieren"
+    ],
+    "format": "auswahl",
+    "text": "Welche Aussagen über einen Kreis stimmen? Kreuze alle an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "Ein Kreis hat genau einen Radius.",
+      "richtig": false,
+      "fehlvorstellung": "kreis-mittelpunkt"
+     },
+     {
+      "text": "Der Radius ist doppelt so lang wie der Durchmesser.",
+      "richtig": false,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "text": "Jeder Durchmesser geht durch den Mittelpunkt.",
+      "richtig": true
+     },
+     {
+      "text": "Der Durchmesser ist doppelt so lang wie der Radius.",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Stell dir den Zirkel vor: Die Spitze steht im Mittelpunkt.",
+     "loesungsschritt": "Du kannst vom Mittelpunkt aus viele Radien in alle Richtungen zeichnen. Zwei Radien in entgegengesetzte Richtungen bilden einen Durchmesser."
+    },
+    "nachweis": [
+     {
+      "art": "urteil",
+      "stimmt": true
+     }
+    ]
+   },
+   {
+    "id": "5.7.1-R1-M-05",
+    "lernziel": "5.7.1-R1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "4 gleich große Münzen liegen in einer Reihe nebeneinander und berühren sich. Die Reihe ist 112 mm lang. Wie groß ist der Radius einer Münze?",
+    "loesung": 14,
+    "typischeFehler": [
+     {
+      "wert": 28,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 56,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Länge der Reihe besteht aus lauter Durchmessern.",
+     "loesungsschritt": "Teile zuerst durch 4, dann hast du den Durchmesser einer Münze."
+    },
+    "einheit": "mm",
+    "nachweis": [
+     "112 : 4 = 28",
+     "28 : 2 = 14"
+    ]
+   },
+   {
+    "id": "5.7.1-R1-M-06",
+    "lernziel": "5.7.1-R1",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "kommunizieren"
+    ],
+    "format": "zahl",
+    "text": "Zwei Kreise berühren sich von außen. Der eine hat den Radius 3 cm, der andere den Durchmesser 4 cm. Wie weit sind die beiden Mittelpunkte voneinander entfernt?",
+    "loesung": 5,
+    "typischeFehler": [
+     {
+      "wert": 7,
+      "fehlvorstellung": "radius-durchmesser"
+     },
+     {
+      "wert": 10,
+      "fehlvorstellung": "radius-durchmesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zeichne eine Skizze: Von einem Mittelpunkt zum anderen gehst du zweimal einen Radius entlang.",
+     "loesungsschritt": "Rechne den Durchmesser zuerst in den Radius um: 4 : 2 = 2."
+    },
+    "einheit": "cm",
+    "nachweis": [
+     "4 : 2 = 2",
+     "3 + 2 = 5"
     ]
    },
    {
