@@ -994,7 +994,7 @@ export function eingabefelder(auf, a, gesperrt) {
   // Klasse 7 (ADR 0043): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
   const zahlfeld = (name, einheit, wert) => {
-    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') || auf.lernziel?.startsWith('6.4.') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') || /^6\.[45]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => gliedereEingabe(e.target) });
     return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
   };
@@ -1070,7 +1070,24 @@ export function eingabefelder(auf, a, gesperrt) {
           typeof c === 'object' ? ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke]) : c))));
         zeilen.splice(zeilen.length - 1, 0, uebertrag);
         return h('div', { class: 'bildrahmen' }, h('table', { class: `aufgabentabelle raster malraster${t.zeilen.length === 2 ? ' ohne-teile' : ''}` }, h('tbody', {}, zeilen)),
+          // Klasse 6, Kapitel 5 (ADR 0048): Im Raster wird ohne Komma gerechnet, darunter setzt das Kind das Komma.
+          t.ablesen && h('p', { class: 'malkreuzsumme tafel-ablesen' }, `${t.ablesen.text} `, zahlfeld(`luecke-${t.ablesen.luecke}`, null, letzte?.[t.ablesen.luecke])),
           !gesperrt && h('p', { class: 'klein rasterhinweis' }, 'In die kleinen Felder kannst du Überträge schreiben. Sie werden nicht bewertet.'));
+      }
+      // Klasse 6, Kapitel 5 (ADR 0048): Rechenraster mit Kommaspalte, Komma unter Komma. Endnullen sind auf F grau vorgezeichnet,
+      // auf G ergänzt das Kind sie in kleinen Notizfeldern. Über dem Ergebnis stehen Übertragsfelder. Notiz- und Übertragsfelder werden nicht bewertet.
+      if (t.art === 'raster' && t.komma != null) {
+        const notiz = (name, label) => h('input', { class: 'uebertrag', name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 1, maxLength: 1, disabled: gesperrt, 'aria-label': label });
+        const zelle = (c, r, i) => (c === ',' ? h('td', { class: 'kommaspalte' }, ',') : typeof c !== 'object' ? h(i === 0 ? 'th' : 'td', i === 0 ? { scope: 'row' } : {}, c)
+          : c.endnull ? h('td', { class: 'endnull', title: 'Endnull' }, '0') : c.notiz ? h('td', {}, notiz(`notiz-${r}-${i}`, 'Endnull, wird nicht bewertet'))
+          : h('td', {}, ziffernfeld(`luecke-${c.luecke}`, letzte?.[c.luecke])));
+        const ergebnis = t.zeilen.at(-1);
+        const uebertrag = h('tr', { class: 'rz-uebertrag' }, ergebnis.map((c, i) => h(i === 0 ? 'th' : 'td', i === 0 ? { scope: 'row', class: 'klein' } : {}, i === 0 ? 'Übertrag' : c === ',' || i === ergebnis.length - 1 ? null : notiz(`uebertrag-${i}`, 'Übertrag, wird nicht bewertet'))));
+        const zeilen = t.zeilen.map((zeile, r) => h('tr', { class: r === t.zeilen.length - 1 ? 'rz-ergebnis' : r === t.zeilen.length - 2 ? 'rz-letzte' : null }, zeile.map((c, i) => zelle(c, r, i))));
+        zeilen.splice(zeilen.length - 1, 0, uebertrag);
+        return h('div', { class: 'bildrahmen' }, h('table', { class: 'aufgabentabelle raster malraster kommaraster' },
+          h('thead', {}, h('tr', {}, t.kopf.map((k) => h('th', { scope: 'col', class: k === ',' ? 'kommaspalte' : null }, k)))), h('tbody', {}, zeilen)),
+          !gesperrt && h('p', { class: 'klein rasterhinweis' }, t.zeilen.flat().some((c) => c?.notiz) ? 'Ergänze in den kleinen Feldern die Endnullen. Auch Überträge kannst du dort notieren. Sie werden nicht bewertet.' : 'In die kleinen Felder kannst du Überträge schreiben. Sie werden nicht bewertet.'));
       }
       // Stellenwerttafel (Kapitel 2): ein Feld je Ziffer, bei großen Zahlen mit den Dreierblöcken als zweiter Kopfzeile.
       if (t.art === 'stellentafel' || t.art === 'einheitentafel') {
@@ -1218,6 +1235,9 @@ function loesungstext(auf) {
     case 'schaetzen': return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.bereich[0])} bis ${gliedere(auf.bereich[1])})`;
     case 'diagramm': return auf.teile.length === 1 ? zahl(auf.teile[0]) : auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
     case 'tabelle': if (auf.tabelle.art === 'stellentafel') return 'siehe Tafel';
+      // Klasse 6, Kapitel 5 (ADR 0048): Rechenraster mit Komma nennen die ganze Rechnung.
+      if (auf.tabelle.art === 'raster' && auf.tabelle.komma != null) { const r = auf.tabelle.rechnung; return `${r.zahlen.join(` ${r.zeichen} `)} = ${r.ergebnis}`; }
+      if (auf.tabelle.art === 'raster' && auf.tabelle.ablesen) { const r = auf.tabelle.rechnung; return `${r.zahlen[0]} · ${r.zahlen[1]} = ${r.ergebnis}, also ${auf.tabelle.ablesen.text} ${auf.luecken[auf.tabelle.ablesen.luecke].loesung}`; }
       if (auf.tabelle.art === 'einheitentafel') return auf.tabelle.ablesen ? `${auf.tabelle.ablesen.text} ${gliedere(auf.luecken[auf.tabelle.ablesen.luecke].loesung)} ${auf.tabelle.ablesen.einheit} (siehe Tafel)` : 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => gliedere(auf.luecken[c.luecke].loesung)).join(', ')}`;
     case 'auswahl': return auf.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
     case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung));
@@ -1266,6 +1286,8 @@ function urteilZeile(e, auf, nachsatz) {
 // Klasse 6, Kapitel 4 (ADR 0047): Beim Runden wird keine Endnull verlangt (4 ist so richtig wie 4,0).
 // Steht in der Lösung eine Endnull, sagt ein Satz, wozu sie da ist.
 export function endnullSatz(auf) {
+  // Klasse 6, Kapitel 5 (ADR 0048): 4,5 € zählt wie 4,50 €. Der Satz zeigt, wie man Geld schreibt.
+  if (auf.lernziel?.startsWith('6.5.') && auf.einheit === '€' && /,\d0$/.test(String(auf.loesung ?? ''))) return h('p', { class: 'endnull', id: 'endnull' }, `Bei Geld schreibt man zwei Stellen nach dem Komma: ${auf.loesung} €.`);
   if (!auf.lernziel?.startsWith('6.4.3')) return null;
   const werte = auf.format === 'zahl' ? [auf.loesung] : auf.format === 'luecken' ? Object.values(auf.luecken ?? {}).map((l) => l.loesung) : [];
   const mit = werte.map(String).find((w) => /,\d*0$/.test(w));

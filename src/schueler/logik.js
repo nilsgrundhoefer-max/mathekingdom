@@ -127,6 +127,8 @@ export function leseZahl(text) {
   return m[1] && m[1] !== '+' ? -Number(m[2]) || 0 : Number(m[2]);
 }
 function pruefeZahl(teil, eingabe) {
+  // Klasse 6, Kapitel 5 (ADR 0048): Ein Überschlag darf mehrere richtige Werte haben (je nachdem, wie gerundet wurde).
+  if (teil.auch?.length) { const e = pruefeZahl({ ...teil, auch: undefined }, eingabe); return e.richtig || teil.auch.some((w) => pruefeZahl({ loesung: w }, eingabe).richtig) ? { richtig: true, fehlvorstellung: null } : e; }
   // Kapitel 9: Eine Lösung als Text („0,25“) ist eine Dezimalzahl.
   if (typeof teil.loesung === 'string') return pruefeDezimal(teil, eingabe);
   let wert = leseZahl(eingabe);
@@ -134,7 +136,10 @@ function pruefeZahl(teil, eingabe) {
   if (Number.isNaN(wert)) { const d = leseDezimal(eingabe); if (d && d.z % d.n === 0) wert = d.z / d.n; }
   // Heftaufgaben mit Geodreieck (Kapitel 5): Ein gemessener Kontrollwert darf um die Toleranz abweichen.
   if (wert === teil.loesung || (teil.toleranz && Math.abs(wert - teil.loesung) <= teil.toleranz)) return { richtig: true, fehlvorstellung: null };
-  const treffer = (teil.typischeFehler ?? []).find((f) => f.wert === wert);
+  // Ein typischer Fehler kann eine Dezimalzahl sein, auch wenn die Lösung eine natürliche Zahl ist (Überschlag statt genau gerechnet).
+  const alsWert = (x) => { if (typeof x === 'number') return x; const d = leseDezimal(String(x ?? '')); return d ? d.z / d.n : NaN; };
+  const ein = Number.isNaN(wert) ? alsWert(eingabe) : wert;
+  const treffer = (teil.typischeFehler ?? []).find((f) => f.wert === wert || alsWert(f.wert) === ein);
   return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
 }
 // Kapitel 6: Ein Teil einer Sachaufgabe kann eine Auswahl sein. Richtig ist sie, wenn genau die richtigen Antworten angekreuzt sind.

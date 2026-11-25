@@ -31,6 +31,11 @@ import { runden6 } from './aufgaben/6-4-3-runden.mjs';
 import { umwandeln6 } from './aufgaben/6-4-5-umwandeln.mjs';
 import { dividieren6 } from './aufgaben/6-4-6-dividieren.mjs';
 import { prozent6 } from './aufgaben/6-4-7-prozent.mjs';
+import { addieren6 } from './aufgaben/6-5-1-addieren.mjs';
+import { stufenzahlen6 } from './aufgaben/6-5-2-stufenzahlen.mjs';
+import { multiplizieren6 } from './aufgaben/6-5-3-multiplizieren.mjs';
+import { dividieren6 as dividieren65 } from './aufgaben/6-5-4-dividieren.mjs';
+import { verbinden6 } from './aufgaben/6-5-5-verbinden.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -63,6 +68,12 @@ const ERZEUGER = [
   [64564564, umwandeln6],
   [64664664, dividieren6],
   [64764764, prozent6],
+  // Kapitel 5 (ADR 0048)
+  [65165165, addieren6],
+  [65265265, stufenzahlen6],
+  [65365365, multiplizieren6],
+  [65465465, dividieren65],
+  [65565565, verbinden6],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

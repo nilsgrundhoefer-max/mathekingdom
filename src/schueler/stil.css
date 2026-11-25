@@ -298,6 +298,13 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom table.malraster.ohne-teile tbody tr.rz-ergebnis td { border-top: none; }
 #mathekingdom .aufgabentabelle.raster thead th:first-child, #mathekingdom .aufgabentabelle.raster tbody th { width: auto; padding: 3px 10px 3px 4px; }
 #mathekingdom .rasterhinweis { margin: 6px 0 0; }
+/* Klasse 6, Kapitel 5 (ADR 0048): Rechenraster mit Kommaspalte. Die Kommaspalte ist schmal, Endnullen sind grau vorgezeichnet. */
+#mathekingdom .kommaraster th.kommaspalte, #mathekingdom .kommaraster td.kommaspalte { width: 1rem; min-width: 1rem; font-weight: 800; color: var(--nacht); }
+#mathekingdom .kommaraster thead th { font-size: .95rem; color: var(--grau); font-weight: 600; height: 1.6rem; }
+#mathekingdom .kommaraster td.endnull { color: #9aa3b5; font-style: italic; }
+#mathekingdom .kommaraster tbody th { font-size: .95rem; font-weight: 600; padding-right: 6px; width: auto; min-width: 2.6rem; text-align: right; }
+#mathekingdom .kommaraster tr.rz-ergebnis td, #mathekingdom .kommaraster tr.rz-ergebnis th { border-top: 3px solid var(--nacht); }
+#mathekingdom .kommaraster input.uebertrag { width: 1.2rem; height: 1.3rem; padding: 0; margin: 0; text-align: center; font: inherit; font-size: .85rem; font-weight: 600; color: var(--grau); border: 1.5px solid #9aa3b5; border-radius: 4px; background: #fffdf6; box-sizing: content-box; }
 #mathekingdom .aufgabentabelle.raster thead th { background: #f1e7cf; border-bottom: 1.5px solid #9aa3b5; }
 #mathekingdom .malraster tr.rz-aufgabe td { border-bottom: 2px solid var(--nacht); }
 #mathekingdom .malraster tr.rz-ergebnis td { border-top: 3px solid var(--nacht); }
@@ -406,6 +413,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom table.division tr.division-minus td { border-bottom: 1.5px solid var(--tinte); }
 #mathekingdom table.division tr.division-minus td:empty { border-bottom: 0; }
 #mathekingdom table.division tr.division-minus td:last-child { border-bottom: 0; }
+#mathekingdom table.division td.kommaspalte { min-width: .6ch; }
+#mathekingdom table.division tr.division-minus td.kommaspalte.durch { border-bottom: 1.5px solid var(--tinte); }
 #mathekingdom .divisionsbild figcaption { margin-top: 8px; font-size: .95rem; color: var(--tinte); }
 #mathekingdom .heftwahl { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .6rem; margin-top: .8rem; }
 #mathekingdom .heftwahl button { font-size: 1.15rem; padding: .8rem; }
@@ -907,3 +916,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .bildkarte:has(input:focus-visible) { outline: 3px solid var(--gold); outline-offset: 2px; }
 #mathekingdom .kartenbild svg { display: block; width: 100%; height: auto; max-height: 150px; }
 @media (max-width: 520px) { #mathekingdom .bildkarten { grid-template-columns: 1fr 1fr; } }
+
+/* Klasse 6, Kapitel 5 (ADR 0048): Verschiebepfeile unter der Stellenwerttafel. */
+#mathekingdom .schiebepfeil { margin-top: 6px; font-size: 1rem; color: var(--tinte); }
+#mathekingdom .schiebepfeil .pfeile { font-size: 1.3rem; font-weight: 800; color: #2f4f7f; letter-spacing: .1em; }

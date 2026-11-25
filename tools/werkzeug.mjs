@@ -376,6 +376,15 @@ const KIND = {
   'prozent-als-zaehler': 'Du rechnest einen Anteil jetzt erst in Hundertstel um.',
   'periode-zu-frueh': 'Du setzt den Strich jetzt nur über die sich wiederholenden Ziffern.',
   'periode-abgebrochen': 'Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode.',
+  // Klasse 6, Kapitel 5 „Rechnen mit Dezimalzahlen“ (ADR 0048)
+  'komma-nicht-untereinander': 'Du schreibst jetzt Komma unter Komma.',
+  'mal-komma-wie-plus': 'Du zählst jetzt die Stellen nach dem Komma in beiden Faktoren zusammen.',
+  'stufe-null-angehaengt': 'Du verschiebst jetzt das Komma, statt eine Null anzuhängen.',
+  'komma-falsche-richtung': 'Du verschiebst das Komma jetzt in die richtige Richtung.',
+  'div-ein-komma-verschoben': 'Du verschiebst das Komma jetzt in beiden Zahlen gleich weit.',
+  'div-komma-vergessen': 'Du setzt jetzt das Komma im Ergebnis an der richtigen Stelle.',
+  'endnull-nicht-ergaenzt': 'Du ergänzt jetzt Endnullen, bevor du abziehst.',
+  'div-macht-kleiner': 'Du weißt jetzt: Teilen durch eine Zahl unter 1 macht größer.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -613,6 +622,15 @@ export const fehlvorstellungen = {
   'runden-abschneiden': fv('Schneidet die Stellen hinter der Rundungsstelle einfach ab, statt zu runden (4,38 auf Zehntel wird 4,3).', 'Schau auf die Ziffer rechts neben der Rundungsstelle. Ist sie 5 oder mehr, rundest du auf.'),
   'prozent-als-zaehler': fv('Nimmt den Zähler des Bruchs als Prozentzahl (3⁄5 als 3 %).', 'Prozent heißt Hundertstel. Erweitere den Bruch zuerst auf den Nenner 100.'),
   'periode-zu-frueh': fv('Setzt den Periodenstrich auch über Ziffern, die sich nicht wiederholen (1⁄6 als 0,1̅6̅ statt 0,16̅).', 'Schau genau: Welche Ziffern wiederholen sich immer wieder? Nur über sie kommt der Strich.'),
+  // Klasse 6, Kapitel 5 „Rechnen mit Dezimalzahlen“ (ADR 0048)
+  'komma-nicht-untereinander': fv('Schreibt die Zahlen beim schriftlichen Addieren und Subtrahieren rechtsbündig statt Komma unter Komma.', 'Schreibe Komma unter Komma. Dann stehen Zehntel unter Zehnteln und Hundertstel unter Hundertsteln.'),
+  'mal-komma-wie-plus': fv('Setzt das Komma beim Multiplizieren wie beim Addieren (0,4 · 0,2 = 0,8).', 'Zähle die Stellen nach dem Komma in beiden Faktoren zusammen. So viele Stellen hat das Ergebnis.'),
+  'stufe-null-angehaengt': fv('Hängt beim Multiplizieren mit 10, 100, 1000 eine Null an, statt das Komma zu verschieben (3,45 · 10 = 3,450).', 'Eine Null am Ende ändert eine Dezimalzahl nicht. Verschiebe das Komma um so viele Stellen, wie die Stufenzahl Nullen hat.'),
+  'komma-falsche-richtung': fv('Verschiebt das Komma in die falsche Richtung (mal 10 nach links, durch 10 nach rechts).', 'Mal 10 macht die Zahl größer: Das Komma wandert nach rechts. Durch 10 macht sie kleiner: Es wandert nach links.'),
+  'div-ein-komma-verschoben': fv('Verschiebt beim Dividieren durch eine Dezimalzahl das Komma nur im Divisor.', 'Verschiebe das Komma im Dividenden und im Divisor um gleich viele Stellen. Dann bleibt das Ergebnis gleich.'),
+  'div-komma-vergessen': fv('Setzt beim Dividieren das Komma im Ergebnis nicht oder an der falschen Stelle.', 'Setze im Ergebnis das Komma, sobald du beim Dividenden das Komma überschreitest. Prüfe mit einem Überschlag.'),
+  'endnull-nicht-ergaenzt': fv('Ergänzt beim Subtrahieren keine Endnullen und schreibt die Ziffern der unteren Zahl einfach ab (5 − 2,35 = 3,35).', 'Ergänze oben Endnullen, bis beide Zahlen gleich viele Stellen nach dem Komma haben. Dann ziehe Stelle für Stelle ab.'),
+  'div-macht-kleiner': fv('Meint, Dividieren macht immer kleiner, auch beim Teilen durch eine Zahl kleiner als 1.', 'Überlege, wie oft der Divisor in die Zahl passt. 0,5 passt in 3 sechsmal hinein.'),
   'periode-abgebrochen': fv('Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66).', 'Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
@@ -803,6 +821,7 @@ export const faerben = (text, figur, ziel, loesung, typischeFehler, hilfen, extr
   typischeFehler: fehlerliste(loesung, typischeFehler ?? []), hilfen, ...mit({ nachweis: [{ art: 'faerben', ziel }], ...extra }) });
 // Dezimalzahl eingeben: Lösung als Text („0,25“). typischeFehler: [[text, fehlvorstellung]] oder fertige Einträge { wert, fehlvorstellung }
 export function dezimal(text, loesung, typischeFehler, hilfen, extra) {
+  if (/^\d+$/.test(String(loesung))) loesung = Number(loesung);
   const gesehen = new Set([loesung]);
   const fehler = (typischeFehler ?? []).map((f) => (Array.isArray(f) ? { wert: f[0], fehlvorstellung: f[1] } : f)).filter((f) => f.wert != null && !gesehen.has(String(f.wert)) && gesehen.add(String(f.wert)));
   return { format: 'zahl', text, loesung, typischeFehler: fehler, hilfen, ...mit(extra) };
@@ -863,6 +882,50 @@ export function raster(text, zeichen, a, b, hilfen, { hilfe = false, extra } = {
     { nachweis: [`${[a, ...unten].join(` ${zeichen} `)} = ${ergebnis}`], ...extra });
   t.tabelle.art = 'raster';
   t.tabelle.rechnung = { zeichen, zahlen: [a, ...unten], ergebnis };
+  return t;
+}
+
+// Klasse 6, Kapitel 5 (ADR 0048): Rechenraster mit Kommaspalte für das schriftliche Addieren und Subtrahieren von Dezimalzahlen.
+// zahlen sind Texte („2,35“). Komma steht unter Komma. Fehlende Stellen nach dem Komma sind Endnullen: auf F grau vorgezeichnet
+// ({ endnull: true }), auf G ein kleines Notizfeld ({ notiz: true }), das nicht bewertet wird. Die Lücken sind die Ziffern des Ergebnisses.
+const SPALTEN_GANZ = ['T', 'H', 'Z', 'E'], SPALTEN_NACH = ['z', 'h', 't'];
+const dezTeile = (t) => { const [g, n = ''] = String(t).split(','); return { g, n }; };
+const dezWert = (t) => { const { g, n } = dezTeile(t); return { z: Number(g + n), k: n.length }; };
+const dezText = (z, k) => { const s = String(z).padStart(k + 1, '0'); return k ? `${s.slice(0, -k)},${s.slice(-k)}` : s; };
+export function rasterKomma(text, zeichen, zahlen, hilfen, { endnullen = 'grau', extra } = {}) {
+  if (zeichen === '−' && zahlen.length !== 2) throw new Error('Raster: Minus nur mit zwei Zahlen');
+  const m = Math.max(...zahlen.map((x) => dezTeile(x).n.length));
+  const auf = zahlen.map((x) => dezWert(x)).map(({ z, k }) => z * 10 ** (m - k));
+  const e = zeichen === '+' ? summe(auf) : auf[0] - auf[1];
+  if (e < 0) throw new Error('Raster: negatives Ergebnis');
+  const ergebnis = dezText(e, m);
+  const n = Math.max(...[...zahlen, ergebnis].map((x) => dezTeile(x).g.length));
+  const kopf = ['', ...SPALTEN_GANZ.slice(-n), ',', ...SPALTEN_NACH.slice(0, m)];
+  const zeile = (x, vorne) => { const { g, n: nach } = dezTeile(x);
+    return [vorne, ...g.padStart(n, ' ').split('').map((c) => (c === ' ' ? '' : c)), ',', ...Array.from({ length: m }, (_, i) => (i < nach.length ? nach[i] : endnullen === 'grau' ? { endnull: true } : endnullen === 'notiz' ? { notiz: true } : ''))]; };
+  const zeilen = zahlen.map((x, i) => zeile(x, i === 0 ? '' : zeichen));
+  const { g: eg, n: en } = dezTeile(ergebnis), werte = {};
+  const ganzFelder = eg.padStart(n, ' ').split('').map((c, i) => { if (c === ' ') return ''; werte[`g${i}`] = Number(c); return L(`g${i}`); });
+  const nachFelder = en.split('').map((c, i) => { werte[`n${i}`] = Number(c); return L(`n${i}`); });
+  zeilen.push(['Ergebnis', ...ganzFelder, ',', ...nachFelder]);
+  const t = tabelle(text, kopf, zeilen, werte, hilfen, { nachweis: [`${zahlen.join(` ${zeichen} `)} = ${ergebnis.replace(/,?0+$/, '') || '0'}`], ...mit(extra) });
+  t.tabelle.zeilen = zeilen;
+  t.tabelle.art = 'raster';
+  t.tabelle.komma = kopf.indexOf(',');
+  t.tabelle.rechnung = { zeichen, zahlen, ergebnis };
+  return t;
+}
+// Klasse 6, Kapitel 5 (ADR 0048): Dezimalzahlen schriftlich multiplizieren. Im Raster wird ohne Komma gerechnet,
+// darunter setzt das Kind das Komma in einem eigenen Feld („2,3 · 1,4 = ▢“). typischeFehler: [[text, fehlvorstellung]] für dieses Feld.
+export function rasterMalKomma(text, a, b, hilfen, { fehler = [], extra } = {}) {
+  const [x, y] = [a, b].map((t) => Number(String(t).replace(',', '')));
+  const kx = dezTeile(a).n.length, ky = dezTeile(b).n.length;
+  const produkt = dezText(x * y, kx + ky).replace(/(,\d*?)0+$/, '$1').replace(/,$/, '');
+  const t = rasterMal(text, x, y, hilfen, { extra });
+  t.nachweis = [...t.nachweis, `${a} · ${b} = ${produkt}`];
+  t.tabelle.ablesen = { text: `${a} · ${b} =`, luecke: 'k' };
+  const gesehen = new Set([produkt]);
+  t.luecken.k = { loesung: /,/.test(produkt) ? produkt : Number(produkt), typischeFehler: fehler.filter(([w]) => w != null && !gesehen.has(String(w)) && gesehen.add(String(w))).map(([wert, fehlvorstellung]) => ({ wert: /^\d+$/.test(String(wert)) ? Number(wert) : wert, fehlvorstellung })) };
   return t;
 }
 
@@ -994,6 +1057,9 @@ export const B = {
   // oben und unten sind Zahlenstrahlen wie B.strahl; der untere zeigt genau den Abschnitt `stelle` bis `stelle + oben.schritt` des oberen.
   lupe: (oben, unten) => ({ art: 'lupe', oben, unten }),
   kommaTafel: (spalten, werte, weitere = null) => ({ art: 'tafel', spalten, werte, komma: spalten.indexOf('E'), ...(weitere ? { weitere } : {}) }),
+  // Klasse 6, Kapitel 5 (ADR 0048): Stellenwerttafel mit Verschiebepfeilen. rechnung ist „· 100“ oder „: 10“.
+  schiebeTafel: (spalten, werte, rechnung) => { const stellen = String(rechnung).match(/0/g).length;
+    return { art: 'tafel', spalten, werte, komma: spalten.indexOf('E'), schieben: { stellen, richtung: rechnung.startsWith('·') ? 'links' : 'rechts', rechnung } }; },
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
 };
@@ -1041,7 +1107,7 @@ export const aufgaben = [];
 const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung, a.faerben, a.teile?.map((t) => t.text)].filter(Boolean));
 // Heftaufgabe (Nils, 2026-11-25, ADR 0047): Eine Aufgabe, die im Heft bearbeitet wird, trägt das Kennzeichen `heftaufgabe`.
 // Das Dashboard zeigt darüber das Heftband. Erkannt wird sie an ihrem Auftrag: „Im Heft: …“ oder „Zeichne … in dein Heft“.
-export const HEFTAUFTRAG = /(?:^|\n|[.:!] )Im Heft:|\b(?:Zeichne|Konstruiere|Rechne|Dividiere)\b[^.?!\n]*?\b(?:in dein Heft|ins Heft|im Heft)\b/;
+export const HEFTAUFTRAG = /(?:^|\n|[.:!] )Im Heft:|\b(?:Zeichne|Konstruiere|Rechne|Dividiere|Multipliziere|Addiere|Subtrahiere)\b[^.?!\n]*?\b(?:in dein Heft|ins Heft|im Heft)\b/;
 function nachbearbeiten(a, niveau) {
   if (HEFTAUFTRAG.test(a.text ?? '')) a.heftaufgabe = true;
   if (a.optionen) {

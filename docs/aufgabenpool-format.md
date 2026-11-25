@@ -227,3 +227,16 @@ Zwei Sprachregeln kommen hinzu: Auf F und G steht der Operator am Satzanfang (�
 | `gekuerzt: true` / `genau: true` | Bei Bruchlösungen aus 6.4 Pflicht: vollständig gekürzt oder genau dieser Bruch (etwa „mit dem Nenner 10000“). |
 
 Benannte Arten im `nachweis`: `runden` (`zahl`, `stelle` als Stellenzahl nach dem Komma, `ergebnis`, optional `einheit` und `behauptet` für ein Urteil; gerundet wird ab 5 auf), `rundenwahl` (`stelle`, `ergebnis`) und `abbrechend` (`periodisch` optional; der gekürzte Nenner hat nur die Faktoren 2 und 5). Die Einheit `%` zählt als Hundertstel. Endnullen sind nie verlangt: `zahl`-Lösungen vergleichen den Wert.
+
+## Klasse 6, Kapitel 5 „Rechnen mit Dezimalzahlen“ (ADR 0048)
+
+| Feld | Inhalt |
+|---|---|
+| `tabelle.art: "raster"` mit `komma` | Rechenraster mit Kommaspalte zum Addieren und Subtrahieren. `komma` ist der Index der Spalte mit `,` im Kopf. Zellen: Ziffer, `{ endnull: true }` (grau vorgezeichnet, F), `{ notiz: true }` (Notizfeld für eine Endnull, G, nicht bewertet), im Ergebnis Lücken und das Komma. `rechnung: { zeichen, zahlen, ergebnis }` mit Dezimalzahlen als Text. |
+| `tabelle.ablesen: { text, luecke }` | Beim Multiplizieren im Raster: Das Raster rechnet ohne Komma, darunter steht `text` („2,3 · 1,4 =“) mit der Lücke `luecke` für das Ergebnis mit Komma. |
+| `bild.schieben: { stellen, richtung, rechnung }` | Verschiebepfeile an der Stellenwerttafel. `rechnung` wie „· 100“ oder „: 10“ steht so auch im Text; `richtung` ist die Richtung, in die die Ziffern rücken (links bei mal). |
+| `luecken.<name>.auch` | Weitere richtige Werte, beim Überschlag aus anders gerundeten Zahlen. Jeder steht als Ergebnis im Nachweis. |
+| `division: { dividend, divisor, vorher }` | Der Dividend darf eine Dezimalzahl als Text sein („9,6“). `vorher` ist die Aufgabe vor dem Verschieben des Kommas („0,96 : 0,4“), sie steht so im Text. |
+| Hunderterfeld mit `hell` | Zehntel mal Zehntel: hell die Spalten des ersten Faktors, kräftig der Teil davon. Gezählt wird spaltenweise (Feld `i` liegt in Spalte `i / 10`, Zeile `i % 10`). |
+
+Bilder `geld` sind in 6.5 erlaubt. Typische Fehler einer Zahlenlücke dürfen Dezimalzahlen sein, auch wenn die Lösung eine natürliche Zahl ist (Überschlag statt genau gerechnet). Bei Geld zählt 4,5 € wie 4,50 €; nach der Antwort steht „Bei Geld schreibt man zwei Stellen nach dem Komma.“

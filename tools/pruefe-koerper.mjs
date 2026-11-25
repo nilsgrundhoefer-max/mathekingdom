@@ -536,7 +536,7 @@ export function koerperBildMaengel(b) {
 // ---------- Sprache ----------
 // Operator am Satzanfang (Abgleich mit der Niveauübersicht, ab Kapitel 3 eine Prüfregel): keine Frage mit Fragezeichen im Aufgabentext.
 // Zitate in „…“ dürfen Fragen sein. Die Ansicht von der Seite heißt immer „von links“.
-const OPERATOR = /^(Kreuze|Gib|Zähle|Färbe|Zeichne|Setze|Beurteile|Prüfe|Begründe|Ergänze|Bestimme|Berechne|Ordne|Tippe|Wähle|Markiere|Verbinde|Nenne|Schreibe|Trage|Entscheide|Vergleiche|Finde|Miss|Lies|Beschreibe|Erkläre|Notiere|Zeige|Runde|Wandle|Rechne|Dividiere|Untersuche|Erweitere|Kürze|Ermittle|Stelle)\b/;
+const OPERATOR = /^(Kreuze|Gib|Zähle|Färbe|Zeichne|Setze|Beurteile|Prüfe|Begründe|Ergänze|Bestimme|Berechne|Ordne|Tippe|Wähle|Markiere|Verbinde|Nenne|Schreibe|Trage|Entscheide|Vergleiche|Finde|Miss|Lies|Beschreibe|Erkläre|Notiere|Zeige|Runde|Wandle|Rechne|Dividiere|Untersuche|Erweitere|Kürze|Ermittle|Stelle|Addiere|Subtrahiere|Multipliziere|Überschlage|Verschiebe)\b/;
 // Auch in Kapitel 4 (ADR 0047): Jeder Auftrag beginnt mit einem Operator, Fragen mit Fragezeichen gibt es nicht.
 export const operatorMaengel = (a) => koerperSprachMaengel(a, true);
 export function koerperSprachMaengel(a, nurOperator = false) {

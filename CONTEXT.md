@@ -126,6 +126,14 @@ _Avoid_: überflüssige Null
 Zwei Zahlenstrahlen übereinander: Der untere vergrößert einen Schritt des oberen zehnfach, damit Hundertstel und Tausendstel ablesbar werden.
 _Avoid_: Zoom, Ausschnittvergrößerung
 
+**Stufenzahl**:
+Eine der Zahlen 10, 100, 1000 (ab M auch 0,1 und 0,01). Mal und durch eine Stufenzahl rechnet das Kind, indem es das Komma verschiebt; die Stellenwerttafel zeigt dazu **Verschiebepfeile**, die anzeigen, wie weit jede Ziffer rückt.
+_Avoid_: Zehnerzahl, Nullenzahl
+
+**Überschlag**:
+Ein grobes Ergebnis mit gerundeten Zahlen, um das genaue Ergebnis zu prüfen, vor allem die Stelle des Kommas. Gerundet wird jede Zahl auf Ganze oder auf ihre erste Stelle; jedes so entstandene Ergebnis zählt als richtig.
+_Avoid_: Schätzung (die ist beim Zählen und bei Größen gemeint), Näherung
+
 **Stützgröße**:
 Eine Größe aus dem Alltag, die das Kind auswendig kennt und beim Schätzen als Vergleich nimmt, zum Beispiel eine Tür mit 2 m oder eine Tafel Schokolade mit 100 g.
 _Avoid_: Richtwert, Faustgröße
@@ -166,7 +174,7 @@ Die Ordnung der Vierecke nach ihren Eigenschaften, in der ein Name den anderen e
 _Avoid_: Vierecksarten, Stammbaum
 
 **Rechenraster**:
-Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft. Beim Multiplizieren steht über dem Ergebnis eine Zeile kleiner Übertragsfelder; sie sind Notizhilfe und werden nicht bewertet.
+Ein Aufgabenformat für das schriftliche Rechnen: ein Feld je Ziffer in Stellenwertspalten, beim Multiplizieren mit einer Zeile je Teilprodukt, so wie im Heft. Beim Multiplizieren steht über dem Ergebnis eine Zeile kleiner Übertragsfelder; sie sind Notizhilfe und werden nicht bewertet. Ab Klasse 6 Kapitel 5 hat das Raster beim Addieren und Subtrahieren eine **Kommaspalte** (Komma unter Komma), auch dort mit Übertragsfeldern; fehlende Stellen sind **Endnullen**, auf F grau vorgezeichnet, auf G trägt das Kind sie in Notizfelder ein. Beim Multiplizieren von Dezimalzahlen rechnet das Raster ohne Komma, danach setzt das Kind das Komma im **Kommafeld** unter dem Raster.
 _Avoid_: Kästchenraster
 
 **Versuch**:

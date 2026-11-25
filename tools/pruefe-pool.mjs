@@ -35,7 +35,7 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'groesse', 'einheiten', 'tippBild', 'winkelfeld',
   'faerben', 'genau', 'gemischt', 'gekuerzt', 'form', 'heftaufgabe', 'division', 'nenner'];
 // Kapitel, in denen mit Brüchen gerechnet wird: Klasse 5 Kapitel 9 und Klasse 6 Kapitel 1 (ADR 0037).
-const BRUCHKAPITEL = ['5.9', '6.1', '6.2', '6.4'];
+const BRUCHKAPITEL = ['5.9', '6.1', '6.2', '6.4', '6.5'];
 const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`));
 // Kapitel 6 (ADR 0033): Dort wird mit Größen gerechnet. Solange eine Aufgabe aus Kapitel 6 geprüft wird, lesen die Gleichungsprüfungen auch Einheiten.
 let groessenModus = false;
@@ -207,7 +207,7 @@ function pruefeSprache(a) {
   if (istRationalLernziel(a.lernziel)) for (const x of rationalSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istDreieckLernziel(a.lernziel)) for (const x of dreieckSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istKoerperLernziel(a.lernziel)) for (const x of koerperSprachMaengel(a)) melde(a.id, x);
-  if (a.lernziel.startsWith('6.4.')) for (const x of operatorMaengel(a)) melde(a.id, x);
+  if (/^6\.[45]\./.test(a.lernziel)) for (const x of operatorMaengel(a)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);

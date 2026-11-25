@@ -1113,6 +1113,46 @@
    "hinweis": "Schau genau: Welche Ziffern wiederholen sich immer wieder? Nur über sie kommt der Strich.",
    "kind": "Du setzt den Strich jetzt nur über die sich wiederholenden Ziffern."
   },
+  "komma-nicht-untereinander": {
+   "beschreibung": "Schreibt die Zahlen beim schriftlichen Addieren und Subtrahieren rechtsbündig statt Komma unter Komma.",
+   "hinweis": "Schreibe Komma unter Komma. Dann stehen Zehntel unter Zehnteln und Hundertstel unter Hundertsteln.",
+   "kind": "Du schreibst jetzt Komma unter Komma."
+  },
+  "mal-komma-wie-plus": {
+   "beschreibung": "Setzt das Komma beim Multiplizieren wie beim Addieren (0,4 · 0,2 = 0,8).",
+   "hinweis": "Zähle die Stellen nach dem Komma in beiden Faktoren zusammen. So viele Stellen hat das Ergebnis.",
+   "kind": "Du zählst jetzt die Stellen nach dem Komma in beiden Faktoren zusammen."
+  },
+  "stufe-null-angehaengt": {
+   "beschreibung": "Hängt beim Multiplizieren mit 10, 100, 1000 eine Null an, statt das Komma zu verschieben (3,45 · 10 = 3,450).",
+   "hinweis": "Eine Null am Ende ändert eine Dezimalzahl nicht. Verschiebe das Komma um so viele Stellen, wie die Stufenzahl Nullen hat.",
+   "kind": "Du verschiebst jetzt das Komma, statt eine Null anzuhängen."
+  },
+  "komma-falsche-richtung": {
+   "beschreibung": "Verschiebt das Komma in die falsche Richtung (mal 10 nach links, durch 10 nach rechts).",
+   "hinweis": "Mal 10 macht die Zahl größer: Das Komma wandert nach rechts. Durch 10 macht sie kleiner: Es wandert nach links.",
+   "kind": "Du verschiebst das Komma jetzt in die richtige Richtung."
+  },
+  "div-ein-komma-verschoben": {
+   "beschreibung": "Verschiebt beim Dividieren durch eine Dezimalzahl das Komma nur im Divisor.",
+   "hinweis": "Verschiebe das Komma im Dividenden und im Divisor um gleich viele Stellen. Dann bleibt das Ergebnis gleich.",
+   "kind": "Du verschiebst das Komma jetzt in beiden Zahlen gleich weit."
+  },
+  "div-komma-vergessen": {
+   "beschreibung": "Setzt beim Dividieren das Komma im Ergebnis nicht oder an der falschen Stelle.",
+   "hinweis": "Setze im Ergebnis das Komma, sobald du beim Dividenden das Komma überschreitest. Prüfe mit einem Überschlag.",
+   "kind": "Du setzt jetzt das Komma im Ergebnis an der richtigen Stelle."
+  },
+  "endnull-nicht-ergaenzt": {
+   "beschreibung": "Ergänzt beim Subtrahieren keine Endnullen und schreibt die Ziffern der unteren Zahl einfach ab (5 − 2,35 = 3,35).",
+   "hinweis": "Ergänze oben Endnullen, bis beide Zahlen gleich viele Stellen nach dem Komma haben. Dann ziehe Stelle für Stelle ab.",
+   "kind": "Du ergänzt jetzt Endnullen, bevor du abziehst."
+  },
+  "div-macht-kleiner": {
+   "beschreibung": "Meint, Dividieren macht immer kleiner, auch beim Teilen durch eine Zahl kleiner als 1.",
+   "hinweis": "Überlege, wie oft der Divisor in die Zahl passt. 0,5 passt in 3 sechsmal hinein.",
+   "kind": "Du weißt jetzt: Teilen durch eine Zahl unter 1 macht größer."
+  },
   "periode-abgebrochen": {
    "beschreibung": "Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66).",
    "hinweis": "Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich.",
