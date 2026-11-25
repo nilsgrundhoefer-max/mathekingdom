@@ -43,7 +43,7 @@ function q1() {
       return zahl(Z('Das ist ein Quader.', 'Gib an, wie viele Kanten er hat.'), 12, [[9, 'verdeckt-nicht-gezaehlt'], [8, 'ecken-kanten-verwechselt'], [6, 'ecken-kanten-verwechselt']], hZaehlen('G', 'Kanten'),
         { bild: quader(a, b, c), nachweis: [KZ('quader', 'kanten', 12, { bild: true })] }); },
     () => { const [a, b, c] = dreiMasse();
-      return luecken(Z('Ein Quader hat {{e}} Ecken.', 'Er hat {{k}} Kanten und {{f}} Flächen.'), { e: lk(8, [[7, 'verdeckt-nicht-gezaehlt'], [12, 'ecken-kanten-verwechselt']]), k: lk(12, [[9, 'verdeckt-nicht-gezaehlt'], [8, 'ecken-kanten-verwechselt']]), f: lk(6, [[3, 'verdeckt-nicht-gezaehlt']]) },
+      return luecken(Z('Ergänze die Zahlen.', 'Ein Quader hat {{e}} Ecken.', 'Er hat {{k}} Kanten und {{f}} Flächen.'), { e: lk(8, [[7, 'verdeckt-nicht-gezaehlt'], [12, 'ecken-kanten-verwechselt']]), k: lk(12, [[9, 'verdeckt-nicht-gezaehlt'], [8, 'ecken-kanten-verwechselt']]), f: lk(6, [[3, 'verdeckt-nicht-gezaehlt']]) },
         H('G', 'Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten.', 'Oben 4 Ecken und unten 4 Ecken.', 'Zähle auch, was hinten verdeckt ist.'),
         { bild: quader(a, b, c), nachweis: [KZ('quader', 'ecken', 8, { luecke: 'e' }), KZ('quader', 'kanten', 12, { luecke: 'k' }), KZ('quader', 'flaechen', 6, { luecke: 'f' })] }); },
     () => { const [a, b, c] = dreiMasse(), l = wahl([a, b, c]);
@@ -77,7 +77,7 @@ function q1() {
       return auswahl(`Kreuze die Fläche an, die der Fläche ${f} gegenüberliegt.`, [opt(FLAECHEN[f], true), ...andere.map((x) => opt(x, false, 'gegenueber-benachbart'))],
         H('M', 'Gegenüberliegende Flächen haben keine Ecke gemeinsam.', `${f} und ${FLAECHEN[f]} haben keinen gemeinsamen Buchstaben.`), { bild: quader(a, b, c, { namen: true, markiert: { flaechen: [f.split('')] } }), nachweis: [QF(f, 'gegenueber')] }); },
     () => { const a = zz(3, 9), s = 12 * a;
-      return luecken('Ein Würfel hat {{k}} Kanten. Jede ist ' + a + ' cm lang. Zusammen sind die Kanten {{s}} cm lang.', { k: lk(12, [[8, 'ecken-kanten-verwechselt'], [6, 'ecken-kanten-verwechselt']]), s: lk(s, [[8 * a, 'ecken-kanten-verwechselt'], [6 * a, 'ecken-kanten-verwechselt'], [4 * a, 'kanten-teilweise']]) },
+      return luecken('Ergänze die Zahlen. Ein Würfel hat {{k}} Kanten. Jede ist ' + a + ' cm lang. Zusammen sind die Kanten {{s}} cm lang.', { k: lk(12, [[8, 'ecken-kanten-verwechselt'], [6, 'ecken-kanten-verwechselt']]), s: lk(s, [[8 * a, 'ecken-kanten-verwechselt'], [6 * a, 'ecken-kanten-verwechselt'], [4 * a, 'kanten-teilweise']]) },
         H('M', 'Zähle zuerst die Kanten. Alle sind gleich lang.', `12 · ${a} = ${s}`), { nachweis: [KZ('wuerfel', 'kanten', 12, { luecke: 'k' }), `12 · ${a} = ${s}`] }); },
     () => { const a = zz(3, 8), d = 12 * a + zz(4, 20), k = kind(), r = d - 12 * a;
       return zahl(`${k} hat ${d} cm Draht und baut daraus das Kantenmodell eines Würfels mit ${a} cm Kantenlänge. Gib an, wie viel Draht übrig bleibt.`, r,

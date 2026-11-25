@@ -997,6 +997,96 @@
    "beschreibung": "Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt.",
    "hinweis": "Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst?",
    "kind": "Du ordnest die Schritte einer Konstruktion jetzt richtig."
+  },
+  "ecken-kanten-verwechselt": {
+   "beschreibung": "Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken).",
+   "hinweis": "Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil.",
+   "kind": "Du hältst Ecken, Kanten und Flächen jetzt auseinander."
+  },
+  "verdeckt-nicht-gezaehlt": {
+   "beschreibung": "Zählt nur die Ecken, Kanten oder Flächen, die im Bild sichtbar sind.",
+   "hinweis": "Denk an die Rückseite: Was ist hinten verdeckt? Die gestrichelten Linien helfen dir.",
+   "kind": "Du zählst jetzt auch, was hinten verdeckt ist."
+  },
+  "verdeckte-kante-durchgezogen": {
+   "beschreibung": "Zeichnet verdeckte Kanten im Schrägbild durchgezogen oder lässt sie weg.",
+   "hinweis": "Kanten, die man von vorne nicht sieht, werden gestrichelt gezeichnet. Sie gehören trotzdem zum Bild.",
+   "kind": "Du zeichnest verdeckte Kanten jetzt gestrichelt."
+  },
+  "tiefe-nicht-verkuerzt": {
+   "beschreibung": "Zeichnet die Kanten nach hinten im Schrägbild nicht verkürzt oder nicht im Winkel von 45°.",
+   "hinweis": "1 cm nach hinten ist eine Kästchendiagonale: ein Kästchen nach rechts und eins nach oben.",
+   "kind": "Du zeichnest Kanten nach hinten jetzt schräg und verkürzt."
+  },
+  "netz-nur-gezaehlt": {
+   "beschreibung": "Prüft beim Netz nur, ob die Zahl der Flächen stimmt, nicht, wie sie liegen.",
+   "hinweis": "Falte das Netz in Gedanken. Liegen zwei Flächen aufeinander, fehlt eine andere.",
+   "kind": "Du prüfst jetzt beim Netz auch die Lage der Flächen."
+  },
+  "riss-verwechselt": {
+   "beschreibung": "Verwechselt die Ansichten: Grundriss (von oben), Aufriss (von vorne) und Seitenriss (von links).",
+   "hinweis": "Stell dir vor, du schaust genau von oben, von vorne oder von links auf den Körper.",
+   "kind": "Du hältst die Ansichten von vorne, oben und der Seite jetzt auseinander."
+  },
+  "riss-gespiegelt": {
+   "beschreibung": "Zeichnet eine Ansicht spiegelverkehrt oder von der falschen Seite (zum Beispiel von hinten statt von vorne).",
+   "hinweis": "Was links vorne steht, steht in der Ansicht von vorne auch links.",
+   "kind": "Du zeichnest die Ansicht jetzt nicht mehr spiegelverkehrt."
+  },
+  "wuerfel-verdeckt": {
+   "beschreibung": "Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter.",
+   "hinweis": "Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter.",
+   "kind": "Du zählst jetzt auch verdeckte Würfel mit."
+  },
+  "netz-ecken-gezaehlt": {
+   "beschreibung": "Zählt Ecken oder Kanten im Netz statt am gefalteten Körper.",
+   "hinweis": "Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers.",
+   "kind": "Du zählst Ecken jetzt am fertigen Körper und nicht im Netz."
+  },
+  "prisma-pyramide": {
+   "beschreibung": "Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze).",
+   "hinweis": "Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma.",
+   "kind": "Du hältst Prisma und Pyramide jetzt auseinander."
+  },
+  "name-nach-seitenflaeche": {
+   "beschreibung": "Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.",
+   "hinweis": "Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma.",
+   "kind": "Du benennst den Körper jetzt nach seiner Grundfläche."
+  },
+  "gegenueber-benachbart": {
+   "beschreibung": "Hält im Würfelnetz benachbarte Flächen für gegenüberliegend.",
+   "hinweis": "Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt.",
+   "kind": "Du findest gegenüberliegende Flächen jetzt sicher."
+  },
+  "runde-koerper-zaehlen": {
+   "beschreibung": "Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante.",
+   "hinweis": "Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen.",
+   "kind": "Du zählst Flächen und Kanten an runden Körpern jetzt richtig."
+  },
+  "koerper-verwechselt": {
+   "beschreibung": "Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma).",
+   "hinweis": "Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt?",
+   "kind": "Du erkennst die Körper jetzt an ihren Flächen."
+  },
+  "wuerfel-kein-quader": {
+   "beschreibung": "Meint, ein Würfel sei kein Quader.",
+   "hinweis": "Ein Quader hat sechs Rechtecke als Flächen. Ein Quadrat ist ein besonderes Rechteck. Also ist jeder Würfel ein Quader.",
+   "kind": "Du weißt jetzt: Jeder Würfel ist auch ein Quader."
+  },
+  "kanten-teilweise": {
+   "beschreibung": "Nimmt bei der Kantenlänge eines Quaders nur die sichtbaren oder nur drei Kanten statt aller zwölf.",
+   "hinweis": "Ein Quader hat 12 Kanten, je 4 gleich lange. Rechne jede Länge viermal.",
+   "kind": "Du nimmst jetzt alle 12 Kanten mit."
+  },
+  "kante-falsch-abgelesen": {
+   "beschreibung": "Liest die Länge an einer Kante ab, die nicht parallel zur gesuchten Kante ist.",
+   "hinweis": "Gleich lange Kanten eines Quaders sind parallel. Suche die beschriftete Kante, die in dieselbe Richtung zeigt.",
+   "kind": "Du findest jetzt die gleich lange Kante."
+  },
+  "kippen-richtung": {
+   "beschreibung": "Kippt einen Körper in Gedanken in die falsche Richtung.",
+   "hinweis": "Lege einen Gegenstand vor dich und kippe ihn wirklich. Welche Fläche liegt danach unten?",
+   "kind": "Du kippst den Körper jetzt in die richtige Richtung."
   }
  },
  "kompetenzen": {

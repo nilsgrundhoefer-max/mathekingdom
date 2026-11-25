@@ -70,11 +70,12 @@ export function sichtbarkeit(k, q = TIEFE) {
 
 // ---------- Zeichnen ----------
 const RAND = 30, KMAX = 64, BREITE = 300, HOEHE = 210;
-function rahmen(punkte2, { breite = BREITE, hoehe = HOEHE, kmax = KMAX, rand = RAND } = {}) {
+// unten: zusätzlicher Platz unter dem Körper (für den Pfeil „vorne“).
+function rahmen(punkte2, { breite = BREITE, hoehe = HOEHE, kmax = KMAX, rand = RAND, unten = 0 } = {}) {
   const xs = punkte2.map((p) => p[0]), ys = punkte2.map((p) => p[1]);
   const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
   const k = Math.min(kmax, breite / Math.max(x1 - x0, 1e-6), hoehe / Math.max(y1 - y0, 1e-6));
-  const B = Math.max(2 * rand + (x1 - x0) * k, 160), H = 2 * rand + (y1 - y0) * k, dx = (B - 2 * rand - (x1 - x0) * k) / 2;
+  const B = Math.max(2 * rand + (x1 - x0) * k, 160), H = 2 * rand + (y1 - y0) * k + unten, dx = (B - 2 * rand - (x1 - x0) * k) / 2;
   return { k, B: Z(B), H: Z(H), X: (x) => Z(rand + dx + (x - x0) * k), Y: (y) => Z(rand + (y1 - y) * k) };
 }
 const pfad = (m, liste) => `M${liste.map((p) => `${m.X(p[0])} ${m.Y(p[1])}`).join(' L')} Z`;
@@ -169,7 +170,7 @@ function vornePfeil(m, k, P) {
 export function wuerfelbauBild(b, { klein = false } = {}) {
   const q = TIEFE, P = (p) => [p[0] + q * p[1], p[2] + q * p[1]];
   const ecken = b.wuerfel.flatMap(([x, y, z]) => [[x, y, z], [x + 1, y + 1, z + 1], [x, y + 1, z + 1], [x + 1, y, z]]).map(P);
-  const m = rahmen(ecken, klein ? { breite: 150, hoehe: 120, kmax: 30, rand: 14 } : { kmax: 40 });
+  const m = rahmen(ecken, klein ? { breite: 150, hoehe: 120, kmax: 30, rand: 14, unten: b.vorne ? 18 : 0 } : { kmax: 40 });
   const svg = svgVon(m, 'form-wuerfelbau', beschreibung(b));
   const sortiert = [...b.wuerfel].sort((u, v) => v[1] - u[1] || u[2] - v[2] || u[0] - v[0]);
   for (const [x, y, z] of sortiert) {

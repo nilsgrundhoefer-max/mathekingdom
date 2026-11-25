@@ -31488,7 +31488,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das ist ein Würfel.\nDie Ecken sind rot.\nZähle die Ecken.",
@@ -31536,7 +31536,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das ist ein Quader.\nZähle seine Flächen.\nDenk auch an die Flächen hinten.",
@@ -31583,7 +31583,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das ist ein Würfel.\nZähle seine Kanten.\nDie gestrichelten Kanten zählen mit.",
@@ -31630,7 +31630,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Schau dir den Körper an.\nKreuze seinen Namen an.",
@@ -31677,7 +31677,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ali bastelt einen Würfel aus Pappe.\nJede Fläche ist ein Quadrat.\nGib an, wie viele Quadrate ${k} braucht.",
@@ -31724,7 +31724,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Eine Fläche ist gelb.\nKreuze ihre Form an.",
@@ -31780,7 +31780,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das ist ein Quader.\nGib an, wie viele Kanten er hat.",
@@ -31827,10 +31827,10 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "luecken",
-   "text": "Ein Quader hat {{e}} Ecken.\nEr hat {{k}} Kanten und {{f}} Flächen.",
+   "text": "Ergänze die Zahlen.\nEin Quader hat {{e}} Ecken.\nEr hat {{k}} Kanten und {{f}} Flächen.",
    "luecken": {
     "e": {
      "loesung": 8,
@@ -31910,7 +31910,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Der Quader ist beschriftet.\nGib an, wie viele Kanten 5 cm lang sind.",
@@ -31972,7 +31972,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze das Bild an.\nEs soll einen Würfel zeigen.",
@@ -32032,7 +32032,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Die Kante AB ist rot.\nEine Kante ist parallel zu AB.\nKreuze sie an.",
@@ -32088,7 +32088,8 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Tom sagt: „Ein Würfel hat 12 gleich lange Kanten.“\nPrüfe die Aussage.\nKreuze die richtige Antwort an.",
@@ -32133,7 +32134,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Quader hat die Kanten a = 4 cm, b = 3 cm und c = 2 cm. Gib an, wie viele Kanten 4 cm lang sind.",
@@ -32175,7 +32176,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Paul baut aus Draht das Kantenmodell eines Quaders mit a = 5 cm, b = 4 cm und c = 2 cm. Gib an, wie viel Zentimeter Draht Paul braucht.",
@@ -32215,7 +32216,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze die Fläche an, die der Fläche ABFE gegenüberliegt.",
@@ -32277,10 +32278,10 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "luecken",
-   "text": "Ein Würfel hat {{k}} Kanten. Jede ist 5 cm lang. Zusammen sind die Kanten {{s}} cm lang.",
+   "text": "Ergänze die Zahlen. Ein Würfel hat {{k}} Kanten. Jede ist 5 cm lang. Zusammen sind die Kanten {{s}} cm lang.",
    "luecken": {
     "k": {
      "loesung": 12,
@@ -32334,7 +32335,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Finn hat 92 cm Draht und baut daraus das Kantenmodell eines Würfels mit 6 cm Kantenlänge. Gib an, wie viel Draht übrig bleibt.",
@@ -32376,7 +32377,7 @@
    "afb": 3,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Emre behauptet: „Ein Quader kann genau 4 gleich lange Kanten haben.“ Beurteile die Aussage.",
@@ -32424,7 +32425,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Die Kanten eines Würfels sind zusammen 60 cm lang. Gib die Kantenlänge an.",
@@ -32459,7 +32460,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Die Kanten eines Quaders sind zusammen 76 cm lang. Zwei Kanten sind a = 6 cm und b = 5 cm lang. Gib die Länge der Kante c an.",
@@ -32489,7 +32490,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zwei gleich große Würfel werden mit einer Fläche aneinandergeklebt. Es entsteht ein Quader. Gib an, wie viele Flächen dieser Quader hat.",
@@ -32530,7 +32531,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Tom hat 40 Strohhalme. Für das Kantenmodell eines Würfels braucht Tom für jede Kante einen Strohhalm. Gib an, wie viele Würfelmodelle Tom vollständig bauen kann.",
@@ -32568,7 +32569,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Eine Raumdiagonale verbindet zwei Ecken eines Quaders quer durch den Körper. Gib an, wie viele Raumdiagonalen ein Quader hat.",
@@ -32614,7 +32615,8 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Lena sagt: „Verlängere ich jede Kante um 2 cm, wird die Kantensumme um 24 cm länger.“ Beurteile die Aussage.",
@@ -38168,7 +38170,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Quader.\nZähle die gestrichelten Kanten.",
@@ -38214,7 +38216,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Die Kante EF ist rot.\nKreuze an.",
@@ -38264,7 +38266,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Eine Ecke liegt hinten verdeckt.\nAn ihr treffen sich drei gestrichelte Kanten.\nKreuze sie an.",
@@ -38310,7 +38312,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Am Quader stehen die Längen.\nLies die Länge der Kante BC ab.",
@@ -38370,7 +38372,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Manche Flächen des Quaders sieht man.\nZähle sie.",
@@ -38416,7 +38418,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Bild ist richtig gezeichnet.\nDie Kanten hinten sind dort gestrichelt.\nKreuze es an.",
@@ -38477,7 +38479,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild zeigt einen Quader.\nGib an, wie viele Kanten verdeckt sind.",
@@ -38524,7 +38526,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Schau dir die Kante CD an.\nKreuze an.",
@@ -38566,7 +38568,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Am Quader stehen drei Längen.\nGib an, wie lang die Kante BF ist.",
@@ -38626,7 +38628,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Im Schrägbild ist eine Ecke verdeckt.\nKreuze sie an.",
@@ -38672,7 +38674,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Nur ein Schrägbild ist richtig.\nKreuze es an.",
@@ -38734,7 +38736,8 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Sara sagt: „Im Schrägbild sieht man 3 Flächen des Quaders.“\nPrüfe die Aussage.",
@@ -38786,7 +38789,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Gib an, wie lang die verdeckte Kante DA ist.",
@@ -38845,7 +38848,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild zeigt ein fünfseitiges Prisma. Gib an, wie viele Kanten verdeckt sind.",
@@ -38886,7 +38889,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild zeigt eine vierseitige Pyramide. Gib an, wie viele ihrer Flächen man nicht sieht.",
@@ -38932,7 +38935,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Flächen an, die im Schrägbild verdeckt sind.",
@@ -38987,7 +38990,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Der Quader ist a = 5 cm lang, b = 2 cm tief und c = 3 cm hoch. Im Heft zeichnest du für einen Zentimeter Tiefe eine Kästchendiagonale. Gib an, wie viele Kästchendiagonalen die Kante BC lang ist.",
@@ -39040,7 +39043,7 @@
    "afb": 3,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Mia hat das Schrägbild eines Quaders gezeichnet. Beurteile die Zeichnung.",
@@ -39099,7 +39102,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild zeigt ein dreiseitiges Prisma. Gib an, wie viele Ecken verdeckt sind.",
@@ -39136,7 +39139,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Quader hat a = 4 cm, b = 2 cm und c = 3 cm. Du zeichnest sein Schrägbild ins Heft: Ein Zentimeter sind zwei Kästchen. Ein Zentimeter Tiefe ist eine Kästchendiagonale. Gib an, wie viele Kästchen hoch das Schrägbild ist.",
@@ -39180,7 +39183,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild eines Quaders ist im Heft 10 Kästchen breit. Die Vorderfläche ist 8 Kästchen breit. Gib an, wie viele Zentimeter tief der Quader ist.",
@@ -39221,7 +39224,7 @@
    "afb": 3,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ali sagt: „Im Schrägbild eines Würfels sind alle Kanten gleich lang gezeichnet.“ Beurteile die Aussage.",
@@ -39275,7 +39278,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild zeigt eine vierseitige Pyramide. Gib an, wie viele Kanten verdeckt sind.",
@@ -39315,7 +39318,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Genau ein Schrägbild ist richtig gezeichnet. Kreuze es an.",
@@ -39402,7 +39405,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -39597,7 +39599,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -39792,7 +39793,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -39965,7 +39965,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -40160,7 +40159,6 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -40405,7 +40403,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -40613,7 +40610,6 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -40808,7 +40804,6 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -41053,7 +41048,6 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -41260,7 +41254,6 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -41505,7 +41498,6 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "zahl",
@@ -41748,7 +41740,6 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -41972,7 +41963,6 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -42166,7 +42156,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 3 cm und c = 2 cm in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist.",
@@ -42211,7 +42201,6 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -42334,7 +42323,6 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -42578,7 +42566,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zeichne das Schrägbild eines Quaders mit a = 5 cm, b = 2 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist.",
@@ -42623,7 +42611,8 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Lena zeichnet einen Quader mit 5 cm Tiefe. Die Kanten nach hinten zeichnet Lena 10 Kästchen nach rechts und 10 Kästchen nach oben. Beurteile die Zeichnung.",
@@ -42674,7 +42663,6 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -42867,7 +42855,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zeichne das Schrägbild eines Würfels mit 3 cm Kantenlänge in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist.",
@@ -42907,7 +42895,6 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -43048,7 +43035,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Schrägbild eines Würfels ist im Heft 12 Kästchen breit. Gib die Kantenlänge des Würfels an.",
@@ -43089,7 +43076,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 4 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist.",
@@ -43130,7 +43117,7 @@
    "afb": 3,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Mara sagt: „Im Schrägbild ist eine Kante nach hinten genauso lang wie in Wirklichkeit. Eine Kästchendiagonale ist ja 1 cm.“ Beurteile die Aussage.",
@@ -43176,7 +43163,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von vorne auf den Würfelbau.\nKreuze die passende Ansicht an.",
@@ -43332,7 +43319,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Das ist die Ansicht von vorne.\nKreuze den passenden Würfelbau an.",
@@ -43508,7 +43495,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf den Quader.\nKreuze die Form der Ansicht an.",
@@ -43555,7 +43542,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von vorne auf den Quader.\nEin Kästchen steht für einen Zentimeter.\nKreuze die passende Ansicht an.",
@@ -43804,7 +43791,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Du schaust von vorne auf den Würfelbau.\nZähle die Kästchen der Ansicht.",
@@ -43870,7 +43857,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf den Würfelbau.\nKreuze die passende Ansicht an.",
@@ -44027,7 +44014,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Der Grundriss ist die Ansicht von oben.\nKreuze den Grundriss an.",
@@ -44188,7 +44175,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Der Aufriss ist die Ansicht von vorne.\nKreuze den Aufriss an.",
@@ -44353,7 +44340,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Im Grundriss steht, wie viele Würfel übereinander stehen.\nGib an, wie viele Würfel es insgesamt sind.",
@@ -44436,7 +44423,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Kästchen steht für einen Zentimeter.\nGib an, wie viele Kästchen der Grundriss des Quaders hat.",
@@ -44499,7 +44486,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Würfelbau hat diesen Aufriss.\nKreuze den Würfelbau an.",
@@ -44682,6 +44669,7 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
+    "kommunizieren",
     "modellieren"
    ],
    "format": "auswahl",
@@ -44731,7 +44719,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Der Seitenriss ist die Ansicht von links. Kreuze den Seitenriss an.",
@@ -44887,7 +44875,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Aufriss hat.",
@@ -45012,7 +45000,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Aufriss an.",
@@ -45222,7 +45210,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Kästchen steht für einen Zentimeter. Kreuze den Seitenriss des Quaders an.",
@@ -45422,7 +45410,8 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Mia sagt: „Zwei verschiedene Würfelbauten haben auch verschiedene Aufrisse.“ Beurteile die Aussage.",
@@ -45460,7 +45449,7 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Seitenriss hat.",
@@ -45599,7 +45588,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er höchstens hat.",
@@ -45678,7 +45667,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du gehst um den Würfelbau herum und schaust von hinten. Kreuze die passende Ansicht an.",
@@ -45846,7 +45835,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Würfelbau hat diesen Aufriss. Kreuze alle Würfelbauten an, die passen.",
@@ -46081,7 +46070,8 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Sara sagt: „Haben zwei Quader denselben Grundriss, dann haben sie auch denselben Aufriss.“ Beurteile die Aussage.",
@@ -46118,7 +46108,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Der Aufriss eines Quaders hat 3 mal 4 Kästchen. Sein Grundriss hat 3 mal 2 Kästchen. Gib an, wie viele Kästchen sein Seitenriss hat.",
@@ -46156,7 +46146,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Seitenriss an.",
@@ -46413,7 +46403,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -46630,7 +46619,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -46866,7 +46854,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -47032,7 +47019,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -47275,7 +47261,6 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -47499,7 +47484,6 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -47680,7 +47664,6 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -47907,7 +47890,6 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -48091,7 +48073,6 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -48347,7 +48328,6 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -48552,7 +48532,6 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -48779,7 +48758,6 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -48946,7 +48924,6 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -49150,7 +49127,6 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -49423,7 +49399,6 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -49678,7 +49653,6 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -49946,7 +49920,6 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -50193,7 +50166,6 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -50489,7 +50461,6 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -50714,7 +50685,6 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -50960,7 +50930,6 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -51268,7 +51237,6 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -51495,8 +51463,8 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "modellieren",
-    "kommunizieren"
+    "kommunizieren",
+    "modellieren"
    ],
    "format": "gitter",
    "eingabe": "zellen",
@@ -51710,7 +51678,6 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -51971,7 +51938,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Körper wie ein Zelt.\nZähle seine Flächen.",
@@ -52020,7 +51987,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Körper wie ein Zelt.\nZähle seine Ecken.",
@@ -52069,6 +52036,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
+    "kommunizieren",
     "modellieren"
    ],
    "format": "auswahl",
@@ -52139,7 +52107,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von vorne auf das Zelt.\nKreuze die Form der Ansicht an.",
@@ -52189,7 +52157,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Körper wie ein Zelt.\nZähle seine Kanten.",
@@ -52238,7 +52206,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf das Zelt.\nKreuze die Form der Ansicht an.",
@@ -52288,7 +52256,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt ein fünfseitiges Prisma.\nGib an, wie viele Ecken es hat.",
@@ -52336,7 +52304,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt ein sechsseitiges Prisma.\nGib an, wie viele Flächen es hat.",
@@ -52385,7 +52353,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Das Bild zeigt ein Prisma.\nKreuze seinen Namen an.",
@@ -52434,7 +52402,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Prisma hat zwei gleiche Grundflächen.\nKreuze alle Prismen an.",
@@ -52505,7 +52473,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Die Grundfläche eines Prismas ist ein Fünfeck.\nGib an, wie viele Kanten das Prisma hat.",
@@ -52541,7 +52509,7 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Prisma hat ein Achteck als Grundfläche.\nGib an, wie viele Ecken es hat.",
@@ -52581,7 +52549,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt ein sechsseitiges Prisma. Gib an, wie viele Kanten es hat.",
@@ -52629,7 +52597,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Prisma hat 24 Kanten. Gib an, wie viele Ecken seine Grundfläche hat.",
@@ -52665,7 +52633,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Die Mantelfläche eines Prismas besteht aus 5 Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat.",
@@ -52704,7 +52672,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze das Prisma mit 10 Ecken an.",
@@ -52787,7 +52755,7 @@
    "afb": 2,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Mara sagt: „Die Mantelfläche eines Prismas besteht aus Dreiecken.“ Beurteile die Aussage.",
@@ -52829,7 +52797,7 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf das sechsseitige Prisma. Kreuze die Form der Ansicht an.",
@@ -52882,7 +52850,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Prisma hat 36 Kanten. Gib an, wie viele Ecken es hat.",
@@ -52929,7 +52897,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zähle am sechsseitigen Prisma Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an.",
@@ -52990,7 +52958,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Prisma hat 9 Flächen. Gib an, wie viele Kanten es hat.",
@@ -53038,7 +53006,7 @@
    "afb": 3,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Finn sagt: „Ein Prisma kann 24 Kanten haben.“ Beurteile die Aussage.",
@@ -53088,7 +53056,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Körper an, die Prismen sind.",
@@ -53170,7 +53138,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein sechsseitiges Prisma steht auf einer Grundfläche. Du schaust von vorne darauf. Kreuze die Form der Ansicht an.",
@@ -58768,7 +58736,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt ein Turmdach.\nZähle seine Flächen.",
@@ -58816,7 +58784,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt ein Turmdach.\nZähle seine Ecken.",
@@ -58864,7 +58832,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt ein Turmdach.\nZähle seine Kanten.",
@@ -58912,6 +58880,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
+    "kommunizieren",
     "modellieren"
    ],
    "format": "auswahl",
@@ -58978,7 +58947,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf das Turmdach.\nKreuze die Form der Ansicht an.",
@@ -59026,7 +58995,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von vorne auf das Turmdach.\nKreuze die Form der Ansicht an.",
@@ -59074,7 +59043,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt eine fünfseitige Pyramide.\nGib an, wie viele Ecken sie hat.",
@@ -59123,7 +59092,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt eine sechsseitige Pyramide.\nGib an, wie viele Kanten sie hat.",
@@ -59172,7 +59141,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Das Bild zeigt eine Pyramide.\nKreuze ihren Namen an.",
@@ -59221,7 +59190,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Eine Pyramide hat eine Grundfläche und Dreiecke bis zur Spitze.\nKreuze alle Pyramiden an.",
@@ -59292,7 +59261,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Die Grundfläche einer Pyramide ist ein Fünfeck.\nGib an, wie viele Kanten die Pyramide hat.",
@@ -59332,7 +59301,7 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Eine Pyramide hat ein Fünfeck als Grundfläche.\nGib an, wie viele Flächen sie hat.",
@@ -59372,7 +59341,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Eine Pyramide hat 10 Seitendreiecke. Gib an, wie viele Ecken sie hat.",
@@ -59411,7 +59380,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Eine Pyramide hat 18 Kanten. Gib an, wie viele Ecken ihre Grundfläche hat.",
@@ -59451,7 +59420,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze die Pyramide mit 6 Ecken an.",
@@ -59534,7 +59503,7 @@
    "afb": 1,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Sara sagt: „Eine Pyramide hat immer gleich viele Ecken wie Flächen.“ Beurteile die Aussage.",
@@ -59576,7 +59545,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein fünfseitiges Prisma und eine fünfseitige Pyramide stehen nebeneinander. Gib an, wie viele Kanten das Prisma mehr hat.",
@@ -59625,7 +59594,7 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an.",
@@ -59678,7 +59647,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Eine Pyramide hat 11 Flächen. Gib an, wie viele Kanten sie hat.",
@@ -59725,7 +59694,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Zähle an der sechsseitigen Pyramide Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an.",
@@ -59787,7 +59756,7 @@
    "afb": 2,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Tom sagt: „Eine Pyramide kann 21 Kanten haben.“ Beurteile die Aussage.",
@@ -59836,7 +59805,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Körper an, die gleich viele Ecken wie Flächen haben.",
@@ -59919,6 +59888,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
+    "kommunizieren",
     "modellieren"
    ],
    "format": "zahl",
@@ -59952,7 +59922,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von vorne auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an.",
@@ -64571,7 +64541,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Denk an eine Trommel.\nKreuze die passende Form an.",
@@ -64628,7 +64598,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Das Bild zeigt einen Körper.\nKreuze seinen Namen an.",
@@ -64674,7 +64644,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze den Kegel an.",
@@ -64730,7 +64700,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Zylinder.\nZähle seine Flächen.",
@@ -64776,7 +64746,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf den Zylinder.\nKreuze die Form der Ansicht an.",
@@ -64822,7 +64792,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Kegel.\nZähle seine Flächen.",
@@ -64864,7 +64834,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Zylinder.\nGib an, wie viele Kanten er hat.",
@@ -64910,7 +64880,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Gegenstände in Form eines Kegels an.",
@@ -64953,7 +64923,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von vorne auf den Kegel.\nKreuze die Form der Ansicht an.",
@@ -64999,7 +64969,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Kegel.\nGib an, wie viele Kanten er hat.",
@@ -65041,7 +65011,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Körper mit einer gekrümmten Fläche an.",
@@ -65084,7 +65054,7 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Gegenstand heißt Pylon.\nKreuze seine Form an.",
@@ -65124,7 +65094,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Du schaust von oben auf den Kegel. Kreuze die Form der Ansicht an.",
@@ -65175,7 +65145,7 @@
    "afb": 2,
    "kompetenz": [
     "argumentieren",
-    "modellieren"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ole sagt: „Die Spitze eines Kegels ist eine Ecke.“ Beurteile die Aussage.",
@@ -65224,7 +65194,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze den Körper mit genau zwei Flächen an.",
@@ -65298,7 +65268,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Körper an, die rollen können.",
@@ -65375,7 +65345,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Eine Kerze hat die Form eines Zylinders. Gib an, wie viele Kanten sie hat.",
@@ -65414,7 +65384,8 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Lina sagt: „Ein Zylinder hat eine Spitze.“ Beurteile die Aussage.",
@@ -65452,7 +65423,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Körper an, die eine Spitze haben.",
@@ -65503,7 +65474,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Körper an, die nur ebene Flächen haben.",
@@ -65553,7 +65524,8 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Lena sagt: „Zylinder und Kegel haben gleich viele Kanten.“ Beurteile die Aussage.",
@@ -65604,7 +65576,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "zahl",
    "text": "Ein Turm besteht aus einem Zylinder. Oben sitzt ein Kegel als Dach genau auf dem Deckel. Gib an, wie viele Flächen man am Turm von außen sieht, den Boden mitgezählt.",
@@ -65650,7 +65622,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Ein Körper sieht von vorne aus wie ein Rechteck. Von oben sieht er aus wie ein Kreis. Kreuze den Körper an.",
@@ -65687,7 +65659,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "kommunizieren"
    ],
    "format": "auswahl",
    "text": "Kreuze alle Gegenstände in Form eines Zylinders an.",
@@ -67935,7 +67907,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Die gelbe Fläche B ist der Boden.\nDu faltest einen Würfel.\nKreuze die obere Fläche an.",
@@ -68107,7 +68079,8 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Du willst aus dem Netz einen Würfel falten.\nKreuze die richtige Antwort an.",
@@ -68271,7 +68244,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Spielwürfel.\nOben und unten ergeben zusammen 7.\nGib die Zahl auf der unteren Fläche an.",
@@ -68318,7 +68291,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch",
+    "probleme-loesen",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -68411,7 +68384,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Du faltest einen Würfel.\nKreuze alle Nachbarn der gelben Fläche A an.",
@@ -68582,7 +68555,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Spielwürfel.\nVorne und hinten ergeben zusammen 7.\nGib die Zahl auf der hinteren Fläche an.",
@@ -68629,7 +68602,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Das Würfelnetz wird gefaltet.\nKreuze die Fläche gegenüber von B an.",
@@ -68800,7 +68773,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Würfelnetz gehört zu einem Spielwürfel.\nGegenüber ergibt immer zusammen 7.\nGib die Zahl für die Fläche A an.",
@@ -68966,6 +68939,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
+    "probleme-loesen",
     "modellieren"
    ],
    "format": "auswahl",
@@ -69401,6 +69375,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
+    "probleme-loesen",
     "modellieren"
    ],
    "format": "zahl",
@@ -69452,7 +69427,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Kreuze das Würfelnetz an.",
@@ -69866,7 +69841,7 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Das Würfelnetz wird gefaltet.\nD ist der Boden.\nKreuze eine Nachbarfläche von D an.",
@@ -70032,7 +70007,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Das Würfelnetz wird gefaltet. Kreuze die Fläche an, die D gegenüberliegt.",
@@ -70207,7 +70182,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Spielwürfel. Gib an, wie viele Augen auf den drei Flächen zusammen sind, die man nicht sieht.",
@@ -70251,6 +70226,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
+    "probleme-loesen",
     "modellieren"
    ],
    "format": "auswahl",
@@ -70956,7 +70932,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Würfelnetz gehört zu einem Spielwürfel. Gegenüber ergibt immer zusammen 7. Gib die Zahl an, die auf die Fläche A gehört.",
@@ -71125,7 +71101,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Das Würfelnetz wird gefaltet. Kreuze alle Flächen an, die an E stoßen.",
@@ -71302,7 +71278,7 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "symbolisch",
+    "probleme-loesen",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -71380,7 +71356,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Würfelnetz gehört zu einem Spielwürfel. Gib an, welche Zahl du erhältst, wenn du die Zahlen auf A und B addierst.",
@@ -71551,7 +71527,8 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Noah sagt: „Bei einem Spielwürfel ist die Summe der Augen oben und unten immer gleich.“ Beurteile die Aussage.",
@@ -71591,7 +71568,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Das Würfelnetz wird gefaltet. Kreuze alle Paare von Flächen an, die sich dann gegenüberliegen.",
@@ -71768,6 +71745,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
+    "probleme-loesen",
     "modellieren"
    ],
    "format": "zahl",
@@ -71808,7 +71786,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch",
+    "probleme-loesen",
     "kommunizieren"
    ],
    "format": "gitter",
@@ -71881,6 +71859,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
+    "probleme-loesen",
     "modellieren"
    ],
    "format": "auswahl",
@@ -72585,7 +72564,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau.\nZähle alle Würfel.",
@@ -72659,7 +72638,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau.\nZähle alle Würfel.",
@@ -72733,7 +72712,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Jede Zahl ist die Höhe eines Turms.\nZähle alle Würfel.",
@@ -72812,7 +72791,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Der Würfelbau soll ein Quader werden.\nDer Quader ist 3 Würfel lang und 2 Würfel hoch.\nGib an, wie viele Würfel noch fehlen.",
@@ -72883,7 +72862,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du schaust von vorne auf den Würfelbau.\nZähle die sichtbaren Quadrate.",
@@ -72949,7 +72928,7 @@
    "niveau": "F",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau.\nZähle alle Würfel.",
@@ -73019,7 +72998,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau.\nManche Würfel sind verdeckt.\nGib an, wie viele Würfel es sind.",
@@ -73098,7 +73077,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Im Grundriss steht die Höhe jedes Turms.\nGib an, wie viele Würfel der Bau hat.",
@@ -73190,7 +73169,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Der Würfelbau soll ein Quader werden.\nEr soll 3 Würfel lang, 2 tief und 2 hoch sein.\nGib an, wie viele Würfel noch fehlen.",
@@ -73276,7 +73255,7 @@
    "niveau": "G",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du schaust von links auf den Würfelbau.\nGib an, wie viele Quadrate du siehst.",
@@ -73342,7 +73321,7 @@
    "niveau": "G",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau.\nGib an, wie viele Würfel es sind.",
@@ -73441,7 +73420,8 @@
    "niveau": "G",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Mia sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“\nBeurteile die Aussage.",
@@ -73481,7 +73461,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du kippst den Spielwürfel einmal nach vorne. Gib an, welche Zahl dann oben liegt.",
@@ -73543,7 +73523,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du kippst den Spielwürfel zweimal: nach links, dann nach vorne. Gib an, welche Zahl dann oben liegt.",
@@ -73606,7 +73586,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind.",
@@ -73698,7 +73678,7 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Der Würfelbau soll ein großer Würfel aus 3 · 3 · 3 Würfeln werden. Gib an, wie viele Würfel noch fehlen.",
@@ -73805,7 +73785,7 @@
    "niveau": "M",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du kippst den Spielwürfel zweimal: nach hinten, dann nach vorne. Gib an, welche Zahl dann oben liegt.",
@@ -73864,7 +73844,8 @@
    "niveau": "M",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Ben sagt: „Kippst du einen Spielwürfel viermal nach vorne, liegt wieder dieselbe Zahl oben.“ Beurteile die Aussage.",
@@ -73931,7 +73912,7 @@
    "niveau": "E",
    "afb": 1,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du kippst den Spielwürfel dreimal: nach vorne, dann nach hinten, dann nach links. Gib an, welche Zahl dann oben liegt.",
@@ -73986,6 +73967,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
+    "probleme-loesen",
     "modellieren"
    ],
    "format": "zahl",
@@ -74069,7 +74051,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind.",
@@ -74190,7 +74172,7 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Du kippst den Spielwürfel dreimal: nach links, dann nach vorne, dann nach links. Gib an, welche Zahl dann oben liegt.",
@@ -74249,7 +74231,7 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "probleme-loesen"
    ],
    "format": "zahl",
    "text": "Der Würfelbau soll ein großer Würfel aus 27 kleinen Würfeln werden. Gib an, wie viele Würfel noch fehlen.",
@@ -74377,7 +74359,8 @@
    "niveau": "E",
    "afb": 3,
    "kompetenz": [
-    "argumentieren"
+    "argumentieren",
+    "probleme-loesen"
    ],
    "format": "auswahl",
    "text": "Sara sagt: „Ob ich zuerst nach rechts und dann nach vorne kippe oder umgekehrt, ist egal. Oben liegt am Ende dieselbe Zahl.“ Beurteile die Aussage für diesen Spielwürfel.",
