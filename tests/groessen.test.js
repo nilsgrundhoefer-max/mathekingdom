@@ -32,7 +32,8 @@ test('Größen werden in der Grundeinheit geführt', () => {
   assert.deepEqual(teileEingabe('3,50€'), { zahl: '3,50', einheit: '€' });
   assert.deepEqual(teileEingabe('250'), { zahl: '250', einheit: '' });
   assert.equal(artVon('kg'), 'gewicht');
-  assert.equal(artVon('l'), null);
+  assert.equal(artVon('l'), 'volumen', 'Liter gibt es seit Klasse 6 Kapitel 6 (ADR 0049)');
+  assert.equal(artVon('Liter'), null);
 });
 
 test('Schreibweisen: Komma, Geld mit zwei Stellen, Zeit gemischt', () => {

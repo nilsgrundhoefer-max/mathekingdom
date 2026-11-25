@@ -9,6 +9,10 @@
 //      a, b, c (Quader: Länge, Tiefe, Höhe), n, r, h, dreh, liegend (Prisma, Pyramide), r, h (rund), wuerfel: [[x, y, z]] (Würfelbau),
 //      namen?: true, verdeckt?: 'gestrichelt' | 'ohne' | 'durchgezogen', tiefe?: 0.5 (nur für Fehlerbilder anders),
 //      markiert?: { ecken?: [n], kanten?: [[n, n]], flaechen?: [[n, …]] }, masse?: [{ von, bis, t }], augen?: { oben, vorne, rechts }, vorne?: true, titel? }
+// Klasse 6, Kapitel 6 (ADR 0049): Körper aus Quadern, auch ein einzelner Quader mit Einheitswürfeln.
+// b: { art: 'koerper', form: 'quaderbau', teile: [{ x, y, z, a, b, c }] (x nach rechts, y nach hinten, z nach oben; a, b, c wie beim Quader),
+//      zerlegt?: true (die Teile in zwei Tönen, dazwischen eine gestrichelte Schnittlinie), raster?: true (Einheitswürfel auf den Flächen),
+//      masse?: [{ von: [x, y, z], bis: [x, y, z], t, seite?: 'oben' | 'unten' | 'links' | 'rechts' | 'schraeg' | 'schraeg-links' }] }
 // b: { art: 'netz', flaechen: [{ ecken: [[x, y]], n?, farbe? }], kreise?: [{ m, r, n? }], sektoren?: [{ m, r, von, bis, n? }], titel? }  (Einheit Kästchen)
 // b: { art: 'risse', risse: [{ n, b, h, zellen: [[x, y]], zahlen?: [[x, y, z]] }] }  (Kästchen, x nach rechts, y nach oben)
 import { h, s } from './dom.js';
@@ -181,6 +185,66 @@ export function wuerfelbauBild(b, { klein = false } = {}) {
   return svg;
 }
 
+// ---------- Körper aus Quadern (Klasse 6, Kapitel 6) ----------
+// Der Körper wird in Zellen zerlegt (an jeder Kante eines Teils ein Schnitt). Gezeichnet werden von hinten nach vorn die Flächen,
+// die nach vorne, oben oder rechts frei liegen. Eine Linie steht dort, wo die Fläche endet; zwischen zwei Teilen ist sie gestrichelt.
+export function quaderbauZellen(b) {
+  const schnitte = (von, lang) => { const w = new Set(); for (const t of b.teile) { w.add(t[von]); w.add(t[von] + t[lang]); if (b.raster) for (let k = Math.ceil(t[von]); k < t[von] + t[lang]; k++) w.add(k); } return [...w].sort((p, q) => p - q); };
+  const xs = schnitte('x', 'a'), ys = schnitte('y', 'b'), zs = schnitte('z', 'c');
+  const teilVon = (i, j, k) => { if (i < 0 || j < 0 || k < 0 || i >= xs.length - 1 || j >= ys.length - 1 || k >= zs.length - 1) return -1;
+    const m = [(xs[i] + xs[i + 1]) / 2, (ys[j] + ys[j + 1]) / 2, (zs[k] + zs[k + 1]) / 2];
+    return b.teile.findIndex((t) => m[0] > t.x && m[0] < t.x + t.a && m[1] > t.y && m[1] < t.y + t.b && m[2] > t.z && m[2] < t.z + t.c); };
+  return { xs, ys, zs, teilVon };
+}
+function quaderbauBild(b) {
+  const q = TIEFE, P = (p) => [p[0] + q * p[1], p[2] + q * p[1]];
+  const { xs, ys, zs, teilVon } = quaderbauZellen(b);
+  const ecken = b.teile.flatMap((t) => [0, 1].flatMap((i) => [0, 1].flatMap((j) => [0, 1].map((k) => P([t.x + i * t.a, t.y + j * t.b, t.z + k * t.c])))));
+  // Mit Maßen wird ein zusammengesetzter Körper größer gezeichnet, damit die Maße auch an kurzen Kanten Platz haben.
+  const m = rahmen(ecken, b.masse?.length ? { rand: 58, ...(b.teile.length > 1 ? { breite: 340, hoehe: 280 } : {}) } : { rand: RAND });
+  const svg = svgVon(m, 'form-quaderbau', beschreibung(b));
+  // Jede Richtung: Nachbar, zu dem die Fläche frei liegt, und die zwei Achsen, die die Fläche aufspannen.
+  const RICHT = [
+    { ton: 'vorne', n: [0, -1, 0], u: [1, 0, 0], v: [0, 0, 1] },
+    { ton: 'oben', n: [0, 0, 1], u: [1, 0, 0], v: [0, 1, 0] },
+    { ton: 'rechts', n: [1, 0, 0], u: [0, 1, 0], v: [0, 0, 1] },
+  ];
+  const frei = (c, r) => teilVon(c[0], c[1], c[2]) >= 0 && teilVon(c[0] + r.n[0], c[1] + r.n[1], c[2] + r.n[2]) < 0;
+  const plus = (c, d, f = 1) => [c[0] + f * d[0], c[1] + f * d[1], c[2] + f * d[2]];
+  const zellen = [];
+  for (let j = ys.length - 2; j >= 0; j--) for (let k = 0; k < zs.length - 1; k++) for (let i = 0; i < xs.length - 1; i++) if (teilVon(i, j, k) >= 0) zellen.push([i, j, k]);
+  const K = (c) => [[xs[c[0]], xs[c[0] + 1]], [ys[c[1]], ys[c[1] + 1]], [zs[c[2]], zs[c[2] + 1]]];
+  for (const c of zellen) {
+    const teil = teilVon(...c), g = K(c);
+    for (const r of RICHT) {
+      if (!frei(c, r)) continue;
+      // Ecke der Fläche: Grundpunkt auf der freien Seite, dann entlang u und v.
+      const o = [0, 1, 2].map((d) => (r.n[d] > 0 ? g[d][1] : g[d][0]));
+      const lu = [0, 1, 2].reduce((sum, d) => sum + r.u[d] * (g[d][1] - g[d][0]), 0), lv = [0, 1, 2].reduce((sum, d) => sum + r.v[d] * (g[d][1] - g[d][0]), 0);
+      const p = [o, plus(o, r.u, lu), plus(plus(o, r.u, lu), r.v, lv), plus(o, r.v, lv)];
+      svg.append(s('path', { d: pfad(m, p.map(P)), class: `flaeche ton-${r.ton}${b.zerlegt && teil % 2 === 1 ? ' teil-b' : ''}` }));
+      // Vier Ränder: gegen den Nachbarn in der Ebene der Fläche.
+      const raender = [[p[0], p[1], r.v, -1], [p[1], p[2], r.u, 1], [p[2], p[3], r.v, 1], [p[3], p[0], r.u, -1]];
+      for (const [von, bis, d, vz] of raender) {
+        const nb = plus(c, d, vz), nbTeil = teilVon(...nb), weiter = nbTeil >= 0 && frei(nb, r);
+        const klasse = !weiter ? 'kante' : nbTeil !== teil && b.zerlegt ? 'kante schnitt' : b.raster ? 'rasterlinie' : nbTeil !== teil && b.fugen ? 'kante' : null;
+        if (!klasse) continue;
+        const a2 = P(von), e2 = P(bis);
+        svg.append(s('line', { x1: m.X(a2[0]), y1: m.Y(a2[1]), x2: m.X(e2[0]), y2: m.Y(e2[1]), class: klasse }));
+      }
+    }
+  }
+  const mitte = P(mitte3(b.teile.flatMap((t) => [[t.x, t.y, t.z], [t.x + t.a, t.y + t.b, t.z + t.c]])));
+  for (const ms of b.masse ?? []) {
+    const p = P(ms.von), r = P(ms.bis), mx = (p[0] + r[0]) / 2, my = (p[1] + r[1]) / 2;
+    const breit = 4 + 7 * ms.t.length;
+    const seite = ms.seite ?? (ms.von[0] !== ms.bis[0] ? (my >= mitte[1] ? 'oben' : 'unten') : ms.von[2] !== ms.bis[2] ? (mx <= mitte[0] ? 'links' : 'rechts') : 'schraeg');
+    const [dx, dy] = { oben: [0, -9], unten: [0, 19], links: [-(8 + breit / 2), 5], rechts: [8 + breit / 2, 5], schraeg: [10 + breit / 2, 12], 'schraeg-links': [-(8 + breit / 2), -3] }[seite];
+    svg.append(s('text', { x: Z(m.X(mx) + dx), y: Z(m.Y(my) + dy), 'text-anchor': 'middle', class: 'masszahl' }, ms.t));
+  }
+  return svg;
+}
+
 // ---------- Runde Körper ----------
 // Ellipsen ohne Schrägbild: Die Grundfläche ist eine liegende Ellipse (Höhe 0,4 · Radius), die hintere Hälfte ist gestrichelt.
 function rundBild(b) {
@@ -216,7 +280,7 @@ export function netzSvg(b, { klein = false } = {}) {
     ...(b.sektoren ?? []).flatMap((k) => { const p = [k.m]; for (let i = 0; i <= 24; i++) { const w = rad(k.von + ((k.bis - k.von) * i) / 24); p.push([k.m[0] + k.r * Math.cos(w), k.m[1] + k.r * Math.sin(w)]); } return p; })];
   // Kleine Netze mit Namen oder Zahlen (Bildkarten in Kapitel 3.8) bekommen größere Kästchen, damit die Zahlen lesbar bleiben.
   const mitNamen = (b.flaechen ?? []).some((f) => f.n != null);
-  const m = rahmen(punkte, klein ? (mitNamen ? { breite: 180, hoehe: 140, kmax: 36, rand: 10 } : { breite: 150, hoehe: 120, kmax: 28, rand: 10 }) : { breite: 320, hoehe: 240, kmax: 42, rand: 16 });
+  const m = rahmen(punkte, klein ? (mitNamen ? { breite: 180, hoehe: 140, kmax: 36, rand: 10 } : { breite: 150, hoehe: 120, kmax: 28, rand: 10 }) : { breite: 320, hoehe: 240, kmax: 42, rand: b.masse?.length ? 44 : 16 });
   const svg = svgVon(m, `netzbild${klein ? ' klein' : ''}`, beschreibung(b));
   // Karolinien unter dem Netz, eine Linie je Kästchen.
   const xs = punkte.map((p) => p[0]), ys = punkte.map((p) => p[1]);
@@ -235,6 +299,13 @@ export function netzSvg(b, { klein = false } = {}) {
   for (const k of b.sektoren ?? []) {
     const a = [k.m[0] + k.r * Math.cos(rad(k.von)), k.m[1] + k.r * Math.sin(rad(k.von))], e = [k.m[0] + k.r * Math.cos(rad(k.bis)), k.m[1] + k.r * Math.sin(rad(k.bis))];
     svg.append(s('path', { d: `M${m.X(k.m[0])} ${m.Y(k.m[1])} L${m.X(a[0])} ${m.Y(a[1])} A${Z(k.r * m.k)} ${Z(k.r * m.k)} 0 ${k.bis - k.von > 180 ? 1 : 0} 0 ${m.X(e[0])} ${m.Y(e[1])} Z`, class: 'netzflaeche' }));
+  }
+  // Klasse 6, Kapitel 6: Maße am Netz (Kästchen), der Text steht außen neben der Strecke.
+  const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+  for (const ms of b.masse ?? []) {
+    const mx = (ms.von[0] + ms.bis[0]) / 2, my = (ms.von[1] + ms.bis[1]) / 2, waag = ms.von[1] === ms.bis[1], breit = 6 + 4.3 * ms.t.length;
+    const [dx, dy] = waag ? [0, my >= cy ? -8 : 18] : [mx <= cx ? -(10 + breit / 2) : 10 + breit / 2, 5];
+    namen.push(s('text', { x: Z(m.X(mx) + dx), y: Z(m.Y(my) + dy), 'text-anchor': 'middle', class: 'masszahl' }, ms.t));
   }
   svg.append(...namen);
   return svg;
@@ -271,10 +342,12 @@ function beschreibung(b) {
   if (b.art === 'netz') return `Netz aus ${(b.flaechen ?? []).length + (b.kreise ?? []).length + (b.sektoren ?? []).length} Flächen`;
   if (b.art === 'risse') return b.risse.map((r) => `${r.n ?? 'Ansicht'} mit ${r.zellen.length} Kästchen`).join(', ');
   if (b.form === 'wuerfelbau') return `Würfelbau aus ${b.wuerfel.length} Würfeln`;
+  if (b.form === 'quaderbau') return b.teile.length === 1 ? 'Körperbild: Quader' : `Körperbild: Körper aus ${b.teile.length} Quadern`;
   return `Körperbild: ${b.form === 'quader' && b.a === b.b && b.b === b.c ? 'Würfel' : NAMEN[b.form]}${b.titel ? `, ${b.titel}` : ''}`;
 }
 export function koerperSvg(b, o = {}) {
   if (b.form === 'wuerfelbau') return wuerfelbauBild(b, o);
+  if (b.form === 'quaderbau') return quaderbauBild(b);
   if (['zylinder', 'kegel', 'kugel'].includes(b.form)) return rundBild(b);
   return eckigBild(b);
 }

@@ -166,7 +166,13 @@ export function pruefeAntwort(aufgabe, eingabe) {
       const falsche = aufgabe.optionen.find((o) => gewaehlt.has(o.text) && !o.richtig && o.fehlvorstellung);
       return { richtig, fehlvorstellung: richtig ? null : falsche?.fehlvorstellung ?? null };
     }
-    case 'luecken': case 'tabelle': return zusammen(Object.entries(aufgabe.luecken).map(([name, l]) => pruefeZahl(l, eingabe?.[name])));
+    case 'luecken': case 'tabelle': {
+      // Klasse 6, Kapitel 6 (ADR 0049): Bei `reihenfolgeEgal` dürfen die Zahlen dieser Lücken in beliebiger Reihenfolge stehen (die drei Kanten eines Quaders).
+      const frei = aufgabe.reihenfolgeEgal ?? [];
+      const ist = frei.map((n) => leseZahl(eingabe?.[n])).sort((x, y) => x - y), soll = frei.map((n) => aufgabe.luecken[n].loesung).sort((x, y) => x - y);
+      const ein = frei.length && ist.every((w, i) => w === soll[i]) ? { ...eingabe, ...Object.fromEntries(frei.map((n) => [n, String(aufgabe.luecken[n].loesung)])) } : eingabe;
+      return zusammen(Object.entries(aufgabe.luecken).map(([name, l]) => pruefeZahl(l, ein?.[name])));
+    }
     case 'zuordnen': return { richtig: aufgabe.paare.every((p) => eingabe?.[p.links] === p.rechts), fehlvorstellung: null };
     case 'sachaufgabe': case 'diagramm': return zusammen(aufgabe.teile.map((t, i) => pruefeTeil(t, eingabe?.[i])));
     case 'groesse': return pruefeGroesse(aufgabe, eingabe);

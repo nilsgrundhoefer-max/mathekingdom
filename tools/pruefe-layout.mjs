@@ -31,17 +31,17 @@ window.zeichne = (aufgaben) => {
   document.head.append(h('style', {}, stil));
   const halter = document.getElementById('mathekingdom');
   halter.replaceChildren(...aufgaben.map((auf) => h('section', { class: 'karte', 'data-aufgabe': auf.id },
-    /^(5\\.9|6\\.1|6\\.3|7\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
+    /^(5\\.9|6\\.1|6\\.3|6\\.6|7\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
     auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
     auf.daten && /^7\\.1\\./.test(auf.lernziel) && h('div', { class: 'bildrahmen zumtext' }, datenTabelle(auf.daten)),
-    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1|6\\.3|7\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
+    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1|6\\.3|6\\.6|7\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
 };
 // Prüft alle Bilder einer Aufgabe und liefert Mängel als Text.
 window.pruefe = (soll) => {
   const maengel = [];
   for (const sec of document.querySelectorAll('section[data-aufgabe]')) {
     const id = sec.dataset.aufgabe, auf = soll[id];
-    if (/^(5\\.9|6\\.1|6\\.3|7\\.1)\\./.test(auf?.lernziel ?? '')) {
+    if (/^(5\\.9|6\\.1|6\\.3|6\\.6|7\\.1)\\./.test(auf?.lernziel ?? '')) {
       const karte = sec.getBoundingClientRect();
       // Bruchbilder nachzählen.
       const zaehle = (svg, figuren, was) => {
@@ -96,10 +96,17 @@ window.pruefe = (soll) => {
       const P = (x, y) => { const p = svg.createSVGPoint(); p.x = x; p.y = y; const q = p.matrixTransform(m); return [q.x, q.y]; };
       // Im Gradnetz zählen nur die Breitenkreise (waagerecht); senkrechte Linien verdeckt der helle Rand der Ortsnamen.
       const breitenkreis = (l) => !l.matches('line.gradlinie, line.aequator') || l.getAttribute('y1') === l.getAttribute('y2');
-      const linien = [...svg.querySelectorAll('line.schenkel, line.strecke, line.linie, line.radius, line.gradlinie, line.aequator, line.kante')].filter(breitenkreis).map((l) => [P(+l.getAttribute('x1'), +l.getAttribute('y1')), P(+l.getAttribute('x2'), +l.getAttribute('y2'))]);
-      const schneidet = (b, [p, q]) => { // Strecke gegen Rechteck (etwas verkleinert)
+      // Körper aus Quadern (ADR 0049): Eine Kante, die eine später gezeichnete Fläche ganz verdeckt, zählt nicht.
+      // Körper aus Quadern (ADR 0049): Wo eine später gezeichnete Fläche eine Kante verdeckt, zählt die Kante nicht.
+      // elementsFromPoint sieht nur den Bildschirm: Das Bild wird einmal in die Mitte geholt, die Punkte wandern mit.
+      let schub = null;
+      const zuSehen = (x, y, l) => { if (!l || !svg.matches('.form-quaderbau')) return true;
+        if (!schub) { const r0 = svg.getBoundingClientRect(); svg.scrollIntoView({ block: 'center' }); const r1 = svg.getBoundingClientRect(); schub = [r1.left - r0.left, r1.top - r0.top]; }
+        const e = document.elementsFromPoint(x + schub[0], y + schub[1]).find((k) => k.tagName !== 'text'); return e === l; };
+      const linien = [...svg.querySelectorAll('line.schenkel, line.strecke, line.linie, line.radius, line.gradlinie, line.aequator, line.kante')].filter(breitenkreis).map((l) => [P(+l.getAttribute('x1'), +l.getAttribute('y1')), P(+l.getAttribute('x2'), +l.getAttribute('y2')), l]);
+      const schneidet = (b, [p, q, l]) => { // Strecke gegen Rechteck (etwas verkleinert)
         const x0 = b.x0 + 2, x1 = b.x1 - 2, y0 = b.y0 + 3, y1 = b.y1 - 3;
-        for (let s = 0; s <= 40; s++) { const x = p[0] + (q[0] - p[0]) * s / 40, y = p[1] + (q[1] - p[1]) * s / 40; if (x > x0 && x < x1 && y > y0 && y < y1) return true; }
+        for (let s = 0; s <= 40; s++) { const x = p[0] + (q[0] - p[0]) * s / 40, y = p[1] + (q[1] - p[1]) * s / 40; if (x > x0 && x < x1 && y > y0 && y < y1 && zuSehen(x, y, l)) return true; }
         return false; };
       for (const x of k.filter((y) => /punktname|winkelname|ortsname|masszahl|figurname|teilnummer/.test(y.k))) if (linien.some((l) => schneidet(x, l))) maengel.push(id + ': „' + x.t.textContent + '“ liegt auf einer Linie');
       // Kapitel 8: Ein Maß steht außen an der Figur, nie auf einer Fläche (außer im weißen Loch).

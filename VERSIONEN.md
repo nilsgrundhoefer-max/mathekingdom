@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.57 vom 25.11.2026
+
+### Schüler
+
+- Klasse 6 hat ihr sechstes Kapitel: „Berechnungen am Quader“ mit 5 Meilensteinen, zusammen 240 Aufgaben.
+- Du rechnest jetzt mit Volumen: mm³, cm³, dm³, m³, Milliliter und Liter.
+- Ab Silber wählst du die Einheit selbst. Achte auf cm² für Flächen und cm³ für Volumen.
+- Verlangt die Aufgabe eine Einheit und dein Wert stimmt, bekommst du einen Hinweis und darfst nachbessern. Das kostet keinen Versuch.
+- Neue Bilder zeigen Körper aus Quadern, Quader aus kleinen Würfeln und Netze mit Maßen.
+
+### Lehrkraft
+
+- Klasse 6, Kapitel 6 „Berechnungen am Quader“: Oberflächeninhalt, Volumen vergleichen, Volumeneinheiten, Volumen des Quaders, zusammengesetzte Körper (ADR 0049).
+- Heftaufgaben gibt es nur auf M und E, bei Sachaufgaben und zusammengesetzten Körpern (16 von 240).
+- Die Auswertung unterscheidet „Einheit fehlt“, „Einheit der falschen Art“ und „nicht die verlangte Einheit“.
+
 ## 0.56 vom 25.11.2026
 
 ### Schüler

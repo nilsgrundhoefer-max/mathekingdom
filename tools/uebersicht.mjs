@@ -81,6 +81,11 @@ const bild = (b) => {
     // Klasse 7 Kapitel 1 (ADR 0043)
     thermometer: () => `${b.saeulen.length > 1 ? `${b.saeulen.length} Thermometer` : 'Thermometer'} von ${b.von} °C bis ${b.bis} °C, Striche alle ${b.schritt} Grad: ${b.saeulen.map((x) => `${x.n ?? x.name ?? x.text ?? ''} ${x.wert == null || typeof x.wert === 'object' ? '?' : `${x.wert} °C`}`.trim()).join(', ')}`,
     zahlenstrahl: () => `${b.von < 0 ? 'Zahlengerade' : 'Zahlenstrahl'} ${amStrahl(b, b.von)} bis ${amStrahl(b, b.bis)}${b.schritt ? `, Teilstriche alle ${amStrahl(b, b.schritt)}` : ''}${b.ausschnitt ? ', Ausschnitt mit Bruchzeichen' : ''}${b.pfeil != null ? `, Pfeil auf ${amStrahl(b, wert(b.pfeil))}` : ''}${b.punkte?.length ? `, Punkte bei ${b.punkte.map((x) => amStrahl(b, x)).join(', ')}` : ''}${b.start != null ? `, Startpunkt ${amStrahl(b, b.start)}` : ''}${b.spruenge?.length ? `, Sprünge ${b.spruenge.map((x) => `${amStrahl(b, x.von)} nach ${amStrahl(b, x.nach)} (${x.text})`).join(', ')}` : ''}`,
+    // Klasse 6, Kapitel 6 (ADR 0049): Quader mit Maßen, Körper aus Quadern, Würfelbau, Netz mit Maßen.
+    ...(b.art === 'koerper' && b.form === 'quader' && b.masse?.length ? { koerper: () => `${b.a === b.b && b.b === b.c ? 'Würfel' : 'Quader'} im Schrägbild${b.titel ? ` „${b.titel}“` : ''}, Maße ${b.masse.map((x) => x.t).join(', ')}` } : {}),
+    ...(b.art === 'koerper' && b.form === 'quaderbau' ? { koerper: () => `${b.teile.length === 1 ? `Quader ${b.teile[0].a} × ${b.teile[0].b} × ${b.teile[0].c}` : `Körper aus ${b.teile.length} Quadern (${b.teile.map((t) => `${t.a} × ${t.b} × ${t.c}`).join(', ')})`}${b.raster ? ' mit sichtbaren Einheitswürfeln' : ''}${b.zerlegt ? ', Zerlegung in zwei Farben mit Schnittlinie' : ''}${b.masse?.length ? `, Maße ${b.masse.map((x) => x.t).join(', ')}` : ''}` } : {}),
+    ...(b.art === 'koerper' && b.form === 'wuerfelbau' ? { koerper: () => `Würfelbau aus ${b.wuerfel.length} Würfeln, Türme von vorne nach hinten: ${[...new Set(b.wuerfel.map((w) => w[1]))].sort().map((y) => [...new Set(b.wuerfel.map((w) => w[0]))].sort().map((x) => b.wuerfel.filter((w) => w[0] === x && w[1] === y).length).join(' ')).join(' / ')}` } : {}),
+    ...(b.art === 'netz' && b.einheit ? { netz: () => `Netz eines Quaders, Flächenpaare in drei Farben, ${b.masse ? `Maße ${b.masse.map((x) => x.t).join(', ')}` : `Flächeninhalte in den Flächen: ${b.flaechen.map((f) => f.n).join(', ')} ${b.einheit}²`}` } : {}),
   }[b.art];
   return ` _(Bild: ${text ? text() : b.art})_`;
 };
@@ -90,7 +95,7 @@ const daten = (a) => [a.urliste && ` _(Antwortkärtchen: ${a.urliste.join(', ')}
 const loesung = (a) => {
   if (a.format === 'zahl') return `Lösung: ${zahl(a)}`;
   // Kapitel 6 (ADR 0033): Größe mit Einheit. Richtig ist jede Schreibweise mit demselben Wert.
-  if (a.format === 'groesse') return `_(Größe eingeben${a.einheiten ? `, Einheit wählen aus ${a.einheiten.join(', ')}` : `, Einheit ${a.einheit} steht fest`})_ Lösung: **${schreibe(a.loesung, a.einheit)}**.${a.typischeFehler?.length ? ` Typische Fehler: ${a.typischeFehler.map((f) => `${schreibe(f.wert, a.einheit)} (${f.fehlvorstellung})`).join(', ')}.` : ''}`;
+  if (a.format === 'groesse') { const k = !a.lernziel.startsWith('5.'); return `_(Größe eingeben${a.einheiten ? `, Einheit wählen aus ${a.einheiten.join(', ')}` : `, Einheit ${a.einheit} steht fest`}${a.verlangt ? '; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“' : ''})_ Lösung: **${schreibe(a.loesung, a.einheit, k)}**.${a.typischeFehler?.length ? ` Typische Fehler: ${a.typischeFehler.map((f) => `${schreibe(f.wert, a.einheit, k)} (${f.fehlvorstellung})`).join(', ')}.` : ''}`; }
 
   if (a.format === 'zahlenstrahl') {
     const st = a.strahl;
@@ -114,7 +119,7 @@ const loesung = (a) => {
     if (t.art === 'einheitentafel') return ` _(Einheitentafel ${t.gruppen.map((g) => g.name).join(' | ')} zum Eintragen; fett = Eingabefeld)_\n\n  | ${t.kopf.join(' | ')} |\n  |${t.kopf.map(() => '---').join('|')}|\n${t.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n${t.ablesen ? `\n  ${t.ablesen.text} **${a.luecken[t.ablesen.luecke].loesung}** ${t.ablesen.einheit}.\n` : ''}`;
     return `${a.tabelle.art === 'raster' ? ' _(Rechenraster mit Ziffernfeldern)_' : ''}${a.tabelle.art === 'stellentafel' && a.tabelle.komma != null ? ` _(Stellenwerttafel mit Komma nach ${a.tabelle.kopf[a.tabelle.komma]}; fett = Eingabefeld)_` : ''}\n\n  | ${a.tabelle.kopf.join(' | ')} |\n  |${a.tabelle.kopf.map(() => '---').join('|')}|\n${a.tabelle.zeilen.map((z) => `  | ${z.map(zelle).join(' | ')} |`).join('\n')}\n`;
   }
-  if (a.format === 'auswahl') return a.optionen.map((o) => `  - ${o.richtig ? '☑' : '☐'} ${flach(o.text)}`).join('\n');
+  if (a.format === 'auswahl') return a.optionen.map((o) => `  - ${o.richtig ? '☑' : '☐'} ${flach(o.text)}${o.bild ? bild(o.bild) : ''}`).join('\n');
   if (a.format === 'luecken') return `Lösung: ${Object.entries(a.luecken).map(([n, l]) => `${n} = **${l.loesung}**`).join(', ')}`;
   if (a.format === 'strichliste') return `_(Strichliste anlegen, ${a.buendeln === 'auto' ? 'der fünfte Strich wird von selbst quer gesetzt' : 'das Kind setzt den Querstrich selbst'})_ Lösung: ${a.zeilen.map((z) => `${z.name} **${z.loesung}**${z.start ? ` (schon ${z.start})` : ''}`).join(', ')}`;
   if (a.format === 'zeichnen') { const d = a.diagramm; return `_(Säulen zeichnen „${d.titel}“, Achse 0 bis ${d.max}, Linien alle ${d.fein}, beschriftet alle ${d.schritt})_ Lösung: ${d.saeulen.map((x) => (x.offen ? `${x.name} **${x.wert}**${x.start != null ? ` (steht bei ${x.start})` : ''}` : `${x.name} ${x.wert} (vorgegeben)`)).join(', ')}`; }
