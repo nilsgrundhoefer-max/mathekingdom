@@ -32,6 +32,7 @@ export const KIPP = (start, schritte, wert) => ({ art: 'kippen', start, schritte
 export const SICHT = (was, wert, extra = {}) => ({ art: 'sichtbar', was, verdeckt: true, wert, ...extra });
 export const KL = (kante, wert, extra = {}) => ({ art: 'kantenlaenge', kante, wert, ...extra });
 export const LAGE = (zu, lage, extra = {}) => ({ art: 'kantenlage', zu, lage, ...extra }); // lage: parallel, senkrecht, gleich
+export const NT = (wert, extra = {}) => ({ art: 'netzteile', wert, ...extra }); // extra: ecken (3, 4) oder kreise: true
 export const QF = (zu, lage) => ({ art: 'quaderflaeche', zu, lage }); // lage: gegenueber, nachbar
 
 // ---------- Körperbilder ----------

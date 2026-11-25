@@ -21,6 +21,8 @@ import { ausdruecke } from './aufgaben/6-2-7-ausdruecke.mjs';
 import { quaderUndNetze } from './aufgaben/6-3-1-quader.mjs';
 import { schraegbilder } from './aufgaben/6-3-2-schraegbild.mjs';
 import { ansichten } from './aufgaben/6-3-3-ansichten.mjs';
+import { prismen } from './aufgaben/6-3-4-prisma.mjs';
+import { pyramiden } from './aufgaben/6-3-5-pyramide.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -42,6 +44,8 @@ const ERZEUGER = [
   [63163163, quaderUndNetze],
   [63263263, schraegbilder],
   [63363363, ansichten],
+  [63463463, prismen],
+  [63563563, pyramiden],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

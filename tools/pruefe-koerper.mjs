@@ -281,6 +281,13 @@ export const KOERPER_SONDER = {
     if (!f) return 'das Netz im Bild lässt sich nicht einordnen';
     const ok = Boolean(ziel(f));
     if (n.faltbar != null && n.faltbar !== ok) return ok ? 'das Netz lässt sich doch falten' : 'das Netz lässt sich nicht falten';
+    // gruende: mehrere „Nein, …“-Antworten mit verschiedenen Gründen. Dann muss „Ja“ zum Netz passen und genau ein Grund richtig sein, wenn es nicht faltbar ist.
+    if (o && a.format === 'auswahl' && n.gruende) {
+      const ja = o.filter((x) => polar(x.text) === true), nein = o.filter((x) => polar(x.text) === false);
+      if (!ja.every((x) => x.richtig === ok)) return 'die Antwort „Ja“ ist falsch eingestuft';
+      if (ok ? nein.some((x) => x.richtig) : nein.filter((x) => x.richtig).length !== 1) return 'die Gründe mit „Nein“ sind falsch eingestuft';
+      return null;
+    }
     if (o && a.format === 'auswahl') return stufe(o, (t) => { const p = polar(t); return p === undefined ? undefined : p === ok; }, true);
     return null;
   },
@@ -426,6 +433,15 @@ export const KOERPER_SONDER = {
     if (!s) return 'braucht einen eckigen Körper im Bild';
     const ist = n.verdeckt === false ? s.alle[n.was] - s[n.was] : s[n.was];
     if (ist !== n.wert) return `im Bild sind ${ist} ${n.was} ${n.verdeckt === false ? 'sichtbar' : 'verdeckt'}, nicht ${n.wert}`;
+    return mitZahl(a, n, n.wert);
+  },
+  // Teile eines Netzes im Bild zählen: Flächen mit `ecken` Ecken (3 Dreiecke, 4 Vierecke), Kreise (`kreise: true`) oder alle Flächen.
+  netzteile: (n, a) => {
+    const b = a.bild;
+    if (b?.art !== 'netz') return 'braucht ein Netz im Bild';
+    const f = b.flaechen ?? [], k = b.kreise ?? [], sek = b.sektoren ?? [];
+    const ist = n.kreise ? k.length : n.ecken ? f.filter((x) => x.ecken.length === n.ecken).length : f.length + k.length + sek.length;
+    if (ist !== n.wert) return `im Netz sind ${ist}, nicht ${n.wert}`;
     return mitZahl(a, n, n.wert);
   },
   // Spielwürfel kippen: Augen oben, vorne, rechts; gegenüber ergeben zusammen 7.
