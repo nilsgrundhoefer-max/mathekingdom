@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (1728 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (2016 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1728).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2016).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -5694,6 +5694,1383 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten fehlt das Rechteck d
   - ☐ die Fläche mit 6 cm²
   - ☑ die Fläche mit 24 cm²
 
+## 6.7.1-D1: Ich kann Zuordnungen aus Text, Tabelle und Schaubild lesen.
+
+Grundlage, die F übt: Einen Wert aus einer Wertetabelle oder an einem Punkt im Schaubild ablesen
+
+Baut auf: 5.1.2-L1 (Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.), 5.5.4-K1 (Ich kann Punkte im Koordinatensystem ablesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche oben die Uhrzeit. Darunter steht die Temperatur. *Beispiel:* Unter „8 Uhr“ steht die Temperatur um 8 Uhr. *Lösungsschritt:* Suche oben „12 Uhr“. Lies die Zahl darunter.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Temperatur an einem Tag. / Lies die Temperatur um 12 Uhr ab. _(Bild: Wertetabelle: Uhrzeit: 8 Uhr | 10 Uhr | 12 Uhr | 14 Uhr / Temperatur in °C: 6 | 9 | 11 | 14)_ Lösung: **11 °C**. Typische Fehler: 9 (tabelle-falsche-zeile), 12 (schaubild-achsen-vertauscht).
+- `02` AFB I · _Kommunizieren_ · Das Schaubild zeigt die Preise für Eis. / Lies den Preis für 2 Kugeln ab. _(Bild: Schaubild: nach rechts „Anzahl Kugeln“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1); Punkte (1|2), (2|4), (3|6), (4|8), (5|10))_ Lösung: **4 €**. Typische Fehler: 2 (schaubild-achsen-vertauscht).
+- `03` AFB I · _Kommunizieren_ · Es regnet in eine Tonne. / Das Schaubild zeigt das Wasser in der Tonne. / Lies ab, wie viel Wasser nach 4 Minuten in der Tonne ist. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 8 (ein Kästchen = 1), nach oben „Wasser in l“ bis 9 (ein Kästchen = 1); Linienzug (0|0) → (1|1) → (2|2) → (3|3) → (4|4) → (5|5) → (6|6) → (7|8))_ Lösung: **4 l**. Typische Fehler: 3 (tabelle-falsche-zeile).
+- `04` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Temperatur an einem Tag. / Gib die Uhrzeit an, zu der es 12 °C warm ist. _(Bild: Wertetabelle: Uhrzeit: 8 Uhr | 10 Uhr | 12 Uhr | 14 Uhr / Temperatur in °C: 10 | 12 | 15 | 18)_ Lösung: **10 Uhr**. Typische Fehler: 12 (schaubild-achsen-vertauscht).
+- `05` AFB II · _Kommunizieren_ · Die Tabelle zeigt die Körpergröße von Ben. / Berechne, wie viel Ben von 7 bis 8 Jahren gewachsen ist. _(Bild: Wertetabelle: Alter in Jahren: 6 | 7 | 8 | 9 | 10 / Größe in cm: 109 | 115 | 123 | 130 | 136)_ Lösung: **8 cm**. Typische Fehler: 123 (sach-schritt-vergessen), 115 (sach-schritt-vergessen).
+- `06` AFB I · _Kommunizieren_ · Das Schaubild zeigt die Preise für Hefte. / Kreuze die passende Zuordnung an. _(Bild: Schaubild: nach rechts „Anzahl Hefte“ bis 5 (ein Kästchen = 1), nach oben „Preis in €“ bis 13 (ein Kästchen = 1); Punkte (1|3), (2|6), (3|9), (4|12))_
+  - ☐ 3 Hefte → 10 €
+  - ☑ 3 Hefte → 9 €
+  - ☐ 9 Hefte → 3 €
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau zuerst, wie viel ein Kästchen an jeder Achse wert ist. *Beispiel:* Nach oben ist ein Kästchen 2 km wert. *Lösungsschritt:* Gehe nach rechts bis 5. Gehe hoch zur Linie und lies links ab.
+
+- `01` AFB I · _Kommunizieren_ · Eine Gruppe wandert. / Das Schaubild zeigt die Strecke. / Achte auf die Einteilung der Achsen. / Lies ab, wie viele Kilometer die Gruppe nach 5 h geschafft hat. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 6 (ein Kästchen = 1), nach oben „Strecke in km“ bis 14 (ein Kästchen = 2); Linienzug (0|0) → (1|2) → (2|6) → (3|6) → (4|10) → (5|12))_ Lösung: **12 km**. Typische Fehler: 6 (einteilung-uebersehen), 5 (schaubild-achsen-vertauscht).
+- `02` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Temperatur an einem Tag. / Berechne, um wie viel Grad es von 8 Uhr bis 12 Uhr wärmer wird. _(Bild: Wertetabelle: Uhrzeit: 8 Uhr | 10 Uhr | 12 Uhr | 14 Uhr | 16 Uhr / Temperatur in °C: 6 | 10 | 14 | 18 | 16)_ Lösung: **8 °C**. Typische Fehler: 14 (sach-schritt-vergessen), 4 (tabelle-falsche-zeile).
+- `03` AFB II · _Kommunizieren_ · Eine Wanne läuft voll. / Das Schaubild zeigt das Wasser in der Wanne. / Gib die Zeit an, nach der 70 l in der Wanne sind. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 7 (ein Kästchen = 1), nach oben „Wasser in l“ bis 100 (ein Kästchen = 10); Linienzug (0|0) → (1|10) → (2|30) → (3|50) → (4|60) → (5|70) → (6|90))_ Lösung: **5 min**. Typische Fehler: 7 (einteilung-uebersehen), 70 (schaubild-achsen-vertauscht).
+- `04` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Körpergröße von einem Kind. / Kreuze die passende Zuordnung an. _(Bild: Wertetabelle: Alter in Jahren: 6 | 8 | 10 | 12 / Größe in cm: 100 | 114 | 128 | 142)_
+  - ☐ 10 Jahre → 142 cm
+  - ☐ 128 Jahre → 10 cm
+  - ☑ 10 Jahre → 128 cm
+- `05` AFB II · _Kommunizieren_ · Eine Gruppe wandert. / Das Schaubild zeigt die Strecke. / Kreuze an, wann die Gruppe Pause macht. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 7 (ein Kästchen = 1), nach oben „Strecke in km“ bis 16 (ein Kästchen = 2); Linienzug (0|0) → (1|2) → (2|6) → (3|6) → (4|8) → (5|10) → (6|14))_
+  - ☐ von 1 h bis 2 h
+  - ☑ von 2 h bis 3 h
+  - ☐ von 3 h bis 4 h
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Schaubild zeigt die Temperatur an einem Tag. / Paul sagt: „Um 12 Uhr war es am wärmsten.“ / Beurteile die Aussage. _(Bild: Schaubild: nach rechts „Uhrzeit“ bis 20 (ein Kästchen = 2), nach oben „Temperatur in °C“ bis 16 (ein Kästchen = 2); Linienzug (8|6) → (10|8) → (12|12) → (14|14) → (16|10))_
+  - ☐ Stimmt. / Um 12 Uhr sind es 14 °C.
+  - ☑ Falsch. / Am wärmsten ist es um 14 Uhr mit 14 °C.
+  - ☐ Falsch. / Am wärmsten ist es um 16 Uhr.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst, wie viel ein Kästchen an jeder Achse wert ist. *Lösungsschritt:* Gehe nach rechts bis 0,5, hoch zur Geraden und dann nach links zur Achse.
+
+- `01` AFB I · _Kommunizieren_ · Das Schaubild zeigt den Preis für Kirschen. / Lies den Preis für 0,5 kg ab. _(Bild: Schaubild: nach rechts „Gewicht in kg“ bis 2,5 (ein Kästchen = 0,5), nach oben „Preis in €“ bis 4,5 (ein Kästchen = 0,5); Gerade durch den Nullpunkt von (0|0) bis (2|4))_ Lösung: **1 €**. Typische Fehler: 0,50 (schaubild-achsen-vertauscht).
+- `02` AFB II · _Kommunizieren_ · Das Schaubild zeigt die Wanderungen von Gruppe A und Gruppe B. / Bestimme, wie viele Kilometer Gruppe A nach 4 h mehr geschafft hat als Gruppe B. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 18 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|16); Gerade durch den Nullpunkt B von (0|0) bis (4|8))_ Lösung: **8 km**. Typische Fehler: 16 (sach-schritt-vergessen), 4 (einteilung-uebersehen).
+- `03` AFB II · _Kommunizieren_ · Das Schaubild zeigt den Verlauf der Temperatur an einem Tag. / Kreuze den Abschnitt an, in dem die Temperatur am stärksten steigt. _(Bild: Schaubild: nach rechts „Uhrzeit“ bis 20 (ein Kästchen = 2), nach oben „Temperatur in °C“ bis 22 (ein Kästchen = 2); Linienzug (6|6) → (8|10) → (10|16) → (12|18) → (14|20) → (16|16))_
+  - ☐ von 10 Uhr bis 12 Uhr
+  - ☐ von 14 Uhr bis 16 Uhr
+  - ☑ von 8 Uhr bis 10 Uhr
+  - ☐ von 12 Uhr bis 14 Uhr
+- `04` AFB I · _Kommunizieren_ · Die Tabelle zeigt das Porto für Briefe. Sara verschickt einen Brief mit 250 g. / Gib das Porto an. _(Bild: Wertetabelle: Gewicht: bis 20 g | bis 50 g | bis 500 g | bis 1000 g / Porto in €: 0,95 | 1,10 | 1,80 | 2,90)_ Lösung: **1,80 €**. Typische Fehler: 0,95 (tabelle-falsche-zeile), 1,10 (tabelle-falsche-zeile), 2,90 (tabelle-falsche-zeile).
+- `05` AFB II · _Kommunizieren_ · Das Schaubild zeigt eine Wanderung mit einer Pause. / Bestimme, wie lange die Pause dauert. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 7 (ein Kästchen = 1), nach oben „Strecke in km“ bis 12 (ein Kästchen = 2); Linienzug (0|0) → (1|2) → (2|6) → (3|8) → (4|8) → (5|8) → (6|10))_ Lösung: **2 h**. Typische Fehler: 3 (schaubild-achsen-vertauscht), 5 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Gruppe B startet 4 km vor Gruppe A. Finn sagt: „Gruppe A holt Gruppe B innerhalb von 4 Stunden ein.“ / Beurteile die Aussage mit dem Schaubild. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 18 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|16); Gerade B von (0|4) bis (4|16))_
+  - ☐ Falsch. Gruppe A ist langsamer als Gruppe B.
+  - ☐ Stimmt. Gruppe A ist von Anfang an vor Gruppe B.
+  - ☑ Stimmt. Nach 4 h haben beide Gruppen 16 km erreicht.
+  - ☐ Falsch. Die Linie von B liegt immer über der Linie von A.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst die Einteilung beider Achsen.
+
+- `01` AFB I · _Kommunizieren_ · Das Schaubild zeigt, wie ein Schwimmbecken gefüllt wird. / Lies die Wassermenge nach 10 min ab. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 40 (ein Kästchen = 5), nach oben „Wasser in l“ bis 1800 (ein Kästchen = 200); Gerade durch den Nullpunkt von (0|0) bis (40|1600))_ Lösung: **400 l**. Typische Fehler: 2 (einteilung-uebersehen), 10 (schaubild-achsen-vertauscht).
+- `02` AFB II · _Kommunizieren_ · Gruppe B startet 6 km vor Gruppe A. Das Schaubild zeigt beide Wanderungen. / Bestimme, nach wie vielen Stunden Gruppe A die Gruppe B einholt. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 26 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|24); Gerade B von (0|6) bis (4|18))_ Lösung: **2 h**. Typische Fehler: 12 (schaubild-achsen-vertauscht), 6 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · Das Schaubild zeigt den Verlauf der Temperatur an einem Tag. / Bestimme den Unterschied zwischen der höchsten und der tiefsten Temperatur. _(Bild: Schaubild: nach rechts „Uhrzeit“ bis 20 (ein Kästchen = 2), nach oben „Temperatur in °C“ bis 22 (ein Kästchen = 2); Linienzug (6|4) → (8|10) → (10|14) → (12|16) → (14|20) → (16|16) → (18|14))_ Lösung: **16 °C**. Typische Fehler: 20 (sach-schritt-vergessen), 10 (tabelle-falsche-zeile), 8 (einteilung-uebersehen).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Schaubild zeigt die Temperatur an einem Tag. Elif sagt: „Die Linie steigt von 6 Uhr bis 12 Uhr. Also wird es in dieser Zeit in jeder Stunde gleich schnell wärmer.“ / Beurteile die Aussage. _(Bild: Schaubild: nach rechts „Uhrzeit“ bis 20 (ein Kästchen = 2), nach oben „Temperatur in °C“ bis 18 (ein Kästchen = 2); Linienzug (6|4) → (8|8) → (10|10) → (12|16) → (14|12) → (16|8))_
+  - ☐ Stimmt. Eine Linie, die steigt, steigt immer gleichmäßig.
+  - ☑ Falsch. Die Linie ist verschieden steil. Von 10 Uhr bis 12 Uhr steigt die Temperatur um 6 °C, von 6 Uhr bis 8 Uhr nur um 4 °C.
+  - ☐ Stimmt. Zwischen zwei Messungen liegen immer 2 Stunden.
+  - ☐ Falsch. Die Temperatur fällt in dieser Zeit.
+- `05` AFB II · _Kommunizieren_ · Eine Taxifahrt kostet 3 € Grundgebühr und dazu 3 € für jeden Kilometer. / Kreuze die Tabelle an, die zu dieser Zuordnung passt. _(Bild: 3 Wertetabellen: Tabelle A: Strecke in km: 1 | 2 | 3 | 4 / Preis in €: 6 | 12 | 18 | 24; Tabelle B: Strecke in km: 1 | 2 | 3 | 4 / Preis in €: 3 | 6 | 9 | 12; Tabelle C: Strecke in km: 1 | 2 | 3 | 4 / Preis in €: 6 | 9 | 12 | 15)_
+  - ☐ Tabelle A
+  - ☑ Tabelle C
+  - ☐ Tabelle B
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Schaubild zeigt die Wanderungen von Gruppe A und Gruppe B. Ali sagt: „Der Abstand zwischen den Gruppen bleibt immer gleich.“ / Beurteile die Aussage. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 26 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|24); Gerade durch den Nullpunkt B von (0|0) bis (4|16))_
+  - ☑ Falsch. Nach 2 h beträgt der Abstand 4 km, nach 4 h schon 8 km.
+  - ☐ Falsch. Gruppe B überholt Gruppe A.
+  - ☐ Falsch. Nach 2 h beträgt der Abstand 2 km, nach 4 h nur noch 3 km.
+  - ☐ Stimmt. Beide Gruppen starten am selben Ort.
+  - ☐ Stimmt. Beide Linien sind Geraden.
+
+## 6.7.1-D2: Ich kann zwischen Text, Tabelle und Schaubild wechseln.
+
+Grundlage, die F übt: Zwei Wertepaare aus einer Tabelle als Punkte ins Schaubild eintragen
+
+Baut auf: 6.7.1-D1 (Ich kann Zuordnungen aus Text, Tabelle und Schaubild lesen.), 5.5.4-K2 (Ich kann Punkte ins Koordinatensystem eintragen und Figuren daraus zeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe zuerst nach rechts bis zur Anzahl. Gehe dann nach oben bis zum Preis. *Beispiel:* Für 2 Hefte und 4 € gehst du 2 nach rechts und 4 nach oben. *Lösungsschritt:* Beginne mit 2 nach rechts und 4 nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Preise für Hefte. / Trage zu jeder Spalte einen Punkt ein. _(Bild: Wertetabelle: Anzahl Hefte: 2 | 4 / Preis in €: 4 | 8)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Anzahl Hefte“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1))_ Lösung: **(2|4) (4|8)**
+- `02` AFB I · _Kommunizieren_ · Das Schaubild zeigt das Wasser in einer Tonne. / Lies die Werte ab und ergänze die Tabelle. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 7 (ein Kästchen = 1), nach oben „Wasser in l“ bis 10 (ein Kästchen = 1); Linienzug (0|0) → (1|2) → (2|3) → (3|4) → (4|6) → (5|8) → (6|9))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in min** | 1 | 2 | 3 |
+  |---|---|---|---|
+  | **Wasser in l** | **2** | **3** | **4** |
+
+- `03` AFB I · _Kommunizieren_ · Eine Kugel Eis kostet überall gleich viel. / Tom zahlt für 4 Kugeln 8 €. / Schreibe die Zuordnung mit Pfeil. / ▢ Kugeln → ▢ € _(Bild: Wertetabelle: Anzahl Kugeln: 4 | 5 / Preis in €: 8 | 10)_ Lösung: a = **4**, b = **8**
+- `04` AFB I · _Kommunizieren_ · Das Schaubild zeigt die Preise für Eis. / Lies die Preise ab und ergänze die Tabelle. _(Bild: Schaubild: nach rechts „Anzahl Kugeln“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 6 (ein Kästchen = 1); Punkte (1|1), (2|2), (3|3), (4|4), (5|5))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Kugeln** | 2 | 3 | 5 |
+  |---|---|---|---|
+  | **Preis in €** | **2** | **3** | **5** |
+
+- `05` AFB II · _Kommunizieren_ · Jonas kauft 3 Hefte für 6 €. / Jonas hat dazu einen Punkt eingetragen. / Prüfe den Punkt. _(Bild: Schaubild: nach rechts „Anzahl Hefte“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1); Punkte (3|6))_
+  - ☑ Der Punkt liegt richtig.
+  - ☐ Der Punkt liegt falsch. / Er gehört zu 6 Heften.
+  - ☐ Der Punkt liegt falsch. / Er muss auf der Achse liegen.
+- `06` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Temperatur an einem Morgen. / Trage die Punkte für 10 Uhr und 11 Uhr ein. _(Bild: Wertetabelle: Uhrzeit: 8 Uhr | 9 Uhr | 10 Uhr | 11 Uhr / Temperatur in °C: 7 | 8 | 9 | 4)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Uhrzeit“ bis 12 (ein Kästchen = 1), nach oben „Temperatur in °C“ bis 10 (ein Kästchen = 1))_ Lösung: **(10|9) (11|4)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach oben ist ein Kästchen 2 € wert. *Beispiel:* Für 3 Karten und 12 € gehst du 3 nach rechts und bis zur 12 nach oben. *Lösungsschritt:* Beginne mit 2 nach rechts und bis 4 nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt die Preise für Eintrittskarten. / Trage die drei Wertepaare als Punkte ein. / Achte auf die Einteilung der Achsen. _(Bild: Wertetabelle: Anzahl Karten: 2 | 3 | 4 / Preis in €: 4 | 6 | 8)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Anzahl Karten“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 12 (ein Kästchen = 2))_ Lösung: **(2|4) (3|6) (4|8)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `02` AFB I · _Kommunizieren_ · Das Schaubild zeigt eine Wanderung. / Lies die Strecken ab und ergänze die Tabelle. / Achte auf die Einteilung der Achsen. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 6 (ein Kästchen = 1), nach oben „Strecke in km“ bis 22 (ein Kästchen = 2); Linienzug (0|0) → (1|6) → (2|12) → (3|12) → (4|14) → (5|20))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 1 | 2 | 3 | 4 | 5 |
+  |---|---|---|---|---|---|
+  | **Strecke in km** | **6** | 12 | **12** | 14 | **20** |
+
+- `03` AFB II · _Kommunizieren_ · Eine Taxifahrt kostet 4 € Grundgebühr. / Dazu kommen 2 € für jeden Kilometer. / Trage die Punkte für 1 km, 2 km und 3 km ein. _(Punkte im Schaubild antippen; Schaubild: nach rechts „Strecke in km“ bis 5 (ein Kästchen = 1), nach oben „Preis in €“ bis 12 (ein Kästchen = 2))_ Lösung: **(1|6) (2|8) (3|10)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☐ Ja ☑ Nein
+- `04` AFB I · _Kommunizieren_ · Das Schaubild zeigt die Preise für Kinokarten. / Lies die Preise ab und ergänze die Tabelle. _(Bild: Schaubild: nach rechts „Anzahl Karten“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 30 (ein Kästchen = 5); Punkte (1|5), (2|10), (3|15), (4|20), (5|25))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Karten** | 1 | 2 | 4 | 5 |
+  |---|---|---|---|---|
+  | **Preis in €** | **5** | **10** | **20** | **25** |
+
+- `05` AFB II · _Kommunizieren_ · Eine Wanne läuft voll. / 1 min → 10 l, 2 min → 15 l, 3 min → 20 l. / Kreuze das passende Schaubild an.
+  - ☐ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 35 (ein Kästchen = 5); Linienzug (0|0) → (1|10) → (2|20) → (3|20) → (4|30))_
+  - ☑ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 35 (ein Kästchen = 5); Linienzug (0|0) → (1|10) → (2|15) → (3|20) → (4|30))_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Um 10 Uhr sind es 6 °C. / Ole trägt dazu einen Punkt ein. / Beurteile den Punkt im Schaubild. _(Bild: Schaubild: nach rechts „Uhrzeit“ bis 24 (ein Kästchen = 2), nach oben „Temperatur in °C“ bis 24 (ein Kästchen = 2); Punkte (6|10))_
+  - ☐ Falsch. / Der Punkt muss auf einer Achse liegen.
+  - ☑ Falsch. / Die Uhrzeit und die Temperatur sind vertauscht.
+  - ☐ Stimmt. / Der Punkt liegt richtig.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst die Einteilung der Achse nach oben. *Lösungsschritt:* Ein Kästchen nach oben ist 1 € wert. Für 2 kg gehst du bis 3 € nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Die Tabelle zeigt den Preis für Erdbeeren. / Trage die drei Wertepaare als Punkte in das Schaubild ein. _(Bild: Wertetabelle: Gewicht in kg: 2 | 4 | 6 / Preis in €: 3 | 6 | 9)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Gewicht in kg“ bis 7 (ein Kästchen = 1), nach oben „Preis in €“ bis 10 (ein Kästchen = 1))_ Lösung: **(2|3) (4|6) (6|9)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `02` AFB II · _Kommunizieren_ · Ein Sportverein verlangt einmal 10 € für die Anmeldung und dann 5 € für jeden Monat. / Ergänze die Tabelle der Kosten.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Monate** | 1 | 2 | 3 | 4 |
+  |---|---|---|---|---|
+  | **Kosten in €** | **15** | **20** | **25** | **30** |
+
+- `03` AFB II · _Kommunizieren_ · Das Schaubild zeigt den Verlauf einer Wanderung. / Lies die Strecken ab und ergänze die Tabelle. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5,5 (ein Kästchen = 0,5), nach oben „Strecke in km“ bis 14 (ein Kästchen = 2); Linienzug (0|0) → (1|2) → (2|6) → (3|8) → (4|8) → (5|12))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 1 | 2 | 3 | 4 | 5 |
+  |---|---|---|---|---|---|
+  | **Strecke in km** | **2** | **6** | **8** | **8** | **12** |
+
+- `04` AFB I · _Kommunizieren_ · In eine leere Wanne fließen gleichmäßig 20 l Wasser in jeder Minute. / Kreuze das Schaubild an, das zu diesem Text passt.
+  - ☐ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 120 (ein Kästchen = 20); Gerade durch den Nullpunkt von (0|0) bis (4|40))_
+  - ☑ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 120 (ein Kästchen = 20); Gerade durch den Nullpunkt von (0|0) bis (4|80))_
+  - ☐ C _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 120 (ein Kästchen = 20); Gerade von (0|20) bis (4|60))_
+- `05` AFB II · _Kommunizieren_ · Eine Kerze ist am Anfang 24 cm hoch. In jeder Stunde brennt sie um 4 cm ab. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 0 | 1 | 2 | 3 | 4 |
+  |---|---|---|---|---|---|
+  | **Höhe in cm** | 24 | **20** | **16** | **12** | **8** |
+
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Eine Taxifahrt kostet 4 € Grundgebühr und 2 € für jeden Kilometer. Elif schreibt dazu die Tabelle. / Beurteile die Tabelle. _(Bild: Wertetabelle: Strecke in km: 1 | 2 | 4 / Preis in €: 6 | 12 | 24)_
+  - ☐ Falsch. Schon der Preis für 1 km ist falsch. Richtig sind 2 €.
+  - ☐ Stimmt. Die Grundgebühr wird bei jedem Kilometer neu bezahlt.
+  - ☐ Stimmt. Zur doppelten Strecke gehört der doppelte Preis.
+  - ☑ Falsch. Nur der Preis für 1 km stimmt. 2 km kosten 8 € und 4 km kosten 12 €.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die vier Preise und bestimme dann die Einteilung der Achsen.
+
+- `01` AFB I · _Kommunizieren_ · 1 kg Trauben kostet 0,75 €. Jedes Kilogramm kostet gleich viel. / Trage die Punkte für 4 kg, 8 kg, 12 kg und 16 kg in das Schaubild ein. _(Punkte im Schaubild antippen; Schaubild: nach rechts „Gewicht in kg“ bis 18 (ein Kästchen = 2), nach oben „Preis in €“ bis 13 (ein Kästchen = 1))_ Lösung: **(4|3) (8|6) (12|9) (16|12)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `02` AFB II · _Kommunizieren_ · Eine Kerze ist 24 cm hoch. In jeder Stunde brennt sie um 1,5 cm ab. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 2 | 4 | 6 | 8 |
+  |---|---|---|---|---|
+  | **Höhe in cm** | **21** | **18** | **15** | **12** |
+
+- `03` AFB II · _Kommunizieren_ · In einer Wanne sind schon 5 l Wasser. Dann fließen gleichmäßig 5 l in jeder Minute dazu. / Kreuze das passende Schaubild an.
+  - ☐ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 35 (ein Kästchen = 5); Gerade von (0|5) bis (4|15))_
+  - ☐ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 35 (ein Kästchen = 5); Gerade von (0|25) bis (4|5))_
+  - ☐ C _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 35 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (4|20))_
+  - ☑ D _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 35 (ein Kästchen = 5); Gerade von (0|5) bis (4|25))_
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida zeichnet ein Schaubild zu den Wertepaaren 1 → 4, 2 → 8 und 4 → 16. An die Achse nach rechts schreibt Ida die Zahlen 1, 2, 4 in gleichen Abständen. / Beurteile die Achse.
+  - ☐ Stimmt. Die Abstände sind gleich, also ist die Achse gleichmäßig eingeteilt.
+  - ☐ Stimmt. An die Achse kommen genau die Zahlen aus der Tabelle.
+  - ☐ Falsch. Die Achse nach rechts muss bei 1 beginnen.
+  - ☑ Falsch. Die Achse ist ungleichmäßig eingeteilt: Von 1 bis 2 ist es ein Schritt, von 2 bis 4 sind es zwei Schritte. Die 3 fehlt.
+- `05` AFB II · _Kommunizieren_ · Ein Sportverein verlangt einmal 10 € für die Anmeldung und dann 8 € für jeden Monat. / Bestimme, nach wie vielen Monaten insgesamt 66 € bezahlt sind. Lösung: **7 Monaten**. Typische Fehler: 56 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Schaubild zeigt die Wanderungen von Gruppe A und Gruppe B. Ida sagt: „Beide Linien sind gleich steil. Also sind beide Gruppen nach 2 Stunden gleich weit.“ / Beurteile die Aussage. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 20 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|16); Gerade B von (0|2) bis (4|18))_
+  - ☐ Stimmt. Nach 2 h haben beide Gruppen 8 km erreicht.
+  - ☐ Stimmt. Gleich steile Linien zeigen immer dieselbe Strecke.
+  - ☑ Falsch. Beide Gruppen sind gleich schnell, aber Gruppe B hat 2 km Vorsprung. Nach 2 h hat A 8 km und B 10 km erreicht.
+  - ☐ Falsch. Gruppe B wandert rückwärts.
+  - ☐ Falsch. Gruppe A ist schneller als Gruppe B.
+
+## 6.7.2-P1: Ich kann erkennen, ob eine Zuordnung proportional ist.
+
+Grundlage, die F übt: Prüfen, ob zum Doppelten das Doppelte gehört
+
+Baut auf: 6.7.1-D1 (Ich kann Zuordnungen aus Text, Tabelle und Schaubild lesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Proportional heißt: Zum Doppelten gehört das Doppelte. *Beispiel:* Bei „2 → 6“ und „4 → 12“ gehört zum Doppelten das Doppelte. *Lösungsschritt:* Vergleiche die Spalten für 1 und 2.
+
+- `01` AFB I · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. / Prüfe die Zahlen in der Tabelle. / Entscheide. _(Bild: Wertetabelle: Gewicht in kg: 1 | 2 | 4 / Preis in €: 2 | 4 | 8)_
+  - ☐ Die Zuordnung ist nicht proportional.
+  - ☑ Die Zuordnung ist proportional.
+- `02` AFB I · _Argumentieren_ · Prüfe die Zahlen in der Tabelle. / Entscheide. _(Bild: Wertetabelle: Anzahl Hefte: 1 | 2 | 4 / Preis in €: 3 | 4 | 6)_
+  - ☐ Die Zuordnung ist proportional.
+  - ☑ Die Zuordnung ist nicht proportional.
+- `03` AFB I · _Argumentieren_ · Kreuze die proportionale Zuordnung an. _(Bild: 2 Wertetabellen: Tabelle A: Gewicht in kg: 2 | 4 | 8 / Preis in €: 2 | 4 | 8; Tabelle B: Gewicht in kg: 2 | 4 | 8 / Preis in €: 3 | 5 | 9)_
+  - ☑ Tabelle A
+  - ☐ Tabelle B
+- `04` AFB I · _Argumentieren_ · Jedes Heft kostet gleich viel. / Du weißt: 2 Hefte → 2 € / Kreuze die passende Zuordnung an. _(Bild: Wertetabelle: Anzahl Hefte: 2 / Preis in €: 2)_
+  - ☐ 4 Hefte → 2 €
+  - ☑ 4 Hefte → 4 €
+- `05` AFB II · _Argumentieren_ · Ben sagt: „Die Zuordnung ist proportional.“ / Beurteile die Aussage mit der Tabelle. _(Bild: Wertetabelle: Zeit in h: 1 | 2 | 4 / Strecke in km: 6 | 10 | 18)_
+  - ☐ Stimmt. / Zum Doppelten gehört immer das Doppelte.
+  - ☐ Stimmt. / Beide Werte werden größer.
+  - ☑ Falsch. / Zu 2 gehört nicht das Doppelte von 6.
+- `06` AFB I · _Argumentieren_ · Jedes Pferd im Burgstall bekommt gleich viel Hafer. / Prüfe die Zahlen in der Tabelle. / Entscheide. _(Bild: Wertetabelle: Anzahl Pferde: 2 | 4 | 8 / Hafer in kg: 6 | 12 | 24)_
+  - ☐ Die Zuordnung ist nicht proportional.
+  - ☑ Die Zuordnung ist proportional.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Proportional heißt: Zum Doppelten gehört das Doppelte. *Beispiel:* Bei „2 → 6“ und „4 → 12“ gehört zum Doppelten das Doppelte. *Lösungsschritt:* Vergleiche die Spalten für 2 und 4.
+
+- `01` AFB I · _Argumentieren_ · Prüfe die Wertepaare in der Tabelle. / Entscheide. _(Bild: Wertetabelle: Anzahl Hefte: 2 | 4 | 8 / Preis in €: 1,80 | 3,60 | 7,20)_
+  - ☐ Die Zuordnung ist nicht proportional.
+  - ☑ Die Zuordnung ist proportional.
+- `02` AFB I · _Argumentieren_ · Prüfe die Wertepaare in der Tabelle. / Entscheide. _(Bild: Wertetabelle: Zeit in h: 1 | 3 | 6 / Strecke in km: 6 | 16 | 31)_
+  - ☑ Die Zuordnung ist nicht proportional.
+  - ☐ Die Zuordnung ist proportional.
+- `03` AFB II · _Argumentieren_ · Angebot: 3 Hefte zum Preis von 2. / Emre sagt: „Die Zuordnung ist proportional.“ / Beurteile die Aussage mit der Tabelle. _(Bild: Wertetabelle: Anzahl Hefte: 1 | 2 | 3 / Preis in €: 1,50 | 3 | 3)_
+  - ☑ Falsch. / 3 Hefte kosten nicht das Dreifache von 1,50 €.
+  - ☐ Stimmt. / Ein Angebot ändert nichts.
+  - ☐ Stimmt. / Zum Doppelten gehört das Doppelte.
+- `04` AFB I · _Argumentieren_ · Kreuze die proportionale Zuordnung an. _(Bild: 3 Wertetabellen: Tabelle A: Anzahl Hefte: 2 | 4 | 6 / Preis in €: 1,60 | 2,60 | 3,60; Tabelle B: Anzahl Hefte: 2 | 4 | 6 / Preis in €: 1,60 | 3,20 | 4,80; Tabelle C: Anzahl Hefte: 2 | 4 | 6 / Preis in €: 2,10 | 3,70 | 5,30)_
+  - ☐ Tabelle A
+  - ☑ Tabelle B
+  - ☐ Tabelle C
+- `05` AFB II · _Argumentieren_ · Ida sagt: „Die Zuordnung ist proportional.“ / Beurteile die Aussage mit der Tabelle. _(Bild: Wertetabelle: Anzahl Hefte: 2 | 4 | 8 / Preis in €: 1,60 | 3,20 | 6,40)_
+  - ☐ Falsch. / Zu 4 gehört nicht das Doppelte von 1,60.
+  - ☑ Stimmt. / Zum Doppelten gehört immer das Doppelte.
+  - ☐ Falsch. / Die Werte werden immer größer.
+- `06` AFB III · _Argumentieren_ · Die Tabelle zeigt die Größe von einem Kind. / Ida sagt: „Das Kind wird immer größer, also ist die Zuordnung proportional.“ / Beurteile die Aussage. _(Bild: Wertetabelle: Alter in Jahren: 2 | 4 | 8 / Größe in cm: 92 | 106 | 129)_
+  - ☑ Falsch. / Mit 4 Jahren ist das Kind nicht doppelt so groß wie mit 2 Jahren.
+  - ☐ Stimmt. / Beide Werte werden größer.
+  - ☐ Falsch. / Das Kind wird mit den Jahren kleiner.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Quotient ist der Preis für 1. *Lösungsschritt:* Teile den Preis durch die erste Größe: 3,75 € : 3.
+
+- `01` AFB I · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. / Berechne für beide Wertepaare den Quotienten. / 3,75 € : 3 = ▢ € / 5 € : 4 = ▢ € _(Bild: Wertetabelle: Gewicht in kg: 3 | 4 / Preis in €: 3,75 | 5)_ Lösung: a = **1,25**, b = **1,25**
+- `02` AFB II · _Argumentieren_ · Prüfe die Tabelle mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Anzahl Brötchen: 2 | 4 | 5 / Preis in €: 1,30 | 2,60 | 3,25)_
+  - ☐ Nicht proportional. Die Werte in der zweiten Zeile sind keine Vielfachen.
+  - ☐ Proportional. Beide Werte werden größer.
+  - ☐ Nicht proportional. Zu 2 gehört nicht 2.
+  - ☑ Proportional. Der Quotient ist immer 0,65.
+- `03` AFB II · _Argumentieren_ · Prüfe die Tabelle mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Zeit in min: 2 | 4 | 5 / Wasser in l: 20 | 37 | 45,5)_
+  - ☐ Nicht proportional. Zu 2 gehört nicht 2.
+  - ☐ Proportional. Der Quotient ist immer 10.
+  - ☑ Nicht proportional. Die Quotienten sind verschieden: 10 und 9,25.
+  - ☐ Proportional. Beide Werte werden größer.
+- `04` AFB I · _Argumentieren_ · Jeder Liter kostet gleich viel. / Kreuze die proportionale Zuordnung an. _(Bild: 3 Wertetabellen: Tabelle A: Benzin in l: 2 | 3 | 5 / Preis in €: 4,70 | 6,55 | 10,25; Tabelle B: Benzin in l: 2 | 3 | 5 / Preis in €: 3,70 | 5,55 | 9,25; Tabelle C: Benzin in l: 2 | 3 | 5 / Preis in €: 3,70 | 4,70 | 5,70)_
+  - ☐ Tabelle A
+  - ☑ Tabelle B
+  - ☐ Tabelle C
+- `05` AFB II · _Argumentieren_ · Mara sagt: „Zu 10 gehört 6 €. Die Zuordnung ist proportional.“ / Beurteile die Aussage mit dem Quotienten. _(Bild: Wertetabelle: Anzahl Brötchen: 2 | 5 | 10 / Preis in €: 1,60 | 4 | 6)_
+  - ☑ Falsch. Für 2 und 5 ist der Quotient 0,80, für 10 aber 0,60.
+  - ☐ Stimmt. Der Quotient ist immer 0,80.
+  - ☐ Falsch. Der Preis wird bei 10 kleiner als bei 5.
+  - ☐ Stimmt. Zum Fünffachen von 2 gehört das Fünffache.
+- `06` AFB III · _Argumentieren_ · Zuordnung: Anzahl der Pferde → Hafer am Tag. / Kreuze die Bedingung an, unter der diese Zuordnung proportional ist.
+  - ☐ Beide Werte werden größer.
+  - ☐ Jedes Brötchen kostet gleich viel.
+  - ☐ Die Werte stehen in einer Tabelle.
+  - ☑ Jedes Pferd bekommt gleich viel Hafer.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile in jeder Spalte den zweiten Wert durch den ersten.
+
+- `01` AFB I · _Argumentieren_ · Prüfe die Tabelle mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Benzin in l: 1,5 | 2,5 | 4 / Preis in €: 3,60 | 6 | 9,60)_
+  - ☑ Proportional. Der Quotient ist immer 2,40.
+  - ☐ Proportional. Beide Werte werden größer.
+  - ☐ Nicht proportional. Die Werte in der zweiten Zeile sind keine Vielfachen.
+  - ☐ Nicht proportional. Zu 1,5 gehört nicht 1,5.
+- `02` AFB II · _Argumentieren_ · Prüfe die Tabelle mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Zeit in h: 1,5 | 2,5 | 4 / Strecke in km: 27,75 | 44,25 | 69)_
+  - ☐ Nicht proportional. Zu 1,5 gehört nicht 1,5.
+  - ☐ Proportional. Beide Werte werden größer.
+  - ☑ Nicht proportional. Die Quotienten sind verschieden: 18,5 und 17,7.
+  - ☐ Proportional. Der Quotient ist immer 18,5.
+- `03` AFB II · _Argumentieren_ · Prüfe jede Tabelle mit dem Quotienten. / Kreuze alle proportionalen Zuordnungen an. _(Bild: 4 Wertetabellen: Tabelle A: Anzahl Hefte: 2 | 4 | 5 / Preis in €: 2,70 | 5,40 | 6,75; Tabelle B: Anzahl Hefte: 2 | 4 | 5 / Preis in €: 2,70 | 5,40 | 6,25; Tabelle C: Anzahl Hefte: 2 | 4 | 5 / Preis in €: 5,50 | 11 | 13,75; Tabelle D: Anzahl Hefte: 2 | 4 | 5 / Preis in €: 3,20 | 5,90 | 7,25)_
+  - ☑ Tabelle A
+  - ☐ Tabelle B
+  - ☑ Tabelle C
+  - ☐ Tabelle D
+- `04` AFB III · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. In der Tabelle ist ein Preis falsch. / Bestimme den richtigen Preis für das falsche Wertepaar. _(Bild: Wertetabelle: Gewicht in kg: 2 | 3 | 5 | 8 / Preis in €: 5,50 | 8,45 | 13,75 | 22)_ Lösung: **8,25 €**. Typische Fehler: 8,45 (je-mehr-proportional), 2,75 (dreisatz-zwischenwert).
+- `05` AFB II · _Argumentieren_ · Jedes Heft kostet gleich viel. 2 Hefte kosten 1,70 €. Paul rechnet: „Für 3 Hefte ist es 1 mehr, also 2,70 €.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Der Preis wird größer.
+  - ☑ Falsch. 1 Heft kostet 0,85 €, also 3 Hefte 2,55 €.
+  - ☐ Falsch. 3 Hefte kosten das Dreifache von 1,70 €.
+  - ☐ Stimmt. Auf beiden Seiten kommt 1 dazu.
+- `06` AFB III · _Argumentieren_ · Die Tabellen gehören zu Quadraten. / Entscheide, welche Zuordnung proportional ist, und begründe. _(Bild: 2 Wertetabellen: Tabelle A: Seitenlänge in cm: 1 | 2 | 3 | 4 / Flächeninhalt in cm²: 1 | 4 | 9 | 16; Tabelle B: Seitenlänge in cm: 1 | 2 | 3 | 4 / Umfang in cm: 4 | 8 | 12 | 16)_
+  - ☐ Nur Tabelle A. Zur doppelten Seitenlänge gehört der vierfache Wert.
+  - ☑ Nur Tabelle B. Der Quotient ist immer 4.
+  - ☐ Beide. In beiden Tabellen werden die Werte größer.
+  - ☐ Keine. Bei Quadraten gibt es keine proportionale Zuordnung.
+
+## 6.7.2-P2: Ich kann Tabellen zu proportionalen Zuordnungen ergänzen.
+
+Grundlage, die F übt: Eine Tabelle durch Verdoppeln und Halbieren ergänzen
+
+Baut auf: 6.7.2-P1 (Ich kann erkennen, ob eine Zuordnung proportional ist.), 6.5.3-M1 (Ich kann eine Dezimalzahl mit einer natürlichen Zahl multiplizieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zum Doppelten gehört das Doppelte. Zur Hälfte gehört die Hälfte. *Beispiel:* Aus „2 → 6“ wird „4 → 12“ und „1 → 3“. *Lösungsschritt:* 2 ist das Doppelte von 1. Rechne 2 € · 2.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Kilogramm kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Gewicht in kg** | 1 | 2 | 4 |
+  |---|---|---|---|
+  | **Preis in €** | 2 | **4** | **8** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Wasser fließt gleichmäßig. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in min** | 2 | 4 | 8 |
+  |---|---|---|---|
+  | **Wasser in l** | 8 | **16** | **32** |
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jede Kugel Eis kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Kugeln** | 8 | 4 | 2 |
+  |---|---|---|---|
+  | **Preis in €** | 8 | **4** | **2** |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Schmied auf der Burg arbeitet gleichmäßig. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 1 | 2 | 3 | 5 |
+  |---|---|---|---|---|
+  | **Anzahl Hufeisen** | 3 | **6** | **9** | **15** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Kilogramm kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Gewicht in kg** | 1 | 2 | 4 |
+  |---|---|---|---|
+  | **Preis in €** | **1,50** | 3 | **6** |
+
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Schmied auf der Burg arbeitet gleichmäßig. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 1 | 2 | 3 |
+  |---|---|---|---|
+  | **Anzahl Hufeisen** | 2 | **4** | **6** |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Zeilen mit derselben Zahl mal oder geteilt. *Beispiel:* Aus „2 → 6“ wird „4 → 12“ und „1 → 3“. *Lösungsschritt:* 2 ist das Doppelte von 1. Rechne 1,30 € · 2.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jede Kugel Eis kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Kugeln** | 1 | 2 | 5 | 10 |
+  |---|---|---|---|---|
+  | **Preis in €** | 1,30 | **2,60** | **6,50** | **13** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Wasser fließt gleichmäßig. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in min** | 2 | 4 | 6 | 10 |
+  |---|---|---|---|---|
+  | **Wasser in l** | 24 | **48** | **72** | **120** |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Heft kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Hefte** | 1 | 3 | 6 | **9** |
+  |---|---|---|---|---|
+  | **Preis in €** | 0,80 | **2,40** | **4,80** | 7,20 |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Kilogramm kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Gewicht in kg** | 5 | 1 | 10 | 3 |
+  |---|---|---|---|---|
+  | **Preis in €** | 9 | **1,80** | **18** | **5,40** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Brötchen kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Brötchen** | 3 | 1 | 6 | 9 |
+  |---|---|---|---|---|
+  | **Preis in €** | 2,10 | **0,70** | **4,20** | **6,30** |
+
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Brötchen kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Brötchen** | 4 | 2 | 6 | 10 |
+  |---|---|---|---|---|
+  | **Preis in €** | 1,60 | **0,80** | **2,40** | **4** |
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Zeilen mit derselben Zahl mal oder geteilt. *Lösungsschritt:* 1 ist der 4. Teil von 4. Rechne 2,20 € : 4.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Brötchen kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Brötchen** | 4 | 1 | 3 | 10 |
+  |---|---|---|---|---|
+  | **Preis in €** | 2,20 | **0,55** | **1,65** | **5,50** |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Liter kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Benzin in l** | 4 | 2 | 6 | 10 |
+  |---|---|---|---|---|
+  | **Preis in €** | 6,60 | **3,30** | **9,90** | **16,50** |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Wasser fließt gleichmäßig. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in min** | 2 | 1 | 3 | **5** |
+  |---|---|---|---|---|
+  | **Wasser in l** | 25 | **12,5** | **37,5** | 62,5 |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jede Kugel Eis kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Kugeln** | 6 | 3 | 9 | 15 |
+  |---|---|---|---|---|
+  | **Preis in €** | 8,10 | **4,05** | **12,15** | **20,25** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 1 kg Kirschen kostet 2,40 €. Jedes Gramm kostet gleich viel. / Ergänze die Tabelle. Achte auf die Einheit.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Gewicht in g** | 1000 | 500 | 250 | 1500 |
+  |---|---|---|---|---|
+  | **Preis in €** | 2,40 | **1,20** | **0,60** | **3,60** |
+
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gruppe wandert immer gleich schnell. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 4 | 6 | 10 | **1,5** |
+  |---|---|---|---|---|
+  | **Strecke in km** | 18 | **27** | **45** | 6,75 |
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Zeilen mit derselben Zahl mal oder geteilt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Liter kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Benzin in l** | 2,5 | 1 | 4 | 7,5 |
+  |---|---|---|---|---|
+  | **Preis in €** | 7 | **2,80** | **11,20** | **21** |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gruppe wandert immer gleich schnell. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 1,5 | 0,5 | 2,5 | **4** |
+  |---|---|---|---|---|
+  | **Strecke in km** | 5,25 | **1,75** | **8,75** | 14 |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jede Kugel Eis kostet gleich viel. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Kugeln** | 6 | 9 | **15** | **4** |
+  |---|---|---|---|---|
+  | **Preis in €** | 8,10 | **12,15** | 20,25 | 5,40 |
+
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Kilogramm kostet gleich viel. Lina hat nur das erste Wertepaar sicher: 4 kg Äpfel kosten 9 €. / Ergänze die Tabelle über einen gemeinsamen Teiler.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Gewicht in kg** | 4 | 2 | 6 | 10 | 14 |
+  |---|---|---|---|---|---|
+  | **Preis in €** | 9 | **4,50** | **13,50** | **22,50** | **31,50** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Gruppe wandert immer gleich schnell. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 2,5 | 5 | **7,5** | 12,5 |
+  |---|---|---|---|---|
+  | **Strecke in km** | 8,75 | **17,5** | 26,25 | **43,75** |
+
+- `06` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Fahrrad fährt gleichmäßig 15 km in einer Stunde. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in min** | 60 | 20 | 45 | **100** |
+  |---|---|---|---|---|
+  | **Strecke in km** | **15** | **5** | **11,25** | 25 |
+
+
+## 6.7.5-S1: Ich kann proportionale Zuordnungen am Schaubild erkennen.
+
+Grundlage, die F übt: Erkennen, ob die Punkte auf einer Geraden durch den Nullpunkt liegen
+
+Baut auf: 6.7.1-D2 (Ich kann zwischen Text, Tabelle und Schaubild wechseln.), 6.7.2-P1 (Ich kann erkennen, ob eine Zuordnung proportional ist.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Proportional heißt: Die Linie ist eine Gerade durch den Nullpunkt. *Beispiel:* Der Nullpunkt ist der Punkt (0|0) unten links. *Lösungsschritt:* Lege ein Lineal an und schau auf den Nullpunkt.
+
+- `01` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 13 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (4|12))_
+  - ☑ Die Zuordnung ist proportional.
+  - ☐ Die Zuordnung ist nicht proportional.
+- `02` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide. _(Bild: Schaubild: nach rechts „Gewicht in kg“ bis 5 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1); Gerade von (0|2) bis (4|10))_
+  - ☑ Die Zuordnung ist nicht proportional.
+  - ☐ Die Zuordnung ist proportional.
+- `03` AFB I · _Kommunizieren_ · Kreuze das Schaubild der proportionalen Zuordnung an.
+  - ☑ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|4))_
+  - ☐ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade von (0|2) bis (4|6))_
+- `04` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide. _(Bild: Schaubild: nach rechts „Anzahl Pferde“ bis 5 (ein Kästchen = 1), nach oben „Hafer in kg“ bis 9 (ein Kästchen = 1); Punkte (1|2), (2|4), (3|6), (4|8))_
+  - ☑ Die Zuordnung ist proportional.
+  - ☐ Die Zuordnung ist nicht proportional.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Ben sagt: „Die Linie ist gerade, also ist die Zuordnung proportional.“ / Beurteile die Aussage mit dem Schaubild. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 22 (ein Kästchen = 2); Gerade von (0|4) bis (4|20))_
+  - ☑ Falsch. / Die Gerade geht nicht durch den Nullpunkt.
+  - ☐ Stimmt. / Jede Gerade zeigt eine proportionale Zuordnung.
+  - ☐ Falsch. / Die Linie ist nicht gerade.
+- `06` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 22 (ein Kästchen = 2); Linienzug (0|0) → (2|8) → (4|10))_
+  - ☐ Die Zuordnung ist proportional.
+  - ☑ Die Zuordnung ist nicht proportional.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Proportional heißt: Die Linie ist eine Gerade durch den Nullpunkt. *Beispiel:* Der Nullpunkt ist der Punkt (0|0) unten links. *Lösungsschritt:* Lege ein Lineal an und schau auf den Nullpunkt.
+
+- `01` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 26 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|24))_
+  - ☐ Die Zuordnung ist nicht proportional.
+  - ☑ Die Zuordnung ist proportional.
+- `02` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide. _(Bild: Schaubild: nach rechts „Anzahl Pferde“ bis 5 (ein Kästchen = 1), nach oben „Hafer in kg“ bis 22 (ein Kästchen = 2); Punkte (1|8), (2|12), (3|16), (4|20))_
+  - ☐ Die Zuordnung ist proportional.
+  - ☑ Die Zuordnung ist nicht proportional.
+- `03` AFB II · _Kommunizieren_ · Kreuze das Schaubild der proportionalen Zuordnung an.
+  - ☐ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Linienzug (0|0) → (2|8) → (4|10))_
+  - ☑ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|4))_
+  - ☐ C _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade von (0|4) bis (4|8))_
+- `04` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Kreuze die richtige Begründung an. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 25 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (4|20))_
+  - ☐ Nicht proportional. / Die Gerade berührt die Achse nach oben.
+  - ☐ Nicht proportional. / Die Achsen haben verschiedene Einteilungen.
+  - ☑ Proportional. / Die Linie ist eine Gerade durch den Nullpunkt.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Ida sagt: „Die Linie ist gerade, also ist die Zuordnung proportional.“ / Beurteile die Aussage mit dem Schaubild. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 26 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|24))_
+  - ☐ Falsch. / Die Gerade geht nicht durch den Nullpunkt.
+  - ☐ Falsch. / Die Linie ist nicht gerade.
+  - ☑ Stimmt. / Die Gerade geht auch durch den Nullpunkt.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina sagt: „Die Punkte liegen auf einer Geraden, also ist die Zuordnung proportional.“ / Beurteile die Aussage mit dem Schaubild. _(Bild: Schaubild: nach rechts „Anzahl Fahrten“ bis 5 (ein Kästchen = 1), nach oben „Preis in €“ bis 7 (ein Kästchen = 1); Punkte (1|3), (2|4), (3|5), (4|6))_
+  - ☑ Falsch. / Zu 2 gehört 4, zu 4 gehört aber nicht das Doppelte.
+  - ☐ Stimmt. / Die Punkte liegen auf einer Geraden.
+  - ☐ Falsch. / Die Punkte liegen nicht auf einer Geraden.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Proportional heißt: Die Linie ist eine Gerade durch den Nullpunkt. *Lösungsschritt:* Prüfe zuerst den Nullpunkt und dann die ganze Linie.
+
+- `01` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide und begründe. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 18 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|16))_
+  - ☐ Nicht proportional. Die Gerade berührt die Achse nach oben.
+  - ☐ Nicht proportional. Die Linie steigt zu steil.
+  - ☐ Nicht proportional. Die Achsen haben verschiedene Einteilungen.
+  - ☑ Proportional. Die Linie ist eine Gerade durch den Nullpunkt.
+- `02` AFB II · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide und begründe. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 22 (ein Kästchen = 2); Gerade von (0|4) bis (4|20))_
+  - ☑ Nicht proportional. Die Gerade geht nicht durch den Nullpunkt.
+  - ☐ Nicht proportional. Die Achsen haben verschiedene Einteilungen.
+  - ☐ Proportional. Die Linie steigt.
+  - ☐ Proportional. Die Linie ist gerade.
+- `03` AFB II · _Kommunizieren_ · Kreuze das Schaubild der proportionalen Zuordnung an.
+  - ☐ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade von (0|6) bis (4|10))_
+  - ☐ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Linienzug (0|0) → (2|8) → (4|10))_
+  - ☑ C _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|4))_
+  - ☐ D _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade von (0|4) bis (4|8))_
+- `04` AFB I · _Kommunizieren_ · Das Schaubild zeigt die Kosten bei zwei Bootsverleihen A und B. / Entscheide, welche Zuordnung proportional ist. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Kosten in €“ bis 14 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|8); Gerade B von (0|2) bis (4|6))_
+  - ☐ Beide Zuordnungen sind proportional.
+  - ☐ Nur die Zuordnung B ist proportional.
+  - ☐ Keine der beiden Zuordnungen ist proportional.
+  - ☑ Nur die Zuordnung A ist proportional.
+- `05` AFB II · _Kommunizieren_ · Die Wertepaare der Tabelle werden in ein Schaubild eingetragen und verbunden. / Entscheide, welche Linie entsteht. _(Bild: Wertetabelle: Gewicht in kg: 2 | 4 | 5 / Preis in €: 4,50 | 9 | 11,25)_
+  - ☐ eine Linie mit Knick
+  - ☑ eine Gerade durch den Nullpunkt
+  - ☐ eine waagrechte Gerade
+  - ☐ eine Gerade, die nicht durch den Nullpunkt geht
+- `06` AFB III · _Kommunizieren_ · Die Wertepaare der Tabelle werden in ein Schaubild eingetragen und verbunden. / Entscheide, welche Linie entsteht. _(Bild: Wertetabelle: Gewicht in kg: 2 | 4 | 5 / Preis in €: 3,70 | 6,40 | 7,75)_
+  - ☐ eine Linie mit Knick
+  - ☐ eine Gerade durch den Nullpunkt
+  - ☐ eine waagrechte Gerade
+  - ☑ eine Gerade, die nicht durch den Nullpunkt geht
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Proportional heißt: Die Linie ist eine Gerade durch den Nullpunkt.
+
+- `01` AFB I · _Kommunizieren_ · Prüfe das Schaubild. / Entscheide und begründe. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Strecke in km“ bis 22 (ein Kästchen = 2); Linienzug (0|0) → (2|8) → (4|10))_
+  - ☑ Nicht proportional. Die Linie hat einen Knick.
+  - ☐ Nicht proportional. Die Linie steigt zu steil.
+  - ☐ Proportional. Die Linie beginnt im Nullpunkt.
+  - ☐ Proportional. Die Linie steigt.
+- `02` AFB II · _Kommunizieren_ · Kreuze alle Schaubilder von proportionalen Zuordnungen an.
+  - ☐ A _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade von (0|2) bis (4|10))_
+  - ☑ B _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|12))_
+  - ☑ C _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|8))_
+  - ☐ D _(Bild: Schaubild: nach rechts „Zeit in min“ bis 5 (ein Kästchen = 1), nach oben „Wasser in l“ bis 14 (ein Kästchen = 2); Linienzug (0|0) → (2|8) → (4|10))_
+- `03` AFB II · _Kommunizieren_ · Das Schaubild zeigt die Kosten bei zwei Bootsverleihen A und B. / Entscheide, welche Zuordnung proportional ist. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Kosten in €“ bis 18 (ein Kästchen = 2); Gerade A von (0|2) bis (4|14); Gerade durch den Nullpunkt B von (0|0) bis (4|8))_
+  - ☑ Nur die Zuordnung B ist proportional.
+  - ☐ Beide Zuordnungen sind proportional.
+  - ☐ Nur die Zuordnung A ist proportional.
+  - ☐ Keine der beiden Zuordnungen ist proportional.
+- `04` AFB III · _Kommunizieren_ · Das Schaubild zeigt die Kosten bei zwei Bootsverleihen A und B. / Entscheide, welche Zuordnung proportional ist. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 5 (ein Kästchen = 1), nach oben „Kosten in €“ bis 20 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (4|12); Gerade durch den Nullpunkt B von (0|0) bis (4|8))_
+  - ☐ Nur die Zuordnung B ist proportional.
+  - ☐ Keine der beiden Zuordnungen ist proportional.
+  - ☑ Beide Zuordnungen sind proportional.
+  - ☐ Nur die Zuordnung A ist proportional.
+- `05` AFB II · _Kommunizieren_ · Eine proportionale Zuordnung hat im Schaubild den Punkt (2 | 3). / Kreuze den Punkt an, der auch zu dieser Zuordnung gehört. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 7 (ein Kästchen = 1), nach oben „Strecke in km“ bis 8 (ein Kästchen = 1); Punkte (2|3))_
+  - ☐ (4 | 5)
+  - ☑ (4 | 6)
+  - ☐ (3 | 4)
+  - ☐ (4 | 3)
+  - ☐ (6 | 4)
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Schaubild zeigt die Kosten bei zwei Fahrradverleihen A und B. Lena sagt: „A ist proportional und deshalb immer billiger.“ / Beurteile die Aussage. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 7 (ein Kästchen = 1), nach oben „Kosten in €“ bis 26 (ein Kästchen = 2); Gerade durch den Nullpunkt A von (0|0) bis (6|24); Gerade B von (0|4) bis (6|16))_
+  - ☑ Falsch. A ist proportional, aber nur bis 2 h billiger. Ab 2 h kostet B weniger.
+  - ☐ Stimmt. Proportionale Zuordnungen haben keine Grundgebühr.
+  - ☐ Falsch. A ist erst ab 2 h billiger.
+  - ☐ Stimmt. Die Gerade von A beginnt im Nullpunkt und bleibt darunter.
+  - ☐ Falsch. B ist proportional, weil die Gerade flacher ist.
+
+## 6.7.5-S2: Ich kann am Schaubild Werte ablesen und Punkte eintragen.
+
+Grundlage, die F übt: An einer Geraden durch den Nullpunkt einen Wert auf einer Gitterlinie ablesen
+
+Baut auf: 6.7.5-S1 (Ich kann proportionale Zuordnungen am Schaubild erkennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe an der Achse nach rechts bis 4. Gehe dann hoch zur Geraden. *Beispiel:* Links an der Achse liest du den Wert ab. *Lösungsschritt:* Bestimme zuerst den Wert von einem Kästchen an jeder Achse.
+
+- `01` AFB I · _Kommunizieren_ · Das Wasser fließt gleichmäßig. / Lies den Wert für 4 min am Schaubild ab. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 6 (ein Kästchen = 1), nach oben „Wasser in l“ bis 55 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (5|50))_ Lösung: **40 l**. Typische Fehler: 8 (einteilung-uebersehen), 4 (schaubild-achsen-vertauscht), 50 (tabelle-falsche-zeile).
+- `02` AFB I · _Kommunizieren_ · Jedes Kilogramm kostet gleich viel. / Gegeben: 6 €. / Lies am Schaubild das passende Gewicht ab. _(Bild: Schaubild: nach rechts „Gewicht in kg“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (5|10))_ Lösung: **3 kg**. Typische Fehler: 6 (schaubild-achsen-vertauscht).
+- `03` AFB I · _Kommunizieren_ · Die Tabelle zeigt eine proportionale Zuordnung. / Trage zu jeder Spalte einen Punkt ein. _(Bild: Wertetabelle: Anzahl Kugeln: 2 | 5 / Preis in €: 4 | 10)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Anzahl Kugeln“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1))_ Lösung: **(2|4) (5|10)**
+- `04` AFB I · _Kommunizieren_ · Jedes Pferd im Burgstall bekommt gleich viel Hafer. / Lies den Wert für 4 Pferde am Schaubild ab. _(Bild: Schaubild: nach rechts „Anzahl Pferde“ bis 6 (ein Kästchen = 1), nach oben „Hafer in kg“ bis 11 (ein Kästchen = 1); Punkte (1|2), (2|4), (3|6), (4|8), (5|10))_ Lösung: **8 kg**. Typische Fehler: 4 (schaubild-achsen-vertauscht), 10 (tabelle-falsche-zeile).
+- `05` AFB II · _Kommunizieren_ · Das Wasser fließt gleichmäßig. / Lies die Werte am Schaubild ab und ergänze die Tabelle. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 6 (ein Kästchen = 1), nach oben „Wasser in l“ bis 55 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (5|50))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in min** | 1 | 2 | 4 |
+  |---|---|---|---|
+  | **Wasser in l** | **10** | **20** | **40** |
+
+- `06` AFB I · _Kommunizieren_ · Jede Kugel Eis kostet gleich viel. / 1 Kugel Eis kostet 2 €. / Trage die Punkte für 2 und 4 Kugeln Eis ein. _(Punkte im Schaubild antippen; Schaubild: nach rechts „Anzahl Kugeln“ bis 6 (ein Kästchen = 1), nach oben „Preis in €“ bis 11 (ein Kästchen = 1))_ Lösung: **(2|4) (4|8)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe an der Achse nach rechts bis 2. Gehe dann hoch zur Geraden. *Beispiel:* Links an der Achse liest du den Wert ab. *Lösungsschritt:* Bestimme zuerst den Wert von einem Kästchen an jeder Achse.
+
+- `01` AFB I · _Kommunizieren_ · Die Gruppe wandert immer gleich schnell. / Lies den Wert für 2 h am Schaubild ab. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 6 (ein Kästchen = 1), nach oben „Strecke in km“ bis 30 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (5|25))_ Lösung: **10 km**. Typische Fehler: 2 (einteilung-uebersehen), 15 (tabelle-falsche-zeile).
+- `02` AFB I · _Kommunizieren_ · Die Gruppe wandert immer gleich schnell. / Gegeben: 20 km. / Lies am Schaubild die passende Zeit ab. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 7 (ein Kästchen = 1), nach oben „Strecke in km“ bis 26 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (6|24))_ Lösung: **5 h**. Typische Fehler: 20 (schaubild-achsen-vertauscht), 10 (einteilung-uebersehen).
+- `03` AFB II · _Kommunizieren_ · Die Tabelle zeigt eine proportionale Zuordnung. / Trage die drei Wertepaare als Punkte ein. _(Bild: Wertetabelle: Anzahl Pferde: 2 | 3 | 5 / Hafer in kg: 8 | 12 | 20)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Anzahl Pferde“ bis 7 (ein Kästchen = 1), nach oben „Hafer in kg“ bis 26 (ein Kästchen = 2))_ Lösung: **(2|8) (3|12) (5|20)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `04` AFB I · _Kommunizieren_ · Die Gruppe wandert immer gleich schnell. / Lies die Werte am Schaubild ab und ergänze die Tabelle. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 7 (ein Kästchen = 1), nach oben „Strecke in km“ bis 35 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (6|30))_  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Zeit in h** | 1 | 3 | 5 |
+  |---|---|---|---|
+  | **Strecke in km** | **5** | **15** | **25** |
+
+- `05` AFB II · _Kommunizieren_ · Jedes Pferd im Burgstall bekommt gleich viel Hafer. / 1 Pferd im Burgstall frisst am Tag 5 kg Hafer. / Trage die Punkte für 1, 3 und 6 Pferde ein. _(Punkte im Schaubild antippen; Schaubild: nach rechts „Anzahl Pferde“ bis 7 (ein Kästchen = 1), nach oben „Hafer in kg“ bis 35 (ein Kästchen = 5))_ Lösung: **(1|5) (3|15) (6|30)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `06` AFB III · _Kommunizieren_ · Das Wasser fließt gleichmäßig. / Lies den Wert für 2 min am Schaubild ab. / Berechne damit den Wert für 20 min. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 6 (ein Kästchen = 1), nach oben „Wasser in l“ bis 11 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (5|10))_ Lösung: **40 l**. Typische Fehler: 4 (sach-schritt-vergessen), 22 (prop-addiert).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe an der Achse nach rechts bis 3,5. Gehe dann hoch zur Geraden. *Lösungsschritt:* Bestimme zuerst den Wert von einem Kästchen an jeder Achse.
+
+- `01` AFB I · _Kommunizieren_ · Die Gruppe wandert immer gleich schnell. / Lies den Wert für 3,5 h am Schaubild ab. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 4,5 (ein Kästchen = 0,5), nach oben „Strecke in km“ bis 9 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (4|8))_ Lösung: **7 km**. Typische Fehler: 3,5 (schaubild-achsen-vertauscht), 8 (tabelle-falsche-zeile).
+- `02` AFB II · _Kommunizieren_ · Das Wasser fließt gleichmäßig. / Gegeben: 5 l. / Lies am Schaubild die passende Zeit ab. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 4,5 (ein Kästchen = 0,5), nach oben „Wasser in l“ bis 9 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (4|8))_ Lösung: **2,5 min**. Typische Fehler: 5 (schaubild-achsen-vertauscht).
+- `03` AFB II · _Kommunizieren_ · Die Tabelle zeigt eine proportionale Zuordnung. / Trage die drei Wertepaare als Punkte ein. _(Bild: Wertetabelle: Gewicht in kg: 0,5 | 2 | 3,5 / Preis in €: 2 | 8 | 14)_ _(Punkte im Schaubild antippen; Schaubild: nach rechts „Gewicht in kg“ bis 4,5 (ein Kästchen = 0,5), nach oben „Preis in €“ bis 18 (ein Kästchen = 2))_ Lösung: **(0,5|2) (2|8) (3,5|14)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `04` AFB I · _Kommunizieren_ · **[Heftaufgabe]** Jedes Kilogramm kostet gleich viel. 2 kg Äpfel kosten 4,80 €. / Zeichne das Schaubild der Zuordnung in dein Heft. Wähle die Einteilung der Achsen selbst und zeichne die Gerade durch den Nullpunkt und den Punkt (2 | 4,80). / Lies an deinem Schaubild den Wert für 3,5 kg ab und gib ihn an. Lösung: **8,40 €**. Typische Fehler: 4,80 (sach-schritt-vergessen), 6,30 (prop-addiert).
+- `05` AFB II · _Kommunizieren_ · Das Wasser fließt gleichmäßig. / Lies den Wert für 2,5 min am Schaubild ab. / Berechne damit den Wert für 10 min. _(Bild: Schaubild: nach rechts „Zeit in min“ bis 4,5 (ein Kästchen = 0,5), nach oben „Wasser in l“ bis 18 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|16))_ Lösung: **40 l**. Typische Fehler: 10 (sach-schritt-vergessen), 17,5 (prop-addiert).
+- `06` AFB III · _Kommunizieren_ · **[Heftaufgabe]** Die Gruppe wandert immer gleich schnell. In 4 Stunden wandert die Gruppe 12 km. / Zeichne das Schaubild der Zuordnung in dein Heft. Wähle die Einteilung der Achsen selbst und zeichne die Gerade durch den Nullpunkt und den Punkt (4 | 12). / Lies an deinem Schaubild den Wert für 2,5 h ab und gib ihn an. Lösung: **7,5 km**. Typische Fehler: 12 (sach-schritt-vergessen), 10,5 (prop-addiert).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe an der Achse nach rechts bis 1,5. Gehe dann hoch zur Geraden.
+
+- `01` AFB I · _Kommunizieren_ · Die Gruppe wandert immer gleich schnell. / Lies den Wert für 1,5 h am Schaubild ab. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 4,5 (ein Kästchen = 0,5), nach oben „Strecke in km“ bis 18 (ein Kästchen = 2); Gerade durch den Nullpunkt von (0|0) bis (4|16))_ Lösung: **6 km**. Typische Fehler: 3 (einteilung-uebersehen), 1,5 (schaubild-achsen-vertauscht), 8 (tabelle-falsche-zeile).
+- `02` AFB II · _Kommunizieren_ · Das Fahrrad fährt immer gleich schnell. / Gegeben: 35 km. / Lies am Schaubild die passende Zeit ab. _(Bild: Schaubild: nach rechts „Zeit in h“ bis 4,5 (ein Kästchen = 0,5), nach oben „Strecke in km“ bis 45 (ein Kästchen = 5); Gerade durch den Nullpunkt von (0|0) bis (4|40))_ Lösung: **3,5 h**. Typische Fehler: 35 (schaubild-achsen-vertauscht), 7 (einteilung-uebersehen).
+- `03` AFB II · _Kommunizieren_ · Jedes Kilogramm kostet gleich viel. / 1 kg Kartoffeln kostet 4 €. / Trage die Punkte für 1, 2,5, 3 und 3,5 kg ein. _(Punkte im Schaubild antippen; Schaubild: nach rechts „Gewicht in kg“ bis 4,5 (ein Kästchen = 0,5), nach oben „Preis in €“ bis 18 (ein Kästchen = 2))_ Lösung: **(1|4) (2,5|10) (3|12) (3,5|14)**
+  - Nachfrage: Liegen die Punkte auf einer Geraden durch den Nullpunkt? ☑ Ja ☐ Nein
+- `04` AFB III · _Kommunizieren_ · **[Heftaufgabe]** Jedes Kilogramm kostet gleich viel. 4 kg Kartoffeln kosten 11,20 €. / Zeichne das Schaubild der Zuordnung in dein Heft. Wähle die Einteilung der Achsen selbst und zeichne die Gerade durch den Nullpunkt und den Punkt (4 | 11,20). / Lies an deinem Schaubild den Wert für 2,5 kg ab und gib ihn an. Lösung: **7 €**. Typische Fehler: 11,20 (sach-schritt-vergessen), 9,70 (prop-addiert).
+- `05` AFB II · _Kommunizieren_ · Jedes Pferd im Burgstall bekommt gleich viel Hafer. Ali hat vier Punkte eingetragen. Ein Punkt liegt falsch. / Kreuze den falschen Punkt an. _(Bild: Schaubild: nach rechts „Anzahl Pferde“ bis 6 (ein Kästchen = 1), nach oben „Hafer in kg“ bis 11 (ein Kästchen = 1); Punkte (1|2), (2|4), (3|6), (4|9))_
+  - ☐ (2 | 4)
+  - ☐ (3 | 6)
+  - ☑ (4 | 9)
+  - ☐ (1 | 2)
+- `06` AFB III · _Kommunizieren_ · **[Heftaufgabe]** Das Fahrrad fährt immer gleich schnell. In 2,5 Stunden fährt das Fahrrad 7,5 km. / Zeichne das Schaubild der Zuordnung in dein Heft. Wähle die Einteilung der Achsen selbst und zeichne die Gerade durch den Nullpunkt und den Punkt (2,5 | 7,5). / Lies an deinem Schaubild den Wert für 4 h ab und gib ihn an. Lösung: **12 km**. Typische Fehler: 7,5 (sach-schritt-vergessen), 9 (prop-addiert).
+
+## 6.7.6-R1: Ich kann mit dem Dreisatz rechnen.
+
+Grundlage, die F übt: Die Dreisatztabelle mit vorgegebenen Rechenpfeilen ausfüllen
+
+Baut auf: 6.7.2-P2 (Ich kann Tabellen zu proportionalen Zuordnungen ergänzen.), 6.5.4-D1 (Ich kann eine Dezimalzahl durch eine natürliche Zahl dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Spalten dasselbe. *Beispiel:* Aus „4 Hefte → 6 €“ wird mit „: 4“ die Zeile „1 Heft → 1,50 €“. *Lösungsschritt:* Rechne zuerst 10 € : 5. Rechne das Ergebnis dann mal 2.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Kilogramm kostet gleich viel. / 5 kg Äpfel kosten 10 €. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Gewicht | Preis | Rechenpfeil |
+  |---|---|---|---|
+  |  | 5 kg | 10 € |  |
+  | : 5 | 1 kg | **2** € | : 5 |
+  | · 2 | 2 kg | **4** € | · 2 |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Fahrrad fährt immer gleich schnell. / In 3 Stunden fährt das Fahrrad 30 km. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Zeit | Strecke | Rechenpfeil |
+  |---|---|---|---|
+  |  | 3 h | 30 km |  |
+  | : 3 | 1 h | **10** km | : 3 |
+  | · 5 | 5 h | **50** km | · 5 |
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Pferd im Burgstall bekommt gleich viel Hafer. / 5 Pferde im Burgstall fressen am Tag 20 kg Hafer. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Anzahl Pferde | Hafer | Rechenpfeil |
+  |---|---|---|---|
+  |  | 5 Pferde | 20 kg |  |
+  | : 5 | 1 Pferd | **4** kg | : 5 |
+  | · 3 | 3 Pferde | **12** kg | · 3 |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Für jede Person rechnet das Rezept gleich viel Mehl. / Für 4 Personen braucht das Rezept 200 g Mehl. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Anzahl Personen | Mehl | Rechenpfeil |
+  |---|---|---|---|
+  |  | 4 Personen | 200 g |  |
+  | : 4 | 1 Person | **50** g | : 4 |
+  | · 3 | 3 Personen | **150** g | · 3 |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 4 kg Äpfel kosten 8 €. / Die letzte Zeile der Dreisatztabelle fehlt. / Kreuze die passende Zuordnung an. _(Bild: Dreisatztabelle Gewicht | Preis: 4 kg → 8 € / 1 kg → 2 € / 2 kg → ? €; Rechenpfeile : 4, dann · 2)_
+  - ☑ 2 kg → 4 €
+  - ☐ 2 kg → 2 €
+  - ☐ 2 kg → 16 €
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Kilogramm kostet gleich viel. / 2 kg Äpfel kosten 4 €. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Gewicht | Preis | Rechenpfeil |
+  |---|---|---|---|
+  |  | 2 kg | 4 € |  |
+  | : 2 | 1 kg | **2** € | : 2 |
+  | · 3 | 3 kg | **6** € | · 3 |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Spalten dasselbe. *Beispiel:* Aus „4 Hefte → 6 €“ wird mit „: 4“ die Zeile „1 Heft → 1,50 €“. *Lösungsschritt:* Rechne zuerst 3,20 € : 4. Rechne das Ergebnis dann mal 7.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Heft kostet gleich viel. / 4 Hefte kosten 3,20 €. / Ergänze die Dreisatztabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Anzahl Hefte | Preis | Rechenpfeil |
+  |---|---|---|---|
+  |  | 4 Hefte | 3,20 € |  |
+  | : **4** | 1 Heft | **0,80** € | : **4** |
+  | · **7** | 7 Hefte | **5,60** € | · **7** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Fahrrad fährt immer gleich schnell. / In 2 Stunden fährt das Fahrrad 30 km. / Ergänze die Dreisatztabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Zeit | Strecke | Rechenpfeil |
+  |---|---|---|---|
+  |  | 2 h | 30 km |  |
+  | : **2** | 1 h | **15** km | : **2** |
+  | · **3** | 3 h | **45** km | · **3** |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ben hat eine Dreisatztabelle ausgefüllt. / Kreuze an, was falsch ist. _(Bild: Dreisatztabelle Anzahl Kugeln | Preis: 5 Kugeln Eis → 6 € / 1 Kugel Eis → 30 € / 7 Kugeln Eis → 210 €; Rechenpfeile links : 5, rechts · 5, dann · 7)_
+  - ☐ Die Tabelle stimmt.
+  - ☑ In der zweiten Zeile muss rechts auch geteilt werden.
+  - ☐ In der ersten Zeile stehen die Werte in der falschen Spalte.
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Pferd im Burgstall bekommt gleich viel Hafer. / 9 Pferde im Burgstall fressen am Tag 45 kg Hafer. / Ergänze die Dreisatztabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Anzahl Pferde | Hafer | Rechenpfeil |
+  |---|---|---|---|
+  |  | 9 Pferde | 45 kg |  |
+  | : **9** | 1 Pferd | **5** kg | : **9** |
+  | · **5** | 5 Pferde | **25** kg | · **5** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 9 kg Kartoffeln kosten 10,80 €. / Die letzte Zeile der Dreisatztabelle fehlt. / Kreuze die passende Zuordnung an. _(Bild: Dreisatztabelle Gewicht | Preis: 9 kg → 10,80 € / 1 kg → 1,20 € / 8 kg → ? €; Rechenpfeile : 9, dann · 8)_
+  - ☐ 8 kg → 1,20 €
+  - ☑ 8 kg → 9,60 €
+  - ☐ 8 kg → 86,40 €
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jedes Brötchen kostet gleich viel. / 10 Brötchen kosten 7 €. / Berechne den Preis für 8 Brötchen. _(Bild: Dreisatztabelle Anzahl Brötchen | Preis: 10 Brötchen → 7 € / 1 Brötchen → ? € / 8 Brötchen → ? €; Rechenpfeile : 10, dann · 8)_ Lösung: **5,60 €**. Typische Fehler: 0,70 (dreisatz-zwischenwert), 8,75 (dreisatz-falsch-herum), 5 (prop-addiert), 56 (dreisatz-falsch-herum).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst auf 1 zurück. *Lösungsschritt:* Rechne 13,05 € : 9 und dann das Ergebnis mal 5.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Jede Kugel Eis kostet gleich viel. 9 Kugeln Eis kosten 13,05 €. / Berechne den Preis für 5 Kugeln Eis. Lösung: **7,25 €**. Typische Fehler: 1,45 (dreisatz-zwischenwert), 23,49 (dreisatz-falsch-herum), 9,05 (prop-addiert), 65,25 (dreisatz-falsch-herum).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Die Gruppe wandert immer gleich schnell. In 2,5 Stunden wandert die Gruppe 10 km. / Berechne die Strecke für 2 Stunden. Lösung: **8 km**. Typische Fehler: 2 (dreisatz-zwischenwert), 12,5 (dreisatz-falsch-herum), 9,5 (prop-addiert), 20 (dreisatz-falsch-herum).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Wasser fließt gleichmäßig. In 15 Minuten fließen 120 l Wasser in die Wanne. / Ergänze die Dreisatztabelle. Die mittlere Zeile rechnet auf 3 min zurück, einen gemeinsamen Teiler. / Trage auch die Zahlen an den Rechenpfeilen ein.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Zeit | Wasser | Rechenpfeil |
+  |---|---|---|---|
+  |  | 15 min | 120 l |  |
+  | : **5** | 3 min | **24** l | : **5** |
+  | · **4** | 12 min | **96** l | · **4** |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Jedes Heft kostet gleich viel. 3 Hefte kosten 2,55 €. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne den Preis für 7 Hefte. Lösung: **5,95 €**. Typische Fehler: 0,85 (dreisatz-zwischenwert), 6,55 (prop-addiert), 17,85 (dreisatz-falsch-herum).
+- `05` AFB II · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. 10 kg Äpfel kosten 22,50 €. Sara rechnet 22,50 € : 10 und antwortet: „Für 12 kg sind es 2,25 €.“ / Beurteile die Antwort.
+  - ☐ Stimmt. 22,50 € : 10 ist 2,25 €.
+  - ☐ Stimmt. Der Dreisatz hat nur zwei Zeilen.
+  - ☑ Falsch. 2,25 € ist der Wert für 1. Für 12 kg sind es 27 €.
+  - ☐ Falsch. Für 12 kg sind es 270 €.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Das Fahrrad fährt immer gleich schnell. In 6 Stunden fährt das Fahrrad 108 km. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne die Strecke für 8 Stunden. Lösung: **144 km**. Typische Fehler: 36 (dreisatz-zwischenwert), 81 (dreisatz-falsch-herum), 110 (prop-addiert), 864 (dreisatz-falsch-herum).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst auf 0,5 h zurück.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Gruppe wandert immer gleich schnell. In 3,5 Stunden wandert die Gruppe 17,5 km. / Berechne die Strecke für 2,5 Stunden. Lösung: **12,5 km**. Typische Fehler: 2,5 (dreisatz-zwischenwert), 24,5 (dreisatz-falsch-herum), 16,5 (prop-addiert), 43,75 (dreisatz-falsch-herum).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Jedes Brötchen kostet gleich viel. 12 Brötchen kosten 5,40 €. / Berechne, wie viele Brötchen es für 7,20 € gibt. Lösung: **16 Brötchen**. Typische Fehler: 4 (dreisatz-zwischenwert), 9 (dreisatz-falsch-herum), 13,8 (prop-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jede Kugel Eis kostet gleich viel. 16 Kugeln Eis kosten 21,60 €. / Bestimme mit der Dreisatztabelle, wie viele Kugeln es für 16,20 € gibt. / Ergänze die Tabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Preis | Anzahl Kugeln | Rechenpfeil |
+  |---|---|---|---|
+  |  | 21,60 € | 16 Kugeln Eis |  |
+  | : **4** | 5,40 € | **4** Kugeln | : **4** |
+  | · **3** | 16,20 € | **12** Kugeln | · **3** |
+
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Jedes Kilogramm kostet gleich viel. 3,5 kg Kartoffeln kosten 12,60 €. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne den Preis für 4 kg Kartoffeln. Lösung: **14,40 €**. Typische Fehler: 1,80 (dreisatz-zwischenwert), 11,03 (dreisatz-falsch-herum), 13,10 (prop-addiert), 50,40 (dreisatz-falsch-herum).
+- `05` AFB II · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. 7 kg Äpfel kosten 22,75 €. Elif rechnet 22,75 € : 7 und antwortet: „Für 12 kg sind es 3,25 €.“ / Beurteile die Antwort.
+  - ☐ Stimmt. Der Dreisatz hat nur zwei Zeilen.
+  - ☐ Falsch. Für 12 kg sind es 273 €.
+  - ☐ Stimmt. 22,75 € : 7 ist 3,25 €.
+  - ☑ Falsch. 3,25 € ist der Wert für 1. Für 12 kg sind es 39 €.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Die Gruppe wandert immer gleich schnell. In 2 Stunden wandert die Gruppe 7 km. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne die Zeit für 8,75 km. Lösung: **2,5 h**. Typische Fehler: 0,5 (dreisatz-zwischenwert), 1,6 (dreisatz-falsch-herum), 3,75 (prop-addiert).
+
+## 6.7.6-R2: Ich kann Sachaufgaben mit dem Dreisatz lösen.
+
+Grundlage, die F übt: Eine Einkaufsaufgabe in der Dreisatztabelle mit vorgegebenen Rechenpfeilen lösen
+
+Baut auf: 6.7.6-R1 (Ich kann mit dem Dreisatz rechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Spalten dasselbe. *Beispiel:* Aus „4 Hefte → 6 €“ wird mit „: 4“ die Zeile „1 Heft → 1,50 €“. *Lösungsschritt:* Rechne zuerst 8 € : 4. Rechne das Ergebnis dann mal 2.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Jonas kauft auf dem Markt Kartoffeln. / 4 kg Kartoffeln kosten 8 €. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Gewicht | Preis | Rechenpfeil |
+  |---|---|---|---|
+  |  | 4 kg | 8 € |  |
+  | : 4 | 1 kg | **2** € | : 4 |
+  | · 2 | 2 kg | **4** € | · 2 |
+
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Paul macht eine Radtour. / In 5 Stunden fährt das Fahrrad 100 km. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Zeit | Strecke | Rechenpfeil |
+  |---|---|---|---|
+  |  | 5 h | 100 km |  |
+  | : 5 | 1 h | **20** km | : 5 |
+  | · 3 | 3 h | **60** km | · 3 |
+
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · In der Burgschmiede wird gearbeitet. / In 3 Stunden schmiedet der Burgschmied 6 Hufeisen. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Zeit | Anzahl Hufeisen | Rechenpfeil |
+  |---|---|---|---|
+  |  | 3 h | 6 Hufeisen |  |
+  | : 3 | 1 h | **2** Hufeisen | : 3 |
+  | · 4 | 4 h | **8** Hufeisen | · 4 |
+
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Lena backt Pfannkuchen. / Für 5 Personen braucht das Rezept 500 g Mehl. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Anzahl Personen | Mehl | Rechenpfeil |
+  |---|---|---|---|
+  |  | 5 Personen | 500 g |  |
+  | : 5 | 1 Person | **100** g | : 5 |
+  | · 2 | 2 Personen | **200** g | · 2 |
+
+- `05` AFB II · _Modellieren_ · In 5 Stunden schmiedet der Burgschmied 15 Hufeisen. / Die letzte Zeile der Dreisatztabelle fehlt. / Kreuze die passende Zuordnung an. _(Bild: Dreisatztabelle Zeit | Anzahl Hufeisen: 5 h → 15 Hufeisen / 1 h → 3 Hufeisen / 4 h → ? Hufeisen; Rechenpfeile : 5, dann · 4)_
+  - ☐ 4 h → 60 Hufeisen
+  - ☑ 4 h → 12 Hufeisen
+  - ☐ 4 h → 3 Hufeisen
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Finn lädt Freunde zum Eis ein. / 3 Kugeln Eis kosten 3 €. / Ergänze die Dreisatztabelle.  _(Dreisatztabelle; fett = Eingabefeld, Rechenpfeile vorgegeben)_
+
+  | Rechenpfeil | Anzahl Kugeln | Preis | Rechenpfeil |
+  |---|---|---|---|
+  |  | 3 Kugeln Eis | 3 € |  |
+  | : 3 | 1 Kugel Eis | **1** € | : 3 |
+  | · 5 | 5 Kugeln Eis | **5** € | · 5 |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in beiden Spalten dasselbe. *Beispiel:* Aus „4 Hefte → 6 €“ wird mit „: 4“ die Zeile „1 Heft → 1,50 €“. *Lösungsschritt:* Rechne zuerst 7,20 € : 3. Rechne das Ergebnis dann mal 4.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Mia kauft auf dem Markt Äpfel. / 3 kg Äpfel kosten 7,20 €. / Ergänze die Dreisatztabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Gewicht | Preis | Rechenpfeil |
+  |---|---|---|---|
+  |  | 3 kg | 7,20 € |  |
+  | : **3** | 1 kg | **2,40** € | : **3** |
+  | · **4** | 4 kg | **9,60** € | · **4** |
+
+- `02` AFB I · _Modellieren (+ Kommunizieren)_ · Lina macht eine Radtour. / In 4 Stunden fährt das Fahrrad 72 km. / Ergänze die Dreisatztabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Zeit | Strecke | Rechenpfeil |
+  |---|---|---|---|
+  |  | 4 h | 72 km |  |
+  | : **4** | 1 h | **18** km | : **4** |
+  | · **2** | 2 h | **36** km | · **2** |
+
+- `03` AFB II · _Modellieren_ · 5 Brötchen kosten 3 €. / Mia kauft 7 Brötchen und zahlt mit 5 €. / Berechne das Rückgeld. _(Bild: Dreisatztabelle Anzahl Brötchen | Preis: 5 Brötchen → 3 € / 1 Brötchen → ? € / 7 Brötchen → ? €; Rechenpfeile : 5, dann · 7)_ Lösung: **0,80 €**. Typische Fehler: 4,20 (sach-schritt-vergessen), 4,40 (dreisatz-zwischenwert).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Im Burgstall werden die Pferde gefüttert. / 3 Pferde im Burgstall fressen am Tag 9 kg Hafer. / Ergänze die Dreisatztabelle und die Rechenpfeile.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Anzahl Pferde | Hafer | Rechenpfeil |
+  |---|---|---|---|
+  |  | 3 Pferde | 9 kg |  |
+  | : **3** | 1 Pferd | **3** kg | : **3** |
+  | · **9** | 9 Pferde | **27** kg | · **9** |
+
+- `05` AFB II · _Modellieren_ · Tom hat eine Dreisatztabelle ausgefüllt. / Kreuze an, was falsch ist. _(Bild: Dreisatztabelle Zeit | Wasser: 3 min → 36 l / 1 min → 108 l / 10 min → 1080 l; Rechenpfeile links : 3, rechts · 3, dann · 10)_
+  - ☐ In der ersten Zeile stehen die Werte in der falschen Spalte.
+  - ☐ Die Tabelle stimmt.
+  - ☑ In der zweiten Zeile muss rechts auch geteilt werden.
+- `06` AFB III · _Modellieren_ · Laden A: 2 Brötchen kosten 1,60 €. / Laden B: 6 Brötchen kosten 4,20 €. / Kreuze den günstigeren Laden an.
+  - ☐ Beide Läden sind gleich günstig.
+  - ☑ Laden B. / 1 Brötchen kostet dort 0,70 €, im anderen Laden 0,80 €.
+  - ☐ Laden A. / Dort ist der Preis an der Kasse kleiner.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst in dieselbe Einheit um: 1 kg sind 1000 g. *Lösungsschritt:* 2,5 kg sind 2500 g. Rechne über 100 g: 1,35 € : 3 = 0,45 €.
+
+- `01` AFB I · _Modellieren_ · Sara kauft auf dem Markt Kirschen. 300 g kosten 1,35 €. Jedes Gramm kostet gleich viel. / Berechne den Preis für 2,5 kg. Achte auf die Einheiten. Lösung: **11,25 €**. Typische Fehler: 3,38 (einheiten-nicht-angeglichen), 0,45 (dreisatz-zwischenwert).
+- `02` AFB II · _Modellieren_ · Lina backt Pfannkuchen. Für 6 Personen braucht das Rezept 360 g Mehl. / Berechne das Mehl für 14 Personen. Lösung: **840 g**. Typische Fehler: 120 (dreisatz-zwischenwert), 368 (prop-addiert), 5040 (dreisatz-falsch-herum).
+- `03` AFB II · _Modellieren_ · Laden A: 3 Hefte kosten 2,55 €. / Laden B: 12 Hefte kosten 9 €. / Entscheide, welcher Laden günstiger ist, und begründe.
+  - ☑ Laden B. 1 Heft kostet dort 0,75 €, im anderen Laden 0,85 €.
+  - ☐ Beide Läden sind gleich günstig.
+  - ☐ Laden A. Dort ist der Preis an der Kasse kleiner.
+  - ☐ Laden A. 1 Heft kostet dort 0,75 €.
+- `04` AFB I · _Modellieren_ · **[Heftaufgabe]** Mia kauft auf dem Markt Äpfel. 11 kg Äpfel kosten 24,75 €. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne den Preis für 3 kg Äpfel. Lösung: **6,75 €**. Typische Fehler: 2,25 (dreisatz-zwischenwert), 90,75 (dreisatz-falsch-herum), 16,75 (prop-addiert), 74,25 (dreisatz-falsch-herum).
+- `05` AFB II · _Modellieren_ · Tom kauft auf dem Markt Äpfel. 1,5 kg Äpfel kosten 3,60 €. Tom nimmt 2,5 kg und zahlt mit 10 €. / Berechne das Rückgeld. Lösung: **4 €**. Typische Fehler: 6 (sach-schritt-vergessen), 8,80 (dreisatz-zwischenwert).
+- `06` AFB III · _Modellieren_ · **[Heftaufgabe]** Emre macht eine Radtour. In 2,5 Stunden fährt das Fahrrad 37,5 km. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne die Strecke für 3,5 Stunden. Lösung: **52,5 km**. Typische Fehler: 7,5 (dreisatz-zwischenwert), 38,5 (prop-addiert), 131,25 (dreisatz-falsch-herum).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Diesmal ist der erste Wert gesucht. Schreibe € in die linke Spalte der Dreisatztabelle und rechne über einen gemeinsamen Teiler.
+
+- `01` AFB I · _Modellieren_ · Ali kauft Hefte für die Klasse. 20 Hefte kosten 19 €. / Berechne, wie viele Hefte es für 7,60 € gibt. Lösung: **8 Hefte**. Typische Fehler: 4 (dreisatz-zwischenwert), 50 (dreisatz-falsch-herum), 8,6 (prop-addiert).
+- `02` AFB II · _Modellieren_ · Ein Auto verbraucht gleichmäßig 7 l Benzin auf 100 km. 1 l Benzin kostet 1,80 €. / Berechne die Benzinkosten für 350 km. Lösung: **44,10 €**. Typische Fehler: 24,50 (sach-schritt-vergessen), 12,60 (dreisatz-zwischenwert), 6,30 (sach-falsche-rechnung).
+- `03` AFB II · _Argumentieren (+ Modellieren)_ · Eine Taxifahrt kostet 4 € Grundgebühr und 2 € für jeden Kilometer. 4 km kosten also 12 €. Jonas rechnet mit dem Dreisatz: „8 km kosten 24 €.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Zur doppelten Strecke gehört der doppelte Preis.
+  - ☐ Falsch. 8 km kosten 28 €.
+  - ☑ Falsch. Die Zuordnung ist nicht proportional. 8 km kosten 20 €.
+  - ☐ Stimmt. Der Dreisatz gilt für jede Zuordnung.
+  - ☐ Falsch. 8 km kosten 16 €.
+- `04` AFB III · _Modellieren_ · **[Heftaufgabe]** Ein Auto tankt. 4 l Benzin kosten 6,40 €. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne den Preis für 1,5 l Benzin. Lösung: **2,40 €**. Typische Fehler: 0,80 (dreisatz-zwischenwert), 3,90 (prop-addiert), 9,60 (dreisatz-falsch-herum).
+- `05` AFB II · _Argumentieren (+ Modellieren)_ · Lina lädt Freunde zum Eis ein. 12 Kugeln Eis kosten 17,40 €. Lina hat 12 € und sagt: „Das reicht für 9 Kugeln Eis.“ / Beurteile die Aussage.
+  - ☐ Falsch. 9 Kugeln Eis kosten 156,60 €.
+  - ☐ Stimmt. 9 Kugeln Eis kosten 4,35 €.
+  - ☐ Stimmt. 9 Kugeln Eis kosten 11,50 €.
+  - ☑ Falsch. 9 Kugeln Eis kosten 13,05 €.
+- `06` AFB III · _Modellieren_ · **[Heftaufgabe]** Paul macht eine Radtour. In 2 Stunden fährt das Fahrrad 33 km. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen. / Berechne die Zeit für 24,75 km. Lösung: **1,5 h**. Typische Fehler: 0,5 (dreisatz-zwischenwert).
+
+## 6.7.7-A1: Ich kann antiproportionale Zuordnungen erkennen.
+
+Grundlage, die F übt: Prüfen, ob zum Doppelten die Hälfte gehört
+
+Baut auf: 6.7.2-P1 (Ich kann erkennen, ob eine Zuordnung proportional ist.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Antiproportional: Das Produkt der Wertepaare ist immer gleich. Proportional: Der Quotient ist immer gleich.
+
+- `01` AFB I · _Argumentieren_ · Prüfe die Wertepaare der Tabelle mit dem Produkt und mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Anzahl Pferde: 4 | 5 | 10 / Zeit in Tagen: 30 | 24 | 12)_
+  - ☐ Proportional. Der Quotient ist immer 7,5.
+  - ☑ Antiproportional. Das Produkt ist immer 120.
+  - ☐ Keines von beiden. Weder das Produkt noch der Quotient bleibt gleich.
+  - ☐ Antiproportional. Der zweite Wert wird kleiner. Mehr muss man nicht prüfen.
+- `02` AFB II · _Argumentieren_ · Alle Handwerker arbeiten gleich schnell. 5 Handwerker brauchen für die Burgmauer 6 Tage. / Kreuze die Zuordnung an, die zu dieser antiproportionalen Zuordnung passt.
+  - ☑ 6 Handwerker → 5 Tage
+  - ☐ 6 Handwerker → 6 Tage
+  - ☐ 6 Handwerker → 7,2 Tage
+- `03` AFB II · _Argumentieren_ · Alle Pumpen arbeiten gleich schnell. / Kreuze das Schaubild an, das zu einer antiproportionalen Zuordnung passt.
+  - ☐ A _(Bild: Schaubild: nach rechts „Anzahl Pumpen“ bis 8 (ein Kästchen = 1), nach oben „Zeit in h“ bis 8 (ein Kästchen = 1); Gerade von (0|8) bis (8|0))_
+  - ☑ B _(Bild: Schaubild: nach rechts „Anzahl Pumpen“ bis 8 (ein Kästchen = 1), nach oben „Zeit in h“ bis 8 (ein Kästchen = 1); gekrümmte Kurve von (1,5|8) bis (8|1,5))_
+  - ☐ C _(Bild: Schaubild: nach rechts „Anzahl Pumpen“ bis 8 (ein Kästchen = 1), nach oben „Zeit in h“ bis 8 (ein Kästchen = 1); Linienzug (0|6) → (4|2) → (8|2))_
+  - ☐ D _(Bild: Schaubild: nach rechts „Anzahl Pumpen“ bis 8 (ein Kästchen = 1), nach oben „Zeit in h“ bis 8 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (8|4))_
+- `04` AFB III · _Argumentieren_ · Paul sagt: „Je größer der erste Wert, desto kleiner der zweite. Also ist die Zuordnung antiproportional.“ / Beurteile die Begründung mit der Tabelle. _(Bild: Wertetabelle: Zeit in h: 1 | 3 | 4 / Höhe der Kerze in cm: 18 | 12 | 9)_
+  - ☑ Falsch. Die Produkte der Wertepaare sind verschieden. Die Zuordnung ist nicht antiproportional.
+  - ☐ Stimmt. „Je mehr, desto weniger“ gilt nur bei antiproportionalen Zuordnungen.
+  - ☐ Stimmt. Das Produkt ist immer 18.
+  - ☐ Falsch. Die Zuordnung ist proportional.
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Alle Handwerker arbeiten gleich schnell. Das Schaubild zeigt die Zuordnung. / Lies den Wert für 3 Handwerker ab. _(Bild: Schaubild: nach rechts „Anzahl Handwerker“ bis 13 (ein Kästchen = 1), nach oben „Zeit in Tagen“ bis 13 (ein Kästchen = 1); gekrümmte Kurve von (1|12) bis (13|0,923))_ Lösung: **4 Tage**. Typische Fehler: 3 (schaubild-achsen-vertauscht).
+- `06` AFB III · _Argumentieren_ · Kreuze die antiproportionale Zuordnung an.
+  - ☐ Anzahl der Kinder → Anzahl der Stühle im Zimmer
+  - ☐ Zeit → Strecke bei gleichem Tempo
+  - ☑ Länge eines Rechtecks → Breite bei gleichem Flächeninhalt
+  - ☐ Brenndauer → Höhe einer Kerze
+- `07` AFB I · _Argumentieren_ · Prüfe die Wertepaare der Tabelle mit dem Produkt und mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Anzahl Pferde: 2 | 3 | 4 / Hafer in kg: 6 | 9 | 12)_
+  - ☑ Proportional. Der Quotient ist immer 3.
+  - ☐ Antiproportional. Beide Werte werden größer.
+  - ☐ Antiproportional. Das Produkt ist immer 12.
+  - ☐ Keines von beiden. Weder das Produkt noch der Quotient bleibt gleich.
+- `08` AFB II · _Argumentieren_ · Alle Lastwagen laden gleich viel. 3 Lastwagen brauchen für den Kies je 12 Fahrten. / Kreuze die Zuordnung an, die zu dieser antiproportionalen Zuordnung passt.
+  - ☐ 6 Lastwagen → 12 Fahrten
+  - ☐ 6 Lastwagen → 9 Fahrten
+  - ☑ 6 Lastwagen → 6 Fahrten
+  - ☐ 6 Lastwagen → 24 Fahrten
+- `09` AFB II · _Argumentieren_ · Der Flächeninhalt bleibt gleich. / Kreuze das Schaubild an, das zu einer antiproportionalen Zuordnung passt.
+  - ☐ A _(Bild: Schaubild: nach rechts „Länge in cm“ bis 8 (ein Kästchen = 1), nach oben „Breite in cm“ bis 8 (ein Kästchen = 1); Linienzug (0|6) → (4|2) → (8|2))_
+  - ☑ B _(Bild: Schaubild: nach rechts „Länge in cm“ bis 8 (ein Kästchen = 1), nach oben „Breite in cm“ bis 8 (ein Kästchen = 1); gekrümmte Kurve von (0,75|8) bis (8|0,75))_
+  - ☐ C _(Bild: Schaubild: nach rechts „Länge in cm“ bis 8 (ein Kästchen = 1), nach oben „Breite in cm“ bis 8 (ein Kästchen = 1); Gerade von (0|8) bis (8|0))_
+  - ☐ D _(Bild: Schaubild: nach rechts „Länge in cm“ bis 8 (ein Kästchen = 1), nach oben „Breite in cm“ bis 8 (ein Kästchen = 1); Gerade durch den Nullpunkt von (0|0) bis (8|8))_
+- `10` AFB III · _Argumentieren_ · Ben sagt: „Je größer der erste Wert, desto kleiner der zweite. Also ist die Zuordnung antiproportional.“ / Beurteile die Begründung mit der Tabelle. _(Bild: Wertetabelle: Anzahl Handwerker: 3 | 5 | 10 / Zeit in Tagen: 10 | 6 | 3)_
+  - ☑ Falsch. Die Begründung reicht nicht. Die Zuordnung ist zwar antiproportional, aber nur, weil das Produkt immer 30 ist.
+  - ☐ Falsch. Die Produkte der Wertepaare sind verschieden. Die Zuordnung ist nicht antiproportional.
+  - ☐ Stimmt. „Je mehr, desto weniger“ gilt nur bei antiproportionalen Zuordnungen.
+  - ☐ Falsch. Die Zuordnung ist proportional.
+- `11` AFB II · _Argumentieren (+ Kommunizieren)_ · Alle Pumpen arbeiten gleich schnell. Das Schaubild zeigt die Zuordnung. / Lies am Schaubild ab, wie viele Pumpen das Becken in 4 Stunden leeren. _(Bild: Schaubild: nach rechts „Anzahl Pumpen“ bis 13 (ein Kästchen = 1), nach oben „Zeit in h“ bis 13 (ein Kästchen = 1); gekrümmte Kurve von (1|12) bis (13|0,923))_ Lösung: **3 Pumpen**. Typische Fehler: 4 (schaubild-achsen-vertauscht).
+- `12` AFB III · _Argumentieren_ · Kreuze alle antiproportionalen Zuordnungen an.
+  - ☐ gelesene Seiten → Seiten, die im Buch noch übrig sind
+  - ☑ Anzahl der Pferde → Tage, die ein Hafervorrat reicht
+  - ☐ Alter eines Kindes → Körpergröße
+  - ☐ Brenndauer → Höhe einer Kerze
+  - ☑ Anzahl der Pumpen → Zeit zum Leeren eines Beckens (alle Pumpen arbeiten gleich schnell)
+- `13` AFB I · _Argumentieren_ · Prüfe die Wertepaare der Tabelle mit dem Produkt und mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Anzahl verkaufter Karten: 1 | 2 | 3 / Anzahl freier Plätze: 8 | 6 | 4)_
+  - ☐ Proportional. Der Quotient ist immer 8.
+  - ☐ Antiproportional. Das Produkt ist immer 8.
+  - ☐ Antiproportional. Der zweite Wert wird kleiner. Mehr muss man nicht prüfen.
+  - ☑ Keines von beiden. Weder das Produkt noch der Quotient bleibt gleich.
+- `14` AFB II · _Argumentieren_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 2 cm ist 30 cm breit. / Kreuze die Zuordnung an, die zu dieser antiproportionalen Zuordnung passt.
+  - ☑ 6 cm → 10 cm
+  - ☐ 6 cm → 26 cm
+  - ☐ 6 cm → 90 cm
+  - ☐ 6 cm → 30 cm
+- `15` AFB II · _Argumentieren_ · Prüfe die Wertepaare der Tabelle mit dem Produkt und mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Geschwindigkeit in km/h: 30 | 80 | 120 / Fahrzeit in h: 8 | 3 | 2)_
+  - ☑ Antiproportional. Das Produkt ist immer 240.
+  - ☐ Keines von beiden. Weder das Produkt noch der Quotient bleibt gleich.
+  - ☐ Antiproportional. Der zweite Wert wird kleiner. Mehr muss man nicht prüfen.
+  - ☐ Proportional. Zum Doppelten gehört das Doppelte.
+- `16` AFB III · _Argumentieren_ · Kreuze die antiproportionale Zuordnung an.
+  - ☐ Anzahl der Hefte → Preis (jedes Heft kostet gleich viel)
+  - ☐ Brenndauer → Höhe einer Kerze
+  - ☑ Anzahl der Pumpen → Zeit zum Leeren eines Beckens (alle Pumpen arbeiten gleich schnell)
+  - ☐ Zeit → Strecke bei gleichem Tempo
+- `17` AFB II · _Argumentieren (+ Kommunizieren)_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Das Schaubild zeigt die Zuordnung. / Lies den Wert für 3 Personen ab. _(Bild: Schaubild: nach rechts „Anzahl Personen“ bis 13 (ein Kästchen = 1), nach oben „Preis je Person in €“ bis 26 (ein Kästchen = 2); gekrümmte Kurve von (1|24) bis (13|1,846))_ Lösung: **8 €**. Typische Fehler: 3 (schaubild-achsen-vertauscht), 4 (einteilung-uebersehen), 6 (tabelle-falsche-zeile).
+- `18` AFB III · _Argumentieren_ · Sara sagt: „Je größer der erste Wert, desto kleiner der zweite. Also ist die Zuordnung antiproportional.“ / Beurteile die Begründung mit der Tabelle. _(Bild: Wertetabelle: Anzahl verkaufter Karten: 1 | 2 | 6 / Anzahl freier Plätze: 14 | 12 | 4)_
+  - ☑ Falsch. Die Produkte der Wertepaare sind verschieden. Die Zuordnung ist nicht antiproportional.
+  - ☐ Falsch. Die Zuordnung ist proportional.
+  - ☐ Stimmt. „Je mehr, desto weniger“ gilt nur bei antiproportionalen Zuordnungen.
+  - ☐ Stimmt. Das Produkt ist immer 14.
+- `19` AFB I · _Argumentieren_ · Prüfe die Wertepaare der Tabelle mit dem Produkt und mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Anzahl Personen: 3 | 8 | 10 / Preis je Person in €: 200 | 75 | 60)_
+  - ☐ Antiproportional. Der zweite Wert wird kleiner. Mehr muss man nicht prüfen.
+  - ☐ Keines von beiden. Weder das Produkt noch der Quotient bleibt gleich.
+  - ☐ Proportional. Zum Doppelten gehört das Doppelte.
+  - ☑ Antiproportional. Das Produkt ist immer 600.
+- `20` AFB II · _Argumentieren_ · Die Strecke bleibt gleich. Mit 40 km/h dauert die Fahrt 6 Stunden. / Kreuze die Zuordnung an, die zu dieser antiproportionalen Zuordnung passt.
+  - ☐ 60 km/h → 5 h
+  - ☑ 60 km/h → 4 h
+  - ☐ 60 km/h → 6 h
+  - ☐ 60 km/h → 9 h
+- `21` AFB II · _Argumentieren_ · Prüfe die Wertepaare der Tabelle mit dem Produkt und mit dem Quotienten. / Entscheide und begründe. _(Bild: Wertetabelle: Anzahl verkaufter Karten: 2 | 4 | 6 / Anzahl freier Plätze: 16 | 12 | 8)_
+  - ☑ Keines von beiden. Weder das Produkt noch der Quotient bleibt gleich.
+  - ☐ Proportional. Der Quotient ist immer 8.
+  - ☐ Antiproportional. Der zweite Wert wird kleiner. Mehr muss man nicht prüfen.
+  - ☐ Antiproportional. Das Produkt ist immer 32.
+- `22` AFB III · _Argumentieren_ · Kreuze alle antiproportionalen Zuordnungen an.
+  - ☑ Anzahl der Personen → Preis je Person für einen Bus (die Miete bleibt gleich)
+  - ☑ Länge eines Rechtecks → Breite bei gleichem Flächeninhalt
+  - ☐ Zeit → Strecke bei gleichem Tempo
+  - ☐ Anzahl der Hefte → Preis (jedes Heft kostet gleich viel)
+  - ☐ Alter eines Kindes → Körpergröße
+- `23` AFB II · _Argumentieren (+ Kommunizieren)_ · Alle Handwerker arbeiten gleich schnell. Das Schaubild zeigt die Zuordnung. / Lies am Schaubild ab, wie viele Handwerker die Burgmauer in 6 Tagen schaffen. _(Bild: Schaubild: nach rechts „Anzahl Handwerker“ bis 13 (ein Kästchen = 1), nach oben „Zeit in Tagen“ bis 13 (ein Kästchen = 1); gekrümmte Kurve von (1|12) bis (13|0,923))_ Lösung: **2 Handwerker**. Typische Fehler: 6 (schaubild-achsen-vertauscht).
+- `24` AFB III · _Argumentieren_ · Sara sagt: „Je größer der erste Wert, desto kleiner der zweite. Also ist die Zuordnung antiproportional.“ / Beurteile die Begründung mit der Tabelle. _(Bild: Wertetabelle: Anzahl Pumpen: 4 | 6 | 12 / Zeit in h: 12 | 8 | 4)_
+  - ☑ Falsch. Die Begründung reicht nicht. Die Zuordnung ist zwar antiproportional, aber nur, weil das Produkt immer 48 ist.
+  - ☐ Stimmt. „Je mehr, desto weniger“ gilt nur bei antiproportionalen Zuordnungen.
+  - ☐ Falsch. Die Zuordnung ist proportional.
+  - ☐ Falsch. Die Produkte der Wertepaare sind verschieden. Die Zuordnung ist nicht antiproportional.
+
+## 6.7.7-A2: Ich kann Tabellen zu antiproportionalen Zuordnungen ergänzen.
+
+Grundlage, die F übt: Eine Tabelle so ergänzen, dass das Produkt gleich bleibt
+
+Baut auf: 6.7.7-A1 (Ich kann antiproportionale Zuordnungen erkennen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Produkt der Wertepaare bleibt gleich: 5 · 48. Teile dieses Produkt durch den gegebenen Wert.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Personen** | 5 | 8 | 12 |
+  |---|---|---|---|
+  | **Preis je Person in €** | 48 | **30** | **20** |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Strecke bleibt gleich. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Geschwindigkeit in km/h** | 20 | 30 | 60 | 120 |
+  |---|---|---|---|---|
+  | **Fahrzeit in h** | 12 | **8** | **4** | **2** |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Alle Pumpen arbeiten gleich schnell. 8 gleiche Pumpen leeren ein Becken in 3 Stunden. / Berechne die Zeit für 1 Pumpe. Lösung: **24 h**. Typische Fehler: 0,375 (anti-proportional-gerechnet), 3 (sach-schritt-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Alle Handwerker arbeiten gleich schnell. Emre hat eine Tabelle zu dieser antiproportionalen Zuordnung geschrieben. Ein Wert in der zweiten Zeile ist falsch. / Bestimme den richtigen Wert. _(Bild: Wertetabelle: Anzahl Handwerker: 2 | 6 | 8 | 12 / Zeit in Tagen: 12 | 4 | 4 | 2)_ Lösung: **3 Tage**. Typische Fehler: 4 (sach-frage-verfehlt), 24 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Alle Handwerker arbeiten gleich schnell. 2 Handwerker brauchen für die Burgmauer 12 Tage. / Ergänze die Rechnungen mit dem gleichen Produkt. / 2 · 12 = ▢ / 6 · ▢ = 24 / ▢ · 2 = 24 _(Bild: Wertetabelle: Anzahl Handwerker: 2 / Zeit in Tagen: 12)_ Lösung: a = **24**, b = **4**, c = **12**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Alle Handwerker arbeiten gleich schnell. 2 Handwerker brauchen für die Burgmauer 18 Tage. / Berechne, wie viele Handwerker die Burgmauer in 9 Tagen schaffen. Lösung: **4 Handwerker**. Typische Fehler: 1 (anti-proportional-gerechnet), 9 (schaubild-achsen-vertauscht).
+- `07` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Personen** | 3 | 4 | 10 | 12 |
+  |---|---|---|---|---|
+  | **Preis je Person in €** | 160 | **120** | **48** | **40** |
+
+- `08` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Pferd frisst jeden Tag gleich viel. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Pferde** | 3 | 5 | 6 | **12** |
+  |---|---|---|---|---|
+  | **Zeit in Tagen** | 20 | **12** | **10** | 5 |
+
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Jedes Pferd frisst jeden Tag gleich viel. Der Hafer im Burgstall reicht für 4 Pferde 15 Tage. / Berechne, wie viele Tage der Hafer für 1 Pferd reicht. Lösung: **60 Tage**. Typische Fehler: 3,75 (anti-proportional-gerechnet), 15 (sach-schritt-vergessen).
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Die Strecke bleibt gleich. Ben hat eine Tabelle zu dieser antiproportionalen Zuordnung geschrieben. Ein Wert in der zweiten Zeile ist falsch. / Bestimme den richtigen Wert. _(Bild: Wertetabelle: Geschwindigkeit in km/h: 30 | 45 | 60 | 90 / Fahrzeit in h: 6 | 4 | 3 | 3)_ Lösung: **2 h**. Typische Fehler: 3 (sach-frage-verfehlt), 180 (sach-schritt-vergessen).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 2 cm ist 24 cm breit. / Ergänze die Rechnungen mit dem gleichen Produkt. / 2 · 24 = ▢ / 4 · ▢ = 48 / ▢ · 4 = 48 _(Bild: Wertetabelle: Länge in cm: 2 / Breite in cm: 24)_ Lösung: a = **48**, b = **12**, c = **12**
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Die Strecke bleibt gleich. Mit 30 km/h dauert die Fahrt 4 Stunden. / Berechne die Geschwindigkeit für eine Fahrzeit von 3 Stunden. Lösung: **40 km/h**. Typische Fehler: 22,5 (anti-proportional-gerechnet), 3 (schaubild-achsen-vertauscht).
+- `13` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Alle Handwerker arbeiten gleich schnell. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Handwerker** | 2 | 3 | 4 | 12 |
+  |---|---|---|---|---|
+  | **Zeit in Tagen** | 24 | **16** | **12** | **4** |
+
+- `14` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Flächeninhalt bleibt gleich. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Länge in cm** | 2 | 3 | **6** | **12** |
+  |---|---|---|---|---|
+  | **Breite in cm** | 12 | **8** | 4 | 2 |
+
+- `15` AFB II · _Mit symbolischen Elementen umgehen_ · Jedes Pferd frisst jeden Tag gleich viel. Der Hafer im Burgstall reicht für 5 Pferde 8 Tage. / Ergänze die Rechnungen mit dem gleichen Produkt. / 5 · 8 = ▢ / 8 · ▢ = 40 / ▢ · 4 = 40 _(Bild: Wertetabelle: Anzahl Pferde: 5 / Zeit in Tagen: 8)_ Lösung: a = **40**, b = **5**, c = **10**
+- `16` AFB III · _Mit symbolischen Elementen umgehen_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Fahren 6 Personen mit, zahlt jede Person 40 € für den Bus. / Berechne die Anzahl der Personen für einen Preis von 20 € je Person. Lösung: **12 Personen**. Typische Fehler: 3 (anti-proportional-gerechnet), 20 (schaubild-achsen-vertauscht).
+- `17` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Personen** | 5 | **6** | 10 | 12 |
+  |---|---|---|---|---|
+  | **Preis je Person in €** | 120 | 100 | **60** | **50** |
+
+- `18` AFB III · _Mit symbolischen Elementen umgehen_ · Alle Pumpen arbeiten gleich schnell. Sara hat eine Tabelle zu dieser antiproportionalen Zuordnung geschrieben. Ein Wert in der zweiten Zeile ist falsch. / Bestimme den richtigen Wert. _(Bild: Wertetabelle: Anzahl Pumpen: 2 | 3 | 8 | 12 / Zeit in h: 12 | 8 | 3 | 3)_ Lösung: **2 h**. Typische Fehler: 3 (sach-frage-verfehlt), 24 (sach-schritt-vergessen).
+- `19` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Strecke bleibt gleich. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Geschwindigkeit in km/h** | 20 | 30 | 120 |
+  |---|---|---|---|
+  | **Fahrzeit in h** | 12 | **8** | **2** |
+
+- `20` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Alle Lastwagen laden gleich viel. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Lastwagen** | **2** | 6 | 8 | **12** |
+  |---|---|---|---|---|
+  | **Anzahl Fahrten** | 12 | 4 | **3** | 2 |
+
+- `21` AFB II · _Mit symbolischen Elementen umgehen_ · Die Strecke bleibt gleich. Mit 20 km/h dauert die Fahrt 9 Stunden. / Ergänze die Rechnungen mit dem gleichen Produkt. / 20 · 9 = ▢ / 45 · ▢ = 180 / ▢ · 2 = 180 _(Bild: Wertetabelle: Geschwindigkeit in km/h: 20 / Fahrzeit in h: 9)_ Lösung: a = **180**, b = **4**, c = **90**
+- `22` AFB III · _Mit symbolischen Elementen umgehen_ · Alle Handwerker arbeiten gleich schnell. 3 Handwerker brauchen für die Burgmauer 12 Tage. / Berechne, wie viele Handwerker die Burgmauer in 6 Tagen schaffen. Lösung: **6 Handwerker**. Typische Fehler: 1,5 (anti-proportional-gerechnet).
+- `23` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Die Zuordnung ist antiproportional. / Ergänze die Tabelle.  _(Wertetabelle; fett = Eingabefeld)_
+
+  | **Anzahl Personen** | 4 | **8** | **10** | 12 |
+  |---|---|---|---|---|
+  | **Preis je Person in €** | 60 | 30 | 24 | **20** |
+
+- `24` AFB III · _Mit symbolischen Elementen umgehen_ · Alle Handwerker arbeiten gleich schnell. Elif hat eine Tabelle zu dieser antiproportionalen Zuordnung geschrieben. Ein Wert in der zweiten Zeile ist falsch. / Bestimme den richtigen Wert. _(Bild: Wertetabelle: Anzahl Handwerker: 3 | 4 | 6 | 12 / Zeit in Tagen: 8 | 6 | 4 | 4)_ Lösung: **2 Tage**. Typische Fehler: 4 (sach-frage-verfehlt), 24 (sach-schritt-vergessen).
+
+## 6.7.8-U1: Ich kann den Dreisatz bei antiproportionalen Zuordnungen anwenden.
+
+Grundlage, die F übt: Die Dreisatztabelle mit der Gegenrechnung an den Rechenpfeilen ausfüllen
+
+Baut auf: 6.7.6-R1 (Ich kann mit dem Dreisatz rechnen.), 6.7.7-A2 (Ich kann Tabellen zu antiproportionalen Zuordnungen ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Links wird geteilt, rechts wird mit derselben Zahl malgenommen. In der zweiten Zeile ist es umgekehrt.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Alle Handwerker arbeiten gleich schnell. 2 Handwerker brauchen für die Burgmauer 12 Tage. / Ergänze die Dreisatztabelle und die Rechenpfeile. Achte auf die Gegenrechnung.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Anzahl Handwerker | Zeit | Rechenpfeil |
+  |---|---|---|---|
+  |  | 2 Handwerker | 12 Tage |  |
+  | : **2** | 1 Handwerker | **24** Tage | · **2** |
+  | · **6** | 6 Handwerker | **4** Tage | : **6** |
+
+- `02` AFB II · _Modellieren_ · Alle Pumpen arbeiten gleich schnell. 6 gleiche Pumpen leeren ein Becken in 4 Stunden. / Berechne die Zeit für 8 Pumpen. Lösung: **3 h**. Typische Fehler: 24 (dreisatz-zwischenwert), 2 (prop-addiert).
+- `03` AFB II · _Modellieren_ · **[Heftaufgabe]** Alle Handwerker arbeiten gleich schnell. 12 Handwerker brauchen für die Burgmauer 2 Tage. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Berechne die Zeit für 4 Handwerker. Lösung: **6 Tage**. Typische Fehler: 24 (dreisatz-zwischenwert), 10 (prop-addiert).
+- `04` AFB III · _Modellieren_ · Alle Pumpen arbeiten gleich schnell. 12 gleiche Pumpen leeren ein Becken in 4 Stunden. / Berechne, wie viele Pumpen das Becken in 16 Stunden leeren. Lösung: **3 Pumpen**. Typische Fehler: 48 (anti-proportional-gerechnet).
+- `05` AFB II · _Argumentieren (+ Modellieren)_ · Alle Lastwagen laden gleich viel. 8 Lastwagen brauchen für den Kies je 6 Fahrten. Ida rechnet für 12 Lastwagen: „Erst geteilt durch 8, dann mal 12. Das ergibt 9 Fahrten.“ / Beurteile die Rechnung.
+  - ☐ Falsch. Richtig sind 48 Fahrten.
+  - ☐ Stimmt. Beim Dreisatz wird immer erst geteilt und dann malgenommen.
+  - ☑ Falsch. Ida hat proportional gerechnet. Richtig ist die Gegenrechnung: 4 Fahrten.
+  - ☐ Stimmt. Zu 12 Lastwagen gehören 9 Fahrten.
+- `06` AFB III · _Modellieren_ · **[Heftaufgabe]** Alle Pumpen arbeiten gleich schnell. 6 gleiche Pumpen leeren ein Becken in 8 Stunden. Es kommen noch 2 Pumpen dazu. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Bestimme, um wie viele Stunden die Arbeit dadurch kürzer wird. Lösung: **2 h**. Typische Fehler: 6 (sach-schritt-vergessen).
+- `07` AFB I · _Modellieren (+ Kommunizieren)_ · Alle Lastwagen laden gleich viel. 12 Lastwagen brauchen für den Kies je 4 Fahrten. / Ergänze die Dreisatztabelle und die Rechenpfeile. Achte auf die Gegenrechnung.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Anzahl Lastwagen | Anzahl Fahrten | Rechenpfeil |
+  |---|---|---|---|
+  |  | 12 Lastwagen | 4 Fahrten |  |
+  | : **12** | 1 Lastwagen | **48** Fahrten | · **12** |
+  | · **6** | 6 Lastwagen | **8** Fahrten | : **6** |
+
+- `08` AFB II · _Modellieren_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Fahren 4 Personen mit, zahlt jede Person 150 € für den Bus. / Berechne den Preis je Person bei 8 Personen. Lösung: **75 €**. Typische Fehler: 300 (anti-proportional-gerechnet), 600 (dreisatz-zwischenwert), 146 (prop-addiert).
+- `09` AFB II · _Modellieren_ · **[Heftaufgabe]** Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 6 cm ist 8 cm breit. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Berechne die Breite bei der Länge 12 cm. Lösung: **4 cm**. Typische Fehler: 16 (anti-proportional-gerechnet), 48 (dreisatz-zwischenwert), 2 (prop-addiert).
+- `10` AFB III · _Modellieren_ · Alle Handwerker arbeiten gleich schnell. 3 Handwerker brauchen für die Burgmauer 16 Tage. Es kommen noch 5 Handwerker dazu. / Bestimme, um wie viele Tage die Arbeit dadurch kürzer wird. Lösung: **10 Tage**. Typische Fehler: 6 (sach-schritt-vergessen), 5 (sach-falsche-rechnung).
+- `11` AFB II · _Argumentieren (+ Modellieren)_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Fahren 6 Personen mit, zahlt jede Person 60 € für den Bus. Ali rechnet für 9 Personen: „Erst geteilt durch 6, dann mal 9. Das ergibt 90 €.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Beim Dreisatz wird immer erst geteilt und dann malgenommen.
+  - ☐ Falsch. Richtig sind 360 €.
+  - ☐ Stimmt. Zu 9 Personen gehören 90 €.
+  - ☑ Falsch. Ali hat proportional gerechnet. Richtig ist die Gegenrechnung: 40 €.
+- `12` AFB III · _Modellieren_ · **[Heftaufgabe]** Jedes Pferd frisst jeden Tag gleich viel. Der Hafer im Burgstall reicht für 4 Pferde 10 Tage. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Berechne, für wie viele Pferde der Hafer 4 Tage reicht. Lösung: **10 Pferde**. Typische Fehler: 1,6 (anti-proportional-gerechnet), 40 (dreisatz-zwischenwert).
+- `13` AFB I · _Modellieren (+ Kommunizieren)_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 5 cm ist 12 cm breit. / Ergänze die Dreisatztabelle und die Rechenpfeile. Achte auf die Gegenrechnung.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Länge | Breite | Rechenpfeil |
+  |---|---|---|---|
+  |  | 5 cm | 12 cm |  |
+  | : **5** | 1 cm | **60** cm | · **5** |
+  | · **6** | 6 cm | **10** cm | : **6** |
+
+- `14` AFB II · _Modellieren_ · Jedes Pferd frisst jeden Tag gleich viel. Der Hafer im Burgstall reicht für 10 Pferde 4 Tage. / Berechne, wie viele Tage der Hafer für 8 Pferde reicht. Lösung: **5 Tage**. Typische Fehler: 3,2 (anti-proportional-gerechnet), 40 (dreisatz-zwischenwert), 6 (prop-addiert).
+- `15` AFB II · _Modellieren_ · **[Heftaufgabe]** Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Fahren 8 Personen mit, zahlt jede Person 45 € für den Bus. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Berechne den Preis je Person bei 10 Personen. Lösung: **36 €**. Typische Fehler: 56,25 (anti-proportional-gerechnet), 360 (dreisatz-zwischenwert), 43 (prop-addiert).
+- `16` AFB III · _Modellieren_ · Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Fahren 3 Personen mit, zahlt jede Person 80 € für den Bus. / Berechne die Anzahl der Personen für einen Preis von 48 € je Person. Lösung: **5 Personen**. Typische Fehler: 1,8 (anti-proportional-gerechnet), 240 (dreisatz-zwischenwert).
+- `17` AFB II · _Argumentieren (+ Modellieren)_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 3 cm ist 8 cm breit. Ole rechnet für 6 cm: „Erst geteilt durch 3, dann mal 6. Das ergibt 16 cm.“ / Beurteile die Rechnung.
+  - ☑ Falsch. Ole hat proportional gerechnet. Richtig ist die Gegenrechnung: 4 cm.
+  - ☐ Stimmt. Beim Dreisatz wird immer erst geteilt und dann malgenommen.
+  - ☐ Falsch. Richtig sind 24 cm.
+  - ☐ Stimmt. Zu 6 cm gehören 16 cm.
+- `18` AFB III · _Modellieren_ · **[Heftaufgabe]** Die Menge Saft bleibt gleich. Der Saft füllt 6 Flaschen mit je 5 l. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Berechne den Inhalt einer Flasche für 10 Flaschen. Lösung: **3 l**. Typische Fehler: 30 (dreisatz-zwischenwert).
+- `19` AFB I · _Modellieren (+ Kommunizieren)_ · Die Menge Saft bleibt gleich. Der Saft füllt 3 Flaschen mit je 4 l. / Ergänze die Dreisatztabelle und die Rechenpfeile. Achte auf die Gegenrechnung.  _(Dreisatztabelle; fett = Eingabefeld, auch in den Rechenpfeilen)_
+
+  | Rechenpfeil | Inhalt einer Flasche | Anzahl Flaschen | Rechenpfeil |
+  |---|---|---|---|
+  |  | 4 l | 3 Flaschen |  |
+  | : **4** | 1 l | **12** Flaschen | · **4** |
+  | · **3** | 3 l | **4** Flaschen | : **3** |
+
+- `20` AFB II · _Modellieren_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 8 cm ist 3 cm breit. / Berechne die Breite bei der Länge 3 cm. Lösung: **8 cm**. Typische Fehler: 1,125 (anti-proportional-gerechnet), 24 (dreisatz-zwischenwert).
+- `21` AFB II · _Modellieren_ · **[Heftaufgabe]** Alle Lastwagen laden gleich viel. 8 Lastwagen brauchen für den Kies je 6 Fahrten. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Berechne die Fahrten je Lastwagen bei 12 Lastwagen. Lösung: **4 Fahrten**. Typische Fehler: 9 (anti-proportional-gerechnet), 48 (dreisatz-zwischenwert), 2 (prop-addiert).
+- `22` AFB III · _Modellieren_ · Alle Lastwagen laden gleich viel. 3 Lastwagen brauchen für den Kies je 16 Fahrten. Es kommen noch 3 Lastwagen dazu. / Bestimme, wie viele Fahrten jeder Lastwagen dadurch weniger braucht. Lösung: **8 Fahrten**. Typische Fehler: 3 (sach-falsche-rechnung).
+- `23` AFB II · _Modellieren_ · Jedes Pferd frisst jeden Tag gleich viel. Der Hafer im Burgstall reicht für 2 Pferde 20 Tage. / Berechne, für wie viele Pferde der Hafer 8 Tage reicht. Lösung: **5 Pferde**. Typische Fehler: 0,8 (anti-proportional-gerechnet), 40 (dreisatz-zwischenwert).
+- `24` AFB III · _Modellieren_ · **[Heftaufgabe]** Alle Handwerker arbeiten gleich schnell. 3 Handwerker brauchen für die Burgmauer 12 Tage. Es kommen noch 3 Handwerker dazu. / Im Heft: Schreibe den Dreisatz als Tabelle mit Rechenpfeilen und Gegenrechnung. / Bestimme, um wie viele Tage die Arbeit dadurch kürzer wird. Lösung: **6 Tage**. Typische Fehler: 3 (sach-falsche-rechnung).
+
+## 6.7.8-U2: Ich kann entscheiden, welche Zuordnung vorliegt, und passend rechnen.
+
+Grundlage, die F übt: Entscheiden, ob zum Doppelten das Doppelte oder die Hälfte gehört
+
+Baut auf: 6.7.8-U1 (Ich kann den Dreisatz bei antiproportionalen Zuordnungen anwenden.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe: Gehört zum Doppelten das Doppelte (proportional), die Hälfte (antiproportional) oder keines von beiden?
+
+- `01` AFB I · _Argumentieren_ · Alle Lastwagen laden gleich viel. 12 Lastwagen brauchen für den Kies je 6 Fahrten. Gesucht ist der Wert für 6 Lastwagen. / Entscheide, welche Zuordnung vorliegt.
+  - ☐ proportional
+  - ☐ keines von beiden
+  - ☑ antiproportional
+- `02` AFB II · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. 3 kg Kartoffeln kosten 3,60 €. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne den Preis für 6 kg Kartoffeln.
+  - ☐ proportional: 1,80 €
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☐ antiproportional: 1,80 €
+  - ☐ antiproportional: 7,20 €
+  - ☑ proportional: 7,20 €
+- `03` AFB II · _Argumentieren_ · Jedes Pferd frisst jeden Tag gleich viel. Der Hafer im Burgstall reicht für 4 Pferde 18 Tage. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne, wie viele Tage der Hafer für 3 Pferde reicht.
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☑ antiproportional: 24 Tage
+  - ☐ antiproportional: 13,5 Tage
+  - ☐ proportional: 24 Tage
+  - ☐ proportional: 13,5 Tage
+- `04` AFB III · _Argumentieren_ · Lena ist mit 6 Jahren 120 cm groß. Lena rechnet: „Mit 12 Jahren bin ich 240 cm groß.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Zum doppelten Alter gehört die doppelte Größe.
+  - ☐ Stimmt. Mit dem Dreisatz lässt sich jede Zuordnung berechnen.
+  - ☐ Falsch. Die Zuordnung ist antiproportional: Mit 12 Jahren sind es 60 cm.
+  - ☑ Falsch. Ein Kind wächst nicht in jedem Jahr gleich viel. Die Zuordnung ist weder proportional noch antiproportional.
+- `05` AFB II · _Argumentieren_ · Fahren 10 Personen mit, zahlt jede Person 60 € für den Bus. / Die Miete für den Bus bleibt gleich. Alle zahlen gleich viel. Entscheide zuerst: proportional oder antiproportional. Berechne den Preis je Person bei 6 Personen. Lösung: **100 €**. Typische Fehler: 36 (anti-proportional-gerechnet), 600 (dreisatz-zwischenwert), 64 (prop-addiert).
+- `06` AFB III · _Argumentieren_ · Eine Taxifahrt über 4 km kostet 11 €, darin stecken 3 € Grundgebühr. Jemand rechnet: „8 km kosten 22 €.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Zur doppelten Strecke gehört der doppelte Preis.
+  - ☐ Falsch. Die Zuordnung ist antiproportional: 8 km kosten 5,50 €.
+  - ☑ Falsch. Wegen der Grundgebühr ist die Zuordnung nicht proportional. 8 km kosten 19 €.
+  - ☐ Stimmt. Mit dem Dreisatz lässt sich jede Zuordnung berechnen.
+- `07` AFB I · _Argumentieren_ · Das Wasser fließt gleichmäßig. In 3 Minuten fließen 24 l Wasser in die Wanne. Gesucht ist der Wert für 5 min. / Entscheide, welche Zuordnung vorliegt.
+  - ☐ antiproportional
+  - ☐ keines von beiden
+  - ☑ proportional
+- `08` AFB II · _Argumentieren_ · Alle Lastwagen laden gleich viel. 12 Lastwagen brauchen für den Kies je 6 Fahrten. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne die Fahrten je Lastwagen bei 6 Lastwagen.
+  - ☑ antiproportional: 12 Fahrten
+  - ☐ antiproportional: 3 Fahrten
+  - ☐ proportional: 12 Fahrten
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☐ proportional: 3 Fahrten
+- `09` AFB II · _Argumentieren_ · In 3 Minuten fließen 18 l Wasser in die Wanne. / Das Wasser fließt gleichmäßig. Entscheide zuerst: proportional oder antiproportional. Berechne die Wassermenge für 5 Minuten. Lösung: **30 l**. Typische Fehler: 10,8 (prop-antiproportional-gerechnet), 6 (dreisatz-zwischenwert).
+- `10` AFB III · _Argumentieren_ · Ein Ei kocht in 8 Minuten hart. Jemand rechnet: „4 Eier im selben Topf brauchen 32 Minuten.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Mit dem Dreisatz lässt sich jede Zuordnung berechnen.
+  - ☑ Falsch. Die Kochzeit hängt nicht von der Anzahl der Eier ab. Auch 4 Eier brauchen 8 Minuten.
+  - ☐ Falsch. Die Zuordnung ist antiproportional: 4 Eier brauchen 2 Minuten.
+  - ☐ Stimmt. Zur vierfachen Anzahl gehört die vierfache Zeit.
+- `11` AFB II · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. 12 kg Kartoffeln kosten 16,80 €. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne den Preis für 8 kg Kartoffeln.
+  - ☐ antiproportional: 11,20 €
+  - ☐ proportional: 25,20 €
+  - ☐ antiproportional: 25,20 €
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☑ proportional: 11,20 €
+- `12` AFB III · _Argumentieren_ · Der Hafer im Burgstall reicht für 4 Pferde 10 Tage. / Jedes Pferd frisst jeden Tag gleich viel. Entscheide zuerst: proportional oder antiproportional. Berechne, wie viele Tage der Hafer für 5 Pferde reicht. Lösung: **8 Tage**. Typische Fehler: 12,5 (anti-proportional-gerechnet), 40 (dreisatz-zwischenwert), 9 (prop-addiert).
+- `13` AFB I · _Argumentieren_ · 5 Musiker spielen ein Lied in 4 Minuten. Gesucht ist die Zeit, die 10 Musiker für das Lied brauchen. / Entscheide, welche Zuordnung vorliegt.
+  - ☐ proportional
+  - ☐ antiproportional
+  - ☑ keines von beiden
+- `14` AFB II · _Argumentieren_ · Alle Pumpen arbeiten gleich schnell. 3 gleiche Pumpen leeren ein Becken in 8 Stunden. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne die Zeit für 6 Pumpen.
+  - ☐ proportional: 4 h
+  - ☐ antiproportional: 16 h
+  - ☐ proportional: 16 h
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☑ antiproportional: 4 h
+- `15` AFB II · _Argumentieren_ · In 8 Stunden wandert die Gruppe 32 km. / Die Gruppe wandert immer gleich schnell. Entscheide zuerst: proportional oder antiproportional. Berechne die Strecke für 4 Stunden. Lösung: **16 km**. Typische Fehler: 64 (prop-antiproportional-gerechnet), 4 (dreisatz-zwischenwert).
+- `16` AFB III · _Argumentieren_ · 5 Musiker spielen ein Lied in 4 Minuten. Jemand rechnet: „10 Musiker brauchen dafür 2 Minuten.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Mit dem Dreisatz lässt sich jede Zuordnung berechnen.
+  - ☐ Falsch. Die Zuordnung ist proportional: 10 Musiker brauchen 8 Minuten.
+  - ☐ Stimmt. Zur doppelten Anzahl gehört die halbe Zeit.
+  - ☑ Falsch. Das Lied dauert immer gleich lang. Die Zuordnung ist weder proportional noch antiproportional.
+- `17` AFB II · _Argumentieren_ · Die Gruppe wandert immer gleich schnell. In 3 Stunden wandert die Gruppe 18 km. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne die Strecke für 4 Stunden.
+  - ☐ antiproportional: 13,5 km
+  - ☐ antiproportional: 24 km
+  - ☑ proportional: 24 km
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☐ proportional: 13,5 km
+- `18` AFB III · _Argumentieren_ · Eine Kerze ist am Anfang 24 cm hoch und nach 2 Stunden noch 18 cm. Jemand rechnet antiproportional: „Nach 4 Stunden ist sie noch 9 cm hoch.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Mit dem Dreisatz lässt sich jede Zuordnung berechnen.
+  - ☐ Falsch. Die Zuordnung ist proportional: Nach 4 Stunden sind es 36 cm.
+  - ☑ Falsch. Die Kerze wird in jeder Stunde um 3 cm kürzer. Nach 4 Stunden ist sie 12 cm hoch. Das Produkt bleibt nicht gleich.
+  - ☐ Stimmt. Zur doppelten Zeit gehört die halbe Höhe.
+- `19` AFB I · _Argumentieren_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 9 cm ist 4 cm breit. Gesucht ist der Wert für 12 cm. / Entscheide, welche Zuordnung vorliegt.
+  - ☑ antiproportional
+  - ☐ proportional
+  - ☐ keines von beiden
+- `20` AFB II · _Argumentieren_ · Jedes Kilogramm kostet gleich viel. 6 kg Kartoffeln kosten 10,80 €. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne den Preis für 8 kg Kartoffeln.
+  - ☐ proportional: 8,10 €
+  - ☐ antiproportional: 8,10 €
+  - ☐ antiproportional: 14,40 €
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+  - ☑ proportional: 14,40 €
+- `21` AFB II · _Argumentieren_ · Ein Rechteck mit der Länge 6 cm ist 4 cm breit. / Der Flächeninhalt bleibt gleich. Entscheide zuerst: proportional oder antiproportional. Berechne die Breite bei der Länge 3 cm. Lösung: **8 cm**. Typische Fehler: 2 (anti-proportional-gerechnet), 24 (dreisatz-zwischenwert), 7 (prop-addiert).
+- `22` AFB III · _Argumentieren_ · Ein Handtuch trocknet auf der Leine in 3 Stunden. Jemand rechnet: „6 Handtücher nebeneinander brauchen 18 Stunden.“ / Beurteile die Rechnung.
+  - ☐ Stimmt. Zur sechsfachen Anzahl gehört die sechsfache Zeit.
+  - ☐ Stimmt. Mit dem Dreisatz lässt sich jede Zuordnung berechnen.
+  - ☐ Falsch. Die Zuordnung ist antiproportional: 6 Handtücher brauchen eine halbe Stunde.
+  - ☑ Falsch. Alle Handtücher trocknen gleichzeitig. Auch 6 Handtücher brauchen 3 Stunden.
+- `23` AFB II · _Argumentieren_ · Der Flächeninhalt bleibt gleich. Ein Rechteck mit der Länge 3 cm ist 8 cm breit. / Entscheide zuerst, welche Zuordnung vorliegt. Berechne die Breite bei der Länge 6 cm.
+  - ☐ proportional: 4 cm
+  - ☐ proportional: 16 cm
+  - ☑ antiproportional: 4 cm
+  - ☐ antiproportional: 16 cm
+  - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
+- `24` AFB III · _Argumentieren_ · 6 kg Kartoffeln kosten 8,40 €. / Jedes Kilogramm kostet gleich viel. Entscheide zuerst: proportional oder antiproportional. Berechne den Preis für 8 kg Kartoffeln. Lösung: **11,20 €**. Typische Fehler: 6,30 (prop-antiproportional-gerechnet), 1,40 (dreisatz-zwischenwert).
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -5941,15 +7318,20 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `liter-nicht-dm3` | Weiß nicht, dass 1 Liter 1 dm³ ist, oder setzt 1 Liter mit 1 cm³ oder 1 m³ gleich. | 1 Liter ist 1 dm³: ein Würfel mit 10 cm Kante. 1 Milliliter ist 1 cm³. | Du weißt jetzt: 1 Liter ist 1 dm³. |
 | `deckel-mitgerechnet` | Rechnet bei einem offenen Körper (ohne Deckel) alle sechs Flächen. | Lies noch einmal: Welche Fläche fehlt? Sie gehört nicht dazu. | Du lässt die offene Fläche jetzt weg. |
 | `volumen-waechst-wie-kante` | Meint, bei doppelter Kantenlänge verdoppeln sich auch Volumen und Oberflächeninhalt. | Probiere es an einem Würfel mit 1 cm und mit 2 cm Kante aus. Zähle die kleinen Würfel im großen. | Du weißt jetzt: Doppelte Kanten geben das achtfache Volumen. |
+| `je-mehr-proportional` | Hält jede Zuordnung „je mehr, desto mehr“ für proportional (auch mit Grundgebühr, Rabatt oder Alter und Größe). | Prüfe mit Zahlen: Gehört zum Doppelten genau das Doppelte? Nur dann ist die Zuordnung proportional. | Du prüfst jetzt: Gehört zum Doppelten wirklich das Doppelte? |
+| `prop-addiert` | Ergänzt eine proportionale Tabelle durch Addieren derselben Zahl statt durch Vervielfachen (2 → 5, also 4 → 7). | Wird der erste Wert doppelt so groß, wird auch der zweite doppelt so groß. Rechne mal, nicht plus. | Du rechnest in der Tabelle jetzt oben und unten mal dieselbe Zahl. |
+| `dreisatz-falsch-herum` | Rechnet im Dreisatz falsch herum: multipliziert, wo dividiert werden muss, oder umgekehrt. | Erst auf 1 zurück: Dafür teilst du. Dann auf den gesuchten Wert hoch: Dafür nimmst du mal. | Du teilst im Dreisatz jetzt zuerst und nimmst dann mal. |
+| `dreisatz-zwischenwert` | Gibt den Wert für 1 (den Zwischenschritt) als Ergebnis an. | Das ist erst der Wert für 1. Lies noch einmal, für wie viele gefragt ist, und rechne die dritte Zeile. | Du rechnest im Dreisatz jetzt bis zur dritten Zeile. |
+| `schaubild-achsen-vertauscht` | Vertauscht im Schaubild die beiden Achsen: liest den Wert an der falschen Achse ab oder trägt Punkte vertauscht ein. | Der erste Wert steht an der Achse nach rechts, der zugeordnete Wert an der Achse nach oben. | Du liest im Schaubild jetzt an der richtigen Achse ab. |
+| `achse-ungleichmaessig` | Teilt eine Achse ungleichmäßig ein oder trägt die Tabellenwerte in gleichen Abständen an die Achse. | An einer Achse ist jeder Schritt gleich viel wert. Zähle in gleichen Schritten: 0, 2, 4, 6. | Du teilst eine Achse jetzt in gleich große Schritte ein. |
+| `einteilung-uebersehen` | Beachtet die Einteilung der Achse nicht und zählt jedes Kästchen als 1. | Lies die Zahlen an der Achse: Wie viel ist ein Kästchen wert? | Du schaust jetzt zuerst nach: Wie viel ist ein Kästchen wert? |
+| `tabelle-falsche-zeile` | Liest in der Tabelle oder im Schaubild den Wert einer benachbarten Spalte oder Stelle ab. | Fahre mit dem Finger von dem gegebenen Wert genau nach unten oder nach oben. | Du liest in der Tabelle jetzt genau in der richtigen Spalte ab. |
+| `grundgebuehr-uebersehen` | Übersieht einen festen Betrag (Grundgebühr) und rechnet, als wäre die Zuordnung proportional. | Im Preis steckt ein fester Betrag, der nicht mitwächst. Rechne ihn getrennt. | Du achtest jetzt auf feste Beträge wie eine Grundgebühr. |
+| `anti-proportional-gerechnet` | Rechnet eine antiproportionale Zuordnung proportional (mehr Pumpen brauchen angeblich mehr Zeit). | Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Pumpen brauchen weniger Zeit. | Du erkennst jetzt: Mehr Helfer brauchen weniger Zeit. |
+| `prop-antiproportional-gerechnet` | Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger). | Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr. | Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner? |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.7.1-L1 Ich kann Zuordnungen in Tabelle, Schaubild und Text lesen und ineinander überführen. Baut auf: nur Grundschulstoff
-- 6.7.2-L1 Ich kann proportionale Zuordnungen erkennen und Tabellen dazu ergänzen. Baut auf: nur Grundschulstoff
-- 6.7.5-L1 Ich kann proportionale Zuordnungen am Schaubild erkennen und Werte ablesen. Baut auf: nur Grundschulstoff
-- 6.7.6-L1 Ich kann Sachaufgaben mit dem Dreisatz lösen. Baut auf: nur Grundschulstoff
-- 6.7.7-L1 Ich kann antiproportionale Zuordnungen erkennen und Tabellen dazu ergänzen. Baut auf: nur Grundschulstoff
-- 6.7.8-L1 Ich kann den Dreisatz bei antiproportionalen Zuordnungen anwenden und entscheiden, welche Zuordnung vorliegt. Baut auf: nur Grundschulstoff
 - 6.8.1-L1 Ich kann beurteilen, wie Daten erhoben werden und ob eine Stichprobe geeignet ist. Baut auf: nur Grundschulstoff
 - 6.8.2-L1 Ich kann Minimum, Maximum, Spannweite, Mittelwert und Zentralwert bestimmen und deuten. Baut auf: nur Grundschulstoff
 - 6.8.4-L1 Ich kann absolute und relative Häufigkeiten bestimmen und als Bruch, Dezimalzahl oder in Prozent angeben. Baut auf: nur Grundschulstoff

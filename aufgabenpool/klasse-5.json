@@ -1207,6 +1207,61 @@
    "beschreibung": "Meint, bei doppelter Kantenlänge verdoppeln sich auch Volumen und Oberflächeninhalt.",
    "hinweis": "Probiere es an einem Würfel mit 1 cm und mit 2 cm Kante aus. Zähle die kleinen Würfel im großen.",
    "kind": "Du weißt jetzt: Doppelte Kanten geben das achtfache Volumen."
+  },
+  "je-mehr-proportional": {
+   "beschreibung": "Hält jede Zuordnung „je mehr, desto mehr“ für proportional (auch mit Grundgebühr, Rabatt oder Alter und Größe).",
+   "hinweis": "Prüfe mit Zahlen: Gehört zum Doppelten genau das Doppelte? Nur dann ist die Zuordnung proportional.",
+   "kind": "Du prüfst jetzt: Gehört zum Doppelten wirklich das Doppelte?"
+  },
+  "prop-addiert": {
+   "beschreibung": "Ergänzt eine proportionale Tabelle durch Addieren derselben Zahl statt durch Vervielfachen (2 → 5, also 4 → 7).",
+   "hinweis": "Wird der erste Wert doppelt so groß, wird auch der zweite doppelt so groß. Rechne mal, nicht plus.",
+   "kind": "Du rechnest in der Tabelle jetzt oben und unten mal dieselbe Zahl."
+  },
+  "dreisatz-falsch-herum": {
+   "beschreibung": "Rechnet im Dreisatz falsch herum: multipliziert, wo dividiert werden muss, oder umgekehrt.",
+   "hinweis": "Erst auf 1 zurück: Dafür teilst du. Dann auf den gesuchten Wert hoch: Dafür nimmst du mal.",
+   "kind": "Du teilst im Dreisatz jetzt zuerst und nimmst dann mal."
+  },
+  "dreisatz-zwischenwert": {
+   "beschreibung": "Gibt den Wert für 1 (den Zwischenschritt) als Ergebnis an.",
+   "hinweis": "Das ist erst der Wert für 1. Lies noch einmal, für wie viele gefragt ist, und rechne die dritte Zeile.",
+   "kind": "Du rechnest im Dreisatz jetzt bis zur dritten Zeile."
+  },
+  "schaubild-achsen-vertauscht": {
+   "beschreibung": "Vertauscht im Schaubild die beiden Achsen: liest den Wert an der falschen Achse ab oder trägt Punkte vertauscht ein.",
+   "hinweis": "Der erste Wert steht an der Achse nach rechts, der zugeordnete Wert an der Achse nach oben.",
+   "kind": "Du liest im Schaubild jetzt an der richtigen Achse ab."
+  },
+  "achse-ungleichmaessig": {
+   "beschreibung": "Teilt eine Achse ungleichmäßig ein oder trägt die Tabellenwerte in gleichen Abständen an die Achse.",
+   "hinweis": "An einer Achse ist jeder Schritt gleich viel wert. Zähle in gleichen Schritten: 0, 2, 4, 6.",
+   "kind": "Du teilst eine Achse jetzt in gleich große Schritte ein."
+  },
+  "einteilung-uebersehen": {
+   "beschreibung": "Beachtet die Einteilung der Achse nicht und zählt jedes Kästchen als 1.",
+   "hinweis": "Lies die Zahlen an der Achse: Wie viel ist ein Kästchen wert?",
+   "kind": "Du schaust jetzt zuerst nach: Wie viel ist ein Kästchen wert?"
+  },
+  "tabelle-falsche-zeile": {
+   "beschreibung": "Liest in der Tabelle oder im Schaubild den Wert einer benachbarten Spalte oder Stelle ab.",
+   "hinweis": "Fahre mit dem Finger von dem gegebenen Wert genau nach unten oder nach oben.",
+   "kind": "Du liest in der Tabelle jetzt genau in der richtigen Spalte ab."
+  },
+  "grundgebuehr-uebersehen": {
+   "beschreibung": "Übersieht einen festen Betrag (Grundgebühr) und rechnet, als wäre die Zuordnung proportional.",
+   "hinweis": "Im Preis steckt ein fester Betrag, der nicht mitwächst. Rechne ihn getrennt.",
+   "kind": "Du achtest jetzt auf feste Beträge wie eine Grundgebühr."
+  },
+  "anti-proportional-gerechnet": {
+   "beschreibung": "Rechnet eine antiproportionale Zuordnung proportional (mehr Pumpen brauchen angeblich mehr Zeit).",
+   "hinweis": "Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Pumpen brauchen weniger Zeit.",
+   "kind": "Du erkennst jetzt: Mehr Helfer brauchen weniger Zeit."
+  },
+  "prop-antiproportional-gerechnet": {
+   "beschreibung": "Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger).",
+   "hinweis": "Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr.",
+   "kind": "Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner?"
   }
  },
  "kompetenzen": {

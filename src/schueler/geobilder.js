@@ -16,11 +16,18 @@ const RAND = 1; // ein Kästchen Rand für Namen und Achsenzahlen
 // Alle Koordinaten zählen dann vom Nullpunkt aus und dürfen negativ sein (Koordinatensystem mit vier Quadranten).
 const bereich = (g) => { const [ox, oy] = g.ursprung ?? [0, 0]; return { x0: -ox, x1: g.b - ox, y0: -oy, y1: g.h - oy }; };
 const mz = (n) => (n < 0 ? `−${-n}` : String(n));
+// Klasse 6, Kapitel 7 (ADR 0050): Schaubild einer Zuordnung. Mit `skala: { x: { name, schritt, jede?, stellen? }, y: { … } }` tragen die Achsen
+// den Namen der Größe mit Einheit, und ein Kästchen ist `schritt` wert. Punkte und Lösungen stehen weiter in Kästchen.
+// `zuege: [{ punkte: [[x, y]], n?, stil? }]` sind Linienzüge durch die Punkte (Gerade durch den Nullpunkt, Kurve, Temperaturverlauf).
+export const skalaZahl = (sk, kaestchen) => (kaestchen * sk.schritt).toFixed(sk.stellen ?? 0).replace('.', ',');
 function masse(g) {
-  const u = Math.max(22, Math.min(40, Math.floor(600 / (g.b + 2 * RAND))));
+  const sk = g.skala, [rl, rr, ro, ru] = sk ? [2.3, 1.3, 1.7, 2.2] : [RAND, RAND, RAND, RAND];
+  const u = Math.max(22, Math.min(40, Math.floor((sk ? 560 : 600) / (g.b + rl + rr))));
   const { x0, y1 } = bereich(g);
   // Kapitel 8: Mit Legende („▢ = 1 cm²“) bekommt das Gitter unten eine Zeile mehr.
-  return { u, B: (g.b + 2 * RAND) * u, H: (g.h + 2 * RAND + (g.legende ? 1 : 0)) * u, X: (x) => (x - x0 + RAND) * u, Y: (y) => (y1 - y + RAND) * u };
+  return { u, B: (g.b + rl + rr) * u, H: (g.h + ro + ru + (g.legende ? 1 : 0)) * u, X: (x) => (x - x0 + rl) * u, Y: (y) => (y1 - y + ro) * u,
+    // Vom Bild zurück ins Gitter (für das Antippen).
+    zurueck: (px, py) => [px / u - rl + x0, y1 - (py / u - ro)] };
 }
 // Eine Gerade durch a und b, bis zum Rand des Gitters verlängert. strahl: nur über b hinaus.
 function bisZumRand(g, a, b, strahl = false) {
@@ -55,8 +62,10 @@ function punktSvg(m, p, klasse = 'punkt') {
   return teile;
 }
 const eckenText = (m, ecken) => ecken.map(([x, y]) => `${m.X(x)},${m.Y(y)}`).join(' ');
-const beschreibung = (g) => [g.achsen ? 'Koordinatensystem' : 'Karogitter',
-  g.punkte?.length && `Punkte ${g.punkte.map((p) => (g.achsen ? `${p.n ?? ''}(${mz(p.x)}|${mz(p.y)})` : p.n)).filter(Boolean).join(', ')}`,
+const beschreibung = (g) => [g.skala ? `Schaubild: nach rechts ${g.skala.x.name}, nach oben ${g.skala.y.name}` : g.achsen ? 'Koordinatensystem' : 'Karogitter',
+  g.skala && g.punkte?.length && `Punkte ${g.punkte.map((p) => `(${skalaZahl(g.skala.x, p.x)}|${skalaZahl(g.skala.y, p.y)})`).join(', ')}`,
+  g.skala && g.zuege?.length && `${g.zuege.length === 1 ? 'eine Linie' : `${g.zuege.length} Linien`}`,
+  !g.skala && g.punkte?.length && `Punkte ${g.punkte.map((p) => (g.achsen ? `${p.n ?? ''}(${mz(p.x)}|${mz(p.y)})` : p.n)).filter(Boolean).join(', ')}`,
   g.linien?.some((l) => l.n) && `Linien ${g.linien.filter((l) => l.n).map((l) => l.n).join(', ')}`,
   g.figuren?.length && `${g.figuren.length === 1 ? 'eine Figur' : `${g.figuren.length} Figuren`}`,
   g.zellen?.length && `${g.zellen.length} gefärbte Kästchen`].filter(Boolean).join(', ');
@@ -73,7 +82,15 @@ export function gitterSvg(g, dazu = {}) {
   for (const [x, y] of dazu.zellen ?? []) svg.append(s('rect', { x: X(x), y: Y(y + 1), width: u, height: u, class: 'zelle gesetzt' }));
   for (let x = r.x0; x <= r.x1; x++) svg.append(s('line', { x1: X(x), y1: Y(r.y0), x2: X(x), y2: Y(r.y1), class: 'karo' }));
   for (let y = r.y0; y <= r.y1; y++) svg.append(s('line', { x1: X(r.x0), y1: Y(y), x2: X(r.x1), y2: Y(y), class: 'karo' }));
-  if (g.achsen) {
+  if (g.skala) {
+    const sk = g.skala;
+    svg.classList.add('schaubild');
+    svg.append(s('line', { x1: X(0), y1: Y(0), x2: X(r.x1) + u * 0.7, y2: Y(0), class: 'achse' }), s('line', { x1: X(0), y1: Y(0), x2: X(0), y2: Y(r.y1) - u * 0.7, class: 'achse' }),
+      s('path', { d: `M${X(r.x1) + u * 0.7} ${Y(0)} l-9 -5 v10 Z`, class: 'achsenspitze' }), s('path', { d: `M${X(0)} ${Y(r.y1) - u * 0.7} l-5 9 h10 Z`, class: 'achsenspitze' }),
+      s('text', { x: X(r.x1) + u * 0.9, y: Y(0) + u * 1.75, 'text-anchor': 'end', class: 'achsenname' }, sk.x.name), s('text', { x: X(0) - u * 0.9, y: Y(r.y1) - u * 0.95, 'text-anchor': 'start', class: 'achsenname' }, sk.y.name));
+    for (let x = 0; x <= r.x1; x++) if (x % (sk.x.jede ?? 1) === 0) svg.append(s('line', { x1: X(x), y1: Y(0), x2: X(x), y2: Y(0) + 5, class: 'achsenstrich' }), s('text', { x: X(x), y: Y(0) + 20, 'text-anchor': 'middle', class: 'achsenzahl' }, skalaZahl(sk.x, x)));
+    for (let y = 1; y <= r.y1; y++) if (y % (sk.y.jede ?? 1) === 0) svg.append(s('line', { x1: X(0) - 5, y1: Y(y), x2: X(0), y2: Y(y), class: 'achsenstrich' }), s('text', { x: X(0) - 9, y: Y(y) + 5, 'text-anchor': 'end', class: 'achsenzahl' }, skalaZahl(sk.y, y)));
+  } else if (g.achsen) {
     const jede = Math.max(g.b, g.h) > 16 ? 2 : 1;
     svg.append(s('line', { x1: X(r.x0), y1: Y(0), x2: X(r.x1) + u * 0.7, y2: Y(0), class: 'achse' }), s('line', { x1: X(0), y1: Y(r.y0), x2: X(0), y2: Y(r.y1) - u * 0.7, class: 'achse' }),
       s('path', { d: `M${X(r.x1) + u * 0.7} ${Y(0)} l-9 -5 v10 Z`, class: 'achsenspitze' }), s('path', { d: `M${X(0)} ${Y(r.y1) - u * 0.7} l-5 9 h10 Z`, class: 'achsenspitze' }),
@@ -96,6 +113,10 @@ export function gitterSvg(g, dazu = {}) {
     for (const k of g.kreise) svg.append(s('circle', { cx: X(k.m[0]), cy: Y(k.m[1]), r: k.r * u, class: `kreis${k.stil ? ` ${k.stil}` : ''}`, 'clip-path': `url(#${id})` }));
   }
   for (const l of g.linien ?? []) svg.append(...linieSvg(g, m, l));
+  for (const z of g.zuege ?? []) {
+    svg.append(s('polyline', { points: eckenText(m, z.punkte), class: `linie zug${z.stil ? ` ${z.stil}` : ''}` }));
+    if (z.n) { const e = z.punkte.at(-1); svg.append(s('text', { x: X(e[0]) + 4, y: Y(e[1]) - 8, 'text-anchor': 'end', class: 'linienname' }, z.n)); }
+  }
   for (const r of g.rechte ?? []) {
     const e = (v) => { const len = Math.hypot(v[0], v[1]); return [v[0] / len * 0.45, v[1] / len * 0.45]; }, a = e(r.u), b = e(r.v), p = r.p;
     svg.append(s('path', { d: `M${X(p[0] + a[0])} ${Y(p[1] + a[1])} L${X(p[0] + a[0] + b[0])} ${Y(p[1] + a[1] + b[1])} L${X(p[0] + b[0])} ${Y(p[1] + b[1])}`, class: 'rechter' }),
@@ -164,7 +185,7 @@ export function gitterEingabe(auf, letzte, gesperrt) {
       if (zeigerAn) svg.append(zellen ? s('rect', { x: m.X(zeiger[0]) + 3, y: m.Y(zeiger[1] + 1) + 3, width: m.u - 6, height: m.u - 6, class: 'zeiger' }) : s('circle', { cx: m.X(zeiger[0]), cy: m.Y(zeiger[1]), r: 11, class: 'zeiger' }));
       svg.addEventListener('pointerdown', (e) => {
         const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
-        const q = p.matrixTransform(svg.getScreenCTM().inverse()), x = q.x / m.u - RAND + r.x0, y = r.y1 - (q.y / m.u - RAND);
+        const q = p.matrixTransform(svg.getScreenCTM().inverse()), [x, y] = m.zurueck(q.x, q.y);
         const ziel = zellen ? [Math.floor(x), Math.floor(y)] : [Math.round(x), Math.round(y)];
         const max = zellen ? [r.x1 - 1, r.y1 - 1] : [r.x1, r.y1];
         if (ziel[0] < r.x0 || ziel[1] < r.y0 || ziel[0] > max[0] || ziel[1] > max[1]) return;
@@ -185,8 +206,12 @@ export function gitterEingabe(auf, letzte, gesperrt) {
   };
   const neu = h('button', { type: 'button', class: 'schlicht', id: 'gitter-neu', onclick: () => { gesetzt = []; feld.value = ''; zeichne(); } }, 'Neu beginnen');
   zeichne();
+  // Klasse 6, Kapitel 7 (ADR 0050): Nach dem Eintragen folgt eine Frage zum Bild („Liegen die Punkte auf einer Geraden durch den Nullpunkt?“).
+  const gewaehlt = String(letzte ?? '').match(/\[(.*)\]$/)?.[1] ?? null;
+  const nachfrage = auf.nachfrage && h('fieldset', { class: 'nachfrage' }, h('legend', {}, auf.nachfrage.text),
+    h('div', { class: 'optionen' }, auf.nachfrage.optionen.map((o) => h('label', { class: 'option' }, h('input', { type: 'radio', name: 'nachfrage', value: o.text, disabled: gesperrt, checked: gewaehlt === o.text }), h('span', {}, o.text)))));
   return h('div', { class: 'mitbild gitter-eingabe' }, h('div', { class: 'bildrahmen' }, rahmen), feld,
-    !gesperrt && h('div', { class: 'zeichnen-leiste' }, h('p', { class: 'klein' }, anweisung), neu), meldung);
+    !gesperrt && h('div', { class: 'zeichnen-leiste' }, h('p', { class: 'klein' }, anweisung), neu), meldung, nachfrage);
 }
 // Das Gitter mit eingezeichneter Lösung.
 export function gitterLoesungBild(auf) {

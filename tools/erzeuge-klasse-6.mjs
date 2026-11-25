@@ -41,6 +41,11 @@ import { volumenVergleichen6 } from './aufgaben/6-6-2-volumen-vergleichen.mjs';
 import { einheiten6 } from './aufgaben/6-6-3-einheiten.mjs';
 import { volumen6 } from './aufgaben/6-6-4-volumen.mjs';
 import { zusammengesetzt6 } from './aufgaben/6-6-5-zusammengesetzt.mjs';
+import { darstellungen6 } from './aufgaben/6-7-1-darstellungen.mjs';
+import { proportional6 } from './aufgaben/6-7-2-proportional.mjs';
+import { schaubilder6 } from './aufgaben/6-7-5-schaubilder.mjs';
+import { dreisatz6 } from './aufgaben/6-7-6-dreisatz.mjs';
+import { antiproportional6 } from './aufgaben/6-7-7-antiproportional.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -85,6 +90,12 @@ const ERZEUGER = [
   [66366366, einheiten6],
   [66466466, volumen6],
   [66566566, zusammengesetzt6],
+  // Kapitel 7 (ADR 0050)
+  [67167167, darstellungen6],
+  [67267267, proportional6],
+  [67567567, schaubilder6],
+  [67667667, dreisatz6],
+  [67767767, antiproportional6],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

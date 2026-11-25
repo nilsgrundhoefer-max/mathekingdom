@@ -17,6 +17,7 @@ import { kartenBild } from './koerperbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild, mitVorzeichen, vorzeichenKnopf } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
+import { werteTabelle, dreisatzTabelle } from './zuordnungsbilder.js';
 import { gitterLoesung } from './geo.js';
 import { winkelEingabe, winkelLoesungBild } from './winkelbilder.js';
 import { winkelLoesung } from './winkel.js';
@@ -994,7 +995,7 @@ export function eingabefelder(auf, a, gesperrt) {
   // Klasse 7 (ADR 0043): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
   const zahlfeld = (name, einheit, wert) => {
-    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') || /^6\.[45]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') || /^6\.[457]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => gliedereEingabe(e.target) });
     return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
   };
@@ -1049,6 +1050,11 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'tabelle': {
       const t = auf.tabelle;
       const feld = (c) => zahlfeld(`luecke-${c.luecke}`, null, letzte?.[c.luecke]);
+      // Klasse 6, Kapitel 7 (ADR 0050): Wertetabelle (waagrecht, zwei Zeilen) und Dreisatztabelle mit Rechenpfeilen.
+      if (t.art === 'werte' || t.art === 'dreisatz') {
+        const f = (name, einheit, klasse) => { const e = zahlfeld(`luecke-${name}`, einheit, letzte?.[name]); if (klasse) e.classList.add(klasse); return e; };
+        return h('div', { class: 'bildrahmen' }, t.art === 'werte' ? werteTabelle(t, f) : dreisatzTabelle(t, f));
+      }
       // Zahlenmauer: Steine in Reihen, in die leeren Steine wird direkt eingetragen.
       if (t.art === 'mauer') return h('div', { class: 'bildrahmen' }, h('div', { class: `mauer${t.rechenart === '·' ? ' malmauer' : ''}`, role: 'group', 'aria-label': t.rechenart === '·' ? 'Mal-Mauer' : 'Zahlenmauer' },
         t.zeilen.map((reihe) => h('div', { class: 'mauerreihe' }, reihe.map((c) => h('span', { class: `stein${typeof c === 'object' ? ' offen' : ''}` }, typeof c === 'object' ? feld(c) : c))))));
@@ -1147,7 +1153,8 @@ function liesEingabe(auf, formular) {
     case 'bruch': return liesBruch(auf, formular);
     case 'faerben': { const v = feld('faerben'); return { eingabe: v, leer: v === '' }; }
     case 'periode': return liesPeriode(formular);
-    case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' || auf.eingabe === 'kreis' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
+    case 'gitter': { const frage = auf.nachfrage ? formular.querySelector('input[name=nachfrage]:checked')?.value ?? null : null;
+      const v = `${feld('gitter')}${frage != null ? ` [${frage}]` : ''}`, n = (feld('gitter').match(/\(/g) ?? []).length; return { eingabe: v, leer: (auf.nachfrage && frage == null) || n < (auf.eingabe === 'linie' || auf.eingabe === 'kreis' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
     default: return { eingabe: null, leer: true };
   }
 }
@@ -1235,6 +1242,7 @@ function loesungstext(auf) {
     case 'schaetzen': return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.bereich[0])} bis ${gliedere(auf.bereich[1])})`;
     case 'diagramm': return auf.teile.length === 1 ? zahl(auf.teile[0]) : auf.teile.map((t, i) => `${'abcdef'[i]}) ${zahl(t)}`).join('  ');
     case 'tabelle': if (auf.tabelle.art === 'stellentafel') return 'siehe Tafel';
+      if (auf.tabelle.art === 'werte' || auf.tabelle.art === 'dreisatz') return 'siehe Tabelle';
       // Klasse 6, Kapitel 5 (ADR 0048): Rechenraster mit Komma nennen die ganze Rechnung.
       if (auf.tabelle.art === 'raster' && auf.tabelle.komma != null) { const r = auf.tabelle.rechnung; return `${r.zahlen.join(` ${r.zeichen} `)} = ${r.ergebnis}`; }
       if (auf.tabelle.art === 'raster' && auf.tabelle.ablesen) { const r = auf.tabelle.rechnung; return `${r.zahlen[0]} · ${r.zahlen[1]} = ${r.ergebnis}, also ${auf.tabelle.ablesen.text} ${auf.luecken[auf.tabelle.ablesen.luecke].loesung}`; }
@@ -1287,7 +1295,7 @@ function urteilZeile(e, auf, nachsatz) {
 // Steht in der Lösung eine Endnull, sagt ein Satz, wozu sie da ist.
 export function endnullSatz(auf) {
   // Klasse 6, Kapitel 5 (ADR 0048): 4,5 € zählt wie 4,50 €. Der Satz zeigt, wie man Geld schreibt.
-  if (auf.lernziel?.startsWith('6.5.') && auf.einheit === '€' && /,\d0$/.test(String(auf.loesung ?? ''))) return h('p', { class: 'endnull', id: 'endnull' }, `Bei Geld schreibt man zwei Stellen nach dem Komma: ${auf.loesung} €.`);
+  if (/^6\.[57]\./.test(auf.lernziel ?? '') && auf.einheit === '€' && /,\d0$/.test(String(auf.loesung ?? ''))) return h('p', { class: 'endnull', id: 'endnull' }, `Bei Geld schreibt man zwei Stellen nach dem Komma: ${auf.loesung} €.`);
   if (!auf.lernziel?.startsWith('6.4.3')) return null;
   const werte = auf.format === 'zahl' ? [auf.loesung] : auf.format === 'luecken' ? Object.values(auf.luecken ?? {}).map((l) => l.loesung) : [];
   const mit = werte.map(String).find((w) => /,\d*0$/.test(w));
@@ -1316,6 +1324,12 @@ export function loesungsbild(auf) {
   // Kapitel 7: der Winkel mit dem zweiten Schenkel in der richtigen Lage.
   if (auf.format === 'winkel') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, winkelLoesungBild(auf));
   if (auf.format === 'faerben') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, faerbenLoesungBild(auf));
+  // Klasse 6, Kapitel 7 (ADR 0050): die ausgefüllte Wertetabelle oder Dreisatztabelle.
+  if (auf.tabelle?.art === 'werte' || auf.tabelle?.art === 'dreisatz') {
+    const voll = (c) => (typeof c === 'object' && c !== null ? `${gliedere(auf.luecken[c.luecke].loesung)}${c.einheit ? ` ${c.einheit}` : ''}` : c);
+    const t = { ...auf.tabelle, zeilen: auf.tabelle.zeilen.map((z) => z.map(voll)), pfeile: auf.tabelle.pfeile?.map((p) => p && Object.fromEntries(Object.entries(p).map(([k, v]) => [k, typeof v === 'object' && v !== null ? `${v.zeichen} ${gliedere(auf.luecken[v.luecke].loesung)}` : v]))) };
+    return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, auf.tabelle.art === 'werte' ? werteTabelle(t) : dreisatzTabelle(t));
+  }
   // Kapitel 2: Die ausgefüllte Stellenwerttafel.
   if (auf.tabelle?.art === 'einheitentafel') {
     const t = auf.tabelle;

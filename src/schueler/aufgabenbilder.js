@@ -5,6 +5,7 @@ import { s } from './dom.js';
 import { RATIONALBILDER } from './rationalbilder.js';
 import { zahlenstrahl } from './bilder.js';
 import { DEZIMALBILDER } from './dezimalbilder.js';
+import { ZUORDNUNGSBILDER } from './zuordnungsbilder.js';
 import { DATENBILDER } from './datenbilder.js';
 import { ZAHLENBILDER } from './zahlenbilder.js';
 import { GEOBILDER } from './geobilder.js';
@@ -240,7 +241,7 @@ function paeckchenbild({ einzeln = 0, paeckchen, je }) {
   return rahmen(breite, hoehe, titel, teile);
 }
 
-const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }), ...DATENBILDER, ...ZAHLENBILDER, ...GEOBILDER, ...GROESSENBILDER, ...WINKELBILDER, ...FLAECHENBILDER, ...BRUCHBILDER, ...RATIONALBILDER, ...FIGURBILDER, ...KOERPERBILDER, ...DEZIMALBILDER };
+const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }), ...DATENBILDER, ...ZAHLENBILDER, ...GEOBILDER, ...GROESSENBILDER, ...WINKELBILDER, ...FLAECHENBILDER, ...BRUCHBILDER, ...RATIONALBILDER, ...FIGURBILDER, ...KOERPERBILDER, ...DEZIMALBILDER, ...ZUORDNUNGSBILDER };
 export const BILDARTEN = Object.keys(ARTEN);
 export function aufgabenBild(bild) {
   return ARTEN[bild?.art]?.(bild) ?? null;

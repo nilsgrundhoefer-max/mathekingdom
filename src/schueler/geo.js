@@ -74,7 +74,16 @@ export function pruefeGitter(aufgabe, eingabe) {
     return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => (f.bedingung ? koerperZellen(f.bedingung, punkte) : f.punkte && (aufgabe.bedingung.art === 'form' ? verschoben(punkte, f.punkte) : gleicheMenge(punkte, f.punkte))))?.fehlvorstellung ?? null };
   }
   if (gleicheMenge(punkte, aufgabe.loesung)) return { richtig: true, fehlvorstellung: null };
-  return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => gleicheMenge(punkte, f.punkte))?.fehlvorstellung ?? null };
+  const bekannt = (aufgabe.typischeFehler ?? []).find((f) => gleicheMenge(punkte, f.punkte))?.fehlvorstellung ?? null;
+  // Klasse 6, Kapitel 7 (ADR 0050): Im Schaubild sind vertauschte Achsen ein eigener Fehler, auch bei verschiedener Einteilung der Achsen.
+  const sk = aufgabe.gitter?.skala;
+  if (!bekannt && sk && aufgabe.eingabe === 'punkte' && punkte.length) {
+    const wert = (p) => [Math.round(p[0] * sk.x.schritt * 1000), Math.round(p[1] * sk.y.schritt * 1000)];
+    if (gleicheMenge(punkte.map(wert).map(([x, y]) => [y, x]), aufgabe.loesung.map(wert))) return { richtig: false, fehlvorstellung: 'schaubild-achsen-vertauscht' };
+    // Kästchen gezählt statt an der Achse abgelesen: Der Punkt liegt so viele Kästchen weit, wie der Wert groß ist.
+    if ((sk.x.schritt !== 1 || sk.y.schritt !== 1) && gleicheMenge(punkte.map((p) => [p[0] * 1000, p[1] * 1000]), aufgabe.loesung.map(wert))) return { richtig: false, fehlvorstellung: 'einteilung-uebersehen' };
+  }
+  return { richtig: false, fehlvorstellung: bekannt };
 }
 // ---------- Klasse 6 Kapitel 3: Netze und Ansichten (ADR 0045) ----------
 // Ein Würfelnetz wird gefaltet, indem der Würfel über die Kästchen abrollt: Jedes Kästchen bekommt so eine Seite des Würfels.
@@ -119,5 +128,8 @@ export function gitterLoesung(aufgabe) {
   if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'netz') return `zum Beispiel ${aufgabe.loesung.length === 1 ? 'das Kästchen' : `die ${aufgabe.loesung.length} Kästchen`} im Bild`;
   if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'form') return `${aufgabe.loesung.length} Kästchen wie im Bild, an jeder Stelle im Gitter`;
   if (aufgabe.eingabe === 'zellen') return `${aufgabe.loesung.length} Kästchen, siehe Bild`;
+  // Klasse 6, Kapitel 7 (ADR 0050): Im Schaubild stehen die Punkte mit den Werten der Achsen, dazu die Antwort auf die Nachfrage.
+  if (aufgabe.gitter.skala) { const sk = aufgabe.gitter.skala, z = (a, n) => (n * a.schritt).toFixed(a.stellen ?? 0).replace('.', ',');
+    return `${aufgabe.loesung.map((p) => `(${z(sk.x, p[0])}|${z(sk.y, p[1])})`).join(', ')}${aufgabe.nachfrage ? `; ${aufgabe.nachfrage.optionen.find((o) => o.richtig).text}` : ''}`; }
   return aufgabe.gitter.achsen ? aufgabe.loesung.map(punktText).join(', ') : 'siehe Bild';
 }
