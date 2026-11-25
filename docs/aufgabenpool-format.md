@@ -181,3 +181,20 @@ Benannte Arten im `nachweis`, nachgerechnet von `tools/pruefe-rational.mjs`: `bi
 
 Die Vorstufe dieses Pools enthält Lernziele aus Klasse 5 und Klasse 6. Statt `vorstufe.klassenstufe` steht dort `vorstufe.klassenstufen` mit beiden Zahlen.
 
+
+## Klasse 7, Kapitel 2 „Dreiecke“ (ADR 0044)
+
+Ein Unterkapitel kann `pflicht: "M"` tragen (Pflicht-ab-Marke): Es hat Aufgaben auf allen vier Stufen, verbindlich ist es erst ab dieser Stufe. Für ein Zielniveau darunter ist es ein freiwilliger Abstecher auf der eigenen Stufe. `pflicht` schließt `ab` und `extra` aus. Ein Lernziel kann `bp` tragen: den Standard im Bildungsplan 2016 als Text, zum Beispiel `"3.2.3 (6), auf G [MSA]"`.
+
+| Feld | Inhalt |
+|---|---|
+| `bild.art: "figur"` | Figur außerhalb des Gitters, Koordinaten in Zentimetern, y nach oben: `punkte` (`n`, `p`, optional `zeigen: false`, `name: false`, `pos`), `linien` (`a`, `b`, optional `n`, `stil` `hilfs`, `hoehe`, `ort`, `dick`, `gleich` 1 oder 2), `winkel` (`s`, `a`, `b`, optional `n`, `wert`, `frage`, `gleich`, `farbe`, `ueber`, `r`), `masse` (`a`, `b`, `t`), `kreise` (`m`, `r`, `stil`), `titel`. Gezeichnet wird maßstabsgetreu: Jeder Winkel mit `wert` hat diese Größe, gleich markierte Seiten sind gleich lang. Ein Winkel mit `wert: 90` hat ein Quadrat mit Punkt. |
+| `gitter.kreise` | dürfen in Kapitel 2 über den Rand gehen (Zirkelbögen, Thaleskreis). Der Mittelpunkt liegt im Gitter, mindestens ein Sechstel des Kreises ist zu sehen; das Dashboard schneidet am Rand ab. |
+| `gitter.punkte[].pos` | setzt der Erzeuger in Kapitel 2 selbst, so dass kein Name auf einer Linie, einem Kreis oder einem anderen Namen steht. |
+| `toleranz` | Heftaufgaben mit Kontrollwert: immer 2 (Millimeter oder Grad). |
+
+Das Format `ordnen` nimmt in Kapitel 2 ganze Sätze (Konstruktionsschritte). Ist eine Karte länger als 24 Zeichen, stehen die Karten untereinander und werden mit ▲ und ▼ verschoben. Der Nachweis ist dann `schritte`.
+
+In Texten steht das Gradzeichen direkt an der Zahl (`40°`), im Nachweis auch (`"180° − 40° − 60° = 80°"`); die Prüfung rechnet ohne es. Winkelnamen sind griechische Buchstaben, mit Strich `α′` für die Winkel an der zweiten Parallelen.
+
+Benannte Arten im `nachweis`, nachgerechnet von `tools/pruefe-dreiecke.mjs`: `figur` (der Winkel im Bild), `beziehung` (Scheitel-, Neben-, Stufen-, Wechselwinkel, an der Lage im Bild gemessen), `klasse` (Einteilung nach Seiten und Winkeln), `name`, `seite`, `kongruenz` (welcher Satz passt), `konstruierbar` (Dreiecksungleichung, SsW), `heft` (Kontrollwert aus der Konstruktion berechnet), `thales`, `kreislage`, `tangente`, `gitterlaenge`, `hoehe`, `hoehenschnitt`, `umkreislage`, `ortslinie`, `mittelsenkrechteAB`, `winkelhalbierende`, `mittelparallele`, `ort` (alle Gitterpunkte, die die Bedingungen erfüllen, müssen genau die Lösung sein) und `schritte`. Die Prüfung misst zusätzlich jede Figur nach: Winkel auf 0,6° genau, Maße im selben Maßstab, gleich markierte Seiten gleich lang.

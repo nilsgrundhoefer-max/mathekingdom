@@ -117,7 +117,9 @@ export function ordnenEingabe(auf, letzte, gesperrt) {
   const feld = h('input', { type: 'hidden', name: 'ordnung', value: JSON.stringify(reihe) });
   // Nach einem Fehlversuch liegt die Reihenfolge des Kindes schon da und darf so noch einmal geprüft werden.
   if (Array.isArray(letzte)) feld.dataset.bewegt = '1';
-  const liste = h('ol', { class: 'ordnen', 'aria-label': 'Zahlenkarten in ihrer jetzigen Reihenfolge' });
+  // Klasse 7 Kapitel 2 (ADR 0044): Konstruktionsschritte sind ganze Sätze. Sie stehen untereinander und brechen um.
+  const saetze = auf.karten.some((k) => String(k).length > 24);
+  const liste = h('ol', { class: `ordnen${saetze ? ' saetze' : ''}`, 'aria-label': saetze ? 'Karten in ihrer jetzigen Reihenfolge' : 'Zahlenkarten in ihrer jetzigen Reihenfolge' });
   const tausche = (i, j, fokus) => {
     if (j < 0 || j >= reihe.length) return;
     [reihe[i], reihe[j]] = [reihe[j], reihe[i]];
@@ -127,14 +129,14 @@ export function ordnenEingabe(auf, letzte, gesperrt) {
     liste.children[j]?.querySelector(fokus)?.focus();
   };
   const male = () => liste.replaceChildren(...reihe.map((karte, i) => h('li', { class: 'ordnenkarte' },
-    h('button', { type: 'button', class: 'schieb links', disabled: gesperrt || i === 0, 'aria-label': `${karte} nach links`, onclick: () => tausche(i, i - 1, '.links:not(:disabled), .rechts') }, '◀'),
+    h('button', { type: 'button', class: 'schieb links', disabled: gesperrt || i === 0, 'aria-label': `${karte} ${saetze ? 'nach oben' : 'nach links'}`, onclick: () => tausche(i, i - 1, '.links:not(:disabled), .rechts') }, saetze ? '▲' : '◀'),
     h('span', { class: 'kartenwert', tabindex: gesperrt ? null : 0, role: 'group', 'aria-label': `Karte ${karte}, Platz ${i + 1} von ${reihe.length}. Mit den Pfeiltasten verschieben.`,
-      onkeydown: (e) => { if (e.key === 'ArrowLeft') { e.preventDefault(); tausche(i, i - 1, '.kartenwert'); } if (e.key === 'ArrowRight') { e.preventDefault(); tausche(i, i + 1, '.kartenwert'); } } }, karte),
-    h('button', { type: 'button', class: 'schieb rechts', disabled: gesperrt || i === reihe.length - 1, 'aria-label': `${karte} nach rechts`, onclick: () => tausche(i, i + 1, '.rechts:not(:disabled), .links') }, '▶'))));
+      onkeydown: (e) => { if (e.key === 'ArrowLeft' || (saetze && e.key === 'ArrowUp')) { e.preventDefault(); tausche(i, i - 1, '.kartenwert'); } if (e.key === 'ArrowRight' || (saetze && e.key === 'ArrowDown')) { e.preventDefault(); tausche(i, i + 1, '.kartenwert'); } } }, karte),
+    h('button', { type: 'button', class: 'schieb rechts', disabled: gesperrt || i === reihe.length - 1, 'aria-label': `${karte} ${saetze ? 'nach unten' : 'nach rechts'}`, onclick: () => tausche(i, i + 1, '.rechts:not(:disabled), .links') }, saetze ? '▼' : '▶'))));
   male();
   return h('div', { class: 'ordnenfeld' }, feld,
-    h('div', { class: 'ordnenrand' }, h('span', { class: 'klein' }, auf.links ?? 'zuerst'), h('span', { class: 'klein' }, auf.rechts ?? 'zuletzt')),
-    liste, !gesperrt && h('p', { class: 'klein' }, 'Verschiebe die Karten mit den Pfeilen.'));
+    ...(saetze ? [h('p', { class: 'klein' }, auf.links ?? 'zuerst'), liste, h('p', { class: 'klein' }, auf.rechts ?? 'zuletzt')]
+      : [h('div', { class: 'ordnenrand' }, h('span', { class: 'klein' }, auf.links ?? 'zuerst'), h('span', { class: 'klein' }, auf.rechts ?? 'zuletzt')), liste]), !gesperrt && h('p', { class: 'klein' }, 'Verschiebe die Karten mit den Pfeilen.'));
 }
 export const liesOrdnung = (formular) => { try { return JSON.parse(formular.elements.ordnung?.value ?? '[]'); } catch { return []; } };
 

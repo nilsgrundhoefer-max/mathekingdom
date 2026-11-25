@@ -240,7 +240,10 @@ export function istWackelig(stand, lernzielId) {
 // Wer ein Zielniveau darunter hat, erlebt ihn als Abstecher: Er zählt nicht für das Kapitel, und gearbeitet wird auf der Marke.
 export const stufeAb = (niveau, ab) => (ab && NIVEAUS.indexOf(niveau) < NIVEAUS.indexOf(ab) ? ab : niveau);
 export const stufeFuer = (index, lernzielId, niveau) => stufeAb(niveau, index?.meilensteinVon.get(lernzielId)?.ab);
-export const istNiveauAbstecher = (u, zielniveau) => Boolean(u.ab && zielniveau && NIVEAUS.indexOf(zielniveau) < NIVEAUS.indexOf(u.ab));
+// Pflicht-ab-Marke (ADR 0044): `pflicht` (M oder E) macht eine Einheit erst ab dieser Stufe verbindlich. Sie hat aber Aufgaben auf allen Stufen:
+// Wer ein Zielniveau darunter hat, erlebt sie als freiwilligen Abstecher auf seiner eigenen Stufe (stufeAb hebt nicht an).
+export const pflichtAb = (u) => u?.ab ?? u?.pflicht ?? null;
+export const istNiveauAbstecher = (u, zielniveau) => Boolean(pflichtAb(u) && zielniveau && NIVEAUS.indexOf(zielniveau) < NIVEAUS.indexOf(pflichtAb(u)));
 export const istAbstecher = (u, zielniveau) => Boolean(u.extra) || istNiveauAbstecher(u, zielniveau);
 
 // Mit `index` gilt zusätzlich: Mindestens eine der richtigen Aufgaben stammt aus AFB II oder III,

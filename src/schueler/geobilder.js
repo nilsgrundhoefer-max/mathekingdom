@@ -60,6 +60,7 @@ const beschreibung = (g) => [g.achsen ? 'Koordinatensystem' : 'Karogitter',
   g.figuren?.length && `${g.figuren.length === 1 ? 'eine Figur' : `${g.figuren.length} Figuren`}`,
   g.zellen?.length && `${g.zellen.length} gefärbte Kästchen`].filter(Boolean).join(', ');
 
+let gitterId = 0;
 export function gitterSvg(g, dazu = {}) {
   const m = masse(g), { u, X, Y } = m;
   const svg = s('svg', { class: `gitterbild${g.achsen ? ' mit-achsen' : ''}${dazu.klasse ? ` ${dazu.klasse}` : ''}`, viewBox: `0 0 ${m.B} ${m.H}`, role: 'img', 'aria-label': beschreibung(g) });
@@ -86,8 +87,13 @@ export function gitterSvg(g, dazu = {}) {
     svg.append(s('polygon', { points: eckenText(m, f.ecken), class: `figur${f.stil ? ` ${f.stil}` : ''}` }));
     if (f.n) { const c = f.ecken.reduce((a, e) => [a[0] + e[0] / f.ecken.length, a[1] + e[1] / f.ecken.length], [0, 0]); svg.append(s('text', { x: X(c[0]), y: Y(c[1]) + 6, 'text-anchor': 'middle', class: 'figurname' }, f.n)); }
   }
-  // Kapitel 7: Kreise (Mittelpunkt und Radius in Kästchen).
-  for (const k of g.kreise ?? []) svg.append(s('circle', { cx: X(k.m[0]), cy: Y(k.m[1]), r: k.r * u, class: `kreis${k.stil ? ` ${k.stil}` : ''}` }));
+  // Kapitel 7: Kreise (Mittelpunkt und Radius in Kästchen). Klasse 7 Kapitel 2: Zirkelbögen und der Thaleskreis dürfen über den Rand gehen,
+  // sie enden dann am Rand des Gitters (wie ein Bogen im Heft).
+  if (g.kreise?.length) {
+    const id = `mk-gitter-${++gitterId}`;
+    svg.append(s('clipPath', { id }, s('rect', { x: X(r.x0), y: Y(r.y1), width: g.b * u, height: g.h * u })));
+    for (const k of g.kreise) svg.append(s('circle', { cx: X(k.m[0]), cy: Y(k.m[1]), r: k.r * u, class: `kreis${k.stil ? ` ${k.stil}` : ''}`, 'clip-path': `url(#${id})` }));
+  }
   for (const l of g.linien ?? []) svg.append(...linieSvg(g, m, l));
   for (const r of g.rechte ?? []) {
     const e = (v) => { const len = Math.hypot(v[0], v[1]); return [v[0] / len * 0.45, v[1] / len * 0.45]; }, a = e(r.u), b = e(r.v), p = r.p;

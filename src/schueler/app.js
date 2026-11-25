@@ -813,13 +813,14 @@ function meilensteinTafel(kapitel, meilenstein, kapitelNiveau) {
   const naechstes = L.naechstesLernziel(z.index, z.stand, meilenstein, niveau);
   const meine = L.krone(z.index, z.stand, meilenstein), ziel = L.stufeAb(z.einst.zielniveau, meilenstein.ab);
   return h('div', { class: 'karte tafel' },
-    h('h2', {}, meilenstein.titel, meilenstein.ab && h('span', { class: 'marke niveaumarke', id: 'niveau-marke' }, `ab ${L.KRONEN[meilenstein.ab]}`), status === 'gemeistert' && h('span', { class: 'marke gut' }, 'Meilenstein gemeistert')),
+    h('h2', {}, meilenstein.titel, L.pflichtAb(meilenstein) && h('span', { class: 'marke niveaumarke', id: 'niveau-marke' }, `${meilenstein.ab ? '' : 'Pflicht '}ab ${L.KRONEN[L.pflichtAb(meilenstein)]}`), status === 'gemeistert' && h('span', { class: 'marke gut' }, 'Meilenstein gemeistert')),
     seitenweg && h('p', { class: 'klein niveau-abstecher', id: 'niveau-abstecher' }, h('b', {}, 'Ein Abstecher für dich. '),
-      `Hier gibt es nur Aufgaben um ${L.KRONEN[meilenstein.ab]}. Du musst ihn nicht gehen: Dein Kapitel schaffst du auch ohne ihn. Wenn du magst, hol dir hier eine Krone in ${L.KRONEN[meilenstein.ab]}.`),
+      meilenstein.ab ? `Hier gibt es nur Aufgaben um ${L.KRONEN[meilenstein.ab]}. Du musst ihn nicht gehen: Dein Kapitel schaffst du auch ohne ihn. Wenn du magst, hol dir hier eine Krone in ${L.KRONEN[meilenstein.ab]}.`
+        : `Pflicht ist er erst ab ${L.KRONEN[meilenstein.pflicht]}. Du musst ihn nicht gehen: Dein Kapitel schaffst du auch ohne ihn. Wenn du magst, hol dir hier eine Krone.`),
     h('p', { class: 'meinekrone', id: 'meine-krone' }, meine
       ? [kroneBild(meine, 30), h('span', {}, h('b', {}, `Deine Krone: ${L.KRONEN[meine]}.`), L.unterZiel(meine, ziel) ? ` Für den Meilenstein brauchst du ${L.KRONEN[ziel]}.` : meine !== 'E' ? ' Du kannst sie noch aufwerten.' : '')]
       : [kroneBild(null, 30, { voll: false }), h('span', {}, seitenweg ? `Noch keine Krone. Hier gibt es sie ab ${L.KRONEN[ziel]}.` : `Noch keine Krone. Für den Meilenstein brauchst du ${L.KRONEN[ziel]}.`)]),
-    !seitenweg && kronenWahl(kapitel, niveau, meilenstein.ab),
+    (!seitenweg || !meilenstein.ab) && kronenWahl(kapitel, niveau, meilenstein.ab),
     h('ul', { class: 'lernziele' }, meilenstein.lernziele.filter((l) => z.index.lernzielMitAufgaben.has(l.id)).map((l) => {
       // Die Punkte zeigen den Weg zur Krone, um die der Schüler gerade spielt. Das Siegel gibt es fürs Zielniveau.
       const st = L.lernzielStand(z.stand, l.id, niveau, z.index);

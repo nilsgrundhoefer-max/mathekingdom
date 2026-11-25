@@ -3,13 +3,16 @@
 Grundlage: Inhaltsverzeichnis von Schnittpunkt Mathematik 7, Differenzierende Ausgabe Baden-Württemberg, und das Kompetenzraster des Verlags zu Klasse 7 (Klett 2017), beide von der Lehrkraft am 24.11.2026 geliefert.
 
 Was aus der Quelle stammt: Reihenfolge und Titel der Kapitel, Nummern und Titel der Lerneinheiten, die EXTRA-Einheiten, die Sternchen und die „Ich kann“-Sätze der Kapitel 2 bis 8.
-Was von mir stammt: die feineren Lernziele von Kapitel 1 (zwei je Meilenstein, eines je Abstecher), abgestimmt in zwei Fragerunden am 24.11.2026. Die feineren Lernziele der übrigen Kapitel entstehen erst in der Fragerunde zum jeweiligen Kapitel. Gebaut ist bisher Kapitel 1 (ADR 0043).
+Was von mir stammt: die feineren Lernziele von Kapitel 1 (zwei je Meilenstein, eines je Abstecher), abgestimmt in zwei Fragerunden am 24.11.2026, und die von Kapitel 2, abgestimmt am 25.11.2026. Die feineren Lernziele der übrigen Kapitel entstehen erst in der Fragerunde zum jeweiligen Kapitel. Gebaut sind Kapitel 1 (ADR 0043) und Kapitel 2 (ADR 0044).
+
+Seit Kapitel 2 dient zusätzlich die Niveauübersicht der Lehrkraft als Quelle: [quellen/aufgabenniveaus-klasse-7.md](quellen/aufgabenniveaus-klasse-7.md) (Stand 24.11.2026). Sie legt fest, was eine Aufgabe auf G, M und E verlangt, und nennt zu jedem Thema den Standard im Bildungsplan 2016. Dieser Standard steht im Pool bei jedem Lernziel der Kapitel 1 und 2 im Feld `bp` und im Lehrer-Dashboard über dem Lernziel.
 
 ## Regeln für die Marken im Buch
 
 - **EXTRA mit Mathe-Inhalt**: ein Abstecher für alle auf den vier Niveaustufen, wie die Extras in Klasse 5. Er hängt an einem Meilenstein und zählt nicht für den Kapitelabschluss.
 - **EXTRA am Computer** (Tabellenkalkulation, Geometrie-Software): lässt sich nicht automatisch auswerten und entfällt.
-- **Sternchen** (nicht verbindlich für den Hauptschulabschluss, im Buch nur 2.1 und 2.5): im Plan als Niveau-Meilenstein ab M vorgemerkt. Entschieden wird beim Bau von Kapitel 2.
+- **Sternchen** (nicht verbindlich für den Hauptschulabschluss, im Buch nur 2.1 und 2.5): Marke „Pflicht ab M“ (`pflicht: 'M'`). Die Einheit hat Aufgaben auf allen vier Stufen. Wer ein Zielniveau unter M hat, erlebt sie als freiwilligen Abstecher auf seiner eigenen Stufe (ADR 0044).
+- **Nur E** (Umkreis, Inkreis und Tangenten laut Niveauübersicht): ein Abstecher mit 24 Aufgaben auf E (`ab: 'E'`), ein Purpur-Abstecher.
 - Alle übrigen Lernziele haben je sechs Aufgaben auf F, G, M und E.
 
 ## Kapitel 1: Rationale Zahlen
@@ -31,18 +34,18 @@ Was von mir stammt: die feineren Lernziele von Kapitel 1 (zwei je Meilenstein, e
 
 ## Kapitel 2: Dreiecke
 
-| Nr. | Unterkapitel | Marke | Lernziel |
-|---|---|---|---|
-| 2.1 | Winkel im Schnittpunkt von Geraden | ab M | Ich kann die Winkel im Schnittpunkt von Geraden benennen. |
-| 2.2 | Winkelsumme im Dreieck |  | Ich kann mithilfe des Winkelsummensatzes Berechnungen am Dreieck vornehmen. |
-| 2.3 | Dreiecksformen |  | Ich kann Dreiecksformen anhand von Seiten und Winkeln unterscheiden. |
-| 2.4 | Dreiecke konstruieren |  | Ich kann mithilfe der Kongruenzsätze Dreiecke konstruieren. |
-| 2.5 | Der Satz des Thales | ab M | Ich kann mit dem Satz des Thales rechtwinklige Dreiecke konstruieren. |
-| 2.X1 | Kreis und Tangenten | EXTRA | Ich kann Tangenten an einen Kreis konstruieren. |
-| 2.6 | Höhen |  | Ich kann zu den Dreiecksseiten Höhen einzeichnen. |
-| 2.7 | Mittelsenkrechte. Winkelhalbierende |  | Ich kann Mittelsenkrechte und Winkelhalbierende zeichnen. |
-| 2.X2 | Mit Zirkel und Lineal: Mittelsenkrechte. Umkreis | EXTRA | Ich kann Mittelsenkrechte mit Zirkel und Lineal konstruieren. |
-| 2.X3 | Mit Zirkel und Lineal: Winkelhalbierende. Inkreis | EXTRA | Ich kann Winkelhalbierende mit Zirkel und Lineal konstruieren. |
+| Nr. | Unterkapitel | Marke | Lernziel | Bildungsplan |
+|---|---|---|---|---|
+| 2.1 | Winkel im Schnittpunkt von Geraden | Pflicht ab M | Ich kann Scheitelwinkel und Nebenwinkel an zwei sich schneidenden Geraden erkennen und berechnen.<br>Ich kann Stufenwinkel und Wechselwinkel an geschnittenen Parallelen erkennen und berechnen. | 3.2.3 (3), auf G [MSA] |
+| 2.2 | Winkelsumme im Dreieck |  | Ich kann mit dem Winkelsummensatz fehlende Winkel im Dreieck berechnen.<br>Ich kann den Winkelsummensatz begründen und in zusammengesetzten Figuren anwenden. | 3.2.3 (4), (5) |
+| 2.3 | Dreiecksformen |  | Ich kann Dreiecke nach Seiten und Winkeln einteilen und richtig beschriften.<br>Ich kann Eigenschaften gleichschenkliger und gleichseitiger Dreiecke nutzen, auch den Basiswinkelsatz. | 3.2.3 (1), (5) |
+| 2.4 | Dreiecke konstruieren |  | Ich kann erkennen, welcher Kongruenzsatz passt, und eine Planfigur skizzieren.<br>Ich kann Dreiecke aus drei gegebenen Größen konstruieren. | 3.2.3 (7), (8) |
+| 2.5 | Der Satz des Thales | Pflicht ab M | Ich kann den Satz des Thales erkennen und damit Winkel berechnen.<br>Ich kann mit dem Thaleskreis rechtwinklige Dreiecke konstruieren. | 3.2.3 (6), (10), auf G [MSA] |
+| 2.X1 | Kreis und Tangenten | EXTRA, nur E | Ich kann Tangenten an einen Kreis konstruieren. | 3.2.3 (12) |
+| 2.6 | Höhen |  | Ich kann zu den Seiten eines Dreiecks die Höhen einzeichnen.<br>Ich kann Höhen auch im stumpfwinkligen Dreieck zeichnen und den Höhenschnittpunkt finden. | 3.2.3 (9) |
+| 2.7 | Mittelsenkrechte. Winkelhalbierende |  | Ich kann die Mittelsenkrechte zeichnen und Kreis und Mittelsenkrechte als Ortslinien nutzen.<br>Ich kann die Winkelhalbierende zeichnen und Punkte finden, die zwei Bedingungen erfüllen. | 3.2.3 (9), (10) |
+| 2.X2 | Mit Zirkel und Lineal: Mittelsenkrechte. Umkreis | EXTRA, nur E | Ich kann die Mittelsenkrechte mit Zirkel und Lineal konstruieren und den Umkreis eines Dreiecks zeichnen. | 3.2.3 (9), (11) |
+| 2.X3 | Mit Zirkel und Lineal: Winkelhalbierende. Inkreis | EXTRA, nur E | Ich kann die Winkelhalbierende mit Zirkel und Lineal konstruieren und den Inkreis eines Dreiecks zeichnen. | 3.2.3 (9), (11) |
 
 ## Kapitel 3: Rechnen mit Termen
 

@@ -14,9 +14,9 @@ const RICHTIG = { richtig: true, fehlvorstellung: null };
 const aufgabe = (id) => pool.aufgaben.find((a) => a.id === id);
 const eins = pool.kapitel[0];
 
-test('Der Jahresplan hat 8 Kapitel wie das Buch, gebaut ist Kapitel 1', () => {
+test('Der Jahresplan hat 8 Kapitel wie das Buch, gebaut sind Kapitel 1 und 2', () => {
   assert.deepEqual(pool.kapitel.map((k) => k.titel), ['Rationale Zahlen', 'Dreiecke', 'Rechnen mit Termen', 'Gleichungen', 'Vierecke', 'Proportional und antiproportional', 'Prozente', 'Wahrscheinlichkeit']);
-  assert.ok(pool.aufgaben.every((a) => a.id.startsWith('7.1.')));
+  assert.ok(pool.aufgaben.every((a) => /^7\.[12]\./.test(a.id)));
 });
 
 test('Kapitel 1 hat 8 Meilensteine mit je 2 Lernzielen und 4 Abstecher mit je 1 Lernziel, je Lernziel 24 Aufgaben', () => {
@@ -25,7 +25,7 @@ test('Kapitel 1 hat 8 Meilensteine mit je 2 Lernzielen und 4 Abstecher mit je 1 
   assert.equal(abstecher.length, 4);
   assert.ok(meilen.every((u) => u.lernziele.length === 2));
   assert.ok(abstecher.every((u) => u.lernziele.length === 1));
-  assert.equal(pool.aufgaben.length, 480);
+  assert.equal(pool.aufgaben.filter((a) => a.id.startsWith('7.1.')).length, 480);
   for (const u of eins.unterkapitel) for (const l of u.lernziele) {
     assert.deepEqual(L.NIVEAUS.map((n) => (index.nach.get(`${l.id}|${n}`) ?? []).length), [6, 6, 6, 6], l.id);
   }
@@ -105,7 +105,7 @@ test('Lücken und Zahlenmauern: Die Lösungen sind richtig, auch mit getipptem B
 test('Koordinatensystem mit vier Quadranten: Punkte mit Minus werden geschrieben, gelesen und geprüft', () => {
   assert.equal(punktText([-3, 2]), '(−3|2)');
   assert.deepEqual(lesePunkte('A(−3|2) und B(-1|-4)'), [[-3, 2], [-1, -4]]);
-  const gitter = pool.aufgaben.filter((a) => a.format === 'gitter');
+  const gitter = pool.aufgaben.filter((a) => a.format === 'gitter' && a.id.startsWith('7.1.'));
   assert.ok(gitter.length >= 10);
   for (const a of gitter) {
     assert.deepEqual(a.gitter.ursprung, [a.gitter.b / 2, a.gitter.h / 2], a.id);
@@ -126,7 +126,7 @@ test('Schreibweise: echtes Minuszeichen, „(+15)“ nur in 1.3 bis 1.5 und nie 
 });
 
 test('Staffel: Auf F hat jede Aufgabe ein Bild und nur ganze Zahlen', () => {
-  for (const a of pool.aufgaben.filter((x) => x.niveau === 'F')) {
+  for (const a of pool.aufgaben.filter((x) => x.niveau === 'F' && x.id.startsWith('7.1.'))) {
     assert.ok(a.bild || a.strahl || a.gitter || a.daten || a.tabelle, `${a.id} ohne Bild`);
     assert.ok(!/\d,\d|⁄/.test(JSON.stringify([a.text, a.optionen, typeof a.loesung === 'string' ? a.loesung : null])), `${a.id}: Komma oder Bruch auf F`);
   }

@@ -107,7 +107,7 @@ Gitterzeichnen für Kreise: Der Schüler tippt den Mittelpunkt und einen Punkt a
 _Avoid_: Zirkel am Bildschirm
 
 **Heftaufgabe mit Kontrollwert**:
-Eine Aufgabe, bei der das Kind im Heft mit dem Geodreieck zeichnet und eine nachgemessene Länge in Millimetern eintippt. 2 mm Abweichung gelten als richtig.
+Eine Aufgabe, bei der das Kind im Heft mit dem Geodreieck zeichnet und eine nachgemessene Länge in Millimetern eintippt. 2 mm Abweichung gelten als richtig. In Klasse 7 Kapitel 2 auch ein nachgemessener Winkel in Grad, mit 2° Abweichung; daneben steht die Planfigur.
 _Avoid_: Konstruktionsaufgabe, Messaufgabe
 
 **Stützgröße**:
@@ -235,6 +235,14 @@ _Avoid_: Zusatzstation, Extra
 **Niveau-Meilenstein**:
 Ein Meilenstein, den das Lehrwerk mit M oder E markiert und der deshalb nur Aufgaben ab dieser Niveaustufe hat (M: auf M und E; E: nur auf E). Für Schüler mit einem Zielniveau darunter ist er ein Abstecher und für den Kapitelabschluss nicht nötig; sie dürfen ihn freiwillig versuchen. Dann arbeiten sie auf der niedrigsten Niveaustufe, die er hat. Für Schüler ab diesem Zielniveau ist er ein gewöhnlicher Meilenstein auf dem Weg. Ändert die Lehrkraft das Zielniveau, wechselt er sofort die Rolle; verdiente Kronen bleiben.
 _Avoid_: Zusatzstoff, Extra, Erweiterung
+
+**Pflicht ab M**:
+Ein Meilenstein, den das Lehrwerk mit Sternchen markiert (in Klasse 7 die Einheiten 2.1 und 2.5). Er hat Aufgaben auf allen vier Niveaustufen, verbindlich ist er aber erst ab Zielniveau M. Wer ein Zielniveau darunter hat, erlebt ihn als freiwilligen Abstecher auf seiner eigenen Stufe; anders als beim Niveau-Meilenstein wird dabei nicht auf M gearbeitet.
+_Avoid_: Sternchen-Meilenstein, Niveau-Meilenstein ab M
+
+**Planfigur**:
+Eine Skizze des gesuchten Dreiecks, in der alle gegebenen Seiten und Winkel markiert sind. In Kapitel 2 steht sie neben jeder Heftaufgabe des Konstruierens und ist maßstabsgetreu gezeichnet.
+_Avoid_: Skizze, Entwurf
 
 **Lernziel**:
 Eine überprüfbare Kompetenz, festgelegt pro Klassenstufe und Kapitel nach dem Bildungsplan 2016 Baden-Württemberg und einem Unterkapitel zugeordnet. Es ist erreicht, wenn der Schüler drei Aufgaben dazu richtig löst, davon mindestens zwei auf oder über seinem Zielniveau und ohne Lösungsschritt-Kärtchen, und mindestens eine aus dem Anforderungsbereich II oder III. Eine Aufgabe, deren Lösung er am selben Tag schon gesehen hat, zählt dabei nicht (ADR 0031).

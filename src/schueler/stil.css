@@ -583,6 +583,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .ordnenkarte .kartenwert:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
 #mathekingdom .ordnenkarte .schieb { border: none; background: #efe6d2; padding: 0 9px; cursor: pointer; font-size: 1rem; color: var(--nacht); min-height: 0; border-radius: 0; }
 #mathekingdom .ordnenkarte .schieb:disabled { opacity: .3; cursor: default; }
+#mathekingdom ol.ordnen.saetze { flex-direction: column; flex-wrap: nowrap; }
+#mathekingdom ol.ordnen.saetze .ordnenkarte .kartenwert { white-space: normal; flex: 1; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
 #mathekingdom .ordnenkarte .schieb:not(:disabled):hover { background: var(--gold); }
 #mathekingdom .zeicheneingabe { display: grid; gap: 10px; justify-items: start; }
 #mathekingdom .zeichenfeld { font-size: 1.4rem; width: 13ch; letter-spacing: .08em; font-weight: 700; }
@@ -796,3 +798,25 @@ body { margin: 0; background: #efe6d2; }
 
 /* Klasse 7 (ADR 0043): Rechenzeichen, Klammer und Lücke bleiben in einer Zeile. */
 #mathekingdom .luecken .lueckensatz { white-space: nowrap; }
+
+/* Klasse 7 Kapitel 2: Dreiecke (figurbilder.js, ADR 0044) */
+#mathekingdom svg.figurbild { display: block; width: 100%; min-width: 260px; height: auto; user-select: none; }
+#mathekingdom .figurbild .blatt { fill: #fffdf6; }
+#mathekingdom .figurbild .kante { stroke: var(--nacht); stroke-width: 2.4; stroke-linecap: round; }
+#mathekingdom .figurbild .kante.hilfs { stroke: #6b7c93; stroke-width: 1.6; stroke-dasharray: 6 5; }
+#mathekingdom .figurbild .kante.hoehe { stroke: #a8690a; stroke-width: 2.2; stroke-dasharray: 7 4; }
+#mathekingdom .figurbild .kante.ort { stroke: #1e8449; stroke-width: 2.2; }
+#mathekingdom .figurbild .kante.dick { stroke-width: 3.4; }
+#mathekingdom .figurbild .ecke { fill: var(--nacht); }
+#mathekingdom .figurbild .kreis { fill: none; stroke: #2f4f7f; stroke-width: 2; }
+#mathekingdom .figurbild .kreis.hilfs { stroke: #6b7c93; stroke-dasharray: 6 5; }
+#mathekingdom .figurbild .gleichstrich { stroke: var(--nacht); stroke-width: 2; }
+#mathekingdom .figurbild .winkelflaeche { fill-opacity: .16; stroke: none; }
+#mathekingdom .figurbild .winkelbogen { fill: none; stroke-width: 2.2; }
+#mathekingdom .figurbild .winkelname { font-size: 17px; font-weight: 700; font-style: italic; paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .figurbild .winkelname.wert { font-style: normal; font-size: 15px; font-variant-numeric: tabular-nums; }
+#mathekingdom .figurbild .punktname { font-size: 16px; font-weight: 700; fill: var(--siegel); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .figurbild .linienname { font-size: 16px; font-style: italic; font-weight: 700; fill: var(--nacht); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .figurbild .masszahl { font-size: 15px; fill: var(--tinte); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; font-variant-numeric: tabular-nums; }
+#mathekingdom .figurbild .masszahl.frage { font-weight: 700; fill: var(--siegel); }
+#mathekingdom .figurbild .rechterpunkt { stroke: none; }
