@@ -614,6 +614,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .gitterbild .linie.achse { stroke: var(--siegel); stroke-dasharray: 9 6; }
 #mathekingdom .gitterbild .linie.hilfs { stroke: var(--grau); stroke-width: 1.6; stroke-dasharray: 4 5; }
 #mathekingdom .gitterbild .linie.farbe { stroke: #0072b2; }
+#mathekingdom .gitterbild .linie.verdeckt { stroke-width: 2.2; stroke-dasharray: 7 5; }
 #mathekingdom .gitterbild .linienende { stroke: var(--nacht); stroke-width: 2.6; stroke-linecap: round; }
 #mathekingdom .gitterbild .linienname { font-size: 16px; font-style: italic; font-weight: 700; fill: var(--nacht); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
 #mathekingdom .gitterbild .punkt { stroke: var(--siegel); stroke-width: 2.6; stroke-linecap: round; fill: none; }
@@ -820,3 +821,51 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .figurbild .masszahl { font-size: 15px; fill: var(--tinte); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; font-variant-numeric: tabular-nums; }
 #mathekingdom .figurbild .masszahl.frage { font-weight: 700; fill: var(--siegel); }
 #mathekingdom .figurbild .rechterpunkt { stroke: none; }
+
+/* Klasse 6 Kapitel 3: Körper (koerperbilder.js, ADR 0045). Drei Töne: vorne hell, rechts mittel, oben am hellsten. */
+#mathekingdom svg.koerperbild { display: block; width: 100%; height: auto; user-select: none; }
+#mathekingdom .koerperbild .blatt { fill: #fffdf6; }
+#mathekingdom .koerperbild .flaeche { stroke: none; }
+#mathekingdom .koerperbild .flaeche.ton-vorne { fill: #e3ecf6; }
+#mathekingdom .koerperbild .flaeche.ton-oben { fill: #f3f7fb; }
+#mathekingdom .koerperbild .flaeche.ton-rechts { fill: #c9d8ea; }
+#mathekingdom .koerperbild .flaeche.ton-schraeg { fill: #d6e2ef; }
+#mathekingdom .koerperbild .flaeche.markiert { fill: #f6d79a; }
+#mathekingdom .koerperbild .flaeche.markiert.hinten { fill: #f6d79a; fill-opacity: .55; }
+#mathekingdom .koerperbild .kante { stroke: var(--nacht); stroke-width: 2.4; stroke-linecap: round; fill: none; }
+#mathekingdom .koerperbild .kante.duenn { stroke-width: 1.4; }
+#mathekingdom .koerperbild .kante.verdeckt { stroke-width: 1.8; stroke-dasharray: 6 5; }
+#mathekingdom .koerperbild .kante.markiert { stroke: #c0392b; stroke-width: 4; }
+#mathekingdom .koerperbild .kante.markiert.verdeckt { stroke-width: 3; }
+#mathekingdom .koerperbild .ecke.markiert { fill: #c0392b; stroke: #fffdf6; stroke-width: 1.5; }
+#mathekingdom .koerperbild .punktname { font-size: 16px; font-weight: 700; fill: var(--siegel); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; }
+#mathekingdom .koerperbild .masszahl { font-size: 15px; fill: var(--tinte); paint-order: stroke; stroke: #fffdf6; stroke-width: 4px; font-variant-numeric: tabular-nums; }
+#mathekingdom .koerperbild .augenzahl { font-size: 20px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .koerperbild .pfeil { stroke: var(--grau); stroke-width: 2; fill: none; stroke-linecap: round; }
+#mathekingdom .koerperbild .bildtext { font-size: 14px; fill: var(--grau); }
+#mathekingdom .koerperbild .wuerfelflaeche { stroke: var(--nacht); stroke-width: 1.6; stroke-linejoin: round; }
+#mathekingdom .koerperbild .wuerfelflaeche.ton-vorne { fill: #dbe6f3; }
+#mathekingdom .koerperbild .wuerfelflaeche.ton-oben { fill: #f5f8fc; }
+#mathekingdom .koerperbild .wuerfelflaeche.ton-rechts { fill: #a9c0dc; }
+#mathekingdom .koerperbild .karo { stroke: #d9e3ee; stroke-width: 1; }
+#mathekingdom .koerperbild .netzflaeche { fill: #e3ecf6; stroke: var(--nacht); stroke-width: 2.2; stroke-linejoin: round; }
+#mathekingdom .koerperbild .netzflaeche.farbe-1 { fill: #f6d79a; }
+#mathekingdom .koerperbild .netzflaeche.farbe-2 { fill: #c9e4c5; }
+#mathekingdom .koerperbild .netzname { font-size: 16px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .koerperbild .risszelle { fill: #c9d8ea; }
+#mathekingdom .koerperbild .rissrand { stroke: var(--nacht); stroke-width: 2.4; stroke-linecap: round; }
+#mathekingdom .koerperbild .risszahl { font-size: 15px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .koerperbild .rissname { font-size: 14px; }
+#mathekingdom .koerperfigur { max-width: 360px; }
+/* Bildkarten: Antworten als kleine Bilder, am Handy zwei je Reihe, sonst bis zu drei. */
+#mathekingdom .bildkarten { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; align-self: stretch; }
+#mathekingdom .option.bildkarte { flex-direction: column; align-items: stretch; gap: 6px; padding: 8px; }
+#mathekingdom .bildkarte .kartenname { font-weight: 700; color: var(--nacht); }
+#mathekingdom .bildkarte input { position: absolute; opacity: 0; pointer-events: none; }
+#mathekingdom .bildkarte { position: relative; }
+#mathekingdom .bildkarte .kartenname::before { content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 8px; border: 2px solid var(--nacht); border-radius: 50%; vertical-align: -2px; }
+#mathekingdom .bildkarte:has(input[type=checkbox]) .kartenname::before { border-radius: 3px; }
+#mathekingdom .bildkarte:has(input:checked) .kartenname::before { background: var(--nacht); box-shadow: inset 0 0 0 2px #fff; }
+#mathekingdom .bildkarte:has(input:focus-visible) { outline: 3px solid var(--gold); outline-offset: 2px; }
+#mathekingdom .kartenbild svg { display: block; width: 100%; height: auto; max-height: 150px; }
+@media (max-width: 520px) { #mathekingdom .bildkarten { grid-template-columns: 1fr 1fr; } }

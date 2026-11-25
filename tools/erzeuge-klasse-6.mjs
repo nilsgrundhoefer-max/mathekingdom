@@ -18,6 +18,8 @@ import { teilen } from './aufgaben/6-2-4-teilen.mjs';
 import { multiplizieren } from './aufgaben/6-2-5-multiplizieren.mjs';
 import { dividieren } from './aufgaben/6-2-6-dividieren.mjs';
 import { ausdruecke } from './aufgaben/6-2-7-ausdruecke.mjs';
+import { quaderUndNetze } from './aufgaben/6-3-1-quader.mjs';
+import { schraegbilder } from './aufgaben/6-3-2-schraegbild.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -35,6 +37,9 @@ const ERZEUGER = [
   [62562562, multiplizieren],
   [62662662, dividieren],
   [62762762, ausdruecke],
+  // Kapitel 3 (ADR 0045)
+  [63163163, quaderUndNetze],
+  [63263263, schraegbilder],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

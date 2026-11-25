@@ -68,14 +68,56 @@ export function pruefeGitter(aufgabe, eingabe) {
     if (zellenErfuellt(aufgabe.bedingung, punkte)) return { richtig: true, fehlvorstellung: null };
     return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => zellenErfuellt(f.bedingung, punkte))?.fehlvorstellung ?? null };
   }
+  // Klasse 6 Kapitel 3 (ADR 0045): ein Würfelnetz ergänzen (jedes passende Kästchen zählt) oder eine Ansicht zeichnen (an jeder Stelle im Gitter).
+  if (aufgabe.eingabe === 'zellen' && ['netz', 'form'].includes(aufgabe.bedingung?.art)) {
+    if (koerperZellen(aufgabe.bedingung, punkte)) return { richtig: true, fehlvorstellung: null };
+    return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => (f.bedingung ? koerperZellen(f.bedingung, punkte) : f.punkte && (aufgabe.bedingung.art === 'form' ? verschoben(punkte, f.punkte) : gleicheMenge(punkte, f.punkte))))?.fehlvorstellung ?? null };
+  }
   if (gleicheMenge(punkte, aufgabe.loesung)) return { richtig: true, fehlvorstellung: null };
   return { richtig: false, fehlvorstellung: (aufgabe.typischeFehler ?? []).find((f) => gleicheMenge(punkte, f.punkte))?.fehlvorstellung ?? null };
 }
+// ---------- Klasse 6 Kapitel 3: Netze und Ansichten (ADR 0045) ----------
+// Ein Würfelnetz wird gefaltet, indem der Würfel über die Kästchen abrollt: Jedes Kästchen bekommt so eine Seite des Würfels.
+// Es ist ein Würfelnetz, wenn die sechs Kästchen zusammenhängen und sechs verschiedene Seiten treffen.
+const neg = (v) => v.map((x) => -x);
+const SCHRITTE = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+export function faltung(zellen) {
+  const schl = (p) => `${p[0]},${p[1]}`, frei = new Map(zellen.map((p) => [schl(p), p])), seite = new Map();
+  if (!zellen.length || frei.size !== zellen.length) return null;
+  const start = zellen[0], liste = [[start, { n: [0, 0, -1], r: [1, 0, 0], u: [0, 1, 0] }]];
+  seite.set(schl(start), liste[0][1]);
+  while (liste.length) {
+    const [p, o] = liste.pop();
+    for (const [dx, dy] of SCHRITTE) {
+      const q = [p[0] + dx, p[1] + dy];
+      if (!frei.has(schl(q)) || seite.has(schl(q))) continue;
+      const neu = dx === 1 ? { n: o.r, r: neg(o.n), u: o.u } : dx === -1 ? { n: neg(o.r), r: o.n, u: o.u } : dy === 1 ? { n: o.u, r: o.r, u: neg(o.n) } : { n: neg(o.u), r: o.r, u: o.n };
+      seite.set(schl(q), neu); liste.push([q, neu]);
+    }
+  }
+  if (seite.size !== zellen.length) return null; // nicht zusammenhängend
+  return zellen.map((p) => seite.get(schl(p)).n.join(','));
+}
+export const istWuerfelnetz = (zellen) => { const f = zellen.length === 6 && faltung(zellen); return Boolean(f) && new Set(f).size === 6; };
+const verschoben = (a, b) => {
+  if (a.length !== b.length || !a.length) return false;
+  const mx = (l) => [Math.min(...l.map((p) => p[0])), Math.min(...l.map((p) => p[1]))], [ax, ay] = mx(a), [bx, by] = mx(b);
+  return gleicheMenge(a.map((p) => [p[0] - ax, p[1] - ay]), b.map((p) => [p[0] - bx, p[1] - by]));
+};
+// bedingung { art: 'netz', gegeben: [[x, y]], fehlt } oder { art: 'form', zellen: [[x, y]] }.
+export function koerperZellen(bed, punkte) {
+  if (bed.art === 'form') return verschoben(punkte, bed.zellen);
+  const neu = punkte.filter((p) => !bed.gegeben.some((q) => gleich(p, q)));
+  return neu.length === punkte.length && neu.length === bed.fehlt && istWuerfelnetz([...bed.gegeben, ...neu]);
+}
+
 // Die Lösung in Worten, für Ergebniszeile, Tafelbild und Meldungen.
 export function gitterLoesung(aufgabe) {
   if (aufgabe.eingabe === 'kreis') return aufgabe.gitter.achsen ? `Kreis um ${punktText(aufgabe.bedingung.m)} durch ${punktText(aufgabe.beispiel[1])}` : 'siehe Bild';
   if (aufgabe.eingabe === 'linie') return !aufgabe.gitter.achsen ? 'siehe Bild' : `zum Beispiel die Linie durch ${alsEingabe(aufgabe.beispiel).replace(' ', ' und ')}`;
   if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'flaeche') return `zum Beispiel ${aufgabe.loesung.length} Kästchen wie im Bild`;
+  if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'netz') return `zum Beispiel ${aufgabe.loesung.length === 1 ? 'das Kästchen' : `die ${aufgabe.loesung.length} Kästchen`} im Bild`;
+  if (aufgabe.eingabe === 'zellen' && aufgabe.bedingung?.art === 'form') return `${aufgabe.loesung.length} Kästchen wie im Bild, an jeder Stelle im Gitter`;
   if (aufgabe.eingabe === 'zellen') return `${aufgabe.loesung.length} Kästchen, siehe Bild`;
   return aufgabe.gitter.achsen ? aufgabe.loesung.map(punktText).join(', ') : 'siehe Bild';
 }

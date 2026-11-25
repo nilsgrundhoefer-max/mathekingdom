@@ -4,8 +4,11 @@
 // `ab`: Marke M oder E des Buchs (Niveau-Meilenstein, ADR 0037). Das Dashboard wertet sie aus, sobald es dazu Aufgaben gibt.
 
 import { merkzettel2, wortspeicher2, voraussetzungen2, grundlagen2 } from './jahresplan-6-2.mjs';
+import { lernziele3, merkzettel3, wortspeicher3, voraussetzungen3, grundlagen3, bp6 } from './jahresplan-6-3.mjs';
 
-const uk = (nr, titel, lernziele, ab = null) => ({ nr, titel, lernziele, ab });
+// `pflicht` (ADR 0044, 0045): Ein Meilenstein ist erst ab dieser Stufe verbindlich, hat aber Aufgaben auf allen Stufen.
+// `bp`: der Standard im Bildungsplan 2016 je Lernziel (ADR 0045, Quelle docs/quellen/niveaustufen-klasse-6.md).
+const uk = (nr, titel, lernziele, ab = null, { pflicht = null } = {}) => ({ nr, titel, lernziele, ab, pflicht });
 
 const roh = [
   ['Brüche', [
@@ -67,13 +70,14 @@ const roh = [
     }),
   ]],
   ['Körper', [
-    uk(1, 'Quader und ihre Netze', ['Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen.']),
-    uk(2, 'Schrägbilder von Quadern', ['Ich kann Schrägbilder von Quadern lesen und im Gitter vervollständigen.']),
-    uk(3, 'Grundriss und Aufriss', ['Ich kann Ansichten von Körpern zuordnen und zeichnen.']),
-    uk(4, 'Prisma', ['Ich kann Prismen und ihre Netze erkennen und beschreiben.']),
-    uk(5, 'Pyramide', ['Ich kann Pyramiden und ihre Netze erkennen und beschreiben.']),
-    uk(6, 'Zylinder, Kegel und Kugel', ['Ich kann Zylinder, Kegel und Kugel erkennen und beschreiben.']),
-    uk(8, 'Kopfgeometrie im Raum', ['Ich kann mir Körper, Netze und Würfelbauten im Kopf vorstellen.']),
+    // Feinere Lernziele (Nils, 2026-11-25, ADR 0045). 3.2 und 3.3 sind Pflicht ab Gold.
+    uk(1, 'Quader und ihre Netze', lernziele3[1]),
+    uk(2, 'Schrägbilder von Quadern', lernziele3[2], null, { pflicht: 'M' }),
+    uk(3, 'Grundriss und Aufriss', lernziele3[3], null, { pflicht: 'M' }),
+    uk(4, 'Prisma', lernziele3[4]),
+    uk(5, 'Pyramide', lernziele3[5]),
+    uk(6, 'Zylinder, Kegel und Kugel', lernziele3[6]),
+    uk(8, 'Kopfgeometrie im Raum', lernziele3[8]),
   ]],
   ['Dezimalzahlen', [
     uk(1, 'Dezimalschreibweise', ['Ich kann Dezimalzahlen lesen, schreiben und in die Stellenwerttafel eintragen.']),
@@ -199,6 +203,7 @@ export const merkzettel = {
     heft: 'Wähle die Länge für ein Ganzes so, dass sie sich gut teilen lässt: für Viertel zum Beispiel 4 oder 8 Kästchen.',
   },
   ...merkzettel2,
+  ...merkzettel3,
 };
 
 // Wortspeicher je Unterkapitel: Wort, Niveaustufe, ab der es gezeigt und benutzt wird, und Erklärung.
@@ -254,6 +259,7 @@ export const wortspeicher = {
     w('verfeinern', 'M', 'Jeden Abstand noch einmal teilen. Aus Vierteln werden so Achtel.'),
   ],
   ...wortspeicher2,
+  ...wortspeicher3,
 };
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 liegen (ADR 0037).
@@ -271,6 +277,7 @@ const voraussetzungen = {
   '6.1.6-Z1': ['6.1.1-B2', '5.2.1-N1'],
   '6.1.6-Z2': ['6.1.6-Z1', '6.1.2-W2'],
   ...voraussetzungen2,
+  ...voraussetzungen3,
 };
 
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F übt. Er steht im Hinweis für die Lehrkraft.
@@ -288,6 +295,7 @@ const grundlagen = {
   '6.1.6-Z1': 'Am Zahlenstrahl von 0 bis 1 die Abstände zählen und einen Bruch ablesen',
   '6.1.6-Z2': 'Am Zahlenstrahl von 0 bis 1 so viele Abstände gehen, wie der Zähler sagt',
   ...grundlagen2,
+  ...grundlagen3,
 };
 
 // IDs: Kapitel "6.1", Unterkapitel "6.1.3", Lernziel "6.1.3-K2". Unterkapitel ohne feine Lernziele haben "6.2.1-L1".
@@ -297,7 +305,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => ({
   unterkapitel: unterkapitel.map((u) => {
     const id = `6.${k + 1}.${u.nr}`;
     const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }) }));
-    return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
+    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...(bp6[`${id}-${kurz}`] && { bp: bp6[`${id}-${kurz}`] }) }));
+    return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
   }),
 }));

@@ -13,6 +13,7 @@ import { gemerkteOrdner, zugriff, ordnersaetze } from '../gemeinsam/gemerkt.js';
 const satzSchule = ordnersaetze(gemerkteOrdner('mathekingdom-schueler'), ['schule']);
 import { wappenBild, wappenVoll, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
+import { kartenBild } from './koerperbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild, mitVorzeichen, vorzeichenKnopf } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
@@ -940,8 +941,12 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'zahl': return zahlfeld('zahl', auf.einheit, letzte);
     case 'auswahl': return h('div', { class: 'optionen' },
       auf.mehrfach && h('p', { class: 'klein' }, 'Kreuze alle passenden Antworten an.'),
-      auf.optionen.map((o) => h('label', { class: 'option' },
-        h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
+      // Klasse 6 Kapitel 3 (ADR 0045): Bildkarten. Jede Antwort ist ein kleines Bild mit dem Buchstaben A, B, C …, am Handy zwei je Reihe.
+      auf.optionen.some((o) => o.bild) ? h('div', { class: 'bildkarten' }, auf.optionen.map((o) => h('label', { class: 'option bildkarte' },
+        h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }),
+        h('span', { class: 'kartenname' }, o.text), h('span', { class: 'kartenbild' }, o.bild && kartenBild(o.bild)))))
+        : auf.optionen.map((o) => h('label', { class: 'option' },
+          h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
     case 'luecken': {
       const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name]));
       const einfach = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });

@@ -12,6 +12,7 @@ import { WINKELBILDER } from './winkelbilder.js';
 import { FLAECHENBILDER } from './flaechenbilder.js';
 import { BRUCHBILDER } from './bruchbilder.js';
 import { FIGURBILDER } from './figurbilder.js';
+import { KOERPERBILDER } from './koerperbilder.js';
 
 const DUNKEL = '#2f4f7f';
 const HELL = '#fbf6e9';
@@ -238,7 +239,7 @@ function paeckchenbild({ einzeln = 0, paeckchen, je }) {
   return rahmen(breite, hoehe, titel, teile);
 }
 
-const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }), ...DATENBILDER, ...ZAHLENBILDER, ...GEOBILDER, ...GROESSENBILDER, ...WINKELBILDER, ...FLAECHENBILDER, ...BRUCHBILDER, ...RATIONALBILDER, ...FIGURBILDER };
+const ARTEN = { quadratbild, paeckchen: paeckchenbild, zehnerfeld, mengenbild, gruppenbild, punktefeld, zehnermaterial, stellenwerttafel, streifen, vergleich, zahlenstrahl: (b) => zahlenstrahl(b, { startwort: Boolean(b.spruenge?.length) }), ...DATENBILDER, ...ZAHLENBILDER, ...GEOBILDER, ...GROESSENBILDER, ...WINKELBILDER, ...FLAECHENBILDER, ...BRUCHBILDER, ...RATIONALBILDER, ...FIGURBILDER, ...KOERPERBILDER };
 export const BILDARTEN = Object.keys(ARTEN);
 export function aufgabenBild(bild) {
   return ARTEN[bild?.art]?.(bild) ?? null;
