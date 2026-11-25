@@ -1994,7 +1994,7 @@ function pruefeFormat(a) {
     const g = a.gitter, mangel = gitterMangel(g);
     if (mangel) { melde(a.id, `Gitter: ${mangel}`); return; }
     // Klasse 6 Kapitel 3: Neben dem Gitter darf ein Körper stehen, dessen Ansicht gezeichnet wird.
-    if (a.bild && !(koerperModus && a.bild.art === 'koerper')) melde(a.id, 'Gitterzeichnen zeigt schon ein Gitter und braucht kein weiteres Bild');
+    if (a.bild && !(koerperModus && ['koerper', 'risse'].includes(a.bild.art))) melde(a.id, 'Gitterzeichnen zeigt schon ein Gitter und braucht kein weiteres Bild');
     for (const f of a.typischeFehler ?? []) if (!(f.fehlvorstellung in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${f.fehlvorstellung}`);
     if (a.eingabe === 'linie') {
       if (!['gerade', 'strecke'].includes(a.linie)) melde(a.id, 'Gitter: linie muss gerade oder strecke sein');

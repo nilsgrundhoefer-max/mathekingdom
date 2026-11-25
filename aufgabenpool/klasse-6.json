@@ -43169,6 +43169,8801 @@
      "grund": "Behauptung"
     }
    ]
+  },
+  {
+   "id": "6.3.3-A1-F-01",
+   "lernziel": "6.3.3-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von vorne auf den Würfelbau.\nKreuze die passende Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-gespiegelt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 1,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dich vor den Würfelbau. Der Pfeil zeigt, wo vorne ist.",
+    "beispiel": "Du siehst von jedem Turm nur seine Höhe.",
+    "loesungsschritt": "Zähle in jeder Spalte die Würfel übereinander."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-F-02",
+   "lernziel": "6.3.3-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das ist die Ansicht von vorne.\nKreuze den passenden Würfelbau an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        2,
+        0,
+        0
+       ],
+       [
+        2,
+        0,
+        1
+       ],
+       [
+        2,
+        0,
+        2
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        2,
+        0,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        0,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vergleiche die Höhe der Türme.",
+    "beispiel": "Links, in der Mitte und rechts.",
+    "loesungsschritt": "Der Würfelbau muss in jeder Spalte gleich hoch sein."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von vorne",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-F-03",
+   "lernziel": "6.3.3-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von oben auf den Quader.\nKreuze die Form der Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Rechteck",
+     "richtig": true
+    },
+    {
+     "text": "Kreis",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Dreieck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Quader hat nur Rechtecke als Flächen.",
+    "beispiel": "Du siehst genau eine Fläche.",
+    "loesungsschritt": "Welche Form hat diese Fläche?"
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 4,
+    "b": 3,
+    "c": 2
+   },
+   "nachweis": [
+    {
+     "art": "ansichtform",
+     "form": "quader",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-F-04",
+   "lernziel": "6.3.3-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von vorne auf den Quader.\nEin Kästchen steht für einen Zentimeter.\nKreuze die passende Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 5,
+        "h": 4,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          4,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          0,
+          3
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          3,
+          3
+         ],
+         [
+          4,
+          3
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 5,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          4,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 4,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vorne siehst du die Fläche ABFE.",
+    "beispiel": "Sie ist 5 cm breit und 2 cm hoch.",
+    "loesungsschritt": "Suche das Bild mit dieser Breite und Höhe."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 5,
+    "b": 4,
+    "c": 2,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "5 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "4 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "2 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-F-05",
+   "lernziel": "6.3.3-A1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du schaust von vorne auf den Würfelbau.\nZähle die Kästchen der Ansicht.",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dich vor den Würfelbau. Der Pfeil zeigt, wo vorne ist.",
+    "beispiel": "Du siehst von jedem Turm nur seine Höhe.",
+    "loesungsschritt": "Zähle in jeder Spalte die Würfel übereinander."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wert": 5
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-F-06",
+   "lernziel": "6.3.3-A1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du schaust von oben auf den Würfelbau.\nKreuze die passende Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 2,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau von oben wie ein Vogel auf den Würfelbau.",
+    "beispiel": "Du siehst jeden Turm als ein Kästchen.",
+    "loesungsschritt": "Vorne ist in der Ansicht unten."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-G-01",
+   "lernziel": "6.3.3-A1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Der Grundriss ist die Ansicht von oben.\nKreuze den Grundriss an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 2,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau von oben wie ein Vogel auf den Würfelbau.",
+    "beispiel": "Du siehst jeden Turm als ein Kästchen.",
+    "loesungsschritt": "Vorne ist in der Ansicht unten."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-G-02",
+   "lernziel": "6.3.3-A1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Der Aufriss ist die Ansicht von vorne.\nKreuze den Aufriss an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-gespiegelt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dich vor den Würfelbau. Der Pfeil zeigt, wo vorne ist.",
+    "beispiel": "Du siehst von jedem Turm nur seine Höhe.",
+    "loesungsschritt": "Zähle in jeder Spalte die Würfel übereinander."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-G-03",
+   "lernziel": "6.3.3-A1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen.\nGib an, wie viele Würfel es insgesamt sind.",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Zahl ist ein Turm.",
+    "beispiel": "Eine 3 heißt: drei Würfel übereinander.",
+    "loesungsschritt": "Addiere alle Zahlen."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        2
+       ],
+       [
+        0,
+        1,
+        3
+       ],
+       [
+        1,
+        1,
+        2
+       ],
+       [
+        2,
+        1,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 8
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-G-04",
+   "lernziel": "6.3.3-A1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Kästchen steht für einen Zentimeter.\nGib an, wie viele Kästchen der Grundriss des Quaders hat.",
+   "loesung": 15,
+   "typischeFehler": [
+    {
+     "wert": 10,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Grundriss ist die Fläche oben.",
+    "beispiel": "Sie ist 5 cm lang und 3 cm tief.",
+    "loesungsschritt": "Das sind so viele Reihen mit so vielen Kästchen."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 5,
+    "b": 3,
+    "c": 2,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "5 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "3 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "2 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben",
+     "wert": 15
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-G-05",
+   "lernziel": "6.3.3-A1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Würfelbau hat diesen Aufriss.\nKreuze den Würfelbau an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        2,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        2,
+        1,
+        0
+       ],
+       [
+        2,
+        1,
+        1
+       ],
+       [
+        2,
+        1,
+        2
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        2,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        2
+       ],
+       [
+        2,
+        1,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        0
+       ],
+       [
+        2,
+        1,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Aufriss zeigt die Ansicht von vorne.",
+    "beispiel": "Hinten stehende Würfel siehst du nur, wenn sie höher sind.",
+    "loesungsschritt": "Vergleiche in jeder Spalte die größte Höhe."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von vorne",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-G-06",
+   "lernziel": "6.3.3-A1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Ein Quader ist 2 cm lang, 2 cm tief und 4 cm hoch.\nKreuze die Form seines Grundrisses an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Quadrat",
+     "richtig": true
+    },
+    {
+     "text": "Rechteck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Dreieck",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Grundriss ist die Ansicht von oben.",
+    "beispiel": "Er ist so lang und so tief wie der Quader.",
+    "loesungsschritt": "Sind Länge und Tiefe gleich, ist es ein Quadrat."
+   },
+   "nachweis": [
+    {
+     "art": "ansichtform",
+     "form": "quader",
+     "von": "oben",
+     "quader": {
+      "a": 2,
+      "b": 2,
+      "c": 4
+     }
+    },
+    {
+     "zahl": 4,
+     "grund": "Höhe, für den Grundriss ohne Bedeutung"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-M-01",
+   "lernziel": "6.3.3-A1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Der Seitenriss ist die Ansicht von links. Kreuze den Seitenriss an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-gespiegelt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dich links neben den Würfelbau.",
+    "loesungsschritt": "Was vorne ist, siehst du jetzt rechts."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      2,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-M-02",
+   "lernziel": "6.3.3-A1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Aufriss hat.",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Im Aufriss zählt in jeder Spalte nur der höchste Turm.",
+    "loesungsschritt": "Suche in jeder Spalte des Grundrisses die größte Zahl und addiere."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        2,
+        0,
+        3
+       ],
+       [
+        2,
+        1,
+        1
+       ],
+       [
+        0,
+        2,
+        1
+       ],
+       [
+        1,
+        2,
+        1
+       ],
+       [
+        2,
+        2,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       2
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       0
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ],
+     "wert": 5
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-M-03",
+   "lernziel": "6.3.3-A1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Aufriss an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-gespiegelt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Aufriss ist die Ansicht von vorne.",
+    "loesungsschritt": "In jeder Spalte zählt die größte Zahl."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        2,
+        0,
+        1
+       ],
+       [
+        2,
+        1,
+        2
+       ],
+       [
+        2,
+        2,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       1
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-M-04",
+   "lernziel": "6.3.3-A1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Kästchen steht für einen Zentimeter. Kreuze den Seitenriss des Quaders an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 4,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 4,
+        "h": 3,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 2,
+        "h": 3,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Seitenriss ist die Ansicht von links.",
+    "loesungsschritt": "Du siehst die Fläche ADHE: 2 cm breit und 3 cm hoch."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 4,
+    "b": 2,
+    "c": 3,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "4 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "2 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "3 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-M-05",
+   "lernziel": "6.3.3-A1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Mia sagt: „Zwei verschiedene Würfelbauten haben auch verschiedene Aufrisse.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Jeder Würfelbau hat seinen eigenen Aufriss.",
+     "richtig": false,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "text": "Stimmt. Der Aufriss zeigt jeden Würfel.",
+     "richtig": false,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "text": "Stimmt nicht. Hinter einem Turm können verdeckte Würfel stehen.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Denk an einen Würfel, der hinter einem anderen steht.",
+    "loesungsschritt": "Sieht man ihn von vorne?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-M-06",
+   "lernziel": "6.3.3-A1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Seitenriss hat.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 9,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Seitenriss ist die Ansicht von links.",
+    "loesungsschritt": "Suche in jeder Reihe von vorne nach hinten die größte Zahl und addiere."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        2,
+        0,
+        1
+       ],
+       [
+        2,
+        1,
+        3
+       ],
+       [
+        0,
+        2,
+        1
+       ],
+       [
+        1,
+        2,
+        2
+       ],
+       [
+        2,
+        2,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ],
+      [
+       0,
+       2,
+       0
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       1,
+       2,
+       1
+      ],
+      [
+       2,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       1
+      ]
+     ],
+     "wert": 6
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-E-01",
+   "lernziel": "6.3.3-A1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er höchstens hat.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Auf jedem Kästchen des Grundrisses steht ein Turm. Wie hoch darf er nach dem Aufriss höchstens sein?"
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ]
+     },
+     {
+      "n": "von vorne",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "2 + 2 + 1 + 1 = 6"
+   ]
+  },
+  {
+   "id": "6.3.3-A1-E-02",
+   "lernziel": "6.3.3-A1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du gehst um den Würfelbau herum und schaust von hinten. Kreuze die passende Ansicht an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-gespiegelt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 2,
+        "h": 2,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von hinten ist links und rechts vertauscht."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "hinten"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-E-03",
+   "lernziel": "6.3.3-A1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Würfelbau hat diesen Aufriss. Kreuze alle Würfelbauten an, die passen.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        2,
+        1,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "B",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        1,
+        1,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        2
+       ],
+       [
+        2,
+        1,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    },
+    {
+     "text": "D",
+     "richtig": true,
+     "bild": {
+      "art": "koerper",
+      "form": "wuerfelbau",
+      "wuerfel": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ]
+      ],
+      "vorne": true
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Verdeckte Würfel ändern den Aufriss nicht."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von vorne",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-E-04",
+   "lernziel": "6.3.3-A1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Sara sagt: „Haben zwei Quader denselben Grundriss, dann haben sie auch denselben Aufriss.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt nicht. Die Quader können verschieden hoch sein.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Der Grundriss bestimmt den ganzen Quader.",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "text": "Stimmt. Grundriss und Aufriss sind immer gleich.",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Grundriss zeigt Länge und Tiefe. Was fehlt?"
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A1-E-05",
+   "lernziel": "6.3.3-A1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Aufriss eines Quaders hat 3 mal 4 Kästchen. Sein Grundriss hat 3 mal 2 Kästchen. Gib an, wie viele Kästchen sein Seitenriss hat.",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Seitenriss ist so breit, wie der Quader tief ist, und so hoch wie der Aufriss."
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "quader": {
+      "a": 3,
+      "b": 2,
+      "c": 4
+     },
+     "wert": 8
+    },
+    "2 · 4 = 8"
+   ]
+  },
+  {
+   "id": "6.3.3-A1-E-06",
+   "lernziel": "6.3.3-A1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Seitenriss an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "riss-verwechselt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 3,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          2
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "riss-gespiegelt",
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 3,
+        "zellen": [
+         [
+          2,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          0,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          2
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "risse",
+      "risse": [
+       {
+        "b": 3,
+        "h": 3,
+        "zellen": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von links gesehen ist vorne rechts."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        3
+       ],
+       [
+        2,
+        0,
+        1
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        1,
+        2,
+        1
+       ],
+       [
+        2,
+        2,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       2
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-F-01",
+   "lernziel": "6.3.3-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Würfelbau steht in einer Reihe.\nFärbe die Ansicht von vorne.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir vor, du schaust von vorne.",
+    "beispiel": "Färbe für jeden Würfel, den du siehst, ein Kästchen.",
+    "loesungsschritt": "Würfel hintereinander siehst du nur einmal."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      2
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-F-02",
+   "lernziel": "6.3.3-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Kästchen steht für einen Zentimeter.\nFärbe die Ansicht des Quaders von vorne.",
+   "gitter": {
+    "b": 8,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       5,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ],
+      [
+       4,
+       3
+      ],
+      [
+       5,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Vorne siehst du die Fläche ABFE.",
+    "beispiel": "Lies ab, wie breit und wie hoch sie ist.",
+    "loesungsschritt": "Färbe ein Rechteck mit dieser Breite und Höhe."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      5,
+      2
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 5,
+    "b": 3,
+    "c": 2,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "5 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "3 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "2 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-F-03",
+   "lernziel": "6.3.3-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Würfelbau steht in einer Reihe.\nFärbe die Ansicht von oben.",
+   "gitter": {
+    "b": 7,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von oben siehst du jeden Turm als ein Kästchen.",
+    "beispiel": "Die Höhe siehst du von oben nicht.",
+    "loesungsschritt": "Färbe für jeden Turm ein Kästchen."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       3,
+       0,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-F-04",
+   "lernziel": "6.3.3-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Würfelbau steht in einer Reihe.\nFärbe die Ansicht von vorne.",
+   "gitter": {
+    "b": 7,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       4,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir vor, du schaust von vorne.",
+    "beispiel": "Färbe für jeden Würfel, den du siehst, ein Kästchen.",
+    "loesungsschritt": "Würfel hintereinander siehst du nur einmal."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      2
+     ],
+     [
+      3,
+      0,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       2
+      ],
+      [
+       3,
+       0,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-F-05",
+   "lernziel": "6.3.3-A2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Kästchen steht für einen Zentimeter.\nFärbe die Ansicht des Quaders von oben.",
+   "gitter": {
+    "b": 7,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von oben siehst du die Fläche EFGH.",
+    "beispiel": "Sie ist so lang wie AB und so tief wie BC.",
+    "loesungsschritt": "Färbe ein Rechteck mit diesen Seiten."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      4,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 4,
+    "b": 3,
+    "c": 2,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "4 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "3 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "2 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-F-06",
+   "lernziel": "6.3.3-A2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Kästchen steht für einen Zentimeter.\nFärbe die Ansicht des Würfels von vorne.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ],
+      [
+       4,
+       3
+      ]
+     ],
+     "fehlvorstellung": "tiefe-nicht-verkuerzt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Würfel hat lauter gleiche Quadrate.",
+    "beispiel": "Jede Kante ist 3 cm lang.",
+    "loesungsschritt": "Färbe ein Quadrat mit 3 mal 3 Kästchen."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 3,
+    "b": 3,
+    "c": 3,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "3 cm"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "quader": {
+      "a": 3,
+      "b": 3,
+      "c": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-G-01",
+   "lernziel": "6.3.3-A2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Aufriss ist die Ansicht von vorne.\nFärbe den Aufriss.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir vor, du schaust von vorne.",
+    "beispiel": "Färbe für jeden Würfel, den du siehst, ein Kästchen.",
+    "loesungsschritt": "Würfel hintereinander siehst du nur einmal."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      2
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       2
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-G-02",
+   "lernziel": "6.3.3-A2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Grundriss ist die Ansicht von oben.\nFärbe den Grundriss.",
+   "gitter": {
+    "b": 6,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau von oben wie ein Vogel auf den Würfelbau.",
+    "beispiel": "Du siehst jeden Turm als ein Kästchen.",
+    "loesungsschritt": "Vorne ist in der Ansicht unten."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-G-03",
+   "lernziel": "6.3.3-A2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Kästchen steht für einen Zentimeter.\nFärbe den Grundriss des Quaders.",
+   "gitter": {
+    "b": 8,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       5,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Grundriss ist die Ansicht von oben.",
+    "beispiel": "Du siehst die Fläche EFGH.",
+    "loesungsschritt": "Sie ist so lang wie AB und so tief wie BC."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      5,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      5,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 5,
+    "b": 3,
+    "c": 2,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "5 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "3 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "2 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-G-04",
+   "lernziel": "6.3.3-A2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen.\nFärbe den Aufriss.",
+   "gitter": {
+    "b": 6,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Aufriss ist die Ansicht von vorne.",
+    "beispiel": "In jeder Spalte zählt die größte Zahl.",
+    "loesungsschritt": "Färbe in jeder Spalte so viele Kästchen übereinander."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        2,
+        1,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-G-05",
+   "lernziel": "6.3.3-A2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Aufriss ist die Ansicht von vorne.\nFärbe den Aufriss.",
+   "gitter": {
+    "b": 7,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       4,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dir vor, du schaust von vorne.",
+    "beispiel": "Färbe für jeden Würfel, den du siehst, ein Kästchen.",
+    "loesungsschritt": "Würfel hintereinander siehst du nur einmal."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      3,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       3,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       3,
+       1,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-G-06",
+   "lernziel": "6.3.3-A2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Grundriss ist die Ansicht von oben.\nFärbe den Grundriss.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schau von oben wie ein Vogel auf den Würfelbau.",
+    "beispiel": "Du siehst jeden Turm als ein Kästchen.",
+    "loesungsschritt": "Vorne ist in der Ansicht unten."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      2,
+      2,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       0
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-M-01",
+   "lernziel": "6.3.3-A2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Seitenriss ist die Ansicht von links. Färbe den Seitenriss.",
+   "gitter": {
+    "b": 6,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Stell dich links neben den Würfelbau.",
+    "loesungsschritt": "Was vorne ist, liegt im Seitenriss rechts."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      2,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       1,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-M-02",
+   "lernziel": "6.3.3-A2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Seitenriss.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gehe die Reihen von vorne nach hinten durch.",
+    "loesungsschritt": "In jeder Reihe zählt die größte Zahl. Vorne liegt im Seitenriss rechts."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        1,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        0,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        1,
+        2,
+        2
+       ],
+       [
+        2,
+        2,
+        3
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       1,
+       2,
+       1
+      ],
+      [
+       2,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       1
+      ],
+      [
+       2,
+       2,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-M-03",
+   "lernziel": "6.3.3-A2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Kästchen steht für einen Zentimeter. Färbe den Seitenriss des Quaders.",
+   "gitter": {
+    "b": 6,
+    "h": 7
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       5,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ],
+      [
+       4,
+       3
+      ],
+      [
+       5,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       5,
+       4
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       5,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Seitenriss ist die Ansicht von links.",
+    "loesungsschritt": "Du siehst die Fläche ADHE. Sie ist so tief wie BC und so hoch wie AE."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 5,
+    "b": 2,
+    "c": 4,
+    "masse": [
+     {
+      "von": "A",
+      "bis": "B",
+      "t": "5 cm"
+     },
+     {
+      "von": "B",
+      "bis": "C",
+      "t": "2 cm"
+     },
+     {
+      "von": "A",
+      "bis": "E",
+      "t": "4 cm"
+     }
+    ],
+    "namen": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-M-04",
+   "lernziel": "6.3.3-A2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Aufriss.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In jeder Spalte zählt die größte Zahl.",
+    "loesungsschritt": "Färbe in jeder Spalte so viele Kästchen übereinander."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        1,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        1,
+        0,
+        3
+       ],
+       [
+        0,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        2,
+        1,
+        2
+       ],
+       [
+        2,
+        2,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       2
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       1
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-M-05",
+   "lernziel": "6.3.3-A2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Färbe den Grundriss des Würfelbaus.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Turm ist im Grundriss ein Kästchen.",
+    "loesungsschritt": "Vorne ist im Grundriss unten."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      2,
+      2,
+      0
+     ],
+     [
+      2,
+      2,
+      1
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "oben",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       0
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       1,
+       2,
+       1
+      ],
+      [
+       1,
+       2,
+       2
+      ],
+      [
+       2,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-M-06",
+   "lernziel": "6.3.3-A2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Färbe den Seitenriss des Würfelbaus.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       4,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Seitenriss ist die Ansicht von links.",
+    "loesungsschritt": "Was vorne ist, liegt im Seitenriss rechts."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      2
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      3,
+      1,
+      0
+     ],
+     [
+      3,
+      2,
+      0
+     ],
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       2
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       3,
+       1,
+       0
+      ],
+      [
+       3,
+       2,
+       0
+      ],
+      [
+       3,
+       2,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-E-01",
+   "lernziel": "6.3.3-A2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Du gehst um den Würfelbau herum. Färbe die Ansicht von hinten.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von hinten sind links und rechts vertauscht."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      2
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "hinten",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       2,
+       1,
+       1
+      ],
+      [
+       2,
+       1,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-E-02",
+   "lernziel": "6.3.3-A2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe die Ansicht von rechts.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von rechts gesehen ist vorne links."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        1,
+        0,
+        3
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        0,
+        2,
+        1
+       ],
+       [
+        1,
+        2,
+        1
+       ],
+       [
+        2,
+        2,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "rechts",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       1,
+       0,
+       2
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       0
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-E-03",
+   "lernziel": "6.3.3-A2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Seitenriss.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In jeder Reihe von vorne nach hinten zählt die größte Zahl."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        2
+       ],
+       [
+        2,
+        0,
+        1
+       ],
+       [
+        0,
+        1,
+        3
+       ],
+       [
+        1,
+        1,
+        2
+       ],
+       [
+        1,
+        2,
+        1
+       ],
+       [
+        2,
+        2,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       1
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       0,
+       1,
+       2
+      ],
+      [
+       1,
+       1,
+       0
+      ],
+      [
+       1,
+       1,
+       1
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-E-04",
+   "lernziel": "6.3.3-A2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Der Aufriss eines Quaders hat 5 mal 2 Kästchen. Sein Grundriss hat 5 mal 3 Kästchen. Färbe seinen Seitenriss.",
+   "gitter": {
+    "b": 6,
+    "h": 5
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       5,
+       2
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       5,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ],
+      [
+       4,
+       3
+      ],
+      [
+       5,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Seitenriss ist so breit, wie der Quader tief ist, und so hoch wie der Aufriss."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "quader": {
+      "a": 5,
+      "b": 3,
+      "c": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-E-05",
+   "lernziel": "6.3.3-A2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Auf den Turm hinten in Spalte 1 von links kommt noch ein Würfel. Färbe den neuen Aufriss.",
+   "gitter": {
+    "b": 6,
+    "h": 7
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Würfel ganz oben kann einen Turm im Aufriss höher machen."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wuerfel": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       1,
+       1
+      ],
+      [
+       0,
+       1,
+       2
+      ],
+      [
+       0,
+       1,
+       3
+      ]
+     ]
+    },
+    {
+     "zahl": 1,
+     "grund": "Spalte"
+    }
+   ]
+  },
+  {
+   "id": "6.3.3-A2-E-06",
+   "lernziel": "6.3.3-A2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Färbe den Seitenriss des Würfelbaus.",
+   "gitter": {
+    "b": 6,
+    "h": 6
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       4,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "punkte": [
+      [
+       3,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     "fehlvorstellung": "riss-gespiegelt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Was vorne ist, liegt im Seitenriss rechts. Verdeckte Würfel ändern nichts."
+   },
+   "bedingung": {
+    "art": "form",
+    "zellen": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ]
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      3,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      0,
+      2,
+      2
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      2,
+      2,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wuerfel": [
+      [
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       0,
+       0
+      ],
+      [
+       2,
+       1,
+       0
+      ],
+      [
+       3,
+       1,
+       0
+      ],
+      [
+       0,
+       2,
+       0
+      ],
+      [
+       0,
+       2,
+       1
+      ],
+      [
+       0,
+       2,
+       2
+      ],
+      [
+       1,
+       2,
+       0
+      ],
+      [
+       2,
+       2,
+       0
+      ]
+     ]
+    }
+   ]
   }
  ],
  "vorstufe": {

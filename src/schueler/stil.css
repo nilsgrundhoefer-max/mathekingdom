@@ -855,6 +855,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .koerperbild .risszelle { fill: #c9d8ea; }
 #mathekingdom .koerperbild .rissrand { stroke: var(--nacht); stroke-width: 2.4; stroke-linecap: round; }
 #mathekingdom .koerperbild .risszahl { font-size: 15px; font-weight: 700; fill: var(--nacht); }
+#mathekingdom .rissebild:not(.klein) .risszahl { font-size: 19px; }
 #mathekingdom .koerperbild .rissname { font-size: 14px; }
 #mathekingdom .koerperfigur { max-width: 360px; }
 /* Bildkarten: Antworten als kleine Bilder, am Handy zwei je Reihe, sonst bis zu drei. */

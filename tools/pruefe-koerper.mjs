@@ -297,7 +297,7 @@ export const KOERPER_SONDER = {
   ansicht: (n, a) => {
     const w = wuerfelVon(a, n), q = quaderVon(a, n), soll = w ? ansichtVon(w, n.von) : q ? quaderAnsicht(q, n.von) : null;
     const o = optionenVon(a, n);
-    if (a.bild?.art === 'risse' && o?.some((x) => x.bild)) { // Welcher Bau passt zur Ansicht?
+    if (a.bild?.art === 'risse' && o?.some((x) => x.bild?.form === 'wuerfelbau')) { // Welcher Bau passt zur Ansicht?
       const riss = a.bild.risse[0].zellen;
       return stufe(o, (t, x) => (x.bild?.form === 'wuerfelbau' ? zellenGleich(ansichtVon(x.bild.wuerfel, n.von), riss) : undefined));
     }

@@ -239,7 +239,7 @@ export function netzSvg(b, { klein = false } = {}) {
 
 // ---------- Risse (Ansichten) ----------
 export function risseSvg(b, { klein = false } = {}) {
-  const u = klein ? 18 : 24, abstand = 24, unten = 26, rand = 8;
+  const u = klein ? 18 : 32, abstand = 28, unten = 26, rand = 8;
   const breiten = b.risse.map((r) => r.b * u), B = Math.max(rand * 2 + breiten.reduce((x, y) => x + y, 0) + abstand * (b.risse.length - 1), 120), H = rand * 2 + Math.max(...b.risse.map((r) => r.h)) * u + (b.risse.some((r) => r.n) ? unten : 0);
   const svg = s('svg', { class: `koerperbild rissebild${klein ? ' klein' : ''}`, viewBox: `0 0 ${B} ${H}`, role: 'img', 'aria-label': beschreibung(b) });
   svg.style.maxWidth = `${B}px`;
