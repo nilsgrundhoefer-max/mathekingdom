@@ -594,7 +594,7 @@ Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Gru
 _Avoid_: Log, Verlauf
 
 **Betriebsprotokoll**:
-Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version und jedes technische Problem, etwa GitHub nicht erreichbar oder Speichern fehlgeschlagen. Es enthält keine Lerndaten. Nur der Administrator sieht es, über alle Klassen und Lehrkräfte; die Lehrkraft sieht nur Warnungen, bei denen sie im Unterricht selbst handeln kann.
+Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle und Version, jedes Sitzungsende und jedes technische Problem, etwa GitHub nicht erreichbar, Speichern fehlgeschlagen, ein zweites Fenster mit demselben Code oder ein Programmfehler. Handlungen von Lehrkraft und Administrator wie eine Münzgabe stehen dort mit der Art „Lehrkraft“, harmlose Hinweise mit „Info“. Es enthält keine Lerndaten. Nur der Administrator sieht es, über alle Klassen und Lehrkräfte; die Lehrkraft sieht nur Warnungen, bei denen sie im Unterricht selbst handeln kann.
 _Avoid_: Log, Status, Fehlerliste
 
 **Schuljahreswechsel**:
@@ -630,12 +630,16 @@ Eine Aufgabe, die über alle Klassen hinweg an ihren Zahlen auffällt, ohne dass
 _Avoid_: schwierige Aufgabe (das zeigt das Lehrer-Dashboard je Klasse)
 
 **Aufgabenanalyse**:
-Die Auswertung im Administrator-Dashboard, die zu jeder Aufgabe Bearbeitungen, Lösungsquoten, Dauer, Hilfekärtchen, Abbrüche, häufigste falsche Antwort und Feedback zeigt, gefiltert nach Klasse und Zeitraum, etwa einer einzelnen Teststunde. Auffällig markiert ist eine Aufgabe, die viel länger dauert oder viel öfter falsch ist als die übrigen ihres Lernziels und Niveaus. Sie wird beim Öffnen aus den Speicherständen berechnet und erst beim Export als Datei abgelegt, ohne Namen und Schülercodes.
+Die Auswertung im Administrator-Dashboard, die zu jeder Aufgabe Bearbeitungen, Lösungsquoten, Dauer, Hilfekärtchen, Abbrüche, häufigste falsche Antwort und Feedback zeigt, gefiltert nach Klasse und Zeitraum, etwa einer einzelnen Teststunde. Auffällig markiert ist eine Aufgabe, die mindestens drei verschiedene Schüler bearbeitet haben und die viel länger dauert oder viel öfter falsch ist als die übrigen ihres Lernziels und Niveaus. Jede häufige falsche Antwort trägt die bekannte Fehlvorstellung aus dem Pool oder „unbekannt“; eine unbekannte, gehäufte Antwort kann auf einen Fehler in der Aufgabe zeigen. Sie wird beim Öffnen aus den Speicherständen berechnet und erst beim Export als Datei abgelegt, ohne Namen und Schülercodes.
 _Avoid_: Statistik, Aufgabenstatistik, Analyse (allein)
 
 **Feedbackfrage**:
-Eine kurze Frage an den Schüler mit zwei Antworten, etwa zum Design oder dazu, ob die gerade gelöste Aufgabe zu schwer war. Sie kommt nach dem Ergebnis einer Aufgabe, nie mitten in einer Aufgabe, im Rückblick oder im Einstiegscheck, muss beantwortet werden und bringt keine Münzen. Ob und nach wie vielen Aufgaben sie kommt, stellt der Administrator je Klasse ein. Die Antworten sieht nur der Administrator, ohne Namen.
+Eine kurze Frage an den Schüler mit zwei Antworten, etwa zum Design oder dazu, ob die gerade gelöste Aufgabe zu schwer war. Sie kommt nach dem Ergebnis einer Aufgabe, nie mitten in einer Aufgabe, im Rückblick oder im Einstiegscheck, muss beantwortet werden und bringt keine Münzen. Ob und nach wie vielen Aufgaben sie kommt, stellt der Administrator je Klasse ein. Die Fragen kommen reihum; mit welcher ein Schüler beginnt, hängt von seinem Code ab, damit in einer Stunde alle Fragen vorkommen. Die Antworten sieht nur der Administrator, ohne Namen.
 _Avoid_: Umfrage, Bewertung, Rückmeldung (das ist die Antwort des Dashboards auf eine Aufgabe)
+
+**Zweites Fenster**:
+Ein weiteres Fenster oder ein weiterer Tab im selben Browser, in dem sich derselbe Schüler anmeldet, während er schon angemeldet ist. Es wird gesperrt und speichert nicht, damit nicht zwei Fenster gleichzeitig in seinen Speicherstand schreiben; im Betriebsprotokoll steht es als Problem.
+_Avoid_: Doppelanmeldung (das ist der Doppelklick beim Anmelden, den das Dashboard einfach ignoriert)
 
 **Aufgabentester**:
 Die Karte im Admin-Dashboard unter Aufgaben, in der der Administrator jede Aufgabe einmal so sieht und bedient, wie ein Schüler sie sieht, mit Lösung, typischen Fehlern und Aufgabenkennung daneben. Er hakt sie als kontrolliert ab, meldet einen Fehler oder überspringt sie.

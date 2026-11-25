@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.54 vom 25.11.2026
+
+### Schüler
+
+- Ein Doppelklick auf „Aufbrechen“ startet nur noch eine Anmeldung.
+- Bist du schon in einem anderen Fenster angemeldet, sagt dir ein zweites Fenster, dass du dort weiterarbeiten sollst.
+- Die Feedbackfragen beginnen nicht mehr bei allen mit derselben Frage.
+- In einer Aufgabe zum Erweitern heißt es jetzt richtig „1 davon ist noch übrig“.
+
+### Lehrkraft
+
+- Betriebsprotokoll: neu sind das Sitzungsende, ein zweites Fenster mit demselben Code und Programmfehler. Münzgaben stehen dort als „Lehrkraft“, harmlose Hinweise als „Info“ (ADR 0046).
+- Export „Teststunde“: Lösung jeder auffälligen Aufgabe, zu jeder häufigen falschen Antwort die bekannte Fehlvorstellung oder „unbekannt“, eine Zeile je Klasse, die Version des Schüler-Dashboards je Bearbeitung und alle Fragen zur Aufgabe, auch nach Niveau.
+- Auffällig wird eine Aufgabe erst, wenn mindestens drei verschiedene Schüler sie bearbeitet haben. Wer nur abgebrochen hat, steht getrennt.
+
 ## 0.53 vom 25.11.2026
 
 ### Schüler

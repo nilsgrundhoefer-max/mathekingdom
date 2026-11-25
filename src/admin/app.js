@@ -695,7 +695,7 @@ async function ladeBetrieb() {
       } catch { /* halb geschrieben */ }
     }
     for (const [code, gaben] of Object.entries(daten?.einst?.muenzgaben ?? {})) for (const g of gaben)
-      eintraege.push({ t: g.t, art: 'ok', text: `Münzgabe +${g.muenzen} Münzen an ${code}`, klasse: k, code, wer: 'Administrator' });
+      eintraege.push({ t: g.t, art: 'lehrkraft', text: `Münzgabe +${g.muenzen} Münzen an ${code}`, klasse: k, code, wer: 'Administrator' });
     const bo = lJahr && await (await lJahr.ordner(k))?.ordner('backup');
     klassen.push({ klasse: k, test: Boolean(v.klassen[jahr][k].test), lehrkraefte: v.klassen[jahr][k].lehrkraefte ?? [], namen, staende, standListe, feedback: daten?.einst?.feedback ?? null, backups: bo ? B.behalteneBackups(await bo.ordnernamen()) : [] });
   }
@@ -830,7 +830,6 @@ function protokollKarte() {
     const f = z.protokoll;
     const alle = b.eintraege.filter((e) => !f.klasse || e.klasse === f.klasse || (!e.klasse && f.klasse === '-'));
     const zeilen = (f.nurProbleme ? alle.filter((e) => e.art === 'problem') : alle).slice(0, 200);
-    const ART = { start: 'Start', problem: 'Problem', ok: 'wieder ok' };
     return h('section', { class: 'karte', id: 'protokoll' }, h('h2', {}, 'Betriebsprotokoll'),
       h('p', { class: 'klein' }, 'Technische Ereignisse aus allen Speicherständen und von allen Lehrer-Dashboards: woher geladen wurde, welche Version, welcher Browser, und was schiefging, etwa GitHub nicht erreichbar, Speichern fehlgeschlagen oder eine von außen veränderte Klassendatei. Lerndaten stehen hier nicht. Die Lehrkräfte sehen davon nur Warnungen, bei denen sie selbst etwas tun können.'),
       h('div', { class: 'reihe' },
@@ -843,7 +842,7 @@ function protokollKarte() {
         h('thead', {}, h('tr', {}, ['Zeit', 'Klasse', 'Wer', 'Art', 'Ereignis'].map((t) => h('th', {}, t)))),
         h('tbody', {}, zeilen.map((e) => h('tr', { class: e.art === 'problem' ? 'problem' : '' },
           h('td', { style: 'white-space:nowrap' }, kurzeZeit(e.t)), h('td', {}, e.klasse ?? '–'), h('td', { style: 'white-space:nowrap' }, e.wer),
-          h('td', { class: e.art === 'problem' ? 'fehlertext' : '' }, ART[e.art] ?? e.art), h('td', {}, e.text)))))),
+          h('td', { class: e.art === 'problem' ? 'fehlertext' : '' }, P.ART_TEXT[e.art] ?? e.art), h('td', {}, e.text)))))),
       alle.length > zeilen.length && h('p', { class: 'klein' }, `Gezeigt werden die neuesten ${zeilen.length}. Die Textdatei enthält alle.`));
   });
 }
@@ -895,6 +894,8 @@ function meldungenKarte() {
 }
 // ---------- Auffällige Aufgaben (ADR 0025) ----------
 const allePoolAufgaben = () => Object.values(window.MK_POOLS ?? {}).flatMap((p) => p.aufgaben);
+// Beschreibung einer Fehlvorstellung aus dem Pool, in dem sie steht (für den Export „Teststunde“, Version 0.54).
+const fehlvorstellungZu = (id) => Object.values(window.MK_POOLS ?? {}).map((p) => p.fehlvorstellungen?.[id]).find(Boolean) ?? null;
 const alleStaendeVon = (b) => echteKlassen(b).flatMap((k) => k.standListe ?? []);
 function auffaelligeVon(b) { return (b.auffaellig ??= ST.auffaelligeAufgaben(alleStaendeVon(b), allePoolAufgaben())); }
 function auffaelligKarte() {
@@ -933,8 +934,8 @@ function teststundeKarte() {
     const neu = () => male();
     const exportieren = () => {
       const analyse = AN.aufgabenanalyse(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), allePoolAufgaben(), zeitraum);
-      const feedback = AN.feedbackAuswertung(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), zeitraum);
-      const text = AN.teststundeMarkdown({ klassen: klassenText, zeitraum: zeitraumText, version: versionstext(), erstellt: new Date().toLocaleString('de-DE') }, analyse, feedback, aufgabeZu);
+      const feedback = AN.feedbackAuswertung(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), zeitraum, allePoolAufgaben());
+      const text = AN.teststundeMarkdown({ klassen: klassenText, zeitraum: zeitraumText, version: versionstext(), erstellt: new Date().toLocaleString('de-DE') }, analyse, feedback, aufgabeZu, fehlvorstellungZu);
       ladeHerunter(`Mathekingdom_Teststunde_${f.klasse || 'alle'}_${zeitraum.tag ?? 'schuljahr'}.md`, text, 'text/markdown;charset=utf-8');
       z.hinweis = 'Teststunde exportiert. Die Datei enthält keine Namen und keine Schülercodes; du kannst sie so bei Claude hochladen.';
       male();
@@ -993,7 +994,7 @@ function aufgabenanalyseKarte() {
     const p = (x) => (x == null ? '–' : `${Math.round(x * 100)} %`), s = (x) => (x == null ? '–' : `${Math.round(x)} s`);
     const kurz = (t) => { const x = t.replace(/\{\{\w+\}\}/g, '▢').replace(/\s*\n\s*/g, ' '); return x.length > 80 ? `${x.slice(0, 78)} …` : x; };
     return h('section', { class: 'karte', id: 'aufgabenanalyse' }, h('h2', {}, `Aufgabenanalyse (${an.zeilen.length} Aufgaben, ${an.auffaellig} auffällig)`),
-      h('p', { class: 'klein' }, `Je Aufgabe aus den Speicherständen berechnet, ohne Namen. Auffällig ist eine Aufgabe ab ${AN.MIN_BEARBEITUNGEN} Bearbeitungen, wenn sie mindestens doppelt so lange dauert wie die übrigen Aufgaben ihres Lernziels und Niveaus, wenn sie deutlich seltener gelöst wird, wenn sie oft abgebrochen wird oder im Feedback oft „zu schwer“ heißt. ${an.aktiv} von ${an.schueler} Schülern haben im Zeitraum gearbeitet, ${an.bearbeitungen} Bearbeitungen.`),
+      h('p', { class: 'klein' }, `Je Aufgabe aus den Speicherständen berechnet, ohne Namen. Auffällig ist eine Aufgabe ab ${AN.MIN_BEARBEITUNGEN} Bearbeitungen von mindestens ${AN.MIN_SCHUELER} verschiedenen Schülern, wenn sie mindestens doppelt so lange dauert wie die übrigen Aufgaben ihres Lernziels und Niveaus, wenn sie deutlich seltener gelöst wird, wenn sie oft abgebrochen wird oder im Feedback oft „zu schwer“, „Text nicht verstanden“, „Eingeben hat nicht geklappt“ oder „Bild schlecht zu erkennen“ heißt. ${an.aktiv} von ${an.schueler} Schülern haben im Zeitraum gearbeitet, ${an.bearbeitungen} Bearbeitungen.`),
       !an.zeilen.length ? h('p', { id: 'analyse-leer' }, 'Im gewählten Zeitraum wurde keine Aufgabe bearbeitet.')
         : h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
           h('thead', {}, h('tr', {}, ['Kennung', 'Aufgabe', 'Bearbeitet', 'Gelöst', '1. Versuch', 'Dauer', 'Vergleich', 'Hilfen', 'Abbrüche', 'Zu schwer', 'Auffällig'].map((t) => h('th', {}, t)))),

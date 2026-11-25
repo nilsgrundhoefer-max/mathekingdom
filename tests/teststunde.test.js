@@ -28,6 +28,7 @@ test('Feedback: nach jeder n-ten Aufgabe, Fragen reihum, unpassende übersprunge
   L.zaehleFuerFeedback(st, fb);
   assert.equal(L.feedbackFaellig(st, fb), true);
   assert.equal(L.feedbackFaellig(st, null), false, 'aus: nie');
+  st.feedbackNaechste = 0; // Startfrage je Code siehe berichte.test.js
   const erste = L.naechsteFeedbackFrage(st, {});
   assert.equal(erste.id, 'aussehen');
   L.trageFeedbackEin(st, erste, 0, 'x', '2026-11-24T09:00:00Z');

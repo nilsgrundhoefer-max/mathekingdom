@@ -72,7 +72,7 @@ test('Falsche Teile: mehrteilige Aufgaben und Auswahl', () => {
   assert.deepEqual(S.falscheTeile(sach, ['3', '9']), [{ text: 'b) 9', erwartet: true }]);
   assert.deepEqual(S.falscheTeile(sach, ['4', '8']), [{ text: 'a) 4', erwartet: false }]);
   const ausw = { format: 'auswahl', optionen: [{ text: 'ja', richtig: true }, { text: 'nein', fehlvorstellung: 'f' }, { text: 'vielleicht' }] };
-  assert.deepEqual(S.falscheTeile(ausw, ['nein', 'vielleicht']), [{ text: 'nein', erwartet: true }, { text: 'vielleicht', erwartet: false }]);
+  assert.deepEqual(S.falscheTeile(ausw, ['nein', 'vielleicht']), [{ text: 'nein', erwartet: true, fehlvorstellung: 'f' }, { text: 'vielleicht', erwartet: false }]);
   assert.deepEqual(S.falscheTeile({ format: 'zahl', loesung: 1200 }, ['1 200']), []);
 });
 

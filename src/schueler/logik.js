@@ -476,6 +476,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: bearbeitung.hilfen, dauer: bearbeitung.dauer, muenzen,
     ...(aufgabe.afb && { afb: aufgabe.afb }), ...(bearbeitung.karten && { karten: bearbeitung.karten }),
     ...(rueckblick && { rueckblick: true }), ...(bruecke && { bruecke: true }), ...(seitenblick && { seitenblick: true }), ...(sonderauftrag && { sonderauftrag }), ...(bearbeitung.sicher != null && { sicher: bearbeitung.sicher }), ...(bekannt && { bekannt: true }),
+    ...(stand.dashboardVersion && { version: stand.dashboardVersion }),
   });
   // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
   let heft = null;
@@ -655,7 +656,7 @@ export function trageEinstiegEin(stand, kapitelId, aufgabe, bearbeitung, jetzt) 
   const e = stand.einstieg?.[kapitelId];
   if (!e || e.fertig || e.erledigt.some((x) => x.aufgabe === aufgabe.id)) return null;
   stand.versuche.push({ t: jetzt, aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, niveau: aufgabe.niveau, richtig: bearbeitung.geloest, versuche: 1,
-    eingaben: bearbeitung.eingaben, fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: 0, dauer: bearbeitung.dauer, muenzen: 0, einstieg: true, ...(aufgabe.afb && { afb: aufgabe.afb }) });
+    eingaben: bearbeitung.eingaben, fehlvorstellungen: bearbeitung.fehlvorstellungen, hilfen: 0, dauer: bearbeitung.dauer, muenzen: 0, einstieg: true, ...(aufgabe.afb && { afb: aufgabe.afb }), ...(stand.dashboardVersion && { version: stand.dashboardVersion }) });
   e.erledigt.push({ aufgabe: aufgabe.id, lernziel: aufgabe.lernziel, niveau: aufgabe.niveau, richtig: bearbeitung.geloest });
   if (e.erledigt.length < e.aufgaben.length) return { fertig: false, nummer: e.erledigt.length, gesamt: e.aufgaben.length };
   e.fertig = jetzt;
@@ -1340,9 +1341,16 @@ export function zaehleFuerFeedback(stand, feedback) {
   stand.feedbackSeit = (stand.feedbackSeit ?? 0) + 1;
 }
 export const feedbackFaellig = (stand, feedback) => Boolean(feedback) && (stand.feedbackSeit ?? 0) >= feedback.alle;
+// Mit welcher Frage ein Schüler beginnt (Version 0.54): versetzt nach seinem Code, damit in einer Stunde alle Fragen
+// vorkommen und nicht jeder mit derselben ersten Frage anfängt.
+export function feedbackStart(code = '') {
+  let summe = 0;
+  for (const c of String(code)) summe = (summe * 31 + c.charCodeAt(0)) % 9973;
+  return summe % FEEDBACK_FRAGEN.length;
+}
 // Reihum die nächste passende Frage. kontext: { tipp: Tipp war offen, bild: Aufgabe hat ein Bild }.
 export function naechsteFeedbackFrage(stand, kontext = {}) {
-  const start = stand.feedbackNaechste ?? 0;
+  const start = stand.feedbackNaechste ?? feedbackStart(stand.code);
   for (let i = 0; i < FEEDBACK_FRAGEN.length; i++) {
     const nr = (start + i) % FEEDBACK_FRAGEN.length, f = FEEDBACK_FRAGEN[nr];
     if (f.nur && !kontext[f.nur]) continue;

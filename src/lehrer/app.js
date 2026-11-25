@@ -1880,7 +1880,6 @@ function protokollKarte() {
   const nurProbleme = z.protokollNurProbleme ?? false;
   const zeilen = (nurProbleme ? alle.filter((e) => e.art === 'problem') : alle).slice(0, 100);
   const probleme = alle.filter((e) => e.art === 'problem').length;
-  const ART = { start: 'Start', problem: 'Problem', ok: 'wieder ok' };
   return h('section', { class: 'karte', id: 'protokoll' }, h('h2', {}, 'Protokoll'),
     h('p', { class: 'klein' }, 'Technische Ereignisse aus allen Speicherständen und von diesem Dashboard: woher es geladen wurde, welche Version, und was schiefging, zum Beispiel GitHub nicht erreichbar oder Speichern fehlgeschlagen. Lerndaten stehen hier nicht.'),
     h('p', {}, alle.length ? `${alle.length} Einträge, davon ${probleme} Probleme.` : 'Noch keine Einträge.'),
@@ -1891,7 +1890,7 @@ function protokollKarte() {
       h('thead', {}, h('tr', {}, ['Zeit', 'Wer', 'Art', 'Ereignis'].map((t) => h('th', {}, t)))),
       h('tbody', {}, zeilen.map((e) => h('tr', { class: e.art === 'problem' ? 'problem' : '' },
         h('td', { style: 'white-space:nowrap' }, new Date(e.t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })),
-        h('td', { style: 'white-space:nowrap' }, e.wer), h('td', { class: e.art === 'problem' ? 'fehlertext' : '' }, ART[e.art] ?? e.art), h('td', {}, e.text)))))),
+        h('td', { style: 'white-space:nowrap' }, e.wer), h('td', { class: e.art === 'problem' ? 'fehlertext' : '' }, P.ART_TEXT[e.art] ?? e.art), h('td', {}, e.text)))))),
     alle.length > zeilen.length && h('p', { class: 'klein' }, 'Gezeigt werden die neuesten 100. Die Textdatei enthält alle.'));
 }
 
