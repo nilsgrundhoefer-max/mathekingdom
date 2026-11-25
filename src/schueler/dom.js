@@ -33,10 +33,18 @@ export function mitBruch(text) {
   if (ende < text.length) teile.push(text.slice(ende));
   return teile;
 }
+// Klasse 6, Kapitel 4 (ADR 0047): Über den Ziffern der Periode steht ein Strich (im Text U+0305 nach jeder Ziffer: „0,16̅“).
+// Gezeichnet wird er als Überstrich über den Ziffern, damit er in jeder Schrift gleich aussieht.
+const PERIODE = /((?:\d\u0305)+)/;
+export function mitPeriode(text) {
+  return text.split(PERIODE).filter((t) => t !== '').map((t, i) => (PERIODE.test(t) && /^(?:\d\u0305)+$/.test(t)
+    ? Object.assign(document.createElement('span'), { className: 'periode', textContent: t.replace(/\u0305/g, '') }) : t));
+}
 function fuelle(el, kinder) {
   const stapeln = !(el instanceof SVGElement) && el.tagName !== 'OPTION';
   for (const k of kinder.flat(Infinity)) if (k != null && k !== false) {
-    if (stapeln && typeof k === 'string' && k.includes('\u2044')) el.append(...mitBruch(k)); else el.append(k);
+    const stuecke = stapeln && typeof k === 'string' && k.includes('\u2044') ? mitBruch(k) : [k];
+    for (const x of stuecke) if (stapeln && typeof x === 'string' && x.includes('\u0305')) el.append(...mitPeriode(x)); else el.append(x);
   }
   return el;
 }

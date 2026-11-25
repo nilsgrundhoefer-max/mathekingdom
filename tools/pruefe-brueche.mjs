@@ -13,12 +13,15 @@ const EINHEIT = {
   s: ['zeit', 1, 1], min: ['zeit', 60, 1], h: ['zeit', 3600, 1],
   ml: ['volumen', 1, 1], l: ['volumen', 1000, 1],
   // Stellenwerte als Wörter: „7 Zehntel“ ist 7⁄10.
-  Zehntel: ['zahl', 1, 10], Hundertstel: ['zahl', 1, 100], Tausendstel: ['zahl', 1, 1000], Einer: ['zahl', 1, 1], Zehner: ['zahl', 10, 1], Hunderter: ['zahl', 100, 1],
+  Zehntel: ['zahl', 1, 10], Hundertstel: ['zahl', 1, 100], Tausendstel: ['zahl', 1, 1000], Zehntausendstel: ['zahl', 1, 10000], Einer: ['zahl', 1, 1], Zehner: ['zahl', 10, 1], Hunderter: ['zahl', 100, 1],
   // Bruchwörter: „3 Viertel“ ist 3⁄4.
+  // Klasse 6, Kapitel 4 (ADR 0047): „25 %“ ist 25⁄100.
+  '%': ['zahl', 1, 100],
   Halbe: ['zahl', 1, 2], Drittel: ['zahl', 1, 3], Viertel: ['zahl', 1, 4], Fünftel: ['zahl', 1, 5], Sechstel: ['zahl', 1, 6], Achtel: ['zahl', 1, 8],
 };
 const EINH = Object.keys(EINHEIT).sort((x, y) => y.length - x.length).join('|');
-const ZAHL = '(?:\\d+\\u202f)?\\d+\\u2044\\d+|\\d+(?:\\u00a0\\d{3})*(?:,\\d+)?';
+// Periodische Dezimalzahlen (ADR 0047): Jede Ziffer der Periode trägt einen Überstrich (U+0305): „0,16̅“.
+const ZAHL = '(?:\\d+\\u202f)?\\d+\\u2044\\d+|\\d+,\\d*(?:\\d\\u0305)+|\\d+(?:\\u00a0\\d{3})*(?:,\\d+)?';
 const TEIL = `(?:${ZAHL})(?:[ \\u00a0](?:${EINH})(?![${B_}²]))?`;
 const TERM = `\\(*${TEIL}(?: ${TEIL})*\\)*`;
 const SEITE = `${TERM}(?: (?:[+−·:]|von) ${TERM})*`;
@@ -37,6 +40,8 @@ const zahl = (z, n = 1) => ({ art: 'zahl', w: Q(z, n) });
 function leseZahl(text) {
   const b = text.match(/^(?:(\d+) )?(\d+)⁄(\d+)$/);
   if (b) return Number(b[3]) > 0 ? Q(Number(b[1] ?? 0) * Number(b[3]) + Number(b[2]), Number(b[3])) : null;
+  const p = text.match(/^(\d+),(\d*)((?:\d\u0305)+)$/);
+  if (p) { const per = p[3].replace(/\u0305/g, ''), n = 10 ** p[2].length * (10 ** per.length - 1); return Q(Number(p[1] + p[2]) * (10 ** per.length - 1) + Number(per), n); }
   const d = text.replace(/ /g, '').match(/^(\d+)(?:,(\d+))?$/);
   return d ? Q(Number(d[1] + (d[2] ?? '')), 10 ** (d[2]?.length ?? 0)) : null;
 }
@@ -152,7 +157,7 @@ function figurMaengel(f, zumFaerben = false) {
 const figurWert = (f) => (f.ungleich ? null : Q(f.gefaerbt.length, jeGanzes(f)));
 const figurVon = (a, name) => { const fs = a.bild?.art === 'bruch' ? a.bild.figuren : []; return name == null || name === '' ? (fs.length === 1 ? fs[0] : null) : fs.find((f) => f.n === name) ?? null; };
 // Wert einer Zeile der Stellenwerttafel. Spalten: T, H, Z, E und nach dem Komma z, h, t.
-const STELLE = { T: [1000, 1], H: [100, 1], Z: [10, 1], E: [1, 1], z: [1, 10], h: [1, 100], t: [1, 1000] };
+const STELLE = { T: [1000, 1], H: [100, 1], Z: [10, 1], E: [1, 1], z: [1, 10], h: [1, 100], t: [1, 1000], zt: [1, 10000] };
 function tafelWert(spalten, ziffern) {
   let w = Q(0);
   for (let i = 0; i < spalten.length; i++) {
@@ -170,7 +175,8 @@ function tafelMaengel(spalten, komma) {
   if (spalten[komma] !== 'E' || komma === spalten.length - 1) m.push('Stellenwerttafel: Das Komma steht nach den Einern');
   return m;
 }
-const strahlVon = (a) => a.strahl ?? (a.bild?.art === 'zahlenstrahl' ? a.bild : null);
+// Zahlenstrahl mit Lupe (ADR 0047): Abgelesen und markiert wird am unteren, vergrößerten Strahl.
+const strahlVon = (a) => a.strahl ?? (a.bild?.art === 'zahlenstrahl' ? a.bild : a.bild?.art === 'lupe' ? a.bild.unten : null);
 // Was ein Bild, ein Zahlenstrahl, eine Tafel oder eine Tabelle zeigt.
 function gezeigt(a) {
   const liste = [];
@@ -181,7 +187,7 @@ function gezeigt(a) {
   }
   if (a.faerben) { const n = jeGanzes(a.faerben); liste.push(zahl(n), zahl(n * (a.faerben.ganze ?? 1)), zahl(a.faerben.ganze ?? 1)); if (a.faerben.form === 'rechteck') liste.push(zahl(a.faerben.reihen), zahl(a.faerben.spalten)); }
   const st = strahlVon(a);
-  if (st) { const T = st.teiler ?? 1; for (const x of [st.von, st.bis, st.schritt, st.beschriftung, st.pfeil, ...(st.punkte ?? [])]) if (x != null) liste.push(zahl(x, T)); }
+  for (const s of [st, a.bild?.art === 'lupe' ? a.bild.oben : null]) if (s) { const T = s.teiler ?? 1; for (const x of [s.von, s.bis, s.schritt, s.beschriftung, s.pfeil, ...(s.punkte ?? [])]) if (x != null) liste.push(zahl(x, T)); }
   if (a.bild?.art === 'tafel') for (const zeile of [a.bild.werte, ...(a.bild.weitere ?? [])]) { const w = tafelWert(a.bild.spalten, zeile); if (w) liste.push({ art: 'zahl', w }); for (const z of zeile) if (z != null) liste.push(zahl(z)); }
   if (a.bild?.art === 'einheitentafel') for (const zeile of [a.bild.werte, ...(a.bild.weitere ?? [])]) { const v = einheitentafelWert(a.bild.gruppen, zeile); if (v) liste.push({ art: v.art, w: Q(v.w) }); }
   if (a.tabelle) for (const c of a.tabelle.zeilen.flat()) if (typeof c !== 'object') liste.push(...atome(c));
@@ -190,10 +196,23 @@ function gezeigt(a) {
   return liste.filter((v) => v.w);
 }
 
+// Kürzeste Schreibweise einer Dezimalzahl, periodisch mit Überstrich („0,16̅“).
+export function periodeText(q) {
+  const ganz0 = Math.floor(q.z / q.n), ziffern = [], gesehen = new Map();
+  let rest = q.z % q.n;
+  while (rest !== 0 && !gesehen.has(rest)) { gesehen.set(rest, ziffern.length); rest *= 10; ziffern.push(Math.floor(rest / q.n)); rest %= q.n; }
+  if (rest === 0) return ziffern.length ? `${ganz0},${ziffern.join('')}` : String(ganz0);
+  const start = gesehen.get(rest);
+  return `${ganz0},${ziffern.slice(0, start).join('')}${ziffern.slice(start).map((z) => `${z}\u0305`).join('')}`;
+}
+
 // ---------- Sprache ----------
 // Nenner, Nachkommastellen und Brüche über 1 je Niveaustufe (Grilling mit Nils, 2026-11-22).
 export function bruchSprachMaengel(a, texte) {
-  const m = [], stufe = ['F', 'G', 'M', 'E'].indexOf(a.niveau), dezimal = a.lernziel.startsWith('5.9.3');
+  // Klasse 6, Kapitel 4 (ADR 0047): F Zehntel und Hundertstel, G bis Tausendstel, M und E bis Zehntausendstel. Nenner zum Umwandeln:
+  // F 2, 4, 5, 10, 20, 25, G dazu 8 und 50, M dazu 40, 125, 250, E alle bis 30. Erweitert wird auf 10, 100, 1000 oder 10000.
+  const k64 = a.lernziel.startsWith('6.4.');
+  const m = [], stufe = ['F', 'G', 'M', 'E'].indexOf(a.niveau), dezimal = a.lernziel.startsWith('5.9.3') || k64;
   // Klasse 6, Kapitel 1 (ADR 0037): Nenner F bis 10, G bis 20, M bis 50 und 100, E bis 200. Beim Erweitern und Kürzen (6.1.2, 6.1.3)
   // darf der erweiterte Bruch darüber liegen. Brüche über 1 gibt es ab G, auf F nur beim Umwandeln (6.1.1-B2).
   // Klasse 6, Kapitel 2 (ADR 0038): Gerechnet wird mit Nennern bis 12 (F), 20 (G), 30 (M) und 60 (E). Hauptnenner und Produkte
@@ -203,11 +222,13 @@ export function bruchSprachMaengel(a, texte) {
   const alle = texte.join(' \n ');
   if (/(?<![\d⁄])\d+\/\d+/.test(alle)) m.push('ein Bruch steht mit Schrägstrich statt mit Bruchstrich');
   if (/[½¼¾]/.test(alle)) m.push('Brüche stehen als Zähler und Nenner, nicht als einzelnes Zeichen');
-  const erlaubt = dezimal ? [(n) => n === 10, (n) => [2, 10, 100].includes(n), (n) => [2, 4, 5, 10, 100, 1000].includes(n), (n) => n <= 1000][stufe]
+  const erlaubt = k64 ? [(n) => [2, 4, 5, 10, 20, 25, 50, 100].includes(n), (n) => [2, 4, 5, 8, 10, 20, 25, 50, 100, 1000].includes(n),
+    (n) => n <= 20 || [25, 40, 50, 100, 125, 250, 1000, 10000].includes(n), (n) => n <= 30 || [40, 50, 100, 125, 250, 1000, 10000].includes(n)][stufe]
+    : dezimal ? [(n) => n === 10, (n) => [2, 10, 100].includes(n), (n) => [2, 4, 5, 10, 100, 1000].includes(n), (n) => n <= 1000][stufe]
     : k62 ? [(n) => n <= 24, (n) => n <= 60, (n) => n <= 150, (n) => n <= 400][stufe]
     : k6 ? (umformen ? [(n) => n <= 100, (n) => n <= 200, (n) => n <= 600, (n) => n <= 1000] : [(n) => n <= 10, (n) => n <= 20, (n) => n <= 50 || n === 100, (n) => n <= 200])[stufe]
     : [(n) => n <= 4, (n) => n <= 8 || n === 10, (n) => n <= 12 || n === 100, (n) => n <= 20 || n === 100][stufe];
-  const ueber1Ab = k62 ? 0 : k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
+  const ueber1Ab = k62 || k64 ? 0 : k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
   for (const x of alle.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) {
     const [g, z, n] = [Number(x[1] ?? 0), Number(x[2]), Number(x[3])];
     if (n < 2) m.push(`Bruch mit Nenner ${n}`);
@@ -218,7 +239,7 @@ export function bruchSprachMaengel(a, texte) {
   // Geld steht immer mit zwei Stellen nach dem Komma („2,50 €“).
   const stellen = [...alle.replace(/\d+,\d{2}[ \u00a0]€/g, ' ').matchAll(/\d,(\d+)/g)].map((x) => x[1].length);
   if (!dezimal && stellen.length) m.push('Dezimalzahlen gibt es erst in der Dezimalschreibweise');
-  if (dezimal && stellen.some((s) => s > [1, 2, 3, 4][stufe])) m.push(`zu viele Nachkommastellen für Niveaustufe ${a.niveau}`);
+  if (dezimal && stellen.some((s) => s > (k64 ? [2, 3, 4, 4] : [1, 2, 3, 4])[stufe])) m.push(`zu viele Nachkommastellen für Niveaustufe ${a.niveau}`);
   if (/Dezimalbruch|Kommazahl/.test(alle)) m.push('es heißt „Dezimalzahl“');
   return m;
 }
@@ -276,16 +297,28 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
     for (const zeile of [a.bild.werte, ...(a.bild.weitere ?? [])]) if (zeile.length !== a.bild.spalten.length || !tafelWert(a.bild.spalten, zeile)) M('Stellenwerttafel: Zeile passt nicht zu den Spalten');
   } else if (a.bild?.art === 'einheitentafel') {
     for (const x of groessenBildMaengel(a.bild, a.niveau)) M(`Bild einheitentafel: ${x}`);
+  } else if (a.bild?.art === 'lupe') {
+    const { oben: o, unten: u } = a.bild, f = (u?.teiler ?? 1) / (o?.teiler ?? 1);
+    if (!o || !u || f !== 10) M('Lupe: Der untere Strahl zählt in zehnmal so feinen Teilen');
+    else {
+      if (u.von % f !== 0 || u.bis - u.von !== f * o.schritt || u.von / f < o.von || u.bis / f > o.bis) M('Lupe: Der untere Strahl vergrößert nicht genau einen Abschnitt des oberen');
+      if (o.pfeil != null) M('Lupe: Gefragt wird am unteren Strahl');
+      strahlMaengel(o).forEach((x) => M(`Lupe oben: ${x}`));
+    }
   } else if (a.bild && a.bild.art !== 'zahlenstrahl') M(`Bild ${a.bild.art} gibt es in Kapitel 9 nicht`);
   const st = strahlVon(a);
-  if (st) {
+  strahlMaengel(st).forEach(M);
+  function strahlMaengel(st) {
+    const m = [], M = (t) => m.push(t);
+    if (!st) return m;
     const T = st.teiler ?? 1, zehner = /^10*$/.test(String(T));
-    if (!ganz(T, 1, 1000) || !(st.von < st.bis) || !(st.schritt > 0) || (st.bis - st.von) % st.schritt !== 0 || st.beschriftung % st.schritt !== 0) M('Zahlenstrahl: Einteilung geht nicht auf');
+    if (!ganz(T, 1, 10000) || !(st.von < st.bis) || !(st.schritt > 0) || (st.bis - st.von) % st.schritt !== 0 || st.beschriftung % st.schritt !== 0) M('Zahlenstrahl: Einteilung geht nicht auf');
     if ((st.bis - st.von) / st.schritt > 40) M('Zahlenstrahl: zu viele Teilstriche');
     if (!zehner && (st.beschriftung % T !== 0 || st.von % T !== 0)) M('Zahlenstrahl: Mit Bruchteilen stehen nur die Ganzen am Strahl');
     for (const x of [st.pfeil, ...(st.punkte ?? [])]) if (x != null && (x < st.von || x > st.bis || (x - st.von) % st.schritt !== 0)) M('Zahlenstrahl: Pfeil oder Punkt liegt nicht auf einem Teilstrich');
     if (st.ausschnitt !== undefined && Boolean(st.ausschnitt) !== st.von > 0) M('Zahlenstrahl: Ausschnitt heißt, der Strahl beginnt nicht bei 0');
     if (st.von > 0 && !st.ausschnitt) M('Zahlenstrahl: Beginnt er nicht bei 0, ist er ein Ausschnitt');
+    return m;
   }
 
   // ----- Nachweis: Was ist bekannt, was ist ein Ergebnis? -----
@@ -354,7 +387,7 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       case 'umformen': { // Erweitern oder Kürzen mit einer Zahl: Zähler und Nenner werden beide malgenommen oder geteilt (Klasse 6, ADR 0037).
         const lies = (t) => { const x = String(t ?? '').match(/^(\d+)⁄(\d+)$/); return x ? [Number(x[1]), Number(x[2])] : null; };
         const von = lies(n.von), nach = lies(n.nach), k = n.mit;
-        if (!von || !nach || !ganz(k, 2, 100) || !['erweitern', 'kuerzen'].includes(n.wie)) { M('Nachweis umformen: von, nach, mit oder wie fehlt'); break; }
+        if (!von || !nach || !ganz(k, 2, 10000) || !['erweitern', 'kuerzen'].includes(n.wie)) { M('Nachweis umformen: von, nach, mit oder wie fehlt'); break; }
         brauche(n.von, 'umformen');
         const soll = n.wie === 'erweitern' ? [von[0] * k, von[1] * k] : [von[0] / k, von[1] / k];
         if (soll[0] !== nach[0] || soll[1] !== nach[1]) M(`Nachweis umformen: ${n.von} mit ${k} ${n.wie === 'erweitern' ? 'erweitert' : 'gekürzt'} ist ${soll[0]}⁄${soll[1]}, nicht ${n.nach}`);
@@ -366,7 +399,8 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       }
       case 'erweiterbar': { // Richtig sind die Brüche, die sich auf diesen Nenner erweitern lassen.
         if (!ganz(n.nenner, 2, 100000) || !atome(a.text).some((x) => gleich(x, zahl(n.nenner)))) { M('Nachweis erweiterbar: Der Nenner fehlt oder steht nicht im Text'); break; }
-        stufeEin((o) => { const x = o.text.trim().match(/^(\d+)\u2044(\d+)$/); return x ? n.nenner % Number(x[2]) === 0 : null; }, 'erweiterbar'); gebunden = true;
+        // Mit gekuerzt (ADR 0047) zählt der Nenner des vollständig gekürzten Bruchs: 6⁄15 = 2⁄5 lässt sich auf 10 bringen.
+        stufeEin((o) => { const x = o.text.trim().match(/^(\d+)\u2044(\d+)$/); return x ? n.nenner % (n.gekuerzt ? Number(x[2]) / ggt(Number(x[1]), Number(x[2])) : Number(x[2])) === 0 : null; }, 'erweiterbar'); gebunden = true;
         benutzt.add(schluessel(zahl(n.nenner)));
         for (const o of optionen) for (const v of atome(o.text)) benutzt.add(schluessel(v));
         break;
@@ -523,6 +557,36 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
         gebunden = true;
         break;
       }
+      case 'runden': case 'rundenwahl': { // Klasse 6, Kapitel 4 (ADR 0047): kaufmännisch runden auf `stelle` Stellen nach dem Komma (0: auf Ganze).
+        // Mit `einheit` wird in dieser Einheit gerundet („auf Zehntel Euro“). Mit `behauptet` ist es ein Urteil über ein Ergebnis.
+        const e = rechne(String(n.ergebnis ?? '')), f = n.einheit ? EINHEIT[n.einheit] : null;
+        if (!e || !ganz(n.stelle, 0, 4) || (n.einheit && !f)) { M(`Nachweis ${n.art}: Ergebnis, Stelle oder Einheit fehlt`); break; }
+        const je = f ? Q(f[1], f[2]) : Q(1), p10 = Q(10 ** n.stelle);
+        const gerundet = (v) => { const x = qMal(qDurch(v.w, je), p10); return { art: v.art, w: qMal(qDurch(Q(Math.floor((2 * x.z + x.n) / (2 * x.n))), p10), je) }; };
+        if (n.art === 'rundenwahl') {
+          stufeEin((o) => { const w = rechne(o.text); return w && w.art === e.art ? gleich(gerundet(w), e) : null; }, 'rundenwahl'); gebunden = true;
+          for (const o of optionen) for (const v of atome(o.text)) benutzt.add(schluessel(v));
+          benutzt.add(schluessel(e));
+          break;
+        }
+        const v = wert(n.zahl);
+        if (!v) break;
+        if (v.art !== e.art || !gleich(gerundet(v), e)) M(`Nachweis runden: ${n.zahl} gerundet ist nicht ${n.ergebnis}`);
+        if (n.behauptet != null) {
+          const b = rechne(String(n.behauptet));
+          if (!b) { M('Nachweis runden: Die Behauptung lässt sich nicht lesen'); break; }
+          stufeEin((o) => { const p = polaritaet(o.text); return p == null ? null : p === gleich(b, e); }, 'runden'); gebunden = true;
+          for (const x of [...atome(String(n.behauptet)), e]) benutzt.add(schluessel(x));
+        }
+        ergibt(e, n.ergebnis);
+        break;
+      }
+      case 'abbrechend': { // Richtig sind die Brüche mit abbrechender Dezimalzahl (mit periodisch: die mit periodischer). Es zählt der gekürzte Nenner.
+        const nur25 = (n0) => { let x = n0; for (const p of [2, 5]) while (x % p === 0) x /= p; return x === 1; };
+        stufeEin((o) => { const x = o.text.trim().match(/^(\d+)\u2044(\d+)$/); if (!x) return null; const n0 = Number(x[2]) / ggt(Number(x[1]), Number(x[2])); return nur25(n0) !== Boolean(n.periodisch); }, 'abbrechend'); gebunden = true;
+        for (const o of optionen) for (const v of atome(o.text)) benutzt.add(schluessel(v));
+        break;
+      }
       case 'frei': { // Begriffsfrage ohne Rechnung („Wie heißt die Zahl unter dem Bruchstrich?“).
         if (!n.grund || !['auswahl', 'zuordnen'].includes(a.format)) M('Nachweis frei: nur für Begriffsfragen mit Grund');
         if (optionen.filter((o) => o.richtig).some((o) => /\d/.test(o.text))) M('Nachweis frei: Die richtige Antwort enthält eine Zahl und braucht einen echten Nachweis');
@@ -546,6 +610,16 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
     case 'zahl': {
       pruefeTeil(a, 'Lösung');
       if (!istErgebnis(mitEinheit(a.loesung, a.einheit))) M(`Lösung ${a.loesung}${a.einheit ? ` ${a.einheit}` : ''} ergibt sich nicht aus dem Nachweis`);
+      break;
+    }
+    case 'periode': { // Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahl, in kürzester Schreibweise.
+      const soll = rechne(String(a.loesung ?? ''));
+      if (!soll || soll.art !== 'zahl' || !/\u0305/.test(a.loesung)) { M('Periode: Die Lösung ist keine periodische Dezimalzahl'); break; }
+      if (periodeText(soll.w) !== a.loesung) M(`Periode: Die Lösung heißt kürzer ${periodeText(soll.w)}`);
+      const fehler = (a.typischeFehler ?? []).map((f) => { fvOk(f.fehlvorstellung); const w = rechne(String(f.wert)); if (!w) M(`Periode: typischer Fehler ${f.wert} lässt sich nicht lesen`); return w; });
+      if (fehler.some((w) => w && gleich(w, soll))) M('Periode: typischer Fehler hat denselben Wert wie die Lösung');
+      if (new Set(fehler.filter(Boolean).map(schluessel)).size !== fehler.length) M('Periode: typischer Fehler doppelt');
+      if (!istErgebnis(soll)) M(`Lösung ${a.loesung} ergibt sich nicht aus dem Nachweis`);
       break;
     }
     case 'bruch': {
@@ -600,7 +674,7 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       if (new Set(optionen.map((o) => norm(o.text))).size !== optionen.length) M('Option doppelt');
       for (const o of optionen) { fvOk(o.fehlvorstellung); if (o.richtig && o.fehlvorstellung) M('richtige Antwort mit Fehlvorstellung'); }
       if (!gebunden) M('Auswahl: Die richtige Antwort ist nicht an den Nachweis gebunden');
-      if (optionen.some((o) => polaritaet(o.text) !== null) && !nachweis.some((n) => n?.art === 'urteil')) M('Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
+      if (optionen.some((o) => polaritaet(o.text) !== null) && !nachweis.some((n) => n?.art === 'urteil' || (n?.art === 'runden' && n.behauptet != null))) M('Antworten mit „Stimmt“ oder „Falsch“ brauchen ein Urteil im Nachweis');
       break;
     }
     case 'luecken': {
@@ -679,13 +753,19 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
     }
     default: M(`Format ${a.format} gibt es in Kapitel 9 nicht`);
   }
+  // Schriftliche Division als Lösungsbild (ADR 0047): Dividend und Divisor ergeben die Lösung.
+  if (a.division) {
+    const { dividend: x, divisor: y } = a.division, soll = ['zahl', 'periode'].includes(a.format) ? rechne(`${a.loesung}${a.einheit && EINHEIT[a.einheit] ? ` ${a.einheit}` : ''}`) : null;
+    if (!ganz(x, 1, 100000) || !ganz(y, 2, 1000)) M('Division: Dividend und Divisor sind natürliche Zahlen');
+    else if (soll && qVgl(soll.art === 'zahl' ? soll.w : qDurch(soll.w, Q(EINHEIT[a.einheit][1], EINHEIT[a.einheit][2])), Q(x, y)) !== 0) M(`Division: ${x} : ${y} ergibt nicht die Lösung`);
+  }
   if (a.daten && (!Array.isArray(a.daten.kopf) || a.daten.kopf.length < 2 || !Array.isArray(a.daten.zeilen) || a.daten.zeilen.some((z) => z.length !== a.daten.kopf.length))) M('Daten: Zeilen passen nicht zur Kopfzeile');
   // Jede Zahl aus dem Text gehört zur Aufgabe: Sie steht im Nachweis oder im Bild. Bei einem Urteil und einer Begriffsfrage stehen Beispiele im Text.
-  if (!nachweis.some((n) => ['urteil', 'frei', 'aussagen', 'extrem', 'ordnung', 'paare', 'figurwahl', 'schwelle', 'zwischen', 'figurextrem'].includes(n?.art))) {
+  if (!nachweis.some((n) => ['urteil', 'frei', 'aussagen', 'extrem', 'ordnung', 'paare', 'figurwahl', 'schwelle', 'zwischen', 'figurextrem', 'rundenwahl'].includes(n?.art))) {
     const imBild = new Set(gezeigt(a).map(schluessel));
     // Der Zähler und der Nenner eines benutzten Bruchs zählen als benutzt („3 von 8 Kugeln“ und 3⁄8).
     const teile = new Set([...benutzt, ...imBild].flatMap((k) => { const x = k.match(/^zahl:(\d+)\/(\d+)$/); return x ? [`zahl:${x[1]}/1`, `zahl:${x[2]}/1`] : []; }));
-    for (const n of nachweis) if (typeof n === 'object' && n) for (const v of Object.values(n)) if (typeof v === 'string' || typeof v === 'number') for (const x of atome(String(v))) { benutzt.add(schluessel(x)); const b = String(x.roh).match(/(\d+)⁄(\d+)/); if (b) { teile.add(`zahl:${Number(b[1])}/1`); teile.add(`zahl:${Number(b[2])}/1`); } }
+    for (const n of nachweis) if (typeof n === 'object' && n) for (const v of Object.values(n)) if (typeof v === 'string' || typeof v === 'number') for (const x of atome(String(v))) { if (!x.w) continue; benutzt.add(schluessel(x)); const b = String(x.roh).match(/(\d+)⁄(\d+)/); if (b) { teile.add(`zahl:${Number(b[1])}/1`); teile.add(`zahl:${Number(b[2])}/1`); } }
     for (const n of nachweis) if (typeof n === 'string') for (const b of n.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) for (const x of [b[1], b[2], b[3]]) if (x != null) teile.add(`zahl:${Number(x)}/1`);
     for (const v of [a.text, ...(a.teile ?? []).map((t) => t.text)].flatMap((t) => atome(String(t).replace(/\{\{\w+\}\}/g, ' ▢ ')))) {
       if (v.art === 'fehler') continue;

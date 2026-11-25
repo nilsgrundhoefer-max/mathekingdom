@@ -5,6 +5,7 @@
 
 import { merkzettel2, wortspeicher2, voraussetzungen2, grundlagen2 } from './jahresplan-6-2.mjs';
 import { lernziele3, merkzettel3, wortspeicher3, voraussetzungen3, grundlagen3, bp6 } from './jahresplan-6-3.mjs';
+import { lernziele4, merkzettel4, wortspeicher4, voraussetzungen4, grundlagen4, bp4 } from './jahresplan-6-4.mjs';
 
 // `pflicht` (ADR 0044, 0045): Ein Meilenstein ist erst ab dieser Stufe verbindlich, hat aber Aufgaben auf allen Stufen.
 // `bp`: der Standard im Bildungsplan 2016 je Lernziel (ADR 0045, Quelle docs/quellen/niveaustufen-klasse-6.md).
@@ -80,12 +81,13 @@ const roh = [
     uk(8, 'Kopfgeometrie im Raum', lernziele3[8]),
   ]],
   ['Dezimalzahlen', [
-    uk(1, 'Dezimalschreibweise', ['Ich kann Dezimalzahlen lesen, schreiben und in die Stellenwerttafel eintragen.']),
-    uk(2, 'Dezimalzahlen vergleichen und ordnen', ['Ich kann Dezimalzahlen vergleichen, ordnen und am Zahlenstrahl darstellen.']),
-    uk(3, 'Dezimalzahlen runden', ['Ich kann Dezimalzahlen und Größen sinnvoll runden.']),
-    uk(5, 'Umwandeln durch Erweitern und Kürzen', ['Ich kann Brüche durch Erweitern oder Kürzen in Dezimalzahlen umwandeln und umgekehrt.']),
-    uk(6, 'Umwandeln durch Dividieren', ['Ich kann einen Bruch durch Dividieren in eine Dezimalzahl umwandeln, auch in eine periodische.'], 'M'),
-    uk(7, 'Dezimalzahlen, Brüche und Prozentangaben', ['Ich kann Anteile als Bruch, Dezimalzahl und in Prozent angeben.']),
+    // Feinere Lernziele (Nils, 2026-11-25, ADR 0047). 4.6 trägt im Buch die Marke M: ein Niveau-Meilenstein mit Aufgaben nur auf M und E.
+    uk(1, 'Dezimalschreibweise', lernziele4[1]),
+    uk(2, 'Dezimalzahlen vergleichen und ordnen', lernziele4[2]),
+    uk(3, 'Dezimalzahlen runden', lernziele4[3]),
+    uk(5, 'Umwandeln durch Erweitern und Kürzen', lernziele4[5]),
+    uk(6, 'Umwandeln durch Dividieren', lernziele4[6], 'M'),
+    uk(7, 'Dezimalzahlen, Brüche und Prozentangaben', lernziele4[7]),
   ]],
   ['Rechnen mit Dezimalzahlen', [
     uk(1, 'Dezimalzahlen addieren und subtrahieren', ['Ich kann Dezimalzahlen im Kopf und schriftlich addieren und subtrahieren.']),
@@ -204,6 +206,7 @@ export const merkzettel = {
   },
   ...merkzettel2,
   ...merkzettel3,
+  ...merkzettel4,
 };
 
 // Wortspeicher je Unterkapitel: Wort, Niveaustufe, ab der es gezeigt und benutzt wird, und Erklärung.
@@ -260,6 +263,7 @@ export const wortspeicher = {
   ],
   ...wortspeicher2,
   ...wortspeicher3,
+  ...wortspeicher4,
 };
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 liegen (ADR 0037).
@@ -278,6 +282,7 @@ const voraussetzungen = {
   '6.1.6-Z2': ['6.1.6-Z1', '6.1.2-W2'],
   ...voraussetzungen2,
   ...voraussetzungen3,
+  ...voraussetzungen4,
 };
 
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F übt. Er steht im Hinweis für die Lehrkraft.
@@ -296,6 +301,7 @@ const grundlagen = {
   '6.1.6-Z2': 'Am Zahlenstrahl von 0 bis 1 so viele Abstände gehen, wie der Zähler sagt',
   ...grundlagen2,
   ...grundlagen3,
+  ...grundlagen4,
 };
 
 // IDs: Kapitel "6.1", Unterkapitel "6.1.3", Lernziel "6.1.3-K2". Unterkapitel ohne feine Lernziele haben "6.2.1-L1".
@@ -305,7 +311,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => ({
   unterkapitel: unterkapitel.map((u) => {
     const id = `6.${k + 1}.${u.nr}`;
     const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...(bp6[`${id}-${kurz}`] && { bp: bp6[`${id}-${kurz}`] }) }));
+    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] }) }));
     return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
   }),
 }));

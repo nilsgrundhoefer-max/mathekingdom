@@ -372,8 +372,41 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .sicherwahl { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .6rem; }
 #mathekingdom button.haupt.hell { background: #f3ead6; color: var(--tinte); border: 2px solid #5b4632; }
 #mathekingdom .hinweis.ueberraschung { border-left: 5px solid #7b2d43; font-weight: 600; }
-#mathekingdom .heftcode { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
-#mathekingdom .heftcode .code { font: 700 1.1rem var(--schrift-titel); border: 2px solid #5b4632; border-radius: 6px; padding: .1rem .5rem; background: #fffaf0; }
+/* Heftcode (Nils, 2026-11-25, ADR 0047): klein und grau, damit er nicht wie eine Heftaufgabe aussieht. */
+#mathekingdom .heftcode { display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; font-size: .85rem; color: var(--grau); margin: 6px 0 0; }
+#mathekingdom .heftcode .code { font: 700 .9rem var(--schrift-titel); color: var(--grau); border: 1px solid var(--rand); border-radius: 5px; padding: 0 .4rem; background: transparent; }
+/* Heftaufgabe: farbiges Band mit Heftsymbol vor dem Aufgabentext. */
+#mathekingdom .heftband { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; padding: 10px 14px; background: #e4ecf6; border: 2px solid #4a6c94; border-left-width: 8px; border-radius: 10px; color: #23384f; font-size: 1rem; }
+#mathekingdom .heftband b { color: #1d3048; }
+#mathekingdom .heftsymbol { font-size: 1.5rem; line-height: 1; color: #4a6c94; }
+#mathekingdom .heftfeld { margin: 4px 0 6px; font-weight: 600; color: #23384f; }
+/* Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahlen, Zahlenstrahl mit Lupe, schriftliche Division. */
+#mathekingdom .periode { text-decoration: overline; text-decoration-thickness: 2px; text-underline-offset: 0; }
+#mathekingdom .periodeeingabe { display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap; }
+#mathekingdom .periodefeld { display: flex; flex-direction: column; gap: 2px; }
+#mathekingdom .periodefeld input { font-size: 1.15rem; }
+#mathekingdom .periodeziel { display: flex; flex-direction: column; gap: 2px; }
+#mathekingdom .periodevorschau { font: 600 1.35rem var(--schrift-titel); color: var(--nacht); min-width: 5ch; }
+#mathekingdom svg.lupe { width: 100%; max-width: 720px; height: auto; display: block; }
+#mathekingdom svg.lupe .achse { stroke: var(--tinte); stroke-width: 2; }
+#mathekingdom svg.lupe .spitze { fill: var(--tinte); }
+#mathekingdom svg.lupe .strich { stroke: var(--tinte); stroke-width: 1.5; }
+#mathekingdom svg.lupe .strich.gross { stroke-width: 2.2; }
+#mathekingdom svg.lupe .zahl { font-size: 17px; fill: var(--tinte); }
+#mathekingdom svg.lupe .punkt { fill: var(--siegel); }
+#mathekingdom svg.lupe .punktzahl { font-size: 16px; font-weight: 700; fill: var(--siegel); }
+#mathekingdom svg.lupe .fragepfeil { fill: var(--siegel); }
+#mathekingdom svg.lupe .frage { font-size: 22px; font-weight: 700; fill: var(--siegel); }
+#mathekingdom svg.lupe .lupenrahmen { fill: rgba(184,137,43,.14); stroke: var(--gold); stroke-width: 2.5; }
+#mathekingdom svg.lupe .lupenlinie { stroke: var(--gold); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+#mathekingdom .divisionsbild { margin: 0; }
+#mathekingdom table.division { border-collapse: collapse; font: 1.15rem/1.35 ui-monospace, "Cascadia Mono", Consolas, monospace; font-variant-numeric: tabular-nums; }
+#mathekingdom table.division td { padding: 0; min-width: 1.1ch; text-align: center; }
+#mathekingdom table.division td.rechnung { text-align: left; white-space: pre; padding-left: .2ch; }
+#mathekingdom table.division tr.division-minus td { border-bottom: 1.5px solid var(--tinte); }
+#mathekingdom table.division tr.division-minus td:empty { border-bottom: 0; }
+#mathekingdom table.division tr.division-minus td:last-child { border-bottom: 0; }
+#mathekingdom .divisionsbild figcaption { margin-top: 8px; font-size: .95rem; color: var(--tinte); }
 #mathekingdom .heftwahl { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .6rem; margin-top: .8rem; }
 #mathekingdom .heftwahl button { font-size: 1.15rem; padding: .8rem; }
 #mathekingdom .karte.heftcheck { border-left: 6px solid #5b4632; }
@@ -591,6 +624,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .zeichentasten { display: flex; flex-wrap: wrap; gap: 6px; }
 #mathekingdom .zeichentaste { min-width: 2.8rem; font-size: 1.2rem; font-weight: 700; }
 #mathekingdom .wahre-anzahl { font-weight: 700; }
+#mathekingdom .endnull { color: var(--grau); font-size: .95rem; margin-top: 4px; }
 
 /* Zahlenstrahl: markierte Zahlen (Kapitel 2) */
 #mathekingdom .zahlenstrahl .punkt { fill: var(--siegel); stroke: #fff; stroke-width: 2; }

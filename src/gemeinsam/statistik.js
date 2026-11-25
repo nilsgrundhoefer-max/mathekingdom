@@ -4,7 +4,7 @@
 // klassen: [{ klasse, namen: { code: name }, staende: [{ code, stand }], backups: [stempel] }]
 
 import { pruefeGroesse } from '../schueler/groessen.js';
-import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseTeile } from '../schueler/bruch.js';
+import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseTeile, pruefePeriode } from '../schueler/bruch.js';
 
 const TAG = 86400000;
 const anteil = (a, b) => (b ? a / b : null);
@@ -93,6 +93,8 @@ export function falscheTeile(a, eingabe) {
     // Kapitel 9: Brucheingabe und Teile färben.
     case 'bruch': { const e = pruefeBruch(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     case 'faerben': { const e = pruefeFaerben(a, eingabe); return eingabe == null || e.richtig ? [] : [{ text: `${leseTeile(eingabe).length} Teile gefärbt`, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
+    // Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahl aus zwei Feldern.
+    case 'periode': { const e = pruefePeriode(a, eingabe); const t = eingabe ? `${eingabe.vor ?? ''}${eingabe.periode ? ` Periode ${eingabe.periode}` : ''}` : ''; return !t.trim() || e.richtig ? [] : [{ text: t, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     case 'zuordnen': return a.paare.filter((p) => eingabe?.[p.links] && eingabe[p.links] !== p.rechts).map((p) => ({ text: `${p.links} → ${eingabe[p.links]}`, erwartet: false }));
     default: return [];
   }

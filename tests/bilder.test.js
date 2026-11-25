@@ -23,7 +23,7 @@ const lies = (n) => JSON.parse(readFileSync(new URL(`../aufgabenpool/klasse-${n}
 const pool = lies(5);
 // Klasse 7 (ADR 0043) bringt das Thermometer und die Zahlengerade mit negativen Zahlen mit.
 // Klasse 6 Kapitel 3 (ADR 0045) bringt Körper, Netze und Ansichten mit.
-const mitBild = [...pool.aufgaben, ...lies(6).aufgaben.filter((a) => a.id.startsWith('6.3.')), ...lies(7).aufgaben].filter((a) => a.bild);
+const mitBild = [...pool.aufgaben, ...lies(6).aufgaben.filter((a) => a.id.startsWith('6.3.') || a.id.startsWith('6.4.')), ...lies(7).aufgaben].filter((a) => a.bild);
 const zahl = (x) => (typeof x === 'object' ? x.wert : x);
 const lesbar = (x) => (typeof x === 'object' && x.frage ? '?' : String(x));
 
@@ -188,6 +188,9 @@ test('Die Bilder zeigen genau die Anzahlen aus der Aufgabe', () => {
       assert.equal(svg.klasse('name').length, b.saeulen.filter((t) => t.name).length, a.id);
       assert.equal(svg.klasse('skala').filter((k) => k.attribute.class.includes('null')).length, b.saeulen.length, `${a.id}: Die Null ist hervorgehoben`);
       assert.ok(svg.texte().includes('−10') || b.von > -10, `${a.id}: echtes Minuszeichen an der Skala`);
+    } else if (b.art === 'lupe') {
+      // Zahlenstrahl mit Lupe (ADR 0047): ein Rahmen um den vergrößerten Schritt oben.
+      assert.equal(svg.klasse('lupenrahmen').length, 1, a.id);
     } else if (b.art === 'einheitentafel') {
       const zeilen = [b.werte, ...(b.weitere ?? [])], zellen = svg.alle().filter((k) => k.tag === 'td');
       assert.equal(zellen.length, zeilen.length * b.spalten.length, a.id);

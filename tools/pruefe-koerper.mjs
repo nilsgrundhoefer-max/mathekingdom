@@ -536,13 +536,16 @@ export function koerperBildMaengel(b) {
 // ---------- Sprache ----------
 // Operator am Satzanfang (Abgleich mit der Niveauübersicht, ab Kapitel 3 eine Prüfregel): keine Frage mit Fragezeichen im Aufgabentext.
 // Zitate in „…“ dürfen Fragen sein. Die Ansicht von der Seite heißt immer „von links“.
-const OPERATOR = /^(Kreuze|Gib|Zähle|Färbe|Zeichne|Setze|Beurteile|Prüfe|Begründe|Ergänze|Bestimme|Berechne|Ordne|Tippe|Wähle|Markiere|Verbinde|Nenne|Schreibe|Trage|Entscheide|Vergleiche|Finde|Miss|Lies|Beschreibe|Erkläre|Notiere|Zeige)\b/;
-export function koerperSprachMaengel(a) {
+const OPERATOR = /^(Kreuze|Gib|Zähle|Färbe|Zeichne|Setze|Beurteile|Prüfe|Begründe|Ergänze|Bestimme|Berechne|Ordne|Tippe|Wähle|Markiere|Verbinde|Nenne|Schreibe|Trage|Entscheide|Vergleiche|Finde|Miss|Lies|Beschreibe|Erkläre|Notiere|Zeige|Runde|Wandle|Rechne|Dividiere|Untersuche|Erweitere|Kürze|Ermittle|Stelle)\b/;
+// Auch in Kapitel 4 (ADR 0047): Jeder Auftrag beginnt mit einem Operator, Fragen mit Fragezeichen gibt es nicht.
+export const operatorMaengel = (a) => koerperSprachMaengel(a, true);
+export function koerperSprachMaengel(a, nurOperator = false) {
   const m = [], texte = [a.text, ...(a.teile ?? []).map((t) => t.text)].filter(Boolean);
   for (const t of texte) if (/\?/.test(t.replace(/„[^“]*“/g, ''))) m.push(`Operator am Satzanfang: keine Frage mit Fragezeichen („${t.replace(/\n/g, ' / ').slice(0, 60)}“)`);
   // Niveauübersicht Klasse 6 (ADR 0045): Der Auftrag beginnt mit dem Operator („Kreuze …“, „Gib … an.“). Zitate zählen nicht mit.
   const saetze = a.text.replace(/„[^“]*“/g, '.').split(/(?<=[.!?:])\s+|\n/).map((x) => x.trim()).filter(Boolean);
   if (!saetze.some((x) => OPERATOR.test(x))) m.push(`Operator am Satzanfang: kein Satz beginnt mit einem Operator („${a.text.replace(/\n/g, ' / ').slice(0, 60)}“)`);
+  if (nurOperator) return m;
   const alle = [a.text, ...(a.optionen ?? []).map((o) => o.text), ...Object.values(a.hilfen ?? {})].join(' ');
   if (/Ansicht von der Seite|von der Seite/.test(alle) && !/von links/.test(alle)) m.push('Seitenansicht heißt „von links“');
   if (/Kegel/.test(a.text) && /Ecken/.test(a.text) && !/keine Ecke/.test(a.text)) m.push('am Kegel werden keine Ecken gezählt (Festlegung: Spitze)');

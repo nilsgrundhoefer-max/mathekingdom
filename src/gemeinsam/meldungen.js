@@ -67,6 +67,7 @@ export function loesungVon(a) {
     case 'gitter': return gitterLoesung(a);
     case 'bruch': return `${bruchLoesung(a)}${a.einheit ? ` ${a.einheit}` : ''}`;
     case 'faerben': return faerbenLoesung(a);
+    case 'periode': return String(a.loesung);
     default: return '';
   }
 }

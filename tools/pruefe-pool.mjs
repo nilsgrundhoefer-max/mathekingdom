@@ -10,7 +10,7 @@ import { gRechne } from './pruefe-groessen.mjs';
 import { bGleichungen, bruchSprachMaengel, pruefeBruchAufgabe, bruchHatBild } from './pruefe-brueche.mjs';
 import { rGleichungen, rationalSprachMaengel, pruefeRationalAufgabe, rationalHatBild } from './pruefe-rational.mjs';
 import { FIGURBILD, DREIECK_SONDER, DREIECK_ERGEBNIS, DREIECK_ARTEN, figurBildMaengel, figurBildZahlen, dreieckSprachMaengel } from './pruefe-dreiecke.mjs';
-import { KOERPERBILDER, KOERPER_SONDER, KOERPER_ERGEBNIS, KOERPER_ARTEN, koerperBildMaengel, koerperBildZahlen, koerperSprachMaengel, setzeUrteil } from './pruefe-koerper.mjs';
+import { KOERPERBILDER, KOERPER_SONDER, KOERPER_ERGEBNIS, KOERPER_ARTEN, koerperBildMaengel, koerperBildZahlen, koerperSprachMaengel, operatorMaengel, setzeUrteil } from './pruefe-koerper.mjs';
 import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
@@ -25,7 +25,7 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse', 'winkel', 'bruch', 'faerben'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse', 'winkel', 'bruch', 'faerben', 'periode'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
@@ -33,9 +33,9 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
   'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz',
   'groesse', 'einheiten', 'tippBild', 'winkelfeld',
-  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form'];
+  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form', 'heftaufgabe', 'division', 'nenner'];
 // Kapitel, in denen mit Brüchen gerechnet wird: Klasse 5 Kapitel 9 und Klasse 6 Kapitel 1 (ADR 0037).
-const BRUCHKAPITEL = ['5.9', '6.1', '6.2'];
+const BRUCHKAPITEL = ['5.9', '6.1', '6.2', '6.4'];
 const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`));
 // Kapitel 6 (ADR 0033): Dort wird mit Größen gerechnet. Solange eine Aufgabe aus Kapitel 6 geprüft wird, lesen die Gleichungsprüfungen auch Einheiten.
 let groessenModus = false;
@@ -53,6 +53,9 @@ let dreieckModus = false;
 const istKoerperLernziel = (id) => id.startsWith('6.3.');
 let koerperModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
+
+// Ein Satz, der fürs Heft beauftragt: „Im Heft: …“ oder ein Auftrag (Verb am Satzanfang) mit „ins Heft“, „in dein Heft“, „im Heft“.
+const heftAuftrag = (text) => String(text ?? '').replace(/„[^“]*“/g, '').split(/(?<=[.!?:])\s+|\n/).some((x) => /^Im Heft:/.test(x.trim()) || (/\b(ins|in dein|im) Heft\b/.test(x) && /^[A-ZÄÖÜ][a-zäöüß]+e\b/.test(x.trim())));
 
 // ---------- Rechnen ----------
 const zahlAus = (s) => Number(String(s).replace(/[\s\u00a0\u202f]/g, ''));
@@ -204,6 +207,7 @@ function pruefeSprache(a) {
   if (istRationalLernziel(a.lernziel)) for (const x of rationalSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istDreieckLernziel(a.lernziel)) for (const x of dreieckSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istKoerperLernziel(a.lernziel)) for (const x of koerperSprachMaengel(a)) melde(a.id, x);
+  if (a.lernziel.startsWith('6.4.')) for (const x of operatorMaengel(a)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -2283,6 +2287,9 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   if (!a.text?.trim()) { melde(a.id, 'Text fehlt'); continue; }
   if (/undefined|NaN|(?<![A-Za-zäöü])(?<![A-Za-zÄÖÜäöüß] )null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
   if (sichtbareTexte(a).concat(Object.values(a.hilfen ?? {})).some((t) => / {2}|^ | $|\d-\d| - /.test(t))) melde(a.id, 'Text mit doppeltem Leerzeichen oder Bindestrich statt Minuszeichen');
+  // Heftaufgaben (ADR 0047): Ein Auftrag fürs Heft („Im Heft: …“, „Zeichne in dein Heft …“) trägt das Kennzeichen heftaufgabe, und nur er.
+  if (Boolean(a.heftaufgabe) !== heftAuftrag(a.text)) melde(a.id, a.heftaufgabe ? 'Kennzeichen Heftaufgabe, aber kein Auftrag fürs Heft im Text' : 'Auftrag fürs Heft ohne Kennzeichen heftaufgabe');
+  if (a.heftaufgabe != null && a.heftaufgabe !== true) melde(a.id, 'heftaufgabe ist true oder fehlt');
   groessenModus = a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.');
   const schluessel = `${a.lernziel} ${a.niveau}`;
   if (!gruppen.has(schluessel)) gruppen.set(schluessel, []);

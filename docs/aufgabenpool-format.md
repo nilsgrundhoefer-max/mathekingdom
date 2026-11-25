@@ -215,3 +215,15 @@ Die Pflicht-ab-Marke `pflicht: "M"` aus Klasse 7 (ADR 0044) gilt jetzt auch in K
 Benannte Arten im `nachweis`, nachgerechnet von `tools/pruefe-koerper.mjs`: `koerperzahl` (Ecken, Kanten, Flächen), `koerperart` (auch Gegenstände wie „Dose“), `netz` (faltet das Netz zum Körper; mit `gruende` dürfen mehrere „Nein, …“-Gründe stehen, von denen genau einer passt), `gegenueber` (Flächen im gefalteten Würfel), `ansicht` und `ansichtform` (Ansichten aus dem Würfelbau berechnet), `wuerfelzahl` (Würfel im Bau gezählt, nur wenn der Bau ohne versteckte Würfel zählbar ist), `schraegbild`, `flaechenform`, `kantenzahl`, `kantenlaenge`, `kantenlage`, `quaderflaeche`, `kantensicht`, `eckensicht` (verdeckt oder sichtbar, aus der Projektion bestimmt), `darstellung`, `sichtbar`, `eigenschaft` (gekrümmte Fläche, Spitze, ohne Ecke, nur ebene Flächen, eine Kante; Antworten können Namen, Gegenstände, Körperbilder oder Netze sein), `spielnetz` (Spielwürfel: Gegenüber ergibt 7), `netzteile` (Zahl der Ecken oder Kreise eines Netzes) und `kippen` (Spielwürfel kippen, Augen oben).
 
 Zwei Sprachregeln kommen hinzu: Auf F und G steht der Operator am Satzanfang („Kreuze …“, „Gib … an.“), und Ja-, Nein- und Stimmt-Antworten brauchen ein `urteil` im Nachweis.
+
+## Klasse 6, Kapitel 4 „Dezimalzahlen“ (ADR 0047)
+
+| Feld | Inhalt |
+|---|---|
+| `heftaufgabe: true` | Heftaufgabe in allen Klassen: Das Dashboard zeigt das Heftband und „Ergebnis aus deinem Heft“. Pflicht genau dann, wenn der Text einen Heftauftrag enthält (Satz mit „Im Heft:“ am Anfang oder Aufforderung mit „ins Heft“, „in dein Heft“, „im Heft“). |
+| `format: "periode"` | Periodische Dezimalzahl. `loesung` in kürzester Schreibweise mit U+0305 nach jeder Ziffer der Periode („0,16̅“). Eingabe `{ vor, periode }`, jede Schreibweise mit dem richtigen Wert zählt. |
+| `division: { dividend, divisor }` | Schriftliche Division als Lösungsbild nach zwei Fehlversuchen. Der Prüfer rechnet nach, dass sie die Lösung ergibt. |
+| `bild.art: "lupe"` | Zahlenstrahl mit Lupe: `oben` und `unten` sind Zahlenstrahlen, `unten` vergrößert genau einen Schritt von `oben` zehnfach. |
+| `gekuerzt: true` / `genau: true` | Bei Bruchlösungen aus 6.4 Pflicht: vollständig gekürzt oder genau dieser Bruch (etwa „mit dem Nenner 10000“). |
+
+Benannte Arten im `nachweis`: `runden` (`zahl`, `stelle` als Stellenzahl nach dem Komma, `ergebnis`, optional `einheit` und `behauptet` für ein Urteil; gerundet wird ab 5 auf), `rundenwahl` (`stelle`, `ergebnis`) und `abbrechend` (`periodisch` optional; der gekürzte Nenner hat nur die Faktoren 2 und 5). Die Einheit `%` zählt als Hundertstel. Endnullen sind nie verlangt: `zahl`-Lösungen vergleichen den Wert.

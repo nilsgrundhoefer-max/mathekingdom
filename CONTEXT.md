@@ -110,6 +110,22 @@ _Avoid_: Zirkel am Bildschirm
 Eine Aufgabe, bei der das Kind im Heft mit dem Geodreieck zeichnet und eine nachgemessene Länge in Millimetern eintippt. 2 mm Abweichung gelten als richtig. In Klasse 7 Kapitel 2 auch ein nachgemessener Winkel in Grad, mit 2° Abweichung; daneben steht die Planfigur.
 _Avoid_: Konstruktionsaufgabe, Messaufgabe
 
+**Heftaufgabe**:
+Eine Aufgabe, die das Kind im Heft rechnet oder zeichnet; am Bildschirm gibt es nur das Ergebnis ein. Sie trägt im Pool `heftaufgabe: true` und im Dashboard das **Heftband** („Heftaufgabe: Rechne im Heft. Gib danach nur dein Ergebnis ein.“, bei Zeichenaufgaben „Zeichne im Heft“). Nicht zu verwechseln mit dem Heftcode, den das Kind ab Gold nach jeder gelösten Aufgabe notiert.
+_Avoid_: Heftauftrag ohne Kennzeichen, Schreibaufgabe
+
+**Periodische Dezimalzahl**:
+Eine Dezimalzahl, bei der sich ab einer Stelle Ziffern endlos wiederholen; die wiederholten Ziffern heißen **Periode** und bekommen einen Strich darüber (0,16̅). Eine Dezimalzahl, die endet, heißt **abbrechend**.
+_Avoid_: unendliche Kommazahl, Kommazahl mit Punkten
+
+**Endnull**:
+Eine Null am Ende hinter dem Komma (2,50). Sie ändert den Wert nicht und wird nie verlangt; beim Runden zeigt sie, wie genau gerundet wurde.
+_Avoid_: überflüssige Null
+
+**Zahlenstrahl mit Lupe**:
+Zwei Zahlenstrahlen übereinander: Der untere vergrößert einen Schritt des oberen zehnfach, damit Hundertstel und Tausendstel ablesbar werden.
+_Avoid_: Zoom, Ausschnittvergrößerung
+
 **Stützgröße**:
 Eine Größe aus dem Alltag, die das Kind auswendig kennt und beim Schätzen als Vergleich nimmt, zum Beispiel eine Tür mit 2 m oder eine Tafel Schokolade mit 100 g.
 _Avoid_: Richtwert, Faustgröße
@@ -127,7 +143,7 @@ Eine Größe mit zwei Einheiten ohne Komma, zum Beispiel „3 € 50 ct“ oder 
 _Avoid_: Dezimalzahl (für Größen vor dem Kapitel Brüche und Dezimalzahlen)
 
 **Dezimalzahl**:
-Eine Zahl mit Komma, deren Stellen nach dem Komma Zehntel, Hundertstel und Tausendstel sind. Sie heißt erst ab der Dezimalschreibweise so; gesprochen wird Ziffer für Ziffer („null Komma zwei fünf“). In Klasse 5 wird mit ihr nicht gerechnet.
+Eine Zahl mit Komma, deren Stellen nach dem Komma Zehntel, Hundertstel, Tausendstel und Zehntausendstel sind. Sie heißt erst ab der Dezimalschreibweise so; gesprochen wird Ziffer für Ziffer („null Komma zwei fünf“). In Klasse 5 wird mit ihr nicht gerechnet.
 _Avoid_: Kommazahl, Dezimalbruch
 
 **Bruchbild**:

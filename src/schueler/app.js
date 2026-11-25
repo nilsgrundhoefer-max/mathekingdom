@@ -25,6 +25,7 @@ import { loesungGroesse } from './groessen.js';
 import { bruchEingabe, liesBruch, faerbenEingabe, faerbenLoesungBild } from './bruchbilder.js';
 import { NACHBESSERN, NACHBESSERN_HOECHSTENS } from './bruch.js';
 import { faerbenLoesung, bruchLoesung } from './bruch.js';
+import { periodeEingabe, liesPeriode, divisionBild } from './dezimalbilder.js';
 import { klinge } from './ton.js';
 import { starteSpiel } from './spiele.js';
 
@@ -951,6 +952,7 @@ function aufgabenAnsicht() {
   // Sicherheitsangabe (ADR 0014): Beim ersten Versuch gibt es zwei Prüfen-Knöpfe, wenn die Lehrkraft sie eingeschaltet hat.
   const zweiKnoepfe = !fertig && a.versuch === 0 && z.einst.sicherheitsangabe && !a.einstieg;
   const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular, zweiKnoepfe ? e.submitter?.dataset.sicher === 'ja' : null); } },
+    auf.heftaufgabe && h('p', { class: 'heftfeld', id: 'heftfeld' }, 'Ergebnis aus deinem Heft:'),
     eingabefelder(auf, a, fertig),
     zweiKnoepfe ? h('div', { class: 'sicherwahl' },
       h('button', { class: 'haupt', id: 'pruefen', type: 'submit', 'data-sicher': 'ja' }, 'Prüfen – ich bin sicher'),
@@ -970,6 +972,8 @@ function aufgabenAnsicht() {
         !a.einstieg && !a.seitenblick && training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
         !a.einstieg && h('span', { class: 'punkte', title: grundlage ? `${punkte} von ${L.GRUNDLAGE_RICHTIGE} Aufgaben zur Grundlage` : `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < punkte ? 'voll' : '' })))),
+      // Heftaufgabe (Nils, 2026-11-25, ADR 0047): Das Band sagt vor dem Text, dass im Heft gearbeitet wird.
+      auf.heftaufgabe && heftband(auf),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
       auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
       // Kapitel 1: die Antworten einer Umfrage und eine Tabelle, aus denen abgelesen wird.
@@ -990,7 +994,7 @@ export function eingabefelder(auf, a, gesperrt) {
   // Klasse 7 (ADR 0043): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
   const zahlfeld = (name, einheit, wert) => {
-    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') || auf.lernziel?.startsWith('6.4.') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => gliedereEingabe(e.target) });
     return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
   };
@@ -1095,6 +1099,7 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'winkel': return winkelEingabe(auf, letzte, gesperrt);
     case 'bruch': return bruchEingabe(auf, letzte, gesperrt);
     case 'faerben': return faerbenEingabe(auf, letzte, gesperrt);
+    case 'periode': return periodeEingabe(auf, letzte, gesperrt);
     default: return null;
   }
 }
@@ -1124,6 +1129,7 @@ function liesEingabe(auf, formular) {
     // Kapitel 9: Bruch aus Zähler und Nenner; beim Färben fehlt etwas, solange kein Teil gefärbt ist.
     case 'bruch': return liesBruch(auf, formular);
     case 'faerben': { const v = feld('faerben'); return { eingabe: v, leer: v === '' }; }
+    case 'periode': return liesPeriode(formular);
     case 'gitter': { const v = feld('gitter'), n = (v.match(/\(/g) ?? []).length; return { eingabe: v, leer: n < (auf.eingabe === 'linie' || auf.eingabe === 'kreis' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
     default: return { eingabe: null, leer: true };
   }
@@ -1224,6 +1230,7 @@ function loesungstext(auf) {
     case 'winkel': return winkelLoesung(auf);
     case 'bruch': return `${bruchLoesung(auf)}${auf.einheit ? ` ${auf.einheit}` : ''}`;
     case 'faerben': return faerbenLoesung(auf);
+    case 'periode': return String(auf.loesung);
     default: return '';
   }
 }
@@ -1253,8 +1260,16 @@ function soGehtEs(auf) {
 // Erste Zeile des Ergebnisses: richtig mit Münzen oder falsch mit Lösung.
 function urteilZeile(e, auf, nachsatz) {
   return e.richtig
-    ? [h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e)), wahreAnzahl(auf)]
-    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), wahreAnzahl(auf), loesungsbild(auf)];
+    ? [h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e)), wahreAnzahl(auf), endnullSatz(auf)]
+    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), endnullSatz(auf), wahreAnzahl(auf), loesungsbild(auf)];
+}
+// Klasse 6, Kapitel 4 (ADR 0047): Beim Runden wird keine Endnull verlangt (4 ist so richtig wie 4,0).
+// Steht in der Lösung eine Endnull, sagt ein Satz, wozu sie da ist.
+export function endnullSatz(auf) {
+  if (!auf.lernziel?.startsWith('6.4.3')) return null;
+  const werte = auf.format === 'zahl' ? [auf.loesung] : auf.format === 'luecken' ? Object.values(auf.luecken ?? {}).map((l) => l.loesung) : [];
+  const mit = werte.map(String).find((w) => /,\d*0$/.test(w));
+  return mit ? h('p', { class: 'endnull', id: 'endnull' }, `Man darf die Null schreiben, um zu zeigen, wie genau gerundet wurde: ${mit}${auf.einheit ? ` ${auf.einheit}` : ''}.`) : null;
 }
 // Kapitel 2: Nach jeder Aufgabe mit Schätzbild steht die wahre Anzahl da, damit das Kind seine Schätzung einordnen kann (ADR 0030).
 export function wahreAnzahl(auf) {
@@ -1271,6 +1286,8 @@ export function wahreAnzahl(auf) {
 }
 // Kapitel 1: Bei Strichliste und Diagramm zeigt ein Bild die Lösung.
 export function loesungsbild(auf) {
+  // Klasse 6, Kapitel 4 (ADR 0047): die schriftliche Division, aus der die Dezimalzahl kommt.
+  if (auf.division) return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, divisionBild(auf.division));
   if (auf.format === 'zeichnen') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, zeichnenLoesung(auf));
   // Kapitel 5: das Gitter mit der eingezeichneten Lösung.
   if (auf.format === 'gitter') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, gitterLoesungBild(auf));
@@ -1496,7 +1513,12 @@ function brueckeErgebnis(a, meilenstein) {
 }
 
 // Heftcode unter jeder gelösten Aufgabe ab Gold.
-const heftHinweis = (e) => e.heft && h('p', { class: 'heftcode', id: 'heftcode' }, h('b', { class: 'code' }, e.heft), ' Schreib den Code und dein Ergebnis ins Heft. Ab und zu fragt dich der Heftcheck danach.');
+// Nils, 2026-11-25 (ADR 0047): klein und grau, damit er nicht wie eine Heftaufgabe aussieht.
+const heftHinweis = (e) => e.heft && h('p', { class: 'heftcode', id: 'heftcode' }, 'Notiere im Heft: ', h('b', { class: 'code' }, e.heft), ' und dein Ergebnis. Ab und zu fragt dich der Heftcheck danach.');
+// Das Heftband über einer Heftaufgabe. Bei Zeichenaufgaben heißt es „Zeichne“, sonst „Rechne“.
+export const heftband = (auf) => h('p', { class: 'heftband', id: 'heftband', role: 'note' },
+  h('span', { class: 'heftsymbol', 'aria-hidden': 'true' }, '✎'), h('b', {}, 'Heftaufgabe: '),
+  `${/\b(Zeichne|Konstruiere|Zeichnet)\b/.test(auf.text) ? 'Zeichne' : 'Rechne'} im Heft. Gib danach nur dein Ergebnis ein.`);
 
 // ---------- Heftcheck (ADR 0014) ----------
 function heftcheckAnsicht() {

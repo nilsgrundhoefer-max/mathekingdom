@@ -98,6 +98,8 @@ const loesung = (a) => {
     return `_(Zahlenstrahl ${st.von} bis ${st.bis}, Teilstriche alle ${st.schritt}${st.spruenge ? `, Sprung ${st.spruenge.map((x) => `von ${x.von}: ${x.text}`).join('; ')}` : ''}; ${a.eingabe === 'markieren' ? 'antippen' : 'Zahl eintragen'})_ Lösung: ${zahl(a)}`;
   }
   // Kapitel 9 (ADR 0036): Brucheingabe und „Teile färben“.
+  // Kapitel 6.4 (ADR 0047): Periode in zwei Feldern, Vorschau mit Überstrich.
+  if (a.format === 'periode') return `_(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: ${zahl(a)}`;
   if (a.format === 'bruch') return `_(Brucheingabe${a.gemischt ? ' mit Feld für die Ganzen' : ''}; ${a.genau ? 'nur genau dieser Bruch ist richtig' : a.gekuerzt ? 'nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“' : a.form === 'gemischt' ? 'nur als gemischte Zahl richtig, sonst Hinweis „fast richtig“' : 'jeder gleichwertige Bruch ist richtig'})_ Lösung: ${zahl(a)}`;
   if (a.format === 'faerben') return `_(Teile färben: ${figurText(a.faerben, true)}; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **${a.loesung} Teile gefärbt**.${fehler(a.typischeFehler)}`;
   if (a.format === 'diagramm') return `\n  _(Säulendiagramm „${a.diagramm.titel}“: ${a.diagramm.saeulen.map((x) => `${x.name} ${x.wert}`).join(', ')}; Werte ${a.diagramm.werteZeigen ? 'stehen an den Säulen' : 'müssen abgelesen werden'})_\n${a.teile.map((t, i) => `  - ${'abcdef'[i]}) ${flach(t.text)} ${zahl(t)}`).join('\n')}`;
@@ -153,7 +155,7 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) for (const l of u.
     md += `Hilfekärtchen der ersten Aufgabe: ${karten(gruppe[0].hilfen)}\n\n`;
     for (const a of gruppe) {
       const mehrzeilig = a.format === 'auswahl' || a.format === 'sachaufgabe';
-      md += `- ${haken(a)}\`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${a.tippBild ? bild(a.tippBild).replace('(Bild:', '(Bild im Tipp:') : ''}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
+      md += `- ${haken(a)}\`${a.id.split('-').pop()}\` AFB ${'I'.repeat(a.afb)} · _${kompetenzText(a)}_ · ${a.heftaufgabe ? '**[Heftaufgabe]** ' : ''}${flach(a.text).replace(/\{\{(\w+)\}\}/g, '▢')}${bild(a.bild)}${a.tippBild ? bild(a.tippBild).replace('(Bild:', '(Bild im Tipp:') : ''}${daten(a)}${mehrzeilig ? '\n' : ' '}${loesung(a)}\n`;
     }
   }
 }

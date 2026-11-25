@@ -122,9 +122,10 @@ export function faerbenEingabe(auf, letzte, gesperrt) {
 export const faerbenLoesungBild = (auf) => bruchSvg([auf.faerben], { gewaehlt: Array.from({ length: auf.loesung }, (_, i) => i) });
 
 // Brucheingabe: Zähler über Nenner mit Bruchstrich, bei gemischten Zahlen davor ein Feld für die Ganzen.
+// Fünf Stellen, damit auch der Nenner 10000 passt (Zehntausendstel, ADR 0047).
 export function bruchEingabe(auf, letzte, gesperrt) {
   const m = String(letzte ?? '').match(/^(-?)(?:(\d*) )?(\d*)\/(\d*)$/) ?? [];
-  const feld = (name, wert, etikett) => h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 3, maxLength: 4, disabled: gesperrt, value: wert ?? '', 'aria-label': etikett });
+  const feld = (name, wert, etikett) => h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 3, maxLength: 5, disabled: gesperrt, value: wert ?? '', 'aria-label': etikett });
   // Klasse 7 (ADR 0043): Der Knopf „±“ setzt ein Minus vor den ganzen Bruch.
   const vorzeichen = mitVorzeichen(auf);
   const v = h('input', { type: 'hidden', name: 'bruch-v', value: m[1] ?? '' });

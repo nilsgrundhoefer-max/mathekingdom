@@ -39,6 +39,30 @@ export function pruefeDezimal(teil, eingabe) {
   const treffer = wert && (teil.typischeFehler ?? []).find((f) => wertGleich(leseDezimal(f.wert), wert));
   return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
 }
+// Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahl. Im Text steht über jeder Ziffer der Periode ein Strich (U+0305): „0,16̅“.
+export const PERIODE = '\u0305';
+// „0,16̅“ als { vor: '0,1', periode: '6' }. Eine abbrechende Dezimalzahl hat eine leere Periode. null, wenn es keine Zahl ist.
+export function teilePeriode(text) {
+  const m = String(text ?? '').replace(/[\s\u00a0\u202f]/g, '').match(/^(\d+(?:[,.]\d*)?)((?:\d\u0305)*)$/);
+  return m ? { vor: m[1], periode: m[2].replace(/\u0305/g, '') } : null;
+}
+// Wert aus den Ziffern vor der Periode und der Periode als Bruch { z, n }. „0,1“ und „6“ ist 1⁄6. Leere Periode: abbrechend.
+export function periodenWert(vor, periode) {
+  const v = String(vor ?? '').replace(/[\s\u00a0\u202f']/g, '').replace('.', ',').replace(/,$/, ''), p = String(periode ?? '').replace(/\s/g, '');
+  const d = leseDezimal(v);
+  if (!d || d.z < 0 || !/^\d{0,6}$/.test(p)) return null;
+  if (!p) return d;
+  const neun = 10 ** p.length - 1;
+  return kuerze({ z: d.z * neun + Number(p), n: d.n * neun });
+}
+export const wertVonPeriode = (text) => { const t = teilePeriode(text); return t ? periodenWert(t.vor, t.periode) : null; };
+// Eingabe: { vor, periode }. Richtig ist jede Schreibweise mit dem richtigen Wert (0,3̅ und 0,33̅ sind gleich).
+export function pruefePeriode(aufgabe, eingabe) {
+  const ist = periodenWert(eingabe?.vor, eingabe?.periode), soll = wertVonPeriode(aufgabe.loesung);
+  if (ist && soll && wertGleich(ist, soll)) return { richtig: true, fehlvorstellung: null };
+  const treffer = ist && (aufgabe.typischeFehler ?? []).find((f) => wertGleich(wertVonPeriode(f.wert), ist));
+  return { richtig: false, fehlvorstellung: treffer?.fehlvorstellung ?? null };
+}
 // Brucheingabe: Die Eingabe ist ein Text wie „3/4“ oder „1 3/4“. Ein gleichwertiger Bruch zählt, außer die Aufgabe verlangt `genau` diesen Bruch.
 // Klasse 6 (ADR 0037): Mit `gekuerzt` muss der Bruch vollständig gekürzt sein, mit `form: 'gemischt'` eine gemischte Zahl.
 // Stimmt nur der Wert, meldet `nachbessern`, was noch fehlt ('kuerzen' oder 'gemischt'): Das Dashboard gibt dann einen Hinweis, ohne einen Versuch zu zählen.
