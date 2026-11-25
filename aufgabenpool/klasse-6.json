@@ -67928,6 +67928,6526 @@
      "welche": "spitze"
     }
    ]
+  },
+  {
+   "id": "6.3.8-K1-F-01",
+   "lernziel": "6.3.8-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Die gelbe Fläche B ist der Boden.\nDu faltest einen Würfel.\nKreuze die obere Fläche an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "F",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "E",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Flächen am Boden klappen hoch.",
+    "beispiel": "Sie werden die Seiten.",
+    "loesungsschritt": "Oben liegt die Fläche, die den Boden nicht berührt."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "n": "E"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "C"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "B",
+      "farbe": 1
+     },
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        0
+       ],
+       [
+        3,
+        0
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "n": "D"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "B",
+     "welche": "gegen"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-F-02",
+   "lernziel": "6.3.8-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Du willst aus dem Netz einen Würfel falten.\nKreuze die richtige Antwort an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Ja.\nJede Seite kommt genau einmal vor.",
+     "richtig": true
+    },
+    {
+     "text": "Nein.\nZwei Quadrate landen an derselben Stelle.",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Lege ein Quadrat als Boden fest.",
+    "beispiel": "Klappe die anderen Quadrate in Gedanken hoch.",
+    "loesungsschritt": "Prüfe, ob zwei Quadrate an dieselbe Stelle kommen."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        1,
+        5
+       ]
+      ]
+     },
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ]
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     },
+     {
+      "ecken": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        0,
+        3
+       ]
+      ]
+     },
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ]
+     },
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "wuerfel",
+     "faltbar": true
+    },
+    {
+     "art": "urteil",
+     "stimmt": true
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-F-03",
+   "lernziel": "6.3.8-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Spielwürfel.\nOben und unten ergeben zusammen 7.\nGib die Zahl auf der unteren Fläche an.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem Spielwürfel ergeben die Augen oben und unten zusammen 7.",
+    "beispiel": "Das gilt auch für vorne und hinten, links und rechts.",
+    "loesungsschritt": "Rechne 7 minus die Zahl, die du kennst."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 1,
+     "vorne": 3,
+     "rechts": 5
+    }
+   },
+   "nachweis": [
+    "7 − 1 = 6"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-F-04",
+   "lernziel": "6.3.8-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Ein Quadrat fehlt noch.\nFärbe es.\nDann kannst du einen Würfel falten.",
+   "gitter": {
+    "b": 6,
+    "h": 5,
+    "zellen": [
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ]
+   },
+   "loesung": [
+    [
+     4,
+     1
+    ]
+   ],
+   "typischeFehler": [
+    {
+     "punkte": [
+      [
+       0,
+       2
+      ]
+     ],
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte in Gedanken.",
+    "beispiel": "Welche Seite des Würfels fehlt?",
+    "loesungsschritt": "Färbe das Quadrat dort, wo diese Seite hinklappt."
+   },
+   "bedingung": {
+    "art": "netz",
+    "gegeben": [
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "fehlt": 1
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "wuerfel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-F-05",
+   "lernziel": "6.3.8-K1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Du faltest einen Würfel.\nKreuze alle Nachbarn der gelben Fläche A an.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "E",
+     "richtig": true
+    },
+    {
+     "text": "F",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "D",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Fläche stößt an vier andere.",
+    "beispiel": "Nur eine Fläche stößt nicht an die gelbe.",
+    "loesungsschritt": "Diese Fläche liegt ihr beim Würfel genau entgegen."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "n": "A",
+      "farbe": 1
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "D"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        3,
+        2
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "n": "E"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        0
+       ],
+       [
+        3,
+        0
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "n": "C"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "A",
+     "welche": "nachbar"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-F-06",
+   "lernziel": "6.3.8-K1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Spielwürfel.\nVorne und hinten ergeben zusammen 7.\nGib die Zahl auf der hinteren Fläche an.",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem Spielwürfel ergeben die Augen oben und unten zusammen 7.",
+    "beispiel": "Das gilt auch für vorne und hinten, links und rechts.",
+    "loesungsschritt": "Rechne 7 minus die Zahl, die du kennst."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 5,
+     "vorne": 6,
+     "rechts": 4
+    }
+   },
+   "nachweis": [
+    "7 − 6 = 1"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-G-01",
+   "lernziel": "6.3.8-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Würfelnetz wird gefaltet.\nKreuze die Fläche gegenüber von B an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "F",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "A",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Gegenüberliegende Flächen berühren sich im Netz nie.",
+    "beispiel": "In einer Reihe aus drei Quadraten liegen die äußeren gegenüber.",
+    "loesungsschritt": "Falte in Gedanken mit B als Boden."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        2,
+        0
+       ],
+       [
+        3,
+        0
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "C"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ],
+      "n": "E"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "n": "D"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "B",
+     "welche": "gegen"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-G-02",
+   "lernziel": "6.3.8-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Würfelnetz gehört zu einem Spielwürfel.\nGegenüber ergibt immer zusammen 7.\nGib die Zahl für die Fläche A an.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 1,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem Spielwürfel ergeben die Augen oben und unten zusammen 7.",
+    "beispiel": "Das gilt auch für vorne und hinten, links und rechts.",
+    "loesungsschritt": "Rechne 7 minus die Zahl, die du kennst."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "n": "2"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "3"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "5"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ],
+      "n": "4"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "1"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "A",
+     "gegen": "1"
+    },
+    "7 − 1 = 6"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-G-03",
+   "lernziel": "6.3.8-K1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Nur ein Netz ist ein richtiger Spielwürfel.\nGegenüber ergibt dort immer 7.\nKreuze es an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          3,
+          2
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          3,
+          3
+         ]
+        ],
+        "n": 4
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          3,
+          2
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          3,
+          3
+         ]
+        ],
+        "n": 4
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          3,
+          2
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          3,
+          3
+         ]
+        ],
+        "n": 6
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem Spielwürfel ergeben die Augen oben und unten zusammen 7.",
+    "beispiel": "Das gilt auch für vorne und hinten, links und rechts.",
+    "loesungsschritt": "Rechne 7 minus die Zahl, die du kennst."
+   },
+   "nachweis": [
+    {
+     "art": "spielnetz"
+    },
+    {
+     "zahl": 7,
+     "grund": "Summe gegenüber"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-G-04",
+   "lernziel": "6.3.8-K1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Spielwürfel.\nGib an, wie viele Augen auf der Fläche unten sind.",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem Spielwürfel ergeben die Augen oben und unten zusammen 7.",
+    "beispiel": "Das gilt auch für vorne und hinten, links und rechts.",
+    "loesungsschritt": "Rechne 7 minus die Zahl, die du kennst."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 6,
+     "vorne": 2,
+     "rechts": 3
+    }
+   },
+   "nachweis": [
+    "7 − 6 = 1",
+    {
+     "zahl": 7,
+     "grund": "Summe gegenüber"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-G-05",
+   "lernziel": "6.3.8-K1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das Würfelnetz an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          1,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          3
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          2,
+          4
+         ],
+         [
+          1,
+          4
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          4
+         ],
+         [
+          2,
+          4
+         ],
+         [
+          2,
+          5
+         ],
+         [
+          1,
+          5
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "netz-nur-gezaehlt",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          1,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          2,
+          1
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          3,
+          2
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          3,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          2,
+          2
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          3,
+          3
+         ],
+         [
+          2,
+          3
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ]
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Lege ein Quadrat als Boden fest.",
+    "beispiel": "Klappe die anderen hoch.",
+    "loesungsschritt": "Kommen zwei Quadrate an dieselbe Stelle, ist es kein Würfelnetz."
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "wuerfel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-G-06",
+   "lernziel": "6.3.8-K1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Würfelnetz wird gefaltet.\nD ist der Boden.\nKreuze eine Nachbarfläche von D an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "C",
+     "richtig": true
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Falte mit D als Boden.",
+    "beispiel": "Die hochgeklappten Flächen stoßen alle an den Boden.",
+    "loesungsschritt": "Nur die Fläche oben stößt nicht an ihn."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "D"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        3,
+        2
+       ]
+      ],
+      "n": "E"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        0,
+        3
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        3,
+        0
+       ],
+       [
+        4,
+        0
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        3,
+        1
+       ]
+      ],
+      "n": "C"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "D",
+     "welche": "nachbar"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-M-01",
+   "lernziel": "6.3.8-K1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Würfelnetz wird gefaltet. Kreuze die Fläche an, die D gegenüberliegt.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "B",
+     "richtig": true
+    },
+    {
+     "text": "A",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei Treppen-Netzen hilft es, Quadrat für Quadrat abzurollen.",
+    "loesungsschritt": "Notiere für jedes Quadrat: Boden, vorne, hinten, links, rechts oder oben."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        1,
+        4
+       ],
+       [
+        0,
+        4
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        0,
+        3
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "C"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "n": "D"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "E"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "D",
+     "welche": "gegen"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-M-02",
+   "lernziel": "6.3.8-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Spielwürfel. Gib an, wie viele Augen auf den drei Flächen zusammen sind, die man nicht sieht.",
+   "loesung": 14,
+   "typischeFehler": [
+    {
+     "wert": 7,
+     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+    },
+    {
+     "wert": 21,
+     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Alle sechs Flächen zusammen haben 1 + 2 + 3 + 4 + 5 + 6 = 21 Augen.",
+    "loesungsschritt": "Oder: Jede verdeckte Fläche hat 7 minus die Zahl gegenüber."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 1,
+     "vorne": 2,
+     "rechts": 4
+    }
+   },
+   "nachweis": [
+    "1 + 2 + 4 = 7",
+    "21 − 7 = 14",
+    "1 + 2 + 3 + 4 + 5 + 6 = 21"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-M-03",
+   "lernziel": "6.3.8-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Netze an, die zu einem richtigen Spielwürfel gehören. Gegenüber muss immer zusammen 7 ergeben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 2
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ],
+        "n": 4
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ],
+        "n": 3
+       }
+      ]
+     }
+    },
+    {
+     "text": "D",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          1,
+          3
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          1,
+          3
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          2,
+          4
+         ],
+         [
+          1,
+          4
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          2,
+          1
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 5
+       }
+      ]
+     }
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          4,
+          1
+         ],
+         [
+          5,
+          1
+         ],
+         [
+          5,
+          2
+         ],
+         [
+          4,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          2,
+          0
+         ],
+         [
+          3,
+          0
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          2,
+          1
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 6
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Suche bei jedem Netz die drei Paare gegenüberliegender Flächen.",
+    "loesungsschritt": "Prüfe jedes Paar: Ergibt es zusammen 7?"
+   },
+   "nachweis": [
+    {
+     "art": "spielnetz"
+    },
+    {
+     "zahl": 7,
+     "grund": "Summe gegenüber"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-M-04",
+   "lernziel": "6.3.8-K1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Würfelnetz gehört zu einem Spielwürfel. Gegenüber ergibt immer zusammen 7. Gib die Zahl an, die auf die Fläche A gehört.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Finde zuerst die Fläche, die A gegenüberliegt.",
+    "loesungsschritt": "Rechne dann 7 minus ihre Zahl."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "n": "1"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "n": "5"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "4"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "6"
+     },
+     {
+      "ecken": [
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        4,
+        2
+       ],
+       [
+        3,
+        2
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "2"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "A",
+     "gegen": "4"
+    },
+    "7 − 4 = 3"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-M-05",
+   "lernziel": "6.3.8-K1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Würfelnetz wird gefaltet. Kreuze alle Flächen an, die an E stoßen.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "C",
+     "richtig": true
+    },
+    {
+     "text": "B",
+     "richtig": true
+    },
+    {
+     "text": "F",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "A",
+     "richtig": true
+    },
+    {
+     "text": "D",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Fläche stößt an vier andere.",
+    "loesungsschritt": "Die gegenüberliegende Fläche stößt nicht an sie."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "n": "C"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "n": "D"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "E"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        1,
+        4
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "n": "A"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "E",
+     "welche": "nachbar"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-M-06",
+   "lernziel": "6.3.8-K1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Würfelnetz fehlen zwei Quadrate. Färbe zwei Kästchen so, dass ein Würfelnetz entsteht.",
+   "gitter": {
+    "b": 6,
+    "h": 6,
+    "zellen": [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   "loesung": [
+    [
+     3,
+     4
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Bestimme zuerst, welche zwei Seiten des Würfels fehlen.",
+    "loesungsschritt": "Setze die Quadrate dort an, wo diese Seiten beim Falten hinklappen."
+   },
+   "bedingung": {
+    "art": "netz",
+    "gegeben": [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "fehlt": 2
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "wuerfel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-E-01",
+   "lernziel": "6.3.8-K1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Würfelnetz gehört zu einem Spielwürfel. Gib an, welche Zahl du erhältst, wenn du die Zahlen auf A und B addierst.",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Finde für A und für B die gegenüberliegende Fläche."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        1,
+        4
+       ],
+       [
+        0,
+        4
+       ]
+      ],
+      "n": "1"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        0,
+        3
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "4"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "A"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "n": "5"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        0
+       ],
+       [
+        3,
+        0
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "n": "3"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": "A",
+     "gegen": "1"
+    },
+    {
+     "art": "gegenueber",
+     "flaeche": "B",
+     "gegen": "5"
+    },
+    "7 − 1 = 6",
+    "7 − 5 = 2",
+    "6 + 2 = 8"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-E-02",
+   "lernziel": "6.3.8-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Noah sagt: „Bei einem Spielwürfel ist die Summe der Augen oben und unten immer gleich.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt. Oben und unten ergeben immer zusammen 7.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt nicht. Sie hängt davon ab, wie der Würfel liegt.",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "Stimmt nicht. An einer Ecke stoßen immer gerade und ungerade Zahlen zusammen.",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die drei Paare auf, die zusammen 7 ergeben."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    },
+    "1 + 6 = 7",
+    "2 + 5 = 7",
+    "3 + 4 = 7"
+   ]
+  },
+  {
+   "id": "6.3.8-K1-E-03",
+   "lernziel": "6.3.8-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Das Würfelnetz wird gefaltet. Kreuze alle Paare von Flächen an, die sich dann gegenüberliegen.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "B und E",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "A und B",
+     "richtig": true
+    },
+    {
+     "text": "C und D",
+     "richtig": true
+    },
+    {
+     "text": "A und F",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart"
+    },
+    {
+     "text": "E und F",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Würfel hat genau drei Paare gegenüberliegender Flächen."
+   },
+   "bild": {
+    "art": "netz",
+    "flaechen": [
+     {
+      "ecken": [
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        1,
+        4
+       ],
+       [
+        0,
+        4
+       ]
+      ],
+      "n": "D"
+     },
+     {
+      "ecken": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        0,
+        3
+       ]
+      ],
+      "n": "B"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "n": "F"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "n": "C"
+     },
+     {
+      "ecken": [
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "n": "E"
+     },
+     {
+      "ecken": [
+       [
+        2,
+        2
+       ],
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "n": "A"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "gegenueber",
+     "flaeche": null,
+     "welche": "paare"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-E-04",
+   "lernziel": "6.3.8-K1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Es gibt verschiedene Würfelnetze. Netze, die durch Drehen oder Umklappen gleich werden, zählen nur einmal. Gib an, wie viele verschiedene Würfelnetze es gibt.",
+   "loesung": 11,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    },
+    {
+     "wert": 12,
+     "fehlvorstellung": "netz-nur-gezaehlt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ordne nach der längsten Reihe: vier, drei oder zwei Quadrate in einer Reihe."
+   },
+   "nachweis": [
+    "6 + 3 + 1 + 1 = 11",
+    {
+     "zahl": 4,
+     "grund": "Reihe aus vier Quadraten"
+    },
+    {
+     "zahl": 6,
+     "grund": "Netze mit Viererreihe"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-E-05",
+   "lernziel": "6.3.8-K1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "gitter",
+   "eingabe": "zellen",
+   "text": "Im Würfelnetz fehlen drei Quadrate. Färbe drei Kästchen so, dass ein Würfelnetz entsteht.",
+   "gitter": {
+    "b": 6,
+    "h": 6,
+    "zellen": [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   "loesung": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "typischeFehler": [],
+   "hilfen": {
+    "tipp": "Bestimme zuerst, welche drei Seiten des Würfels fehlen."
+   },
+   "bedingung": {
+    "art": "netz",
+    "gegeben": [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "fehlt": 3
+   },
+   "nachweis": [
+    {
+     "art": "netz",
+     "ziel": "wuerfel"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K1-E-06",
+   "lernziel": "6.3.8-K1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Netze an, die zu einem richtigen Spielwürfel gehören.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "A",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          3,
+          2
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          4,
+          3
+         ],
+         [
+          3,
+          3
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          2,
+          2
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          3,
+          3
+         ],
+         [
+          2,
+          3
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 3
+       }
+      ]
+     }
+    },
+    {
+     "text": "B",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          3,
+          0
+         ],
+         [
+          4,
+          0
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          3,
+          1
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          2,
+          2
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          3,
+          3
+         ],
+         [
+          2,
+          3
+         ]
+        ],
+        "n": 5
+       }
+      ]
+     }
+    },
+    {
+     "text": "C",
+     "richtig": true,
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          0
+         ],
+         [
+          2,
+          0
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          1,
+          3
+         ]
+        ],
+        "n": 3
+       }
+      ]
+     }
+    },
+    {
+     "text": "D",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          1,
+          1
+         ],
+         [
+          2,
+          1
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          1,
+          2
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          2,
+          1
+         ],
+         [
+          3,
+          1
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          2,
+          2
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          3,
+          1
+         ],
+         [
+          4,
+          1
+         ],
+         [
+          4,
+          2
+         ],
+         [
+          3,
+          2
+         ]
+        ],
+        "n": 2
+       },
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          1,
+          3
+         ]
+        ],
+        "n": 1
+       }
+      ]
+     }
+    },
+    {
+     "text": "E",
+     "richtig": false,
+     "fehlvorstellung": "gegenueber-benachbart",
+     "bild": {
+      "art": "netz",
+      "flaechen": [
+       {
+        "ecken": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        "n": 6
+       },
+       {
+        "ecken": [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          0,
+          2
+         ]
+        ],
+        "n": 3
+       },
+       {
+        "ecken": [
+         [
+          0,
+          2
+         ],
+         [
+          1,
+          2
+         ],
+         [
+          1,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ],
+        "n": 4
+       },
+       {
+        "ecken": [
+         [
+          1,
+          2
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          1,
+          3
+         ]
+        ],
+        "n": 5
+       },
+       {
+        "ecken": [
+         [
+          1,
+          3
+         ],
+         [
+          2,
+          3
+         ],
+         [
+          2,
+          4
+         ],
+         [
+          1,
+          4
+         ]
+        ],
+        "n": 1
+       },
+       {
+        "ecken": [
+         [
+          1,
+          4
+         ],
+         [
+          2,
+          4
+         ],
+         [
+          2,
+          5
+         ],
+         [
+          1,
+          5
+         ]
+        ],
+        "n": 2
+       }
+      ]
+     }
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bei einem Spielwürfel ergeben gegenüberliegende Flächen zusammen 7."
+   },
+   "nachweis": [
+    {
+     "art": "spielnetz"
+    },
+    {
+     "zahl": 7,
+     "grund": "Summe gegenüber"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-F-01",
+   "lernziel": "6.3.8-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau.\nZähle alle Würfel.",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel.",
+    "beispiel": "Zähle Turm für Turm von unten nach oben.",
+    "loesungsschritt": "Addiere die Höhen aller Türme."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      2
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      3,
+      0,
+      0
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 7
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-F-02",
+   "lernziel": "6.3.8-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau.\nZähle alle Würfel.",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel.",
+    "beispiel": "Zähle Turm für Turm von unten nach oben.",
+    "loesungsschritt": "Addiere die Höhen aller Türme."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 7
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-F-03",
+   "lernziel": "6.3.8-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Jede Zahl ist die Höhe eines Turms.\nZähle alle Würfel.",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Zahl ist ein Turm.",
+    "beispiel": "Eine 2 heißt: zwei Würfel übereinander.",
+    "loesungsschritt": "Addiere alle Zahlen."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        0,
+        1,
+        2
+       ],
+       [
+        1,
+        1,
+        1
+       ],
+       [
+        2,
+        1,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 5
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-F-04",
+   "lernziel": "6.3.8-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Würfelbau soll ein Quader werden.\nDer Quader ist 3 Würfel lang und 2 Würfel hoch.\nGib an, wie viele Würfel noch fehlen.",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der fertige Quader hat zwei Reihen mit je drei Würfeln.",
+    "beispiel": "Das sind 6 Würfel.",
+    "loesungsschritt": "Ziehe die Würfel ab, die schon da sind."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 5,
+     "zwischen": true
+    },
+    "3 · 2 = 6",
+    "6 − 5 = 1"
+   ]
+  },
+  {
+   "id": "6.3.8-K2-F-05",
+   "lernziel": "6.3.8-K2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du schaust von vorne auf den Würfelbau.\nZähle die sichtbaren Quadrate.",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Würfelbau steht in einer Reihe.",
+    "beispiel": "Von vorne siehst du jeden Würfel.",
+    "loesungsschritt": "Zähle alle Quadrate vorne."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "vorne",
+     "wert": 5
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-F-06",
+   "lernziel": "6.3.8-K2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau.\nZähle alle Würfel.",
+   "loesung": 7,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel.",
+    "beispiel": "Zähle Turm für Turm von unten nach oben.",
+    "loesungsschritt": "Addiere die Höhen aller Türme."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      3,
+      1,
+      0
+     ],
+     [
+      3,
+      1,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 7
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-G-01",
+   "lernziel": "6.3.8-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau.\nManche Würfel sind verdeckt.\nGib an, wie viele Würfel es sind.",
+   "loesung": 8,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 7,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel.",
+    "beispiel": "Zähle Turm für Turm von unten nach oben.",
+    "loesungsschritt": "Addiere die Höhen aller Türme."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 8
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-G-02",
+   "lernziel": "6.3.8-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Im Grundriss steht die Höhe jedes Turms.\nGib an, wie viele Würfel der Bau hat.",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jede Zahl ist ein Turm.",
+    "beispiel": "Addiere die Zahlen Reihe für Reihe.",
+    "loesungsschritt": "Addiere dann die Ergebnisse der Reihen."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        1,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        0,
+        1,
+        2
+       ],
+       [
+        1,
+        1,
+        2
+       ],
+       [
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        2,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 10
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-G-03",
+   "lernziel": "6.3.8-K2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Würfelbau soll ein Quader werden.\nEr soll 3 Würfel lang, 2 tief und 2 hoch sein.\nGib an, wie viele Würfel noch fehlen.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der Quader hat zwei Schichten.",
+    "beispiel": "Jede Schicht hat 3 · 2 = 6 Würfel.",
+    "loesungsschritt": "Ziehe die vorhandenen Würfel von 12 ab."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        2
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        2,
+        0,
+        1
+       ],
+       [
+        0,
+        1,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 6,
+     "zwischen": true
+    },
+    "3 · 2 · 2 = 12",
+    "12 − 6 = 6"
+   ]
+  },
+  {
+   "id": "6.3.8-K2-G-04",
+   "lernziel": "6.3.8-K2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du schaust von links auf den Würfelbau.\nGib an, wie viele Quadrate du siehst.",
+   "loesung": 2,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "riss-verwechselt"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Von links siehst du von jeder Reihe nur den höchsten Turm.",
+    "beispiel": "Vorne liegt dann rechts.",
+    "loesungsschritt": "Zähle die Quadrate dieser Ansicht."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "vorne": true
+   },
+   "nachweis": [
+    {
+     "art": "ansicht",
+     "von": "links",
+     "wert": 2
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-G-05",
+   "lernziel": "6.3.8-K2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau.\nGib an, wie viele Würfel es sind.",
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 11,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel.",
+    "beispiel": "Zähle Turm für Turm von unten nach oben.",
+    "loesungsschritt": "Addiere die Höhen aller Türme."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      0,
+      2,
+      2
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 12
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-G-06",
+   "lernziel": "6.3.8-K2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Mia sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“\nBeurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt nicht.\nDie 8 Würfel können auch in einer Reihe liegen.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.\n8 Würfel ergeben 2 · 2 · 2.",
+     "richtig": false,
+     "fehlvorstellung": "wuerfel-kein-quader"
+    },
+    {
+     "text": "Stimmt.\nJeder Würfelbau ist ein Würfel.",
+     "richtig": false,
+     "fehlvorstellung": "wuerfel-kein-quader"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Lege 8 Würfel in Gedanken in eine lange Reihe.",
+    "beispiel": "Ist das ein Würfel?",
+    "loesungsschritt": "Ein Gegenbeispiel genügt."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    "2 · 2 · 2 = 8"
+   ]
+  },
+  {
+   "id": "6.3.8-K2-M-01",
+   "lernziel": "6.3.8-K2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du kippst den Spielwürfel einmal nach vorne. Gib an, welche Zahl dann oben liegt.",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 2,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Kippen nach rechts kommt die linke Fläche nach oben.",
+    "loesungsschritt": "Links liegt 7 minus die Zahl rechts."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 4,
+     "vorne": 6,
+     "rechts": 5
+    }
+   },
+   "nachweis": [
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 4,
+      "vorne": 6,
+      "rechts": 5
+     },
+     "schritte": [
+      "vorne"
+     ],
+     "frage": "oben",
+     "wert": 1
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-M-02",
+   "lernziel": "6.3.8-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du kippst den Spielwürfel zweimal: nach links, dann nach vorne. Gib an, welche Zahl dann oben liegt.",
+   "loesung": 1,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 4,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kippe Schritt für Schritt und notiere nach jedem Schritt die Zahlen oben, vorne und rechts.",
+    "loesungsschritt": "Gegenüber ergibt immer zusammen 7."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 2,
+     "vorne": 6,
+     "rechts": 4
+    }
+   },
+   "nachweis": [
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 2,
+      "vorne": 6,
+      "rechts": 4
+     },
+     "schritte": [
+      "links",
+      "vorne"
+     ],
+     "frage": "oben",
+     "wert": 1
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-M-03",
+   "lernziel": "6.3.8-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind.",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 9,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 8,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Jeder Turm steht auf dem Boden.",
+    "loesungsschritt": "Bestimme für jeden Turm die Höhe und addiere."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 10
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-M-04",
+   "lernziel": "6.3.8-K2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Würfelbau soll ein großer Würfel aus 3 · 3 · 3 Würfeln werden. Gib an, wie viele Würfel noch fehlen.",
+   "loesung": 12,
+   "typischeFehler": [
+    {
+     "wert": 27,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Der große Würfel hat 27 kleine Würfel.",
+    "loesungsschritt": "Zähle die vorhandenen Würfel im Grundriss und ziehe sie ab."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 3,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "zahlen": [
+       [
+        0,
+        0,
+        3
+       ],
+       [
+        0,
+        1,
+        3
+       ],
+       [
+        2,
+        1,
+        1
+       ],
+       [
+        0,
+        2,
+        3
+       ],
+       [
+        1,
+        2,
+        3
+       ],
+       [
+        2,
+        2,
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 15,
+     "zwischen": true
+    },
+    "3 · 3 · 3 = 27",
+    "27 − 15 = 12"
+   ]
+  },
+  {
+   "id": "6.3.8-K2-M-05",
+   "lernziel": "6.3.8-K2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du kippst den Spielwürfel zweimal: nach hinten, dann nach vorne. Gib an, welche Zahl dann oben liegt.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zweimal in dieselbe Richtung: Die Fläche unten kommt nach oben.",
+    "loesungsschritt": "Hin und zurück: Alles liegt wie vorher."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 3,
+     "vorne": 2,
+     "rechts": 6
+    }
+   },
+   "nachweis": [
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 3,
+      "vorne": 2,
+      "rechts": 6
+     },
+     "schritte": [
+      "hinten",
+      "vorne"
+     ],
+     "frage": "oben",
+     "wert": 3
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-M-06",
+   "lernziel": "6.3.8-K2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ben sagt: „Kippst du einen Spielwürfel viermal nach vorne, liegt wieder dieselbe Zahl oben.“ Beurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt nicht. Nach vier Schritten liegt die Zahl unten oben.",
+     "richtig": false,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "text": "Stimmt. Nach vier Kippschritten hat sich der Würfel einmal ganz gedreht.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt nicht. Es dauert sechs Schritte, bis wieder alles gleich ist.",
+     "richtig": false,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Verfolge die Fläche oben bei jedem Kippschritt.",
+    "loesungsschritt": "Die Fläche wandert: oben, Seite, unten, andere Seite, oben. Nach vier Schritten ist sie wieder oben."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 4,
+     "vorne": 5,
+     "rechts": 1
+    }
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": true
+    },
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 4,
+      "vorne": 5,
+      "rechts": 1
+     },
+     "schritte": [
+      "vorne",
+      "vorne",
+      "vorne",
+      "vorne"
+     ],
+     "frage": "oben",
+     "wert": 4
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-E-01",
+   "lernziel": "6.3.8-K2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du kippst den Spielwürfel dreimal: nach vorne, dann nach hinten, dann nach links. Gib an, welche Zahl dann oben liegt.",
+   "loesung": 6,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Notiere nach jedem Schritt die Zahlen oben, vorne und rechts."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 5,
+     "vorne": 4,
+     "rechts": 6
+    }
+   },
+   "nachweis": [
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 5,
+      "vorne": 4,
+      "rechts": 6
+     },
+     "schritte": [
+      "vorne",
+      "hinten",
+      "links"
+     ],
+     "frage": "oben",
+     "wert": 6
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-E-02",
+   "lernziel": "6.3.8-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "modellieren"
+   ],
+   "format": "zahl",
+   "text": "Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er mindestens hat.",
+   "loesung": 5,
+   "typischeFehler": [
+    {
+     "wert": 4,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "In jeder Spalte braucht ein Turm die Höhe aus dem Aufriss. Auf die anderen Kästchen der Spalte genügt je ein Würfel."
+   },
+   "bild": {
+    "art": "risse",
+    "risse": [
+     {
+      "n": "von oben",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        1,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ]
+      ]
+     },
+     {
+      "n": "von vorne",
+      "b": 3,
+      "h": 2,
+      "zellen": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "1 + 2 + 1 + 1 = 5",
+    {
+     "zahl": 1,
+     "grund": "ein Würfel je Kästchen"
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-E-03",
+   "lernziel": "6.3.8-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind.",
+   "loesung": 16,
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 15,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 14,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bestimme die Höhe jedes Turms. Denk an Türme, die hinter anderen stehen."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      2
+     ],
+     [
+      2,
+      1,
+      3
+     ],
+     [
+      3,
+      1,
+      0
+     ],
+     [
+      3,
+      2,
+      0
+     ],
+     [
+      3,
+      2,
+      1
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 16
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-E-04",
+   "lernziel": "6.3.8-K2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Du kippst den Spielwürfel dreimal: nach links, dann nach vorne, dann nach links. Gib an, welche Zahl dann oben liegt.",
+   "loesung": 4,
+   "typischeFehler": [
+    {
+     "wert": 3,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 6,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Beim Kippen nach rechts kommt die linke Fläche nach oben. Links liegt 7 minus rechts."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 3,
+     "vorne": 2,
+     "rechts": 6
+    }
+   },
+   "nachweis": [
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 3,
+      "vorne": 2,
+      "rechts": 6
+     },
+     "schritte": [
+      "links",
+      "vorne",
+      "links"
+     ],
+     "frage": "oben",
+     "wert": 4
+    }
+   ]
+  },
+  {
+   "id": "6.3.8-K2-E-05",
+   "lernziel": "6.3.8-K2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Der Würfelbau soll ein großer Würfel aus 27 kleinen Würfeln werden. Gib an, wie viele Würfel noch fehlen.",
+   "loesung": 10,
+   "typischeFehler": [
+    {
+     "wert": 18,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 17,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    },
+    {
+     "wert": 11,
+     "fehlvorstellung": "wuerfel-verdeckt"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Zähle zuerst die Würfel im Bild. Jeder Turm steht auf dem Boden."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "wuerfelbau",
+    "wuerfel": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      0,
+      2,
+      2
+     ],
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      2,
+      2,
+      0
+     ],
+     [
+      2,
+      2,
+      1
+     ],
+     [
+      2,
+      2,
+      2
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "wuerfelzahl",
+     "wert": 17,
+     "zwischen": true
+    },
+    "27 − 17 = 10"
+   ]
+  },
+  {
+   "id": "6.3.8-K2-E-06",
+   "lernziel": "6.3.8-K2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Sara sagt: „Ob ich zuerst nach rechts und dann nach vorne kippe oder umgekehrt, ist egal. Oben liegt am Ende dieselbe Zahl.“ Beurteile die Aussage für diesen Spielwürfel.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt nicht. Einmal liegt 2 oben, das andere Mal 6.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt. Beim Kippen kommt es nicht auf die Reihenfolge an.",
+     "richtig": false,
+     "fehlvorstellung": "kippen-richtung"
+    },
+    {
+     "text": "Stimmt. In beiden Fällen liegt 2 oben.",
+     "richtig": false,
+     "fehlvorstellung": "kippen-richtung"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kippe beide Reihenfolgen Schritt für Schritt und vergleiche."
+   },
+   "bild": {
+    "art": "koerper",
+    "form": "quader",
+    "a": 2,
+    "b": 2,
+    "c": 2,
+    "verdeckt": "ohne",
+    "augen": {
+     "oben": 4,
+     "vorne": 5,
+     "rechts": 1
+    }
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false
+    },
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 4,
+      "vorne": 5,
+      "rechts": 1
+     },
+     "schritte": [
+      "rechts",
+      "vorne"
+     ],
+     "frage": "oben",
+     "wert": 2
+    },
+    {
+     "art": "kippen",
+     "start": {
+      "oben": 4,
+      "vorne": 5,
+      "rechts": 1
+     },
+     "schritte": [
+      "vorne",
+      "rechts"
+     ],
+     "frage": "oben",
+     "wert": 6
+    }
+   ]
   }
  ],
  "vorstufe": {

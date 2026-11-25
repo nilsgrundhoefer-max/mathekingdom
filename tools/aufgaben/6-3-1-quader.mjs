@@ -134,7 +134,7 @@ function netzLuecke(netz, fehlt = 1) {
   }, (x) => x.gegeben.length && (fehlt > 1 || x.falsch) && zusammen(x.gegeben));
 }
 import { istWuerfelnetz as istNetz, zusammenhaengend as zusammen } from './6-3-koerper.mjs';
-const netzAufgabe = (n, text, netz, hilfen, fehlt = 1) => {
+export const netzAufgabe = (n, text, netz, hilfen, fehlt = 1) => {
   const l = netzLuecke(netz, fehlt);
   return gitterZellen(text, GT(Math.max(l.b, 6), Math.max(l.h, 5), { zellen: l.gegeben }), l.loesung, l.falsch ? [[[l.falsch], 'netz-nur-gezaehlt']] : [], hilfen,
     { bedingung: { art: 'netz', gegeben: l.gegeben, fehlt }, nachweis: [NETZ('wuerfel')] });

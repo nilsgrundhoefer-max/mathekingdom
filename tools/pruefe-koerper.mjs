@@ -444,6 +444,14 @@ export const KOERPER_SONDER = {
     const formVon = (t, x) => (x.bild ? (x.bild.art === 'netz' ? (netzFalten(x.bild)?.faltbar ? netzFalten(x.bild).form : 'keine') : formVonBild(x.bild)?.form) : formDesGegenstands(t) ?? koerperIn(t)?.form);
     return stufe(optionenVon(a, n), (t, x) => { const f = formVon(t, x); return f == null ? undefined : liste.includes(f); });
   },
+  // Spielwürfelnetz: faltbar, Flächen mit den Zahlen 1 bis 6, gegenüber zusammen 7. Bildkarten oder ein Netz im Bild mit `stimmt`.
+  spielnetz: (n, a) => {
+    const gut = (b) => { const m = seitenNachNamen(b); if (!m || m.size !== 6) return false; return [...m.keys()].every((x) => Number.isInteger(Number(x)) && [...m.keys()].some((y) => gegenueber(m, x, y) && Number(x) + Number(y) === 7)); };
+    const o = optionenVon(a, n);
+    if (o?.some((x) => x.bild)) return stufe(o, (t, x) => (x.bild ? gut(x.bild) : undefined));
+    if (n.stimmt != null && n.stimmt !== gut(a.bild)) return n.stimmt ? 'das Netz ist kein Spielwürfel' : 'das Netz ist doch ein Spielwürfel';
+    return null;
+  },
   // Teile eines Netzes im Bild zählen: Flächen mit `ecken` Ecken (3 Dreiecke, 4 Vierecke), Kreise (`kreise: true`) oder alle Flächen.
   netzteile: (n, a) => {
     const b = a.bild;

@@ -38,7 +38,8 @@ export const QF = (zu, lage) => ({ art: 'quaderflaeche', zu, lage }); // lage: g
 
 // ---------- Körperbilder ----------
 export const quader = (a, b, c, o = {}) => ({ art: 'koerper', form: 'quader', a, b, c, ...o });
-export const wuerfelBild = (a, o = {}) => quader(a, a, a, o);
+// Ein Spielwürfel ist undurchsichtig: Mit Augenzahlen zeichnet das Bild keine verdeckten Kanten (sie liefen sonst durch die Zahl vorne).
+export const wuerfelBild = (a, o = {}) => quader(a, a, a, o.augen ? { verdeckt: 'ohne', ...o } : o);
 // Prismen: dreiseitig liegend wie ein Zelt, sonst stehend. Pyramiden: dreiseitig leicht gedreht, damit man sie räumlich sieht.
 // Drehungen so gewählt, dass keine Seitenfläche fast flach von der Kante her zu sehen ist (geprüft im Bilderbogen).
 export const prisma = (n, o = {}) => (n === 3 && o.liegend !== false ? { art: 'koerper', form: 'prisma', n, r: 1.2, h: 4, liegend: true, ...o } : { art: 'koerper', form: 'prisma', n, r: 1.5, h: n >= 6 ? 2.5 : 3, ...(n === 6 ? { dreh: 10 } : {}), ...o, liegend: undefined });

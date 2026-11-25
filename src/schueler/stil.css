@@ -865,6 +865,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .bildkarte .kartenname { font-weight: 700; color: var(--nacht); }
 #mathekingdom .bildkarte input { position: absolute; opacity: 0; pointer-events: none; }
 #mathekingdom .bildkarte { position: relative; }
+/* Netze mit Zahlen oder Buchstaben brauchen breitere Karten, sonst werden die Zahlen zu klein. */
+#mathekingdom .bildkarten:has(.netzname) { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
 #mathekingdom .bildkarte .kartenname::before { content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 8px; border: 2px solid var(--nacht); border-radius: 50%; vertical-align: -2px; }
 #mathekingdom .bildkarte:has(input[type=checkbox]) .kartenname::before { border-radius: 3px; }
 #mathekingdom .bildkarte:has(input:checked) .kartenname::before { background: var(--nacht); box-shadow: inset 0 0 0 2px #fff; }

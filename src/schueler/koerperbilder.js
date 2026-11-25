@@ -213,7 +213,9 @@ function rundBild(b) {
 export function netzSvg(b, { klein = false } = {}) {
   const punkte = [...(b.flaechen ?? []).flatMap((f) => f.ecken), ...(b.kreise ?? []).flatMap((k) => [[k.m[0] - k.r, k.m[1] - k.r], [k.m[0] + k.r, k.m[1] + k.r]]),
     ...(b.sektoren ?? []).flatMap((k) => { const p = [k.m]; for (let i = 0; i <= 24; i++) { const w = rad(k.von + ((k.bis - k.von) * i) / 24); p.push([k.m[0] + k.r * Math.cos(w), k.m[1] + k.r * Math.sin(w)]); } return p; })];
-  const m = rahmen(punkte, klein ? { breite: 150, hoehe: 120, kmax: 28, rand: 10 } : { breite: 320, hoehe: 240, kmax: 42, rand: 16 });
+  // Kleine Netze mit Namen oder Zahlen (Bildkarten in Kapitel 3.8) bekommen größere Kästchen, damit die Zahlen lesbar bleiben.
+  const mitNamen = (b.flaechen ?? []).some((f) => f.n != null);
+  const m = rahmen(punkte, klein ? (mitNamen ? { breite: 180, hoehe: 140, kmax: 36, rand: 10 } : { breite: 150, hoehe: 120, kmax: 28, rand: 10 }) : { breite: 320, hoehe: 240, kmax: 42, rand: 16 });
   const svg = svgVon(m, `netzbild${klein ? ' klein' : ''}`, beschreibung(b));
   // Karolinien unter dem Netz, eine Linie je Kästchen.
   const xs = punkte.map((p) => p[0]), ys = punkte.map((p) => p[1]);
