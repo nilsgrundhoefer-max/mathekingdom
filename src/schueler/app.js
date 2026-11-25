@@ -1,6 +1,6 @@
 // Schüler-Dashboard: Oberfläche. Die Regeln stehen in logik.js, der Dateizugriff in speicher.js.
 import { pruefePin } from '../gemeinsam/krypto.js';
-import { versionsHinweis, versionstext, VERSION_STIL } from '../gemeinsam/version.js';
+import { versionsHinweis, versionstext, versionsnummer, VERSION_STIL } from '../gemeinsam/version.js';
 import * as P from '../gemeinsam/protokoll.js';
 import * as M from '../gemeinsam/meldungen.js';
 import stil from './stil.css';
@@ -53,6 +53,39 @@ function geaendert() { z.dienst?.markiere(); }
 function notiere(art, text) {
   P.trage((z.stand.betrieb ??= []), { t: jetzt(), art, text }, P.MAX_SCHUELER);
   geaendert();
+}
+// Ein zweites Fenster desselben Schülers erkennen (Version 0.54): Wer angemeldet ist, hält eine Sperre mit seinem Code,
+// solange das Fenster offen ist. Ein zweites Fenster bekommt sie nicht und sagt dem ersten Bescheid, damit es im Protokoll steht.
+async function sichereFenster(code) {
+  if (!navigator.locks?.request) return 'ohne';
+  const kanalName = `mathekingdom-${code}`;
+  const ergebnis = await new Promise((fertig) => {
+    navigator.locks.request(kanalName, { ifAvailable: true }, (sperre) => {
+      if (!sperre) { fertig('besetzt'); return null; }
+      fertig('meins');
+      return new Promise(() => {}); // bis das Fenster zugeht
+    }).catch(() => fertig('ohne'));
+  });
+  if (typeof BroadcastChannel !== 'function') return ergebnis;
+  try {
+    const kanal = new BroadcastChannel(kanalName);
+    if (ergebnis === 'besetzt') { kanal.postMessage({ zweitesFenster: true }); kanal.close(); }
+    else kanal.onmessage = (e) => { if (e.data?.zweitesFenster && z.stand) notiere('problem', 'Ein zweites Fenster mit diesem Code wurde geöffnet und dort gesperrt'); };
+  } catch { /* nur für das Protokoll */ }
+  return ergebnis;
+}
+// Programmfehler ins Betriebsprotokoll (Version 0.54): höchstens 5 je Sitzung, jeder nur einmal.
+const gemeldeteFehler = new Set();
+function meldeProgrammfehler(meldung, stelle) {
+  if (!z.stand || z.ablage?.demo || gemeldeteFehler.size >= 5) return;
+  const text = P.programmfehlerText(meldung, z.ansicht?.name, stelle);
+  if (gemeldeteFehler.has(text)) return;
+  gemeldeteFehler.add(text);
+  notiere('problem', text);
+}
+if (typeof window !== 'undefined') {
+  window.addEventListener('error', (e) => meldeProgrammfehler(e.message, e.filename ? `${e.filename.split('/').at(-1)}:${e.lineno}` : ''));
+  window.addEventListener('unhandledrejection', (e) => meldeProgrammfehler(e.reason?.message ?? String(e.reason), ''));
 }
 // Ein Speicherfehler wird nur beim Wechsel notiert, nicht bei jedem neuen Versuch alle 10 Sekunden.
 function speicherMeldung(status) {
@@ -339,7 +372,18 @@ function anmeldung() {
     onkeydown: (e) => { if (e.key === 'Enter') pinFeld.focus(); } });
   const pinFeld = h('input', { id: 'pin', type: 'password', inputMode: 'numeric', autocomplete: 'off', placeholder: '4 Ziffern', maxLength: 4,
     onkeydown: (e) => { if (e.key === 'Enter') starte(false); } });
+  // Nur eine Anmeldung zur Zeit (Version 0.54): Ein Doppelklick oder Enter und Klick startete sonst zwei Sitzungen,
+  // die gleichzeitig in dieselbe Datei schrieben (InvalidStateError im Betriebsprotokoll vom 25.11.2026).
   const starte = async (demo, anderer = false) => {
+    if (z.anmeldungLaeuft || z.stand) return;
+    z.anmeldungLaeuft = true;
+    for (const k of document.querySelectorAll('section.anmeldung button')) k.disabled = true;
+    try { await starteEinmal(demo, anderer); } finally {
+      z.anmeldungLaeuft = false;
+      for (const k of document.querySelectorAll('section.anmeldung button')) k.disabled = false;
+    }
+  };
+  const starteEinmal = async (demo, anderer) => {
     const gelesen = L.leseCode(eingabe.value);
     if (!gelesen) return zeige({ name: 'anmeldung', code: eingabe.value, fehler: 'Diesen Schülercode gibt es nicht. Er sieht so aus: 5A-K4M2.' });
     const fehler = (text) => zeige({ name: 'anmeldung', code: eingabe.value, fehler: text });
@@ -451,18 +495,29 @@ async function melde({ code, klasse, pin }, ablage) {
     await new Promise((weiter) => setTimeout(weiter, 1500));
     return zeige({ name: 'anmeldung', code, fehler: pin ? 'Die PIN stimmt nicht. Schau auf dein Code-Kärtchen.' : 'Gib auch deine PIN ein. Sie steht auf deinem Code-Kärtchen.' });
   }
+  // Ein zweites Fenster mit demselben Code darf nicht mitschreiben (Version 0.54).
+  if (!ablage.demo && (await sichereFenster(code)) === 'besetzt') {
+    return zeige({ name: 'anmeldung', code, fehler: 'Du bist mit diesem Code schon in einem anderen Fenster angemeldet. Arbeite dort weiter und schließe dieses Fenster.' });
+  }
+  if (z.stand) return; // schon angemeldet
   const geladen = await S.ladeStand(ablage, code);
+  // Endete die vorige Sitzung ordentlich und fehlten der Datei nur ihre letzten Sekunden, ist das kein Problem (Version 0.54).
+  const nurSchluss = geladen.hinweis === 'sicherung-neuer' && geladen.stand.betrieb?.at(-1)?.art === 'ende';
   const offenerPool = M.ohneGesperrte(pool, z.gesperrt);
   Object.assign(z, { ablage, pool: offenerPool, index: L.indexiere(offenerPool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
   const sperrenBeachtet = M.beachteSperren(z.stand, z.gesperrt);
-  z.meldung = geladen.hinweis ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
+  z.meldung = geladen.hinweis && !nurSchluss ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
   z.dienst = S.speicherdienst(ablage, () => z.stand, speicherMeldung);
   if (sperrenBeachtet) z.dienst.markiere();
+  z.sitzungStart = jetzt();
+  z.stand.dashboardVersion = versionsnummer(); // jede Bearbeitung merkt sich ihre Version (Version 0.54)
   if (!ablage.demo) {
+    const vorige = P.vorigeSitzung(z.stand.betrieb);
     const e = P.starteintrag({ t: jetzt(), version: versionstext(), dashboard: window.MK_QUELLE ?? 'ohne-netz', grund: window.MK_GRUND,
       aufgaben: poolQuelle, aufgabenGrund: poolGrund, klassendatei: gelesen.status, browser: P.browserName(navigator.userAgent) });
-    notiere(e.art, e.text);
-    if (geladen.hinweis) notiere('problem', geladen.hinweis === 'datei-fehlte'
+    notiere(e.art, vorige === 'ohne-ende' ? `${e.text}, vorige Sitzung ohne Ende` : e.text);
+    if (nurSchluss) notiere('info', 'Die letzten Sekunden der vorigen Sitzung aus der Sicherung dieses Computers übernommen (Fenster geschlossen, bevor der Klassenordner fertig war)');
+    else if (geladen.hinweis) notiere('problem', geladen.hinweis === 'datei-fehlte'
       ? 'Speicherstand fehlte im Klassenordner, aus der Sicherung dieses Computers wiederhergestellt'
       : 'Speicherstand im Klassenordner war älter als die Sicherung dieses Computers, Sicherung übernommen');
   }
@@ -475,7 +530,12 @@ async function melde({ code, klasse, pin }, ablage) {
   let schlag = 0;
   setInterval(() => { if (z.stand.hilferuf || ++schlag % 3 === 0) takt(); }, 3300);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) takt(); });
-  window.addEventListener('pagehide', () => z.dienst.sofort());
+  // Sitzungsende ins Betriebsprotokoll (Version 0.54). Die Sicherung im Browser wird sofort geschrieben, der Klassenordner so weit es geht.
+  window.addEventListener('pagehide', () => {
+    if (!ablage.demo && !z.endeNotiert) { z.endeNotiert = true; notiere('ende', P.endeText(z.sitzungStart, jetzt())); }
+    z.dienst.zumSchluss();
+  });
+  window.addEventListener('pageshow', (e) => { if (e.persisted && z.endeNotiert) { z.endeNotiert = false; z.sitzungStart = jetzt(); notiere('info', 'Fenster wieder geöffnet'); } });
   zeige({ name: 'schlossgarten' });
 }
 function maleStatus() {

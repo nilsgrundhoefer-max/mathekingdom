@@ -63,19 +63,20 @@ export function falscheTeile(a, eingabe) {
   const zahl = (teil, wert, vor = '') => {
     const n = norm(wert);
     // Kapitel 9: Dezimalzahl als Lösung („0,5“ und „0,50“ sind gleich viel).
-    if (typeof teil.loesung === 'string' && /,/.test(teil.loesung)) { const e = pruefeDezimal(teil, wert); return !n || n === '?' || e.richtig ? [] : [{ text: `${vor}${n}`, erwartet: !!e.fehlvorstellung }]; }
+    if (typeof teil.loesung === 'string' && /,/.test(teil.loesung)) { const e = pruefeDezimal(teil, wert); return !n || n === '?' || e.richtig ? [] : [{ text: `${vor}${n}`, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     if (!n || n === '?' || Number(n) === teil.loesung || n === String(teil.loesung) || (teil.toleranz && Math.abs(Number(n) - teil.loesung) <= teil.toleranz)) return [];
-    return [{ text: `${vor}${n}`, erwartet: (teil.typischeFehler ?? []).some((f) => String(f.wert) === n) }];
+    const f = (teil.typischeFehler ?? []).find((x) => String(x.wert) === n);
+    return [{ text: `${vor}${n}`, erwartet: Boolean(f), ...(f?.fehlvorstellung && { fehlvorstellung: f?.fehlvorstellung }) }];
   };
   switch (a.format) {
     case 'zahl': case 'zahlenstrahl': return zahl(a, eingabe);
     case 'sachaufgabe': case 'diagramm': return a.teile.flatMap((t, i) => (t.optionen
-      ? (Array.isArray(eingabe?.[i]) ? eingabe[i] : []).map((x) => t.optionen.find((o) => o.text === x)).filter((o) => o && !o.richtig).map((o) => ({ text: `${'abcdef'[i]}) ${o.text}`, erwartet: !!o.fehlvorstellung }))
+      ? (Array.isArray(eingabe?.[i]) ? eingabe[i] : []).map((x) => t.optionen.find((o) => o.text === x)).filter((o) => o && !o.richtig).map((o) => ({ text: `${'abcdef'[i]}) ${o.text}`, erwartet: !!o.fehlvorstellung, ...(o.fehlvorstellung && { fehlvorstellung: o.fehlvorstellung }) }))
       : zahl(t, eingabe?.[i], a.teile.length > 1 ? `${'abcdef'[i]}) ` : '')));
     // Kapitel 6: Größe mit Einheit. Erwartet ist ein hinterlegter typischer Fehler oder eine fehlende Einheit.
-    case 'groesse': { const e = pruefeGroesse(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung }]; }
+    case 'groesse': { const e = pruefeGroesse(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     case 'luecken': case 'tabelle': { const n = Object.keys(a.luecken); return n.flatMap((k) => zahl(a.luecken[k], eingabe?.[k], n.length > 1 ? `${k}: ` : '')); }
-    case 'auswahl': return (eingabe ?? []).map((t) => a.optionen.find((o) => o.text === t)).filter((o) => o && !o.richtig).map((o) => ({ text: o.text, erwartet: !!o.fehlvorstellung }));
+    case 'auswahl': return (eingabe ?? []).map((t) => a.optionen.find((o) => o.text === t)).filter((o) => o && !o.richtig).map((o) => ({ text: o.text, erwartet: !!o.fehlvorstellung, ...(o.fehlvorstellung && { fehlvorstellung: o.fehlvorstellung }) }));
     // Kapitel 1: Strichliste und Säulen zeichnen, je falsche Zeile oder Säule.
     case 'strichliste': return a.zeilen.flatMap((z, i) => {
       const m = String(eingabe?.[i] ?? ''), n = [...m].filter((c) => c === 'I' || c === '/').length;
@@ -85,13 +86,13 @@ export function falscheTeile(a, eingabe) {
     case 'zeichnen': return a.diagramm.saeulen.flatMap((sa, i) => (sa.offen && Number(eingabe?.[i]) !== sa.wert ? [{ text: `${sa.name}: ${eingabe?.[i] ?? 0}`, erwartet: false }] : []));
     // Kapitel 2: Reihenfolge der Karten, Zeichenfolge, Schätzung außerhalb des Schätzbereichs.
     case 'ordnen': return Array.isArray(eingabe) && eingabe.join() !== a.loesung.join() ? [{ text: eingabe.join(', '), erwartet: false }] : [];
-    case 'zeichen': { const n = String(eingabe ?? '').replace(/\s/g, '').toUpperCase(); return !n || n === a.loesung ? [] : [{ text: n, erwartet: (a.typischeFehler ?? []).some((f) => f.wert === n) }]; }
+    case 'zeichen': { const n = String(eingabe ?? '').replace(/\s/g, '').toUpperCase(); const f = (a.typischeFehler ?? []).find((x) => x.wert === n); return !n || n === a.loesung ? [] : [{ text: n, erwartet: Boolean(f), ...(f?.fehlvorstellung && { fehlvorstellung: f?.fehlvorstellung }) }]; }
     case 'schaetzen': { const n = Number(norm(eingabe)); return !norm(eingabe) || (n >= a.bereich[0] && n <= a.bereich[1]) ? [] : [{ text: norm(eingabe), erwartet: (a.typischeFehler ?? []).some((f) => n >= f.von && n <= f.bis) }]; }
     // Kapitel 5: Gitterzeichnen. Die Eingabe ist schon ein lesbarer Text aus Punkten.
     case 'gitter': return eingabe ? [{ text: String(eingabe), erwartet: false }] : [];
     // Kapitel 9: Brucheingabe und Teile färben.
-    case 'bruch': { const e = pruefeBruch(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung }]; }
-    case 'faerben': { const e = pruefeFaerben(a, eingabe); return eingabe == null || e.richtig ? [] : [{ text: `${leseTeile(eingabe).length} Teile gefärbt`, erwartet: !!e.fehlvorstellung }]; }
+    case 'bruch': { const e = pruefeBruch(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
+    case 'faerben': { const e = pruefeFaerben(a, eingabe); return eingabe == null || e.richtig ? [] : [{ text: `${leseTeile(eingabe).length} Teile gefärbt`, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     case 'zuordnen': return a.paare.filter((p) => eingabe?.[p.links] && eingabe[p.links] !== p.rechts).map((p) => ({ text: `${p.links} → ${eingabe[p.links]}`, erwartet: false }));
     default: return [];
   }

@@ -10,6 +10,7 @@ const QUELLEN = {
   'ohne-netz': 'Datei ohne Netz, aktualisiert sich nicht',
 };
 
+export const versionsnummer = () => V.nummer;
 export const versionstext = () => `Version ${V.nummer}${V.datum ? ` vom ${V.datum}` : ''}`;
 
 // Liefert immer dasselbe Element, damit es beim Neuzeichnen offen bleibt.

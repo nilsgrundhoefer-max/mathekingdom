@@ -1,5 +1,7 @@
 // Betriebsprotokoll (siehe CONTEXT.md und docs/adr/0013): Woher die Dashboards geladen wurden und was technisch schiefging.
-// Reine Logik ohne Oberfläche und Dateizugriff. Ein Eintrag: { t, art: 'start' | 'problem' | 'ok', text, klasse? }.
+// Reine Logik ohne Oberfläche und Dateizugriff. Ein Eintrag: { t, art, text, klasse? }.
+// Arten: start, problem, ok (wieder ok), ende (Sitzung beendet, Version 0.54), info (kein Problem, Version 0.54),
+// lehrkraft (Handlung von Lehrkraft oder Administrator, etwa eine Münzgabe, Version 0.54).
 
 export const MAX_SCHUELER = 50;
 export const MAX_LEHRER = 200;
@@ -63,7 +65,26 @@ export function sammle(staende, lehrerEintraege, klasse, name) {
   return alle.sort((a, b) => (a.t < b.t ? 1 : a.t > b.t ? -1 : 0));
 }
 
-const ART = { start: 'Start', problem: 'PROBLEM', ok: 'wieder ok' };
+export const ART_TEXT = { start: 'Start', problem: 'Problem', ok: 'wieder ok', ende: 'Ende', info: 'Info', lehrkraft: 'Lehrkraft' };
+const ART = { ...ART_TEXT, problem: 'PROBLEM' };
+
+// Ende einer Sitzung (Version 0.54), etwa „Sitzung beendet nach 23 min“. Ohne Lerndaten (ADR 0013).
+export function endeText(start, ende) {
+  const min = Math.max(0, Math.round((new Date(ende) - new Date(start)) / 60000));
+  return `Sitzung beendet nach ${min} min`;
+}
+// Ob die vorige Sitzung ordentlich endete: 'beendet', 'ohne-ende' oder null, solange es noch kein Ende im Protokoll gibt
+// (Speicherstände von vor Version 0.54 hätten sonst bei jedem ersten Start „ohne Ende“).
+export function vorigeSitzung(betrieb = []) {
+  if (!betrieb.some((e) => e.art === 'ende')) return null;
+  return betrieb.at(-1).art === 'ende' ? 'beendet' : 'ohne-ende';
+}
+
+// Ein Programmfehler in einer Zeile (Version 0.54): Meldung, Ansicht und Stelle, gekürzt.
+export function programmfehlerText(meldung, ansicht, stelle) {
+  const m = String(meldung ?? 'unbekannter Fehler').replace(/\s+/g, ' ').slice(0, 160);
+  return `Programmfehler in der Ansicht „${ansicht ?? '?'}“: ${m}${stelle ? ` (${String(stelle).slice(0, 80)})` : ''}`;
+}
 // Für die Weitergabe, etwa an die Schul-IT: Schüler erscheinen nur mit Code, nie mit Namen.
 // Ohne Klasse (Administrator-Dashboard) steht die Klasse in jeder Zeile.
 export function alsText(eintraege, klasse, jetzt) {

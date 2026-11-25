@@ -149,7 +149,16 @@ export function speicherdienst(ablage, holeStand, melde, intervall = 10000) {
     laeuft = false;
   }
   const takt = setInterval(speichere, intervall);
-  return { markiere() { geaendert = true; }, sofort: speichere, stopp() { clearInterval(takt); } };
+  // Beim Schließen (Version 0.54): Die Sicherung im Browser sofort schreiben, auch wenn gerade gespeichert wird,
+  // dann den Klassenordner versuchen. Der Browser bricht das Schreiben dort beim Schließen oft ab.
+  function zumSchluss() {
+    const stand = holeStand();
+    stand.geaendert = new Date().toISOString();
+    try { localStorage.setItem(SICHERUNG + stand.code, JSON.stringify(stand)); } catch { /* Sicherung ist nur ein Netz */ }
+    geaendert = true;
+    speichere();
+  }
+  return { markiere() { geaendert = true; }, sofort: speichere, zumSchluss, stopp() { clearInterval(takt); } };
 }
 
 // Aufgabenpool: zuerst online, dann die Kopie im Klassenordner, zuletzt die eingebettete Fassung.
