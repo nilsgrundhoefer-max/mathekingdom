@@ -2873,7 +2873,7 @@
        "Über die Ziffern, die sich wiederholen, setzt du einen Strich. Sie heißen Periode.",
        "Ab E: Nicht jede Periode beginnt direkt nach dem Komma: 1⁄6 = 0,16̅."
       ],
-      "beispiel": "1 : 3: 10 : 3 = 3 Rest 1, dann wieder 10 : 3 = 3 Rest 1. Der Rest 1 kommt wieder, also 1⁄3 = 0,3̅.",
+      "beispiel": "Bei 1 : 3 bleibt nach jeder Stelle wieder der Rest 1. Der Rest kommt wieder, also 1⁄3 = 0,3̅.",
       "heft": "Schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, kannst du aufhören."
      },
      "wortspeicher": [
@@ -84279,6 +84279,4860 @@
      "behauptung": "0,08 = 4⁄5"
     }
    ]
+  },
+  {
+   "id": "6.4.6-D1-M-01",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Dividiere schriftlich im Heft: 7 : 8\nGib das Ergebnis als Dezimalzahl ein.",
+   "loesung": "0,875",
+   "typischeFehler": [
+    {
+     "wert": "0,87",
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "wert": "7,8",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 7,
+    "divisor": 8
+   },
+   "nachweis": [
+    "7 : 8 = 0,875"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D1-M-02",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wandle 13⁄16 durch Dividieren in eine Dezimalzahl um.",
+   "loesung": "0,8125",
+   "typischeFehler": [
+    {
+     "wert": "13,16",
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "wert": "0,81",
+     "fehlvorstellung": "runden-abschneiden"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 13,
+    "divisor": 16
+   },
+   "nachweis": [
+    "13⁄16 = 13 : 16 = 0,8125"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-03",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Rechne mit Division.\n3⁄40 = 3 : 40 = {{a}}",
+   "luecken": {
+    "a": {
+     "loesung": "0,075",
+     "typischeFehler": [
+      {
+       "wert": "3,40",
+       "fehlvorstellung": "bruch-als-komma"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 3,
+    "divisor": 40
+   },
+   "nachweis": [
+    "3 : 40 = 0,075"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-04",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wandle 9⁄40 in eine Dezimalzahl um.",
+   "loesung": "0,225",
+   "typischeFehler": [
+    {
+     "wert": "9,40",
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "wert": "2,25",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 9,
+    "divisor": 40
+   },
+   "nachweis": [
+    "9⁄40 = 9 : 40 = 0,225"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-05",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein 7 m langes Band wird in 8 gleich lange Stücke geschnitten.\nGib die Länge eines Stücks an.",
+   "loesung": "0,875",
+   "typischeFehler": [
+    {
+     "wert": "7,8",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "einheit": "m",
+   "division": {
+    "dividend": 7,
+    "divisor": 8
+   },
+   "nachweis": [
+    "7 m : 8 = 0,875 m"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-06",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ali rechnet für 3⁄16: 16 : 3 = 5,3̅\nBeurteile die Rechnung.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt, denn 16 : 3 = 5,3̅.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "text": "Falsch. Es gilt 3⁄16 = 3 : 16 = 0,1875.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 3,
+    "divisor": 16
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "3⁄16 = 5,3̅"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-07",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Dividiere schriftlich im Heft: 9 : 40\nGib das Ergebnis als Dezimalzahl ein.",
+   "loesung": "0,225",
+   "typischeFehler": [
+    {
+     "wert": "0,22",
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "wert": "9,40",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 9,
+    "divisor": 40
+   },
+   "nachweis": [
+    "9 : 40 = 0,225"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D1-M-08",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze die Dezimalzahl zu 3⁄12 an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "0,2",
+     "richtig": false,
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "text": "4",
+     "richtig": false,
+     "fehlvorstellung": "bruch-vertauscht"
+    },
+    {
+     "text": "0,25",
+     "richtig": true
+    },
+    {
+     "text": "3,12",
+     "richtig": false,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 3,
+    "divisor": 12
+   },
+   "nachweis": [
+    "3⁄12 = 3 : 12 = 0,25",
+    {
+     "art": "wert",
+     "wert": "0,25"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-09",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "4 Freunde teilen 11 € gerecht.\nGib an, wie viel Euro jeder bekommt.",
+   "loesung": "2,75",
+   "typischeFehler": [
+    {
+     "wert": "11,4",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "einheit": "€",
+   "division": {
+    "dividend": 11,
+    "divisor": 4
+   },
+   "nachweis": [
+    "11 € : 4 = 2,75 €"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-10",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wandle 13⁄20 durch Dividieren in eine Dezimalzahl um.",
+   "loesung": "0,65",
+   "typischeFehler": [
+    {
+     "wert": "13,20",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an.",
+    "loesungsschritt": "Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab."
+   },
+   "division": {
+    "dividend": 13,
+    "divisor": 20
+   },
+   "nachweis": [
+    "13⁄20 = 13 : 20 = 0,65"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-11",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wandle 2 7⁄8 in eine Dezimalzahl um.",
+   "loesung": "2,875",
+   "typischeFehler": [
+    {
+     "wert": "0,875",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    },
+    {
+     "wert": "2,7",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Ganzen stehen vor dem Komma.",
+    "loesungsschritt": "Dividiere nur den Bruchteil: Zähler geteilt durch Nenner."
+   },
+   "division": {
+    "dividend": 23,
+    "divisor": 8
+   },
+   "nachweis": [
+    "2 7⁄8 = 2 + 7 : 8 = 2,875"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-M-12",
+   "lernziel": "6.4.6-D1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Brüche an, die eine abbrechende Dezimalzahl ergeben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "4⁄9",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "7⁄12",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "5⁄6",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "9⁄12",
+     "richtig": true
+    },
+    {
+     "text": "5⁄16",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze den Bruch zuerst vollständig. Schau dann auf den Nenner.",
+    "loesungsschritt": "Ist der Nenner ein Produkt nur aus Zweien und Fünfen, zum Beispiel 8 = 2 · 2 · 2, geht die Division auf."
+   },
+   "nachweis": [
+    {
+     "art": "abbrechend"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-01",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Dividiere schriftlich im Heft: 15 : 16\nGib das Ergebnis als Dezimalzahl ein.",
+   "loesung": "0,9375",
+   "typischeFehler": [
+    {
+     "wert": "0,937",
+     "fehlvorstellung": "runden-abschneiden"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Hänge so lange Nullen an, bis kein Rest mehr bleibt."
+   },
+   "division": {
+    "dividend": 15,
+    "divisor": 16
+   },
+   "nachweis": [
+    "15 : 16 = 0,9375"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D1-E-02",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wandle 37⁄40 in eine Dezimalzahl um.",
+   "loesung": "0,925",
+   "typischeFehler": [
+    {
+     "wert": "37,40",
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "wert": "0,92",
+     "fehlvorstellung": "runden-abschneiden"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich oder erweitere auf 1000."
+   },
+   "division": {
+    "dividend": 37,
+    "divisor": 40
+   },
+   "nachweis": [
+    "37⁄40 = 37 : 40 = 0,925"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-03",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Ein Sack mit 3 kg Mehl wird auf 8 gleich schwere Tüten verteilt.\nGib das Gewicht einer Tüte in Kilogramm an.",
+   "loesung": "0,375",
+   "typischeFehler": [
+    {
+     "wert": "3,8",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile das Gewicht durch die Anzahl der Tüten."
+   },
+   "einheit": "kg",
+   "division": {
+    "dividend": 3,
+    "divisor": 8
+   },
+   "nachweis": [
+    "3 kg : 8 = 0,375 kg"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-04",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Brüche an, die eine abbrechende Dezimalzahl ergeben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "11⁄25",
+     "richtig": true
+    },
+    {
+     "text": "5⁄12",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "7⁄18",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "21⁄24",
+     "richtig": true
+    },
+    {
+     "text": "3⁄14",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze zuerst vollständig. Nur wenn der Nenner dann aus den Faktoren 2 und 5 besteht, geht die Division auf."
+   },
+   "nachweis": [
+    {
+     "art": "abbrechend"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-05",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Ergänze die fehlende Zahl.\n{{a}} : 16 = 0,4375",
+   "luecken": {
+    "a": {
+     "loesung": 7,
+     "typischeFehler": [
+      {
+       "wert": 70,
+       "fehlvorstellung": "dezimal-stelle"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne rückwärts: 0,4375 · 16."
+   },
+   "nachweis": [
+    "0,4375 · 16 = 7"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-06",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Paul rechnet 3 : 8 = 0,3 und hört auf.\nBeurteile die Rechnung und begründe.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt, denn eine Stelle nach dem Komma reicht.",
+     "richtig": false,
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "text": "Falsch. Es bleibt ein Rest. Es gilt 3 : 8 = 0,375.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe: Nimm das Ergebnis mal den Divisor. Kommt der Dividend heraus?"
+   },
+   "division": {
+    "dividend": 3,
+    "divisor": 8
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "3 : 8 = 0,3"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-07",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Dividiere schriftlich im Heft: 21 : 40\nGib das Ergebnis als Dezimalzahl ein.",
+   "loesung": "0,525",
+   "typischeFehler": [
+    {
+     "wert": "0,52",
+     "fehlvorstellung": "runden-abschneiden"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Hänge so lange Nullen an, bis kein Rest mehr bleibt."
+   },
+   "division": {
+    "dividend": 21,
+    "divisor": 40
+   },
+   "nachweis": [
+    "21 : 40 = 0,525"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D1-E-08",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Zahlen der Größe nach.\nBeginne mit der kleinsten Zahl.",
+   "karten": [
+    "11⁄25",
+    "9⁄20",
+    "0,4",
+    "0,4375"
+   ],
+   "loesung": [
+    "0,4",
+    "0,4375",
+    "11⁄25",
+    "9⁄20"
+   ],
+   "hilfen": {
+    "tipp": "Wandle die Brüche durch Dividieren in Dezimalzahlen um."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "dezimal-mehr-ziffern"
+  },
+  {
+   "id": "6.4.6-D1-E-09",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "8 Kinder teilen 9,60 € gerecht.\nGib an, wie viel Euro jedes Kind bekommt.",
+   "loesung": "1,20",
+   "typischeFehler": [
+    {
+     "wert": 12,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere wie bei natürlichen Zahlen. Setze das Komma, wenn du das Komma im Dividenden überschreitest."
+   },
+   "einheit": "€",
+   "nachweis": [
+    "9,60 € : 8 = 1,20 €"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-10",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Ein Bruch ist vollständig gekürzt.\nKreuze die Aussage an, die immer stimmt.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn der Nenner gerade ist.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn sich sein Nenner durch Erweitern zu einer Zehnerpotenz machen lässt.",
+     "richtig": true
+    },
+    {
+     "text": "Er ergibt immer eine abbrechende Dezimalzahl.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe jede Aussage an Beispielen wie Sechsteln, Achteln und Zwölfteln."
+   },
+   "nachweis": [
+    {
+     "art": "frei",
+     "grund": "Regel für abbrechende Dezimalzahlen"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-11",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Wandle 10⁄16 in eine Dezimalzahl um.",
+   "loesung": "0,625",
+   "typischeFehler": [
+    {
+     "wert": "10,16",
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze zuerst. Dann ist die Division kürzer."
+   },
+   "division": {
+    "dividend": 5,
+    "divisor": 8
+   },
+   "nachweis": [
+    "10⁄16 = 5⁄8 = 5 : 8 = 0,625"
+   ]
+  },
+  {
+   "id": "6.4.6-D1-E-12",
+   "lernziel": "6.4.6-D1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Ergänze den Zähler.\n{{a}}⁄16 = 0,3125",
+   "luecken": {
+    "a": {
+     "loesung": 5,
+     "typischeFehler": [
+      {
+       "wert": 3125,
+       "fehlvorstellung": "bruch-als-komma"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Rechne rückwärts: 0,3125 · 16."
+   },
+   "nachweis": [
+    "0,3125 · 16 = 5"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-01",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Dividiere schriftlich im Heft: 7 : 9\nGib das Ergebnis mit Periode ein.",
+   "loesung": "0,7̅",
+   "typischeFehler": [
+    {
+     "wert": "0,7",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,77",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 7,
+    "divisor": 9
+   },
+   "nachweis": [
+    "7 : 9 = 0,7̅"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D2-M-02",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 8⁄9 in eine Dezimalzahl um.",
+   "loesung": "0,8̅",
+   "typischeFehler": [
+    {
+     "wert": "0,8",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,88",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 8,
+    "divisor": 9
+   },
+   "nachweis": [
+    "8⁄9 = 8 : 9 = 0,8̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-03",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 3⁄11 in eine Dezimalzahl um.",
+   "loesung": "0,2̅7̅",
+   "typischeFehler": [
+    {
+     "wert": "0,2",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,2727",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,2̅",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 3,
+    "divisor": 11
+   },
+   "nachweis": [
+    "3⁄11 = 3 : 11 = 0,2̅7̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-04",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 1⁄6 in eine Dezimalzahl um.",
+   "loesung": "0,16̅",
+   "typischeFehler": [
+    {
+     "wert": "0,16",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,166",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,1̅6̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 1,
+    "divisor": 6
+   },
+   "nachweis": [
+    "1⁄6 = 1 : 6 = 0,16̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-05",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 7⁄15 in eine Dezimalzahl um.",
+   "loesung": "0,46̅",
+   "typischeFehler": [
+    {
+     "wert": "0,46",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,466",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,4̅6̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 7,
+    "divisor": 15
+   },
+   "nachweis": [
+    "7⁄15 = 7 : 15 = 0,46̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-06",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ida schreibt: 1⁄3 = 0,33\nBeurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 1⁄3 = 0,3̅.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt, denn 0,33 ist fast 1⁄3.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 1,
+    "divisor": 3
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "1⁄3 = 0,33"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-07",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Dividiere schriftlich im Heft: 8 : 15\nGib das Ergebnis mit Periode ein.",
+   "loesung": "0,53̅",
+   "typischeFehler": [
+    {
+     "wert": "0,53",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,533",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,5̅3̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 8,
+    "divisor": 15
+   },
+   "nachweis": [
+    "8 : 15 = 0,53̅"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D2-M-08",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze die richtige Schreibweise für 7⁄11 an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "0,63̅",
+     "richtig": false,
+     "fehlvorstellung": "periode-zu-frueh"
+    },
+    {
+     "text": "0,6̅3̅",
+     "richtig": true
+    },
+    {
+     "text": "0,6̅",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "0,63",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 7,
+    "divisor": 11
+   },
+   "nachweis": [
+    "7 : 11 = 0,6̅3̅",
+    {
+     "art": "wert",
+     "wert": "0,6̅3̅"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-09",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "2 Pizzen werden gerecht auf 3 Kinder verteilt.\nGib den Anteil für ein Kind als Dezimalzahl an.",
+   "loesung": "0,6̅",
+   "typischeFehler": [
+    {
+     "wert": "0,6",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,66",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 2,
+    "divisor": 3
+   },
+   "nachweis": [
+    "2 : 3 = 0,6̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-10",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 4⁄15 in eine Dezimalzahl um.",
+   "loesung": "0,26̅",
+   "typischeFehler": [
+    {
+     "wert": "0,26",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,266",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,2̅6̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 4,
+    "divisor": 15
+   },
+   "nachweis": [
+    "4⁄15 = 4 : 15 = 0,26̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-11",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 2 1⁄6 in eine Dezimalzahl um.",
+   "loesung": "2,16̅",
+   "typischeFehler": [
+    {
+     "wert": "2,16",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "2,166",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "2,1̅6̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    },
+    {
+     "wert": "0,16̅",
+     "fehlvorstellung": "bruch-ganzes-teil"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Ganzen stehen vor dem Komma.",
+    "loesungsschritt": "Dividiere den Bruchteil schriftlich und achte auf die Reste."
+   },
+   "division": {
+    "dividend": 13,
+    "divisor": 6
+   },
+   "nachweis": [
+    "2 1⁄6 = 2 + 1 : 6 = 2,16̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-M-12",
+   "lernziel": "6.4.6-D2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Noah schreibt: 7⁄12 = 0,5̅8̅3̅\nBeurteile die Schreibweise.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 7⁄12 = 0,583̅.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt, denn 7 : 12 = 0,5̅8̅3̅.",
+     "richtig": false,
+     "fehlvorstellung": "periode-zu-frueh"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern.",
+    "loesungsschritt": "Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld."
+   },
+   "division": {
+    "dividend": 7,
+    "divisor": 12
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "7⁄12 = 0,5̅8̅3̅"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-01",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Dividiere schriftlich im Heft: 1 : 13\nGib das Ergebnis mit Periode ein.",
+   "loesung": "0,0̅7̅6̅9̅2̅3̅",
+   "typischeFehler": [
+    {
+     "wert": "0,076923076923",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe jeden Rest auf. Beim Teilen durch 13 gibt es höchstens 12 verschiedene Reste."
+   },
+   "division": {
+    "dividend": 1,
+    "divisor": 13
+   },
+   "nachweis": [
+    "1 : 13 = 0,0̅7̅6̅9̅2̅3̅"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D2-E-02",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 6⁄7 in eine Dezimalzahl um.",
+   "loesung": "0,8̅5̅7̅1̅4̅2̅",
+   "typischeFehler": [
+    {
+     "wert": "0,8",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,857142857142",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Periode kann lang sein. Höre erst auf, wenn ein Rest zum zweiten Mal kommt."
+   },
+   "division": {
+    "dividend": 6,
+    "divisor": 7
+   },
+   "nachweis": [
+    "6⁄7 = 6 : 7 = 0,8̅5̅7̅1̅4̅2̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-03",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 7⁄30 in eine Dezimalzahl um.",
+   "loesung": "0,23̅",
+   "typischeFehler": [
+    {
+     "wert": "0,23",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,233",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,2̅3̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Nicht jede Periode beginnt direkt nach dem Komma."
+   },
+   "division": {
+    "dividend": 7,
+    "divisor": 30
+   },
+   "nachweis": [
+    "7⁄30 = 7 : 30 = 0,23̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-04",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Brüche an, die eine periodische Dezimalzahl ergeben.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "6⁄30",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "3⁄20",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "7⁄28",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "5⁄18",
+     "richtig": true
+    },
+    {
+     "text": "2⁄21",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Kürze zuerst vollständig. Hat der Nenner dann einen anderen Teiler als 2 und 5, ist die Dezimalzahl periodisch."
+   },
+   "nachweis": [
+    {
+     "art": "abbrechend",
+     "periodisch": true
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-05",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Gib den Bruch mit dem Nenner 9 an, der 0,5̅ ist.",
+   "loesung": "5⁄9",
+   "typischeFehler": [
+    {
+     "wert": "5⁄10",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "9⁄5",
+     "fehlvorstellung": "bruch-vertauscht"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere Neuntel und schau dir die Muster an: 1 : 9, 2 : 9, 3 : 9."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "0,5̅ = 5⁄9"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-06",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Elif sagt: „1⁄7 = 0,1428. Die Division geht auf.“\nBeurteile die Aussage und begründe.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "Stimmt, denn 0,1428 hat vier Stellen.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "Falsch. Der Rest kommt wieder. Es gilt 1⁄7 = 0,1̅4̅2̅8̅5̅7̅.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prüfe den Rest nach der vierten Stelle. Ist er 0?"
+   },
+   "division": {
+    "dividend": 1,
+    "divisor": 7
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "1⁄7 = 0,1428"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-07",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Dividiere schriftlich im Heft: 13 : 30\nGib das Ergebnis mit Periode ein.",
+   "loesung": "0,43̅",
+   "typischeFehler": [
+    {
+     "wert": "0,43",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,433",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,4̅3̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Achte darauf, ab welchem Rest sich die Ziffern wiederholen."
+   },
+   "division": {
+    "dividend": 13,
+    "divisor": 30
+   },
+   "nachweis": [
+    "13 : 30 = 0,43̅"
+   ],
+   "heftaufgabe": true
+  },
+  {
+   "id": "6.4.6-D2-E-08",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das passende Zeichen an.\n0,8̅ ▢ 0,88",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": ">",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die periodische Zahl mit vielen Stellen aus. Vergleiche dann Stelle für Stelle."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "0,8̅",
+     "rechts": "0,88"
+    }
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-09",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Zahlen der Größe nach.\nBeginne mit der kleinsten Zahl.",
+   "karten": [
+    "0,34",
+    "0,33",
+    "0,3̅",
+    "0,3̅4̅"
+   ],
+   "loesung": [
+    "0,33",
+    "0,3̅",
+    "0,34",
+    "0,3̅4̅"
+   ],
+   "hilfen": {
+    "tipp": "Schreibe jede Zahl mit sechs Stellen nach dem Komma aus. Vergleiche dann."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "periode-abgebrochen"
+  },
+  {
+   "id": "6.4.6-D2-E-10",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Es gilt: 0,1̅ = 1⁄9.\nGib 0,4̅ als vollständig gekürzten Bruch an.",
+   "loesung": "4⁄9",
+   "typischeFehler": [
+    {
+     "wert": "4⁄10",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "0,4̅ ist 4-mal so groß wie 0,1̅."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "0,4̅ = 4 · 0,1̅ = 4⁄9"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-11",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "2 Pizzen werden gerecht auf 11 Kinder verteilt.\nGib den Anteil für ein Kind als Dezimalzahl an.",
+   "loesung": "0,1̅8̅",
+   "typischeFehler": [
+    {
+     "wert": "0,1",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,1818",
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Teile die Pizzen durch die Anzahl der Kinder. Achte auf die Reste."
+   },
+   "division": {
+    "dividend": 2,
+    "divisor": 11
+   },
+   "nachweis": [
+    "2 : 11 = 0,1̅8̅"
+   ]
+  },
+  {
+   "id": "6.4.6-D2-E-12",
+   "lernziel": "6.4.6-D2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "periode",
+   "text": "Wandle 1⁄22 in eine Dezimalzahl um.",
+   "loesung": "0,04̅5̅",
+   "typischeFehler": [
+    {
+     "wert": "0,04",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,04545",
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "wert": "0,0̅4̅5̅",
+     "fehlvorstellung": "periode-zu-frueh"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Erst nach der ersten Stelle beginnt die Periode. Prüfe die Reste genau."
+   },
+   "division": {
+    "dividend": 1,
+    "divisor": 22
+   },
+   "nachweis": [
+    "1⁄22 = 1 : 22 = 0,04̅5̅"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-F-01",
+   "lernziel": "6.4.7-P1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das Feld mit 25 % an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Feld C",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "Feld B",
+     "richtig": true
+    },
+    {
+     "text": "Feld A",
+     "richtig": false
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Hunderterfeld hat 100 Felder. Ein Feld ist 1 %.",
+    "beispiel": "25 % heißt: 25 von 100 Feldern.",
+    "loesungsschritt": "Zähle die gefärbten Felder. So viel Prozent sind es."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34
+      ],
+      "n": "A"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24
+      ],
+      "n": "B"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       67,
+       68,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74
+      ],
+      "n": "C"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "25⁄100"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-F-02",
+   "lernziel": "6.4.7-P1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Gib an, wie viel Prozent gefärbt sind.",
+   "loesung": 30,
+   "typischeFehler": [
+    {
+     "wert": 70,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Hunderterfeld hat 100 Felder. Ein Feld ist 1 %.",
+    "beispiel": "25 % heißt: 25 von 100 Feldern.",
+    "loesungsschritt": "Zähle die gefärbten Felder. So viel Prozent sind es."
+   },
+   "einheit": "%",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "30⁄100",
+     "form": true
+    },
+    "30⁄100 = 30 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-F-03",
+   "lernziel": "6.4.7-P1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 20 % als Bruch.\nKürze so weit wie möglich.",
+   "loesung": "1⁄5",
+   "typischeFehler": [
+    {
+     "wert": "20⁄10",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "1⁄20",
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Hunderterfeld hat 100 Felder. Ein Feld ist 1 %.",
+    "beispiel": "25 % heißt: 25 von 100 Feldern.",
+    "loesungsschritt": "Zähle die gefärbten Felder. So viel Prozent sind es."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "20 % = 20⁄100",
+    {
+     "art": "umformen",
+     "von": "20⁄100",
+     "nach": "1⁄5",
+     "mit": 20,
+     "wie": "kuerzen",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-F-04",
+   "lernziel": "6.4.7-P1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schreibe 25 % als Dezimalzahl.",
+   "loesung": "0,25",
+   "typischeFehler": [
+    {
+     "wert": "2,5",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": 25,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Hunderterfeld hat 100 Felder. Ein Feld ist 1 %.",
+    "beispiel": "25 % heißt: 25 von 100 Feldern.",
+    "loesungsschritt": "Zähle die gefärbten Felder. So viel Prozent sind es."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "25 % = 25⁄100 = 0,25"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-F-05",
+   "lernziel": "6.4.7-P1",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze an, wie viel Prozent 3⁄4 sind.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "75 %",
+     "richtig": true
+    },
+    {
+     "text": "4 %",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "3 %",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Das Hunderterfeld hat 100 Felder. Ein Feld ist 1 %.",
+    "beispiel": "25 % heißt: 25 von 100 Feldern.",
+    "loesungsschritt": "Zähle die gefärbten Felder. So viel Prozent sind es."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       67,
+       68,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄4",
+     "nach": "75⁄100",
+     "mit": 25,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "75⁄100 = 75 %",
+    {
+     "art": "wert",
+     "wert": "75 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-F-06",
+   "lernziel": "6.4.7-P1",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zuordnen",
+   "text": "Ordne jeder Zahl die passende Dezimalzahl zu.",
+   "paare": [
+    {
+     "links": "50 %",
+     "rechts": "0,5"
+    },
+    {
+     "links": "25 %",
+     "rechts": "0,25"
+    },
+    {
+     "links": "75 %",
+     "rechts": "0,75"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel.",
+    "beispiel": "25 % = 25⁄100 = 0,25.",
+    "loesungsschritt": "Schreibe die Zahl vor dem Zeichen % als Hundertstel mit Komma."
+   },
+   "daten": {
+    "kopf": [
+     "Prozent",
+     "Hundertstel",
+     "Dezimalzahl"
+    ],
+    "zeilen": [
+     [
+      "1 %",
+      "1⁄100",
+      "0,01"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "paare"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-G-01",
+   "lernziel": "6.4.7-P1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das Feld mit 35 % an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Feld B",
+     "richtig": false
+    },
+    {
+     "text": "Feld A",
+     "richtig": false,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    },
+    {
+     "text": "Feld C",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100.",
+    "beispiel": "7⁄20 = 35⁄100 = 35 %.",
+    "loesungsschritt": "Der Zähler mit dem Nenner 100 ist die Prozentzahl."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64
+      ],
+      "n": "A"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52
+      ],
+      "n": "B"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34
+      ],
+      "n": "C"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "figurwahl",
+     "bruch": "35⁄100"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-G-02",
+   "lernziel": "6.4.7-P1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Gib an, wie viel Prozent des Hunderterfelds weiß sind.",
+   "loesung": 55,
+   "typischeFehler": [
+    {
+     "wert": 45,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100.",
+    "beispiel": "7⁄20 = 35⁄100 = 35 %.",
+    "loesungsschritt": "Der Zähler mit dem Nenner 100 ist die Prozentzahl."
+   },
+   "einheit": "%",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "bild",
+     "bruch": "55⁄100",
+     "form": true,
+     "rest": true
+    },
+    "55⁄100 = 55 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-G-03",
+   "lernziel": "6.4.7-P1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 13⁄50 in Prozent an.",
+   "loesung": 26,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "wert": 50,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100.",
+    "beispiel": "7⁄20 = 35⁄100 = 35 %.",
+    "loesungsschritt": "Der Zähler mit dem Nenner 100 ist die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "13⁄50",
+     "nach": "26⁄100",
+     "mit": 2,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "26⁄100 = 26 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-G-04",
+   "lernziel": "6.4.7-P1",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Gib 0,03 in Prozent an.",
+   "loesung": 3,
+   "typischeFehler": [
+    {
+     "wert": 30,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "0,3",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100.",
+    "beispiel": "7⁄20 = 35⁄100 = 35 %.",
+    "loesungsschritt": "Der Zähler mit dem Nenner 100 ist die Prozentzahl."
+   },
+   "einheit": "%",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "0,03 = 3⁄100 = 3 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-G-05",
+   "lernziel": "6.4.7-P1",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "In der Klasse sind 25 Kinder.\n14 Kinder kommen mit dem Rad.\nGib den Anteil in Prozent an.",
+   "loesung": 56,
+   "typischeFehler": [
+    {
+     "wert": 14,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "wert": 11,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100.",
+    "beispiel": "7⁄20 = 35⁄100 = 35 %.",
+    "loesungsschritt": "Der Zähler mit dem Nenner 100 ist die Prozentzahl."
+   },
+   "einheit": "%",
+   "daten": {
+    "kopf": [
+     "Schulweg",
+     "Kinder"
+    ],
+    "zeilen": [
+     [
+      "Rad",
+      "14"
+     ],
+     [
+      "anders",
+      "11"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "14⁄25",
+     "nach": "56⁄100",
+     "mit": 4,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "56⁄100 = 56 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-G-06",
+   "lernziel": "6.4.7-P1",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Noah sagt: „4⁄5 = 4 %“\nBeurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt, denn der Zähler ist 4.",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "Falsch.\nEs gilt 4⁄5 = 80⁄100 = 80 %.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100.",
+    "beispiel": "7⁄20 = 35⁄100 = 35 %.",
+    "loesungsschritt": "Der Zähler mit dem Nenner 100 ist die Prozentzahl."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       67,
+       68,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74,
+       75,
+       76,
+       77,
+       78,
+       79
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "4⁄5 = 4 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-M-01",
+   "lernziel": "6.4.7-P1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 1,5 in Prozent an.",
+   "loesung": 150,
+   "typischeFehler": [
+    {
+     "wert": 15,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %.",
+    "loesungsschritt": "Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    "1,5 = 150⁄100 = 150 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-M-02",
+   "lernziel": "6.4.7-P1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 27⁄20 in Prozent an.",
+   "loesung": 135,
+   "typischeFehler": [
+    {
+     "wert": 27,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "wert": 65,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %.",
+    "loesungsschritt": "Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "27⁄20",
+     "nach": "135⁄100",
+     "mit": 5,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "135⁄100 = 135 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-M-03",
+   "lernziel": "6.4.7-P1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 13⁄25 in Prozent an.",
+   "loesung": 52,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %.",
+    "loesungsschritt": "Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "13⁄25",
+     "nach": "52⁄100",
+     "mit": 4,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "52⁄100 = 52 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-M-04",
+   "lernziel": "6.4.7-P1",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Schreibe 135 % als Dezimalzahl.",
+   "loesung": "1,35",
+   "typischeFehler": [
+    {
+     "wert": "13,5",
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "wert": "0,135",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %.",
+    "loesungsschritt": "Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl."
+   },
+   "nachweis": [
+    "135 % = 135⁄100 = 1,35"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-M-05",
+   "lernziel": "6.4.7-P1",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Die Stände auf dem Burgmarkt: Ein Händler hat 50 Säcke Waren.\n24 Säcke sind schon verkauft.\nGib den verkauften Anteil in Prozent an.",
+   "loesung": 48,
+   "typischeFehler": [
+    {
+     "wert": 24,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "wert": 52,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %.",
+    "loesungsschritt": "Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "24⁄50",
+     "nach": "48⁄100",
+     "mit": 2,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "48⁄100 = 48 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-M-06",
+   "lernziel": "6.4.7-P1",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Paul sagt: „2,5 = 25 %“\nPaul meint: Mehr als 100 % gibt es nicht.\nBeurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch. Es gilt 2,5 = 250⁄100 = 250 %.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "Falsch. Es gilt 2,5 = 2500 %.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "Stimmt, denn 100 % ist das Ganze.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %.",
+    "loesungsschritt": "Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "2,5 = 25 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-E-01",
+   "lernziel": "6.4.7-P1",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 3⁄8 in Prozent an.",
+   "loesung": "37,5",
+   "typischeFehler": [
+    {
+     "wert": 37,
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "wert": 3,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle zuerst in eine Dezimalzahl um. Die Hundertstel und alles danach ergeben die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "3⁄8",
+     "nach": "375⁄1000",
+     "mit": 125,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "375⁄1000 = 0,375 = 37,5 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P1-E-02",
+   "lernziel": "6.4.7-P1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 1⁄6 in Prozent an.\nRunde auf Zehntel Prozent.",
+   "loesung": "16,7",
+   "typischeFehler": [
+    {
+     "wert": "16,6",
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere den Zähler durch den Nenner. Die Dezimalzahl ist periodisch, deshalb rundest du."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "runden",
+     "zahl": "1⁄6",
+     "stelle": 1,
+     "ergebnis": "16,7 %",
+     "einheit": "%"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-E-03",
+   "lernziel": "6.4.7-P1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das passende Zeichen an.\n1⁄3 ▢ 33 %",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": ">",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle beide Angaben in Dezimalzahlen um. Vergleiche dann."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "1⁄3",
+     "rechts": "33 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-E-04",
+   "lernziel": "6.4.7-P1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Anteile der Größe nach.\nBeginne mit dem kleinsten Anteil.",
+   "karten": [
+    "3⁄8",
+    "1⁄3",
+    "36 %",
+    "0,35"
+   ],
+   "loesung": [
+    "1⁄3",
+    "0,35",
+    "36 %",
+    "3⁄8"
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Anteile als Dezimalzahl mit drei Stellen."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "prozent-als-zaehler"
+  },
+  {
+   "id": "6.4.7-P1-E-05",
+   "lernziel": "6.4.7-P1",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 1⁄3 in Prozent an.\nRunde auf ganze Prozent.",
+   "loesung": 33,
+   "typischeFehler": [
+    {
+     "wert": 32,
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "wert": 1,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere und runde auf Hundertstel. Die Hundertstel sind die Prozentzahl."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "runden",
+     "zahl": "1⁄3",
+     "stelle": 0,
+     "ergebnis": "33 %",
+     "einheit": "%"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P1-E-06",
+   "lernziel": "6.4.7-P1",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 62,5 % als vollständig gekürzten Bruch.",
+   "loesung": "5⁄8",
+   "typischeFehler": [
+    {
+     "wert": "625⁄100",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe die Prozentangabe als Dezimalzahl mit drei Stellen. Kürze dann den Zehnerbruch."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "62,5 % = 625⁄1000",
+    {
+     "art": "umformen",
+     "von": "625⁄1000",
+     "nach": "5⁄8",
+     "mit": 125,
+     "wie": "kuerzen",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-F-01",
+   "lernziel": "6.4.7-P2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Schreibe 1⁄10 auf zwei Arten.\n1⁄10 = {{a}} = {{b}} %",
+   "luecken": {
+    "a": {
+     "loesung": "0,1",
+     "typischeFehler": [
+      {
+       "wert": "1,10",
+       "fehlvorstellung": "bruch-als-komma"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 10,
+     "typischeFehler": [
+      {
+       "wert": 1,
+       "fehlvorstellung": "prozent-als-zaehler"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein.",
+    "beispiel": "1⁄2 = 0,5 = 50 %.",
+    "loesungsschritt": "Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "1⁄10",
+     "nach": "10⁄100",
+     "mit": 10,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "10⁄100 = 0,1 = 10 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-F-02",
+   "lernziel": "6.4.7-P2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "probleme-loesen",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Feld A zeigt 30 %.\nFeld B zeigt 1⁄4.\nKreuze den größeren Anteil an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "1⁄4",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "30 %",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein.",
+    "beispiel": "1⁄2 = 0,5 = 50 %.",
+    "loesungsschritt": "Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29
+      ],
+      "n": "A"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24
+      ],
+      "n": "B"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-F-03",
+   "lernziel": "6.4.7-P2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zuordnen",
+   "text": "Ordne jedem Bruch die passende Zahl in Prozent zu.",
+   "paare": [
+    {
+     "links": "1⁄4",
+     "rechts": "25 %"
+    },
+    {
+     "links": "1⁄10",
+     "rechts": "10 %"
+    },
+    {
+     "links": "1⁄5",
+     "rechts": "20 %"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein.",
+    "beispiel": "1⁄2 = 0,5 = 50 %.",
+    "loesungsschritt": "Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen."
+   },
+   "daten": {
+    "kopf": [
+     "Bruch",
+     "Hundertstel",
+     "Prozent"
+    ],
+    "zeilen": [
+     [
+      "1⁄2",
+      "50⁄100",
+      "50 %"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "paare"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-F-04",
+   "lernziel": "6.4.7-P2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "zahl",
+   "text": "Schreibe 0,2 in Prozent.",
+   "loesung": 20,
+   "typischeFehler": [
+    {
+     "wert": 2,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein.",
+    "beispiel": "1⁄2 = 0,5 = 50 %.",
+    "loesungsschritt": "Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen."
+   },
+   "einheit": "%",
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "0,2 = 20⁄100 = 20 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-F-05",
+   "lernziel": "6.4.7-P2",
+   "niveau": "F",
+   "afb": 2,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Lena sagt: „0,3 = 3 %“\nBeurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt, denn nach dem Komma steht 3.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "Falsch.\nEs gilt 0,3 = 30⁄100 = 30 %.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein.",
+    "beispiel": "1⁄2 = 0,5 = 50 %.",
+    "loesungsschritt": "Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "0,3 = 3 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-F-06",
+   "lernziel": "6.4.7-P2",
+   "niveau": "F",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "ordnen",
+   "text": "Die Felder A, B und C zeigen die Zahlen.\nOrdne die Zahlen der Größe nach.\nBeginne mit der kleinsten Zahl.",
+   "karten": [
+    "25 %",
+    "1⁄2",
+    "0,1"
+   ],
+   "loesung": [
+    "0,1",
+    "25 %",
+    "1⁄2"
+   ],
+   "hilfen": {
+    "tipp": "Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein.",
+    "beispiel": "1⁄2 = 0,5 = 50 %.",
+    "loesungsschritt": "Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49
+      ],
+      "n": "A"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24
+      ],
+      "n": "B"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "n": "C"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "prozent-als-zaehler"
+  },
+  {
+   "id": "6.4.7-P2-G-01",
+   "lernziel": "6.4.7-P2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "luecken",
+   "text": "Schreibe 21⁄50 auf drei Arten.\n21⁄50 = {{a}}⁄100 = {{b}} = {{c}} %",
+   "luecken": {
+    "a": {
+     "loesung": 42,
+     "typischeFehler": [
+      {
+       "wert": 21,
+       "fehlvorstellung": "erweitern-nur-ein-teil"
+      }
+     ]
+    },
+    "b": {
+     "loesung": "0,42",
+     "typischeFehler": [
+      {
+       "wert": "21,50",
+       "fehlvorstellung": "bruch-als-komma"
+      }
+     ]
+    },
+    "c": {
+     "loesung": 42,
+     "typischeFehler": [
+      {
+       "wert": 21,
+       "fehlvorstellung": "prozent-als-zaehler"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.",
+    "beispiel": "2⁄5 = 40⁄100 = 0,4 = 40 %.",
+    "loesungsschritt": "Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "21⁄50",
+     "nach": "42⁄100",
+     "mit": 2,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "42⁄100 = 0,42 = 42 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-G-02",
+   "lernziel": "6.4.7-P2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "probleme-loesen",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze den größten Anteil an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "2⁄5",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "42 %",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "0,45",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.",
+    "beispiel": "2⁄5 = 40⁄100 = 0,4 = 40 %.",
+    "loesungsschritt": "Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39
+      ],
+      "n": "A"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44
+      ],
+      "n": "B"
+     },
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41
+      ],
+      "n": "C"
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-G-03",
+   "lernziel": "6.4.7-P2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "20 Kinder nennen ihr Lieblingsfach.\nGib den Anteil für Sport in Prozent an.",
+   "loesung": 25,
+   "typischeFehler": [
+    {
+     "wert": 5,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.",
+    "beispiel": "2⁄5 = 40⁄100 = 0,4 = 40 %.",
+    "loesungsschritt": "Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel."
+   },
+   "einheit": "%",
+   "daten": {
+    "kopf": [
+     "Fach",
+     "Kinder"
+    ],
+    "zeilen": [
+     [
+      "Sport",
+      "5"
+     ],
+     [
+      "Mathe",
+      "6"
+     ],
+     [
+      "Kunst",
+      "9"
+     ]
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄20",
+     "nach": "25⁄100",
+     "mit": 5,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "25⁄100 = 25 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-G-04",
+   "lernziel": "6.4.7-P2",
+   "niveau": "G",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch",
+    "kommunizieren"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 15 % als Bruch.\nKürze vollständig.",
+   "loesung": "3⁄20",
+   "typischeFehler": [
+    {
+     "wert": "15⁄10",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.",
+    "beispiel": "2⁄5 = 40⁄100 = 0,4 = 40 %.",
+    "loesungsschritt": "Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel."
+   },
+   "gekuerzt": true,
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    "15 % = 15⁄100",
+    {
+     "art": "umformen",
+     "von": "15⁄100",
+     "nach": "3⁄20",
+     "mit": 5,
+     "wie": "kuerzen",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-G-05",
+   "lernziel": "6.4.7-P2",
+   "niveau": "G",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das passende Zeichen an.\n3⁄4 ▢ 42 %",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "<",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": ">",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.",
+    "beispiel": "2⁄5 = 40⁄100 = 0,4 = 40 %.",
+    "loesungsschritt": "Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "3⁄4",
+     "rechts": "42 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-G-06",
+   "lernziel": "6.4.7-P2",
+   "niveau": "G",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren",
+    "kommunizieren"
+   ],
+   "format": "auswahl",
+   "text": "Jonas sagt: „0,9 = 9 %“\nBeurteile die Aussage.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Falsch.\nEs gilt 0,9 = 900 %.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "dezimal-stelle"
+    },
+    {
+     "text": "Falsch.\nEs gilt 0,9 = 0,9 = 90 %.",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.",
+    "beispiel": "2⁄5 = 40⁄100 = 0,4 = 40 %.",
+    "loesungsschritt": "Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel."
+   },
+   "bild": {
+    "art": "bruch",
+    "figuren": [
+     {
+      "form": "hundert",
+      "gefaerbt": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       67,
+       68,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74,
+       75,
+       76,
+       77,
+       78,
+       79,
+       80,
+       81,
+       82,
+       83,
+       84,
+       85,
+       86,
+       87,
+       88,
+       89
+      ]
+     }
+    ]
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "0,9 = 9 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-M-01",
+   "lernziel": "6.4.7-P2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "luecken",
+   "text": "Schreibe 2 1⁄4 als Dezimalzahl und in Prozent.\n2 1⁄4 = {{a}} = {{b}} %",
+   "luecken": {
+    "a": {
+     "loesung": "2,25",
+     "typischeFehler": [
+      {
+       "wert": "0,25",
+       "fehlvorstellung": "bruch-ganzes-teil"
+      }
+     ]
+    },
+    "b": {
+     "loesung": 225,
+     "typischeFehler": [
+      {
+       "wert": 25,
+       "fehlvorstellung": "bruch-ganzes-teil"
+      }
+     ]
+    }
+   },
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen.",
+    "loesungsschritt": "Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma."
+   },
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "1⁄4",
+     "nach": "25⁄100",
+     "mit": 25,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "2 1⁄4 = 2 + 25⁄100 = 2,25 = 225 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-M-02",
+   "lernziel": "6.4.7-P2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Anteile der Größe nach.\nBeginne mit dem kleinsten Anteil.",
+   "karten": [
+    "5⁄8",
+    "62 %",
+    "13⁄20",
+    "0,6"
+   ],
+   "loesung": [
+    "0,6",
+    "62 %",
+    "5⁄8",
+    "13⁄20"
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen.",
+    "loesungsschritt": "Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "auf"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "prozent-als-zaehler"
+  },
+  {
+   "id": "6.4.7-P2-M-03",
+   "lernziel": "6.4.7-P2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "probleme-loesen"
+   ],
+   "format": "auswahl",
+   "text": "Akku A ist zu 3⁄4 geladen.\nAkku B zeigt 82 %.\nKreuze die Ladung des volleren Akkus an.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "3⁄4",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "82 %",
+     "richtig": true
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen.",
+    "loesungsschritt": "Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma."
+   },
+   "nachweis": [
+    {
+     "art": "extrem",
+     "was": "groesste"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-M-04",
+   "lernziel": "6.4.7-P2",
+   "niveau": "M",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "bruch",
+   "text": "Schreibe 35 % als vollständig gekürzten Bruch.",
+   "loesung": "7⁄20",
+   "typischeFehler": [
+    {
+     "wert": "35⁄10",
+     "fehlvorstellung": "dezimal-stelle"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen.",
+    "loesungsschritt": "Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma."
+   },
+   "gekuerzt": true,
+   "nachweis": [
+    "35 % = 35⁄100",
+    {
+     "art": "umformen",
+     "von": "35⁄100",
+     "nach": "7⁄20",
+     "mit": 5,
+     "wie": "kuerzen",
+     "gesucht": true
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-M-05",
+   "lernziel": "6.4.7-P2",
+   "niveau": "M",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "In der Burg wohnen 50 Leute.\n13 davon sind Ritter.\nGib den Anteil der Ritter in Prozent an.",
+   "loesung": 26,
+   "typischeFehler": [
+    {
+     "wert": 13,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "wert": 74,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen.",
+    "loesungsschritt": "Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "13⁄50",
+     "nach": "26⁄100",
+     "mit": 2,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "26⁄100 = 26 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-M-06",
+   "lernziel": "6.4.7-P2",
+   "niveau": "M",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Tom rechnet: 1⁄5 = 0,5 = 50 %\nFinde den Fehler.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-als-komma"
+    },
+    {
+     "text": "Falsch. Es gilt 1⁄5 = 1 %.",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "Falsch. Es gilt 1⁄5 = 0,2 = 20 %.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt, denn 0,5 = 50 %.",
+     "richtig": false,
+     "fehlvorstellung": "bruch-als-komma"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen.",
+    "loesungsschritt": "Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "1⁄5 = 0,5"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-E-01",
+   "lernziel": "6.4.7-P2",
+   "niveau": "E",
+   "afb": 1,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "Gib 5⁄8 in Prozent an.",
+   "loesung": "62,5",
+   "typischeFehler": [
+    {
+     "wert": 62,
+     "fehlvorstellung": "runden-abschneiden"
+    },
+    {
+     "wert": 5,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Wandle in eine Dezimalzahl mit drei Stellen um. Lies dann die Prozentzahl ab."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "5⁄8",
+     "nach": "625⁄1000",
+     "mit": 125,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "625⁄1000 = 0,625 = 62,5 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-E-02",
+   "lernziel": "6.4.7-P2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze das passende Zeichen an.\n2⁄3 ▢ 67 %",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": ">",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "<",
+     "richtig": true
+    },
+    {
+     "text": "=",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Schreibe den Bruch als periodische Dezimalzahl. Vergleiche Stelle für Stelle."
+   },
+   "nachweis": [
+    {
+     "art": "vergleich",
+     "links": "2⁄3",
+     "rechts": "67 %"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-E-03",
+   "lernziel": "6.4.7-P2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "ordnen",
+   "text": "Ordne die Anteile der Größe nach.\nBeginne mit dem größten Anteil.",
+   "karten": [
+    "33 %",
+    "0,35",
+    "3⁄8",
+    "1⁄3",
+    "0,3"
+   ],
+   "loesung": [
+    "3⁄8",
+    "0,35",
+    "1⁄3",
+    "33 %",
+    "0,3"
+   ],
+   "hilfen": {
+    "tipp": "Schreibe alle Anteile als Dezimalzahl mit vier Stellen. 1⁄3 ist periodisch."
+   },
+   "nachweis": [
+    {
+     "art": "ordnung",
+     "richtung": "ab"
+    }
+   ],
+   "umgekehrt": "zeichen-verwechselt",
+   "sonst": "periode-abgebrochen"
+  },
+  {
+   "id": "6.4.7-P2-E-04",
+   "lernziel": "6.4.7-P2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "argumentieren"
+   ],
+   "format": "auswahl",
+   "text": "Ida rechnet: 2⁄3 = 0,6 = 60 %\nBeurteile die Rechnung und begründe.",
+   "mehrfach": false,
+   "optionen": [
+    {
+     "text": "Stimmt.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    },
+    {
+     "text": "Falsch. Es gilt 2⁄3 = 0,6̅. Das ist mehr als 0,6.",
+     "richtig": true
+    },
+    {
+     "text": "Stimmt, denn 2 : 3 ist ungefähr 0,6.",
+     "richtig": false,
+     "fehlvorstellung": "periode-abgebrochen"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Dividiere den Zähler durch den Nenner. Prüfe, ob die Division aufgeht."
+   },
+   "nachweis": [
+    {
+     "art": "urteil",
+     "stimmt": false,
+     "behauptung": "2⁄3 = 0,6"
+    }
+   ]
+  },
+  {
+   "id": "6.4.7-P2-E-05",
+   "lernziel": "6.4.7-P2",
+   "niveau": "E",
+   "afb": 2,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "zahl",
+   "text": "30 Kinder werden nach ihrem Lieblingstier gefragt.\n18 Kinder nennen den Hund.\nGib den Anteil in Prozent an.",
+   "loesung": 60,
+   "typischeFehler": [
+    {
+     "wert": 18,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "wert": 40,
+     "fehlvorstellung": "bruch-teil-zu-rest"
+    }
+   ],
+   "hilfen": {
+    "tipp": "30 ist kein Teiler von 100. Kürze zuerst, dann erweitere auf 100."
+   },
+   "einheit": "%",
+   "nachweis": [
+    {
+     "art": "umformen",
+     "von": "18⁄30",
+     "nach": "3⁄5",
+     "mit": 6,
+     "wie": "kuerzen",
+     "gesucht": true
+    },
+    {
+     "art": "umformen",
+     "von": "3⁄5",
+     "nach": "60⁄100",
+     "mit": 20,
+     "wie": "erweitern",
+     "gesucht": true
+    },
+    "60⁄100 = 60 %"
+   ]
+  },
+  {
+   "id": "6.4.7-P2-E-06",
+   "lernziel": "6.4.7-P2",
+   "niveau": "E",
+   "afb": 3,
+   "kompetenz": [
+    "symbolisch"
+   ],
+   "format": "auswahl",
+   "text": "Kreuze alle Anteile an, die mehr als die Hälfte sind.",
+   "mehrfach": true,
+   "optionen": [
+    {
+     "text": "51 %",
+     "richtig": true
+    },
+    {
+     "text": "5⁄9",
+     "richtig": true
+    },
+    {
+     "text": "0,49",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    },
+    {
+     "text": "0,505",
+     "richtig": true
+    },
+    {
+     "text": "1⁄2",
+     "richtig": false,
+     "fehlvorstellung": "prozent-als-zaehler"
+    }
+   ],
+   "hilfen": {
+    "tipp": "Die Hälfte ist 1⁄2 = 0,5 = 50 %. Vergleiche jede Angabe damit."
+   },
+   "nachweis": [
+    {
+     "wert": "1⁄2",
+     "grund": "die Hälfte"
+    },
+    {
+     "art": "schwelle",
+     "wert": "1⁄2",
+     "zeichen": ">"
+    }
+   ]
   }
  ],
  "vorstufe": {
@@ -84303,6 +89157,10 @@
    {
     "id": "5.4.1-K2",
     "text": "Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen."
+   },
+   {
+    "id": "5.4.5-D2",
+    "text": "Ich kann schriftlich durch einstellige Zahlen dividieren."
    },
    {
     "id": "5.4.5-D4",
@@ -88280,6 +93138,648 @@
     "nachweis": [
      "9 · 7 = 63",
      "56 : 7 = 8"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-F-01",
+    "lernziel": "5.4.5-D2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Rechne.\n20 : 4",
+    "loesung": 5,
+    "typischeFehler": [
+     {
+      "wert": 6,
+      "fehlvorstellung": "div-einmaleins"
+     },
+     {
+      "wert": 4,
+      "fehlvorstellung": "div-einmaleins"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Lege immer 4 zusammen. Zähle die Gruppen.",
+     "beispiel": "12 : 3: Die 3er-Reihe hilft: 1 · 3 = 3, 2 · 3 = 6, 3 · 3 = 9, 4 · 3 = 12. Also 12 : 3 = 4.",
+     "loesungsschritt": "Zähle im Bild die Gruppen mit je 4 Plättchen."
+    },
+    "bild": {
+     "art": "gruppenbild",
+     "gruppen": 5,
+     "je": 4
+    },
+    "nachweis": [
+     "20 : 4 = 5"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-F-02",
+    "lernziel": "5.4.5-D2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "4 · 3 = 12\n12 : 3 = {{x}}",
+    "luecken": {
+     "x": {
+      "loesung": 4,
+      "typischeFehler": [
+       {
+        "wert": 3,
+        "fehlvorstellung": "div-vertauscht"
+       },
+       {
+        "wert": 5,
+        "fehlvorstellung": "div-einmaleins"
+       }
+      ]
+     }
+    },
+    "hilfen": {
+     "tipp": "Die Mal-Aufgabe hilft dir beim Teilen.",
+     "beispiel": "5 · 2 = 10. Also ist 10 : 2 = 5.",
+     "loesungsschritt": "Welche Zahl mal 3 ergibt 12? Schau auf die Mal-Aufgabe."
+    },
+    "bild": {
+     "art": "punktefeld",
+     "reihen": 4,
+     "spalten": 3
+    },
+    "nachweis": [
+     "4 · 3 = 12",
+     "12 : 3 = 4"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-F-03",
+    "lernziel": "5.4.5-D2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "12 : 3\nWelches Ergebnis stimmt?",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "4",
+      "richtig": true
+     },
+     {
+      "text": "9",
+      "richtig": false,
+      "fehlvorstellung": "div-falsche-rechenart"
+     },
+     {
+      "text": "5",
+      "richtig": false,
+      "fehlvorstellung": "div-einmaleins"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Prüfe mit der Mal-Aufgabe.",
+     "beispiel": "15 : 3 = 5, denn 5 · 3 = 15.",
+     "loesungsschritt": "Im Bild sind 3 Punkte in 1 Reihe. Zähle die Reihen."
+    },
+    "bild": {
+     "art": "punktefeld",
+     "reihen": 4,
+     "spalten": 3
+    },
+    "nachweis": [
+     "12 : 3 = 4",
+     "4 · 3 = 12"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-F-04",
+    "lernziel": "5.4.5-D2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "Rechne 36 : 3 in 2 Schritten.\n30 : 3 = {{x}}\n6 : 3 = {{y}}\nZusammen: {{z}}",
+    "luecken": {
+     "x": {
+      "loesung": 10,
+      "typischeFehler": [
+       {
+        "wert": 1,
+        "fehlvorstellung": "div-stellenwert"
+       }
+      ]
+     },
+     "y": {
+      "loesung": 2,
+      "typischeFehler": []
+     },
+     "z": {
+      "loesung": 12,
+      "typischeFehler": []
+     }
+    },
+    "hilfen": {
+     "tipp": "Die Zahl 36 ist aufgeteilt in 30 und 6. Teile beide einzeln.",
+     "beispiel": "26 : 2: 20 : 2 = 10 und 6 : 2 = 3. Zusammen 13.",
+     "loesungsschritt": "30 sind 3 Zehner. 3 Zehner geteilt durch 3 ist 1 Zehner."
+    },
+    "bild": {
+     "art": "zehnermaterial",
+     "h": 0,
+     "z": 3,
+     "e": 6
+    },
+    "nachweis": [
+     "30 : 3 = 10",
+     "6 : 3 = 2",
+     "10 + 2 = 12",
+     "36 : 3 = 12"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-F-05",
+    "lernziel": "5.4.5-D2",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Welche Zahl fehlt?\n▢ : 4 = 3",
+    "loesung": 12,
+    "typischeFehler": [
+     {
+      "wert": 7,
+      "fehlvorstellung": "div-falsche-rechenart"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+     "beispiel": "▢ : 2 = 5. Rechne 5 · 2 = 10. Die Zahl ist 10.",
+     "loesungsschritt": "Im Bild sind 3 Gruppen mit je 4 Plättchen. Zähle alle Plättchen."
+    },
+    "bild": {
+     "art": "gruppenbild",
+     "gruppen": 3,
+     "je": 4
+    },
+    "nachweis": [
+     "3 · 4 = 12",
+     "12 : 4 = 3"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-F-06",
+    "lernziel": "5.4.5-D2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "12 : 3 = 4\nWie viel ist 120 : 3?",
+    "loesung": 40,
+    "typischeFehler": [
+     {
+      "wert": 4,
+      "fehlvorstellung": "div-stellenwert"
+     },
+     {
+      "wert": 400,
+      "fehlvorstellung": "div-stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "120 sind 12 Zehner. Teile die Zehner.",
+     "beispiel": "6 : 2 = 3. Dann ist 60 : 2 = 30. Aus 3 Einern werden 3 Zehner.",
+     "loesungsschritt": "12 Zehner geteilt durch 3 sind 4 Zehner."
+    },
+    "bild": {
+     "art": "zehnermaterial",
+     "h": 0,
+     "z": 12,
+     "e": 0
+    },
+    "nachweis": [
+     "12 : 3 = 4",
+     "120 : 3 = 40"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-G-01",
+    "lernziel": "5.4.5-D2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Dividiere schriftlich.\n235 : 5",
+    "loesung": 47,
+    "typischeFehler": [
+     {
+      "wert": 470,
+      "fehlvorstellung": "div-stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen.",
+     "beispiel": "138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23.",
+     "loesungsschritt": "Beginne links. Wie oft passt die 5 in die 23? 4-mal, denn 4 · 5 = 20. Rechne 23 − 20 = 3. Hole die nächste Ziffer herunter."
+    },
+    "bild": {
+     "art": "zehnermaterial",
+     "h": 2,
+     "z": 3,
+     "e": 5
+    },
+    "nachweis": [
+     "235 : 5 = 47"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-G-02",
+    "lernziel": "5.4.5-D2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "Rechne 258 : 6 in 2 Schritten.\n240 : 6 = {{zehner}}\n18 : 6 = {{einer}}\nZusammen: {{ergebnis}}",
+    "luecken": {
+     "zehner": {
+      "loesung": 40,
+      "typischeFehler": [
+       {
+        "wert": 4,
+        "fehlvorstellung": "div-stellenwert"
+       }
+      ]
+     },
+     "einer": {
+      "loesung": 3,
+      "typischeFehler": []
+     },
+     "ergebnis": {
+      "loesung": 43,
+      "typischeFehler": []
+     }
+    },
+    "hilfen": {
+     "tipp": "Die Zahl 258 ist aufgeteilt in 240 und 18. Teile beide Zahlen einzeln.",
+     "beispiel": "138 : 6: 120 : 6 = 20 und 18 : 6 = 3. Zusammen 20 + 3 = 23.",
+     "loesungsschritt": "24 : 6 = 4. Also ist 240 : 6 = 40."
+    },
+    "bild": {
+     "art": "zehnermaterial",
+     "h": 2,
+     "z": 5,
+     "e": 8
+    },
+    "nachweis": [
+     "240 : 6 = 40",
+     "18 : 6 = 3",
+     "40 + 3 = 43",
+     "258 : 6 = 43"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-G-03",
+    "lernziel": "5.4.5-D2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Welche Zahl fehlt?\n▢ : 6 = 88",
+    "loesung": 528,
+    "typischeFehler": [
+     {
+      "wert": 94,
+      "fehlvorstellung": "div-falsche-rechenart"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Rechne rückwärts mit einer Mal-Aufgabe.",
+     "beispiel": "▢ : 4 = 21. Rechne 21 · 4 = 84.",
+     "loesungsschritt": "Rechne 88 · 6. Rechne erst 80 · 6, dann 8 · 6."
+    },
+    "nachweis": [
+     "88 · 6 = 528",
+     "528 : 6 = 88"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-G-04",
+    "lernziel": "5.4.5-D2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Dividiere schriftlich.\n994 : 7",
+    "loesung": 142,
+    "typischeFehler": [
+     {
+      "wert": 1420,
+      "fehlvorstellung": "div-stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Rechne der Reihe nach: teilen, malnehmen, abziehen, nächste Ziffer herunterholen.",
+     "beispiel": "138 : 6: Die 6 passt 2-mal in die 13. 2 · 6 = 12. 13 − 12 = 1. Hole die 8 herunter: 18 : 6 = 3. Ergebnis 23.",
+     "loesungsschritt": "Beginne links. Wie oft passt die 7 in die 9? 1-mal, denn 1 · 7 = 7. Rechne 9 − 7 = 2. Hole die nächste Ziffer herunter."
+    },
+    "bild": {
+     "art": "zehnermaterial",
+     "h": 9,
+     "z": 9,
+     "e": 4
+    },
+    "nachweis": [
+     "994 : 7 = 142"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-G-05",
+    "lernziel": "5.4.5-D2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "probleme-loesen"
+    ],
+    "format": "auswahl",
+    "text": "Welche Aufgabe hat das größere Ergebnis?\nÜberlege zuerst.\nRechne dann nach.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "144 : 6",
+      "richtig": false
+     },
+     {
+      "text": "Beide Ergebnisse sind gleich.",
+      "richtig": false
+     },
+     {
+      "text": "144 : 3",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Stell dir vor: Die gleiche Menge wird an wenige oder an viele Kinder verteilt.",
+     "beispiel": "12 : 2 = 6 und 12 : 4 = 3. Bei weniger Kindern bekommt jedes Kind mehr.",
+     "loesungsschritt": "144 wird einmal durch 3 geteilt und einmal durch 6. Wann bekommt jeder mehr?"
+    },
+    "nachweis": [
+     {
+      "art": "extrem",
+      "was": "groesstes"
+     },
+     "144 : 3 = 48",
+     "144 : 6 = 24"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-G-06",
+    "lernziel": "5.4.5-D2",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "argumentieren"
+    ],
+    "format": "auswahl",
+    "text": "Ole rechnet: 425 : 5 = 95.\nPrüfe mit der Mal-Aufgabe.\nStimmt das?",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Falsch.\n95 · 5 = 475.\nRichtig ist 85.",
+      "richtig": true
+     },
+     {
+      "text": "Falsch.\nRichtig ist 105.",
+      "richtig": false,
+      "fehlvorstellung": "div-einmaleins"
+     },
+     {
+      "text": "Stimmt.\n95 · 5 = 425.",
+      "richtig": false,
+      "fehlvorstellung": "div-einmaleins"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Mal-Aufgabe prüft die Geteilt-Aufgabe: Ergebnis mal zweite Zahl.",
+     "beispiel": "96 : 4 = 34? Prüfe: 34 · 4 = 136. Das ist nicht 96. Richtig ist 24.",
+     "loesungsschritt": "Rechne 95 · 5. Kommt 425 heraus?"
+    },
+    "nachweis": [
+     {
+      "art": "urteil",
+      "stimmt": false,
+      "rechnung": "425 : 5",
+      "behauptet": 95
+     },
+     "95 · 5 = 475",
+     "425 : 5 = 85"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-M-01",
+    "lernziel": "5.4.5-D2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Dividiere schriftlich: 8456 : 8",
+    "loesung": 1057,
+    "typischeFehler": [
+     {
+      "wert": 157,
+      "fehlvorstellung": "div-null-vergessen"
+     },
+     {
+      "wert": 10570,
+      "fehlvorstellung": "div-stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten.",
+     "loesungsschritt": "Beginne links. Wie oft passt die 8 in die 8? 1-mal, denn 1 · 8 = 8. Rechne 8 − 8 = 0. Hole die nächste Ziffer herunter."
+    },
+    "nachweis": [
+     "8456 : 8 = 1057"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-M-02",
+    "lernziel": "5.4.5-D2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Bestimme den fehlenden Dividenden: ▢ : 4 = 703",
+    "loesung": 2812,
+    "typischeFehler": [
+     {
+      "wert": 707,
+      "fehlvorstellung": "begriffe-verwechselt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Umkehraufgabe der Division ist die Multiplikation.",
+     "loesungsschritt": "Rechne 703 · 4."
+    },
+    "nachweis": [
+     "703 · 4 = 2812",
+     "2812 : 4 = 703"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-M-03",
+    "lernziel": "5.4.5-D2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Dividiere 7672 zuerst durch 7. Dividiere das Ergebnis dann durch 8.",
+    "loesung": 137,
+    "typischeFehler": [
+     {
+      "wert": 1096,
+      "fehlvorstellung": "sach-schritt-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Rechne zwei Divisionen nacheinander. Das erste Ergebnis ist der neue Dividend.",
+     "loesungsschritt": "Erster Schritt: 7672 : 7 = 1096."
+    },
+    "nachweis": [
+     "7672 : 7 = 1096",
+     "1096 : 8 = 137"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-M-04",
+    "lernziel": "5.4.5-D2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Dividiere schriftlich: 3212 : 4",
+    "loesung": 803,
+    "typischeFehler": [
+     {
+      "wert": 83,
+      "fehlvorstellung": "div-null-vergessen"
+     },
+     {
+      "wert": 8030,
+      "fehlvorstellung": "div-stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Passt der Divisor einmal nicht hinein, gehört an diese Stelle eine 0 in den Quotienten.",
+     "loesungsschritt": "Beginne links. Wie oft passt die 4 in die 32? 8-mal, denn 8 · 4 = 32. Rechne 32 − 32 = 0. Hole die nächste Ziffer herunter."
+    },
+    "nachweis": [
+     "3212 : 4 = 803"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-M-05",
+    "lernziel": "5.4.5-D2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Um wie viel ist 1620 : 6 größer als 1620 : 9?",
+    "loesung": 90,
+    "typischeFehler": [
+     {
+      "wert": 270,
+      "fehlvorstellung": "sach-schritt-vergessen"
+     },
+     {
+      "wert": 180,
+      "fehlvorstellung": "sach-schritt-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Berechne beide Quotienten und bilde dann die Differenz.",
+     "loesungsschritt": "Erster Quotient: 1620 : 6 = 270."
+    },
+    "nachweis": [
+     "1620 : 6 = 270",
+     "1620 : 9 = 180",
+     "270 − 180 = 90"
+    ]
+   },
+   {
+    "id": "5.4.5-D2-M-06",
+    "lernziel": "5.4.5-D2",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "argumentieren"
+    ],
+    "format": "auswahl",
+    "text": "Sara erhält bei 4864 : 8 das Ergebnis 68. Prüfe mit einem Überschlag und entscheide.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Richtig: 68 · 8 = 4864.",
+      "richtig": false,
+      "fehlvorstellung": "div-null-vergessen"
+     },
+     {
+      "text": "Richtig: Der Überschlag bestätigt ein zweistelliges Ergebnis.",
+      "richtig": false,
+      "fehlvorstellung": "div-stellenwert"
+     },
+     {
+      "text": "Falsch: 4800 : 8 = 600, der Quotient muss dreistellig sein. Richtig ist 608.",
+      "richtig": true
+     },
+     {
+      "text": "Falsch: Der Quotient muss vierstellig sein.",
+      "richtig": false,
+      "fehlvorstellung": "div-stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Runde den Dividenden so, dass du im Kopf teilen kannst. Wie viele Stellen hat der Quotient dann?",
+     "loesungsschritt": "Überschlage mit 4800 : 8."
+    },
+    "nachweis": [
+     {
+      "art": "urteil",
+      "stimmt": false,
+      "rechnung": "4864 : 8",
+      "behauptet": 68
+     },
+     "4800 : 8 = 600",
+     "4864 : 8 = 608",
+     "68 · 8 = 544"
     ]
    },
    {
@@ -97161,7 +102661,8 @@
     "nachweis": [
      "6 · 4 = 24",
      "5⁄6 von 24 = 20"
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.9.1-B2-M-04",
@@ -97195,7 +102696,8 @@
     "einheit": "Kästchen",
     "nachweis": [
      "3⁄5 von 10 = 6"
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.9.1-B2-M-05",
@@ -97275,7 +102777,8 @@
     "nachweis": [
      "6 : 3 = 2",
      "2 · 5 = 10"
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.9.1-B3-F-01",

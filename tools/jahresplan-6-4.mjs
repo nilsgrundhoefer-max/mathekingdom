@@ -90,7 +90,7 @@ export const merkzettel4 = {
       'Über die Ziffern, die sich wiederholen, setzt du einen Strich. Sie heißen Periode.',
       `Ab E: Nicht jede Periode beginnt direkt nach dem Komma: 1⁄6 = ${P('0,1', '6')}.`,
     ],
-    beispiel: `1 : 3: 10 : 3 = 3 Rest 1, dann wieder 10 : 3 = 3 Rest 1. Der Rest 1 kommt wieder, also 1⁄3 = ${P('0,', '3')}.`,
+    beispiel: `Bei 1 : 3 bleibt nach jeder Stelle wieder der Rest 1. Der Rest kommt wieder, also 1⁄3 = ${P('0,', '3')}.`,
     heft: 'Schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, kannst du aufhören.',
   },
   '6.4.7': {

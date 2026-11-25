@@ -1988,9 +1988,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* C ist von A so weit entfernt wie b la
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Kreise haben die Radien b = 5 und a = 5 Kästchen. / Tippe die Ecke C oberhalb von c an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 11 × 7; Punkte A(1|2), B(9|2); Strecke c durch (1|2) und (9|2); Kreis um (1|2) mit Radius 5 Kästchen, Kreis um (9|2) mit Radius 5 Kästchen)_ Lösung: **(5|5)**
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Dreieck aus zwei Seiten und dem Winkel dazwischen wird konstruiert. / Bringe die Schritte in die richtige Reihenfolge. _(Bild: figur)_ _(Ordnen; die Karten liegen so da: Trage bei A den Winkel α an., Miss auf dem freien Schenkel die Länge b ab. So erhältst du C. Verbinde C mit B., Zeichne die Seite c von A nach B., Zeichne eine Planfigur und markiere die gegebenen Stücke.)_ Lösung: **Zeichne eine Planfigur und markiere die gegebenen Stücke., Zeichne die Seite c von A nach B., Trage bei A den Winkel α an., Miss auf dem freien Schenkel die Länge b ab. So erhältst du C. Verbinde C mit B.**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck. / Gegeben: a = 7 cm, b = 5 cm, c = 9 cm. / Miss dann den Winkel γ. _(Bild: figur)_ Lösung: **96 °** (bis 2 ° daneben gilt als richtig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck. / Gegeben: a = 7 cm, b = 5 cm, c = 9 cm. / Miss dann den Winkel γ. _(Bild: figur)_ Lösung: **96 °** (bis 2 ° daneben gilt als richtig).
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · An A und B sind die Winkel angetragen. / Tippe die Ecke C an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 6; Punkte A(2|1), B(6|1); Strecke c durch (2|1) und (6|1), Strahl durch (2|1) und (8|5), Strahl durch (6|1) und (4|5))_ Lösung: **(5|3)**
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck. / Gegeben: c = 7 cm, α = 70°, β = 40°. / Miss dann die Seite b in Millimetern. _(Bild: figur)_ Lösung: **48 mm** (bis 2 mm daneben gilt als richtig).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck. / Gegeben: c = 7 cm, α = 70°, β = 40°. / Miss dann die Seite b in Millimetern. _(Bild: figur)_ Lösung: **48 mm** (bis 2 mm daneben gilt als richtig).
 - `06` AFB III · _Argumentieren_ · Gegeben sind a, b und c. / Ole hat c gezeichnet und zieht einen Kreis um A mit dem Radius a. / Kreuze die richtige Begründung an.
   - ☑ Das ist falsch. / Um A gehört der Radius b, denn b verbindet A und C.
   - ☐ Das ist richtig. a ist die längste Seite.
@@ -2001,7 +2001,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* C ist von A so weit entfernt wie b la
 Hilfekärtchen der ersten Aufgabe: *Tipp:* C ist von A so weit entfernt wie b lang ist und von B so weit wie a. *Lösungsschritt:* C liegt oben, wo sich die beiden Kreise schneiden.
 
 - `01` AFB I · _Modellieren (+ Kommunizieren)_ · Konstruiere das Dreieck ABC mit c = 3, b = 4 und a = 5 Kästchen. Drei Kreise sind vorgegeben. Tippe die Ecke C oberhalb von c an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 7 × 8; Punkte A(2|2), B(5|2); Strecke c durch (2|2) und (5|2); Kreis um (2|2) mit Radius 4 Kästchen, Kreis um (5|2) mit Radius 5 Kästchen, Kreis um (2|2) mit Radius 3 Kästchen)_ Lösung: **(2|6)**
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck. / Gegeben: b = 6 cm, c = 7 cm, α = 80°. / Miss dann die Seite a in Millimetern. _(Bild: figur)_ Lösung: **84 mm** (bis 2 mm daneben gilt als richtig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck. / Gegeben: b = 6 cm, c = 7 cm, α = 80°. / Miss dann die Seite a in Millimetern. _(Bild: figur)_ Lösung: **84 mm** (bis 2 mm daneben gilt als richtig).
 - `03` AFB II · _Modellieren_ · Ein See soll vermessen werden. Die Punkte A, B und C am Ufer sind BC = 30 m, AC = 30 m und AB = 25 m voneinander entfernt. Zeichne im Maßstab 1 : 500 und miss den Winkel γ. _(Bild: figur)_ Lösung: **49 °** (bis 2 ° daneben gilt als richtig).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Dreieck aus einer Seite und den beiden anliegenden Winkeln wird konstruiert. Bringe die Schritte in die richtige Reihenfolge. _(Ordnen; die Karten liegen so da: Trage bei A den Winkel α und bei B den Winkel β an., Zeichne eine Planfigur und markiere die gegebenen Stücke., Der Schnittpunkt der beiden freien Schenkel ist C., Zeichne die Seite c von A nach B.)_ Lösung: **Zeichne eine Planfigur und markiere die gegebenen Stücke., Zeichne die Seite c von A nach B., Trage bei A den Winkel α und bei B den Winkel β an., Der Schnittpunkt der beiden freien Schenkel ist C.**
 - `05` AFB II · _Argumentieren_ · Die beiden Kreisbögen um A und B schneiden sich oberhalb und unterhalb von c. Wie viele verschiedene Dreiecke gibt es? Kreuze die richtige Antwort an.
@@ -2019,9 +2019,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* C ist von A so weit entfernt wie b la
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne mit einer Planfigur. Die Konstruktion geht nach sws.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck. / Gegeben: b = 5 cm, c = 5 cm, α = 102°. / Miss dann den Winkel β. _(Bild: figur)_ Lösung: **39 °** (bis 2 ° daneben gilt als richtig).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck. / Gegeben: b = 5 cm, c = 5 cm, α = 102°. / Miss dann den Winkel β. _(Bild: figur)_ Lösung: **39 °** (bis 2 ° daneben gilt als richtig).
 - `02` AFB II · _Modellieren_ · Von zwei Punkten A und B am Ufer, 100 m voneinander entfernt, wird ein Baum C auf einer Insel angepeilt: α = 37°, β = 37°. Zeichne im Maßstab 1 : 2000 und gib die Länge von b in der Zeichnung in Millimetern an. _(Bild: figur)_ Lösung: **31 mm** (bis 2 mm daneben gilt als richtig).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 5 cm, α = 69° und γ = 56°. Miss dann die Seite a in Millimetern. _(Bild: figur)_ Lösung: **56 mm** (bis 2 mm daneben gilt als richtig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 5 cm, α = 69° und γ = 56°. Miss dann die Seite a in Millimetern. _(Bild: figur)_ Lösung: **56 mm** (bis 2 mm daneben gilt als richtig).
 - `04` AFB III · _Argumentieren_ · Noah will ein Dreieck mit a = 2 cm, b = 5 cm und c = 9 cm konstruieren. Die Kreisbögen um A und B treffen sich nicht. Erkläre, woran das liegt. Kreuze an.
   - ☑ a + b = 7 cm ist nicht länger als c = 9 cm. Das Dreieck gibt es nicht.
   - ☐ Die Bögen sind zu kurz gezeichnet.
@@ -2131,9 +2131,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Thaleskreis hat seinen Mittelpunk
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne den Thaleskreis über AB. / Tippe den Mittelpunkt und einen Punkt auf dem Kreis an. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 7 × 4; Punkte A(2|2), B(6|2); Strecke c durch (2|2) und (6|2))_ Lösung: **Kreis um (4|2) mit Radius 2 Kästchen**, zum Beispiel durch (6|2)
 - `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll auf dem Thaleskreis liegen und 4 Kästchen über AB. / Tippe beide möglichen Punkte an. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1), Gerade p durch (1|5) und (11|5); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(3|5) (9|5)**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 10 cm, γ = 90° und α = 35°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **82 mm** (bis 2 mm daneben gilt als richtig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 10 cm, γ = 90° und α = 35°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **82 mm** (bis 2 mm daneben gilt als richtig).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Dreieck mit γ = 90° wird gezeichnet. / Bringe die Schritte in die richtige Reihenfolge. _(Bild: figur)_ _(Ordnen; die Karten liegen so da: Bestimme die Mitte M von AB., Zeichne die Strecke AB., Wähle C auf dem Halbkreis und verbinde C mit A und B., Zeichne den Halbkreis um M durch A und B.)_ Lösung: **Zeichne die Strecke AB., Bestimme die Mitte M von AB., Zeichne den Halbkreis um M durch A und B., Wähle C auf dem Halbkreis und verbinde C mit A und B.**
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 9 cm, γ = 90° und α = 50°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **58 mm** (bis 2 mm daneben gilt als richtig).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 9 cm, γ = 90° und α = 50°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **58 mm** (bis 2 mm daneben gilt als richtig).
 - `06` AFB III · _Argumentieren_ · Ida soll ein Dreieck mit γ = 90° über AB zeichnen. / Ida zeichnet einen Kreis um A durch B. / Kreuze die richtige Begründung an.
   - ☐ Das ist richtig. / Jeder Kreis durch B passt.
   - ☐ Das ist richtig. / A ist eine Ecke.
@@ -2144,14 +2144,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Thaleskreis hat seinen Mittelpunk
 Hilfekärtchen der ersten Aufgabe: *Tipp:* C liegt auf dem Thaleskreis und auf der Geraden p. *Lösungsschritt:* Suche beide Schnittpunkte.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll mit A und B einen rechten Winkel bilden und 4 Kästchen von AB entfernt sein. Tippe alle möglichen Punkte C oberhalb von AB an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1), Gerade p durch (1|5) und (11|5); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(3|5) (9|5)**
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 8 cm, γ = 90° und α = 52°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **49 mm** (bis 2 mm daneben gilt als richtig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 8 cm, γ = 90° und α = 52°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **49 mm** (bis 2 mm daneben gilt als richtig).
 - `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Alle Punkte C mit γ = 90° liegen auf einer Ortslinie. Zeichne sie für die Strecke AB. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 6 × 4; Punkte A(1|2), B(5|2); Strecke c durch (1|2) und (5|2))_ Lösung: **Kreis um (3|2) mit Radius 2 Kästchen**, zum Beispiel durch (5|2)
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Ortslinie enthält alle Punkte C, für die das Dreieck ABC bei C einen rechten Winkel hat? Kreuze an.
   - ☐ eine Parallele zu AB
   - ☑ der Thaleskreis über AB (ohne A und B)
   - ☐ ein Kreis um A durch B
   - ☐ die Mittelsenkrechte von AB
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 10 cm, γ = 90° und α = 57°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **54 mm** (bis 2 mm daneben gilt als richtig).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 10 cm, γ = 90° und α = 57°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **54 mm** (bis 2 mm daneben gilt als richtig).
 - `06` AFB III · _Argumentieren_ · Emre soll ein Dreieck mit c = 6 cm, γ = 90° und b = 7 cm zeichnen. Der Kreis um A schneidet den Thaleskreis nicht. Erkläre, warum. Kreuze an.
   - ☑ b ist länger als der Durchmesser c. Im rechtwinkligen Dreieck ist c die längste Seite.
   - ☐ Der Thaleskreis ist zu klein gezeichnet.
@@ -2162,8 +2162,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* C liegt auf dem Thaleskreis und auf d
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zeichne c und den Thaleskreis über c.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 7 cm, γ = 90° und b = 5 cm. / Nutze den Thaleskreis über c. / Miss dann den Winkel α. Lösung: **44 °** (bis 2 ° daneben gilt als richtig).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 7 cm, γ = 90° und α = 63°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **32 mm** (bis 2 mm daneben gilt als richtig).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 7 cm, γ = 90° und b = 5 cm. / Nutze den Thaleskreis über c. / Miss dann den Winkel α. Lösung: **44 °** (bis 2 ° daneben gilt als richtig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit c = 7 cm, γ = 90° und α = 63°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **32 mm** (bis 2 mm daneben gilt als richtig).
 - `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll mit A und B einen rechten Winkel bilden und genau 3 oder 4 Kästchen über AB liegen. Tippe alle möglichen Punkte C oberhalb von AB an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(2|4) (10|4) (3|5) (9|5)**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Konstruiere ein Dreieck mit c, γ = 90° und der Höhe h_c. Ordne die Schritte. _(Ordnen; die Karten liegen so da: Ein Schnittpunkt der Parallelen mit dem Thaleskreis ist C., Verbinde C mit A und B., Zeichne c und den Thaleskreis über c., Zeichne eine Parallele zu c im Abstand h_c.)_ Lösung: **Zeichne c und den Thaleskreis über c., Zeichne eine Parallele zu c im Abstand h_c., Ein Schnittpunkt der Parallelen mit dem Thaleskreis ist C., Verbinde C mit A und B.**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gegeben sind c = 8 cm und γ = 90°. Für welche Höhe h_c gibt es genau ein Dreieck oberhalb von c (bis auf Spiegeln an der Mittelsenkrechten)? Kreuze an.
@@ -2285,7 +2285,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Höhe h_a geht von der Ecke gegen
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Höhe h_b geht von der Ecke gegenüber der Seite b aus. Sie steht senkrecht auf b. *Lösungsschritt:* Lege das Geodreieck mit der Mittellinie auf die Seite b.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Höhe h_b ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 8 × 6; Punkte A(7|1), B(4|5), C(1|4); Figur mit den Ecken (7|1) (4|5) (1|4))_ Lösung: **zum Beispiel durch (4|5) und (3|3)**
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit a = 6 cm, b = 5 cm und c = 7 cm. Zeichne die Höhe h_c ein und miss ihre Länge in Millimetern. Lösung: **42 mm** (bis 2 mm daneben gilt als richtig).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit a = 6 cm, b = 5 cm und c = 7 cm. Zeichne die Höhe h_c ein und miss ihre Länge in Millimetern. Lösung: **42 mm** (bis 2 mm daneben gilt als richtig).
 - `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe den Fußpunkt der Höhe h_c an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 4 × 9; Punkte A(1|1), B(3|1), C(2|8); Figur mit den Ecken (1|1) (3|1) (2|8))_ Lösung: **(2|1)**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Von welcher Ecke geht die Höhe h_b aus, und auf welcher Seite steht sie senkrecht? Kreuze an.
   - ☐ von C, senkrecht auf b
@@ -2305,7 +2305,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Höhe h_b geht von der Ecke gegen
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Höhe h_b ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 8 × 5; Punkte A(7|1), B(6|4), C(1|4); Figur mit den Ecken (7|1) (6|4) (1|4))_ Lösung: **zum Beispiel durch (6|4) und (5|2)**
 - `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe den Fußpunkt der Höhe h_a an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 7; Punkte A(8|6), B(1|5), C(3|1); Figur mit den Ecken (8|6) (1|5) (3|1))_ Lösung: **(2|3)**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit a = 7 cm, b = 8 cm und c = 9 cm. Zeichne die Höhe h_a ein und miss ihre Länge in Millimetern. Lösung: **77 mm** (bis 2 mm daneben gilt als richtig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Konstruiere im Heft ein Dreieck mit a = 7 cm, b = 8 cm und c = 9 cm. Zeichne die Höhe h_a ein und miss ihre Länge in Millimetern. Lösung: **77 mm** (bis 2 mm daneben gilt als richtig).
 - `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara zeichnet die Höhe h_c von C aus senkrecht auf die Seite a. Erkläre den Fehler. Kreuze an. _(Bild: Karogitter 6 × 8; Punkte A(3|1), B(5|7), C(1|5); Figur mit den Ecken (3|1) (5|7) (1|5))_
   - ☐ Das ist richtig, a liegt bei C.
   - ☑ h_c steht senkrecht auf c. Senkrecht auf a steht die Höhe h_a, und sie geht von A aus.
@@ -2886,6 +2886,12 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `kanten-teilweise` | Nimmt bei der Kantenlänge eines Quaders nur die sichtbaren oder nur drei Kanten statt aller zwölf. | Ein Quader hat 12 Kanten, je 4 gleich lange. Rechne jede Länge viermal. | Du nimmst jetzt alle 12 Kanten mit. |
 | `kante-falsch-abgelesen` | Liest die Länge an einer Kante ab, die nicht parallel zur gesuchten Kante ist. | Gleich lange Kanten eines Quaders sind parallel. Suche die beschriftete Kante, die in dieselbe Richtung zeigt. | Du findest jetzt die gleich lange Kante. |
 | `kippen-richtung` | Kippt einen Körper in Gedanken in die falsche Richtung. | Lege einen Gegenstand vor dich und kippe ihn wirklich. Welche Fläche liegt danach unten? | Du kippst den Körper jetzt in die richtige Richtung. |
+| `dezimal-mehr-ziffern` | Hält die Dezimalzahl mit mehr Nachkommastellen für größer (0,705 viel größer als 0,7, 0,45 größer als 0,5). | Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma. Vergleiche dann Stelle für Stelle. | Du weißt jetzt: Mehr Ziffern machen eine Dezimalzahl nicht größer. |
+| `drittel-als-zehntel` | Schreibt ein Drittel als 0,3 oder zwei Drittel als 0,6, als ob der Nenner 10 wäre. | Rechne 1 : 3. Die Division geht nicht auf: Die 3 wiederholt sich immer weiter. | Du weißt jetzt: Ein Drittel ist nicht 0,3. |
+| `runden-abschneiden` | Schneidet die Stellen hinter der Rundungsstelle einfach ab, statt zu runden (4,38 auf Zehntel wird 4,3). | Schau auf die Ziffer rechts neben der Rundungsstelle. Ist sie 5 oder mehr, rundest du auf. | Du rundest jetzt, statt nur abzuschneiden. |
+| `prozent-als-zaehler` | Nimmt den Zähler des Bruchs als Prozentzahl (3⁄5 als 3 %). | Prozent heißt Hundertstel. Erweitere den Bruch zuerst auf den Nenner 100. | Du rechnest einen Anteil jetzt erst in Hundertstel um. |
+| `periode-zu-frueh` | Setzt den Periodenstrich auch über Ziffern, die sich nicht wiederholen (1⁄6 als 0,1̅6̅ statt 0,16̅). | Schau genau: Welche Ziffern wiederholen sich immer wieder? Nur über sie kommt der Strich. | Du setzt den Strich jetzt nur über die sich wiederholenden Ziffern. |
+| `periode-abgebrochen` | Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66). | Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich. | Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 

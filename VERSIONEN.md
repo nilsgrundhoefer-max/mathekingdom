@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.55 vom 25.11.2026
+
+### Schüler
+
+- Klasse 6 hat ihr viertes Kapitel: „Dezimalzahlen“ mit 6 Meilensteinen, zusammen 288 Aufgaben.
+- Periodische Dezimalzahlen gibst du in zwei Feldern ein: vor der Periode und die Periode. Daneben siehst du deine Zahl mit Strich.
+- Heftaufgaben haben ein blaues Band: „Heftaufgabe: Rechne im Heft. Gib danach nur dein Ergebnis ein.“
+- Endnullen musst du nie schreiben: 4 ist so richtig wie 4,0.
+- Der Hinweis zum Heftcode ist kleiner und grau.
+
+### Lehrkraft
+
+- Klasse 6, Kapitel 4 „Dezimalzahlen“: 4.6 Umwandeln durch Dividieren ist ein Abstecher ab M (ADR 0047).
+- Alle Heftaufgaben in Klasse 5, 6 und 7 sind gekennzeichnet; der Aufgabentester zeigt das Heftband.
+
 ## 0.54 vom 25.11.2026
 
 ### Schüler

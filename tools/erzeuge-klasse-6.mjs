@@ -29,6 +29,8 @@ import { dezimalschreibweise6 } from './aufgaben/6-4-1-schreibweise.mjs';
 import { vergleichen6 } from './aufgaben/6-4-2-vergleichen.mjs';
 import { runden6 } from './aufgaben/6-4-3-runden.mjs';
 import { umwandeln6 } from './aufgaben/6-4-5-umwandeln.mjs';
+import { dividieren6 } from './aufgaben/6-4-6-dividieren.mjs';
+import { prozent6 } from './aufgaben/6-4-7-prozent.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -59,6 +61,8 @@ const ERZEUGER = [
   [64264264, vergleichen6],
   [64364364, runden6],
   [64564564, umwandeln6],
+  [64664664, dividieren6],
+  [64764764, prozent6],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

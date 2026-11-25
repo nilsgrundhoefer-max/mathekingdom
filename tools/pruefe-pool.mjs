@@ -25,7 +25,7 @@ const AFB_FOLGE = { F: [1, 1, 1, 1, 2, 1], G: [1, 1, 2, 1, 2, 3], M: [1, 2, 2, 1
 const KARTEN = { F: ['tipp', 'beispiel', 'loesungsschritt'], G: ['tipp', 'beispiel', 'loesungsschritt'], M: ['tipp', 'loesungsschritt'], E: ['tipp'] };
 const MAX_OPTIONEN = { F: 3, G: 3, M: 4, E: 5 };
 const BILDER_JE_GRUPPE = { F: 6, G: 3 };
-const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse', 'winkel', 'bruch', 'faerben'];
+const FORMATE = ['zahl', 'zahlenstrahl', 'auswahl', 'luecken', 'tabelle', 'zuordnen', 'sachaufgabe', 'diagramm', 'strichliste', 'zeichnen', 'ordnen', 'zeichen', 'schaetzen', 'gitter', 'groesse', 'winkel', 'bruch', 'faerben', 'periode'];
 const KOMPETENZEN = ['argumentieren', 'probleme-loesen', 'modellieren', 'symbolisch', 'kommunizieren'];
 const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 'text', 'loesung', 'typischeFehler', 'hilfen', 'bild', 'nachweis', 'eingabe', 'strahl',
   'luecken', 'mehrfach', 'optionen', 'teile', 'paare', 'tabelle', 'ziffernfelder', 'einheit', 'diagramm',
@@ -53,6 +53,9 @@ let dreieckModus = false;
 const istKoerperLernziel = (id) => id.startsWith('6.3.');
 let koerperModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
+
+// Ein Satz, der fürs Heft beauftragt: „Im Heft: …“ oder ein Auftrag (Verb am Satzanfang) mit „ins Heft“, „in dein Heft“, „im Heft“.
+const heftAuftrag = (text) => String(text ?? '').replace(/„[^“]*“/g, '').split(/(?<=[.!?:])\s+|\n/).some((x) => /^Im Heft:/.test(x.trim()) || (/\b(ins|in dein|im) Heft\b/.test(x) && /^[A-ZÄÖÜ][a-zäöüß]+e\b/.test(x.trim())));
 
 // ---------- Rechnen ----------
 const zahlAus = (s) => Number(String(s).replace(/[\s\u00a0\u202f]/g, ''));
@@ -2284,6 +2287,9 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   if (!a.text?.trim()) { melde(a.id, 'Text fehlt'); continue; }
   if (/undefined|NaN|(?<![A-Za-zäöü])(?<![A-Za-zÄÖÜäöüß] )null|\[object/.test(JSON.stringify([sichtbareTexte(a), a.hilfen]))) melde(a.id, 'Text enthält einen Platzhalter (undefined, NaN)');
   if (sichtbareTexte(a).concat(Object.values(a.hilfen ?? {})).some((t) => / {2}|^ | $|\d-\d| - /.test(t))) melde(a.id, 'Text mit doppeltem Leerzeichen oder Bindestrich statt Minuszeichen');
+  // Heftaufgaben (ADR 0047): Ein Auftrag fürs Heft („Im Heft: …“, „Zeichne in dein Heft …“) trägt das Kennzeichen heftaufgabe, und nur er.
+  if (Boolean(a.heftaufgabe) !== heftAuftrag(a.text)) melde(a.id, a.heftaufgabe ? 'Kennzeichen Heftaufgabe, aber kein Auftrag fürs Heft im Text' : 'Auftrag fürs Heft ohne Kennzeichen heftaufgabe');
+  if (a.heftaufgabe != null && a.heftaufgabe !== true) melde(a.id, 'heftaufgabe ist true oder fehlt');
   groessenModus = a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.');
   const schluessel = `${a.lernziel} ${a.niveau}`;
   if (!gruppen.has(schluessel)) gruppen.set(schluessel, []);

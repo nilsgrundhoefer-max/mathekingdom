@@ -66,8 +66,10 @@ Seit Kapitel 3 dient zusätzlich die Niveauübersicht der Lehrkraft als Quelle: 
 | 4.3 | Dezimalzahlen runden | | Ich kann Dezimalzahlen und Größen sinnvoll runden. |
 | 4.4 | Runden mit der Tabellenkalkulation | MK | entfällt |
 | 4.5 | Umwandeln durch Erweitern und Kürzen | | Ich kann Brüche durch Erweitern oder Kürzen in Dezimalzahlen umwandeln und umgekehrt. |
-| 4.6 | Umwandeln durch Dividieren | M | Ich kann einen Bruch durch Dividieren in eine Dezimalzahl umwandeln, auch in eine periodische. |
+| 4.6 | Umwandeln durch Dividieren | M (Abstecher für F und G) | Ich kann einen Bruch durch Dividieren in eine Dezimalzahl umwandeln, auch in eine periodische. |
 | 4.7 | Dezimalzahlen, Brüche und Prozentangaben | | Ich kann Anteile als Bruch, Dezimalzahl und in Prozent angeben. |
+
+Gebaut in Version 0.55 (ADR 0047): 12 Lernziele mit je 24 Aufgaben, in 4.6 je 12 auf M und E. Heftaufgaben nur in 4.6.
 
 ## Kapitel 5: Rechnen mit Dezimalzahlen
 

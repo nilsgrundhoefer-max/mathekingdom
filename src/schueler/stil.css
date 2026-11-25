@@ -403,9 +403,9 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom table.division { border-collapse: collapse; font: 1.15rem/1.35 ui-monospace, "Cascadia Mono", Consolas, monospace; font-variant-numeric: tabular-nums; }
 #mathekingdom table.division td { padding: 0; min-width: 1.1ch; text-align: center; }
 #mathekingdom table.division td.rechnung { text-align: left; white-space: pre; padding-left: .2ch; }
-#mathekingdom table.division tr.minus td { border-bottom: 1.5px solid var(--tinte); }
-#mathekingdom table.division tr.minus td:empty { border-bottom: 0; }
-#mathekingdom table.division tr.minus td:last-child { border-bottom: 0; }
+#mathekingdom table.division tr.division-minus td { border-bottom: 1.5px solid var(--tinte); }
+#mathekingdom table.division tr.division-minus td:empty { border-bottom: 0; }
+#mathekingdom table.division tr.division-minus td:last-child { border-bottom: 0; }
 #mathekingdom .divisionsbild figcaption { margin-top: 8px; font-size: .95rem; color: var(--tinte); }
 #mathekingdom .heftwahl { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .6rem; margin-top: .8rem; }
 #mathekingdom .heftwahl button { font-size: 1.15rem; padding: .8rem; }
@@ -624,6 +624,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .zeichentasten { display: flex; flex-wrap: wrap; gap: 6px; }
 #mathekingdom .zeichentaste { min-width: 2.8rem; font-size: 1.2rem; font-weight: 700; }
 #mathekingdom .wahre-anzahl { font-weight: 700; }
+#mathekingdom .endnull { color: var(--grau); font-size: .95rem; margin-top: 4px; }
 
 /* Zahlenstrahl: markierte Zahlen (Kapitel 2) */
 #mathekingdom .zahlenstrahl .punkt { fill: var(--siegel); stroke: #fff; stroke-width: 2; }

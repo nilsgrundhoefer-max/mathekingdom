@@ -16,7 +16,7 @@ import stil from './src/schueler/stil.css';
 import { h } from './src/schueler/dom.js';
 import { aufgabenBild } from './src/schueler/aufgabenbilder.js';
 import { urlisteBild, datenTabelle } from './src/schueler/datenbilder.js';
-import { eingabefelder, loesungsbild } from './src/schueler/app.js';
+import { eingabefelder, loesungsbild, heftband } from './src/schueler/app.js';
 window.bogen = (aufgaben, lernziele) => {
   document.head.append(h('style', {}, stil));
   const halter = document.getElementById('mathekingdom');
@@ -28,6 +28,7 @@ window.bogen = (aufgaben, lernziele) => {
     const loesung = loesungsbild(auf);
     halter.append(h('section', { class: 'aufgabe', 'data-aufgabe': auf.id }, h('div', { class: 'karte' },
       h('p', { class: 'kennung-oben' }, auf.id + ' · AFB ' + 'I'.repeat(auf.afb) + ' · ' + auf.format),
+      auf.heftaufgabe && heftband(auf),
       auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
       auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
       auf.urliste && urlisteBild(auf.urliste, false),

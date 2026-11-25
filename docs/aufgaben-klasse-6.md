@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (960 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (1248 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 960).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1248).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -890,9 +890,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Einteilung ist feiner als der Bru
 
 - `01` AFB I · _Kommunizieren_ · Ein Ganzes hat hier 20 Abstände. Markiere 3⁄5 am Zahlenstrahl. _(Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄20; antippen)_ Lösung: **12⁄20**. Typische Fehler: 11⁄20 (bruchstrahl-striche), 13⁄20 (bruchstrahl-striche), 3⁄20 (erweitern-nur-ein-teil).
 - `02` AFB II · _Kommunizieren_ · Markiere 6⁄4 am Zahlenstrahl. _(Zahlenstrahl 0 bis 3, Teilstriche alle 1⁄4; antippen)_ Lösung: **6⁄4**. Typische Fehler: 5⁄4 (bruchstrahl-striche), 7⁄4 (bruchstrahl-striche), 2⁄4 (gemischt-umwandeln).
-- `03` AFB II · _Kommunizieren_ · Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 18 Kästchen lang sein. Trage 5⁄6 ein. Beim wievielten Kästchen nach der 0 liegt 5⁄6? Lösung: **15**. Typische Fehler: 3 (bruchteil-zaehler-vergessen), 5 (erweitern-nur-ein-teil).
+- `03` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 18 Kästchen lang sein. Trage 5⁄6 ein. Beim wievielten Kästchen nach der 0 liegt 5⁄6? Lösung: **15**. Typische Fehler: 3 (bruchteil-zaehler-vergessen), 5 (erweitern-nur-ein-teil).
 - `04` AFB I · _Kommunizieren_ · Der Zahlenstrahl zeigt einen Ausschnitt. Markiere 8 3⁄5. _(Zahlenstrahl 7 bis 9, Teilstriche alle 1⁄5, Ausschnitt; antippen)_ Lösung: **43⁄5**. Typische Fehler: 42⁄5 (bruchstrahl-striche), 44⁄5 (bruchstrahl-striche).
-- `05` AFB II · _Kommunizieren_ · Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 10 Kästchen lang sein. Trage 1 2⁄5 ein. Beim wievielten Kästchen nach der 0 liegt 1 2⁄5? Lösung: **14**. Typische Fehler: 4 (gemischt-umwandeln), 12 (erweitern-nur-ein-teil), 5 (gemischt-umwandeln).
+- `05` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 10 Kästchen lang sein. Trage 1 2⁄5 ein. Beim wievielten Kästchen nach der 0 liegt 1 2⁄5? Lösung: **14**. Typische Fehler: 4 (gemischt-umwandeln), 12 (erweitern-nur-ein-teil), 5 (gemischt-umwandeln).
 - `06` AFB III · _Kommunizieren_ · Du willst 3⁄4 und 5⁄6 am selben Zahlenstrahl eintragen. Beide Brüche sollen genau auf einem Teilstrich liegen. In wie viele Abstände teilst du die Strecke von 0 bis 1 mindestens? Lösung: **12**. Typische Fehler: 24 (sach-frage-verfehlt), 10 (erweitern-addiert), 6 (sach-schritt-vergessen).
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -901,8 +901,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere den Bruch auf den Nenner de
 
 - `01` AFB I · _Kommunizieren_ · Ein Ganzes hat hier 28 Abstände. Markiere 3⁄4. _(Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄28; antippen)_ Lösung: **21⁄28**. Typische Fehler: 20⁄28 (bruchstrahl-striche), 22⁄28 (bruchstrahl-striche), 3⁄28 (erweitern-nur-ein-teil), 7⁄28 (bruchteil-zaehler-vergessen).
 - `02` AFB II · _Kommunizieren_ · Ein Ganzes hat hier 12 Abstände. Markiere die Zahl, die genau in der Mitte zwischen 1⁄2 und 2⁄3 liegt. _(Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄12; antippen)_ Lösung: **7⁄12**. Typische Fehler: 6⁄12 (bruchstrahl-striche), 8⁄12 (bruchstrahl-striche).
-- `03` AFB II · _Kommunizieren_ · Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 24 Kästchen lang sein. Trage 1⁄3 und 5⁄8 ein. Wie viele Kästchen liegen zwischen den beiden Brüchen? Lösung: **7**. Typische Fehler: 15 (sach-schritt-vergessen), 8 (sach-schritt-vergessen), 4 (erweitern-nur-ein-teil), 23 (sach-falsche-rechnung).
-- `04` AFB III · _Kommunizieren_ · Zeichne in dein Heft einen Zahlenstrahl. Du sollst 3⁄4, 2⁄5 und 7⁄10 eintragen. Alle drei Brüche sollen genau auf einer Kästchenlinie liegen. Wie viele Kästchen lang zeichnest du die Strecke von 0 bis 1 mindestens? Lösung: **20**. Typische Fehler: 200 (sach-frage-verfehlt), 19 (erweitern-addiert), 10 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne in dein Heft einen Zahlenstrahl. Die Strecke von 0 bis 1 soll 24 Kästchen lang sein. Trage 1⁄3 und 5⁄8 ein. Wie viele Kästchen liegen zwischen den beiden Brüchen? Lösung: **7**. Typische Fehler: 15 (sach-schritt-vergessen), 8 (sach-schritt-vergessen), 4 (erweitern-nur-ein-teil), 23 (sach-falsche-rechnung).
+- `04` AFB III · _Kommunizieren_ · **[Heftaufgabe]** Zeichne in dein Heft einen Zahlenstrahl. Du sollst 3⁄4, 2⁄5 und 7⁄10 eintragen. Alle drei Brüche sollen genau auf einer Kästchenlinie liegen. Wie viele Kästchen lang zeichnest du die Strecke von 0 bis 1 mindestens? Lösung: **20**. Typische Fehler: 200 (sach-frage-verfehlt), 19 (erweitern-addiert), 10 (sach-schritt-vergessen).
 - `05` AFB II · _Kommunizieren_ · Die Strecke von 0 bis 2 ist in 7 gleich große Abstände geteilt. Markiere 6⁄7. _(Zahlenstrahl 0 bis 2, Teilstriche alle 2⁄7; antippen)_ Lösung: **6⁄7**. Typische Fehler: 4⁄7 (bruchstrahl-striche), 8⁄7 (bruchstrahl-striche).
 - `06` AFB III · _Kommunizieren_ · Ein Ganzes hat hier 18 Abstände. Markiere die Zahl, die doppelt so weit von der 0 entfernt ist wie 1⁄6. _(Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄18; antippen)_ Lösung: **6⁄18**. Typische Fehler: 5⁄18 (bruchstrahl-striche), 7⁄18 (bruchstrahl-striche), 3⁄18 (sach-schritt-vergessen).
 
@@ -2224,10 +2224,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Kanten nach hinten gehen schräg nach
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die fehlende Kante läuft nach hinten. Sie ist im Bild verkürzt. *Lösungsschritt:* Für 4 cm Tiefe 4 Kästchen nach rechts und 4 nach oben.
 
 - `01` AFB I · _Kommunizieren_ · Der Quader ist 5 cm lang, 4 cm tief und 3 cm hoch. Zeichne die fehlende Kante ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 16 × 12; Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (15|5), Strecke durch (15|5) und (5|5), Strecke durch (5|5) und (1|1), Strecke durch (1|7) und (11|7), Strecke durch (15|11) und (5|11), Strecke durch (5|11) und (1|7), Strecke durch (1|1) und (1|7), Strecke durch (11|1) und (11|7), Strecke durch (15|5) und (15|11), Strecke durch (5|5) und (5|11))_ Lösung: **zum Beispiel durch (11|7) und (15|11)**
-- `02` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 3 cm und c = 2 cm in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist. Lösung: **11**. Typische Fehler: 14 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt), 7 (tiefe-nicht-verkuerzt).
+- `02` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 3 cm und c = 2 cm in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist. Lösung: **11**. Typische Fehler: 14 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt), 7 (tiefe-nicht-verkuerzt).
 - `03` AFB II · _Kommunizieren_ · Gezeichnet ist die Vorderfläche eines Quaders, der 4 cm tief ist. Tippe die Stelle an, an der die Ecke G liegt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 17 × 13; Punkte A(1|1), B(11|1), E(1|7), F(11|7); Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (11|7), Strecke durch (1|7) und (11|7), Strecke durch (1|1) und (1|7))_ Lösung: **(15|11)**
 - `04` AFB I · _Kommunizieren_ · Zeichne die Kante GH ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 12; Punkte A(1|1), B(7|1), C(9|3), D(3|3), E(1|9), F(7|9), G(9|11), H(3|11); Strecke durch (1|1) und (7|1), Strecke durch (7|1) und (9|3), Strecke durch (9|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|9) und (7|9), Strecke durch (7|9) und (9|11), Strecke durch (3|11) und (1|9), Strecke durch (1|1) und (1|9), Strecke durch (7|1) und (7|9), Strecke durch (9|3) und (9|11), Strecke durch (3|3) und (3|11))_ Lösung: **zum Beispiel durch (9|11) und (3|11)**
-- `05` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Quaders mit a = 5 cm, b = 2 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **10**. Typische Fehler: 12 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt), 6 (tiefe-nicht-verkuerzt).
+- `05` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne das Schrägbild eines Quaders mit a = 5 cm, b = 2 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **10**. Typische Fehler: 12 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt), 6 (tiefe-nicht-verkuerzt).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena zeichnet einen Quader mit 5 cm Tiefe. Die Kanten nach hinten zeichnet Lena 10 Kästchen nach rechts und 10 Kästchen nach oben. Beurteile die Zeichnung.
   - ☐ Richtig. So wird der Quader schön groß.
   - ☑ Falsch. 5 cm Tiefe sind nur 5 Kästchendiagonalen.
@@ -2238,10 +2238,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die fehlende Kante läuft nach hinten
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe die Richtung an einer anderen Kante nach hinten.
 
 - `01` AFB I · _Kommunizieren_ · Der Quader ist 4 cm lang, 3 cm tief und 2 cm hoch. Zeichne die fehlende Kante ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 13 × 9; Strecke durch (1|1) und (9|1), Strecke durch (12|4) und (4|4), Strecke durch (4|4) und (1|1), Strecke durch (1|5) und (9|5), Strecke durch (9|5) und (12|8), Strecke durch (12|8) und (4|8), Strecke durch (4|8) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (9|1) und (9|5), Strecke durch (12|4) und (12|8), Strecke durch (4|4) und (4|8))_ Lösung: **zum Beispiel durch (9|1) und (12|4)**
-- `02` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Würfels mit 3 cm Kantenlänge in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist. Lösung: **9**. Typische Fehler: 12 (tiefe-nicht-verkuerzt), 6 (tiefe-nicht-verkuerzt).
+- `02` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne das Schrägbild eines Würfels mit 3 cm Kantenlänge in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist. Lösung: **9**. Typische Fehler: 12 (tiefe-nicht-verkuerzt), 6 (tiefe-nicht-verkuerzt).
 - `03` AFB II · _Kommunizieren_ · Gezeichnet ist die Vorderfläche eines Quaders, der 4 cm tief ist. Tippe die Stelle an, an der die verdeckte Ecke D liegt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 17 × 13; Punkte A(1|1), B(11|1), E(1|7), F(11|7); Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (11|7), Strecke durch (1|7) und (11|7), Strecke durch (1|1) und (1|7))_ Lösung: **(5|5)**
 - `04` AFB III · _Kommunizieren_ · Das Schrägbild eines Würfels ist im Heft 12 Kästchen breit. Gib die Kantenlänge des Würfels an. Lösung: **4 cm**. Typische Fehler: 6 (tiefe-nicht-verkuerzt), 3 (tiefe-nicht-verkuerzt).
-- `05` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 4 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **12**. Typische Fehler: 16 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt).
+- `05` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 4 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **12**. Typische Fehler: 16 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Im Schrägbild ist eine Kante nach hinten genauso lang wie in Wirklichkeit. Eine Kästchendiagonale ist ja 1 cm.“ Beurteile die Aussage.
   - ☐ Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.
   - ☑ Stimmt nicht. Eine Kästchendiagonale ist kürzer als 1 cm. Die Tiefe wird verkürzt gezeichnet.
@@ -3157,6 +3157,948 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere nach jedem Schritt die Zahlen
   - ☐ Stimmt. Beim Kippen kommt es nicht auf die Reihenfolge an.
   - ☐ Stimmt. In beiden Fällen liegt 2 oben.
 
+## 6.4.1-S1: Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Zehnerbrüche als Dezimalzahl schreiben.
+
+Grundlage, die F übt: Am Streifen aus 10 Teilen die gefärbten Zehntel zählen und mit Komma schreiben
+
+Baut auf: 5.9.3-K1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Brüche mit dem Nenner 10, 100 oder 1000 als Dezimalzahl schreiben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die erste Stelle nach dem Komma zählt die Zehntel, die zweite die Hundertstel. *Beispiel:* 7⁄100 = 0,07. Das sind 0 Zehntel und 7 Hundertstel. *Lösungsschritt:* Zähle die Felder. Schreibe Hundertstel mit zwei Stellen nach dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Streifen hat 10 gleich große Teile. / Kreuze die Dezimalzahl zum gefärbten Teil an. _(Bild: Bruchbild: Streifen mit 10 Teilen, 2 gefärbt)_
+  - ☐ 0,8
+  - ☐ 0,02
+  - ☑ 0,2
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 1,05 in die Stellenwerttafel ein. / E heißt Einer, z Zehntel, h Hundertstel.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | E | z | h |
+  |---|---|---|
+  | **1** | **0** | **5** |
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Hunderterfeld hat 100 Felder. / Schreibe den gefärbten Teil als Dezimalzahl. / 44⁄100 = ▢ _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 44 gefärbt)_ Lösung: a = **0,44**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Lies die Zahl in der Stellenwerttafel ab. / Schreibe sie als Dezimalzahl. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 3 5 7)_ Lösung: **3,57**. Typische Fehler: 3,75 (dezimal-stelle), 3,7 (null-platzhalter), 357 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Hunderterfeld sind 0,99 gefärbt. / Schreibe 0,99 als Bruch mit dem Nenner 100. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 99 gefärbt)_ _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **99⁄100**. Typische Fehler: 99⁄10 (dezimal-stelle), 100⁄99 (bruch-vertauscht), 1⁄100 (bruch-teil-zu-rest).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch die passende Dezimalzahl zu. / Die Tabelle hilft dir. _(Tabelle: Bruch | Dezimalzahl / 1⁄10 | 0,1 / 1⁄100 | 0,01)_ Lösung: 3⁄10 → 0,3, 44⁄100 → 0,44, 9⁄100 → 0,09
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Spalte t zählt die Tausendstel. *Beispiel:* Bei 0,047 trägst du ein: 0 Einer, 0 Zehntel, 4 Hundertstel, 7 Tausendstel. *Lösungsschritt:* Beginne bei den Einern. Trage auch jede 0 ein.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage die beiden Zahlen in die Stellenwerttafel ein. / Oben steht 4,005. / Unten steht 0,079.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | E | z | h | t |
+  |---|---|---|---|
+  | **4** | **0** | **0** | **5** |
+  | **0** | **0** | **7** | **9** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe als Dezimalzahl. / 6⁄1000 = ▢ Lösung: a = **0,006**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe als Dezimalzahl: 6 Einer, 6 Hundertstel und 8 Tausendstel. Lösung: **6,068**. Typische Fehler: 6,68 (null-platzhalter), 6,608 (dezimal-stelle).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Lies die Zahl in der Stellenwerttafel ab. / Schreibe sie als Dezimalzahl. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h t: 7 1 8 8)_ Lösung: **7,188**. Typische Fehler: 7188 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe die Zahl aus der Stellenwerttafel als Bruch. / Nimm den Nenner 1000. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h t: 0 4 7 3)_ _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **473⁄1000**. Typische Fehler: 473⁄100 (dezimal-stelle), 1000⁄473 (bruch-vertauscht).
+- `06` AFB III · _Argumentieren_ · Lena schreibt: 7⁄1000 = 0,007 / Beurteile die Aussage.
+  - ☑ Stimmt.
+  - ☐ Falsch. / Es gilt 7⁄1000 = 0,07.
+  - ☐ Falsch. / Es gilt 7⁄1000 = 0,7.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach den Tausendsteln kommen die Zehntausendstel. Sie stehen an der vierten Stelle nach dem Komma. *Lösungsschritt:* Zähle die Nullen im Nenner: So viele Stellen hat die Zahl nach dem Komma. Fülle vorne mit 0 auf.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe als Dezimalzahl. / 7⁄10000 = ▢ Lösung: a = **0,0007**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe als Dezimalzahl: 4 Zehner, 2 Zehntel und 5 Tausendstel. Lösung: **40,205**. Typische Fehler: 4,25 (null-platzhalter), 40,25 (null-platzhalter), 4,205 (stellenwert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 4,064 als gemischte Zahl mit dem Nenner 1000. _(Brucheingabe mit Feld für die Ganzen; nur genau dieser Bruch ist richtig)_ Lösung: **4 64⁄1000**. Typische Fehler: 4 64⁄100 (dezimal-stelle), 4064⁄10000 (dezimal-stelle).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 86,081 in die Stellenwerttafel ein.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | Z | E | z | h | t |
+  |---|---|---|---|---|
+  | **8** | **6** | **0** | **8** | **1** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Gleichungen an, die stimmen.
+  - ☐ 846⁄10000 = 0,846
+  - ☑ 42⁄1000 = 0,042
+  - ☐ 3⁄10 = 0,03
+  - ☐ 9273⁄10000 = 9,273
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Finde die Dezimalzahl mit vier Stellen nach dem Komma. / Sie hat 4 Zehntel, 3 Tausendstel und 8 Zehntausendstel, aber keine Hundertstel. / Die Ziffer der Einer ist doppelt so groß wie die Ziffer der Zehntel. / Gib die Zahl an. Lösung: **8,4038**. Typische Fehler: 8,438 (null-platzhalter), 4,8038 (stellenwert).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne beim Komma und arbeite nach links und nach rechts. Jede Stelle bekommt eine Ziffer, auch die 0.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 603,092 in die Stellenwerttafel ein.  _(Stellenwerttafel mit Komma nach E; fett = Eingabefeld)_
+
+  | H | Z | E | z | h | t |
+  |---|---|---|---|---|---|
+  | **6** | **0** | **3** | **0** | **9** | **2** |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe als Dezimalzahl: 25 Hundertstel und 9 Tausendstel. Lösung: **0,259**. Typische Fehler: 25,9 (stellenwert), 0,2509 (null-platzhalter), 0,34 (stellenwert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 4,0152 als gemischte Zahl mit dem Nenner 10000. _(Brucheingabe mit Feld für die Ganzen; nur genau dieser Bruch ist richtig)_ Lösung: **4 152⁄10000**. Typische Fehler: 4 152⁄1000 (dezimal-stelle), 40152⁄10000 (gemischt-umwandeln).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Vier Gleichungen stimmen, eine ist falsch. Kreuze die falsche Gleichung an.
+  - ☐ 83⁄1000 = 0,083
+  - ☐ 501⁄10000 = 0,0501
+  - ☐ 2⁄100 = 0,02
+  - ☑ 6,5 = 6 5⁄100
+  - ☐ 6⁄10 = 0,6
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe als Dezimalzahl: 1 Einer und 8189 Zehntausendstel. Lösung: **1,8189**. Typische Fehler: 18189 (dezimal-stelle).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Finde die Dezimalzahl mit drei Stellen nach dem Komma und ohne Einer. / Die Zehntel und die Hundertstel haben verschiedene Ziffern. / Die Zehntel sind 1, die Tausendstel sind 7. / Die Ziffer der Hundertstel ist die Summe aus Zehnteln und Tausendsteln. / Gib die Zahl an. Lösung: **0,187**. Typische Fehler: 0,178 (stellenwert), 0,781 (stellenwert).
+
+## 6.4.1-S2: Ich kann den Stellenwert einer Ziffer angeben, Endnullen erkennen und Größen mit Komma schreiben.
+
+Grundlage, die F übt: In der Stellenwerttafel ablesen, welche Ziffer bei den Zehnteln steht
+
+Baut auf: 6.4.1-S1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Zehnerbrüche als Dezimalzahl schreiben.), 5.9.3-K3 (Ich kann Größen in Kommaschreibweise in eine andere Einheit umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma kommen zuerst die Zehntel, dann die Hundertstel. *Beispiel:* In 3,47 steht 4 bei den Zehnteln und 7 bei den Hundertsteln. *Lösungsschritt:* Zeige mit dem Finger auf das Komma. Gehe dann eine Stelle nach rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau auf die Zahl 8,16 in der Tafel. / Gib die Ziffer bei den Zehnteln an. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 8 1 6)_ Lösung: **1**. Typische Fehler: 6 (dezimal-stelle), 8 (stellenwert).
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „0,5 und 0,05 sind gleich viel.“ / Beurteile die Aussage. / Die Stellenwerttafel hilft dir. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 0 5 · / 0 0 5)_
+  - ☑ Falsch. / Es gilt 0,5 > 0,05.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es gilt 0,5 < 0,05.
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe den Betrag mit Komma. / 5 € 25 ct = ▢ € _(Bild: Einheitentafel € | ct, Spalten Z E Z E: · 5 2 5)_ Lösung: a = **5,25**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe die Länge mit Komma. / 5 m 1 cm = ▢ m _(Bild: Einheitentafel m | cm, Spalten Z E Z E: · 5 0 1)_ Lösung: a = **5,01**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Zahl ist 9,84. / Kreuze an, wie viel die Ziffer 4 wert ist. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 9 8 4)_
+  - ☑ 4 Hundertstel
+  - ☐ 4 Zehntel
+  - ☐ 4 Einer
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne jeder Zahl die gleich große Zahl zu. _(Tabelle: Zahl | gleich viel / 0,1 | 0,10 / 0,01 | 1 Hundertstel)_ Lösung: 2,4 → 2,40, 0,4 → 0,40, 0,02 → 2 Hundertstel
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Stelle ist zehnmal so viel wert wie die Stelle rechts von ihr. *Beispiel:* In 4,326 ist die 2 zwei Hundertstel wert, die 6 sechs Tausendstel. *Lösungsschritt:* Zähle vom Komma aus: Zehntel, Hundertstel, Tausendstel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahl 7,185. / Gib die Ziffer bei den Tausendsteln an. Lösung: **5**. Typische Fehler: 8 (dezimal-stelle), 1 (dezimal-stelle).
+- `02` AFB I · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „2,82 und 2,802 sind gleich viel.“ / Beurteile die Aussage. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h t: 2 8 2 · / 2 8 0 2)_
+  - ☐ Falsch. / Es gilt 2,82 < 2,802.
+  - ☑ Falsch. / Es gilt 2,82 > 2,802.
+  - ☐ Stimmt.
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze an, wie man 9,13 richtig liest. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 9 1 3)_
+  - ☐ neun Komma drei eins
+  - ☐ neun Komma 13
+  - ☑ neun Komma eins drei
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe das Gewicht mit Komma. / 6 kg 465 g = ▢ kg _(Bild: Einheitentafel kg | g, Spalten Z E H Z E: · 6 4 6 5)_ Lösung: a = **6,465**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Zahl ist 0,63. / Gib an, wie viele Tausendstel das sind. Lösung: **630 Tausendstel**. Typische Fehler: 63 (dezimal-endnull).
+- `06` AFB III · _Argumentieren_ · Tom sagt: „Eine 0 am Ende macht die Zahl zehnmal so groß.“ / Beurteile die Aussage.
+  - ☐ Stimmt. / Wie bei den natürlichen Zahlen.
+  - ☐ Falsch. / Es gilt 2,9 > 2,90.
+  - ☑ Falsch. / Es gilt 2,9 = 2,90.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleiche Einheiten nebeneinander: 1 m = 100 cm, 1 kg = 1000 g, 1 km = 1000 m. Die Umrechnungszahl sagt, wie viele Stellen nach dem Komma zur kleineren Einheit gehören. *Lösungsschritt:* Schreibe die kleinere Einheit mit so vielen Ziffern, wie die Umrechnungszahl Nullen hat. Fülle vorne mit 0 auf.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib die Ziffer an, die in 5,8437 bei den Hundertsteln steht. Lösung: **4**. Typische Fehler: 3 (dezimal-stelle), 8 (dezimal-stelle).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma: 5 km 99 m = ▢ km Lösung: a = **5,099**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma: 5 t 305 kg = ▢ t Lösung: a = **5,305**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne jeder Größe die gleich große Größe zu. Lösung: 1,60 m → 1 m 60 cm, 2,6 kg → 2 kg 600 g, 2,06 kg → 2 kg 60 g, 1,06 m → 1 m 6 cm
+- `05` AFB II · _Argumentieren_ · Noah schreibt: 2 km 52 m = 2,52 km / Beurteile die Aussage.
+  - ☑ Falsch. Es gilt 2 km 52 m = 2,052 km.
+  - ☐ Stimmt.
+  - ☐ Falsch. Es gilt 2 km 52 m = 252 km.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die beiden Längen an, die gleich groß sind.
+  - ☑ 506 cm
+  - ☐ 5 m 6 cm 9 mm
+  - ☑ 5,06 m
+  - ☐ 5,69 m
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Ziffer der genannten Stelle steht nach so vielen Stellen hinter dem Komma, wie der Name sagt: Zehntel eine, Hundertstel zwei, Tausendstel drei.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib die Dezimalzahl an: 5 Einer und 2 Zehntel. Sonst ist keine Stelle besetzt. Lösung: **5,2**. Typische Fehler: 5,02 (dezimal-stelle), 2,5 (stellenwert).
+- `02` AFB II · _Argumentieren_ · Mia liest auf dem Zettel „5 € 4 ct“ und tippt 5,4 € in den Rechner. Beurteile, ob das stimmt.
+  - ☐ Stimmt, denn 4 ct = 0,4 €.
+  - ☑ Falsch. Es gilt 4 ct = 0,04 €, also sind es 5,04 €.
+  - ☐ Stimmt.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe als Kilometer mit Komma: 2041 m = ▢ km Lösung: a = **2,041**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Vier Umwandlungen stimmen, eine ist falsch. Kreuze die falsche an.
+  - ☐ 3,5 kg = 3 kg 500 g
+  - ☑ 3,07 km = 3 km 7 m
+  - ☐ 0,07 € = 7 ct
+  - ☐ 0,75 m = 75 cm
+  - ☐ 3,700 t = 3 t 700 kg
+- `05` AFB II · _Argumentieren_ · Mara sagt: „0,99 und 0,0099 sind gleich viel.“ / Beurteile die Aussage und begründe sie.
+  - ☐ Stimmt. Beide haben dieselben Ziffern.
+  - ☑ Falsch. Es gilt 0,99 > 0,0099, denn die Null nach dem Komma schiebt die Ziffern um eine Stelle nach rechts.
+  - ☐ Falsch. Es gilt 0,99 < 0,0099.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Lena misst eine Strecke: 2 m 23 cm 6 mm. Gib die Länge in Metern mit Komma an. Lösung: **2,236 m**. Typische Fehler: 22,36 (dezimal-stelle).
+
+## 6.4.2-V1: Ich kann Dezimalzahlen vergleichen und der Größe nach ordnen.
+
+Grundlage, die F übt: Zwei Dezimalzahlen mit gleich vielen Stellen am Zahlenstrahl vergleichen
+
+Baut auf: 6.4.1-S1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Zehnerbrüche als Dezimalzahl schreiben.), 5.9.3-K2 (Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche zuerst die Einer. Dann die Zehntel, dann die Hundertstel. *Beispiel:* 0,7 und 0,65: Die Zehntel sind 7 und 6. Also ist 0,7 größer. *Lösungsschritt:* Schreibe die Zahlen untereinander, Komma unter Komma. Vergleiche von links.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Am Zahlenstrahl siehst du zwei Zahlen. / Kreuze das passende Zeichen an: 0,7 ▢ 0,6 _(Bild: Zahlenstrahl 0 bis 1, Teilstriche alle 0,1, Punkte bei 0,7, 0,6)_
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Beide Zahlen stehen in der Stellenwerttafel. / Kreuze das passende Zeichen an: 0,3 ▢ 0,25 _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 0 3 0 / 0 2 5)_
+  - ☑ >
+  - ☐ <
+  - ☐ =
+- `03` AFB I · _Probleme lösen (+ Kommunizieren)_ · Drei Zahlen stehen in der Stellenwerttafel. / Kreuze die größte Zahl an. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 0 4 3 / 0 3 3 / 0 4 0)_
+  - ☑ 0,43
+  - ☐ 0,4
+  - ☐ 0,33
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 0 3 0 / 0 3 4 / 0 2 9 / 0 4 1)_ _(Ordnen; die Karten liegen so da: 0,41, 0,29, 0,3, 0,34)_ Lösung: **0,29, 0,3, 0,34, 0,41**
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „0,9 < 0,89“ / Mara meint: 89 ist mehr als 9. / Beurteile die Aussage. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 0 9 0 / 0 8 9)_
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn 89 > 9.
+  - ☑ Falsch. / Es gilt 0,9 > 0,89.
+- `06` AFB I · _Probleme lösen_ · Ida und Tom springen weit. / Kreuze die größere Weite an. _(Tabelle: Kind | Weite / Ida | 2,7 m / Tom | 2,79 m)_
+  - ☐ 2,7 m
+  - ☑ 2,79 m
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Hänge Endnullen an. Dann haben beide Zahlen gleich viele Stellen. *Beispiel:* 0,7 und 0,705 werden zu 0,700 und 0,705. Also ist 0,705 größer. *Lösungsschritt:* Vergleiche Stelle für Stelle von links. Die erste verschiedene Ziffer entscheidet.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze das passende Zeichen an. / 4,48 ▢ 4,402 _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h t: 4 4 8 0 / 4 4 0 2)_
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h t: 2 2 6 4 / 2 2 0 0 / 2 2 7 0 / 2 1 4 4)_ _(Ordnen; die Karten liegen so da: 2,264, 2,144, 2,2, 2,27)_ Lösung: **2,144, 2,2, 2,264, 2,27**
+- `03` AFB II · _Probleme lösen_ · Kreuze die Zahl zwischen 0,6 und 0,7 an.
+  - ☑ 0,696
+  - ☐ 0,52
+  - ☐ 0,709
+- `04` AFB I · _Probleme lösen_ · Drei Kinder laufen 100 m. / Die Tabelle zeigt ihre Zeiten in Sekunden. / Kreuze die schnellste Zeit an. _(Tabelle: Kind | Zeit / Lina | 13,47 s / Emma | 13,97 s / Ali | 13,1 s)_
+  - ☐ 13,47 s
+  - ☐ 13,97 s
+  - ☑ 13,1 s
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Vier Pakete werden gewogen. / Ordne die Gewichte der Größe nach. / Beginne mit dem schwersten Paket. _(Ordnen; die Karten liegen so da: 2,65 kg, 2,7 kg, 2,808 kg, 2,015 kg)_ Lösung: **2,808 kg, 2,7 kg, 2,65 kg, 2,015 kg**
+- `06` AFB III · _Argumentieren_ · Finn sagt: „Mehr Stellen nach dem Komma machen eine Zahl größer.“ / Finn meint deshalb: 0,59 > 0,6 / Beurteile die Aussage.
+  - ☑ Falsch. / Es gilt 0,6 > 0,59.
+  - ☐ Stimmt, denn 0,59 hat mehr Stellen.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Fülle mit Endnullen auf, bis alle Zahlen gleich viele Stellen haben. Bei Größen rechne zuerst in dieselbe Einheit um. *Lösungsschritt:* Vergleiche dann Stelle für Stelle von links. Die erste verschiedene Ziffer entscheidet.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das passende Zeichen an. / 2,3721 ▢ 2,372
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Längen der Größe nach. / Beginne mit der kürzesten. _(Ordnen; die Karten liegen so da: 4925 m, 4,01 km, 4,92 km, 4 km 62 m)_ Lösung: **4,01 km, 4 km 62 m, 4,92 km, 4925 m**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, die größer sind als 0,25.
+  - ☑ 0,2501
+  - ☐ 0,249
+  - ☑ 0,3
+  - ☑ 0,269
+  - ☐ 0,250
+- `04` AFB I · _Probleme lösen_ · Kreuze die kleinste Zahl an.
+  - ☐ 0,022
+  - ☑ 0,02
+  - ☐ 0,2002
+  - ☐ 0,0202
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Vier Kinder messen beim Ballwurf ihre Weiten. / Ordne die Weiten. Beginne mit der größten Weite. _(Tabelle: Kind | Weite / Ali | 20,86 m / Emma | 20,3 m / Paul | 20,01 m / Lina | 20,35 m)_ _(Ordnen; die Karten liegen so da: 20,35 m, 20,3 m, 20,86 m, 20,01 m)_ Lösung: **20,86 m, 20,35 m, 20,3 m, 20,01 m**
+- `06` AFB III · _Argumentieren_ · Noah sagt: „4,0400 > 4,04“ / Noah meint: 4,0400 hat mehr Stellen. / Beurteile die Aussage.
+  - ☐ Falsch. Es gilt 4,0400 < 4,04.
+  - ☐ Stimmt, denn 40400 > 404.
+  - ☐ Stimmt.
+  - ☑ Falsch. Es gilt 4,0400 = 4,04.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne beide Längen in Meter um. 1 km = 1000 m.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das passende Zeichen an. / 4,8 km ▢ 4850 m
+  - ☐ =
+  - ☐ >
+  - ☑ <
+- `02` AFB II · _Probleme lösen_ · Kreuze alle Zahlen an, die zwischen 0,7 und 0,71 liegen.
+  - ☑ 0,7001
+  - ☑ 0,7099
+  - ☐ 0,71
+  - ☐ 0,699
+  - ☑ 0,705
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Für ▢ wird eine Ziffer eingesetzt: 2,▢7 > 2,67 / Kreuze alle Zahlen an, die so entstehen können.
+  - ☐ 2,07
+  - ☐ 2,47
+  - ☐ 2,27
+  - ☐ 2,67
+  - ☑ 2,77
+- `04` AFB III · _Argumentieren_ · Paul ordnet drei Zahlen: 0,7 < 0,71 < 0,701 / Finde den Fehler.
+  - ☐ Falsch. Es gilt 0,701 < 0,71 < 0,7.
+  - ☑ Falsch. Es gilt 0,7 < 0,701 < 0,71.
+  - ☐ Stimmt, denn mehr Stellen machen die Zahl größer.
+  - ☐ Stimmt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Gewichte der Größe nach. / Beginne mit dem leichtesten. _(Ordnen; die Karten liegen so da: 3006 g, 3 kg 216 g, 3,06 kg, 3,906 kg)_ Lösung: **3006 g, 3,06 kg, 3 kg 216 g, 3,906 kg**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Gib die Zahl an, die genau in der Mitte zwischen 6,88 und 6,89 liegt. Lösung: **6,885**. Typische Fehler: 6,881 (dezimal-mehr-ziffern), 6,88 (dezimal-mehr-ziffern), 6,895 (dezimal-stelle).
+
+## 6.4.2-V2: Ich kann Dezimalzahlen am Zahlenstrahl ablesen und eintragen.
+
+Grundlage, die F übt: Am Zahlenstrahl von 0 bis 1 in Zehntelschritten zählen
+
+Baut auf: 6.4.2-V1 (Ich kann Dezimalzahlen vergleichen und der Größe nach ordnen.), 5.9.3-K2 (Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir zuerst die beschrifteten Striche an. Zähle die Schritte von Strich zu Strich. *Beispiel:* Von 0 bis 1 sind es 10 Schritte. Ein Schritt ist dann 0,1. *Lösungsschritt:* Zähle vom letzten beschrifteten Strich bis zum Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 0 bis 2, Teilstriche alle 0,1, Pfeil auf 0,2; Zahl eintragen)_ Lösung: **0,2**. Typische Fehler: 0,2 (strahl-einerschritte), 0,02 (dezimal-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 1,2 am Zahlenstrahl. _(Zahlenstrahl 0 bis 2, Teilstriche alle 0,1; antippen)_ Lösung: **1,2**. Typische Fehler: 1,3 (strahl-einerschritte), 1,1 (strahl-einerschritte).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Zahlenstrahl zeigt nur ein Stück. / Lies die Zahl am Pfeil ab. _(Zahlenstrahl 0,1 bis 0,2, Teilstriche alle 0,01, Ausschnitt, Pfeil auf 0,12; Zahl eintragen)_ Lösung: **0,12**. Typische Fehler: 1,2 (dezimal-stelle), 0,102 (null-platzhalter).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Zahlenstrahl zeigt nur ein Stück. / Markiere 0,63. _(Zahlenstrahl 0,6 bis 0,7, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **0,63**. Typische Fehler: 0,67 (zeichen-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Pfeil zeigt auf eine Zahl. / Kreuze die passende Zahl an. _(Bild: Zahlenstrahl 0,8 bis 0,9, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Pfeil auf 0,82)_
+  - ☑ 0,82
+  - ☐ 0,28
+  - ☐ 0,88
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. / Achte auf die Schrittweite. _(Zahlenstrahl 0 bis 1, Teilstriche alle 0,05, Pfeil auf 0,95; Zahl eintragen)_ Lösung: **0,95**. Typische Fehler: 0,19 (strahl-einerschritte), 1,9 (strahl-einerschritte).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Schritt zwischen zwei Hundertsteln ist ein Tausendstel. *Beispiel:* Von 2,34 bis 2,35 sind es 10 Schritte. Ein Schritt ist 0,001. *Lösungsschritt:* Lies den beschrifteten Strich links vom Pfeil ab. Zähle dann die Schritte.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 7,68 bis 7,69, Teilstriche alle 0,001, Ausschnitt, Pfeil auf 7,687; Zahl eintragen)_ Lösung: **7,687**. Typische Fehler: 8,38 (stellenwert), 76,87 (dezimal-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 6,054 am Zahlenstrahl. _(Zahlenstrahl 6,05 bis 6,06, Teilstriche alle 0,001, Ausschnitt; antippen)_ Lösung: **6,054**. Typische Fehler: 6,056 (zeichen-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. / Achte auf die Schrittweite. _(Zahlenstrahl 0,3 bis 0,32, Teilstriche alle 0,002, Ausschnitt, Pfeil auf 0,308; Zahl eintragen)_ Lösung: **0,308**. Typische Fehler: 0,304 (strahl-einerschritte), 3,08 (dezimal-stelle).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 6,09 am Zahlenstrahl. _(Zahlenstrahl 6 bis 6,2, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **6,09**. Typische Fehler: 6,11 (zeichen-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Pfeil zeigt auf eine Zahl. / Kreuze die passende Zahl an. _(Bild: Zahlenstrahl 0,78 bis 0,79, Teilstriche alle 0,001, Ausschnitt mit Bruchzeichen, Pfeil auf 0,782)_
+  - ☑ 0,782
+  - ☐ 0,788
+  - ☐ 0,702
+- `06` AFB III · _Argumentieren_ · Ali liest am Pfeil 0,701 ab. / Beurteile das Ergebnis. _(Bild: Zahlenstrahl 0,7 bis 0,8, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Pfeil auf 0,71)_
+  - ☐ Stimmt, denn 1 Schritte sind 1 Tausendstel.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Der Pfeil zeigt auf 0,71.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Lupe vergrößert einen kleinen Abschnitt des Strahls zehnfach. Unten siehst du die nächste Stelle nach dem Komma. *Lösungsschritt:* Lies zuerst oben ab, wo die Lupe liegt. Zähle dann unten die Schritte bis zum Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,182**. Typische Fehler: 0,18 (runden-abschneiden), 0,102 (null-platzhalter).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 6,6183 am Zahlenstrahl. _(Zahlenstrahl 6,618 bis 6,619, Teilstriche alle 0,0001, Ausschnitt; antippen)_ Lösung: **6,6183**. Typische Fehler: 6,6187 (zeichen-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Kreuze die Zahl am Pfeil an. _(Bild: lupe)_
+  - ☑ 0,244
+  - ☐ 0,246
+  - ☐ 0,204
+  - ☐ 0,24
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 1,814 bis 1,815, Teilstriche alle 0,0001, Ausschnitt, Pfeil auf 1,8147; Zahl eintragen)_ Lösung: **1,8147**. Typische Fehler: 1,814 (runden-abschneiden), 1,8143 (zeichen-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 0,675 am Zahlenstrahl. / Achte auf die Schrittweite. _(Zahlenstrahl 0,67 bis 0,69, Teilstriche alle 0,005, Ausschnitt; antippen)_ Lösung: **0,675**. Typische Fehler: 0,68 (strahl-einerschritte).
+- `06` AFB III · _Argumentieren_ · Ali liest unten an der Lupe 0,43 ab. / Beurteile das Ergebnis. _(Bild: lupe)_
+  - ☑ Falsch. Der Pfeil zeigt auf 0,483.
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn unten sind es 3 Schritte.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben zählt der Strahl in Tausendsteln, unten in Zehntausendsteln. Lies erst oben, dann unten ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,4774**. Typische Fehler: 0,477 (runden-abschneiden), 0,4776 (zeichen-verwechselt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 1,4434 am Zahlenstrahl. _(Zahlenstrahl 1,443 bis 1,445, Teilstriche alle 0,0002, Ausschnitt; antippen)_ Lösung: **1,4434**. Typische Fehler: 1,4432 (strahl-einerschritte).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere die Zahl, die genau in der Mitte zwischen 0,22 und 0,23 liegt. _(Zahlenstrahl 0,22 bis 0,23, Teilstriche alle 0,001, Ausschnitt; antippen)_ Lösung: **0,225**.
+- `04` AFB III · _Argumentieren_ · Ida liest am Pfeil 0,562 ab. / Beurteile das Ergebnis und begründe. _(Bild: Zahlenstrahl 0,56 bis 0,58, Teilstriche alle 0,002, Ausschnitt mit Bruchzeichen, Pfeil auf 0,564)_
+  - ☐ Stimmt, denn jeder Strich ist ein Tausendstel.
+  - ☐ Stimmt.
+  - ☑ Falsch. Ein Schritt ist 0,002. Der Pfeil zeigt auf 0,564.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Unten ist nur jeder zweite Schritt gezeichnet. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,4254**. Typische Fehler: 0,4252 (strahl-einerschritte), 0,425 (runden-abschneiden).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwischen 0,6 und 0,7 liegen viele Dezimalzahlen. / Kreuze alle Aussagen an, die stimmen.
+  - ☐ 0,6 < 0,7005 < 0,7
+  - ☑ 0,6 < 0,6999 < 0,7
+  - ☐ 0,6 < 0,59 < 0,7
+  - ☑ 0,6 < 0,65 < 0,7
+  - ☑ 0,6 < 0,605 < 0,7
+
+## 6.4.3-R1: Ich kann Dezimalzahlen auf eine vorgegebene Stelle runden.
+
+Grundlage, die F übt: Am Zahlenstrahl sehen, ob eine Zahl näher am kleineren oder am größeren Zehntel liegt
+
+Baut auf: 6.4.1-S1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Zehnerbrüche als Dezimalzahl schreiben.), 5.2.3-R1 (Ich kann Zahlen auf eine vorgegebene Stelle runden.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau auf die Ziffer rechts neben den Zehnteln. Bei 0 bis 4 rundest du ab, bei 5 bis 9 auf. *Beispiel:* 2,46 auf Zehntel: Rechts neben der 4 steht 6. Also aufrunden: 2,5. *Lösungsschritt:* Am Zahlenstrahl siehst du, welches Zehntel näher liegt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 0,66 auf Zehntel. / Der Pfeil zeigt die Zahl. _(Bild: Zahlenstrahl 0,6 bis 0,7, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Pfeil auf 0,66)_ Lösung: **0,7**. Typische Fehler: 0,6 (runden-abschneiden).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 4,76 auf Zehntel. / Kreuze das Ergebnis an. _(Bild: Zahlenstrahl 4,7 bis 4,8, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Pfeil auf 4,76)_
+  - ☑ 4,8
+  - ☐ 4,7
+  - ☐ 4,76
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Heft kostet 2,75 €. / Runde den Preis auf ganze Euro. _(Bild: Zahlenstrahl 2 bis 3, Teilstriche alle 0,05, Ausschnitt mit Bruchzeichen, Pfeil auf 2,75)_ Lösung: **3 €**. Typische Fehler: 2 (runden-abschneiden).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Runde die Zahl aus der Stellenwerttafel auf Zehntel. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 6 4 9)_ Lösung: **6,5**. Typische Fehler: 6,4 (runden-abschneiden).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Runde beide Zahlen auf Zehntel. / 3,42 ≈ ▢ / 3,46 ≈ ▢ _(Bild: Zahlenstrahl 3,4 bis 3,5, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Punkte bei 3,42, 3,46)_ Lösung: a = **3,4**, b = **3,5**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 1,7 auf Ganze. _(Bild: Zahlenstrahl 1 bis 2, Teilstriche alle 0,1, Ausschnitt mit Bruchzeichen, Pfeil auf 1,7)_ Lösung: **2**. Typische Fehler: 1 (runden-abschneiden).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterstreiche die Rundungsstelle. Schau nur auf die Ziffer rechts daneben. *Beispiel:* 2,347 auf Hundertstel: Rechts neben der 4 steht 7. Also 2,35. *Lösungsschritt:* Wird eine 9 aufgerundet, wird daraus 10. Dann wächst die Stelle links davon.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Runde 2,546 auf Hundertstel. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h t: 2 5 4 6)_ Lösung: **2,55**. Typische Fehler: 2,54 (runden-abschneiden).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Runde 8,97 auf Zehntel. _(Bild: Stellenwerttafel mit Komma nach E, Spalten E z h: 8 9 7)_ Lösung: **9,0**. Typische Fehler: 8,10 (runden-uebertrag), 8,9 (runden-abschneiden).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 9,433 zweimal. / Auf Zehntel: ▢ / Auf Hundertstel: ▢ Lösung: a = **9,4**, b = **9,43**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 0,228 auf Hundertstel. / Der Pfeil zeigt die Zahl. _(Bild: Zahlenstrahl 0,22 bis 0,23, Teilstriche alle 0,001, Ausschnitt mit Bruchzeichen, Pfeil auf 0,228)_ Lösung: **0,23**. Typische Fehler: 0,22 (runden-abschneiden).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Runde jede Zahl auf Zehntel. / Kreuze alle Zahlen mit dem Ergebnis 1,6 an. _(Bild: Zahlenstrahl 1,5 bis 1,7, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Punkte bei 1,55, 1,65, 1,64, 1,54)_
+  - ☑ 1,64
+  - ☐ 1,65
+  - ☐ 1,54
+  - ☑ 1,55
+- `06` AFB III · _Argumentieren_ · Elif rundet 8,147 auf Zehntel. / Elif rundet zuerst auf 8,15. / Dann rundet Elif auf 8,2. / Beurteile das Ergebnis.
+  - ☑ Falsch. / 8,147 ≈ 8,1. / Man rundet in einem Schritt.
+  - ☐ Stimmt, denn 8,15 ≈ 8,2.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Rundungsstelle und schau nur auf die Ziffer rechts daneben. Alles dahinter spielt keine Rolle. *Lösungsschritt:* Bei 5 bis 9 wird die Rundungsstelle um 1 größer. Aus einer 9 wird dabei 10, und die Stelle links wächst mit.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Runde 6,8749 auf Tausendstel. Lösung: **6,875**. Typische Fehler: 6,874 (runden-abschneiden).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 4,6955 auf Hundertstel. Lösung: **4,70**. Typische Fehler: 4,610 (runden-uebertrag), 4,69 (runden-abschneiden).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 7,7681. / Auf Ganze: ▢ / Auf Zehntel: ▢ / Auf Hundertstel: ▢ Lösung: a = **8**, b = **7,8**, c = **7,77**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Rechner zeigt 8,314 € an. / Runde den Betrag auf Cent. Lösung: **8,31 €**.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, die auf Hundertstel gerundet 2,61 ergeben.
+  - ☑ 2,614
+  - ☑ 2,605
+  - ☐ 2,619
+  - ☐ 2,604
+  - ☑ 2,609
+- `06` AFB III · _Argumentieren_ · Tom rundet 7,8698 auf Hundertstel und schreibt 7,86. / Beurteile das Ergebnis.
+  - ☐ Stimmt, denn beim Runden fallen die Ziffern hinten einfach weg.
+  - ☑ Falsch. 7,8698 ≈ 7,87. Die dritte Stelle ist 9, also aufrunden.
+  - ☐ Stimmt.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, ab welcher Zahl aufgerundet wird und bis zu welcher Zahl abgerundet wird.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Zahl mit drei Stellen nach dem Komma wird auf Hundertstel gerundet. / Das Ergebnis ist 6,34. / Kreuze alle Zahlen an, die es gewesen sein können.
+  - ☐ 6,325
+  - ☑ 6,335
+  - ☑ 6,344
+  - ☐ 6,334
+  - ☑ 6,341
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl hat drei Stellen nach dem Komma. / Auf Zehntel gerundet ergibt sie 6,7. / Gib die größte Zahl an, die es sein kann. Lösung: **6,749**. Typische Fehler: 6,799 (runden-abschneiden), 6,75 (runden-fuenf-ab), 6,704 (runden-falsche-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 3,9995. / Auf Tausendstel: ▢ / Auf Hundertstel: ▢ / Auf Zehntel: ▢ Lösung: a = **4,000**, b = **4,00**, c = **4,0**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Finn rundet 2,3449 Stelle für Stelle von hinten auf Zehntel. / Finn erhält 2,4. / Finde den Fehler.
+  - ☐ Stimmt, denn jede Stelle wurde richtig gerundet.
+  - ☐ Stimmt.
+  - ☑ Falsch. 2,3449 ≈ 2,3. Es zählt nur die Ziffer rechts neben den Zehnteln.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, die auf Hundertstel gerundet 0,10 ergeben.
+  - ☑ 0,1
+  - ☐ 0,0949
+  - ☐ 0,09
+  - ☑ 0,095
+  - ☑ 0,1049
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Zahl hat drei Stellen nach dem Komma. / Auf Hundertstel gerundet ergibt sie 3,16. / Gib die kleinste Zahl an, die es sein kann. Lösung: **3,155**. Typische Fehler: 3,156 (runden-fuenf-ab), 3,154 (runden-abschneiden).
+
+## 6.4.3-R2: Ich kann Größen und Geldbeträge sinnvoll runden und gerundete Werte deuten.
+
+Grundlage, die F übt: Einen Preis auf ganze Euro runden: Ab 50 Cent wird aufgerundet
+
+Baut auf: 6.4.3-R1 (Ich kann Dezimalzahlen auf eine vorgegebene Stelle runden.), 5.2.3-R2 (Ich kann sinnvoll runden und gerundete Zahlen deuten.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei Geld rundest du auf ganze Euro. Ab 50 Cent rundest du auf. *Beispiel:* 9,89 € sind fast 10 €. Also: 9,89 € ≈ 10 €. *Lösungsschritt:* Schau nur auf die Cent hinter dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Ball kostet 6,98 €. / Runde den Preis auf ganze Euro. _(Tabelle: Ware | Preis / Ball | 6,98 €)_ Lösung: **7 €**. Typische Fehler: 6 (runden-abschneiden).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Brett ist 1,22 m lang. / Runde die Länge auf Zehntel Meter. _(Bild: Zahlenstrahl 1,2 bis 1,3, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Pfeil auf 1,22)_ Lösung: **1,2 m**.
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Runde jeden Preis auf ganze Euro. / Rechne dann mit den gerundeten Preisen den Gesamtpreis aus. / Gesamtpreis: etwa ▢ € _(Tabelle: Ware | Preis / Obst | 3,18 € / Milch | 1,23 € / Käse | 4,78 €)_ Lösung: a = **9**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Sara läuft 100 m in 14,11 s. / Runde die Zeit auf Zehntel Sekunden. _(Tabelle: Kind | Zeit / Sara | 14,11 s)_ Lösung: **14,1 s**.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kuchen kostet 6,38 €. / Kreuze den passend gerundeten Preis an. _(Tabelle: Ware | Preis / Kuchen | 6,38 €)_
+  - ☑ 6 €
+  - ☐ 8 €
+  - ☐ 7 €
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Paket wiegt 8,6 kg. / Runde auf ganze Kilogramm. _(Bild: Zahlenstrahl 8 bis 9, Teilstriche alle 0,1, Ausschnitt mit Bruchzeichen, Pfeil auf 8,6)_ Lösung: **9 kg**. Typische Fehler: 8 (runden-abschneiden).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege zuerst, auf welche Stelle du runden musst. Ein Cent ist ein Hundertstel Euro. *Beispiel:* 1,789 € auf Cent: Rundungsstelle ist die 8. Also 1,79 €. *Lösungsschritt:* Unterstreiche die Rundungsstelle. Schau dann auf die Ziffer rechts daneben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Weg zur Burg ist 16,67 km lang. / Runde auf Zehntel Kilometer. _(Bild: Stellenwerttafel mit Komma nach E, Spalten Z E z h t: 1 6 6 7 0)_ Lösung: **16,7 km**. Typische Fehler: 16,6 (runden-abschneiden), 16,67 (runden-falsche-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · An der Tankstelle kostet ein Liter 1,459 €. / Runde den Preis auf Cent. _(Tabelle: Sorte | Preis für 1 l / Benzin | 1,459 €)_ Lösung: **1,46 €**. Typische Fehler: 1,45 (runden-abschneiden).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 3 Freunde teilen 10 € gerecht. / Der Taschenrechner zeigt 3,333. / Runde auf Cent. / Gib an, wie viel jeder etwa bekommt. _(Bild: Stellenwerttafel mit Komma nach E, Spalten Z E z h t: · 3 3 3 3)_ Lösung: **3,33 €**.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Runde beide Zeiten auf Zehntel Sekunden. / Ali: ▢ s / Lina: ▢ s _(Tabelle: Kind | Zeit für 100 m / Ali | 16,79 s / Lina | 13,68 s)_ Lösung: a = **16,8**, b = **13,7**
+- `05` AFB II · _Argumentieren_ · Ida rundet 1,96 € auf Zehntel Euro. / Ida schreibt: 2 € / Beurteile das Ergebnis.
+  - ☑ Stimmt. / Man darf auch 2,0 € schreiben.
+  - ☐ Falsch. / Es muss 1,10 € heißen.
+  - ☐ Falsch. / Es muss 1,9 € heißen.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Preis wurde auf ganze Euro gerundet: etwa 6 €. / Kreuze alle möglichen Preise an.
+  - ☐ 5,49 €
+  - ☐ 6,50 €
+  - ☑ 6,09 €
+  - ☑ 6,49 €
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege zuerst, welche Stelle die Einheit vorgibt: Cent sind Hundertstel Euro, Gramm sind Tausendstel Kilogramm, Zentimeter sind Hundertstel Meter. *Lösungsschritt:* Runde dann auf diese Stelle. Schau nur auf die Ziffer rechts daneben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Max kauft Äpfel. Die Waage zeigt den Preis 4,976 €. / Runde auf Cent. Lösung: **4,98 €**. Typische Fehler: 4,97 (runden-abschneiden).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein 10 m langes Seil wird in 6 gleich lange Stücke geschnitten. / Der Rechner zeigt 1,6666 m. / Gib die Länge eines Stücks auf Zentimeter gerundet an. Lösung: **1,67 m**. Typische Fehler: 1,66 (runden-abschneiden), 1,667 (runden-falsche-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Waage zeigt 1,3932 kg. / Gib das Gewicht auf Gramm gerundet an. Lösung: **1,393 kg**.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zeiten wurden auf Tausendstel gemessen. / Runde jede Zeit auf Hundertstel Sekunden. / Paul: ▢ s / Emma: ▢ s / Ali: ▢ s _(Tabelle: Kind | Zeit für 100 m / Paul | 16,486 s / Emma | 13,856 s / Ali | 12,418 s)_ Lösung: a = **16,49**, b = **13,86**, c = **12,42**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Beträge an, die auf Zehntel Euro gerundet 5,40 € ergeben.
+  - ☑ 5,44 €
+  - ☑ 5,449 €
+  - ☐ 5,45 €
+  - ☑ 5,35 €
+  - ☐ 5,34 €
+- `06` AFB III · _Argumentieren_ · Der Rechner zeigt 7,6883 m. / Noah rundet auf Zentimeter und schreibt 7,68 m. / Beurteile das Ergebnis.
+  - ☐ Stimmt, denn Zentimeter sind Hundertstel Meter.
+  - ☐ Stimmt.
+  - ☑ Falsch. 7,6883 m ≈ 7,69 m.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Millimeter ist ein Tausendstel Meter. Runde auf Tausendstel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Mia misst mit einem Laser 1,9027 m. / Ihr Zollstock misst nur auf Millimeter genau. / Kreuze die Angabe auf Millimeter genau an.
+  - ☐ 1,9027 m
+  - ☑ 1,903 m
+  - ☐ 1,902 m
+  - ☐ 1,90 m
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Preis wurde auf Zehntel Euro gerundet: 2,50 €. / Gib den höchsten möglichen Preis in Cent genau an. Lösung: **2,54 €**. Typische Fehler: 2,55 (runden-fuenf-ab), 2,59 (runden-abschneiden).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Taschenrechner zeigt für 1 : 3 die Zahl 0,3333. / Runde die Anzeige. / Auf Zehntel: ▢ / Auf Hundertstel: ▢ / Auf Tausendstel: ▢ Lösung: a = **0,3**, b = **0,33**, c = **0,333**
+- `04` AFB III · _Argumentieren_ · Ida rundet den Betrag 7,7449 € auf Zehntel Euro. / Ida rundet Stelle für Stelle und erhält 7,8 €. / Beurteile das Ergebnis und begründe.
+  - ☐ Stimmt, denn jede Stelle wurde richtig gerundet.
+  - ☐ Stimmt.
+  - ☑ Falsch. 7,7449 € ≈ 7,7 €.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · In einer Umfrage nennen 4 von 7 Kindern Pizza als Lieblingsessen. / Der Rechner zeigt für den Anteil 0,5714. / Gib den Anteil auf Hundertstel gerundet an. Lösung: **0,57**. Typische Fehler: 0,571 (runden-falsche-stelle).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Messwert wurde auf Hundertstel gerundet und ergibt 3,80. / Kreuze alle Werte an, die es gewesen sein können.
+  - ☐ 3,805
+  - ☐ 3,7949
+  - ☑ 3,8
+  - ☐ 3,794
+  - ☑ 3,795
+
+## 6.4.5-U1: Ich kann einen Bruch durch Erweitern auf 10, 100 oder 1000 in eine Dezimalzahl umwandeln.
+
+Grundlage, die F übt: Im Hunderterfeld zählen, wie viele Hundertstel die Hälfte oder ein Viertel sind
+
+Baut auf: 6.4.1-S1 (Ich kann Dezimalzahlen in die Stellenwerttafel eintragen und Zehnerbrüche als Dezimalzahl schreiben.), 6.1.2-W1 (Ich kann einen Bruch mit einer gegebenen Zahl erweitern.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere den Bruch auf den Nenner 10 oder 100. *Beispiel:* 1⁄4 = 25⁄100 = 0,25. Mit 25 erweitert. *Lösungsschritt:* Frage dich: Mit welcher Zahl wird der Nenner zu 10 oder 100?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Hunderterfeld sind 1⁄4 gefärbt. / Erweitere auf Hundertstel und schreibe als Dezimalzahl. / 1⁄4 = ▢⁄100 = ▢ _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 25 gefärbt)_ Lösung: a = **25**, b = **0,25**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Streifen zeigt 1⁄5. / Schreibe den Bruch als Dezimalzahl. _(Bild: Bruchbild: Streifen mit 10 Teilen, 2 gefärbt)_ Lösung: **0,2**. Typische Fehler: 1,5 (bruch-als-komma), 0,02 (dezimal-stelle).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Erweitere 3⁄5 auf Zehntel. / 3⁄5 = ▢⁄10 = ▢ _(Bild: Bruchbild: Streifen mit 10 Teilen, 6 gefärbt)_ Lösung: a = **6**, b = **0,6**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze die Dezimalzahl zu 3⁄4 an. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 75 gefärbt)_
+  - ☐ 3,4
+  - ☑ 0,75
+  - ☐ 7,5
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch seine Dezimalzahl zu. / Die Tabelle hilft beim Erweitern. _(Tabelle: Nenner | erweitern mit | neuer Nenner / 2 | 5 | 10 / 4 | 25 | 100 / 25 | 4 | 100)_ Lösung: 1⁄2 → 0,5, 3⁄4 → 0,75, 1⁄25 → 0,04
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Lea hat 3⁄4 €. / Schreibe den Betrag als Dezimalzahl in Euro. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 75 gefärbt)_ Lösung: **0,75 €**. Typische Fehler: 3,4 (bruch-als-komma).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ist der Nenner 8, erweiterst du auf 1000. Bei 50 auf 100. *Beispiel:* 3⁄8 = 375⁄1000 = 0,375. Mit 125 erweitert. *Lösungsschritt:* Teile 1000 oder 100 durch den Nenner. Das ist die Erweiterungszahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Erweitere 7⁄8 auf Tausendstel. / 7⁄8 = ▢⁄1000 = ▢ _(Tabelle: Nenner | erweitern mit | neuer Nenner / 8 | 125 | 1000)_ Lösung: a = **875**, b = **0,875**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 21⁄50 als Dezimalzahl. Lösung: **0,42**. Typische Fehler: 0,21 (erweitern-nur-ein-teil), 21,5 (bruch-als-komma).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Die Zahl ist 0,875. / Kreuze den passenden Bruch an.
+  - ☑ 7⁄8
+  - ☐ 3⁄8
+  - ☐ 875⁄100
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe die gemischte Zahl 5 3⁄4 als Dezimalzahl. Lösung: **5,75**. Typische Fehler: 5,34 (bruch-als-komma), 0,75 (bruch-ganzes-teil).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mia schreibt: 3⁄20 = 0,3 / Beurteile die Aussage. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 15 gefärbt)_
+  - ☑ Falsch. / Es gilt 3⁄20 = 15⁄100 = 0,15.
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn 3⁄10 = 0,3.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Schreibe 5⁄8 kg mit Komma und in g. / 5⁄8 kg = ▢ kg = ▢ g _(Tabelle: Einheit | Umrechnung / 1 kg | 1000 g)_ Lösung: a = **0,625**, b = **625**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Zahl, mit der der Nenner zu 10, 100 oder 1000 wird: 40 · 25 = 1000, 125 · 8 = 1000, 250 · 4 = 1000. *Lösungsschritt:* Lässt sich der Bruch kürzen, kürze zuerst. Dann ist das Erweitern oft leichter.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Erweitere 9⁄40 auf Tausendstel. / 9⁄40 = ▢⁄1000 = ▢ Lösung: a = **225**, b = **0,225**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 1⁄125 als Dezimalzahl. Lösung: **0,008**. Typische Fehler: 0,001 (erweitern-nur-ein-teil), 1,125 (bruch-als-komma).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 27⁄250 als Dezimalzahl. Lösung: **0,108**. Typische Fehler: 0,027 (erweitern-nur-ein-teil), 1,08 (dezimal-stelle).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 9⁄25, 7⁄20, 0,125, 0,375)_ Lösung: **0,125, 7⁄20, 9⁄25, 0,375**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kürze 9⁄15 zuerst. Erweitere dann. / 9⁄15 = ▢⁄5 = ▢ Lösung: a = **3**, b = **0,6**
+- `06` AFB III · _Argumentieren_ · Elif schreibt: 3⁄250 = 0,3 / Elif meint, der Zähler steht nach dem Komma. / Beurteile die Aussage.
+  - ☐ Falsch. Es gilt 3⁄250 = 3,250.
+  - ☑ Falsch. Es gilt 3⁄250 = 12⁄1000 = 0,012.
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn 3⁄10 = 0,3.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Bruch lässt sich auf 1000 erweitern, wenn sein Nenner ein Teiler von 1000 ist. 1000 = 2 · 2 · 2 · 5 · 5 · 5.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze alle Brüche an, die sich auf den Nenner 1000 erweitern lassen.
+  - ☐ 5⁄12
+  - ☑ 3⁄8
+  - ☑ 9⁄40
+  - ☐ 5⁄6
+  - ☑ 7⁄125
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bruch wurde als Dezimalzahl geschrieben. / Ergänze den Zähler: ▢⁄20 = 0,45 Lösung: a = **9**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 1 1⁄40 als Dezimalzahl. Lösung: **1,025**. Typische Fehler: 0,025 (bruch-ganzes-teil), 1,1 (bruch-als-komma).
+- `04` AFB III · _Argumentieren_ · Tom sagt: „1⁄3 = 0,3“ / Beurteile die Aussage und begründe sie.
+  - ☑ Falsch. Es gilt 3 · 0,3 = 0,9.
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn 3⁄10 = 0,3.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch seine Dezimalzahl zu. Lösung: 13⁄20 → 0,65, 11⁄250 → 0,044, 3⁄8 → 0,375, 17⁄50 → 0,34
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Brüche an, die sich nach dem Kürzen auf den Nenner 1000 erweitern lassen.
+  - ☑ 6⁄15
+  - ☐ 5⁄12
+  - ☐ 10⁄21
+  - ☐ 8⁄14
+  - ☑ 12⁄30
+
+## 6.4.5-U2: Ich kann eine Dezimalzahl in einen vollständig gekürzten Bruch umwandeln.
+
+Grundlage, die F übt: Eine Dezimalzahl mit einer Stelle als Bruch mit dem Nenner 10 schreiben
+
+Baut auf: 6.4.5-U1 (Ich kann einen Bruch durch Erweitern auf 10, 100 oder 1000 in eine Dezimalzahl umwandeln.), 6.1.3-K2 (Ich kann einen Bruch vollständig kürzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Dezimalzahl als Bruch mit dem Nenner 10 oder 100. Kürze dann so weit wie möglich. *Beispiel:* 0,25 = 25⁄100 = 1⁄4. Mit 25 gekürzt. *Lösungsschritt:* Suche eine Zahl, durch die du Zähler und Nenner teilen kannst.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Streifen zeigt 0,2. / Schreibe 0,2 als Bruch. / Kürze so weit wie möglich. _(Bild: Bruchbild: Streifen mit 10 Teilen, 2 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: 2⁄100 (dezimal-stelle).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Hunderterfeld sind 0,5 gefärbt. / Schreibe die Zahl als Bruch. / Kürze so weit wie möglich. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 50 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 5⁄100 (dezimal-stelle).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 0,2 als Bruch und kürze. / 0,2 = ▢⁄10 = ▢⁄5 _(Bild: Bruchbild: Streifen mit 10 Teilen, 2 gefärbt)_ Lösung: a = **2**, b = **1**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze den Bruch zu 0,15 an. / Er soll so weit wie möglich gekürzt sein. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 15 gefärbt)_
+  - ☑ 3⁄20
+  - ☐ 15⁄10
+  - ☐ 1⁄10
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tim hat 0,75 €. / Gib den Teil von 1 € als Bruch an. / Kürze so weit wie möglich. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 75 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄4 €**. Typische Fehler: 75⁄10 (dezimal-stelle).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Band ist 0,6 m lang. / Gib die Länge als Bruch in Metern an. / Kürze so weit wie möglich. _(Bild: Bruchbild: Streifen mit 10 Teilen, 6 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄5 m**. Typische Fehler: 1⁄6 (bruch-vertauscht).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Drei Stellen nach dem Komma sind Tausendstel. Der Nenner ist dann 1000. *Beispiel:* 0,125 = 125⁄1000 = 1⁄8. Mit 125 gekürzt. *Lösungsschritt:* Kürze in mehreren Schritten, bis es nicht mehr geht.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 0,375 als Bruch. / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄8**.
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 0,85 als Bruch. / Kürze vollständig. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 85 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **17⁄20**. Typische Fehler: 85⁄10 (dezimal-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 0,14 als Bruch. / Kürze vollständig. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 14 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄50**. Typische Fehler: 7⁄100 (erweitern-nur-ein-teil).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 0,16 als Bruch. / Kürze vollständig. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 16 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄25**. Typische Fehler: 16⁄10 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 4,5 als gemischte Zahl. / Kürze den Bruch vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4 1⁄2**.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara schreibt: 0,8 = 8⁄100 / Beurteile die Aussage. _(Bild: Bruchbild: Streifen mit 10 Teilen, 8 gefärbt)_
+  - ☑ Falsch. / Es gilt 0,8 = 8⁄10.
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn 0,08 = 8⁄100.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner ist 10, 100, 1000 oder 10000, je nach Anzahl der Stellen nach dem Komma. Kürze dann mit dem größten gemeinsamen Teiler. *Lösungsschritt:* Teiler von Zehnerpotenzen sind nur aus 2 und 5 gebaut. Probiere 2, 5, 4, 25, 8 oder 125.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 0,008 als Bruch. / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄125**. Typische Fehler: 8⁄100 (dezimal-stelle).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 0,275 als Bruch. / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄40**.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 2,008 als gemischte Zahl. / Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄125**. Typische Fehler: 1⁄125 (bruch-ganzes-teil).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 0,95 als Bruch und kürze vollständig. / 0,95 = ▢⁄100 = ▢⁄20 Lösung: a = **95**, b = **19**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Paket wiegt oder fasst 0,5 l. / Gib die Größe als vollständig gekürzten Bruch in l an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2 l**.
+- `06` AFB III · _Argumentieren_ · Noah rechnet: 0,64 = 64⁄100 = 32⁄25 / Beurteile die Rechnung.
+  - ☐ Falsch. Es gilt 0,64 = 64⁄10.
+  - ☐ Stimmt, denn 64⁄100 = 32⁄25.
+  - ☐ Stimmt.
+  - ☑ Falsch. Es gilt 0,64 = 16⁄25.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vier Stellen nach dem Komma: Nenner 10000. Kürze zuerst mit 625 oder in kleineren Schritten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 0,1875 als Bruch. / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄16**.
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Gib den vollständig gekürzten Bruch mit dem Zähler 7 an, der 0,35 ist. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄20**. Typische Fehler: 7⁄100 (erweitern-nur-ein-teil).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schreibe 1,125 als gemischte Zahl. / Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄8**.
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Paul wandelt 0,12 in einen Bruch um. / Kreuze den vollständig gekürzten Bruch an.
+  - ☐ 6⁄50
+  - ☐ 12⁄100
+  - ☑ 3⁄25
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen der Größe nach. / Beginne mit der größten Zahl. _(Ordnen; die Karten liegen so da: 0,35, 3⁄8, 2⁄5, 0,3, 0,33)_ Lösung: **2⁄5, 3⁄8, 0,35, 0,33, 0,3**
+- `06` AFB III · _Argumentieren_ · Ole rechnet: 0,08 = 8⁄10 = 4⁄5 / Finde den Fehler.
+  - ☐ Stimmt.
+  - ☐ Falsch. Es gilt 0,08 = 8⁄1000.
+  - ☑ Falsch. Es gilt 0,08 = 8⁄100 = 2⁄25.
+
+## 6.4.6-D1: Ich kann einen Bruch durch Dividieren in eine abbrechende Dezimalzahl umwandeln.
+
+Grundlage, die F übt: Einen Bruch als Geteiltaufgabe lesen: 1⁄2 ist 1 : 2
+
+Baut auf: 6.4.5-U1 (Ich kann einen Bruch durch Erweitern auf 10, 100 oder 1000 in eine Dezimalzahl umwandeln.), 5.4.5-D2 (Ich kann schriftlich durch einstellige Zahlen dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Bruch ist eine Division: Zähler geteilt durch Nenner. Dividiere schriftlich und hänge nach dem Komma Nullen an. *Lösungsschritt:* Geht die Division auf, bist du fertig. Die Dezimalzahl bricht ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 7 : 8 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,875**. Typische Fehler: 0,87 (runden-abschneiden), 7,8 (bruch-als-komma).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 13⁄16 durch Dividieren in eine Dezimalzahl um. Lösung: **0,8125**. Typische Fehler: 13,16 (bruch-als-komma), 0,81 (runden-abschneiden).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne mit Division. / 3⁄40 = 3 : 40 = ▢ Lösung: a = **0,075**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 9⁄40 in eine Dezimalzahl um. Lösung: **0,225**. Typische Fehler: 9,40 (bruch-als-komma), 2,25 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein 7 m langes Band wird in 8 gleich lange Stücke geschnitten. / Gib die Länge eines Stücks an. Lösung: **0,875 m**. Typische Fehler: 7,8 (bruch-als-komma).
+- `06` AFB III · _Argumentieren_ · Ali rechnet für 3⁄16: 16 : 3 = 5,3̅ / Beurteile die Rechnung.
+  - ☐ Stimmt, denn 16 : 3 = 5,3̅.
+  - ☑ Falsch. Es gilt 3⁄16 = 3 : 16 = 0,1875.
+  - ☐ Stimmt.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 9 : 40 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,225**. Typische Fehler: 0,22 (runden-abschneiden), 9,40 (bruch-als-komma).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze die Dezimalzahl zu 3⁄12 an.
+  - ☐ 0,2
+  - ☐ 4
+  - ☑ 0,25
+  - ☐ 3,12
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · 4 Freunde teilen 11 € gerecht. / Gib an, wie viel Euro jeder bekommt. Lösung: **2,75 €**. Typische Fehler: 11,4 (bruch-als-komma).
+- `10` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 13⁄20 durch Dividieren in eine Dezimalzahl um. Lösung: **0,65**. Typische Fehler: 13,20 (bruch-als-komma).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 2 7⁄8 in eine Dezimalzahl um. Lösung: **2,875**. Typische Fehler: 0,875 (bruch-ganzes-teil), 2,7 (bruch-als-komma).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Brüche an, die eine abbrechende Dezimalzahl ergeben.
+  - ☐ 4⁄9
+  - ☐ 7⁄12
+  - ☐ 5⁄6
+  - ☑ 9⁄12
+  - ☑ 5⁄16
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Hänge so lange Nullen an, bis kein Rest mehr bleibt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 15 : 16 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,9375**. Typische Fehler: 0,937 (runden-abschneiden).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 37⁄40 in eine Dezimalzahl um. Lösung: **0,925**. Typische Fehler: 37,40 (bruch-als-komma), 0,92 (runden-abschneiden).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Sack mit 3 kg Mehl wird auf 8 gleich schwere Tüten verteilt. / Gib das Gewicht einer Tüte in Kilogramm an. Lösung: **0,375 kg**. Typische Fehler: 3,8 (bruch-als-komma).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Brüche an, die eine abbrechende Dezimalzahl ergeben.
+  - ☑ 11⁄25
+  - ☐ 5⁄12
+  - ☐ 7⁄18
+  - ☑ 21⁄24
+  - ☐ 3⁄14
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ : 16 = 0,4375 Lösung: a = **7**
+- `06` AFB III · _Argumentieren_ · Paul rechnet 3 : 8 = 0,3 und hört auf. / Beurteile die Rechnung und begründe.
+  - ☐ Stimmt, denn eine Stelle nach dem Komma reicht.
+  - ☐ Stimmt.
+  - ☑ Falsch. Es bleibt ein Rest. Es gilt 3 : 8 = 0,375.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 21 : 40 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,525**. Typische Fehler: 0,52 (runden-abschneiden).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 11⁄25, 9⁄20, 0,4, 0,4375)_ Lösung: **0,4, 0,4375, 11⁄25, 9⁄20**
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · 8 Kinder teilen 9,60 € gerecht. / Gib an, wie viel Euro jedes Kind bekommt. Lösung: **1,20 €**. Typische Fehler: 12 (dezimal-stelle).
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Bruch ist vollständig gekürzt. / Kreuze die Aussage an, die immer stimmt.
+  - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Nenner gerade ist.
+  - ☑ Er ergibt eine abbrechende Dezimalzahl, wenn sich sein Nenner durch Erweitern zu einer Zehnerpotenz machen lässt.
+  - ☐ Er ergibt immer eine abbrechende Dezimalzahl.
+  - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 10⁄16 in eine Dezimalzahl um. Lösung: **0,625**. Typische Fehler: 10,16 (bruch-als-komma).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Ergänze den Zähler. / ▢⁄16 = 0,3125 Lösung: a = **5**
+
+## 6.4.6-D2: Ich kann einen Bruch durch Dividieren in eine periodische Dezimalzahl umwandeln und sie richtig schreiben.
+
+Grundlage, die F übt: Bei 1 : 3 beobachten, dass immer wieder der Rest 1 kommt
+
+Baut auf: 6.4.6-D1 (Ich kann einen Bruch durch Dividieren in eine abbrechende Dezimalzahl umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich und schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, wiederholen sich ab dort die Ziffern. *Lösungsschritt:* Schreibe die Ziffern vor der Periode ins erste Feld und die Ziffern, die sich wiederholen, ins zweite Feld.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 7 : 9 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,7̅**. Typische Fehler: 0,7 (periode-abgebrochen), 0,77 (periode-abgebrochen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 8⁄9 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,8̅**. Typische Fehler: 0,8 (periode-abgebrochen), 0,88 (periode-abgebrochen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 3⁄11 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,2̅7̅**. Typische Fehler: 0,2 (periode-abgebrochen), 0,2727 (periode-abgebrochen), 0,2̅ (periode-abgebrochen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 1⁄6 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,16̅**. Typische Fehler: 0,16 (periode-abgebrochen), 0,166 (periode-abgebrochen), 0,1̅6̅ (periode-zu-frueh).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 7⁄15 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,46̅**. Typische Fehler: 0,46 (periode-abgebrochen), 0,466 (periode-abgebrochen), 0,4̅6̅ (periode-zu-frueh).
+- `06` AFB III · _Argumentieren_ · Ida schreibt: 1⁄3 = 0,33 / Beurteile die Aussage.
+  - ☑ Falsch. Es gilt 1⁄3 = 0,3̅.
+  - ☐ Stimmt, denn 0,33 ist fast 1⁄3.
+  - ☐ Stimmt.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 8 : 15 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,53̅**. Typische Fehler: 0,53 (periode-abgebrochen), 0,533 (periode-abgebrochen), 0,5̅3̅ (periode-zu-frueh).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze die richtige Schreibweise für 7⁄11 an.
+  - ☐ 0,63̅
+  - ☑ 0,6̅3̅
+  - ☐ 0,6̅
+  - ☐ 0,63
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · 2 Pizzen werden gerecht auf 3 Kinder verteilt. / Gib den Anteil für ein Kind als Dezimalzahl an. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,6̅**. Typische Fehler: 0,6 (periode-abgebrochen), 0,66 (periode-abgebrochen).
+- `10` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 4⁄15 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,26̅**. Typische Fehler: 0,26 (periode-abgebrochen), 0,266 (periode-abgebrochen), 0,2̅6̅ (periode-zu-frueh).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 2 1⁄6 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **2,16̅**. Typische Fehler: 2,16 (periode-abgebrochen), 2,166 (periode-abgebrochen), 2,1̅6̅ (periode-zu-frueh), 0,16̅ (bruch-ganzes-teil).
+- `12` AFB III · _Argumentieren_ · Noah schreibt: 7⁄12 = 0,5̅8̅3̅ / Beurteile die Schreibweise.
+  - ☑ Falsch. Es gilt 7⁄12 = 0,583̅.
+  - ☐ Stimmt, denn 7 : 12 = 0,5̅8̅3̅.
+  - ☐ Stimmt.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe jeden Rest auf. Beim Teilen durch 13 gibt es höchstens 12 verschiedene Reste.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 1 : 13 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,0̅7̅6̅9̅2̅3̅**. Typische Fehler: 0,076923076923 (periode-abgebrochen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 6⁄7 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,8̅5̅7̅1̅4̅2̅**. Typische Fehler: 0,8 (periode-abgebrochen), 0,857142857142 (periode-abgebrochen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 7⁄30 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,23̅**. Typische Fehler: 0,23 (periode-abgebrochen), 0,233 (periode-abgebrochen), 0,2̅3̅ (periode-zu-frueh).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Brüche an, die eine periodische Dezimalzahl ergeben.
+  - ☐ 6⁄30
+  - ☐ 3⁄20
+  - ☐ 7⁄28
+  - ☑ 5⁄18
+  - ☑ 2⁄21
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gib den Bruch mit dem Nenner 9 an, der 0,5̅ ist. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄9**. Typische Fehler: 5⁄10 (periode-abgebrochen), 9⁄5 (bruch-vertauscht).
+- `06` AFB III · _Argumentieren_ · Elif sagt: „1⁄7 = 0,1428. Die Division geht auf.“ / Beurteile die Aussage und begründe.
+  - ☐ Stimmt.
+  - ☐ Stimmt, denn 0,1428 hat vier Stellen.
+  - ☑ Falsch. Der Rest kommt wieder. Es gilt 1⁄7 = 0,1̅4̅2̅8̅5̅7̅.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 13 : 30 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,43̅**. Typische Fehler: 0,43 (periode-abgebrochen), 0,433 (periode-abgebrochen), 0,4̅3̅ (periode-zu-frueh).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das passende Zeichen an. / 0,8̅ ▢ 0,88
+  - ☐ <
+  - ☐ =
+  - ☑ >
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 0,34, 0,33, 0,3̅, 0,3̅4̅)_ Lösung: **0,33, 0,3̅, 0,34, 0,3̅4̅**
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Es gilt: 0,1̅ = 1⁄9. / Gib 0,4̅ als vollständig gekürzten Bruch an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄9**. Typische Fehler: 4⁄10 (periode-abgebrochen).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · 2 Pizzen werden gerecht auf 11 Kinder verteilt. / Gib den Anteil für ein Kind als Dezimalzahl an. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,1̅8̅**. Typische Fehler: 0,1 (periode-abgebrochen), 0,1818 (periode-abgebrochen).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Wandle 1⁄22 in eine Dezimalzahl um. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,04̅5̅**. Typische Fehler: 0,04 (periode-abgebrochen), 0,04545 (periode-abgebrochen), 0,0̅4̅5̅ (periode-zu-frueh).
+
+## 6.4.7-P1: Ich kann Anteile in Prozent angeben: Prozent heißt Hundertstel.
+
+Grundlage, die F übt: Im Hunderterfeld die gefärbten Felder zählen: So viele Prozent sind gefärbt
+
+Baut auf: 6.4.5-U1 (Ich kann einen Bruch durch Erweitern auf 10, 100 oder 1000 in eine Dezimalzahl umwandeln.), 6.1.5-T1 (Ich kann den Bruchteil einer Größe berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Hunderterfeld hat 100 Felder. Ein Feld ist 1 %. *Beispiel:* 25 % heißt: 25 von 100 Feldern. *Lösungsschritt:* Zähle die gefärbten Felder. So viel Prozent sind es.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze das Feld mit 25 % an. _(Bild: Bruchbild: A: Hunderterfeld mit 100 Teilen, 35 gefärbt; B: Hunderterfeld mit 100 Teilen, 25 gefärbt; C: Hunderterfeld mit 100 Teilen, 75 gefärbt)_
+  - ☐ Feld C
+  - ☑ Feld B
+  - ☐ Feld A
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gib an, wie viel Prozent gefärbt sind. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 30 gefärbt)_ Lösung: **30 %**. Typische Fehler: 70 (bruch-teil-zu-rest).
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 20 % als Bruch. / Kürze so weit wie möglich. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 20 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: 20⁄10 (dezimal-stelle), 1⁄20 (prozent-als-zaehler).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 25 % als Dezimalzahl. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 25 gefärbt)_ Lösung: **0,25**. Typische Fehler: 2,5 (dezimal-stelle), 25 (prozent-als-zaehler).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze an, wie viel Prozent 3⁄4 sind. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 75 gefärbt)_
+  - ☑ 75 %
+  - ☐ 4 %
+  - ☐ 3 %
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne jeder Zahl die passende Dezimalzahl zu. _(Tabelle: Prozent | Hundertstel | Dezimalzahl / 1 % | 1⁄100 | 0,01)_ Lösung: 50 % → 0,5, 25 % → 0,25, 75 % → 0,75
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prozent heißt Hundertstel. Erweitere den Bruch auf den Nenner 100. *Beispiel:* 7⁄20 = 35⁄100 = 35 %. *Lösungsschritt:* Der Zähler mit dem Nenner 100 ist die Prozentzahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Kreuze das Feld mit 35 % an. _(Bild: Bruchbild: A: Hunderterfeld mit 100 Teilen, 65 gefärbt; B: Hunderterfeld mit 100 Teilen, 53 gefärbt; C: Hunderterfeld mit 100 Teilen, 35 gefärbt)_
+  - ☐ Feld B
+  - ☐ Feld A
+  - ☑ Feld C
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gib an, wie viel Prozent des Hunderterfelds weiß sind. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 45 gefärbt)_ Lösung: **55 %**. Typische Fehler: 45 (bruch-teil-zu-rest).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Gib 13⁄50 in Prozent an. Lösung: **26 %**. Typische Fehler: 13 (prozent-als-zaehler), 50 (prozent-als-zaehler).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gib 0,03 in Prozent an. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 3 gefärbt)_ Lösung: **3 %**. Typische Fehler: 30 (dezimal-stelle), 0,3 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · In der Klasse sind 25 Kinder. / 14 Kinder kommen mit dem Rad. / Gib den Anteil in Prozent an. _(Tabelle: Schulweg | Kinder / Rad | 14 / anders | 11)_ Lösung: **56 %**. Typische Fehler: 14 (prozent-als-zaehler), 11 (bruch-teil-zu-rest).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: „4⁄5 = 4 %“ / Beurteile die Aussage. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 80 gefärbt)_
+  - ☐ Stimmt, denn der Zähler ist 4.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es gilt 4⁄5 = 80⁄100 = 80 %.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prozent heißt Hundertstel: 100 % ist das Ganze. Mehr als das Ganze ist mehr als 100 %. *Lösungsschritt:* Schreibe die Zahl als Bruch mit dem Nenner 100 oder als Dezimalzahl mit zwei Stellen. Die Hundertstel sind die Prozentzahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib 1,5 in Prozent an. Lösung: **150 %**. Typische Fehler: 15 (dezimal-stelle).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Gib 27⁄20 in Prozent an. Lösung: **135 %**. Typische Fehler: 27 (prozent-als-zaehler), 65 (bruch-teil-zu-rest).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Gib 13⁄25 in Prozent an. Lösung: **52 %**. Typische Fehler: 13 (prozent-als-zaehler).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 135 % als Dezimalzahl. Lösung: **1,35**. Typische Fehler: 13,5 (dezimal-stelle), 0,135 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Stände auf dem Burgmarkt: Ein Händler hat 50 Säcke Waren. / 24 Säcke sind schon verkauft. / Gib den verkauften Anteil in Prozent an. Lösung: **48 %**. Typische Fehler: 24 (prozent-als-zaehler), 52 (bruch-teil-zu-rest).
+- `06` AFB III · _Argumentieren_ · Paul sagt: „2,5 = 25 %“ / Paul meint: Mehr als 100 % gibt es nicht. / Beurteile die Aussage.
+  - ☑ Falsch. Es gilt 2,5 = 250⁄100 = 250 %.
+  - ☐ Stimmt.
+  - ☐ Falsch. Es gilt 2,5 = 2500 %.
+  - ☐ Stimmt, denn 100 % ist das Ganze.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst in eine Dezimalzahl um. Die Hundertstel und alles danach ergeben die Prozentzahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib 3⁄8 in Prozent an. Lösung: **37,5 %**. Typische Fehler: 37 (runden-abschneiden), 3 (prozent-als-zaehler).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Gib 1⁄6 in Prozent an. / Runde auf Zehntel Prozent. Lösung: **16,7 %**. Typische Fehler: 16,6 (runden-abschneiden), 1 (prozent-als-zaehler).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das passende Zeichen an. / 1⁄3 ▢ 33 %
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ordne die Anteile der Größe nach. / Beginne mit dem kleinsten Anteil. _(Ordnen; die Karten liegen so da: 3⁄8, 1⁄3, 36 %, 0,35)_ Lösung: **1⁄3, 0,35, 36 %, 3⁄8**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gib 1⁄3 in Prozent an. / Runde auf ganze Prozent. Lösung: **33 %**. Typische Fehler: 32 (runden-abschneiden), 1 (prozent-als-zaehler).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Schreibe 62,5 % als vollständig gekürzten Bruch. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄8**. Typische Fehler: 625⁄100 (dezimal-stelle).
+
+## 6.4.7-P2: Ich kann Anteile als Bruch, Dezimalzahl und in Prozent angeben und vergleichen.
+
+Grundlage, die F übt: Die Hälfte als 1⁄2, 0,5 und 50 % erkennen
+
+Baut auf: 6.4.7-P1 (Ich kann Anteile in Prozent angeben: Prozent heißt Hundertstel.), 6.4.5-U2 (Ich kann eine Dezimalzahl in einen vollständig gekürzten Bruch umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bruch, Dezimalzahl und Prozent können dieselbe Zahl sein. *Beispiel:* 1⁄2 = 0,5 = 50 %. *Lösungsschritt:* Erweitere den Bruch auf Hundertstel. Dann kannst du beide Formen ablesen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 1⁄10 auf zwei Arten. / 1⁄10 = ▢ = ▢ % _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 10 gefärbt)_ Lösung: a = **0,1**, b = **10**
+- `02` AFB I · _Probleme lösen (+ Kommunizieren)_ · Feld A zeigt 30 %. / Feld B zeigt 1⁄4. / Kreuze den größeren Anteil an. _(Bild: Bruchbild: A: Hunderterfeld mit 100 Teilen, 30 gefärbt; B: Hunderterfeld mit 100 Teilen, 25 gefärbt)_
+  - ☐ 1⁄4
+  - ☑ 30 %
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch die passende Zahl in Prozent zu. _(Tabelle: Bruch | Hundertstel | Prozent / 1⁄2 | 50⁄100 | 50 %)_ Lösung: 1⁄4 → 25 %, 1⁄10 → 10 %, 1⁄5 → 20 %
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 0,2 in Prozent. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 20 gefärbt)_ Lösung: **20 %**. Typische Fehler: 2 (dezimal-stelle).
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „0,3 = 3 %“ / Beurteile die Aussage. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 30 gefärbt)_
+  - ☐ Stimmt, denn nach dem Komma steht 3.
+  - ☑ Falsch. / Es gilt 0,3 = 30⁄100 = 30 %.
+  - ☐ Stimmt.
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Felder A, B und C zeigen die Zahlen. / Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Bild: Bruchbild: A: Hunderterfeld mit 100 Teilen, 50 gefärbt; B: Hunderterfeld mit 100 Teilen, 25 gefärbt; C: Hunderterfeld mit 100 Teilen, 10 gefärbt)_ _(Ordnen; die Karten liegen so da: 25 %, 1⁄2, 0,1)_ Lösung: **0,1, 25 %, 1⁄2**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent. *Beispiel:* 2⁄5 = 40⁄100 = 0,4 = 40 %. *Lösungsschritt:* Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 21⁄50 auf drei Arten. / 21⁄50 = ▢⁄100 = ▢ = ▢ % _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 42 gefärbt)_ Lösung: a = **42**, b = **0,42**, c = **42**
+- `02` AFB I · _Probleme lösen (+ Kommunizieren)_ · Kreuze den größten Anteil an. _(Bild: Bruchbild: A: Hunderterfeld mit 100 Teilen, 40 gefärbt; B: Hunderterfeld mit 100 Teilen, 45 gefärbt; C: Hunderterfeld mit 100 Teilen, 42 gefärbt)_
+  - ☐ 2⁄5
+  - ☐ 42 %
+  - ☑ 0,45
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 20 Kinder nennen ihr Lieblingsfach. / Gib den Anteil für Sport in Prozent an. _(Tabelle: Fach | Kinder / Sport | 5 / Mathe | 6 / Kunst | 9)_ Lösung: **25 %**. Typische Fehler: 5 (prozent-als-zaehler).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schreibe 15 % als Bruch. / Kürze vollständig. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 15 gefärbt)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄20**. Typische Fehler: 15⁄10 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das passende Zeichen an. / 3⁄4 ▢ 42 %
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas sagt: „0,9 = 9 %“ / Beurteile die Aussage. _(Bild: Bruchbild: Hunderterfeld mit 100 Teilen, 90 gefärbt)_
+  - ☐ Falsch. / Es gilt 0,9 = 900 %.
+  - ☐ Stimmt.
+  - ☑ Falsch. / Es gilt 0,9 = 0,9 = 90 %.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle alle Angaben in dieselbe Form um, am besten in Dezimalzahlen mit drei Stellen. *Lösungsschritt:* Mehr als das Ganze ist mehr als 100 %. Gemischte Zahlen haben die Ganzen vor dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 2 1⁄4 als Dezimalzahl und in Prozent. / 2 1⁄4 = ▢ = ▢ % Lösung: a = **2,25**, b = **225**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Anteile der Größe nach. / Beginne mit dem kleinsten Anteil. _(Ordnen; die Karten liegen so da: 5⁄8, 62 %, 13⁄20, 0,6)_ Lösung: **0,6, 62 %, 5⁄8, 13⁄20**
+- `03` AFB II · _Probleme lösen_ · Akku A ist zu 3⁄4 geladen. / Akku B zeigt 82 %. / Kreuze die Ladung des volleren Akkus an.
+  - ☐ 3⁄4
+  - ☑ 82 %
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe 35 % als vollständig gekürzten Bruch. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄20**. Typische Fehler: 35⁄10 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · In der Burg wohnen 50 Leute. / 13 davon sind Ritter. / Gib den Anteil der Ritter in Prozent an. Lösung: **26 %**. Typische Fehler: 13 (prozent-als-zaehler), 74 (bruch-teil-zu-rest).
+- `06` AFB III · _Argumentieren_ · Tom rechnet: 1⁄5 = 0,5 = 50 % / Finde den Fehler.
+  - ☐ Stimmt.
+  - ☐ Falsch. Es gilt 1⁄5 = 1 %.
+  - ☑ Falsch. Es gilt 1⁄5 = 0,2 = 20 %.
+  - ☐ Stimmt, denn 0,5 = 50 %.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle in eine Dezimalzahl mit drei Stellen um. Lies dann die Prozentzahl ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib 5⁄8 in Prozent an. Lösung: **62,5 %**. Typische Fehler: 62 (runden-abschneiden), 5 (prozent-als-zaehler).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das passende Zeichen an. / 2⁄3 ▢ 67 %
+  - ☐ >
+  - ☑ <
+  - ☐ =
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Anteile der Größe nach. / Beginne mit dem größten Anteil. _(Ordnen; die Karten liegen so da: 33 %, 0,35, 3⁄8, 1⁄3, 0,3)_ Lösung: **3⁄8, 0,35, 1⁄3, 33 %, 0,3**
+- `04` AFB III · _Argumentieren_ · Ida rechnet: 2⁄3 = 0,6 = 60 % / Beurteile die Rechnung und begründe.
+  - ☐ Stimmt.
+  - ☑ Falsch. Es gilt 2⁄3 = 0,6̅. Das ist mehr als 0,6.
+  - ☐ Stimmt, denn 2 : 3 ist ungefähr 0,6.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 30 Kinder werden nach ihrem Lieblingstier gefragt. / 18 Kinder nennen den Hund. / Gib den Anteil in Prozent an. Lösung: **60 %**. Typische Fehler: 18 (prozent-als-zaehler), 40 (bruch-teil-zu-rest).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Anteile an, die mehr als die Hälfte sind.
+  - ☑ 51 %
+  - ☑ 5⁄9
+  - ☐ 0,49
+  - ☑ 0,505
+  - ☐ 1⁄2
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -3380,15 +4322,15 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `kanten-teilweise` | Nimmt bei der Kantenlänge eines Quaders nur die sichtbaren oder nur drei Kanten statt aller zwölf. | Ein Quader hat 12 Kanten, je 4 gleich lange. Rechne jede Länge viermal. | Du nimmst jetzt alle 12 Kanten mit. |
 | `kante-falsch-abgelesen` | Liest die Länge an einer Kante ab, die nicht parallel zur gesuchten Kante ist. | Gleich lange Kanten eines Quaders sind parallel. Suche die beschriftete Kante, die in dieselbe Richtung zeigt. | Du findest jetzt die gleich lange Kante. |
 | `kippen-richtung` | Kippt einen Körper in Gedanken in die falsche Richtung. | Lege einen Gegenstand vor dich und kippe ihn wirklich. Welche Fläche liegt danach unten? | Du kippst den Körper jetzt in die richtige Richtung. |
+| `dezimal-mehr-ziffern` | Hält die Dezimalzahl mit mehr Nachkommastellen für größer (0,705 viel größer als 0,7, 0,45 größer als 0,5). | Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma. Vergleiche dann Stelle für Stelle. | Du weißt jetzt: Mehr Ziffern machen eine Dezimalzahl nicht größer. |
+| `drittel-als-zehntel` | Schreibt ein Drittel als 0,3 oder zwei Drittel als 0,6, als ob der Nenner 10 wäre. | Rechne 1 : 3. Die Division geht nicht auf: Die 3 wiederholt sich immer weiter. | Du weißt jetzt: Ein Drittel ist nicht 0,3. |
+| `runden-abschneiden` | Schneidet die Stellen hinter der Rundungsstelle einfach ab, statt zu runden (4,38 auf Zehntel wird 4,3). | Schau auf die Ziffer rechts neben der Rundungsstelle. Ist sie 5 oder mehr, rundest du auf. | Du rundest jetzt, statt nur abzuschneiden. |
+| `prozent-als-zaehler` | Nimmt den Zähler des Bruchs als Prozentzahl (3⁄5 als 3 %). | Prozent heißt Hundertstel. Erweitere den Bruch zuerst auf den Nenner 100. | Du rechnest einen Anteil jetzt erst in Hundertstel um. |
+| `periode-zu-frueh` | Setzt den Periodenstrich auch über Ziffern, die sich nicht wiederholen (1⁄6 als 0,1̅6̅ statt 0,16̅). | Schau genau: Welche Ziffern wiederholen sich immer wieder? Nur über sie kommt der Strich. | Du setzt den Strich jetzt nur über die sich wiederholenden Ziffern. |
+| `periode-abgebrochen` | Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66). | Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich. | Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.4.1-L1 Ich kann Dezimalzahlen lesen, schreiben und in die Stellenwerttafel eintragen. Baut auf: nur Grundschulstoff
-- 6.4.2-L1 Ich kann Dezimalzahlen vergleichen, ordnen und am Zahlenstrahl darstellen. Baut auf: nur Grundschulstoff
-- 6.4.3-L1 Ich kann Dezimalzahlen und Größen sinnvoll runden. Baut auf: nur Grundschulstoff
-- 6.4.5-L1 Ich kann Brüche durch Erweitern oder Kürzen in Dezimalzahlen umwandeln und umgekehrt. Baut auf: nur Grundschulstoff
-- 6.4.6-L1 Ich kann einen Bruch durch Dividieren in eine Dezimalzahl umwandeln, auch in eine periodische. Baut auf: nur Grundschulstoff
-- 6.4.7-L1 Ich kann Anteile als Bruch, Dezimalzahl und in Prozent angeben. Baut auf: nur Grundschulstoff
 - 6.5.1-L1 Ich kann Dezimalzahlen im Kopf und schriftlich addieren und subtrahieren. Baut auf: nur Grundschulstoff
 - 6.5.2-L1 Ich kann Dezimalzahlen mit Stufenzahlen multiplizieren und durch sie dividieren. Baut auf: nur Grundschulstoff
 - 6.5.3-L1 Ich kann Dezimalzahlen multiplizieren und das Ergebnis mit einem Überschlag prüfen. Baut auf: nur Grundschulstoff

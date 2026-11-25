@@ -80,7 +80,8 @@ export function divisionBild(d) {
   const zeile = (text, ende, art) => { const ziffern = String(text), cells = Array(breite + 2).fill(''); let sp = spalteVon(ende);
     for (let i = ziffern.length - 1; i >= 0; i--) { if (sp === komma) sp--; cells[sp + 1] = ziffern[i]; sp--; }
     if (art === 'minus') cells[Math.max(0, sp + 1)] = '−';
-    zeilen.push({ cells, art }); };
+    zeilen.push({ cells, art: `division-${art}` }); };
+  // Die Zeilen heißen division-…, denn .kopf ist schon die Kopfleiste des Dashboards.
   // Kopf: Dividend mit Komma und Nullen, dann „: Divisor = Ergebnis“.
   const per = (i) => start != null && i >= start;
   const ergebnis = [String(ganz), nach ? ',' : '', ...stellen.map((x, i) => (per(i) ? h('span', { class: 'periode' }, String(x.ziffer)) : String(x.ziffer)))];
@@ -93,7 +94,7 @@ export function divisionBild(d) {
   zeile(stellen.length ? stellen.at(-1).rest : d.dividend % d.divisor, komma - 1 + nach, 'ende');
   const tabelle = h('table', { class: 'division', 'aria-label': `Schriftliche Division ${d.dividend} : ${d.divisor}` },
     h('tbody', {},
-      h('tr', { class: 'kopf' }, kopf.map((c) => h('td', {}, c)), h('td', { class: 'rechnung' }, ` : ${d.divisor} = `, ...ergebnis)),
+      h('tr', { class: 'division-kopf' }, kopf.map((c) => h('td', {}, c)), h('td', { class: 'rechnung' }, ` : ${d.divisor} = `, ...ergebnis)),
       zeilen.map((z) => h('tr', { class: z.art }, z.cells.map((c) => h('td', {}, c)), h('td', {})))));
   const satz = start != null
     ? `Der Rest ${stellen[start].zahl / 10} kommt zum zweiten Mal. Ab hier wiederholen sich die Ziffern: Die Periode ist ${stellen.slice(start).map((x) => x.ziffer).join('')}.`

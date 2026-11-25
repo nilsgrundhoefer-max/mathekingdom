@@ -1087,6 +1087,36 @@
    "beschreibung": "Kippt einen Körper in Gedanken in die falsche Richtung.",
    "hinweis": "Lege einen Gegenstand vor dich und kippe ihn wirklich. Welche Fläche liegt danach unten?",
    "kind": "Du kippst den Körper jetzt in die richtige Richtung."
+  },
+  "dezimal-mehr-ziffern": {
+   "beschreibung": "Hält die Dezimalzahl mit mehr Nachkommastellen für größer (0,705 viel größer als 0,7, 0,45 größer als 0,5).",
+   "hinweis": "Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma. Vergleiche dann Stelle für Stelle.",
+   "kind": "Du weißt jetzt: Mehr Ziffern machen eine Dezimalzahl nicht größer."
+  },
+  "drittel-als-zehntel": {
+   "beschreibung": "Schreibt ein Drittel als 0,3 oder zwei Drittel als 0,6, als ob der Nenner 10 wäre.",
+   "hinweis": "Rechne 1 : 3. Die Division geht nicht auf: Die 3 wiederholt sich immer weiter.",
+   "kind": "Du weißt jetzt: Ein Drittel ist nicht 0,3."
+  },
+  "runden-abschneiden": {
+   "beschreibung": "Schneidet die Stellen hinter der Rundungsstelle einfach ab, statt zu runden (4,38 auf Zehntel wird 4,3).",
+   "hinweis": "Schau auf die Ziffer rechts neben der Rundungsstelle. Ist sie 5 oder mehr, rundest du auf.",
+   "kind": "Du rundest jetzt, statt nur abzuschneiden."
+  },
+  "prozent-als-zaehler": {
+   "beschreibung": "Nimmt den Zähler des Bruchs als Prozentzahl (3⁄5 als 3 %).",
+   "hinweis": "Prozent heißt Hundertstel. Erweitere den Bruch zuerst auf den Nenner 100.",
+   "kind": "Du rechnest einen Anteil jetzt erst in Hundertstel um."
+  },
+  "periode-zu-frueh": {
+   "beschreibung": "Setzt den Periodenstrich auch über Ziffern, die sich nicht wiederholen (1⁄6 als 0,1̅6̅ statt 0,16̅).",
+   "hinweis": "Schau genau: Welche Ziffern wiederholen sich immer wieder? Nur über sie kommt der Strich.",
+   "kind": "Du setzt den Strich jetzt nur über die sich wiederholenden Ziffern."
+  },
+  "periode-abgebrochen": {
+   "beschreibung": "Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66).",
+   "hinweis": "Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich.",
+   "kind": "Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode."
   }
  },
  "kompetenzen": {
@@ -41549,7 +41579,8 @@
      "gesucht": "γ",
      "satz": "sss"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.4-K2-G-04",
@@ -41750,7 +41781,8 @@
      "gesucht": "b",
      "satz": "wsw"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.4-K2-G-06",
@@ -42006,7 +42038,8 @@
      "gesucht": "a",
      "satz": "sws"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.4-K2-M-03",
@@ -42329,7 +42362,8 @@
      "gesucht": "β",
      "satz": "sws"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.4-K2-E-02",
@@ -42523,7 +42557,8 @@
      "gesucht": "a",
      "satz": "wsw"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.4-K2-E-04",
@@ -45938,7 +45973,8 @@
      "gesucht": "b",
      "satz": "thales"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.5-T2-G-04",
@@ -46066,7 +46102,8 @@
      "gesucht": "b",
      "satz": "thales"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.5-T2-G-06",
@@ -46275,7 +46312,8 @@
      "gesucht": "b",
      "satz": "thales"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.5-T2-M-03",
@@ -46438,7 +46476,8 @@
      "gesucht": "b",
      "satz": "thales"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.5-T2-M-06",
@@ -46511,7 +46550,8 @@
      "gesucht": "α",
      "satz": "thales"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.5-T2-E-02",
@@ -46541,7 +46581,8 @@
      "gesucht": "b",
      "satz": "thales"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.5-T2-E-03",
@@ -50247,7 +50288,8 @@
      "gesucht": "h_c",
      "satz": "sss"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.6-H1-M-03",
@@ -50733,7 +50775,8 @@
      "gesucht": "h_a",
      "satz": "sss"
     }
-   ]
+   ],
+   "heftaufgabe": true
   },
   {
    "id": "7.2.6-H1-E-04",
@@ -70741,7 +70784,8 @@
      "9 · 10 + 8 = 98",
      "5 · 10 + 9 = 59",
      "98 − 59 = 39"
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.5.1-B2-M-04",
@@ -70849,7 +70893,8 @@
      "3 · 10 + 5 = 35",
      "2 · 10 + 7 = 27",
      "35 + 39 + 27 = 101"
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.5.1-B2-M-06",
@@ -72321,7 +72366,8 @@
       "b": 30,
       "c": 50
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.5.2-S2-M-04",
@@ -72422,7 +72468,8 @@
       "b": 50,
       "c": 130
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.5.2-S2-M-06",
@@ -80729,7 +80776,8 @@
       "d": 80,
       "wert": 60
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.1-R2-M-04",
@@ -80925,7 +80973,8 @@
       "d": 60,
       "wert": 80
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.3-A1-F-01",
@@ -82945,7 +82994,8 @@
       ],
       "wert": 69
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.4-W1-M-04",
@@ -83719,7 +83769,8 @@
       "winkel": 127,
       "wert": 125
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.4-W2-M-04",
@@ -83791,7 +83842,8 @@
       "winkel": 52,
       "wert": 35
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.4-W2-M-06",
@@ -86472,7 +86524,8 @@
       "gesucht": "a",
       "wert": 64
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.X2-D2-M-03",
@@ -86510,7 +86563,8 @@
       "gesucht": "a",
       "wert": 80
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.7.X2-D2-M-04",
@@ -86753,7 +86807,8 @@
       "gesucht": "gamma",
       "wert": 51
      }
-    ]
+    ],
+    "heftaufgabe": true
    },
    {
     "id": "5.9.3-K2-F-01",

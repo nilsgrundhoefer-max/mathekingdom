@@ -196,6 +196,16 @@ function gezeigt(a) {
   return liste.filter((v) => v.w);
 }
 
+// Kürzeste Schreibweise einer Dezimalzahl, periodisch mit Überstrich („0,16̅“).
+export function periodeText(q) {
+  const ganz0 = Math.floor(q.z / q.n), ziffern = [], gesehen = new Map();
+  let rest = q.z % q.n;
+  while (rest !== 0 && !gesehen.has(rest)) { gesehen.set(rest, ziffern.length); rest *= 10; ziffern.push(Math.floor(rest / q.n)); rest %= q.n; }
+  if (rest === 0) return ziffern.length ? `${ganz0},${ziffern.join('')}` : String(ganz0);
+  const start = gesehen.get(rest);
+  return `${ganz0},${ziffern.slice(0, start).join('')}${ziffern.slice(start).map((z) => `${z}\u0305`).join('')}`;
+}
+
 // ---------- Sprache ----------
 // Nenner, Nachkommastellen und Brüche über 1 je Niveaustufe (Grilling mit Nils, 2026-11-22).
 export function bruchSprachMaengel(a, texte) {
@@ -571,6 +581,12 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
         ergibt(e, n.ergebnis);
         break;
       }
+      case 'abbrechend': { // Richtig sind die Brüche mit abbrechender Dezimalzahl (mit periodisch: die mit periodischer). Es zählt der gekürzte Nenner.
+        const nur25 = (n0) => { let x = n0; for (const p of [2, 5]) while (x % p === 0) x /= p; return x === 1; };
+        stufeEin((o) => { const x = o.text.trim().match(/^(\d+)\u2044(\d+)$/); if (!x) return null; const n0 = Number(x[2]) / ggt(Number(x[1]), Number(x[2])); return nur25(n0) !== Boolean(n.periodisch); }, 'abbrechend'); gebunden = true;
+        for (const o of optionen) for (const v of atome(o.text)) benutzt.add(schluessel(v));
+        break;
+      }
       case 'frei': { // Begriffsfrage ohne Rechnung („Wie heißt die Zahl unter dem Bruchstrich?“).
         if (!n.grund || !['auswahl', 'zuordnen'].includes(a.format)) M('Nachweis frei: nur für Begriffsfragen mit Grund');
         if (optionen.filter((o) => o.richtig).some((o) => /\d/.test(o.text))) M('Nachweis frei: Die richtige Antwort enthält eine Zahl und braucht einen echten Nachweis');
@@ -594,6 +610,16 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
     case 'zahl': {
       pruefeTeil(a, 'Lösung');
       if (!istErgebnis(mitEinheit(a.loesung, a.einheit))) M(`Lösung ${a.loesung}${a.einheit ? ` ${a.einheit}` : ''} ergibt sich nicht aus dem Nachweis`);
+      break;
+    }
+    case 'periode': { // Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahl, in kürzester Schreibweise.
+      const soll = rechne(String(a.loesung ?? ''));
+      if (!soll || soll.art !== 'zahl' || !/\u0305/.test(a.loesung)) { M('Periode: Die Lösung ist keine periodische Dezimalzahl'); break; }
+      if (periodeText(soll.w) !== a.loesung) M(`Periode: Die Lösung heißt kürzer ${periodeText(soll.w)}`);
+      const fehler = (a.typischeFehler ?? []).map((f) => { fvOk(f.fehlvorstellung); const w = rechne(String(f.wert)); if (!w) M(`Periode: typischer Fehler ${f.wert} lässt sich nicht lesen`); return w; });
+      if (fehler.some((w) => w && gleich(w, soll))) M('Periode: typischer Fehler hat denselben Wert wie die Lösung');
+      if (new Set(fehler.filter(Boolean).map(schluessel)).size !== fehler.length) M('Periode: typischer Fehler doppelt');
+      if (!istErgebnis(soll)) M(`Lösung ${a.loesung} ergibt sich nicht aus dem Nachweis`);
       break;
     }
     case 'bruch': {
@@ -727,13 +753,19 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
     }
     default: M(`Format ${a.format} gibt es in Kapitel 9 nicht`);
   }
+  // Schriftliche Division als Lösungsbild (ADR 0047): Dividend und Divisor ergeben die Lösung.
+  if (a.division) {
+    const { dividend: x, divisor: y } = a.division, soll = ['zahl', 'periode'].includes(a.format) ? rechne(`${a.loesung}${a.einheit && EINHEIT[a.einheit] ? ` ${a.einheit}` : ''}`) : null;
+    if (!ganz(x, 1, 100000) || !ganz(y, 2, 1000)) M('Division: Dividend und Divisor sind natürliche Zahlen');
+    else if (soll && qVgl(soll.art === 'zahl' ? soll.w : qDurch(soll.w, Q(EINHEIT[a.einheit][1], EINHEIT[a.einheit][2])), Q(x, y)) !== 0) M(`Division: ${x} : ${y} ergibt nicht die Lösung`);
+  }
   if (a.daten && (!Array.isArray(a.daten.kopf) || a.daten.kopf.length < 2 || !Array.isArray(a.daten.zeilen) || a.daten.zeilen.some((z) => z.length !== a.daten.kopf.length))) M('Daten: Zeilen passen nicht zur Kopfzeile');
   // Jede Zahl aus dem Text gehört zur Aufgabe: Sie steht im Nachweis oder im Bild. Bei einem Urteil und einer Begriffsfrage stehen Beispiele im Text.
   if (!nachweis.some((n) => ['urteil', 'frei', 'aussagen', 'extrem', 'ordnung', 'paare', 'figurwahl', 'schwelle', 'zwischen', 'figurextrem', 'rundenwahl'].includes(n?.art))) {
     const imBild = new Set(gezeigt(a).map(schluessel));
     // Der Zähler und der Nenner eines benutzten Bruchs zählen als benutzt („3 von 8 Kugeln“ und 3⁄8).
     const teile = new Set([...benutzt, ...imBild].flatMap((k) => { const x = k.match(/^zahl:(\d+)\/(\d+)$/); return x ? [`zahl:${x[1]}/1`, `zahl:${x[2]}/1`] : []; }));
-    for (const n of nachweis) if (typeof n === 'object' && n) for (const v of Object.values(n)) if (typeof v === 'string' || typeof v === 'number') for (const x of atome(String(v))) { benutzt.add(schluessel(x)); const b = String(x.roh).match(/(\d+)⁄(\d+)/); if (b) { teile.add(`zahl:${Number(b[1])}/1`); teile.add(`zahl:${Number(b[2])}/1`); } }
+    for (const n of nachweis) if (typeof n === 'object' && n) for (const v of Object.values(n)) if (typeof v === 'string' || typeof v === 'number') for (const x of atome(String(v))) { if (!x.w) continue; benutzt.add(schluessel(x)); const b = String(x.roh).match(/(\d+)⁄(\d+)/); if (b) { teile.add(`zahl:${Number(b[1])}/1`); teile.add(`zahl:${Number(b[2])}/1`); } }
     for (const n of nachweis) if (typeof n === 'string') for (const b of n.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) for (const x of [b[1], b[2], b[3]]) if (x != null) teile.add(`zahl:${Number(x)}/1`);
     for (const v of [a.text, ...(a.teile ?? []).map((t) => t.text)].flatMap((t) => atome(String(t).replace(/\{\{\w+\}\}/g, ' ▢ ')))) {
       if (v.art === 'fehler') continue;
