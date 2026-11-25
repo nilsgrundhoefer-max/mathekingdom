@@ -38,7 +38,8 @@ function linieSvg(g, m, l, klasse = '') {
   // Strecke und Strahl zeigen ihre Endpunkte als kleine Querstriche.
   const d = [q[0] - p[0], q[1] - p[1]], len = Math.hypot(d[0], d[1]) || 1, n = [-d[1] / len * 0.16, d[0] / len * 0.16];
   const ende = (e) => s('line', { x1: m.X(e[0] - n[0]), y1: m.Y(e[1] - n[1]), x2: m.X(e[0] + n[0]), y2: m.Y(e[1] + n[1]), class: `linienende${klasse ? ` ${klasse}` : ''}` });
-  if (l.art === 'strecke' && l.stil !== 'achse') teile.push(ende(l.a), ende(l.b));
+  // Klasse 6 Kapitel 3 (ADR 0045): Kanten eines Schrägbilds haben keine Endstriche.
+  if (l.art === 'strecke' && !['achse', 'kante', 'verdeckt'].includes(l.stil)) teile.push(ende(l.a), ende(l.b));
   if (l.art === 'strahl') teile.push(ende(l.a));
   if (l.n) {
     // Der Name steht nahe am zweiten Punkt, ein Stück neben der Linie.

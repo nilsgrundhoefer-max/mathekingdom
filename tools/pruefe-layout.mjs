@@ -31,17 +31,17 @@ window.zeichne = (aufgaben) => {
   document.head.append(h('style', {}, stil));
   const halter = document.getElementById('mathekingdom');
   halter.replaceChildren(...aufgaben.map((auf) => h('section', { class: 'karte', 'data-aufgabe': auf.id },
-    /^(5\\.9|6\\.1|7\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
+    /^(5\\.9|6\\.1|6\\.3|7\\.1)\\./.test(auf.lernziel) && auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
     auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
     auf.daten && /^7\\.1\\./.test(auf.lernziel) && h('div', { class: 'bildrahmen zumtext' }, datenTabelle(auf.daten)),
-    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1|7\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
+    (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1|6\\.3|7\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
 };
 // Prüft alle Bilder einer Aufgabe und liefert Mängel als Text.
 window.pruefe = (soll) => {
   const maengel = [];
   for (const sec of document.querySelectorAll('section[data-aufgabe]')) {
     const id = sec.dataset.aufgabe, auf = soll[id];
-    if (/^(5\\.9|6\\.1|7\\.1)\\./.test(auf?.lernziel ?? '')) {
+    if (/^(5\\.9|6\\.1|6\\.3|7\\.1)\\./.test(auf?.lernziel ?? '')) {
       const karte = sec.getBoundingClientRect();
       // Bruchbilder nachzählen.
       const zaehle = (svg, figuren, was) => {

@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (624 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (960 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 624).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 960).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -1927,6 +1927,1236 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst beide Klammern. Rechn
   - ☑ (1⁄3 + 1⁄4) · 4⁄5 = 7⁄15
   - ☑ (2⁄3 + 1⁄4) : 1⁄3 = 2 3⁄4
 
+## 6.3.1-Q1: Ich kann Quader und Würfel beschreiben: Ecken, Kanten und Flächen zählen und ihre Lage angeben.
+
+Grundlage, die F übt: Am Bild eines Würfels die Ecken, Kanten und Flächen zählen und abhaken
+
+Baut auf: 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.), 5.5.3-P1 (Ich kann erkennen, ob Linien parallel zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zeige beim Zählen auf jede Ecke. Hake sie in Gedanken ab. *Beispiel:* Oben hat der Würfel 4 Ecken, unten auch 4. *Lösungsschritt:* Denk auch an die gestrichelten Linien hinten.
+
+- `01` AFB I · _Kommunizieren_ · Das ist ein Würfel. / Die Ecken sind rot. / Zähle die Ecken. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 7 (verdeckt-nicht-gezaehlt), 12 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Das ist ein Quader. / Zähle seine Flächen. / Denk auch an die Flächen hinten. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt), 4 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `03` AFB I · _Kommunizieren_ · Das ist ein Würfel. / Zähle seine Kanten. / Die gestrichelten Kanten zählen mit. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 9 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
+- `04` AFB I · _Kommunizieren_ · Schau dir den Körper an. / Kreuze seinen Namen an. _(Bild: koerper)_
+  - ☐ Kugel
+  - ☐ Würfel
+  - ☑ Quader
+- `05` AFB II · _Kommunizieren_ · Ali bastelt einen Würfel aus Pappe. / Jede Fläche ist ein Quadrat. / Gib an, wie viele Quadrate ${k} braucht. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 3 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `06` AFB I · _Kommunizieren_ · Eine Fläche ist gelb. / Kreuze ihre Form an. _(Bild: koerper)_
+  - ☐ Dreieck
+  - ☐ Kreis
+  - ☑ Rechteck
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zeige beim Zählen auf jede Kante. Hake sie in Gedanken ab. *Beispiel:* Oben 4 Kanten, unten 4 Kanten und 4 Kanten nach oben. *Lösungsschritt:* Denk auch an die gestrichelten Linien hinten.
+
+- `01` AFB I · _Kommunizieren_ · Das ist ein Quader. / Gib an, wie viele Kanten er hat. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 9 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Ergänze die Zahlen. / Ein Quader hat ▢ Ecken. / Er hat ▢ Kanten und ▢ Flächen. _(Bild: koerper)_ Lösung: e = **8**, k = **12**, f = **6**
+- `03` AFB II · _Kommunizieren_ · Der Quader ist beschriftet. / Gib an, wie viele Kanten 5 cm lang sind. _(Bild: koerper)_ Lösung: **4**. Typische Fehler: 1 (kanten-teilweise), 2 (kanten-teilweise), 3 (verdeckt-nicht-gezaehlt).
+- `04` AFB I · _Kommunizieren_ · Kreuze das Bild an. / Es soll einen Würfel zeigen.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `05` AFB II · _Kommunizieren_ · Die Kante AB ist rot. / Eine Kante ist parallel zu AB. / Kreuze sie an. _(Bild: koerper)_
+  - ☐ BF
+  - ☐ AE
+  - ☑ EF
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Tom sagt: „Ein Würfel hat 12 gleich lange Kanten.“ / Prüfe die Aussage. / Kreuze die richtige Antwort an.
+  - ☐ Stimmt nicht. / Nur 4 Kanten sind gleich lang.
+  - ☑ Stimmt. / Alle Flächen sind gleich große Quadrate.
+  - ☐ Stimmt nicht. / Ein Würfel hat 8 Kanten.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Kantenlänge kommt beim Quader viermal vor. *Lösungsschritt:* Die vier Kanten nach oben sind alle so lang wie c.
+
+- `01` AFB I · _Kommunizieren_ · Ein Quader hat die Kanten a = 4 cm, b = 3 cm und c = 2 cm. Gib an, wie viele Kanten 4 cm lang sind. Lösung: **4**. Typische Fehler: 1 (kanten-teilweise), 3 (verdeckt-nicht-gezaehlt), 12 (kanten-teilweise).
+- `02` AFB II · _Kommunizieren_ · Paul baut aus Draht das Kantenmodell eines Quaders mit a = 5 cm, b = 4 cm und c = 2 cm. Gib an, wie viel Zentimeter Draht Paul braucht. Lösung: **44 cm**. Typische Fehler: 11 (kanten-teilweise), 22 (kanten-teilweise), 33 (verdeckt-nicht-gezaehlt).
+- `03` AFB II · _Kommunizieren_ · Kreuze die Fläche an, die der Fläche ABFE gegenüberliegt. _(Bild: koerper)_
+  - ☑ DCGH
+  - ☐ BCGF
+  - ☐ ADHE
+  - ☐ ABCD
+- `04` AFB I · _Kommunizieren_ · Ergänze die Zahlen. Ein Würfel hat ▢ Kanten. Jede ist 5 cm lang. Zusammen sind die Kanten ▢ cm lang. Lösung: k = **12**, s = **60**
+- `05` AFB II · _Kommunizieren_ · Finn hat 92 cm Draht und baut daraus das Kantenmodell eines Würfels mit 6 cm Kantenlänge. Gib an, wie viel Draht übrig bleibt. Lösung: **20 cm**. Typische Fehler: 68 (kanten-teilweise), 44 (ecken-kanten-verwechselt), 56 (ecken-kanten-verwechselt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre behauptet: „Ein Quader kann genau 4 gleich lange Kanten haben.“ Beurteile die Aussage.
+  - ☐ Stimmt nicht. Gleich lang sind immer alle 12 Kanten.
+  - ☑ Stimmt. Das ist bei jedem Quader so, der kein Würfel ist.
+  - ☐ Stimmt nicht. Dann wäre der Quader ein Würfel.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Würfel hat 12 gleich lange Kanten.
+
+- `01` AFB I · _Kommunizieren_ · Die Kanten eines Würfels sind zusammen 60 cm lang. Gib die Kantenlänge an. Lösung: **5 cm**. Typische Fehler: 15 (kanten-teilweise), 10 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Die Kanten eines Quaders sind zusammen 76 cm lang. Zwei Kanten sind a = 6 cm und b = 5 cm lang. Gib die Länge der Kante c an. Lösung: **8 cm**. Typische Fehler: 65 (kanten-teilweise), 13 (kanten-teilweise).
+- `03` AFB II · _Kommunizieren_ · Zwei gleich große Würfel werden mit einer Fläche aneinandergeklebt. Es entsteht ein Quader. Gib an, wie viele Flächen dieser Quader hat. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 12 (verdeckt-nicht-gezaehlt), 10 (verdeckt-nicht-gezaehlt).
+- `04` AFB III · _Kommunizieren_ · Tom hat 40 Strohhalme. Für das Kantenmodell eines Würfels braucht Tom für jede Kante einen Strohhalm. Gib an, wie viele Würfelmodelle Tom vollständig bauen kann. Lösung: **3**. Typische Fehler: 4 (kanten-teilweise), 5 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
+- `05` AFB II · _Kommunizieren_ · Eine Raumdiagonale verbindet zwei Ecken eines Quaders quer durch den Körper. Gib an, wie viele Raumdiagonalen ein Quader hat. _(Bild: koerper)_ Lösung: **4**. Typische Fehler: 8 (ecken-kanten-verwechselt), 2 (verdeckt-nicht-gezaehlt), 12 (ecken-kanten-verwechselt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „Verlängere ich jede Kante um 2 cm, wird die Kantensumme um 24 cm länger.“ Beurteile die Aussage.
+  - ☐ Stimmt nicht. Die Kantensumme bleibt gleich.
+  - ☐ Stimmt nicht. Es werden nur 4 Kanten länger.
+  - ☑ Stimmt. Ein Quader hat 12 Kanten. 12 · 2 = 24
+
+## 6.3.1-Q2: Ich kann Netze von Würfel und Quader erkennen, ergänzen und prüfen.
+
+Grundlage, die F übt: Ein Kreuznetz aus sechs Quadraten erkennen und ein fehlendes Quadrat ergänzen
+
+Baut auf: 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und Flächen zählen und ihre Lage angeben.), 5.5.7-V1 (Ich kann Rechteck und Quadrat erkennen, beschreiben und ergänzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Boden fest. Klappe dann die anderen hoch. *Beispiel:* Beim Kreuz sind die vier Quadrate in der Reihe Boden, Vorderseite, Deckel und Rückseite. *Lösungsschritt:* Prüfe: Fehlt danach noch eine Seite, links oder rechts, oben oder unten?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Netz von einem Würfel ist nicht fertig. / Es fehlt ein Quadrat. / Färbe es. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 5 gefärbte Kästchen (4|2) (3|2) (2|2) (2|1) (2|3))_ Lösung: **(1|2)**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Zähle die Flächen des Würfels. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Nur ein Bild zeigt das Netz von einem Würfel. / Kreuze es an.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Hier fehlt ein Quadrat im Netz. / Färbe das fehlende Quadrat. / Dann kannst du einen Würfel falten. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 5 gefärbte Kästchen (1|2) (2|2) (3|2) (4|2) (1|3))_ Lösung: **(1|1)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das ist das Netz von einem Quader. / Jede Fläche ist ein Rechteck. / Zähle die Rechtecke. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 4 (verdeckt-nicht-gezaehlt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die gelbe Fläche D ist der Boden. / Das Netz wird zum Würfel gefaltet. / Eine Fläche liegt dann oben. / Kreuze sie an. _(Bild: netz)_
+  - ☐ F
+  - ☐ E
+  - ☑ C
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Boden fest. Klappe dann die anderen hoch. *Beispiel:* Beim Kreuz sind die vier Quadrate in der Reihe Boden, Vorderseite, Deckel und Rückseite. *Lösungsschritt:* Prüfe: Fehlt danach noch eine Seite, links oder rechts, oben oder unten?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Würfelnetz an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ergänze das Würfelnetz. / Färbe ein Quadrat. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 5 gefärbte Kästchen (1|4) (1|3) (2|3) (2|2) (3|2))_ Lösung: **(3|1)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Eine Fläche liegt dann D gegenüber. / Kreuze sie an. _(Bild: netz)_
+  - ☐ E
+  - ☐ B
+  - ☑ A
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt einen Quader. / Kreuze sein Netz an. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Gib an, wie viele Ecken der Würfel hat. _(Bild: netz)_ Lösung: **8**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
+- `06` AFB III · _Argumentieren_ · Vier Quadrate liegen in einer Reihe. / Über den ersten beiden liegt je ein Quadrat. / Ida sagt: „6 Quadrate ergeben immer ein Würfelnetz.“ / Prüfe die Aussage. _(Bild: netz)_
+  - ☐ Stimmt. / 6 Quadrate ergeben immer einen Würfel.
+  - ☑ Stimmt nicht. / Beim Falten liegen zwei Quadrate aufeinander. / Eine Seite fehlt.
+  - ☐ Stimmt. / Alle Quadrate hängen zusammen.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege eine Fläche als Boden fest und klappe die anderen hoch. *Lösungsschritt:* Kommen zwei Flächen an dieselbe Stelle, ist es kein Würfelnetz.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz an, aus dem sich ein Würfel falten lässt.
+  - ☐ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Würfelnetz fehlen zwei Quadrate. Färbe zwei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 4 gefärbte Kästchen (2|4) (2|3) (2|2) (2|1))_ Lösung: **(3|4) (1|4)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz wird zu einem Würfel gefaltet. Kreuze die Fläche an, die A gegenüberliegt. _(Bild: netz)_
+  - ☐ C
+  - ☐ F
+  - ☑ B
+  - ☐ D
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 3 cm, b = 1 cm und c = 2 cm. Ein Kästchen steht für 1 cm. Kreuze das Netz des Quaders an.
+  - ☐ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz wird zu einem Würfel gefaltet. Kreuze alle Flächen an, die an F grenzen. _(Bild: netz)_
+  - ☑ B
+  - ☑ E
+  - ☐ D
+  - ☑ C
+  - ☑ A
+- `06` AFB III · _Argumentieren_ · Elif sagt: „Das Netz hat 6 Quadrate und alle hängen zusammen. Also lässt sich ein Würfel falten.“ Beurteile die Aussage. _(Bild: netz)_
+  - ☐ Stimmt. Ein Würfel hat 6 Flächen.
+  - ☐ Stimmt. Zusammenhängende Quadrate lassen sich immer falten.
+  - ☑ Stimmt nicht. Beim Falten kommen zwei Quadrate an dieselbe Stelle.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Liegen vier Quadrate in einer Reihe, darf links und rechts davon nur je eines liegen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Genau eines dieser Netze ist ein Würfelnetz. Kreuze es an.
+  - ☐ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+  - ☐ E
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Würfelnetz fehlen drei Quadrate. Färbe drei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 3 gefärbte Kästchen (3|1) (3|2) (2|2))_ Lösung: **(4|1) (2|3) (1|3)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz wird zu einem Würfel gefaltet. Kreuze alle Paare von Flächen an, die sich dann gegenüberliegen. _(Bild: netz)_
+  - ☐ E und F
+  - ☑ A und F
+  - ☑ B und C
+  - ☑ D und E
+- `04` AFB III · _Argumentieren_ · Ben sagt: „Ein Würfelnetz kann nie fünf Quadrate in einer Reihe haben.“ Beurteile die Aussage.
+  - ☐ Stimmt nicht. Mit dem sechsten Quadrat daneben geht es.
+  - ☑ Stimmt. In einer Reihe falten sich nur vier Quadrate rundherum. Das fünfte liegt auf dem ersten.
+  - ☐ Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfelnetz hat 5 Knickkanten zwischen den Quadraten. Beim Falten wird jede andere Kante des Würfels aus zwei Randstücken zusammengeklebt. Gib an, wie viele Kanten geklebt werden. _(Bild: netz)_ Lösung: **7**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (kanten-teilweise), 6 (netz-nur-gezaehlt).
+- `06` AFB III · _Argumentieren_ · Ida hat das Netz eines Quaders mit a = 3 cm, b = 2 cm und c = 2 cm gezeichnet. Ein Kästchen steht für 1 cm. Beurteile das Netz. _(Bild: netz)_
+  - ☑ Es ist falsch. Der Deckel liegt neben der Vorderseite und hat die falsche Größe.
+  - ☐ Es ist richtig. Es hat 6 Rechtecke.
+  - ☐ Es ist richtig. Gleich große Rechtecke kommen doppelt vor.
+
+## 6.3.2-S1: Ich kann Schrägbilder von Quadern lesen: sichtbare und verdeckte Kanten, Ecken und Maße.
+
+Grundlage, die F übt: Im Schrägbild sichtbare und gestrichelte Kanten unterscheiden
+
+Baut auf: 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und Flächen zählen und ihre Lage angeben.), 5.5.3-P1 (Ich kann erkennen, ob Linien parallel zueinander sind.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gestrichelte Kanten liegen hinten. Man sieht sie nicht. *Beispiel:* Beim Quader sind es die drei Kanten an der Ecke hinten links unten. *Lösungsschritt:* Zähle nur die gestrichelten Linien.
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt einen Quader. / Zähle die gestrichelten Kanten. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 9 (verdeckt-nicht-gezaehlt), 12 (verdeckte-kante-durchgezogen), 4 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Die Kante EF ist rot. / Kreuze an. _(Bild: koerper)_
+  - ☐ Die Kante ist hinten verdeckt.
+  - ☑ Man sieht die Kante.
+- `03` AFB I · _Kommunizieren_ · Eine Ecke liegt hinten verdeckt. / An ihr treffen sich drei gestrichelte Kanten. / Kreuze sie an. _(Bild: koerper)_
+  - ☐ C
+  - ☑ D
+  - ☐ A
+- `04` AFB I · _Kommunizieren_ · Am Quader stehen die Längen. / Lies die Länge der Kante BC ab. _(Bild: koerper)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `05` AFB II · _Kommunizieren_ · Manche Flächen des Quaders sieht man. / Zähle sie. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 2 (verdeckt-nicht-gezaehlt), 1 (verdeckt-nicht-gezaehlt).
+- `06` AFB I · _Kommunizieren_ · Ein Bild ist richtig gezeichnet. / Die Kanten hinten sind dort gestrichelt. / Kreuze es an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gestrichelte Kanten liegen hinten. Man sieht sie nicht. *Beispiel:* Beim Quader sind es die drei Kanten an der Ecke hinten links unten. *Lösungsschritt:* Zähle nur die gestrichelten Linien.
+
+- `01` AFB I · _Kommunizieren_ · Das Schrägbild zeigt einen Quader. / Gib an, wie viele Kanten verdeckt sind. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 9 (verdeckt-nicht-gezaehlt), 12 (verdeckte-kante-durchgezogen), 1 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Schau dir die Kante CD an. / Kreuze an. _(Bild: koerper)_
+  - ☑ CD ist eine verdeckte Kante.
+  - ☐ CD ist sichtbar.
+- `03` AFB II · _Kommunizieren_ · Am Quader stehen drei Längen. / Gib an, wie lang die Kante BF ist. _(Bild: koerper)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `04` AFB I · _Kommunizieren_ · Im Schrägbild ist eine Ecke verdeckt. / Kreuze sie an. _(Bild: koerper)_
+  - ☑ D
+  - ☐ C
+  - ☐ H
+- `05` AFB II · _Kommunizieren_ · Nur ein Schrägbild ist richtig. / Kreuze es an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Im Schrägbild sieht man 3 Flächen des Quaders.“ / Prüfe die Aussage. _(Bild: koerper)_
+  - ☐ Stimmt nicht. / Man sieht nur die Vorderfläche.
+  - ☐ Stimmt nicht. / Man sieht alle 6 Flächen.
+  - ☑ Stimmt. / Man sieht vorne, oben und rechts.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die beschriftete Kante, die zu ihr parallel ist. *Lösungsschritt:* DA ist so lang wie ihre parallele Kante.
+
+- `01` AFB I · _Kommunizieren_ · Gib an, wie lang die verdeckte Kante DA ist. _(Bild: koerper)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `02` AFB II · _Kommunizieren_ · Das Schrägbild zeigt ein fünfseitiges Prisma. Gib an, wie viele Kanten verdeckt sind. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt), 15 (verdeckte-kante-durchgezogen).
+- `03` AFB II · _Kommunizieren_ · Das Schrägbild zeigt eine vierseitige Pyramide. Gib an, wie viele ihrer Flächen man nicht sieht. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 1 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt), 2 (verdeckt-nicht-gezaehlt).
+- `04` AFB I · _Kommunizieren_ · Kreuze alle Flächen an, die im Schrägbild verdeckt sind. _(Bild: koerper)_
+  - ☑ DCGH
+  - ☐ EFGH
+  - ☐ ABFE
+  - ☑ ADHE
+  - ☑ ABCD
+- `05` AFB II · _Kommunizieren_ · Der Quader ist a = 5 cm lang, b = 2 cm tief und c = 3 cm hoch. Im Heft zeichnest du für einen Zentimeter Tiefe eine Kästchendiagonale. Gib an, wie viele Kästchendiagonalen die Kante BC lang ist. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (tiefe-nicht-verkuerzt), 5 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mia hat das Schrägbild eines Quaders gezeichnet. Beurteile die Zeichnung. _(Bild: koerper)_
+  - ☑ Sie ist falsch. Die verdeckten Kanten müssen gestrichelt sein.
+  - ☐ Sie ist richtig. Ein Schrägbild zeigt alle Kanten gleich.
+  - ☐ Sie ist richtig. Alle 12 Kanten sind zu sehen.
+  - ☐ Sie ist falsch. Die Kanten nach hinten müssen waagerecht sein.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Ecke ist verdeckt, wenn an ihr nur gestrichelte Kanten liegen.
+
+- `01` AFB I · _Kommunizieren_ · Das Schrägbild zeigt ein dreiseitiges Prisma. Gib an, wie viele Ecken verdeckt sind. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt).
+- `02` AFB II · _Kommunizieren_ · Ein Quader hat a = 4 cm, b = 2 cm und c = 3 cm. Du zeichnest sein Schrägbild ins Heft: Ein Zentimeter sind zwei Kästchen. Ein Zentimeter Tiefe ist eine Kästchendiagonale. Gib an, wie viele Kästchen hoch das Schrägbild ist. Lösung: **8**. Typische Fehler: 6 (tiefe-nicht-verkuerzt), 10 (tiefe-nicht-verkuerzt), 5 (tiefe-nicht-verkuerzt).
+- `03` AFB II · _Kommunizieren_ · Das Schrägbild eines Quaders ist im Heft 10 Kästchen breit. Die Vorderfläche ist 8 Kästchen breit. Gib an, wie viele Zentimeter tief der Quader ist. Lösung: **2**. Typische Fehler: 4 (tiefe-nicht-verkuerzt), 1 (tiefe-nicht-verkuerzt).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Ali sagt: „Im Schrägbild eines Würfels sind alle Kanten gleich lang gezeichnet.“ Beurteile die Aussage. _(Bild: koerper)_
+  - ☐ Stimmt. Im Schrägbild sieht man alle Teile gleich gut.
+  - ☑ Stimmt nicht. Die Kanten nach hinten werden kürzer gezeichnet.
+  - ☐ Stimmt. Das hängt davon ab, wie groß der Quader ist.
+- `05` AFB II · _Kommunizieren_ · Das Schrägbild zeigt eine vierseitige Pyramide. Gib an, wie viele Kanten verdeckt sind. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 2 (verdeckt-nicht-gezaehlt), 4 (verdeckt-nicht-gezaehlt).
+- `06` AFB III · _Kommunizieren_ · Genau ein Schrägbild ist richtig gezeichnet. Kreuze es an.
+  - ☐ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+  - ☐ E
+
+## 6.3.2-S2: Ich kann Schrägbilder von Quadern im Gitter vervollständigen und zeichnen.
+
+Grundlage, die F übt: Im Gitter eine fehlende Kante eines Würfels nachzeichnen
+
+Baut auf: 6.3.2-S1 (Ich kann Schrägbilder von Quadern lesen: sichtbare und verdeckte Kanten, Ecken und Maße.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Kante geht senkrecht nach oben. *Beispiel:* Sie ist so lang wie die Kante vorne links. *Lösungsschritt:* Verbinde die beiden Ecken vorne rechts.
+
+- `01` AFB I · _Kommunizieren_ · Am Würfel fehlt eine Kante. / Sie ist vorne rechts. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 8 × 8; Strecke durch (1|1) und (5|1), Strecke durch (5|1) und (7|3), Strecke durch (7|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|5) und (5|5), Strecke durch (5|5) und (7|7), Strecke durch (7|7) und (3|7), Strecke durch (3|7) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (7|3) und (7|7), Strecke durch (3|3) und (3|7))_ Lösung: **zum Beispiel durch (5|1) und (5|5)**
+- `02` AFB I · _Kommunizieren_ · Am Würfel fehlt eine Kante. / Sie liegt oben hinten. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 8 × 8; Strecke durch (1|1) und (5|1), Strecke durch (5|1) und (7|3), Strecke durch (7|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|5) und (5|5), Strecke durch (5|5) und (7|7), Strecke durch (3|7) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (5|1) und (5|5), Strecke durch (7|3) und (7|7), Strecke durch (3|3) und (3|7))_ Lösung: **zum Beispiel durch (7|7) und (3|7)**
+- `03` AFB I · _Kommunizieren_ · Am Würfel fehlt eine Ecke. / Sie liegt hinten rechts oben. / Tippe sie an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 9; Strecke durch (1|1) und (5|1), Strecke durch (5|1) und (7|3), Strecke durch (7|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|5) und (5|5), Strecke durch (3|7) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (5|1) und (5|5), Strecke durch (3|3) und (3|7))_ Lösung: **(7|7)**
+- `04` AFB I · _Kommunizieren_ · Am Würfel fehlt eine Kante. / Sie geht oben rechts nach hinten. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 8 × 8; Strecke durch (1|1) und (5|1), Strecke durch (5|1) und (7|3), Strecke durch (7|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|5) und (5|5), Strecke durch (7|7) und (3|7), Strecke durch (3|7) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (5|1) und (5|5), Strecke durch (7|3) und (7|7), Strecke durch (3|3) und (3|7))_ Lösung: **zum Beispiel durch (5|5) und (7|7)**
+- `05` AFB II · _Kommunizieren_ · Am Würfel fehlt die Kante von D nach H. / Sie ist verdeckt. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 8 × 8; Punkte A(1|1), B(5|1), C(7|3), D(3|3), E(1|5), F(5|5), G(7|7), H(3|7); Strecke durch (1|1) und (5|1), Strecke durch (5|1) und (7|3), Strecke durch (7|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|5) und (5|5), Strecke durch (5|5) und (7|7), Strecke durch (7|7) und (3|7), Strecke durch (3|7) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (5|1) und (5|5), Strecke durch (7|3) und (7|7))_ Lösung: **zum Beispiel durch (3|3) und (3|7)**
+- `06` AFB I · _Kommunizieren_ · Eine Ecke liegt hinten verdeckt. / Tippe sie an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 9; Strecke durch (1|1) und (5|1), Strecke durch (5|1) und (7|3), Strecke durch (7|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|5) und (5|5), Strecke durch (5|5) und (7|7), Strecke durch (7|7) und (3|7), Strecke durch (3|7) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (5|1) und (5|5), Strecke durch (7|3) und (7|7), Strecke durch (3|3) und (3|7))_ Lösung: **(3|3)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Kanten nach hinten gehen schräg nach rechts oben. *Beispiel:* Für 1 cm Tiefe geht es 1 Kästchen nach rechts und 1 nach oben. *Lösungsschritt:* Parallele Kanten haben im Bild dieselbe Richtung.
+
+- `01` AFB I · _Kommunizieren_ · Am Quader fehlt die Kante unten rechts. / Sie geht nach hinten. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 14 × 10; Strecke durch (1|1) und (11|1), Strecke durch (13|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|7) und (11|7), Strecke durch (11|7) und (13|9), Strecke durch (13|9) und (3|9), Strecke durch (3|9) und (1|7), Strecke durch (1|1) und (1|7), Strecke durch (11|1) und (11|7), Strecke durch (13|3) und (13|9), Strecke durch (3|3) und (3|9))_ Lösung: **zum Beispiel durch (11|1) und (13|3)**
+- `02` AFB I · _Kommunizieren_ · Am Quader fehlt die Kante von C nach G. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 12; Punkte A(1|1), B(7|1), C(9|3), D(3|3), E(1|9), F(7|9), G(9|11), H(3|11); Strecke durch (1|1) und (7|1), Strecke durch (7|1) und (9|3), Strecke durch (9|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|9) und (7|9), Strecke durch (7|9) und (9|11), Strecke durch (9|11) und (3|11), Strecke durch (3|11) und (1|9), Strecke durch (1|1) und (1|9), Strecke durch (7|1) und (7|9), Strecke durch (3|3) und (3|11))_ Lösung: **zum Beispiel durch (9|3) und (9|11)**
+- `03` AFB II · _Kommunizieren_ · Am Quader fehlt die Ecke H. / Tippe sie an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 15 × 11; Punkte A(1|1), B(11|1), C(13|3), D(3|3), E(1|7), F(11|7), G(13|9); Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (13|3), Strecke durch (13|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|7) und (11|7), Strecke durch (11|7) und (13|9), Strecke durch (1|1) und (1|7), Strecke durch (11|1) und (11|7), Strecke durch (13|3) und (13|9))_ Lösung: **(3|9)**
+- `04` AFB I · _Kommunizieren_ · Am Quader fehlt eine verdeckte Kante. / Sie geht von C nach D. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 13 × 9; Punkte A(1|1), B(9|1), C(12|4), D(4|4), E(1|5), F(9|5), G(12|8), H(4|8); Strecke durch (1|1) und (9|1), Strecke durch (9|1) und (12|4), Strecke durch (4|4) und (1|1), Strecke durch (1|5) und (9|5), Strecke durch (9|5) und (12|8), Strecke durch (12|8) und (4|8), Strecke durch (4|8) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (9|1) und (9|5), Strecke durch (12|4) und (12|8), Strecke durch (4|4) und (4|8))_ Lösung: **zum Beispiel durch (12|4) und (4|4)**
+- `05` AFB II · _Kommunizieren_ · Der Quader ist 2 cm tief. / Die Kante BC geht nach hinten. / Gib an, wie viele Kästchen sie nach rechts geht. _(Bild: Karogitter 14 × 10; Punkte A(1|1), B(11|1), C(13|3), D(3|3), E(1|7), F(11|7), G(13|9), H(3|9); Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (13|3), Strecke durch (13|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|7) und (11|7), Strecke durch (11|7) und (13|9), Strecke durch (13|9) und (3|9), Strecke durch (3|9) und (1|7), Strecke durch (1|1) und (1|7), Strecke durch (11|1) und (11|7), Strecke durch (13|3) und (13|9), Strecke durch (3|3) und (3|9))_ Lösung: **2**. Typische Fehler: 4 (tiefe-nicht-verkuerzt), 3 (tiefe-nicht-verkuerzt).
+- `06` AFB III · _Kommunizieren_ · Am Quader fehlt noch eine Kante. / Sie ist verdeckt. / Sie geht von A nach hinten. / Zeichne sie ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 12; Strecke durch (1|1) und (7|1), Strecke durch (7|1) und (9|3), Strecke durch (9|3) und (3|3), Strecke durch (1|9) und (7|9), Strecke durch (7|9) und (9|11), Strecke durch (9|11) und (3|11), Strecke durch (3|11) und (1|9), Strecke durch (1|1) und (1|9), Strecke durch (7|1) und (7|9), Strecke durch (9|3) und (9|11), Strecke durch (3|3) und (3|11))_ Lösung: **zum Beispiel durch (3|3) und (1|1)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die fehlende Kante läuft nach hinten. Sie ist im Bild verkürzt. *Lösungsschritt:* Für 4 cm Tiefe 4 Kästchen nach rechts und 4 nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Der Quader ist 5 cm lang, 4 cm tief und 3 cm hoch. Zeichne die fehlende Kante ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 16 × 12; Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (15|5), Strecke durch (15|5) und (5|5), Strecke durch (5|5) und (1|1), Strecke durch (1|7) und (11|7), Strecke durch (15|11) und (5|11), Strecke durch (5|11) und (1|7), Strecke durch (1|1) und (1|7), Strecke durch (11|1) und (11|7), Strecke durch (15|5) und (15|11), Strecke durch (5|5) und (5|11))_ Lösung: **zum Beispiel durch (11|7) und (15|11)**
+- `02` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 3 cm und c = 2 cm in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist. Lösung: **11**. Typische Fehler: 14 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt), 7 (tiefe-nicht-verkuerzt).
+- `03` AFB II · _Kommunizieren_ · Gezeichnet ist die Vorderfläche eines Quaders, der 4 cm tief ist. Tippe die Stelle an, an der die Ecke G liegt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 17 × 13; Punkte A(1|1), B(11|1), E(1|7), F(11|7); Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (11|7), Strecke durch (1|7) und (11|7), Strecke durch (1|1) und (1|7))_ Lösung: **(15|11)**
+- `04` AFB I · _Kommunizieren_ · Zeichne die Kante GH ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 12; Punkte A(1|1), B(7|1), C(9|3), D(3|3), E(1|9), F(7|9), G(9|11), H(3|11); Strecke durch (1|1) und (7|1), Strecke durch (7|1) und (9|3), Strecke durch (9|3) und (3|3), Strecke durch (3|3) und (1|1), Strecke durch (1|9) und (7|9), Strecke durch (7|9) und (9|11), Strecke durch (3|11) und (1|9), Strecke durch (1|1) und (1|9), Strecke durch (7|1) und (7|9), Strecke durch (9|3) und (9|11), Strecke durch (3|3) und (3|11))_ Lösung: **zum Beispiel durch (9|11) und (3|11)**
+- `05` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Quaders mit a = 5 cm, b = 2 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **10**. Typische Fehler: 12 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt), 6 (tiefe-nicht-verkuerzt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena zeichnet einen Quader mit 5 cm Tiefe. Die Kanten nach hinten zeichnet Lena 10 Kästchen nach rechts und 10 Kästchen nach oben. Beurteile die Zeichnung.
+  - ☐ Richtig. So wird der Quader schön groß.
+  - ☑ Falsch. 5 cm Tiefe sind nur 5 Kästchendiagonalen.
+  - ☐ Richtig. 1 cm sind immer 2 Kästchen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe die Richtung an einer anderen Kante nach hinten.
+
+- `01` AFB I · _Kommunizieren_ · Der Quader ist 4 cm lang, 3 cm tief und 2 cm hoch. Zeichne die fehlende Kante ein. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 13 × 9; Strecke durch (1|1) und (9|1), Strecke durch (12|4) und (4|4), Strecke durch (4|4) und (1|1), Strecke durch (1|5) und (9|5), Strecke durch (9|5) und (12|8), Strecke durch (12|8) und (4|8), Strecke durch (4|8) und (1|5), Strecke durch (1|1) und (1|5), Strecke durch (9|1) und (9|5), Strecke durch (12|4) und (12|8), Strecke durch (4|4) und (4|8))_ Lösung: **zum Beispiel durch (9|1) und (12|4)**
+- `02` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Würfels mit 3 cm Kantenlänge in dein Heft. Gib an, wie viele Kästchen breit dein Schrägbild ist. Lösung: **9**. Typische Fehler: 12 (tiefe-nicht-verkuerzt), 6 (tiefe-nicht-verkuerzt).
+- `03` AFB II · _Kommunizieren_ · Gezeichnet ist die Vorderfläche eines Quaders, der 4 cm tief ist. Tippe die Stelle an, an der die verdeckte Ecke D liegt. _(Gitterzeichnen, einen Punkt antippen; Karogitter 17 × 13; Punkte A(1|1), B(11|1), E(1|7), F(11|7); Strecke durch (1|1) und (11|1), Strecke durch (11|1) und (11|7), Strecke durch (1|7) und (11|7), Strecke durch (1|1) und (1|7))_ Lösung: **(5|5)**
+- `04` AFB III · _Kommunizieren_ · Das Schrägbild eines Würfels ist im Heft 12 Kästchen breit. Gib die Kantenlänge des Würfels an. Lösung: **4 cm**. Typische Fehler: 6 (tiefe-nicht-verkuerzt), 3 (tiefe-nicht-verkuerzt).
+- `05` AFB II · _Kommunizieren_ · Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 4 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **12**. Typische Fehler: 16 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Im Schrägbild ist eine Kante nach hinten genauso lang wie in Wirklichkeit. Eine Kästchendiagonale ist ja 1 cm.“ Beurteile die Aussage.
+  - ☐ Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.
+  - ☑ Stimmt nicht. Eine Kästchendiagonale ist kürzer als 1 cm. Die Tiefe wird verkürzt gezeichnet.
+  - ☐ Stimmt. Nur die verdeckten Kanten werden kürzer.
+  - ☐ Stimmt nicht. Die Kante wird länger gezeichnet.
+
+## 6.3.3-A1: Ich kann Ansichten von vorne, von oben und von der Seite einem Körper zuordnen.
+
+Grundlage, die F übt: Zu einem Würfelbau die Ansicht von vorne aus drei Bildern auswählen
+
+Baut auf: 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und Flächen zählen und ihre Lage angeben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich vor den Würfelbau. Der Pfeil zeigt, wo vorne ist. *Beispiel:* Du siehst von jedem Turm nur seine Höhe. *Lösungsschritt:* Zähle in jeder Spalte die Würfel übereinander.
+
+- `01` AFB I · _Kommunizieren_ · Du schaust von vorne auf den Würfelbau. / Kreuze die passende Ansicht an. _(Bild: koerper)_
+  - ☑ A
+  - ☐ B
+  - ☐ C
+- `02` AFB I · _Kommunizieren_ · Das ist die Ansicht von vorne. / Kreuze den passenden Würfelbau an. _(Bild: risse)_
+  - ☑ A
+  - ☐ B
+  - ☐ C
+- `03` AFB I · _Kommunizieren_ · Du schaust von oben auf den Quader. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☑ Rechteck
+  - ☐ Kreis
+  - ☐ Dreieck
+- `04` AFB I · _Kommunizieren_ · Du schaust von vorne auf den Quader. / Ein Kästchen steht für einen Zentimeter. / Kreuze die passende Ansicht an. _(Bild: koerper)_
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `05` AFB II · _Kommunizieren_ · Du schaust von vorne auf den Würfelbau. / Zähle die Kästchen der Ansicht. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 6 (wuerfel-verdeckt), 4 (riss-verwechselt).
+- `06` AFB I · _Kommunizieren_ · Du schaust von oben auf den Würfelbau. / Kreuze die passende Ansicht an. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau von oben wie ein Vogel auf den Würfelbau. *Beispiel:* Du siehst jeden Turm als ein Kästchen. *Lösungsschritt:* Vorne ist in der Ansicht unten.
+
+- `01` AFB I · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Kreuze den Grundriss an. _(Bild: koerper)_
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `02` AFB I · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Kreuze den Aufriss an. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `03` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. / Gib an, wie viele Würfel es insgesamt sind. _(Bild: risse)_ Lösung: **8**. Typische Fehler: 4 (wuerfel-verdeckt), 7 (wuerfel-verdeckt).
+- `04` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Gib an, wie viele Kästchen der Grundriss des Quaders hat. _(Bild: koerper)_ Lösung: **15**. Typische Fehler: 10 (riss-verwechselt), 6 (riss-verwechselt), 8 (riss-verwechselt).
+- `05` AFB II · _Kommunizieren_ · Ein Würfelbau hat diesen Aufriss. / Kreuze den Würfelbau an. _(Bild: risse)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `06` AFB III · _Kommunizieren (+ Modellieren)_ · Ein Quader ist 2 cm lang, 2 cm tief und 4 cm hoch. / Kreuze die Form seines Grundrisses an.
+  - ☑ Quadrat
+  - ☐ Rechteck
+  - ☐ Dreieck
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich links neben den Würfelbau. *Lösungsschritt:* Was vorne ist, siehst du jetzt rechts.
+
+- `01` AFB I · _Kommunizieren_ · Der Seitenriss ist die Ansicht von links. Kreuze den Seitenriss an. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `02` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Aufriss hat. _(Bild: risse)_ Lösung: **5**. Typische Fehler: 7 (wuerfel-verdeckt).
+- `03` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Aufriss an. _(Bild: risse)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `04` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. Kreuze den Seitenriss des Quaders an. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Zwei verschiedene Würfelbauten haben auch verschiedene Aufrisse.“ Beurteile die Aussage.
+  - ☐ Stimmt. Jeder Würfelbau hat seinen eigenen Aufriss.
+  - ☐ Stimmt. Der Aufriss zeigt jeden Würfel.
+  - ☑ Stimmt nicht. Hinter einem Turm können verdeckte Würfel stehen.
+- `06` AFB III · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Seitenriss hat. _(Bild: risse)_ Lösung: **6**. Typische Fehler: 9 (wuerfel-verdeckt), 5 (riss-verwechselt).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf jedem Kästchen des Grundrisses steht ein Turm. Wie hoch darf er nach dem Aufriss höchstens sein?
+
+- `01` AFB I · _Kommunizieren_ · Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er höchstens hat. _(Bild: risse)_ Lösung: **6**. Typische Fehler: 5 (wuerfel-verdeckt), 4 (wuerfel-verdeckt).
+- `02` AFB II · _Kommunizieren_ · Du gehst um den Würfelbau herum und schaust von hinten. Kreuze die passende Ansicht an. _(Bild: koerper)_
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `03` AFB II · _Kommunizieren_ · Ein Würfelbau hat diesen Aufriss. Kreuze alle Würfelbauten an, die passen. _(Bild: risse)_
+  - ☑ A
+  - ☑ B
+  - ☐ C
+  - ☑ D
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Haben zwei Quader denselben Grundriss, dann haben sie auch denselben Aufriss.“ Beurteile die Aussage.
+  - ☑ Stimmt nicht. Die Quader können verschieden hoch sein.
+  - ☐ Stimmt. Der Grundriss bestimmt den ganzen Quader.
+  - ☐ Stimmt. Grundriss und Aufriss sind immer gleich.
+- `05` AFB II · _Kommunizieren_ · Der Aufriss eines Quaders hat 3 mal 4 Kästchen. Sein Grundriss hat 3 mal 2 Kästchen. Gib an, wie viele Kästchen sein Seitenriss hat. Lösung: **8**. Typische Fehler: 12 (riss-verwechselt), 6 (riss-verwechselt).
+- `06` AFB III · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Seitenriss an. _(Bild: risse)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+
+## 6.3.3-A2: Ich kann Ansichten von Würfelbauten und Quadern im Gitter zeichnen.
+
+Grundlage, die F übt: Die Ansicht von vorne eines Würfelbaus aus einer Reihe Kästchen färben
+
+Baut auf: 6.3.3-A1 (Ich kann Ansichten von vorne, von oben und von der Seite einem Körper zuordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du schaust von vorne. *Beispiel:* Färbe für jeden Würfel, den du siehst, ein Kästchen. *Lösungsschritt:* Würfel hintereinander siehst du nur einmal.
+
+- `01` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2) (3|3)**
+- `02` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Quaders von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (5|1) (1|2) (2|2) (3|2) (4|2) (5|2)**
+- `03` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von oben. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1)**
+- `04` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (1|2) (3|2) (3|3)**
+- `05` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Quaders von oben. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (1|2) (2|2) (3|2) (4|2) (1|3) (2|3) (3|3) (4|3)**
+- `06` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Würfels von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (1|3) (2|3) (3|3)**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du schaust von vorne. *Beispiel:* Färbe für jeden Würfel, den du siehst, ein Kästchen. *Lösungsschritt:* Würfel hintereinander siehst du nur einmal.
+
+- `01` AFB I · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Färbe den Aufriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (3|2) (3|3)**
+- `02` AFB I · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Färbe den Grundriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2)**
+- `03` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe den Grundriss des Quaders. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (5|1) (1|2) (2|2) (3|2) (4|2) (5|2) (1|3) (2|3) (3|3) (4|3) (5|3)**
+- `04` AFB I · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. / Färbe den Aufriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (3|2)**
+- `05` AFB II · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Färbe den Aufriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (2|2)**
+- `06` AFB III · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Färbe den Grundriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(2|1) (2|2) (1|3) (2|3) (3|3)**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich links neben den Würfelbau. *Lösungsschritt:* Was vorne ist, liegt im Seitenriss rechts.
+
+- `01` AFB I · _Kommunizieren_ · Der Seitenriss ist die Ansicht von links. Färbe den Seitenriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (3|2)**
+- `02` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Seitenriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2) (1|3)**
+- `03` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. Färbe den Seitenriss des Quaders. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 7)_ Lösung: **(1|1) (2|1) (1|2) (2|2) (1|3) (2|3) (1|4) (2|4)**
+- `04` AFB I · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Aufriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (2|2) (3|2) (2|3)**
+- `05` AFB II · _Kommunizieren_ · Färbe den Grundriss des Würfelbaus. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(2|1) (2|2) (1|3) (2|3) (3|3)**
+- `06` AFB III · _Kommunizieren_ · Färbe den Seitenriss des Würfelbaus. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (3|3)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Von hinten sind links und rechts vertauscht.
+
+- `01` AFB I · _Kommunizieren_ · Du gehst um den Würfelbau herum. Färbe die Ansicht von hinten. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
+- `02` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe die Ansicht von rechts. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
+- `03` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Seitenriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (2|2) (3|2) (2|3)**
+- `04` AFB III · _Kommunizieren_ · Der Aufriss eines Quaders hat 5 mal 2 Kästchen. Sein Grundriss hat 5 mal 3 Kästchen. Färbe seinen Seitenriss. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2)**
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Auf den Turm hinten in Spalte 1 von links kommt noch ein Würfel. Färbe den neuen Aufriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 7)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3) (1|4)**
+- `06` AFB III · _Kommunizieren_ · Färbe den Seitenriss des Würfelbaus. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
+
+## 6.3.4-P1: Ich kann Prismen erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.
+
+Grundlage, die F übt: Am Bild eines Zelts die Flächen zählen und die Form der Seiten nennen
+
+Baut auf: 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und Flächen zählen und ihre Lage angeben.), 5.7.X2-D1 (Ich kann Dreiecke nach Seiten und nach Winkeln einteilen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten ist je ein Dreieck. *Beispiel:* Dazu kommen die Rechtecke: zwei Dachflächen und der Boden. *Lösungsschritt:* Zähle Dreiecke und Rechtecke zusammen.
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 2 (runde-koerper-zaehlen), 3 (verdeckt-nicht-gezaehlt), 6 (wuerfel-kein-quader).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt), 9 (ecken-kanten-verwechselt).
+- `03` AFB I · _Kommunizieren (+ Modellieren)_ · Ein Körper hat zwei Dreiecke und drei Rechtecke als Flächen. / Kreuze ihn an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `04` AFB I · _Kommunizieren_ · Du schaust von vorne auf das Zelt. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Rechteck
+  - ☐ Kreis
+  - ☑ Dreieck
+- `05` AFB II · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **9**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 8 (verdeckt-nicht-gezaehlt), 5 (ecken-kanten-verwechselt).
+- `06` AFB I · _Kommunizieren_ · Du schaust von oben auf das Zelt. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Dreieck
+  - ☑ Rechteck
+  - ☐ Kreis
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben und unten ist je ein Fünfeck. *Beispiel:* Jedes Fünfeck hat fünf Ecken. *Lösungsschritt:* Zähle die Ecken oben und unten zusammen.
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein fünfseitiges Prisma. / Gib an, wie viele Ecken es hat. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 7 (verdeckt-nicht-gezaehlt), 15 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein sechsseitiges Prisma. / Gib an, wie viele Flächen es hat. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 2 (verdeckt-nicht-gezaehlt), 12 (ecken-kanten-verwechselt).
+- `03` AFB II · _Kommunizieren_ · Das Bild zeigt ein Prisma. / Kreuze seinen Namen an. _(Bild: koerper)_
+  - ☐ fünfseitiges Prisma
+  - ☑ sechsseitiges Prisma
+  - ☐ dreiseitiges Prisma
+- `04` AFB I · _Kommunizieren_ · Ein Prisma hat zwei gleiche Grundflächen. / Kreuze alle Prismen an.
+  - ☑ A
+  - ☐ B
+  - ☑ C
+  - ☐ D
+- `05` AFB II · _Kommunizieren_ · Die Grundfläche eines Prismas ist ein Fünfeck. / Gib an, wie viele Kanten das Prisma hat. Lösung: **15**. Typische Fehler: 10 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt).
+- `06` AFB III · _Kommunizieren_ · Ein Prisma hat ein Achteck als Grundfläche. / Gib an, wie viele Ecken es hat. Lösung: **16**. Typische Fehler: 8 (verdeckt-nicht-gezaehlt), 24 (ecken-kanten-verwechselt), 10 (ecken-kanten-verwechselt).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle getrennt: Kanten oben, Kanten unten, Kanten dazwischen. *Lösungsschritt:* 6 + 6 + 6 = 18
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein sechsseitiges Prisma. Gib an, wie viele Kanten es hat. _(Bild: koerper)_ Lösung: **18**. Typische Fehler: 12 (verdeckt-nicht-gezaehlt), 15 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Ein Prisma hat 24 Kanten. Gib an, wie viele Ecken seine Grundfläche hat. Lösung: **8**. Typische Fehler: 16 (ecken-kanten-verwechselt), 12 (kanten-teilweise).
+- `03` AFB II · _Kommunizieren_ · Die Mantelfläche eines Prismas besteht aus 5 Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat. Lösung: **7**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 6 (verdeckt-nicht-gezaehlt), 10 (ecken-kanten-verwechselt).
+- `04` AFB I · _Kommunizieren_ · Kreuze das Prisma mit 10 Ecken an.
+  - ☐ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Die Mantelfläche eines Prismas besteht aus Dreiecken.“ Beurteile die Aussage.
+  - ☐ Stimmt. Die Seitenflächen laufen oben spitz zu.
+  - ☑ Stimmt nicht. Die Mantelfläche besteht aus Rechtecken.
+  - ☐ Stimmt. Das gilt für alle Prismen.
+- `06` AFB III · _Kommunizieren_ · Du schaust von oben auf das sechsseitige Prisma. Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Rechteck
+  - ☐ Dreieck
+  - ☐ Kreis
+  - ☑ Sechseck
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde zuerst heraus, wie viele Ecken die Grundfläche hat.
+
+- `01` AFB I · _Kommunizieren_ · Ein Prisma hat 36 Kanten. Gib an, wie viele Ecken es hat. Lösung: **24**. Typische Fehler: 12 (kanten-teilweise), 14 (ecken-kanten-verwechselt), 34 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Zähle am sechsseitigen Prisma Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 20 (kanten-teilweise).
+- `03` AFB II · _Kommunizieren_ · Ein Prisma hat 9 Flächen. Gib an, wie viele Kanten es hat. Lösung: **21**. Typische Fehler: 27 (kanten-teilweise), 14 (ecken-kanten-verwechselt), 18 (ecken-kanten-verwechselt).
+- `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Finn sagt: „Ein Prisma kann 24 Kanten haben.“ Beurteile die Aussage.
+  - ☑ Stimmt. 24 : 3 = 8, die Grundfläche hat 8 Ecken.
+  - ☐ Stimmt nicht. Ein Prisma hat höchstens 18 Kanten.
+  - ☐ Stimmt nicht. Die Anzahl der Kanten ist immer gerade.
+- `05` AFB II · _Kommunizieren_ · Kreuze alle Körper an, die Prismen sind.
+  - ☑ A
+  - ☑ B
+  - ☑ C
+  - ☐ D
+  - ☐ E
+- `06` AFB III · _Kommunizieren_ · Ein sechsseitiges Prisma steht auf einer Grundfläche. Du schaust von vorne darauf. Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☑ Rechteck
+  - ☐ Dreieck
+  - ☐ Kreis
+  - ☐ Sechseck
+
+## 6.3.4-P2: Ich kann Netze von Prismen erkennen und prüfen.
+
+Grundlage, die F übt: Im Netz eines Zelts die Dreiecke und Rechtecke zählen
+
+Baut auf: 6.3.4-P1 (Ich kann Prismen erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.), 6.3.1-Q2 (Ich kann Netze von Würfel und Quader erkennen, ergänzen und prüfen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreiecke haben drei Ecken. *Beispiel:* Suche oben und unten am Streifen. *Lösungsschritt:* Zähle sie.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zelt. / Zähle die Dreiecke im Netz. _(Bild: netz)_ Lösung: **2**. Typische Fehler: 3 (netz-nur-gezaehlt), 5 (netz-nur-gezaehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zelt. / Zähle die Rechtecke im Netz. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 2 (netz-nur-gezaehlt), 5 (netz-nur-gezaehlt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt ein Zelt. / Kreuze das Netz an, aus dem du es falten kannst. _(Bild: koerper)_
+  - ☑ A
+  - ☐ B
+  - ☐ C
+- `04` AFB I · _Argumentieren_ · Du willst aus dem Netz ein Zelt falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☑ Nein. / Beide Dreiecke liegen an derselben Seite.
+  - ☐ Ja. / Die Dreiecke liegen oben und unten am Streifen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zelt. / Zähle alle Flächen im Netz. _(Bild: netz)_ Lösung: **5**. Typische Fehler: 3 (netz-nur-gezaehlt), 2 (netz-nur-gezaehlt), 6 (wuerfel-kein-quader).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz. / Kreuze den passenden Körper an. _(Bild: netz)_
+  - ☑ A
+  - ☐ B
+  - ☐ C
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Prisma hat zwei Fünfecke als Grundflächen. *Beispiel:* Rundherum liegen fünf Rechtecke. *Lösungsschritt:* Die Fünfecke liegen oben und unten am Streifen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines fünfseitigen Prismas an.
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `02` AFB I · _Argumentieren_ · Du willst das Netz zu einem Prisma falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☑ Nein, es lässt sich nicht falten.
+  - ☐ Ja, es lässt sich falten.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Prisma. / Gib an, wie viele Flächen das Netz hat. _(Bild: netz)_ Lösung: **7**. Typische Fehler: 5 (netz-nur-gezaehlt), 2 (netz-nur-gezaehlt), 6 (netz-nur-gezaehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Aus dem Netz entsteht ein Prisma. / Kreuze seinen Namen an. _(Bild: netz)_
+  - ☐ sechsseitiges Prisma
+  - ☑ fünfseitiges Prisma
+  - ☐ dreiseitiges Prisma
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz eines Prismas hat 6 Rechtecke. / Gib an, wie viele Flächen das Prisma hat. Lösung: **8**. Typische Fehler: 6 (netz-nur-gezaehlt), 7 (netz-nur-gezaehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt ein sechsseitiges Prisma. / Kreuze sein Netz an. _(Bild: koerper)_
+  - ☐ A
+  - ☑ B
+  - ☐ C
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundflächen gehören nicht zur Mantelfläche. *Lösungsschritt:* Zähle nur die Rechtecke.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Netz ist die Mantelfläche der Streifen aus Rechtecken. Gib an, aus wie vielen Rechtecken die Mantelfläche besteht. _(Bild: netz)_ Lösung: **5**. Typische Fehler: 7 (netz-nur-gezaehlt), 2 (netz-nur-gezaehlt).
+- `02` AFB II · _Argumentieren_ · Prüfe, ob sich das Netz zu einem Prisma falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Nein, beide Grundflächen liegen an derselben Seite.
+  - ☐ Nein, die Grundflächen haben nicht so viele Ecken, wie es Rechtecke gibt.
+  - ☑ Ja, es lässt sich falten.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines sechsseitigen Prismas an.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+  - ☐ D
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein fünfseitiges Prisma hat Grundkanten von 4 cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist. Lösung: **20 cm**. Typische Fehler: 4 (kanten-teilweise), 28 (netz-nur-gezaehlt), 40 (kanten-teilweise).
+- `05` AFB II · _Argumentieren_ · Ali sagt: „Im Netz eines Prismas dürfen beide Grundflächen an derselben Seite der Mantelfläche liegen.“ Beurteile die Aussage.
+  - ☑ Stimmt nicht. Dann gibt es beim Falten zwei Deckel und keinen Boden.
+  - ☐ Stimmt. Es kommt nur auf die Anzahl der Flächen an.
+  - ☐ Stimmt. Beim Falten kann man sie umklappen.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein dreiseitiges Prisma falten lässt.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+  - ☑ D
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei Flächen sind Grundflächen. Die übrigen sind Rechtecke.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz eines Prismas besteht aus 10 Flächen. Gib an, wie viele Ecken das Prisma hat. Lösung: **16**. Typische Fehler: 10 (netz-ecken-gezaehlt), 8 (kanten-teilweise), 24 (ecken-kanten-verwechselt).
+- `02` AFB II · _Argumentieren_ · Prüfe, ob sich das Netz zu einem Prisma falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Nein, es lässt sich nicht falten.
+  - ☑ Ja, es lässt sich falten.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein fünfseitiges Prisma falten lässt.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+  - ☐ D
+  - ☑ E
+- `04` AFB III · _Argumentieren (+ Modellieren)_ · Elif sagt: „Das Netz eines sechsseitigen Prismas hat 12 Flächen.“ Beurteile die Aussage.
+  - ☐ Stimmt. Die Grundflächen zählen doppelt.
+  - ☑ Stimmt nicht. Es sind 6 Rechtecke und 2 Grundflächen, also 8.
+  - ☐ Stimmt. Jede Ecke gibt eine Fläche.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Mantelfläche eines fünfseitigen Prismas ist im Netz ein Streifen von 20 cm Länge. Alle Grundkanten sind gleich lang. Gib an, wie lang eine Grundkante ist. Lösung: **4 cm**. Typische Fehler: 10 (kanten-teilweise), 15 (kanten-teilweise).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz eines sechsseitigen Prismas. Im Netz hängen die 8 Flächen an 7 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **11**. Typische Fehler: 18 (kanten-teilweise), 7 (kanten-teilweise), 10 (kanten-teilweise).
+
+## 6.3.5-Y1: Ich kann Pyramiden erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.
+
+Grundlage, die F übt: Am Bild eines Dachs die Dreiecke und die Spitze zeigen
+
+Baut auf: 6.3.4-P1 (Ich kann Prismen erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Unten ist ein Quadrat. *Beispiel:* Rundherum sind Dreiecke. *Lösungsschritt:* Zähle das Quadrat und alle Dreiecke.
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 3 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt), 1 (verdeckt-nicht-gezaehlt).
+- `03` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 6 (verdeckt-nicht-gezaehlt), 5 (ecken-kanten-verwechselt).
+- `04` AFB I · _Kommunizieren (+ Modellieren)_ · Ein Körper hat ein Quadrat und vier Dreiecke als Flächen. / Kreuze ihn an.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+- `05` AFB II · _Kommunizieren_ · Du schaust von oben auf das Turmdach. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Kreis
+  - ☐ Dreieck
+  - ☑ Quadrat
+- `06` AFB I · _Kommunizieren_ · Du schaust von vorne auf das Turmdach. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Kreis
+  - ☑ Dreieck
+  - ☐ Quadrat
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *Beispiel:* Dazu kommt die Spitze. *Lösungsschritt:* Rechne 5 + 1.
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt eine fünfseitige Pyramide. / Gib an, wie viele Ecken sie hat. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 10 (ecken-kanten-verwechselt), 4 (verdeckt-nicht-gezaehlt).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt eine sechsseitige Pyramide. / Gib an, wie viele Kanten sie hat. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 9 (verdeckt-nicht-gezaehlt), 7 (ecken-kanten-verwechselt).
+- `03` AFB II · _Kommunizieren_ · Das Bild zeigt eine Pyramide. / Kreuze ihren Namen an. _(Bild: koerper)_
+  - ☐ fünfseitige Pyramide
+  - ☐ vierseitige Pyramide
+  - ☑ sechsseitige Pyramide
+- `04` AFB I · _Kommunizieren_ · Eine Pyramide hat eine Grundfläche und Dreiecke bis zur Spitze. / Kreuze alle Pyramiden an.
+  - ☐ A
+  - ☑ B
+  - ☐ C
+  - ☑ D
+- `05` AFB II · _Kommunizieren_ · Die Grundfläche einer Pyramide ist ein Fünfeck. / Gib an, wie viele Kanten die Pyramide hat. Lösung: **10**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 15 (prisma-pyramide), 6 (ecken-kanten-verwechselt).
+- `06` AFB III · _Kommunizieren_ · Eine Pyramide hat ein Fünfeck als Grundfläche. / Gib an, wie viele Flächen sie hat. Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 7 (prisma-pyramide), 10 (ecken-kanten-verwechselt).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Seitendreieck liegt an einer Kante der Grundfläche. *Lösungsschritt:* Die Grundfläche hat 10 Ecken, dazu kommt die Spitze.
+
+- `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 10 Seitendreiecke. Gib an, wie viele Ecken sie hat. Lösung: **11**. Typische Fehler: 10 (verdeckt-nicht-gezaehlt), 20 (prisma-pyramide), 30 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Eine Pyramide hat 18 Kanten. Gib an, wie viele Ecken ihre Grundfläche hat. Lösung: **9**. Typische Fehler: 6 (prisma-pyramide), 17 (kanten-teilweise), 10 (ecken-kanten-verwechselt).
+- `03` AFB II · _Kommunizieren_ · Kreuze die Pyramide mit 6 Ecken an.
+  - ☐ A
+  - ☑ B
+  - ☐ C
+  - ☐ D
+- `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Eine Pyramide hat immer gleich viele Ecken wie Flächen.“ Beurteile die Aussage.
+  - ☐ Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.
+  - ☐ Stimmt nicht. Nur die vierseitige Pyramide hat das.
+  - ☑ Stimmt. Zu jedem Seitendreieck gehört eine Ecke unten, dazu Spitze und Grundfläche.
+- `05` AFB II · _Kommunizieren_ · Ein fünfseitiges Prisma und eine fünfseitige Pyramide stehen nebeneinander. Gib an, wie viele Kanten das Prisma mehr hat. Lösung: **5**. Typische Fehler: 15 (prisma-pyramide), 10 (prisma-pyramide), 1 (kanten-teilweise).
+- `06` AFB III · _Kommunizieren_ · Du schaust von oben auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an. _(Bild: koerper)_
+  - ☑ Sechseck
+  - ☐ Dreieck
+  - ☐ Quadrat
+  - ☐ Kreis
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine der Flächen ist die Grundfläche.
+
+- `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 11 Flächen. Gib an, wie viele Kanten sie hat. Lösung: **20**. Typische Fehler: 22 (kanten-teilweise), 30 (prisma-pyramide), 11 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Zähle an der sechsseitigen Pyramide Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 14 (kanten-teilweise).
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Tom sagt: „Eine Pyramide kann 21 Kanten haben.“ Beurteile die Aussage.
+  - ☑ Stimmt nicht. Eine Pyramide hat immer eine gerade Anzahl von Kanten.
+  - ☐ Stimmt. Eine Pyramide kann jede Anzahl von Kanten haben.
+  - ☐ Stimmt. Die Anzahl der Kanten ist immer ungerade.
+- `04` AFB III · _Kommunizieren_ · Kreuze alle Körper an, die gleich viele Ecken wie Flächen haben.
+  - ☐ A
+  - ☑ B
+  - ☐ C
+  - ☐ D
+  - ☑ E
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Ein Prisma und eine Pyramide haben dieselbe Grundfläche. Zusammen haben sie 30 Kanten. Gib an, wie viele Ecken die Grundfläche hat. Lösung: **6**. Typische Fehler: 15 (kanten-teilweise), 10 (prisma-pyramide).
+- `06` AFB III · _Kommunizieren_ · Du schaust von vorne auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an. _(Bild: koerper)_
+  - ☐ Kreis
+  - ☐ Sechseck
+  - ☐ Rechteck
+  - ☑ Dreieck
+
+## 6.3.5-Y2: Ich kann Netze von Pyramiden erkennen und prüfen.
+
+Grundlage, die F übt: Im Netz einer Pyramide die Dreiecke um das Quadrat zählen
+
+Baut auf: 6.3.5-Y1 (Ich kann Pyramiden erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.), 6.3.4-P2 (Ich kann Netze von Prismen erkennen und prüfen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreiecke haben drei Ecken. *Beispiel:* Sie liegen rund um das Quadrat. *Lösungsschritt:* Zähle sie im Kreis herum.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Turmdach. / Zähle die Dreiecke im Netz. _(Bild: netz)_ Lösung: **4**. Typische Fehler: 5 (netz-nur-gezaehlt), 1 (netz-nur-gezaehlt), 3 (netz-nur-gezaehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Turmdach. / Zähle alle Flächen im Netz. _(Bild: netz)_ Lösung: **5**. Typische Fehler: 4 (netz-nur-gezaehlt), 1 (netz-nur-gezaehlt), 6 (wuerfel-kein-quader).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt ein Turmdach. / Kreuze das Netz an, aus dem du es falten kannst. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `04` AFB I · _Argumentieren_ · Du willst aus dem Netz ein Turmdach falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Ja. / An jeder Seite des Quadrats liegt ein Dreieck.
+  - ☑ Nein. / Ein Dreieck fehlt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz. / Kreuze den passenden Körper an. _(Bild: netz)_
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `06` AFB I · _Modellieren_ · Im Netz fehlt ein Dreieck. / Zähle die Dreiecke im Netz. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 4 (netz-nur-gezaehlt), 5 (netz-nur-gezaehlt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *Beispiel:* An jeder Seite liegt genau ein Dreieck. *Lösungsschritt:* Zähle die Dreiecke: Es müssen fünf sein.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz einer fünfseitigen Pyramide an.
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `02` AFB I · _Argumentieren_ · Du willst das Netz zu einer Pyramide falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☑ Nein, es lässt sich nicht falten.
+  - ☐ Ja, es lässt sich falten.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz entsteht eine Pyramide. / Kreuze ihren Namen an. _(Bild: netz)_
+  - ☐ vierseitige Pyramide
+  - ☐ fünfseitige Pyramide
+  - ☑ sechsseitige Pyramide
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einer Pyramide. / Gib an, wie viele Flächen das Netz hat. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (netz-nur-gezaehlt), 7 (prisma-pyramide), 1 (netz-nur-gezaehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide hat 8 Dreiecke um die Grundfläche. / Gib an, wie viele Ecken die Pyramide hat. Lösung: **9**. Typische Fehler: 8 (verdeckt-nicht-gezaehlt), 16 (prisma-pyramide), 10 (netz-ecken-gezaehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt eine sechsseitige Pyramide. / Kreuze ihr Netz an. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* An jeder Seite der Grundfläche muss ein Seitendreieck liegen. *Lösungsschritt:* Zähle die freien Seiten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz soll eine sechsseitige Pyramide ergeben. Gib an, wie viele Seitendreiecke noch fehlen. _(Bild: netz)_ Lösung: **1**. Typische Fehler: 5 (netz-nur-gezaehlt), 6 (netz-nur-gezaehlt), 2 (netz-nur-gezaehlt).
+- `02` AFB II · _Argumentieren_ · Prüfe, ob sich das Netz zu einer Pyramide falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Nein, an einer Seite der Grundfläche fehlt ein Seitendreieck.
+  - ☐ Ja, es lässt sich falten.
+  - ☑ Nein, es gibt ein Seitendreieck zu viel.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz einer fünfseitigen Pyramide an.
+  - ☐ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+- `04` AFB I · _Argumentieren_ · Mia sagt: „Im Netz einer Pyramide müssen alle Seitendreiecke an der Grundfläche liegen.“ Beurteile die Aussage.
+  - ☐ Stimmt. Die Grundfläche hält alle Dreiecke fest.
+  - ☑ Stimmt nicht. Ein Seitendreieck kann auch an einem anderen Seitendreieck hängen.
+  - ☐ Stimmt. Sonst kann man das Netz nicht falten.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer vierseitigen Pyramide. Im Netz hängen die 5 Flächen an 4 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **4**. Typische Fehler: 8 (kanten-teilweise), 5 (kanten-teilweise).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine vierseitige Pyramide falten lässt.
+  - ☑ A
+  - ☐ B
+  - ☑ C
+  - ☐ D
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du klappst zwei Seitendreiecke hoch. Reichen ihre Spitzen bis zur Mitte?
+
+- `01` AFB I · _Argumentieren_ · Prüfe, ob sich das Netz zu einer Pyramide falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Ja, es lässt sich falten.
+  - ☐ Nein, es fehlt ein Seitendreieck.
+  - ☑ Nein, die Seitendreiecke sind zu flach und treffen sich nicht in einer Spitze.
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide besteht aus 9 Flächen. Gib an, wie viele Kanten die Pyramide hat. Lösung: **16**. Typische Fehler: 18 (kanten-teilweise), 9 (ecken-kanten-verwechselt), 24 (prisma-pyramide).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine sechsseitige Pyramide falten lässt.
+  - ☐ A
+  - ☑ B
+  - ☑ C
+  - ☐ D
+  - ☐ E
+- `04` AFB III · _Argumentieren (+ Modellieren)_ · Ben sagt: „Das Netz einer Pyramide hat immer eine ungerade Anzahl von Flächen.“ Beurteile die Aussage.
+  - ☐ Stimmt. Zur Grundfläche kommen immer gerade viele Dreiecke.
+  - ☐ Stimmt. Eine Pyramide hat immer 5 Flächen.
+  - ☑ Stimmt nicht. Die fünfseitige Pyramide hat 6 Flächen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer Pyramide mit 6 Seitendreiecken. Gib an, wie viele Kanten du zukleben musst. Lösung: **6**. Typische Fehler: 12 (kanten-teilweise), 5 (kanten-teilweise).
+- `06` AFB III · _Modellieren_ · Ein Prisma und eine Pyramide haben dieselbe Grundfläche. Ihre Netze haben zusammen 15 Flächen. Gib an, wie viele Ecken die Grundfläche hat. Lösung: **6**. Typische Fehler: 12 (netz-nur-gezaehlt).
+
+## 6.3.6-R1: Ich kann Zylinder, Kegel und Kugel erkennen, auch an Gegenständen aus dem Alltag.
+
+Grundlage, die F übt: Gegenstände wie Dose, Eistüte und Ball dem passenden Körper zuordnen
+
+Baut auf: 5.7.1-R1 (Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir den Gegenstand vor dir vor. *Beispiel:* Läuft er oben spitz zu? Hat er oben und unten einen Kreis? Ist er ganz rund? *Lösungsschritt:* Spitz: Kegel. Zwei Kreise: Zylinder. Ganz rund: Kugel.
+
+- `01` AFB I · _Kommunizieren_ · Denk an eine Trommel. / Kreuze die passende Form an.
+  - ☐ A
+  - ☑ B
+  - ☐ C
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper. / Kreuze seinen Namen an. _(Bild: koerper)_
+  - ☐ Kugel
+  - ☐ Kegel
+  - ☑ Zylinder
+- `03` AFB I · _Kommunizieren_ · Kreuze den Kegel an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `04` AFB I · _Kommunizieren_ · Das Bild zeigt einen Zylinder. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 2 (runde-koerper-zaehlen), 1 (runde-koerper-zaehlen), 6 (wuerfel-kein-quader).
+- `05` AFB II · _Kommunizieren_ · Du schaust von oben auf den Zylinder. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☑ Kreis
+  - ☐ Dreieck
+  - ☐ Rechteck
+- `06` AFB I · _Kommunizieren_ · Das Bild zeigt einen Kegel. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 1 (runde-koerper-zaehlen), 3 (runde-koerper-zaehlen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Kante ist da, wo zwei Flächen zusammenstoßen. *Beispiel:* Oben stößt der Kreis an die gekrümmte Fläche. *Lösungsschritt:* Unten auch.
+
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt einen Zylinder. / Gib an, wie viele Kanten er hat. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 1 (runde-koerper-zaehlen), 3 (ecken-kanten-verwechselt), 4 (runde-koerper-zaehlen).
+- `02` AFB I · _Kommunizieren_ · Kreuze alle Gegenstände in Form eines Kegels an.
+  - ☐ Ball
+  - ☑ Pylon
+  - ☐ Rolle Küchenpapier
+  - ☑ Partyhut
+- `03` AFB II · _Kommunizieren_ · Du schaust von vorne auf den Kegel. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Kreis
+  - ☑ Dreieck
+  - ☐ Rechteck
+- `04` AFB I · _Kommunizieren_ · Das Bild zeigt einen Kegel. / Gib an, wie viele Kanten er hat. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 2 (runde-koerper-zaehlen), 3 (runde-koerper-zaehlen).
+- `05` AFB II · _Kommunizieren_ · Kreuze alle Körper mit einer gekrümmten Fläche an.
+  - ☑ Zylinder
+  - ☐ Prisma
+  - ☐ Quader
+  - ☑ Kugel
+- `06` AFB III · _Kommunizieren_ · Ein Gegenstand heißt Pylon. / Kreuze seine Form an.
+  - ☑ Kegel
+  - ☐ Kugel
+  - ☐ Zylinder
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Von oben siehst du den Kreis unten, die Spitze liegt in der Mitte. *Lösungsschritt:* Der Umriss ist rund.
+
+- `01` AFB I · _Kommunizieren_ · Du schaust von oben auf den Kegel. Kreuze die Form der Ansicht an. _(Bild: koerper)_
+  - ☐ Dreieck
+  - ☑ Kreis
+  - ☐ Rechteck
+  - ☐ Quadrat
+- `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Ole sagt: „Die Spitze eines Kegels ist eine Ecke.“ Beurteile die Aussage.
+  - ☐ Stimmt. Alles Spitze ist eine Ecke.
+  - ☑ Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.
+  - ☐ Stimmt. Der Kegel hat eine Ecke und zwei Kanten.
+- `03` AFB II · _Kommunizieren_ · Kreuze den Körper mit genau zwei Flächen an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+  - ☐ D
+- `04` AFB I · _Kommunizieren_ · Kreuze alle Körper an, die rollen können.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+  - ☑ E
+- `05` AFB II · _Kommunizieren_ · Eine Kerze hat die Form eines Zylinders. Gib an, wie viele Kanten sie hat. Lösung: **2**. Typische Fehler: 1 (runde-koerper-zaehlen), 3 (ecken-kanten-verwechselt).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina sagt: „Ein Zylinder hat eine Spitze.“ Beurteile die Aussage.
+  - ☐ Stimmt. Jeder runde Körper hat eine Spitze.
+  - ☑ Stimmt nicht. Oben und unten ist je eine Kreisfläche.
+  - ☐ Stimmt. Die Spitze ist in der Mitte des Deckels.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Spitze ist ein Punkt, an dem der Körper zusammenläuft.
+
+- `01` AFB I · _Kommunizieren_ · Kreuze alle Körper an, die eine Spitze haben.
+  - ☐ Prisma
+  - ☑ Kegel
+  - ☑ Pyramide
+  - ☐ Zylinder
+  - ☐ Kugel
+  - ☐ Quader
+- `02` AFB II · _Kommunizieren_ · Kreuze alle Körper an, die nur ebene Flächen haben.
+  - ☑ Pyramide
+  - ☑ Quader
+  - ☐ Zylinder
+  - ☐ Kugel
+  - ☑ Prisma
+  - ☐ Kegel
+- `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „Zylinder und Kegel haben gleich viele Kanten.“ Beurteile die Aussage.
+  - ☑ Stimmt nicht. Der Zylinder hat 2 Kanten, der Kegel nur 1.
+  - ☐ Stimmt. Beide haben 2 Kanten.
+  - ☐ Stimmt. Runde Körper haben keine Kanten.
+- `04` AFB III · _Kommunizieren_ · Ein Turm besteht aus einem Zylinder. Oben sitzt ein Kegel als Dach genau auf dem Deckel. Gib an, wie viele Flächen man am Turm von außen sieht, den Boden mitgezählt. Lösung: **3**. Typische Fehler: 5 (runde-koerper-zaehlen), 4 (runde-koerper-zaehlen), 2 (runde-koerper-zaehlen).
+- `05` AFB II · _Kommunizieren_ · Ein Körper sieht von vorne aus wie ein Rechteck. Von oben sieht er aus wie ein Kreis. Kreuze den Körper an.
+  - ☑ Zylinder
+  - ☐ Kugel
+  - ☐ Kegel
+- `06` AFB III · _Kommunizieren_ · Kreuze alle Gegenstände in Form eines Zylinders an.
+  - ☐ Brotdose
+  - ☐ Eistüte
+  - ☑ Rolle Küchenpapier
+  - ☑ Kerze
+  - ☑ Litfaßsäule
+  - ☐ Seifenblase
+
+## 6.3.6-R2: Ich kann Netze von Zylinder und Kegel erkennen und Körper nach ihren Eigenschaften ordnen.
+
+Grundlage, die F übt: Zählen, wie viele Kreise das Netz einer Dose hat
+
+Baut auf: 6.3.6-R1 (Ich kann Zylinder, Kegel und Kugel erkennen, auch an Gegenständen aus dem Alltag.), 6.3.1-Q2 (Ich kann Netze von Würfel und Quader erkennen, ergänzen und prüfen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Kreise sind rund. *Beispiel:* Einer liegt oben, einer unten. *Lösungsschritt:* Zähle sie.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einer Dose. / Zähle die Kreise im Netz. _(Bild: netz)_ Lösung: **2**. Typische Fehler: 1 (netz-nur-gezaehlt), 3 (netz-nur-gezaehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt eine Dose. / Kreuze das Netz an, aus dem du sie falten kannst. _(Bild: koerper)_
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz. / Kreuze den passenden Körper an. _(Bild: netz)_
+  - ☐ Kugel
+  - ☑ Kegel
+  - ☐ Zylinder
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einer Eistüte mit Deckel. / Zähle alle Teile im Netz. _(Bild: netz)_ Lösung: **2**. Typische Fehler: 1 (netz-nur-gezaehlt), 3 (netz-nur-gezaehlt).
+- `05` AFB II · _Argumentieren_ · Du willst aus dem Netz eine Dose falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Nein. / Beide Kreise liegen oben.
+  - ☑ Ja. / Oben und unten liegt ein Kreis.
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Manche Körper können rollen. / Kreuze sie alle an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+  - ☑ D
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Kegel hat eine gekrümmte Fläche und einen Kreis. *Beispiel:* Die gekrümmte Fläche sieht im Netz aus wie ein Stück Kuchen. *Lösungsschritt:* Der Kreis muss so groß sein, dass er unten passt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines Kegels an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `02` AFB I · _Argumentieren_ · Du willst das Netz zu einem Kegel falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Nein. / Der Kreis passt nicht.
+  - ☑ Ja, es lässt sich falten.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zylinder. / Gib an, wie viele Flächen das Netz hat. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 2 (netz-nur-gezaehlt), 1 (netz-nur-gezaehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper ohne gekrümmte Fläche an.
+  - ☐ Kugel
+  - ☑ Würfel
+  - ☑ Pyramide
+  - ☐ Kegel
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper mit gekrümmter Fläche an.
+  - ☑ A
+  - ☐ B
+  - ☑ C
+  - ☐ D
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Aus dem Netz entsteht ein Körper. / Kreuze seinen Namen an. _(Bild: netz)_
+  - ☐ Zylinder
+  - ☐ Kugel
+  - ☑ Kegel
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zum Kreisausschnitt kommt die Grundfläche. *Lösungsschritt:* Die Grundfläche ist ein Kreis.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Netz eines Kegels ist die gekrümmte Fläche ein Kreisausschnitt. Gib an, wie viele Flächen das Netz hat. _(Bild: netz)_ Lösung: **2**. Typische Fehler: 1 (netz-nur-gezaehlt), 3 (netz-nur-gezaehlt).
+- `02` AFB II · _Argumentieren_ · Prüfe, ob sich das Netz zu einem Zylinder falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☑ Nein, das Rechteck ist zu schmal für den Rand der Kreise.
+  - ☐ Ja, es lässt sich falten.
+  - ☐ Nein, beide Kreise liegen an derselben Seite.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines Zylinders an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+  - ☐ D
+- `04` AFB I · _Argumentieren_ · Ali sagt: „Das Netz eines Kegels besteht aus einem Dreieck und einem Kreis.“ Beurteile die Aussage.
+  - ☐ Stimmt. Von vorne sieht der Kegel aus wie ein Dreieck.
+  - ☑ Stimmt nicht. Die gekrümmte Fläche ist im Netz ein Kreisausschnitt.
+  - ☐ Stimmt. Das Dreieck wird zur Spitze gefaltet.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper an, die keine Ecke haben.
+  - ☑ A
+  - ☑ B
+  - ☑ C
+  - ☐ D
+  - ☐ E
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Aus dem Netz entsteht ein Körper. Kreuze seinen Namen an. _(Bild: netz)_
+  - ☑ Kegel
+  - ☐ Zylinder
+  - ☐ Kugel
+  - ☐ Pyramide
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gebogene Rand des Kreisausschnitts muss genau einmal um den Kreis passen.
+
+- `01` AFB I · _Argumentieren_ · Prüfe, ob sich das Netz zu einem Kegel falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☐ Nein, der Kreis ist zu klein für den Rand des Kreisausschnitts.
+  - ☑ Nein, der Kreis ist zu groß für den Rand des Kreisausschnitts.
+  - ☐ Ja, es lässt sich falten.
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein Zylinder falten lässt.
+  - ☐ A
+  - ☑ B
+  - ☑ C
+  - ☐ D
+  - ☐ E
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper an, die genau eine Kante haben.
+  - ☐ Zylinder
+  - ☐ Würfel
+  - ☐ Kugel
+  - ☑ Kegel
+  - ☐ Pyramide
+- `04` AFB III · _Argumentieren_ · Elif sagt: „Im Netz eines Zylinders ist das Rechteck genau so breit, wie der Rand eines Kreises lang ist.“ Beurteile die Aussage.
+  - ☐ Stimmt nicht. Das Rechteck ist so breit wie der Kreis.
+  - ☐ Stimmt nicht. Das Rechteck ist doppelt so breit wie der Rand.
+  - ☑ Stimmt. Das Rechteck wird einmal um den Kreis herumgerollt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gib an, wie viele Flächen ein Zylinder, ein Kegel und eine Kugel zusammen haben. Lösung: **6**. Typische Fehler: 3 (runde-koerper-zaehlen), 5 (runde-koerper-zaehlen), 4 (runde-koerper-zaehlen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen ein Körper mit Spitze entsteht.
+  - ☐ A
+  - ☑ B
+  - ☑ C
+  - ☐ D
+  - ☐ E
+
+## 6.3.8-K1: Ich kann Würfelnetze im Kopf falten und gegenüberliegende Flächen finden.
+
+Grundlage, die F übt: Im Kreuznetz eine Fläche festhalten und die Nachbarn hochklappen
+
+Baut auf: 6.3.1-Q2 (Ich kann Netze von Würfel und Quader erkennen, ergänzen und prüfen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Flächen am Boden klappen hoch. *Beispiel:* Sie werden die Seiten. *Lösungsschritt:* Oben liegt die Fläche, die den Boden nicht berührt.
+
+- `01` AFB I · _Probleme lösen_ · Die gelbe Fläche B ist der Boden. / Du faltest einen Würfel. / Kreuze die obere Fläche an. _(Bild: netz)_
+  - ☐ A
+  - ☐ F
+  - ☑ E
+- `02` AFB I · _Argumentieren (+ Probleme lösen)_ · Du willst aus dem Netz einen Würfel falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
+  - ☑ Ja. / Jede Seite kommt genau einmal vor.
+  - ☐ Nein. / Zwei Quadrate landen an derselben Stelle.
+- `03` AFB I · _Probleme lösen_ · Das Bild zeigt einen Spielwürfel. / Oben und unten ergeben zusammen 7. / Gib die Zahl auf der unteren Fläche an. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 1 (gegenueber-benachbart), 3 (gegenueber-benachbart), 5 (gegenueber-benachbart).
+- `04` AFB I · _Probleme lösen (+ Kommunizieren)_ · Ein Quadrat fehlt noch. / Färbe es. / Dann kannst du einen Würfel falten. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 5 gefärbte Kästchen (4|2) (3|2) (2|2) (1|2) (1|3))_ Lösung: **(4|1)**
+- `05` AFB II · _Probleme lösen_ · Du faltest einen Würfel. / Kreuze alle Nachbarn der gelben Fläche A an. _(Bild: netz)_
+  - ☑ E
+  - ☐ F
+  - ☑ D
+- `06` AFB I · _Probleme lösen_ · Das Bild zeigt einen Spielwürfel. / Vorne und hinten ergeben zusammen 7. / Gib die Zahl auf der hinteren Fläche an. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 6 (gegenueber-benachbart), 5 (gegenueber-benachbart), 4 (gegenueber-benachbart).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gegenüberliegende Flächen berühren sich im Netz nie. *Beispiel:* In einer Reihe aus drei Quadraten liegen die äußeren gegenüber. *Lösungsschritt:* Falte in Gedanken mit B als Boden.
+
+- `01` AFB I · _Probleme lösen_ · Das Würfelnetz wird gefaltet. / Kreuze die Fläche gegenüber von B an. _(Bild: netz)_
+  - ☐ C
+  - ☐ F
+  - ☑ A
+- `02` AFB I · _Probleme lösen_ · Das Würfelnetz gehört zu einem Spielwürfel. / Gegenüber ergibt immer zusammen 7. / Gib die Zahl für die Fläche A an. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 1 (gegenueber-benachbart), 4 (gegenueber-benachbart).
+- `03` AFB II · _Probleme lösen (+ Modellieren)_ · Nur ein Netz ist ein richtiger Spielwürfel. / Gegenüber ergibt dort immer 7. / Kreuze es an.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+- `04` AFB I · _Probleme lösen (+ Modellieren)_ · Das Bild zeigt einen Spielwürfel. / Gib an, wie viele Augen auf der Fläche unten sind. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 6 (gegenueber-benachbart), 5 (gegenueber-benachbart), 4 (gegenueber-benachbart).
+- `05` AFB II · _Probleme lösen_ · Kreuze das Würfelnetz an.
+  - ☐ A
+  - ☐ B
+  - ☑ C
+- `06` AFB III · _Probleme lösen_ · Das Würfelnetz wird gefaltet. / D ist der Boden. / Kreuze eine Nachbarfläche von D an. _(Bild: netz)_
+  - ☑ C
+  - ☐ E
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei Treppen-Netzen hilft es, Quadrat für Quadrat abzurollen. *Lösungsschritt:* Notiere für jedes Quadrat: Boden, vorne, hinten, links, rechts oder oben.
+
+- `01` AFB I · _Probleme lösen_ · Das Würfelnetz wird gefaltet. Kreuze die Fläche an, die D gegenüberliegt. _(Bild: netz)_
+  - ☐ C
+  - ☑ B
+  - ☐ A
+  - ☐ E
+- `02` AFB II · _Probleme lösen_ · Das Bild zeigt einen Spielwürfel. Gib an, wie viele Augen auf den drei Flächen zusammen sind, die man nicht sieht. _(Bild: koerper)_ Lösung: **14**. Typische Fehler: 7 (verdeckt-nicht-gezaehlt), 21 (verdeckt-nicht-gezaehlt).
+- `03` AFB II · _Probleme lösen (+ Modellieren)_ · Kreuze alle Netze an, die zu einem richtigen Spielwürfel gehören. Gegenüber muss immer zusammen 7 ergeben.
+  - ☑ A
+  - ☐ B
+  - ☐ C
+  - ☑ D
+  - ☐ E
+- `04` AFB I · _Probleme lösen_ · Das Würfelnetz gehört zu einem Spielwürfel. Gegenüber ergibt immer zusammen 7. Gib die Zahl an, die auf die Fläche A gehört. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 4 (gegenueber-benachbart), 6 (gegenueber-benachbart), 2 (gegenueber-benachbart).
+- `05` AFB II · _Probleme lösen_ · Das Würfelnetz wird gefaltet. Kreuze alle Flächen an, die an E stoßen. _(Bild: netz)_
+  - ☑ C
+  - ☑ B
+  - ☐ F
+  - ☑ A
+  - ☑ D
+- `06` AFB III · _Probleme lösen (+ Kommunizieren)_ · Im Würfelnetz fehlen zwei Quadrate. Färbe zwei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 4 gefärbte Kästchen (3|3) (2|3) (2|2) (1|2))_ Lösung: **(3|4) (1|1)**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde für A und für B die gegenüberliegende Fläche.
+
+- `01` AFB I · _Probleme lösen_ · Das Würfelnetz gehört zu einem Spielwürfel. Gib an, welche Zahl du erhältst, wenn du die Zahlen auf A und B addierst. _(Bild: netz)_ Lösung: **8**. Typische Fehler: 6 (gegenueber-benachbart), 7 (gegenueber-benachbart).
+- `02` AFB II · _Argumentieren (+ Probleme lösen)_ · Noah sagt: „Bei einem Spielwürfel ist die Summe der Augen oben und unten immer gleich.“ Beurteile die Aussage.
+  - ☑ Stimmt. Oben und unten ergeben immer zusammen 7.
+  - ☐ Stimmt nicht. Sie hängt davon ab, wie der Würfel liegt.
+  - ☐ Stimmt nicht. An einer Ecke stoßen immer gerade und ungerade Zahlen zusammen.
+- `03` AFB II · _Probleme lösen_ · Das Würfelnetz wird gefaltet. Kreuze alle Paare von Flächen an, die sich dann gegenüberliegen. _(Bild: netz)_
+  - ☐ B und E
+  - ☑ A und B
+  - ☑ C und D
+  - ☐ A und F
+  - ☑ E und F
+- `04` AFB III · _Probleme lösen (+ Modellieren)_ · Es gibt verschiedene Würfelnetze. Netze, die durch Drehen oder Umklappen gleich werden, zählen nur einmal. Gib an, wie viele verschiedene Würfelnetze es gibt. Lösung: **11**. Typische Fehler: 6 (netz-nur-gezaehlt), 8 (netz-nur-gezaehlt), 12 (netz-nur-gezaehlt).
+- `05` AFB II · _Probleme lösen (+ Kommunizieren)_ · Im Würfelnetz fehlen drei Quadrate. Färbe drei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 3 gefärbte Kästchen (1|2) (2|2) (2|3))_ Lösung: **(1|1) (2|4) (3|3)**
+- `06` AFB III · _Probleme lösen (+ Modellieren)_ · Kreuze alle Netze an, die zu einem richtigen Spielwürfel gehören.
+  - ☑ A
+  - ☐ B
+  - ☑ C
+  - ☐ D
+  - ☐ E
+
+## 6.3.8-K2: Ich kann mir Würfelbauten vorstellen: Würfel zählen, Ansichten finden und kippen.
+
+Grundlage, die F übt: Würfel eines kleinen Würfelbaus Schicht für Schicht zählen
+
+Baut auf: 6.3.3-A1 (Ich kann Ansichten von vorne, von oben und von der Seite einem Körper zuordnen.), 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und Flächen zählen und ihre Lage angeben.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel. *Beispiel:* Zähle Turm für Turm von unten nach oben. *Lösungsschritt:* Addiere die Höhen aller Türme.
+
+- `01` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: koerper)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt), 4 (wuerfel-verdeckt).
+- `02` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: koerper)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt), 5 (wuerfel-verdeckt).
+- `03` AFB I · _Probleme lösen_ · Jede Zahl ist die Höhe eines Turms. / Zähle alle Würfel. _(Bild: risse)_ Lösung: **5**. Typische Fehler: 4 (wuerfel-verdeckt).
+- `04` AFB I · _Probleme lösen_ · Der Würfelbau soll ein Quader werden. / Der Quader ist 3 Würfel lang und 2 Würfel hoch. / Gib an, wie viele Würfel noch fehlen. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 6 (wuerfel-verdeckt), 5 (wuerfel-verdeckt), 2 (wuerfel-verdeckt).
+- `05` AFB II · _Probleme lösen_ · Du schaust von vorne auf den Würfelbau. / Zähle die sichtbaren Quadrate. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 3 (riss-verwechselt), 6 (wuerfel-verdeckt).
+- `06` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: koerper)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel. *Beispiel:* Zähle Turm für Turm von unten nach oben. *Lösungsschritt:* Addiere die Höhen aller Türme.
+
+- `01` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Manche Würfel sind verdeckt. / Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 6 (wuerfel-verdeckt), 7 (wuerfel-verdeckt).
+- `02` AFB I · _Probleme lösen_ · Im Grundriss steht die Höhe jedes Turms. / Gib an, wie viele Würfel der Bau hat. _(Bild: risse)_ Lösung: **10**. Typische Fehler: 5 (wuerfel-verdeckt), 9 (wuerfel-verdeckt).
+- `03` AFB II · _Probleme lösen_ · Der Würfelbau soll ein Quader werden. / Er soll 3 Würfel lang, 2 tief und 2 hoch sein. / Gib an, wie viele Würfel noch fehlen. _(Bild: risse)_ Lösung: **6**. Typische Fehler: 12 (wuerfel-verdeckt), 5 (wuerfel-verdeckt).
+- `04` AFB I · _Probleme lösen_ · Du schaust von links auf den Würfelbau. / Gib an, wie viele Quadrate du siehst. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 3 (riss-verwechselt), 5 (wuerfel-verdeckt).
+- `05` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 11 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
+- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Mia sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“ / Beurteile die Aussage.
+  - ☑ Stimmt nicht. / Die 8 Würfel können auch in einer Reihe liegen.
+  - ☐ Stimmt. / 8 Würfel ergeben 2 · 2 · 2.
+  - ☐ Stimmt. / Jeder Würfelbau ist ein Würfel.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Kippen nach rechts kommt die linke Fläche nach oben. *Lösungsschritt:* Links liegt 7 minus die Zahl rechts.
+
+- `01` AFB I · _Probleme lösen_ · Du kippst den Spielwürfel einmal nach vorne. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 4 (kippen-richtung), 6 (kippen-richtung), 5 (kippen-richtung), 2 (kippen-richtung).
+- `02` AFB II · _Probleme lösen_ · Du kippst den Spielwürfel zweimal: nach links, dann nach vorne. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 2 (kippen-richtung), 6 (kippen-richtung), 4 (kippen-richtung), 3 (kippen-richtung).
+- `03` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 6 (wuerfel-verdeckt), 9 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
+- `04` AFB I · _Probleme lösen_ · Der Würfelbau soll ein großer Würfel aus 3 · 3 · 3 Würfeln werden. Gib an, wie viele Würfel noch fehlen. _(Bild: risse)_ Lösung: **12**. Typische Fehler: 27 (wuerfel-verdeckt), 15 (wuerfel-verdeckt), 3 (wuerfel-verdeckt).
+- `05` AFB II · _Probleme lösen_ · Du kippst den Spielwürfel zweimal: nach hinten, dann nach vorne. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 4 (kippen-richtung), 6 (kippen-richtung), 1 (kippen-richtung).
+- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Ben sagt: „Kippst du einen Spielwürfel viermal nach vorne, liegt wieder dieselbe Zahl oben.“ Beurteile die Aussage. _(Bild: koerper)_
+  - ☐ Stimmt nicht. Nach vier Schritten liegt die Zahl unten oben.
+  - ☑ Stimmt. Nach vier Kippschritten hat sich der Würfel einmal ganz gedreht.
+  - ☐ Stimmt nicht. Es dauert sechs Schritte, bis wieder alles gleich ist.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere nach jedem Schritt die Zahlen oben, vorne und rechts.
+
+- `01` AFB I · _Probleme lösen_ · Du kippst den Spielwürfel dreimal: nach vorne, dann nach hinten, dann nach links. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 5 (kippen-richtung), 1 (kippen-richtung).
+- `02` AFB II · _Probleme lösen (+ Modellieren)_ · Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er mindestens hat. _(Bild: risse)_ Lösung: **5**. Typische Fehler: 4 (wuerfel-verdeckt), 6 (wuerfel-verdeckt).
+- `03` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **16**. Typische Fehler: 12 (wuerfel-verdeckt), 15 (wuerfel-verdeckt), 14 (wuerfel-verdeckt).
+- `04` AFB III · _Probleme lösen_ · Du kippst den Spielwürfel dreimal: nach links, dann nach vorne, dann nach links. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **4**. Typische Fehler: 3 (kippen-richtung), 6 (kippen-richtung), 1 (kippen-richtung).
+- `05` AFB II · _Probleme lösen_ · Der Würfelbau soll ein großer Würfel aus 27 kleinen Würfeln werden. Gib an, wie viele Würfel noch fehlen. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 18 (wuerfel-verdeckt), 17 (wuerfel-verdeckt), 11 (wuerfel-verdeckt).
+- `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Sara sagt: „Ob ich zuerst nach rechts und dann nach vorne kippe oder umgekehrt, ist egal. Oben liegt am Ende dieselbe Zahl.“ Beurteile die Aussage für diesen Spielwürfel. _(Bild: koerper)_
+  - ☑ Stimmt nicht. Einmal liegt 2 oben, das andere Mal 6.
+  - ☐ Stimmt. Beim Kippen kommt es nicht auf die Reihenfolge an.
+  - ☐ Stimmt. In beiden Fällen liegt 2 oben.
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -2132,16 +3362,27 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `umkreis-inkreis-verwechselt` | Verwechselt Umkreis (Schnittpunkt der Mittelsenkrechten, durch die Ecken) und Inkreis (Schnittpunkt der Winkelhalbierenden, berührt die Seiten). | Der Umkreis geht durch alle Ecken. Der Inkreis berührt alle Seiten von innen. | Du hältst Umkreis und Inkreis jetzt auseinander. |
 | `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie? | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
 | `konstruktion-reihenfolge` | Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt. | Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst? | Du ordnest die Schritte einer Konstruktion jetzt richtig. |
+| `ecken-kanten-verwechselt` | Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken). | Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil. | Du hältst Ecken, Kanten und Flächen jetzt auseinander. |
+| `verdeckt-nicht-gezaehlt` | Zählt nur die Ecken, Kanten oder Flächen, die im Bild sichtbar sind. | Denk an die Rückseite: Was ist hinten verdeckt? Die gestrichelten Linien helfen dir. | Du zählst jetzt auch, was hinten verdeckt ist. |
+| `verdeckte-kante-durchgezogen` | Zeichnet verdeckte Kanten im Schrägbild durchgezogen oder lässt sie weg. | Kanten, die man von vorne nicht sieht, werden gestrichelt gezeichnet. Sie gehören trotzdem zum Bild. | Du zeichnest verdeckte Kanten jetzt gestrichelt. |
+| `tiefe-nicht-verkuerzt` | Zeichnet die Kanten nach hinten im Schrägbild nicht verkürzt oder nicht im Winkel von 45°. | 1 cm nach hinten ist eine Kästchendiagonale: ein Kästchen nach rechts und eins nach oben. | Du zeichnest Kanten nach hinten jetzt schräg und verkürzt. |
+| `netz-nur-gezaehlt` | Prüft beim Netz nur, ob die Zahl der Flächen stimmt, nicht, wie sie liegen. | Falte das Netz in Gedanken. Liegen zwei Flächen aufeinander, fehlt eine andere. | Du prüfst jetzt beim Netz auch die Lage der Flächen. |
+| `riss-verwechselt` | Verwechselt die Ansichten: Grundriss (von oben), Aufriss (von vorne) und Seitenriss (von links). | Stell dir vor, du schaust genau von oben, von vorne oder von links auf den Körper. | Du hältst die Ansichten von vorne, oben und der Seite jetzt auseinander. |
+| `riss-gespiegelt` | Zeichnet eine Ansicht spiegelverkehrt oder von der falschen Seite (zum Beispiel von hinten statt von vorne). | Was links vorne steht, steht in der Ansicht von vorne auch links. | Du zeichnest die Ansicht jetzt nicht mehr spiegelverkehrt. |
+| `wuerfel-verdeckt` | Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter. | Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter. | Du zählst jetzt auch verdeckte Würfel mit. |
+| `netz-ecken-gezaehlt` | Zählt Ecken oder Kanten im Netz statt am gefalteten Körper. | Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers. | Du zählst Ecken jetzt am fertigen Körper und nicht im Netz. |
+| `prisma-pyramide` | Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze). | Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma. | Du hältst Prisma und Pyramide jetzt auseinander. |
+| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma. | Du benennst den Körper jetzt nach seiner Grundfläche. |
+| `gegenueber-benachbart` | Hält im Würfelnetz benachbarte Flächen für gegenüberliegend. | Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt. | Du findest gegenüberliegende Flächen jetzt sicher. |
+| `runde-koerper-zaehlen` | Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante. | Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen. | Du zählst Flächen und Kanten an runden Körpern jetzt richtig. |
+| `koerper-verwechselt` | Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma). | Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt? | Du erkennst die Körper jetzt an ihren Flächen. |
+| `wuerfel-kein-quader` | Meint, ein Würfel sei kein Quader. | Ein Quader hat sechs Rechtecke als Flächen. Ein Quadrat ist ein besonderes Rechteck. Also ist jeder Würfel ein Quader. | Du weißt jetzt: Jeder Würfel ist auch ein Quader. |
+| `kanten-teilweise` | Nimmt bei der Kantenlänge eines Quaders nur die sichtbaren oder nur drei Kanten statt aller zwölf. | Ein Quader hat 12 Kanten, je 4 gleich lange. Rechne jede Länge viermal. | Du nimmst jetzt alle 12 Kanten mit. |
+| `kante-falsch-abgelesen` | Liest die Länge an einer Kante ab, die nicht parallel zur gesuchten Kante ist. | Gleich lange Kanten eines Quaders sind parallel. Suche die beschriftete Kante, die in dieselbe Richtung zeigt. | Du findest jetzt die gleich lange Kante. |
+| `kippen-richtung` | Kippt einen Körper in Gedanken in die falsche Richtung. | Lege einen Gegenstand vor dich und kippe ihn wirklich. Welche Fläche liegt danach unten? | Du kippst den Körper jetzt in die richtige Richtung. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.3.1-L1 Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen. Baut auf: nur Grundschulstoff
-- 6.3.2-L1 Ich kann Schrägbilder von Quadern lesen und im Gitter vervollständigen. Baut auf: nur Grundschulstoff
-- 6.3.3-L1 Ich kann Ansichten von Körpern zuordnen und zeichnen. Baut auf: nur Grundschulstoff
-- 6.3.4-L1 Ich kann Prismen und ihre Netze erkennen und beschreiben. Baut auf: nur Grundschulstoff
-- 6.3.5-L1 Ich kann Pyramiden und ihre Netze erkennen und beschreiben. Baut auf: nur Grundschulstoff
-- 6.3.6-L1 Ich kann Zylinder, Kegel und Kugel erkennen und beschreiben. Baut auf: nur Grundschulstoff
-- 6.3.8-L1 Ich kann mir Körper, Netze und Würfelbauten im Kopf vorstellen. Baut auf: nur Grundschulstoff
 - 6.4.1-L1 Ich kann Dezimalzahlen lesen, schreiben und in die Stellenwerttafel eintragen. Baut auf: nur Grundschulstoff
 - 6.4.2-L1 Ich kann Dezimalzahlen vergleichen, ordnen und am Zahlenstrahl darstellen. Baut auf: nur Grundschulstoff
 - 6.4.3-L1 Ich kann Dezimalzahlen und Größen sinnvoll runden. Baut auf: nur Grundschulstoff

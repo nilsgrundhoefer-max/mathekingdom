@@ -5,10 +5,13 @@ Grundlage: Inhaltsverzeichnis von Schnittpunkt Mathematik 6, Differenzierende Au
 Was aus der Quelle stammt: Reihenfolge und Titel der Kapitel, Nummern und Titel der Lerneinheiten, die Marken MK, M und E.
 Was von mir stammt: alle „Ich kann“-Sätze, angelehnt an den Bildungsplan 2016 (Klassen 5/6), weil es zu dieser Ausgabe kein Raster des Verlags gibt. Die Lehrkraft hat den Plan am 24.11.2026 geprüft und freigegeben. Die feineren Lernziele entstehen wie in Klasse 5 erst in der Fragerunde zum jeweiligen Kapitel.
 
+Seit Kapitel 3 dient zusätzlich die Niveauübersicht der Lehrkraft als Quelle: [quellen/niveaustufen-klasse-6.md](quellen/niveaustufen-klasse-6.md) (Stand 24.11.2026). Sie legt fest, was eine Aufgabe auf G, M und E verlangt, und nennt zu jedem Thema den Standard im Bildungsplan 2016. Dieser Standard steht im Pool bei jedem Lernziel der Kapitel 1 bis 3 im Feld `bp` und in der Spalte „Bildungsplan“ unten (ZVO Zahl, Variable, Operation; RF Raum und Form). Die späteren Kapitel bekommen ihn, wenn sie gebaut werden (ADR 0045).
+
 ## Regeln für die Marken im Buch
 
 - **MK (Medienkompetenz)**: Diese Lerneinheiten (Tabellenkalkulation, Präsentieren, Spiele, Stop-Motion) lassen sich nicht automatisch auswerten. Sie bekommen keinen Meilenstein. Die Nummern der übrigen Lerneinheiten bleiben wie im Buch; deshalb gibt es Lücken in der Zählung.
 - **M**: Meilenstein mit Aufgaben nur auf M und E, je zwölf. Für Schüler mit Zielniveau G ist er ein Abstecher und für den Kapitelabschluss nicht nötig.
+- **Pflicht ab M** (seit Kapitel 3, wie Klasse 7 nach ADR 0044): Aufgaben auf allen vier Stufen. Für ein Zielniveau unter M ist der Meilenstein ein freiwilliger Abstecher auf der eigenen Stufe. Das gilt für 3.2 Schrägbilder und 3.3 Grundriss und Aufriss, die der Bildungsplan erst auf M als Zeichnen verlangt.
 - **E**: Meilenstein mit Aufgaben nur auf E, 24 je Lernziel. Für alle anderen ein Abstecher; Schüler mit Zielniveau M dürfen ihn freiwillig versuchen.
 - Kapitel 10 trägt als Ganzes die Marke E: Aufgaben nur auf E. Das Tor öffnet die Lehrkraft für einzelne Schüler. Es wird zuletzt gebaut.
 - Alle übrigen Lernziele haben wie in Klasse 5 je sechs Aufgaben auf F, G, M und E.
@@ -17,42 +20,42 @@ Was von mir stammt: alle „Ich kann“-Sätze, angelehnt an den Bildungsplan 20
 
 ## Kapitel 1: Brüche
 
-| Nr. | Unterkapitel | Marke | Lernziel |
-|---|---|---|---|
-| 1.1 | Brüche | | Ich kann Bruchteile erkennen, darstellen und als Bruch oder gemischte Zahl schreiben. |
-| 1.2 | Brüche erweitern | | Ich kann Brüche erweitern und gleichwertige Brüche erkennen. |
-| 1.3 | Brüche kürzen | | Ich kann Brüche kürzen, auch vollständig. |
-| 1.4 | Brüche vergleichen und ordnen | | Ich kann Brüche vergleichen und der Größe nach ordnen. |
-| 1.5 | Brüche und Größen | | Ich kann Bruchteile von Größen berechnen und auf das Ganze schließen. |
-| 1.6 | Brüche am Zahlenstrahl | | Ich kann Brüche am Zahlenstrahl ablesen und eintragen. |
-| 1.7 | Lernen durch Spielen | MK | entfällt |
+| Nr. | Unterkapitel | Marke | Lernziel | Bildungsplan |
+|---|---|---|---|---|
+| 1.1 | Brüche | | Ich kann Bruchteile erkennen, darstellen und als Bruch oder gemischte Zahl schreiben. | ZVO (5), (6) |
+| 1.2 | Brüche erweitern | | Ich kann Brüche erweitern und gleichwertige Brüche erkennen. | ZVO (16) |
+| 1.3 | Brüche kürzen | | Ich kann Brüche kürzen, auch vollständig. | ZVO (16), Teilbarkeit ZVO (3) |
+| 1.4 | Brüche vergleichen und ordnen | | Ich kann Brüche vergleichen und der Größe nach ordnen. | ZVO (7); ZVO (7), (16) |
+| 1.5 | Brüche und Größen | | Ich kann Bruchteile von Größen berechnen und auf das Ganze schließen. | ZVO (5), Bruch als Operator ab M; ZVO (5), Aspekt Verhältnis nur E |
+| 1.6 | Brüche am Zahlenstrahl | | Ich kann Brüche am Zahlenstrahl ablesen und eintragen. | ZVO (7); ZVO (7), Brüche zwischen Brüchen ZVO (9) ab M |
+| 1.7 | Lernen durch Spielen | MK | entfällt |  |
 
 ## Kapitel 2: Rechnen mit Brüchen
 
-| Nr. | Unterkapitel | Marke | Lernziel |
-|---|---|---|---|
-| 2.1 | Gleichnamige Brüche addieren und subtrahieren | | Ich kann gleichnamige Brüche addieren und subtrahieren. |
-| 2.2 | Ungleichnamige Brüche addieren und subtrahieren | | Ich kann ungleichnamige Brüche gleichnamig machen und dann addieren und subtrahieren. |
-| 2.3 | Brüche vervielfachen | | Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren. |
-| 2.4 | Brüche teilen | | Ich kann einen Bruch durch eine natürliche Zahl dividieren. |
-| 2.5 | Brüche multiplizieren | | Ich kann Brüche miteinander multiplizieren. |
-| 2.6 | Brüche dividieren | M | Ich kann durch einen Bruch dividieren. |
-| 2.7 | Punkt vor Strich und Klammern | | Ich kann beim Rechnen mit Brüchen die Regeln „Klammern zuerst“ und „Punkt vor Strich“ anwenden. |
-| 2.8 | Gemeinsame Nenner mit der Tabellenkalkulation | MK | entfällt |
-| 2.9 | Bruchrechnen erklären | MK | entfällt |
+| Nr. | Unterkapitel | Marke | Lernziel | Bildungsplan |
+|---|---|---|---|---|
+| 2.1 | Gleichnamige Brüche addieren und subtrahieren | | Ich kann gleichnamige Brüche addieren und subtrahieren. | ZVO (18) |
+| 2.2 | Ungleichnamige Brüche addieren und subtrahieren | | Ich kann ungleichnamige Brüche gleichnamig machen und dann addieren und subtrahieren. | ZVO (18) |
+| 2.3 | Brüche vervielfachen | | Ich kann einen Bruch mit einer natürlichen Zahl multiplizieren. | ZVO (17) |
+| 2.4 | Brüche teilen | | Ich kann einen Bruch durch eine natürliche Zahl dividieren. | ZVO (17) |
+| 2.5 | Brüche multiplizieren | | Ich kann Brüche miteinander multiplizieren. | ZVO (18) |
+| 2.6 | Brüche dividieren | M | Ich kann durch einen Bruch dividieren. | ZVO (18), Division durch einen Bruch ab M |
+| 2.7 | Punkt vor Strich und Klammern | | Ich kann beim Rechnen mit Brüchen die Regeln „Klammern zuerst“ und „Punkt vor Strich“ anwenden. | ZVO (18), (26) |
+| 2.8 | Gemeinsame Nenner mit der Tabellenkalkulation | MK | entfällt |  |
+| 2.9 | Bruchrechnen erklären | MK | entfällt |  |
 
 ## Kapitel 3: Körper
 
-| Nr. | Unterkapitel | Marke | Lernziel |
-|---|---|---|---|
-| 3.1 | Quader und ihre Netze | | Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen. |
-| 3.2 | Schrägbilder von Quadern | | Ich kann Schrägbilder von Quadern lesen und im Gitter vervollständigen. |
-| 3.3 | Grundriss und Aufriss | | Ich kann Ansichten von Körpern zuordnen und zeichnen. |
-| 3.4 | Prisma | | Ich kann Prismen und ihre Netze erkennen und beschreiben. |
-| 3.5 | Pyramide | | Ich kann Pyramiden und ihre Netze erkennen und beschreiben. |
-| 3.6 | Zylinder, Kegel und Kugel | | Ich kann Zylinder, Kegel und Kugel erkennen und beschreiben. |
-| 3.7 | Präsentieren mit einem Präsentationsprogramm | MK | entfällt |
-| 3.8 | Kopfgeometrie im Raum | | Ich kann mir Körper, Netze und Würfelbauten im Kopf vorstellen. |
+| Nr. | Unterkapitel | Marke | Lernziel | Bildungsplan |
+|---|---|---|---|---|
+| 3.1 | Quader und ihre Netze | | Ich kann Quader und Würfel beschreiben und ihre Netze erkennen und ergänzen. | RF (7); RF (14), (15) |
+| 3.2 | Schrägbilder von Quadern | Pflicht ab M | Ich kann Schrägbilder von Quadern lesen und im Gitter vervollständigen. | RF (14); RF (14), Zeichnen ab M |
+| 3.3 | Grundriss und Aufriss | Pflicht ab M | Ich kann Ansichten von Körpern zuordnen und zeichnen. | RF (14); RF (14), Zeichnen ab M |
+| 3.4 | Prisma | | Ich kann Prismen und ihre Netze erkennen und beschreiben. | RF (7); RF (14), (15) |
+| 3.5 | Pyramide | | Ich kann Pyramiden und ihre Netze erkennen und beschreiben. | RF (7); RF (14), (15) |
+| 3.6 | Zylinder, Kegel und Kugel | | Ich kann Zylinder, Kegel und Kugel erkennen und beschreiben. | RF (7); RF (7), (14) |
+| 3.7 | Präsentieren mit einem Präsentationsprogramm | MK | entfällt |  |
+| 3.8 | Kopfgeometrie im Raum | | Ich kann mir Körper, Netze und Würfelbauten im Kopf vorstellen. | RF (15); RF (14), (15) |
 
 ## Kapitel 4: Dezimalzahlen
 

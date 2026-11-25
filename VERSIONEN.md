@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.53 vom 25.11.2026
+
+### Schüler
+
+- Klasse 6 hat ihr drittes Kapitel: „Körper“ mit 7 Meilensteinen, zusammen 336 Aufgaben.
+- Neue Bilder: Quader, Prismen, Pyramiden, Zylinder, Kegel und Kugeln im Schrägbild, Würfelbauten, Netze und Ansichten von vorne, oben und links.
+- Bei manchen Aufgaben sind die Antworten Bilder: Du kreuzt die Karte A, B oder C an.
+- Am Karogitter ergänzt du Netze, zeichnest Ansichten und verdeckte Kanten.
+
+### Lehrkraft
+
+- „Pflicht ab Gold“ jetzt auch in Klasse 6: 3.2 Schrägbilder und 3.3 Grundriss und Aufriss (ADR 0045).
+- Über jedem Lernziel der Kapitel 1 bis 3 der Klasse 6 steht der Standard im Bildungsplan 2016.
+- Die Niveauübersicht Klasse 6 liegt als Quelle im Projekt. Kapitel 3 folgt ihrer Staffel.
+
 ## 0.51 vom 25.11.2026
 
 ### Schüler

@@ -18,6 +18,13 @@ import { teilen } from './aufgaben/6-2-4-teilen.mjs';
 import { multiplizieren } from './aufgaben/6-2-5-multiplizieren.mjs';
 import { dividieren } from './aufgaben/6-2-6-dividieren.mjs';
 import { ausdruecke } from './aufgaben/6-2-7-ausdruecke.mjs';
+import { quaderUndNetze } from './aufgaben/6-3-1-quader.mjs';
+import { schraegbilder } from './aufgaben/6-3-2-schraegbild.mjs';
+import { ansichten } from './aufgaben/6-3-3-ansichten.mjs';
+import { prismen } from './aufgaben/6-3-4-prisma.mjs';
+import { pyramiden } from './aufgaben/6-3-5-pyramide.mjs';
+import { rundeKoerper } from './aufgaben/6-3-6-rund.mjs';
+import { kopfgeometrie } from './aufgaben/6-3-8-kopfgeometrie.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -35,6 +42,14 @@ const ERZEUGER = [
   [62562562, multiplizieren],
   [62662662, dividieren],
   [62762762, ausdruecke],
+  // Kapitel 3 (ADR 0045)
+  [63163163, quaderUndNetze],
+  [63263263, schraegbilder],
+  [63363363, ansichten],
+  [63463463, prismen],
+  [63563563, pyramiden],
+  [63663663, rundeKoerper],
+  [63863863, kopfgeometrie],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

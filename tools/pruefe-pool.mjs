@@ -10,6 +10,7 @@ import { gRechne } from './pruefe-groessen.mjs';
 import { bGleichungen, bruchSprachMaengel, pruefeBruchAufgabe, bruchHatBild } from './pruefe-brueche.mjs';
 import { rGleichungen, rationalSprachMaengel, pruefeRationalAufgabe, rationalHatBild } from './pruefe-rational.mjs';
 import { FIGURBILD, DREIECK_SONDER, DREIECK_ERGEBNIS, DREIECK_ARTEN, figurBildMaengel, figurBildZahlen, dreieckSprachMaengel } from './pruefe-dreiecke.mjs';
+import { KOERPERBILDER, KOERPER_SONDER, KOERPER_ERGEBNIS, KOERPER_ARTEN, koerperBildMaengel, koerperBildZahlen, koerperSprachMaengel, setzeUrteil } from './pruefe-koerper.mjs';
 import { WINKELBILDER, WINKEL_SONDER, WINKEL_ERGEBNIS, WINKEL_ARTEN, winkelBildMaengel, winkelBildZahlen, winkelfeldMaengel, kreisMaengel, winkelSprachMaengel } from './pruefe-winkel.mjs';
 
 // Liefert die Liste aller Fehler im Pool. Eine leere Liste heißt: in Ordnung.
@@ -48,6 +49,9 @@ let rationalModus = false;
 const DREIECKKAPITEL = ['7.2'];
 const istDreieckLernziel = (id) => DREIECKKAPITEL.some((k) => id.startsWith(`${k}.`));
 let dreieckModus = false;
+// Klasse 6, Kapitel 3 (ADR 0045): Körper, Netze, Ansichten und Schrägbilder prüft tools/pruefe-koerper.mjs.
+const istKoerperLernziel = (id) => id.startsWith('6.3.');
+let koerperModus = false;
 // Die Prüfung arbeitet auf einer Kopie, damit sie am Pool nichts verändert.
 
 // ---------- Rechnen ----------
@@ -199,6 +203,7 @@ function pruefeSprache(a) {
   if (istBruchLernziel(a.lernziel)) for (const x of bruchSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istRationalLernziel(a.lernziel)) for (const x of rationalSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istDreieckLernziel(a.lernziel)) for (const x of dreieckSprachMaengel(a, mitHilfen)) melde(a.id, x);
+  if (istKoerperLernziel(a.lernziel)) for (const x of koerperSprachMaengel(a)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);
@@ -727,7 +732,7 @@ const GEO_SONDER = {
   linie: (n, a) => {
     if (a.format !== 'gitter' || a.eingabe !== 'linie') return 'braucht Gitterzeichnen mit einer Linie';
     const g = a.gitter, bed = a.bedingung, punkte = (g.punkte ?? []).map((p) => [p.x, p.y]), text = sichtbareTexte(a).join(' ');
-    const imBild = (p) => punkte.some((q) => pGleich(p, q)) || koordIn(text).some((q) => pGleich(p, q)) || (/Mitte|Mittelpunkt|gleich weit/.test(text) && punkte.some((q, i) => punkte.slice(i + 1).some((r) => pGleich(schwerpunkt([q, r]), p))));
+    const imBild = (p) => punkte.some((q) => pGleich(p, q)) || (g.linien ?? []).some((l) => pGleich(p, l.a) || pGleich(p, l.b)) || koordIn(text).some((q) => pGleich(p, q)) || (/Mitte|Mittelpunkt|gleich weit/.test(text) && punkte.some((q, i) => punkte.slice(i + 1).some((r) => pGleich(schwerpunkt([q, r]), p))));
     const linieImBild = ([p, q]) => (g.linien ?? []).some((l) => aufLinie(p, l.a, l.b) && aufLinie(q, l.a, l.b)) || (imBild(p) && imBild(q)) || (g.figuren ?? []).some((f) => f.ecken.some((e, i) => mengeGleich([e, f.ecken[(i + 1) % f.ecken.length]], [p, q])));
     if (!linieErfuellt(bed, ...a.beispiel)) return 'das Beispiel erfüllt die Bedingung nicht';
     if (bed.zu && !linieImBild(bed.zu)) return 'die Bezugslinie steht nicht im Bild';
@@ -1414,6 +1419,9 @@ Object.assign(ERGEBNIS, WINKEL_ERGEBNIS);
 const mittelsenkrechteNamen = SONDER.mittelsenkrechte;
 Object.assign(SONDER, DREIECK_SONDER, { mittelsenkrechte: (n, a) => (Array.isArray(n.a) ? DREIECK_SONDER.mittelsenkrechteAB(n, a) : mittelsenkrechteNamen(n, a)) });
 Object.assign(ERGEBNIS, DREIECK_ERGEBNIS);
+// Klasse 6 Kapitel 3 (ADR 0045).
+Object.assign(SONDER, KOERPER_SONDER);
+Object.assign(ERGEBNIS, KOERPER_ERGEBNIS);
 const zahlenImObjekt = (x) => (typeof x === 'number' ? [x] : typeof x === 'string' ? zahlenIn(x) : x && typeof x === 'object' ? Object.values(x).flatMap(zahlenImObjekt) : []);
 
 // Zahlen, die ein Bild zeigt (ohne die Unbekannten).
@@ -1421,6 +1429,7 @@ function bildZahlen(b) {
   if (!b) return [];
   if (WINKELBILDER.includes(b.art)) return winkelBildZahlen(b);
   if (b.art === FIGURBILD) return figurBildZahlen(b);
+  if (KOERPERBILDER.includes(b.art)) return koerperBildZahlen(b);
   const w = (x) => (istFrage(x) ? [] : [wertVon(x)]);
   switch (b.art) {
     case 'stellenwerttafel': return [...b.plaettchen, b.plaettchen.reduce((s, x, i) => s + x * 10 ** (b.plaettchen.length - 1 - i), 0)];
@@ -1616,7 +1625,7 @@ function pruefeAblesefrage(a) {
 // Auswahlaufgaben: Die richtige Antwort muss an den Nachweis gebunden sein.
 const ARTEN_GEO = ['vierteEcke', 'lagezuZahl', 'schritt', 'rechterWinkel', 'lagepunkt', 'streckenwahl', 'linienart', 'linienzahl', 'verbindungen', 'schnittpunkt', 'punktwahl', 'lage', 'lagewahl', 'lagezu', 'lagezahl', 'koordinaten', 'spiegeln', 'lotfuss', 'strecke', 'abstand', 'abstandLinien', 'messen', 'achsen', 'punktsymmetrie', 'istAchse', 'achsenwahl', 'figurenwahl', 'viereck', ...WINKEL_ARTEN];
 const ARTEN_AUSWAHL = [...ARTEN_GEO, 'zahlwort', 'vergleich', 'ketten', 'rundenwahl', 'rundungsstelle', 'dual', 'roemisch', 'roemischGueltig', 'naechste', 'quotientUeber', 'ueberschlagVon', 'wert', 'gleichungen', 'zwischen', 'extrem', 'zahlenwahl', 'urteil', 'paarsumme', 'gleicheWerte', 'restBleibt',
-  'zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen', ...DREIECK_ARTEN];
+  'zeile', 'datenwahl', 'rangfolge', 'einteilung', 'mangel', 'aussagen', ...DREIECK_ARTEN, ...KOERPER_ARTEN];
 function pruefeAuswahlNachweis(a, ergebnisse) {
   const arten = a.nachweis.filter((n) => typeof n === 'object').map((n) => n.art);
   const gebunden = arten.some((x) => ARTEN_AUSWAHL.includes(x));
@@ -1688,6 +1697,8 @@ function pruefeBegriff(a) {
 // ---------- Bilder ----------
 const ganz = (x, von, bis) => Number.isInteger(x) && x >= von && x <= bis;
 function pruefeBild(a) {
+  // Klasse 6 Kapitel 3: Bildkarten zeigen kleine Körper, Netze und Ansichten. Sie werden geprüft wie ein Bild.
+  for (const o of a.optionen ?? []) if (o.bild) { if (KOERPERBILDER.includes(o.bild.art)) koerperBildMaengel(o.bild).forEach((x) => melde(a.id, `Bildkarte ${o.text}: ${x}`)); else melde(a.id, `Bildkarte ${o.text}: Bildart ${o.bild.art} gibt es nicht als Bildkarte`); }
   const b = a.bild;
   if (!b) return;
   const m = (text) => melde(a.id, `Bild ${b.art}: ${text}`);
@@ -1700,6 +1711,8 @@ function pruefeBild(a) {
   if (b.art === 'flaeche') { flaecheBildMaengel(b, a, gRechne).forEach(m); return; }
   // Klasse 7 Kapitel 2: die maßstabsgetreue Figur. Winkel, Striche und Maße werden nachgemessen.
   if (b.art === FIGURBILD) { figurBildMaengel(b).forEach(m); return; }
+  // Klasse 6 Kapitel 3: Körper, Netze und Ansichten. Was sie zeigen, rechnet der Nachweis nach.
+  if (KOERPERBILDER.includes(b.art)) { koerperBildMaengel(b).forEach(m); return; }
   const kern = []; // Zahlen, die das Bild zeigt und die zur Aufgabe gehören müssen
   const unbekannte = [];
   const w = (x) => { if (istFrage(x)) unbekannte.push(x.wert); else kern.push(x); return wertVon(x); };
@@ -1900,7 +1913,9 @@ const hatBild = (a) => Boolean(a.bild) || ['zahlenstrahl', 'diagramm', 'strichli
   // Kapitel 6: Preisliste, Fahrplan und Einkaufszettel sind das Bild der Aufgabe.
   || (Boolean(a.daten) && (a.lernziel.startsWith('5.6.') || a.lernziel.startsWith('5.8.')))
   || (istBruchLernziel(a.lernziel) && bruchHatBild(a))
-  || (istRationalLernziel(a.lernziel) && rationalHatBild(a));
+  || (istRationalLernziel(a.lernziel) && rationalHatBild(a))
+  // Klasse 6 Kapitel 3: Bildkarten sind das Bild der Aufgabe.
+  || (a.optionen ?? []).some((o) => o.bild);
 
 // ---------- Formate ----------
 function pruefeFormat(a) {
@@ -1978,7 +1993,8 @@ function pruefeFormat(a) {
     // Kapitel 5: Gitterzeichnen. Punkte und Kästchen sind Mengen von Gitterpunkten, eine Linie hat eine Bedingung und ein Beispiel.
     const g = a.gitter, mangel = gitterMangel(g);
     if (mangel) { melde(a.id, `Gitter: ${mangel}`); return; }
-    if (a.bild) melde(a.id, 'Gitterzeichnen zeigt schon ein Gitter und braucht kein weiteres Bild');
+    // Klasse 6 Kapitel 3: Neben dem Gitter darf ein Körper stehen, dessen Ansicht gezeichnet wird.
+    if (a.bild && !(koerperModus && ['koerper', 'risse'].includes(a.bild.art))) melde(a.id, 'Gitterzeichnen zeigt schon ein Gitter und braucht kein weiteres Bild');
     for (const f of a.typischeFehler ?? []) if (!(f.fehlvorstellung in pool.fehlvorstellungen)) melde(a.id, `unbekannte Fehlvorstellung ${f.fehlvorstellung}`);
     if (a.eingabe === 'linie') {
       if (!['gerade', 'strecke'].includes(a.linie)) melde(a.id, 'Gitter: linie muss gerade oder strecke sein');
@@ -2274,6 +2290,8 @@ for (const a of pool.aufgaben.map((x) => ({ ...x }))) {
   bruchModus = istBruchLernziel(a.lernziel);
   rationalModus = istRationalLernziel(a.lernziel);
   dreieckModus = istDreieckLernziel(a.lernziel);
+  koerperModus = istKoerperLernziel(a.lernziel);
+  setzeUrteil(a);
   pruefeHilfen(a);
   pruefeSprache(a);
   if (bruchModus) {

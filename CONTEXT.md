@@ -237,8 +237,24 @@ Ein Meilenstein, den das Lehrwerk mit M oder E markiert und der deshalb nur Aufg
 _Avoid_: Zusatzstoff, Extra, Erweiterung
 
 **Pflicht ab M**:
-Ein Meilenstein, den das Lehrwerk mit Sternchen markiert (in Klasse 7 die Einheiten 2.1 und 2.5). Er hat Aufgaben auf allen vier Niveaustufen, verbindlich ist er aber erst ab Zielniveau M. Wer ein Zielniveau darunter hat, erlebt ihn als freiwilligen Abstecher auf seiner eigenen Stufe; anders als beim Niveau-Meilenstein wird dabei nicht auf M gearbeitet.
+Ein Meilenstein, den das Lehrwerk mit Sternchen markiert (in Klasse 7 die Einheiten 2.1 und 2.5) oder dessen Kern der Bildungsplan erst auf M verlangt (in Klasse 6 die Einheiten 3.2 Schrägbilder und 3.3 Grundriss und Aufriss, weil das Zeichnen erst ab M Pflicht ist). Er hat Aufgaben auf allen vier Niveaustufen, verbindlich ist er aber erst ab Zielniveau M. Wer ein Zielniveau darunter hat, erlebt ihn als freiwilligen Abstecher auf seiner eigenen Stufe; anders als beim Niveau-Meilenstein wird dabei nicht auf M gearbeitet.
 _Avoid_: Sternchen-Meilenstein, Niveau-Meilenstein ab M
+
+**Bildkarte**:
+Eine Antwort einer Auswahlaufgabe, die ein kleines Bild ist (Körper, Netz oder Ansicht) und mit A, B, C … benannt wird. Am Handy stehen zwei Karten in einer Reihe. Auf F zählt eine Aufgabe mit Bildkarten als Aufgabe mit Bild. Eingeführt in Klasse 6 Kapitel 3.
+_Avoid_: Bildauswahl, Bildoption
+
+**Schrägbild**:
+Zeichnung eines Körpers in Kavalierperspektive: Die Vorderfläche hat ihre wahre Größe, die Tiefe wird halb so lang unter 45° gezeichnet, im Karogitter eine Kästchendiagonale je Zentimeter. Verdeckte Kanten sind gestrichelt.
+_Avoid_: 3D-Bild, Raumbild
+
+**Ansicht**:
+Ein Körper, von einer Seite gesehen: von vorne (Aufriss), von oben (Grundriss), von links (Seitenriss). Auf F heißt es nur „Ansicht von vorne“, „von oben“, „von links“; Grundriss und Aufriss ab G, Seitenriss ab M. „Von der Seite“ wird nicht gesagt.
+_Avoid_: Seitenansicht, Riss (allein)
+
+**Würfelbau**:
+Ein Bauwerk aus gleich großen Würfeln. Jeder Turm steht auf dem Boden; bei Zählaufgaben ist jeder Turm höher als alle Türme, die in seiner Spalte vor ihm stehen. So lassen sich die Würfel zählen, ohne zu raten.
+_Avoid_: Würfelgebäude, Würfelturm
 
 **Planfigur**:
 Eine Skizze des gesuchten Dreiecks, in der alle gegebenen Seiten und Winkel markiert sind. In Kapitel 2 steht sie neben jeder Heftaufgabe des Konstruierens und ist maßstabsgetreu gezeichnet.
