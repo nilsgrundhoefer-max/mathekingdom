@@ -17,6 +17,13 @@ import { dividieren } from './aufgaben/7-1-7-dividieren.mjs';
 import { verbindung } from './aufgaben/7-1-8-verbindung.mjs';
 import { temperaturen } from './aufgaben/7-1-x3-temperaturen.mjs';
 import { girokonto } from './aufgaben/7-1-x4-girokonto.mjs';
+import { geradenkreuzung } from './aufgaben/7-2-1-geradenkreuzung.mjs';
+import { winkelsumme } from './aufgaben/7-2-2-winkelsumme.mjs';
+import { dreiecksformen } from './aufgaben/7-2-3-dreiecksformen.mjs';
+import { konstruieren } from './aufgaben/7-2-4-konstruieren.mjs';
+import { satzDesThales, tangenten } from './aufgaben/7-2-5-thales.mjs';
+import { hoehen } from './aufgaben/7-2-6-hoehen.mjs';
+import { ortslinien, umkreis, inkreis } from './aufgaben/7-2-7-ortslinien.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0043)
@@ -32,6 +39,17 @@ const ERZEUGER = [
   [71871871, verbindung],
   [71971873, temperaturen],
   [71971874, girokonto],
+  // Kapitel 2 (ADR 0044)
+  [72172172, geradenkreuzung],
+  [72272272, winkelsumme],
+  [72372372, dreiecksformen],
+  [72472472, konstruieren],
+  [72572572, satzDesThales],
+  [72971972, tangenten],
+  [72672672, hoehen],
+  [72772772, ortslinien],
+  [72972973, umkreis],
+  [72972974, inkreis],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

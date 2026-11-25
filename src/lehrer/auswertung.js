@@ -100,7 +100,7 @@ const zielVon = (zielniveaus, code) => zielniveaus?.[code] ?? L.STANDARD_ZIELNIV
 export function lernzieleMitAufgaben(pool, index) {
   return pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((u) => u.lernziele
     .filter((l) => index.lernzielMitAufgaben.has(l.id))
-    .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, milestone: u.titel, ...(u.ab && { ab: u.ab }) }))));
+    .map((l) => ({ ...l, kapitel: k.id, unterkapitel: u.id, milestone: u.titel, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }) }))));
 }
 
 // Lernzielstand eines Schülers: siegel | aufzufrischen | wackelig | begonnen | offen.

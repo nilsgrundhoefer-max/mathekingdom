@@ -993,7 +993,8 @@ function meilensteineSperren() {
       kapitel.length > 1 && h('label', {}, 'Kapitel ', h('select', { id: 'pfad-kapitel', onchange: (ev) => { z.pfadKapitel = ev.target.value; male(); } }, kapitel.map((k) => h('option', { value: k.id, selected: k.id === kap.id }, k.titel))))),
     h('p', { class: 'klein' }, 'Einen gesperrten Meilenstein sieht der Schüler auf seiner Regionskarte mit Schloss und kann dort keine Aufgaben starten. „Gemeistert“ setzt das Dashboard selbst, sobald alle Lernziele des Meilensteins erreicht sind.'),
     h('div', { class: 'rollbar' }, h('table', { class: 'tabelle pfad' },
-      h('thead', {}, h('tr', {}, h('th', {}, 'Name'), h('th', {}, 'Ziel'), meilensteine.map((st) => h('th', {}, st.titel, st.ab && [' ', h('span', { class: 'niveaumarke', title: `Niveau-Meilenstein: Aufgaben nur ab ${L.KRONEN[st.ab]}. Für ein Zielniveau darunter ist er ein Abstecher.` }, `ab ${st.ab}`)], h('br'), massenwahl(st))))),
+      h('thead', {}, h('tr', {}, h('th', {}, 'Name'), h('th', {}, 'Ziel'), meilensteine.map((st) => h('th', {}, st.titel, st.ab && [' ', h('span', { class: 'niveaumarke', title: `Niveau-Meilenstein: Aufgaben nur ab ${L.KRONEN[st.ab]}. Für ein Zielniveau darunter ist er ein Abstecher.` }, `ab ${st.ab}`)],
+        !st.ab && st.pflicht && [' ', h('span', { class: 'niveaumarke', title: `Pflicht ab ${L.KRONEN[st.pflicht]}: Aufgaben auf allen Stufen. Für ein Zielniveau darunter ist er ein freiwilliger Abstecher.` }, `Pflicht ab ${st.pflicht}`)], h('br'), massenwahl(st))))),
       h('tbody', {}, codes.map((code) => {
         const stand = z.staende.find((x) => x.code === code)?.stand;
         return h('tr', {}, h('td', {}, name(code)), h('td', {}, chip(ziel(code))), meilensteine.map((st) => {
@@ -1002,7 +1003,7 @@ function meilensteineSperren() {
           const erreicht = stand && status !== 'gemeistert' ? L.krone(z.index, stand, st) : null;
           const seitenweg = L.istNiveauAbstecher(st, ziel(code));
           return h('td', {}, h('button', { class: `sperre ${gesperrt ? 'zu' : status}`, 'data-sperre': `${st.id}|${code}`, 'aria-pressed': String(gesperrt), onclick: () => setze(st.id, [code], !gesperrt) },
-            gesperrt ? '🔒 gesperrt' : seitenweg ? (status === 'gemeistert' ? `✓ Abstecher, Krone ${L.krone(z.index, stand, st) ?? st.ab}` : status === 'begonnen' ? 'Abstecher, begonnen' : 'Abstecher')
+            gesperrt ? '🔒 gesperrt' : seitenweg ? (status === 'gemeistert' ? `✓ Abstecher, Krone ${L.krone(z.index, stand, st) ?? st.ab ?? ziel(code)}` : status === 'begonnen' ? 'Abstecher, begonnen' : 'Abstecher')
               : status === 'gemeistert' ? '✓ gemeistert' : erreicht ? `${erreicht} erreicht, Ziel ${ziel(code)}` : status === 'begonnen' ? 'offen, begonnen' : 'offen'));
         }));
       })))));
@@ -1251,7 +1252,7 @@ function selbsteinschaetzungKlasse(staende) {
 
 function heatmap(matrix, lernziele, klickbar) {
   const gruppen = [];
-  for (const l of lernziele) { const g = gruppen.at(-1); if (g?.id === l.unterkapitel) g.anzahl++; else gruppen.push({ id: l.unterkapitel, titel: l.ab ? `${l.milestone} (ab ${L.KRONEN[l.ab]})` : l.milestone, anzahl: 1 }); }
+  for (const l of lernziele) { const g = gruppen.at(-1); if (g?.id === l.unterkapitel) g.anzahl++; else gruppen.push({ id: l.unterkapitel, titel: l.ab ? `${l.milestone} (ab ${L.KRONEN[l.ab]})` : l.pflicht ? `${l.milestone} (Pflicht ab ${L.KRONEN[l.pflicht]})` : l.milestone, anzahl: 1 }); }
   const zeilen = [...matrix].sort((a, b) => name(a.code).localeCompare(name(b.code), 'de'));
   const kopf = (l) => (klickbar ? h('button', { class: 'spalte', 'data-lernziel': l.id, title: l.text, onclick: () => gehe({ art: 'lernziel', id: l.id }) }, l.id.split('-').pop()) : l.id.split('-').pop());
   return h('div', { class: 'rollbar' }, h('table', { class: 'heatmap' },
@@ -1819,7 +1820,7 @@ function meilensteinFreigabeKarte() {
       onchange: (ev) => setze(ev.target.checked ? null : [meilensteine.find((u) => !u.extra)?.id].filter(Boolean)) }), ' Alle Meilensteine offen'),
     beschraenkt && h('ul', { class: 'liste' }, meilensteine.map((u) => h('li', {}, h('label', { class: 'schalter' },
       h('input', { type: 'checkbox', 'data-freigabe': u.id, checked: frei.includes(u.id), onchange: (ev) => haken(u.id, ev.target.checked) }),
-      ` ${u.extra ? 'Abstecher: ' : ''}${u.titel}${u.ab ? ` (ab ${L.KRONEN[u.ab]}, darunter ein Abstecher)` : ''}`),
+      ` ${u.extra ? 'Abstecher: ' : ''}${u.titel}${u.ab ? ` (ab ${L.KRONEN[u.ab]}, darunter ein Abstecher)` : u.pflicht ? ` (Pflicht ab ${L.KRONEN[u.pflicht]}, darunter ein Abstecher)` : ''}`),
       codes.length > 0 && h('small', { class: 'zaehler' }, ` ${offenFuer(u)} von ${codes.length} offen`)))));
 }
 

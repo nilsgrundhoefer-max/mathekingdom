@@ -101,7 +101,7 @@ const namenIn = (t) => DREIECKSNAMEN.filter((n) => new RegExp(n, 'i').test(t));
 
 // ---------- Dreieck aus Seiten und Winkeln (Heftaufgaben) ----------
 // gegeben in mm und Grad, Ecken A, B, C mit den Seiten a, b, c gegenüber und den Winkeln alpha, beta, gamma.
-function dreieckRechnen(g) {
+export function dreieckRechnen(g) {
   let { a, b, c, alpha, beta, gamma } = g;
   const cosSatz = (x, y, w) => Math.sqrt(x * x + y * y - 2 * x * y * Math.cos(rad(w)));
   const winkelAus = (x, y, z) => (Math.acos((y * y + z * z - x * x) / (2 * y * z)) * 180) / Math.PI;
@@ -215,7 +215,8 @@ export const WINKEL_SONDER = {
     if (n.mm != null && n.mm !== n.r * 5) return `${n.mm} mm sind nicht ${n.r} Kästchen`;
     const g = a.gitter;
     if (bed.m[0] - bed.r < 0 || bed.m[1] - bed.r < 0 || bed.m[0] + bed.r > g.b || bed.m[1] + bed.r > g.h) return 'der Kreis ragt aus dem Gitter';
-    if (!(g.punkte ?? []).some((q) => q.x === bed.m[0] && q.y === bed.m[1]) && !/\(\d+\|\d+\)/.test(a.text)) return 'der Mittelpunkt steht nicht im Bild';
+    // Klasse 7 Kapitel 2: Den Mittelpunkt (Umkreis, Inkreis) findet das Kind selbst; eine Ortsaufgabe im Nachweis bestimmt ihn.
+    if (!(g.punkte ?? []).some((q) => q.x === bed.m[0] && q.y === bed.m[1]) && !/\(\d+\|\d+\)/.test(a.text) && !(a.nachweis ?? []).some((x) => x?.art === 'ort') && !/Thaleskreis|Mitte|γ = 90°/.test(a.text)) return 'der Mittelpunkt steht nicht im Bild';
     for (const f of a.typischeFehler ?? []) if ((f.bedingung.m ?? bed.m)[0] === bed.m[0] && (f.bedingung.m ?? bed.m)[1] === bed.m[1] && f.bedingung.r === bed.r) return 'typischer Fehler ist gleich der Lösung';
     return null;
   },
