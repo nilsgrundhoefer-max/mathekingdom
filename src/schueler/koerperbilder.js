@@ -271,7 +271,7 @@ function beschreibung(b) {
   if (b.art === 'netz') return `Netz aus ${(b.flaechen ?? []).length + (b.kreise ?? []).length + (b.sektoren ?? []).length} Flächen`;
   if (b.art === 'risse') return b.risse.map((r) => `${r.n ?? 'Ansicht'} mit ${r.zellen.length} Kästchen`).join(', ');
   if (b.form === 'wuerfelbau') return `Würfelbau aus ${b.wuerfel.length} Würfeln`;
-  return `${b.form === 'quader' && b.a === b.b && b.b === b.c ? 'Würfel' : NAMEN[b.form]}${b.titel ? `: ${b.titel}` : ''}`;
+  return `Körperbild: ${b.form === 'quader' && b.a === b.b && b.b === b.c ? 'Würfel' : NAMEN[b.form]}${b.titel ? `, ${b.titel}` : ''}`;
 }
 export function koerperSvg(b, o = {}) {
   if (b.form === 'wuerfelbau') return wuerfelbauBild(b, o);
