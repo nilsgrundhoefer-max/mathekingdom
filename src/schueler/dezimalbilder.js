@@ -55,24 +55,27 @@ export function lupeBild(b) {
 }
 
 // ---------- Schriftliche Division als Lösungsbild ----------
-// d: { dividend, divisor } mit natürlichen Zahlen. Gerechnet wird bis die Division aufgeht oder ein Rest zum zweiten Mal kommt.
-// Dann wiederholen sich die Ziffern: Der Satz darunter nennt die Periode.
+// d: { dividend, divisor }. Der Divisor ist eine natürliche Zahl, der Dividend auch oder (Klasse 6, Kapitel 5, ADR 0048) eine Dezimalzahl
+// als Text („9,6“). Gerechnet wird, bis die Division aufgeht oder ein Rest zum zweiten Mal kommt. Dann wiederholen sich die Ziffern:
+// Der Satz darunter nennt die Periode. Mit `vorher` („7,8 : 0,3“) stand die Aufgabe zuerst mit einem Dezimalbruch als Divisor da.
 export function divisionSchritte(dividend, divisor, hoechstens = 12) {
-  const ganz = Math.floor(dividend / divisor), stellen = [];
-  let rest = dividend % divisor;
+  const [g, nachKomma = ''] = String(dividend).split(',');
+  const ganz = Math.floor(Number(g) / divisor), stellen = [];
+  let rest = Number(g) % divisor;
   const gesehen = new Map();
-  while (rest !== 0 && !gesehen.has(rest) && stellen.length < hoechstens) {
-    gesehen.set(rest, stellen.length);
-    const z = rest * 10, ziffer = Math.floor(z / divisor);
+  // Erst die Ziffern des Dividenden nach dem Komma herunterholen, dann Nullen. Eine Periode gibt es erst bei den Nullen.
+  for (let i = 0; stellen.length < hoechstens; i++) {
+    if (i >= nachKomma.length) { if (rest === 0 || gesehen.has(rest)) break; gesehen.set(rest, stellen.length); }
+    const z = rest * 10 + (i < nachKomma.length ? Number(nachKomma[i]) : 0), ziffer = Math.floor(z / divisor);
     stellen.push({ zahl: z, ziffer, produkt: ziffer * divisor, rest: z % divisor });
     rest = z % divisor;
   }
   const start = rest !== 0 && gesehen.has(rest) ? gesehen.get(rest) : null;
-  return { ganz, stellen, start, rest };
+  return { ganz, stellen, start, rest, nachKomma: nachKomma.length };
 }
 export function divisionBild(d) {
-  const { ganz, stellen, start } = divisionSchritte(d.dividend, d.divisor);
-  const kopfZahl = String(d.dividend), nach = stellen.length;
+  const { ganz, stellen, start, nachKomma } = divisionSchritte(d.dividend, d.divisor);
+  const [kopfZahl, kopfNach = ''] = String(d.dividend).split(','), nach = stellen.length;
   // Spalten: die Ziffern des Dividenden, das Komma, dann eine Spalte je Stelle nach dem Komma.
   const komma = kopfZahl.length, breite = komma + 1 + nach;
   const spalteVon = (ende) => (ende < komma ? ende : ende + 1); // Ende 0 … komma-1 vor dem Komma, danach eine Spalte weiter
@@ -87,19 +90,23 @@ export function divisionBild(d) {
   const ergebnis = [String(ganz), nach ? ',' : '', ...stellen.map((x, i) => (per(i) ? h('span', { class: 'periode' }, String(x.ziffer)) : String(x.ziffer)))];
   const kopf = Array(breite + 2).fill('');
   [...kopfZahl].forEach((c, i) => { kopf[i + 1] = c; });
-  if (nach) { kopf[komma + 1] = ','; for (let i = 0; i < nach; i++) kopf[komma + 2 + i] = '0'; }
-  // Erster Schritt: die Ganzen. Ihr Produkt steht unter dem Dividenden, der Rest mit der ersten Null daneben.
+  if (nach) { kopf[komma + 1] = ','; for (let i = 0; i < nach; i++) kopf[komma + 2 + i] = i < kopfNach.length ? kopfNach[i] : '0'; }
+  // Erster Schritt: die Ganzen. Ihr Produkt steht unter dem Dividenden, der Rest mit der nächsten Ziffer daneben.
   zeile(ganz * d.divisor, komma - 1, 'minus');
   stellen.forEach((x, i) => { zeile(x.zahl, komma + i, 'rest'); zeile(x.produkt, komma + i, 'minus'); });
-  zeile(stellen.length ? stellen.at(-1).rest : d.dividend % d.divisor, komma - 1 + nach, 'ende');
+  zeile(stellen.length ? stellen.at(-1).rest : Number(kopfZahl) % d.divisor, komma - 1 + nach, 'ende');
+  // Die Kommaspalte ist schmal. In einer Minuszeile läuft der Strich durch sie hindurch, wenn links und rechts Ziffern stehen.
+  const kommaZelle = (z, i) => (nach && i === komma + 1 ? { class: `kommaspalte${z.art === 'division-minus' && z.cells[i - 1] && z.cells[i + 1] ? ' durch' : ''}` } : {});
   const tabelle = h('table', { class: 'division', 'aria-label': `Schriftliche Division ${d.dividend} : ${d.divisor}` },
     h('tbody', {},
-      h('tr', { class: 'division-kopf' }, kopf.map((c) => h('td', {}, c)), h('td', { class: 'rechnung' }, ` : ${d.divisor} = `, ...ergebnis)),
-      zeilen.map((z) => h('tr', { class: z.art }, z.cells.map((c) => h('td', {}, c)), h('td', {})))));
+      h('tr', { class: 'division-kopf' }, kopf.map((c, i) => h('td', nach && i === komma + 1 ? { class: 'kommaspalte' } : {}, c)), h('td', { class: 'rechnung' }, ` : ${d.divisor} = `, ...ergebnis)),
+      zeilen.map((z) => h('tr', { class: z.art }, z.cells.map((c, i) => h('td', kommaZelle(z, i), c)), h('td', {})))));
   const satz = start != null
     ? `Der Rest ${stellen[start].zahl / 10} kommt zum zweiten Mal. Ab hier wiederholen sich die Ziffern: Die Periode ist ${stellen.slice(start).map((x) => x.ziffer).join('')}.`
     : 'Der Rest ist 0. Die Division geht auf.';
-  return h('figure', { class: 'divisionsbild' }, tabelle, h('figcaption', {}, satz));
+  const vorher = d.vorher ? `Verschiebe zuerst das Komma in beiden Zahlen gleich weit nach rechts: ${d.vorher} = ${d.dividend} : ${d.divisor}. ` : '';
+  const kommaSatz = nachKomma ? 'Wenn du das Komma überschreitest, setzt du im Ergebnis das Komma. ' : '';
+  return h('figure', { class: 'divisionsbild' }, tabelle, h('figcaption', {}, vorher + kommaSatz + satz));
 }
 
 // Der Lösungstext einer periodischen Dezimalzahl, mit Überstrich gezeichnet (dom.js macht das für jeden Text).

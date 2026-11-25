@@ -31,7 +31,10 @@ export function tafelBild(b) {
     b.gruppen && h('tr', { class: 'gruppen' }, b.gruppen.map((g) => h('th', { colSpan: g.spalten, scope: 'colgroup' }, g.name))),
     h('tr', {}, b.spalten.map((n, i) => h('th', { scope: 'col', class: blockRand(b, i) }, n)))),
   // weitere: zusätzliche Zeilen, um zwei oder mehr Zahlen Stelle für Stelle zu vergleichen.
-  h('tbody', {}, [b.werte, ...(b.weitere ?? [])].map((zeile) => h('tr', {}, zeile.map((w, i) => h('td', { class: blockRand(b, i) }, zelle(w))))))));
+  h('tbody', {}, [b.werte, ...(b.weitere ?? [])].map((zeile) => h('tr', {}, zeile.map((w, i) => h('td', { class: blockRand(b, i) }, zelle(w))))))),
+  // Klasse 6, Kapitel 5 (ADR 0048): Verschiebepfeile. Mit einer Stufenzahl malnehmen oder durch sie teilen: Jede Ziffer rückt in der Tafel weiter.
+  b.schieben && h('figcaption', { class: 'schiebepfeil' }, h('span', { class: 'pfeile', 'aria-hidden': 'true' }, (b.schieben.richtung === 'links' ? '⟵' : '⟶').repeat(b.schieben.stellen)),
+    ` ${b.schieben.rechnung}: Jede Ziffer rückt ${b.schieben.stellen === 1 ? 'eine Stelle' : `${b.schieben.stellen} Stellen`} nach ${b.schieben.richtung}.`));
 }
 // Dicke Linie zwischen den Dreierblöcken einer großen Stellenwerttafel.
 function blockRand(b, i) {

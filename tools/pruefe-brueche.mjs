@@ -150,7 +150,7 @@ function figurMaengel(f, zumFaerben = false) {
   const alle = n * (f.ganze ?? 1);
   if (!Array.isArray(f.gefaerbt) || f.gefaerbt.some((i) => !ganz(i, 0, alle - 1)) || new Set(f.gefaerbt).size !== f.gefaerbt.length) m.push('gefärbte Teile passen nicht zur Figur');
   // Rechteckbild (ADR 0038): hell gefärbte Felder zeigen den ersten Bruchteil, die kräftig gefärbten den Bruchteil davon.
-  if (f.hell != null && (f.form !== 'rechteck' || f.ganze || !Array.isArray(f.hell) || f.hell.some((i) => !ganz(i, 0, alle - 1) || (f.gefaerbt ?? []).includes(i)) || new Set(f.hell).size !== f.hell.length)) m.push('hell gefärbte Felder gibt es nur im Rechteck, neben den kräftig gefärbten');
+  if (f.hell != null && (!['rechteck', 'hundert'].includes(f.form) || f.ganze || !Array.isArray(f.hell) || f.hell.some((i) => !ganz(i, 0, alle - 1) || (f.gefaerbt ?? []).includes(i)) || new Set(f.hell).size !== f.hell.length)) m.push('hell gefärbte Felder gibt es nur im Rechteck, neben den kräftig gefärbten');
   return m;
 }
 // Der Bruchteil, den eine Figur zeigt. null bei ungleich großen Teilen: Die zeigen keinen Bruchteil.
@@ -190,6 +190,10 @@ function gezeigt(a) {
   for (const s of [st, a.bild?.art === 'lupe' ? a.bild.oben : null]) if (s) { const T = s.teiler ?? 1; for (const x of [s.von, s.bis, s.schritt, s.beschriftung, s.pfeil, ...(s.punkte ?? [])]) if (x != null) liste.push(zahl(x, T)); }
   if (a.bild?.art === 'tafel') for (const zeile of [a.bild.werte, ...(a.bild.weitere ?? [])]) { const w = tafelWert(a.bild.spalten, zeile); if (w) liste.push({ art: 'zahl', w }); for (const z of zeile) if (z != null) liste.push(zahl(z)); }
   if (a.bild?.art === 'einheitentafel') for (const zeile of [a.bild.werte, ...(a.bild.weitere ?? [])]) { const v = einheitentafelWert(a.bild.gruppen, zeile); if (v) liste.push({ art: v.art, w: Q(v.w) }); }
+  // Klasse 6, Kapitel 5 (ADR 0048): Die Zahlen im Rechenraster und am Kommafeld sind Angaben der Aufgabe.
+  if (a.tabelle?.art === 'raster' && a.tabelle.rechnung) for (const z of a.tabelle.rechnung.zahlen ?? []) liste.push(...atome(String(z)));
+  if (a.tabelle?.ablesen) liste.push(...atome(String(a.tabelle.ablesen.text).replace(/=$/, '')));
+  if (a.bild?.art === 'geld') liste.push({ art: 'geld', w: Q(a.bild.stuecke.reduce((x, y) => x + y, 0)) });
   if (a.tabelle) for (const c of a.tabelle.zeilen.flat()) if (typeof c !== 'object') liste.push(...atome(c));
   if (a.tabelle?.kopf) for (const c of a.tabelle.kopf) liste.push(...atome(c));
   for (const zeile of [a.daten?.kopf ?? [], ...(a.daten?.zeilen ?? [])]) for (const c of zeile) liste.push(...atome(c));
@@ -212,7 +216,10 @@ export function bruchSprachMaengel(a, texte) {
   // Klasse 6, Kapitel 4 (ADR 0047): F Zehntel und Hundertstel, G bis Tausendstel, M und E bis Zehntausendstel. Nenner zum Umwandeln:
   // F 2, 4, 5, 10, 20, 25, G dazu 8 und 50, M dazu 40, 125, 250, E alle bis 30. Erweitert wird auf 10, 100, 1000 oder 10000.
   const k64 = a.lernziel.startsWith('6.4.');
-  const m = [], stufe = ['F', 'G', 'M', 'E'].indexOf(a.niveau), dezimal = a.lernziel.startsWith('5.9.3') || k64;
+  // Klasse 6, Kapitel 5 (ADR 0048): F bis Hundertstel, G bis Tausendstel, M und E bis Zehntausendstel. Brüche nur als Zehnerbrüche
+  // (Begründung der Kommaregel) und als einfache Anteile.
+  const k65 = a.lernziel.startsWith('6.5.');
+  const m = [], stufe = ['F', 'G', 'M', 'E'].indexOf(a.niveau), dezimal = a.lernziel.startsWith('5.9.3') || k64 || k65;
   // Klasse 6, Kapitel 1 (ADR 0037): Nenner F bis 10, G bis 20, M bis 50 und 100, E bis 200. Beim Erweitern und Kürzen (6.1.2, 6.1.3)
   // darf der erweiterte Bruch darüber liegen. Brüche über 1 gibt es ab G, auf F nur beim Umwandeln (6.1.1-B2).
   // Klasse 6, Kapitel 2 (ADR 0038): Gerechnet wird mit Nennern bis 12 (F), 20 (G), 30 (M) und 60 (E). Hauptnenner und Produkte
@@ -222,13 +229,13 @@ export function bruchSprachMaengel(a, texte) {
   const alle = texte.join(' \n ');
   if (/(?<![\d⁄])\d+\/\d+/.test(alle)) m.push('ein Bruch steht mit Schrägstrich statt mit Bruchstrich');
   if (/[½¼¾]/.test(alle)) m.push('Brüche stehen als Zähler und Nenner, nicht als einzelnes Zeichen');
-  const erlaubt = k64 ? [(n) => [2, 4, 5, 10, 20, 25, 50, 100].includes(n), (n) => [2, 4, 5, 8, 10, 20, 25, 50, 100, 1000].includes(n),
+  const erlaubt = k65 ? (n) => [2, 4, 5, 10, 100, 1000, 10000].includes(n) : k64 ? [(n) => [2, 4, 5, 10, 20, 25, 50, 100].includes(n), (n) => [2, 4, 5, 8, 10, 20, 25, 50, 100, 1000].includes(n),
     (n) => n <= 20 || [25, 40, 50, 100, 125, 250, 1000, 10000].includes(n), (n) => n <= 30 || [40, 50, 100, 125, 250, 1000, 10000].includes(n)][stufe]
     : dezimal ? [(n) => n === 10, (n) => [2, 10, 100].includes(n), (n) => [2, 4, 5, 10, 100, 1000].includes(n), (n) => n <= 1000][stufe]
     : k62 ? [(n) => n <= 24, (n) => n <= 60, (n) => n <= 150, (n) => n <= 400][stufe]
     : k6 ? (umformen ? [(n) => n <= 100, (n) => n <= 200, (n) => n <= 600, (n) => n <= 1000] : [(n) => n <= 10, (n) => n <= 20, (n) => n <= 50 || n === 100, (n) => n <= 200])[stufe]
     : [(n) => n <= 4, (n) => n <= 8 || n === 10, (n) => n <= 12 || n === 100, (n) => n <= 20 || n === 100][stufe];
-  const ueber1Ab = k62 || k64 ? 0 : k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
+  const ueber1Ab = k62 || k64 || k65 ? 0 : k6 ? (a.lernziel === '6.1.1-B2' ? 0 : 1) : 2;
   for (const x of alle.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) {
     const [g, z, n] = [Number(x[1] ?? 0), Number(x[2]), Number(x[3])];
     if (n < 2) m.push(`Bruch mit Nenner ${n}`);
@@ -239,7 +246,7 @@ export function bruchSprachMaengel(a, texte) {
   // Geld steht immer mit zwei Stellen nach dem Komma („2,50 €“).
   const stellen = [...alle.replace(/\d+,\d{2}[ \u00a0]€/g, ' ').matchAll(/\d,(\d+)/g)].map((x) => x[1].length);
   if (!dezimal && stellen.length) m.push('Dezimalzahlen gibt es erst in der Dezimalschreibweise');
-  if (dezimal && stellen.some((s) => s > (k64 ? [2, 3, 4, 4] : [1, 2, 3, 4])[stufe])) m.push(`zu viele Nachkommastellen für Niveaustufe ${a.niveau}`);
+  if (dezimal && stellen.some((s) => s > (k64 || k65 ? [2, 3, 4, 4] : [1, 2, 3, 4])[stufe])) m.push(`zu viele Nachkommastellen für Niveaustufe ${a.niveau}`);
   if (/Dezimalbruch|Kommazahl/.test(alle)) m.push('es heißt „Dezimalzahl“');
   return m;
 }
@@ -253,6 +260,54 @@ const mitEinheit = (x, einheit) => rechne(`${String(x)}${einheit && EINHEIT[einh
 const norm = (s) => String(s).replace(/[\s  ]/g, '');
 
 // Prüft eine Aufgabe aus Kapitel 9 ganz: Format, Bild, Nachweis. Liefert die Liste der Mängel.
+// Klasse 6, Kapitel 5 (ADR 0048): Rechenraster mit Kommaspalte (Addieren, Subtrahieren) oder ohne Komma mit Kommafeld (Multiplizieren).
+// Die Ziffern in den Zeilen zeigen genau die Zahlen der Rechnung, Komma unter Komma, und die Lösungsziffern ergeben das Ergebnis.
+function rasterMaengel(a) {
+  const t = a.tabelle, r = t.rechnung ?? {}, m = [];
+  const ziffer = (c) => (typeof c === 'object' ? (c.luecke ? a.luecken?.[c.luecke]?.loesung : 0) : c === '' ? null : c);
+  if (r.zeichen === '·') {
+    const [x, y] = r.zahlen ?? [];
+    if (!Number.isInteger(x) || !Number.isInteger(y) || x * y !== r.ergebnis) { m.push('Rechnung ohne Komma stimmt nicht'); return m; }
+    const yz = String(y).split('').map(Number), lx = String(x).length, breite = lx + 1 + yz.length;
+    if (t.kopf.length !== breite || JSON.stringify(t.zeilen[0]) !== JSON.stringify([...String(x).split(''), '·', ...String(y).split('')])) m.push('erste Zeile zeigt nicht die Aufgabe');
+    const liest = (zeile, ende, soll, was) => { const z = (zeile ?? []).map((c) => { const v = ziffer(c); return v == null ? null : Number(v); }), s = String(soll), anfang = ende - s.length + 1;
+      if (z.length !== breite || z.some((v, i) => (i < anfang || i > ende ? v !== null : v !== Number(s[i - anfang])))) m.push(`${was} ${soll} steht nicht richtig im Raster`); };
+    if (t.zeilen.length !== (yz.length > 1 ? yz.length + 2 : 2)) { m.push('falsche Anzahl Zeilen'); return m; }
+    if (yz.length > 1) { if (yz.includes(0)) m.push('Null im zweiten Faktor'); yz.forEach((d, i) => liest(t.zeilen[1 + i], lx + 1 + i, x * d, 'Teilprodukt')); }
+    liest(t.zeilen.at(-1), breite - 1, x * y, 'Ergebnis');
+    if (t.ablesen) {
+      const am = String(t.ablesen.text).match(/^(\d+(?:,\d+)?) · (\d+(?:,\d+)?) =$/);
+      if (!am || Number(am[1].replace(',', '')) !== x || Number(am[2].replace(',', '')) !== y) m.push('Kommafeld nennt nicht dieselben Faktoren');
+      else { const soll = rechne(`${am[1]} · ${am[2]}`), ist = rechne(String(a.luecken?.[t.ablesen.luecke]?.loesung ?? '')); if (!soll || !ist || !gleich(soll, ist)) m.push('Kommafeld: Das Produkt mit Komma stimmt nicht'); }
+    }
+    return m;
+  }
+  if (!['+', '−'].includes(r.zeichen) || !Array.isArray(r.zahlen) || r.zahlen.length < 2 || t.komma == null) { m.push('Rechnung oder Kommaspalte fehlt'); return m; }
+  const werte = r.zahlen.map((z) => rechne(String(z))), e = rechne(String(r.ergebnis));
+  if (werte.some((w) => !w) || !e) { m.push('Zahlen der Rechnung lassen sich nicht lesen'); return m; }
+  const soll = werte.slice(1).reduce((s, w) => (r.zeichen === '+' ? qPlus(s, w.w) : qMinus(s, w.w)), werte[0].w);
+  if (qVgl(soll, e.w) !== 0 || soll.z < 0) m.push(`Ergebnis ${r.ergebnis} stimmt nicht`);
+  const kopf = t.kopf, k = t.komma, ganzK = kopf.slice(1, k), nachK = kopf.slice(k + 1);
+  if (kopf[k] !== ',' || ganzK.join('') !== ['T', 'H', 'Z', 'E'].slice(-ganzK.length).join('') || nachK.join('') !== ['z', 'h', 't', 'zt'].slice(0, nachK.length).join('')) m.push('Kopfzeile ist keine Stellenwerttafel mit Komma');
+  const lies = (zeile) => { if (zeile[k] !== ',') return null; const g = zeile.slice(1, k).map(ziffer), n = zeile.slice(k + 1).map(ziffer);
+    if ([...g, ...n].some((v) => v != null && !ganz(Number(v), 0, 9))) return null; const gt = g.map((v) => v ?? '').join(''), nt = n.map((v) => v ?? '').join('');
+    if (/^0\d/.test(gt) || !gt) return null; return rechne(nt ? `${gt},${nt}` : gt); };
+  const zeilen = t.zeilen.slice(0, -1);
+  zeilen.forEach((z, i) => { const v = lies(z); if (!v || qVgl(v.w, werte[i]?.w ?? Q(-1)) !== 0) m.push(`Zeile ${i + 1} zeigt nicht ${r.zahlen[i]}`); if (z[0] !== (i === 0 ? '' : r.zeichen)) m.push('Rechenzeichen steht falsch'); });
+  if (zeilen.length !== r.zahlen.length) m.push('falsche Anzahl Zeilen');
+  // Endnullen: nur hinter den Ziffern einer Zahl, auf F grau, auf G als Notizfeld, darüber keine.
+  for (const z of zeilen) { const nach = z.slice(k + 1); const i = nach.findIndex((c) => typeof c === 'object'); if (i >= 0 && nach.slice(i).some((c) => typeof c !== 'object')) m.push('Endnull mitten in der Zahl'); }
+  const art = new Set(zeilen.flat().filter((c) => typeof c === 'object').map((c) => (c.endnull ? 'grau' : c.notiz ? 'notiz' : 'luecke')));
+  if (art.has('luecke')) m.push('Lücke in einer Zeile der Aufgabe');
+  if (a.niveau === 'F' && art.has('notiz')) m.push('Auf F sind die Endnullen grau vorgezeichnet');
+  if (a.niveau !== 'F' && art.has('grau')) m.push('Ab G ergänzt das Kind die Endnullen selbst');
+  const ergebnis = t.zeilen.at(-1);
+  if (ergebnis[0] !== 'Ergebnis' || ergebnis.slice(1).some((c) => c !== '' && c !== ',' && !c?.luecke)) { m.push('Ergebniszeile fehlt oder ist schon ausgefüllt'); return m; }
+  const v = lies(ergebnis);
+  if (!v || qVgl(v.w, e.w) !== 0) m.push('Lösungsziffern ergeben nicht das Ergebnis');
+  if (/0$/.test(String(r.ergebnis).split(',')[1] ?? '')) m.push('Das Ergebnis endet auf eine Endnull (im Raster wäre sie verlangt)');
+  return m;
+}
 export function pruefeBruchAufgabe(a, fehlvorstellungen) {
   const m = [], M = (t) => m.push(t);
   const fvOk = (f) => { if (f && !(f in fehlvorstellungen)) M(`unbekannte Fehlvorstellung ${f}`); };
@@ -295,6 +350,9 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
   } else if (a.bild?.art === 'tafel') {
     for (const x of tafelMaengel(a.bild.spalten, a.bild.komma)) M(x);
     for (const zeile of [a.bild.werte, ...(a.bild.weitere ?? [])]) if (zeile.length !== a.bild.spalten.length || !tafelWert(a.bild.spalten, zeile)) M('Stellenwerttafel: Zeile passt nicht zu den Spalten');
+    // Verschiebepfeile (ADR 0048): Die Stufenzahl steht im Text, die Richtung passt zur Rechenart.
+    const sb = a.bild.schieben;
+    if (sb && (!/^[·:] 10{1,3}$/.test(sb.rechnung ?? '') || sb.stellen !== sb.rechnung.length - 3 || sb.richtung !== (sb.rechnung[0] === '·' ? 'links' : 'rechts') || !norm(a.text).includes(norm(sb.rechnung)))) M('Stellenwerttafel: Verschiebepfeile passen nicht zur Rechnung im Text');
   } else if (a.bild?.art === 'einheitentafel') {
     for (const x of groessenBildMaengel(a.bild, a.niveau)) M(`Bild einheitentafel: ${x}`);
   } else if (a.bild?.art === 'lupe') {
@@ -305,6 +363,9 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       if (o.pfeil != null) M('Lupe: Gefragt wird am unteren Strahl');
       strahlMaengel(o).forEach((x) => M(`Lupe oben: ${x}`));
     }
+  } else if (a.bild?.art === 'geld' && a.lernziel.startsWith('6.5.')) {
+    // Klasse 6, Kapitel 5 (ADR 0048): Geld aus Münzen und Scheinen, der Betrag ist eine Angabe der Aufgabe.
+    if (!Array.isArray(a.bild.stuecke) || !a.bild.stuecke.length || a.bild.stuecke.length > 12 || a.bild.stuecke.some((c) => ![1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000].includes(c))) M('Geldbild: Münzen und Scheine passen nicht');
   } else if (a.bild && a.bild.art !== 'zahlenstrahl') M(`Bild ${a.bild.art} gibt es in Kapitel 9 nicht`);
   const st = strahlVon(a);
   strahlMaengel(st).forEach(M);
@@ -599,6 +660,8 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
   const istErgebnis = (v) => Boolean(v) && ergebnisse.has(schluessel(v));
   const pruefeTeil = (t, was) => {
     if (!loesungOk(t.loesung)) M(`${was} ist weder eine natürliche Zahl noch eine Dezimalzahl`);
+    // Klasse 6, Kapitel 5 (ADR 0048): Weitere richtige Werte (Überschlag mit anders gerundeten Zahlen) ergeben sich ebenfalls aus dem Nachweis.
+    if (t.auch != null) { if (!Array.isArray(t.auch) || !t.auch.length || t.auch.some((w) => !loesungOk(w) || !istErgebnis(rechne(String(w))))) M(`${was}: weitere richtige Werte fehlen im Nachweis`); if ((t.auch ?? []).some((w) => gleich(rechne(String(w)), rechne(String(t.loesung))))) M(`${was}: weiterer Wert gleich der Lösung`); }
     const werte = (t.typischeFehler ?? []).map((f) => { fvOk(f.fehlvorstellung); if (!loesungOk(f.wert)) M(`${was}: typischer Fehler ${f.wert} ist keine Zahl`); return rechne(String(f.wert)); });
     const soll = rechne(String(t.loesung));
     if (werte.some((w) => w && soll && gleich(w, soll))) M(`${was}: typischer Fehler ist gleich der Lösung`);
@@ -693,13 +756,18 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
       break;
     }
     case 'tabelle': {
-      const t = a.tabelle ?? {}, zellen = (t.zeilen ?? []).flat();
+      const t = a.tabelle ?? {}, zellen = (t.zeilen ?? []).flat().filter((c) => typeof c !== 'object' || c.luecke);
       if (!t.kopf?.length || (t.zeilen ?? []).some((z) => z.length !== t.kopf.length)) M('Tabelle: Zeilen passen nicht zur Kopfzeile');
-      const namen = zellen.filter((c) => typeof c === 'object').map((c) => c.luecke);
+      const namen = [...zellen.filter((c) => typeof c === 'object').map((c) => c.luecke), ...(t.ablesen ? [t.ablesen.luecke] : [])];
       if (!namen.length || new Set(namen).size !== namen.length) M('Tabelle: keine Lücke oder Lücke doppelt');
       for (const n of namen) if (!a.luecken?.[n]) M(`Lücke ${n} hat keine Lösung`); else pruefeTeil(a.luecken[n], `Lücke ${n}`);
       for (const n of Object.keys(a.luecken ?? {})) if (!namen.includes(n)) M(`Lösung ${n} ohne Lücke in der Tabelle`);
-      if (t.art === 'stellentafel') {
+      if (t.art === 'raster') {
+        for (const x of rasterMaengel(a)) M(`Raster: ${x}`);
+        if (!t.komma && !t.ablesen) M('Raster: In Kapitel 5 hat ein Rechenraster eine Kommaspalte oder ein Kommafeld');
+        if (t.ablesen && a.luecken?.[t.ablesen.luecke] && !istErgebnis(rechne(String(a.luecken[t.ablesen.luecke].loesung)))) M(`Raster: ${a.luecken[t.ablesen.luecke].loesung} ist kein Ergebnis im Nachweis`);
+        if (t.komma != null && !istErgebnis(rechne(String(t.rechnung?.ergebnis ?? '')))) M('Raster: Das Ergebnis steht nicht im Nachweis');
+      } else if (t.art === 'stellentafel') {
         for (const x of tafelMaengel(t.kopf, t.komma)) M(x);
         for (const c of zellen) if (typeof c === 'object' ? !ganz(a.luecken?.[c.luecke]?.loesung, 0, 9) : !/^\d?$/.test(c)) M('Stellenwerttafel: Feld mit mehr als einer Ziffer');
         (t.zeilen ?? []).forEach((_, i) => { if (!nachweis.some((n) => n?.art === 'tafel' && (n.zeile ?? 0) === i)) M(`Stellenwerttafel: Zeile ${i + 1} ohne Nachweis`); });
@@ -756,8 +824,18 @@ export function pruefeBruchAufgabe(a, fehlvorstellungen) {
   // Schriftliche Division als Lösungsbild (ADR 0047): Dividend und Divisor ergeben die Lösung.
   if (a.division) {
     const { dividend: x, divisor: y } = a.division, soll = ['zahl', 'periode'].includes(a.format) ? rechne(`${a.loesung}${a.einheit && EINHEIT[a.einheit] ? ` ${a.einheit}` : ''}`) : null;
-    if (!ganz(x, 1, 100000) || !ganz(y, 2, 1000)) M('Division: Dividend und Divisor sind natürliche Zahlen');
-    else if (soll && qVgl(soll.art === 'zahl' ? soll.w : qDurch(soll.w, Q(EINHEIT[a.einheit][1], EINHEIT[a.einheit][2])), Q(x, y)) !== 0) M(`Division: ${x} : ${y} ergibt nicht die Lösung`);
+    // Klasse 6, Kapitel 5 (ADR 0048): Der Dividend darf eine Dezimalzahl sein („9,6“). Mit `vorher` stand die Aufgabe mit einem
+    // Dezimalbruch als Divisor da; beide Zahlen sind dann mit derselben Stufenzahl malgenommen.
+    const xv = typeof x === 'string' && /^\d+,\d{1,4}$/.test(x) ? rechne(x)?.w : ganz(x, 1, 100000) ? Q(x) : null;
+    if (!xv || !ganz(y, 2, 1000)) M('Division: Der Divisor ist eine natürliche Zahl, der Dividend eine natürliche Zahl oder eine Dezimalzahl');
+    else if (soll && qVgl(soll.art === 'zahl' ? soll.w : qDurch(soll.w, Q(EINHEIT[a.einheit][1], EINHEIT[a.einheit][2])), qDurch(xv, Q(y))) !== 0) M(`Division: ${x} : ${y} ergibt nicht die Lösung`);
+    if (a.division.vorher != null) {
+      const v = String(a.division.vorher).match(/^(\d+(?:,\d+)?) : (\d+(?:,\d+)?)$/);
+      const p = v && [v[1], v[2]].map((z) => rechne(z)?.w);
+      if (!v || !xv || !p[0] || !p[1] || qVgl(qDurch(p[0], p[1]), qDurch(xv, Q(y))) !== 0 || ![10, 100, 1000].some((f) => qVgl(qMal(p[1], Q(f)), Q(y)) === 0 && qVgl(qMal(p[0], Q(f)), xv) === 0)) M('Division: vorher ist nicht dieselbe Aufgabe mit verschobenem Komma');
+      else if (!norm(a.text).includes(norm(a.division.vorher))) M('Division: vorher steht nicht im Text');
+    }
+    for (const k of Object.keys(a.division)) if (!['dividend', 'divisor', 'vorher'].includes(k)) M(`Division: unbekanntes Feld ${k}`);
   }
   if (a.daten && (!Array.isArray(a.daten.kopf) || a.daten.kopf.length < 2 || !Array.isArray(a.daten.zeilen) || a.daten.zeilen.some((z) => z.length !== a.daten.kopf.length))) M('Daten: Zeilen passen nicht zur Kopfzeile');
   // Jede Zahl aus dem Text gehört zur Aufgabe: Sie steht im Nachweis oder im Bild. Bei einem Urteil und einer Begriffsfrage stehen Beispiele im Text.

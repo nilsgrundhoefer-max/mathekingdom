@@ -82,6 +82,8 @@ Gebaut in Version 0.55 (ADR 0047): 12 Lernziele mit je 24 Aufgaben, in 4.6 je 12
 | 5.5 | Verbindung der Rechenarten | | Ich kann beim Rechnen mit Dezimalzahlen die Rechenregeln anwenden und geschickt rechnen. |
 | 5.6 | Tabellenkalkulation: Andere Maße | MK | entfällt |
 
+Gebaut in Version 0.56 (ADR 0048): 10 Lernziele mit je 24 Aufgaben. F und G rechnen schriftlich im Rechenraster mit Kommaspalte, ab M im Heft.
+
 ## Kapitel 6: Berechnungen am Quader
 
 | Nr. | Unterkapitel | Marke | Lernziel |

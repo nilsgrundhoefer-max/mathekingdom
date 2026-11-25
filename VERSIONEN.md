@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.56 vom 25.11.2026
+
+### Schüler
+
+- Klasse 6 hat ihr fünftes Kapitel: „Rechnen mit Dezimalzahlen“ mit 5 Meilensteinen, zusammen 240 Aufgaben.
+- Im Rechenraster steht jetzt Komma unter Komma. Fehlende Endnullen sind grau oder kommen in kleine Felder.
+- Beim Malnehmen rechnest du im Raster ohne Komma und setzt das Komma danach im eigenen Feld.
+- Die Stellenwerttafel zeigt mit Pfeilen, wie weit die Ziffern beim Malnehmen und Teilen mit 10, 100 und 1000 rücken.
+- Beim Überschlag zählt jedes Ergebnis, das du mit sinnvoll gerundeten Zahlen bekommst.
+- Bei Geld zählt 4,5 € wie 4,50 €.
+
+### Lehrkraft
+
+- Klasse 6, Kapitel 5 „Rechnen mit Dezimalzahlen“: F und G rechnen schriftlich im Raster, ab M ist etwa ein Drittel der Aufgaben Heftaufgabe (ADR 0048).
+- Die Rückmeldung erkennt jetzt auch einen typischen Fehler mit Komma, wenn die Lösung eine natürliche Zahl ist.
+
 ## 0.55 vom 25.11.2026
 
 ### Schüler

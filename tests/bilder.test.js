@@ -23,7 +23,7 @@ const lies = (n) => JSON.parse(readFileSync(new URL(`../aufgabenpool/klasse-${n}
 const pool = lies(5);
 // Klasse 7 (ADR 0043) bringt das Thermometer und die Zahlengerade mit negativen Zahlen mit.
 // Klasse 6 Kapitel 3 (ADR 0045) bringt Körper, Netze und Ansichten mit.
-const mitBild = [...pool.aufgaben, ...lies(6).aufgaben.filter((a) => a.id.startsWith('6.3.') || a.id.startsWith('6.4.')), ...lies(7).aufgaben].filter((a) => a.bild);
+const mitBild = [...pool.aufgaben, ...lies(6).aufgaben.filter((a) => a.id.startsWith('6.3.') || a.id.startsWith('6.4.') || a.id.startsWith('6.5.')), ...lies(7).aufgaben].filter((a) => a.bild);
 const zahl = (x) => (typeof x === 'object' ? x.wert : x);
 const lesbar = (x) => (typeof x === 'object' && x.frage ? '?' : String(x));
 
