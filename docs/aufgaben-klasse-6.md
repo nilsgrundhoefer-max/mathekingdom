@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (1488 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (1728 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1488).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 1728).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -1956,11 +1956,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zeige beim Zählen auf jede Kante. Ha
 
 - `01` AFB I · _Kommunizieren_ · Das ist ein Quader. / Gib an, wie viele Kanten er hat. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 9 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
 - `02` AFB I · _Kommunizieren_ · Ergänze die Zahlen. / Ein Quader hat ▢ Ecken. / Er hat ▢ Kanten und ▢ Flächen. _(Bild: koerper)_ Lösung: e = **8**, k = **12**, f = **6**
-- `03` AFB II · _Kommunizieren_ · Der Quader ist beschriftet. / Gib an, wie viele Kanten 5 cm lang sind. _(Bild: koerper)_ Lösung: **4**. Typische Fehler: 1 (kanten-teilweise), 2 (kanten-teilweise), 3 (verdeckt-nicht-gezaehlt).
+- `03` AFB II · _Kommunizieren_ · Der Quader ist beschriftet. / Gib an, wie viele Kanten 5 cm lang sind. _(Bild: Quader im Schrägbild, Maße 5 cm, 2 cm, 4 cm)_ Lösung: **4**. Typische Fehler: 1 (kanten-teilweise), 2 (kanten-teilweise), 3 (verdeckt-nicht-gezaehlt).
 - `04` AFB I · _Kommunizieren_ · Kreuze das Bild an. / Es soll einen Würfel zeigen.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
 - `05` AFB II · _Kommunizieren_ · Die Kante AB ist rot. / Eine Kante ist parallel zu AB. / Kreuze sie an. _(Bild: koerper)_
   - ☐ BF
   - ☐ AE
@@ -2015,9 +2015,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Bod
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Netz von einem Würfel ist nicht fertig. / Es fehlt ein Quadrat. / Färbe es. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 5 gefärbte Kästchen (4|2) (3|2) (2|2) (2|1) (2|3))_ Lösung: **(1|2)**
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Zähle die Flächen des Würfels. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Nur ein Bild zeigt das Netz von einem Würfel. / Kreuze es an.
-  - ☑ A
-  - ☐ B
-  - ☐ C
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Hier fehlt ein Quadrat im Netz. / Färbe das fehlende Quadrat. / Dann kannst du einen Würfel falten. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 5 gefärbte Kästchen (1|2) (2|2) (3|2) (4|2) (1|3))_ Lösung: **(1|1)**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das ist das Netz von einem Quader. / Jede Fläche ist ein Rechteck. / Zähle die Rechtecke. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 4 (verdeckt-nicht-gezaehlt).
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die gelbe Fläche D ist der Boden. / Das Netz wird zum Würfel gefaltet. / Eine Fläche liegt dann oben. / Kreuze sie an. _(Bild: netz)_
@@ -2030,18 +2030,18 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Bod
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Boden fest. Klappe dann die anderen hoch. *Beispiel:* Beim Kreuz sind die vier Quadrate in der Reihe Boden, Vorderseite, Deckel und Rückseite. *Lösungsschritt:* Prüfe: Fehlt danach noch eine Seite, links oder rechts, oben oder unten?
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Würfelnetz an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 - `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ergänze das Würfelnetz. / Färbe ein Quadrat. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 5 gefärbte Kästchen (1|4) (1|3) (2|3) (2|2) (3|2))_ Lösung: **(3|1)**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Eine Fläche liegt dann D gegenüber. / Kreuze sie an. _(Bild: netz)_
   - ☐ E
   - ☐ B
   - ☑ A
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt einen Quader. / Kreuze sein Netz an. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Gib an, wie viele Ecken der Würfel hat. _(Bild: netz)_ Lösung: **8**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
 - `06` AFB III · _Argumentieren_ · Vier Quadrate liegen in einer Reihe. / Über den ersten beiden liegt je ein Quadrat. / Ida sagt: „6 Quadrate ergeben immer ein Würfelnetz.“ / Prüfe die Aussage. _(Bild: netz)_
   - ☐ Stimmt. / 6 Quadrate ergeben immer einen Würfel.
@@ -2053,10 +2053,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Bod
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege eine Fläche als Boden fest und klappe die anderen hoch. *Lösungsschritt:* Kommen zwei Flächen an dieselbe Stelle, ist es kein Würfelnetz.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz an, aus dem sich ein Würfel falten lässt.
-  - ☐ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☑ D _(Bild: netz)_
 - `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Würfelnetz fehlen zwei Quadrate. Färbe zwei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 4 gefärbte Kästchen (2|4) (2|3) (2|2) (2|1))_ Lösung: **(3|4) (1|4)**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz wird zu einem Würfel gefaltet. Kreuze die Fläche an, die A gegenüberliegt. _(Bild: netz)_
   - ☐ C
@@ -2064,10 +2064,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege eine Fläche als Boden fest und 
   - ☑ B
   - ☐ D
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 3 cm, b = 1 cm und c = 2 cm. Ein Kästchen steht für 1 cm. Kreuze das Netz des Quaders an.
-  - ☐ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☑ D _(Bild: netz)_
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz wird zu einem Würfel gefaltet. Kreuze alle Flächen an, die an F grenzen. _(Bild: netz)_
   - ☑ B
   - ☑ E
@@ -2084,11 +2084,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege eine Fläche als Boden fest und 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Liegen vier Quadrate in einer Reihe, darf links und rechts davon nur je eines liegen.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Genau eines dieser Netze ist ein Würfelnetz. Kreuze es an.
-  - ☐ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
-  - ☐ E
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☑ D _(Bild: netz)_
+  - ☐ E _(Bild: netz)_
 - `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Würfelnetz fehlen drei Quadrate. Färbe drei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5; 3 gefärbte Kästchen (3|1) (3|2) (2|2))_ Lösung: **(4|1) (2|3) (1|3)**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz wird zu einem Würfel gefaltet. Kreuze alle Paare von Flächen an, die sich dann gegenüberliegen. _(Bild: netz)_
   - ☐ E und F
@@ -2123,12 +2123,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gestrichelte Kanten liegen hinten. Ma
   - ☐ C
   - ☑ D
   - ☐ A
-- `04` AFB I · _Kommunizieren_ · Am Quader stehen die Längen. / Lies die Länge der Kante BC ab. _(Bild: koerper)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `04` AFB I · _Kommunizieren_ · Am Quader stehen die Längen. / Lies die Länge der Kante BC ab. _(Bild: Quader im Schrägbild, Maße 4 cm, 2 cm, 3 cm)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
 - `05` AFB II · _Kommunizieren_ · Manche Flächen des Quaders sieht man. / Zähle sie. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 2 (verdeckt-nicht-gezaehlt), 1 (verdeckt-nicht-gezaehlt).
 - `06` AFB I · _Kommunizieren_ · Ein Bild ist richtig gezeichnet. / Die Kanten hinten sind dort gestrichelt. / Kreuze es an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -2138,15 +2138,15 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gestrichelte Kanten liegen hinten. Ma
 - `02` AFB I · _Kommunizieren_ · Schau dir die Kante CD an. / Kreuze an. _(Bild: koerper)_
   - ☑ CD ist eine verdeckte Kante.
   - ☐ CD ist sichtbar.
-- `03` AFB II · _Kommunizieren_ · Am Quader stehen drei Längen. / Gib an, wie lang die Kante BF ist. _(Bild: koerper)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `03` AFB II · _Kommunizieren_ · Am Quader stehen drei Längen. / Gib an, wie lang die Kante BF ist. _(Bild: Quader im Schrägbild, Maße 4 cm, 3 cm, 2 cm)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
 - `04` AFB I · _Kommunizieren_ · Im Schrägbild ist eine Ecke verdeckt. / Kreuze sie an. _(Bild: koerper)_
   - ☑ D
   - ☐ C
   - ☐ H
 - `05` AFB II · _Kommunizieren_ · Nur ein Schrägbild ist richtig. / Kreuze es an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Im Schrägbild sieht man 3 Flächen des Quaders.“ / Prüfe die Aussage. _(Bild: koerper)_
   - ☐ Stimmt nicht. / Man sieht nur die Vorderfläche.
   - ☐ Stimmt nicht. / Man sieht alle 6 Flächen.
@@ -2156,7 +2156,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gestrichelte Kanten liegen hinten. Ma
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die beschriftete Kante, die zu ihr parallel ist. *Lösungsschritt:* DA ist so lang wie ihre parallele Kante.
 
-- `01` AFB I · _Kommunizieren_ · Gib an, wie lang die verdeckte Kante DA ist. _(Bild: koerper)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
+- `01` AFB I · _Kommunizieren_ · Gib an, wie lang die verdeckte Kante DA ist. _(Bild: Quader im Schrägbild, Maße 4 cm, 2 cm, 3 cm)_ Lösung: **2 cm**. Typische Fehler: 4 (kante-falsch-abgelesen), 3 (kante-falsch-abgelesen).
 - `02` AFB II · _Kommunizieren_ · Das Schrägbild zeigt ein fünfseitiges Prisma. Gib an, wie viele Kanten verdeckt sind. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt), 15 (verdeckte-kante-durchgezogen).
 - `03` AFB II · _Kommunizieren_ · Das Schrägbild zeigt eine vierseitige Pyramide. Gib an, wie viele ihrer Flächen man nicht sieht. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 1 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt), 2 (verdeckt-nicht-gezaehlt).
 - `04` AFB I · _Kommunizieren_ · Kreuze alle Flächen an, die im Schrägbild verdeckt sind. _(Bild: koerper)_
@@ -2185,11 +2185,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Ecke ist verdeckt, wenn an ihr n
   - ☐ Stimmt. Das hängt davon ab, wie groß der Quader ist.
 - `05` AFB II · _Kommunizieren_ · Das Schrägbild zeigt eine vierseitige Pyramide. Gib an, wie viele Kanten verdeckt sind. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 2 (verdeckt-nicht-gezaehlt), 4 (verdeckt-nicht-gezaehlt).
 - `06` AFB III · _Kommunizieren_ · Genau ein Schrägbild ist richtig gezeichnet. Kreuze es an.
-  - ☐ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
-  - ☐ E
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
+  - ☑ D _(Bild: koerper)_
+  - ☐ E _(Bild: koerper)_
 
 ## 6.3.2-S2: Ich kann Schrägbilder von Quadern im Gitter vervollständigen und zeichnen.
 
@@ -2258,46 +2258,46 @@ Baut auf: 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und F
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich vor den Würfelbau. Der Pfeil zeigt, wo vorne ist. *Beispiel:* Du siehst von jedem Turm nur seine Höhe. *Lösungsschritt:* Zähle in jeder Spalte die Würfel übereinander.
 
-- `01` AFB I · _Kommunizieren_ · Du schaust von vorne auf den Würfelbau. / Kreuze die passende Ansicht an. _(Bild: koerper)_
-  - ☑ A
-  - ☐ B
-  - ☐ C
+- `01` AFB I · _Kommunizieren_ · Du schaust von vorne auf den Würfelbau. / Kreuze die passende Ansicht an. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 1 2 2)_
+  - ☑ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☐ C _(Bild: risse)_
 - `02` AFB I · _Kommunizieren_ · Das ist die Ansicht von vorne. / Kreuze den passenden Würfelbau an. _(Bild: risse)_
-  - ☑ A
-  - ☐ B
-  - ☐ C
+  - ☑ A _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 2 3)_
+  - ☐ B _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_
+  - ☐ C _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 1 3 1)_
 - `03` AFB I · _Kommunizieren_ · Du schaust von oben auf den Quader. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
   - ☑ Rechteck
   - ☐ Kreis
   - ☐ Dreieck
-- `04` AFB I · _Kommunizieren_ · Du schaust von vorne auf den Quader. / Ein Kästchen steht für einen Zentimeter. / Kreuze die passende Ansicht an. _(Bild: koerper)_
-  - ☐ A
-  - ☑ B
-  - ☐ C
-- `05` AFB II · _Kommunizieren_ · Du schaust von vorne auf den Würfelbau. / Zähle die Kästchen der Ansicht. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 6 (wuerfel-verdeckt), 4 (riss-verwechselt).
-- `06` AFB I · _Kommunizieren_ · Du schaust von oben auf den Würfelbau. / Kreuze die passende Ansicht an. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+- `04` AFB I · _Kommunizieren_ · Du schaust von vorne auf den Quader. / Ein Kästchen steht für einen Zentimeter. / Kreuze die passende Ansicht an. _(Bild: Quader im Schrägbild, Maße 5 cm, 4 cm, 2 cm)_
+  - ☐ A _(Bild: risse)_
+  - ☑ B _(Bild: risse)_
+  - ☐ C _(Bild: risse)_
+- `05` AFB II · _Kommunizieren_ · Du schaust von vorne auf den Würfelbau. / Zähle die Kästchen der Ansicht. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 1 2 1 1)_ Lösung: **5**. Typische Fehler: 6 (wuerfel-verdeckt), 4 (riss-verwechselt).
+- `06` AFB I · _Kommunizieren_ · Du schaust von oben auf den Würfelbau. / Kreuze die passende Ansicht an. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 1 1 / 2 1 0)_
+  - ☐ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☑ C _(Bild: risse)_
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau von oben wie ein Vogel auf den Würfelbau. *Beispiel:* Du siehst jeden Turm als ein Kästchen. *Lösungsschritt:* Vorne ist in der Ansicht unten.
 
-- `01` AFB I · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Kreuze den Grundriss an. _(Bild: koerper)_
-  - ☐ A
-  - ☑ B
-  - ☐ C
-- `02` AFB I · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Kreuze den Aufriss an. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+- `01` AFB I · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Kreuze den Grundriss an. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 0 2 1 / 2 1 0)_
+  - ☐ A _(Bild: risse)_
+  - ☑ B _(Bild: risse)_
+  - ☐ C _(Bild: risse)_
+- `02` AFB I · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Kreuze den Aufriss an. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 2 1 / 2 0 0)_
+  - ☐ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☑ C _(Bild: risse)_
 - `03` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. / Gib an, wie viele Würfel es insgesamt sind. _(Bild: risse)_ Lösung: **8**. Typische Fehler: 4 (wuerfel-verdeckt), 7 (wuerfel-verdeckt).
-- `04` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Gib an, wie viele Kästchen der Grundriss des Quaders hat. _(Bild: koerper)_ Lösung: **15**. Typische Fehler: 10 (riss-verwechselt), 6 (riss-verwechselt), 8 (riss-verwechselt).
+- `04` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Gib an, wie viele Kästchen der Grundriss des Quaders hat. _(Bild: Quader im Schrägbild, Maße 5 cm, 3 cm, 2 cm)_ Lösung: **15**. Typische Fehler: 10 (riss-verwechselt), 6 (riss-verwechselt), 8 (riss-verwechselt).
 - `05` AFB II · _Kommunizieren_ · Ein Würfelbau hat diesen Aufriss. / Kreuze den Würfelbau an. _(Bild: risse)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 1 1 / 1 0 3)_
+  - ☐ B _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 0 0 1 / 2 3 1)_
+  - ☑ C _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 1 0 / 0 1 1)_
 - `06` AFB III · _Kommunizieren (+ Modellieren)_ · Ein Quader ist 2 cm lang, 2 cm tief und 4 cm hoch. / Kreuze die Form seines Grundrisses an.
   - ☑ Quadrat
   - ☐ Rechteck
@@ -2307,19 +2307,19 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau von oben wie ein Vogel auf den 
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich links neben den Würfelbau. *Lösungsschritt:* Was vorne ist, siehst du jetzt rechts.
 
-- `01` AFB I · _Kommunizieren_ · Der Seitenriss ist die Ansicht von links. Kreuze den Seitenriss an. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+- `01` AFB I · _Kommunizieren_ · Der Seitenriss ist die Ansicht von links. Kreuze den Seitenriss an. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 0 2 1 / 1 1 0 / 0 1 0)_
+  - ☐ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☑ C _(Bild: risse)_
 - `02` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Gib an, wie viele Kästchen der Aufriss hat. _(Bild: risse)_ Lösung: **5**. Typische Fehler: 7 (wuerfel-verdeckt).
 - `03` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Aufriss an. _(Bild: risse)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
-- `04` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. Kreuze den Seitenriss des Quaders an. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☑ C _(Bild: risse)_
+- `04` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. Kreuze den Seitenriss des Quaders an. _(Bild: Quader im Schrägbild, Maße 4 cm, 2 cm, 3 cm)_
+  - ☐ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☑ C _(Bild: risse)_
 - `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Zwei verschiedene Würfelbauten haben auch verschiedene Aufrisse.“ Beurteile die Aussage.
   - ☐ Stimmt. Jeder Würfelbau hat seinen eigenen Aufriss.
   - ☐ Stimmt. Der Aufriss zeigt jeden Würfel.
@@ -2331,24 +2331,24 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich links neben den Würfelbau
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf jedem Kästchen des Grundrisses steht ein Turm. Wie hoch darf er nach dem Aufriss höchstens sein?
 
 - `01` AFB I · _Kommunizieren_ · Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er höchstens hat. _(Bild: risse)_ Lösung: **6**. Typische Fehler: 5 (wuerfel-verdeckt), 4 (wuerfel-verdeckt).
-- `02` AFB II · _Kommunizieren_ · Du gehst um den Würfelbau herum und schaust von hinten. Kreuze die passende Ansicht an. _(Bild: koerper)_
-  - ☐ A
-  - ☑ B
-  - ☐ C
+- `02` AFB II · _Kommunizieren_ · Du gehst um den Würfelbau herum und schaust von hinten. Kreuze die passende Ansicht an. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 0 2 / 1 2 1)_
+  - ☐ A _(Bild: risse)_
+  - ☑ B _(Bild: risse)_
+  - ☐ C _(Bild: risse)_
 - `03` AFB II · _Kommunizieren_ · Ein Würfelbau hat diesen Aufriss. Kreuze alle Würfelbauten an, die passen. _(Bild: risse)_
-  - ☑ A
-  - ☑ B
-  - ☐ C
-  - ☑ D
+  - ☑ A _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 3 1 / 1 0 1)_
+  - ☑ B _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 3 1 / 1 1 0)_
+  - ☐ C _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 0 1 0 / 2 3 1)_
+  - ☑ D _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 3 1 / 1 0 0)_
 - `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Haben zwei Quader denselben Grundriss, dann haben sie auch denselben Aufriss.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Die Quader können verschieden hoch sein.
   - ☐ Stimmt. Der Grundriss bestimmt den ganzen Quader.
   - ☐ Stimmt. Grundriss und Aufriss sind immer gleich.
 - `05` AFB II · _Kommunizieren_ · Der Aufriss eines Quaders hat 3 mal 4 Kästchen. Sein Grundriss hat 3 mal 2 Kästchen. Gib an, wie viele Kästchen sein Seitenriss hat. Lösung: **8**. Typische Fehler: 12 (riss-verwechselt), 6 (riss-verwechselt).
 - `06` AFB III · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Kreuze den Seitenriss an. _(Bild: risse)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: risse)_
+  - ☐ B _(Bild: risse)_
+  - ☑ C _(Bild: risse)_
 
 ## 6.3.3-A2: Ich kann Ansichten von Würfelbauten und Quadern im Gitter zeichnen.
 
@@ -2360,45 +2360,45 @@ Baut auf: 6.3.3-A1 (Ich kann Ansichten von vorne, von oben und von der Seite ein
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du schaust von vorne. *Beispiel:* Färbe für jeden Würfel, den du siehst, ein Kästchen. *Lösungsschritt:* Würfel hintereinander siehst du nur einmal.
 
-- `01` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2) (3|3)**
-- `02` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Quaders von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (5|1) (1|2) (2|2) (3|2) (4|2) (5|2)**
-- `03` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von oben. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1)**
-- `04` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (1|2) (3|2) (3|3)**
-- `05` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Quaders von oben. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (1|2) (2|2) (3|2) (4|2) (1|3) (2|3) (3|3) (4|3)**
-- `06` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Würfels von vorne. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (1|3) (2|3) (3|3)**
+- `01` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von vorne. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 2 1 3)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2) (3|3)**
+- `02` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Quaders von vorne. _(Bild: Quader im Schrägbild, Maße 5 cm, 3 cm, 2 cm)_ _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (5|1) (1|2) (2|2) (3|2) (4|2) (5|2)**
+- `03` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von oben. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 1 2 1 1)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1)**
+- `04` AFB I · _Kommunizieren_ · Der Würfelbau steht in einer Reihe. / Färbe die Ansicht von vorne. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 2 1 3 1)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (1|2) (3|2) (3|3)**
+- `05` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Quaders von oben. _(Bild: Quader im Schrägbild, Maße 4 cm, 3 cm, 2 cm)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (1|2) (2|2) (3|2) (4|2) (1|3) (2|3) (3|3) (4|3)**
+- `06` AFB I · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe die Ansicht des Würfels von vorne. _(Bild: Würfel im Schrägbild, Maße 3 cm)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (1|3) (2|3) (3|3)**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du schaust von vorne. *Beispiel:* Färbe für jeden Würfel, den du siehst, ein Kästchen. *Lösungsschritt:* Würfel hintereinander siehst du nur einmal.
 
-- `01` AFB I · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Färbe den Aufriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (3|2) (3|3)**
-- `02` AFB I · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Färbe den Grundriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2)**
-- `03` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe den Grundriss des Quaders. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (5|1) (1|2) (2|2) (3|2) (4|2) (5|2) (1|3) (2|3) (3|3) (4|3) (5|3)**
+- `01` AFB I · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Färbe den Aufriss. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 0 3 / 1 1 1)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (3|2) (3|3)**
+- `02` AFB I · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Färbe den Grundriss. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 1 2 / 1 0 1)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2)**
+- `03` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. / Färbe den Grundriss des Quaders. _(Bild: Quader im Schrägbild, Maße 5 cm, 3 cm, 2 cm)_ _(Gitterzeichnen, Kästchen färben; Karogitter 8 × 6)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (5|1) (1|2) (2|2) (3|2) (4|2) (5|2) (1|3) (2|3) (3|3) (4|3) (5|3)**
 - `04` AFB I · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. / Färbe den Aufriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (3|2)**
-- `05` AFB II · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Färbe den Aufriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (2|2)**
-- `06` AFB III · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Färbe den Grundriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(2|1) (2|2) (1|3) (2|3) (3|3)**
+- `05` AFB II · _Kommunizieren_ · Der Aufriss ist die Ansicht von vorne. / Färbe den Aufriss. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 2 0 1 / 0 1 1 1)_ _(Gitterzeichnen, Kästchen färben; Karogitter 7 × 5)_ Lösung: **(1|1) (2|1) (3|1) (4|1) (2|2)**
+- `06` AFB III · _Kommunizieren_ · Der Grundriss ist die Ansicht von oben. / Färbe den Grundriss. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 0 1 0 / 0 1 0 / 2 1 1)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(2|1) (2|2) (1|3) (2|3) (3|3)**
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dich links neben den Würfelbau. *Lösungsschritt:* Was vorne ist, liegt im Seitenriss rechts.
 
-- `01` AFB I · _Kommunizieren_ · Der Seitenriss ist die Ansicht von links. Färbe den Seitenriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (3|2)**
+- `01` AFB I · _Kommunizieren_ · Der Seitenriss ist die Ansicht von links. Färbe den Seitenriss. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 0 2 1 / 1 1 0 / 0 1 0)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (3|2)**
 - `02` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Seitenriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (3|2) (1|3)**
-- `03` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. Färbe den Seitenriss des Quaders. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 7)_ Lösung: **(1|1) (2|1) (1|2) (2|2) (1|3) (2|3) (1|4) (2|4)**
+- `03` AFB II · _Kommunizieren_ · Ein Kästchen steht für einen Zentimeter. Färbe den Seitenriss des Quaders. _(Bild: Quader im Schrägbild, Maße 5 cm, 2 cm, 4 cm)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 7)_ Lösung: **(1|1) (2|1) (1|2) (2|2) (1|3) (2|3) (1|4) (2|4)**
 - `04` AFB I · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Aufriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (2|2) (3|2) (2|3)**
-- `05` AFB II · _Kommunizieren_ · Färbe den Grundriss des Würfelbaus. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(2|1) (2|2) (1|3) (2|3) (3|3)**
-- `06` AFB III · _Kommunizieren_ · Färbe den Seitenriss des Würfelbaus. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (3|3)**
+- `05` AFB II · _Kommunizieren_ · Färbe den Grundriss des Würfelbaus. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 0 2 0 / 0 1 0 / 2 3 2)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(2|1) (2|2) (1|3) (2|3) (3|3)**
+- `06` AFB III · _Kommunizieren_ · Färbe den Seitenriss des Würfelbaus. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 0 3 0 0 / 1 2 1 1 / 0 0 0 2)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2) (3|3)**
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Von hinten sind links und rechts vertauscht.
 
-- `01` AFB I · _Kommunizieren_ · Du gehst um den Würfelbau herum. Färbe die Ansicht von hinten. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
+- `01` AFB I · _Kommunizieren_ · Du gehst um den Würfelbau herum. Färbe die Ansicht von hinten. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 1 0 / 1 1 3)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
 - `02` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe die Ansicht von rechts. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
 - `03` AFB II · _Kommunizieren_ · Im Grundriss steht, wie viele Würfel übereinander stehen. Färbe den Seitenriss. _(Bild: risse)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (2|2) (3|2) (2|3)**
 - `04` AFB III · _Kommunizieren_ · Der Aufriss eines Quaders hat 5 mal 2 Kästchen. Sein Grundriss hat 5 mal 3 Kästchen. Färbe seinen Seitenriss. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 5)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (2|2) (3|2)**
-- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Auf den Turm hinten in Spalte 1 von links kommt noch ein Würfel. Färbe den neuen Aufriss. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 7)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3) (1|4)**
-- `06` AFB III · _Kommunizieren_ · Färbe den Seitenriss des Würfelbaus. _(Bild: koerper)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Auf den Turm hinten in Spalte 1 von links kommt noch ein Würfel. Färbe den neuen Aufriss. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 1 1 / 3 0 0)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 7)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3) (1|4)**
+- `06` AFB III · _Kommunizieren_ · Färbe den Seitenriss des Würfelbaus. _(Bild: Würfelbau aus 9 Würfeln, Türme von vorne nach hinten: 0 1 1 0 / 0 0 1 1 / 3 1 1 0)_ _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6)_ Lösung: **(1|1) (2|1) (3|1) (1|2) (1|3)**
 
 ## 6.3.4-P1: Ich kann Prismen erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.
 
@@ -2413,9 +2413,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten ist je ein Dreieck. 
 - `01` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 2 (runde-koerper-zaehlen), 3 (verdeckt-nicht-gezaehlt), 6 (wuerfel-kein-quader).
 - `02` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt), 9 (ecken-kanten-verwechselt).
 - `03` AFB I · _Kommunizieren (+ Modellieren)_ · Ein Körper hat zwei Dreiecke und drei Rechtecke als Flächen. / Kreuze ihn an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
 - `04` AFB I · _Kommunizieren_ · Du schaust von vorne auf das Zelt. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
   - ☐ Rechteck
   - ☐ Kreis
@@ -2437,10 +2437,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben und unten ist je ein Fünfeck. *
   - ☑ sechsseitiges Prisma
   - ☐ dreiseitiges Prisma
 - `04` AFB I · _Kommunizieren_ · Ein Prisma hat zwei gleiche Grundflächen. / Kreuze alle Prismen an.
-  - ☑ A
-  - ☐ B
-  - ☑ C
-  - ☐ D
+  - ☑ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
 - `05` AFB II · _Kommunizieren_ · Die Grundfläche eines Prismas ist ein Fünfeck. / Gib an, wie viele Kanten das Prisma hat. Lösung: **15**. Typische Fehler: 10 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt).
 - `06` AFB III · _Kommunizieren_ · Ein Prisma hat ein Achteck als Grundfläche. / Gib an, wie viele Ecken es hat. Lösung: **16**. Typische Fehler: 8 (verdeckt-nicht-gezaehlt), 24 (ecken-kanten-verwechselt), 10 (ecken-kanten-verwechselt).
 
@@ -2452,10 +2452,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle getrennt: Kanten oben, Kanten 
 - `02` AFB II · _Kommunizieren_ · Ein Prisma hat 24 Kanten. Gib an, wie viele Ecken seine Grundfläche hat. Lösung: **8**. Typische Fehler: 16 (ecken-kanten-verwechselt), 12 (kanten-teilweise).
 - `03` AFB II · _Kommunizieren_ · Die Mantelfläche eines Prismas besteht aus 5 Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat. Lösung: **7**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 6 (verdeckt-nicht-gezaehlt), 10 (ecken-kanten-verwechselt).
 - `04` AFB I · _Kommunizieren_ · Kreuze das Prisma mit 10 Ecken an.
-  - ☐ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
+  - ☑ D _(Bild: koerper)_
 - `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Die Mantelfläche eines Prismas besteht aus Dreiecken.“ Beurteile die Aussage.
   - ☐ Stimmt. Die Seitenflächen laufen oben spitz zu.
   - ☑ Stimmt nicht. Die Mantelfläche besteht aus Rechtecken.
@@ -2478,11 +2478,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde zuerst heraus, wie viele Ecken 
   - ☐ Stimmt nicht. Ein Prisma hat höchstens 18 Kanten.
   - ☐ Stimmt nicht. Die Anzahl der Kanten ist immer gerade.
 - `05` AFB II · _Kommunizieren_ · Kreuze alle Körper an, die Prismen sind.
-  - ☑ A
-  - ☑ B
-  - ☑ C
-  - ☐ D
-  - ☐ E
+  - ☑ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
+  - ☐ E _(Bild: koerper)_
 - `06` AFB III · _Kommunizieren_ · Ein sechsseitiges Prisma steht auf einer Grundfläche. Du schaust von vorne darauf. Kreuze die Form der Ansicht an. _(Bild: koerper)_
   - ☑ Rechteck
   - ☐ Dreieck
@@ -2502,26 +2502,26 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreiecke haben drei Ecken. *Beispiel:
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zelt. / Zähle die Dreiecke im Netz. _(Bild: netz)_ Lösung: **2**. Typische Fehler: 3 (netz-nur-gezaehlt), 5 (netz-nur-gezaehlt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zelt. / Zähle die Rechtecke im Netz. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 2 (netz-nur-gezaehlt), 5 (netz-nur-gezaehlt).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt ein Zelt. / Kreuze das Netz an, aus dem du es falten kannst. _(Bild: koerper)_
-  - ☑ A
-  - ☐ B
-  - ☐ C
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
 - `04` AFB I · _Argumentieren_ · Du willst aus dem Netz ein Zelt falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☑ Nein. / Beide Dreiecke liegen an derselben Seite.
   - ☐ Ja. / Die Dreiecke liegen oben und unten am Streifen.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Zelt. / Zähle alle Flächen im Netz. _(Bild: netz)_ Lösung: **5**. Typische Fehler: 3 (netz-nur-gezaehlt), 2 (netz-nur-gezaehlt), 6 (wuerfel-kein-quader).
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz. / Kreuze den passenden Körper an. _(Bild: netz)_
-  - ☑ A
-  - ☐ B
-  - ☐ C
+  - ☑ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Prisma hat zwei Fünfecke als Grundflächen. *Beispiel:* Rundherum liegen fünf Rechtecke. *Lösungsschritt:* Die Fünfecke liegen oben und unten am Streifen.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines fünfseitigen Prismas an.
-  - ☐ A
-  - ☑ B
-  - ☐ C
+  - ☐ A _(Bild: netz)_
+  - ☑ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
 - `02` AFB I · _Argumentieren_ · Du willst das Netz zu einem Prisma falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☑ Nein, es lässt sich nicht falten.
   - ☐ Ja, es lässt sich falten.
@@ -2532,9 +2532,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Prisma hat zwei Fünfecke als Gru
   - ☐ dreiseitiges Prisma
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz eines Prismas hat 6 Rechtecke. / Gib an, wie viele Flächen das Prisma hat. Lösung: **8**. Typische Fehler: 6 (netz-nur-gezaehlt), 7 (netz-nur-gezaehlt).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt ein sechsseitiges Prisma. / Kreuze sein Netz an. _(Bild: koerper)_
-  - ☐ A
-  - ☑ B
-  - ☐ C
+  - ☐ A _(Bild: netz)_
+  - ☑ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -2546,20 +2546,20 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundflächen gehören nicht zur 
   - ☐ Nein, die Grundflächen haben nicht so viele Ecken, wie es Rechtecke gibt.
   - ☑ Ja, es lässt sich falten.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines sechsseitigen Prismas an.
-  - ☑ A
-  - ☐ B
-  - ☐ C
-  - ☐ D
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein fünfseitiges Prisma hat Grundkanten von 4 cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist. Lösung: **20 cm**. Typische Fehler: 4 (kanten-teilweise), 28 (netz-nur-gezaehlt), 40 (kanten-teilweise).
 - `05` AFB II · _Argumentieren_ · Ali sagt: „Im Netz eines Prismas dürfen beide Grundflächen an derselben Seite der Mantelfläche liegen.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Dann gibt es beim Falten zwei Deckel und keinen Boden.
   - ☐ Stimmt. Es kommt nur auf die Anzahl der Flächen an.
   - ☐ Stimmt. Beim Falten kann man sie umklappen.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein dreiseitiges Prisma falten lässt.
-  - ☐ A
-  - ☐ B
-  - ☑ C
-  - ☑ D
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☑ D _(Bild: netz)_
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -2570,11 +2570,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei Flächen sind Grundflächen. Die
   - ☐ Nein, es lässt sich nicht falten.
   - ☑ Ja, es lässt sich falten.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein fünfseitiges Prisma falten lässt.
-  - ☑ A
-  - ☐ B
-  - ☐ C
-  - ☐ D
-  - ☑ E
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
+  - ☑ E _(Bild: netz)_
 - `04` AFB III · _Argumentieren (+ Modellieren)_ · Elif sagt: „Das Netz eines sechsseitigen Prismas hat 12 Flächen.“ Beurteile die Aussage.
   - ☐ Stimmt. Die Grundflächen zählen doppelt.
   - ☑ Stimmt nicht. Es sind 6 Rechtecke und 2 Grundflächen, also 8.
@@ -2596,9 +2596,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unten ist ein Quadrat. *Beispiel:* Ru
 - `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt), 1 (verdeckt-nicht-gezaehlt).
 - `03` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 6 (verdeckt-nicht-gezaehlt), 5 (ecken-kanten-verwechselt).
 - `04` AFB I · _Kommunizieren (+ Modellieren)_ · Ein Körper hat ein Quadrat und vier Dreiecke als Flächen. / Kreuze ihn an.
-  - ☑ A
-  - ☐ B
-  - ☐ C
+  - ☑ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
 - `05` AFB II · _Kommunizieren_ · Du schaust von oben auf das Turmdach. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
   - ☐ Kreis
   - ☐ Dreieck
@@ -2619,10 +2619,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *B
   - ☐ vierseitige Pyramide
   - ☑ sechsseitige Pyramide
 - `04` AFB I · _Kommunizieren_ · Eine Pyramide hat eine Grundfläche und Dreiecke bis zur Spitze. / Kreuze alle Pyramiden an.
-  - ☐ A
-  - ☑ B
-  - ☐ C
-  - ☑ D
+  - ☐ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
+  - ☑ D _(Bild: koerper)_
 - `05` AFB II · _Kommunizieren_ · Die Grundfläche einer Pyramide ist ein Fünfeck. / Gib an, wie viele Kanten die Pyramide hat. Lösung: **10**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 15 (prisma-pyramide), 6 (ecken-kanten-verwechselt).
 - `06` AFB III · _Kommunizieren_ · Eine Pyramide hat ein Fünfeck als Grundfläche. / Gib an, wie viele Flächen sie hat. Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 7 (prisma-pyramide), 10 (ecken-kanten-verwechselt).
 
@@ -2633,10 +2633,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Seitendreieck liegt an einer Ka
 - `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 10 Seitendreiecke. Gib an, wie viele Ecken sie hat. Lösung: **11**. Typische Fehler: 10 (verdeckt-nicht-gezaehlt), 20 (prisma-pyramide), 30 (ecken-kanten-verwechselt).
 - `02` AFB II · _Kommunizieren_ · Eine Pyramide hat 18 Kanten. Gib an, wie viele Ecken ihre Grundfläche hat. Lösung: **9**. Typische Fehler: 6 (prisma-pyramide), 17 (kanten-teilweise), 10 (ecken-kanten-verwechselt).
 - `03` AFB II · _Kommunizieren_ · Kreuze die Pyramide mit 6 Ecken an.
-  - ☐ A
-  - ☑ B
-  - ☐ C
-  - ☐ D
+  - ☐ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
 - `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Eine Pyramide hat immer gleich viele Ecken wie Flächen.“ Beurteile die Aussage.
   - ☐ Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.
   - ☐ Stimmt nicht. Nur die vierseitige Pyramide hat das.
@@ -2659,11 +2659,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine der Flächen ist die Grundfläch
   - ☐ Stimmt. Eine Pyramide kann jede Anzahl von Kanten haben.
   - ☐ Stimmt. Die Anzahl der Kanten ist immer ungerade.
 - `04` AFB III · _Kommunizieren_ · Kreuze alle Körper an, die gleich viele Ecken wie Flächen haben.
-  - ☐ A
-  - ☑ B
-  - ☐ C
-  - ☐ D
-  - ☑ E
+  - ☐ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
+  - ☑ E _(Bild: koerper)_
 - `05` AFB II · _Kommunizieren (+ Modellieren)_ · Ein Prisma und eine Pyramide haben dieselbe Grundfläche. Zusammen haben sie 30 Kanten. Gib an, wie viele Ecken die Grundfläche hat. Lösung: **6**. Typische Fehler: 15 (kanten-teilweise), 10 (prisma-pyramide).
 - `06` AFB III · _Kommunizieren_ · Du schaust von vorne auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an. _(Bild: koerper)_
   - ☐ Kreis
@@ -2684,16 +2684,16 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreiecke haben drei Ecken. *Beispiel:
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Turmdach. / Zähle die Dreiecke im Netz. _(Bild: netz)_ Lösung: **4**. Typische Fehler: 5 (netz-nur-gezaehlt), 1 (netz-nur-gezaehlt), 3 (netz-nur-gezaehlt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einem Turmdach. / Zähle alle Flächen im Netz. _(Bild: netz)_ Lösung: **5**. Typische Fehler: 4 (netz-nur-gezaehlt), 1 (netz-nur-gezaehlt), 6 (wuerfel-kein-quader).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt ein Turmdach. / Kreuze das Netz an, aus dem du es falten kannst. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 - `04` AFB I · _Argumentieren_ · Du willst aus dem Netz ein Turmdach falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☐ Ja. / An jeder Seite des Quadrats liegt ein Dreieck.
   - ☑ Nein. / Ein Dreieck fehlt.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz. / Kreuze den passenden Körper an. _(Bild: netz)_
-  - ☐ A
-  - ☑ B
-  - ☐ C
+  - ☐ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
 - `06` AFB I · _Modellieren_ · Im Netz fehlt ein Dreieck. / Zähle die Dreiecke im Netz. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 4 (netz-nur-gezaehlt), 5 (netz-nur-gezaehlt).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
@@ -2701,9 +2701,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreiecke haben drei Ecken. *Beispiel:
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *Beispiel:* An jeder Seite liegt genau ein Dreieck. *Lösungsschritt:* Zähle die Dreiecke: Es müssen fünf sein.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz einer fünfseitigen Pyramide an.
-  - ☐ A
-  - ☑ B
-  - ☐ C
+  - ☐ A _(Bild: netz)_
+  - ☑ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
 - `02` AFB I · _Argumentieren_ · Du willst das Netz zu einer Pyramide falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☑ Nein, es lässt sich nicht falten.
   - ☐ Ja, es lässt sich falten.
@@ -2714,9 +2714,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *B
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einer Pyramide. / Gib an, wie viele Flächen das Netz hat. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (netz-nur-gezaehlt), 7 (prisma-pyramide), 1 (netz-nur-gezaehlt).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide hat 8 Dreiecke um die Grundfläche. / Gib an, wie viele Ecken die Pyramide hat. Lösung: **9**. Typische Fehler: 8 (verdeckt-nicht-gezaehlt), 16 (prisma-pyramide), 10 (netz-ecken-gezaehlt).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt eine sechsseitige Pyramide. / Kreuze ihr Netz an. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -2728,20 +2728,20 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* An jeder Seite der Grundfläche muss 
   - ☐ Ja, es lässt sich falten.
   - ☑ Nein, es gibt ein Seitendreieck zu viel.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz einer fünfseitigen Pyramide an.
-  - ☐ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☑ D _(Bild: netz)_
 - `04` AFB I · _Argumentieren_ · Mia sagt: „Im Netz einer Pyramide müssen alle Seitendreiecke an der Grundfläche liegen.“ Beurteile die Aussage.
   - ☐ Stimmt. Die Grundfläche hält alle Dreiecke fest.
   - ☑ Stimmt nicht. Ein Seitendreieck kann auch an einem anderen Seitendreieck hängen.
   - ☐ Stimmt. Sonst kann man das Netz nicht falten.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer vierseitigen Pyramide. Im Netz hängen die 5 Flächen an 4 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **4**. Typische Fehler: 8 (kanten-teilweise), 5 (kanten-teilweise).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine vierseitige Pyramide falten lässt.
-  - ☑ A
-  - ☐ B
-  - ☑ C
-  - ☐ D
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -2753,11 +2753,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du klappst zwei Seiten
   - ☑ Nein, die Seitendreiecke sind zu flach und treffen sich nicht in einer Spitze.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide besteht aus 9 Flächen. Gib an, wie viele Kanten die Pyramide hat. Lösung: **16**. Typische Fehler: 18 (kanten-teilweise), 9 (ecken-kanten-verwechselt), 24 (prisma-pyramide).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine sechsseitige Pyramide falten lässt.
-  - ☐ A
-  - ☑ B
-  - ☑ C
-  - ☐ D
-  - ☐ E
+  - ☐ A _(Bild: netz)_
+  - ☑ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
+  - ☐ E _(Bild: netz)_
 - `04` AFB III · _Argumentieren (+ Modellieren)_ · Ben sagt: „Das Netz einer Pyramide hat immer eine ungerade Anzahl von Flächen.“ Beurteile die Aussage.
   - ☐ Stimmt. Zur Grundfläche kommen immer gerade viele Dreiecke.
   - ☐ Stimmt. Eine Pyramide hat immer 5 Flächen.
@@ -2776,17 +2776,17 @@ Baut auf: 5.7.1-R1 (Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises e
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir den Gegenstand vor dir vor. *Beispiel:* Läuft er oben spitz zu? Hat er oben und unten einen Kreis? Ist er ganz rund? *Lösungsschritt:* Spitz: Kegel. Zwei Kreise: Zylinder. Ganz rund: Kugel.
 
 - `01` AFB I · _Kommunizieren_ · Denk an eine Trommel. / Kreuze die passende Form an.
-  - ☐ A
-  - ☑ B
-  - ☐ C
+  - ☐ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
 - `02` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper. / Kreuze seinen Namen an. _(Bild: koerper)_
   - ☐ Kugel
   - ☐ Kegel
   - ☑ Zylinder
 - `03` AFB I · _Kommunizieren_ · Kreuze den Kegel an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
 - `04` AFB I · _Kommunizieren_ · Das Bild zeigt einen Zylinder. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 2 (runde-koerper-zaehlen), 1 (runde-koerper-zaehlen), 6 (wuerfel-kein-quader).
 - `05` AFB II · _Kommunizieren_ · Du schaust von oben auf den Zylinder. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
   - ☑ Kreis
@@ -2833,16 +2833,16 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Von oben siehst du den Kreis unten, d
   - ☑ Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.
   - ☐ Stimmt. Der Kegel hat eine Ecke und zwei Kanten.
 - `03` AFB II · _Kommunizieren_ · Kreuze den Körper mit genau zwei Flächen an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
-  - ☐ D
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
 - `04` AFB I · _Kommunizieren_ · Kreuze alle Körper an, die rollen können.
-  - ☑ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
-  - ☑ E
+  - ☑ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☐ C _(Bild: koerper)_
+  - ☑ D _(Bild: koerper)_
+  - ☑ E _(Bild: koerper)_
 - `05` AFB II · _Kommunizieren_ · Eine Kerze hat die Form eines Zylinders. Gib an, wie viele Kanten sie hat. Lösung: **2**. Typische Fehler: 1 (runde-koerper-zaehlen), 3 (ecken-kanten-verwechselt).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina sagt: „Ein Zylinder hat eine Spitze.“ Beurteile die Aussage.
   - ☐ Stimmt. Jeder runde Körper hat eine Spitze.
@@ -2896,9 +2896,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Kreise sind rund. *Beispiel:* Einer l
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einer Dose. / Zähle die Kreise im Netz. _(Bild: netz)_ Lösung: **2**. Typische Fehler: 1 (netz-nur-gezaehlt), 3 (netz-nur-gezaehlt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt eine Dose. / Kreuze das Netz an, aus dem du sie falten kannst. _(Bild: koerper)_
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz. / Kreuze den passenden Körper an. _(Bild: netz)_
   - ☐ Kugel
   - ☑ Kegel
@@ -2908,19 +2908,19 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Kreise sind rund. *Beispiel:* Einer l
   - ☐ Nein. / Beide Kreise liegen oben.
   - ☑ Ja. / Oben und unten liegt ein Kreis.
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Manche Körper können rollen. / Kreuze sie alle an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
-  - ☑ D
+  - ☐ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
+  - ☑ D _(Bild: koerper)_
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Kegel hat eine gekrümmte Fläche und einen Kreis. *Beispiel:* Die gekrümmte Fläche sieht im Netz aus wie ein Stück Kuchen. *Lösungsschritt:* Der Kreis muss so groß sein, dass er unten passt.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines Kegels an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 - `02` AFB I · _Argumentieren_ · Du willst das Netz zu einem Kegel falten. / Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☐ Nein. / Der Kreis passt nicht.
   - ☑ Ja, es lässt sich falten.
@@ -2931,10 +2931,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Kegel hat eine gekrümmte Fläche
   - ☑ Pyramide
   - ☐ Kegel
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper mit gekrümmter Fläche an.
-  - ☑ A
-  - ☐ B
-  - ☑ C
-  - ☐ D
+  - ☑ A _(Bild: koerper)_
+  - ☐ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Aus dem Netz entsteht ein Körper. / Kreuze seinen Namen an. _(Bild: netz)_
   - ☐ Zylinder
   - ☐ Kugel
@@ -2950,20 +2950,20 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zum Kreisausschnitt kommt die Grundfl
   - ☐ Ja, es lässt sich falten.
   - ☐ Nein, beide Kreise liegen an derselben Seite.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze das Netz eines Zylinders an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
-  - ☐ D
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
 - `04` AFB I · _Argumentieren_ · Ali sagt: „Das Netz eines Kegels besteht aus einem Dreieck und einem Kreis.“ Beurteile die Aussage.
   - ☐ Stimmt. Von vorne sieht der Kegel aus wie ein Dreieck.
   - ☑ Stimmt nicht. Die gekrümmte Fläche ist im Netz ein Kreisausschnitt.
   - ☐ Stimmt. Das Dreieck wird zur Spitze gefaltet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper an, die keine Ecke haben.
-  - ☑ A
-  - ☑ B
-  - ☑ C
-  - ☐ D
-  - ☐ E
+  - ☑ A _(Bild: koerper)_
+  - ☑ B _(Bild: koerper)_
+  - ☑ C _(Bild: koerper)_
+  - ☐ D _(Bild: koerper)_
+  - ☐ E _(Bild: koerper)_
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Aus dem Netz entsteht ein Körper. Kreuze seinen Namen an. _(Bild: netz)_
   - ☑ Kegel
   - ☐ Zylinder
@@ -2979,11 +2979,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gebogene Rand des Kreisausschnitt
   - ☑ Nein, der Kreis ist zu groß für den Rand des Kreisausschnitts.
   - ☐ Ja, es lässt sich falten.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein Zylinder falten lässt.
-  - ☐ A
-  - ☑ B
-  - ☑ C
-  - ☐ D
-  - ☐ E
+  - ☐ A _(Bild: netz)_
+  - ☑ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
+  - ☐ E _(Bild: netz)_
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Körper an, die genau eine Kante haben.
   - ☐ Zylinder
   - ☐ Würfel
@@ -2996,11 +2996,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gebogene Rand des Kreisausschnitt
   - ☑ Stimmt. Das Rechteck wird einmal um den Kreis herumgerollt.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gib an, wie viele Flächen ein Zylinder, ein Kegel und eine Kugel zusammen haben. Lösung: **6**. Typische Fehler: 3 (runde-koerper-zaehlen), 5 (runde-koerper-zaehlen), 4 (runde-koerper-zaehlen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen ein Körper mit Spitze entsteht.
-  - ☐ A
-  - ☑ B
-  - ☑ C
-  - ☐ D
-  - ☐ E
+  - ☐ A _(Bild: netz)_
+  - ☑ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
+  - ☐ E _(Bild: netz)_
 
 ## 6.3.8-K1: Ich kann Würfelnetze im Kopf falten und gegenüberliegende Flächen finden.
 
@@ -3037,14 +3037,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gegenüberliegende Flächen berühren
   - ☑ A
 - `02` AFB I · _Probleme lösen_ · Das Würfelnetz gehört zu einem Spielwürfel. / Gegenüber ergibt immer zusammen 7. / Gib die Zahl für die Fläche A an. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 1 (gegenueber-benachbart), 4 (gegenueber-benachbart).
 - `03` AFB II · _Probleme lösen (+ Modellieren)_ · Nur ein Netz ist ein richtiger Spielwürfel. / Gegenüber ergibt dort immer 7. / Kreuze es an.
-  - ☑ A
-  - ☐ B
-  - ☐ C
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
 - `04` AFB I · _Probleme lösen (+ Modellieren)_ · Das Bild zeigt einen Spielwürfel. / Gib an, wie viele Augen auf der Fläche unten sind. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 6 (gegenueber-benachbart), 5 (gegenueber-benachbart), 4 (gegenueber-benachbart).
 - `05` AFB II · _Probleme lösen_ · Kreuze das Würfelnetz an.
-  - ☐ A
-  - ☐ B
-  - ☑ C
+  - ☐ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
 - `06` AFB III · _Probleme lösen_ · Das Würfelnetz wird gefaltet. / D ist der Boden. / Kreuze eine Nachbarfläche von D an. _(Bild: netz)_
   - ☑ C
   - ☐ E
@@ -3060,11 +3060,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei Treppen-Netzen hilft es, Quadrat 
   - ☐ E
 - `02` AFB II · _Probleme lösen_ · Das Bild zeigt einen Spielwürfel. Gib an, wie viele Augen auf den drei Flächen zusammen sind, die man nicht sieht. _(Bild: koerper)_ Lösung: **14**. Typische Fehler: 7 (verdeckt-nicht-gezaehlt), 21 (verdeckt-nicht-gezaehlt).
 - `03` AFB II · _Probleme lösen (+ Modellieren)_ · Kreuze alle Netze an, die zu einem richtigen Spielwürfel gehören. Gegenüber muss immer zusammen 7 ergeben.
-  - ☑ A
-  - ☐ B
-  - ☐ C
-  - ☑ D
-  - ☐ E
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☐ C _(Bild: netz)_
+  - ☑ D _(Bild: netz)_
+  - ☐ E _(Bild: netz)_
 - `04` AFB I · _Probleme lösen_ · Das Würfelnetz gehört zu einem Spielwürfel. Gegenüber ergibt immer zusammen 7. Gib die Zahl an, die auf die Fläche A gehört. _(Bild: netz)_ Lösung: **3**. Typische Fehler: 4 (gegenueber-benachbart), 6 (gegenueber-benachbart), 2 (gegenueber-benachbart).
 - `05` AFB II · _Probleme lösen_ · Das Würfelnetz wird gefaltet. Kreuze alle Flächen an, die an E stoßen. _(Bild: netz)_
   - ☑ C
@@ -3092,11 +3092,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde für A und für B die gegenübe
 - `04` AFB III · _Probleme lösen (+ Modellieren)_ · Es gibt verschiedene Würfelnetze. Netze, die durch Drehen oder Umklappen gleich werden, zählen nur einmal. Gib an, wie viele verschiedene Würfelnetze es gibt. Lösung: **11**. Typische Fehler: 6 (netz-nur-gezaehlt), 8 (netz-nur-gezaehlt), 12 (netz-nur-gezaehlt).
 - `05` AFB II · _Probleme lösen (+ Kommunizieren)_ · Im Würfelnetz fehlen drei Quadrate. Färbe drei Kästchen so, dass ein Würfelnetz entsteht. _(Gitterzeichnen, Kästchen färben; Karogitter 6 × 6; 3 gefärbte Kästchen (1|2) (2|2) (2|3))_ Lösung: **(1|1) (2|4) (3|3)**
 - `06` AFB III · _Probleme lösen (+ Modellieren)_ · Kreuze alle Netze an, die zu einem richtigen Spielwürfel gehören.
-  - ☑ A
-  - ☐ B
-  - ☑ C
-  - ☐ D
-  - ☐ E
+  - ☑ A _(Bild: netz)_
+  - ☐ B _(Bild: netz)_
+  - ☑ C _(Bild: netz)_
+  - ☐ D _(Bild: netz)_
+  - ☐ E _(Bild: netz)_
 
 ## 6.3.8-K2: Ich kann mir Würfelbauten vorstellen: Würfel zählen, Ansichten finden und kippen.
 
@@ -3108,22 +3108,22 @@ Baut auf: 6.3.3-A1 (Ich kann Ansichten von vorne, von oben und von der Seite ein
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel. *Beispiel:* Zähle Turm für Turm von unten nach oben. *Lösungsschritt:* Addiere die Höhen aller Türme.
 
-- `01` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: koerper)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt), 4 (wuerfel-verdeckt).
-- `02` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: koerper)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt), 5 (wuerfel-verdeckt).
+- `01` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 3 2 1)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt), 4 (wuerfel-verdeckt).
+- `02` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 0 1 1 / 3 2 0)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt), 5 (wuerfel-verdeckt).
 - `03` AFB I · _Probleme lösen_ · Jede Zahl ist die Höhe eines Turms. / Zähle alle Würfel. _(Bild: risse)_ Lösung: **5**. Typische Fehler: 4 (wuerfel-verdeckt).
-- `04` AFB I · _Probleme lösen_ · Der Würfelbau soll ein Quader werden. / Der Quader ist 3 Würfel lang und 2 Würfel hoch. / Gib an, wie viele Würfel noch fehlen. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 6 (wuerfel-verdeckt), 5 (wuerfel-verdeckt), 2 (wuerfel-verdeckt).
-- `05` AFB II · _Probleme lösen_ · Du schaust von vorne auf den Würfelbau. / Zähle die sichtbaren Quadrate. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 3 (riss-verwechselt), 6 (wuerfel-verdeckt).
-- `06` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: koerper)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt).
+- `04` AFB I · _Probleme lösen_ · Der Würfelbau soll ein Quader werden. / Der Quader ist 3 Würfel lang und 2 Würfel hoch. / Gib an, wie viele Würfel noch fehlen. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_ Lösung: **1**. Typische Fehler: 6 (wuerfel-verdeckt), 5 (wuerfel-verdeckt), 2 (wuerfel-verdeckt).
+- `05` AFB II · _Probleme lösen_ · Du schaust von vorne auf den Würfelbau. / Zähle die sichtbaren Quadrate. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 1 2 2)_ Lösung: **5**. Typische Fehler: 3 (riss-verwechselt), 6 (wuerfel-verdeckt).
+- `06` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Zähle alle Würfel. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 0 0 0 1 / 1 1 2 2)_ Lösung: **7**. Typische Fehler: 6 (wuerfel-verdeckt).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Würfel steht auf dem Boden oder auf einem anderen Würfel. *Beispiel:* Zähle Turm für Turm von unten nach oben. *Lösungsschritt:* Addiere die Höhen aller Türme.
 
-- `01` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Manche Würfel sind verdeckt. / Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 6 (wuerfel-verdeckt), 7 (wuerfel-verdeckt).
+- `01` AFB I · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Manche Würfel sind verdeckt. / Gib an, wie viele Würfel es sind. _(Bild: Würfelbau aus 8 Würfeln, Türme von vorne nach hinten: 0 2 1 / 2 3 0)_ Lösung: **8**. Typische Fehler: 6 (wuerfel-verdeckt), 7 (wuerfel-verdeckt).
 - `02` AFB I · _Probleme lösen_ · Im Grundriss steht die Höhe jedes Turms. / Gib an, wie viele Würfel der Bau hat. _(Bild: risse)_ Lösung: **10**. Typische Fehler: 5 (wuerfel-verdeckt), 9 (wuerfel-verdeckt).
 - `03` AFB II · _Probleme lösen_ · Der Würfelbau soll ein Quader werden. / Er soll 3 Würfel lang, 2 tief und 2 hoch sein. / Gib an, wie viele Würfel noch fehlen. _(Bild: risse)_ Lösung: **6**. Typische Fehler: 12 (wuerfel-verdeckt), 5 (wuerfel-verdeckt).
-- `04` AFB I · _Probleme lösen_ · Du schaust von links auf den Würfelbau. / Gib an, wie viele Quadrate du siehst. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 3 (riss-verwechselt), 5 (wuerfel-verdeckt).
-- `05` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 11 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
+- `04` AFB I · _Probleme lösen_ · Du schaust von links auf den Würfelbau. / Gib an, wie viele Quadrate du siehst. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 0 1 1 / 1 1 1)_ Lösung: **2**. Typische Fehler: 3 (riss-verwechselt), 5 (wuerfel-verdeckt).
+- `05` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Gib an, wie viele Würfel es sind. _(Bild: Würfelbau aus 12 Würfeln, Türme von vorne nach hinten: 0 1 1 1 / 2 2 2 0 / 3 0 0 0)_ Lösung: **12**. Typische Fehler: 11 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Mia sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“ / Beurteile die Aussage.
   - ☑ Stimmt nicht. / Die 8 Würfel können auch in einer Reihe liegen.
   - ☐ Stimmt. / 8 Würfel ergeben 2 · 2 · 2.
@@ -3135,7 +3135,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Kippen nach rechts kommt die lin
 
 - `01` AFB I · _Probleme lösen_ · Du kippst den Spielwürfel einmal nach vorne. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 4 (kippen-richtung), 6 (kippen-richtung), 5 (kippen-richtung), 2 (kippen-richtung).
 - `02` AFB II · _Probleme lösen_ · Du kippst den Spielwürfel zweimal: nach links, dann nach vorne. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **1**. Typische Fehler: 2 (kippen-richtung), 6 (kippen-richtung), 4 (kippen-richtung), 3 (kippen-richtung).
-- `03` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 6 (wuerfel-verdeckt), 9 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
+- `03` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 1 1 1 / 0 2 2 / 0 3 0)_ Lösung: **10**. Typische Fehler: 6 (wuerfel-verdeckt), 9 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
 - `04` AFB I · _Probleme lösen_ · Der Würfelbau soll ein großer Würfel aus 3 · 3 · 3 Würfeln werden. Gib an, wie viele Würfel noch fehlen. _(Bild: risse)_ Lösung: **12**. Typische Fehler: 27 (wuerfel-verdeckt), 15 (wuerfel-verdeckt), 3 (wuerfel-verdeckt).
 - `05` AFB II · _Probleme lösen_ · Du kippst den Spielwürfel zweimal: nach hinten, dann nach vorne. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **3**. Typische Fehler: 4 (kippen-richtung), 6 (kippen-richtung), 1 (kippen-richtung).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Ben sagt: „Kippst du einen Spielwürfel viermal nach vorne, liegt wieder dieselbe Zahl oben.“ Beurteile die Aussage. _(Bild: koerper)_
@@ -3149,9 +3149,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Notiere nach jedem Schritt die Zahlen
 
 - `01` AFB I · _Probleme lösen_ · Du kippst den Spielwürfel dreimal: nach vorne, dann nach hinten, dann nach links. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 5 (kippen-richtung), 1 (kippen-richtung).
 - `02` AFB II · _Probleme lösen (+ Modellieren)_ · Ein Würfelbau hat diesen Grundriss und diesen Aufriss. Gib an, wie viele Würfel er mindestens hat. _(Bild: risse)_ Lösung: **5**. Typische Fehler: 4 (wuerfel-verdeckt), 6 (wuerfel-verdeckt).
-- `03` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind. _(Bild: koerper)_ Lösung: **16**. Typische Fehler: 12 (wuerfel-verdeckt), 15 (wuerfel-verdeckt), 14 (wuerfel-verdeckt).
+- `03` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. Gib an, wie viele Würfel es sind. _(Bild: Würfelbau aus 16 Würfeln, Türme von vorne nach hinten: 1 0 2 0 / 3 3 4 1 / 0 0 0 2)_ Lösung: **16**. Typische Fehler: 12 (wuerfel-verdeckt), 15 (wuerfel-verdeckt), 14 (wuerfel-verdeckt).
 - `04` AFB III · _Probleme lösen_ · Du kippst den Spielwürfel dreimal: nach links, dann nach vorne, dann nach links. Gib an, welche Zahl dann oben liegt. _(Bild: koerper)_ Lösung: **4**. Typische Fehler: 3 (kippen-richtung), 6 (kippen-richtung), 1 (kippen-richtung).
-- `05` AFB II · _Probleme lösen_ · Der Würfelbau soll ein großer Würfel aus 27 kleinen Würfeln werden. Gib an, wie viele Würfel noch fehlen. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 18 (wuerfel-verdeckt), 17 (wuerfel-verdeckt), 11 (wuerfel-verdeckt).
+- `05` AFB II · _Probleme lösen_ · Der Würfelbau soll ein großer Würfel aus 27 kleinen Würfeln werden. Gib an, wie viele Würfel noch fehlen. _(Bild: Würfelbau aus 17 Würfeln, Türme von vorne nach hinten: 1 1 0 / 2 2 2 / 3 3 3)_ Lösung: **10**. Typische Fehler: 18 (wuerfel-verdeckt), 17 (wuerfel-verdeckt), 11 (wuerfel-verdeckt).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Sara sagt: „Ob ich zuerst nach rechts und dann nach vorne kippe oder umgekehrt, ist egal. Oben liegt am Ende dieselbe Zahl.“ Beurteile die Aussage für diesen Spielwürfel. _(Bild: koerper)_
   - ☑ Stimmt nicht. Einmal liegt 2 oben, das andere Mal 6.
   - ☐ Stimmt. Beim Kippen kommt es nicht auf die Reihenfolge an.
@@ -4932,6 +4932,768 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Faktoren, die zusammen ein
   - ☐ (216 + 5,50) : 24
   - ☐ 216 + 5,50 · 24
 
+## 6.6.1-O1: Ich kann den Oberflächeninhalt von Quader und Würfel berechnen.
+
+Grundlage, die F übt: In einer Tabelle die drei Flächenpaare ausrechnen: jede Fläche, mal 2, dann die Summe
+
+Baut auf: 5.8.3-R1 (Ich kann Flächeninhalt und Umfang von Rechtecken und Quadraten berechnen.), 6.3.1-Q2 (Ich kann Netze von Würfel und Quader erkennen, ergänzen und prüfen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Zeile für sich: Länge mal Breite der Fläche. *Beispiel:* Boden mit 5 cm und 4 cm: 5 · 4 = 20. Boden und Deckel zusammen: 2 · 20 = 40. *Lösungsschritt:* Addiere zum Schluss die drei Zahlen der letzten Spalte.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Quader ist 6 cm lang, 3 cm breit und 2 cm hoch. / Berechne den Oberflächeninhalt. / Fülle die Tabelle aus. _(Bild: Quader im Schrägbild, Maße 6 cm, 3 cm, 2 cm)_ 
+
+  | Flächen | Rechnung | eine Fläche in cm² | beide Flächen in cm² |
+  |---|---|---|---|
+  | Boden und Deckel | 6 · 3 | **18** | **36** |
+  | vorne und hinten | 6 · 2 | **12** | **24** |
+  | links und rechts | 3 · 2 | **6** | **12** |
+  | Oberflächeninhalt |  |  | **72** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Bild zeigt das Netz von einem Quader. / Gleiche Farbe heißt: gleich große Flächen. / Berechne den Oberflächeninhalt. / Fülle die Tabelle aus. _(Bild: Netz eines Quaders, Flächenpaare in drei Farben, Maße 5 cm, 3 cm, 2 cm)_ 
+
+  | Flächen | Rechnung | eine Fläche in cm² | beide Flächen in cm² |
+  |---|---|---|---|
+  | Boden und Deckel | 5 · 3 | **15** | **30** |
+  | vorne und hinten | 5 · 2 | **10** | **20** |
+  | links und rechts | 3 · 2 | **6** | **12** |
+  | Oberflächeninhalt |  |  | **62** |
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Würfel hat die Kantenlänge 3 cm. / Berechne den Oberflächeninhalt. / Eine Fläche: 3 cm · 3 cm = ▢ cm² / Alle sechs Flächen: 6 · ▢ cm² = ▢ cm² _(Bild: Würfel im Schrägbild, Maße 3 cm)_ Lösung: f = **9**, g = **9**, o = **54**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Der Quader hat einen quadratischen Boden mit 7 dm Seitenlänge. / Er ist 9 dm hoch. / Berechne den Oberflächeninhalt. / Fülle die Tabelle aus. _(Bild: Quader im Schrägbild, Maße 7 dm, 7 dm, 9 dm)_ 
+
+  | Flächen | Rechnung | eine Fläche in dm² | beide Flächen in dm² |
+  |---|---|---|---|
+  | Boden und Deckel | 7 · 7 | **49** | **98** |
+  | vorne und hinten | 7 · 9 | **63** | **126** |
+  | links und rechts | 7 · 9 | **63** | **126** |
+  | Oberflächeninhalt |  |  | **350** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ben sucht den Oberflächeninhalt von dem Quader. / Kreuze die richtige Rechnung an. _(Bild: Quader im Schrägbild, Maße 4 cm, 3 cm, 2 cm)_
+  - ☐ 4 cm · 3 cm · 2 cm = 24 cm³
+  - ☑ 2 · 12 cm² + 2 · 8 cm² + 2 · 6 cm² = 52 cm²
+  - ☐ 12 cm² + 8 cm² + 6 cm² = 26 cm²
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Spielwürfel aus Holz hat 10 mm lange Kanten. / Berechne den Oberflächeninhalt. / Eine Fläche: 10 mm · 10 mm = ▢ mm² / Alle sechs Flächen: 6 · ▢ mm² = ▢ mm² _(Bild: Würfel im Schrägbild, Maße 10 mm)_ Lösung: f = **100**, g = **100**, o = **600**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne die drei verschiedenen Flächen aus und addiere sie. *Beispiel:* a = 5 cm, b = 4 cm, c = 2 cm: 20 cm² + 10 cm² + 8 cm² = 38 cm². Dann 2 · 38 cm² = 76 cm². *Lösungsschritt:* Nimm die Summe der drei Flächen mal 2.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Kanten sind a = 12 cm, b = 10 cm und c = 4 cm. / Berechne mit der Formel O = 2 · (a · b + a · c + b · c). / Die Klammer: 12 · 10 + 12 · 4 + 10 · 4 = ▢ / O = ▢ cm² _(Bild: Quader im Schrägbild, Maße 12 cm, 10 cm, 4 cm)_ Lösung: s = **208**, o = **416**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne den Oberflächeninhalt von dem Quader. / Wähle auch die passende Einheit. _(Bild: Quader im Schrägbild, Maße 9 dm, 8 dm, 3 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **246 dm²**. Typische Fehler: 123 dm² (oberflaeche-drei-flaechen), 216 dm² (volumen-oberflaeche-verwechselt), 72 dm² (oberflaeche-drei-flaechen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 19 cm. / Berechne den Oberflächeninhalt. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **2166 cm²**. Typische Fehler: 1083 cm² (oberflaeche-drei-flaechen), 361 cm² (oberflaeche-drei-flaechen), 1444 cm² (oberflaeche-drei-flaechen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Container ist 8 m lang, 7 m breit und 3 m hoch. / Berechne seinen Oberflächeninhalt. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **202 m²**. Typische Fehler: 101 m² (oberflaeche-drei-flaechen), 168 m² (volumen-oberflaeche-verwechselt), 56 m² (oberflaeche-drei-flaechen).
+- `05` AFB II · _Argumentieren_ · Jonas rechnet für den Quader: 27 cm² + 27 cm² + 9 cm² = 63 cm². / Jonas sagt: „Das ist der Oberflächeninhalt.“ / Beurteile die Aussage. _(Bild: Quader im Schrägbild, Maße 9 cm, 3 cm, 3 cm)_
+  - ☐ Stimmt.
+  - ☐ Falsch. / Der Oberflächeninhalt ist 81 cm².
+  - ☑ Falsch. / Jede Fläche gibt es zweimal. / Der Oberflächeninhalt ist 126 cm².
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Quader A hat die Kanten 9 cm, 7 cm und 5 cm. / Quader B hat die Kanten 6 cm, 4 cm und 3 cm. / Kreuze den Quader mit dem größeren Oberflächeninhalt an.
+  - ☐ Quader B
+  - ☐ Beide sind gleich groß.
+  - ☑ Quader A
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Fläche kommt zweimal vor: O = 2 · (a · b + a · c + b · c). *Lösungsschritt:* Achte auf die Einheit: Ein Flächeninhalt hat eine Flächeneinheit wie cm².
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 4 cm, b = 5 cm und c = 1,5 cm. / Berechne den Oberflächeninhalt. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **67 cm²**. Typische Fehler: 33,5 cm² (oberflaeche-drei-flaechen), 30 cm² (volumen-oberflaeche-verwechselt), 20 cm² (oberflaeche-drei-flaechen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 50 cm, b = 3 dm und c = 25 cm. / Berechne den Oberflächeninhalt. _(Größe eingeben, Einheit wählen aus cm², dm², cm³, dm³)_ Lösung: **7000 cm²**. Typische Fehler: 2950 cm² (einheiten-nicht-angeglichen), 3500 cm² (oberflaeche-drei-flaechen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 3,5 cm. / Berechne den Oberflächeninhalt. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **73,5 cm²**. Typische Fehler: 36,75 cm² (oberflaeche-drei-flaechen), 12,25 cm² (oberflaeche-drei-flaechen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Raum ist 4,5 m lang, 3 m breit und 2,4 m hoch. / Berechne den Oberflächeninhalt des Raums: Boden, Decke und alle Wände. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **63 m²**. Typische Fehler: 31,5 m² (oberflaeche-drei-flaechen), 32,4 m² (volumen-oberflaeche-verwechselt), 13,5 m² (oberflaeche-drei-flaechen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 4 cm, b = 6 cm und c = 2,5 cm. / Ein Würfel hat die Kantenlänge 3,5 cm. / Kreuze den Körper mit dem größeren Oberflächeninhalt an.
+  - ☐ der Würfel
+  - ☐ Beide sind gleich groß.
+  - ☑ der Quader
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas berechnet den Oberflächeninhalt eines Quaders mit 9 cm, 7 cm und 6 cm so: 9 · 7 · 6 = 378. / Kreuze die Erklärung für den Fehler an.
+  - ☐ Die Rechnung stimmt, es fehlt nur die Einheit.
+  - ☐ Das Ergebnis muss noch verdoppelt werden.
+  - ☑ Das ist die Rechnung für das Volumen. Für den Oberflächeninhalt berechnet man die sechs Flächen und addiert sie.
+  - ☐ Die drei Kanten müssen addiert werden.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Rechnung aus und vergleiche mit dem Oberflächeninhalt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten 8 cm, 5 cm und 4 cm. / Kreuze alle Rechnungen an, die seinen Oberflächeninhalt ergeben.
+  - ☐ 40 cm² + 32 cm² + 20 cm²
+  - ☑ 2 · 8 cm · 5 cm + 2 · 8 cm · 4 cm + 2 · 5 cm · 4 cm
+  - ☑ 92 cm² + 92 cm²
+  - ☐ 2 · 40 cm² + 32 cm² + 20 cm²
+  - ☑ 2 · (40 cm² + 32 cm² + 20 cm²)
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 4 cm. / Jede Kante wird verdoppelt. / Gib an, wie viel mal so groß der Oberflächeninhalt dann ist. Lösung: **4**. Typische Fehler: 2 (volumen-waechst-wie-kante), 8 (volumen-oberflaeche-verwechselt), 6 (volumen-waechst-wie-kante).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 6 cm, b = 4 cm und c = 2 cm. / Nur die Höhe c wird verdoppelt. / Berechne den neuen Oberflächeninhalt. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **128 cm²**. Typische Fehler: 176 cm² (volumen-waechst-wie-kante), 88 cm² (sach-schritt-vergessen), 64 cm² (oberflaeche-drei-flaechen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Bei einem Würfel werden alle Kanten verdoppelt. / Kreuze die Begründung an, warum der Oberflächeninhalt dann viermal so groß ist.
+  - ☐ Es kommen vier neue Würfel dazu.
+  - ☐ Jede Kante ist doppelt so lang, also ist auch jede Fläche doppelt so groß.
+  - ☑ Jede Fläche wird doppelt so lang und doppelt so breit. Also ist jede Fläche viermal so groß.
+  - ☐ Der Würfel hat danach doppelt so viele Flächen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Truhe ist 1,6 m lang, 80 cm breit und 4 dm hoch. / Berechne ihren Oberflächeninhalt in Quadratmetern. _(Größe eingeben, Einheit wählen aus m², dm², cm², m³; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **4,48 m²**. Typische Fehler: 2,24 m² (oberflaeche-drei-flaechen), 44,8 m² (umrechnungszahl), 0,448 m² (umrechnungszahl).
+- `06` AFB III · _Argumentieren_ · Mia rechnet für einen Quader mit 8 cm, 6 cm und 3 cm: 2 · 48 cm² + 2 · 24 cm² + 18 cm² = 162 cm². / Beurteile die Rechnung.
+  - ☑ Falsch. Die Fläche mit 18 cm² gibt es auch zweimal. Richtig sind 180 cm².
+  - ☐ Falsch. Jede Fläche zählt nur einmal. Richtig sind 90 cm².
+  - ☐ Stimmt.
+  - ☐ Falsch. Richtig sind 144 cm².
+
+## 6.6.1-O2: Ich kann Sachaufgaben zum Oberflächeninhalt lösen und eine fehlende Kante bestimmen.
+
+Grundlage, die F übt: Die sechs Flächen einer Schachtel am Netz ausrechnen und addieren
+
+Baut auf: 6.6.1-O1 (Ich kann den Oberflächeninhalt von Quader und Würfel berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Zeile für sich: Länge mal Breite der Fläche. *Beispiel:* Boden mit 5 cm und 4 cm: 5 · 4 = 20. Boden und Deckel zusammen: 2 · 20 = 40. *Lösungsschritt:* Addiere zum Schluss die drei Zahlen der letzten Spalte.
+
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Ben beklebt eine Schachtel ganz mit Papier. / Das Bild zeigt ihr Netz. / Berechne, wie viel Papier nötig ist. / Fülle die Tabelle aus. _(Bild: Netz eines Quaders, Flächenpaare in drei Farben, Maße 5 cm, 3 cm, 2 cm)_ 
+
+  | Flächen | Rechnung | eine Fläche in cm² | beide Flächen in cm² |
+  |---|---|---|---|
+  | Boden und Deckel | 5 · 3 | **15** | **30** |
+  | vorne und hinten | 5 · 2 | **10** | **20** |
+  | links und rechts | 3 · 2 | **6** | **12** |
+  | Oberflächeninhalt |  |  | **62** |
+
+- `02` AFB I · _Modellieren_ · Ida malt einen Holzwürfel außen ganz an. / Der Würfel hat 3 cm lange Kanten. / Berechne die Fläche zum Anmalen. / Eine Fläche: 3 cm · 3 cm = ▢ cm² / Alle sechs Flächen: 6 · ▢ cm² = ▢ cm² _(Bild: Würfel im Schrägbild, Maße 3 cm)_ Lösung: f = **9**, g = **9**, o = **54**
+- `03` AFB I · _Modellieren (+ Kommunizieren)_ · Eine Schatztruhe auf der Burg bekommt außen neues Leder. / Sie ist 7 dm lang, 6 dm breit und 5 dm hoch. / Berechne, wie viel Leder nötig ist. / Fülle die Tabelle aus. _(Bild: Quader im Schrägbild, Maße 7 dm, 6 dm, 5 dm)_ 
+
+  | Flächen | Rechnung | eine Fläche in dm² | beide Flächen in dm² |
+  |---|---|---|---|
+  | Boden und Deckel | 7 · 6 | **42** | **84** |
+  | vorne und hinten | 7 · 5 | **35** | **70** |
+  | links und rechts | 6 · 5 | **30** | **60** |
+  | Oberflächeninhalt |  |  | **214** |
+
+- `04` AFB I · _Modellieren_ · Das Bild zeigt das Netz von einem Umzugskarton. / In jeder Fläche steht ihr Flächeninhalt in dm². / Berechne den Oberflächeninhalt vom Karton. _(Bild: Netz eines Quaders, Flächenpaare in drei Farben, Flächeninhalte in den Flächen: 12, 12, 12, 9, 9, 12 dm²)_ _(Größe eingeben, Einheit dm² steht fest)_ Lösung: **66 dm²**. Typische Fehler: 33 dm² (oberflaeche-drei-flaechen), 45 dm² (oberflaeche-drei-flaechen).
+- `05` AFB II · _Modellieren_ · Ali will die Schachtel ganz mit Papier bekleben. / Ali hat 135 cm² Papier. / Kreuze die richtige Antwort an. _(Bild: Quader im Schrägbild, Maße 6 cm, 5 cm, 3 cm)_
+  - ☐ Das Papier reicht. / Nötig sind nur 63 cm².
+  - ☐ Das Papier reicht nicht. / Nötig sind 126 cm².
+  - ☑ Das Papier reicht. / Nötig sind 126 cm².
+- `06` AFB I · _Modellieren_ · Sara bastelt einen Würfel aus Pappe. / Jede Kante ist 2 cm lang. / Berechne, wie viel Pappe für alle Flächen nötig ist. _(Bild: Netz eines Quaders, Flächenpaare in drei Farben, Maße 2 cm, 2 cm, 2 cm)_ _(Größe eingeben, Einheit cm² steht fest)_ Lösung: **24 cm²**. Typische Fehler: 12 cm² (oberflaeche-drei-flaechen), 4 cm² (oberflaeche-drei-flaechen), 16 cm² (oberflaeche-drei-flaechen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ohne Deckel bleiben fünf Flächen: der Boden und vier Seiten. *Beispiel:* Kiste mit 5 cm, 4 cm, 2 cm: 20 cm² + 2 · 10 cm² + 2 · 8 cm² = 56 cm². *Lösungsschritt:* Rechne den Boden einmal und jede Seitenfläche zweimal.
+
+- `01` AFB I · _Modellieren_ · Der Karton hat keinen Deckel. / Berechne, wie viel Pappe für den Karton nötig ist. / Wähle auch die passende Einheit. _(Bild: Quader im Schrägbild „Karton ohne Deckel“, Maße 6 cm, 4 cm, 3 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **84 cm²**. Typische Fehler: 108 cm² (deckel-mitgerechnet), 54 cm² (oberflaeche-drei-flaechen).
+- `02` AFB I · _Modellieren_ · Ein Aquarium aus Glas ist oben offen. / Es ist 8 dm lang, 5 dm breit und 2 dm hoch. / Berechne, wie viel Glas nötig ist. _(Bild: Quader im Schrägbild „Aquarium, oben offen“, Maße 8 dm, 5 dm, 2 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **92 dm²**. Typische Fehler: 132 dm² (deckel-mitgerechnet), 66 dm² (oberflaeche-drei-flaechen).
+- `03` AFB II · _Modellieren_ · Ein Zimmer ist 6 m lang, 5 m breit und 3 m hoch. / Die vier Wände bekommen neue Farbe. / Berechne die Fläche der vier Wände. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **66 m²**. Typische Fehler: 126 m² (deckel-mitgerechnet), 33 m² (oberflaeche-drei-flaechen), 96 m² (deckel-mitgerechnet).
+- `04` AFB I · _Modellieren_ · Ben packt ein Geschenk in Würfelform ein. / Jede Kante ist 12 cm lang. / Berechne, wie viel Papier mindestens nötig ist. _(Bild: Würfel im Schrägbild, Maße 12 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **864 cm²**. Typische Fehler: 432 cm² (oberflaeche-drei-flaechen), 144 cm² (oberflaeche-drei-flaechen), 576 cm² (oberflaeche-drei-flaechen).
+- `05` AFB II · _Argumentieren (+ Modellieren)_ · Die Kiste hat keinen Deckel. / Finn rechnet für das Holz: 94 dm². / Beurteile das Ergebnis. _(Bild: Quader im Schrägbild „Kiste ohne Deckel“, Maße 5 dm, 4 dm, 3 dm)_
+  - ☑ Falsch. / Der Deckel fehlt. / Nötig sind 74 dm².
+  - ☐ Stimmt.
+  - ☐ Falsch. / Nötig sind 47 dm².
+- `06` AFB III · _Modellieren_ · Lena packt eine Schachtel mit 8 cm, 5 cm und 5 cm ein. / Emre packt einen Würfel mit 6 cm Kantenlänge ein. / Kreuze an, wer mehr Papier braucht.
+  - ☐ Lena
+  - ☐ Beide brauchen gleich viel.
+  - ☑ Emre
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Fläche kommt zweimal vor: O = 2 · (a · b + a · c + b · c). *Lösungsschritt:* Achte auf die Einheit: Ein Flächeninhalt hat eine Flächeneinheit wie cm².
+
+- `01` AFB I · _Modellieren_ · Eine Pralinenschachtel ist 12,5 cm lang, 11 cm breit und 3 cm hoch. / Sie wird ganz in Folie verpackt. / Berechne, wie viel Folie mindestens nötig ist. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **416 cm²**. Typische Fehler: 208 cm² (oberflaeche-drei-flaechen), 412,5 cm² (volumen-oberflaeche-verwechselt), 137,5 cm² (oberflaeche-drei-flaechen).
+- `02` AFB II · _Modellieren_ · **[Heftaufgabe]** Ein Zimmer ist 5 m lang, 3 m breit und 2,5 m hoch. Die vier Wände werden gestrichen. / Ein Eimer Farbe reicht für 5 m². / Rechne im Heft. / Gib an, wie viele Eimer Farbe nötig sind. Lösung: **8 Eimer**. Typische Fehler: 14 (deckel-mitgerechnet), 40 (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · Ein Aquarium ist 9 dm lang, 3 dm breit und 5,5 dm hoch. Es ist oben offen. / Berechne, wie viel Glas nötig ist. _(Größe eingeben, Einheit wählen aus dm², m², dm³, l)_ Lösung: **159 dm²**. Typische Fehler: 186 dm² (deckel-mitgerechnet), 93 dm² (oberflaeche-drei-flaechen).
+- `04` AFB I · _Modellieren_ · Ein Würfel aus Blech hat die Kantenlänge 2,5 dm. / Berechne, wie viel Blech für den Würfel nötig ist. _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **37,5 dm²**. Typische Fehler: 18,75 dm² (oberflaeche-drei-flaechen), 6,25 dm² (oberflaeche-drei-flaechen), 31,25 dm² (deckel-mitgerechnet).
+- `05` AFB II · _Modellieren_ · **[Heftaufgabe]** Ein Schwimmbecken ist 7 m lang, 5 m breit und 2,5 m tief. Boden und Wände bekommen neue Fliesen. / Ein Quadratmeter Fliesen kostet 20 €. / Rechne im Heft. / Gib die Kosten für die Fliesen an. Lösung: **1900 €**. Typische Fehler: 2600 (deckel-mitgerechnet), 95 (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Karton A hat die Kanten 6 dm, 4 dm und 1 dm. Karton B hat die Kanten 4 dm, 3 dm und 2 dm. / Beide Kartons fassen gleich viel. / Kreuze den Karton an, für den weniger Pappe nötig ist.
+  - ☐ Karton A
+  - ☑ Karton B
+  - ☐ Für beide ist gleich viel Pappe nötig.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile durch 6. Dann kennst du eine Fläche. Welche Zahl mal sich selbst ergibt sie?
+
+- `01` AFB I · _Modellieren_ · Ein Würfel hat den Oberflächeninhalt 864 cm². / Bestimme seine Kantenlänge. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **12 cm**. Typische Fehler: 144 cm (sach-schritt-vergessen), 216 cm (oberflaeche-drei-flaechen).
+- `02` AFB II · _Modellieren_ · **[Heftaufgabe]** Ein Quader hat den Oberflächeninhalt 180 cm². Zwei Kanten sind a = 8 cm und b = 6 cm. / Rechne im Heft. / Bestimme die Kante c. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **3 cm**. Typische Fehler: 42 cm (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · Ein Würfel hat den Oberflächeninhalt 486 cm². / Bestimme sein Volumen. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **729 cm³**. Typische Fehler: 81 cm³ (sach-schritt-vergessen), 486 cm³ (volumen-oberflaeche-verwechselt).
+- `04` AFB III · _Probleme lösen (+ Modellieren)_ · **[Heftaufgabe]** Im Heft: Finde alle Quader mit dem Volumen 36 cm³, deren Kantenlängen ganze Zentimeter sind. Quader mit denselben drei Kantenlängen zählen nur einmal. / Anzahl der Quader: ▢ / Kanten des Quaders mit dem kleinsten Oberflächeninhalt: ▢ cm, ▢ cm und ▢ cm Lösung: n = **8**, a = **3**, b = **3**, c = **4**
+- `05` AFB II · _Modellieren_ · Eine Kiste ohne Deckel hat einen quadratischen Boden mit 7 dm Seitenlänge. Für die Kiste wurden 273 dm² Holz gebraucht. / Bestimme die Höhe der Kiste. _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **8 dm**. Typische Fehler: 224 dm (sach-schritt-vergessen), 32 dm (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Zwei gleiche Würfel mit der Kantenlänge 2 cm werden an einer Fläche zusammengeklebt. / Bestimme den Oberflächeninhalt des neuen Körpers. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **40 cm²**. Typische Fehler: 48 cm² (klebeflaeche-mitgezaehlt), 44 cm² (klebeflaeche-mitgezaehlt), 24 cm² (sach-schritt-vergessen).
+
+## 6.6.2-W1: Ich kann das Volumen eines Körpers durch Zählen von Einheitswürfeln bestimmen.
+
+Grundlage, die F übt: Einheitswürfel zählen, wenn jeder Würfel zu sehen ist
+
+Baut auf: 6.3.8-K2 (Ich kann mir Würfelbauten vorstellen: Würfel zählen, Ansichten finden und kippen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Würfel der Reihe nach. *Beispiel:* Zähle zuerst unten. Zähle dann oben. *Lösungsschritt:* Tippe beim Zählen auf jeden Würfel.
+
+- `01` AFB I · _Kommunizieren_ · Der Körper ist aus gleich großen Würfeln gebaut. / Zähle die Würfel. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 2 2 / 0 0 1)_ Lösung: **6**.
+- `02` AFB I · _Kommunizieren_ · Jeder Würfel hat das Volumen 1 cm³. / Zähle die Würfel. / Der Körper hat ▢ Würfel. / Sein Volumen ist ▢ cm³. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 2 2 2 / 1 0 0)_ Lösung: n = **7**, v = **7**
+- `03` AFB I · _Kommunizieren_ · Die Mauer ist aus gleich großen Würfeln gebaut. / Zähle die Würfel. _(Bild: Quader 3 × 1 × 3 mit sichtbaren Einheitswürfeln)_ Lösung: **9**. Typische Fehler: 6 (volumen-kanten-addiert).
+- `04` AFB I · _Kommunizieren_ · Jeder Würfel hat das Volumen 1 cm³. / Gib das Volumen von dem Körper an. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 2 1 1 / 0 0 2)_ _(Größe eingeben, Einheit cm³ steht fest)_ Lösung: **6 cm³**.
+- `05` AFB II · _Kommunizieren_ · Alle Würfel sind gleich groß. / Kreuze den Körper mit dem größten Volumen an.
+  - ☐ A _(Bild: Würfelbau aus 4 Würfeln, Türme von vorne nach hinten: 1 0 / 1 2)_
+  - ☑ B _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 2 / 1 2)_
+  - ☐ C _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 0 1 / 1 1)_
+- `06` AFB I · _Kommunizieren_ · Die Treppe ist aus gleich großen Würfeln gebaut. / Zähle die Würfel. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 1 2 3 4)_ Lösung: **10**.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Manche Würfel siehst du nicht. *Beispiel:* Unter jedem Würfel oben liegt noch ein Würfel. *Lösungsschritt:* Zähle Turm für Turm von unten nach oben.
+
+- `01` AFB I · _Kommunizieren_ · Der Körper ist aus gleich großen Würfeln gebaut. / Zähle alle Würfel. / Zähle auch die verdeckten Würfel mit. _(Bild: Würfelbau aus 8 Würfeln, Türme von vorne nach hinten: 1 2 2 / 2 1 0)_ Lösung: **8**. Typische Fehler: 7 (wuerfel-verdeckt).
+- `02` AFB I · _Kommunizieren_ · Der Quader ist aus gleich großen Würfeln gebaut. / Bestimme die Anzahl der Würfel. _(Bild: Quader 2 × 3 × 3 mit sichtbaren Einheitswürfeln)_ Lösung: **18**. Typische Fehler: 14 (wuerfel-verdeckt), 8 (volumen-kanten-addiert).
+- `03` AFB II · _Kommunizieren_ · Jeder Würfel hat das Volumen 1 cm³. / Bestimme das Volumen von dem Körper. / Wähle auch die passende Einheit. _(Bild: Würfelbau aus 11 Würfeln, Türme von vorne nach hinten: 0 1 0 / 2 2 3 / 0 3 0)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **11 cm³**. Typische Fehler: 10 cm³ (wuerfel-verdeckt).
+- `04` AFB I · _Kommunizieren_ · Der Plan zeigt einen Würfelbau von oben. / Jede Zahl nennt die Anzahl der Würfel übereinander. / Bestimme die Anzahl aller Würfel. / Der Würfelbau hat ▢ Würfel. _(Bild: risse)_ Lösung: n = **11**
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mara zählt bei dem Körper 8 Würfel. / Beurteile das Ergebnis. _(Bild: Würfelbau aus 9 Würfeln, Türme von vorne nach hinten: 1 0 0 / 2 2 3 / 0 0 1)_
+  - ☑ Falsch. / Verdeckte Würfel fehlen. / Es sind 9 Würfel.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Es sind 7 Würfel.
+- `06` AFB III · _Kommunizieren_ · Der Körper wird zu einem Quader aufgefüllt. / Der Quader ist 3 Würfel lang, 2 Würfel breit und 3 Würfel hoch. / Bestimme die Anzahl der fehlenden Würfel. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 0 1 0 / 3 3 3)_ Lösung: **8**. Typische Fehler: 18 (sach-schritt-vergessen), 10 (sach-schritt-vergessen).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Würfel in einer Schicht. *Lösungsschritt:* Nimm die Würfel einer Schicht mal die Anzahl der Schichten.
+
+- `01` AFB I · _Kommunizieren_ · Ein Quader ist aus gleich großen Würfeln gebaut. In einer Schicht liegen 3 Reihen mit je 8 Würfeln. Der Quader hat 5 Schichten. / Bestimme die Anzahl der Würfel. Lösung: **120**. Typische Fehler: 24 (sach-schritt-vergessen), 16 (volumen-kanten-addiert).
+- `02` AFB II · _Kommunizieren_ · Der Quader ist aus Würfeln mit der Kantenlänge 1 cm gebaut. / Bestimme sein Volumen. _(Bild: Quader 4 × 2 × 2 mit sichtbaren Einheitswürfeln)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **16 cm³**. Typische Fehler: 13 cm³ (wuerfel-verdeckt), 40 cm³ (volumen-oberflaeche-verwechselt).
+- `03` AFB II · _Kommunizieren_ · Ein Quader besteht aus 105 gleich großen Würfeln. In der untersten Schicht liegen 35 Würfel. / Bestimme die Anzahl der Schichten. Lösung: **3**. Typische Fehler: 70 (sach-schritt-vergessen).
+- `04` AFB I · _Kommunizieren_ · Jeder Würfel hat die Kantenlänge 3 cm. / Bestimme das Volumen des Körpers. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 3)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **135 cm³**. Typische Fehler: 5 cm³ (sach-schritt-vergessen), 15 cm³ (volumen-waechst-wie-kante), 45 cm³ (volumen-oberflaeche-verwechselt).
+- `05` AFB II · _Kommunizieren_ · Körper A besteht aus 34 Würfeln mit der Kantenlänge 1 cm. Körper B besteht aus 6 Würfeln mit der Kantenlänge 2 cm. / Kreuze den Körper mit dem größeren Volumen an.
+  - ☑ Körper B
+  - ☐ Beide haben dasselbe Volumen.
+  - ☐ Körper A
+- `06` AFB III · _Kommunizieren_ · Eine Schachtel ist innen 4 cm lang, 4 cm breit und 8 cm hoch. Sie wird mit Würfeln der Kantenlänge 2 cm gefüllt. / Bestimme, wie viele Würfel hineinpassen. Lösung: **16**. Typische Fehler: 128 (sach-schritt-vergessen), 64 (volumen-waechst-wie-kante).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Quader hat 8 Ecken.
+
+- `01` AFB I · _Kommunizieren_ · Ein Quader ist aus Würfeln gebaut: 5 Würfel lang, 4 Würfel breit und 3 Würfel hoch. An jeder Ecke des Quaders wird ein Würfel entfernt. / Bestimme die Anzahl der übrigen Würfel. Lösung: **52**. Typische Fehler: 56 (wuerfel-verdeckt), 60 (sach-schritt-vergessen).
+- `02` AFB II · _Kommunizieren_ · Ein Quader ist aus Würfeln gebaut: 5 Würfel lang, 3 Würfel tief und 4 Würfel hoch. Von vorne nach hinten führt ein gerader Tunnel durch den Quader. Er ist einen Würfel breit und einen Würfel hoch. / Bestimme die Anzahl der Würfel des Körpers. Lösung: **57**. Typische Fehler: 59 (wuerfel-verdeckt), 60 (sach-schritt-vergessen).
+- `03` AFB II · _Kommunizieren_ · Ein Quader ist 4 Würfel lang, 3 Würfel breit und 2 Würfel hoch. Alle Würfel sind gleich groß. / Kreuze alle Quader an, die dasselbe Volumen haben.
+  - ☑ 8 · 3 · 1 Würfel
+  - ☐ 6 · 3 · 2 Würfel
+  - ☑ 6 · 2 · 2 Würfel
+  - ☐ 4 · 4 · 2 Würfel
+  - ☑ 12 · 2 · 1 Würfel
+- `04` AFB III · _Kommunizieren_ · Ein Würfel ist aus 4 · 4 · 4 kleinen Würfeln gebaut. Er wird außen ganz angemalt. / Bestimme die Anzahl der kleinen Würfel ohne Farbe. Lösung: **8**. Typische Fehler: 27 (wuerfel-verdeckt), 64 (sach-schritt-vergessen).
+- `05` AFB II · _Kommunizieren_ · Ein Quader aus Würfeln ist 5 Würfel lang, 3 Würfel breit und 2 Würfel hoch. Aus allen Würfeln wird ein neuer Quader gebaut. Seine unterste Schicht hat 5 · 2 Würfel. / Bestimme die Anzahl der Schichten des neuen Quaders. Lösung: **3**. Typische Fehler: 30 (sach-schritt-vergessen), 2 (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Zwei Körper bestehen aus gleich vielen gleich großen Würfeln. Der eine Körper ist höher als der andere. / Ben sagt: „Der höhere Körper hat das größere Volumen.“ / Beurteile die Aussage.
+  - ☑ Falsch. Gleich viele gleich große Würfel haben zusammen immer dasselbe Volumen.
+  - ☐ Falsch. Der breitere Körper hat das größere Volumen.
+  - ☐ Stimmt. Ein höherer Körper nimmt mehr Platz ein.
+  - ☐ Stimmt, aber nur bei Quadern.
+
+## 6.6.2-W2: Ich kann Volumen vergleichen und die Würfel eines Quaders in Schichten zählen.
+
+Grundlage, die F übt: Zwei Würfelbauten vergleichen: Welcher hat mehr Würfel?
+
+Baut auf: 6.6.2-W1 (Ich kann das Volumen eines Körpers durch Zählen von Einheitswürfeln bestimmen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Weniger Würfel heißt: weniger Volumen. *Beispiel:* Ein Körper aus 3 Würfeln hat weniger Volumen als ein Körper aus 5 Würfeln. *Lösungsschritt:* Zähle bei jedem Körper die Würfel.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Alle Würfel sind gleich groß. / Kreuze den Körper mit dem kleinsten Volumen an.
+  - ☐ A _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 0 1 1 / 1 1 1)_
+  - ☐ B _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 1 2 / 1 2 0)_
+  - ☑ C _(Bild: Würfelbau aus 4 Würfeln, Türme von vorne nach hinten: 1 1 / 1 1)_
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Jeder Würfel hat das Volumen 1 cm³. / Kreuze den Körper mit dem Volumen 6 cm³ an.
+  - ☐ A _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 2 2 0 / 0 1 2)_
+  - ☐ B _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 1 0 1 / 1 1 1)_
+  - ☑ C _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 1 1 / 1 1 1)_
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Platte ist aus gleich großen Würfeln gebaut. / Zähle die Würfel. / In einer Reihe liegen ▢ Würfel. / Es gibt ▢ Reihen. / Zusammen sind es ▢ Würfel. _(Bild: Quader 6 × 2 × 1 mit sichtbaren Einheitswürfeln)_ Lösung: a = **6**, b = **2**, n = **12**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Mauer ist aus gleich großen Würfeln gebaut. / Zähle die Würfel. / In einer Reihe liegen ▢ Würfel. / Es liegen ▢ Reihen übereinander. / Zusammen sind es ▢ Würfel. _(Bild: Quader 5 × 1 × 3 mit sichtbaren Einheitswürfeln)_ Lösung: a = **5**, c = **3**, n = **15**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole baut den Körper um. / Kein Würfel kommt dazu und kein Würfel bleibt übrig. / Kreuze an, was für das Volumen gilt. _(Bild: Würfelbau aus 8 Würfeln, Türme von vorne nach hinten: 2 0 1 / 1 2 2)_
+  - ☑ Das Volumen bleibt gleich.
+  - ☐ Das Volumen wird kleiner.
+  - ☐ Das Volumen wird größer.
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Jeder Würfel hat das Volumen 1 cm³. / Gib das Volumen von der Platte an. _(Bild: Quader 5 × 3 × 1 mit sichtbaren Einheitswürfeln)_ _(Größe eingeben, Einheit cm³ steht fest)_ Lösung: **15 cm³**. Typische Fehler: 8 cm³ (volumen-kanten-addiert).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Würfel in einer Schicht. Nimm sie mal die Anzahl der Schichten. *Beispiel:* Eine Schicht mit 4 · 3 = 12 Würfeln und 2 Schichten: 12 · 2 = 24 Würfel. *Lösungsschritt:* Rechne Würfel in einer Reihe mal Reihen mal Schichten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Quader ist aus gleich großen Würfeln gebaut. / Bestimme die Anzahl der Würfel. / Die unterste Schicht: 3 · 2 = ▢ Würfel / Der Quader hat ▢ Schichten. / Zusammen sind es ▢ Würfel. _(Bild: Quader 3 × 2 × 4 mit sichtbaren Einheitswürfeln)_ Lösung: s = **6**, c = **4**, n = **24**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader ist 9 Würfel lang, 6 Würfel breit und 6 Würfel hoch. / Bestimme die Anzahl der Würfel. Lösung: **324**. Typische Fehler: 21 (volumen-kanten-addiert), 288 (volumen-oberflaeche-verwechselt), 54 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Alle Würfel sind gleich groß. / Kreuze den Quader mit dem größten Volumen an.
+  - ☐ A _(Bild: Quader 2 × 2 × 2 mit sichtbaren Einheitswürfeln)_
+  - ☑ B _(Bild: Quader 4 × 2 × 3 mit sichtbaren Einheitswürfeln)_
+  - ☐ C _(Bild: Quader 2 × 3 × 3 mit sichtbaren Einheitswürfeln)_
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Quader ist aus Würfeln mit dem Volumen 1 cm³ gebaut. / Bestimme das Volumen von dem Quader. / Wähle auch die passende Einheit. _(Bild: Quader 5 × 3 × 2 mit sichtbaren Einheitswürfeln, Maße 5 cm, 3 cm, 2 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **30 cm³**. Typische Fehler: 10 cm³ (volumen-kanten-addiert), 15 cm³ (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Quader A ist 3 Würfel lang, 2 Würfel breit und 2 Würfel hoch. / Quader B ist 4 Würfel lang, 3 Würfel breit und 2 Würfel hoch. / Alle Würfel sind gleich groß. / Kreuze an, welcher Quader das größere Volumen hat.
+  - ☑ Quader B
+  - ☐ Beide haben dasselbe Volumen.
+  - ☐ Quader A
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Quader besteht aus 60 gleich großen Würfeln. / Er ist 4 Würfel lang und 5 Würfel breit. / Bestimme die Anzahl der Schichten. Lösung: **3**. Typische Fehler: 40 (sach-schritt-vergessen), 20 (sach-schritt-vergessen).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Würfel mit 1 dm Kantenlänge hat das Volumen 1 dm³. *Lösungsschritt:* Würfel in einer Schicht mal Anzahl der Schichten.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader ist aus Würfeln mit der Kantenlänge 1 dm gebaut. In jeder Schicht liegen 5 · 3 Würfel. Der Quader hat 3 Schichten. / Bestimme das Volumen des Quaders. _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **45 dm³**. Typische Fehler: 15 dm³ (sach-schritt-vergessen), 11 dm³ (volumen-kanten-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Turm besteht aus 8 Würfeln mit der Kantenlänge 2 cm. Ein Quader besteht aus 5 · 4 · 3 Würfeln mit der Kantenlänge 1 cm. / Kreuze den Körper mit dem größeren Volumen an.
+  - ☑ der Turm
+  - ☐ der Quader
+  - ☐ Beide haben dasselbe Volumen.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Kiste ist innen 40 cm lang, 20 cm breit und 25 cm hoch. Sie wird mit Würfeln der Kantenlänge 5 cm gefüllt. / Bestimme, wie viele Würfel hineinpassen. Lösung: **160**. Typische Fehler: 20000 (sach-schritt-vergessen), 4000 (volumen-waechst-wie-kante).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Vier Quader sind aus gleich großen Würfeln gebaut. / Ordne sie nach dem Volumen. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 5 · 2 · 2 Würfel, 5 · 4 · 3 Würfel, 3 · 2 · 2 Würfel, 4 · 3 · 2 Würfel)_ Lösung: **3 · 2 · 2 Würfel, 5 · 2 · 2 Würfel, 4 · 3 · 2 Würfel, 5 · 4 · 3 Würfel**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader wird aus genau 60 gleich großen Würfeln gebaut. / Kreuze die Maße an, die nicht möglich sind.
+  - ☐ 5 · 4 · 3
+  - ☑ 5 · 5 · 2
+  - ☐ 10 · 3 · 2
+  - ☐ 6 · 5 · 2
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Quader aus Würfeln ist 5 Würfel lang, 4 Würfel breit und 2 Würfel hoch. Er wird in jeder Richtung um einen Würfel größer gebaut. / Bestimme, wie viele Würfel dazukommen. Lösung: **50**. Typische Fehler: 90 (sach-schritt-vergessen), 3 (volumen-waechst-wie-kante), 12 (volumen-kanten-addiert).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne die Würfel in einer Schicht. Jede Schicht ist 1 cm hoch.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader besteht aus 140 Würfeln mit der Kantenlänge 1 cm. Er ist 4 cm lang und 5 cm breit. / Bestimme seine Höhe. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **7 cm**. Typische Fehler: 120 cm (sach-schritt-vergessen), 20 cm (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader ist aus Würfeln mit der Kantenlänge 3 cm gebaut. Er ist 5 Würfel lang, 4 Würfel breit und 3 Würfel hoch. / Bestimme sein Volumen. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **1620 cm³**. Typische Fehler: 540 cm³ (volumen-oberflaeche-verwechselt), 180 cm³ (volumen-waechst-wie-kante), 60 cm³ (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 6 cm. / Kreuze alle Rechnungen an, die sein Volumen ergeben.
+  - ☐ 6 · 6 cm · 6 cm
+  - ☑ 216 · 1 cm · 1 cm · 1 cm
+  - ☐ 2 · 3 cm · 3 cm · 3 cm
+  - ☑ 36 cm² · 6 cm
+  - ☑ 8 · 3 cm · 3 cm · 3 cm
+- `04` AFB III · _Probleme lösen_ · Aus genau 16 gleich großen Würfeln werden Quader gebaut. Quader mit denselben drei Kantenlängen zählen nur einmal. / Bestimme die Anzahl der verschiedenen Quader. Lösung: **4**. Typische Fehler: 3 (sach-schritt-vergessen), 5 (teilflaeche-doppelt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader aus Würfeln ist 4 Würfel lang, 2 Würfel breit und 2 Würfel hoch. Er wird zum kleinsten Würfel ergänzt, in den er hineinpasst. / Bestimme, wie viele kleine Würfel dazukommen. Lösung: **48**. Typische Fehler: 64 (sach-schritt-vergessen), 2 (volumen-waechst-wie-kante).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Quader aus Einheitswürfeln wird doppelt so lang, doppelt so breit und doppelt so hoch gebaut. / Kreuze an, wie viel mal so viele Würfel dann nötig sind.
+  - ☐ 4-mal so viele, denn 2 · 2 = 4.
+  - ☐ 6-mal so viele, denn 2 + 2 + 2 = 6.
+  - ☑ 8-mal so viele, denn 2 · 2 · 2 = 8.
+  - ☐ 2-mal so viele, denn jede Kante wird verdoppelt.
+
+## 6.6.3-U1: Ich kann Volumeneinheiten nennen und in die benachbarte Einheit umwandeln.
+
+Grundlage, die F übt: In der Einheitentafel mit drei Spalten je Einheit umwandeln: 2 dm³ = 2000 cm³
+
+Baut auf: 5.8.2-H2 (Ich kann Flächeneinheiten umwandeln.), 6.5.2-S1 (Ich kann Dezimalzahlen mit 10, 100 und 1000 multiplizieren und durch sie dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 dm³ sind 1000 cm³. *Beispiel:* 2 dm³ = 2000 cm³ *Lösungsschritt:* Rechne mal 1000: Hänge drei Nullen an.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 2 dm³ = ▢ cm³ _(Bild: Einheitentafel dm³ | cm³, Spalten H Z E H Z E: · · 2 0 0 0)_ Lösung: a = **2000**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 4 cm³ in die Tafel ein. / Lies dann in mm³ ab.  _(Einheitentafel cm³ | mm³ zum Eintragen; fett = Eingabefeld)_
+
+  | H | Z | E | H | Z | E |
+  |---|---|---|---|---|---|
+  |  |  | **4** | **0** | **0** | **0** |
+
+  Das sind **4000** mm³.
+
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Das Volumen von dem Quader wird gemessen. / Kreuze die passende Einheit an. _(Bild: Quader im Schrägbild, Maße 4 m, 2 m, 2 m)_
+  - ☑ m³
+  - ☐ m
+  - ☐ m²
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 9000 mm³ = ▢ cm³ _(Bild: Einheitentafel cm³ | mm³, Spalten H Z E H Z E: · · 9 0 0 0)_ Lösung: a = **9**
+- `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Jonas wandelt um: 9 dm³ = 900 cm³. / Beurteile das Ergebnis. _(Bild: Einheitentafel dm³ | cm³, Spalten H Z E H Z E: · · 9 0 0 0)_
+  - ☐ Stimmt.
+  - ☐ Falsch. / 9 dm³ = 90 cm³.
+  - ☑ Falsch. / 1 dm³ = 1000 cm³. / Also 9 dm³ = 9000 cm³.
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 9 m³ = ▢ dm³ _(Bild: Einheitentafel m³ | dm³, Spalten H Z E H Z E: · · 9 0 0 0)_ Lösung: a = **9000**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Umrechnungszahl ist 1000: 1 cm³ = 1000 mm³. *Beispiel:* 2 cm³ 500 mm³ = 2000 mm³ + 500 mm³ = 2500 mm³ *Lösungsschritt:* Wandle zuerst die cm³ um. Addiere dann den Rest.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 33 cm³ = ▢ mm³ _(Bild: Einheitentafel cm³ | mm³, Spalten H Z E H Z E: · 3 3 0 0 0)_ Lösung: a = **33000**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 55 000 dm³ = ▢ m³ _(Bild im Tipp: Einheitentafel m³ | dm³, Spalten H Z E H Z E: · 5 5 0 0 0)_ Lösung: a = **55**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 8 m³ 950 dm³ = ▢ dm³ _(Bild: Einheitentafel m³ | dm³, Spalten H Z E H Z E: · · 8 9 5 0)_ Lösung: a = **8950**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 8500 mm³ = ▢ cm³ ▢ mm³ _(Bild: Einheitentafel cm³ | mm³, Spalten H Z E H Z E: · · 8 5 0 0)_ Lösung: a = **8**, b = **500**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Vergleiche die beiden Angaben. / Kreuze das größere Volumen an.
+  - ☐ Beide sind gleich groß.
+  - ☐ 700 dm³
+  - ☑ 7 m³
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · 1 dm³ sind 1000 cm³. / Kreuze die richtige Begründung an.
+  - ☑ Ein Würfel mit 1 dm Kantenlänge ist 10 cm lang, breit und hoch. / Es passen 10 · 10 · 10 Würfel mit 1 cm³ hinein.
+  - ☐ 1 dm sind 10 cm. / Deshalb sind 1 dm³ auch 10 cm³.
+  - ☐ 1 dm² sind 100 cm². / Deshalb kommt bei dm³ immer eine Null dazu.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Einheit wird kleiner, also mal 1000. *Lösungsschritt:* Verschiebe das Komma um drei Stellen nach rechts. Fülle leere Stellen mit Nullen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 2,5 m³ = ▢ dm³ Lösung: a = **2500**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 750 cm³ in Kubikdezimeter um. _(Größe eingeben, Einheit wählen aus dm³, cm³, dm²; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **0,75 dm³**. Typische Fehler: 7,5 dm³ (umrechnungszahl), 75 dm³ (umrechnungszahl), 750 dm³ (umrechnungsrichtung).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 1,8 dm³ in Kubikzentimeter um. _(Größe eingeben, Einheit wählen aus cm³, dm³, cm²; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **1800 cm³**. Typische Fehler: 180 cm³ (umrechnungszahl), 18 cm³ (umrechnungszahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 7 cm³ 5 mm³ = ▢ mm³ Lösung: a = **7005**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Vergleiche die beiden Angaben. / Kreuze das größere Volumen an.
+  - ☐ Beide sind gleich groß.
+  - ☑ 0,8 m³
+  - ☐ 750 dm³
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ordne die Angaben nach der Größe. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 900 cm³, 1300 cm³, 750 cm³, 0,8 dm³)_ Lösung: **750 cm³, 0,8 dm³, 900 cm³, 1300 cm³**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile durch die Umrechnungszahl. Achte auf die Nullen nach dem Komma.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 8 dm³ in Kubikmeter um. _(Größe eingeben, Einheit wählen aus m³, dm³, m², dm²; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **0,008 m³**. Typische Fehler: 0,08 m³ (umrechnungszahl), 0,8 m³ (umrechnungszahl), 8 m³ (umrechnungsrichtung).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Paul wandelt um: 1,8 cm³ = 180 mm³. / Kreuze die Erklärung für den Fehler an.
+  - ☑ Die Umrechnungszahl ist 1000 und nicht 100. Richtig ist 1,8 cm³ = 1800 mm³.
+  - ☐ Die Umrechnungszahl ist 10. Richtig ist 1,8 cm³ = 18 mm³.
+  - ☐ Das Ergebnis stimmt, nur die Einheit ist falsch.
+  - ☐ Es wurde in die falsche Richtung gerechnet. Richtig ist 1,8 cm³ = 1,0.8 mm³.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Angaben nach der Größe. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 3 cm³, 2500 mm³, 3,5 cm³, 9000 mm³, 0,01 dm³)_ Lösung: **2500 mm³, 3 cm³, 3,5 cm³, 9000 mm³, 0,01 dm³**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Bei Längen ist die Umrechnungszahl 10, bei Flächen 100 und bei Volumen 1000. / Kreuze die Begründung an.
+  - ☐ Die Hochzahl gibt an, wie viele Nullen dazukommen: bei cm² zwei Nullen, bei cm³ drei Nullen. Das ist nur eine Abmachung.
+  - ☐ Volumen sind immer größer als Flächen, deshalb braucht man größere Zahlen.
+  - ☐ Bei jeder neuen Größenart wird die Umrechnungszahl mit 100 multipliziert.
+  - ☑ Eine Länge hat eine Richtung, eine Fläche zwei und ein Volumen drei. In jeder Richtung passt die kleinere Einheit 10-mal hinein.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Angaben an, die gleich 4,5 dm³ sind.
+  - ☐ 450 cm³
+  - ☑ 4 dm³ 500 cm³
+  - ☑ 4 500 000 mm³
+  - ☐ 45 000 mm³
+  - ☑ 4500 cm³
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Gefäß hat das Volumen 2 m³. / Bestimme, wie viele Würfel mit der Kantenlänge 1 cm hineinpassen. Lösung: **2000000**. Typische Fehler: 200000 (umrechnungszahl), 2000 (umrechnungszahl).
+
+## 6.6.3-U2: Ich kann Liter und Milliliter umwandeln und Volumen über mehrere Einheiten umrechnen.
+
+Grundlage, die F übt: Liter und Milliliter mit ganzen Zahlen umwandeln: 1 l = 1000 ml
+
+Baut auf: 6.6.3-U1 (Ich kann Volumeneinheiten nennen und in die benachbarte Einheit umwandeln.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 l sind 1000 ml. *Beispiel:* 2 l = 2000 ml *Lösungsschritt:* Rechne mal 1000: Hänge drei Nullen an.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 3 l = ▢ ml _(Bild: Einheitentafel l | ml, Spalten H Z E H Z E: · · 3 0 0 0)_ Lösung: a = **3000**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Würfel fasst genau 1 Liter. / Wandle um. / 12 dm³ = ▢ l _(Bild: Würfel im Schrägbild „1 dm³ = 1 l“, Maße 1 dm)_ Lösung: a = **12**
+- `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Trage 2 l in die Tafel ein. / Lies dann in ml ab.  _(Einheitentafel l | ml zum Eintragen; fett = Eingabefeld)_
+
+  | H | Z | E | H | Z | E |
+  |---|---|---|---|---|---|
+  |  |  | **2** | **0** | **0** | **0** |
+
+  Das sind **2000** ml.
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 8000 ml = ▢ l _(Bild: Einheitentafel l | ml, Spalten H Z E H Z E: · · 8 0 0 0)_ Lösung: a = **8**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · In einem Krug sind 4 l Saft. / Kreuze an, wie viele Milliliter das sind. _(Bild: Einheitentafel l | ml, Spalten H Z E H Z E: · · 4 0 0 0)_
+  - ☐ 400 ml
+  - ☑ 4000 ml
+  - ☐ 40 ml
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Der kleine Würfel fasst genau 1 Milliliter. / Wandle um. / 600 cm³ = ▢ ml _(Bild: Würfel im Schrägbild „1 cm³ = 1 ml“, Maße 1 cm)_ Lösung: a = **600**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1000 ml sind 1 l. *Beispiel:* 2500 ml = 2 l 500 ml *Lösungsschritt:* Die Tausender sind die Liter. Der Rest bleibt in Millilitern stehen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 4050 ml = ▢ l ▢ ml _(Bild: Einheitentafel l | ml, Spalten H Z E H Z E: · · 4 0 5 0)_ Lösung: a = **4**, b = **50**
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / 6 l 800 ml = ▢ ml _(Bild: Einheitentafel l | ml, Spalten H Z E H Z E: · · 6 8 0 0)_ Lösung: a = **6800**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 3 dm³ = ▢ l / 3 l = ▢ ml _(Bild im Tipp: Einheitentafel l | ml, Spalten H Z E H Z E: · · 3 0 0 0)_ Lösung: a = **3**, b = **3000**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wandle um. / Denke daran: 1 dm³ ist 1 Liter. / 4000 cm³ = ▢ l _(Bild: Einheitentafel dm³ | cm³, Spalten H Z E H Z E: · · 4 0 0 0)_ Lösung: a = **4**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Flasche fasst 1 l. / Eine Kanne fasst 150 ml. / Kreuze an, was mehr fasst.
+  - ☑ die Flasche
+  - ☐ die Kanne
+  - ☐ Beide fassen gleich viel.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Glas fasst 250 ml. / In einer Flasche sind 4 l Wasser. / Bestimme, wie viele Gläser voll werden. Lösung: **16**. Typische Fehler: 4000 (sach-schritt-vergessen).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1000 ml sind 1 l. Die Einheit wird größer, also durch 1000. *Lösungsschritt:* Verschiebe das Komma um drei Stellen nach links.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 45 ml in Liter um. _(Größe eingeben, Einheit wählen aus l, ml, hl, dm²; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **0,045 l**. Typische Fehler: 0,45 l (umrechnungszahl), 4,5 l (umrechnungszahl), 45 l (umrechnungsrichtung).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / 0,33 l = ▢ ml Lösung: a = **330**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 25 m³ in Liter um. _(Größe eingeben, Einheit wählen aus l, ml, hl, m³; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **25 000 l**. Typische Fehler: 2500 l (umrechnungszahl), 250 l (umrechnungszahl), 25 l (liter-nicht-dm3).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle um. / 600 l = ▢ hl Lösung: a = **6**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 800 000 mm³ in Kubikdezimeter um. _(Größe eingeben, Einheit wählen aus dm³, cm³, mm³, l; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **0,8 dm³**. Typische Fehler: 800 dm³ (umrechnungszahl), 8 dm³ (umrechnungszahl), 80 dm³ (umrechnungszahl).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ordne die Angaben nach der Größe. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 0,75 l, 450 ml, 650 cm³, 0,5 l)_ Lösung: **450 ml, 0,5 l, 650 cm³, 0,75 l**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 m³ sind 1000 dm³, und 1 dm³ ist 1 Liter.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Wandle 0,35 m³ in Liter um. _(Größe eingeben, Einheit wählen aus l, ml, hl, dm², m³; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **350 l**. Typische Fehler: 35 l (umrechnungszahl), 3,5 l (umrechnungszahl), 0,35 l (liter-nicht-dm3).
+- `02` AFB II · _Argumentieren_ · Sara wandelt um: 4,5 m³ = 450 l. / Beurteile das Ergebnis.
+  - ☐ Falsch. 1 m³ = 10 l. Also 4,5 m³ = 45 l.
+  - ☑ Falsch. 1 m³ = 1000 l. Also 4,5 m³ = 4500 l.
+  - ☐ Stimmt.
+  - ☐ Falsch. 1 m³ = 1 l. Also 4,5 m³ = 4,5 l.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Angaben nach der Größe. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 750 ml, 1800 cm³, 0,01 hl, 0,8 l, 900 cm³)_ Lösung: **750 ml, 0,8 l, 900 cm³, 0,01 hl, 1800 cm³**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Regenfass enthält 3 hl Wasser. Es wird mit einer Gießkanne geleert, die 20 l fasst. / Bestimme, wie oft die Gießkanne gefüllt werden kann. Lösung: **15**. Typische Fehler: 150 (umrechnungszahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Angaben an, die gleich 2,5 l sind.
+  - ☐ 250 cm³
+  - ☐ 0,25 hl
+  - ☑ 2500 cm³
+  - ☑ 2,5 dm³
+  - ☑ 2500 ml
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · 1 m³ sind 1000 Liter. / Kreuze die richtige Begründung an.
+  - ☑ 1 m³ = 1000 dm³, und jeder Kubikdezimeter ist ein Liter.
+  - ☐ 1 m = 100 cm, also passen 100 Liter in einen Kubikmeter.
+  - ☐ Die Vorsilbe Kubik bedeutet immer 1000 Liter.
+  - ☐ 1 m³ = 1000 cm³, und jeder Kubikzentimeter ist ein Liter.
+
+## 6.6.4-V1: Ich kann das Volumen von Quader und Würfel berechnen.
+
+Grundlage, die F übt: Am Quader mit sichtbaren Einheitswürfeln rechnen: Länge mal Breite mal Höhe
+
+Baut auf: 6.6.2-W2 (Ich kann Volumen vergleichen und die Würfel eines Quaders in Schichten zählen.), 6.5.3-M1 (Ich kann eine Dezimalzahl mit einer natürlichen Zahl multiplizieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Länge mal Breite mal Höhe. *Beispiel:* Quader mit 5 cm, 4 cm und 2 cm: 5 cm · 4 cm · 2 cm = 40 cm³. *Lösungsschritt:* Multipliziere zuerst zwei Kanten. Nimm das Ergebnis mal die dritte Kante.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Quader ist aus Würfeln mit 1 cm Kantenlänge gebaut. / Berechne das Volumen von dem Quader. / 3 cm · 2 cm · 4 cm = ▢ cm³ _(Bild: Quader 3 × 2 × 4 mit sichtbaren Einheitswürfeln, Maße 3 cm, 2 cm, 4 cm)_ Lösung: v = **24**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Quader ist 9 dm lang, 5 dm breit und 5 dm hoch. / Berechne das Volumen. _(Bild: Quader im Schrägbild, Maße 9 dm, 5 dm, 5 dm)_ _(Größe eingeben, Einheit dm³ steht fest)_ Lösung: **225 dm³**. Typische Fehler: 19 dm³ (volumen-kanten-addiert), 230 dm³ (volumen-oberflaeche-verwechselt), 45 dm³ (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Würfel hat die Kantenlänge 3 cm. / Berechne das Volumen. / 3 cm · 3 cm · 3 cm = ▢ cm³ _(Bild: Würfel im Schrägbild, Maße 3 cm)_ Lösung: v = **27**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne das Volumen in zwei Schritten. / Boden: 7 m · 5 m = ▢ m² / Volumen: ▢ m² · 5 m = ▢ m³ _(Bild: Quader im Schrägbild, Maße 7 m, 5 m, 5 m)_ Lösung: g = **35**, h = **35**, v = **175**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole sucht das Volumen von dem Quader. / Kreuze die richtige Rechnung an. _(Bild: Quader im Schrägbild, Maße 5 cm, 4 cm, 2 cm)_
+  - ☑ 5 cm · 4 cm · 2 cm = 40 cm³
+  - ☐ 2 · 20 cm² + 2 · 10 cm² + 2 · 8 cm² = 76 cm²
+  - ☐ 5 cm + 4 cm + 2 cm = 11 cm
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Paket ist 8 cm lang, 6 cm breit und 4 cm hoch. / Berechne das Volumen von dem Paket. _(Bild: Quader im Schrägbild, Maße 8 cm, 6 cm, 4 cm)_ _(Größe eingeben, Einheit cm³ steht fest)_ Lösung: **192 cm³**. Typische Fehler: 18 cm³ (volumen-kanten-addiert), 208 cm³ (volumen-oberflaeche-verwechselt), 48 cm³ (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Länge mal Breite mal Höhe. *Beispiel:* Quader mit 5 cm, 4 cm und 2 cm: 5 cm · 4 cm · 2 cm = 40 cm³. *Lösungsschritt:* Multipliziere zuerst zwei Kanten. Nimm das Ergebnis mal die dritte Kante.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne das Volumen von dem Quader. / Wähle auch die passende Einheit. _(Bild: Quader im Schrägbild, Maße 8 cm, 7 cm, 4 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **224 cm³**. Typische Fehler: 19 cm³ (volumen-kanten-addiert), 232 cm³ (volumen-oberflaeche-verwechselt), 56 cm³ (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die Kanten sind a = 19 cm, b = 14 cm und c = 9 cm. / Berechne mit der Formel V = a · b · c. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **2394 cm³**. Typische Fehler: 42 cm³ (volumen-kanten-addiert), 1126 cm³ (volumen-oberflaeche-verwechselt), 266 cm³ (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 8 dm. / Berechne das Volumen. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **512 dm³**. Typische Fehler: 24 dm³ (volumen-kanten-addiert), 64 dm³ (sach-schritt-vergessen), 384 dm³ (volumen-oberflaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne das Volumen von dem Quader. / V = 9 m · 8 m · 2 m = ▢ m³ _(Bild: Quader im Schrägbild, Maße 9 m, 8 m, 2 m)_ Lösung: v = **144**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Quader A hat die Kanten 6 cm, 5 cm und 3 cm. / Quader B hat die Kanten 11 cm, 9 cm und 5 cm. / Kreuze den Quader mit dem größeren Volumen an. _(Bild: Quader im Schrägbild „Quader A“, Maße 6 cm, 5 cm, 3 cm)_
+  - ☐ Beide haben dasselbe Volumen.
+  - ☑ Quader B
+  - ☐ Quader A
+- `06` AFB III · _Argumentieren_ · Ben berechnet das Volumen von dem Quader. / Ben schreibt: 6 cm · 4 cm · 4 cm = 96 cm². / Beurteile das Ergebnis. _(Bild: Quader im Schrägbild, Maße 6 cm, 4 cm, 4 cm)_
+  - ☑ Falsch. / Die Zahl stimmt, aber die Einheit ist falsch. / Richtig sind 96 cm³.
+  - ☐ Falsch. / Richtig sind 128 cm².
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* V = a · b · c. Alle Kanten brauchen dieselbe Einheit. *Lösungsschritt:* Achte auf die Einheit: Ein Volumen hat eine Volumeneinheit wie cm³.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 4,5 cm, b = 8 cm und c = 6 cm. / Berechne das Volumen. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **216 cm³**. Typische Fehler: 18,5 cm³ (volumen-kanten-addiert), 222 cm³ (volumen-oberflaeche-verwechselt), 36 cm³ (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 5 dm, b = 15 cm und c = 4 cm. / Berechne das Volumen. _(Größe eingeben, Einheit wählen aus cm³, dm³, cm², l)_ Lösung: **3000 cm³**. Typische Fehler: 300 cm³ (einheiten-nicht-angeglichen), 69 cm³ (volumen-kanten-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 3,5 cm. / Berechne das Volumen. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **42,875 cm³**. Typische Fehler: 10,5 cm³ (volumen-kanten-addiert), 12,25 cm³ (sach-schritt-vergessen), 73,5 cm³ (volumen-oberflaeche-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Klassenzimmer ist 4,5 m lang, 4 m breit und 2,5 m hoch. / Berechne das Volumen des Raums. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **45 m³**. Typische Fehler: 11 m³ (volumen-kanten-addiert), 78,5 m³ (volumen-oberflaeche-verwechselt), 18 m³ (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten a = 6 cm, b = 3 cm und c = 3,5 cm. / Ein Würfel hat die Kantenlänge 3,5 cm. / Kreuze den Körper mit dem größeren Volumen an.
+  - ☑ der Quader
+  - ☐ der Würfel
+  - ☐ Beide haben dasselbe Volumen.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Noah rechnet für einen Quader mit 6 dm, 35 cm und 12 cm: 6 · 35 · 12 = 2520. Noah schreibt als Ergebnis 2520 cm³. / Kreuze die Erklärung für den Fehler an.
+  - ☐ Die drei Kanten müssen addiert werden.
+  - ☑ Die Kanten haben verschiedene Einheiten. Mit 60 cm statt 6 dm ergibt sich 25 200 cm³.
+  - ☐ Die Rechnung stimmt. Es gibt keinen Fehler.
+  - ☐ Die Einheit ist falsch. Richtig sind 2520 dm³.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alle Kanten in Dezimeter um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Truhe ist 1,5 m lang, 60 cm breit und 3 dm hoch. / Berechne ihr Volumen in Kubikdezimetern. _(Größe eingeben, Einheit wählen aus dm³, m³, cm³, dm²; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **270 dm³**. Typische Fehler: 27 dm³ (umrechnungszahl), 2700 dm³ (umrechnungszahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat die Kanten 6 cm, 2 cm und 2 cm. Alle drei Kanten werden verdoppelt. / Gib an, wie viel mal so groß das Volumen dann ist. Lösung: **8**. Typische Fehler: 2 (volumen-waechst-wie-kante), 6 (volumen-kanten-addiert), 4 (volumen-oberflaeche-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader hat das Volumen 54 cm³. Seine Länge und seine Breite werden verdoppelt, die Höhe bleibt gleich. / Bestimme das neue Volumen. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **216 cm³**. Typische Fehler: 108 cm³ (volumen-waechst-wie-kante), 432 cm³ (volumen-waechst-wie-kante), 54 cm³ (sach-schritt-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Bei einem Würfel wird die Kantenlänge verdreifacht. / Kreuze an, wie sich das Volumen ändert.
+  - ☐ Es wird 3-mal so groß, denn die Kante wird verdreifacht.
+  - ☑ Es wird 27-mal so groß, denn 3 · 3 · 3 = 27.
+  - ☐ Es wird 9-mal so groß, denn 3 + 3 + 3 = 9.
+  - ☐ Es wird 6-mal so groß, denn der Würfel hat 6 Flächen.
+  - ☐ Es wird 9-mal so groß, denn 3 · 3 = 9.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat das Volumen 8 cm³. / Bestimme seine Kantenlänge. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **2 cm**.
+- `06` AFB III · _Argumentieren_ · Ein Würfel hat die Kantenlänge 4 cm. Tom sagt: „Ein Würfel mit dem doppelten Volumen hat die doppelte Kantenlänge.“ / Beurteile die Aussage.
+  - ☐ Stimmt. Mit 8 cm ist das Volumen 128 cm³.
+  - ☑ Falsch. Mit der doppelten Kantenlänge 8 cm ist das Volumen 512 cm³. Das ist 8-mal so viel wie 64 cm³.
+  - ☐ Stimmt, denn beim Würfel sind alle Kanten gleich lang.
+  - ☐ Falsch. Mit der doppelten Kantenlänge ist das Volumen 256 cm³.
+
+## 6.6.4-V2: Ich kann Sachaufgaben zum Volumen lösen und eine fehlende Kante bestimmen.
+
+Grundlage, die F übt: Das Volumen einer Kiste mit ganzen Kantenlängen berechnen
+
+Baut auf: 6.6.4-V1 (Ich kann das Volumen von Quader und Würfel berechnen.), 6.6.3-U2 (Ich kann Liter und Milliliter umwandeln und Volumen über mehrere Einheiten umrechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Länge mal Breite mal Höhe. *Beispiel:* Quader mit 5 cm, 4 cm und 2 cm: 5 cm · 4 cm · 2 cm = 40 cm³. *Lösungsschritt:* Multipliziere zuerst zwei Kanten. Nimm das Ergebnis mal die dritte Kante.
+
+- `01` AFB I · _Modellieren_ · Tom hat eine Schachtel. / Sie ist 7 cm lang, 6 cm breit und 4 cm hoch. / Berechne das Volumen von der Schachtel. _(Bild: Quader im Schrägbild, Maße 7 cm, 6 cm, 4 cm)_ _(Größe eingeben, Einheit cm³ steht fest)_ Lösung: **168 cm³**. Typische Fehler: 17 cm³ (volumen-kanten-addiert), 188 cm³ (volumen-oberflaeche-verwechselt), 42 cm³ (sach-schritt-vergessen).
+- `02` AFB I · _Modellieren_ · Ein Sandkasten wird bis zum Rand mit Sand gefüllt. / Berechne das Volumen von dem Sand. / 9 dm · 7 dm · 1 dm = ▢ dm³ _(Bild: Quader im Schrägbild, Maße 9 dm, 7 dm, 1 dm)_ Lösung: v = **63**
+- `03` AFB I · _Modellieren_ · Auf der Burg steht eine Schatztruhe. / Sie ist 7 dm lang, 4 dm breit und 3 dm hoch. / Berechne das Volumen von der Truhe. _(Bild: Quader im Schrägbild, Maße 7 dm, 4 dm, 3 dm)_ _(Größe eingeben, Einheit dm³ steht fest)_ Lösung: **84 dm³**. Typische Fehler: 14 dm³ (volumen-kanten-addiert), 122 dm³ (volumen-oberflaeche-verwechselt), 28 dm³ (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · Eine Kiste hat die Form von einem Würfel. / Jede Kante ist 4 dm lang. / Berechne das Volumen von der Kiste. / 4 dm · 4 dm · 4 dm = ▢ dm³ _(Bild: Würfel im Schrägbild, Maße 4 dm)_ Lösung: v = **64**
+- `05` AFB II · _Modellieren_ · Lina hat 16 dm³ Sand. / Der Sand soll in die Kiste. / Kreuze die richtige Antwort an. _(Bild: Quader im Schrägbild, Maße 4 dm, 3 dm, 2 dm)_
+  - ☐ Der Sand passt nicht hinein. / Die Kiste fasst nur 24 dm³.
+  - ☑ Der Sand passt hinein. / Die Kiste fasst 24 dm³.
+  - ☐ Der Sand passt nicht hinein. / Die Kiste fasst nur 9 dm³.
+- `06` AFB I · _Modellieren_ · Ein Aquarium hat die Form von einem Quader. / Es ist 6 dm lang, 4 dm breit und 3 dm hoch. / Berechne das Volumen von dem Aquarium. _(Bild: Quader im Schrägbild, Maße 6 dm, 4 dm, 3 dm)_ _(Größe eingeben, Einheit dm³ steht fest)_ Lösung: **72 dm³**. Typische Fehler: 13 dm³ (volumen-kanten-addiert), 108 dm³ (volumen-oberflaeche-verwechselt), 24 dm³ (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Länge mal Breite mal Höhe. *Beispiel:* Quader mit 5 cm, 4 cm und 2 cm: 5 cm · 4 cm · 2 cm = 40 cm³. *Lösungsschritt:* Multipliziere zuerst zwei Kanten. Nimm das Ergebnis mal die dritte Kante.
+
+- `01` AFB I · _Modellieren_ · Das Bild zeigt einen Umzugskarton. / Berechne sein Volumen. / Wähle auch die passende Einheit. _(Bild: Quader im Schrägbild „Umzugskarton“, Maße 9 dm, 8 dm, 8 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **576 dm³**. Typische Fehler: 25 dm³ (volumen-kanten-addiert), 416 dm³ (volumen-oberflaeche-verwechselt), 72 dm³ (sach-schritt-vergessen).
+- `02` AFB I · _Modellieren_ · Ein Schwimmbecken ist 7 m lang, 5 m breit und 1 m tief. / Berechne das Volumen von dem Becken. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **35 m³**. Typische Fehler: 13 m³ (volumen-kanten-addiert), 94 m³ (volumen-oberflaeche-verwechselt).
+- `03` AFB II · _Modellieren_ · Ein Hochbeet ist 8 dm lang, 7 dm breit und 5 dm hoch. / Ein Sack Erde hat das Volumen 5 dm³. / Bestimme, wie viele Säcke das Hochbeet füllen. Lösung: **56 Säcke**. Typische Fehler: 280 (sach-schritt-vergessen).
+- `04` AFB I · _Modellieren_ · Im Turm der Burg liegt ein Zimmer. / Berechne das Volumen von dem Zimmer. / Wähle auch die passende Einheit. _(Bild: Quader im Schrägbild „Turmzimmer“, Maße 9 m, 6 m, 3 m)_ _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **162 m³**. Typische Fehler: 18 m³ (volumen-kanten-addiert), 198 m³ (volumen-oberflaeche-verwechselt), 54 m³ (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren_ · Karton A ist 7 dm lang, 5 dm breit und 3 dm hoch. / Karton B ist 8 dm lang, 5 dm breit und 3 dm hoch. / Kreuze an, in welchen Karton mehr hineinpasst.
+  - ☑ Karton B
+  - ☐ Karton A
+  - ☐ In beide passt gleich viel.
+- `06` AFB III · _Modellieren_ · Das Aquarium ist 5 dm lang, 5 dm breit und 5 dm hoch. / Das Wasser steht 1 dm unter dem Rand. / Berechne das Volumen von dem Wasser. / Wähle auch die passende Einheit. _(Bild: Würfel im Schrägbild „Aquarium“, Maße 5 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **100 dm³**. Typische Fehler: 125 dm³ (sach-schritt-vergessen), 124 dm³ (sach-schritt-vergessen).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne das Volumen in dm³. 1 dm³ ist 1 Liter. *Lösungsschritt:* Multipliziere die drei Kanten in Dezimetern.
+
+- `01` AFB I · _Modellieren_ · Ein Aquarium ist 5 dm lang, 4,5 dm breit und 6 dm hoch. / Berechne, wie viele Liter Wasser hineinpassen. _(Größe eingeben, Einheit wählen aus l, ml, dm³, dm²; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **135 l**. Typische Fehler: 13,5 l (umrechnungszahl), 135 000 l (liter-nicht-dm3), 15,5 l (volumen-kanten-addiert), 159 l (volumen-oberflaeche-verwechselt), 22,5 l (sach-schritt-vergessen).
+- `02` AFB II · _Modellieren_ · **[Heftaufgabe]** Ein Quader hat das Volumen 330 cm³. Zwei Kanten sind a = 11 cm und b = 6 cm. / Rechne im Heft. / Bestimme die Kante c. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **5 cm**. Typische Fehler: 30 cm (sach-schritt-vergessen), 55 cm (sach-schritt-vergessen).
+- `03` AFB II · _Modellieren_ · Eine Saftpackung ist 6 cm lang, 7 cm breit und 25 cm hoch. / Berechne ihr Volumen in Litern. _(Größe eingeben, Einheit wählen aus l, ml, cm³, dm³; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **1,05 l**. Typische Fehler: 10,5 l (umrechnungszahl), 105 l (umrechnungszahl), 1050 l (liter-nicht-dm3).
+- `04` AFB I · _Modellieren_ · Ein Aquarium ist 5 dm lang und 5 dm breit. Es werden 75 l Wasser eingefüllt. / Bestimme die Füllhöhe. _(Größe eingeben, Einheit wählen aus dm, cm, dm², dm³)_ Lösung: **3 dm**. Typische Fehler: 15 dm (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren_ · **[Heftaufgabe]** Ein Schwimmbecken ist 9 m lang, 4 m breit und 2,5 m tief. In jeder Stunde fließen 5 m³ Wasser hinein. / Rechne im Heft. / Gib an, nach wie vielen Stunden das Becken voll ist. Lösung: **18 Stunden**. Typische Fehler: 90 (sach-schritt-vergessen).
+- `06` AFB III · _Modellieren_ · Eine Packung soll genau 2 l fassen. / Kreuze die passenden Maße an.
+  - ☐ 20 cm · 20 cm · 20 cm
+  - ☐ 10 cm · 20 cm · 100 cm
+  - ☑ 8 cm · 10 cm · 25 cm
+  - ☐ 10 cm · 10 cm · 2 cm
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle alle Angaben in Dezimeter und Kubikdezimeter um. Teile dann das Volumen durch Länge mal Breite.
+
+- `01` AFB I · _Modellieren_ · Ein Aquarium fasst 72 l. Es ist 8 dm lang und 20 cm breit. / Bestimme seine Höhe. _(Größe eingeben, Einheit wählen aus dm, cm, dm², dm³)_ Lösung: **4,5 dm**. Typische Fehler: 0,45 dm (einheiten-nicht-angeglichen), 9 dm (sach-schritt-vergessen).
+- `02` AFB II · _Modellieren_ · **[Heftaufgabe]** Ein Schwimmbecken ist 50 m lang, 12 m breit und 2 m tief. / Rechne im Heft. / Bestimme, wie viele Hektoliter Wasser in das Becken passen. _(Größe eingeben, Einheit wählen aus hl, l, m³, dm³; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **12 000 hl**. Typische Fehler: 1200 hl (umrechnungszahl), 120 000 hl (umrechnungszahl), 120 hl (umrechnungszahl).
+- `03` AFB II · _Modellieren_ · Ein Aquarium ist 9 dm lang und 5 dm breit. Es werden 36 l Wasser dazugegossen. / Bestimme in Zentimetern, um wie viel das Wasser steigt. _(Größe eingeben, Einheit wählen aus cm, dm, cm², l; die Einheit ist verlangt, eine gleichwertige Angabe in anderer Einheit ist „fast richtig“)_ Lösung: **8 cm**. Typische Fehler: 80 cm (umrechnungszahl), 36 cm (sach-schritt-vergessen).
+- `04` AFB III · _Modellieren_ · **[Heftaufgabe]** Ein Karton ist innen 20 cm lang, 45 cm breit und 30 cm hoch. Er wird mit Schachteln gefüllt, die 10 cm lang, 15 cm breit und 10 cm hoch sind. Alle Schachteln liegen gleich herum. / Rechne im Heft. / Bestimme, wie viele Schachteln in den Karton passen. Lösung: **18**. Typische Fehler: 8 (volumen-kanten-addiert), 6 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren_ · Ein Wasserbecken ist 4 dm lang und 5 dm breit. Ein Stein wird ganz ins Wasser getaucht. Das Wasser steigt um 5 cm. / Bestimme das Volumen des Steins. _(Größe eingeben, Einheit wählen aus dm³, cm³, dm², m³)_ Lösung: **10 dm³**. Typische Fehler: 100 dm³ (einheiten-nicht-angeglichen), 20 dm³ (sach-schritt-vergessen).
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Ben sagt: „Ein Würfel mit 20 cm Kantenlänge fasst doppelt so viel wie ein Würfel mit 10 cm Kantenlänge.“ / Beurteile die Aussage.
+  - ☐ Stimmt. Er fasst 2 l statt 1 l.
+  - ☑ Falsch. Er fasst 8-mal so viel: 8 l statt 1 l.
+  - ☐ Falsch. Er fasst 4-mal so viel: 4 l statt 1 l.
+  - ☐ Falsch. Er fasst 6-mal so viel: 6 l statt 1 l.
+
+## 6.6.5-Z1: Ich kann das Volumen von Körpern berechnen, die aus Quadern zusammengesetzt sind.
+
+Grundlage, die F übt: Zwei schon getrennt gefärbte Quader einzeln berechnen und die Volumen addieren
+
+Baut auf: 6.6.4-V1 (Ich kann das Volumen von Quader und Würfel berechnen.), 5.8.4-S1 (Ich kann den Flächeninhalt zusammengesetzter Figuren durch Zerlegen oder Ergänzen berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Körper besteht aus zwei Quadern. Rechne jeden Quader einzeln. *Beispiel:* Unten 5 cm · 2 cm · 1 cm = 10 cm³, oben 2 cm · 2 cm · 2 cm = 8 cm³. Zusammen sind es 18 cm³. *Lösungsschritt:* Addiere die beiden Volumen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist in zwei Quader zerlegt. / Berechne das Volumen. / Quader unten: 4 cm · 4 cm · 2 cm = ▢ cm³ / Quader oben: 2 cm · 4 cm · 2 cm = ▢ cm³ / Zusammen: ▢ cm³ _(Bild: Körper aus 2 Quadern (4 × 4 × 2, 2 × 4 × 2), Zerlegung in zwei Farben mit Schnittlinie, Maße 4 cm, 4 cm, 2 cm, 2 cm, 2 cm)_ Lösung: x = **32**, y = **16**, v = **48**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist in zwei Quader zerlegt. / Der Quader unten hat das Volumen 72 cm³. / Der Quader oben hat das Volumen 12 cm³. / Gib das Volumen von dem ganzen Körper an. _(Bild: Körper aus 2 Quadern (8 × 3 × 3, 4 × 3 × 1), Zerlegung in zwei Farben mit Schnittlinie, Maße 8 cm, 3 cm, 3 cm, 4 cm, 1 cm)_ _(Größe eingeben, Einheit cm³ steht fest)_ Lösung: **84 cm³**. Typische Fehler: 72 cm³ (sach-schritt-vergessen), 60 cm³ (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist in zwei Quader zerlegt. / Berechne das Volumen. / Quader unten: 7 dm · 2 dm · 2 dm = ▢ dm³ / Quader oben: 4 dm · 2 dm · 3 dm = ▢ dm³ / Zusammen: ▢ dm³ _(Bild: Körper aus 2 Quadern (7 × 2 × 2, 4 × 2 × 3), Zerlegung in zwei Farben mit Schnittlinie, Maße 7 dm, 2 dm, 2 dm, 4 dm, 3 dm)_ Lösung: x = **28**, y = **24**, v = **52**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist in zwei Quader zerlegt. / Berechne das Volumen von dem ganzen Körper. _(Bild: Körper aus 2 Quadern (4 × 3 × 1, 2 × 3 × 1), Zerlegung in zwei Farben mit Schnittlinie, Maße 4 cm, 3 cm, 1 cm, 2 cm, 1 cm)_ _(Größe eingeben, Einheit cm³ steht fest)_ Lösung: **18 cm³**. Typische Fehler: 12 cm³ (sach-schritt-vergessen), 6 cm³ (sach-schritt-vergessen), 24 cm³ (teilflaeche-doppelt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ida hat die beiden Quader schon berechnet. / Unten sind es 48 cm³, oben 18 cm³. / Kreuze die richtige Rechnung für den ganzen Körper an. _(Bild: Körper aus 2 Quadern (8 × 3 × 2, 2 × 3 × 3), Zerlegung in zwei Farben mit Schnittlinie, Maße 8 cm, 3 cm, 2 cm, 2 cm, 3 cm)_
+  - ☐ 48 cm³ − 18 cm³ = 30 cm³
+  - ☐ 2 · 48 cm³ = 96 cm³
+  - ☑ 48 cm³ + 18 cm³ = 66 cm³
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Auf der Burg steht ein Podest aus Stein. / Es ist in zwei Quader zerlegt. / Berechne das Volumen. / Quader unten: 5 m · 3 m · 2 m = ▢ m³ / Quader oben: 3 m · 3 m · 2 m = ▢ m³ / Zusammen: ▢ m³ _(Bild: Körper aus 2 Quadern (5 × 3 × 2, 3 × 3 × 2), Zerlegung in zwei Farben mit Schnittlinie, Maße 5 m, 3 m, 2 m, 3 m, 2 m)_ Lösung: x = **30**, y = **18**, v = **48**
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Körper besteht aus zwei Quadern. Rechne jeden Quader einzeln. *Beispiel:* Unten 5 cm · 2 cm · 1 cm = 10 cm³, oben 2 cm · 2 cm · 2 cm = 8 cm³. Zusammen sind es 18 cm³. *Lösungsschritt:* Addiere die beiden Volumen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist in zwei Quader zerlegt. / Berechne das Volumen von dem ganzen Körper. / Wähle auch die passende Einheit. _(Bild: Körper aus 2 Quadern (11 × 4 × 2, 9 × 4 × 6), Zerlegung in zwei Farben mit Schnittlinie, Maße 11 cm, 4 cm, 2 cm, 9 cm, 6 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **304 cm³**. Typische Fehler: 88 cm³ (sach-schritt-vergessen), 216 cm³ (sach-schritt-vergessen), 352 cm³ (teilflaeche-doppelt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist in zwei Quader zerlegt. / Berechne das Volumen. / Quader unten: 8 dm · 2 dm · 3 dm = ▢ dm³ / Quader oben: 4 dm · 2 dm · 3 dm = ▢ dm³ / Zusammen: ▢ dm³ _(Bild: Körper aus 2 Quadern (8 × 2 × 3, 4 × 2 × 3), Zerlegung in zwei Farben mit Schnittlinie, Maße 8 dm, 2 dm, 3 dm, 4 dm, 3 dm)_ Lösung: x = **48**, y = **24**, v = **72**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader ist 6 cm lang, 4 cm breit und 4 cm hoch. / Auf dem Quader steht ein Würfel mit 2 cm Kantenlänge. / Berechne das Volumen von dem ganzen Körper. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **104 cm³**. Typische Fehler: 96 cm³ (sach-schritt-vergessen), 8 cm³ (sach-schritt-vergessen), 144 cm³ (teilflaeche-doppelt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Mauer der Burg hat eine Stufe. / Sie ist in zwei Quader zerlegt. / Berechne das Volumen von der Mauer. / Wähle auch die passende Einheit. _(Bild: Körper aus 2 Quadern (4 × 2 × 2, 2 × 2 × 3), Zerlegung in zwei Farben mit Schnittlinie, Maße 4 m, 2 m, 2 m, 2 m, 3 m)_ _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **28 m³**. Typische Fehler: 16 m³ (sach-schritt-vergessen), 12 m³ (sach-schritt-vergessen), 40 m³ (teilflaeche-doppelt).
+- `05` AFB II · _Argumentieren_ · Ali rechnet nur den Quader unten aus. / Ali sagt: „Der Körper hat das Volumen 63 cm³.“ / Beurteile die Aussage. _(Bild: Körper aus 2 Quadern (7 × 3 × 3, 5 × 3 × 5), Zerlegung in zwei Farben mit Schnittlinie, Maße 7 cm, 3 cm, 3 cm, 5 cm, 5 cm)_
+  - ☐ Stimmt.
+  - ☑ Falsch. / Der Quader oben fehlt. / Das Volumen ist 138 cm³.
+  - ☐ Falsch. / Das Volumen ist 168 cm³.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Die Treppe hat drei gleich hohe Stufen. / Jede Stufe ist 5 dm lang, 7 dm breit und 1 dm hoch. / Berechne das Volumen von der ganzen Treppe. / Wähle auch die passende Einheit. _(Bild: Körper aus 3 Quadern (15 × 7 × 1, 10 × 7 × 1, 5 × 7 × 1), Maße 5 dm, 1 dm, 7 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **210 dm³**. Typische Fehler: 105 dm³ (sach-schritt-vergessen), 35 dm³ (sach-schritt-vergessen), 315 dm³ (teilflaeche-doppelt).
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege den Körper in zwei Quader. Eine Höhe steht nicht im Bild. *Lösungsschritt:* Höhe des oberen Quaders: 7 cm − 2 cm = 5 cm.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne das Volumen des Körpers. _(Bild: Körper aus 2 Quadern (11 × 3 × 2, 2 × 3 × 5), Maße 11 cm, 3 cm, 2 cm, 2 cm, 7 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **96 cm³**. Typische Fehler: 66 cm³ (sach-schritt-vergessen), 30 cm³ (sach-schritt-vergessen), 231 cm³ (teilflaeche-doppelt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne im Heft. / Berechne das Volumen des Körpers. _(Bild: Körper aus 2 Quadern (7 × 3 × 1.5, 2 × 3 × 2.5), Maße 7 cm, 3 cm, 1,5 cm, 2 cm, 4 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **46,5 cm³**. Typische Fehler: 31,5 cm³ (sach-schritt-vergessen), 15 cm³ (sach-schritt-vergessen), 84 cm³ (teilflaeche-doppelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Körper besteht aus zwei Quadern. / Bestimme die Höhe des oberen Quaders. _(Bild: Körper aus 2 Quadern (5 × 3 × 5, 2 × 3 × 1), Maße 5 dm, 3 dm, 5 dm, 2 dm, 6 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **1 dm**. Typische Fehler: 6 dm (sach-schritt-vergessen), 5 dm (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Treppe aus Beton hat drei Stufen. Jede Stufe ist 3 dm lang, 4 dm breit und 2,5 dm hoch. / Berechne das Volumen der Treppe. _(Bild: Körper aus 3 Quadern (9 × 4 × 2.5, 6 × 4 × 2.5, 3 × 4 × 2.5), Maße 3 dm, 2,5 dm, 4 dm)_ _(Größe eingeben, Einheit wählen aus dm³, dm², m³, l)_ Lösung: **180 dm³**. Typische Fehler: 90 dm³ (sach-schritt-vergessen), 30 dm³ (sach-schritt-vergessen), 270 dm³ (teilflaeche-doppelt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Das Bild zeigt ein Fundament aus Beton. / Ein Kubikmeter Beton kostet 120 €. / Rechne im Heft. / Gib die Kosten für den Beton an. _(Bild: Körper aus 2 Quadern (5 × 2 × 2, 3 × 2 × 3), Maße 5 m, 2 m, 2 m, 3 m, 5 m)_ Lösung: **4560 €**. Typische Fehler: 2400 (sach-schritt-vergessen), 38 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Rechnungen an, die das Volumen des Körpers ergeben. _(Bild: Körper aus 2 Quadern (6 × 4 × 1, 4 × 4 × 3), Maße 6 cm, 4 cm, 1 cm, 4 cm, 4 cm)_
+  - ☑ 24 cm³ + 48 cm³
+  - ☐ 6 cm · 4 cm · 4 cm
+  - ☑ 96 cm³ − 24 cm³
+  - ☐ 24 cm³ + 24 cm³
+  - ☐ 96 cm³ − 48 cm³
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne den vollen Quader und ziehe das Loch ab. Das Loch ist so lang, wie der Quader tief ist.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Durch den Quader führt von vorne nach hinten ein Loch in Quaderform. / Berechne das Volumen des Körpers. _(Bild: Körper aus 4 Quadern (10 × 5 × 1, 10 × 5 × 2, 3 × 5 × 2, 4 × 5 × 2), Maße 10 cm, 5 cm, 5 cm, 3 cm, 2 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **220 cm³**. Typische Fehler: 250 cm³ (sach-schritt-vergessen), 30 cm³ (sach-schritt-vergessen), 244 cm³ (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne im Heft. / Berechne das Volumen des Körpers. _(Bild: Körper aus 3 Quadern (7 × 5 × 3, 2 × 5 × 4, 2 × 5 × 4), Maße 7 dm, 3 dm, 2 dm, 4 dm, 5 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **185 dm³**. Typische Fehler: 145 dm³ (sach-schritt-vergessen), 245 dm³ (teilflaeche-doppelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Körper besteht aus zwei Quadern. Der untere Quader ist 6 cm lang, 4 cm breit und 6 cm hoch. Der obere Quader ist 3 cm lang und 4 cm breit. Der ganze Körper hat das Volumen 192 cm³. / Bestimme die Höhe des oberen Quaders. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **4 cm**. Typische Fehler: 16 cm (sach-schritt-vergessen), 6 cm (sach-schritt-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Im Heft: Ein Wassertrog aus Stein ist außen 12 dm lang, 5 dm breit und 6 dm hoch. Die Wände und der Boden sind überall 1 dm dick. Oben ist der Trog offen. / Bestimme das Volumen des Steins. _(Größe eingeben, Einheit wählen aus dm³, l, dm², m³)_ Lösung: **210 dm³**. Typische Fehler: 150 dm³ (sach-schritt-vergessen), 140 dm³ (sach-schritt-vergessen), 240 dm³ (deckel-mitgerechnet).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus einem Würfel mit der Kantenlänge 7 cm wird an einer Ecke ein Würfel mit der Kantenlänge 3 cm herausgeschnitten. / Bestimme das Volumen des Restkörpers. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **316 cm³**. Typische Fehler: 343 cm³ (sach-schritt-vergessen), 64 cm³ (volumen-waechst-wie-kante).
+- `06` AFB III · _Argumentieren_ · Aus einem Würfel wird an einer Ecke ein kleiner Würfel herausgeschnitten. / Sara sagt: „Volumen und Oberflächeninhalt werden beide kleiner.“ / Beurteile die Aussage.
+  - ☐ Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner.
+  - ☑ Falsch. Das Volumen wird kleiner. Der Oberflächeninhalt bleibt gleich: Drei Quadrate fallen weg und drei gleich große kommen innen dazu.
+  - ☐ Stimmt. Wenn etwas fehlt, wird beides kleiner.
+  - ☐ Falsch. Beides bleibt gleich, denn die Form außen ändert sich kaum.
+
+## 6.6.5-Z2: Ich kann den Oberflächeninhalt von Körpern bestimmen, die aus Würfeln oder Quadern zusammengesetzt sind.
+
+Grundlage, die F übt: Die Quadrate zählen, die bei einem Würfelbau außen liegen
+
+Baut auf: 6.6.5-Z1 (Ich kann das Volumen von Körpern berechnen, die aus Quadern zusammengesetzt sind.), 6.6.1-O1 (Ich kann den Oberflächeninhalt von Quader und Würfel berechnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Quadrate außen: auch unten, hinten und links. *Beispiel:* Ein einzelner Würfel hat 6 Quadrate außen. *Lösungsschritt:* Zähle Seite für Seite: oben, unten, vorne, hinten, links, rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 2 Würfel sind zu einer Stange zusammengeklebt. / Zähle die Quadrate außen an der Stange. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_ Lösung: **10**. Typische Fehler: 12 (klebeflaeche-mitgezaehlt), 8 (oberflaeche-drei-flaechen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Turm besteht aus 2 Würfeln. / Zähle die Quadrate außen. / Oben und unten: ▢ Quadrate / An den vier Seiten: 4 · 2 = ▢ Quadrate / Zusammen: ▢ Quadrate _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 2)_ Lösung: o = **2**, s = **8**, z = **10**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Platte ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Platte. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 1 1 1)_ Lösung: **14**. Typische Fehler: 18 (klebeflaeche-mitgezaehlt), 3 (oberflaeche-drei-flaechen), 11 (oberflaeche-drei-flaechen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus Würfeln gebaut. / Jedes Quadrat außen hat den Flächeninhalt 1 cm². / Gib den Oberflächeninhalt von dem Körper an. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 2 1)_ _(Größe eingeben, Einheit cm² steht fest)_ Lösung: **14 cm²**. Typische Fehler: 18 cm² (klebeflaeche-mitgezaehlt), 12 cm² (oberflaeche-drei-flaechen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas klebt 2 Würfel zu einer Stange zusammen. / Kreuze die Anzahl der Quadrate außen an. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_
+  - ☐ 11 Quadrate
+  - ☑ 10 Quadrate
+  - ☐ 12 Quadrate
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Treppe ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Treppe. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_ Lösung: **20**. Typische Fehler: 30 (klebeflaeche-mitgezaehlt), 17 (oberflaeche-drei-flaechen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Quadrate außen: auch unten, hinten und links. *Beispiel:* Ein einzelner Würfel hat 6 Quadrate außen. *Lösungsschritt:* Zähle Seite für Seite: oben, unten, vorne, hinten, links, rechts.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus Würfeln gebaut. / Bestimme die Anzahl der Quadrate außen. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 7 Würfeln, Türme von vorne nach hinten: 1 2 2 / 1 1 0)_ Lösung: **26**. Typische Fehler: 42 (klebeflaeche-mitgezaehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus Würfeln mit 1 cm Kantenlänge gebaut. / Bestimme den Oberflächeninhalt. / Wähle auch die passende Einheit. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 2 1 0 / 0 1 2)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **26 cm²**. Typische Fehler: 36 cm² (klebeflaeche-mitgezaehlt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Körper besteht aus 6 Würfeln. / Einzeln haben die Würfel 6 · 6 = ▢ Quadrate. / Der Körper hat 5 Klebestellen. / Bestimme die Anzahl der Quadrate außen. / Dort fallen 2 · 5 = ▢ Quadrate weg. / Außen bleiben ▢ Quadrate. _(Bild: Würfelbau aus 6 Würfeln, Türme von vorne nach hinten: 1 0 2 / 1 1 1)_ Lösung: e = **36**, w = **10**, z = **26**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Quader ist aus Würfeln gebaut. / Bestimme die Anzahl der Quadrate außen. _(Bild: Quader 3 × 2 × 1 mit sichtbaren Einheitswürfeln)_ Lösung: **22**. Typische Fehler: 11 (oberflaeche-drei-flaechen), 36 (klebeflaeche-mitgezaehlt), 6 (volumen-oberflaeche-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jeder Körper besteht aus 4 Würfeln. / Kreuze den Körper mit den wenigsten Quadraten außen an.
+  - ☑ A _(Bild: Würfelbau aus 4 Würfeln, Türme von vorne nach hinten: 1 1 / 1 1)_
+  - ☐ B _(Bild: Würfelbau aus 4 Würfeln, Türme von vorne nach hinten: 1 1 / 2 0)_
+  - ☐ C _(Bild: Würfelbau aus 4 Würfeln, Türme von vorne nach hinten: 1 2 / 1 0)_
+- `06` AFB III · _Argumentieren_ · Eine Stange besteht aus 4 Würfeln in einer Reihe. / Ein Block besteht aus 2 · 2 Würfeln. / Lena sagt: „Beide haben gleich viele Quadrate außen.“ / Beurteile die Aussage.
+  - ☐ Falsch. / Die Stange hat 16 Quadrate außen. / Der Block hat 18 Quadrate außen.
+  - ☐ Stimmt. / Beide bestehen aus 4 Würfeln.
+  - ☑ Falsch. / Der Block hat 16 Quadrate außen. / Die Stange hat 18 Quadrate außen.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Klebefläche liegt innen und zählt nicht zum Oberflächeninhalt. Sie fehlt an beiden Quadern. *Lösungsschritt:* Berechne beide Oberflächeninhalte, addiere sie und ziehe zweimal die Klebefläche ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus zwei Quadern zusammengeklebt. / Berechne den Oberflächeninhalt des Körpers. _(Bild: Körper aus 2 Quadern (5 × 2 × 4, 3 × 2 × 4), Zerlegung in zwei Farben mit Schnittlinie, Maße 5 cm, 2 cm, 4 cm, 3 cm, 4 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **116 cm²**. Typische Fehler: 128 cm² (klebeflaeche-mitgezaehlt), 122 cm² (klebeflaeche-mitgezaehlt), 76 cm² (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne im Heft. / Berechne den Oberflächeninhalt des Körpers. _(Bild: Körper aus 2 Quadern (8 × 3 × 2, 2 × 3 × 5), Maße 8 dm, 3 dm, 2 dm, 2 dm, 7 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **142 dm²**. Typische Fehler: 154 dm² (klebeflaeche-mitgezaehlt), 148 dm² (klebeflaeche-mitgezaehlt), 92 dm² (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei gleiche Quader sind 5 cm lang, 5 cm breit und 2 cm hoch. Sie werden genau aufeinander gestapelt und zusammengeklebt. / Berechne den Oberflächeninhalt des neuen Körpers. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **130 cm²**. Typische Fehler: 180 cm² (klebeflaeche-mitgezaehlt), 155 cm² (klebeflaeche-mitgezaehlt), 90 cm² (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus Würfeln mit der Kantenlänge 2 cm gebaut. / Bestimme seinen Oberflächeninhalt. _(Bild: Würfelbau aus 8 Würfeln, Türme von vorne nach hinten: 2 2 1 / 1 2 0)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **112 cm²**. Typische Fehler: 28 cm² (sach-schritt-vergessen), 56 cm² (volumen-waechst-wie-kante), 192 cm² (klebeflaeche-mitgezaehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Ein Siegerpodest hat die Form einer Treppe mit drei Stufen. Jede Stufe ist 2 dm lang, 6 dm breit und 1 dm hoch. Das Podest wird außen gestrichen, nur die Unterseite nicht. / Rechne im Heft. / Berechne die Fläche, die gestrichen wird. _(Bild: Körper aus 3 Quadern (6 × 6 × 1, 4 × 6 × 1, 2 × 6 × 1), Maße 2 dm, 1 dm, 6 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **96 dm²**. Typische Fehler: 132 dm² (deckel-mitgerechnet), 36 dm² (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Noah klebt einen Würfel mit der Kantenlänge 6 cm mit einer ganzen Fläche auf einen größeren Quader. / Kreuze an, um wie viel der Oberflächeninhalt des neuen Körpers kleiner ist als die Summe der beiden einzelnen Oberflächeninhalte.
+  - ☑ 72 cm²
+  - ☐ 36 cm²
+  - ☐ 216 cm²
+  - ☐ 144 cm²
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten fehlt das Rechteck des Lochs. Dafür kommen innen vier Flächen dazu.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Durch den Quader führt von vorne nach hinten ein Loch in Quaderform. / Berechne den Oberflächeninhalt des Körpers. Die Innenflächen des Lochs gehören dazu. _(Bild: Körper aus 4 Quadern (6 × 3 × 2, 6 × 3 × 3, 2 × 3 × 3, 2 × 3 × 3), Maße 6 cm, 3 cm, 8 cm, 2 cm, 3 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **198 cm²**. Typische Fehler: 180 cm² (sach-schritt-vergessen), 168 cm² (sach-schritt-vergessen), 210 cm² (klebeflaeche-mitgezaehlt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne im Heft. / Berechne den Oberflächeninhalt des Körpers. _(Bild: Körper aus 3 Quadern (9 × 3 × 1, 2 × 3 × 4, 2 × 3 × 4), Maße 9 dm, 1 dm, 2 dm, 4 dm, 3 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **158 dm²**. Typische Fehler: 174 dm² (sach-schritt-vergessen), 182 dm² (klebeflaeche-mitgezaehlt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Aus einem Würfel mit der Kantenlänge 9 cm wird an einer Ecke ein Würfel mit der Kantenlänge 1 cm herausgeschnitten. / Bestimme den Oberflächeninhalt des Restkörpers. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **486 cm²**. Typische Fehler: 483 cm² (sach-schritt-vergessen), 480 cm² (volumen-oberflaeche-verwechselt), 489 cm² (klebeflaeche-mitgezaehlt).
+- `04` AFB III · _Probleme lösen_ · **[Heftaufgabe]** Im Heft: Aus 24 Würfeln mit der Kantenlänge 1 cm werden Quader gebaut. Untersuche alle Möglichkeiten. / Kleinster Oberflächeninhalt: ▢ cm² / Größter Oberflächeninhalt: ▢ cm² Lösung: min = **52**, max = **98**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne den Oberflächeninhalt des Körpers. _(Bild: Körper aus 2 Quadern (7 × 2 × 2.5, 2 × 2 × 3.5), Maße 7 dm, 2 dm, 2,5 dm, 2 dm, 6 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **101 dm²**. Typische Fehler: 109 dm² (klebeflaeche-mitgezaehlt), 105 dm² (klebeflaeche-mitgezaehlt), 73 dm² (sach-schritt-vergessen).
+- `06` AFB III · _Probleme lösen_ · Zwei gleiche Quader mit den Kanten 6 cm, 4 cm und 1 cm werden an einer ganzen Fläche zusammengeklebt. Der neue Körper soll einen möglichst kleinen Oberflächeninhalt haben. / Kreuze die Fläche an, an der geklebt wird.
+  - ☐ Das ist egal, der Oberflächeninhalt ist immer gleich.
+  - ☐ die Fläche mit 4 cm²
+  - ☐ die Fläche mit 6 cm²
+  - ☑ die Fläche mit 24 cm²
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -5169,14 +5931,19 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `endnull-nicht-ergaenzt` | Ergänzt beim Subtrahieren keine Endnullen und schreibt die Ziffern der unteren Zahl einfach ab (5 − 2,35 = 3,35). | Ergänze oben Endnullen, bis beide Zahlen gleich viele Stellen nach dem Komma haben. Dann ziehe Stelle für Stelle ab. | Du ergänzt jetzt Endnullen, bevor du abziehst. |
 | `div-macht-kleiner` | Meint, Dividieren macht immer kleiner, auch beim Teilen durch eine Zahl kleiner als 1. | Überlege, wie oft der Divisor in die Zahl passt. 0,5 passt in 3 sechsmal hinein. | Du weißt jetzt: Teilen durch eine Zahl unter 1 macht größer. |
 | `periode-abgebrochen` | Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66). | Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich. | Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode. |
+| `oberflaeche-drei-flaechen` | Addiert beim Oberflächeninhalt nur drei Flächen statt sechs (vergisst die gegenüberliegenden Flächen). | Ein Quader hat sechs Flächen. Je zwei liegen sich gegenüber und sind gleich groß. Hast du jede Fläche zweimal genommen? | Du nimmst beim Oberflächeninhalt jetzt alle sechs Flächen mit. |
+| `volumen-oberflaeche-verwechselt` | Verwechselt Volumen und Oberflächeninhalt: berechnet das eine, wenn das andere gefragt ist. | Das Volumen sagt, wie viel hineinpasst. Der Oberflächeninhalt sagt, wie groß alle Flächen außen zusammen sind. Was ist gefragt? | Du hältst Volumen und Oberflächeninhalt jetzt auseinander. |
+| `einheit-art` | Wählt eine Einheit der falschen Art: cm² für ein Volumen, cm³ oder cm für eine Fläche. | Eine Länge misst du in cm, eine Fläche in cm², ein Volumen in cm³ oder in Litern. Welche Einheit passt hier? | Du nimmst jetzt cm² für Flächen und cm³ für Volumen. |
+| `einheit-verlangt` | Gibt das richtige Ergebnis in einer anderen Einheit an als verlangt. | Der Wert stimmt. Lies noch einmal, in welcher Einheit das Ergebnis stehen soll. | Du gibst das Ergebnis jetzt in der verlangten Einheit an. |
+| `volumen-kanten-addiert` | Addiert beim Volumen die drei Kantenlängen, statt sie zu multiplizieren. | Beim Volumen nimmst du mal: Länge mal Breite mal Höhe. | Du nimmst die drei Kanten beim Volumen jetzt mal. |
+| `einheiten-nicht-angeglichen` | Rechnet mit Kantenlängen in verschiedenen Einheiten, ohne sie vorher umzuwandeln (cm mal dm). | Schau auf die Einheiten der Kanten. Wandle zuerst alle Längen in dieselbe Einheit um. | Du bringst jetzt alle Längen auf dieselbe Einheit, bevor du rechnest. |
+| `klebeflaeche-mitgezaehlt` | Zählt bei zusammengesetzten Körpern die Flächen mit, an denen die Teile aneinanderstoßen. | Zur Oberfläche gehört nur, was außen liegt. Wo zwei Teile sich berühren, ist keine Oberfläche. | Du zählst beim Oberflächeninhalt jetzt nur die Flächen außen. |
+| `liter-nicht-dm3` | Weiß nicht, dass 1 Liter 1 dm³ ist, oder setzt 1 Liter mit 1 cm³ oder 1 m³ gleich. | 1 Liter ist 1 dm³: ein Würfel mit 10 cm Kante. 1 Milliliter ist 1 cm³. | Du weißt jetzt: 1 Liter ist 1 dm³. |
+| `deckel-mitgerechnet` | Rechnet bei einem offenen Körper (ohne Deckel) alle sechs Flächen. | Lies noch einmal: Welche Fläche fehlt? Sie gehört nicht dazu. | Du lässt die offene Fläche jetzt weg. |
+| `volumen-waechst-wie-kante` | Meint, bei doppelter Kantenlänge verdoppeln sich auch Volumen und Oberflächeninhalt. | Probiere es an einem Würfel mit 1 cm und mit 2 cm Kante aus. Zähle die kleinen Würfel im großen. | Du weißt jetzt: Doppelte Kanten geben das achtfache Volumen. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.6.1-L1 Ich kann den Oberflächeninhalt von Quader und Würfel berechnen. Baut auf: nur Grundschulstoff
-- 6.6.2-L1 Ich kann Volumen durch Auszählen von Einheitswürfeln bestimmen und vergleichen. Baut auf: nur Grundschulstoff
-- 6.6.3-L1 Ich kann Volumeneinheiten umwandeln, auch Liter und Milliliter. Baut auf: nur Grundschulstoff
-- 6.6.4-L1 Ich kann das Volumen von Quader und Würfel berechnen. Baut auf: nur Grundschulstoff
-- 6.6.5-L1 Ich kann Volumen und Oberflächeninhalt von Körpern berechnen, die aus Quadern zusammengesetzt sind. Baut auf: nur Grundschulstoff
 - 6.7.1-L1 Ich kann Zuordnungen in Tabelle, Schaubild und Text lesen und ineinander überführen. Baut auf: nur Grundschulstoff
 - 6.7.2-L1 Ich kann proportionale Zuordnungen erkennen und Tabellen dazu ergänzen. Baut auf: nur Grundschulstoff
 - 6.7.5-L1 Ich kann proportionale Zuordnungen am Schaubild erkennen und Werte ablesen. Baut auf: nur Grundschulstoff

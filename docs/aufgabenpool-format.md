@@ -240,3 +240,19 @@ Benannte Arten im `nachweis`: `runden` (`zahl`, `stelle` als Stellenzahl nach de
 | Hunderterfeld mit `hell` | Zehntel mal Zehntel: hell die Spalten des ersten Faktors, kräftig der Teil davon. Gezählt wird spaltenweise (Feld `i` liegt in Spalte `i / 10`, Zeile `i % 10`). |
 
 Bilder `geld` sind in 6.5 erlaubt. Typische Fehler einer Zahlenlücke dürfen Dezimalzahlen sein, auch wenn die Lösung eine natürliche Zahl ist (Überschlag statt genau gerechnet). Bei Geld zählt 4,5 € wie 4,50 €; nach der Antwort steht „Bei Geld schreibt man zwei Stellen nach dem Komma.“
+
+## Klasse 6, Kapitel 6 „Berechnungen am Quader“ (ADR 0049)
+
+| Feld | Inhalt |
+|---|---|
+| `groesse: "volumen"` | Größenart Volumen. `loesung` in mm³. Einheiten: mm³, cm³, dm³, m³, ml, l, hl (1 l = 1 dm³). |
+| `einheiten` | Ab G Pflicht: drei bis fünf Einheiten zur Wahl, darunter die Lösungseinheit und (außer bei `verlangt`) eine Einheit einer anderen Art. Auf F fehlt das Feld, die Einheit steht fest. |
+| `verlangt: true` | Die Aufgabe nennt ihre Einheit im Text („in Litern“). Der richtige Wert in einer anderen Einheit ist „fast richtig“ und kostet keinen Versuch. |
+| `reihenfolgeEgal: [namen]` | Bei Lücken: Die Zahlen dieser Lücken dürfen in beliebiger Reihenfolge stehen (die drei Kanten eines Quaders). |
+| `bild.form: "quaderbau"` | Körper aus Quadern: `teile: [{ x, y, z, a, b, c }]` (x nach rechts, y nach hinten, z nach oben), `zerlegt` (zwei Farben, Schnittlinie), `raster` (Einheitswürfel, nur ganze Maße), `masse: [{ von, bis, t, seite? }]`, `einheit`. |
+| `bild.art: "netz"` mit `masse`, `n`, `einheit` | Maße an den Kanten des Netzes (`masse` wie oben, in Kästchen) oder der Flächeninhalt als Zahl `n` in jeder Fläche. |
+| Einheitentafel mit `gruppen` | `gruppen: [{ name, spalten: 3 }]`: drei Spalten (H, Z, E) je Volumeneinheit. Als Bild oder als Tabelle mit `ablesen`. |
+
+Nachweise in 6.6: Gleichungen mit Einheiten als Text („4 cm · 3 cm · 2 cm = 24 cm³“), `quader` (Kanten, `was`: volumen oder oberflaeche, `wert`), `bild` (Wert aus dem Körperbild: volumen, oberflaeche, wuerfel, aussen), `wert`, `urteil`, `vergleich`, `extrem`, `karten` (Bildkarten: max, min, gleich), `ordnen`, `einheitentafel`, `einheitenart`, `alleQuader` (alle Quader mit ganzen Kanten zu einem Volumen) und `frei` für Begründungen. Ein Hilfswert `{ wert, grund }` steht vor der Gleichung, die ihn benutzt.
+
+Sprachregeln, die die Prüfung erzwingt: „Volumen“ statt „Rauminhalt“, kein a³, auf F und G kein Komma im Text, hl erst ab M, höchstens drei Stellen nach dem Komma.

@@ -85,6 +85,8 @@ export function pruefeBruch(aufgabe, eingabe) {
 export const NACHBESSERN = {
   kuerzen: 'Fast richtig: Dein Bruch hat den richtigen Wert. Kürze ihn noch so weit wie möglich. Das kostet dich keinen Versuch.',
   gemischt: 'Fast richtig: Der Wert stimmt. Schreibe die Zahl noch als gemischte Zahl: erst die Ganzen, dahinter einen Bruch, der kleiner als 1 ist. Das kostet dich keinen Versuch.',
+  // Klasse 6, Kapitel 6 (ADR 0049): richtiger Wert, aber nicht in der verlangten Einheit.
+  einheit: 'Fast richtig: Der Wert stimmt. Gib das Ergebnis noch in der Einheit an, die in der Aufgabe verlangt ist. Das kostet dich keinen Versuch.',
 };
 export const NACHBESSERN_HOECHSTENS = 2;
 // Teile färben: Die Eingabe nennt die gefärbten Teile („0 3 5“). Richtig ist jede Auswahl mit der verlangten Anzahl.

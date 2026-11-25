@@ -1157,6 +1157,56 @@
    "beschreibung": "Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66).",
    "hinweis": "Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich.",
    "kind": "Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode."
+  },
+  "oberflaeche-drei-flaechen": {
+   "beschreibung": "Addiert beim Oberflächeninhalt nur drei Flächen statt sechs (vergisst die gegenüberliegenden Flächen).",
+   "hinweis": "Ein Quader hat sechs Flächen. Je zwei liegen sich gegenüber und sind gleich groß. Hast du jede Fläche zweimal genommen?",
+   "kind": "Du nimmst beim Oberflächeninhalt jetzt alle sechs Flächen mit."
+  },
+  "volumen-oberflaeche-verwechselt": {
+   "beschreibung": "Verwechselt Volumen und Oberflächeninhalt: berechnet das eine, wenn das andere gefragt ist.",
+   "hinweis": "Das Volumen sagt, wie viel hineinpasst. Der Oberflächeninhalt sagt, wie groß alle Flächen außen zusammen sind. Was ist gefragt?",
+   "kind": "Du hältst Volumen und Oberflächeninhalt jetzt auseinander."
+  },
+  "einheit-art": {
+   "beschreibung": "Wählt eine Einheit der falschen Art: cm² für ein Volumen, cm³ oder cm für eine Fläche.",
+   "hinweis": "Eine Länge misst du in cm, eine Fläche in cm², ein Volumen in cm³ oder in Litern. Welche Einheit passt hier?",
+   "kind": "Du nimmst jetzt cm² für Flächen und cm³ für Volumen."
+  },
+  "einheit-verlangt": {
+   "beschreibung": "Gibt das richtige Ergebnis in einer anderen Einheit an als verlangt.",
+   "hinweis": "Der Wert stimmt. Lies noch einmal, in welcher Einheit das Ergebnis stehen soll.",
+   "kind": "Du gibst das Ergebnis jetzt in der verlangten Einheit an."
+  },
+  "volumen-kanten-addiert": {
+   "beschreibung": "Addiert beim Volumen die drei Kantenlängen, statt sie zu multiplizieren.",
+   "hinweis": "Beim Volumen nimmst du mal: Länge mal Breite mal Höhe.",
+   "kind": "Du nimmst die drei Kanten beim Volumen jetzt mal."
+  },
+  "einheiten-nicht-angeglichen": {
+   "beschreibung": "Rechnet mit Kantenlängen in verschiedenen Einheiten, ohne sie vorher umzuwandeln (cm mal dm).",
+   "hinweis": "Schau auf die Einheiten der Kanten. Wandle zuerst alle Längen in dieselbe Einheit um.",
+   "kind": "Du bringst jetzt alle Längen auf dieselbe Einheit, bevor du rechnest."
+  },
+  "klebeflaeche-mitgezaehlt": {
+   "beschreibung": "Zählt bei zusammengesetzten Körpern die Flächen mit, an denen die Teile aneinanderstoßen.",
+   "hinweis": "Zur Oberfläche gehört nur, was außen liegt. Wo zwei Teile sich berühren, ist keine Oberfläche.",
+   "kind": "Du zählst beim Oberflächeninhalt jetzt nur die Flächen außen."
+  },
+  "liter-nicht-dm3": {
+   "beschreibung": "Weiß nicht, dass 1 Liter 1 dm³ ist, oder setzt 1 Liter mit 1 cm³ oder 1 m³ gleich.",
+   "hinweis": "1 Liter ist 1 dm³: ein Würfel mit 10 cm Kante. 1 Milliliter ist 1 cm³.",
+   "kind": "Du weißt jetzt: 1 Liter ist 1 dm³."
+  },
+  "deckel-mitgerechnet": {
+   "beschreibung": "Rechnet bei einem offenen Körper (ohne Deckel) alle sechs Flächen.",
+   "hinweis": "Lies noch einmal: Welche Fläche fehlt? Sie gehört nicht dazu.",
+   "kind": "Du lässt die offene Fläche jetzt weg."
+  },
+  "volumen-waechst-wie-kante": {
+   "beschreibung": "Meint, bei doppelter Kantenlänge verdoppeln sich auch Volumen und Oberflächeninhalt.",
+   "hinweis": "Probiere es an einem Würfel mit 1 cm und mit 2 cm Kante aus. Zähle die kleinen Würfel im großen.",
+   "kind": "Du weißt jetzt: Doppelte Kanten geben das achtfache Volumen."
   }
  },
  "kompetenzen": {

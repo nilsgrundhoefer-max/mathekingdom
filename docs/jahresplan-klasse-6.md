@@ -95,6 +95,8 @@ Gebaut in Version 0.56 (ADR 0048): 10 Lernziele mit je 24 Aufgaben. F und G rech
 | 6.5 | Zusammengesetzte Körper | | Ich kann Volumen und Oberflächeninhalt von Körpern berechnen, die aus Quadern zusammengesetzt sind. |
 | 6.6 | Tabellenkalkulation: Berechnungen am Quader | MK | entfällt |
 
+Gebaut in Version 0.57 (ADR 0049): 10 Lernziele mit je 24 Aufgaben. Die Größeneingabe kennt Volumeneinheiten, ab G wählt das Kind die Einheit. Zusammengesetzte Körper sind auf F und G zerlegt gezeigt, Heftaufgaben gibt es nur auf M und E.
+
 ## Kapitel 7: Zuordnungen
 
 | Nr. | Unterkapitel | Marke | Lernziel |

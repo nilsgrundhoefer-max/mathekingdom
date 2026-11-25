@@ -891,6 +891,14 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .koerperbild .wuerfelflaeche.ton-oben { fill: #f5f8fc; }
 #mathekingdom .koerperbild .wuerfelflaeche.ton-rechts { fill: #a9c0dc; }
 #mathekingdom .koerperbild .karo { stroke: #d9e3ee; stroke-width: 1; }
+/* Klasse 6 Kapitel 6 (ADR 0049): Körper aus Quadern. Der zweite Teil ist sandfarben, die Schnittlinie gestrichelt, Einheitswürfel als dünnes Raster. */
+#mathekingdom .koerperbild .flaeche.teil-b.ton-vorne { fill: #f6e3b8; }
+#mathekingdom .koerperbild .flaeche.teil-b.ton-oben { fill: #fbf1d8; }
+#mathekingdom .koerperbild .flaeche.teil-b.ton-rechts { fill: #ecd092; }
+/* Die Flächen der Zellen stoßen ohne Naht aneinander: scharfe Kanten statt Kantenglättung, die Ränder liegen unter den Kanten. */
+#mathekingdom .koerperbild.form-quaderbau .flaeche { stroke: none; shape-rendering: crispEdges; }
+#mathekingdom .koerperbild .kante.schnitt { stroke: #c0392b; stroke-width: 2; stroke-dasharray: 5 4; }
+#mathekingdom .koerperbild .rasterlinie { stroke: var(--nacht); stroke-width: .9; stroke-opacity: .55; }
 #mathekingdom .koerperbild .netzflaeche { fill: #e3ecf6; stroke: var(--nacht); stroke-width: 2.2; stroke-linejoin: round; }
 #mathekingdom .koerperbild .netzflaeche.farbe-1 { fill: #f6d79a; }
 #mathekingdom .koerperbild .netzflaeche.farbe-2 { fill: #c9e4c5; }

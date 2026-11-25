@@ -143,8 +143,16 @@ Ein Gegenstand bekannter Größe in einem Bild, an dem das Kind eine unbekannte 
 _Avoid_: Maßstab (der ist ein festes Verhältnis auf Karten)
 
 **Einheitentafel**:
-Eine Tafel mit einer Spalte je Einheit (km, m, dm, cm, mm oder t, kg, g), in die das Kind die Ziffern einer Größe einträgt, um sie umzuwandeln. Für Zeit gibt es keine, weil 60 nicht zum Zehnersystem passt.
+Eine Tafel mit einer Spalte je Einheit (km, m, dm, cm, mm oder t, kg, g), in die das Kind die Ziffern einer Größe einträgt, um sie umzuwandeln. Für Zeit gibt es keine, weil 60 nicht zum Zehnersystem passt. Für Volumen hat sie drei Spalten je Einheit (H, Z, E), weil die Umrechnungszahl 1000 ist.
 _Avoid_: Stellenwerttafel (die hat Spalten für Stellenwerte, nicht für Einheiten), Umrechnungstabelle
+
+**Verlangte Einheit**:
+Die Einheit, die eine Größenaufgabe im Text ausdrücklich fordert („Gib das Volumen in Litern an“). Stimmt der Wert, aber nicht die Einheit, ist die Antwort **fast richtig**: Das Kind bessert nach, ohne dass ein Versuch zählt. Nennt die Aufgabe keine Einheit, zählt jede gleichwertige Angabe.
+_Avoid_: Zieleinheit, Pflichteinheit
+
+**Einheitenart**:
+Länge, Fläche oder Volumen. Eine Einheit der falschen Art (cm² für ein Volumen) ist falsch, auch wenn die Zahl stimmt, und hat eine eigene Rückmeldung.
+_Avoid_: Dimension, Einheitentyp
 
 **Gemischte Schreibweise**:
 Eine Größe mit zwei Einheiten ohne Komma, zum Beispiel „3 € 50 ct“ oder „2 km 500 m“. Die **Kommaschreibweise** („3,50 €“) ist bei den Größen nur eine andere Schreibweise dafür.
@@ -279,6 +287,18 @@ _Avoid_: Seitenansicht, Riss (allein)
 **Würfelbau**:
 Ein Bauwerk aus gleich großen Würfeln. Jeder Turm steht auf dem Boden; bei Zählaufgaben ist jeder Turm höher als alle Türme, die in seiner Spalte vor ihm stehen. So lassen sich die Würfel zählen, ohne zu raten.
 _Avoid_: Würfelgebäude, Würfelturm
+
+**Zusammengesetzter Körper**:
+Ein Körper aus mehreren Quadern, im Schrägbild mit Maßen. **Zerlegt** gezeigt hat er zwei Farben und eine gestrichelte Schnittlinie (F und G); ab M zerlegt oder ergänzt das Kind selbst. Die **Klebefläche**, an der zwei Teile aneinanderstoßen, gehört nicht zum Oberflächeninhalt.
+_Avoid_: Quaderbau (so heißt nur die Bildform im Pool), Verbundkörper
+
+**Einheitswürfel**:
+Ein Würfel mit der Kantenlänge 1 in der Einheit der Aufgabe (1 cm³, 1 dm³). Das Volumen eines Körpers ist die Anzahl der Einheitswürfel, die hineinpassen.
+_Avoid_: Zentimeterwürfel, Zählwürfel
+
+**Volumen**:
+Der Platz, den ein Körper einnimmt, gemessen in Einheitswürfeln. In Aufgaben heißt es immer „Volumen“.
+_Avoid_: Rauminhalt (steht nur im Merkzettel), Inhalt
 
 **Planfigur**:
 Eine Skizze des gesuchten Dreiecks, in der alle gegebenen Seiten und Winkel markiert sind. In Kapitel 2 steht sie neben jeder Heftaufgabe des Konstruierens und ist maßstabsgetreu gezeichnet.

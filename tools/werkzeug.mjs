@@ -385,6 +385,17 @@ const KIND = {
   'div-komma-vergessen': 'Du setzt jetzt das Komma im Ergebnis an der richtigen Stelle.',
   'endnull-nicht-ergaenzt': 'Du ergänzt jetzt Endnullen, bevor du abziehst.',
   'div-macht-kleiner': 'Du weißt jetzt: Teilen durch eine Zahl unter 1 macht größer.',
+  // Klasse 6, Kapitel 6 „Berechnungen am Quader“ (ADR 0049)
+  'oberflaeche-drei-flaechen': 'Du nimmst beim Oberflächeninhalt jetzt alle sechs Flächen mit.',
+  'volumen-oberflaeche-verwechselt': 'Du hältst Volumen und Oberflächeninhalt jetzt auseinander.',
+  'einheit-art': 'Du nimmst jetzt cm² für Flächen und cm³ für Volumen.',
+  'einheit-verlangt': 'Du gibst das Ergebnis jetzt in der verlangten Einheit an.',
+  'volumen-kanten-addiert': 'Du nimmst die drei Kanten beim Volumen jetzt mal.',
+  'einheiten-nicht-angeglichen': 'Du bringst jetzt alle Längen auf dieselbe Einheit, bevor du rechnest.',
+  'klebeflaeche-mitgezaehlt': 'Du zählst beim Oberflächeninhalt jetzt nur die Flächen außen.',
+  'liter-nicht-dm3': 'Du weißt jetzt: 1 Liter ist 1 dm³.',
+  'deckel-mitgerechnet': 'Du lässt die offene Fläche jetzt weg.',
+  'volumen-waechst-wie-kante': 'Du weißt jetzt: Doppelte Kanten geben das achtfache Volumen.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -632,6 +643,17 @@ export const fehlvorstellungen = {
   'endnull-nicht-ergaenzt': fv('Ergänzt beim Subtrahieren keine Endnullen und schreibt die Ziffern der unteren Zahl einfach ab (5 − 2,35 = 3,35).', 'Ergänze oben Endnullen, bis beide Zahlen gleich viele Stellen nach dem Komma haben. Dann ziehe Stelle für Stelle ab.'),
   'div-macht-kleiner': fv('Meint, Dividieren macht immer kleiner, auch beim Teilen durch eine Zahl kleiner als 1.', 'Überlege, wie oft der Divisor in die Zahl passt. 0,5 passt in 3 sechsmal hinein.'),
   'periode-abgebrochen': fv('Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66).', 'Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich.'),
+  // Klasse 6, Kapitel 6 „Berechnungen am Quader“ (ADR 0049). Dazu aus früheren Kapiteln: umrechnungszahl (10 oder 100 statt 1000), wuerfel-verdeckt.
+  'oberflaeche-drei-flaechen': fv('Addiert beim Oberflächeninhalt nur drei Flächen statt sechs (vergisst die gegenüberliegenden Flächen).', 'Ein Quader hat sechs Flächen. Je zwei liegen sich gegenüber und sind gleich groß. Hast du jede Fläche zweimal genommen?'),
+  'volumen-oberflaeche-verwechselt': fv('Verwechselt Volumen und Oberflächeninhalt: berechnet das eine, wenn das andere gefragt ist.', 'Das Volumen sagt, wie viel hineinpasst. Der Oberflächeninhalt sagt, wie groß alle Flächen außen zusammen sind. Was ist gefragt?'),
+  'einheit-art': fv('Wählt eine Einheit der falschen Art: cm² für ein Volumen, cm³ oder cm für eine Fläche.', 'Eine Länge misst du in cm, eine Fläche in cm², ein Volumen in cm³ oder in Litern. Welche Einheit passt hier?'),
+  'einheit-verlangt': fv('Gibt das richtige Ergebnis in einer anderen Einheit an als verlangt.', 'Der Wert stimmt. Lies noch einmal, in welcher Einheit das Ergebnis stehen soll.'),
+  'volumen-kanten-addiert': fv('Addiert beim Volumen die drei Kantenlängen, statt sie zu multiplizieren.', 'Beim Volumen nimmst du mal: Länge mal Breite mal Höhe.'),
+  'einheiten-nicht-angeglichen': fv('Rechnet mit Kantenlängen in verschiedenen Einheiten, ohne sie vorher umzuwandeln (cm mal dm).', 'Schau auf die Einheiten der Kanten. Wandle zuerst alle Längen in dieselbe Einheit um.'),
+  'klebeflaeche-mitgezaehlt': fv('Zählt bei zusammengesetzten Körpern die Flächen mit, an denen die Teile aneinanderstoßen.', 'Zur Oberfläche gehört nur, was außen liegt. Wo zwei Teile sich berühren, ist keine Oberfläche.'),
+  'liter-nicht-dm3': fv('Weiß nicht, dass 1 Liter 1 dm³ ist, oder setzt 1 Liter mit 1 cm³ oder 1 m³ gleich.', '1 Liter ist 1 dm³: ein Würfel mit 10 cm Kante. 1 Milliliter ist 1 cm³.'),
+  'deckel-mitgerechnet': fv('Rechnet bei einem offenen Körper (ohne Deckel) alle sechs Flächen.', 'Lies noch einmal: Welche Fläche fehlt? Sie gehört nicht dazu.'),
+  'volumen-waechst-wie-kante': fv('Meint, bei doppelter Kantenlänge verdoppeln sich auch Volumen und Oberflächeninhalt.', 'Probiere es an einem Würfel mit 1 cm und mit 2 cm Kante aus. Zähle die kleinen Würfel im großen.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -1077,13 +1099,13 @@ export const KOMPETENZEN = {
 };
 // Lernziele, deren Aufgaben im Kern eine andere Kompetenz als das Rechnen verlangen.
 const KOMPETENZ_LERNZIEL = {
-  kommunizieren: ['6.3.1-Q1', '6.3.2-S1', '6.3.2-S2', '6.3.3-A1', '6.3.3-A2', '6.3.4-P1', '6.3.5-Y1', '6.3.6-R1', '7.1.1-Z1', '7.1.X1-K1', '7.1.X2-W1', '6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
-  modellieren: ['7.1.X3-C1', '7.1.X4-B1', '6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
+  kommunizieren: ['6.6.2-W1', '6.3.1-Q1', '6.3.2-S1', '6.3.2-S2', '6.3.3-A1', '6.3.3-A2', '6.3.4-P1', '6.3.5-Y1', '6.3.6-R1', '7.1.1-Z1', '7.1.X1-K1', '7.1.X2-W1', '6.1.1-B1', '6.1.6-Z1', '6.1.6-Z2', '5.9.1-B1', '5.9.1-B2', '5.9.3-K1', '5.5.1-B1', '5.5.2-S1', '5.5.3-P1', '5.5.4-K1', '5.5.7-V1', '5.5.8-V2', '5.5.9-V3', '5.2.1-N1', '5.2.1-N3', '5.2.2-B1', '5.2.5-Z1', '5.2.5-Z2', '5.2.X1-X1', '5.2.X1-X2', '5.1.1-H1', '5.1.1-H2', '5.1.2-L1', '5.1.2-L2', '5.1.3-Z1', '5.1.3-Z2', '5.3.2-A1', '5.3.3-S1', '5.4.2-M1', '5.4.5-D1', '5.4.4-P1', '5.7.1-R1', '5.7.2-V1', '5.7.3-A1', '5.7.X1-N1', '5.7.X2-D1'],
+  modellieren: ['6.6.1-O2', '6.6.4-V2', '7.1.X3-C1', '7.1.X4-B1', '6.2.3-V2', '6.2.4-T2', '6.2.5-P2', '6.2.6-D2', '6.1.5-T2', '5.9.2-T2', '5.6.1-S1', '5.6.1-S2', '5.6.7-A1', '5.6.7-A2', '5.6.X1-X1', '5.6.6-K1', '5.6.6-K2', '5.2.4-S1', '5.1.4-V1', '5.1.5-U1', '5.3.2-A5', '5.3.3-S5', '5.4.2-M5', '5.4.5-D6', '5.3.4-B2', '5.4.6-T3'],
   'probleme-loesen': ['6.3.8-K1', '6.3.8-K2', '5.4.X1-Z1'],
   argumentieren: ['7.1.2-V1', '6.1.4-V2', '5.9.1-B3', '5.5.9-V4', '5.2.3-R2', '5.2.4-S2', '5.1.4-V2', '5.4.X1-Z2'],
 };
 // Nachweisarten, die eine echte Suche oder ein Knobeln verlangen (Ziffernrätsel, größte Zahl, Zahlen zwischen …).
-const KNOBELN = new Set(['extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
+const KNOBELN = new Set(['alleQuader', 'extrem', 'extremzahlen', 'ziffern', 'kombination', 'paarsumme', 'gleichungen', 'zwischen', 'kleinsteDifferenz', 'ersteUnterschreitung',
   'gleicheWerte', 'zahlenwahl', 'anzahlProdukte', 'zahlenpaar', 'anzahlTeiler', 'ziffernTeilbar', 'grenzVielfaches', 'ziffernZahlen', 'vielfachesZwischen',
   'restBleibt', 'grenzRest', 'anzahlMitRest', 'kleinsteMitResten', 'naheBei', 'quotientUeber', 'teilerZwischen']);
 // Aufgaben, die eine Aussage prüfen oder begründen lassen („Wer hat recht?“, „Warum …?“).
