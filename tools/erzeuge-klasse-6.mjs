@@ -25,6 +25,10 @@ import { prismen } from './aufgaben/6-3-4-prisma.mjs';
 import { pyramiden } from './aufgaben/6-3-5-pyramide.mjs';
 import { rundeKoerper } from './aufgaben/6-3-6-rund.mjs';
 import { kopfgeometrie } from './aufgaben/6-3-8-kopfgeometrie.mjs';
+import { dezimalschreibweise6 } from './aufgaben/6-4-1-schreibweise.mjs';
+import { vergleichen6 } from './aufgaben/6-4-2-vergleichen.mjs';
+import { runden6 } from './aufgaben/6-4-3-runden.mjs';
+import { umwandeln6 } from './aufgaben/6-4-5-umwandeln.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -50,6 +54,11 @@ const ERZEUGER = [
   [63563563, pyramiden],
   [63663663, rundeKoerper],
   [63863863, kopfgeometrie],
+  // Kapitel 4 (ADR 0047)
+  [64164164, dezimalschreibweise6],
+  [64264264, vergleichen6],
+  [64364364, runden6],
+  [64564564, umwandeln6],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 

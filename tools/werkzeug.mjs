@@ -369,6 +369,13 @@ const KIND = {
   'kanten-teilweise': 'Du nimmst jetzt alle 12 Kanten mit.',
   'kippen-richtung': 'Du kippst den Körper jetzt in die richtige Richtung.',
   'kante-falsch-abgelesen': 'Du findest jetzt die gleich lange Kante.',
+  // Klasse 6, Kapitel 4 „Dezimalzahlen“ (ADR 0047)
+  'dezimal-mehr-ziffern': 'Du weißt jetzt: Mehr Ziffern machen eine Dezimalzahl nicht größer.',
+  'drittel-als-zehntel': 'Du weißt jetzt: Ein Drittel ist nicht 0,3.',
+  'runden-abschneiden': 'Du rundest jetzt, statt nur abzuschneiden.',
+  'prozent-als-zaehler': 'Du rechnest einen Anteil jetzt erst in Hundertstel um.',
+  'periode-zu-frueh': 'Du setzt den Strich jetzt nur über die sich wiederholenden Ziffern.',
+  'periode-abgebrochen': 'Du erkennst jetzt endlos wiederholte Ziffern und schreibst sie als Periode.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -600,6 +607,13 @@ export const fehlvorstellungen = {
   'kanten-teilweise': fv('Nimmt bei der Kantenlänge eines Quaders nur die sichtbaren oder nur drei Kanten statt aller zwölf.', 'Ein Quader hat 12 Kanten, je 4 gleich lange. Rechne jede Länge viermal.'),
   'kante-falsch-abgelesen': fv('Liest die Länge an einer Kante ab, die nicht parallel zur gesuchten Kante ist.', 'Gleich lange Kanten eines Quaders sind parallel. Suche die beschriftete Kante, die in dieselbe Richtung zeigt.'),
   'kippen-richtung': fv('Kippt einen Körper in Gedanken in die falsche Richtung.', 'Lege einen Gegenstand vor dich und kippe ihn wirklich. Welche Fläche liegt danach unten?'),
+  // Klasse 6, Kapitel 4 „Dezimalzahlen“ (Grilling mit Nils, 2026-11-25, ADR 0047)
+  'dezimal-mehr-ziffern': fv('Hält die Dezimalzahl mit mehr Nachkommastellen für größer (0,705 viel größer als 0,7, 0,45 größer als 0,5).', 'Schreibe beide Zahlen mit gleich vielen Stellen nach dem Komma. Vergleiche dann Stelle für Stelle.'),
+  'drittel-als-zehntel': fv('Schreibt ein Drittel als 0,3 oder zwei Drittel als 0,6, als ob der Nenner 10 wäre.', 'Rechne 1 : 3. Die Division geht nicht auf: Die 3 wiederholt sich immer weiter.'),
+  'runden-abschneiden': fv('Schneidet die Stellen hinter der Rundungsstelle einfach ab, statt zu runden (4,38 auf Zehntel wird 4,3).', 'Schau auf die Ziffer rechts neben der Rundungsstelle. Ist sie 5 oder mehr, rundest du auf.'),
+  'prozent-als-zaehler': fv('Nimmt den Zähler des Bruchs als Prozentzahl (3⁄5 als 3 %).', 'Prozent heißt Hundertstel. Erweitere den Bruch zuerst auf den Nenner 100.'),
+  'periode-zu-frueh': fv('Setzt den Periodenstrich auch über Ziffern, die sich nicht wiederholen (1⁄6 als 0,1̅6̅ statt 0,16̅).', 'Schau genau: Welche Ziffern wiederholen sich immer wieder? Nur über sie kommt der Strich.'),
+  'periode-abgebrochen': fv('Bricht eine periodische Dezimalzahl ab und schreibt sie ohne Periode (2⁄3 als 0,6 oder 0,66).', 'Rechne weiter: Kommt derselbe Rest wieder, wiederholen sich die Ziffern ohne Ende. Dann setzt du den Strich.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);
@@ -793,6 +807,16 @@ export function dezimal(text, loesung, typischeFehler, hilfen, extra) {
   const fehler = (typischeFehler ?? []).map((f) => (Array.isArray(f) ? { wert: f[0], fehlvorstellung: f[1] } : f)).filter((f) => f.wert != null && !gesehen.has(String(f.wert)) && gesehen.add(String(f.wert)));
   return { format: 'zahl', text, loesung, typischeFehler: fehler, hilfen, ...mit(extra) };
 }
+// Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahl. Im Text steht über jeder Ziffer der Periode ein Strich (U+0305): „0,16̅“.
+export const PERIODE = '\u0305';
+export const periodisch = (vor, periode) => `${vor}${[...String(periode)].map((z) => z + PERIODE).join('')}`;
+// Eingabe in zwei Feldern: Ziffern vor der Periode („0,1“) und die Periode („6“). typischeFehler: [[text, fehlvorstellung]],
+// der Text darf abbrechen („0,6“) oder periodisch sein („0,1̅6̅“). extra: { bild, nachweis, division }
+export function periode(text, vor, per, typischeFehler, hilfen, extra) {
+  const loesung = periodisch(vor, per), gesehen = new Set([loesung]);
+  const fehler = (typischeFehler ?? []).filter(([w]) => w && !gesehen.has(w) && gesehen.add(w)).map(([wert, fehlvorstellung]) => ({ wert, fehlvorstellung }));
+  return { format: 'periode', text, loesung, typischeFehler: fehler, hilfen, ...mit(extra) };
+}
 // Stellenwerttafel mit Komma zum Eintragen: spalten wie ['Z', 'E', 'z', 'h'], das Komma steht nach der Spalte E.
 export function kommatafel(text, spalten, zeilen, werte, hilfen, extra) {
   const t = tabelle(text, spalten, zeilen, werte, hilfen, extra);
@@ -966,6 +990,9 @@ export const B = {
   flaeche: (f) => ({ art: 'flaeche', ...f }),
   // Kapitel 9 (ADR 0036): Bruchbild aus Figuren { n?, form, teile | reihen + spalten, ganze?, gefaerbt, ungleich? } und Stellenwerttafel mit Komma.
   bruch: (...figuren) => ({ art: 'bruch', figuren }),
+  // Klasse 6, Kapitel 4 (ADR 0047): Zahlenstrahl mit Lupe. Oben der grobe Strahl, darunter ein Abschnitt zehnfach vergrößert.
+  // oben und unten sind Zahlenstrahlen wie B.strahl; der untere zeigt genau den Abschnitt `stelle` bis `stelle + oben.schritt` des oberen.
+  lupe: (oben, unten) => ({ art: 'lupe', oben, unten }),
   kommaTafel: (spalten, werte, weitere = null) => ({ art: 'tafel', spalten, werte, komma: spalten.indexOf('E'), ...(weitere ? { weitere } : {}) }),
   schaetz: (symbol, felder, { raster = 'fest', markiert = null, gezaehlt = false, grob = null } = {}) => ({ art: 'schaetzbild', symbol, felder, raster,
     ...(markiert ? { markiert } : {}), ...(gezaehlt ? { gezaehlt: true } : {}), ...(grob ? { grob } : {}), saat: String(zz(1, 999999)) }),
@@ -1012,7 +1039,11 @@ export function kompetenzVon(lernziel, a) {
 // ---------- Aufgaben sammeln ----------
 export const aufgaben = [];
 const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text).sort() ?? '') + JSON.stringify([a.strahl, a.tabelle, a.diagramm, a.paare, a.bild && { ...a.bild, saat: 0 }, a.daten, a.urliste, a.zeilen, a.karten && [...a.karten].sort(), a.gitter, a.bedingung, a.faerben, a.teile?.map((t) => t.text)].filter(Boolean));
+// Heftaufgabe (Nils, 2026-11-25, ADR 0047): Eine Aufgabe, die im Heft bearbeitet wird, trägt das Kennzeichen `heftaufgabe`.
+// Das Dashboard zeigt darüber das Heftband. Erkannt wird sie an ihrem Auftrag: „Im Heft: …“ oder „Zeichne … in dein Heft“.
+export const HEFTAUFTRAG = /(?:^|\n|[.:!] )Im Heft:|\b(?:Zeichne|Konstruiere|Rechne|Dividiere)\b[^.?!\n]*?\b(?:in dein Heft|ins Heft|im Heft)\b/;
 function nachbearbeiten(a, niveau) {
+  if (HEFTAUFTRAG.test(a.text ?? '')) a.heftaufgabe = true;
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.
     if (niveau === 'F' || niveau === 'G') a.optionen = a.optionen.map((o) => ({ ...o, text: o.text.replace(/(?<=[.?!]) (?=[A-ZÄÖÜ„\d])/g, '\n') }));

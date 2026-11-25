@@ -4,7 +4,7 @@
 import { pruefeGitter } from './geo.js';
 import { pruefeWinkel } from './winkel.js';
 import { pruefeGroesse } from './groessen.js';
-import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseDezimal } from './bruch.js';
+import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseDezimal, pruefePeriode } from './bruch.js';
 
 export const NIVEAUS = ['F', 'G', 'M', 'E'];
 export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 'Mittleres Niveau', E: 'Erweitertes Niveau' };
@@ -174,6 +174,7 @@ export function pruefeAntwort(aufgabe, eingabe) {
     case 'winkel': return pruefeWinkel(aufgabe, eingabe);
     case 'bruch': return pruefeBruch(aufgabe, eingabe);
     case 'faerben': return pruefeFaerben(aufgabe, eingabe);
+    case 'periode': return pruefePeriode(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
 }
