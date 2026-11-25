@@ -83,7 +83,7 @@ export function figurSvg(b, dazu = {}) {
     const u = richtung(von), v = richtung(von + groesse), mitte = richtung(von + groesse / 2);
     const PS = (p) => `${Z(p[0])} ${Z(SY(p[1]))}`;
     merke(w.s, von + groesse / 2);
-    const recht = Math.abs(groesse - 90) < 0.01 && w.wert === 90 && !w.frage;
+    const recht = Math.abs(groesse - 90) < 0.5 && w.wert === 90 && !w.frage; // gerundete Koordinaten: knapp 90° ist auch ein rechter Winkel
     if (recht) {
       const k = 15, e1 = plus(S, u, k), e2 = plus(e1, v, k), e3 = plus(S, v, k), mp = plus(plus(S, u, k / 2), v, k / 2);
       svg.append(s('path', { d: `M${PS(S)} L${PS(e1)} L${PS(e2)} L${PS(e3)} Z`, class: 'winkelflaeche', fill: farbe }),

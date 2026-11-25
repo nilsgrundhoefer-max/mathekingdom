@@ -1399,7 +1399,8 @@ function lernstandLernziel(id) {
   const nachNiveau = L.NIVEAUS.map((n) => { const x = v.filter((y) => y.niveau === n); return { n, bearbeitet: x.length, quote: x.length ? x.filter((y) => y.richtig).length / x.length : 0 }; }).filter((x) => x.bearbeitet);
   const audit = A.aufgabenAudit(staende, z.index, 2).filter((a) => a.lernziel === id).slice(0, 5);
   return h('div', {},
-    h('section', { class: 'karte' }, h('p', { class: 'klein' }, `Meilenstein ${l.milestone}`), h('h2', {}, l.text), bautAufListe(id, staende)),
+    h('section', { class: 'karte' }, h('p', { class: 'klein' }, `Meilenstein ${l.milestone}`), h('h2', {}, l.text),
+      l.bp && h('p', { class: 'klein', id: 'bildungsplan' }, `Bildungsplan 2016, Standard ${l.bp}`), bautAufListe(id, staende)),
     h('section', { class: 'kennzahlen' },
       kennzahl(`${st.erreicht} von ${staende.length}`, 'mit Siegel'),
       kennzahl(prozent(st.quote), 'Lösungsquote', `${st.bearbeitet} Aufgaben`),

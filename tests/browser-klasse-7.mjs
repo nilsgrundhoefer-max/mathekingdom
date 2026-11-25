@@ -65,7 +65,7 @@ async function antworte(seite, auf, falsch = null) {
 
 const { seite, fehler } = await seiteMit(420);
 let falschGeprueft = 0;
-for (const auf of pool.aufgaben) {
+for (const auf of pool.aufgaben.filter((a) => a.id.startsWith('7.1.'))) { // Kapitel 2: tests/browser-klasse-7-dreiecke.mjs
   await zeige(seite, auf.id);
   // Am Handy ragt nichts über den Bildschirm, kein Bruch steht mit schrägem Strich im Text, und nirgends steht ein Bindestrich als Minus.
   assert.ok(await seite.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), `${auf.id}: Seite ist breiter als der Bildschirm`);

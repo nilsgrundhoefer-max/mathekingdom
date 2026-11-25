@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.51 vom 25.11.2026
+
+### Schüler
+
+- Klasse 7 hat ihr zweites Kapitel: „Dreiecke“ mit 7 Meilensteinen und 3 Purpur-Abstechern (Tangenten, Umkreis, Inkreis), zusammen 408 Aufgaben.
+- Neue Bilder: Geradenkreuzungen, Parallelen, Dreiecke mit Winkelbögen, der Thaleskreis. Die Winkel im Bild stimmen immer.
+- Du konstruierst am Karogitter: Ecken antippen, Linien und Kreise zeichnen. Bei Heftaufgaben zeichnest du im Heft und tippst einen Messwert ein.
+- Beim Ordnen von Konstruktionsschritten stehen die Karten untereinander.
+
+### Lehrkraft
+
+- Neue Marke „Pflicht ab Gold“ für 2.1 und 2.5: Aufgaben auf allen Stufen, für ein Zielniveau unter M ein freiwilliger Abstecher (ADR 0044).
+- Über jedem Lernziel der Klasse 7 steht der Standard im Bildungsplan 2016.
+- Die Niveauübersicht Klasse 7 liegt als Quelle im Projekt. Kapitel 2 folgt ihrer Staffel.
+
 ## 0.50 vom 24.11.2026
 
 ### Schüler

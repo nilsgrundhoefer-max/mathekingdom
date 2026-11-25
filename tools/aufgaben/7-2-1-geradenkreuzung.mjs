@@ -158,7 +158,7 @@ function w2() {
     () => { const a = alphaP('G'), k = kind();
       return auswahl(Z(SATZ, `${k} sagt: „α${STRICH} ist so groß wie α.“`, 'Kreuze die richtige Begründung an.'),
         [opt('α und α′ sind Stufenwinkel an Parallelen.', true), opt('α und α′ sind Nebenwinkel.', false, 'scheitel-neben-verwechselt'), opt('Alle Winkel im Bild sind gleich groß.', false, 'nebenwinkel-gleich')],
-        hStufen('G'), { bild: pb('G', a, [WERT(a), null, null, null], [NAME(`α${STRICH}`), null, null, null]), nachweis: [BEZ(['α', `α${STRICH}`], 'stufen')] }); },
+        hStufen('G'), { bild: pb('G', a, [NAME('α'), null, null, null], [NAME(`α${STRICH}`), null, null, null]), nachweis: [BEZ(['α', `α${STRICH}`], 'stufen')] }); },
   ]);
   sechs(W2, 'M', [
     () => { const a = alphaP('M'), w = vier(a), i = zz(0, 3), zg = [null, null, null, null]; zg[i] = WERT(w[i]); const nm = ['p', 'q', 'r', 's'];

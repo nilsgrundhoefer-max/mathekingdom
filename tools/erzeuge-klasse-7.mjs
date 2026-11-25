@@ -18,6 +18,7 @@ import { verbindung } from './aufgaben/7-1-8-verbindung.mjs';
 import { temperaturen } from './aufgaben/7-1-x3-temperaturen.mjs';
 import { girokonto } from './aufgaben/7-1-x4-girokonto.mjs';
 import { geradenkreuzung } from './aufgaben/7-2-1-geradenkreuzung.mjs';
+import { namenFrei } from './aufgaben/7-2-figur.mjs';
 import { winkelsumme } from './aufgaben/7-2-2-winkelsumme.mjs';
 import { dreiecksformen } from './aufgaben/7-2-3-dreiecksformen.mjs';
 import { konstruieren } from './aufgaben/7-2-4-konstruieren.mjs';
@@ -52,6 +53,14 @@ const ERZEUGER = [
   [72972974, inkreis],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
+// Kapitel 2: Punktnamen im Karogitter stehen frei (ADR 0044).
+for (const a of aufgaben) if (a.id.startsWith('7.2.')) { if (a.bild?.art === 'gitter') namenFrei(a.bild); if (a.gitter) namenFrei(a.gitter); }
+// Mehrere Punkte antippen: Sagt der Text „alle“, verrät das Dashboard nicht, wie viele es sind. Sonst verlangt es genau so viele
+// Punkte wie die Lösung hat; ein typischer Fehler mit anderer Anzahl ließe sich dann gar nicht abgeben.
+for (const a of aufgaben) if (a.id.startsWith('7.2.') && a.eingabe === 'punkte' && a.loesung.length > 1) {
+  if (/\balle\b/.test(a.text)) a.offen = true;
+  else a.typischeFehler = (a.typischeFehler ?? []).filter((f) => f.punkte.length === a.loesung.length);
+}
 
 // Layout (Nils, 2026-11-21: „korrekte Darstellung und das Layout der Aufgaben“): Steht hinter einer Rechnung noch ein Auftrag
 // („Kürze vollständig.“), beginnt er auf einer neuen Zeile. Sonst liest man ihn als Teil der Rechnung.

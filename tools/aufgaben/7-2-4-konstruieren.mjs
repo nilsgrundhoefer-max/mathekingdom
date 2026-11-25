@@ -147,6 +147,8 @@ const runde = (x) => Math.round(x);
 // Heftaufgabe mit Maßstab: Der Nachweis rechnet die Längen aus der Wirklichkeit (m) in die Zeichnung (cm) um.
 function massstab(a, m, seiten) {
   const k = m / 100;
+  // Die Planfigur zeigt die echten Längen in Metern, nicht die umgerechneten Zentimeter (die sind die Arbeit des Kindes).
+  for (const ms of a.bild?.masse ?? []) ms.t = `${String(Number(ms.t.replace(' cm', '').replace(',', '.')) * k).replace('.', ',')} m`;
   a.nachweis.push({ zahl: m, grund: `Maßstab 1 : ${m}` }, ...seiten.flatMap((x) => [{ zahl: x * k * 100, grund: `${x * k} m = ${x * k * 100} cm` }, `${x * k * 100} : ${m} = ${x}`]));
   return a;
 }
@@ -220,7 +222,7 @@ function k2() {
     () => { const c = zz(5, 8), al = winkelFuer('M', 35, 70), ga = winkelFuer('M', 40, 80), be = 180 - al - ga; if (be < 30) return null;
       const E = dreieckWsw(c, al, be), wert = runde(seiteVon(E, 'a') * 10);
       return zahl(`Konstruiere im Heft ein Dreieck mit c = ${cm(c)}, α = ${al}° und γ = ${ga}°. Miss dann die Seite a in Millimetern.`, wert, [], H('E', 'Berechne zuerst β. Dann geht es mit wsw.'),
-        { einheit: 'mm', toleranz: 2, nachweis: [`180° − ${al}° − ${ga}° = ${be}°`, { art: 'heft', gegeben: { c, α: al, γ: ga }, gesucht: 'a', satz: 'wsw' }] }); },
+        { einheit: 'mm', toleranz: 2, bild: planfigur({ c, α: al, γ: ga, E }), nachweis: [`180° − ${al}° − ${ga}° = ${be}°`, { art: 'heft', gegeben: { c, α: al, γ: ga }, gesucht: 'a', satz: 'wsw' }] }); },
     () => { const [a, b] = wahl([[3, 4], [2, 5], [3, 5], [4, 4], [2, 6]]), c = a + b + zz(0, 2), k = kind();
       return auswahl(`${k} will ein Dreieck mit a = ${cm(a)}, b = ${cm(b)} und c = ${cm(c)} konstruieren. Die Kreisbögen um A und B treffen sich nicht. Erkläre, woran das liegt. Kreuze an.`,
         [opt(`a + b = ${a + b} cm ist nicht länger als c = ${c} cm. Das Dreieck gibt es nicht.`, true), opt('Die Bögen sind zu kurz gezeichnet.', false, 'dreiecksungleichung'), opt('Man muss mit der Seite a beginnen.', false, 'konstruktion-reihenfolge'), opt('Der Zirkel ist verrutscht.', false, 'dreiecksungleichung')],

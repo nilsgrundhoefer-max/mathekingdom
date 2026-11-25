@@ -27,7 +27,7 @@ const hName = (s) => `h_${s}`;
 const hHoehe = (n, s) => H(n, `Die Höhe ${hName(s)} geht von der Ecke gegenüber der Seite ${s} aus. Sie steht senkrecht auf ${s}.`, 'Bei einer waagerechten Seite ist die Höhe eine senkrechte Linie nach oben oder unten.', `Lege das Geodreieck mit der Mittellinie auf die Seite ${s}.`);
 // Höhe zeichnen: eine Linie senkrecht zur Seite durch die Ecke.
 function hoeheZeichnen(n, text, opts = {}) {
-  const d = hoehenDreieck(n, opts), E = d[d.ecke], [P1, P2] = d.basis, verl = opts.art === 'stumpf' && opts.verlaengert ? [LN(null, d.t < 0 ? d.F : P2, d.t < 0 ? P1 : d.F, 'strecke', 'hilfs')] : [];
+  const d = hoehenDreieck(n, opts), E = d[d.ecke], [P1, P2] = d.basis, verl = opts.art === 'stumpf' && opts.verlaengert ? [LN(null, P1, P2, 'gerade', 'hilfs')] : []; // die ganze Gerade: Die Verlängerung reicht sicher bis zum Fußpunkt
   const fehler = [[{ art: 'strecke', a: E, b: mitte(P1, P2).every(Number.isInteger) ? mitte(P1, P2) : E }, 'hoehe-nicht-senkrecht'], [{ art: 'senkrecht', zu: [P1, P2], durch: P1 }, 'hoehe-falsche-seite'], [{ art: 'senkrecht', zu: [P1, P2], durch: P2 }, 'hoehe-falsche-seite']];
   return gitterLinie(text(d.seite, d.ecke), gitterVon(d, { linien: verl }), 'strecke', { art: 'senkrecht', zu: [P1, P2], durch: E }, [E, d.F], fehler.filter(([b]) => b.a !== b.b), hHoehe(n, d.seite), { nachweis: [{ art: 'linie' }, { art: 'hoehe', ecke: E, seite: [P1, P2], fuss: d.F }] });
 }

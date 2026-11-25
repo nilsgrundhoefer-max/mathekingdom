@@ -161,3 +161,41 @@ export function viereckBild(V, zeige = {}, { linien = [], titel = null } = {}) {
   const nach = { A: ['B', 'D'], B: ['C', 'A'], C: ['D', 'B'], D: ['A', 'C'] };
   return figur({ punkte: V, linien: [['A', 'B'], ['B', 'C'], ['C', 'D'], ['D', 'A'], ...linien], winkel: Object.entries(zeige).map(([p, o]) => [p, nach[p][0], nach[p][1], o]), titel });
 }
+
+// Layout (ADR 0044, Nils: „korrekte Darstellung und das Layout der Aufgaben“): Im Karogitter steht ein Punktname dort,
+// wo keine Linie, kein Kreis, kein anderer Punkt und kein anderer Name ist. Bevorzugt rechts oben wie im Dashboard,
+// sonst die erste freie Richtung, notfalls die freieste. Gleiche Versätze wie in src/schueler/geobilder.js.
+const VERSATZ = { ro: [0.3, 0.32], lo: [-0.3, 0.32], ru: [0.3, -0.42], lu: [-0.3, -0.42], o: [0, 0.42], u: [0, -0.5], r: [0.42, -0.05], l: [-0.42, -0.05] };
+const FREI = 0.34;
+const abstandStrecke = (p, a, b) => {
+  const d = [b[0] - a[0], b[1] - a[1]], l2 = d[0] ** 2 + d[1] ** 2, t = l2 ? Math.max(0, Math.min(1, ((p[0] - a[0]) * d[0] + (p[1] - a[1]) * d[1]) / l2)) : 0;
+  return Math.hypot(p[0] - a[0] - t * d[0], p[1] - a[1] - t * d[1]);
+};
+export function namenFrei(g) {
+  if (!g?.punkte?.length) return g;
+  const weit = Math.max(g.b, g.h) * 3;
+  const strecken = (g.linien ?? []).map((l) => {
+    if (l.art === 'strecke') return [l.a, l.b];
+    const d = [l.b[0] - l.a[0], l.b[1] - l.a[1]], n = Math.hypot(...d), e = [d[0] / n, d[1] / n];
+    return [l.art === 'strahl' ? l.a : [l.a[0] - weit * e[0], l.a[1] - weit * e[1]], [l.a[0] + weit * e[0], l.a[1] + weit * e[1]]];
+  });
+  for (const f of g.figuren ?? []) f.ecken.forEach((e, i) => strecken.push([e, f.ecken[(i + 1) % f.ecken.length]]));
+  const namen = [];
+  for (const p of g.punkte) {
+    if (!p.n) continue;
+    if (p.pos) { namen.push([p.x + VERSATZ[p.pos][0], p.y + VERSATZ[p.pos][1]]); continue; }
+    let beste = 'ro', besterAbstand = -1;
+    for (const [k, v] of Object.entries(VERSATZ)) {
+      const c = [p.x + v[0], p.y + v[1]];
+      const abstaende = [...strecken.map(([a, b]) => abstandStrecke(c, a, b)), ...(g.kreise ?? []).map((kr) => Math.abs(Math.hypot(c[0] - kr.m[0], c[1] - kr.m[1]) - kr.r)),
+        ...g.punkte.filter((q) => q !== p).map((q) => Math.hypot(c[0] - q.x, c[1] - q.y) - 0.1), ...namen.map((q) => Math.hypot(c[0] - q[0], c[1] - q[1]) - 0.25)];
+      const rand = c[0] < -0.3 || c[1] < -0.3 || c[0] > g.b + 0.3 || c[1] > g.h + 0.3 ? -1 : 0;
+      const abstand = Math.min(...abstaende, 9) + rand;
+      if (abstand >= FREI) { beste = k; besterAbstand = abstand; break; }
+      if (abstand > besterAbstand) { beste = k; besterAbstand = abstand; }
+    }
+    if (beste !== 'ro') p.pos = beste;
+    namen.push([p.x + VERSATZ[beste][0], p.y + VERSATZ[beste][1]]);
+  }
+  return g;
+}

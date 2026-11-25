@@ -583,6 +583,8 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .ordnenkarte .kartenwert:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
 #mathekingdom .ordnenkarte .schieb { border: none; background: #efe6d2; padding: 0 9px; cursor: pointer; font-size: 1rem; color: var(--nacht); min-height: 0; border-radius: 0; }
 #mathekingdom .ordnenkarte .schieb:disabled { opacity: .3; cursor: default; }
+#mathekingdom ol.ordnen.saetze { flex-direction: column; flex-wrap: nowrap; }
+#mathekingdom ol.ordnen.saetze .ordnenkarte .kartenwert { white-space: normal; flex: 1; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
 #mathekingdom .ordnenkarte .schieb:not(:disabled):hover { background: var(--gold); }
 #mathekingdom .zeicheneingabe { display: grid; gap: 10px; justify-items: start; }
 #mathekingdom .zeichenfeld { font-size: 1.4rem; width: 13ch; letter-spacing: .08em; font-weight: 700; }

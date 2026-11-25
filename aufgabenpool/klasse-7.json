@@ -28385,7 +28385,7 @@
       "a": "G1",
       "b": "T1",
       "farbe": 0,
-      "wert": 50
+      "n": "α"
      },
      {
       "s": "S2",
@@ -32574,10 +32574,6 @@
    "loesung": 20,
    "typischeFehler": [
     {
-     "wert": 22.5,
-     "fehlvorstellung": "winkelsumme"
-    },
-    {
      "wert": 40,
      "fehlvorstellung": "winkelsumme"
     }
@@ -36762,7 +36758,8 @@
      {
       "n": "A",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -37584,18 +37581,22 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Das Dreieck ist gleichschenklig.\nDie markierten Winkel sind gleich groß.\nDie Spitze hat 90°.\nBerechne α.",
-   "loesung": 45,
+   "text": "Das Dreieck ist gleichschenklig.\nDie markierten Winkel sind gleich groß.\nDie Spitze hat 40°.\nBerechne α.",
+   "loesung": 70,
    "typischeFehler": [
     {
-     "wert": 90,
+     "wert": 140,
+     "fehlvorstellung": "basiswinkel-falsch"
+    },
+    {
+     "wert": 40,
      "fehlvorstellung": "basiswinkel-falsch"
     }
    ],
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°.",
     "beispiel": "Spitze 40°: (180° − 40°) : 2 = 70°.",
-    "loesungsschritt": "Rechne 180° − 90° und teile durch 2."
+    "loesungsschritt": "Rechne 180° − 40° und teile durch 2."
    },
    "einheit": "°",
    "bild": {
@@ -37618,8 +37619,8 @@
      {
       "n": "C",
       "p": [
-       2.896,
-       2.028
+       3.655,
+       6.331
       ]
      }
     ],
@@ -37645,7 +37646,7 @@
       "a": "B",
       "b": "C",
       "n": "α",
-      "wert": 45,
+      "wert": 70,
       "frage": true,
       "gleich": 1
      },
@@ -37655,20 +37656,20 @@
       "b": "A",
       "n": "β",
       "gleich": 1,
-      "wert": 45,
+      "wert": 70,
       "frage": true
      },
      {
       "s": "C",
       "a": "A",
       "b": "B",
-      "wert": 90
+      "wert": 40
      }
     ]
    },
    "nachweis": [
-    "180° − 90° = 90°",
-    "90° : 2 = 45°",
+    "180° − 40° = 140°",
+    "140° : 2 = 70°",
     {
      "art": "figur",
      "winkel": "α"
@@ -37684,22 +37685,22 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Das Dreieck ist gleichschenklig.\nDie markierten Basiswinkel sind je 80° groß.\nBerechne den Winkel γ an der Spitze.",
-   "loesung": 20,
+   "text": "Das Dreieck ist gleichschenklig.\nDie markierten Basiswinkel sind je 55° groß.\nBerechne den Winkel γ an der Spitze.",
+   "loesung": 70,
    "typischeFehler": [
     {
-     "wert": 100,
+     "wert": 125,
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "wert": 80,
+     "wert": 55,
      "fehlvorstellung": "basiswinkel-falsch"
     }
    ],
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß.",
     "beispiel": "Basiswinkel 70°: 180° − 70° − 70° = 40°.",
-    "loesungsschritt": "Rechne 180° − 80° − 80°."
+    "loesungsschritt": "Rechne 180° − 55° − 55°."
    },
    "einheit": "°",
    "bild": {
@@ -37716,14 +37717,14 @@
       "n": "B",
       "p": [
        4.83,
-       1.294
+       -1.294
       ]
      },
      {
       "n": "C",
       "p": [
-       -1.255,
-       14.342
+       3.339,
+       2.801
       ]
      }
     ],
@@ -37748,14 +37749,14 @@
       "s": "A",
       "a": "B",
       "b": "C",
-      "wert": 80,
+      "wert": 55,
       "gleich": 1
      },
      {
       "s": "B",
       "a": "C",
       "b": "A",
-      "wert": 80,
+      "wert": 55,
       "gleich": 1
      },
      {
@@ -37763,13 +37764,13 @@
       "a": "A",
       "b": "B",
       "n": "γ",
-      "wert": 20,
+      "wert": 70,
       "frage": true
      }
     ]
    },
    "nachweis": [
-    "180° − 80° − 80° = 20°",
+    "180° − 55° − 55° = 70°",
     {
      "art": "figur",
      "winkel": "γ"
@@ -37788,23 +37789,23 @@
    "text": "Das Dreieck ist gleichschenklig.\nDie markierten Winkel sind gleich groß.\nBerechne die Basiswinkel.\nα = {{a}}°\nβ = {{b}}°",
    "luecken": {
     "a": {
-     "loesung": 30,
+     "loesung": 35,
      "typischeFehler": [
       {
-       "wert": 60,
+       "wert": 70,
        "fehlvorstellung": "basiswinkel-falsch"
       },
       {
-       "wert": 120,
+       "wert": 110,
        "fehlvorstellung": "basiswinkel-falsch"
       }
      ]
     },
     "b": {
-     "loesung": 30,
+     "loesung": 35,
      "typischeFehler": [
       {
-       "wert": 120,
+       "wert": 110,
        "fehlvorstellung": "basiswinkel-falsch"
       }
      ]
@@ -37813,7 +37814,7 @@
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°.",
     "beispiel": "Spitze 40°: (180° − 40°) : 2 = 70°.",
-    "loesungsschritt": "Rechne 180° − 120° und teile durch 2."
+    "loesungsschritt": "Rechne 180° − 110° und teile durch 2."
    },
    "bild": {
     "art": "figur",
@@ -37828,15 +37829,15 @@
      {
       "n": "B",
       "p": [
-       5,
-       0
+       4.924,
+       -0.868
       ]
      },
      {
       "n": "C",
       "p": [
-       2.5,
-       1.443
+       2.766,
+       1.29
       ]
      }
     ],
@@ -37862,7 +37863,7 @@
       "a": "B",
       "b": "C",
       "n": "α",
-      "wert": 30,
+      "wert": 35,
       "frage": true,
       "gleich": 1
      },
@@ -37871,7 +37872,7 @@
       "a": "C",
       "b": "A",
       "n": "β",
-      "wert": 30,
+      "wert": 35,
       "frage": true,
       "gleich": 1
      },
@@ -37879,13 +37880,13 @@
       "s": "C",
       "a": "A",
       "b": "B",
-      "wert": 120
+      "wert": 110
      }
     ]
    },
    "nachweis": [
-    "180° − 120° = 60°",
-    "60° : 2 = 30°",
+    "180° − 110° = 70°",
+    "70° : 2 = 35°",
     {
      "art": "figur",
      "winkel": "α",
@@ -37911,12 +37912,12 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "c",
+     "text": "a",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "text": "a",
+     "text": "c",
      "richtig": true
     },
     {
@@ -37950,20 +37951,20 @@
      {
       "n": "C",
       "p": [
-       4.33,
-       2.5
+       2.5,
+       9.33
       ]
      }
     ],
     "linien": [
      {
       "a": "A",
-      "b": "B",
-      "gleich": 1
+      "b": "B"
      },
      {
       "a": "B",
-      "b": "C"
+      "b": "C",
+      "gleich": 1
      },
      {
       "a": "C",
@@ -37975,7 +37976,7 @@
    "nachweis": [
     {
      "art": "name",
-     "seite": "a",
+     "seite": "c",
      "basis": true
     }
    ]
@@ -38067,11 +38068,11 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Finn sagt: „Ein gleichschenkliges Dreieck kann an der Spitze 100° haben.“\nKreuze die richtige Antwort an.",
+   "text": "Lena sagt: „Ein gleichschenkliges Dreieck kann an der Spitze 130° haben.“\nKreuze die richtige Antwort an.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht.\nDie Basiswinkel wären dann je 100°.",
+     "text": "Stimmt nicht.\nDie Basiswinkel wären dann je 130°.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     },
@@ -38081,18 +38082,18 @@
      "fehlvorstellung": "dreieck-art"
     },
     {
-     "text": "Stimmt.\nDann sind die Basiswinkel je 40°.",
+     "text": "Stimmt.\nDann sind die Basiswinkel je 25°.",
      "richtig": true
     }
    ],
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°.",
     "beispiel": "Spitze 40°: (180° − 40°) : 2 = 70°.",
-    "loesungsschritt": "Rechne 180° − 100° und teile durch 2."
+    "loesungsschritt": "Rechne 180° − 130° und teile durch 2."
    },
    "nachweis": [
-    "180° − 100° = 80°",
-    "80° : 2 = 40°",
+    "180° − 130° = 50°",
+    "50° : 2 = 25°",
     {
      "art": "urteil",
      "stimmt": true
@@ -38108,21 +38109,25 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Das Dreieck ABC ist gleichschenklig mit der Basis c. Es ist γ = 108°. Berechne α.",
-   "loesung": 36,
+   "text": "Das Dreieck ABC ist gleichschenklig mit der Basis c. Es ist γ = 48°. Berechne α.",
+   "loesung": 66,
    "typischeFehler": [
     {
-     "wert": 108,
+     "wert": 48,
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "wert": 72,
+     "wert": 132,
+     "fehlvorstellung": "basiswinkel-falsch"
+    },
+    {
+     "wert": 84,
      "fehlvorstellung": "basiswinkel-falsch"
     }
    ],
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°.",
-    "loesungsschritt": "Rechne 180° − 108° und teile durch 2."
+    "loesungsschritt": "Rechne 180° − 48° und teile durch 2."
    },
    "einheit": "°",
    "bild": {
@@ -38138,15 +38143,15 @@
      {
       "n": "B",
       "p": [
-       4.045,
-       -2.939
+       4.728,
+       -1.628
       ]
      },
      {
       "n": "C",
       "p": [
-       3.09,
-       0
+       4.192,
+       4.495
       ]
      }
     ],
@@ -38172,20 +38177,20 @@
       "a": "B",
       "b": "C",
       "n": "α",
-      "wert": 36,
+      "wert": 66,
       "frage": true
      },
      {
       "s": "C",
       "a": "A",
       "b": "B",
-      "wert": 108
+      "wert": 48
      }
     ]
    },
    "nachweis": [
-    "180° − 108° = 72°",
-    "72° : 2 = 36°",
+    "180° − 48° = 132°",
+    "132° : 2 = 66°",
     {
      "art": "figur",
      "winkel": "α"
@@ -38201,21 +38206,21 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Das Dreieck ist gleichschenklig. Der Basiswinkel β ist 67° groß. Berechne den Winkel α an der Spitze.",
-   "loesung": 46,
+   "text": "Das Dreieck ist gleichschenklig. Der Basiswinkel β ist 41° groß. Berechne den Winkel α an der Spitze.",
+   "loesung": 98,
    "typischeFehler": [
     {
-     "wert": 67,
+     "wert": 41,
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "wert": 113,
+     "wert": 139,
      "fehlvorstellung": "basiswinkel-falsch"
     }
    ],
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß.",
-    "loesungsschritt": "Rechne 180° − 67° − 67°."
+    "loesungsschritt": "Rechne 180° − 41° − 41°."
    },
    "einheit": "°",
    "bild": {
@@ -38231,15 +38236,15 @@
      {
       "n": "B",
       "p": [
-       3.886,
-       3.147
+       4.494,
+       -2.192
       ]
      },
      {
       "n": "C",
       "p": [
-       0.435,
-       4.981
+       1.545,
+       4.755
       ]
      }
     ],
@@ -38264,20 +38269,20 @@
       "s": "B",
       "a": "C",
       "b": "A",
-      "wert": 67
+      "wert": 41
      },
      {
       "s": "A",
       "a": "B",
       "b": "C",
       "n": "α",
-      "wert": 46,
+      "wert": 98,
       "frage": true
      }
     ]
    },
    "nachweis": [
-    "180° − 67° − 67° = 46°",
+    "180° − 41° − 41° = 98°",
     {
      "art": "figur",
      "winkel": "α"
@@ -38293,23 +38298,23 @@
     "modellieren"
    ],
    "format": "sachaufgabe",
-   "text": "In einem Dreieck ABC ist α = β = 63°. Gib an, welche Seiten gleich lang sind, und begründe.",
+   "text": "In einem Dreieck ABC ist α = β = 54°. Gib an, welche Seiten gleich lang sind, und begründe.",
    "teile": [
     {
      "art": "antwort",
      "text": "Gleich lang sind",
      "optionen": [
       {
-       "text": "b und c",
-       "richtig": false,
-       "fehlvorstellung": "seite-ecke-vertauscht"
-      },
-      {
        "text": "a und b",
        "richtig": true
       },
       {
        "text": "a und c",
+       "richtig": false,
+       "fehlvorstellung": "seite-ecke-vertauscht"
+      },
+      {
+       "text": "b und c",
        "richtig": false,
        "fehlvorstellung": "seite-ecke-vertauscht"
       }
@@ -38320,6 +38325,11 @@
      "text": "Grund:",
      "optionen": [
       {
+       "text": "Scheitelwinkel",
+       "richtig": false,
+       "fehlvorstellung": "scheitel-neben-verwechselt"
+      },
+      {
        "text": "Winkelsummensatz",
        "richtig": false,
        "fehlvorstellung": "winkelsumme"
@@ -38327,11 +38337,6 @@
       {
        "text": "Umkehrung des Basiswinkelsatzes",
        "richtig": true
-      },
-      {
-       "text": "Scheitelwinkel",
-       "richtig": false,
-       "fehlvorstellung": "scheitel-neben-verwechselt"
       }
      ]
     }
@@ -38351,8 +38356,8 @@
      "teil": 0
     },
     {
-     "zahl": 63,
-     "grund": "α = β = 63°, gleich große Winkel"
+     "zahl": 54,
+     "grund": "α = β = 54°, gleich große Winkel"
     }
    ]
   },
@@ -38443,21 +38448,21 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Das Dreieck ABC ist gleichschenklig mit der Basis c. Die Basis ist über B verlängert. Der Außenwinkel bei B ist 122° groß. Berechne γ.",
-   "loesung": 64,
+   "text": "Das Dreieck ABC ist gleichschenklig mit der Basis c. Die Basis ist über B verlängert. Der Außenwinkel bei B ist 128° groß. Berechne γ.",
+   "loesung": 76,
    "typischeFehler": [
     {
-     "wert": 58,
+     "wert": 52,
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "wert": 122,
+     "wert": 128,
      "fehlvorstellung": "nebenwinkel-gleich"
     }
    ],
    "hilfen": {
     "tipp": "Berechne zuerst β. Dann hilft der Basiswinkelsatz.",
-    "loesungsschritt": "β = 180° − 122° = 58°."
+    "loesungsschritt": "β = 180° − 128° = 52°."
    },
    "einheit": "°",
    "bild": {
@@ -38473,22 +38478,22 @@
      {
       "n": "B",
       "p": [
-       4.999,
-       0.087
+       3.886,
+       3.147
       ]
      },
      {
       "n": "C",
       "p": [
-       2.43,
-       4.044
+       -0.071,
+       4.06
       ]
      },
      {
       "n": "D",
       "p": [
-       6.999,
-       0.122
+       5.44,
+       4.406
       ],
       "zeigen": false
      }
@@ -38519,21 +38524,21 @@
       "a": "A",
       "b": "B",
       "n": "γ",
-      "wert": 64,
+      "wert": 76,
       "frage": true
      },
      {
       "s": "B",
       "a": "D",
       "b": "C",
-      "wert": 122,
+      "wert": 128,
       "farbe": 1
      }
     ]
    },
    "nachweis": [
-    "180° − 122° = 58°",
-    "180° − 58° − 58° = 64°",
+    "180° − 128° = 52°",
+    "180° − 52° − 52° = 76°",
     {
      "art": "figur",
      "winkel": "γ"
@@ -38549,13 +38554,9 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Das Dreieck ABC ist gleichschenklig mit der Spitze C und γ = 66°. Sara rechnet: „α = 66°, denn im gleichschenkligen Dreieck sind zwei Winkel gleich.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.",
+   "text": "Das Dreieck ABC ist gleichschenklig mit der Spitze C und γ = 104°. Lena rechnet: „α = 104°, denn im gleichschenkligen Dreieck sind zwei Winkel gleich.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.",
    "mehrfach": false,
    "optionen": [
-    {
-     "text": "Gleich groß sind nur die Basiswinkel α und β. Richtig ist α = (180° − 66°) : 2 = 57°.",
-     "richtig": true
-    },
     {
      "text": "Die Rechnung stimmt.",
      "richtig": false,
@@ -38567,14 +38568,18 @@
      "fehlvorstellung": "dreieck-sonderfall"
     },
     {
-     "text": "Richtig ist α = 180° − 66° = 114°.",
+     "text": "Richtig ist α = 180° − 104° = 76°.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
+    },
+    {
+     "text": "Gleich groß sind nur die Basiswinkel α und β. Richtig ist α = (180° − 104°) : 2 = 38°.",
+     "richtig": true
     }
    ],
    "hilfen": {
     "tipp": "Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°.",
-    "loesungsschritt": "Rechne 180° − 66° und teile durch 2."
+    "loesungsschritt": "Rechne 180° − 104° und teile durch 2."
    },
    "bild": {
     "art": "figur",
@@ -38596,8 +38601,8 @@
      {
       "n": "C",
       "p": [
-       -0.48,
-       4.565
+       0.714,
+       3.091
       ]
      }
     ],
@@ -38622,7 +38627,7 @@
       "s": "C",
       "a": "A",
       "b": "B",
-      "wert": 66
+      "wert": 104
      },
      {
       "s": "A",
@@ -38633,8 +38638,8 @@
     ]
    },
    "nachweis": [
-    "180° − 66° = 114°",
-    "114° : 2 = 57°",
+    "180° − 104° = 76°",
+    "76° : 2 = 38°",
     {
      "art": "urteil",
      "stimmt": false
@@ -38650,25 +38655,25 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Im gleichschenkligen Dreieck ABC mit der Basis c ist die Spitze γ um 78° größer als ein Basiswinkel. Bestimme α.",
-   "loesung": 34,
+   "text": "Im gleichschenkligen Dreieck ABC mit der Basis c ist γ 4-mal so groß wie ein Basiswinkel. Bestimme γ.",
+   "loesung": 120,
    "typischeFehler": [
     {
-     "wert": 51,
+     "wert": 30,
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "wert": 112,
-     "fehlvorstellung": "basiswinkel-falsch"
+     "wert": 45,
+     "fehlvorstellung": "winkelsumme"
     }
    ],
    "hilfen": {
-    "tipp": "Drei gleich große Teile und dazu die Differenz ergeben 180°."
+    "tipp": "Zähle die gleich großen Teile."
    },
    "einheit": "°",
    "nachweis": [
-    "180° − 78° = 102°",
-    "102° : 3 = 34°"
+    "180° : 6 = 30°",
+    "4 · 30° = 120°"
    ]
   },
   {
@@ -38680,15 +38685,15 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Im Dreieck ABC liegt D auf AB, und die Strecken AD und DC sind gleich lang. Es ist α = 54°. Bestimme den Winkel φ = ∢BDC.",
-   "loesung": 108,
+   "text": "Im Dreieck ABC liegt D auf AB, und die Strecken AD und DC sind gleich lang. Es ist α = 38°. Bestimme den Winkel φ = ∢BDC.",
+   "loesung": 76,
    "typischeFehler": [
     {
-     "wert": 72,
+     "wert": 104,
      "fehlvorstellung": "nebenwinkel-gleich"
     },
     {
-     "wert": 54,
+     "wert": 38,
      "fehlvorstellung": "basiswinkel-falsch"
     }
    ],
@@ -38716,15 +38721,15 @@
      {
       "n": "C",
       "p": [
-       2.253,
-       5.87
+       3.684,
+       4.889
       ]
      },
      {
       "n": "D",
       "p": [
-       5.166,
-       1.385
+       3.752,
+       1.006
       ]
      }
     ],
@@ -38761,7 +38766,7 @@
       "s": "A",
       "a": "D",
       "b": "C",
-      "wert": 54,
+      "wert": 38,
       "farbe": 0
      },
      {
@@ -38769,15 +38774,15 @@
       "a": "C",
       "b": "B",
       "n": "φ",
-      "wert": 108,
+      "wert": 76,
       "frage": true,
       "farbe": 2
      }
     ]
    },
    "nachweis": [
-    "180° − 54° − 54° = 72°",
-    "180° − 72° = 108°",
+    "180° − 38° − 38° = 104°",
+    "180° − 104° = 76°",
     {
      "art": "figur",
      "winkel": "φ"
@@ -38790,25 +38795,25 @@
    "niveau": "E",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "modellieren"
    ],
    "format": "luecken",
-   "text": "Im gleichschenkligen Dreieck ist jeder Basiswinkel 2-mal so groß wie die Spitze. Bestimme die Winkel.\nSpitze = {{s}}°\nBasiswinkel = {{b}}°",
+   "text": "Im gleichschenkligen Dreieck ist jeder Basiswinkel 7-mal so groß wie die Spitze. Bestimme die Winkel.\nSpitze = {{s}}°\nBasiswinkel = {{b}}°",
    "luecken": {
     "s": {
-     "loesung": 36,
+     "loesung": 12,
      "typischeFehler": [
       {
-       "wert": 45,
+       "wert": 20,
        "fehlvorstellung": "basiswinkel-falsch"
       }
      ]
     },
     "b": {
-     "loesung": 72,
+     "loesung": 84,
      "typischeFehler": [
       {
-       "wert": 108,
+       "wert": 96,
        "fehlvorstellung": "basiswinkel-falsch"
       }
      ]
@@ -38818,8 +38823,12 @@
     "tipp": "Spitze und zwei Basiswinkel: Zähle die Teile von der Größe der Spitze."
    },
    "nachweis": [
-    "180° : 5 = 36°",
-    "2 · 36° = 72°"
+    {
+     "zahl": 15,
+     "grund": "1 Teil für die Spitze und 2 · 7 Teile für die Basiswinkel"
+    },
+    "180° : 15 = 12°",
+    "7 · 12° = 84°"
    ]
   },
   {
@@ -38831,20 +38840,15 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Im Dreieck ABC ist α = γ = 60°. Ole sagt: „Dann ist c die Basis.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.",
+   "text": "Im Dreieck ABC ist α = γ = 42°. Ole sagt: „Dann ist c die Basis.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.",
    "mehrfach": false,
    "optionen": [
-    {
-     "text": "Es gibt keine Basis, weil β fehlt.",
-     "richtig": false,
-     "fehlvorstellung": "basiswinkel-falsch"
-    },
     {
      "text": "Die Basis liegt zwischen den gleichen Winkeln, also zwischen A und C. Das ist die Seite b.",
      "richtig": true
     },
     {
-     "text": "c ist richtig, denn c ist immer die Basis.",
+     "text": "Es gibt keine Basis, weil β fehlt.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     },
@@ -38852,6 +38856,11 @@
      "text": "Die Basis ist a, denn a liegt bei α.",
      "richtig": false,
      "fehlvorstellung": "seite-ecke-vertauscht"
+    },
+    {
+     "text": "c ist richtig, denn c ist immer die Basis.",
+     "richtig": false,
+     "fehlvorstellung": "basiswinkel-falsch"
     }
    ],
    "hilfen": {
@@ -38870,15 +38879,15 @@
      {
       "n": "B",
       "p": [
-       5,
-       0
+       4.455,
+       2.27
       ]
      },
      {
       "n": "C",
       "p": [
-       2.5,
-       4.33
+       2.663,
+       6.938
       ]
      }
     ],
@@ -38901,13 +38910,13 @@
       "s": "A",
       "a": "B",
       "b": "C",
-      "wert": 60
+      "wert": 42
      },
      {
       "s": "C",
       "a": "A",
       "b": "B",
-      "wert": 60
+      "wert": 42
      }
     ]
    },
@@ -38932,7 +38941,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Kann ein gleichschenkliges Dreieck einen Basiswinkel von 92° haben? Begründe. Kreuze die richtige Antwort an.",
+   "text": "Kann ein gleichschenkliges Dreieck einen Basiswinkel von 97° haben? Begründe. Kreuze die richtige Antwort an.",
    "mehrfach": false,
    "optionen": [
     {
@@ -38941,25 +38950,25 @@
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "text": "Ja. Die Spitze hat dann 88°.",
+     "text": "Ja. Die Spitze hat dann 83°.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
-    },
-    {
-     "text": "Nein. Beide Basiswinkel wären zusammen 184°, mehr als 180°.",
-     "richtig": true
     },
     {
      "text": "Ja. Dann ist das Dreieck stumpfwinklig.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
+    },
+    {
+     "text": "Nein. Beide Basiswinkel wären zusammen 194°, mehr als 180°.",
+     "richtig": true
     }
    ],
    "hilfen": {
     "tipp": "Es gibt zwei gleich große Basiswinkel."
    },
    "nachweis": [
-    "2 · 92° = 184°",
+    "2 · 97° = 194°",
     {
      "art": "urteil",
      "stimmt": false
@@ -38977,10 +38986,10 @@
    "format": "ordnen",
    "text": "Begründe: Im gleichseitigen Dreieck ist jeder Winkel 60° groß. Ordne die Schritte.",
    "karten": [
-    "Nach dem Basiswinkelsatz ist α = β und β = γ.",
-    "Also sind alle drei Winkel gleich groß.",
+    "Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°.",
     "Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein.",
-    "Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°."
+    "Nach dem Basiswinkelsatz ist α = β und β = γ.",
+    "Also sind alle drei Winkel gleich groß."
    ],
    "loesung": [
     "Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein.",
@@ -40564,7 +40573,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -40761,7 +40771,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -40867,7 +40878,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -41069,7 +41081,8 @@
      {
       "n": "A",
       "x": 2,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -41176,7 +41189,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -41466,7 +41480,8 @@
      {
       "n": "A",
       "x": 2,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -41713,12 +41728,14 @@
      {
       "n": "A",
       "x": 2,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
       "x": 5,
-      "y": 2
+      "y": 2,
+      "pos": "r"
      }
     ],
     "linien": [
@@ -41962,17 +41979,17 @@
      {
       "a": "B",
       "b": "C",
-      "t": "6 cm"
+      "t": "30 m"
      },
      {
       "a": "C",
       "b": "A",
-      "t": "6 cm"
+      "t": "30 m"
      },
      {
       "a": "A",
       "b": "B",
-      "t": "5 cm"
+      "t": "25 m"
      }
     ],
     "titel": "Planfigur"
@@ -42298,7 +42315,7 @@
      {
       "a": "A",
       "b": "B",
-      "t": "5 cm"
+      "t": "100 m"
      }
     ],
     "titel": "Planfigur"
@@ -42342,6 +42359,68 @@
    },
    "einheit": "mm",
    "toleranz": 2,
+   "bild": {
+    "art": "figur",
+    "punkte": [
+     {
+      "n": "A",
+      "p": [
+       0,
+       0
+      ]
+     },
+     {
+      "n": "B",
+      "p": [
+       5,
+       0
+      ]
+     },
+     {
+      "n": "C",
+      "p": [
+       1.77,
+       4.612
+      ]
+     }
+    ],
+    "linien": [
+     {
+      "a": "A",
+      "b": "B"
+     },
+     {
+      "a": "B",
+      "b": "C"
+     },
+     {
+      "a": "C",
+      "b": "A"
+     }
+    ],
+    "winkel": [
+     {
+      "s": "A",
+      "a": "B",
+      "b": "C",
+      "wert": 69
+     },
+     {
+      "s": "C",
+      "a": "A",
+      "b": "B",
+      "wert": 56
+     }
+    ],
+    "masse": [
+     {
+      "a": "A",
+      "b": "B",
+      "t": "5 cm"
+     }
+    ],
+    "titel": "Planfigur"
+   },
    "nachweis": [
     "180° − 69° − 56° = 55°",
     {
@@ -42423,7 +42502,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -42524,7 +42604,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.4-K2-E-06",
@@ -44953,7 +45034,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -45026,7 +45108,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 3
+      "y": 3,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -45116,12 +45199,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "l"
      },
      {
       "n": "B",
       "x": 11,
-      "y": 1
+      "y": 1,
+      "pos": "r"
      }
     ],
     "linien": [
@@ -45170,26 +45255,7 @@
      4
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       2,
-       4
-      ]
-     ],
-     "fehlvorstellung": "thales-durchmesser"
-    },
-    {
-     "punkte": [
-      [
-       10,
-       4
-      ]
-     ],
-     "fehlvorstellung": "thales-durchmesser"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "C liegt auf dem Thaleskreis und auf der Geraden p.",
     "beispiel": "Kreis und Gerade schneiden sich in zwei Punkten.",
@@ -45349,7 +45415,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -45440,17 +45507,20 @@
      {
       "n": "A",
       "x": 2,
-      "y": 1
+      "y": 1,
+      "pos": "l"
      },
      {
       "n": "B",
       "x": 12,
-      "y": 1
+      "y": 1,
+      "pos": "r"
      },
      {
       "n": "C",
       "x": 7,
-      "y": 6
+      "y": 6,
+      "pos": "lu"
      }
     ],
     "linien": [
@@ -45556,7 +45626,8 @@
      {
       "n": "A",
       "x": 2,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -45646,12 +45717,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "l"
      },
      {
       "n": "B",
       "x": 11,
-      "y": 1
+      "y": 1,
+      "pos": "r"
      }
     ],
     "linien": [
@@ -45700,26 +45773,7 @@
      5
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       3,
-       5
-      ]
-     ],
-     "fehlvorstellung": "thales-durchmesser"
-    },
-    {
-     "punkte": [
-      [
-       9,
-       5
-      ]
-     ],
-     "fehlvorstellung": "thales-durchmesser"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "C liegt auf dem Thaleskreis und auf der Geraden p.",
     "beispiel": "Kreis und Gerade schneiden sich in zwei Punkten.",
@@ -45982,12 +46036,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "l"
      },
      {
       "n": "B",
       "x": 11,
-      "y": 1
+      "y": 1,
+      "pos": "r"
      }
     ],
     "linien": [
@@ -46097,7 +46153,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.5-T2-M-02",
@@ -46149,7 +46206,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -46414,12 +46472,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "l"
      },
      {
       "n": "B",
       "x": 11,
-      "y": 1
+      "y": 1,
+      "pos": "r"
      }
     ],
     "linien": [
@@ -46511,7 +46571,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.5-T2-E-04",
@@ -46685,7 +46746,8 @@
      {
       "n": "M",
       "x": 7,
-      "y": 7
+      "y": 7,
+      "pos": "lo"
      },
      {
       "n": "P",
@@ -47008,26 +47070,7 @@
      4
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       4,
-       11
-      ]
-     ],
-     "fehlvorstellung": "tangente-nicht-senkrecht"
-    },
-    {
-     "punkte": [
-      [
-       3,
-       4
-      ]
-     ],
-     "fehlvorstellung": "tangente-nicht-senkrecht"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Der Thaleskreis über MQ schneidet den Kreis in den Berührpunkten."
    },
@@ -47110,7 +47153,8 @@
      {
       "n": "M",
       "x": 7,
-      "y": 7
+      "y": 7,
+      "pos": "lo"
      },
      {
       "n": "P",
@@ -47488,17 +47532,20 @@
      {
       "n": "M",
       "x": 7,
-      "y": 7
+      "y": 7,
+      "pos": "ru"
      },
      {
       "n": "Q",
       "x": 2,
-      "y": 12
+      "y": 12,
+      "pos": "lo"
      },
      {
       "n": "T",
       "x": 7,
-      "y": 12
+      "y": 12,
+      "pos": "o"
      }
     ],
     "kreise": [
@@ -47713,26 +47760,7 @@
      11
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       11,
-       10
-      ]
-     ],
-     "fehlvorstellung": "tangente-nicht-senkrecht"
-    },
-    {
-     "punkte": [
-      [
-       4,
-       11
-      ]
-     ],
-     "fehlvorstellung": "tangente-nicht-senkrecht"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Der Thaleskreis über MQ schneidet den Kreis in den Berührpunkten."
    },
@@ -48103,7 +48131,8 @@
      {
       "n": "P",
       "x": 11,
-      "y": 4
+      "y": 4,
+      "pos": "ru"
      }
     ],
     "kreise": [
@@ -48237,7 +48266,8 @@
      {
       "n": "M",
       "x": 7,
-      "y": 7
+      "y": 7,
+      "pos": "ru"
      },
      {
       "n": "Q",
@@ -48247,7 +48277,8 @@
      {
       "n": "T",
       "x": 7,
-      "y": 12
+      "y": 12,
+      "pos": "o"
      }
     ],
     "kreise": [
@@ -48384,26 +48415,7 @@
      7
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       7,
-       12
-      ]
-     ],
-     "fehlvorstellung": "tangente-nicht-senkrecht"
-    },
-    {
-     "punkte": [
-      [
-       12,
-       7
-      ]
-     ],
-     "fehlvorstellung": "tangente-nicht-senkrecht"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Der Thaleskreis über MQ schneidet den Kreis in den Berührpunkten."
    },
@@ -48459,7 +48471,8 @@
      {
       "n": "P",
       "x": 10,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      }
     ],
     "kreise": [
@@ -48713,7 +48726,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -48840,7 +48854,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -48960,7 +48975,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -49083,12 +49099,14 @@
      {
       "n": "B",
       "x": 1,
-      "y": 3
+      "y": 3,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 8,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -49218,7 +49236,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -49286,7 +49305,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -49419,12 +49439,14 @@
      {
       "n": "B",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 4,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -49527,12 +49549,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 3
+      "y": 3,
+      "pos": "lo"
      },
      {
       "n": "B",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -49659,12 +49683,14 @@
      {
       "n": "B",
       "x": 1,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 5,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -49774,7 +49800,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -49899,12 +49926,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      },
      {
       "n": "B",
       "x": 7,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -50016,7 +50045,8 @@
      {
       "n": "C",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      }
     ],
     "figuren": [
@@ -50148,7 +50178,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -50290,7 +50321,8 @@
      {
       "n": "A",
       "x": 2,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -50300,7 +50332,8 @@
      {
       "n": "C",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      }
     ],
     "figuren": [
@@ -50412,7 +50445,8 @@
      {
       "n": "C",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      }
     ],
     "figuren": [
@@ -50517,12 +50551,14 @@
      {
       "n": "B",
       "x": 1,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -50653,7 +50689,8 @@
      {
       "n": "A",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -50663,7 +50700,8 @@
      {
       "n": "C",
       "x": 1,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      }
     ],
     "figuren": [
@@ -50786,12 +50824,14 @@
      {
       "n": "A",
       "x": 2,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
       "x": 9,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -50820,14 +50860,14 @@
     "linien": [
      {
       "a": [
-       1,
-       1
-      ],
-      "b": [
        2,
        1
       ],
-      "art": "strecke",
+      "b": [
+       9,
+       1
+      ],
+      "art": "gerade",
       "stil": "hilfs"
      }
     ]
@@ -50911,12 +50951,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
       "x": 5,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -51044,7 +51086,8 @@
      {
       "n": "A",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -51209,7 +51252,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -51219,7 +51263,8 @@
      {
       "n": "C",
       "x": 5,
-      "y": 5
+      "y": 5,
+      "pos": "r"
      }
     ],
     "figuren": [
@@ -51334,12 +51379,14 @@
      {
       "n": "A",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
       "x": 9,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -51368,14 +51415,14 @@
     "linien": [
      {
       "a": [
-       1,
-       1
-      ],
-      "b": [
        3,
        1
       ],
-      "art": "strecke",
+      "b": [
+       9,
+       1
+      ],
+      "art": "gerade",
       "stil": "hilfs"
      }
     ]
@@ -51475,12 +51522,14 @@
      {
       "n": "A",
       "x": 3,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
       "x": 6,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -51509,14 +51558,14 @@
     "linien": [
      {
       "a": [
-       1,
-       1
-      ],
-      "b": [
        3,
        1
       ],
-      "art": "strecke",
+      "b": [
+       6,
+       1
+      ],
+      "art": "gerade",
       "stil": "hilfs"
      }
     ]
@@ -51600,7 +51649,8 @@
      {
       "n": "A",
       "x": 8,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -51698,7 +51748,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -51708,7 +51759,8 @@
      {
       "n": "C",
       "x": 3,
-      "y": 6
+      "y": 6,
+      "pos": "l"
      }
     ],
     "figuren": [
@@ -51844,7 +51896,8 @@
      {
       "n": "A",
       "x": 4,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -51921,17 +51974,20 @@
      {
       "n": "A",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lu"
      },
      {
       "n": "B",
       "x": 8,
-      "y": 4
+      "y": 4,
+      "pos": "ru"
      },
      {
       "n": "C",
       "x": 10,
-      "y": 10
+      "y": 10,
+      "pos": "r"
      }
     ],
     "figuren": [
@@ -52090,12 +52146,14 @@
      {
       "n": "B",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 4,
-      "y": 4
+      "y": 4,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -52196,7 +52254,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -52304,7 +52363,8 @@
      {
       "n": "C",
       "x": 4,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -52419,17 +52479,20 @@
      {
       "n": "A",
       "x": 1,
-      "y": 2
+      "y": 2,
+      "pos": "ru"
      },
      {
       "n": "B",
       "x": 6,
-      "y": 2
+      "y": 2,
+      "pos": "ru"
      },
      {
       "n": "C",
       "x": 7,
-      "y": 8
+      "y": 8,
+      "pos": "r"
      }
     ],
     "figuren": [
@@ -52589,7 +52652,8 @@
      {
       "n": "A",
       "x": 2,
-      "y": 2
+      "y": 2,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -52692,12 +52756,14 @@
      {
       "n": "B",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 7,
-      "y": 2
+      "y": 2,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -52812,7 +52878,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -53012,7 +53079,8 @@
      {
       "n": "A",
       "x": 3,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -53085,7 +53153,8 @@
      {
       "n": "A",
       "x": 7,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -53314,12 +53383,14 @@
      {
       "n": "A",
       "x": 7,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      },
      {
       "n": "B",
       "x": 7,
-      "y": 7
+      "y": 7,
+      "pos": "o"
      }
     ],
     "linien": [
@@ -53350,11 +53421,11 @@
       "n": "s",
       "a": [
        7,
-       6
+       7
       ],
       "b": [
        6,
-       6
+       7
       ],
       "art": "gerade"
      },
@@ -53435,17 +53506,7 @@
      8
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       3,
-       8
-      ]
-     ],
-     "fehlvorstellung": "ortslinie-verwechselt"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Alle Punkte mit Abstand 5 von P liegen auf einem Kreis um P.",
     "beispiel": "Zeichne den Kreis in Gedanken. Wo schneidet er p?",
@@ -53498,7 +53559,8 @@
      {
       "n": "A",
       "x": 7,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -53824,17 +53886,7 @@
      1
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       4,
-       9
-      ]
-     ],
-     "fehlvorstellung": "ortslinie-verwechselt"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Die gesuchten Punkte liegen auf dem Kreis und auf der Mittelsenkrechten von AB.",
     "beispiel": "Zeichne die Mittelsenkrechte ein. Wo schneidet sie den Kreis?",
@@ -53915,17 +53967,7 @@
      9
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       10,
-       9
-      ]
-     ],
-     "fehlvorstellung": "ortslinie-verwechselt"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Alle Punkte mit Abstand 5 von P liegen auf einem Kreis um P.",
     "beispiel": "Zeichne den Kreis in Gedanken. Wo schneidet er p?",
@@ -54150,7 +54192,8 @@
      {
       "n": "A",
       "x": 3,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -54368,7 +54411,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.7-O1-M-03",
@@ -54502,7 +54546,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.7-O1-M-05",
@@ -54554,7 +54599,8 @@
      {
       "n": "Q",
       "x": 11,
-      "y": 7
+      "y": 7,
+      "pos": "lo"
      }
     ],
     "linien": [
@@ -54669,7 +54715,8 @@
      {
       "n": "A",
       "x": 5,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -54966,7 +55013,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.7-O1-E-04",
@@ -55087,7 +55135,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.7-O1-E-06",
@@ -55145,7 +55194,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -55234,7 +55284,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Winkelhalbierende teilt den Winkel.\nBerechne den Winkel φ.",
+   "text": "Der Winkel bei S ist 100° groß.\nDie Winkelhalbierende teilt den Winkel.\nBerechne den Winkel φ.",
    "loesung": 50,
    "typischeFehler": [
     {
@@ -55321,14 +55371,6 @@
       "wert": 50,
       "n": "φ",
       "frage": true
-     },
-     {
-      "s": "S",
-      "a": "U",
-      "b": "V",
-      "farbe": 2,
-      "r": 52,
-      "wert": 100
      }
     ]
    },
@@ -55381,7 +55423,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -55491,7 +55534,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -55577,7 +55621,7 @@
    "niveau": "F",
    "afb": 2,
    "kompetenz": [
-    "symbolisch"
+    "modellieren"
    ],
    "format": "zahl",
    "text": "Die Winkelhalbierende teilt einen Winkel.\nJeder Teil ist 50° groß.\nBerechne den ganzen Winkel.",
@@ -55659,25 +55703,15 @@
       "b": "V",
       "farbe": 0,
       "wert": 50
-     },
-     {
-      "s": "S",
-      "a": "U",
-      "b": "V",
-      "farbe": 2,
-      "r": 52,
-      "n": "φ",
-      "wert": 100,
-      "frage": true
      }
     ]
    },
    "nachweis": [
-    "2 · 50° = 100°",
     {
-     "art": "figur",
-     "winkel": "φ"
-    }
+     "zahl": 2,
+     "grund": "zwei gleich große Teile"
+    },
+    "2 · 50° = 100°"
    ]
   },
   {
@@ -55700,7 +55734,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -55800,7 +55835,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -55889,7 +55925,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Winkelhalbierende teilt den Winkel.\nBerechne φ.",
+   "text": "Der Winkel bei S ist 60° groß.\nDie Winkelhalbierende teilt den Winkel.\nBerechne φ.",
    "loesung": 30,
    "typischeFehler": [
     {
@@ -55976,14 +56012,6 @@
       "wert": 30,
       "n": "φ",
       "frage": true
-     },
-     {
-      "s": "S",
-      "a": "U",
-      "b": "V",
-      "farbe": 2,
-      "r": 52,
-      "wert": 60
      }
     ]
    },
@@ -56266,17 +56294,7 @@
      8
     ]
    ],
-   "typischeFehler": [
-    {
-     "punkte": [
-      [
-       3,
-       8
-      ]
-     ],
-     "fehlvorstellung": "ortslinie-verwechselt"
-    }
-   ],
+   "typischeFehler": [],
    "hilfen": {
     "tipp": "Alle Punkte mit Abstand 5 von P liegen auf einem Kreis um P.",
     "beispiel": "Zeichne den Kreis in Gedanken. Wo schneidet er p?",
@@ -56368,7 +56386,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -56632,7 +56651,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      }
     ],
     "linien": [
@@ -56745,7 +56765,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "ru"
      }
     ],
     "linien": [
@@ -56841,7 +56862,8 @@
       }
      ]
     }
-   ]
+   ],
+   "offen": true
   },
   {
    "id": "7.2.7-O2-M-06",
@@ -56906,7 +56928,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "lo"
      }
     ],
     "linien": [
@@ -57192,7 +57215,8 @@
      {
       "n": "S",
       "x": 7,
-      "y": 5
+      "y": 5,
+      "pos": "r"
      }
     ],
     "linien": [
@@ -57334,12 +57358,14 @@
      {
       "n": "A",
       "x": 8,
-      "y": 12
+      "y": 12,
+      "pos": "l"
      },
      {
       "n": "B",
       "x": 4,
-      "y": 4
+      "y": 4,
+      "pos": "lo"
      },
      {
       "n": "C",
@@ -57493,7 +57519,8 @@
      {
       "n": "A",
       "x": 10,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -57503,7 +57530,8 @@
      {
       "n": "C",
       "x": 7,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      }
     ],
     "figuren": [
@@ -57734,7 +57762,8 @@
      {
       "n": "C",
       "x": 2,
-      "y": 7
+      "y": 7,
+      "pos": "lo"
      }
     ],
     "figuren": [
@@ -57840,7 +57869,8 @@
      {
       "n": "A",
       "x": 10,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -58141,7 +58171,8 @@
      {
       "n": "B",
       "x": 9,
-      "y": 2
+      "y": 2,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -58264,12 +58295,14 @@
      {
       "n": "B",
       "x": 7,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "C",
       "x": 10,
-      "y": 3
+      "y": 3,
+      "pos": "ru"
      }
     ],
     "figuren": [
@@ -58425,7 +58458,8 @@
      {
       "n": "A",
       "x": 6,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -58435,12 +58469,14 @@
      {
       "n": "C",
       "x": 2,
-      "y": 3
+      "y": 3,
+      "pos": "lo"
      },
      {
       "n": "U",
       "x": 6,
-      "y": 6
+      "y": 6,
+      "pos": "r"
      }
     ],
     "figuren": [
@@ -58661,7 +58697,8 @@
      {
       "n": "A",
       "x": 5,
-      "y": 2
+      "y": 2,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -58854,7 +58891,8 @@
      {
       "n": "A",
       "x": 6,
-      "y": 2
+      "y": 2,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -59045,7 +59083,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -59207,7 +59246,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
@@ -59315,7 +59355,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -59432,12 +59473,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
       "x": 10,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -59588,7 +59631,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -59696,7 +59740,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -59814,12 +59859,14 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "lo"
      },
      {
       "n": "B",
       "x": 9,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "C",
@@ -59966,7 +60013,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -60074,7 +60122,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -60213,7 +60262,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",
@@ -60353,7 +60403,8 @@
      {
       "n": "A",
       "x": 1,
-      "y": 1
+      "y": 1,
+      "pos": "ru"
      },
      {
       "n": "B",

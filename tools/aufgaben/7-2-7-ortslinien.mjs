@@ -44,7 +44,7 @@ function o1() {
     () => { const m = [zz(4, 9), zz(4, 6)], r = zz(2, 3);
       return gitterKreis(Z(`Alle Punkte mit ${r} Kästchen Abstand von M liegen auf einer Linie.`, 'Zeichne diese Linie.', 'Tippe zuerst M und dann einen Punkt der Linie an.'), GT(14, 10, { punkte: [PT('M', ...m)] }), m, r, [m[0] + r, m[1]], [[{ r: 2 * r }, 'ortslinie-verwechselt']],
         H('F', 'Gleich weit von einem Punkt: Das ist ein Kreis.', `Der Kreis um M hat den Radius ${r} Kästchen.`, 'Tippe M an und dann einen Punkt, der genau so weit weg ist.'), { nachweis: [{ art: 'kreisGitter', r }] }); },
-    () => { const s = strecke('F'), andere = plusG(s.M, s.r, 1);
+    () => { const s = strecke('F'), andere = s.B; // s steht senkrecht durch B statt durch die Mitte (Abstand zu m mindestens 2 Kästchen)
       return auswahl(Z('Welche Linie ist die Mittelsenkrechte von AB?', 'Kreuze an.'), [opt('m', true), opt('s', false, 'mittelsenkrechte-nicht-mittig'), opt('t', false, 'mittelsenkrechte-nicht-mittig')], hMS('F'),
         { bild: gitterBild(GT(14, 10, { punkte: [PT('A', ...s.A), PT('B', ...s.B)], linien: [LN(null, s.A, s.B, 'strecke'), LN('m', s.M, plusG(s.M, s.n), 'gerade'), LN('s', andere, plusG(andere, s.n), 'gerade'), LN('t', s.M, plusG(s.M, plusG(s.n, s.r)), 'gerade')] })), nachweis: [{ art: 'mittelsenkrechte', a: s.A, b: s.B, linie: 'm' }] }); },
     () => zweiBedingungen('F', Z('Gesucht sind Punkte auf der Geraden p.', 'Sie sollen 5 Kästchen von P entfernt sein.', 'Tippe beide Punkte an.'), 'kreis-p'),
@@ -113,8 +113,8 @@ const whZeichnen = (n, text) => { const t = winkelGitter(n), mitte = [(t.U[0] + 
   return gitterLinie(text, t.g, 'gerade', { art: 'gerade', a: t.S, b: plusG(t.S, t.w) }, [t.S, plusG(t.S, t.w)], mitte.every(Number.isInteger) && !((mitte[0] - t.S[0]) * t.w[1] === (mitte[1] - t.S[1]) * t.w[0]) ? [[{ art: 'gerade', a: t.S, b: mitte }, 'winkelhalbierende-seitenmitte']] : [], hWH(n),
     { nachweis: [{ art: 'linie' }, { art: 'winkelhalbierende', s: t.S, u: t.u, v: t.v, w: t.w }] }); };
 function o2() {
-  const halb = (n, text, ganz) => grad(text, ganz / 2, [[ganz, 'winkelhalbierende-seitenmitte'], [ganz * 2, 'winkelhalbierende-seitenmitte']], H(n, 'Die Winkelhalbierende teilt den Winkel in zwei gleich große Teile.', 'Ein Winkel von 80° wird in 40° und 40° geteilt.', `Rechne ${ganz}° : 2.`),
-    { bild: winkelBild(n, ganz, { halb: GESUCHT('φ', ganz / 2), ganz: WERT(ganz) }), nachweis: [`${ganz}° : 2 = ${ganz / 2}°`, FIG('φ')] });
+  const halb = (n, text, ganz) => grad(Z(`Der Winkel bei S ist ${ganz}° groß.`, text), ganz / 2, [[ganz, 'winkelhalbierende-seitenmitte'], [ganz * 2, 'winkelhalbierende-seitenmitte']], H(n, 'Die Winkelhalbierende teilt den Winkel in zwei gleich große Teile.', 'Ein Winkel von 80° wird in 40° und 40° geteilt.', `Rechne ${ganz}° : 2.`),
+    { bild: winkelBild(n, ganz, { halb: GESUCHT('φ', ganz / 2) }), nachweis: [`${ganz}° : 2 = ${ganz / 2}°`, FIG('φ')] });
   sechs(O2, 'F', [
     () => whZeichnen('F', Z('Zeichne die Winkelhalbierende des Winkels bei S.')),
     () => halb('F', Z('Die Winkelhalbierende teilt den Winkel.', 'Berechne den Winkel φ.'), 20 * zz(2, 7)),
@@ -124,7 +124,7 @@ function o2() {
     () => whZeichnen('F', Z('Halbiere den Winkel bei S.', 'Zeichne die Winkelhalbierende.')),
     () => { const h = 10 * zz(2, 7);
       return grad(Z('Die Winkelhalbierende teilt einen Winkel.', `Jeder Teil ist ${h}° groß.`, 'Berechne den ganzen Winkel.'), 2 * h, [[h, 'winkelhalbierende-seitenmitte']], H('F', 'Zwei gleich große Teile ergeben den ganzen Winkel.', 'Zweimal 30° sind 60°.', `Rechne 2 · ${h}°.`),
-        { bild: winkelBild('F', 2 * h, { halb: WERT(h), ganz: GESUCHT('φ', 2 * h) }), nachweis: [`2 · ${h}° = ${2 * h}°`, FIG('φ')] }); },
+        { bild: winkelBild('F', 2 * h, { halb: WERT(h) }), nachweis: [{ zahl: 2, grund: 'zwei gleich große Teile' }, `2 · ${h}° = ${2 * h}°`] }); },
     () => whZeichnen('F', Z('Ein Weg soll genau zwischen zwei Zäunen verlaufen.', 'Die Zäune treffen sich in S.', 'Zeichne den Weg.')),
   ]);
   sechs(O2, 'G', [
@@ -178,10 +178,10 @@ function o2() {
       ['Fälle von P die Lote auf beide Schenkel. Ihre Fußpunkte heißen F₁ und F₂.', 'Die Dreiecke SPF₁ und SPF₂ haben die Seite SP gemeinsam.', 'Sie stimmen in den Winkeln bei S (halbiert) und bei F₁ und F₂ (90°) überein.', 'Also sind sie kongruent (wsw), und PF₁ = PF₂.'], H('E', 'Suche zwei kongruente Dreiecke.')),
   ]);
 }
-// Winkelbild ohne Gitter: Winkel bei S mit Halbierender.
+// Winkelbild ohne Gitter: Winkel bei S mit Halbierender. Der ganze Winkel steht im Text: Sein Name läge sonst genau auf w.
 function winkelBild(n, ganz, { halb, ganz: g }) {
   const d = n === 'F' ? 0 : drehFuer(n), S = [0, 0], U = drehe(plus(S, dir(0), 3.4), d), V = drehe(plus(S, dir(ganz), 3.4), d), W = drehe(plus(S, dir(ganz / 2), 3.8), d);
-  return figur({ punkte: { S, U, V, W }, versteckt: ['U', 'V', 'W'], linien: [['S', 'U'], ['S', 'V'], ['S', 'W', { stil: 'hilfs', n: 'w' }]], winkel: [['S', 'U', 'W', { farbe: 0, ...halb }], ['S', 'W', 'V', { farbe: 0, ...(halb.frage ? { wert: halb.wert } : halb), n: halb.frage ? halb.n : undefined, frage: halb.frage }], ['S', 'U', 'V', { farbe: 2, r: 52, ...g }]].map((x) => { if (x[3].n === undefined) delete x[3].n; return x; }) });
+  return figur({ punkte: { S, U, V, W }, versteckt: ['U', 'V', 'W'], linien: [['S', 'U'], ['S', 'V'], ['S', 'W', { stil: 'hilfs', n: 'w' }]], winkel: [['S', 'U', 'W', { farbe: 0, ...halb }], ['S', 'W', 'V', { farbe: 0, ...(halb.frage ? { wert: halb.wert } : halb), n: halb.frage ? halb.n : undefined, frage: halb.frage }], ...(g ? [['S', 'U', 'V', { farbe: 2, r: 52, ...g }]] : [])].map((x) => { if (x[3].n === undefined) delete x[3].n; return x; }) });
 }
 // Dreieck ABC mit Winkelhalbierender von A, die BC in D trifft: δ = ∢ADB = 180° − α/2 − β.
 function dreiWinkelGerade(n = 'G') {

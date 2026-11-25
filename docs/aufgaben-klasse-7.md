@@ -1578,7 +1578,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe die beiden bekannten Winkel von
   - ☐ Man darf γ nur messen, nicht rechnen.
   - ☐ Die Rechnung stimmt, weil ein Kreis 360° hat.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Seite c ist nach beiden Seiten verlängert. Die Außenwinkel bei A und B sind 155° und 71° groß. Bestimme γ. _(Bild: figur)_ Lösung: **46 °**. Typische Fehler: 226 (winkelsumme), 134 (nebenwinkel-gleich).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · In einem Dreieck ist α 3-mal so groß wie γ, und β ist 5-mal so groß wie γ. Bestimme γ. Lösung: **20 °**. Typische Fehler: 22.5 (winkelsumme), 40 (winkelsumme).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · In einem Dreieck ist α 3-mal so groß wie γ, und β ist 5-mal so groß wie γ. Bestimme γ. Lösung: **20 °**. Typische Fehler: 40 (winkelsumme).
 
 ## 7.2.2-S2: Ich kann den Winkelsummensatz begründen und in zusammengesetzten Figuren anwenden.
 
@@ -1793,56 +1793,56 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die beiden Basiswinkel sind gleich gr
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°. *Beispiel:* Spitze 40°: (180° − 40°) : 2 = 70°. *Lösungsschritt:* Rechne 180° − 90° und teile durch 2.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°. *Beispiel:* Spitze 40°: (180° − 40°) : 2 = 70°. *Lösungsschritt:* Rechne 180° − 40° und teile durch 2.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Die markierten Winkel sind gleich groß. / Die Spitze hat 90°. / Berechne α. _(Bild: figur)_ Lösung: **45 °**. Typische Fehler: 90 (basiswinkel-falsch).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Die markierten Basiswinkel sind je 80° groß. / Berechne den Winkel γ an der Spitze. _(Bild: figur)_ Lösung: **20 °**. Typische Fehler: 100 (basiswinkel-falsch), 80 (basiswinkel-falsch).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Die markierten Winkel sind gleich groß. / Berechne die Basiswinkel. / α = ▢° / β = ▢° _(Bild: figur)_ Lösung: a = **30**, b = **30**
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Die markierten Winkel sind gleich groß. / Die Spitze hat 40°. / Berechne α. _(Bild: figur)_ Lösung: **70 °**. Typische Fehler: 140 (basiswinkel-falsch), 40 (basiswinkel-falsch).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Die markierten Basiswinkel sind je 55° groß. / Berechne den Winkel γ an der Spitze. _(Bild: figur)_ Lösung: **70 °**. Typische Fehler: 125 (basiswinkel-falsch), 55 (basiswinkel-falsch).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Die markierten Winkel sind gleich groß. / Berechne die Basiswinkel. / α = ▢° / β = ▢° _(Bild: figur)_ Lösung: a = **35**, b = **35**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. / Welche Seite ist die Basis? / Kreuze an. _(Bild: figur)_
-  - ☐ c
-  - ☑ a
+  - ☐ a
+  - ☑ c
   - ☐ b
 - `05` AFB II · _Modellieren_ · Ein gleichseitiges Dreieck hat drei gleich lange Seiten. / Sein Umfang ist 24 cm. / Berechne die Länge einer Seite. _(Bild: figur)_ Lösung: **8 cm**. Typische Fehler: 12 (dreieck-sonderfall), 16 (dreieck-sonderfall).
-- `06` AFB III · _Argumentieren_ · Finn sagt: „Ein gleichschenkliges Dreieck kann an der Spitze 100° haben.“ / Kreuze die richtige Antwort an.
-  - ☐ Stimmt nicht. / Die Basiswinkel wären dann je 100°.
+- `06` AFB III · _Argumentieren_ · Lena sagt: „Ein gleichschenkliges Dreieck kann an der Spitze 130° haben.“ / Kreuze die richtige Antwort an.
+  - ☐ Stimmt nicht. / Die Basiswinkel wären dann je 130°.
   - ☐ Stimmt nicht. / Die Spitze ist immer kleiner als 90°.
-  - ☑ Stimmt. / Dann sind die Basiswinkel je 40°.
+  - ☑ Stimmt. / Dann sind die Basiswinkel je 25°.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°. *Lösungsschritt:* Rechne 180° − 108° und teile durch 2.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die beiden Basiswinkel sind gleich groß. Zusammen mit der Spitze sind es 180°. *Lösungsschritt:* Rechne 180° − 48° und teile durch 2.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ABC ist gleichschenklig mit der Basis c. Es ist γ = 108°. Berechne α. _(Bild: figur)_ Lösung: **36 °**. Typische Fehler: 108 (basiswinkel-falsch), 72 (basiswinkel-falsch).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. Der Basiswinkel β ist 67° groß. Berechne den Winkel α an der Spitze. _(Bild: figur)_ Lösung: **46 °**. Typische Fehler: 67 (basiswinkel-falsch), 113 (basiswinkel-falsch).
-- `03` AFB II · _Modellieren_ · In einem Dreieck ABC ist α = β = 63°. Gib an, welche Seiten gleich lang sind, und begründe.
-  - a) Gleich lang sind ☐ b und c · ☑ a und b · ☐ a und c
-  - b) Grund: ☐ Winkelsummensatz · ☑ Umkehrung des Basiswinkelsatzes · ☐ Scheitelwinkel
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Dreieck ABC ist gleichschenklig mit der Basis c. Es ist γ = 48°. Berechne α. _(Bild: figur)_ Lösung: **66 °**. Typische Fehler: 48 (basiswinkel-falsch), 132 (basiswinkel-falsch), 84 (basiswinkel-falsch).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Dreieck ist gleichschenklig. Der Basiswinkel β ist 41° groß. Berechne den Winkel α an der Spitze. _(Bild: figur)_ Lösung: **98 °**. Typische Fehler: 41 (basiswinkel-falsch), 139 (basiswinkel-falsch).
+- `03` AFB II · _Modellieren_ · In einem Dreieck ABC ist α = β = 54°. Gib an, welche Seiten gleich lang sind, und begründe.
+  - a) Gleich lang sind ☑ a und b · ☐ a und c · ☐ b und c
+  - b) Grund: ☐ Scheitelwinkel · ☐ Winkelsummensatz · ☑ Umkehrung des Basiswinkelsatzes
 - `04` AFB I · _Argumentieren_ · Ein Verkehrsschild hat die Form eines gleichseitigen Dreiecks. Begründe mit dem Basiswinkelsatz und gib die Größe eines Winkels an. _(Bild: figur)_ Lösung: **60 °**. Typische Fehler: 90 (winkelsumme), 45 (basiswinkel-falsch), 180 (winkelsumme).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Dreieck ABC ist gleichschenklig mit der Basis c. Die Basis ist über B verlängert. Der Außenwinkel bei B ist 122° groß. Berechne γ. _(Bild: figur)_ Lösung: **64 °**. Typische Fehler: 58 (basiswinkel-falsch), 122 (nebenwinkel-gleich).
-- `06` AFB III · _Argumentieren_ · Das Dreieck ABC ist gleichschenklig mit der Spitze C und γ = 66°. Sara rechnet: „α = 66°, denn im gleichschenkligen Dreieck sind zwei Winkel gleich.“ Erkläre den Fehler. Kreuze die richtige Erklärung an. _(Bild: figur)_
-  - ☑ Gleich groß sind nur die Basiswinkel α und β. Richtig ist α = (180° − 66°) : 2 = 57°.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Dreieck ABC ist gleichschenklig mit der Basis c. Die Basis ist über B verlängert. Der Außenwinkel bei B ist 128° groß. Berechne γ. _(Bild: figur)_ Lösung: **76 °**. Typische Fehler: 52 (basiswinkel-falsch), 128 (nebenwinkel-gleich).
+- `06` AFB III · _Argumentieren_ · Das Dreieck ABC ist gleichschenklig mit der Spitze C und γ = 104°. Lena rechnet: „α = 104°, denn im gleichschenkligen Dreieck sind zwei Winkel gleich.“ Erkläre den Fehler. Kreuze die richtige Erklärung an. _(Bild: figur)_
   - ☐ Die Rechnung stimmt.
   - ☐ Im gleichschenkligen Dreieck sind alle Winkel gleich.
-  - ☐ Richtig ist α = 180° − 66° = 114°.
+  - ☐ Richtig ist α = 180° − 104° = 76°.
+  - ☑ Gleich groß sind nur die Basiswinkel α und β. Richtig ist α = (180° − 104°) : 2 = 38°.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Drei gleich große Teile und dazu die Differenz ergeben 180°.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die gleich großen Teile.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im gleichschenkligen Dreieck ABC mit der Basis c ist die Spitze γ um 78° größer als ein Basiswinkel. Bestimme α. Lösung: **34 °**. Typische Fehler: 51 (basiswinkel-falsch), 112 (basiswinkel-falsch).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Dreieck ABC liegt D auf AB, und die Strecken AD und DC sind gleich lang. Es ist α = 54°. Bestimme den Winkel φ = ∢BDC. _(Bild: figur)_ Lösung: **108 °**. Typische Fehler: 72 (nebenwinkel-gleich), 54 (basiswinkel-falsch).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im gleichschenkligen Dreieck ist jeder Basiswinkel 2-mal so groß wie die Spitze. Bestimme die Winkel. / Spitze = ▢° / Basiswinkel = ▢° Lösung: s = **36**, b = **72**
-- `04` AFB III · _Argumentieren_ · Im Dreieck ABC ist α = γ = 60°. Ole sagt: „Dann ist c die Basis.“ Erkläre den Fehler. Kreuze die richtige Erklärung an. _(Bild: figur)_
-  - ☐ Es gibt keine Basis, weil β fehlt.
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im gleichschenkligen Dreieck ABC mit der Basis c ist γ 4-mal so groß wie ein Basiswinkel. Bestimme γ. Lösung: **120 °**. Typische Fehler: 30 (basiswinkel-falsch), 45 (winkelsumme).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Im Dreieck ABC liegt D auf AB, und die Strecken AD und DC sind gleich lang. Es ist α = 38°. Bestimme den Winkel φ = ∢BDC. _(Bild: figur)_ Lösung: **76 °**. Typische Fehler: 104 (nebenwinkel-gleich), 38 (basiswinkel-falsch).
+- `03` AFB II · _Modellieren_ · Im gleichschenkligen Dreieck ist jeder Basiswinkel 7-mal so groß wie die Spitze. Bestimme die Winkel. / Spitze = ▢° / Basiswinkel = ▢° Lösung: s = **12**, b = **84**
+- `04` AFB III · _Argumentieren_ · Im Dreieck ABC ist α = γ = 42°. Ole sagt: „Dann ist c die Basis.“ Erkläre den Fehler. Kreuze die richtige Erklärung an. _(Bild: figur)_
   - ☑ Die Basis liegt zwischen den gleichen Winkeln, also zwischen A und C. Das ist die Seite b.
-  - ☐ c ist richtig, denn c ist immer die Basis.
+  - ☐ Es gibt keine Basis, weil β fehlt.
   - ☐ Die Basis ist a, denn a liegt bei α.
-- `05` AFB II · _Argumentieren_ · Kann ein gleichschenkliges Dreieck einen Basiswinkel von 92° haben? Begründe. Kreuze die richtige Antwort an.
+  - ☐ c ist richtig, denn c ist immer die Basis.
+- `05` AFB II · _Argumentieren_ · Kann ein gleichschenkliges Dreieck einen Basiswinkel von 97° haben? Begründe. Kreuze die richtige Antwort an.
   - ☐ Nein. Basiswinkel sind immer 45°.
-  - ☐ Ja. Die Spitze hat dann 88°.
-  - ☑ Nein. Beide Basiswinkel wären zusammen 184°, mehr als 180°.
+  - ☐ Ja. Die Spitze hat dann 83°.
   - ☐ Ja. Dann ist das Dreieck stumpfwinklig.
-- `06` AFB III · _Argumentieren_ · Begründe: Im gleichseitigen Dreieck ist jeder Winkel 60° groß. Ordne die Schritte. _(Ordnen; die Karten liegen so da: Nach dem Basiswinkelsatz ist α = β und β = γ., Also sind alle drei Winkel gleich groß., Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein., Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°.)_ Lösung: **Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein., Nach dem Basiswinkelsatz ist α = β und β = γ., Also sind alle drei Winkel gleich groß., Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°.**
+  - ☑ Nein. Beide Basiswinkel wären zusammen 194°, mehr als 180°.
+- `06` AFB III · _Argumentieren_ · Begründe: Im gleichseitigen Dreieck ist jeder Winkel 60° groß. Ordne die Schritte. _(Ordnen; die Karten liegen so da: Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°., Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein., Nach dem Basiswinkelsatz ist α = β und β = γ., Also sind alle drei Winkel gleich groß.)_ Lösung: **Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein., Nach dem Basiswinkelsatz ist α = β und β = γ., Also sind alle drei Winkel gleich groß., Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°.**
 
 ## 7.2.4-K1: Ich kann erkennen, welcher Kongruenzsatz passt, und eine Planfigur skizzieren.
 
@@ -2021,13 +2021,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne mit einer Planfigur. Die Kons
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck. / Gegeben: b = 5 cm, c = 5 cm, α = 102°. / Miss dann den Winkel β. _(Bild: figur)_ Lösung: **39 °** (bis 2 ° daneben gilt als richtig).
 - `02` AFB II · _Modellieren_ · Von zwei Punkten A und B am Ufer, 100 m voneinander entfernt, wird ein Baum C auf einer Insel angepeilt: α = 37°, β = 37°. Zeichne im Maßstab 1 : 2000 und gib die Länge von b in der Zeichnung in Millimetern an. _(Bild: figur)_ Lösung: **31 mm** (bis 2 mm daneben gilt als richtig).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 5 cm, α = 69° und γ = 56°. Miss dann die Seite a in Millimetern. Lösung: **56 mm** (bis 2 mm daneben gilt als richtig).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 5 cm, α = 69° und γ = 56°. Miss dann die Seite a in Millimetern. _(Bild: figur)_ Lösung: **56 mm** (bis 2 mm daneben gilt als richtig).
 - `04` AFB III · _Argumentieren_ · Noah will ein Dreieck mit a = 2 cm, b = 5 cm und c = 9 cm konstruieren. Die Kreisbögen um A und B treffen sich nicht. Erkläre, woran das liegt. Kreuze an.
   - ☑ a + b = 7 cm ist nicht länger als c = 9 cm. Das Dreieck gibt es nicht.
   - ☐ Die Bögen sind zu kurz gezeichnet.
   - ☐ Der Zirkel ist verrutscht.
   - ☐ Man muss mit der Seite a beginnen.
-- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gegeben sind c = AB, der Winkel α (der Strahl von A aus) und a = 5 Kästchen (der Kreis um B). Tippe alle Punkte an, die als Ecke C in Frage kommen. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 10 × 8; Punkte A(1|1), B(8|1); Strecke c durch (1|1) und (8|1), Strahl durch (1|1) und (7|7); Kreis um (8|1) mit Radius 5 Kästchen)_ Lösung: **(4|4) (5|5)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gegeben sind c = AB, der Winkel α (der Strahl von A aus) und a = 5 Kästchen (der Kreis um B). Tippe alle Punkte an, die als Ecke C in Frage kommen. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 10 × 8; Punkte A(1|1), B(8|1); Strecke c durch (1|1) und (8|1), Strahl durch (1|1) und (7|7); Kreis um (8|1) mit Radius 5 Kästchen)_ Lösung: **(4|4) (5|5)**
 - `06` AFB III · _Argumentieren_ · Gegeben sind b, c und γ, und c ist kürzer als b. Begründe, warum es zwei verschiedene Dreiecke geben kann. Kreuze an.
   - ☐ Weil sws immer zwei Lösungen hat.
   - ☐ Weil man das Dreieck spiegeln kann.
@@ -2143,7 +2143,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Thaleskreis hat seinen Mittelpunk
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* C liegt auf dem Thaleskreis und auf der Geraden p. *Lösungsschritt:* Suche beide Schnittpunkte.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll mit A und B einen rechten Winkel bilden und 4 Kästchen von AB entfernt sein. Tippe alle möglichen Punkte C oberhalb von AB an. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1), Gerade p durch (1|5) und (11|5); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(3|5) (9|5)**
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll mit A und B einen rechten Winkel bilden und 4 Kästchen von AB entfernt sein. Tippe alle möglichen Punkte C oberhalb von AB an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1), Gerade p durch (1|5) und (11|5); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(3|5) (9|5)**
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 8 cm, γ = 90° und α = 52°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **49 mm** (bis 2 mm daneben gilt als richtig).
 - `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Alle Punkte C mit γ = 90° liegen auf einer Ortslinie. Zeichne sie für die Strecke AB. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 6 × 4; Punkte A(1|2), B(5|2); Strecke c durch (1|2) und (5|2))_ Lösung: **Kreis um (3|2) mit Radius 2 Kästchen**, zum Beispiel durch (5|2)
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Ortslinie enthält alle Punkte C, für die das Dreieck ABC bei C einen rechten Winkel hat? Kreuze an.
@@ -2164,7 +2164,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zeichne c und den Thaleskreis über c
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 7 cm, γ = 90° und b = 5 cm. / Nutze den Thaleskreis über c. / Miss dann den Winkel α. Lösung: **44 °** (bis 2 ° daneben gilt als richtig).
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Konstruiere im Heft ein Dreieck mit c = 7 cm, γ = 90° und α = 63°. / Nutze den Thaleskreis über c. / Miss dann die Seite b in Millimetern. Lösung: **32 mm** (bis 2 mm daneben gilt als richtig).
-- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll mit A und B einen rechten Winkel bilden und genau 3 oder 4 Kästchen über AB liegen. Tippe alle möglichen Punkte C oberhalb von AB an. _(Gitterzeichnen, 4 Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(2|4) (10|4) (3|5) (9|5)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · C soll mit A und B einen rechten Winkel bilden und genau 3 oder 4 Kästchen über AB liegen. Tippe alle möglichen Punkte C oberhalb von AB an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 12 × 7; Punkte A(1|1), B(11|1); Strecke c durch (1|1) und (11|1); Kreis um (6|1) mit Radius 5 Kästchen)_ Lösung: **(2|4) (10|4) (3|5) (9|5)**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Konstruiere ein Dreieck mit c, γ = 90° und der Höhe h_c. Ordne die Schritte. _(Ordnen; die Karten liegen so da: Ein Schnittpunkt der Parallelen mit dem Thaleskreis ist C., Verbinde C mit A und B., Zeichne c und den Thaleskreis über c., Zeichne eine Parallele zu c im Abstand h_c.)_ Lösung: **Zeichne c und den Thaleskreis über c., Zeichne eine Parallele zu c im Abstand h_c., Ein Schnittpunkt der Parallelen mit dem Thaleskreis ist C., Verbinde C mit A und B.**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gegeben sind c = 8 cm und γ = 90°. Für welche Höhe h_c gibt es genau ein Dreieck oberhalb von c (bis auf Spiegeln an der Mittelsenkrechten)? Kreuze an.
   - ☐ h_c = 8 cm
@@ -2324,7 +2324,7 @@ Baut auf: 7.2.6-H1 (Ich kann zu den Seiten eines Dreiecks die Höhen einzeichnen
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Höhe h_c geht von der Ecke gegenüber der Seite c aus. Sie steht senkrecht auf c. *Beispiel:* Bei einer waagerechten Seite ist die Höhe eine senkrechte Linie nach oben oder unten. *Lösungsschritt:* Lege das Geodreieck mit der Mittellinie auf die Seite c.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Dreieck ist stumpfwinklig. / Die Seite c ist schon verlängert. / Zeichne die Höhe h_c von C aus. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 6; Punkte A(2|1), B(9|1), C(1|5); Strecke durch (1|1) und (2|1); Figur mit den Ecken (2|1) (9|1) (1|5))_ Lösung: **zum Beispiel durch (1|5) und (1|1)**
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Dreieck ist stumpfwinklig. / Die Seite c ist schon verlängert. / Zeichne die Höhe h_c von C aus. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 6; Punkte A(2|1), B(9|1), C(1|5); Gerade durch (2|1) und (9|1); Figur mit den Ecken (2|1) (9|1) (1|5))_ Lösung: **zum Beispiel durch (1|5) und (1|1)**
 - `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Seite c ist verlängert. / Tippe den Fußpunkt der Höhe h_c an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 7 × 4; Punkte A(1|1), B(5|1), C(6|3); Gerade durch (1|1) und (5|1); Figur mit den Ecken (1|1) (5|1) (6|3))_ Lösung: **(6|1)**
 - `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Dreieck ist stumpfwinklig. / Wo liegt der Fußpunkt von h_c? / Kreuze an. _(Bild: Karogitter 8 × 8; Punkte A(3|1), B(7|1), C(1|7); Figur mit den Ecken (3|1) (7|1) (1|7))_
   - ☐ genau bei A
@@ -2335,13 +2335,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Höhe h_c geht von der Ecke gegen
   - ☐ c
   - ☑ b
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zwei Höhen sind schon gezeichnet. / Tippe den Schnittpunkt H der beiden Höhen an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 8 × 7; Punkte A(1|1), B(6|1), C(5|5); Gerade durch (5|5) und (5|1), Gerade durch (1|1) und (5|2); Figur mit den Ecken (1|1) (6|1) (5|5))_ Lösung: **(5|2)**
-- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Seite c ist verlängert. / Zeichne die Höhe h_c. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 4; Punkte A(3|1), B(9|1), C(1|3); Strecke durch (1|1) und (3|1); Figur mit den Ecken (3|1) (9|1) (1|3))_ Lösung: **zum Beispiel durch (1|3) und (1|1)**
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Seite c ist verlängert. / Zeichne die Höhe h_c. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 10 × 4; Punkte A(3|1), B(9|1), C(1|3); Gerade durch (3|1) und (9|1); Figur mit den Ecken (3|1) (9|1) (1|3))_ Lösung: **zum Beispiel durch (1|3) und (1|1)**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Höhe h_c geht von der Ecke gegenüber der Seite c aus. Sie steht senkrecht auf c. *Beispiel:* Bei einer waagerechten Seite ist die Höhe eine senkrechte Linie nach oben oder unten. *Lösungsschritt:* Lege das Geodreieck mit der Mittellinie auf die Seite c.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Dreieck ist stumpfwinklig. / Zeichne die Höhe h_c von C aus. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 7 × 9; Punkte A(3|1), B(6|1), C(1|8); Strecke durch (1|1) und (3|1); Figur mit den Ecken (3|1) (6|1) (1|8))_ Lösung: **zum Beispiel durch (1|8) und (1|1)**
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Dreieck ist stumpfwinklig. / Zeichne die Höhe h_c von C aus. _(Gitterzeichnen, Strecke durch zwei Punkte zeichnen; Karogitter 7 × 9; Punkte A(3|1), B(6|1), C(1|8); Gerade durch (3|1) und (6|1); Figur mit den Ecken (3|1) (6|1) (1|8))_ Lösung: **zum Beispiel durch (1|8) und (1|1)**
 - `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe den Fußpunkt der Höhe h_c an. / Er liegt außerhalb des Dreiecks. _(Gitterzeichnen, einen Punkt antippen; Karogitter 9 × 8; Punkte A(8|1), B(8|5), C(1|7); Figur mit den Ecken (8|1) (8|5) (1|7))_ Lösung: **(8|7)**
 - `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zwei Höhen sind gezeichnet. / Tippe den Höhenschnittpunkt an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 10 × 8; Punkte A(1|1), B(8|1), C(3|6); Gerade durch (3|6) und (3|1), Gerade durch (1|1) und (3|3); Figur mit den Ecken (1|1) (8|1) (3|6))_ Lösung: **(3|3)**
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Wo liegt der Fußpunkt der Höhe h_c? / Kreuze an. _(Bild: Karogitter 10 × 7; Punkte A(4|1), B(9|1), C(1|6); Figur mit den Ecken (4|1) (9|1) (1|6))_
@@ -2400,7 +2400,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Mitte ist von A und B gleich weit
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe die Mitte der Strecke AB an. _(Gitterzeichnen, einen Punkt antippen; Karogitter 14 × 10; Punkte A(3|5), B(11|5); Strecke durch (3|5) und (11|5))_ Lösung: **(7|5)**
 - `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Mittelsenkrechte der Strecke AB. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte A(7|3), B(7|7); Strecke durch (7|3) und (7|7))_ Lösung: **zum Beispiel durch (7|5) und (6|5)**
 - `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Alle Punkte mit 3 Kästchen Abstand von M liegen auf einer Linie. / Zeichne diese Linie. / Tippe zuerst M und dann einen Punkt der Linie an. _(Gitterzeichnen, Kreis: erst Mittelpunkt, dann Punkt der Kreislinie; Karogitter 14 × 10; Punkte M(7|4))_ Lösung: **Kreis um (7|4) mit Radius 3 Kästchen**, zum Beispiel durch (10|4)
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Linie ist die Mittelsenkrechte von AB? / Kreuze an. _(Bild: Karogitter 14 × 10; Punkte A(7|3), B(7|7); Strecke durch (7|3) und (7|7), Gerade m durch (7|5) und (6|5), Gerade s durch (7|6) und (6|6), Gerade t durch (7|5) und (6|6))_
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welche Linie ist die Mittelsenkrechte von AB? / Kreuze an. _(Bild: Karogitter 14 × 10; Punkte A(7|3), B(7|7); Strecke durch (7|3) und (7|7), Gerade m durch (7|5) und (6|5), Gerade s durch (7|7) und (6|7), Gerade t durch (7|5) und (6|6))_
   - ☐ s
   - ☑ m
   - ☐ t
@@ -2426,13 +2426,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Mittelsenkrechte geht durch die M
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Mittelsenkrechte geht durch die Mitte von AB und steht senkrecht auf AB. *Lösungsschritt:* Finde zuerst die Mitte. Zeichne dann senkrecht dazu.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Mittelsenkrechte der Strecke AB. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte A(3|5), B(11|5); Strecke durch (3|5) und (11|5))_ Lösung: **zum Beispiel durch (7|5) und (7|6)**
-- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gesucht sind alle Punkte, die von A und B gleich weit und von P genau 5 Kästchen entfernt sind. Tippe sie an. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 14 × 11; Punkte A(8|1), B(14|1), P(7|5); Kreis um (7|5) mit Radius 5 Kästchen)_ Lösung: **(11|8) (11|2)**
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gesucht sind alle Punkte, die von A und B gleich weit und von P genau 5 Kästchen entfernt sind. Tippe sie an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 14 × 11; Punkte A(8|1), B(14|1), P(7|5); Kreis um (7|5) mit Radius 5 Kästchen)_ Lösung: **(11|8) (11|2)**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Ortslinie gehört zur Bedingung: „genau 3 cm von M entfernt“? Kreuze an.
   - ☑ ein Kreis um M
   - ☐ zwei Parallelen zu g
   - ☐ die Winkelhalbierende
   - ☐ die Mittelsenkrechte von AB
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe alle Punkte auf p an, die vom Punkt P genau 5 Kästchen entfernt sind. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 14 × 11; Punkte P(7|5); Gerade p durch (0|8) und (14|8))_ Lösung: **(3|8) (11|8)**
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe alle Punkte auf p an, die vom Punkt P genau 5 Kästchen entfernt sind. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 14 × 11; Punkte P(7|5); Gerade p durch (0|8) und (14|8))_ Lösung: **(3|8) (11|8)**
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Q liegt auf der Mittelsenkrechten von AB. Der Abstand von Q zu A ist 2,5 cm. Bestimme den Abstand von Q zu B. Kreuze an. _(Bild: Karogitter 14 × 10; Punkte A(6|7), B(8|3), Q(11|7); Strecke durch (6|7) und (8|3), Gerade m durch (7|5) und (9|6))_
   - ☐ Das kann man nicht wissen.
   - ☑ 2,5 cm
@@ -2449,13 +2449,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Mittelsenkrechte geht durch die M
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Mittelsenkrechte der Strecke AB. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte A(5|4), B(9|6); Strecke durch (5|4) und (9|6))_ Lösung: **zum Beispiel durch (7|5) und (6|7)**
 - `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Geraden g und h sind parallel. Zeichne die Linie aller Punkte, die von g und h gleich weit entfernt sind. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Gerade g durch (0|2) und (14|2), Gerade h durch (0|6) und (14|6))_ Lösung: **zum Beispiel durch (0|4) und (14|4)**
-- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Brunnen soll von zwei Häusern A und B gleich weit und vom Baum P genau 5 Kästchen entfernt sein. Tippe alle möglichen Orte an. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 14 × 11; Punkte A(2|1), B(6|1), P(7|5); Kreis um (7|5) mit Radius 5 Kästchen)_ Lösung: **(4|9) (4|1)**
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Brunnen soll von zwei Häusern A und B gleich weit und vom Baum P genau 5 Kästchen entfernt sein. Tippe alle möglichen Orte an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 14 × 11; Punkte A(2|1), B(6|1), P(7|5); Kreis um (7|5) mit Radius 5 Kästchen)_ Lösung: **(4|9) (4|1)**
 - `04` AFB III · _Argumentieren_ · Mara sagt: „Die Mittelsenkrechte von AB ist die Gerade durch die Mitte von AB.“ Beurteile die Beschreibung. Kreuze an.
   - ☐ Richtig und vollständig.
   - ☐ Falsch. Sie geht durch A.
   - ☐ Falsch. Sie ist parallel zu AB.
   - ☑ Unvollständig. Durch die Mitte gehen viele Geraden. Sie muss außerdem senkrecht auf AB stehen.
-- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gesucht sind alle Punkte, die von der Geraden g genau 3 Kästchen und vom Punkt P genau 5 Kästchen entfernt sind. Tippe sie an. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 14 × 12; Punkte P(7|8); Gerade g durch (0|5) und (14|5))_ Lösung: **(2|8) (12|8)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gesucht sind alle Punkte, die von der Geraden g genau 3 Kästchen und vom Punkt P genau 5 Kästchen entfernt sind. Tippe sie an. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 14 × 12; Punkte P(7|8); Gerade g durch (0|5) und (14|5))_ Lösung: **(2|8) (12|8)**
 - `06` AFB III · _Modellieren_ · Finde alle Punkte, die von A und B gleich weit und von M genau 3 cm entfernt sind. Ordne die Schritte. _(Ordnen; die Karten liegen so da: Zeichne den Kreis um M mit dem Radius 3 cm., Zeichne die Mittelsenkrechte von AB., Markiere die Schnittpunkte von Kreis und Mittelsenkrechte., Beschreibe die Lösung: Es gibt zwei, einen oder keinen Punkt.)_ Lösung: **Zeichne die Mittelsenkrechte von AB., Zeichne den Kreis um M mit dem Radius 3 cm., Markiere die Schnittpunkte von Kreis und Mittelsenkrechte., Beschreibe die Lösung: Es gibt zwei, einen oder keinen Punkt.**
 
 ## 7.2.7-O2: Ich kann die Winkelhalbierende zeichnen und Punkte finden, die zwei Bedingungen erfüllen.
@@ -2469,13 +2469,13 @@ Baut auf: 7.2.7-O1 (Ich kann die Mittelsenkrechte zeichnen und Kreis und Mittels
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Winkelhalbierende teilt den Winkel in zwei gleich große Winkel. *Beispiel:* Ein rechter Winkel wird in zwei Winkel von 45° geteilt. Am Gitter ist das die Kästchendiagonale. *Lösungsschritt:* Sie beginnt im Scheitel S und liegt genau zwischen den Schenkeln.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Winkelhalbierende des Winkels bei S. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (11|5), Strahl durch (7|5) und (3|5))_ Lösung: **zum Beispiel durch (7|5) und (7|6)**
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die Winkelhalbierende teilt den Winkel. / Berechne den Winkel φ. _(Bild: figur)_ Lösung: **50 °**. Typische Fehler: 100 (winkelhalbierende-seitenmitte), 200 (winkelhalbierende-seitenmitte).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Winkel bei S ist 100° groß. / Die Winkelhalbierende teilt den Winkel. / Berechne den Winkel φ. _(Bild: figur)_ Lösung: **50 °**. Typische Fehler: 100 (winkelhalbierende-seitenmitte), 200 (winkelhalbierende-seitenmitte).
 - `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Welcher Strahl ist die Winkelhalbierende? / Kreuze an. _(Bild: Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (11|5), Strahl durch (7|5) und (3|5), Strahl w durch (7|5) und (7|8), Strahl s durch (7|5) und (9|7), Strahl t durch (7|5) und (5|7))_
   - ☑ w
   - ☐ t
   - ☐ s
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Halbiere den Winkel bei S. / Zeichne die Winkelhalbierende. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (11|5), Strahl durch (7|5) und (3|5))_ Lösung: **zum Beispiel durch (7|5) und (7|6)**
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Winkelhalbierende teilt einen Winkel. / Jeder Teil ist 50° groß. / Berechne den ganzen Winkel. _(Bild: figur)_ Lösung: **100 °**. Typische Fehler: 50 (winkelhalbierende-seitenmitte).
+- `05` AFB II · _Modellieren_ · Die Winkelhalbierende teilt einen Winkel. / Jeder Teil ist 50° groß. / Berechne den ganzen Winkel. _(Bild: figur)_ Lösung: **100 °**. Typische Fehler: 50 (winkelhalbierende-seitenmitte).
 - `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ein Weg soll genau zwischen zwei Zäunen verlaufen. / Die Zäune treffen sich in S. / Zeichne den Weg. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (11|5), Strahl durch (7|5) und (3|5))_ Lösung: **zum Beispiel durch (7|5) und (7|6)**
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
@@ -2483,7 +2483,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Winkelhalbierende teilt den Winke
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Winkelhalbierende teilt den Winkel in zwei gleich große Winkel. *Beispiel:* Ein rechter Winkel wird in zwei Winkel von 45° geteilt. Am Gitter ist das die Kästchendiagonale. *Lösungsschritt:* Sie beginnt im Scheitel S und liegt genau zwischen den Schenkeln.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Winkelhalbierende des Winkels bei S. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (7|9), Strahl durch (7|5) und (4|9))_ Lösung: **zum Beispiel durch (7|5) und (6|8)**
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die Winkelhalbierende teilt den Winkel. / Berechne φ. _(Bild: figur)_ Lösung: **30 °**. Typische Fehler: 60 (winkelhalbierende-seitenmitte), 120 (winkelhalbierende-seitenmitte).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Winkel bei S ist 60° groß. / Die Winkelhalbierende teilt den Winkel. / Berechne φ. _(Bild: figur)_ Lösung: **30 °**. Typische Fehler: 60 (winkelhalbierende-seitenmitte), 120 (winkelhalbierende-seitenmitte).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Dreieck halbiert w den Winkel α. / Es ist α = 50° und β = 45°. / Berechne den Winkel δ bei D. _(Bild: figur)_ Lösung: **110 °**. Typische Fehler: 85 (winkelhalbierende-seitenmitte), 50 (winkelhalbierende-seitenmitte).
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Halbiere den Winkel bei S. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (7|1), Strahl durch (7|5) und (11|2))_ Lösung: **zum Beispiel durch (7|5) und (8|3)**
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Gesucht sind Punkte auf p. / Sie sollen 5 Kästchen von P entfernt sein. / Tippe sie an. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 14 × 11; Punkte P(7|5); Gerade p durch (0|8) und (14|8))_ Lösung: **(3|8) (11|8)**
@@ -2504,7 +2504,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Winkelhalbierende teilt den Winke
   - ☑ auf der Winkelhalbierenden
   - ☐ auf der Mittelsenkrechten
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Zeichne die Ortslinie aller Punkte im Winkelfeld, die von beiden Schenkeln gleich weit entfernt sind. _(Gitterzeichnen, Gerade durch zwei Punkte zeichnen; Karogitter 14 × 10; Punkte S(7|5); Strahl durch (7|5) und (7|1), Strahl durch (7|5) und (11|8))_ Lösung: **zum Beispiel durch (7|5) und (9|4)**
-- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe alle markierten Punkte an, die von beiden Schenkeln gleich weit entfernt sind. _(Gitterzeichnen, 2 Punkte antippen; Karogitter 14 × 10; Punkte P(5|7), X(5|9), Q(4|8), S(7|5); Strahl durch (7|5) und (7|9), Strahl durch (7|5) und (3|5))_ Lösung: **(5|7) (4|8)**
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Tippe alle markierten Punkte an, die von beiden Schenkeln gleich weit entfernt sind. _(Gitterzeichnen, alle passenden Punkte antippen; Karogitter 14 × 10; Punkte P(5|7), X(5|9), Q(4|8), S(7|5); Strahl durch (7|5) und (7|9), Strahl durch (7|5) und (3|5))_ Lösung: **(5|7) (4|8)**
 - `06` AFB III · _Argumentieren_ · Mia sagt: „Jeder Punkt, der von zwei sich schneidenden Geraden gleich weit entfernt ist, liegt auf einer einzigen Winkelhalbierenden.“ Überprüfe. Kreuze an.
   - ☐ Richtig.
   - ☐ Falsch. Es gibt vier Winkelhalbierende, die nicht senkrecht sind.

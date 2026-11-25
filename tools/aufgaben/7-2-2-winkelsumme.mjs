@@ -105,7 +105,7 @@ function s1() {
           nachweis: [R(`180° − ${aa}° = ${w[0]}°`), R(`180° − ${ab}° = ${w[1]}°`), R(`180° − ${w[0]}° − ${w[1]}° = ${w[2]}°`), FIG('γ')] }); },
     () => { const [x, k] = wahl([[2, 3], [1, 2], [1, 3], [2, 5], [1, 4], [3, 5], [2, 7], [1, 5]]), t = 180 / (x + k + 1); if (!Number.isInteger(t)) return null;
       const w = [x * t, k * t, t];
-      return grad(`In einem Dreieck ist α ${x === 1 ? 'genauso groß wie γ' : `${x}-mal so groß wie γ`}, und β ist ${k}-mal so groß wie γ. Bestimme γ.`, t, [[180 / (x + k), 'winkelsumme'], [360 / (x + k + 1), 'winkelsumme']],
+      return grad(`In einem Dreieck ist α ${x === 1 ? 'genauso groß wie γ' : `${x}-mal so groß wie γ`}, und β ist ${k}-mal so groß wie γ. Bestimme γ.`, t, [[180 / (x + k), 'winkelsumme'], [360 / (x + k + 1), 'winkelsumme']].filter(([w]) => Number.isInteger(w)),
         H('E', 'Zähle, aus wie vielen gleich großen Teilen der Größe γ die drei Winkel zusammen bestehen.'), { nachweis: [`180° : ${x + k + 1} = ${t}°`, R(`${w[0]}° + ${w[1]}° + ${w[2]}° = 180°`)] }); },
   ]);
 }
