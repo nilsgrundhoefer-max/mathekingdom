@@ -300,6 +300,26 @@ _Avoid_: Zentimeterwürfel, Zählwürfel
 Der Platz, den ein Körper einnimmt, gemessen in Einheitswürfeln. In Aufgaben heißt es immer „Volumen“.
 _Avoid_: Rauminhalt (steht nur im Merkzettel), Inhalt
 
+**Zuordnung**:
+Eine Vorschrift, die jedem Wert einer Größe genau einen Wert einer zweiten Größe zuweist, geschrieben mit Pfeil („2 Hefte → 3 €“). Sie hat drei Darstellungen: Text, Tabelle (waagrecht, zwei Zeilen) und Schaubild.
+_Avoid_: Funktion, Abbildung, Beziehung
+
+**Proportionale Zuordnung**:
+Eine Zuordnung, bei der zum Doppelten, Dreifachen oder zur Hälfte des einen Werts das Doppelte, Dreifache oder die Hälfte des anderen gehört. Ab M auch: Der Quotient der zusammengehörenden Werte ist immer gleich. „Je mehr, desto mehr“ allein genügt nicht.
+_Avoid_: Proportionalitätsfaktor, lineare Zuordnung
+
+**Antiproportionale Zuordnung**:
+Eine Zuordnung, bei der zum Doppelten des einen Werts die Hälfte des anderen gehört; das Produkt der zusammengehörenden Werte bleibt gleich. In Klasse 6 nur auf E.
+_Avoid_: umgekehrt proportional, indirekt proportional
+
+**Schaubild**:
+Das Bild einer Zuordnung im ersten Quadranten eines Koordinatensystems. Beide Achsen tragen den Namen der Größe mit Einheit und eine gleichmäßige Einteilung. Bei Stückzahlen stehen nur Punkte, bei messbaren Größen eine durchgezogene Linie. Der Punkt (0|0) heißt „Nullpunkt“.
+_Avoid_: Graph, Diagramm (das sind Säulen, Balken, Bilder), Ursprung (steht nur im Merkzettel)
+
+**Dreisatz**:
+Rechenweg bei proportionalen (auf E auch antiproportionalen) Zuordnungen in drei Zeilen: gegebenes Wertepaar, Wert „für 1“ (ab M auch für einen gemeinsamen Teiler), gesuchter Wert. Die **Dreisatztabelle** zeigt die drei Zeilen; ein **Rechenpfeil** am Rand nennt, womit beide Seiten geteilt oder malgenommen werden.
+_Avoid_: Schlussrechnung, Verhältnisgleichung
+
 **Planfigur**:
 Eine Skizze des gesuchten Dreiecks, in der alle gegebenen Seiten und Winkel markiert sind. In Kapitel 2 steht sie neben jeder Heftaufgabe des Konstruierens und ist maßstabsgetreu gezeichnet.
 _Avoid_: Skizze, Entwurf
