@@ -59,7 +59,7 @@ export function verteilungsgesetz() {
       return auswahl(Z(`${k} rechnet:`, `${a} · (${z} + ${e}) = ${a * z} + ${e} = ${falsch}`, 'Stimmt das?'), [
         opt(Z('Falsch.', `Auch ${e} muss mit ${a} malgenommen werden.`, `${a * z} + ${a * e} = ${a * (z + e)}.`), true),
         opt(Z('Stimmt.', `${a} · ${z} = ${a * z}.`), false, 'verteilung-halb'),
-        opt(Z('Falsch.', `Richtig ist ${(a + z) * e}.`))],
+        opt(Z('Falsch.', `Zuerst kommt das Plus: ${a} + ${z} = ${a + z}.`, `Richtig ist ${a + z} · ${e} = ${(a + z) * e}.`))],
       h3('Jeder Teil der Klammer wird malgenommen.', '4 · (25 + 3) = 4 · 25 + 4 · 3 = 100 + 12 = 112.', `Rechne ${a} · ${e}.`), { nachweis: [U(false, `${a} · (${z} + ${e})`, falsch), ...N(`${a} · ${z}`, `${a} · ${e}`, `${a * z} + ${a * e}`, `${a * z} + ${e}`, `(${a} + ${z}) · ${e}`)] }); },
   });
 
@@ -86,7 +86,7 @@ export function verteilungsgesetz() {
     3: () => { const [a, b, c] = suche(() => [zz(4, 9), zz(11, 19), zz(3, 9)], ([x, , z]) => x !== z), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „${a} · (${b} + ${c}) = ${a} · ${b} + ${c}.“ ${k2} sagt: „${a} · (${b} + ${c}) = ${a} · ${b} + ${a} · ${c}.“ Wer hat recht?`, [
         opt(`${k2}. Beim Ausmultiplizieren wird jeder Summand malgenommen: ${a * b} + ${a * c} = ${a * (b + c)}.`, true),
-        opt(`${k1}. Man nimmt nur den ersten Summanden mal.`, false, 'verteilung-halb'),
+        opt(`${k1}. Man nimmt nur den ersten Summanden mal, der zweite bleibt, wie er ist.`, false, 'verteilung-halb'),
         opt('Beide. Es kommt dasselbe heraus.', false, 'verteilung-halb'),
         opt(`Keiner. Richtig ist ${a + b} · ${c}.`)],
       h2('Rechne alle Ausdrücke aus und vergleiche.', `${a} · ${b + c} = ${a * (b + c)}.`), { nachweis: N(`${a} · ${b + c}`, `${a} · ${b}`, `${a} · ${c}`, `${a * b} + ${a * c}`, `${a * b} + ${c}`) }); },
@@ -119,7 +119,7 @@ export function verteilungsgesetz() {
       const [a, b, c] = suche(() => [zz(2, 5), zz(3, 6), zz(2, 5)], (x) => new Set(x).size === 3), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „${a} · (${b} · ${c}) = ${a} · ${b} · ${a} · ${c}.“ ${k2} sagt: „${a} · (${b} · ${c}) = ${a} · ${b} · ${c}.“ Wer hat recht?`, [
         opt(`${k2}. In der Klammer steht ein Produkt, keine Summe. Das Verteilungsgesetz gilt hier nicht: ${a} · ${b * c} = ${a * b * c}.`, true),
-        opt(`${k1}. Man muss jeden Faktor in der Klammer mit ${a} malnehmen.`, false, 'verteilung-halb'),
+        opt(`${k1}. Man muss jeden Faktor in der Klammer mit ${a} malnehmen. Das sagt das Verteilungsgesetz.`, false, 'verteilung-halb'),
         opt('Beide. Es kommt dasselbe heraus.', false, 'verteilung-halb'),
         opt('Keiner. Man darf die Klammer nicht auflösen.'),
         opt(`${k1}. Das ist das Verbindungsgesetz.`, false, 'begriffe-verwechselt')],
@@ -174,7 +174,7 @@ export function verteilungsgesetz() {
       return auswahl(Z(`${k} rechnet:`, `${c} · ${x} + ${c} · ${y} = ${c} · ${x} + ${y} = ${falsch}`, 'Stimmt das?'), [
         opt(Z('Falsch.', `Richtig ist ${c} · (${x} + ${y}) = ${c} · 10 = ${10 * c}.`), true),
         opt(Z('Stimmt.', `${c} · ${x} = ${c * x}.`), false, 'verteilung-halb'),
-        opt(Z('Falsch.', `Richtig ist ${c} + ${x} + ${y} = ${c + x + y}.`))],
+        opt(Z('Falsch.', 'Hier wird nur addiert.', `Richtig ist ${c} + ${x} + ${y} = ${c + x + y}.`))],
       h3('Beide Produkte haben den gleichen Faktor.', c === 6 && x === 7 ? '5 · 8 + 5 · 2 = 5 · (8 + 2) = 50.' : '6 · 7 + 6 · 3 = 6 · (7 + 3) = 60.', `Klammere ${c} aus.`), { bild: B.feld(10, c, x), nachweis: [U(false, `${c} · ${x} + ${c} · ${y}`, falsch), ...N(`${x} + ${y}`, `${c} · 10`, `${c} · ${x}`, `${c * x} + ${y}`, `${c} + ${x} + ${y}`)] }); },
   });
 
@@ -201,7 +201,7 @@ export function verteilungsgesetz() {
     3: () => { const [a, b] = suche(() => [zz(6, 9), zz(2, 6)], ([x, y]) => x !== y), c = wahl([25, 15, 35]), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „${c} · ${a} + ${c} · ${b} = ${c} · ${a + b}.“ ${k2} sagt: „${c} · ${a} + ${c} · ${b} = ${c} · ${a * b}.“ Wer hat recht?`, [
         opt(`${k1}. Beim Ausklammern werden die Zahlen in der Klammer addiert: ${c} · (${a} + ${b}) = ${c * (a + b)}.`, true),
-        opt(`${k2}. In der Klammer wird malgenommen.`, false, 'verteilung-halb'),
+        opt(`${k2}. In der Klammer wird malgenommen, weil vorn auch malgenommen wird.`, false, 'verteilung-halb'),
         opt('Beide. Es kommt dasselbe heraus.', false, 'verteilung-halb'),
         opt(`Keiner. Richtig ist ${c} · ${a} + ${b}.`, false, 'verteilung-halb')],
       h2('Rechne beide Seiten aus.', `${c} · ${a} + ${c} · ${b} = ${c * a} + ${c * b}.`), { nachweis: N(`${c} · ${a}`, `${c} · ${b}`, `${c * a} + ${c * b}`, `${c} · ${a + b}`, `${c} · ${a * b}`) }); },
@@ -227,7 +227,7 @@ export function verteilungsgesetz() {
         return auswahl(`Warum ist ${c} · 99 + ${c} leicht zu rechnen?`, [
           opt(`Weil ${c} = ${c} · 1 ist. Ausklammern ergibt ${c} · (99 + 1) = ${c} · 100 = ${fz(100 * c)}.`, true),
           opt(`Weil man 99 + ${c} zuerst rechnen darf.`, false, 'punkt-vor-strich'),
-          opt(`Weil man ${c} · 99 + ${c} als ${c} · 100 + ${c} rechnen darf.`, false, 'verteilung-halb'),
+          opt(`Weil man ${c} · 99 + ${c} als ${c} · 100 + ${c} rechnen darf, denn 99 ist fast 100.`, false, 'verteilung-halb'),
           opt('Weil man die Klammer weglassen darf.'),
           opt('Es ist nicht leicht. Man muss schriftlich rechnen.')],
         h1('Schreibe die einzelne Zahl als Produkt mit dem Faktor 1.'), { nachweis: [HILFSZAHL(1, `${c} = ${c} · 1`), ...N('99 + 1', `${c} · 100`, `${c} · 99 + ${c}`)] }); }
@@ -236,7 +236,7 @@ export function verteilungsgesetz() {
         opt(`${k1}. Beim Ausklammern bleibt das Minus in der Klammer: ${c} · (${a} − ${b}) = ${c * (a - b)}.`, true),
         opt(`${k2}. In der Klammer wird immer addiert.`, false, 'verteilung-halb'),
         opt('Beide. Ausklammern ändert nichts.', false, 'verteilung-halb'),
-        opt('Keiner. Bei Minus darf man nicht ausklammern.', false, 'verteilung-halb'),
+        opt('Keiner. Bei Minus darf man nicht ausklammern, das geht nur bei Plus.', false, 'verteilung-halb'),
         opt(`${k2}. Es kommt ${c * (a + b)} heraus.`, false, 'verteilung-halb')],
       h1('Rechne beide Seiten aus.'), { nachweis: N(`${c} · ${a}`, `${c} · ${b}`, `${c * a} − ${c * b}`, `${c} · ${a - b}`, `${c} · ${a + b}`) }); },
   });
@@ -316,7 +316,7 @@ export function verteilungsgesetz() {
     3: () => { const a = wahl([35, 45, 55, 65]), [k1, k2] = zweiKinder();
       return auswahl(`${k1} rechnet ${a} · 19 = ${a} · 20 − ${a} = ${a * 19}. ${k2} rechnet ${a} · 19 = ${a} · 20 − 19 = ${a * 20 - 19}. Wer hat recht?`, [
         opt(`${k1}. ${a} · 19 ist ${a} · 20 − ${a} · 1. Abgezogen wird ${a}, nicht 19.`, true),
-        opt(`${k2}. Man zieht die Zahl ab, die geändert wurde.`, false, 'verteilung-halb'),
+        opt(`${k2}. Man zieht am Ende die Zahl ab, die geändert wurde.`, false, 'verteilung-halb'),
         opt('Beide. Es kommt dasselbe heraus.', false, 'verteilung-halb'),
         opt(`Keiner. Richtig ist ${a} · 20 − 1.`, false, 'verteilung-halb')],
       h2('Wie viele Reihen fehlen zu 20 Reihen?', `${a} · 19 = ${a} · (20 − 1).`), { nachweis: [U(false, `${a} · 19`, a * 20 - 19), ...N(`${a} · 20`, `${a} · 1`, `${a * 20} − ${a}`, `${a} · 19`, `${a * 20} − 19`)] }); },
@@ -349,7 +349,7 @@ export function verteilungsgesetz() {
       const [k1, k2] = zweiKinder(), a = wahl([16, 24, 32, 36]);
       return auswahl(`${k1} rechnet ${a} · 25 = ${a} · 20 + ${a} · 5 = ${a * 25}. ${k2} rechnet ${a} · 25 = ${a / 4} · 100 = ${a * 25}. Wer hat recht?`, [
         opt(`Beide. ${k1} nutzt das Verteilungsgesetz, ${k2} zerlegt ${a} in ${a / 4} · 4 und nutzt 4 · 25 = 100.`, true),
-        opt(`Nur ${k1}. Man muss immer das Verteilungsgesetz nehmen.`),
+        opt(`Nur ${k1}. Man muss immer das Verteilungsgesetz nehmen, anders darf man nicht zerlegen.`),
         opt(`Nur ${k2}. Das Verteilungsgesetz gilt nicht bei 25.`, false, 'verteilung-halb'),
         opt(`Keiner. Richtig ist ${a * 20 + 5}.`, false, 'verteilung-halb'),
         opt('Keiner. Man muss schriftlich rechnen.')],

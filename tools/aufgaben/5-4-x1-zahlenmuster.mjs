@@ -76,7 +76,7 @@ export function zahlenmuster() {
       return auswahl(Z(`${kn} sagt:`, `„Bei ${liste(f)} kommt immer ${a} dazu.“`, 'Stimmt das?'), [
         opt(Z('Falsch.', 'Jede Zahl ist das Doppelte der Zahl davor.', `Nach ${f[3]} kommt ${2 * f[3]}.`), true),
         opt(Z('Stimmt.', `${a} + ${a} = ${2 * a}.`), false, FR),
-        opt(Z('Falsch.', 'Es geht abwechselnd plus und mal weiter.'))],
+        opt(Z('Falsch.', 'Es geht abwechselnd plus und mal weiter.', 'Erst plus, dann mal.'))],
       h3('Prüfe die Regel an allen Zahlen, nicht nur an den ersten beiden.', a === 5 ? '3, 6, 12: Von 3 bis 6 sind es 3, von 6 bis 12 aber 6.' : '5, 10, 20: Von 5 bis 10 sind es 5, von 10 bis 20 aber 10.', `Von ${f[1]} bis ${f[2]} sind es ${f[2] - f[1]}.`), { bild: strahlZu(f), nachweis: [U(false), ...N(...schritte(f, 'doppelt'), `${f[3]} + ${f[3]}`, `${f[2]} − ${f[1]}`)] }); },
   });
 
@@ -104,7 +104,7 @@ export function zahlenmuster() {
       return auswahl(`Die Folge beginnt mit ${a}, ${2 * a}, ${4 * a}. ${k1} sagt: „Als Nächstes kommt ${8 * a}.“ ${k2} sagt: „Als Nächstes kommt ${7 * a}.“ Wer hat recht?`, [
         opt(`Beide. Bei „immer mal 2“ kommt ${8 * a}. Bei „die Unterschiede ${a}, ${2 * a} werden immer um ${a} größer“ kommt ${7 * a}. Drei Zahlen legen die Regel nicht fest.`, true),
         opt(`Nur ${k1}. Eine Zahlenfolge geht immer mit Mal weiter.`, false, FR),
-        opt(`Nur ${k2}. Man muss immer auf die Unterschiede schauen.`, false, FR),
+        opt(`Nur ${k2}. Man muss immer auf die Unterschiede schauen. Eine Regel mit Mal gibt es bei so kleinen Zahlen noch nicht.`, false, FR),
         opt(`Keiner. Es kommt immer ${2 * a} dazu, also kommt ${6 * a}.`, false, FR)],
       h2('Suche zwei verschiedene Regeln, die zu den drei Zahlen passen.', `${2 * a} − ${a} = ${a} und ${4 * a} − ${2 * a} = ${2 * a}.`), { nachweis: N(`${a} · 2`, `${2 * a} · 2`, `${4 * a} · 2`, `${2 * a} − ${a}`, `${4 * a} − ${2 * a}`, `${2 * a} + ${a}`, `${4 * a} + ${3 * a}`) }); },
   });
@@ -128,14 +128,14 @@ export function zahlenmuster() {
       if (k === 0) { const d = wahl([3, 4, 6, 7]), t = suche(() => zz(100, 150), (x) => x % d !== 0), q = Math.floor(t / d), kn = kind();
         return auswahl(`${kn} sagt: „In der Zahlenfolge ${liste(plusFolge(d, d, 4))}, … kommt irgendwann die Zahl ${t} vor.“ Stimmt das?`, [
           opt(`Falsch. Alle Zahlen der Folge stehen in der ${d}er-Reihe. ${t} liegt zwischen ${q} · ${d} = ${q * d} und ${q + 1} · ${d} = ${(q + 1) * d}.`, true),
-          opt('Stimmt. Die Folge geht immer weiter, also kommt jede Zahl einmal vor.', false, FR),
+          opt('Stimmt. Die Folge geht immer weiter und wird beliebig groß, also kommt jede Zahl einmal vor.', false, FR),
           opt(`Stimmt. Man muss nur lange genug ${d} dazuzählen.`, false, FR),
           opt(`Falsch. In der Folge kommen nur Zahlen bis 100 vor.`)],
         h1(`Welche Zahlen bekommst du, wenn du bei ${d} anfängst und immer ${d} dazuzählst?`), { nachweis: [U(false), ...N(...schritte(plusFolge(d, d, 4), '+'), `${q} · ${d}`, `${q + 1} · ${d}`)] }); }
       const [a, b, c] = suche(() => [zz(2, 5), zz(2, 4), zz(2, 5)], ([x, y, z]) => new Set([x, y, z]).size === 3), t = a * b * b * c, [k1, k2] = zweiKinder();
       return auswahl(`In einer Mal-Mauer stehen unten ${a}, ${b} und ${c}. Oben steht ${t}. ${k1} sagt: „Verdopple ich den mittleren unteren Stein, wird der oberste Stein doppelt so groß.“ ${k2} sagt: „Er wird viermal so groß.“ Wer hat recht?`, [
         opt(`${k2}. Der mittlere Stein steckt in beiden Steinen darüber. Mit ${2 * b} steht oben ${a * 2 * b} · ${2 * b * c} = ${4 * t}, und das ist 4 · ${t}.`, true),
-        opt(`${k1}. Ein Stein wird doppelt so groß, also wird alles doppelt so groß.`, false, FR),
+        opt(`${k1}. Ein Stein wird doppelt so groß, also wird alles doppelt so groß. Mehr ändert sich nicht.`, false, FR),
         opt('Beide. Es kommt darauf an, wie man rechnet.'),
         opt('Keiner. Der oberste Stein bleibt gleich.')],
       h1('Rechne die Mauer mit dem verdoppelten Stein neu aus und vergleiche.'), { nachweis: N(`${a} · ${b}`, `${b} · ${c}`, `${a * b} · ${b * c}`, `${b} + ${b}`, `${a} · ${2 * b}`, `${2 * b} · ${c}`, `${2 * a * b} · ${2 * b * c}`, `4 · ${t}`) }); },
@@ -189,7 +189,7 @@ export function zahlenmuster() {
       return auswahl(Z(`${kn} sagt:`, `„Die Regel von ${liste(f)} heißt: immer plus ${a}.“`, 'Stimmt das?'), [
         opt(Z('Falsch.', `Von ${f[1]} bis ${f[2]} sind es ${f[2] - f[1]}.`, 'Die Regel heißt: immer mal 2.'), true),
         opt(Z('Stimmt.', `${a} + ${a} = ${2 * a}.`), false, FR),
-        opt(Z('Falsch.', `Die Regel heißt: immer plus ${2 * a}.`), false, FR)],
+        opt(Z('Falsch.', `Von ${f[1]} bis ${f[2]} sind es ${2 * a}.`, `Die Regel heißt: immer plus ${2 * a}.`), false, FR)],
       h3('Prüfe die Regel an allen Zahlen.', a === 5 ? '3, 6, 12: 3 + 3 = 6, aber 6 + 3 = 9.' : '5, 10, 20: 5 + 5 = 10, aber 10 + 5 = 15.', `Rechne ${f[1]} + ${a}. Kommt ${f[2]} heraus?`), { nachweis: [U(false), ...N(`${a} + ${a}`, `${f[2]} − ${f[1]}`, `${f[1]} + ${a}`, ...schritte(f, '·'))] }); },
   });
 
@@ -211,14 +211,14 @@ export function zahlenmuster() {
           h2('Teile eine Zahl durch die Zahl davor.', `${f[1]} : ${f[0]} = ${m}.`), { nachweis: N(...f.slice(1).map((w, i) => `${w} : ${f[i]}`), `${f[3]} · ${m}`) }); }
       return auswahl('Welche Regel beschreibt die Zahlenfolge 1, 4, 9, 16, 25?', [
         opt('Das sind die Quadratzahlen 1 · 1, 2 · 2, 3 · 3, 4 · 4 und 5 · 5.', true),
-        opt('Immer plus 3.', false, FR), opt('Immer mal 4.', false, FR), opt('Die Differenzen sind immer gleich.', false, FR)],
+        opt('Immer plus 3.', false, FR), opt('Immer mal 4.', false, FR), opt('Die Differenzen zwischen den Zahlen sind immer gleich groß.', false, FR)],
       h2('Prüfe jede Regel an allen Zahlen.', '4 − 1 = 3, aber 9 − 4 = 5.'), { bild: B.quadrat(5), nachweis: [...N('1 · 1', '2 · 2', '3 · 3', '4 · 4', '5 · 5', '4 − 1', '9 − 4')] });
     },
     3: () => { const d = zz(3, 9), r = zz(1, d - 1), f = plusFolge(d + r, d, 4), [k1, k2] = zweiKinder();
       return auswahl(`Zur Zahlenfolge ${liste(f)} sagt ${k1}: „Die Regel heißt: immer plus ${d}.“ ${k2} sagt: „Das sind die Zahlen der ${d}er-Reihe, jeweils plus ${r}.“ Wer hat recht?`, [
         opt(`Beide. Es kommt immer ${d} dazu. Und ${f[0]} = ${d} + ${r}, ${f[1]} = ${2 * d} + ${r} und so weiter. Eine Folge kann man mit verschiedenen Regeln beschreiben.`, true),
         opt(`Nur ${k1}. Eine Regel muss immer von Zahl zu Zahl gehen.`),
-        opt(`Nur ${k2}. Bei „immer plus ${d}“ müsste die Folge bei ${d} anfangen.`, false, FR),
+        opt(`Nur ${k2}. Bei „immer plus ${d}“ müsste die Folge bei ${d} anfangen. Deshalb passt nur die Regel mit der ${d}er-Reihe.`, false, FR),
         opt(`Keiner. Die Regel heißt: immer mal 2.`, false, FR)],
       h2('Prüfe beide Regeln an allen Zahlen.', `${f[1]} − ${f[0]} = ${d} und ${f[0]} − ${d} = ${r}.`), { nachweis: N(...schritte(f, '+'), `${d} + ${r}`, `${2 * d} + ${r}`, `${3 * d} + ${r}`, `${4 * d} + ${r}`, `${f[0]} − ${d}`) }); },
   });
@@ -245,13 +245,13 @@ export function zahlenmuster() {
           opt('Jede Zahl ist das Doppelte der Zahl davor. Ein Doppeltes ist immer gerade.', true),
           opt(`Weil man immer plus ${a} rechnet.`, false, FR),
           opt('Weil die Zahlen immer größer werden.'),
-          opt('Das stimmt nur zufällig für diese vier Zahlen.')],
+          opt('Das stimmt nur zufällig für diese vier Zahlen. Später kommen ungerade.')],
         h1('Mit welcher Rechnung kommst du von einer Zahl zur nächsten?'), { nachweis: N(...schritte(f, '·')) }); }
       const a = zz(2, 5), f = malFolge(a, 3, 4), [k1, k2] = zweiKinder();
       return auswahl(`Zur Zahlenfolge ${liste(f)} sagt ${k1}: „Die Regel heißt: immer mal 3.“ ${k2} sagt: „Der Unterschied zur nächsten Zahl ist immer das Doppelte der Zahl davor.“ Wer hat recht?`, [
         opt(`Beide. Eine Zahl plus ihr Doppeltes ist dasselbe wie die Zahl mal 3: ${a} + 2 · ${a} = 3 · ${a} = ${3 * a}.`, true),
         opt(`Nur ${k1}. Unterschiede gibt es nur bei Plus-Folgen.`, false, FR),
-        opt(`Nur ${k2}. Bei mal 3 wären die Unterschiede immer gleich.`, false, FR),
+        opt(`Nur ${k2}. Bei mal 3 wären die Unterschiede immer gleich, hier werden sie aber größer.`, false, FR),
         opt(`Keiner. Die Regel heißt: immer plus ${2 * a}.`, false, FR)],
       h1('Prüfe beide Regeln an allen Zahlen.'), { nachweis: N(...schritte(f, '·'), ...f.slice(1).map((w, i) => `${w} − ${f[i]}`), ...f.slice(0, 3).map((w) => `2 · ${w}`), `${a} + 2 · ${a}`) }); },
   });

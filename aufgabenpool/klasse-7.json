@@ -68190,7 +68190,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch.\n9 ist ungerade.\nDann ist auch 9 · 2 ungerade.",
+      "text": "Falsch.\n9 ist eine ungerade Zahl.\nDann ist auch 9 · 2 eine ungerade Zahl.",
       "richtig": false
      },
      {
@@ -68420,7 +68420,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Mit derselben Rechnung, noch einmal genauso gerechnet.",
+      "text": "Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.",
       "richtig": false
      },
      {
@@ -68877,7 +68877,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Das klappt nur bei kleinen Zahlen.",
+      "text": "Das ist Zufall.\nDas klappt nur bei kleinen Zahlen.",
       "richtig": false
      },
      {
@@ -69703,7 +69703,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Finn. Man rechnet von links nach rechts.",
+      "text": "Finn. Man rechnet immer von links nach rechts.",
       "richtig": false,
       "fehlvorstellung": "punkt-vor-strich"
      },
@@ -70273,7 +70273,7 @@
       "fehlvorstellung": "verteilung-halb"
      },
      {
-      "text": "Falsch.\nRichtig ist 52.",
+      "text": "Falsch.\nZuerst kommt das Plus: 6 + 20 = 26.\nRichtig ist 26 · 2 = 52.",
       "richtig": false
      },
      {
@@ -70550,7 +70550,7 @@
       "richtig": false
      },
      {
-      "text": "Sara. Man nimmt nur den ersten Summanden mal.",
+      "text": "Sara. Man nimmt nur den ersten Summanden mal, der zweite bleibt, wie er ist.",
       "richtig": false,
       "fehlvorstellung": "verteilung-halb"
      }
@@ -70973,7 +70973,7 @@
       "fehlvorstellung": "verteilung-halb"
      },
      {
-      "text": "Falsch.\nRichtig ist 6 + 7 + 3 = 16.",
+      "text": "Falsch.\nHier wird nur addiert.\nRichtig ist 6 + 7 + 3 = 16.",
       "richtig": false
      },
      {
@@ -71174,7 +71174,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Emre. In der Klammer wird malgenommen.",
+      "text": "Emre. In der Klammer wird malgenommen, weil vorn auch malgenommen wird.",
       "richtig": false,
       "fehlvorstellung": "verteilung-halb"
      },

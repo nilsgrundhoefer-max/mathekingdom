@@ -69,7 +69,7 @@ export function multiplizieren() {
     },
     3: () => { const a = zz(6, 9), k = kind();
       return auswahl(Z(`${k} sagt:`, '„Das Produkt ist immer größer als jeder Faktor.“', `Prüfe mit ${a} · 1.`, 'Stimmt das?'),
-        [opt(`Falsch. ${a} · 1 = ${a}. Das Produkt ist hier genauso groß wie der Faktor ${a}.`, true), opt('Stimmt. Beim Malnehmen wird es immer mehr.'), opt(`Stimmt. ${a} · 1 = ${a + 1}.`, false, '1x1-addiert')],
+        [opt(`Falsch. ${a} · 1 = ${a}. Das Produkt ist hier genauso groß wie der Faktor ${a}.`, true), opt('Stimmt. Beim Malnehmen wird es immer mehr. Das Produkt ist die größte Zahl.'), opt(`Stimmt. ${a} · 1 = ${a + 1}.`, false, '1x1-addiert')],
         h3('Rechne die Aufgabe aus. Vergleiche das Produkt mit den Faktoren.', '5 · 1 = 5. 1 Reihe mit 5 Punkten sind 5 Punkte.', `Rechne ${a} · 1. Ist das Produkt größer als ${a}?`), { bild: B.feld(1, a), nachweis: [U(false), ...N(`${a} · 1`)] }); },
   });
 
@@ -94,7 +94,7 @@ export function multiplizieren() {
     3: () => { const [a, b] = suche(() => [zz(4, 9), zz(4, 9)], ([x, y]) => x !== y), p = a * b, [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „Bei ${a} · ${b} = ${p} nennt man ${p} Faktor.“ ${k2} sagt: „${p} nennt man Produkt.“ Wer hat recht?`, [
         opt(`${k2}. ${p} ist das Ergebnis der Mal-Aufgabe. Die Faktoren sind ${a} und ${b}.`, true),
-        opt(`${k1}. Jede Zahl in einer Mal-Aufgabe ist ein Faktor.`, false, 'begriffe-verwechselt'),
+        opt(`${k1}. Jede Zahl in einer Mal-Aufgabe ist ein Faktor, auch das Ergebnis.`, false, 'begriffe-verwechselt'),
         opt('Beide. Faktor und Produkt bedeuten dasselbe.', false, 'begriffe-verwechselt'),
         opt(`Keiner. ${p} nennt man Summe.`, false, 'begriffe-verwechselt')],
       h2('Welche Zahlen werden malgenommen, und welche ist das Ergebnis?', `${a} und ${b} werden malgenommen. ${p} kommt heraus.`), { nachweis: N(`${a} · ${b}`) }); },
@@ -119,12 +119,12 @@ export function multiplizieren() {
       const [x, y] = [zz(3, 6), zz(4, 9)];
       if (k === 0) return auswahl(`Beide Faktoren werden verdoppelt. Was passiert mit dem Produkt? Prüfe an ${x} · ${y}.`, [
         opt(`Es wird 4-mal so groß, denn 2 · 2 = 4. ${x} · ${y} = ${x * y} und ${2 * x} · ${2 * y} = ${4 * x * y}.`, true),
-        opt('Es wird doppelt so groß.', false, 'mal-stellenwert'), opt('Es bleibt gleich.'), opt('Es wird um 4 größer.', false, '1x1-addiert'), opt('Das hängt von den Zahlen ab.')],
+        opt('Es wird doppelt so groß, denn es wird ja nur verdoppelt.', false, 'mal-stellenwert'), opt('Es bleibt gleich.'), opt('Es wird um 4 größer.', false, '1x1-addiert'), opt('Das hängt von den Zahlen ab.')],
       h1('Rechne vorher und nachher aus und vergleiche.'), { nachweis: N(`${x} · ${y}`, `${2 * x} · ${2 * y}`, `${x * y} · 4`, '2 · 2') });
       const g = wahl([4, 6, 8]), u = wahl([3, 5, 7, 9]), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „Ein Produkt ist schon dann gerade, wenn ein Faktor gerade ist.“ ${k2} sagt: „Nur wenn beide Faktoren gerade sind.“ Wer hat recht?`, [
         opt(`${k1}. Ein gerader Faktor ist ein Doppeltes. Dann ist auch das Produkt ein Doppeltes, zum Beispiel ${g} · ${u} = ${g * u}.`, true),
-        opt(`${k2}. ${g} · ${u} ist ungerade, weil ${u} ungerade ist.`),
+        opt(`${k2}. ${g} · ${u} ist ungerade, weil ${u} ungerade ist. Ein Produkt ist nur gerade, wenn beide Faktoren gerade sind.`),
         opt('Beide. Es kommt auf die Zahlen an.'),
         opt(`Keiner. ${u} · ${u} = ${u * u} ist ungerade.`)],
       h1('Probiere ein Beispiel mit einem geraden und einem ungeraden Faktor.'), { nachweis: N(`${g} · ${u}`, `${u} · ${u}`) });
@@ -180,7 +180,7 @@ export function multiplizieren() {
       return auswahl(Z(`${k} rechnet: ${a} · ${d} = ${falsch}.`, 'Stimmt das?'), [
         opt(`Falsch. Richtig ist ${a * d}. ${k} hat die Null vergessen.`, true),
         opt(`Stimmt. ${a} · ${d} = ${falsch}.`, false, 'mal-null-vergessen'),
-        opt(`Falsch. Richtig ist ${falsch * 10}.`, false, 'mal-stellenwert')],
+        opt(`Falsch. Richtig ist ${falsch * 10}. ${k} hat eine Null zu wenig.`, false, 'mal-stellenwert')],
       h3('Mache einen Überschlag. Passt das Ergebnis dazu?', '304 · 2: Überschlag 300 · 2 = 600. Das Ergebnis muss etwa 600 sein.', `Überschlag: ${runde(a, 100)} · ${d} = ${runde(a, 100) * d}.`), { nachweis: [U(false, `${a} · ${d}`, falsch), ...N(`${a} · ${d}`, `${runde(a, 100)} · ${d}`)] }); },
   });
 
@@ -225,7 +225,7 @@ export function multiplizieren() {
     3: (k) => {
       if (k === 0) return auswahl('Wie viele Stellen kann das Produkt einer dreistelligen und einer einstelligen Zahl haben? Wähle die Antwort mit der richtigen Begründung.', [
         opt('3 oder 4 Stellen. Das kleinste Produkt ist 100 · 1 = 100, das größte ist 999 · 9 = 8991.', true),
-        opt('Immer 4 Stellen, denn 3 + 1 = 4.', false, 'mal-stellenwert'), opt('Immer 3 Stellen, denn die größere Zahl hat 3 Stellen.'),
+        opt('Immer 4 Stellen, denn 3 + 1 = 4.', false, 'mal-stellenwert'), opt('Immer 3 Stellen, denn die größere Zahl hat 3 Stellen und die kleinere nur eine.'),
         opt('3, 4 oder 5 Stellen, denn 999 · 9 ist fast 10 000.', false, 'mal-stellenwert'), opt('Das kann man nicht sagen.')],
       h1('Suche das kleinste und das größte mögliche Produkt.'), { nachweis: [HILFSZAHL(3, 'Stellen von 100'), HILFSZAHL(4, 'Stellen von 8991'), ...N('100 · 1', '999 · 9')] });
       const zahlen = suche(() => Array.from({ length: 4 }, () => [zz(4, 9), zz(2001, 6999)]), (l) => new Set(l.map(([d]) => d)).size === 4 && new Set(l.map(([d, x]) => d * x)).size === 4
@@ -282,7 +282,7 @@ export function multiplizieren() {
     3: () => { const [a, b] = suche(() => [zz(21, 49), zz(21, 49)], ([x, y]) => ohneNull(y) && x % 10 !== 0 && x !== y), z = Math.floor(b / 10), e = b % 10, k = kind(), falsch = a * z + a * e;
       return auswahl(Z(`${k} rechnet ${a} · ${b} so:`, `${a} · ${z} = ${a * z}`, `${a} · ${e} = ${a * e}`, `${a * z} + ${a * e} = ${falsch}`, 'Stimmt das?'), [
         opt(`Falsch. Es ist ${a} · ${z * 10} = ${a * z * 10}. Richtig ist ${a * b}.`, true),
-        opt('Stimmt. Alle Rechnungen sind richtig.', false, 'mal-nicht-eingerueckt'),
+        opt('Stimmt. Alle drei Rechnungen sind richtig.', false, 'mal-nicht-eingerueckt'),
         opt(`Falsch. Richtig ist ${falsch * 10}.`, false, 'mal-stellenwert')],
       h3('Mache einen Überschlag. Passt das Ergebnis?', '23 · 31: Überschlag 20 · 30 = 600. 23 · 3 = 69 gehört eine Stelle nach links: 690.', `Die ${z} in ${b} steht für ${z * 10}.`), { nachweis: [U(false, `${a} · ${b}`, falsch), ...N(`${a} · ${z * 10}`, `${a * z * 10} + ${a * e}`, `${a} · ${b}`)] }); },
   });
@@ -302,7 +302,7 @@ export function multiplizieren() {
       if (k === 1) { const [a, b] = dreiMalZwei(), falsch = malNichtEingerueckt(a, b), k_ = kind();
         return auswahl(`${k_} rechnet ${a} · ${b} = ${fz(falsch)}. Welchen Fehler hat ${k_} gemacht?`, [
           opt(`${k_} hat die Teilprodukte nicht stellengerecht untereinandergeschrieben. Richtig ist ${fz(a * b)}.`, true),
-          opt(`${k_} hat sich bei ${a} · ${Math.floor(b / 10)} verrechnet.`), opt(`${k_} hat einen Übertrag vergessen.`, false, 'mal-uebertrag-vergessen'), opt(`${k_} hat richtig gerechnet.`, false, 'mal-nicht-eingerueckt')],
+          opt(`${k_} hat sich bei ${a} · ${Math.floor(b / 10)} verrechnet. Die Teilprodukte stehen aber richtig untereinander.`), opt(`${k_} hat einen Übertrag vergessen.`, false, 'mal-uebertrag-vergessen'), opt(`${k_} hat richtig gerechnet.`, false, 'mal-nicht-eingerueckt')],
         h2('Mache einen Überschlag. Ist das Ergebnis viel zu klein?', `Überschlag: ${fuehrend(a)} · ${fuehrend(b)} = ${fz(fuehrend(a) * fuehrend(b))}.`), { nachweis: [U(false, `${a} · ${b}`, falsch), ...N(`${a} · ${Math.floor(b / 10)}`, `${a} · ${b % 10}`, `${a * Math.floor(b / 10)} + ${a * (b % 10)}`, `${fuehrend(a)} · ${fuehrend(b)}`, `${a} · ${b}`)] }); }
       const r = suche(() => { const a = zz(21, 79), b = zz(21, 79); const x = raetsel(`${a} · ${b} = ${a * b}`, [1, 3]); return x && { a, b, ...x }; }, (x) => x && a_ok(x));
       return luecken(`Welche Ziffern fehlen? ${r.text}`, r.werte, h2('Die Einerziffer des Produkts verrät dir viel über die Einerziffern der Faktoren.', `Probiere zuerst die Ziffer im ersten Faktor.`), { ziffernfelder: true, nachweis: [{ art: 'ziffern', muster: r.muster, ziffern: r.ziffern }] });
@@ -311,7 +311,7 @@ export function multiplizieren() {
       return auswahl(`${k1} rechnet ${a} · ${b} = ${fz(a * b)}. ${k2} rechnet ${a} · ${b} = ${fz(falsch)}. Wer hat recht?`, [
         opt(`${k1}. Überschlag: ${ra} · ${rb} = ${fz(ra * rb)}. Dazu passt nur ${fz(a * b)}.`, true),
         opt(`${k2}. Die Teilprodukte werden einfach addiert.`, false, 'mal-nicht-eingerueckt'),
-        opt('Beide. Die Teilprodukte sind bei beiden gleich.'),
+        opt('Beide. Die Teilprodukte sind bei beiden gleich groß.'),
         opt(`Keiner. Richtig ist ${fz(a * b * 10)}.`, false, 'mal-stellenwert')],
       h2('Ein Überschlag zeigt, welches Ergebnis passen kann.', `Runde ${a} auf ${ra} und ${b} auf ${rb}.`), { nachweis: [U(false, `${a} · ${b}`, falsch), `${a} ≈ ${ra}`, `${b} ≈ ${rb}`, ...N(`${ra} · ${rb}`, `${a} · ${b}`)] }); },
   });
@@ -330,12 +330,12 @@ export function multiplizieren() {
     3: (k) => {
       if (k === 0) return auswahl('Wie viele Stellen hat das Produkt zweier zweistelliger Zahlen höchstens? Wähle die Antwort mit der richtigen Begründung.', [
         opt('4 Stellen, denn das größte Produkt ist 99 · 99 = 9801.', true),
-        opt('5 Stellen, denn 99 · 99 ist fast 10 000.', false, 'mal-stellenwert'), opt('3 Stellen, denn 10 · 10 = 100.'), opt('2 Stellen, wie die Faktoren.'), opt('Das kann man nicht sagen.')],
+        opt('5 Stellen, denn 99 · 99 ist fast so groß wie 10 000.', false, 'mal-stellenwert'), opt('3 Stellen, denn 10 · 10 = 100.'), opt('2 Stellen, wie die Faktoren.'), opt('Das kann man nicht sagen.')],
       h1('Welches ist das größte Produkt zweier zweistelliger Zahlen?'), { nachweis: [HILFSZAHL(4, 'Stellen von 9801'), ...N('99 · 99', '10 · 10')] });
       const n = zz(23, 79), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „${n} · ${n} ist kleiner als ${n + 1} · ${n - 1}.“ ${k2} sagt: „${n} · ${n} ist größer.“ Wer hat recht?`, [
         opt(`${k2}. ${n} · ${n} = ${n * n} und ${n + 1} · ${n - 1} = ${(n + 1) * (n - 1)}. Der Unterschied ist genau 1.`, true),
-        opt(`${k1}. ${n + 1} ist größer als ${n}.`), opt('Keiner. Beide Produkte sind gleich groß.'),
+        opt(`${k1}. ${n + 1} ist größer als ${n}.`), opt('Keiner. Beide Produkte sind gleich groß, denn 1 mehr und 1 weniger gleichen sich aus.'),
         opt(`${k1}. ${n} · ${n} = ${n * n - 100}.`, false, 'mal-stellenwert')],
       h1('Rechne beide Produkte aus. Was fällt dir auf?'), { nachweis: N(`${n} · ${n}`, `${n + 1} · ${n - 1}`, `${n * n} − ${(n + 1) * (n - 1)}`) });
     },
@@ -359,7 +359,7 @@ export function multiplizieren() {
         h3('Statt der krummen Zahl nimmst du den Zehner in der Nähe.', '3 · 19 ist ungefähr 3 · 20 = 60.', `${z * 10} sind ${z} Zehner. ${a} · ${z} Zehner sind ${a * z} Zehner.`), { bild: B.material({ z }), nachweis: [`${n} ≈ ${z * 10}`, ...N(`${a} · ${z * 10}`)] }); },
     () => { const a = zz(2, 4), z = zz(2, 3), n = z * 10 - 1, falsch = a * n + 30, k = kind();
       return auswahl(Z(`${k} rechnet ${a} · ${n} = ${falsch}.`, `Ungefähr ist es ${a} · ${z * 10} = ${a * z * 10}.`, `Kann ${falsch} stimmen?`), [
-        opt(`Nein.\n${falsch} ist zu groß.\nEs muss etwas weniger als ${a * z * 10} sein.`, true), opt(`Ja.\n${falsch} ist nah an ${a * z * 10}.`, false, 'ueberschlag-nicht-gerundet'), opt('Ja.\nDas kann man nicht sehen.')],
+        opt(`Nein.\n${falsch} ist zu groß.\nEs muss etwas weniger als ${a * z * 10} sein.`, true), opt(`Ja.\n${falsch} ist nah an ${a * z * 10}.`, false, 'ueberschlag-nicht-gerundet'), opt('Ja.\nDas kann man nicht sehen.\nMan muss genau rechnen.')],
       h3('Vergleiche mit dem ungefähren Ergebnis.', '2 · 19 ist ungefähr 2 · 20 = 40. Das Ergebnis ist etwas kleiner als 40.', `${n} ist kleiner als ${z * 10}. Also ist ${a} · ${n} kleiner als ${a * z * 10}.`), { bild: B.material({ z }), nachweis: [U(false, `${a} · ${n}`, falsch), `${n} ≈ ${z * 10}`, ...N(`${a} · ${z * 10}`)] }); },
     () => { const [a, b] = suche(() => [zz(4, 9), zz(4, 9)], ([x, y]) => x !== y);
       return zahl(Z(`${a} · ${b} = ${a * b}`, `Prüfe: ${a * b} : ${b} = ▢`), a, fehlerliste(a, [[b, 'div-vertauscht']]),
@@ -382,7 +382,7 @@ export function multiplizieren() {
       if (k === 0) { const [n, d] = suche(() => [zz(211, 489), zz(3, 9)], ([x]) => x % 100 < 50 && x % 100 > 5 && x % 10 !== 0), r = runde(n, 100), falsch = n * d * 10, k_ = kind();
         return auswahl(Z(`${k_} rechnet ${n} · ${d} = ${fz(falsch)}.`, 'Mache einen Überschlag.', 'Stimmt das?'), [
           opt(`Falsch.\nÜberschlag: ${r} · ${d} = ${r * d}.\n${fz(falsch)} ist viel zu groß.`, true),
-          opt(`Stimmt.\nDie Ziffern passen.`, false, 'mal-stellenwert'),
+          opt(`Stimmt.\nDie Ziffern passen.\nDie Nullen sind nicht wichtig.`, false, 'mal-stellenwert'),
           opt(`Stimmt.\nÜberschlag: ${r} · ${d} = ${fz(falsch)}.`, false, 'mal-stellenwert')],
         h3('Runde und rechne im Kopf. Vergleiche dann.', '213 · 4: Überschlag 200 · 4 = 800. 8520 wäre viel zu groß.', `${n} wird zu ${r}.`), { nachweis: [U(false, `${n} · ${d}`, falsch), `${n} ≈ ${r}`, ...N(`${r} · ${d}`)] }); }
       const [a, d] = suche(() => [zz(23, 89), zz(3, 9)], ([x]) => x % 10 !== 0);
@@ -392,7 +392,7 @@ export function multiplizieren() {
     3: () => { const [z, d] = [zz(3, 8), zz(4, 9)], n = z * 10 + 9, k_ = kind();
       return auswahl(Z(`${k_} sagt:`, `„Bei ${n} · ${d} ist der Überschlag ${z * 10 + 10} · ${d} = ${(z * 10 + 10) * d}.`, `Also ist das Ergebnis kleiner als ${(z * 10 + 10) * d}.“`, 'Stimmt das?'), [
         opt(`Stimmt.\n${n} ist kleiner als ${z * 10 + 10}.\nAlso ist ${n} · ${d} kleiner als ${z * 10 + 10} · ${d}.`, true),
-        opt(`Falsch.\nDas Ergebnis ist größer als ${(z * 10 + 10) * d}.`, false, 'falsch-gerundet'), opt('Falsch.\nDas kann man ohne Rechnen nicht wissen.')],
+        opt(`Falsch.\nDas Ergebnis ist größer als ${(z * 10 + 10) * d}.`, false, 'falsch-gerundet'), opt('Falsch.\nDas kann man ohne genaues Rechnen nicht wissen.')],
       h3('Wurde beim Runden größer oder kleiner gemacht?', '29 · 3: 29 wurde zu 30 aufgerundet. 29 · 3 = 87 ist kleiner als 30 · 3 = 90.', `${n} wurde zu ${z * 10 + 10} aufgerundet.`), { nachweis: [U(true), ...N(`${z * 10 + 10} · ${d}`, `${n} · ${d}`)] }); },
   });
 
@@ -419,7 +419,7 @@ export function multiplizieren() {
     3: () => { const [a, b] = suche(() => [zz(301, 349), zz(51, 59)], () => true), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „${a} · ${b} ist größer als 300 · 50 = ${fz(15000)}.“ ${k2} sagt: „Es ist kleiner.“ Wer hat recht?`, [
         opt(`${k1}. ${a} ist größer als 300, und ${b} ist größer als 50. Also ist das Produkt größer als 300 · 50.`, true),
-        opt(`${k2}. Beim Runden wird ein Ergebnis immer größer.`, false, 'falsch-gerundet'),
+        opt(`${k2}. Beim Runden wird ein Ergebnis immer größer. Also ist das genaue Produkt kleiner.`, false, 'falsch-gerundet'),
         opt('Keiner. Man muss genau rechnen, sonst weiß man es nicht.'),
         opt(`${k2}. ${fz(15000)} ist eine runde Zahl.`)],
       h2('Wurden die Zahlen beim Runden größer oder kleiner?', `${a} wurde zu 300 abgerundet, ${b} zu 50.`), { nachweis: N('300 · 50', `${a} · ${b}`) }); },
@@ -442,13 +442,13 @@ export function multiplizieren() {
       if (k === 0) { const [a, b] = suche(() => [zz(451, 489), zz(46, 49)], () => true);
         return auswahl(`${kind()} überschlägt ${a} · ${b} mit 500 · 50 = ${fz(25000)}. Ist das genaue Ergebnis größer oder kleiner? Wähle die richtige Begründung.`, [
           opt('Kleiner. Beide Zahlen wurden aufgerundet, also ist der Überschlag zu groß.', true),
-          opt(`Größer. ${a} wurde aufgerundet.`, false, 'falsch-gerundet'), opt(`Kleiner. ${b} wurde abgerundet.`, false, 'falsch-gerundet'),
+          opt(`Größer. ${a} wurde aufgerundet, also ist der Überschlag zu klein.`, false, 'falsch-gerundet'), opt(`Kleiner. ${b} wurde abgerundet.`, false, 'falsch-gerundet'),
           opt('Gleich groß. Ein Überschlag ist immer genau.', false, 'ueberschlag-nicht-gerundet'), opt('Das kann man ohne genaues Rechnen nicht sagen.')],
         h1('Wurde beim Runden größer oder kleiner gemacht?'), { nachweis: [`${a} ≈ 500`, `${b} ≈ 50`, ...N('500 · 50', `${a} · ${b}`)] }); }
       const [x, y] = wahl([[125, 8], [25, 40], [250, 4], [125, 16]]), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „Die Probe zu ${x} · ${y} = ${x * y} ist ${x * y} : ${x} = ${y}.“ ${k2} sagt: „Die Probe ist ${x * y} : ${y} = ${x}.“ Wer hat recht?`, [
         opt('Beide. Man kann das Produkt durch jeden der beiden Faktoren teilen.', true),
-        opt(`Nur ${k1}. Man teilt immer durch den ersten Faktor.`), opt(`Nur ${k2}. Man teilt immer durch den zweiten Faktor.`),
+        opt(`Nur ${k1}. Man teilt immer durch den ersten Faktor.`), opt(`Nur ${k2}. Bei der Probe teilt man immer durch den zweiten Faktor.`),
         opt(`Keiner. Die Probe ist ${x * y} − ${x}.`, false, 'probe-falsche-umkehr'), opt('Keiner. Zur Mal-Aufgabe gibt es keine Probe.')],
       h1('Rechne beide Proben aus.'), { nachweis: N(`${x} · ${y}`, `${x * y} : ${x}`, `${x * y} : ${y}`) });
     },
@@ -501,7 +501,7 @@ export function multiplizieren() {
     },
     3: () => { const plaetze = zz(45, 58), n = zz(3, 4), kinder = suche(() => zz(10, 25) * 10, (x) => x < plaetze * n && x > plaetze * n - 40);
       return auswahl(Z(`Ein Bus hat ${plaetze} Plätze.`, `Es fahren ${n} Busse.`, `${kinder} Kinder fahren mit.`, 'Reicht der Platz?'), [
-        opt(`Ja.\n${n} · ${plaetze} = ${n * plaetze}.\n${n * plaetze} ist mehr als ${kinder}.`, true), opt(`Nein.\n${plaetze} + ${n} = ${plaetze + n}.`, false, 'sach-falsche-rechnung'), opt(`Nein.\n${kinder} ist eine große Zahl.`)],
+        opt(`Ja.\n${n} · ${plaetze} = ${n * plaetze}.\n${n * plaetze} ist mehr als ${kinder}.`, true), opt(`Nein.\n${plaetze} + ${n} = ${plaetze + n}.`, false, 'sach-falsche-rechnung'), opt(`Nein.\n${kinder} ist eine sehr große Zahl.`)],
       h3('Rechne aus, wie viele Plätze alle Busse zusammen haben.', '3 Busse mit je 40 Plätzen haben 3 · 40 = 120 Plätze.', `Rechne ${n} · ${plaetze}. Vergleiche mit ${kinder}.`), { bild: B.streifen(frage(n * plaetze), Array(n).fill(plaetze)), nachweis: [U(true), ...N(`${n} · ${plaetze}`, `${n * plaetze} − ${kinder}`)] }); },
   });
 

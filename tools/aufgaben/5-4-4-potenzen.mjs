@@ -112,7 +112,7 @@ export function potenzen() {
         return auswahl(`Was passiert mit dem Wert einer Potenz mit der Basis 2, wenn der Exponent um 1 größer wird? Prüfe an ${pot(2, e)} und ${pot(2, e + 1)}.`, [
           opt(`Er verdoppelt sich. ${pot(2, e + 1)} = ${pot(2, e)} · 2 = ${2 ** (e + 1)}.`, true),
           opt('Er wird um 1 größer.', false, 'potenz-mal-exponent'), opt('Er wird um 2 größer.', false, 'potenz-mal-exponent'),
-          opt('Er wird 10-mal so groß.', false, 'potenz-nullen'), opt('Das hängt von der Zahl ab.')],
+          opt('Er wird 10-mal so groß, wie bei den Zehnerpotenzen.', false, 'potenz-nullen'), opt('Das hängt von der Zahl ab.')],
         h1('Rechne beide Potenzen aus und vergleiche.'), { nachweis: [HILFSZAHL(1, 'Exponent wird um 1 größer'), ...N(pot(2, e), pot(2, e + 1), `${2 ** e} · 2`)] }); }
       const [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „Eine Zehnerpotenz hat so viele Nullen, wie der Exponent angibt.“ ${k2} sagt: „Sie hat eine Null mehr als der Exponent.“ Wer hat recht?`, [
@@ -120,7 +120,7 @@ export function potenzen() {
         opt(`${k2}. ${pot(10, 3)} = ${fz(10000)}.`, false, 'potenz-nullen'),
         opt(`Keiner. ${pot(10, 3)} = 30.`, false, 'potenz-mal-exponent'),
         opt('Beide. Es kommt auf die Zahl an.'),
-        opt(`${k2}. Die 10 hat schon eine Null.`, false, 'potenz-nullen')],
+        opt(`${k2}. Die 10 hat schon eine Null, dazu kommen die Nullen aus dem Exponenten.`, false, 'potenz-nullen')],
       h1('Schreibe zwei Zehnerpotenzen aus und zähle die Nullen.'), { nachweis: N(pot(10, 3), pot(10, 5)) }); },
   });
 
@@ -172,7 +172,7 @@ export function potenzen() {
       return auswahl(Z(`${k} sagt:`, `„${pot(10, 4)} hat 4 Nullen.“`, 'Stimmt das?'), [
         opt(Z('Stimmt.', `${pot(10, 4)} = 10 · 10 · 10 · 10 = ${fz(10000)}.`), true),
         opt(Z('Falsch.', `${pot(10, 4)} = 40.`), false, 'potenz-mal-exponent'),
-        opt(Z('Falsch.', `${pot(10, 4)} hat 5 Nullen.`), false, 'potenz-nullen')],
+        opt(Z('Falsch.', `${pot(10, 4)} hat 5 Nullen.`, 'Die 10 hat schon eine Null.'), false, 'potenz-nullen')],
       h3('Schreibe die Potenz als Produkt und rechne aus.', '10³ = 10 · 10 · 10 = 1000. Das sind 3 Nullen.', 'Rechne 10 · 10 · 10 · 10. Zähle die Nullen.'), { nachweis: [U(true), HILFSZAHL(4, 'Exponent und Zahl der Nullen'), ...N(pot(10, 4), '10 · 10 · 10 · 10')] }); },
   });
 
@@ -223,7 +223,7 @@ export function potenzen() {
     3: (k) => {
       if (k === 0) return auswahl('Die Quadratzahlen beginnen so: 1, 4, 9, 16, 25. Welche Regel gilt für den Unterschied zwischen zwei benachbarten Quadratzahlen?', [
         opt('Die Unterschiede sind die ungeraden Zahlen 3, 5, 7, 9 und so weiter.', true),
-        opt('Der Unterschied ist immer 3.'), opt('Der Unterschied verdoppelt sich jedes Mal.', false, 'muster-falsche-regel'),
+        opt('Der Unterschied ist immer 3.'), opt('Der Unterschied verdoppelt sich von Zahl zu Zahl jedes Mal.', false, 'muster-falsche-regel'),
         opt('Die Unterschiede sind die geraden Zahlen.', false, 'muster-falsche-regel'), opt('Es gibt keine Regel.')],
       h1('Rechne die Unterschiede aus und schreibe sie nebeneinander.'), { nachweis: N('4 − 1', '9 − 4', '16 − 9', '25 − 16') });
       const [k1, k2] = zweiKinder();

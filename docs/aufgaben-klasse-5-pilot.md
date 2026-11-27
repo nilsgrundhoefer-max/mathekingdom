@@ -3548,7 +3548,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze eine Kernaufgabe mit 2, 5 oder 
   - ☐ 11 + 5
   - ☐ 12 · 5
 - `06` AFB III · _Argumentieren_ · Lena sagt: / „Jede Zahl mal 2 ergibt eine gerade Zahl.“ / Prüfe mit 9 · 2. / Stimmt das? _(Bild: Punktefeld mit 9 Reihen zu je 2 Punkten)_
-  - ☐ Falsch. / 9 ist ungerade. / Dann ist auch 9 · 2 ungerade.
+  - ☐ Falsch. / 9 ist eine ungerade Zahl. / Dann ist auch 9 · 2 eine ungerade Zahl.
   - ☐ Falsch. / Das gilt nur bis 10.
   - ☑ Stimmt. / 9 · 2 = 18. / Mal 2 ist das Doppelte. / Ein Doppeltes ist immer gerade.
 
@@ -3570,7 +3570,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege in eine Kernaufgabe und den R
   - ☑ 4 · 5
   - ☑ 2 · 10
 - `06` AFB III · _Argumentieren_ · Elif rechnet 7 · 6 und erhält 48. Wie lässt sich der Fehler finden?
-  - ☐ Mit derselben Rechnung, noch einmal genauso gerechnet.
+  - ☐ Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.
   - ☑ Mit der Nachbaraufgabe: 6 · 6 = 36. Dazu kommt noch einmal 6. Das sind 42.
   - ☐ Mit der Rechnung 7 + 6.
   - ☐ Gar nicht. Das Ergebnis stimmt.
@@ -3587,14 +3587,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Aufgabe mit zwei gleichen Zahl
   - ☐ 9
 - `03` AFB II · _Probleme lösen_ · Zwei Zahlen aus dem Einmaleins haben das Produkt 27 und die Summe 12. Die kleinere Zahl ist ▢, die größere ist ▢. Lösung: x = **3**, y = **9**
 - `04` AFB III · _Argumentieren_ · Stimmt das? „Ungerade mal ungerade ergibt immer eine ungerade Zahl.“ Wähle die beste Begründung.
-  - ☐ Falsch. Zwei ungerade Zahlen ergeben immer eine gerade Zahl.
+  - ☐ Falsch. Zwei ungerade Zahlen ergeben zusammen immer eine gerade Zahl. Das gilt beim Malnehmen genauso, denn Malnehmen ist wiederholtes Zusammenzählen.
   - ☑ Stimmt. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.
   - ☐ Stimmt, aber nur im kleinen Einmaleins.
   - ☐ Das hängt von den beiden Zahlen ab.
   - ☐ Falsch. 3 · 5 ist gerade.
 - `05` AFB II · _Probleme lösen_ · Wie viele Aufgaben des kleinen Einmaleins (beide Zahlen von 1 bis 10) haben das Ergebnis 18? Zähle Tauschaufgaben einzeln. Lösung: **4**. Typische Fehler: 2 (1x1-nachbar).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · 9 · 1 = 9, 9 · 2 = 18, 9 · 3 = 27, 9 · 4 = 36. Stelle eine Regel für alle Ergebnisse von 9 · 1 bis 9 · 10 auf.
-  - ☐ Zehnerziffer und Einerziffer ergeben zusammen immer 10.
+  - ☐ Zehnerziffer und Einerziffer ergeben zusammen immer 10, denn die Ergebnisse liegen immer knapp unter dem nächsten Zehner.
   - ☐ Es gibt keine Regel.
   - ☐ Die Einerziffer wird von Ergebnis zu Ergebnis um 1 größer.
   - ☐ Alle Ergebnisse sind ungerade.
@@ -3636,7 +3636,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:*
   - ☐ 54 : 9
   - ☐ 21 : 3
 - `06` AFB III · _Argumentieren_ · Ben rechnet 54 : 6 = 9. / Ben prüft mit 9 · 6. / Warum klappt das? _(Bild: Punktefeld mit 9 Reihen zu je 6 Punkten)_
-  - ☐ Das klappt nur bei kleinen Zahlen.
+  - ☐ Das ist Zufall. / Das klappt nur bei kleinen Zahlen.
   - ☐ Auch 9 + 6 ergibt 54.
   - ☑ Mal macht geteilt wieder rückgängig. / 9 · 6 = 54.
 
@@ -3673,7 +3673,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du das Teilen rückgängig
 - `04` AFB III · _Argumentieren_ · Sara sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche 48 : 4 und 48 : 6. Wähle die richtige Antwort.
   - ☐ Stimmt. 48 : 6 ist größer als 48 : 4.
   - ☑ Falsch. 48 : 4 = 12, aber 48 : 6 = 8. Das Ergebnis wird kleiner.
-  - ☐ Stimmt. Größere Zahlen ergeben größere Ergebnisse.
+  - ☐ Stimmt. Größere Zahlen in der Aufgabe ergeben größere Ergebnisse.
   - ☐ Stimmt. Beim Malnehmen ist das auch so.
   - ☐ Falsch. Das Ergebnis bleibt immer gleich.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Zahl 24 wird durch 2 geteilt. Das Ergebnis wird noch einmal durch 3 geteilt. Was kommt heraus? Lösung: **4**. Typische Fehler: 12 (sach-schritt-vergessen).
@@ -3741,7 +3741,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne die Nullen und zähle dan
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf: 300 000 : 500 Lösung: **600**. Typische Fehler: 60 (div-null-vergessen), 6000 (div-stellenwert).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? 250 · ▢ = 100 000 Lösung: **400**. Typische Fehler: 4000 (mal-stellenwert), 40 (mal-stellenwert).
 - `04` AFB III · _Argumentieren (+ Modellieren)_ · Lina sagt: „Das Produkt hat immer genau so viele Nullen am Ende wie beide Faktoren zusammen.“ Prüfe mit 500 · 20.
-  - ☐ Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.
+  - ☐ Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an. Mehr Nullen können nicht entstehen.
   - ☑ Falsch. 500 · 20 = 10 000 hat 4 Nullen am Ende, die Faktoren zusammen nur 3. 5 · 2 = 10 bringt eine Null mit.
   - ☐ Falsch. Das Produkt hat immer weniger Nullen.
   - ☐ Das kann man nicht prüfen.
@@ -3785,7 +3785,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mal 4 ist das Doppelte vom Doppelten.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze den Rechenweg. / 9 · 45 = 10 · 45 − ▢ / 9 · 45 = ▢ _(Bild: Zehnermaterial: 4 Zehnerstangen, 5 Einerwürfel)_ Lösung: a = **45**, b = **405**
 - `06` AFB III · _Argumentieren_ · Ida rechnet 7 · 39 so: / 7 · 40 = 280 / 280 − 1 = 279 / Stimmt das?
   - ☑ Falsch. / Ida muss 7-mal 1 wegnehmen. / Richtig ist 280 − 7 = 273.
-  - ☐ Stimmt. / 39 ist 1 weniger als 40.
+  - ☐ Stimmt. / 39 ist 1 weniger als 40. / Also nimmt Ida am Ende 1 weg.
   - ☐ Falsch. / Richtig ist 280 + 7 = 287.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3800,7 +3800,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 25 · 4 = 100. Zerlege die andere Zah
 - `06` AFB III · _Argumentieren_ · Mia sagt: „16 · 35 ist dasselbe wie 8 · 70.“ Mara sagt: „16 · 35 ist dasselbe wie 32 · 70.“ Wer hat recht?
   - ☐ Mara. Man muss beide Faktoren gleich behandeln.
   - ☐ Keiner. Man darf die Zahlen nicht verändern.
-  - ☐ Beide. Beim Malnehmen darf man verdoppeln, wie man will.
+  - ☐ Beide. Beim Malnehmen darf man halbieren und verdoppeln, wie man will. Das Produkt bleibt gleich.
   - ☑ Mia. Halbiert man einen Faktor und verdoppelt den anderen, bleibt das Produkt gleich: 8 · 70 = 560.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -3815,10 +3815,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Zahl mal 125 ergibt 1000?
   - ☐ Es wird 9-mal so groß, denn 3 · 3 = 9.
   - ☐ Das hängt von den Zahlen ab.
   - ☑ Es bleibt gleich. 15 · 12 = 180 und 45 · 4 = 180. Mal 3 und durch 3 heben sich auf.
-  - ☐ Es wird kleiner, denn durch 3 teilen macht kleiner.
+  - ☐ Es wird kleiner, denn durch 3 teilen macht stärker kleiner, als mal 3 größer macht.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Kinosaal hat 25 Reihen mit je 16 Plätzen. Ein Kino hat 4 solche Säle. Wie viele Plätze hat das Kino? Rechne geschickt. Lösung: **1600 Plätze**. Typische Fehler: 400 (sach-schritt-vergessen), 1000 (mal-stellenwert).
 - `06` AFB III · _Argumentieren_ · Tom rechnet 52 · 25 so: 52 : 4 = 13 und 13 · 100 = 1300. Ida sagt: „Das ist falsch. Man darf nur halbieren und verdoppeln.“ Wer hat recht?
-  - ☐ Beide. Tom rechnet richtig, aber nur durch Zufall.
+  - ☐ Beide. Tom rechnet richtig, aber das klappt nur durch Zufall bei dieser Zahl.
   - ☐ Keiner. Man muss schriftlich rechnen.
   - ☐ Ida. Richtig ist 325.
   - ☐ Ida. Durch 4 teilen ist kein Halbieren.
@@ -3862,7 +3862,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Faktor mal Faktor ergibt das Produkt.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul sagt: / „Das Produkt ist immer größer als jeder Faktor.“ / Prüfe mit 7 · 1. / Stimmt das? _(Bild: Punktefeld mit 1 Reihen zu je 7 Punkten)_
   - ☑ Falsch. / 7 · 1 = 7. / Das Produkt ist hier genauso groß wie der Faktor 7.
   - ☐ Stimmt. / 7 · 1 = 8.
-  - ☐ Stimmt. / Beim Malnehmen wird es immer mehr.
+  - ☐ Stimmt. / Beim Malnehmen wird es immer mehr. / Das Produkt ist die größte Zahl.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -3878,7 +3878,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Faktoren werden malgenommen, das 
 - `04` AFB I · _Kommunizieren_ · Der erste Faktor ist 14, der zweite Faktor ist 3. Berechne das Produkt. Lösung: **42**. Typische Fehler: 17 (begriffe-verwechselt).
 - `05` AFB II · _Kommunizieren_ · Das Produkt zweier Zahlen ist 42. Ein Faktor ist das Doppelte von 3. Wie heißt der andere Faktor? Lösung: **7**. Typische Fehler: 14 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul sagt: „Bei 6 · 8 = 48 nennt man 48 Faktor.“ Mara sagt: „48 nennt man Produkt.“ Wer hat recht?
-  - ☐ Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor.
+  - ☐ Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor, auch das Ergebnis.
   - ☐ Keiner. 48 nennt man Summe.
   - ☐ Beide. Faktor und Produkt bedeuten dasselbe.
   - ☑ Mara. 48 ist das Ergebnis der Mal-Aufgabe. Die Faktoren sind 6 und 8.
@@ -3893,12 +3893,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Fasse die beiden bekannten Faktoren z
 - `04` AFB III · _Kommunizieren_ · Beide Faktoren werden verdoppelt. Was passiert mit dem Produkt? Prüfe an 3 · 7.
   - ☐ Es bleibt gleich.
   - ☐ Das hängt von den Zahlen ab.
-  - ☐ Es wird doppelt so groß.
+  - ☐ Es wird doppelt so groß, denn es wird ja nur verdoppelt.
   - ☑ Es wird 4-mal so groß, denn 2 · 2 = 4. 3 · 7 = 21 und 6 · 14 = 84.
   - ☐ Es wird um 4 größer.
 - `05` AFB II · _Kommunizieren_ · Ein Faktor wird verdoppelt, der andere bleibt gleich. Vorher war das Produkt 64. Wie groß ist das Produkt jetzt? Lösung: **128**. Typische Fehler: 66 (begriffe-verwechselt), 256 (mal-stellenwert).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas sagt: „Ein Produkt ist schon dann gerade, wenn ein Faktor gerade ist.“ Sara sagt: „Nur wenn beide Faktoren gerade sind.“ Wer hat recht?
-  - ☐ Sara. 8 · 3 ist ungerade, weil 3 ungerade ist.
+  - ☐ Sara. 8 · 3 ist ungerade, weil 3 ungerade ist. Ein Produkt ist nur gerade, wenn beide Faktoren gerade sind.
   - ☐ Keiner. 3 · 3 = 9 ist ungerade.
   - ☑ Jonas. Ein gerader Faktor ist ein Doppeltes. Dann ist auch das Produkt ein Doppeltes, zum Beispiel 8 · 3 = 24.
   - ☐ Beide. Es kommt auf die Zahlen an.
@@ -3974,7 +3974,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne bei den Einern. Den Zehner me
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne schriftlich im Heft. / 342 · 7 Lösung: **2394**. Typische Fehler: 184 (mal-uebertrag-vergessen), 349 (1x1-addiert).
 - `05` AFB II · _Probleme lösen_ · Welche Ziffer fehlt? / 3▢6 · 8 = 3088 Lösung: a = **8**
 - `06` AFB III · _Argumentieren_ · Ben rechnet: 202 · 5 = 110. / Stimmt das?
-  - ☐ Falsch. / Richtig ist 1100.
+  - ☐ Falsch. / Richtig ist 1100. / Ben hat eine Null zu wenig.
   - ☑ Falsch. / Richtig ist 1010. / Ben hat die Null vergessen.
   - ☐ Stimmt. / 202 · 5 = 110.
 
@@ -4009,7 +4009,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Stelle für Stelle und schreib
 - `04` AFB III · _Modellieren_ · Wie viele Stellen kann das Produkt einer dreistelligen und einer einstelligen Zahl haben? Wähle die Antwort mit der richtigen Begründung.
   - ☐ 3, 4 oder 5 Stellen, denn 999 · 9 ist fast 10 000.
   - ☑ 3 oder 4 Stellen. Das kleinste Produkt ist 100 · 1 = 100, das größte ist 999 · 9 = 8991.
-  - ☐ Immer 3 Stellen, denn die größere Zahl hat 3 Stellen.
+  - ☐ Immer 3 Stellen, denn die größere Zahl hat 3 Stellen und die kleinere nur eine.
   - ☐ Immer 4 Stellen, denn 3 + 1 = 4.
   - ☐ Das kann man nicht sagen.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mit welcher einstelligen Zahl musst du 3322 multiplizieren, um 29 898 zu erhalten? Lösung: **9**. Typische Fehler: 10 (1x1-nachbar).
@@ -4097,7 +4097,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne für jede Ziffer des zweiten F
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne schriftlich im Heft. / 64 · 14 Lösung: **896**. Typische Fehler: 320 (mal-nicht-eingerueckt), 256 (sach-schritt-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne 74 · 77 in Schritten. / 74 · 70 = ▢ / 74 · 7 = ▢ / 74 · 77 = ▢ Lösung: a = **5180**, b = **518**, c = **5698**
 - `06` AFB III · _Argumentieren_ · Finn rechnet 31 · 41 so: / 31 · 4 = 124 / 31 · 1 = 31 / 124 + 31 = 155 / Stimmt das?
-  - ☐ Stimmt. / Alle Rechnungen sind richtig.
+  - ☐ Stimmt. / Alle drei Rechnungen sind richtig.
   - ☑ Falsch. / Es ist 31 · 40 = 1240. / Richtig ist 1271.
   - ☐ Falsch. / Richtig ist 1550.
 
@@ -4118,7 +4118,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Je Ziffer des zweiten Faktors ein Tei
 - `03` AFB II · _Argumentieren_ · Mia rechnet 579 · 82 = 5790. Welchen Fehler hat Mia gemacht?
   - ☐ Mia hat richtig gerechnet.
   - ☑ Mia hat die Teilprodukte nicht stellengerecht untereinandergeschrieben. Richtig ist 47 478.
-  - ☐ Mia hat sich bei 579 · 8 verrechnet.
+  - ☐ Mia hat sich bei 579 · 8 verrechnet. Die Teilprodukte stehen aber richtig untereinander.
   - ☐ Mia hat einen Übertrag vergessen.
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 52 · 903. Lösung: **46956**. Typische Fehler: 4836 (mal-null-vergessen).
 - `05` AFB II · _Probleme lösen_ · Welche Ziffern fehlen? 6▢ · 4▢ = 2967 Lösung: a = **9**, b = **3**
@@ -4126,7 +4126,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Je Ziffer des zweiten Faktors ein Tei
   - ☐ Lena. Die Teilprodukte werden einfach addiert.
   - ☑ Paul. Überschlag: 300 · 70 = 21 000. Dazu passt nur 18 389.
   - ☐ Keiner. Richtig ist 183 890.
-  - ☐ Beide. Die Teilprodukte sind bei beiden gleich.
+  - ☐ Beide. Die Teilprodukte sind bei beiden gleich groß.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4136,7 +4136,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache zuerst einen Überschlag, damit
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne schriftlich: 471 · 330 Lösung: **155430**. Typische Fehler: 2826 (mal-nicht-eingerueckt).
 - `03` AFB II · _Probleme lösen_ · Welche Ziffern fehlen? ▢8 · 8▢ = 2▢68 Lösung: a = **2**, b = **1**, c = **2**
 - `04` AFB III · _Modellieren_ · Wie viele Stellen hat das Produkt zweier zweistelliger Zahlen höchstens? Wähle die Antwort mit der richtigen Begründung.
-  - ☐ 5 Stellen, denn 99 · 99 ist fast 10 000.
+  - ☐ 5 Stellen, denn 99 · 99 ist fast so groß wie 10 000.
   - ☐ 3 Stellen, denn 10 · 10 = 100.
   - ☐ 2 Stellen, wie die Faktoren.
   - ☑ 4 Stellen, denn das größte Produkt ist 99 · 99 = 9801.
@@ -4144,7 +4144,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache zuerst einen Überschlag, damit
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? 32 · ▢ = 5792 Lösung: **181**. Typische Fehler: 182 (1x1-nachbar).
 - `06` AFB III · _Argumentieren_ · Ida sagt: „23 · 23 ist kleiner als 24 · 22.“ Lina sagt: „23 · 23 ist größer.“ Wer hat recht?
   - ☑ Lina. 23 · 23 = 529 und 24 · 22 = 528. Der Unterschied ist genau 1.
-  - ☐ Keiner. Beide Produkte sind gleich groß.
+  - ☐ Keiner. Beide Produkte sind gleich groß, denn 1 mehr und 1 weniger gleichen sich aus.
   - ☐ Ida. 23 · 23 = 429.
   - ☐ Ida. 24 ist größer als 23.
 
@@ -4168,7 +4168,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beis
 - `05` AFB II · _Argumentieren_ · Emre rechnet 3 · 19 = 87. / Ungefähr ist es 3 · 20 = 60. / Kann 87 stimmen? _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_
   - ☐ Ja. / 87 ist nah an 60.
   - ☑ Nein. / 87 ist zu groß. / Es muss etwas weniger als 60 sein.
-  - ☐ Ja. / Das kann man nicht sehen.
+  - ☐ Ja. / Das kann man nicht sehen. / Man muss genau rechnen.
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · 7 · 6 = 42 / Prüfe: 42 : 6 = ▢ _(Bild: Punktefeld mit 7 Reihen zu je 6 Punkten)_ Lösung: **7**. Typische Fehler: 6 (div-vertauscht).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
@@ -4181,13 +4181,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde die krumme Zahl auf Zehner. Rec
   - ☐ 87 · 7 = 609
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Mache einen Überschlag. / 549 · 6 / Runde 549 auf Hunderter. _(Bild: Zehnermaterial: 5 Hunderterplatten, 4 Zehnerstangen, 9 Einerwürfel)_ Lösung: **3000**. Typische Fehler: 3294 (ueberschlag-nicht-gerundet), 3600 (falsch-gerundet).
 - `03` AFB II · _Argumentieren_ · Finn rechnet 236 · 3 = 7080. / Mache einen Überschlag. / Stimmt das?
-  - ☐ Stimmt. / Die Ziffern passen.
+  - ☐ Stimmt. / Die Ziffern passen. / Die Nullen sind nicht wichtig.
   - ☑ Falsch. / Überschlag: 200 · 3 = 600. / 7080 ist viel zu groß.
   - ☐ Stimmt. / Überschlag: 200 · 3 = 7080.
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Probe. / 3 · 78 = 234 / Rechne 234 : 3. _(Bild: Zehnermaterial: 7 Zehnerstangen, 8 Einerwürfel)_ Lösung: **78**. Typische Fehler: 231 (probe-falsche-umkehr).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · 32 · 4 = ▢ / Probe: ▢ : 4 = 32 Lösung: x = **128**, y = **128**
 - `06` AFB III · _Argumentieren_ · Ida sagt: / „Bei 39 · 7 ist der Überschlag 40 · 7 = 280. / Also ist das Ergebnis kleiner als 280.“ / Stimmt das?
-  - ☐ Falsch. / Das kann man ohne Rechnen nicht wissen.
+  - ☐ Falsch. / Das kann man ohne genaues Rechnen nicht wissen.
   - ☐ Falsch. / Das Ergebnis ist größer als 280.
   - ☑ Stimmt. / 39 ist kleiner als 40. / Also ist 39 · 7 kleiner als 40 · 7.
 
@@ -4209,7 +4209,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde jede Zahl auf ihre höchste Ste
   - ☐ 86 · 75 = 6450
   - ☑ 48 · 53 = 25 440
 - `06` AFB III · _Argumentieren_ · Ida sagt: „336 · 59 ist größer als 300 · 50 = 15 000.“ Ben sagt: „Es ist kleiner.“ Wer hat recht?
-  - ☐ Ben. Beim Runden wird ein Ergebnis immer größer.
+  - ☐ Ben. Beim Runden wird ein Ergebnis immer größer. Also ist das genaue Produkt kleiner.
   - ☐ Keiner. Man muss genau rechnen, sonst weiß man es nicht.
   - ☐ Ben. 15 000 ist eine runde Zahl.
   - ☑ Ida. 336 ist größer als 300, und 59 ist größer als 50. Also ist das Produkt größer als 300 · 50.
@@ -4225,12 +4225,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde auf die höchste Stelle.
   - ☐ Das kann man ohne genaues Rechnen nicht sagen.
   - ☐ Gleich groß. Ein Überschlag ist immer genau.
   - ☑ Kleiner. Beide Zahlen wurden aufgerundet, also ist der Überschlag zu groß.
-  - ☐ Größer. 488 wurde aufgerundet.
+  - ☐ Größer. 488 wurde aufgerundet, also ist der Überschlag zu klein.
   - ☐ Kleiner. 47 wurde abgerundet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wie weit liegt das genaue Ergebnis von 44 · 71 vom Überschlag 40 · 70 entfernt? Lösung: **324**.
 - `06` AFB III · _Argumentieren_ · Sara sagt: „Die Probe zu 125 · 8 = 1000 ist 1000 : 125 = 8.“ Emre sagt: „Die Probe ist 1000 : 8 = 125.“ Wer hat recht?
   - ☐ Keiner. Die Probe ist 1000 − 125.
-  - ☐ Nur Emre. Man teilt immer durch den zweiten Faktor.
+  - ☐ Nur Emre. Bei der Probe teilt man immer durch den zweiten Faktor.
   - ☑ Beide. Man kann das Produkt durch jeden der beiden Faktoren teilen.
   - ☐ Nur Sara. Man teilt immer durch den ersten Faktor.
   - ☐ Keiner. Zur Mal-Aufgabe gibt es keine Probe.
@@ -4268,7 +4268,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Packung kostet gleich viel. Rech
 - `04` AFB I · _Modellieren_ · Finn hat 243 Sammelkarten. / Sara hat 4-mal so viele Karten. / Wie viele Karten hat Sara? _(Bild: Streifenbild: Ganzes ?, Teile 243 und 243 und 243 und 243)_ Lösung: **972 Karten**. Typische Fehler: 247 (1x1-addiert).
 - `05` AFB II · _Modellieren_ · Eine Treppe hat 55 Stufen. / Lina geht sie 2-mal hoch und wieder runter. / Wie viele Stufen geht sie insgesamt? Lösung: **220 Stufen**. Typische Fehler: 110 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Ein Bus hat 57 Plätze. / Es fahren 3 Busse. / 150 Kinder fahren mit. / Reicht der Platz? _(Bild: Streifenbild: Ganzes ?, Teile 57 und 57 und 57)_
-  - ☐ Nein. / 150 ist eine große Zahl.
+  - ☐ Nein. / 150 ist eine sehr große Zahl.
   - ☐ Nein. / 57 + 3 = 60.
   - ☑ Ja. / 3 · 57 = 171. / 171 ist mehr als 150.
 
@@ -4402,7 +4402,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte auf zwei Dinge: Hat sich die Re
   - ☐ Das kann man nicht prüfen.
   - ☐ Ja. Beide Aufgaben ergeben 9.
   - ☐ Nein. Bei der Division darf man gar nichts umstellen.
-  - ☐ Ja. Bei allen Rechenarten darf man vertauschen.
+  - ☐ Ja. Bei allen Rechenarten darf man vertauschen, das Ergebnis bleibt dabei immer gleich.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Es gilt (12 · 9) · 7 = 756. Wie groß ist 7 · (9 · 12)? Antworte, ohne neu zu rechnen. Lösung: **756**. Typische Fehler: 115 (punkt-vor-strich).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Rechnung zeigt, dass das Verbindungsgesetz für die Division nicht gilt?
   - ☐ (32 · 8) · 2 = 32 · (8 · 2).
@@ -4456,7 +4456,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Faktoren, die zusammen 100
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Regal hat 8 Böden. Auf jedem Boden stehen 23 Kisten mit je 20 Dosen. Wie viele Dosen stehen im Regal? Rechne vorteilhaft. Lösung: **3680 Dosen**. Typische Fehler: 460 (sach-schritt-vergessen), 184 (sach-schritt-vergessen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas rechnet 25 · 23 · 4 so: 25 · 4 = 100 und 100 · 23 = 2300. Emre rechnet 25 · 23 = 575 und 575 · 4 = 2300. Wer rechnet vorteilhafter?
   - ☑ Jonas. 25 · 4 = 100 ist leicht, und mal 100 hängt nur zwei Nullen an.
-  - ☐ Emre. Man muss immer von links nach rechts rechnen.
+  - ☐ Emre. Man muss immer von links nach rechts rechnen, sonst wird es falsch.
   - ☐ Keiner. Beide Ergebnisse sind falsch.
   - ☐ Beide gleich. Das Ergebnis ist ja dasselbe.
 
@@ -4470,7 +4470,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche zwei Faktoren ergeben zusammen
 - `04` AFB III · _Argumentieren_ · Warum darf man bei 25 · 82 · 4 zuerst 25 · 4 rechnen?
   - ☐ Weil man immer mit den kleinsten Zahlen anfängt.
   - ☐ Weil Punkt vor Strich gilt.
-  - ☐ Wegen des Verteilungsgesetzes.
+  - ☐ Wegen des Verteilungsgesetzes darf man die Faktoren neu verteilen. Deshalb darf man die beiden passenden Zahlen zuerst malnehmen.
   - ☑ Wegen des Vertauschungsgesetzes darf man 82 und 4 tauschen. Wegen des Verbindungsgesetzes darf man dann 25 · 4 zuerst rechnen.
   - ☐ Das darf man nicht. Man muss von links nach rechts rechnen.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Stadion hat 5 Tribünen. Jede Tribüne hat 125 Reihen mit je 40 Plätzen. Wie viele Plätze hat das Stadion? Rechne vorteilhaft. Lösung: **25000 Plätze**. Typische Fehler: 5000 (sach-schritt-vergessen).
@@ -4479,7 +4479,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche zwei Faktoren ergeben zusammen
   - ☐ Beide. Das Verbindungsgesetz gilt immer.
   - ☐ Keiner. Man muss immer von links nach rechts rechnen.
   - ☐ Nur Mara. Beim Dividieren darf man umstellen.
-  - ☐ Beide. Die Rechengesetze gelten für Mal und Geteilt.
+  - ☐ Beide. Die Rechengesetze gelten für Mal und Geteilt, denn Geteilt ist die Umkehrung von Mal.
 
 ## 5.4.4-P1: Ich kann ein Produkt aus gleichen Faktoren als Potenz schreiben und Basis und Exponent benennen.
 
@@ -4556,12 +4556,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Faktoren genau.
   - ☐ Er wird um 2 größer.
   - ☐ Er wird um 1 größer.
   - ☑ Er verdoppelt sich. 2⁷ = 2⁶ · 2 = 128.
-  - ☐ Er wird 10-mal so groß.
+  - ☐ Er wird 10-mal so groß, wie bei den Zehnerpotenzen.
   - ☐ Das hängt von der Zahl ab.
 - `05` AFB II · _Kommunizieren_ · Schreibe 81 auf zwei Arten als Potenz. Mit der Basis 9 ist der Exponent ▢. Mit der Basis 3 ist der Exponent ▢. Lösung: a = **2**, b = **4**
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Eine Zehnerpotenz hat so viele Nullen, wie der Exponent angibt.“ Mara sagt: „Sie hat eine Null mehr als der Exponent.“ Wer hat recht?
   - ☐ Keiner. 10³ = 30.
-  - ☐ Mara. Die 10 hat schon eine Null.
+  - ☐ Mara. Die 10 hat schon eine Null, dazu kommen die Nullen aus dem Exponenten.
   - ☐ Mara. 10³ = 10 000.
   - ☐ Beide. Es kommt auf die Zahl an.
   - ☑ Mia. 10³ = 1000 hat drei Nullen, 10⁵ = 100 000 hat fünf Nullen.
@@ -4599,7 +4599,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 9² = 9 · 9. *Beispiel:* 8² = 8 · 
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne. / 3³ _(Bild: Würfel aus 3 Schichten mit je 3 · 3 Würfelchen)_ Lösung: **27**. Typische Fehler: 9 (potenz-mal-exponent).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der große Würfel hat 4 Schichten. / Jede Schicht hat 4 Reihen mit je 4 Würfeln. / Wie viele kleine Würfel sind es? _(Bild: Würfel aus 4 Schichten mit je 4 · 4 Würfelchen)_ Lösung: **64 Würfel**. Typische Fehler: 12 (potenz-mal-exponent), 81 (potenz-vertauscht).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Ole sagt: / „10⁴ hat 4 Nullen.“ / Stimmt das?
-  - ☐ Falsch. / 10⁴ hat 5 Nullen.
+  - ☐ Falsch. / 10⁴ hat 5 Nullen. / Die 10 hat schon eine Null.
   - ☑ Stimmt. / 10⁴ = 10 · 10 · 10 · 10 = 10 000.
   - ☐ Falsch. / 10⁴ = 40.
 
@@ -4628,7 +4628,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne beide Potenzen einzeln.
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Die Quadratzahlen beginnen so: 1, 4, 9, 16, 25. Welche Regel gilt für den Unterschied zwischen zwei benachbarten Quadratzahlen?
   - ☑ Die Unterschiede sind die ungeraden Zahlen 3, 5, 7, 9 und so weiter.
   - ☐ Der Unterschied ist immer 3.
-  - ☐ Der Unterschied verdoppelt sich jedes Mal.
+  - ☐ Der Unterschied verdoppelt sich von Zahl zu Zahl jedes Mal.
   - ☐ Die Unterschiede sind die geraden Zahlen.
   - ☐ Es gibt keine Regel.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Auf ein Feld legt man 2 Körner, auf das nächste 4, dann 8 und so weiter. Es sind immer doppelt so viele. Wie viele Körner liegen auf dem 11. Feld? Lösung: **2048 Körner**. Typische Fehler: 1024 (potenz-mal-exponent), 22 (potenz-mal-exponent).
@@ -4683,7 +4683,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt. Der Diviso
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Tom sagt: / „Der Quotient ist immer kleiner als die erste Zahl.“ / Prüfe mit 6 : 1. / Stimmt das? _(Bild: 1 Gruppen mit je 6 Plättchen)_
   - ☐ Stimmt. / 6 : 1 = 5.
   - ☑ Falsch. / 6 : 1 = 6. / Der Quotient ist hier genauso groß.
-  - ☐ Stimmt. / Beim Teilen wird jede Zahl kleiner.
+  - ☐ Stimmt. / Beim Teilen wird jede Zahl immer kleiner.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4862,7 +4862,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie viele Stellen muss der Quotient n
 - `06` AFB III · _Argumentieren_ · Mia berechnet 3556 : 28 in zwei Schritten: zuerst 3556 : 4 = 889, dann 889 : 7 = 127. Beurteile den Rechenweg.
   - ☐ Richtig, aber nur, weil 3556 eine gerade Zahl ist.
   - ☑ Richtig, denn 4 · 7 = 28. Nacheinander durch 4 und durch 7 zu teilen wirkt wie das Teilen durch 28.
-  - ☐ Falsch. Mia müsste zuerst durch 24 und dann durch 4 teilen.
+  - ☐ Falsch. Mia müsste zuerst durch 24 und dann noch einmal durch 4 teilen, denn 24 + 4 = 28.
   - ☐ Falsch, denn 4 + 7 ist nicht 28.
   - ☐ Falsch. Ein Divisor darf nicht zerlegt werden.
 
@@ -4900,7 +4900,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der 6er-Reihe die größte Z
   - ☐ 1
 - `06` AFB III · _Argumentieren_ · Noah rechnet: 36 : 5 = 6 Rest 6. / Stimmt das?
   - ☐ Falsch. / Richtig ist 8 Rest 1.
-  - ☐ Stimmt. / Die Probe passt: 6 · 5 + 6 = 36.
+  - ☐ Stimmt. / Die Probe passt: 6 · 5 + 6 = 36. / Der Rest darf so groß sein.
   - ☑ Falsch. / Der Rest 6 ist größer als 5. / Richtig ist 7 Rest 1.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4917,7 +4917,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rest ist das, was nach dem letzte
 - `06` AFB III · _Argumentieren_ · 380 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 50 Plätze. Paul rechnet 380 : 50 = 7 Rest 30 und bestellt 7 Busse. Beurteile die Entscheidung.
   - ☐ Richtig: 7 Busse sind voll, das genügt.
   - ☐ Falsch: Es werden 30 Busse gebraucht.
-  - ☐ Richtig: Bei Sachaufgaben lässt man den Rest weg.
+  - ☐ Richtig: Bei Sachaufgaben lässt man den Rest immer einfach weg.
   - ☑ Falsch: 30 Kinder hätten keinen Platz. Es werden 8 Busse gebraucht.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4981,7 +4981,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebn
   - ☑ 42
 - `06` AFB III · _Argumentieren_ · Lina rechnet: 665 : 5 = 33. / Der Überschlag ist 700 : 5 = 140. / Was zeigt der Überschlag?
   - ☐ 33 passt zum Überschlag.
-  - ☐ Der Überschlag ist falsch. / 700 : 5 = 14.
+  - ☐ Der Überschlag ist falsch. / 700 : 5 = 14. / Das Ergebnis muss nahe bei 14 liegen.
   - ☑ 33 ist viel zu klein. / Das Ergebnis muss nahe bei 140 liegen. / Richtig ist 133.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5006,7 +5006,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde so, dass du die Division im Kop
   - ☑ zwischen 70 und 80
   - ☐ zwischen 90 und 100
 - `06` AFB III · _Modellieren_ · Finn rechnet 4968 : 24 = 207. Die Probe 207 · 24 = 4968 stimmt. Ein grober Überschlag mit 4000 : 30 ergibt aber nur etwa 133. Was folgt daraus?
-  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt.
+  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt und nicht dazu passt.
   - ☐ Die Probe muss falsch sein.
   - ☑ Das Ergebnis 207 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.
   - ☐ Man nimmt den Mittelwert aus Ergebnis und Überschlag.
@@ -5025,7 +5025,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf welche glatten Zahlen kannst du r
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?
   - ☐ Er stimmt dann immer genau.
   - ☐ Er ist dann immer zu klein.
-  - ☐ Er ist dann immer zu groß.
+  - ☐ Er ist dann immer zu groß, weil beide Zahlen durch das Aufrunden größer geworden sind.
   - ☑ Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Überschlag zu einer Division lautet 6000 : 60 = 100. Welche Aufgabe wurde überschlagen?
   - ☑ 6218 : 59
@@ -5059,7 +5059,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 2 zusammen. Zähle die Gru
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 6 : 2 = 3. / Welche Geschichte passt? _(Bild: 2 Gruppen mit je 3 Plättchen)_
   - ☑ 6 Kekse werden an 2 Kinder gerecht verteilt.
   - ☐ Von 6 Keksen werden 2 gegessen.
-  - ☐ Zu 6 Keksen kommen 2 Kekse dazu.
+  - ☐ Zu 6 Keksen kommen noch 2 Kekse dazu.
 - `06` AFB I · _Modellieren_ · 1 Woche hat 7 Tage. / Wie viele Wochen sind 28 Tage? _(Bild: 4 Gruppen mit je 7 Plättchen)_ Lösung: **4 Wochen**. Typische Fehler: 21 (div-falsche-rechenart).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
@@ -5075,11 +5075,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Preis wird gerecht auf 4 Bücher 
 - `04` AFB I · _Modellieren_ · 155 Flaschen stehen in 5 gleich vollen Regalen. / Wie viele Flaschen stehen in 1 Regal? _(Bild: Zehnermaterial: 1 Hunderterplatten, 5 Zehnerstangen, 5 Einerwürfel)_ Lösung: **31 Flaschen**. Typische Fehler: 150 (div-falsche-rechenart), 310 (div-stellenwert).
 - `05` AFB II · _Modellieren_ · 186 Flaschen stehen in 3 gleich vollen Regalen. / Tom rechnet 186 : 3 = 62. / Was bedeutet die 62? _(Bild: Zehnermaterial: 1 Hunderterplatten, 8 Zehnerstangen, 6 Einerwürfel)_
   - ☑ In jedem Regal stehen 62 Flaschen.
-  - ☐ 62 Flaschen bleiben übrig.
+  - ☐ 62 Flaschen bleiben am Ende übrig.
   - ☐ Es gibt 62 Regale.
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · 8 Trikots kosten zusammen 232 €. / Lena rechnet 232 − 8 = 224. / Lena sagt: „1 Trikot kostet 224 €.“ / Stimmt das? _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 2 Einerwürfel)_
   - ☑ Falsch. / Hier wird geteilt: 232 : 8 = 29. / 1 Trikot kostet 29 €.
-  - ☐ Falsch. / Hier wird mal gerechnet: 232 · 8.
+  - ☐ Falsch. / Hier wird mal gerechnet: 232 · 8. / So viel kostet 1 Trikot.
   - ☐ Stimmt. / 232 − 8 = 224.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5101,7 +5101,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier wird gleichmäßig verteilt. Wel
   - ☑ Falsch: 18 · 21 € = 378 €, es fehlen 36 €. Nötig sind 23 € pro Kind.
   - ☐ Richtig: 414 : 21 ist mehr als 18.
   - ☐ Falsch: Jedes Kind muss 18 € zahlen.
-  - ☐ Richtig: 21 € sind fast 23 €, das genügt.
+  - ☐ Richtig: 21 € sind fast 23 €, das genügt bei so vielen Kindern.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -5175,7 +5175,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst die Punktrechnung. Rech
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 72 : 8 + 5 · 8 − 17. Lösung: **32**. Typische Fehler: 95 (punkt-vor-strich).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 7 · 8 − 5 · 7. Lösung: **21**. Typische Fehler: 357 (punkt-vor-strich).
 - `06` AFB III · _Argumentieren_ · Finn rechnet 89 − 3 · 9 = 774. Paul rechnet 89 − 3 · 9 = 62. Wer hat recht?
-  - ☐ Finn. Man rechnet von links nach rechts.
+  - ☐ Finn. Man rechnet immer von links nach rechts.
   - ☐ Keiner. Richtig ist 77.
   - ☐ Beide. Die Reihenfolge ist egal.
   - ☑ Paul. Punkt vor Strich: 3 · 9 = 27 und 89 − 27 = 62.
@@ -5195,7 +5195,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Erst alle Punktrechnungen, dann von l
 - `04` AFB III · _Argumentieren_ · Warum rechnet man bei 9 + 2 · 5 zuerst 2 · 5? Denke an 9 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen.
   - ☐ Weil das Mal links steht.
   - ☑ 2 · 5 zählt die Plättchen in den Päckchen. Erst wenn sie gezählt sind, kommen die 9 einzelnen dazu: 9 + 10 = 19.
-  - ☐ Weil man immer mit der größten Zahl anfängt.
+  - ☐ Weil man immer mit der größten Zahl anfängt. Die Plättchen in den Päckchen sind mehr als die einzelnen.
   - ☐ Das ist nur eine Abmachung ohne Grund.
   - ☐ Weil 9 + 2 zuerst gerechnet werden muss.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Rechenzeichen passen? 5 ▢ 7 ▢ 3 = 26
@@ -5208,7 +5208,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Erst alle Punktrechnungen, dann von l
   - ☐ Beide. Das Ergebnis ist gleich.
   - ☐ Ole. Geteilt ist keine Punktrechnung.
   - ☑ Sara. Geteilt und mal sind Punktrechnungen. 72 : 8 = 9 und 3 · 2 = 6, also 9 − 6 = 3.
-  - ☐ Keiner. Man rechnet von links nach rechts.
+  - ☐ Keiner. Man rechnet immer der Reihe nach von links nach rechts, ohne Ausnahme.
   - ☐ Ole. Minus steht in der Mitte.
 
 ## 5.4.6-T2: Ich kann Rechenausdrücke mit Klammern berechnen, auch mit einer Klammer in der Klammer.
@@ -5248,7 +5248,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zuerst die Klammer. *Beispiel:* 8 · 
   - ☐ (4 · 2) + 6
 - `06` AFB III · _Argumentieren_ · Jonas rechnet: / (6 + 4) · 3 = 18 / Stimmt das? _(Bild: Punktefeld mit 10 Reihen zu je 3 Punkten, Trennlinie nach 6 Reihen)_
   - ☐ Falsch. / Richtig ist 13.
-  - ☐ Stimmt. / Punkt vor Strich.
+  - ☐ Stimmt. / Punkt vor Strich. / Die Klammer ändert nichts.
   - ☑ Falsch. / Zuerst die Klammer: 6 + 4 = 10. / 10 · 3 = 30.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5284,7 +5284,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Arbeite dich von der innersten Klamme
   - ☐ (4 · 6 + 5) · 7
 - `04` AFB III · _Argumentieren_ · Braucht man in 3 + (5 · 8) die Klammer?
   - ☐ Das kann man nicht sagen.
-  - ☐ Ja. Klammern darf man nie weglassen.
+  - ☐ Ja. Klammern darf man in einer Rechnung nie weglassen.
   - ☐ Nein. Klammern ändern nie etwas.
   - ☐ Ja. Ohne Klammer ist es 64.
   - ☑ Nein. Wegen Punkt vor Strich ist auch 3 + 5 · 8 = 43.
@@ -5294,7 +5294,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Arbeite dich von der innersten Klamme
   - ☐ Nur Sara. Die Klammer hinten ist egal.
   - ☐ Beide. Es kommt immer 57 heraus.
   - ☐ Keiner. Klammern darf man nie weglassen.
-  - ☐ Beide. Bei Minus darf man Klammern immer weglassen.
+  - ☐ Beide. Bei Minus darf man Klammern immer weglassen, das Ergebnis bleibt gleich.
 
 ## 5.4.6-T3: Ich kann zu einem Text den passenden Rechenausdruck aufstellen.
 
@@ -5380,14 +5380,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Differenz und Summe kommen je in eine
 - `04` AFB III · _Modellieren_ · Welche Geschichte passt zu (60 − 7) · 4?
   - ☑ Ein Paket wiegt 60 kg. Davon werden 7 kg ausgepackt. 4 solche Pakete werden verschickt.
   - ☐ Ich habe 60 €. Ich gebe 7 € aus und dann noch 4 €.
-  - ☐ Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon ausgepackt.
+  - ☐ Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon wieder ausgepackt.
   - ☐ Ich habe 60 €. Ich bekomme 4-mal 7 € dazu.
   - ☐ Keine Geschichte passt.
 - `05` AFB II · _Modellieren_ · Ich denke mir eine Zahl. Ich addiere 5 und nehme das Ergebnis mal 3. Ich erhalte 45. Welche Zahl habe ich mir gedacht? Lösung: **10**. Typische Fehler: 20 (klammer-innen-aussen).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Für 8 Hefte zu je 3 € und 8 Stifte zu je 2 € schreibt Mia 8 · 3 + 2. Ole schreibt 8 · (3 + 2). Wer hat recht?
   - ☐ Mia. Punkt vor Strich.
   - ☐ Mia. Die Stifte kosten nur 2 €.
-  - ☐ Beide. Die Ausdrücke sind gleich.
+  - ☐ Beide. Die Ausdrücke sind gleich, die Klammer ändert nichts.
   - ☐ Keiner. Richtig ist 8 + 3 + 2.
   - ☑ Ole. Jedes Heft und jeder Stift wird 8-mal gekauft: 8 · 5 = 40.
 
@@ -5446,7 +5446,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Teil der Klammer wird malgenomm
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau ins Bild. / (9 + 2) · 6 = ▢ · 6 + ▢ · 6 _(Bild: Punktefeld mit 11 Reihen zu je 6 Punkten, Trennlinie nach 9 Reihen)_ Lösung: a = **9**, b = **2**
 - `06` AFB III · _Argumentieren_ · Sara rechnet: / 6 · (20 + 2) = 120 + 2 = 122 / Stimmt das?
   - ☐ Stimmt. / 6 · 20 = 120.
-  - ☐ Falsch. / Richtig ist 52.
+  - ☐ Falsch. / Zuerst kommt das Plus: 6 + 20 = 26. / Richtig ist 26 · 2 = 52.
   - ☑ Falsch. / Auch 2 muss mit 6 malgenommen werden. / 120 + 12 = 132.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5474,7 +5474,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Summand in der Klammer wird mit
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Elif. Beim Ausmultiplizieren wird jeder Summand malgenommen: 90 + 48 = 138.
   - ☐ Keiner. Richtig ist 21 · 8.
-  - ☐ Sara. Man nimmt nur den ersten Summanden mal.
+  - ☐ Sara. Man nimmt nur den ersten Summanden mal, der zweite bleibt, wie er ist.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -5499,7 +5499,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Multipliziere zuerst aus. Was fällt 
   - ☐ Keiner. Man darf die Klammer nicht auflösen.
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Sara. In der Klammer steht ein Produkt, keine Summe. Das Verteilungsgesetz gilt hier nicht: 4 · 12 = 48.
-  - ☐ Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen.
+  - ☐ Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen. Das sagt das Verteilungsgesetz.
   - ☐ Elif. Das ist das Verbindungsgesetz.
 
 ## 5.4.7-V2: Ich kann ausklammern.
@@ -5536,7 +5536,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gleiche Faktor kommt vor die Klam
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 7 · 6 + 3 · 6 _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 7 Reihen)_ Lösung: **60**. Typische Fehler: 45 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Tom rechnet: / 6 · 7 + 6 · 3 = 6 · 7 + 3 = 45 / Stimmt das? _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 7 Reihen)_
   - ☐ Stimmt. / 6 · 7 = 42.
-  - ☐ Falsch. / Richtig ist 6 + 7 + 3 = 16.
+  - ☐ Falsch. / Hier wird nur addiert. / Richtig ist 6 + 7 + 3 = 16.
   - ☑ Falsch. / Richtig ist 6 · (7 + 3) = 6 · 10 = 60.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5553,7 +5553,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gemeinsame Faktor kommt vor die K
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Klammere aus und berechne: 14 · 13 + 14 · 7 Lösung: **280**. Typische Fehler: 189 (verteilung-halb).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bäcker verkauft am Morgen 46 Brötchen und am Nachmittag 54 Brötchen. Jedes Brötchen kostet 40 Cent. Wie viel Cent nimmt er ein? Lösung: **4000 Cent**. Typische Fehler: 1894 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Ali sagt: „15 · 9 + 15 · 4 = 15 · 13.“ Emre sagt: „15 · 9 + 15 · 4 = 15 · 36.“ Wer hat recht?
-  - ☐ Emre. In der Klammer wird malgenommen.
+  - ☐ Emre. In der Klammer wird malgenommen, weil vorn auch malgenommen wird.
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Ali. Beim Ausklammern werden die Zahlen in der Klammer addiert: 15 · (9 + 4) = 195.
   - ☐ Keiner. Richtig ist 15 · 9 + 4.
@@ -5570,11 +5570,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die einzelne 32 als Produkt.
   - ☑ Weil 58 = 58 · 1 ist. Ausklammern ergibt 58 · (99 + 1) = 58 · 100 = 5800.
   - ☐ Weil man 99 + 58 zuerst rechnen darf.
   - ☐ Weil man die Klammer weglassen darf.
-  - ☐ Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf.
+  - ☐ Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf, denn 99 ist fast 100.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Klammere aus und berechne: 9 · 25 + 9 · 16 + 9 · 59 Lösung: **900**. Typische Fehler: 300 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Sara sagt: „18 · 9 − 18 · 2 = 18 · 7.“ Jonas sagt: „18 · 9 − 18 · 2 = 18 · 11.“ Wer hat recht?
   - ☐ Beide. Ausklammern ändert nichts.
-  - ☐ Keiner. Bei Minus darf man nicht ausklammern.
+  - ☐ Keiner. Bei Minus darf man nicht ausklammern, das geht nur bei Plus.
   - ☐ Jonas. Es kommt 198 heraus.
   - ☐ Jonas. In der Klammer wird immer addiert.
   - ☑ Sara. Beim Ausklammern bleibt das Minus in der Klammer: 18 · (9 − 2) = 126.
@@ -5638,7 +5638,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 83 in 80 und 3. *Lösungsschr
 - `05` AFB II · _Modellieren_ · Ein Ticket kostet 49 €. Eine Gruppe kauft 14 Tickets. Wie viel kosten die Tickets? Rechne geschickt. Lösung: **686 €**. Typische Fehler: 699 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Noah rechnet 65 · 19 = 65 · 20 − 65 = 1235. Finn rechnet 65 · 19 = 65 · 20 − 19 = 1281. Wer hat recht?
   - ☐ Keiner. Richtig ist 65 · 20 − 1.
-  - ☐ Finn. Man zieht die Zahl ab, die geändert wurde.
+  - ☐ Finn. Man zieht am Ende die Zahl ab, die geändert wurde.
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Noah. 65 · 19 ist 65 · 20 − 65 · 1. Abgezogen wird 65, nicht 19.
 
@@ -5657,7 +5657,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 101 geschickt.
   - ☑ 39 · 41 = 39 · 40 + 39
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt: 8 · 31 · 125 + 8 · 69 · 125 Lösung: **100000**. Typische Fehler: 31069 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Jonas rechnet 36 · 25 = 36 · 20 + 36 · 5 = 900. Lina rechnet 36 · 25 = 9 · 100 = 900. Wer hat recht?
-  - ☐ Nur Jonas. Man muss immer das Verteilungsgesetz nehmen.
+  - ☐ Nur Jonas. Man muss immer das Verteilungsgesetz nehmen, anders darf man nicht zerlegen.
   - ☐ Keiner. Man muss schriftlich rechnen.
   - ☐ Nur Lina. Das Verteilungsgesetz gilt nicht bei 25.
   - ☐ Keiner. Richtig ist 725.
@@ -5694,7 +5694,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme den Unterschied zwischen zwe
 - `05` AFB II · _Probleme lösen (+ Kommunizieren)_ · Das ist eine Mal-Mauer. / Jeder Stein ist das Produkt der beiden Steine darunter. / Fülle die leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ **72** / **6** · **12** / 2 · 3 · 4
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 2, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
   - ☑ Falsch. / Jede Zahl ist das Doppelte der Zahl davor. / Nach 16 kommt 32.
-  - ☐ Falsch. / Es geht abwechselnd plus und mal weiter.
+  - ☐ Falsch. / Es geht abwechselnd plus und mal weiter. / Erst plus, dann mal.
   - ☐ Stimmt. / 2 + 2 = 4.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5709,7 +5709,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Unterschiede zwischen de
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Die Folge beginnt mit 4, 8, 16. Emre sagt: „Als Nächstes kommt 32.“ Mara sagt: „Als Nächstes kommt 28.“ Wer hat recht?
   - ☐ Keiner. Es kommt immer 8 dazu, also kommt 24.
   - ☐ Nur Emre. Eine Zahlenfolge geht immer mit Mal weiter.
-  - ☐ Nur Mara. Man muss immer auf die Unterschiede schauen.
+  - ☐ Nur Mara. Man muss immer auf die Unterschiede schauen. Eine Regel mit Mal gibt es bei so kleinen Zahlen noch nicht.
   - ☑ Beide. Bei „immer mal 2“ kommt 32. Bei „die Unterschiede 4, 8 werden immer um 4 größer“ kommt 28. Drei Zahlen legen die Regel nicht fest.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -5723,13 +5723,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden schnell kleiner. Wi
   - ☑ Falsch. Alle Zahlen der Folge stehen in der 4er-Reihe. 142 liegt zwischen 35 · 4 = 140 und 36 · 4 = 144.
   - ☐ Falsch. In der Folge kommen nur Zahlen bis 100 vor.
   - ☐ Stimmt. Man muss nur lange genug 4 dazuzählen.
-  - ☐ Stimmt. Die Folge geht immer weiter, also kommt jede Zahl einmal vor.
+  - ☐ Stimmt. Die Folge geht immer weiter und wird beliebig groß, also kommt jede Zahl einmal vor.
 - `05` AFB II · _Probleme lösen_ · Die Zahlenfolge 2, 5, 8, 11 geht immer plus 3 weiter. Welche Zahl steht an der 20. Stelle? Lösung: **59**. Typische Fehler: 62 (muster-falsche-regel), 60 (muster-falsche-regel).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · In einer Mal-Mauer stehen unten 4, 3 und 2. Oben steht 72. Sara sagt: „Verdopple ich den mittleren unteren Stein, wird der oberste Stein doppelt so groß.“ Jonas sagt: „Er wird viermal so groß.“ Wer hat recht?
   - ☑ Jonas. Der mittlere Stein steckt in beiden Steinen darüber. Mit 6 steht oben 24 · 12 = 288, und das ist 4 · 72.
   - ☐ Keiner. Der oberste Stein bleibt gleich.
   - ☐ Beide. Es kommt darauf an, wie man rechnet.
-  - ☐ Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß.
+  - ☐ Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß. Mehr ändert sich nicht.
 
 ## 5.4.X1-Z2: Ich kann die Regel eines Zahlenmusters beschreiben.
 
@@ -5775,7 +5775,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne den Unterschied zwischen zwei 
 - `06` AFB III · _Argumentieren_ · Tom sagt: / „Die Regel von 5, 10, 20, 40 heißt: immer plus 5.“ / Stimmt das?
   - ☐ Stimmt. / 5 + 5 = 10.
   - ☑ Falsch. / Von 10 bis 20 sind es 10. / Die Regel heißt: immer mal 2.
-  - ☐ Falsch. / Die Regel heißt: immer plus 10.
+  - ☐ Falsch. / Von 10 bis 20 sind es 10. / Die Regel heißt: immer plus 10.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -5791,13 +5791,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Differenzen der Nachbarz
 - `04` AFB I · _Argumentieren_ · Die Regel heißt: immer mal 2. Ergänze die ersten beiden Zahlen: ▢, ▢, 28, 56, 112 Lösung: x = **7**, y = **14**
 - `05` AFB II · _Argumentieren_ · Welche Regel beschreibt die Zahlenfolge 1, 4, 9, 16, 25? _(Bild: Quadrat aus 5 · 5 Kästchen)_
   - ☐ Immer plus 3.
-  - ☐ Die Differenzen sind immer gleich.
+  - ☐ Die Differenzen zwischen den Zahlen sind immer gleich groß.
   - ☑ Das sind die Quadratzahlen 1 · 1, 2 · 2, 3 · 3, 4 · 4 und 5 · 5.
   - ☐ Immer mal 4.
 - `06` AFB III · _Argumentieren_ · Zur Zahlenfolge 9, 15, 21, 27 sagt Ben: „Die Regel heißt: immer plus 6.“ Jonas sagt: „Das sind die Zahlen der 6er-Reihe, jeweils plus 3.“ Wer hat recht?
   - ☑ Beide. Es kommt immer 6 dazu. Und 9 = 6 + 3, 15 = 12 + 3 und so weiter. Eine Folge kann man mit verschiedenen Regeln beschreiben.
   - ☐ Keiner. Die Regel heißt: immer mal 2.
-  - ☐ Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen.
+  - ☐ Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen. Deshalb passt nur die Regel mit der 6er-Reihe.
   - ☐ Nur Ben. Eine Regel muss immer von Zahl zu Zahl gehen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -5813,7 +5813,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden nicht immer um glei
   - ☐ 4 · 3 · 2
 - `04` AFB III · _Argumentieren_ · Warum ist in der Zahlenfolge 9, 18, 36, 72, … ab der zweiten Zahl jede Zahl gerade?
   - ☐ Weil man immer plus 9 rechnet.
-  - ☐ Das stimmt nur zufällig für diese vier Zahlen.
+  - ☐ Das stimmt nur zufällig für diese vier Zahlen. Später kommen ungerade.
   - ☑ Jede Zahl ist das Doppelte der Zahl davor. Ein Doppeltes ist immer gerade.
   - ☐ Weil die Zahlen immer größer werden.
 - `05` AFB II · _Argumentieren_ · 8, 13, 20, 29, 40: Die Unterschiede sind ▢, ▢, ▢, ▢. Sie werden immer um ▢ größer. Lösung: a = **5**, b = **7**, c = **9**, e = **11**, s = **2**
@@ -5821,7 +5821,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden nicht immer um glei
   - ☐ Nur Finn. Unterschiede gibt es nur bei Plus-Folgen.
   - ☑ Beide. Eine Zahl plus ihr Doppeltes ist dasselbe wie die Zahl mal 3: 5 + 2 · 5 = 3 · 5 = 15.
   - ☐ Keiner. Die Regel heißt: immer plus 10.
-  - ☐ Nur Ida. Bei mal 3 wären die Unterschiede immer gleich.
+  - ☐ Nur Ida. Bei mal 3 wären die Unterschiede immer gleich, hier werden sie aber größer.
 
 ## 5.5.1-B1: Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.
 
