@@ -10566,7 +10566,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welcher Zeile sind es genau 175 Besucher?",
+   "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welchem Balken sind es genau 175 Besucher?",
    "mehrfach": false,
    "optionen": [
     {
@@ -31965,7 +31965,8 @@
    "nachweis": [
     "21 · 13 = 273"
    ],
-   "einheit": "Autos"
+   "einheit": "Autos",
+   "toleranz": 33
   },
   {
    "id": "5.2.4-S1-M-06",
@@ -111160,7 +111161,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
    },
    "daten": {
     "kopf": [
@@ -111220,7 +111221,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
    },
    "daten": {
     "kopf": [
@@ -111469,7 +111470,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
    },
    "daten": {
     "kopf": [
@@ -118613,7 +118614,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wandle um.\nWie viel kg sind 9,05 t?",
+   "text": "Wandle um.\nWie viele kg sind 9,05 t?",
    "loesung": 9050,
    "typischeFehler": [
     {
@@ -118798,7 +118799,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wie viel g sind 7,05 t?",
+   "text": "Wie viele g sind 7,05 t?",
    "loesung": 7050000,
    "typischeFehler": [
     {
@@ -119121,7 +119122,7 @@
     "kommunizieren"
    ],
    "format": "zahl",
-   "text": "Schau in die Tabelle.\nDie erste Tüte wiegt 1 kg 150 g.\nDie zweite Tüte wiegt 250 g.\nWie schwer sind beide Tüten zusammen in g?",
+   "text": "Die Tabelle hilft beim Umwandeln.\nDie erste Tüte wiegt 1 kg 150 g.\nDie zweite Tüte wiegt 250 g.\nWie schwer sind beide Tüten zusammen in g?",
    "loesung": 1400,
    "typischeFehler": [
     {
@@ -119165,7 +119166,7 @@
     "kommunizieren"
    ],
    "format": "sachaufgabe",
-   "text": "Schau in die Tabelle.\nIm Eimer sind 3 kg Futter.\nDie Pferde fressen 650 g.",
+   "text": "Die Tabelle hilft beim Umwandeln.\nIm Eimer sind 3 kg Futter.\nDie Pferde fressen 650 g.",
    "teile": [
     {
      "format": "zahl",
@@ -120750,7 +120751,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wandle um.\nWie viel cm sind 9,08 m?",
+   "text": "Wandle um.\nWie viele cm sind 9,08 m?",
    "loesung": 908,
    "typischeFehler": [
     {
@@ -120936,7 +120937,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wie viel mm sind 2,5 dm?",
+   "text": "Wie viele mm sind 2,5 dm?",
    "loesung": 250,
    "typischeFehler": [
     {
@@ -121258,7 +121259,7 @@
     "kommunizieren"
    ],
    "format": "zahl",
-   "text": "Schau in die Tabelle.\nDas erste Brett ist 2 m 15 cm lang.\nDas zweite Brett ist 45 cm lang.\nWie lang sind beide Bretter zusammen in cm?",
+   "text": "Die Tabelle hilft beim Umwandeln.\nDas erste Brett ist 2 m 15 cm lang.\nDas zweite Brett ist 45 cm lang.\nWie lang sind beide Bretter zusammen in cm?",
    "loesung": 260,
    "typischeFehler": [
     {
@@ -121302,7 +121303,7 @@
     "kommunizieren"
    ],
    "format": "sachaufgabe",
-   "text": "Schau in die Tabelle.\nEin Brett ist 4 m lang.\nDer Tischler sägt 65 cm ab.",
+   "text": "Die Tabelle hilft beim Umwandeln.\nEin Brett ist 4 m lang.\nDer Tischler sägt 65 cm ab.",
    "teile": [
     {
      "format": "zahl",
@@ -134412,7 +134413,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Wie heißt der Winkel β mit drei Buchstaben?",
+   "text": "Wie heißt der Winkel β mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel.",
    "mehrfach": false,
    "optionen": [
     {
@@ -151732,7 +151733,7 @@
    "hilfen": {
     "tipp": "Denke an die Tabelle: 1 cm² ist so groß wie ein Fingernagel.",
     "beispiel": "Ein Heft ist größer als ein Fingernagel, aber kleiner als eine Zeitung. Also passt dm².",
-    "loesungsschritt": "Stell dir das Ding vor. Vergleiche mit der Tabelle."
+    "loesungsschritt": "Stell es dir genau vor. Vergleiche mit der Tabelle."
    },
    "daten": {
     "kopf": [
@@ -151987,7 +151988,7 @@
    "hilfen": {
     "tipp": "Denke an die Tabelle: 1 cm² ist so groß wie ein Fingernagel.",
     "beispiel": "Ein Heft ist größer als ein Fingernagel, aber kleiner als eine Zeitung. Also passt dm².",
-    "loesungsschritt": "Stell dir das Ding vor. Vergleiche mit der Tabelle."
+    "loesungsschritt": "Stell es dir genau vor. Vergleiche mit der Tabelle."
    },
    "daten": {
     "kopf": [
@@ -152046,7 +152047,7 @@
    "hilfen": {
     "tipp": "mm² nimmt man für sehr kleine Flächen, km² für sehr große.",
     "beispiel": "Ein Fingernagel ist ungefähr 80 mm² groß.",
-    "loesungsschritt": "Stell dir das Ding vor. Ist es sehr klein oder sehr groß?"
+    "loesungsschritt": "Stell es dir genau vor. Ist es sehr klein oder sehr groß?"
    },
    "daten": {
     "kopf": [
@@ -152239,7 +152240,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Eine Tischplatte ist ungefähr 80 dm² groß.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Einheit passt?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Einheit passt?"
    },
    "daten": {
     "kopf": [
@@ -152304,7 +152305,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "beispiel": "1 m² ist so groß wie eine aufgeklappte Zeitung.",
     "loesungsschritt": "Passt die Einheit zur Größe des Dings?"
    },
@@ -152363,7 +152364,7 @@
    ],
    "hilfen": {
     "tipp": "1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite.",
-    "loesungsschritt": "Stell dir das Ding vor und vergleiche."
+    "loesungsschritt": "Stell es dir genau vor und vergleiche."
    },
    "nachweis": [
     {
@@ -152555,7 +152556,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "loesungsschritt": "Vergleiche mit Flächen, die du kennst: Klassenzimmer, Fußballfeld, Stadt."
    },
    "nachweis": [
@@ -154072,7 +154073,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit der Tabelle.",
     "beispiel": "Eine Briefmarke ist ungefähr so groß wie ein paar Fingernägel.",
-    "loesungsschritt": "Stell dir das Ding vor."
+    "loesungsschritt": "Stell es dir genau vor."
    },
    "daten": {
     "kopf": [
@@ -154296,7 +154297,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit der Tabelle.",
     "beispiel": "Eine Heftseite ist größer als eine Handfläche. Also passt dm².",
-    "loesungsschritt": "Stell dir das Ding vor."
+    "loesungsschritt": "Stell es dir genau vor."
    },
    "daten": {
     "kopf": [
@@ -154562,7 +154563,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "beispiel": "Ein Klassenzimmer ist ungefähr 60 m² groß.",
     "loesungsschritt": "Passt die Einheit zur Größe des Dings?"
    },
@@ -154759,7 +154760,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "loesungsschritt": "Vergleiche mit Flächen, die du kennst."
    },
    "nachweis": [

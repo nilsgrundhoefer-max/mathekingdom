@@ -3998,7 +3998,7 @@
       {
        "wort": "Gerade",
        "ab": "F",
-       "erklaerung": "Eine gerade Linie ohne Knick."
+       "erklaerung": "Eine gerade Linie ohne Anfang und Ende. Sie geht in beide Richtungen immer weiter."
       },
       {
        "wort": "Gitterlinie",
@@ -113184,7 +113184,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Zusammen heißt: addieren.",
+    "tipp": "Lies die Frage genau. Was passiert mit den beiden Teilen?",
     "beispiel": "Quader mit 10 cm³ und 8 cm³: zusammen 10 cm³ + 8 cm³ = 18 cm³.",
     "loesungsschritt": "Suche die Rechnung mit dem Pluszeichen."
    },
@@ -115528,7 +115528,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "2 Würfel sind zu einer Stange zusammengeklebt.\nZähle die Quadrate außen an der Stange.\nZähle auch unten und hinten.",
+   "text": "2 Würfel sind zu einer Stange zusammengeklebt.\nZähle die Quadrate außen an der Stange.\nZähle auch unten, hinten und links.",
    "loesung": 10,
    "typischeFehler": [
     {
@@ -115647,7 +115647,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Platte ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Platte.\nZähle auch unten und hinten.",
+   "text": "Die Platte ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Platte.\nZähle auch unten, hinten und links.",
    "loesung": 14,
    "typischeFehler": [
     {
@@ -115824,7 +115824,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Treppe ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Treppe.\nZähle auch unten und hinten.",
+   "text": "Die Treppe ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Treppe.\nZähle auch unten, hinten und links.",
    "loesung": 20,
    "typischeFehler": [
     {
@@ -143080,7 +143080,7 @@
      "kommunizieren"
     ],
     "format": "auswahl",
-    "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welcher Zeile sind es genau 175 Besucher?",
+    "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welchem Balken sind es genau 175 Besucher?",
     "mehrfach": false,
     "optionen": [
      {

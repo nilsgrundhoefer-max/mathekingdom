@@ -71,7 +71,7 @@ export const wortspeicher67 = {
   ],
   '6.7.5': [
     w('Nullpunkt', 'F', 'Der Punkt (0|0), an dem sich die beiden Achsen treffen.'),
-    w('Gerade', 'F', 'Eine gerade Linie ohne Knick.'),
+    w('Gerade', 'F', 'Eine gerade Linie ohne Anfang und Ende. Sie geht in beide Richtungen immer weiter.'),
     w('Gitterlinie', 'G', 'Eine Linie des Karogitters im Schaubild. Dort kannst du genau ablesen.'),
     w('Zwischenwert', 'M', 'Ein Wert, der zwischen zwei eingetragenen Wertepaaren liegt und an der Geraden abgelesen wird.'),
   ],

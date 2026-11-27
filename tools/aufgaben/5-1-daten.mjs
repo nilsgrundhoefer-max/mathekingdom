@@ -402,7 +402,7 @@ function diagrammeLesen() {
       hil(n, was === 'groesste' ? (liegend ? 'Suche den längsten Balken.' : 'Suche die höchste Säule.') : (liegend ? 'Suche den kürzesten Balken.' : 'Suche die niedrigste Säule.'), was === 'groesste' ? 'Die höchste Säule zeigt den größten Wert.' : 'Die niedrigste Säule zeigt den kleinsten Wert.', `Vergleiche die Enden der ${liegend ? 'Balken' : 'Säulen'}.`),
       { bild: (liegend ? balkenBild : saeulenBild)(s, namen, w, sk), nachweis: [ZEILE(was)] }); };
   const welcheZeigt = (n, liegend) => () => { const s = sach_(n), sk = wahl(SKALA[n]), k = n === 'F' || n === 'G' ? 3 : 4, namen = namenVon(s, k), w = skalenWerte(sk, k, n), i = zz(0, k - 1);
-    return auswahl(Z(s.einleitung, `Bei welcher ${liegend ? 'Zeile' : 'Säule'} sind es genau ${w[i]} ${s.einheit}?`), namen.map((nm) => opt(s.gewaehlt(nm), nm === namen[i])),
+    return auswahl(Z(s.einleitung, `Bei ${liegend ? 'welchem Balken' : 'welcher Säule'} sind es genau ${w[i]} ${s.einheit}?`), namen.map((nm) => opt(s.gewaehlt(nm), nm === namen[i])),
       hil(n, `Suche die Zahl ${w[i]} an der Achse. Welches Ende liegt genau auf dieser Linie?`, 'Die Säule endet genau bei 25: Sie zeigt 25.', `Die Linien gehen in ${sk.fein}er-Schritten.`),
       { bild: (liegend ? balkenBild : saeulenBild)(s, namen, w, sk), nachweis: [ZEILE('gleich', w[i])] }); };
   // Mehrere Fragen zu einem Diagramm.

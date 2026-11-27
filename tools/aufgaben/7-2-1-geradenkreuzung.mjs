@@ -52,7 +52,7 @@ function w1() {
     () => alleDrei('G', zz(0, 3), ['Die Geraden g und h schneiden sich.', 'Berechne die anderen drei Winkel.']),
     () => einer('G', wahl([1, 3]), wahl([1, 3]) === 1 ? 3 : 1, (x) => Z('Die Geraden g und h schneiden sich.', `Gib den Scheitelwinkel ${x} an.`), () => hScheitel('G')),
     () => { const a = 5 * zz(5, 14), zeige = [WERT(a), GESUCHT('β', 180 - a), null, null];
-      return grad(Z('Eine Schere ist geöffnet.', `Die beiden Klingen bilden einen Winkel von ${a}°.`, 'Die Schere bildet zwei Geraden.', 'Sie schneiden sich.', 'Berechne den Winkel β zwischen Klinge und Griff.'), 180 - a, [[a, 'nebenwinkel-gleich']], hNeben('G', a),
+      return grad(Z('Eine Schere ist geöffnet.', `Die beiden Klingen bilden einen Winkel von ${a}°.`, 'Die Schere bildet zwei Geraden.', 'Sie schneiden sich.', 'Berechne den Nebenwinkel β.'), 180 - a, [[a, 'nebenwinkel-gleich']], hNeben('G', a),
         { bild: kr('G', a, zeige, { geraden: [null, null] }), nachweis: [FIG('β'), R(`180° − ${a}° = ${180 - a}°`)] }); },
     () => { const a = alphaFuer('G'), b = 180 - a, k = kind();
       return auswahl(Z(`${k} rechnet: β = 180° − ${a}° = ${b}°.`, `Warum darf ${k} so rechnen?`, 'Kreuze die richtige Begründung an.'),

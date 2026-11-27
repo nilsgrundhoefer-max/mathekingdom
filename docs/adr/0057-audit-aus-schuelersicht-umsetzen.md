@@ -14,7 +14,7 @@ Das Audit aus Schülersicht (Stand 0.64, 27.11.2026) lieferte 213 Befunde aus si
 
 **Schreibweise.** Indizes wie h_c stehen tiefgestellt. Das Gradzeichen steht ohne Leerzeichen an der Zahl. Pronomen passen zum Vornamen. Lange Texte werden nur unterhalb von Purpur gekürzt, Vornamen bleiben.
 
-**Runden und Schätzen.** Wer beim Runden auf zwei Stellen 4,7 statt 4,70 schreibt, bekommt „Fast richtig, schreibe zwei Stellen nach dem Komma“ und verliert keinen Versuch. Schätzaufgaben mit „ungefähr“ nehmen einen Bereich an.
+**Schätzen.** Rechenaufgaben, die nach „ungefähr“ fragen, nehmen einen Bereich an (12 % um das genaue Ergebnis) und nennen ihn bei der Lösung.
 
 ## 0.66 Layout
 
@@ -39,6 +39,8 @@ Die Leiste mit „Prüfen“ bleibt bei allen Aufgaben am unteren Fensterrand si
 Der Hilferuf gilt für den Tag. Am nächsten Tag ist er weg, das Kind liest „Dein Hilferuf vom … ist abgelaufen. Brauchst du noch Hilfe?“, die Lehrkraft sieht ihn als abgelaufen. Die Meldung „erledigt“ kommt erst nach einem laufenden Spiel. Der Heftcheck bietet auch Dezimalzahlen, Brüche und negative Zahlen als falsche Antworten an, immer mindestens drei. Die Feedbackfrage kommt höchstens sechsmal je Kind und Tag und dieselbe nie zweimal am Tag; „Lieber etwas anderes“ führt zur Regionskarte.
 
 ## 0.69 Belohnung und Eingabe
+
+**Runden.** Wer beim Runden auf zwei Stellen 4,7 statt 4,70 schreibt, bekommt „Fast richtig, schreibe zwei Stellen nach dem Komma“ und verliert keinen Versuch. Das ändert die Regel aus ADR 0047, nach der die Endnull nie verlangt wird, nur für Rundungsaufgaben.
 
 Das Belohnungsspiel kostet weiter 100 Münzen. Der Text sagt das ehrlich: „Die Spiele sind für dich frei. Eine Runde kostet 100 Münzen.“ Münzpreise bleiben. Das Kind wählt im Wappenbereich, wie seine Titel heißen sollen; die Wahl gilt für Hoftitel und Ränge, in Kopfleiste, Wappen und Lehrer-Dashboard (Knappin, Klassenkönigin). Der Standard bleibt die bisherige Form. Nach einer Runde mit 0 Punkten steht ein eigener Eintrag in der Bestenliste.
 

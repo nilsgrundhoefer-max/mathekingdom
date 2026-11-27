@@ -194,7 +194,7 @@ function tangenten() {
       H('E', 'Im Viereck MT₁QT₂ sind zwei Winkel rechte Winkel. Zusammen sind alle vier 360°.'),
       { bild: figur({ punkte: { M, 'T₁': T1, 'T₂': T2, Q }, linien: [['M', 'T₁', { stil: 'hilfs' }], ['M', 'T₂', { stil: 'hilfs' }], ['Q', 'T₁'], ['Q', 'T₂']], kreise: [['M', r]], winkel: [['M', 'T₁', 'T₂', { wert: m, farbe: 0 }], ['T₁', 'M', 'Q', { wert: 90, farbe: 1 }], ['T₂', 'Q', 'M', { wert: 90, farbe: 1 }], ['Q', 'T₁', 'T₂', { n: 'φ', wert: q, frage: true, farbe: 2 }]] }),
         nachweis: [R(`360° − 90° − 90° − ${m}° = ${q}°`), FIG('φ')] }); };
-  const SCHRITTE = ['Verbinde M mit Q und bestimme die Mitte von MQ.', 'Zeichne den Thaleskreis über MQ.', 'Seine Schnittpunkte mit dem Kreis sind die Berührpunkte T₁ und T₂.', 'Zeichne die Geraden QT₁ und QT₂.'];
+  const SCHRITTE = ['Verbinde M mit Q und bestimme die Mitte von MQ.', 'Zeichne den Thaleskreis über MQ.', 'Die Schnittpunkte des Thaleskreises mit dem Kreis sind die Berührpunkte T₁ und T₂.', 'Zeichne die Geraden QT₁ und QT₂.'];
   const urteil = () => { const k = kind(), [satz, stimmt, grund, fv] = wahl([
     ['Die Tangente in P ist parallel zum Radius MP.', false, 'Sie steht senkrecht auf dem Radius MP.', 'tangente-nicht-senkrecht'],
     ['Von einem Punkt außerhalb gibt es genau zwei Tangenten an einen Kreis.', true, 'Der Thaleskreis über MQ schneidet den Kreis in zwei Punkten.', 'tangente-nicht-senkrecht'],

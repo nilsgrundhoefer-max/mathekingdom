@@ -196,7 +196,7 @@ function s2() {
         { bild: geteiltBild('M', t, { d: WERT(t.d), b: WERT(t.b), y: GESUCHT('φ', t.y) }), nachweis: [R(`180° − ${t.d}° = ${t.e}°`), R(`180° − ${t.e}° − ${t.b}° = ${t.y}°`), FIG('φ')] }); },
     () => { const n = wahl([5, 6, 7, 8]), s = (n - 2) * 180;
       return grad(`Von einer Ecke aus zerlegen die Diagonalen ein ${n}-Eck in Dreiecke. Berechne die Winkelsumme im ${n}-Eck.`, s, [[n * 180, 'winkelsumme'], [360, 'winkelsumme'], [(n - 1) * 180, 'winkelsumme']],
-        H('M', `Zähle die Dreiecke. Ein ${n}-Eck zerfällt in ${n - 2} Dreiecke.`, `${n - 2} · 180°.`), { nachweis: [`${n} − 2 = ${n - 2}`, `${n - 2} · 180° = ${s}°`] }); },
+        H('M', 'Zeichne die Diagonalen von einer Ecke aus. Zähle die Dreiecke.', `Ein ${n}-Eck zerfällt in ${n - 2} Dreiecke: ${n - 2} · 180°.`), { nachweis: [`${n} − 2 = ${n - 2}`, `${n - 2} · 180° = ${s}°`] }); },
     () => { const w = dreiWinkel('M', { min: 25, max: 105 }), E = dreieckAus(w[0], w[1], drehFuer('M')), D = plus(E.C, vek(E.B, E.C), 0.45), aw = w[0] + w[1];
       return grad(`Die Seite a ist über C hinaus verlängert. Berechne den Außenwinkel ε bei C, ohne γ zu berechnen.`, aw, [[w[2], 'nebenwinkel-gleich'], [180 - w[0], 'winkelsumme']],
         H('M', 'Der Außenwinkel ist so groß wie die beiden Innenwinkel, die nicht an C liegen.', `${w[0]}° + ${w[1]}°.`),

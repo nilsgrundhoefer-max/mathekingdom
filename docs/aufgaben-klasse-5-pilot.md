@@ -325,7 +325,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waage
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Museum. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Do 150, Fr 200, Sa 90, So 80)_
   - a) Wie viele Besucher kamen an allen Tagen zusammen? **520 Besucher**. Typische Fehler: 440 (sach-schritt-vergessen).
   - b) Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? **120 Besucher**. Typische Fehler: 280 (unterschied-addiert).
-- `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Bei welcher Zeile sind es genau 175 Besucher? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 175, Di 475, Mi 150, Do 100)_
+- `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Bei welchem Balken sind es genau 175 Besucher? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 175, Di 475, Mi 150, Do 100)_
   - ☐ Dienstag
   - ☑ Montag
   - ☐ Donnerstag
@@ -1570,7 +1570,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld aus, das typisch auss
 - `02` AFB II · _Modellieren (+ Kommunizieren)_ · Auf dem Bild sind sehr viele Schafe. Schätze ihre Anzahl mit einem Raster. _(Bild: Schätzbild mit 297 Symbolen (schaf) in 4 mal 8 Feldern, Raster zum Einschalten; je Feld 14 12 14 12 7 7 10 6 / 10 6 11 9 8 10 13 6 / 7 7 6 6 11 7 10 11 / 11 6 14 7 7 12 14 6)_ _(Schätzen)_ Wahre Anzahl: **297** Schafe, richtig von 238 bis 356
 - `03` AFB II · _Modellieren_ · Mara zählt in einem Feld 14 Ameisen. Das Raster hat 24 Felder. Der Schätzwert ist ▢. Auf Hunderter gerundet sind das ▢ Ameisen. Lösung: a = **336**, b = **300**
 - `04` AFB I · _Modellieren (+ Kommunizieren)_ · Hier gibt es kein Raster. Schätze trotzdem: Wie viele Sterne sind es? _(Bild: Schätzbild mit 116 Symbolen (stern) in 3 mal 4 Feldern, Raster keines; je Feld 10 10 10 9 / 9 10 9 9 / 12 8 10 10)_ _(Schätzen)_ Wahre Anzahl: **116** Sterne, richtig von 93 bis 139
-- `05` AFB II · _Modellieren_ · Auf einem Parkplatz stehen in einer Reihe 21 Autos. Der Parkplatz hat 13 Reihen, die etwa gleich voll sind. Wie viele Autos stehen ungefähr auf dem Parkplatz? Lösung: **273 Autos**. Typische Fehler: 21 (schaetzen-nicht-hochgerechnet), 34 (schaetzen-addiert).
+- `05` AFB II · _Modellieren_ · Auf einem Parkplatz stehen in einer Reihe 21 Autos. Der Parkplatz hat 13 Reihen, die etwa gleich voll sind. Wie viele Autos stehen ungefähr auf dem Parkplatz? Lösung: **273 Autos** (bis 33 Autos daneben gilt als richtig). Typische Fehler: 21 (schaetzen-nicht-hochgerechnet), 34 (schaetzen-addiert).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul zählt das gelbe Feld aus: 2 Menschen. Paul rechnet 2 · 12 = 24 und sagt: „Auf dem Bild sind ungefähr 24 Menschen.“ Warum ist diese Schätzung schlecht? _(Bild: Schätzbild mit 137 Symbolen (kind) in 3 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 2 7 14 19 / 5 11 12 19 / 3 11 14 20)_
   - ☐ Paul hätte die beiden Zahlen addieren müssen.
   - ☐ Das Raster hat zu viele Felder für eine Schätzung.
@@ -7159,7 +7159,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Einheit in der Tabelle. *Be
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst. *Beispiel:* Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m. *Lösungsschritt:* Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst. *Beispiel:* Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m. *Lösungsschritt:* Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?
 
 - `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft dir beim Vergleichen. / Wie lange dauert ein Schultag ungefähr? _(Tabelle: Das kennst du | So groß ist es / Zähneputzen | 3 min / Händeklatschen | 1 s / Fußballspiel | 90 min)_
   - ☐ 60 h
@@ -7646,7 +7646,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma stehen die g. Bei kg u
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma in kg. / 9 kg 5 g _(Größe eingeben, Einheit kg steht fest)_ Lösung: **9,005 kg**. Typische Fehler: 9,5 kg (komma-falsch-gelesen).
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 9 kg = ▢ mg / 3 000 000 g = ▢ t Lösung: a = **9000000**, b = **3**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viel kg sind 9,05 t? Lösung: **9050 kg**. Typische Fehler: 9005 (komma-falsch-gelesen), 90500 (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viele kg sind 9,05 t? Lösung: **9050 kg**. Typische Fehler: 9005 (komma-falsch-gelesen), 90500 (umrechnungszahl).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 5,005 kg = ▢ kg ▢ g Lösung: a = **5**, b = **5**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der größten Größe. _(Ordnen; die Karten liegen so da: 3250 g, 2900 g, 3 kg 500 g, 3,05 kg, 3,2 kg)_ Lösung: **3 kg 500 g, 3250 g, 3,2 kg, 3,05 kg, 2900 g**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 5,05 t? / Kreuze alle an.
@@ -7666,7 +7666,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte au
   - ☐ 8 t 5 kg = 8,005 t
   - ☐ 250 kg = 0,25 t
   - ☑ 800 kg = 8 t
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel g sind 7,05 t? Lösung: **7050000 g**. Typische Fehler: 705000 (umrechnungszahl), 70500000 (umrechnungszahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele g sind 7,05 t? Lösung: **7050000 g**. Typische Fehler: 705000 (umrechnungszahl), 70500000 (umrechnungszahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 6055 g, 6,005 kg, 6 kg 50 g, 5999 g, 6,5 kg, 0,6 kg)_ Lösung: **0,6 kg, 5999 g, 6,005 kg, 6 kg 50 g, 6055 g, 6,5 kg**
 - `04` AFB III · _Argumentieren_ · Tom behauptet: 2,05 kg = 2500 g. Stimmt das?
   - ☑ Falsch, denn 2,05 kg sind 2050 g.
@@ -7696,8 +7696,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Seiten sind gleich schwer. Zäh
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Waage. / Die Waage ist im Gleichgewicht. / Wie schwer ist der Sack? _(Bild: Balkenwaage im Gleichgewicht: links Sack, rechts 500 g, 200 g)_ Lösung: **700 g**. Typische Fehler: 2 (liste-verzaehlt), 500 (sach-schritt-vergessen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die erste Tüte wiegt 40 g. / Die zweite Tüte wiegt 30 g. / Wie schwer sind beide Tüten zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 40 und 30)_ Lösung: **70 g**. Typische Fehler: 10 (add-subtrahiert), 40 (sach-schritt-vergessen).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Beutel wiegt 50 g. / Im Korb liegen 3 Beutel. / Wie schwer sind alle Beutel zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 50 und 50 und 50)_ Lösung: **150 g**. Typische Fehler: 53 (1x1-addiert), 50 (sach-schritt-vergessen).
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Die erste Tüte wiegt 1 kg 150 g. / Die zweite Tüte wiegt 250 g. / Wie schwer sind beide Tüten zusammen in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **1400 g**. Typische Fehler: 401 (masszahlen-addiert), 400 (sach-schritt-vergessen).
-- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Im Eimer sind 3 kg Futter. / Die Pferde fressen 650 g. _(Tabelle: Merke |  / 1 kg | 1000 g)_
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Die erste Tüte wiegt 1 kg 150 g. / Die zweite Tüte wiegt 250 g. / Wie schwer sind beide Tüten zusammen in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **1400 g**. Typische Fehler: 401 (masszahlen-addiert), 400 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Im Eimer sind 3 kg Futter. / Die Pferde fressen 650 g. _(Tabelle: Merke |  / 1 kg | 1000 g)_
   - a) Wie viel g sind 3 kg? **3000 g**. Typische Fehler: 300 (umrechnungszahl).
   - b) Wie viel Futter bleibt im Eimer? **2350 g**. Typische Fehler: 647 (masszahlen-addiert), 3650 (sub-addiert).
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Käse wiegt 100 g. / Er wird in 2 gleiche Stücke geteilt. / Wie schwer ist ein Stück? _(Bild: Streifenbild: Ganzes 100, Teile ? und 50)_ Lösung: **50 g**. Typische Fehler: 100 (sach-schritt-vergessen), 98 (div-falsche-rechenart).
@@ -7802,7 +7802,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma stehen die mm. Bei cm 
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma in cm. / 8 cm 2 mm _(Größe eingeben, Einheit cm steht fest)_ Lösung: **8,2 cm**.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 7 km = ▢ dm / 6000 mm = ▢ m Lösung: a = **70000**, b = **6**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viel cm sind 9,08 m? Lösung: **908 cm**. Typische Fehler: 9080 (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viele cm sind 9,08 m? Lösung: **908 cm**. Typische Fehler: 9080 (umrechnungszahl).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 1,75 km = ▢ km ▢ m Lösung: a = **1**, b = **750**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der größten Größe. _(Ordnen; die Karten liegen so da: 5250 m, 5,05 km, 5,2 km, 5 km 500 m, 4900 m)_ Lösung: **5 km 500 m, 5250 m, 5,2 km, 5,05 km, 4900 m**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 6,05 km? / Kreuze alle an.
@@ -7822,7 +7822,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte au
   - ☐ 4 km = 40 000 dm
   - ☐ 3,5 km = 3500 m
   - ☐ 250 m = 0,25 km
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel mm sind 2,5 dm? Lösung: **250 mm**. Typische Fehler: 25 (umrechnungszahl), 2500 (umrechnungszahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele mm sind 2,5 dm? Lösung: **250 mm**. Typische Fehler: 25 (umrechnungszahl), 2500 (umrechnungszahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 0,7 km, 6999 m, 7 km 50 m, 7,005 km, 7,5 km, 7055 m)_ Lösung: **0,7 km, 6999 m, 7,005 km, 7 km 50 m, 7055 m, 7,5 km**
 - `04` AFB III · _Argumentieren_ · Emre behauptet: 4,05 km = 4500 m. Stimmt das?
   - ☐ Stimmt, denn nach dem Komma stehen drei Stellen für m.
@@ -7852,8 +7852,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Strich beginnt nicht bei 0. Ziehe
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau auf das Lineal. / Der Strich beginnt bei 1 cm. / Er endet bei 7 cm. / Wie lang ist der Strich? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 10 mm und endet bei 70 mm)_ Lösung: **6 cm**. Typische Fehler: 7 (sach-schritt-vergessen), 8 (sub-addiert).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das rote Band ist 40 cm lang. / Das blaue Band ist 45 cm lang. / Wie lang sind beide Bänder zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 40 und 45)_ Lösung: **85 cm**. Typische Fehler: 5 (add-subtrahiert), 40 (sach-schritt-vergessen).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Regalbrett ist 90 cm lang. / Die Tischlerin legt 3 Bretter hintereinander. / Wie lang ist die Reihe? _(Bild: Streifenbild: Ganzes ?, Teile 90 und 90 und 90)_ Lösung: **270 cm**. Typische Fehler: 93 (1x1-addiert), 90 (sach-schritt-vergessen).
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Das erste Brett ist 2 m 15 cm lang. / Das zweite Brett ist 45 cm lang. / Wie lang sind beide Bretter zusammen in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **260 cm**. Typische Fehler: 62 (masszahlen-addiert), 60 (sach-schritt-vergessen).
-- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Ein Brett ist 4 m lang. / Der Tischler sägt 65 cm ab. _(Tabelle: Merke |  / 1 m | 100 cm)_
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Das erste Brett ist 2 m 15 cm lang. / Das zweite Brett ist 45 cm lang. / Wie lang sind beide Bretter zusammen in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **260 cm**. Typische Fehler: 62 (masszahlen-addiert), 60 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Ein Brett ist 4 m lang. / Der Tischler sägt 65 cm ab. _(Tabelle: Merke |  / 1 m | 100 cm)_
   - a) Wie viel cm sind 4 m? **400 cm**. Typische Fehler: 4000 (umrechnungszahl).
   - b) Wie lang ist das Brett jetzt? **335 cm**. Typische Fehler: 61 (masszahlen-addiert), 465 (sub-addiert).
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Leiste ist 240 cm lang. / Der Tischler sägt daraus 4 gleiche Stücke. / Wie lang ist ein Stück? _(Bild: Streifenbild: Ganzes 240, Teile ? und 60 und 60 und 60)_ Lösung: **60 cm**. Typische Fehler: 240 (sach-schritt-vergessen), 236 (div-falsche-rechenart).
@@ -8560,7 +8560,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht immer in der Mitte
   - ☑ α
   - ☐ γ
   - ☐ β
-- `03` AFB II · _Kommunizieren_ · Wie heißt der Winkel β mit drei Buchstaben? _(Bild: Winkel α 60°, β 55°)_
+- `03` AFB II · _Kommunizieren_ · Wie heißt der Winkel β mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel. _(Bild: Winkel α 60°, β 55°)_
   - ☐ ∢SBC
   - ☑ ∢BSC
   - ☐ ∢BCS
@@ -9531,7 +9531,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Felder. Jedes Feld ist 1 c
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Flächen, km² für sehr große. *Beispiel:* Ein Fingernagel ist ungefähr 80 mm² groß. *Lösungsschritt:* Stell dir das Ding vor. Ist es sehr klein oder sehr groß?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Flächen, km² für sehr große. *Beispiel:* Ein Fingernagel ist ungefähr 80 mm² groß. *Lösungsschritt:* Stell es dir genau vor. Ist es sehr klein oder sehr groß?
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Tischplatte ist ungefähr 80 ▢ groß. / Welche Einheit passt? _(Tabelle: Einheit | So groß ist etwa / mm² | ein Stecknadelkopf / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt / km² | ein Dorf mit Feldern)_
   - ☐ mm²
@@ -9551,7 +9551,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Fläc
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite. *Lösungsschritt:* Stell dir das Ding vor und vergleiche.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite. *Lösungsschritt:* Stell es dir genau vor und vergleiche.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Fußballfeld ist ungefähr 70 ▢ groß. / Welche Einheit passt?
   - ☐ km²

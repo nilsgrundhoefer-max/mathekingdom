@@ -5637,15 +5637,15 @@ Baut auf: 6.6.5-Z1 (Ich kann das Volumen von Körpern berechnen, die aus Quadern
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Quadrate außen: auch unten, hinten und links. *Beispiel:* Ein einzelner Würfel hat 6 Quadrate außen. *Lösungsschritt:* Zähle Seite für Seite: oben, unten, vorne, hinten, links, rechts.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 2 Würfel sind zu einer Stange zusammengeklebt. / Zähle die Quadrate außen an der Stange. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_ Lösung: **10**. Typische Fehler: 12 (klebeflaeche-mitgezaehlt), 8 (oberflaeche-drei-flaechen).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 2 Würfel sind zu einer Stange zusammengeklebt. / Zähle die Quadrate außen an der Stange. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_ Lösung: **10**. Typische Fehler: 12 (klebeflaeche-mitgezaehlt), 8 (oberflaeche-drei-flaechen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Turm besteht aus 2 Würfeln. / Zähle die Quadrate außen. / Oben und unten: ▢ Quadrate / An den vier Seiten: 4 · 2 = ▢ Quadrate / Zusammen: ▢ Quadrate _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 2)_ Lösung: o = **2**, s = **8**, z = **10**
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Platte ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Platte. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 1 1 1)_ Lösung: **14**. Typische Fehler: 18 (klebeflaeche-mitgezaehlt), 3 (oberflaeche-drei-flaechen), 11 (oberflaeche-drei-flaechen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Platte ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Platte. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 1 1 1)_ Lösung: **14**. Typische Fehler: 18 (klebeflaeche-mitgezaehlt), 3 (oberflaeche-drei-flaechen), 11 (oberflaeche-drei-flaechen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus Würfeln gebaut. / Jedes Quadrat außen hat den Flächeninhalt 1 cm². / Gib den Oberflächeninhalt von dem Körper an. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 2 1)_ _(Größe eingeben, Einheit cm² steht fest)_ Lösung: **14 cm²**. Typische Fehler: 18 cm² (klebeflaeche-mitgezaehlt), 12 cm² (oberflaeche-drei-flaechen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas klebt 2 Würfel zu einer Stange zusammen. / Kreuze die Anzahl der Quadrate außen an. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_
   - ☐ 11 Quadrate
   - ☑ 10 Quadrate
   - ☐ 12 Quadrate
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Treppe ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Treppe. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_ Lösung: **20**. Typische Fehler: 30 (klebeflaeche-mitgezaehlt), 17 (oberflaeche-drei-flaechen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Treppe ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Treppe. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_ Lösung: **20**. Typische Fehler: 30 (klebeflaeche-mitgezaehlt), 17 (oberflaeche-drei-flaechen).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 

@@ -109,7 +109,7 @@ export function schaetzenAufgaben() {
       (x, y) => [`In einem Glas liegen Murmeln in Schichten. In einer Schicht zählt man ${x} Murmeln. Das Glas hat ${y} Schichten.`, 'Wie viele Murmeln sind ungefähr im Glas?', x, y, 'Murmeln'],
       (x, y) => [`Auf einem Parkplatz stehen in einer Reihe ${x} Autos. Der Parkplatz hat ${y} Reihen, die etwa gleich voll sind.`, 'Wie viele Autos stehen ungefähr auf dem Parkplatz?', x, y, 'Autos'],
       (x, y) => [`Die Köchin des Königs zählt auf einem Blech ${x} Brötchen. Im Ofen liegen ${y} Bleche, die etwa gleich voll sind.`, 'Wie viele Brötchen sind ungefähr im Ofen?', x, y, 'Brötchen']])(zz(21, 38), zz(11, 19));
-      return zahl(`${satz} ${frage}`, a * b, produktFehler(a, b), h2('Die eine Schicht oder Reihe ist deine Stichprobe. Rechne von ihr auf das Ganze hoch.', `Rechne ${a} · ${b}.`), { nachweis: N(`${a} · ${b}`), einheit }); },
+      return zahl(`${satz} ${frage}`, a * b, produktFehler(a, b), h2('Die eine Schicht oder Reihe ist deine Stichprobe. Rechne von ihr auf das Ganze hoch.', `Rechne ${a} · ${b}.`), { nachweis: N(`${a} · ${b}`), einheit, toleranz: Math.ceil(a * b * 0.12) }); },
     () => { const k = kind(), b = suche(() => ungleich(3, 4, zz(16, 22), 4, { fest: true, raster: 'fest' }), (x) => x.felder.flat().filter((v) => v === Math.min(...x.felder.flat())).length === 1 && Math.min(...x.felder.flat()) >= 2), kl = Math.min(...b.felder.flat());
       const ort = b.felder.flatMap((z, i) => z.map((v, j) => [v, i, j])).find(([v]) => v === kl);
       b.bild.markiert = [ort[1], ort[2]];

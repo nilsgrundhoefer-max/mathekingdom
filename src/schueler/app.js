@@ -1319,6 +1319,8 @@ export const seitenblickSatz = (titel) => (titel ? `Kurzer Blick zurück. Danach
 function loesungstext(auf) {
   // Version 0.65: Das Gradzeichen steht ohne Lücke an der Zahl („36°“), wie in den Aufgaben.
   const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? `${t.einheit === '°' ? '' : ' '}${t.einheit}` : ''}`;
+  // Version 0.65: Fragt die Aufgabe nach „ungefähr“ und hat einen Bereich, steht der Bereich bei der Lösung.
+  if (auf.format === 'zahl' && auf.toleranz && /ungefähr/.test(auf.text ?? '')) return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.loesung - auf.toleranz)} bis ${gliedere(auf.loesung + auf.toleranz)})`;
   switch (auf.format) {
     case 'zahlenstrahl': {
       // Kapitel 9: Am Strahl mit Teiler ist die Lösung die Nummer des Teilstrichs. Gezeigt wird die Zahl, die dort steht.

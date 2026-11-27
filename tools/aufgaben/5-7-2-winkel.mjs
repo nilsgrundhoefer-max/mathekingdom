@@ -107,7 +107,7 @@ export function winkelVergleichen() {
       h2('Der Scheitel steht immer in der Mitte.', 'Vorne steht der Punkt auf dem Schenkel, von dem du gegen den Uhrzeigersinn losgehst.')),
     () => zwischenFrage((S, A, B) => `Drei Winkel liegen an einem Scheitel nebeneinander. Welcher Winkel ist ∢${A}${S}${B}?`, nachbarn('M', 3), zz(0, 2),
       h2(`Der mittlere Buchstabe ist der Scheitel. Die beiden anderen nennen die Schenkel.`, 'Suche die beiden Schenkel und den Bogen zwischen ihnen.')),
-    () => nameFrage('Wie heißt der Winkel β mit drei Buchstaben?', nachbarn('M', 2),
+    () => nameFrage('Wie heißt der Winkel β mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel.', nachbarn('M', 2),
       h2('Der Scheitel steht in der Mitte.', 'Gehe gegen den Uhrzeigersinn vom ersten Schenkel von β zum zweiten.'), 'β'),
     () => schenkelFrage('Welche Strecken sind die Schenkel des Winkels α?', einer('M'),
       h2('Beide Schenkel beginnen im Scheitel.', 'Die Verbindung der beiden Endpunkte ist kein Schenkel.')),

@@ -25215,7 +25215,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Eine Schere ist geöffnet.\nDie beiden Klingen bilden einen Winkel von 45°.\nDie Schere bildet zwei Geraden.\nSie schneiden sich.\nBerechne den Winkel β zwischen Klinge und Griff.",
+   "text": "Eine Schere ist geöffnet.\nDie beiden Klingen bilden einen Winkel von 45°.\nDie Schere bildet zwei Geraden.\nSie schneiden sich.\nBerechne den Nebenwinkel β.",
    "loesung": 135,
    "typischeFehler": [
     {
@@ -34599,8 +34599,8 @@
     }
    ],
    "hilfen": {
-    "tipp": "Zähle die Dreiecke. Ein 8-Eck zerfällt in 6 Dreiecke.",
-    "loesungsschritt": "6 · 180°."
+    "tipp": "Zeichne die Diagonalen von einer Ecke aus. Zähle die Dreiecke.",
+    "loesungsschritt": "Ein 8-Eck zerfällt in 6 Dreiecke: 6 · 180°."
    },
    "einheit": "°",
    "nachweis": [
@@ -38642,10 +38642,10 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "argumentieren"
+    "symbolisch"
    ],
    "format": "zahl",
-   "text": "Ein Verkehrsschild hat die Form eines gleichseitigen Dreiecks. Begründe mit dem Basiswinkelsatz und gib die Größe eines Winkels an.",
+   "text": "Ein Verkehrsschild hat die Form eines gleichseitigen Dreiecks. Alle Seiten sind gleich lang, also sind nach dem Basiswinkelsatz alle Winkel gleich groß. Gib die Größe eines Winkels an.",
    "loesung": 60,
    "typischeFehler": [
     {
@@ -47404,12 +47404,12 @@
     "Zeichne den Thaleskreis über MQ.",
     "Verbinde M mit Q und bestimme die Mitte von MQ.",
     "Zeichne die Geraden QT₁ und QT₂.",
-    "Seine Schnittpunkte mit dem Kreis sind die Berührpunkte T₁ und T₂."
+    "Die Schnittpunkte des Thaleskreises mit dem Kreis sind die Berührpunkte T₁ und T₂."
    ],
    "loesung": [
     "Verbinde M mit Q und bestimme die Mitte von MQ.",
     "Zeichne den Thaleskreis über MQ.",
-    "Seine Schnittpunkte mit dem Kreis sind die Berührpunkte T₁ und T₂.",
+    "Die Schnittpunkte des Thaleskreises mit dem Kreis sind die Berührpunkte T₁ und T₂.",
     "Zeichne die Geraden QT₁ und QT₂."
    ],
    "hilfen": {
@@ -59340,7 +59340,7 @@
    "format": "ordnen",
    "text": "Konstruiere die Winkelhalbierende eines Winkels mit Zirkel und Lineal. Ordne die Schritte.",
    "karten": [
-    "Verbinde diesen Punkt mit dem Scheitel.",
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
     "Zeichne um den Scheitel einen Kreisbogen, der beide Schenkel schneidet."
@@ -59349,7 +59349,7 @@
     "Zeichne um den Scheitel einen Kreisbogen, der beide Schenkel schneidet.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
-    "Verbinde diesen Punkt mit dem Scheitel."
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel."
    ],
    "hilfen": {
     "tipp": "Der erste Bogen geht um den Scheitel."
@@ -60118,14 +60118,14 @@
    "karten": [
     "Zeichne um A einen Kreisbogen, der beide Schenkel schneidet.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
-    "Verbinde diesen Punkt mit dem Scheitel.",
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius."
    ],
    "loesung": [
     "Zeichne um A einen Kreisbogen, der beide Schenkel schneidet.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
-    "Verbinde diesen Punkt mit dem Scheitel."
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel."
    ],
    "hilfen": {
     "tipp": "Der erste Bogen geht um den Scheitel."
@@ -61905,7 +61905,7 @@
    },
    {
     "wort": "Gerade",
-    "erklaerung": "Eine gerade Linie ohne Knick.",
+    "erklaerung": "Eine gerade Linie ohne Anfang und Ende. Sie geht in beide Richtungen immer weiter.",
     "meilenstein": "6.7.5"
    },
    {

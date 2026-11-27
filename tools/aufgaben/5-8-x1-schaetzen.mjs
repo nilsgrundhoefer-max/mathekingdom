@@ -40,11 +40,11 @@ export function flaechenSchaetzen() {
   const tippA = h3('Zähle, wie oft das Ding hineinpasst.', 'Passen 10 Heftseiten auf den Tisch, sind es 10 · 6 dm² = 60 dm².', 'Rechne: Anzahl mal die Größe eines Dings.');
   sechs(A1, 'F', [
     () => auslegenAufgabe(tippA, { nur: 'Heftseite' }),
-    () => angabeWaehlen('F', h3('Vergleiche mit der Tabelle.', 'Eine Briefmarke ist ungefähr so groß wie ein paar Fingernägel.', 'Stell dir das Ding vor.'), { daten: VORSTELLUNG }),
+    () => angabeWaehlen('F', h3('Vergleiche mit der Tabelle.', 'Eine Briefmarke ist ungefähr so groß wie ein paar Fingernägel.', 'Stell es dir genau vor.'), { daten: VORSTELLUNG }),
     () => auslegenAufgabe(tippA, { nur: 'Zeitung' }),
     () => dingeZuordnen(['F'], 3, h3('Kleine Dinge haben cm², große Räume m².', 'Ein Klassenzimmer ist ungefähr 60 m² groß.', 'Beginne mit dem größten Ding.'), { daten: VORSTELLUNG }),
     () => auslegenAufgabe(tippA, { nur: 'Postkarte' }),
-    () => einheitWaehlen('F', h3('Vergleiche mit der Tabelle.', 'Eine Heftseite ist größer als eine Handfläche. Also passt dm².', 'Stell dir das Ding vor.'), { extra: { daten: VORSTELLUNG } }),
+    () => einheitWaehlen('F', h3('Vergleiche mit der Tabelle.', 'Eine Heftseite ist größer als eine Handfläche. Also passt dm².', 'Stell es dir genau vor.'), { extra: { daten: VORSTELLUNG } }),
   ]);
   sechs(A1, 'G', [
     () => auslegenAufgabe(h3('Zähle die Kästchen. Jedes Kästchen ist ein Ding.', 'Passen 12 Zeitungen auf den Boden, sind es 12 · 1 m² = 12 m².', 'Rechne: Anzahl mal die Größe eines Dings.'), { nur: wahl(['Heftseite', 'Zeitung']) }),
@@ -52,7 +52,7 @@ export function flaechenSchaetzen() {
     () => { const n = wahl([20, 25, 30]);
       return wieOft(Z('Eine Briefmarke ist ungefähr 6 cm² groß.', `Ein Blatt ist ungefähr ${q(n * 6, 'cm²')} groß.`, 'Wie viele Briefmarken passen ungefähr auf das Blatt?'), [n * 6, 'cm²'], [6, 'cm²'], h3('Teile die große Fläche durch die kleine.', '60 cm² : 6 cm² = 10. Es passen ungefähr 10 Briefmarken darauf.', 'Rechne die große Fläche geteilt durch die Stützgröße.')); },
     () => auslegenAufgabe(h3('Zähle die Kästchen. Jedes Kästchen ist ein Ding.', 'Passen 5 Postkarten auf das Brett, sind es 5 · 150 cm² = 750 cm².', 'Rechne: Anzahl mal die Größe eines Dings.'), { nur: 'Postkarte' }),
-    () => urteilDing([...DINGE.F, ...DINGE.G], wahl([true, false]), h3('Stell dir das Ding vor.', 'Ein Klassenzimmer ist ungefähr 60 m² groß.', 'Passt die Einheit zur Größe des Dings?'), true),
+    () => urteilDing([...DINGE.F, ...DINGE.G], wahl([true, false]), h3('Stell es dir genau vor.', 'Ein Klassenzimmer ist ungefähr 60 m² groß.', 'Passt die Einheit zur Größe des Dings?'), true),
     () => { const k = wahl([60, 70, 80]), n = wahl([50, 100]);
       return wieOft(Z(`Ein Klassenzimmer ist ungefähr ${q(k, 'm²')} groß.`, `Ein Sportplatz ist ungefähr ${q(k * n, 'm²')} groß.`, 'Wie viele Klassenzimmer passen ungefähr auf den Sportplatz?'), [k * n, 'm²'], [k, 'm²'], h3('Teile die große Fläche durch die Stützgröße.', '600 m² : 60 m² = 10.', 'Rechne die Fläche des Sportplatzes geteilt durch die Fläche eines Klassenzimmers.')); },
   ]);
@@ -62,7 +62,7 @@ export function flaechenSchaetzen() {
     () => { const n = zz(8, 15), w = n * 6;
       return groesse(`Ein Tisch ist so groß wie ${n} Heftseiten. Eine Heftseite ist ungefähr 6 dm² groß. Gib einen Schätzwert für die Fläche des Tisches an. Wähle dazu eine passende Einheit.`, 'flaeche', w * QF['dm²'], 'dm²', [[n * QF['dm²'], 'schaetzen-nicht-hochgerechnet'], [(n + 6) * QF['dm²'], 'schaetzen-addiert']],
         h2('Rechne Anzahl mal Stützgröße.', 'Du kannst das Ergebnis in dm² oder in cm² angeben.'), { einheiten: ['cm²', 'dm²', 'm²'], nachweis: [G(`${n} · 6 dm² = ${q(w, 'dm²')}`)] }); },
-    () => urteilDing([...DINGE.G, ...DINGE.M], wahl([true, false]), h2('Stell dir das Ding vor.', 'Vergleiche mit Flächen, die du kennst.')),
+    () => urteilDing([...DINGE.G, ...DINGE.M], wahl([true, false]), h2('Stell es dir genau vor.', 'Vergleiche mit Flächen, die du kennst.')),
     () => dingeZuordnen(['G', 'M'], 4, h2('Kleine Dinge haben kleine Einheiten.', 'Ordne zuerst das kleinste und das größte Ding zu.')),
     () => { const a = wahl([21, 28, 35]);
       return wieOft(`Ein Schulhof ist ungefähr ${q(a, 'a')} groß. Ein Klassenzimmer ist ungefähr 70 m² groß. Wie viele Klassenzimmer passen ungefähr auf den Schulhof?`, [a, 'a'], [70, 'm²'], h2('Wandle zuerst in m² um.', 'Teile dann durch die Fläche eines Klassenzimmers.'), true); },
