@@ -8,6 +8,23 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.60 vom 27.11.2026
+
+### Schüler
+
+- Jedes Lernziel beginnt auf deiner Krone. Wird es dir zu schwer, spielst du nur bei diesem Lernziel um Silber.
+- Hast du ein Lernziel auf Silber geschafft, geht es mit dem nächsten Lernziel weiter. Dein Siegel holst du dir in der nächsten Runde.
+- Hast du den ganzen Weg einmal geschafft, beginnt die nächste Runde: „Hol dir Gold!“
+- Münzen gibt es für Neues: Wer ein Lernziel schon auf Silber geschafft hat, bekommt für weitere Silber-Aufgaben nur noch 1 Münze. Auf Gold gibt es weiter volle Münzen.
+
+### Lehrkraft
+
+- Aufgabenführung in Runden: erst jedes Lernziel einmal, auch nur auf Silber, dann der nächste Meilenstein; am Ende des Lernpfads beginnt die nächste Runde auf dem Zielniveau (ADR 0052).
+- Die Kronenwahl gilt je Lernziel. Wer ein Absinken ablehnt und wieder 3 von 5 Aufgaben nicht löst, sinkt von selbst.
+- „Unter dem Ziel geschafft“ bringt kein Siegel. Nach zweimal schlägt die Führung das Lernziel nicht mehr vor.
+- Der Vorschlag „um Gold spielen“ kommt nur noch bei Zielniveau Silber.
+- Aufgaben bringen nur noch volle Münzen, wenn ihr Lernziel auf ihrem Niveau noch nicht nachgewiesen ist. Rückblick, Seitenblick, Brücke und Sonderauftrag bleiben wie bisher.
+
 ## 0.59 vom 27.11.2026
 
 ### Schüler

@@ -383,7 +383,7 @@ _Avoid_: Übungsmodus
 ## Belohnung
 
 **Münze**:
-Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Dazu kommen die Belohnung eines erledigten Sonderauftrags und Münzgaben. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
+Die ausgebbare Währung für richtig gelöste Aufgaben. Gemessen wird am Zielniveau des Schülers: Eine Aufgabe auf dem eigenen Zielniveau bringt jedem gleich viel, darüber etwas mehr, im Training weniger. Ist das Lernziel auf der Niveaustufe der Aufgabe schon nachgewiesen (unter dem Ziel geschafft oder Siegel), bringt sie beim Üben nur noch 1 Münze; volle Münzen gibt es für Neues. Dazu kommen die Belohnung eines erledigten Sonderauftrags und Münzgaben. Münzen gibt der Schüler im Wappenschrank, für Rechenpausen und für Belohnungsspiele aus.
 _Avoid_: Punkte, Coins, Taler
 
 **Münzgabe**:
