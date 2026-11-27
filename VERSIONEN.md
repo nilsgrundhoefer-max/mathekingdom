@@ -8,6 +8,18 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.63 vom 27.11.2026
+
+### Schüler
+
+- In den Bildern stehen die Namen von Linien, Punkten und Figuren nicht mehr zu nah beieinander und nicht mehr auf einer Linie. Das betrifft vor allem Geometrie in Klasse 5 und 7 und die Schaubilder in Klasse 6.
+- Auf der Karte mit Maßstab verdeckt kein Ortsname mehr die Maßstabsleiste.
+
+### Lehrkraft
+
+- Beschriftungen in Aufgabenbildern weichen einander aus (ADR 0055). Die Aufgaben selbst, ihre Zahlen und Lösungen sind unverändert.
+- Die Layoutprüfung und der Bilderbogen arbeiten jetzt in der Breite der Aufgabenkarte am PC.
+
 ## 0.62 vom 27.11.2026
 
 ### Schüler

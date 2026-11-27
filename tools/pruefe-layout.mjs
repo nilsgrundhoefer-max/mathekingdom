@@ -1,7 +1,9 @@
 // Layoutprüfung für die Bilder eines Kapitels (ADR 0034): Die Aufgaben werden mit den echten Zeichnern des Schüler-Dashboards
-// im Browser gezeichnet, bei 420 und bei 1200 Pixel Breite. Geprüft wird, was man im Bild sieht:
-// - Beschriftungen überlappen einander nicht und ragen nicht aus dem Bild,
-// - Punkt-, Winkel- und Ortsnamen liegen nicht auf einer Linie (Schenkel, Strecke, Breitenkreis im Gradnetz),
+// im Browser gezeichnet, in der Breite der Aufgabenkarte am PC (690 Pixel) und in einem kleinen Notebookfenster (560 Pixel, ADR 0055).
+// Geprüft wird, was man im Bild sieht:
+// - Beschriftungen überlappen einander nicht, halten 4 Pixel Abstand voneinander und ragen nicht aus dem Bild,
+// - am PC ist jedes Bild ohne Schieben ganz zu sehen,
+// - Punkt-, Linien-, Winkel- und Ortsnamen liegen nicht auf einer Linie und nicht auf einem fremden Punkt (Schenkel, Strecke, Breitenkreis im Gradnetz),
 //   Maße, Figurnamen und Teilnummern in Kapitel 8 (ADR 0035) liegen nicht auf dem Rand einer Figur,
 // - jeder gezeichnete Winkel hat nachgemessen die Größe aus dem Aufgabenpool (auf 0,5° genau).
 // Kapitel 9 (ADR 0036) wird mit Text und Eingabe gezeichnet. Dort gilt zusätzlich:
@@ -17,6 +19,7 @@ import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
 const [anfang = '5.7.'] = process.argv.slice(2);
+const BREITEN = [690, 560];
 const wurzel = new URL('../', import.meta.url);
 const pool = JSON.parse(readFileSync(new URL(`aufgabenpool/klasse-${parseInt(anfang, 10)}.json`, wurzel), 'utf8'));
 const aufgaben = pool.aufgaben.filter((a) => a.id.startsWith(anfang));
@@ -37,7 +40,9 @@ window.zeichne = (aufgaben) => {
     (['winkel', 'gitter'].includes(auf.format) || /^(5\\.9|6\\.1|6\\.3|6\\.6|7\\.1)\\./.test(auf.lernziel)) && h('form', { class: 'antwort' }, eingabefelder(auf, { eingaben: [], reihenfolge: auf.paare?.map((p) => p.rechts) ?? null }, false)))));
 };
 // Prüft alle Bilder einer Aufgabe und liefert Mängel als Text.
-window.pruefe = (soll) => {
+// ABSTAND (ADR 0055): So viele Pixel bleiben zwischen zwei Beschriftungen mindestens frei.
+const ABSTAND = 4;
+window.pruefe = (soll, pc) => {
   const maengel = [];
   for (const sec of document.querySelectorAll('section[data-aufgabe]')) {
     const id = sec.dataset.aufgabe, auf = soll[id];
@@ -76,21 +81,26 @@ window.pruefe = (soll) => {
       const mitKomma = (auf.bild?.art === 'tafel' && auf.bild.komma != null ? 1 : 0) + (auf.tabelle?.art === 'stellentafel' && auf.tabelle.komma != null ? 1 : 0);
       if (mitKomma && !sec.querySelector('.kommaspalte')) maengel.push(id + ': Stellenwerttafel zeigt kein Komma');
     }
+    // Am PC (ADR 0055) ist jedes Bild ohne Schieben ganz zu sehen. Lange Zahlenstrahlen und Tabellen mit eigenem Schieberahmen sind ausgenommen.
+    if (pc) for (const r of sec.querySelectorAll('.bildrahmen')) if (r.scrollWidth > r.clientWidth + 1 && !r.querySelector('svg.zahlenstrahl:not(.kurz)')) maengel.push(id + ': Bild ist ' + (r.scrollWidth - r.clientWidth) + ' Pixel zu breit für die Karte');
     for (const svg of sec.querySelectorAll('svg')) {
       const rahmen = svg.getBoundingClientRect();
       const texte = [...svg.querySelectorAll('text')].filter((t) => t.textContent.trim() && getComputedStyle(t).display !== 'none');
       const kasten = (t) => { const r = t.getBoundingClientRect(); return { x0: r.left, y0: r.top, x1: r.right, y1: r.bottom, t, k: t.getAttribute('class') ?? '' }; };
       const k = texte.map(kasten);
       const geo = (x) => /geo-|gradzahl|cmwort|mmzahl|lineal/.test(x.k);
-      const name = (x) => /punktname|winkelname|ortsname|bildtext|netzname|masszahl|figurname|teilnummer/.test(x.k);
+      const name = (x) => /punktname|linienname|achsenname|winkelname|ortsname|bildtext|netzname|masszahl|figurname|teilnummer/.test(x.k);
       for (const x of k) if (x.x0 < rahmen.left - 1 || x.x1 > rahmen.right + 1 || x.y0 < rahmen.top - 1 || x.y1 > rahmen.bottom + 1) maengel.push(id + ': „' + x.t.textContent + '“ ragt aus dem Bild');
       const ueber = (a, b, r = 1) => Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0) > r && Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0) > r;
       for (let i = 0; i < k.length; i++) for (let j = i + 1; j < k.length; j++) {
         if (geo(k[i]) && geo(k[j])) continue; // Skalen des Geodreiecks und Lineals sind gestaltet
         // Klasse 7 Kapitel 1 (ADR 0043): An Zahlengerade, Thermometer und Koordinatensystem darf keine Beschriftung eine andere überdecken.
         if (!name(k[i]) && !name(k[j]) && !/^7\\.1\\./.test(auf?.lernziel ?? '')) continue;
-        if (ueber(k[i], k[j])) maengel.push(id + ': „' + k[i].t.textContent + '“ überdeckt „' + k[j].t.textContent + '“');
+        if (ueber(k[i], k[j])) maengel.push(id + ': „' + k[i].t.textContent + '“ überdeckt „' + k[j].t.textContent + '“'); else if ((name(k[i]) || name(k[j])) && ueber(k[i], k[j], -ABSTAND)) maengel.push(id + ': „' + k[i].t.textContent + '“ steht zu nah an „' + k[j].t.textContent + '“');
       }
+      // Ein Name liegt nicht auf einem fremden Punkt (Kreuz im Gitter, Ecke einer Figur).
+      const marken = [...svg.querySelectorAll('path.punkt, circle.ecke, circle.zentrum')].map((e) => { const r = e.getBoundingClientRect(); return [(r.left + r.right) / 2, (r.top + r.bottom) / 2]; });
+      for (const x of k.filter(name)) if (marken.some(([px, py]) => px > x.x0 && px < x.x1 && py > x.y0 && py < x.y1)) maengel.push(id + ': „' + x.t.textContent + '“ liegt auf einem Punkt');
       // Namen gegen Linien: Ein Name darf keine Linie schneiden (Schenkel, Strecken, Kreise im Gitter).
       const m = svg.getScreenCTM();
       const P = (x, y) => { const p = svg.createSVGPoint(); p.x = x; p.y = y; const q = p.matrixTransform(m); return [q.x, q.y]; };
@@ -104,11 +114,13 @@ window.pruefe = (soll) => {
         if (!schub) { const r0 = svg.getBoundingClientRect(); svg.scrollIntoView({ block: 'center' }); const r1 = svg.getBoundingClientRect(); schub = [r1.left - r0.left, r1.top - r0.top]; }
         const e = document.elementsFromPoint(x + schub[0], y + schub[1]).find((k) => k.tagName !== 'text'); return e === l; };
       const linien = [...svg.querySelectorAll('line.schenkel, line.strecke, line.linie, line.radius, line.gradlinie, line.aequator, line.kante')].filter(breitenkreis).map((l) => [P(+l.getAttribute('x1'), +l.getAttribute('y1')), P(+l.getAttribute('x2'), +l.getAttribute('y2')), l]);
+      // Linienzüge im Schaubild (ADR 0050) zählen Stück für Stück mit.
+      for (const z of svg.querySelectorAll('polyline.zug')) { const pts = [...z.points].map((q) => P(q.x, q.y)); for (let i = 1; i < pts.length; i++) linien.push([pts[i - 1], pts[i], z]); }
       const schneidet = (b, [p, q, l]) => { // Strecke gegen Rechteck (etwas verkleinert)
         const x0 = b.x0 + 2, x1 = b.x1 - 2, y0 = b.y0 + 3, y1 = b.y1 - 3;
         for (let s = 0; s <= 40; s++) { const x = p[0] + (q[0] - p[0]) * s / 40, y = p[1] + (q[1] - p[1]) * s / 40; if (x > x0 && x < x1 && y > y0 && y < y1 && zuSehen(x, y, l)) return true; }
         return false; };
-      for (const x of k.filter((y) => /punktname|winkelname|ortsname|masszahl|figurname|teilnummer/.test(y.k))) if (linien.some((l) => schneidet(x, l))) maengel.push(id + ': „' + x.t.textContent + '“ liegt auf einer Linie');
+      for (const x of k.filter((y) => /punktname|linienname|winkelname|ortsname|masszahl|figurname|teilnummer/.test(y.k))) if (linien.some((l) => schneidet(x, l))) maengel.push(id + ': „' + x.t.textContent + '“ liegt auf einer Linie');
       // Kapitel 8: Ein Maß steht außen an der Figur, nie auf einer Fläche (außer im weißen Loch).
       const flaechen = [...svg.querySelectorAll('path.flaechenfuell')].map(kasten), loecher = [...svg.querySelectorAll('path.loch')].map(kasten);
       const in_ = (b, x, y) => x > b.x0 + 1 && x < b.x1 - 1 && y > b.y0 + 1 && y < b.y1 - 1;
@@ -132,18 +144,19 @@ const ergebnis = await build({ stdin: { contents: eingang, resolveDir: new URL('
 const { chromium } = createRequire(import.meta.url)('playwright');
 const browser = await chromium.launch();
 const alle = [];
-for (const breite of [420, 1200]) {
+// ADR 0055: Geprüft wird in der Breite der Aufgabenkarte am PC (690 Pixel) und in einem kleinen Notebookfenster (560 Pixel).
+for (const breite of BREITEN) {
   const seite = await browser.newPage({ viewport: { width: breite, height: 900 } });
   const fehler = [];
   seite.on('pageerror', (e) => fehler.push(e.message));
-  await seite.setContent(`<!doctype html><meta charset="utf-8"><body style="margin:0"><div id="mathekingdom" style="padding:8px;box-sizing:border-box;width:${breite}px"></div><script>${ergebnis.outputFiles[0].text}</script>`);
+  await seite.setContent(`<!doctype html><meta charset="utf-8"><body style="margin:0"><div id="mathekingdom" style="padding:8px;box-sizing:border-box;width:${breite + 16}px"></div><script>${ergebnis.outputFiles[0].text}</script>`);
   await seite.evaluate((a) => window.zeichne(a), aufgaben);
   if (fehler.length) throw new Error(fehler.join('\n'));
-  const maengel = await seite.evaluate((s) => window.pruefe(s), Object.fromEntries(aufgaben.map((a) => [a.id, a])));
+  const maengel = await seite.evaluate(([s, pc]) => window.pruefe(s, pc), [Object.fromEntries(aufgaben.map((a) => [a.id, a])), breite === BREITEN[0]]);
   for (const m of new Set(maengel)) alle.push(`${breite} px · ${m}`);
   await seite.close();
 }
 await browser.close();
 for (const m of alle) console.log(m);
-console.log(alle.length ? `${alle.length} Layoutmängel.` : `Layout in Ordnung: ${aufgaben.length} Aufgaben bei 420 und 1200 Pixel Breite.`);
+console.log(alle.length ? `${alle.length} Layoutmängel.` : `Layout in Ordnung: ${aufgaben.length} Aufgaben bei ${BREITEN.join(' und ')} Pixel Breite.`);
 process.exit(alle.length ? 1 : 0);

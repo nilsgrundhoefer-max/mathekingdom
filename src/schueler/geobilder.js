@@ -39,7 +39,7 @@ function bisZumRand(g, a, b, strahl = false) {
   return [[a[0] + t0 * d[0], a[1] + t0 * d[1]], [a[0] + t1 * d[0], a[1] + t1 * d[1]]];
 }
 const VERSATZ = { ro: [0.3, 0.32], lo: [-0.3, 0.32], ru: [0.3, -0.42], lu: [-0.3, -0.42], o: [0, 0.42], u: [0, -0.5], r: [0.42, -0.05], l: [-0.42, -0.05] };
-function linieSvg(g, m, l, klasse = '') {
+function linieSvg(g, m, l, klasse = '', namensort = null) {
   const [p, q] = l.art === 'strecke' ? [l.a, l.b] : bisZumRand(g, l.a, l.b, l.art === 'strahl');
   const teile = [s('line', { x1: m.X(p[0]), y1: m.Y(p[1]), x2: m.X(q[0]), y2: m.Y(q[1]), class: `linie ${l.art}${l.stil ? ` ${l.stil}` : ''}${klasse ? ` ${klasse}` : ''}` })];
   // Strecke und Strahl zeigen ihre Endpunkte als kleine Querstriche.
@@ -49,17 +49,107 @@ function linieSvg(g, m, l, klasse = '') {
   if (l.art === 'strecke' && !['achse', 'kante', 'verdeckt'].includes(l.stil)) teile.push(ende(l.a), ende(l.b));
   if (l.art === 'strahl') teile.push(ende(l.a));
   if (l.n) {
-    // Der Name steht nahe am zweiten Punkt, ein Stück neben der Linie.
-    const t = l.art === 'strecke' ? 0.22 : 0.86, x = p[0] + d[0] * t + n[0] * 2.4, y = p[1] + d[1] * t + n[1] * 2.4;
-    teile.push(s('text', { x: m.X(x), y: m.Y(y) + 5, 'text-anchor': 'middle', class: 'linienname' }, l.n));
+    // Der Name steht nahe am zweiten Punkt, ein Stück neben der Linie; der Beschriftungsplan (ADR 0055) weicht bei Bedarf aus.
+    const [x, y] = namensort ?? linienOrte(g, m, l)[0];
+    teile.push(s('text', { x: ZL(x), y: ZL(y + 5), 'text-anchor': 'middle', class: 'linienname' }, l.n));
   }
   return teile;
 }
-function punktSvg(m, p, klasse = 'punkt') {
+function punktSvg(m, p, klasse = 'punkt', namensort = null) {
   const x = m.X(p.x), y = m.Y(p.y), k = 5;
   const teile = [s('path', { d: `M${x - k} ${y - k} L${x + k} ${y + k} M${x - k} ${y + k} L${x + k} ${y - k}`, class: klasse })];
-  if (p.n) { const [dx, dy] = VERSATZ[p.pos ?? 'ro']; teile.push(s('text', { x: m.X(p.x + dx), y: m.Y(p.y + dy) + 5, 'text-anchor': 'middle', class: 'punktname' }, p.n)); }
+  if (p.n) { const [dx, dy] = VERSATZ[p.pos ?? 'ro'], [nx, ny] = namensort ?? [m.X(p.x + dx), m.Y(p.y + dy)]; teile.push(s('text', { x: ZL(nx), y: ZL(ny + 5), 'text-anchor': 'middle', class: 'punktname' }, p.n)); }
   return teile;
+}
+const ZL = (n) => Math.round(n * 100) / 100;
+// Mögliche Orte für den Namen einer Linie, der liebste zuerst (in Bildpunkten): nahe am Ende der Linie, erst auf der einen, dann auf der
+// anderen Seite, danach weiter innen. Gehen mehrere benannte Strecken vom selben Punkt aus, steht der Name am anderen Ende.
+function linienOrte(g, m, l, amEnde = false) {
+  const [p, q] = l.art === 'strecke' ? [l.a, l.b] : bisZumRand(g, l.a, l.b, l.art === 'strahl');
+  const d = [q[0] - p[0], q[1] - p[1]], len = Math.hypot(d[0], d[1]) || 1, n = [-d[1] / len * 0.384, d[0] / len * 0.384];
+  const stellen = l.art === 'strecke' ? (amEnde ? [0.78, 0.6, 0.5, 0.4, 0.22] : [0.22, 0.78, 0.5, 0.36, 0.64]) : [0.86, 0.92, 0.78, 0.7, 0.14, 0.08, 0.22, 0.3, 0.6, 0.4, 0.5];
+  return stellen.flatMap((t) => [1, -1].map((seite) => [m.X(p[0] + d[0] * t + n[0] * seite), m.Y(p[1] + d[1] * t + n[1] * seite)]));
+}
+// ---------- Beschriftungsplan (ADR 0055) ----------
+// Jeder Name im Gitterbild bekommt seinen Platz, bevor gezeichnet wird: Zwei Namen halten Abstand voneinander, kein Name liegt auf einer Linie
+// oder auf einem fremden Punkt. Jeder Name hat eine Liste möglicher Orte, der gewohnte Ort steht vorn. Genommen wird der erste freie Ort;
+// ist keiner frei, der mit dem kleinsten Mangel. So bleibt ein Bild, das schon gut war, unverändert.
+const kasten = (x, y, text, hoch = 14) => { const breit = 5 + 9.5 * String(text).length; return { x0: x - breit / 2, x1: x + breit / 2, y0: y - hoch / 2, y1: y + hoch / 2 }; };
+// Schneidet die Strecke a–b den Kasten (um `rand` vergrößert)?
+function trifft(k, a, b, rand = 1) {
+  const x0 = k.x0 - rand, x1 = k.x1 + rand, y0 = k.y0 - rand, y1 = k.y1 + rand, dx = b[0] - a[0], dy = b[1] - a[1];
+  let t0 = 0, t1 = 1;
+  for (const [pp, qq] of [[-dx, a[0] - x0], [dx, x1 - a[0]], [-dy, a[1] - y0], [dy, y1 - a[1]]]) {
+    if (pp === 0) { if (qq < 0) return false; continue; }
+    const t = qq / pp;
+    if (pp < 0) { if (t > t1) return false; if (t > t0) t0 = t; } else { if (t < t0) return false; if (t < t1) t1 = t; }
+  }
+  return true;
+}
+// Für Tests: der Plan eines Gitterbilds in Bildpunkten.
+export const beschriftungsorte = (g) => beschriftungsplan(g, masse(g));
+function beschriftungsplan(g, m) {
+  const { X, Y, B, H } = m, P = ([x, y]) => [X(x), Y(y)];
+  const strecken = [], belegt = [], marken = (g.punkte ?? []).map((p) => P([p.x, p.y]));
+  const plan = { punkte: [], linien: [], figuren: [], zuege: [] };
+  (g.linien ?? []).forEach((l, i) => { const [p, q] = l.art === 'strecke' ? [l.a, l.b] : bisZumRand(g, l.a, l.b, l.art === 'strahl'); strecken.push({ a: P(p), b: P(q), linie: i }); });
+  (g.figuren ?? []).forEach((f, i) => f.ecken.forEach((e, j) => strecken.push({ a: P(e), b: P(f.ecken[(j + 1) % f.ecken.length]), figur: i })));
+  (g.zuege ?? []).forEach((z, i) => z.punkte.slice(1).forEach((e, j) => strecken.push({ a: P(z.punkte[j]), b: P(e), zug: i })));
+  const r = bereich(g);
+  if (g.achsen || g.skala) strecken.push({ a: P([g.skala ? 0 : r.x0, 0]), b: P([r.x1, 0]) }, { a: P([0, g.skala ? 0 : r.y0]), b: P([0, r.y1]) });
+  if (g.zentrum) { marken.push(P(g.zentrum)); belegt.push(kasten(X(g.zentrum[0] + 0.32), Y(g.zentrum[1] + 0.3), 'Z')); }
+  for (const t of g.texte ?? []) belegt.push(kasten(X(t.x), Y(t.y), t.t));
+  // Mangel eines Orts: Überdeckung wiegt am schwersten, dann ein fremder Punkt, dann eine Linie, zuletzt der Bildrand.
+  const mangel = (k, eigen, eigenerPunkt, frei = 6) => {
+    let n = 0;
+    for (const b of belegt) if (Math.min(k.x1, b.x1) - Math.max(k.x0, b.x0) > -6 && Math.min(k.y1, b.y1) - Math.max(k.y0, b.y0) > -6) n += 100;
+    marken.forEach((p, i) => { if (i !== eigenerPunkt && p[0] > k.x0 - frei && p[0] < k.x1 + frei && p[1] > k.y0 - frei && p[1] < k.y1 + frei) n += 60; });
+    for (const st of strecken) if (!eigen(st) && trifft(k, st.a, st.b)) n += 40;
+    if (k.x0 < 1 || k.x1 > B - 1 || k.y0 < 1 || k.y1 > H - 1) n += 30;
+    return n;
+  };
+  const waehle = (orte, text, eigen = () => false, eigenerPunkt = -1, frei = 6) => {
+    let bester = null;
+    orte.some((o, i) => { const k = kasten(o[0], o[1], text), n = mangel(k, eigen, eigenerPunkt, frei) + i * 0.01; if (!bester || n < bester.n) bester = { o, k, n }; return n < 1; });
+    belegt.push(bester.k);
+    return bester.o;
+  };
+  // 1. Punktnamen: erst die gewünschte Ecke, dann die anderen sieben Richtungen, danach dieselben etwas weiter außen.
+  (g.punkte ?? []).forEach((p, i) => {
+    if (!p.n) return;
+    const zuerst = p.pos ?? 'ro', richtungen = [zuerst, ...Object.keys(VERSATZ).filter((v) => v !== zuerst)];
+    plan.punkte[i] = waehle([1, 1.45].flatMap((f) => richtungen.map((v) => [X(p.x + VERSATZ[v][0] * f), Y(p.y + VERSATZ[v][1] * f)])), p.n, () => false, i);
+  });
+  // 2. Figurnamen: in der Mitte der Figur, sonst ein Stück daneben.
+  (g.figuren ?? []).forEach((f, i) => {
+    if (!f.n) return;
+    const c = f.ecken.reduce((a, e) => [a[0] + e[0] / f.ecken.length, a[1] + e[1] / f.ecken.length], [0, 0]);
+    const neben = [[0, 0], [0.45, 0.4], [-0.45, 0.4], [0.45, -0.4], [-0.45, -0.4], [0.6, 0], [-0.6, 0], [0, 0.55], [0, -0.55], [0.9, 0.5], [-0.9, 0.5], [0.9, -0.5], [-0.9, -0.5]];
+    plan.figuren[i] = waehle(neben.map(([dx, dy]) => [X(c[0] + dx), Y(c[1] + dy) + 1]), f.n);
+  });
+  // 3. Liniennamen. Sie halten mehr Abstand zu Punkten, damit ein Linienname nie wie ein Punktname aussieht.
+  const gleich = (a, b) => a[0] === b[0] && a[1] === b[1];
+  (g.linien ?? []).forEach((l, i) => {
+    if (!l.n) return;
+    const buendel = l.art === 'strecke' && g.linien.some((x, j) => j !== i && x.n && x.art === 'strecke' && gleich(x.a, l.a));
+    plan.linien[i] = waehle(linienOrte(g, m, l, buendel), l.n, (st) => st.linie === i, -1, 13);
+  });
+  // 4. Namen der Linienzüge im Schaubild: am Ende des Zugs, sonst neben dem Zug weiter innen.
+  (g.zuege ?? []).forEach((z, i) => {
+    if (!z.n) return;
+    // Enden zwei Züge im selben Punkt, wäre ein Name am Ende nicht zuzuordnen: Dann steht er gleich neben dem Zug.
+    const gemeinsam = g.zuege.some((x, j) => j !== i && gleich(x.punkte.at(-1), z.punkte.at(-1)));
+    const e = P(z.punkte.at(-1)), orte = gemeinsam ? [] : [[e[0] + 4 - (5 + 9.5 * z.n.length) / 2, e[1] - 13]];
+    const laengen = z.punkte.slice(1).map((q, j) => Math.hypot(X(q[0]) - X(z.punkte[j][0]), Y(q[1]) - Y(z.punkte[j][1]))), gesamt = laengen.reduce((a, b) => a + b, 0);
+    for (const t of [0.85, 0.7, 0.55, 0.4, 0.25]) {
+      let rest = gesamt * t, j = 0;
+      while (j < laengen.length - 1 && rest > laengen[j]) rest -= laengen[j++];
+      const a = P(z.punkte[j]), b = P(z.punkte[j + 1]), len = laengen[j] || 1, d = [(b[0] - a[0]) / len, (b[1] - a[1]) / len];
+      for (const seite of [1, -1]) orte.push([a[0] + d[0] * rest + d[1] * 15 * seite, a[1] + d[1] * rest - d[0] * 15 * seite]);
+    }
+    plan.zuege[i] = waehle(orte, z.n, (st) => st.zug === i);
+  });
+  return plan;
 }
 const eckenText = (m, ecken) => ecken.map(([x, y]) => `${m.X(x)},${m.Y(y)}`).join(' ');
 const beschreibung = (g) => [g.skala ? `Schaubild: nach rechts ${g.skala.x.name}, nach oben ${g.skala.y.name}` : g.achsen ? 'Koordinatensystem' : 'Karogitter',
@@ -75,7 +165,7 @@ export function gitterSvg(g, dazu = {}) {
   const m = masse(g), { u, X, Y } = m;
   const svg = s('svg', { class: `gitterbild${g.achsen ? ' mit-achsen' : ''}${dazu.klasse ? ` ${dazu.klasse}` : ''}`, viewBox: `0 0 ${m.B} ${m.H}`, role: 'img', 'aria-label': beschreibung(g) });
   svg.style.maxWidth = `${m.B}px`;
-  const r = bereich(g);
+  const r = bereich(g), plan = beschriftungsplan(g, m);
   svg.append(s('rect', { x: X(r.x0), y: Y(r.y1), width: g.b * u, height: g.h * u, class: 'blatt' }));
   // Gefärbte Kästchen liegen unter den Karolinien.
   for (const [x, y] of g.zellen ?? []) svg.append(s('rect', { x: X(x), y: Y(y + 1), width: u, height: u, class: 'zelle' }));
@@ -97,14 +187,17 @@ export function gitterSvg(g, dazu = {}) {
       s('text', { x: X(r.x1) + u * 0.72, y: Y(0) + 20, 'text-anchor': 'middle', class: 'achsenname' }, 'x'), s('text', { x: X(0) - 14, y: Y(r.y1) - u * 0.55, 'text-anchor': 'middle', class: 'achsenname' }, 'y'));
     // Mit vier Quadranten steht die Null nur einmal, links unter dem Nullpunkt.
     const mitte = r.x0 < 0 || r.y0 < 0;
-    for (let x = r.x0; x <= r.x1; x++) if (x % jede === 0 && !(mitte && x === 0)) svg.append(s('text', { x: X(x), y: Y(0) + 19, 'text-anchor': 'middle', class: 'achsenzahl' }, mz(x)));
-    for (let y = r.y0; y <= r.y1; y++) if (y % jede === 0 && y !== 0) svg.append(s('text', { x: X(0) - 9, y: Y(y) + 5, 'text-anchor': 'end', class: 'achsenzahl' }, mz(y)));
-    if (mitte) svg.append(s('text', { x: X(0) - 9, y: Y(0) + 19, 'text-anchor': 'end', class: 'achsenzahl' }, '0'));
+    // Am Nullpunkt wird es eng: Mit vier Quadranten stehen die Zahlen der x-Achse etwas näher an der Achse und die erste Zahl
+    // unter dem Nullpunkt etwas tiefer, damit „−1“ nicht an „−1 0“ klebt (ADR 0055).
+    const yx = Y(0) + (mitte ? 17 : 19);
+    for (let x = r.x0; x <= r.x1; x++) if (x % jede === 0 && !(mitte && x === 0)) svg.append(s('text', { x: X(x), y: yx, 'text-anchor': 'middle', class: 'achsenzahl' }, mz(x)));
+    for (let y = r.y0; y <= r.y1; y++) if (y % jede === 0 && y !== 0) svg.append(s('text', { x: X(0) - 9, y: Y(y) + (mitte && y === -jede ? 7 : 5), 'text-anchor': 'end', class: 'achsenzahl' }, mz(y)));
+    if (mitte) svg.append(s('text', { x: X(0) - 9, y: yx, 'text-anchor': 'end', class: 'achsenzahl' }, '0'));
   }
-  for (const f of g.figuren ?? []) {
+  (g.figuren ?? []).forEach((f, i) => {
     svg.append(s('polygon', { points: eckenText(m, f.ecken), class: `figur${f.stil ? ` ${f.stil}` : ''}` }));
-    if (f.n) { const c = f.ecken.reduce((a, e) => [a[0] + e[0] / f.ecken.length, a[1] + e[1] / f.ecken.length], [0, 0]); svg.append(s('text', { x: X(c[0]), y: Y(c[1]) + 6, 'text-anchor': 'middle', class: 'figurname' }, f.n)); }
-  }
+    if (f.n) svg.append(s('text', { x: ZL(plan.figuren[i][0]), y: ZL(plan.figuren[i][1] + 5), 'text-anchor': 'middle', class: 'figurname' }, f.n));
+  });
   // Kapitel 7: Kreise (Mittelpunkt und Radius in Kästchen). Klasse 7 Kapitel 2: Zirkelbögen und der Thaleskreis dürfen über den Rand gehen,
   // sie enden dann am Rand des Gitters (wie ein Bogen im Heft).
   if (g.kreise?.length) {
@@ -112,11 +205,11 @@ export function gitterSvg(g, dazu = {}) {
     svg.append(s('clipPath', { id }, s('rect', { x: X(r.x0), y: Y(r.y1), width: g.b * u, height: g.h * u })));
     for (const k of g.kreise) svg.append(s('circle', { cx: X(k.m[0]), cy: Y(k.m[1]), r: k.r * u, class: `kreis${k.stil ? ` ${k.stil}` : ''}`, 'clip-path': `url(#${id})` }));
   }
-  for (const l of g.linien ?? []) svg.append(...linieSvg(g, m, l));
-  for (const z of g.zuege ?? []) {
+  (g.linien ?? []).forEach((l, i) => svg.append(...linieSvg(g, m, l, '', plan.linien[i])));
+  (g.zuege ?? []).forEach((z, i) => {
     svg.append(s('polyline', { points: eckenText(m, z.punkte), class: `linie zug${z.stil ? ` ${z.stil}` : ''}` }));
-    if (z.n) { const e = z.punkte.at(-1); svg.append(s('text', { x: X(e[0]) + 4, y: Y(e[1]) - 8, 'text-anchor': 'end', class: 'linienname' }, z.n)); }
-  }
+    if (z.n) svg.append(s('text', { x: ZL(plan.zuege[i][0]), y: ZL(plan.zuege[i][1] + 5), 'text-anchor': 'middle', class: 'linienname' }, z.n));
+  });
   for (const r of g.rechte ?? []) {
     const e = (v) => { const len = Math.hypot(v[0], v[1]); return [v[0] / len * 0.45, v[1] / len * 0.45]; }, a = e(r.u), b = e(r.v), p = r.p;
     svg.append(s('path', { d: `M${X(p[0] + a[0])} ${Y(p[1] + a[1])} L${X(p[0] + a[0] + b[0])} ${Y(p[1] + a[1] + b[1])} L${X(p[0] + b[0])} ${Y(p[1] + b[1])}`, class: 'rechter' }),
@@ -124,7 +217,7 @@ export function gitterSvg(g, dazu = {}) {
   }
   if (g.zentrum) svg.append(s('circle', { cx: X(g.zentrum[0]), cy: Y(g.zentrum[1]), r: 5, class: 'zentrum' }), s('text', { x: X(g.zentrum[0] + 0.32), y: Y(g.zentrum[1] + 0.3) + 5, 'text-anchor': 'middle', class: 'punktname' }, 'Z'));
   for (const t of g.texte ?? []) svg.append(s('text', { x: X(t.x), y: Y(t.y) + 5, 'text-anchor': 'middle', class: 'masstext' }, t.t));
-  for (const p of g.punkte ?? []) svg.append(...punktSvg(m, p));
+  (g.punkte ?? []).forEach((p, i) => svg.append(...punktSvg(m, p, 'punkt', plan.punkte[i])));
   if (g.legende) {
     const y = Y(-1) + u * 0.2, k = u * 0.8;
     svg.append(s('rect', { x: X(0), y: y - k / 2, width: k, height: k, class: 'legendenfeld' }), s('text', { x: X(0) + k + 8, y: y + 5, class: 'bildtext' }, `= ${g.legende}`));

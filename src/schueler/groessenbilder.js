@@ -173,7 +173,9 @@ function leisteSvg(b, x, y, mm) {
     s('text', { x: x + br + 8, y: y + 8, 'font-size': 14, 'font-weight': 700, fill: '#3a3029' }, b.leiste.text), s('text', { x, y: y - 8, 'font-size': 12, fill: '#6b5f50' }, `${b.leiste.mm / 10} cm auf der Karte`));
 }
 function karteBild(b) {
-  const mm = 6, links = 34, B = links * 2 + b.lang * mm, yWeg = 96, yL = 122, hoch = 58, X = (w) => links + w * mm;
+  // Mit Maßstabsleiste oben links liegt der Weg 16 Pixel tiefer, damit kein Ortsname die Leiste berührt (ADR 0055).
+  const tief = b.leiste ? 16 : 0;
+  const mm = 6, links = 34, B = links * 2 + b.lang * mm, yWeg = 96 + tief, yL = 122 + tief, hoch = 58, X = (w) => links + w * mm;
   const svg = s('svg', { class: 'linealbild kartenbild', viewBox: `0 0 ${B} ${yL + hoch + 8}`, role: 'img',
     'aria-label': `Karte mit Lineal${b.massstab ? `, ${massstabText(b)}` : ''}${b.leiste ? `, ${b.leiste.mm / 10} cm auf der Karte sind ${b.leiste.text}` : ''}. ${b.orte.map((o) => `${o.n} liegt bei ${o.mm} Millimetern`).join(', ')}.` });
   svg.style.maxWidth = `${Math.min(B, 760)}px`;
@@ -184,7 +186,7 @@ function karteBild(b) {
   b.orte.forEach((o, i) => svg.append(s('g', { class: 'ort' }, ORT[o.zeichen ?? 'dorf'](X(o.mm), yWeg - 8), s('circle', { cx: X(o.mm), cy: yWeg, r: 5, fill: '#a3302a', stroke: '#fffdf6', 'stroke-width': 1.5 }),
     s('text', { x: X(o.mm), y: yWeg - (i % 2 ? 52 : 50), 'text-anchor': 'middle', class: 'punktname' }, o.n), s('line', { x1: X(o.mm), y1: yWeg + 6, x2: X(o.mm), y2: yL, class: 'streckenende' }))));
   if (b.massstab) svg.append(s('text', { x: B - 14, y: 24, 'text-anchor': 'end', 'font-size': 15, 'font-weight': 700, fill: '#3a3029' }, massstabText(b)));
-  if (b.leiste) svg.append(leisteSvg(b, 16, 22, mm));
+  if (b.leiste) svg.append(leisteSvg(b, 16, 26, mm));
   svg.append(s('rect', { x: X(0) - 14, y: yL, width: b.lang * mm + 28, height: hoch, rx: 5, class: 'lineal' }));
   for (let w = 0; w <= b.lang; w++) {
     svg.append(s('line', { x1: X(w), y1: yL, x2: X(w), y2: yL + (w % 10 === 0 ? 24 : w % 5 === 0 ? 17 : 11), class: `mm${w % 10 === 0 ? ' cm' : ''}` }));
