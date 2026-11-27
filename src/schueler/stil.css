@@ -142,13 +142,18 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; min-width: 0; }
 #mathekingdom .zahlfeld { display: inline-flex; align-items: center; gap: 8px; }
 #mathekingdom .zahlfeld input { font-size: 1.3rem; width: 9ch; text-align: right; }
-#mathekingdom .luecken .zahlfeld input { width: 5ch; margin: 0 4px; }
+/* Version 0.66 (Audit L146): Drei Ziffern haben Luft, das Feld wächst mit längeren Eingaben. */
+#mathekingdom .luecken .zahlfeld input { width: 6ch; padding-left: 7px; padding-right: 7px; margin: 0 4px; }
 #mathekingdom .einheit { font-size: 1.1rem; color: var(--grau); }
 #mathekingdom .optionen { display: flex; flex-direction: column; gap: 8px; align-self: stretch; }
 #mathekingdom .option { display: flex; gap: 12px; align-items: center; border: 2px solid var(--rand); border-radius: 10px; padding: 10px 14px; cursor: pointer; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
 #mathekingdom .option:has(input:checked) { border-color: var(--nacht); background: #f3e9d2; }
 #mathekingdom .option input { width: 20px; height: 20px; accent-color: var(--nacht); }
 /* Die linke Spalte richtet sich nach dem längsten Begriff (Kapitel 6: „Zähneputzen“, „600 m in Wirklichkeit“), höchstens die halbe Breite. */
+#mathekingdom .zuordnenfeld { display: grid; gap: 8px; align-self: stretch; }
+#mathekingdom .zuordnen-kopf { margin: 0; }
+#mathekingdom .zuordnen-liste { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 8px; padding: 0; margin: 0 0 6px; }
+#mathekingdom .zuordnen-liste li { border: 1.5px solid #bfae8f; border-radius: 8px; background: #fffdf6; padding: 3px 10px; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
 #mathekingdom .zuordnen { display: grid; grid-template-columns: fit-content(50%) auto; gap: 10px 14px; align-items: center; }
 #mathekingdom .zuordnen label { display: contents; font-size: 1.2rem; }
 #mathekingdom .zuordnen b { min-width: 5ch; }
@@ -633,16 +638,21 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .schaetzhinweis { margin-top: 6px; font-weight: 700; }
 #mathekingdom .rasterwahl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 #mathekingdom .rasterknopf[aria-pressed=true] { background: var(--nacht); color: #fff; }
-#mathekingdom .ordnenfeld { display: grid; gap: 6px; }
-#mathekingdom .ordnenrand { display: flex; justify-content: space-between; max-width: 100%; }
-#mathekingdom ol.ordnen { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
-#mathekingdom .ordnenkarte { display: flex; align-items: stretch; border: 2px solid var(--nacht); border-radius: 10px; background: #fffdf6; overflow: hidden; }
-#mathekingdom .ordnenkarte .kartenwert { padding: 10px 12px; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#mathekingdom .ordnenfeld { display: grid; gap: 6px; justify-items: start; max-width: 100%; }
+#mathekingdom .ordnenfeld > p { margin: 0; }
+/* Version 0.66 (ADR 0057): Karten untereinander, zum Ziehen und mit Pfeilen. */
+#mathekingdom ol.ordnen { list-style: none; display: flex; flex-direction: column; gap: 6px; padding: 0; margin: 0; min-width: min(16rem, 100%); max-width: 100%; }
+#mathekingdom ol.ordnen.saetze { align-self: stretch; justify-self: stretch; }
+#mathekingdom .ordnenkarte { display: flex; align-items: stretch; border: 2px solid var(--nacht); border-radius: 10px; background: #fffdf6; overflow: hidden; touch-action: none; user-select: none; cursor: grab; position: relative; }
+#mathekingdom .ordnenkarte.zieht { cursor: grabbing; z-index: 3; box-shadow: 0 6px 16px rgba(58, 48, 41, .3); background: #fff6dc; }
+#mathekingdom .ordnenkarte:not(.zieht) { transition: transform .12s ease-out; }
+@media (prefers-reduced-motion: reduce) { #mathekingdom .ordnenkarte:not(.zieht) { transition: none; } }
+#mathekingdom .ordnenkarte .ziehgriff { display: flex; align-items: center; padding: 0 2px 0 8px; color: #a89d8a; font-size: 1.1rem; }
+#mathekingdom .ordnenkarte .kartenwert { flex: 1; padding: 6px 12px 6px 6px; font-size: 1.2rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 #mathekingdom .ordnenkarte .kartenwert:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
-#mathekingdom .ordnenkarte .schieb { border: none; background: #efe6d2; padding: 0 9px; cursor: pointer; font-size: 1rem; color: var(--nacht); min-height: 0; border-radius: 0; }
+#mathekingdom .ordnenkarte .schieb { border: none; border-left: 1px solid #d8cbb0; background: #efe6d2; padding: 0 11px; cursor: pointer; font-size: .9rem; color: var(--nacht); min-height: 0; border-radius: 0; }
 #mathekingdom .ordnenkarte .schieb:disabled { opacity: .3; cursor: default; }
-#mathekingdom ol.ordnen.saetze { flex-direction: column; flex-wrap: nowrap; }
-#mathekingdom ol.ordnen.saetze .ordnenkarte .kartenwert { white-space: normal; flex: 1; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+#mathekingdom ol.ordnen.saetze .ordnenkarte .kartenwert { white-space: normal; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
 #mathekingdom .ordnenkarte .schieb:not(:disabled):hover { background: var(--gold); }
 #mathekingdom .zeicheneingabe { display: grid; gap: 10px; justify-items: start; }
 #mathekingdom .zeichenfeld { font-size: 1.4rem; width: 13ch; letter-spacing: .08em; font-weight: 700; }
@@ -833,7 +843,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .zahlfeld.mit-vorzeichen { gap: 6px; }
 #mathekingdom button.vorzeichen { min-width: 2.6rem; min-height: 2.6rem; padding: 2px 8px; font-size: 1.25rem; font-weight: 700; line-height: 1; border-radius: 8px; flex: none; }
 #mathekingdom .luecken .zahlfeld.mit-vorzeichen { gap: 2px; margin: 2px 2px; vertical-align: middle; }
-#mathekingdom .luecken .zahlfeld.mit-vorzeichen input { width: 5.5ch; margin: 0 2px; }
+#mathekingdom .luecken .zahlfeld.mit-vorzeichen input { width: 6ch; margin: 0 2px; }
 #mathekingdom .luecken button.vorzeichen, #mathekingdom .aufgabentabelle button.vorzeichen, #mathekingdom .stein button.vorzeichen { min-width: 2rem; min-height: 2.2rem; padding: 0 5px; font-size: 1.05rem; }
 #mathekingdom .stein .zahlfeld.mit-vorzeichen { gap: 2px; }
 #mathekingdom .stein .zahlfeld.mit-vorzeichen input { width: 3.3rem; }
@@ -976,3 +986,44 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .dreisatz .rechenpfeil.links .bogen::after { right: -4px; border-left-color: var(--siegel); border-right: none; }
 #mathekingdom .dreisatz .rechenpfeil.rechts .bogen::after { left: -4px; border-right-color: var(--siegel); border-left: none; }
 #mathekingdom .dreisatzbild { margin: 0; }
+
+/* Version 0.66 (ADR 0057): Leiste mit „Prüfen“ am unteren Fensterrand, zwei Spalten für Aufgaben mit hohem Bild. */
+#mathekingdom .pruefleiste { position: sticky; bottom: -1px; z-index: 4; align-self: stretch; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 0 -20px; padding: 10px 20px 11px; background: var(--karte); border-top: 1px solid transparent; }
+#mathekingdom .pruefleiste.klebt { border-top-color: var(--rand); box-shadow: 0 -8px 12px -8px rgba(58, 48, 41, .28); }
+#mathekingdom .pruefleiste .sicherwahl { margin-top: 0; }
+#mathekingdom .pruefleiste .zur-hilfe { margin-left: auto; font-size: .92rem; }
+#mathekingdom .pruefleiste .zur-hilfe[hidden] { display: none; }
+#mathekingdom .karte > .hinweis, #mathekingdom .karte > .ergebnis { scroll-margin: 12px 0 80px; }
+#mathekingdom .zweispaltig { align-self: stretch; min-width: 0; }
+#mathekingdom .zs-bild { margin-bottom: 18px; min-width: 0; }
+#mathekingdom .zs-antwort { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; min-width: 0; }
+@media (min-width: 1100px) {
+  #mathekingdom main:has(.karte.breit) { max-width: 1340px; }
+  #mathekingdom .zweispaltig { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 28px; align-items: start; }
+  #mathekingdom .zs-bild { grid-column: 1; grid-row: 1 / span 2; margin-bottom: 0; }
+  #mathekingdom .zs-text { grid-column: 2; grid-row: 1; }
+  #mathekingdom .zs-antwort { grid-column: 2; grid-row: 2; }
+  /* Das Bild passt in der Höhe ins Fenster: Kopfleiste, Aufgabenkopf und die Leiste mit „Prüfen“ brauchen zusammen etwa 215 Pixel. */
+  #mathekingdom .zs-bild svg { max-height: max(300px, calc(100vh - 215px)); }
+}
+/* Audit L052: Der Rahmen um ein angewähltes Bild liegt innen, sonst schneidet der Bildrahmen ihn bis auf einen Strich ab. */
+#mathekingdom .bildrahmen [tabindex]:focus-visible, #mathekingdom .mitbild [tabindex]:focus-visible { outline-offset: -3px; }
+/* Audit L049: Versionshinweis im Schüler-Dashboard am Seitenende statt fest über dem Inhalt. */
+#mathekingdom > .mk-version { position: static; padding: 0 16px 14px; max-width: none; }
+/* Audit L163: Die Rückmeldung ist sofort gut lesbar. */
+@media (prefers-reduced-motion: no-preference) { @keyframes mk-auf { from { transform: translateY(6px); } } }
+/* Audit L076: Brüche in Antworten so groß wie der übrige Text. */
+#mathekingdom .option .bruch { font-size: .95em; }
+#mathekingdom .kronenwert .je.null { opacity: .55; }
+/* Audit L071, L141: Eine kurze Rechnung bleibt in einer Zeile. In sehr schmalen Fenstern darf sie umbrechen. */
+#mathekingdom .aufgabentext .rechnung { white-space: nowrap; }
+@media (max-width: 480px) { #mathekingdom .aufgabentext .rechnung { white-space: normal; } }
+#mathekingdom .antwort > .vorspann { align-self: stretch; min-width: 0; margin-bottom: -16px; }
+/* Version 0.66 (Audit L050, L089, L166): Die Regionskarte ist immer ganz zu sehen. Sie nutzt die Fensterbreite und wird sonst verkleinert. */
+#mathekingdom main:has(.kartenrahmen) { max-width: 1340px; }
+#mathekingdom .regionskarte { max-width: 100%; height: auto; }
+/* Die Steine der Zahlenmauer heißen auch .stein. Ihre Maße gelten nicht für die Meilensteine der Karte. */
+#mathekingdom .regionskarte .stein { width: 24px; height: 40px; display: inline; }
+/* In einem schmalen Fenster steht die Aufgabenkennung im Seitenfluss, damit sie nicht auf der Leiste mit „Prüfen“ liegt. */
+@media (max-width: 820px) { #mathekingdom .kennung { position: static; margin: 8px 0 0; grid-column: 1 / -1; } }
+#mathekingdom .regionskarte .treffer { fill: transparent; stroke: none; }

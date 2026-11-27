@@ -18,7 +18,23 @@ Das Audit aus Schülersicht (Stand 0.64, 27.11.2026) lieferte 213 Befunde aus si
 
 ## 0.66 Layout
 
-Die Leiste mit „Prüfen“ bleibt bei allen Aufgaben am unteren Fensterrand sichtbar. Aufgaben mit Gitter, Diagramm oder Schaubild stehen in zwei Spalten: Bild links, Antworten rechts. Zur Prüfbreite aus ADR 0055 (690 und 560 Pixel) kommt die Prüfgröße 1366×650 Pixel dazu, das ist ein Schul-Notebook mit Browserleisten. Ein fester Browsertest geht alle Aufgaben bei dieser Größe durch. Ordnen: Karten untereinander, Ziehen mit der Maus zusätzlich zu den Pfeilen. Zuordnen: Die Möglichkeiten stehen als sichtbare Liste über den Auswahlfeldern. Der Anmeldecode bleibt in der Kopfleiste. Der Satz zur Worterklärung erscheint nur, wenn wirklich ein Wort unterstrichen ist.
+**Prüfgröße.** Zur Prüfbreite aus ADR 0055 (690 und 560 Pixel) kommt die Prüfgröße 1366 × 650 Pixel dazu. Das ist ein Schul-Notebook mit Browserleisten. Der feste Browsertest `tests/browser-alle-aufgaben.mjs` geht alle Aufgaben bei dieser Größe durch. Er verlangt: „Prüfen“ ist ohne Scrollen zu sehen, die Seite ist nicht breiter als das Fenster, ein Bild in der linken Spalte ist nicht höher als das Fenster, und ein Zahlenfeld im Lückentext fasst mindestens drei Ziffern.
+
+**Prüfleiste.** Die Leiste mit „Prüfen“ klebt bei allen Aufgaben am unteren Fensterrand, solange ihr eigentlicher Platz darunter liegt. Text, Bild und Antwortfelder stehen dafür gemeinsam im Formular der Aufgabe. Nach „Prüfen“ holt die Seite den Hinweis oder die Rückmeldung in den Blick. Liegen die Hilfekärtchen unter dem Fensterrand, zeigt die Leiste rechts den Knopf „Hilfekärtchen“, der dorthin führt.
+
+**Zwei Spalten.** Hat eine Aufgabe ein hohes Bild, steht das Bild links und Text und Antworten stehen rechts. Hoch ist ein Bild, wenn es mindestens 150 Einheiten hoch ist und seine Höhe mindestens 45 % der Breite beträgt. Flache Bilder wie Zahlenstrahl, Lineal und Tabellen bleiben über die ganze Breite. Ist das Bild selbst die Eingabe (Gitter, Säulen zeichnen, Winkel drehen, Teile färben), steht es links, und ein zweites Bild steht rechts unter dem Text. Unter 1100 Pixel Fensterbreite bleibt alles untereinander: Text, Bild, Antworten. Die Aufgabenseite ist mit zwei Spalten bis zu 1340 Pixel breit, sonst wie bisher 1040.
+
+**Ordnen und Zuordnen.** Beim Ordnen stehen die Karten immer untereinander. Sie lassen sich mit Maus oder Finger ziehen, mit den Pfeilknöpfen und mit den Pfeiltasten verschieben. Beim Zuordnen stehen die Möglichkeiten als sichtbare Liste über den Auswahlfeldern.
+
+**Lückentexte.** Ein Zahlenfeld fasst drei Ziffern mit Luft und wächst mit der Eingabe. Rechenzeichen, Lücke, Einheit und Satzzeichen bleiben in allen Klassen zusammen (bisher nur Klasse 7, ADR 0043). Eine kurze Rechnung (höchstens 30 Zeichen, eine Lücke zählt sieben) bleibt in einer Zeile, auch im gewöhnlichen Aufgabentext. Die Lösung eines Lückentexts zeigt nur die Sätze mit Lücke.
+
+**Regionskarte.** Die Karte ist immer ganz zu sehen: Die Seite ist dort bis 1340 Pixel breit, ab neun Meilensteinen rücken sie enger zusammen, und sonst wird die Karte verkleinert. Namen über 24 Zeichen stehen in zwei Zeilen. Die Windrose steht oben rechts.
+
+**Versionshinweis.** Im Schüler-Dashboard steht er nur noch bei der Anmeldung und im Schlossgarten, am Ende der Seite statt fest über dem Inhalt. Der Wortlaut bleibt, weil die Lehrkraft daran erkennt, welche Datei geöffnet ist. Der Anmeldecode bleibt in der Kopfleiste.
+
+**Worterklärung.** Der Satz zur Worterklärung erscheint nur, wenn in der Aufgabe wirklich ein Wort unterstrichen ist; das kann auch ein Wort im offenen Tipp sein. Die Erklärung selbst bleibt über dem Wort (Audit L164): Sie verdeckt dort kurz Text, lässt aber Rechnung und Eingabefeld frei.
+
+**Nicht geändert.** Hilfslinien und Strahlen, die über das Gitter hinausgehen, bleiben (Audit L167): Ein Strahl endet nicht am Gitterrand. Große Gitter mit wenig Figur (Audit L086) bleiben, die zwei Spalten fangen die Länge der Seite ab.
 
 ## 0.67 Führung
 

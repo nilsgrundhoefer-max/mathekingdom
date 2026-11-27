@@ -77,7 +77,7 @@ for (const auf of aufgaben) {
   assert.equal(band, auf.heftaufgabe ? 1 : 0, `${auf.id}: Heftband ${band ? 'zu viel' : 'fehlt'}`);
   if (band) heft++;
   if (auf.format === 'groesse') assert.equal(await seite.locator('section.aufgabe select[name=einheit]').count(), auf.einheiten ? 1 : 0, `${auf.id}: Einheitenwahl`);
-  if (auf.format === 'auswahl' && auf.optionen.some((o) => o.bild)) assert.equal(await seite.locator('section.aufgabe form.antwort svg').count(), auf.optionen.length, `${auf.id}: Bildkarten`);
+  if (auf.format === 'auswahl' && auf.optionen.some((o) => o.bild)) assert.equal(await seite.locator('section.aufgabe form.antwort .optionen svg').count(), auf.optionen.length, `${auf.id}: Bildkarten`);
   if (bilder && FOTOS[auf.id]) await seite.locator('section.aufgabe').screenshot({ path: `${bilder}/${FOTOS[auf.id]}-1200.png` });
   // Verlangte Einheit: erst der richtige Wert in einer anderen Einheit, das gibt „Fast richtig“ und kein Ergebnis.
   if (auf.format === 'groesse' && auf.verlangt) {

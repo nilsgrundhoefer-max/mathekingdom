@@ -80,7 +80,7 @@ for (const auf of aufgaben) {
   const band = await seite.locator('section.aufgabe #heftband').count();
   assert.equal(band, auf.heftaufgabe ? 1 : 0, `${auf.id}: Heftband ${band ? 'zu viel' : 'fehlt'}`);
   if (band) heft++;
-  if (auf.format === 'auswahl' && auf.optionen.some((o) => o.bild)) assert.equal(await seite.locator('section.aufgabe form.antwort svg').count(), auf.optionen.length, `${auf.id}: Bildkarten`);
+  if (auf.format === 'auswahl' && auf.optionen.some((o) => o.bild)) assert.equal(await seite.locator('section.aufgabe form.antwort .optionen svg').count(), auf.optionen.length, `${auf.id}: Bildkarten`);
   if (auf.tabelle?.art === 'dreisatz') {
     const felder = (auf.tabelle.pfeile ?? []).flatMap((p) => [p.links, p.rechts]).filter((p) => typeof p === 'object').length;
     assert.equal(await seite.locator('section.aufgabe .dreisatz .rechenpfeil input').count(), felder, `${auf.id}: Felder in den Rechenpfeilen`);

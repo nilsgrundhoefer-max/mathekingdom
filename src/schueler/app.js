@@ -115,7 +115,8 @@ function male() {
     z.stand && briefBanner(),
     z.meldung && h('div', { class: 'meldung', role: 'status' }, z.meldung, h('button', { class: 'schlicht', onclick: () => { z.meldung = null; male(); } }, 'Schließen')),
     h('main', {}, ansichten[z.ansicht.name]()),
-    !fokus && versionsHinweis('schueler'),
+    // Version 0.66 (Audit L049): Der Versionshinweis steht nur noch bei der Anmeldung und im Schlossgarten, dort am Seitenende.
+    ['anmeldung', 'schlossgarten'].includes(z.ansicht.name) && versionsHinweis('schueler'),
     z.stand && z.ansicht.name === 'schlossgarten' && speicherHinweis(),
   ].filter(Boolean));
   fokussiere();
@@ -1016,6 +1017,14 @@ function zeigeAufgabe(aufgabe, extra = {}) {
     reihenfolge: aufgabe.format === 'zuordnen' ? mische(aufgabe.paare.map((p) => p.rechts)) : null, ...extra });
 }
 
+// Version 0.66: Ein Bild gilt als hoch, wenn es nicht flach wie ein Zahlenstrahl oder ein Lineal ist. Nur hohe Bilder stehen links neben der Aufgabe.
+function hohesBild(el) {
+  const svg = el?.querySelector?.('svg[viewBox]');
+  if (!svg) return false;
+  const [, , b, hoch] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+  return hoch >= 150 && hoch / b >= 0.45;
+}
+
 function aufgabenAnsicht() {
   const a = z.ansicht, auf = a.aufgabe;
   const kapitelId = L.kapitelVon(auf.lernziel);
@@ -1031,14 +1040,32 @@ function aufgabenAnsicht() {
   const fertig = Boolean(a.ergebnis);
   // Sicherheitsangabe (ADR 0014): Beim ersten Versuch gibt es zwei Prüfen-Knöpfe, wenn die Lehrkraft sie eingeschaltet hat.
   const zweiKnoepfe = !fertig && a.versuch === 0 && z.einst.sicherheitsangabe && !a.einstieg;
-  const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular, zweiKnoepfe ? e.submitter?.dataset.sicher === 'ja' : null); } },
-    auf.heftaufgabe && h('p', { class: 'heftfeld', id: 'heftfeld' }, 'Ergebnis aus deinem Heft:'),
-    eingabefelder(auf, a, fertig),
+  // Version 0.66 (ADR 0057): Ein hohes Bild steht links, Text und Antworten stehen rechts daneben. In einem schmalen Fenster bleibt alles untereinander.
+  const felder = eingabefelder(auf, a, fertig);
+  const text = auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, rechnungen(auf.text).map((r) => (r.fest ? h('span', { class: 'rechnung' }, r.text) : r.text)));
+  const bild = auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild));
+  // Kapitel 1: die Antworten einer Umfrage und eine Tabelle, aus denen abgelesen wird.
+  const beigaben = [auf.urliste && urlisteBild(auf.urliste, fertig), auf.daten && h('div', { class: 'bildrahmen zumtext' }, datenTabelle(auf.daten))];
+  const eingabeBild = felder?.matches?.('.mitbild') ? felder.querySelector(':scope > .bildrahmen, :scope > figure') : null;
+  const links = [eingabeBild, bild].find(hohesBild);
+  const pruefleiste = !fertig && h('div', { class: 'pruefleiste', id: 'pruefleiste' },
     zweiKnoepfe ? h('div', { class: 'sicherwahl' },
       h('button', { class: 'haupt', id: 'pruefen', type: 'submit', 'data-sicher': 'ja' }, 'Prüfen – ich bin sicher'),
       h('button', { class: 'haupt hell', id: 'pruefen-unsicher', type: 'submit', 'data-sicher': 'nein' }, 'Prüfen – ich bin unsicher'))
-      : !fertig && h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'));
-  const karte = h('div', { class: 'karte' },
+      : h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'),
+    // Liegen die Hilfekärtchen unter dem Fensterrand, führt dieser Knopf hin (Audit L169).
+    !a.einstieg && kartenVon(auf).length > 0 && h('button', { type: 'button', class: 'schlicht zur-hilfe', id: 'zur-hilfe', hidden: true,
+      onclick: () => wurzel.querySelector('.karte > .kaertchen')?.scrollIntoView({ block: 'center', behavior: 'smooth' }) }, 'Hilfekärtchen ↓'));
+  const heftfeld = auf.heftaufgabe && h('p', { class: 'heftfeld', id: 'heftfeld' }, 'Ergebnis aus deinem Heft:');
+  const formular = h('form', { class: 'antwort', onsubmit: (e) => { e.preventDefault(); if (!fertig) pruefe(formular, zweiKnoepfe ? e.submitter?.dataset.sicher === 'ja' : null); } },
+    links ? h('div', { class: 'zweispaltig' },
+      h('div', { class: 'zs-text' }, text, links !== bild && bild, beigaben),
+      h('div', { class: 'zs-bild' }, links),
+      h('div', { class: 'zs-antwort' }, heftfeld, felder))
+      // Text und Bild stehen mit im Formular, damit die Leiste mit „Prüfen“ auch dann unten klebt, wenn die Antwortfelder erst weit unten beginnen.
+      : [(text || bild || beigaben.some(Boolean)) && h('div', { class: 'vorspann' }, text, bild, beigaben), heftfeld, felder],
+    pruefleiste);
+  const karte = h('div', { class: `karte${links ? ' breit' : ''}` },
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
@@ -1048,29 +1075,32 @@ function aufgabenAnsicht() {
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
           : grundlage ? h('span', { class: 'marke grundlagenmarke', id: 'grundlage-marke' }, 'Grundlage')
           : h('span', { class: 'kronenmarke' }, kroneBild(auf.niveau, 22), `Spiel um ${L.KRONEN[auf.niveau]}`),
+        // Version 0.66 (Audit L097): Die drei Punkte stehen direkt an der Krone, zu der sie gehören.
+        !a.einstieg && h('span', { class: 'punkte', title: grundlage ? `${punkte} von ${L.GRUNDLAGE_RICHTIGE} Aufgaben zur Grundlage` : `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < punkte ? 'voll' : '' }))),
         !a.einstieg && !a.seitenblick && training && h('span', { class: 'marke', title: `Unter deinem Ziel ${L.KRONEN[z.einst.zielniveau]} gibt es weniger Münzen und kein Siegel.` }, 'Training'),
         h('span', { class: 'ziel' }, lernziel.text),
-        !a.einstieg && h('span', { class: 'punkte', title: grundlage ? `${punkte} von ${L.GRUNDLAGE_RICHTIGE} Aufgaben zur Grundlage` : `Fortschritt beim Lernziel für ${L.KRONEN[auf.niveau]}` }, [0, 1, 2].map((i) => h('i', { class: i < punkte ? 'voll' : '' })))),
+        ),
       // Heftaufgabe (Nils, 2026-11-25, ADR 0047): Das Band sagt vor dem Text, dass im Heft gearbeitet wird.
       auf.heftaufgabe && heftband(auf),
-      auf.format !== 'luecken' && h('p', { class: 'aufgabentext' }, auf.text),
-      auf.bild && h('div', { class: 'bildrahmen zumtext' }, aufgabenBild(auf.bild)),
-      // Kapitel 1: die Antworten einer Umfrage und eine Tabelle, aus denen abgelesen wird.
-      auf.urliste && urlisteBild(auf.urliste, fertig),
-      auf.daten && h('div', { class: 'bildrahmen zumtext' }, datenTabelle(auf.daten)),
       formular,
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
       !fertig && !a.einstieg && kaertchen(a),
       fertig && ergebnisTafel(a, kapitelId, meilenstein));
+  // Version 0.66: Die Leiste mit „Prüfen“ klebt am unteren Fensterrand. Sie bekommt dann einen Rand, und der Knopf zu den Hilfekärtchen erscheint, solange diese nicht zu sehen sind.
+  if (pruefleiste && typeof IntersectionObserver !== 'undefined') {
+    new IntersectionObserver(([e]) => pruefleiste.classList.toggle('klebt', e.intersectionRatio < 1 && e.boundingClientRect.top > 0), { threshold: 1 }).observe(pruefleiste);
+    const stapel = karte.querySelector(':scope > .kaertchen'), knopf = pruefleiste.querySelector('#zur-hilfe');
+    if (stapel && knopf) new IntersectionObserver(([e]) => { knopf.hidden = e.isIntersecting; }, { rootMargin: '0px 0px -70px 0px' }).observe(stapel);
+  }
   // Worterklärung am Wort (ADR 0056). Bei den ersten Aufgaben mit unterstrichenen Wörtern sagt ein Satz, wozu die Linie da ist.
   if (!fertig) {
     z.woerter ??= wortVerzeichnis(z.pool);
     if (markiereWoerter(karte, z.woerter, wortOrt(auf)) && (a.wortHinweis || (z.stand.wortHinweise ?? 0) < WORT_HINWEISE)) {
       if (!a.wortHinweis) { a.wortHinweis = true; z.stand.wortHinweise = (z.stand.wortHinweise ?? 0) + 1; geaendert(); }
       const satz = h('p', { class: 'klein worthinweis', id: 'worthinweis' }, 'Fahre mit der Maus über ein unterstrichenes Wort. Dann siehst du die Erklärung.');
-      const text = karte.querySelector(':scope > .aufgabentext');
-      if (text) text.after(satz); else karte.querySelector('form.antwort').before(satz);
+      const absatz = karte.querySelector('.aufgabentext:not(.luecken)');
+      if (absatz) absatz.after(satz); else karte.querySelector('form.antwort').before(satz);
     }
   }
   return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
@@ -1080,13 +1110,51 @@ function aufgabenAnsicht() {
     h('p', { class: 'kennung', id: 'kennung', title: 'Kennung dieser Aufgabe' }, auf.id));
 }
 
+// Version 0.66 (Audit L071, L141): Zerlegt einen Lückentext in Fließtext und Rechnungen. Eine Rechnung ist eine Folge aus Zahlen, Lücken,
+// Rechenzeichen und Einheiten mit mindestens einem Rechenzeichen. Sie bleibt beim Umbruch zusammen, solange sie kurz ist.
+const WORT_ZAHL = /^\(?[−-]?(?:\d|\{\{\w+\}\})(?:[\d\u202f.,\u2044]|\{\{\w+\}\})*\)?[%°²³]?[.,;:!?]?$/;
+const WORT_ZEICHEN = /^[=+−·:<>≈▢☐]$/;
+const WORT_EINHEIT = /^(?:mm|cm|dm|m|km|g|kg|t|ml|l|€|ct|min|h|s|°C|[mcdk]?m[²³])[.,;:!?]?$/;
+const RECHNUNG_HOECHSTENS = 30; // Zeichen; eine Lücke zählt wie sieben
+export function rechnungen(text) {
+  const teile = [];
+  const fliess = (t) => { if (teile.length && !teile.at(-1).fest) teile.at(-1).text += t; else teile.push({ text: t, fest: false }); };
+  const laenge = (w) => w.reduce((n, x) => n + x.replace(/\{\{\w+\}\}/g, '1234567').length + 1, 0);
+  const schliesse = (lauf, davor) => {
+    if (!lauf.length) return;
+    const istRechnung = lauf.length >= 3 && lauf.some((w) => WORT_ZEICHEN.test(w));
+    // Zu lang: an jedem Gleichheitszeichen teilen, damit wenigstens jede Seite zusammenbleibt.
+    const stuecke = !istRechnung ? [lauf] : laenge(lauf) <= RECHNUNG_HOECHSTENS ? [lauf] : lauf.reduce((a, w) => { if (w === '=' && a.at(-1).length) a.push([]); a.at(-1).push(w); return a; }, [[]]);
+    stuecke.forEach((st, i) => {
+      const vor = i === 0 ? davor : ' ';
+      if (istRechnung && st.length >= 2 && laenge(st) <= RECHNUNG_HOECHSTENS) { if (vor) fliess(vor); teile.push({ text: st.join(' '), fest: true }); } else fliess(vor + st.join(' '));
+    });
+  };
+  let lauf = [], davor = '';
+  String(text).split(' ').forEach((wort, i) => {
+    const zwischen = i === 0 ? '' : ' ';
+    const passt = WORT_ZAHL.test(wort) || WORT_ZEICHEN.test(wort) || (lauf.length > 0 && WORT_EINHEIT.test(wort));
+    if (!passt) { schliesse(lauf, davor); lauf = []; fliess(zwischen + wort); return; }
+    if (!lauf.length) davor = zwischen;
+    lauf.push(wort);
+    if (/[.,;!?]$/.test(wort)) { schliesse(lauf, davor); lauf = []; }
+  });
+  schliesse(lauf, davor);
+  return teile;
+}
+// Version 0.66 (Audit L016, L098): Ein Zahlenfeld in einem Lückentext wächst mit der Eingabe, damit das Kind seine Zahl ganz sieht.
+function passeBreiteAn(feld) {
+  const n = feld.value.length;
+  feld.style.minWidth = n > 3 ? `${Math.min(n + 2.5, 18)}ch` : '';
+}
 // Auch für den Bilderbogen (tools/bilderbogen.mjs) ausgeführt.
 export function eingabefelder(auf, a, gesperrt) {
   // Klasse 7 Kapitel 1 (ADR 0043, 0051): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
   const zahlfeld = (name, einheit, wert) => {
     const feld = h('input', { name, type: 'text', inputMode: abKlasse7(auf) || auf.lernziel?.startsWith('5.9.3') || /^6\.[457]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
-      oninput: (e) => gliedereEingabe(e.target) });
+      oninput: (e) => { gliedereEingabe(e.target); passeBreiteAn(e.target); } });
+    passeBreiteAn(feld);
     return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
   };
   // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
@@ -1105,20 +1173,25 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'luecken': {
       const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name]));
       const einfach = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });
-      // Klasse 7 (ADR 0043): Rechenzeichen, Klammer und Lücke bleiben beim Umbruch zusammen. Eine Zeile endet so nie mit „=“ oder „(“.
-      const mitLuecken = (text) => (abKlasse7(auf) ? text.split(/((?:[=+−·:<>] )?\(?\{\{\w+\}\}\)?(?: (?:€|°C|°F|K|Grad|m|cm|km)(?![\wäöü]))?[.,;!?]?)/).map((stueck, i) => (i % 2 ? h('span', { class: 'lueckensatz' }, einfach(stueck)) : stueck)) : einfach(text));
+      // Klasse 7 (ADR 0043), seit Version 0.66 in allen Klassen: Rechenzeichen, Klammer, Lücke, Einheit und Satzzeichen bleiben beim Umbruch zusammen.
+      // Eine Zeile endet so nie mit „=“ oder „(“ und beginnt nie mit einem Punkt (Audit L051).
+      const mitLuecken = (text) => text.split(/((?:[=+−·:<>] )?\(?\{\{\w+\}\}\)?(?: (?:€|°C|°F|K|Grad|mm|cm|dm|m|km|g|kg|t|ml|l|min|h|s)(?![\wäöü]))?[.,;!?]?)/).map((stueck, i) => (i % 2 ? h('span', { class: 'lueckensatz' }, einfach(stueck)) : stueck));
       // Klasse 6 (ADR 0037): Steht eine Lücke im Zähler oder im Nenner, wird der Bruch gestapelt gezeichnet, mit dem Feld an seinem Platz.
       const BRUCH = /((?:\d+\u202f)?(?:\{\{\w+\}\}|\d+)\u2044(?:\{\{\w+\}\}|\d+))/;
-      return h('p', { class: 'aufgabentext luecken' }, auf.text.split(BRUCH).map((stueck, i) => {
+      const setze = (text) => text.split(BRUCH).map((stueck, i) => {
         if (i % 2 === 0 || !stueck.includes('{{')) return mitLuecken(stueck);
         const [, ganze, oben, unten] = stueck.match(/^(?:(\d+)\u202f)?(.+)\u2044(.+)$/);
         const bruch = h('span', { class: 'bruch lueckenbruch' }, h('span', { class: 'bz' }, mitLuecken(oben)), h('span', { class: 'bn' }, mitLuecken(unten)));
         return ganze ? h('span', { class: 'gemischt' }, ganze, bruch) : bruch;
-      }));
+      });
+      // Version 0.66 (Audit L071, L141): Eine kurze Rechnung bleibt als Ganzes in einer Zeile.
+      return h('p', { class: 'aufgabentext luecken' }, rechnungen(auf.text).map((r) => (r.fest ? h('span', { class: 'rechnung' }, setze(r.text)) : setze(r.text))));
     }
-    case 'zuordnen': return h('div', { class: 'zuordnen' }, auf.paare.map((p) => h('label', {}, h('b', {}, p.links),
+    // Version 0.66 (ADR 0057): Die Möglichkeiten stehen als sichtbare Liste über den Auswahlfeldern.
+    case 'zuordnen': return h('div', { class: 'zuordnenfeld' }, h('p', { class: 'klein zuordnen-kopf' }, 'Diese Möglichkeiten gibt es:'),
+      h('ul', { class: 'zuordnen-liste', id: 'zuordnen-liste' }, a.reihenfolge.map((r) => h('li', {}, r))), h('div', { class: 'zuordnen' }, auf.paare.map((p) => h('label', {}, h('b', {}, p.links),
       h('select', { name: `paar-${p.links}`, disabled: gesperrt }, h('option', { value: '' }, 'bitte wählen'),
-        a.reihenfolge.map((r) => h('option', { value: r, selected: letzte?.[p.links] === r }, r))))));
+        a.reihenfolge.map((r) => h('option', { value: r, selected: letzte?.[p.links] === r }, r)))))));
     // Kapitel 6: Ein Teil kann auch eine Auswahl sein (wichtige Angaben, passende Rechnung, Antwortsatz).
     case 'sachaufgabe': return h('ol', { class: 'teile' }, auf.teile.map((t, i) => h('li', { class: t.optionen ? 'teil-auswahl' : null }, h('span', {}, t.text), t.optionen
       ? h('div', { class: 'optionen' }, t.optionen.map((o) => h('label', { class: 'option' },
@@ -1270,7 +1343,8 @@ function pruefe(formular, sicher = null) {
     z.stand.aktiv = null;
     a.ergebnis = { richtig: ergebnis.richtig, einstieg };
     geaendert(); z.dienst.sofort();
-    return male();
+    male();
+    return zeigeRueckmeldung();
   }
   if (!ergebnis.richtig && a.versuch < 2) {
     // Version 0.65: Eine Aufgabe kann zu einer Fehlvorstellung einen eigenen Hinweis tragen (`hinweise`), wenn der allgemeine nicht passt.
@@ -1285,7 +1359,8 @@ function pruefe(formular, sicher = null) {
       a.ueberraschung = `Überraschung! Du warst dir sicher, aber das stimmt noch nicht. Schau genau hin.${typisch ? ` Typischer Fehler: ${typisch}` : ''}`;
     }
     if (z.stand.aktiv) { z.stand.aktiv.fehlversuche = a.versuch; z.stand.aktiv.hilfen = a.hilfen; geaendert(); }
-    return male();
+    male();
+    return zeigeRueckmeldung();
   }
   const buchung = L.verbuche(z.stand, auf, { geloest: ergebnis.richtig, versuche: a.versuch, eingaben: a.eingaben, fehlvorstellungen: a.fehlvorstellungen,
     hilfen: a.hilfen, karten: kartenVon(auf).slice(0, a.hilfen), dauer: Math.round((Date.now() - a.beginn) / 1000), ...(a.sicher != null && { sicher: a.sicher }) },
@@ -1307,11 +1382,21 @@ function pruefe(formular, sicher = null) {
   geaendert();
   z.dienst.sofort();
   male();
+  zeigeRueckmeldung();
 }
 // Unvollständige Eingabe: Hinweis zeigen, ohne schon Getipptes zu verlieren.
 function maleMitEntwurf(eingabe) {
   const a = z.ansicht;
   a.eingaben.push(eingabe); male(); a.eingaben.pop();
+  zeigeRueckmeldung();
+}
+// Version 0.66: Weil „Prüfen“ jetzt immer zu sehen ist, kann die Rückmeldung unter dem Fensterrand liegen. Sie wird in den Blick geholt.
+function zeigeRueckmeldung() {
+  const el = wurzel.querySelector('.karte > .ergebnis') ?? wurzel.querySelector('.karte > .hinweis[role=alert]');
+  if (!el?.scrollIntoView) return;
+  const r = el.getBoundingClientRect();
+  if (r.top >= 0 && r.bottom <= window.innerHeight - 70) return;
+  el.scrollIntoView({ block: r.height > window.innerHeight - 90 ? 'start' : 'nearest' });
 }
 
 // Version 0.65: Der Titel steht in Anführungszeichen hinter dem Doppelpunkt, damit kein Fall gebeugt werden muss („mit Brüche“).
@@ -1344,7 +1429,11 @@ function loesungstext(auf) {
       if (auf.tabelle.art === 'raster' && auf.tabelle.ablesen) { const r = auf.tabelle.rechnung; return `${r.zahlen[0]} · ${r.zahlen[1]} = ${r.ergebnis}, also ${auf.tabelle.ablesen.text} ${auf.luecken[auf.tabelle.ablesen.luecke].loesung}`; }
       if (auf.tabelle.art === 'einheitentafel') return auf.tabelle.ablesen ? `${auf.tabelle.ablesen.text} ${gliedere(auf.luecken[auf.tabelle.ablesen.luecke].loesung)} ${auf.tabelle.ablesen.einheit} (siehe Tafel)` : 'siehe Tafel'; return `Die fehlenden Zahlen der Reihe nach: ${auf.tabelle.zeilen.flat().filter((c) => typeof c === 'object').map((c) => gliedere(auf.luecken[c.luecke].loesung)).join(', ')}`;
     case 'auswahl': return auf.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
-    case 'luecken': return auf.text.replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung));
+    // Version 0.66 (Audit L083): Gezeigt werden nur die Sätze mit Lücke, nicht noch einmal die ganze Aufgabe. Der Schlusspunkt kommt vom Satz „Die Lösung ist: … .“
+    case 'luecken': {
+      const saetze = auf.text.split(/(?<=[.?!:])\s+(?=\S)/), mit = saetze.filter((t) => t.includes('{{'));
+      return (mit.length ? mit : saetze).join(' ').replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung)).replace(/[\s.]+$/, '');
+    }
     case 'zuordnen': return auf.paare.map((p) => `${p.links} ist ${p.rechts}`).join(', ');
     case 'sachaufgabe': return auf.teile.map((t, i) => `${'abcdef'[i]}) ${t.optionen ? t.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ') : zahl(t)}`).join('  ');
     case 'groesse': return loesungGroesse(auf);

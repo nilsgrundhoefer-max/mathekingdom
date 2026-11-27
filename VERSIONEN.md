@@ -8,6 +8,28 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.66 vom 27.11.2026
+
+### Schüler
+
+- Der Knopf „Prüfen“ ist jetzt immer zu sehen. Du musst nicht mehr nach unten scrollen.
+- Bei Aufgaben mit einem großen Bild steht das Bild links und die Aufgabe rechts daneben.
+- Beim Ordnen stehen die Karten untereinander. Du kannst sie mit der Maus an ihren Platz ziehen.
+- Beim Zuordnen siehst du alle Möglichkeiten gleich über den Auswahlfeldern.
+- Zahlenfelder in Lückentexten sind breiter und wachsen mit, wenn deine Zahl lang ist.
+- Eine Rechnung bleibt in einer Zeile und wird nicht mehr mittendrin umgebrochen.
+- Die Regionskarte ist ganz zu sehen, auch der letzte Meilenstein.
+- Der Hinweis auf die Version steht nur noch im Schlossgarten am Ende der Seite.
+
+### Lehrkraft
+
+- Neue Prüfgröße 1366 × 650 Pixel (Schul-Notebook mit Browserleisten). Ein fester Browsertest geht alle 5904 Aufgaben in dieser Größe durch: „Prüfen“ ist überall ohne Scrollen zu sehen. Vorher lag der Knopf bei 1167 Aufgaben unter dem Fensterrand.
+- Nach „Prüfen“ holt die Seite die Rückmeldung von selbst in den Blick. Liegen die Hilfekärtchen unter dem Fensterrand, führt ein Knopf „Hilfekärtchen“ in der Leiste dorthin.
+- Abgeschnittene Beschriftungen sind behoben: lange Zahlen am Zahlenstrahl, der Achsenname im Säulendiagramm. Der Fragepfeil am Zahlenstrahl verdeckt keine Zahl mehr.
+- Der orangefarbene Strich neben Gitterbildern war ein abgeschnittener Fokusrahmen. Er liegt jetzt als ganzer Rahmen im Bild.
+- Die drei Fortschrittspunkte stehen direkt neben der Krone, zu der sie gehören.
+- Auf der Regionskarte hatten die Meilensteine die Maße der Zahlenmauer-Steine geerbt und waren zu breit. Lange Namen stehen in zwei Zeilen.
+
 ## 0.65 vom 27.11.2026
 
 ### Schüler

@@ -114,32 +114,63 @@ export function schaetzBild(b) {
 }
 
 // ---------- Ordnen ----------
-// Die Reihenfolge steht als JSON in einem versteckten Feld. Jede Karte hat zwei Pfeilknöpfe; mit den Pfeiltasten wandert die Karte mit.
+// Die Reihenfolge steht als JSON in einem versteckten Feld. Die Karten stehen untereinander (Version 0.66, ADR 0057).
+// Jede Karte hat zwei Pfeilknöpfe, lässt sich mit der Maus oder dem Finger ziehen und wandert mit den Pfeiltasten.
 export function ordnenEingabe(auf, letzte, gesperrt) {
   let reihe = Array.isArray(letzte) && letzte.length === auf.karten.length ? [...letzte] : [...auf.karten];
   const feld = h('input', { type: 'hidden', name: 'ordnung', value: JSON.stringify(reihe) });
   // Nach einem Fehlversuch liegt die Reihenfolge des Kindes schon da und darf so noch einmal geprüft werden.
   if (Array.isArray(letzte)) feld.dataset.bewegt = '1';
-  // Klasse 7 Kapitel 2 (ADR 0044): Konstruktionsschritte sind ganze Sätze. Sie stehen untereinander und brechen um.
+  // Klasse 7 Kapitel 2 (ADR 0044): Konstruktionsschritte sind ganze Sätze. Sie brechen um.
   const saetze = auf.karten.some((k) => String(k).length > 24);
   const liste = h('ol', { class: `ordnen${saetze ? ' saetze' : ''}`, 'aria-label': saetze ? 'Karten in ihrer jetzigen Reihenfolge' : 'Zahlenkarten in ihrer jetzigen Reihenfolge' });
-  const tausche = (i, j, fokus) => {
-    if (j < 0 || j >= reihe.length) return;
-    [reihe[i], reihe[j]] = [reihe[j], reihe[i]];
+  const lege = (i, j) => {
+    if (j < 0 || j >= reihe.length || i === j) return false;
+    reihe.splice(j, 0, ...reihe.splice(i, 1));
     feld.value = JSON.stringify(reihe);
     feld.dataset.bewegt = '1';
     male();
-    liste.children[j]?.querySelector(fokus)?.focus();
+    return true;
   };
-  const male = () => liste.replaceChildren(...reihe.map((karte, i) => h('li', { class: 'ordnenkarte' },
-    h('button', { type: 'button', class: 'schieb links', disabled: gesperrt || i === 0, 'aria-label': `${karte} ${saetze ? 'nach oben' : 'nach links'}`, onclick: () => tausche(i, i - 1, '.links:not(:disabled), .rechts') }, saetze ? '▲' : '◀'),
-    h('span', { class: 'kartenwert', tabindex: gesperrt ? null : 0, role: 'group', 'aria-label': `Karte ${karte}, Platz ${i + 1} von ${reihe.length}. Mit den Pfeiltasten verschieben.`,
-      onkeydown: (e) => { if (e.key === 'ArrowLeft' || (saetze && e.key === 'ArrowUp')) { e.preventDefault(); tausche(i, i - 1, '.kartenwert'); } if (e.key === 'ArrowRight' || (saetze && e.key === 'ArrowDown')) { e.preventDefault(); tausche(i, i + 1, '.kartenwert'); } } }, karte),
-    h('button', { type: 'button', class: 'schieb rechts', disabled: gesperrt || i === reihe.length - 1, 'aria-label': `${karte} ${saetze ? 'nach unten' : 'nach rechts'}`, onclick: () => tausche(i, i + 1, '.rechts:not(:disabled), .links') }, saetze ? '▼' : '▶'))));
+  const tausche = (i, j, fokus) => { if (lege(i, j)) liste.children[j]?.querySelector(fokus)?.focus(); };
+  // Ziehen: Die Karte folgt dem Zeiger, die anderen rücken zur Seite. Beim Loslassen liegt sie an ihrem neuen Platz.
+  const ziehe = (li, i, start) => {
+    if (gesperrt || start.button > 0 || start.target.closest('button')) return;
+    const karten = [...liste.children], kasten = karten.map((k) => k.getBoundingClientRect());
+    const schritt = kasten[i].height + (karten.length > 1 ? Math.abs(kasten[1].top - kasten[0].bottom) : 0);
+    let ziel = i, bewegt = false;
+    const bewege = (e) => {
+      const dy = e.clientY - start.clientY;
+      if (!bewegt && Math.abs(dy) < 5) return;
+      if (!bewegt) { bewegt = true; li.classList.add('zieht'); li.setPointerCapture?.(start.pointerId); }
+      e.preventDefault();
+      li.style.transform = `translateY(${dy}px)`;
+      const mitte = kasten[i].top + kasten[i].height / 2 + dy;
+      ziel = kasten.filter((k, n) => n !== i && (k.top + k.height / 2 < mitte)).length;
+      karten.forEach((k, n) => { if (n !== i) k.style.transform = n > i && n <= ziel ? `translateY(${-schritt}px)` : n < i && n >= ziel ? `translateY(${schritt}px)` : ''; });
+    };
+    const ende = () => {
+      li.removeEventListener('pointermove', bewege); li.removeEventListener('pointerup', ende); li.removeEventListener('pointercancel', ende);
+      if (!bewegt) return;
+      if (!lege(i, ziel)) male();
+      liste.children[ziel]?.querySelector('.kartenwert')?.focus({ preventScroll: true });
+    };
+    li.addEventListener('pointermove', bewege); li.addEventListener('pointerup', ende); li.addEventListener('pointercancel', ende);
+  };
+  const male = () => liste.replaceChildren(...reihe.map((karte, i) => {
+    const li = h('li', { class: 'ordnenkarte' },
+      !gesperrt && h('span', { class: 'ziehgriff', 'aria-hidden': 'true' }, '⠿'),
+      h('span', { class: 'kartenwert', tabindex: gesperrt ? null : 0, role: 'group', 'aria-label': `Karte ${karte}, Platz ${i + 1} von ${reihe.length}. Mit den Pfeiltasten verschieben.`,
+        onkeydown: (e) => { if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); tausche(i, i - 1, '.kartenwert'); } if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); tausche(i, i + 1, '.kartenwert'); } } }, karte),
+      h('button', { type: 'button', class: 'schieb links', disabled: gesperrt || i === 0, 'aria-label': `${karte} nach oben`, onclick: () => tausche(i, i - 1, '.links:not(:disabled), .rechts') }, '▲'),
+      h('button', { type: 'button', class: 'schieb rechts', disabled: gesperrt || i === reihe.length - 1, 'aria-label': `${karte} nach unten`, onclick: () => tausche(i, i + 1, '.rechts:not(:disabled), .links') }, '▼'));
+    li.addEventListener('pointerdown', (e) => ziehe(li, i, e));
+    return li;
+  }));
   male();
   return h('div', { class: 'ordnenfeld' }, feld,
-    ...(saetze ? [h('p', { class: 'klein' }, auf.links ?? 'zuerst'), liste, h('p', { class: 'klein' }, auf.rechts ?? 'zuletzt')]
-      : [h('div', { class: 'ordnenrand' }, h('span', { class: 'klein' }, auf.links ?? 'zuerst'), h('span', { class: 'klein' }, auf.rechts ?? 'zuletzt')), liste]), !gesperrt && h('p', { class: 'klein' }, 'Verschiebe die Karten mit den Pfeilen.'));
+    h('p', { class: 'klein ordnen-oben' }, '↑ ', auf.links ?? 'zuerst'), liste, h('p', { class: 'klein ordnen-unten' }, '↓ ', auf.rechts ?? 'zuletzt'),
+    !gesperrt && h('p', { class: 'klein' }, 'Ziehe die Karten an ihren Platz oder verschiebe sie mit den Pfeilen.'));
 }
 export const liesOrdnung = (formular) => { try { return JSON.parse(formular.elements.ordnung?.value ?? '[]'); } catch { return []; } };
 
