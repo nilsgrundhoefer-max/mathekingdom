@@ -11,19 +11,26 @@ export const NIVEAU_NAMEN = { F: 'Förderniveau', G: 'Grundlegendes Niveau', M: 
 // Münzen am Zielniveau des Schülers (ADR 0018): auf dem Ziel bekommt jeder gleich viel, darüber mehr, im Training weniger.
 export const MUENZEN = { ziel: 20, darueber: 25, training: 10 };
 // Zwölf Ränge über sechs Schuljahre (ADR 0018). Die ersten vier bleiben, die Abstände wachsen mit den Jahren.
+// Version 0.69 (ADR 0057): Jeder Rang und jeder Hoftitel hat eine zweite Form (`w`). Das Kind wählt im Wappenschrank,
+// wie seine Titel heißen (stand.titelform: 'w', sonst die bisherige Form).
+export const titelform = (stand) => (stand?.titelform === 'w' ? 'w' : 'm');
+export const inForm = (eintrag, form) => (eintrag ? (form === 'w' && eintrag.w) || eintrag.name : null);
+export function setzeTitelform(stand, form) {
+  if (form === 'w') stand.titelform = 'w'; else delete stand.titelform;
+}
 export const RAENGE = [
-  { ab: 0, name: 'Wanderer' },
-  { ab: 5, name: 'Kundschafter' },
-  { ab: 15, name: 'Wegmeister' },
-  { ab: 30, name: 'Hofkartograf' },
-  { ab: 50, name: 'Fährtenleser' },
-  { ab: 75, name: 'Landvermesser' },
-  { ab: 105, name: 'Burgvogt' },
-  { ab: 140, name: 'Kartenmeister' },
-  { ab: 180, name: 'Hofgelehrter' },
-  { ab: 225, name: 'Großkartograf' },
-  { ab: 275, name: 'Kanzler des Reiches' },
-  { ab: 330, name: 'Ritter der Karte' },
+  { ab: 0, name: 'Wanderer', w: 'Wanderin' },
+  { ab: 5, name: 'Kundschafter', w: 'Kundschafterin' },
+  { ab: 15, name: 'Wegmeister', w: 'Wegmeisterin' },
+  { ab: 30, name: 'Hofkartograf', w: 'Hofkartografin' },
+  { ab: 50, name: 'Fährtenleser', w: 'Fährtenleserin' },
+  { ab: 75, name: 'Landvermesser', w: 'Landvermesserin' },
+  { ab: 105, name: 'Burgvogt', w: 'Burgvögtin' },
+  { ab: 140, name: 'Kartenmeister', w: 'Kartenmeisterin' },
+  { ab: 180, name: 'Hofgelehrter', w: 'Hofgelehrte' },
+  { ab: 225, name: 'Großkartograf', w: 'Großkartografin' },
+  { ab: 275, name: 'Kanzler des Reiches', w: 'Kanzlerin des Reiches' },
+  { ab: 330, name: 'Ritter der Karte', w: 'Ritterin der Karte' },
 ];
 
 // Kronenfarben: So sehen Schüler die Niveaustufen (ADR 0012). Die Lehrkraft sieht nur F, G, M, E.
@@ -86,11 +93,11 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
 export const siegel = (stand) => Object.keys(stand.lernziele).length;
 // Für den Rang zählen nach einer Wiederholung (ADR 0054) mindestens so viele Siegel wie vorher: Der Rang sinkt nie.
 export const rangSiegel = (stand) => Math.max(siegel(stand), stand.rangSiegel ?? 0);
-export function rang(anzahlSiegel) {
+export function rang(anzahlSiegel, form = 'm') {
   let stufe = 0;
   RAENGE.forEach((r, i) => { if (anzahlSiegel >= r.ab) stufe = i; });
-  const naechster = RAENGE[stufe + 1] ?? null;
-  return { stufe, name: RAENGE[stufe].name, naechster };
+  const naechster = RAENGE[stufe + 1] ? { ...RAENGE[stufe + 1], name: inForm(RAENGE[stufe + 1], form) } : null;
+  return { stufe, name: inForm(RAENGE[stufe], form), naechster };
 }
 
 // ---------- Pool ----------
@@ -118,7 +125,10 @@ export function indexiere(pool) {
     nach.get(k).push(a); aufgabe.set(a.id, a); vorstufe.add(a.lernziel);
   }
   for (const l of pool.vorstufe?.lernziele ?? []) if (!lernziel.has(l.id)) lernziel.set(l.id, l);
-  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon, lernziel, vorstufe };
+  // Version 0.69 (ADR 0057, Audit L170): Lernziele, in denen bei „Kürze vollständig“ auch gemischte Zahlen herauskommen. Dort hat jede
+  // solche Aufgabe das Feld für die Ganzen, damit das Feld nicht verrät, ob eine gemischte Zahl herauskommt.
+  const ganzeFeld = new Set(pool.aufgaben.filter((a) => a.format === 'bruch' && a.gekuerzt && a.gemischt).map((a) => a.lernziel));
+  return { nach, lernzielMitAufgaben, aufgabe, mitAnspruch, meilensteinVon, lernziel, vorstufe, ganzeFeld };
 }
 
 // ---------- Antworten prüfen ----------
@@ -159,7 +169,25 @@ function zusammen(teile) {
     fehlvorstellung: teile.find((t) => !t.richtig && t.fehlvorstellung)?.fehlvorstellung ?? null,
   };
 }
+// Version 0.69 (ADR 0057): Beim Runden (Lernziele 6.4.3) gehört die Endnull dazu, wenn auf diese Stelle gerundet wurde: 4,70 statt 4,7.
+// Der Wert stimmt, also bleibt die Antwort richtig. `nachbessern: 'endnull'` bittet das Kind, die Stellen noch zu schreiben;
+// das kostet keinen Versuch. Bleibt es dabei, zählt die Antwort trotzdem (ADR 0047 gilt sonst weiter: 4 ist so richtig wie 4,0).
+const nachkomma = (text) => (String(text ?? '').replace(/\s/g, '').split(',')[1] ?? '').length;
+export function endnullFehlt(aufgabe, eingabe) {
+  if (!String(aufgabe.lernziel ?? '').startsWith('6.4.3')) return null;
+  const paare = aufgabe.format === 'zahl' ? [[aufgabe.loesung, eingabe]]
+    : aufgabe.format === 'luecken' ? Object.entries(aufgabe.luecken ?? {}).map(([name, l]) => [l.loesung, eingabe?.[name]]) : [];
+  const fehlt = paare.filter(([soll, ist]) => typeof soll === 'string' && /,\d*0$/.test(soll) && nachkomma(ist) < nachkomma(soll));
+  if (!fehlt.length) return null;
+  return { nachbessern: 'endnull', stellen: paare.length === 1 ? nachkomma(fehlt[0][0]) : null };
+}
+export const mitGanzenFeld = (index, aufgabe) => aufgabe?.format === 'bruch' && Boolean(aufgabe.gemischt || (aufgabe.gekuerzt && index?.ganzeFeld?.has(aufgabe.lernziel)));
 export function pruefeAntwort(aufgabe, eingabe) {
+  const e = pruefeRoh(aufgabe, eingabe);
+  const endnull = e.richtig ? endnullFehlt(aufgabe, eingabe) : null;
+  return endnull ? { ...e, ...endnull } : e;
+}
+function pruefeRoh(aufgabe, eingabe) {
   switch (aufgabe.format) {
     case 'zahl': case 'zahlenstrahl': return pruefeZahl(aufgabe, eingabe);
     case 'auswahl': {
@@ -1527,10 +1555,12 @@ export function wocheVon(iso) {
 export function bestenliste(eigener, andere, spielId, jetzt) {
   const woche = wocheVon(jetzt);
   const besterDerWoche = (st) => Math.max(0, ...(st.spiele ?? []).filter((e) => spielVon(e) === spielId && wocheVon(e.t) === woche).map((e) => e.punkte));
+  const gespielt = (eigener.spiele ?? []).some((e) => spielVon(e) === spielId && wocheVon(e.t) === woche);
   const eintraege = [eigener, ...andere]
     .filter((st) => st === eigener || !st.bestenlisteAus)
     .map((st) => ({ beiname: beiname(st), wappen: st.wappen, punkte: besterDerWoche(st), eigen: st === eigener }))
-    .filter((e) => e.punkte > 0)
+    // Version 0.69 (ADR 0057): Wer diese Woche gespielt und 0 Punkte geholt hat, sieht den eigenen Eintrag trotzdem.
+    .filter((e) => e.punkte > 0 || (e.eigen && gespielt))
     .sort((a, b) => b.punkte - a.punkte || Number(b.eigen) - Number(a.eigen));
   // Wer sich ausgeblendet hat, sieht seinen Platz, steht aber für die anderen nicht in der Liste.
   const sichtbar = eigener.bestenlisteAus ? eintraege.filter((e) => !e.eigen) : eintraege;
@@ -1750,15 +1780,15 @@ export function merkeAhaGesehen(stand) {
 
 // ---------- Hoftitel (ADR 0023) ----------
 // Die fünf Besten des Schuljahrs nach Kronen und Siegeln der aktuellen Klassenstufe, für alle gleich gewertet.
-// Seit Version 0.20 sieht jeder Schüler nur seinen eigenen Titel in der Kopfzeile, immer in der männlichen Form.
+// Seit Version 0.20 sieht jeder Schüler nur seinen eigenen Titel in der Kopfzeile. Seit 0.69 in der Form, die er gewählt hat.
 export const KRONEN_PUNKTE = { F: 1, G: 2, M: 4, E: 6 };
 export const HOFTITEL_PLAETZE = 5;
 export const HOFTITEL = [
-  { platz: 1, id: 'koenig', name: 'Klassenkönig' },
-  { platz: 2, id: 'herzog', name: 'Herzog' },
-  { platz: 3, id: 'graf', name: 'Graf' },
-  { platz: 4, id: 'ritter', name: 'Ritter' },
-  { platz: 5, id: 'knappe', name: 'Knappe' },
+  { platz: 1, id: 'koenig', name: 'Klassenkönig', w: 'Klassenkönigin' },
+  { platz: 2, id: 'herzog', name: 'Herzog', w: 'Herzogin' },
+  { platz: 3, id: 'graf', name: 'Graf', w: 'Gräfin' },
+  { platz: 4, id: 'ritter', name: 'Ritter', w: 'Ritterin' },
+  { platz: 5, id: 'knappe', name: 'Knappe', w: 'Knappin' },
 ];
 export const hoftitelVon = (platz) => HOFTITEL[platz - 1] ?? null;
 // Kronen je Niveau, Siegel und Punkte eines Speicherstands. Nur der Pool der Klassenstufe zählt.
@@ -1788,7 +1818,7 @@ export function hoftitelVergabe(pool, index, eintraege) {
   return liste
     .map((e) => ({ ...e, platz: 1 + liste.filter((x) => vergleicheEhre(x.wert, e.wert) < 0).length }))
     .filter((e) => e.platz <= HOFTITEL_PLAETZE)
-    .map((e) => ({ ...e, titel: hoftitelVon(e.platz) }));
+    .map((e) => ({ ...e, titel: { ...hoftitelVon(e.platz), name: inForm(hoftitelVon(e.platz), titelform(e.stand)) } }));
 }
 
 // ---------- Wiederholung (ADR 0054) ----------

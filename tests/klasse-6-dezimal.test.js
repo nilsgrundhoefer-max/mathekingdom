@@ -71,13 +71,26 @@ test('Der Prüfer meldet eine Periode, die nicht die kürzeste Schreibweise ist'
   assert.ok(meldungen((l) => { finde(l, a.id).loesung = '0,77̅'; }).some((f) => f.startsWith(a.id)));
 });
 
-test('Endnullen sind nie verlangt: Beim Runden zählt „9“ wie „9,0“', () => {
+// Version 0.69 (ADR 0057): Beim Runden gehört die Endnull dazu. Ohne sie bleibt die Antwort richtig, das Kind wird aber gebeten, sie zu schreiben.
+test('Runden: „9“ zählt wie „9,0“, bittet aber um die Endnull; außerhalb des Rundens ist sie nie verlangt', () => {
   const runden = kap4.filter((a) => a.lernziel.startsWith('6.4.3') && a.format === 'zahl' && /,\d*0$/.test(a.loesung));
   assert.ok(runden.length >= 1);
   for (const a of runden) {
     assert.deepEqual(L.pruefeAntwort(a, a.loesung), RICHTIG, a.id);
-    assert.deepEqual(L.pruefeAntwort(a, a.loesung.replace(/,?0+$/, '')), RICHTIG, a.id);
+    const stellen = a.loesung.split(',')[1].length;
+    assert.deepEqual(L.pruefeAntwort(a, a.loesung.replace(/,?0+$/, '')), { ...RICHTIG, nachbessern: 'endnull', stellen }, a.id);
   }
+  // Ein falscher Wert bleibt falsch, ohne Bitte um die Endnull.
+  assert.equal(L.pruefeAntwort(runden[0], '123').nachbessern, undefined);
+  // Mehrere Lücken: Der Hinweis nennt keine Stellenzahl.
+  const luecken = kap4.find((a) => a.lernziel.startsWith('6.4.3') && a.format === 'luecken' && Object.values(a.luecken).some((l) => /,\d*0$/.test(String(l.loesung))));
+  const voll = Object.fromEntries(Object.entries(luecken.luecken).map(([n, l]) => [n, String(l.loesung)]));
+  assert.deepEqual(L.pruefeAntwort(luecken, voll), RICHTIG);
+  const ohne = Object.fromEntries(Object.entries(voll).map(([n, w]) => [n, /,\d*0$/.test(w) ? w.replace(/,?0+$/, '') : w]));
+  assert.deepEqual(L.pruefeAntwort(luecken, ohne), { ...RICHTIG, nachbessern: 'endnull', stellen: null });
+  // Geld und andere Dezimalzahlen: 4,5 € zählt weiter wie 4,50 € (ADR 0047, 0048).
+  const andere = [...kap4, ...pool.aufgaben].find((a) => !a.lernziel.startsWith('6.4.3') && a.format === 'zahl' && typeof a.loesung === 'string' && /,\d*0$/.test(a.loesung));
+  if (andere) assert.deepEqual(L.pruefeAntwort(andere, andere.loesung.replace(/,?0+$/, '')), RICHTIG, andere.id);
 });
 
 test('Der Prüfer rechnet jede Rundung nach und meldet ein falsches Ergebnis', () => {

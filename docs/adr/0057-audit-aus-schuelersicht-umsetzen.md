@@ -78,9 +78,21 @@ Das Audit aus Schülersicht (Stand 0.64, 27.11.2026) lieferte 213 Befunde aus si
 
 ## 0.69 Belohnung und Eingabe
 
-**Runden.** Wer beim Runden auf zwei Stellen 4,7 statt 4,70 schreibt, bekommt „Fast richtig, schreibe zwei Stellen nach dem Komma“ und verliert keinen Versuch. Das ändert die Regel aus ADR 0047, nach der die Endnull nie verlangt wird, nur für Rundungsaufgaben.
+**Runden.** Wer beim Runden auf zwei Stellen 4,7 statt 4,70 schreibt, bekommt „Fast richtig: Der Wert stimmt. Schreibe zwei Stellen nach dem Komma …“ und verliert keinen Versuch (`L.endnullFehlt`, `nachbessern: 'endnull'`). Das gilt nur für die Lernziele zum Runden (6.4.3) und nur, wenn die Lösung selbst auf eine Null endet. Die Antwort bleibt richtig: Nach zwei Bitten zählt sie auch ohne Null. Das ändert die Regel aus ADR 0047, nach der die Endnull nie verlangt wird, nur für Rundungsaufgaben; Geld (4,5 € wie 4,50 €) und alle anderen Dezimalzahlen bleiben wie bisher.
 
-Das Belohnungsspiel kostet weiter 100 Münzen. Der Text sagt das ehrlich: „Die Spiele sind für dich frei. Eine Runde kostet 100 Münzen.“ Münzpreise bleiben. Das Kind wählt im Wappenbereich, wie seine Titel heißen sollen; die Wahl gilt für Hoftitel und Ränge, in Kopfleiste, Wappen und Lehrer-Dashboard (Knappin, Klassenkönigin). Der Standard bleibt die bisherige Form. Nach einer Runde mit 0 Punkten steht ein eigener Eintrag in der Bestenliste.
+**Belohnungsspiel.** Es kostet weiter 100 Münzen, Münzpreise bleiben. Der Text sagt das ehrlich: „Die Spiele sind für dich frei. Eine Runde kostet 100 Münzen.“ Das Wort „verdient“ steht nicht mehr da, weil es wie „geschenkt“ klang.
+
+**Titelform.** Das Kind wählt im Wappenschrank, wie seine Titel heißen sollen (`stand.titelform`: `'w'`, sonst die bisherige Form). Die Wahl gilt für Ränge und Hoftitel, in Kopfleiste, Wappenschrank und Lehrer-Dashboard (Wanderin, Ritterin, Klassenkönigin). Der Standard bleibt die bisherige Form; niemand muss wählen, und die Lehrkraft stellt nichts ein.
+
+**Bestenliste.** Nach einer eigenen Runde mit 0 Punkten steht der eigene Eintrag in der Liste. Fremde Runden mit 0 Punkten bleiben draußen. Die Überschrift nennt das Spiel, weil jedes Spiel seine eigene Liste hat.
+
+**Knopf „±“ (L135).** Steht eine Lücke ohne Klammer direkt hinter „+“ oder „−“, hat sie keinen Knopf „±“. Dort gehört eine Zahl ohne Vorzeichen hin; eine negative Zahl stünde in Klammern. Im Pool ist an diesen Stellen keine Lösung negativ.
+
+**Bruch-Eingabe (L170).** Kommen in einem Lernziel bei „Kürze vollständig“ auch gemischte Zahlen heraus, hat jede solche Aufgabe des Lernziels das Feld für die Ganzen (`L.mitGanzenFeld`). Das Feld verrät so nicht mehr, ob eine gemischte Zahl herauskommt, und es darf leer bleiben.
+
+**Fester Test.** `tests/belohnung-eingabe.test.js` und `tests/klasse-6-dezimal.test.js` prüfen die Regeln ohne Browser, `tests/browser-belohnung.mjs` spielt sie bei 1366 × 650 Pixeln durch.
+
+**Nicht geändert.** Die zwei Titelsysteme (L064), mehrere Kinder mit demselben Hoftitel bei Gleichstand (L194), die Menge der Zeichen in der Kopfleiste (L095, L196) und der Münzwert (L018, L195) bleiben, wie sie sind. Dass in 7.1.5-R1-G-03 die Zeichnung das Ergebnis zeigt, ist auf Silber gewollt.
 
 ## Verworfen
 
