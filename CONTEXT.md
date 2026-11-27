@@ -21,8 +21,16 @@ Die Person, die Klassen betreut, Freigaben erteilt und den Lernstand auswertet.
 _Avoid_: Admin, Lehrer-Account
 
 **Klasse**:
-Die konkrete Lerngruppe eines Schuljahres (z. B. 7b). Sie wird beim ersten Öffnen festgelegt und ändert sich nur zum neuen Schuljahr.
+Die konkrete Lerngruppe eines Schuljahres (z. B. 7b). Ein Schüler gehört ihr an, bis der Administrator ihn mit einem Klassenwechsel oder dem Schuljahreswechsel in eine andere Klasse bringt.
 _Avoid_: Kurs, Gruppe
+
+**Klassenwechsel**:
+Der Umzug eines Schülers in eine andere Klasse während des Schuljahres, nur durch den Administrator. Der vordere Teil des Schülercodes wird zur neuen Klasse (aus 5A-K4M2 wird 5C-K4M2), die PIN bleibt. Mit ihm ziehen Name, PIN, Speicherstand, Zielniveau und die Notiz der Lehrkraft; ein offener Sonderauftrag, eine Nachricht und ein Hilferuf verfallen, in der neuen Klasse bekommt er einen freien Platz im Sitzplan. Wer sich mit dem alten Code anmeldet, wird über den hinteren Teil gefunden und erfährt einmal seinen neuen Code. Führt der Wechsel in eine niedrigere Klassenstufe, gilt er als Wiederholung.
+_Avoid_: Umschulung, Versetzung
+
+**Wiederholung** (einer Klassenstufe):
+Ein Schüler kommt in eine Klasse derselben oder einer niedrigeren Klassenstufe, die er schon besucht hat. Seine Siegel und Kronen dieser Klassenstufe kommen ins Archiv, und er arbeitet sie neu durch; Münzen, Wappen und Rang bleiben, der Rang sinkt nie. Die Lehrkraft sieht das archivierte Jahr weiter.
+_Avoid_: Sitzenbleiben, Zurückstufen, Reset
 
 **Testklasse**:
 Eine Klasse, die der Administrator zum Ausprobieren anlegt und im Schulverzeichnis als solche markiert. In ihr arbeiten simulierte Schüler und bis zu drei echte Probe-Codes. Sie trägt im Lehrer-Dashboard das Schild „Testklasse“ und zählt nicht in Nutzungsstatistik, Auffällige Aufgaben und Aufgabenmeldungen. Sonst verhält sie sich wie jede Klasse: eine Lehrkraft ist ihr zugeordnet, sie lässt sich zurücksetzen, auflösen und löschen.
@@ -345,7 +353,7 @@ Der Zahlenstrahl, sobald er negative Zahlen zeigt (ab Klasse 7). Die Null ist he
 _Avoid_: Zahlenstrahl (für negative Zahlen), Zahlenlinie
 
 **Vorzeichenknopf**:
-Der Knopf „±“ neben jedem Zahlenfeld und jeder Brucheingabe der Klasse 7. Er setzt das Minus vor die Zahl und nimmt es wieder weg. Getippt zählen Bindestrich, Minuszeichen und Halbgeviertstrich gleich.
+Der Knopf „±“ neben jedem Zahlenfeld und jeder Brucheingabe der Aufgaben aus Klasse 7 Kapitel 1 (Rationale Zahlen) und seinen Abstechern, auch wenn sie später als Brücke kommen. In allen anderen Aufgaben tippt der Schüler das Minus selbst. Er setzt das Minus vor die Zahl und nimmt es wieder weg. Getippt zählen Bindestrich, Minuszeichen und Halbgeviertstrich gleich.
 _Avoid_: Minus-Taste, Plusminus-Feld
 
 **Kontoauszug**:
@@ -395,7 +403,7 @@ Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (
 _Avoid_: Kronenstufe, Lila, Purple
 
 **Kronenwahl**:
-Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für das ganze Kapitel. Voreingestellt ist sein Zielniveau. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F. Purpur schlägt das Schüler-Dashboard nie vor, weder nach guten Aufgaben auf Gold noch nach dem Einstiegscheck: Purpur wählt der Schüler selbst, oder die Lehrkraft setzt sein Zielniveau auf E.
+Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für ein Lernziel: Jedes neue Lernziel beginnt wieder auf seinem Zielniveau. Sinkt er auf Silber, bietet das Dashboard das an; lehnt er ab und löst erneut drei der letzten fünf Aufgaben nicht, wechselt es von selbst. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F. Purpur schlägt das Schüler-Dashboard nie vor, weder nach guten Aufgaben auf Gold noch nach dem Einstiegscheck: Purpur wählt der Schüler selbst, oder die Lehrkraft setzt sein Zielniveau auf E.
 _Avoid_: Straße wechseln, Niveauwahl (auf dem Bildschirm)
 
 **Selbsteinschätzung**:
@@ -654,7 +662,7 @@ Die Datei eines einzelnen Schülers im Klassenordner, die seinen gesamten Lernst
 _Avoid_: Spielstand, Save, Profil
 
 **Versuchsprotokoll**:
-Die lückenlose Liste aller Versuche eines Schülers im laufenden Schuljahr, Grundlage der Diagnose. Beim Schuljahreswechsel wird es in die Lehrerdaten archiviert und ein Jahr später gelöscht.
+Die lückenlose Liste aller Versuche eines Schülers, Grundlage der Diagnose und der Kronen. Jeder Versuch trägt die Version des Schüler-Dashboards. Es wandert bei Klassenwechsel und Schuljahreswechsel mit und wird nie nach dem Auslesen zurückgesetzt; Auswertungen filtern stattdessen nach Version oder Zeitraum.
 _Avoid_: Log, Verlauf
 
 **Betriebsprotokoll**:
@@ -662,7 +670,7 @@ Die Liste der technischen Ereignisse eines Dashboards: jeder Start mit Quelle un
 _Avoid_: Log, Status, Fehlerliste
 
 **Schuljahreswechsel**:
-Der von der Lehrkraft ausgelöste Übergang in die nächste Klassenstufe; Münzen, Siegel, Rang, Wappen und erreichte Lernziele bleiben erhalten.
+Der vom Administrator ausgelöste Übergang aller Klassen ins neue Schuljahr, in einer Tabelle für alle Schüler: Vorgeschlagen ist die nächste Klassenstufe mit demselben Buchstaben (aus 5a wird 6a, aus 5A-K4M2 wird 6A-K4M2), Ausnahmen sind Wiederholung, eine andere Klasse oder „verlässt die Schule“; Klasse 10 wird nie übernommen. Münzen, Siegel, Rang, Wappen, Versuchsprotokoll und Zielniveau ziehen mit; Tore, Aktuelles Kapitel, Sitzplan und Notizen beginnen neu.
 _Avoid_: Versetzung, Reset
 
 **Klassenordner**:
