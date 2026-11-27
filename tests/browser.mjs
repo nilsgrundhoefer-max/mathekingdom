@@ -1814,7 +1814,45 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(meldung.kennung, gemeldet); assert.equal(meldung.art, 'loesung'); assert.equal(meldung.klasse, '5a');
   assert.match(await lehrer.innerText('#meldungen'), /offen/);
 
-  // Administrator: neues Schuljahr, 5a wird 6a.
+  // Klassenwechsel im Schuljahr (0.62, ADR 0054): Mara kommt neu in die 5a und zieht nach 5c, sein alter Code führt zum neuen.
+  await admin.click('[data-tab="klassen"]');
+  await admin.fill('#neue-klasse', '5c');
+  await admin.click('#klasse-anlegen');
+  await admin.waitForSelector('[data-namen="5c"]');
+  await admin.click('[data-namen="5a"]');
+  await admin.fill('#namen', 'Mara Wechsel');
+  await admin.click('#codes');
+  await admin.waitForFunction(() => document.querySelectorAll('#namen-karte td.code.pin').length === 3 && ![...document.querySelectorAll('#namen-karte td.code.pin')].some((t) => t.textContent === '…'));
+  const maraZeile = admin.locator('#namen-karte tr', { hasText: 'Mara Wechsel' });
+  await maraZeile.waitFor();
+  const maraAlt = await maraZeile.locator('td.code').first().innerText(), maraPin = await maraZeile.locator('td.pin').innerText();
+  await admin.click(`[data-wechseln="${maraAlt}"]`);
+  await admin.waitForSelector('#wechsel-karte');
+  await admin.selectOption('#wechsel-ziel', '5c');
+  assert.match(await admin.innerText('#wechsel-hinweis'), new RegExp(`heißt danach 5C-${maraAlt.split('-')[1]}`));
+  await fotoStabil(admin, '#wechsel-karte', 'admin-klassenwechsel');
+  await admin.click('#wechsel-ausfuehren');
+  await admin.waitForFunction(() => /ist jetzt in der Klasse 5c/.test(document.getElementById('hinweis')?.textContent ?? ''));
+  const maraNeu = `5C-${maraAlt.split('-')[1]}`;
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5c/klasse.json`)).namen[maraNeu], 'Mara Wechsel');
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5c/klasse.json`)).pins[maraNeu].pin, maraPin);
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${jahr}/5a/klasse.json`)).namen[maraAlt], undefined);
+  {
+    const mara = await kontext.newPage();
+    mara.on('pageerror', (e) => fehler.push(`mara: ${e.message}`));
+    await mara.goto(`${basis}test/Mathekingdom.html`);
+    await mara.waitForSelector('#code');
+    await mara.fill('#code', maraAlt); await mara.fill('#pin', maraPin);
+    await waehle(mara, 'S');
+    await mara.click('#ordner');
+    await mara.waitForSelector('.regionen', { timeout: 15000 });
+    assert.match(await mara.innerText('.meldung'), new RegExp(`Dein Code heißt jetzt ${maraNeu}`));
+    await mara.waitForTimeout(600);
+    await foto(mara, 'schueler-neuer-code');
+    await mara.close();
+  }
+
+  // Administrator: neues Schuljahr, 5a wird 6a, Mara wiederholt die 5 in der 5c.
   await admin.click('[data-tab="schule"]');
   await admin.fill('#neues-schuljahr', naechstes);
   await admin.click('#schuljahr-anlegen');
@@ -1822,8 +1860,15 @@ async function weiter(seite, wahl = '#weiter') {
   await admin.click('#uebernahme-start');
   await admin.waitForSelector(`[data-ziel="${code}"]`);
   assert.equal(await admin.inputValue(`[data-ziel="${code}"]`), '6a');
+  assert.equal(await admin.inputValue(`[data-ziel="${maraNeu}"]`), '6c');
+  await admin.selectOption(`[data-ziel="${maraNeu}"]`, '5c');
+  await admin.waitForFunction(() => /wiederholt Klasse 5/.test(document.getElementById('uebernahme')?.textContent ?? ''));
+  await fotoStabil(admin, '#uebernahme', 'admin-schuljahreswechsel');
   await admin.click('#uebernehmen');
-  await admin.waitForFunction(() => document.getElementById('hinweis')?.textContent.includes('2 Schüler übernommen'));
+  await admin.waitForFunction(() => document.getElementById('hinweis')?.textContent.includes('3 Schüler übernommen'));
+  assert.match(await admin.innerText('#hinweis'), /Wiederholen ihre Klassenstufe: Mara Wechsel/);
+  assert.equal(JSON.parse(await lies(admin, `L/Mathekingdom/${naechstes}/5c/klasse.json`)).namen[maraNeu], 'Mara Wechsel');
+  assert.equal(await admin.locator('#schuljahr-wechseln').count(), 1, 'aktuell wird das neue Schuljahr erst mit eigenem Klick');
   const neuerCode = `6A-${code.split('-')[1]}`;
   const neu = JSON.parse(await lies(admin, `S/Mathekingdom/${naechstes}/6a/${neuerCode}.json`));
   assert.equal(neu.code, neuerCode); assert.equal(neu.klasse, '6a');

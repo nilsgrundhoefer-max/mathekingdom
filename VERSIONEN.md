@@ -8,6 +8,19 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.62 vom 27.11.2026
+
+### Schüler
+
+- Hast du die Klasse gewechselt, meldest du dich einfach mit deinem alten Code und deiner PIN an. Mathekingdom sagt dir einmal deinen neuen Code.
+- Wiederholst du eine Klassenstufe, beginnst du sie neu: Deine Siegel und Kronen von damals liegen im Archiv. Münzen, Wappen und Rang bleiben dir.
+
+### Lehrkraft
+
+- Klassenwechsel im Administrator-Dashboard: Unter „Namen und Codes“ wechselt ein Schüler mit „Klasse wechseln“ in eine andere Klasse. Name, PIN, Speicherstand, Zielniveau und Notiz ziehen mit, der Code bekommt das neue Klassenkürzel (ADR 0054).
+- Schuljahreswechsel in einer Tabelle für alle Klassen: Vorschlag ist dieselbe Klasse eine Stufe höher, Ausnahmen je Schüler (andere Klasse, Wiederholung, nicht übernehmen). Nach Klasse 10 wird niemand übernommen. Fehlende Klassen entstehen mit den Lehrkräften der bisherigen Klasse; das neue Schuljahr wird erst mit einem eigenen Klick aktuell.
+- Wer eine Klassenstufe wiederholt, beginnt sie neu. Im Schülerfenster steht „Erster Durchgang“ mit Siegeln und Aufgaben von damals; der Rang sinkt nie.
+
 ## 0.61 vom 27.11.2026
 
 ### Schüler

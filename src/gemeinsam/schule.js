@@ -6,7 +6,7 @@
 //   Lehrerlaufwerk         mathekingdom-admin.json (privater Schlüssel des Administrators)
 
 import { pruefeUnterschrift, liesUngeprueft, neuePin, pinEintrag } from './krypto.js';
-import { BEINAME_VORNE, BEINAME_HINTEN } from '../schueler/logik.js';
+import { BEINAME_VORNE, BEINAME_HINTEN, archiviereStufe } from '../schueler/logik.js';
 
 export const ORDNERNAME = 'Mathekingdom';
 export const VERZEICHNIS = 'schulverzeichnis.json';
@@ -133,8 +133,10 @@ export function klassendateiInhalt(klasse, k, stand) {
 // ---------- Übernahme ins neue Schuljahr ----------
 // Der Speicherstand wandert mit: Münzen, Siegel, Rang, Wappen, Versuchsprotokoll. Der Beiname bleibt derselbe,
 // obwohl er sich ohne eigene Wahl aus dem Code ergibt.
-export function uebernimmStand(stand, neuerCode, neueKlasse, jetzt) {
+// Mit `wiederholung` beginnt die Klassenstufe neu (ADR 0054): ihre Siegel, Kronen und Bearbeitungen kommen ins Archiv.
+export function uebernimmStand(stand, neuerCode, neueKlasse, jetzt, { wiederholung = null, schuljahr = null } = {}) {
   const neu = structuredClone(stand);
+  if (wiederholung) archiviereStufe(neu, wiederholung, jetzt, { schuljahr, klasse: stand.klasse });
   if (!neu.beiname) {
     let h = 0;
     for (const c of String(stand.code ?? '')) h = (h * 31 + c.charCodeAt(0)) >>> 0;
@@ -148,6 +150,47 @@ export function codeFuerUebernahme(alterCode, zielKlasse, vergeben, erzeuge) {
   const ende = codeEnde(alterCode);
   if (!vergeben.some((c) => codeEnde(c) === ende)) return codeInKlasse(alterCode, zielKlasse);
   return erzeuge(zielKlasse, vergeben);
+}
+
+// ---------- Klassenwechsel und Schuljahreswechsel (ADR 0054) ----------
+export const stufe = (klasse) => Number.parseInt(klasse, 10);
+export const LETZTE_STUFE = 10;
+// Vorschlag beim Schuljahreswechsel: dieselbe Klasse eine Stufe höher. Nach Klasse 10 wird niemand übernommen.
+export const vorschlagNeuesJahr = (klasse) => (stufe(klasse) >= LETZTE_STUFE ? '' : naechsteKlasse(klasse) ?? '');
+// Welche Stufe neu beginnt: im laufenden Schuljahr nur, wer in eine niedrigere Stufe wechselt,
+// beim Schuljahreswechsel auch, wer in derselben Stufe bleibt.
+export function wiederholteStufe(alteKlasse, neueKlasse, neuesSchuljahr = false) {
+  const alt = stufe(alteKlasse), neu = stufe(neueKlasse);
+  return neu < alt || (neuesSchuljahr && neu === alt) ? neu : null;
+}
+// Klassenwechsel in den Klassendaten: Name, PIN, Zielniveau, Notiz und ungeöffnete Münzgaben ziehen mit.
+// Sonderauftrag, Nachricht, Hilferuf und gesperrte Meilensteine bleiben zurück und verfallen.
+export function zieheUm(quelle, ziel, code, neuerCode) {
+  ziel.namen[neuerCode] = quelle.namen[code];
+  if (quelle.pins?.[code]) (ziel.pins ??= {})[neuerCode] = quelle.pins[code];
+  const zn = quelle.einst?.zielniveaus?.[code];
+  if (zn) (ziel.einst.zielniveaus ??= {})[neuerCode] = zn;
+  if (quelle.notizen?.[code]) (ziel.notizen ??= {})[neuerCode] = quelle.notizen[code];
+  if (quelle.notizVon?.[code]) (ziel.notizVon ??= {})[neuerCode] = quelle.notizVon[code];
+  if (quelle.einst?.muenzgaben?.[code]) (ziel.einst.muenzgaben ??= {})[neuerCode] = quelle.einst.muenzgaben[code];
+  entferneAusKlasse(quelle, code);
+}
+export function entferneAusKlasse(daten, code) {
+  delete daten.namen[code]; delete daten.pins?.[code]; delete daten.notizen?.[code]; delete daten.notizVon?.[code];
+  for (const feld of ['zielniveaus', 'hilfe', 'nachrichten', 'sonderauftraege', 'muenzgaben']) delete daten.einst?.[feld]?.[code];
+  for (const [st, codes] of Object.entries(daten.einst?.sperren ?? {})) {
+    const rest = (codes ?? []).filter((c) => c !== code);
+    if (rest.length) daten.einst.sperren[st] = rest; else delete daten.einst.sperren[st];
+  }
+}
+// Ein alter Code nach einem Wechsel: In welcher Klasse steht jetzt ein Code mit demselben hinteren Teil?
+export function neuerCodeZu(code, codesJeKlasse) {
+  const ende = codeEnde(code);
+  for (const [klasse, codes] of Object.entries(codesJeKlasse)) {
+    const treffer = codes.find((c) => codeEnde(c) === ende);
+    if (treffer) return { klasse, code: treffer };
+  }
+  return null;
 }
 
 // ---------- Startdateien ----------

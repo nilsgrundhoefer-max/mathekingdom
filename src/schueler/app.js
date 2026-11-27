@@ -176,7 +176,7 @@ function wegstueckAnzeige() {
 const zaehltFuerWegstueck = (a) => !a.rueckblick && !a.einstieg && !a.heftNachloesen;
 
 function kopf() {
-  const anzahl = L.siegel(z.stand), r = L.rang(anzahl);
+  const anzahl = L.siegel(z.stand), r = L.rang(L.rangSiegel(z.stand));
   const status = z.speicherstatus;
   // Siegel und Karte stehen vorn, die Münzen dahinter als kleinstes Symbol (ADR 0010). Seit 0.37 sind alle Symbole etwa ein Viertel größer.
   return h('header', { class: 'kopf' },
@@ -466,7 +466,24 @@ async function meldeInSchule(gelesen, schule, fehler) {
     return fehler(`In diesem Ordner fehlt das Schulverzeichnis. Wähle den Ordner „Mathekingdom“${pfadHinweis()}.`);
   }
   if (v.status === 'ungueltig') return fehler('Das Schulverzeichnis wurde verändert und ist ungültig. Sag deiner Lehrkraft Bescheid.');
-  const ort = await SCH.findeKlassenordner(schule, v.daten.schuljahr, gelesen.klasse);
+  let ort = await SCH.findeKlassenordner(schule, v.daten.schuljahr, gelesen.klasse);
+  // Klassen- oder Schuljahreswechsel (ADR 0054): Steht der Code nicht im aktuellen Schuljahr, führt der hintere Teil
+  // zum neuen Code. Die PIN gehört trotzdem dazu.
+  const schluessel = (k) => (v.status === 'ok' ? SCH.schluesselDerKlasse(v.daten, v.daten.schuljahr, k) : undefined);
+  const steht = async (ablage, k) => ((await S.ladeKlassendatei(ablage, ...(schluessel(k) ? [schluessel(k)] : []))).daten?.codes ?? []).includes(gelesen.code);
+  if (!ort || ort.schuljahr !== v.daten.schuljahr || !(await steht(ort.ablage, gelesen.klasse))) {
+    const jahr = await schule.ordner(v.daten.schuljahr);
+    for (const k of Object.keys(v.daten.klassen?.[v.daten.schuljahr] ?? {})) {
+      const ablage = jahr && await jahr.ordner(k);
+      const daten = ablage && (await S.ladeKlassendatei(ablage, ...(schluessel(k) ? [schluessel(k)] : []))).daten;
+      const treffer = SCH.neuerCodeZu(gelesen.code, { [k]: daten?.codes ?? [] });
+      if (!treffer || treffer.code === gelesen.code) continue;
+      z.codeHinweis = treffer.code;
+      gelesen = { ...gelesen, code: treffer.code, klasse: k };
+      ort = { ablage, schuljahr: v.daten.schuljahr };
+      break;
+    }
+  }
   if (!ort) return fehler(`Für die Klasse ${gelesen.klasse} gibt es noch keinen Ordner. Sag deiner Lehrkraft Bescheid.`);
   z.schule = schule;
   satzSchule.benutzt(z.satzNr ?? 0);
@@ -509,6 +526,7 @@ async function melde({ code, klasse, pin }, ablage) {
   Object.assign(z, { ablage, pool: offenerPool, index: L.indexiere(offenerPool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
   const sperrenBeachtet = M.beachteSperren(z.stand, z.gesperrt);
   z.meldung = geladen.hinweis && !nurSchluss ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
+  if (z.codeHinweis === code) { z.meldung = `Dein Code heißt jetzt ${code}. Du bist jetzt in der Klasse ${klasse}. Melde dich ab jetzt mit dem neuen Code an.`; z.codeHinweis = null; }
   z.dienst = S.speicherdienst(ablage, () => z.stand, speicherMeldung);
   if (sperrenBeachtet) z.dienst.markiere();
   z.sitzungStart = jetzt();
@@ -1662,7 +1680,7 @@ function ahaKarte() {
           a.neu && h('span', { class: 'marke-neu' }, 'neu'))))]);
 }
 function wappenAnsicht() {
-  const r = L.rang(L.siegel(z.stand));
+  const r = L.rang(L.rangSiegel(z.stand));
   const w = z.stand.wappen;
   const stufe = L.klassenstufe(z.stand);
   L.vergebeEhrenzeichen(z.stand, z.pool, z.index, z.einst?.zielniveau);
@@ -1724,7 +1742,7 @@ function wappenAnsicht() {
     h('h1', {}, 'Dein Wappen'),
     h('div', { class: 'werkbank' }, voll ? wappenVoll(w, 270) : wappenBild(w, 150),
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
-        h('p', {}, r.naechster ? `Noch ${r.naechster.ab - L.siegel(z.stand)} Siegel, dann wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
+        h('p', {}, r.naechster ? `Noch ${r.naechster.ab - L.rangSiegel(z.stand)} Siegel, dann wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
         h('p', { class: 'klein' }, 'Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen. Münzen bekommst du für gelöste Aufgaben, Ehrenzeichen kannst du nur verdienen.'))),
     neueEhre.length > 0 && h('div', { class: 'karte neue-ehre', id: 'neue-ehre', role: 'status' },
       h('b', {}, neueEhre.length === 1 ? 'Neues Ehrenzeichen: ' : 'Neue Ehrenzeichen: '), neueEhre.map((id) => L.teil(id)?.name).join(', '),

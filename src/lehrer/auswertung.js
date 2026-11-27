@@ -36,7 +36,7 @@ export function kennzahlen(stand, zielniveau, jetzt) {
   const ziel = L.NIVEAUS.indexOf(zielniveau);
   const training = v.filter((x) => L.NIVEAUS.indexOf(x.niveau) < ziel).length;
   return {
-    siegel: L.siegel(stand), muenzen: stand.muenzen, rang: L.rang(L.siegel(stand)).name,
+    siegel: L.siegel(stand), muenzen: stand.muenzen, rang: L.rang(L.rangSiegel(stand)).name,
     bearbeitet: v.length, geloest: geloest.length, quote: anteil(geloest.length, v.length),
     ersterVersuch: anteil(v.filter((x) => x.richtig && x.versuche === 1).length, v.length),
     tipp: v.filter((x) => L.hatKarte(x, 'tipp')).length, beispiel: v.filter((x) => L.hatKarte(x, 'beispiel')).length, loesungsschritt: v.filter((x) => L.hatKarte(x, 'loesungsschritt')).length,
@@ -82,7 +82,8 @@ export function auffaelligkeiten(stand, zielniveau, jetzt, sitzungLaeuft = true)
 export function pruefeStand(stand, zielniveau) {
   const maengel = [];
   // Verdient: Aufgaben, dazu Belohnungen erledigter Sonderaufträge (ADR 0021) und geöffnete Münzgaben (ADR 0027).
-  const verdient = stand.versuche.reduce((s, x) => s + (x.muenzen ?? 0), 0)
+  // Archivierte Bearbeitungen einer wiederholten Klassenstufe (ADR 0054) zählen mit.
+  const verdient = [...stand.versuche, ...(stand.archiv ?? []).flatMap((a) => a.versuche ?? [])].reduce((s, x) => s + (x.muenzen ?? 0), 0)
     + (stand.sonderauftraege ?? []).reduce((s, x) => s + (x.bonus ?? 0), 0)
     + (stand.muenzgaben ?? []).reduce((s, x) => s + (x.muenzen ?? 0), 0);
   if (stand.muenzen > verdient) maengel.push(`Mehr Münzen (${stand.muenzen}) als je verdient (${verdient})`);
@@ -796,4 +797,13 @@ export function stundenSaeulen(staende, jetzt) {
     }
   }
   return { ab, saeulen };
+}
+
+// ---------- Erster Durchgang (ADR 0054) ----------
+// Was ein Wiederholer beim ersten Mal in dieser Klassenstufe geschafft hat.
+export function ersterDurchgang(stand, stufe) {
+  return L.archivDerStufe(stand, stufe).map((a) => ({
+    stufe: a.stufe, bis: a.bis, schuljahr: a.schuljahr ?? null, klasse: a.klasse ?? null, siegel: a.siegel,
+    bearbeitet: a.versuche.length, geloest: a.versuche.filter((v) => v.richtig).length,
+  }));
 }
