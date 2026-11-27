@@ -30278,7 +30278,7 @@
      "fehlvorstellung": "stufen-wechsel-verwechselt"
     },
     {
-     "text": "Man hat falsch gemessen. Stufenwinkel sind immer gleich groß.",
+     "text": "Man hat falsch gemessen. Stufenwinkel sind immer gleich groß, an allen Geraden.",
      "richtig": false,
      "fehlvorstellung": "ohne-parallele"
     },
@@ -32694,7 +32694,7 @@
      "fehlvorstellung": "winkelsumme"
     },
     {
-     "text": "Die Rechnung stimmt, weil ein Kreis 360° hat.",
+     "text": "Die Rechnung stimmt, weil ein Kreis 360° hat und die Ecken zusammen einen Kreis bilden.",
      "richtig": false,
      "fehlvorstellung": "gestreckt-voll"
     }
@@ -34055,7 +34055,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die beiden Winkel sind Nebenwinkel.",
+     "text": "Die beiden Winkel sind Nebenwinkel an einer Geraden.",
      "richtig": false,
      "fehlvorstellung": "scheitel-neben-verwechselt"
     },
@@ -34730,7 +34730,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Vier Dreiecke haben zusammen 360°.",
+     "text": "Richtig. Das Viereck besteht aus vier Dreiecken, und die haben zusammen 360°.",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     },
@@ -35052,7 +35052,7 @@
      "fehlvorstellung": "winkelsumme"
     },
     {
-     "text": "Die Begründung ist richtig, wenn man genau misst.",
+     "text": "Die Begründung ist richtig, wenn man genau misst. Dann zeigen drei verschiedene Dreiecke, dass es immer gilt.",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     }
@@ -37111,7 +37111,7 @@
      "fehlvorstellung": "seite-ecke-vertauscht"
     },
     {
-     "text": "Die Beschriftung ist frei wählbar.",
+     "text": "Die Beschriftung ist frei wählbar, jede Seite darf jeden Buchstaben haben.",
      "richtig": false,
      "fehlvorstellung": "seite-ecke-vertauscht"
     }
@@ -38838,7 +38838,7 @@
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "text": "Im gleichschenkligen Dreieck sind alle Winkel gleich.",
+     "text": "Im gleichschenkligen Dreieck sind alle Winkel gleich. Jeder Winkel ist 60° groß.",
      "richtig": false,
      "fehlvorstellung": "dreieck-sonderfall"
     },
@@ -39133,7 +39133,7 @@
      "fehlvorstellung": "seite-ecke-vertauscht"
     },
     {
-     "text": "c ist richtig, denn c ist immer die Basis.",
+     "text": "c ist richtig, denn im gleichschenkligen Dreieck ist c immer die Basis und liegt unten.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     }
@@ -39230,7 +39230,7 @@
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "text": "Ja. Dann ist das Dreieck stumpfwinklig.",
+     "text": "Ja. Dann ist das Dreieck stumpfwinklig, das ist erlaubt.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     },
@@ -40502,7 +40502,7 @@
      "richtig": true
     },
     {
-     "text": "Ja. Das ist der Kongruenzsatz wsw.",
+     "text": "Ja. Zwei Winkel reichen schon. Das ist der Kongruenzsatz wsw.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     },
@@ -40560,7 +40560,7 @@
      "fehlvorstellung": "kongruenz-verwechselt"
     },
     {
-     "text": "Es fehlt eine dritte Seite.",
+     "text": "Es fehlt eine dritte Seite. Mit nur zwei Seiten und einem Winkel geht es nie.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     }
@@ -40599,7 +40599,7 @@
      "fehlvorstellung": "dreiecksungleichung"
     },
     {
-     "text": "Ja. Mit drei Seiten geht es immer (sss).",
+     "text": "Ja. Mit drei Seiten geht es immer, das sagt sss.",
      "richtig": false,
      "fehlvorstellung": "dreiecksungleichung"
     },
@@ -40722,7 +40722,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das ist kein Fehler: www ist ein Kongruenzsatz.",
+     "text": "Das ist kein Fehler: www ist ein Kongruenzsatz, drei Angaben reichen.",
      "richtig": false,
      "fehlvorstellung": "drei-winkel-eindeutig"
     },
@@ -40809,7 +40809,7 @@
      "fehlvorstellung": "winkelsumme"
     },
     {
-     "text": "Ja. Man braucht nur noch eine Seite.",
+     "text": "Ja. Man braucht dann nur noch eine Seite (wsw).",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     },
@@ -42364,7 +42364,7 @@
      "richtig": true
     },
     {
-     "text": "Zwei verschiedene Dreiecke.",
+     "text": "Zwei verschiedene Dreiecke, eines oben und eines unten.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     }
@@ -42403,7 +42403,7 @@
      "fehlvorstellung": "konstruktion-reihenfolge"
     },
     {
-     "text": "Es fehlt nur die Planfigur am Ende.",
+     "text": "Es fehlt nur die Planfigur am Ende, sonst ist alles richtig.",
      "richtig": false,
      "fehlvorstellung": "konstruktion-reihenfolge"
     },
@@ -42732,7 +42732,7 @@
      "richtig": true
     },
     {
-     "text": "Die Bögen sind zu kurz gezeichnet.",
+     "text": "Die Bögen sind zu kurz gezeichnet. Längere Bögen schneiden sich.",
      "richtig": false,
      "fehlvorstellung": "dreiecksungleichung"
     },
@@ -42905,7 +42905,7 @@
      "fehlvorstellung": "kongruenz-verwechselt"
     },
     {
-     "text": "Weil man das Dreieck spiegeln kann.",
+     "text": "Weil man das Dreieck spiegeln kann und so ein zweites Dreieck entsteht.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     },
@@ -44196,7 +44196,7 @@
      "fehlvorstellung": "dreieck-art"
     },
     {
-     "text": "C liegt genau über dem Mittelpunkt.",
+     "text": "C liegt genau über dem Mittelpunkt des Kreises.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     }
@@ -44684,7 +44684,7 @@
      "richtig": true
     },
     {
-     "text": "Im Thaleskreis gibt es keinen rechten Winkel.",
+     "text": "Im Thaleskreis gibt es keinen rechten Winkel, nur am Durchmesser.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -46651,7 +46651,7 @@
      "richtig": true
     },
     {
-     "text": "Der Thaleskreis ist zu klein gezeichnet.",
+     "text": "Der Thaleskreis ist zu klein gezeichnet. Ein größerer Kreis über c würde passen.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -46910,7 +46910,7 @@
      "fehlvorstellung": "thales-durchmesser"
     },
     {
-     "text": "Für jede Höhe gibt es genau eins.",
+     "text": "Für jede beliebige Höhe gibt es genau ein solches Dreieck.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -46944,7 +46944,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Es gibt nur ein rechtwinkliges Dreieck mit c = 6 cm.",
+     "text": "Richtig. Es gibt nur ein einziges rechtwinkliges Dreieck mit c = 6 cm.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     },
@@ -47288,7 +47288,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht. Das sieht man an der Zeichnung.",
+     "text": "Stimmt nicht. Das sieht man ohne Begründung an der Zeichnung.",
      "richtig": false,
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
@@ -47947,7 +47947,7 @@
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
     {
-     "text": "Stimmt nicht. Das sieht man an der Zeichnung.",
+     "text": "Stimmt nicht. Das sieht man ohne Begründung an der Zeichnung.",
      "richtig": false,
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
@@ -48369,7 +48369,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Weil der Thaleskreis so groß ist wie der Kreis.",
+     "text": "Weil der Thaleskreis so groß ist wie der Kreis und ihn deshalb genau zweimal trifft.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -48643,7 +48643,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an der Zeichnung.",
+     "text": "Stimmt nicht. Das sieht man ohne Begründung an der Zeichnung.",
      "richtig": false,
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
@@ -50691,7 +50691,7 @@
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
     {
-     "text": "Nie. Höhen gehen immer von oben nach unten.",
+     "text": "Nie. Höhen gehen immer gerade von oben nach unten, wie die Linien im Heft.",
      "richtig": false,
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
@@ -50965,7 +50965,7 @@
      "richtig": true
     },
     {
-     "text": "Die Höhe muss zur Mitte von c gehen.",
+     "text": "Die Höhe muss zur Mitte von c gehen, sonst ist es keine Höhe, sondern nur eine Linie.",
      "richtig": false,
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
@@ -52392,7 +52392,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das stimmt nicht. h_c geht dann zur Mitte von c.",
+     "text": "Das stimmt nicht. h_c geht dann von C zur Mitte von c.",
      "richtig": false,
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
@@ -52901,7 +52901,7 @@
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
     {
-     "text": "Im rechtwinkligen Dreieck gibt es keinen Höhenschnittpunkt.",
+     "text": "Im rechtwinkligen Dreieck gibt es keinen Höhenschnittpunkt, nur eine Höhe.",
      "richtig": false,
      "fehlvorstellung": "hoehe-falsche-seite"
     },
@@ -53281,7 +53281,7 @@
      "fehlvorstellung": "innen-aussen-verwechselt"
     },
     {
-     "text": "Richtig. Darum muss man alle Seiten verlängern.",
+     "text": "Richtig. Darum muss man im stumpfwinkligen Dreieck alle drei Seiten verlängern.",
      "richtig": false,
      "fehlvorstellung": "hoehe-falsche-seite"
     }
@@ -54443,7 +54443,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das stimmt nur für die Mitte von AB.",
+     "text": "Das stimmt nur für die Mitte von AB.\nDie anderen Punkte sind näher an A.",
      "richtig": false,
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
@@ -54972,7 +54972,7 @@
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
     {
-     "text": "Das reicht. Jeder Punkt darauf passt.",
+     "text": "Das reicht. Jeder Punkt auf dieser Mittelsenkrechten ist ein möglicher Treffpunkt.",
      "richtig": false,
      "fehlvorstellung": "ortslinie-verwechselt"
     },
@@ -55336,7 +55336,7 @@
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
     {
-     "text": "Falsch. Sie ist parallel zu AB.",
+     "text": "Falsch. Sie ist parallel zu AB und geht deshalb gar nicht durch die Mitte von AB.",
      "richtig": false,
      "fehlvorstellung": "ortslinie-verwechselt"
     },
@@ -57180,7 +57180,7 @@
      "fehlvorstellung": "ortslinie-verwechselt"
     },
     {
-     "text": "Falsch. Es gibt vier Winkelhalbierende, die nicht senkrecht sind.",
+     "text": "Falsch. Zwei Geraden bilden vier Winkel. Es gibt also vier Winkelhalbierende, die nicht senkrecht sind.",
      "richtig": false,
      "fehlvorstellung": "ortslinie-verwechselt"
     },
@@ -57473,7 +57473,7 @@
      "fehlvorstellung": "winkelhalbierende-seitenmitte"
     },
     {
-     "text": "Die Winkelhalbierende geht immer zur Seitenmitte.",
+     "text": "Die Winkelhalbierende geht immer zur Seitenmitte. Der Fehler muss beim Messen der Winkel liegen.",
      "richtig": false,
      "fehlvorstellung": "winkelhalbierende-seitenmitte"
     },
@@ -57932,7 +57932,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     },
@@ -58010,7 +58010,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     },
@@ -58429,7 +58429,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     }
@@ -58832,7 +58832,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     }
@@ -59119,7 +59119,7 @@
      "fehlvorstellung": "dreieck-sonderfall"
     },
     {
-     "text": "Weil drei Geraden sich immer in einem Punkt schneiden.",
+     "text": "Weil drei Geraden sich immer in einem Punkt schneiden, wenn sie nicht parallel sind.",
      "richtig": false,
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
@@ -59489,7 +59489,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     },
@@ -59618,7 +59618,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     }
@@ -59998,7 +59998,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "innen-aussen-verwechselt"
     },
@@ -60380,7 +60380,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "innen-aussen-verwechselt"
     },
@@ -60635,7 +60635,7 @@
      "fehlvorstellung": "dreieck-art"
     },
     {
-     "text": "Weil sie zur Seitenmitte gehen.",
+     "text": "Weil sie zur Seitenmitte gehen. Die drei Seitenmitten liegen immer um einen gemeinsamen Punkt.",
      "richtig": false,
      "fehlvorstellung": "winkelhalbierende-seitenmitte"
     },
@@ -65305,7 +65305,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon 15 zählen nur die Einer.",
       "richtig": false,
       "fehlvorstellung": "add-uebertrag-vergessen"
      },
@@ -65533,7 +65533,7 @@
       "richtig": true
      },
      {
-      "text": "Falsch. Ungerade plus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -66079,7 +66079,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
       "richtig": false,
       "fehlvorstellung": "sub-kleiner-von-groesser"
      },
@@ -66306,7 +66306,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch. Ungerade minus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -66809,7 +66809,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan rechnet von links nach rechts.",
       "richtig": false,
       "fehlvorstellung": "klammer-ignoriert"
      },

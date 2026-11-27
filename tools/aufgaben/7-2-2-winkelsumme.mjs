@@ -95,7 +95,7 @@ function s1() {
         H('E', `Nimm von α + β zuerst die ${d}° weg. Dann bleiben zwei gleich große Teile.`), { bild: dreieckBild(E, { A: GESUCHT('α', a), B: NAME('β'), C: WERT(g) }), nachweis: [R(`180° − ${g}° − ${d}° = ${180 - g - d}°`), `${180 - g - d}° : 2 = ${a}°`, FIG('α')] }); },
     () => { const w = dreiWinkel('E', { min: 25, max: 100 }), k = kind();
       return auswahl(`${k} rechnet: „γ = 360° − ${w[0]}° − ${w[1]}° = ${360 - w[0] - w[1]}°.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt(`Im Dreieck sind die Winkel zusammen 180°, nicht 360°. Richtig ist γ = ${w[2]}°.`, true), opt('Die Rechnung stimmt, weil ein Kreis 360° hat.', false, 'gestreckt-voll'), opt(`Man muss addieren: γ = ${w[0]}° + ${w[1]}° = ${w[0] + w[1]}°.`, false, 'winkelsumme'), opt('Man darf γ nur messen, nicht rechnen.', false, 'winkelsumme')],
+        [opt(`Im Dreieck sind die Winkel zusammen 180°, nicht 360°. Richtig ist γ = ${w[2]}°.`, true), opt('Die Rechnung stimmt, weil ein Kreis 360° hat und die Ecken zusammen einen Kreis bilden.', false, 'gestreckt-voll'), opt(`Man muss addieren: γ = ${w[0]}° + ${w[1]}° = ${w[0] + w[1]}°.`, false, 'winkelsumme'), opt('Man darf γ nur messen, nicht rechnen.', false, 'winkelsumme')],
         H('E', 'Prüfe: Ergeben die drei Winkel mit dem Ergebnis zusammen 180°?'), { nachweis: [R(`180° − ${w[0]}° − ${w[1]}° = ${w[2]}°`), { art: 'urteil', stimmt: false }] }); },
     () => { const w = dreiWinkel('E', { min: 25, max: 110 }), aa = 180 - w[0], ab = 180 - w[1], E = dreieckAus(w[0], w[1], drehFuer('E'));
       const D1 = plus(E.A, vek(E.B, E.A), 0.35), D2 = plus(E.B, vek(E.A, E.B), 0.35);
@@ -177,7 +177,7 @@ function s2() {
         H('G', 'Jedes Dreieck hat 180°.', 'Zwei Dreiecke haben 2 · 180° = 360°.', `Rechne ${n - 2} · 180°.`), { nachweis: [`${n} − 2 = ${n - 2}`, `${n - 2} · 180° = ${s}°`] }); },
     () => { const w = dreiWinkel('G', { max: 95 }), E = dreieckAus(w[0], w[1], drehFuer('G'));
       return auswahl(Z('Die Gerade p ist parallel zu AB.', 'Warum ist der linke Winkel an p so groß wie α?', 'Kreuze die richtige Begründung an.'),
-        [opt('Die beiden Winkel sind Wechselwinkel an Parallelen.', true), opt('Die beiden Winkel sind Nebenwinkel.', false, 'scheitel-neben-verwechselt'), opt('Alle Winkel im Bild sind gleich groß.', false, 'stufen-wechsel-verwechselt')],
+        [opt('Die beiden Winkel sind Wechselwinkel an Parallelen.', true), opt('Die beiden Winkel sind Nebenwinkel an einer Geraden.', false, 'scheitel-neben-verwechselt'), opt('Alle Winkel im Bild sind gleich groß.', false, 'stufen-wechsel-verwechselt')],
         H('G', 'Die Geraden p und AB sind parallel. Die Seite b schneidet beide.', 'Wechselwinkel bilden zusammen ein Z.', 'Fahre mit dem Finger von α zum linken Winkel an p.'),
         { bild: mitParallele(E, { links: NAME('α′') }, { ecken: { A: NAME('α') } }), nachweis: [{ art: 'beziehung', paar: ['α', 'α′'], welche: 'wechsel' }] }); },
   ]);
@@ -203,7 +203,7 @@ function s2() {
         { bild: dreieckBild(E, { A: WERT(w[0]), B: WERT(w[1]) }, { extra: { punkte: { D }, versteckt: ['D'], linien: [['C', 'D']], winkel: [['C', 'D', 'A', { n: 'ε', wert: aw, frage: true, farbe: 2 }]] } }), nachweis: [R(`${w[0]}° + ${w[1]}° = ${aw}°`), FIG('ε')] }); },
     () => { const k = kind();
       return auswahl(`${k} sagt: „Ein Viereck hat die Winkelsumme 360°, weil man es in vier Dreiecke zerlegen kann.“ Überprüfe die Begründung. Kreuze die richtige Antwort an.`,
-        [opt('Falsch begründet. Eine Diagonale zerlegt es in zwei Dreiecke: 2 · 180° = 360°.', true), opt('Richtig. 4 · 90° = 360°.', false, 'winkelsumme'), opt('Richtig. Vier Dreiecke haben zusammen 360°.', false, 'winkelsumme'), opt('Falsch. Ein Viereck hat die Winkelsumme 720°.', false, 'winkelsumme')],
+        [opt('Falsch begründet. Eine Diagonale zerlegt es in zwei Dreiecke: 2 · 180° = 360°.', true), opt('Richtig. 4 · 90° = 360°.', false, 'winkelsumme'), opt('Richtig. Das Viereck besteht aus vier Dreiecken, und die haben zusammen 360°.', false, 'winkelsumme'), opt('Falsch. Ein Viereck hat die Winkelsumme 720°.', false, 'winkelsumme')],
         H('M', 'Rechne nach: Wie viel Grad haben vier Dreiecke zusammen?', '4 · 180° = 720°.'), { nachweis: ['4 · 180° = 720°', '2 · 180° = 360°', { art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(S2, 'E', [
@@ -220,7 +220,7 @@ function s2() {
         { bild: geteiltBild('E', t, { a: WERT(t.a), x: WERT(t.x), b: WERT(t.b), y: GESUCHT('φ', t.y) }), nachweis: [R(`180° − ${t.a}° − ${t.x}° = ${t.d}°`), R(`180° − ${t.d}° = ${t.e}°`), R(`180° − ${t.e}° − ${t.b}° = ${t.y}°`), FIG('φ')] }); },
     () => { const k = kind();
       return auswahl(`${k} begründet: „Ich habe in drei Dreiecken die Winkel gemessen. Immer kam 180° heraus. Also gilt der Winkelsummensatz.“ Beurteile die Begründung. Kreuze die richtige Antwort an.`,
-        [opt('Messen zeigt nur Beispiele. Ein Beweis muss für jedes Dreieck gelten, zum Beispiel mit Wechselwinkeln an einer Parallelen.', true), opt('Drei Beispiele reichen als Beweis.', false, 'winkelsumme'), opt('Die Begründung ist richtig, wenn man genau misst.', false, 'winkelsumme'), opt('Man müsste in vier Dreiecken messen.', false, 'winkelsumme'), opt('Der Satz gilt nur für gemessene Dreiecke.', false, 'winkelsumme')],
+        [opt('Messen zeigt nur Beispiele. Ein Beweis muss für jedes Dreieck gelten, zum Beispiel mit Wechselwinkeln an einer Parallelen.', true), opt('Drei Beispiele reichen als Beweis.', false, 'winkelsumme'), opt('Die Begründung ist richtig, wenn man genau misst. Dann zeigen drei verschiedene Dreiecke, dass es immer gilt.', false, 'winkelsumme'), opt('Man müsste in vier Dreiecken messen.', false, 'winkelsumme'), opt('Der Satz gilt nur für gemessene Dreiecke.', false, 'winkelsumme')],
         H('E', 'Gilt eine Aussage für alle Dreiecke, wenn sie für drei stimmt?'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
     () => { const w = dreiWinkel('E', { min: 25, max: 110 });
       return grad('Bestimme die Summe der drei Außenwinkel eines Dreiecks (an jeder Ecke einer).', 360, [[180, 'winkelsumme'], [540, 'gestreckt-voll']],

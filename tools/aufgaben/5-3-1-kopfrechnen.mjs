@@ -53,7 +53,7 @@ export function kopfrechnen() {
         h3('Du musst nicht rechnen. Vergleiche die Zahlen.', '38 + 51 ist größer als 38 + 49. Denn 51 ist größer als 49.', `${b + 2} ist größer als ${b}. ${a} ist größer als ${a - 2}.`),
         { bild: B.streifen(frage(a + b + 2), [a, b + 2]), nachweis: [GROESSTES, ...N(`${a} + ${b + 2}`, `${a} + ${b}`, `${a - 2} + ${b}`)] }); },
     () => { const [a, b] = suche(() => [zz(24, 58), zz(13, 38)], ([x, y]) => x % 10 + y % 10 > 10 && x + y < 100), k = kind(), za = Math.floor(a / 10) * 10, zb = Math.floor(b / 10) * 10;
-      return auswahl(Z(`${k} rechnet ${a} + ${b} so:`, `${za} + ${zb} = ${za + zb}`, `${a % 10} + ${b % 10} = ${a % 10 + b % 10}`, `${k} schreibt als Ergebnis ${za + zb + (a + b) % 10}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'add-uebertrag-vergessen'), opt(`Falsch. Ein Zehner fehlt. Richtig ist ${a + b}.`, true), opt('Falsch. Hier muss man minus rechnen.', false, 'add-subtrahiert')],
+      return auswahl(Z(`${k} rechnet ${a} + ${b} so:`, `${za} + ${zb} = ${za + zb}`, `${a % 10} + ${b % 10} = ${a % 10 + b % 10}`, `${k} schreibt als Ergebnis ${za + zb + (a + b) % 10}.`, 'Stimmt das?'), [opt(`Stimmt. Von ${a % 10 + b % 10} zählen nur die Einer.`, false, 'add-uebertrag-vergessen'), opt(`Falsch. Ein Zehner fehlt. Richtig ist ${a + b}.`, true), opt('Falsch. Hier muss man minus rechnen.', false, 'add-subtrahiert')],
         h3('Zähle beide Teilergebnisse ganz zusammen.', '57 + 26: 50 + 20 = 70 und 7 + 6 = 13. Zusammen 70 + 13 = 83.', `Rechne ${za + zb} + ${a % 10 + b % 10}.`), { nachweis: [U(false, `${a} + ${b}`, za + zb + (a + b) % 10), ...N(`${a} + ${b}`, `${za} + ${zb}`, `${a % 10} + ${b % 10}`, `${za + zb} + ${a % 10 + b % 10}`)] }); },
   ]);
   sechs(K('K1'), 'M', [
@@ -71,7 +71,7 @@ export function kopfrechnen() {
         h2('Rechne Glied für Glied. Das letzte Glied findest du durch Ergänzen.', `${a} + ${b} = ${a + b}.`), { nachweis: N(`${a} + ${b}`, `${a + b} + ${c}`, `${ziel} − ${a + b + c}`, `${a + b + c} + ${ziel - a - b - c}`) }); },
     () => auswahl('„Die Summe von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.', [
       opt('Richtig. Beispiel: 13 + 25 = 38. Von jeder ungeraden Zahl bleibt beim Paarebilden ein Einzelner übrig. Die beiden Einzelnen bilden zusammen wieder ein Paar.', true),
-      opt('Falsch. Ungerade plus ungerade bleibt ungerade.', false, 'begriffe-verwechselt'),
+      opt('Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.', false, 'begriffe-verwechselt'),
       opt('Das stimmt nur bei kleinen Zahlen wie 3 + 5 = 8.'),
       opt('Richtig, denn jede Summe ist eine gerade Zahl.')],
     h2('Prüfe mehrere Beispiele und überlege dann, woran es liegt.', '3 + 5 = 8, 7 + 9 = 16, 13 + 25 = 38: Alle Ergebnisse sind gerade.'), { nachweis: [U(true), ...N('13 + 25', '3 + 5', '7 + 9')] }),
@@ -85,7 +85,7 @@ export function kopfrechnen() {
     () => { const a = zz(41, 68) * 10 + zz(1, 9), b = zz(21, 38) * 10 + zz(1, 9);
       return auswahl('Entscheide ohne zu rechnen: Welche Aufgabe hat das größte Ergebnis?', [
         opt(`${a} + ${b + 3}, denn der erste Summand ist gleich geblieben und der zweite ist am größten`, true),
-        opt(`${a - 3} + ${b + 3}, denn hier wurden beide Summanden verändert`, false, 'geschickt-falsch-ausgeglichen'),
+        opt(`${a - 3} + ${b + 3}, denn hier wurden beide Summanden um 3 verändert und beide Änderungen zählen`, false, 'geschickt-falsch-ausgeglichen'),
         opt(`${a} + ${b}, denn die Zahlen sind am einfachsten`),
         opt(`${a - 3} + ${b}, denn der erste Summand ist am kleinsten`, false, 'begriffe-verwechselt'),
         opt('Alle Ergebnisse sind gleich groß.', false, 'geschickt-falsch-ausgeglichen')],
@@ -147,7 +147,7 @@ export function kopfrechnen() {
         h3('Du musst nicht rechnen. Wer weniger abzieht, behält mehr.', '75 − 28 ist größer als 75 − 31. Denn es geht weniger weg.', `Bei ${a} − ${b + 3} geht mehr weg. Bei ${a - 2} − ${b} ist die erste Zahl kleiner.`),
         { bild: B.streifen(a, [b, frage(a - b)]), nachweis: [GROESSTES, ...N(`${a} − ${b}`, `${a} − ${b + 3}`, `${a - 2} − ${b}`)] }); },
     () => { const [a, b] = suche(() => [zz(52, 95), zz(14, 38)], ([x, y]) => x % 10 < y % 10 && x - y > 20), k = kind(), za = Math.floor(a / 10) * 10, zb = Math.floor(b / 10) * 10;
-      return auswahl(Z(`${k} rechnet ${a} − ${b} so:`, `${za} − ${zb} = ${za - zb}`, `${b % 10} − ${a % 10} = ${b % 10 - a % 10}`, `${k} schreibt als Ergebnis ${kleinerVonGroesser(a, b)}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'sub-kleiner-von-groesser'), opt(`Falsch. Die Einer sind vertauscht. Richtig ist ${a - b}.`, true), opt('Falsch. Hier muss man plus rechnen.', false, 'sub-addiert')],
+      return auswahl(Z(`${k} rechnet ${a} − ${b} so:`, `${za} − ${zb} = ${za - zb}`, `${b % 10} − ${a % 10} = ${b % 10 - a % 10}`, `${k} schreibt als Ergebnis ${kleinerVonGroesser(a, b)}.`, 'Stimmt das?'), [opt('Stimmt. Man zieht immer die kleinere Zahl ab.', false, 'sub-kleiner-von-groesser'), opt(`Falsch. Die Einer sind vertauscht. Richtig ist ${a - b}.`, true), opt('Falsch. Hier muss man plus rechnen.', false, 'sub-addiert')],
         h3('Die zweite Zahl geht ganz weg: erst ihre Zehner, dann ihre Einer.', '73 − 28: Erst 73 − 20 = 53. Dann 53 − 8 = 45.', `${a} − ${zb} = ${a - zb}. Davon gehen noch ${b % 10} weg.`), { nachweis: [U(false, `${a} − ${b}`, kleinerVonGroesser(a, b)), ...N(`${a} − ${b}`, `${a} − ${zb}`, `${a - zb} − ${b % 10}`)] }); },
   ]);
   sechs(K('K2'), 'M', [
@@ -165,7 +165,7 @@ export function kopfrechnen() {
         h2('Hier rechnest du rückwärts: Stein oben minus Stein unten ergibt den Nachbarstein.', `Rechts in der Mitte steht ${x + 2 * y + w} − ${x + y}.`)); },
     () => auswahl('„Die Differenz von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.', [
       opt('Richtig. Beispiel: 25 − 13 = 12. Beide Zahlen liegen um 1 über einer geraden Zahl. Dieser Überschuss hebt sich beim Subtrahieren auf.', true),
-      opt('Falsch. Ungerade minus ungerade bleibt ungerade.', false, 'begriffe-verwechselt'),
+      opt('Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.', false, 'begriffe-verwechselt'),
       opt('Das stimmt nur, wenn die Differenz kleiner als 10 ist.'),
       opt('Falsch. Beispiel: 25 − 13 = 11.', false, 'sub-uebertrag-vergessen')],
     h2('Prüfe mehrere Beispiele und überlege dann, woran es liegt.', '9 − 5 = 4, 17 − 3 = 14, 25 − 13 = 12: Alle Ergebnisse sind gerade.'), { nachweis: [U(true), HILFSZAHL(1, 'Eine ungerade Zahl liegt um 1 über einer geraden Zahl.'), ...N('25 − 13', '9 − 5', '17 − 3')] }),
@@ -179,7 +179,7 @@ export function kopfrechnen() {
     () => { const a = zz(61, 88) * 10 + zz(2, 8), b = zz(21, 38) * 10 + zz(4, 8);
       return auswahl('Entscheide ohne zu rechnen: Welche Differenz ist am größten?', [
         opt(`${a + 3} − ${b - 3}, denn hier ist der Minuend am größten und der Subtrahend am kleinsten`, true),
-        opt(`${a + 3} − ${b + 3}, denn beide Zahlen sind hier am größten`, false, 'geschickt-falsch-ausgeglichen'),
+        opt(`${a + 3} − ${b + 3}, denn beide Zahlen sind hier am größten, also auch die Differenz`, false, 'geschickt-falsch-ausgeglichen'),
         opt(`${a} − ${b}, denn die Zahlen wurden nicht verändert`),
         opt(`${a - 3} − ${b - 3}, denn der Subtrahend ist am kleinsten`, false, 'geschickt-falsch-ausgeglichen'),
         opt('Alle Differenzen sind gleich groß.', false, 'geschickt-falsch-ausgeglichen')],
@@ -235,7 +235,7 @@ export function kopfrechnen() {
         h3('Liegen beide Zahlen nah beieinander? Dann ist Ergänzen leicht.', '91 − 88: Von 88 bis 91 fehlen nur 3.', `Von ${a - d} bis ${a} fehlen nur ${d}.`),
         { bild: B.strahl({ von: Math.floor((a - d) / 10) * 10, bis: Math.floor((a - d) / 10) * 10 + 20, schritt: 1, beschriftung: 5, start: a - d, spruenge: [{ von: a - d, nach: a, text: `+ ${d}` }] }), nachweis: N(`${a} − ${a - d}`) }); },
     () => { const a = zz(34, 67), k = kind();
-      return auswahl(Z(`${k} rechnet ${a} + 19 so:`, `${a} + 20 = ${a + 20}`, `${a + 20} + 1 = ${a + 21}`, 'Stimmt das?'), [opt('Stimmt.', false, 'geschickt-falsch-ausgeglichen'), opt(`Falsch. Es war 1 zu viel. Die 1 muss wieder weg. Richtig ist ${a + 19}.`, true), opt(`Falsch. Richtig ist ${a + 20}.`, false, 'geschickt-nicht-ausgeglichen')],
+      return auswahl(Z(`${k} rechnet ${a} + 19 so:`, `${a} + 20 = ${a + 20}`, `${a + 20} + 1 = ${a + 21}`, 'Stimmt das?'), [opt('Stimmt. Erst plus 20 rechnen. Dann kommt noch 1 dazu.', false, 'geschickt-falsch-ausgeglichen'), opt(`Falsch. Es war 1 zu viel. Die 1 muss wieder weg. Richtig ist ${a + 19}.`, true), opt(`Falsch. Richtig ist ${a + 20}.`, false, 'geschickt-nicht-ausgeglichen')],
         h3('20 ist 1 mehr als 19. Was musst du danach tun?', '54 + 19: Erst 54 + 20 = 74. Dann 74 − 1 = 73.', `${a} + 20 = ${a + 20}. Das ist 1 zu viel.`), { nachweis: [U(false, `${a} + 19`, a + 21), ...N(`${a} + 19`, `${a} + 20`, `${a + 20} − 1`, `${a + 20} + 1`)] }); },
   ]);
   sechs(K('K3'), 'M', [
@@ -257,7 +257,7 @@ export function kopfrechnen() {
         opt(`Falsch. Mit 200 wurden 2 zu viel abgezogen. Die 2 müssen addiert werden: ${a - 200} + 2 = ${a - 198}.`, true),
         opt('Richtig. 198 ist um 2 kleiner als 200, also wird 2 abgezogen.', false, 'geschickt-falsch-ausgeglichen'),
         opt(`Falsch. Das Ergebnis ist ${a - 200}, ein Ausgleich ist nicht nötig.`, false, 'geschickt-nicht-ausgeglichen'),
-        opt('Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen.', false, 'geschickt-falsch-ausgeglichen')],
+        opt('Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen, also noch einmal abgezogen.', false, 'geschickt-falsch-ausgeglichen')],
       h2('Überlege: Wurde mit 200 zu viel oder zu wenig abgezogen?', `${a} − 200 = ${a - 200}. Abgezogen werden sollten nur 198.`), { nachweis: [U(false, `${a} − 198`, a - 202), ...N(`${a} − 198`, `${a} − 200`, `${a - 200} + 2`, `${a - 200} − 2`)] }); },
   ]);
   sechs(K('K3'), 'E', [
@@ -272,13 +272,13 @@ export function kopfrechnen() {
         opt(`${a - 2} − ${b + 2}, denn die Änderungen gleichen sich aus`, false, 'geschickt-falsch-ausgeglichen'),
         opt(`${a + 2} − ${b - 2}, denn die Änderungen gleichen sich aus`, false, 'geschickt-falsch-ausgeglichen'),
         opt(`${a} − ${b + 2}, denn ${b + 2} ist eine glatte Zahl`, false, 'geschickt-nicht-ausgeglichen'),
-        opt(`${a - 2} − ${b}, denn der Minuend darf beliebig verändert werden`)],
+        opt(`${a - 2} − ${b}, denn der Minuend darf beim Rechnen beliebig verändert werden`)],
       h1('Die Differenz ist der Abstand zweier Zahlen. Verschiebe beide Zahlen gleich weit.'), { nachweis: [WERT(a - b), ...N(`${a} − ${b}`, `${a + 2} − ${b + 2}`, `${a - 2} − ${b + 2}`, `${a + 2} − ${b - 2}`, `${a} − ${b + 2}`, `${a - 2} − ${b}`)] }); },
     () => auswahl('Du rechnest mit einer glatten Nachbarzahl und gleichst aus. Stelle eine Regel auf, die für Summen und für Differenzen gilt.', [
       opt('Summe: die Summanden gegensinnig verändern. Differenz: Minuend und Subtrahend gleichsinnig verändern.', true),
       opt('Summe und Differenz: beide Zahlen gleichsinnig verändern.', false, 'geschickt-falsch-ausgeglichen'),
       opt('Summe und Differenz: beide Zahlen gegensinnig verändern.', false, 'geschickt-falsch-ausgeglichen'),
-      opt('Summe: die Summanden gleichsinnig verändern. Differenz: gegensinnig verändern.', false, 'geschickt-falsch-ausgeglichen'),
+      opt('Summe: die Summanden gleichsinnig verändern. Differenz: Minuend und Subtrahend gegensinnig verändern.', false, 'geschickt-falsch-ausgeglichen'),
       opt('Es genügt immer, nur eine der beiden Zahlen zu verändern.', false, 'geschickt-nicht-ausgeglichen')],
     h1('Prüfe an 48 + 27 = 50 + 25 und an 75 − 48 = 77 − 50.'), { nachweis: N('48 + 27', '50 + 25', '75 − 48', '77 − 50') }),
     () => { const m = wahl([50, 60, 80]);

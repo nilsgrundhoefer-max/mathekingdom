@@ -2088,7 +2088,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier kommen nur Zehner dazu. Die Eine
   - ☐ 36 + 41
   - ☑ 36 + 43
 - `06` AFB III · _Argumentieren_ · Mia rechnet 48 + 17 so: / 40 + 10 = 50 / 8 + 7 = 15 / Mia schreibt als Ergebnis 55. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Von 15 zählen nur die Einer.
   - ☑ Falsch. / Ein Zehner fehlt. / Richtig ist 65.
   - ☐ Falsch. / Hier muss man minus rechnen.
 
@@ -2103,7 +2103,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechenkette: 220 + 140 = ▢, dann + 95 = ▢, dann + ▢ = 600. Lösung: a = **360**, b = **455**, c = **145**
 - `06` AFB III · _Argumentieren_ · „Die Summe von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
   - ☑ Richtig. Beispiel: 13 + 25 = 38. Von jeder ungeraden Zahl bleibt beim Paarebilden ein Einzelner übrig. Die beiden Einzelnen bilden zusammen wieder ein Paar.
-  - ☐ Falsch. Ungerade plus ungerade bleibt ungerade.
+  - ☐ Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.
   - ☐ Richtig, denn jede Summe ist eine gerade Zahl.
   - ☐ Das stimmt nur bei kleinen Zahlen wie 3 + 5 = 8.
 
@@ -2117,7 +2117,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere schrittweise: erst die Hunder
   - ☑ 574 + 277, denn der erste Summand ist gleich geblieben und der zweite ist am größten
   - ☐ 574 + 274, denn die Zahlen sind am einfachsten
   - ☐ 571 + 274, denn der erste Summand ist am kleinsten
-  - ☐ 571 + 277, denn hier wurden beide Summanden verändert
+  - ☐ 571 + 277, denn hier wurden beide Summanden um 3 verändert und beide Änderungen zählen
   - ☐ Alle Ergebnisse sind gleich groß.
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Summen von drei aufeinanderfolgenden Zahlen: 4 + 5 + 6 = 15, 10 + 11 + 12 = 33, 20 + 21 + 22 = 63. Stelle die Regel auf: Die Summe ist ▢ · die mittlere Zahl. Sage damit 199 + 200 + 201 vorher: ▢ Lösung: a = **3**, b = **600**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Summe zweier Zahlen ist 780. Der erste Summand wird um 20 größer, der zweite um 20 größer. Bestimme die neue Summe. Lösung: **820**. Typische Fehler: 800 (sach-schritt-vergessen), 780 (add-subtrahiert).
@@ -2161,7 +2161,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier gehen nur Zehner weg. Die Einer 
   - ☐ 82 − 34
   - ☑ 82 − 31
 - `06` AFB III · _Argumentieren_ · Lina rechnet 91 − 37 so: / 90 − 30 = 60 / 7 − 1 = 6 / Lina schreibt als Ergebnis 66. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man zieht immer die kleinere Zahl ab.
   - ☐ Falsch. / Hier muss man plus rechnen.
   - ☑ Falsch. / Die Einer sind vertauscht. / Richtig ist 54.
 
@@ -2175,7 +2175,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf: 850 − 275 Lösung: **575**. Typische Fehler: 585 (ergaenzen-zu-viel), 1125 (sub-addiert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ 107 / 58 · **49** / 35 · **23** · **26**
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · „Die Differenz von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
-  - ☐ Falsch. Ungerade minus ungerade bleibt ungerade.
+  - ☐ Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.
   - ☐ Das stimmt nur, wenn die Differenz kleiner als 10 ist.
   - ☐ Falsch. Beispiel: 25 − 13 = 11.
   - ☑ Richtig. Beispiel: 25 − 13 = 12. Beide Zahlen liegen um 1 über einer geraden Zahl. Dieser Überschuss hebt sich beim Subtrahieren auf.
@@ -2189,7 +2189,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Subtrahiere schrittweise: erst die Hu
 - `03` AFB II · _Probleme lösen_ · Entscheide ohne zu rechnen: Welche Differenz ist am größten?
   - ☐ 754 − 255, denn die Zahlen wurden nicht verändert
   - ☐ Alle Differenzen sind gleich groß.
-  - ☐ 757 − 258, denn beide Zahlen sind hier am größten
+  - ☐ 757 − 258, denn beide Zahlen sind hier am größten, also auch die Differenz
   - ☐ 751 − 252, denn der Subtrahend ist am kleinsten
   - ☑ 757 − 252, denn hier ist der Minuend am größten und der Subtrahend am kleinsten
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zahl minus Quersumme: 23 − 5 = 18, 41 − 5 = 36, 52 − 7 = 45. Alle Ergebnisse sind Vielfache von 9. Stelle die Regel auf: Das Ergebnis ist 9 · Zehnerziffer. Sage damit 87 − 15 vorher: 9 · ▢ = ▢ Lösung: a = **8**, b = **72**
@@ -2230,7 +2230,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Zehne
   - ☐ Zusammenzählen: 73 + 70
 - `06` AFB III · _Argumentieren_ · Sara rechnet 39 + 19 so: / 39 + 20 = 59 / 59 + 1 = 60 / Stimmt das?
   - ☑ Falsch. / Es war 1 zu viel. / Die 1 muss wieder weg. / Richtig ist 58.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Erst plus 20 rechnen. / Dann kommt noch 1 dazu.
   - ☐ Falsch. / Richtig ist 59.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2250,7 +2250,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit 400 statt 397 und gleiche 
   | 48 | **952** |
 
 - `06` AFB III · _Argumentieren_ · Finn rechnet 500 − 198 so: 500 − 200 = 300, dann 300 − 2 = 298. Beurteile den Rechenweg.
-  - ☐ Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen.
+  - ☐ Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen, also noch einmal abgezogen.
   - ☐ Richtig. 198 ist um 2 kleiner als 200, also wird 2 abgezogen.
   - ☐ Falsch. Das Ergebnis ist 300, ein Ausgleich ist nicht nötig.
   - ☑ Falsch. Mit 200 wurden 2 zu viel abgezogen. Die 2 müssen addiert werden: 300 + 2 = 302.
@@ -2262,14 +2262,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Alle drei Summanden liegen knapp unte
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt: 997 + 998 + 999 Lösung: **2994**. Typische Fehler: 3000 (geschickt-nicht-ausgeglichen), 3006 (geschickt-falsch-ausgeglichen).
 - `02` AFB II · _Modellieren_ · Verändere die Summanden gegensinnig: 398 + 200 = 400 + ▢ = ▢ Lösung: a = **198**, b = **598**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Aufgabe hat dasselbe Ergebnis wie 663 − 298? Wähle die Antwort mit der richtigen Begründung.
-  - ☐ 661 − 298, denn der Minuend darf beliebig verändert werden
+  - ☐ 661 − 298, denn der Minuend darf beim Rechnen beliebig verändert werden
   - ☑ 665 − 300, denn Minuend und Subtrahend wurden um dieselbe Zahl vergrößert
   - ☐ 663 − 300, denn 300 ist eine glatte Zahl
   - ☐ 665 − 296, denn die Änderungen gleichen sich aus
   - ☐ 661 − 300, denn die Änderungen gleichen sich aus
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Du rechnest mit einer glatten Nachbarzahl und gleichst aus. Stelle eine Regel auf, die für Summen und für Differenzen gilt.
   - ☐ Summe und Differenz: beide Zahlen gegensinnig verändern.
-  - ☐ Summe: die Summanden gleichsinnig verändern. Differenz: gegensinnig verändern.
+  - ☐ Summe: die Summanden gleichsinnig verändern. Differenz: Minuend und Subtrahend gegensinnig verändern.
   - ☑ Summe: die Summanden gegensinnig verändern. Differenz: Minuend und Subtrahend gleichsinnig verändern.
   - ☐ Summe und Differenz: beide Zahlen gleichsinnig verändern.
   - ☐ Es genügt immer, nur eine der beiden Zahlen zu verändern.
@@ -2310,7 +2310,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. *Beispiel:
 - `05` AFB II · _Kommunizieren_ · Die Summe ist 80. / Ein Summand ist 25. / Wie groß ist der andere Summand? _(Bild: Streifenbild: Ganzes 80, Teile 25 und ?)_ Lösung: **55**. Typische Fehler: 105 (probe-falsche-umkehr).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: / „Bei 41 + 46 = 87 ist 87 ein Summand.“ / Stimmt das?
   - ☑ Falsch. / 87 ist die Summe.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Jede Zahl der Aufgabe ist ein Summand.
   - ☐ Falsch. / 87 ist die Differenz.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2329,7 +2329,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe ist das Ergebnis einer Addi
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Wird ein Summand um 10 größer und der andere um 10 kleiner, bleibt die Summe gleich.“ Beurteile die Aussage.
   - ☑ Richtig. Beispiel: 40 + 20 = 60 und 50 + 10 = 60. Was der eine Summand gewinnt, verliert der andere.
   - ☐ Falsch. Beispiel: 40 + 20 = 60, aber 50 + 20 = 70.
-  - ☐ Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert.
+  - ☐ Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert. Das gilt für jede Änderung.
   - ☐ Falsch. Die Summe wird um 20 größer.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -2346,7 +2346,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Summe und die Dif
   - a) Bestimme den kleineren Summanden. **385**.
   - b) Bestimme den größeren Summanden. **535**.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Kann die Summe zweier natürlicher Zahlen kleiner sein als einer der beiden Summanden? Wähle die richtige Begründung.
-  - ☐ Ja. Bei sehr kleinen Summanden ist die Summe kleiner.
+  - ☐ Ja. Bei sehr kleinen Summanden ist die Summe kleiner als der größere Summand, zum Beispiel bei 1 und 0.
   - ☑ Nein. Zu jedem Summanden kommt etwas dazu oder nichts. Die Summe ist deshalb mindestens so groß wie jeder Summand.
   - ☐ Das hängt davon ab, welcher Summand vorne steht.
   - ☐ Ja. Bei 5 + 0 ist die Summe kleiner als 5.
@@ -2407,7 +2407,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen genau untereinand
 - `06` AFB III · _Argumentieren_ · Finn rechnet: 228 + 633 = 851 / Bei den Einern rechnet Finn 8 + 3 = 11. / Finn schreibt nur die 1 auf. / Stimmt das Ergebnis? _(Bild: Stellenwerttafel H: 8, Z: 5, E: 11)_
   - ☑ Falsch. / Der Übertrag fehlt. / Richtig ist 861.
   - ☐ Falsch. / Hier muss man minus rechnen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man schreibt nur die Einer auf.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -2438,7 +2438,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Übertrag kann in der nächsten S
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei dreistellige Zahlen werden schriftlich addiert. Wie viele Überträge können höchstens entstehen? Wähle die richtige Begründung.
   - ☐ Vier. Das Ergebnis kann vierstellig sein.
   - ☑ Drei. Beispiel: 999 + 999 = 1998. In jeder der drei Spalten entsteht ein Übertrag.
-  - ☐ Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen.
+  - ☐ Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen, weil links keine Spalte folgt.
   - ☐ Einer. Ein Übertrag entsteht nur bei den Einern.
   - ☐ Beliebig viele. Das hängt von den Zahlen ab.
 
@@ -2493,7 +2493,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle 3 Zahlen genau unterein
 - `06` AFB III · _Argumentieren_ · Ole rechnet: 16 + 16 + 14 = 36 / Bei den Einern rechnet Ole 6 + 6 + 4 = 16. / Ole schreibt nur die 6 auf. / Stimmt das Ergebnis? _(Bild: Stellenwerttafel Z: 3, E: 16)_
   - ☑ Falsch. / Der Übertrag fehlt. / Richtig ist 46.
   - ☐ Falsch. / Richtig ist 26.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man schreibt nur die Einer auf.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -2511,7 +2511,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei drei Summanden kann der Übertrag
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Addiere schriftlich: 5055 + 811 + 2401 Lösung: **8267**. Typische Fehler: 7267 (add-uebertrag-vergessen), 4244 (add-subtrahiert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne der Reihe nach: 1 + 2 + 3 = ▢, 11 + 12 + 13 = ▢, 21 + 22 + 23 = ▢. Nutze das Muster: 91 + 92 + 93 = ▢ Lösung: a = **6**, b = **36**, c = **66**, d = **276**
 - `06` AFB III · _Argumentieren_ · Paul soll 3035 + 557 berechnen und schreibt 557 so unter 3035, dass beide Zahlen links bündig stehen. Das Ergebnis ist 8605. Beurteile das Vorgehen.
-  - ☐ Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen.
+  - ☐ Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen. Welche Stellen das sind, ist egal.
   - ☐ Richtig. Links bündig zu schreiben ist beim Addieren üblich.
   - ☑ Falsch. Die Zahlen stehen nicht stellengerecht untereinander. So wurde 3035 + 5570 gerechnet. Richtig ist 3592.
   - ☐ Falsch. Paul hat die Überträge vergessen.
@@ -2536,7 +2536,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei vier Summanden kann der Übertrag
   - ☐ Das stimmt nur bei einstelligen Zahlen.
   - ☑ Das stimmt immer. Zwei ungerade Zahlen ergeben zusammen eine gerade Zahl. Kommt eine ungerade dazu, wird die Summe ungerade.
   - ☐ Das stimmt nie. 3 + 5 + 7 = 16.
-  - ☐ Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade.
+  - ☐ Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade, ganz egal, wie viele Summanden es sind.
   - ☐ Das stimmt nur, wenn alle drei Zahlen verschieden sind.
 
 ## 5.3.2-A4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
@@ -2579,7 +2579,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten 
   - ☐ 92 + 57
 - `06` AFB III · _Argumentieren_ · Sara rechnet: 397 + 301 = 598 / Der Überschlag ist 400 + 300 = 700. / Stimmt das Ergebnis 598?
   - ☐ Falsch. / Es muss nahe bei 100 liegen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Ein Überschlag ist ja nie ganz genau.
   - ☑ Falsch. / Es muss nahe bei 700 liegen. / Richtig ist 698.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2628,7 +2628,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf Hunderter runden heißt: Die Zehn
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Bei einer Addition ist ein Summand 1899. Die Probe lautet 5000 − ▢ = 1899. Bestimme den anderen Summanden. Lösung: **3101**. Typische Fehler: 6899 (add-subtrahiert), 4101 (ergaenzen-zu-viel).
 - `06` AFB III · _Argumentieren_ · Jana prüft 46 + 28 = 74 mit der Rechnung 28 + 46. Ist das eine geeignete Probe? Wähle die richtige Begründung.
   - ☐ Nein. 28 + 46 hat ein anderes Ergebnis als 46 + 28.
-  - ☐ Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition.
+  - ☐ Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition. Wer sie richtig rechnet, hat das Ergebnis sicher geprüft.
   - ☑ Sie hilft nur wenig. Die Tauschaufgabe benutzt dieselben Zahlen, ein Denkfehler kann sich wiederholen. Sicherer ist 74 − 28 = 46.
   - ☐ Ja. Eine Probe muss immer eine Addition sein.
   - ☐ Nein. Beim Addieren darf man die Summanden nicht vertauschen.
@@ -2672,7 +2672,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dazu heißt plus. *Beispiel:* 40 Seit
   - ☑ 8 + 5
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Im Bus sind 57 Menschen. / 14 Menschen steigen ein. / Jonas rechnet 57 − 14 = 43. / Stimmt das? _(Bild: Streifenbild: Ganzes ?, Teile 57 und 14)_
   - ☐ Falsch. / Man muss 14 − 57 rechnen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die kleinere Zahl wird abgezogen.
   - ☑ Falsch. / Einsteigen heißt plus. / 57 + 14 = 71.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2759,7 +2759,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Minuend − Subtrahend = Differenz. *
 - `04` AFB I · _Kommunizieren_ · 76 − 43 = 33 / Ordne jeder Zahl den Namen zu. Lösung: 76 → Minuend, 43 → Subtrahend, 33 → Differenz
 - `05` AFB II · _Kommunizieren_ · Die Differenz ist 20. / Der Subtrahend ist 45. / Wie groß ist der Minuend? _(Bild: Streifenbild: Ganzes ?, Teile 45 und 20)_ Lösung: **65**. Typische Fehler: 25 (probe-falsche-umkehr).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: / „Bei 96 − 72 = 24 ist 72 der Minuend.“ / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Der Minuend steht hinter dem Minus.
   - ☐ Falsch. / 72 ist die Differenz.
   - ☑ Falsch. / 72 ist der Subtrahend.
 
@@ -2779,7 +2779,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Differenz ist das Ergebnis einer 
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara behauptet: „Wenn der Subtrahend größer wird und der Minuend gleich bleibt, wird auch die Differenz größer.“ Beurteile die Aussage.
   - ☑ Falsch. Beispiel: 80 − 20 = 60, aber 80 − 30 = 50. Wer mehr abzieht, behält weniger.
   - ☐ Das lässt sich nicht entscheiden. Es kommt auf die Zahlen an.
-  - ☐ Richtig. Größere Zahlen ergeben immer größere Ergebnisse.
+  - ☐ Richtig. Größere Zahlen ergeben immer größere Ergebnisse. Das gilt für jede Rechenart.
   - ☐ Richtig. Beispiel: 80 − 20 = 60 und 90 − 20 = 70.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -2795,7 +2795,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bilde zuerst die Summe. Sie ist der M
   - b) Bestimme die kleinere Zahl. **27**.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Minuend und Subtrahend sind natürliche Zahlen. Kann die Differenz größer sein als der Minuend? Wähle die richtige Begründung.
   - ☐ Ja. Bei 5 − 9 ist die Differenz größer als der Minuend.
-  - ☐ Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend.
+  - ☐ Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend, zum Beispiel bei 0.
   - ☐ Nein. Die Differenz ist immer kleiner als der Subtrahend.
   - ☐ Das hängt davon ab, ob die Zahlen gerade oder ungerade sind.
   - ☑ Nein. Vom Minuenden wird etwas weggenommen oder nichts. Die Differenz ist deshalb höchstens so groß wie der Minuend.
@@ -2854,7 +2854,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen genau untereinand
   - b) Rechne diese Aufgabe aus. **527**. Typische Fehler: 533 (sub-kleiner-von-groesser), 537 (sub-uebertrag-vergessen), 797 (sub-addiert).
 - `06` AFB III · _Argumentieren_ · Jonas rechnet: 683 − 579 = 116 / Bei den Einern rechnet Jonas 9 − 3 = 6. / Stimmt das? _(Bild: Stellenwerttafel H: 6, Z: 8, E: 3)_
   - ☑ Falsch. / Die Einer sind vertauscht. / Richtig ist 104.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man zieht immer die kleinere Zahl ab.
   - ☐ Falsch. / Hier muss man plus rechnen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2882,7 +2882,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Übertrag wandert über beide Nul
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · ANNA-Zahlen: 4334 − 3443 = 891, 5115 − 1551 = 3564, 7227 − 2772 = 4455. Alle Ergebnisse sind Vielfache von 891. Der Faktor hängt nur von den beiden Ziffern ab. Stelle die Regel auf und sage mit ihr 9229 − 2992 vorher: ▢ · 891 = ▢ Lösung: a = **7**, b = **6237**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Differenz zweier Zahlen ist 1228. Der Minuend wird um 250 größer, der Subtrahend um 250 kleiner. Bestimme die neue Differenz. Lösung: **1728**. Typische Fehler: 1228 (sach-schritt-vergessen), 1478 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren_ · „Vergrößere ich Minuend und Subtrahend um dieselbe Zahl, bleibt die Differenz gleich.“ Gilt das immer? Wähle die richtige Begründung.
-  - ☐ Ja, aber nur, wenn dabei kein Übertrag entsteht.
+  - ☐ Ja, aber nur, wenn dabei kein Übertrag entsteht. Mit Übertrag ändert sich der Abstand.
   - ☑ Ja, immer: Beide Zahlen verschieben sich auf dem Zahlenstrahl gleich weit. Ihr Abstand bleibt gleich.
   - ☐ Nein: Die Differenz wird doppelt so groß.
   - ☐ Nur bei geraden Zahlen: 8 − 2 = 6 und 10 − 4 = 6.
@@ -2922,7 +2922,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe die Zahlen nacheinander ab. *Be
   - ☐ 80 + 20
 - `06` AFB III · _Argumentieren_ · Lena rechnet 90 − 20 − 10 so: / 20 − 10 = 10 / 90 − 10 = 80 / Stimmt das?
   - ☑ Falsch. / Beide Zahlen gehen weg. / Richtig ist 60.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man darf auch zuerst 20 − 10 rechnen.
   - ☐ Falsch. / Richtig ist 120.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2957,7 +2957,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere zuerst alle Subtrahenden.
 - `06` AFB III · _Argumentieren_ · Lisa behauptet: „Bei a − b − c darf ich die beiden Subtrahenden vertauschen. Es gilt immer a − b − c = a − c − b.“ Wähle die richtige Begründung.
   - ☑ Das stimmt immer. Beide Male wird insgesamt b + c abgezogen. Beispiel: 90 − 20 − 30 = 40 und 90 − 30 − 20 = 40.
   - ☐ Das stimmt immer, denn auch a − b = b − a.
-  - ☐ Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen.
+  - ☐ Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen, auch nicht die Subtrahenden.
   - ☐ Das stimmt nur, wenn b größer ist als c.
   - ☐ Das stimmt nur, wenn b und c gleich groß sind.
 
@@ -3000,7 +3000,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten 
   - ☐ 16 − 79
   - ☐ 95 + 79
 - `06` AFB III · _Argumentieren_ · Emre rechnet: 805 − 295 = 610 / Der Überschlag ist 800 − 300 = 500. / Stimmt das Ergebnis 610?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Ein Überschlag ist ja nie ganz genau.
   - ☑ Falsch. / Es muss nahe bei 500 liegen. / Richtig ist 510.
   - ☐ Falsch. / Es muss nahe bei 1100 liegen.
 
@@ -3025,7 +3025,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde zuerst, rechne dann im Kopf. *L
   - ☑ 6098 − 3872
 - `06` AFB III · _Argumentieren_ · Zu 7514 − 2494 passt der Überschlag 8000 − 2000 = 6000. Das genaue Ergebnis ist 5020. Erkläre, warum der Überschlag so stark abweicht.
   - ☐ Beim Überschlag darf das Ergebnis beliebig weit abweichen.
-  - ☐ Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz.
+  - ☐ Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz, denn größere Zahlen ergeben mehr.
   - ☑ Der Minuend wurde um 486 aufgerundet, der Subtrahend um 494 abgerundet. Beide Rundungen vergrößern die Differenz.
   - ☐ Der Überschlag ist falsch gerechnet.
 
@@ -3092,7 +3092,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Das ganze Buch ist der lange Streifen
   - ☐ 13 + 4
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Im Bus sind 62 Menschen. / 16 Menschen steigen aus. / Ole rechnet 62 + 16 = 78. / Stimmt das? _(Bild: Streifenbild: Ganzes 62, Teile 16 und ?)_
   - ☑ Falsch. / Aussteigen heißt minus. / 62 − 16 = 46.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Es sind mehr Zahlen. / Also rechnet man plus.
   - ☐ Falsch. / Man muss 16 − 62 rechnen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3167,7 +3167,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst aus, was in der Klammer
   - ☑ 40 − 15
 - `06` AFB III · _Argumentieren_ · Ben rechnet 50 − (10 + 5) so: / 50 − 10 = 40 / 40 + 5 = 45 / Stimmt das?
   - ☑ Falsch. / Die Klammer kommt zuerst. / Richtig ist 35.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rechnet von links nach rechts.
   - ☐ Falsch. / Richtig ist 65.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3218,7 +3218,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei verschachtelten Klammern rechnest
 - `06` AFB III · _Argumentieren_ · Jonas behauptet: „Eine Klammer hinter einem Plus darf ich weglassen. Es gilt immer a + (b − c) = a + b − c.“ Wähle die richtige Begründung.
   - ☐ Das stimmt nur, wenn c kleiner ist als a.
   - ☐ Das stimmt nie. Klammern darf man nicht weglassen.
-  - ☐ Das stimmt nie. Beim Weglassen wird aus dem Minus ein Plus.
+  - ☐ Das stimmt nie. Beim Weglassen der Klammer wird aus dem Minus ein Plus, also ändert sich der Wert.
   - ☐ Das stimmt immer, denn auch a − (b − c) = a − b − c.
   - ☑ Das stimmt immer. In beiden Termen kommt b dazu und c geht weg. Beispiel: 50 + (20 − 5) = 65 und 50 + 20 − 5 = 65.
 
@@ -3267,7 +3267,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Preise gehen weg. In der Klamme
   - ☐ 7 Kinder und 13 Erwachsene. / 30 Menschen kommen dazu.
   - ☑ 30 Plätze. / 7 Kinder und 13 Erwachsene setzen sich.
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul hat 80 Euro. / Paul gibt erst 25 Euro aus, dann 10 Euro. / Paul schreibt: 80 − 25 + 10 / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Zahlen stehen in der richtigen Reihenfolge.
   - ☑ Falsch. / Beide Beträge gehen weg. / Richtig ist 80 − (25 + 10).
   - ☐ Falsch. / Richtig ist 80 + 25 + 10.
 
@@ -3316,7 +3316,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Baue den Term von innen nach außen: 
 - `04` AFB III · _Modellieren_ · Für welche Zahlen im Kästchen haben die Terme 100 − (▢ + 20) und 100 − ▢ − 20 denselben Wert? Stelle die Regel auf.
   - ☐ Nur für die Zahl 0.
   - ☐ Nur für die Zahl 20.
-  - ☐ Für keine Zahl: Eine Klammer verändert immer den Wert.
+  - ☐ Für keine Zahl: Eine Klammer verändert immer den Wert, sonst wäre sie unnötig.
   - ☐ Nur für gerade Zahlen.
   - ☑ Für jede Zahl von 0 bis 80: Beide Terme subtrahieren insgesamt die Zahl und 20.
 - `05` AFB II · _Modellieren_ · Mia ist 12 Jahre alt und hat 50 €. Mia kauft 3 Hefte für je 5 € und einen Füller für 9 €. Stelle einen Term auf und berechne das Restgeld. Lösung: **26 €**. Typische Fehler: 36 (sach-schritt-vergessen), 14 (sach-unnoetige-angabe).
@@ -3369,7 +3369,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau genau: Haben die Zahlen den Pla
   - ☐ (34 + 16) − 5
   - ☑ (34 + 16) + 5
 - `06` AFB III · _Argumentieren_ · Lena sagt: / 20 − 9 − 3 ist dasselbe wie 20 − (9 − 3). / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Eine Klammer ändert beim Minus-Rechnen nichts.
   - ☑ Falsch. / Links kommt 8 heraus. / Rechts kommt 14 heraus.
   - ☐ Falsch. / Links kommt 14 heraus. / Rechts kommt 8 heraus.
 
@@ -3398,7 +3398,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche beide Seiten: Hat sich die
   - ☐ Richtig. Die Rechengesetze gelten für alle Rechenarten.
   - ☑ Falsch. Ein Gegenbeispiel genügt: 12 − 6 = 6, aber 6 − 12 ist keine natürliche Zahl.
   - ☐ Richtig, denn 12 − 6 und 6 − 12 haben dasselbe Ergebnis.
-  - ☐ Falsch. Das Vertauschungsgesetz gilt für keine Rechenart.
+  - ☐ Falsch. Das Vertauschungsgesetz gilt für keine Rechenart, auch nicht für die Addition.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -3427,7 +3427,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Verbindungsgesetz bleibt die Rei
 - `06` AFB III · _Argumentieren_ · Paul behauptet: „a − b = b − a gilt für keine natürlichen Zahlen.“ Beurteile die Aussage.
   - ☐ Falsch. Die Gleichung gilt für alle natürlichen Zahlen.
   - ☑ Falsch. Für a = b gilt die Gleichung, zum Beispiel 7 − 7 = 7 − 7 = 0. Für verschiedene Zahlen gilt sie nicht.
-  - ☐ Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen.
+  - ☐ Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen. Die Ergebnisse sind immer verschieden.
   - ☐ Falsch. Die Gleichung gilt immer, wenn a größer ist als b.
   - ☐ Richtig. Auch wenn a und b gleich sind, sind die Ergebnisse verschieden.
 
@@ -3506,7 +3506,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bilde Paare mit gleicher Summe. Eine 
   - ☐ 20
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Es gilt 1 + 2 + 3 + … + 9 = 45. Berechne damit die Summe aller Zahlen von 31 bis 39: 31 + 32 + 33 + … + 39 = ▢ Lösung: a = **315**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · 3 + 4 + 5 + 6 + 7 = 25 und 10 + 11 + 12 + 13 + 14 = 60. Stelle eine Regel für die Summe von 5 aufeinanderfolgenden Zahlen auf.
-  - ☐ Die Summe ist die erste Zahl plus die letzte Zahl.
+  - ☐ Die Summe ist das Doppelte aus erster und letzter Zahl, denn die äußeren Zahlen bestimmen die Summe.
   - ☐ Es gibt keine Regel. Jede Summe muss einzeln berechnet werden.
   - ☐ Die Summe ist 5-mal die erste Zahl.
   - ☑ Die Summe ist 5-mal die mittlere Zahl, denn die äußeren Paare ergeben jeweils das Doppelte der mittleren Zahl.

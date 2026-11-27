@@ -59,7 +59,7 @@ export function addieren() {
         h3('Die Summe ist das Ganze. Ein Teil ist bekannt, der andere fehlt.', 'Summe 50, ein Summand 20: Der andere ist 30.', `Rechne ${s} − ${a}.`),
         { bild: B.streifen(s, [a, frage(s - a)]), nachweis: N(`${s} − ${a}`, `${a} + ${s - a}`) }); },
     () => { const [a, b] = paar(21, 68, 0), k = kind();
-      return auswahl(Z(`${k} sagt:`, `„Bei ${a} + ${b} = ${a + b} ist ${a + b} ein Summand.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'begriffe-verwechselt'), opt(`Falsch. ${a + b} ist die Summe.`, true), opt(`Falsch. ${a + b} ist die Differenz.`, false, 'begriffe-verwechselt')],
+      return auswahl(Z(`${k} sagt:`, `„Bei ${a} + ${b} = ${a + b} ist ${a + b} ein Summand.“`, 'Stimmt das?'), [opt('Stimmt. Jede Zahl der Aufgabe ist ein Summand.', false, 'begriffe-verwechselt'), opt(`Falsch. ${a + b} ist die Summe.`, true), opt(`Falsch. ${a + b} ist die Differenz.`, false, 'begriffe-verwechselt')],
         h3('Die Summanden stehen links vom Gleichheitszeichen.', 'Bei 4 + 5 = 9 ist 9 die Summe.', `${a + b} ist das Ergebnis. Das Ergebnis heißt Summe.`)); },
   ]);
   sechs(A('A1'), 'M', [
@@ -79,7 +79,7 @@ export function addieren() {
         opt(`Richtig. Beispiel: ${a} + ${b} = ${a + b} und ${a + 10} + ${b - 10} = ${a + b}. Was der eine Summand gewinnt, verliert der andere.`, true),
         opt(`Falsch. Beispiel: ${a} + ${b} = ${a + b}, aber ${a + 10} + ${b} = ${a + b + 10}.`, false, 'sach-schritt-vergessen'),
         opt('Falsch. Die Summe wird um 20 größer.', false, 'add-subtrahiert'),
-        opt('Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert.')],
+        opt('Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert. Das gilt für jede Änderung.')],
       h2('Prüfe die Aussage an einem Beispiel. Verändere beide Summanden.', `Vergleiche ${a} + ${b} mit ${a + 10} + ${b - 10}.`), { nachweis: [U(true), ...N(`${a} + ${b}`, `${a + 10} + ${b - 10}`)] }); },
   ]);
   sechs(A('A1'), 'E', [
@@ -98,7 +98,7 @@ export function addieren() {
         h1('Ziehe den Unterschied von der Summe ab. Dann bleiben zwei gleich große Teile.'), { nachweis: N(`${k} + ${d}`, `${k} + ${k + d}`, `(${2 * k + d} − ${d}) : 2`) }); },
     () => auswahl('Kann die Summe zweier natürlicher Zahlen kleiner sein als einer der beiden Summanden? Wähle die richtige Begründung.', [
       opt('Nein. Zu jedem Summanden kommt etwas dazu oder nichts. Die Summe ist deshalb mindestens so groß wie jeder Summand.', true),
-      opt('Ja. Bei sehr kleinen Summanden ist die Summe kleiner.'),
+      opt('Ja. Bei sehr kleinen Summanden ist die Summe kleiner als der größere Summand, zum Beispiel bei 1 und 0.'),
       opt('Ja. Bei 5 + 0 ist die Summe kleiner als 5.', false, 'begriffe-verwechselt'),
       opt('Nein. Die Summe ist immer genau doppelt so groß wie ein Summand.', false, 'begriffe-verwechselt'),
       opt('Das hängt davon ab, welcher Summand vorne steht.', false, 'gesetz-auf-subtraktion')],
@@ -151,7 +151,7 @@ export function addieren() {
         h3('Zähle in jeder Stelle die beiden Ziffern zusammen. Mehr als 9 bedeutet Übertrag.', '347 + 126: Die Einer ergeben 7 + 6 = 13. Hier brauchst du einen Übertrag.', 'Schau auf die Einer. Nur bei einer Aufgabe ergeben sie mehr als 9.'),
         { bild: B.tafel(['H', 'Z', 'E'], String(a).split('').map((x, i) => Number(x) + Number(String(b)[i]))), nachweis: [{ art: 'uebertrag', zeichen: '+', aufgaben: [[a, b], o1, o2], mit: [true, false, false] }, ...N(`${a} + ${b}`, `${o1[0]} + ${o1[1]}`, `${o2[0]} + ${o2[1]}`)] }); },
     () => { const [a, b] = paar(211, 688, 1, (x, y) => y >= 111 && x % 10 + y % 10 >= 10), k = kind();
-      return auswahl(Z(`${k} rechnet: ${a} + ${b} = ${addOhneUebertrag(a, b)}`, `Bei den Einern rechnet ${k} ${a % 10} + ${b % 10} = ${a % 10 + b % 10}.`, `${k} schreibt nur die ${(a + b) % 10} auf.`, 'Stimmt das Ergebnis?'), [opt('Stimmt.', false, 'add-uebertrag-vergessen'), opt(`Falsch. Der Übertrag fehlt. Richtig ist ${a + b}.`, true), opt('Falsch. Hier muss man minus rechnen.', false, 'add-subtrahiert')],
+      return auswahl(Z(`${k} rechnet: ${a} + ${b} = ${addOhneUebertrag(a, b)}`, `Bei den Einern rechnet ${k} ${a % 10} + ${b % 10} = ${a % 10 + b % 10}.`, `${k} schreibt nur die ${(a + b) % 10} auf.`, 'Stimmt das Ergebnis?'), [opt('Stimmt. Man schreibt nur die Einer auf.', false, 'add-uebertrag-vergessen'), opt(`Falsch. Der Übertrag fehlt. Richtig ist ${a + b}.`, true), opt('Falsch. Hier muss man minus rechnen.', false, 'add-subtrahiert')],
         h3('Bei mehr als 9 Einern wandert 1 Zehner in die nächste Spalte.', '347 + 126: Einer 13. Schreibe 3, Übertrag 1. Zehner 4 + 2 + 1 = 7. Ergebnis 473.', `Zehner: ${Math.floor(a / 10) % 10} + ${Math.floor(b / 10) % 10} + 1 = ${Math.floor(a / 10) % 10 + Math.floor(b / 10) % 10 + 1}.`),
         { bild: B.tafel(['H', 'Z', 'E'], String(a).split('').map((x, i) => Number(x) + Number(String(b)[i]))), nachweis: [U(false, `${a} + ${b}`, addOhneUebertrag(a, b)), ...N(`${a} + ${b}`)] }); },
   ]);
@@ -196,7 +196,7 @@ export function addieren() {
         h1('Ziehe den Unterschied von der Summe ab. Dann bleiben zwei gleich große Teile.'), { nachweis: N(`(${2 * k + d} − ${d}) : 2`, `${k} + ${d}`, `${k} + ${k + d}`) }); },
     () => auswahl('Zwei dreistellige Zahlen werden schriftlich addiert. Wie viele Überträge können höchstens entstehen? Wähle die richtige Begründung.', [
       opt('Drei. Beispiel: 999 + 999 = 1998. In jeder der drei Spalten entsteht ein Übertrag.', true),
-      opt('Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen.', false, 'add-uebertrag-vergessen'),
+      opt('Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen, weil links keine Spalte folgt.', false, 'add-uebertrag-vergessen'),
       opt('Vier. Das Ergebnis kann vierstellig sein.', false, 'stellenwert'),
       opt('Einer. Ein Übertrag entsteht nur bei den Einern.', false, 'add-uebertrag-vergessen'),
       opt('Beliebig viele. Das hängt von den Zahlen ab.')],
@@ -247,7 +247,7 @@ export function addieren() {
         h3('Vergleiche die Aufgaben Zahl für Zahl. Wo ist eine Zahl kleiner?', '120 + 230 + 310 ist größer als 120 + 230 + 301. Denn 310 ist größer als 301.', `${c - 9} ist kleiner als ${c}. ${a - 9} ist kleiner als ${a}.`),
         { bild: B.streifen(frage(a + b + c), [a, b, c]), nachweis: [GROESSTES, ...N(`${a} + ${b} + ${c}`, `${a} + ${b} + ${c - 9}`, `${a - 9} + ${b} + ${c}`)] }); },
     () => { const [a, b, c] = suche(() => [zz(12, 36), zz(12, 36), zz(12, 26)], (x) => summe(x.map((v) => v % 10)) >= 11 && summe(x.map((v) => v % 10)) <= 19 && summe(x) < 100 && !/0/.test(x.join(''))), k = kind(), e = a % 10 + b % 10 + c % 10;
-      return auswahl(Z(`${k} rechnet: ${a} + ${b} + ${c} = ${a + b + c - 10}`, `Bei den Einern rechnet ${k} ${a % 10} + ${b % 10} + ${c % 10} = ${e}.`, `${k} schreibt nur die ${e % 10} auf.`, 'Stimmt das Ergebnis?'), [opt('Stimmt.', false, 'add-uebertrag-vergessen'), opt(`Falsch. Der Übertrag fehlt. Richtig ist ${a + b + c}.`, true), opt(`Falsch. Richtig ist ${a + b + c - 20}.`, false, 'add-uebertrag-vergessen')],
+      return auswahl(Z(`${k} rechnet: ${a} + ${b} + ${c} = ${a + b + c - 10}`, `Bei den Einern rechnet ${k} ${a % 10} + ${b % 10} + ${c % 10} = ${e}.`, `${k} schreibt nur die ${e % 10} auf.`, 'Stimmt das Ergebnis?'), [opt('Stimmt. Man schreibt nur die Einer auf.', false, 'add-uebertrag-vergessen'), opt(`Falsch. Der Übertrag fehlt. Richtig ist ${a + b + c}.`, true), opt(`Falsch. Richtig ist ${a + b + c - 20}.`, false, 'add-uebertrag-vergessen')],
         h3('Bei mehr als 9 Einern wandert 1 Zehner in die nächste Spalte.', '24 + 35 + 16: Einer 15. Schreibe 5, Übertrag 1. Zehner 2 + 3 + 1 + 1 = 7. Ergebnis 75.', `Die Einer ergeben ${e}. Der Übertrag 1 gehört zu den Zehnern.`),
         { bild: B.tafel(['Z', 'E'], [summe([a, b, c].map((v) => Math.floor(v / 10))), e]), nachweis: [U(false, `${a} + ${b} + ${c}`, a + b + c - 10), ...N(`${a} + ${b} + ${c}`)] }); },
   ]);
@@ -267,7 +267,7 @@ export function addieren() {
     () => { const a = 3000 + zz(11, 99), b = zz(511, 589), k = kind();
       return auswahl(`${k} soll ${a} + ${b} berechnen und schreibt ${b} so unter ${a}, dass beide Zahlen links bündig stehen. Das Ergebnis ist ${a + 10 * b}. Beurteile das Vorgehen.`, [
         opt(`Falsch. Die Zahlen stehen nicht stellengerecht untereinander. So wurde ${a} + ${10 * b} gerechnet. Richtig ist ${a + b}.`, true),
-        opt('Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen.', false, 'stellenwert'),
+        opt('Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen. Welche Stellen das sind, ist egal.', false, 'stellenwert'),
         opt(`Falsch. ${k} hat die Überträge vergessen.`, false, 'add-uebertrag-vergessen'),
         opt('Richtig. Links bündig zu schreiben ist beim Addieren üblich.', false, 'stellenwert')],
       h2('Beim schriftlichen Addieren stehen Einer unter Einern, Zehner unter Zehnern.', `Überschlage: ${runde(a, 1000)} + ${runde(b, 100)} ist ungefähr ${runde(a, 1000) + runde(b, 100)}.`), { nachweis: [U(false, `${a} + ${b}`, a + 10 * b), ...N(`${a} + ${b}`, `${a} + ${10 * b}`, `${runde(a, 1000)} + ${runde(b, 100)}`, `10 · ${b}`)] }); },
@@ -289,7 +289,7 @@ export function addieren() {
       opt('Das stimmt immer. Zwei ungerade Zahlen ergeben zusammen eine gerade Zahl. Kommt eine ungerade dazu, wird die Summe ungerade.', true),
       opt('Das stimmt nie. 3 + 5 + 7 = 16.', false, 'add-uebertrag-vergessen'),
       opt('Das stimmt nur, wenn alle drei Zahlen verschieden sind.'),
-      opt('Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade.', false, 'begriffe-verwechselt'),
+      opt('Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade, ganz egal, wie viele Summanden es sind.', false, 'begriffe-verwechselt'),
       opt('Das stimmt nur bei einstelligen Zahlen.')],
     h1('Prüfe erst die Summe von zwei ungeraden Zahlen, zum Beispiel 3 + 5.'), { nachweis: [U(true), ...N('3 + 5', '3 + 5 + 7')] }),
   ]);
@@ -340,7 +340,7 @@ export function addieren() {
       return auswahl(Z(`${k} rechnet: ${a} + ${b} = ${a + b}`, `Mit welcher Rechnung macht ${k} die Probe?`), [opt(`${a + b} − ${b}`, true), opt(`${a + b} + ${b}`, false, 'probe-falsche-umkehr'), opt(`${b} − ${a}`, false, 'probe-falsche-umkehr')].filter((o, i, alle) => alle.findIndex((p) => p.text === o.text) === i),
         h3('Die Probe rechnet zurück zur ersten Zahl.', '46 + 28 = 74. Probe: 74 − 28 = 46.', `Die Probe muss wieder ${a} ergeben.`), { bild: B.streifen(a + b, [a, b]), nachweis: N(`${a} + ${b}`, `${a + b} − ${b}`) }); },
     () => { const a = zz(3, 5) * 100 - zz(1, 5), b = zz(2, 3) * 100 + zz(1, 5), k = kind(), ue = runde(a, 100) + runde(b, 100);
-      return auswahl(Z(`${k} rechnet: ${a} + ${b} = ${a + b - 100}`, `Der Überschlag ist ${runde(a, 100)} + ${runde(b, 100)} = ${ue}.`, `Stimmt das Ergebnis ${a + b - 100}?`), [opt('Stimmt.', false, 'ueberschlag-nicht-gerundet'), opt(`Falsch. Es muss nahe bei ${ue} liegen. Richtig ist ${a + b}.`, true), opt(`Falsch. Es muss nahe bei ${runde(a, 100) - runde(b, 100)} liegen.`, false, 'add-subtrahiert')],
+      return auswahl(Z(`${k} rechnet: ${a} + ${b} = ${a + b - 100}`, `Der Überschlag ist ${runde(a, 100)} + ${runde(b, 100)} = ${ue}.`, `Stimmt das Ergebnis ${a + b - 100}?`), [opt('Stimmt. Ein Überschlag ist ja nie ganz genau.', false, 'ueberschlag-nicht-gerundet'), opt(`Falsch. Es muss nahe bei ${ue} liegen. Richtig ist ${a + b}.`, true), opt(`Falsch. Es muss nahe bei ${runde(a, 100) - runde(b, 100)} liegen.`, false, 'add-subtrahiert')],
         h3('Vergleiche das Ergebnis mit dem Überschlag. Beide müssen nah beieinanderliegen.', '298 + 203: Überschlag 300 + 200 = 500. Das Ergebnis 401 ist zu weit weg. Richtig ist 501.', `Der Überschlag ist ${ue}. Das Ergebnis ${a + b - 100} ist 100 zu klein.`),
         { nachweis: [U(false, `${a} + ${b}`, a + b - 100), `${a} ≈ ${runde(a, 100)}`, `${b} ≈ ${runde(b, 100)}`, ...N(`${runde(a, 100)} + ${runde(b, 100)}`, `${a} + ${b}`, `${runde(a, 100)} − ${runde(b, 100)}`)] }); },
   ]);
@@ -395,7 +395,7 @@ export function addieren() {
     () => auswahl('Jana prüft 46 + 28 = 74 mit der Rechnung 28 + 46. Ist das eine geeignete Probe? Wähle die richtige Begründung.', [
       opt('Sie hilft nur wenig. Die Tauschaufgabe benutzt dieselben Zahlen, ein Denkfehler kann sich wiederholen. Sicherer ist 74 − 28 = 46.', true),
       opt('Nein. 28 + 46 hat ein anderes Ergebnis als 46 + 28.', false, 'gesetz-auf-subtraktion'),
-      opt('Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition.', false, 'probe-falsche-umkehr'),
+      opt('Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition. Wer sie richtig rechnet, hat das Ergebnis sicher geprüft.', false, 'probe-falsche-umkehr'),
       opt('Nein. Beim Addieren darf man die Summanden nicht vertauschen.', false, 'gesetz-auf-subtraktion'),
       opt('Ja. Eine Probe muss immer eine Addition sein.', false, 'probe-falsche-umkehr')],
     h1('Eine gute Probe führt auf einem anderen Weg zurück zur Ausgangszahl.'), { nachweis: [U(false), ...N('46 + 28', '28 + 46', '74 − 28')] }),
@@ -443,7 +443,7 @@ export function addieren() {
       return auswahl(Z(`${k} ist ${a} Jahre alt.`, `Die Schwester ist ${b} Jahre älter.`, 'Wie alt ist die Schwester?', 'Welche Rechnung passt?'), [opt(`${a} + ${b}`, true), opt(`${a} − ${b}`, false, 'sach-falsche-rechnung'), opt(`${b} − ${a}`, false, 'begriffe-verwechselt')],
         h3('Wer älter ist, hat die größere Zahl.', 'Tim ist 10. Eva ist 2 Jahre älter. Eva ist 10 + 2 = 12.', `Die Schwester ist älter als ${k}. Ihre Zahl ist größer als ${a}.`), { bild: B.vergleich({ name: 'Schwester', wert: frage(a + b) }, { name: k, wert: a }, b), nachweis: N(`${a} + ${b}`) }); },
     () => { const a = zz(31, 58), b = zz(12, 29), k = kind();
-      return auswahl(Z(`Im Bus sind ${a} Menschen.`, `${b} Menschen steigen ein.`, `${k} rechnet ${a} − ${b} = ${a - b}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'sach-falsche-rechnung'), opt(`Falsch. Einsteigen heißt plus. ${a} + ${b} = ${a + b}.`, true), opt(`Falsch. Man muss ${b} − ${a} rechnen.`, false, 'begriffe-verwechselt')],
+      return auswahl(Z(`Im Bus sind ${a} Menschen.`, `${b} Menschen steigen ein.`, `${k} rechnet ${a} − ${b} = ${a - b}.`, 'Stimmt das?'), [opt('Stimmt. Die kleinere Zahl wird abgezogen.', false, 'sach-falsche-rechnung'), opt(`Falsch. Einsteigen heißt plus. ${a} + ${b} = ${a + b}.`, true), opt(`Falsch. Man muss ${b} − ${a} rechnen.`, false, 'begriffe-verwechselt')],
         h3('Steigen Menschen ein, werden es mehr.', '40 Menschen, 10 steigen ein: 40 + 10 = 50.', `Rechne ${a} + ${b}.`), { bild: B.streifen(frage(a + b), [a, b]), nachweis: [U(false, `${a} + ${b}`, a - b), ...N(`${a} + ${b}`)] }); },
   ]);
   sechs(A('A5'), 'M', [

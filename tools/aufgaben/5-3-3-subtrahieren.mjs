@@ -61,7 +61,7 @@ export function subtrahieren() {
         h3('Der Minuend ist die ganze Zahl am Anfang. Zähle beide Teile zusammen.', 'Differenz 20, Subtrahend 15: Der Minuend ist 35.', `Rechne ${d} + ${b}.`),
         { bild: B.streifen(frage(d + b), [b, d]), nachweis: N(`${d} + ${b}`, `${d + b} − ${b}`) }); },
     () => { const [a, b] = paar(40, 99, 0); const k = kind();
-      return auswahl(Z(`${k} sagt:`, `„Bei ${a} − ${b} = ${a - b} ist ${b} der Minuend.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'begriffe-verwechselt'), opt(`Falsch. ${b} ist der Subtrahend.`, true), opt(`Falsch. ${b} ist die Differenz.`, false, 'begriffe-verwechselt')],
+      return auswahl(Z(`${k} sagt:`, `„Bei ${a} − ${b} = ${a - b} ist ${b} der Minuend.“`, 'Stimmt das?'), [opt('Stimmt. Der Minuend steht hinter dem Minus.', false, 'begriffe-verwechselt'), opt(`Falsch. ${b} ist der Subtrahend.`, true), opt(`Falsch. ${b} ist die Differenz.`, false, 'begriffe-verwechselt')],
         h3('Der Minuend steht vorne. Von ihm wird abgezogen.', 'Bei 9 − 4 = 5 ist 9 der Minuend.', `Vorne steht ${a}. Also ist ${a} der Minuend.`)); },
   ]);
   sechs(S('S1'), 'M', [
@@ -83,7 +83,7 @@ export function subtrahieren() {
       return auswahl(`${k} behauptet: „Wenn der Subtrahend größer wird und der Minuend gleich bleibt, wird auch die Differenz größer.“ Beurteile die Aussage.`, [
         opt(`Falsch. Beispiel: ${a} − ${b} = ${a - b}, aber ${a} − ${b + 10} = ${a - b - 10}. Wer mehr abzieht, behält weniger.`, true),
         opt(`Richtig. Beispiel: ${a} − ${b} = ${a - b} und ${a + 10} − ${b} = ${a - b + 10}.`, false, 'begriffe-verwechselt'),
-        opt('Richtig. Größere Zahlen ergeben immer größere Ergebnisse.'),
+        opt('Richtig. Größere Zahlen ergeben immer größere Ergebnisse. Das gilt für jede Rechenart.'),
         opt('Das lässt sich nicht entscheiden. Es kommt auf die Zahlen an.')],
       h2('Prüfe die Aussage an einem Beispiel und verändere nur den Subtrahenden.', `Vergleiche ${a} − ${b} mit ${a} − ${b + 10}.`), { nachweis: [U(false), ...N(`${a} − ${b}`, `${a} − ${b + 10}`)] }); },
   ]);
@@ -103,7 +103,7 @@ export function subtrahieren() {
         h1('Ziehe die Differenz von der Summe ab. Dann bleibt zweimal die kleinere Zahl.'), { nachweis: N(`(${x + y} − ${x - y}) : 2`, `${y} + ${x - y}`, `${x} + ${y}`, `${x} − ${y}`) }); },
     () => auswahl('Minuend und Subtrahend sind natürliche Zahlen. Kann die Differenz größer sein als der Minuend? Wähle die richtige Begründung.', [
       opt('Nein. Vom Minuenden wird etwas weggenommen oder nichts. Die Differenz ist deshalb höchstens so groß wie der Minuend.', true),
-      opt('Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend.', false, 'begriffe-verwechselt'),
+      opt('Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend, zum Beispiel bei 0.', false, 'begriffe-verwechselt'),
       opt('Ja. Bei 5 − 9 ist die Differenz größer als der Minuend.', false, 'sub-kleiner-von-groesser'),
       opt('Nein. Die Differenz ist immer kleiner als der Subtrahend.', false, 'begriffe-verwechselt'),
       opt('Das hängt davon ab, ob die Zahlen gerade oder ungerade sind.')],
@@ -156,7 +156,7 @@ export function subtrahieren() {
         h3('Vergleiche in jeder Stelle die obere Ziffer mit der unteren.', '563 − 248: Bei den Einern ist 3 kleiner als 8. Hier brauchst du einen Übertrag.', 'Schau auf die Einer. Nur bei einer Aufgabe ist die obere Ziffer kleiner.'),
         { bild: B.tafel(['H', 'Z', 'E'], String(a).split('').map(Number)), nachweis: [{ art: 'uebertrag', zeichen: '−', aufgaben: [[a, b], o1, o2], mit: [true, false, false] }, ...N(`${a} − ${b}`, `${o1[0]} − ${o1[1]}`, `${o2[0]} − ${o2[1]}`)] }); },
     () => { const [a, b] = paar(300, 999, 1, (x, y) => y >= 111 && x % 10 < y % 10); const falsch = kleinerVonGroesser(a, b), k = kind();
-      return auswahl(Z(`${k} rechnet: ${a} − ${b} = ${falsch}`, `Bei den Einern rechnet ${k} ${b % 10} − ${a % 10} = ${b % 10 - a % 10}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'sub-kleiner-von-groesser'), opt(`Falsch. Die Einer sind vertauscht. Richtig ist ${a - b}.`, true), opt('Falsch. Hier muss man plus rechnen.', false, 'sub-addiert')],
+      return auswahl(Z(`${k} rechnet: ${a} − ${b} = ${falsch}`, `Bei den Einern rechnet ${k} ${b % 10} − ${a % 10} = ${b % 10 - a % 10}.`, 'Stimmt das?'), [opt('Stimmt. Man zieht immer die kleinere Zahl ab.', false, 'sub-kleiner-von-groesser'), opt(`Falsch. Die Einer sind vertauscht. Richtig ist ${a - b}.`, true), opt('Falsch. Hier muss man plus rechnen.', false, 'sub-addiert')],
         h3('Es wird immer die untere Ziffer von der oberen abgezogen.', '452 − 127: Einer 2 − 7 geht nicht. Tausche: 12 − 7 = 5. Ergebnis 325.', `Oben steht ${a % 10}, unten ${b % 10}. Rechne ${a % 10 + 10} − ${b % 10}.`), { bild: B.tafel(['H', 'Z', 'E'], String(a).split('').map(Number)), nachweis: [U(false, `${a} − ${b}`, falsch), ...N(`${a} − ${b}`)] }); },
   ]);
   sechs(S('S2'), 'M', [
@@ -210,7 +210,7 @@ export function subtrahieren() {
       opt('Nein: Die Differenz wird um diese Zahl größer.', false, 'begriffe-verwechselt'),
       opt('Nein: Die Differenz wird doppelt so groß.'),
       opt('Nur bei geraden Zahlen: 8 − 2 = 6 und 10 − 4 = 6.'),
-      opt('Ja, aber nur, wenn dabei kein Übertrag entsteht.', false, 'sub-uebertrag-vergessen')],
+      opt('Ja, aber nur, wenn dabei kein Übertrag entsteht. Mit Übertrag ändert sich der Abstand.', false, 'sub-uebertrag-vergessen')],
     h1('Die Differenz ist der Abstand zweier Zahlen auf dem Zahlenstrahl. Prüfe an 8 − 2 und 10 − 4.'), { nachweis: [U(true), ...N('8 − 2', '10 − 4')] }),
   ]);
 
@@ -261,7 +261,7 @@ export function subtrahieren() {
         h3('Zähle zusammen, was insgesamt weggeht.', '50 − 13 − 7: Es gehen 13 + 7 = 20 weg. Also 50 − 20.', `${b} + ${c} = ${b + c}.`),
         { bild: B.streifen(a, [b, c, frage(a - b - c)]), nachweis: N(`${a} − ${b} − ${c}`, `${a} − ${b + c}`, `${b} + ${c}`) }); },
     () => { const a = zz(6, 9) * 10, b = zz(2, 3) * 10, c = 10, k = kind();
-      return auswahl(Z(`${k} rechnet ${a} − ${b} − ${c} so:`, `${b} − ${c} = ${b - c}`, `${a} − ${b - c} = ${a - b + c}`, 'Stimmt das?'), [opt('Stimmt.', false, 'sub-klammerfehler'), opt(`Falsch. Beide Zahlen gehen weg. Richtig ist ${a - b - c}.`, true), opt(`Falsch. Richtig ist ${a + b + c}.`, false, 'sub-addiert')],
+      return auswahl(Z(`${k} rechnet ${a} − ${b} − ${c} so:`, `${b} − ${c} = ${b - c}`, `${a} − ${b - c} = ${a - b + c}`, 'Stimmt das?'), [opt(`Stimmt. Man darf auch zuerst ${b} − ${c} rechnen.`, false, 'sub-klammerfehler'), opt(`Falsch. Beide Zahlen gehen weg. Richtig ist ${a - b - c}.`, true), opt(`Falsch. Richtig ist ${a + b + c}.`, false, 'sub-addiert')],
         h3('Jede Zahl hinter einem Minus wird abgezogen.', '50 − 20 − 10: Es gehen 20 und 10 weg, zusammen 30. Ergebnis 20.', `${a} − ${b} = ${a - b}. Davon gehen noch ${c} weg.`), { nachweis: [U(false, `${a} − ${b} − ${c}`, a - b + c), ...N(`${a} − ${b} − ${c}`)] }); },
   ]);
   sechs(S('S3'), 'M', [
@@ -301,7 +301,7 @@ export function subtrahieren() {
       return zahl(`In ${r + 2 * x} − ▢ − ▢ = ${r} steht in beiden Kästchen dieselbe Zahl. Bestimme sie.`, x, fehlerliste(x, [[2 * x, 'sach-schritt-vergessen']]), h1('Berechne zuerst, wie viel insgesamt subtrahiert wird.'), { nachweis: N(`${r + 2 * x} − ${x} − ${x}`, `(${r + 2 * x} − ${r}) : 2`) }); },
     () => auswahl('Lisa behauptet: „Bei a − b − c darf ich die beiden Subtrahenden vertauschen. Es gilt immer a − b − c = a − c − b.“ Wähle die richtige Begründung.', [
       opt('Das stimmt immer. Beide Male wird insgesamt b + c abgezogen. Beispiel: 90 − 20 − 30 = 40 und 90 − 30 − 20 = 40.', true),
-      opt('Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen.', false, 'gesetz-auf-subtraktion'),
+      opt('Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen, auch nicht die Subtrahenden.', false, 'gesetz-auf-subtraktion'),
       opt('Das stimmt nur, wenn b und c gleich groß sind.'),
       opt('Das stimmt immer, denn auch a − b = b − a.', false, 'gesetz-auf-subtraktion'),
       opt('Das stimmt nur, wenn b größer ist als c.')],
@@ -360,7 +360,7 @@ export function subtrahieren() {
         h3('Die Probe rechnet zurück zur ersten Zahl.', '74 − 28 = 46. Probe: 46 + 28 = 74.', `Die Probe muss wieder ${a} ergeben.`),
         { bild: B.streifen(a, [b, a - b]), nachweis: N(`${a} − ${b}`, `${a - b} + ${b}`) }); },
     () => { const [a, b] = suche(() => [zz(5, 9) * 100 + zz(1, 5), zz(2, 3) * 100 - zz(1, 5)], () => true), k = kind();
-      return auswahl(Z(`${k} rechnet: ${a} − ${b} = ${a - b + 100}`, `Der Überschlag ist ${runde(a, 100)} − ${runde(b, 100)} = ${runde(a, 100) - runde(b, 100)}.`, `Stimmt das Ergebnis ${a - b + 100}?`), [opt('Stimmt.', false, 'ueberschlag-nicht-gerundet'), opt(`Falsch. Es muss nahe bei ${runde(a, 100) - runde(b, 100)} liegen. Richtig ist ${a - b}.`, true), opt(`Falsch. Es muss nahe bei ${runde(a, 100) + runde(b, 100)} liegen.`, false, 'sub-addiert')],
+      return auswahl(Z(`${k} rechnet: ${a} − ${b} = ${a - b + 100}`, `Der Überschlag ist ${runde(a, 100)} − ${runde(b, 100)} = ${runde(a, 100) - runde(b, 100)}.`, `Stimmt das Ergebnis ${a - b + 100}?`), [opt('Stimmt. Ein Überschlag ist ja nie ganz genau.', false, 'ueberschlag-nicht-gerundet'), opt(`Falsch. Es muss nahe bei ${runde(a, 100) - runde(b, 100)} liegen. Richtig ist ${a - b}.`, true), opt(`Falsch. Es muss nahe bei ${runde(a, 100) + runde(b, 100)} liegen.`, false, 'sub-addiert')],
         h3('Vergleiche das Ergebnis mit dem Überschlag. Beide müssen nah beieinanderliegen.', '603 − 298: Überschlag 600 − 300 = 300. Das Ergebnis 405 ist zu weit weg. Richtig ist 305.', `Der Überschlag ist ${runde(a, 100) - runde(b, 100)}. Das Ergebnis ${a - b + 100} ist 100 zu groß.`),
         { nachweis: [U(false, `${a} − ${b}`, a - b + 100), `${a} ≈ ${runde(a, 100)}`, `${b} ≈ ${runde(b, 100)}`, ...N(`${runde(a, 100)} − ${runde(b, 100)}`, `${a} − ${b}`, `${runde(a, 100)} + ${runde(b, 100)}`)] }); },
   ]);
@@ -385,7 +385,7 @@ export function subtrahieren() {
     () => { const a = zz(5, 7) * 1000 + zz(505, 540), b = zz(2, 3) * 1000 + zz(455, 495), ue = runde(a, 1000) - runde(b, 1000);
       return auswahl(`Zu ${a} − ${b} passt der Überschlag ${runde(a, 1000)} − ${runde(b, 1000)} = ${ue}. Das genaue Ergebnis ist ${a - b}. Erkläre, warum der Überschlag so stark abweicht.`, [
         opt(`Der Minuend wurde um ${runde(a, 1000) - a} aufgerundet, der Subtrahend um ${b - runde(b, 1000)} abgerundet. Beide Rundungen vergrößern die Differenz.`, true),
-        opt('Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz.', false, 'falsch-gerundet'),
+        opt('Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz, denn größere Zahlen ergeben mehr.', false, 'falsch-gerundet'),
         opt('Der Überschlag ist falsch gerechnet.', false, 'ueberschlag-nicht-gerundet'),
         opt('Beim Überschlag darf das Ergebnis beliebig weit abweichen.')],
       h2('Prüfe für jede der beiden Zahlen: Wurde auf- oder abgerundet, und was bewirkt das für die Differenz?', `${a} wurde auf ${runde(a, 1000)} aufgerundet. Das sind ${runde(a, 1000) - a} mehr.`),
@@ -464,7 +464,7 @@ export function subtrahieren() {
       return auswahl(Z(`${k} ist ${a} Jahre alt.`, `${k} ist ${b} Jahre älter als der Bruder.`, 'Wie alt ist der Bruder?', 'Welche Rechnung passt?'), [opt(`${a} − ${b}`, true), opt(`${a} + ${b}`, false, 'sach-falsche-rechnung'), opt(`${b} − ${a}`, false, 'begriffe-verwechselt')],
         h3(`Wer ist jünger? Der Jüngere hat die kleinere Zahl.`, 'Tim ist 10. Er ist 2 Jahre älter als Eva. Eva ist 10 − 2 = 8.', `Der Bruder ist jünger als ${k}. Seine Zahl ist kleiner als ${a}.`), { bild: B.vergleich({ name: k, wert: a }, { name: 'Bruder', wert: frage(a - b) }, b), nachweis: N(`${a} − ${b}`) }); },
     () => { const [a, b] = paar(50, 80, 1, (x, y) => y >= 12 && y <= 29), k = kind();
-      return auswahl(Z(`Im Bus sind ${a} Menschen.`, `${b} Menschen steigen aus.`, `${k} rechnet ${a} + ${b} = ${a + b}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'sach-falsche-rechnung'), opt(`Falsch. Aussteigen heißt minus. ${a} − ${b} = ${a - b}.`, true), opt(`Falsch. Man muss ${b} − ${a} rechnen.`, false, 'begriffe-verwechselt')],
+      return auswahl(Z(`Im Bus sind ${a} Menschen.`, `${b} Menschen steigen aus.`, `${k} rechnet ${a} + ${b} = ${a + b}.`, 'Stimmt das?'), [opt('Stimmt. Es sind mehr Zahlen. Also rechnet man plus.', false, 'sach-falsche-rechnung'), opt(`Falsch. Aussteigen heißt minus. ${a} − ${b} = ${a - b}.`, true), opt(`Falsch. Man muss ${b} − ${a} rechnen.`, false, 'begriffe-verwechselt')],
         h3('Steigen Menschen aus, werden es weniger.', '40 Menschen, 10 steigen aus: 40 − 10 = 30.', `Rechne ${a} − ${b}.`), { bild: B.streifen(a, [b, frage(a - b)]), nachweis: [U(false, `${a} − ${b}`, a + b), ...N(`${a} − ${b}`)] }); },
   ]);
   sechs(S('S5'), 'M', [

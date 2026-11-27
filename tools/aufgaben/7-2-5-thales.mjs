@@ -49,7 +49,7 @@ function t1() {
         { bild: thales(a, drehFuer('G'), { zeige: { A: WERT(a), C: GESUCHT('γ', 90), B: GESUCHT('β', b) } }), nachweis: [{ art: 'thales' }, R(`180° − 90° − ${a}° = ${b}°`), FIG('γ', { luecke: 'g' }), FIG('β', { luecke: 'b' })] }); },
     () => { const a = alphaT('G');
       return auswahl(Z('C liegt auf dem Thaleskreis über AB.', 'Warum ist γ ein rechter Winkel?', 'Kreuze die richtige Begründung an.'),
-        [opt('AB ist ein Durchmesser, und C liegt auf dem Kreis.', true), opt('Jedes Dreieck hat einen rechten Winkel.', false, 'dreieck-art'), opt('C liegt genau über dem Mittelpunkt.', false, 'thales-durchmesser')],
+        [opt('AB ist ein Durchmesser, und C liegt auf dem Kreis.', true), opt('Jedes Dreieck hat einen rechten Winkel.', false, 'dreieck-art'), opt('C liegt genau über dem Mittelpunkt des Kreises.', false, 'thales-durchmesser')],
         hThales('G'), { bild: thales(a, drehFuer('G'), { mitM: true }), nachweis: [{ art: 'thales' }, { art: 'urteil', stimmt: true }] }); },
   ]);
   sechs(T1, 'M', [
@@ -70,7 +70,7 @@ function t1() {
         { bild: thales(a, drehFuer('M'), { mitM: true, zeige: { A: WERT(a) }, extra: { linien: [['M', 'C', { stil: 'hilfs' }]], winkel: [['M', 'A', 'C', { n: 'δ', wert: d, frage: true, farbe: 2 }]] } }), nachweis: [R(`180° − ${a}° − ${a}° = ${d}°`), FIG('δ')] }); },
     () => { const k = kind(), a = alphaT('M');
       return auswahl(`${k} sagt: „C liegt auf dem Thaleskreis über AB. Also ist α = 90°.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt('Der rechte Winkel liegt an der Ecke auf dem Kreis, also bei C. Es ist γ = 90°.', true), opt('Der rechte Winkel liegt immer bei A.', false, 'thales-durchmesser'), opt('Im Thaleskreis gibt es keinen rechten Winkel.', false, 'thales-durchmesser'), opt('Der rechte Winkel liegt beim Mittelpunkt M.', false, 'thales-durchmesser')],
+        [opt('Der rechte Winkel liegt an der Ecke auf dem Kreis, also bei C. Es ist γ = 90°.', true), opt('Der rechte Winkel liegt immer bei A.', false, 'thales-durchmesser'), opt('Im Thaleskreis gibt es keinen rechten Winkel, nur am Durchmesser.', false, 'thales-durchmesser'), opt('Der rechte Winkel liegt beim Mittelpunkt M.', false, 'thales-durchmesser')],
         hThales('M'), { bild: thales(a, drehFuer('M')), nachweis: [{ art: 'thales' }, { art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(T1, 'E', [
@@ -149,7 +149,7 @@ function t2() {
     () => heftT('M'),
     () => { const k = kind();
       return auswahl(`${k} soll ein Dreieck mit c = 6 cm, γ = 90° und b = 7 cm zeichnen. Der Kreis um A schneidet den Thaleskreis nicht. Erkläre, warum. Kreuze an.`,
-        [opt('b ist länger als der Durchmesser c. Im rechtwinkligen Dreieck ist c die längste Seite.', true), opt('Der Zirkel war falsch eingestellt.', false, 'thales-durchmesser'), opt('Man muss den Kreis um B zeichnen.', false, 'konstruktion-reihenfolge'), opt('Der Thaleskreis ist zu klein gezeichnet.', false, 'thales-durchmesser')],
+        [opt('b ist länger als der Durchmesser c. Im rechtwinkligen Dreieck ist c die längste Seite.', true), opt('Der Zirkel war falsch eingestellt.', false, 'thales-durchmesser'), opt('Man muss den Kreis um B zeichnen.', false, 'konstruktion-reihenfolge'), opt('Der Thaleskreis ist zu klein gezeichnet. Ein größerer Kreis über c würde passen.', false, 'thales-durchmesser')],
         H('M', 'Alle Punkte des Thaleskreises sind höchstens c von A entfernt.', 'Vergleiche b = 7 cm mit dem Durchmesser c = 6 cm.'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(T2, 'E', [
@@ -162,11 +162,11 @@ function t2() {
     () => ordnen('Konstruiere ein Dreieck mit c, γ = 90° und der Höhe h_c. Ordne die Schritte.',
       ['Zeichne c und den Thaleskreis über c.', 'Zeichne eine Parallele zu c im Abstand h_c.', 'Ein Schnittpunkt der Parallelen mit dem Thaleskreis ist C.', 'Verbinde C mit A und B.'], H('E', 'C muss zwei Bedingungen erfüllen.')),
     () => auswahl('Gegeben sind c = 8 cm und γ = 90°. Für welche Höhe h_c gibt es genau ein Dreieck oberhalb von c (bis auf Spiegeln an der Mittelsenkrechten)? Kreuze an.',
-      [opt('h_c = 4 cm, denn dann berührt die Parallele den Thaleskreis.', true), opt('h_c = 8 cm', false, 'thales-durchmesser'), opt('h_c = 2 cm', false, 'thales-durchmesser'), opt('Für jede Höhe gibt es genau eins.', false, 'thales-durchmesser')],
+      [opt('h_c = 4 cm, denn dann berührt die Parallele den Thaleskreis.', true), opt('h_c = 8 cm', false, 'thales-durchmesser'), opt('h_c = 2 cm', false, 'thales-durchmesser'), opt('Für jede beliebige Höhe gibt es genau ein solches Dreieck.', false, 'thales-durchmesser')],
       H('E', 'Der Thaleskreis hat den Radius 4 cm.'), { nachweis: ['8 : 2 = 4'] }),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Mit c = 6 cm und γ = 90° ist das Dreieck schon eindeutig.“ Beurteile die Aussage. Kreuze an.`,
-        [opt('Falsch. C kann überall auf dem Thaleskreis liegen. Es fehlt eine dritte Angabe.', true), opt('Richtig. Der Thaleskreis legt C fest.', false, 'kongruenz-verwechselt'), opt('Richtig. Es gibt nur ein rechtwinkliges Dreieck mit c = 6 cm.', false, 'kongruenz-verwechselt'), opt('Falsch. Es gibt gar kein solches Dreieck.', false, 'thales-durchmesser')],
+        [opt('Falsch. C kann überall auf dem Thaleskreis liegen. Es fehlt eine dritte Angabe.', true), opt('Richtig. Der Thaleskreis legt C fest.', false, 'kongruenz-verwechselt'), opt('Richtig. Es gibt nur ein einziges rechtwinkliges Dreieck mit c = 6 cm.', false, 'kongruenz-verwechselt'), opt('Falsch. Es gibt gar kein solches Dreieck.', false, 'thales-durchmesser')],
         H('E', 'Wie viele Punkte hat der Thaleskreis?'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
 }
@@ -200,7 +200,7 @@ function tangenten() {
     ['Von einem Punkt außerhalb gibt es genau zwei Tangenten an einen Kreis.', true, 'Der Thaleskreis über MQ schneidet den Kreis in zwei Punkten.', 'tangente-nicht-senkrecht'],
     ['Von einem Punkt innerhalb des Kreises gibt es eine Tangente.', false, 'Jede Gerade durch einen Punkt innerhalb schneidet den Kreis zweimal.', 'innen-aussen-verwechselt'],
     ['In jedem Punkt des Kreises gibt es genau eine Tangente.', true, 'Es gibt genau eine Senkrechte zum Radius durch diesen Punkt.', 'tangente-nicht-senkrecht']]);
-    return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage. Kreuze an.`, [opt(`${stimmt ? 'Stimmt' : 'Stimmt nicht'}. ${grund}`, true), opt(`${stimmt ? 'Stimmt nicht' : 'Stimmt'}. Das sieht man an der Zeichnung.`, false, fv), opt('Das hängt vom Radius ab.', false, fv)],
+    return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage. Kreuze an.`, [opt(`${stimmt ? 'Stimmt' : 'Stimmt nicht'}. ${grund}`, true), opt(`${stimmt ? 'Stimmt nicht' : 'Stimmt'}. Das sieht man ohne Begründung an der Zeichnung.`, false, fv), opt('Das hängt vom Radius ab.', false, fv)],
       H('E', 'Denke an den rechten Winkel zwischen Tangente und Radius.'), { nachweis: [{ art: 'urteil', stimmt }] }); };
   const abstand = () => { const [q, t1] = wahl(VON_AUSSEN), Q = v(q), T = v(t1), l = Math.abs(Q[0] - T[0]) + Math.abs(Q[1] - T[1]); if (Q[0] !== T[0] && Q[1] !== T[1]) return null;
     return zahl('Von Q geht eine Tangente an den Kreis um M. Sie berührt ihn im Punkt T. Bestimme die Länge der Strecke QT in Kästchen.', l, [[5, 'tangente-nicht-senkrecht']].filter(([x]) => x !== l),
@@ -216,7 +216,7 @@ function tangenten() {
     () => lageD(), () => beruehr('Tippe die Berührpunkte der beiden Tangenten von Q an den Kreis an.'), () => viereck(),
     () => grad('Der Radius MP und die Tangente in P bilden einen Winkel. Gib seine Größe an.', 90, [[180, 'tangente-nicht-senkrecht'], [45, 'tangente-nicht-senkrecht']], H('E', 'Wie steht die Tangente zum Radius?'), { nachweis: [{ art: 'tangente' }] }),
     () => rechterWinkel(), () => auswahl('Warum schneidet der Thaleskreis über MQ den Kreis genau in den Berührpunkten? Kreuze an.',
-      [opt('Für Punkte T auf dem Thaleskreis ist ∢MTQ = 90°. Dann steht QT senkrecht auf dem Radius MT.', true), opt('Weil der Thaleskreis so groß ist wie der Kreis.', false, 'thales-durchmesser'), opt('Weil Q auf dem Kreis liegt.', false, 'innen-aussen-verwechselt'), opt('Weil MQ eine Tangente ist.', false, 'tangente-nicht-senkrecht')],
+      [opt('Für Punkte T auf dem Thaleskreis ist ∢MTQ = 90°. Dann steht QT senkrecht auf dem Radius MT.', true), opt('Weil der Thaleskreis so groß ist wie der Kreis und ihn deshalb genau zweimal trifft.', false, 'thales-durchmesser'), opt('Weil Q auf dem Kreis liegt.', false, 'innen-aussen-verwechselt'), opt('Weil MQ eine Tangente ist.', false, 'tangente-nicht-senkrecht')],
       H('E', 'Was gilt für den Winkel zwischen Tangente und Radius?'), { nachweis: [{ art: 'thales' }, { art: 'urteil', stimmt: true }] }),
     () => tangenteIn('Zeichne die Tangente in P. Sie soll senkrecht zum Radius MP stehen.'), () => abstand(), () => urteil(), () => beruehr('Q liegt außerhalb des Kreises. Tippe die Punkte an, in denen die Tangenten von Q den Kreis berühren.'),
     () => tangenteIn('Konstruiere die Tangente im Punkt P des Kreises.'), () => viereck(),

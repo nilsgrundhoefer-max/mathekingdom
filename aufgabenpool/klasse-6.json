@@ -146405,7 +146405,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon 15 zählen nur die Einer.",
       "richtig": false,
       "fehlvorstellung": "add-uebertrag-vergessen"
      },
@@ -146633,7 +146633,7 @@
       "richtig": true
      },
      {
-      "text": "Falsch. Ungerade plus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -147179,7 +147179,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
       "richtig": false,
       "fehlvorstellung": "sub-kleiner-von-groesser"
      },
@@ -147406,7 +147406,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch. Ungerade minus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -148018,7 +148018,7 @@
       "fehlvorstellung": "add-subtrahiert"
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan schreibt nur die Einer auf.",
       "richtig": false,
       "fehlvorstellung": "add-uebertrag-vergessen"
      }
@@ -148857,7 +148857,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
       "richtig": false,
       "fehlvorstellung": "sub-kleiner-von-groesser"
      },

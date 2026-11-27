@@ -108,7 +108,7 @@ function d1() {
         H('E', 'Liegt C genau über der Mitte von AB, sind AC und BC gleich lang.'), { bild: gitterBild(GT(x0 + 2 * s + 2, h + 2, { punkte: [PT('A', ...A), PT('B', ...Bp), PT('C', ...C)], figuren: [FG(null, [A, Bp, C])] })), nachweis: [{ art: 'klasse', ecken: [A, Bp, C], nach: 'seiten' }] }); },
     () => { const k = kind(), [e, f, s] = wahl([['A', 'B', 'c'], ['B', 'C', 'a'], ['A', 'C', 'b']]), falsch = wahl(['a', 'b', 'c'].filter((x) => x !== s));
       return auswahl(`${k} beschriftet die Seite zwischen ${e} und ${f} mit ${falsch}. Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt(`Eine Seite heißt wie die Ecke, die ihr gegenüberliegt. Richtig ist ${s}.`, true), opt(`Eine Seite heißt wie ihre erste Ecke. Richtig ist ${e.toLowerCase()}.`, false, 'seite-ecke-vertauscht'), opt('Die Beschriftung ist frei wählbar.', false, 'seite-ecke-vertauscht'), opt(`Richtig ist ${f.toLowerCase()}.`, false, 'seite-ecke-vertauscht')].filter((o, i, l) => l.findIndex((p) => p.text === o.text) === i),
+        [opt(`Eine Seite heißt wie die Ecke, die ihr gegenüberliegt. Richtig ist ${s}.`, true), opt(`Eine Seite heißt wie ihre erste Ecke. Richtig ist ${e.toLowerCase()}.`, false, 'seite-ecke-vertauscht'), opt('Die Beschriftung ist frei wählbar, jede Seite darf jeden Buchstaben haben.', false, 'seite-ecke-vertauscht'), opt(`Richtig ist ${f.toLowerCase()}.`, false, 'seite-ecke-vertauscht')].filter((o, i, l) => l.findIndex((p) => p.text === o.text) === i),
         H('E', 'Welche Ecke gehört nicht zu dieser Seite?'), { nachweis: [{ art: 'name', seite: s, ecken: [e, f] }, { art: 'urteil', stimmt: false }] }); },
     () => { const [k, w] = wahl([[2, [60, 30, 90]], [3, [67.5, 22.5, 90]], [4, [72, 18, 90]], [5, [75, 15, 90]], [2, [80, 40, 60]], [3, [90, 30, 60]], [2, [100, 50, 30]], [3, [105, 35, 40]]]); if (!w.every(Number.isInteger)) return null;
       return sach(`Im Dreieck ABC ist γ = ${w[2]}° und α ist ${k}-mal so groß wie β. Teile das Dreieck ein.`, [teilWahl('antwort', 'Nach den Winkeln:', wOptionen(winkelArt(w))), teilWahl('antwort', 'Nach den Seiten:', sOptionen(seitenArt(w)))],
@@ -188,7 +188,7 @@ function d2() {
           nachweis: [R(`180° − ${aw}° = ${b}°`), R(`180° − ${b}° − ${b}° = ${180 - 2 * b}°`), FIG('γ')] }); },
     () => { const k = kind(), [s, b] = basisAusSpitze('M');
       return auswahl(`Das Dreieck ABC ist gleichschenklig mit der Spitze C und γ = ${s}°. ${k} rechnet: „α = ${s}°, denn im gleichschenkligen Dreieck sind zwei Winkel gleich.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt(`Gleich groß sind nur die Basiswinkel α und β. Richtig ist α = (180° − ${s}°) : 2 = ${b}°.`, true), opt('Die Rechnung stimmt.', false, 'basiswinkel-falsch'), opt(`Richtig ist α = 180° − ${s}° = ${180 - s}°.`, false, 'basiswinkel-falsch'), opt('Im gleichschenkligen Dreieck sind alle Winkel gleich.', false, 'dreieck-sonderfall')],
+        [opt(`Gleich groß sind nur die Basiswinkel α und β. Richtig ist α = (180° − ${s}°) : 2 = ${b}°.`, true), opt('Die Rechnung stimmt.', false, 'basiswinkel-falsch'), opt(`Richtig ist α = 180° − ${s}° = ${180 - s}°.`, false, 'basiswinkel-falsch'), opt('Im gleichschenkligen Dreieck sind alle Winkel gleich. Jeder Winkel ist 60° groß.', false, 'dreieck-sonderfall')],
         hBasis('M', s), { bild: gsBild(b, drehFuer('M'), { C: WERT(s), A: NAME('α') }), nachweis: [R(`180° − ${s}° = ${180 - s}°`), `${180 - s}° : 2 = ${b}°`, { art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(D2, 'E', [
@@ -209,11 +209,11 @@ function d2() {
         H('E', 'Spitze und zwei Basiswinkel: Zähle die Teile von der Größe der Spitze.'), { nachweis: [{ zahl: 2 * k + 1, grund: `1 Teil für die Spitze und 2 · ${k} Teile für die Basiswinkel` }, `180° : ${2 * k + 1} = ${s}°`, `${k} · ${s}° = ${b}°`] }); },
     () => { const k = kind(), x = winkelFuer('E', 35, 75), E = dreieckAus(x, 180 - 2 * x, drehFuer('E'));
       return auswahl(`Im Dreieck ABC ist α = γ = ${x}°. ${k} sagt: „Dann ist c die Basis.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt('Die Basis liegt zwischen den gleichen Winkeln, also zwischen A und C. Das ist die Seite b.', true), opt('c ist richtig, denn c ist immer die Basis.', false, 'basiswinkel-falsch'), opt('Die Basis ist a, denn a liegt bei α.', false, 'seite-ecke-vertauscht'), opt('Es gibt keine Basis, weil β fehlt.', false, 'basiswinkel-falsch')],
+        [opt('Die Basis liegt zwischen den gleichen Winkeln, also zwischen A und C. Das ist die Seite b.', true), opt('c ist richtig, denn im gleichschenkligen Dreieck ist c immer die Basis und liegt unten.', false, 'basiswinkel-falsch'), opt('Die Basis ist a, denn a liegt bei α.', false, 'seite-ecke-vertauscht'), opt('Es gibt keine Basis, weil β fehlt.', false, 'basiswinkel-falsch')],
         H('E', 'Die Basiswinkel liegen an den Enden der Basis.'), { bild: dreieckBild(E, { A: WERT(x), C: WERT(x) }), nachweis: [{ art: 'name', seite: 'b', basis: true }, { art: 'urteil', stimmt: false }] }); },
     () => { const x = winkelFuer('E', 91, 100);
       return auswahl(`Kann ein gleichschenkliges Dreieck einen Basiswinkel von ${x}° haben? Begründe. Kreuze die richtige Antwort an.`,
-        [opt(`Nein. Beide Basiswinkel wären zusammen ${2 * x}°, mehr als 180°.`, true), opt('Ja. Dann ist das Dreieck stumpfwinklig.', false, 'basiswinkel-falsch'), opt(`Ja. Die Spitze hat dann ${180 - x}°.`, false, 'basiswinkel-falsch'), opt('Nein. Basiswinkel sind immer 45°.', false, 'basiswinkel-falsch')],
+        [opt(`Nein. Beide Basiswinkel wären zusammen ${2 * x}°, mehr als 180°.`, true), opt('Ja. Dann ist das Dreieck stumpfwinklig, das ist erlaubt.', false, 'basiswinkel-falsch'), opt(`Ja. Die Spitze hat dann ${180 - x}°.`, false, 'basiswinkel-falsch'), opt('Nein. Basiswinkel sind immer 45°.', false, 'basiswinkel-falsch')],
         H('E', 'Es gibt zwei gleich große Basiswinkel.'), { nachweis: [`2 · ${x}° = ${2 * x}°`, { art: 'urteil', stimmt: false }] }); },
     () => ordnen('Begründe: Im gleichseitigen Dreieck ist jeder Winkel 60° groß. Ordne die Schritte.',
       ['Jede Seite ist so lang wie die anderen. Jede Seite kann Basis sein.', 'Nach dem Basiswinkelsatz ist α = β und β = γ.', 'Also sind alle drei Winkel gleich groß.', 'Mit der Winkelsumme ist jeder Winkel 180° : 3 = 60°.'],

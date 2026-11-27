@@ -39071,7 +39071,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nVon 15 zählen nur die Einer.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
@@ -39299,7 +39299,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch. Ungerade plus ungerade bleibt ungerade.",
+     "text": "Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -39435,7 +39435,7 @@
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "571 + 277, denn hier wurden beide Summanden verändert",
+     "text": "571 + 277, denn hier wurden beide Summanden um 3 verändert und beide Änderungen zählen",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -40085,7 +40085,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
      "richtig": false,
      "fehlvorstellung": "sub-kleiner-von-groesser"
     },
@@ -40312,7 +40312,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Ungerade minus ungerade bleibt ungerade.",
+     "text": "Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -40457,7 +40457,7 @@
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
     {
-     "text": "757 − 258, denn beide Zahlen sind hier am größten",
+     "text": "757 − 258, denn beide Zahlen sind hier am größten, also auch die Differenz",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41038,7 +41038,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nErst plus 20 rechnen.\nDann kommt noch 1 dazu.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41297,7 +41297,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen.",
+     "text": "Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen, also noch einmal abgezogen.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41418,7 +41418,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "661 − 298, denn der Minuend darf beliebig verändert werden",
+     "text": "661 − 298, denn der Minuend darf beim Rechnen beliebig verändert werden",
      "richtig": false
     },
     {
@@ -41475,7 +41475,7 @@
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
     {
-     "text": "Summe: die Summanden gleichsinnig verändern. Differenz: gegensinnig verändern.",
+     "text": "Summe: die Summanden gleichsinnig verändern. Differenz: Minuend und Subtrahend gegensinnig verändern.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41990,7 +41990,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nJede Zahl der Aufgabe ist ein Summand.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -42179,7 +42179,7 @@
      "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
-     "text": "Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert.",
+     "text": "Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert. Das gilt für jede Änderung.",
      "richtig": false
     },
     {
@@ -42376,7 +42376,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja. Bei sehr kleinen Summanden ist die Summe kleiner.",
+     "text": "Ja. Bei sehr kleinen Summanden ist die Summe kleiner als der größere Summand, zum Beispiel bei 1 und 0.",
      "richtig": false
     },
     {
@@ -42986,7 +42986,7 @@
      "fehlvorstellung": "add-subtrahiert"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan schreibt nur die Einer auf.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     }
@@ -43423,7 +43423,7 @@
      "richtig": true
     },
     {
-     "text": "Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen.",
+     "text": "Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen, weil links keine Spalte folgt.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
@@ -43992,7 +43992,7 @@
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan schreibt nur die Einer auf.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     }
@@ -44228,7 +44228,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen.",
+     "text": "Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen. Welche Stellen das sind, ist egal.",
      "richtig": false,
      "fehlvorstellung": "stellenwert"
     },
@@ -44485,7 +44485,7 @@
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
     {
-     "text": "Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade.",
+     "text": "Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade, ganz egal, wie viele Summanden es sind.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -44976,7 +44976,7 @@
      "fehlvorstellung": "add-subtrahiert"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEin Überschlag ist ja nie ganz genau.",
      "richtig": false,
      "fehlvorstellung": "ueberschlag-nicht-gerundet"
     },
@@ -45459,7 +45459,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition.",
+     "text": "Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition. Wer sie richtig rechnet, hat das Ergebnis sicher geprüft.",
      "richtig": false,
      "fehlvorstellung": "probe-falsche-umkehr"
     },
@@ -45975,7 +45975,7 @@
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie kleinere Zahl wird abgezogen.",
      "richtig": false,
      "fehlvorstellung": "sach-falsche-rechnung"
     },
@@ -46952,7 +46952,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDer Minuend steht hinter dem Minus.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -47141,7 +47141,7 @@
      "richtig": false
     },
     {
-     "text": "Richtig. Größere Zahlen ergeben immer größere Ergebnisse.",
+     "text": "Richtig. Größere Zahlen ergeben immer größere Ergebnisse. Das gilt für jede Rechenart.",
      "richtig": false
     },
     {
@@ -47332,7 +47332,7 @@
      "fehlvorstellung": "sub-kleiner-von-groesser"
     },
     {
-     "text": "Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend.",
+     "text": "Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend, zum Beispiel bei 0.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -47959,7 +47959,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
      "richtig": false,
      "fehlvorstellung": "sub-kleiner-von-groesser"
     },
@@ -48382,7 +48382,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja, aber nur, wenn dabei kein Übertrag entsteht.",
+     "text": "Ja, aber nur, wenn dabei kein Übertrag entsteht. Mit Übertrag ändert sich der Abstand.",
      "richtig": false,
      "fehlvorstellung": "sub-uebertrag-vergessen"
     },
@@ -48920,7 +48920,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan darf auch zuerst 20 − 10 rechnen.",
      "richtig": false,
      "fehlvorstellung": "sub-klammerfehler"
     },
@@ -49331,7 +49331,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen.",
+     "text": "Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen, auch nicht die Subtrahenden.",
      "richtig": false,
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
@@ -49816,7 +49816,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEin Überschlag ist ja nie ganz genau.",
      "richtig": false,
      "fehlvorstellung": "ueberschlag-nicht-gerundet"
     },
@@ -50083,7 +50083,7 @@
      "richtig": false
     },
     {
-     "text": "Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz.",
+     "text": "Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz, denn größere Zahlen ergeben mehr.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -50793,7 +50793,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEs sind mehr Zahlen.\nAlso rechnet man plus.",
      "richtig": false,
      "fehlvorstellung": "sach-falsche-rechnung"
     },
@@ -51725,7 +51725,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rechnet von links nach rechts.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -52211,7 +52211,7 @@
      "fehlvorstellung": "klammer-ignoriert"
     },
     {
-     "text": "Das stimmt nie. Beim Weglassen wird aus dem Minus ein Plus.",
+     "text": "Das stimmt nie. Beim Weglassen der Klammer wird aus dem Minus ein Plus, also ändert sich der Wert.",
      "richtig": false,
      "fehlvorstellung": "klammer-falsch-gesetzt"
     },
@@ -52717,7 +52717,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Zahlen stehen in der richtigen Reihenfolge.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -53101,7 +53101,7 @@
      "richtig": false
     },
     {
-     "text": "Für keine Zahl: Eine Klammer verändert immer den Wert.",
+     "text": "Für keine Zahl: Eine Klammer verändert immer den Wert, sonst wäre sie unnötig.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -53666,7 +53666,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEine Klammer ändert beim Minus-Rechnen nichts.",
      "richtig": false,
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
@@ -53916,7 +53916,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Falsch. Das Vertauschungsgesetz gilt für keine Rechenart.",
+     "text": "Falsch. Das Vertauschungsgesetz gilt für keine Rechenart, auch nicht für die Addition.",
      "richtig": false
     }
    ],
@@ -54164,7 +54164,7 @@
      "richtig": true
     },
     {
-     "text": "Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen.",
+     "text": "Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen. Die Ergebnisse sind immer verschieden.",
      "richtig": false
     },
     {
@@ -55053,7 +55053,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die Summe ist die erste Zahl plus die letzte Zahl.",
+     "text": "Die Summe ist das Doppelte aus erster und letzter Zahl, denn die äußeren Zahlen bestimmen die Summe.",
      "richtig": false
     },
     {

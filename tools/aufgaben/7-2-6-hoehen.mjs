@@ -98,7 +98,7 @@ function h1() {
         H('M', 'Zeichne die Höhe zuerst ein. Sie geht von C senkrecht zu c.', 'Zähle die Diagonalen der Kästchen von C bis zum Fußpunkt.'), { bild: gitterBild(gitterVon(d)), nachweis: [{ art: 'gitterlaenge', a: d.C, b: F, wert: l, diagonal: true }] }); },
     () => { const k = kind();
       return auswahl(`${k} sagt: „Die Höhe h_c steht senkrecht zum unteren Heftrand.“ Erkläre, wann das falsch ist. Kreuze an.`,
-        [opt('Wenn c schräg liegt. Die Höhe steht senkrecht auf c, nicht auf dem Heftrand.', true), opt('Nie. Höhen gehen immer von oben nach unten.', false, 'hoehe-nicht-senkrecht'), opt('Nur bei stumpfwinkligen Dreiecken.', false, 'hoehe-falsche-seite'), opt('Wenn das Dreieck klein ist.', false, 'hoehe-nicht-senkrecht')],
+        [opt('Wenn c schräg liegt. Die Höhe steht senkrecht auf c, nicht auf dem Heftrand.', true), opt('Nie. Höhen gehen immer gerade von oben nach unten, wie die Linien im Heft.', false, 'hoehe-nicht-senkrecht'), opt('Nur bei stumpfwinkligen Dreiecken.', false, 'hoehe-falsche-seite'), opt('Wenn das Dreieck klein ist.', false, 'hoehe-nicht-senkrecht')],
         hHoehe('M', 'c'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(H1, 'E', [
@@ -110,7 +110,7 @@ function h1() {
         { einheit: 'mm', toleranz: 2, nachweis: [{ art: 'heft', gegeben: { a, b, c }, gesucht: 'h_a', satz: 'sss' }] }); },
     () => { const k = kind(), d = hoehenDreieck('E', { seite: 'c' });
       return auswahl(`${k} zeichnet die Höhe h_c von C aus senkrecht auf die Seite a. Erkläre den Fehler. Kreuze an.`,
-        [opt('h_c steht senkrecht auf c. Senkrecht auf a steht die Höhe h_a, und sie geht von A aus.', true), opt('Das ist richtig, a liegt bei C.', false, 'hoehe-falsche-seite'), opt('Die Höhe muss zur Mitte von c gehen.', false, 'hoehe-nicht-senkrecht'), opt('Eine Höhe darf nie an einer Ecke beginnen.', false, 'hoehe-falsche-seite')],
+        [opt('h_c steht senkrecht auf c. Senkrecht auf a steht die Höhe h_a, und sie geht von A aus.', true), opt('Das ist richtig, a liegt bei C.', false, 'hoehe-falsche-seite'), opt('Die Höhe muss zur Mitte von c gehen, sonst ist es keine Höhe, sondern nur eine Linie.', false, 'hoehe-nicht-senkrecht'), opt('Eine Höhe darf nie an einer Ecke beginnen.', false, 'hoehe-falsche-seite')],
         hHoehe('E', 'c'), { bild: gitterBild(gitterVon(d)), nachweis: [{ art: 'urteil', stimmt: false }] }); },
     () => { const [a, b] = wahl([[3, 4], [6, 8], [4, 3], [8, 6]]), c = Math.hypot(a, b), h = (a * b) / c; // h_c hat höchstens eine Nachkommastelle
       return zahl(`Ein Dreieck hat bei C einen rechten Winkel und die Seiten a = ${a} cm, b = ${b} cm und c = ${c} cm. Die Höhe h_c ist ${String(h).replace('.', ',')} cm lang. Bestimme die Länge der Höhe h_a in Zentimetern.`, b, [[h, 'hoehe-falsche-seite'], [a, 'hoehe-falsche-seite']].filter(([x]) => Number.isInteger(x)),
@@ -147,7 +147,7 @@ function h2() {
     () => schnitt('G', 'stumpf', Z('Das Dreieck ist stumpfwinklig.', 'Zwei Höhen sind gezeichnet.', 'Tippe den Höhenschnittpunkt an.'), true),
     () => { const k = kind();
       return auswahl(Z(`${k} sagt: „Im stumpfwinkligen Dreieck gibt es keine Höhe h_c.“`, 'Kreuze die richtige Begründung an.'),
-        [opt('Das stimmt nicht. Man verlängert c, dann steht h_c senkrecht auf der Verlängerung.', true), opt('Das stimmt. Die Höhe passt nicht ins Dreieck.', false, 'hoehe-falsche-seite'), opt('Das stimmt nicht. h_c geht dann zur Mitte von c.', false, 'hoehe-nicht-senkrecht')],
+        [opt('Das stimmt nicht. Man verlängert c, dann steht h_c senkrecht auf der Verlängerung.', true), opt('Das stimmt. Die Höhe passt nicht ins Dreieck.', false, 'hoehe-falsche-seite'), opt('Das stimmt nicht. h_c geht dann von C zur Mitte von c.', false, 'hoehe-nicht-senkrecht')],
         hStumpf('G'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(H2, 'M', [
@@ -161,7 +161,7 @@ function h2() {
     () => schnitt('M', 'stumpf', 'Das Dreieck ist stumpfwinklig. Zwei Höhen sind gezeichnet. Tippe den Höhenschnittpunkt an.', true),
     () => { const k = kind();
       return auswahl(`${k} findet im rechtwinkligen Dreieck mit γ = 90° den Höhenschnittpunkt nicht, weil „man nur eine Höhe zeichnen kann“. Erkläre. Kreuze an.`,
-        [opt('Die Seiten a und b sind selbst Höhen. Sie schneiden sich in C, also ist H = C.', true), opt('Im rechtwinkligen Dreieck gibt es keinen Höhenschnittpunkt.', false, 'hoehe-falsche-seite'), opt('H liegt auf der Mitte von c.', false, 'hoehe-nicht-senkrecht'), opt('H liegt außerhalb.', false, 'innen-aussen-verwechselt')],
+        [opt('Die Seiten a und b sind selbst Höhen. Sie schneiden sich in C, also ist H = C.', true), opt('Im rechtwinkligen Dreieck gibt es keinen Höhenschnittpunkt, nur eine Höhe.', false, 'hoehe-falsche-seite'), opt('H liegt auf der Mitte von c.', false, 'hoehe-nicht-senkrecht'), opt('H liegt außerhalb.', false, 'innen-aussen-verwechselt')],
         H('M', 'Welche Seiten stehen senkrecht aufeinander?', 'a und b stehen senkrecht. Sie sind selbst Höhen und schneiden sich in C.'), { nachweis: [{ art: 'urteil', stimmt: false }, { art: 'hoehenschnitt', dreieck: 'recht' }] }); },
   ]);
   sechs(H2, 'E', [
@@ -170,7 +170,7 @@ function h2() {
     () => schnitt('E', 'spitz', 'Bestimme den Höhenschnittpunkt H des Dreiecks und tippe ihn an.', false),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Im stumpfwinkligen Dreieck liegen alle drei Fußpunkte außerhalb.“ Beurteile die Aussage. Kreuze an.`,
-        [opt('Falsch. Die Höhe von der Ecke mit dem stumpfen Winkel hat ihren Fußpunkt auf der Gegenseite.', true), opt('Richtig. Darum muss man alle Seiten verlängern.', false, 'hoehe-falsche-seite'), opt('Richtig. Auch H liegt außerhalb.', false, 'innen-aussen-verwechselt'), opt('Falsch. Alle Fußpunkte liegen innen.', false, 'hoehe-falsche-seite')],
+        [opt('Falsch. Die Höhe von der Ecke mit dem stumpfen Winkel hat ihren Fußpunkt auf der Gegenseite.', true), opt('Richtig. Darum muss man im stumpfwinkligen Dreieck alle drei Seiten verlängern.', false, 'hoehe-falsche-seite'), opt('Richtig. Auch H liegt außerhalb.', false, 'innen-aussen-verwechselt'), opt('Falsch. Alle Fußpunkte liegen innen.', false, 'hoehe-falsche-seite')],
         H('E', 'Zeichne ein stumpfwinkliges Dreieck und alle drei Höhen.'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
     () => { const g = zz(20, 70);
       // Im Dreieck ABC sei H der Höhenschnittpunkt. ∢AHB = 180° − γ (Viereck aus zwei Fußpunkten, C und H mit zwei rechten Winkeln).
