@@ -261,8 +261,12 @@ Ein Unterkapitel auf der Regionskarte. Er ist gemeistert, wenn der Schüler alle
 _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 
 **Aufgabenführung**:
-Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt: erst alle Lernziele des Meilensteins, an dem er zuletzt gearbeitet hat, bis er dort die Krone in seiner Kronenwahl trägt, dann der nächste nicht gemeisterte Meilenstein danach im Lernpfad, am Ende wieder von vorn. Abstecher überspringt sie, bietet sie aber an. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
+Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt. Sie geht in Runden: In der ersten Runde kommt jedes Lernziel des Meilensteins, an dem er zuletzt gearbeitet hat, einmal dran, bis es ein Siegel hat oder unter dem Ziel geschafft ist, dann der nächste Meilenstein im Lernpfad. Lieber den ganzen Lernpfad auf Silber als lange in einem Lernziel. Ist der Lernpfad einmal durchgearbeitet, beginnt die nächste Runde vorn bei den Lernzielen ohne Siegel, wieder auf dem Zielniveau. Ein Lernziel, das zweimal nur unter dem Ziel geschafft ist, schlägt sie nicht mehr von selbst vor; die Lehrkraft bekommt dazu einen Impuls. Abstecher überspringt sie, bietet sie aber an. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
 _Avoid_: Empfehlung, Lernpfad (das ist der Weg durch das Kapitel)
+
+**Unter dem Ziel geschafft**:
+Ein Lernziel, das ein Schüler nach derselben Regel wie fürs Siegel nachgewiesen hat, aber nur auf einer Niveaustufe unter seinem Zielniveau. Es bringt kein Siegel; die Aufgabenführung geht danach zum nächsten Lernziel. Der Schüler sieht die Marke „Silber geschafft“, die Lehrkraft den Lernzielstand „unter dem Ziel geschafft“ mit der Niveaustufe. Danach bringen Aufgaben dieses Lernziels unter dem Zielniveau nur noch 1 Münze.
+_Avoid_: halb geschafft, Silbersiegel
 
 **Meilensteinfreigabe**:
 Die Wahl der Lehrkraft, dass in einem Kapitel für eine Klasse nur bestimmte Meilensteine offen sind. Standard: alle offen. Die übrigen liegen im Nebel und gehen für einen Schüler alle auf einmal auf, sobald er alle freigegebenen Meilensteine gemeistert hat. Ein Abstecher geht auf, wenn der Meilenstein gemeistert ist, an dem er hängt; für die übrigen ist er nicht nötig. Was ein Schüler schon begonnen hat oder wofür er eine Krone hat, bleibt für ihn offen.
@@ -403,7 +407,7 @@ Die Form, in der Schüler die Niveaustufen sehen: Bronze (F), Silber (G), Gold (
 _Avoid_: Kronenstufe, Lila, Purple
 
 **Kronenwahl**:
-Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für ein Lernziel: Jedes neue Lernziel beginnt wieder auf seinem Zielniveau. Sinkt er auf Silber, bietet das Dashboard das an; lehnt er ab und löst erneut drei der letzten fünf Aufgaben nicht, wechselt es von selbst. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F. Purpur schlägt das Schüler-Dashboard nie vor, weder nach guten Aufgaben auf Gold noch nach dem Einstiegscheck: Purpur wählt der Schüler selbst, oder die Lehrkraft setzt sein Zielniveau auf E.
+Die Kronenfarbe, um die ein Schüler gerade spielt („Spiele um Gold“). Sie legt fest, auf welchem Niveau seine Aufgaben kommen, und gilt für ein Lernziel: Jedes neue Lernziel beginnt wieder auf seinem Zielniveau; eine selbst gewählte höhere Krone gilt für das Kapitel, bis er einmal absinkt. Sinkt er auf Silber, bietet das Dashboard das an; lehnt er ab und löst erneut drei der letzten fünf Aufgaben nicht, wechselt es von selbst. Zur Wahl stehen Silber, Gold und Purpur; Bronze nur bei Zielniveau F. Purpur schlägt das Schüler-Dashboard nie vor, weder nach guten Aufgaben auf Gold noch nach dem Einstiegscheck: Purpur wählt der Schüler selbst, oder die Lehrkraft setzt sein Zielniveau auf E.
 _Avoid_: Straße wechseln, Niveauwahl (auf dem Bildschirm)
 
 **Selbsteinschätzung**:
@@ -764,7 +768,7 @@ _Avoid_: Statistik (allein), Auswertung
 - **Ansicht**: Welche ausschaltbaren Auswertungen eine Lehrkraft eingeschaltet hat. Sie gilt für alle Klassen dieser Lehrkraft und liegt in ihren Lehrerdaten, damit sie an jedem Schulrechner gleich ist. Eine ausgeschaltete Auswertung verschwindet ganz; der Bereich nennt nur, wie viele ausgeblendet sind. Geändert wird sie über „Ansicht anpassen“ oben im Bereich.
   _Avoid_: Einstellungen, Layout, Profil
 - **Tafelbild**: Vollbild-Ansicht im Bereich Jetzt, die eine Aufgabe mit den häufigsten falschen Antworten der Klasse am Beamer zeigt, ohne Codes und Namen. Sie wird aus einem Mini-Workshop-Impuls geöffnet.
-- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick oder im Seitenblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
+- **Lernzielstand**: Wie weit ein Schüler bei einem Lernziel ist: nicht begonnen, begonnen, wackelig, unter dem Ziel geschafft, Siegel, gefestigt oder aufzufrischen. Gefestigt heißt: Siegel vorhanden und das Lernziel mindestens sieben Tage nach dem Siegel im Rückblick oder im Seitenblick richtig gelöst. Aufzufrischen heißt: Siegel vorhanden, aber im Rückblick falsch gelöst.
 - **Hilfebedarf**: Wie oft ein Schüler bei einem Lernziel Beispiel- oder Lösungsschritt-Kärtchen braucht, und ob das mit der Zeit weniger wird.
 - **Versuchsverlauf**: Für die Lehrkraft die letzten Aufgaben eines Schülers mit erstem Versuch, zweitem Versuch, Ergebnis und erkannter Fehlvorstellung. Wackelig heißt begonnen, aber mit vielen Fehlversuchen oder Lösungsschritt-Kärtchen.
 
