@@ -541,12 +541,20 @@ Ein Export der Diagnose als PDF oder Excel-Datei; Namen werden erst beim Export 
 _Avoid_: Report, Ausdruck
 
 **Merkzettel**:
-Die Regeln eines Unterkapitels in Kürze, mit einem vorgerechneten Beispiel und einem Hinweis fürs Heft. Jederzeit frei zugänglich, kostet keine Münzen und zählt nicht als Hilfekärtchen.
+Die Regel eines Lernziels in höchstens zwei Sätzen mit einem vorgerechneten Beispiel, neben der Aufgabe dieses Lernziels. Eine Rechnung im Beispiel steht wie im Heft. Jederzeit frei zugänglich, kostet keine Münzen und zählt nicht als Hilfekärtchen. An der Meilenstein-Tafel stehen die Merkzettel aller Lernziele des Meilensteins. Der Hinweis fürs Heft erscheint nur bei einer Heftaufgabe.
 _Avoid_: Regelheft, Spickzettel
 
 **Wortspeicher**:
-Die Wörter eines Meilensteins mit je einer Erklärung in einem Satz, neben der Aufgabe. Er zeigt nur die Wörter bis zur Niveaustufe der Aufgabe, ist auf F und G aufgeklappt und auf M und E zugeklappt. Kostet nichts.
+Die Wörter eines Meilensteins mit je einer Erklärung in einem Satz. Er ist die Quelle der Worterklärung; einen eigenen Kasten neben der Aufgabe hat er nicht mehr. Seine Niveaustufe `ab` regelt, ab wann ein Wort in Aufgaben vorkommen darf.
 _Avoid_: Glossar, Vokabelliste
+
+**Worterklärung**:
+Die Erklärung eines Wortes direkt am Wort: Steht ein Wort aus einem Wortspeicher oder ein Grundwort in der Aufgabe oder in einem aufgedeckten Hilfekärtchen, ist es gepunktet unterstrichen, und die Erklärung erscheint beim Darüberfahren oder Anklicken. Kostet nichts.
+_Avoid_: Tooltip, Wortspeicher-Kasten
+
+**Grundwort**:
+Ein Wort, das in vielen Aufgaben steht, aber zu keinem Meilenstein gehört („Einer“, „insgesamt“). Es wird in der ganzen Klassenstufe erklärt.
+_Avoid_: Basiswort
 
 **Einfache Sprache**:
 Die Schreibweise aller Aufgaben auf F und G: ein Gedanke pro Satz, keine Nebensätze, jeder Satz in einer eigenen Zeile, Alltagswörter, Zahlen als Ziffern, die Frage am Schluss.

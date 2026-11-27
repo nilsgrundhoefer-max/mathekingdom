@@ -3,6 +3,7 @@
 // Die Nummern der Unterkapitel stehen wie im Buch. Lerneinheiten mit der Marke MK (Medienkompetenz) fehlen, deshalb gibt es Lücken.
 // `ab`: Marke M oder E des Buchs (Niveau-Meilenstein, ADR 0037). Das Dashboard wertet sie aus, sobald es dazu Aufgaben gibt.
 
+import { merkzettel6 } from './merkzettel/klasse-6.mjs';
 import { merkzettel2, wortspeicher2, voraussetzungen2, grundlagen2 } from './jahresplan-6-2.mjs';
 import { lernziele3, merkzettel3, wortspeicher3, voraussetzungen3, grundlagen3, bp6 } from './jahresplan-6-3.mjs';
 import { lernziele4, merkzettel4, wortspeicher4, voraussetzungen4, grundlagen4, bp4 } from './jahresplan-6-4.mjs';
@@ -142,70 +143,21 @@ const roh = [
 // Merkzettel je Unterkapitel: Regeln, ein Beispiel und ein Satz für das Heft.
 export const merkzettel = {
   '6.1.1': {
-    regeln: [
-      'Ein Bruch nennt einen Teil vom Ganzen. Der Nenner sagt, in wie viele gleich große Teile das Ganze geteilt ist. Der Zähler zählt die Teile.',
-      'Ist der Zähler so groß wie der Nenner, ist es genau ein Ganzes: 4⁄4 = 1.',
-      'Ist der Zähler größer als der Nenner, ist es mehr als ein Ganzes: 5⁄4.',
-      'Mehr als ein Ganzes schreibst du auch als gemischte Zahl: 5⁄4 = 1 1⁄4.',
-      'Von der gemischten Zahl zum Bruch: Ganze mal Nenner, dann den Zähler dazu. 2 3⁄4 = 11⁄4, denn 2 · 4 + 3 = 11.',
-      'Vom Bruch zur gemischten Zahl: Teile den Zähler durch den Nenner. Das Ergebnis sind die Ganzen, der Rest bleibt als Zähler.',
-    ],
-    beispiel: 'Drei Kinder essen zusammen 7 Viertel Pizza. Das sind 7⁄4 = 1 3⁄4 Pizzen: eine ganze Pizza und noch drei Viertel.',
     heft: 'Zeichne den Bruchstrich mit dem Lineal. Bei einer gemischten Zahl stehen die Ganzen groß vor dem Bruch.',
   },
   '6.1.2': {
-    regeln: [
-      'Erweitern heißt: Zähler und Nenner mit derselben Zahl malnehmen.',
-      'Der Wert des Bruchs bleibt gleich. Es sind nur mehr und kleinere Teile.',
-      '3⁄4 mit 2 erweitert ist 6⁄8, denn 3 · 2 = 6 und 4 · 2 = 8.',
-      'Ab G: Suchst du einen bestimmten Nenner, dann überlege: Mit welcher Zahl muss ich den alten Nenner malnehmen?',
-      'Ab G: Brüche mit gleichem Wert heißen gleichwertig.',
-    ],
-    beispiel: 'Eine halbe Pizza ist genauso viel wie zwei Viertel oder vier Achtel: 1⁄2 = 2⁄4 = 4⁄8.',
     heft: 'Schreibe die Zahl, mit der du erweiterst, klein über das Gleichheitszeichen.',
   },
   '6.1.3': {
-    regeln: [
-      'Kürzen heißt: Zähler und Nenner durch dieselbe Zahl teilen.',
-      'Der Wert des Bruchs bleibt gleich. Es sind nur weniger und größere Teile.',
-      '6⁄8 mit 2 gekürzt ist 3⁄4, denn 6 : 2 = 3 und 8 : 2 = 4.',
-      'Kürze so weit wie möglich. Du darfst auch in mehreren Schritten kürzen.',
-      'Durch 2 geht es bei geraden Zahlen. Durch 5 geht es, wenn hinten 0 oder 5 steht. Durch 10 geht es, wenn hinten 0 steht.',
-      'Ab G: Durch 3 geht es, wenn die Quersumme durch 3 teilbar ist.',
-    ],
-    beispiel: '12⁄18 in zwei Schritten: erst mit 2 gekürzt 6⁄9, dann mit 3 gekürzt 2⁄3. Weiter geht es nicht.',
     heft: 'Schreibe jeden Schritt hin. Ein Ergebnis ist erst fertig, wenn du nicht mehr kürzen kannst.',
   },
   '6.1.4': {
-    regeln: [
-      'Gleicher Nenner: Der Bruch mit dem größeren Zähler ist größer. 5⁄8 ist größer als 3⁄8.',
-      'Gleicher Zähler: Der Bruch mit dem kleineren Nenner ist größer, denn seine Teile sind größer. 3⁄4 ist größer als 3⁄8.',
-      'Ab G: Verschiedene Nenner: Erweitere so, dass beide Brüche denselben Nenner haben. Vergleiche dann die Zähler.',
-      'Ab M: Brüche mit gleichem Nenner heißen gleichnamig.',
-      'Ab E: Manchmal geht es schneller: Vergleiche mit 1⁄2 oder mit 1, oder schau, wie viel bis zum Ganzen fehlt.',
-    ],
-    beispiel: '2⁄3 oder 3⁄4? Mit dem Nenner 12 sind es 8⁄12 und 9⁄12. Also ist 3⁄4 größer.',
     heft: 'Schreibe die erweiterten Brüche unter die alten. Setze erst dann das Zeichen < oder >.',
   },
   '6.1.5': {
-    regeln: [
-      'Einen Bruchteil einer Größe berechnest du in zwei Schritten: erst durch den Nenner teilen, dann mit dem Zähler malnehmen.',
-      'Geht es nicht auf, wandle zuerst in eine kleinere Einheit um: 3⁄4 km sind 3⁄4 von 1000 m.',
-      'Rückwärts zum Ganzen: Teile den Bruchteil durch den Zähler. So groß ist ein Teil. Nimm dann mit dem Nenner mal.',
-      'Ein Anteil ist ein Bruch: Teil durch Ganzes. 15 von 20 Kindern sind 15⁄20 = 3⁄4.',
-    ],
-    beispiel: '3⁄4 von 2 km: 2 km = 2000 m, dann 2000 m : 4 = 500 m und 500 m · 3 = 1500 m.',
     heft: 'Schreibe beide Schritte untereinander. Vergiss die Einheit nicht.',
   },
   '6.1.6': {
-    regeln: [
-      'Am Zahlenstrahl sagt der Nenner, in wie viele gleich große Abstände die Strecke von 0 bis 1 geteilt ist.',
-      'Zähle die Abstände, nicht die Striche.',
-      'Der Zähler sagt, wie viele Abstände du von 0 aus gehst.',
-      'Brüche, die größer als 1 sind, liegen rechts von der 1.',
-      'Gleichwertige Brüche liegen an derselben Stelle: 1⁄2 und 2⁄4.',
-    ],
-    beispiel: 'Von 0 bis 1 sind es 4 Abstände. Der dritte Strich nach der 0 ist 3⁄4. Zwei Striche hinter der 1 liegt 1 2⁄4 = 1 1⁄2.',
     heft: 'Wähle die Länge für ein Ganzes so, dass sie sich gut teilen lässt: für Viertel zum Beispiel 4 oder 8 Kästchen.',
   },
   ...merkzettel2,
@@ -327,7 +279,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => ({
   unterkapitel: unterkapitel.map((u) => {
     const id = `6.${k + 1}.${u.nr}`;
     const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] }) }));
-    return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
+    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(merkzettel6[`${id}-${kurz}`] && { merkzettel: merkzettel6[`${id}-${kurz}`] }), voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] }) }));
+    return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id]?.heft && { heft: merkzettel[id].heft }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
   }),
 }));

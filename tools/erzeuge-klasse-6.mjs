@@ -4,6 +4,7 @@
 
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { kapitel } from './jahresplan-klasse-6.mjs';
+import { grundwoerter, fruehereWoerter } from './grundwoerter.mjs';
 import { aufgaben, fehlvorstellungen, setzeSaat, KOMPETENZEN } from './werkzeug.mjs';
 import { brueche } from './aufgaben/6-1-1-brueche.mjs';
 import { erweitern } from './aufgaben/6-1-2-erweitern.mjs';
@@ -108,7 +109,9 @@ const klasse5 = JSON.parse(readFileSync(new URL('../aufgabenpool/klasse-5.json',
 const lernziele5 = new Map(klasse5.kapitel.flatMap((k) => k.unterkapitel).flatMap((u) => u.lernziele).map((l) => [l.id, l]));
 const vorstufe = {
   klassenstufe: 5,
-  lernziele: fremd.map((id) => ({ id, text: lernziele5.get(id).text })),
+  lernziele: fremd.map((id) => ({ id, text: lernziele5.get(id).text, ...(lernziele5.get(id).merkzettel && { merkzettel: lernziele5.get(id).merkzettel }) })),
+  // Worterklärung am Wort (ADR 0056): die Wortspeicher und Grundwörter der Klasse 5, jedes Wort einmal.
+  woerter: fruehereWoerter([klasse5]),
   aufgaben: klasse5.aufgaben.filter((a) => fremd.includes(a.lernziel) && a.niveau !== 'E'),
 };
 
@@ -119,6 +122,7 @@ const pool = {
   fehlvorstellungen,
   kompetenzen: KOMPETENZEN,
   kapitel,
+  grundwoerter: grundwoerter[6],
   aufgaben,
   vorstufe,
 };

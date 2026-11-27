@@ -5,6 +5,7 @@ import * as P from '../gemeinsam/protokoll.js';
 import * as M from '../gemeinsam/meldungen.js';
 import stil from './stil.css';
 import { h, mische } from './dom.js';
+import { wortVerzeichnis, findeWoerter } from '../gemeinsam/woerter.js';
 import * as L from './logik.js';
 import * as S from './speicher.js';
 import * as SCH from '../gemeinsam/schule.js';
@@ -523,7 +524,7 @@ async function melde({ code, klasse, pin }, ablage) {
   // Endete die vorige Sitzung ordentlich und fehlten der Datei nur ihre letzten Sekunden, ist das kein Problem (Version 0.54).
   const nurSchluss = geladen.hinweis === 'sicherung-neuer' && geladen.stand.betrieb?.at(-1)?.art === 'ende';
   const offenerPool = M.ohneGesperrte(pool, z.gesperrt);
-  Object.assign(z, { ablage, pool: offenerPool, index: L.indexiere(offenerPool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
+  Object.assign(z, { ablage, pool: offenerPool, woerter: null, index: L.indexiere(offenerPool), klassendatei, einst, stand: geladen.stand ?? L.neuerSpeicherstand(code, klasse, jetzt()) });
   const sperrenBeachtet = M.beachteSperren(z.stand, z.gesperrt);
   z.meldung = geladen.hinweis && !nurSchluss ? 'Dein Speicherstand im Klassenordner fehlte oder war veraltet. Er wurde aus der Sicherung dieses Computers wiederhergestellt.' : null;
   if (z.codeHinweis === code) { z.meldung = `Dein Code heißt jetzt ${code}. Du bist jetzt in der Klasse ${klasse}. Melde dich ab jetzt mit dem neuen Code an.`; z.codeHinweis = null; }
@@ -793,26 +794,79 @@ function expeditionKarte() {
         : `Jedes neue Siegel und jeder Rückblick bringt ein Zeichen. Belohnung: ${lohn}.`));
 }
 
-// Merkzettel des Meilensteins: Regeln, Beispiel, Hinweis fürs Heft. Frei zugänglich, kostet nichts.
-function merkzettel(meilenstein, halter) {
-  const m = meilenstein.merkzettel;
+// Merkzettel (ADR 0056): je Lernziel eine Regel und ein Beispiel. Frei zugänglich, kostet nichts.
+// Eine Rechnung im Beispiel steht wie im Heft: Stelle unter Stelle, in fester Zeichenbreite. Eine Zeile aus Strichen wird zum Rechenstrich.
+export function merkzettelInhalt(m) {
+  // Ein Rechenstrich reicht nur so weit wie seine Striche („ --“ unter „15“), wie im Heft.
+  const zeile = (text) => { const st = text.match(/^( *)(-+) *$/); return st ? h('span', { class: 'mz-strichzeile' }, st[1], h('i', { class: 'mz-strich' }, ' '.repeat(st[2].length))) : h('span', {}, text.replace(/ +$/, '') || ' '); };
+  return [h('p', { class: 'mz-regel' }, m.regel),
+    h('div', { class: 'mz-beispiel' }, h('b', {}, 'Beispiel'),
+      m.rechnung && h('div', { class: 'mz-rechnung', role: 'img', 'aria-label': m.rechnung.filter((text) => !/^[ -]*$/.test(text)).map((text) => text.trim()).join(', ') }, m.rechnung.map(zeile)),
+      m.beispiel && h('p', {}, m.beispiel.split('\n').map((text) => h('span', { class: 'mz-zeile' }, text))))];
+}
+// In der Aufgabe: der Merkzettel des Lernziels dieser Aufgabe. Der Hinweis fürs Heft steht nur bei einer Heftaufgabe.
+function merkzettel(lernziel, meilenstein, a) {
+  const m = lernziel?.merkzettel;
   if (!m) return null;
-  return h('details', { class: 'merkzettel', open: Boolean(halter?.merkzettelOffen), ontoggle: (e) => { if (halter) halter.merkzettelOffen = e.target.open; } },
+  return h('details', { class: 'merkzettel', open: Boolean(a.merkzettelOffen), ontoggle: (e) => { a.merkzettelOffen = e.target.open; } },
     h('summary', {}, 'Merkzettel'),
-    h('ul', {}, m.regeln.map((r) => h('li', {}, r))),
-    h('p', {}, h('b', {}, 'Beispiel: '), m.beispiel),
-    m.heft && h('p', { class: 'heft' }, h('b', {}, 'Im Heft: '), m.heft));
+    merkzettelInhalt(m),
+    a.aufgabe.heftaufgabe && meilenstein?.heft && h('p', { class: 'heft' }, h('b', {}, 'Im Heft: '), meilenstein.heft));
+}
+// An der Meilenstein-Tafel: die Merkzettel aller Lernziele des Meilensteins untereinander, je unter seinem Ich-kann-Satz.
+function merkzettelTafel(meilenstein, halter) {
+  const ziele = meilenstein.lernziele.filter((l) => l.merkzettel && z.index.lernzielMitAufgaben.has(l.id));
+  if (!ziele.length) return null;
+  return h('details', { class: 'merkzettel', open: Boolean(halter?.merkzettelOffen), ontoggle: (e) => { if (halter) halter.merkzettelOffen = e.target.open; } },
+    h('summary', {}, ziele.length === 1 ? 'Merkzettel' : `Merkzettel (${ziele.length})`),
+    ziele.map((l) => h('section', { class: 'mz-ziel', 'data-merkzettel': l.id }, h('h3', {}, l.text), merkzettelInhalt(l.merkzettel))));
 }
 
-// Wortspeicher des Meilensteins: nur die Wörter bis zur Niveaustufe der Aufgabe. Auf F und G ist er aufgeklappt.
-function wortspeicher(meilenstein, a) {
-  const stufe = L.NIVEAUS.indexOf(a.aufgabe.niveau);
-  const woerter = (meilenstein.wortspeicher ?? []).filter((w) => L.NIVEAUS.indexOf(w.ab) <= stufe);
-  if (woerter.length === 0) return null;
-  a.wortspeicherOffen ??= stufe <= 1;
-  return h('details', { class: 'wortspeicher', open: a.wortspeicherOffen, ontoggle: (e) => { a.wortspeicherOffen = e.target.open; } },
-    h('summary', {}, 'Wortspeicher'),
-    h('dl', {}, woerter.map((w) => [h('dt', {}, w.wort), h('dd', {}, w.erklaerung)])));
+// Worterklärung am Wort (ADR 0056): Wörter aus den Wortspeichern sind in der Aufgabe gepunktet unterstrichen.
+// Die Erklärung erscheint beim Darüberfahren und beim Anklicken; nach einem Klick bleibt sie stehen. Einen Kasten gibt es nicht mehr.
+const WORT_STELLEN = '.aufgabentext, .option > span:not(.kartenname), .teile li > span, .zuordnen b, .kaertchen-offen p';
+const WORT_HINWEISE = 3; // So oft steht der Satz unter der Aufgabe, der das Unterstreichen erklärt.
+function wortOrt(auf) {
+  const m = z.index.meilensteinVon.get(auf.lernziel);
+  return { meilenstein: m?.id ?? auf.lernziel.split('-')[0], kapitel: L.kapitelVon(auf.lernziel), vorstufe: !m };
+}
+export function markiereWoerter(karte, verzeichnis, ort) {
+  const schon = new Set();
+  let blase = null, fest = null;
+  const schliesse = () => { blase?.remove(); blase = null; fest?.classList.remove('fest'); fest = null; };
+  const zeige = (el) => {
+    blase?.remove();
+    blase = h('div', { class: 'worterklaerung', id: 'worterklaerung', role: 'tooltip' }, h('b', {}, el.dataset.wort), h('span', {}, el.dataset.erklaerung));
+    karte.append(blase);
+    // Über dem Wort, damit Rechnung und Eingabefeld darunter frei bleiben; die Blase darf dabei über den Kartenrand ragen.
+    // Ist im Fenster oben kein Platz, steht sie unter dem Wort.
+    const k = karte.getBoundingClientRect(), w = el.getBoundingClientRect(), b = blase.getBoundingClientRect();
+    const oben = w.top - k.top - b.height - 6;
+    blase.style.left = `${Math.max(8, Math.min(w.left - k.left, k.width - b.width - 8))}px`;
+    blase.style.top = `${w.top - b.height - 6 >= 4 ? oben : w.bottom - k.top + 6}px`;
+  };
+  const wortEl = (text, f) => h('span', { class: 'wort', tabIndex: 0, role: 'button', 'aria-describedby': 'worterklaerung', 'data-wort': f.wort, 'data-erklaerung': f.erklaerung,
+    onmouseenter: (e) => { if (!fest) zeige(e.currentTarget); }, onmouseleave: () => { if (!fest) schliesse(); },
+    onfocus: (e) => { if (!fest) zeige(e.currentTarget); }, onblur: () => { if (!fest) schliesse(); },
+    onkeydown: (e) => { if (e.key === 'Escape') schliesse(); else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.click(); } },
+    onclick: (e) => { const el = e.currentTarget, war = fest === el; schliesse(); if (!war) { zeige(el); fest = el; el.classList.add('fest'); } e.stopPropagation(); } }, text);
+  for (const stelle of karte.querySelectorAll(WORT_STELLEN)) {
+    const knoten = [];
+    const gang = document.createTreeWalker(stelle, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (n.parentElement.closest('.bruch, .wort, svg, select, .zahlfeld') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+    while (gang.nextNode()) knoten.push(gang.currentNode);
+    for (const n of knoten) {
+      const funde = findeWoerter(n.data, verzeichnis, ort).filter((f) => !schon.has(f.wort) && schon.add(f.wort));
+      if (!funde.length) continue;
+      const teile = [];
+      let ende = 0;
+      for (const f of funde) { if (f.start > ende) teile.push(n.data.slice(ende, f.start)); teile.push(wortEl(n.data.slice(f.start, f.ende), f)); ende = f.ende; }
+      if (ende < n.data.length) teile.push(n.data.slice(ende));
+      n.replaceWith(...teile);
+    }
+  }
+  // Ein Klick neben das Wort schließt die Erklärung wieder.
+  if (schon.size) karte.addEventListener('click', (e) => { if (!e.target.closest('.wort')) schliesse(); });
+  return schon.size;
 }
 
 // ---------- Das kannst du schon (ADR 0026) ----------
@@ -920,7 +974,7 @@ function meilensteinTafel(kapitel, meilenstein, kapitelNiveau) {
     })),
     zweiteRunde && status !== 'gemeistert' && h('p', { class: 'klein', id: 'hol-dir-gold' }, h('b', {}, `Hol dir ${L.KRONEN[L.stufeAb(z.einst.zielniveau, meilenstein.ab)]}! `), 'Du bist den Weg schon einmal gegangen. Jetzt geht es um die Siegel, die noch fehlen.'),
     h('button', { class: 'haupt', id: 'aufbrechen', onclick: () => starteAufgabe(naechstes.id, lzNiveau(naechstes.id)) }, status === 'gemeistert' ? 'Noch eine Runde' : 'Aufbrechen'),
-    merkzettel(meilenstein, z.ansicht));
+    merkzettelTafel(meilenstein, z.ansicht));
 }
 
 // Kronenwahl: „Spiele um …“. Voreingestellt ist das Zielniveau (ADR 0012). Die Wahl gilt als Start für jedes Lernziel des
@@ -984,8 +1038,7 @@ function aufgabenAnsicht() {
       h('button', { class: 'haupt', id: 'pruefen', type: 'submit', 'data-sicher': 'ja' }, 'Prüfen – ich bin sicher'),
       h('button', { class: 'haupt hell', id: 'pruefen-unsicher', type: 'submit', 'data-sicher': 'nein' }, 'Prüfen – ich bin unsicher'))
       : !fertig && h('button', { class: 'haupt', id: 'pruefen', type: 'submit' }, a.versuch === 0 ? 'Prüfen' : 'Noch einmal prüfen'));
-  return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
-    h('div', { class: 'karte' },
+  const karte = h('div', { class: 'karte' },
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
@@ -1009,8 +1062,20 @@ function aufgabenAnsicht() {
       a.ueberraschung && !fertig && h('p', { class: 'hinweis ueberraschung', id: 'ueberraschung' }, a.ueberraschung),
       a.hinweis && !fertig && h('p', { class: 'hinweis', role: 'alert' }, a.hinweis),
       !fertig && !a.einstieg && kaertchen(a),
-      fertig && ergebnisTafel(a, kapitelId, meilenstein)),
-    !fertig && !a.einstieg && hilfen(a, meilenstein),
+      fertig && ergebnisTafel(a, kapitelId, meilenstein));
+  // Worterklärung am Wort (ADR 0056). Bei den ersten Aufgaben mit unterstrichenen Wörtern sagt ein Satz, wozu die Linie da ist.
+  if (!fertig) {
+    z.woerter ??= wortVerzeichnis(z.pool);
+    if (markiereWoerter(karte, z.woerter, wortOrt(auf)) && (a.wortHinweis || (z.stand.wortHinweise ?? 0) < WORT_HINWEISE)) {
+      if (!a.wortHinweis) { a.wortHinweis = true; z.stand.wortHinweise = (z.stand.wortHinweise ?? 0) + 1; geaendert(); }
+      const satz = h('p', { class: 'klein worthinweis', id: 'worthinweis' }, 'Fahre mit der Maus über ein unterstrichenes Wort. Dann siehst du die Erklärung.');
+      const text = karte.querySelector(':scope > .aufgabentext');
+      if (text) text.after(satz); else karte.querySelector('form.antwort').before(satz);
+    }
+  }
+  return h('section', { class: 'aufgabe', 'data-aufgabe': auf.id },
+    karte,
+    !fertig && !a.einstieg && hilfen(a, meilenstein, lernziel),
     // Klein unten links, damit die Lehrkraft eine fehlerhafte Aufgabe melden kann (ADR 0025).
     h('p', { class: 'kennung', id: 'kennung', title: 'Kennung dieser Aufgabe' }, auf.id));
 }
@@ -1645,11 +1710,10 @@ function kaertchen(a) {
     : h('button', { class: `kaertchen-zu${i > a.hilfen ? ' spaeter' : ''}`, type: 'button', disabled: i > a.hilfen, 'data-hilfe': feld, onclick: () => { a.hilfen++; if (z.stand.aktiv) { z.stand.aktiv.hilfen = a.hilfen; geaendert(); } maleMitEntwurf(liesEingabe(a.aufgabe, wurzel.querySelector('form.antwort')).eingabe); } },
       h('b', {}, titel), h('span', {}, i > a.hilfen ? 'Erst das Kärtchen davor.' : kosten))));
 }
-// Seitenleiste: Wortspeicher, Merkzettel und der Hilferuf an die Lehrkraft.
-function hilfen(a, meilenstein = meilensteinVon(a.aufgabe)) {
+// Seitenleiste: Merkzettel und der Hilferuf an die Lehrkraft. Den Wortspeicher-Kasten gibt es nicht mehr (ADR 0056).
+function hilfen(a, meilenstein = meilensteinVon(a.aufgabe), lernziel = z.index.lernziel.get(a.aufgabe.lernziel)) {
   return h('aside', { class: 'hilfen' },
-    wortspeicher(meilenstein, a),
-    merkzettel(meilenstein, a),
+    merkzettel(lernziel, meilenstein, a),
     !z.stand.hilferuf && hilferufKnopf(a));
 }
 // Erst der Knopf, dann die Wahl des Grundes (Pflicht, ADR 0041). Der Entwurf in der Aufgabe bleibt erhalten.

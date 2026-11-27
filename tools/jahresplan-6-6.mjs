@@ -29,61 +29,18 @@ export const lernziele66 = {
 
 export const merkzettel66 = {
   '6.6.1': {
-    regeln: [
-      'Der Oberflächeninhalt O ist der Flächeninhalt aller sechs Flächen zusammen.',
-      'Beim Quader sind je zwei Flächen gleich groß: Boden und Deckel, vorne und hinten, links und rechts.',
-      'Rechne jede der drei Flächen aus, nimm sie mal 2 und addiere.',
-      'Beim Würfel sind alle sechs Flächen gleich groß: O = 6 · a · a.',
-      'Ab G: Formel für den Quader: O = 2 · (a · b + a · c + b · c).',
-      'Die Einheit ist eine Flächeneinheit, zum Beispiel cm².',
-    ],
-    beispiel: 'Quader mit a = 5 cm, b = 4 cm, c = 2 cm: 5 cm · 4 cm = 20 cm², 5 cm · 2 cm = 10 cm², 4 cm · 2 cm = 8 cm². Zusammen 38 cm², mal 2 sind O = 76 cm².',
     heft: 'Zeichne ein Netz des Quaders und schreibe in jede Fläche ihren Flächeninhalt. So vergisst du keine Fläche.',
   },
   '6.6.2': {
-    regeln: [
-      'Das Volumen sagt, wie viel Platz ein Körper einnimmt. Ein anderes Wort ist Rauminhalt.',
-      'Du misst das Volumen mit Einheitswürfeln: Wie viele gleich große Würfel passen hinein?',
-      'Zähle auch die Würfel, die du nicht siehst. Unter jedem Würfel oben liegt ein Würfel.',
-      'Ab G: Zähle in Schichten: Würfel in einer Reihe mal Reihen mal Schichten.',
-      'Zwei Körper aus gleich vielen gleich großen Würfeln haben dasselbe Volumen, auch wenn sie anders aussehen.',
-    ],
-    beispiel: 'Ein Quader hat 4 Würfel in einer Reihe, 3 Reihen und 2 Schichten: 4 · 3 · 2 = 24 Würfel.',
     heft: 'Zeichne die unterste Schicht von oben als Kästchen und schreibe in jedes Kästchen, wie viele Würfel dort übereinander liegen.',
   },
   '6.6.3': {
-    regeln: [
-      'Volumeneinheiten: mm³, cm³, dm³, m³. Ein Würfel mit 1 cm Kante hat das Volumen 1 cm³.',
-      'Die Umrechnungszahl ist 1000: 1 cm³ = 1000 mm³, 1 dm³ = 1000 cm³, 1 m³ = 1000 dm³.',
-      'In die kleinere Einheit rechnest du mal 1000, in die größere Einheit durch 1000.',
-      '1 Liter ist 1 dm³. 1 Milliliter ist 1 cm³. Also 1 l = 1000 ml.',
-      'Ab M: 1 hl = 100 l.',
-      'In der Einheitentafel hat jede Einheit drei Spalten.',
-    ],
-    beispiel: '3,5 l in ml: Die Einheit wird kleiner, also mal 1000. 3,5 l = 3500 ml.',
     heft: 'Zeichne eine Einheitentafel mit drei Spalten je Einheit und trage die Ziffern ein. Dann liest du jede Einheit ab.',
   },
   '6.6.4': {
-    regeln: [
-      'Volumen des Quaders: Länge mal Breite mal Höhe. V = a · b · c.',
-      'Beim Würfel sind alle Kanten gleich lang: V = a · a · a.',
-      'Alle Kanten müssen dieselbe Einheit haben. Wandle sonst zuerst um.',
-      'Die Einheit ist eine Volumeneinheit: cm mal cm mal cm gibt cm³.',
-      'Ab M: Fehlt eine Kante, teilst du das Volumen durch die beiden anderen Kanten.',
-      'Ab M: Für Liter rechnest du in dm oder wandelst am Ende um: 1 dm³ = 1 l.',
-    ],
-    beispiel: 'Quader mit a = 5 cm, b = 4 cm, c = 2 cm: V = 5 cm · 4 cm · 2 cm = 40 cm³.',
     heft: 'Schreibe zuerst die Formel, setze dann die Zahlen mit Einheit ein und rechne zum Schluss.',
   },
   '6.6.5': {
-    regeln: [
-      'Zerlege den Körper in Quader. Berechne jedes Volumen und addiere.',
-      'Jedes Stück des Körpers gehört zu genau einem Quader.',
-      'Ab M: Manche Längen stehen nicht im Bild. Berechne sie aus den anderen Längen.',
-      'Ab M: Zum Oberflächeninhalt gehören nur die Flächen, die außen liegen. Wo zwei Quader aneinanderstoßen, zählt nichts.',
-      'Ab E: Manchmal ist es leichter, einen großen Quader zu rechnen und das fehlende Stück abzuziehen.',
-    ],
-    beispiel: 'Unten liegt ein Quader mit 6 cm · 4 cm · 2 cm = 48 cm³, darauf einer mit 2 cm · 4 cm · 3 cm = 24 cm³. Zusammen 48 cm³ + 24 cm³ = 72 cm³.',
     heft: 'Zeichne die Schnittlinie in deine Skizze und gib den Teilen Namen. Schreibe zu jedem Teil eine eigene Rechnung.',
   },
 };

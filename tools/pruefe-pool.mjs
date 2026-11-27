@@ -2396,7 +2396,17 @@ for (const k of pool.kapitel) for (const u of k.unterkapitel) if (u.lernziele.so
     if (!NIVEAUS.includes(w.ab)) melde(u.id, `Wortspeicher: unbekannte Stufe bei ${w.wort}`);
     for (const g of gleichungenIn(w.erklaerung)) if (!stimmt(g)) melde(u.id, `Wortspeicher: Gleichung stimmt nicht: ${g.ganz}`);
   }
-  for (const text of [...(u.merkzettel?.regeln ?? []), u.merkzettel?.beispiel ?? '']) for (const g of gleichungenIn(text)) if (!stimmt(g)) melde(u.id, `Merkzettel: Gleichung stimmt nicht: ${g.ganz}`);
+  // Merkzettel je Lernziel (ADR 0056): eine Regel in höchstens zwei Sätzen, ein Beispiel, jede Gleichung stimmt.
+  for (const l of u.lernziele) if (mitAufgaben.has(l.id)) {
+    const m = l.merkzettel;
+    if (!m?.regel || !(m.beispiel || m.rechnung)) { melde(l.id, 'Lernziel ohne Merkzettel (Regel und Beispiel)'); continue; }
+    const saetze = m.regel.split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ„])/).length;
+    if (saetze > 2) melde(l.id, `Merkzettel: Regel hat ${saetze} Sätze, höchstens 2`);
+    if (m.regel.length > 190) melde(l.id, `Merkzettel: Regel ist ${m.regel.length} Zeichen lang, höchstens 190`);
+    if ((m.beispiel ?? '').split('\n').length > 4) melde(l.id, 'Merkzettel: Beispiel hat mehr als 4 Zeilen');
+    if (m.rechnung && (!Array.isArray(m.rechnung) || m.rechnung.some((z) => typeof z !== 'string' || z.length > 22))) melde(l.id, 'Merkzettel: Rechnung ist keine Liste kurzer Zeilen (höchstens 22 Zeichen)');
+    for (const text of [m.regel, ...(m.beispiel ?? '').split('\n')]) for (const g of gleichungenIn(text)) if (!stimmt(g)) melde(l.id, `Merkzettel: Gleichung stimmt nicht: ${g.ganz}`);
+  }
 }
 groessenModus = false;
 bruchModus = false;

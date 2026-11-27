@@ -415,10 +415,14 @@ test('Etappe der Startseite: Fortschritt und nächster Meilenstein, gesperrte Me
   assert.equal(L.etappe(pool, index, stand, vier).kapitel.id, '5.1');
 });
 
-test('Jeder Meilenstein mit Aufgaben hat einen Merkzettel', () => {
+test('Jedes Lernziel mit Aufgaben hat einen kurzen Merkzettel (ADR 0056)', () => {
   for (const k of pool.kapitel) for (const u of k.unterkapitel) {
-    if (!u.lernziele.some((l) => index.lernzielMitAufgaben.has(l.id))) continue;
-    assert.ok(u.merkzettel?.regeln.length >= 3 && u.merkzettel.beispiel, u.id);
+    assert.equal(u.merkzettel, undefined, `${u.id}: kein Merkzettel mehr am Meilenstein`);
+    for (const l of u.lernziele) {
+      if (!index.lernzielMitAufgaben.has(l.id)) continue;
+      assert.ok(l.merkzettel?.regel && (l.merkzettel.beispiel || l.merkzettel.rechnung), l.id);
+      assert.ok(l.merkzettel.regel.length <= 190, l.id);
+    }
   }
 });
 

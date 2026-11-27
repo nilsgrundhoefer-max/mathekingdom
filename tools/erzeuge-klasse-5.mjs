@@ -6,6 +6,7 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { kapitel } from './jahresplan-klasse-5.mjs';
+import { grundwoerter } from './grundwoerter.mjs';
 import { aufgaben, fehlvorstellungen, setzeSaat, KOMPETENZEN } from './werkzeug.mjs';
 import { datenUndDiagramme } from './aufgaben/5-1-daten.mjs';
 import { zahlenstrahlUndStellenwerte } from './aufgaben/5-2-1-zahlenstrahl.mjs';
@@ -106,6 +107,7 @@ const pool = {
   fehlvorstellungen,
   kompetenzen: KOMPETENZEN,
   kapitel,
+  grundwoerter: grundwoerter[5],
   aufgaben,
 };
 mkdirSync(new URL('../aufgabenpool/', import.meta.url), { recursive: true });
