@@ -587,6 +587,18 @@ _Avoid_: abgeschrieben, geschummelt
 **Lösungen durchgeklickt**:
 Eine Auffälligkeit für die Lehrkraft: Mindestens 5 der letzten 10 Aufgaben eines Schülers endeten mit gesehener Lösung, jede in unter 30 Sekunden.
 
+**Beurteile-Aufgabe**:
+Eine Auswahlaufgabe, in der das Kind eine Rechnung oder Aussage eines anderen Kindes beurteilt („Stimmt das?“). Auch die falschen Antworten tragen eine Begründung, die zu einer Fehlvorstellung passt und ähnlich lang ist wie die richtige (ADR 0057).
+_Avoid_: Fehlersuche, Stimmt-Aufgabe
+
+**Eigener Hinweis**:
+Ein gezielter Hinweis, der nur für eine Aufgabe gilt und dort den Satz der Fehlvorstellung ersetzt, weil dieser nicht zum Bild oder zur Frage passt. Steht in der Aufgabe unter `hinweise`.
+_Avoid_: Sonderhinweis
+
+**Ersatzbeispiel**:
+Das Beispiel, das im Hilfekärtchen steht, wenn das feste Beispiel zufällig genau die Aufgabe vorrechnen würde.
+_Avoid_: Zweitbeispiel
+
 **Hilfekärtchen**:
 Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
