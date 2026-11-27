@@ -9,8 +9,8 @@ import { schreibe } from '../src/schueler/groessen.js';
 const { chromium } = createRequire(import.meta.url)('playwright');
 const wurzel = new URL('../', import.meta.url);
 const pool = JSON.parse(readFileSync(new URL('aufgabenpool/klasse-6.json', wurzel), 'utf8'));
-// KAPITEL=2 prüft nur die Aufgaben eines Kapitels, ohne Angabe alle.
-const neun = pool.aufgaben.filter((a) => process.env.KAPITEL === "0" ? false : !process.env.KAPITEL || a.lernziel.startsWith(`6.${process.env.KAPITEL}.`));
+// KAPITEL=2 prüft nur die Aufgaben eines Kapitels, ohne Angabe die Kapitel 1 und 2. Die Kapitel 3 bis 7 haben eigene Tests (browser-klasse-6-*.mjs).
+const neun = pool.aufgaben.filter((a) => process.env.KAPITEL === "0" ? false : !process.env.KAPITEL ? /^6\.[12]\./.test(a.lernziel) : a.lernziel.startsWith(`6.${process.env.KAPITEL}.`));
 const bilder = process.env.BILDER;
 if (bilder) mkdirSync(bilder, { recursive: true });
 const FOTOS = { '6.2.1-A1-F-05': 'akku-F', '6.2.1-A2-F-03': 'ueber-ein-ganzes-F', '6.2.2-U1-F-01': 'zwei-schritte-F', '6.2.2-U1-M-01': 'hauptnenner-M', '6.2.3-V1-F-01': 'vervielfachen-F', '6.2.4-T1-F-01': 'teilen-F',

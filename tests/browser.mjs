@@ -2629,7 +2629,7 @@ async function weiter(seite, wahl = '#weiter') {
   // Potenzen fertig machen: Danach führt „Nächste Aufgabe“ zum nächsten Meilenstein, nicht im Kreis.
   await seite.click('nav button:has-text("Schlossgarten")');
   await seite.click('[data-kapitel="5.4"]');
-  await seite.locator('.regionskarte .meilenstein[aria-label^="Meilenstein Potenzen"]').click();
+  await seite.locator('.regionskarte .meilenstein[aria-label^="Meilenstein Potenzen"] .stein').click();
   await seite.locator('.lernziele li', { hasText: potenzen.lernziele[1].text }).locator('button').click();
   for (let i = 0; i < 3; i++) {
     if (i > 0) await weiter(seite, '#weiter');

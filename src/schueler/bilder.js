@@ -153,19 +153,28 @@ export function wappenVoll(wappen, breite = 240) {
 // Ein Weg, Unterkapitel als Meilensteine (ADR 0012). Über jedem Meilenstein steht seine Krone, sobald es eine gibt.
 // Meilensteine gehen nicht nacheinander auf; die Nummern zeigen nur die empfohlene Reihenfolge.
 // milestones: [{ id, titel, extra, status, krone }]; status: leer | gesperrt | offen | begonnen | gemeistert
+// Version 0.66 (Audit L166): Ein langer Meilensteinname steht in zwei Zeilen. So stoßen die schrägen Namen nicht aneinander.
+export function namenZeilen(titel) {
+  if (titel.length <= 24) return [titel];
+  const mitte = titel.length / 2;
+  const stellen = [...titel.matchAll(/ /g)].map((m) => m.index).sort((p, q) => Math.abs(p - mitte) - Math.abs(q - mitte));
+  return stellen.length ? [titel.slice(0, stellen[0]), titel.slice(stellen[0] + 1)] : [titel];
+}
 export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenstein }) {
-  const ABSTAND = 150, LINKS = 90, OBEN = 96, STUFE = 52, HOCH = 40;
+  // Version 0.66 (Audit L050): Ab neun Meilensteinen rücken sie enger zusammen, damit die Karte ins Fenster passt.
+  const ABSTAND = milestones.length >= 9 ? 130 : 150, LINKS = 90, OBEN = 96, STUFE = 52, HOCH = 40;
   // Spalten: Jeder Meilenstein hat seine Spalte. Ein Abstecher hängt unter dem Weg an seinem Wirt, dem letzten Meilenstein davor,
   // der kein Abstecher ist. Der Weg läuft durch seine Spalte weiter (Niveau-Meilenstein mitten im Kapitel, ADR 0038).
   const wirt = milestones.map((m, j) => { for (let i = m.extra ? j - 1 : j; i >= 0; i--) if (!milestones[i].extra) return i; return 0; });
   const haupt = milestones.reduce((letzte, m, j) => (m.extra ? letzte : j), 0) + 1; // Spalten bis zum letzten Meilenstein auf dem Weg
   const hatAbstecher = milestones.some((m) => m.extra);
-  const breite = Math.ceil(Math.max(LINKS + (milestones.length - 1) * ABSTAND + 150, ...milestones.map((m, j) => LINKS + j * ABSTAND + 40 + m.titel.length * 6.4)));
+  const lang = (m) => Math.max(...namenZeilen(m.titel).map((t) => t.length));
+  const breite = Math.ceil(Math.max(LINKS + (milestones.length - 1) * ABSTAND + 150, ...milestones.map((m, j) => LINKS + j * ABSTAND + 40 + lang(m) * 6.4)));
   const x = (j) => LINKS + j * ABSTAND;
   const versatz = (j) => (Math.floor(j / 3) % 2) * STUFE; // alle drei Meilensteine biegt der Weg ab
   const y = (j) => OBEN + versatz(j) + HOCH / 2;
   // Die Namen stehen schräg unter den Meilensteinen. Lange Namen (Klasse 6) brauchen mehr Platz nach unten.
-  const namenTiefe = Math.max(0, ...milestones.map((m, j) => (m.extra ? y(wirt[j]) + 70 : y(j)) + HOCH / 2 + 30 + m.titel.length * 4.3));
+  const namenTiefe = Math.max(0, ...milestones.map((m, j) => (m.extra ? y(wirt[j]) + 70 : y(j)) + HOCH / 2 + 30 + lang(m) * 4.3 + (namenZeilen(m.titel).length - 1) * 16));
   const hoehe = Math.max(OBEN + (haupt > 3 ? STUFE : 0) + HOCH + (hatAbstecher ? 70 : 0) + 120, Math.ceil(namenTiefe));
 
   let d = `M${x(0) - 60} ${y(0)}`;
@@ -196,8 +205,8 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
         s('rect', { x: 0, y: 0, width: breite, height: hoehe, fill: 'white' }),
         frei.map(([m, j]) => { const [mx, my] = mitteVon(m, j); return s('ellipse', { cx: mx + 45, cy: my - 25, rx: 125, ry: 95, fill: 'black', filter: `url(#${nebelId}-weich)` }); }))),
     s('rect', { x: 4, y: 4, width: breite - 8, height: hoehe - 8, rx: 6, class: 'nebel', mask: `url(#${nebelId})`, 'aria-hidden': 'true', 'data-frei': frei.length }),
-    // Mit Abstecher steht unten rechts dessen Beschriftung; die Windrose rückt dann nach oben.
-    windrose(breite - 46, milestones.some((m) => m.extra) ? 58 : hoehe - 46),
+    // Unten rechts stehen die schrägen Namen; die Windrose steht deshalb immer oben (Version 0.66).
+    windrose(breite - 46, 58),
     s('path', { d, class: 'weg-rand' }), s('path', { d, class: 'weg' }));
   // Abstecher: gestrichelt unterhalb des Weges
   milestones.forEach((m, j) => {
@@ -224,7 +233,11 @@ export function regionMap({ milestones, standort, gewaehlt, wappen, beiMeilenste
     else if (m.status === 'gesperrt') g.append(schloss(x(j), oben - 16));
     if (hier) g.append(s('text', { x: x(j) + 18, y: oben - 42, class: 'hiermarke' }, 'Hier weiter'));
     // Im Nebel nur Umriss und Nummer, ohne Namen (ADR 0026).
-    if (m.status !== 'imnebel') g.append(s('text', { x: x(j) + 4, y: oben + HOCH + 18, transform: `rotate(34 ${x(j) + 4} ${oben + HOCH + 18})`, class: 'meilensteinname' }, m.titel));
+    // Version 0.66: Unsichtbare Flächen um Stein und Namen, damit auch ein Klick knapp daneben oder auf den Namen den Meilenstein wählt.
+    g.prepend(s('rect', { x: x(j) - 22, y: oben - 8, width: 44, height: HOCH + 16, class: 'treffer' }));
+    if (m.status !== 'imnebel') { const zeilen = namenZeilen(m.titel), dreh = `rotate(34 ${x(j) + 4} ${oben + HOCH + 18})`;
+      g.append(s('rect', { x: x(j) - 2, y: oben + HOCH + 2, width: lang(m) * 7.6 + 12, height: zeilen.length * 17 + 8, transform: dreh, class: 'treffer' }),
+        s('text', { x: x(j) + 4, y: oben + HOCH + 18, transform: dreh, class: 'meilensteinname' }, zeilen.map((zeile, i) => s('tspan', { x: x(j) + 4, dy: i ? 17 : 0 }, zeile)))); }
     svg.append(g);
   });
   // Das eigene Wappen steht am empfohlenen Meilenstein auf dem Weg.
@@ -320,14 +333,15 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
   const gliedere = (w) => (w < 0 ? `−${ohneZeichen(-w)}` : ohneZeichen(w));
   // Kapitel 9: Ein Bruchstrahl mit wenigen Teilstrichen ist schmal gezeichnet, damit er am Handy ohne Schieben ganz zu sehen ist.
   const kurz = T !== 1 && (bis - von) / schritt <= 10;
-  const B = kurz ? 460 : 720, links = 34, rechts = 44, y = 78;
+  // Version 0.66 (Audit L010, L209): Lange Zahlen wie 5 000 000 000 brauchen an beiden Enden mehr Rand, sonst sind sie abgeschnitten.
+  const lang = String(gliedere(bis)).length > 7, sehrLang = String(gliedere(bis)).length > 10;
+  const B = kurz ? 460 : 720, links = sehrLang ? 52 : 34, rechts = sehrLang ? 58 : 44, y = 78;
   const x = (w) => links + ((w - von) / (bis - von)) * (B - links - rechts);
   const svg = s('svg', { class: `zahlenstrahl${kurz ? ' kurz' : ''}`, viewBox: `0 0 ${B} 138`, role: beiWahl ? 'group' : 'img', 'aria-label': `${von < 0 ? 'Zahlengerade' : 'Zahlenstrahl'} von ${gliedere(von)} bis ${gliedere(bis)}` },
     s('line', { x1: links - (von < 0 ? 26 : 14), y1: y, x2: B - 14, y2: y, class: 'achse' }),
     s('path', { d: `M${B - 16} ${y - 7} L${B - 2} ${y} L${B - 16} ${y + 7} Z`, class: 'spitze' }));
   // Ausschnitt (Kapitel 2): Der Strahl beginnt nicht bei 0. Zwei schräge Striche zeigen die Unterbrechung.
   if (strahl.ausschnitt) svg.append(s('path', { d: `M${links - 17} ${y + 8} l6 -16 M${links - 11} ${y + 8} l6 -16`, class: 'unterbrechung' }));
-  const lang = String(gliedere(bis)).length > 7;
   const breite = x(von + schritt) - x(von);
   for (let w = von; w <= bis; w += schritt) {
     const gross = (w - von) % beschriftung === 0;
@@ -387,8 +401,13 @@ export function zahlenstrahl(strahl, { gewaehlt = null, beiWahl = null, startwor
   }
   if (ueber > 0) svg.setAttribute('viewBox', `0 ${-Math.ceil(ueber)} ${B} ${138 + Math.ceil(ueber)}`);
   if (strahl.pfeil != null) {
-    svg.append(s('text', { x: x(strahl.pfeil), y: y + 54, 'text-anchor': 'middle', class: 'frage' }, '?'),
-      s('path', { d: `M${x(strahl.pfeil)} ${y + 38} l-6 -12 h12 Z`, class: 'fragepfeil' }));
+    // Version 0.66 (Audit L010): Steht der Pfeil dicht an einer beschrifteten Zahl, zeigt er von oben auf den Strahl und verdeckt die Zahl nicht.
+    const px = x(strahl.pfeil), frei = !(strahl.punkte?.length || strahl.spruenge?.length);
+    let nah = false;
+    for (let w = von; w <= bis; w += schritt) if ((w - von) % beschriftung === 0 && Math.abs(x(w) - px) < String(gliedere(w)).length * (lang ? 3.6 : 4.4) + 9) nah = true;
+    if (nah && frei) svg.append(s('text', { x: px, y: y - 32, 'text-anchor': 'middle', class: 'frage' }, '?'), s('path', { d: `M${px} ${y - 14} l-6 -12 h12 Z`, class: 'fragepfeil' }));
+    else svg.append(s('text', { x: px, y: y + 54, 'text-anchor': 'middle', class: 'frage' }, '?'),
+      s('path', { d: `M${px} ${y + 38} l-6 -12 h12 Z`, class: 'fragepfeil' }));
   }
   return svg;
 }
@@ -400,7 +419,8 @@ export function saeulendiagramm(d) {
   const y = (w) => oben + hoehe - (w / d.max) * hoehe;
   const svg = s('svg', { class: 'diagramm', viewBox: `0 0 ${B} ${H}`, role: 'img', 'aria-label': `Säulendiagramm: ${d.titel}` },
     s('text', { x: 0, y: 16, class: 'titel' }, d.titel),
-    s('text', { x: links - 8, y: oben - 12, 'text-anchor': 'end', class: 'einheit' }, d.einheit));
+    // Version 0.66 (Audit L017): Der Name der Achse beginnt am linken Rand, damit ein langes Wort wie „Besucher“ nicht abgeschnitten wird.
+    s('text', { x: 2, y: oben - 10, class: 'einheit' }, d.einheit));
   for (let w = 0; w <= d.max; w += d.schritt) {
     svg.append(s('line', { x1: links, y1: y(w), x2: B - rechts, y2: y(w), class: w === 0 ? 'grund' : 'gitter' }),
       s('text', { x: links - 8, y: y(w) + 5, 'text-anchor': 'end', class: 'achsenzahl' }, gliedere(w)));

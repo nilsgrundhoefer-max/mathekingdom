@@ -599,6 +599,18 @@ _Avoid_: Sonderhinweis
 Das Beispiel, das im Hilfekärtchen steht, wenn das feste Beispiel zufällig genau die Aufgabe vorrechnen würde.
 _Avoid_: Zweitbeispiel
 
+**Prüfleiste**:
+Die Leiste mit dem Knopf „Prüfen“ unter einer Aufgabe. Sie klebt am unteren Fensterrand, solange ihr eigentlicher Platz darunter liegt.
+_Avoid_: Fußleiste, Knopfleiste
+
+**Prüfgröße**:
+Die Fenstergröße 1366 × 650 Pixel, in der ein fester Browsertest alle Aufgaben durchgeht. Sie steht für ein Schul-Notebook mit Browserleisten und ergänzt die Prüfbreite (690 und 560 Pixel).
+_Avoid_: Testauflösung
+
+**Bildspalte**:
+Die linke Spalte einer Aufgabe mit hohem Bild. Rechts daneben stehen Text und Antworten.
+_Avoid_: Zweispalter
+
 **Hilfekärtchen**:
 Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beispiel, Lösungsschritt. F und G haben alle drei, M hat Tipp und Lösungsschritt, E nur den Tipp. Auf F liegt der Tipp von Anfang an offen, auf G und M öffnet er sich nach dem ersten falschen Versuch von selbst, auf E nur auf Wunsch. Der Tipp kostet keine Münzen, Beispiel und Lösungsschritt senken sie.
 _Avoid_: Joker, Hinweis
