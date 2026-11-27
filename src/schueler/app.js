@@ -180,7 +180,7 @@ function wegstueckAnzeige() {
 const zaehltFuerWegstueck = (a) => !a.rueckblick && !a.einstieg && !a.heftNachloesen;
 
 function kopf() {
-  const anzahl = L.siegel(z.stand), r = L.rang(L.rangSiegel(z.stand));
+  const anzahl = L.siegel(z.stand), r = L.rang(L.rangSiegel(z.stand), L.titelform(z.stand));
   const status = z.speicherstatus;
   // Siegel und Karte stehen vorn, die Münzen dahinter als kleinstes Symbol (ADR 0010). Seit 0.37 sind alle Symbole etwa ein Viertel größer.
   return h('header', { class: 'kopf' },
@@ -1237,11 +1237,12 @@ function passeBreiteAn(feld) {
 export function eingabefelder(auf, a, gesperrt) {
   // Klasse 7 Kapitel 1 (ADR 0043, 0051): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
-  const zahlfeld = (name, einheit, wert) => {
+  const zahlfeld = (name, einheit, wert, ohneKnopf = false) => {
     const feld = h('input', { name, type: 'text', inputMode: abKlasse7(auf) || auf.lernziel?.startsWith('5.9.3') || /^6\.[457]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => { gliedereEingabe(e.target); passeBreiteAn(e.target); } });
     passeBreiteAn(feld);
-    return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
+    const knopf = vorzeichen && !ohneKnopf;
+    return h('span', { class: `zahlfeld${knopf ? ' mit-vorzeichen' : ''}` }, knopf && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
   };
   // Ziffernfeld: genau eine Ziffer, ohne Abstand mitten in einer Zahl (Ziffernrätsel) oder in einem Rechenraster.
   const ziffernfeld = (name, wert, stellen = 1) => h('input', { class: 'ziffer', name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: stellen, maxLength: stellen, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Fehlende Ziffer' });
@@ -1257,7 +1258,10 @@ export function eingabefelder(auf, a, gesperrt) {
         : auf.optionen.map((o) => h('label', { class: 'option' },
           h('input', { type: auf.mehrfach ? 'checkbox' : 'radio', name: 'option', value: o.text, disabled: gesperrt, checked: Boolean(letzte?.includes(o.text)) }), h('span', {}, o.text))));
     case 'luecken': {
-      const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name]));
+      // Version 0.69 (ADR 0057, Audit L135): Steht die Lücke ohne Klammer direkt hinter „+“ oder „−“, gehört dorthin eine Zahl ohne Vorzeichen.
+      // Der Knopf „±“ fehlt dort, damit nicht zwei Zeichen hintereinander stehen. Eine negative Zahl stünde in Klammern.
+      const nachZeichen = new Set([...auf.text.matchAll(/[+−] \{\{(\w+)\}\}/g)].map((m) => m[1]));
+      const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name], nachZeichen.has(name)));
       const einfach = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });
       // Klasse 7 (ADR 0043), seit Version 0.66 in allen Klassen: Rechenzeichen, Klammer, Lücke, Einheit und Satzzeichen bleiben beim Umbruch zusammen.
       // Eine Zeile endet so nie mit „=“ oder „(“ und beginnt nie mit einem Punkt (Audit L051).
@@ -1369,7 +1373,7 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'schaetzen': return zahlfeld('zahl', auf.einheit, letzte);
     case 'gitter': return gitterEingabe(auf, letzte, gesperrt);
     case 'winkel': return winkelEingabe(auf, letzte, gesperrt);
-    case 'bruch': return bruchEingabe(auf, letzte, gesperrt);
+    case 'bruch': return bruchEingabe(auf, letzte, gesperrt, L.mitGanzenFeld(z.index, auf));
     case 'faerben': return faerbenEingabe(auf, letzte, gesperrt);
     case 'periode': return periodeEingabe(auf, letzte, gesperrt);
     default: return null;
@@ -1417,7 +1421,7 @@ function pruefe(formular, sicher = null) {
   // Klasse 6 (ADR 0037): Der Wert stimmt, aber der Bruch ist noch nicht gekürzt oder keine gemischte Zahl. Das ist „fast richtig“ und kostet keinen Versuch.
   if (ergebnis.nachbessern && (a.nachbesserungen ?? 0) < NACHBESSERN_HOECHSTENS) {
     a.nachbesserungen = (a.nachbesserungen ?? 0) + 1;
-    a.hinweis = NACHBESSERN[ergebnis.nachbessern];
+    a.hinweis = ergebnis.nachbessern === 'endnull' ? endnullHinweis(ergebnis.stellen) : NACHBESSERN[ergebnis.nachbessern];
     return maleMitEntwurf(eingabe);
   }
   a.versuch++;
@@ -1565,13 +1569,18 @@ function urteilZeile(e, auf, nachsatz) {
 }
 // Klasse 6, Kapitel 4 (ADR 0047): Beim Runden wird keine Endnull verlangt (4 ist so richtig wie 4,0).
 // Steht in der Lösung eine Endnull, sagt ein Satz, wozu sie da ist.
+// Version 0.69 (ADR 0057): Fehlt beim Runden die Endnull, bittet ein Hinweis darum, ohne einen Versuch zu zählen.
+const STELLEN_WORT = { 1: 'eine Stelle', 2: 'zwei Stellen', 3: 'drei Stellen', 4: 'vier Stellen' };
+export const endnullHinweis = (stellen) => (STELLEN_WORT[stellen]
+  ? `Fast richtig: Der Wert stimmt. Schreibe ${STELLEN_WORT[stellen]} nach dem Komma, auch wenn ${stellen === 1 ? 'dort' : 'am Ende'} eine Null steht. So sieht man, wie genau gerundet wurde. Das kostet dich keinen Versuch.`
+  : 'Fast richtig: Die Werte stimmen. Schreibe so viele Stellen nach dem Komma, wie gerundet wurde, auch wenn am Ende eine Null steht. Das kostet dich keinen Versuch.');
 export function endnullSatz(auf) {
   // Klasse 6, Kapitel 5 (ADR 0048): 4,5 € zählt wie 4,50 €. Der Satz zeigt, wie man Geld schreibt.
   if (/^6\.[57]\./.test(auf.lernziel ?? '') && auf.einheit === '€' && /,\d0$/.test(String(auf.loesung ?? ''))) return h('p', { class: 'endnull', id: 'endnull' }, `Bei Geld schreibt man zwei Stellen nach dem Komma: ${auf.loesung} €.`);
   if (!auf.lernziel?.startsWith('6.4.3')) return null;
   const werte = auf.format === 'zahl' ? [auf.loesung] : auf.format === 'luecken' ? Object.values(auf.luecken ?? {}).map((l) => l.loesung) : [];
   const mit = werte.map(String).find((w) => /,\d*0$/.test(w));
-  return mit ? h('p', { class: 'endnull', id: 'endnull' }, `Man darf die Null schreiben, um zu zeigen, wie genau gerundet wurde: ${mit}${auf.einheit ? ` ${auf.einheit}` : ''}.`) : null;
+  return mit ? h('p', { class: 'endnull', id: 'endnull' }, `Beim Runden schreibt man die Null mit. Sie zeigt, wie genau gerundet wurde: ${mit}${auf.einheit ? ` ${auf.einheit}` : ''}.`) : null;
 }
 // Kapitel 2: Nach jeder Aufgabe mit Schätzbild steht die wahre Anzahl da, damit das Kind seine Schätzung einordnen kann (ADR 0030).
 export function wahreAnzahl(auf) {
@@ -1796,7 +1805,7 @@ function wegstueckAnsicht() {
     b.muenzen > 0 && h('p', { class: 'lohn' }, muenze(22), h('b', {}, `+${b.muenzen}`), ' Münzen in diesem Wegstück'),
     rastKarte,
     // Version 0.67 (Audit L137): Während der Rast steht der Weg zu den Spielen nicht da, und „Rast überspringen“ ist kein Hauptknopf.
-    !rast && b.rast && z.einst.spielfreigabe === 'verdient' && (z.stand.spielGutschrift ?? 0) > 0 && h('p', { class: 'verdient', id: 'spiel-verdient' }, 'Du hast dir ein Belohnungsspiel verdient. ',
+    !rast && b.rast && z.einst.spielfreigabe === 'verdient' && (z.stand.spielGutschrift ?? 0) > 0 && h('p', { class: 'verdient', id: 'spiel-verdient' }, `${SPIELE_FREI} ${rundePreis()} `,
       h('button', { class: 'schlicht', onclick: () => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); zeige({ name: 'spiele' }); } }, 'Zu den Spielen')),
     h('div', { class: 'knoepfe' },
       h('button', { class: rast ? 'schlicht' : 'haupt', id: 'weiter', onclick: bereit(() => { clearInterval(rastUhr); if (rast) merke('uebersprungen'); a.fortsetzung(); }) }, rast ? 'Rast überspringen' : 'Nächstes Wegstück'),
@@ -1969,7 +1978,7 @@ function ahaKarte() {
           a.neu && h('span', { class: 'marke-neu' }, 'neu'))))]);
 }
 function wappenAnsicht() {
-  const r = L.rang(L.rangSiegel(z.stand));
+  const r = L.rang(L.rangSiegel(z.stand), L.titelform(z.stand));
   const w = z.stand.wappen;
   const stufe = L.klassenstufe(z.stand);
   L.vergebeEhrenzeichen(z.stand, z.pool, z.index, z.einst?.zielniveau);
@@ -2004,7 +2013,7 @@ function wappenAnsicht() {
             : h('button', { class: an ? 'haupt' : 'schlicht', 'data-teil': teil.id, onclick: lege }, teil.art === 'farbe' ? (an ? 'Gewählt' : 'Wählen') : (an ? 'Abnehmen' : 'Anbringen')),
           platz > 0 && h('button', { class: 'schlicht', 'data-haupt': teil.id, onclick: () => { L.macheHauptzeichen(z.stand, teil.id); geaendert(); male(); } }, 'Als Hauptzeichen'))
         : teil.ehre ? h('span', { class: 'klein' }, teil.ehre)
-          : rangFehlt ? h('span', { class: 'klein' }, `Ab Rang ${L.RAENGE[teil.rang].name}`)
+          : rangFehlt ? h('span', { class: 'klein' }, `Ab Rang ${L.inForm(L.RAENGE[teil.rang], L.titelform(z.stand))}`)
             : h('button', { class: 'schlicht', 'data-teil': teil.id, disabled: z.stand.muenzen < teil.preis, onclick: kaufen }, muenze(16), ` ${teil.preis} kaufen`));
   };
   const imSchrank = L.WAPPEN_TEILE.filter((t) => t.klasse <= stufe);
@@ -2032,7 +2041,8 @@ function wappenAnsicht() {
     h('div', { class: 'werkbank' }, voll ? wappenVoll(w, 270) : wappenBild(w, 150),
       h('div', {}, h('p', { class: 'unter' }, `Rang: ${r.name}`),
         h('p', {}, r.naechster ? `Noch ${r.naechster.ab - L.rangSiegel(z.stand)} Siegel, dann wirst du ${r.naechster.name} und schaltest neue Teile frei.` : 'Du hast den höchsten Rang erreicht.'),
-        h('p', { class: 'klein' }, 'Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen. Münzen bekommst du für gelöste Aufgaben, Ehrenzeichen kannst du nur verdienen.'))),
+        h('p', { class: 'klein' }, 'Dein Wappen trägt ein großes Hauptzeichen und bis zu zwei kleine Beizeichen. Münzen bekommst du für gelöste Aufgaben, Ehrenzeichen kannst du nur verdienen.'),
+        titelformWahl())),
     neueEhre.length > 0 && h('div', { class: 'karte neue-ehre', id: 'neue-ehre', role: 'status' },
       h('b', {}, neueEhre.length === 1 ? 'Neues Ehrenzeichen: ' : 'Neue Ehrenzeichen: '), neueEhre.map((id) => L.teil(id)?.name).join(', '),
       '. Du findest es unten bei den Ehrenzeichen.'),
@@ -2049,8 +2059,11 @@ function wappenAnsicht() {
 const SPERRE = {
   aus: 'Spiele sind in deiner Klasse gerade ausgeschaltet.',
   'keine-spielpause': 'Gerade ist keine Spielpause. Deine Lehrkraft schaltet sie frei.',
-  'nicht-verdient': 'Nach jedem vierten Wegstück verdienst du dir ein Belohnungsspiel.',
+  'nicht-verdient': 'Nach jedem vierten Wegstück sind die Belohnungsspiele für eine Runde frei.',
 };
+// Version 0.69 (ADR 0057): Der Text sagt ehrlich, was „verdient“ heißt. Die Spiele sind dann frei, eine Runde kostet weiter Münzen.
+const SPIELE_FREI = 'Die Spiele sind für dich frei.';
+const rundePreis = () => `Eine Runde kostet ${Math.min(...L.SPIELE.filter((sp) => sp.art === 'belohnung').map((sp) => sp.preis))} Münzen.`;
 function spieleAnsicht() {
   z.einst = einstellungenJetzt();
   if (z.einst.bestenliste && !z.klasseLaedt && Date.now() - (z.klasseGelesen ?? 0) > 60000) {
@@ -2080,18 +2093,27 @@ function spieleAnsicht() {
   return h('section', {},
     h('h1', {}, 'Spiele'),
     h('p', { class: 'unter' }, 'Hier löst du Münzen für eine kurze Pause ein. Die Rechenpause hält den Kopf in Schwung, ein Belohnungsspiel ist reiner Spaß.'),
-    verdient && h('div', { class: 'karte verdient', id: 'verdient', role: 'status' }, h('b', {}, 'Du hast dir ein Belohnungsspiel verdient.'), ' Es gilt, bis du es spielst.'),
+    verdient && h('div', { class: 'karte verdient', id: 'verdient', role: 'status' }, h('b', {}, SPIELE_FREI), ` ${rundePreis()} Das gilt, bis du eine Runde gespielt hast.`),
     h('ul', { class: 'spiele-liste' }, L.SPIELE.map(karte)),
     z.einst.bestenliste && beinameKarte());
 }
 function bestenlisteKarte(sp) {
   const b = L.bestenliste(z.stand, z.andere ?? [], sp.id, jetzt());
   return h('div', { class: 'bestenliste', id: `bestenliste-${sp.id}` },
-    h('b', {}, 'Bestenliste der Klasse, diese Woche'),
-    b.plaetze.length === 0 ? h('p', { class: 'klein' }, 'Diese Woche hat noch niemand gespielt. Die Liste beginnt jeden Montag neu.')
+    h('b', {}, `Bestenliste der Klasse für „${sp.name}“, diese Woche`),
+    b.plaetze.length === 0 ? h('p', { class: 'klein' }, 'Bei diesem Spiel hat diese Woche noch niemand Punkte geholt. Die Liste beginnt jeden Montag neu.')
       : h('ol', {}, b.plaetze.map((p) => h('li', { class: p.eigen ? 'eigen' : '' }, h('span', { class: 'platz' }, `${p.platz}.`), wappenBild(p.wappen ?? { farbe: 'rot', zeichen: [] }, 22), h('span', { class: 'beiname' }, p.beiname), h('b', {}, p.punkte)))),
     b.eigenerPlatz && b.eigenerPlatz > L.BESTENLISTE_PLAETZE && h('p', { class: 'klein' }, `Du bist auf Platz ${b.eigenerPlatz} mit ${b.eigenerWert}.`),
     b.ausgeblendet && b.eigenerPlatz && h('p', { class: 'klein' }, `Du bist ausgeblendet. Dein Platz wäre ${b.eigenerPlatz} mit ${b.eigenerWert}.`));
+}
+// Version 0.69 (ADR 0057): Das Kind wählt, wie seine Titel heißen. Die Wahl gilt für Rang und Hoftitel, überall.
+function titelformWahl() {
+  const form = L.titelform(z.stand);
+  const beispiele = (f) => [L.rang(L.rangSiegel(z.stand), f).name, L.inForm(L.HOFTITEL[3], f), L.inForm(L.HOFTITEL[0], f)].join(', ');
+  const waehle = (f) => { if (f === form) return; L.setzeTitelform(z.stand, f); geaendert(); z.dienst.sofort(); male(); };
+  return h('div', { class: 'titelform', id: 'titelform', role: 'group', 'aria-label': 'So sollen deine Titel heißen' },
+    h('b', {}, 'So sollen deine Titel heißen:'),
+    h('div', { class: 'reihe' }, ['m', 'w'].map((f) => h('button', { type: 'button', class: `schlicht${f === form ? ' aktiv' : ''}`, 'data-titelform': f, 'aria-pressed': String(f === form), onclick: () => waehle(f) }, beispiele(f)))));
 }
 function beinameKarte() {
   // Beide Bausteine werden erst eingestellt und dann mit einem Knopf gemeinsam gespeichert (ADR 0020).

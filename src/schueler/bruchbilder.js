@@ -123,7 +123,8 @@ export const faerbenLoesungBild = (auf) => bruchSvg([auf.faerben], { gewaehlt: A
 
 // Brucheingabe: Zähler über Nenner mit Bruchstrich, bei gemischten Zahlen davor ein Feld für die Ganzen.
 // Fünf Stellen, damit auch der Nenner 10000 passt (Zehntausendstel, ADR 0047).
-export function bruchEingabe(auf, letzte, gesperrt) {
+// `ganze`: mit dem Feld für die Ganzen. Seit 0.69 auch dann, wenn im Lernziel gemischte Zahlen vorkommen (L.mitGanzenFeld).
+export function bruchEingabe(auf, letzte, gesperrt, ganze = Boolean(auf.gemischt)) {
   const m = String(letzte ?? '').match(/^(-?)(?:(\d*) )?(\d*)\/(\d*)$/) ?? [];
   const feld = (name, wert, etikett) => h('input', { name, type: 'text', inputMode: 'numeric', autocomplete: 'off', size: 3, maxLength: 5, disabled: gesperrt, value: wert ?? '', 'aria-label': etikett });
   // Klasse 7 (ADR 0043): Der Knopf „±“ setzt ein Minus vor den ganzen Bruch.
@@ -134,12 +135,12 @@ export function bruchEingabe(auf, letzte, gesperrt) {
     onclick: () => { v.value = v.value ? '' : '-'; zeichen.textContent = v.value ? MINUS : ''; } }, '±');
   return h('span', { class: 'brucheingabe' },
     vorzeichen && knopf, vorzeichen && v, vorzeichen && zeichen,
-    auf.gemischt && feld('bruch-g', m[2], 'Ganze'),
+    ganze && feld('bruch-g', m[2], 'Ganze (leer lassen, wenn es keine gibt)'),
     h('span', { class: 'bruchfelder' }, feld('bruch-z', m[3], 'Zähler'), h('span', { class: 'bruchstrich', 'aria-hidden': 'true' }), feld('bruch-n', m[4], 'Nenner')),
     auf.einheit && h('span', { class: 'einheit' }, auf.einheit));
 }
 export function liesBruch(auf, formular) {
   const w = (n) => formular.elements[n]?.value.trim() ?? '';
-  const g = auf.gemischt ? w('bruch-g') : '', z = w('bruch-z'), n = w('bruch-n');
+  const g = w('bruch-g'), z = w('bruch-z'), n = w('bruch-n');
   return { eingabe: `${w('bruch-v')}${g ? `${g} ` : ''}${z}/${n}`, leer: !z || !n };
 }

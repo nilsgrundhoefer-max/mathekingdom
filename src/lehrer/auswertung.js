@@ -36,7 +36,7 @@ export function kennzahlen(stand, zielniveau, jetzt) {
   const ziel = L.NIVEAUS.indexOf(zielniveau);
   const training = v.filter((x) => L.NIVEAUS.indexOf(x.niveau) < ziel).length;
   return {
-    siegel: L.siegel(stand), muenzen: stand.muenzen, rang: L.rang(L.rangSiegel(stand)).name,
+    siegel: L.siegel(stand), muenzen: stand.muenzen, rang: L.rang(L.rangSiegel(stand), L.titelform(stand)).name,
     bearbeitet: v.length, geloest: geloest.length, quote: anteil(geloest.length, v.length),
     ersterVersuch: anteil(v.filter((x) => x.richtig && x.versuche === 1).length, v.length),
     tipp: v.filter((x) => L.hatKarte(x, 'tipp')).length, beispiel: v.filter((x) => L.hatKarte(x, 'beispiel')).length, loesungsschritt: v.filter((x) => L.hatKarte(x, 'loesungsschritt')).length,

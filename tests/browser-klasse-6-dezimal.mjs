@@ -75,7 +75,7 @@ for (const auf of aufgaben) {
   assert.equal(await antworte(auf), true, `${auf.id}: Die richtige Lösung gilt nicht als richtig`);
   if (await seite.locator('#endnull').count()) {
     endnull++;
-    assert.match(await seite.innerText('#endnull'), /^Man darf die Null schreiben, um zu zeigen, wie genau gerundet wurde: /, auf.id);
+    assert.match(await seite.innerText('#endnull'), /^Beim Runden schreibt man die Null mit\. Sie zeigt, wie genau gerundet wurde: /, auf.id);
   }
   const f = ['zahl', 'bruch', 'periode'].includes(auf.format) ? auf.typischeFehler?.[0] : null;
   if (f) { await zeige(auf.id); assert.equal(await antworte(auf, f.wert), false, `${auf.id}: Der typische Fehler ${f.wert} gilt als richtig`); falschGeprueft++; }
@@ -85,11 +85,16 @@ const mitEndnull = aufgaben.filter((a) => a.lernziel.startsWith('6.4.3') && [a.f
 assert.ok(mitEndnull.length >= 1);
 assert.equal(endnull, mitEndnull.length, 'Satz zur Endnull fehlt bei einer Rundung mit Endnull');
 
-// Endnull nicht verlangt: „9“ gilt bei der Lösung „9,0“ als richtig.
+// Version 0.69 (ADR 0057): Beim Runden bittet „9“ bei der Lösung „9,0“ erst um die Endnull. Das kostet keinen Versuch; mit der Null ist es richtig.
 {
   const auf = aufgaben.find((a) => a.lernziel.startsWith('6.4.3') && a.format === 'zahl' && /,0$/.test(a.loesung));
   await zeige(auf.id);
-  assert.equal(await antworte(auf, auf.loesung.replace(/,0$/, '')), true, `${auf.id}: ohne Endnull nicht richtig`);
+  await seite.fill('input[name=zahl]', auf.loesung.replace(/,0$/, ''));
+  await seite.click('#pruefen');
+  await seite.waitForSelector('section.aufgabe:has-text("Fast richtig")');
+  assert.match(await seite.innerText('section.aufgabe'), /Schreibe eine Stelle nach dem Komma, auch wenn dort eine Null steht\./, auf.id);
+  assert.equal(await seite.evaluate(() => window.ergebnisse.length), 0, `${auf.id}: Die Bitte um die Endnull zählt als Versuch`);
+  assert.equal(await antworte(auf), true, `${auf.id}: mit Endnull nicht richtig`);
 }
 // Zwei Fehlversuche bei einer Divisionsaufgabe: Das Lösungsbild zeigt die schriftliche Division.
 {

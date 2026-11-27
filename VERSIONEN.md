@@ -8,6 +8,23 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.69 vom 27.11.2026
+
+### Schüler
+
+- Im Wappenschrank wählst du, wie deine Titel heißen: zum Beispiel Wanderer, Ritter, Klassenkönig oder Wanderin, Ritterin, Klassenkönigin.
+- Rundest du auf Hundertstel und schreibst 4,7 statt 4,70, liest du „Fast richtig“ und darfst die Null ergänzen. Das kostet keinen Versuch.
+- Statt „Du hast dir ein Belohnungsspiel verdient“ steht jetzt ehrlich da: „Die Spiele sind für dich frei. Eine Runde kostet 100 Münzen.“
+- Hast du in einem Spiel 0 Punkte geholt, stehst du trotzdem in der Bestenliste. Über der Liste steht, zu welchem Spiel sie gehört.
+- Bei Bruchaufgaben mit „Kürze vollständig“ gibt es das Feld für die Ganzen jetzt immer, wenn in dem Lernziel gemischte Zahlen vorkommen. Lass es leer, wenn es keine Ganzen gibt.
+- Steht eine Lücke direkt hinter „+“ oder „−“, hat sie keinen Knopf „±“ mehr.
+
+### Lehrkraft
+
+- Titelform: Jedes Kind wählt selbst, ob seine Ränge und Hoftitel in der bisherigen Form oder in der Form auf „-in“ stehen. Die Tabelle „Hoftitel“ und die Kennzahl „Rang“ zeigen die gewählte Form.
+- Runden (Klasse 6, Kapitel 4): Fehlt die Endnull, bittet das Programm bis zu zweimal darum. Die Antwort bleibt richtig, es geht kein Versuch verloren. Außerhalb des Rundens wird die Endnull weiter nie verlangt.
+- Spielfreigabe „Verdient“: Preise und Regeln bleiben, nur der Text ist klarer.
+
 ## 0.68 vom 27.11.2026
 
 ### Schüler
