@@ -234,11 +234,15 @@ async function weiter(seite, wahl = '#weiter') {
   assert.equal(await seite.locator('#einstieg').count(), 0);
   await seite.click('#aufbrechen');
   await seite.waitForSelector('section.aufgabe[data-aufgabe^="5.1.1-H1"]');
-  assert.equal(await seite.locator('.merkzettel ul').isVisible(), false);
+  // Merkzettel je Lernziel (0.64, ADR 0056): eine Regel und ein Beispiel, zugeklappt; „Im Heft“ nur bei einer Heftaufgabe.
+  assert.equal(await seite.locator('.merkzettel .mz-regel').isVisible(), false);
   await seite.click('.merkzettel summary');
-  assert.match(await seite.innerText('.merkzettel'), /Bündeln: Vier Striche[\s\S]*Beispiel[\s\S]*Im Heft/);
+  assert.match(await seite.innerText('.merkzettel'), /Für jede Antwort machst du einen Strich[\s\S]*Beispiel[\s\S]*5 \+ 5 \+ 5 \+ 2 = 17/i);
+  assert.doesNotMatch(await seite.innerText('.merkzettel'), /Im Heft|Häufigkeitstabelle/);
+  assert.equal(await seite.locator('.merkzettel .mz-regel').count(), 1);
+  assert.equal(await seite.locator('.wortspeicher').count(), 0); // den Kasten gibt es nicht mehr
   await seite.click('[data-hilfe=tipp]'); // Neuzeichnen: der Merkzettel bleibt offen
-  assert.equal(await seite.locator('.merkzettel ul').isVisible(), true);
+  assert.equal(await seite.locator('.merkzettel .mz-regel').isVisible(), true);
   await foto(seite, 'merkzettel');
   await seite.click('#zurueck');
   await seite.click('.kopf nav button:has-text("Schlossgarten")');
@@ -370,7 +374,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.close();
 }
 
-// ---------- 1c. Niveaustufen: Hilfen, Wortspeicher und Sternregel je Stufe (Dividieren) ----------
+// ---------- 1c. Niveaustufen: Hilfen, Worterklärung am Wort und Sternregel je Stufe (Dividieren) ----------
 {
   const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
   const fehler = [];
@@ -390,14 +394,13 @@ async function weiter(seite, wahl = '#weiter') {
     await seite.waitForSelector('section.aufgabe');
   };
   const zurueck = async () => { await seite.click('#zurueck'); await seite.waitForSelector('svg.regionskarte'); };
-  // F: drei Kärtchen, das erste liegt offen. Wortspeicher offen und nur mit Alltagswörtern, jeder Satz in einer eigenen Zeile, mit Bild.
+  // F: drei Kärtchen, das erste liegt offen. Kein Wortspeicher-Kasten, jeder Satz in einer eigenen Zeile, mit Bild.
   await oeffne('G', 5);
   assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.4\.5-D6-F/);
   assert.equal(await seite.locator('.kaertchen > *').count(), 3);
   assert.equal(await seite.locator('.kaertchen-offen').count(), 1);
   assert.equal(await seite.locator('.bildrahmen.zumtext svg.aufgabenbild').count(), 1);
-  assert.equal(await seite.locator('.wortspeicher dl').isVisible(), true);
-  assert.doesNotMatch(await seite.innerText('.wortspeicher'), /Quotient|Dividend/);
+  assert.equal(await seite.locator('.wortspeicher').count(), 0);
   assert.ok((await seite.innerText('.aufgabentext')).includes('\n'));
   await foto(seite, 'stufe-F');
   await antworte(seite, false); await seite.waitForSelector('.hinweis');
@@ -405,15 +408,35 @@ async function weiter(seite, wahl = '#weiter') {
   await weiter(seite, '#weiter'); await seite.waitForSelector('#pruefen');
   await antworte(seite, true); await seite.waitForSelector('.ergebnis.richtig'); // Auswahl mit mehrzeiligen Antworten
   await seite.click('.ergebnis button:has-text("Zur Regionskarte")'); await seite.waitForSelector('svg.regionskarte');
-  // G: drei Kärtchen, Wortspeicher mit Quotient. E: ein Kärtchen, Wortspeicher zugeklappt.
+  // G: drei Kärtchen. E: ein Kärtchen.
   await oeffne('G', 1);
   assert.equal(await seite.locator('[data-hilfe]').count(), 3);
-  assert.match(await seite.innerText('.wortspeicher'), /Quotient/);
+  // Worterklärung am Wort (0.64, ADR 0056): unterstrichen ist nur, was in der Aufgabe steht. Die Erklärung kommt beim Darüberfahren
+  // und geht beim Wegfahren; nach einem Klick bleibt sie, bis das Kind woanders hinklickt. Die ersten Male erklärt ein Satz die Linie.
+  assert.equal(await seite.locator('.wortspeicher').count(), 0);
+  const wort = seite.locator('.aufgabentext .wort').first();
+  assert.equal(await wort.getAttribute('data-wort'), 'schriftlich dividieren');
+  assert.equal(await seite.locator('#worthinweis').count(), 1);
+  assert.equal(await seite.locator('#worterklaerung').count(), 0);
+  await wort.hover();
+  assert.match(await seite.innerText('#worterklaerung'), /schriftlich dividieren[\s\S]*Schritt für Schritt/);
+  { const b = await seite.locator('#worterklaerung').boundingBox(), w = await wort.boundingBox(), feld = await seite.locator('form.antwort').boundingBox();
+    assert.ok(b.y + b.height <= w.y, 'Die Erklärung steht über dem Wort'); assert.ok(b.y + b.height <= feld.y, 'Die Erklärung verdeckt das Eingabefeld nicht'); }
+  await seite.mouse.move(5, 500);
+  assert.equal(await seite.locator('#worterklaerung').count(), 0);
+  await wort.click(); await seite.mouse.move(5, 500);
+  assert.equal(await seite.locator('#worterklaerung').count(), 1);
+  await seite.click('.aufgabenkopf');
+  assert.equal(await seite.locator('#worterklaerung').count(), 0);
+  // Der Merkzettel gehört zum Lernziel: schriftlich dividieren, mit einer Rechnung wie im Heft.
+  await seite.click('.merkzettel summary');
+  assert.match(await seite.innerText('.merkzettel'), /Beginne links[\s\S]*952 : 4 = 238/);
+  assert.doesNotMatch(await seite.innerText('.merkzettel'), /Dividend|Im Heft/);
   await foto(seite, 'stufe-G');
   await zurueck();
   await oeffne('E', 1);
   assert.equal(await seite.locator('[data-hilfe]').count(), 1);
-  assert.equal(await seite.locator('.wortspeicher dl').isVisible(), false);
+  assert.equal(await seite.locator('.wortspeicher').count(), 0);
   await foto(seite, 'stufe-E');
   await zurueck();
   // M: zwei Kärtchen. Drei richtige in der Folge AFB I, II, II bringen den Stern.

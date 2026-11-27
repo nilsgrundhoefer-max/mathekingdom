@@ -1284,6 +1284,10 @@
       {
        "id": "7.1.1-Z1",
        "text": "Ich kann negative Zahlen im Alltag deuten und an der Zahlengeraden ablesen und eintragen.",
+       "merkzettel": {
+        "regel": "Zahlen unter null sind negativ. Sie haben ein Minuszeichen und stehen auf der Zahlengeraden links von der Null.",
+        "beispiel": "Das Thermometer zeigt −5 °C.\nDas sind 5 Grad unter null."
+       },
        "voraussetzungen": [
         "5.2.1-N1",
         "5.9.3-K2"
@@ -1294,6 +1298,10 @@
       {
        "id": "7.1.1-Z2",
        "text": "Ich kann Gegenzahl und Betrag einer Zahl angeben und erklären, was rationale Zahlen sind.",
+       "merkzettel": {
+        "regel": "Die Gegenzahl liegt gleich weit von der Null entfernt, auf der anderen Seite. Der Betrag ist der Abstand zur Null und nie negativ.",
+        "beispiel": "Die Gegenzahl von 4 ist −4.\n|−4| = 4 und |4| = 4"
+       },
        "voraussetzungen": [
         "7.1.1-Z1"
        ],
@@ -1301,19 +1309,7 @@
        "bp": "3.1.1 (7) aus Kl. 5/6, Betrag 3.1.1 (8) nur E"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Zahlen unter null heißen negative Zahlen. Sie tragen ein Minuszeichen: −3.",
-       "Zahlen über null heißen positive Zahlen. Die Null ist weder positiv noch negativ.",
-       "Auf der Zahlengeraden stehen die negativen Zahlen links von der Null.",
-       "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite: Die Gegenzahl von 4 ist −4.",
-       "Der Abstand einer Zahl zur Null ist nie negativ. Bei −4 und bei 4 ist er 4.",
-       "Ab M: Der Abstand zur Null heißt Betrag. Man schreibt |−4| = 4.",
-       "Ab M: Die ganzen Zahlen und alle Brüche und Dezimalzahlen mit Plus oder Minus heißen rationale Zahlen."
-      ],
-      "beispiel": "Das Thermometer zeigt −5 °C. Das sind 5 Grad unter null. Bei 5 °C ist es gleich weit über null.",
-      "heft": "Zeichne eine Zahlengerade mit der Null in der Mitte. Schreibe die Zahlen mit Vorzeichen daran."
-     },
+     "heft": "Zeichne eine Zahlengerade mit der Null in der Mitte. Schreibe die Zahlen mit Vorzeichen daran.",
      "wortspeicher": [
       {
        "wort": "negative Zahl",
@@ -1375,6 +1371,10 @@
       {
        "id": "7.1.X1-K1",
        "text": "Ich kann Punkte im Koordinatensystem mit vier Quadranten ablesen und eintragen.",
+       "merkzettel": {
+        "regel": "Erst die x-Koordinate, dann die y-Koordinate. Bei negativem x gehst du nach links, bei negativem y nach unten.",
+        "beispiel": "P(−3|2): Geh vom Nullpunkt 3 nach links und 2 nach oben."
+       },
        "voraussetzungen": [
         "7.1.1-Z1",
         "5.5.4-K1",
@@ -1384,17 +1384,7 @@
        "bp": "3.1.1 (7) aus Kl. 5/6"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Das Koordinatensystem hat zwei Achsen: die x-Achse nach rechts und die y-Achse nach oben. Sie kreuzen sich im Nullpunkt.",
-       "Jeder Punkt hat zwei Koordinaten: P(x|y). Erst kommt die x-Koordinate, dann die y-Koordinate.",
-       "Ist die x-Koordinate negativ, gehst du vom Nullpunkt nach links. Ist die y-Koordinate negativ, gehst du nach unten.",
-       "Ab M: Die Achsen teilen das Blatt in vier Quadranten. Gezählt wird oben rechts beginnend gegen den Uhrzeigersinn: I, II, III, IV.",
-       "Ab E: Beim Spiegeln an der x-Achse wechselt die y-Koordinate ihr Vorzeichen, beim Spiegeln an der y-Achse die x-Koordinate."
-      ],
-      "beispiel": "P(−3|2): Gehe vom Nullpunkt 3 nach links und 2 nach oben.",
-      "heft": "Gehe immer zuerst an der x-Achse entlang und dann nach oben oder unten."
-     },
+     "heft": "Gehe immer zuerst an der x-Achse entlang und dann nach oben oder unten.",
      "wortspeicher": [
       {
        "wort": "Koordinatensystem",
@@ -1451,6 +1441,10 @@
       {
        "id": "7.1.2-V1",
        "text": "Ich kann rationale Zahlen vergleichen.",
+       "merkzettel": {
+        "regel": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links. Jede negative Zahl ist kleiner als jede positive Zahl.",
+        "beispiel": "−8 < −3\nBei −8 °C ist es kälter als bei −3 °C."
+       },
        "voraussetzungen": [
         "7.1.1-Z1",
         "5.2.1-N2"
@@ -1461,6 +1455,10 @@
       {
        "id": "7.1.2-V2",
        "text": "Ich kann rationale Zahlen ordnen und Abstand und Mitte zweier Zahlen bestimmen.",
+       "merkzettel": {
+        "regel": "Den Abstand zweier Zahlen findest du durch Zählen der Schritte auf der Zahlengeraden. Die Mitte liegt von beiden gleich weit entfernt.",
+        "beispiel": "Von −2 bis 4 sind es 6 Schritte. Der Abstand ist 6.\nDie Mitte liegt 3 Schritte von beiden: bei 1."
+       },
        "voraussetzungen": [
         "7.1.2-V1",
         "6.1.4-V2"
@@ -1469,18 +1467,7 @@
        "bp": "3.1.1 (7) aus Kl. 5/6"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Von zwei Zahlen ist die kleiner, die auf der Zahlengeraden weiter links liegt.",
-       "Jede negative Zahl ist kleiner als null und kleiner als jede positive Zahl.",
-       "Bei zwei negativen Zahlen ist die kleiner, die weiter von der Null entfernt ist: −8 < −3.",
-       "Den Abstand zweier Zahlen findest du durch Zählen der Schritte auf der Zahlengeraden.",
-       "Ab G: Die Mitte zweier Zahlen liegt von beiden gleich weit entfernt.",
-       "Ab M: Brüche und Dezimalzahlen vergleichst du zuerst ohne Vorzeichen. Bei negativen Zahlen dreht sich das Zeichen um: 1⁄2 > 1⁄4, aber −1⁄2 < −1⁄4."
-      ],
-      "beispiel": "Bei −8 °C ist es kälter als bei −3 °C. Also gilt −8 < −3.",
-      "heft": "Markiere beide Zahlen auf einer Zahlengeraden. Die linke Zahl ist die kleinere."
-     },
+     "heft": "Markiere beide Zahlen auf einer Zahlengeraden. Die linke Zahl ist die kleinere.",
      "wortspeicher": [
       {
        "wort": "kleiner als",
@@ -1522,6 +1509,10 @@
       {
        "id": "7.1.X2-W1",
        "text": "Ich kann Wege auf der Zahlengeraden gehen: Start, Schritte und Ziel bestimmen.",
+       "merkzettel": {
+        "regel": "Ein Schritt mit Plus geht nach rechts. Ein Schritt mit Minus geht nach links.",
+        "beispiel": "Start bei 2, dann 6 Schritte nach links.\nDu gehst über die Null und landest bei −4."
+       },
        "voraussetzungen": [
         "7.1.1-Z1",
         "5.3.1-K1"
@@ -1530,17 +1521,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Weg auf der Zahlengeraden hat einen Start, einen oder mehrere Schritte und ein Ziel.",
-       "Ein Schritt mit Plus geht nach rechts. Ein Schritt mit Minus geht nach links.",
-       "Start −3, Schritt +5: Du landest bei 2.",
-       "Ab M: Suchst du den Start, gehst du vom Ziel aus alle Schritte rückwärts.",
-       "Ab E: Fehlt ein Schritt, zählst du von der letzten bekannten Stelle bis zum Ziel."
-      ],
-      "beispiel": "Start bei 2, dann 6 Schritte nach links: Du gehst über die Null und landest bei −4.",
-      "heft": "Zeichne jeden Schritt als Bogen über die Zahlengerade und schreibe die Zahl daran."
-     },
+     "heft": "Zeichne jeden Schritt als Bogen über die Zahlengerade und schreibe die Zahl daran.",
      "wortspeicher": [
       {
        "wort": "Start",
@@ -1577,6 +1558,10 @@
       {
        "id": "7.1.3-A1",
        "text": "Ich kann ganze Zahlen addieren.",
+       "merkzettel": {
+        "regel": "Starte bei der ersten Zahl. Eine positive Zahl addieren heißt nach rechts gehen, eine negative Zahl addieren heißt nach links gehen.",
+        "beispiel": "−5 + 3 = −2\n2 + (−6) = −4\n−2 + (−3) = −5"
+       },
        "voraussetzungen": [
         "7.1.1-Z2",
         "5.3.1-K1"
@@ -1587,6 +1572,10 @@
       {
        "id": "7.1.3-A2",
        "text": "Ich kann rationale Zahlen als Dezimalzahlen und Brüche addieren.",
+       "merkzettel": {
+        "regel": "Für Dezimalzahlen und Brüche gelten dieselben Regeln. Bei verschiedenen Vorzeichen ziehst du die Beträge voneinander ab, es gilt das Vorzeichen der Zahl mit dem größeren Betrag.",
+        "beispiel": "−1,5 + 0,7 = −0,8\n−3⁄5 + 1⁄5 = −2⁄5"
+       },
        "voraussetzungen": [
         "7.1.3-A1",
         "6.2.1-A1"
@@ -1595,18 +1584,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Addieren an der Zahlengeraden: Starte bei der ersten Zahl.",
-       "Eine positive Zahl addieren heißt: nach rechts gehen. −5 + 3 = −2.",
-       "Eine negative Zahl addieren heißt: nach links gehen. 2 + (−6) = −4.",
-       "Zwei negative Zahlen: Es wird noch weniger. −2 + (−3) = −5.",
-       "Ab G: Gleiche Vorzeichen: Abstände zur Null addieren, das Vorzeichen bleibt. Verschiedene Vorzeichen: Abstände subtrahieren, das Vorzeichen der Zahl mit dem größeren Abstand gilt.",
-       "Ab M: Dieselben Regeln gelten für Dezimalzahlen und Brüche: −1,5 + 0,7 = −0,8 und −3⁄5 + 1⁄5 = −2⁄5."
-      ],
-      "beispiel": "Morgens sind es −5 °C. Bis mittags wird es 8 Grad wärmer: −5 + 8 = 3. Mittags sind es 3 °C.",
-      "heft": "Schreibe eine negative Zahl nach dem Pluszeichen immer in Klammern: 4 + (−9)."
-     },
+     "heft": "Schreibe eine negative Zahl nach dem Pluszeichen immer in Klammern: 4 + (−9).",
      "wortspeicher": [
       {
        "wort": "addieren",
@@ -1643,6 +1621,10 @@
       {
        "id": "7.1.4-S1",
        "text": "Ich kann ganze Zahlen subtrahieren.",
+       "merkzettel": {
+        "regel": "Eine negative Zahl subtrahieren heißt: ihre Gegenzahl addieren. Aus Minus und Minus wird Plus.",
+        "beispiel": "3 − 5 = −2\n3 − (−5) = 3 + 5 = 8"
+       },
        "voraussetzungen": [
         "7.1.3-A1",
         "5.3.1-K2"
@@ -1653,6 +1635,10 @@
       {
        "id": "7.1.4-S2",
        "text": "Ich kann rationale Zahlen als Dezimalzahlen und Brüche subtrahieren.",
+       "merkzettel": {
+        "regel": "Für Dezimalzahlen und Brüche gelten dieselben Regeln. Schreibe die Minusaufgabe als Plusaufgabe mit der Gegenzahl.",
+        "beispiel": "0,5 − 1,2 = −0,7\n1⁄7 − 4⁄7 = −3⁄7"
+       },
        "voraussetzungen": [
         "7.1.4-S1",
         "6.2.2-U1"
@@ -1661,17 +1647,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Subtrahieren an der Zahlengeraden: Starte bei der ersten Zahl und gehe nach links. 3 − 5 = −2.",
-       "Eine negative Zahl subtrahieren heißt: ihre Gegenzahl addieren. 3 − (−5) = 3 + 5 = 8.",
-       "Aus Minus und Minus wird Plus.",
-       "Ab G: Jede Minusaufgabe lässt sich als Plusaufgabe schreiben: −4 − 6 = −4 + (−6) = −10.",
-       "Ab M: Dieselben Regeln gelten für Dezimalzahlen und Brüche: 0,5 − 1,2 = −0,7 und 1⁄7 − 4⁄7 = −3⁄7."
-      ],
-      "beispiel": "Der Unterschied zwischen 4 °C und −3 °C: 4 − (−3) = 4 + 3 = 7. Es sind 7 Grad Unterschied.",
-      "heft": "Schreibe zuerst die Plusaufgabe mit der Gegenzahl hin. Rechne dann."
-     },
+     "heft": "Schreibe zuerst die Plusaufgabe mit der Gegenzahl hin. Rechne dann.",
      "wortspeicher": [
       {
        "wort": "subtrahieren",
@@ -1703,6 +1679,10 @@
       {
        "id": "7.1.5-R1",
        "text": "Ich kann Klammern auflösen und Rechenzeichen und Vorzeichen zusammenfassen.",
+       "merkzettel": {
+        "regel": "Gleiche Zeichen nebeneinander werden zu Plus. Verschiedene Zeichen nebeneinander werden zu Minus.",
+        "beispiel": "5 + (−3) = 5 − 3\n5 − (−3) = 5 + 3\n(+15) + (−8) − (−5) = 15 − 8 + 5 = 12"
+       },
        "voraussetzungen": [
         "7.1.4-S1",
         "5.3.4-B1"
@@ -1713,6 +1693,10 @@
       {
        "id": "7.1.5-R2",
        "text": "Ich kann Summen vorteilhaft ordnen und geschickt rechnen.",
+       "merkzettel": {
+        "regel": "Du darfst die Zahlen mit ihrem Vorzeichen vertauschen. Ordne so, dass es leicht wird.",
+        "beispiel": "17 − 8 + 3\n= 17 + 3 − 8\n= 20 − 8 = 12"
+       },
        "voraussetzungen": [
         "7.1.5-R1",
         "5.3.5-R2"
@@ -1721,19 +1705,7 @@
        "bp": "3.2.1 (11), 3.1.1 (25) aus Kl. 5/6"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Plus und Plus wird Plus: 5 + (+3) = 5 + 3.",
-       "Plus und Minus wird Minus: 5 + (−3) = 5 − 3.",
-       "Minus und Plus wird Minus: 5 − (+3) = 5 − 3.",
-       "Minus und Minus wird Plus: 5 − (−3) = 5 + 3.",
-       "Ab G: Steht ein Plus vor einer Klammer, darfst du die Klammer weglassen. Steht ein Minus davor, drehen sich alle Zeichen in der Klammer um: 10 − (4 − 6) = 10 − 4 + 6 = 12.",
-       "Ab G: In einer Summe darfst du die Zahlen mit ihrem Vorzeichen vertauschen. Ordne so, dass es leicht wird: 17 − 8 + 3 = 17 + 3 − 8 = 12.",
-       "Ab M: Fasse erst alle positiven und alle negativen Zahlen zusammen. Zahlen und ihre Gegenzahlen heben sich auf."
-      ],
-      "beispiel": "(+15) + (−8) − (−5) = 15 − 8 + 5 = 12. Erst fallen die Klammern weg, dann wird gerechnet.",
-      "heft": "Schreibe die Aufgabe erst ohne Klammern. Das Vorzeichen wandert immer mit seiner Zahl."
-     },
+     "heft": "Schreibe die Aufgabe erst ohne Klammern. Das Vorzeichen wandert immer mit seiner Zahl.",
      "wortspeicher": [
       {
        "wort": "Klammer",
@@ -1780,6 +1752,10 @@
       {
        "id": "7.1.6-P1",
        "text": "Ich kann ganze Zahlen multiplizieren.",
+       "merkzettel": {
+        "regel": "Gleiche Vorzeichen ergeben Plus, verschiedene Vorzeichen ergeben Minus. Bestimme zuerst das Vorzeichen, dann rechnest du ohne Vorzeichen.",
+        "beispiel": "3 · (−4) = −12\n(−3) · (−4) = 12"
+       },
        "voraussetzungen": [
         "7.1.3-A1",
         "5.4.1-K1"
@@ -1790,6 +1766,10 @@
       {
        "id": "7.1.6-P2",
        "text": "Ich kann rationale Zahlen multiplizieren, auch mit mehreren Faktoren.",
+       "merkzettel": {
+        "regel": "Zähle die Minuszeichen. Eine gerade Anzahl ergibt Plus, eine ungerade Anzahl ergibt Minus.",
+        "beispiel": "(−2) · (−5) · (−3) = −30\nDrei Minuszeichen: Das Ergebnis ist negativ."
+       },
        "voraussetzungen": [
         "7.1.6-P1",
         "6.2.5-P1"
@@ -1798,19 +1778,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Malnehmen heißt: mehrmals dasselbe addieren. 3 · (−4) = (−4) + (−4) + (−4) = −12.",
-       "Plus mal Minus ergibt Minus. Minus mal Plus ergibt Minus.",
-       "Minus mal Minus ergibt Plus: (−3) · (−4) = 12.",
-       "Rechne so: erst das Vorzeichen bestimmen, dann die Zahlen ohne Vorzeichen malnehmen.",
-       "Eine Zahl mal 0 ist immer 0.",
-       "Ab M: Bei mehreren Faktoren zählst du die Minuszeichen. Eine gerade Anzahl ergibt Plus, eine ungerade Anzahl ergibt Minus.",
-       "Ab M: Dieselben Regeln gelten für Dezimalzahlen und Brüche: (−0,5) · 4 = −2 und (−2⁄3) · (−1⁄5) = 2⁄15."
-      ],
-      "beispiel": "Ein Taucher sinkt in jeder Minute 4 m. Nach 3 Minuten: 3 · (−4) = −12. Er ist 12 m unter der Oberfläche.",
-      "heft": "Schreibe zuerst das Vorzeichen des Ergebnisses hin. Rechne dann mit den Zahlen ohne Vorzeichen."
-     },
+     "heft": "Schreibe zuerst das Vorzeichen des Ergebnisses hin. Rechne dann mit den Zahlen ohne Vorzeichen.",
      "wortspeicher": [
       {
        "wort": "multiplizieren",
@@ -1852,6 +1820,10 @@
       {
        "id": "7.1.7-D1",
        "text": "Ich kann ganze Zahlen dividieren.",
+       "merkzettel": {
+        "regel": "Beim Dividieren gelten dieselben Vorzeichenregeln wie beim Multiplizieren.",
+        "beispiel": "(−12) : (−3) = 4\n(−12) : 3 = −4\n12 : (−3) = −4"
+       },
        "voraussetzungen": [
         "7.1.6-P1",
         "5.4.1-K2"
@@ -1862,6 +1834,10 @@
       {
        "id": "7.1.7-D2",
        "text": "Ich kann rationale Zahlen dividieren und fehlende Zahlen in Mal- und Geteilt-Aufgaben finden.",
+       "merkzettel": {
+        "regel": "Durch einen Bruch dividierst du, indem du mit dem Kehrwert multiplizierst. Eine fehlende Zahl findest du mit der Umkehraufgabe.",
+        "beispiel": "(−3⁄4) : 1⁄2 = (−3⁄4) · 2 = −3⁄2\n▢ · (−4) = 20, also ▢ = 20 : (−4) = −5"
+       },
        "voraussetzungen": [
         "7.1.7-D1",
         "6.2.4-T1"
@@ -1870,18 +1846,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Beim Dividieren gelten dieselben Vorzeichenregeln wie beim Multiplizieren.",
-       "Gleiche Vorzeichen ergeben Plus: (−12) : (−3) = 4.",
-       "Verschiedene Vorzeichen ergeben Minus: (−12) : 3 = −4 und 12 : (−3) = −4.",
-       "Null geteilt durch eine Zahl ist null: 0 : (−17) = 0. Durch null kann man nicht teilen.",
-       "Prüfe mit der Malaufgabe: (−4) · 3 = −12.",
-       "Ab M: Durch einen Bruch dividierst du, indem du mit dem Kehrwert multiplizierst: (−3⁄4) : 1⁄2 = (−3⁄4) · 2 = −3⁄2."
-      ],
-      "beispiel": "−20 € Schulden werden auf 4 Personen verteilt: (−20) : 4 = −5. Jede Person hat 5 € Schulden.",
-      "heft": "Bestimme zuerst das Vorzeichen. Mache danach immer die Probe mit der Malaufgabe."
-     },
+     "heft": "Bestimme zuerst das Vorzeichen. Mache danach immer die Probe mit der Malaufgabe.",
      "wortspeicher": [
       {
        "wort": "dividieren",
@@ -1928,6 +1893,10 @@
       {
        "id": "7.1.8-T1",
        "text": "Ich kann Rechenausdrücke mit rationalen Zahlen berechnen: Klammern zuerst, dann Punkt vor Strich.",
+       "merkzettel": {
+        "regel": "Klammern zuerst. Dann Punkt vor Strich.",
+        "beispiel": "2 + 3 · (−4)\n= 2 + (−12)\n= −10"
+       },
        "voraussetzungen": [
         "7.1.6-P1",
         "7.1.4-S1",
@@ -1939,6 +1908,10 @@
       {
        "id": "7.1.8-T2",
        "text": "Ich kann ausmultiplizieren und ausklammern und damit Rechenausdrücke vereinfachen.",
+       "merkzettel": {
+        "regel": "Ausmultiplizieren: Nimm jede Zahl in der Klammer mit dem Faktor vor der Klammer mal. Ausklammern: Ein gemeinsamer Faktor darf vor die Klammer.",
+        "beispiel": "2 · (3 + (−5)) = 2 · 3 + 2 · (−5) = −4\n(−7) · 13 + (−7) · 7 = (−7) · (13 + 7) = −140"
+       },
        "voraussetzungen": [
         "7.1.8-T1",
         "5.4.7-V1",
@@ -1948,18 +1921,7 @@
        "bp": "3.2.1 (10), (11)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Klammern zuerst.",
-       "Dann Punkt vor Strich: Mal und geteilt kommen vor plus und minus.",
-       "Sonst rechnest du von links nach rechts.",
-       "2 + 3 · (−4) = 2 + (−12) = −10.",
-       "Ab G: Ausmultiplizieren: Jede Zahl in der Klammer wird mit der Zahl vor der Klammer malgenommen. 2 · (3 + (−5)) = 2 · 3 + 2 · (−5) = −4.",
-       "Ab M: Ausklammern: Steckt in jedem Teil derselbe Faktor, darf er vor eine Klammer. (−7) · 13 + (−7) · 7 = (−7) · (13 + 7) = −140."
-      ],
-      "beispiel": "(−2 + 5) · (−4) = 3 · (−4) = −12. Zuerst wird die Klammer berechnet.",
-      "heft": "Unterstreiche, was du zuerst rechnest. Schreibe jeden Schritt in eine neue Zeile."
-     },
+     "heft": "Unterstreiche, was du zuerst rechnest. Schreibe jeden Schritt in eine neue Zeile.",
      "wortspeicher": [
       {
        "wort": "Punktrechnung",
@@ -2001,6 +1963,10 @@
       {
        "id": "7.1.X3-C1",
        "text": "Ich kann mit Temperaturen in Grad Celsius rechnen und kenne die Umrechnung in Fahrenheit und Kelvin.",
+       "merkzettel": {
+        "regel": "Steigt die Temperatur, rechnest du plus. Sinkt sie, rechnest du minus.",
+        "beispiel": "Nachts sind es −6 °C, mittags 5 °C.\n5 − (−6) = 11\nDie Temperatur ist um 11 Grad gestiegen."
+       },
        "voraussetzungen": [
         "7.1.4-S1"
        ],
@@ -2008,18 +1974,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Temperaturen misst man bei uns in Grad Celsius: °C. Wasser gefriert bei 0 °C und siedet bei 100 °C.",
-       "Temperaturen unter null sind negativ. Dann herrscht Frost.",
-       "Steigt die Temperatur, rechnest du plus. Sinkt sie, rechnest du minus.",
-       "Den Temperaturunterschied findest du durch Zählen an der Skala: von −3 °C bis 4 °C sind es 7 Grad.",
-       "Ab M: In den USA misst man in Grad Fahrenheit. Umrechnung: Grad Celsius mal 1,8 plus 32. Aus 10 °C werden 50 °F, denn 10 · 1,8 + 32 = 50.",
-       "Ab M: In der Wissenschaft misst man in Kelvin. Umrechnung: Grad Celsius plus 273. Aus −3 °C werden 270 K, denn −3 + 273 = 270."
-      ],
-      "beispiel": "Nachts sind es −6 °C, mittags 5 °C. Die Temperatur ist um 11 Grad gestiegen, denn 5 − (−6) = 11.",
-      "heft": "Skizziere ein Thermometer. Markiere beide Temperaturen und zähle die Grade dazwischen."
-     },
+     "heft": "Skizziere ein Thermometer. Markiere beide Temperaturen und zähle die Grade dazwischen.",
      "wortspeicher": [
       {
        "wort": "Temperatur",
@@ -2061,6 +2016,10 @@
       {
        "id": "7.1.X4-B1",
        "text": "Ich kann einen Kontoauszug lesen und Kontostände mit Guthaben und Schulden berechnen.",
+       "merkzettel": {
+        "regel": "Kommt Geld auf das Konto, rechnest du plus, geht Geld ab, rechnest du minus. Ein negativer Kontostand bedeutet Schulden.",
+        "beispiel": "Kontostand 40 €, Abbuchung 65 €:\n40 − 65 = −25\nDas Konto ist mit 25 € im Minus."
+       },
        "voraussetzungen": [
         "7.1.4-S1",
         "5.6.2-B2"
@@ -2069,18 +2028,7 @@
        "bp": "3.2.1 (1)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Auf einem Girokonto liegt dein Geld bei der Bank. Der Kontostand sagt, wie viel Geld auf dem Konto ist.",
-       "Ein positiver Kontostand ist ein Guthaben. Ein negativer Kontostand bedeutet Schulden bei der Bank.",
-       "Kommt Geld auf das Konto, rechnest du plus. Geht Geld vom Konto ab, rechnest du minus.",
-       "Neuer Kontostand: alter Kontostand und alle Buchungen der Reihe nach verrechnen.",
-       "Ab G: Geld, das dazukommt, heißt Gutschrift. Geld, das abgeht, heißt Abbuchung.",
-       "Ab M: Auf dem Kontoauszug steht S für Soll (Minus) und H für Haben (Plus). Wer mehr abhebt, als er hat, überzieht sein Konto."
-      ],
-      "beispiel": "Kontostand 40 €, dann eine Abbuchung von 65 €: 40 − 65 = −25. Das Konto ist mit 25 € im Minus.",
-      "heft": "Schreibe die Buchungen untereinander, jede mit Plus oder Minus davor."
-     },
+     "heft": "Schreibe die Buchungen untereinander, jede mit Plus oder Minus davor.",
      "wortspeicher": [
       {
        "wort": "Kontostand",
@@ -2149,6 +2097,10 @@
       {
        "id": "7.2.1-W1",
        "text": "Ich kann Scheitelwinkel und Nebenwinkel an zwei sich schneidenden Geraden erkennen und berechnen.",
+       "merkzettel": {
+        "regel": "Scheitelwinkel liegen sich gegenüber und sind gleich groß. Nebenwinkel liegen nebeneinander und sind zusammen 180°.",
+        "beispiel": "α = 40°\nNebenwinkel: 180° − 40° = 140°\nScheitelwinkel: 40°"
+       },
        "voraussetzungen": [
         "5.7.4-W1",
         "5.7.3-A1",
@@ -2160,6 +2112,10 @@
       {
        "id": "7.2.1-W2",
        "text": "Ich kann Stufenwinkel und Wechselwinkel an geschnittenen Parallelen erkennen und berechnen.",
+       "merkzettel": {
+        "regel": "An Parallelen sind Stufenwinkel gleich groß und Wechselwinkel gleich groß.",
+        "beispiel": "Eine Gerade schneidet zwei Parallelen. An der oberen Parallelen ist α = 65°.\nDer Stufenwinkel an der unteren Parallelen ist auch 65°."
+       },
        "voraussetzungen": [
         "7.2.1-W1",
         "5.5.3-P1"
@@ -2168,18 +2124,7 @@
        "bp": "3.2.3 (3), auf G [MSA]"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Schneiden sich zwei Geraden, entstehen vier Winkel. Gegenüberliegende Winkel heißen Scheitelwinkel. Sie sind gleich groß.",
-       "Winkel, die nebeneinander an einer Geraden liegen, heißen Nebenwinkel. Zusammen sind sie 180°.",
-       "Schneidet eine Gerade zwei Parallelen, liegen Stufenwinkel an beiden Parallelen an derselben Stelle. Sie sind gleich groß.",
-       "Wechselwinkel liegen auf verschiedenen Seiten der schneidenden Geraden, einer an jeder Parallelen. Sie sind gleich groß.",
-       "Stufenwinkel und Wechselwinkel sind nur an Parallelen gleich groß.",
-       "Ab M: Den Grund nennst du mit dem Fachbegriff: „β = 140°, denn β ist Nebenwinkel von α.“"
-      ],
-      "beispiel": "Ist α = 40°, dann ist der Nebenwinkel β = 180° − 40° = 140° und der Scheitelwinkel γ = 40°.",
-      "heft": "Markiere gleich große Winkel mit derselben Farbe. Stufenwinkel bilden ein F, Wechselwinkel ein Z."
-     },
+     "heft": "Markiere gleich große Winkel mit derselben Farbe. Stufenwinkel bilden ein F, Wechselwinkel ein Z.",
      "wortspeicher": [
       {
        "wort": "Scheitelwinkel",
@@ -2226,6 +2171,10 @@
       {
        "id": "7.2.2-S1",
        "text": "Ich kann mit dem Winkelsummensatz fehlende Winkel im Dreieck berechnen.",
+       "merkzettel": {
+        "regel": "Die drei Winkel im Dreieck sind zusammen 180°. Den fehlenden Winkel findest du so: 180° minus die beiden anderen.",
+        "beispiel": "α = 50° und β = 70°\nγ = 180° − 50° − 70° = 60°"
+       },
        "voraussetzungen": [
         "5.7.X2-D1",
         "5.7.4-W1"
@@ -2236,6 +2185,10 @@
       {
        "id": "7.2.2-S2",
        "text": "Ich kann den Winkelsummensatz begründen und in zusammengesetzten Figuren anwenden.",
+       "merkzettel": {
+        "regel": "Zerlege die Figur in Dreiecke und rechne in jedem Dreieck mit 180°. Nebenwinkel helfen beim Übergang von einem Dreieck zum nächsten.",
+        "beispiel": "Der Außenwinkel bei C ist der Nebenwinkel von γ = 60°.\n180° − 60° = 120°"
+       },
        "voraussetzungen": [
         "7.2.2-S1",
         "7.2.1-W2"
@@ -2244,17 +2197,7 @@
        "bp": "3.2.3 (4)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "In jedem Dreieck sind die drei Innenwinkel zusammen 180° groß: α + β + γ = 180°.",
-       "Einen fehlenden Winkel findest du so: 180° minus die beiden bekannten Winkel.",
-       "Ein Dreieck hat höchstens einen rechten oder einen stumpfen Winkel.",
-       "Ab M: Begründung mit einer Parallelen zu AB durch C: Wechselwinkel zu α und β liegen bei C neben γ. Zusammen bilden sie 180°.",
-       "Ab M: Der Außenwinkel an einer Ecke ist der Nebenwinkel des Innenwinkels. Er ist so groß wie die beiden anderen Innenwinkel zusammen."
-      ],
-      "beispiel": "α = 50° und β = 70°. Dann ist γ = 180° − 50° − 70° = 60°.",
-      "heft": "Mache immer die Probe: Die drei Winkel zusammen müssen 180° ergeben."
-     },
+     "heft": "Mache immer die Probe: Die drei Winkel zusammen müssen 180° ergeben.",
      "wortspeicher": [
       {
        "wort": "Winkelsumme",
@@ -2291,6 +2234,10 @@
       {
        "id": "7.2.3-D1",
        "text": "Ich kann Dreiecke nach Seiten und Winkeln einteilen und richtig beschriften.",
+       "merkzettel": {
+        "regel": "Nach den Seiten: gleichschenklig (zwei gleich lang) oder gleichseitig (drei gleich lang). Nach den Winkeln: spitzwinklig, rechtwinklig oder stumpfwinklig.",
+        "beispiel": "Ein Dreieck hat die Winkel 30°, 40° und 110°.\nEin Winkel ist größer als 90°. Es ist stumpfwinklig."
+       },
        "voraussetzungen": [
         "5.7.X2-D1",
         "5.7.3-A1"
@@ -2301,6 +2248,10 @@
       {
        "id": "7.2.3-D2",
        "text": "Ich kann Eigenschaften gleichschenkliger und gleichseitiger Dreiecke nutzen, auch den Basiswinkelsatz.",
+       "merkzettel": {
+        "regel": "Im gleichschenkligen Dreieck sind die beiden Basiswinkel gleich groß. Im gleichseitigen Dreieck hat jeder Winkel 60°.",
+        "beispiel": "An der Spitze sind 40°.\n(180° − 40°) : 2 = 70°\nJeder Basiswinkel ist 70°."
+       },
        "voraussetzungen": [
         "7.2.3-D1",
         "7.2.2-S1"
@@ -2309,18 +2260,7 @@
        "bp": "3.2.3 (5)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Die Ecken heißen gegen den Uhrzeigersinn A, B und C. Die Seite a liegt der Ecke A gegenüber, der Winkel α liegt bei A.",
-       "Nach den Seiten: Ein gleichschenkliges Dreieck hat zwei gleich lange Seiten, ein gleichseitiges drei.",
-       "Nach den Winkeln: spitzwinklig (alle Winkel kleiner als 90°), rechtwinklig (ein Winkel 90°), stumpfwinklig (ein Winkel größer als 90°).",
-       "Im gleichschenkligen Dreieck heißen die gleich langen Seiten Schenkel, die dritte Seite Basis. Die Ecke gegenüber der Basis ist die Spitze.",
-       "Ab M: Basiswinkelsatz: Im gleichschenkligen Dreieck sind die beiden Winkel an der Basis gleich groß. Umgekehrt gilt: Sind zwei Winkel gleich groß, ist das Dreieck gleichschenklig.",
-       "Ab M: Im gleichseitigen Dreieck ist jeder Winkel 60° groß."
-      ],
-      "beispiel": "Ein gleichschenkliges Dreieck hat an der Spitze 40°. Jeder Basiswinkel ist (180° − 40°) : 2 = 70°.",
-      "heft": "Markiere gleich lange Seiten mit Strichen und gleich große Winkel mit Bögen."
-     },
+     "heft": "Markiere gleich lange Seiten mit Strichen und gleich große Winkel mit Bögen.",
      "wortspeicher": [
       {
        "wort": "gleichschenklig",
@@ -2382,6 +2322,10 @@
       {
        "id": "7.2.4-K1",
        "text": "Ich kann erkennen, welcher Kongruenzsatz passt, und eine Planfigur skizzieren.",
+       "merkzettel": {
+        "regel": "Skizziere eine Planfigur und markiere, was gegeben ist. Ein Dreieck liegt fest bei drei Seiten (sss), zwei Seiten mit Winkel dazwischen (sws) oder einer Seite mit beiden Winkeln daran (wsw).",
+        "beispiel": "Gegeben: c = 6 cm, α = 50°, β = 60°.\nEine Seite und die beiden Winkel daran: wsw."
+       },
        "voraussetzungen": [
         "7.2.3-D1",
         "5.7.X2-D2"
@@ -2392,6 +2336,10 @@
       {
        "id": "7.2.4-K2",
        "text": "Ich kann Dreiecke aus drei gegebenen Größen konstruieren.",
+       "merkzettel": {
+        "regel": "Zeichne zuerst eine gegebene Seite. Trage dann Winkel mit dem Geodreieck und Längen mit dem Zirkel an.",
+        "beispiel": "c = 6 cm, α = 50°, β = 60°:\nZeichne c. Trage bei A 50° und bei B 60° an.\nWo sich die Schenkel schneiden, liegt C."
+       },
        "voraussetzungen": [
         "7.2.4-K1",
         "5.7.4-W2",
@@ -2402,17 +2350,7 @@
        "bp": "3.2.3 (7), (8)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Zuerst skizzierst du eine Planfigur. Darin markierst du alles, was gegeben ist.",
-       "Ein Dreieck kann man zeichnen, wenn man drei Seiten kennt (sss), zwei Seiten und den Winkel dazwischen (sws) oder eine Seite und die beiden Winkel daran (wsw).",
-       "Ab M: Dreiecke mit denselben Maßen sind kongruent, also deckungsgleich. Die Regeln oben heißen Kongruenzsätze.",
-       "Ab M: Drei Winkel allein legen ein Dreieck nicht fest. Es kann groß oder klein sein.",
-       "Ab E: Zwei Seiten zusammen müssen länger sein als die dritte (Dreiecksungleichung). Bei zwei Seiten und einem Winkel, der nicht dazwischen liegt, muss der Winkel der längeren Seite gegenüber liegen (SsW)."
-      ],
-      "beispiel": "Gegeben: c = 6 cm, α = 50°, β = 60° (wsw). Zeichne c, trage die Winkel an A und B an. Der Schnittpunkt der Schenkel ist C.",
-      "heft": "Arbeite mit spitzem Bleistift. Miss am Ende nach: Seiten auf 2 mm genau, Winkel auf 2° genau."
-     },
+     "heft": "Arbeite mit spitzem Bleistift. Miss am Ende nach: Seiten auf 2 mm genau, Winkel auf 2° genau.",
      "wortspeicher": [
       {
        "wort": "Planfigur",
@@ -2465,6 +2403,10 @@
       {
        "id": "7.2.5-T1",
        "text": "Ich kann den Satz des Thales erkennen und damit Winkel berechnen.",
+       "merkzettel": {
+        "regel": "Satz des Thales: Liegt C auf dem Halbkreis über AB, dann ist der Winkel bei C ein rechter Winkel.",
+        "beispiel": "C liegt auf dem Thaleskreis, α = 35°.\nγ = 90°\nβ = 180° − 90° − 35° = 55°"
+       },
        "voraussetzungen": [
         "7.2.2-S1",
         "5.7.1-R1"
@@ -2475,6 +2417,10 @@
       {
        "id": "7.2.5-T2",
        "text": "Ich kann mit dem Thaleskreis rechtwinklige Dreiecke konstruieren.",
+       "merkzettel": {
+        "regel": "Zeichne den Halbkreis über AB: Sein Mittelpunkt ist die Mitte von AB. Jeder Punkt C auf dem Halbkreis gibt einen rechten Winkel.",
+        "beispiel": "AB = 8 cm\nDer Thaleskreis hat den Radius 8 cm : 2 = 4 cm."
+       },
        "voraussetzungen": [
         "7.2.5-T1",
         "5.7.1-R2",
@@ -2484,17 +2430,7 @@
        "bp": "3.2.3 (6), (10)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Satz des Thales: Liegt der Punkt C auf einem Halbkreis über der Strecke AB, dann ist der Winkel bei C ein rechter Winkel.",
-       "Der Halbkreis heißt Thaleskreis. Sein Mittelpunkt ist die Mitte von AB, sein Radius die halbe Strecke AB.",
-       "Mit dem Thaleskreis zeichnest du rechtwinklige Dreiecke: Der rechte Winkel liegt auf dem Kreis, AB ist der Durchmesser.",
-       "Ab M: Umgekehrt gilt: Ist der Winkel bei C ein rechter Winkel, liegt C auf dem Thaleskreis über AB.",
-       "Ab E: Begründung: Die Strecke von der Mitte M zu C zerlegt das Dreieck in zwei gleichschenklige Dreiecke."
-      ],
-      "beispiel": "C liegt auf dem Thaleskreis über AB, α = 35°. Dann ist γ = 90° und β = 180° − 90° − 35° = 55°.",
-      "heft": "Stich den Zirkel genau in die Mitte von AB."
-     },
+     "heft": "Stich den Zirkel genau in die Mitte von AB.",
      "wortspeicher": [
       {
        "wort": "Halbkreis",
@@ -2527,6 +2463,10 @@
       {
        "id": "7.2.X1-T1",
        "text": "Ich kann Tangenten an einen Kreis konstruieren.",
+       "merkzettel": {
+        "regel": "Die Tangente berührt den Kreis in genau einem Punkt. Dort steht sie senkrecht auf dem Radius.",
+        "beispiel": "Tangente im Punkt P:\nZeichne den Radius MP. Zeichne durch P die Senkrechte zu MP."
+       },
        "voraussetzungen": [
         "7.2.5-T2",
         "5.5.2-S2"
@@ -2535,16 +2475,7 @@
        "bp": "3.2.3 (12), nur E"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine Tangente berührt den Kreis in genau einem Punkt. Eine Sekante schneidet ihn in zwei Punkten, eine Passante gar nicht.",
-       "Die Tangente steht im Berührpunkt senkrecht auf dem Radius.",
-       "Tangente in einem Punkt P des Kreises: Zeichne den Radius MP und dazu die Senkrechte durch P.",
-       "Tangenten von einem Punkt Q außerhalb: Der Thaleskreis über MQ schneidet den Kreis in den beiden Berührpunkten."
-      ],
-      "beispiel": "Der Kreis hat den Mittelpunkt M(4|4), P(4|7) liegt auf ihm. Die Tangente in P ist waagerecht.",
-      "heft": "Prüfe mit dem Geodreieck: Radius und Tangente bilden einen rechten Winkel."
-     },
+     "heft": "Prüfe mit dem Geodreieck: Radius und Tangente bilden einen rechten Winkel.",
      "wortspeicher": [
       {
        "wort": "Tangente",
@@ -2576,6 +2507,10 @@
       {
        "id": "7.2.6-H1",
        "text": "Ich kann zu den Seiten eines Dreiecks die Höhen einzeichnen.",
+       "merkzettel": {
+        "regel": "Eine Höhe geht von einer Ecke aus und steht senkrecht auf der gegenüberliegenden Seite.",
+        "beispiel": "Höhe auf c: Lege die Mittellinie des Geodreiecks auf c.\nSchiebe es, bis die Kante durch C geht. Zeichne von C bis c."
+       },
        "voraussetzungen": [
         "7.2.3-D1",
         "5.5.2-S2"
@@ -2586,6 +2521,10 @@
       {
        "id": "7.2.6-H2",
        "text": "Ich kann Höhen auch im stumpfwinkligen Dreieck zeichnen und den Höhenschnittpunkt finden.",
+       "merkzettel": {
+        "regel": "Im stumpfwinkligen Dreieck verlängerst du die Seite, die Höhe liegt dann außerhalb. Alle drei Höhen schneiden sich in einem Punkt.",
+        "beispiel": "Der Winkel bei A ist stumpf.\nVerlängere c über A hinaus. Die Höhe von C trifft diese Verlängerung."
+       },
        "voraussetzungen": [
         "7.2.6-H1"
        ],
@@ -2593,17 +2532,7 @@
        "bp": "3.2.3 (9)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine Höhe geht von einer Ecke aus und steht senkrecht auf der gegenüberliegenden Seite.",
-       "Die Höhe h_c geht von C aus und steht senkrecht auf c. Der Punkt, in dem sie c trifft, heißt Fußpunkt.",
-       "Jedes Dreieck hat drei Höhen. Sie schneiden sich in einem Punkt, dem Höhenschnittpunkt.",
-       "Im stumpfwinkligen Dreieck liegen zwei Fußpunkte außerhalb. Dann verlängerst du die Seite.",
-       "Im rechtwinkligen Dreieck sind zwei Seiten zugleich Höhen."
-      ],
-      "beispiel": "Lege das Geodreieck mit der Mittellinie auf c und schiebe es, bis die Kante durch C geht.",
-      "heft": "Zeichne verlängerte Seiten dünn und gestrichelt."
-     },
+     "heft": "Zeichne verlängerte Seiten dünn und gestrichelt.",
      "wortspeicher": [
       {
        "wort": "Höhe",
@@ -2640,6 +2569,10 @@
       {
        "id": "7.2.7-O1",
        "text": "Ich kann die Mittelsenkrechte zeichnen und Kreis und Mittelsenkrechte als Ortslinien nutzen.",
+       "merkzettel": {
+        "regel": "Die Mittelsenkrechte geht durch die Mitte der Strecke und steht senkrecht auf ihr. Jeder Punkt darauf ist von beiden Endpunkten gleich weit entfernt.",
+        "beispiel": "Ein Spielplatz soll von den Häusern A und B gleich weit entfernt sein.\nEr liegt auf der Mittelsenkrechten von AB."
+       },
        "voraussetzungen": [
         "5.5.2-S2",
         "5.7.1-R2",
@@ -2651,6 +2584,10 @@
       {
        "id": "7.2.7-O2",
        "text": "Ich kann die Winkelhalbierende zeichnen und Punkte finden, die zwei Bedingungen erfüllen.",
+       "merkzettel": {
+        "regel": "Die Winkelhalbierende teilt einen Winkel in zwei gleich große Winkel. Bei zwei Bedingungen suchst du den Schnittpunkt der beiden Linien.",
+        "beispiel": "Der Winkel hat 70°.\nDie Winkelhalbierende teilt ihn in zwei Winkel von 35°."
+       },
        "voraussetzungen": [
         "7.2.7-O1",
         "5.7.4-W2"
@@ -2659,18 +2596,7 @@
        "bp": "3.2.3 (9), (10)"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Die Mittelsenkrechte einer Strecke AB geht durch die Mitte von AB und steht senkrecht auf AB.",
-       "Jeder Punkt auf der Mittelsenkrechten ist von A und von B gleich weit entfernt.",
-       "Alle Punkte, die von einem Punkt M gleich weit entfernt sind, liegen auf einem Kreis um M.",
-       "Die Winkelhalbierende teilt einen Winkel in zwei gleich große Winkel.",
-       "Ab M: Jeder Punkt auf der Winkelhalbierenden ist von beiden Schenkeln gleich weit entfernt.",
-       "Ab M: Eine Linie, auf der alle Punkte mit einer Eigenschaft liegen, heißt Ortslinie. Sollen zwei Bedingungen gelten, suchst du den Schnittpunkt zweier Ortslinien."
-      ],
-      "beispiel": "Ein Spielplatz soll von zwei Häusern A und B gleich weit entfernt sein. Er liegt auf der Mittelsenkrechten von AB.",
-      "heft": "Schreibe zu jeder Bedingung, welche Ortslinie dazu gehört."
-     },
+     "heft": "Schreibe zu jeder Bedingung, welche Ortslinie dazu gehört.",
      "wortspeicher": [
       {
        "wort": "Mittelsenkrechte",
@@ -2708,6 +2634,10 @@
       {
        "id": "7.2.X2-U1",
        "text": "Ich kann die Mittelsenkrechte mit Zirkel und Lineal konstruieren und den Umkreis eines Dreiecks zeichnen.",
+       "merkzettel": {
+        "regel": "Zeichne um A und um B Kreisbögen mit demselben Radius und verbinde ihre beiden Schnittpunkte. Die drei Mittelsenkrechten eines Dreiecks schneiden sich im Mittelpunkt des Umkreises.",
+        "beispiel": "A(0|0), B(8|0), C(0|6):\nDie Mittelsenkrechten treffen sich in U(4|3).\nDer Umkreis geht durch A, B und C."
+       },
        "voraussetzungen": [
         "7.2.7-O1"
        ],
@@ -2715,16 +2645,7 @@
        "bp": "3.2.3 (9), (11), nur E"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Mittelsenkrechte mit Zirkel und Lineal: Zeichne um A und um B Kreisbögen mit demselben Radius, größer als die halbe Strecke. Verbinde die beiden Schnittpunkte.",
-       "Die drei Mittelsenkrechten eines Dreiecks schneiden sich in einem Punkt U. U ist von allen drei Ecken gleich weit entfernt.",
-       "Der Kreis um U durch die Ecken heißt Umkreis.",
-       "Im stumpfwinkligen Dreieck liegt U außerhalb, im rechtwinkligen auf der längsten Seite."
-      ],
-      "beispiel": "A(0|0), B(8|0), C(0|6): Die Mittelsenkrechten treffen sich in U(4|3). Der Umkreis hat den Radius 5.",
-      "heft": "Lass den Zirkel zwischen den beiden Bögen offen: Beide brauchen denselben Radius."
-     },
+     "heft": "Lass den Zirkel zwischen den beiden Bögen offen: Beide brauchen denselben Radius.",
      "wortspeicher": [
       {
        "wort": "Umkreis",
@@ -2747,6 +2668,10 @@
       {
        "id": "7.2.X3-I1",
        "text": "Ich kann die Winkelhalbierende mit Zirkel und Lineal konstruieren und den Inkreis eines Dreiecks zeichnen.",
+       "merkzettel": {
+        "regel": "Die Winkelhalbierende teilt den Winkel in zwei gleich große Winkel. Die drei Winkelhalbierenden eines Dreiecks schneiden sich im Mittelpunkt des Inkreises.",
+        "beispiel": "Zeichne einen Bogen um den Scheitel. Zeichne um seine Schnittpunkte mit den Schenkeln zwei gleiche Bögen.\nVerbinde ihren Schnittpunkt mit dem Scheitel."
+       },
        "voraussetzungen": [
         "7.2.7-O2"
        ],
@@ -2754,16 +2679,7 @@
        "bp": "3.2.3 (9), (11), nur E"
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Winkelhalbierende mit Zirkel und Lineal: Ein Bogen um den Scheitel schneidet beide Schenkel. Um diese Schnittpunkte zeichnest du zwei Bögen mit gleichem Radius. Verbinde ihren Schnittpunkt mit dem Scheitel.",
-       "Die drei Winkelhalbierenden eines Dreiecks schneiden sich in einem Punkt I. I ist von allen drei Seiten gleich weit entfernt.",
-       "Der Kreis um I, der alle drei Seiten berührt, heißt Inkreis. Sein Radius ist der Abstand von I zu einer Seite.",
-       "Der Inkreismittelpunkt liegt immer innerhalb des Dreiecks."
-      ],
-      "beispiel": "Im rechtwinkligen Dreieck mit den Seiten 3, 4 und 5 hat der Inkreis den Radius 1.",
-      "heft": "Den Radius des Inkreises misst du senkrecht zu einer Seite."
-     },
+     "heft": "Den Radius des Inkreises misst du senkrecht zu einer Seite.",
      "wortspeicher": [
       {
        "wort": "Inkreis",
@@ -3186,6 +3102,24 @@
      ]
     }
    ]
+  }
+ ],
+ "grundwoerter": [
+  {
+   "wort": "schneiden",
+   "erklaerung": "Zwei Linien schneiden sich, wenn sie sich in einem Punkt treffen.",
+   "formen": [
+    "schneiden sich",
+    "schneidet"
+   ]
+  },
+  {
+   "wort": "Konto",
+   "erklaerung": "Hier steht, wie viel Geld jemand bei der Bank hat. Bei Schulden ist die Zahl negativ."
+  },
+  {
+   "wort": "Thermometer",
+   "erklaerung": "Ein Messgerät für die Temperatur."
   }
  ],
  "aufgaben": [
@@ -60758,131 +60692,2483 @@
   "lernziele": [
    {
     "id": "5.2.1-N1",
-    "text": "Ich kann Zahlen am Zahlenstrahl ablesen und eintragen."
+    "text": "Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.",
+    "merkzettel": {
+     "regel": "Finde zuerst heraus, wie groß der Schritt von Strich zu Strich ist. Zähle dann in diesen Schritten weiter.",
+     "beispiel": "Zwischen 100 und 200 liegen 10 Schritte. Ein Schritt ist also 10.\nDer dritte Strich nach 100 ist die 130."
+    }
    },
    {
     "id": "5.2.1-N2",
-    "text": "Ich kann Zahlen vergleichen und ordnen."
+    "text": "Ich kann Zahlen vergleichen und ordnen.",
+    "merkzettel": {
+     "regel": "Die Zahl mit mehr Stellen ist größer. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer.",
+     "beispiel": "4072 < 4702\nBeide haben 4 Tausender. Bei den Hundertern ist 0 kleiner als 7."
+    }
    },
    {
     "id": "5.3.1-K1",
-    "text": "Ich kann im Kopf addieren."
+    "text": "Ich kann im Kopf addieren.",
+    "merkzettel": {
+     "regel": "Rechne in Schritten: erst bis zum nächsten Zehner, dann den Rest.",
+     "beispiel": "67 + 48\n67 + 3 = 70\n70 + 45 = 115"
+    }
    },
    {
     "id": "5.3.1-K2",
-    "text": "Ich kann im Kopf subtrahieren."
+    "text": "Ich kann im Kopf subtrahieren.",
+    "merkzettel": {
+     "regel": "Rechne in Schritten: erst zurück bis zum Zehner, dann den Rest.",
+     "beispiel": "83 − 27\n83 − 3 = 80\n80 − 24 = 56"
+    }
    },
    {
     "id": "5.3.4-B1",
-    "text": "Ich kann Rechenausdrücke mit Klammern berechnen."
+    "text": "Ich kann Rechenausdrücke mit Klammern berechnen.",
+    "merkzettel": {
+     "regel": "Was in der Klammer steht, rechnest du zuerst.",
+     "beispiel": "80 − (25 + 15)\n= 80 − 40\n= 40"
+    }
    },
    {
     "id": "5.3.5-R2",
-    "text": "Ich kann mit den Rechengesetzen vorteilhaft rechnen."
+    "text": "Ich kann mit den Rechengesetzen vorteilhaft rechnen.",
+    "merkzettel": {
+     "regel": "Addiere zuerst die Zahlen, die zusammen eine glatte Zahl ergeben.",
+     "beispiel": "37 + 48 + 63\n= 37 + 63 + 48\n= 100 + 48 = 148"
+    }
    },
    {
     "id": "5.4.1-K1",
-    "text": "Ich kann die Aufgaben des kleinen Einmaleins sicher lösen."
+    "text": "Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.",
+    "merkzettel": {
+     "regel": "Schwere Aufgaben zerlegst du in zwei leichte.",
+     "beispiel": "7 · 8\n5 · 8 = 40 und 2 · 8 = 16\n40 + 16 = 56"
+    }
    },
    {
     "id": "5.4.1-K2",
-    "text": "Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen."
+    "text": "Ich kann Geteilt-Aufgaben aus dem kleinen Einmaleins lösen.",
+    "merkzettel": {
+     "regel": "Geteilt rechnest du mit der Mal-Aufgabe: Welche Zahl mal dem Teiler ergibt die Zahl?",
+     "beispiel": "63 : 9 = 7, denn 7 · 9 = 63."
+    }
    },
    {
     "id": "5.4.6-T1",
-    "text": "Ich kann die Regel „Punkt vor Strich“ anwenden."
+    "text": "Ich kann die Regel „Punkt vor Strich“ anwenden.",
+    "merkzettel": {
+     "regel": "Punkt vor Strich: Mal und geteilt rechnest du vor plus und minus.",
+     "beispiel": "3 + 4 · 5\n= 3 + 20\n= 23"
+    }
    },
    {
     "id": "5.4.7-V1",
-    "text": "Ich kann ausmultiplizieren."
+    "text": "Ich kann ausmultiplizieren.",
+    "merkzettel": {
+     "regel": "Ausmultiplizieren: Nimm jede Zahl in der Klammer mit der Zahl vor der Klammer mal.",
+     "beispiel": "4 · (20 + 3)\n= 4 · 20 + 4 · 3\n= 80 + 12 = 92"
+    }
    },
    {
     "id": "5.4.7-V2",
-    "text": "Ich kann ausklammern."
+    "text": "Ich kann ausklammern.",
+    "merkzettel": {
+     "regel": "Ausklammern: Steht derselbe Faktor in beiden Produkten, schreibst du ihn einmal vor die Klammer.",
+     "beispiel": "7 · 8 + 7 · 2\n= 7 · (8 + 2)\n= 7 · 10 = 70"
+    }
    },
    {
     "id": "5.5.1-B1",
-    "text": "Ich kann Strecke, Strahl und Gerade unterscheiden und benennen."
+    "text": "Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.",
+    "merkzettel": {
+     "regel": "Eine Strecke hat zwei Endpunkte. Ein Strahl hat einen Anfangspunkt, eine Gerade hat keinen Anfang und kein Ende.",
+     "beispiel": "Die Linie von A nach B hört bei A und bei B auf.\nSie ist eine Strecke."
+    }
    },
    {
     "id": "5.5.1-B2",
-    "text": "Ich kann Strecken messen und in einer vorgegebenen Länge zeichnen."
+    "text": "Ich kann Strecken messen und in einer vorgegebenen Länge zeichnen.",
+    "merkzettel": {
+     "regel": "Lege die 0 des Lineals genau an den Anfang der Strecke. Lies am Ende ab. 1 cm sind 10 mm.",
+     "beispiel": "Die Strecke ist 4 cm 3 mm lang.\nDas sind 4 · 10 mm + 3 mm = 43 mm."
+    }
    },
    {
     "id": "5.5.2-S2",
-    "text": "Ich kann Senkrechten zeichnen."
+    "text": "Ich kann Senkrechten zeichnen.",
+    "merkzettel": {
+     "regel": "Lege die Mittellinie des Geodreiecks genau auf die Gerade. Zeichne an der langen Kante entlang.",
+     "beispiel": "Die Senkrechte soll durch den Punkt P gehen.\nSchiebe das Geodreieck auf der Geraden, bis die lange Kante an P liegt. Dann zeichne."
+    }
    },
    {
     "id": "5.5.3-P1",
-    "text": "Ich kann erkennen, ob Linien parallel zueinander sind."
+    "text": "Ich kann erkennen, ob Linien parallel zueinander sind.",
+    "merkzettel": {
+     "regel": "Zwei Geraden sind parallel zueinander, wenn sie überall den gleichen Abstand haben. Sie schneiden sich nie.",
+     "beispiel": "Am Karogitter: Beide Linien gehen 3 Kästchen nach rechts und 1 nach oben.\nSie sind parallel."
+    }
    },
    {
     "id": "5.5.4-K1",
-    "text": "Ich kann Punkte im Koordinatensystem ablesen."
+    "text": "Ich kann Punkte im Koordinatensystem ablesen.",
+    "merkzettel": {
+     "regel": "Starte im Ursprung. Die erste Zahl sagt, wie weit es nach rechts geht, die zweite, wie weit es nach oben geht.",
+     "beispiel": "Der Punkt liegt 3 nach rechts und 5 nach oben.\nEr heißt P(3|5)."
+    }
    },
    {
     "id": "5.5.4-K2",
-    "text": "Ich kann Punkte ins Koordinatensystem eintragen und Figuren daraus zeichnen."
+    "text": "Ich kann Punkte ins Koordinatensystem eintragen und Figuren daraus zeichnen.",
+    "merkzettel": {
+     "regel": "Geh vom Ursprung zuerst nach rechts, dann nach oben. Dort setzt du den Punkt.",
+     "beispiel": "Q(5|3): 5 nach rechts, dann 3 nach oben.\nQ(5|3) ist ein anderer Punkt als P(3|5)."
+    }
    },
    {
     "id": "5.5.5-D1",
-    "text": "Ich kann Entfernungen und Abstände bestimmen und unterscheiden."
+    "text": "Ich kann Entfernungen und Abstände bestimmen und unterscheiden.",
+    "merkzettel": {
+     "regel": "Die Entfernung zweier Punkte ist die Länge der Strecke zwischen ihnen. Der Abstand von einer Geraden ist der kürzeste Weg zu ihr, er ist immer senkrecht zur Geraden.",
+     "beispiel": "Der Punkt P liegt 4 Kästchen genau über der Geraden g.\nSein Abstand von g ist 4 Kästchen, also 2 cm."
+    }
    },
    {
     "id": "5.6.2-B2",
-    "text": "Ich kann mit Geldbeträgen rechnen."
+    "text": "Ich kann mit Geldbeträgen rechnen.",
+    "merkzettel": {
+     "regel": "Wandle alle Beträge in Cent um. Dann rechnest du wie mit natürlichen Zahlen.",
+     "beispiel": "2,80 € + 1,50 €\n280 ct + 150 ct = 430 ct\n430 ct = 4,30 €"
+    }
    },
    {
     "id": "5.7.1-R1",
-    "text": "Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen."
+    "text": "Ich kann Mittelpunkt, Radius und Durchmesser eines Kreises erkennen und bestimmen.",
+    "merkzettel": {
+     "regel": "Der Radius geht vom Mittelpunkt bis zur Kreislinie. Der Durchmesser geht durch den Mittelpunkt ganz durch den Kreis und ist doppelt so lang wie der Radius.",
+     "beispiel": "Der Radius ist 3 cm.\nDer Durchmesser ist 2 · 3 cm = 6 cm."
+    }
    },
    {
     "id": "5.7.1-R2",
-    "text": "Ich kann Kreise und Kreismuster nach Vorgaben zeichnen."
+    "text": "Ich kann Kreise und Kreismuster nach Vorgaben zeichnen.",
+    "merkzettel": {
+     "regel": "Stelle den Radius am Lineal ein. Stich in den Mittelpunkt und drehe den Zirkel einmal ganz herum.",
+     "beispiel": "Der Durchmesser soll 8 cm sein.\nStelle den Zirkel auf den Radius ein: 8 cm : 2 = 4 cm."
+    }
    },
    {
     "id": "5.7.3-A1",
-    "text": "Ich kann Winkelarten erkennen und benennen."
+    "text": "Ich kann Winkelarten erkennen und benennen.",
+    "merkzettel": {
+     "regel": "Ein rechter Winkel hat 90°. Ein spitzer Winkel ist kleiner als 90°, ein stumpfer Winkel liegt zwischen 90° und 180°.",
+     "beispiel": "35° ist ein spitzer Winkel.\n90° ist ein rechter Winkel.\n120° ist ein stumpfer Winkel."
+    }
    },
    {
     "id": "5.7.4-W1",
-    "text": "Ich kann Winkel mit dem Geodreieck messen."
+    "text": "Ich kann Winkel mit dem Geodreieck messen.",
+    "merkzettel": {
+     "regel": "Lege den Nullpunkt des Geodreiecks auf den Scheitel und die lange Seite auf einen Schenkel. Lies auf der Skala ab, die auf diesem Schenkel mit 0 beginnt.",
+     "beispiel": "Der zweite Schenkel zeigt auf 70 und auf 110.\nDer Winkel ist spitz. Also sind es 70°."
+    }
    },
    {
     "id": "5.7.4-W2",
-    "text": "Ich kann Winkel mit dem Geodreieck zeichnen."
+    "text": "Ich kann Winkel mit dem Geodreieck zeichnen.",
+    "merkzettel": {
+     "regel": "Zeichne einen Schenkel und lege das Geodreieck an. Markiere die Gradzahl und verbinde die Marke mit dem Scheitel.",
+     "beispiel": "Winkel von 50°: Zeichne einen Schenkel mit dem Scheitel S.\nLege den Nullpunkt auf S. Markiere bei 50° einen Punkt und verbinde ihn mit S."
+    }
    },
    {
     "id": "5.7.X2-D1",
-    "text": "Ich kann Dreiecke nach Seiten und nach Winkeln einteilen."
+    "text": "Ich kann Dreiecke nach Seiten und nach Winkeln einteilen.",
+    "merkzettel": {
+     "regel": "Nach den Seiten: gleichseitig (drei Seiten gleich lang) oder gleichschenklig (zwei Seiten gleich lang). Nach den Winkeln: rechtwinklig heißt, ein Winkel ist ein rechter Winkel.",
+     "beispiel": "Ein Dreieck hat die Seiten 4 cm, 4 cm und 3 cm.\nZwei Seiten sind gleich lang. Es ist gleichschenklig."
+    }
    },
    {
     "id": "5.7.X2-D2",
-    "text": "Ich kann Dreiecke nach Vorgaben zeichnen."
+    "text": "Ich kann Dreiecke nach Vorgaben zeichnen.",
+    "merkzettel": {
+     "regel": "Zeichne zuerst eine Seite. Trage dann die Winkel oder die anderen Seiten an ihren Endpunkten an.",
+     "beispiel": "Seite AB = 5 cm, Winkel bei A 60°, Winkel bei B 40°.\nZeichne AB. Trage bei A 60° an und bei B 40°. Wo sich die Schenkel schneiden, liegt C."
+    }
    },
    {
     "id": "5.9.3-K2",
-    "text": "Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen."
+    "text": "Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.",
+    "merkzettel": {
+     "regel": "Vergleiche Stelle für Stelle von links: erst die Ganzen, dann die Zehntel, dann die Hundertstel.",
+     "beispiel": "0,5 ist größer als 0,15.\nDenn 0,5 hat 5 Zehntel und 0,15 hat nur 1 Zehntel."
+    }
    },
    {
     "id": "6.1.4-V2",
-    "text": "Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen."
+    "text": "Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen.",
+    "merkzettel": {
+     "regel": "Erweitere beide Brüche auf denselben Nenner. Vergleiche dann die Zähler.",
+     "beispiel": "2⁄3 oder 3⁄4? Mit dem Nenner 12 sind es 8⁄12 und 9⁄12.\nAlso ist 3⁄4 größer."
+    }
    },
    {
     "id": "6.2.1-A1",
-    "text": "Ich kann gleichnamige Brüche addieren und subtrahieren."
+    "text": "Ich kann gleichnamige Brüche addieren und subtrahieren.",
+    "merkzettel": {
+     "regel": "Bei gleichem Nenner rechnest du nur mit den Zählern. Der Nenner bleibt gleich.",
+     "beispiel": "3⁄8 + 1⁄8 = 4⁄8 = 1⁄2\n5⁄8 − 2⁄8 = 3⁄8"
+    }
    },
    {
     "id": "6.2.2-U1",
-    "text": "Ich kann ungleichnamige Brüche addieren und subtrahieren, wenn ein Nenner ein Vielfaches des anderen ist."
+    "text": "Ich kann ungleichnamige Brüche addieren und subtrahieren, wenn ein Nenner ein Vielfaches des anderen ist.",
+    "merkzettel": {
+     "regel": "Erweitere den Bruch mit dem kleineren Nenner auf den größeren Nenner. Rechne dann mit den Zählern.",
+     "beispiel": "1⁄2 + 1⁄4\n= 2⁄4 + 1⁄4\n= 3⁄4"
+    }
    },
    {
     "id": "6.2.4-T1",
-    "text": "Ich kann einen Bruch durch eine natürliche Zahl dividieren."
+    "text": "Ich kann einen Bruch durch eine natürliche Zahl dividieren.",
+    "merkzettel": {
+     "regel": "Lässt sich der Zähler teilen, dann teile ihn. Sonst nimm den Nenner mit der Zahl mal.",
+     "beispiel": "6⁄7 : 3 = 2⁄7\n1⁄2 : 3 = 1⁄6"
+    }
    },
    {
     "id": "6.2.5-P1",
-    "text": "Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen."
+    "text": "Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.",
+    "merkzettel": {
+     "regel": "Zähler mal Zähler und Nenner mal Nenner. Kürze vorher, wenn es geht.",
+     "beispiel": "2⁄3 · 4⁄5 = 8⁄15\nDenn 2 · 4 = 8 und 3 · 5 = 15."
+    }
+   }
+  ],
+  "woerter": [
+   {
+    "wort": "Bruch",
+    "erklaerung": "Eine Zahl aus Zähler und Nenner mit einem Bruchstrich dazwischen. Sie nennt einen Teil vom Ganzen.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "Zähler",
+    "erklaerung": "Die Zahl über dem Bruchstrich. Sie zählt die Teile.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "Nenner",
+    "erklaerung": "Die Zahl unter dem Bruchstrich. Sie sagt, in wie viele gleich große Teile das Ganze geteilt ist.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "Ganzes",
+    "erklaerung": "Alles zusammen, bevor geteilt wird: die ganze Pizza, der ganze Streifen.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "gemischte Zahl",
+    "erklaerung": "Eine Zahl aus Ganzen und einem Bruch, zum Beispiel 1 1⁄2.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "Stammbruch",
+    "erklaerung": "Ein Bruch mit dem Zähler 1, zum Beispiel 1⁄4.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "unechter Bruch",
+    "erklaerung": "Ein Bruch, der größer als ein Ganzes ist: Der Zähler ist größer als der Nenner.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "umwandeln",
+    "erklaerung": "Dieselbe Zahl anders schreiben: 5⁄4 = 1 1⁄4.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "Scheinbruch",
+    "erklaerung": "Ein Bruch, der eine natürliche Zahl ist, zum Beispiel 8⁄4 = 2.",
+    "meilenstein": "6.1.1"
+   },
+   {
+    "wort": "erweitern",
+    "erklaerung": "Zähler und Nenner mit derselben Zahl malnehmen. Der Wert bleibt gleich.",
+    "meilenstein": "6.1.2"
+   },
+   {
+    "wort": "Wert",
+    "erklaerung": "Wie viel ein Bruch vom Ganzen ist.",
+    "meilenstein": "6.1.2"
+   },
+   {
+    "wort": "gleichwertig",
+    "erklaerung": "Zwei Brüche sind gleichwertig, wenn sie gleich viel vom Ganzen sind: 1⁄2 und 2⁄4.",
+    "meilenstein": "6.1.2"
+   },
+   {
+    "wort": "Erweiterungszahl",
+    "erklaerung": "Die Zahl, mit der du Zähler und Nenner malnimmst.",
+    "meilenstein": "6.1.2"
+   },
+   {
+    "wort": "Vielfaches",
+    "erklaerung": "Das Ergebnis, wenn du eine Zahl mit 1, 2, 3 und so weiter malnimmst. 12 ist ein Vielfaches von 4.",
+    "meilenstein": "6.1.2"
+   },
+   {
+    "wort": "kürzen",
+    "erklaerung": "Zähler und Nenner durch dieselbe Zahl teilen. Der Wert bleibt gleich.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "teilbar",
+    "erklaerung": "Eine Zahl ist durch eine andere teilbar, wenn beim Teilen kein Rest bleibt.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "Kürzungszahl",
+    "erklaerung": "Die Zahl, durch die du Zähler und Nenner teilst.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "vollständig",
+    "erklaerung": "Ein Bruch ist vollständig gekürzt, wenn du nicht mehr weiter kürzen kannst.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "Quersumme",
+    "erklaerung": "Die Summe aller Ziffern einer Zahl. Die Quersumme von 27 ist 2 + 7 = 9.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "Teiler",
+    "erklaerung": "Eine Zahl, durch die sich eine andere ohne Rest teilen lässt. 3 ist ein Teiler von 12.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "ggT",
+    "erklaerung": "Der größte gemeinsame Teiler von zwei Zahlen. Kürzt du mit ihm, ist der Bruch in einem Schritt vollständig gekürzt.",
+    "meilenstein": "6.1.3"
+   },
+   {
+    "wort": "vergleichen",
+    "erklaerung": "Herausfinden, welcher Bruch größer oder kleiner ist.",
+    "meilenstein": "6.1.4"
+   },
+   {
+    "wort": "ordnen",
+    "erklaerung": "Brüche der Größe nach in eine Reihe bringen.",
+    "meilenstein": "6.1.4"
+   },
+   {
+    "wort": "Zeichen",
+    "erklaerung": "Das Zeichen < heißt „kleiner als“, das Zeichen > heißt „größer als“. Die Spitze zeigt zur kleineren Zahl.",
+    "meilenstein": "6.1.4"
+   },
+   {
+    "wort": "gemeinsamer Nenner",
+    "erklaerung": "Ein Nenner, auf den du beide Brüche erweitern kannst.",
+    "meilenstein": "6.1.4"
+   },
+   {
+    "wort": "gleichnamig",
+    "erklaerung": "Brüche mit demselben Nenner heißen gleichnamig.",
+    "meilenstein": "6.1.4"
+   },
+   {
+    "wort": "Hauptnenner",
+    "erklaerung": "Der kleinste gemeinsame Nenner von zwei oder mehr Brüchen.",
+    "meilenstein": "6.1.4"
+   },
+   {
+    "wort": "Anteil",
+    "erklaerung": "Der Teil vom Ganzen, um den es geht, als Bruch geschrieben.",
+    "meilenstein": "6.1.5"
+   },
+   {
+    "wort": "Bruchteil",
+    "erklaerung": "Ein Teil vom Ganzen, mit einem Bruch angegeben.",
+    "meilenstein": "6.1.5"
+   },
+   {
+    "wort": "Einheit",
+    "erklaerung": "Das Maß hinter der Zahl, zum Beispiel m, kg oder min.",
+    "meilenstein": "6.1.5"
+   },
+   {
+    "wort": "Maßzahl",
+    "erklaerung": "Die Zahl vor der Einheit. Bei 20 kg ist 20 die Maßzahl.",
+    "meilenstein": "6.1.5"
+   },
+   {
+    "wort": "rückwärts",
+    "erklaerung": "Vom Teil zurück zum Ganzen rechnen.",
+    "meilenstein": "6.1.5"
+   },
+   {
+    "wort": "Zahlenstrahl",
+    "erklaerung": "Eine Linie mit Strichen in gleichen Abständen. Jede Zahl hat darauf ihren Platz.",
+    "meilenstein": "6.1.6"
+   },
+   {
+    "wort": "Teilstrich",
+    "erklaerung": "Ein kleiner Strich am Zahlenstrahl.",
+    "meilenstein": "6.1.6"
+   },
+   {
+    "wort": "Abstand",
+    "erklaerung": "Das Stück zwischen zwei Teilstrichen.",
+    "meilenstein": "6.1.6"
+   },
+   {
+    "wort": "Einteilung",
+    "erklaerung": "In wie viele Abstände ein Ganzes am Zahlenstrahl geteilt ist.",
+    "meilenstein": "6.1.6"
+   },
+   {
+    "wort": "verfeinern",
+    "erklaerung": "Jeden Abstand noch einmal teilen. Aus Vierteln werden so Achtel.",
+    "meilenstein": "6.1.6"
+   },
+   {
+    "wort": "addieren",
+    "erklaerung": "Zusammenzählen, plus rechnen.",
+    "meilenstein": "6.2.1"
+   },
+   {
+    "wort": "subtrahieren",
+    "erklaerung": "Abziehen, minus rechnen.",
+    "meilenstein": "6.2.1"
+   },
+   {
+    "wort": "Summe",
+    "erklaerung": "Das Ergebnis beim Addieren.",
+    "meilenstein": "6.2.1"
+   },
+   {
+    "wort": "Differenz",
+    "erklaerung": "Das Ergebnis beim Subtrahieren.",
+    "meilenstein": "6.2.1"
+   },
+   {
+    "wort": "ungleichnamig",
+    "erklaerung": "Brüche mit verschiedenen Nennern heißen ungleichnamig.",
+    "meilenstein": "6.2.2"
+   },
+   {
+    "wort": "kgV",
+    "erklaerung": "Das kleinste gemeinsame Vielfache von zwei Zahlen. Es ist der Hauptnenner.",
+    "meilenstein": "6.2.2"
+   },
+   {
+    "wort": "vervielfachen",
+    "erklaerung": "Einen Bruch mehrmals nehmen: mit einer Zahl malnehmen.",
+    "meilenstein": "6.2.3"
+   },
+   {
+    "wort": "malnehmen",
+    "erklaerung": "Mal rechnen.",
+    "meilenstein": "6.2.3"
+   },
+   {
+    "wort": "multiplizieren",
+    "erklaerung": "Das Fachwort für malnehmen.",
+    "meilenstein": "6.2.3"
+   },
+   {
+    "wort": "Produkt",
+    "erklaerung": "Das Ergebnis beim Multiplizieren.",
+    "meilenstein": "6.2.3"
+   },
+   {
+    "wort": "Faktor",
+    "erklaerung": "Eine Zahl, die malgenommen wird.",
+    "meilenstein": "6.2.3"
+   },
+   {
+    "wort": "teilen",
+    "erklaerung": "Gerecht in gleich große Teile aufteilen.",
+    "meilenstein": "6.2.4"
+   },
+   {
+    "wort": "verteilen",
+    "erklaerung": "Jeder bekommt gleich viel.",
+    "meilenstein": "6.2.4"
+   },
+   {
+    "wort": "dividieren",
+    "erklaerung": "Das Fachwort für teilen.",
+    "meilenstein": "6.2.4"
+   },
+   {
+    "wort": "Probe",
+    "erklaerung": "Mit der Umkehraufgabe prüfen: Ergebnis mal die Zahl ergibt den alten Bruch.",
+    "meilenstein": "6.2.4"
+   },
+   {
+    "wort": "Quotient",
+    "erklaerung": "Das Ergebnis beim Dividieren.",
+    "meilenstein": "6.2.4"
+   },
+   {
+    "wort": "davon",
+    "erklaerung": "Vom Rest oder vom Teil, nicht vom Ganzen: „2⁄3 davon“ heißt mal 2⁄3.",
+    "meilenstein": "6.2.5"
+   },
+   {
+    "wort": "Rechteckbild",
+    "erklaerung": "Ein Rechteck, in dem Zeilen und Spalten gefärbt sind. Die doppelt gefärbten Felder zeigen das Produkt.",
+    "meilenstein": "6.2.5"
+   },
+   {
+    "wort": "Kehrwert",
+    "erklaerung": "Der Bruch mit vertauschtem Zähler und Nenner. Der Kehrwert von 2⁄3 ist 3⁄2.",
+    "meilenstein": "6.2.6"
+   },
+   {
+    "wort": "Divisor",
+    "erklaerung": "Die Zahl, durch die geteilt wird. Sie steht hinter dem Geteiltzeichen.",
+    "meilenstein": "6.2.6"
+   },
+   {
+    "wort": "Doppelbruch",
+    "erklaerung": "Ein Bruch, in dessen Zähler oder Nenner wieder ein Bruch steht. Der große Bruchstrich bedeutet geteilt.",
+    "meilenstein": "6.2.6"
+   },
+   {
+    "wort": "Klammer",
+    "erklaerung": "Was in der Klammer steht, wird zuerst gerechnet.",
+    "meilenstein": "6.2.7"
+   },
+   {
+    "wort": "Punktrechnung",
+    "erklaerung": "Mal und geteilt.",
+    "meilenstein": "6.2.7"
+   },
+   {
+    "wort": "Strichrechnung",
+    "erklaerung": "Plus und minus.",
+    "meilenstein": "6.2.7"
+   },
+   {
+    "wort": "Rechenausdruck",
+    "erklaerung": "Eine Rechnung aus mehreren Zahlen und Rechenzeichen.",
+    "meilenstein": "6.2.7"
+   },
+   {
+    "wort": "Verteilungsgesetz",
+    "erklaerung": "Eine Zahl mal eine Klammer: Jede Zahl in der Klammer wird malgenommen.",
+    "meilenstein": "6.2.7"
+   },
+   {
+    "wort": "ausklammern",
+    "erklaerung": "Einen gemeinsamen Faktor vor eine Klammer schreiben.",
+    "meilenstein": "6.2.7"
+   },
+   {
+    "wort": "Ecke",
+    "erklaerung": "Ein Punkt, an dem Kanten zusammenstoßen.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Kante",
+    "erklaerung": "Eine Linie, an der zwei Flächen zusammenstoßen.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Fläche",
+    "erklaerung": "Eine Seite des Körpers. Beim Quader ist jede Fläche ein Rechteck.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Würfel",
+    "erklaerung": "Ein Quader mit 12 gleich langen Kanten. Alle Flächen sind Quadrate.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Quader",
+    "erklaerung": "Ein Körper mit 6 rechteckigen Flächen, 8 Ecken und 12 Kanten.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Netz",
+    "erklaerung": "Der aufgeklappte Körper. Faltest du das Netz, entsteht der Körper.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Kantenlänge",
+    "erklaerung": "Wie lang eine Kante ist. Beim Würfel haben alle Kanten dieselbe Kantenlänge.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Kantenmodell",
+    "erklaerung": "Ein Körper nur aus Kanten, zum Beispiel aus Draht oder Strohhalmen.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "Raumdiagonale",
+    "erklaerung": "Eine Strecke von einer Ecke zur gegenüberliegenden Ecke quer durch den Körper.",
+    "meilenstein": "6.3.1"
+   },
+   {
+    "wort": "gestrichelt",
+    "erklaerung": "Eine Linie aus kurzen Strichen mit Lücken. So zeichnest du Kanten, die man nicht sieht.",
+    "meilenstein": "6.3.2"
+   },
+   {
+    "wort": "Vorderfläche",
+    "erklaerung": "Die Fläche, die vorne liegt. Im Schrägbild hat sie ihre wahre Größe.",
+    "meilenstein": "6.3.2"
+   },
+   {
+    "wort": "Schrägbild",
+    "erklaerung": "Eine Zeichnung, die den Körper räumlich zeigt. Kanten nach hinten laufen schräg.",
+    "meilenstein": "6.3.2"
+   },
+   {
+    "wort": "verdeckte Kante",
+    "erklaerung": "Eine Kante, die von vorne nicht zu sehen ist. Sie wird gestrichelt gezeichnet.",
+    "meilenstein": "6.3.2"
+   },
+   {
+    "wort": "Kästchendiagonale",
+    "erklaerung": "Die schräge Strecke quer durch ein Kästchen. Im Schrägbild steht sie für 1 cm Tiefe.",
+    "meilenstein": "6.3.2"
+   },
+   {
+    "wort": "Ansicht",
+    "erklaerung": "Wie ein Körper von einer Seite aussieht, zum Beispiel von vorne oder von oben.",
+    "meilenstein": "6.3.3"
+   },
+   {
+    "wort": "Grundriss",
+    "erklaerung": "Die Ansicht von oben.",
+    "meilenstein": "6.3.3"
+   },
+   {
+    "wort": "Aufriss",
+    "erklaerung": "Die Ansicht von vorne.",
+    "meilenstein": "6.3.3"
+   },
+   {
+    "wort": "Seitenriss",
+    "erklaerung": "Die Ansicht von der Seite. Hier ist es immer die Ansicht von links.",
+    "meilenstein": "6.3.3"
+   },
+   {
+    "wort": "Rechteck",
+    "erklaerung": "Ein Viereck mit vier rechten Winkeln. Die Seiten eines Prismas sind Rechtecke.",
+    "meilenstein": "6.3.4"
+   },
+   {
+    "wort": "Prisma",
+    "erklaerung": "Ein Körper mit zwei gleichen Vielecken oben und unten und Rechtecken an den Seiten.",
+    "meilenstein": "6.3.4"
+   },
+   {
+    "wort": "Grundfläche",
+    "erklaerung": "Die Fläche, auf der ein Körper steht. Nach ihr bekommt der Körper seinen Namen.",
+    "meilenstein": "6.3.4"
+   },
+   {
+    "wort": "Mantelfläche",
+    "erklaerung": "Alle Seitenflächen zusammen, ohne Grund- und Deckfläche.",
+    "meilenstein": "6.3.4"
+   },
+   {
+    "wort": "Dreieck",
+    "erklaerung": "Eine Fläche mit drei Ecken und drei Seiten. Die Seiten einer Pyramide sind Dreiecke.",
+    "meilenstein": "6.3.5"
+   },
+   {
+    "wort": "Pyramide",
+    "erklaerung": "Ein Körper mit einem Vieleck als Grundfläche und Dreiecken, die sich in einer Spitze treffen.",
+    "meilenstein": "6.3.5"
+   },
+   {
+    "wort": "Spitze",
+    "erklaerung": "Die Ecke ganz oben, in der sich die Dreiecke einer Pyramide oder die Fläche eines Kegels treffen.",
+    "meilenstein": "6.3.5"
+   },
+   {
+    "wort": "Seitendreieck",
+    "erklaerung": "Eine der dreieckigen Seitenflächen einer Pyramide.",
+    "meilenstein": "6.3.5"
+   },
+   {
+    "wort": "Zylinder",
+    "erklaerung": "Ein Körper mit zwei Kreisen oben und unten und einer gekrümmten Fläche, wie eine Dose.",
+    "meilenstein": "6.3.6"
+   },
+   {
+    "wort": "Kegel",
+    "erklaerung": "Ein Körper mit einem Kreis unten und einer Spitze oben, wie eine Eistüte.",
+    "meilenstein": "6.3.6"
+   },
+   {
+    "wort": "Kugel",
+    "erklaerung": "Ein runder Körper ohne Ecke und ohne Kante, wie ein Ball.",
+    "meilenstein": "6.3.6"
+   },
+   {
+    "wort": "gekrümmte Fläche",
+    "erklaerung": "Eine Fläche, die nicht eben ist. Ein Ball rollt auf ihr.",
+    "meilenstein": "6.3.6"
+   },
+   {
+    "wort": "Kreisausschnitt",
+    "erklaerung": "Ein Stück eines Kreises, wie ein Stück Torte. Daraus wird die gekrümmte Fläche des Kegels.",
+    "meilenstein": "6.3.6"
+   },
+   {
+    "wort": "Würfelbau",
+    "erklaerung": "Ein Körper aus gleich großen Würfeln.",
+    "meilenstein": "6.3.8"
+   },
+   {
+    "wort": "falten",
+    "erklaerung": "Ein Netz an den Kanten knicken, bis der Körper entsteht.",
+    "meilenstein": "6.3.8"
+   },
+   {
+    "wort": "Würfelnetz",
+    "erklaerung": "Ein Netz, aus dem sich ein Würfel falten lässt. Es gibt 11 verschiedene.",
+    "meilenstein": "6.3.8"
+   },
+   {
+    "wort": "gegenüber",
+    "erklaerung": "Zwei Flächen liegen gegenüber, wenn sie sich beim Würfel nicht berühren.",
+    "meilenstein": "6.3.8"
+   },
+   {
+    "wort": "kippen",
+    "erklaerung": "Einen Körper über eine Kante auf eine andere Fläche legen.",
+    "meilenstein": "6.3.8"
+   },
+   {
+    "wort": "Dezimalzahl",
+    "erklaerung": "Eine Zahl mit Komma. Nach dem Komma stehen Zehntel, Hundertstel und Tausendstel.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Komma",
+    "erklaerung": "Es trennt die Ganzen von den Teilen eines Ganzen.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Zehntel",
+    "erklaerung": "Ein Ganzes in 10 gleiche Teile geteilt. Die erste Stelle nach dem Komma.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Hundertstel",
+    "erklaerung": "Ein Ganzes in 100 gleiche Teile geteilt. Die zweite Stelle nach dem Komma.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Stellenwerttafel",
+    "erklaerung": "Eine Tabelle mit einer Spalte für jede Stelle: Einer, Zehntel, Hundertstel.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Tausendstel",
+    "erklaerung": "Ein Ganzes in 1000 gleiche Teile geteilt. Die dritte Stelle nach dem Komma.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Endnull",
+    "erklaerung": "Eine Null ganz hinten nach dem Komma. Sie ändert den Wert nicht.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Zehnerbruch",
+    "erklaerung": "Ein Bruch mit dem Nenner 10, 100 oder 1000.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Stellenwert",
+    "erklaerung": "Wie viel eine Ziffer an ihrer Stelle wert ist.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Zehntausendstel",
+    "erklaerung": "Die vierte Stelle nach dem Komma.",
+    "meilenstein": "6.4.1"
+   },
+   {
+    "wort": "Lupe",
+    "erklaerung": "Ein Abschnitt des Zahlenstrahls, zehnmal vergrößert. So siehst du die nächste Stelle.",
+    "meilenstein": "6.4.2"
+   },
+   {
+    "wort": "Ausschnitt",
+    "erklaerung": "Ein Stück des Zahlenstrahls. Er beginnt nicht bei 0.",
+    "meilenstein": "6.4.2"
+   },
+   {
+    "wort": "Mitte",
+    "erklaerung": "Die Zahl genau in der Mitte zwischen zwei Zahlen: Addiere beide und teile durch 2.",
+    "meilenstein": "6.4.2"
+   },
+   {
+    "wort": "runden",
+    "erklaerung": "Eine Zahl durch eine einfachere ersetzen, die ungefähr gleich groß ist.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "aufrunden",
+    "erklaerung": "Die Rundungsstelle wird um 1 größer.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "abrunden",
+    "erklaerung": "Die Rundungsstelle bleibt, wie sie ist.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "Rundungsstelle",
+    "erklaerung": "Die letzte Stelle, die nach dem Runden noch stehen bleibt.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "ungefähr",
+    "erklaerung": "Das Zeichen ≈ heißt „ist ungefähr“.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "Messwert",
+    "erklaerung": "Eine Zahl, die beim Messen herauskommt. Oft wird sie gerundet.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "Genauigkeit",
+    "erklaerung": "Wie viele Stellen eine Angabe hat. Je mehr Stellen, desto genauer.",
+    "meilenstein": "6.4.3"
+   },
+   {
+    "wort": "vollständig gekürzt",
+    "erklaerung": "Ein Bruch, den du nicht mehr weiter kürzen kannst.",
+    "meilenstein": "6.4.5"
+   },
+   {
+    "wort": "Zehnerpotenz",
+    "erklaerung": "Eine der Zahlen 10, 100, 1000, 10000. Ihre Teiler sind nur aus 2 und 5 gebaut.",
+    "meilenstein": "6.4.5"
+   },
+   {
+    "wort": "abbrechend",
+    "erklaerung": "Eine Dezimalzahl, deren Division irgendwann aufgeht.",
+    "meilenstein": "6.4.6"
+   },
+   {
+    "wort": "periodisch",
+    "erklaerung": "Eine Dezimalzahl, deren Ziffern sich ohne Ende wiederholen.",
+    "meilenstein": "6.4.6"
+   },
+   {
+    "wort": "Periode",
+    "erklaerung": "Die Ziffern, die sich immer wiederholen. Über ihnen steht ein Strich.",
+    "meilenstein": "6.4.6"
+   },
+   {
+    "wort": "Rest",
+    "erklaerung": "Was beim Teilen übrig bleibt. Kommt ein Rest zum zweiten Mal, beginnt die Periode wieder.",
+    "meilenstein": "6.4.6"
+   },
+   {
+    "wort": "Prozent",
+    "erklaerung": "Hundertstel. Das Zeichen ist %. 1 % = 1⁄100.",
+    "meilenstein": "6.4.7"
+   },
+   {
+    "wort": "Hunderterfeld",
+    "erklaerung": "Ein Quadrat aus 100 gleichen Feldern. Jedes Feld ist ein Hundertstel.",
+    "meilenstein": "6.4.7"
+   },
+   {
+    "wort": "Prozentzahl",
+    "erklaerung": "Die Zahl vor dem Zeichen %.",
+    "meilenstein": "6.4.7"
+   },
+   {
+    "wort": "Prozentangabe",
+    "erklaerung": "Ein Anteil mit Prozentzeichen, zum Beispiel 35 %.",
+    "meilenstein": "6.4.7"
+   },
+   {
+    "wort": "Übertrag",
+    "erklaerung": "Eine Zehn, die du in die nächste Stelle mitnimmst.",
+    "meilenstein": "6.5.1"
+   },
+   {
+    "wort": "ergänzen",
+    "erklaerung": "So viel dazurechnen, bis eine glatte Zahl erreicht ist.",
+    "meilenstein": "6.5.1"
+   },
+   {
+    "wort": "Rückgeld",
+    "erklaerung": "Das Geld, das du zurückbekommst, wenn du mit einem größeren Betrag bezahlst.",
+    "meilenstein": "6.5.1"
+   },
+   {
+    "wort": "Stufenzahl",
+    "erklaerung": "Eine der Zahlen 10, 100, 1000.",
+    "meilenstein": "6.5.2"
+   },
+   {
+    "wort": "verschieben",
+    "erklaerung": "Das Komma rückt um Stellen nach rechts oder nach links.",
+    "meilenstein": "6.5.2"
+   },
+   {
+    "wort": "umrechnen",
+    "erklaerung": "Eine Größe in einer anderen Einheit schreiben.",
+    "meilenstein": "6.5.2"
+   },
+   {
+    "wort": "Umrechnungszahl",
+    "erklaerung": "Die Zahl, mit der du beim Umrechnen malnimmst oder teilst, zum Beispiel 100 bei m und cm.",
+    "meilenstein": "6.5.2"
+   },
+   {
+    "wort": "Kommaverschiebung",
+    "erklaerung": "Mal oder durch eine Stufenzahl rechnen, indem du das Komma verschiebst. Auch mal 0,1 ist eine Kommaverschiebung.",
+    "meilenstein": "6.5.2"
+   },
+   {
+    "wort": "Überschlag",
+    "erklaerung": "Eine schnelle Rechnung mit gerundeten Zahlen. Sie zeigt, ob ein Ergebnis ungefähr stimmt.",
+    "meilenstein": "6.5.3"
+   },
+   {
+    "wort": "Nachkommastelle",
+    "erklaerung": "Eine Stelle nach dem Komma.",
+    "meilenstein": "6.5.3"
+   },
+   {
+    "wort": "Dividend",
+    "erklaerung": "Die Zahl, die geteilt wird.",
+    "meilenstein": "6.5.4"
+   },
+   {
+    "wort": "Punkt vor Strich",
+    "erklaerung": "Mal und geteilt rechnest du vor plus und minus.",
+    "meilenstein": "6.5.5"
+   },
+   {
+    "wort": "geschickt rechnen",
+    "erklaerung": "Zahlen so tauschen oder zusammenfassen, dass die Rechnung leichter wird.",
+    "meilenstein": "6.5.5"
+   },
+   {
+    "wort": "Oberflächeninhalt",
+    "erklaerung": "Der Flächeninhalt aller Flächen eines Körpers zusammen.",
+    "meilenstein": "6.6.1"
+   },
+   {
+    "wort": "Deckel",
+    "erklaerung": "Die Fläche oben. Die Fläche unten heißt Boden.",
+    "meilenstein": "6.6.1"
+   },
+   {
+    "wort": "Formel",
+    "erklaerung": "Eine Rechenvorschrift mit Buchstaben, zum Beispiel O = 6 · a · a.",
+    "meilenstein": "6.6.1"
+   },
+   {
+    "wort": "Volumen",
+    "erklaerung": "Wie viel Platz ein Körper einnimmt. Ein anderes Wort ist Rauminhalt.",
+    "meilenstein": "6.6.2"
+   },
+   {
+    "wort": "Einheitswürfel",
+    "erklaerung": "Ein kleiner Würfel, mit dem du das Volumen misst, zum Beispiel mit 1 cm Kante.",
+    "meilenstein": "6.6.2"
+   },
+   {
+    "wort": "Schicht",
+    "erklaerung": "Eine Lage Würfel, die nebeneinander auf gleicher Höhe liegen.",
+    "meilenstein": "6.6.2"
+   },
+   {
+    "wort": "volumengleich",
+    "erklaerung": "Zwei Körper mit demselben Volumen sind volumengleich.",
+    "meilenstein": "6.6.2"
+   },
+   {
+    "wort": "Kubikzentimeter",
+    "erklaerung": "Das Volumen eines Würfels mit 1 cm Kante. Kurz: cm³.",
+    "meilenstein": "6.6.3"
+   },
+   {
+    "wort": "Kubikdezimeter",
+    "erklaerung": "Das Volumen eines Würfels mit 1 dm Kante. Kurz: dm³.",
+    "meilenstein": "6.6.3"
+   },
+   {
+    "wort": "Liter",
+    "erklaerung": "Eine Einheit für Flüssigkeiten. 1 l ist so viel wie 1 dm³.",
+    "meilenstein": "6.6.3"
+   },
+   {
+    "wort": "Milliliter",
+    "erklaerung": "Der tausendste Teil von einem Liter. 1 ml ist so viel wie 1 cm³.",
+    "meilenstein": "6.6.3"
+   },
+   {
+    "wort": "Einheitentafel",
+    "erklaerung": "Eine Tabelle mit Spalten für jede Einheit. Beim Volumen hat jede Einheit drei Spalten.",
+    "meilenstein": "6.6.3"
+   },
+   {
+    "wort": "Hektoliter",
+    "erklaerung": "Eine große Einheit für Flüssigkeiten: 1 hl = 100 l.",
+    "meilenstein": "6.6.3"
+   },
+   {
+    "wort": "Länge",
+    "erklaerung": "Wie lang ein Quader von links nach rechts ist.",
+    "meilenstein": "6.6.4"
+   },
+   {
+    "wort": "Breite",
+    "erklaerung": "Wie weit ein Quader nach hinten reicht.",
+    "meilenstein": "6.6.4"
+   },
+   {
+    "wort": "Höhe",
+    "erklaerung": "Wie weit ein Quader nach oben reicht.",
+    "meilenstein": "6.6.4"
+   },
+   {
+    "wort": "Volumenformel",
+    "erklaerung": "Die Formel für das Volumen des Quaders: V = a · b · c.",
+    "meilenstein": "6.6.4"
+   },
+   {
+    "wort": "Füllhöhe",
+    "erklaerung": "Wie hoch eine Flüssigkeit in einem Gefäß steht.",
+    "meilenstein": "6.6.4"
+   },
+   {
+    "wort": "zusammengesetzter Körper",
+    "erklaerung": "Ein Körper, der aus mehreren Quadern besteht.",
+    "meilenstein": "6.6.5"
+   },
+   {
+    "wort": "zerlegen",
+    "erklaerung": "Einen Körper in Gedanken in einfache Quader teilen.",
+    "meilenstein": "6.6.5"
+   },
+   {
+    "wort": "Teilkörper",
+    "erklaerung": "Einer der Quader, aus denen ein zusammengesetzter Körper besteht.",
+    "meilenstein": "6.6.5"
+   },
+   {
+    "wort": "Klebefläche",
+    "erklaerung": "Die Fläche, an der zwei Teilkörper aneinanderstoßen. Sie liegt innen und gehört nicht zur Oberfläche.",
+    "meilenstein": "6.6.5"
+   },
+   {
+    "wort": "Zuordnung",
+    "erklaerung": "Zu jedem Wert einer Größe gehört ein Wert einer zweiten Größe: 2 Hefte → 3 €.",
+    "meilenstein": "6.7.1"
+   },
+   {
+    "wort": "Schaubild",
+    "erklaerung": "Ein Bild der Zuordnung mit zwei Achsen. Jeder Punkt zeigt zwei Werte, die zusammengehören.",
+    "meilenstein": "6.7.1"
+   },
+   {
+    "wort": "Achse",
+    "erklaerung": "Eine der beiden Linien mit Zahlen im Schaubild: eine nach rechts, eine nach oben.",
+    "meilenstein": "6.7.1"
+   },
+   {
+    "wort": "Wertepaar",
+    "erklaerung": "Zwei Werte, die zusammengehören, zum Beispiel 2 Hefte und 3 €.",
+    "meilenstein": "6.7.1"
+   },
+   {
+    "wort": "Verlauf",
+    "erklaerung": "Wie sich die Werte ändern: Die Linie steigt, fällt oder bleibt gleich hoch.",
+    "meilenstein": "6.7.1"
+   },
+   {
+    "wort": "proportional",
+    "erklaerung": "Zum Doppelten gehört das Doppelte, zum Dreifachen das Dreifache.",
+    "meilenstein": "6.7.2"
+   },
+   {
+    "wort": "das Doppelte",
+    "erklaerung": "Zweimal so viel.",
+    "meilenstein": "6.7.2"
+   },
+   {
+    "wort": "das Dreifache",
+    "erklaerung": "Dreimal so viel. Das Zehnfache ist zehnmal so viel.",
+    "meilenstein": "6.7.2"
+   },
+   {
+    "wort": "Nullpunkt",
+    "erklaerung": "Der Punkt (0|0), an dem sich die beiden Achsen treffen.",
+    "meilenstein": "6.7.5"
+   },
+   {
+    "wort": "Gerade",
+    "erklaerung": "Eine gerade Linie ohne Knick.",
+    "meilenstein": "6.7.5"
+   },
+   {
+    "wort": "Gitterlinie",
+    "erklaerung": "Eine Linie des Karogitters im Schaubild. Dort kannst du genau ablesen.",
+    "meilenstein": "6.7.5"
+   },
+   {
+    "wort": "Zwischenwert",
+    "erklaerung": "Ein Wert, der zwischen zwei eingetragenen Wertepaaren liegt und an der Geraden abgelesen wird.",
+    "meilenstein": "6.7.5"
+   },
+   {
+    "wort": "Dreisatz",
+    "erklaerung": "Rechnung in drei Zeilen: gegebenes Wertepaar, Wert für 1, gesuchter Wert.",
+    "meilenstein": "6.7.6"
+   },
+   {
+    "wort": "Dreisatztabelle",
+    "erklaerung": "Die drei Zeilen des Dreisatzes als Tabelle.",
+    "meilenstein": "6.7.6"
+   },
+   {
+    "wort": "Rechenpfeil",
+    "erklaerung": "Der Pfeil am Rand der Dreisatztabelle. Er sagt, womit geteilt oder malgenommen wird.",
+    "meilenstein": "6.7.6"
+   },
+   {
+    "wort": "Zwischenschritt",
+    "erklaerung": "Die mittlere Zeile im Dreisatz, meistens der Wert für 1.",
+    "meilenstein": "6.7.6"
+   },
+   {
+    "wort": "gemeinsamer Teiler",
+    "erklaerung": "Eine Zahl, durch die sich zwei Zahlen teilen lassen. 3 ist ein gemeinsamer Teiler von 6 und 9.",
+    "meilenstein": "6.7.6"
+   },
+   {
+    "wort": "antiproportional",
+    "erklaerung": "Zum Doppelten gehört die Hälfte, zum Dreifachen ein Drittel. Das Produkt bleibt gleich.",
+    "meilenstein": "6.7.7"
+   },
+   {
+    "wort": "Kurve",
+    "erklaerung": "Eine gebogene Linie im Schaubild.",
+    "meilenstein": "6.7.7"
+   },
+   {
+    "wort": "Gegenrechnung",
+    "erklaerung": "Die umgekehrte Rechnung: mal statt geteilt, geteilt statt mal.",
+    "meilenstein": "6.7.8"
+   },
+   {
+    "wort": "Körper",
+    "erklaerung": "Eine Form, die man anfassen kann, zum Beispiel ein Würfel oder eine Kugel."
+   },
+   {
+    "wort": "Spielwürfel",
+    "erklaerung": "Ein Würfel mit den Augenzahlen 1 bis 6. Gegenüberliegende Seiten haben zusammen 7 Augen."
+   },
+   {
+    "wort": "gleichmäßig",
+    "erklaerung": "Immer gleich viel. Jeder Schritt ist gleich groß."
+   },
+   {
+    "wort": "Oberfläche",
+    "erklaerung": "Alle Flächen eines Körpers zusammen."
+   },
+   {
+    "wort": "Strichliste",
+    "erklaerung": "Für jede Antwort machst du einen Strich. Der fünfte Strich geht quer.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Bündel",
+    "erklaerung": "Vier gerade Striche und ein Querstrich. Ein Bündel sind 5 Striche.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Tabelle",
+    "erklaerung": "Zeilen und Spalten mit Namen und Zahlen.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Anzahl",
+    "erklaerung": "Wie viele es sind.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Gesamtzahl",
+    "erklaerung": "Alle Anzahlen zusammen.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Häufigkeitstabelle",
+    "erklaerung": "Eine Tabelle, die für jede Antwort die Anzahl zeigt.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Urliste",
+    "erklaerung": "Die Liste aller Antworten, so wie sie gesammelt wurden, noch ungeordnet.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Häufigkeit",
+    "erklaerung": "Wie oft eine Antwort vorkommt.",
+    "meilenstein": "5.1.1"
+   },
+   {
+    "wort": "Säulendiagramm",
+    "erklaerung": "Ein Bild aus Säulen. Je höher die Säule, desto mehr.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Säule",
+    "erklaerung": "Ein senkrechter Streifen im Diagramm.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Bilddiagramm",
+    "erklaerung": "Ein Diagramm aus kleinen Bildern. Jedes Bild steht für eine feste Anzahl.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Schlüssel",
+    "erklaerung": "Er sagt, für wie viele ein Bild steht.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Titel",
+    "erklaerung": "Die Überschrift. Sie sagt, worum es im Diagramm geht.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Balkendiagramm",
+    "erklaerung": "Wie ein Säulendiagramm, nur liegen die Balken waagerecht.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Balken",
+    "erklaerung": "Ein waagerechter Streifen im Diagramm.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Symbol",
+    "erklaerung": "Ein kleines Bild im Bilddiagramm. Der Schlüssel sagt, wofür es steht.",
+    "meilenstein": "5.1.2"
+   },
+   {
+    "wort": "Linie",
+    "erklaerung": "Ein waagerechter Strich hinter den Säulen. Er hilft beim Ablesen.",
+    "meilenstein": "5.1.3"
+   },
+   {
+    "wort": "Schritt",
+    "erklaerung": "Der Abstand von einer Linie zur nächsten, zum Beispiel 5.",
+    "meilenstein": "5.1.3"
+   },
+   {
+    "wort": "Beschriftung",
+    "erklaerung": "Die Zahlen an den Linien der Achse.",
+    "meilenstein": "5.1.3"
+   },
+   {
+    "wort": "Unterschied",
+    "erklaerung": "Wie viel mehr der eine hat als der andere.",
+    "meilenstein": "5.1.4"
+   },
+   {
+    "wort": "höher",
+    "erklaerung": "Eine höhere Säule bedeutet mehr.",
+    "meilenstein": "5.1.4"
+   },
+   {
+    "wort": "Aussage",
+    "erklaerung": "Ein Satz, der stimmen kann oder nicht.",
+    "meilenstein": "5.1.4"
+   },
+   {
+    "wort": "Rangfolge",
+    "erklaerung": "Die Reihenfolge vom größten zum kleinsten Wert.",
+    "meilenstein": "5.1.4"
+   },
+   {
+    "wort": "Umfrage",
+    "erklaerung": "Du stellst vielen Leuten dieselbe Frage und zählst die Antworten.",
+    "meilenstein": "5.1.5"
+   },
+   {
+    "wort": "Antwort",
+    "erklaerung": "Was ein Kind auf die Frage sagt.",
+    "meilenstein": "5.1.5"
+   },
+   {
+    "wort": "Ergebnis",
+    "erklaerung": "Was bei der Umfrage herauskommt, zum Beispiel die Antwort, die am häufigsten kam.",
+    "meilenstein": "5.1.5"
+   },
+   {
+    "wort": "auswerten",
+    "erklaerung": "Die gesammelten Antworten zählen, ordnen und darstellen.",
+    "meilenstein": "5.1.5"
+   },
+   {
+    "wort": "natürliche Zahlen",
+    "erklaerung": "Die Zahlen 0, 1, 2, 3 und so weiter. Mit ihnen zählt man.",
+    "meilenstein": "5.2.1"
+   },
+   {
+    "wort": "Ziffer",
+    "erklaerung": "Die Zeichen 0, 1, 2, 3, 4, 5, 6, 7, 8 und 9. Aus Ziffern werden Zahlen gebaut.",
+    "meilenstein": "5.2.1"
+   },
+   {
+    "wort": "Vorgänger",
+    "erklaerung": "Die Zahl direkt davor. Sie ist um 1 kleiner.",
+    "meilenstein": "5.2.1"
+   },
+   {
+    "wort": "Nachfolger",
+    "erklaerung": "Die Zahl direkt danach. Sie ist um 1 größer.",
+    "meilenstein": "5.2.1"
+   },
+   {
+    "wort": "Million",
+    "erklaerung": "Tausend Tausender. Eine Million schreibt man mit 6 Nullen.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Dreierblock",
+    "erklaerung": "Drei Ziffern nebeneinander. Große Zahlen liest man in Dreierblöcken.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Milliarde",
+    "erklaerung": "Tausend Millionen. Eine Milliarde schreibt man mit 9 Nullen.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Billion",
+    "erklaerung": "Tausend Milliarden. Eine Billion schreibt man mit 12 Nullen.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Mio.",
+    "erklaerung": "Die Abkürzung für Million.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Mrd.",
+    "erklaerung": "Die Abkürzung für Milliarde.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Größenordnung",
+    "erklaerung": "Ob eine Zahl bei den Tausendern, den Millionen oder den Milliarden liegt.",
+    "meilenstein": "5.2.2"
+   },
+   {
+    "wort": "Nachbarzehner",
+    "erklaerung": "Die beiden Zehnerzahlen links und rechts von einer Zahl.",
+    "meilenstein": "5.2.3"
+   },
+   {
+    "wort": "Rundungsregel",
+    "erklaerung": "Bei 0 bis 4 wird abgerundet, bei 5 bis 9 wird aufgerundet.",
+    "meilenstein": "5.2.3"
+   },
+   {
+    "wort": "schätzen",
+    "erklaerung": "Eine Anzahl ungefähr angeben, ohne alles zu zählen.",
+    "meilenstein": "5.2.4"
+   },
+   {
+    "wort": "Raster",
+    "erklaerung": "Gleich große Felder, die über einem Bild liegen.",
+    "meilenstein": "5.2.4"
+   },
+   {
+    "wort": "hochrechnen",
+    "erklaerung": "Von einem Feld auf alle Felder schließen: Anzahl im Feld mal Zahl der Felder.",
+    "meilenstein": "5.2.4"
+   },
+   {
+    "wort": "Schätzwert",
+    "erklaerung": "Das Ergebnis einer Schätzung.",
+    "meilenstein": "5.2.4"
+   },
+   {
+    "wort": "Stichprobe",
+    "erklaerung": "Ein kleiner Teil, den man genau zählt, um auf das Ganze zu schließen.",
+    "meilenstein": "5.2.4"
+   },
+   {
+    "wort": "Zweiersystem",
+    "erklaerung": "Ein Zahlsystem mit nur zwei Ziffern: 0 und 1.",
+    "meilenstein": "5.2.5"
+   },
+   {
+    "wort": "Zehnersystem",
+    "erklaerung": "Unser Zahlsystem mit den Ziffern 0 bis 9. Jede Stelle ist zehnmal so viel wert wie die rechts daneben.",
+    "meilenstein": "5.2.5"
+   },
+   {
+    "wort": "Dualzahl",
+    "erklaerung": "Eine Zahl im Zweiersystem, zum Beispiel 101₂.",
+    "meilenstein": "5.2.5"
+   },
+   {
+    "wort": "römische Zahlzeichen",
+    "erklaerung": "Die Zeichen der alten Römer für Zahlen: I, V, X, L, C, D und M.",
+    "meilenstein": "5.2.X1"
+   },
+   {
+    "wort": "Zifferblatt",
+    "erklaerung": "Die Scheibe einer Uhr mit den Zahlen 1 bis 12.",
+    "meilenstein": "5.2.X1"
+   },
+   {
+    "wort": "Subtraktionsregel",
+    "erklaerung": "Steht ein kleineres Zeichen links vor einem größeren, wird es abgezogen: IV ist 4.",
+    "meilenstein": "5.2.X1"
+   },
+   {
+    "wort": "plus",
+    "erklaerung": "So liest du das Zeichen +. Es kommt etwas dazu.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "minus",
+    "erklaerung": "So liest du das Zeichen −. Es geht etwas weg.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "Zehner",
+    "erklaerung": "Zehn Einer sind ein Zehner. Die Zahl 34 hat 3 Zehner und 4 Einer.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "Tauschaufgabe",
+    "erklaerung": "Die Zahlen tauschen den Platz. 3 + 9 und 9 + 3 ergeben beide 12.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "Rechenvorteil",
+    "erklaerung": "Ein geschickter Weg, der das Rechnen leichter macht.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "Umkehraufgabe",
+    "erklaerung": "Die Rechnung, die eine andere rückgängig macht. Zu 52 − 4 = 48 gehört 48 + 4 = 52.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "Summand",
+    "erklaerung": "Eine Zahl, die addiert wird. Bei 34 + 12 sind 34 und 12 die Summanden.",
+    "meilenstein": "5.3.1"
+   },
+   {
+    "wort": "zusammen",
+    "erklaerung": "Alles wird zusammengezählt.",
+    "meilenstein": "5.3.2"
+   },
+   {
+    "wort": "schriftlich addieren",
+    "erklaerung": "Die Zahlen stehen untereinander. Du rechnest Stelle für Stelle von rechts nach links.",
+    "meilenstein": "5.3.2"
+   },
+   {
+    "wort": "Term",
+    "erklaerung": "Ein Rechenausdruck aus Zahlen, Rechenzeichen und Klammern, zum Beispiel 34 + 12.",
+    "meilenstein": "5.3.2"
+   },
+   {
+    "wort": "wegnehmen",
+    "erklaerung": "Etwas geht weg. Danach ist es weniger.",
+    "meilenstein": "5.3.3"
+   },
+   {
+    "wort": "tauschen",
+    "erklaerung": "Du wechselst 1 Zehner in 10 Einer. Der Wert bleibt gleich.",
+    "meilenstein": "5.3.3"
+   },
+   {
+    "wort": "Minuend",
+    "erklaerung": "Die Zahl, von der abgezogen wird. Bei 46 − 12 ist 46 der Minuend.",
+    "meilenstein": "5.3.3"
+   },
+   {
+    "wort": "Subtrahend",
+    "erklaerung": "Die Zahl, die abgezogen wird. Bei 46 − 12 ist 12 der Subtrahend.",
+    "meilenstein": "5.3.3"
+   },
+   {
+    "wort": "schriftlich subtrahieren",
+    "erklaerung": "Die Zahlen stehen untereinander. Du rechnest Stelle für Stelle von rechts nach links.",
+    "meilenstein": "5.3.3"
+   },
+   {
+    "wort": "zuerst",
+    "erklaerung": "Das kommt als Erstes dran.",
+    "meilenstein": "5.3.4"
+   },
+   {
+    "wort": "Minusklammer",
+    "erklaerung": "Eine Klammer hinter einem Minus. Alles in ihr wird zusammen abgezogen.",
+    "meilenstein": "5.3.4"
+   },
+   {
+    "wort": "Vertauschungsgesetz",
+    "erklaerung": "Beim Addieren darfst du die Zahlen vertauschen. 17 + 48 = 48 + 17.",
+    "meilenstein": "5.3.5"
+   },
+   {
+    "wort": "Verbindungsgesetz",
+    "erklaerung": "Beim Addieren darfst du die Klammern beliebig setzen. (17 + 48) + 52 = 17 + (48 + 52).",
+    "meilenstein": "5.3.5"
+   },
+   {
+    "wort": "mal",
+    "erklaerung": "So liest du das Zeichen ·. 3 · 4 heißt: 3 Päckchen mit je 4.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "geteilt durch",
+    "erklaerung": "So liest du das Zeichen :. 12 : 3 heißt: 12 gerecht in 3 Teile.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "Kernaufgabe",
+    "erklaerung": "Eine leichte Aufgabe mit 1, 2, 5 oder 10. Von ihr aus rechnest du weiter.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "Nachbaraufgabe",
+    "erklaerung": "Eine Reihe mehr oder weniger. Zu 6 · 7 gehören 5 · 7 und 7 · 7.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "verdoppeln",
+    "erklaerung": "Mal 2 rechnen. Das Doppelte von 13 ist 26.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "halbieren",
+    "erklaerung": "Durch 2 teilen. Die Hälfte von 26 ist 13.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "Quadratzahl",
+    "erklaerung": "Eine Zahl mal sich selbst. 6 · 6 = 36, also ist 36 eine Quadratzahl.",
+    "meilenstein": "5.4.1"
+   },
+   {
+    "wort": "Malkreuz",
+    "erklaerung": "Eine Tabelle zum Zerlegen. Oben und links stehen die Teile, in den Feldern die Teilergebnisse.",
+    "meilenstein": "5.4.2"
+   },
+   {
+    "wort": "schriftlich multiplizieren",
+    "erklaerung": "Stelle für Stelle malnehmen, von rechts nach links, mit Übertrag.",
+    "meilenstein": "5.4.2"
+   },
+   {
+    "wort": "Teilprodukt",
+    "erklaerung": "Das Ergebnis für eine Ziffer des zweiten Faktors. Bei 418 · 54 sind 2090 und 1672 die Teilprodukte.",
+    "meilenstein": "5.4.2"
+   },
+   {
+    "wort": "hoch",
+    "erklaerung": "So liest du eine kleine Zahl oben rechts. 3² liest du: 3 hoch 2. Das heißt 3 · 3.",
+    "meilenstein": "5.4.4"
+   },
+   {
+    "wort": "Quadrat",
+    "erklaerung": "Ein Viereck mit vier gleich langen Seiten. 3 Reihen mit je 3 Kästchen bilden ein Quadrat.",
+    "meilenstein": "5.4.4"
+   },
+   {
+    "wort": "Potenz",
+    "erklaerung": "Eine kurze Schreibweise für ein Produkt aus gleichen Faktoren. 2 · 2 · 2 = 2³.",
+    "meilenstein": "5.4.4"
+   },
+   {
+    "wort": "Basis",
+    "erklaerung": "Der Faktor, der malgenommen wird. Bei 2³ ist 2 die Basis.",
+    "meilenstein": "5.4.4"
+   },
+   {
+    "wort": "Exponent",
+    "erklaerung": "Die kleine Zahl oben. Sie sagt, wie oft die Basis vorkommt. Bei 2³ ist 3 der Exponent.",
+    "meilenstein": "5.4.4"
+   },
+   {
+    "wort": "Zweierpotenz",
+    "erklaerung": "Eine Potenz mit der Basis 2. 2⁶ = 64.",
+    "meilenstein": "5.4.4"
+   },
+   {
+    "wort": "schriftlich dividieren",
+    "erklaerung": "Schritt für Schritt teilen: teilen, malnehmen, abziehen, nächste Ziffer herunterholen.",
+    "meilenstein": "5.4.5"
+   },
+   {
+    "wort": "Päckchen",
+    "erklaerung": "Ein Päckchen enthält immer gleich viele Plättchen.",
+    "meilenstein": "5.4.6"
+   },
+   {
+    "wort": "Vorrangregel",
+    "erklaerung": "Sie sagt, was zuerst kommt: Klammer zuerst, dann Punkt vor Strich, sonst von links nach rechts.",
+    "meilenstein": "5.4.6"
+   },
+   {
+    "wort": "ausmultiplizieren",
+    "erklaerung": "Die Klammer auflösen: Jeder Teil in der Klammer wird mit der Zahl davor malgenommen.",
+    "meilenstein": "5.4.7"
+   },
+   {
+    "wort": "Muster",
+    "erklaerung": "Etwas, das sich immer gleich wiederholt.",
+    "meilenstein": "5.4.X1"
+   },
+   {
+    "wort": "Regel",
+    "erklaerung": "Sie sagt, wie du von einer Zahl zur nächsten kommst.",
+    "meilenstein": "5.4.X1"
+   },
+   {
+    "wort": "Zahlenmauer",
+    "erklaerung": "Jeder Stein ist die Summe der beiden Steine darunter.",
+    "meilenstein": "5.4.X1"
+   },
+   {
+    "wort": "Mal-Mauer",
+    "erklaerung": "Jeder Stein ist das Produkt der beiden Steine darunter.",
+    "meilenstein": "5.4.X1"
+   },
+   {
+    "wort": "Zahlenfolge",
+    "erklaerung": "Zahlen in einer Reihe, die nach einer Regel weitergehen.",
+    "meilenstein": "5.4.X1"
+   },
+   {
+    "wort": "Punkt",
+    "erklaerung": "Eine Stelle ohne Größe. Punkte bekommen große Buchstaben wie A oder P.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "Strecke",
+    "erklaerung": "Eine gerade Linie mit zwei Endpunkten. Man kann sie messen.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "Gitterpunkt",
+    "erklaerung": "Eine Stelle, an der sich zwei Linien des Karogitters kreuzen.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "Strahl",
+    "erklaerung": "Eine gerade Linie mit einem Anfangspunkt. Auf der anderen Seite geht sie immer weiter.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "Endpunkt",
+    "erklaerung": "Der Punkt, an dem eine Strecke aufhört.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "Schnittpunkt",
+    "erklaerung": "Der Punkt, in dem sich zwei Linien treffen.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "Halbgerade",
+    "erklaerung": "Ein anderes Wort für Strahl.",
+    "meilenstein": "5.5.1"
+   },
+   {
+    "wort": "senkrecht",
+    "erklaerung": "Zwei Linien sind senkrecht zueinander, wenn sie einen rechten Winkel bilden.",
+    "meilenstein": "5.5.2"
+   },
+   {
+    "wort": "rechter Winkel",
+    "erklaerung": "Die Ecke eines Blattes Papier. Das Geodreieck hat auch einen.",
+    "meilenstein": "5.5.2"
+   },
+   {
+    "wort": "Geodreieck",
+    "erklaerung": "Ein Dreieck aus Kunststoff zum Zeichnen und Messen.",
+    "meilenstein": "5.5.2"
+   },
+   {
+    "wort": "Senkrechte",
+    "erklaerung": "Eine Gerade, die zu einer anderen Geraden senkrecht ist.",
+    "meilenstein": "5.5.2"
+   },
+   {
+    "wort": "Lot",
+    "erklaerung": "Die Senkrechte durch einen Punkt auf eine Gerade.",
+    "meilenstein": "5.5.2"
+   },
+   {
+    "wort": "orthogonal",
+    "erklaerung": "Das Fachwort für senkrecht zueinander.",
+    "meilenstein": "5.5.2"
+   },
+   {
+    "wort": "parallel",
+    "erklaerung": "Zwei Linien sind parallel zueinander, wenn sie überall gleich weit auseinander liegen.",
+    "meilenstein": "5.5.3"
+   },
+   {
+    "wort": "Parallele",
+    "erklaerung": "Eine Gerade, die zu einer anderen Geraden parallel ist.",
+    "meilenstein": "5.5.3"
+   },
+   {
+    "wort": "Hilfslinie",
+    "erklaerung": "Eine dünne Linie, die nur beim Zeichnen hilft. Auf dem Geodreieck gibt es parallele Hilfslinien.",
+    "meilenstein": "5.5.3"
+   },
+   {
+    "wort": "Koordinatensystem",
+    "erklaerung": "Ein Gitter mit zwei Achsen. Damit lässt sich jeder Punkt genau angeben.",
+    "meilenstein": "5.5.4"
+   },
+   {
+    "wort": "x-Achse",
+    "erklaerung": "Die Achse nach rechts.",
+    "meilenstein": "5.5.4"
+   },
+   {
+    "wort": "y-Achse",
+    "erklaerung": "Die Achse nach oben.",
+    "meilenstein": "5.5.4"
+   },
+   {
+    "wort": "Koordinate",
+    "erklaerung": "Eine der beiden Zahlen eines Punktes. P(3|5) hat die x-Koordinate 3 und die y-Koordinate 5.",
+    "meilenstein": "5.5.4"
+   },
+   {
+    "wort": "Ursprung",
+    "erklaerung": "Der Punkt (0|0). Dort treffen sich die beiden Achsen.",
+    "meilenstein": "5.5.4"
+   },
+   {
+    "wort": "Quadrant",
+    "erklaerung": "Eines der vier Felder, in die die Achsen die Ebene teilen. Hier ist es immer das erste.",
+    "meilenstein": "5.5.4"
+   },
+   {
+    "wort": "Entfernung",
+    "erklaerung": "So weit sind zwei Punkte voneinander weg. Es ist die Länge der Strecke zwischen ihnen.",
+    "meilenstein": "5.5.5"
+   },
+   {
+    "wort": "Luftlinie",
+    "erklaerung": "Der gerade Weg zwischen zwei Orten, ohne Umwege.",
+    "meilenstein": "5.5.5"
+   },
+   {
+    "wort": "Fußpunkt",
+    "erklaerung": "Der Punkt, an dem das Lot die Gerade trifft.",
+    "meilenstein": "5.5.5"
+   },
+   {
+    "wort": "symmetrisch",
+    "erklaerung": "Eine Figur ist symmetrisch, wenn zwei Hälften genau zueinander passen.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "Symmetrieachse",
+    "erklaerung": "Die Faltlinie einer symmetrischen Figur.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "Spiegelbild",
+    "erklaerung": "Das, was auf der anderen Seite der Symmetrieachse entsteht.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "achsensymmetrisch",
+    "erklaerung": "Die Figur hat mindestens eine Symmetrieachse.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "punktsymmetrisch",
+    "erklaerung": "Die Figur sieht nach einer halben Drehung genauso aus wie vorher.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "Bildpunkt",
+    "erklaerung": "Der Punkt, der beim Spiegeln aus einem Punkt entsteht.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "Symmetriezentrum",
+    "erklaerung": "Der Punkt, um den eine punktsymmetrische Figur halb gedreht wird.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "Punktspiegelung",
+    "erklaerung": "Das Spiegeln an einem Punkt. Es ist dasselbe wie eine halbe Drehung.",
+    "meilenstein": "5.5.6"
+   },
+   {
+    "wort": "Viereck",
+    "erklaerung": "Eine Figur mit vier Ecken und vier Seiten.",
+    "meilenstein": "5.5.7"
+   },
+   {
+    "wort": "Seite",
+    "erklaerung": "Eine Strecke am Rand einer Figur.",
+    "meilenstein": "5.5.7"
+   },
+   {
+    "wort": "Eigenschaft",
+    "erklaerung": "Etwas, das auf eine Figur zutrifft, zum Beispiel: Sie hat vier rechte Winkel.",
+    "meilenstein": "5.5.7"
+   },
+   {
+    "wort": "gegenüberliegend",
+    "erklaerung": "Zwei Seiten liegen gegenüber, wenn sie keine Ecke gemeinsam haben.",
+    "meilenstein": "5.5.7"
+   },
+   {
+    "wort": "Diagonale",
+    "erklaerung": "Eine Strecke, die zwei gegenüberliegende Ecken verbindet.",
+    "meilenstein": "5.5.7"
+   },
+   {
+    "wort": "Parallelogramm",
+    "erklaerung": "Ein Viereck, bei dem die Seiten gegenüber parallel sind.",
+    "meilenstein": "5.5.8"
+   },
+   {
+    "wort": "Raute",
+    "erklaerung": "Ein Parallelogramm mit vier gleich langen Seiten.",
+    "meilenstein": "5.5.8"
+   },
+   {
+    "wort": "Nachbarseiten",
+    "erklaerung": "Zwei Seiten, die an einer Ecke zusammentreffen.",
+    "meilenstein": "5.5.8"
+   },
+   {
+    "wort": "Sonderfall",
+    "erklaerung": "Eine Figur mit noch mehr Eigenschaften. Das Quadrat ist ein Sonderfall des Rechtecks.",
+    "meilenstein": "5.5.8"
+   },
+   {
+    "wort": "Trapez",
+    "erklaerung": "Ein Viereck mit zwei parallelen Seiten.",
+    "meilenstein": "5.5.9"
+   },
+   {
+    "wort": "Drachen",
+    "erklaerung": "Ein Viereck, das wie ein Drachen zum Steigenlassen aussieht.",
+    "meilenstein": "5.5.9"
+   },
+   {
+    "wort": "Schenkel",
+    "erklaerung": "Die beiden Seiten eines Trapezes, die nicht parallel sind.",
+    "meilenstein": "5.5.9"
+   },
+   {
+    "wort": "Drachenviereck",
+    "erklaerung": "Das Fachwort für den Drachen: zwei Paare gleich langer Nachbarseiten.",
+    "meilenstein": "5.5.9"
+   },
+   {
+    "wort": "Größe",
+    "erklaerung": "Etwas, das man messen kann: eine Länge, ein Gewicht, eine Zeit oder ein Geldbetrag.",
+    "meilenstein": "5.6.1"
+   },
+   {
+    "wort": "Schätzen",
+    "erklaerung": "Ungefähr bestimmen, ohne genau zu messen.",
+    "meilenstein": "5.6.1"
+   },
+   {
+    "wort": "Vergleichsgröße",
+    "erklaerung": "Etwas im Bild, dessen Größe du kennst. Damit schätzt du das Unbekannte.",
+    "meilenstein": "5.6.1"
+   },
+   {
+    "wort": "Stützgröße",
+    "erklaerung": "Eine Größe aus dem Alltag, die du dir merkst: Eine Tür ist 2 m hoch.",
+    "meilenstein": "5.6.1"
+   },
+   {
+    "wort": "Schätzbereich",
+    "erklaerung": "Alle Werte, die als gute Schätzung gelten.",
+    "meilenstein": "5.6.1"
+   },
+   {
+    "wort": "Euro",
+    "erklaerung": "Die Einheit für Geld. Das Zeichen ist €.",
+    "meilenstein": "5.6.2"
+   },
+   {
+    "wort": "Cent",
+    "erklaerung": "Die kleine Einheit für Geld: 100 ct sind 1 €.",
+    "meilenstein": "5.6.2"
+   },
+   {
+    "wort": "Betrag",
+    "erklaerung": "So viel Geld, zum Beispiel 3 € 50 ct.",
+    "meilenstein": "5.6.2"
+   },
+   {
+    "wort": "Stückpreis",
+    "erklaerung": "So viel kostet ein einzelnes Stück.",
+    "meilenstein": "5.6.2"
+   },
+   {
+    "wort": "Zeitpunkt",
+    "erklaerung": "Wann etwas ist, zum Beispiel 14:35 Uhr.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Zeitspanne",
+    "erklaerung": "Wie lange etwas dauert, zum Beispiel 25 min.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Minute",
+    "erklaerung": "Eine Einheit der Zeit: 60 min sind 1 h.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Sekunde",
+    "erklaerung": "Eine kleine Einheit der Zeit: 60 s sind 1 min.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Zeitleiste",
+    "erklaerung": "Eine Linie, auf der Zeitpunkte der Reihe nach stehen.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Mitternacht",
+    "erklaerung": "Der Zeitpunkt 0:00 Uhr. Man schreibt auch 24:00 Uhr.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Fahrplan",
+    "erklaerung": "Eine Tabelle mit Abfahrtszeiten und Ankunftszeiten.",
+    "meilenstein": "5.6.3"
+   },
+   {
+    "wort": "Gewicht",
+    "erklaerung": "Wie schwer etwas ist.",
+    "meilenstein": "5.6.4"
+   },
+   {
+    "wort": "Gramm",
+    "erklaerung": "Eine Einheit für das Gewicht. Kurz: g.",
+    "meilenstein": "5.6.4"
+   },
+   {
+    "wort": "Kilogramm",
+    "erklaerung": "Eine Einheit für das Gewicht: 1 kg sind 1000 g.",
+    "meilenstein": "5.6.4"
+   },
+   {
+    "wort": "Tonne",
+    "erklaerung": "Eine große Einheit für das Gewicht: 1 t sind 1000 kg.",
+    "meilenstein": "5.6.4"
+   },
+   {
+    "wort": "Milligramm",
+    "erklaerung": "Eine sehr kleine Einheit für das Gewicht: 1000 mg sind 1 g.",
+    "meilenstein": "5.6.4"
+   },
+   {
+    "wort": "Zentimeter",
+    "erklaerung": "Eine Einheit der Länge: 100 cm sind 1 m.",
+    "meilenstein": "5.6.5"
+   },
+   {
+    "wort": "Kilometer",
+    "erklaerung": "Eine große Einheit der Länge: 1 km sind 1000 m.",
+    "meilenstein": "5.6.5"
+   },
+   {
+    "wort": "Dezimeter",
+    "erklaerung": "Eine Einheit der Länge: 1 dm sind 10 cm.",
+    "meilenstein": "5.6.5"
+   },
+   {
+    "wort": "Kommaschreibweise",
+    "erklaerung": "Eine Größe mit Komma: 1,75 m sind 1 m 75 cm.",
+    "meilenstein": "5.6.5"
+   },
+   {
+    "wort": "Maßstab",
+    "erklaerung": "Sagt, wie stark eine Karte verkleinert ist.",
+    "meilenstein": "5.6.6"
+   },
+   {
+    "wort": "Wirklichkeit",
+    "erklaerung": "So groß ist es draußen wirklich.",
+    "meilenstein": "5.6.6"
+   },
+   {
+    "wort": "Maßstabsleiste",
+    "erklaerung": "Ein Strich auf der Karte, an dem steht, wie lang er in Wirklichkeit ist.",
+    "meilenstein": "5.6.6"
+   },
+   {
+    "wort": "Verkleinerung",
+    "erklaerung": "Das Bild ist kleiner als das Ding, zum Beispiel im Maßstab 1:100.",
+    "meilenstein": "5.6.6"
+   },
+   {
+    "wort": "Vergrößerung",
+    "erklaerung": "Das Bild ist größer als das Ding, zum Beispiel im Maßstab 10:1.",
+    "meilenstein": "5.6.6"
+   },
+   {
+    "wort": "Angabe",
+    "erklaerung": "Eine Zahl mit Einheit aus dem Text, zum Beispiel 3 kg.",
+    "meilenstein": "5.6.7"
+   },
+   {
+    "wort": "Frage",
+    "erklaerung": "Das, was du herausfinden sollst.",
+    "meilenstein": "5.6.7"
+   },
+   {
+    "wort": "Antwortsatz",
+    "erklaerung": "Ein ganzer Satz mit Einheit, der die Frage beantwortet.",
+    "meilenstein": "5.6.7"
+   },
+   {
+    "wort": "Zwischenergebnis",
+    "erklaerung": "Ein Ergebnis, mit dem du noch weiterrechnest.",
+    "meilenstein": "5.6.7"
+   },
+   {
+    "wort": "überflüssig",
+    "erklaerung": "Eine Angabe ist überflüssig, wenn du sie für die Frage nicht brauchst.",
+    "meilenstein": "5.6.7"
+   },
+   {
+    "wort": "Preisliste",
+    "erklaerung": "Eine Liste, in der steht, was etwas kostet.",
+    "meilenstein": "5.6.X1"
+   },
+   {
+    "wort": "Rezept",
+    "erklaerung": "Eine Liste der Zutaten mit ihren Mengen.",
+    "meilenstein": "5.6.X1"
+   },
+   {
+    "wort": "Stundenlohn",
+    "erklaerung": "So viel Geld bekommt jemand für eine Stunde Arbeit.",
+    "meilenstein": "5.6.X1"
+   },
+   {
+    "wort": "Kreis",
+    "erklaerung": "Eine runde Figur. Alle Punkte am Rand sind gleich weit vom Mittelpunkt entfernt.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Mittelpunkt",
+    "erklaerung": "Der Punkt in der Mitte des Kreises. Er heißt M.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Kreislinie",
+    "erklaerung": "Der runde Rand des Kreises.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Radius",
+    "erklaerung": "Die Strecke vom Mittelpunkt bis zur Kreislinie. Man schreibt r.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Durchmesser",
+    "erklaerung": "Die Strecke einmal ganz durch den Kreis, durch den Mittelpunkt. Man schreibt d.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Zirkel",
+    "erklaerung": "Ein Werkzeug zum Zeichnen von Kreisen.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Kreismuster",
+    "erklaerung": "Ein Bild aus mehreren Kreisen.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Halbkreis",
+    "erklaerung": "Die Hälfte eines Kreises.",
+    "meilenstein": "5.7.1"
+   },
+   {
+    "wort": "Winkel",
+    "erklaerung": "Zwei Strahlen, die in einem Punkt beginnen, bilden einen Winkel.",
+    "meilenstein": "5.7.2"
+   },
+   {
+    "wort": "Scheitel",
+    "erklaerung": "Der Punkt, in dem die beiden Schenkel beginnen.",
+    "meilenstein": "5.7.2"
+   },
+   {
+    "wort": "Bogen",
+    "erklaerung": "Der kleine runde Strich, der den Winkel zeigt.",
+    "meilenstein": "5.7.2"
+   },
+   {
+    "wort": "Alpha",
+    "erklaerung": "Der griechische Buchstabe α.",
+    "meilenstein": "5.7.2"
+   },
+   {
+    "wort": "Scheitelpunkt",
+    "erklaerung": "Ein anderes Wort für Scheitel.",
+    "meilenstein": "5.7.2"
+   },
+   {
+    "wort": "Grad",
+    "erklaerung": "Die Einheit für Winkel. Man schreibt °. Ein rechter Winkel hat 90°.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "spitz",
+    "erklaerung": "Ein spitzer Winkel ist kleiner als ein rechter Winkel.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "stumpf",
+    "erklaerung": "Ein stumpfer Winkel ist größer als ein rechter Winkel, aber kleiner als 180°.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "Winkelart",
+    "erklaerung": "Spitz, recht, stumpf, gestreckt, überstumpf oder voll.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "gestreckt",
+    "erklaerung": "Ein gestreckter Winkel hat 180°. Seine Schenkel bilden eine Gerade.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "Vollwinkel",
+    "erklaerung": "Ein Winkel mit 360°: eine ganze Drehung.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "überstumpf",
+    "erklaerung": "Ein überstumpfer Winkel ist größer als 180° und kleiner als 360°.",
+    "meilenstein": "5.7.3"
+   },
+   {
+    "wort": "Gradnetz",
+    "erklaerung": "Linien auf der Erde, mit denen man jeden Ort angeben kann.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Äquator",
+    "erklaerung": "Die Linie um die Mitte der Erde. Dort ist die Breite 0°.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Breitengrad",
+    "erklaerung": "Eine Linie, die parallel zum Äquator um die Erde läuft.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Längengrad",
+    "erklaerung": "Eine Linie vom Nordpol zum Südpol.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Nullmeridian",
+    "erklaerung": "Der Längengrad 0°. Er läuft durch London.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Halbkugel",
+    "erklaerung": "Eine Hälfte der Erde, zum Beispiel die Nordhalbkugel.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Gradunterschied",
+    "erklaerung": "So viele Grad liegen zwei Orte nach Norden und Süden oder nach Osten und Westen auseinander.",
+    "meilenstein": "5.7.X1"
+   },
+   {
+    "wort": "Skala",
+    "erklaerung": "Die Zahlen und Striche zum Ablesen.",
+    "meilenstein": "5.7.4"
+   },
+   {
+    "wort": "messen",
+    "erklaerung": "Mit dem Geodreieck bestimmen, wie groß ein Winkel ist.",
+    "meilenstein": "5.7.4"
+   },
+   {
+    "wort": "Grundlinie",
+    "erklaerung": "Die lange Seite des Geodreiecks. Sie liegt beim Messen auf einem Schenkel.",
+    "meilenstein": "5.7.4"
+   },
+   {
+    "wort": "Gegenskala",
+    "erklaerung": "Die zweite Skala am Geodreieck. Sie läuft in die andere Richtung.",
+    "meilenstein": "5.7.4"
+   },
+   {
+    "wort": "gleichseitig",
+    "erklaerung": "Alle drei Seiten sind gleich lang.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "gleichschenklig",
+    "erklaerung": "Mindestens zwei Seiten sind gleich lang.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "rechtwinklig",
+    "erklaerung": "Ein Winkel ist ein rechter Winkel.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "unregelmäßig",
+    "erklaerung": "Keine zwei Seiten sind gleich lang.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "spitzwinklig",
+    "erklaerung": "Alle drei Winkel sind spitz.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "stumpfwinklig",
+    "erklaerung": "Ein Winkel ist stumpf.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "Winkelsumme",
+    "erklaerung": "Alle Winkel einer Figur zusammen. Im Dreieck sind es 180°.",
+    "meilenstein": "5.7.X2"
+   },
+   {
+    "wort": "Flächeninhalt",
+    "erklaerung": "So viel Platz hat eine Fläche. Man zählt, wie viele Kästchen sie bedeckt.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Umfang",
+    "erklaerung": "Die Länge des Randes einer Figur, einmal ganz herum.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Kästchen",
+    "erklaerung": "Ein kleines Quadrat im Karogitter.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Kästchenseite",
+    "erklaerung": "Eine Seite eines Kästchens. Beim Umfang zählt man sie auf dem Rand.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Rand",
+    "erklaerung": "Die Linie außen um eine Figur herum.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Randlänge",
+    "erklaerung": "Ein anderes Wort für Umfang: wie lang der Rand einmal ganz herum ist.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Flächenvergleich",
+    "erklaerung": "Zwei Flächen nebeneinanderstellen und herausfinden, welche größer ist.",
+    "meilenstein": "5.8.1"
+   },
+   {
+    "wort": "Quadratzentimeter",
+    "erklaerung": "Eine Flächeneinheit: ein Quadrat mit 1 cm Seitenlänge. Man schreibt cm².",
+    "meilenstein": "5.8.2"
+   },
+   {
+    "wort": "Quadratmeter",
+    "erklaerung": "Ein Quadrat mit 1 m Seitenlänge. Man schreibt m².",
+    "meilenstein": "5.8.2"
+   },
+   {
+    "wort": "Flächeneinheit",
+    "erklaerung": "Eine Einheit für Flächeninhalte, zum Beispiel cm² oder m².",
+    "meilenstein": "5.8.2"
+   },
+   {
+    "wort": "Ar",
+    "erklaerung": "Eine Flächeneinheit für Gärten und Felder. Man schreibt a. 1 a = 100 m².",
+    "meilenstein": "5.8.2"
+   },
+   {
+    "wort": "Hektar",
+    "erklaerung": "Eine Flächeneinheit für große Felder und Wälder. Man schreibt ha. 1 ha = 100 a.",
+    "meilenstein": "5.8.2"
+   },
+   {
+    "wort": "Seitenlänge",
+    "erklaerung": "Wie lang eine Seite ist.",
+    "meilenstein": "5.8.3"
+   },
+   {
+    "wort": "verdoppelt",
+    "erklaerung": "Doppelt so groß wie vorher. Aus 5 wird 10.",
+    "meilenstein": "5.8.3"
+   },
+   {
+    "wort": "Teilfläche",
+    "erklaerung": "Ein Stück einer Figur nach dem Zerlegen.",
+    "meilenstein": "5.8.4"
+   },
+   {
+    "wort": "Skizze",
+    "erklaerung": "Eine Zeichnung mit Maßen, die nicht genau maßstäblich ist.",
+    "meilenstein": "5.8.4"
+   },
+   {
+    "wort": "Rahmen",
+    "erklaerung": "Eine Figur mit einem Loch in der Mitte, wie ein Bilderrahmen.",
+    "meilenstein": "5.8.4"
+   },
+   {
+    "wort": "Bruchstrich",
+    "erklaerung": "Der Strich zwischen Zähler und Nenner.",
+    "meilenstein": "5.9.1"
+   },
+   {
+    "wort": "gemischt",
+    "erklaerung": "Eine gemischte Zahl besteht aus Ganzen und einem Bruch, zum Beispiel 1 1⁄2.",
+    "meilenstein": "5.9.1"
+   },
+   {
+    "wort": "gerecht teilen",
+    "erklaerung": "So teilen, dass alle Teile gleich groß sind.",
+    "meilenstein": "5.9.2"
+   },
+   {
+    "wort": "Einer",
+    "erklaerung": "Die letzte Ziffer einer Zahl. Die Zahl 34 hat 4 Einer."
+   },
+   {
+    "wort": "Hunderter",
+    "erklaerung": "Zehn Zehner sind ein Hunderter. Die Zahl 234 hat 2 Hunderter."
+   },
+   {
+    "wort": "Tausender",
+    "erklaerung": "Zehn Hunderter sind ein Tausender. Die Zahl 5234 hat 5 Tausender."
+   },
+   {
+    "wort": "Addition",
+    "erklaerung": "Das Plus-Rechnen. 34 + 12 ist eine Addition."
+   },
+   {
+    "wort": "Subtraktion",
+    "erklaerung": "Das Minus-Rechnen. 34 − 12 ist eine Subtraktion."
+   },
+   {
+    "wort": "Multiplikation",
+    "erklaerung": "Das Mal-Rechnen. 4 · 6 ist eine Multiplikation."
+   },
+   {
+    "wort": "Division",
+    "erklaerung": "Das Geteilt-Rechnen. 24 : 6 ist eine Division."
+   },
+   {
+    "wort": "Gleichung",
+    "erklaerung": "Eine Rechnung mit dem Zeichen =. Links und rechts steht derselbe Wert."
+   },
+   {
+    "wort": "gerade Zahl",
+    "erklaerung": "Eine Zahl, die du ohne Rest durch 2 teilen kannst: 2, 4, 6, 8 …"
+   },
+   {
+    "wort": "ungerade",
+    "erklaerung": "Beim Teilen durch 2 bleibt 1 übrig: 1, 3, 5, 7 …"
+   },
+   {
+    "wort": "schriftlich",
+    "erklaerung": "Du schreibst die Zahlen untereinander und rechnest Stelle für Stelle."
+   },
+   {
+    "wort": "Schätzung",
+    "erklaerung": "Eine Zahl, die ungefähr stimmt. Du zählst oder misst nicht genau."
+   },
+   {
+    "wort": "höchstens",
+    "erklaerung": "Nicht mehr als. Höchstens 5 heißt: 5 oder weniger."
+   },
+   {
+    "wort": "mindestens",
+    "erklaerung": "Nicht weniger als. Mindestens 5 heißt: 5 oder mehr."
+   },
+   {
+    "wort": "doppelt",
+    "erklaerung": "Zweimal so viel. Doppelt so viel wie 6 ist 12."
+   },
+   {
+    "wort": "insgesamt",
+    "erklaerung": "Alles zusammengezählt."
+   },
+   {
+    "wort": "Diagramm",
+    "erklaerung": "Ein Bild, das Zahlen zeigt, zum Beispiel mit Säulen oder Balken."
+   },
+   {
+    "wort": "Hälfte",
+    "erklaerung": "Eines von zwei gleich großen Teilen. Die Hälfte von 12 ist 6."
+   },
+   {
+    "wort": "Viertel",
+    "erklaerung": "Eines von vier gleich großen Teilen. Ein Viertel von 12 ist 3."
+   },
+   {
+    "wort": "Drittel",
+    "erklaerung": "Eines von drei gleich großen Teilen. Ein Drittel von 12 ist 4."
+   },
+   {
+    "wort": "Vielfache",
+    "erklaerung": "Die Zahlen einer Einmaleins-Reihe. Vielfache von 4 sind 4, 8, 12, 16 …",
+    "formen": [
+     "Vielfaches",
+     "Vielfachen"
+    ]
+   },
+   {
+    "wort": "Meter",
+    "erklaerung": "Eine Einheit für Längen. 1 m sind 100 cm. Eine Tür ist etwa 2 m hoch."
+   },
+   {
+    "wort": "Millimeter",
+    "erklaerung": "Eine kleine Einheit für Längen. 10 mm sind 1 cm."
    }
   ],
   "aufgaben": [

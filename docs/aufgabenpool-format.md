@@ -25,9 +25,10 @@ Der Zufall im Erzeuger ist fest geimpft: Gleicher Code ergibt dieselbe Datei. Ei
 | `klassenstufe` | 5 bis 10 |
 | `fehlvorstellungen` | Katalog: Kürzel → `beschreibung` (für die Diagnose) `hinweis` (Rückmeldung an den Schüler nach dem ersten falschen Versuch) und `kind` (Satz in einfacher Sprache für den Aha-Moment, ADR 0017) |
 | `kompetenzen` | Die fünf prozessbezogenen Kompetenzen: Kürzel → Name (ADR 0017) |
-| `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele. Jedes Lernziel trägt `voraussetzungen` (Liste, leer heißt: nur Grundschulstoff). Ein Unterkapitel mit Aufgaben trägt einen `merkzettel` mit `regeln` (Liste), `beispiel` und `heft`. Die Texte stehen in `tools/jahresplan-klasse-5.mjs`. |
+| `kapitel` | Jahresplan: Kapitel → Unterkapitel → Lernziele. Jedes Lernziel trägt `voraussetzungen` (Liste, leer heißt: nur Grundschulstoff). Ein Lernziel mit Aufgaben trägt einen `merkzettel` (ADR 0056) mit `regel` (höchstens zwei Sätze), wahlweise `rechnung` (Liste von Zeilen in fester Zeichenbreite, eine Zeile aus `-` ist ein Rechenstrich) und `beispiel` (Zeilen mit `\n` getrennt). Die Texte stehen in `tools/merkzettel/`. Ein Unterkapitel trägt `heft`, den Hinweis fürs Heft, der nur bei Heftaufgaben erscheint. |
+| `grundwoerter` | Liste aus `{ wort, erklaerung, formen? }`: Wörter, die in vielen Aufgaben stehen und zu keinem Meilenstein gehören (ADR 0056, `tools/grundwoerter.mjs`) |
 | `aufgaben` | Liste aller Aufgaben |
-| `vorstufe` | Nur ab Klasse 6 (ADR 0037): `klassenstufe`, `lernziele` (Kennung und Text) und `aufgaben`. Das sind unveränderte Kopien der Aufgaben der früheren Klassenstufe auf F, G und M zu den Lernzielen, auf die eine Voraussetzung zeigt. Das Schüler-Dashboard nimmt sie nur für Brücken. |
+| `vorstufe` | Nur ab Klasse 6 (ADR 0037): `klassenstufe`, `lernziele` (Kennung und Text) und `aufgaben`. Das sind unveränderte Kopien der Aufgaben der früheren Klassenstufe auf F, G und M zu den Lernzielen, auf die eine Voraussetzung zeigt. Das Schüler-Dashboard nimmt sie nur für Brücken. Die Lernziele tragen ihren `merkzettel`; `woerter` sind die Wortspeicher und Grundwörter der früheren Klassenstufen, jedes Wort einmal (ADR 0056). |
 
 Kennungen: Kapitel `5.3`, Unterkapitel `5.3.3` (Extras `5.2.X1`), Lernziel `5.3.3-S2`, Aufgabe `5.3.3-S2-G-01`.
 
@@ -145,7 +146,7 @@ Am Bild `zahlenstrahl` gibt es seit Kapitel 2 zusätzlich `punkte` (ein bis sech
 
 ## Wortspeicher
 
-Ein Unterkapitel kann `wortspeicher` tragen: eine Liste aus `{ wort, ab, erklaerung }`. `ab` ist die Niveaustufe, ab der das Wort gezeigt wird und in Aufgaben und Hilfekärtchen vorkommen darf. Zeilenumbrüche (`\n`) im Aufgabentext sind auf F und G gewollt: jeder Satz steht in einer eigenen Zeile.
+Ein Unterkapitel kann `wortspeicher` tragen: eine Liste aus `{ wort, ab, erklaerung }`. `ab` ist die Niveaustufe, ab der das Wort in Aufgaben und Hilfekärtchen vorkommen darf. Gezeigt wird ein Wort nicht mehr in einem Kasten, sondern als Erklärung am unterstrichenen Wort, sobald es im Text steht, unabhängig von `ab` (ADR 0056). Wortformen findet `src/gemeinsam/woerter.js`; was es nicht findet, nennt das wahlweise Feld `formen`. Zeilenumbrüche (`\n`) im Aufgabentext sind auf F und G gewollt: jeder Satz steht in einer eigenen Zeile.
 
 ## Klasse 6, Kapitel 1 „Brüche“ (ADR 0037)
 

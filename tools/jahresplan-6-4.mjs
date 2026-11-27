@@ -35,73 +35,21 @@ export const lernziele4 = {
 
 export const merkzettel4 = {
   '6.4.1': {
-    regeln: [
-      'Nach dem Komma stehen die Zehntel, die Hundertstel und die Tausendstel.',
-      'Jede Stelle ist zehnmal so viel wert wie die Stelle rechts von ihr.',
-      'Ein Zehnerbruch hat den Nenner 10, 100 oder 1000. Der Nenner sagt, wie viele Stellen nach dem Komma stehen: 7⁄100 = 0,07.',
-      'Eine Null am Ende ändert den Wert nicht: 0,5 = 0,50. Eine Null direkt nach dem Komma ändert ihn: 0,05 ist viel weniger.',
-      'Ab G: Gelesen wird Ziffer für Ziffer: 3,25 heißt „drei Komma zwei fünf“.',
-      'Ab M: Nach den Tausendsteln kommen die Zehntausendstel.',
-    ],
-    beispiel: '2,35 sind 2 Einer, 3 Zehntel und 5 Hundertstel. Als Bruch: 235⁄100. Gelesen: zwei Komma drei fünf.',
     heft: 'Zeichne die Stellenwerttafel mit einem dicken Strich nach den Einern. Dort steht das Komma.',
   },
   '6.4.2': {
-    regeln: [
-      'Vergleiche zuerst die Ganzen. Sind sie gleich, vergleiche Stelle für Stelle von links: Zehntel, Hundertstel, Tausendstel.',
-      'Mehr Ziffern heißt nicht größer: 0,7 ist größer als 0,65.',
-      'Hänge Endnullen an, bis beide Zahlen gleich viele Stellen haben: 0,70 und 0,65.',
-      'Am Zahlenstrahl liegt die größere Zahl weiter rechts.',
-      'Ab G: Zwischen zwei Zehnteln liegen zehn Hundertstel.',
-      'Ab E: Zwischen zwei Dezimalzahlen liegt immer noch eine weitere.',
-    ],
-    beispiel: '0,7 oder 0,705? Mit Endnullen: 0,700 und 0,705. Also ist 0,705 ein kleines bisschen größer.',
     heft: 'Schreibe die Zahlen untereinander, Komma unter Komma. Fülle mit Endnullen auf.',
   },
   '6.4.3': {
-    regeln: [
-      'Suche die Rundungsstelle. Schau dann nur auf die Ziffer rechts daneben.',
-      'Ist sie 0, 1, 2, 3 oder 4, rundest du ab. Ist sie 5, 6, 7, 8 oder 9, rundest du auf.',
-      'Hinter der Rundungsstelle fallen alle Ziffern weg.',
-      'Runde in einem Schritt, nie Stelle für Stelle von hinten.',
-      'Ab G: Aus einer 9, die aufgerundet wird, wird 10: 3,96 auf Zehntel ist 4,0.',
-      'Ab M: Geld rundest du auf Cent, also auf Hundertstel Euro.',
-    ],
-    beispiel: '4,368 auf Zehntel: Die Rundungsstelle ist die 3. Rechts daneben steht 6, also aufrunden: 4,4.',
     heft: 'Unterstreiche die Rundungsstelle und kreise die Ziffer rechts daneben ein. Schreibe dann ≈ und das Ergebnis.',
   },
   '6.4.5': {
-    regeln: [
-      'Erweitere den Bruch auf den Nenner 10, 100 oder 1000. Dann kannst du ihn als Dezimalzahl schreiben.',
-      `${'1⁄2'} = 5⁄10 = 0,5. ${'1⁄4'} = 25⁄100 = 0,25. ${'1⁄5'} = 2⁄10 = 0,2.`,
-      'Umgekehrt: Schreibe die Dezimalzahl als Zehnerbruch und kürze dann vollständig: 0,25 = 25⁄100 = 1⁄4.',
-      'Ab G: 1⁄8 = 125⁄1000 = 0,125.',
-      'Ab E: Hat der gekürzte Nenner einen anderen Teiler als 2 und 5, geht es mit Erweitern nicht.',
-    ],
-    beispiel: '3⁄4 = 75⁄100 = 0,75, denn 4 · 25 = 100. Umgekehrt: 0,6 = 6⁄10 = 3⁄5.',
     heft: 'Schreibe die Erweiterungszahl klein über das Gleichheitszeichen.',
   },
   '6.4.6': {
-    regeln: [
-      'Jeder Bruch ist eine Division: Zähler geteilt durch Nenner. 3⁄8 = 3 : 8.',
-      'Dividiere schriftlich. Hänge hinter dem Komma Nullen an, so lange du sie brauchst.',
-      'Geht die Division auf, ist die Dezimalzahl abbrechend: 3⁄8 = 0,375.',
-      `Kommt ein Rest zum zweiten Mal, wiederholen sich die Ziffern ohne Ende. Die Dezimalzahl ist periodisch: 2⁄3 = ${P('0,', '6')}.`,
-      'Über die Ziffern, die sich wiederholen, setzt du einen Strich. Sie heißen Periode.',
-      `Ab E: Nicht jede Periode beginnt direkt nach dem Komma: 1⁄6 = ${P('0,1', '6')}.`,
-    ],
-    beispiel: `Bei 1 : 3 bleibt nach jeder Stelle wieder der Rest 1. Der Rest kommt wieder, also 1⁄3 = ${P('0,', '3')}.`,
     heft: 'Schreibe jeden Rest auf. Kommt ein Rest zum zweiten Mal, kannst du aufhören.',
   },
   '6.4.7': {
-    regeln: [
-      'Prozent heißt Hundertstel: 1 % = 1⁄100 = 0,01.',
-      'Ein Anteil in Prozent: Erweitere oder kürze den Bruch auf den Nenner 100. Der Zähler ist die Prozentzahl.',
-      'Von der Dezimalzahl zu Prozent: Lies die Hundertstel. 0,35 = 35 %.',
-      '50 % ist die Hälfte, 25 % ein Viertel, 10 % ein Zehntel, 100 % das Ganze.',
-      'Ab M: Mehr als das Ganze ist mehr als 100 %: 1,2 = 120 %.',
-    ],
-    beispiel: '3 von 5 Kindern kommen mit dem Rad. 3⁄5 = 60⁄100 = 0,6 = 60 %.',
     heft: 'Lege eine Tabelle mit den Spalten Bruch, Dezimalzahl und Prozent an.',
   },
 };

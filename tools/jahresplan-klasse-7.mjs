@@ -1,3 +1,4 @@
+import { merkzettel7 } from './merkzettel/klasse-7.mjs';
 // Jahresplan Klasse 7 nach Schnittpunkt Mathematik 7, Differenzierende Ausgabe Baden-Württemberg (ISBN 978-3-12-744372-1).
 // Quelle und Erläuterungen: docs/jahresplan-klasse-7.md und ADR 0043. Die „Ich kann“-Sätze folgen dem Kompetenzraster des Verlags (2017).
 // Die Nummern der Unterkapitel stehen wie im Buch. EXTRA-Einheiten mit Mathe-Inhalt sind Abstecher für alle (`extra`), die am Computer entfallen.
@@ -134,258 +135,70 @@ const roh = [
 // Merkzettel (ADR 0016): Regeln, ein Beispiel und ein Tipp fürs Heft. Jede Rechnung darin rechnet der Prüfer nach.
 const merkzettel = {
   '7.1.1': {
-    regeln: [
-      'Zahlen unter null heißen negative Zahlen. Sie tragen ein Minuszeichen: −3.',
-      'Zahlen über null heißen positive Zahlen. Die Null ist weder positiv noch negativ.',
-      'Auf der Zahlengeraden stehen die negativen Zahlen links von der Null.',
-      'Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite: Die Gegenzahl von 4 ist −4.',
-      'Der Abstand einer Zahl zur Null ist nie negativ. Bei −4 und bei 4 ist er 4.',
-      'Ab M: Der Abstand zur Null heißt Betrag. Man schreibt |−4| = 4.',
-      'Ab M: Die ganzen Zahlen und alle Brüche und Dezimalzahlen mit Plus oder Minus heißen rationale Zahlen.',
-    ],
-    beispiel: 'Das Thermometer zeigt −5 °C. Das sind 5 Grad unter null. Bei 5 °C ist es gleich weit über null.',
     heft: 'Zeichne eine Zahlengerade mit der Null in der Mitte. Schreibe die Zahlen mit Vorzeichen daran.',
   },
   '7.1.X1': {
-    regeln: [
-      'Das Koordinatensystem hat zwei Achsen: die x-Achse nach rechts und die y-Achse nach oben. Sie kreuzen sich im Nullpunkt.',
-      'Jeder Punkt hat zwei Koordinaten: P(x|y). Erst kommt die x-Koordinate, dann die y-Koordinate.',
-      'Ist die x-Koordinate negativ, gehst du vom Nullpunkt nach links. Ist die y-Koordinate negativ, gehst du nach unten.',
-      'Ab M: Die Achsen teilen das Blatt in vier Quadranten. Gezählt wird oben rechts beginnend gegen den Uhrzeigersinn: I, II, III, IV.',
-      'Ab E: Beim Spiegeln an der x-Achse wechselt die y-Koordinate ihr Vorzeichen, beim Spiegeln an der y-Achse die x-Koordinate.',
-    ],
-    beispiel: 'P(−3|2): Gehe vom Nullpunkt 3 nach links und 2 nach oben.',
     heft: 'Gehe immer zuerst an der x-Achse entlang und dann nach oben oder unten.',
   },
   '7.1.2': {
-    regeln: [
-      'Von zwei Zahlen ist die kleiner, die auf der Zahlengeraden weiter links liegt.',
-      'Jede negative Zahl ist kleiner als null und kleiner als jede positive Zahl.',
-      'Bei zwei negativen Zahlen ist die kleiner, die weiter von der Null entfernt ist: −8 < −3.',
-      'Den Abstand zweier Zahlen findest du durch Zählen der Schritte auf der Zahlengeraden.',
-      'Ab G: Die Mitte zweier Zahlen liegt von beiden gleich weit entfernt.',
-      `Ab M: Brüche und Dezimalzahlen vergleichst du zuerst ohne Vorzeichen. Bei negativen Zahlen dreht sich das Zeichen um: ${b(1, 2)} > ${b(1, 4)}, aber −${b(1, 2)} < −${b(1, 4)}.`,
-    ],
-    beispiel: 'Bei −8 °C ist es kälter als bei −3 °C. Also gilt −8 < −3.',
     heft: 'Markiere beide Zahlen auf einer Zahlengeraden. Die linke Zahl ist die kleinere.',
   },
   '7.1.X2': {
-    regeln: [
-      'Ein Weg auf der Zahlengeraden hat einen Start, einen oder mehrere Schritte und ein Ziel.',
-      'Ein Schritt mit Plus geht nach rechts. Ein Schritt mit Minus geht nach links.',
-      'Start −3, Schritt +5: Du landest bei 2.',
-      'Ab M: Suchst du den Start, gehst du vom Ziel aus alle Schritte rückwärts.',
-      'Ab E: Fehlt ein Schritt, zählst du von der letzten bekannten Stelle bis zum Ziel.',
-    ],
-    beispiel: 'Start bei 2, dann 6 Schritte nach links: Du gehst über die Null und landest bei −4.',
     heft: 'Zeichne jeden Schritt als Bogen über die Zahlengerade und schreibe die Zahl daran.',
   },
   '7.1.3': {
-    regeln: [
-      'Addieren an der Zahlengeraden: Starte bei der ersten Zahl.',
-      'Eine positive Zahl addieren heißt: nach rechts gehen. −5 + 3 = −2.',
-      'Eine negative Zahl addieren heißt: nach links gehen. 2 + (−6) = −4.',
-      'Zwei negative Zahlen: Es wird noch weniger. −2 + (−3) = −5.',
-      'Ab G: Gleiche Vorzeichen: Abstände zur Null addieren, das Vorzeichen bleibt. Verschiedene Vorzeichen: Abstände subtrahieren, das Vorzeichen der Zahl mit dem größeren Abstand gilt.',
-      `Ab M: Dieselben Regeln gelten für Dezimalzahlen und Brüche: −1,5 + 0,7 = −0,8 und −${b(3, 5)} + ${b(1, 5)} = −${b(2, 5)}.`,
-    ],
-    beispiel: 'Morgens sind es −5 °C. Bis mittags wird es 8 Grad wärmer: −5 + 8 = 3. Mittags sind es 3 °C.',
     heft: 'Schreibe eine negative Zahl nach dem Pluszeichen immer in Klammern: 4 + (−9).',
   },
   '7.1.4': {
-    regeln: [
-      'Subtrahieren an der Zahlengeraden: Starte bei der ersten Zahl und gehe nach links. 3 − 5 = −2.',
-      'Eine negative Zahl subtrahieren heißt: ihre Gegenzahl addieren. 3 − (−5) = 3 + 5 = 8.',
-      'Aus Minus und Minus wird Plus.',
-      'Ab G: Jede Minusaufgabe lässt sich als Plusaufgabe schreiben: −4 − 6 = −4 + (−6) = −10.',
-      `Ab M: Dieselben Regeln gelten für Dezimalzahlen und Brüche: 0,5 − 1,2 = −0,7 und ${b(1, 7)} − ${b(4, 7)} = −${b(3, 7)}.`,
-    ],
-    beispiel: 'Der Unterschied zwischen 4 °C und −3 °C: 4 − (−3) = 4 + 3 = 7. Es sind 7 Grad Unterschied.',
     heft: 'Schreibe zuerst die Plusaufgabe mit der Gegenzahl hin. Rechne dann.',
   },
   '7.1.5': {
-    regeln: [
-      'Plus und Plus wird Plus: 5 + (+3) = 5 + 3.',
-      'Plus und Minus wird Minus: 5 + (−3) = 5 − 3.',
-      'Minus und Plus wird Minus: 5 − (+3) = 5 − 3.',
-      'Minus und Minus wird Plus: 5 − (−3) = 5 + 3.',
-      'Ab G: Steht ein Plus vor einer Klammer, darfst du die Klammer weglassen. Steht ein Minus davor, drehen sich alle Zeichen in der Klammer um: 10 − (4 − 6) = 10 − 4 + 6 = 12.',
-      'Ab G: In einer Summe darfst du die Zahlen mit ihrem Vorzeichen vertauschen. Ordne so, dass es leicht wird: 17 − 8 + 3 = 17 + 3 − 8 = 12.',
-      'Ab M: Fasse erst alle positiven und alle negativen Zahlen zusammen. Zahlen und ihre Gegenzahlen heben sich auf.',
-    ],
-    beispiel: '(+15) + (−8) − (−5) = 15 − 8 + 5 = 12. Erst fallen die Klammern weg, dann wird gerechnet.',
     heft: 'Schreibe die Aufgabe erst ohne Klammern. Das Vorzeichen wandert immer mit seiner Zahl.',
   },
   '7.1.6': {
-    regeln: [
-      'Malnehmen heißt: mehrmals dasselbe addieren. 3 · (−4) = (−4) + (−4) + (−4) = −12.',
-      'Plus mal Minus ergibt Minus. Minus mal Plus ergibt Minus.',
-      'Minus mal Minus ergibt Plus: (−3) · (−4) = 12.',
-      'Rechne so: erst das Vorzeichen bestimmen, dann die Zahlen ohne Vorzeichen malnehmen.',
-      'Eine Zahl mal 0 ist immer 0.',
-      'Ab M: Bei mehreren Faktoren zählst du die Minuszeichen. Eine gerade Anzahl ergibt Plus, eine ungerade Anzahl ergibt Minus.',
-      `Ab M: Dieselben Regeln gelten für Dezimalzahlen und Brüche: (−0,5) · 4 = −2 und (−${b(2, 3)}) · (−${b(1, 5)}) = ${b(2, 15)}.`,
-    ],
-    beispiel: 'Ein Taucher sinkt in jeder Minute 4 m. Nach 3 Minuten: 3 · (−4) = −12. Er ist 12 m unter der Oberfläche.',
     heft: 'Schreibe zuerst das Vorzeichen des Ergebnisses hin. Rechne dann mit den Zahlen ohne Vorzeichen.',
   },
   '7.1.7': {
-    regeln: [
-      'Beim Dividieren gelten dieselben Vorzeichenregeln wie beim Multiplizieren.',
-      'Gleiche Vorzeichen ergeben Plus: (−12) : (−3) = 4.',
-      'Verschiedene Vorzeichen ergeben Minus: (−12) : 3 = −4 und 12 : (−3) = −4.',
-      'Null geteilt durch eine Zahl ist null: 0 : (−17) = 0. Durch null kann man nicht teilen.',
-      'Prüfe mit der Malaufgabe: (−4) · 3 = −12.',
-      `Ab M: Durch einen Bruch dividierst du, indem du mit dem Kehrwert multiplizierst: (−${b(3, 4)}) : ${b(1, 2)} = (−${b(3, 4)}) · 2 = −${b(3, 2)}.`,
-    ],
-    beispiel: '−20 € Schulden werden auf 4 Personen verteilt: (−20) : 4 = −5. Jede Person hat 5 € Schulden.',
     heft: 'Bestimme zuerst das Vorzeichen. Mache danach immer die Probe mit der Malaufgabe.',
   },
   '7.1.8': {
-    regeln: [
-      'Klammern zuerst.',
-      'Dann Punkt vor Strich: Mal und geteilt kommen vor plus und minus.',
-      'Sonst rechnest du von links nach rechts.',
-      '2 + 3 · (−4) = 2 + (−12) = −10.',
-      'Ab G: Ausmultiplizieren: Jede Zahl in der Klammer wird mit der Zahl vor der Klammer malgenommen. 2 · (3 + (−5)) = 2 · 3 + 2 · (−5) = −4.',
-      'Ab M: Ausklammern: Steckt in jedem Teil derselbe Faktor, darf er vor eine Klammer. (−7) · 13 + (−7) · 7 = (−7) · (13 + 7) = −140.',
-    ],
-    beispiel: '(−2 + 5) · (−4) = 3 · (−4) = −12. Zuerst wird die Klammer berechnet.',
     heft: 'Unterstreiche, was du zuerst rechnest. Schreibe jeden Schritt in eine neue Zeile.',
   },
   '7.1.X3': {
-    regeln: [
-      'Temperaturen misst man bei uns in Grad Celsius: °C. Wasser gefriert bei 0 °C und siedet bei 100 °C.',
-      'Temperaturen unter null sind negativ. Dann herrscht Frost.',
-      'Steigt die Temperatur, rechnest du plus. Sinkt sie, rechnest du minus.',
-      'Den Temperaturunterschied findest du durch Zählen an der Skala: von −3 °C bis 4 °C sind es 7 Grad.',
-      'Ab M: In den USA misst man in Grad Fahrenheit. Umrechnung: Grad Celsius mal 1,8 plus 32. Aus 10 °C werden 50 °F, denn 10 · 1,8 + 32 = 50.',
-      'Ab M: In der Wissenschaft misst man in Kelvin. Umrechnung: Grad Celsius plus 273. Aus −3 °C werden 270 K, denn −3 + 273 = 270.',
-    ],
-    beispiel: 'Nachts sind es −6 °C, mittags 5 °C. Die Temperatur ist um 11 Grad gestiegen, denn 5 − (−6) = 11.',
     heft: 'Skizziere ein Thermometer. Markiere beide Temperaturen und zähle die Grade dazwischen.',
   },
   '7.1.X4': {
-    regeln: [
-      'Auf einem Girokonto liegt dein Geld bei der Bank. Der Kontostand sagt, wie viel Geld auf dem Konto ist.',
-      'Ein positiver Kontostand ist ein Guthaben. Ein negativer Kontostand bedeutet Schulden bei der Bank.',
-      'Kommt Geld auf das Konto, rechnest du plus. Geht Geld vom Konto ab, rechnest du minus.',
-      'Neuer Kontostand: alter Kontostand und alle Buchungen der Reihe nach verrechnen.',
-      'Ab G: Geld, das dazukommt, heißt Gutschrift. Geld, das abgeht, heißt Abbuchung.',
-      'Ab M: Auf dem Kontoauszug steht S für Soll (Minus) und H für Haben (Plus). Wer mehr abhebt, als er hat, überzieht sein Konto.',
-    ],
-    beispiel: 'Kontostand 40 €, dann eine Abbuchung von 65 €: 40 − 65 = −25. Das Konto ist mit 25 € im Minus.',
     heft: 'Schreibe die Buchungen untereinander, jede mit Plus oder Minus davor.',
   },
   // Kapitel 2 Dreiecke (ADR 0044). Basiswinkelsatz, Begründen, Kongruenzsätze und Thales als Satz erst ab M (Niveauübersicht K02).
   '7.2.1': {
-    regeln: [
-      'Schneiden sich zwei Geraden, entstehen vier Winkel. Gegenüberliegende Winkel heißen Scheitelwinkel. Sie sind gleich groß.',
-      'Winkel, die nebeneinander an einer Geraden liegen, heißen Nebenwinkel. Zusammen sind sie 180°.',
-      'Schneidet eine Gerade zwei Parallelen, liegen Stufenwinkel an beiden Parallelen an derselben Stelle. Sie sind gleich groß.',
-      'Wechselwinkel liegen auf verschiedenen Seiten der schneidenden Geraden, einer an jeder Parallelen. Sie sind gleich groß.',
-      'Stufenwinkel und Wechselwinkel sind nur an Parallelen gleich groß.',
-      'Ab M: Den Grund nennst du mit dem Fachbegriff: „β = 140°, denn β ist Nebenwinkel von α.“',
-    ],
-    beispiel: 'Ist α = 40°, dann ist der Nebenwinkel β = 180° − 40° = 140° und der Scheitelwinkel γ = 40°.',
     heft: 'Markiere gleich große Winkel mit derselben Farbe. Stufenwinkel bilden ein F, Wechselwinkel ein Z.',
   },
   '7.2.2': {
-    regeln: [
-      'In jedem Dreieck sind die drei Innenwinkel zusammen 180° groß: α + β + γ = 180°.',
-      'Einen fehlenden Winkel findest du so: 180° minus die beiden bekannten Winkel.',
-      'Ein Dreieck hat höchstens einen rechten oder einen stumpfen Winkel.',
-      'Ab M: Begründung mit einer Parallelen zu AB durch C: Wechselwinkel zu α und β liegen bei C neben γ. Zusammen bilden sie 180°.',
-      'Ab M: Der Außenwinkel an einer Ecke ist der Nebenwinkel des Innenwinkels. Er ist so groß wie die beiden anderen Innenwinkel zusammen.',
-    ],
-    beispiel: 'α = 50° und β = 70°. Dann ist γ = 180° − 50° − 70° = 60°.',
     heft: 'Mache immer die Probe: Die drei Winkel zusammen müssen 180° ergeben.',
   },
   '7.2.3': {
-    regeln: [
-      'Die Ecken heißen gegen den Uhrzeigersinn A, B und C. Die Seite a liegt der Ecke A gegenüber, der Winkel α liegt bei A.',
-      'Nach den Seiten: Ein gleichschenkliges Dreieck hat zwei gleich lange Seiten, ein gleichseitiges drei.',
-      'Nach den Winkeln: spitzwinklig (alle Winkel kleiner als 90°), rechtwinklig (ein Winkel 90°), stumpfwinklig (ein Winkel größer als 90°).',
-      'Im gleichschenkligen Dreieck heißen die gleich langen Seiten Schenkel, die dritte Seite Basis. Die Ecke gegenüber der Basis ist die Spitze.',
-      'Ab M: Basiswinkelsatz: Im gleichschenkligen Dreieck sind die beiden Winkel an der Basis gleich groß. Umgekehrt gilt: Sind zwei Winkel gleich groß, ist das Dreieck gleichschenklig.',
-      'Ab M: Im gleichseitigen Dreieck ist jeder Winkel 60° groß.',
-    ],
-    beispiel: 'Ein gleichschenkliges Dreieck hat an der Spitze 40°. Jeder Basiswinkel ist (180° − 40°) : 2 = 70°.',
     heft: 'Markiere gleich lange Seiten mit Strichen und gleich große Winkel mit Bögen.',
   },
   '7.2.4': {
-    regeln: [
-      'Zuerst skizzierst du eine Planfigur. Darin markierst du alles, was gegeben ist.',
-      'Ein Dreieck kann man zeichnen, wenn man drei Seiten kennt (sss), zwei Seiten und den Winkel dazwischen (sws) oder eine Seite und die beiden Winkel daran (wsw).',
-      'Ab M: Dreiecke mit denselben Maßen sind kongruent, also deckungsgleich. Die Regeln oben heißen Kongruenzsätze.',
-      'Ab M: Drei Winkel allein legen ein Dreieck nicht fest. Es kann groß oder klein sein.',
-      'Ab E: Zwei Seiten zusammen müssen länger sein als die dritte (Dreiecksungleichung). Bei zwei Seiten und einem Winkel, der nicht dazwischen liegt, muss der Winkel der längeren Seite gegenüber liegen (SsW).',
-    ],
-    beispiel: 'Gegeben: c = 6 cm, α = 50°, β = 60° (wsw). Zeichne c, trage die Winkel an A und B an. Der Schnittpunkt der Schenkel ist C.',
     heft: 'Arbeite mit spitzem Bleistift. Miss am Ende nach: Seiten auf 2 mm genau, Winkel auf 2° genau.',
   },
   '7.2.5': {
-    regeln: [
-      'Satz des Thales: Liegt der Punkt C auf einem Halbkreis über der Strecke AB, dann ist der Winkel bei C ein rechter Winkel.',
-      'Der Halbkreis heißt Thaleskreis. Sein Mittelpunkt ist die Mitte von AB, sein Radius die halbe Strecke AB.',
-      'Mit dem Thaleskreis zeichnest du rechtwinklige Dreiecke: Der rechte Winkel liegt auf dem Kreis, AB ist der Durchmesser.',
-      'Ab M: Umgekehrt gilt: Ist der Winkel bei C ein rechter Winkel, liegt C auf dem Thaleskreis über AB.',
-      'Ab E: Begründung: Die Strecke von der Mitte M zu C zerlegt das Dreieck in zwei gleichschenklige Dreiecke.',
-    ],
-    beispiel: 'C liegt auf dem Thaleskreis über AB, α = 35°. Dann ist γ = 90° und β = 180° − 90° − 35° = 55°.',
     heft: 'Stich den Zirkel genau in die Mitte von AB.',
   },
   '7.2.X1': {
-    regeln: [
-      'Eine Tangente berührt den Kreis in genau einem Punkt. Eine Sekante schneidet ihn in zwei Punkten, eine Passante gar nicht.',
-      'Die Tangente steht im Berührpunkt senkrecht auf dem Radius.',
-      'Tangente in einem Punkt P des Kreises: Zeichne den Radius MP und dazu die Senkrechte durch P.',
-      'Tangenten von einem Punkt Q außerhalb: Der Thaleskreis über MQ schneidet den Kreis in den beiden Berührpunkten.',
-    ],
-    beispiel: 'Der Kreis hat den Mittelpunkt M(4|4), P(4|7) liegt auf ihm. Die Tangente in P ist waagerecht.',
     heft: 'Prüfe mit dem Geodreieck: Radius und Tangente bilden einen rechten Winkel.',
   },
   '7.2.6': {
-    regeln: [
-      'Eine Höhe geht von einer Ecke aus und steht senkrecht auf der gegenüberliegenden Seite.',
-      'Die Höhe h_c geht von C aus und steht senkrecht auf c. Der Punkt, in dem sie c trifft, heißt Fußpunkt.',
-      'Jedes Dreieck hat drei Höhen. Sie schneiden sich in einem Punkt, dem Höhenschnittpunkt.',
-      'Im stumpfwinkligen Dreieck liegen zwei Fußpunkte außerhalb. Dann verlängerst du die Seite.',
-      'Im rechtwinkligen Dreieck sind zwei Seiten zugleich Höhen.',
-    ],
-    beispiel: 'Lege das Geodreieck mit der Mittellinie auf c und schiebe es, bis die Kante durch C geht.',
     heft: 'Zeichne verlängerte Seiten dünn und gestrichelt.',
   },
   '7.2.7': {
-    regeln: [
-      'Die Mittelsenkrechte einer Strecke AB geht durch die Mitte von AB und steht senkrecht auf AB.',
-      'Jeder Punkt auf der Mittelsenkrechten ist von A und von B gleich weit entfernt.',
-      'Alle Punkte, die von einem Punkt M gleich weit entfernt sind, liegen auf einem Kreis um M.',
-      'Die Winkelhalbierende teilt einen Winkel in zwei gleich große Winkel.',
-      'Ab M: Jeder Punkt auf der Winkelhalbierenden ist von beiden Schenkeln gleich weit entfernt.',
-      'Ab M: Eine Linie, auf der alle Punkte mit einer Eigenschaft liegen, heißt Ortslinie. Sollen zwei Bedingungen gelten, suchst du den Schnittpunkt zweier Ortslinien.',
-    ],
-    beispiel: 'Ein Spielplatz soll von zwei Häusern A und B gleich weit entfernt sein. Er liegt auf der Mittelsenkrechten von AB.',
     heft: 'Schreibe zu jeder Bedingung, welche Ortslinie dazu gehört.',
   },
   '7.2.X2': {
-    regeln: [
-      'Mittelsenkrechte mit Zirkel und Lineal: Zeichne um A und um B Kreisbögen mit demselben Radius, größer als die halbe Strecke. Verbinde die beiden Schnittpunkte.',
-      'Die drei Mittelsenkrechten eines Dreiecks schneiden sich in einem Punkt U. U ist von allen drei Ecken gleich weit entfernt.',
-      'Der Kreis um U durch die Ecken heißt Umkreis.',
-      'Im stumpfwinkligen Dreieck liegt U außerhalb, im rechtwinkligen auf der längsten Seite.',
-    ],
-    beispiel: 'A(0|0), B(8|0), C(0|6): Die Mittelsenkrechten treffen sich in U(4|3). Der Umkreis hat den Radius 5.',
     heft: 'Lass den Zirkel zwischen den beiden Bögen offen: Beide brauchen denselben Radius.',
   },
   '7.2.X3': {
-    regeln: [
-      'Winkelhalbierende mit Zirkel und Lineal: Ein Bogen um den Scheitel schneidet beide Schenkel. Um diese Schnittpunkte zeichnest du zwei Bögen mit gleichem Radius. Verbinde ihren Schnittpunkt mit dem Scheitel.',
-      'Die drei Winkelhalbierenden eines Dreiecks schneiden sich in einem Punkt I. I ist von allen drei Seiten gleich weit entfernt.',
-      'Der Kreis um I, der alle drei Seiten berührt, heißt Inkreis. Sein Radius ist der Abstand von I zu einer Seite.',
-      'Der Inkreismittelpunkt liegt immer innerhalb des Dreiecks.',
-    ],
-    beispiel: 'Im rechtwinkligen Dreieck mit den Seiten 3, 4 und 5 hat der Inkreis den Radius 1.',
     heft: 'Den Radius des Inkreises misst du senkrecht zu einer Seite.',
   },
 };
@@ -704,8 +517,8 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => {
     unterkapitel: unterkapitel.map((u) => {
       const id = u.extra ? `7.${k + 1}.X${++extraNr}` : `7.${k + 1}.${u.nr}`;
       const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-      const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...(bp[`${id}-${kurz}`] && { bp: bp[`${id}-${kurz}`] }) }));
-      return { id, titel: u.titel, extra: u.extra, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id] && { merkzettel: merkzettel[id] }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
+      const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(merkzettel7[`${id}-${kurz}`] && { merkzettel: merkzettel7[`${id}-${kurz}`] }), voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...(bp[`${id}-${kurz}`] && { bp: bp[`${id}-${kurz}`] }) }));
+      return { id, titel: u.titel, extra: u.extra, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id]?.heft && { heft: merkzettel[id].heft }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
     }),
   };
 });

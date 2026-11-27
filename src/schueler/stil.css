@@ -326,17 +326,30 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .merkzettel { background: #f1f2e4; border: 1px solid #cfd2b4; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; }
 #mathekingdom .tafel .merkzettel { margin: 16px 0 0; }
 #mathekingdom .merkzettel summary { cursor: pointer; font-weight: 700; color: var(--nacht); padding: 12px 0; min-height: 44px; }
-#mathekingdom .merkzettel ul { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 6px; }
 #mathekingdom .merkzettel p { margin: 0 0 10px; font-variant-numeric: tabular-nums; }
+#mathekingdom .merkzettel .mz-regel { font-size: 1.05rem; line-height: 1.45; }
+#mathekingdom .merkzettel .mz-beispiel { background: #fbfbf3; border: 1px solid #dcdfc4; border-radius: 10px; padding: 10px 12px; margin: 0 0 12px; }
+#mathekingdom .merkzettel .mz-beispiel > b { display: block; font-size: .85rem; letter-spacing: .04em; text-transform: uppercase; color: var(--grau); margin-bottom: 6px; }
+#mathekingdom .merkzettel .mz-beispiel p:last-child { margin-bottom: 0; }
+/* Rechnung wie im Heft: feste Zeichenbreite, Stelle unter Stelle. */
+#mathekingdom .merkzettel .mz-rechnung { display: inline-grid; font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace; font-size: 1.15rem; line-height: 1.35; white-space: pre; margin: 2px 0 8px; }
+#mathekingdom .merkzettel .mz-rechnung .mz-strichzeile { line-height: .5; }
+#mathekingdom .merkzettel .mz-rechnung .mz-strich { display: inline-block; height: 0; border-top: 2px solid var(--nacht); vertical-align: middle; font-style: normal; }
+#mathekingdom .merkzettel .mz-zeile { display: block; }
+#mathekingdom .merkzettel .mz-zeile:has(.bruch) { line-height: 2.15; }
 #mathekingdom .merkzettel .heft { color: var(--grau); }
-#mathekingdom .hilfen .merkzettel { font-size: .93rem; }
+#mathekingdom .merkzettel .mz-ziel + .mz-ziel { border-top: 1px solid #cfd2b4; padding-top: 12px; }
+#mathekingdom .merkzettel .mz-ziel h3 { font-size: 1rem; margin: 0 0 6px; color: var(--nacht); }
+#mathekingdom .merkzettel .mz-regel:has(.bruch) { line-height: 2.15; }
 
-/* Wortspeicher */
-#mathekingdom .wortspeicher { background: #edf0ea; border: 1px solid #c8cfbf; border-radius: 12px; padding: 0 14px; margin-bottom: 14px; font-size: .95rem; }
-#mathekingdom .wortspeicher summary { cursor: pointer; font-weight: 700; color: var(--nacht); padding: 12px 0; min-height: 44px; }
-#mathekingdom .wortspeicher dl { margin: 0 0 12px; display: grid; gap: 2px; }
-#mathekingdom .wortspeicher dt { font-weight: 700; margin-top: 6px; }
-#mathekingdom .wortspeicher dd { margin: 0; }
+/* Worterklärung am Wort (ADR 0056) */
+#mathekingdom .aufgabe .karte { position: relative; }
+#mathekingdom .wort { text-decoration: underline dotted; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: #8a6d1f; cursor: help; border-radius: 4px; }
+#mathekingdom .wort:hover, #mathekingdom .wort:focus-visible, #mathekingdom .wort.fest { background: #f3e6b8; outline: none; }
+#mathekingdom .wort:focus-visible { box-shadow: 0 0 0 2px #8a6d1f; }
+#mathekingdom .worterklaerung { position: absolute; z-index: 5; max-width: min(340px, calc(100% - 16px)); background: #fffbea; border: 2px solid #c9ab52; border-radius: 10px; padding: 8px 12px; box-shadow: 0 4px 14px rgba(58,48,41,.22); font-size: 1rem; line-height: 1.4; pointer-events: none; }
+#mathekingdom .worterklaerung b { display: block; }
+#mathekingdom .worthinweis { color: var(--grau); margin: -8px 0 14px; }
 #mathekingdom .option span { white-space: pre-line; }
 /* Ein Bruch mit Vorzeichen, Klammer oder Satzzeichen bleibt auch in einer Antwort zusammen (ADR 0043). */
 #mathekingdom .option span.bruchsatz, #mathekingdom .option span.gemischt, #mathekingdom .option .bruch span { white-space: nowrap; }

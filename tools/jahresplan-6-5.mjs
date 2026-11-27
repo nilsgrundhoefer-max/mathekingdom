@@ -29,60 +29,18 @@ export const lernziele5 = {
 
 export const merkzettel5 = {
   '6.5.1': {
-    regeln: [
-      'Rechne mit Zehnteln wie mit Einern: 0,7 + 0,5 sind 7 Zehntel und 5 Zehntel, also 12 Zehntel = 1,2.',
-      'Schriftlich: Schreibe Komma unter Komma. Dann stehen Zehntel unter Zehnteln.',
-      'Fehlen Stellen nach dem Komma, ergänze Endnullen: 5 = 5,00.',
-      'Im Ergebnis steht das Komma unter den anderen Kommas.',
-      'Ab G: Ergänze zum nächsten Ganzen: 3,6 + 0,4 = 4.',
-      'Ab M: Prüfe mit einem Überschlag: 12,48 + 7,6 ist etwa 12 + 8 = 20.',
-    ],
-    beispiel: '5 − 2,35: Schreibe 5,00 − 2,35. Dann rechne wie gewohnt: 5,00 − 2,35 = 2,65.',
     heft: 'Schreibe jede Ziffer in ein eigenes Kästchen. Das Komma bekommt ein eigenes Kästchen.',
   },
   '6.5.2': {
-    regeln: [
-      'Mal 10 verschiebt das Komma um eine Stelle nach rechts: 3,45 · 10 = 34,5.',
-      'Mal 100 verschiebt es um zwei Stellen, mal 1000 um drei Stellen nach rechts.',
-      'Durch 10, 100, 1000 verschiebt das Komma nach links: 72,1 : 100 = 0,721.',
-      'Fehlen Stellen, ergänze Nullen: 0,8 · 100 = 80.',
-      'Ab G: Mit der Stufenzahl rechnest du Größen um: 2,5 m = 250 cm, denn 2,5 · 100 = 250.',
-      'Ab M: Mal 0,1 ist dasselbe wie durch 10.',
-    ],
-    beispiel: '0,36 · 100: Das Komma rückt zwei Stellen nach rechts. Also 0,36 · 100 = 36.',
     heft: 'Zeichne einen kleinen Bogen unter jede Stelle, über die das Komma springt.',
   },
   '6.5.3': {
-    regeln: [
-      'Rechne zuerst ohne Komma: 4,6 · 3 wird zu 46 · 3 = 138.',
-      'Setze dann das Komma: Das Ergebnis hat so viele Stellen nach dem Komma wie beide Zahlen zusammen. 4,6 · 3 = 13,8.',
-      'Ab G: 0,4 · 0,2 = 0,08, denn 1 + 1 = 2 Stellen nach dem Komma.',
-      'Ab G: Prüfe mit einem Überschlag: 4,9 · 6,1 ist etwa 5 · 6 = 30. Also stimmt 29,89.',
-      'Ab E: Mal eine Zahl kleiner als 1 macht das Ergebnis kleiner.',
-    ],
-    beispiel: '2,35 · 1,4: Ohne Komma 235 · 14 = 3290. Stellen nach dem Komma: 2 + 1 = 3. Also 2,35 · 1,4 = 3,29.',
     heft: 'Schreibe die Stellen nach dem Komma klein über die Zahlen und zähle sie zusammen.',
   },
   '6.5.4': {
-    regeln: [
-      'Durch eine natürliche Zahl: Teile wie gewohnt. Wenn du das Komma überschreitest, setzt du im Ergebnis das Komma. 9,6 : 4 = 2,4.',
-      'Geht die Division nicht auf, hänge Nullen an: 7 : 4 = 1,75.',
-      'Durch eine Dezimalzahl: Verschiebe das Komma in beiden Zahlen gleich weit nach rechts, bis der Divisor keine Stelle nach dem Komma hat. 7,8 : 0,3 = 78 : 3 = 26.',
-      'Ab G: Prüfe mit einem Überschlag: 14,7 : 3 ist etwa 15 : 3 = 5.',
-      'Ab E: Teilen durch eine Zahl kleiner als 1 macht das Ergebnis größer.',
-    ],
-    beispiel: '4,8 : 0,4: Beide Kommas um eine Stelle nach rechts. 48 : 4 = 12. Also 4,8 : 0,4 = 12.',
     heft: 'Ziehe einen Strich unter dem Dividenden, wenn du das Komma überschreitest. Dann setze sofort das Komma im Ergebnis.',
   },
   '6.5.5': {
-    regeln: [
-      'Was in Klammern steht, rechnest du zuerst.',
-      'Punkt vor Strich: Mal und geteilt kommen vor plus und minus.',
-      'Sonst rechnest du von links nach rechts.',
-      'Ab G: Tausche Summanden, wenn es leichter wird: 2,7 + 4,5 + 0,3 = 2,7 + 0,3 + 4,5 = 7,5.',
-      'Ab M: Verteilungsgesetz: 4 · 2,5 + 4 · 7,5 = 4 · (2,5 + 7,5) = 40.',
-    ],
-    beispiel: '1,5 + 2 · 0,4: Zuerst 2 · 0,4 = 0,8. Dann 1,5 + 0,8 = 2,3.',
     heft: 'Unterstreiche zuerst, was du als Erstes rechnest. Schreibe jeden Schritt in eine neue Zeile.',
   },
 };

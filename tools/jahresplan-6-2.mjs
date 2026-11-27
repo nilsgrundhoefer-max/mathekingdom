@@ -7,85 +7,24 @@ const w = (wort, ab, erklaerung) => ({ wort, ab, erklaerung });
 
 export const merkzettel2 = {
   '6.2.1': {
-    regeln: [
-      'Gleichnamige Brüche haben denselben Nenner.',
-      'Addieren: Zähle die Zähler zusammen. Der Nenner bleibt gleich.',
-      'Subtrahieren: Ziehe die Zähler voneinander ab. Der Nenner bleibt gleich.',
-      'Kürze das Ergebnis so weit wie möglich.',
-      'Bei gemischten Zahlen rechnest du die Ganzen und die Brüche einzeln.',
-      `Ab G: Reicht der Bruch beim Abziehen nicht, wandle ein Ganzes um: ${g(3, 1, 4)} = ${g(2, 5, 4)}.`,
-    ],
-    beispiel: `${b(3, 8)} + ${b(1, 8)} = ${b(4, 8)} = ${b(1, 2)}. Drei Achtel und ein Achtel sind vier Achtel. Das ist eine halbe Pizza.`,
     heft: 'Schreibe zuerst das Ergebnis mit dem alten Nenner. Kürze dann in einem zweiten Schritt.',
   },
   '6.2.2': {
-    regeln: [
-      'Ungleichnamige Brüche haben verschiedene Nenner. Du kannst sie nicht sofort addieren.',
-      'Mache die Brüche zuerst gleichnamig: Erweitere sie auf einen gemeinsamen Nenner.',
-      'Addiere oder subtrahiere dann die Zähler. Der gemeinsame Nenner bleibt.',
-      `Passt ein Nenner in den anderen, musst du nur einen Bruch erweitern: ${b(1, 2)} + ${b(1, 4)} = ${b(2, 4)} + ${b(1, 4)} = ${b(3, 4)}.`,
-      'Ab G: Ein gemeinsamer Nenner ist immer das Produkt der beiden Nenner.',
-      'Ab M: Der kleinste gemeinsame Nenner heißt Hauptnenner. Mit ihm bleiben die Zahlen klein.',
-    ],
-    beispiel: `${b(1, 2)} + ${b(1, 3)} = ${b(3, 6)} + ${b(2, 6)} = ${b(5, 6)}. Halbe und Drittel werden beide zu Sechsteln.`,
     heft: 'Schreibe die erweiterten Brüche hin, bevor du addierst. Nie die Nenner addieren.',
   },
   '6.2.3': {
-    regeln: [
-      'Vervielfachen heißt: Ein Bruch wird mehrmals genommen.',
-      'Nimm nur den Zähler mit der Zahl mal. Der Nenner bleibt gleich.',
-      `3 · ${b(2, 7)} = ${b(6, 7)}, denn 3 · 2 = 6.`,
-      'Ist das Ergebnis größer als 1, schreibe es als gemischte Zahl.',
-      'Ab G: Du darfst vor dem Malnehmen kürzen: die Zahl mit dem Nenner.',
-      'Ab M: Eine gemischte Zahl wandelst du zuerst in einen Bruch um.',
-    ],
-    beispiel: `Vier Kinder essen je ${b(3, 8)} Pizza. Das sind 4 · ${b(3, 8)} = ${b(12, 8)} = ${g(1, 1, 2)} Pizzen.`,
     heft: 'Schreibe die Malaufgabe für den Zähler auf den Bruchstrich: 4 · 3 über 8.',
   },
   '6.2.4': {
-    regeln: [
-      'Teilen heißt: Ein Bruch wird gerecht verteilt.',
-      `Lässt sich der Zähler teilen, dann teile ihn. Der Nenner bleibt: ${b(6, 7)} : 3 = ${b(2, 7)}.`,
-      `Sonst nimm den Nenner mit der Zahl mal. Der Zähler bleibt: ${b(1, 2)} : 3 = ${b(1, 6)}.`,
-      'Beim Teilen werden die Teile kleiner. Deshalb wird der Nenner größer.',
-      'Den Nenner malnehmen geht immer. Kürze dann das Ergebnis.',
-    ],
-    beispiel: `Eine halbe Pizza wird an 3 Kinder verteilt. Jedes Kind bekommt ${b(1, 2)} : 3 = ${b(1, 6)} Pizza.`,
     heft: 'Prüfe mit der Malaufgabe: Ergebnis mal die Zahl muss den alten Bruch ergeben.',
   },
   '6.2.5': {
-    regeln: [
-      'Bruch mal Bruch: Zähler mal Zähler und Nenner mal Nenner.',
-      `${b(2, 3)} · ${b(4, 5)} = ${b(8, 15)}, denn 2 · 4 = 8 und 3 · 5 = 15.`,
-      `Das Wort „von“ bedeutet mal: ${b(1, 2)} von ${b(1, 4)} ist ${b(1, 2)} · ${b(1, 4)} = ${b(1, 8)}.`,
-      'Ab G: Kürze vor dem Malnehmen: einen Zähler mit einem Nenner. Dann bleiben die Zahlen klein.',
-      'Ab M: Gemischte Zahlen wandelst du zuerst in Brüche um.',
-      'Malnehmen mit einem Bruch, der kleiner als 1 ist, macht kleiner.',
-    ],
-    beispiel: `Von einer Pizza sind noch ${b(3, 4)} da. Mia isst ${b(2, 3)} davon. Das sind ${b(2, 3)} · ${b(3, 4)} = ${b(6, 12)} = ${b(1, 2)} Pizza.`,
     heft: 'Schreibe beide Brüche auf einen gemeinsamen Bruchstrich. Kürze dort, bevor du rechnest.',
   },
   '6.2.6': {
-    regeln: [
-      'Den Kehrwert eines Bruchs bekommst du, wenn du Zähler und Nenner vertauschst.',
-      'Durch einen Bruch dividieren heißt: mit seinem Kehrwert multiplizieren.',
-      `${b(3, 4)} : ${b(2, 5)} = ${b(3, 4)} · ${b(5, 2)} = ${b(15, 8)} = ${g(1, 7, 8)}.`,
-      'Nur der zweite Bruch wird umgedreht, der erste bleibt.',
-      'Teilen durch einen Bruch, der kleiner als 1 ist, macht größer.',
-      `Die Frage dahinter: Wie oft passt der Bruch hinein? ${b(1, 4)} passt in 2 genau achtmal.`,
-    ],
-    beispiel: `Aus ${b(3, 4)} l Saft werden Gläser mit ${b(1, 8)} l gefüllt. Das reicht für ${b(3, 4)} : ${b(1, 8)} = ${b(3, 4)} · ${b(8, 1)} = 6 Gläser.`,
     heft: 'Schreibe die Malaufgabe mit dem Kehrwert als Zwischenschritt hin.',
   },
   '6.2.7': {
-    regeln: [
-      'Klammern zuerst.',
-      'Dann Punkt vor Strich: Mal und geteilt kommen vor plus und minus.',
-      'Sonst rechnest du von links nach rechts.',
-      `${b(1, 2)} + ${b(1, 2)} · ${b(1, 3)} = ${b(1, 2)} + ${b(1, 6)} = ${b(4, 6)} = ${b(2, 3)}.`,
-      'Ab M: Manchmal geht es geschickter: Klammere eine gemeinsame Zahl aus oder vertausche.',
-    ],
-    beispiel: `(${b(1, 2)} + ${b(1, 4)}) · 2 = ${b(3, 4)} · 2 = ${b(6, 4)} = ${g(1, 1, 2)}. Zuerst wird die Klammer berechnet.`,
     heft: 'Unterstreiche, was du zuerst rechnest. Schreibe jeden Schritt in eine neue Zeile.',
   },
 };

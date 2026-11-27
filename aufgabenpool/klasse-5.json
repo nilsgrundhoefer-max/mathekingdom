@@ -1285,7 +1285,11 @@
        "id": "5.1.1-H1",
        "text": "Ich kann Strichlisten lesen und anlegen.",
        "voraussetzungen": [],
-       "grundlage": "Dinge einzeln abzählen und für jedes einen Strich machen, der fünfte Strich geht quer"
+       "grundlage": "Dinge einzeln abzählen und für jedes einen Strich machen, der fünfte Strich geht quer",
+       "merkzettel": {
+        "regel": "Für jede Antwort machst du einen Strich. Der fünfte Strich geht quer über die vier davor.",
+        "beispiel": "3 Bündel und 2 einzelne Striche:\n5 + 5 + 5 + 2 = 17."
+       }
       },
       {
        "id": "5.1.1-H2",
@@ -1293,19 +1297,14 @@
        "voraussetzungen": [
         "5.1.1-H1"
        ],
-       "grundlage": "Gleiche Dinge in einer Liste zählen und die Anzahl in eine Tabelle schreiben"
+       "grundlage": "Gleiche Dinge in einer Liste zählen und die Anzahl in eine Tabelle schreiben",
+       "merkzettel": {
+        "regel": "Zähle die Striche jeder Zeile. Schreibe die Anzahl als Zahl in die Tabelle.",
+        "beispiel": "Hund: 2 Bündel und 3 Striche. Das sind 5 + 5 + 3 = 13.\nIn der Tabelle steht bei Hund die 13."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Strichliste: Für jede Antwort machst du einen Strich in die passende Zeile.",
-       "Bündeln: Vier Striche stehen gerade, der fünfte Strich geht quer darüber. So ein Bündel sind 5 Striche.",
-       "Zählen: Erst die Bündel in Fünferschritten, dann die einzelnen Striche dazu.",
-       "Häufigkeitstabelle: Für jede Antwort steht die Anzahl als Zahl in der Tabelle. Die Gesamtzahl ist die Summe aller Anzahlen."
-      ],
-      "beispiel": "3 Bündel und 2 einzelne Striche: 5 + 5 + 5 + 2 = 17. In der Tabelle steht dann 17.",
-      "heft": "Streiche in einer Liste jede Antwort ab, sobald du sie gezählt hast. So zählst du keine doppelt."
-     },
+     "heft": "Streiche in einer Liste jede Antwort ab, sobald du sie gezählt hast. So zählst du keine doppelt.",
      "wortspeicher": [
       {
        "wort": "Strichliste",
@@ -1358,7 +1357,11 @@
        "id": "5.1.2-L1",
        "text": "Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.",
        "voraussetzungen": [],
-       "grundlage": "Eine Säule bis zur Linie verfolgen und die Zahl an der Achse ablesen, Einerschritte"
+       "grundlage": "Eine Säule bis zur Linie verfolgen und die Zahl an der Achse ablesen, Einerschritte",
+       "merkzettel": {
+        "regel": "Schau zuerst, in welchen Schritten die Achse geht. Geh dann vom Ende der Säule hinüber zur Achse und lies dort ab.",
+        "beispiel": "Die Achse zeigt 0, 10, 20, 30. Die Säule endet in der Mitte zwischen 20 und 30.\nDer Wert ist 25."
+       }
       },
       {
        "id": "5.1.2-L2",
@@ -1366,19 +1369,14 @@
        "voraussetzungen": [
         "5.1.2-L1"
        ],
-       "grundlage": "Bilder in einer Reihe zählen und für jedes Bild in Zweierschritten weiterzählen"
+       "grundlage": "Bilder in einer Reihe zählen und für jedes Bild in Zweierschritten weiterzählen",
+       "merkzettel": {
+        "regel": "Der Schlüssel sagt, für wie viele ein Bild steht. Ein halbes Bild ist die Hälfte davon.",
+        "beispiel": "1 Bild steht für 10 Kinder.\n3 Bilder und ein halbes Bild: 10 + 10 + 10 + 5 = 35 Kinder."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Lies zuerst den Titel und die Einheit an der Achse: Was wird gezählt?",
-       "Schau, in welchen Schritten die Achse geht. Nicht jede Linie hat eine Zahl.",
-       "Verfolge das Ende der Säule oder des Balkens bis zur Achse und lies dort ab.",
-       "Bilddiagramm: Der Schlüssel sagt, für wie viele ein Bild steht. Ein halbes Bild ist die Hälfte davon."
-      ],
-      "beispiel": "Schlüssel: 1 Bild steht für 10 Kinder. 3 Bilder und ein halbes Bild sind 10 + 10 + 10 + 5 = 35 Kinder.",
-      "heft": "Lege ein Lineal waagerecht an das Ende der Säule. So triffst du die richtige Linie."
-     },
+     "heft": "Lege ein Lineal waagerecht an das Ende der Säule. So triffst du die richtige Linie.",
      "wortspeicher": [
       {
        "wort": "Säulendiagramm",
@@ -1449,7 +1447,11 @@
         "5.1.1-H2",
         "5.1.2-L1"
        ],
-       "grundlage": "Eine Säule bis zur passenden Zahl an der Achse ziehen, Einerschritte"
+       "grundlage": "Eine Säule bis zur passenden Zahl an der Achse ziehen, Einerschritte",
+       "merkzettel": {
+        "regel": "Jede Antwort bekommt eine Säule. Zeichne die Säule genau bis zu ihrem Wert.",
+        "beispiel": "In der Tabelle steht: Fußball 15.\nDie Säule für Fußball endet an der Achse genau bei 15."
+       }
       },
       {
        "id": "5.1.3-Z2",
@@ -1457,19 +1459,14 @@
        "voraussetzungen": [
         "5.1.3-Z1"
        ],
-       "grundlage": "Eine Säule mit der Zahl in der Tabelle vergleichen"
+       "grundlage": "Eine Säule mit der Zahl in der Tabelle vergleichen",
+       "merkzettel": {
+        "regel": "Die Achse beginnt bei 0 und hat immer gleiche Schritte. Wähle die Schritte so, dass der größte Wert noch Platz hat.",
+        "beispiel": "Werte 15, 20 und 35: Schritte von 5 passen.\nDie Achse geht bis 40."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Säulendiagramm hat einen Titel, eine Achse mit gleichen Schritten, die bei 0 beginnt, und eine Säule für jede Antwort.",
-       "Wähle die Schritte so, dass alle Werte auf eine Linie fallen und die größte Säule noch Platz hat.",
-       "Zeichne jede Säule genau bis zu ihrem Wert und schreibe den Namen darunter.",
-       "Prüfe danach jede Säule mit der Tabelle."
-      ],
-      "beispiel": "Werte 15, 20 und 35: Schritte von 5 passen, denn alle Werte liegen auf einer Linie. Die Achse geht bis 40.",
-      "heft": "Zeichne Diagramme im Heft mit Bleistift und Lineal, ein Kästchen für einen Schritt."
-     },
+     "heft": "Zeichne Diagramme im Heft mit Bleistift und Lineal, ein Kästchen für einen Schritt.",
      "wortspeicher": [
       {
        "wort": "Säule",
@@ -1514,7 +1511,11 @@
        "voraussetzungen": [
         "5.1.2-L1"
        ],
-       "grundlage": "Zwei Säulen vergleichen: Welche ist höher, um wie viel?"
+       "grundlage": "Zwei Säulen vergleichen: Welche ist höher, um wie viel?",
+       "merkzettel": {
+        "regel": "Wie viel mehr? Ziehe den kleineren Wert vom größeren ab.",
+        "beispiel": "Hund 14 Kinder, Katze 9 Kinder: 14 − 9 = 5.\nBei Hund sind es 5 Kinder mehr."
+       }
       },
       {
        "id": "5.1.4-V2",
@@ -1522,19 +1523,14 @@
        "voraussetzungen": [
         "5.1.4-V1"
        ],
-       "grundlage": "Eine einfache Aussage am Diagramm nachprüfen: höher, niedriger, gleich hoch"
+       "grundlage": "Eine einfache Aussage am Diagramm nachprüfen: höher, niedriger, gleich hoch",
+       "merkzettel": {
+        "regel": "Prüfe eine Aussage immer mit den Zahlen. Beginnt die Achse nicht bei 0, sehen Unterschiede größer aus, als sie sind.",
+        "beispiel": "Die Säulen zeigen 48 und 52. Die Achse beginnt erst bei 46.\nDie zweite Säule sieht dreimal so hoch aus. Der Unterschied ist aber nur 52 − 48 = 4."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Wie viel mehr? Ziehe den kleineren Wert vom größeren ab.",
-       "Rangfolge: Ordne die Werte vom größten zum kleinsten.",
-       "Prüfe eine Aussage immer mit den Zahlen, nicht nur mit dem Aussehen der Säulen.",
-       "Achtung: Beginnt die Achse nicht bei 0, sehen Unterschiede größer aus, als sie sind."
-      ],
-      "beispiel": "Hund 14 Kinder, Katze 9 Kinder: 14 − 9 = 5. Für Hund sind es 5 Kinder mehr.",
-      "heft": "Schreibe zu jeder Aussage die Rechnung auf, mit der du sie geprüft hast."
-     },
+     "heft": "Schreibe zu jeder Aussage die Rechnung auf, mit der du sie geprüft hast.",
      "wortspeicher": [
       {
        "wort": "Unterschied",
@@ -1569,19 +1565,14 @@
        "voraussetzungen": [
         "5.1.1-H2"
        ],
-       "grundlage": "Antworten einer kleinen Umfrage zählen und eintragen"
+       "grundlage": "Antworten einer kleinen Umfrage zählen und eintragen",
+       "merkzettel": {
+        "regel": "Stelle eine klare Frage und gib Antworten zur Auswahl. Halte jede Antwort sofort mit einem Strich fest.",
+        "beispiel": "Frage: Wie kommst du zur Schule?\nAntworten: zu Fuß, Fahrrad, Bus, Auto. 24 Kinder antworten, also stehen 24 Striche in der Liste."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Überlege zuerst, was du wissen willst. Daraus wird eine klare Frage.",
-       "Gib passende Antworten zur Auswahl. Jede Antwort zählt in genau einer Zeile.",
-       "Halte jede Antwort sofort fest, zum Beispiel in einer Strichliste.",
-       "Werte danach aus: Zähle, erstelle eine Tabelle und zeichne ein Diagramm."
-      ],
-      "beispiel": "Frage: Wie kommst du zur Schule? Antworten: zu Fuß, Fahrrad, Bus, Auto. 24 Kinder antworten, also stehen 24 Striche in der Liste.",
-      "heft": "Schreibe die Frage und alle Antworten auf, bevor du mit der Umfrage beginnst."
-     },
+     "heft": "Schreibe die Frage und alle Antworten auf, bevor du mit der Umfrage beginnst.",
      "wortspeicher": [
       {
        "wort": "Umfrage",
@@ -1620,31 +1611,38 @@
        "id": "5.2.1-N1",
        "text": "Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.",
        "voraussetzungen": [],
-       "grundlage": "Zahlen bis 100 am Zahlenstrahl finden, jeder Zehner ist beschriftet"
+       "grundlage": "Zahlen bis 100 am Zahlenstrahl finden, jeder Zehner ist beschriftet",
+       "merkzettel": {
+        "regel": "Finde zuerst heraus, wie groß der Schritt von Strich zu Strich ist. Zähle dann in diesen Schritten weiter.",
+        "beispiel": "Zwischen 100 und 200 liegen 10 Schritte. Ein Schritt ist also 10.\nDer dritte Strich nach 100 ist die 130."
+       }
       },
       {
        "id": "5.2.1-N2",
        "text": "Ich kann Zahlen vergleichen und ordnen.",
        "voraussetzungen": [],
-       "grundlage": "Zwei Zahlen bis 1000 vergleichen: erst die Hunderter, dann die Zehner, dann die Einer"
+       "grundlage": "Zwei Zahlen bis 1000 vergleichen: erst die Hunderter, dann die Zehner, dann die Einer",
+       "merkzettel": {
+        "regel": "Die Zahl mit mehr Stellen ist größer. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer.",
+        "beispiel": "4072 < 4702\nBeide haben 4 Tausender. Bei den Hundertern ist 0 kleiner als 7."
+       }
       },
       {
        "id": "5.2.1-N3",
        "text": "Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.",
        "voraussetzungen": [],
-       "grundlage": "Hunderter, Zehner und Einer in der Stellenwerttafel ablesen und eintragen"
+       "grundlage": "Hunderter, Zehner und Einer in der Stellenwerttafel ablesen und eintragen",
+       "merkzettel": {
+        "regel": "Jede Ziffer hat ihren Platz in der Stellenwerttafel. Ist eine Stelle leer, steht dort eine 0.",
+        "rechnung": [
+         "T H Z E",
+         "4 0 7 2"
+        ],
+        "beispiel": "4 Tausender, 0 Hunderter, 7 Zehner und 2 Einer sind die Zahl 4072."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Zahlenstrahl: Finde zuerst heraus, wie groß der Schritt von Strich zu Strich ist.",
-       "Vergleichen: Die Zahl mit mehr Stellen ist größer. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer.",
-       "Das Zeichen < heißt „ist kleiner als“, das Zeichen > heißt „ist größer als“. Die Spitze zeigt immer zur kleineren Zahl.",
-       "Stellenwerttafel: Jede Ziffer hat ihren Platz. Ist eine Stelle leer, steht dort eine 0."
-      ],
-      "beispiel": "4 Tausender, 0 Hunderter, 7 Zehner und 2 Einer sind die Zahl 4072. Es gilt 4072 < 4702, denn bei den Hundertern ist 0 kleiner als 7.",
-      "heft": "Zeichne für große Zahlen eine Stellenwerttafel ins Heft und trage die Ziffern von rechts ein."
-     },
+     "heft": "Zeichne für große Zahlen eine Stellenwerttafel ins Heft und trage die Ziffern von rechts ein.",
      "wortspeicher": [
       {
        "wort": "natürliche Zahlen",
@@ -1704,7 +1702,15 @@
        "voraussetzungen": [
         "5.2.1-N3"
        ],
-       "grundlage": "Zahlen bis zur Million in der Stellenwerttafel lesen: erst die Tausender, dann der Rest"
+       "grundlage": "Zahlen bis zur Million in der Stellenwerttafel lesen: erst die Tausender, dann der Rest",
+       "merkzettel": {
+        "regel": "Lies große Zahlen in Dreierblöcken von rechts. Jeder Block hat drei Ziffern.",
+        "rechnung": [
+         "Mio.  Tsd.  Einer",
+         " 12   040    000"
+        ],
+        "beispiel": "Zwölf Millionen vierzigtausend schreibst du 12 040 000."
+       }
       },
       {
        "id": "5.2.2-B2",
@@ -1713,19 +1719,14 @@
         "5.2.1-N2",
         "5.2.2-B1"
        ],
-       "grundlage": "Zwei große Zahlen in der Stellenwerttafel vergleichen: Welche hat mehr Stellen?"
+       "grundlage": "Zwei große Zahlen in der Stellenwerttafel vergleichen: Welche hat mehr Stellen?",
+       "merkzettel": {
+        "regel": "Vergleiche zuerst die Zahl der Stellen. Bei gleich vielen Stellen vergleichst du Block für Block von links.",
+        "beispiel": "3 450 000 < 12 040 000\nDie linke Zahl hat 7 Stellen, die rechte hat 8 Stellen."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Große Zahlen liest du in Dreierblöcken von rechts: Einer, Tausender, Millionen, Milliarden, Billionen.",
-       "Tausend Tausender sind eine Million. Tausend Millionen sind eine Milliarde. Tausend Milliarden sind eine Billion.",
-       "Beim Schreiben bekommt jeder Block drei Ziffern. Fehlt etwas, füllst du mit Nullen auf.",
-       "Abkürzungen: Mio. für Million, Mrd. für Milliarde."
-      ],
-      "beispiel": "Zwölf Millionen vierzigtausend: bei den Millionen 12, bei den Tausendern 040, bei den Einern 000. Die Zahl ist 12 040 000.",
-      "heft": "Lass zwischen den Dreierblöcken eine kleine Lücke. So kannst du die Zahl leichter lesen."
-     },
+     "heft": "Lass zwischen den Dreierblöcken eine kleine Lücke. So kannst du die Zahl leichter lesen.",
      "wortspeicher": [
       {
        "wort": "Million",
@@ -1775,7 +1776,11 @@
        "voraussetzungen": [
         "5.2.1-N3"
        ],
-       "grundlage": "Die Nachbarzehner einer Zahl am Zahlenstrahl finden: Welcher liegt näher?"
+       "grundlage": "Die Nachbarzehner einer Zahl am Zahlenstrahl finden: Welcher liegt näher?",
+       "merkzettel": {
+        "regel": "Schau auf die Ziffer rechts neben der Rundungsstelle. Bei 0, 1, 2, 3, 4 rundest du ab, bei 5, 6, 7, 8, 9 rundest du auf.",
+        "beispiel": "3482 auf Hunderter: Rechts neben der 4 steht eine 8.\nDu rundest auf: 3482 ≈ 3500."
+       }
       },
       {
        "id": "5.2.3-R2",
@@ -1783,19 +1788,14 @@
        "voraussetzungen": [
         "5.2.3-R1"
        ],
-       "grundlage": "Entscheiden, ob eine Zahl näher am unteren oder am oberen Nachbarzehner liegt"
+       "grundlage": "Entscheiden, ob eine Zahl näher am unteren oder am oberen Nachbarzehner liegt",
+       "merkzettel": {
+        "regel": "Runde so, dass die Zahl noch passt und leicht zu merken ist. Eine gerundete Zahl ist nicht die genaue Zahl.",
+        "beispiel": "Im Stadion sind 48 213 Menschen. In der Zeitung steht: rund 48 000.\nGenau können es 47 500 bis 48 499 sein."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Suche die Rundungsstelle und schau auf die Ziffer rechts daneben.",
-       "Bei 0, 1, 2, 3 oder 4 rundest du ab: Die Rundungsstelle bleibt, wie sie ist.",
-       "Bei 5, 6, 7, 8 oder 9 rundest du auf: Die Rundungsstelle wird um 1 größer.",
-       "Alle Ziffern rechts von der Rundungsstelle werden zu 0. Runde immer in einem Schritt."
-      ],
-      "beispiel": "3482 auf Hunderter: Rechts neben den Hundertern steht eine 8. Also wird aufgerundet: 3482 ≈ 3500.",
-      "heft": "Unterstreiche die Rundungsstelle und kreise die Ziffer rechts daneben ein."
-     },
+     "heft": "Unterstreiche die Rundungsstelle und kreise die Ziffer rechts daneben ein.",
      "wortspeicher": [
       {
        "wort": "runden",
@@ -1835,7 +1835,11 @@
        "voraussetzungen": [
         "5.2.3-R1"
        ],
-       "grundlage": "Ein Feld auszählen und mit der Zahl der Felder malnehmen"
+       "grundlage": "Ein Feld auszählen und mit der Zahl der Felder malnehmen",
+       "merkzettel": {
+        "regel": "Zähle ein Feld des Rasters genau aus. Rechne dann: Anzahl im Feld mal Zahl der Felder.",
+        "beispiel": "In einem Feld sind 8 Vögel. Das Raster hat 12 Felder.\n8 · 12 = 96, also etwa 100 Vögel."
+       }
       },
       {
        "id": "5.2.4-S2",
@@ -1843,19 +1847,14 @@
        "voraussetzungen": [
         "5.2.4-S1"
        ],
-       "grundlage": "Unterscheiden, ob eine Anzahl genau gezählt oder nur ungefähr angegeben ist"
+       "grundlage": "Unterscheiden, ob eine Anzahl genau gezählt oder nur ungefähr angegeben ist",
+       "merkzettel": {
+        "regel": "Gezählt ist genau. Geschätzt ist nur ungefähr, gerundet kommt von einer genauen Zahl.",
+        "beispiel": "Gezählt: 27 Kinder in der Klasse.\nGerundet: rund 48 000 Zuschauer.\nGeschätzt: etwa 100 Vögel auf dem Bild."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Lege ein Raster aus gleich großen Feldern über das Bild.",
-       "Zähle ein Feld genau aus. Nimm ein Feld, das typisch aussieht.",
-       "Rechne: Anzahl im Feld mal Zahl der Felder.",
-       "Eine Schätzung ist nie ganz genau. Gib sie als runde Zahl an."
-      ],
-      "beispiel": "In einem Feld sind 8 Vögel. Das Raster hat 12 Felder. Schätzung: 8 · 12 = 96, also etwa 100 Vögel.",
-      "heft": "Schreibe zu jeder Schätzung auf, wie du gerechnet hast."
-     },
+     "heft": "Schreibe zu jeder Schätzung auf, wie du gerechnet hast.",
      "wortspeicher": [
       {
        "wort": "schätzen",
@@ -1895,7 +1894,15 @@
        "voraussetzungen": [
         "5.2.1-N3"
        ],
-       "grundlage": "Plättchen in einer Tafel mit den Spalten 8, 4, 2 und 1 zusammenzählen"
+       "grundlage": "Plättchen in einer Tafel mit den Spalten 8, 4, 2 und 1 zusammenzählen",
+       "merkzettel": {
+        "regel": "Im Zweiersystem verdoppeln sich die Stellenwerte von rechts nach links: 1, 2, 4, 8, 16. Zähle die Stellenwerte zusammen, bei denen eine 1 steht.",
+        "rechnung": [
+         "8 4 2 1",
+         "1 0 1 1"
+        ],
+        "beispiel": "Eine 1 steht bei 8, bei 2 und bei 1.\n8 + 2 + 1 = 11"
+       }
       },
       {
        "id": "5.2.5-Z2",
@@ -1903,19 +1910,18 @@
        "voraussetzungen": [
         "5.2.5-Z1"
        ],
-       "grundlage": "Eine Zahl bis 15 aus 8, 4, 2 und 1 zusammensetzen"
+       "grundlage": "Eine Zahl bis 15 aus 8, 4, 2 und 1 zusammensetzen",
+       "merkzettel": {
+        "regel": "Beginne mit dem größten Stellenwert, der in die Zahl passt. Schreibe dort eine 1 und rechne mit dem Rest weiter.",
+        "rechnung": [
+         "8 4 2 1",
+         "1 1 0 1"
+        ],
+        "beispiel": "13 = 8 + 4 + 1\nBei 8, 4 und 1 steht eine 1, bei 2 steht eine 0."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Im Zweiersystem gibt es nur die Ziffern 0 und 1.",
-       "Die Stellenwerte verdoppeln sich von rechts nach links: 1, 2, 4, 8, 16, 32 und so weiter.",
-       "Vom Zweiersystem ins Zehnersystem: Zähle die Stellenwerte zusammen, bei denen eine 1 steht.",
-       "Vom Zehnersystem ins Zweiersystem: Beginne mit dem größten Stellenwert, der in die Zahl passt."
-      ],
-      "beispiel": "Die Zahl 1011₂ hat eine 1 bei 8, bei 2 und bei 1. Also ist sie 8 + 2 + 1 = 11.",
-      "heft": "Schreibe die Stellenwerte 16, 8, 4, 2, 1 als Kopfzeile über deine Tafel."
-     },
+     "heft": "Schreibe die Stellenwerte 16, 8, 4, 2, 1 als Kopfzeile über deine Tafel.",
      "wortspeicher": [
       {
        "wort": "Zweiersystem",
@@ -1945,7 +1951,11 @@
        "voraussetzungen": [
         "5.2.1-N3"
        ],
-       "grundlage": "Die Zeichen I, V und X kennen und zusammenzählen"
+       "grundlage": "Die Zeichen I, V und X kennen und zusammenzählen",
+       "merkzettel": {
+        "regel": "I ist 1, V ist 5, X ist 10, L ist 50, C ist 100. Ein kleineres Zeichen rechts zählst du dazu, ein kleineres Zeichen links ziehst du ab.",
+        "beispiel": "XLVII: XL ist 40, V ist 5, II ist 2.\n40 + 5 + 2 = 47"
+       }
       },
       {
        "id": "5.2.X1-X2",
@@ -1953,19 +1963,14 @@
        "voraussetzungen": [
         "5.2.X1-X1"
        ],
-       "grundlage": "Zahlen bis 20 aus den Zeichen I, V und X legen"
+       "grundlage": "Zahlen bis 20 aus den Zeichen I, V und X legen",
+       "merkzettel": {
+        "regel": "Zerlege die Zahl in Hunderter, Zehner und Einer. Schreibe jeden Teil mit römischen Zeichen, von links nach rechts.",
+        "beispiel": "64 = 60 + 4\n60 ist LX, 4 ist IV. Also ist 64 = LXIV."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Die Zeichen: I ist 1, V ist 5, X ist 10, L ist 50, C ist 100, D ist 500, M ist 1000.",
-       "Steht ein gleiches oder kleineres Zeichen rechts, wird es dazugezählt: VI ist 6, XX ist 20.",
-       "Steht I, X oder C links vor einem größeren Zeichen, wird es abgezogen: IV ist 4, IX ist 9, XL ist 40.",
-       "I, X, C und M stehen höchstens dreimal hintereinander. V, L und D stehen nur einmal."
-      ],
-      "beispiel": "XLVII: XL ist 40, V ist 5, II ist 2. Zusammen sind das 40 + 5 + 2 = 47.",
-      "heft": "Zerlege die Zahl erst in Tausender, Hunderter, Zehner und Einer. Schreibe dann jede Stelle einzeln."
-     },
+     "heft": "Zerlege die Zahl erst in Tausender, Hunderter, Zehner und Einer. Schreibe dann jede Stelle einzeln.",
      "wortspeicher": [
       {
        "wort": "römische Zahlzeichen",
@@ -2001,7 +2006,11 @@
        "voraussetzungen": [
         "5.2.1-N3"
        ],
-       "grundlage": "Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100"
+       "grundlage": "Zerlegen und bis zum Zehner ergänzen, Zahlenraum bis 100",
+       "merkzettel": {
+        "regel": "Rechne in Schritten: erst bis zum nächsten Zehner, dann den Rest.",
+        "beispiel": "67 + 48\n67 + 3 = 70\n70 + 45 = 115"
+       }
       },
       {
        "id": "5.3.1-K2",
@@ -2009,7 +2018,11 @@
        "voraussetzungen": [
         "5.2.1-N3"
        ],
-       "grundlage": "Wegnehmen und Ergänzen in Schritten bis 100"
+       "grundlage": "Wegnehmen und Ergänzen in Schritten bis 100",
+       "merkzettel": {
+        "regel": "Rechne in Schritten: erst zurück bis zum Zehner, dann den Rest.",
+        "beispiel": "83 − 27\n83 − 3 = 80\n80 − 24 = 56"
+       }
       },
       {
        "id": "5.3.1-K3",
@@ -2018,18 +2031,14 @@
         "5.3.1-K1",
         "5.3.1-K2"
        ],
-       "grundlage": "Zahlen, die zusammen 10 oder 100 ergeben"
+       "grundlage": "Zahlen, die zusammen 10 oder 100 ergeben",
+       "merkzettel": {
+        "regel": "Liegt eine Zahl knapp neben einem Hunderter, rechne mit dem Hunderter. Gleiche danach aus.",
+        "beispiel": "298 + 137\n300 + 137 = 437\n437 − 2 = 435"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Rechne in Schritten: erst bis zum nächsten Zehner oder Hunderter, dann den Rest.",
-       "Liegt eine Zahl knapp neben einem Hunderter, rechne mit dem Hunderter und gleiche danach aus.",
-       "Suche Zahlen, die zusammen einen glatten Zehner oder Hunderter ergeben."
-      ],
-      "beispiel": "67 + 48 = 67 + 3 + 45 = 115 und 83 − 27 = 83 − 3 − 24 = 56. Geschickt: 298 + 137 = 300 + 137 − 2 = 435.",
-      "heft": "Schreibe bei schwierigen Aufgaben deine Zwischenschritte auf."
-     },
+     "heft": "Schreibe bei schwierigen Aufgaben deine Zwischenschritte auf.",
      "wortspeicher": [
       {
        "wort": "plus",
@@ -2099,7 +2108,11 @@
        "voraussetzungen": [
         "5.3.1-K1"
        ],
-       "grundlage": "Plus als „zusammen“ und „dazu“: Aufgabe und Bild zuordnen"
+       "grundlage": "Plus als „zusammen“ und „dazu“: Aufgabe und Bild zuordnen",
+       "merkzettel": {
+        "regel": "Summand + Summand = Summe.",
+        "beispiel": "34 + 12 = 46\n34 und 12 sind die Summanden. 46 ist der Wert der Summe."
+       }
       },
       {
        "id": "5.3.2-A2",
@@ -2107,7 +2120,18 @@
        "voraussetzungen": [
         "5.3.1-K1"
        ],
-       "grundlage": "Bündeln: 10 Einer sind 1 Zehner, dann Rechnen im Stellenraster"
+       "grundlage": "Bündeln: 10 Einer sind 1 Zehner, dann Rechnen im Stellenraster",
+       "merkzettel": {
+        "regel": "Schreibe die Zahlen untereinander, Einer unter Einer. Rechne von rechts nach links.",
+        "rechnung": [
+         "  4 6 7",
+         "+ 2 8 5",
+         "  1 1",
+         "-------",
+         "  7 5 2"
+        ],
+        "beispiel": "7 + 5 = 12. Schreibe 2, merke 1."
+       }
       },
       {
        "id": "5.3.2-A3",
@@ -2115,7 +2139,19 @@
        "voraussetzungen": [
         "5.3.2-A2"
        ],
-       "grundlage": "Drei Zahlen im Raster ohne Übertrag, passende Zehner zuerst"
+       "grundlage": "Drei Zahlen im Raster ohne Übertrag, passende Zehner zuerst",
+       "merkzettel": {
+        "regel": "Schreibe alle Zahlen untereinander, Einer unter Einer. Addiere jede Spalte von rechts nach links.",
+        "rechnung": [
+         "  2 4 5",
+         "+ 1 3 8",
+         "+   6 4",
+         "  1 1",
+         "-------",
+         "  4 4 7"
+        ],
+        "beispiel": "5 + 8 + 4 = 17. Schreibe 7, merke 1."
+       }
       },
       {
        "id": "5.3.2-A4",
@@ -2125,7 +2161,11 @@
         "5.3.1-K1",
         "5.2.3-R1"
        ],
-       "grundlage": "Nachbarzehner finden, Plus mit Minus rückgängig machen"
+       "grundlage": "Nachbarzehner finden, Plus mit Minus rückgängig machen",
+       "merkzettel": {
+        "regel": "Überschlag: Rechne vorher mit gerundeten Zahlen. Probe: Ziehe vom Ergebnis einen Summanden ab.",
+        "beispiel": "467 + 285 = 752\nÜberschlag: 500 + 300 = 800. Das passt.\nProbe: 752 − 285 = 467"
+       }
       },
       {
        "id": "5.3.2-A5",
@@ -2133,19 +2173,14 @@
        "voraussetzungen": [
         "5.3.2-A2"
        ],
-       "grundlage": "Dazukommen und Zusammenlegen am Bild, Rechnung zuordnen"
+       "grundlage": "Dazukommen und Zusammenlegen am Bild, Rechnung zuordnen",
+       "merkzettel": {
+        "regel": "Lies genau: Was ist gesucht? Kommt etwas dazu oder wird alles zusammengezählt, rechnest du plus.",
+        "beispiel": "Am Samstag kommen 467 Besucher, am Sonntag 285.\nZusammen: 467 + 285 = 752 Besucher."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Summand + Summand = Summe. Bei 34 + 12 = 46 sind 34 und 12 die Summanden, 46 ist der Wert der Summe.",
-       "Schriftlich addieren: Schreibe stellengerecht untereinander, Einer unter Einer. Addiere von rechts nach links.",
-       "Ist das Ergebnis einer Spalte 10 oder größer, schreibst du den Übertrag klein in die nächste Spalte und rechnest ihn dort mit.",
-       "Überschlage vorher mit gerundeten Zahlen. Prüfe danach mit der Probe: Summe − Summand = anderer Summand."
-      ],
-      "beispiel": "467 + 285: Einer 7 + 5 = 12, schreibe 2, Übertrag 1. Zehner 6 + 8 + 1 = 15, schreibe 5, Übertrag 1. Hunderter 4 + 2 + 1 = 7. Ergebnis 752.",
-      "heft": "Rechne schriftliche Aufgaben im Heft, ein Kästchen pro Ziffer."
-     },
+     "heft": "Rechne schriftliche Aufgaben im Heft, ein Kästchen pro Ziffer.",
      "wortspeicher": [
       {
        "wort": "plus",
@@ -2230,7 +2265,11 @@
        "voraussetzungen": [
         "5.3.1-K2"
        ],
-       "grundlage": "Minus als „wegnehmen“: Aufgabe und Bild zuordnen"
+       "grundlage": "Minus als „wegnehmen“: Aufgabe und Bild zuordnen",
+       "merkzettel": {
+        "regel": "Minuend − Subtrahend = Differenz.",
+        "beispiel": "46 − 12 = 34\n46 ist der Minuend, 12 der Subtrahend. 34 ist der Wert der Differenz."
+       }
       },
       {
        "id": "5.3.3-S2",
@@ -2239,7 +2278,18 @@
         "5.3.1-K2",
         "5.3.2-A2"
        ],
-       "grundlage": "Entbündeln: 1 Zehner sind 10 Einer, dann Rechnen im Stellenraster"
+       "grundlage": "Entbündeln: 1 Zehner sind 10 Einer, dann Rechnen im Stellenraster",
+       "merkzettel": {
+        "regel": "Schreibe die Zahlen untereinander, Einer unter Einer. Ist die obere Ziffer zu klein, rechnest du mit 10 mehr und merkst dir 1.",
+        "rechnung": [
+         "  5 3 2",
+         "− 2 1 8",
+         "    1",
+         "-------",
+         "  3 1 4"
+        ],
+        "beispiel": "2 − 8 geht nicht. Rechne 12 − 8 = 4, merke 1."
+       }
       },
       {
        "id": "5.3.3-S3",
@@ -2247,7 +2297,11 @@
        "voraussetzungen": [
         "5.3.3-S2"
        ],
-       "grundlage": "Zweimal nacheinander wegnehmen"
+       "grundlage": "Zweimal nacheinander wegnehmen",
+       "merkzettel": {
+        "regel": "Addiere zuerst alle Zahlen, die abgezogen werden. Ziehe dann ihre Summe ab.",
+        "beispiel": "900 − 250 − 130\n250 + 130 = 380\n900 − 380 = 520"
+       }
       },
       {
        "id": "5.3.3-S4",
@@ -2257,7 +2311,11 @@
         "5.3.2-A4",
         "5.2.3-R1"
        ],
-       "grundlage": "Minus mit Plus rückgängig machen, Nachbarzehner"
+       "grundlage": "Minus mit Plus rückgängig machen, Nachbarzehner",
+       "merkzettel": {
+        "regel": "Überschlag: Rechne vorher mit gerundeten Zahlen. Probe: Addiere zum Ergebnis die Zahl, die du abgezogen hast.",
+        "beispiel": "532 − 218 = 314\nÜberschlag: 500 − 200 = 300. Das passt.\nProbe: 314 + 218 = 532"
+       }
       },
       {
        "id": "5.3.3-S5",
@@ -2265,20 +2323,14 @@
        "voraussetzungen": [
         "5.3.3-S2"
        ],
-       "grundlage": "Wegnehmen am Bild, Rechnung und Geschichte zuordnen"
+       "grundlage": "Wegnehmen am Bild, Rechnung und Geschichte zuordnen",
+       "merkzettel": {
+        "regel": "Lies genau: Was ist gesucht? Geht etwas weg oder suchst du den Unterschied, rechnest du minus.",
+        "beispiel": "Im Bus sitzen 46 Kinder. 12 steigen aus.\n46 − 12 = 34 Kinder bleiben im Bus."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Minuend − Subtrahend = Differenz. Bei 46 − 12 = 34 ist 46 der Minuend, 12 der Subtrahend, 34 der Wert der Differenz.",
-       "Schriftlich subtrahieren: Schreibe stellengerecht untereinander und beginne bei den Einern.",
-       "Ist die obere Ziffer zu klein, rechnest du mit 10 mehr und merkst dir den Übertrag 1 für die nächste Spalte.",
-       "Mehrere Subtrahenden kannst du zuerst addieren und ihre Summe dann abziehen.",
-       "Probe: Differenz + Subtrahend = Minuend."
-      ],
-      "beispiel": "532 − 218: Einer 12 − 8 = 4, Übertrag 1. Zehner 3 − 1 − 1 = 1. Hunderter 5 − 2 = 3. Ergebnis 314. Probe: 314 + 218 = 532.",
-      "heft": "Rechne schriftliche Aufgaben im Heft und schreibe den Übertrag immer mit."
-     },
+     "heft": "Rechne schriftliche Aufgaben im Heft und schreibe den Übertrag immer mit.",
      "wortspeicher": [
       {
        "wort": "minus",
@@ -2364,7 +2416,11 @@
         "5.3.1-K1",
         "5.3.1-K2"
        ],
-       "grundlage": "In zwei Schritten rechnen: erst zusammenfassen, dann weiter"
+       "grundlage": "In zwei Schritten rechnen: erst zusammenfassen, dann weiter",
+       "merkzettel": {
+        "regel": "Was in der Klammer steht, rechnest du zuerst.",
+        "beispiel": "80 − (25 + 15)\n= 80 − 40\n= 40"
+       }
       },
       {
        "id": "5.3.4-B2",
@@ -2372,18 +2428,14 @@
        "voraussetzungen": [
         "5.3.4-B1"
        ],
-       "grundlage": "Geschichte mit zwei Schritten der passenden Rechnung zuordnen"
+       "grundlage": "Geschichte mit zwei Schritten der passenden Rechnung zuordnen",
+       "merkzettel": {
+        "regel": "Was im Text zusammengehört, kommt in eine Klammer.",
+        "beispiel": "Lena hat 80 €. Sie kauft ein Buch für 25 € und ein Spiel für 15 €.\n80 − (25 + 15) = 40"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Was in der Klammer steht, wird zuerst berechnet.",
-       "Ohne Klammern rechnest du bei Plus und Minus von links nach rechts.",
-       "Eine Klammer hinter einem Minus fasst zusammen, was insgesamt abgezogen wird."
-      ],
-      "beispiel": "80 − (25 + 15) = 80 − 40 = 40. Ohne Klammer kommt etwas anderes heraus: 80 − 25 + 15 = 55 + 15 = 70.",
-      "heft": "Schreibe jeden Rechenschritt in eine neue Zeile und unterstreiche, was du als Nächstes rechnest."
-     },
+     "heft": "Schreibe jeden Rechenschritt in eine neue Zeile und unterstreiche, was du als Nächstes rechnest.",
      "wortspeicher": [
       {
        "wort": "Klammer",
@@ -2434,7 +2486,11 @@
         "5.3.1-K1",
         "5.3.2-A1"
        ],
-       "grundlage": "Tauschaufgaben wie 3 + 5 und 5 + 3"
+       "grundlage": "Tauschaufgaben wie 3 + 5 und 5 + 3",
+       "merkzettel": {
+        "regel": "Vertauschungsgesetz: Du darfst Summanden vertauschen. Verbindungsgesetz: Du darfst Klammern beim Addieren beliebig setzen.",
+        "beispiel": "17 + 48 = 48 + 17\n(17 + 48) + 52 = 17 + (48 + 52)"
+       }
       },
       {
        "id": "5.3.5-R2",
@@ -2443,19 +2499,14 @@
         "5.3.5-R1",
         "5.3.1-K3"
        ],
-       "grundlage": "Passende Zehner suchen, zum Beispiel 7 + 5 + 3"
+       "grundlage": "Passende Zehner suchen, zum Beispiel 7 + 5 + 3",
+       "merkzettel": {
+        "regel": "Addiere zuerst die Zahlen, die zusammen eine glatte Zahl ergeben.",
+        "beispiel": "37 + 48 + 63\n= 37 + 63 + 48\n= 100 + 48 = 148"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Vertauschungsgesetz: Beim Addieren darfst du die Summanden vertauschen. 17 + 48 = 48 + 17.",
-       "Verbindungsgesetz: Beim Addieren darfst du Klammern beliebig setzen. (17 + 48) + 52 = 17 + (48 + 52).",
-       "Beide Gesetze gelten nicht beim Subtrahieren: 9 − 4 ist nicht dasselbe wie 4 − 9.",
-       "Nutze die Gesetze, um zuerst die Zahlen zu addieren, die gut zusammenpassen."
-      ],
-      "beispiel": "37 + 48 + 63 = 37 + 63 + 48 = 100 + 48 = 148.",
-      "heft": "Schreibe auf, wie du umgestellt hast, bevor du rechnest."
-     },
+     "heft": "Schreibe auf, wie du umgestellt hast, bevor du rechnest.",
      "wortspeicher": [
       {
        "wort": "Tauschaufgabe",
@@ -2504,7 +2555,11 @@
        "id": "5.4.1-K1",
        "text": "Ich kann die Aufgaben des kleinen Einmaleins sicher lösen.",
        "voraussetzungen": [],
-       "grundlage": "Mal-Aufgaben im Punktefeld sehen, Kernaufgaben mit 2, 5 und 10"
+       "grundlage": "Mal-Aufgaben im Punktefeld sehen, Kernaufgaben mit 2, 5 und 10",
+       "merkzettel": {
+        "regel": "Schwere Aufgaben zerlegst du in zwei leichte.",
+        "beispiel": "7 · 8\n5 · 8 = 40 und 2 · 8 = 16\n40 + 16 = 56"
+       }
       },
       {
        "id": "5.4.1-K2",
@@ -2512,7 +2567,11 @@
        "voraussetzungen": [
         "5.4.1-K1"
        ],
-       "grundlage": "Gerecht verteilen im Punktefeld, Mal-Aufgabe als Hilfe"
+       "grundlage": "Gerecht verteilen im Punktefeld, Mal-Aufgabe als Hilfe",
+       "merkzettel": {
+        "regel": "Geteilt rechnest du mit der Mal-Aufgabe: Welche Zahl mal dem Teiler ergibt die Zahl?",
+        "beispiel": "63 : 9 = 7, denn 7 · 9 = 63."
+       }
       },
       {
        "id": "5.4.1-K3",
@@ -2521,7 +2580,11 @@
         "5.4.1-K1",
         "5.4.1-K2"
        ],
-       "grundlage": "Mal 10 und mal 100 am Zehnermaterial: aus Einern werden Zehner, aus Zehnern Hunderter"
+       "grundlage": "Mal 10 und mal 100 am Zehnermaterial: aus Einern werden Zehner, aus Zehnern Hunderter",
+       "merkzettel": {
+        "regel": "Rechne zuerst ohne die Nullen. Hänge die Nullen dann wieder an.",
+        "beispiel": "40 · 600\n4 · 6 = 24\nDrei Nullen anhängen: 24 000"
+       }
       },
       {
        "id": "5.4.1-K4",
@@ -2530,20 +2593,14 @@
         "5.4.1-K1",
         "5.4.1-K3"
        ],
-       "grundlage": "Verdoppeln und Halbieren im Punktefeld, Kernaufgaben mit 2, 5 und 10"
+       "grundlage": "Verdoppeln und Halbieren im Punktefeld, Kernaufgaben mit 2, 5 und 10",
+       "merkzettel": {
+        "regel": "Zerlege einen Faktor. Oder verdopple einen Faktor und halbiere den anderen.",
+        "beispiel": "4 · 23 = 4 · 20 + 4 · 3 = 80 + 12 = 92\n5 · 18 = 10 · 9 = 90"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Kernaufgaben helfen: mal 1, mal 2, mal 5 und mal 10 kannst du schnell.",
-       "Schwere Aufgaben zerlegst du: 7 · 8 ist 5 · 8 und noch 2 · 8, also 40 + 16 = 56.",
-       "Nachbaraufgaben: Kennst du 6 · 8 = 48, dann ist 7 · 8 eine Acht mehr, also 56.",
-       "Tauschaufgaben haben dasselbe Ergebnis: 3 · 9 = 27 und 9 · 3 = 27.",
-       "Geteilt rechnest du mit der Mal-Aufgabe: 56 : 8 = 7, denn 7 · 8 = 56."
-      ],
-      "beispiel": "63 : 9: Welche Zahl mal 9 ergibt 63? 5 · 9 = 45, 6 · 9 = 54, 7 · 9 = 63. Also 63 : 9 = 7.",
-      "heft": "Schreibe die Reihen, die du noch nicht sicher kannst, ins Heft und sage sie dir laut vor."
-     },
+     "heft": "Schreibe die Reihen, die du noch nicht sicher kannst, ins Heft und sage sie dir laut vor.",
      "wortspeicher": [
       {
        "wort": "mal",
@@ -2628,7 +2685,11 @@
        "voraussetzungen": [
         "5.4.1-K1"
        ],
-       "grundlage": "Mal-Aufgaben im Punktefeld: Reihen, Punkte in einer Reihe, alle Punkte"
+       "grundlage": "Mal-Aufgaben im Punktefeld: Reihen, Punkte in einer Reihe, alle Punkte",
+       "merkzettel": {
+        "regel": "Faktor · Faktor = Produkt.",
+        "beispiel": "6 · 7 = 42\n6 und 7 sind die Faktoren. 42 ist der Wert des Produkts."
+       }
       },
       {
        "id": "5.4.2-M2",
@@ -2637,7 +2698,16 @@
         "5.4.1-K1",
         "5.3.2-A2"
        ],
-       "grundlage": "Malkreuz mit Zehnern und Einern, Einmaleins bis 12 · 12"
+       "grundlage": "Malkreuz mit Zehnern und Einern, Einmaleins bis 12 · 12",
+       "merkzettel": {
+        "regel": "Beginne bei den Einern. Den Übertrag merkst du dir und zählst ihn bei der nächsten Stelle dazu.",
+        "rechnung": [
+         "4 1 8 · 6",
+         "---------",
+         "  2 5 0 8"
+        ],
+        "beispiel": "6 · 8 = 48. Schreibe 8, merke 4.\n6 · 1 = 6, dazu 4 sind 10. Schreibe 0, merke 1.\n6 · 4 = 24, dazu 1 sind 25."
+       }
       },
       {
        "id": "5.4.2-M3",
@@ -2646,7 +2716,19 @@
         "5.4.2-M2",
         "5.4.1-K3"
        ],
-       "grundlage": "Malkreuz mit Zehnern und Einern bei beiden Zahlen, kleine Zahlen"
+       "grundlage": "Malkreuz mit Zehnern und Einern bei beiden Zahlen, kleine Zahlen",
+       "merkzettel": {
+        "regel": "Rechne für jede Ziffer des zweiten Faktors eine Zeile, die unter ihrer Ziffer endet. Dann addierst du die Zeilen.",
+        "rechnung": [
+         "4 1 8 · 5 4",
+         "-----------",
+         "  2 0 9 0",
+         "    1 6 7 2",
+         "-----------",
+         "  2 2 5 7 2"
+        ],
+        "beispiel": "418 · 5 = 2090 endet unter der 5.\n418 · 4 = 1672 endet unter der 4."
+       }
       },
       {
        "id": "5.4.2-M4",
@@ -2655,7 +2737,11 @@
         "5.4.2-M2",
         "5.4.1-K3"
        ],
-       "grundlage": "Mal mit Geteilt rückgängig machen, auf Zehner runden"
+       "grundlage": "Mal mit Geteilt rückgängig machen, auf Zehner runden",
+       "merkzettel": {
+        "regel": "Überschlag: Runde beide Faktoren und rechne im Kopf. Probe: Teile das Ergebnis durch einen Faktor.",
+        "beispiel": "418 · 6 = 2508\nÜberschlag: 400 · 6 = 2400. Das passt.\nProbe: 2508 : 6 = 418"
+       }
       },
       {
        "id": "5.4.2-M5",
@@ -2663,20 +2749,14 @@
        "voraussetzungen": [
         "5.4.2-M2"
        ],
-       "grundlage": "Gleich große Gruppen im Bild, Mal-Geschichte und Rechnung zuordnen"
+       "grundlage": "Gleich große Gruppen im Bild, Mal-Geschichte und Rechnung zuordnen",
+       "merkzettel": {
+        "regel": "Lies genau: Was ist gesucht? Kommt dieselbe Zahl mehrmals vor, rechnest du mal.",
+        "beispiel": "In einer Kiste sind 24 Flaschen. Es gibt 6 Kisten.\n6 · 24 = 144 Flaschen"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Faktor · Faktor = Produkt. Bei 6 · 7 = 42 sind 6 und 7 die Faktoren, 42 ist der Wert des Produkts.",
-       "Im Malkreuz zerlegst du einen Faktor in Zehner und Einer: 4 · 23 = 4 · 20 + 4 · 3 = 80 + 12 = 92.",
-       "Schriftlich multiplizieren: Beginne bei den Einern. Den Zehner merkst du dir und rechnest ihn bei der nächsten Stelle dazu.",
-       "Bei einem zweistelligen Faktor rechnest du für jede Ziffer ein Teilprodukt. Jedes Teilprodukt endet unter seiner Ziffer. Dann addierst du.",
-       "Überschlag: Runde beide Faktoren und rechne im Kopf. Probe: Produkt : Faktor = anderer Faktor."
-      ],
-      "beispiel": "418 · 54: 418 · 5 = 2090, darunter um eine Stelle nach rechts 418 · 4 = 1672. Zusammen 22 572. Überschlag: 400 · 50 = 20 000.",
-      "heft": "Schreibe schriftliche Multiplikationen im Heft so, dass jede Ziffer ein Kästchen hat."
-     },
+     "heft": "Schreibe schriftliche Multiplikationen im Heft so, dass jede Ziffer ein Kästchen hat.",
      "wortspeicher": [
       {
        "wort": "mal",
@@ -2752,7 +2832,11 @@
         "5.3.5-R1",
         "5.4.1-K1"
        ],
-       "grundlage": "Tauschaufgaben im Punktefeld: Reihen und Spalten tauschen"
+       "grundlage": "Tauschaufgaben im Punktefeld: Reihen und Spalten tauschen",
+       "merkzettel": {
+        "regel": "Vertauschungsgesetz: Du darfst Faktoren vertauschen. Verbindungsgesetz: Du darfst Klammern beim Multiplizieren beliebig setzen.",
+        "beispiel": "4 · 9 = 9 · 4\n(7 · 5) · 2 = 7 · (5 · 2)"
+       }
       },
       {
        "id": "5.4.3-R2",
@@ -2761,19 +2845,14 @@
         "5.4.3-R1",
         "5.4.1-K3"
        ],
-       "grundlage": "Mal 2 und mal 5 zusammen ist mal 10"
+       "grundlage": "Mal 2 und mal 5 zusammen ist mal 10",
+       "merkzettel": {
+        "regel": "Multipliziere zuerst die Faktoren, die zusammen 10, 100 oder 1000 ergeben.",
+        "beispiel": "4 · 17 · 25\n= 4 · 25 · 17\n= 100 · 17 = 1700"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Vertauschungsgesetz: Beim Multiplizieren darfst du die Faktoren vertauschen. 4 · 9 = 9 · 4.",
-       "Verbindungsgesetz: Beim Multiplizieren darfst du die Klammern beliebig setzen. (7 · 5) · 2 = 7 · (5 · 2).",
-       "Beim Dividieren gelten beide Gesetze nicht: 12 : 4 ist nicht dasselbe wie 4 : 12.",
-       "Suche Faktoren, die zusammen eine Stufenzahl ergeben: 2 · 5 = 10, 4 · 25 = 100, 8 · 125 = 1000."
-      ],
-      "beispiel": "4 · 17 · 25 = 17 · (4 · 25) = 17 · 100 = 1700.",
-      "heft": "Schreibe auf, wie du umgestellt hast, bevor du rechnest."
-     },
+     "heft": "Schreibe auf, wie du umgestellt hast, bevor du rechnest.",
      "wortspeicher": [
       {
        "wort": "Tauschaufgabe",
@@ -2818,7 +2897,11 @@
        "voraussetzungen": [
         "5.4.1-K1"
        ],
-       "grundlage": "Gleiche Faktoren zählen: 3 · 3 · 3"
+       "grundlage": "Gleiche Faktoren zählen: 3 · 3 · 3",
+       "merkzettel": {
+        "regel": "Ein Produkt aus gleichen Faktoren schreibst du als Potenz. Die Basis ist der Faktor, der Exponent sagt, wie oft er vorkommt.",
+        "beispiel": "3 · 3 · 3 · 3 = 3⁴\n3 ist die Basis, 4 ist der Exponent."
+       }
       },
       {
        "id": "5.4.4-P2",
@@ -2827,19 +2910,14 @@
         "5.4.4-P1",
         "5.4.2-M2"
        ],
-       "grundlage": "Quadrate aus Kästchen und Würfel aus Schichten abzählen"
+       "grundlage": "Quadrate aus Kästchen und Würfel aus Schichten abzählen",
+       "merkzettel": {
+        "regel": "Schreibe die Potenz als Mal-Aufgabe und rechne aus. Achtung: 3⁴ ist nicht 3 · 4.",
+        "beispiel": "2⁵ = 2 · 2 · 2 · 2 · 2 = 32\n10³ = 1000, eine 1 mit drei Nullen."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Produkt aus gleichen Faktoren kannst du als Potenz schreiben: 3 · 3 · 3 · 3 = 3⁴.",
-       "Die Basis ist der Faktor, der Exponent sagt, wie oft er vorkommt. Bei 3⁴ ist 3 die Basis und 4 der Exponent.",
-       "Achtung: 3⁴ ist nicht 3 · 4. Es ist 3 · 3 · 3 · 3 = 81.",
-       "Zehnerpotenzen: 10² = 100, 10³ = 1000, 10⁶ = 1 000 000. Der Exponent sagt, wie viele Nullen die Zahl hat."
-      ],
-      "beispiel": "2⁵ = 2 · 2 · 2 · 2 · 2 = 32. Quadratzahlen: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100.",
-      "heft": "Schreibe eine Potenz zuerst als Produkt aus und rechne dann Schritt für Schritt."
-     },
+     "heft": "Schreibe eine Potenz zuerst als Produkt aus und rechne dann Schritt für Schritt.",
      "wortspeicher": [
       {
        "wort": "hoch",
@@ -2894,7 +2972,11 @@
        "voraussetzungen": [
         "5.4.1-K2"
        ],
-       "grundlage": "Teilen als Verteilen und als Aufteilen in Gruppen"
+       "grundlage": "Teilen als Verteilen und als Aufteilen in Gruppen",
+       "merkzettel": {
+        "regel": "Dividend : Divisor = Quotient.",
+        "beispiel": "48 : 6 = 8\n48 ist der Dividend, 6 der Divisor. 8 ist der Wert des Quotienten."
+       }
       },
       {
        "id": "5.4.5-D2",
@@ -2904,7 +2986,23 @@
         "5.4.5-D1",
         "5.3.1-K2"
        ],
-       "grundlage": "Einmaleins rückwärts, dann mit Zehnerzahlen (12 : 3 und 120 : 3)"
+       "grundlage": "Einmaleins rückwärts, dann mit Zehnerzahlen (12 : 3 und 120 : 3)",
+       "merkzettel": {
+        "regel": "Beginne links. Teile, rechne mal zurück, ziehe ab und hole die nächste Ziffer herunter.",
+        "rechnung": [
+         " 952 : 4 = 238",
+         "−8",
+         " --",
+         " 15",
+         "−12",
+         " --",
+         "  32",
+         " −32",
+         "  --",
+         "   0"
+        ],
+        "beispiel": "9 : 4 geht 2-mal, denn 2 · 4 = 8. Es bleibt 1.\nHole die 5 herunter: 15 : 4 geht 3-mal."
+       }
       },
       {
        "id": "5.4.5-D3",
@@ -2913,7 +3011,20 @@
         "5.4.5-D2",
         "5.4.1-K1"
        ],
-       "grundlage": "Durch 10 teilen"
+       "grundlage": "Durch 10 teilen",
+       "merkzettel": {
+        "regel": "Überlege mit einem Überschlag, wie oft der Divisor hineinpasst. Dann rechnest du wie immer: teilen, mal zurück, abziehen, herunterholen.",
+        "rechnung": [
+         " 672 : 21 = 32",
+         "−63",
+         " --",
+         "  42",
+         " −42",
+         "  --",
+         "   0"
+        ],
+        "beispiel": "67 : 21: Überschlag 60 : 20 = 3.\n3 · 21 = 63. Es bleibt 4. Hole die 2 herunter: 42 : 21 = 2."
+       }
       },
       {
        "id": "5.4.5-D4",
@@ -2922,7 +3033,11 @@
         "5.4.5-D2",
         "5.4.1-K2"
        ],
-       "grundlage": "Plättchen verteilen, einige bleiben übrig"
+       "grundlage": "Plättchen verteilen, einige bleiben übrig",
+       "merkzettel": {
+        "regel": "Bleibt am Ende etwas übrig, ist das der Rest. Der Rest ist immer kleiner als der Divisor.",
+        "beispiel": "50 : 6 = 8 Rest 2, denn 8 · 6 = 48 und 48 + 2 = 50.\n50 Eier in 6er-Schachteln: 8 Schachteln sind voll, 2 Eier bleiben übrig."
+       }
       },
       {
        "id": "5.4.5-D5",
@@ -2932,7 +3047,11 @@
         "5.3.2-A4",
         "5.2.3-R1"
        ],
-       "grundlage": "Geteilt mit Mal rückgängig machen"
+       "grundlage": "Geteilt mit Mal rückgängig machen",
+       "merkzettel": {
+        "regel": "Überschlag: Rechne vorher mit runden Zahlen. Probe: Multipliziere das Ergebnis mit dem Divisor.",
+        "beispiel": "952 : 4 = 238\nÜberschlag: 1000 : 4 = 250. Das passt.\nProbe: 238 · 4 = 952"
+       }
       },
       {
        "id": "5.4.5-D6",
@@ -2941,20 +3060,14 @@
         "5.4.5-D2",
         "5.4.5-D4"
        ],
-       "grundlage": "Verteil- und Aufteil-Geschichten, Rechnung zuordnen"
+       "grundlage": "Verteil- und Aufteil-Geschichten, Rechnung zuordnen",
+       "merkzettel": {
+        "regel": "Lies genau: Was ist gesucht? Wird gleichmäßig verteilt oder aufgeteilt, rechnest du geteilt.",
+        "beispiel": "144 Flaschen kommen in Kisten zu je 6 Flaschen.\n144 : 6 = 24 Kisten"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Dividend : Divisor = Quotient. Bei 48 : 6 = 8 ist 48 der Dividend, 6 der Divisor, 8 der Wert des Quotienten.",
-       "Schriftlich dividieren: Beginne links. Teile, multipliziere zurück, ziehe ab und hole die nächste Ziffer herunter.",
-       "Bleibt am Ende etwas übrig, ist das der Rest. Der Rest ist immer kleiner als der Divisor.",
-       "Probe: Quotient · Divisor, dazu der Rest, ergibt den Dividenden.",
-       "Durch 0 kann man nicht dividieren."
-      ],
-      "beispiel": "952 : 4: 9 : 4 = 2 Rest 1. Dann 15 : 4 = 3 Rest 3. Dann 32 : 4 = 8. Ergebnis 238. Probe: 238 · 4 = 952.",
-      "heft": "Rechne schriftliche Divisionen im Heft und schreibe die Probe dazu."
-     },
+     "heft": "Rechne schriftliche Divisionen im Heft und schreibe die Probe dazu.",
      "wortspeicher": [
       {
        "wort": "geteilt durch",
@@ -3050,7 +3163,11 @@
         "5.4.1-K1",
         "5.3.4-B1"
        ],
-       "grundlage": "Päckchenbilder: einzelne Plättchen und volle Päckchen"
+       "grundlage": "Päckchenbilder: einzelne Plättchen und volle Päckchen",
+       "merkzettel": {
+        "regel": "Punkt vor Strich: Mal und geteilt rechnest du vor plus und minus.",
+        "beispiel": "3 + 4 · 5\n= 3 + 20\n= 23"
+       }
       },
       {
        "id": "5.4.6-T2",
@@ -3059,7 +3176,11 @@
         "5.4.6-T1",
         "5.3.4-B1"
        ],
-       "grundlage": "Erst die Klammer, dann der Rest: in zwei Schritten rechnen"
+       "grundlage": "Erst die Klammer, dann der Rest: in zwei Schritten rechnen",
+       "merkzettel": {
+        "regel": "Klammern rechnest du zuerst. Bei einer Klammer in der Klammer beginnst du innen.",
+        "beispiel": "2 · (20 − (4 + 6))\n= 2 · (20 − 10)\n= 2 · 10 = 20"
+       }
       },
       {
        "id": "5.4.6-T3",
@@ -3068,18 +3189,14 @@
         "5.4.6-T1",
         "5.3.4-B2"
        ],
-       "grundlage": "Geschichte mit Päckchen der passenden Rechnung zuordnen"
+       "grundlage": "Geschichte mit Päckchen der passenden Rechnung zuordnen",
+       "merkzettel": {
+        "regel": "Schreibe die Rechnung in der Reihenfolge des Textes. Was zuerst gerechnet werden soll, kommt in eine Klammer.",
+        "beispiel": "Addiere 3 und 4. Multipliziere das Ergebnis mit 5.\n(3 + 4) · 5 = 35"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Klammern zuerst: Was in der Klammer steht, rechnest du als Erstes. Bei einer Klammer in der Klammer beginnst du innen.",
-       "Punkt vor Strich: Mal und geteilt rechnest du vor plus und minus.",
-       "Sonst rechnest du von links nach rechts."
-      ],
-      "beispiel": "3 + 4 · 5 = 3 + 20 = 23. Mit Klammer: (3 + 4) · 5 = 7 · 5 = 35. Innen zuerst: 2 · (20 − (4 + 6)) = 2 · (20 − 10) = 2 · 10 = 20.",
-      "heft": "Unterstreiche, was du zuerst rechnest, und schreibe jeden Schritt in eine neue Zeile."
-     },
+     "heft": "Unterstreiche, was du zuerst rechnest, und schreibe jeden Schritt in eine neue Zeile.",
      "wortspeicher": [
       {
        "wort": "Punkt vor Strich",
@@ -3140,7 +3257,11 @@
         "5.4.1-K4",
         "5.4.6-T2"
        ],
-       "grundlage": "Geteiltes Punktefeld: zwei Teile zusammen ergeben das ganze Feld"
+       "grundlage": "Geteiltes Punktefeld: zwei Teile zusammen ergeben das ganze Feld",
+       "merkzettel": {
+        "regel": "Ausmultiplizieren: Nimm jede Zahl in der Klammer mit der Zahl vor der Klammer mal.",
+        "beispiel": "4 · (20 + 3)\n= 4 · 20 + 4 · 3\n= 80 + 12 = 92"
+       }
       },
       {
        "id": "5.4.7-V2",
@@ -3148,7 +3269,11 @@
        "voraussetzungen": [
         "5.4.7-V1"
        ],
-       "grundlage": "Zwei Punktefelder mit gleich vielen Reihen zusammenschieben"
+       "grundlage": "Zwei Punktefelder mit gleich vielen Reihen zusammenschieben",
+       "merkzettel": {
+        "regel": "Ausklammern: Steht derselbe Faktor in beiden Produkten, schreibst du ihn einmal vor die Klammer.",
+        "beispiel": "7 · 8 + 7 · 2\n= 7 · (8 + 2)\n= 7 · 10 = 70"
+       }
       },
       {
        "id": "5.4.7-V3",
@@ -3157,19 +3282,14 @@
         "5.4.7-V1",
         "5.4.1-K3"
        ],
-       "grundlage": "Malkreuz mit glatten Zehnern"
+       "grundlage": "Malkreuz mit glatten Zehnern",
+       "merkzettel": {
+        "regel": "Zerlege einen Faktor in eine glatte Zahl und einen kleinen Rest. Rechne dann beide Teile einzeln.",
+        "beispiel": "7 · 98\n= 7 · (100 − 2)\n= 700 − 14 = 686"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Verteilungsgesetz: Eine Zahl mal eine Summe ist gleich der Summe der beiden Produkte. 4 · (20 + 3) = 4 · 20 + 4 · 3.",
-       "Ausmultiplizieren: Du nimmst jeden Summanden in der Klammer mit der Zahl vor der Klammer mal.",
-       "Ausklammern: Kommt derselbe Faktor in beiden Produkten vor, schreibst du ihn einmal vor die Klammer. 7 · 8 + 7 · 2 = 7 · (8 + 2).",
-       "Das Gesetz gilt auch mit minus: 6 · (10 − 1) = 6 · 10 − 6 · 1."
-      ],
-      "beispiel": "7 · 98 = 7 · (100 − 2) = 700 − 14 = 686. Und 13 · 6 + 13 · 4 = 13 · (6 + 4) = 13 · 10 = 130.",
-      "heft": "Schreibe die Klammer mit der Zerlegung auf, bevor du ausrechnest."
-     },
+     "heft": "Schreibe die Klammer mit der Zerlegung auf, bevor du ausrechnest.",
      "wortspeicher": [
       {
        "wort": "Malkreuz",
@@ -3230,7 +3350,11 @@
         "5.4.1-K1",
         "5.3.1-K1"
        ],
-       "grundlage": "Zahlenfolgen mit gleichen Sprüngen am Zahlenstrahl"
+       "grundlage": "Zahlenfolgen mit gleichen Sprüngen am Zahlenstrahl",
+       "merkzettel": {
+        "regel": "Schau, was von Zahl zu Zahl passiert. Mach dann genauso weiter.",
+        "beispiel": "3, 6, 12, 24: Jede Zahl ist das Doppelte der Zahl davor.\nDie nächste Zahl ist 48."
+       }
       },
       {
        "id": "5.4.X1-Z2",
@@ -3238,18 +3362,14 @@
        "voraussetzungen": [
         "5.4.X1-Z1"
        ],
-       "grundlage": "Sprünge zwischen Nachbarzahlen bestimmen"
+       "grundlage": "Sprünge zwischen Nachbarzahlen bestimmen",
+       "merkzettel": {
+        "regel": "Beschreibe die Regel mit einem Satz: Was wird immer dazugezählt oder womit wird immer malgenommen?",
+        "beispiel": "5, 9, 13, 17: Immer plus 4.\n2, 6, 18, 54: Immer mal 3."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Bei einem Zahlenmuster kommt von Zahl zu Zahl immer dasselbe dazu, oder es wird immer mit derselben Zahl malgenommen.",
-       "Schau dir die Unterschiede zwischen Nachbarzahlen an. Manchmal werden auch die Unterschiede immer größer.",
-       "In einer Mal-Mauer ist jeder Stein das Produkt der beiden Steine darunter."
-      ],
-      "beispiel": "3, 6, 12, 24: Jede Zahl ist das Doppelte der Zahl davor. Die nächste Zahl ist 48. Bei 1, 4, 9, 16 werden die Unterschiede 3, 5, 7 immer um 2 größer.",
-      "heft": "Schreibe die Unterschiede klein über die Zahlen."
-     },
+     "heft": "Schreibe die Unterschiede klein über die Zahlen.",
      "wortspeicher": [
       {
        "wort": "Muster",
@@ -3308,7 +3428,11 @@
        "id": "5.5.1-B1",
        "text": "Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.",
        "voraussetzungen": [],
-       "grundlage": "Eine Linie mit zwei Endpunkten von einer Linie ohne Ende unterscheiden"
+       "grundlage": "Eine Linie mit zwei Endpunkten von einer Linie ohne Ende unterscheiden",
+       "merkzettel": {
+        "regel": "Eine Strecke hat zwei Endpunkte. Ein Strahl hat einen Anfangspunkt, eine Gerade hat keinen Anfang und kein Ende.",
+        "beispiel": "Die Linie von A nach B hört bei A und bei B auf.\nSie ist eine Strecke."
+       }
       },
       {
        "id": "5.5.1-B2",
@@ -3316,20 +3440,14 @@
        "voraussetzungen": [
         "5.5.1-B1"
        ],
-       "grundlage": "Die Länge einer Strecke am Lineal ablesen, die bei 0 beginnt, in ganzen Zentimetern"
+       "grundlage": "Die Länge einer Strecke am Lineal ablesen, die bei 0 beginnt, in ganzen Zentimetern",
+       "merkzettel": {
+        "regel": "Lege die 0 des Lineals genau an den Anfang der Strecke. Lies am Ende ab. 1 cm sind 10 mm.",
+        "beispiel": "Die Strecke ist 4 cm 3 mm lang.\nDas sind 4 · 10 mm + 3 mm = 43 mm."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine Strecke ist eine gerade Linie mit zwei Endpunkten. Du kannst sie messen.",
-       "Ein Strahl hat einen Anfangspunkt und geht auf der anderen Seite immer weiter. Er heißt auch Halbgerade.",
-       "Eine Gerade hat keinen Anfang und kein Ende. Sie bekommt einen kleinen Buchstaben wie g oder h.",
-       "Die Strecke von A nach B schreibt man AB mit einem Strich darüber.",
-       "Messen: Lege die 0 des Lineals genau an den Anfang der Strecke. 1 cm sind 10 mm."
-      ],
-      "beispiel": "Eine Strecke ist 4 cm 3 mm lang. Das sind 43 mm, denn 4 · 10 + 3 = 43.",
-      "heft": "Im Heft sind 2 Kästchen genau 1 cm lang. Zeichne immer mit Lineal und spitzem Bleistift."
-     },
+     "heft": "Im Heft sind 2 Kästchen genau 1 cm lang. Zeichne immer mit Lineal und spitzem Bleistift.",
      "wortspeicher": [
       {
        "wort": "Punkt",
@@ -3384,7 +3502,11 @@
        "voraussetzungen": [
         "5.5.1-B1"
        ],
-       "grundlage": "Einen rechten Winkel am Karogitter erkennen: eine Linie waagerecht, eine senkrecht dazu"
+       "grundlage": "Einen rechten Winkel am Karogitter erkennen: eine Linie waagerecht, eine senkrecht dazu",
+       "merkzettel": {
+        "regel": "Zwei Linien sind senkrecht zueinander, wenn sie einen rechten Winkel bilden. Auch schräge Linien können senkrecht zueinander sein.",
+        "beispiel": "Am Karogitter: Eine Linie geht 2 Kästchen nach rechts und 1 nach oben.\nDie Senkrechte dazu geht 1 Kästchen nach links und 2 nach oben."
+       }
       },
       {
        "id": "5.5.2-S2",
@@ -3392,19 +3514,14 @@
        "voraussetzungen": [
         "5.5.2-S1"
        ],
-       "grundlage": "Am Karogitter eine Linie entlang der Kästchen senkrecht zu einer anderen zeichnen"
+       "grundlage": "Am Karogitter eine Linie entlang der Kästchen senkrecht zu einer anderen zeichnen",
+       "merkzettel": {
+        "regel": "Lege die Mittellinie des Geodreiecks genau auf die Gerade. Zeichne an der langen Kante entlang.",
+        "beispiel": "Die Senkrechte soll durch den Punkt P gehen.\nSchiebe das Geodreieck auf der Geraden, bis die lange Kante an P liegt. Dann zeichne."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Zwei Linien sind senkrecht zueinander, wenn sie einen rechten Winkel bilden.",
-       "Senkrecht zueinander heißt nicht „von oben nach unten“. Auch schräge Linien können senkrecht zueinander sein.",
-       "Kurz schreibt man g ⊥ h. Im Bild zeigt ein kleiner Bogen mit Punkt den rechten Winkel.",
-       "Mit dem Geodreieck: Lege die Mittellinie auf die Gerade und zeichne an der langen Kante entlang."
-      ],
-      "beispiel": "Am Karogitter: Geht eine Linie 2 Kästchen nach rechts und 1 nach oben, dann geht die Senkrechte dazu 1 Kästchen nach links und 2 nach oben.",
-      "heft": "Prüfe einen rechten Winkel mit der Ecke des Geodreiecks."
-     },
+     "heft": "Prüfe einen rechten Winkel mit der Ecke des Geodreiecks.",
      "wortspeicher": [
       {
        "wort": "senkrecht",
@@ -3449,7 +3566,11 @@
        "voraussetzungen": [
         "5.5.2-S1"
        ],
-       "grundlage": "Am Karogitter erkennen, ob zwei Linien überall gleich weit auseinander liegen"
+       "grundlage": "Am Karogitter erkennen, ob zwei Linien überall gleich weit auseinander liegen",
+       "merkzettel": {
+        "regel": "Zwei Geraden sind parallel zueinander, wenn sie überall den gleichen Abstand haben. Sie schneiden sich nie.",
+        "beispiel": "Am Karogitter: Beide Linien gehen 3 Kästchen nach rechts und 1 nach oben.\nSie sind parallel."
+       }
       },
       {
        "id": "5.5.3-P2",
@@ -3457,19 +3578,14 @@
        "voraussetzungen": [
         "5.5.3-P1"
        ],
-       "grundlage": "Am Karogitter eine Linie entlang der Kästchen parallel zu einer anderen zeichnen"
+       "grundlage": "Am Karogitter eine Linie entlang der Kästchen parallel zu einer anderen zeichnen",
+       "merkzettel": {
+        "regel": "Lege eine der parallelen Linien des Geodreiecks genau auf die Gerade. Zeichne an der langen Kante entlang.",
+        "beispiel": "Der Abstand soll 2 cm sein.\nLege die Linie des Geodreiecks, die bei 2 cm liegt, auf die Gerade. Dann zeichne."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Zwei Geraden sind parallel zueinander, wenn sie überall den gleichen Abstand haben. Sie schneiden sich nie.",
-       "Kurz schreibt man g ∥ h.",
-       "Parallele Linien müssen nicht gleich lang sein und nicht genau untereinander liegen.",
-       "Sind zwei Geraden senkrecht zu derselben Geraden, dann sind sie parallel zueinander."
-      ],
-      "beispiel": "Am Karogitter: Gehen zwei Linien beide 3 Kästchen nach rechts und 1 nach oben, dann sind sie parallel.",
-      "heft": "Mit dem Geodreieck: Lege eine der parallelen Hilfslinien auf die Gerade und zeichne an der langen Kante entlang."
-     },
+     "heft": "Mit dem Geodreieck: Lege eine der parallelen Hilfslinien auf die Gerade und zeichne an der langen Kante entlang.",
      "wortspeicher": [
       {
        "wort": "parallel",
@@ -3499,7 +3615,11 @@
        "voraussetzungen": [
         "5.2.1-N1"
        ],
-       "grundlage": "Vom Nullpunkt aus die Schritte nach rechts und nach oben zählen"
+       "grundlage": "Vom Nullpunkt aus die Schritte nach rechts und nach oben zählen",
+       "merkzettel": {
+        "regel": "Starte im Ursprung. Die erste Zahl sagt, wie weit es nach rechts geht, die zweite, wie weit es nach oben geht.",
+        "beispiel": "Der Punkt liegt 3 nach rechts und 5 nach oben.\nEr heißt P(3|5)."
+       }
       },
       {
        "id": "5.5.4-K2",
@@ -3507,19 +3627,14 @@
        "voraussetzungen": [
         "5.5.4-K1"
        ],
-       "grundlage": "Einen Punkt eintragen: erst nach rechts gehen, dann nach oben"
+       "grundlage": "Einen Punkt eintragen: erst nach rechts gehen, dann nach oben",
+       "merkzettel": {
+        "regel": "Geh vom Ursprung zuerst nach rechts, dann nach oben. Dort setzt du den Punkt.",
+        "beispiel": "Q(5|3): 5 nach rechts, dann 3 nach oben.\nQ(5|3) ist ein anderer Punkt als P(3|5)."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Das Koordinatensystem hat zwei Achsen: die x-Achse nach rechts und die y-Achse nach oben.",
-       "Jeder Punkt hat zwei Koordinaten. Man schreibt sie so: P(3|5).",
-       "Die erste Zahl ist die x-Koordinate: so weit geht es nach rechts. Die zweite ist die y-Koordinate: so weit geht es nach oben.",
-       "Du beginnst immer im Ursprung, dem Punkt (0|0)."
-      ],
-      "beispiel": "P(3|5): vom Ursprung 3 nach rechts und dann 5 nach oben. Q(5|3) ist ein anderer Punkt.",
-      "heft": "Zeichne die Achsen mit Lineal, 2 Kästchen für eine Einheit. Beschrifte sie mit x und y."
-     },
+     "heft": "Zeichne die Achsen mit Lineal, 2 Kästchen für eine Einheit. Beschrifte sie mit x und y.",
      "wortspeicher": [
       {
        "wort": "Koordinatensystem",
@@ -3564,19 +3679,14 @@
        "voraussetzungen": [
         "5.5.2-S2"
        ],
-       "grundlage": "Kästchen zwischen zwei Punkten zählen, die genau nebeneinander oder übereinander liegen"
+       "grundlage": "Kästchen zwischen zwei Punkten zählen, die genau nebeneinander oder übereinander liegen",
+       "merkzettel": {
+        "regel": "Die Entfernung zweier Punkte ist die Länge der Strecke zwischen ihnen. Der Abstand von einer Geraden ist der kürzeste Weg zu ihr, er ist immer senkrecht zur Geraden.",
+        "beispiel": "Der Punkt P liegt 4 Kästchen genau über der Geraden g.\nSein Abstand von g ist 4 Kästchen, also 2 cm."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Die Entfernung zweier Punkte ist die Länge der Strecke zwischen ihnen.",
-       "Der Abstand eines Punktes von einer Geraden ist der kürzeste Weg zur Geraden.",
-       "Der kürzeste Weg steht immer senkrecht auf der Geraden.",
-       "Der Abstand zweier paralleler Geraden ist überall gleich. Du misst ihn auf einer Senkrechten."
-      ],
-      "beispiel": "Der Punkt P liegt 4 Kästchen über der Geraden g. Sein Abstand von g ist 4 Kästchen, also 2 cm.",
-      "heft": "Miss einen Abstand mit dem Geodreieck: Die Mittellinie liegt auf der Geraden, die lange Kante geht durch den Punkt."
-     },
+     "heft": "Miss einen Abstand mit dem Geodreieck: Die Mittellinie liegt auf der Geraden, die lange Kante geht durch den Punkt.",
      "wortspeicher": [
       {
        "wort": "Entfernung",
@@ -3611,7 +3721,11 @@
        "voraussetzungen": [
         "5.5.2-S1"
        ],
-       "grundlage": "In Gedanken falten: Liegen beide Hälften genau aufeinander?"
+       "grundlage": "In Gedanken falten: Liegen beide Hälften genau aufeinander?",
+       "merkzettel": {
+        "regel": "An einer Symmetrieachse kannst du die Figur falten. Beide Hälften liegen dann genau aufeinander.",
+        "beispiel": "Ein Rechteck hat 2 Symmetrieachsen.\nEin Quadrat hat 4 Symmetrieachsen."
+       }
       },
       {
        "id": "5.5.6-A2",
@@ -3619,7 +3733,11 @@
        "voraussetzungen": [
         "5.5.6-A1"
        ],
-       "grundlage": "Ein Kästchen an einer Achse spiegeln: gleich weit weg auf der anderen Seite"
+       "grundlage": "Ein Kästchen an einer Achse spiegeln: gleich weit weg auf der anderen Seite",
+       "merkzettel": {
+        "regel": "Punkt und Bildpunkt liegen gleich weit von der Symmetrieachse entfernt. Zähle die Kästchen senkrecht zur Achse.",
+        "beispiel": "Der Punkt A liegt 3 Kästchen links von der Achse.\nDer Bildpunkt liegt 3 Kästchen rechts von der Achse, auf gleicher Höhe."
+       }
       },
       {
        "id": "5.5.6-A3",
@@ -3627,19 +3745,14 @@
        "voraussetzungen": [
         "5.5.6-A1"
        ],
-       "grundlage": "Eine Figur in Gedanken halb herumdrehen und mit vorher vergleichen"
+       "grundlage": "Eine Figur in Gedanken halb herumdrehen und mit vorher vergleichen",
+       "merkzettel": {
+        "regel": "Eine Figur ist punktsymmetrisch, wenn sie nach einer halben Drehung genauso aussieht wie vorher. Punkt und Bildpunkt liegen gleich weit vom Symmetriezentrum entfernt, genau gegenüber.",
+        "beispiel": "Der Punkt A liegt 2 Kästchen rechts und 1 Kästchen über dem Zentrum.\nDer Bildpunkt liegt 2 Kästchen links und 1 Kästchen unter dem Zentrum."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine Figur ist achsensymmetrisch, wenn du sie so falten kannst, dass beide Hälften genau aufeinander liegen. Die Faltlinie ist die Symmetrieachse.",
-       "Punkt und Bildpunkt liegen gleich weit von der Symmetrieachse entfernt. Ihre Verbindung ist senkrecht zur Achse.",
-       "Eine Figur ist punktsymmetrisch, wenn sie nach einer halben Drehung um einen Punkt genauso aussieht wie vorher. Der Punkt heißt Symmetriezentrum.",
-       "Bei der Punktsymmetrie liegen Punkt und Bildpunkt auf einer Geraden durch das Symmetriezentrum, gleich weit davon entfernt."
-      ],
-      "beispiel": "Ein Rechteck hat 2 Symmetrieachsen, ein Quadrat hat 4. Ein Parallelogramm hat keine Symmetrieachse, aber es ist punktsymmetrisch.",
-      "heft": "Spiegle Punkt für Punkt: Zähle die Kästchen bis zur Achse und genauso viele auf der anderen Seite."
-     },
+     "heft": "Spiegle Punkt für Punkt: Zähle die Kästchen bis zur Achse und genauso viele auf der anderen Seite.",
      "wortspeicher": [
       {
        "wort": "symmetrisch",
@@ -3695,19 +3808,14 @@
         "5.5.2-S1",
         "5.5.3-P1"
        ],
-       "grundlage": "Vierecke mit vier rechten Winkeln am Karogitter erkennen"
+       "grundlage": "Vierecke mit vier rechten Winkeln am Karogitter erkennen",
+       "merkzettel": {
+        "regel": "Ein Rechteck hat vier rechte Winkel. Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten.",
+        "beispiel": "Ein Viereck hat vier rechte Winkel. Alle Seiten sind 4 cm lang.\nEs ist ein Quadrat und damit auch ein Rechteck."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Rechteck ist ein Viereck mit vier rechten Winkeln.",
-       "Im Rechteck sind gegenüberliegende Seiten parallel und gleich lang.",
-       "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten.",
-       "Die Diagonalen eines Rechtecks sind gleich lang und halbieren sich. Im Quadrat sind sie außerdem senkrecht zueinander."
-      ],
-      "beispiel": "Ein Viereck mit vier rechten Winkeln und den Seitenlängen 4 cm, 4 cm, 4 cm und 4 cm ist ein Quadrat und damit auch ein Rechteck.",
-      "heft": "Die Ecken eines Vierecks benennst du gegen den Uhrzeigersinn mit A, B, C und D."
-     },
+     "heft": "Die Ecken eines Vierecks benennst du gegen den Uhrzeigersinn mit A, B, C und D.",
      "wortspeicher": [
       {
        "wort": "Viereck",
@@ -3762,19 +3870,14 @@
        "voraussetzungen": [
         "5.5.7-V1"
        ],
-       "grundlage": "Am Karogitter prüfen, ob Seiten gegenüber parallel sind"
+       "grundlage": "Am Karogitter prüfen, ob Seiten gegenüber parallel sind",
+       "merkzettel": {
+        "regel": "Im Parallelogramm sind gegenüberliegende Seiten parallel und gleich lang. Eine Raute ist ein Parallelogramm mit vier gleich langen Seiten.",
+        "beispiel": "Parallelogramm ABCD mit A(1|1), B(5|1), C(7|4):\nVon B nach C geht es 2 nach rechts und 3 nach oben. Von A aus genauso: D(3|4)."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Parallelogramm ist ein Viereck, bei dem gegenüberliegende Seiten parallel sind. Sie sind dann auch gleich lang.",
-       "Eine Raute ist ein Parallelogramm mit vier gleich langen Seiten.",
-       "Die Diagonalen eines Parallelogramms halbieren sich. In der Raute sind sie außerdem senkrecht zueinander.",
-       "Jedes Rechteck ist auch ein Parallelogramm. Jedes Quadrat ist auch eine Raute."
-      ],
-      "beispiel": "Parallelogramm ABCD mit A(1|1), B(5|1) und C(7|4): Von B nach C geht es 2 nach rechts und 3 nach oben. Also liegt D bei (3|4).",
-      "heft": "Zeichne ein Parallelogramm am Karogitter: Gegenüberliegende Seiten gehen gleich viele Kästchen nach rechts und nach oben."
-     },
+     "heft": "Zeichne ein Parallelogramm am Karogitter: Gegenüberliegende Seiten gehen gleich viele Kästchen nach rechts und nach oben.",
      "wortspeicher": [
       {
        "wort": "Parallelogramm",
@@ -3810,7 +3913,11 @@
         "5.5.6-A1",
         "5.5.8-V2"
        ],
-       "grundlage": "Drachen und Trapez an ihrer Form erkennen"
+       "grundlage": "Drachen und Trapez an ihrer Form erkennen",
+       "merkzettel": {
+        "regel": "Ein Trapez hat zwei parallele Seiten. Ein Drachen hat zwei Paare gleich langer Nachbarseiten.",
+        "beispiel": "Ein Viereck hat genau ein Paar paralleler Seiten.\nEs ist ein Trapez, aber kein Parallelogramm."
+       }
       },
       {
        "id": "5.5.9-V4",
@@ -3818,19 +3925,14 @@
        "voraussetzungen": [
         "5.5.9-V3"
        ],
-       "grundlage": "Zwei Vierecke vergleichen: Was haben sie gemeinsam?"
+       "grundlage": "Zwei Vierecke vergleichen: Was haben sie gemeinsam?",
+       "merkzettel": {
+        "regel": "Prüfe der Reihe nach: Welche Seiten sind parallel, welche sind gleich lang, gibt es rechte Winkel?",
+        "beispiel": "Das Quadrat hat alle Eigenschaften.\nEs ist zugleich Rechteck, Raute, Parallelogramm, Trapez und Drachen."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Trapez ist ein Viereck mit zwei parallelen Seiten.",
-       "Ein Drachen ist ein Viereck mit zwei Paaren gleich langer Nachbarseiten. Eine Diagonale ist seine Symmetrieachse.",
-       "Im Drachen sind die Diagonalen senkrecht zueinander.",
-       "Haus der Vierecke: Das Quadrat hat die meisten Eigenschaften. Es ist zugleich Rechteck, Raute, Parallelogramm, Trapez und Drachen."
-      ],
-      "beispiel": "Ein Viereck mit genau einem Paar paralleler Seiten ist ein Trapez, aber kein Parallelogramm.",
-      "heft": "Prüfe ein Viereck der Reihe nach: parallele Seiten, gleich lange Seiten, rechte Winkel, Symmetrieachsen."
-     },
+     "heft": "Prüfe ein Viereck der Reihe nach: parallele Seiten, gleich lange Seiten, rechte Winkel, Symmetrieachsen.",
      "wortspeicher": [
       {
        "wort": "Trapez",
@@ -3871,7 +3973,11 @@
        "voraussetzungen": [
         "5.2.4-S1"
        ],
-       "grundlage": "Dinge aus dem Alltag mit ihrer Größe verbinden: Tür 2 m, Tafel Schokolade 100 g"
+       "grundlage": "Dinge aus dem Alltag mit ihrer Größe verbinden: Tür 2 m, Tafel Schokolade 100 g",
+       "merkzettel": {
+        "regel": "Eine Größe besteht aus einer Zahl und einer Einheit. Merke dir Vergleiche: Eine Tür ist 2 m hoch, eine Tafel Schokolade wiegt 100 g, eine Schulstunde dauert 45 min.",
+        "beispiel": "Wie schwer ist ein Apfel?\nEr ist etwas schwerer als eine Tafel Schokolade: etwa 150 g."
+       }
       },
       {
        "id": "5.6.1-S2",
@@ -3879,20 +3985,14 @@
        "voraussetzungen": [
         "5.6.1-S1"
        ],
-       "grundlage": "Abzählen, wie oft eine bekannte Größe in ein Bild passt"
+       "grundlage": "Abzählen, wie oft eine bekannte Größe in ein Bild passt",
+       "merkzettel": {
+        "regel": "Suche im Bild etwas, dessen Größe du kennst. Zähle, wie oft es hineinpasst, und rechne mal.",
+        "beispiel": "Die Tür ist 2 m hoch. Der Turm ist 4-mal so hoch wie die Tür.\n4 · 2 m = 8 m"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine Größe besteht aus einer Zahl und einer Einheit: 2 m, 100 g, 45 min, 3 €.",
-       "Zum Schätzen brauchst du Vergleiche aus dem Alltag. Solche Stützgrößen merkst du dir: Eine Tür ist 2 m hoch. Ein großer Schritt ist 1 m lang. Ein Finger ist 1 cm breit.",
-       "Stützgrößen für das Gewicht: Eine Tafel Schokolade wiegt 100 g. Ein Liter Milch wiegt 1 kg. Ein kleines Auto wiegt 1 t.",
-       "Stützgrößen für die Zeit: Eine Schulstunde dauert 45 min. Einmal in die Hände klatschen dauert 1 s.",
-       "So schätzt du: Suche im Bild etwas, dessen Größe du kennst. Das ist die Vergleichsgröße. Zähle, wie oft sie hineinpasst, und rechne mal."
-      ],
-      "beispiel": "Die Tür ist 2 m hoch. Der Turm ist 4-mal so hoch wie die Tür. Also ist der Turm ungefähr 4 · 2 m = 8 m hoch.",
-      "heft": "Schreibe beim Schätzen „ungefähr“ oder „etwa“ dazu. Eine Schätzung muss nicht genau stimmen, aber sie muss passen."
-     },
+     "heft": "Schreibe beim Schätzen „ungefähr“ oder „etwa“ dazu. Eine Schätzung muss nicht genau stimmen, aber sie muss passen.",
      "wortspeicher": [
       {
        "wort": "Größe",
@@ -3937,7 +4037,11 @@
        "voraussetzungen": [
         "5.4.1-K3"
        ],
-       "grundlage": "Münzen und Scheine zählen, 1 € sind 100 ct"
+       "grundlage": "Münzen und Scheine zählen, 1 € sind 100 ct",
+       "merkzettel": {
+        "regel": "1 € = 100 ct. Vor dem Komma stehen die Euro, nach dem Komma stehen die Cent mit zwei Ziffern.",
+        "beispiel": "3,50 € = 3 € 50 ct = 350 ct\n0,05 € = 5 ct"
+       }
       },
       {
        "id": "5.6.2-B2",
@@ -3947,19 +4051,14 @@
         "5.3.2-A2",
         "5.3.3-S2"
        ],
-       "grundlage": "Beträge in Euro und Cent getrennt zusammenzählen"
+       "grundlage": "Beträge in Euro und Cent getrennt zusammenzählen",
+       "merkzettel": {
+        "regel": "Wandle alle Beträge in Cent um. Dann rechnest du wie mit natürlichen Zahlen.",
+        "beispiel": "2,80 € + 1,50 €\n280 ct + 150 ct = 430 ct\n430 ct = 4,30 €"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "1 € = 100 ct.",
-       "Mit Komma: Vor dem Komma stehen die Euro, nach dem Komma die Cent. Nach dem Komma stehen immer zwei Ziffern: 3,50 € = 3 € 50 ct und 0,05 € = 5 ct.",
-       "Beim Rechnen wandelst du am besten alles in Cent um. Dann rechnest du wie mit natürlichen Zahlen.",
-       "Rückgeld: Ziehe den Preis vom gegebenen Betrag ab. Oder zähle vom Preis aus weiter, bis du beim gegebenen Betrag bist."
-      ],
-      "beispiel": "2,80 € + 1,50 € sind 280 ct + 150 ct = 430 ct. Das sind 4,30 €.",
-      "heft": "Schreibe Beträge stellengerecht untereinander: Komma unter Komma."
-     },
+     "heft": "Schreibe Beträge stellengerecht untereinander: Komma unter Komma.",
      "wortspeicher": [
       {
        "wort": "Euro",
@@ -4004,7 +4103,11 @@
        "voraussetzungen": [
         "5.4.1-K3"
        ],
-       "grundlage": "1 h sind 60 min, 1 min sind 60 s, 1 Tag sind 24 h"
+       "grundlage": "1 h sind 60 min, 1 min sind 60 s, 1 Tag sind 24 h",
+       "merkzettel": {
+        "regel": "1 min = 60 s. 1 h = 60 min. 1 d = 24 h.",
+        "beispiel": "3 h = 3 · 60 min = 180 min\n150 min = 120 min + 30 min = 2 h 30 min"
+       }
       },
       {
        "id": "5.6.3-Z2",
@@ -4012,19 +4115,14 @@
        "voraussetzungen": [
         "5.6.3-Z1"
        ],
-       "grundlage": "Uhrzeiten an der Zeigeruhr ablesen, Zeitspannen an der Zeitleiste abzählen"
+       "grundlage": "Uhrzeiten an der Zeigeruhr ablesen, Zeitspannen an der Zeitleiste abzählen",
+       "merkzettel": {
+        "regel": "Rechne in Schritten: erst bis zur vollen Stunde, dann die ganzen Stunden, dann den Rest.",
+        "beispiel": "Von 8:35 Uhr bis 10:20 Uhr:\n25 min bis 9:00 Uhr, 1 h bis 10:00 Uhr, dann 20 min.\nZusammen 1 h 45 min."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "1 min = 60 s. 1 h = 60 min. 1 d = 24 h. Die Umrechnungszahl ist bei der Zeit nicht 10, 100 oder 1000.",
-       "Ein Zeitpunkt sagt, wann etwas ist: 14:35 Uhr. Eine Zeitspanne sagt, wie lange etwas dauert: 2 h 15 min.",
-       "Zeitspannen berechnest du in Schritten: erst bis zur vollen Stunde, dann die ganzen Stunden, dann den Rest.",
-       "Geht eine Zeitspanne über Mitternacht, rechnest du erst bis 24:00 Uhr und dann ab 0:00 Uhr weiter."
-      ],
-      "beispiel": "Von 8:35 Uhr bis 10:20 Uhr: 25 min bis 9:00 Uhr, dann 1 h bis 10:00 Uhr, dann 20 min. Zusammen sind das 1 h 45 min.",
-      "heft": "Zeichne eine Zeitleiste und trage die Schritte als Bögen ein."
-     },
+     "heft": "Zeichne eine Zeitleiste und trage die Schritte als Bögen ein.",
      "wortspeicher": [
       {
        "wort": "Zeitpunkt",
@@ -4074,7 +4172,11 @@
        "voraussetzungen": [
         "5.4.1-K3"
        ],
-       "grundlage": "1 kg sind 1000 g, 1 t sind 1000 kg, mit der Einheitentafel"
+       "grundlage": "1 kg sind 1000 g, 1 t sind 1000 kg, mit der Einheitentafel",
+       "merkzettel": {
+        "regel": "1 kg = 1000 g. 1 t = 1000 kg. In die kleinere Einheit rechnest du mal 1000, in die größere geteilt durch 1000.",
+        "beispiel": "3 kg 250 g = 3250 g\n4500 kg = 4 t 500 kg"
+       }
       },
       {
        "id": "5.6.4-W2",
@@ -4082,20 +4184,14 @@
        "voraussetzungen": [
         "5.6.4-W1"
        ],
-       "grundlage": "Gewichtsstücke an der Waage zusammenzählen"
+       "grundlage": "Gewichtsstücke an der Waage zusammenzählen",
+       "merkzettel": {
+        "regel": "Wandle zuerst alle Gewichte in dieselbe Einheit um. Dann rechne.",
+        "beispiel": "2 kg + 750 g\n2000 g + 750 g = 2750 g"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "1 kg = 1000 g. 1 t = 1000 kg. 1 g = 1000 mg. Die Umrechnungszahl ist beim Gewicht immer 1000.",
-       "In die kleinere Einheit: mal 1000, die Maßzahl wird größer. In die größere Einheit: geteilt durch 1000, die Maßzahl wird kleiner.",
-       "Mit Komma: 2,5 kg = 2 kg 500 g = 2500 g.",
-       "Vor dem Rechnen wandelst du alle Gewichte in dieselbe Einheit um.",
-       "In der Physik heißt das Gewicht auch Masse."
-      ],
-      "beispiel": "3 kg 250 g = 3250 g. Und 4500 kg = 4 t 500 kg.",
-      "heft": "Die Einheitentafel hilft beim Umwandeln: Trage die Ziffern ein und lies in der neuen Einheit ab."
-     },
+     "heft": "Die Einheitentafel hilft beim Umwandeln: Trage die Ziffern ein und lies in der neuen Einheit ab.",
      "wortspeicher": [
       {
        "wort": "Gewicht",
@@ -4140,7 +4236,11 @@
        "voraussetzungen": [
         "5.4.1-K3"
        ],
-       "grundlage": "1 cm sind 10 mm, 1 m sind 100 cm, 1 km sind 1000 m, mit der Einheitentafel"
+       "grundlage": "1 cm sind 10 mm, 1 m sind 100 cm, 1 km sind 1000 m, mit der Einheitentafel",
+       "merkzettel": {
+        "regel": "1 cm = 10 mm. 1 m = 100 cm. 1 km = 1000 m. In die kleinere Einheit rechnest du mal, in die größere geteilt.",
+        "beispiel": "4 m 20 cm = 420 cm\n3500 m = 3 km 500 m"
+       }
       },
       {
        "id": "5.6.5-L2",
@@ -4148,19 +4248,14 @@
        "voraussetzungen": [
         "5.6.5-L1"
        ],
-       "grundlage": "Längen in derselben Einheit zusammenzählen und abziehen"
+       "grundlage": "Längen in derselben Einheit zusammenzählen und abziehen",
+       "merkzettel": {
+        "regel": "Wandle zuerst alle Längen in dieselbe Einheit um. Dann rechne.",
+        "beispiel": "1 m 20 cm + 95 cm\n120 cm + 95 cm = 215 cm = 2 m 15 cm"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "1 cm = 10 mm. 1 dm = 10 cm. 1 m = 10 dm = 100 cm. 1 km = 1000 m.",
-       "In die kleinere Einheit: mal die Umrechnungszahl. In die größere Einheit: geteilt durch die Umrechnungszahl.",
-       "Mit Komma: 2,5 km = 2 km 500 m = 2500 m und 1,75 m = 1 m 75 cm = 175 cm.",
-       "Vor dem Rechnen wandelst du alle Längen in dieselbe Einheit um."
-      ],
-      "beispiel": "4 m 20 cm = 420 cm. Und 3500 m = 3 km 500 m.",
-      "heft": "Achte auf die Richtung: Bei der kleineren Einheit steht die größere Maßzahl."
-     },
+     "heft": "Achte auf die Richtung: Bei der kleineren Einheit steht die größere Maßzahl.",
      "wortspeicher": [
       {
        "wort": "Länge",
@@ -4206,7 +4301,11 @@
         "5.6.5-L1",
         "5.4.2-M2"
        ],
-       "grundlage": "Mit der Maßstabsleiste: 1 cm auf der Karte sind 100 m in Wirklichkeit"
+       "grundlage": "Mit der Maßstabsleiste: 1 cm auf der Karte sind 100 m in Wirklichkeit",
+       "merkzettel": {
+        "regel": "Maßstab 1:100 heißt: 1 cm auf der Karte sind 100 cm in Wirklichkeit. Von der Karte zur Wirklichkeit rechnest du mal die Maßstabszahl.",
+        "beispiel": "Maßstab 1:25 000. Auf der Karte sind es 4 cm.\n4 cm · 25 000 = 100 000 cm = 1 km"
+       }
       },
       {
        "id": "5.6.6-K2",
@@ -4214,20 +4313,14 @@
        "voraussetzungen": [
         "5.6.6-K1"
        ],
-       "grundlage": "Mit der Maßstabsleiste rückwärts: Wie viele Zentimeter auf der Karte?"
+       "grundlage": "Mit der Maßstabsleiste rückwärts: Wie viele Zentimeter auf der Karte?",
+       "merkzettel": {
+        "regel": "Von der Wirklichkeit zur Karte rechnest du geteilt durch die Maßstabszahl. Wandle vorher in cm um.",
+        "beispiel": "Maßstab 1:100. Das Zimmer ist 5 m lang.\n5 m = 500 cm\n500 cm : 100 = 5 cm auf dem Plan"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Der Maßstab sagt, wie stark eine Karte oder ein Plan verkleinert ist.",
-       "Maßstab 1:100 heißt: 1 cm auf dem Plan sind 100 cm in Wirklichkeit, also 1 m.",
-       "Von der Karte zur Wirklichkeit: mal die Maßstabszahl. Von der Wirklichkeit zur Karte: geteilt durch die Maßstabszahl.",
-       "Wandle am Ende in eine passende Einheit um: 100 000 cm = 1000 m = 1 km.",
-       "Bei einer Vergrößerung steht die größere Zahl vorn: Bei 10:1 ist das Bild 10-mal so groß wie das Ding."
-      ],
-      "beispiel": "Maßstab 1:25 000. Auf der Karte sind es 4 cm. In Wirklichkeit sind es 4 cm · 25 000 = 100 000 cm = 1 km.",
-      "heft": "Miss auf der Karte mit dem Lineal und schreibe zuerst die gemessene Länge auf."
-     },
+     "heft": "Miss auf der Karte mit dem Lineal und schreibe zuerst die gemessene Länge auf.",
      "wortspeicher": [
       {
        "wort": "Maßstab",
@@ -4273,7 +4366,11 @@
         "5.6.2-B2",
         "5.4.6-T3"
        ],
-       "grundlage": "Wichtige Angaben antippen, Rechnung wählen, Ergebnis mit Einheit aufschreiben"
+       "grundlage": "Wichtige Angaben antippen, Rechnung wählen, Ergebnis mit Einheit aufschreiben",
+       "merkzettel": {
+        "regel": "Was ist gefragt, und welche Angaben brauchst du dafür? Rechne und schreibe einen Antwortsatz mit Einheit.",
+        "beispiel": "Mia kauft 3 Hefte für je 80 ct.\n3 · 80 ct = 240 ct\nAntwort: Mia zahlt 2,40 €."
+       }
       },
       {
        "id": "5.6.7-A2",
@@ -4282,20 +4379,14 @@
         "5.6.7-A1",
         "5.6.5-L2"
        ],
-       "grundlage": "Zwei Schritte nacheinander: erst das eine ausrechnen, dann damit weiterrechnen"
+       "grundlage": "Zwei Schritte nacheinander: erst das eine ausrechnen, dann damit weiterrechnen",
+       "merkzettel": {
+        "regel": "Rechne Schritt für Schritt. Nicht jede Zahl im Text gehört in die Rechnung.",
+        "beispiel": "Mia ist 11 Jahre alt. Sie kauft 3 Hefte für je 80 ct und zahlt mit 5 €.\n3 · 80 ct = 240 ct\n500 ct − 240 ct = 260 ct. Das Alter brauchst du nicht."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Lies die Aufgabe genau. Was ist gefragt? Welche Angaben brauchst du dafür?",
-       "Nicht jede Zahl im Text gehört in die Rechnung. Manche Angaben sind überflüssig.",
-       "Schreibe die Rechnung auf und rechne. Wandle vorher in dieselbe Einheit um.",
-       "Prüfe das Ergebnis: Kann das stimmen? Ein Überschlag hilft.",
-       "Schreibe einen Antwortsatz mit Einheit. Er beantwortet genau die Frage."
-      ],
-      "beispiel": "Mia kauft 3 Hefte für je 80 ct. Sie zahlt 3 · 80 ct = 240 ct. Antwort: Mia zahlt 2,40 €.",
-      "heft": "Schreibe im Heft immer: Frage, Rechnung, Antwort."
-     },
+     "heft": "Schreibe im Heft immer: Frage, Rechnung, Antwort.",
      "wortspeicher": [
       {
        "wort": "Angabe",
@@ -4335,18 +4426,14 @@
        "voraussetzungen": [
         "5.6.7-A2"
        ],
-       "grundlage": "Preise aus einer Preisliste ablesen und zusammenzählen"
+       "grundlage": "Preise aus einer Preisliste ablesen und zusammenzählen",
+       "merkzettel": {
+        "regel": "Suche in der Liste oder Tabelle die Zeile, die zur Frage passt. Rechne Schritt für Schritt mit Einheit.",
+        "beispiel": "Ein Rezept für 4 Personen braucht 500 g Mehl.\nFür 8 Personen: 2 · 500 g = 1000 g = 1 kg"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Im Alltag stehen die Angaben oft in einer Liste oder Tabelle: Preisliste, Fahrplan, Rezept, Rechnung.",
-       "Suche zuerst die Zeile und die Spalte, die zur Frage passen.",
-       "Rechne Schritt für Schritt und schreibe Zwischenergebnisse mit Einheit auf."
-      ],
-      "beispiel": "Ein Rezept für 4 Personen braucht 500 g Mehl. Für 8 Personen brauchst du doppelt so viel: 2 · 500 g = 1000 g = 1 kg.",
-      "heft": "Unterstreiche in einer Liste die Angaben, die du brauchst."
-     },
+     "heft": "Unterstreiche in einer Liste die Angaben, die du brauchst.",
      "wortspeicher": [
       {
        "wort": "Preisliste",
@@ -4382,7 +4469,11 @@
        "voraussetzungen": [
         "5.5.1-B2"
        ],
-       "grundlage": "Am Kreis die Strecke vom Mittelpunkt bis zur Kreislinie zeigen und am Lineal messen"
+       "grundlage": "Am Kreis die Strecke vom Mittelpunkt bis zur Kreislinie zeigen und am Lineal messen",
+       "merkzettel": {
+        "regel": "Der Radius geht vom Mittelpunkt bis zur Kreislinie. Der Durchmesser geht durch den Mittelpunkt ganz durch den Kreis und ist doppelt so lang wie der Radius.",
+        "beispiel": "Der Radius ist 3 cm.\nDer Durchmesser ist 2 · 3 cm = 6 cm."
+       }
       },
       {
        "id": "5.7.1-R2",
@@ -4390,19 +4481,14 @@
        "voraussetzungen": [
         "5.7.1-R1"
        ],
-       "grundlage": "Am Karogitter einen Kreis aus Mittelpunkt und Radius in Kästchen zeichnen"
+       "grundlage": "Am Karogitter einen Kreis aus Mittelpunkt und Radius in Kästchen zeichnen",
+       "merkzettel": {
+        "regel": "Stelle den Radius am Lineal ein. Stich in den Mittelpunkt und drehe den Zirkel einmal ganz herum.",
+        "beispiel": "Der Durchmesser soll 8 cm sein.\nStelle den Zirkel auf den Radius ein: 8 cm : 2 = 4 cm."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Alle Punkte der Kreislinie sind gleich weit vom Mittelpunkt M entfernt.",
-       "Der Radius r ist die Strecke vom Mittelpunkt bis zur Kreislinie.",
-       "Der Durchmesser d geht durch den Mittelpunkt einmal ganz durch den Kreis. Er ist doppelt so lang wie der Radius: d = 2 · r.",
-       "Mit dem Zirkel: Stelle den Radius am Lineal ein, stich in den Mittelpunkt und drehe einmal herum."
-      ],
-      "beispiel": "Der Radius ist 3 cm. Dann ist der Durchmesser 2 · 3 cm = 6 cm.",
-      "heft": "Markiere den Mittelpunkt mit einem kleinen Kreuz und schreibe M daneben."
-     },
+     "heft": "Markiere den Mittelpunkt mit einem kleinen Kreuz und schreibe M daneben.",
      "wortspeicher": [
       {
        "wort": "Kreis",
@@ -4457,7 +4543,11 @@
        "voraussetzungen": [
         "5.5.1-B1"
        ],
-       "grundlage": "Am Bild Scheitel und Schenkel eines Winkels zeigen"
+       "grundlage": "Am Bild Scheitel und Schenkel eines Winkels zeigen",
+       "merkzettel": {
+        "regel": "Ein Winkel hat einen Scheitel und zwei Schenkel. Die Schenkel beginnen im Scheitel.",
+        "beispiel": "Beim Winkel α treffen sich zwei Linien im Punkt S.\nS ist der Scheitel. Die beiden Linien sind die Schenkel."
+       }
       },
       {
        "id": "5.7.2-V2",
@@ -4465,20 +4555,14 @@
        "voraussetzungen": [
         "5.7.2-V1"
        ],
-       "grundlage": "Zwei Winkel vergleichen, indem man in Gedanken einen auf den anderen legt"
+       "grundlage": "Zwei Winkel vergleichen, indem man in Gedanken einen auf den anderen legt",
+       "merkzettel": {
+        "regel": "Es zählt nur, wie weit sich die Schenkel öffnen. Die Länge der Schenkel ist egal.",
+        "beispiel": "Der Winkel α hat kurze Schenkel, der Winkel β hat lange Schenkel.\nα ist weiter geöffnet. Also ist α größer."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Winkel besteht aus einem Scheitel und zwei Schenkeln. Die Schenkel sind Strahlen, die im Scheitel beginnen.",
-       "Winkel bekommen griechische Buchstaben: α (Alpha), β (Beta), γ (Gamma), δ (Delta).",
-       "Ein Bogen zeigt, welcher Winkel gemeint ist.",
-       "Die Größe eines Winkels hängt nicht von der Länge der Schenkel ab. Es zählt nur, wie weit sich die Schenkel öffnen.",
-       "Ab M: ∢ASB ist der Winkel mit dem Scheitel S. Er geht vom Schenkel SA gegen den Uhrzeigersinn bis zum Schenkel SB."
-      ],
-      "beispiel": "Zwei Winkel vergleichst du, indem du sie in Gedanken aufeinanderlegst: Scheitel auf Scheitel, ein Schenkel auf den anderen.",
-      "heft": "Zeichne den Bogen mit Farbe und schreibe den Buchstaben hinein."
-     },
+     "heft": "Zeichne den Bogen mit Farbe und schreibe den Buchstaben hinein.",
      "wortspeicher": [
       {
        "wort": "Winkel",
@@ -4524,7 +4608,11 @@
         "5.7.2-V1",
         "5.5.2-S1"
        ],
-       "grundlage": "Einen Winkel mit der Ecke eines Blattes vergleichen: kleiner, gleich oder größer als ein rechter Winkel"
+       "grundlage": "Einen Winkel mit der Ecke eines Blattes vergleichen: kleiner, gleich oder größer als ein rechter Winkel",
+       "merkzettel": {
+        "regel": "Ein rechter Winkel hat 90°. Ein spitzer Winkel ist kleiner als 90°, ein stumpfer Winkel liegt zwischen 90° und 180°.",
+        "beispiel": "35° ist ein spitzer Winkel.\n90° ist ein rechter Winkel.\n120° ist ein stumpfer Winkel."
+       }
       },
       {
        "id": "5.7.3-A2",
@@ -4532,20 +4620,14 @@
        "voraussetzungen": [
         "5.7.3-A1"
        ],
-       "grundlage": "Mit dem rechten Winkel (90°) und dem halben rechten Winkel (45°) vergleichen"
+       "grundlage": "Mit dem rechten Winkel (90°) und dem halben rechten Winkel (45°) vergleichen",
+       "merkzettel": {
+        "regel": "Vergleiche mit dem rechten Winkel (90°) und mit dem halben rechten Winkel (45°).",
+        "beispiel": "Der Winkel ist etwas größer als ein rechter Winkel.\nEr hat ungefähr 100°."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Winkel misst man in Grad. Ein rechter Winkel hat 90°.",
-       "Ein spitzer Winkel ist kleiner als 90°. Ein stumpfer Winkel liegt zwischen 90° und 180°.",
-       "Ab G: Ein gestreckter Winkel hat 180°. Seine Schenkel bilden eine Gerade. Ein Vollwinkel hat 360°.",
-       "Ab M: Ein überstumpfer Winkel liegt zwischen 180° und 360°.",
-       "Zum Schätzen: Vergleiche mit 90° und mit dem halben rechten Winkel, 45°."
-      ],
-      "beispiel": "Der Winkel ist etwas größer als ein rechter Winkel. Er ist stumpf und hat ungefähr 100°.",
-      "heft": "Schreibe beim Schätzen „etwa“ vor die Gradzahl."
-     },
+     "heft": "Schreibe beim Schätzen „etwa“ vor die Gradzahl.",
      "wortspeicher": [
       {
        "wort": "Grad",
@@ -4596,19 +4678,14 @@
         "5.5.4-K1",
         "5.7.3-A1"
        ],
-       "grundlage": "Am Gradnetz vom Äquator aus nach Norden zählen und vom Längengrad 0° aus nach Osten"
+       "grundlage": "Am Gradnetz vom Äquator aus nach Norden zählen und vom Längengrad 0° aus nach Osten",
+       "merkzettel": {
+        "regel": "Die Breite zählt vom Äquator nach Norden (N) oder Süden (S), die Länge vom Längengrad 0° nach Osten (O) oder Westen (W). Nenne zuerst die Breite.",
+        "beispiel": "Berlin liegt bei 52° N, 13° O.\nDas ist 52° nördlich vom Äquator und 13° östlich vom Längengrad 0°."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Das Gradnetz legt Linien um die Erde. Damit lässt sich jeder Ort genau angeben.",
-       "Die Breitengrade zählen vom Äquator aus nach Norden (N) und nach Süden (S), bis 90°.",
-       "Die Längengrade zählen vom Längengrad 0° aus nach Osten (O) und nach Westen (W), bis 180°. Ab G heißt er Nullmeridian.",
-       "Man nennt zuerst die Breite, dann die Länge."
-      ],
-      "beispiel": "Berlin liegt bei 52° N, 13° O: 52° nördlich vom Äquator und 13° östlich vom Nullmeridian.",
-      "heft": "Fahre mit dem Finger erst die waagerechte Linie entlang, dann die senkrechte."
-     },
+     "heft": "Fahre mit dem Finger erst die waagerechte Linie entlang, dann die senkrechte.",
      "wortspeicher": [
       {
        "wort": "Gradnetz",
@@ -4658,7 +4735,11 @@
        "voraussetzungen": [
         "5.7.3-A1"
        ],
-       "grundlage": "Das Geodreieck anlegen: Nullpunkt auf den Scheitel, lange Seite auf einen Schenkel, auf der Skala ab 0 lesen"
+       "grundlage": "Das Geodreieck anlegen: Nullpunkt auf den Scheitel, lange Seite auf einen Schenkel, auf der Skala ab 0 lesen",
+       "merkzettel": {
+        "regel": "Lege den Nullpunkt des Geodreiecks auf den Scheitel und die lange Seite auf einen Schenkel. Lies auf der Skala ab, die auf diesem Schenkel mit 0 beginnt.",
+        "beispiel": "Der zweite Schenkel zeigt auf 70 und auf 110.\nDer Winkel ist spitz. Also sind es 70°."
+       }
       },
       {
        "id": "5.7.4-W2",
@@ -4666,20 +4747,14 @@
        "voraussetzungen": [
         "5.7.4-W1"
        ],
-       "grundlage": "Am Geodreieck die Gradzahl auf der Skala ab 0 suchen und den Schenkel dorthin legen"
+       "grundlage": "Am Geodreieck die Gradzahl auf der Skala ab 0 suchen und den Schenkel dorthin legen",
+       "merkzettel": {
+        "regel": "Zeichne einen Schenkel und lege das Geodreieck an. Markiere die Gradzahl und verbinde die Marke mit dem Scheitel.",
+        "beispiel": "Winkel von 50°: Zeichne einen Schenkel mit dem Scheitel S.\nLege den Nullpunkt auf S. Markiere bei 50° einen Punkt und verbinde ihn mit S."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Lege den Nullpunkt des Geodreiecks genau auf den Scheitel.",
-       "Lege die lange Seite des Geodreiecks genau auf einen Schenkel.",
-       "Lies auf der Skala ab, die auf diesem Schenkel mit 0 beginnt. Die andere Skala zeigt 180° minus den Winkel.",
-       "Ab M: Einen überstumpfen Winkel misst du über den kleinen Winkel: 360° minus den kleinen Winkel.",
-       "Zeichnen: Zeichne einen Schenkel, lege das Geodreieck an, markiere die Gradzahl und verbinde mit dem Scheitel."
-      ],
-      "beispiel": "Der kleine Winkel ist 110°. Dann ist der überstumpfe Winkel 360° − 110° = 250°.",
-      "heft": "Prüfe mit einer Schätzung: Spitz oder stumpf? Passt die Zahl dazu?"
-     },
+     "heft": "Prüfe mit einer Schätzung: Spitz oder stumpf? Passt die Zahl dazu?",
      "wortspeicher": [
       {
        "wort": "Nullpunkt",
@@ -4720,7 +4795,11 @@
         "5.7.4-W1",
         "5.5.7-V1"
        ],
-       "grundlage": "An einem Dreieck die Seiten vergleichen und den rechten Winkel suchen"
+       "grundlage": "An einem Dreieck die Seiten vergleichen und den rechten Winkel suchen",
+       "merkzettel": {
+        "regel": "Nach den Seiten: gleichseitig (drei Seiten gleich lang) oder gleichschenklig (zwei Seiten gleich lang). Nach den Winkeln: rechtwinklig heißt, ein Winkel ist ein rechter Winkel.",
+        "beispiel": "Ein Dreieck hat die Seiten 4 cm, 4 cm und 3 cm.\nZwei Seiten sind gleich lang. Es ist gleichschenklig."
+       }
       },
       {
        "id": "5.7.X2-D2",
@@ -4729,19 +4808,14 @@
         "5.7.X2-D1",
         "5.7.4-W2"
        ],
-       "grundlage": "Am Karogitter ein Dreieck aus drei Gitterpunkten zeichnen"
+       "grundlage": "Am Karogitter ein Dreieck aus drei Gitterpunkten zeichnen",
+       "merkzettel": {
+        "regel": "Zeichne zuerst eine Seite. Trage dann die Winkel oder die anderen Seiten an ihren Endpunkten an.",
+        "beispiel": "Seite AB = 5 cm, Winkel bei A 60°, Winkel bei B 40°.\nZeichne AB. Trage bei A 60° an und bei B 40°. Wo sich die Schenkel schneiden, liegt C."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Nach den Seiten: Gleichseitig heißt, alle drei Seiten sind gleich lang. Gleichschenklig heißt, mindestens zwei Seiten sind gleich lang. Sonst ist das Dreieck unregelmäßig.",
-       "Ein gleichseitiges Dreieck ist auch gleichschenklig.",
-       "Nach den Winkeln: Rechtwinklig heißt, ein Winkel ist ein rechter Winkel. Ab G: spitzwinklig (alle Winkel spitz) und stumpfwinklig (ein Winkel stumpf).",
-       "Ab E: Die drei Winkel eines Dreiecks ergeben zusammen 180°."
-      ],
-      "beispiel": "Ein Dreieck hat die Seiten 4 cm, 4 cm und 3 cm. Zwei Seiten sind gleich lang: Es ist gleichschenklig.",
-      "heft": "Zeichne zuerst eine Seite, dann die Winkel an ihren Enden. Beschrifte die Ecken gegen den Uhrzeigersinn mit A, B, C."
-     },
+     "heft": "Zeichne zuerst eine Seite, dann die Winkel an ihren Enden. Beschrifte die Ecken gegen den Uhrzeigersinn mit A, B, C.",
      "wortspeicher": [
       {
        "wort": "Dreieck",
@@ -4807,7 +4881,11 @@
        "voraussetzungen": [
         "5.5.7-V1"
        ],
-       "grundlage": "Kästchen einer Figur zählen, Reihe für Reihe"
+       "grundlage": "Kästchen einer Figur zählen, Reihe für Reihe",
+       "merkzettel": {
+        "regel": "Der Flächeninhalt sagt, wie viel Platz eine Fläche hat. Zähle die Kästchen, die sie bedeckt.",
+        "beispiel": "Ein Rechteck ist 4 Kästchen lang und 3 Kästchen breit.\nEs bedeckt 4 · 3 = 12 Kästchen."
+       }
       },
       {
        "id": "5.8.1-Z2",
@@ -4815,19 +4893,14 @@
        "voraussetzungen": [
         "5.8.1-Z1"
        ],
-       "grundlage": "Mit dem Finger den Rand entlangfahren und die Kästchenseiten zählen"
+       "grundlage": "Mit dem Finger den Rand entlangfahren und die Kästchenseiten zählen",
+       "merkzettel": {
+        "regel": "Der Umfang ist die Länge des Randes einmal ganz herum. Zähle die Kästchenseiten auf dem Rand.",
+        "beispiel": "Ein Rechteck ist 4 Kästchen lang und 3 Kästchen breit.\nUmfang: 4 + 3 + 4 + 3 = 14 Kästchenseiten"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Der Flächeninhalt sagt, wie viel Platz eine Fläche hat. Du zählst die Kästchen, die sie bedeckt.",
-       "Zwei Flächen vergleichst du, indem du ihre Kästchen zählst. Mehr Kästchen heißt größerer Flächeninhalt.",
-       "Der Umfang ist die Länge des Randes einmal ganz herum. Du zählst die Kästchenseiten auf dem Rand.",
-       "Gleicher Umfang heißt nicht gleicher Flächeninhalt."
-      ],
-      "beispiel": "Ein Rechteck ist 4 Kästchen lang und 3 Kästchen breit. Es bedeckt 4 · 3 = 12 Kästchen. Sein Umfang ist 4 + 3 + 4 + 3 = 14 Kästchenseiten.",
-      "heft": "Fahre beim Umfang mit dem Bleistift den Rand entlang und mache an jeder Kästchenseite einen kleinen Strich."
-     },
+     "heft": "Fahre beim Umfang mit dem Bleistift den Rand entlang und mache an jeder Kästchenseite einen kleinen Strich.",
      "wortspeicher": [
       {
        "wort": "Flächeninhalt",
@@ -4878,7 +4951,11 @@
         "5.8.1-Z1",
         "5.6.5-L1"
        ],
-       "grundlage": "Ein Feld mit 1 cm Seitenlänge ist 1 cm²: Felder einer Figur zählen"
+       "grundlage": "Ein Feld mit 1 cm Seitenlänge ist 1 cm²: Felder einer Figur zählen",
+       "merkzettel": {
+        "regel": "Flächen misst man in mm², cm², dm², m² und km². Ein Quadrat mit 1 cm Seitenlänge hat 1 cm².",
+        "beispiel": "Eine Briefmarke: cm²\nEin Klassenzimmer: m²\nEin Land: km²"
+       }
       },
       {
        "id": "5.8.2-H2",
@@ -4887,20 +4964,14 @@
         "5.8.2-H1",
         "5.4.1-K3"
        ],
-       "grundlage": "Mit 100 malnehmen: von einer Flächeneinheit in die nächstkleinere"
+       "grundlage": "Mit 100 malnehmen: von einer Flächeneinheit in die nächstkleinere",
+       "merkzettel": {
+        "regel": "Die Umrechnungszahl ist bei Flächen 100. 1 cm² = 100 mm², 1 dm² = 100 cm², 1 m² = 100 dm².",
+        "beispiel": "3 m² 25 dm²\n= 300 dm² + 25 dm²\n= 325 dm²"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Flächeninhalte misst man in Flächeneinheiten: mm², cm², dm², m², a, ha, km².",
-       "Ein Quadrat mit 1 cm Seitenlänge hat den Flächeninhalt 1 cm². Im Heft sind das 4 Kästchen.",
-       "Die Umrechnungszahl ist bei Flächen 100: 1 cm² = 100 mm², 1 dm² = 100 cm², 1 m² = 100 dm².",
-       "Ab G: 1 km² = 100 ha. Ab M: 1 ha = 100 a und 1 a = 100 m².",
-       "Flächen schreibst du ohne Komma, zum Beispiel 3 m² 25 dm²."
-      ],
-      "beispiel": "3 m² 25 dm² sind 3 · 100 dm² + 25 dm² = 325 dm².",
-      "heft": "Eine Einheitentafel für Flächen hat für jede Einheit zwei Spalten."
-     },
+     "heft": "Eine Einheitentafel für Flächen hat für jede Einheit zwei Spalten.",
      "wortspeicher": [
       {
        "wort": "Quadratzentimeter",
@@ -4946,18 +5017,14 @@
         "5.8.2-H1",
         "5.6.1-S1"
        ],
-       "grundlage": "Eine bekannte Fläche (Heftseite) mehrmals nebeneinanderlegen"
+       "grundlage": "Eine bekannte Fläche (Heftseite) mehrmals nebeneinanderlegen",
+       "merkzettel": {
+        "regel": "Vergleiche mit einer Fläche, die du kennst. Überlege, wie oft sie ungefähr hineinpasst.",
+        "beispiel": "Eine Heftseite hat etwa 6 dm². Ein Tisch ist so groß wie etwa 10 Heftseiten.\n10 · 6 dm² = 60 dm²"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Beim Schätzen vergleichst du mit einer Fläche, die du kennst: einer Stützgröße.",
-       "Eine Briefmarke hat etwa 4 cm², eine Heftseite etwa 6 dm², ein Klassenzimmer etwa 60 m².",
-       "Überlege: Wie oft passt die Stützgröße ungefähr hinein?"
-      ],
-      "beispiel": "Ein Tisch ist so groß wie etwa 10 Heftseiten. Er hat also etwa 10 · 6 dm² = 60 dm².",
-      "heft": "Schreibe beim Schätzen „etwa“ vor das Ergebnis."
-     },
+     "heft": "Schreibe beim Schätzen „etwa“ vor das Ergebnis.",
      "wortspeicher": [
       {
        "wort": "schätzen",
@@ -4989,7 +5056,11 @@
         "5.8.1-Z2",
         "5.4.2-M2"
        ],
-       "grundlage": "Ein Rechteck am Raster: Reihen mal Felder in einer Reihe"
+       "grundlage": "Ein Rechteck am Raster: Reihen mal Felder in einer Reihe",
+       "merkzettel": {
+        "regel": "Flächeninhalt: Länge mal Breite. Umfang: alle vier Seiten zusammen.",
+        "beispiel": "Ein Rechteck ist 5 cm lang und 3 cm breit.\nFlächeninhalt: 5 cm · 3 cm = 15 cm²\nUmfang: 5 cm + 3 cm + 5 cm + 3 cm = 16 cm"
+       }
       },
       {
        "id": "5.8.3-R2",
@@ -4998,20 +5069,14 @@
         "5.8.3-R1",
         "5.8.2-H2"
        ],
-       "grundlage": "Rückwärts: Wie viele Felder hat eine Reihe, wenn es 3 Reihen und 12 Felder sind?"
+       "grundlage": "Rückwärts: Wie viele Felder hat eine Reihe, wenn es 3 Reihen und 12 Felder sind?",
+       "merkzettel": {
+        "regel": "Kennst du den Flächeninhalt und eine Seite, rechnest du Flächeninhalt geteilt durch diese Seite.",
+        "beispiel": "Ein Rechteck hat 24 cm² und ist 6 cm lang.\n24 : 6 = 4\nEs ist 4 cm breit."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Flächeninhalt eines Rechtecks: Länge mal Breite. Ab G: A = a · b.",
-       "Umfang eines Rechtecks: alle vier Seiten zusammen. Ab G: u = 2 · a + 2 · b.",
-       "Beim Quadrat sind alle Seiten gleich lang: A = a · a und u = 4 · a.",
-       "Beide Seiten müssen dieselbe Einheit haben. Sonst wandelst du zuerst um.",
-       "Ab M rückwärts: Kennst du A und eine Seite, rechnest du A geteilt durch diese Seite."
-      ],
-      "beispiel": "Ein Rechteck ist 5 cm lang und 3 cm breit. A = 5 cm · 3 cm = 15 cm² und u = 2 · 5 cm + 2 · 3 cm = 16 cm.",
-      "heft": "Schreibe zuerst die Formel auf, dann die Zahlen mit Einheit."
-     },
+     "heft": "Schreibe zuerst die Formel auf, dann die Zahlen mit Einheit.",
      "wortspeicher": [
       {
        "wort": "Länge",
@@ -5051,7 +5116,11 @@
        "voraussetzungen": [
         "5.8.3-R1"
        ],
-       "grundlage": "Eine Figur am Raster in zwei Rechtecke zerlegen und beide zählen"
+       "grundlage": "Eine Figur am Raster in zwei Rechtecke zerlegen und beide zählen",
+       "merkzettel": {
+        "regel": "Zerlege die Figur in Rechtecke. Rechne jeden Teil aus und zähle die Teile zusammen.",
+        "beispiel": "Ein L besteht aus einem Rechteck mit 6 cm² und einem Rechteck mit 4 cm².\n6 cm² + 4 cm² = 10 cm²"
+       }
       },
       {
        "id": "5.8.4-S2",
@@ -5060,20 +5129,14 @@
         "5.8.4-S1",
         "5.8.3-R2"
        ],
-       "grundlage": "Den äußeren Rand einer Figur am Raster nachfahren und die Seiten zählen"
+       "grundlage": "Den äußeren Rand einer Figur am Raster nachfahren und die Seiten zählen",
+       "merkzettel": {
+        "regel": "Der Umfang ist nur der äußere Rand. Die Linien vom Zerlegen gehören nicht dazu.",
+        "beispiel": "Ein L hat außen die Seiten 4 cm, 2 cm, 2 cm, 1 cm, 2 cm und 3 cm.\n4 + 2 + 2 + 1 + 2 + 3 = 14\nDer Umfang ist 14 cm."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine zusammengesetzte Figur zerlegst du in Rechtecke. Du rechnest jeden Teil aus und zählst die Teile zusammen.",
-       "Ab M auch Ergänzen: Ergänze die Figur zu einem großen Rechteck und ziehe das Stück ab, das zu viel ist.",
-       "Fehlende Seiten erschließt du aus den anderen Seiten.",
-       "Der Umfang ist nur der äußere Rand. Die Linien vom Zerlegen gehören nicht dazu.",
-       "Bei einem Rahmen ziehst du das Loch ab."
-      ],
-      "beispiel": "Ein L aus einem Rechteck mit 6 cm² und einem mit 4 cm² hat 6 cm² + 4 cm² = 10 cm².",
-      "heft": "Nummeriere die Teilflächen und schreibe zu jeder Nummer eine Rechnung."
-     },
+     "heft": "Nummeriere die Teilflächen und schreibe zu jeder Nummer eine Rechnung.",
      "wortspeicher": [
       {
        "wort": "Teilfläche",
@@ -5119,7 +5182,11 @@
        "voraussetzungen": [
         "5.4.1-K2"
        ],
-       "grundlage": "An einem Kreis aus gleich großen Teilen zählen: Wie viele Teile gibt es, wie viele sind gefärbt?"
+       "grundlage": "An einem Kreis aus gleich großen Teilen zählen: Wie viele Teile gibt es, wie viele sind gefärbt?",
+       "merkzettel": {
+        "regel": "Der Nenner steht unten: In so viele gleich große Teile ist das Ganze geteilt. Der Zähler steht oben: So viele Teile sind gemeint.",
+        "beispiel": "Eine Pizza hat 8 gleich große Stücke. 3 Stücke sind gegessen.\nDas sind 3⁄8 der Pizza."
+       }
       },
       {
        "id": "5.9.1-B2",
@@ -5127,7 +5194,11 @@
        "voraussetzungen": [
         "5.9.1-B1"
        ],
-       "grundlage": "In einem Streifen aus gleich großen Teilen so viele Teile färben, wie der Zähler sagt"
+       "grundlage": "In einem Streifen aus gleich großen Teilen so viele Teile färben, wie der Zähler sagt",
+       "merkzettel": {
+        "regel": "Teile das Ganze in so viele gleich große Teile, wie der Nenner sagt. Färbe so viele Teile, wie der Zähler sagt.",
+        "beispiel": "3⁄8 der Pizza sind gegessen.\nZum Ganzen fehlen noch 5⁄8, denn 3 + 5 = 8."
+       }
       },
       {
        "id": "5.9.1-B3",
@@ -5135,22 +5206,14 @@
        "voraussetzungen": [
         "5.9.1-B2"
        ],
-       "grundlage": "Zwei Bruchbilder mit gleich vielen Teilen vergleichen: Wo ist mehr gefärbt?"
+       "grundlage": "Zwei Bruchbilder mit gleich vielen Teilen vergleichen: Wo ist mehr gefärbt?",
+       "merkzettel": {
+        "regel": "Bei gleichem Nenner ist der Bruch mit dem größeren Zähler größer.",
+        "beispiel": "5⁄8 ist größer als 3⁄8.\nDenn 5 Stücke sind mehr als 3 Stücke."
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Ein Ganzes wird in gleich große Teile geteilt. Ein Bruch sagt, wie viele Teile gemeint sind.",
-       "Der Nenner steht unten. Er sagt, in wie viele gleich große Teile das Ganze geteilt ist.",
-       "Der Zähler steht oben. Er zählt die Teile, die gemeint sind.",
-       "Sind die Teile nicht gleich groß, ist es kein Bruchteil.",
-       "Bei gleichem Nenner ist der Bruch mit dem größeren Zähler größer.",
-       "Ab G: Je größer der Nenner, desto kleiner ist ein Teil. 1⁄8 ist kleiner als 1⁄4.",
-       "Ab M: Mehr als ein Ganzes schreibt man als gemischte Zahl, zum Beispiel 1 1⁄2."
-      ],
-      "beispiel": "Eine Pizza ist in 8 gleich große Stücke geteilt. 3 Stücke sind gegessen. Das sind 3⁄8 der Pizza. Übrig sind 5⁄8.",
-      "heft": "Zeichne den Bruchstrich mit dem Lineal. Schreibe den Zähler darüber und den Nenner darunter."
-     },
+     "heft": "Zeichne den Bruchstrich mit dem Lineal. Schreibe den Zähler darüber und den Nenner darunter.",
      "wortspeicher": [
       {
        "wort": "Bruch",
@@ -5217,7 +5280,11 @@
         "5.4.5-D2",
         "5.6.5-L1"
        ],
-       "grundlage": "Eine Größe gerecht in gleich große Teile teilen: Wie groß ist ein Teil?"
+       "grundlage": "Eine Größe gerecht in gleich große Teile teilen: Wie groß ist ein Teil?",
+       "merkzettel": {
+        "regel": "Teile zuerst durch den Nenner. Nimm dann mit dem Zähler mal.",
+        "beispiel": "3⁄4 von 20 kg\n20 kg : 4 = 5 kg\n3 · 5 kg = 15 kg"
+       }
       },
       {
        "id": "5.9.2-T2",
@@ -5225,20 +5292,14 @@
        "voraussetzungen": [
         "5.9.2-T1"
        ],
-       "grundlage": "Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?"
+       "grundlage": "Von einem Teil auf das Ganze schließen: Ein Viertel sind 5 kg, wie viel sind vier Viertel?",
+       "merkzettel": {
+        "regel": "Kennst du einen Teil, findest du das Ganze so: Nimm mit dem Nenner mal.",
+        "beispiel": "1⁄4 der Strecke sind 5 km.\nDie ganze Strecke: 4 · 5 km = 20 km"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Einen Bruchteil einer Größe berechnest du in zwei Schritten.",
-       "Erst teilst du durch den Nenner. Dann weißt du, wie groß ein Teil ist.",
-       "Dann nimmst du mit dem Zähler mal.",
-       "Ab M: Wandle die Größe zuerst in eine kleinere Einheit um, wenn es sonst nicht aufgeht.",
-       "Ab M rückwärts: Kennst du einen Teil, findest du das Ganze durch Malnehmen mit dem Nenner."
-      ],
-      "beispiel": "3⁄4 von 20 kg: Erst 20 kg : 4 = 5 kg. Dann 3 · 5 kg = 15 kg.",
-      "heft": "Schreibe beide Schritte untereinander. Vergiss die Einheit nicht."
-     },
+     "heft": "Schreibe beide Schritte untereinander. Vergiss die Einheit nicht.",
      "wortspeicher": [
       {
        "wort": "Anteil",
@@ -5279,7 +5340,15 @@
         "5.9.1-B1",
         "5.2.2-B1"
        ],
-       "grundlage": "Einen Streifen aus zehn Teilen lesen: Ein Teil ist ein Zehntel, geschrieben 0,1"
+       "grundlage": "Einen Streifen aus zehn Teilen lesen: Ein Teil ist ein Zehntel, geschrieben 0,1",
+       "merkzettel": {
+        "regel": "Vor dem Komma stehen die Ganzen. Nach dem Komma stehen die Zehntel, dann die Hundertstel.",
+        "rechnung": [
+         "E , z h",
+         "0 , 2 5"
+        ],
+        "beispiel": "0,7 = 7⁄10\n0,25 = 25⁄100"
+       }
       },
       {
        "id": "5.9.3-K2",
@@ -5288,7 +5357,11 @@
         "5.9.3-K1",
         "5.2.1-N1"
        ],
-       "grundlage": "Am Zahlenstrahl von 0 bis 1 die Zehntel abzählen"
+       "grundlage": "Am Zahlenstrahl von 0 bis 1 die Zehntel abzählen",
+       "merkzettel": {
+        "regel": "Vergleiche Stelle für Stelle von links: erst die Ganzen, dann die Zehntel, dann die Hundertstel.",
+        "beispiel": "0,5 ist größer als 0,15.\nDenn 0,5 hat 5 Zehntel und 0,15 hat nur 1 Zehntel."
+       }
       },
       {
        "id": "5.9.3-K3",
@@ -5298,22 +5371,14 @@
         "5.6.2-B1",
         "5.6.5-L1"
        ],
-       "grundlage": "Geld mit Komma lesen: 2,50 € sind 2 € und 50 ct"
+       "grundlage": "Geld mit Komma lesen: 2,50 € sind 2 € und 50 ct",
+       "merkzettel": {
+        "regel": "Schreibe die Größe zuerst mit zwei Einheiten. Rechne dann in die kleinere Einheit um.",
+        "beispiel": "2,5 km = 2 km 500 m = 2500 m\n1,75 m = 1 m 75 cm = 175 cm"
+       }
       }
      ],
-     "merkzettel": {
-      "regeln": [
-       "Eine Dezimalzahl hat ein Komma. Vor dem Komma stehen die Ganzen.",
-       "Die erste Stelle nach dem Komma sind die Zehntel: 0,7 = 7⁄10.",
-       "Ab G: Die zweite Stelle sind die Hundertstel: 0,25 = 25⁄100.",
-       "Ab M: Die dritte Stelle sind die Tausendstel: 0,125 = 125⁄1000.",
-       "Man liest Ziffer für Ziffer: 0,25 heißt „null Komma zwei fünf“.",
-       "Ab G: Eine Null am Ende ändert den Wert nicht: 0,5 = 0,50.",
-       "Vergleiche Stelle für Stelle von links: erst die Ganzen, dann die Zehntel, dann die Hundertstel."
-      ],
-      "beispiel": "0,5 ist größer als 0,15. Denn 0,5 hat 5 Zehntel, und 0,15 hat nur 1 Zehntel.",
-      "heft": "Schreibe Dezimalzahlen zum Vergleichen untereinander, Komma unter Komma."
-     },
+     "heft": "Schreibe Dezimalzahlen zum Vergleichen untereinander, Komma unter Komma.",
      "wortspeicher": [
       {
        "wort": "Dezimalzahl",
@@ -5353,6 +5418,104 @@
      ]
     }
    ]
+  }
+ ],
+ "grundwoerter": [
+  {
+   "wort": "Einer",
+   "erklaerung": "Die letzte Ziffer einer Zahl. Die Zahl 34 hat 4 Einer."
+  },
+  {
+   "wort": "Hunderter",
+   "erklaerung": "Zehn Zehner sind ein Hunderter. Die Zahl 234 hat 2 Hunderter."
+  },
+  {
+   "wort": "Tausender",
+   "erklaerung": "Zehn Hunderter sind ein Tausender. Die Zahl 5234 hat 5 Tausender."
+  },
+  {
+   "wort": "Addition",
+   "erklaerung": "Das Plus-Rechnen. 34 + 12 ist eine Addition."
+  },
+  {
+   "wort": "Subtraktion",
+   "erklaerung": "Das Minus-Rechnen. 34 − 12 ist eine Subtraktion."
+  },
+  {
+   "wort": "Multiplikation",
+   "erklaerung": "Das Mal-Rechnen. 4 · 6 ist eine Multiplikation."
+  },
+  {
+   "wort": "Division",
+   "erklaerung": "Das Geteilt-Rechnen. 24 : 6 ist eine Division."
+  },
+  {
+   "wort": "Gleichung",
+   "erklaerung": "Eine Rechnung mit dem Zeichen =. Links und rechts steht derselbe Wert."
+  },
+  {
+   "wort": "gerade Zahl",
+   "erklaerung": "Eine Zahl, die du ohne Rest durch 2 teilen kannst: 2, 4, 6, 8 …"
+  },
+  {
+   "wort": "ungerade",
+   "erklaerung": "Beim Teilen durch 2 bleibt 1 übrig: 1, 3, 5, 7 …"
+  },
+  {
+   "wort": "schriftlich",
+   "erklaerung": "Du schreibst die Zahlen untereinander und rechnest Stelle für Stelle."
+  },
+  {
+   "wort": "Schätzung",
+   "erklaerung": "Eine Zahl, die ungefähr stimmt. Du zählst oder misst nicht genau."
+  },
+  {
+   "wort": "höchstens",
+   "erklaerung": "Nicht mehr als. Höchstens 5 heißt: 5 oder weniger."
+  },
+  {
+   "wort": "mindestens",
+   "erklaerung": "Nicht weniger als. Mindestens 5 heißt: 5 oder mehr."
+  },
+  {
+   "wort": "doppelt",
+   "erklaerung": "Zweimal so viel. Doppelt so viel wie 6 ist 12."
+  },
+  {
+   "wort": "insgesamt",
+   "erklaerung": "Alles zusammengezählt."
+  },
+  {
+   "wort": "Diagramm",
+   "erklaerung": "Ein Bild, das Zahlen zeigt, zum Beispiel mit Säulen oder Balken."
+  },
+  {
+   "wort": "Hälfte",
+   "erklaerung": "Eines von zwei gleich großen Teilen. Die Hälfte von 12 ist 6."
+  },
+  {
+   "wort": "Viertel",
+   "erklaerung": "Eines von vier gleich großen Teilen. Ein Viertel von 12 ist 3."
+  },
+  {
+   "wort": "Drittel",
+   "erklaerung": "Eines von drei gleich großen Teilen. Ein Drittel von 12 ist 4."
+  },
+  {
+   "wort": "Vielfache",
+   "erklaerung": "Die Zahlen einer Einmaleins-Reihe. Vielfache von 4 sind 4, 8, 12, 16 …",
+   "formen": [
+    "Vielfaches",
+    "Vielfachen"
+   ]
+  },
+  {
+   "wort": "Meter",
+   "erklaerung": "Eine Einheit für Längen. 1 m sind 100 cm. Eine Tür ist etwa 2 m hoch."
+  },
+  {
+   "wort": "Millimeter",
+   "erklaerung": "Eine kleine Einheit für Längen. 10 mm sind 1 cm."
   }
  ],
  "aufgaben": [

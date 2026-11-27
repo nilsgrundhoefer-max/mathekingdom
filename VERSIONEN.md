@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.64 vom 27.11.2026
+
+### Schüler
+
+- Den Kasten „Wortspeicher“ gibt es nicht mehr. Wörter mit Erklärung sind in der Aufgabe gepunktet unterstrichen. Fahre mit der Maus darüber oder klicke darauf, dann siehst du die Erklärung.
+- Erklärt werden nur noch Wörter, die wirklich in deiner Aufgabe oder in einem aufgedeckten Hilfekärtchen stehen.
+- Der Merkzettel ist kurz und passt zu deiner Aufgabe: eine Regel und ein Beispiel. Rechnungen stehen wie im Heft untereinander.
+- Der Hinweis „Im Heft“ steht nur noch bei Heftaufgaben.
+
+### Lehrkraft
+
+- Worterklärung am Wort statt Wortspeicher-Kasten, Merkzettel je Lernziel statt je Meilenstein (ADR 0056). Alle 246 Merkzettel in Klasse 5 bis 7 sind neu geschrieben.
+- An der Meilenstein-Tafel stehen die Merkzettel aller Lernziele des Meilensteins untereinander.
+- 30 häufige Wörter wie „Einer“, „Hunderter“ und „insgesamt“ haben neu eine Erklärung. Klasse 6 und 7 erklären auch Wörter aus früheren Klassen.
+- Aufgaben, Zahlen und Lösungen sind unverändert.
+
 ## 0.63 vom 27.11.2026
 
 ### Schüler

@@ -37,83 +37,24 @@ export const lernziele3 = {
 
 export const merkzettel3 = {
   '6.3.1': {
-    regeln: [
-      'Ein Quader hat 8 Ecken, 12 Kanten und 6 Flächen. Jede Fläche ist ein Rechteck.',
-      'Gegenüberliegende Flächen sind gleich groß. Je 4 Kanten sind gleich lang und parallel.',
-      'Ein Würfel ist ein besonderer Quader: Alle 12 Kanten sind gleich lang, alle 6 Flächen sind Quadrate.',
-      'Ein Netz ist der aufgeklappte Körper. Faltest du es, entsteht der Körper ohne Lücke und ohne Überlappung.',
-      'Ab G: Prüfe ein Netz in Gedanken: Lege eine Fläche als Boden fest und klappe die anderen hoch.',
-      'Ab M: Im Netz liegen gegenüberliegende Flächen nie nebeneinander.',
-    ],
-    beispiel: 'Ein Schuhkarton ist ein Quader. Er hat 8 Ecken, 12 Kanten und 6 Flächen: Boden, Deckel und vier Seiten.',
     heft: 'Zeichne ein Netz mit dem Lineal auf Karopapier. Gleich lange Kanten müssen im Netz aneinanderliegen.',
   },
   '6.3.2': {
-    regeln: [
-      'Ein Schrägbild zeigt einen Körper räumlich. Die Vorderfläche wird in wahrer Größe gezeichnet.',
-      'Kanten nach hinten zeichnest du schräg: 1 cm Tiefe ist eine Kästchendiagonale.',
-      'Kanten, die man nicht sieht, sind verdeckt. Sie werden gestrichelt gezeichnet.',
-      'Die Ecken heißen unten A, B, C, D gegen den Uhrzeigersinn, vorne links beginnend. Oben liegen E, F, G, H.',
-      'Ab G: Im Schrägbild sind die Kanten nach hinten kürzer als in Wirklichkeit. Gleich lange Kanten bleiben parallel.',
-      'Ab M: Ein Quader mit a cm Länge und b cm Tiefe ist im Heft 2 · a + b Kästchen breit.',
-    ],
-    beispiel: 'Quader mit a = 4 cm, b = 2 cm, c = 3 cm: Vorderfläche 8 Kästchen breit und 6 hoch, dann je 2 Kästchendiagonalen nach hinten.',
     heft: 'Zeichne zuerst die Vorderfläche, dann die Kanten nach hinten, zuletzt die Rückfläche. Verdeckte Kanten zeichnest du gestrichelt.',
   },
   '6.3.3': {
-    regeln: [
-      'Eine Ansicht zeigt den Körper genau von einer Seite. Man sieht nur Flächen, keine Tiefe.',
-      'Der Grundriss ist die Ansicht von oben. Der Aufriss ist die Ansicht von vorne.',
-      'Ab M: Der Seitenriss ist die Ansicht von links.',
-      'Bei Würfelbauten ist jede Ansicht eine Figur aus Kästchen. Ein Kästchen pro sichtbarem Würfel.',
-      'Ab G: In der Ansicht von oben siehst du nur den obersten Würfel jedes Turms.',
-      'Ab E: Mehrere Würfelbauten können dieselben Ansichten haben.',
-    ],
-    beispiel: 'Drei Würfel liegen in einer Reihe, auf dem linken liegt ein vierter. Von oben: 3 Kästchen in einer Reihe. Von vorne: 3 Kästchen, über dem linken ein viertes.',
     heft: 'Zeichne die Ansicht von vorne oben und die Ansicht von oben darunter. Gleiche Breiten stehen genau untereinander.',
   },
   '6.3.4': {
-    regeln: [
-      'Ein Prisma hat zwei gleiche Vielecke als Grund- und Deckfläche. Sie liegen parallel übereinander.',
-      'Die Seitenflächen sind Rechtecke. Zusammen bilden sie die Mantelfläche.',
-      'Das Prisma heißt nach seiner Grundfläche: Dreieck, dreiseitiges Prisma. Sechseck, sechsseitiges Prisma.',
-      'Ein Quader ist ein vierseitiges Prisma.',
-      'Ab G: Ein n-seitiges Prisma hat 2 · n Ecken, 3 · n Kanten und n + 2 Flächen.',
-    ],
-    beispiel: 'Ein Zelt mit dreieckiger Vorderseite ist ein dreiseitiges Prisma: 6 Ecken, 9 Kanten, 5 Flächen.',
     heft: 'Zeichne im Netz die Grund- und die Deckfläche an gegenüberliegende Seiten des Rechteckstreifens.',
   },
   '6.3.5': {
-    regeln: [
-      'Eine Pyramide hat ein Vieleck als Grundfläche. Die Seitenflächen sind Dreiecke. Sie treffen sich oben in der Spitze.',
-      'Die Pyramide heißt nach ihrer Grundfläche: Viereck, vierseitige Pyramide.',
-      'Ab G: Eine n-seitige Pyramide hat n + 1 Ecken, 2 · n Kanten und n + 1 Flächen.',
-      'Im Netz liegen die Seitendreiecke rund um die Grundfläche.',
-      'Ab M: Die Dreiecke im Netz müssen an der Spitze zusammenpassen: Benachbarte Kanten sind gleich lang.',
-    ],
-    beispiel: 'Ein Dach mit quadratischem Boden und vier Dreiecken ist eine vierseitige Pyramide: 5 Ecken, 8 Kanten, 5 Flächen.',
     heft: 'Zeichne zuerst die Grundfläche. Setze dann an jede Seite ein Dreieck.',
   },
   '6.3.6': {
-    regeln: [
-      'Ein Zylinder hat zwei gleiche Kreise als Grund- und Deckfläche und eine gekrümmte Fläche.',
-      'Ein Kegel hat einen Kreis als Grundfläche, eine gekrümmte Fläche und eine Spitze.',
-      'Eine Kugel hat nur eine gekrümmte Fläche. Sie hat keine Ecke und keine Kante.',
-      'Ab G: Zylinder: 3 Flächen und 2 Kanten. Kegel: 2 Flächen, 1 Kante und 1 Spitze.',
-      'Ab M: Das Netz des Zylinders ist ein Rechteck mit zwei Kreisen. Das Netz des Kegels ist ein Kreisausschnitt mit einem Kreis.',
-    ],
-    beispiel: 'Eine Dose ist ein Zylinder, eine Eistüte ein Kegel, ein Ball eine Kugel.',
     heft: 'Zeichne im Zylindernetz die Kreise an die langen Seiten des Rechtecks, einen oben und einen unten.',
   },
   '6.3.8': {
-    regeln: [
-      'Beim Falten im Kopf legst du eine Fläche als Boden fest. Dann klappst du die anderen Flächen eine nach der anderen hoch.',
-      'Ab G: Liegen drei Flächen in einer Reihe, sind die beiden äußeren gegenüber.',
-      'Beim Spielwürfel ergeben gegenüberliegende Augenzahlen zusammen 7.',
-      'Würfelbauten zählst du Schicht für Schicht. Denk an die Würfel, die verdeckt sind.',
-      'Ab M: Kippst du einen Körper nach rechts, wird die linke Fläche zum Boden.',
-    ],
-    beispiel: 'Im Kreuznetz liegen 1, 2 und 6 untereinander. 1 und 6 liegen gegenüber.',
     heft: 'Schreibe in jede Fläche des Netzes einen Buchstaben. Markiere gegenüberliegende Flächen mit derselben Farbe.',
   },
 };
