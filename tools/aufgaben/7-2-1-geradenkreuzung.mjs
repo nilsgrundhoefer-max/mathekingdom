@@ -22,7 +22,7 @@ const grundOptionen = (richtig, andere = ['neben', 'scheitel', 'stufen']) => [..
 function w1() {
   const hNeben = (n, a) => H(n, 'Nebenwinkel liegen nebeneinander an einer Geraden. Zusammen sind sie 180°.', 'Ist α = 70°, dann ist sein Nebenwinkel 180° − 70° = 110°.', `Rechne 180° − ${a}°.`);
   const hScheitel = (n) => H(n, 'Scheitelwinkel liegen sich genau gegenüber. Sie sind gleich groß.', 'Ist α = 70°, dann ist auch γ = 70°.', 'Der gesuchte Winkel liegt dem bekannten Winkel gegenüber.');
-  const hAlle = (n, a) => H(n, 'Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.', 'Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.', `Der Nebenwinkel von α ist 180° − ${a}° = ${180 - a}°.`);
+  const hAlle = (n, a) => H(n, 'Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.', 'Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.', `Der Winkel neben ${a}° ist sein Nebenwinkel: 180° − ${a}° = ${180 - a}°. Der Winkel gegenüber von ${a}° ist auch ${a}°.`);
   // Ein Winkel bekannt (Lage i), einer gesucht (Lage j).
   const einer = (n, i, j, text, hilfen) => { const a = alphaFuer(n), w = werte(a), zeige = [null, null, null, null];
     zeige[i] = WERT(w[i]); zeige[j] = GESUCHT(NAMEN_G[j], w[j]);
@@ -52,10 +52,10 @@ function w1() {
     () => alleDrei('G', zz(0, 3), ['Die Geraden g und h schneiden sich.', 'Berechne die anderen drei Winkel.']),
     () => einer('G', wahl([1, 3]), wahl([1, 3]) === 1 ? 3 : 1, (x) => Z('Die Geraden g und h schneiden sich.', `Gib den Scheitelwinkel ${x} an.`), () => hScheitel('G')),
     () => { const a = 5 * zz(5, 14), zeige = [WERT(a), GESUCHT('β', 180 - a), null, null];
-      return grad(Z('Eine Schere ist geöffnet.', `Die beiden Klingen bilden einen Winkel von ${a}°.`, 'Die Schere bildet zwei Geraden.', 'Sie schneiden sich.', 'Berechne den Winkel β zwischen Klinge und Griff.'), 180 - a, [[a, 'nebenwinkel-gleich']], hNeben('G', a),
+      return grad(Z('Eine Schere ist geöffnet.', `Die beiden Klingen bilden einen Winkel von ${a}°.`, 'Die Schere bildet zwei Geraden.', 'Sie schneiden sich.', 'Berechne den Nebenwinkel β.'), 180 - a, [[a, 'nebenwinkel-gleich']], hNeben('G', a),
         { bild: kr('G', a, zeige, { geraden: [null, null] }), nachweis: [FIG('β'), R(`180° − ${a}° = ${180 - a}°`)] }); },
     () => { const a = alphaFuer('G'), b = 180 - a, k = kind();
-      return auswahl(Z(`${k} rechnet: β = 180° − ${a}° = ${b}°.`, 'Warum darf das Kind so rechnen?', 'Kreuze die richtige Begründung an.'),
+      return auswahl(Z(`${k} rechnet: β = 180° − ${a}° = ${b}°.`, `Warum darf ${k} so rechnen?`, 'Kreuze die richtige Begründung an.'),
         [opt('α und β sind Nebenwinkel. Zusammen sind sie 180°.', true), opt('α und β sind Scheitelwinkel. Zusammen sind sie 180°.', false, 'scheitel-neben-verwechselt'), opt('An einer Kreuzung sind alle Winkel zusammen 180°.', false, 'gestreckt-voll')],
         hilfeBegriff('G'), { bild: kr('G', a, [WERT(a), NAME('β'), null, null]), nachweis: [BEZ(['α', 'β'], 'neben'), R(`180° − ${a}° = ${b}°`)] }); },
   ]);
@@ -198,7 +198,7 @@ function w2() {
         { bild: zickzack(x, y), nachweis: [R(`${x}° + ${y}° = ${x + y}°`), FIG('φ')] }); },
     () => { const a = zz(56, 78), k = suche(() => zz(-7, 7), (x) => Math.abs(x) >= 4), kd = kind();
       return auswahl(`Die Gerade s schneidet g und h. ${kd} sagt: „α = ${a}°, also ist auch α′ = ${a}°.“ Im Bild misst α′ aber ${a - k}°. Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt('Stufenwinkel sind nur an Parallelen gleich groß. g und h sind nicht parallel.', true), opt('α und α′ sind keine Stufenwinkel, sondern Nebenwinkel.', false, 'scheitel-neben-verwechselt'), opt('Man hat falsch gemessen. Stufenwinkel sind immer gleich groß.', false, 'ohne-parallele'), opt('α′ ist der Wechselwinkel von α.', false, 'stufen-wechsel-verwechselt')],
+        [opt('Stufenwinkel sind nur an Parallelen gleich groß. g und h sind nicht parallel.', true), opt('α und α′ sind keine Stufenwinkel, sondern Nebenwinkel.', false, 'scheitel-neben-verwechselt'), opt('Man hat falsch gemessen. Stufenwinkel sind immer gleich groß, an allen Geraden.', false, 'ohne-parallele'), opt('α′ ist der Wechselwinkel von α.', false, 'stufen-wechsel-verwechselt')],
         H('E', 'Wann gilt die Regel für Stufenwinkel?'), { bild: parallelen(a, [WERT(a, { n: 'α' }), null, null, null], [WERT(a - k, { n: `α${STRICH}` }), null, null, null], { dreh: zz(-10, 10), knick: k }), nachweis: [{ art: 'urteil', stimmt: false }, BEZ(['α', `α${STRICH}`], 'stufen', { parallel: false })] }); },
     () => { const k = wahl([2, 3, 4, 5]), a = 180 / (k + 1);
       return grad(`Die Geraden g und h sind parallel. Der Winkel β′ ist ${k}-mal so groß wie α. Bestimme α.`, a, [[180 / k, 'gestreckt-voll'], [k * a, 'stufen-wechsel-verwechselt']], H('E', 'β′ und α′ sind Nebenwinkel. Und α′ ist der Stufenwinkel von α.'),

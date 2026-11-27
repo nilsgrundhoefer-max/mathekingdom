@@ -88,7 +88,7 @@ export function dividieren6() {
       return dezimal(Z(`Dividiere: ${a} : ${n}`, 'Hänge dafür Nullen an.'), l, dfe(l, [[T(Math.floor(wert(l) * 10), 1), 'div-rest-vergessen'], ...kommaFehler(l)]), h3('Bleibt ein Rest, hänge eine 0 an und teile weiter.', '6,3 : 2: 6,30 : 2 = 3,15.', 'Endnullen ändern den Wert nicht.'), { ...DIV(a, n), nachweis: [`${a} : ${n} = ${l}`] }); },
     () => { const n = zz(4, 9), l = T(zz(2, 9), 1), a = mal(l, String(n)), falsch = String(P(l)[0]), kn = kind();
       if (stellen(a) !== 1) return null;
-      return auswahl(Z(`${kn} rechnet: ${a} : ${n} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. ${a} ist kleiner als ${n}. Es gilt ${a} : ${n} = ${l}.`, true), opt('Stimmt.', false, 'div-komma-vergessen'), opt(`Stimmt, denn ${falsch} · ${n} = ${P(a)[0]}.`, false, 'div-komma-vergessen')],
+      return auswahl(Z(`${kn} rechnet: ${a} : ${n} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. ${a} ist kleiner als ${n}. Es gilt ${a} : ${n} = ${l}.`, true), opt('Stimmt. Beim Teilen durch eine natürliche Zahl fällt das Komma weg.', false, 'div-komma-vergessen'), opt(`Stimmt, denn ${falsch} · ${n} = ${P(a)[0]}.`, false, 'div-komma-vergessen')],
         h3('Mache die Probe mit der Mal-Aufgabe.', `${falsch} · ${n} = ${P(a)[0]}. Das ist nicht ${a}.`, 'Wo fehlt das Komma?'), { nachweis: [`${falsch} · ${n} = ${P(a)[0]}`, `${a} : ${n} = ${l}`, URTEIL(false, `${a} : ${n} = ${falsch}`)] }); },
   ]);
   sechs(D1, 'M', [
@@ -104,7 +104,7 @@ export function dividieren6() {
       return auswahl(Z(`Kreuze alle Rechnungen an, deren Quotient ${l} ist.`), mische(o).map(([x, r]) => opt(x, r, r ? undefined : 'div-stellenwert')), h2('Rechne jede Aufgabe im Kopf.', 'Achte auf das Komma im Dividenden.'), { mehrfach: true, nachweis: [`${a} : ${n} = ${l}`, WERT(l)] }); },
     () => { const n = String(zz(11, 19)), l = dez(1, 2.1, 9.9), a = mal(l, n), falsch = String(P(l)[0]), kn = kind(), ga = String(Math.round(wert(a) / 10) * 10), gn = ersteStelle(n), u = durch(ga, gn, 2);
       if (stellen(a) !== 1 || !u) return null;
-      return auswahl(Z(`${kn} rechnet: ${a} : ${n} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} : ${gn} = ${u}. Es gilt ${a} : ${n} = ${l}.`, true), opt('Stimmt.', false, 'div-komma-vergessen'), opt(`Falsch. Es gilt ${a} : ${n} = ${schiebe(l, -1)}.`, false, 'div-stellenwert')],
+      return auswahl(Z(`${kn} rechnet: ${a} : ${n} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} : ${gn} = ${u}. Es gilt ${a} : ${n} = ${l}.`, true), opt('Stimmt. Beim Teilen durch eine natürliche Zahl fällt das Komma weg.', false, 'div-komma-vergessen'), opt(`Falsch. Es gilt ${a} : ${n} = ${schiebe(l, -1)}.`, false, 'div-stellenwert')],
         h2('Runde den Dividenden auf Zehner und den Divisor auf seine erste Stelle.', 'Vergleiche den Überschlag mit dem Ergebnis.'), { nachweis: [H(ga, `${a} auf Zehner gerundet`), H(gn, `${n} gerundet`), `${ga} : ${gn} = ${u}`, `${a} : ${n} = ${l}`, URTEIL(false, `${a} : ${n} = ${falsch}`)] }); },
   ]);
   sechs(D1, 'E', [
@@ -115,7 +115,7 @@ export function dividieren6() {
         { einheit: '€', nachweis: [RN(`${s} € : ${n}`, 2, `${l} €`, { einheit: '€' })] }); },
     () => { const n = 4, l = dez(1, 12.1, 15.9), a = mal(l, String(n)), kn = kind();
       return dezimal(Z(`Eine Staffel aus ${n} Kindern läuft zusammen ${a} s.`, `Alle laufen gleich schnell, auch ${kn}.`, 'Rechne im Heft.', 'Gib die Zeit für ein Kind an.'), l, dfe(l, kommaFehler(l)), h1('Teile die Zeit gerecht auf.'), { einheit: 's', nachweis: [`${a} s : ${n} = ${l} s`] }); },
-    () => { const n = wahl([5, 6, 8]), l = T(zz(2, 9), 1), a = mal(l, String(n)), kn = kind(), opts = [['Das Komma im Quotienten fehlt. Überschreitet man das Komma im Dividenden, setzt man das Komma im Quotienten.', true], ['Beim Dividieren wird das Ergebnis immer größer.', false], ['Es wurde malgenommen statt geteilt.', false]];
+    () => { const n = wahl([5, 6, 8]), l = T(zz(2, 9), 1), a = mal(l, String(n)), kn = kind(), opts = [['Das Komma im Quotienten fehlt. Es wird gesetzt, sobald man im Dividenden das Komma überschreitet.', true], ['Beim Dividieren wird das Ergebnis immer größer als die erste Zahl. Das wurde vergessen.', false], ['Es wurde malgenommen statt geteilt. Darum ist das Ergebnis zu groß geworden.', false]];
       if (stellen(a) !== 1) return null;
       return auswahl(Z(`${kn} rechnet: ${a} : ${n} = ${P(l)[0]}`, 'Kreuze die Erklärung für den Fehler an.'), opts.map(([t, r]) => opt(t, r, r ? undefined : t.includes('größer') ? 'mal-macht-groesser' : 'div-falsche-rechenart')), h1(`Rechne selbst: ${a} : ${n} = ${l}.`), { nachweis: [FREI('Fehler beim Komma im Quotienten erklären')] }); },
     () => { const n = zz(6, 9), l = T(zz(2, 9), 2), a = mal(l, String(n)), falsch = schiebe(l, 1), kn = kind();
@@ -161,7 +161,7 @@ export function dividieren6() {
         h3('Rechne zuerst beide Zahlen · 10.', '25,2 : 0,6 = 252 : 6. Das ist etwa 240 : 6 = 40.', 'Das Ergebnis muss in der Nähe von deinem Überschlag liegen.'), { nachweis: [`${a} · 10 = ${x}`, `${d} · 10 = ${b}`, `${x} : ${b} = ${n}`, `${a} : ${d} = ${n}`, WERT(n)] }); },
     () => { const b = zz(2, 9), n = zz(11, 29), d = T(b, 1), a = T(b * n, 1), falsch = T(n, 1), kn = kind();
       if ((b * n) % 10 === 0) return null;
-      return auswahl(Z(`${kn} rechnet: ${a} : ${d} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Das Komma muss in beiden Zahlen rücken. Es gilt ${a} : ${d} = ${b * n} : ${b} = ${n}.`, true), opt('Stimmt.', false, 'div-ein-komma-verschoben'), opt('Stimmt, denn Dividieren macht immer kleiner.', false, 'div-macht-kleiner')],
+      return auswahl(Z(`${kn} rechnet: ${a} : ${d} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Das Komma muss in beiden Zahlen rücken. Es gilt ${a} : ${d} = ${b * n} : ${b} = ${n}.`, true), opt('Stimmt. Das Komma rückt nur im Divisor um eine Stelle. Die andere Zahl bleibt gleich.', false, 'div-ein-komma-verschoben'), opt('Stimmt, denn Dividieren macht immer kleiner.', false, 'div-macht-kleiner')],
         h3('Verschiebe das Komma in beiden Zahlen.', '8,4 : 0,4 = 84 : 4 = 21.', 'Vergleiche mit der Rechnung.'), { nachweis: [`${a} · 10 = ${b * n}`, `${d} · 10 = ${b}`, `${b * n} : ${b} = ${n}`, `${a} : ${d} = ${n}`, URTEIL(false, `${a} : ${d} = ${falsch}`)] }); },
   ]);
   sechs(D2, 'M', [
@@ -178,7 +178,7 @@ export function dividieren6() {
         h2('Verschiebe in jeder Rechnung das Komma, bis der Divisor eine natürliche Zahl ist.', 'Gleiche Rechnungen haben denselben Quotienten.'), { mehrfach: true, nachweis: [`${a} : ${d} = ${n}`, WERT(n)] }); },
     () => { const b = zz(2, 9), n = zz(12, 49), d = T(b, 1), a = T(b * n, 1), falsch = T(n, 1), kn = kind(), ga = grob(a), u = durch(ga, d, 2);
       if (!u || (b * n) % 10 === 0 || u === String(n)) return null;
-      return auswahl(Z(`${kn} rechnet: ${a} : ${d} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} : ${d} = ${u}. Es gilt ${a} : ${d} = ${n}.`, true), opt('Stimmt.', false, 'div-macht-kleiner'), opt(`Falsch. Es gilt ${a} : ${d} = ${n * 10}.`, false, 'div-stellenwert')],
+      return auswahl(Z(`${kn} rechnet: ${a} : ${d} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} : ${d} = ${u}. Es gilt ${a} : ${d} = ${n}.`, true), opt('Stimmt. Beim Dividieren wird das Ergebnis immer kleiner als die erste Zahl.', false, 'div-macht-kleiner'), opt(`Falsch. Es gilt ${a} : ${d} = ${n * 10}.`, false, 'div-stellenwert')],
         h2('Runde den Dividenden auf Ganze.', 'Überlege: Wie oft passt der Divisor in die gerundete Zahl?'), { nachweis: [H(ga, `${a} gerundet`), `${ga} : ${d} = ${u}`, `${a} : ${d} = ${n}`, URTEIL(false, `${a} : ${d} = ${falsch}`)] }); },
   ]);
   sechs(D2, 'E', [
@@ -189,7 +189,7 @@ export function dividieren6() {
         { nachweis: [RN(`${a} : ${d}`, 1, l)] }); },
     () => { const [f, n] = wahl([['0,75', 16], ['0,25', 36], ['0,5', 27], ['0,75', 12], ['0,2', 45]]), s = mal(f, String(n));
       return dezimal(Z(`Eine Flasche fasst ${f} l.`, `Saft gibt es ${s} l.`, 'Rechne im Heft.', 'Gib an, wie viele Flaschen man damit füllen kann.'), n, dfe(n, [[durch(s, String(P(f)[0]), 4), 'div-ein-komma-verschoben'], [num(mal(s, f)), 'div-falsche-rechenart']]), h1('Wie oft passt eine Flasche in die ganze Menge?'), { nachweis: [`${s} l : ${f} l = ${n}`] }); },
-    () => { const n = zz(3, 9), opts = [['Ein halbes Ganzes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.', true], ['Beim Dividieren wird das Ergebnis immer kleiner.', false], ['Beim Teilen rückt das Komma immer nach rechts.', false]];
+    () => { const n = zz(3, 9), opts = [['Ein Halbes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.', true], ['Beim Dividieren wird das Ergebnis immer kleiner. Hier ist beim Rechnen etwas schiefgegangen.', false], ['Beim Teilen durch eine Dezimalzahl rückt das Komma immer eine Stelle nach rechts.', false]];
       return auswahl(Z(`Kreuze die Begründung an, warum ${n} : 0,5 größer als ${n} ist.`), opts.map(([t, r]) => opt(t, r, r ? undefined : t.includes('kleiner') ? 'div-macht-kleiner' : 'komma-falsche-richtung')), h1('Überlege, wie oft 0,5 in 1 passt.'), { nachweis: [FREI('Divisor unter 1 begründen')] }); },
     () => { const b = zz(2, 9), n = zz(2, 9), d = T(b, 1), a = T(b * n, 1), falsch = T(n, 1), kn = kind();
       if (P(a)[0] % 10 === 0) return null;

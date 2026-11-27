@@ -31,7 +31,7 @@ export function einheiten6() {
     () => { const [g, k, tafel] = wahl(NACHBARN), n = zz(2, 9); return luecken(Z('Die Tafel hilft dir.', 'Wandle um.', `${n * 1000} ${k} = {{a}} ${g}`), { a: lk(n, [[n * 10, 'umrechnungszahl'], [n * 100, 'umrechnungszahl']]) }, hKlein(g, k),
       { bild: tafelBild(tafel, V(n, g)), nachweis: [`${n * 1000} ${k} = ${n} ${g}`] }); },
     () => { const n = zz(2, 9), kn = kind();
-      return auswahl(Z(`${kn} wandelt um: ${n} dm³ = ${n * 100} cm³.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. 1 dm³ = 1000 cm³. Also ${n} dm³ = ${n * 1000} cm³.`, true), opt('Stimmt.', false, 'umrechnungszahl'), opt(`Falsch. ${n} dm³ = ${n * 10} cm³.`, false, 'umrechnungszahl')],
+      return auswahl(Z(`${kn} wandelt um: ${n} dm³ = ${n * 100} cm³.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. 1 dm³ = 1000 cm³. Also ${n} dm³ = ${n * 1000} cm³.`, true), opt('Stimmt. Von dm zu cm rechnet man immer mit 100.', false, 'umrechnungszahl'), opt(`Falsch. ${n} dm³ = ${n * 10} cm³.`, false, 'umrechnungszahl')],
         H('F', 'Ein Würfel mit 1 dm³ hat 1000 kleine Würfel mit 1 cm³.', '2 dm³ = 2000 cm³', 'Prüfe: Hat das Ergebnis drei Nullen mehr?'), { bild: tafelBild('dm³-cm³', V(n, 'dm³')), nachweis: [`${n} dm³ = ${n * 1000} cm³`, URTEIL(false)] }); },
     () => { const [g, k, tafel] = wahl([NACHBARN[0], NACHBARN[2]]), n = zz(2, 9); return luecken(Z('Die Tafel hilft dir.', 'Wandle um.', `${n} ${g} = {{a}} ${k}`), { a: lk(n * 1000, [[n * 100, 'umrechnungszahl'], [n * 10, 'umrechnungszahl']]) }, hGross(g, k),
       { bild: tafelBild(tafel, V(n, g)), nachweis: [`${n} ${g} = ${n * 1000} ${k}`] }); },
@@ -146,7 +146,7 @@ export function einheiten6() {
     () => { const z = wahl([35, 45, 8, 125, 6, 75]), t = z > 99 ? 1000 : 100, w = V(z, 'm³', t);
       return wandle('E', w, 'm³', 'l', ['l', 'ml', 'hl', 'dm²', 'm³'], [[w / 10, 'umrechnungszahl'], [w / 100, 'umrechnungszahl'], [w / 1000, 'liter-nicht-dm3']], '1 m³ sind 1000 dm³, und 1 dm³ ist 1 Liter.'); },
     () => { const z = wahl([25, 15, 35, 45, 12]), kn = kind(), l = T(V(z, 'm³', 10), 'm³');
-      return auswahl(Z(`${kn} wandelt um: ${l} = ${z * 10} l.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. 1 m³ = 1000 l. Also ${l} = ${z * 100} l.`, true), opt('Stimmt.', false, 'umrechnungszahl'), opt(`Falsch. 1 m³ = 1 l. Also ${l} = ${T(V(z, 'l', 10), 'l')}.`, false, 'liter-nicht-dm3'), opt(`Falsch. 1 m³ = 10 l. Also ${l} = ${z} l.`, false, 'umrechnungszahl')],
+      return auswahl(Z(`${kn} wandelt um: ${l} = ${z * 10} l.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. 1 m³ = 1000 l. Also ${l} = ${z * 100} l.`, true), opt('Stimmt. Von m³ zu Liter ist die Umrechnungszahl 10.', false, 'umrechnungszahl'), opt(`Falsch. 1 m³ = 1 l. Also ${l} = ${T(V(z, 'l', 10), 'l')}.`, false, 'liter-nicht-dm3'), opt(`Falsch. 1 m³ = 10 l. Also ${l} = ${z} l.`, false, 'umrechnungszahl')],
         H('E', 'Wandle zuerst in dm³ um.'), { nachweis: [`${l} = ${z * 100} dm³`, `${z * 100} dm³ = ${z * 100} l`, URTEIL(false)] }); },
     () => { const werte = mische([[750, 'ml', 1], [8, 'l', 10], [900, 'cm³', 1], [12, 'dm³', 10], [1, 'hl', 100], [15, 'l', 10], [1250, 'ml', 1], [2, 'hl', 100], [1800, 'cm³', 1]]).slice(0, 5).map(([n, e, t]) => [V(n, e, t), e]).sort((x, y) => x[0] - y[0]);
       if (new Set(werte.map((x) => x[0])).size !== 5 || new Set(werte.map((x) => x[1])).size < 4) return null;

@@ -66,7 +66,7 @@ export function runden6() {
         { mehrfach: true, bild: B.strahl(strahlSpec(basis - 10, basis + 10, 100, 5, { ausschnitt: true, punkte: liste.map(([w]) => w) })), nachweis: [RW(1, ziel)] }); },
     () => { const g = zz(1, 9), z = zz(1, 7), p = g * 1000 + z * 100 + 4 * 10 + zz(5, 9), kn = kind(), zwischen = G(p, 3, 2), falsch = G(runde(p, 3, 2), 2, 1), lsg = G(p, 3, 1);
       return auswahl(Z(`${kn} rundet ${T(p, 3)} auf Zehntel.`, `${kn} rundet zuerst auf ${zwischen}.`, `Dann rundet ${kn} auf ${falsch}.`, 'Beurteile das Ergebnis.'),
-        [opt(`Falsch. ${T(p, 3)} ≈ ${lsg}. Man rundet in einem Schritt.`, true), opt('Stimmt.', false, 'runden-kette'), opt(`Stimmt, denn ${zwischen} ≈ ${falsch}.`, false, 'runden-kette')], tG,
+        [opt(`Falsch. ${T(p, 3)} ≈ ${lsg}. Man rundet in einem Schritt.`, true), opt('Stimmt. Man rundet immer Stelle für Stelle.', false, 'runden-kette'), opt(`Stimmt, denn ${zwischen} ≈ ${falsch}.`, false, 'runden-kette')], tG,
         { nachweis: [{ wert: zwischen, grund: 'Zwischenschritt des Kindes' }, RN(T(p, 3), 1, lsg, { behauptet: falsch })] }); },
   ]);
   const tM = h2('Suche die Rundungsstelle und schau nur auf die Ziffer rechts daneben. Alles dahinter spielt keine Rolle.', 'Bei 5 bis 9 wird die Rundungsstelle um 1 größer. Aus einer 9 wird dabei 10, und die Stelle links wächst mit.');
@@ -91,7 +91,7 @@ export function runden6() {
         { mehrfach: true, nachweis: [RW(2, ziel)] }); },
     () => { const g = zz(1, 9), z = zz(1, 8), h = zz(1, 8), p = (g * 100 + z * 10 + h) * 100 + zz(51, 99), kn = kind(), falsch = T(abschneiden(p, 4, 2), 2, 2), lsg = G(p, 4, 2);
       if (p % 10 === 0) return null;
-      return auswahl(Z(`${kn} rundet ${T(p, 4)} auf Hundertstel und schreibt ${falsch}.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. ${T(p, 4)} ≈ ${lsg}. Die dritte Stelle ist ${Math.floor(p / 10) % 10}, also aufrunden.`, true), opt('Stimmt.', false, 'runden-abschneiden'), opt('Stimmt, denn beim Runden fallen die Ziffern hinten einfach weg.', false, 'runden-abschneiden')], tM,
+      return auswahl(Z(`${kn} rundet ${T(p, 4)} auf Hundertstel und schreibt ${falsch}.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. ${T(p, 4)} ≈ ${lsg}. Die dritte Stelle ist ${Math.floor(p / 10) % 10}, also aufrunden.`, true), opt('Stimmt. Die dritte Stelle wird gestrichen.', false, 'runden-abschneiden'), opt('Stimmt, denn beim Runden fallen die Ziffern hinten einfach weg.', false, 'runden-abschneiden')], tM,
         { nachweis: [RN(T(p, 4), 2, lsg, { behauptet: falsch })] }); },
   ]);
   sechs(R1, 'E', [
@@ -110,7 +110,7 @@ export function runden6() {
     () => { const g = zz(1, 9), z = zz(1, 7), p = (g * 100 + z * 10 + 4) * 100 + 4 * 10 + zz(5, 9), kn = kind(), lsg = G(p, 4, 1), falsch = T(rundeKette(p, 4, 1), 1, 1);
       if (falsch === lsg) return null;
       return auswahl(Z(`${kn} rundet ${T(p, 4)} Stelle für Stelle von hinten auf Zehntel.`, `${kn} erhält ${falsch}.`, 'Finde den Fehler.'),
-        [opt(`Falsch. ${T(p, 4)} ≈ ${lsg}. Es zählt nur die Ziffer rechts neben den Zehnteln.`, true), opt('Stimmt.', false, 'runden-kette'), opt('Stimmt, denn jede Stelle wurde richtig gerundet.', false, 'runden-kette')],
+        [opt(`Falsch. ${T(p, 4)} ≈ ${lsg}. Es zählt nur die Ziffer rechts neben den Zehnteln.`, true), opt('Stimmt. Man rundet von hinten Stelle für Stelle bis zu den Zehnteln.', false, 'runden-kette'), opt('Stimmt, denn jede Stelle wurde richtig gerundet.', false, 'runden-kette')],
         h1('Runde in einem Schritt. Schau nur auf die Ziffer rechts neben der Rundungsstelle.'), { nachweis: [RN(T(p, 4), 1, lsg, { behauptet: falsch })] }); },
     () => { const z = zz(1, 8), ziel = `0,${z}0`, basis = z * 100;
       const liste = mische([[basis * 10 - 50, true], [basis * 10 + 49, true], [basis * 10 + 50, false], [basis * 10 - 51, false], [basis * 10, true], [basis * 10 - 100, false]]).slice(0, 5);
@@ -194,7 +194,7 @@ export function runden6() {
         { mehrfach: true, nachweis: [RW(1, ziel, { einheit: '€' })] }); },
     () => { const g = zz(2, 9), z = zz(1, 8), h = zz(1, 8), p = (g * 100 + z * 10 + h) * 100 + zz(51, 99), kn = kind(), falsch = T(abschneiden(p, 4, 2), 2, 2), lsg = G(p, 4, 2);
       if (p % 10 === 0) return null;
-      return auswahl(Z(`Der Rechner zeigt ${T(p, 4)} m.`, `${kn} rundet auf Zentimeter und schreibt ${falsch} m.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. ${T(p, 4)} m ≈ ${lsg} m.`, true), opt('Stimmt.', false, 'runden-abschneiden'), opt('Stimmt, denn Zentimeter sind Hundertstel Meter.', false, 'runden-abschneiden')], tR2M,
+      return auswahl(Z(`Der Rechner zeigt ${T(p, 4)} m.`, `${kn} rundet auf Zentimeter und schreibt ${falsch} m.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. ${T(p, 4)} m ≈ ${lsg} m.`, true), opt('Stimmt. Die hinteren Ziffern fallen weg.', false, 'runden-abschneiden'), opt('Stimmt, denn Zentimeter sind Hundertstel Meter.', false, 'runden-abschneiden')], tR2M,
         { nachweis: [RN(`${T(p, 4)} m`, 2, `${lsg} m`, { einheit: 'm', behauptet: `${falsch} m` })] }); },
   ]);
   sechs(R2, 'E', [
@@ -213,7 +213,7 @@ export function runden6() {
     () => { const e = zz(2, 8), z = zz(1, 7), p = (e * 100 + z * 10 + 4) * 100 + 4 * 10 + zz(5, 9), kn = kind(), lsg = G(p, 4, 1), falsch = T(rundeKette(p, 4, 1), 1, 1);
       if (falsch === lsg) return null;
       return auswahl(Z(`${kn} rundet den Betrag ${T(p, 4)} € auf Zehntel Euro.`, `${kn} rundet Stelle für Stelle und erhält ${falsch} €.`, 'Beurteile das Ergebnis und begründe.'),
-        [opt(`Falsch. ${T(p, 4)} € ≈ ${lsg} €.`, true), opt('Stimmt.', false, 'runden-kette'), opt('Stimmt, denn jede Stelle wurde richtig gerundet.', false, 'runden-kette')],
+        [opt(`Falsch. ${T(p, 4)} € ≈ ${lsg} €.`, true), opt('Stimmt. Man rundet von hinten Stelle für Stelle.', false, 'runden-kette'), opt('Stimmt, denn jede Stelle wurde richtig gerundet.', false, 'runden-kette')],
         h1('Prüfe, welche Ziffer rechts neben den Zehnteln steht. Nur sie entscheidet.'), { nachweis: [RN(`${T(p, 4)} €`, 1, `${lsg} €`, { einheit: '€', behauptet: `${falsch} €` })] }); },
     () => { const [k, n] = wahl([[7, 9], [5, 7], [2, 3], [5, 6], [4, 7], [8, 9]]), q = Math.floor((k * 10000) / n), lsg = G(q, 4, 2);
       return dezimal(Z(`In einer Umfrage nennen ${k} von ${n} Kindern Pizza als Lieblingsessen.`, `Der Rechner zeigt für den Anteil ${T(q, 4)}.`, 'Gib den Anteil auf Hundertstel gerundet an.'), lsg, rundFehler(q, 4, 2),

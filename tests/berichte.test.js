@@ -29,7 +29,7 @@ test('Bearbeitungen merken sich die Version des Schüler-Dashboards', () => {
 });
 
 test('Falsche Antworten nennen die bekannte Fehlvorstellung', () => {
-  assert.deepEqual(falscheTeile(aufgabe('6.1.1-B1-G-01'), '5/8').map((t) => t.fehlvorstellung), ['bruch-ganzes-teil']);
+  assert.deepEqual(falscheTeile(aufgabe('6.1.1-B1-G-01'), '5/8').map((t) => t.fehlvorstellung), ['ganzes-mehrere-figuren']);
   const zahl = falscheTeile(aufgabe('6.1.1-B1-M-03'), '13');
   assert.equal(zahl[0].fehlvorstellung, 'bruchteil-zaehler-vergessen');
   assert.equal(falscheTeile(aufgabe('6.1.1-B1-M-03'), '38')[0].fehlvorstellung, undefined);
@@ -55,7 +55,7 @@ test('Aufgabenanalyse: ab 3 Schülern auffällig, Abbrecher getrennt, alle Frage
   assert.equal(a.schueler, 4);
   assert.equal(a.angefangen, 4);
   assert.ok(a.gruende.some((g) => /viele Fehler/.test(g)));
-  assert.deepEqual(a.falsch[0], ['5/8', 3, 'bruch-ganzes-teil']);
+  assert.deepEqual(a.falsch[0], ['5/8', 3, 'ganzes-mehrere-figuren']);
   assert.deepEqual(a.feedback.text, { ja: 0, nein: 2 });
   assert.deepEqual(a.feedback.leicht, { ja: 0, nein: 2 });
   assert.ok(a.gruende.some((g) => /2-mal „Text nicht verstanden“/.test(g)));
@@ -77,7 +77,7 @@ test('Feedback nach Niveau und Export mit Lösung, Fehlvorstellung, Klassen und 
   const md = AN.teststundeMarkdown({ klassen: 'alle', zeitraum: '25.11.2026', version: 'Version 0.54', erstellt: 'jetzt' }, an, fb,
     (id) => pool6.aufgaben.find((a) => a.id === id), (id) => pool6.fehlvorstellungen[id]);
   assert.match(md, /- Lösung im Pool: 5⁄4/);
-  assert.match(md, /„5\/8“ \(3, bekannte Fehlvorstellung bruch-ganzes-teil: Verwechselt/);
+  assert.match(md, /„5\/8“ \(3, bekannte Fehlvorstellung ganzes-mehrere-figuren: Nimmt/);
   assert.match(md, /\| 6a \| 4 \| 4 \| 10 \| 4 \| 0\.54 \(9\), vor 0\.54 \(1\) \|/);
   assert.match(md, /Schüler-Dashboard bei den Bearbeitungen: 0\.54 \(9\), vor 0\.54 \(1\)/);
   assert.match(md, /Exportiert mit: Version 0\.54/);

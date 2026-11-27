@@ -134,7 +134,7 @@ export function winkelarten() {
     () => schaetzZahl(Z('Wie groß ist der Winkel α ungefähr?', 'Du darfst bis zu 20° daneben liegen.'), 'G', 20, h3('Dreh den Winkel in Gedanken.', 'Vergleiche ihn dann mit 90°.', 'Schätze in Zehnerschritten.')),
     () => schaetzZahl(Z('β ist ein rechter Winkel.', 'Schätze mit seiner Hilfe den Winkel α.', 'Du darfst bis zu 20° daneben liegen.'), 'G', 20, h3('β hat genau 90°.', 'Vergleiche α mit β.', 'Ist α die Hälfte, etwas weniger oder mehr?'), { recht: true }),
     () => { const g = 5 * zz(22, 32), k = kind(), falsch = 180 - g;
-      return auswahl(Z(`${k} schätzt den Winkel α auf ${falsch}°.`, 'Was ist der Fehler?'), [opt(`α ist stumpf.\nEr ist größer als 90°.\n${falsch}° ist viel zu klein.`, true), opt(`Kein Fehler.\n${falsch}° passt gut.`, false, 'winkel-ohne-stuetze'), opt(`α ist spitz.\n${falsch}° ist zu groß.`, false, 'winkelart-grenze')],
+      return auswahl(Z(`${k} schätzt den Winkel α auf ${falsch}°.`, 'Was ist der Fehler?'), [opt(`α ist stumpf.\nEr ist größer als 90°.\n${falsch}° ist viel zu klein.`, true), opt(`Kein Fehler.\n${falsch}° passt gut.`, false, 'winkel-ohne-stuetze'), opt(`α ist spitz.\nEr ist kleiner als 90°.\n${falsch}° ist zu groß.`, false, 'winkelart-grenze')],
         h3('Vergleiche α zuerst mit einer Heftecke.', 'Ist α größer oder kleiner als 90°?', 'Prüfe dann die Schätzung.'), { bild: einBild(g, 'G'), nachweis: [U(false), { art: 'groesse', winkel: 'α', wert: g }, ...N(`180 − ${g}`)] }); },
   ]);
   sechs(A2, 'M', [

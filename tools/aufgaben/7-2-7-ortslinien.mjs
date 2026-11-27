@@ -61,7 +61,7 @@ function o1() {
         H('G', 'Alle Punkte mit gleichem Abstand von M liegen auf einem Kreis.', 'Die Leine ist der Radius.', 'Tippe M und dann einen Punkt im Abstand der Leine an.'), { nachweis: [{ art: 'kreisGitter', r }] }); },
     () => { const k = kind();
       return auswahl(Z(`${k} sagt: „Der Punkt P liegt auf der Mittelsenkrechten von AB.“`, '„Also ist P von A und B gleich weit entfernt.“', 'Kreuze die richtige Begründung an.'),
-        [opt('Das stimmt. Jeder Punkt der Mittelsenkrechten ist von A und B gleich weit entfernt.', true), opt('Das stimmt nur für die Mitte von AB.', false, 'mittelsenkrechte-nicht-mittig'), opt('Das stimmt nicht. P ist näher an A.', false, 'ortslinie-verwechselt')],
+        [opt('Das stimmt. Jeder Punkt der Mittelsenkrechten ist von A und B gleich weit entfernt.', true), opt('Das stimmt nur für die Mitte von AB. Die anderen Punkte sind näher an A.', false, 'mittelsenkrechte-nicht-mittig'), opt('Das stimmt nicht. P ist näher an A.', false, 'ortslinie-verwechselt')],
         hMS('G'), { nachweis: [{ art: 'urteil', stimmt: true }] }); },
   ]);
   sechs(O1, 'M', [
@@ -77,7 +77,7 @@ function o1() {
         hMS('M'), { bild: gitterBild(GT(14, 10, { punkte: [PT('A', ...s.A), PT('B', ...s.B), PT('Q', ...Q)], linien: [LN(null, s.A, s.B, 'strecke'), LN('m', s.M, plusG(s.M, s.n), 'gerade', 'hilfs')] })), nachweis: [{ art: 'mittelsenkrechte', a: s.A, b: s.B, punkt: Q }, { zahl: Math.round(d * 5) / 10, grund: `QA = QB = ${cm(String(Math.round(d * 5) / 10))}` }] }); },
     () => { const k = kind();
       return auswahl(`${k} soll einen Treffpunkt finden, der von drei Freunden A, B und C gleich weit entfernt ist. ${k} zeichnet nur die Mittelsenkrechte von AB. Beurteile. Kreuze an.`,
-        [opt('Das reicht nicht. Man braucht noch die Mittelsenkrechte von BC. Der Schnittpunkt ist der Treffpunkt.', true), opt('Das reicht. Jeder Punkt darauf passt.', false, 'ortslinie-verwechselt'), opt('Man muss einen Kreis um A zeichnen.', false, 'ortslinie-verwechselt'), opt('Der Treffpunkt ist die Mitte von AB.', false, 'mittelsenkrechte-nicht-mittig')],
+        [opt('Das reicht nicht. Man braucht noch die Mittelsenkrechte von BC. Der Schnittpunkt ist der Treffpunkt.', true), opt('Das reicht. Jeder Punkt auf dieser Mittelsenkrechten ist ein möglicher Treffpunkt.', false, 'ortslinie-verwechselt'), opt('Man muss einen Kreis um A zeichnen.', false, 'ortslinie-verwechselt'), opt('Der Treffpunkt ist die Mitte von AB.', false, 'mittelsenkrechte-nicht-mittig')],
         H('M', 'Drei Bedingungen: gleich weit von A und B, gleich weit von B und C.', 'Jede Bedingung hat eine Mittelsenkrechte. Der Treffpunkt ist ihr Schnittpunkt.'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(O1, 'E', [
@@ -88,7 +88,7 @@ function o1() {
     () => zweiBedingungen('E', 'Ein Brunnen soll von zwei Häusern A und B gleich weit und vom Baum P genau 5 Kästchen entfernt sein. Tippe alle möglichen Orte an.', 'kreis-ms'),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Die Mittelsenkrechte von AB ist die Gerade durch die Mitte von AB.“ Beurteile die Beschreibung. Kreuze an.`,
-        [opt('Unvollständig. Durch die Mitte gehen viele Geraden. Sie muss außerdem senkrecht auf AB stehen.', true), opt('Richtig und vollständig.', false, 'mittelsenkrechte-nicht-mittig'), opt('Falsch. Sie geht durch A.', false, 'mittelsenkrechte-nicht-mittig'), opt('Falsch. Sie ist parallel zu AB.', false, 'ortslinie-verwechselt')],
+        [opt('Unvollständig. Durch die Mitte gehen viele Geraden. Sie muss außerdem senkrecht auf AB stehen.', true), opt('Richtig und vollständig.', false, 'mittelsenkrechte-nicht-mittig'), opt('Falsch. Sie geht durch A.', false, 'mittelsenkrechte-nicht-mittig'), opt('Falsch. Sie ist parallel zu AB und geht deshalb gar nicht durch die Mitte von AB.', false, 'ortslinie-verwechselt')],
         hMS('E'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
     () => { const y = zz(3, 6), P = [7, y + 3];
       return gitterPunkte('Gesucht sind alle Punkte, die von der Geraden g genau 3 Kästchen und vom Punkt P genau 5 Kästchen entfernt sind. Tippe sie an.', GT(14, 12, { punkte: [PT('P', ...P)], linien: [LN('g', [0, y], [14, y], 'gerade')] }),
@@ -155,7 +155,7 @@ function o2() {
         H('M', 'Diese Punkte liegen auf der Winkelhalbierenden.', 'Zeichne die Winkelhalbierende ein und prüfe jeden Punkt.'), { nachweis: [{ art: 'ort', bedingungen: [{ art: 'gleichweitGeraden', s: t.S, u: t.u, v: t.v, kandidaten: [P, Q, X] }] }] }); },
     () => { const k = kind();
       return auswahl(`${k} sagt: „Jeder Punkt, der von zwei sich schneidenden Geraden gleich weit entfernt ist, liegt auf einer einzigen Winkelhalbierenden.“ Überprüfe. Kreuze an.`,
-        [opt('Falsch. Zwei Geraden bilden vier Winkel. Es gibt zwei Winkelhalbierende, die senkrecht zueinander stehen.', true), opt('Richtig.', false, 'ortslinie-verwechselt'), opt('Falsch. Es gibt vier Winkelhalbierende, die nicht senkrecht sind.', false, 'ortslinie-verwechselt'), opt('Falsch. Es ist die Mittelsenkrechte.', false, 'ortslinie-verwechselt')],
+        [opt('Falsch. Zwei Geraden bilden vier Winkel. Es gibt zwei Winkelhalbierende, die senkrecht zueinander stehen.', true), opt('Richtig.', false, 'ortslinie-verwechselt'), opt('Falsch. Zwei Geraden bilden vier Winkel. Es gibt also vier Winkelhalbierende, die nicht senkrecht sind.', false, 'ortslinie-verwechselt'), opt('Falsch. Es ist die Mittelsenkrechte.', false, 'ortslinie-verwechselt')],
         H('M', 'Denke an die Scheitelwinkel und Nebenwinkel an der Kreuzung.', 'Halbiere zwei Nebenwinkel. Ihre Hälften ergeben 90°.'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(O2, 'E', [
@@ -167,7 +167,7 @@ function o2() {
       return grad(`Zwei Geraden schneiden sich unter dem Winkel ${a}°. Bestimme den Winkel zwischen den beiden Winkelhalbierenden.`, 90, [[a / 2, 'winkelhalbierende-seitenmitte'], [180 - a, 'nebenwinkel-gleich']], H('E', `Die Halbierenden teilen ${a}° und ${180 - a}°.`), { nachweis: [`${a}° : 2 = ${a / 2}°`, R(`180° − ${a}° = ${180 - a}°`), `${180 - a}° : 2 = ${(180 - a) / 2}°`, R(`${a / 2}° + ${(180 - a) / 2}° = 90°`)] }); },
     () => { const k = kind(), a = 2 * zz(20, 40);
       return auswahl(`${k} halbiert einen Winkel von ${a}° und erhält zwei Winkel von ${a / 2 + 10}° und ${a / 2 - 10}°, weil die Linie zur Mitte der gegenüberliegenden Seite geht. Erkläre den Fehler. Kreuze an.`,
-        [opt('Die Linie zur Seitenmitte ist keine Winkelhalbierende. Diese teilt den Winkel in zwei gleich große Teile.', true), opt('Beim Messen passieren immer Fehler.', false, 'winkelhalbierende-seitenmitte'), opt('Die Winkelhalbierende geht immer zur Seitenmitte.', false, 'winkelhalbierende-seitenmitte'), opt('Der Winkel war zu groß.', false, 'winkelhalbierende-seitenmitte')],
+        [opt('Die Linie zur Seitenmitte ist keine Winkelhalbierende. Diese teilt den Winkel in zwei gleich große Teile.', true), opt('Beim Messen passieren immer Fehler.', false, 'winkelhalbierende-seitenmitte'), opt('Die Winkelhalbierende geht immer zur Seitenmitte. Der Fehler muss beim Messen der Winkel liegen.', false, 'winkelhalbierende-seitenmitte'), opt('Der Winkel war zu groß.', false, 'winkelhalbierende-seitenmitte')],
         hWH('E'), { nachweis: [`${a}° : 2 = ${a / 2}°`, { art: 'urteil', stimmt: false }] }); },
     () => { const t = winkelGitter('E'), P = plusG(t.S, t.w, zz(2, 3));
       if (![P, plusG(P, dreh90(t.w, 1), 3)].every((p) => p[0] >= 0 && p[1] >= 0 && p[0] <= 14 && p[1] <= 10)) return null;
@@ -218,7 +218,7 @@ function umkreis() {
     ['Der Umkreismittelpunkt ist von allen drei Ecken gleich weit entfernt.', true, 'Er liegt auf allen drei Mittelsenkrechten.', 'umkreis-inkreis-verwechselt'],
     ['Für den Umkreis braucht man die Winkelhalbierenden.', false, 'Man braucht die Mittelsenkrechten. Die Winkelhalbierenden gehören zum Inkreis.', 'umkreis-inkreis-verwechselt'],
     ['Zwei Mittelsenkrechten reichen, um U zu finden.', true, 'Die dritte geht von selbst durch ihren Schnittpunkt.', 'umkreis-inkreis-verwechselt']]);
-    return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage. Kreuze an.`, [opt(`${stimmt ? 'Stimmt' : 'Stimmt nicht'}. ${grund}`, true), opt(`${stimmt ? 'Stimmt nicht' : 'Stimmt'}. Das sieht man an jedem Beispiel.`, false, fv), opt('Das hängt von der Größe des Dreiecks ab.', false, fv)], H('E', 'Denke an die Mittelsenkrechten.'), { nachweis: [{ art: 'urteil', stimmt }] }); };
+    return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage. Kreuze an.`, [opt(`${stimmt ? 'Stimmt' : 'Stimmt nicht'}. ${grund}`, true), opt(`${stimmt ? 'Stimmt nicht' : 'Stimmt'}. Das sieht man an jedem gezeichneten Beispiel.`, false, fv), opt('Das hängt von der Größe des Dreiecks ab.', false, fv)], H('E', 'Denke an die Mittelsenkrechten.'), { nachweis: [{ art: 'urteil', stimmt }] }); };
   const radius = () => { const t = suche(umkreisDreieck, (x) => [x.A, x.B, x.C].some((p) => p[0] === x.U[0] || p[1] === x.U[1]));
     return zahl('Der Umkreismittelpunkt U ist eingezeichnet. Bestimme den Radius des Umkreises in Kästchen.', 5, [[4, 'umkreis-inkreis-verwechselt'], [10, 'thales-durchmesser']], H('E', 'Zähle von U bis zu einer Ecke, die auf derselben Gitterlinie liegt.'),
       { einheit: 'Kästchen', bild: gitterBild(g(t, { punkte: [PT('A', ...t.A), PT('B', ...t.B), PT('C', ...t.C), PT('U', ...t.U)] })), nachweis: [{ art: 'gitterlaenge', a: t.U, b: [t.A, t.B, t.C].find((p) => p[0] === t.U[0] || p[1] === t.U[1]), wert: 5 }] }); };
@@ -230,7 +230,7 @@ function umkreis() {
     () => tippU('Bestimme den Umkreismittelpunkt U des Dreiecks und tippe ihn an.', false), () => radius(), () => winkelU(), () => lage(), () => kreis('Zeichne den Kreis durch A, B und C.'), () => urteil(),
     () => tippU('Drei Häuser A, B und C bekommen einen gemeinsamen Spielplatz. Er soll von allen gleich weit entfernt sein. Tippe den Ort an.', false), () => msMitZirkel('B', 'C'), () => kreis('Zeichne den Umkreis. Sein Mittelpunkt ist der Schnittpunkt der Mittelsenkrechten.'), () => winkelU(), () => radius(), () => urteil(),
     () => tippU('Tippe den Punkt an, der von A, B und C gleich weit entfernt ist.', false), () => lage(), () => kreis('Zeichne den Umkreis des Dreiecks ABC.'),
-    () => auswahl('Warum schneiden sich die drei Mittelsenkrechten in einem Punkt? Kreuze an.', [opt('Der Schnittpunkt von zwei ist gleich weit von A, B und C entfernt. Also liegt er auch auf der dritten.', true), opt('Weil drei Geraden sich immer in einem Punkt schneiden.', false, 'mittelsenkrechte-nicht-mittig'), opt('Weil das Dreieck gleichseitig ist.', false, 'dreieck-sonderfall'), opt('Weil sie parallel sind.', false, 'ortslinie-verwechselt')],
+    () => auswahl('Warum schneiden sich die drei Mittelsenkrechten in einem Punkt? Kreuze an.', [opt('Der Schnittpunkt von zwei ist gleich weit von A, B und C entfernt. Also liegt er auch auf der dritten.', true), opt('Weil drei Geraden sich immer in einem Punkt schneiden, wenn sie nicht parallel sind.', false, 'mittelsenkrechte-nicht-mittig'), opt('Weil das Dreieck gleichseitig ist.', false, 'dreieck-sonderfall'), opt('Weil sie parallel sind.', false, 'ortslinie-verwechselt')],
       H('E', 'Nutze die Eigenschaft der Mittelsenkrechten zweimal.'), { nachweis: [{ art: 'urteil', stimmt: true }] }),
     () => winkelU(), () => tippU('Die Mittelsenkrechten von AB und BC sind eingezeichnet. Tippe ihren Schnittpunkt an.', true),
   ], 24);
@@ -253,13 +253,13 @@ function inkreis() {
     return gitterPunkte(text, t.g(), [t.I], [], H('E', 'Der Inkreismittelpunkt ist der Schnittpunkt der Winkelhalbierenden.'), { nachweis: [{ art: 'ort', bedingungen: [{ art: 'inkreis', ecken: [t.A, t.B, t.C] }] }] }); };
   const kreis = (text) => { const t = inkreisDreieck();
     return gitterKreis(text, t.g({ punkte: [PT('A', ...t.A), PT('B', ...t.B), PT('C', ...t.C), PT('I', ...t.I)] }), t.I, t.r, t.T, [[{ r: t.r + 1 }, 'umkreis-inkreis-verwechselt']], H('E', 'Der Radius ist der Abstand von I zu einer Seite, senkrecht gemessen.'), { nachweis: [{ art: 'kreisGitter', r: t.r }, { art: 'ort', bedingungen: [{ art: 'inkreis', ecken: [t.A, t.B, t.C] }] }] }); };
-  const whMitZirkel = (E = null) => ordnen(E ? `Konstruiere die Winkelhalbierende des Winkels bei ${E} mit Zirkel und Lineal. Ordne die Schritte.` : 'Konstruiere die Winkelhalbierende eines Winkels mit Zirkel und Lineal. Ordne die Schritte.', [E ? `Zeichne um ${E} einen Kreisbogen, der beide Schenkel schneidet.` : 'Zeichne um den Scheitel einen Kreisbogen, der beide Schenkel schneidet.', 'Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.', 'Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.', 'Verbinde diesen Punkt mit dem Scheitel.'], H('E', 'Der erste Bogen geht um den Scheitel.'));
+  const whMitZirkel = (E = null) => ordnen(E ? `Konstruiere die Winkelhalbierende des Winkels bei ${E} mit Zirkel und Lineal. Ordne die Schritte.` : 'Konstruiere die Winkelhalbierende eines Winkels mit Zirkel und Lineal. Ordne die Schritte.', [E ? `Zeichne um ${E} einen Kreisbogen, der beide Schenkel schneidet.` : 'Zeichne um den Scheitel einen Kreisbogen, der beide Schenkel schneidet.', 'Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.', 'Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.', 'Verbinde den Schnittpunkt der Bögen mit dem Scheitel.'], H('E', 'Der erste Bogen geht um den Scheitel.'));
   const urteil = () => { const k = kind(), [satz, stimmt, grund, fv] = wahl([
     ['Der Inkreismittelpunkt kann außerhalb des Dreiecks liegen.', false, 'Er liegt immer innen, denn die Winkelhalbierenden verlaufen im Dreieck.', 'innen-aussen-verwechselt'],
     ['Der Inkreis geht durch die drei Ecken.', false, 'Der Inkreis berührt die drei Seiten. Durch die Ecken geht der Umkreis.', 'umkreis-inkreis-verwechselt'],
     ['Der Inkreismittelpunkt ist von allen drei Seiten gleich weit entfernt.', true, 'Er liegt auf allen drei Winkelhalbierenden.', 'umkreis-inkreis-verwechselt'],
     ['Den Radius des Inkreises misst man von I zu einer Ecke.', false, 'Man misst von I senkrecht zu einer Seite.', 'umkreis-inkreis-verwechselt']]);
-    return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage. Kreuze an.`, [opt(`${stimmt ? 'Stimmt' : 'Stimmt nicht'}. ${grund}`, true), opt(`${stimmt ? 'Stimmt nicht' : 'Stimmt'}. Das sieht man an jedem Beispiel.`, false, fv), opt('Das gilt nur im gleichseitigen Dreieck.', false, fv)], H('E', 'Denke an die Winkelhalbierenden.'), { nachweis: [{ art: 'urteil', stimmt }] }); };
+    return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage. Kreuze an.`, [opt(`${stimmt ? 'Stimmt' : 'Stimmt nicht'}. ${grund}`, true), opt(`${stimmt ? 'Stimmt nicht' : 'Stimmt'}. Das sieht man an jedem gezeichneten Beispiel.`, false, fv), opt('Das gilt nur im gleichseitigen Dreieck.', false, fv)], H('E', 'Denke an die Winkelhalbierenden.'), { nachweis: [{ art: 'urteil', stimmt }] }); };
   const radius = () => { const t = inkreisDreieck();
     return zahl('I ist der Inkreismittelpunkt. Bestimme den Radius des Inkreises in Kästchen.', t.r, [[Math.round(Math.hypot(t.I[0] - t.A[0], t.I[1] - t.A[1])), 'umkreis-inkreis-verwechselt']].filter(([x]) => x !== t.r), H('E', 'Zähle senkrecht von I bis zu einer Seite, die auf einer Gitterlinie liegt.'),
       { einheit: 'Kästchen', bild: gitterBild(t.g({ punkte: [PT('A', ...t.A), PT('B', ...t.B), PT('C', ...t.C), PT('I', ...t.I)] })), nachweis: [{ art: 'gitterlaenge', a: t.I, b: t.T, wert: t.r }] }); };
@@ -273,7 +273,7 @@ function inkreis() {
     () => tippI('Bestimme den Inkreismittelpunkt I und tippe ihn an.'), () => winkelI(), () => kreis('Zeichne den Inkreis des Dreiecks mit dem Mittelpunkt I.'), () => winkelI(), () => radius(), () => urteil(),
     () => tippI('Ein runder Tisch soll so in eine dreieckige Ecke passen, dass er alle drei Wände berührt. Tippe seinen Mittelpunkt an.'), () => whMitZirkel('A'), () => kreis('Zeichne den Kreis um I, der alle drei Seiten berührt.'), () => winkelI(), () => radius(), () => urteil(),
     () => tippI('Tippe den Punkt an, der von allen drei Seiten des Dreiecks gleich weit entfernt ist.'), () => welche(`${kind()} will den Inkreis eines Dreiecks zeichnen. Welche Linien braucht es dafür zuerst? Kreuze an.`), () => radius(),
-    () => auswahl('Warum schneiden sich die drei Winkelhalbierenden in einem Punkt? Kreuze an.', [opt('Der Schnittpunkt von zwei ist von allen drei Seiten gleich weit entfernt. Also liegt er auch auf der dritten.', true), opt('Weil sie zur Seitenmitte gehen.', false, 'winkelhalbierende-seitenmitte'), opt('Weil das Dreieck rechtwinklig ist.', false, 'dreieck-art'), opt('Das ist Zufall.', false, 'ortslinie-verwechselt')],
+    () => auswahl('Warum schneiden sich die drei Winkelhalbierenden in einem Punkt? Kreuze an.', [opt('Der Schnittpunkt von zwei ist von allen drei Seiten gleich weit entfernt. Also liegt er auch auf der dritten.', true), opt('Weil sie zur Seitenmitte gehen. Die drei Seitenmitten liegen immer um einen gemeinsamen Punkt.', false, 'winkelhalbierende-seitenmitte'), opt('Weil das Dreieck rechtwinklig ist.', false, 'dreieck-art'), opt('Das ist Zufall.', false, 'ortslinie-verwechselt')],
       H('E', 'Nutze die Eigenschaft der Winkelhalbierenden zweimal.'), { nachweis: [{ art: 'urteil', stimmt: true }] }),
     () => winkelI(), () => tippI('Tippe den Mittelpunkt des Inkreises an.'),
   ], 24);

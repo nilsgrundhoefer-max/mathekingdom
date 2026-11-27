@@ -153,7 +153,7 @@ function k2() {
     () => { const w = bauMit(4, 3, 3, zz(9, 13), sichtbar);
       return zahl(Z('Das Bild zeigt einen Würfelbau.', 'Gib an, wie viele Würfel es sind.'), w.length, [[w.length - 1, 'wuerfel-verdeckt'], [ansicht(w, 'vorne').length, 'wuerfel-verdeckt']], hZaehlen('G'), { bild: bau(w), nachweis: [WZ(w.length)] }); },
     () => { const k = kind();
-      return auswahl(Z(`${k} sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“`, 'Beurteile die Aussage.'), [opt('Stimmt nicht. Die 8 Würfel können auch in einer Reihe liegen.', true), opt('Stimmt. 8 Würfel ergeben 2 · 2 · 2.', false, 'wuerfel-kein-quader'), opt('Stimmt. Jeder Würfelbau ist ein Würfel.', false, 'wuerfel-kein-quader')],
+      return auswahl(Z(`${k} sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“`, 'Beurteile die Aussage.'), [opt('Stimmt nicht. Die 8 Würfel können auch in einer Reihe liegen.', true), opt('Stimmt. 8 Würfel ergeben immer 2 · 2 · 2. Das ist ein Würfel.', false, 'wuerfel-kein-quader'), opt('Stimmt. Jeder Würfelbau ist ein Würfel.', false, 'wuerfel-kein-quader')],
         H('G', 'Lege 8 Würfel in Gedanken in eine lange Reihe.', 'Ist das ein Würfel?', 'Ein Gegenbeispiel genügt.'), { nachweis: [U(false), '2 · 2 · 2 = 8'] }); },
   ]);
   sechs(K2, 'M', [

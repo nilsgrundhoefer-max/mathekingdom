@@ -113,7 +113,7 @@ export function rechenvorteile() {
       if (k === 0) { const [a, d] = wahl([[24, 6], [36, 4], [40, 8], [42, 7]]);
         return auswahl(`Gilt das Vertauschungsgesetz auch für die Division? Prüfe an ${a} : ${d} und ${d} : ${a}.`, [
           opt(`Nein. ${a} : ${d} = ${a / d}, aber ${d} : ${a} ergibt keine natürliche Zahl. Die Ergebnisse sind verschieden.`, true),
-          opt('Ja. Bei allen Rechenarten darf man vertauschen.', false, 'gesetz-auf-division'),
+          opt('Ja. Bei allen Rechenarten darf man vertauschen, das Ergebnis bleibt dabei immer gleich.', false, 'gesetz-auf-division'),
           opt(`Ja. Beide Aufgaben ergeben ${a / d}.`, false, 'gesetz-auf-division'),
           opt('Nein. Bei der Division darf man gar nichts umstellen.'),
           opt('Das kann man nicht prüfen.')],
@@ -203,7 +203,7 @@ export function rechenvorteile() {
     3: () => { const a = suche(() => zz(13, 49), (x) => x % 10 !== 0), [k1, k2] = zweiKinder();
       return auswahl(`${k1} rechnet 25 · ${a} · 4 so: 25 · 4 = 100 und 100 · ${a} = ${fz(100 * a)}. ${k2} rechnet 25 · ${a} = ${25 * a} und ${25 * a} · 4 = ${fz(100 * a)}. Wer rechnet vorteilhafter?`, [
         opt(`${k1}. 25 · 4 = 100 ist leicht, und mal 100 hängt nur zwei Nullen an.`, true),
-        opt(`${k2}. Man muss immer von links nach rechts rechnen.`),
+        opt(`${k2}. Man muss immer von links nach rechts rechnen, sonst wird es falsch.`),
         opt('Beide gleich. Das Ergebnis ist ja dasselbe.'),
         opt('Keiner. Beide Ergebnisse sind falsch.')],
       h2('Beide Ergebnisse stimmen. Welcher Weg hat die leichteren Schritte?', `Vergleiche 25 · 4 mit 25 · ${a}.`), { nachweis: N('25 · 4', `100 · ${a}`, `25 · ${a}`, `${25 * a} · 4`) }); },
@@ -229,14 +229,14 @@ export function rechenvorteile() {
         return auswahl(`Warum darf man bei 25 · ${a} · 4 zuerst 25 · 4 rechnen?`, [
           opt(`Wegen des Vertauschungsgesetzes darf man ${a} und 4 tauschen. Wegen des Verbindungsgesetzes darf man dann 25 · 4 zuerst rechnen.`, true),
           opt('Weil man immer mit den kleinsten Zahlen anfängt.'),
-          opt('Wegen des Verteilungsgesetzes.', false, 'begriffe-verwechselt'),
+          opt('Wegen des Verteilungsgesetzes darf man die Faktoren neu verteilen. Deshalb darf man die beiden passenden Zahlen zuerst malnehmen.', false, 'begriffe-verwechselt'),
           opt('Weil Punkt vor Strich gilt.', false, 'begriffe-verwechselt'),
           opt('Das darf man nicht. Man muss von links nach rechts rechnen.')],
         h1('Welche beiden Rechengesetze gelten für die Multiplikation?'), { nachweis: N('25 · 4', `100 · ${a}`, `25 · ${a} · 4`) }); }
       const [x, y] = wahl([[25, 4], [125, 8], [50, 2]]), a = suche(() => zz(13, 49), (z) => z % 10 !== 0), [k1, k2] = zweiKinder();
       return auswahl(`${k1} sagt: „Bei ${x} · ${a} · ${y} darf ich ${x} · ${y} zuerst rechnen.“ ${k2} sagt: „Bei ${x * a * y} : ${a} : ${y} darf ich auch ${a} : ${y} zuerst rechnen.“ Wer hat recht?`, [
         opt(`Nur ${k1}. Beim Multiplizieren gelten Vertauschungs- und Verbindungsgesetz, beim Dividieren nicht.`, true),
-        opt(`Beide. Die Rechengesetze gelten für Mal und Geteilt.`, false, 'gesetz-auf-division'),
+        opt(`Beide. Die Rechengesetze gelten für Mal und Geteilt, denn Geteilt ist die Umkehrung von Mal.`, false, 'gesetz-auf-division'),
         opt(`Nur ${k2}. Beim Dividieren darf man umstellen.`, false, 'gesetz-auf-division'),
         opt('Keiner. Man muss immer von links nach rechts rechnen.'),
         opt('Beide. Das Verbindungsgesetz gilt immer.', false, 'gesetz-auf-division')],

@@ -36,7 +36,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe die Liste von vorne nach hinten 
 - `02` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Wie kommst du zur Schule?“ / Die Lehrerin macht eine Strichliste. / Wie viele Kinder haben „zu Fuß“ gewählt? _(Bild: Strichliste „Schulweg der 5b“: zu Fuß 8, Bus 7, Auto 15, Roller 13)_ Lösung: **8**. Typische Fehler: 7 (strich-buendel-als-vier).
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5b wurden gefragt: „Welchen Sport machst du am liebsten?“ / Lies die Strichliste ab. _(Bild: Strichliste „Lieblingssport der 5b“: Fußball 11, Tanzen 10, Reiten 8)_
   - a) Wie viele Kinder wurden insgesamt befragt? **29 Kinder**. Typische Fehler: 24 (strich-buendel-als-vier).
-  - b) Wie viele Kinder mehr haben „Fußball“ gewählt als „Reiten“? **3 Kinder**. Typische Fehler: 19 (sach-falsche-rechnung).
+  - b) Wie viele Kinder mehr haben „Fußball“ gewählt als „Reiten“? **3 Kinder**. Typische Fehler: 19 (unterschied-addiert).
 - `04` AFB I · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5c wurden gefragt: „Wie kommst du zur Schule?“ / Schau dir die Zeile „Roller“ an. / Wie viele Striche fehlen bis zum nächsten vollen Bündel? _(Bild: Strichliste „Schulweg der 5c“: zu Fuß 12, Auto 6, Roller 14)_ Lösung: **1**. Typische Fehler: 0 (strich-buendel-als-vier).
 - `05` AFB II · _Kommunizieren_ · In der Strichliste stehen schon Antworten der 5a. / Diese Kinder haben später geantwortet. / Trage ihre Antworten nach. _(Antwortkärtchen: Grün, Gelb, Lila, Gelb, Grün, Gelb, Grün, Gelb, Lila, Grün)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Grün **9** (schon 5), Gelb **16** (schon 12), Lila **11** (schon 9)
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Mara und Tom lesen die Zeile „Vanille“ ab. / Mara sagt: „Es sind 13.“ / Tom sagt: „Es sind 11.“ / Wer hat recht? _(Bild: Strichliste „Lieblingseis der 5c“: Vanille 13, Schoko 7, Zitrone 9)_
@@ -51,7 +51,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache bei jeder Antwort einen Strich.
 - `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Mache für jede Antwort einen Strich in der passenden Zeile. _(Antwortkärtchen: Reiten, Reiten, Fußball, Reiten, Turnen, Reiten, Schwimmen, Turnen, Fußball, Fußball, Fußball, Reiten, Fußball, Reiten, Fußball, Fußball, Schwimmen, Reiten, Turnen, Fußball, Turnen, Fußball, Turnen, Turnen, Schwimmen)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Fußball **9**, Schwimmen **3**, Turnen **6**, Reiten **7**
 - `02` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Werte die Strichliste aus. _(Bild: Strichliste „Tiere auf dem Burghof“: Schafe 17, Ziegen 23, Kühe 22, Gänse 6)_
   - a) Wie viele Tiere sind es insgesamt? **68 Tiere**. Typische Fehler: 56 (strich-buendel-als-vier).
-  - b) Wie viele Ziegen mehr als Gänse sind auf dem Burghof? **17 Tiere**. Typische Fehler: 29 (sach-falsche-rechnung).
+  - b) Wie viele Ziegen mehr als Gänse sind auf dem Burghof? **17 Tiere**. Typische Fehler: 29 (unterschied-addiert).
 - `03` AFB II · _Kommunizieren_ · In der Strichliste stehen schon Antworten der 5c. / Diese Kinder haben später geantwortet. / Trage ihre Antworten nach. _(Antwortkärtchen: Hund, Pferd, Hund, Hund, Hund, Hase, Pferd, Katze)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Hund **15** (schon 11), Katze **8** (schon 7), Pferd **6** (schon 4), Hase **11** (schon 10)
 - `04` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Die Lehrerin macht eine Strichliste. / Wie viele Kinder haben „Rot“ gewählt? _(Bild: Strichliste „Lieblingsfarben der 5c“: Rot 26, Blau 19, Grün 24, Lila 14)_ Lösung: **26**. Typische Fehler: 21 (strich-buendel-als-vier).
 - `05` AFB II · _Kommunizieren_ · Bei „Hamster“ sind es 19 Striche. / Es sind ▢ volle Bündel und ▢ einzelne Striche. Lösung: a = **3**, b = **4**
@@ -303,7 +303,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waage
 - `02` AFB I · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder haben „Schoko“ gewählt? _(Bild: Balkendiagramm „Lieblingseis der 5a“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Vanille 55, Schoko 95, Zitrone 70, Nuss 20)_ Lösung: **95**. Typische Fehler: 19 (skala-einerschritte), 80 (skala-zwischenwert).
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Tiere auf dem Burghof“; Achse 0 bis 50, Linien alle 5, beschriftet alle 10; Ziegen 25, Hühner 15, Kühe 50)_
   - a) Wie viele Hühner und Kühe sind es zusammen? **65 Tiere**. Typische Fehler: 35 (sach-falsche-rechnung).
-  - b) Wie viele Kühe mehr als Hühner sind auf dem Burghof? **35 Tiere**. Typische Fehler: 65 (sach-falsche-rechnung).
+  - b) Wie viele Kühe mehr als Hühner sind auf dem Burghof? **35 Tiere**. Typische Fehler: 65 (unterschied-addiert).
 - `04` AFB I · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Bei welcher Säule sind es genau 28 Kinder? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 28, Erdbeere 16, Nuss 10)_
   - ☑ „Schoko“
   - ☐ „Nuss“
@@ -321,11 +321,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waage
 - `01` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Museum. / Wie viele Besucher kamen am Mittwoch? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 275, Di 400, Mi 450, Do 150)_ Lösung: **450**. Typische Fehler: 18 (skala-einerschritte), 400 (skala-zwischenwert).
 - `02` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Lies die Werte ab und rechne. _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 190, Mi 90, Do 110, Fr 150)_
   - a) Wie viele Besucher kamen am Dienstag und am Freitag zusammen? **340 Besucher**. Typische Fehler: 40 (sach-falsche-rechnung).
-  - b) Wie viele Besucher kamen am Dienstag mehr als am Freitag? **40 Besucher**. Typische Fehler: 340 (sach-falsche-rechnung).
+  - b) Wie viele Besucher kamen am Dienstag mehr als am Freitag? **40 Besucher**. Typische Fehler: 340 (unterschied-addiert).
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Museum. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Do 150, Fr 200, Sa 90, So 80)_
   - a) Wie viele Besucher kamen an allen Tagen zusammen? **520 Besucher**. Typische Fehler: 440 (sach-schritt-vergessen).
-  - b) Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? **120 Besucher**. Typische Fehler: 280 (sach-falsche-rechnung).
-- `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Bei welcher Zeile sind es genau 175 Besucher? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 175, Di 475, Mi 150, Do 100)_
+  - b) Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? **120 Besucher**. Typische Fehler: 280 (unterschied-addiert).
+- `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Bei welchem Balken sind es genau 175 Besucher? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 175, Di 475, Mi 150, Do 100)_
   - ☐ Dienstag
   - ☑ Montag
   - ☐ Donnerstag
@@ -618,7 +618,7 @@ Baut auf: 5.1.2-L1 (Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Beispiel:* 8 und 5: 8 − 5 = 3. Es sind 3 mehr. *Lösungsschritt:* Die Werte sind 4 und 1.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Vanille“ gewählt als „Erdbeere“? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 4, Schoko 10, Erdbeere 1)_ Lösung: **3**. Typische Fehler: 5 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Vanille“ gewählt als „Erdbeere“? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 4, Schoko 10, Erdbeere 1)_ Lösung: **3**. Typische Fehler: 5 (unterschied-addiert).
 - `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Balkendiagramm „Lieblingsobst der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Apfel 1, Banane 7, Traube 8)_
   - ☐ „Apfel“
   - ☐ „Banane“
@@ -627,18 +627,18 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
   - ☐ „Gelb“
   - ☑ „Lila“
   - ☐ „Grün“
-- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Kirsche“ gewählt als „Traube“? _(Bild: Strichliste „Lieblingsobst der 5b“: Apfel 7, Kirsche 14, Traube 8)_ Lösung: **6**. Typische Fehler: 22 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Kirsche“ gewählt als „Traube“? _(Bild: Strichliste „Lieblingsobst der 5b“: Apfel 7, Kirsche 14, Traube 8)_ Lösung: **6**. Typische Fehler: 22 (unterschied-addiert).
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Ordne vom größten zum kleinsten Wert. / Welche Reihe stimmt? _(Bild: Säulendiagramm „Lieblingsfarben der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Rot 4, Blau 6, Gelb 18)_
   - ☐ „Gelb“, „Rot“, „Blau“
   - ☐ „Rot“, „Blau“, „Gelb“
   - ☑ „Gelb“, „Blau“, „Rot“
-- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Erdbeere“ gewählt als „Kirsche“? _(Bild: Bilddiagramm „Lieblingsobst der 5c“, ein Bild (kind) = 2 Kinder; Banane 2, Erdbeere 14, Kirsche 12)_ Lösung: **2**. Typische Fehler: 26 (sach-falsche-rechnung), 1 (bild-symbole-gezaehlt).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Erdbeere“ gewählt als „Kirsche“? _(Bild: Bilddiagramm „Lieblingsobst der 5c“, ein Bild (kind) = 2 Kinder; Banane 2, Erdbeere 14, Kirsche 12)_ Lösung: **2**. Typische Fehler: 26 (unterschied-addiert), 1 (bild-symbole-gezaehlt).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Beispiel:* 8 und 5: 8 − 5 = 3. Es sind 3 mehr. *Lösungsschritt:* Die Werte sind 30 und 6.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Schoko“ gewählt als „Nuss“? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 30, Erdbeere 20, Zitrone 26, Nuss 6)_ Lösung: **24**. Typische Fehler: 36 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Schoko“ gewählt als „Nuss“? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 30, Erdbeere 20, Zitrone 26, Nuss 6)_ Lösung: **24**. Typische Fehler: 36 (unterschied-addiert).
 - `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Tier magst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Balkendiagramm „Lieblingstiere der 5b“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Katze 95, Pferd 20, Hase 70, Hamster 40)_
   - ☑ „Katze“
   - ☐ „Hase“
@@ -647,10 +647,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
   - ☐ Schafe, Gänse, Ziegen, Kühe
   - ☐ Ziegen, Kühe, Gänse, Schafe
   - ☑ Schafe, Gänse, Kühe, Ziegen
-- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder mehr haben „Lila“ gewählt als „Rot“? _(Bild: Balkendiagramm „Lieblingsfarben der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Rot 14, Blau 32, Gelb 22, Lila 38)_ Lösung: **24**. Typische Fehler: 52 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder mehr haben „Lila“ gewählt als „Rot“? _(Bild: Balkendiagramm „Lieblingsfarben der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Rot 14, Blau 32, Gelb 22, Lila 38)_ Lösung: **24**. Typische Fehler: 52 (unterschied-addiert).
 - `05` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingstiere“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Tier | Jungen | Mädchen / Hund | 6 | 7 / Hase | 4 | 2 / Hamster | 8 | 6)_
   - a) Wie viele Kinder haben „Hund“ gewählt? **13 Kinder**. Typische Fehler: 6 (sach-schritt-vergessen).
-  - b) Wie viele Jungen mehr als Mädchen haben „Hamster“ gewählt? **2 Kinder**. Typische Fehler: 14 (sach-falsche-rechnung).
+  - b) Wie viele Jungen mehr als Mädchen haben „Hamster“ gewählt? **2 Kinder**. Typische Fehler: 14 (unterschied-addiert).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Elif sagt: „Bei ‚Apfel‘ sind es doppelt so viele Kinder wie bei ‚Erdbeere‘.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Apfel 8, Erdbeere 6, Kirsche 30)_
   - ☐ Stimmt: Die Säule ist höher.
   - ☑ Falsch: 2 · 6 = 12, es sind aber 8.
@@ -660,7 +660,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Lösungsschritt:* Die Werte sind 200 und 70.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 90, Mi 70, Do 200, Fr 150)_ Lösung: **130**. Typische Fehler: 270 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 90, Mi 70, Do 200, Fr 150)_ Lösung: **130**. Typische Fehler: 270 (unterschied-addiert).
 - `02` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Welche Rangfolge stimmt, vom größten zum kleinsten Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 475, Di 175, Mi 150, Do 250, Fr 350)_
   - ☐ Freitag, Montag, Donnerstag, Dienstag, Mittwoch
   - ☐ Montag, Freitag, Donnerstag, Mittwoch, Dienstag
@@ -668,9 +668,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
   - ☑ Montag, Freitag, Donnerstag, Dienstag, Mittwoch
 - `03` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingsfarben“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Farbe | Jungen | Mädchen / Rot | 5 | 4 / Blau | 10 | 9 / Grün | 14 | 13 / Gelb | 2 | 6)_
   - a) Wie viele Kinder haben „Gelb“ gewählt? **8 Kinder**. Typische Fehler: 2 (sach-schritt-vergessen).
-  - b) Wie viele Jungen mehr als Mädchen haben „Grün“ gewählt? **1 Kinder**. Typische Fehler: 27 (sach-falsche-rechnung).
+  - b) Wie viele Jungen mehr als Mädchen haben „Grün“ gewählt? **1 Kinder**. Typische Fehler: 27 (unterschied-addiert).
   - c) Wie viele Mädchen wurden befragt? **32 Kinder**. Typische Fehler: 63 (sach-unnoetige-angabe).
-- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Bilddiagramm „Besucher im Museum“, ein Bild (kind) = 20 Besucher; Mo 100, Di 110, Mi 40, Do 80)_ Lösung: **70**. Typische Fehler: 150 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Bilddiagramm „Besucher im Museum“, ein Bild (kind) = 20 Besucher; Mo 100, Di 110, Mi 40, Do 80)_ Lösung: **70**. Typische Fehler: 150 (unterschied-addiert).
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher liegt der größte Wert vor dem zweitgrößten? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 400, Linien alle 20, beschriftet alle 100; Mi 240, Do 340, Fr 360, Sa 100)_ Lösung: **20**. Typische Fehler: 260 (extrem-verwechselt).
 - `06` AFB III · _Modellieren_ · In der 5a mögen 11 von 22 Kindern „Auto“ am liebsten. / In der 5b sind es 15 von 30 Kindern. / Finn sagt: „In der 5b ist ‚Auto‘ beliebter.“ / Was meinst du?
   - ☐ Die 5a, denn die Klasse ist kleiner.
@@ -682,10 +682,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mi 1200, Do 600, Fr 2000, Sa 1500)_ Lösung: **1400**. Typische Fehler: 2600 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mi 1200, Do 600, Fr 2000, Sa 1500)_ Lösung: **1400**. Typische Fehler: 2600 (unterschied-addiert).
 - `02` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingseis“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Eissorte | Jungen | Mädchen / Vanille | 14 | 7 / Schoko | 9 | 11 / Erdbeere | 4 | 10 / Zitrone | 10 | 4)_
   - a) Wie viele Kinder haben „Zitrone“ gewählt? **14 Kinder**. Typische Fehler: 10 (sach-schritt-vergessen).
-  - b) Wie viele Mädchen mehr als Jungen haben „Erdbeere“ gewählt? **6 Kinder**. Typische Fehler: 14 (sach-falsche-rechnung).
+  - b) Wie viele Mädchen mehr als Jungen haben „Erdbeere“ gewählt? **6 Kinder**. Typische Fehler: 14 (unterschied-addiert).
   - c) Wie viele Mädchen wurden befragt? **32 Kinder**. Typische Fehler: 69 (sach-unnoetige-angabe).
 - `03` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher auf der Burg. / Wie viele Besucher kamen am Samstag und Sonntag zusammen mehr als am Montag und Dienstag zusammen? _(Bild: Säulendiagramm „Besucher auf der Burg“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mo 1900, Di 400, Sa 1100, So 1800)_ Lösung: **600**. Typische Fehler: 2900 (sach-schritt-vergessen), 5200 (sach-falsche-rechnung).
 - `04` AFB III · _Modellieren_ · In der 5a mögen 9 von 27 Kindern „Hamster“ am liebsten. / In der 5b sind es 12 von 24 Kindern. / In welcher Klasse ist „Hamster“ beliebter?
@@ -832,7 +832,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
   - ☑ Es fehlen 2 Antworten.
   - ☐ Es sind 2 Striche zu viel.
   - ☐ Alles ist richtig.
-- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schoko 9, Erdbeere 7, Nuss 5)_
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat sie gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schoko 9, Erdbeere 7, Nuss 5)_
   - ☐ Wie spät ist es?
   - ☑ Welche Eissorte isst du am liebsten?
   - ☐ Welches Obst isst du am liebsten?
@@ -854,7 +854,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
   | Hase | **6** |
   | Hamster | **2** |
 
-- `03` AFB II · _Modellieren_ · Mia will diese Frage stellen: / „Welches Obst isst du am liebsten?“ / Welche Antworten soll er zur Auswahl geben?
+- `03` AFB II · _Modellieren_ · Mia will diese Frage stellen: / „Welches Obst isst du am liebsten?“ / Welche Antworten soll sie zur Auswahl geben?
   - ☐ Vanille, Schoko, Zitrone, Erdbeere
   - ☐ Katze, Hamster, Pferd, Hund
   - ☑ Traube, Apfel, Banane, Erdbeere
@@ -871,7 +871,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie? *Lösungsschritt:* Die Antworten sind „Fußball“, „Schwimmen“, „Turnen“.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Mara hat eine Umfrage gemacht. / Das ist die Strichliste. / Welche Frage hat er gestellt? _(Bild: Strichliste: Fußball 6, Schwimmen 2, Turnen 9)_
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Mara hat eine Umfrage gemacht. / Das ist die Strichliste. / Welche Frage hat sie gestellt? _(Bild: Strichliste: Fußball 6, Schwimmen 2, Turnen 9)_
   - ☐ Was hast du gestern gemacht?
   - ☐ Wie spät ist es?
   - ☑ Welchen Sport machst du am liebsten?
@@ -899,17 +899,17 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Mia hat die Kinder der 5c gefragt: / „Welche Farbe magst du am liebsten?“ / 5 Kinder haben „weiß nicht“ gesagt. / Werte aus. _(Bild: Strichliste „Lieblingsfarben“: Rot 4, Blau 11, Grün 10)_
   - a) Wie viele Kinder haben eine der drei Antworten gewählt? **25 Kinder**. Typische Fehler: 30 (sach-unnoetige-angabe).
   - b) Wie viele Kinder wurden insgesamt befragt? **30 Kinder**. Typische Fehler: 25 (sach-schritt-vergessen).
-- `06` AFB III · _Argumentieren (+ Modellieren)_ · Lena hat nur Kinder im Fußballverein befragt. / Er sagt: „Fußball ist der beliebteste Sport an unserer Schule.“ / Was meinst du dazu?
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Lena hat nur Kinder im Fußballverein befragt. / Sie sagt: „Fußball ist der beliebteste Sport an unserer Schule.“ / Was meinst du dazu?
   - ☐ Stimmt, denn eine Umfrage hat immer recht.
   - ☑ Falsch geschlossen: Im Fußballverein ist „Fußball“ natürlich besonders beliebt. Man muss Kinder aus der ganzen Schule fragen.
   - ☐ Falsch, denn Umfragen sind nie richtig.
-  - ☐ Stimmt, denn er hat viele Kinder gefragt.
+  - ☐ Stimmt, denn sie hat viele Kinder gefragt.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie?
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Turnen 2, Tanzen 7, Reiten 6)_
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat sie gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Turnen 2, Tanzen 7, Reiten 6)_
   - ☐ Wie alt bist du?
   - ☑ Welchen Sport machst du am liebsten?
   - ☐ Was hast du gestern gemacht?
@@ -971,7 +971,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde zuerst heraus, wie groß ein Sc
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Der Pfeil zeigt auf 502.“ / Stimmt das? _(Bild: Zahlenstrahl 500 bis 600, Teilstriche alle 20, Ausschnitt mit Bruchzeichen, Pfeil auf 540)_
   - ☑ Falsch. / Ein Schritt ist 20 groß. / Der Pfeil zeigt auf 540.
   - ☐ Falsch. / Der Pfeil zeigt auf 520.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Von Strich zu Strich geht es immer 1 weiter.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1040,7 +1040,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche von links: erst die Tausen
 - `04` AFB I · _Modellieren_ · Die Zahl 6000 ist am Zahlenstrahl markiert. / Wie heißt ihr Nachfolger? _(Bild: Zahlenstrahl 5990 bis 6010, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 6000)_ Lösung: **6001**. Typische Fehler: 5999 (nachbar-verwechselt), 7000 (stellenwert), 6010 (stellenwert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. / Achte auf die Zahl der Stellen. _(Bild: Zahlenstrahl 800 bis 2000, Teilstriche alle 100, Punkte bei 838, 1308)_ _(Ordnen; die Karten liegen so da: 1308, 1038, 1083, 883, 838)_ Lösung: **838, 883, 1038, 1083, 1308**
 - `06` AFB III · _Argumentieren_ · Sara sagt: „909 ist größer als 1001.“ / „Denn 9 ist größer als 1.“ / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Bei großen Zahlen entscheidet die erste Ziffer.
   - ☐ Falsch. / Die beiden Zahlen sind gleich groß.
   - ☑ Falsch. / 1001 hat mehr Stellen. / Also ist 1001 größer.
 
@@ -1085,7 +1085,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Alle Zahlen haben gleich viele Stelle
   - ☐ Falsch. 999 ist größer als 1000, denn 9 ist größer als 1.
   - ☐ Das gilt nur für Zahlen bis 1000.
   - ☑ Stimmt. Jede vierstellige Zahl ist mindestens 1000, jede dreistellige höchstens 999. So ist es bei jeder Stellenzahl.
-  - ☐ Das gilt nur, wenn auch die erste Ziffer größer ist.
+  - ☐ Das gilt nur, wenn auch die erste Ziffer größer ist. Sonst muss man die Zahlen Stelle für Stelle vergleichen.
 
 ## 5.2.1-N3: Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.
 
@@ -1135,7 +1135,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welcher Stellenwert fehlt? Dort steht
 - `05` AFB II · _Kommunizieren_ · Bei den Zehnern liegen zu viele Plättchen. / 10 Zehner sind 1 Hunderter. / Welche Zahl ist gelegt? _(Bild: Stellenwerttafel mit Plättchen, Spalten H Z E: 2 15 7)_ Lösung: **357**. Typische Fehler: 2157 (stellenwert), 257 (stellenwert).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida soll die Zahl neuntausendzwei schreiben. / Ida schreibt 902. / Stimmt das?
   - ☐ Falsch. / Richtig ist 90002.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / So spricht man die Zahl.
   - ☑ Falsch. / Richtig ist 9002.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -1222,7 +1222,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Dreierblöcke von rechts: 
 - `04` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Welche Zahl steht dort? _(Bild: Stellenwerttafel, Spalten HM ZM M HT ZT T H Z E: 5 0 4 0 0 0 2 0 0)_ Lösung: **504000200**. Typische Fehler: 542 (null-platzhalter), 504000 (dreierblock-vergessen).
 - `05` AFB II · _Kommunizieren_ · Welche Zahl gehört zu welchem Zahlwort? Lösung: 8 600 000 → acht Millionen sechshunderttausend, 8 060 000 → acht Millionen sechzigtausend, 8 006 000 → acht Millionen sechstausend
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara soll diese Zahl schreiben: neun Millionen viertausend / Sara schreibt 9 400 000. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / So spricht man die Zahl.
   - ☑ Falsch. / Richtig ist 9 004 000.
   - ☐ Falsch. / Richtig ist 9 000 004.
 
@@ -1300,7 +1300,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Stellen. Die Zahl m
   - ☑ 1 300 000 000
 - `05` AFB II · _Modellieren_ · Wie heißt der Vorgänger von 100 000 000? Lösung: **99999999**. Typische Fehler: 100000001 (nachbar-verwechselt), 99999990 (stellenwert), 99000000 (stellenwert).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „500 000 000 ist größer als 1 000 000 000.“ / „Denn 5 ist größer als 1.“ / Stimmt das? _(Bild: Stellenwerttafel, Spalten Md HM ZM M HT ZT T H Z E: · 5 0 0 0 0 0 0 0 0 / 1 0 0 0 0 0 0 0 0 0)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Bei großen Zahlen entscheidet die erste Ziffer.
   - ☑ Falsch. / 1 000 000 000 hat mehr Stellen und ist größer.
   - ☐ Falsch. / Die beiden Zahlen sind gleich groß.
 
@@ -1387,7 +1387,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Rundungsstelle sind die Hunderter
 - `06` AFB III · _Argumentieren_ · Emre rundet 6348 auf Hunderter. / Emre rundet zuerst auf Zehner: 6350. / Dann rundet Emre weiter auf Hunderter: 6400. / Stimmt das Ergebnis? _(Bild: Zahlenstrahl 6300 bis 6400, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 6348)_
   - ☐ Falsch. / Richtig ist 6000.
   - ☑ Falsch. / Man rundet in einem Schritt. / Richtig ist 6300.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rundet Schritt für Schritt bis zum Hunderter.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1464,7 +1464,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Rundungsstelle sind die Tausender
   - ☐ rund 100 000 Einwohner
 - `06` AFB III · _Argumentieren_ · In der Zeitung steht: „Rund 400 Besucher.“ / Die Zahl ist auf Hunderter gerundet. / Sara sagt: „Dann waren es mindestens 400.“ / Stimmt das? _(Bild: Zahlenstrahl 300 bis 500, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 400)_
   - ☑ Falsch. / Es können auch nur 350 gewesen sein.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Beim Runden wird die Zahl immer größer.
   - ☐ Falsch. / Es waren genau 400.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -1487,7 +1487,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Für die Tausender entscheidet die Zi
 - `06` AFB III · _Argumentieren_ · Zwei Zahlen ergeben auf Tausender gerundet beide 9000. Paul sagt: „Dann unterscheiden sich die beiden Zahlen höchstens um 500.“ Stimmt das?
   - ☑ Falsch. Sie können fast 1000 auseinanderliegen, zum Beispiel 8500 und 9499.
   - ☐ Falsch. Sie unterscheiden sich höchstens um 100.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Runden auf Tausender ändert sich eine Zahl höchstens um 500.
   - ☐ Falsch. Die beiden Zahlen müssen gleich sein.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -1509,7 +1509,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es entscheidet allein die Ziffer der 
   - ☐ Hunderttausender
   - ☐ Tausender
 - `06` AFB III · _Argumentieren_ · Elif behauptet: „Es ist egal, ob ich zwei Zahlen erst auf Zehner runde und dann addiere oder erst addiere und dann runde.“ Beurteile die Aussage.
-  - ☐ Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer.
+  - ☐ Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer. Runden macht Zahlen größer.
   - ☑ Falsch. Gegenbeispiel: 34 + 34 = 68, gerundet 70. Rundet man zuerst, erhält man 30 + 30 = 60.
   - ☐ Stimmt, solange beide Zahlen abgerundet werden.
   - ☐ Stimmt immer, denn Runden ändert eine Zahl nur wenig.
@@ -1560,7 +1560,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld genau. Rechne dann ho
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Finn schätzt mit dem Raster: 128 Äpfel. / Dann zählt Finn alle einzeln nach: Es sind genau 123. / Finn sagt: „Dann war meine Schätzung falsch.“ / Stimmt das? _(Bild: Schätzbild mit 123 Symbolen (apfel) in 4 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 8 8 6 6 / 7 8 9 6 / 9 9 9 8 / 7 8 7 8)_
   - ☑ Falsch. / Eine Schätzung muss nur nah an der genauen Zahl liegen.
   - ☐ Falsch. / Beim Nachzählen macht man immer Fehler.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Eine gute Schätzung trifft die genaue Zahl immer.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1570,11 +1570,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld aus, das typisch auss
 - `02` AFB II · _Modellieren (+ Kommunizieren)_ · Auf dem Bild sind sehr viele Schafe. Schätze ihre Anzahl mit einem Raster. _(Bild: Schätzbild mit 297 Symbolen (schaf) in 4 mal 8 Feldern, Raster zum Einschalten; je Feld 14 12 14 12 7 7 10 6 / 10 6 11 9 8 10 13 6 / 7 7 6 6 11 7 10 11 / 11 6 14 7 7 12 14 6)_ _(Schätzen)_ Wahre Anzahl: **297** Schafe, richtig von 238 bis 356
 - `03` AFB II · _Modellieren_ · Mara zählt in einem Feld 14 Ameisen. Das Raster hat 24 Felder. Der Schätzwert ist ▢. Auf Hunderter gerundet sind das ▢ Ameisen. Lösung: a = **336**, b = **300**
 - `04` AFB I · _Modellieren (+ Kommunizieren)_ · Hier gibt es kein Raster. Schätze trotzdem: Wie viele Sterne sind es? _(Bild: Schätzbild mit 116 Symbolen (stern) in 3 mal 4 Feldern, Raster keines; je Feld 10 10 10 9 / 9 10 9 9 / 12 8 10 10)_ _(Schätzen)_ Wahre Anzahl: **116** Sterne, richtig von 93 bis 139
-- `05` AFB II · _Modellieren_ · Auf einem Parkplatz stehen in einer Reihe 21 Autos. Der Parkplatz hat 13 Reihen, die etwa gleich voll sind. Wie viele Autos stehen ungefähr auf dem Parkplatz? Lösung: **273 Autos**. Typische Fehler: 21 (schaetzen-nicht-hochgerechnet), 34 (schaetzen-addiert).
+- `05` AFB II · _Modellieren_ · Auf einem Parkplatz stehen in einer Reihe 21 Autos. Der Parkplatz hat 13 Reihen, die etwa gleich voll sind. Wie viele Autos stehen ungefähr auf dem Parkplatz? Lösung: **273 Autos** (bis 33 Autos daneben gilt als richtig). Typische Fehler: 21 (schaetzen-nicht-hochgerechnet), 34 (schaetzen-addiert).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul zählt das gelbe Feld aus: 2 Menschen. Paul rechnet 2 · 12 = 24 und sagt: „Auf dem Bild sind ungefähr 24 Menschen.“ Warum ist diese Schätzung schlecht? _(Bild: Schätzbild mit 137 Symbolen (kind) in 3 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 2 7 14 19 / 5 11 12 19 / 3 11 14 20)_
   - ☐ Paul hätte die beiden Zahlen addieren müssen.
   - ☐ Das Raster hat zu viele Felder für eine Schätzung.
-  - ☐ Die Schätzung ist gut, denn gerechnet wurde richtig.
+  - ☐ Die Schätzung ist gut, denn gerechnet wurde richtig. Auf das Feld kommt es nicht an.
   - ☑ Das Feld ist keine gute Stichprobe: In den meisten anderen Feldern sind viel mehr.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -1589,7 +1589,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein einzelnes Feld reicht hier nicht.
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul und Finn schätzen die Anzahl auf demselben Bild. Beide rechnen richtig hoch, aber mit verschiedenen Feldern. Paul erhält 240, Finn erhält 280. Kann beides eine brauchbare Schätzung sein?
   - ☐ Ja, aber nur, wenn beide zufällig dasselbe Feld gezählt haben.
   - ☐ Nein. Beim Schätzen mit einem Raster kommt immer dieselbe Zahl heraus.
-  - ☐ Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer verrechnet.
+  - ☐ Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer von beiden sicher verrechnet.
   - ☑ Ja. Die Felder sind nie genau gleich voll, deshalb führt jedes Feld zu einem etwas anderen Schätzwert.
 
 ## 5.2.4-S2: Ich kann Schätzungen beurteilen und gezählt, gerundet und geschätzt unterscheiden.
@@ -1645,7 +1645,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Was kann man leicht einzeln zählen? 
 - `06` AFB III · _Argumentieren_ · In der Zeitung steht: „Ungefähr 400 Gäste kamen zum Fest.“ / Sara sagt: „Das hat jemand einzeln gezählt.“ / Stimmt das?
   - ☐ Falsch. / Es waren genau 401 Gäste.
   - ☑ Falsch. / Das Wort ungefähr zeigt: Die Zahl ist geschätzt.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / In der Zeitung stehen nur gezählte Zahlen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1654,7 +1654,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, was genau gezählt wurde u
 - `01` AFB I · _Argumentieren (+ Modellieren)_ · Eine Försterin zählt auf einer kleinen Probefläche 19 Bäume. Sie rechnet auf den ganzen Wald hoch und nennt 7600 Bäume. Wie ist diese Zahl entstanden?
   - ☐ Sie ist geraten, ganz ohne Rechnung.
   - ☐ Sie ist genau gezählt.
-  - ☐ Sie ist gerundet: Die genaue Zahl war bekannt.
+  - ☐ Sie ist gerundet: Die genaue Zahl war bekannt und wurde vereinfacht.
   - ☑ Sie ist geschätzt: Von einer Stichprobe wurde auf das Ganze geschlossen.
 - `02` AFB II · _Argumentieren_ · Ali zählt in einem Feld 12 Vögel und rechnet mit 24 Feldern hoch. Auf einem Foto werden später genau 301 Vögel gezählt. Um wie viel weicht der Schätzwert von der genauen Zahl ab? Lösung: **13**. Typische Fehler: 288 (begriffe-verwechselt), 589 (sub-addiert).
 - `03` AFB II · _Argumentieren_ · Eine Schätzung gilt hier als gut, wenn sie höchstens ein Fünftel von der genauen Zahl abweicht. Die genaue Zahl ist 350. Der Schätzbereich reicht dann von ▢ bis ▢. Lösung: a = **280**, b = **420**
@@ -1665,7 +1665,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, was genau gezählt wurde u
   - ☐ 520
 - `05` AFB II · _Argumentieren_ · Paul zählt drei Felder als Stichprobe aus: 12, 15 und 18 Ameisen. Paul rechnet mit dem mittleren Wert und 20 Feldern hoch. Wie groß ist der Schätzwert? Lösung: **300**. Typische Fehler: 45 (schaetzen-nicht-hochgerechnet), 900 (begriffe-verwechselt), 240 (begriffe-verwechselt).
 - `06` AFB III · _Argumentieren_ · Nach einem Stadtfest schreibt eine Zeitung „etwa 3000 Besucher“, eine andere „etwa 3200 Besucher“. Jemand sagt: „Eine der beiden Zeitungen lügt.“ Stimmt das?
-  - ☐ Falsch. Beide Zeitungen haben die Besucher einzeln gezählt.
+  - ☐ Falsch. Beide Zeitungen haben die Besucher einzeln gezählt, eine hat sich dabei verzählt.
   - ☐ Stimmt. Nur eine Zahl kann die richtige sein.
   - ☑ Falsch. Beide Zahlen sind Schätzungen. Sie liegen nah beieinander und können beide vernünftig sein.
   - ☐ Stimmt. Die größere Zahl ist bestimmt übertrieben.
@@ -1695,7 +1695,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterscheide: Beim Runden kennt man d
 - `06` AFB III · _Argumentieren_ · Warum wird eine Schätzung meist besser, wenn man mehrere Felder auszählt und mit ihrem mittleren Wert hochrechnet?
   - ☑ Ein einzelnes Feld kann zufällig besonders voll oder leer sein. Mehrere Felder gleichen das aus.
   - ☐ Sie wird nicht besser, denn es bleibt eine Schätzung.
-  - ☐ Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer.
+  - ☐ Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer als wenig Rechnen.
   - ☐ Weil man die Felderzahl dann nicht mehr braucht.
 
 ## 5.2.5-Z1: Ich kann Zahlen aus dem Zweiersystem ins Zehnersystem übersetzen.
@@ -1732,7 +1732,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Stellenwerte zusammen, bei
 - `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Tafel zeigt die Zahl 1011₂. / Welche Zahl im Zehnersystem ist um 1 größer? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 16 8 4 2 1: 0 1 0 1 1)_ Lösung: **12**. Typische Fehler: 11 (dual-zehnerwerte), 1012 (dual-zehnerwerte).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ben liest die Zahl 11₂ als elf. / Stimmt das?
   - ☑ Falsch. / Im Zweiersystem zählen andere Stellenwerte. / Die Zahl ist 3.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Ziffern liest man wie bei jeder anderen Zahl.
   - ☐ Falsch. / Die Zahl ist 2.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -1766,7 +1766,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den Stellenwert der Z
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida behauptet: „Auch im Zweiersystem ist von zwei Zahlen immer die mit mehr Stellen die größere.“ Beurteile die Aussage.
   - ☐ Das gilt nur, wenn die längere Zahl auf 1 endet.
   - ☑ Stimmt. Die kleinste Zahl mit fünf Stellen ist 16, die größte mit vier Stellen ist nur 15.
-  - ☐ Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an.
+  - ☐ Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an, nicht auf die Stellen.
   - ☐ Falsch. Das gilt nur im Zehnersystem.
 
 ## 5.2.5-Z2: Ich kann Zahlen ins Zweiersystem übersetzen.
@@ -1849,7 +1849,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne mit dem größten Stellenwert
   | **1** | **1** | **0** | **0** | **1** |
 
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul schreibt die Zahl 14 im Zweiersystem so: 0111₂. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Stellen stehen in der richtigen Reihenfolge.
   - ☐ Falsch. / Richtig ist 1111₂.
   - ☑ Falsch. / Paul hat die Stellen umgedreht. / Richtig ist 1110₂.
 
@@ -1935,7 +1935,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* L ist 50. Zähle die Werte von links 
   - ☐ 70
 - `05` AFB II · _Kommunizieren_ · Zerlege LXIV in zwei Teile. / LX ist ▢. / IV ist ▢. / Zusammen: 60 + 4 = ▢ Lösung: a = **60**, b = **4**, c = **64**
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas liest IX als elf. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Alle Zeichen werden einfach zusammengezählt.
   - ☑ Falsch. / Das I steht links und wird abgezogen. / Die Zahl ist 9.
   - ☐ Falsch. / Die Zahl ist 10.
 
@@ -2017,7 +2017,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe zuerst die Zehner, dann die 
 - `04` AFB I · _Kommunizieren_ · Schreibe die Zahl 100 mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **C**
 - `05` AFB II · _Kommunizieren (+ Modellieren)_ · Auf einer alten Uhr steht die Stunde VIII. / Schreibe die nächste Stunde mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **IX**
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas schreibt die Zahl 40 so: XXXX. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Jedes Zeichen darf man so oft schreiben wie nötig.
   - ☑ Falsch. / Das X steht höchstens dreimal hintereinander. / Richtig ist XL.
   - ☐ Falsch. / Richtig ist LX.
 
@@ -2088,7 +2088,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier kommen nur Zehner dazu. Die Eine
   - ☐ 36 + 41
   - ☑ 36 + 43
 - `06` AFB III · _Argumentieren_ · Mia rechnet 48 + 17 so: / 40 + 10 = 50 / 8 + 7 = 15 / Mia schreibt als Ergebnis 55. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Von 15 zählen nur die Einer.
   - ☑ Falsch. / Ein Zehner fehlt. / Richtig ist 65.
   - ☐ Falsch. / Hier muss man minus rechnen.
 
@@ -2103,7 +2103,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechenkette: 220 + 140 = ▢, dann + 95 = ▢, dann + ▢ = 600. Lösung: a = **360**, b = **455**, c = **145**
 - `06` AFB III · _Argumentieren_ · „Die Summe von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
   - ☑ Richtig. Beispiel: 13 + 25 = 38. Von jeder ungeraden Zahl bleibt beim Paarebilden ein Einzelner übrig. Die beiden Einzelnen bilden zusammen wieder ein Paar.
-  - ☐ Falsch. Ungerade plus ungerade bleibt ungerade.
+  - ☐ Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.
   - ☐ Richtig, denn jede Summe ist eine gerade Zahl.
   - ☐ Das stimmt nur bei kleinen Zahlen wie 3 + 5 = 8.
 
@@ -2117,7 +2117,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere schrittweise: erst die Hunder
   - ☑ 574 + 277, denn der erste Summand ist gleich geblieben und der zweite ist am größten
   - ☐ 574 + 274, denn die Zahlen sind am einfachsten
   - ☐ 571 + 274, denn der erste Summand ist am kleinsten
-  - ☐ 571 + 277, denn hier wurden beide Summanden verändert
+  - ☐ 571 + 277, denn hier wurden beide Summanden um 3 verändert und beide Änderungen zählen
   - ☐ Alle Ergebnisse sind gleich groß.
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Summen von drei aufeinanderfolgenden Zahlen: 4 + 5 + 6 = 15, 10 + 11 + 12 = 33, 20 + 21 + 22 = 63. Stelle die Regel auf: Die Summe ist ▢ · die mittlere Zahl. Sage damit 199 + 200 + 201 vorher: ▢ Lösung: a = **3**, b = **600**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Summe zweier Zahlen ist 780. Der erste Summand wird um 20 größer, der zweite um 20 größer. Bestimme die neue Summe. Lösung: **820**. Typische Fehler: 800 (sach-schritt-vergessen), 780 (add-subtrahiert).
@@ -2161,7 +2161,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier gehen nur Zehner weg. Die Einer 
   - ☐ 82 − 34
   - ☑ 82 − 31
 - `06` AFB III · _Argumentieren_ · Lina rechnet 91 − 37 so: / 90 − 30 = 60 / 7 − 1 = 6 / Lina schreibt als Ergebnis 66. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man zieht immer die kleinere Zahl ab.
   - ☐ Falsch. / Hier muss man plus rechnen.
   - ☑ Falsch. / Die Einer sind vertauscht. / Richtig ist 54.
 
@@ -2175,7 +2175,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit Zehnern wie mit kleinen Za
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf: 850 − 275 Lösung: **575**. Typische Fehler: 585 (ergaenzen-zu-viel), 1125 (sub-addiert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine aus. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ 107 / 58 · **49** / 35 · **23** · **26**
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · „Die Differenz von zwei ungeraden Zahlen ist immer gerade.“ Beurteile die Aussage.
-  - ☐ Falsch. Ungerade minus ungerade bleibt ungerade.
+  - ☐ Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.
   - ☐ Das stimmt nur, wenn die Differenz kleiner als 10 ist.
   - ☐ Falsch. Beispiel: 25 − 13 = 11.
   - ☑ Richtig. Beispiel: 25 − 13 = 12. Beide Zahlen liegen um 1 über einer geraden Zahl. Dieser Überschuss hebt sich beim Subtrahieren auf.
@@ -2189,7 +2189,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Subtrahiere schrittweise: erst die Hu
 - `03` AFB II · _Probleme lösen_ · Entscheide ohne zu rechnen: Welche Differenz ist am größten?
   - ☐ 754 − 255, denn die Zahlen wurden nicht verändert
   - ☐ Alle Differenzen sind gleich groß.
-  - ☐ 757 − 258, denn beide Zahlen sind hier am größten
+  - ☐ 757 − 258, denn beide Zahlen sind hier am größten, also auch die Differenz
   - ☐ 751 − 252, denn der Subtrahend ist am kleinsten
   - ☑ 757 − 252, denn hier ist der Minuend am größten und der Subtrahend am kleinsten
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zahl minus Quersumme: 23 − 5 = 18, 41 − 5 = 36, 52 − 7 = 45. Alle Ergebnisse sind Vielfache von 9. Stelle die Regel auf: Das Ergebnis ist 9 · Zehnerziffer. Sage damit 87 − 15 vorher: 9 · ▢ = ▢ Lösung: a = **8**, b = **72**
@@ -2204,7 +2204,7 @@ Baut auf: 5.3.1-K1 (Ich kann im Kopf addieren.), 5.3.1-K2 (Ich kann im Kopf subt
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:* 6 Plättchen: Bis 10 fehlen 4. *Lösungsschritt:* Zähle von 4 weiter bis 10.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:* 8 Plättchen: Bis 10 fehlen 2. *Lösungsschritt:* Zähle von 4 weiter bis 10.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Feld liegen 4 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: **6**. Typische Fehler: 4 (begriffe-verwechselt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl passt? / 4 + ▢ = 10 _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: a = **6**
@@ -2230,7 +2230,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Zehne
   - ☐ Zusammenzählen: 73 + 70
 - `06` AFB III · _Argumentieren_ · Sara rechnet 39 + 19 so: / 39 + 20 = 59 / 59 + 1 = 60 / Stimmt das?
   - ☑ Falsch. / Es war 1 zu viel. / Die 1 muss wieder weg. / Richtig ist 58.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Erst plus 20 rechnen. / Dann kommt noch 1 dazu.
   - ☐ Falsch. / Richtig ist 59.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2250,7 +2250,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit 400 statt 397 und gleiche 
   | 48 | **952** |
 
 - `06` AFB III · _Argumentieren_ · Finn rechnet 500 − 198 so: 500 − 200 = 300, dann 300 − 2 = 298. Beurteile den Rechenweg.
-  - ☐ Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen.
+  - ☐ Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen, also noch einmal abgezogen.
   - ☐ Richtig. 198 ist um 2 kleiner als 200, also wird 2 abgezogen.
   - ☐ Falsch. Das Ergebnis ist 300, ein Ausgleich ist nicht nötig.
   - ☑ Falsch. Mit 200 wurden 2 zu viel abgezogen. Die 2 müssen addiert werden: 300 + 2 = 302.
@@ -2262,14 +2262,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Alle drei Summanden liegen knapp unte
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt: 997 + 998 + 999 Lösung: **2994**. Typische Fehler: 3000 (geschickt-nicht-ausgeglichen), 3006 (geschickt-falsch-ausgeglichen).
 - `02` AFB II · _Modellieren_ · Verändere die Summanden gegensinnig: 398 + 200 = 400 + ▢ = ▢ Lösung: a = **198**, b = **598**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Aufgabe hat dasselbe Ergebnis wie 663 − 298? Wähle die Antwort mit der richtigen Begründung.
-  - ☐ 661 − 298, denn der Minuend darf beliebig verändert werden
+  - ☐ 661 − 298, denn der Minuend darf beim Rechnen beliebig verändert werden
   - ☑ 665 − 300, denn Minuend und Subtrahend wurden um dieselbe Zahl vergrößert
   - ☐ 663 − 300, denn 300 ist eine glatte Zahl
   - ☐ 665 − 296, denn die Änderungen gleichen sich aus
   - ☐ 661 − 300, denn die Änderungen gleichen sich aus
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Du rechnest mit einer glatten Nachbarzahl und gleichst aus. Stelle eine Regel auf, die für Summen und für Differenzen gilt.
   - ☐ Summe und Differenz: beide Zahlen gegensinnig verändern.
-  - ☐ Summe: die Summanden gleichsinnig verändern. Differenz: gegensinnig verändern.
+  - ☐ Summe: die Summanden gleichsinnig verändern. Differenz: Minuend und Subtrahend gegensinnig verändern.
   - ☑ Summe: die Summanden gegensinnig verändern. Differenz: Minuend und Subtrahend gleichsinnig verändern.
   - ☐ Summe und Differenz: beide Zahlen gleichsinnig verändern.
   - ☐ Es genügt immer, nur eine der beiden Zahlen zu verändern.
@@ -2310,7 +2310,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Summand + Summand = Summe. *Beispiel:
 - `05` AFB II · _Kommunizieren_ · Die Summe ist 80. / Ein Summand ist 25. / Wie groß ist der andere Summand? _(Bild: Streifenbild: Ganzes 80, Teile 25 und ?)_ Lösung: **55**. Typische Fehler: 105 (probe-falsche-umkehr).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: / „Bei 41 + 46 = 87 ist 87 ein Summand.“ / Stimmt das?
   - ☑ Falsch. / 87 ist die Summe.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Jede Zahl der Aufgabe ist ein Summand.
   - ☐ Falsch. / 87 ist die Differenz.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2329,7 +2329,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Summe ist das Ergebnis einer Addi
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Wird ein Summand um 10 größer und der andere um 10 kleiner, bleibt die Summe gleich.“ Beurteile die Aussage.
   - ☑ Richtig. Beispiel: 40 + 20 = 60 und 50 + 10 = 60. Was der eine Summand gewinnt, verliert der andere.
   - ☐ Falsch. Beispiel: 40 + 20 = 60, aber 50 + 20 = 70.
-  - ☐ Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert.
+  - ☐ Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert. Das gilt für jede Änderung.
   - ☐ Falsch. Die Summe wird um 20 größer.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -2346,7 +2346,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne zuerst die Summe und die Dif
   - a) Bestimme den kleineren Summanden. **385**.
   - b) Bestimme den größeren Summanden. **535**.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Kann die Summe zweier natürlicher Zahlen kleiner sein als einer der beiden Summanden? Wähle die richtige Begründung.
-  - ☐ Ja. Bei sehr kleinen Summanden ist die Summe kleiner.
+  - ☐ Ja. Bei sehr kleinen Summanden ist die Summe kleiner als der größere Summand, zum Beispiel bei 1 und 0.
   - ☑ Nein. Zu jedem Summanden kommt etwas dazu oder nichts. Die Summe ist deshalb mindestens so groß wie jeder Summand.
   - ☐ Das hängt davon ab, welcher Summand vorne steht.
   - ☐ Ja. Bei 5 + 0 ist die Summe kleiner als 5.
@@ -2407,7 +2407,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen genau untereinand
 - `06` AFB III · _Argumentieren_ · Finn rechnet: 228 + 633 = 851 / Bei den Einern rechnet Finn 8 + 3 = 11. / Finn schreibt nur die 1 auf. / Stimmt das Ergebnis? _(Bild: Stellenwerttafel H: 8, Z: 5, E: 11)_
   - ☑ Falsch. / Der Übertrag fehlt. / Richtig ist 861.
   - ☐ Falsch. / Hier muss man minus rechnen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man schreibt nur die Einer auf.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -2438,7 +2438,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Übertrag kann in der nächsten S
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei dreistellige Zahlen werden schriftlich addiert. Wie viele Überträge können höchstens entstehen? Wähle die richtige Begründung.
   - ☐ Vier. Das Ergebnis kann vierstellig sein.
   - ☑ Drei. Beispiel: 999 + 999 = 1998. In jeder der drei Spalten entsteht ein Übertrag.
-  - ☐ Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen.
+  - ☐ Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen, weil links keine Spalte folgt.
   - ☐ Einer. Ein Übertrag entsteht nur bei den Einern.
   - ☐ Beliebig viele. Das hängt von den Zahlen ab.
 
@@ -2450,7 +2450,7 @@ Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9. *Lösungsschritt:* 3 + 4 = 7.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8. *Lösungsschritt:* 3 + 4 = 7.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 3, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Startpunkt 10, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
@@ -2493,7 +2493,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe alle 3 Zahlen genau unterein
 - `06` AFB III · _Argumentieren_ · Ole rechnet: 16 + 16 + 14 = 36 / Bei den Einern rechnet Ole 6 + 6 + 4 = 16. / Ole schreibt nur die 6 auf. / Stimmt das Ergebnis? _(Bild: Stellenwerttafel Z: 3, E: 16)_
   - ☑ Falsch. / Der Übertrag fehlt. / Richtig ist 46.
   - ☐ Falsch. / Richtig ist 26.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man schreibt nur die Einer auf.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -2511,7 +2511,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei drei Summanden kann der Übertrag
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Addiere schriftlich: 5055 + 811 + 2401 Lösung: **8267**. Typische Fehler: 7267 (add-uebertrag-vergessen), 4244 (add-subtrahiert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne der Reihe nach: 1 + 2 + 3 = ▢, 11 + 12 + 13 = ▢, 21 + 22 + 23 = ▢. Nutze das Muster: 91 + 92 + 93 = ▢ Lösung: a = **6**, b = **36**, c = **66**, d = **276**
 - `06` AFB III · _Argumentieren_ · Paul soll 3035 + 557 berechnen und schreibt 557 so unter 3035, dass beide Zahlen links bündig stehen. Das Ergebnis ist 8605. Beurteile das Vorgehen.
-  - ☐ Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen.
+  - ☐ Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen. Welche Stellen das sind, ist egal.
   - ☐ Richtig. Links bündig zu schreiben ist beim Addieren üblich.
   - ☑ Falsch. Die Zahlen stehen nicht stellengerecht untereinander. So wurde 3035 + 5570 gerechnet. Richtig ist 3592.
   - ☐ Falsch. Paul hat die Überträge vergessen.
@@ -2536,7 +2536,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei vier Summanden kann der Übertrag
   - ☐ Das stimmt nur bei einstelligen Zahlen.
   - ☑ Das stimmt immer. Zwei ungerade Zahlen ergeben zusammen eine gerade Zahl. Kommt eine ungerade dazu, wird die Summe ungerade.
   - ☐ Das stimmt nie. 3 + 5 + 7 = 16.
-  - ☐ Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade.
+  - ☐ Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade, ganz egal, wie viele Summanden es sind.
   - ☐ Das stimmt nur, wenn alle drei Zahlen verschieden sind.
 
 ## 5.3.2-A4: Ich kann ein Ergebnis mit Überschlag und Probe prüfen.
@@ -2579,7 +2579,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten 
   - ☐ 92 + 57
 - `06` AFB III · _Argumentieren_ · Sara rechnet: 397 + 301 = 598 / Der Überschlag ist 400 + 300 = 700. / Stimmt das Ergebnis 598?
   - ☐ Falsch. / Es muss nahe bei 100 liegen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Ein Überschlag ist ja nie ganz genau.
   - ☑ Falsch. / Es muss nahe bei 700 liegen. / Richtig ist 698.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2628,7 +2628,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf Hunderter runden heißt: Die Zehn
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Bei einer Addition ist ein Summand 1899. Die Probe lautet 5000 − ▢ = 1899. Bestimme den anderen Summanden. Lösung: **3101**. Typische Fehler: 6899 (add-subtrahiert), 4101 (ergaenzen-zu-viel).
 - `06` AFB III · _Argumentieren_ · Jana prüft 46 + 28 = 74 mit der Rechnung 28 + 46. Ist das eine geeignete Probe? Wähle die richtige Begründung.
   - ☐ Nein. 28 + 46 hat ein anderes Ergebnis als 46 + 28.
-  - ☐ Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition.
+  - ☐ Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition. Wer sie richtig rechnet, hat das Ergebnis sicher geprüft.
   - ☑ Sie hilft nur wenig. Die Tauschaufgabe benutzt dieselben Zahlen, ein Denkfehler kann sich wiederholen. Sicherer ist 74 − 28 = 46.
   - ☐ Ja. Eine Probe muss immer eine Addition sein.
   - ☐ Nein. Beim Addieren darf man die Summanden nicht vertauschen.
@@ -2672,7 +2672,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dazu heißt plus. *Beispiel:* 40 Seit
   - ☑ 8 + 5
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Im Bus sind 57 Menschen. / 14 Menschen steigen ein. / Jonas rechnet 57 − 14 = 43. / Stimmt das? _(Bild: Streifenbild: Ganzes ?, Teile 57 und 14)_
   - ☐ Falsch. / Man muss 14 − 57 rechnen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die kleinere Zahl wird abgezogen.
   - ☑ Falsch. / Einsteigen heißt plus. / 57 + 14 = 71.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2759,7 +2759,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Minuend − Subtrahend = Differenz. *
 - `04` AFB I · _Kommunizieren_ · 76 − 43 = 33 / Ordne jeder Zahl den Namen zu. Lösung: 76 → Minuend, 43 → Subtrahend, 33 → Differenz
 - `05` AFB II · _Kommunizieren_ · Die Differenz ist 20. / Der Subtrahend ist 45. / Wie groß ist der Minuend? _(Bild: Streifenbild: Ganzes ?, Teile 45 und 20)_ Lösung: **65**. Typische Fehler: 25 (probe-falsche-umkehr).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: / „Bei 96 − 72 = 24 ist 72 der Minuend.“ / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Der Minuend steht hinter dem Minus.
   - ☐ Falsch. / 72 ist die Differenz.
   - ☑ Falsch. / 72 ist der Subtrahend.
 
@@ -2779,7 +2779,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Differenz ist das Ergebnis einer 
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara behauptet: „Wenn der Subtrahend größer wird und der Minuend gleich bleibt, wird auch die Differenz größer.“ Beurteile die Aussage.
   - ☑ Falsch. Beispiel: 80 − 20 = 60, aber 80 − 30 = 50. Wer mehr abzieht, behält weniger.
   - ☐ Das lässt sich nicht entscheiden. Es kommt auf die Zahlen an.
-  - ☐ Richtig. Größere Zahlen ergeben immer größere Ergebnisse.
+  - ☐ Richtig. Größere Zahlen ergeben immer größere Ergebnisse. Das gilt für jede Rechenart.
   - ☐ Richtig. Beispiel: 80 − 20 = 60 und 90 − 20 = 70.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -2795,7 +2795,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bilde zuerst die Summe. Sie ist der M
   - b) Bestimme die kleinere Zahl. **27**.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Minuend und Subtrahend sind natürliche Zahlen. Kann die Differenz größer sein als der Minuend? Wähle die richtige Begründung.
   - ☐ Ja. Bei 5 − 9 ist die Differenz größer als der Minuend.
-  - ☐ Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend.
+  - ☐ Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend, zum Beispiel bei 0.
   - ☐ Nein. Die Differenz ist immer kleiner als der Subtrahend.
   - ☐ Das hängt davon ab, ob die Zahlen gerade oder ungerade sind.
   - ☑ Nein. Vom Minuenden wird etwas weggenommen oder nichts. Die Differenz ist deshalb höchstens so groß wie der Minuend.
@@ -2854,7 +2854,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Zahlen genau untereinand
   - b) Rechne diese Aufgabe aus. **527**. Typische Fehler: 533 (sub-kleiner-von-groesser), 537 (sub-uebertrag-vergessen), 797 (sub-addiert).
 - `06` AFB III · _Argumentieren_ · Jonas rechnet: 683 − 579 = 116 / Bei den Einern rechnet Jonas 9 − 3 = 6. / Stimmt das? _(Bild: Stellenwerttafel H: 6, Z: 8, E: 3)_
   - ☑ Falsch. / Die Einer sind vertauscht. / Richtig ist 104.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man zieht immer die kleinere Zahl ab.
   - ☐ Falsch. / Hier muss man plus rechnen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2882,7 +2882,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Übertrag wandert über beide Nul
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · ANNA-Zahlen: 4334 − 3443 = 891, 5115 − 1551 = 3564, 7227 − 2772 = 4455. Alle Ergebnisse sind Vielfache von 891. Der Faktor hängt nur von den beiden Ziffern ab. Stelle die Regel auf und sage mit ihr 9229 − 2992 vorher: ▢ · 891 = ▢ Lösung: a = **7**, b = **6237**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Differenz zweier Zahlen ist 1228. Der Minuend wird um 250 größer, der Subtrahend um 250 kleiner. Bestimme die neue Differenz. Lösung: **1728**. Typische Fehler: 1228 (sach-schritt-vergessen), 1478 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren_ · „Vergrößere ich Minuend und Subtrahend um dieselbe Zahl, bleibt die Differenz gleich.“ Gilt das immer? Wähle die richtige Begründung.
-  - ☐ Ja, aber nur, wenn dabei kein Übertrag entsteht.
+  - ☐ Ja, aber nur, wenn dabei kein Übertrag entsteht. Mit Übertrag ändert sich der Abstand.
   - ☑ Ja, immer: Beide Zahlen verschieben sich auf dem Zahlenstrahl gleich weit. Ihr Abstand bleibt gleich.
   - ☐ Nein: Die Differenz wird doppelt so groß.
   - ☐ Nur bei geraden Zahlen: 8 − 2 = 6 und 10 − 4 = 6.
@@ -2922,7 +2922,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ziehe die Zahlen nacheinander ab. *Be
   - ☐ 80 + 20
 - `06` AFB III · _Argumentieren_ · Lena rechnet 90 − 20 − 10 so: / 20 − 10 = 10 / 90 − 10 = 80 / Stimmt das?
   - ☑ Falsch. / Beide Zahlen gehen weg. / Richtig ist 60.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man darf auch zuerst 20 − 10 rechnen.
   - ☐ Falsch. / Richtig ist 120.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -2957,7 +2957,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Addiere zuerst alle Subtrahenden.
 - `06` AFB III · _Argumentieren_ · Lisa behauptet: „Bei a − b − c darf ich die beiden Subtrahenden vertauschen. Es gilt immer a − b − c = a − c − b.“ Wähle die richtige Begründung.
   - ☑ Das stimmt immer. Beide Male wird insgesamt b + c abgezogen. Beispiel: 90 − 20 − 30 = 40 und 90 − 30 − 20 = 40.
   - ☐ Das stimmt immer, denn auch a − b = b − a.
-  - ☐ Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen.
+  - ☐ Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen, auch nicht die Subtrahenden.
   - ☐ Das stimmt nur, wenn b größer ist als c.
   - ☐ Das stimmt nur, wenn b und c gleich groß sind.
 
@@ -3000,7 +3000,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde beide Zahlen auf den nächsten 
   - ☐ 16 − 79
   - ☐ 95 + 79
 - `06` AFB III · _Argumentieren_ · Emre rechnet: 805 − 295 = 610 / Der Überschlag ist 800 − 300 = 500. / Stimmt das Ergebnis 610?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Ein Überschlag ist ja nie ganz genau.
   - ☑ Falsch. / Es muss nahe bei 500 liegen. / Richtig ist 510.
   - ☐ Falsch. / Es muss nahe bei 1100 liegen.
 
@@ -3025,7 +3025,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde zuerst, rechne dann im Kopf. *L
   - ☑ 6098 − 3872
 - `06` AFB III · _Argumentieren_ · Zu 7514 − 2494 passt der Überschlag 8000 − 2000 = 6000. Das genaue Ergebnis ist 5020. Erkläre, warum der Überschlag so stark abweicht.
   - ☐ Beim Überschlag darf das Ergebnis beliebig weit abweichen.
-  - ☐ Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz.
+  - ☐ Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz, denn größere Zahlen ergeben mehr.
   - ☑ Der Minuend wurde um 486 aufgerundet, der Subtrahend um 494 abgerundet. Beide Rundungen vergrößern die Differenz.
   - ☐ Der Überschlag ist falsch gerechnet.
 
@@ -3092,7 +3092,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Das ganze Buch ist der lange Streifen
   - ☐ 13 + 4
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Im Bus sind 62 Menschen. / 16 Menschen steigen aus. / Ole rechnet 62 + 16 = 78. / Stimmt das? _(Bild: Streifenbild: Ganzes 62, Teile 16 und ?)_
   - ☑ Falsch. / Aussteigen heißt minus. / 62 − 16 = 46.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Es sind mehr Zahlen. / Also rechnet man plus.
   - ☐ Falsch. / Man muss 16 − 62 rechnen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3167,7 +3167,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst aus, was in der Klammer
   - ☑ 40 − 15
 - `06` AFB III · _Argumentieren_ · Ben rechnet 50 − (10 + 5) so: / 50 − 10 = 40 / 40 + 5 = 45 / Stimmt das?
   - ☑ Falsch. / Die Klammer kommt zuerst. / Richtig ist 35.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rechnet von links nach rechts.
   - ☐ Falsch. / Richtig ist 65.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3218,7 +3218,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei verschachtelten Klammern rechnest
 - `06` AFB III · _Argumentieren_ · Jonas behauptet: „Eine Klammer hinter einem Plus darf ich weglassen. Es gilt immer a + (b − c) = a + b − c.“ Wähle die richtige Begründung.
   - ☐ Das stimmt nur, wenn c kleiner ist als a.
   - ☐ Das stimmt nie. Klammern darf man nicht weglassen.
-  - ☐ Das stimmt nie. Beim Weglassen wird aus dem Minus ein Plus.
+  - ☐ Das stimmt nie. Beim Weglassen der Klammer wird aus dem Minus ein Plus, also ändert sich der Wert.
   - ☐ Das stimmt immer, denn auch a − (b − c) = a − b − c.
   - ☑ Das stimmt immer. In beiden Termen kommt b dazu und c geht weg. Beispiel: 50 + (20 − 5) = 65 und 50 + 20 − 5 = 65.
 
@@ -3267,7 +3267,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Preise gehen weg. In der Klamme
   - ☐ 7 Kinder und 13 Erwachsene. / 30 Menschen kommen dazu.
   - ☑ 30 Plätze. / 7 Kinder und 13 Erwachsene setzen sich.
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul hat 80 Euro. / Paul gibt erst 25 Euro aus, dann 10 Euro. / Paul schreibt: 80 − 25 + 10 / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Zahlen stehen in der richtigen Reihenfolge.
   - ☑ Falsch. / Beide Beträge gehen weg. / Richtig ist 80 − (25 + 10).
   - ☐ Falsch. / Richtig ist 80 + 25 + 10.
 
@@ -3316,7 +3316,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Baue den Term von innen nach außen: 
 - `04` AFB III · _Modellieren_ · Für welche Zahlen im Kästchen haben die Terme 100 − (▢ + 20) und 100 − ▢ − 20 denselben Wert? Stelle die Regel auf.
   - ☐ Nur für die Zahl 0.
   - ☐ Nur für die Zahl 20.
-  - ☐ Für keine Zahl: Eine Klammer verändert immer den Wert.
+  - ☐ Für keine Zahl: Eine Klammer verändert immer den Wert, sonst wäre sie unnötig.
   - ☐ Nur für gerade Zahlen.
   - ☑ Für jede Zahl von 0 bis 80: Beide Terme subtrahieren insgesamt die Zahl und 20.
 - `05` AFB II · _Modellieren_ · Mia ist 12 Jahre alt und hat 50 €. Mia kauft 3 Hefte für je 5 € und einen Füller für 9 €. Stelle einen Term auf und berechne das Restgeld. Lösung: **26 €**. Typische Fehler: 36 (sach-schritt-vergessen), 14 (sach-unnoetige-angabe).
@@ -3369,7 +3369,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau genau: Haben die Zahlen den Pla
   - ☐ (34 + 16) − 5
   - ☑ (34 + 16) + 5
 - `06` AFB III · _Argumentieren_ · Lena sagt: / 20 − 9 − 3 ist dasselbe wie 20 − (9 − 3). / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Eine Klammer ändert beim Minus-Rechnen nichts.
   - ☑ Falsch. / Links kommt 8 heraus. / Rechts kommt 14 heraus.
   - ☐ Falsch. / Links kommt 14 heraus. / Rechts kommt 8 heraus.
 
@@ -3398,7 +3398,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche beide Seiten: Hat sich die
   - ☐ Richtig. Die Rechengesetze gelten für alle Rechenarten.
   - ☑ Falsch. Ein Gegenbeispiel genügt: 12 − 6 = 6, aber 6 − 12 ist keine natürliche Zahl.
   - ☐ Richtig, denn 12 − 6 und 6 − 12 haben dasselbe Ergebnis.
-  - ☐ Falsch. Das Vertauschungsgesetz gilt für keine Rechenart.
+  - ☐ Falsch. Das Vertauschungsgesetz gilt für keine Rechenart, auch nicht für die Addition.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -3427,7 +3427,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Verbindungsgesetz bleibt die Rei
 - `06` AFB III · _Argumentieren_ · Paul behauptet: „a − b = b − a gilt für keine natürlichen Zahlen.“ Beurteile die Aussage.
   - ☐ Falsch. Die Gleichung gilt für alle natürlichen Zahlen.
   - ☑ Falsch. Für a = b gilt die Gleichung, zum Beispiel 7 − 7 = 7 − 7 = 0. Für verschiedene Zahlen gilt sie nicht.
-  - ☐ Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen.
+  - ☐ Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen. Die Ergebnisse sind immer verschieden.
   - ☐ Falsch. Die Gleichung gilt immer, wenn a größer ist als b.
   - ☐ Richtig. Auch wenn a und b gleich sind, sind die Ergebnisse verschieden.
 
@@ -3506,7 +3506,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bilde Paare mit gleicher Summe. Eine 
   - ☐ 20
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Es gilt 1 + 2 + 3 + … + 9 = 45. Berechne damit die Summe aller Zahlen von 31 bis 39: 31 + 32 + 33 + … + 39 = ▢ Lösung: a = **315**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · 3 + 4 + 5 + 6 + 7 = 25 und 10 + 11 + 12 + 13 + 14 = 60. Stelle eine Regel für die Summe von 5 aufeinanderfolgenden Zahlen auf.
-  - ☐ Die Summe ist die erste Zahl plus die letzte Zahl.
+  - ☐ Die Summe ist das Doppelte aus erster und letzter Zahl, denn die äußeren Zahlen bestimmen die Summe.
   - ☐ Es gibt keine Regel. Jede Summe muss einzeln berechnet werden.
   - ☐ Die Summe ist 5-mal die erste Zahl.
   - ☑ Die Summe ist 5-mal die mittlere Zahl, denn die äußeren Paare ergeben jeweils das Doppelte der mittleren Zahl.
@@ -3548,7 +3548,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nutze eine Kernaufgabe mit 2, 5 oder 
   - ☐ 11 + 5
   - ☐ 12 · 5
 - `06` AFB III · _Argumentieren_ · Lena sagt: / „Jede Zahl mal 2 ergibt eine gerade Zahl.“ / Prüfe mit 9 · 2. / Stimmt das? _(Bild: Punktefeld mit 9 Reihen zu je 2 Punkten)_
-  - ☐ Falsch. / 9 ist ungerade. / Dann ist auch 9 · 2 ungerade.
+  - ☐ Falsch. / 9 ist eine ungerade Zahl. / Dann ist auch 9 · 2 eine ungerade Zahl.
   - ☐ Falsch. / Das gilt nur bis 10.
   - ☑ Stimmt. / 9 · 2 = 18. / Mal 2 ist das Doppelte. / Ein Doppeltes ist immer gerade.
 
@@ -3570,7 +3570,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege in eine Kernaufgabe und den R
   - ☑ 4 · 5
   - ☑ 2 · 10
 - `06` AFB III · _Argumentieren_ · Elif rechnet 7 · 6 und erhält 48. Wie lässt sich der Fehler finden?
-  - ☐ Mit derselben Rechnung, noch einmal genauso gerechnet.
+  - ☐ Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.
   - ☑ Mit der Nachbaraufgabe: 6 · 6 = 36. Dazu kommt noch einmal 6. Das sind 42.
   - ☐ Mit der Rechnung 7 + 6.
   - ☐ Gar nicht. Das Ergebnis stimmt.
@@ -3587,14 +3587,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Aufgabe mit zwei gleichen Zahl
   - ☐ 9
 - `03` AFB II · _Probleme lösen_ · Zwei Zahlen aus dem Einmaleins haben das Produkt 27 und die Summe 12. Die kleinere Zahl ist ▢, die größere ist ▢. Lösung: x = **3**, y = **9**
 - `04` AFB III · _Argumentieren_ · Stimmt das? „Ungerade mal ungerade ergibt immer eine ungerade Zahl.“ Wähle die beste Begründung.
-  - ☐ Falsch. Zwei ungerade Zahlen ergeben immer eine gerade Zahl.
+  - ☐ Falsch. Zwei ungerade Zahlen ergeben zusammen immer eine gerade Zahl. Das gilt beim Malnehmen genauso, denn Malnehmen ist wiederholtes Zusammenzählen.
   - ☑ Stimmt. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.
   - ☐ Stimmt, aber nur im kleinen Einmaleins.
   - ☐ Das hängt von den beiden Zahlen ab.
   - ☐ Falsch. 3 · 5 ist gerade.
 - `05` AFB II · _Probleme lösen_ · Wie viele Aufgaben des kleinen Einmaleins (beide Zahlen von 1 bis 10) haben das Ergebnis 18? Zähle Tauschaufgaben einzeln. Lösung: **4**. Typische Fehler: 2 (1x1-nachbar).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · 9 · 1 = 9, 9 · 2 = 18, 9 · 3 = 27, 9 · 4 = 36. Stelle eine Regel für alle Ergebnisse von 9 · 1 bis 9 · 10 auf.
-  - ☐ Zehnerziffer und Einerziffer ergeben zusammen immer 10.
+  - ☐ Zehnerziffer und Einerziffer ergeben zusammen immer 10, denn die Ergebnisse liegen immer knapp unter dem nächsten Zehner.
   - ☐ Es gibt keine Regel.
   - ☐ Die Einerziffer wird von Ergebnis zu Ergebnis um 1 größer.
   - ☐ Alle Ergebnisse sind ungerade.
@@ -3636,7 +3636,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Mal-Aufgabe. *Beispiel:*
   - ☐ 54 : 9
   - ☐ 21 : 3
 - `06` AFB III · _Argumentieren_ · Ben rechnet 54 : 6 = 9. / Ben prüft mit 9 · 6. / Warum klappt das? _(Bild: Punktefeld mit 9 Reihen zu je 6 Punkten)_
-  - ☐ Das klappt nur bei kleinen Zahlen.
+  - ☐ Das ist Zufall. / Das klappt nur bei kleinen Zahlen.
   - ☐ Auch 9 + 6 ergibt 54.
   - ☑ Mal macht geteilt wieder rückgängig. / 9 · 6 = 54.
 
@@ -3673,7 +3673,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie kannst du das Teilen rückgängig
 - `04` AFB III · _Argumentieren_ · Sara sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche 48 : 4 und 48 : 6. Wähle die richtige Antwort.
   - ☐ Stimmt. 48 : 6 ist größer als 48 : 4.
   - ☑ Falsch. 48 : 4 = 12, aber 48 : 6 = 8. Das Ergebnis wird kleiner.
-  - ☐ Stimmt. Größere Zahlen ergeben größere Ergebnisse.
+  - ☐ Stimmt. Größere Zahlen in der Aufgabe ergeben größere Ergebnisse.
   - ☐ Stimmt. Beim Malnehmen ist das auch so.
   - ☐ Falsch. Das Ergebnis bleibt immer gleich.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Zahl 24 wird durch 2 geteilt. Das Ergebnis wird noch einmal durch 3 geteilt. Was kommt heraus? Lösung: **4**. Typische Fehler: 12 (sach-schritt-vergessen).
@@ -3741,7 +3741,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne die Nullen und zähle dan
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf: 300 000 : 500 Lösung: **600**. Typische Fehler: 60 (div-null-vergessen), 6000 (div-stellenwert).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? 250 · ▢ = 100 000 Lösung: **400**. Typische Fehler: 4000 (mal-stellenwert), 40 (mal-stellenwert).
 - `04` AFB III · _Argumentieren (+ Modellieren)_ · Lina sagt: „Das Produkt hat immer genau so viele Nullen am Ende wie beide Faktoren zusammen.“ Prüfe mit 500 · 20.
-  - ☐ Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.
+  - ☐ Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an. Mehr Nullen können nicht entstehen.
   - ☑ Falsch. 500 · 20 = 10 000 hat 4 Nullen am Ende, die Faktoren zusammen nur 3. 5 · 2 = 10 bringt eine Null mit.
   - ☐ Falsch. Das Produkt hat immer weniger Nullen.
   - ☐ Das kann man nicht prüfen.
@@ -3785,7 +3785,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mal 4 ist das Doppelte vom Doppelten.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze den Rechenweg. / 9 · 45 = 10 · 45 − ▢ / 9 · 45 = ▢ _(Bild: Zehnermaterial: 4 Zehnerstangen, 5 Einerwürfel)_ Lösung: a = **45**, b = **405**
 - `06` AFB III · _Argumentieren_ · Ida rechnet 7 · 39 so: / 7 · 40 = 280 / 280 − 1 = 279 / Stimmt das?
   - ☑ Falsch. / Ida muss 7-mal 1 wegnehmen. / Richtig ist 280 − 7 = 273.
-  - ☐ Stimmt. / 39 ist 1 weniger als 40.
+  - ☐ Stimmt. / 39 ist 1 weniger als 40. / Also nimmt Ida am Ende 1 weg.
   - ☐ Falsch. / Richtig ist 280 + 7 = 287.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3800,7 +3800,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 25 · 4 = 100. Zerlege die andere Zah
 - `06` AFB III · _Argumentieren_ · Mia sagt: „16 · 35 ist dasselbe wie 8 · 70.“ Mara sagt: „16 · 35 ist dasselbe wie 32 · 70.“ Wer hat recht?
   - ☐ Mara. Man muss beide Faktoren gleich behandeln.
   - ☐ Keiner. Man darf die Zahlen nicht verändern.
-  - ☐ Beide. Beim Malnehmen darf man verdoppeln, wie man will.
+  - ☐ Beide. Beim Malnehmen darf man halbieren und verdoppeln, wie man will. Das Produkt bleibt gleich.
   - ☑ Mia. Halbiert man einen Faktor und verdoppelt den anderen, bleibt das Produkt gleich: 8 · 70 = 560.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -3815,10 +3815,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche Zahl mal 125 ergibt 1000?
   - ☐ Es wird 9-mal so groß, denn 3 · 3 = 9.
   - ☐ Das hängt von den Zahlen ab.
   - ☑ Es bleibt gleich. 15 · 12 = 180 und 45 · 4 = 180. Mal 3 und durch 3 heben sich auf.
-  - ☐ Es wird kleiner, denn durch 3 teilen macht kleiner.
+  - ☐ Es wird kleiner, denn durch 3 teilen macht stärker kleiner, als mal 3 größer macht.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Kinosaal hat 25 Reihen mit je 16 Plätzen. Ein Kino hat 4 solche Säle. Wie viele Plätze hat das Kino? Rechne geschickt. Lösung: **1600 Plätze**. Typische Fehler: 400 (sach-schritt-vergessen), 1000 (mal-stellenwert).
 - `06` AFB III · _Argumentieren_ · Tom rechnet 52 · 25 so: 52 : 4 = 13 und 13 · 100 = 1300. Ida sagt: „Das ist falsch. Man darf nur halbieren und verdoppeln.“ Wer hat recht?
-  - ☐ Beide. Tom rechnet richtig, aber nur durch Zufall.
+  - ☐ Beide. Tom rechnet richtig, aber das klappt nur durch Zufall bei dieser Zahl.
   - ☐ Keiner. Man muss schriftlich rechnen.
   - ☐ Ida. Richtig ist 325.
   - ☐ Ida. Durch 4 teilen ist kein Halbieren.
@@ -3862,7 +3862,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Faktor mal Faktor ergibt das Produkt.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul sagt: / „Das Produkt ist immer größer als jeder Faktor.“ / Prüfe mit 7 · 1. / Stimmt das? _(Bild: Punktefeld mit 1 Reihen zu je 7 Punkten)_
   - ☑ Falsch. / 7 · 1 = 7. / Das Produkt ist hier genauso groß wie der Faktor 7.
   - ☐ Stimmt. / 7 · 1 = 8.
-  - ☐ Stimmt. / Beim Malnehmen wird es immer mehr.
+  - ☐ Stimmt. / Beim Malnehmen wird es immer mehr. / Das Produkt ist die größte Zahl.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -3878,7 +3878,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Faktoren werden malgenommen, das 
 - `04` AFB I · _Kommunizieren_ · Der erste Faktor ist 14, der zweite Faktor ist 3. Berechne das Produkt. Lösung: **42**. Typische Fehler: 17 (begriffe-verwechselt).
 - `05` AFB II · _Kommunizieren_ · Das Produkt zweier Zahlen ist 42. Ein Faktor ist das Doppelte von 3. Wie heißt der andere Faktor? Lösung: **7**. Typische Fehler: 14 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul sagt: „Bei 6 · 8 = 48 nennt man 48 Faktor.“ Mara sagt: „48 nennt man Produkt.“ Wer hat recht?
-  - ☐ Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor.
+  - ☐ Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor, auch das Ergebnis.
   - ☐ Keiner. 48 nennt man Summe.
   - ☐ Beide. Faktor und Produkt bedeuten dasselbe.
   - ☑ Mara. 48 ist das Ergebnis der Mal-Aufgabe. Die Faktoren sind 6 und 8.
@@ -3893,12 +3893,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Fasse die beiden bekannten Faktoren z
 - `04` AFB III · _Kommunizieren_ · Beide Faktoren werden verdoppelt. Was passiert mit dem Produkt? Prüfe an 3 · 7.
   - ☐ Es bleibt gleich.
   - ☐ Das hängt von den Zahlen ab.
-  - ☐ Es wird doppelt so groß.
+  - ☐ Es wird doppelt so groß, denn es wird ja nur verdoppelt.
   - ☑ Es wird 4-mal so groß, denn 2 · 2 = 4. 3 · 7 = 21 und 6 · 14 = 84.
   - ☐ Es wird um 4 größer.
 - `05` AFB II · _Kommunizieren_ · Ein Faktor wird verdoppelt, der andere bleibt gleich. Vorher war das Produkt 64. Wie groß ist das Produkt jetzt? Lösung: **128**. Typische Fehler: 66 (begriffe-verwechselt), 256 (mal-stellenwert).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas sagt: „Ein Produkt ist schon dann gerade, wenn ein Faktor gerade ist.“ Sara sagt: „Nur wenn beide Faktoren gerade sind.“ Wer hat recht?
-  - ☐ Sara. 8 · 3 ist ungerade, weil 3 ungerade ist.
+  - ☐ Sara. 8 · 3 ist ungerade, weil 3 ungerade ist. Ein Produkt ist nur gerade, wenn beide Faktoren gerade sind.
   - ☐ Keiner. 3 · 3 = 9 ist ungerade.
   - ☑ Jonas. Ein gerader Faktor ist ein Doppeltes. Dann ist auch das Produkt ein Doppeltes, zum Beispiel 8 · 3 = 24.
   - ☐ Beide. Es kommt auf die Zahlen an.
@@ -3974,7 +3974,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne bei den Einern. Den Zehner me
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne schriftlich im Heft. / 342 · 7 Lösung: **2394**. Typische Fehler: 184 (mal-uebertrag-vergessen), 349 (1x1-addiert).
 - `05` AFB II · _Probleme lösen_ · Welche Ziffer fehlt? / 3▢6 · 8 = 3088 Lösung: a = **8**
 - `06` AFB III · _Argumentieren_ · Ben rechnet: 202 · 5 = 110. / Stimmt das?
-  - ☐ Falsch. / Richtig ist 1100.
+  - ☐ Falsch. / Richtig ist 1100. / Ben hat eine Null zu wenig.
   - ☑ Falsch. / Richtig ist 1010. / Ben hat die Null vergessen.
   - ☐ Stimmt. / 202 · 5 = 110.
 
@@ -4009,7 +4009,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Stelle für Stelle und schreib
 - `04` AFB III · _Modellieren_ · Wie viele Stellen kann das Produkt einer dreistelligen und einer einstelligen Zahl haben? Wähle die Antwort mit der richtigen Begründung.
   - ☐ 3, 4 oder 5 Stellen, denn 999 · 9 ist fast 10 000.
   - ☑ 3 oder 4 Stellen. Das kleinste Produkt ist 100 · 1 = 100, das größte ist 999 · 9 = 8991.
-  - ☐ Immer 3 Stellen, denn die größere Zahl hat 3 Stellen.
+  - ☐ Immer 3 Stellen, denn die größere Zahl hat 3 Stellen und die kleinere nur eine.
   - ☐ Immer 4 Stellen, denn 3 + 1 = 4.
   - ☐ Das kann man nicht sagen.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mit welcher einstelligen Zahl musst du 3322 multiplizieren, um 29 898 zu erhalten? Lösung: **9**. Typische Fehler: 10 (1x1-nachbar).
@@ -4097,7 +4097,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne für jede Ziffer des zweiten F
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Rechne schriftlich im Heft. / 64 · 14 Lösung: **896**. Typische Fehler: 320 (mal-nicht-eingerueckt), 256 (sach-schritt-vergessen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne 74 · 77 in Schritten. / 74 · 70 = ▢ / 74 · 7 = ▢ / 74 · 77 = ▢ Lösung: a = **5180**, b = **518**, c = **5698**
 - `06` AFB III · _Argumentieren_ · Finn rechnet 31 · 41 so: / 31 · 4 = 124 / 31 · 1 = 31 / 124 + 31 = 155 / Stimmt das?
-  - ☐ Stimmt. / Alle Rechnungen sind richtig.
+  - ☐ Stimmt. / Alle drei Rechnungen sind richtig.
   - ☑ Falsch. / Es ist 31 · 40 = 1240. / Richtig ist 1271.
   - ☐ Falsch. / Richtig ist 1550.
 
@@ -4118,7 +4118,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Je Ziffer des zweiten Faktors ein Tei
 - `03` AFB II · _Argumentieren_ · Mia rechnet 579 · 82 = 5790. Welchen Fehler hat Mia gemacht?
   - ☐ Mia hat richtig gerechnet.
   - ☑ Mia hat die Teilprodukte nicht stellengerecht untereinandergeschrieben. Richtig ist 47 478.
-  - ☐ Mia hat sich bei 579 · 8 verrechnet.
+  - ☐ Mia hat sich bei 579 · 8 verrechnet. Die Teilprodukte stehen aber richtig untereinander.
   - ☐ Mia hat einen Übertrag vergessen.
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 52 · 903. Lösung: **46956**. Typische Fehler: 4836 (mal-null-vergessen).
 - `05` AFB II · _Probleme lösen_ · Welche Ziffern fehlen? 6▢ · 4▢ = 2967 Lösung: a = **9**, b = **3**
@@ -4126,7 +4126,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Je Ziffer des zweiten Faktors ein Tei
   - ☐ Lena. Die Teilprodukte werden einfach addiert.
   - ☑ Paul. Überschlag: 300 · 70 = 21 000. Dazu passt nur 18 389.
   - ☐ Keiner. Richtig ist 183 890.
-  - ☐ Beide. Die Teilprodukte sind bei beiden gleich.
+  - ☐ Beide. Die Teilprodukte sind bei beiden gleich groß.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4136,7 +4136,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache zuerst einen Überschlag, damit
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne schriftlich: 471 · 330 Lösung: **155430**. Typische Fehler: 2826 (mal-nicht-eingerueckt).
 - `03` AFB II · _Probleme lösen_ · Welche Ziffern fehlen? ▢8 · 8▢ = 2▢68 Lösung: a = **2**, b = **1**, c = **2**
 - `04` AFB III · _Modellieren_ · Wie viele Stellen hat das Produkt zweier zweistelliger Zahlen höchstens? Wähle die Antwort mit der richtigen Begründung.
-  - ☐ 5 Stellen, denn 99 · 99 ist fast 10 000.
+  - ☐ 5 Stellen, denn 99 · 99 ist fast so groß wie 10 000.
   - ☐ 3 Stellen, denn 10 · 10 = 100.
   - ☐ 2 Stellen, wie die Faktoren.
   - ☑ 4 Stellen, denn das größte Produkt ist 99 · 99 = 9801.
@@ -4144,7 +4144,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache zuerst einen Überschlag, damit
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Zahl fehlt? 32 · ▢ = 5792 Lösung: **181**. Typische Fehler: 182 (1x1-nachbar).
 - `06` AFB III · _Argumentieren_ · Ida sagt: „23 · 23 ist kleiner als 24 · 22.“ Lina sagt: „23 · 23 ist größer.“ Wer hat recht?
   - ☑ Lina. 23 · 23 = 529 und 24 · 22 = 528. Der Unterschied ist genau 1.
-  - ☐ Keiner. Beide Produkte sind gleich groß.
+  - ☐ Keiner. Beide Produkte sind gleich groß, denn 1 mehr und 1 weniger gleichen sich aus.
   - ☐ Ida. 23 · 23 = 429.
   - ☐ Ida. 24 ist größer als 23.
 
@@ -4168,7 +4168,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Geteilt macht Mal rückgängig. *Beis
 - `05` AFB II · _Argumentieren_ · Emre rechnet 3 · 19 = 87. / Ungefähr ist es 3 · 20 = 60. / Kann 87 stimmen? _(Bild: Zehnermaterial: 2 Zehnerstangen, 0 Einerwürfel)_
   - ☐ Ja. / 87 ist nah an 60.
   - ☑ Nein. / 87 ist zu groß. / Es muss etwas weniger als 60 sein.
-  - ☐ Ja. / Das kann man nicht sehen.
+  - ☐ Ja. / Das kann man nicht sehen. / Man muss genau rechnen.
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · 7 · 6 = 42 / Prüfe: 42 : 6 = ▢ _(Bild: Punktefeld mit 7 Reihen zu je 6 Punkten)_ Lösung: **7**. Typische Fehler: 6 (div-vertauscht).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
@@ -4181,13 +4181,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde die krumme Zahl auf Zehner. Rec
   - ☐ 87 · 7 = 609
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Mache einen Überschlag. / 549 · 6 / Runde 549 auf Hunderter. _(Bild: Zehnermaterial: 5 Hunderterplatten, 4 Zehnerstangen, 9 Einerwürfel)_ Lösung: **3000**. Typische Fehler: 3294 (ueberschlag-nicht-gerundet), 3600 (falsch-gerundet).
 - `03` AFB II · _Argumentieren_ · Finn rechnet 236 · 3 = 7080. / Mache einen Überschlag. / Stimmt das?
-  - ☐ Stimmt. / Die Ziffern passen.
+  - ☐ Stimmt. / Die Ziffern passen. / Die Nullen sind nicht wichtig.
   - ☑ Falsch. / Überschlag: 200 · 3 = 600. / 7080 ist viel zu groß.
   - ☐ Stimmt. / Überschlag: 200 · 3 = 7080.
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Mache die Probe. / 3 · 78 = 234 / Rechne 234 : 3. _(Bild: Zehnermaterial: 7 Zehnerstangen, 8 Einerwürfel)_ Lösung: **78**. Typische Fehler: 231 (probe-falsche-umkehr).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · 32 · 4 = ▢ / Probe: ▢ : 4 = 32 Lösung: x = **128**, y = **128**
 - `06` AFB III · _Argumentieren_ · Ida sagt: / „Bei 39 · 7 ist der Überschlag 40 · 7 = 280. / Also ist das Ergebnis kleiner als 280.“ / Stimmt das?
-  - ☐ Falsch. / Das kann man ohne Rechnen nicht wissen.
+  - ☐ Falsch. / Das kann man ohne genaues Rechnen nicht wissen.
   - ☐ Falsch. / Das Ergebnis ist größer als 280.
   - ☑ Stimmt. / 39 ist kleiner als 40. / Also ist 39 · 7 kleiner als 40 · 7.
 
@@ -4209,7 +4209,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde jede Zahl auf ihre höchste Ste
   - ☐ 86 · 75 = 6450
   - ☑ 48 · 53 = 25 440
 - `06` AFB III · _Argumentieren_ · Ida sagt: „336 · 59 ist größer als 300 · 50 = 15 000.“ Ben sagt: „Es ist kleiner.“ Wer hat recht?
-  - ☐ Ben. Beim Runden wird ein Ergebnis immer größer.
+  - ☐ Ben. Beim Runden wird ein Ergebnis immer größer. Also ist das genaue Produkt kleiner.
   - ☐ Keiner. Man muss genau rechnen, sonst weiß man es nicht.
   - ☐ Ben. 15 000 ist eine runde Zahl.
   - ☑ Ida. 336 ist größer als 300, und 59 ist größer als 50. Also ist das Produkt größer als 300 · 50.
@@ -4225,12 +4225,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde auf die höchste Stelle.
   - ☐ Das kann man ohne genaues Rechnen nicht sagen.
   - ☐ Gleich groß. Ein Überschlag ist immer genau.
   - ☑ Kleiner. Beide Zahlen wurden aufgerundet, also ist der Überschlag zu groß.
-  - ☐ Größer. 488 wurde aufgerundet.
+  - ☐ Größer. 488 wurde aufgerundet, also ist der Überschlag zu klein.
   - ☐ Kleiner. 47 wurde abgerundet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Wie weit liegt das genaue Ergebnis von 44 · 71 vom Überschlag 40 · 70 entfernt? Lösung: **324**.
 - `06` AFB III · _Argumentieren_ · Sara sagt: „Die Probe zu 125 · 8 = 1000 ist 1000 : 125 = 8.“ Emre sagt: „Die Probe ist 1000 : 8 = 125.“ Wer hat recht?
   - ☐ Keiner. Die Probe ist 1000 − 125.
-  - ☐ Nur Emre. Man teilt immer durch den zweiten Faktor.
+  - ☐ Nur Emre. Bei der Probe teilt man immer durch den zweiten Faktor.
   - ☑ Beide. Man kann das Produkt durch jeden der beiden Faktoren teilen.
   - ☐ Nur Sara. Man teilt immer durch den ersten Faktor.
   - ☐ Keiner. Zur Mal-Aufgabe gibt es keine Probe.
@@ -4268,7 +4268,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Packung kostet gleich viel. Rech
 - `04` AFB I · _Modellieren_ · Finn hat 243 Sammelkarten. / Sara hat 4-mal so viele Karten. / Wie viele Karten hat Sara? _(Bild: Streifenbild: Ganzes ?, Teile 243 und 243 und 243 und 243)_ Lösung: **972 Karten**. Typische Fehler: 247 (1x1-addiert).
 - `05` AFB II · _Modellieren_ · Eine Treppe hat 55 Stufen. / Lina geht sie 2-mal hoch und wieder runter. / Wie viele Stufen geht sie insgesamt? Lösung: **220 Stufen**. Typische Fehler: 110 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Ein Bus hat 57 Plätze. / Es fahren 3 Busse. / 150 Kinder fahren mit. / Reicht der Platz? _(Bild: Streifenbild: Ganzes ?, Teile 57 und 57 und 57)_
-  - ☐ Nein. / 150 ist eine große Zahl.
+  - ☐ Nein. / 150 ist eine sehr große Zahl.
   - ☐ Nein. / 57 + 3 = 60.
   - ☑ Ja. / 3 · 57 = 171. / 171 ist mehr als 150.
 
@@ -4402,7 +4402,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Achte auf zwei Dinge: Hat sich die Re
   - ☐ Das kann man nicht prüfen.
   - ☐ Ja. Beide Aufgaben ergeben 9.
   - ☐ Nein. Bei der Division darf man gar nichts umstellen.
-  - ☐ Ja. Bei allen Rechenarten darf man vertauschen.
+  - ☐ Ja. Bei allen Rechenarten darf man vertauschen, das Ergebnis bleibt dabei immer gleich.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Es gilt (12 · 9) · 7 = 756. Wie groß ist 7 · (9 · 12)? Antworte, ohne neu zu rechnen. Lösung: **756**. Typische Fehler: 115 (punkt-vor-strich).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Rechnung zeigt, dass das Verbindungsgesetz für die Division nicht gilt?
   - ☐ (32 · 8) · 2 = 32 · (8 · 2).
@@ -4456,7 +4456,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Faktoren, die zusammen 100
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Regal hat 8 Böden. Auf jedem Boden stehen 23 Kisten mit je 20 Dosen. Wie viele Dosen stehen im Regal? Rechne vorteilhaft. Lösung: **3680 Dosen**. Typische Fehler: 460 (sach-schritt-vergessen), 184 (sach-schritt-vergessen).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas rechnet 25 · 23 · 4 so: 25 · 4 = 100 und 100 · 23 = 2300. Emre rechnet 25 · 23 = 575 und 575 · 4 = 2300. Wer rechnet vorteilhafter?
   - ☑ Jonas. 25 · 4 = 100 ist leicht, und mal 100 hängt nur zwei Nullen an.
-  - ☐ Emre. Man muss immer von links nach rechts rechnen.
+  - ☐ Emre. Man muss immer von links nach rechts rechnen, sonst wird es falsch.
   - ☐ Keiner. Beide Ergebnisse sind falsch.
   - ☐ Beide gleich. Das Ergebnis ist ja dasselbe.
 
@@ -4470,7 +4470,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche zwei Faktoren ergeben zusammen
 - `04` AFB III · _Argumentieren_ · Warum darf man bei 25 · 82 · 4 zuerst 25 · 4 rechnen?
   - ☐ Weil man immer mit den kleinsten Zahlen anfängt.
   - ☐ Weil Punkt vor Strich gilt.
-  - ☐ Wegen des Verteilungsgesetzes.
+  - ☐ Wegen des Verteilungsgesetzes darf man die Faktoren neu verteilen. Deshalb darf man die beiden passenden Zahlen zuerst malnehmen.
   - ☑ Wegen des Vertauschungsgesetzes darf man 82 und 4 tauschen. Wegen des Verbindungsgesetzes darf man dann 25 · 4 zuerst rechnen.
   - ☐ Das darf man nicht. Man muss von links nach rechts rechnen.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Stadion hat 5 Tribünen. Jede Tribüne hat 125 Reihen mit je 40 Plätzen. Wie viele Plätze hat das Stadion? Rechne vorteilhaft. Lösung: **25000 Plätze**. Typische Fehler: 5000 (sach-schritt-vergessen).
@@ -4479,7 +4479,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welche zwei Faktoren ergeben zusammen
   - ☐ Beide. Das Verbindungsgesetz gilt immer.
   - ☐ Keiner. Man muss immer von links nach rechts rechnen.
   - ☐ Nur Mara. Beim Dividieren darf man umstellen.
-  - ☐ Beide. Die Rechengesetze gelten für Mal und Geteilt.
+  - ☐ Beide. Die Rechengesetze gelten für Mal und Geteilt, denn Geteilt ist die Umkehrung von Mal.
 
 ## 5.4.4-P1: Ich kann ein Produkt aus gleichen Faktoren als Potenz schreiben und Basis und Exponent benennen.
 
@@ -4556,12 +4556,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Faktoren genau.
   - ☐ Er wird um 2 größer.
   - ☐ Er wird um 1 größer.
   - ☑ Er verdoppelt sich. 2⁷ = 2⁶ · 2 = 128.
-  - ☐ Er wird 10-mal so groß.
+  - ☐ Er wird 10-mal so groß, wie bei den Zehnerpotenzen.
   - ☐ Das hängt von der Zahl ab.
 - `05` AFB II · _Kommunizieren_ · Schreibe 81 auf zwei Arten als Potenz. Mit der Basis 9 ist der Exponent ▢. Mit der Basis 3 ist der Exponent ▢. Lösung: a = **2**, b = **4**
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Eine Zehnerpotenz hat so viele Nullen, wie der Exponent angibt.“ Mara sagt: „Sie hat eine Null mehr als der Exponent.“ Wer hat recht?
   - ☐ Keiner. 10³ = 30.
-  - ☐ Mara. Die 10 hat schon eine Null.
+  - ☐ Mara. Die 10 hat schon eine Null, dazu kommen die Nullen aus dem Exponenten.
   - ☐ Mara. 10³ = 10 000.
   - ☐ Beide. Es kommt auf die Zahl an.
   - ☑ Mia. 10³ = 1000 hat drei Nullen, 10⁵ = 100 000 hat fünf Nullen.
@@ -4599,7 +4599,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 9² = 9 · 9. *Beispiel:* 8² = 8 · 
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne. / 3³ _(Bild: Würfel aus 3 Schichten mit je 3 · 3 Würfelchen)_ Lösung: **27**. Typische Fehler: 9 (potenz-mal-exponent).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der große Würfel hat 4 Schichten. / Jede Schicht hat 4 Reihen mit je 4 Würfeln. / Wie viele kleine Würfel sind es? _(Bild: Würfel aus 4 Schichten mit je 4 · 4 Würfelchen)_ Lösung: **64 Würfel**. Typische Fehler: 12 (potenz-mal-exponent), 81 (potenz-vertauscht).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Ole sagt: / „10⁴ hat 4 Nullen.“ / Stimmt das?
-  - ☐ Falsch. / 10⁴ hat 5 Nullen.
+  - ☐ Falsch. / 10⁴ hat 5 Nullen. / Die 10 hat schon eine Null.
   - ☑ Stimmt. / 10⁴ = 10 · 10 · 10 · 10 = 10 000.
   - ☐ Falsch. / 10⁴ = 40.
 
@@ -4628,7 +4628,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne beide Potenzen einzeln.
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Die Quadratzahlen beginnen so: 1, 4, 9, 16, 25. Welche Regel gilt für den Unterschied zwischen zwei benachbarten Quadratzahlen?
   - ☑ Die Unterschiede sind die ungeraden Zahlen 3, 5, 7, 9 und so weiter.
   - ☐ Der Unterschied ist immer 3.
-  - ☐ Der Unterschied verdoppelt sich jedes Mal.
+  - ☐ Der Unterschied verdoppelt sich von Zahl zu Zahl jedes Mal.
   - ☐ Die Unterschiede sind die geraden Zahlen.
   - ☐ Es gibt keine Regel.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Auf ein Feld legt man 2 Körner, auf das nächste 4, dann 8 und so weiter. Es sind immer doppelt so viele. Wie viele Körner liegen auf dem 11. Feld? Lösung: **2048 Körner**. Typische Fehler: 1024 (potenz-mal-exponent), 22 (potenz-mal-exponent).
@@ -4683,7 +4683,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Dividend wird geteilt. Der Diviso
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Tom sagt: / „Der Quotient ist immer kleiner als die erste Zahl.“ / Prüfe mit 6 : 1. / Stimmt das? _(Bild: 1 Gruppen mit je 6 Plättchen)_
   - ☐ Stimmt. / 6 : 1 = 5.
   - ☑ Falsch. / 6 : 1 = 6. / Der Quotient ist hier genauso groß.
-  - ☐ Stimmt. / Beim Teilen wird jede Zahl kleiner.
+  - ☐ Stimmt. / Beim Teilen wird jede Zahl immer kleiner.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4862,7 +4862,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie viele Stellen muss der Quotient n
 - `06` AFB III · _Argumentieren_ · Mia berechnet 3556 : 28 in zwei Schritten: zuerst 3556 : 4 = 889, dann 889 : 7 = 127. Beurteile den Rechenweg.
   - ☐ Richtig, aber nur, weil 3556 eine gerade Zahl ist.
   - ☑ Richtig, denn 4 · 7 = 28. Nacheinander durch 4 und durch 7 zu teilen wirkt wie das Teilen durch 28.
-  - ☐ Falsch. Mia müsste zuerst durch 24 und dann durch 4 teilen.
+  - ☐ Falsch. Mia müsste zuerst durch 24 und dann noch einmal durch 4 teilen, denn 24 + 4 = 28.
   - ☐ Falsch, denn 4 + 7 ist nicht 28.
   - ☐ Falsch. Ein Divisor darf nicht zerlegt werden.
 
@@ -4900,7 +4900,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche in der 6er-Reihe die größte Z
   - ☐ 1
 - `06` AFB III · _Argumentieren_ · Noah rechnet: 36 : 5 = 6 Rest 6. / Stimmt das?
   - ☐ Falsch. / Richtig ist 8 Rest 1.
-  - ☐ Stimmt. / Die Probe passt: 6 · 5 + 6 = 36.
+  - ☐ Stimmt. / Die Probe passt: 6 · 5 + 6 = 36. / Der Rest darf so groß sein.
   - ☑ Falsch. / Der Rest 6 ist größer als 5. / Richtig ist 7 Rest 1.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4917,7 +4917,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Rest ist das, was nach dem letzte
 - `06` AFB III · _Argumentieren_ · 380 Kinder fahren mit Bussen zum Wandertag. Ein Bus hat 50 Plätze. Paul rechnet 380 : 50 = 7 Rest 30 und bestellt 7 Busse. Beurteile die Entscheidung.
   - ☐ Richtig: 7 Busse sind voll, das genügt.
   - ☐ Falsch: Es werden 30 Busse gebraucht.
-  - ☐ Richtig: Bei Sachaufgaben lässt man den Rest weg.
+  - ☐ Richtig: Bei Sachaufgaben lässt man den Rest immer einfach weg.
   - ☑ Falsch: 30 Kinder hätten keinen Platz. Es werden 8 Busse gebraucht.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4981,7 +4981,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Probe ist die Mal-Aufgabe: Ergebn
   - ☑ 42
 - `06` AFB III · _Argumentieren_ · Lina rechnet: 665 : 5 = 33. / Der Überschlag ist 700 : 5 = 140. / Was zeigt der Überschlag?
   - ☐ 33 passt zum Überschlag.
-  - ☐ Der Überschlag ist falsch. / 700 : 5 = 14.
+  - ☐ Der Überschlag ist falsch. / 700 : 5 = 14. / Das Ergebnis muss nahe bei 14 liegen.
   - ☑ 33 ist viel zu klein. / Das Ergebnis muss nahe bei 140 liegen. / Richtig ist 133.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5006,7 +5006,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde so, dass du die Division im Kop
   - ☑ zwischen 70 und 80
   - ☐ zwischen 90 und 100
 - `06` AFB III · _Modellieren_ · Finn rechnet 4968 : 24 = 207. Die Probe 207 · 24 = 4968 stimmt. Ein grober Überschlag mit 4000 : 30 ergibt aber nur etwa 133. Was folgt daraus?
-  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt.
+  - ☐ Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt und nicht dazu passt.
   - ☐ Die Probe muss falsch sein.
   - ☑ Das Ergebnis 207 stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.
   - ☐ Man nimmt den Mittelwert aus Ergebnis und Überschlag.
@@ -5025,7 +5025,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Auf welche glatten Zahlen kannst du r
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?
   - ☐ Er stimmt dann immer genau.
   - ☐ Er ist dann immer zu klein.
-  - ☐ Er ist dann immer zu groß.
+  - ☐ Er ist dann immer zu groß, weil beide Zahlen durch das Aufrunden größer geworden sind.
   - ☑ Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Überschlag zu einer Division lautet 6000 : 60 = 100. Welche Aufgabe wurde überschlagen?
   - ☑ 6218 : 59
@@ -5059,7 +5059,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege immer 2 zusammen. Zähle die Gru
 - `05` AFB II · _Modellieren_ · Die Rechnung ist 6 : 2 = 3. / Welche Geschichte passt? _(Bild: 2 Gruppen mit je 3 Plättchen)_
   - ☑ 6 Kekse werden an 2 Kinder gerecht verteilt.
   - ☐ Von 6 Keksen werden 2 gegessen.
-  - ☐ Zu 6 Keksen kommen 2 Kekse dazu.
+  - ☐ Zu 6 Keksen kommen noch 2 Kekse dazu.
 - `06` AFB I · _Modellieren_ · 1 Woche hat 7 Tage. / Wie viele Wochen sind 28 Tage? _(Bild: 4 Gruppen mit je 7 Plättchen)_ Lösung: **4 Wochen**. Typische Fehler: 21 (div-falsche-rechenart).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
@@ -5075,11 +5075,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Preis wird gerecht auf 4 Bücher 
 - `04` AFB I · _Modellieren_ · 155 Flaschen stehen in 5 gleich vollen Regalen. / Wie viele Flaschen stehen in 1 Regal? _(Bild: Zehnermaterial: 1 Hunderterplatten, 5 Zehnerstangen, 5 Einerwürfel)_ Lösung: **31 Flaschen**. Typische Fehler: 150 (div-falsche-rechenart), 310 (div-stellenwert).
 - `05` AFB II · _Modellieren_ · 186 Flaschen stehen in 3 gleich vollen Regalen. / Tom rechnet 186 : 3 = 62. / Was bedeutet die 62? _(Bild: Zehnermaterial: 1 Hunderterplatten, 8 Zehnerstangen, 6 Einerwürfel)_
   - ☑ In jedem Regal stehen 62 Flaschen.
-  - ☐ 62 Flaschen bleiben übrig.
+  - ☐ 62 Flaschen bleiben am Ende übrig.
   - ☐ Es gibt 62 Regale.
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · 8 Trikots kosten zusammen 232 €. / Lena rechnet 232 − 8 = 224. / Lena sagt: „1 Trikot kostet 224 €.“ / Stimmt das? _(Bild: Zehnermaterial: 2 Hunderterplatten, 3 Zehnerstangen, 2 Einerwürfel)_
   - ☑ Falsch. / Hier wird geteilt: 232 : 8 = 29. / 1 Trikot kostet 29 €.
-  - ☐ Falsch. / Hier wird mal gerechnet: 232 · 8.
+  - ☐ Falsch. / Hier wird mal gerechnet: 232 · 8. / So viel kostet 1 Trikot.
   - ☐ Stimmt. / 232 − 8 = 224.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5101,7 +5101,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hier wird gleichmäßig verteilt. Wel
   - ☑ Falsch: 18 · 21 € = 378 €, es fehlen 36 €. Nötig sind 23 € pro Kind.
   - ☐ Richtig: 414 : 21 ist mehr als 18.
   - ☐ Falsch: Jedes Kind muss 18 € zahlen.
-  - ☐ Richtig: 21 € sind fast 23 €, das genügt.
+  - ☐ Richtig: 21 € sind fast 23 €, das genügt bei so vielen Kindern.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -5175,7 +5175,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne zuerst die Punktrechnung. Rech
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 72 : 8 + 5 · 8 − 17. Lösung: **32**. Typische Fehler: 95 (punkt-vor-strich).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 7 · 8 − 5 · 7. Lösung: **21**. Typische Fehler: 357 (punkt-vor-strich).
 - `06` AFB III · _Argumentieren_ · Finn rechnet 89 − 3 · 9 = 774. Paul rechnet 89 − 3 · 9 = 62. Wer hat recht?
-  - ☐ Finn. Man rechnet von links nach rechts.
+  - ☐ Finn. Man rechnet immer von links nach rechts.
   - ☐ Keiner. Richtig ist 77.
   - ☐ Beide. Die Reihenfolge ist egal.
   - ☑ Paul. Punkt vor Strich: 3 · 9 = 27 und 89 − 27 = 62.
@@ -5195,7 +5195,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Erst alle Punktrechnungen, dann von l
 - `04` AFB III · _Argumentieren_ · Warum rechnet man bei 9 + 2 · 5 zuerst 2 · 5? Denke an 9 einzelne Plättchen und 2 Päckchen mit je 5 Plättchen.
   - ☐ Weil das Mal links steht.
   - ☑ 2 · 5 zählt die Plättchen in den Päckchen. Erst wenn sie gezählt sind, kommen die 9 einzelnen dazu: 9 + 10 = 19.
-  - ☐ Weil man immer mit der größten Zahl anfängt.
+  - ☐ Weil man immer mit der größten Zahl anfängt. Die Plättchen in den Päckchen sind mehr als die einzelnen.
   - ☐ Das ist nur eine Abmachung ohne Grund.
   - ☐ Weil 9 + 2 zuerst gerechnet werden muss.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Rechenzeichen passen? 5 ▢ 7 ▢ 3 = 26
@@ -5208,7 +5208,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Erst alle Punktrechnungen, dann von l
   - ☐ Beide. Das Ergebnis ist gleich.
   - ☐ Ole. Geteilt ist keine Punktrechnung.
   - ☑ Sara. Geteilt und mal sind Punktrechnungen. 72 : 8 = 9 und 3 · 2 = 6, also 9 − 6 = 3.
-  - ☐ Keiner. Man rechnet von links nach rechts.
+  - ☐ Keiner. Man rechnet immer der Reihe nach von links nach rechts, ohne Ausnahme.
   - ☐ Ole. Minus steht in der Mitte.
 
 ## 5.4.6-T2: Ich kann Rechenausdrücke mit Klammern berechnen, auch mit einer Klammer in der Klammer.
@@ -5248,7 +5248,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zuerst die Klammer. *Beispiel:* 8 · 
   - ☐ (4 · 2) + 6
 - `06` AFB III · _Argumentieren_ · Jonas rechnet: / (6 + 4) · 3 = 18 / Stimmt das? _(Bild: Punktefeld mit 10 Reihen zu je 3 Punkten, Trennlinie nach 6 Reihen)_
   - ☐ Falsch. / Richtig ist 13.
-  - ☐ Stimmt. / Punkt vor Strich.
+  - ☐ Stimmt. / Punkt vor Strich. / Die Klammer ändert nichts.
   - ☑ Falsch. / Zuerst die Klammer: 6 + 4 = 10. / 10 · 3 = 30.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5284,7 +5284,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Arbeite dich von der innersten Klamme
   - ☐ (4 · 6 + 5) · 7
 - `04` AFB III · _Argumentieren_ · Braucht man in 3 + (5 · 8) die Klammer?
   - ☐ Das kann man nicht sagen.
-  - ☐ Ja. Klammern darf man nie weglassen.
+  - ☐ Ja. Klammern darf man in einer Rechnung nie weglassen.
   - ☐ Nein. Klammern ändern nie etwas.
   - ☐ Ja. Ohne Klammer ist es 64.
   - ☑ Nein. Wegen Punkt vor Strich ist auch 3 + 5 · 8 = 43.
@@ -5294,7 +5294,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Arbeite dich von der innersten Klamme
   - ☐ Nur Sara. Die Klammer hinten ist egal.
   - ☐ Beide. Es kommt immer 57 heraus.
   - ☐ Keiner. Klammern darf man nie weglassen.
-  - ☐ Beide. Bei Minus darf man Klammern immer weglassen.
+  - ☐ Beide. Bei Minus darf man Klammern immer weglassen, das Ergebnis bleibt gleich.
 
 ## 5.4.6-T3: Ich kann zu einem Text den passenden Rechenausdruck aufstellen.
 
@@ -5380,14 +5380,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Differenz und Summe kommen je in eine
 - `04` AFB III · _Modellieren_ · Welche Geschichte passt zu (60 − 7) · 4?
   - ☑ Ein Paket wiegt 60 kg. Davon werden 7 kg ausgepackt. 4 solche Pakete werden verschickt.
   - ☐ Ich habe 60 €. Ich gebe 7 € aus und dann noch 4 €.
-  - ☐ Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon ausgepackt.
+  - ☐ Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon wieder ausgepackt.
   - ☐ Ich habe 60 €. Ich bekomme 4-mal 7 € dazu.
   - ☐ Keine Geschichte passt.
 - `05` AFB II · _Modellieren_ · Ich denke mir eine Zahl. Ich addiere 5 und nehme das Ergebnis mal 3. Ich erhalte 45. Welche Zahl habe ich mir gedacht? Lösung: **10**. Typische Fehler: 20 (klammer-innen-aussen).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Für 8 Hefte zu je 3 € und 8 Stifte zu je 2 € schreibt Mia 8 · 3 + 2. Ole schreibt 8 · (3 + 2). Wer hat recht?
   - ☐ Mia. Punkt vor Strich.
   - ☐ Mia. Die Stifte kosten nur 2 €.
-  - ☐ Beide. Die Ausdrücke sind gleich.
+  - ☐ Beide. Die Ausdrücke sind gleich, die Klammer ändert nichts.
   - ☐ Keiner. Richtig ist 8 + 3 + 2.
   - ☑ Ole. Jedes Heft und jeder Stift wird 8-mal gekauft: 8 · 5 = 40.
 
@@ -5446,7 +5446,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Teil der Klammer wird malgenomm
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau ins Bild. / (9 + 2) · 6 = ▢ · 6 + ▢ · 6 _(Bild: Punktefeld mit 11 Reihen zu je 6 Punkten, Trennlinie nach 9 Reihen)_ Lösung: a = **9**, b = **2**
 - `06` AFB III · _Argumentieren_ · Sara rechnet: / 6 · (20 + 2) = 120 + 2 = 122 / Stimmt das?
   - ☐ Stimmt. / 6 · 20 = 120.
-  - ☐ Falsch. / Richtig ist 52.
+  - ☐ Falsch. / Zuerst kommt das Plus: 6 + 20 = 26. / Richtig ist 26 · 2 = 52.
   - ☑ Falsch. / Auch 2 muss mit 6 malgenommen werden. / 120 + 12 = 132.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5474,7 +5474,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Summand in der Klammer wird mit
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Elif. Beim Ausmultiplizieren wird jeder Summand malgenommen: 90 + 48 = 138.
   - ☐ Keiner. Richtig ist 21 · 8.
-  - ☐ Sara. Man nimmt nur den ersten Summanden mal.
+  - ☐ Sara. Man nimmt nur den ersten Summanden mal, der zweite bleibt, wie er ist.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -5499,7 +5499,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Multipliziere zuerst aus. Was fällt 
   - ☐ Keiner. Man darf die Klammer nicht auflösen.
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Sara. In der Klammer steht ein Produkt, keine Summe. Das Verteilungsgesetz gilt hier nicht: 4 · 12 = 48.
-  - ☐ Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen.
+  - ☐ Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen. Das sagt das Verteilungsgesetz.
   - ☐ Elif. Das ist das Verbindungsgesetz.
 
 ## 5.4.7-V2: Ich kann ausklammern.
@@ -5536,7 +5536,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gleiche Faktor kommt vor die Klam
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 7 · 6 + 3 · 6 _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 7 Reihen)_ Lösung: **60**. Typische Fehler: 45 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Tom rechnet: / 6 · 7 + 6 · 3 = 6 · 7 + 3 = 45 / Stimmt das? _(Bild: Punktefeld mit 10 Reihen zu je 6 Punkten, Trennlinie nach 7 Reihen)_
   - ☐ Stimmt. / 6 · 7 = 42.
-  - ☐ Falsch. / Richtig ist 6 + 7 + 3 = 16.
+  - ☐ Falsch. / Hier wird nur addiert. / Richtig ist 6 + 7 + 3 = 16.
   - ☑ Falsch. / Richtig ist 6 · (7 + 3) = 6 · 10 = 60.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5553,7 +5553,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der gemeinsame Faktor kommt vor die K
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Klammere aus und berechne: 14 · 13 + 14 · 7 Lösung: **280**. Typische Fehler: 189 (verteilung-halb).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bäcker verkauft am Morgen 46 Brötchen und am Nachmittag 54 Brötchen. Jedes Brötchen kostet 40 Cent. Wie viel Cent nimmt er ein? Lösung: **4000 Cent**. Typische Fehler: 1894 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Ali sagt: „15 · 9 + 15 · 4 = 15 · 13.“ Emre sagt: „15 · 9 + 15 · 4 = 15 · 36.“ Wer hat recht?
-  - ☐ Emre. In der Klammer wird malgenommen.
+  - ☐ Emre. In der Klammer wird malgenommen, weil vorn auch malgenommen wird.
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Ali. Beim Ausklammern werden die Zahlen in der Klammer addiert: 15 · (9 + 4) = 195.
   - ☐ Keiner. Richtig ist 15 · 9 + 4.
@@ -5570,11 +5570,11 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die einzelne 32 als Produkt.
   - ☑ Weil 58 = 58 · 1 ist. Ausklammern ergibt 58 · (99 + 1) = 58 · 100 = 5800.
   - ☐ Weil man 99 + 58 zuerst rechnen darf.
   - ☐ Weil man die Klammer weglassen darf.
-  - ☐ Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf.
+  - ☐ Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf, denn 99 ist fast 100.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Klammere aus und berechne: 9 · 25 + 9 · 16 + 9 · 59 Lösung: **900**. Typische Fehler: 300 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Sara sagt: „18 · 9 − 18 · 2 = 18 · 7.“ Jonas sagt: „18 · 9 − 18 · 2 = 18 · 11.“ Wer hat recht?
   - ☐ Beide. Ausklammern ändert nichts.
-  - ☐ Keiner. Bei Minus darf man nicht ausklammern.
+  - ☐ Keiner. Bei Minus darf man nicht ausklammern, das geht nur bei Plus.
   - ☐ Jonas. Es kommt 198 heraus.
   - ☐ Jonas. In der Klammer wird immer addiert.
   - ☑ Sara. Beim Ausklammern bleibt das Minus in der Klammer: 18 · (9 − 2) = 126.
@@ -5638,7 +5638,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 83 in 80 und 3. *Lösungsschr
 - `05` AFB II · _Modellieren_ · Ein Ticket kostet 49 €. Eine Gruppe kauft 14 Tickets. Wie viel kosten die Tickets? Rechne geschickt. Lösung: **686 €**. Typische Fehler: 699 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Noah rechnet 65 · 19 = 65 · 20 − 65 = 1235. Finn rechnet 65 · 19 = 65 · 20 − 19 = 1281. Wer hat recht?
   - ☐ Keiner. Richtig ist 65 · 20 − 1.
-  - ☐ Finn. Man zieht die Zahl ab, die geändert wurde.
+  - ☐ Finn. Man zieht am Ende die Zahl ab, die geändert wurde.
   - ☐ Beide. Es kommt dasselbe heraus.
   - ☑ Noah. 65 · 19 ist 65 · 20 − 65 · 1. Abgezogen wird 65, nicht 19.
 
@@ -5657,7 +5657,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege 101 geschickt.
   - ☑ 39 · 41 = 39 · 40 + 39
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt: 8 · 31 · 125 + 8 · 69 · 125 Lösung: **100000**. Typische Fehler: 31069 (verteilung-halb).
 - `06` AFB III · _Argumentieren_ · Jonas rechnet 36 · 25 = 36 · 20 + 36 · 5 = 900. Lina rechnet 36 · 25 = 9 · 100 = 900. Wer hat recht?
-  - ☐ Nur Jonas. Man muss immer das Verteilungsgesetz nehmen.
+  - ☐ Nur Jonas. Man muss immer das Verteilungsgesetz nehmen, anders darf man nicht zerlegen.
   - ☐ Keiner. Man muss schriftlich rechnen.
   - ☐ Nur Lina. Das Verteilungsgesetz gilt nicht bei 25.
   - ☐ Keiner. Richtig ist 725.
@@ -5694,7 +5694,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme den Unterschied zwischen zwe
 - `05` AFB II · _Probleme lösen (+ Kommunizieren)_ · Das ist eine Mal-Mauer. / Jeder Stein ist das Produkt der beiden Steine darunter. / Fülle die leeren Steine aus. _(Mal-Mauer, von oben nach unten; fett = Eingabefeld)_ **72** / **6** · **12** / 2 · 3 · 4
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Lena sagt: / „Bei 2, 4, 8, 16 kommt immer 2 dazu.“ / Stimmt das? _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 2, Sprünge 2 nach 4 (+ 2), 4 nach 8 (+ 4), 8 nach 16 (+ 8))_
   - ☑ Falsch. / Jede Zahl ist das Doppelte der Zahl davor. / Nach 16 kommt 32.
-  - ☐ Falsch. / Es geht abwechselnd plus und mal weiter.
+  - ☐ Falsch. / Es geht abwechselnd plus und mal weiter. / Erst plus, dann mal.
   - ☐ Stimmt. / 2 + 2 = 4.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -5709,7 +5709,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Unterschiede zwischen de
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Die Folge beginnt mit 4, 8, 16. Emre sagt: „Als Nächstes kommt 32.“ Mara sagt: „Als Nächstes kommt 28.“ Wer hat recht?
   - ☐ Keiner. Es kommt immer 8 dazu, also kommt 24.
   - ☐ Nur Emre. Eine Zahlenfolge geht immer mit Mal weiter.
-  - ☐ Nur Mara. Man muss immer auf die Unterschiede schauen.
+  - ☐ Nur Mara. Man muss immer auf die Unterschiede schauen. Eine Regel mit Mal gibt es bei so kleinen Zahlen noch nicht.
   - ☑ Beide. Bei „immer mal 2“ kommt 32. Bei „die Unterschiede 4, 8 werden immer um 4 größer“ kommt 28. Drei Zahlen legen die Regel nicht fest.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -5723,13 +5723,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden schnell kleiner. Wi
   - ☑ Falsch. Alle Zahlen der Folge stehen in der 4er-Reihe. 142 liegt zwischen 35 · 4 = 140 und 36 · 4 = 144.
   - ☐ Falsch. In der Folge kommen nur Zahlen bis 100 vor.
   - ☐ Stimmt. Man muss nur lange genug 4 dazuzählen.
-  - ☐ Stimmt. Die Folge geht immer weiter, also kommt jede Zahl einmal vor.
+  - ☐ Stimmt. Die Folge geht immer weiter und wird beliebig groß, also kommt jede Zahl einmal vor.
 - `05` AFB II · _Probleme lösen_ · Die Zahlenfolge 2, 5, 8, 11 geht immer plus 3 weiter. Welche Zahl steht an der 20. Stelle? Lösung: **59**. Typische Fehler: 62 (muster-falsche-regel), 60 (muster-falsche-regel).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · In einer Mal-Mauer stehen unten 4, 3 und 2. Oben steht 72. Sara sagt: „Verdopple ich den mittleren unteren Stein, wird der oberste Stein doppelt so groß.“ Jonas sagt: „Er wird viermal so groß.“ Wer hat recht?
   - ☑ Jonas. Der mittlere Stein steckt in beiden Steinen darüber. Mit 6 steht oben 24 · 12 = 288, und das ist 4 · 72.
   - ☐ Keiner. Der oberste Stein bleibt gleich.
   - ☐ Beide. Es kommt darauf an, wie man rechnet.
-  - ☐ Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß.
+  - ☐ Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß. Mehr ändert sich nicht.
 
 ## 5.4.X1-Z2: Ich kann die Regel eines Zahlenmusters beschreiben.
 
@@ -5775,7 +5775,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne den Unterschied zwischen zwei 
 - `06` AFB III · _Argumentieren_ · Tom sagt: / „Die Regel von 5, 10, 20, 40 heißt: immer plus 5.“ / Stimmt das?
   - ☐ Stimmt. / 5 + 5 = 10.
   - ☑ Falsch. / Von 10 bis 20 sind es 10. / Die Regel heißt: immer mal 2.
-  - ☐ Falsch. / Die Regel heißt: immer plus 10.
+  - ☐ Falsch. / Von 10 bis 20 sind es 10. / Die Regel heißt: immer plus 10.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -5791,13 +5791,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe die Differenzen der Nachbarz
 - `04` AFB I · _Argumentieren_ · Die Regel heißt: immer mal 2. Ergänze die ersten beiden Zahlen: ▢, ▢, 28, 56, 112 Lösung: x = **7**, y = **14**
 - `05` AFB II · _Argumentieren_ · Welche Regel beschreibt die Zahlenfolge 1, 4, 9, 16, 25? _(Bild: Quadrat aus 5 · 5 Kästchen)_
   - ☐ Immer plus 3.
-  - ☐ Die Differenzen sind immer gleich.
+  - ☐ Die Differenzen zwischen den Zahlen sind immer gleich groß.
   - ☑ Das sind die Quadratzahlen 1 · 1, 2 · 2, 3 · 3, 4 · 4 und 5 · 5.
   - ☐ Immer mal 4.
 - `06` AFB III · _Argumentieren_ · Zur Zahlenfolge 9, 15, 21, 27 sagt Ben: „Die Regel heißt: immer plus 6.“ Jonas sagt: „Das sind die Zahlen der 6er-Reihe, jeweils plus 3.“ Wer hat recht?
   - ☑ Beide. Es kommt immer 6 dazu. Und 9 = 6 + 3, 15 = 12 + 3 und so weiter. Eine Folge kann man mit verschiedenen Regeln beschreiben.
   - ☐ Keiner. Die Regel heißt: immer mal 2.
-  - ☐ Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen.
+  - ☐ Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen. Deshalb passt nur die Regel mit der 6er-Reihe.
   - ☐ Nur Ben. Eine Regel muss immer von Zahl zu Zahl gehen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -5813,7 +5813,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden nicht immer um glei
   - ☐ 4 · 3 · 2
 - `04` AFB III · _Argumentieren_ · Warum ist in der Zahlenfolge 9, 18, 36, 72, … ab der zweiten Zahl jede Zahl gerade?
   - ☐ Weil man immer plus 9 rechnet.
-  - ☐ Das stimmt nur zufällig für diese vier Zahlen.
+  - ☐ Das stimmt nur zufällig für diese vier Zahlen. Später kommen ungerade.
   - ☑ Jede Zahl ist das Doppelte der Zahl davor. Ein Doppeltes ist immer gerade.
   - ☐ Weil die Zahlen immer größer werden.
 - `05` AFB II · _Argumentieren_ · 8, 13, 20, 29, 40: Die Unterschiede sind ▢, ▢, ▢, ▢. Sie werden immer um ▢ größer. Lösung: a = **5**, b = **7**, c = **9**, e = **11**, s = **2**
@@ -5821,7 +5821,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Zahlen werden nicht immer um glei
   - ☐ Nur Finn. Unterschiede gibt es nur bei Plus-Folgen.
   - ☑ Beide. Eine Zahl plus ihr Doppeltes ist dasselbe wie die Zahl mal 3: 5 + 2 · 5 = 3 · 5 = 15.
   - ☐ Keiner. Die Regel heißt: immer plus 10.
-  - ☐ Nur Ida. Bei mal 3 wären die Unterschiede immer gleich.
+  - ☐ Nur Ida. Bei mal 3 wären die Unterschiede immer gleich, hier werden sie aber größer.
 
 ## 5.5.1-B1: Ich kann Strecke, Strahl und Gerade unterscheiden und benennen.
 
@@ -7159,7 +7159,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Einheit in der Tabelle. *Be
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst. *Beispiel:* Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m. *Lösungsschritt:* Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit Dingen, die du kennst. *Beispiel:* Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m. *Lösungsschritt:* Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?
 
 - `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft dir beim Vergleichen. / Wie lange dauert ein Schultag ungefähr? _(Tabelle: Das kennst du | So groß ist es / Zähneputzen | 3 min / Händeklatschen | 1 s / Fußballspiel | 90 min)_
   - ☐ 60 h
@@ -7646,7 +7646,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma stehen die g. Bei kg u
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma in kg. / 9 kg 5 g _(Größe eingeben, Einheit kg steht fest)_ Lösung: **9,005 kg**. Typische Fehler: 9,5 kg (komma-falsch-gelesen).
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 9 kg = ▢ mg / 3 000 000 g = ▢ t Lösung: a = **9000000**, b = **3**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viel kg sind 9,05 t? Lösung: **9050 kg**. Typische Fehler: 9005 (komma-falsch-gelesen), 90500 (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viele kg sind 9,05 t? Lösung: **9050 kg**. Typische Fehler: 9005 (komma-falsch-gelesen), 90500 (umrechnungszahl).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 5,005 kg = ▢ kg ▢ g Lösung: a = **5**, b = **5**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der größten Größe. _(Ordnen; die Karten liegen so da: 3250 g, 2900 g, 3 kg 500 g, 3,05 kg, 3,2 kg)_ Lösung: **3 kg 500 g, 3250 g, 3,2 kg, 3,05 kg, 2900 g**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 5,05 t? / Kreuze alle an.
@@ -7666,7 +7666,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte au
   - ☐ 8 t 5 kg = 8,005 t
   - ☐ 250 kg = 0,25 t
   - ☑ 800 kg = 8 t
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel g sind 7,05 t? Lösung: **7050000 g**. Typische Fehler: 705000 (umrechnungszahl), 70500000 (umrechnungszahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele g sind 7,05 t? Lösung: **7050000 g**. Typische Fehler: 705000 (umrechnungszahl), 70500000 (umrechnungszahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 6055 g, 6,005 kg, 6 kg 50 g, 5999 g, 6,5 kg, 0,6 kg)_ Lösung: **0,6 kg, 5999 g, 6,005 kg, 6 kg 50 g, 6055 g, 6,5 kg**
 - `04` AFB III · _Argumentieren_ · Tom behauptet: 2,05 kg = 2500 g. Stimmt das?
   - ☑ Falsch, denn 2,05 kg sind 2050 g.
@@ -7696,8 +7696,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beide Seiten sind gleich schwer. Zäh
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Waage. / Die Waage ist im Gleichgewicht. / Wie schwer ist der Sack? _(Bild: Balkenwaage im Gleichgewicht: links Sack, rechts 500 g, 200 g)_ Lösung: **700 g**. Typische Fehler: 2 (liste-verzaehlt), 500 (sach-schritt-vergessen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die erste Tüte wiegt 40 g. / Die zweite Tüte wiegt 30 g. / Wie schwer sind beide Tüten zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 40 und 30)_ Lösung: **70 g**. Typische Fehler: 10 (add-subtrahiert), 40 (sach-schritt-vergessen).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Beutel wiegt 50 g. / Im Korb liegen 3 Beutel. / Wie schwer sind alle Beutel zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 50 und 50 und 50)_ Lösung: **150 g**. Typische Fehler: 53 (1x1-addiert), 50 (sach-schritt-vergessen).
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Die erste Tüte wiegt 1 kg 150 g. / Die zweite Tüte wiegt 250 g. / Wie schwer sind beide Tüten zusammen in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **1400 g**. Typische Fehler: 401 (masszahlen-addiert), 400 (sach-schritt-vergessen).
-- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Im Eimer sind 3 kg Futter. / Die Pferde fressen 650 g. _(Tabelle: Merke |  / 1 kg | 1000 g)_
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Die erste Tüte wiegt 1 kg 150 g. / Die zweite Tüte wiegt 250 g. / Wie schwer sind beide Tüten zusammen in g? _(Tabelle: Merke |  / 1 kg | 1000 g)_ Lösung: **1400 g**. Typische Fehler: 401 (masszahlen-addiert), 400 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Im Eimer sind 3 kg Futter. / Die Pferde fressen 650 g. _(Tabelle: Merke |  / 1 kg | 1000 g)_
   - a) Wie viel g sind 3 kg? **3000 g**. Typische Fehler: 300 (umrechnungszahl).
   - b) Wie viel Futter bleibt im Eimer? **2350 g**. Typische Fehler: 647 (masszahlen-addiert), 3650 (sub-addiert).
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Käse wiegt 100 g. / Er wird in 2 gleiche Stücke geteilt. / Wie schwer ist ein Stück? _(Bild: Streifenbild: Ganzes 100, Teile ? und 50)_ Lösung: **50 g**. Typische Fehler: 100 (sach-schritt-vergessen), 98 (div-falsche-rechenart).
@@ -7802,7 +7802,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach dem Komma stehen die mm. Bei cm 
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit Komma in cm. / 8 cm 2 mm _(Größe eingeben, Einheit cm steht fest)_ Lösung: **8,2 cm**.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle in zwei Schritten um. / 7 km = ▢ dm / 6000 mm = ▢ m Lösung: a = **70000**, b = **6**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viel cm sind 9,08 m? Lösung: **908 cm**. Typische Fehler: 9080 (umrechnungszahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle um. / Wie viele cm sind 9,08 m? Lösung: **908 cm**. Typische Fehler: 9080 (umrechnungszahl).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe mit zwei Einheiten. / 1,75 km = ▢ km ▢ m Lösung: a = **1**, b = **750**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. / Beginne mit der größten Größe. _(Ordnen; die Karten liegen so da: 5250 m, 5,05 km, 5,2 km, 5 km 500 m, 4900 m)_ Lösung: **5 km 500 m, 5250 m, 5,2 km, 5,05 km, 4900 m**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Welche Angaben sind gleich 6,05 km? / Kreuze alle an.
@@ -7822,7 +7822,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Umwandlung nach. Achte au
   - ☐ 4 km = 40 000 dm
   - ☐ 3,5 km = 3500 m
   - ☐ 250 m = 0,25 km
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viel mm sind 2,5 dm? Lösung: **250 mm**. Typische Fehler: 25 (umrechnungszahl), 2500 (umrechnungszahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Wie viele mm sind 2,5 dm? Lösung: **250 mm**. Typische Fehler: 25 (umrechnungszahl), 2500 (umrechnungszahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Größen. Beginne mit der kleinsten Größe. _(Ordnen; die Karten liegen so da: 0,7 km, 6999 m, 7 km 50 m, 7,005 km, 7,5 km, 7055 m)_ Lösung: **0,7 km, 6999 m, 7,005 km, 7 km 50 m, 7055 m, 7,5 km**
 - `04` AFB III · _Argumentieren_ · Emre behauptet: 4,05 km = 4500 m. Stimmt das?
   - ☐ Stimmt, denn nach dem Komma stehen drei Stellen für m.
@@ -7852,8 +7852,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Strich beginnt nicht bei 0. Ziehe
 - `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau auf das Lineal. / Der Strich beginnt bei 1 cm. / Er endet bei 7 cm. / Wie lang ist der Strich? _(Bild: Lineal, 10 cm lang; die Strecke AB beginnt bei 10 mm und endet bei 70 mm)_ Lösung: **6 cm**. Typische Fehler: 7 (sach-schritt-vergessen), 8 (sub-addiert).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das rote Band ist 40 cm lang. / Das blaue Band ist 45 cm lang. / Wie lang sind beide Bänder zusammen? _(Bild: Streifenbild: Ganzes ?, Teile 40 und 45)_ Lösung: **85 cm**. Typische Fehler: 5 (add-subtrahiert), 40 (sach-schritt-vergessen).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Regalbrett ist 90 cm lang. / Die Tischlerin legt 3 Bretter hintereinander. / Wie lang ist die Reihe? _(Bild: Streifenbild: Ganzes ?, Teile 90 und 90 und 90)_ Lösung: **270 cm**. Typische Fehler: 93 (1x1-addiert), 90 (sach-schritt-vergessen).
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Schau in die Tabelle. / Das erste Brett ist 2 m 15 cm lang. / Das zweite Brett ist 45 cm lang. / Wie lang sind beide Bretter zusammen in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **260 cm**. Typische Fehler: 62 (masszahlen-addiert), 60 (sach-schritt-vergessen).
-- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Ein Brett ist 4 m lang. / Der Tischler sägt 65 cm ab. _(Tabelle: Merke |  / 1 m | 100 cm)_
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Das erste Brett ist 2 m 15 cm lang. / Das zweite Brett ist 45 cm lang. / Wie lang sind beide Bretter zusammen in cm? _(Tabelle: Merke |  / 1 m | 100 cm)_ Lösung: **260 cm**. Typische Fehler: 62 (masszahlen-addiert), 60 (sach-schritt-vergessen).
+- `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Tabelle hilft beim Umwandeln. / Ein Brett ist 4 m lang. / Der Tischler sägt 65 cm ab. _(Tabelle: Merke |  / 1 m | 100 cm)_
   - a) Wie viel cm sind 4 m? **400 cm**. Typische Fehler: 4000 (umrechnungszahl).
   - b) Wie lang ist das Brett jetzt? **335 cm**. Typische Fehler: 61 (masszahlen-addiert), 465 (sub-addiert).
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Leiste ist 240 cm lang. / Der Tischler sägt daraus 4 gleiche Stücke. / Wie lang ist ein Stück? _(Bild: Streifenbild: Ganzes 240, Teile ? und 60 und 60 und 60)_ Lösung: **60 cm**. Typische Fehler: 240 (sach-schritt-vergessen), 236 (div-falsche-rechenart).
@@ -8201,7 +8201,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in zwei Schritten. Das erste E
   - a) Wie schwer sind die 3 Säcke Kartoffeln? **15 kg**. Typische Fehler: 8 (1x1-addiert).
   - b) Wie schwer ist die ganze Ladung? **21 kg**. Typische Fehler: 11 (sach-schritt-vergessen), 15 (sach-schritt-vergessen).
 - `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Sara schneidet vom weißen Band 2 Stücke ab. / Jedes Stück ist 10 cm lang. _(Tabelle: Band | Länge / das weiße Band | 120 cm / das gelbe Band | 80 cm / das blaue Band | 90 cm)_
-  - a) Wie viel cm schneidet das Kind zusammen ab? **20 cm**. Typische Fehler: 12 (1x1-addiert), 10 (sach-schritt-vergessen).
+  - a) Wie viel cm schneidet Sara zusammen ab? **20 cm**. Typische Fehler: 12 (1x1-addiert), 10 (sach-schritt-vergessen).
   - b) Wie lang ist das Band danach noch? **100 cm**. Typische Fehler: 110 (sach-schritt-vergessen), 140 (sub-addiert).
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Mia übt Rechnen. / Am Dienstag übt Mia 15 min länger als am Montag. _(Tabelle: Tag | Übezeit / Montag | 25 min / Dienstag | ?)_
   - a) Wie viele min übt Mia am Dienstag? **40 min**. Typische Fehler: 10 (add-subtrahiert), 15 (sach-frage-verfehlt).
@@ -8543,7 +8543,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Winkel liegt schräg. *Beispiel:*
   - ☐ QR und OQ
   - ☐ QO und QR
   - ☑ OQ und OR
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „Der Scheitel von α ist A.“ / Hat das Kind recht? _(Bild: Winkel α 135°)_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „Der Scheitel von α ist A.“ / Hat Emre recht? _(Bild: Winkel α 135°)_
   - ☐ Ja. / A steht als erster Buchstabe da.
   - ☑ Nein. / A liegt am Ende eines Schenkels. / Der Scheitel ist B.
 
@@ -8560,7 +8560,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht immer in der Mitte
   - ☑ α
   - ☐ γ
   - ☐ β
-- `03` AFB II · _Kommunizieren_ · Wie heißt der Winkel β mit drei Buchstaben? _(Bild: Winkel α 60°, β 55°)_
+- `03` AFB II · _Kommunizieren_ · Wie heißt der Winkel β mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel. _(Bild: Winkel α 60°, β 55°)_
   - ☐ ∢SBC
   - ☑ ∢BSC
   - ☐ ∢BCS
@@ -8575,9 +8575,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht immer in der Mitte
   - ☑ OR und OT
   - ☐ RO und RT
   - ☐ RT und OT
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina schreibt für den Winkel α: ∢BSA. Hat das Kind recht? _(Bild: Winkel α 40°)_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina schreibt für den Winkel α: ∢BSA. Hat Lina recht? _(Bild: Winkel α 40°)_
   - ☐ Ja. Die Reihenfolge der Buchstaben ist egal.
-  - ☐ Nein. Der Scheitel muss vorne stehen. Richtig ist ∢SAB.
+  - ☐ Nein. Der Scheitel muss immer vorne stehen. Richtig ist ∢SAB.
   - ☑ Nein. Gegen den Uhrzeigersinn geht es von SA nach SB. Richtig ist ∢ASB.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -8611,7 +8611,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht in der Mitte, gele
   - ☐ BC und SB
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: „∢ASB und ∢BSA sind gleich groß, sie haben ja dieselben Schenkel.“ Stimmt das? _(Bild: Winkel α 70°)_
   - ☑ Nein. ∢BSA ist der überstumpfe Winkel außen herum.
-  - ☐ Ja. Es kommt nur auf die Schenkel an.
+  - ☐ Ja. Es kommt nur auf die beiden Schenkel an.
 
 ## 5.7.2-V2: Ich kann Winkel ohne Messen vergleichen.
 
@@ -8669,7 +8669,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh die Winkel in Gedanken. *Beispie
   - ☑ β
   - ☑ α
   - ☐ γ
-- `06` AFB III · _Argumentieren_ · Ida sagt: „Der Bogen von α ist größer.“ / „Also ist α der größere Winkel.“ / Hat das Kind recht? _(Bild: Winkel α 60°, β 130°)_
+- `06` AFB III · _Argumentieren_ · Ida sagt: „Der Bogen von α ist größer.“ / „Also ist α der größere Winkel.“ / Hat Ida recht? _(Bild: Winkel α 60°, β 130°)_
   - ☐ Ja. / Ein großer Bogen gehört zu einem großen Winkel.
   - ☑ Nein. / Die Größe des Bogens ist egal. / β öffnet sich weiter.
 
@@ -8734,7 +8734,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lage, Schenkellänge und Bogen sind e
   - ☐ γ
   - ☐ β
 - `06` AFB III · _Argumentieren_ · Mara sagt: „Ein Winkel mit kurzen Schenkeln kann größer sein als ein Winkel mit langen Schenkeln.“ Stimmt das? _(Bild: Winkel α 32°, β 135°)_
-  - ☐ Nein. Kurze Schenkel gehören immer zu kleinen Winkeln.
+  - ☐ Nein. Kurze Schenkel gehören immer zu den kleinen Winkeln.
   - ☑ Ja. Die Größe hängt nur von der Öffnung ab. Im Bild ist β größer als α.
 
 ## 5.7.3-A1: Ich kann Winkelarten erkennen und benennen.
@@ -8923,7 +8923,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit 90°. *Beispiel:* Die 
 - `05` AFB II · _Modellieren_ · β ist ein rechter Winkel. / Schätze mit seiner Hilfe den Winkel α. / Du darfst bis zu 20° daneben liegen. _(Bild: Winkel α 80°, β 90°)_ Lösung: **80 °** (bis 20 ° daneben gilt als richtig). Typische Fehler: 280 (ueberstumpf-klein).
 - `06` AFB III · _Argumentieren_ · Jonas schätzt den Winkel α auf 20°. / Was ist der Fehler? _(Bild: Winkel α 160°)_
   - ☑ α ist stumpf. / Er ist größer als 90°. / 20° ist viel zu klein.
-  - ☐ α ist spitz. / 20° ist zu groß.
+  - ☐ α ist spitz. / Er ist kleiner als 90°. / 20° ist zu groß.
   - ☐ Kein Fehler. / 20° passt gut.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -9014,7 +9014,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Über dem Äquator heißt es N, darun
   - ☐ Lagos
   - ☑ Dakar
   - ☐ Kapstadt
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „Recife liegt bei 8° N, 35° W.“ / Hat das Kind recht? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Recife, Buenos Aires, Rio de Janeiro, Havanna)_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „Recife liegt bei 8° N, 35° W.“ / Hat Elif recht? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Recife, Buenos Aires, Rio de Janeiro, Havanna)_
   - ☐ Ja. / Die Angabe stimmt.
   - ☑ Nein. / Recife liegt südlich vom Äquator. / Richtig ist 8° S, 35° W.
 
@@ -9082,7 +9082,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nullpunkt liegt auf dem Scheitel.
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Lies ab: Wie groß ist α? _(Bild: Winkel α 150°; Geodreieck angelegt)_ Lösung: **150 °**. Typische Fehler: 30 (skala-falsch).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Wie viel Grad zeigt das Geodreieck? _(Bild: Winkel α 110°; Geodreieck angelegt)_ Lösung: **110 °**. Typische Fehler: 70 (skala-falsch).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Wie viel Grad zeigt das Geodreieck? _(Bild: Winkel α 60°; Geodreieck angelegt)_ Lösung: **60 °**. Typische Fehler: 120 (skala-falsch).
-- `05` AFB II · _Argumentieren_ · Ole misst den Winkel α. / Das Kind liest 20° ab. / Stimmt das? _(Bild: Winkel α 160°; Geodreieck angelegt)_
+- `05` AFB II · _Argumentieren_ · Ole misst den Winkel α. / Ole liest 20° ab. / Stimmt das? _(Bild: Winkel α 160°; Geodreieck angelegt)_
   - ☑ Nein. / α ist stumpf. / Es sind 160°.
   - ☐ Ja. / α ist 20° groß.
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Wie groß ist α? _(Bild: Winkel α 70°; Geodreieck angelegt)_ Lösung: **70 °**. Typische Fehler: 110 (skala-falsch).
@@ -9095,10 +9095,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh das Bild in Gedanken. *Beispiel:
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Lies am Geodreieck ab. _(Bild: Winkel α 135°; Geodreieck angelegt)_ Lösung: **135 °**. Typische Fehler: 45 (skala-falsch).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der zweite Schenkel liegt auf der langen Seite. / Wie groß ist α? _(Bild: Winkel α 45°; Geodreieck angelegt)_ Lösung: **45 °**. Typische Fehler: 135 (skala-falsch).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Wie groß ist α? _(Bild: Winkel α 55°; Geodreieck angelegt)_ Lösung: **55 °**. Typische Fehler: 125 (skala-falsch).
-- `05` AFB II · _Argumentieren_ · Jonas misst den Winkel α. / Das Kind liest 60° ab. / Hat es recht? _(Bild: Winkel α 120°; Geodreieck angelegt)_
+- `05` AFB II · _Argumentieren_ · Jonas misst den Winkel α. / Jonas liest 60° ab. / Stimmt das? _(Bild: Winkel α 120°; Geodreieck angelegt)_
   - ☐ Ja. / Das Geodreieck zeigt 60°.
   - ☑ Nein. / α ist stumpf. / Richtig sind 120°.
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben hat α gemessen und 35° abgelesen. / Was hat das Kind falsch gemacht? _(Bild: Winkel α 145°; Geodreieck angelegt)_
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben hat α gemessen und 35° abgelesen. / Was hat Ben falsch gemacht? _(Bild: Winkel α 145°; Geodreieck angelegt)_
   - ☑ Auf der falschen Skala abgelesen.
   - ☐ Nichts. / Es ist alles richtig.
   - ☐ Die lange Seite liegt auf keinem Schenkel.
@@ -9112,7 +9112,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies auf der Skala ab, die am Schenke
 - `03` AFB II · _Modellieren_ · **[Heftaufgabe]** Zeichne in dein Heft ein Koordinatensystem mit 1 cm je Einheit. Zeichne A(1|3), B(7|4) und C(2|8) und verbinde A mit B und A mit C. Miss den Winkel bei A. Lösung: **69 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 111 (skala-falsch).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Winkel α? Miss gradgenau. _(Bild: Winkel α 67°; Geodreieck angelegt)_ Lösung: **67 °**. Typische Fehler: 113 (skala-falsch).
 - `05` AFB II · _Modellieren_ · Zeichne die Punkte A(2|1), B(6|2) und C(1|9) in ein Koordinatensystem mit 1 cm je Einheit. Wie groß ist der Winkel zwischen AB und AC? Lösung: **83 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 97 (skala-falsch).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht? _(Bild: Winkel α 131°; Geodreieck angelegt, aber verschoben)_
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas hat den Winkel α so gemessen wie im Bild. Was hat Jonas falsch gemacht? _(Bild: Winkel α 131°; Geodreieck angelegt, aber verschoben)_
   - ☐ Die lange Seite liegt auf keinem Schenkel.
   - ☑ Der Nullpunkt liegt nicht auf dem Scheitel.
   - ☐ Auf der falschen Skala abgelesen.
@@ -9281,8 +9281,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Entscheidend ist der größte Winkel.
   - ☐ unregelmäßig
   - ☑ gleichschenklig
   - ☐ gleichseitig
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?
-  - ☐ Ja. Zum Beispiel, wenn man ein Quadrat halbiert.
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?
+  - ☐ Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.
   - ☑ Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.
   - ☐ Ja, aber nur bei einem gleichseitigen Dreieck.
 
@@ -9310,7 +9310,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die drei Winkel eines Dreiecks ergebe
   - ☑ Dreieck C
   - ☐ Dreieck A
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ole zeichnet ein Dreieck mit den Winkeln 90°, 50° und 45°. Geht das?
-  - ☐ Ja. Es ist ein stumpfwinkliges Dreieck.
+  - ☐ Ja. Es ist dann ein stumpfwinkliges Dreieck.
   - ☑ Nein. Die Winkel ergeben zusammen 185°, nicht 180°.
   - ☐ Ja. Jeder Winkel ist kleiner als 180°.
 
@@ -9531,7 +9531,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Felder. Jedes Feld ist 1 c
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Flächen, km² für sehr große. *Beispiel:* Ein Fingernagel ist ungefähr 80 mm² groß. *Lösungsschritt:* Stell dir das Ding vor. Ist es sehr klein oder sehr groß?
+Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Flächen, km² für sehr große. *Beispiel:* Ein Fingernagel ist ungefähr 80 mm² groß. *Lösungsschritt:* Stell es dir genau vor. Ist es sehr klein oder sehr groß?
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Tischplatte ist ungefähr 80 ▢ groß. / Welche Einheit passt? _(Tabelle: Einheit | So groß ist etwa / mm² | ein Stecknadelkopf / cm² | ein Fingernagel / dm² | eine Handfläche / m² | eine große Zeitung, aufgeklappt / km² | ein Dorf mit Feldern)_
   - ☐ mm²
@@ -9551,7 +9551,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* mm² nimmt man für sehr kleine Fläc
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite. *Lösungsschritt:* Stell dir das Ding vor und vergleiche.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite. *Lösungsschritt:* Stell es dir genau vor und vergleiche.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Fußballfeld ist ungefähr 70 ▢ groß. / Welche Einheit passt?
   - ☐ km²
@@ -10699,6 +10699,19 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `tafel-verrutscht` | Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein. | Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links. | Du trägst jetzt jede Ziffer in die richtige Spalte ein. |
 | `vergleich-erste-ziffer` | Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten. | Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer. | Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen. |
 | `zeichen-verwechselt` | Verwechselt die Zeichen < und >. | Die Spitze des Zeichens zeigt immer zur kleineren Zahl. | Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl. |
+| `reihenfolge-umgekehrt` | Ordnet richtig, aber in umgekehrter Reihenfolge. | Lies den Auftrag noch einmal: Womit sollst du beginnen? | Du schaust jetzt genau, womit du beim Ordnen beginnen sollst. |
+| `strahl-gespiegelt` | Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich. | Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst. | Du zählst am Zahlenstrahl jetzt in die richtige Richtung. |
+| `strahl-zu-grob` | Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg. | Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu. | Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit. |
+| `kuerzen-subtrahiert` | Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen. | Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert. | Du weißt jetzt: Kürzen heißt teilen, nicht abziehen. |
+| `ergaenzen-addiert` | Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt. | Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren. | Du rechnest jetzt aus, was bis zum Ziel noch fehlt. |
+| `strahl-ganzes` | Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1. | Der Nenner zählt nur die Abstände von 0 bis 1. | Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1. |
+| `ganzes-mehrere-figuren` | Nimmt mehrere Figuren zusammen als ein Ganzes. | Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner. | Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen. |
+| `koerper-unvollstaendig-gezaehlt` | Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt. | Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab. | Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach. |
+| `mantel-streifen` | Bestimmt die Länge der Mantelfläche im Netz falsch. | Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen. | Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen. |
+| `netz-kleben` | Zählt beim Zusammenkleben eines Netzes die falschen Kanten. | Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen. | Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind. |
+| `netz-ansicht-verwechselt` | Verwechselt das Netz eines Körpers mit seiner Ansicht. | Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite. | Du unterscheidest jetzt Netz und Ansicht eines Körpers. |
+| `zahlbereich-falsch` | Ordnet eine Zahl einem falschen Zahlbereich zu. | Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein. | Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind. |
+| `unterschied-addiert` | Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist. | Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert. | Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert. |
 | `nachbar-verwechselt` | Verwechselt Vorgänger und Nachfolger. | Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach. | Du hältst Vorgänger und Nachfolger jetzt auseinander. |
 | `strahl-einerschritte` | Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen. | Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt? | Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist. |
 | `million-milliarde` | Verwechselt Tausender, Millionen und Milliarden. | Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden. | Du hältst Tausender, Millionen und Milliarden jetzt auseinander. |
@@ -10829,7 +10842,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `ortslinie-verwechselt` | Verwechselt die Ortslinien: Kreis (fester Abstand zu einem Punkt), Mittelsenkrechte (gleicher Abstand zu zwei Punkten), Winkelhalbierende (gleicher Abstand zu zwei Geraden), Parallele (fester Abstand zu einer Geraden). | Lies die Bedingung genau: Abstand zu einem Punkt, zu zwei Punkten oder zu Geraden? | Du weißt jetzt, welche Ortslinie zu welcher Bedingung gehört. |
 | `tangente-nicht-senkrecht` | Zeichnet die Tangente nicht senkrecht zum Radius im Berührpunkt. | Die Tangente berührt den Kreis in einem Punkt. Dort steht sie senkrecht auf dem Radius. | Du weißt jetzt: Die Tangente steht senkrecht auf dem Radius. |
 | `umkreis-inkreis-verwechselt` | Verwechselt Umkreis (Schnittpunkt der Mittelsenkrechten, durch die Ecken) und Inkreis (Schnittpunkt der Winkelhalbierenden, berührt die Seiten). | Der Umkreis geht durch alle Ecken. Der Inkreis berührt alle Seiten von innen. | Du hältst Umkreis und Inkreis jetzt auseinander. |
-| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie? | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
+| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir. | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
 | `konstruktion-reihenfolge` | Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt. | Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst? | Du ordnest die Schritte einer Konstruktion jetzt richtig. |
 | `ecken-kanten-verwechselt` | Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken). | Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil. | Du hältst Ecken, Kanten und Flächen jetzt auseinander. |
 | `verdeckt-nicht-gezaehlt` | Zählt nur die Ecken, Kanten oder Flächen, die im Bild sichtbar sind. | Denk an die Rückseite: Was ist hinten verdeckt? Die gestrichelten Linien helfen dir. | Du zählst jetzt auch, was hinten verdeckt ist. |
@@ -10841,7 +10854,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `wuerfel-verdeckt` | Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter. | Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter. | Du zählst jetzt auch verdeckte Würfel mit. |
 | `netz-ecken-gezaehlt` | Zählt Ecken oder Kanten im Netz statt am gefalteten Körper. | Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers. | Du zählst Ecken jetzt am fertigen Körper und nicht im Netz. |
 | `prisma-pyramide` | Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze). | Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma. | Du hältst Prisma und Pyramide jetzt auseinander. |
-| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma. | Du benennst den Körper jetzt nach seiner Grundfläche. |
+| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken. | Du benennst den Körper jetzt nach seiner Grundfläche. |
 | `gegenueber-benachbart` | Hält im Würfelnetz benachbarte Flächen für gegenüberliegend. | Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt. | Du findest gegenüberliegende Flächen jetzt sicher. |
 | `runde-koerper-zaehlen` | Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante. | Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen. | Du zählst Flächen und Kanten an runden Körpern jetzt richtig. |
 | `koerper-verwechselt` | Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma). | Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt? | Du erkennst die Körper jetzt an ihren Flächen. |

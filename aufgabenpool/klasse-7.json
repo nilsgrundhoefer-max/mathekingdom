@@ -338,6 +338,71 @@
    "hinweis": "Die Spitze des Zeichens zeigt immer zur kleineren Zahl.",
    "kind": "Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl."
   },
+  "reihenfolge-umgekehrt": {
+   "beschreibung": "Ordnet richtig, aber in umgekehrter Reihenfolge.",
+   "hinweis": "Lies den Auftrag noch einmal: Womit sollst du beginnen?",
+   "kind": "Du schaust jetzt genau, womit du beim Ordnen beginnen sollst."
+  },
+  "strahl-gespiegelt": {
+   "beschreibung": "Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich.",
+   "hinweis": "Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst.",
+   "kind": "Du zählst am Zahlenstrahl jetzt in die richtige Richtung."
+  },
+  "strahl-zu-grob": {
+   "beschreibung": "Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg.",
+   "hinweis": "Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu.",
+   "kind": "Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit."
+  },
+  "kuerzen-subtrahiert": {
+   "beschreibung": "Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen.",
+   "hinweis": "Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert.",
+   "kind": "Du weißt jetzt: Kürzen heißt teilen, nicht abziehen."
+  },
+  "ergaenzen-addiert": {
+   "beschreibung": "Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt.",
+   "hinweis": "Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren.",
+   "kind": "Du rechnest jetzt aus, was bis zum Ziel noch fehlt."
+  },
+  "strahl-ganzes": {
+   "beschreibung": "Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1.",
+   "hinweis": "Der Nenner zählt nur die Abstände von 0 bis 1.",
+   "kind": "Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1."
+  },
+  "ganzes-mehrere-figuren": {
+   "beschreibung": "Nimmt mehrere Figuren zusammen als ein Ganzes.",
+   "hinweis": "Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner.",
+   "kind": "Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen."
+  },
+  "koerper-unvollstaendig-gezaehlt": {
+   "beschreibung": "Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt.",
+   "hinweis": "Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab.",
+   "kind": "Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach."
+  },
+  "mantel-streifen": {
+   "beschreibung": "Bestimmt die Länge der Mantelfläche im Netz falsch.",
+   "hinweis": "Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen.",
+   "kind": "Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen."
+  },
+  "netz-kleben": {
+   "beschreibung": "Zählt beim Zusammenkleben eines Netzes die falschen Kanten.",
+   "hinweis": "Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen.",
+   "kind": "Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind."
+  },
+  "netz-ansicht-verwechselt": {
+   "beschreibung": "Verwechselt das Netz eines Körpers mit seiner Ansicht.",
+   "hinweis": "Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite.",
+   "kind": "Du unterscheidest jetzt Netz und Ansicht eines Körpers."
+  },
+  "zahlbereich-falsch": {
+   "beschreibung": "Ordnet eine Zahl einem falschen Zahlbereich zu.",
+   "hinweis": "Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein.",
+   "kind": "Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind."
+  },
+  "unterschied-addiert": {
+   "beschreibung": "Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist.",
+   "hinweis": "Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert.",
+   "kind": "Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert."
+  },
   "nachbar-verwechselt": {
    "beschreibung": "Verwechselt Vorgänger und Nachfolger.",
    "hinweis": "Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.",
@@ -990,7 +1055,7 @@
   },
   "innen-aussen-verwechselt": {
    "beschreibung": "Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich).",
-   "hinweis": "Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie?",
+   "hinweis": "Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir.",
    "kind": "Du achtest jetzt darauf: Liegt der Punkt innen oder außen?"
   },
   "konstruktion-reihenfolge": {
@@ -1050,7 +1115,7 @@
   },
   "name-nach-seitenflaeche": {
    "beschreibung": "Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.",
-   "hinweis": "Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma.",
+   "hinweis": "Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken.",
    "kind": "Du benennst den Körper jetzt nach seiner Grundfläche."
   },
   "gegenueber-benachbart": {
@@ -3373,7 +3438,7 @@
     },
     {
      "wert": -9,
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -3526,7 +3591,7 @@
     },
     {
      "wert": -6,
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -3667,7 +3732,7 @@
     },
     {
      "wert": "−0,03",
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     },
     {
      "wert": "−1,7",
@@ -3717,7 +3782,7 @@
    "typischeFehler": [
     {
      "wert": -2,
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -3884,6 +3949,9 @@
    "hilfen": {
     "tipp": "Bei „<“ steht links die kleinere Zahl. Welche Zahl liegt auf der Zahlengeraden weiter links?",
     "loesungsschritt": "Ordne die drei Zahlen in Gedanken auf der Zahlengeraden an und lies sie von links nach rechts."
+   },
+   "hinweise": {
+    "richtung-vertauscht": "Zwischen welchen ganzen Zahlen liegt die Zahl? Suche sie auf der Zahlengeraden."
    },
    "nachweis": [
     {
@@ -4155,7 +4223,7 @@
     },
     {
      "wert": 6,
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -4239,7 +4307,7 @@
     },
     {
      "wert": -4,
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -4531,7 +4599,7 @@
     },
     {
      "wert": -4,
-     "fehlvorstellung": "richtung-vertauscht"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -4626,7 +4694,7 @@
     {
      "text": "ℕ (natürliche Zahlen)",
      "richtig": false,
-     "fehlvorstellung": "betrag-gegenzahl"
+     "fehlvorstellung": "zahlbereich-falsch"
     },
     {
      "text": "ℤ (ganze Zahlen)",
@@ -4804,7 +4872,7 @@
     {
      "text": "ℕ (natürliche Zahlen)",
      "richtig": false,
-     "fehlvorstellung": "betrag-gegenzahl"
+     "fehlvorstellung": "zahlbereich-falsch"
     }
    ],
    "hilfen": {
@@ -8484,7 +8552,7 @@
    ],
    "hilfen": {
     "tipp": "Nach rechts werden die Zahlen größer, nach links werden sie kleiner.",
-    "beispiel": "Start bei −3, dann 5 Schritte nach rechts: Das Ziel ist 2.",
+    "beispiel": "Start bei −4, dann 7 Schritte nach rechts: Das Ziel ist 3.",
     "loesungsschritt": "Lege den Finger auf den Start. Zähle die Schritte Strich für Strich."
    },
    "nachweis": [
@@ -8572,7 +8640,7 @@
    ],
    "hilfen": {
     "tipp": "Gehe einen Schritt nach dem anderen.",
-    "beispiel": "Start bei −2, dann 6 nach rechts: 4. Dann 5 nach links: −1.",
+    "beispiel": "Start bei −3, dann 8 nach rechts: 5. Dann 7 nach links: −2.",
     "loesungsschritt": "Gehe erst nach rechts. Starte dort neu und gehe nach links."
    },
    "nachweis": [
@@ -9465,7 +9533,7 @@
    ],
    "hilfen": {
     "tipp": "Starte bei der ersten Zahl. Plus eine positive Zahl geht nach rechts, plus eine negative Zahl geht nach links.",
-    "beispiel": "4 + (−7) = −3. Du gehst von 4 aus 7 Schritte nach links.",
+    "beispiel": "2 + (−5) = −3. Du gehst von 2 aus 5 Schritte nach links.",
     "loesungsschritt": "Lege den Finger auf die erste Zahl. Gehe so viele Schritte, wie der Bogen zeigt."
    },
    "nachweis": [
@@ -10681,7 +10749,7 @@
    ],
    "hilfen": {
     "tipp": "Nach oben heißt: plus rechnen. An der Zahlengeraden geht es nach rechts.",
-    "beispiel": "−2 + 5 = 3. Der Aufzug hält im Stockwerk 3.",
+    "beispiel": "−4 + 6 = 2. Der Aufzug hält im Stockwerk 2.",
     "loesungsschritt": "Starte beim Stockwerk mit dem Minus. Zähle über die Null hinweg nach rechts."
    },
    "nachweis": [
@@ -12379,6 +12447,11 @@
    "hilfen": {
     "tipp": "Suche zu jeder Aussage ein Gegenbeispiel mit kleinen Zahlen."
    },
+   "hinweise": {
+    "gesetz-auf-subtraktion": "Probiere es mit zwei Zahlen aus: Was ergibt 3 − 5? Was ergibt 5 − 3?",
+    "sub-kleiner-von-groesser": "Probiere es mit zwei Zahlen aus: Was ergibt 3 − 5?",
+    "minus-minus-uebersehen": "Suche ein Gegenbeispiel, zum Beispiel (−2) − (−5)."
+   },
    "nachweis": [
     {
      "art": "frei",
@@ -13404,7 +13477,7 @@
    },
    "hilfen": {
     "tipp": "Plus und Minus wird Minus. Minus und Minus wird Plus.",
-    "beispiel": "6 + (−4) = 6 − 4 = 2.",
+    "beispiel": "9 + (−5) = 9 − 5 = 4.",
     "loesungsschritt": "Schau auf die beiden Zeichen vor der Zahl. Sind sie gleich, wird es Plus. Sind sie verschieden, wird es Minus."
    },
    "bild": {
@@ -14819,7 +14892,7 @@
    },
    "hilfen": {
     "tipp": "Fasse die beiden Zahlen mit Minus zusammen. Ziehe sie dann auf einmal ab.",
-    "beispiel": "−25 + 40 − 15 = 40 − 25 − 15 = 40 − 40 = 0.",
+    "beispiel": "−35 + 50 − 15 = 50 − 35 − 15 = 50 − 50 = 0.",
     "loesungsschritt": "Addiere die Zahlen, die ein Minus haben. Subtrahiere ihre Summe von der Zahl mit Plus."
    },
    "bild": {
@@ -17897,7 +17970,7 @@
    ],
    "hilfen": {
     "tipp": "Beim Dividieren gilt: Gleiche Vorzeichen ergeben Plus, verschiedene Vorzeichen ergeben Minus.",
-    "beispiel": "(−72) : (−8) = 9. Minus geteilt durch Minus ergibt Plus.",
+    "beispiel": "(−42) : (−6) = 7. Minus geteilt durch Minus ergibt Plus.",
     "loesungsschritt": "Bestimme zuerst das Vorzeichen. Teile dann die Zahlen ohne Vorzeichen."
    },
    "nachweis": [
@@ -18533,7 +18606,7 @@
    ],
    "hilfen": {
     "tipp": "Der Weg wird gleichmäßig auf die Minuten verteilt.",
-    "beispiel": "(−15) : 3 = −5. Nach 1 Minute ist er bei −5 m.",
+    "beispiel": "(−12) : 4 = −3. Nach 1 Minute ist er bei −3 m.",
     "loesungsschritt": "Zähle die Striche unter einem Bogen. Der Sprung geht nach links."
    },
    "nachweis": [
@@ -18593,7 +18666,7 @@
    ],
    "hilfen": {
     "tipp": "Teilen heißt: Der Weg wird in gleich lange Sprünge aufgeteilt.",
-    "beispiel": "(−18) : 2 = −9. Der Weg bis −18 besteht aus 2 Sprüngen von je 9 nach links.",
+    "beispiel": "(−14) : 2 = −7. Der Weg bis −14 besteht aus 2 Sprüngen von je 7 nach links.",
     "loesungsschritt": "Zähle die Striche unter einem Bogen. Der Sprung geht nach links, also ist er negativ."
    },
    "nachweis": [
@@ -21709,7 +21782,7 @@
    ],
    "hilfen": {
     "tipp": "Steigt die Temperatur, geht die Säule nach oben.",
-    "beispiel": "Von −7 °C aus 3 Grad nach oben: −4 °C.",
+    "beispiel": "Von −9 °C aus 4 Grad nach oben: −5 °C.",
     "loesungsschritt": "Zähle am Thermometer von der Säule aus nach oben. Es bleibt unter null."
    },
    "nachweis": [
@@ -24413,7 +24486,7 @@
    "hilfen": {
     "tipp": "Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.",
     "beispiel": "Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.",
-    "loesungsschritt": "Der Nebenwinkel von α ist 180° − 40° = 140°."
+    "loesungsschritt": "Der Winkel neben 40° ist sein Nebenwinkel: 180° − 40° = 140°. Der Winkel gegenüber von 40° ist auch 40°."
    },
    "bild": {
     "art": "figur",
@@ -24914,7 +24987,7 @@
    "hilfen": {
     "tipp": "Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.",
     "beispiel": "Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.",
-    "loesungsschritt": "Der Nebenwinkel von α ist 180° − 75° = 105°."
+    "loesungsschritt": "Der Winkel neben 75° ist sein Nebenwinkel: 180° − 75° = 105°. Der Winkel gegenüber von 75° ist auch 75°."
    },
    "bild": {
     "art": "figur",
@@ -25142,7 +25215,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Eine Schere ist geöffnet.\nDie beiden Klingen bilden einen Winkel von 45°.\nDie Schere bildet zwei Geraden.\nSie schneiden sich.\nBerechne den Winkel β zwischen Klinge und Griff.",
+   "text": "Eine Schere ist geöffnet.\nDie beiden Klingen bilden einen Winkel von 45°.\nDie Schere bildet zwei Geraden.\nSie schneiden sich.\nBerechne den Nebenwinkel β.",
    "loesung": 135,
    "typischeFehler": [
     {
@@ -25246,7 +25319,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Sara rechnet: β = 180° − 65° = 115°.\nWarum darf das Kind so rechnen?\nKreuze die richtige Begründung an.",
+   "text": "Sara rechnet: β = 180° − 65° = 115°.\nWarum darf Sara so rechnen?\nKreuze die richtige Begründung an.",
    "mehrfach": false,
    "optionen": [
     {
@@ -25395,7 +25468,7 @@
    },
    "hilfen": {
     "tipp": "Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.",
-    "loesungsschritt": "Der Nebenwinkel von α ist 180° − 127° = 53°."
+    "loesungsschritt": "Der Winkel neben 127° ist sein Nebenwinkel: 180° − 127° = 53°. Der Winkel gegenüber von 127° ist auch 127°."
    },
    "bild": {
     "art": "figur",
@@ -30205,7 +30278,7 @@
      "fehlvorstellung": "stufen-wechsel-verwechselt"
     },
     {
-     "text": "Man hat falsch gemessen. Stufenwinkel sind immer gleich groß.",
+     "text": "Man hat falsch gemessen. Stufenwinkel sind immer gleich groß, an allen Geraden.",
      "richtig": false,
      "fehlvorstellung": "ohne-parallele"
     },
@@ -32621,7 +32694,7 @@
      "fehlvorstellung": "winkelsumme"
     },
     {
-     "text": "Die Rechnung stimmt, weil ein Kreis 360° hat.",
+     "text": "Die Rechnung stimmt, weil ein Kreis 360° hat und die Ecken zusammen einen Kreis bilden.",
      "richtig": false,
      "fehlvorstellung": "gestreckt-voll"
     }
@@ -33128,7 +33201,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Jonas misst die Winkel in einem Dreieck.\nα = 40°, β = 80°, γ = 80°\nHat das Kind richtig gemessen?\nKreuze an.",
+   "text": "Jonas misst die Winkel in einem Dreieck.\nα = 40°, β = 80°, γ = 80°\nHat Jonas richtig gemessen?\nKreuze an.",
    "mehrfach": false,
    "optionen": [
     {
@@ -33982,7 +34055,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die beiden Winkel sind Nebenwinkel.",
+     "text": "Die beiden Winkel sind Nebenwinkel an einer Geraden.",
      "richtig": false,
      "fehlvorstellung": "scheitel-neben-verwechselt"
     },
@@ -34526,8 +34599,8 @@
     }
    ],
    "hilfen": {
-    "tipp": "Zähle die Dreiecke. Ein 8-Eck zerfällt in 6 Dreiecke.",
-    "loesungsschritt": "6 · 180°."
+    "tipp": "Zeichne die Diagonalen von einer Ecke aus. Zähle die Dreiecke.",
+    "loesungsschritt": "Ein 8-Eck zerfällt in 6 Dreiecke: 6 · 180°."
    },
    "einheit": "°",
    "nachweis": [
@@ -34657,7 +34730,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Vier Dreiecke haben zusammen 360°.",
+     "text": "Richtig. Das Viereck besteht aus vier Dreiecken, und die haben zusammen 360°.",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     },
@@ -34979,7 +35052,7 @@
      "fehlvorstellung": "winkelsumme"
     },
     {
-     "text": "Die Begründung ist richtig, wenn man genau misst.",
+     "text": "Die Begründung ist richtig, wenn man genau misst. Dann zeigen drei verschiedene Dreiecke, dass es immer gilt.",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     }
@@ -37038,7 +37111,7 @@
      "fehlvorstellung": "seite-ecke-vertauscht"
     },
     {
-     "text": "Die Beschriftung ist frei wählbar.",
+     "text": "Die Beschriftung ist frei wählbar, jede Seite darf jeden Buchstaben haben.",
      "richtig": false,
      "fehlvorstellung": "seite-ecke-vertauscht"
     }
@@ -38206,6 +38279,9 @@
     "beispiel": "Umfang 12 cm: 12 cm : 3 = 4 cm.",
     "loesungsschritt": "Rechne 24 : 3."
    },
+   "hinweise": {
+    "dreieck-sonderfall": "Gleichseitig heißt: Alle drei Seiten sind gleich lang. Teile den Umfang durch 3."
+   },
    "einheit": "cm",
    "bild": {
     "art": "figur",
@@ -38566,10 +38642,10 @@
    "niveau": "M",
    "afb": 1,
    "kompetenz": [
-    "argumentieren"
+    "symbolisch"
    ],
    "format": "zahl",
-   "text": "Ein Verkehrsschild hat die Form eines gleichseitigen Dreiecks. Begründe mit dem Basiswinkelsatz und gib die Größe eines Winkels an.",
+   "text": "Ein Verkehrsschild hat die Form eines gleichseitigen Dreiecks. Alle Seiten sind gleich lang, also sind nach dem Basiswinkelsatz alle Winkel gleich groß. Gib die Größe eines Winkels an.",
    "loesung": 60,
    "typischeFehler": [
     {
@@ -38762,7 +38838,7 @@
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "text": "Im gleichschenkligen Dreieck sind alle Winkel gleich.",
+     "text": "Im gleichschenkligen Dreieck sind alle Winkel gleich. Jeder Winkel ist 60° groß.",
      "richtig": false,
      "fehlvorstellung": "dreieck-sonderfall"
     },
@@ -39057,7 +39133,7 @@
      "fehlvorstellung": "seite-ecke-vertauscht"
     },
     {
-     "text": "c ist richtig, denn c ist immer die Basis.",
+     "text": "c ist richtig, denn im gleichschenkligen Dreieck ist c immer die Basis und liegt unten.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     }
@@ -39154,7 +39230,7 @@
      "fehlvorstellung": "basiswinkel-falsch"
     },
     {
-     "text": "Ja. Dann ist das Dreieck stumpfwinklig.",
+     "text": "Ja. Dann ist das Dreieck stumpfwinklig, das ist erlaubt.",
      "richtig": false,
      "fehlvorstellung": "basiswinkel-falsch"
     },
@@ -40426,7 +40502,7 @@
      "richtig": true
     },
     {
-     "text": "Ja. Das ist der Kongruenzsatz wsw.",
+     "text": "Ja. Zwei Winkel reichen schon. Das ist der Kongruenzsatz wsw.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     },
@@ -40484,7 +40560,7 @@
      "fehlvorstellung": "kongruenz-verwechselt"
     },
     {
-     "text": "Es fehlt eine dritte Seite.",
+     "text": "Es fehlt eine dritte Seite. Mit nur zwei Seiten und einem Winkel geht es nie.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     }
@@ -40523,7 +40599,7 @@
      "fehlvorstellung": "dreiecksungleichung"
     },
     {
-     "text": "Ja. Mit drei Seiten geht es immer (sss).",
+     "text": "Ja. Mit drei Seiten geht es immer, das sagt sss.",
      "richtig": false,
      "fehlvorstellung": "dreiecksungleichung"
     },
@@ -40646,7 +40722,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das ist kein Fehler: www ist ein Kongruenzsatz.",
+     "text": "Das ist kein Fehler: www ist ein Kongruenzsatz, drei Angaben reichen.",
      "richtig": false,
      "fehlvorstellung": "drei-winkel-eindeutig"
     },
@@ -40733,7 +40809,7 @@
      "fehlvorstellung": "winkelsumme"
     },
     {
-     "text": "Ja. Man braucht nur noch eine Seite.",
+     "text": "Ja. Man braucht dann nur noch eine Seite (wsw).",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     },
@@ -42288,7 +42364,7 @@
      "richtig": true
     },
     {
-     "text": "Zwei verschiedene Dreiecke.",
+     "text": "Zwei verschiedene Dreiecke, eines oben und eines unten.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     }
@@ -42327,7 +42403,7 @@
      "fehlvorstellung": "konstruktion-reihenfolge"
     },
     {
-     "text": "Es fehlt nur die Planfigur am Ende.",
+     "text": "Es fehlt nur die Planfigur am Ende, sonst ist alles richtig.",
      "richtig": false,
      "fehlvorstellung": "konstruktion-reihenfolge"
     },
@@ -42656,7 +42732,7 @@
      "richtig": true
     },
     {
-     "text": "Die Bögen sind zu kurz gezeichnet.",
+     "text": "Die Bögen sind zu kurz gezeichnet. Längere Bögen schneiden sich.",
      "richtig": false,
      "fehlvorstellung": "dreiecksungleichung"
     },
@@ -42829,7 +42905,7 @@
      "fehlvorstellung": "kongruenz-verwechselt"
     },
     {
-     "text": "Weil man das Dreieck spiegeln kann.",
+     "text": "Weil man das Dreieck spiegeln kann und so ein zweites Dreieck entsteht.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     },
@@ -44120,7 +44196,7 @@
      "fehlvorstellung": "dreieck-art"
     },
     {
-     "text": "C liegt genau über dem Mittelpunkt.",
+     "text": "C liegt genau über dem Mittelpunkt des Kreises.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     }
@@ -44608,7 +44684,7 @@
      "richtig": true
     },
     {
-     "text": "Im Thaleskreis gibt es keinen rechten Winkel.",
+     "text": "Im Thaleskreis gibt es keinen rechten Winkel, nur am Durchmesser.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -46575,7 +46651,7 @@
      "richtig": true
     },
     {
-     "text": "Der Thaleskreis ist zu klein gezeichnet.",
+     "text": "Der Thaleskreis ist zu klein gezeichnet. Ein größerer Kreis über c würde passen.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -46834,7 +46910,7 @@
      "fehlvorstellung": "thales-durchmesser"
     },
     {
-     "text": "Für jede Höhe gibt es genau eins.",
+     "text": "Für jede beliebige Höhe gibt es genau ein solches Dreieck.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -46868,7 +46944,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Es gibt nur ein rechtwinkliges Dreieck mit c = 6 cm.",
+     "text": "Richtig. Es gibt nur ein einziges rechtwinkliges Dreieck mit c = 6 cm.",
      "richtig": false,
      "fehlvorstellung": "kongruenz-verwechselt"
     },
@@ -46926,6 +47002,9 @@
    ],
    "hilfen": {
     "tipp": "Vergleiche den Abstand mit dem Radius."
+   },
+   "hinweise": {
+    "innen-aussen-verwechselt": "Ist der Abstand kleiner als der Radius, gleich groß oder größer? Danach richtet sich der Name."
    },
    "nachweis": [
     {
@@ -47209,7 +47288,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht. Das sieht man an der Zeichnung.",
+     "text": "Stimmt nicht. Das sieht man ohne Begründung an der Zeichnung.",
      "richtig": false,
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
@@ -47325,12 +47404,12 @@
     "Zeichne den Thaleskreis über MQ.",
     "Verbinde M mit Q und bestimme die Mitte von MQ.",
     "Zeichne die Geraden QT₁ und QT₂.",
-    "Seine Schnittpunkte mit dem Kreis sind die Berührpunkte T₁ und T₂."
+    "Die Schnittpunkte des Thaleskreises mit dem Kreis sind die Berührpunkte T₁ und T₂."
    ],
    "loesung": [
     "Verbinde M mit Q und bestimme die Mitte von MQ.",
     "Zeichne den Thaleskreis über MQ.",
-    "Seine Schnittpunkte mit dem Kreis sind die Berührpunkte T₁ und T₂.",
+    "Die Schnittpunkte des Thaleskreises mit dem Kreis sind die Berührpunkte T₁ und T₂.",
     "Zeichne die Geraden QT₁ und QT₂."
    ],
    "hilfen": {
@@ -47838,6 +47917,9 @@
    "hilfen": {
     "tipp": "Vergleiche den Abstand mit dem Radius."
    },
+   "hinweise": {
+    "innen-aussen-verwechselt": "Ist der Abstand kleiner als der Radius, gleich groß oder größer? Danach richtet sich der Name."
+   },
    "nachweis": [
     {
      "art": "kreislage",
@@ -47865,7 +47947,7 @@
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
     {
-     "text": "Stimmt nicht. Das sieht man an der Zeichnung.",
+     "text": "Stimmt nicht. Das sieht man ohne Begründung an der Zeichnung.",
      "richtig": false,
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
@@ -47913,6 +47995,9 @@
    ],
    "hilfen": {
     "tipp": "Vergleiche den Abstand mit dem Radius."
+   },
+   "hinweise": {
+    "innen-aussen-verwechselt": "Ist der Abstand kleiner als der Radius, gleich groß oder größer? Danach richtet sich der Name."
    },
    "nachweis": [
     {
@@ -48284,7 +48369,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Weil der Thaleskreis so groß ist wie der Kreis.",
+     "text": "Weil der Thaleskreis so groß ist wie der Kreis und ihn deshalb genau zweimal trifft.",
      "richtig": false,
      "fehlvorstellung": "thales-durchmesser"
     },
@@ -48558,7 +48643,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an der Zeichnung.",
+     "text": "Stimmt nicht. Das sieht man ohne Begründung an der Zeichnung.",
      "richtig": false,
      "fehlvorstellung": "tangente-nicht-senkrecht"
     },
@@ -50606,7 +50691,7 @@
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
     {
-     "text": "Nie. Höhen gehen immer von oben nach unten.",
+     "text": "Nie. Höhen gehen immer gerade von oben nach unten, wie die Linien im Heft.",
      "richtig": false,
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
@@ -50880,7 +50965,7 @@
      "richtig": true
     },
     {
-     "text": "Die Höhe muss zur Mitte von c gehen.",
+     "text": "Die Höhe muss zur Mitte von c gehen, sonst ist es keine Höhe, sondern nur eine Linie.",
      "richtig": false,
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
@@ -52307,7 +52392,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das stimmt nicht. h_c geht dann zur Mitte von c.",
+     "text": "Das stimmt nicht. h_c geht dann von C zur Mitte von c.",
      "richtig": false,
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
@@ -52816,7 +52901,7 @@
      "fehlvorstellung": "hoehe-nicht-senkrecht"
     },
     {
-     "text": "Im rechtwinkligen Dreieck gibt es keinen Höhenschnittpunkt.",
+     "text": "Im rechtwinkligen Dreieck gibt es keinen Höhenschnittpunkt, nur eine Höhe.",
      "richtig": false,
      "fehlvorstellung": "hoehe-falsche-seite"
     },
@@ -53196,7 +53281,7 @@
      "fehlvorstellung": "innen-aussen-verwechselt"
     },
     {
-     "text": "Richtig. Darum muss man alle Seiten verlängern.",
+     "text": "Richtig. Darum muss man im stumpfwinkligen Dreieck alle drei Seiten verlängern.",
      "richtig": false,
      "fehlvorstellung": "hoehe-falsche-seite"
     }
@@ -54358,7 +54443,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das stimmt nur für die Mitte von AB.",
+     "text": "Das stimmt nur für die Mitte von AB.\nDie anderen Punkte sind näher an A.",
      "richtig": false,
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
@@ -54887,7 +54972,7 @@
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
     {
-     "text": "Das reicht. Jeder Punkt darauf passt.",
+     "text": "Das reicht. Jeder Punkt auf dieser Mittelsenkrechten ist ein möglicher Treffpunkt.",
      "richtig": false,
      "fehlvorstellung": "ortslinie-verwechselt"
     },
@@ -55251,7 +55336,7 @@
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
     {
-     "text": "Falsch. Sie ist parallel zu AB.",
+     "text": "Falsch. Sie ist parallel zu AB und geht deshalb gar nicht durch die Mitte von AB.",
      "richtig": false,
      "fehlvorstellung": "ortslinie-verwechselt"
     },
@@ -57095,7 +57180,7 @@
      "fehlvorstellung": "ortslinie-verwechselt"
     },
     {
-     "text": "Falsch. Es gibt vier Winkelhalbierende, die nicht senkrecht sind.",
+     "text": "Falsch. Zwei Geraden bilden vier Winkel. Es gibt also vier Winkelhalbierende, die nicht senkrecht sind.",
      "richtig": false,
      "fehlvorstellung": "ortslinie-verwechselt"
     },
@@ -57388,7 +57473,7 @@
      "fehlvorstellung": "winkelhalbierende-seitenmitte"
     },
     {
-     "text": "Die Winkelhalbierende geht immer zur Seitenmitte.",
+     "text": "Die Winkelhalbierende geht immer zur Seitenmitte. Der Fehler muss beim Messen der Winkel liegen.",
      "richtig": false,
      "fehlvorstellung": "winkelhalbierende-seitenmitte"
     },
@@ -57847,7 +57932,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     },
@@ -57925,7 +58010,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     },
@@ -58344,7 +58429,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     }
@@ -58747,7 +58832,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     }
@@ -59034,7 +59119,7 @@
      "fehlvorstellung": "dreieck-sonderfall"
     },
     {
-     "text": "Weil drei Geraden sich immer in einem Punkt schneiden.",
+     "text": "Weil drei Geraden sich immer in einem Punkt schneiden, wenn sie nicht parallel sind.",
      "richtig": false,
      "fehlvorstellung": "mittelsenkrechte-nicht-mittig"
     },
@@ -59255,7 +59340,7 @@
    "format": "ordnen",
    "text": "Konstruiere die Winkelhalbierende eines Winkels mit Zirkel und Lineal. Ordne die Schritte.",
    "karten": [
-    "Verbinde diesen Punkt mit dem Scheitel.",
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
     "Zeichne um den Scheitel einen Kreisbogen, der beide Schenkel schneidet."
@@ -59264,7 +59349,7 @@
     "Zeichne um den Scheitel einen Kreisbogen, der beide Schenkel schneidet.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
-    "Verbinde diesen Punkt mit dem Scheitel."
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel."
    ],
    "hilfen": {
     "tipp": "Der erste Bogen geht um den Scheitel."
@@ -59404,7 +59489,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     },
@@ -59533,7 +59618,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt nicht. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "umkreis-inkreis-verwechselt"
     }
@@ -59913,7 +59998,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "innen-aussen-verwechselt"
     },
@@ -60033,14 +60118,14 @@
    "karten": [
     "Zeichne um A einen Kreisbogen, der beide Schenkel schneidet.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
-    "Verbinde diesen Punkt mit dem Scheitel.",
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius."
    ],
    "loesung": [
     "Zeichne um A einen Kreisbogen, der beide Schenkel schneidet.",
     "Zeichne um die beiden Schnittpunkte Bögen mit demselben Radius.",
     "Die beiden Bögen schneiden sich in einem Punkt im Winkelfeld.",
-    "Verbinde diesen Punkt mit dem Scheitel."
+    "Verbinde den Schnittpunkt der Bögen mit dem Scheitel."
    ],
    "hilfen": {
     "tipp": "Der erste Bogen geht um den Scheitel."
@@ -60295,7 +60380,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Das sieht man an jedem Beispiel.",
+     "text": "Stimmt. Das sieht man an jedem gezeichneten Beispiel.",
      "richtig": false,
      "fehlvorstellung": "innen-aussen-verwechselt"
     },
@@ -60550,7 +60635,7 @@
      "fehlvorstellung": "dreieck-art"
     },
     {
-     "text": "Weil sie zur Seitenmitte gehen.",
+     "text": "Weil sie zur Seitenmitte gehen. Die drei Seitenmitten liegen immer um einen gemeinsamen Punkt.",
      "richtig": false,
      "fehlvorstellung": "winkelhalbierende-seitenmitte"
     },
@@ -61820,7 +61905,7 @@
    },
    {
     "wort": "Gerade",
-    "erklaerung": "Eine gerade Linie ohne Knick.",
+    "erklaerung": "Eine gerade Linie ohne Anfang und Ende. Sie geht in beide Richtungen immer weiter.",
     "meilenstein": "6.7.5"
    },
    {
@@ -63639,7 +63724,7 @@
       "richtig": false
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon Strich zu Strich geht es immer 1 weiter.",
       "richtig": false,
       "fehlvorstellung": "strahl-einerschritte"
      }
@@ -64046,7 +64131,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "links": "kleinste",
     "rechts": "größte"
    },
@@ -64142,7 +64227,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "stellenwert",
     "links": "kleinste",
     "rechts": "größte"
@@ -64282,7 +64367,7 @@
       "richtung": "ab"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "stellenwert",
     "links": "größte",
     "rechts": "kleinste"
@@ -64446,7 +64531,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "vergleich-erste-ziffer",
     "links": "kleinste",
     "rechts": "größte"
@@ -64464,7 +64549,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nBei großen Zahlen entscheidet die erste Ziffer.",
       "richtig": false,
       "fehlvorstellung": "vergleich-erste-ziffer"
      },
@@ -64529,7 +64614,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "vergleich-erste-ziffer",
     "links": "kleinste",
     "rechts": "größte"
@@ -65220,7 +65305,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon 15 zählen nur die Einer.",
       "richtig": false,
       "fehlvorstellung": "add-uebertrag-vergessen"
      },
@@ -65448,7 +65533,7 @@
       "richtig": true
      },
      {
-      "text": "Falsch. Ungerade plus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -65994,7 +66079,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
       "richtig": false,
       "fehlvorstellung": "sub-kleiner-von-groesser"
      },
@@ -66221,7 +66306,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch. Ungerade minus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -66609,7 +66694,7 @@
     },
     "hilfen": {
      "tipp": "Die Klammer sagt: Das rechnest du zuerst.",
-     "beispiel": "45 − (12 + 8): Klammer 12 + 8 = 20. Dann 45 − 20 = 25.",
+     "beispiel": "60 − (25 + 5): Klammer 25 + 5 = 30. Dann 60 − 30 = 30.",
      "loesungsschritt": "12 + 8 = 20."
     },
     "bild": {
@@ -66724,7 +66809,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan rechnet von links nach rechts.",
       "richtig": false,
       "fehlvorstellung": "klammer-ignoriert"
      },
@@ -68105,7 +68190,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch.\n9 ist ungerade.\nDann ist auch 9 · 2 ungerade.",
+      "text": "Falsch.\n9 ist eine ungerade Zahl.\nDann ist auch 9 · 2 eine ungerade Zahl.",
       "richtig": false
      },
      {
@@ -68335,7 +68420,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Mit derselben Rechnung, noch einmal genauso gerechnet.",
+      "text": "Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.",
       "richtig": false
      },
      {
@@ -68792,7 +68877,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Das klappt nur bei kleinen Zahlen.",
+      "text": "Das ist Zufall.\nDas klappt nur bei kleinen Zahlen.",
       "richtig": false
      },
      {
@@ -69618,7 +69703,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Finn. Man rechnet von links nach rechts.",
+      "text": "Finn. Man rechnet immer von links nach rechts.",
       "richtig": false,
       "fehlvorstellung": "punkt-vor-strich"
      },
@@ -70188,7 +70273,7 @@
       "fehlvorstellung": "verteilung-halb"
      },
      {
-      "text": "Falsch.\nRichtig ist 52.",
+      "text": "Falsch.\nZuerst kommt das Plus: 6 + 20 = 26.\nRichtig ist 26 · 2 = 52.",
       "richtig": false
      },
      {
@@ -70465,7 +70550,7 @@
       "richtig": false
      },
      {
-      "text": "Sara. Man nimmt nur den ersten Summanden mal.",
+      "text": "Sara. Man nimmt nur den ersten Summanden mal, der zweite bleibt, wie er ist.",
       "richtig": false,
       "fehlvorstellung": "verteilung-halb"
      }
@@ -70888,7 +70973,7 @@
       "fehlvorstellung": "verteilung-halb"
      },
      {
-      "text": "Falsch.\nRichtig ist 6 + 7 + 3 = 16.",
+      "text": "Falsch.\nHier wird nur addiert.\nRichtig ist 6 + 7 + 3 = 16.",
       "richtig": false
      },
      {
@@ -71089,7 +71174,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Emre. In der Klammer wird malgenommen.",
+      "text": "Emre. In der Klammer wird malgenommen, weil vorn auch malgenommen wird.",
       "richtig": false,
       "fehlvorstellung": "verteilung-halb"
      },
@@ -81605,7 +81690,7 @@
     ],
     "hilfen": {
      "tipp": "Zähle zuerst die Kästchen des Radius.",
-     "beispiel": "2 Kästchen sind 1 cm.",
+     "beispiel": "6 Kästchen sind 3 cm.",
      "loesungsschritt": "Teile die Zahl der Kästchen durch 2."
     },
     "einheit": "cm",
@@ -84786,7 +84871,7 @@
      "argumentieren"
     ],
     "format": "auswahl",
-    "text": "Ole misst den Winkel α.\nDas Kind liest 20° ab.\nStimmt das?",
+    "text": "Ole misst den Winkel α.\nOle liest 20° ab.\nStimmt das?",
     "mehrfach": false,
     "optionen": [
      {
@@ -85131,7 +85216,7 @@
      "argumentieren"
     ],
     "format": "auswahl",
-    "text": "Jonas misst den Winkel α.\nDas Kind liest 60° ab.\nHat es recht?",
+    "text": "Jonas misst den Winkel α.\nJonas liest 60° ab.\nStimmt das?",
     "mehrfach": false,
     "optionen": [
      {
@@ -85196,7 +85281,7 @@
      "symbolisch"
     ],
     "format": "auswahl",
-    "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat das Kind falsch gemacht?",
+    "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat Ben falsch gemacht?",
     "mehrfach": false,
     "optionen": [
      {
@@ -85538,7 +85623,7 @@
      "symbolisch"
     ],
     "format": "auswahl",
-    "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht?",
+    "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat Jonas falsch gemacht?",
     "mehrfach": false,
     "optionen": [
      {
@@ -87580,11 +87665,11 @@
      "kommunizieren"
     ],
     "format": "auswahl",
-    "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?",
+    "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?",
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert.",
+      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.",
       "richtig": false,
       "fehlvorstellung": "dreieck-art"
      },
@@ -89404,7 +89489,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.3-K2-F-05",
@@ -89640,7 +89725,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.3-K2-G-05",
@@ -89860,7 +89945,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "dezimal-wie-natuerlich"
    },
    {
@@ -90419,7 +90504,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "bruch-nur-zaehler-verglichen"
    },
    {
@@ -90744,7 +90829,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "bruch-nur-zaehler-verglichen"
    },
    {
@@ -90922,7 +91007,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "bruch-nur-zaehler-verglichen"
    },
    {
@@ -91710,7 +91795,7 @@
     "typischeFehler": [
      {
       "wert": "24⁄30",
-      "fehlvorstellung": "sub-addiert"
+      "fehlvorstellung": "ergaenzen-addiert"
      },
      {
       "wert": "23⁄30",
@@ -91974,7 +92059,7 @@
     },
     "hilfen": {
      "tipp": "Erweitern heißt: Zähler und Nenner mit derselben Zahl malnehmen.",
-     "beispiel": "1⁄2 = 2⁄4, denn 1 · 2 = 2 und 2 · 2 = 4.",
+     "beispiel": "1⁄3 = 2⁄6, denn 1 · 2 = 2 und 3 · 2 = 6.",
      "loesungsschritt": "Nimm den Zähler 1 mal 2."
     },
     "bild": {
@@ -92094,7 +92179,7 @@
     ],
     "hilfen": {
      "tipp": "Die Teile sind verschieden groß. Mache zuerst aus den großen Teilen kleine Teile.",
-     "beispiel": "1⁄2 + 1⁄4 = 2⁄4 + 1⁄4 = 3⁄4. Aus einem Halben werden zwei Viertel.",
+     "beispiel": "1⁄3 + 1⁄6 = 2⁄6 + 1⁄6 = 3⁄6. Aus einem Drittel werden zwei Sechstel.",
      "loesungsschritt": "Erweitere den Bruch mit dem kleineren Nenner. Rechne dann mit den Zählern."
     },
     "bild": {
@@ -92204,7 +92289,7 @@
     ],
     "hilfen": {
      "tipp": "Erweitere zuerst. Zähle dann zusammen. Kürze am Ende.",
-     "beispiel": "1⁄2 + 1⁄6 = 3⁄6 + 1⁄6 = 4⁄6 = 2⁄3.",
+     "beispiel": "1⁄2 + 1⁄10 = 5⁄10 + 1⁄10 = 6⁄10 = 3⁄5.",
      "loesungsschritt": "Erweitere 1⁄2 auf den Nenner 6. Das Ergebnis lässt sich noch kürzen."
     },
     "gekuerzt": true,
@@ -92448,7 +92533,7 @@
     ],
     "hilfen": {
      "tipp": "Der größte Nenner ist der gemeinsame Nenner. Erweitere die beiden anderen Brüche.",
-     "beispiel": "1⁄2 + 1⁄4 + 1⁄8 = 4⁄8 + 2⁄8 + 1⁄8 = 7⁄8.",
+     "beispiel": "1⁄3 + 1⁄6 + 1⁄12 = 4⁄12 + 2⁄12 + 1⁄12 = 7⁄12.",
      "loesungsschritt": "Erweitere alle Brüche auf den Nenner 8. Zähle dann die drei Zähler zusammen."
     },
     "gekuerzt": true,
@@ -92845,7 +92930,7 @@
     },
     "hilfen": {
      "tipp": "Der Zähler lässt sich nicht teilen. Mache die Teile kleiner.",
-     "beispiel": "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.",
+     "beispiel": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
      "loesungsschritt": "Nimm den Nenner mit der Zahl mal. Schreibe den Zähler ab."
     },
     "bild": {
@@ -92900,7 +92985,7 @@
     ],
     "hilfen": {
      "tipp": "Der Zähler lässt sich nicht teilen. Mache die Teile kleiner.",
-     "beispiel": "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.",
+     "beispiel": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
      "loesungsschritt": "Nimm den Nenner mit der Zahl mal. Schreibe den Zähler ab."
     },
     "bild": {

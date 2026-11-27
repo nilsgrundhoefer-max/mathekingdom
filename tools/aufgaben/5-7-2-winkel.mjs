@@ -99,7 +99,7 @@ export function winkelVergleichen() {
     () => schenkelFrage(Z('Die Winkel α und β liegen nebeneinander.', 'Welche Linien sind die Schenkel von β?'), nachbarn('G', 2),
       h3('Der Winkel β hat einen eigenen Bogen.', 'Seine Schenkel begrenzen diesen Bogen.', 'Ein Schenkel gehört zu α und zu β.'), 'β'),
     () => { const x = einer('G'), { s: S, a: A } = x.w.punkte, k = kind();
-      return auswahl(Z(`${k} sagt: „Der Scheitel von α ist ${A}.“`, 'Hat das Kind recht?'), [opt(`Nein.\n${A} liegt am Ende eines Schenkels.\nDer Scheitel ist ${S}.`, true), opt(`Ja.\n${A} steht als erster Buchstabe da.`, false, BV)],
+      return auswahl(Z(`${k} sagt: „Der Scheitel von α ist ${A}.“`, `Hat ${k} recht?`), [opt(`Nein.\n${A} liegt am Ende eines Schenkels.\nDer Scheitel ist ${S}.`, true), opt(`Ja.\n${A} steht als erster Buchstabe da.`, false, BV)],
         h3('Der Scheitel ist die Spitze des Winkels.', 'Die Punkte am Ende der Schenkel sind keine Scheitel.', `Prüfe, wo die beiden Schenkel beginnen.`), { bild: x.bild, nachweis: [U(false)] }); },
   ]);
   sechs(V1, 'M', [
@@ -107,14 +107,14 @@ export function winkelVergleichen() {
       h2('Der Scheitel steht immer in der Mitte.', 'Vorne steht der Punkt auf dem Schenkel, von dem du gegen den Uhrzeigersinn losgehst.')),
     () => zwischenFrage((S, A, B) => `Drei Winkel liegen an einem Scheitel nebeneinander. Welcher Winkel ist ∢${A}${S}${B}?`, nachbarn('M', 3), zz(0, 2),
       h2(`Der mittlere Buchstabe ist der Scheitel. Die beiden anderen nennen die Schenkel.`, 'Suche die beiden Schenkel und den Bogen zwischen ihnen.')),
-    () => nameFrage('Wie heißt der Winkel β mit drei Buchstaben?', nachbarn('M', 2),
+    () => nameFrage('Wie heißt der Winkel β mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel.', nachbarn('M', 2),
       h2('Der Scheitel steht in der Mitte.', 'Gehe gegen den Uhrzeigersinn vom ersten Schenkel von β zum zweiten.'), 'β'),
     () => schenkelFrage('Welche Strecken sind die Schenkel des Winkels α?', einer('M'),
       h2('Beide Schenkel beginnen im Scheitel.', 'Die Verbindung der beiden Endpunkte ist kein Schenkel.')),
     () => schenkelFrage('Wie heißen die Schenkel von γ?', nachbarn('M', 3),
       h2('Jeder Schenkel beginnt im gemeinsamen Scheitel.', 'Suche die beiden Linien, die den Bogen von γ begrenzen.'), 'γ'),
     () => { const x = einer('M', { satz: ['S', 'A', 'B'] }), k = kind();
-      return auswahl(`${k} schreibt für den Winkel α: ∢BSA. Hat das Kind recht?`, [opt('Nein. Gegen den Uhrzeigersinn geht es von SA nach SB. Richtig ist ∢ASB.', true), opt('Ja. Die Reihenfolge der Buchstaben ist egal.', false, BV), opt('Nein. Der Scheitel muss vorne stehen. Richtig ist ∢SAB.', false, BV)],
+      return auswahl(`${k} schreibt für den Winkel α: ∢BSA. Hat ${k} recht?`, [opt('Nein. Gegen den Uhrzeigersinn geht es von SA nach SB. Richtig ist ∢ASB.', true), opt('Ja. Die Reihenfolge der Buchstaben ist egal.', false, BV), opt('Nein. Der Scheitel muss immer vorne stehen. Richtig ist ∢SAB.', false, BV)],
         h2('Bei ∢ASB steht der Scheitel in der Mitte. Vorne steht der Schenkel, von dem man gegen den Uhrzeigersinn losgeht.', '∢BSA wäre der Winkel außen herum.'), { bild: x.bild, nachweis: [U(false)] }); },
   ]);
   sechs(V1, 'E', [
@@ -130,7 +130,7 @@ export function winkelVergleichen() {
     () => schenkelFrage('Wie heißen die Schenkel des Winkels β?', nachbarn('E', 3),
       h1('Suche die beiden Linien, die den Bogen von β begrenzen.'), 'β'),
     () => { const x = einer('E', { g: 5 * zz(6, 14), satz: ['S', 'A', 'B'] }), k = kind();
-      return auswahl(`${k} sagt: „∢ASB und ∢BSA sind gleich groß, sie haben ja dieselben Schenkel.“ Stimmt das?`, [opt('Nein. ∢BSA ist der überstumpfe Winkel außen herum.', true), opt('Ja. Es kommt nur auf die Schenkel an.', false, BV)],
+      return auswahl(`${k} sagt: „∢ASB und ∢BSA sind gleich groß, sie haben ja dieselben Schenkel.“ Stimmt das?`, [opt('Nein. ∢BSA ist der überstumpfe Winkel außen herum.', true), opt('Ja. Es kommt nur auf die beiden Schenkel an.', false, BV)],
         h1('Gegen den Uhrzeigersinn von SB nach SA ist ein anderer Weg als von SA nach SB.'), { bild: x.bild, nachweis: [U(false)] }); },
   ]);
 
@@ -163,7 +163,7 @@ export function winkelVergleichen() {
     () => { const gs = mische([5 * zz(6, 17), 5 * zz(20, 34), wahl([5 * zz(6, 17), 5 * zz(20, 34)])]);
       return vergleich(Z('Welche Winkel sind kleiner als ein rechter Winkel?', 'Kreuze alle an.'), gs, 'spitz', 'G',
         h3('Ein rechter Winkel sieht aus wie eine Heftecke.', 'Halte eine Heftecke an jeden Winkel.', 'Passt der Winkel in die Ecke, ist er kleiner.'), { mehrfach: true }); },
-    () => behauptung(Z(`${kind()} sagt: „Der Bogen von α ist größer.“`, '„Also ist α der größere Winkel.“', 'Hat das Kind recht?'), 'G', 'Nein.\nDie Größe des Bogens ist egal.\nβ öffnet sich weiter.', 'Ja.\nEin großer Bogen gehört zu einem großen Winkel.',
+    () => behauptung(((k) => Z(`${k} sagt: „Der Bogen von α ist größer.“`, '„Also ist α der größere Winkel.“', `Hat ${k} recht?`))(kind()), 'G', 'Nein.\nDie Größe des Bogens ist egal.\nβ öffnet sich weiter.', 'Ja.\nEin großer Bogen gehört zu einem großen Winkel.',
       h3('Der Bogen zeigt nur, welcher Winkel gemeint ist.', 'Er kann groß oder klein gezeichnet sein.', 'Vergleiche die Öffnung der Schenkel.'), { bogen: true }),
   ]);
   sechs(V2, 'M', [
@@ -191,7 +191,7 @@ export function winkelVergleichen() {
     () => vergleich('Welcher Winkel ist der zweitgrößte?', grad(4, 30, 165, 7), 'rang', 'E', h1('Bringe die Winkel der Größe nach in eine Reihenfolge.'), { rang: 2 }),
     () => vergleich('Welcher der vier Winkel ist am kleinsten?', grad(4, 25, 170, 5), 'kleinster', 'E', h1('Lass dich von kurzen Schenkeln und kleinen Bögen nicht täuschen.')),
     () => { const k = kind();
-      return auswahl(`${k} sagt: „Ein Winkel mit kurzen Schenkeln kann größer sein als ein Winkel mit langen Schenkeln.“ Stimmt das?`, [opt('Ja. Die Größe hängt nur von der Öffnung ab. Im Bild ist β größer als α.', true), opt('Nein. Kurze Schenkel gehören immer zu kleinen Winkeln.', false, 'winkel-schenkellaenge')],
+      return auswahl(`${k} sagt: „Ein Winkel mit kurzen Schenkeln kann größer sein als ein Winkel mit langen Schenkeln.“ Stimmt das?`, [opt('Ja. Die Größe hängt nur von der Öffnung ab. Im Bild ist β größer als α.', true), opt('Nein. Kurze Schenkel gehören immer zu den kleinen Winkeln.', false, 'winkel-schenkellaenge')],
         h1('Schau dir die Schenkel und die Öffnungen im Bild an.'), { bild: reihe([W(zz(30, 50), zz(0, 359), { l1: 165, l2: 160, rb: 44 }), W(zz(100, 140), zz(0, 359), { l1: 70, l2: 72, rb: 24 })]), nachweis: [U(true)] }); },
   ]);
 }

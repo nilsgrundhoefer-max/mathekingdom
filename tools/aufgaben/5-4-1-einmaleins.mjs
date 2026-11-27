@@ -64,7 +64,7 @@ export function einmaleins() {
     },
     3: () => { const a = wahl([3, 5, 7, 9]), k = kind();
       return auswahl(Z(`${k} sagt:`, '„Jede Zahl mal 2 ergibt eine gerade Zahl.“', `Prüfe mit ${a} · 2.`, 'Stimmt das?'),
-        [opt(`Stimmt. ${a} · 2 = ${a * 2}. Mal 2 ist das Doppelte. Ein Doppeltes ist immer gerade.`, true), opt(`Falsch. ${a} ist ungerade. Dann ist auch ${a} · 2 ungerade.`), opt('Falsch. Das gilt nur bis 10.')],
+        [opt(`Stimmt. ${a} · 2 = ${a * 2}. Mal 2 ist das Doppelte. Ein Doppeltes ist immer gerade.`, true), opt(`Falsch. ${a} ist eine ungerade Zahl. Dann ist auch ${a} · 2 eine ungerade Zahl.`), opt('Falsch. Das gilt nur bis 10.')],
         h3('Rechne die Aufgabe aus. Ist das Ergebnis gerade?', '7 · 2 = 14. 14 ist gerade. Mal 2 heißt: 2 gleiche Teile.', `Rechne ${a} · 2. Teile das Ergebnis in 2 gleiche Teile.`), { bild: B.feld(a, 2), nachweis: [U(true), ...N(`${a} · 2`)] }); },
   });
 
@@ -90,7 +90,7 @@ export function einmaleins() {
     },
     3: () => { const a = zz(6, 9), b = zz(6, 9), k = kind();
       return auswahl(`${k} rechnet ${a} · ${b} und erhält ${a * b + b}. Wie lässt sich der Fehler finden?`,
-        [opt(`Mit der Nachbaraufgabe: ${a - 1} · ${b} = ${(a - 1) * b}. Dazu kommt noch einmal ${b}. Das sind ${a * b}.`, true), opt('Mit derselben Rechnung, noch einmal genauso gerechnet.'), opt(`Mit der Rechnung ${a} + ${b}.`, false, '1x1-addiert'), opt('Gar nicht. Das Ergebnis stimmt.', false, '1x1-nachbar')],
+        [opt(`Mit der Nachbaraufgabe: ${a - 1} · ${b} = ${(a - 1) * b}. Dazu kommt noch einmal ${b}. Das sind ${a * b}.`, true), opt('Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.'), opt(`Mit der Rechnung ${a} + ${b}.`, false, '1x1-addiert'), opt('Gar nicht. Das Ergebnis stimmt.', false, '1x1-nachbar')],
         h2('Welche Kernaufgabe oder Nachbaraufgabe kennst du sicher?', `${a - 1} · ${b} = ${(a - 1) * b}. Vergleiche mit dem Ergebnis ${a * b + b}.`), { nachweis: N(U(false, `${a} · ${b}`, a * b + b), `${a - 1} · ${b}`, `${(a - 1) * b} + ${b}`, `${a} · ${b}`) }); },
   });
 
@@ -112,14 +112,14 @@ export function einmaleins() {
     3: (k) => {
       if (k === 0) { const [satz, richtig, falsch, bsp] = wahl([
         ['„Ungerade mal ungerade ergibt immer eine ungerade Zahl.“', 'Stimmt. Je zwei gleiche ungerade Päckchen ergeben zusammen eine gerade Zahl. Bei einer ungeraden Anzahl Päckchen bleibt eines übrig. Gerade plus ungerade ist ungerade.',
-          ['Falsch. 3 · 5 ist gerade.', 'Falsch. Zwei ungerade Zahlen ergeben immer eine gerade Zahl.', 'Stimmt, aber nur im kleinen Einmaleins.', 'Das hängt von den beiden Zahlen ab.'], ['3 · 5', '7 · 9']],
+          ['Falsch. 3 · 5 ist gerade.', 'Falsch. Zwei ungerade Zahlen ergeben zusammen immer eine gerade Zahl. Das gilt beim Malnehmen genauso, denn Malnehmen ist wiederholtes Zusammenzählen.', 'Stimmt, aber nur im kleinen Einmaleins.', 'Das hängt von den beiden Zahlen ab.'], ['3 · 5', '7 · 9']],
         ['„Eine gerade Zahl mal irgendeine Zahl ergibt immer eine gerade Zahl.“', 'Stimmt. Eine gerade Zahl ist ein Doppeltes. Ein Doppeltes mal eine Zahl bleibt ein Doppeltes.',
-          ['Falsch. Mit einer ungeraden Zahl wird das Ergebnis ungerade.', 'Falsch. Das gilt nur für 2 und 4.', 'Stimmt, aber nur, wenn die andere Zahl auch gerade ist.', 'Das hängt von den beiden Zahlen ab.'], ['4 · 3', '6 · 7']],
+          ['Falsch. Mit einer ungeraden Zahl wird das Ergebnis ungerade.', 'Falsch. Das gilt nur für 2 und 4.', 'Stimmt, aber nur, wenn die andere Zahl auch gerade ist. Sonst wird das Ergebnis ungerade.', 'Das hängt von den beiden Zahlen ab.'], ['4 · 3', '6 · 7']],
       ]);
         return auswahl(`Stimmt das? ${satz} Wähle die beste Begründung.`, [opt(richtig, true), ...falsch.map((f) => opt(f))], h1('Probiere einige Beispiele. Kannst du erklären, warum es immer so ist?'), { nachweis: [U(true), ...N(...bsp)] }); }
       return auswahl('9 · 1 = 9, 9 · 2 = 18, 9 · 3 = 27, 9 · 4 = 36. Stelle eine Regel für alle Ergebnisse von 9 · 1 bis 9 · 10 auf.', [
         opt('Zehnerziffer und Einerziffer ergeben zusammen immer 9, denn von Ergebnis zu Ergebnis wird der Zehner um 1 größer und der Einer um 1 kleiner.', true),
-        opt('Alle Ergebnisse sind ungerade.'), opt('Die Einerziffer wird von Ergebnis zu Ergebnis um 1 größer.'), opt('Zehnerziffer und Einerziffer ergeben zusammen immer 10.'), opt('Es gibt keine Regel.')],
+        opt('Alle Ergebnisse sind ungerade.'), opt('Die Einerziffer wird von Ergebnis zu Ergebnis um 1 größer.'), opt('Zehnerziffer und Einerziffer ergeben zusammen immer 10, denn die Ergebnisse liegen immer knapp unter dem nächsten Zehner.'), opt('Es gibt keine Regel.')],
       h1('Vergleiche in jedem Ergebnis die Zehnerziffer und die Einerziffer. Was geschieht, wenn 9 dazukommt?'), { nachweis: N(...Array.from({ length: 10 }, (_, i) => `9 · ${i + 1}`), '1 + 8', '2 + 7', '3 + 6', '4 + 5', '9 + 0') });
     },
   });
@@ -171,7 +171,7 @@ export function einmaleins() {
     },
     3: () => { const [d, q] = verschieden(3, 9), a = d * q, k = kind();
       return auswahl(Z(`${k} rechnet ${a} : ${d} = ${q}.`, `${k} prüft mit ${q} · ${d}.`, 'Warum klappt das?'),
-        [opt(`Mal macht geteilt wieder rückgängig. ${q} · ${d} = ${a}.`, true), opt(`Auch ${q} + ${d} ergibt ${a}.`, false, 'div-falsche-rechenart'), opt('Das klappt nur bei kleinen Zahlen.')],
+        [opt(`Mal macht geteilt wieder rückgängig. ${q} · ${d} = ${a}.`, true), opt(`Auch ${q} + ${d} ergibt ${a}.`, false, 'div-falsche-rechenart'), opt('Das ist Zufall. Das klappt nur bei kleinen Zahlen.')],
         h3('Rechne die Mal-Aufgabe aus. Was kommt heraus?', '12 : 3 = 4. Prüfe: 4 · 3 = 12. Das ist wieder die erste Zahl.', `Rechne ${q} · ${d}. Vergleiche mit ${a}.`), { bild: B.feld(q, d), nachweis: N(`${a} : ${d}`, `${q} · ${d}`, `${q} + ${d}`) }); },
   });
 
@@ -219,7 +219,7 @@ export function einmaleins() {
     3: (k) => {
       if (k === 0) { const a = wahl([24, 36, 48]), [d, e] = suche(() => [wahl([2, 3, 4]), wahl([6, 8, 12])], ([x, y]) => a % x === 0 && a % y === 0), n = kind();
         return auswahl(`${n} sagt: „Teilt man durch eine größere Zahl, wird das Ergebnis größer.“ Vergleiche ${a} : ${d} und ${a} : ${e}. Wähle die richtige Antwort.`,
-          [opt(`Falsch. ${a} : ${d} = ${a / d}, aber ${a} : ${e} = ${a / e}. Das Ergebnis wird kleiner.`, true), opt('Stimmt. Größere Zahlen ergeben größere Ergebnisse.'), opt('Stimmt. Beim Malnehmen ist das auch so.'), opt('Falsch. Das Ergebnis bleibt immer gleich.'), opt(`Stimmt. ${a} : ${e} ist größer als ${a} : ${d}.`)],
+          [opt(`Falsch. ${a} : ${d} = ${a / d}, aber ${a} : ${e} = ${a / e}. Das Ergebnis wird kleiner.`, true), opt('Stimmt. Größere Zahlen in der Aufgabe ergeben größere Ergebnisse.'), opt('Stimmt. Beim Malnehmen ist das auch so.'), opt('Falsch. Das Ergebnis bleibt immer gleich.'), opt(`Stimmt. ${a} : ${e} ist größer als ${a} : ${d}.`)],
           h1('Stell dir vor, du verteilst Kuchen an mehr Kinder. Was passiert mit jedem Stück?'), { nachweis: [U(false), ...N(`${a} : ${d}`, `${a} : ${e}`)] }); }
       const a = wahl([24, 40, 48, 56, 72]);
       return auswahl(`${a} : 2 = ${a / 2}, ${a} : 4 = ${a / 4} und ${a} : 8 = ${a / 8}. Stelle eine Regel auf: Was geschieht mit dem Ergebnis, wenn die Zahl, durch die geteilt wird, verdoppelt wird?`, [
@@ -329,7 +329,7 @@ export function einmaleins() {
         const nullenP = String(p).match(/0+$/)[0].length;
         return auswahl(`${n} sagt: „Das Produkt hat immer genau so viele Nullen am Ende wie beide Faktoren zusammen.“ Prüfe mit ${a} · ${b}.`, [
           opt(`Falsch. ${a} · ${b} = ${fz(p)} hat ${nullenP} Nullen am Ende, die Faktoren zusammen nur ${i + 1}. ${x} · ${y} = ${x * y} bringt eine Null mit.`, true),
-          opt('Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.', false, 'mal-stellenwert'),
+          opt('Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an. Mehr Nullen können nicht entstehen.', false, 'mal-stellenwert'),
           opt(`Stimmt. ${a} · ${b} = ${fz(p / 10)}.`, false, 'mal-stellenwert'),
           opt('Falsch. Das Produkt hat immer weniger Nullen.'),
           opt('Das kann man nicht prüfen.')],
@@ -387,7 +387,7 @@ export function einmaleins() {
     3: () => { const a = wahl([6, 7, 8]), z = wahl([2, 3, 4]) * 10, b = z - 1, k = kind(), falsch = a * z - 1;
       return auswahl(Z(`${k} rechnet ${a} · ${b} so:`, `${a} · ${z} = ${a * z}`, `${a * z} − 1 = ${falsch}`, 'Stimmt das?'), [
         opt(Z('Falsch.', `${k} muss ${a}-mal 1 wegnehmen.`, `Richtig ist ${a * z} − ${a} = ${a * b}.`), true),
-        opt(Z('Stimmt.', `${b} ist 1 weniger als ${z}.`), false, 'geschickt-falsch-ausgeglichen'),
+        opt(Z('Stimmt.', `${b} ist 1 weniger als ${z}.`, `Also nimmt ${k} am Ende 1 weg.`), false, 'geschickt-falsch-ausgeglichen'),
         opt(Z('Falsch.', `Richtig ist ${a * z} + ${a} = ${a * z + a}.`), false, 'geschickt-falsch-ausgeglichen')],
       h3(`${a} · ${b} sind ${a} Reihen mit je ${b}. In jeder Reihe fehlt 1.`, '3 · 19: 3 · 20 = 60. In 3 Reihen fehlt je 1. 60 − 3 = 57.', `Wie oft fehlt 1? Es sind ${a} Reihen.`), { nachweis: [U(false, `${a} · ${b}`, falsch), ...N(`${a} · ${z}`, `${a * z} − ${a}`, `${a * z} − 1`, `${a * z} + ${a}`, `${a} · ${b}`)] }); },
   });
@@ -416,7 +416,7 @@ export function einmaleins() {
       return auswahl(`${k1} sagt: „${a} · ${b} ist dasselbe wie ${a / 2} · ${2 * b}.“ ${k2} sagt: „${a} · ${b} ist dasselbe wie ${2 * a} · ${2 * b}.“ Wer hat recht?`, [
         opt(`${k1}. Halbiert man einen Faktor und verdoppelt den anderen, bleibt das Produkt gleich: ${a / 2} · ${2 * b} = ${a * b}.`, true),
         opt(`${k2}. Man muss beide Faktoren gleich behandeln.`, false, 'geschickt-falsch-ausgeglichen'),
-        opt('Beide. Beim Malnehmen darf man verdoppeln, wie man will.', false, 'geschickt-falsch-ausgeglichen'),
+        opt('Beide. Beim Malnehmen darf man halbieren und verdoppeln, wie man will. Das Produkt bleibt gleich.', false, 'geschickt-falsch-ausgeglichen'),
         opt('Keiner. Man darf die Zahlen nicht verändern.')],
       h2('Rechne alle drei Aufgaben aus und vergleiche.', `${a} · ${b} = ${a * b}.`), { nachweis: N(`${a} · ${b}`, `${a / 2} · ${2 * b}`, `${2 * a} · ${2 * b}`) }); },
   });
@@ -442,7 +442,7 @@ export function einmaleins() {
           opt(`Es bleibt gleich. ${a} · ${b} = ${a * b} und ${a * 3} · ${b / 3} = ${a * b}. Mal 3 und durch 3 heben sich auf.`, true),
           opt('Es wird 3-mal so groß.', false, 'geschickt-nicht-ausgeglichen'),
           opt('Es wird 9-mal so groß, denn 3 · 3 = 9.', false, 'geschickt-falsch-ausgeglichen'),
-          opt('Es wird kleiner, denn durch 3 teilen macht kleiner.'),
+          opt('Es wird kleiner, denn durch 3 teilen macht stärker kleiner, als mal 3 größer macht.'),
           opt('Das hängt von den Zahlen ab.')],
         h1('Rechne vorher und nachher aus und vergleiche.'), { nachweis: N(`${a} · 3`, `${b} : 3`, `${a} · ${b}`, `${a * 3} · ${b / 3}`) }); }
       const m = suche(() => zz(11, 24), (x) => x % 10 !== 0), a = 4 * m, [k1, k2] = zweiKinder();
@@ -451,7 +451,7 @@ export function einmaleins() {
         opt(`${k2}. Durch 4 teilen ist kein Halbieren.`, false, 'geschickt-falsch-ausgeglichen'),
         opt(`${k2}. Richtig ist ${fz(m * 25)}.`, false, 'geschickt-falsch-ausgeglichen'),
         opt('Keiner. Man muss schriftlich rechnen.'),
-        opt(`Beide. ${k1} rechnet richtig, aber nur durch Zufall.`)],
+        opt(`Beide. ${k1} rechnet richtig, aber das klappt nur durch Zufall bei dieser Zahl.`)],
       h1(`Durch 4 teilen ist zweimal halbieren. Mal 4 ist zweimal verdoppeln.`), { nachweis: N(`${a} : 4`, `${m} · 100`, '25 · 4', `${a} · 25`) }); },
   });
 }

@@ -338,6 +338,71 @@
    "hinweis": "Die Spitze des Zeichens zeigt immer zur kleineren Zahl.",
    "kind": "Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl."
   },
+  "reihenfolge-umgekehrt": {
+   "beschreibung": "Ordnet richtig, aber in umgekehrter Reihenfolge.",
+   "hinweis": "Lies den Auftrag noch einmal: Womit sollst du beginnen?",
+   "kind": "Du schaust jetzt genau, womit du beim Ordnen beginnen sollst."
+  },
+  "strahl-gespiegelt": {
+   "beschreibung": "Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich.",
+   "hinweis": "Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst.",
+   "kind": "Du zählst am Zahlenstrahl jetzt in die richtige Richtung."
+  },
+  "strahl-zu-grob": {
+   "beschreibung": "Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg.",
+   "hinweis": "Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu.",
+   "kind": "Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit."
+  },
+  "kuerzen-subtrahiert": {
+   "beschreibung": "Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen.",
+   "hinweis": "Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert.",
+   "kind": "Du weißt jetzt: Kürzen heißt teilen, nicht abziehen."
+  },
+  "ergaenzen-addiert": {
+   "beschreibung": "Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt.",
+   "hinweis": "Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren.",
+   "kind": "Du rechnest jetzt aus, was bis zum Ziel noch fehlt."
+  },
+  "strahl-ganzes": {
+   "beschreibung": "Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1.",
+   "hinweis": "Der Nenner zählt nur die Abstände von 0 bis 1.",
+   "kind": "Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1."
+  },
+  "ganzes-mehrere-figuren": {
+   "beschreibung": "Nimmt mehrere Figuren zusammen als ein Ganzes.",
+   "hinweis": "Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner.",
+   "kind": "Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen."
+  },
+  "koerper-unvollstaendig-gezaehlt": {
+   "beschreibung": "Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt.",
+   "hinweis": "Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab.",
+   "kind": "Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach."
+  },
+  "mantel-streifen": {
+   "beschreibung": "Bestimmt die Länge der Mantelfläche im Netz falsch.",
+   "hinweis": "Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen.",
+   "kind": "Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen."
+  },
+  "netz-kleben": {
+   "beschreibung": "Zählt beim Zusammenkleben eines Netzes die falschen Kanten.",
+   "hinweis": "Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen.",
+   "kind": "Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind."
+  },
+  "netz-ansicht-verwechselt": {
+   "beschreibung": "Verwechselt das Netz eines Körpers mit seiner Ansicht.",
+   "hinweis": "Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite.",
+   "kind": "Du unterscheidest jetzt Netz und Ansicht eines Körpers."
+  },
+  "zahlbereich-falsch": {
+   "beschreibung": "Ordnet eine Zahl einem falschen Zahlbereich zu.",
+   "hinweis": "Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein.",
+   "kind": "Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind."
+  },
+  "unterschied-addiert": {
+   "beschreibung": "Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist.",
+   "hinweis": "Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert.",
+   "kind": "Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert."
+  },
   "nachbar-verwechselt": {
    "beschreibung": "Verwechselt Vorgänger und Nachfolger.",
    "hinweis": "Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.",
@@ -990,7 +1055,7 @@
   },
   "innen-aussen-verwechselt": {
    "beschreibung": "Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich).",
-   "hinweis": "Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie?",
+   "hinweis": "Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir.",
    "kind": "Du achtest jetzt darauf: Liegt der Punkt innen oder außen?"
   },
   "konstruktion-reihenfolge": {
@@ -1050,7 +1115,7 @@
   },
   "name-nach-seitenflaeche": {
    "beschreibung": "Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.",
-   "hinweis": "Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma.",
+   "hinweis": "Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken.",
    "kind": "Du benennst den Körper jetzt nach seiner Grundfläche."
   },
   "gegenueber-benachbart": {
@@ -3933,7 +3998,7 @@
       {
        "wort": "Gerade",
        "ab": "F",
-       "erklaerung": "Eine gerade Linie ohne Knick."
+       "erklaerung": "Eine gerade Linie ohne Anfang und Ende. Sie geht in beide Richtungen immer weiter."
       },
       {
        "wort": "Gitterlinie",
@@ -4670,7 +4735,7 @@
    "typischeFehler": [
     {
      "wert": "5⁄8",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "wert": "4⁄5",
@@ -4679,7 +4744,7 @@
    ],
    "hilfen": {
     "tipp": "Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile.",
-    "beispiel": "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.",
+    "beispiel": "Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3.",
     "loesungsschritt": "Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile."
    },
    "bild": {
@@ -4967,7 +5032,7 @@
     {
      "text": "8⁄10",
      "richtig": false,
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "text": "5⁄8",
@@ -5035,7 +5100,7 @@
    "typischeFehler": [
     {
      "wert": "30⁄36",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "wert": "12⁄30",
@@ -5190,7 +5255,7 @@
     {
      "text": "11⁄40",
      "richtig": false,
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "text": "9⁄20",
@@ -5414,7 +5479,7 @@
    "typischeFehler": [
     {
      "wert": "5⁄54",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "wert": "49⁄18",
@@ -5714,7 +5779,7 @@
     {
      "text": "5⁄8",
      "richtig": false,
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     }
    ],
    "hilfen": {
@@ -5767,7 +5832,7 @@
    "typischeFehler": [
     {
      "wert": "10⁄12",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "wert": "2 4⁄2",
@@ -5880,7 +5945,7 @@
    "typischeFehler": [
     {
      "wert": "3⁄4",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "ganzes-mehrere-figuren"
     },
     {
      "wert": "1⁄2",
@@ -6398,7 +6463,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "gemischt-umwandeln"
   },
   {
@@ -6686,7 +6751,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "gemischt-umwandeln"
   },
   {
@@ -9760,11 +9825,11 @@
    "typischeFehler": [
     {
      "wert": 48,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 28,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 6,
@@ -10051,11 +10116,11 @@
    "typischeFehler": [
     {
      "wert": 175,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 63,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 9,
@@ -10290,7 +10355,7 @@
    "typischeFehler": [
     {
      "wert": 17,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 9,
@@ -10322,11 +10387,11 @@
    "typischeFehler": [
     {
      "wert": 330,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 286,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     },
     {
      "wert": 24,
@@ -10422,7 +10487,7 @@
     },
     {
      "wert": "10⁄15",
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     }
    ],
    "hilfen": {
@@ -11419,7 +11484,7 @@
       },
       {
        "wert": 45,
-       "fehlvorstellung": "erweitern-addiert"
+       "fehlvorstellung": "kuerzen-subtrahiert"
       },
       {
        "wert": 10,
@@ -11648,7 +11713,7 @@
     },
     {
      "wert": 121,
-     "fehlvorstellung": "erweitern-addiert"
+     "fehlvorstellung": "kuerzen-subtrahiert"
     }
    ],
    "hilfen": {
@@ -11963,7 +12028,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "6.1.4-V1-F-05",
@@ -12509,7 +12574,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "gemischt-umwandeln"
   },
   {
@@ -13355,7 +13420,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "bruch-nur-zaehler-verglichen"
   },
   {
@@ -13680,7 +13745,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "bruch-nur-zaehler-verglichen"
   },
   {
@@ -13858,7 +13923,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "bruch-nur-zaehler-verglichen"
   },
   {
@@ -14110,7 +14175,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "bruch-nur-zaehler-verglichen"
   },
   {
@@ -15258,7 +15323,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "zeit-zehnersystem"
   },
   {
@@ -16291,7 +16356,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle die Abstände zwischen den Strichen, nicht die Striche.",
-    "beispiel": "Bei 5 Strichen von 0 bis 1 sind es 4 Abstände.",
+    "beispiel": "Bei 4 Strichen von 0 bis 1 sind es 3 Abstände.",
     "loesungsschritt": "Tippe beim Zählen auf jeden Abstand. Beginne bei der 0."
    },
    "bild": {
@@ -16441,7 +16506,7 @@
    ],
    "hilfen": {
     "tipp": "Lies zuerst den Bruch ab. Kürze ihn dann.",
-    "beispiel": "Der Pfeil steht bei 2⁄4. Gekürzt ist das 1⁄2.",
+    "beispiel": "Der Pfeil steht bei 2⁄6. Gekürzt ist das 1⁄3.",
     "loesungsschritt": "Der Pfeil steht bei 2⁄4. Teile Zähler und Nenner durch 2."
    },
    "gekuerzt": true,
@@ -16549,7 +16614,7 @@
     },
     {
      "wert": "2 1⁄12",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "strahl-ganzes"
     }
    ],
    "hilfen": {
@@ -16589,7 +16654,7 @@
    "typischeFehler": [
     {
      "wert": "5⁄6",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "strahl-ganzes"
     },
     {
      "wert": "2⁄3",
@@ -16679,7 +16744,7 @@
     },
     {
      "wert": 24,
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "strahl-ganzes"
     },
     {
      "wert": 11,
@@ -16731,7 +16796,7 @@
     {
      "text": "4⁄6",
      "richtig": false,
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "strahl-ganzes"
     }
    ],
    "hilfen": {
@@ -16972,7 +17037,7 @@
    "typischeFehler": [
     {
      "wert": "14⁄15",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "strahl-ganzes"
     },
     {
      "wert": "4⁄5",
@@ -17090,7 +17155,7 @@
    "typischeFehler": [
     {
      "wert": "4⁄5",
-     "fehlvorstellung": "bruch-ganzes-teil"
+     "fehlvorstellung": "strahl-ganzes"
     },
     {
      "wert": "4⁄6",
@@ -19113,7 +19178,7 @@
    "typischeFehler": [
     {
      "wert": "24⁄30",
-     "fehlvorstellung": "sub-addiert"
+     "fehlvorstellung": "ergaenzen-addiert"
     },
     {
      "wert": "23⁄30",
@@ -20614,7 +20679,7 @@
    },
    "hilfen": {
     "tipp": "Erweitern heißt: Zähler und Nenner mit derselben Zahl malnehmen.",
-    "beispiel": "1⁄2 = 2⁄4, denn 1 · 2 = 2 und 2 · 2 = 4.",
+    "beispiel": "1⁄3 = 2⁄6, denn 1 · 2 = 2 und 3 · 2 = 6.",
     "loesungsschritt": "Nimm den Zähler 1 mal 2."
    },
    "bild": {
@@ -20734,7 +20799,7 @@
    ],
    "hilfen": {
     "tipp": "Die Teile sind verschieden groß. Mache zuerst aus den großen Teilen kleine Teile.",
-    "beispiel": "1⁄2 + 1⁄4 = 2⁄4 + 1⁄4 = 3⁄4. Aus einem Halben werden zwei Viertel.",
+    "beispiel": "1⁄3 + 1⁄6 = 2⁄6 + 1⁄6 = 3⁄6. Aus einem Drittel werden zwei Sechstel.",
     "loesungsschritt": "Erweitere den Bruch mit dem kleineren Nenner. Rechne dann mit den Zählern."
    },
    "bild": {
@@ -20844,7 +20909,7 @@
    ],
    "hilfen": {
     "tipp": "Erweitere zuerst. Zähle dann zusammen. Kürze am Ende.",
-    "beispiel": "1⁄2 + 1⁄6 = 3⁄6 + 1⁄6 = 4⁄6 = 2⁄3.",
+    "beispiel": "1⁄2 + 1⁄10 = 5⁄10 + 1⁄10 = 6⁄10 = 3⁄5.",
     "loesungsschritt": "Erweitere 1⁄2 auf den Nenner 6. Das Ergebnis lässt sich noch kürzen."
    },
    "gekuerzt": true,
@@ -21088,7 +21153,7 @@
    ],
    "hilfen": {
     "tipp": "Der größte Nenner ist der gemeinsame Nenner. Erweitere die beiden anderen Brüche.",
-    "beispiel": "1⁄2 + 1⁄4 + 1⁄8 = 4⁄8 + 2⁄8 + 1⁄8 = 7⁄8.",
+    "beispiel": "1⁄3 + 1⁄6 + 1⁄12 = 4⁄12 + 2⁄12 + 1⁄12 = 7⁄12.",
     "loesungsschritt": "Erweitere alle Brüche auf den Nenner 8. Zähle dann die drei Zähler zusammen."
    },
    "gekuerzt": true,
@@ -24229,7 +24294,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle alle gefärbten Teile. Wie viele ganze Kreise kannst du damit füllen?",
-    "beispiel": "2 · 1⁄2 = 2⁄2 = 1. Zwei Halbe sind ein Ganzes.",
+    "beispiel": "3 · 1⁄3 = 3⁄3 = 1. Drei Drittel sind ein Ganzes.",
     "loesungsschritt": "Das Ergebnis heißt zuerst 2⁄2. Rechne 2 : 2."
    },
    "bild": {
@@ -25108,7 +25173,7 @@
    },
    "hilfen": {
     "tipp": "Der Zähler lässt sich nicht teilen. Mache die Teile kleiner.",
-    "beispiel": "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.",
+    "beispiel": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
     "loesungsschritt": "Nimm den Nenner mit der Zahl mal. Schreibe den Zähler ab."
    },
    "bild": {
@@ -25163,7 +25228,7 @@
    ],
    "hilfen": {
     "tipp": "Der Zähler lässt sich nicht teilen. Mache die Teile kleiner.",
-    "beispiel": "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.",
+    "beispiel": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
     "loesungsschritt": "Nimm den Nenner mit der Zahl mal. Schreibe den Zähler ab."
    },
    "bild": {
@@ -26185,7 +26250,7 @@
    ],
    "hilfen": {
     "tipp": "In jeder Stunde wird gleich viel verbraucht. Teile durch die Stunden.",
-    "beispiel": "4⁄5 reicht für 2 Stunden. Eine Stunde braucht 4⁄5 : 2 = 2⁄5.",
+    "beispiel": "6⁄7 reicht für 3 Stunden. Eine Stunde braucht 6⁄7 : 3 = 2⁄7.",
     "loesungsschritt": "Rechne 4⁄5 : 2."
    },
    "gekuerzt": true,
@@ -26232,7 +26297,7 @@
    ],
    "hilfen": {
     "tipp": "Nimm den Nenner mal. Kürze dann das Ergebnis.",
-    "beispiel": "2⁄3 Kuchen für 4 Kinder: 2⁄3 : 4 = 2⁄12 = 1⁄6.",
+    "beispiel": "3⁄4 Kuchen für 6 Kinder: 3⁄4 : 6 = 3⁄24 = 1⁄8.",
     "loesungsschritt": "Das Ergebnis heißt zuerst 2⁄12. Kürze diesen Bruch."
    },
    "gekuerzt": true,
@@ -28518,7 +28583,7 @@
    ],
    "hilfen": {
     "tipp": "Das Wort „davon“ bedeutet mal. Kürze am Ende.",
-    "beispiel": "2⁄3 von 3⁄4 l sind 2⁄3 · 3⁄4 l = 6⁄12 l = 1⁄2 l.",
+    "beispiel": "1⁄2 von 4⁄5 l sind 1⁄2 · 4⁄5 l = 4⁄10 l = 2⁄5 l.",
     "loesungsschritt": "Schreibe die Malaufgabe auf. Kürze vor oder nach dem Malnehmen."
    },
    "gekuerzt": true,
@@ -31929,7 +31994,7 @@
    ],
    "hilfen": {
     "tipp": "Die Klammer kommt zuerst.",
-    "beispiel": "(1⁄7 + 2⁄7) · 2 = 3⁄7 · 2 = 6⁄7.",
+    "beispiel": "(1⁄9 + 3⁄9) · 2 = 4⁄9 · 2 = 8⁄9.",
     "loesungsschritt": "Rechne zuerst aus, was in der Klammer steht. Rechne dann weiter."
    },
    "bild": {
@@ -32050,7 +32115,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne zuerst aus, wie schwer eine Tüte ist.",
-    "beispiel": "Eine Tüte: 1⁄7 kg + 2⁄7 kg = 3⁄7 kg. Zwei Tüten: 2 · 3⁄7 kg = 6⁄7 kg.",
+    "beispiel": "Eine Tüte: 1⁄9 kg + 3⁄9 kg = 4⁄9 kg. Zwei Tüten: 2 · 4⁄9 kg = 8⁄9 kg.",
     "loesungsschritt": "Rechne 2 · (1⁄7 + 2⁄7). Die Klammer kommt zuerst."
    },
    "gekuerzt": true,
@@ -36384,7 +36449,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.\n6 Quadrate ergeben immer einen Würfel.",
+     "text": "Stimmt.\nEin Würfel hat 6 Flächen.\n6 Quadrate ergeben immer einen Würfel.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -39168,7 +39233,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels.",
+     "text": "Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels mit Deckel.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     }
@@ -39380,7 +39445,7 @@
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
     {
-     "text": "Es ist richtig. Gleich große Rechtecke kommen doppelt vor.",
+     "text": "Es ist richtig. Gleich große Rechtecke kommen wie beim Quader doppelt vor.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     }
@@ -44494,7 +44559,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.",
+     "text": "Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen, also genau 1 cm.",
      "richtig": false,
      "fehlvorstellung": "tiefe-nicht-verkuerzt"
     },
@@ -53320,7 +53385,7 @@
     },
     {
      "wert": 3,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 6,
@@ -53365,11 +53430,11 @@
    "typischeFehler": [
     {
      "wert": 3,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 9,
@@ -53535,11 +53600,11 @@
    "typischeFehler": [
     {
      "wert": 6,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 8,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 5,
@@ -53634,11 +53699,11 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 7,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 15,
@@ -53682,11 +53747,11 @@
    "typischeFehler": [
     {
      "wert": 6,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 2,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 12,
@@ -53851,11 +53916,11 @@
    "typischeFehler": [
     {
      "wert": 10,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -53887,7 +53952,7 @@
    "typischeFehler": [
     {
      "wert": 8,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 24,
@@ -53927,11 +53992,11 @@
    "typischeFehler": [
     {
      "wert": 12,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 15,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 8,
@@ -53979,7 +54044,7 @@
     },
     {
      "wert": 12,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -54011,11 +54076,11 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 6,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 10,
@@ -54051,7 +54116,7 @@
     {
      "text": "A",
      "richtig": false,
-     "fehlvorstellung": "kanten-teilweise",
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt",
      "bild": {
       "art": "koerper",
       "form": "prisma",
@@ -54077,7 +54142,7 @@
     {
      "text": "C",
      "richtig": false,
-     "fehlvorstellung": "kanten-teilweise",
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt",
      "bild": {
       "art": "koerper",
       "form": "prisma",
@@ -54228,7 +54293,7 @@
    "typischeFehler": [
     {
      "wert": 12,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 14,
@@ -54275,11 +54340,11 @@
    "typischeFehler": [
     {
      "wert": 4,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 20,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -54336,7 +54401,7 @@
    "typischeFehler": [
     {
      "wert": 27,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 14,
@@ -54389,7 +54454,7 @@
     {
      "text": "Stimmt nicht. Ein Prisma hat höchstens 18 Kanten.",
      "richtig": false,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "text": "Stimmt nicht. Die Anzahl der Kanten ist immer gerade.",
@@ -58402,7 +58467,7 @@
    "typischeFehler": [
     {
      "wert": 4,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "mantel-streifen"
     },
     {
      "wert": 28,
@@ -58410,7 +58475,7 @@
     },
     {
      "wert": 40,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "mantel-streifen"
     }
    ],
    "hilfen": {
@@ -58439,7 +58504,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Es kommt nur auf die Anzahl der Flächen an.",
+     "text": "Stimmt. Es kommt beim Netz nur auf die Anzahl der Flächen an.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -58897,7 +58962,7 @@
     },
     {
      "wert": 8,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 24,
@@ -60036,11 +60101,11 @@
    "typischeFehler": [
     {
      "wert": 10,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "mantel-streifen"
     },
     {
      "wert": 15,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "mantel-streifen"
     }
    ],
    "hilfen": {
@@ -60065,15 +60130,15 @@
    "typischeFehler": [
     {
      "wert": 18,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     },
     {
      "wert": 7,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     },
     {
      "wert": 10,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     }
    ],
    "hilfen": {
@@ -60114,11 +60179,11 @@
    "typischeFehler": [
     {
      "wert": 4,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 3,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 8,
@@ -60162,7 +60227,7 @@
    "typischeFehler": [
     {
      "wert": 4,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 8,
@@ -60170,7 +60235,7 @@
     },
     {
      "wert": 1,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -60210,11 +60275,11 @@
    "typischeFehler": [
     {
      "wert": 4,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 6,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 5,
@@ -60421,7 +60486,7 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 10,
@@ -60429,7 +60494,7 @@
     },
     {
      "wert": 4,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -60470,11 +60535,11 @@
    "typischeFehler": [
     {
      "wert": 6,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 9,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 7,
@@ -60639,7 +60704,7 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 15,
@@ -60679,7 +60744,7 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 7,
@@ -60719,7 +60784,7 @@
    "typischeFehler": [
     {
      "wert": 10,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 20,
@@ -60762,7 +60827,7 @@
     },
     {
      "wert": 17,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 10,
@@ -60799,7 +60864,7 @@
     {
      "text": "A",
      "richtig": false,
-     "fehlvorstellung": "kanten-teilweise",
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt",
      "bild": {
       "art": "koerper",
       "form": "pyramide",
@@ -60837,7 +60902,7 @@
     {
      "text": "D",
      "richtig": false,
-     "fehlvorstellung": "kanten-teilweise",
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt",
      "bild": {
       "art": "koerper",
       "form": "pyramide",
@@ -60880,7 +60945,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.",
+     "text": "Stimmt nicht. Eine Pyramide hat immer mehr Kanten als Ecken und Flächen.",
      "richtig": false,
      "fehlvorstellung": "prisma-pyramide"
     },
@@ -60931,7 +60996,7 @@
     },
     {
      "wert": 1,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -61025,7 +61090,7 @@
    "typischeFehler": [
     {
      "wert": 22,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 30,
@@ -61072,11 +61137,11 @@
    "typischeFehler": [
     {
      "wert": 4,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 14,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     }
    ],
    "hilfen": {
@@ -61139,7 +61204,7 @@
     {
      "text": "Stimmt. Eine Pyramide kann jede Anzahl von Kanten haben.",
      "richtig": false,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "text": "Stimmt. Die Anzahl der Kanten ist immer ungerade.",
@@ -61267,7 +61332,7 @@
    "typischeFehler": [
     {
      "wert": 15,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 10,
@@ -63164,7 +63229,7 @@
    "typischeFehler": [
     {
      "wert": 8,
-     "fehlvorstellung": "verdeckt-nicht-gezaehlt"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 16,
@@ -64412,7 +64477,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Die Grundfläche hält alle Dreiecke fest.",
+     "text": "Stimmt. Die Grundfläche hält alle Dreiecke fest, sonst fällt das Netz auseinander.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -64451,11 +64516,11 @@
    "typischeFehler": [
     {
      "wert": 8,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     },
     {
      "wert": 5,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     }
    ],
    "hilfen": {
@@ -64908,7 +64973,7 @@
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
     {
-     "text": "Nein, es fehlt ein Seitendreieck.",
+     "text": "Nein, es fehlt ein Seitendreieck, denn die Grundfläche hat mehr Seiten.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -65057,7 +65122,7 @@
    "typischeFehler": [
     {
      "wert": 18,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "koerper-unvollstaendig-gezaehlt"
     },
     {
      "wert": 9,
@@ -65844,11 +65909,11 @@
    "typischeFehler": [
     {
      "wert": 12,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     },
     {
      "wert": 5,
-     "fehlvorstellung": "kanten-teilweise"
+     "fehlvorstellung": "netz-kleben"
     }
    ],
    "hilfen": {
@@ -66531,7 +66596,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Der Kegel hat eine Ecke und zwei Kanten.",
+     "text": "Stimmt. Der Kegel hat eine Ecke an der Spitze und zwei Kanten am Rand.",
      "richtig": false,
      "fehlvorstellung": "runde-koerper-zaehlen"
     }
@@ -66911,7 +66976,7 @@
      "fehlvorstellung": "runde-koerper-zaehlen"
     },
     {
-     "text": "Stimmt. Runde Körper haben keine Kanten.",
+     "text": "Stimmt. Runde Körper haben überhaupt keine Kanten.",
      "richtig": false,
      "fehlvorstellung": "runde-koerper-zaehlen"
     }
@@ -68346,7 +68411,7 @@
     {
      "text": "Stimmt. Von vorne sieht der Kegel aus wie ein Dreieck.",
      "richtig": false,
-     "fehlvorstellung": "riss-verwechselt"
+     "fehlvorstellung": "netz-ansicht-verwechselt"
     },
     {
      "text": "Stimmt nicht. Die gekrümmte Fläche ist im Netz ein Kreisausschnitt.",
@@ -74802,7 +74867,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.\n8 Würfel ergeben 2 · 2 · 2.",
+     "text": "Stimmt.\n8 Würfel ergeben immer 2 · 2 · 2.\nDas ist ein Würfel.",
      "richtig": false,
      "fehlvorstellung": "wuerfel-kein-quader"
     },
@@ -78038,7 +78103,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Beide haben dieselben Ziffern.",
+     "text": "Stimmt. Beide haben dieselben Ziffern, und Nullen ändern den Wert einer Dezimalzahl an keiner Stelle.",
      "richtig": false,
      "fehlvorstellung": "dezimal-wie-natuerlich"
     },
@@ -78334,7 +78399,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-mehr-ziffern"
   },
   {
@@ -78584,7 +78649,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-mehr-ziffern"
   },
   {
@@ -78719,7 +78784,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-mehr-ziffern"
   },
   {
@@ -78833,7 +78898,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "null-platzhalter"
   },
   {
@@ -78982,7 +79047,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-mehr-ziffern"
   },
   {
@@ -79235,7 +79300,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "null-platzhalter"
   },
   {
@@ -79419,7 +79484,7 @@
    "typischeFehler": [
     {
      "wert": 67,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -79458,7 +79523,7 @@
     {
      "text": "0,88",
      "richtig": false,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -79595,7 +79660,7 @@
    "typischeFehler": [
     {
      "wert": 6056,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -79676,7 +79741,7 @@
    "typischeFehler": [
     {
      "wert": 611,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -79710,7 +79775,7 @@
     {
      "text": "0,788",
      "richtig": false,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     },
     {
      "text": "0,702",
@@ -79812,7 +79877,7 @@
    "typischeFehler": [
     {
      "wert": "0,18",
-     "fehlvorstellung": "runden-abschneiden"
+     "fehlvorstellung": "strahl-zu-grob"
     },
     {
      "wert": "0,102",
@@ -79873,7 +79938,7 @@
    "typischeFehler": [
     {
      "wert": 66187,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -79906,7 +79971,7 @@
     {
      "text": "0,246",
      "richtig": false,
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     },
     {
      "text": "0,204",
@@ -79916,7 +79981,7 @@
     {
      "text": "0,24",
      "richtig": false,
-     "fehlvorstellung": "runden-abschneiden"
+     "fehlvorstellung": "strahl-zu-grob"
     }
    ],
    "hilfen": {
@@ -79978,11 +80043,11 @@
    "typischeFehler": [
     {
      "wert": "1,814",
-     "fehlvorstellung": "runden-abschneiden"
+     "fehlvorstellung": "strahl-zu-grob"
     },
     {
      "wert": "1,8143",
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -80110,11 +80175,11 @@
    "typischeFehler": [
     {
      "wert": "0,477",
-     "fehlvorstellung": "runden-abschneiden"
+     "fehlvorstellung": "strahl-zu-grob"
     },
     {
      "wert": "0,4776",
-     "fehlvorstellung": "zeichen-verwechselt"
+     "fehlvorstellung": "strahl-gespiegelt"
     }
    ],
    "hilfen": {
@@ -80286,7 +80351,7 @@
     },
     {
      "wert": "0,425",
-     "fehlvorstellung": "runden-abschneiden"
+     "fehlvorstellung": "strahl-zu-grob"
     }
    ],
    "hilfen": {
@@ -80921,7 +80986,7 @@
      "fehlvorstellung": "runden-kette"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rundet immer Stelle für Stelle.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     }
@@ -81181,7 +81246,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Die dritte Stelle wird gestrichen.",
      "richtig": false,
      "fehlvorstellung": "runden-abschneiden"
     }
@@ -81377,7 +81442,7 @@
      "fehlvorstellung": "runden-kette"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man rundet von hinten Stelle für Stelle bis zu den Zehnteln.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     },
@@ -82354,7 +82419,7 @@
      "fehlvorstellung": "runden-abschneiden"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Die hinteren Ziffern fallen weg.",
      "richtig": false,
      "fehlvorstellung": "runden-abschneiden"
     },
@@ -82551,7 +82616,7 @@
      "fehlvorstellung": "runden-kette"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man rundet von hinten Stelle für Stelle.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     },
@@ -83643,7 +83708,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "bruch-als-komma"
   },
   {
@@ -85196,7 +85261,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "bruch-als-komma"
   },
   {
@@ -85422,7 +85487,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man teilt die größere Zahl durch die kleinere.",
      "richtig": false,
      "fehlvorstellung": "bruch-vertauscht"
     }
@@ -85844,7 +85909,7 @@
      "fehlvorstellung": "runden-abschneiden"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Nach dem ersten Ergebnis darf man aufhören.",
      "richtig": false,
      "fehlvorstellung": "runden-abschneiden"
     },
@@ -85928,7 +85993,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-mehr-ziffern"
   },
   {
@@ -85983,7 +86048,7 @@
      "fehlvorstellung": "periode-abgebrochen"
     },
     {
-     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.",
+     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist, also bei echten Brüchen.",
      "richtig": false,
      "fehlvorstellung": "periode-abgebrochen"
     }
@@ -86254,7 +86319,7 @@
      "fehlvorstellung": "periode-abgebrochen"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Ein paar Stellen nach dem Komma genügen.",
      "richtig": false,
      "fehlvorstellung": "periode-abgebrochen"
     }
@@ -86494,7 +86559,7 @@
      "fehlvorstellung": "periode-zu-frueh"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Die Periode beginnt direkt nach dem Komma.",
      "richtig": false,
      "fehlvorstellung": "periode-zu-frueh"
     }
@@ -86700,7 +86765,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Nach vier Stellen ist jede Division zu Ende.",
      "richtig": false,
      "fehlvorstellung": "periode-abgebrochen"
     },
@@ -86835,7 +86900,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "periode-abgebrochen"
   },
   {
@@ -88444,7 +88509,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "prozent-als-zaehler"
   },
   {
@@ -89018,7 +89083,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "prozent-als-zaehler"
   },
   {
@@ -89695,7 +89760,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "prozent-als-zaehler"
   },
   {
@@ -89955,7 +90020,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "periode-abgebrochen"
   },
   {
@@ -90398,7 +90463,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne erst die Euro, dann die Cent.",
-    "beispiel": "5 € − 1,20 €: 5 € − 1 € = 4 €. Dann 4 € − 20 ct = 3,80 €.",
+    "beispiel": "10 € − 2,30 €: 10 € − 2 € = 8 €. Dann 8 € − 30 ct = 7,70 €.",
     "loesungsschritt": "Von 1 € bleiben nach 20 ct noch 80 ct."
    },
    "einheit": "€",
@@ -90838,7 +90903,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man schreibt die Ziffern rechtsbündig untereinander und rechnet.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
@@ -90957,16 +91022,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die Summe hat immer genau zwei Stellen nach dem Komma.",
+     "text": "Die Summe hat immer genau zwei Stellen nach dem Komma, wie die beiden Zahlen.",
      "richtig": false,
      "fehlvorstellung": "dezimal-mehr-ziffern"
     },
     {
-     "text": "Die Summe kann weniger Stellen nach dem Komma haben, zum Beispiel wenn sich die Hundertstel zu einem Zehntel ergänzen.",
+     "text": "Die Summe kann auch weniger Stellen nach dem Komma haben, wenn hinten eine Null entsteht.",
      "richtig": true
     },
     {
-     "text": "Die Summe hat immer vier Stellen nach dem Komma.",
+     "text": "Die Summe hat immer vier Stellen nach dem Komma, denn zwei und zwei sind vier.",
      "richtig": false,
      "fehlvorstellung": "dezimal-mehr-ziffern"
     }
@@ -91027,12 +91092,12 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das Komma steht an der falschen Stelle.",
+     "text": "Das Komma steht an der falschen Stelle. Die Ziffern selbst stimmen.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
     {
-     "text": "Es wurde addiert statt subtrahiert.",
+     "text": "Es wurde addiert statt subtrahiert. Darum ist das Ergebnis zu groß.",
      "richtig": false,
      "fehlvorstellung": "sub-addiert"
     },
@@ -92047,7 +92112,7 @@
      "fehlvorstellung": "komma-nicht-untereinander"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan schreibt die Ziffern rechtsbündig untereinander und rechnet.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
@@ -92249,7 +92314,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Wo oben keine Ziffer steht, schreibt man die untere einfach ab.",
      "richtig": false,
      "fehlvorstellung": "endnull-nicht-ergaenzt"
     },
@@ -92366,7 +92431,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Er hat einen Übertrag vergessen.",
+     "text": "Er hat beim Addieren der Zehntel einen Übertrag vergessen.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
@@ -92375,7 +92440,7 @@
      "richtig": true
     },
     {
-     "text": "Er hat das Komma im Ergebnis vergessen.",
+     "text": "Er hat das Komma im Ergebnis an die falsche Stelle gesetzt.",
      "richtig": false,
      "fehlvorstellung": "div-komma-vergessen"
     }
@@ -92434,11 +92499,11 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen, das Komma bleibt an seiner Stelle.",
+     "text": "Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen.",
      "richtig": true
     },
     {
-     "text": "Es klappt nur, wenn man vorher alle Zahlen rundet.",
+     "text": "Es klappt nur, wenn man vorher alle Zahlen auf Zehntel rundet.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
@@ -93016,7 +93081,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBei mal 10 hängt man immer eine Null an die Zahl an.",
      "richtig": false,
      "fehlvorstellung": "stufe-null-angehaengt"
     },
@@ -93320,12 +93385,12 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beim Malnehmen mit zehn hängt man immer eine Null an.",
+     "text": "Beim Malnehmen mit zehn hängt man immer eine Null an die Zahl an.",
      "richtig": false,
      "fehlvorstellung": "stufe-null-angehaengt"
     },
     {
-     "text": "Jede Stelle wird zehnmal so viel wert. Jede Ziffer rückt eine Stelle nach links. Darum steht das Komma eine Stelle weiter rechts.",
+     "text": "Jede Ziffer wird zehnmal so viel wert und rückt eine Stelle nach links.",
      "richtig": true
     },
     {
@@ -93903,7 +93968,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\n1 km = 100 m, also rückt das Komma zwei Stellen.",
      "richtig": false,
      "fehlvorstellung": "umrechnungszahl"
     }
@@ -94190,16 +94255,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Sie hat geteilt statt malgenommen. Meter sind größer als Zentimeter, also braucht man mehr Zentimeter.",
+     "text": "Sie hat geteilt statt malgenommen. Es müssen mehr Zentimeter als Meter sein.",
      "richtig": true
     },
     {
-     "text": "Sie hat mit zehn statt mit hundert gerechnet.",
+     "text": "Sie hat mit zehn statt mit hundert gerechnet. Sonst stimmt die Rechnung.",
      "richtig": false,
      "fehlvorstellung": "umrechnungsrichtung"
     },
     {
-     "text": "Sie hat richtig gerechnet.",
+     "text": "Sie hat richtig gerechnet. Zentimeter sind kleiner, also wird die Zahl kleiner.",
      "richtig": false,
      "fehlvorstellung": "umrechnungsrichtung"
     }
@@ -94442,7 +94507,7 @@
    },
    "hilfen": {
     "tipp": "Zähle die gefärbten Zehntel.",
-    "beispiel": "2 · 0,3 = 2 · 3 Zehntel = 6 Zehntel = 0,6.",
+    "beispiel": "4 · 0,2 = 4 · 2 Zehntel = 8 Zehntel = 0,8.",
     "loesungsschritt": "Rechne mit Zehnteln wie mit Einern."
    },
    "bild": {
@@ -95288,7 +95353,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie im Faktor.",
      "richtig": false,
      "fehlvorstellung": "dezimal-stelle"
     },
@@ -95428,14 +95493,14 @@
      "richtig": true
     },
     {
-     "text": "Beim Malnehmen rückt das Komma immer nach links.",
+     "text": "Beim Malnehmen mit einer Dezimalzahl rückt das Komma immer nach links.",
      "richtig": false,
      "fehlvorstellung": "komma-falsche-richtung"
     },
     {
-     "text": "Ein Ergebnis mit Komma ist immer klein.",
+     "text": "Ein Ergebnis mit Komma ist immer kleiner als eine natürliche Zahl.",
      "richtig": false,
-     "fehlvorstellung": "dezimal-stelle"
+     "fehlvorstellung": "komma-falsche-richtung"
     }
    ],
    "hilfen": {
@@ -96466,7 +96531,7 @@
      "fehlvorstellung": "mal-komma-wie-plus"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nZehntel mal Zehntel ergibt wieder Zehntel.\nDas Komma bleibt an seiner Stelle.",
      "richtig": false,
      "fehlvorstellung": "mal-komma-wie-plus"
     }
@@ -96713,7 +96778,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie in den Faktoren.",
      "richtig": false,
      "fehlvorstellung": "mal-komma-wie-plus"
     },
@@ -96850,16 +96915,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das Komma wurde wie beim Addieren gesetzt. Das Ergebnis braucht so viele Nachkommastellen wie beide Faktoren zusammen.",
+     "text": "Das Komma wurde wie beim Addieren gesetzt. Hier braucht das Ergebnis zwei Stellen nach dem Komma.",
      "richtig": true
     },
     {
-     "text": "Hier hätte man plus rechnen müssen.",
+     "text": "Hier hätte man plus rechnen müssen. Dann stimmt auch das Komma im Ergebnis.",
      "richtig": false,
      "fehlvorstellung": "1x1-addiert"
     },
     {
-     "text": "Beim Einmaleins wurde falsch gerechnet.",
+     "text": "Beim Einmaleins wurde falsch gerechnet. Das Komma steht an der richtigen Stelle.",
      "richtig": false,
      "fehlvorstellung": "1x1-nachbar"
     }
@@ -97522,7 +97587,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBeim Teilen durch eine natürliche Zahl fällt das Komma weg.",
      "richtig": false,
      "fehlvorstellung": "div-komma-vergessen"
     },
@@ -97771,7 +97836,7 @@
      "fehlvorstellung": "div-stellenwert"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Teilen durch eine natürliche Zahl fällt das Komma weg.",
      "richtig": false,
      "fehlvorstellung": "div-komma-vergessen"
     },
@@ -97905,17 +97970,17 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beim Dividieren wird das Ergebnis immer größer.",
+     "text": "Beim Dividieren wird das Ergebnis immer größer als die erste Zahl. Das wurde vergessen.",
      "richtig": false,
      "fehlvorstellung": "mal-macht-groesser"
     },
     {
-     "text": "Es wurde malgenommen statt geteilt.",
+     "text": "Es wurde malgenommen statt geteilt. Darum ist das Ergebnis zu groß geworden.",
      "richtig": false,
      "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "text": "Das Komma im Quotienten fehlt. Überschreitet man das Komma im Dividenden, setzt man das Komma im Quotienten.",
+     "text": "Das Komma im Quotienten fehlt. Es wird gesetzt, sobald man im Dividenden das Komma überschreitet.",
      "richtig": true
     }
    ],
@@ -98552,7 +98617,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDas Komma rückt nur im Divisor um eine Stelle.\nDie andere Zahl bleibt gleich.",
      "richtig": false,
      "fehlvorstellung": "div-ein-komma-verschoben"
     },
@@ -98803,7 +98868,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Dividieren wird das Ergebnis immer kleiner als die erste Zahl.",
      "richtig": false,
      "fehlvorstellung": "div-macht-kleiner"
     }
@@ -98926,17 +98991,17 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beim Teilen rückt das Komma immer nach rechts.",
+     "text": "Beim Teilen durch eine Dezimalzahl rückt das Komma immer eine Stelle nach rechts.",
      "richtig": false,
      "fehlvorstellung": "komma-falsche-richtung"
     },
     {
-     "text": "Beim Dividieren wird das Ergebnis immer kleiner.",
+     "text": "Beim Dividieren wird das Ergebnis immer kleiner. Hier ist beim Rechnen etwas schiefgegangen.",
      "richtig": false,
      "fehlvorstellung": "div-macht-kleiner"
     },
     {
-     "text": "Ein halbes Ganzes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.",
+     "text": "Ein Halbes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.",
      "richtig": true
     }
    ],
@@ -99472,7 +99537,7 @@
      "fehlvorstellung": "punkt-vor-strich"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rechnet von links nach rechts: erst plus, dann mal.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -99682,7 +99747,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Erst wird abgezogen, das Ergebnis wird danach malgenommen.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     }
@@ -99800,7 +99865,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Bei Dezimalzahlen braucht man diese Regel nicht.",
+     "text": "Bei Dezimalzahlen gilt Punkt vor Strich nicht. Dort zählt nur die Reihenfolge.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -99809,7 +99874,7 @@
      "richtig": true
     },
     {
-     "text": "Man rechnet immer von links nach rechts.",
+     "text": "Man rechnet immer von links nach rechts. Zuerst kommt also das Plus an die Reihe.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     }
@@ -100332,7 +100397,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie beiden hinteren Zahlen darf man zuerst voneinander abziehen.",
      "richtig": false,
      "fehlvorstellung": "sub-klammerfehler"
     }
@@ -100551,7 +100616,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Nur die erste Zahl in der Klammer wird malgenommen.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     }
@@ -100661,17 +100726,17 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Man rundet den Preis auf zwei Euro ab.",
+     "text": "Man rundet den Preis auf zwei Euro ab und zählt danach die fehlenden Cent wieder dazu.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
     {
-     "text": "Man lässt die Cent einfach weg.",
+     "text": "Man lässt die Cent einfach weg, denn bei so kleinen Beträgen fallen sie nicht auf.",
      "richtig": false,
      "fehlvorstellung": "geschickt-nicht-ausgeglichen"
     },
     {
-     "text": "Der Preis ist fast so viel wie drei Euro. So viele Male drei Euro ist leicht zu rechnen. Danach zieht man die fehlenden Cent wieder ab.",
+     "text": "Man rechnet mit vollen Euro und zieht danach die Cent wieder ab, die zu viel waren.",
      "richtig": true
     }
    ],
@@ -101912,7 +101977,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEin Quader hat drei verschiedene Flächen.\nDie zählt man zusammen.",
      "richtig": false,
      "fehlvorstellung": "oberflaeche-drei-flaechen"
     },
@@ -102309,7 +102374,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die Rechnung stimmt, es fehlt nur die Einheit.",
+     "text": "Die Rechnung stimmt, es fehlt nur die Einheit. Mit der richtigen Einheit ist es der Oberflächeninhalt.",
      "richtig": false,
      "fehlvorstellung": "volumen-oberflaeche-verwechselt"
     },
@@ -102616,7 +102681,7 @@
      "fehlvorstellung": "oberflaeche-drei-flaechen"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Jede der drei verschiedenen Flächen wurde berechnet und addiert.",
      "richtig": false,
      "fehlvorstellung": "oberflaeche-drei-flaechen"
     },
@@ -103913,7 +103978,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Kiste ist ein Quader mit 6 Flächen.",
      "richtig": false,
      "fehlvorstellung": "deckel-mitgerechnet"
     },
@@ -105397,7 +105462,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan zählt nur die Würfel im Bild.",
      "richtig": false,
      "fehlvorstellung": "wuerfel-verdeckt"
     },
@@ -106017,7 +106082,7 @@
      "richtig": false
     },
     {
-     "text": "Stimmt. Ein höherer Körper nimmt mehr Platz ein.",
+     "text": "Stimmt. Ein höherer Körper nimmt mehr Platz ein als ein flacher Körper.",
      "richtig": false
     },
     {
@@ -107701,7 +107766,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nVon dm zu cm rechnet man immer mit 100.",
      "richtig": false,
      "fehlvorstellung": "umrechnungszahl"
     },
@@ -109641,7 +109706,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Von m³ zu Liter ist die Umrechnungszahl 10.",
      "richtig": false,
      "fehlvorstellung": "umrechnungszahl"
     },
@@ -110588,7 +110653,7 @@
      "fehlvorstellung": "volumen-oberflaeche-verwechselt"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Zahl ist richtig gerechnet.\nDie Einheit passt zu cm.",
      "richtig": false,
      "fehlvorstellung": "einheit-art"
     }
@@ -110916,7 +110981,7 @@
      "richtig": true
     },
     {
-     "text": "Die Rechnung stimmt. Es gibt keinen Fehler.",
+     "text": "Die Rechnung stimmt. Es gibt keinen Fehler, denn man darf jede Einheit multiplizieren.",
      "richtig": false,
      "fehlvorstellung": "einheiten-nicht-angeglichen"
     },
@@ -111200,7 +111265,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt, denn beim Würfel sind alle Kanten gleich lang.",
+     "text": "Stimmt, denn beim Würfel sind alle Kanten gleich lang. Doppelte Kante heißt doppeltes Volumen.",
      "richtig": false,
      "fehlvorstellung": "volumen-waechst-wie-kante"
     },
@@ -113119,7 +113184,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Zusammen heißt: addieren.",
+    "tipp": "Lies die Frage genau. Was passiert mit den beiden Teilen?",
     "beispiel": "Quader mit 10 cm³ und 8 cm³: zusammen 10 cm³ + 8 cm³ = 18 cm³.",
     "loesungsschritt": "Suche die Rechnung mit dem Pluszeichen."
    },
@@ -113898,7 +113963,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDer Quader unten ist der ganze Körper.",
      "richtig": false,
      "fehlvorstellung": "sach-schritt-vergessen"
     },
@@ -115422,7 +115487,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner.",
+     "text": "Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner, weil an der Ecke drei Quadrate wegfallen.",
      "richtig": false,
      "fehlvorstellung": "volumen-oberflaeche-verwechselt"
     },
@@ -115463,7 +115528,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "2 Würfel sind zu einer Stange zusammengeklebt.\nZähle die Quadrate außen an der Stange.\nZähle auch unten und hinten.",
+   "text": "2 Würfel sind zu einer Stange zusammengeklebt.\nZähle die Quadrate außen an der Stange.\nZähle auch unten, hinten und links.",
    "loesung": 10,
    "typischeFehler": [
     {
@@ -115544,7 +115609,7 @@
    },
    "hilfen": {
     "tipp": "Der Turm hat oben ein Quadrat und unten ein Quadrat.",
-    "beispiel": "Turm aus 2 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 2 = 8 Quadrate. Zusammen 10.",
+    "beispiel": "Turm aus 4 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 4 = 16 Quadrate. Zusammen 18.",
     "loesungsschritt": "Addiere die beiden Zahlen."
    },
    "bild": {
@@ -115582,7 +115647,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Platte ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Platte.\nZähle auch unten und hinten.",
+   "text": "Die Platte ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Platte.\nZähle auch unten, hinten und links.",
    "loesung": 14,
    "typischeFehler": [
     {
@@ -115759,7 +115824,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Die Treppe ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Treppe.\nZähle auch unten und hinten.",
+   "text": "Die Treppe ist aus Würfeln gebaut.\nZähle die Quadrate außen an der Treppe.\nZähle auch unten, hinten und links.",
    "loesung": 20,
    "typischeFehler": [
     {
@@ -142521,7 +142586,7 @@
       "typischeFehler": [
        {
         "wert": 65,
-        "fehlvorstellung": "sach-falsche-rechnung"
+        "fehlvorstellung": "unterschied-addiert"
        }
       ]
      }
@@ -142863,7 +142928,7 @@
       "typischeFehler": [
        {
         "wert": 340,
-        "fehlvorstellung": "sach-falsche-rechnung"
+        "fehlvorstellung": "unterschied-addiert"
        }
       ]
      }
@@ -142946,7 +143011,7 @@
       "typischeFehler": [
        {
         "wert": 280,
-        "fehlvorstellung": "sach-falsche-rechnung"
+        "fehlvorstellung": "unterschied-addiert"
        }
       ]
      }
@@ -143015,7 +143080,7 @@
      "kommunizieren"
     ],
     "format": "auswahl",
-    "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welcher Zeile sind es genau 175 Besucher?",
+    "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welchem Balken sind es genau 175 Besucher?",
     "mehrfach": false,
     "optionen": [
      {
@@ -143755,7 +143820,7 @@
       "richtig": false
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon Strich zu Strich geht es immer 1 weiter.",
       "richtig": false,
       "fehlvorstellung": "strahl-einerschritte"
      }
@@ -144644,7 +144709,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan rundet Schritt für Schritt bis zum Hunderter.",
       "richtig": false,
       "fehlvorstellung": "runden-kette"
      }
@@ -145552,7 +145617,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nBeim Runden wird die Zahl immer größer.",
       "richtig": false,
       "fehlvorstellung": "falsch-gerundet"
      },
@@ -145822,7 +145887,7 @@
       "fehlvorstellung": "runden-falsche-stelle"
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt. Beim Runden auf Tausender ändert sich eine Zahl höchstens um 500.",
       "richtig": false,
       "fehlvorstellung": "falsch-gerundet"
      },
@@ -146340,7 +146405,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon 15 zählen nur die Einer.",
       "richtig": false,
       "fehlvorstellung": "add-uebertrag-vergessen"
      },
@@ -146568,7 +146633,7 @@
       "richtig": true
      },
      {
-      "text": "Falsch. Ungerade plus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -147114,7 +147179,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
       "richtig": false,
       "fehlvorstellung": "sub-kleiner-von-groesser"
      },
@@ -147341,7 +147406,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch. Ungerade minus ungerade bleibt ungerade.",
+      "text": "Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.",
       "richtig": false,
       "fehlvorstellung": "begriffe-verwechselt"
      },
@@ -147953,7 +148018,7 @@
       "fehlvorstellung": "add-subtrahiert"
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan schreibt nur die Einer auf.",
       "richtig": false,
       "fehlvorstellung": "add-uebertrag-vergessen"
      }
@@ -148792,7 +148857,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
       "richtig": false,
       "fehlvorstellung": "sub-kleiner-von-groesser"
      },
@@ -150157,7 +150222,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch.\n9 ist ungerade.\nDann ist auch 9 · 2 ungerade.",
+      "text": "Falsch.\n9 ist eine ungerade Zahl.\nDann ist auch 9 · 2 eine ungerade Zahl.",
       "richtig": false
      },
      {
@@ -150387,7 +150452,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Mit derselben Rechnung, noch einmal genauso gerechnet.",
+      "text": "Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.",
       "richtig": false
      },
      {
@@ -150844,7 +150909,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Das klappt nur bei kleinen Zahlen.",
+      "text": "Das ist Zufall.\nDas klappt nur bei kleinen Zahlen.",
       "richtig": false
      },
      {
@@ -152338,7 +152403,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Falsch.\nRichtig ist 1100.",
+      "text": "Falsch.\nRichtig ist 1100.\nBen hat eine Null zu wenig.",
       "richtig": false,
       "fehlvorstellung": "mal-stellenwert"
      },
@@ -153380,7 +153445,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.\nAlle Rechnungen sind richtig.",
+      "text": "Stimmt.\nAlle drei Rechnungen sind richtig.",
       "richtig": false,
       "fehlvorstellung": "mal-nicht-eingerueckt"
      },
@@ -153616,7 +153681,7 @@
       "richtig": true
      },
      {
-      "text": "Mia hat sich bei 579 · 8 verrechnet.",
+      "text": "Mia hat sich bei 579 · 8 verrechnet. Die Teilprodukte stehen aber richtig untereinander.",
       "richtig": false
      },
      {
@@ -153732,7 +153797,7 @@
       "fehlvorstellung": "mal-stellenwert"
      },
      {
-      "text": "Beide. Die Teilprodukte sind bei beiden gleich.",
+      "text": "Beide. Die Teilprodukte sind bei beiden gleich groß.",
       "richtig": false
      }
     ],
@@ -154867,7 +154932,7 @@
       "fehlvorstellung": "div-einmaleins"
      },
      {
-      "text": "Stimmt.\nDie Probe passt: 6 · 5 + 6 = 36.",
+      "text": "Stimmt.\nDie Probe passt: 6 · 5 + 6 = 36.\nDer Rest darf so groß sein.",
       "richtig": false,
       "fehlvorstellung": "div-rest-zu-gross"
      },
@@ -155097,7 +155162,7 @@
       "fehlvorstellung": "div-rest-vergessen"
      },
      {
-      "text": "Richtig: Bei Sachaufgaben lässt man den Rest weg.",
+      "text": "Richtig: Bei Sachaufgaben lässt man den Rest immer einfach weg.",
       "richtig": false,
       "fehlvorstellung": "div-rest-nicht-gedeutet"
      },
@@ -155718,7 +155783,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Finn. Man rechnet von links nach rechts.",
+      "text": "Finn. Man rechnet immer von links nach rechts.",
       "richtig": false,
       "fehlvorstellung": "punkt-vor-strich"
      },
@@ -156162,7 +156227,7 @@
       "fehlvorstellung": "1x1-addiert"
      },
      {
-      "text": "Stimmt.\nPunkt vor Strich.",
+      "text": "Stimmt.\nPunkt vor Strich.\nDie Klammer ändert nichts.",
       "richtig": false,
       "fehlvorstellung": "klammer-ignoriert"
      },
@@ -157101,7 +157166,7 @@
       "fehlvorstellung": "verteilung-halb"
      },
      {
-      "text": "Finn. Man zieht die Zahl ab, die geändert wurde.",
+      "text": "Finn. Man zieht am Ende die Zahl ab, die geändert wurde.",
       "richtig": false,
       "fehlvorstellung": "verteilung-halb"
      },
@@ -162966,7 +163031,7 @@
     ],
     "hilfen": {
      "tipp": "Zähle zuerst die Kästchen des Radius.",
-     "beispiel": "2 Kästchen sind 1 cm.",
+     "beispiel": "6 Kästchen sind 3 cm.",
      "loesungsschritt": "Teile die Zahl der Kästchen durch 2."
     },
     "einheit": "cm",
@@ -164713,11 +164778,11 @@
      "kommunizieren"
     ],
     "format": "auswahl",
-    "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?",
+    "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?",
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert.",
+      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.",
       "richtig": false,
       "fehlvorstellung": "dreieck-art"
      },
@@ -170305,7 +170370,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.1-B3-F-05",
@@ -170336,7 +170401,7 @@
     ],
     "hilfen": {
      "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
-     "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+     "beispiel": "Es gilt 1⁄4 < 3⁄4. Denn 1 Teil ist weniger als 3 Teile.",
      "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
     },
     "bild": {
@@ -170511,7 +170576,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.1-B3-G-03",
@@ -170990,7 +171055,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.2-T1-F-01",
@@ -171356,7 +171421,7 @@
     },
     "hilfen": {
      "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
-     "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+     "beispiel": "2⁄3 von 12 kg: 12 kg : 3 = 4 kg und 4 kg · 2 = 8 kg.",
      "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
     },
     "bild": {
@@ -173627,7 +173692,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.3-K2-F-05",
@@ -173863,7 +173928,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    },
    {
     "id": "5.9.3-K2-G-05",
@@ -174083,7 +174148,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt",
+    "umgekehrt": "reihenfolge-umgekehrt",
     "sonst": "dezimal-wie-natuerlich"
    },
    {
@@ -175019,7 +175084,7 @@
       "richtung": "auf"
      }
     ],
-    "umgekehrt": "zeichen-verwechselt"
+    "umgekehrt": "reihenfolge-umgekehrt"
    }
   ]
  }

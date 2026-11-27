@@ -61,7 +61,7 @@ export function grosseZahlen() {
       return zuordnen(Z('Welche Zahl gehört zu welchem Zahlwort?'), l.map((n) => [fz(n), zahlwort(n)]),
         h3('Schau auf den Block der Tausender. Steht dort 300, 030 oder 003?', '2 030 000 heißt zwei Millionen dreißigtausend.', `Alle Zahlen beginnen mit ${m} Millionen. Lies nur den Block der Tausender.`), { nachweis: l.map(wort) }); },
     () => { const k = kind(), m = zz(2, 9), t = zz(2, 9), n = m * MIO + t * 1000;
-      return auswahl(Z(`${k} soll diese Zahl schreiben: ${zahlwort(n)}`, `${k} schreibt ${fz(m * MIO + t * 100000)}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'dreierblock-vergessen'), opt(`Falsch. Richtig ist ${fz(n)}.`, true), opt(`Falsch. Richtig ist ${fz(m * MIO + t)}.`, false, 'dreierblock-vergessen')],
+      return auswahl(Z(`${k} soll diese Zahl schreiben: ${zahlwort(n)}`, `${k} schreibt ${fz(m * MIO + t * 100000)}.`, 'Stimmt das?'), [opt('Stimmt. So spricht man die Zahl.', false, 'dreierblock-vergessen'), opt(`Falsch. Richtig ist ${fz(n)}.`, true), opt(`Falsch. Richtig ist ${fz(m * MIO + t)}.`, false, 'dreierblock-vergessen')],
         h3('Jeder Dreierblock braucht 3 Ziffern. Fülle mit Nullen auf.', 'zwei Millionen dreitausend: 2, dann 003, dann 000.', `Der Block der Tausender heißt 00${t}.`), { nachweis: [U(false), HILFSZAHL(n, zahlwort(n))] }); },
   ]);
   sechs(G_('B1'), 'M', [
@@ -128,7 +128,7 @@ export function grosseZahlen() {
     () => { const m = zz(1, 8), l = verschieden(() => m * MIO + zz(1, 9) * 100000, 3), s = auf(l);
       return ordnen(Z('Ordne die Zahlen.', 'Beginne mit der kleinsten Zahl.'), s.map(fz),
         h3('Weiter rechts am Zahlenstrahl ist die Zahl größer.', '3 200 000 liegt links von 3 700 000. Also ist 3 200 000 kleiner.', `Die kleinste Zahl ist ${fz(s[0])}.`),
-        { bild: B.strahl({ von: m * MIO, bis: (m + 1) * MIO, schritt: 100000, beschriftung: 500000, punkte: l, ausschnitt: true }), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', links: 'kleinste', rechts: 'größte' }); },
+        { bild: B.strahl({ von: m * MIO, bis: (m + 1) * MIO, schritt: 100000, beschriftung: 500000, punkte: l, ausschnitt: true }), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', links: 'kleinste', rechts: 'größte' }); },
     () => { const n = wahl([999999, 1999999, 4999999, 2099999, 7999999]);
       return zahl(Z(`In der Stellenwerttafel steht ${fz(n)}.`, 'Wie heißt der Nachfolger?'), n + 1, fehlerliste(n + 1, [[n - 1, 'nachbar-verwechselt'], [n + 10, 'stellenwert']]),
         h3('Der Nachfolger ist um 1 größer. Aus den Neunen werden Nullen.', 'Der Nachfolger von 99 999 ist 100 000.', `Rechne ${fz(n)} + 1. Links wird eine Ziffer um 1 größer.`),
@@ -136,7 +136,7 @@ export function grosseZahlen() {
     () => { const l = [zz(6, 9) * 10000 + zz(1, 9) * 1000, zz(3, 9) * 100000 + zz(1, 9) * 10000, zz(1, 5) * MIO + zz(1, 9) * 100000, zz(1, 2) * 10 * MIO + zz(1, 9) * MIO], s = auf(l);
       return ordnen(Z('Ordne die Zahlen.', 'Beginne mit der kleinsten Zahl.', 'Achte auf die Zahl der Stellen.'), s.map(fz),
         h3('Zähle zuerst die Stellen. Wenige Stellen heißt: kleine Zahl.', '85 000 hat 5 Stellen. 1 200 000 hat 7 Stellen. Also ist 85 000 kleiner.', `Die kleinste Zahl hat nur 5 Stellen.`),
-        { bild: B.zahlenTafel(mische(l)), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'vergleich-erste-ziffer', links: 'kleinste', rechts: 'größte' }); },
+        { bild: B.zahlenTafel(mische(l)), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'vergleich-erste-ziffer', links: 'kleinste', rechts: 'größte' }); },
     () => { const st = { von: 0, bis: 10 * MIO, schritt: MIO, beschriftung: 5 * MIO }, p = zwischen(st);
       return lies(Z('Hier ist jeder Schritt eine Million groß.', 'Auf welche Zahl zeigt der Pfeil?'), st, p, [[p / MIO, 'strahl-einerschritte'], [p / 10, 'dreierblock-vergessen']],
         { ...h3('Zähle in Millionen: 1 Million, 2 Millionen, 3 Millionen …', 'Der dritte Strich nach der 0 ist 3 000 000.', `Zähle von ${fz(p - (p % (5 * MIO)))} aus in Schritten von einer Million.`) }); },
@@ -148,7 +148,7 @@ export function grosseZahlen() {
     () => { const d = zz(2, 9), l = [d * 100000, d * MIO, d * 10 * MIO, d * MRD];
       return ordnen(Z('Ordne die Zahlen.', 'Beginne mit der kleinsten Zahl.'), l.map(zahlwort),
         h3('Tausend ist weniger als eine Million. Eine Million ist weniger als eine Milliarde.', 'dreihunderttausend ist kleiner als drei Millionen.', `Die größte Zahl ist ${zahlwort(l[3])}.`),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf', system: 'wort' }], umgekehrt: 'zeichen-verwechselt', sonst: 'million-milliarde', links: 'kleinste', rechts: 'größte' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf', system: 'wort' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'million-milliarde', links: 'kleinste', rechts: 'größte' }); },
     () => { const st = { von: 0, bis: 100 * MIO, schritt: 10 * MIO, beschriftung: 50 * MIO }, p = zwischen(st);
       return lies(Z('Auf welche Zahl zeigt der Pfeil?'), st, p, [[p / (10 * MIO), 'strahl-einerschritte'], [p / 10, 'dreierblock-vergessen'], [p - (p % (50 * MIO)) + (p % (50 * MIO)) / 10, 'strahl-einerschritte']],
         h3('Von 0 bis 50 Millionen sind es 5 Schritte. Ein Schritt ist 10 Millionen groß.', 'Der zweite Teilstrich nach der 0 ist 20 000 000.', `Zähle von ${fz(p - (p % (50 * MIO)))} aus in Schritten von 10 Millionen.`)); },
@@ -160,14 +160,14 @@ export function grosseZahlen() {
       return zahl(Z(`Wie heißt der Vorgänger von ${fz(n)}?`), n - 1, fehlerliste(n - 1, [[n + 1, 'nachbar-verwechselt'], [n - 10, 'stellenwert'], [n - MIO, 'stellenwert']]),
         h3('Der Vorgänger ist um 1 kleiner. Aus den Nullen werden Neunen.', 'Der Vorgänger von 1 000 000 ist 999 999.', `Die erste Ziffer wird um 1 kleiner. Dahinter stehen nur Neunen.`), { nachweis: [EINS, ...N(`${n} − 1`)], lang: true }); },
     () => { const k = kind(), a = zz(5, 9) * 100 * MIO, b = zz(1, 4) * MRD;
-      return auswahl(Z(`${k} sagt: „${fz(a)} ist größer als ${fz(b)}.“`, `„Denn ${a / (100 * MIO)} ist größer als ${b / MRD}.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'vergleich-erste-ziffer'), opt(`Falsch. ${fz(b)} hat mehr Stellen und ist größer.`, true), opt('Falsch. Die beiden Zahlen sind gleich groß.', false)],
+      return auswahl(Z(`${k} sagt: „${fz(a)} ist größer als ${fz(b)}.“`, `„Denn ${a / (100 * MIO)} ist größer als ${b / MRD}.“`, 'Stimmt das?'), [opt('Stimmt. Bei großen Zahlen entscheidet die erste Ziffer.', false, 'vergleich-erste-ziffer'), opt(`Falsch. ${fz(b)} hat mehr Stellen und ist größer.`, true), opt('Falsch. Die beiden Zahlen sind gleich groß.', false)],
         h3('Schau in die Stellenwerttafel: Welche Zahl reicht weiter nach links?', '900 Millionen sind weniger als 1 Milliarde.', `${fz(b)} reicht bis zu den Milliarden. ${fz(a)} reicht nur bis zu den Millionen.`),
         { bild: B.zahlenTafel([a, b]), nachweis: [U(false), vergleich(a, b)] }); },
   ]);
   sechs(G_('B2'), 'M', [
     () => { const l = auf([zz(2, 9) * MIO + zz(1, 9) * 100000, zz(11, 98) * MIO, zz(101, 989) * MIO, zz(2, 9) * MRD + zz(1, 9) * 100 * MIO, zz(11, 98) * MRD]);
       return ordnen('Ordne die Zahlen. Beginne mit der kleinsten Zahl.', l.map(fz), h2('Zähle zuerst die Stellen oder die Dreierblöcke jeder Zahl.', `Die kleinste Zahl ist ${fz(l[0])}.`),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'vergleich-erste-ziffer', links: 'kleinste', rechts: 'größte' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'vergleich-erste-ziffer', links: 'kleinste', rechts: 'größte' }); },
     () => { const st = { von: 0, bis: MRD, schritt: 50 * MIO, beschriftung: 250 * MIO }, w = zwischen(st);
       return tippe(`Markiere die Zahl ${fz(w)} am Zahlenstrahl.`, st, w, [[w - 50 * MIO, 'strahl-einerschritte'], [w + 50 * MIO, 'strahl-einerschritte']],
         h2('Der Zahlenstrahl reicht bis zu einer Milliarde. Bestimme zuerst die Schrittweite.', `Ein Schritt ist 50 Millionen groß.`)); },
@@ -190,7 +190,7 @@ export function grosseZahlen() {
   sechs(G_('B2'), 'E', [
     () => { const l = [zz(2, 9) * BIO, zz(2, 9) * 100 * MRD, zz(2, 9) * 10 * MRD + zz(2, 9) * MIO, zz(2, 9) * 100 * MIO, zz(2, 9) * 10 * MIO + 500000];
       return ordnen('Ordne die Zahlen. Beginne mit der größten Zahl.', l.map(zahlwort), h1('Achte zuerst auf das größte Zahlwort: Billion vor Milliarde vor Million.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'ab', system: 'wort' }], umgekehrt: 'zeichen-verwechselt', sonst: 'million-milliarde', links: 'größte', rechts: 'kleinste' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'ab', system: 'wort' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'million-milliarde', links: 'größte', rechts: 'kleinste' }); },
     () => { const z = zz(2, 8) * MRD, st = { von: z, bis: z + MRD, schritt: 25 * MIO, beschriftung: 250 * MIO, ausschnitt: true }, p = zwischen(st);
       return lies('Auf welche Zahl zeigt der Pfeil?', st, p, [[einer(st, p), 'strahl-einerschritte'], [p - ((p - z) % (250 * MIO)) + ((p - z) % (250 * MIO)) / 25, 'strahl-einerschritte']],
         h1('Bestimme die Schrittweite aus zwei beschrifteten Teilstrichen und der Zahl der Schritte dazwischen.')); },

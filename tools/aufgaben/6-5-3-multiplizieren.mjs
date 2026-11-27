@@ -101,7 +101,7 @@ export function multiplizieren6() {
       return auswahl(Z(`Kreuze alle Rechnungen an, deren Ergebnis ${l} ist.`), mische(o).map(([x, r]) => opt(x, r, r ? undefined : 'dezimal-stelle')), h2('Rechne jede Rechnung ohne Komma aus.', 'Zähle dann die Nachkommastellen.'), { mehrfach: true, nachweis: [`${a} · ${n} = ${l}`, WERT(l)] }); },
     () => { const a = dez(1, 2.1, 9.9), n = String(zz(12, 39)), r = mal(a, n), falsch = schiebe(r, -1), kn = kind(), ga = grob(a), u = mal(ga, n);
       if (falsch === r || n.includes('0')) return null;
-      return auswahl(Z(`${kn} rechnet: ${a} · ${n} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} · ${n} = ${u}. Es gilt ${a} · ${n} = ${r}.`, true), opt('Stimmt.', false, 'dezimal-stelle'), opt(`Falsch. Es gilt ${a} · ${n} = ${schiebe(r, 1)}.`, false, 'dezimal-stelle')],
+      return auswahl(Z(`${kn} rechnet: ${a} · ${n} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} · ${n} = ${u}. Es gilt ${a} · ${n} = ${r}.`, true), opt('Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie im Faktor.', false, 'dezimal-stelle'), opt(`Falsch. Es gilt ${a} · ${n} = ${schiebe(r, 1)}.`, false, 'dezimal-stelle')],
         h2('Runde die Dezimalzahl auf Ganze.', 'Vergleiche den Überschlag mit dem Ergebnis.'), { nachweis: [H(ga, `${a} gerundet`), `${ga} · ${n} = ${u}`, `${a} · ${n} = ${r}`, URTEIL(false, `${a} · ${n} = ${falsch}`)] }); },
   ]);
   sechs(M1, 'E', [
@@ -111,7 +111,7 @@ export function multiplizieren6() {
       return dezimal(Z(`Multipliziere schriftlich im Heft: ${a} · ${n}`), num(l), dfe(l, kommaDaneben(l)), h1('Schreibe die Zahlen ohne Komma untereinander. Setze das Komma am Ende.'), { nachweis: [`${a} · ${n} = ${l}`] }); },
     () => { const a = dez(2, 1.05, 3.95), n = zz(105, 160), l = mal(a, String(n));
       return dezimal(Z(`Ein Paket wiegt ${a} kg.`, `Ein Lieferwagen bringt ${n} solche Pakete.`, 'Rechne im Heft.', 'Gib das Gewicht aller Pakete an.'), num(l), dfe(l, kommaDaneben(l)), h1('Mache zuerst einen Überschlag.'), { einheit: 'kg', nachweis: [`${a} kg · ${n} = ${l} kg`] }); },
-    () => { const n = zz(12, 29), opts = [['Weniger als ein Ganzes mehrmals genommen ergibt weniger als die Zahl der Ganzen.', true], ['Ein Ergebnis mit Komma ist immer klein.', false], ['Beim Malnehmen rückt das Komma immer nach links.', false]];
+    () => { const n = zz(12, 29), opts = [['Weniger als ein Ganzes mehrmals genommen ergibt weniger als die Zahl der Ganzen.', true], ['Ein Ergebnis mit Komma ist immer kleiner als eine natürliche Zahl.', false], ['Beim Malnehmen mit einer Dezimalzahl rückt das Komma immer nach links.', false]];
       return auswahl(Z(`Kreuze die Begründung an, warum 0,9 · ${n} kleiner als ${n} ist.`), opts.map(([x, r]) => opt(x, r, r ? undefined : x.includes('klein.') ? 'dezimal-stelle' : 'komma-falsche-richtung')), h1(`Vergleiche mit 1 · ${n}.`), { nachweis: [FREI('Faktor unter 1 begründen')] }); },
     () => { const a = dez(2, 1.01, 4.99), n = zz(3, 9), r = mal(a, String(n)), falsch = schiebe(r, -1), kn = kind();
       if (!ohneEndnull(a, String(n))) return null;
@@ -158,7 +158,7 @@ export function multiplizieren6() {
       return luecken(Z(`Ohne Komma gilt: ${x} · ${y} = ${x * y}`, `Berechne damit ${a} · ${b} = {{a}}`, `Berechne damit ${c} · ${b} = {{b}}`), { a: [l1, dfe(l1, [[kommaWiePlus(a, b), 'mal-komma-wie-plus']])], b: [l2, dfe(l2, [[kommaWiePlus(c, b), 'mal-komma-wie-plus'], [l1, 'dezimal-stelle']])] },
         tG2, { nachweis: [`${x} · ${y} = ${x * y}`, `${a} · ${b} = ${l1}`, `${c} · ${b} = ${l2}`] }); },
     () => { const x = zz(2, 4), y = zz(2, 4), a = T(x, 1), b = T(y, 1), r = mal(a, b), falsch = kommaWiePlus(a, b), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${a} · ${b} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Zehntel mal Zehntel ergibt Hundertstel. Es gilt ${a} · ${b} = ${r}.`, true), opt('Stimmt.', false, 'mal-komma-wie-plus'), opt(`Stimmt, denn ${x} · ${y} = ${x * y}.`, false, 'mal-komma-wie-plus')],
+      return auswahl(Z(`${kn} rechnet: ${a} · ${b} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Zehntel mal Zehntel ergibt Hundertstel. Es gilt ${a} · ${b} = ${r}.`, true), opt('Stimmt. Zehntel mal Zehntel ergibt wieder Zehntel. Das Komma bleibt an seiner Stelle.', false, 'mal-komma-wie-plus'), opt(`Stimmt, denn ${x} · ${y} = ${x * y}.`, false, 'mal-komma-wie-plus')],
         h3('Zähle die Stellen nach dem Komma in beiden Faktoren zusammen.', '0,4 · 0,2: zusammen zwei Stellen. Also 0,08.', 'So viele Stellen braucht das Ergebnis.'), { nachweis: [`${x} · ${y} = ${x * y}`, `${a} · ${b} = ${r}`, URTEIL(false, `${a} · ${b} = ${falsch}`)] }); },
   ]);
   sechs(M2, 'M', [
@@ -174,7 +174,7 @@ export function multiplizieren6() {
       return auswahl(Z(`Kreuze alle Rechnungen an, die dasselbe Ergebnis haben wie ${a} · ${b}.`), mische(o).map(([x, r]) => opt(x, r, r ? undefined : 'mal-komma-wie-plus')),
         h2('Zähle in jeder Rechnung die Nachkommastellen beider Faktoren zusammen.', 'Gleiche Ziffern und gleich viele Nachkommastellen ergeben dasselbe Ergebnis.'), { mehrfach: true, nachweis: [`${a} · ${b} = ${l}`, WERT(l)] }); },
     () => { const a = dez(1, 2.1, 9.9), b = dez(1, 2.1, 9.9), r = mal(a, b), falsch = schiebe(r, 1), kn = kind(), ga = grob(a), gb = grob(b), u = mal(ga, gb);
-      return auswahl(Z(`${kn} rechnet: ${a} · ${b} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} · ${gb} = ${u}. Es gilt ${a} · ${b} = ${r}.`, true), opt('Stimmt.', false, 'mal-komma-wie-plus'), opt(`Falsch. Es gilt ${a} · ${b} = ${schiebe(r, -1)}.`, false, 'dezimal-stelle')],
+      return auswahl(Z(`${kn} rechnet: ${a} · ${b} = ${falsch}`, 'Prüfe das Ergebnis mit einem Überschlag.'), [opt(`Falsch. Der Überschlag ist ${ga} · ${gb} = ${u}. Es gilt ${a} · ${b} = ${r}.`, true), opt('Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie in den Faktoren.', false, 'mal-komma-wie-plus'), opt(`Falsch. Es gilt ${a} · ${b} = ${schiebe(r, -1)}.`, false, 'dezimal-stelle')],
         h2('Runde beide Faktoren auf Ganze.', 'Vergleiche den Überschlag mit dem Ergebnis.'), { nachweis: [H(ga, `${a} gerundet`), H(gb, `${b} gerundet`), `${ga} · ${gb} = ${u}`, `${a} · ${b} = ${r}`, URTEIL(false, `${a} · ${b} = ${falsch}`)] }); },
   ]);
   sechs(M2, 'E', [
@@ -185,7 +185,7 @@ export function multiplizieren6() {
     () => { const p = euro(T(4 * zz(150, 300), 2)), m = wahl(['0,75', '0,25', '1,25']), l = euro(mal(p, m)), kn = kind();
       return dezimal(Z(`1 m Stoff kostet ${p} €.`, `${kn} braucht ${m} m Stoff.`, 'Rechne im Heft.', 'Berechne den Preis.'), l, dfe(l, [[kommaWiePlus(p, m), 'mal-komma-wie-plus'], [euro(schiebe(l, 1)), 'dezimal-stelle']]), h1('Überlege zuerst: Ist der Preis höher oder niedriger als für einen Meter?'),
         { einheit: '€', nachweis: [`${m} m : 1 m = ${m}`, `${p} € · ${m} = ${l} €`] }); },
-    () => { const x = zz(2, 3), a = T(x, 1), kn = kind(), opts = [['Das Komma wurde wie beim Addieren gesetzt. Das Ergebnis braucht so viele Nachkommastellen wie beide Faktoren zusammen.', true], ['Beim Einmaleins wurde falsch gerechnet.', false], ['Hier hätte man plus rechnen müssen.', false]];
+    () => { const x = zz(2, 3), a = T(x, 1), kn = kind(), opts = [['Das Komma wurde wie beim Addieren gesetzt. Hier braucht das Ergebnis zwei Stellen nach dem Komma.', true], ['Beim Einmaleins wurde falsch gerechnet. Das Komma steht an der richtigen Stelle.', false], ['Hier hätte man plus rechnen müssen. Dann stimmt auch das Komma im Ergebnis.', false]];
       return auswahl(Z(`${kn} rechnet: ${a} · ${a} = ${kommaWiePlus(a, a)}`, 'Kreuze die Erklärung für den Fehler an.'), opts.map(([t, r]) => opt(t, r, r ? undefined : t.includes('Einmaleins') ? '1x1-nachbar' : '1x1-addiert')), h1(`Rechne selbst: ${a} · ${a} = ${mal(a, a)}.`), { nachweis: [FREI('Fehler beim Komma im Produkt erklären')] }); },
     () => { const a = dez(1, 1.1, 2.9), b = T(zz(2, 9), 1), r = mal(a, b), falsch = kommaWiePlus(a, b), kn = kind();
       if (falsch === r || !ohneEndnull(a, b)) return null;

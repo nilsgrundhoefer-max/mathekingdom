@@ -76,7 +76,7 @@ export function dividieren() {
     },
     3: () => { const a = zz(6, 9), k = kind();
       return auswahl(Z(`${k} sagt:`, '„Der Quotient ist immer kleiner als die erste Zahl.“', `Prüfe mit ${a} : 1.`, 'Stimmt das?'),
-        [opt(`Falsch. ${a} : 1 = ${a}. Der Quotient ist hier genauso groß.`, true), opt('Stimmt. Beim Teilen wird jede Zahl kleiner.'), opt(`Stimmt. ${a} : 1 = ${a - 1}.`, false, 'div-einmaleins')],
+        [opt(`Falsch. ${a} : 1 = ${a}. Der Quotient ist hier genauso groß.`, true), opt('Stimmt. Beim Teilen wird jede Zahl immer kleiner.'), opt(`Stimmt. ${a} : 1 = ${a - 1}.`, false, 'div-einmaleins')],
         h3('Rechne die Aufgabe aus. Vergleiche das Ergebnis mit der ersten Zahl.', '5 : 1 = 5. 5 Äpfel für 1 Kind: Das Kind bekommt alle 5.', `Rechne ${a} : 1. Wie viel bekommt 1 Kind allein?`), { bild: B.gruppen(1, a), nachweis: [U(false), ...N(`${a} : 1`)] }); },
   });
 
@@ -323,7 +323,7 @@ export function dividieren() {
           h1(`Prüfe jede Aussage an der Zahl ${d} selbst.`), { nachweis: N(`${d} : ${x}`, `${d} : ${y}`, `${x} · ${y}`) }); }
       const [d, x, y] = wahl([[24, 4, 6], [18, 3, 6], [28, 4, 7], [32, 4, 8]]), q = zz(52, 148), a = d * q, n = kind();
       return auswahl(`${n} berechnet ${fz(a)} : ${d} in zwei Schritten: zuerst ${fz(a)} : ${x} = ${fz(a / x)}, dann ${fz(a / x)} : ${y} = ${q}. Beurteile den Rechenweg.`, [
-        opt(`Richtig, denn ${x} · ${y} = ${d}. Nacheinander durch ${x} und durch ${y} zu teilen wirkt wie das Teilen durch ${d}.`, true), opt(`Falsch. ${n} müsste zuerst durch ${d - x} und dann durch ${x} teilen.`),
+        opt(`Richtig, denn ${x} · ${y} = ${d}. Nacheinander durch ${x} und durch ${y} zu teilen wirkt wie das Teilen durch ${d}.`, true), opt(`Falsch. ${n} müsste zuerst durch ${d - x} und dann noch einmal durch ${x} teilen, denn ${d - x} + ${x} = ${d}.`),
         opt('Falsch. Ein Divisor darf nicht zerlegt werden.'), opt(`Richtig, aber nur, weil ${fz(a)} eine gerade Zahl ist.`), opt(`Falsch, denn ${x} + ${y} ist nicht ${d}.`)],
       h1('Mache die Probe: Multipliziere das Ergebnis nacheinander mit beiden Zahlen.'), { nachweis: N(U(true, `${a} : ${d}`, q), `${a} : ${x}`, `${a / x} : ${y}`, `${x} · ${y}`, `${a} : ${d}`) });
     },
@@ -379,7 +379,7 @@ export function dividieren() {
     },
     3: () => { const [a, d, q, r] = suche(restG, ([, , w]) => w >= 4), k = kind();
       return auswahl(Z(`${k} rechnet: ${a} : ${d} = ${q - 1} Rest ${r + d}.`, 'Stimmt das?'),
-        [opt(`Falsch. Der Rest ${r + d} ist größer als ${d}. Richtig ist ${q} Rest ${r}.`, true), opt(`Stimmt. Die Probe passt: ${q - 1} · ${d} + ${r + d} = ${a}.`, false, 'div-rest-zu-gross'), opt(`Falsch. Richtig ist ${q + 1} Rest ${r}.`, false, 'div-einmaleins')],
+        [opt(`Falsch. Der Rest ${r + d} ist größer als ${d}. Richtig ist ${q} Rest ${r}.`, true), opt(`Stimmt. Die Probe passt: ${q - 1} · ${d} + ${r + d} = ${a}. Der Rest darf so groß sein.`, false, 'div-rest-zu-gross'), opt(`Falsch. Richtig ist ${q + 1} Rest ${r}.`, false, 'div-einmaleins')],
         h3('Vergleiche den Rest mit der Zahl, durch die geteilt wird.', '58 : 7 = 7 Rest 9? Der Rest 9 ist größer als 7. Richtig ist 8 Rest 2.', `Der Rest ist ${r + d}. Passt die ${d} noch einmal hinein?`), { nachweis: N(U(false, `${a} : ${d}`, q - 1, r + d), `${a} : ${d} = ${q} Rest ${r}`, `${q - 1} · ${d} + ${r + d}`) }); },
   });
 
@@ -411,7 +411,7 @@ export function dividieren() {
     },
     3: () => { const [a, d, q, r] = suche(() => mitRest(28, 52, 3, 8), ([, x, , rest]) => rest > x / 2), k = kind();
       return auswahl(`${a} Kinder fahren mit Bussen zum Wandertag. Ein Bus hat ${d} Plätze. ${k} rechnet ${a} : ${d} = ${q} Rest ${r} und bestellt ${q} Busse. Beurteile die Entscheidung.`,
-        [opt(`Falsch: ${r} Kinder hätten keinen Platz. Es werden ${q + 1} Busse gebraucht.`, true), opt(`Richtig: ${q} Busse sind voll, das genügt.`, false, 'div-rest-nicht-gedeutet'), opt(`Falsch: Es werden ${r} Busse gebraucht.`, false, 'div-rest-vergessen'), opt('Richtig: Bei Sachaufgaben lässt man den Rest weg.', false, 'div-rest-nicht-gedeutet')],
+        [opt(`Falsch: ${r} Kinder hätten keinen Platz. Es werden ${q + 1} Busse gebraucht.`, true), opt(`Richtig: ${q} Busse sind voll, das genügt.`, false, 'div-rest-nicht-gedeutet'), opt(`Falsch: Es werden ${r} Busse gebraucht.`, false, 'div-rest-vergessen'), opt('Richtig: Bei Sachaufgaben lässt man den Rest immer einfach weg.', false, 'div-rest-nicht-gedeutet')],
         h2('Was bedeutet der Rest in dieser Situation? Wer oder was ist das?', `Der Rest ${r} steht für ${r} Kinder, die in den ${q} Bussen keinen Platz finden.`), { nachweis: N(U(false), `${a} : ${d} = ${q} Rest ${r}`, `${q} + 1`) }); },
   });
 
@@ -492,7 +492,7 @@ export function dividieren() {
     },
     3: () => { const [a, d, q] = suche(() => schriftlichG(112, 199), ([x, y, w]) => w % 100 >= 12 && (Math.round(x / 100) * 100) % (y * 10) === 0), ar = Math.round(a / 100) * 100, ue = ar / d, falsch = q % 100, k = kind();
       return auswahl(Z(`${k} rechnet: ${a} : ${d} = ${falsch}.`, `Der Überschlag ist ${ar} : ${d} = ${ue}.`, 'Was zeigt der Überschlag?'),
-        [opt(`${falsch} ist viel zu klein. Das Ergebnis muss nahe bei ${ue} liegen. Richtig ist ${q}.`, true), opt(`${falsch} passt zum Überschlag.`, false, 'div-stellenwert'), opt(`Der Überschlag ist falsch. ${ar} : ${d} = ${ue / 10}.`, false, 'div-stellenwert')],
+        [opt(`${falsch} ist viel zu klein. Das Ergebnis muss nahe bei ${ue} liegen. Richtig ist ${q}.`, true), opt(`${falsch} passt zum Überschlag.`, false, 'div-stellenwert'), opt(`Der Überschlag ist falsch. ${ar} : ${d} = ${ue / 10}. Das Ergebnis muss nahe bei ${ue / 10} liegen.`, false, 'div-stellenwert')],
         h3('Vergleiche das Ergebnis mit dem Überschlag. Die Zahlen müssen nahe beieinander liegen.', '848 : 4 = 12? Der Überschlag ist 800 : 4 = 200. 12 ist viel kleiner als 200. Richtig ist 212.', `Liegt ${falsch} nahe bei ${ue}?`), { nachweis: [U(false, `${a} : ${d}`, falsch), `${a} ≈ ${ar}`, ...N(`${ar} : ${d}`, `${a} : ${d}`)] }); },
   });
 
@@ -519,7 +519,7 @@ export function dividieren() {
     3: () => { const d = wahl([14, 15, 16, 24, 25, 26]), q = zz(18, 36) * 10 + zz(2, 9), a = d * q, k = kind();
       const dr = Math.ceil(d / 10) * 10, ar = Math.floor(a / 1000) * 1000, ue = Math.round(ar / dr);
       return auswahl(`${k} rechnet ${fz(a)} : ${d} = ${q}. Die Probe ${q} · ${d} = ${fz(a)} stimmt. Ein grober Überschlag mit ${fz(ar)} : ${dr} ergibt aber nur etwa ${ue}. Was folgt daraus?`,
-        [opt(`Das Ergebnis ${q} stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.`, true), opt(`Das Ergebnis ist falsch, weil der Überschlag etwa ${ue} ergibt.`, false, 'ueberschlag-nicht-gerundet'), opt('Die Probe muss falsch sein.', false, 'probe-falsche-umkehr'), opt('Man nimmt den Mittelwert aus Ergebnis und Überschlag.')],
+        [opt(`Das Ergebnis ${q} stimmt. Der Überschlag ist nur grob, weil stark gerundet wurde.`, true), opt(`Das Ergebnis ist falsch, weil der Überschlag etwa ${ue} ergibt und nicht dazu passt.`, false, 'ueberschlag-nicht-gerundet'), opt('Die Probe muss falsch sein.', false, 'probe-falsche-umkehr'), opt('Man nimmt den Mittelwert aus Ergebnis und Überschlag.')],
         h2('Welche Prüfung ist genau, welche nur ungefähr?', 'Die Probe rechnet genau zurück. Der Überschlag zeigt nur die Größenordnung.'), { nachweis: [...N(`${q} · ${d}`, `${a} : ${d}`), { zahl: ar, grund: 'abgerundeter Dividend' }, { zahl: dr, grund: 'aufgerundeter Divisor' }, { zahl: ue, grund: 'gerundeter Überschlagswert' }] }); },
   });
 
@@ -540,7 +540,7 @@ export function dividieren() {
     },
     3: (k) => {
       if (k === 0) return auswahl('Paula rundet bei einem Überschlag zur Division sowohl den Dividenden als auch den Divisor auf. Welche Aussage über ihren Überschlag gilt?',
-        [opt('Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.', true), opt('Er ist dann immer zu groß.', false, 'falsch-gerundet'), opt('Er ist dann immer zu klein.', false, 'falsch-gerundet'), opt('Er stimmt dann immer genau.', false, 'ueberschlag-nicht-gerundet')],
+        [opt('Er kann zu groß oder zu klein sein, weil die beiden Rundungen in entgegengesetzte Richtungen wirken.', true), opt('Er ist dann immer zu groß, weil beide Zahlen durch das Aufrunden größer geworden sind.', false, 'falsch-gerundet'), opt('Er ist dann immer zu klein.', false, 'falsch-gerundet'), opt('Er stimmt dann immer genau.', false, 'ueberschlag-nicht-gerundet')],
         h1('Was bewirkt ein größerer Dividend, was ein größerer Divisor? Probiere 100 : 20, 120 : 20 und 100 : 25.'), { nachweis: N('100 : 20', '120 : 20', '100 : 25') });
       const [a, d, q] = wahl([[4872, 58, 84], [4704, 56, 84], [4902, 57, 86]]), n = kind();
       return auswahl(`${n} überschlägt ${fz(a)} : ${d} mit 5000 : 50 = 100. Der genaue Wert ist ${q}. Warum ist der Überschlag deutlich zu groß?`, [
@@ -568,7 +568,7 @@ export function dividieren() {
       return zahl(Z(`${a} Kinder gehen in ${d} gleich große Gruppen.`, 'Wie viele Kinder sind in 1 Gruppe?'), q, fehlerliste(q, [[a - d, 'div-falsche-rechenart'], [d, 'sach-falsche-rechnung']]),
         h3('Alle Gruppen sind gleich groß. Du musst teilen.', '12 Kinder in 3 Gruppen: 12 : 3 = 4. In jeder Gruppe sind 4 Kinder.', `Rechne ${a} : ${d}. Zähle im Bild 1 Gruppe.`), { einheit: 'Kinder', bild: B.gruppen(d, q), nachweis: N(`${a} : ${d}`) }); },
     () => { const [a, d, q] = suche(() => einmaleins(2, 5, 3, 6), ([, y, w]) => y !== w);
-      return auswahl(Z(`Die Rechnung ist ${a} : ${d} = ${q}.`, 'Welche Geschichte passt?'), [opt(`${a} Kekse werden an ${d} Kinder gerecht verteilt.`, true), opt(`Zu ${a} Keksen kommen ${d} Kekse dazu.`, false, 'div-falsche-rechenart'), opt(`Von ${a} Keksen werden ${d} gegessen.`, false, 'div-falsche-rechenart')],
+      return auswahl(Z(`Die Rechnung ist ${a} : ${d} = ${q}.`, 'Welche Geschichte passt?'), [opt(`${a} Kekse werden an ${d} Kinder gerecht verteilt.`, true), opt(`Zu ${a} Keksen kommen noch ${d} Kekse dazu.`, false, 'div-falsche-rechenart'), opt(`Von ${a} Keksen werden ${d} gegessen.`, false, 'div-falsche-rechenart')],
         h3('Geteilt bedeutet: gerecht verteilen.', '10 : 2 = 5 passt zu: 10 Äpfel werden an 2 Kinder verteilt.', 'Suche die Geschichte, in der etwas gerecht verteilt wird.'), { bild: B.gruppen(d, q), nachweis: N(`${a} : ${d}`) }); },
     () => { const w = zz(2, 5);
       return zahl(Z('1 Woche hat 7 Tage.', `Wie viele Wochen sind ${w * 7} Tage?`), w, fehlerliste(w, [[w * 7 - 7, 'div-falsche-rechenart']]),
@@ -595,12 +595,12 @@ export function dividieren() {
         return auswahl(Z(`${d} ${viele} kosten zusammen ${a} €.`, 'Alle kosten gleich viel.', 'Gesucht ist der Preis für 1 Stück.', 'Welche Rechnung passt?'), [opt(`${a} : ${d}`, true), opt(`${a} · ${d}`, false, 'div-falsche-rechenart'), opt(`${a} − ${d}`, false, 'div-falsche-rechenart')],
           h3('Der Gesamtpreis wird gerecht aufgeteilt.', '4 Bälle kosten 48 €. 1 Ball kostet 48 : 4 = 12 €.', `Der Gesamtpreis ${a} wird geteilt. Er steht vorn.`), { bild: B.material(hze(a)), nachweis: N(`${a} : ${d}`) }); }
       const [a, d, q] = schriftlichG(12, 99), n = kind();
-      return auswahl(Z(`${a} Flaschen stehen in ${d} gleich vollen Regalen.`, `${n} rechnet ${a} : ${d} = ${q}.`, `Was bedeutet die ${q}?`), [opt(`In jedem Regal stehen ${q} Flaschen.`, true), opt(`Es gibt ${q} Regale.`, false, 'sach-falsche-rechnung'), opt(`${q} Flaschen bleiben übrig.`, false, 'div-rest-vergessen')],
+      return auswahl(Z(`${a} Flaschen stehen in ${d} gleich vollen Regalen.`, `${n} rechnet ${a} : ${d} = ${q}.`, `Was bedeutet die ${q}?`), [opt(`In jedem Regal stehen ${q} Flaschen.`, true), opt(`Es gibt ${q} Regale.`, false, 'sach-falsche-rechnung'), opt(`${q} Flaschen bleiben am Ende übrig.`, false, 'div-rest-vergessen')],
         h3('Lies noch einmal: Was ist gegeben? Was wurde ausgerechnet?', '60 Flaschen in 5 Regalen: 60 : 5 = 12. In jedem Regal stehen 12 Flaschen.', `Die Zahl der Regale kennst du schon: ${d}. Die ${q} sagt etwas über 1 Regal.`), { bild: B.material(hze(a)), nachweis: N(`${a} : ${d}`) });
     },
     3: () => { const [a, d, q] = preisG(), [viele, eins] = wahl(kaufG), n = kind();
       return auswahl(Z(`${d} ${viele} kosten zusammen ${a} €.`, `${n} rechnet ${a} − ${d} = ${a - d}.`, `${n} sagt: „1 ${eins} kostet ${a - d} €.“`, 'Stimmt das?'),
-        [opt(`Falsch. Hier wird geteilt: ${a} : ${d} = ${q}. 1 ${eins} kostet ${q} €.`, true), opt(`Stimmt. ${a} − ${d} = ${a - d}.`, false, 'div-falsche-rechenart'), opt(`Falsch. Hier wird mal gerechnet: ${a} · ${d}.`, false, 'div-falsche-rechenart')],
+        [opt(`Falsch. Hier wird geteilt: ${a} : ${d} = ${q}. 1 ${eins} kostet ${q} €.`, true), opt(`Stimmt. ${a} − ${d} = ${a - d}.`, false, 'div-falsche-rechenart'), opt(`Falsch. Hier wird mal gerechnet: ${a} · ${d}. So viel kostet 1 ${eins}.`, false, 'div-falsche-rechenart')],
         h3('Überlege: Kann 1 Stück fast so viel kosten wie alle zusammen?', '4 Bälle kosten 48 €. 1 Ball kostet 48 : 4 = 12 €. Nicht 48 − 4 = 44 €.', `Prüfe die Antwort: ${d} mal ${a - d} € wäre viel mehr als ${a} €.`), { bild: B.material(hze(a)), nachweis: N(U(false), `${a} : ${d}`, `${a} − ${d}`) }); },
   });
 
@@ -627,7 +627,7 @@ export function dividieren() {
     },
     3: () => { const n = zz(18, 27), q = zz(16, 24), a = n * q, weniger = q - zz(2, 4), k = kind();
       return auswahl(`Der Ausflug kostet für ${n} Kinder zusammen ${fz(a)} €. ${k} sagt: „Wenn jedes Kind ${weniger} € mitbringt, reicht das Geld.“ Beurteile die Aussage.`,
-        [opt(`Falsch: ${n} · ${weniger} € = ${fz(n * weniger)} €, es fehlen ${fz(a - n * weniger)} €. Nötig sind ${q} € pro Kind.`, true), opt(`Richtig: ${weniger} € sind fast ${q} €, das genügt.`, false, 'div-rest-nicht-gedeutet'), opt(`Richtig: ${fz(a)} : ${weniger} ist mehr als ${n}.`, false, 'sach-falsche-rechnung'), opt(`Falsch: Jedes Kind muss ${n} € zahlen.`, false, 'div-vertauscht')],
+        [opt(`Falsch: ${n} · ${weniger} € = ${fz(n * weniger)} €, es fehlen ${fz(a - n * weniger)} €. Nötig sind ${q} € pro Kind.`, true), opt(`Richtig: ${weniger} € sind fast ${q} €, das genügt bei so vielen Kindern.`, false, 'div-rest-nicht-gedeutet'), opt(`Richtig: ${fz(a)} : ${weniger} ist mehr als ${n}.`, false, 'sach-falsche-rechnung'), opt(`Falsch: Jedes Kind muss ${n} € zahlen.`, false, 'div-vertauscht')],
         h2('Berechne, wie viel jedes Kind zahlen muss, oder wie viel bei dem Vorschlag zusammenkommt.', `Rechne ${fz(a)} : ${n} oder ${n} · ${weniger}.`), { nachweis: N(U(false), `${n} · ${weniger}`, `${a} − ${n * weniger}`, `${a} : ${n}`) }); },
   });
 

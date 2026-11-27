@@ -4,7 +4,7 @@
 // halbe Bilder im Bilddiagramm erst ab M, Bündeln der Strichliste auf F und G von selbst, ab M selbst.
 
 import { sechs, zahl, auswahl, opt, luecken, sach, teil, tabelle, L, Z, B, frage, h1, h2, h3, zz, wahl, mische, suche, summe, kind, zweiKinder, U,
-  HILFSZAHL, strichlisteAnlegen, zeichnen, aufgaben } from '../werkzeug.mjs';
+  HILFSZAHL, er, Er, strichlisteAnlegen, zeichnen, aufgaben } from '../werkzeug.mjs';
 
 const ID = (uk, kurz) => `5.1.${uk}-${kurz}`;
 
@@ -199,7 +199,7 @@ function strichlisten() {
     lies('G', 4, 4, 19),
     () => { const s = klein(), namen = namenVon(s, 3), w = werte(3, 6, 18), gesamt = summe(w); const [a, b] = [namen[w.indexOf(Math.max(...w))], namen[w.indexOf(Math.min(...w))]]; const d = Math.max(...w) - Math.min(...w);
       return sach(Z(s.einleitung, 'Lies die Strichliste ab.'), [teil(s.alle, gesamt, s.einheit, ohneDoppelte(gesamt, [{ wert: alsVier(w[0]) + alsVier(w[1]) + alsVier(w[2]), fehlvorstellung: 'strich-buendel-als-vier' }])),
-        teil(s.mehr(a, b), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'sach-falsche-rechnung' }]))],
+        teil(s.mehr(a, b), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'unterschied-addiert' }]))],
       hil('G', 'Zähle jede Zeile. Schreibe die Zahl daneben.', 'Zeilen mit 7, 9 und 4 Strichen: 7 + 9 + 4 = 20.', `Die Zeilen haben ${w.join(', ')} Striche.`),
       { bild: strichBild(namen, w, s.diagrammTitel), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${gesamt}`, `${Math.max(...w)} − ${Math.min(...w)} = ${d}`] }); },
     () => { const s = klein(), namen = namenVon(s, 3), w = werte(3, 6, 14, 1, (x) => x.every((y) => y % 5 !== 0)); const i = zz(0, 2), fehlt = 5 - (w[i] % 5), voll = w[i] + fehlt;
@@ -217,7 +217,7 @@ function strichlisten() {
     anlegen('M', 4, 3, 9, 'selbst'),
     () => { const s = klein(), namen = namenVon(s, 4), w = werte(4, 4, 24), gesamt = summe(w); const [g, k] = [groesster(namen, w), kleinster(namen, w)], d = Math.max(...w) - Math.min(...w);
       return sach(Z(s.einleitung, 'Werte die Strichliste aus.'), [teil(s.alle, gesamt, s.einheit, ohneDoppelte(gesamt, [{ wert: summe(w.map(alsVier)), fehlvorstellung: 'strich-buendel-als-vier' }])),
-        teil(s.mehr(g, k), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'sach-falsche-rechnung' }]))],
+        teil(s.mehr(g, k), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'unterschied-addiert' }]))],
       hil('M', 'Schreibe zu jeder Zeile die Anzahl als Zahl. Rechne dann mit den Zahlen.', `Die Zeilen haben ${w.join(', ')} Striche.`),
       { bild: strichBild(namen, w, s.diagrammTitel), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${gesamt}`, `${Math.max(...w)} − ${Math.min(...w)} = ${d}`] }); },
     nachtragen('M', 4, 'selbst'),
@@ -229,7 +229,7 @@ function strichlisten() {
     () => { const s = kleinUmfrage(), namen = namenVon(s, 3), w = werte(3, 7, 14); const i = zz(0, 2);
       // Eine Zeile ist falsch gebündelt: fünf gerade Striche, dann erst der Querstrich.
       const falsch = 'IIIII/' + 'I'.repeat(w[i] - 6);
-      return auswahl(Z(`${kind()} hat eine Strichliste zur Umfrage „${s.titel}“ gemacht.`, 'In einer Zeile hat er falsch gebündelt.', 'In welcher Zeile?'), namen.map((nm, j) => opt(nm, j === i)),
+      return auswahl(((k) => Z(`${k} hat eine Strichliste zur Umfrage „${s.titel}“ gemacht.`, `In einer Zeile hat ${er(k)} falsch gebündelt.`, 'In welcher Zeile?'))(kind()), namen.map((nm, j) => opt(nm, j === i)),
         hil('M', 'Ein Bündel hat vier gerade Striche. Der fünfte geht quer darüber.', `In der Zeile ${s.gewaehlt(namen[i])} stehen fünf gerade Striche vor dem Querstrich.`),
         { bild: B.strichliste(namen.map((nm, j) => [nm, w[j], ...(j === i ? [falsch] : [])]), s.diagrammTitel), nachweis: [ZEILE('falschGebuendelt')] }); },
   ]);
@@ -402,14 +402,14 @@ function diagrammeLesen() {
       hil(n, was === 'groesste' ? (liegend ? 'Suche den längsten Balken.' : 'Suche die höchste Säule.') : (liegend ? 'Suche den kürzesten Balken.' : 'Suche die niedrigste Säule.'), was === 'groesste' ? 'Die höchste Säule zeigt den größten Wert.' : 'Die niedrigste Säule zeigt den kleinsten Wert.', `Vergleiche die Enden der ${liegend ? 'Balken' : 'Säulen'}.`),
       { bild: (liegend ? balkenBild : saeulenBild)(s, namen, w, sk), nachweis: [ZEILE(was)] }); };
   const welcheZeigt = (n, liegend) => () => { const s = sach_(n), sk = wahl(SKALA[n]), k = n === 'F' || n === 'G' ? 3 : 4, namen = namenVon(s, k), w = skalenWerte(sk, k, n), i = zz(0, k - 1);
-    return auswahl(Z(s.einleitung, `Bei welcher ${liegend ? 'Zeile' : 'Säule'} sind es genau ${w[i]} ${s.einheit}?`), namen.map((nm) => opt(s.gewaehlt(nm), nm === namen[i])),
+    return auswahl(Z(s.einleitung, `Bei ${liegend ? 'welchem Balken' : 'welcher Säule'} sind es genau ${w[i]} ${s.einheit}?`), namen.map((nm) => opt(s.gewaehlt(nm), nm === namen[i])),
       hil(n, `Suche die Zahl ${w[i]} an der Achse. Welches Ende liegt genau auf dieser Linie?`, 'Die Säule endet genau bei 25: Sie zeigt 25.', `Die Linien gehen in ${sk.fein}er-Schritten.`),
       { bild: (liegend ? balkenBild : saeulenBild)(s, namen, w, sk), nachweis: [ZEILE('gleich', w[i])] }); };
   // Mehrere Fragen zu einem Diagramm.
   const zweiFragen = (n, liegend, k = 4) => () => { const s = sach_(n), sk = wahl(SKALA[n]), namen = namenVon(s, k), w = skalenWerte(sk, k, n); const [i, j] = mische([...namen.keys()]).slice(0, 2);
     const [a, b] = w[i] >= w[j] ? [i, j] : [j, i], d = w[a] - w[b];
     return sach(Z(s.einleitung, 'Lies die Werte ab und rechne.'), [teil(s.zus(namen[i], namen[j]), w[i] + w[j], s.einheit, ohneDoppelte(w[i] + w[j], [{ wert: d, fehlvorstellung: 'sach-falsche-rechnung' }])),
-      teil(s.mehr(namen[a], namen[b]), d, s.einheit, ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'sach-falsche-rechnung' }]))],
+      teil(s.mehr(namen[a], namen[b]), d, s.einheit, ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'unterschied-addiert' }]))],
     hil(n, 'Lies zuerst beide Werte ab. Schreibe sie auf. Rechne dann.', 'Werte 30 und 20: zusammen 30 + 20 = 50, Unterschied 30 − 20 = 10.', `${s.gewaehlt(namen[i])} zeigt ${w[i]}, ${s.gewaehlt(namen[j])} zeigt ${w[j]}.`),
     { bild: (liegend ? balkenBild : saeulenBild)(s, namen, w, sk), nachweis: [ABL(namen[i], w[i]), ABL(namen[j], w[j]), `${w[i]} + ${w[j]} = ${w[i] + w[j]}`, `${w[a]} − ${w[b]} = ${d}`] }); };
   const allesAblesen = (n, liegend, k) => () => { const s = sach_(n), sk = wahl(SKALA[n]), namen = namenVon(s, k), w = skalenWerte(sk, k, n);
@@ -460,7 +460,7 @@ function diagrammeLesen() {
     zweiFragen('M', true),
     () => { const s = gross(), sk = wahl(SKALA.M), namen = namenVon(s, 4), w = skalenWerte(sk, 4, 'M'), g = summe(w), d = Math.max(...w) - Math.min(...w);
       return sach(Z(s.einleitung, 'Lies die Werte ab und rechne.'), [teil(s.alle, g, s.einheit, ohneDoppelte(g, [{ wert: g - w[3], fehlvorstellung: 'sach-schritt-vergessen' }])),
-        teil(`Um wie viele ${s.subjekt} unterscheiden sich der größte und der kleinste Wert?`, d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'sach-falsche-rechnung' }]))],
+        teil(`Um wie viele ${s.subjekt} unterscheiden sich der größte und der kleinste Wert?`, d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'unterschied-addiert' }]))],
       hil('M', 'Lies alle Werte ab und schreibe sie auf.', `Die Werte sind ${w.join(', ')}.`),
       { bild: saeulenBild(s, namen, w, sk), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${g}`, `${Math.max(...w)} − ${Math.min(...w)} = ${d}`] }); },
     welcheZeigt('M', true),
@@ -791,7 +791,7 @@ function datenVergleichen() {
     const [i, j] = n === 'M' || n === 'E' ? [w.indexOf(Math.max(...w)), w.indexOf(Math.min(...w))] : mische([...namen.keys()]).slice(0, 2).sort((a, b) => w[b] - w[a]);
     const d = w[i] - w[j];
     return zahl(Z(s.einleitung, n === 'M' || n === 'E' ? `Um wie viele ${s.subjekt} unterscheiden sich der größte und der kleinste Wert?` : s.mehr(namen[i], namen[j])), d,
-      ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'sach-falsche-rechnung' }, ...(art === 'bild' ? [{ wert: d / sk.je, fehlvorstellung: 'bild-symbole-gezaehlt' }] : [])].filter((x) => Number.isInteger(x.wert))),
+      ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'unterschied-addiert' }, ...(art === 'bild' ? [{ wert: d / sk.je, fehlvorstellung: 'bild-symbole-gezaehlt' }] : [])].filter((x) => Number.isInteger(x.wert))),
       hil(n, 'Lies beide Werte ab. Ziehe den kleineren vom größeren ab.', '8 und 5: 8 − 5 = 3. Es sind 3 mehr.', `Die Werte sind ${w[i]} und ${w[j]}.`),
       { bild: bildFuer(art, s, namen, w, n, sk), nachweis: [ABL(namen[i], w[i]), ABL(namen[j], w[j]), `${w[i]} − ${w[j]} = ${d}`] }); };
   const extrem = (n, was, art) => () => { const s = n === 'F' || n === 'G' ? klein() : gross(), sk = wahl(SKALA[n]), k = n === 'F' ? 3 : 4, namen = namenVon(s, k), w = skalenWerte(sk, k, n);
@@ -811,7 +811,7 @@ function datenVergleichen() {
   const zweiGruppen = (n, k, teile) => () => { const s = kleinUmfrage(), namen = namenVon(s, k), [ga, gb] = ['Jungen', 'Mädchen'], a = werte(k, 2, n === 'G' ? 9 : 14), b = werte(k, 2, n === 'G' ? 9 : 14);
     const i = suche(() => zz(0, k - 1), (x) => a[x] !== b[x]), [g1, g2] = a[i] > b[i] ? [ga, gb] : [gb, ga], d = Math.abs(a[i] - b[i]), j = (i + 1) % k;
     const liste = [teil(`Wie viele Kinder haben „${namen[j]}“ gewählt?`, a[j] + b[j], 'Kinder', ohneDoppelte(a[j] + b[j], [{ wert: a[j], fehlvorstellung: 'sach-schritt-vergessen' }])),
-      teil(`Wie viele ${g1} mehr als ${g2} haben „${namen[i]}“ gewählt?`, d, 'Kinder', ohneDoppelte(d, [{ wert: a[i] + b[i], fehlvorstellung: 'sach-falsche-rechnung' }])),
+      teil(`Wie viele ${g1} mehr als ${g2} haben „${namen[i]}“ gewählt?`, d, 'Kinder', ohneDoppelte(d, [{ wert: a[i] + b[i], fehlvorstellung: 'unterschied-addiert' }])),
       teil(`Wie viele ${gb} wurden befragt?`, summe(b), 'Kinder', ohneDoppelte(summe(b), [{ wert: summe(a) + summe(b), fehlvorstellung: 'sach-unnoetige-angabe' }]))].slice(0, teile);
     return sach(Z(`Bei der Umfrage „${s.titel}“ wurden Jungen und Mädchen getrennt gezählt.`, 'Vergleiche.'), liste,
       hil(n, 'Die Jungen stehen in der mittleren Spalte, die Mädchen rechts.', 'Jungen 6, Mädchen 4: Es sind 2 Jungen mehr.', `In der Zeile „${namen[i]}“ stehen ${a[i]} und ${b[i]}.`),
@@ -996,12 +996,12 @@ function umfragen() {
   const FALSCHE_FRAGEN = ['Wie alt bist du?', 'Wie heißt du?', 'Hast du Geschwister?', 'Wie spät ist es?', 'Was hast du gestern gemacht?'];
   const frageWahl = (n, k, bildArt) => () => { const u = kleinUmfrage(), namen = namenVon(u, 3), w = werte(3, 2, 9, 1, (x) => x.some((y) => y >= 5)), andere = umfrage(wahl(UMFRAGEN.filter((x) => x.titel !== u.titel)));
     const optionen = [opt(u.frage, true), opt(andere.frage, false, 'umfrage-unpassend'), ...mische(FALSCHE_FRAGEN).slice(0, k - 2).map((f) => opt(f, false, 'umfrage-unpassend'))];
-    return auswahl(Z(`${kind()} hat eine Umfrage gemacht.`, bildArt === 'strich' ? 'Das ist die Strichliste.' : 'Das ist das Diagramm dazu.', 'Welche Frage hat er gestellt?'), optionen,
+    return auswahl(((k) => Z(`${k} hat eine Umfrage gemacht.`, bildArt === 'strich' ? 'Das ist die Strichliste.' : 'Das ist das Diagramm dazu.', `Welche Frage hat ${er(k)} gestellt?`))(kind()), optionen,
       hil(n, 'Schau dir die Antworten an. Zu welcher Frage passen sie?', 'Antworten „Rot“ und „Blau“ passen zur Frage nach der Lieblingsfarbe.', `Die Antworten sind ${namen.map((x) => `„${x}“`).join(', ')}.`),
       { bild: bildArt === 'strich' ? strichBild(namen, w) : B.saeulen({ titel: 'Ergebnis der Umfrage', einheit: 'Kinder', max: 10, schritt: 1, saeulen: paare(namen, w) }) }); };
   const antwortenWahl = (n, k) => () => { const u = kleinUmfrage(), andere = mische(UMFRAGEN.filter((x) => x.titel !== u.titel)).slice(0, k - 1);
     const liste = (x) => mische(x.namen).slice(0, 4).join(', ');
-    return auswahl(Z(`${kind()} will diese Frage stellen:`, `„${u.frage}“`, 'Welche Antworten soll er zur Auswahl geben?'), [opt(liste(u), true), ...andere.map((x) => opt(liste(x), false, 'umfrage-unpassend'))],
+    return auswahl(((k) => Z(`${k} will diese Frage stellen:`, `„${u.frage}“`, `Welche Antworten soll ${er(k)} zur Auswahl geben?`))(kind()), [opt(liste(u), true), ...andere.map((x) => opt(liste(x), false, 'umfrage-unpassend'))],
       hil(n, 'Jede Antwort muss zur Frage passen.', 'Zur Frage nach dem Schulweg passen „Bus“ und „Fahrrad“, aber nicht „Rot“.', 'Lies die Frage noch einmal. Wonach wird gefragt?')); };
   const UNKLAR = [
     ['Was isst du gern?', 'Jedes Kind kann viele Dinge nennen. Die Antworten lassen sich kaum zählen.'],
@@ -1070,10 +1070,11 @@ function umfragen() {
         { bild: strichBild(namen, w, u.titel), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${summe(w)}`, `${summe(w)} + ${weiss} = ${g}`] }); },
     () => { const [ort, tier] = wahl([['im Reitverein', 'Pferd'], ['im Hundeverein', 'Hund'], ['im Fußballverein', 'Fußball']]);
       const ist = tier === 'Fußball' ? 'Fußball ist der beliebteste Sport' : `Das ${tier === 'Pferd' ? 'Pferd' : 'Hund'} ist das beliebteste Tier`.replace('Das Hund', 'Der Hund');
-      return auswahl(Z(`${kind()} hat nur Kinder ${ort} befragt.`, `Er sagt: „${ist} an unserer Schule.“`, 'Was meinst du dazu?'),
+      const k = kind();
+      return auswahl(Z(`${k} hat nur Kinder ${ort} befragt.`, `${Er(k)} sagt: „${ist} an unserer Schule.“`, 'Was meinst du dazu?'),
         [opt(`Falsch geschlossen: ${ort[0].toUpperCase()}${ort.slice(1)} ist „${tier}“ natürlich besonders beliebt. Man muss Kinder aus der ganzen Schule fragen.`, true),
-          opt('Stimmt, denn er hat viele Kinder gefragt.', false), opt('Stimmt, denn eine Umfrage hat immer recht.', false), opt('Falsch, denn Umfragen sind nie richtig.', false)],
-        hil('M', 'Überlege, wen er gefragt hat. Antworten diese Kinder wie alle anderen?', 'Wer im Verein ist, mag diesen Sport oder dieses Tier besonders.'), { nachweis: [U(false)] }); },
+          opt(`Stimmt, denn ${er(k)} hat viele Kinder gefragt.`, false), opt('Stimmt, denn eine Umfrage hat immer recht.', false), opt('Falsch, denn Umfragen sind nie richtig.', false)],
+        hil('M', `Überlege, wen ${er(k)} gefragt hat. Antworten diese Kinder wie alle anderen?`, tier === 'Fußball' ? 'Wer im Fußballverein ist, mag Fußball besonders.' : `Wer ${ort} ist, mag dieses Tier besonders.`), { nachweis: [U(false)] }); },
   ]);
   sechs(U1, 'E', [
     frageWahl('E', 5, 'saeulen'),
@@ -1084,8 +1085,9 @@ function umfragen() {
       { urliste: urliste(namen, w), nachweis: [...namen.map((nm, i) => ABL(nm, w[i], 'urliste')), `${w.join(' + ')} = ${g}`, `${Math.max(...w)} − ${Math.min(...w)} = ${Math.max(...w) - Math.min(...w)}`, `${g} − ${Math.max(...w)} − ${Math.min(...w)} = ${g - Math.max(...w) - Math.min(...w)}`] }); },
     klareFrage('E', 4),
     () => { const [gruppe, was] = wahl([['nur Kinder aus dem Schwimmverein', 'Schwimmen'], ['nur Kinder aus der Tanz-AG', 'Tanzen'], ['nur Kinder am Bus', 'Bus']]);
-      return auswahl(Z(`${kind()} will wissen, wie beliebt „${was}“ an der Schule ist.`, `Er befragt ${gruppe}.`, 'Was ist das Problem?'),
-        [opt(`Diese Kinder antworten besonders oft mit „${was}“. Das Ergebnis gilt nicht für die ganze Schule.`, true), opt('Es sind zu wenige Antworten zum Zählen.', false), opt('Er hätte eine Strichliste machen müssen.', false), opt('Es gibt kein Problem.', false, 'anteil-nicht-beachtet'), opt('Er hätte zweimal fragen müssen.', false)],
+      const k = kind();
+      return auswahl(Z(`${k} will wissen, wie beliebt „${was}“ an der Schule ist.`, `${Er(k)} befragt ${gruppe}.`, 'Was ist das Problem?'),
+        [opt(`Diese Kinder antworten besonders oft mit „${was}“. Das Ergebnis gilt nicht für die ganze Schule.`, true), opt('Es sind zu wenige Antworten zum Zählen.', false), opt(`${Er(k)} hätte eine Strichliste machen müssen.`, false), opt('Es gibt kein Problem.', false, 'anteil-nicht-beachtet'), opt(`${Er(k)} hätte zweimal fragen müssen.`, false)],
         hil('E', 'Überlege, ob diese Kinder wie alle Kinder der Schule antworten.')); },
     () => { const u = kleinUmfrage(), namen = namenVon(u, 4), mo = werte(4, 3, 10), di = werte(4, 2, 6), w = mo.map((x, i) => x + di[i]);
       return tabelle(Z(`${kind()} fragt an zwei Tagen: „${u.frage}“`, 'Die Strichliste zeigt den ersten Tag, die Karten zeigen den zweiten Tag.', 'Werte beide Tage zusammen aus.'), [u.spalte, 'Anzahl'], [...namen.map((nm, i) => [nm, L(`z${i}`)]), ['Gesamt', L('g')]],

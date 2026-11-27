@@ -78,7 +78,7 @@ export function messenUndZeichnen() {
     () => messen(Z('Miss den Winkel α.', 'Wie viel Grad zeigt das Geodreieck?'), 'F', h3('Prüfe zuerst: Ist α spitz oder stumpf?', 'Ein spitzer Winkel hat weniger als 90°.', 'Lies dann auf der passenden Skala ab.'), { hinten: false }),
     () => messen(Z('Miss den Winkel α.', 'Wie viel Grad zeigt das Geodreieck?'), 'F', h3('Der erste Schenkel zeigt nach links.', 'Die Skala beginnt dann links bei 0.', 'Lies am zweiten Schenkel ab.'), { hinten: true }),
     () => { const g = 10 * zz(11, 16), k = kind();
-      return auswahl(Z(`${k} misst den Winkel α.`, `Das Kind liest ${180 - g}° ab.`, 'Stimmt das?'), [opt(`Nein.\nα ist stumpf.\nEs sind ${g}°.`, true), opt(`Ja.\nα ist ${180 - g}° groß.`, false, 'skala-falsch')],
+      return auswahl(Z(`${k} misst den Winkel α.`, `${k} liest ${180 - g}° ab.`, 'Stimmt das?'), [opt(`Nein.\nα ist stumpf.\nEs sind ${g}°.`, true), opt(`Ja.\nα ist ${180 - g}° groß.`, false, 'skala-falsch')],
         h3('Schau dir α zuerst ohne Geodreieck an.', 'Ist α größer als eine Heftecke?', 'Dann muss die Zahl größer als 90 sein.'), { bild: messbild(g, 0), nachweis: [U(false), { art: 'geoAblesen', winkel: 'α', wert: g }, ...N(`180 − ${g}`)] }); },
     () => messen(Z('Das Geodreieck liegt am Winkel α.', 'Wie groß ist α?'), 'F', h3('Der Nullpunkt liegt auf dem Scheitel.', 'Zähle auf der Skala von 0 aus.', 'Der zweite Schenkel zeigt auf die Lösung.')),
   ]);
@@ -88,9 +88,9 @@ export function messenUndZeichnen() {
     () => messen(Z('Der zweite Schenkel liegt auf der langen Seite.', 'Wie groß ist α?'), 'G', h3('Die Skala beginnt am Schenkel unter der langen Seite.', 'Lies am anderen Schenkel ab.', 'Prüfe: Passt die Zahl zu spitz oder stumpf?'), { hinten: true }),
     () => messen(Z('Das Geodreieck liegt am Winkel α.', 'Wie groß ist α?'), 'G', h3('Suche zuerst den Nullpunkt.', 'Nimm die Skala, die am Schenkel bei 0 beginnt.', 'Lies am zweiten Schenkel ab.')),
     () => { const g = 5 * zz(19, 32), von = 5 * zz(0, 71), k = kind();
-      return auswahl(Z(`${k} misst den Winkel α.`, `Das Kind liest ${180 - g}° ab.`, 'Hat es recht?'), [opt(`Nein.\nα ist stumpf.\nRichtig sind ${g}°.`, true), opt(`Ja.\nDas Geodreieck zeigt ${180 - g}°.`, false, 'skala-falsch')],
+      return auswahl(Z(`${k} misst den Winkel α.`, `${k} liest ${180 - g}° ab.`, 'Stimmt das?'), [opt(`Nein.\nα ist stumpf.\nRichtig sind ${g}°.`, true), opt(`Ja.\nDas Geodreieck zeigt ${180 - g}°.`, false, 'skala-falsch')],
         h3('Schau dir α ohne Geodreieck an.', 'Ein stumpfer Winkel hat mehr als 90°.', 'Lies auf der anderen Skala ab.'), { bild: messbild(g, von), nachweis: [U(false), { art: 'geoAblesen', winkel: 'α', wert: g }, ...N(`180 − ${g}`)] }); },
-    () => fehlerSuche((k, x) => Z(`${k} hat α gemessen und ${x}° abgelesen.`, 'Was hat das Kind falsch gemacht?'), 'G', 'skala',
+    () => fehlerSuche((k, x) => Z(`${k} hat α gemessen und ${x}° abgelesen.`, `Was hat ${k} falsch gemacht?`), 'G', 'skala',
       h3('Prüfe den Nullpunkt und die lange Seite.', 'Schätze dann α.', 'Passt die abgelesene Zahl zu spitz oder stumpf?')),
   ]);
   sechs(W1, 'M', [
@@ -101,7 +101,7 @@ export function messenUndZeichnen() {
     () => messen('Wie groß ist der Winkel α? Miss gradgenau.', 'M', h2('Prüfe zuerst, ob α spitz oder stumpf ist.', 'Lies dann auf der passenden Skala ab.'), { hinten: true }),
     () => heftMessen((A, B, C) => `Zeichne die Punkte A${P(A)}, B${P(B)} und C${P(C)} in ein Koordinatensystem mit 1 cm je Einheit. Wie groß ist der Winkel zwischen AB und AC?`,
       h2('Der Scheitel ist A.', 'Lege die lange Seite des Geodreiecks auf einen der beiden Schenkel.')),
-    () => fehlerSuche((k) => `${k} hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht?`, 'M', wahl(['nullpunkt', 'grundlinie']),
+    () => fehlerSuche((k) => `${k} hat den Winkel α so gemessen wie im Bild. Was hat ${k} falsch gemacht?`, 'M', wahl(['nullpunkt', 'grundlinie']),
       h2('Prüfe zwei Dinge: Liegt der Nullpunkt auf dem Scheitel?', 'Liegt die lange Seite auf einem Schenkel?')),
   ]);
   sechs(W1, 'E', [

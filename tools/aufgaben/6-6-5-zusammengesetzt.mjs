@@ -54,7 +54,7 @@ export function zusammengesetzt6() {
       return volumen(Z('Der Körper ist in zwei Quader zerlegt.', 'Berechne das Volumen von dem ganzen Körper.'), s.V, 'cm³', vFehlerZ(s, m[0], m[1], 'cm'), hZ('F'), { bild: s.bild('zerlegt'), nachweis: [...s.vRechnung, BN('volumen', T(s.V, 'cm³'))] }); },
     () => { const m = suche(() => masse('cm', 8, 3), (k) => stufe(...k, 'cm').x > stufe(...k, 'cm').y), s = stufe(...m, 'cm'), t = (w) => T(w, 'cm³'), kn = kind();
       return auswahl(Z(`${kn} hat die beiden Quader schon berechnet.`, `Unten sind es ${t(s.x)}, oben ${t(s.y)}.`, 'Kreuze die richtige Rechnung für den ganzen Körper an.'), [opt(`${t(s.x)} + ${t(s.y)} = ${t(s.V)}`, true), opt(`${t(s.x)} − ${t(s.y)} = ${t(s.x - s.y)}`, false, 'sach-schritt-vergessen'), opt(`2 · ${t(s.x)} = ${t(2 * s.x)}`, false, 'teilflaeche-doppelt')],
-        H('F', 'Zusammen heißt: addieren.', 'Quader mit 10 cm³ und 8 cm³: zusammen 10 cm³ + 8 cm³ = 18 cm³.', 'Suche die Rechnung mit dem Pluszeichen.'), { bild: s.bild('zerlegt'), nachweis: [BN('volumen', t(s.V)), WERT(t(s.V))] }); },
+        H('F', 'Lies die Frage genau. Was passiert mit den beiden Teilen?', 'Quader mit 10 cm³ und 8 cm³: zusammen 10 cm³ + 8 cm³ = 18 cm³.', 'Suche die Rechnung mit dem Pluszeichen.'), { bild: s.bild('zerlegt'), nachweis: [BN('volumen', t(s.V)), WERT(t(s.V))] }); },
     () => zLuecken(['Auf der Burg steht ein Podest aus Stein.', 'Es ist in zwei Quader zerlegt.', 'Berechne das Volumen.'], masse('m', 6, 2), 'm', hZ('F')),
   ]);
   sechs(Z1, 'G', [
@@ -67,7 +67,7 @@ export function zusammengesetzt6() {
     () => { const m = masse('m', 9, 4), s = stufe(...m, 'm');
       return volumen(Z('Eine Mauer der Burg hat eine Stufe.', 'Sie ist in zwei Quader zerlegt.', 'Berechne das Volumen von der Mauer.', 'Wähle auch die passende Einheit.'), s.V, 'm³', vFehlerZ(s, m[0], m[1], 'm'), hZ('G'), { einheiten: EW('m'), bild: s.bild('zerlegt'), nachweis: [...s.vRechnung, BN('volumen', T(s.V, 'm³'))] }); },
     () => { const m = masse('cm', 10, 5), s = stufe(...m, 'cm'), t = (w) => T(w, 'cm³'), kn = kind();
-      return auswahl(Z(`${kn} rechnet nur den Quader unten aus.`, `${kn} sagt: „Der Körper hat das Volumen ${t(s.x)}.“`, 'Beurteile die Aussage.'), [opt(`Falsch. Der Quader oben fehlt. Das Volumen ist ${t(s.V)}.`, true), opt('Stimmt.', false, 'sach-schritt-vergessen'), opt(`Falsch. Das Volumen ist ${t(m[0] * m[1] * s.h)}.`, false, 'teilflaeche-doppelt')],
+      return auswahl(Z(`${kn} rechnet nur den Quader unten aus.`, `${kn} sagt: „Der Körper hat das Volumen ${t(s.x)}.“`, 'Beurteile die Aussage.'), [opt(`Falsch. Der Quader oben fehlt. Das Volumen ist ${t(s.V)}.`, true), opt('Stimmt. Der Quader unten ist der ganze Körper.', false, 'sach-schritt-vergessen'), opt(`Falsch. Das Volumen ist ${t(m[0] * m[1] * s.h)}.`, false, 'teilflaeche-doppelt')],
         H('G', 'Zähle die Quader im Bild.', 'Der Körper besteht aus zwei Quadern. Beide gehören zum Volumen.', 'Berechne auch den Quader oben. Addiere dann.'), { bild: s.bild('zerlegt'), nachweis: [...s.vRechnung, BN('volumen', t(s.V)), URTEIL(false)] }); },
     () => { const [s1, b, h] = [zz(2, 5), zz(3, 9), zz(1, 4)], eine = s1 * b * h, tr = treppenKoerper(s1, b, h, 'dm');
       return volumen(Z('Die Treppe hat drei gleich hohe Stufen.', `Jede Stufe ist ${s1} dm lang, ${b} dm breit und ${h} dm hoch.`, 'Berechne das Volumen von der ganzen Treppe.', 'Wähle auch die passende Einheit.'), 6 * eine * 1e6, 'dm³', [[3 * eine * 1e6, 'sach-schritt-vergessen'], [eine * 1e6, 'sach-schritt-vergessen'], [9 * eine * 1e6, 'teilflaeche-doppelt']],
@@ -111,7 +111,7 @@ export function zusammengesetzt6() {
       return volumen(Z(`Aus einem Würfel mit der Kantenlänge ${s} cm wird an einer Ecke ein Würfel mit der Kantenlänge ${t} cm herausgeschnitten.`, 'Bestimme das Volumen des Restkörpers.'), v * 1000, 'cm³', [[s ** 3 * 1000, 'sach-schritt-vergessen'], [(s - t) ** 3 * 1000, 'volumen-waechst-wie-kante']],
         H('E', 'Berechne beide Würfel und ziehe den kleinen vom großen ab.'), { einheiten: EW('cm'), nachweis: [QN([`${s} cm`, `${s} cm`, `${s} cm`], 'volumen', `${s ** 3} cm³`), QN([`${t} cm`, `${t} cm`, `${t} cm`], 'volumen', `${t ** 3} cm³`), `${s ** 3} cm³ − ${t ** 3} cm³ = ${v} cm³`] }); },
     () => auswahl(Z('Aus einem Würfel wird an einer Ecke ein kleiner Würfel herausgeschnitten.', `${kind()} sagt: „Volumen und Oberflächeninhalt werden beide kleiner.“`, 'Beurteile die Aussage.'),
-      [opt('Falsch. Das Volumen wird kleiner. Der Oberflächeninhalt bleibt gleich: Drei Quadrate fallen weg und drei gleich große kommen innen dazu.', true), opt('Stimmt. Wenn etwas fehlt, wird beides kleiner.', false, 'volumen-oberflaeche-verwechselt'), opt('Falsch. Beides bleibt gleich, denn die Form außen ändert sich kaum.', false), opt('Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner.', false, 'volumen-oberflaeche-verwechselt')],
+      [opt('Falsch. Das Volumen wird kleiner. Der Oberflächeninhalt bleibt gleich: Drei Quadrate fallen weg und drei gleich große kommen innen dazu.', true), opt('Stimmt. Wenn etwas fehlt, wird beides kleiner.', false, 'volumen-oberflaeche-verwechselt'), opt('Falsch. Beides bleibt gleich, denn die Form außen ändert sich kaum.', false), opt('Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner, weil an der Ecke drei Quadrate wegfallen.', false, 'volumen-oberflaeche-verwechselt')],
       H('E', 'Zähle an der Ecke die Flächen, die wegfallen, und die neuen Flächen in der Lücke.'), { nachweis: [FREI('Volumen und Oberflächeninhalt beim Ausschneiden einer Ecke'), URTEIL(false)] }),
   ]);
 
@@ -120,12 +120,12 @@ export function zusammengesetzt6() {
   const reihe = (n) => Array.from({ length: n }, (_, x) => [x, 0, 0]), turm = (n) => Array.from({ length: n }, (_, z) => [0, 0, z]);
   sechs(Z2, 'F', [
     () => { const n = zz(2, 4), w = reihe(n), o = aussenflaechen(w);
-      return zahl(Z(`${n} Würfel sind zu einer Stange zusammengeklebt.`, 'Zähle die Quadrate außen an der Stange.', 'Zähle auch unten und hinten.'), o, [[6 * n, 'klebeflaeche-mitgezaehlt'], [o - 2, 'oberflaeche-drei-flaechen']], hAussen('F'), { bild: bau(w), nachweis: [BN('aussen', o)] }); },
+      return zahl(Z(`${n} Würfel sind zu einer Stange zusammengeklebt.`, 'Zähle die Quadrate außen an der Stange.', 'Zähle auch unten, hinten und links.'), o, [[6 * n, 'klebeflaeche-mitgezaehlt'], [o - 2, 'oberflaeche-drei-flaechen']], hAussen('F'), { bild: bau(w), nachweis: [BN('aussen', o)] }); },
     () => { const n = zz(2, 5), w = turm(n);
       return luecken(Z(`Der Turm besteht aus ${n} Würfeln.`, 'Zähle die Quadrate außen.', 'Oben und unten: {{o}} Quadrate', `An den vier Seiten: 4 · ${n} = {{s}} Quadrate`, 'Zusammen: {{z}} Quadrate'), { o: lk(2, [[1, 'oberflaeche-drei-flaechen']]), s: lk(4 * n), z: lk(4 * n + 2, [[6 * n, 'klebeflaeche-mitgezaehlt'], [4 * n + 1, 'oberflaeche-drei-flaechen']]) },
         H('F', 'Der Turm hat oben ein Quadrat und unten ein Quadrat.', 'Turm aus 2 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 2 = 8 Quadrate. Zusammen 10.', 'Addiere die beiden Zahlen.'), { bild: bau(w), nachweis: [`4 · ${n} = ${4 * n}`, `2 + ${4 * n} = ${4 * n + 2}`, BN('aussen', 4 * n + 2)] }); },
     () => { const [a, b] = wahl([[2, 2], [3, 2], [3, 1], [4, 2]]), w = []; for (let x = 0; x < a; x++) for (let y = 0; y < b; y++) w.push([x, y, 0]); const o = aussenflaechen(w);
-      return zahl(Z('Die Platte ist aus Würfeln gebaut.', 'Zähle die Quadrate außen an der Platte.', 'Zähle auch unten und hinten.'), o, [[6 * a * b, 'klebeflaeche-mitgezaehlt'], [a * b, 'oberflaeche-drei-flaechen'], [o - a * b, 'oberflaeche-drei-flaechen']], hAussen('F'), { bild: bau(w), nachweis: [BN('aussen', o)] }); },
+      return zahl(Z('Die Platte ist aus Würfeln gebaut.', 'Zähle die Quadrate außen an der Platte.', 'Zähle auch unten, hinten und links.'), o, [[6 * a * b, 'klebeflaeche-mitgezaehlt'], [a * b, 'oberflaeche-drei-flaechen'], [o - a * b, 'oberflaeche-drei-flaechen']], hAussen('F'), { bild: bau(w), nachweis: [BN('aussen', o)] }); },
     () => { const w = ausTuermen([wahl([[2, 1], [1, 2], [2, 1, 1], [1, 1, 2]])]), o = aussenflaechen(w);
       return flaeche(Z('Der Körper ist aus Würfeln gebaut.', 'Jedes Quadrat außen hat den Flächeninhalt 1 cm².', 'Gib den Oberflächeninhalt von dem Körper an.'), o * 100, 'cm²', [[6 * w.length * 100, 'klebeflaeche-mitgezaehlt'], [(o - 2) * 100, 'oberflaeche-drei-flaechen']],
         H('F', 'Der Oberflächeninhalt ist die Anzahl der Quadrate außen.', '10 Quadrate außen mit je 1 cm² sind zusammen 10 cm².', 'Zähle Seite für Seite: oben, unten, vorne, hinten, links, rechts.'), { bild: bau(w), nachweis: [BN('aussen', o), `${o} · 1 cm² = ${o} cm²`] }); },
@@ -133,7 +133,7 @@ export function zusammengesetzt6() {
       return auswahl(Z(`${kn} klebt ${n} Würfel zu einer Stange zusammen.`, 'Kreuze die Anzahl der Quadrate außen an.'), [opt(`${o} Quadrate`, true), opt(`${6 * n} Quadrate`, false, 'klebeflaeche-mitgezaehlt'), opt(`${6 * n - (n - 1)} Quadrate`, false, 'klebeflaeche-mitgezaehlt')],
         H('F', 'An jeder Klebestelle sind zwei Quadrate nicht mehr außen.', '2 einzelne Würfel haben 12 Quadrate. Zusammengeklebt bleiben 12 − 2 = 10 Quadrate außen.', 'Zähle die Quadrate außen am Bild.'), { bild: bau(w), nachweis: [BN('aussen', o), WERT(`${o}`)] }); },
     () => { const w = ausTuermen([wahl([[3, 2, 1], [1, 2, 3], [2, 2, 1], [1, 2, 2]])]), o = aussenflaechen(w);
-      return zahl(Z('Die Treppe ist aus Würfeln gebaut.', 'Zähle die Quadrate außen an der Treppe.', 'Zähle auch unten und hinten.'), o, [[6 * w.length, 'klebeflaeche-mitgezaehlt'], [o - 3, 'oberflaeche-drei-flaechen']], hAussen('F'), { bild: bau(w), nachweis: [BN('aussen', o)] }); },
+      return zahl(Z('Die Treppe ist aus Würfeln gebaut.', 'Zähle die Quadrate außen an der Treppe.', 'Zähle auch unten, hinten und links.'), o, [[6 * w.length, 'klebeflaeche-mitgezaehlt'], [o - 3, 'oberflaeche-drei-flaechen']], hAussen('F'), { bild: bau(w), nachweis: [BN('aussen', o)] }); },
   ]);
   sechs(Z2, 'G', [
     () => { const n = zz(5, 7), w = offenerBau(n), o = aussenflaechen(w);

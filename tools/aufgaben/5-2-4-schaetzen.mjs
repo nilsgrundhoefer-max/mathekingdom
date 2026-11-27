@@ -88,7 +88,7 @@ export function schaetzenAufgaben() {
       return auswahl(Z(`Im gelben Feld sind ${f} ${b.name}.`, `${x} rechnet ${f} + ${b.anzahl}.`, `${y} rechnet ${f} · ${b.anzahl}.`, 'Wer rechnet richtig hoch?'), [opt(`${y}. In jedem der ${b.anzahl} Felder sind ungefähr ${f}.`, true), opt(`${x}. Man zählt die Felder dazu.`, false, 'schaetzen-addiert'), opt('Beide. Es kommt dasselbe heraus.', false, 'schaetzen-addiert')],
         h3('Hochrechnen heißt: von einem Feld auf alle Felder schließen.', '12 Felder mit je 8: Das sind 12 mal 8.', `Stell dir vor: ${b.anzahl} Felder, in jedem liegen ${f}.`), { bild: b.bild, nachweis: [bw('feld', f), bw('felder', b.anzahl), ...N(`${f} · ${b.anzahl}`)] }); },
     () => { const k = kind(), [r, c] = wahl(GITTER_G), b = suche(() => gleich(r, c, zz(5, 9), 2), (q) => q.n !== q.felder[q.bild.markiert[0]][q.bild.markiert[1]] * q.anzahl), f = b.felder[b.bild.markiert[0]][b.bild.markiert[1]];
-      return auswahl(Z(`${k} schätzt mit dem Raster: ${f * b.anzahl} ${b.name}.`, `Dann zählt ${k} alle einzeln nach: Es sind genau ${b.n}.`, `${k} sagt: „Dann war meine Schätzung falsch.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'gezaehlt-geschaetzt'), opt('Falsch. Eine Schätzung muss nur nah an der genauen Zahl liegen.', true), opt('Falsch. Beim Nachzählen macht man immer Fehler.', false)],
+      return auswahl(Z(`${k} schätzt mit dem Raster: ${f * b.anzahl} ${b.name}.`, `Dann zählt ${k} alle einzeln nach: Es sind genau ${b.n}.`, `${k} sagt: „Dann war meine Schätzung falsch.“`, 'Stimmt das?'), [opt('Stimmt. Eine gute Schätzung trifft die genaue Zahl immer.', false, 'gezaehlt-geschaetzt'), opt('Falsch. Eine Schätzung muss nur nah an der genauen Zahl liegen.', true), opt('Falsch. Beim Nachzählen macht man immer Fehler.', false)],
         h3('Schätzen heißt: ungefähr angeben. Genau muss es nicht stimmen.', 'Geschätzt 96, gezählt 101: Das ist eine gute Schätzung.', `Vergleiche ${f * b.anzahl} und ${b.n}. Die Zahlen liegen nah beieinander.`), { bild: b.bild, nachweis: [U(false), bw('gesamt', b.n), bw('feld', f), bw('felder', b.anzahl), ...N(`${f} · ${b.anzahl}`)] }); },
   ]);
   sechs(S_('S1'), 'M', [
@@ -109,7 +109,7 @@ export function schaetzenAufgaben() {
       (x, y) => [`In einem Glas liegen Murmeln in Schichten. In einer Schicht zählt man ${x} Murmeln. Das Glas hat ${y} Schichten.`, 'Wie viele Murmeln sind ungefähr im Glas?', x, y, 'Murmeln'],
       (x, y) => [`Auf einem Parkplatz stehen in einer Reihe ${x} Autos. Der Parkplatz hat ${y} Reihen, die etwa gleich voll sind.`, 'Wie viele Autos stehen ungefähr auf dem Parkplatz?', x, y, 'Autos'],
       (x, y) => [`Die Köchin des Königs zählt auf einem Blech ${x} Brötchen. Im Ofen liegen ${y} Bleche, die etwa gleich voll sind.`, 'Wie viele Brötchen sind ungefähr im Ofen?', x, y, 'Brötchen']])(zz(21, 38), zz(11, 19));
-      return zahl(`${satz} ${frage}`, a * b, produktFehler(a, b), h2('Die eine Schicht oder Reihe ist deine Stichprobe. Rechne von ihr auf das Ganze hoch.', `Rechne ${a} · ${b}.`), { nachweis: N(`${a} · ${b}`), einheit }); },
+      return zahl(`${satz} ${frage}`, a * b, produktFehler(a, b), h2('Die eine Schicht oder Reihe ist deine Stichprobe. Rechne von ihr auf das Ganze hoch.', `Rechne ${a} · ${b}.`), { nachweis: N(`${a} · ${b}`), einheit, toleranz: Math.ceil(a * b * 0.12) }); },
     () => { const k = kind(), b = suche(() => ungleich(3, 4, zz(16, 22), 4, { fest: true, raster: 'fest' }), (x) => x.felder.flat().filter((v) => v === Math.min(...x.felder.flat())).length === 1 && Math.min(...x.felder.flat()) >= 2), kl = Math.min(...b.felder.flat());
       const ort = b.felder.flatMap((z, i) => z.map((v, j) => [v, i, j])).find(([v]) => v === kl);
       b.bild.markiert = [ort[1], ort[2]];
@@ -117,7 +117,7 @@ export function schaetzenAufgaben() {
         opt('Das Feld ist keine gute Stichprobe: In den meisten anderen Feldern sind viel mehr.', true),
         opt(`${k} hätte die beiden Zahlen addieren müssen.`, false, 'schaetzen-addiert'),
         opt('Das Raster hat zu viele Felder für eine Schätzung.', false),
-        opt('Die Schätzung ist gut, denn gerechnet wurde richtig.', false, 'schaetzen-nicht-hochgerechnet')],
+        opt('Die Schätzung ist gut, denn gerechnet wurde richtig. Auf das Feld kommt es nicht an.', false, 'schaetzen-nicht-hochgerechnet')],
       h2('Vergleiche das gelbe Feld mit den anderen Feldern.', 'Eine Stichprobe soll typisch für das ganze Bild sein.'), { bild: b.bild, nachweis: [bw('kleinstes', kl), bw('felder', b.anzahl), ...N(`${kl} · ${b.anzahl}`)] }); },
   ]);
   sechs(S_('S1'), 'E', [
@@ -137,7 +137,7 @@ export function schaetzenAufgaben() {
     () => { const [x, y] = zweiKinder(), a = zz(22, 28) * 10, b = a + zz(4, 7) * 10;
       return auswahl(`${x} und ${y} schätzen die Anzahl auf demselben Bild. Beide rechnen richtig hoch, aber mit verschiedenen Feldern. ${x} erhält ${a}, ${y} erhält ${b}. Kann beides eine brauchbare Schätzung sein?`, [
         opt('Ja. Die Felder sind nie genau gleich voll, deshalb führt jedes Feld zu einem etwas anderen Schätzwert.', true),
-        opt('Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer verrechnet.', false, 'gezaehlt-geschaetzt'),
+        opt('Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer von beiden sicher verrechnet.', false, 'gezaehlt-geschaetzt'),
         opt('Nein. Beim Schätzen mit einem Raster kommt immer dieselbe Zahl heraus.', false, 'gezaehlt-geschaetzt'),
         opt('Ja, aber nur, wenn beide zufällig dasselbe Feld gezählt haben.', false)],
       h1('Überlege, wovon der Schätzwert abhängt, wenn man nur ein einziges Feld auszählt.'), { nachweis: [U(true), HILFSZAHL(a, 'erster Schätzwert'), HILFSZAHL(b, 'zweiter Schätzwert')] }); },
@@ -187,12 +187,12 @@ export function schaetzenAufgaben() {
       return auswahl(Z('3 Kinder schätzen die Anzahl auf dem Bild.', 'Welcher Schätzwert liegt am nächsten an der genauen Zahl?'), mische(l).map((v) => opt(String(v), v === nah)),
         h3('Schätze zuerst selbst mit dem Raster. Vergleiche dann.', 'Schätzwert 96: Dann passt 100 besser als 150.', `Zähle das gelbe Feld aus. Das Raster hat ${b.anzahl} Felder.`), { bild: b.bild, nachweis: [{ art: 'naechste' }] }); },
     () => { const k = kind(), h = zz(3, 9) * 100;
-      return auswahl(Z(`In der Zeitung steht: „Ungefähr ${h} Gäste kamen zum Fest.“`, `${k} sagt: „Das hat jemand einzeln gezählt.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'gezaehlt-geschaetzt'), opt('Falsch. Das Wort ungefähr zeigt: Die Zahl ist geschätzt.', true), opt(`Falsch. Es waren genau ${h + 1} Gäste.`, false, 'gezaehlt-geschaetzt')],
+      return auswahl(Z(`In der Zeitung steht: „Ungefähr ${h} Gäste kamen zum Fest.“`, `${k} sagt: „Das hat jemand einzeln gezählt.“`, 'Stimmt das?'), [opt('Stimmt. In der Zeitung stehen nur gezählte Zahlen.', false, 'gezaehlt-geschaetzt'), opt('Falsch. Das Wort ungefähr zeigt: Die Zahl ist geschätzt.', true), opt(`Falsch. Es waren genau ${h + 1} Gäste.`, false, 'gezaehlt-geschaetzt')],
         h3('Achte auf kleine Wörter wie ungefähr, etwa oder rund.', 'Etwa 200 Blumen: Niemand hat jede Blume gezählt.', 'In dem Satz steht das Wort ungefähr.'), { nachweis: [U(false)] }); },
   ]);
   sechs(S_('S2'), 'M', [
     () => { const f = zz(11, 19), n = wahl([200, 300, 400, 500]);
-      return auswahl(`Eine Försterin zählt auf einer kleinen Probefläche ${f} Bäume. Sie rechnet auf den ganzen Wald hoch und nennt ${f * n} Bäume. Wie ist diese Zahl entstanden?`, [opt('Sie ist geschätzt: Von einer Stichprobe wurde auf das Ganze geschlossen.', true), opt('Sie ist genau gezählt.', false, 'gezaehlt-geschaetzt'), opt('Sie ist gerundet: Die genaue Zahl war bekannt.', false, 'gezaehlt-geschaetzt'), opt('Sie ist geraten, ganz ohne Rechnung.', false)],
+      return auswahl(`Eine Försterin zählt auf einer kleinen Probefläche ${f} Bäume. Sie rechnet auf den ganzen Wald hoch und nennt ${f * n} Bäume. Wie ist diese Zahl entstanden?`, [opt('Sie ist geschätzt: Von einer Stichprobe wurde auf das Ganze geschlossen.', true), opt('Sie ist genau gezählt.', false, 'gezaehlt-geschaetzt'), opt('Sie ist gerundet: Die genaue Zahl war bekannt und wurde vereinfacht.', false, 'gezaehlt-geschaetzt'), opt('Sie ist geraten, ganz ohne Rechnung.', false)],
         h2('Überlege, was genau gezählt wurde und was nur berechnet wurde.', 'Gezählt wurde nur die Probefläche.'), { nachweis: [HILFSZAHL(n, 'so oft passt die Probefläche in den Wald'), ...N(`${f} · ${n}`)] }); },
     () => { const k = kind(), f = zz(12, 24), n = wahl([12, 15, 20, 24]), p = f * n, wahr = p + wahl([-1, 1]) * zz(11, 29);
       return zahl(`${k} zählt in einem Feld ${f} Vögel und rechnet mit ${n} Feldern hoch. Auf einem Foto werden später genau ${wahr} Vögel gezählt. Um wie viel weicht der Schätzwert von der genauen Zahl ab?`, Math.abs(wahr - p), fehlerliste(Math.abs(wahr - p), [[p, 'begriffe-verwechselt'], [wahr + p, 'sub-addiert']]),
@@ -212,7 +212,7 @@ export function schaetzenAufgaben() {
         opt('Falsch. Beide Zahlen sind Schätzungen. Sie liegen nah beieinander und können beide vernünftig sein.', true),
         opt('Stimmt. Nur eine Zahl kann die richtige sein.', false, 'gezaehlt-geschaetzt'),
         opt('Stimmt. Die größere Zahl ist bestimmt übertrieben.', false),
-        opt('Falsch. Beide Zeitungen haben die Besucher einzeln gezählt.', false, 'gezaehlt-geschaetzt')],
+        opt('Falsch. Beide Zeitungen haben die Besucher einzeln gezählt, eine hat sich dabei verzählt.', false, 'gezaehlt-geschaetzt')],
       h2('Überlege, wie man die Besucher eines Stadtfests überhaupt ermitteln kann.', 'Achte auf das Wort „etwa“ in beiden Meldungen.'), { nachweis: [U(false)] }); },
   ]);
   sechs(S_('S2'), 'E', [
@@ -237,7 +237,7 @@ export function schaetzenAufgaben() {
         h1('Bestimme zuerst den Schätzbereich: ein Fünftel nach unten und ein Fünftel nach oben.'), { nachweis: [...N(`${n} : 5`, `${n} − ${f}`, `${n} + ${f}`), HILFSZAHL(a, 'erste Schätzung'), HILFSZAHL(b, 'zweite Schätzung')] }); },
     () => auswahl('Warum wird eine Schätzung meist besser, wenn man mehrere Felder auszählt und mit ihrem mittleren Wert hochrechnet?', [
       opt('Ein einzelnes Feld kann zufällig besonders voll oder leer sein. Mehrere Felder gleichen das aus.', true),
-      opt('Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer.', false),
+      opt('Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer als wenig Rechnen.', false),
       opt('Sie wird nicht besser, denn es bleibt eine Schätzung.', false, 'gezaehlt-geschaetzt'),
       opt('Weil man die Felderzahl dann nicht mehr braucht.', false, 'schaetzen-nicht-hochgerechnet')],
     h1('Überlege, was geschieht, wenn das eine ausgezählte Feld nicht typisch ist.')),

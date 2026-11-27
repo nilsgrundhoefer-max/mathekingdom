@@ -31,9 +31,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Teile: Das ist der Nenner
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile. *Beispiel:* Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4. *Lösungsschritt:* Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile. *Beispiel:* Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3. *Lösungsschritt:* Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile.
 
-- `01` AFB I · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 4 Teilen, 5 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **5⁄4**. Typische Fehler: 5⁄8 (bruch-ganzes-teil), 4⁄5 (bruch-vertauscht).
+- `01` AFB I · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 4 Teilen, 5 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **5⁄4**. Typische Fehler: 5⁄8 (ganzes-mehrere-figuren), 4⁄5 (bruch-vertauscht).
 - `02` AFB I · _Kommunizieren_ · Der Streifen ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? _(Bild: Bruchbild: Streifen mit 20 Teilen, 14 gefärbt)_
   - ☐ 14⁄6
   - ☐ 6⁄20
@@ -54,7 +54,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner zählt die Teile von einem
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Teile eines Ganzen: Das ist der Nenner. Zähle dann alle gefärbten Teile. *Lösungsschritt:* Schreibe die Zahl der gefärbten Teile über den Bruchstrich und die Zahl der Teile eines Ganzen darunter.
 
-- `01` AFB I · _Kommunizieren_ · Jedes Rechteck ist ein Ganzes. Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 3 Ganze, je Rechteck 2 × 6 mit 12 Teilen, 30 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **30⁄12**. Typische Fehler: 30⁄36 (bruch-ganzes-teil), 12⁄30 (bruch-vertauscht), 6⁄12 (gemischt-umwandeln).
+- `01` AFB I · _Kommunizieren_ · Jedes Rechteck ist ein Ganzes. Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 3 Ganze, je Rechteck 2 × 6 mit 12 Teilen, 30 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **30⁄12**. Typische Fehler: 30⁄36 (ganzes-mehrere-figuren), 12⁄30 (bruch-vertauscht), 6⁄12 (gemischt-umwandeln).
 - `02` AFB II · _Kommunizieren_ · Das Rechteck hat 20 gleich große Teile. Färbe 7⁄10 des Rechtecks. _(Teile färben: Rechteck 4 × 5 mit 20 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **14 Teile gefärbt**. Typische Fehler: 7 (bruchteil-zaehler-vergessen), 2 (bruchteil-zaehler-vergessen), 6 (bruch-teil-zu-rest).
 - `03` AFB II · _Kommunizieren_ · Im Hunderterfeld sollen 13⁄25 gefärbt werden. Wie viele Kästchen sind das? Lösung: **52**. Typische Fehler: 13 (bruchteil-zaehler-vergessen), 4 (bruchteil-zaehler-vergessen), 48 (sach-frage-verfehlt).
 - `04` AFB I · _Kommunizieren_ · Jedes Rechteck ist ein Ganzes. Welcher Bruch gibt an, wie viel weiß geblieben ist? _(Bild: Bruchbild: 2 Ganze, je Rechteck 4 × 5 mit 20 Teilen, 29 gefärbt)_
@@ -73,7 +73,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Teile eines Ganzen:
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner zählt die Teile eines Ganzen. Der Zähler zählt hier die weißen Teile.
 
-- `01` AFB I · _Kommunizieren_ · Jedes Rechteck ist ein Ganzes. Welcher Bruchteil ist weiß geblieben? Schreibe als Bruch. _(Bild: Bruchbild: 3 Ganze, je Rechteck 3 × 6 mit 18 Teilen, 49 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **5⁄18**. Typische Fehler: 5⁄54 (bruch-ganzes-teil), 49⁄18 (sach-frage-verfehlt), 13⁄18 (sach-frage-verfehlt).
+- `01` AFB I · _Kommunizieren_ · Jedes Rechteck ist ein Ganzes. Welcher Bruchteil ist weiß geblieben? Schreibe als Bruch. _(Bild: Bruchbild: 3 Ganze, je Rechteck 3 × 6 mit 18 Teilen, 49 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **5⁄18**. Typische Fehler: 5⁄54 (ganzes-mehrere-figuren), 49⁄18 (sach-frage-verfehlt), 13⁄18 (sach-frage-verfehlt).
 - `02` AFB II · _Kommunizieren_ · Jedes Hunderterfeld ist ein Ganzes. Wie viele Kästchen musst du färben, um 34⁄25 darzustellen? Lösung: **136**. Typische Fehler: 36 (gemischt-umwandeln), 34 (bruchteil-zaehler-vergessen), 64 (sach-frage-verfehlt).
 - `03` AFB II · _Kommunizieren_ · Ein Mosaik hat 120 gleich große Steine. Tom hat schon 75 Steine gelegt und legt heute noch 10 dazu. Welcher Bruchteil des Mosaiks fehlt dann noch? _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **35⁄120**. Typische Fehler: 85⁄120 (sach-frage-verfehlt), 45⁄120 (sach-schritt-vergessen), 35⁄85 (bruch-teil-zu-rest).
 - `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Jeder Kreis ist ein Ganzes, gefärbt ist 4⁄3. Ben sagt: „Das ist genauso viel wie 4⁄6.“ Stimmt das? _(Bild: Bruchbild: 2 Ganze, je Kreis mit 3 Teilen, 4 gefärbt)_
@@ -97,9 +97,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein voller Kreis ist ein Ganzes. Zäh
   - ☐ 2 1⁄4
   - ☑ 1 1⁄4
   - ☐ 5⁄8
-- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Rechteck ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als gemischte Zahl. _(Bild: Bruchbild: 3 Ganze, je Rechteck 2 × 2 mit 4 Teilen, 10 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur als gemischte Zahl richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 2⁄4**. Typische Fehler: 10⁄12 (bruch-ganzes-teil), 2 4⁄2 (bruch-vertauscht).
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Rechteck ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als gemischte Zahl. _(Bild: Bruchbild: 3 Ganze, je Rechteck 2 × 2 mit 4 Teilen, 10 gefärbt)_ _(Brucheingabe mit Feld für die Ganzen; nur als gemischte Zahl richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 2⁄4**. Typische Fehler: 10⁄12 (ganzes-mehrere-figuren), 2 4⁄2 (bruch-vertauscht).
 - `03` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Bild zeigt eine gemischte Zahl. / Schreibe sie als Bruch. / 1 1⁄3 = ▢⁄3 _(Bild: Bruchbild: 2 Ganze, je Kreis mit 3 Teilen, 4 gefärbt)_ Lösung: a = **4**
-- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 2 Teilen, 3 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **3⁄2**. Typische Fehler: 3⁄4 (bruch-ganzes-teil), 1⁄2 (gemischt-umwandeln).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 2 Teilen, 3 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **3⁄2**. Typische Fehler: 3⁄4 (ganzes-mehrere-figuren), 1⁄2 (gemischt-umwandeln).
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jedes Rechteck ist ein Ganzes. / Färbe 1 2⁄5. _(Teile färben: 2 Ganze, je Rechteck 1 × 5 mit 5 Teilen; jede Auswahl mit der richtigen Anzahl ist richtig)_ Lösung: **7 Teile gefärbt**. Typische Fehler: 2 (gemischt-umwandeln), 3 (gemischt-umwandeln).
 - `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Jeder Kreis ist ein Ganzes. / Im Bild sind 2 Ganze gefärbt. / Wie viele Viertel sind das? _(Bild: Bruchbild: 2 Ganze, je Kreis mit 4 Teilen, 8 gefärbt)_ Lösung: **8**. Typische Fehler: 4 (gemischt-umwandeln), 2 (bruch-ganzes-teil), 6 (erweitern-addiert).
 
@@ -332,7 +332,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Teile den Zähler und den Nenner durc
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kürze 24⁄54 mit 6. _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **4⁄9**. Typische Fehler: 4⁄54 (erweitern-nur-ein-teil), 144⁄324 (erweitern-kuerzen-verwechselt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 3⁄6 gefärbt. / Kürze mit 3. / 3⁄6 = ▢⁄▢ _(Bild: Bruchbild: Streifen mit 6 Teilen, 3 gefärbt)_ Lösung: a = **1**, b = **2**
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 35⁄60 wurde gekürzt zu 7⁄12. / Wie heißt die Kürzungszahl? Lösung: **5**. Typische Fehler: 48 (erweitern-addiert), 28 (erweitern-addiert), 6 (div-einmaleins), 4 (div-einmaleins).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 35⁄60 wurde gekürzt zu 7⁄12. / Wie heißt die Kürzungszahl? Lösung: **5**. Typische Fehler: 48 (kuerzen-subtrahiert), 28 (kuerzen-subtrahiert), 6 (div-einmaleins), 4 (div-einmaleins).
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Im Streifen ist 6⁄15 gefärbt. / Kürze mit 3. / Welcher Bruch stimmt? _(Bild: Bruchbild: Streifen mit 15 Teilen, 6 gefärbt)_
   - ☑ 2⁄5
   - ☐ 2⁄15
@@ -353,7 +353,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Kürzen teilst du Zähler und Ne
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kürze 48⁄54 mit 6. _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **8⁄9**. Typische Fehler: 8⁄54 (erweitern-nur-ein-teil), 288⁄324 (erweitern-kuerzen-verwechselt).
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kürze 40⁄60 zuerst mit 5. Kürze das Ergebnis dann mit 4. Wie heißt der Bruch am Ende? _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **2⁄3**. Typische Fehler: 8⁄12 (sach-schritt-vergessen), 2⁄60 (erweitern-nur-ein-teil), 8⁄60 (erweitern-nur-ein-teil).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 72⁄200 wurde gekürzt. Herausgekommen ist 9⁄25. Mit welcher Zahl wurde gekürzt? Lösung: **8**. Typische Fehler: 175 (erweitern-addiert), 63 (erweitern-addiert), 9 (div-einmaleins), 7 (div-einmaleins).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 72⁄200 wurde gekürzt. Herausgekommen ist 9⁄25. Mit welcher Zahl wurde gekürzt? Lösung: **8**. Typische Fehler: 175 (kuerzen-subtrahiert), 63 (kuerzen-subtrahiert), 9 (div-einmaleins), 7 (div-einmaleins).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kürze mit 10: 90⁄200 = ▢⁄▢ Lösung: a = **9**, b = **20**
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Mit welchen Zahlen lässt sich 40⁄60 kürzen? Kreuze alle an.
   - ☑ 5
@@ -372,8 +372,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Kürzen teilst du Zähler und Ne
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe jedes Zwischenergebnis auf. Oder überlege, mit welcher einen Zahl du gleich kürzen kannst.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kürze 288⁄336 nacheinander mit 2, mit 6 und mit 4. Wie heißt der Bruch am Ende? _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **6⁄7**. Typische Fehler: 24⁄28 (sach-schritt-vergessen), 144⁄168 (sach-schritt-vergessen), 6⁄336 (erweitern-nur-ein-teil).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bruch wird zuerst mit 9 und dann mit 8 gekürzt. Mit welcher einen Zahl hättest du ihn gleich kürzen können? Lösung: **72**. Typische Fehler: 17 (erweitern-addiert), 9 (sach-schritt-vergessen), 81 (sach-falsche-rechnung).
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 299⁄345 wurde in einem Schritt zu 13⁄15 gekürzt. Mit welcher Zahl? Lösung: **23**. Typische Fehler: 330 (erweitern-addiert), 286 (erweitern-addiert), 24 (div-einmaleins), 21 (div-einmaleins).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bruch wird zuerst mit 9 und dann mit 8 gekürzt. Mit welcher einen Zahl hättest du ihn gleich kürzen können? Lösung: **72**. Typische Fehler: 17 (kuerzen-subtrahiert), 9 (sach-schritt-vergessen), 81 (sach-falsche-rechnung).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 299⁄345 wurde in einem Schritt zu 13⁄15 gekürzt. Mit welcher Zahl? Lösung: **23**. Typische Fehler: 330 (kuerzen-subtrahiert), 286 (kuerzen-subtrahiert), 24 (div-einmaleins), 21 (div-einmaleins).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Mit welchen Zahlen lässt sich 108⁄180 kürzen? Kreuze alle an.
   - ☑ 4
   - ☑ 2
@@ -381,7 +381,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe jedes Zwischenergebnis auf. 
   - ☑ 9
   - ☐ 14
   - ☑ 12
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bruch wurde mit 7 gekürzt. Herausgekommen ist 3⁄8. Wie hieß der Bruch vorher? _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **21⁄56**. Typische Fehler: 3⁄56 (erweitern-nur-ein-teil), 21⁄8 (erweitern-nur-ein-teil), 10⁄15 (erweitern-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Bruch wurde mit 7 gekürzt. Herausgekommen ist 3⁄8. Wie hieß der Bruch vorher? _(Brucheingabe; nur genau dieser Bruch ist richtig)_ Lösung: **21⁄56**. Typische Fehler: 3⁄56 (erweitern-nur-ein-teil), 21⁄8 (erweitern-nur-ein-teil), 10⁄15 (kuerzen-subtrahiert).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Mit wie vielen verschiedenen Zahlen kannst du 45⁄75 kürzen? Zähle nur Zahlen, die größer als 1 sind. Lösung: **3**. Typische Fehler: 4 (sach-frage-verfehlt), 2 (sach-schritt-vergessen), 15 (sach-frage-verfehlt), 1 (kuerzen-nicht-vollstaendig).
 
 ## 6.1.3-K2: Ich kann einen Bruch vollständig kürzen.
@@ -449,7 +449,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Kürze in mehreren Schritten oder suc
   - ☑ 45⁄120 = 3⁄8
   - ☑ 70⁄98 = 5⁄7
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Von 240 Aufgaben sind 100 schon gelöst. Welcher Anteil ist noch übrig? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄12**. Typische Fehler: 5⁄12 (sach-frage-verfehlt), 12⁄7 (bruch-vertauscht).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Bruch ergibt vollständig gekürzt 7⁄9. Sein Zähler und sein Nenner haben zusammen die Summe 128. Wie heißt der Zähler dieses Bruchs? Lösung: **56**. Typische Fehler: 72 (bruch-vertauscht), 8 (sach-schritt-vergessen), 7 (sach-frage-verfehlt), 121 (erweitern-addiert).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Bruch ergibt vollständig gekürzt 7⁄9. Sein Zähler und sein Nenner haben zusammen die Summe 128. Wie heißt der Zähler dieses Bruchs? Lösung: **56**. Typische Fehler: 72 (bruch-vertauscht), 8 (sach-schritt-vergessen), 7 (sach-frage-verfehlt), 121 (kuerzen-subtrahiert).
 
 ## 6.1.4-V1: Ich kann Brüche mit gleichem Nenner oder gleichem Zähler vergleichen.
 
@@ -821,10 +821,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Abstände von 0 bis 1. Das
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Abstände von 0 bis 1. Das ist der Nenner. Er gilt auch hinter der 1. *Beispiel:* Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht 3 Abstände hinter der 1. Das ist 1 3⁄4. *Lösungsschritt:* Schreibe zuerst die Ganzen. Zähle dann die Abstände vom letzten Ganzen bis zum Pfeil.
 
-- `01` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? / Schreibe als gemischte Zahl. _(Bild: Zahlenstrahl 0 bis 3, Teilstriche alle 1⁄4, Pfeil auf 9⁄4)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄4**. Typische Fehler: 2 1⁄5 (bruchstrahl-striche), 2 1⁄12 (bruch-ganzes-teil).
-- `02` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? / Schreibe als Bruch. _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄3, Pfeil auf 5⁄3)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄3**. Typische Fehler: 5⁄6 (bruch-ganzes-teil), 2⁄3 (gemischt-umwandeln), 3⁄5 (bruch-vertauscht).
+- `01` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? / Schreibe als gemischte Zahl. _(Bild: Zahlenstrahl 0 bis 3, Teilstriche alle 1⁄4, Pfeil auf 9⁄4)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 1⁄4**. Typische Fehler: 2 1⁄5 (bruchstrahl-striche), 2 1⁄12 (strahl-ganzes).
+- `02` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? / Schreibe als Bruch. _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄3, Pfeil auf 5⁄3)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄3**. Typische Fehler: 5⁄6 (strahl-ganzes), 2⁄3 (gemischt-umwandeln), 3⁄5 (bruch-vertauscht).
 - `03` AFB II · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? / Kürze vollständig. _(Bild: Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄6, Pfeil auf 3⁄6)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 3⁄7 (bruchstrahl-striche).
-- `04` AFB I · _Kommunizieren_ · Schau auf den Zahlenstrahl. / In wie viele Abstände ist ein Ganzes geteilt? _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄12, Pfeil auf 13⁄12)_ Lösung: **12**. Typische Fehler: 13 (bruchstrahl-striche), 24 (bruch-ganzes-teil), 11 (bruchstrahl-striche).
+- `04` AFB I · _Kommunizieren_ · Schau auf den Zahlenstrahl. / In wie viele Abstände ist ein Ganzes geteilt? _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄12, Pfeil auf 13⁄12)_ Lösung: **12**. Typische Fehler: 13 (bruchstrahl-striche), 24 (strahl-ganzes), 11 (bruchstrahl-striche).
 - `05` AFB II · _Kommunizieren_ · Ben liest am Pfeil 4⁄6 ab. / Lena liest 4⁄3 ab. / Welcher Bruch stimmt? _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄3, Pfeil auf 4⁄3)_
   - ☑ 4⁄3
   - ☐ 4⁄4
@@ -841,7 +841,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Strahl beginnt nicht bei 0. Zähl
 - `01` AFB I · _Kommunizieren_ · Der Zahlenstrahl zeigt einen Ausschnitt. Auf welche Zahl zeigt der Pfeil? Schreibe als gemischte Zahl. _(Bild: Zahlenstrahl 8 bis 9, Teilstriche alle 1⁄8, Ausschnitt mit Bruchzeichen, Pfeil auf 65⁄8)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8 1⁄8**. Typische Fehler: 8 1⁄9 (bruchstrahl-striche), 1⁄8 (gemischt-umwandeln), 9 1⁄8 (gemischt-umwandeln).
 - `02` AFB II · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? Kürze vollständig. _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄12, Pfeil auf 8⁄12)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: 8⁄13 (bruchstrahl-striche).
 - `03` AFB II · _Kommunizieren_ · Der Pfeil zeigt auf einen Bruch. Schreibe ihn mit dem Nenner 9: ▢⁄9 _(Bild: Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄3, Pfeil auf 2⁄3)_ Lösung: a = **6**
-- `04` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? Schreibe als Bruch. _(Bild: Zahlenstrahl 0 bis 3, Teilstriche alle 1⁄5, Pfeil auf 14⁄5)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **14⁄5**. Typische Fehler: 14⁄15 (bruch-ganzes-teil), 4⁄5 (gemischt-umwandeln), 5⁄14 (bruch-vertauscht).
+- `04` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? Schreibe als Bruch. _(Bild: Zahlenstrahl 0 bis 3, Teilstriche alle 1⁄5, Pfeil auf 14⁄5)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **14⁄5**. Typische Fehler: 14⁄15 (strahl-ganzes), 4⁄5 (gemischt-umwandeln), 5⁄14 (bruch-vertauscht).
 - `05` AFB II · _Kommunizieren_ · Der Pfeil zeigt auf eine Zahl. Wie weit ist es von dieser Zahl bis zur 2? Schreibe als Bruch oder gemischte Zahl und kürze vollständig. _(Bild: Zahlenstrahl 0 bis 2, Teilstriche alle 1⁄4, Pfeil auf 3⁄4)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 1⁄4**. Typische Fehler: 3⁄4 (sach-frage-verfehlt).
 - `06` AFB III · _Kommunizieren_ · Zwischen 0 und 1 liegen an einem Zahlenstrahl 11 Teilstriche in gleichen Abständen. Auf welche Zahl zeigt der 11. Teilstrich nach der 0? _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄12**. Typische Fehler: 11⁄13 (bruchstrahl-striche).
 
@@ -849,7 +849,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Strahl beginnt nicht bei 0. Zähl
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Wie lang ist ein Abstand, wenn 3 Ganze in 5 gleich große Abstände geteilt werden? Zähle dann die Abstände bis zum Pfeil.
 
-- `01` AFB I · _Kommunizieren_ · Die Strecke von 0 bis 3 ist in 5 gleich große Abstände geteilt. Auf welche Zahl zeigt der Pfeil? Kürze vollständig. _(Bild: Zahlenstrahl 0 bis 3, Teilstriche alle 3⁄5, Pfeil auf 12⁄5)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 2⁄5**. Typische Fehler: 4⁄5 (bruch-ganzes-teil), 4⁄6 (bruchstrahl-striche).
+- `01` AFB I · _Kommunizieren_ · Die Strecke von 0 bis 3 ist in 5 gleich große Abstände geteilt. Auf welche Zahl zeigt der Pfeil? Kürze vollständig. _(Bild: Zahlenstrahl 0 bis 3, Teilstriche alle 3⁄5, Pfeil auf 12⁄5)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2 2⁄5**. Typische Fehler: 4⁄5 (strahl-ganzes), 4⁄6 (bruchstrahl-striche).
 - `02` AFB II · _Kommunizieren_ · Der Zahlenstrahl zeigt einen Ausschnitt. Auf welche Zahl zeigt der Pfeil? Schreibe als vollständig gekürzte gemischte Zahl. _(Bild: Zahlenstrahl 4 bis 5, Teilstriche alle 1⁄16, Ausschnitt mit Bruchzeichen, Pfeil auf 74⁄16)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4 5⁄8**. Typische Fehler: 5 5⁄8 (gemischt-umwandeln), 5⁄8 (gemischt-umwandeln).
 - `03` AFB II · _Kommunizieren_ · Der Pfeil zeigt auf eine Zahl. Welche Zahl liegt genau in der Mitte zwischen dieser Zahl und 1? Kürze vollständig. _(Bild: Zahlenstrahl 0 bis 1, Teilstriche alle 1⁄5, Pfeil auf 3⁄5)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 3⁄5 (sach-frage-verfehlt).
 - `04` AFB III · _Kommunizieren_ · An einem Zahlenstrahl liegen zwischen 8 und 9 genau 9 Teilstriche in gleichen Abständen. Auf welche Zahl zeigt der 7. Teilstrich nach der 8? Schreibe als gemischte Zahl. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **8 7⁄10**. Typische Fehler: 8 7⁄9 (bruchstrahl-striche), 8 7⁄11 (bruchstrahl-striche).
@@ -945,7 +945,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne mit den Zählern. Der Nenner b
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei gleichnamigen Brüchen rechnest du nur mit den Zählern, der Nenner bleibt. *Lösungsschritt:* Rechne 9 + 7 − 4. Schreibe das Ergebnis über den Nenner 18 und kürze.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 9⁄18 + 7⁄18 − 4⁄18 und kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **2⁄3**. Typische Fehler: 20⁄18 (sub-addiert), 16⁄18 (sach-schritt-vergessen), 2⁄18 (add-subtrahiert).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welchen Bruch musst du zu 1⁄30 addieren, um 23⁄30 zu erhalten? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄15**. Typische Fehler: 24⁄30 (sub-addiert), 23⁄30 (sach-frage-verfehlt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Welchen Bruch musst du zu 1⁄30 addieren, um 23⁄30 zu erhalten? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **11⁄15**. Typische Fehler: 24⁄30 (ergaenzen-addiert), 23⁄30 (sach-frage-verfehlt).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Blechkuchen ist in 20 gleich große Stücke geschnitten. Ben nimmt 7⁄20 des Kuchens mit, Tom nimmt 3⁄20. Welcher Bruchteil des Kuchens bleibt übrig? Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 13⁄20 (sach-schritt-vergessen), 17⁄20 (sach-schritt-vergessen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 21⁄24 + 17⁄24. Schreibe das Ergebnis als gemischte Zahl und kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 7⁄12**. Typische Fehler: 38⁄48 (bruch-add-zaehler-nenner), 4⁄24 (add-subtrahiert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Welche Gleichungen stimmen? Kreuze alle an.
@@ -2044,7 +2044,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Bod
   - ☑ C _(Bild: netz)_
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Gib an, wie viele Ecken der Würfel hat. _(Bild: netz)_ Lösung: **8**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
 - `06` AFB III · _Argumentieren_ · Vier Quadrate liegen in einer Reihe. / Über den ersten beiden liegt je ein Quadrat. / Ida sagt: „6 Quadrate ergeben immer ein Würfelnetz.“ / Prüfe die Aussage. _(Bild: netz)_
-  - ☐ Stimmt. / 6 Quadrate ergeben immer einen Würfel.
+  - ☐ Stimmt. / Ein Würfel hat 6 Flächen. / 6 Quadrate ergeben immer einen Würfel.
   - ☑ Stimmt nicht. / Beim Falten liegen zwei Quadrate aufeinander. / Eine Seite fehlt.
   - ☐ Stimmt. / Alle Quadrate hängen zusammen.
 
@@ -2098,12 +2098,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Liegen vier Quadrate in einer Reihe, 
 - `04` AFB III · _Argumentieren_ · Ben sagt: „Ein Würfelnetz kann nie fünf Quadrate in einer Reihe haben.“ Beurteile die Aussage.
   - ☐ Stimmt nicht. Mit dem sechsten Quadrat daneben geht es.
   - ☑ Stimmt. In einer Reihe falten sich nur vier Quadrate rundherum. Das fünfte liegt auf dem ersten.
-  - ☐ Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels.
+  - ☐ Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels mit Deckel.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfelnetz hat 5 Knickkanten zwischen den Quadraten. Beim Falten wird jede andere Kante des Würfels aus zwei Randstücken zusammengeklebt. Gib an, wie viele Kanten geklebt werden. _(Bild: netz)_ Lösung: **7**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (kanten-teilweise), 6 (netz-nur-gezaehlt).
 - `06` AFB III · _Argumentieren_ · Ida hat das Netz eines Quaders mit a = 3 cm, b = 2 cm und c = 2 cm gezeichnet. Ein Kästchen steht für 1 cm. Beurteile das Netz. _(Bild: netz)_
   - ☑ Es ist falsch. Der Deckel liegt neben der Vorderseite und hat die falsche Größe.
   - ☐ Es ist richtig. Es hat 6 Rechtecke.
-  - ☐ Es ist richtig. Gleich große Rechtecke kommen doppelt vor.
+  - ☐ Es ist richtig. Gleich große Rechtecke kommen wie beim Quader doppelt vor.
 
 ## 6.3.2-S1: Ich kann Schrägbilder von Quadern lesen: sichtbare und verdeckte Kanten, Ecken und Maße.
 
@@ -2243,7 +2243,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe die Richtung an einer anderen 
 - `04` AFB III · _Kommunizieren_ · Das Schrägbild eines Würfels ist im Heft 12 Kästchen breit. Gib die Kantenlänge des Würfels an. Lösung: **4 cm**. Typische Fehler: 6 (tiefe-nicht-verkuerzt), 3 (tiefe-nicht-verkuerzt).
 - `05` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 4 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **12**. Typische Fehler: 16 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Im Schrägbild ist eine Kante nach hinten genauso lang wie in Wirklichkeit. Eine Kästchendiagonale ist ja 1 cm.“ Beurteile die Aussage.
-  - ☐ Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.
+  - ☐ Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen, also genau 1 cm.
   - ☑ Stimmt nicht. Eine Kästchendiagonale ist kürzer als 1 cm. Die Tiefe wird verkürzt gezeichnet.
   - ☐ Stimmt. Nur die verdeckten Kanten werden kürzer.
   - ☐ Stimmt nicht. Die Kante wird länger gezeichnet.
@@ -2410,8 +2410,8 @@ Baut auf: 6.3.1-Q1 (Ich kann Quader und Würfel beschreiben: Ecken, Kanten und F
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten ist je ein Dreieck. *Beispiel:* Dazu kommen die Rechtecke: zwei Dachflächen und der Boden. *Lösungsschritt:* Zähle Dreiecke und Rechtecke zusammen.
 
-- `01` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 2 (runde-koerper-zaehlen), 3 (verdeckt-nicht-gezaehlt), 6 (wuerfel-kein-quader).
-- `02` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 3 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt), 9 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 2 (runde-koerper-zaehlen), 3 (koerper-unvollstaendig-gezaehlt), 6 (wuerfel-kein-quader).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 3 (koerper-unvollstaendig-gezaehlt), 5 (koerper-unvollstaendig-gezaehlt), 9 (ecken-kanten-verwechselt).
 - `03` AFB I · _Kommunizieren (+ Modellieren)_ · Ein Körper hat zwei Dreiecke und drei Rechtecke als Flächen. / Kreuze ihn an.
   - ☐ A _(Bild: koerper)_
   - ☐ B _(Bild: koerper)_
@@ -2420,7 +2420,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten ist je ein Dreieck. 
   - ☐ Rechteck
   - ☐ Kreis
   - ☑ Dreieck
-- `05` AFB II · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **9**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 8 (verdeckt-nicht-gezaehlt), 5 (ecken-kanten-verwechselt).
+- `05` AFB II · _Kommunizieren_ · Das Bild zeigt einen Körper wie ein Zelt. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **9**. Typische Fehler: 6 (koerper-unvollstaendig-gezaehlt), 8 (koerper-unvollstaendig-gezaehlt), 5 (ecken-kanten-verwechselt).
 - `06` AFB I · _Kommunizieren_ · Du schaust von oben auf das Zelt. / Kreuze die Form der Ansicht an. _(Bild: koerper)_
   - ☐ Dreieck
   - ☑ Rechteck
@@ -2430,8 +2430,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vorne und hinten ist je ein Dreieck. 
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben und unten ist je ein Fünfeck. *Beispiel:* Jedes Fünfeck hat fünf Ecken. *Lösungsschritt:* Zähle die Ecken oben und unten zusammen.
 
-- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein fünfseitiges Prisma. / Gib an, wie viele Ecken es hat. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 7 (verdeckt-nicht-gezaehlt), 15 (ecken-kanten-verwechselt).
-- `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein sechsseitiges Prisma. / Gib an, wie viele Flächen es hat. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 2 (verdeckt-nicht-gezaehlt), 12 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein fünfseitiges Prisma. / Gib an, wie viele Ecken es hat. _(Bild: koerper)_ Lösung: **10**. Typische Fehler: 5 (koerper-unvollstaendig-gezaehlt), 7 (koerper-unvollstaendig-gezaehlt), 15 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein sechsseitiges Prisma. / Gib an, wie viele Flächen es hat. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 6 (koerper-unvollstaendig-gezaehlt), 2 (koerper-unvollstaendig-gezaehlt), 12 (ecken-kanten-verwechselt).
 - `03` AFB II · _Kommunizieren_ · Das Bild zeigt ein Prisma. / Kreuze seinen Namen an. _(Bild: koerper)_
   - ☐ fünfseitiges Prisma
   - ☑ sechsseitiges Prisma
@@ -2441,16 +2441,16 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben und unten ist je ein Fünfeck. *
   - ☐ B _(Bild: koerper)_
   - ☑ C _(Bild: koerper)_
   - ☐ D _(Bild: koerper)_
-- `05` AFB II · _Kommunizieren_ · Die Grundfläche eines Prismas ist ein Fünfeck. / Gib an, wie viele Kanten das Prisma hat. Lösung: **15**. Typische Fehler: 10 (verdeckt-nicht-gezaehlt), 5 (verdeckt-nicht-gezaehlt).
-- `06` AFB III · _Kommunizieren_ · Ein Prisma hat ein Achteck als Grundfläche. / Gib an, wie viele Ecken es hat. Lösung: **16**. Typische Fehler: 8 (verdeckt-nicht-gezaehlt), 24 (ecken-kanten-verwechselt), 10 (ecken-kanten-verwechselt).
+- `05` AFB II · _Kommunizieren_ · Die Grundfläche eines Prismas ist ein Fünfeck. / Gib an, wie viele Kanten das Prisma hat. Lösung: **15**. Typische Fehler: 10 (koerper-unvollstaendig-gezaehlt), 5 (koerper-unvollstaendig-gezaehlt).
+- `06` AFB III · _Kommunizieren_ · Ein Prisma hat ein Achteck als Grundfläche. / Gib an, wie viele Ecken es hat. Lösung: **16**. Typische Fehler: 8 (koerper-unvollstaendig-gezaehlt), 24 (ecken-kanten-verwechselt), 10 (ecken-kanten-verwechselt).
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle getrennt: Kanten oben, Kanten unten, Kanten dazwischen. *Lösungsschritt:* 6 + 6 + 6 = 18
 
-- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein sechsseitiges Prisma. Gib an, wie viele Kanten es hat. _(Bild: koerper)_ Lösung: **18**. Typische Fehler: 12 (verdeckt-nicht-gezaehlt), 15 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
-- `02` AFB II · _Kommunizieren_ · Ein Prisma hat 24 Kanten. Gib an, wie viele Ecken seine Grundfläche hat. Lösung: **8**. Typische Fehler: 16 (ecken-kanten-verwechselt), 12 (kanten-teilweise).
-- `03` AFB II · _Kommunizieren_ · Die Mantelfläche eines Prismas besteht aus 5 Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat. Lösung: **7**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 6 (verdeckt-nicht-gezaehlt), 10 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein sechsseitiges Prisma. Gib an, wie viele Kanten es hat. _(Bild: koerper)_ Lösung: **18**. Typische Fehler: 12 (koerper-unvollstaendig-gezaehlt), 15 (koerper-unvollstaendig-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Ein Prisma hat 24 Kanten. Gib an, wie viele Ecken seine Grundfläche hat. Lösung: **8**. Typische Fehler: 16 (ecken-kanten-verwechselt), 12 (koerper-unvollstaendig-gezaehlt).
+- `03` AFB II · _Kommunizieren_ · Die Mantelfläche eines Prismas besteht aus 5 Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat. Lösung: **7**. Typische Fehler: 5 (koerper-unvollstaendig-gezaehlt), 6 (koerper-unvollstaendig-gezaehlt), 10 (ecken-kanten-verwechselt).
 - `04` AFB I · _Kommunizieren_ · Kreuze das Prisma mit 10 Ecken an.
   - ☐ A _(Bild: koerper)_
   - ☐ B _(Bild: koerper)_
@@ -2470,9 +2470,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle getrennt: Kanten oben, Kanten 
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde zuerst heraus, wie viele Ecken die Grundfläche hat.
 
-- `01` AFB I · _Kommunizieren_ · Ein Prisma hat 36 Kanten. Gib an, wie viele Ecken es hat. Lösung: **24**. Typische Fehler: 12 (kanten-teilweise), 14 (ecken-kanten-verwechselt), 34 (ecken-kanten-verwechselt).
-- `02` AFB II · _Kommunizieren_ · Zähle am sechsseitigen Prisma Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 20 (kanten-teilweise).
-- `03` AFB II · _Kommunizieren_ · Ein Prisma hat 9 Flächen. Gib an, wie viele Kanten es hat. Lösung: **21**. Typische Fehler: 27 (kanten-teilweise), 14 (ecken-kanten-verwechselt), 18 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Ein Prisma hat 36 Kanten. Gib an, wie viele Ecken es hat. Lösung: **24**. Typische Fehler: 12 (koerper-unvollstaendig-gezaehlt), 14 (ecken-kanten-verwechselt), 34 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Zähle am sechsseitigen Prisma Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (koerper-unvollstaendig-gezaehlt), 20 (koerper-unvollstaendig-gezaehlt).
+- `03` AFB II · _Kommunizieren_ · Ein Prisma hat 9 Flächen. Gib an, wie viele Kanten es hat. Lösung: **21**. Typische Fehler: 27 (koerper-unvollstaendig-gezaehlt), 14 (ecken-kanten-verwechselt), 18 (ecken-kanten-verwechselt).
 - `04` AFB III · _Argumentieren (+ Kommunizieren)_ · Finn sagt: „Ein Prisma kann 24 Kanten haben.“ Beurteile die Aussage.
   - ☑ Stimmt. 24 : 3 = 8, die Grundfläche hat 8 Ecken.
   - ☐ Stimmt nicht. Ein Prisma hat höchstens 18 Kanten.
@@ -2550,10 +2550,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundflächen gehören nicht zur 
   - ☐ B _(Bild: netz)_
   - ☐ C _(Bild: netz)_
   - ☐ D _(Bild: netz)_
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein fünfseitiges Prisma hat Grundkanten von 4 cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist. Lösung: **20 cm**. Typische Fehler: 4 (kanten-teilweise), 28 (netz-nur-gezaehlt), 40 (kanten-teilweise).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein fünfseitiges Prisma hat Grundkanten von 4 cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist. Lösung: **20 cm**. Typische Fehler: 4 (mantel-streifen), 28 (netz-nur-gezaehlt), 40 (mantel-streifen).
 - `05` AFB II · _Argumentieren_ · Ali sagt: „Im Netz eines Prismas dürfen beide Grundflächen an derselben Seite der Mantelfläche liegen.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Dann gibt es beim Falten zwei Deckel und keinen Boden.
-  - ☐ Stimmt. Es kommt nur auf die Anzahl der Flächen an.
+  - ☐ Stimmt. Es kommt beim Netz nur auf die Anzahl der Flächen an.
   - ☐ Stimmt. Beim Falten kann man sie umklappen.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein dreiseitiges Prisma falten lässt.
   - ☐ A _(Bild: netz)_
@@ -2565,7 +2565,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundflächen gehören nicht zur 
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei Flächen sind Grundflächen. Die übrigen sind Rechtecke.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz eines Prismas besteht aus 10 Flächen. Gib an, wie viele Ecken das Prisma hat. Lösung: **16**. Typische Fehler: 10 (netz-ecken-gezaehlt), 8 (kanten-teilweise), 24 (ecken-kanten-verwechselt).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz eines Prismas besteht aus 10 Flächen. Gib an, wie viele Ecken das Prisma hat. Lösung: **16**. Typische Fehler: 10 (netz-ecken-gezaehlt), 8 (koerper-unvollstaendig-gezaehlt), 24 (ecken-kanten-verwechselt).
 - `02` AFB II · _Argumentieren_ · Prüfe, ob sich das Netz zu einem Prisma falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☐ Nein, es lässt sich nicht falten.
   - ☑ Ja, es lässt sich falten.
@@ -2579,8 +2579,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwei Flächen sind Grundflächen. Die
   - ☐ Stimmt. Die Grundflächen zählen doppelt.
   - ☑ Stimmt nicht. Es sind 6 Rechtecke und 2 Grundflächen, also 8.
   - ☐ Stimmt. Jede Ecke gibt eine Fläche.
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Mantelfläche eines fünfseitigen Prismas ist im Netz ein Streifen von 20 cm Länge. Alle Grundkanten sind gleich lang. Gib an, wie lang eine Grundkante ist. Lösung: **4 cm**. Typische Fehler: 10 (kanten-teilweise), 15 (kanten-teilweise).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz eines sechsseitigen Prismas. Im Netz hängen die 8 Flächen an 7 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **11**. Typische Fehler: 18 (kanten-teilweise), 7 (kanten-teilweise), 10 (kanten-teilweise).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Mantelfläche eines fünfseitigen Prismas ist im Netz ein Streifen von 20 cm Länge. Alle Grundkanten sind gleich lang. Gib an, wie lang eine Grundkante ist. Lösung: **4 cm**. Typische Fehler: 10 (mantel-streifen), 15 (mantel-streifen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz eines sechsseitigen Prismas. Im Netz hängen die 8 Flächen an 7 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **11**. Typische Fehler: 18 (netz-kleben), 7 (netz-kleben), 10 (netz-kleben).
 
 ## 6.3.5-Y1: Ich kann Pyramiden erkennen und benennen und ihre Ecken, Kanten und Flächen zählen.
 
@@ -2592,9 +2592,9 @@ Baut auf: 6.3.4-P1 (Ich kann Prismen erkennen und benennen und ihre Ecken, Kante
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Unten ist ein Quadrat. *Beispiel:* Rundherum sind Dreiecke. *Lösungsschritt:* Zähle das Quadrat und alle Dreiecke.
 
-- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 3 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt).
-- `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 8 (ecken-kanten-verwechselt), 1 (verdeckt-nicht-gezaehlt).
-- `03` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 6 (verdeckt-nicht-gezaehlt), 5 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Flächen. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (koerper-unvollstaendig-gezaehlt), 3 (koerper-unvollstaendig-gezaehlt), 8 (ecken-kanten-verwechselt).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Ecken. _(Bild: koerper)_ Lösung: **5**. Typische Fehler: 4 (koerper-unvollstaendig-gezaehlt), 8 (ecken-kanten-verwechselt), 1 (koerper-unvollstaendig-gezaehlt).
+- `03` AFB I · _Kommunizieren_ · Das Bild zeigt ein Turmdach. / Zähle seine Kanten. _(Bild: koerper)_ Lösung: **8**. Typische Fehler: 4 (koerper-unvollstaendig-gezaehlt), 6 (koerper-unvollstaendig-gezaehlt), 5 (ecken-kanten-verwechselt).
 - `04` AFB I · _Kommunizieren (+ Modellieren)_ · Ein Körper hat ein Quadrat und vier Dreiecke als Flächen. / Kreuze ihn an.
   - ☑ A _(Bild: koerper)_
   - ☐ B _(Bild: koerper)_
@@ -2612,8 +2612,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unten ist ein Quadrat. *Beispiel:* Ru
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *Beispiel:* Dazu kommt die Spitze. *Lösungsschritt:* Rechne 5 + 1.
 
-- `01` AFB I · _Kommunizieren_ · Das Bild zeigt eine fünfseitige Pyramide. / Gib an, wie viele Ecken sie hat. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 10 (ecken-kanten-verwechselt), 4 (verdeckt-nicht-gezaehlt).
-- `02` AFB I · _Kommunizieren_ · Das Bild zeigt eine sechsseitige Pyramide. / Gib an, wie viele Kanten sie hat. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 6 (verdeckt-nicht-gezaehlt), 9 (verdeckt-nicht-gezaehlt), 7 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Das Bild zeigt eine fünfseitige Pyramide. / Gib an, wie viele Ecken sie hat. _(Bild: koerper)_ Lösung: **6**. Typische Fehler: 5 (koerper-unvollstaendig-gezaehlt), 10 (ecken-kanten-verwechselt), 4 (koerper-unvollstaendig-gezaehlt).
+- `02` AFB I · _Kommunizieren_ · Das Bild zeigt eine sechsseitige Pyramide. / Gib an, wie viele Kanten sie hat. _(Bild: koerper)_ Lösung: **12**. Typische Fehler: 6 (koerper-unvollstaendig-gezaehlt), 9 (koerper-unvollstaendig-gezaehlt), 7 (ecken-kanten-verwechselt).
 - `03` AFB II · _Kommunizieren_ · Das Bild zeigt eine Pyramide. / Kreuze ihren Namen an. _(Bild: koerper)_
   - ☐ fünfseitige Pyramide
   - ☐ vierseitige Pyramide
@@ -2623,25 +2623,25 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *B
   - ☑ B _(Bild: koerper)_
   - ☐ C _(Bild: koerper)_
   - ☑ D _(Bild: koerper)_
-- `05` AFB II · _Kommunizieren_ · Die Grundfläche einer Pyramide ist ein Fünfeck. / Gib an, wie viele Kanten die Pyramide hat. Lösung: **10**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 15 (prisma-pyramide), 6 (ecken-kanten-verwechselt).
-- `06` AFB III · _Kommunizieren_ · Eine Pyramide hat ein Fünfeck als Grundfläche. / Gib an, wie viele Flächen sie hat. Lösung: **6**. Typische Fehler: 5 (verdeckt-nicht-gezaehlt), 7 (prisma-pyramide), 10 (ecken-kanten-verwechselt).
+- `05` AFB II · _Kommunizieren_ · Die Grundfläche einer Pyramide ist ein Fünfeck. / Gib an, wie viele Kanten die Pyramide hat. Lösung: **10**. Typische Fehler: 5 (koerper-unvollstaendig-gezaehlt), 15 (prisma-pyramide), 6 (ecken-kanten-verwechselt).
+- `06` AFB III · _Kommunizieren_ · Eine Pyramide hat ein Fünfeck als Grundfläche. / Gib an, wie viele Flächen sie hat. Lösung: **6**. Typische Fehler: 5 (koerper-unvollstaendig-gezaehlt), 7 (prisma-pyramide), 10 (ecken-kanten-verwechselt).
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Seitendreieck liegt an einer Kante der Grundfläche. *Lösungsschritt:* Die Grundfläche hat 10 Ecken, dazu kommt die Spitze.
 
-- `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 10 Seitendreiecke. Gib an, wie viele Ecken sie hat. Lösung: **11**. Typische Fehler: 10 (verdeckt-nicht-gezaehlt), 20 (prisma-pyramide), 30 (ecken-kanten-verwechselt).
-- `02` AFB II · _Kommunizieren_ · Eine Pyramide hat 18 Kanten. Gib an, wie viele Ecken ihre Grundfläche hat. Lösung: **9**. Typische Fehler: 6 (prisma-pyramide), 17 (kanten-teilweise), 10 (ecken-kanten-verwechselt).
+- `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 10 Seitendreiecke. Gib an, wie viele Ecken sie hat. Lösung: **11**. Typische Fehler: 10 (koerper-unvollstaendig-gezaehlt), 20 (prisma-pyramide), 30 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Eine Pyramide hat 18 Kanten. Gib an, wie viele Ecken ihre Grundfläche hat. Lösung: **9**. Typische Fehler: 6 (prisma-pyramide), 17 (koerper-unvollstaendig-gezaehlt), 10 (ecken-kanten-verwechselt).
 - `03` AFB II · _Kommunizieren_ · Kreuze die Pyramide mit 6 Ecken an.
   - ☐ A _(Bild: koerper)_
   - ☑ B _(Bild: koerper)_
   - ☐ C _(Bild: koerper)_
   - ☐ D _(Bild: koerper)_
 - `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Eine Pyramide hat immer gleich viele Ecken wie Flächen.“ Beurteile die Aussage.
-  - ☐ Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.
+  - ☐ Stimmt nicht. Eine Pyramide hat immer mehr Kanten als Ecken und Flächen.
   - ☐ Stimmt nicht. Nur die vierseitige Pyramide hat das.
   - ☑ Stimmt. Zu jedem Seitendreieck gehört eine Ecke unten, dazu Spitze und Grundfläche.
-- `05` AFB II · _Kommunizieren_ · Ein fünfseitiges Prisma und eine fünfseitige Pyramide stehen nebeneinander. Gib an, wie viele Kanten das Prisma mehr hat. Lösung: **5**. Typische Fehler: 15 (prisma-pyramide), 10 (prisma-pyramide), 1 (kanten-teilweise).
+- `05` AFB II · _Kommunizieren_ · Ein fünfseitiges Prisma und eine fünfseitige Pyramide stehen nebeneinander. Gib an, wie viele Kanten das Prisma mehr hat. Lösung: **5**. Typische Fehler: 15 (prisma-pyramide), 10 (prisma-pyramide), 1 (koerper-unvollstaendig-gezaehlt).
 - `06` AFB III · _Kommunizieren_ · Du schaust von oben auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an. _(Bild: koerper)_
   - ☑ Sechseck
   - ☐ Dreieck
@@ -2652,8 +2652,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Seitendreieck liegt an einer Ka
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine der Flächen ist die Grundfläche.
 
-- `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 11 Flächen. Gib an, wie viele Kanten sie hat. Lösung: **20**. Typische Fehler: 22 (kanten-teilweise), 30 (prisma-pyramide), 11 (ecken-kanten-verwechselt).
-- `02` AFB II · _Kommunizieren_ · Zähle an der sechsseitigen Pyramide Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (verdeckt-nicht-gezaehlt), 14 (kanten-teilweise).
+- `01` AFB I · _Kommunizieren_ · Eine Pyramide hat 11 Flächen. Gib an, wie viele Kanten sie hat. Lösung: **20**. Typische Fehler: 22 (koerper-unvollstaendig-gezaehlt), 30 (prisma-pyramide), 11 (ecken-kanten-verwechselt).
+- `02` AFB II · _Kommunizieren_ · Zähle an der sechsseitigen Pyramide Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an. _(Bild: koerper)_ Lösung: **2**. Typische Fehler: 4 (koerper-unvollstaendig-gezaehlt), 14 (koerper-unvollstaendig-gezaehlt).
 - `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Tom sagt: „Eine Pyramide kann 21 Kanten haben.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Eine Pyramide hat immer eine gerade Anzahl von Kanten.
   - ☐ Stimmt. Eine Pyramide kann jede Anzahl von Kanten haben.
@@ -2664,7 +2664,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine der Flächen ist die Grundfläch
   - ☐ C _(Bild: koerper)_
   - ☐ D _(Bild: koerper)_
   - ☑ E _(Bild: koerper)_
-- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Ein Prisma und eine Pyramide haben dieselbe Grundfläche. Zusammen haben sie 30 Kanten. Gib an, wie viele Ecken die Grundfläche hat. Lösung: **6**. Typische Fehler: 15 (kanten-teilweise), 10 (prisma-pyramide).
+- `05` AFB II · _Kommunizieren (+ Modellieren)_ · Ein Prisma und eine Pyramide haben dieselbe Grundfläche. Zusammen haben sie 30 Kanten. Gib an, wie viele Ecken die Grundfläche hat. Lösung: **6**. Typische Fehler: 15 (koerper-unvollstaendig-gezaehlt), 10 (prisma-pyramide).
 - `06` AFB III · _Kommunizieren_ · Du schaust von vorne auf die sechsseitige Pyramide. Kreuze die Form des Umrisses an. _(Bild: koerper)_
   - ☐ Kreis
   - ☐ Sechseck
@@ -2712,7 +2712,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundfläche ist ein Fünfeck. *B
   - ☐ fünfseitige Pyramide
   - ☑ sechsseitige Pyramide
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Netz gehört zu einer Pyramide. / Gib an, wie viele Flächen das Netz hat. _(Bild: netz)_ Lösung: **6**. Typische Fehler: 5 (netz-nur-gezaehlt), 7 (prisma-pyramide), 1 (netz-nur-gezaehlt).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide hat 8 Dreiecke um die Grundfläche. / Gib an, wie viele Ecken die Pyramide hat. Lösung: **9**. Typische Fehler: 8 (verdeckt-nicht-gezaehlt), 16 (prisma-pyramide), 10 (netz-ecken-gezaehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide hat 8 Dreiecke um die Grundfläche. / Gib an, wie viele Ecken die Pyramide hat. Lösung: **9**. Typische Fehler: 8 (koerper-unvollstaendig-gezaehlt), 16 (prisma-pyramide), 10 (netz-ecken-gezaehlt).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Das Bild zeigt eine sechsseitige Pyramide. / Kreuze ihr Netz an. _(Bild: koerper)_
   - ☐ A _(Bild: netz)_
   - ☐ B _(Bild: netz)_
@@ -2733,10 +2733,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* An jeder Seite der Grundfläche muss 
   - ☐ C _(Bild: netz)_
   - ☑ D _(Bild: netz)_
 - `04` AFB I · _Argumentieren_ · Mia sagt: „Im Netz einer Pyramide müssen alle Seitendreiecke an der Grundfläche liegen.“ Beurteile die Aussage.
-  - ☐ Stimmt. Die Grundfläche hält alle Dreiecke fest.
+  - ☐ Stimmt. Die Grundfläche hält alle Dreiecke fest, sonst fällt das Netz auseinander.
   - ☑ Stimmt nicht. Ein Seitendreieck kann auch an einem anderen Seitendreieck hängen.
   - ☐ Stimmt. Sonst kann man das Netz nicht falten.
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer vierseitigen Pyramide. Im Netz hängen die 5 Flächen an 4 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **4**. Typische Fehler: 8 (kanten-teilweise), 5 (kanten-teilweise).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer vierseitigen Pyramide. Im Netz hängen die 5 Flächen an 4 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **4**. Typische Fehler: 8 (netz-kleben), 5 (netz-kleben).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine vierseitige Pyramide falten lässt.
   - ☑ A _(Bild: netz)_
   - ☐ B _(Bild: netz)_
@@ -2749,9 +2749,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du klappst zwei Seiten
 
 - `01` AFB I · _Argumentieren_ · Prüfe, ob sich das Netz zu einer Pyramide falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☐ Ja, es lässt sich falten.
-  - ☐ Nein, es fehlt ein Seitendreieck.
+  - ☐ Nein, es fehlt ein Seitendreieck, denn die Grundfläche hat mehr Seiten.
   - ☑ Nein, die Seitendreiecke sind zu flach und treffen sich nicht in einer Spitze.
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide besteht aus 9 Flächen. Gib an, wie viele Kanten die Pyramide hat. Lösung: **16**. Typische Fehler: 18 (kanten-teilweise), 9 (ecken-kanten-verwechselt), 24 (prisma-pyramide).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide besteht aus 9 Flächen. Gib an, wie viele Kanten die Pyramide hat. Lösung: **16**. Typische Fehler: 18 (koerper-unvollstaendig-gezaehlt), 9 (ecken-kanten-verwechselt), 24 (prisma-pyramide).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine sechsseitige Pyramide falten lässt.
   - ☐ A _(Bild: netz)_
   - ☑ B _(Bild: netz)_
@@ -2762,7 +2762,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du klappst zwei Seiten
   - ☐ Stimmt. Zur Grundfläche kommen immer gerade viele Dreiecke.
   - ☐ Stimmt. Eine Pyramide hat immer 5 Flächen.
   - ☑ Stimmt nicht. Die fünfseitige Pyramide hat 6 Flächen.
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer Pyramide mit 6 Seitendreiecken. Gib an, wie viele Kanten du zukleben musst. Lösung: **6**. Typische Fehler: 12 (kanten-teilweise), 5 (kanten-teilweise).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer Pyramide mit 6 Seitendreiecken. Gib an, wie viele Kanten du zukleben musst. Lösung: **6**. Typische Fehler: 12 (netz-kleben), 5 (netz-kleben).
 - `06` AFB III · _Modellieren_ · Ein Prisma und eine Pyramide haben dieselbe Grundfläche. Ihre Netze haben zusammen 15 Flächen. Gib an, wie viele Ecken die Grundfläche hat. Lösung: **6**. Typische Fehler: 12 (netz-nur-gezaehlt).
 
 ## 6.3.6-R1: Ich kann Zylinder, Kegel und Kugel erkennen, auch an Gegenständen aus dem Alltag.
@@ -2831,7 +2831,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Von oben siehst du den Kreis unten, d
 - `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Ole sagt: „Die Spitze eines Kegels ist eine Ecke.“ Beurteile die Aussage.
   - ☐ Stimmt. Alles Spitze ist eine Ecke.
   - ☑ Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.
-  - ☐ Stimmt. Der Kegel hat eine Ecke und zwei Kanten.
+  - ☐ Stimmt. Der Kegel hat eine Ecke an der Spitze und zwei Kanten am Rand.
 - `03` AFB II · _Kommunizieren_ · Kreuze den Körper mit genau zwei Flächen an.
   - ☐ A _(Bild: koerper)_
   - ☐ B _(Bild: koerper)_
@@ -2870,7 +2870,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Spitze ist ein Punkt, an dem der
 - `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „Zylinder und Kegel haben gleich viele Kanten.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Der Zylinder hat 2 Kanten, der Kegel nur 1.
   - ☐ Stimmt. Beide haben 2 Kanten.
-  - ☐ Stimmt. Runde Körper haben keine Kanten.
+  - ☐ Stimmt. Runde Körper haben überhaupt keine Kanten.
 - `04` AFB III · _Kommunizieren_ · Ein Turm besteht aus einem Zylinder. Oben sitzt ein Kegel als Dach genau auf dem Deckel. Gib an, wie viele Flächen man am Turm von außen sieht, den Boden mitgezählt. Lösung: **3**. Typische Fehler: 5 (runde-koerper-zaehlen), 4 (runde-koerper-zaehlen), 2 (runde-koerper-zaehlen).
 - `05` AFB II · _Kommunizieren_ · Ein Körper sieht von vorne aus wie ein Rechteck. Von oben sieht er aus wie ein Kreis. Kreuze den Körper an.
   - ☑ Zylinder
@@ -3126,7 +3126,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Würfel steht auf dem Boden ode
 - `05` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Gib an, wie viele Würfel es sind. _(Bild: Würfelbau aus 12 Würfeln, Türme von vorne nach hinten: 0 1 1 1 / 2 2 2 0 / 3 0 0 0)_ Lösung: **12**. Typische Fehler: 11 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Mia sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“ / Beurteile die Aussage.
   - ☑ Stimmt nicht. / Die 8 Würfel können auch in einer Reihe liegen.
-  - ☐ Stimmt. / 8 Würfel ergeben 2 · 2 · 2.
+  - ☐ Stimmt. / 8 Würfel ergeben immer 2 · 2 · 2. / Das ist ein Würfel.
   - ☐ Stimmt. / Jeder Würfelbau ist ein Würfel.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3321,7 +3321,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Ziffer der genannten Stelle steht
   - ☐ 0,75 m = 75 cm
   - ☐ 3,700 t = 3 t 700 kg
 - `05` AFB II · _Argumentieren_ · Mara sagt: „0,99 und 0,0099 sind gleich viel.“ / Beurteile die Aussage und begründe sie.
-  - ☐ Stimmt. Beide haben dieselben Ziffern.
+  - ☐ Stimmt. Beide haben dieselben Ziffern, und Nullen ändern den Wert einer Dezimalzahl an keiner Stelle.
   - ☑ Falsch. Es gilt 0,99 > 0,0099, denn die Null nach dem Komma schiebt die Ziffern um eine Stelle nach rechts.
   - ☐ Falsch. Es gilt 0,99 < 0,0099.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Lena misst eine Strecke: 2 m 23 cm 6 mm. Gib die Länge in Metern mit Komma an. Lösung: **2,236 m**. Typische Fehler: 22,36 (dezimal-stelle).
@@ -3448,7 +3448,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir zuerst die beschrifteten St
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 0 bis 2, Teilstriche alle 0,1, Pfeil auf 0,2; Zahl eintragen)_ Lösung: **0,2**. Typische Fehler: 0,2 (strahl-einerschritte), 0,02 (dezimal-stelle).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 1,2 am Zahlenstrahl. _(Zahlenstrahl 0 bis 2, Teilstriche alle 0,1; antippen)_ Lösung: **1,2**. Typische Fehler: 1,3 (strahl-einerschritte), 1,1 (strahl-einerschritte).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Der Zahlenstrahl zeigt nur ein Stück. / Lies die Zahl am Pfeil ab. _(Zahlenstrahl 0,1 bis 0,2, Teilstriche alle 0,01, Ausschnitt, Pfeil auf 0,12; Zahl eintragen)_ Lösung: **0,12**. Typische Fehler: 1,2 (dezimal-stelle), 0,102 (null-platzhalter).
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Zahlenstrahl zeigt nur ein Stück. / Markiere 0,63. _(Zahlenstrahl 0,6 bis 0,7, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **0,63**. Typische Fehler: 0,67 (zeichen-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Zahlenstrahl zeigt nur ein Stück. / Markiere 0,63. _(Zahlenstrahl 0,6 bis 0,7, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **0,63**. Typische Fehler: 0,67 (strahl-gespiegelt).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Pfeil zeigt auf eine Zahl. / Kreuze die passende Zahl an. _(Bild: Zahlenstrahl 0,8 bis 0,9, Teilstriche alle 0,01, Ausschnitt mit Bruchzeichen, Pfeil auf 0,82)_
   - ☑ 0,82
   - ☐ 0,28
@@ -3460,9 +3460,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir zuerst die beschrifteten St
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Schritt zwischen zwei Hundertsteln ist ein Tausendstel. *Beispiel:* Von 2,34 bis 2,35 sind es 10 Schritte. Ein Schritt ist 0,001. *Lösungsschritt:* Lies den beschrifteten Strich links vom Pfeil ab. Zähle dann die Schritte.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 7,68 bis 7,69, Teilstriche alle 0,001, Ausschnitt, Pfeil auf 7,687; Zahl eintragen)_ Lösung: **7,687**. Typische Fehler: 8,38 (stellenwert), 76,87 (dezimal-stelle).
-- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 6,054 am Zahlenstrahl. _(Zahlenstrahl 6,05 bis 6,06, Teilstriche alle 0,001, Ausschnitt; antippen)_ Lösung: **6,054**. Typische Fehler: 6,056 (zeichen-verwechselt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 6,054 am Zahlenstrahl. _(Zahlenstrahl 6,05 bis 6,06, Teilstriche alle 0,001, Ausschnitt; antippen)_ Lösung: **6,054**. Typische Fehler: 6,056 (strahl-gespiegelt).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. / Achte auf die Schrittweite. _(Zahlenstrahl 0,3 bis 0,32, Teilstriche alle 0,002, Ausschnitt, Pfeil auf 0,308; Zahl eintragen)_ Lösung: **0,308**. Typische Fehler: 0,304 (strahl-einerschritte), 3,08 (dezimal-stelle).
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 6,09 am Zahlenstrahl. _(Zahlenstrahl 6 bis 6,2, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **6,09**. Typische Fehler: 6,11 (zeichen-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere 6,09 am Zahlenstrahl. _(Zahlenstrahl 6 bis 6,2, Teilstriche alle 0,01, Ausschnitt; antippen)_ Lösung: **6,09**. Typische Fehler: 6,11 (strahl-gespiegelt).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Pfeil zeigt auf eine Zahl. / Kreuze die passende Zahl an. _(Bild: Zahlenstrahl 0,78 bis 0,79, Teilstriche alle 0,001, Ausschnitt mit Bruchzeichen, Pfeil auf 0,782)_
   - ☑ 0,782
   - ☐ 0,788
@@ -3476,14 +3476,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Schritt zwischen zwei Hundertstel
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Lupe vergrößert einen kleinen Abschnitt des Strahls zehnfach. Unten siehst du die nächste Stelle nach dem Komma. *Lösungsschritt:* Lies zuerst oben ab, wo die Lupe liegt. Zähle dann unten die Schritte bis zum Pfeil.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,182**. Typische Fehler: 0,18 (runden-abschneiden), 0,102 (null-platzhalter).
-- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 6,6183 am Zahlenstrahl. _(Zahlenstrahl 6,618 bis 6,619, Teilstriche alle 0,0001, Ausschnitt; antippen)_ Lösung: **6,6183**. Typische Fehler: 6,6187 (zeichen-verwechselt).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,182**. Typische Fehler: 0,18 (strahl-zu-grob), 0,102 (null-platzhalter).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 6,6183 am Zahlenstrahl. _(Zahlenstrahl 6,618 bis 6,619, Teilstriche alle 0,0001, Ausschnitt; antippen)_ Lösung: **6,6183**. Typische Fehler: 6,6187 (strahl-gespiegelt).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Kreuze die Zahl am Pfeil an. _(Bild: lupe)_
   - ☑ 0,244
   - ☐ 0,246
   - ☐ 0,204
   - ☐ 0,24
-- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 1,814 bis 1,815, Teilstriche alle 0,0001, Ausschnitt, Pfeil auf 1,8147; Zahl eintragen)_ Lösung: **1,8147**. Typische Fehler: 1,814 (runden-abschneiden), 1,8143 (zeichen-verwechselt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl am Pfeil ab. _(Zahlenstrahl 1,814 bis 1,815, Teilstriche alle 0,0001, Ausschnitt, Pfeil auf 1,8147; Zahl eintragen)_ Lösung: **1,8147**. Typische Fehler: 1,814 (strahl-zu-grob), 1,8143 (strahl-gespiegelt).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 0,675 am Zahlenstrahl. / Achte auf die Schrittweite. _(Zahlenstrahl 0,67 bis 0,69, Teilstriche alle 0,005, Ausschnitt; antippen)_ Lösung: **0,675**. Typische Fehler: 0,68 (strahl-einerschritte).
 - `06` AFB III · _Argumentieren_ · Ali liest unten an der Lupe 0,43 ab. / Beurteile das Ergebnis. _(Bild: lupe)_
   - ☑ Falsch. Der Pfeil zeigt auf 0,483.
@@ -3494,14 +3494,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Lupe vergrößert einen kleinen A
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben zählt der Strahl in Tausendsteln, unten in Zehntausendsteln. Lies erst oben, dann unten ab.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,4774**. Typische Fehler: 0,477 (runden-abschneiden), 0,4776 (zeichen-verwechselt).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,4774**. Typische Fehler: 0,477 (strahl-zu-grob), 0,4776 (strahl-gespiegelt).
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere 1,4434 am Zahlenstrahl. _(Zahlenstrahl 1,443 bis 1,445, Teilstriche alle 0,0002, Ausschnitt; antippen)_ Lösung: **1,4434**. Typische Fehler: 1,4432 (strahl-einerschritte).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere die Zahl, die genau in der Mitte zwischen 0,22 und 0,23 liegt. _(Zahlenstrahl 0,22 bis 0,23, Teilstriche alle 0,001, Ausschnitt; antippen)_ Lösung: **0,225**.
 - `04` AFB III · _Argumentieren_ · Ida liest am Pfeil 0,562 ab. / Beurteile das Ergebnis und begründe. _(Bild: Zahlenstrahl 0,56 bis 0,58, Teilstriche alle 0,002, Ausschnitt mit Bruchzeichen, Pfeil auf 0,564)_
   - ☐ Stimmt, denn jeder Strich ist ein Tausendstel.
   - ☐ Stimmt.
   - ☑ Falsch. Ein Schritt ist 0,002. Der Pfeil zeigt auf 0,564.
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Unten ist nur jeder zweite Schritt gezeichnet. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,4254**. Typische Fehler: 0,4252 (strahl-einerschritte), 0,425 (runden-abschneiden).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Lupe vergrößert einen Abschnitt. / Unten ist nur jeder zweite Schritt gezeichnet. / Lies die Zahl am Pfeil ab. _(Bild: lupe)_ Lösung: **0,4254**. Typische Fehler: 0,4252 (strahl-einerschritte), 0,425 (strahl-zu-grob).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwischen 0,6 und 0,7 liegen viele Dezimalzahlen. / Kreuze alle Aussagen an, die stimmen.
   - ☐ 0,6 < 0,7005 < 0,7
   - ☑ 0,6 < 0,6999 < 0,7
@@ -3545,7 +3545,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterstreiche die Rundungsstelle. Sch
 - `06` AFB III · _Argumentieren_ · Elif rundet 8,147 auf Zehntel. / Elif rundet zuerst auf 8,15. / Dann rundet Elif auf 8,2. / Beurteile das Ergebnis.
   - ☑ Falsch. / 8,147 ≈ 8,1. / Man rundet in einem Schritt.
   - ☐ Stimmt, denn 8,15 ≈ 8,2.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rundet immer Stelle für Stelle.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -3564,7 +3564,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Rundungsstelle und schau nu
 - `06` AFB III · _Argumentieren_ · Tom rundet 7,8698 auf Hundertstel und schreibt 7,86. / Beurteile das Ergebnis.
   - ☐ Stimmt, denn beim Runden fallen die Ziffern hinten einfach weg.
   - ☑ Falsch. 7,8698 ≈ 7,87. Die dritte Stelle ist 9, also aufrunden.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Die dritte Stelle wird gestrichen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -3580,7 +3580,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, ab welcher Zahl aufgerunde
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 3,9995. / Auf Tausendstel: ▢ / Auf Hundertstel: ▢ / Auf Zehntel: ▢ Lösung: a = **4,000**, b = **4,00**, c = **4,0**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Finn rundet 2,3449 Stelle für Stelle von hinten auf Zehntel. / Finn erhält 2,4. / Finde den Fehler.
   - ☐ Stimmt, denn jede Stelle wurde richtig gerundet.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man rundet von hinten Stelle für Stelle bis zu den Zehnteln.
   - ☑ Falsch. 2,3449 ≈ 2,3. Es zählt nur die Ziffer rechts neben den Zehnteln.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, die auf Hundertstel gerundet 0,10 ergeben.
   - ☑ 0,1
@@ -3644,7 +3644,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege zuerst, welche Stelle die E
   - ☐ 5,34 €
 - `06` AFB III · _Argumentieren_ · Der Rechner zeigt 7,6883 m. / Noah rundet auf Zentimeter und schreibt 7,68 m. / Beurteile das Ergebnis.
   - ☐ Stimmt, denn Zentimeter sind Hundertstel Meter.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Die hinteren Ziffern fallen weg.
   - ☑ Falsch. 7,6883 m ≈ 7,69 m.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -3660,7 +3660,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Millimeter ist ein Tausendstel Me
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Taschenrechner zeigt für 1 : 3 die Zahl 0,3333. / Runde die Anzeige. / Auf Zehntel: ▢ / Auf Hundertstel: ▢ / Auf Tausendstel: ▢ Lösung: a = **0,3**, b = **0,33**, c = **0,333**
 - `04` AFB III · _Argumentieren_ · Ida rundet den Betrag 7,7449 € auf Zehntel Euro. / Ida rundet Stelle für Stelle und erhält 7,8 €. / Beurteile das Ergebnis und begründe.
   - ☐ Stimmt, denn jede Stelle wurde richtig gerundet.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man rundet von hinten Stelle für Stelle.
   - ☑ Falsch. 7,7449 € ≈ 7,7 €.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · In einer Umfrage nennen 4 von 7 Kindern Pizza als Lieblingsessen. / Der Rechner zeigt für den Anteil 0,5714. / Gib den Anteil auf Hundertstel gerundet an. Lösung: **0,57**. Typische Fehler: 0,571 (runden-falsche-stelle).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Messwert wurde auf Hundertstel gerundet und ergibt 3,80. / Kreuze alle Werte an, die es gewesen sein können.
@@ -3836,7 +3836,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Bruch ist eine Division: Zähler 
 - `06` AFB III · _Argumentieren_ · Ali rechnet für 3⁄16: 16 : 3 = 5,3̅ / Beurteile die Rechnung.
   - ☐ Stimmt, denn 16 : 3 = 5,3̅.
   - ☑ Falsch. Es gilt 3⁄16 = 3 : 16 = 0,1875.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man teilt die größere Zahl durch die kleinere.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 9 : 40 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,225**. Typische Fehler: 0,22 (runden-abschneiden), 9,40 (bruch-als-komma).
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze die Dezimalzahl zu 3⁄12 an.
   - ☐ 0,2
@@ -3869,7 +3869,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hänge so lange Nullen an, bis kein R
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ : 16 = 0,4375 Lösung: a = **7**
 - `06` AFB III · _Argumentieren_ · Paul rechnet 3 : 8 = 0,3 und hört auf. / Beurteile die Rechnung und begründe.
   - ☐ Stimmt, denn eine Stelle nach dem Komma reicht.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Nach dem ersten Ergebnis darf man aufhören.
   - ☑ Falsch. Es bleibt ein Rest. Es gilt 3 : 8 = 0,375.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 21 : 40 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,525**. Typische Fehler: 0,52 (runden-abschneiden).
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 11⁄25, 9⁄20, 0,4, 0,4375)_ Lösung: **0,4, 0,4375, 11⁄25, 9⁄20**
@@ -3878,7 +3878,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hänge so lange Nullen an, bis kein R
   - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Nenner gerade ist.
   - ☑ Er ergibt eine abbrechende Dezimalzahl, wenn sich sein Nenner durch Erweitern zu einer Zehnerpotenz machen lässt.
   - ☐ Er ergibt immer eine abbrechende Dezimalzahl.
-  - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.
+  - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist, also bei echten Brüchen.
 - `11` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 10⁄16 in eine Dezimalzahl um. Lösung: **0,625**. Typische Fehler: 10,16 (bruch-als-komma).
 - `12` AFB III · _Mit symbolischen Elementen umgehen_ · Ergänze den Zähler. / ▢⁄16 = 0,3125 Lösung: a = **5**
 
@@ -3906,7 +3906,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich und schreibe je
 - `06` AFB III · _Argumentieren_ · Ida schreibt: 1⁄3 = 0,33 / Beurteile die Aussage.
   - ☑ Falsch. Es gilt 1⁄3 = 0,3̅.
   - ☐ Stimmt, denn 0,33 ist fast 1⁄3.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Ein paar Stellen nach dem Komma genügen.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 8 : 15 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,53̅**. Typische Fehler: 0,53 (periode-abgebrochen), 0,533 (periode-abgebrochen), 0,5̅3̅ (periode-zu-frueh).
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze die richtige Schreibweise für 7⁄11 an.
   - ☐ 0,63̅
@@ -3919,7 +3919,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich und schreibe je
 - `12` AFB III · _Argumentieren_ · Noah schreibt: 7⁄12 = 0,5̅8̅3̅ / Beurteile die Schreibweise.
   - ☑ Falsch. Es gilt 7⁄12 = 0,583̅.
   - ☐ Stimmt, denn 7 : 12 = 0,5̅8̅3̅.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Die Periode beginnt direkt nach dem Komma.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -3936,7 +3936,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe jeden Rest auf. Beim Teilen 
   - ☑ 2⁄21
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gib den Bruch mit dem Nenner 9 an, der 0,5̅ ist. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄9**. Typische Fehler: 5⁄10 (periode-abgebrochen), 9⁄5 (bruch-vertauscht).
 - `06` AFB III · _Argumentieren_ · Elif sagt: „1⁄7 = 0,1428. Die Division geht auf.“ / Beurteile die Aussage und begründe.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Nach vier Stellen ist jede Division zu Ende.
   - ☐ Stimmt, denn 0,1428 hat vier Stellen.
   - ☑ Falsch. Der Rest kommt wieder. Es gilt 1⁄7 = 0,1̅4̅2̅8̅5̅7̅.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 13 : 30 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,43̅**. Typische Fehler: 0,43 (periode-abgebrochen), 0,433 (periode-abgebrochen), 0,4̅3̅ (periode-zu-frueh).
@@ -4140,7 +4140,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege: erst die Ganzen, dann die Ze
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt im Kopf: 0,52 + 0,46 + 0,48 Lösung: **1,46**. Typische Fehler: 0,146 (dezimal-stelle).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Elif kauft auf dem Markt für 13,55 € ein. / Elif bezahlt mit 20 €. / Gib das Rückgeld an. Lösung: **6,45 €**. Typische Fehler: 7,55 (endnull-nicht-ergaenzt), 7,00 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren_ · Paul rechnet: 9,3 + 0,12 = 1,05 / Beurteile die Rechnung und begründe.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man schreibt die Ziffern rechtsbündig untereinander und rechnet.
   - ☑ Falsch. 9,3 hat Zehntel, 0,12 hat Hundertstel. Es gilt 9,3 + 0,12 = 9,42.
   - ☐ Stimmt, denn 9,3 + 0,12 = 1,05.
 
@@ -4152,13 +4152,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Hunde
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ − 2,58 = 9,58 Lösung: a = **12,16**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf: 0,9 + 0,05 + 0,007 Lösung: **0,957**. Typische Fehler: 0,021 (komma-nicht-untereinander).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben je zwei Stellen nach dem Komma. / Kreuze die Aussage an, die stimmt.
-  - ☐ Die Summe hat immer genau zwei Stellen nach dem Komma.
-  - ☑ Die Summe kann weniger Stellen nach dem Komma haben, zum Beispiel wenn sich die Hundertstel zu einem Zehntel ergänzen.
-  - ☐ Die Summe hat immer vier Stellen nach dem Komma.
+  - ☐ Die Summe hat immer genau zwei Stellen nach dem Komma, wie die beiden Zahlen.
+  - ☑ Die Summe kann auch weniger Stellen nach dem Komma haben, wenn hinten eine Null entsteht.
+  - ☐ Die Summe hat immer vier Stellen nach dem Komma, denn zwei und zwei sind vier.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Staffel läuft 4 · 100 m. Die Zeiten sind 11,81 s, 12,25 s, 12,3 s und 12,08 s. / Gib die Zeit der ganzen Staffel an. Lösung: **48,44 s**. Typische Fehler: 37,37 (komma-nicht-untereinander).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 8 − 2,12 = 6,12 / Kreuze die Erklärung für den Fehler an.
-  - ☐ Das Komma steht an der falschen Stelle.
-  - ☐ Es wurde addiert statt subtrahiert.
+  - ☐ Das Komma steht an der falschen Stelle. Die Ziffern selbst stimmen.
+  - ☐ Es wurde addiert statt subtrahiert. Darum ist das Ergebnis zu groß.
   - ☑ Die Endnullen fehlen. Die Hundertstel wurden einfach abgeschrieben.
 
 ## 6.5.1-A2: Ich kann Dezimalzahlen schriftlich addieren und subtrahieren: Komma unter Komma.
@@ -4260,7 +4260,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe Komma unter Komma. Fülle fe
 
 - `06` AFB III · _Argumentieren_ · Ali rechnet schriftlich: 8,8 + 1,15 = 2,03 / Beurteile die Rechnung.
   - ☐ Stimmt, denn 8,8 + 1,15 = 2,03.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man schreibt die Ziffern rechtsbündig untereinander und rechnet.
   - ☑ Falsch. / Komma muss unter Komma stehen. / Es gilt 8,8 + 1,15 = 9,95.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4274,7 +4274,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe Komma unter Komma und ergän
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / 3,65 + ▢ = 13 Lösung: a = **9,35**
 - `06` AFB III · _Argumentieren_ · Finn rechnet schriftlich: 7 − 4,75 = 3,75 / Beurteile die Rechnung und begründe.
   - ☑ Falsch. 7 = 7,00. Es gilt 7 − 4,75 = 2,25.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Wo oben keine Ziffer steht, schreibt man die untere einfach ab.
   - ☐ Stimmt, denn die Hundertstel von 4,75 bleiben stehen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4285,13 +4285,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe 100 mit drei Endnullen.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ − 2,95 = 12,4 Lösung: a = **15,35**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Zwei Zahlen ergeben zusammen 10. Die eine Zahl ist 6,841. / Rechne im Heft. / Gib die andere Zahl an. Lösung: **3,159**. Typische Fehler: 4,841 (endnull-nicht-ergaenzt), 3,158 (ergaenzen-zu-viel).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ben rechnet schriftlich: 4,2 + 1,918 = 1,96 / Kreuze die Erklärung für seinen Fehler an.
-  - ☐ Er hat einen Übertrag vergessen.
+  - ☐ Er hat beim Addieren der Zehntel einen Übertrag vergessen.
   - ☑ Er hat die Zahlen rechtsbündig geschrieben und nicht Komma unter Komma.
-  - ☐ Er hat das Komma im Ergebnis vergessen.
+  - ☐ Er hat das Komma im Ergebnis an die falsche Stelle gesetzt.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Auf dem Burgmarkt kauft eine Familie drei Mal dasselbe: Brot für 4,04 €, Käse für 1,78 € und einen Apfel für 0,60 €. / Sie bezahlt mit 50 €. / Berechne das Rückgeld. Lösung: **30,74 €**. Typische Fehler: 43,58 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren_ · Lena sagt: „Komma unter Komma, Endnullen ergänzen, dann rechne ich wie gewohnt.“ / Beurteile, ob das immer klappt.
-  - ☑ Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen, das Komma bleibt an seiner Stelle.
-  - ☐ Es klappt nur, wenn man vorher alle Zahlen rundet.
+  - ☑ Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen.
+  - ☐ Es klappt nur, wenn man vorher alle Zahlen auf Zehntel rundet.
   - ☐ Es klappt nur bei Zahlen mit gleich vielen Stellen nach dem Komma.
 
 ## 6.5.2-S1: Ich kann Dezimalzahlen mit 10, 100 und 1000 multiplizieren und durch sie dividieren.
@@ -4322,7 +4322,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Nullen der Stufenzahl. *Be
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne von links nach rechts: 3,9 · 10 : 100 Lösung: **0,39**. Typische Fehler: 39 (sach-schritt-vergessen), 3900 (komma-falsche-richtung).
 - `06` AFB III · _Argumentieren_ · Mara rechnet: 5,46 · 10 = 5,460 / Beurteile die Rechnung.
   - ☑ Falsch. / Das Komma rückt eine Stelle nach rechts. / Es gilt 5,46 · 10 = 54,6.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Bei mal 10 hängt man immer eine Null an die Zahl an.
   - ☐ Stimmt, denn 5,460 hat eine Null mehr.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4348,8 +4348,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle, um wie viele Stellen das Komm
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ · 100 = 6,4 Lösung: a = **0,064**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: 0,4 : 0,1 Lösung: **4**. Typische Fehler: 0,04 (div-macht-kleiner), 40 (dezimal-stelle).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum bei mal 10 das Komma eine Stelle nach rechts rückt.
-  - ☐ Beim Malnehmen mit zehn hängt man immer eine Null an.
-  - ☑ Jede Stelle wird zehnmal so viel wert. Jede Ziffer rückt eine Stelle nach links. Darum steht das Komma eine Stelle weiter rechts.
+  - ☐ Beim Malnehmen mit zehn hängt man immer eine Null an die Zahl an.
+  - ☑ Jede Ziffer wird zehnmal so viel wert und rückt eine Stelle nach links.
   - ☐ Das Komma rückt nach rechts, weil man von rechts nach links rechnet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne von links nach rechts: 1,7 · 100 : 1000 · 10 Lösung: **1,7**. Typische Fehler: 0,17 (sach-schritt-vergessen), 17 (komma-falsche-richtung).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Rechnungen an, die stimmen.
@@ -4387,7 +4387,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Nullen der Stufenzahl. *Be
 - `06` AFB III · _Argumentieren_ · Lina sagt: „0,2 km sind 20 m.“ / Beurteile die Aussage.
   - ☐ Falsch. / Es gilt 0,2 km = 2 m.
   - ☑ Falsch. / 1 km = 1000 m. / Es gilt 0,2 km = 200 m.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / 1 km = 100 m, also rückt das Komma zwei Stellen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4412,9 +4412,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 t = 1000 kg.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Stapel aus 100 gleichen Münzen ist 20,1 cm hoch. / Gib an, wie dick eine Münze in Millimetern ist. Lösung: **2,01 mm**. Typische Fehler: 0,201 (umrechnungszahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Für 1000 gleiche Flaschen Saft braucht eine Firma 900 l. / Gib an, wie viel Milliliter in einer Flasche sind. Lösung: **900 ml**. Typische Fehler: 0,9 (umrechnungszahl).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Lina rechnet 1,4 m in Zentimeter um: 1,4 : 100 = 0,014 / Kreuze die Erklärung für den Fehler an.
-  - ☑ Sie hat geteilt statt malgenommen. Meter sind größer als Zentimeter, also braucht man mehr Zentimeter.
-  - ☐ Sie hat mit zehn statt mit hundert gerechnet.
-  - ☐ Sie hat richtig gerechnet.
+  - ☑ Sie hat geteilt statt malgenommen. Es müssen mehr Zentimeter als Meter sein.
+  - ☐ Sie hat mit zehn statt mit hundert gerechnet. Sonst stimmt die Rechnung.
+  - ☐ Sie hat richtig gerechnet. Zentimeter sind kleiner, also wird die Zahl kleiner.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Blatt Papier ist 0,1 mm dick. / Gib an, wie hoch ein Stapel aus 1000 Blatt in Zentimetern ist. Lösung: **10 cm**. Typische Fehler: 100 (umrechnungszahl), 1 (dezimal-stelle).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Setze die passende Zahl ein. / 9,2 · ▢ = 0,92 Lösung: a = **0,1**
 
@@ -4511,7 +4511,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne Komma und setze dann das 
   - ☑ 4,5 · 7
   - ☐ 45 · 70
 - `06` AFB III · _Argumentieren_ · Ali rechnet: 4,7 · 38 = 17,86 / Prüfe das Ergebnis mit einem Überschlag.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie im Faktor.
   - ☑ Falsch. Der Überschlag ist 5 · 38 = 190. Es gilt 4,7 · 38 = 178,6.
   - ☐ Falsch. Es gilt 4,7 · 38 = 1786.
 
@@ -4524,8 +4524,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Ein Paket wiegt 1,34 kg. / Ein Lieferwagen bringt 139 solche Pakete. / Rechne im Heft. / Gib das Gewicht aller Pakete an. Lösung: **186,26 kg**. Typische Fehler: 18,626 (dezimal-stelle), 1862,6 (dezimal-stelle).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum 0,9 · 23 kleiner als 23 ist.
   - ☑ Weniger als ein Ganzes mehrmals genommen ergibt weniger als die Zahl der Ganzen.
-  - ☐ Beim Malnehmen rückt das Komma immer nach links.
-  - ☐ Ein Ergebnis mit Komma ist immer klein.
+  - ☐ Beim Malnehmen mit einer Dezimalzahl rückt das Komma immer nach links.
+  - ☐ Ein Ergebnis mit Komma ist immer kleiner als eine natürliche Zahl.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 1,34 · 6 = 0,804 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **8,04**. Typische Fehler: 0,804 (dezimal-stelle).
 - `06` AFB III · _Probleme lösen_ · Rechne nicht genau. / Kreuze die Rechnung mit dem größten Ergebnis an.
   - ☑ 4,5 · 190
@@ -4602,7 +4602,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne Komma. Zähle dann die St
 - `06` AFB III · _Argumentieren_ · Elif rechnet: 0,3 · 0,3 = 0,9 / Beurteile die Rechnung.
   - ☑ Falsch. / Zehntel mal Zehntel ergibt Hundertstel. / Es gilt 0,3 · 0,3 = 0,09.
   - ☐ Stimmt, denn 3 · 3 = 9.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Zehntel mal Zehntel ergibt wieder Zehntel. / Das Komma bleibt an seiner Stelle.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4619,7 +4619,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde jeden Faktor auf Ganze oder auf
   - ☑ 31 · 0,27
 - `06` AFB III · _Argumentieren_ · Paul rechnet: 5,9 · 9,9 = 584,1 / Prüfe das Ergebnis mit einem Überschlag.
   - ☑ Falsch. Der Überschlag ist 6 · 10 = 60. Es gilt 5,9 · 9,9 = 58,41.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie in den Faktoren.
   - ☐ Falsch. Es gilt 5,9 · 9,9 = 5,841.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4630,9 +4630,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Multipliziere schriftlich im Heft: 0,27 · 0,68 Lösung: **0,1836**. Typische Fehler: 18,36 (mal-komma-wie-plus), 1,836 (dezimal-stelle).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** 1 m Stoff kostet 11,36 €. / Ole braucht 0,25 m Stoff. / Rechne im Heft. / Berechne den Preis. Lösung: **2,84 €**. Typische Fehler: 284 (mal-komma-wie-plus), 28,40 (dezimal-stelle).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 0,3 · 0,3 = 0,9 / Kreuze die Erklärung für den Fehler an.
-  - ☑ Das Komma wurde wie beim Addieren gesetzt. Das Ergebnis braucht so viele Nachkommastellen wie beide Faktoren zusammen.
-  - ☐ Hier hätte man plus rechnen müssen.
-  - ☐ Beim Einmaleins wurde falsch gerechnet.
+  - ☑ Das Komma wurde wie beim Addieren gesetzt. Hier braucht das Ergebnis zwei Stellen nach dem Komma.
+  - ☐ Hier hätte man plus rechnen müssen. Dann stimmt auch das Komma im Ergebnis.
+  - ☐ Beim Einmaleins wurde falsch gerechnet. Das Komma steht an der richtigen Stelle.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Elif rechnet: 1,6 · 0,8 = 12,8 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **1,28**. Typische Fehler: 12,8 (mal-komma-wie-plus).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Rechne nicht genau. / Kreuze alle Rechnungen an, deren Ergebnis kleiner als 7 ist.
   - ☑ 0,9 · 7
@@ -4673,7 +4673,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere wie mit natürlichen Zahlen
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Pack mit 4 Flaschen Saft kostet 2,28 €. / Berechne den Preis für eine Flasche. _(Bild: Geld: 2 €, 20 ct, 5 ct, 2 ct, 1 ct)_ Lösung: **0,57 €**. Typische Fehler: 5,70 (div-stellenwert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Dividiere: 7,1 : 2 / Hänge dafür Nullen an. Lösung: **3,55**. Typische Fehler: 3,5 (div-rest-vergessen), 355 (div-komma-vergessen), 35,5 (div-stellenwert), 0,355 (div-stellenwert).
 - `06` AFB III · _Argumentieren_ · Ali rechnet: 1,5 : 5 = 3 / Beurteile die Rechnung.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Beim Teilen durch eine natürliche Zahl fällt das Komma weg.
   - ☑ Falsch. / 1,5 ist kleiner als 5. / Es gilt 1,5 : 5 = 0,3.
   - ☐ Stimmt, denn 3 · 5 = 15.
 
@@ -4692,7 +4692,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich. Überschreites
   - ☐ 12 : 6
 - `06` AFB III · _Argumentieren_ · Ida rechnet: 129,2 : 19 = 68 / Prüfe das Ergebnis mit einem Überschlag.
   - ☐ Falsch. Es gilt 129,2 : 19 = 0,68.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Teilen durch eine natürliche Zahl fällt das Komma weg.
   - ☑ Falsch. Der Überschlag ist 130 : 20 = 6,5. Es gilt 129,2 : 19 = 6,8.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4703,9 +4703,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Noah und Freunde teilen 10 € gerecht. / Es sind 6 Kinder. / Dividiere im Heft. / Runde auf Cent. Lösung: **1,67 €**. Typische Fehler: 1,66 (runden-abschneiden).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Staffel aus 4 Kindern läuft zusammen 50 s. / Alle laufen gleich schnell, auch Mia. / Rechne im Heft. / Gib die Zeit für ein Kind an. Lösung: **12,5 s**. Typische Fehler: 125 (div-komma-vergessen), 1,25 (div-stellenwert).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Sara rechnet: 3,6 : 6 = 6 / Kreuze die Erklärung für den Fehler an.
-  - ☐ Beim Dividieren wird das Ergebnis immer größer.
-  - ☐ Es wurde malgenommen statt geteilt.
-  - ☑ Das Komma im Quotienten fehlt. Überschreitet man das Komma im Dividenden, setzt man das Komma im Quotienten.
+  - ☐ Beim Dividieren wird das Ergebnis immer größer als die erste Zahl. Das wurde vergessen.
+  - ☐ Es wurde malgenommen statt geteilt. Darum ist das Ergebnis zu groß geworden.
+  - ☑ Das Komma im Quotienten fehlt. Es wird gesetzt, sobald man im Dividenden das Komma überschreitet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole rechnet: 0,3 : 6 = 0,5 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **0,05**. Typische Fehler: 0,5 (div-stellenwert).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Rechne nicht genau. / Kreuze alle Rechnungen an, deren Ergebnis kleiner als 1 ist.
   - ☑ 2 : 6
@@ -4746,7 +4746,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiebe das Komma in beiden Zahlen
   - ☐ 690
   - ☐ 6,9
 - `06` AFB III · _Argumentieren_ · Jonas rechnet: 16,2 : 0,6 = 2,7 / Beurteile die Rechnung.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Das Komma rückt nur im Divisor um eine Stelle. / Die andere Zahl bleibt gleich.
   - ☐ Stimmt, denn Dividieren macht immer kleiner.
   - ☑ Falsch. / Das Komma muss in beiden Zahlen rücken. / Es gilt 16,2 : 0,6 = 162 : 6 = 27.
 
@@ -4766,7 +4766,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiebe das Komma in Dividend und 
 - `06` AFB III · _Argumentieren_ · Paul rechnet: 38,4 : 0,8 = 4,8 / Prüfe das Ergebnis mit einem Überschlag.
   - ☐ Falsch. Es gilt 38,4 : 0,8 = 480.
   - ☑ Falsch. Der Überschlag ist 38 : 0,8 = 47,5. Es gilt 38,4 : 0,8 = 48.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Dividieren wird das Ergebnis immer kleiner als die erste Zahl.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4776,9 +4776,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 5,2 : 0,7 / Runde das Ergebnis auf Zehntel. Lösung: **7,4**. Typische Fehler: 7,43 (falsch-gerundet).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Flasche fasst 0,5 l. / Saft gibt es 13,5 l. / Rechne im Heft. / Gib an, wie viele Flaschen man damit füllen kann. Lösung: **27**. Typische Fehler: 2,7 (div-ein-komma-verschoben), 6,75 (div-falsche-rechenart).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum 9 : 0,5 größer als 9 ist.
-  - ☐ Beim Teilen rückt das Komma immer nach rechts.
-  - ☐ Beim Dividieren wird das Ergebnis immer kleiner.
-  - ☑ Ein halbes Ganzes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.
+  - ☐ Beim Teilen durch eine Dezimalzahl rückt das Komma immer eine Stelle nach rechts.
+  - ☐ Beim Dividieren wird das Ergebnis immer kleiner. Hier ist beim Rechnen etwas schiefgegangen.
+  - ☑ Ein Halbes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole rechnet: 6,4 : 0,8 = 0,8 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **8**. Typische Fehler: 0,8 (div-ein-komma-verschoben).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Rechne nicht genau. / Kreuze alle Rechnungen an, deren Ergebnis größer als 8 ist.
   - ☑ 8 : 0,9
@@ -4820,7 +4820,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterstreiche zuerst, was du als Erst
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne zuerst die Punktrechnung. / 7,1 − 3 : 5 = 7,1 − ▢ = ▢ Lösung: q = **0,6**, e = **6,5**
 - `06` AFB III · _Argumentieren_ · Elif rechnet: 1,4 + 0,8 · 3 = 6,6 / Beurteile die Rechnung.
   - ☐ Stimmt, denn 1,4 + 0,8 = 2,2.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rechnet von links nach rechts: erst plus, dann mal.
   - ☑ Falsch. / Punkt vor Strich: 1,4 + 0,8 · 3 = 1,4 + 2,4 = 3,8.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4839,7 +4839,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Klammer zuerst, dann Punkt vor Strich
 - `06` AFB III · _Argumentieren_ · Sara rechnet: 10 − 0,2 · 2 = 19,6 / Beurteile die Rechnung und begründe.
   - ☐ Stimmt, denn man rechnet von links nach rechts.
   - ☑ Falsch. Mal kommt vor minus. Es gilt 10 − 0,2 · 2 = 10 − 0,4 = 9,6.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Erst wird abgezogen, das Ergebnis wird danach malgenommen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4852,9 +4852,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Klammer zuerst, dann Punkt vor Strich
   - ☐ 2,8 + 2,1 · 4 = 19,6
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / 2,3 + ▢ · 5 = 6,8 Lösung: a = **0,9**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum 3 + 0,5 · 5 nicht 17,5 ergibt.
-  - ☐ Bei Dezimalzahlen braucht man diese Regel nicht.
+  - ☐ Bei Dezimalzahlen gilt Punkt vor Strich nicht. Dort zählt nur die Reihenfolge.
   - ☑ Mal und geteilt rechnet man vor plus und minus. Zuerst wird also nur das Malnehmen gerechnet.
-  - ☐ Man rechnet immer von links nach rechts.
+  - ☐ Man rechnet immer von links nach rechts. Zuerst kommt also das Plus an die Reihe.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Emre kauft für 3 Kinder je ein Brötchen für 1,00 € und einen Saft für 0,75 €. / Schreibe einen Rechenausdruck mit Klammer. / Berechne den Preis. Lösung: **5,25 €**. Typische Fehler: 3,75 (klammer-falsch-gesetzt).
 - `06` AFB III · _Probleme lösen_ · Rechne nicht alles genau. / Kreuze die Rechnung mit dem größten Ergebnis an.
   - ☑ 4,6 · (0,5 + 2)
@@ -4894,7 +4894,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatt
 - `06` AFB III · _Argumentieren_ · Finn rechnet: 9,2 − 2,9 − 1,3 = 9,2 − 1,6 = 7,6 / Beurteile die Rechnung.
   - ☑ Falsch. / Beide Zahlen werden abgezogen. / Es gilt 9,2 − 2,9 − 1,3 = 5.
   - ☐ Stimmt, denn man darf beim Subtrahieren immer zusammenfassen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die beiden hinteren Zahlen darf man zuerst voneinander abziehen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4912,7 +4912,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Tausche und fasse so zusammen, dass g
 - `06` AFB III · _Argumentieren_ · Mia rechnet: 2 · (1,4 + 0,1) = 2,8 + 0,1 = 2,9 / Beurteile die Rechnung und begründe.
   - ☐ Stimmt, denn 2 · 1,4 = 2,8.
   - ☑ Falsch. Jede Zahl in der Klammer wird malgenommen. Es gilt 2 · (1,4 + 0,1) = 2,8 + 0,2 = 3.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Nur die erste Zahl in der Klammer wird malgenommen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4922,9 +4922,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Faktoren, die zusammen ein
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Auto braucht auf 100 km 6,8 l Benzin. / Gib an, wie viel es auf 250 km braucht. Lösung: **17 l**. Typische Fehler: 1700 (sach-schritt-vergessen).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Noah kauft 3 gleiche Hefte und einen Block für 1,20 €. / Zusammen kostet das 5,40 €. / Gib den Preis für ein Heft an. Lösung: **1,40 €**. Typische Fehler: 1,80 (sach-schritt-vergessen).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum man 3 · 2,99 € als 3 · 3 € − 3 · 0,01 € rechnen kann.
-  - ☐ Man rundet den Preis auf zwei Euro ab.
-  - ☐ Man lässt die Cent einfach weg.
-  - ☑ Der Preis ist fast so viel wie drei Euro. So viele Male drei Euro ist leicht zu rechnen. Danach zieht man die fehlenden Cent wieder ab.
+  - ☐ Man rundet den Preis auf zwei Euro ab und zählt danach die fehlenden Cent wieder dazu.
+  - ☐ Man lässt die Cent einfach weg, denn bei so kleinen Beträgen fallen sie nicht auf.
+  - ☑ Man rechnet mit vollen Euro und zieht danach die Cent wieder ab, die zu viel waren.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 3 · 2,99 = 3 · 3 − 3 · ▢ = ▢ − ▢ = ▢ Lösung: d = **0,01**, a = **9**, b = **0,03**, e = **8,97**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Klasse mit 24 Kindern fährt ins Museum. / Der Bus kostet zusammen 216 €. / Der Eintritt kostet 5,50 € pro Kind. / Kreuze den Rechenausdruck für den Preis pro Kind an.
   - ☑ 216 : 24 + 5,50
@@ -4985,7 +4985,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne die drei verschiedenen Fläche
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 19 cm. / Berechne den Oberflächeninhalt. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **2166 cm²**. Typische Fehler: 1083 cm² (oberflaeche-drei-flaechen), 361 cm² (oberflaeche-drei-flaechen), 1444 cm² (oberflaeche-drei-flaechen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Container ist 8 m lang, 7 m breit und 3 m hoch. / Berechne seinen Oberflächeninhalt. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **202 m²**. Typische Fehler: 101 m² (oberflaeche-drei-flaechen), 168 m² (volumen-oberflaeche-verwechselt), 56 m² (oberflaeche-drei-flaechen).
 - `05` AFB II · _Argumentieren_ · Jonas rechnet für den Quader: 27 cm² + 27 cm² + 9 cm² = 63 cm². / Jonas sagt: „Das ist der Oberflächeninhalt.“ / Beurteile die Aussage. _(Bild: Quader im Schrägbild, Maße 9 cm, 3 cm, 3 cm)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Ein Quader hat drei verschiedene Flächen. / Die zählt man zusammen.
   - ☐ Falsch. / Der Oberflächeninhalt ist 81 cm².
   - ☑ Falsch. / Jede Fläche gibt es zweimal. / Der Oberflächeninhalt ist 126 cm².
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Quader A hat die Kanten 9 cm, 7 cm und 5 cm. / Quader B hat die Kanten 6 cm, 4 cm und 3 cm. / Kreuze den Quader mit dem größeren Oberflächeninhalt an.
@@ -5006,7 +5006,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Fläche kommt zweimal vor: O = 2
   - ☐ Beide sind gleich groß.
   - ☑ der Quader
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas berechnet den Oberflächeninhalt eines Quaders mit 9 cm, 7 cm und 6 cm so: 9 · 7 · 6 = 378. / Kreuze die Erklärung für den Fehler an.
-  - ☐ Die Rechnung stimmt, es fehlt nur die Einheit.
+  - ☐ Die Rechnung stimmt, es fehlt nur die Einheit. Mit der richtigen Einheit ist es der Oberflächeninhalt.
   - ☐ Das Ergebnis muss noch verdoppelt werden.
   - ☑ Das ist die Rechnung für das Volumen. Für den Oberflächeninhalt berechnet man die sechs Flächen und addiert sie.
   - ☐ Die drei Kanten müssen addiert werden.
@@ -5032,7 +5032,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Rechnung aus und vergleic
 - `06` AFB III · _Argumentieren_ · Mia rechnet für einen Quader mit 8 cm, 6 cm und 3 cm: 2 · 48 cm² + 2 · 24 cm² + 18 cm² = 162 cm². / Beurteile die Rechnung.
   - ☑ Falsch. Die Fläche mit 18 cm² gibt es auch zweimal. Richtig sind 180 cm².
   - ☐ Falsch. Jede Fläche zählt nur einmal. Richtig sind 90 cm².
-  - ☐ Stimmt.
+  - ☐ Stimmt. Jede der drei verschiedenen Flächen wurde berechnet und addiert.
   - ☐ Falsch. Richtig sind 144 cm².
 
 ## 6.6.1-O2: Ich kann Sachaufgaben zum Oberflächeninhalt lösen und eine fehlende Kante bestimmen.
@@ -5081,7 +5081,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ohne Deckel bleiben fünf Flächen: d
 - `04` AFB I · _Modellieren_ · Ben packt ein Geschenk in Würfelform ein. / Jede Kante ist 12 cm lang. / Berechne, wie viel Papier mindestens nötig ist. _(Bild: Würfel im Schrägbild, Maße 12 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **864 cm²**. Typische Fehler: 432 cm² (oberflaeche-drei-flaechen), 144 cm² (oberflaeche-drei-flaechen), 576 cm² (oberflaeche-drei-flaechen).
 - `05` AFB II · _Argumentieren (+ Modellieren)_ · Die Kiste hat keinen Deckel. / Finn rechnet für das Holz: 94 dm². / Beurteile das Ergebnis. _(Bild: Quader im Schrägbild „Kiste ohne Deckel“, Maße 5 dm, 4 dm, 3 dm)_
   - ☑ Falsch. / Der Deckel fehlt. / Nötig sind 74 dm².
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Kiste ist ein Quader mit 6 Flächen.
   - ☐ Falsch. / Nötig sind 47 dm².
 - `06` AFB III · _Modellieren_ · Lena packt eine Schachtel mit 8 cm, 5 cm und 5 cm ein. / Emre packt einen Würfel mit 6 cm Kantenlänge ein. / Kreuze an, wer mehr Papier braucht.
   - ☐ Lena
@@ -5143,7 +5143,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Manche Würfel siehst du nicht. *Beis
 - `04` AFB I · _Kommunizieren_ · Der Plan zeigt einen Würfelbau von oben. / Jede Zahl nennt die Anzahl der Würfel übereinander. / Bestimme die Anzahl aller Würfel. / Der Würfelbau hat ▢ Würfel. _(Bild: risse)_ Lösung: n = **11**
 - `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mara zählt bei dem Körper 8 Würfel. / Beurteile das Ergebnis. _(Bild: Würfelbau aus 9 Würfeln, Türme von vorne nach hinten: 1 0 0 / 2 2 3 / 0 0 1)_
   - ☑ Falsch. / Verdeckte Würfel fehlen. / Es sind 9 Würfel.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man zählt nur die Würfel im Bild.
   - ☐ Falsch. / Es sind 7 Würfel.
 - `06` AFB III · _Kommunizieren_ · Der Körper wird zu einem Quader aufgefüllt. / Der Quader ist 3 Würfel lang, 2 Würfel breit und 3 Würfel hoch. / Bestimme die Anzahl der fehlenden Würfel. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 0 1 0 / 3 3 3)_ Lösung: **8**. Typische Fehler: 18 (sach-schritt-vergessen), 10 (sach-schritt-vergessen).
 
@@ -5178,7 +5178,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Quader hat 8 Ecken.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Zwei Körper bestehen aus gleich vielen gleich großen Würfeln. Der eine Körper ist höher als der andere. / Ben sagt: „Der höhere Körper hat das größere Volumen.“ / Beurteile die Aussage.
   - ☑ Falsch. Gleich viele gleich große Würfel haben zusammen immer dasselbe Volumen.
   - ☐ Falsch. Der breitere Körper hat das größere Volumen.
-  - ☐ Stimmt. Ein höherer Körper nimmt mehr Platz ein.
+  - ☐ Stimmt. Ein höherer Körper nimmt mehr Platz ein als ein flacher Körper.
   - ☐ Stimmt, aber nur bei Quadern.
 
 ## 6.6.2-W2: Ich kann Volumen vergleichen und die Würfel eines Quaders in Schichten zählen.
@@ -5287,7 +5287,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 dm³ sind 1000 cm³. *Beispiel:* 2 
   - ☐ m²
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 9000 mm³ = ▢ cm³ _(Bild: Einheitentafel cm³ | mm³, Spalten H Z E H Z E: · · 9 0 0 0)_ Lösung: a = **9**
 - `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Jonas wandelt um: 9 dm³ = 900 cm³. / Beurteile das Ergebnis. _(Bild: Einheitentafel dm³ | cm³, Spalten H Z E H Z E: · · 9 0 0 0)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Von dm zu cm rechnet man immer mit 100.
   - ☐ Falsch. / 9 dm³ = 90 cm³.
   - ☑ Falsch. / 1 dm³ = 1000 cm³. / Also 9 dm³ = 9000 cm³.
 - `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 9 m³ = ▢ dm³ _(Bild: Einheitentafel m³ | dm³, Spalten H Z E H Z E: · · 9 0 0 0)_ Lösung: a = **9000**
@@ -5407,7 +5407,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 m³ sind 1000 dm³, und 1 dm³ ist 
 - `02` AFB II · _Argumentieren_ · Sara wandelt um: 4,5 m³ = 450 l. / Beurteile das Ergebnis.
   - ☐ Falsch. 1 m³ = 10 l. Also 4,5 m³ = 45 l.
   - ☑ Falsch. 1 m³ = 1000 l. Also 4,5 m³ = 4500 l.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Von m³ zu Liter ist die Umrechnungszahl 10.
   - ☐ Falsch. 1 m³ = 1 l. Also 4,5 m³ = 4,5 l.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Angaben nach der Größe. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 750 ml, 1800 cm³, 0,01 hl, 0,8 l, 900 cm³)_ Lösung: **750 ml, 0,8 l, 900 cm³, 0,01 hl, 1800 cm³**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Regenfass enthält 3 hl Wasser. Es wird mit einer Gießkanne geleert, die 20 l fasst. / Bestimme, wie oft die Gießkanne gefüllt werden kann. Lösung: **15**. Typische Fehler: 150 (umrechnungszahl).
@@ -5458,7 +5458,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Länge mal Breite mal Höhe. *
 - `06` AFB III · _Argumentieren_ · Ben berechnet das Volumen von dem Quader. / Ben schreibt: 6 cm · 4 cm · 4 cm = 96 cm². / Beurteile das Ergebnis. _(Bild: Quader im Schrägbild, Maße 6 cm, 4 cm, 4 cm)_
   - ☑ Falsch. / Die Zahl stimmt, aber die Einheit ist falsch. / Richtig sind 96 cm³.
   - ☐ Falsch. / Richtig sind 128 cm².
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Zahl ist richtig gerechnet. / Die Einheit passt zu cm.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -5475,7 +5475,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* V = a · b · c. Alle Kanten brauchen
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Noah rechnet für einen Quader mit 6 dm, 35 cm und 12 cm: 6 · 35 · 12 = 2520. Noah schreibt als Ergebnis 2520 cm³. / Kreuze die Erklärung für den Fehler an.
   - ☐ Die drei Kanten müssen addiert werden.
   - ☑ Die Kanten haben verschiedene Einheiten. Mit 60 cm statt 6 dm ergibt sich 25 200 cm³.
-  - ☐ Die Rechnung stimmt. Es gibt keinen Fehler.
+  - ☐ Die Rechnung stimmt. Es gibt keinen Fehler, denn man darf jede Einheit multiplizieren.
   - ☐ Die Einheit ist falsch. Richtig sind 2520 dm³.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -5495,7 +5495,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alle Kanten in Dezimete
 - `06` AFB III · _Argumentieren_ · Ein Würfel hat die Kantenlänge 4 cm. Tom sagt: „Ein Würfel mit dem doppelten Volumen hat die doppelte Kantenlänge.“ / Beurteile die Aussage.
   - ☐ Stimmt. Mit 8 cm ist das Volumen 128 cm³.
   - ☑ Falsch. Mit der doppelten Kantenlänge 8 cm ist das Volumen 512 cm³. Das ist 8-mal so viel wie 64 cm³.
-  - ☐ Stimmt, denn beim Würfel sind alle Kanten gleich lang.
+  - ☐ Stimmt, denn beim Würfel sind alle Kanten gleich lang. Doppelte Kante heißt doppeltes Volumen.
   - ☐ Falsch. Mit der doppelten Kantenlänge ist das Volumen 256 cm³.
 
 ## 6.6.4-V2: Ich kann Sachaufgaben zum Volumen lösen und eine fehlende Kante bestimmen.
@@ -5591,7 +5591,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Körper besteht aus zwei Quadern.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader ist 6 cm lang, 4 cm breit und 4 cm hoch. / Auf dem Quader steht ein Würfel mit 2 cm Kantenlänge. / Berechne das Volumen von dem ganzen Körper. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **104 cm³**. Typische Fehler: 96 cm³ (sach-schritt-vergessen), 8 cm³ (sach-schritt-vergessen), 144 cm³ (teilflaeche-doppelt).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Mauer der Burg hat eine Stufe. / Sie ist in zwei Quader zerlegt. / Berechne das Volumen von der Mauer. / Wähle auch die passende Einheit. _(Bild: Körper aus 2 Quadern (4 × 2 × 2, 2 × 2 × 3), Zerlegung in zwei Farben mit Schnittlinie, Maße 4 m, 2 m, 2 m, 2 m, 3 m)_ _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **28 m³**. Typische Fehler: 16 m³ (sach-schritt-vergessen), 12 m³ (sach-schritt-vergessen), 40 m³ (teilflaeche-doppelt).
 - `05` AFB II · _Argumentieren_ · Ali rechnet nur den Quader unten aus. / Ali sagt: „Der Körper hat das Volumen 63 cm³.“ / Beurteile die Aussage. _(Bild: Körper aus 2 Quadern (7 × 3 × 3, 5 × 3 × 5), Zerlegung in zwei Farben mit Schnittlinie, Maße 7 cm, 3 cm, 3 cm, 5 cm, 5 cm)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Der Quader unten ist der ganze Körper.
   - ☑ Falsch. / Der Quader oben fehlt. / Das Volumen ist 138 cm³.
   - ☐ Falsch. / Das Volumen ist 168 cm³.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Die Treppe hat drei gleich hohe Stufen. / Jede Stufe ist 5 dm lang, 7 dm breit und 1 dm hoch. / Berechne das Volumen von der ganzen Treppe. / Wähle auch die passende Einheit. _(Bild: Körper aus 3 Quadern (15 × 7 × 1, 10 × 7 × 1, 5 × 7 × 1), Maße 5 dm, 1 dm, 7 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **210 dm³**. Typische Fehler: 105 dm³ (sach-schritt-vergessen), 35 dm³ (sach-schritt-vergessen), 315 dm³ (teilflaeche-doppelt).
@@ -5622,7 +5622,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne den vollen Quader und ziehe 
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Im Heft: Ein Wassertrog aus Stein ist außen 12 dm lang, 5 dm breit und 6 dm hoch. Die Wände und der Boden sind überall 1 dm dick. Oben ist der Trog offen. / Bestimme das Volumen des Steins. _(Größe eingeben, Einheit wählen aus dm³, l, dm², m³)_ Lösung: **210 dm³**. Typische Fehler: 150 dm³ (sach-schritt-vergessen), 140 dm³ (sach-schritt-vergessen), 240 dm³ (deckel-mitgerechnet).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus einem Würfel mit der Kantenlänge 7 cm wird an einer Ecke ein Würfel mit der Kantenlänge 3 cm herausgeschnitten. / Bestimme das Volumen des Restkörpers. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **316 cm³**. Typische Fehler: 343 cm³ (sach-schritt-vergessen), 64 cm³ (volumen-waechst-wie-kante).
 - `06` AFB III · _Argumentieren_ · Aus einem Würfel wird an einer Ecke ein kleiner Würfel herausgeschnitten. / Sara sagt: „Volumen und Oberflächeninhalt werden beide kleiner.“ / Beurteile die Aussage.
-  - ☐ Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner.
+  - ☐ Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner, weil an der Ecke drei Quadrate wegfallen.
   - ☑ Falsch. Das Volumen wird kleiner. Der Oberflächeninhalt bleibt gleich: Drei Quadrate fallen weg und drei gleich große kommen innen dazu.
   - ☐ Stimmt. Wenn etwas fehlt, wird beides kleiner.
   - ☐ Falsch. Beides bleibt gleich, denn die Form außen ändert sich kaum.
@@ -5637,15 +5637,15 @@ Baut auf: 6.6.5-Z1 (Ich kann das Volumen von Körpern berechnen, die aus Quadern
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Quadrate außen: auch unten, hinten und links. *Beispiel:* Ein einzelner Würfel hat 6 Quadrate außen. *Lösungsschritt:* Zähle Seite für Seite: oben, unten, vorne, hinten, links, rechts.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 2 Würfel sind zu einer Stange zusammengeklebt. / Zähle die Quadrate außen an der Stange. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_ Lösung: **10**. Typische Fehler: 12 (klebeflaeche-mitgezaehlt), 8 (oberflaeche-drei-flaechen).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 2 Würfel sind zu einer Stange zusammengeklebt. / Zähle die Quadrate außen an der Stange. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_ Lösung: **10**. Typische Fehler: 12 (klebeflaeche-mitgezaehlt), 8 (oberflaeche-drei-flaechen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Turm besteht aus 2 Würfeln. / Zähle die Quadrate außen. / Oben und unten: ▢ Quadrate / An den vier Seiten: 4 · 2 = ▢ Quadrate / Zusammen: ▢ Quadrate _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 2)_ Lösung: o = **2**, s = **8**, z = **10**
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Platte ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Platte. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 1 1 1)_ Lösung: **14**. Typische Fehler: 18 (klebeflaeche-mitgezaehlt), 3 (oberflaeche-drei-flaechen), 11 (oberflaeche-drei-flaechen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Platte ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Platte. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 1 1 1)_ Lösung: **14**. Typische Fehler: 18 (klebeflaeche-mitgezaehlt), 3 (oberflaeche-drei-flaechen), 11 (oberflaeche-drei-flaechen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Körper ist aus Würfeln gebaut. / Jedes Quadrat außen hat den Flächeninhalt 1 cm². / Gib den Oberflächeninhalt von dem Körper an. _(Bild: Würfelbau aus 3 Würfeln, Türme von vorne nach hinten: 2 1)_ _(Größe eingeben, Einheit cm² steht fest)_ Lösung: **14 cm²**. Typische Fehler: 18 cm² (klebeflaeche-mitgezaehlt), 12 cm² (oberflaeche-drei-flaechen).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas klebt 2 Würfel zu einer Stange zusammen. / Kreuze die Anzahl der Quadrate außen an. _(Bild: Würfelbau aus 2 Würfeln, Türme von vorne nach hinten: 1 1)_
   - ☐ 11 Quadrate
   - ☑ 10 Quadrate
   - ☐ 12 Quadrate
-- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Treppe ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Treppe. / Zähle auch unten und hinten. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_ Lösung: **20**. Typische Fehler: 30 (klebeflaeche-mitgezaehlt), 17 (oberflaeche-drei-flaechen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Treppe ist aus Würfeln gebaut. / Zähle die Quadrate außen an der Treppe. / Zähle auch unten, hinten und links. _(Bild: Würfelbau aus 5 Würfeln, Türme von vorne nach hinten: 2 2 1)_ Lösung: **20**. Typische Fehler: 30 (klebeflaeche-mitgezaehlt), 17 (oberflaeche-drei-flaechen).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -7144,6 +7144,19 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `tafel-verrutscht` | Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein. | Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links. | Du trägst jetzt jede Ziffer in die richtige Spalte ein. |
 | `vergleich-erste-ziffer` | Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten. | Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer. | Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen. |
 | `zeichen-verwechselt` | Verwechselt die Zeichen < und >. | Die Spitze des Zeichens zeigt immer zur kleineren Zahl. | Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl. |
+| `reihenfolge-umgekehrt` | Ordnet richtig, aber in umgekehrter Reihenfolge. | Lies den Auftrag noch einmal: Womit sollst du beginnen? | Du schaust jetzt genau, womit du beim Ordnen beginnen sollst. |
+| `strahl-gespiegelt` | Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich. | Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst. | Du zählst am Zahlenstrahl jetzt in die richtige Richtung. |
+| `strahl-zu-grob` | Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg. | Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu. | Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit. |
+| `kuerzen-subtrahiert` | Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen. | Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert. | Du weißt jetzt: Kürzen heißt teilen, nicht abziehen. |
+| `ergaenzen-addiert` | Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt. | Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren. | Du rechnest jetzt aus, was bis zum Ziel noch fehlt. |
+| `strahl-ganzes` | Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1. | Der Nenner zählt nur die Abstände von 0 bis 1. | Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1. |
+| `ganzes-mehrere-figuren` | Nimmt mehrere Figuren zusammen als ein Ganzes. | Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner. | Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen. |
+| `koerper-unvollstaendig-gezaehlt` | Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt. | Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab. | Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach. |
+| `mantel-streifen` | Bestimmt die Länge der Mantelfläche im Netz falsch. | Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen. | Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen. |
+| `netz-kleben` | Zählt beim Zusammenkleben eines Netzes die falschen Kanten. | Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen. | Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind. |
+| `netz-ansicht-verwechselt` | Verwechselt das Netz eines Körpers mit seiner Ansicht. | Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite. | Du unterscheidest jetzt Netz und Ansicht eines Körpers. |
+| `zahlbereich-falsch` | Ordnet eine Zahl einem falschen Zahlbereich zu. | Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein. | Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind. |
+| `unterschied-addiert` | Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist. | Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert. | Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert. |
 | `nachbar-verwechselt` | Verwechselt Vorgänger und Nachfolger. | Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach. | Du hältst Vorgänger und Nachfolger jetzt auseinander. |
 | `strahl-einerschritte` | Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen. | Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt? | Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist. |
 | `million-milliarde` | Verwechselt Tausender, Millionen und Milliarden. | Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden. | Du hältst Tausender, Millionen und Milliarden jetzt auseinander. |
@@ -7274,7 +7287,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `ortslinie-verwechselt` | Verwechselt die Ortslinien: Kreis (fester Abstand zu einem Punkt), Mittelsenkrechte (gleicher Abstand zu zwei Punkten), Winkelhalbierende (gleicher Abstand zu zwei Geraden), Parallele (fester Abstand zu einer Geraden). | Lies die Bedingung genau: Abstand zu einem Punkt, zu zwei Punkten oder zu Geraden? | Du weißt jetzt, welche Ortslinie zu welcher Bedingung gehört. |
 | `tangente-nicht-senkrecht` | Zeichnet die Tangente nicht senkrecht zum Radius im Berührpunkt. | Die Tangente berührt den Kreis in einem Punkt. Dort steht sie senkrecht auf dem Radius. | Du weißt jetzt: Die Tangente steht senkrecht auf dem Radius. |
 | `umkreis-inkreis-verwechselt` | Verwechselt Umkreis (Schnittpunkt der Mittelsenkrechten, durch die Ecken) und Inkreis (Schnittpunkt der Winkelhalbierenden, berührt die Seiten). | Der Umkreis geht durch alle Ecken. Der Inkreis berührt alle Seiten von innen. | Du hältst Umkreis und Inkreis jetzt auseinander. |
-| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie? | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
+| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir. | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
 | `konstruktion-reihenfolge` | Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt. | Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst? | Du ordnest die Schritte einer Konstruktion jetzt richtig. |
 | `ecken-kanten-verwechselt` | Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken). | Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil. | Du hältst Ecken, Kanten und Flächen jetzt auseinander. |
 | `verdeckt-nicht-gezaehlt` | Zählt nur die Ecken, Kanten oder Flächen, die im Bild sichtbar sind. | Denk an die Rückseite: Was ist hinten verdeckt? Die gestrichelten Linien helfen dir. | Du zählst jetzt auch, was hinten verdeckt ist. |
@@ -7286,7 +7299,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `wuerfel-verdeckt` | Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter. | Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter. | Du zählst jetzt auch verdeckte Würfel mit. |
 | `netz-ecken-gezaehlt` | Zählt Ecken oder Kanten im Netz statt am gefalteten Körper. | Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers. | Du zählst Ecken jetzt am fertigen Körper und nicht im Netz. |
 | `prisma-pyramide` | Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze). | Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma. | Du hältst Prisma und Pyramide jetzt auseinander. |
-| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma. | Du benennst den Körper jetzt nach seiner Grundfläche. |
+| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken. | Du benennst den Körper jetzt nach seiner Grundfläche. |
 | `gegenueber-benachbart` | Hält im Würfelnetz benachbarte Flächen für gegenüberliegend. | Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt. | Du findest gegenüberliegende Flächen jetzt sicher. |
 | `runde-koerper-zaehlen` | Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante. | Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen. | Du zählst Flächen und Kanten an runden Körpern jetzt richtig. |
 | `koerper-verwechselt` | Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma). | Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt? | Du erkennst die Körper jetzt an ihren Flächen. |

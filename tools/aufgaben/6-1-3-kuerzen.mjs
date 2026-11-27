@@ -52,7 +52,7 @@ export function kuerzen() {
       return luecken(Z(`Im Streifen ist ${br(...c)} gefärbt.`, `Kürze mit ${k}.`, `${br(...c)} = {{a}}⁄{{b}}`), { a: [a[0], fehlerliste(a[0], [[c[0], 'erweitern-nur-ein-teil'], [c[0] * k, 'erweitern-kuerzen-verwechselt']])], b: [a[1], fehlerliste(a[1], [[c[1], 'erweitern-nur-ein-teil'], [c[1] * k, 'erweitern-kuerzen-verwechselt']])] }, tK1G,
         { bild: streifen(...c), nachweis: [UMF(c, k, 'kuerzen')] }); },
     () => { const { a, k, c } = g1();
-      return zahl(Z(`${br(...c)} wurde gekürzt zu ${br(...a)}.`, 'Wie heißt die Kürzungszahl?'), k, fehlerliste(k, [[c[1] - a[1], 'erweitern-addiert'], [c[0] - a[0], 'erweitern-addiert'], [k + 1, 'div-einmaleins'], [k - 1, 'div-einmaleins']]),
+      return zahl(Z(`${br(...c)} wurde gekürzt zu ${br(...a)}.`, 'Wie heißt die Kürzungszahl?'), k, fehlerliste(k, [[c[1] - a[1], 'kuerzen-subtrahiert'], [c[0] - a[0], 'kuerzen-subtrahiert'], [k + 1, 'div-einmaleins'], [k - 1, 'div-einmaleins']]),
         h3('Vergleiche die beiden Nenner. Durch welche Zahl wurde geteilt?', '12⁄18 = 2⁄3: Aus der 18 wurde 3. Die Kürzungszahl ist 6.', `Rechne ${c[1]} : ${a[1]}.`), { nachweis: [UMF(c, k, 'kuerzen', true)] }); },
     () => { const { a, k, c } = amBild([3, 4, 5, 6]);
       if (c[0] - k < 1) return null;
@@ -75,7 +75,7 @@ export function kuerzen() {
       return bruch(`Kürze ${br(...c)} zuerst mit ${k}. Kürze das Ergebnis dann mit ${j}. Wie heißt der Bruch am Ende?`, br(...a), [[br(...d), 'sach-schritt-vergessen'], [br(a[0], c[1]), 'erweitern-nur-ein-teil'], [br(c[0] / k, c[1]), 'erweitern-nur-ein-teil']],
         h2('Kürze in zwei Schritten. Schreibe das Zwischenergebnis auf.', `Nach dem ersten Schritt heißt der Bruch ${br(...d)}. Kürze ihn jetzt mit ${j}.`), { genau: true, nachweis: [UMF(c, k, 'kuerzen'), UMF(d, j, 'kuerzen')] }); },
     () => { const { a, k, c } = m1();
-      return zahl(`${br(...c)} wurde gekürzt. Herausgekommen ist ${br(...a)}. Mit welcher Zahl wurde gekürzt?`, k, fehlerliste(k, [[c[1] - a[1], 'erweitern-addiert'], [c[0] - a[0], 'erweitern-addiert'], [k + 1, 'div-einmaleins'], [k - 1, 'div-einmaleins']]),
+      return zahl(`${br(...c)} wurde gekürzt. Herausgekommen ist ${br(...a)}. Mit welcher Zahl wurde gekürzt?`, k, fehlerliste(k, [[c[1] - a[1], 'kuerzen-subtrahiert'], [c[0] - a[0], 'kuerzen-subtrahiert'], [k + 1, 'div-einmaleins'], [k - 1, 'div-einmaleins']]),
         h2('Vergleiche die beiden Nenner oder die beiden Zähler: Durch welche Zahl wurde geteilt?', `Rechne ${c[1]} : ${a[1]}. Prüfe das Ergebnis am Zähler.`), { nachweis: [UMF(c, k, 'kuerzen', true)] }); },
     () => { const { a, k, c } = m1();
       return luecken(`Kürze mit ${k}: ${br(...c)} = {{a}}⁄{{b}}`, { a: [a[0], fehlerliste(a[0], [[c[0], 'erweitern-nur-ein-teil'], [c[0] * k, 'erweitern-kuerzen-verwechselt']])], b: [a[1], fehlerliste(a[1], [[c[1], 'erweitern-nur-ein-teil'], [c[1] * k, 'erweitern-kuerzen-verwechselt']])] },
@@ -93,17 +93,17 @@ export function kuerzen() {
       return bruch(`Kürze ${br(...c)} nacheinander mit ${k}, mit ${j} und mit ${l}. Wie heißt der Bruch am Ende?`, br(...a), [[br(...d), 'sach-schritt-vergessen'], [br(...e), 'sach-schritt-vergessen'], [br(a[0], c[1]), 'erweitern-nur-ein-teil']],
         h1('Schreibe jedes Zwischenergebnis auf. Oder überlege, mit welcher einen Zahl du gleich kürzen kannst.'), { genau: true, nachweis: [UMF(c, k, 'kuerzen'), UMF(e, j, 'kuerzen'), UMF(d, l, 'kuerzen')] }); },
     () => { const k = zz(3, 9), j = wahl([4, 5, 6, 7, 8, 12].filter((x) => x !== k));
-      return zahl(`Ein Bruch wird zuerst mit ${k} und dann mit ${j} gekürzt. Mit welcher einen Zahl hättest du ihn gleich kürzen können?`, k * j, fehlerliste(k * j, [[k + j, 'erweitern-addiert'], [Math.max(k, j), 'sach-schritt-vergessen'], [k * j + k, 'sach-falsche-rechnung']]),
+      return zahl(`Ein Bruch wird zuerst mit ${k} und dann mit ${j} gekürzt. Mit welcher einen Zahl hättest du ihn gleich kürzen können?`, k * j, fehlerliste(k * j, [[k + j, 'kuerzen-subtrahiert'], [Math.max(k, j), 'sach-schritt-vergessen'], [k * j + k, 'sach-falsche-rechnung']]),
         h1('Probiere es mit einem Bruch aus, der sich so kürzen lässt. Vergleiche den Nenner am Anfang mit dem Nenner am Ende.'), { nachweis: [`${k} · ${j} = ${k * j}`] }); },
     () => { const a = gekuerzt([7, 8, 9, 11, 12, 13, 15], 3), k = zz(14, 28), c = mal(a, k);
-      return zahl(`${br(...c)} wurde in einem Schritt zu ${br(...a)} gekürzt. Mit welcher Zahl?`, k, fehlerliste(k, [[c[1] - a[1], 'erweitern-addiert'], [c[0] - a[0], 'erweitern-addiert'], [k + 1, 'div-einmaleins'], [k - 2, 'div-einmaleins']]),
+      return zahl(`${br(...c)} wurde in einem Schritt zu ${br(...a)} gekürzt. Mit welcher Zahl?`, k, fehlerliste(k, [[c[1] - a[1], 'kuerzen-subtrahiert'], [c[0] - a[0], 'kuerzen-subtrahiert'], [k + 1, 'div-einmaleins'], [k - 2, 'div-einmaleins']]),
         h1('Teile den alten Nenner durch den neuen Nenner. Prüfe das Ergebnis am Zähler.'), { nachweis: [UMF(c, k, 'kuerzen', true)] }); },
     () => { const c = wahl([[72, 108], [60, 90], [84, 126], [96, 144], [90, 150], [120, 168], [108, 180], [72, 120], [126, 168]]), teiler = [2, 3, 4, 5, 6, 7, 8, 9, 12, 14, 15, 16, 18, 21, 24, 36], ja = mische(teiler.filter((t) => c[0] % t === 0 && c[1] % t === 0)), nein = mische(teiler.filter((t) => c[0] % t !== 0 || c[1] % t !== 0)), r = zz(2, 4);
       if (ja.length < r || nein.length < 6 - r) return null;
       return auswahl(`Mit welchen Zahlen lässt sich ${br(...c)} kürzen? Kreuze alle an.`, [...ja.slice(0, r).map((t) => opt(String(t), true)), ...nein.slice(0, 6 - r).map((t) => opt(String(t), false, 'erweitern-nur-ein-teil'))],
         h1('Zerlege große Zahlen: Durch 12 ist eine Zahl teilbar, wenn sie durch 3 und durch 4 teilbar ist.'), { mehrfach: true, nachweis: [{ art: 'kuerzbar', bruch: br(...c) }] }); },
     () => { const a = gekuerzt([7, 8, 9, 11, 12, 13, 15, 16], 3), k = zz(7, 15), c = mal(a, k);
-      return bruch(`Ein Bruch wurde mit ${k} gekürzt. Herausgekommen ist ${br(...a)}. Wie hieß der Bruch vorher?`, br(...c), [[br(a[0], c[1]), 'erweitern-nur-ein-teil'], [br(c[0], a[1]), 'erweitern-nur-ein-teil'], [br(a[0] + k, a[1] + k), 'erweitern-addiert']],
+      return bruch(`Ein Bruch wurde mit ${k} gekürzt. Herausgekommen ist ${br(...a)}. Wie hieß der Bruch vorher?`, br(...c), [[br(a[0], c[1]), 'erweitern-nur-ein-teil'], [br(c[0], a[1]), 'erweitern-nur-ein-teil'], [br(a[0] + k, a[1] + k), 'kuerzen-subtrahiert']],
         h1('Kürzen lässt sich durch Erweitern rückgängig machen.'), { genau: true, nachweis: [UMF(a, k, 'erweitern')] }); },
     () => { const c = wahl([[36, 48], [24, 36], [40, 60], [36, 60], [48, 72], [30, 45], [24, 60], [54, 72], [32, 48], [45, 75]]), g = ggt(...c), anzahl = vorn(g - 1, 2).filter((t) => g % t === 0).length;
       return zahl(`Mit wie vielen verschiedenen Zahlen kannst du ${br(...c)} kürzen? Zähle nur Zahlen, die größer als 1 sind.`, anzahl, fehlerliste(anzahl, [[anzahl + 1, 'sach-frage-verfehlt'], [anzahl - 1, 'sach-schritt-vergessen'], [g, 'sach-frage-verfehlt'], [1, 'kuerzen-nicht-vollstaendig']]),
@@ -178,14 +178,14 @@ export function kuerzen() {
       return auswahl(`Welche Brüche ergeben vollständig gekürzt ${br(...a)}? Kreuze alle an.`, [...richtige.map((x) => opt(br(...x), true)), ...falsche.map((x) => opt(br(...x), false, 'erweitern-nur-ein-teil'))],
         h2(`Kürze jeden Bruch vollständig und vergleiche mit ${br(...a)}.`, `Teile bei jedem Bruch den Zähler durch ${a[0]} und den Nenner durch ${a[1]}. Kommt beide Male dieselbe Zahl heraus?`), { mehrfach: true, nachweis: [WERT(br(...a), false)] }); },
     () => { const a = gekuerzt([7, 8, 9, 11, 12, 13], 3), k = zz(6, 12), c = mal(a, k);
-      return luecken(`Der Bruch ergibt vollständig gekürzt ${br(...a)}. Welcher Nenner fehlt? ${c[0]}⁄{{a}} = ${br(...a)}`, { a: [c[1], fehlerliste(c[1], [[a[1], 'erweitern-nur-ein-teil'], [a[1] + c[0] - a[0], 'erweitern-addiert'], [k, 'sach-frage-verfehlt']])] },
+      return luecken(`Der Bruch ergibt vollständig gekürzt ${br(...a)}. Welcher Nenner fehlt? ${c[0]}⁄{{a}} = ${br(...a)}`, { a: [c[1], fehlerliste(c[1], [[a[1], 'erweitern-nur-ein-teil'], [a[1] + c[0] - a[0], 'kuerzen-subtrahiert'], [k, 'sach-frage-verfehlt']])] },
         h2('Finde die Kürzungszahl an den beiden Zählern.', `Rechne ${c[0]} : ${a[0]} = ${k}. Der fehlende Nenner ist ${k}-mal so groß wie ${a[1]}.`), { nachweis: [UMF(a, k, 'erweitern', true)] }); },
   ]);
   sechs(K2, 'E', [
     () => { const { a, k, c } = voll([5, 7, 8, 9, 11, 12, 13, 15, 16], [28, 36, 42, 45, 48, 54, 56, 60]);
       return bruch(`Kürze ${br(...c)} vollständig.`, br(...a), fK2(c, a), h1('Kürze in mehreren Schritten oder suche den größten gemeinsamen Teiler von Zähler und Nenner.'), { gekuerzt: true, nachweis: [UMF(c, k, 'kuerzen', true)] }); },
     () => { const { a, k, c } = voll([3, 4, 5, 7, 8, 9, 11], [18, 24, 28, 30, 36, 42, 45], 2);
-      return zahl(`Mit welcher größten Zahl kannst du ${br(...c)} kürzen?`, k, fehlerliste(k, [[k / 2, 'kuerzen-nicht-vollstaendig'], [k / 3, 'kuerzen-nicht-vollstaendig'], [2, 'kuerzen-nicht-vollstaendig'], [c[1] - c[0], 'erweitern-addiert']]),
+      return zahl(`Mit welcher größten Zahl kannst du ${br(...c)} kürzen?`, k, fehlerliste(k, [[k / 2, 'kuerzen-nicht-vollstaendig'], [k / 3, 'kuerzen-nicht-vollstaendig'], [2, 'kuerzen-nicht-vollstaendig'], [c[1] - c[0], 'kuerzen-subtrahiert']]),
         h1('Gesucht ist der größte gemeinsame Teiler (ggT) von Zähler und Nenner. Kürze schrittweise und nimm alle Kürzungszahlen miteinander mal.'), { nachweis: [{ art: 'ggt', zahlen: [c[0], c[1]], zahl: k }] }); },
     () => { const n = wahl([7, 8, 9, 11, 12, 15]), z = wahl(vorn(n - 1, 1).filter((x) => ggt(x, n) === 1)), g = zz(3, 9), k = wahl([6, 8, 9, 12, 15]), Zc = (g * n + z) * k, Nc = n * k;
       return bruch(`Schreibe ${br(Zc, Nc)} als vollständig gekürzte gemischte Zahl.`, br(z, n, g), [[br(z, n, g + 1), 'gemischt-umwandeln'], [br(z, n, g - 1), 'gemischt-umwandeln']],
@@ -198,7 +198,7 @@ export function kuerzen() {
       return bruch(`Von ${N} ${was} sind ${weg} schon ${tat}. Welcher Anteil ist noch übrig? Kürze vollständig.`, br(...a), [[br(a[1] - a[0], a[1]), 'sach-frage-verfehlt'], [br(a[1], a[0]), 'bruch-vertauscht']],
         h1('Rechne zuerst aus, wie viele noch übrig sind. Der Anteil ist dann ein Bruch mit der Gesamtzahl im Nenner.'), { gekuerzt: true, nachweis: [`${N} − ${weg} = ${rest}`, `${rest} : ${N} = ${br(...a)}`] }); },
     () => { const a = gekuerzt([5, 7, 8, 9, 11, 13], 2), k = zz(6, 14), s = (a[0] + a[1]) * k;
-      return zahl(`Ein Bruch ergibt vollständig gekürzt ${br(...a)}. Sein Zähler und sein Nenner haben zusammen die Summe ${s}. Wie heißt der Zähler dieses Bruchs?`, a[0] * k, fehlerliste(a[0] * k, [[a[1] * k, 'bruch-vertauscht'], [k, 'sach-schritt-vergessen'], [a[0], 'sach-frage-verfehlt'], [s - a[0], 'erweitern-addiert']]),
+      return zahl(`Ein Bruch ergibt vollständig gekürzt ${br(...a)}. Sein Zähler und sein Nenner haben zusammen die Summe ${s}. Wie heißt der Zähler dieses Bruchs?`, a[0] * k, fehlerliste(a[0] * k, [[a[1] * k, 'bruch-vertauscht'], [k, 'sach-schritt-vergessen'], [a[0], 'sach-frage-verfehlt'], [s - a[0], 'kuerzen-subtrahiert']]),
         h1(`Beim Erweitern von ${br(...a)} wächst auch die Summe aus Zähler und Nenner mit der Erweiterungszahl.`), { nachweis: [`${a[0]} + ${a[1]} = ${a[0] + a[1]}`, `${s} : ${a[0] + a[1]} = ${k}`, `${a[0]} · ${k} = ${a[0] * k}`] }); },
   ]);
 }

@@ -92,7 +92,7 @@ export function punktVorStrich() {
     3: () => { const [a, b, c] = suche(() => [zz(40, 90), zz(3, 6), zz(4, 9)], ([x, y, z]) => x > y * z && y !== z), [k1, k2] = zweiKinder(), falsch = (a - b) * c;
       return auswahl(`${k1} rechnet ${a} − ${b} · ${c} = ${falsch}. ${k2} rechnet ${a} − ${b} · ${c} = ${a - b * c}. Wer hat recht?`, [
         opt(`${k2}. Punkt vor Strich: ${b} · ${c} = ${b * c} und ${a} − ${b * c} = ${a - b * c}.`, true),
-        opt(`${k1}. Man rechnet von links nach rechts.`, false, 'punkt-vor-strich'),
+        opt(`${k1}. Man rechnet immer von links nach rechts.`, false, 'punkt-vor-strich'),
         opt('Beide. Die Reihenfolge ist egal.', false, 'punkt-vor-strich'),
         opt(`Keiner. Richtig ist ${a - b - c}.`)],
       h2('Welche Rechenart kommt zuerst?', `Rechne zuerst ${b} · ${c}.`), { nachweis: [U(false, `${a} − ${b} · ${c}`, falsch), ...N(`${b} · ${c}`, `${a} − ${b * c}`)] }); },
@@ -120,7 +120,7 @@ export function punktVorStrich() {
       if (k === 0) { const [e, p, j] = suche(() => [zz(2, 9), zz(2, 6), zz(3, 9)], ([x, y, z]) => new Set([x, y, z]).size === 3);
         return auswahl(`Warum rechnet man bei ${e} + ${p} · ${j} zuerst ${p} · ${j}? Denke an ${e} einzelne Plättchen und ${p} Päckchen mit je ${j} Plättchen.`, [
           opt(`${p} · ${j} zählt die Plättchen in den Päckchen. Erst wenn sie gezählt sind, kommen die ${e} einzelnen dazu: ${e} + ${p * j} = ${e + p * j}.`, true),
-          opt('Weil man immer mit der größten Zahl anfängt.'),
+          opt('Weil man immer mit der größten Zahl anfängt. Die Plättchen in den Päckchen sind mehr als die einzelnen.'),
           opt(`Weil ${e} + ${p} zuerst gerechnet werden muss.`, false, 'punkt-vor-strich'),
           opt('Weil das Mal links steht.'),
           opt('Das ist nur eine Abmachung ohne Grund.')],
@@ -130,7 +130,7 @@ export function punktVorStrich() {
         opt(`${k2}. Geteilt und mal sind Punktrechnungen. ${a} : ${d} = ${q} und ${p} · ${j} = ${p * j}, also ${q} − ${p * j} = ${q - p * j}.`, true),
         opt(`${k1}. Minus steht in der Mitte.`, false, 'punkt-vor-strich'),
         opt('Beide. Das Ergebnis ist gleich.', false, 'punkt-vor-strich'),
-        opt('Keiner. Man rechnet von links nach rechts.', false, 'punkt-vor-strich'),
+        opt('Keiner. Man rechnet immer der Reihe nach von links nach rechts, ohne Ausnahme.', false, 'punkt-vor-strich'),
         opt(`${k1}. Geteilt ist keine Punktrechnung.`, false, 'punkt-vor-strich')],
       h1('Welche Rechenzeichen gehören zur Punktrechnung?'), { nachweis: N(`${a} : ${d}`, `${p} · ${j}`, `${q} − ${p * j}`) }); },
   });
@@ -182,7 +182,7 @@ export function punktVorStrich() {
     3: () => { const [a, b, c] = suche(() => [zz(3, 7), zz(2, 4), zz(3, 4)], ([x, y, z]) => new Set([x, y, z]).size === 3 && x + y <= 10), k = kind(), falsch = a + b * c;
       return auswahl(Z(`${k} rechnet:`, `(${a} + ${b}) · ${c} = ${falsch}`, 'Stimmt das?'), [
         opt(Z('Falsch.', `Zuerst die Klammer: ${a} + ${b} = ${a + b}.`, `${a + b} · ${c} = ${(a + b) * c}.`), true),
-        opt(Z('Stimmt.', 'Punkt vor Strich.'), false, 'klammer-ignoriert'),
+        opt(Z('Stimmt.', 'Punkt vor Strich.', 'Die Klammer ändert nichts.'), false, 'klammer-ignoriert'),
         opt(Z('Falsch.', `Richtig ist ${a + b + c}.`), false, '1x1-addiert')],
       h3('Was kommt bei Klammern zuerst?', '(6 + 2) · 3: Erst 6 + 2 = 8. Dann 8 · 3 = 24.', `Rechne zuerst ${a} + ${b}.`), { bild: B.feld(a + b, c, a), nachweis: [U(false, `(${a} + ${b}) · ${c}`, falsch), ...N(`${a} + ${b}`, `${a + b} · ${c}`, `${a} + ${b} + ${c}`)] }); },
   });
@@ -243,7 +243,7 @@ export function punktVorStrich() {
         return auswahl(`Braucht man in ${a} + (${b} · ${c}) die Klammer?`, [
           opt(`Nein. Wegen Punkt vor Strich ist auch ${a} + ${b} · ${c} = ${a + b * c}.`, true),
           opt(`Ja. Ohne Klammer ist es ${(a + b) * c}.`, false, 'punkt-vor-strich'),
-          opt('Ja. Klammern darf man nie weglassen.'),
+          opt('Ja. Klammern darf man in einer Rechnung nie weglassen.'),
           opt('Nein. Klammern ändern nie etwas.', false, 'klammer-ignoriert'),
           opt('Das kann man nicht sagen.')],
         h1('Rechne mit und ohne Klammer und vergleiche.'), { nachweis: [U(false), ...N(`${a} + (${b} · ${c})`, `${a} + ${b} · ${c}`)] }); }
@@ -251,7 +251,7 @@ export function punktVorStrich() {
       return auswahl(`${k1} sagt: „In (${a} − ${b}) − ${c} darf man die Klammer weglassen.“ ${k2} sagt: „In ${a} − (${b} − ${c}) darf man die Klammer weglassen.“ Wer hat recht?`, [
         opt(`Nur ${k1}. (${a} − ${b}) − ${c} = ${a - b - c} und ${a} − ${b} − ${c} = ${a - b - c}. Aber ${a} − (${b} − ${c}) = ${a - b + c}.`, true),
         opt(`Nur ${k2}. Die Klammer hinten ist egal.`, false, 'klammer-ignoriert'),
-        opt('Beide. Bei Minus darf man Klammern immer weglassen.', false, 'klammer-ignoriert'),
+        opt('Beide. Bei Minus darf man Klammern immer weglassen, das Ergebnis bleibt gleich.', false, 'klammer-ignoriert'),
         opt('Keiner. Klammern darf man nie weglassen.'),
         opt(`Beide. Es kommt immer ${a - b - c} heraus.`, false, 'klammer-ignoriert')],
       h1('Rechne alle drei Fassungen aus.'), { nachweis: N(`(${a} − ${b}) − ${c}`, `${a} − ${b} − ${c}`, `${a} − (${b} − ${c})`) }); },
@@ -364,7 +364,7 @@ export function punktVorStrich() {
       if (k === 0) { const [g, a, m] = suche(() => [zz(3, 6) * 10, zz(3, 8), zz(3, 5)], ([x, y, z]) => x > y);
         return auswahl(`Welche Geschichte passt zu (${g} − ${a}) · ${m}?`, [
           opt(`Ein Paket wiegt ${g} kg. Davon werden ${a} kg ausgepackt. ${m} solche Pakete werden verschickt.`, true),
-          opt(`Ein Paket wiegt ${g} kg. ${m} Pakete mit je ${a} kg werden davon ausgepackt.`, false, 'punkt-vor-strich'),
+          opt(`Ein Paket wiegt ${g} kg. ${m} Pakete mit je ${a} kg werden davon wieder ausgepackt.`, false, 'punkt-vor-strich'),
           opt(`Ich habe ${g} €. Ich gebe ${a} € aus und dann noch ${m} €.`, false, 'begriffe-verwechselt'),
           opt(`Ich habe ${g} €. Ich bekomme ${m}-mal ${a} € dazu.`, false, 'begriffe-verwechselt'),
           opt('Keine Geschichte passt.')],
@@ -373,7 +373,7 @@ export function punktVorStrich() {
       return auswahl(`Für ${n} Hefte zu je ${h} € und ${n} Stifte zu je ${s} € schreibt ${k1} ${n} · ${h} + ${s}. ${k2} schreibt ${n} · (${h} + ${s}). Wer hat recht?`, [
         opt(`${k2}. Jedes Heft und jeder Stift wird ${n}-mal gekauft: ${n} · ${h + s} = ${n * (h + s)}.`, true),
         opt(`${k1}. Punkt vor Strich.`, false, 'punkt-vor-strich'),
-        opt('Beide. Die Ausdrücke sind gleich.', false, 'punkt-vor-strich'),
+        opt('Beide. Die Ausdrücke sind gleich, die Klammer ändert nichts.', false, 'punkt-vor-strich'),
         opt(`Keiner. Richtig ist ${n} + ${h} + ${s}.`, false, '1x1-addiert'),
         opt(`${k1}. Die Stifte kosten nur ${s} €.`, false, 'punkt-vor-strich')],
       h1('Rechne aus, was die Stifte zusammen kosten.'), { nachweis: [HILFSZAHL(n, 'Anzahl'), ...N(`${h} + ${s}`, `${n} · ${h + s}`, `${n} · ${h}`, `${n} · ${s}`)] }); },

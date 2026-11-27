@@ -107,7 +107,7 @@ export function groessenSchaetzen() {
       h3('Suche die Einheit in der Tabelle.', 'Die Einheit cm steht bei der Länge. Mit cm misst du also eine Länge.', `Suche ${e} in der rechten Spalte. Lies links ab.`), { daten: EINHEITEN_TABELLE, nachweis: [{ art: 'groessenart', einheit: e }] }); };
   const dingZuGroesse = (anzahl, arten, mitTabelle) => () => { const s = stuetze(arten);
     return auswahl(mitTabelle ? Z('Die Tabelle hilft dir beim Vergleichen.', s.frage) : s.frage, [opt(s.wert, true), ...mische(s.falsch).slice(0, anzahl - 1).map((f) => opt(f, false, 'groesse-ohne-vorstellung'))],
-      anzahl <= 3 ? h3(TIPP_S, 'Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.', 'Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?') : anzahl === 4 ? h2(TIPP_S, 'Streiche zuerst, was viel zu klein oder viel zu groß ist.') : h1(TIPP_S),
+      anzahl <= 3 ? h3(TIPP_S, 'Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.', 'Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?') : anzahl === 4 ? h2(TIPP_S, 'Streiche zuerst, was viel zu klein oder viel zu groß ist.') : h1(TIPP_S),
       { ...(mitTabelle ? { daten: vergleichsTabelle(s.ding, s.art) } : {}), nachweis: [SG({ ding: s.ding })] }); };
   const einheitWaehlen = (anzahl, mitTabelle) => () => { const s = stuetze(), e = einheitVon(s.wert), andere = [...new Set(s.falsch.filter((f) => zahlVon(f) === zahlVon(s.wert)).map(einheitVon))].filter((x) => x !== e);
     if (andere.length < anzahl - 1) return null;

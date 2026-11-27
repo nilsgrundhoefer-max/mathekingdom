@@ -138,6 +138,10 @@ export const UEBERFLUESSIG = (zahl) => ({ zahl, grund: 'überflüssige Angabe' }
 
 export const KINDER = ['Mia', 'Tom', 'Lena', 'Ali', 'Ben', 'Mara', 'Jonas', 'Finn', 'Ida', 'Ole', 'Lina', 'Paul', 'Emre', 'Noah', 'Elif', 'Sara'];
 export const kind = () => wahl(KINDER);
+// Version 0.65: Das Pronomen passt zum Namen. `er(name)` gibt „er“ oder „sie“, `Er(name)` dasselbe am Satzanfang.
+export const MAEDCHEN = new Set(['Mia', 'Lena', 'Mara', 'Ida', 'Lina', 'Elif', 'Sara']);
+export const er = (name) => (MAEDCHEN.has(name) ? 'sie' : 'er');
+export const Er = (name) => (MAEDCHEN.has(name) ? 'Sie' : 'Er');
 export const zweiKinder = () => mische(KINDER).slice(0, 2);
 
 // ---------- Fehlvorstellungen ----------
@@ -212,6 +216,20 @@ const KIND = {
   'tafel-verrutscht': 'Du trägst jetzt jede Ziffer in die richtige Spalte ein.',
   'vergleich-erste-ziffer': 'Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen.',
   'zeichen-verwechselt': 'Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl.',
+  // Version 0.65: neue Fehlvorstellungen, damit der gezielte Hinweis zur Aufgabe passt (Audit aus Schülersicht).
+  'reihenfolge-umgekehrt': 'Du schaust jetzt genau, womit du beim Ordnen beginnen sollst.',
+  'strahl-gespiegelt': 'Du zählst am Zahlenstrahl jetzt in die richtige Richtung.',
+  'strahl-zu-grob': 'Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit.',
+  'kuerzen-subtrahiert': 'Du weißt jetzt: Kürzen heißt teilen, nicht abziehen.',
+  'ergaenzen-addiert': 'Du rechnest jetzt aus, was bis zum Ziel noch fehlt.',
+  'strahl-ganzes': 'Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1.',
+  'ganzes-mehrere-figuren': 'Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen.',
+  'koerper-unvollstaendig-gezaehlt': 'Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach.',
+  'mantel-streifen': 'Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen.',
+  'netz-kleben': 'Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind.',
+  'netz-ansicht-verwechselt': 'Du unterscheidest jetzt Netz und Ansicht eines Körpers.',
+  'zahlbereich-falsch': 'Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind.',
+  'unterschied-addiert': 'Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert.',
   'nachbar-verwechselt': 'Du hältst Vorgänger und Nachfolger jetzt auseinander.',
   'strahl-einerschritte': 'Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist.',
   'million-milliarde': 'Du hältst Tausender, Millionen und Milliarden jetzt auseinander.',
@@ -479,6 +497,20 @@ export const fehlvorstellungen = {
   'tafel-verrutscht': fv('Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein.', 'Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links.'),
   'vergleich-erste-ziffer': fv('Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten.', 'Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer.'),
   'zeichen-verwechselt': fv('Verwechselt die Zeichen < und >.', 'Die Spitze des Zeichens zeigt immer zur kleineren Zahl.'),
+  // Version 0.65 (Audit aus Schülersicht): Der Hinweis der bisherigen Kennung passte bei diesen Aufgaben nicht.
+  'reihenfolge-umgekehrt': fv('Ordnet richtig, aber in umgekehrter Reihenfolge.', 'Lies den Auftrag noch einmal: Womit sollst du beginnen?'),
+  'strahl-gespiegelt': fv('Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich.', 'Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst.'),
+  'strahl-zu-grob': fv('Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg.', 'Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu.'),
+  'kuerzen-subtrahiert': fv('Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen.', 'Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert.'),
+  'ergaenzen-addiert': fv('Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt.', 'Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren.'),
+  'strahl-ganzes': fv('Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1.', 'Der Nenner zählt nur die Abstände von 0 bis 1.'),
+  'ganzes-mehrere-figuren': fv('Nimmt mehrere Figuren zusammen als ein Ganzes.', 'Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner.'),
+  'koerper-unvollstaendig-gezaehlt': fv('Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt.', 'Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab.'),
+  'mantel-streifen': fv('Bestimmt die Länge der Mantelfläche im Netz falsch.', 'Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen.'),
+  'netz-kleben': fv('Zählt beim Zusammenkleben eines Netzes die falschen Kanten.', 'Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen.'),
+  'netz-ansicht-verwechselt': fv('Verwechselt das Netz eines Körpers mit seiner Ansicht.', 'Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite.'),
+  'zahlbereich-falsch': fv('Ordnet eine Zahl einem falschen Zahlbereich zu.', 'Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein.'),
+  'unterschied-addiert': fv('Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist.', 'Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert.'),
   'nachbar-verwechselt': fv('Verwechselt Vorgänger und Nachfolger.', 'Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.'),
   'strahl-einerschritte': fv('Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen.', 'Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt?'),
   'million-milliarde': fv('Verwechselt Tausender, Millionen und Milliarden.', 'Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden.'),
@@ -618,7 +650,7 @@ export const fehlvorstellungen = {
   'ortslinie-verwechselt': fv('Verwechselt die Ortslinien: Kreis (fester Abstand zu einem Punkt), Mittelsenkrechte (gleicher Abstand zu zwei Punkten), Winkelhalbierende (gleicher Abstand zu zwei Geraden), Parallele (fester Abstand zu einer Geraden).', 'Lies die Bedingung genau: Abstand zu einem Punkt, zu zwei Punkten oder zu Geraden?'),
   'tangente-nicht-senkrecht': fv('Zeichnet die Tangente nicht senkrecht zum Radius im Berührpunkt.', 'Die Tangente berührt den Kreis in einem Punkt. Dort steht sie senkrecht auf dem Radius.'),
   'umkreis-inkreis-verwechselt': fv('Verwechselt Umkreis (Schnittpunkt der Mittelsenkrechten, durch die Ecken) und Inkreis (Schnittpunkt der Winkelhalbierenden, berührt die Seiten).', 'Der Umkreis geht durch alle Ecken. Der Inkreis berührt alle Seiten von innen.'),
-  'innen-aussen-verwechselt': fv('Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich).', 'Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie?'),
+  'innen-aussen-verwechselt': fv('Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich).', 'Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir.'),
   'konstruktion-reihenfolge': fv('Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt.', 'Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst?'),
   // Klasse 6, Kapitel 3 (ADR 0045): Stolpersteine aus der Niveauübersicht (T03) und weitere Fehler beim Raumvorstellen
   'ecken-kanten-verwechselt': fv('Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken).', 'Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil.'),
@@ -631,7 +663,7 @@ export const fehlvorstellungen = {
   'wuerfel-verdeckt': fv('Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter.', 'Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter.'),
   'netz-ecken-gezaehlt': fv('Zählt Ecken oder Kanten im Netz statt am gefalteten Körper.', 'Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers.'),
   'prisma-pyramide': fv('Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze).', 'Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma.'),
-  'name-nach-seitenflaeche': fv('Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.', 'Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma.'),
+  'name-nach-seitenflaeche': fv('Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.', 'Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken.'),
   'gegenueber-benachbart': fv('Hält im Würfelnetz benachbarte Flächen für gegenüberliegend.', 'Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt.'),
   'runde-koerper-zaehlen': fv('Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante.', 'Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen.'),
   'koerper-verwechselt': fv('Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma).', 'Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt?'),
@@ -1154,8 +1186,68 @@ const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text)
 // Heftaufgabe (Nils, 2026-11-25, ADR 0047): Eine Aufgabe, die im Heft bearbeitet wird, trägt das Kennzeichen `heftaufgabe`.
 // Das Dashboard zeigt darüber das Heftband. Erkannt wird sie an ihrem Auftrag: „Im Heft: …“ oder „Zeichne … in dein Heft“.
 export const HEFTAUFTRAG = /(?:^|\n|[.:!] )Im Heft:|\b(?:Zeichne|Konstruiere|Rechne|Dividiere|Multipliziere|Addiere|Subtrahiere)\b[^.?!\n]*?\b(?:in dein Heft|ins Heft|im Heft)\b/;
+// Version 0.65: Ein Beispielkärtchen darf die Aufgabe nicht vorrechnen. Die Beispiele sind feste Sätze, die Zahlen der Aufgabe
+// sind gezogen; treffen beide zusammen, stünde die Lösung im Beispiel. Dann gilt das Ersatzbeispiel mit anderen Zahlen.
+const zahlenIn = (s) => new Set(String(s ?? '').match(/\d+(?:[,\u2044]\d+)?/g) ?? []);
+const loesungszahlen = (a) => {
+  const L = new Set(), dazu = (w) => { if (['number', 'string'].includes(typeof w)) zahlenIn(String(w).replace('.', ',')).forEach((x) => L.add(x)); };
+  dazu(a.loesung);
+  Object.values(a.luecken ?? {}).forEach((l) => dazu(Array.isArray(l) ? l[0] : l?.loesung));
+  (a.optionen ?? []).filter((o) => o.richtig).forEach((o) => dazu(o.text));
+  (a.teile ?? []).forEach((t) => dazu(t?.loesung));
+  return L;
+};
+export function beispielVerraet(a, beispiel = a.hilfen?.beispiel) {
+  if (!beispiel) return false;
+  const zb = zahlenIn(beispiel), zt = zahlenIn(String(a.text ?? '').replace(/\{\{\w+\}\}/g, '')), L = loesungszahlen(a);
+  if (!L.size || ![...L].every((x) => zb.has(x))) return false;
+  // Aufgabe nur im Bild (keine Zahl im Text): Steht der gesuchte Bruch im Beispiel, ist es dieselbe Aufgabe.
+  if (zt.size < 2) return zt.size === 0 && typeof a.loesung === 'string' && a.loesung.includes('\u2044');
+  return [...zt].every((x) => zb.has(x));
+}
+export const ERSATZBEISPIEL = {
+  'Der Pfeil steht bei 2⁄4. Gekürzt ist das 1⁄2.': 'Der Pfeil steht bei 2⁄6. Gekürzt ist das 1⁄3.',
+  "6 Plättchen: Bis 10 fehlen 4.": "8 Plättchen: Bis 10 fehlen 2.",
+  "Von 70 bis 100 fehlen 30.": "Von 60 bis 100 fehlen 40.",
+  "3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9.": "5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8.",
+  "45 − (12 + 8): Klammer 12 + 8 = 20. Dann 45 − 20 = 25.": "60 − (25 + 5): Klammer 25 + 5 = 30. Dann 60 − 30 = 30.",
+  "2 € − 1 € 50 ct = 50 ct": "5 € − 3 € 50 ct = 1 € 50 ct",
+  "2 Kästchen sind 1 cm.": "6 Kästchen sind 3 cm.",
+  "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.": "Es gilt 1⁄4 < 3⁄4. Denn 1 Teil ist weniger als 3 Teile.",
+  "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.": "2⁄3 von 12 kg: 12 kg : 3 = 4 kg und 4 kg · 2 = 8 kg.",
+  "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.": "Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3.",
+  "Bei 5 Strichen von 0 bis 1 sind es 4 Abstände.": "Bei 4 Strichen von 0 bis 1 sind es 3 Abstände.",
+  "1⁄2 = 2⁄4, denn 1 · 2 = 2 und 2 · 2 = 4.": "1⁄3 = 2⁄6, denn 1 · 2 = 2 und 3 · 2 = 6.",
+  "1⁄2 + 1⁄4 = 2⁄4 + 1⁄4 = 3⁄4. Aus einem Halben werden zwei Viertel.": "1⁄3 + 1⁄6 = 2⁄6 + 1⁄6 = 3⁄6. Aus einem Drittel werden zwei Sechstel.",
+  "1⁄2 + 1⁄6 = 3⁄6 + 1⁄6 = 4⁄6 = 2⁄3.": "1⁄2 + 1⁄10 = 5⁄10 + 1⁄10 = 6⁄10 = 3⁄5.",
+  "1⁄2 + 1⁄4 + 1⁄8 = 4⁄8 + 2⁄8 + 1⁄8 = 7⁄8.": "1⁄3 + 1⁄6 + 1⁄12 = 4⁄12 + 2⁄12 + 1⁄12 = 7⁄12.",
+  "2 · 1⁄2 = 2⁄2 = 1. Zwei Halbe sind ein Ganzes.": "3 · 1⁄3 = 3⁄3 = 1. Drei Drittel sind ein Ganzes.",
+  "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
+  "4⁄5 reicht für 2 Stunden. Eine Stunde braucht 4⁄5 : 2 = 2⁄5.": "6⁄7 reicht für 3 Stunden. Eine Stunde braucht 6⁄7 : 3 = 2⁄7.",
+  "2⁄3 Kuchen für 4 Kinder: 2⁄3 : 4 = 2⁄12 = 1⁄6.": "3⁄4 Kuchen für 6 Kinder: 3⁄4 : 6 = 3⁄24 = 1⁄8.",
+  "2⁄3 von 3⁄4 l sind 2⁄3 · 3⁄4 l = 6⁄12 l = 1⁄2 l.": "1⁄2 von 4⁄5 l sind 1⁄2 · 4⁄5 l = 4⁄10 l = 2⁄5 l.",
+  "(1⁄7 + 2⁄7) · 2 = 3⁄7 · 2 = 6⁄7.": "(1⁄9 + 3⁄9) · 2 = 4⁄9 · 2 = 8⁄9.",
+  "Eine Tüte: 1⁄7 kg + 2⁄7 kg = 3⁄7 kg. Zwei Tüten: 2 · 3⁄7 kg = 6⁄7 kg.": "Eine Tüte: 1⁄9 kg + 3⁄9 kg = 4⁄9 kg. Zwei Tüten: 2 · 4⁄9 kg = 8⁄9 kg.",
+  "5 € − 1,20 €: 5 € − 1 € = 4 €. Dann 4 € − 20 ct = 3,80 €.": "10 € − 2,30 €: 10 € − 2 € = 8 €. Dann 8 € − 30 ct = 7,70 €.",
+  "2 · 0,3 = 2 · 3 Zehntel = 6 Zehntel = 0,6.": "4 · 0,2 = 4 · 2 Zehntel = 8 Zehntel = 0,8.",
+  "Turm aus 2 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 2 = 8 Quadrate. Zusammen 10.": "Turm aus 4 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 4 = 16 Quadrate. Zusammen 18.",
+  "Start bei −3, dann 5 Schritte nach rechts: Das Ziel ist 2.": "Start bei −4, dann 7 Schritte nach rechts: Das Ziel ist 3.",
+  "Start bei −2, dann 6 nach rechts: 4. Dann 5 nach links: −1.": "Start bei −3, dann 8 nach rechts: 5. Dann 7 nach links: −2.",
+  "4 + (−7) = −3. Du gehst von 4 aus 7 Schritte nach links.": "2 + (−5) = −3. Du gehst von 2 aus 5 Schritte nach links.",
+  "−2 + 5 = 3. Der Aufzug hält im Stockwerk 3.": "−4 + 6 = 2. Der Aufzug hält im Stockwerk 2.",
+  "6 + (−4) = 6 − 4 = 2.": "9 + (−5) = 9 − 5 = 4.",
+  "−25 + 40 − 15 = 40 − 25 − 15 = 40 − 40 = 0.": "−35 + 50 − 15 = 50 − 35 − 15 = 50 − 50 = 0.",
+  "(−72) : (−8) = 9. Minus geteilt durch Minus ergibt Plus.": "(−42) : (−6) = 7. Minus geteilt durch Minus ergibt Plus.",
+  "(−15) : 3 = −5. Nach 1 Minute ist er bei −5 m.": "(−12) : 4 = −3. Nach 1 Minute ist er bei −3 m.",
+  "(−18) : 2 = −9. Der Weg bis −18 besteht aus 2 Sprüngen von je 9 nach links.": "(−14) : 2 = −7. Der Weg bis −14 besteht aus 2 Sprüngen von je 7 nach links.",
+  "Von −7 °C aus 3 Grad nach oben: −4 °C.": "Von −9 °C aus 4 Grad nach oben: −5 °C.",
+  "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4 und nicht 5⁄8.": "Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3 und nicht 4⁄6.",
+  "7 Plättchen: Bis 10 fehlen 3.": "8 Plättchen: Bis 10 fehlen 2.",
+  "2 € − 1 € 50 ct sind 200 ct − 150 ct = 50 ct.": "5 € − 3 € 50 ct sind 500 ct − 350 ct = 150 ct."
+};
 function nachbearbeiten(a, niveau) {
   if (HEFTAUFTRAG.test(a.text ?? '')) a.heftaufgabe = true;
+  if (beispielVerraet(a) && ERSATZBEISPIEL[a.hilfen.beispiel]) a.hilfen = { ...a.hilfen, beispiel: ERSATZBEISPIEL[a.hilfen.beispiel] };
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.
     if (niveau === 'F' || niveau === 'G') a.optionen = a.optionen.map((o) => ({ ...o, text: o.text.replace(/(?<=[.?!]) (?=[A-ZÄÖÜ„\d])/g, '\n') }));

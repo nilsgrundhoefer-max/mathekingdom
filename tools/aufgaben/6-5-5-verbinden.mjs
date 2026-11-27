@@ -62,7 +62,7 @@ export function verbinden6() {
       return luecken(Z('Rechne zuerst die Punktrechnung.', `${a} − ${b} : ${n} = ${a} − {{q}} = {{e}}`), { q: [q, []], e: [num(l), dfe(l, [[durch(minus(a, b), String(n), 4), 'punkt-vor-strich']])] }, tG1,
         { nachweis: [`${b} : ${n} = ${q}`, `${a} − ${q} = ${l}`] }); },
     () => { const a = dez(1, 1.1, 2.9), b = T(zz(2, 9), 1), n = zz(3, 6), r = plus(a, mal(b, String(n))), falsch = mal(plus(a, b), String(n)), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${a} + ${b} · ${n} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Punkt vor Strich: ${a} + ${b} · ${n} = ${a} + ${mal(b, String(n))} = ${r}.`, true), opt('Stimmt.', false, 'punkt-vor-strich'), opt(`Stimmt, denn ${a} + ${b} = ${plus(a, b)}.`, false, 'punkt-vor-strich')],
+      return auswahl(Z(`${kn} rechnet: ${a} + ${b} · ${n} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Punkt vor Strich: ${a} + ${b} · ${n} = ${a} + ${mal(b, String(n))} = ${r}.`, true), opt('Stimmt. Man rechnet von links nach rechts: erst plus, dann mal.', false, 'punkt-vor-strich'), opt(`Stimmt, denn ${a} + ${b} = ${plus(a, b)}.`, false, 'punkt-vor-strich')],
         h3('Unterstreiche die Malaufgabe.', 'Rechne sie zuerst.', 'Addiere dann.'), { nachweis: [`${b} · ${n} = ${mal(b, String(n))}`, `${a} + ${mal(b, String(n))} = ${r}`, `${a} + ${b} = ${plus(a, b)}`, URTEIL(false, `${a} + ${b} · ${n} = ${falsch}`)] }); },
   ]);
   sechs(V1, 'M', [
@@ -80,7 +80,7 @@ export function verbinden6() {
       const o = [[`${a} + ${b} · ${n}`, true], [`${mal(q, d)} : ${d} · ${d}`, true], [`(${a} + ${b}) · ${n}`, false], [`${plus(z, c)} + ${c}`, false]];
       return auswahl(Z(`Kreuze alle Rechnungen an, die ${z} ergeben.`), mische(o).map(([x, r]) => opt(x, r, r ? undefined : x.startsWith('(') ? 'klammer-falsch-gesetzt' : 'sub-addiert')), h2('Rechne jede Rechnung aus.', 'Achte auf Klammer und Punkt vor Strich.'), { mehrfach: true, nachweis: [WERT(z)] }); },
     () => { const b = T(zz(2, 9), 1), n = zz(2, 4), p = mal(b, String(n)), a = String(zz(Math.ceil(wert(p)) + 2, 12)), r = minus(a, p), falsch = mal(minus(a, b), String(n)), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${a} − ${b} · ${n} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Mal kommt vor minus. Es gilt ${a} − ${b} · ${n} = ${a} − ${p} = ${r}.`, true), opt('Stimmt.', false, 'punkt-vor-strich'), opt(`Stimmt, denn man rechnet von links nach rechts.`, false, 'punkt-vor-strich')],
+      return auswahl(Z(`${kn} rechnet: ${a} − ${b} · ${n} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Mal kommt vor minus. Es gilt ${a} − ${b} · ${n} = ${a} − ${p} = ${r}.`, true), opt('Stimmt. Erst wird abgezogen, das Ergebnis wird danach malgenommen.', false, 'punkt-vor-strich'), opt(`Stimmt, denn man rechnet von links nach rechts.`, false, 'punkt-vor-strich')],
         h2('Unterstreiche die Punktrechnung.', 'Rechne sie zuerst.'), { nachweis: [`${b} · ${n} = ${p}`, `${a} − ${p} = ${r}`, URTEIL(false, `${a} − ${b} · ${n} = ${falsch}`)] }); },
   ]);
   sechs(V1, 'E', [
@@ -92,7 +92,7 @@ export function verbinden6() {
     () => { const a = dez(1, 1.1, 4.9), x = dez(1, 0.2, 2.9), n = zz(3, 6), l = plus(a, mal(x, String(n)));
       return luecken(Z('Ergänze die fehlende Zahl.', `${a} + {{a}} · ${n} = ${l}`), { a: [num(x), dfe(x, [[durch(minus(l, a), '1', 4), 'sach-schritt-vergessen'], [durch(l, String(n), 4) && minus(durch(l, String(n), 4), a), 'punkt-vor-strich']])] }, h1('Rechne rückwärts: Was muss die Malaufgabe ergeben?'),
         { nachweis: [`${l} − ${a} = ${mal(x, String(n))}`, `${mal(x, String(n))} : ${n} = ${x}`] }); },
-    () => { const a = String(zz(2, 5)), b = '0,5', n = zz(3, 6), opts = [['Mal und geteilt rechnet man vor plus und minus. Zuerst wird also nur das Malnehmen gerechnet.', true], ['Man rechnet immer von links nach rechts.', false], ['Bei Dezimalzahlen braucht man diese Regel nicht.', false]];
+    () => { const a = String(zz(2, 5)), b = '0,5', n = zz(3, 6), opts = [['Mal und geteilt rechnet man vor plus und minus. Zuerst wird also nur das Malnehmen gerechnet.', true], ['Man rechnet immer von links nach rechts. Zuerst kommt also das Plus an die Reihe.', false], ['Bei Dezimalzahlen gilt Punkt vor Strich nicht. Dort zählt nur die Reihenfolge.', false]];
       return auswahl(Z(`Kreuze die Begründung an, warum ${a} + ${b} · ${n} nicht ${mal(plus(a, b), String(n))} ergibt.`), opts.map(([t, r]) => opt(t, r, r ? undefined : 'punkt-vor-strich')), h1(`Rechne selbst: ${a} + ${b} · ${n} = ${plus(a, mal(b, String(n)))}.`), { nachweis: [FREI('Punkt vor Strich begründen')] }); },
     () => { const n = zz(3, 4), p = preis(0.95, 1.6), q = preis(0.5, 0.9), l = E(mal(String(n), plus(p, q))), kn = kind();
       return dezimal(Z(`${kn} kauft für ${n} Kinder je ein Brötchen für ${p} € und einen Saft für ${q} €.`, 'Schreibe einen Rechenausdruck mit Klammer.', 'Berechne den Preis.'), l, dfe(l, [[E(plus(mal(String(n), p), q)), 'klammer-falsch-gesetzt']]), h1('Was kostet es für ein Kind? Das kommt in die Klammer.'),
@@ -138,7 +138,7 @@ export function verbinden6() {
         { bild: geldBild(p), nachweis: [`${p} € + ${q} € = ${s} €`, `${n} · ${s} € = ${l} €`] }); },
     () => { const a = dez(1, 6.1, 9.9), b = dez(1, 1.6, 2.9), c = dez(1, 1.1, 1.5), r = minus(minus(a, b), c), falsch = minus(a, minus(b, c)), kn = kind();
       if (!r || !falsch) return null;
-      return auswahl(Z(`${kn} rechnet: ${a} − ${b} − ${c} = ${a} − ${minus(b, c)} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Beide Zahlen werden abgezogen. Es gilt ${a} − ${b} − ${c} = ${r}.`, true), opt('Stimmt.', false, 'sub-klammerfehler'), opt('Stimmt, denn man darf beim Subtrahieren immer zusammenfassen.', false, 'gesetz-auf-subtraktion')],
+      return auswahl(Z(`${kn} rechnet: ${a} − ${b} − ${c} = ${a} − ${minus(b, c)} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Beide Zahlen werden abgezogen. Es gilt ${a} − ${b} − ${c} = ${r}.`, true), opt('Stimmt. Die beiden hinteren Zahlen darf man zuerst voneinander abziehen.', false, 'sub-klammerfehler'), opt('Stimmt, denn man darf beim Subtrahieren immer zusammenfassen.', false, 'gesetz-auf-subtraktion')],
         h3('Ziehe eine Zahl nach der anderen ab.', '8,5 − 2,7 − 1,5 = 5,8 − 1,5 = 4,3.', 'Du darfst auch beide Zahlen zuerst addieren und dann abziehen.'), { nachweis: [`${b} − ${c} = ${minus(b, c)}`, `${a} − ${b} − ${c} = ${r}`, URTEIL(false, `${a} − ${b} − ${c} = ${falsch}`)] }); },
   ]);
   sechs(V2, 'M', [
@@ -157,7 +157,7 @@ export function verbinden6() {
       return auswahl(Z(`Kreuze alle Rechnungen an, die dasselbe Ergebnis haben wie ${n} · ${a} + ${n} · ${b}.`), mische(o).map(([x, r]) => opt(x, r, r ? undefined : x.includes('+ ') && x.startsWith(`${n} ·`) ? 'verteilung-halb' : '1x1-addiert')),
         h2('Nutze das Verteilungsgesetz.', 'Rechne jede Rechnung aus und vergleiche.'), { mehrfach: true, nachweis: [`${n} · ${a} + ${n} · ${b} = ${l}`, WERT(l)] }); },
     () => { const n = zz(2, 5), a = dez(1, 1.1, 4.9), b = T(zz(1, 9), 1), r = mal(String(n), plus(a, b)), falsch = plus(mal(String(n), a), b), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${n} · (${a} + ${b}) = ${mal(String(n), a)} + ${b} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Jede Zahl in der Klammer wird malgenommen. Es gilt ${n} · (${a} + ${b}) = ${mal(String(n), a)} + ${mal(String(n), b)} = ${r}.`, true), opt('Stimmt.', false, 'verteilung-halb'), opt(`Stimmt, denn ${n} · ${a} = ${mal(String(n), a)}.`, false, 'verteilung-halb')],
+      return auswahl(Z(`${kn} rechnet: ${n} · (${a} + ${b}) = ${mal(String(n), a)} + ${b} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Jede Zahl in der Klammer wird malgenommen. Es gilt ${n} · (${a} + ${b}) = ${mal(String(n), a)} + ${mal(String(n), b)} = ${r}.`, true), opt('Stimmt. Nur die erste Zahl in der Klammer wird malgenommen.', false, 'verteilung-halb'), opt(`Stimmt, denn ${n} · ${a} = ${mal(String(n), a)}.`, false, 'verteilung-halb')],
         h2('Beim Verteilungsgesetz wird jeder Teil in der Klammer malgenommen.', 'Rechne zur Kontrolle zuerst die Klammer aus.'), { nachweis: [`${n} · ${a} = ${mal(String(n), a)}`, `${n} · ${b} = ${mal(String(n), b)}`, `${n} · (${a} + ${b}) = ${r}`, URTEIL(false, `${n} · (${a} + ${b}) = ${falsch}`)] }); },
   ]);
   sechs(V2, 'E', [
@@ -168,7 +168,7 @@ export function verbinden6() {
     () => { const n = 3, h = preis(0.85, 1.45, 5), b = preis(1.2, 2.4, 10), s = E(plus(mal(String(n), h), b)), kn = kind();
       return dezimal(Z(`${kn} kauft ${n} gleiche Hefte und einen Block für ${b} €.`, `Zusammen kostet das ${s} €.`, 'Gib den Preis für ein Heft an.'), h, dfe(h, [[E(durch(s, String(n), 2) ?? '0'), 'sach-schritt-vergessen']]), h1('Rechne rückwärts: Ziehe zuerst den Block ab.'),
         { einheit: '€', nachweis: [`${s} € − ${b} € = ${E(mal(String(n), h))} €`, `${E(mal(String(n), h))} € : ${n} = ${h} €`] }); },
-    () => { const n = zz(3, 6), opts = [['Der Preis ist fast so viel wie drei Euro. So viele Male drei Euro ist leicht zu rechnen. Danach zieht man die fehlenden Cent wieder ab.', true], ['Man lässt die Cent einfach weg.', false], ['Man rundet den Preis auf zwei Euro ab.', false]];
+    () => { const n = zz(3, 6), opts = [['Man rechnet mit vollen Euro und zieht danach die Cent wieder ab, die zu viel waren.', true], ['Man lässt die Cent einfach weg, denn bei so kleinen Beträgen fallen sie nicht auf.', false], ['Man rundet den Preis auf zwei Euro ab und zählt danach die fehlenden Cent wieder dazu.', false]];
       return auswahl(Z(`Kreuze die Begründung an, warum man ${n} · 2,99 € als ${n} · 3 € − ${n} · 0,01 € rechnen kann.`), opts.map(([t, r]) => opt(t, r, r ? undefined : t.includes('weg') ? 'geschickt-nicht-ausgeglichen' : 'falsch-gerundet')), h1('Wie viel fehlt bei 2,99 € bis 3 €?'), { nachweis: [FREI('Geschickt rechnen begründen')] }); },
     () => { const n = zz(3, 7), p = wahl(['2,99', '4,99', '1,98', '9,95']), g = String(Math.ceil(wert(p))), d = minus(g, p), a = mal(String(n), g), b = mal(String(n), d), l = minus(a, b);
       return luecken(Z('Rechne geschickt.', `${n} · ${p} = ${n} · ${g} − ${n} · {{d}} = {{a}} − {{b}} = {{e}}`), { d: [d, []], a: [num(a), []], b: [num(b), []], e: [num(l), dfe(l, [[a, 'geschickt-nicht-ausgeglichen'], [minus(a, d), 'verteilung-halb']])] }, h1('Rechne mit dem glatten Preis und ziehe dann ab, was zu viel ist.'),

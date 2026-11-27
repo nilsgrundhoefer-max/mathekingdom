@@ -338,6 +338,71 @@
    "hinweis": "Die Spitze des Zeichens zeigt immer zur kleineren Zahl.",
    "kind": "Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl."
   },
+  "reihenfolge-umgekehrt": {
+   "beschreibung": "Ordnet richtig, aber in umgekehrter Reihenfolge.",
+   "hinweis": "Lies den Auftrag noch einmal: Womit sollst du beginnen?",
+   "kind": "Du schaust jetzt genau, womit du beim Ordnen beginnen sollst."
+  },
+  "strahl-gespiegelt": {
+   "beschreibung": "Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich.",
+   "hinweis": "Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst.",
+   "kind": "Du zählst am Zahlenstrahl jetzt in die richtige Richtung."
+  },
+  "strahl-zu-grob": {
+   "beschreibung": "Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg.",
+   "hinweis": "Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu.",
+   "kind": "Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit."
+  },
+  "kuerzen-subtrahiert": {
+   "beschreibung": "Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen.",
+   "hinweis": "Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert.",
+   "kind": "Du weißt jetzt: Kürzen heißt teilen, nicht abziehen."
+  },
+  "ergaenzen-addiert": {
+   "beschreibung": "Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt.",
+   "hinweis": "Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren.",
+   "kind": "Du rechnest jetzt aus, was bis zum Ziel noch fehlt."
+  },
+  "strahl-ganzes": {
+   "beschreibung": "Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1.",
+   "hinweis": "Der Nenner zählt nur die Abstände von 0 bis 1.",
+   "kind": "Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1."
+  },
+  "ganzes-mehrere-figuren": {
+   "beschreibung": "Nimmt mehrere Figuren zusammen als ein Ganzes.",
+   "hinweis": "Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner.",
+   "kind": "Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen."
+  },
+  "koerper-unvollstaendig-gezaehlt": {
+   "beschreibung": "Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt.",
+   "hinweis": "Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab.",
+   "kind": "Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach."
+  },
+  "mantel-streifen": {
+   "beschreibung": "Bestimmt die Länge der Mantelfläche im Netz falsch.",
+   "hinweis": "Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen.",
+   "kind": "Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen."
+  },
+  "netz-kleben": {
+   "beschreibung": "Zählt beim Zusammenkleben eines Netzes die falschen Kanten.",
+   "hinweis": "Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen.",
+   "kind": "Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind."
+  },
+  "netz-ansicht-verwechselt": {
+   "beschreibung": "Verwechselt das Netz eines Körpers mit seiner Ansicht.",
+   "hinweis": "Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite.",
+   "kind": "Du unterscheidest jetzt Netz und Ansicht eines Körpers."
+  },
+  "zahlbereich-falsch": {
+   "beschreibung": "Ordnet eine Zahl einem falschen Zahlbereich zu.",
+   "hinweis": "Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein.",
+   "kind": "Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind."
+  },
+  "unterschied-addiert": {
+   "beschreibung": "Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist.",
+   "hinweis": "Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert.",
+   "kind": "Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert."
+  },
   "nachbar-verwechselt": {
    "beschreibung": "Verwechselt Vorgänger und Nachfolger.",
    "hinweis": "Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.",
@@ -990,7 +1055,7 @@
   },
   "innen-aussen-verwechselt": {
    "beschreibung": "Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich).",
-   "hinweis": "Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie?",
+   "hinweis": "Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir.",
    "kind": "Du achtest jetzt darauf: Liegt der Punkt innen oder außen?"
   },
   "konstruktion-reihenfolge": {
@@ -1050,7 +1115,7 @@
   },
   "name-nach-seitenflaeche": {
    "beschreibung": "Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.",
-   "hinweis": "Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma.",
+   "hinweis": "Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken.",
    "kind": "Du benennst den Körper jetzt nach seiner Grundfläche."
   },
   "gegenueber-benachbart": {
@@ -6008,7 +6073,7 @@
      "typischeFehler": [
       {
        "wert": 19,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -6367,7 +6432,7 @@
      "typischeFehler": [
       {
        "wert": 29,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10007,7 +10072,7 @@
      "typischeFehler": [
       {
        "wert": 65,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10349,7 +10414,7 @@
      "typischeFehler": [
       {
        "wert": 340,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10432,7 +10497,7 @@
      "typischeFehler": [
       {
        "wert": 280,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10501,7 +10566,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welcher Zeile sind es genau 175 Besucher?",
+   "text": "Das Diagramm zeigt die Besucher im Freibad.\nBei welchem Balken sind es genau 175 Besucher?",
    "mehrfach": false,
    "optionen": [
     {
@@ -16773,7 +16838,7 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -16954,7 +17019,7 @@
    "typischeFehler": [
     {
      "wert": 22,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17068,7 +17133,7 @@
    "typischeFehler": [
     {
      "wert": 26,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     },
     {
      "wert": 1,
@@ -17130,7 +17195,7 @@
    "typischeFehler": [
     {
      "wert": 36,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17324,7 +17389,7 @@
    "typischeFehler": [
     {
      "wert": 52,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17404,7 +17469,7 @@
      "typischeFehler": [
       {
        "wert": 14,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -17566,7 +17631,7 @@
    "typischeFehler": [
     {
      "wert": 270,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17715,7 +17780,7 @@
      "typischeFehler": [
       {
        "wert": 27,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     },
@@ -17814,7 +17879,7 @@
    "typischeFehler": [
     {
      "wert": 150,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17977,7 +18042,7 @@
    "typischeFehler": [
     {
      "wert": 2600,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -18055,7 +18120,7 @@
      "typischeFehler": [
       {
        "wert": 14,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     },
@@ -20747,7 +20812,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat er gestellt?",
+   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat sie gestellt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -20988,7 +21053,7 @@
     "modellieren"
    ],
    "format": "auswahl",
-   "text": "Mia will diese Frage stellen:\n„Welches Obst isst du am liebsten?“\nWelche Antworten soll er zur Auswahl geben?",
+   "text": "Mia will diese Frage stellen:\n„Welches Obst isst du am liebsten?“\nWelche Antworten soll sie zur Auswahl geben?",
    "mehrfach": false,
    "optionen": [
     {
@@ -21179,7 +21244,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Mara hat eine Umfrage gemacht.\nDas ist die Strichliste.\nWelche Frage hat er gestellt?",
+   "text": "Mara hat eine Umfrage gemacht.\nDas ist die Strichliste.\nWelche Frage hat sie gestellt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -21622,7 +21687,7 @@
     "modellieren"
    ],
    "format": "auswahl",
-   "text": "Lena hat nur Kinder im Fußballverein befragt.\nEr sagt: „Fußball ist der beliebteste Sport an unserer Schule.“\nWas meinst du dazu?",
+   "text": "Lena hat nur Kinder im Fußballverein befragt.\nSie sagt: „Fußball ist der beliebteste Sport an unserer Schule.“\nWas meinst du dazu?",
    "mehrfach": false,
    "optionen": [
     {
@@ -21638,13 +21703,13 @@
      "richtig": false
     },
     {
-     "text": "Stimmt, denn er hat viele Kinder gefragt.",
+     "text": "Stimmt, denn sie hat viele Kinder gefragt.",
      "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Überlege, wen er gefragt hat. Antworten diese Kinder wie alle anderen?",
-    "loesungsschritt": "Wer im Verein ist, mag diesen Sport oder dieses Tier besonders."
+    "tipp": "Überlege, wen sie gefragt hat. Antworten diese Kinder wie alle anderen?",
+    "loesungsschritt": "Wer im Fußballverein ist, mag Fußball besonders."
    },
    "nachweis": [
     {
@@ -21663,7 +21728,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat er gestellt?",
+   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat sie gestellt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -22575,7 +22640,7 @@
      "richtig": false
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nVon Strich zu Strich geht es immer 1 weiter.",
      "richtig": false,
      "fehlvorstellung": "strahl-einerschritte"
     }
@@ -23197,7 +23262,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "links": "kleinste",
    "rechts": "größte"
   },
@@ -23293,7 +23358,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "stellenwert",
    "links": "kleinste",
    "rechts": "größte"
@@ -23433,7 +23498,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "stellenwert",
    "links": "größte",
    "rechts": "kleinste"
@@ -23597,7 +23662,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -23615,7 +23680,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBei großen Zahlen entscheidet die erste Ziffer.",
      "richtig": false,
      "fehlvorstellung": "vergleich-erste-ziffer"
     },
@@ -23680,7 +23745,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -23914,7 +23979,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "stellenwert",
    "links": "größte",
    "rechts": "kleinste"
@@ -24108,7 +24173,7 @@
      "richtig": true
     },
     {
-     "text": "Das gilt nur, wenn auch die erste Ziffer größer ist.",
+     "text": "Das gilt nur, wenn auch die erste Ziffer größer ist. Sonst muss man die Zahlen Stelle für Stelle vergleichen.",
      "richtig": false,
      "fehlvorstellung": "vergleich-erste-ziffer"
     }
@@ -24745,7 +24810,7 @@
      "fehlvorstellung": "zahl-nach-gehoer"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nSo spricht man die Zahl.",
      "richtig": false,
      "fehlvorstellung": "null-platzhalter"
     },
@@ -26251,7 +26316,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nSo spricht man die Zahl.",
      "richtig": false,
      "fehlvorstellung": "dreierblock-vergessen"
     },
@@ -27129,7 +27194,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "links": "kleinste",
    "rechts": "größte"
   },
@@ -27307,7 +27372,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -27427,7 +27492,7 @@
      "system": "wort"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "million-milliarde",
    "links": "kleinste",
    "rechts": "größte"
@@ -27641,7 +27706,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBei großen Zahlen entscheidet die erste Ziffer.",
      "richtig": false,
      "fehlvorstellung": "vergleich-erste-ziffer"
     },
@@ -27765,7 +27830,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -28011,7 +28076,7 @@
      "system": "wort"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "million-milliarde",
    "links": "größte",
    "rechts": "kleinste"
@@ -28857,7 +28922,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rundet Schritt für Schritt bis zum Hunderter.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     }
@@ -30044,7 +30109,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBeim Runden wird die Zahl immer größer.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -30314,7 +30379,7 @@
      "fehlvorstellung": "runden-falsche-stelle"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Runden auf Tausender ändert sich eine Zahl höchstens um 500.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -30591,7 +30656,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer.",
+     "text": "Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer. Runden macht Zahlen größer.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -31526,7 +31591,7 @@
      "richtig": false
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEine gute Schätzung trifft die genaue Zahl immer.",
      "richtig": false,
      "fehlvorstellung": "gezaehlt-geschaetzt"
     }
@@ -31900,7 +31965,8 @@
    "nachweis": [
     "21 · 13 = 273"
    ],
-   "einheit": "Autos"
+   "einheit": "Autos",
+   "toleranz": 33
   },
   {
    "id": "5.2.4-S1-M-06",
@@ -31925,7 +31991,7 @@
      "richtig": false
     },
     {
-     "text": "Die Schätzung ist gut, denn gerechnet wurde richtig.",
+     "text": "Die Schätzung ist gut, denn gerechnet wurde richtig. Auf das Feld kommt es nicht an.",
      "richtig": false,
      "fehlvorstellung": "schaetzen-nicht-hochgerechnet"
     },
@@ -32306,7 +32372,7 @@
      "fehlvorstellung": "gezaehlt-geschaetzt"
     },
     {
-     "text": "Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer verrechnet.",
+     "text": "Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer von beiden sicher verrechnet.",
      "richtig": false,
      "fehlvorstellung": "gezaehlt-geschaetzt"
     },
@@ -33054,7 +33120,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nIn der Zeitung stehen nur gezählte Zahlen.",
      "richtig": false,
      "fehlvorstellung": "gezaehlt-geschaetzt"
     }
@@ -33094,7 +33160,7 @@
      "fehlvorstellung": "gezaehlt-geschaetzt"
     },
     {
-     "text": "Sie ist gerundet: Die genaue Zahl war bekannt.",
+     "text": "Sie ist gerundet: Die genaue Zahl war bekannt und wurde vereinfacht.",
      "richtig": false,
      "fehlvorstellung": "gezaehlt-geschaetzt"
     },
@@ -33322,7 +33388,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Beide Zeitungen haben die Besucher einzeln gezählt.",
+     "text": "Falsch. Beide Zeitungen haben die Besucher einzeln gezählt, eine hat sich dabei verzählt.",
      "richtig": false,
      "fehlvorstellung": "gezaehlt-geschaetzt"
     },
@@ -33567,7 +33633,7 @@
      "fehlvorstellung": "gezaehlt-geschaetzt"
     },
     {
-     "text": "Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer.",
+     "text": "Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer als wenig Rechnen.",
      "richtig": false
     },
     {
@@ -34197,7 +34263,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Ziffern liest man wie bei jeder anderen Zahl.",
      "richtig": false,
      "fehlvorstellung": "dual-zehnerwerte"
     },
@@ -34691,7 +34757,7 @@
      "system": "dual"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dual-zehnerwerte",
    "links": "kleinste",
    "rechts": "größte"
@@ -34718,7 +34784,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an.",
+     "text": "Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an, nicht auf die Stellen.",
      "richtig": false,
      "fehlvorstellung": "dual-zehnerwerte"
     },
@@ -35651,7 +35717,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Stellen stehen in der richtigen Reihenfolge.",
      "richtig": false,
      "fehlvorstellung": "dual-umgedreht"
     },
@@ -36810,7 +36876,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "roemisch-nur-addiert"
   },
   {
@@ -36924,7 +36990,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nAlle Zeichen werden einfach zusammengezählt.",
      "richtig": false,
      "fehlvorstellung": "roemisch-nur-addiert"
     },
@@ -37148,7 +37214,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "roemisch-nur-addiert"
   },
   {
@@ -37972,7 +38038,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nJedes Zeichen darf man so oft schreiben wie nötig.",
      "richtig": false,
      "fehlvorstellung": "roemisch-vier-gleiche"
     },
@@ -39006,7 +39072,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nVon 15 zählen nur die Einer.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
@@ -39234,7 +39300,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch. Ungerade plus ungerade bleibt ungerade.",
+     "text": "Falsch. Ungerade plus ungerade bleibt ungerade. Was für jeden einzelnen Summanden gilt, das gilt auch für die Summe der beiden Summanden.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -39370,7 +39436,7 @@
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "571 + 277, denn hier wurden beide Summanden verändert",
+     "text": "571 + 277, denn hier wurden beide Summanden um 3 verändert und beide Änderungen zählen",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -40020,7 +40086,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
      "richtig": false,
      "fehlvorstellung": "sub-kleiner-von-groesser"
     },
@@ -40247,7 +40313,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Ungerade minus ungerade bleibt ungerade.",
+     "text": "Falsch. Ungerade minus ungerade bleibt ungerade. Was für den Minuenden und den Subtrahenden gilt, das gilt auch für die Differenz.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -40392,7 +40458,7 @@
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
     {
-     "text": "757 − 258, denn beide Zahlen sind hier am größten",
+     "text": "757 − 258, denn beide Zahlen sind hier am größten, also auch die Differenz",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -40541,7 +40607,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle die leeren Felder.",
-    "beispiel": "6 Plättchen: Bis 10 fehlen 4.",
+    "beispiel": "8 Plättchen: Bis 10 fehlen 2.",
     "loesungsschritt": "Zähle von 4 weiter bis 10."
    },
    "bild": {
@@ -40650,7 +40716,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle in Zehnerschritten bis 100.",
-    "beispiel": "Von 70 bis 100 fehlen 30.",
+    "beispiel": "Von 60 bis 100 fehlen 40.",
     "loesungsschritt": "Von 70 bis 100 sind es 3 Zehnerschritte."
    },
    "bild": {
@@ -40973,7 +41039,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nErst plus 20 rechnen.\nDann kommt noch 1 dazu.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41232,7 +41298,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen.",
+     "text": "Richtig. Beim Subtrahieren wird immer nach unten ausgeglichen, also noch einmal abgezogen.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41353,7 +41419,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "661 − 298, denn der Minuend darf beliebig verändert werden",
+     "text": "661 − 298, denn der Minuend darf beim Rechnen beliebig verändert werden",
      "richtig": false
     },
     {
@@ -41410,7 +41476,7 @@
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
     {
-     "text": "Summe: die Summanden gleichsinnig verändern. Differenz: gegensinnig verändern.",
+     "text": "Summe: die Summanden gleichsinnig verändern. Differenz: Minuend und Subtrahend gegensinnig verändern.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -41925,7 +41991,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nJede Zahl der Aufgabe ist ein Summand.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -42114,7 +42180,7 @@
      "fehlvorstellung": "sach-schritt-vergessen"
     },
     {
-     "text": "Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert.",
+     "text": "Richtig. Die Summe ändert sich nie, wenn man die Summanden verändert. Das gilt für jede Änderung.",
      "richtig": false
     },
     {
@@ -42311,7 +42377,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja. Bei sehr kleinen Summanden ist die Summe kleiner.",
+     "text": "Ja. Bei sehr kleinen Summanden ist die Summe kleiner als der größere Summand, zum Beispiel bei 1 und 0.",
      "richtig": false
     },
     {
@@ -42921,7 +42987,7 @@
      "fehlvorstellung": "add-subtrahiert"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan schreibt nur die Einer auf.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     }
@@ -43358,7 +43424,7 @@
      "richtig": true
     },
     {
-     "text": "Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen.",
+     "text": "Zwei. Bei den Hundertern kann kein Übertrag mehr entstehen, weil links keine Spalte folgt.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
@@ -43398,7 +43464,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne nacheinander. Folge den Sprüngen.",
-    "beispiel": "3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9.",
+    "beispiel": "5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8.",
     "loesungsschritt": "3 + 4 = 7."
    },
    "bild": {
@@ -43927,7 +43993,7 @@
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan schreibt nur die Einer auf.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     }
@@ -44163,7 +44229,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen.",
+     "text": "Richtig. Es kommt nur darauf an, dass in jeder Spalte zwei Ziffern stehen. Welche Stellen das sind, ist egal.",
      "richtig": false,
      "fehlvorstellung": "stellenwert"
     },
@@ -44420,7 +44486,7 @@
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
     {
-     "text": "Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade.",
+     "text": "Das stimmt immer, denn jede Summe ungerader Zahlen ist ungerade, ganz egal, wie viele Summanden es sind.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -44911,7 +44977,7 @@
      "fehlvorstellung": "add-subtrahiert"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEin Überschlag ist ja nie ganz genau.",
      "richtig": false,
      "fehlvorstellung": "ueberschlag-nicht-gerundet"
     },
@@ -45394,7 +45460,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition.",
+     "text": "Ja. Die Tauschaufgabe ist die Umkehraufgabe der Addition. Wer sie richtig rechnet, hat das Ergebnis sicher geprüft.",
      "richtig": false,
      "fehlvorstellung": "probe-falsche-umkehr"
     },
@@ -45910,7 +45976,7 @@
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie kleinere Zahl wird abgezogen.",
      "richtig": false,
      "fehlvorstellung": "sach-falsche-rechnung"
     },
@@ -46887,7 +46953,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDer Minuend steht hinter dem Minus.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -47076,7 +47142,7 @@
      "richtig": false
     },
     {
-     "text": "Richtig. Größere Zahlen ergeben immer größere Ergebnisse.",
+     "text": "Richtig. Größere Zahlen ergeben immer größere Ergebnisse. Das gilt für jede Rechenart.",
      "richtig": false
     },
     {
@@ -47267,7 +47333,7 @@
      "fehlvorstellung": "sub-kleiner-von-groesser"
     },
     {
-     "text": "Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend.",
+     "text": "Ja. Bei einem sehr kleinen Subtrahenden wird die Differenz größer als der Minuend, zum Beispiel bei 0.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -47894,7 +47960,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan zieht immer die kleinere Zahl ab.",
      "richtig": false,
      "fehlvorstellung": "sub-kleiner-von-groesser"
     },
@@ -48317,7 +48383,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja, aber nur, wenn dabei kein Übertrag entsteht.",
+     "text": "Ja, aber nur, wenn dabei kein Übertrag entsteht. Mit Übertrag ändert sich der Abstand.",
      "richtig": false,
      "fehlvorstellung": "sub-uebertrag-vergessen"
     },
@@ -48855,7 +48921,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan darf auch zuerst 20 − 10 rechnen.",
      "richtig": false,
      "fehlvorstellung": "sub-klammerfehler"
     },
@@ -49266,7 +49332,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen.",
+     "text": "Das stimmt nie. Beim Subtrahieren darf man nichts vertauschen, auch nicht die Subtrahenden.",
      "richtig": false,
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
@@ -49751,7 +49817,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEin Überschlag ist ja nie ganz genau.",
      "richtig": false,
      "fehlvorstellung": "ueberschlag-nicht-gerundet"
     },
@@ -50018,7 +50084,7 @@
      "richtig": false
     },
     {
-     "text": "Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz.",
+     "text": "Beide Zahlen wurden aufgerundet. Das vergrößert die Differenz, denn größere Zahlen ergeben mehr.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -50728,7 +50794,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEs sind mehr Zahlen.\nAlso rechnet man plus.",
      "richtig": false,
      "fehlvorstellung": "sach-falsche-rechnung"
     },
@@ -51545,7 +51611,7 @@
    },
    "hilfen": {
     "tipp": "Die Klammer sagt: Das rechnest du zuerst.",
-    "beispiel": "45 − (12 + 8): Klammer 12 + 8 = 20. Dann 45 − 20 = 25.",
+    "beispiel": "60 − (25 + 5): Klammer 25 + 5 = 30. Dann 60 − 30 = 30.",
     "loesungsschritt": "12 + 8 = 20."
    },
    "bild": {
@@ -51660,7 +51726,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rechnet von links nach rechts.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -52146,7 +52212,7 @@
      "fehlvorstellung": "klammer-ignoriert"
     },
     {
-     "text": "Das stimmt nie. Beim Weglassen wird aus dem Minus ein Plus.",
+     "text": "Das stimmt nie. Beim Weglassen der Klammer wird aus dem Minus ein Plus, also ändert sich der Wert.",
      "richtig": false,
      "fehlvorstellung": "klammer-falsch-gesetzt"
     },
@@ -52652,7 +52718,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Zahlen stehen in der richtigen Reihenfolge.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -53036,7 +53102,7 @@
      "richtig": false
     },
     {
-     "text": "Für keine Zahl: Eine Klammer verändert immer den Wert.",
+     "text": "Für keine Zahl: Eine Klammer verändert immer den Wert, sonst wäre sie unnötig.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -53601,7 +53667,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEine Klammer ändert beim Minus-Rechnen nichts.",
      "richtig": false,
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
@@ -53851,7 +53917,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Falsch. Das Vertauschungsgesetz gilt für keine Rechenart.",
+     "text": "Falsch. Das Vertauschungsgesetz gilt für keine Rechenart, auch nicht für die Addition.",
      "richtig": false
     }
    ],
@@ -54099,7 +54165,7 @@
      "richtig": true
     },
     {
-     "text": "Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen.",
+     "text": "Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen. Die Ergebnisse sind immer verschieden.",
      "richtig": false
     },
     {
@@ -54988,7 +55054,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die Summe ist die erste Zahl plus die letzte Zahl.",
+     "text": "Die Summe ist das Doppelte aus erster und letzter Zahl, denn die äußeren Zahlen bestimmen die Summe.",
      "richtig": false
     },
     {
@@ -55462,7 +55528,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch.\n9 ist ungerade.\nDann ist auch 9 · 2 ungerade.",
+     "text": "Falsch.\n9 ist eine ungerade Zahl.\nDann ist auch 9 · 2 eine ungerade Zahl.",
      "richtig": false
     },
     {
@@ -55692,7 +55758,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Mit derselben Rechnung, noch einmal genauso gerechnet.",
+     "text": "Mit derselben Rechnung. Rechnet man noch einmal genauso, fällt der Fehler auf.",
      "richtig": false
     },
     {
@@ -55854,7 +55920,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Zwei ungerade Zahlen ergeben immer eine gerade Zahl.",
+     "text": "Falsch. Zwei ungerade Zahlen ergeben zusammen immer eine gerade Zahl. Das gilt beim Malnehmen genauso, denn Malnehmen ist wiederholtes Zusammenzählen.",
      "richtig": false
     },
     {
@@ -55929,7 +55995,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Zehnerziffer und Einerziffer ergeben zusammen immer 10.",
+     "text": "Zehnerziffer und Einerziffer ergeben zusammen immer 10, denn die Ergebnisse liegen immer knapp unter dem nächsten Zehner.",
      "richtig": false
     },
     {
@@ -56393,7 +56459,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das klappt nur bei kleinen Zahlen.",
+     "text": "Das ist Zufall.\nDas klappt nur bei kleinen Zahlen.",
      "richtig": false
     },
     {
@@ -56748,7 +56814,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Größere Zahlen ergeben größere Ergebnisse.",
+     "text": "Stimmt. Größere Zahlen in der Aufgabe ergeben größere Ergebnisse.",
      "richtig": false
     },
     {
@@ -57587,7 +57653,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an.",
+     "text": "Stimmt. Man rechnet ohne Nullen und hängt die Nullen der Faktoren an. Mehr Nullen können nicht entstehen.",
      "richtig": false,
      "fehlvorstellung": "mal-stellenwert"
     },
@@ -58170,7 +58236,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.\n39 ist 1 weniger als 40.",
+     "text": "Stimmt.\n39 ist 1 weniger als 40.\nAlso nimmt Ida am Ende 1 weg.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -58385,7 +58451,7 @@
      "richtig": false
     },
     {
-     "text": "Beide. Beim Malnehmen darf man verdoppeln, wie man will.",
+     "text": "Beide. Beim Malnehmen darf man halbieren und verdoppeln, wie man will. Das Produkt bleibt gleich.",
      "richtig": false,
      "fehlvorstellung": "geschickt-falsch-ausgeglichen"
     },
@@ -58526,7 +58592,7 @@
      "richtig": true
     },
     {
-     "text": "Es wird kleiner, denn durch 3 teilen macht kleiner.",
+     "text": "Es wird kleiner, denn durch 3 teilen macht stärker kleiner, als mal 3 größer macht.",
      "richtig": false
     }
    ],
@@ -58585,7 +58651,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beide. Tom rechnet richtig, aber nur durch Zufall.",
+     "text": "Beide. Tom rechnet richtig, aber das klappt nur durch Zufall bei dieser Zahl.",
      "richtig": false
     },
     {
@@ -59028,7 +59094,7 @@
      "fehlvorstellung": "1x1-addiert"
     },
     {
-     "text": "Stimmt.\nBeim Malnehmen wird es immer mehr.",
+     "text": "Stimmt.\nBeim Malnehmen wird es immer mehr.\nDas Produkt ist die größte Zahl.",
      "richtig": false
     }
    ],
@@ -59213,7 +59279,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor.",
+     "text": "Paul. Jede Zahl in einer Mal-Aufgabe ist ein Faktor, auch das Ergebnis.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -59351,7 +59417,7 @@
      "richtig": false
     },
     {
-     "text": "Es wird doppelt so groß.",
+     "text": "Es wird doppelt so groß, denn es wird ja nur verdoppelt.",
      "richtig": false,
      "fehlvorstellung": "mal-stellenwert"
     },
@@ -59417,7 +59483,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Sara. 8 · 3 ist ungerade, weil 3 ungerade ist.",
+     "text": "Sara. 8 · 3 ist ungerade, weil 3 ungerade ist. Ein Produkt ist nur gerade, wenn beide Faktoren gerade sind.",
      "richtig": false
     },
     {
@@ -60063,7 +60129,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch.\nRichtig ist 1100.",
+     "text": "Falsch.\nRichtig ist 1100.\nBen hat eine Null zu wenig.",
      "richtig": false,
      "fehlvorstellung": "mal-stellenwert"
     },
@@ -60471,7 +60537,7 @@
      "richtig": true
     },
     {
-     "text": "Immer 3 Stellen, denn die größere Zahl hat 3 Stellen.",
+     "text": "Immer 3 Stellen, denn die größere Zahl hat 3 Stellen und die kleinere nur eine.",
      "richtig": false
     },
     {
@@ -61317,7 +61383,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.\nAlle Rechnungen sind richtig.",
+     "text": "Stimmt.\nAlle drei Rechnungen sind richtig.",
      "richtig": false,
      "fehlvorstellung": "mal-nicht-eingerueckt"
     },
@@ -61553,7 +61619,7 @@
      "richtig": true
     },
     {
-     "text": "Mia hat sich bei 579 · 8 verrechnet.",
+     "text": "Mia hat sich bei 579 · 8 verrechnet. Die Teilprodukte stehen aber richtig untereinander.",
      "richtig": false
     },
     {
@@ -61669,7 +61735,7 @@
      "fehlvorstellung": "mal-stellenwert"
     },
     {
-     "text": "Beide. Die Teilprodukte sind bei beiden gleich.",
+     "text": "Beide. Die Teilprodukte sind bei beiden gleich groß.",
      "richtig": false
     }
    ],
@@ -61791,7 +61857,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "5 Stellen, denn 99 · 99 ist fast 10 000.",
+     "text": "5 Stellen, denn 99 · 99 ist fast so groß wie 10 000.",
      "richtig": false,
      "fehlvorstellung": "mal-stellenwert"
     },
@@ -61866,7 +61932,7 @@
      "richtig": true
     },
     {
-     "text": "Keiner. Beide Produkte sind gleich groß.",
+     "text": "Keiner. Beide Produkte sind gleich groß, denn 1 mehr und 1 weniger gleichen sich aus.",
      "richtig": false
     },
     {
@@ -62059,7 +62125,7 @@
      "richtig": true
     },
     {
-     "text": "Ja.\nDas kann man nicht sehen.",
+     "text": "Ja.\nDas kann man nicht sehen.\nMan muss genau rechnen.",
      "richtig": false
     }
    ],
@@ -62212,7 +62278,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.\nDie Ziffern passen.",
+     "text": "Stimmt.\nDie Ziffern passen.\nDie Nullen sind nicht wichtig.",
      "richtig": false,
      "fehlvorstellung": "mal-stellenwert"
     },
@@ -62318,7 +62384,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch.\nDas kann man ohne Rechnen nicht wissen.",
+     "text": "Falsch.\nDas kann man ohne genaues Rechnen nicht wissen.",
      "richtig": false
     },
     {
@@ -62520,7 +62586,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ben. Beim Runden wird ein Ergebnis immer größer.",
+     "text": "Ben. Beim Runden wird ein Ergebnis immer größer. Also ist das genaue Produkt kleiner.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -62654,7 +62720,7 @@
      "richtig": true
     },
     {
-     "text": "Größer. 488 wurde aufgerundet.",
+     "text": "Größer. 488 wurde aufgerundet, also ist der Überschlag zu klein.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -62713,7 +62779,7 @@
      "fehlvorstellung": "probe-falsche-umkehr"
     },
     {
-     "text": "Nur Emre. Man teilt immer durch den zweiten Faktor.",
+     "text": "Nur Emre. Bei der Probe teilt man immer durch den zweiten Faktor.",
      "richtig": false
     },
     {
@@ -63156,7 +63222,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Nein.\n150 ist eine große Zahl.",
+     "text": "Nein.\n150 ist eine sehr große Zahl.",
      "richtig": false
     },
     {
@@ -64454,7 +64520,7 @@
      "richtig": false
     },
     {
-     "text": "Ja. Bei allen Rechenarten darf man vertauschen.",
+     "text": "Ja. Bei allen Rechenarten darf man vertauschen, das Ergebnis bleibt dabei immer gleich.",
      "richtig": false,
      "fehlvorstellung": "gesetz-auf-division"
     }
@@ -65149,7 +65215,7 @@
      "richtig": true
     },
     {
-     "text": "Emre. Man muss immer von links nach rechts rechnen.",
+     "text": "Emre. Man muss immer von links nach rechts rechnen, sonst wird es falsch.",
      "richtig": false
     },
     {
@@ -65276,7 +65342,7 @@
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "Wegen des Verteilungsgesetzes.",
+     "text": "Wegen des Verteilungsgesetzes darf man die Faktoren neu verteilen. Deshalb darf man die beiden passenden Zahlen zuerst malnehmen.",
      "richtig": false,
      "fehlvorstellung": "begriffe-verwechselt"
     },
@@ -65358,7 +65424,7 @@
      "fehlvorstellung": "gesetz-auf-division"
     },
     {
-     "text": "Beide. Die Rechengesetze gelten für Mal und Geteilt.",
+     "text": "Beide. Die Rechengesetze gelten für Mal und Geteilt, denn Geteilt ist die Umkehrung von Mal.",
      "richtig": false,
      "fehlvorstellung": "gesetz-auf-division"
     }
@@ -66236,7 +66302,7 @@
      "richtig": true
     },
     {
-     "text": "Er wird 10-mal so groß.",
+     "text": "Er wird 10-mal so groß, wie bei den Zehnerpotenzen.",
      "richtig": false,
      "fehlvorstellung": "potenz-nullen"
     },
@@ -66315,7 +66381,7 @@
      "fehlvorstellung": "potenz-mal-exponent"
     },
     {
-     "text": "Mara. Die 10 hat schon eine Null.",
+     "text": "Mara. Die 10 hat schon eine Null, dazu kommen die Nullen aus dem Exponenten.",
      "richtig": false,
      "fehlvorstellung": "potenz-nullen"
     },
@@ -66752,7 +66818,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch.\n10⁴ hat 5 Nullen.",
+     "text": "Falsch.\n10⁴ hat 5 Nullen.\nDie 10 hat schon eine Null.",
      "richtig": false,
      "fehlvorstellung": "potenz-nullen"
     },
@@ -67092,7 +67158,7 @@
      "richtig": false
     },
     {
-     "text": "Der Unterschied verdoppelt sich jedes Mal.",
+     "text": "Der Unterschied verdoppelt sich von Zahl zu Zahl jedes Mal.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     },
@@ -67632,7 +67698,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.\nBeim Teilen wird jede Zahl kleiner.",
+     "text": "Stimmt.\nBeim Teilen wird jede Zahl immer kleiner.",
      "richtig": false
     }
    ],
@@ -69703,7 +69769,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch. Mia müsste zuerst durch 24 und dann durch 4 teilen.",
+     "text": "Falsch. Mia müsste zuerst durch 24 und dann noch einmal durch 4 teilen, denn 24 + 4 = 28.",
      "richtig": false
     },
     {
@@ -70203,7 +70269,7 @@
      "fehlvorstellung": "div-einmaleins"
     },
     {
-     "text": "Stimmt.\nDie Probe passt: 6 · 5 + 6 = 36.",
+     "text": "Stimmt.\nDie Probe passt: 6 · 5 + 6 = 36.\nDer Rest darf so groß sein.",
      "richtig": false,
      "fehlvorstellung": "div-rest-zu-gross"
     },
@@ -70433,7 +70499,7 @@
      "fehlvorstellung": "div-rest-vergessen"
     },
     {
-     "text": "Richtig: Bei Sachaufgaben lässt man den Rest weg.",
+     "text": "Richtig: Bei Sachaufgaben lässt man den Rest immer einfach weg.",
      "richtig": false,
      "fehlvorstellung": "div-rest-nicht-gedeutet"
     },
@@ -71101,7 +71167,7 @@
      "fehlvorstellung": "div-stellenwert"
     },
     {
-     "text": "Der Überschlag ist falsch.\n700 : 5 = 14.",
+     "text": "Der Überschlag ist falsch.\n700 : 5 = 14.\nDas Ergebnis muss nahe bei 14 liegen.",
      "richtig": false,
      "fehlvorstellung": "div-stellenwert"
     },
@@ -71326,7 +71392,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt.",
+     "text": "Das Ergebnis ist falsch, weil der Überschlag etwa 133 ergibt und nicht dazu passt.",
      "richtig": false,
      "fehlvorstellung": "ueberschlag-nicht-gerundet"
     },
@@ -71486,7 +71552,7 @@
      "fehlvorstellung": "falsch-gerundet"
     },
     {
-     "text": "Er ist dann immer zu groß.",
+     "text": "Er ist dann immer zu groß, weil beide Zahlen durch das Aufrunden größer geworden sind.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
@@ -71761,7 +71827,7 @@
      "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "text": "Zu 6 Keksen kommen 2 Kekse dazu.",
+     "text": "Zu 6 Keksen kommen noch 2 Kekse dazu.",
      "richtig": false,
      "fehlvorstellung": "div-falsche-rechenart"
     }
@@ -71977,7 +72043,7 @@
      "richtig": true
     },
     {
-     "text": "62 Flaschen bleiben übrig.",
+     "text": "62 Flaschen bleiben am Ende übrig.",
      "richtig": false,
      "fehlvorstellung": "div-rest-vergessen"
     },
@@ -72020,7 +72086,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch.\nHier wird mal gerechnet: 232 · 8.",
+     "text": "Falsch.\nHier wird mal gerechnet: 232 · 8.\nSo viel kostet 1 Trikot.",
      "richtig": false,
      "fehlvorstellung": "div-falsche-rechenart"
     },
@@ -72240,7 +72306,7 @@
      "fehlvorstellung": "div-vertauscht"
     },
     {
-     "text": "Richtig: 21 € sind fast 23 €, das genügt.",
+     "text": "Richtig: 21 € sind fast 23 €, das genügt bei so vielen Kindern.",
      "richtig": false,
      "fehlvorstellung": "div-rest-nicht-gedeutet"
     }
@@ -73078,7 +73144,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Finn. Man rechnet von links nach rechts.",
+     "text": "Finn. Man rechnet immer von links nach rechts.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -73232,7 +73298,7 @@
      "richtig": true
     },
     {
-     "text": "Weil man immer mit der größten Zahl anfängt.",
+     "text": "Weil man immer mit der größten Zahl anfängt. Die Plättchen in den Päckchen sind mehr als die einzelnen.",
      "richtig": false
     },
     {
@@ -73328,7 +73394,7 @@
      "richtig": true
     },
     {
-     "text": "Keiner. Man rechnet von links nach rechts.",
+     "text": "Keiner. Man rechnet immer der Reihe nach von links nach rechts, ohne Ausnahme.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -73758,7 +73824,7 @@
      "fehlvorstellung": "1x1-addiert"
     },
     {
-     "text": "Stimmt.\nPunkt vor Strich.",
+     "text": "Stimmt.\nPunkt vor Strich.\nDie Klammer ändert nichts.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     },
@@ -74112,7 +74178,7 @@
      "richtig": false
     },
     {
-     "text": "Ja. Klammern darf man nie weglassen.",
+     "text": "Ja. Klammern darf man in einer Rechnung nie weglassen.",
      "richtig": false
     },
     {
@@ -74199,7 +74265,7 @@
      "richtig": false
     },
     {
-     "text": "Beide. Bei Minus darf man Klammern immer weglassen.",
+     "text": "Beide. Bei Minus darf man Klammern immer weglassen, das Ergebnis bleibt gleich.",
      "richtig": false,
      "fehlvorstellung": "klammer-ignoriert"
     }
@@ -75006,7 +75072,7 @@
      "fehlvorstellung": "begriffe-verwechselt"
     },
     {
-     "text": "Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon ausgepackt.",
+     "text": "Ein Paket wiegt 60 kg. 4 Pakete mit je 7 kg werden davon wieder ausgepackt.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -75078,7 +75144,7 @@
      "fehlvorstellung": "punkt-vor-strich"
     },
     {
-     "text": "Beide. Die Ausdrücke sind gleich.",
+     "text": "Beide. Die Ausdrücke sind gleich, die Klammer ändert nichts.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -75643,7 +75709,7 @@
      "fehlvorstellung": "verteilung-halb"
     },
     {
-     "text": "Falsch.\nRichtig ist 52.",
+     "text": "Falsch.\nZuerst kommt das Plus: 6 + 20 = 26.\nRichtig ist 26 · 2 = 52.",
      "richtig": false
     },
     {
@@ -75920,7 +75986,7 @@
      "richtig": false
     },
     {
-     "text": "Sara. Man nimmt nur den ersten Summanden mal.",
+     "text": "Sara. Man nimmt nur den ersten Summanden mal, der zweite bleibt, wie er ist.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     }
@@ -76149,7 +76215,7 @@
      "richtig": true
     },
     {
-     "text": "Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen.",
+     "text": "Elif. Man muss jeden Faktor in der Klammer mit 4 malnehmen. Das sagt das Verteilungsgesetz.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     },
@@ -76575,7 +76641,7 @@
      "fehlvorstellung": "verteilung-halb"
     },
     {
-     "text": "Falsch.\nRichtig ist 6 + 7 + 3 = 16.",
+     "text": "Falsch.\nHier wird nur addiert.\nRichtig ist 6 + 7 + 3 = 16.",
      "richtig": false
     },
     {
@@ -76776,7 +76842,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Emre. In der Klammer wird malgenommen.",
+     "text": "Emre. In der Klammer wird malgenommen, weil vorn auch malgenommen wird.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     },
@@ -76928,7 +76994,7 @@
      "richtig": false
     },
     {
-     "text": "Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf.",
+     "text": "Weil man 58 · 99 + 58 als 58 · 100 + 58 rechnen darf, denn 99 ist fast 100.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     }
@@ -76990,7 +77056,7 @@
      "fehlvorstellung": "verteilung-halb"
     },
     {
-     "text": "Keiner. Bei Minus darf man nicht ausklammern.",
+     "text": "Keiner. Bei Minus darf man nicht ausklammern, das geht nur bei Plus.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     },
@@ -77721,7 +77787,7 @@
      "fehlvorstellung": "verteilung-halb"
     },
     {
-     "text": "Finn. Man zieht die Zahl ab, die geändert wurde.",
+     "text": "Finn. Man zieht am Ende die Zahl ab, die geändert wurde.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     },
@@ -77922,7 +77988,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Nur Jonas. Man muss immer das Verteilungsgesetz nehmen.",
+     "text": "Nur Jonas. Man muss immer das Verteilungsgesetz nehmen, anders darf man nicht zerlegen.",
      "richtig": false
     },
     {
@@ -78587,7 +78653,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch.\nEs geht abwechselnd plus und mal weiter.",
+     "text": "Falsch.\nEs geht abwechselnd plus und mal weiter.\nErst plus, dann mal.",
      "richtig": false
     },
     {
@@ -78855,7 +78921,7 @@
      "fehlvorstellung": "muster-falsche-regel"
     },
     {
-     "text": "Nur Mara. Man muss immer auf die Unterschiede schauen.",
+     "text": "Nur Mara. Man muss immer auf die Unterschiede schauen. Eine Regel mit Mal gibt es bei so kleinen Zahlen noch nicht.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     },
@@ -79029,7 +79095,7 @@
      "fehlvorstellung": "muster-falsche-regel"
     },
     {
-     "text": "Stimmt. Die Folge geht immer weiter, also kommt jede Zahl einmal vor.",
+     "text": "Stimmt. Die Folge geht immer weiter und wird beliebig groß, also kommt jede Zahl einmal vor.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     }
@@ -79108,7 +79174,7 @@
      "richtig": false
     },
     {
-     "text": "Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß.",
+     "text": "Sara. Ein Stein wird doppelt so groß, also wird alles doppelt so groß. Mehr ändert sich nicht.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     }
@@ -79734,7 +79800,7 @@
      "richtig": true
     },
     {
-     "text": "Falsch.\nDie Regel heißt: immer plus 10.",
+     "text": "Falsch.\nVon 10 bis 20 sind es 10.\nDie Regel heißt: immer plus 10.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     }
@@ -79931,7 +79997,7 @@
      "fehlvorstellung": "muster-falsche-regel"
     },
     {
-     "text": "Die Differenzen sind immer gleich.",
+     "text": "Die Differenzen zwischen den Zahlen sind immer gleich groß.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     },
@@ -79985,7 +80051,7 @@
      "fehlvorstellung": "muster-falsche-regel"
     },
     {
-     "text": "Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen.",
+     "text": "Nur Jonas. Bei „immer plus 6“ müsste die Folge bei 6 anfangen. Deshalb passt nur die Regel mit der 6er-Reihe.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     },
@@ -80141,7 +80207,7 @@
      "fehlvorstellung": "muster-falsche-regel"
     },
     {
-     "text": "Das stimmt nur zufällig für diese vier Zahlen.",
+     "text": "Das stimmt nur zufällig für diese vier Zahlen. Später kommen ungerade.",
      "richtig": false
     },
     {
@@ -80237,7 +80303,7 @@
      "fehlvorstellung": "muster-falsche-regel"
     },
     {
-     "text": "Nur Ida. Bei mal 3 wären die Unterschiede immer gleich.",
+     "text": "Nur Ida. Bei mal 3 wären die Unterschiede immer gleich, hier werden sie aber größer.",
      "richtig": false,
      "fehlvorstellung": "muster-falsche-regel"
     }
@@ -111095,7 +111161,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
    },
    "daten": {
     "kopf": [
@@ -111155,7 +111221,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
    },
    "daten": {
     "kopf": [
@@ -111404,7 +111470,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Ein großer Schritt ist 1 m lang. Eine Tür ist höher: ungefähr 2 m.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Angabe ist viel zu klein, welche viel zu groß?"
    },
    "daten": {
     "kopf": [
@@ -118548,7 +118614,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wandle um.\nWie viel kg sind 9,05 t?",
+   "text": "Wandle um.\nWie viele kg sind 9,05 t?",
    "loesung": 9050,
    "typischeFehler": [
     {
@@ -118733,7 +118799,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wie viel g sind 7,05 t?",
+   "text": "Wie viele g sind 7,05 t?",
    "loesung": 7050000,
    "typischeFehler": [
     {
@@ -119056,7 +119122,7 @@
     "kommunizieren"
    ],
    "format": "zahl",
-   "text": "Schau in die Tabelle.\nDie erste Tüte wiegt 1 kg 150 g.\nDie zweite Tüte wiegt 250 g.\nWie schwer sind beide Tüten zusammen in g?",
+   "text": "Die Tabelle hilft beim Umwandeln.\nDie erste Tüte wiegt 1 kg 150 g.\nDie zweite Tüte wiegt 250 g.\nWie schwer sind beide Tüten zusammen in g?",
    "loesung": 1400,
    "typischeFehler": [
     {
@@ -119100,7 +119166,7 @@
     "kommunizieren"
    ],
    "format": "sachaufgabe",
-   "text": "Schau in die Tabelle.\nIm Eimer sind 3 kg Futter.\nDie Pferde fressen 650 g.",
+   "text": "Die Tabelle hilft beim Umwandeln.\nIm Eimer sind 3 kg Futter.\nDie Pferde fressen 650 g.",
    "teile": [
     {
      "format": "zahl",
@@ -120685,7 +120751,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wandle um.\nWie viel cm sind 9,08 m?",
+   "text": "Wandle um.\nWie viele cm sind 9,08 m?",
    "loesung": 908,
    "typischeFehler": [
     {
@@ -120871,7 +120937,7 @@
     "symbolisch"
    ],
    "format": "zahl",
-   "text": "Wie viel mm sind 2,5 dm?",
+   "text": "Wie viele mm sind 2,5 dm?",
    "loesung": 250,
    "typischeFehler": [
     {
@@ -121193,7 +121259,7 @@
     "kommunizieren"
    ],
    "format": "zahl",
-   "text": "Schau in die Tabelle.\nDas erste Brett ist 2 m 15 cm lang.\nDas zweite Brett ist 45 cm lang.\nWie lang sind beide Bretter zusammen in cm?",
+   "text": "Die Tabelle hilft beim Umwandeln.\nDas erste Brett ist 2 m 15 cm lang.\nDas zweite Brett ist 45 cm lang.\nWie lang sind beide Bretter zusammen in cm?",
    "loesung": 260,
    "typischeFehler": [
     {
@@ -121237,7 +121303,7 @@
     "kommunizieren"
    ],
    "format": "sachaufgabe",
-   "text": "Schau in die Tabelle.\nEin Brett ist 4 m lang.\nDer Tischler sägt 65 cm ab.",
+   "text": "Die Tabelle hilft beim Umwandeln.\nEin Brett ist 4 m lang.\nDer Tischler sägt 65 cm ab.",
    "teile": [
     {
      "format": "zahl",
@@ -124812,7 +124878,7 @@
    ],
    "hilfen": {
     "tipp": "Zurück bekommst du den Unterschied: gegeben minus Preis.",
-    "beispiel": "2 € − 1 € 50 ct = 50 ct",
+    "beispiel": "5 € − 3 € 50 ct = 1 € 50 ct",
     "loesungsschritt": "Rechne in Cent: 2 € sind 200 ct."
    },
    "daten": {
@@ -126981,7 +127047,7 @@
    "teile": [
     {
      "format": "zahl",
-     "text": "Wie viel cm schneidet das Kind zusammen ab?",
+     "text": "Wie viel cm schneidet Sara zusammen ab?",
      "loesung": 20,
      "einheit": "cm",
      "typischeFehler": [
@@ -130872,7 +130938,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle zuerst die Kästchen des Radius.",
-    "beispiel": "2 Kästchen sind 1 cm.",
+    "beispiel": "6 Kästchen sind 3 cm.",
     "loesungsschritt": "Teile die Zahl der Kästchen durch 2."
    },
    "einheit": "cm",
@@ -134122,7 +134188,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Emre sagt: „Der Scheitel von α ist A.“\nHat das Kind recht?",
+   "text": "Emre sagt: „Der Scheitel von α ist A.“\nHat Emre recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -134347,7 +134413,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Wie heißt der Winkel β mit drei Buchstaben?",
+   "text": "Wie heißt der Winkel β mit drei Buchstaben? Gehe gegen den Uhrzeigersinn vom ersten zum zweiten Schenkel.",
    "mehrfach": false,
    "optionen": [
     {
@@ -134607,7 +134673,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lina schreibt für den Winkel α: ∢BSA. Hat das Kind recht?",
+   "text": "Lina schreibt für den Winkel α: ∢BSA. Hat Lina recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -134616,7 +134682,7 @@
      "fehlvorstellung": "winkel-bezeichnung"
     },
     {
-     "text": "Nein. Der Scheitel muss vorne stehen. Richtig ist ∢SAB.",
+     "text": "Nein. Der Scheitel muss immer vorne stehen. Richtig ist ∢SAB.",
      "richtig": false,
      "fehlvorstellung": "winkel-bezeichnung"
     },
@@ -135160,7 +135226,7 @@
      "richtig": true
     },
     {
-     "text": "Ja. Es kommt nur auf die Schenkel an.",
+     "text": "Ja. Es kommt nur auf die beiden Schenkel an.",
      "richtig": false,
      "fehlvorstellung": "winkel-bezeichnung"
     }
@@ -136044,7 +136110,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ida sagt: „Der Bogen von α ist größer.“\n„Also ist α der größere Winkel.“\nHat das Kind recht?",
+   "text": "Ida sagt: „Der Bogen von α ist größer.“\n„Also ist α der größere Winkel.“\nHat Ida recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -137143,7 +137209,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Nein. Kurze Schenkel gehören immer zu kleinen Winkeln.",
+     "text": "Nein. Kurze Schenkel gehören immer zu den kleinen Winkeln.",
      "richtig": false,
      "fehlvorstellung": "winkel-schenkellaenge"
     },
@@ -139350,7 +139416,7 @@
      "richtig": true
     },
     {
-     "text": "α ist spitz.\n20° ist zu groß.",
+     "text": "α ist spitz.\nEr ist kleiner als 90°.\n20° ist zu groß.",
      "richtig": false,
      "fehlvorstellung": "winkelart-grenze"
     },
@@ -141026,7 +141092,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Elif sagt: „Recife liegt bei 8° N, 35° W.“\nHat das Kind recht?",
+   "text": "Elif sagt: „Recife liegt bei 8° N, 35° W.“\nHat Elif recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -142280,7 +142346,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ole misst den Winkel α.\nDas Kind liest 20° ab.\nStimmt das?",
+   "text": "Ole misst den Winkel α.\nOle liest 20° ab.\nStimmt das?",
    "mehrfach": false,
    "optionen": [
     {
@@ -142625,7 +142691,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Jonas misst den Winkel α.\nDas Kind liest 60° ab.\nHat es recht?",
+   "text": "Jonas misst den Winkel α.\nJonas liest 60° ab.\nStimmt das?",
    "mehrfach": false,
    "optionen": [
     {
@@ -142690,7 +142756,7 @@
     "symbolisch"
    ],
    "format": "auswahl",
-   "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat das Kind falsch gemacht?",
+   "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat Ben falsch gemacht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -143032,7 +143098,7 @@
     "symbolisch"
    ],
    "format": "auswahl",
-   "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht?",
+   "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat Jonas falsch gemacht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -145663,11 +145729,11 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?",
+   "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert.",
+     "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.",
      "richtig": false,
      "fehlvorstellung": "dreieck-art"
     },
@@ -146022,7 +146088,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja. Es ist ein stumpfwinkliges Dreieck.",
+     "text": "Ja. Es ist dann ein stumpfwinkliges Dreieck.",
      "richtig": false,
      "fehlvorstellung": "winkelsumme"
     },
@@ -151667,7 +151733,7 @@
    "hilfen": {
     "tipp": "Denke an die Tabelle: 1 cm² ist so groß wie ein Fingernagel.",
     "beispiel": "Ein Heft ist größer als ein Fingernagel, aber kleiner als eine Zeitung. Also passt dm².",
-    "loesungsschritt": "Stell dir das Ding vor. Vergleiche mit der Tabelle."
+    "loesungsschritt": "Stell es dir genau vor. Vergleiche mit der Tabelle."
    },
    "daten": {
     "kopf": [
@@ -151922,7 +151988,7 @@
    "hilfen": {
     "tipp": "Denke an die Tabelle: 1 cm² ist so groß wie ein Fingernagel.",
     "beispiel": "Ein Heft ist größer als ein Fingernagel, aber kleiner als eine Zeitung. Also passt dm².",
-    "loesungsschritt": "Stell dir das Ding vor. Vergleiche mit der Tabelle."
+    "loesungsschritt": "Stell es dir genau vor. Vergleiche mit der Tabelle."
    },
    "daten": {
     "kopf": [
@@ -151981,7 +152047,7 @@
    "hilfen": {
     "tipp": "mm² nimmt man für sehr kleine Flächen, km² für sehr große.",
     "beispiel": "Ein Fingernagel ist ungefähr 80 mm² groß.",
-    "loesungsschritt": "Stell dir das Ding vor. Ist es sehr klein oder sehr groß?"
+    "loesungsschritt": "Stell es dir genau vor. Ist es sehr klein oder sehr groß?"
    },
    "daten": {
     "kopf": [
@@ -152174,7 +152240,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit Dingen, die du kennst.",
     "beispiel": "Eine Tischplatte ist ungefähr 80 dm² groß.",
-    "loesungsschritt": "Stell dir das Ding vor. Welche Einheit passt?"
+    "loesungsschritt": "Stell es dir genau vor. Welche Einheit passt?"
    },
    "daten": {
     "kopf": [
@@ -152239,7 +152305,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "beispiel": "1 m² ist so groß wie eine aufgeklappte Zeitung.",
     "loesungsschritt": "Passt die Einheit zur Größe des Dings?"
    },
@@ -152298,7 +152364,7 @@
    ],
    "hilfen": {
     "tipp": "1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite.",
-    "loesungsschritt": "Stell dir das Ding vor und vergleiche."
+    "loesungsschritt": "Stell es dir genau vor und vergleiche."
    },
    "nachweis": [
     {
@@ -152490,7 +152556,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "loesungsschritt": "Vergleiche mit Flächen, die du kennst: Klassenzimmer, Fußballfeld, Stadt."
    },
    "nachweis": [
@@ -154007,7 +154073,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit der Tabelle.",
     "beispiel": "Eine Briefmarke ist ungefähr so groß wie ein paar Fingernägel.",
-    "loesungsschritt": "Stell dir das Ding vor."
+    "loesungsschritt": "Stell es dir genau vor."
    },
    "daten": {
     "kopf": [
@@ -154231,7 +154297,7 @@
    "hilfen": {
     "tipp": "Vergleiche mit der Tabelle.",
     "beispiel": "Eine Heftseite ist größer als eine Handfläche. Also passt dm².",
-    "loesungsschritt": "Stell dir das Ding vor."
+    "loesungsschritt": "Stell es dir genau vor."
    },
    "daten": {
     "kopf": [
@@ -154497,7 +154563,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "beispiel": "Ein Klassenzimmer ist ungefähr 60 m² groß.",
     "loesungsschritt": "Passt die Einheit zur Größe des Dings?"
    },
@@ -154694,7 +154760,7 @@
     }
    ],
    "hilfen": {
-    "tipp": "Stell dir das Ding vor.",
+    "tipp": "Stell es dir genau vor.",
     "loesungsschritt": "Vergleiche mit Flächen, die du kennst."
    },
    "nachweis": [
@@ -164377,7 +164443,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.1-B3-F-05",
@@ -164408,7 +164474,7 @@
    ],
    "hilfen": {
     "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
-    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "beispiel": "Es gilt 1⁄4 < 3⁄4. Denn 1 Teil ist weniger als 3 Teile.",
     "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
    },
    "bild": {
@@ -164583,7 +164649,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.1-B3-G-03",
@@ -165062,7 +165128,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.1-B3-E-01",
@@ -165667,7 +165733,7 @@
    },
    "hilfen": {
     "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
-    "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+    "beispiel": "2⁄3 von 12 kg: 12 kg : 3 = 4 kg und 4 kg · 2 = 8 kg.",
     "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
    },
    "bild": {
@@ -166226,7 +166292,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.2-T1-E-06",
@@ -168567,7 +168633,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.3-K2-F-05",
@@ -168803,7 +168869,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.3-K2-G-05",
@@ -169023,7 +169089,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-wie-natuerlich"
   },
   {
@@ -169184,7 +169250,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-wie-natuerlich"
   },
   {
@@ -170190,7 +170256,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.3-K3-E-01",

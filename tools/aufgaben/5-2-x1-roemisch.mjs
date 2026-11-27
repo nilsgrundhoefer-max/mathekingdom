@@ -56,7 +56,7 @@ export function roemischeZahlzeichen() {
         h3('Steht I links vor V oder X? Dann wird 1 abgezogen.', 'IV ist 5 − 1 = 4.', n === 4 ? 'Rechne 5 − 1.' : 'Rechne 10 − 1.'), { bild: TAFEL_G() }); },
     () => { const l = mische([4, 6, 9, 11, 14, 16, 19, 21]).slice(0, 4).sort((a, b) => a - b);
       return ordnen(Z('Ordne die Zahlen.', 'Beginne mit der kleinsten Zahl.'), l.map(r),
-        h3('Rechne zuerst jede Karte in eine Zahl um.', 'IV ist 4. VI ist 6. Also kommt IV vor VI.', `${r(l[0])} ist ${l[0]}. Das ist die kleinste Zahl.`), { bild: TAFEL_G(), nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'roemisch-nur-addiert' }); },
+        h3('Rechne zuerst jede Karte in eine Zahl um.', 'IV ist 4. VI ist 6. Also kommt IV vor VI.', `${r(l[0])} ist ${l[0]}. Das ist die kleinste Zahl.`), { bild: TAFEL_G(), nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'roemisch-nur-addiert' }); },
     () => { const n = wahl([24, 29, 34, 39, 64, 69, 74, 79]);
       return auswahl(`Welche Zahl ist ${r(n)}?`, [opt(String(n), true), opt(String(roemWert(r(n))), false, 'roemisch-nur-addiert'), opt(String(n + 1), false)],
         h3('Schau auf das Ende. Dort steht ein kleineres Zeichen links.', 'XIV ist 10 + 4 = 14.', `Das Ende ${r(n % 10)} ist ${n % 10}.`), { nachweis: [R(n)] }); },
@@ -64,7 +64,7 @@ export function roemischeZahlzeichen() {
       return luecken(Z(`Zerlege ${r(n)} in zwei Teile.`, `${r(z)} ist {{a}}.`, `${r(e)} ist {{b}}.`, `Zusammen: {{a}} + {{b}} = {{c}}`.replace('{{a}} + {{b}}', `${z} + ${e}`)), { a: z, b: [e, fehlerliste(e, [[e + 2, 'roemisch-nur-addiert']])], c: [n, fehlerliste(n, [[n + 2, 'roemisch-nur-addiert']])] },
         h3('Der vordere Teil sind die Zehner. Der hintere Teil sind die Einer.', 'XXIV: XX ist 20, IV ist 4. Zusammen 24.', `${r(z)} ist ${z}. ${r(e)} ist ${e}.`), { nachweis: [R(z), R(e), R(n), ...N(`${z} + ${e}`)] }); },
     () => { const k = kind(), [n, f] = wahl([[9, 'elf'], [4, 'sechs']]);
-      return auswahl(Z(`${k} liest ${r(n)} als ${f}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'roemisch-nur-addiert'), opt(`Falsch. Das I steht links und wird abgezogen. Die Zahl ist ${n}.`, true), opt(`Falsch. Die Zahl ist ${n + 1}.`, false, 'roemisch-zeichen-verwechselt')],
+      return auswahl(Z(`${k} liest ${r(n)} als ${f}.`, 'Stimmt das?'), [opt('Stimmt. Alle Zeichen werden einfach zusammengezählt.', false, 'roemisch-nur-addiert'), opt(`Falsch. Das I steht links und wird abgezogen. Die Zahl ist ${n}.`, true), opt(`Falsch. Die Zahl ist ${n + 1}.`, false, 'roemisch-zeichen-verwechselt')],
         h3('Wo steht das kleinere Zeichen? Links heißt abziehen.', 'XI ist 10 + 1 = 11. IX ist 10 − 1 = 9.', `In ${r(n)} steht das I links.`), { nachweis: [U(false), R(n, NUR)] }); },
   ]);
   sechs(X_('X1'), 'M', [
@@ -79,7 +79,7 @@ export function roemischeZahlzeichen() {
       h2('Das linke Zeichen ist kleiner und wird vom rechten abgezogen.', 'XL ist 50 − 10, CM ist 1000 − 100.'), { nachweis: [40, 90, 400, 900].map((n) => R(n)) }),
     () => { const l = mische([[49, 51], [90, 110], [400, 600], [99, 101], [44, 46]]).slice(0, 3).flat().slice(0, 5).sort((a, b) => b - a);
       return ordnen('Ordne die Zahlen. Beginne mit der größten Zahl.', l.map(r),
-        h2('Rechne jede Karte in eine Zahl um, bevor du ordnest.', `Die größte Zahl ist ${r(l[0])}, das ist ${l[0]}.`), { nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'roemisch-nur-addiert' }); },
+        h2('Rechne jede Karte in eine Zahl um, bevor du ordnest.', `Die größte Zahl ist ${r(l[0])}, das ist ${l[0]}.`), { nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'roemisch-nur-addiert' }); },
     () => { const [n, kurz, viele, halb] = wahl([[99, 'IC', 'LXXXXVIIII', 'XCVIIII'], [49, 'IL', 'XXXXVIIII', 'XLVIIII'], [499, 'ID', 'CCCCXCIX', 'CDXCVIIII'], [999, 'IM', 'DCCCCXCIX', 'CMXCVIIII']]);
       return auswahl(`Nur eine dieser Schreibweisen für die Zahl ${n} ist richtig. Welche?`, [opt(r(n), true), opt(kurz, false, 'roemisch-falsch-abgezogen'), opt(viele, false, 'roemisch-vier-gleiche'), opt(halb, false, 'roemisch-vier-gleiche')],
         h2('Abgezogen wird immer nur das nächstkleinere Zeichen der Reihe I, X, C. Kein Zeichen steht viermal hintereinander.', `Zerlege ${n} in Stellen und schreibe jede Stelle für sich.`), { nachweis: [{ art: 'roemischGueltig' }, R(n, NUR)] }); },
@@ -151,7 +151,7 @@ export function roemischeZahlzeichen() {
       return schreiben(Z(`Auf einer alten Uhr steht die Stunde ${r(h)}.`, 'Schreibe die nächste Stunde mit römischen Zahlzeichen.'), h + 1,
         h3('Rechne zuerst in Zahlen. Schreibe dann die neue Zahl.', 'Nach der Stunde XIII kommt 14. Man schreibt XIV.', `${r(h)} ist ${h}. Die nächste Stunde ist ${h + 1}.`), {}, [R(h, NUR), EINS, ...N(`${h} + 1`)]); },
     () => { const k = kind(), [n, falsch, grund] = wahl([[4, 'IIII', 'I'], [9, 'VIIII', 'I'], [40, 'XXXX', 'X']]);
-      return auswahl(Z(`${k} schreibt die Zahl ${n} so: ${falsch}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'roemisch-vier-gleiche'), opt(`Falsch. Das ${grund} steht höchstens dreimal hintereinander. Richtig ist ${r(n)}.`, true), opt(`Falsch. Richtig ist ${umgedreht(n)}.`, false, 'roemisch-falsch-abgezogen')],
+      return auswahl(Z(`${k} schreibt die Zahl ${n} so: ${falsch}.`, 'Stimmt das?'), [opt('Stimmt. Jedes Zeichen darf man so oft schreiben wie nötig.', false, 'roemisch-vier-gleiche'), opt(`Falsch. Das ${grund} steht höchstens dreimal hintereinander. Richtig ist ${r(n)}.`, true), opt(`Falsch. Richtig ist ${umgedreht(n)}.`, false, 'roemisch-falsch-abgezogen')],
         h3('Zähle gleiche Zeichen hintereinander. Mehr als drei sind nicht erlaubt.', 'Die Zahl 14 schreibt man XIV, nicht XIIII.', `Ziehe ab: ${r(n)} ist ${n}.`), { nachweis: [U(false), R(n, NUR)] }); },
   ]);
   sechs(X_('X2'), 'M', [

@@ -127,7 +127,7 @@ export function dezimalschreibweise() {
       return auswahl(Z('Beide Zahlen sind am Zahlenstrahl markiert.', 'Welches Zeichen passt?', `${dz(a, 10)} ▢ ${dz(c, 10)}`), zeichen(a, c, 'zeichen-verwechselt'), tVglF, { bild: B.strahl({ ...strahlF(10), punkte: [a, c] }), nachweis: [VGL(dz(a, 10), dz(c, 10))] }); },
     () => { const zs = mische(vorn(19, 1).filter((x) => x % 10 !== 0)).slice(0, 4).sort((a, c) => a - c);
       if (zs[0] > 9 || zs[3] < 11) return null;
-      return ordnen(Z('Ordne die Dezimalzahlen.', 'Beginne mit der kleinsten.', 'Der Zahlenstrahl hilft dir.'), zs.map((x) => dz(x, 10)), tVglF, { bild: B.strahl(strahlF()), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt' }); },
+      return ordnen(Z('Ordne die Dezimalzahlen.', 'Beginne mit der kleinsten.', 'Der Zahlenstrahl hilft dir.'), zs.map((x) => dz(x, 10)), tVglF, { bild: B.strahl(strahlF()), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt' }); },
     () => { const p = wahl(vorn(29, 1).filter((x) => x % 10 !== 0 && x > 10));
       return strahl('markieren', `Markiere ${dz(p, 10)} am Zahlenstrahl.`, strahlF(30), p, fehlerliste(p, [[p % 10, 'stellenwert'], [(p % 10) * 10 + Math.floor(p / 10), 'dezimal-stelle']].filter(([w]) => w <= 30)),
         h3('Suche zuerst die Einer am Zahlenstrahl. Gehe dann in Zehntelschritten weiter.', 'Für 1,3 gehst du zur 1 und dann 3 Teilstriche nach rechts.', 'Die Ziffer vor dem Komma nennt die Einer. Die Ziffer nach dem Komma nennt die Zehntel.'), { nachweis: [{ art: 'strahl', zahl: dz(p, 10) }] }); },
@@ -147,7 +147,7 @@ export function dezimalschreibweise() {
       return auswahl(Z('Welches Zeichen passt?', `${dz(l, 100)} ▢ ${dz(r, 100)}`), zeichen(l, r, 'dezimal-stelle'), tVglG, { nachweis: [VGL(dz(l, 100), dz(r, 100))] }); },
     () => { const z = zz(1, 8), zs = [z * 10 + zz(1, 9), z * 10 + 10 + zz(1, 9), z * 10 - 10 + zz(1, 9), zz(1, 9)].filter((x, i, l) => l.indexOf(x) === i).sort((a, c) => a - c);
       if (zs.length < 4) return null;
-      return ordnen(Z('Ordne die Dezimalzahlen.', 'Beginne mit der kleinsten.'), zs.map((x) => dz(x, 100, 2)), tVglG, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt' }); },
+      return ordnen(Z('Ordne die Dezimalzahlen.', 'Beginne mit der kleinsten.'), zs.map((x) => dz(x, 100, 2)), tVglG, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt' }); },
     () => { const g = wahl([0, 0, zz(1, 9)]), k = zz(1, 9), a = `${g},${k}0`, c = `${g},${k}`, [l, r] = mische([a, c]);
       return auswahl(Z('Die Stellenwerttafel zeigt beide Zahlen.', 'Welches Zeichen passt?', `${l} ▢ ${r}`), [opt('=', true), opt(l === a ? '>' : '<', false, 'dezimal-endnull'), opt(l === a ? '<' : '>', false)],
         h3('Trage beide Zahlen in die Stellenwerttafel ein. Vergleiche Stelle für Stelle.', '0,2 und 0,20 haben beide 2 Zehntel und 0 Hundertstel. Es gilt 0,2 = 0,20.', 'Eine Endnull ändert die Zahl nicht.'),
@@ -167,7 +167,7 @@ export function dezimalschreibweise() {
         h2('Der Abstand zwischen zwei beschrifteten Zahlen ist ein Hundertstel. Er ist in 10 Schritte geteilt.', 'Jeder kleine Schritt ist ein Tausendstel. Lies die beschriftete Zahl vor dem Pfeil und zähle die Tausendstel dazu.'), { nachweis: [{ art: 'strahl', zahl: dz(p, 1000) }] }); },
     () => { const z = zz(2, 8), h = zz(1, 9), liste = [[z * 100, dz(z, 10)], [z * 100 + h * 10, dz(z * 10 + h, 100)], [z * 100 + h, dz(z * 100 + h, 1000)], [(z - 1) * 100 + 90 + h, dz((z - 1) * 100 + 90 + h, 1000)], [z * 100 + 50 + (h === 5 ? 1 : 0), dz(z * 100 + 50 + (h === 5 ? 1 : 0), 1000)]];
       if (new Set(liste.map(([w]) => w)).size !== 5) return null;
-      return ordnen(Z('Ordne die Dezimalzahlen.', 'Beginne mit der kleinsten.'), liste.sort((a, c) => a[0] - c[0]).map(([, t]) => t), tStelle, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-wie-natuerlich' }); },
+      return ordnen(Z('Ordne die Dezimalzahlen.', 'Beginne mit der kleinsten.'), liste.sort((a, c) => a[0] - c[0]).map(([, t]) => t), tStelle, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-wie-natuerlich' }); },
     () => { const st = { von: 0, bis: 100, schritt: 5, beschriftung: 20, teiler: 100 }, p = wahl(vorn(19, 1).map((x) => x * 5).filter((x) => x % 20 !== 0));
       return strahl('markieren', `Markiere ${dz(p, 100)} am Zahlenstrahl.`, st, p, fehlerliste(p, [[p % 10 === 5 ? p + 5 : null, 'dezimal-stelle'], [p < 50 && (p * 2) % 20 !== 0 ? p * 2 : null, 'dezimal-stelle']].filter(([w]) => w && w <= 100)),
         h2('Wie groß ist ein Schritt zwischen zwei Teilstrichen? Von 0 bis 0,2 sind es 4 Schritte.', 'Ein Schritt ist 0,05 groß. Gehe von der letzten beschrifteten Zahl aus weiter.'), { nachweis: [{ art: 'strahl', zahl: dz(p, 100) }] }); },
@@ -185,7 +185,7 @@ export function dezimalschreibweise() {
     () => { const a = zz(1, 9), c = zz(1, 9), liste = [[a * 1000 + c * 10, dz(a * 1000 + c * 10, 10000)], [a * 1000 + c * 100, dz(a * 100 + c * 10, 1000)], [c * 1000 + a * 100, dz(c * 10 + a, 100)], [a * 100 + c * 10 + 5, dz(a * 100 + c * 10 + 5, 10000)], [a * 1000 + c * 100 + 5, dz(a * 1000 + c * 100 + 5, 10000)]];
       if (new Set(liste.map(([w]) => w)).size !== 5) return null;
       const ab = wahl([true, false]), sort = liste.sort((x, y) => x[0] - y[0]).map(([, t]) => t);
-      return ordnen(Z('Ordne die Dezimalzahlen.', `Beginne mit der ${ab ? 'größten' : 'kleinsten'}.`), ab ? sort.reverse() : sort, h1('Schreibe alle Zahlen mit gleich vielen Nachkommastellen, indem du Endnullen anhängst. Vergleiche dann Stelle für Stelle.'), { nachweis: [{ art: 'ordnung', richtung: ab ? 'ab' : 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-wie-natuerlich' }); },
+      return ordnen(Z('Ordne die Dezimalzahlen.', `Beginne mit der ${ab ? 'größten' : 'kleinsten'}.`), ab ? sort.reverse() : sort, h1('Schreibe alle Zahlen mit gleich vielen Nachkommastellen, indem du Endnullen anhängst. Vergleiche dann Stelle für Stelle.'), { nachweis: [{ art: 'ordnung', richtung: ab ? 'ab' : 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-wie-natuerlich' }); },
     () => { const von = zz(1, 9) * 100, p = von + wahl(vorn(19, 1)) * 5, st = { von, bis: von + 100, schritt: 5, beschriftung: 50, teiler: 1000, ausschnitt: true };
       return strahl('ablesen', 'Auf welche Zahl zeigt der Pfeil?', { ...st, pfeil: p }, dz(p, 1000), dfe(dz(p, 1000), [[dz(von + ((p - von) / 5) * 10, 1000), 'dezimal-stelle'], [dz(von + (p - von) / 5, 1000), 'dezimal-stelle']]),
         h1('Bestimme zuerst die Schrittweite: Wie viele Schritte liegen zwischen den beiden beschrifteten Zahlen, und wie groß ist ihr Abstand?'), { nachweis: [{ art: 'strahl', zahl: dz(p, 1000) }] }); },
@@ -261,7 +261,7 @@ export function dezimalschreibweise() {
         h2('Wandle zuerst alle Gewichte in Gramm um.', `${dz(a, 1000)} kg sind ${a} g. Wandle auch das dritte Gewicht um und addiere dann.`), { einheit: 'g', nachweis: [`${dz(a, 1000)} kg = ${a} g`, `${dz(d, 1000)} kg = ${d} g`, `${a} g + ${c} g + ${d} g = ${a + c + d} g`] }); },
     () => { const z = zz(2, 8), h = zz(1, 9), liste = [[z * 100, `${dz(z, 10)} m`], [(z * 10 + h) * 10, `${z * 10 + h} cm`], [z * 100 + h, `${dz(z * 100 + h, 1000)} m`], [(z * 10 + h + 5) * 10, `${z * 10 + h + 5} cm`], [h * 1000 + z * 100, `${dz(h * 10 + z, 10)} m`]]; // Werte in Millimetern
       if (new Set(liste.map(([w]) => w)).size !== 5) return null;
-      return ordnen(Z('Ordne die Längen.', 'Beginne mit der kleinsten.'), liste.sort((a, c) => a[0] - c[0]).map(([, t]) => t), h2('Wandle alle Längen in dieselbe Einheit um, am besten in Zentimeter.', '1 m = 100 cm. Verschiebe das Komma um zwei Stellen und fülle mit 0 auf.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt' }); },
+      return ordnen(Z('Ordne die Längen.', 'Beginne mit der kleinsten.'), liste.sort((a, c) => a[0] - c[0]).map(([, t]) => t), h2('Wandle alle Längen in dieselbe Einheit um, am besten in Zentimeter.', '1 m = 100 cm. Verschiebe das Komma um zwei Stellen und fülle mit 0 auf.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt' }); },
   ]);
   sechs(K3, 'E', [
     () => { const [g, k, f] = wahl([['m', 'cm', 100], ['kg', 'g', 1000], ['km', 'm', 1000]]), a = wahl([75, 8, 45, 125, 305, 6].filter((x) => x < f)), w = (a * 1000) / f, r = wahl([a < 10 ? a * 10 : Math.round(a / 10) * 10 + 10, a, a < 10 ? a * 100 : a + 5].filter((x) => x > 0));

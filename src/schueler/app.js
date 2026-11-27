@@ -1042,7 +1042,7 @@ function aufgabenAnsicht() {
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
-        a.seitenblick && h('span', { class: 'seitenblick-satz', id: 'seitenblick-satz' }, `Kurzer Blick zurück, danach geht es mit ${z.index.meilensteinVon.get(a.seitenblick.zurueck)?.titel ?? 'deinem Meilenstein'} weiter.`),
+        a.seitenblick && h('span', { class: 'seitenblick-satz', id: 'seitenblick-satz' }, seitenblickSatz(z.index.meilensteinVon.get(a.seitenblick.zurueck)?.titel)),
         a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
         a.sonderauftrag && h('span', { class: 'marke sonderauftragmarke', id: 'sonderauftrag-marke' }, '✉ ', sonderauftragNummer(a, fertig)),
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
@@ -1252,7 +1252,7 @@ function liesEingabe(auf, formular) {
 function pruefe(formular, sicher = null) {
   const a = z.ansicht, auf = a.aufgabe;
   const { eingabe, leer } = liesEingabe(auf, formular);
-  if (leer) { a.hinweis = 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
+  if (leer) { a.hinweis = ['gitter', 'zeichnen', 'winkel', 'faerben', 'zahlenstrahl'].includes(auf.format) ? 'Da fehlt noch etwas. Tippe oder zeichne erst deine Lösung ins Bild, bevor du prüfst.' : auf.format === 'auswahl' ? 'Da fehlt noch etwas. Kreuze erst eine Antwort an, bevor du prüfst.' : 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
   if (a.versuch === 0 && sicher != null) a.sicher = sicher;
   const ergebnis = L.pruefeAntwort(auf, eingabe);
   // Klasse 6 (ADR 0037): Der Wert stimmt, aber der Bruch ist noch nicht gekürzt oder keine gemischte Zahl. Das ist „fast richtig“ und kostet keinen Versuch.
@@ -1273,11 +1273,12 @@ function pruefe(formular, sicher = null) {
     return male();
   }
   if (!ergebnis.richtig && a.versuch < 2) {
-    const gezielt = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis;
+    // Version 0.65: Eine Aufgabe kann zu einer Fehlvorstellung einen eigenen Hinweis tragen (`hinweise`), wenn der allgemeine nicht passt.
+    const gezielt = ergebnis.fehlvorstellung && (auf.hinweise?.[ergebnis.fehlvorstellung] ?? z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis);
     // Nach dem ersten Fehlversuch geht der Tipp von selbst auf. Er kostet nichts (ADR 0010). Auf E bleibt er zu (ADR 0015).
     const tippNeu = a.hilfen === 0 && L.tippVonSelbst(auf);
     if (tippNeu) a.hilfen = 1;
-    a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'}${tippNeu ? ' Unten liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
+    a.hinweis = `Das stimmt noch nicht. ${gezielt || L.allgemeinerHinweis(auf)}${tippNeu ? ' Unten liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
     // Sicher, aber falsch: Hier lohnt genaues Hinschauen besonders (Hyperkorrektur, ADR 0014).
     if (a.sicher === true) {
       const typisch = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.beschreibung;
@@ -1313,8 +1314,13 @@ function maleMitEntwurf(eingabe) {
   a.eingaben.push(eingabe); male(); a.eingaben.pop();
 }
 
+// Version 0.65: Der Titel steht in Anführungszeichen hinter dem Doppelpunkt, damit kein Fall gebeugt werden muss („mit Brüche“).
+export const seitenblickSatz = (titel) => (titel ? `Kurzer Blick zurück. Danach geht es hier weiter: „${titel.replace(/\.$/, '')}“.` : 'Kurzer Blick zurück. Danach geht es bei deinem Meilenstein weiter.');
 function loesungstext(auf) {
-  const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? ` ${t.einheit}` : ''}`;
+  // Version 0.65: Das Gradzeichen steht ohne Lücke an der Zahl („36°“), wie in den Aufgaben.
+  const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? `${t.einheit === '°' ? '' : ' '}${t.einheit}` : ''}`;
+  // Version 0.65: Fragt die Aufgabe nach „ungefähr“ und hat einen Bereich, steht der Bereich bei der Lösung.
+  if (auf.format === 'zahl' && auf.toleranz && /ungefähr/.test(auf.text ?? '')) return `ungefähr ${zahl(auf)} (richtig ist alles von ${gliedere(auf.loesung - auf.toleranz)} bis ${gliedere(auf.loesung + auf.toleranz)})`;
   switch (auf.format) {
     case 'zahlenstrahl': {
       // Kapitel 9: Am Strahl mit Teiler ist die Lösung die Nummer des Teilstrichs. Gezeigt wird die Zahl, die dort steht.
@@ -1379,7 +1385,7 @@ function soGehtEs(auf) {
 function urteilZeile(e, auf, nachsatz) {
   return e.richtig
     ? [h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e)), wahreAnzahl(auf), endnullSatz(auf)]
-    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), endnullSatz(auf), wahreAnzahl(auf), loesungsbild(auf)];
+    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `${/[.!?][“”"')]*$/.test(loesungstext(auf)) ? '' : '.'} ${nachsatz ?? ''}`.trimEnd()), endnullSatz(auf), wahreAnzahl(auf), loesungsbild(auf)];
 }
 // Klasse 6, Kapitel 4 (ADR 0047): Beim Runden wird keine Endnull verlangt (4 ist so richtig wie 4,0).
 // Steht in der Lösung eine Endnull, sagt ein Satz, wozu sie da ist.

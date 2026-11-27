@@ -2641,7 +2641,7 @@ async function weiter(seite, wahl = '#weiter') {
   // Jetzt ist ein Seitenblick fällig: Er sagt, wo es danach weitergeht.
   await seite.waitForSelector('section.aufgabe');
   if (await seite.locator('#seitenblick-marke').count()) {
-    assert.equal(await seite.innerText('#seitenblick-satz'), 'Kurzer Blick zurück, danach geht es mit Dividieren weiter.');
+    assert.equal(await seite.innerText('#seitenblick-satz'), 'Kurzer Blick zurück. Danach geht es hier weiter: „Dividieren“.');
     await foto(seite, 'seitenblick-satz');
     await antworte(seite, true);
     await weiter(seite, '#weiter');

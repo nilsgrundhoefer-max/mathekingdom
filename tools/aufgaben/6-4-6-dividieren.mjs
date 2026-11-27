@@ -36,7 +36,7 @@ export function dividieren6() {
       return dezimal(Z(`Ein ${z} m langes Band wird in ${n} gleich lange Stücke geschnitten.`, 'Gib die Länge eines Stücks an.'), l, dfe(l, [[ab(n, z), 'bruch-vertauscht'], [`${z},${n}`, 'bruch-als-komma']]), tM1,
         { einheit: 'm', ...DIV(z, n), nachweis: [`${z} m : ${n} = ${l} m`] }); },
     () => { const [z, n] = wahl([[3, 8], [5, 8], [1, 16], [3, 16]]), l = ab(z, n), falsch = dezimalText(n, z), kn = kind();
-      return auswahl(Z(`${kn} rechnet für ${br(z, n)}: ${n} : ${z} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${z} : ${n} = ${l}.`, true), opt('Stimmt.', false, 'bruch-vertauscht'), opt(`Stimmt, denn ${n} : ${z} = ${falsch}.`, false, 'bruch-vertauscht')], tM1,
+      return auswahl(Z(`${kn} rechnet für ${br(z, n)}: ${n} : ${z} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${z} : ${n} = ${l}.`, true), opt('Stimmt. Man teilt die größere Zahl durch die kleinere.', false, 'bruch-vertauscht'), opt(`Stimmt, denn ${n} : ${z} = ${falsch}.`, false, 'bruch-vertauscht')], tM1,
         { ...DIV(z, n), nachweis: [URTEIL(false, `${br(z, n)} = ${falsch}`)] }); },
     () => { const [z, n] = wahl([[7, 16], [11, 16], [13, 16], [15, 16], [9, 40]]), l = ab(z, n);
       return dezimal(Z(`Dividiere schriftlich im Heft: ${z} : ${n}`, 'Gib das Ergebnis als Dezimalzahl ein.'), l, dfe(l, [[T(Math.floor((z * 100) / n), 2), 'runden-abschneiden'], [`${z},${n}`, 'bruch-als-komma']]), tM1, { ...DIV(z, n), nachweis: [`${z} : ${n} = ${l}`] }); },
@@ -69,18 +69,18 @@ export function dividieren6() {
     () => { const [z, n] = wahl([[5, 8], [3, 8], [7, 16], [9, 16], [3, 40]]), l = ab(z, n);
       return luecken(Z('Ergänze die fehlende Zahl.', `{{a}} : ${n} = ${l}`), { a: [z, dfe(z, [[z * 10, 'dezimal-stelle']])] }, h1(`Rechne rückwärts: ${l} · ${n}.`), { nachweis: [`${l} · ${n} = ${z}`] }); },
     () => { const [z, n] = wahl([[5, 8], [3, 8], [7, 8], [5, 16]]), l = ab(z, n), falsch = T(Math.floor((z * 10) / n), 1), kn = kind();
-      return auswahl(Z(`${kn} rechnet ${z} : ${n} = ${falsch} und hört auf.`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Es bleibt ein Rest. Es gilt ${z} : ${n} = ${l}.`, true), opt('Stimmt.', false, 'runden-abschneiden'), opt('Stimmt, denn eine Stelle nach dem Komma reicht.', false, 'runden-abschneiden')],
+      return auswahl(Z(`${kn} rechnet ${z} : ${n} = ${falsch} und hört auf.`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Es bleibt ein Rest. Es gilt ${z} : ${n} = ${l}.`, true), opt('Stimmt. Nach dem ersten Ergebnis darf man aufhören.', false, 'runden-abschneiden'), opt('Stimmt, denn eine Stelle nach dem Komma reicht.', false, 'runden-abschneiden')],
         h1('Prüfe: Nimm das Ergebnis mal den Divisor. Kommt der Dividend heraus?'), { ...DIV(z, n), nachweis: [URTEIL(false, `${z} : ${n} = ${falsch}`)] }); },
     () => { const [z, n] = wahl([[13, 40], [21, 40], [23, 40], [19, 40], [29, 40]]), l = ab(z, n);
       return dezimal(Z(`Dividiere schriftlich im Heft: ${z} : ${n}`, 'Gib das Ergebnis als Dezimalzahl ein.'), l, dfe(l, [[T(Math.floor((z * 100) / n), 2), 'runden-abschneiden']]), h1('Hänge so lange Nullen an, bis kein Rest mehr bleibt.'), { ...DIV(z, n), nachweis: [`${z} : ${n} = ${l}`] }); },
     () => { const liste = mische([[3, 8], [2, 5], [7, 16], [9, 20], [11, 25]]).slice(0, 4), karten = liste.map(([z, n], i) => (i % 2 ? ab(z, n) : br(z, n))), werte = liste.map(([z, n]) => z / n);
       if (new Set(werte).size !== 4) return null;
       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), karten.map((t, i) => [t, werte[i]]).sort((x, y) => x[1] - y[1]).map(([t]) => t), h1('Wandle die Brüche durch Dividieren in Dezimalzahlen um.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-mehr-ziffern' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-mehr-ziffern' }); },
     () => { const [geld, n] = wahl([['4,50', 3], ['7,50', 6], ['9,60', 8], ['5,40', 4], ['8,40', 5]]), cent = Number(geld.replace(',', '')), l = T(cent / n, 2, 2);
       return dezimal(Z(`${n} Kinder teilen ${geld} € gerecht.`, 'Gib an, wie viel Euro jedes Kind bekommt.'), l, dfe(l, [[T(cent / n, 1), 'dezimal-stelle']]), h1('Dividiere wie bei natürlichen Zahlen. Setze das Komma, wenn du das Komma im Dividenden überschreitest.'),
         { einheit: '€', nachweis: [`${geld} € : ${n} = ${l} €`] }); },
-    () => { const opts = [['Er ergibt eine abbrechende Dezimalzahl, wenn sich sein Nenner durch Erweitern zu einer Zehnerpotenz machen lässt.', true], ['Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.', false], ['Er ergibt eine abbrechende Dezimalzahl, wenn der Nenner gerade ist.', false], ['Er ergibt immer eine abbrechende Dezimalzahl.', false]];
+    () => { const opts = [['Er ergibt eine abbrechende Dezimalzahl, wenn sich sein Nenner durch Erweitern zu einer Zehnerpotenz machen lässt.', true], ['Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist, also bei echten Brüchen.', false], ['Er ergibt eine abbrechende Dezimalzahl, wenn der Nenner gerade ist.', false], ['Er ergibt immer eine abbrechende Dezimalzahl.', false]];
       return auswahl(Z('Ein Bruch ist vollständig gekürzt.', 'Kreuze die Aussage an, die immer stimmt.'), opts.map(([t, r]) => opt(t, r, r ? undefined : 'periode-abgebrochen')), h1('Prüfe jede Aussage an Beispielen wie Sechsteln, Achteln und Zwölfteln.'), { nachweis: [FREI('Regel für abbrechende Dezimalzahlen')] }); },
     () => { const [z, n, k] = wahl([[21, 28, 7], [15, 24, 3], [18, 24, 6], [14, 16, 2], [10, 16, 2]]), l = ab(z, n);
       return dezimal(Z(`Wandle ${br(z, n)} in eine Dezimalzahl um.`), l, dfe(l, [[`${z},${n}`, 'bruch-als-komma']]), h1('Kürze zuerst. Dann ist die Division kürzer.'), { ...DIV(z / k, n / k), nachweis: [`${br(z, n)} = ${br(z / k, n / k)} = ${z / k} : ${n / k} = ${l}`] }); },
@@ -101,7 +101,7 @@ export function dividieren6() {
     () => { const [z, n] = wahl([[7, 12], [5, 12], [11, 12], [7, 15], [11, 15]]), p = teile(z, n);
       return periode(Z(`Wandle ${br(z, n)} in eine Dezimalzahl um.`), p.vor, p.per, perFehler(z, n), tM2, { ...DIV(z, n), nachweis: [`${br(z, n)} = ${z} : ${n} = ${p.text}`] }); },
     () => { const [z, n] = wahl([[2, 3], [1, 3], [5, 9], [7, 9]]), p = teile(z, n), falsch = abgebrochen(z, n, 2), kn = kind();
-      return auswahl(Z(`${kn} schreibt: ${br(z, n)} = ${falsch}`, 'Beurteile die Aussage.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${p.text}.`, true), opt('Stimmt.', false, 'periode-abgebrochen'), opt(`Stimmt, denn ${falsch} ist fast ${br(z, n)}.`, false, 'periode-abgebrochen')], tM2,
+      return auswahl(Z(`${kn} schreibt: ${br(z, n)} = ${falsch}`, 'Beurteile die Aussage.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${p.text}.`, true), opt('Stimmt. Ein paar Stellen nach dem Komma genügen.', false, 'periode-abgebrochen'), opt(`Stimmt, denn ${falsch} ist fast ${br(z, n)}.`, false, 'periode-abgebrochen')], tM2,
         { ...DIV(z, n), nachweis: [URTEIL(false, `${br(z, n)} = ${falsch}`)] }); },
     () => { const [z, n] = wahl([[5, 6], [1, 6], [5, 12], [4, 15], [8, 15]]), p = teile(z, n);
       return periode(Z(`Dividiere schriftlich im Heft: ${z} : ${n}`, 'Gib das Ergebnis mit Periode ein.'), p.vor, p.per, perFehler(z, n), tM2, { ...DIV(z, n), nachweis: [`${z} : ${n} = ${p.text}`] }); },
@@ -116,7 +116,7 @@ export function dividieren6() {
       return periode(Z(`Wandle ${br(z, n, g)} in eine Dezimalzahl um.`), p.vor, p.per, [...perFehler(g * n + z, n), [teile(z, n).text, 'bruch-ganzes-teil']], h2('Die Ganzen stehen vor dem Komma.', 'Dividiere den Bruchteil schriftlich und achte auf die Reste.'),
         { ...DIV(g * n + z, n), nachweis: [`${br(z, n, g)} = ${g} + ${z} : ${n} = ${p.text}`] }); },
     () => { const [z, n] = wahl([[1, 6], [5, 6], [1, 12], [7, 12]]), p = teile(z, n), falsch = periodisch(`0,`, entwickle(z, n).vor + p.per), kn = kind();
-      return auswahl(Z(`${kn} schreibt: ${br(z, n)} = ${falsch}`, 'Beurteile die Schreibweise.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${p.text}.`, true), opt('Stimmt.', false, 'periode-zu-frueh'), opt(`Stimmt, denn ${z} : ${n} = ${falsch}.`, false, 'periode-zu-frueh')], tM2,
+      return auswahl(Z(`${kn} schreibt: ${br(z, n)} = ${falsch}`, 'Beurteile die Schreibweise.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${p.text}.`, true), opt('Stimmt. Die Periode beginnt direkt nach dem Komma.', false, 'periode-zu-frueh'), opt(`Stimmt, denn ${z} : ${n} = ${falsch}.`, false, 'periode-zu-frueh')], tM2,
         { ...DIV(z, n), nachweis: [URTEIL(false, `${br(z, n)} = ${falsch}`)] }); },
   ]);
   zwoelf(D2, 'E', [
@@ -133,7 +133,7 @@ export function dividieren6() {
       return bruch(Z(`Gib den Bruch mit dem Nenner 9 an, der ${p.text} ist.`), br(z, 9), [[br(z, 10), 'periode-abgebrochen'], [br(9, z), 'bruch-vertauscht']].filter(([w]) => w !== br(9, 9)), h1('Dividiere Neuntel und schau dir die Muster an: 1 : 9, 2 : 9, 3 : 9.'),
         { gekuerzt: true, nachweis: [`${p.text} = ${br(z, 9)}`] }); },
     () => { const [z, n] = wahl([[1, 7], [2, 7], [3, 7]]), p = teile(z, n), falsch = `0,${p.per.slice(0, 4)}`, kn = kind();
-      return auswahl(Z(`${kn} sagt: „${br(z, n)} = ${falsch}. Die Division geht auf.“`, 'Beurteile die Aussage und begründe.'), [opt(`Falsch. Der Rest kommt wieder. Es gilt ${br(z, n)} = ${p.text}.`, true), opt('Stimmt.', false, 'periode-abgebrochen'), opt(`Stimmt, denn ${falsch} hat vier Stellen.`, false, 'periode-abgebrochen')],
+      return auswahl(Z(`${kn} sagt: „${br(z, n)} = ${falsch}. Die Division geht auf.“`, 'Beurteile die Aussage und begründe.'), [opt(`Falsch. Der Rest kommt wieder. Es gilt ${br(z, n)} = ${p.text}.`, true), opt('Stimmt. Nach vier Stellen ist jede Division zu Ende.', false, 'periode-abgebrochen'), opt(`Stimmt, denn ${falsch} hat vier Stellen.`, false, 'periode-abgebrochen')],
         h1('Prüfe den Rest nach der vierten Stelle. Ist er 0?'), { ...DIV(z, n), nachweis: [URTEIL(false, `${br(z, n)} = ${falsch}`)] }); },
     () => { const [z, n] = wahl([[5, 12], [7, 18], [11, 24], [13, 30], [1, 18]]), p = teile(z, n);
       return periode(Z(`Dividiere schriftlich im Heft: ${z} : ${n}`, 'Gib das Ergebnis mit Periode ein.'), p.vor, p.per, perFehler(z, n), h1('Achte darauf, ab welchem Rest sich die Ziffern wiederholen.'), { ...DIV(z, n), nachweis: [`${z} : ${n} = ${p.text}`] }); },
@@ -141,7 +141,7 @@ export function dividieren6() {
       return auswahl(Z('Kreuze das passende Zeichen an.', `${a} ▢ ${c}`), ZEICHEN(Number(a.replace(/̅/g, '').replace(',', '.') + a.replace(/̅/g, '').slice(-1).repeat(4)) - Number(c.replace(',', '.')), 'periode-abgebrochen'),
         h1('Schreibe die periodische Zahl mit vielen Stellen aus. Vergleiche dann Stelle für Stelle.'), { nachweis: [VGL(a, c)] }); },
     () => {       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), ['0,33', '0,3̅', '0,34', '0,3̅4̅'], h1('Schreibe jede Zahl mit sechs Stellen nach dem Komma aus. Vergleiche dann.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'periode-abgebrochen'}); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'periode-abgebrochen'}); },
     () => { const z = wahl([2, 4, 5, 7, 8]), p = teile(z, 9);
       return bruch(Z('Es gilt: 0,1̅ = 1⁄9.', `Gib ${p.text} als vollständig gekürzten Bruch an.`), br(z, 9), [[br(z, 10), 'periode-abgebrochen']], h1(`${p.text} ist ${z}-mal so groß wie 0,1̅.`), { gekuerzt: true, nachweis: [`${p.text} = ${z} · 0,1̅ = ${br(z, 9)}`] }); },
     () => { const [pizza, n] = wahl([[3, 11], [5, 11], [2, 11], [1, 11]]), p = teile(pizza, n);

@@ -88,18 +88,18 @@ function k1() {
     () => welcheArt('M', 'Welcher Kongruenzsatz passt zu den Angaben in der Planfigur? Kreuze an.', true),
     () => { const w = suche(() => [winkelFuer('M', 30, 90), winkelFuer('M', 30, 90)], ([a, b]) => a + b < 150 && a !== b), g = 180 - w[0] - w[1];
       return auswahl(`Gegeben sind α = ${w[0]}°, β = ${w[1]}° und γ = ${g}°. Überprüfe, ob das Dreieck damit eindeutig festgelegt ist. Kreuze an.`,
-        [opt('Nein. Es kann groß oder klein sein. Es fehlt eine Seite.', true), opt('Ja. Drei Angaben reichen immer.', false, 'drei-winkel-eindeutig'), opt('Ja. Das ist der Kongruenzsatz wsw.', false, 'kongruenz-verwechselt'), opt(`Nein. Die Winkel ergeben nicht 180°.`, false, 'winkelsumme')],
+        [opt('Nein. Es kann groß oder klein sein. Es fehlt eine Seite.', true), opt('Ja. Drei Angaben reichen immer.', false, 'drei-winkel-eindeutig'), opt('Ja. Zwei Winkel reichen schon. Das ist der Kongruenzsatz wsw.', false, 'kongruenz-verwechselt'), opt(`Nein. Die Winkel ergeben nicht 180°.`, false, 'winkelsumme')],
         H('M', 'Zeichne in Gedanken ein kleines und ein großes Dreieck mit denselben Winkeln.', 'Gleiche Winkel legen nur die Form fest. Für die Größe brauchst du eine Seite.'), { nachweis: [{ art: 'urteil', stimmt: false }, { art: 'kongruenz', angaben: `α = ${w[0]}°, β = ${w[1]}°, γ = ${g}°`, satz: 'keiner' }] }); },
     () => { const k = kind(), [s1, s2, w] = wahl([['a', 'b', 'α'], ['b', 'c', 'β'], ['a', 'c', 'γ'], ['a', 'b', 'β']]);
       return auswahl(`${k} sagt: „${s1} = 5 cm, ${s2} = 4 cm und ${w} = 30° passen zu sws.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt(`${w} liegt nicht zwischen ${s1} und ${s2}. Bei sws muss der Winkel zwischen den beiden Seiten liegen.`, true), opt('Es fehlt eine dritte Seite.', false, 'kongruenz-verwechselt'), opt('Der Winkel ist zu klein.', false, 'kongruenz-verwechselt'), opt('Das ist kein Fehler.', false, 'kongruenz-verwechselt')],
+        [opt(`${w} liegt nicht zwischen ${s1} und ${s2}. Bei sws muss der Winkel zwischen den beiden Seiten liegen.`, true), opt('Es fehlt eine dritte Seite. Mit nur zwei Seiten und einem Winkel geht es nie.', false, 'kongruenz-verwechselt'), opt('Der Winkel ist zu klein.', false, 'kongruenz-verwechselt'), opt('Das ist kein Fehler.', false, 'kongruenz-verwechselt')],
         hArt('M'), { nachweis: [{ art: 'kongruenz', angaben: `${s1}, ${s2}, ${w}`, satz: 'SsW' }, { art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(K1, 'E', [
     () => { const l = suche(() => [zz(2, 9), zz(2, 9), zz(2, 12)], ([a, b, c]) => new Set([a, b, c]).size === 3), [a, b, c] = l, s = [...l].sort((x, y) => x - y), geht = s[0] + s[1] > s[2];
       return auswahl(`Kann man ein Dreieck mit a = ${cm(a)}, b = ${cm(b)} und c = ${cm(c)} konstruieren? Begründe. Kreuze an.`,
         [opt(geht ? `Ja. Die beiden kürzeren Seiten sind zusammen ${s[0] + s[1]} cm, das ist länger als ${s[2]} cm.` : `Nein. ${s[0]} cm + ${s[1]} cm = ${s[0] + s[1]} cm ist nicht länger als ${s[2]} cm.`, true),
-          opt(geht ? 'Nein. Die Seiten sind zu verschieden.' : 'Ja. Mit drei Seiten geht es immer (sss).', false, 'dreiecksungleichung'), opt(geht ? 'Nur, wenn ein rechter Winkel vorkommt.' : 'Ja, wenn man genau zeichnet.', false, 'dreiecksungleichung')],
+          opt(geht ? 'Nein. Die Seiten sind zu verschieden.' : 'Ja. Mit drei Seiten geht es immer, das sagt sss.', false, 'dreiecksungleichung'), opt(geht ? 'Nur, wenn ein rechter Winkel vorkommt.' : 'Ja, wenn man genau zeichnet.', false, 'dreiecksungleichung')],
         H('E', 'Prüfe: Sind die beiden kürzeren Seiten zusammen länger als die längste?'), { nachweis: [`${s[0]} + ${s[1]} = ${s[0] + s[1]}`, { art: 'konstruierbar', seiten: l, geht }, { art: 'urteil', stimmt: geht }] }); },
     () => { const a = zz(3, 7), b = zz(a + 1, 11), welche = wahl(['hoechstens', 'mindestens']), loes = welche === 'hoechstens' ? a + b - 1 : b - a + 1;
       return zahl(`Ein Dreieck hat die Seiten a = ${cm(a)} und b = ${cm(b)}. Die Seite c ist eine ganze Zahl von Zentimetern. Bestimme, wie lang c ${welche === 'hoechstens' ? 'höchstens' : 'mindestens'} sein kann.`, loes, [[welche === 'hoechstens' ? a + b : b - a, 'dreiecksungleichung']],
@@ -112,7 +112,7 @@ function k1() {
         H('E', 'Welcher Seite liegt der Winkel gegenüber: der längeren oder der kürzeren?'), { nachweis: [{ art: 'kongruenz', angaben: text, satz: eindeutig ? 'SsW' : 'SsW-kurz' }] }); },
     () => { const k = kind(), w = suche(() => [winkelFuer('E', 30, 90), winkelFuer('E', 30, 90)], ([a, b]) => a + b < 150), g = 180 - w[0] - w[1];
       return auswahl(`${k} sagt: „Mit α = ${w[0]}°, β = ${w[1]}° und γ = ${g}° ist ein Dreieck eindeutig, das sind ja drei Angaben.“ Erkläre den Fehler. Kreuze die richtige Erklärung an.`,
-        [opt('Die drei Winkel legen nur die Form fest, nicht die Größe. Es fehlt eine Seite.', true), opt('Die Winkel ergeben nicht 180°.', false, 'winkelsumme'), opt('Das ist kein Fehler: www ist ein Kongruenzsatz.', false, 'drei-winkel-eindeutig'), opt('Man braucht vier Angaben.', false, 'kongruenz-verwechselt')],
+        [opt('Die drei Winkel legen nur die Form fest, nicht die Größe. Es fehlt eine Seite.', true), opt('Die Winkel ergeben nicht 180°.', false, 'winkelsumme'), opt('Das ist kein Fehler: www ist ein Kongruenzsatz, drei Angaben reichen.', false, 'drei-winkel-eindeutig'), opt('Man braucht vier Angaben.', false, 'kongruenz-verwechselt')],
         H('E', 'Vergrößere das Dreieck in Gedanken.'), { nachweis: [R3(w[0], w[1], g), { art: 'urteil', stimmt: false }] }); },
     () => { const [l, x, y, fehlt] = wahl([['a', 'α', 'β', 'γ'], ['b', 'β', 'γ', 'α'], ['c', 'α', 'γ', 'β'], ['a', 'β', 'α', 'γ']]), w1 = winkelFuer('E', 30, 70), w2 = winkelFuer('E', 30, 70);
       return auswahl(`Gegeben sind ${l} = 6 cm, ${x} = ${w1}° und ${y} = ${w2}°. Welche Größe berechnest du zuerst, damit du mit wsw konstruieren kannst? Kreuze an.`,
@@ -120,7 +120,7 @@ function k1() {
         { nachweis: [{ art: 'kongruenz', angaben: `${l} = 6 cm, ${x} = ${w1}°, ${y} = ${w2}°`, satz: 'wsw-rechnen', fehlt }] }); },
     () => { const [a, b, fall] = wahl([[100, 85, 'summe'], [95, 90, 'summe'], [120, 65, 'summe'], [3, 5, 'seiten'], [4, 6, 'seiten']]);
       if (fall === 'summe') return auswahl(`Ein Dreieck soll α = ${a}° und β = ${b}° haben. Begründe, ob man es konstruieren kann. Kreuze an.`,
-        [opt(`Nein. α und β sind zusammen schon ${a + b}°, mehr als 180°.`, true), opt('Ja. Man braucht nur noch eine Seite.', false, 'winkelsumme'), opt('Ja, wenn die Seite lang genug ist.', false, 'winkelsumme')], H('E', 'Denke an die Winkelsumme.'), { nachweis: [`${a}° + ${b}° = ${a + b}°`, { art: 'urteil', stimmt: false }] });
+        [opt(`Nein. α und β sind zusammen schon ${a + b}°, mehr als 180°.`, true), opt('Ja. Man braucht dann nur noch eine Seite (wsw).', false, 'winkelsumme'), opt('Ja, wenn die Seite lang genug ist.', false, 'winkelsumme')], H('E', 'Denke an die Winkelsumme.'), { nachweis: [`${a}° + ${b}° = ${a + b}°`, { art: 'urteil', stimmt: false }] });
       return auswahl(`Ein Dreieck soll die Seiten ${a} cm, ${b} cm und ${a + b} cm haben. Begründe, ob man es konstruieren kann. Kreuze an.`,
         [opt(`Nein. ${a} cm + ${b} cm = ${a + b} cm, die beiden Seiten liegen dann flach auf der dritten.`, true), opt('Ja. Mit drei Seiten geht es immer.', false, 'dreiecksungleichung'), opt('Ja, das Dreieck ist dann sehr flach.', false, 'dreiecksungleichung')],
         H('E', 'Zwei Seiten müssen zusammen länger sein als die dritte.'), { nachweis: [`${a} + ${b} = ${a + b}`, { art: 'konstruierbar', seiten: [a, b, a + b], geht: false }] }); },
@@ -207,12 +207,12 @@ function k2() {
       return massstab(heft('M', 'sss', 'γ', () => `Ein See soll vermessen werden. Die Punkte A, B und C am Ufer sind BC = ${a * k} m, AC = ${b * k} m und AB = ${c * k} m voneinander entfernt. Zeichne im Maßstab 1 : ${m} und miss den Winkel γ.`, { a, b, c }), m, [a, b, c]); },
     () => ordnen('Ein Dreieck aus einer Seite und den beiden anliegenden Winkeln wird konstruiert. Bringe die Schritte in die richtige Reihenfolge.', SCHRITTE.wsw, H('M', 'Ohne die Seite c gibt es keine Ecken, an denen du Winkel antragen kannst.', 'Planfigur, dann c, dann beide Winkel, dann C als Schnittpunkt.')),
     () => auswahl('Die beiden Kreisbögen um A und B schneiden sich oberhalb und unterhalb von c. Wie viele verschiedene Dreiecke gibt es? Kreuze die richtige Antwort an.',
-      [opt('Zwei Lagen, aber sie sind kongruent. Es gibt also nur ein Dreieck.', true), opt('Zwei verschiedene Dreiecke.', false, 'kongruenz-verwechselt'), opt('Keins, weil es zwei Schnittpunkte gibt.', false, 'kongruenz-verwechselt'), opt('Unendlich viele.', false, 'kongruenz-verwechselt')],
+      [opt('Zwei Lagen, aber sie sind kongruent. Es gibt also nur ein Dreieck.', true), opt('Zwei verschiedene Dreiecke, eines oben und eines unten.', false, 'kongruenz-verwechselt'), opt('Keins, weil es zwei Schnittpunkte gibt.', false, 'kongruenz-verwechselt'), opt('Unendlich viele.', false, 'kongruenz-verwechselt')],
       H('M', 'Spiegle das untere Dreieck an c.', 'Das gespiegelte Dreieck hat dieselben drei Seiten. Es ist also kongruent.'), { nachweis: [{ art: 'kongruenz', angaben: 'a, b, c', satz: 'sss' }, { art: 'urteil', stimmt: true }] }),
     () => { const k = kind(), fehler = wahl(['winkel', 'kreis']);
       return auswahl(fehler === 'winkel' ? `${k} soll ein Dreieck mit c, α und β zeichnen. Zuerst trägt ${k} den Winkel α an, danach zeichnet ${k} die Seite c. Erkläre den Fehler. Kreuze an.`
         : `${k} soll ein Dreieck aus a, b und c zeichnen. Zuerst zieht ${k} die beiden Kreise, danach zeichnet ${k} die Seite c. Erkläre den Fehler. Kreuze an.`,
-      [opt(fehler === 'winkel' ? 'Ohne die Seite c gibt es keinen Schenkel, an dem man α antragen kann.' : 'Ohne die Seite c fehlen die Punkte A und B als Mittelpunkte der Kreise.', true), opt('Die Reihenfolge ist egal.', false, 'konstruktion-reihenfolge'), opt('Man muss mit C beginnen.', false, 'konstruktion-reihenfolge'), opt('Es fehlt nur die Planfigur am Ende.', false, 'konstruktion-reihenfolge')],
+      [opt(fehler === 'winkel' ? 'Ohne die Seite c gibt es keinen Schenkel, an dem man α antragen kann.' : 'Ohne die Seite c fehlen die Punkte A und B als Mittelpunkte der Kreise.', true), opt('Die Reihenfolge ist egal.', false, 'konstruktion-reihenfolge'), opt('Man muss mit C beginnen.', false, 'konstruktion-reihenfolge'), opt('Es fehlt nur die Planfigur am Ende, sonst ist alles richtig.', false, 'konstruktion-reihenfolge')],
       H('M', 'Prüfe jeden Schritt: Gibt es schon alles, was er braucht?', 'Zuerst braucht man die Seite c. Erst dann gibt es A und B.'), { nachweis: [{ art: 'urteil', stimmt: false }] }); },
   ]);
   sechs(K2, 'E', [
@@ -225,14 +225,14 @@ function k2() {
         { einheit: 'mm', toleranz: 2, bild: planfigur({ c, α: al, γ: ga, E }), nachweis: [`180° − ${al}° − ${ga}° = ${be}°`, { art: 'heft', gegeben: { c, α: al, γ: ga }, gesucht: 'a', satz: 'wsw' }] }); },
     () => { const [a, b] = wahl([[3, 4], [2, 5], [3, 5], [4, 4], [2, 6]]), c = a + b + zz(0, 2), k = kind();
       return auswahl(`${k} will ein Dreieck mit a = ${cm(a)}, b = ${cm(b)} und c = ${cm(c)} konstruieren. Die Kreisbögen um A und B treffen sich nicht. Erkläre, woran das liegt. Kreuze an.`,
-        [opt(`a + b = ${a + b} cm ist nicht länger als c = ${c} cm. Das Dreieck gibt es nicht.`, true), opt('Die Bögen sind zu kurz gezeichnet.', false, 'dreiecksungleichung'), opt('Man muss mit der Seite a beginnen.', false, 'konstruktion-reihenfolge'), opt('Der Zirkel ist verrutscht.', false, 'dreiecksungleichung')],
+        [opt(`a + b = ${a + b} cm ist nicht länger als c = ${c} cm. Das Dreieck gibt es nicht.`, true), opt('Die Bögen sind zu kurz gezeichnet. Längere Bögen schneiden sich.', false, 'dreiecksungleichung'), opt('Man muss mit der Seite a beginnen.', false, 'konstruktion-reihenfolge'), opt('Der Zirkel ist verrutscht.', false, 'dreiecksungleichung')],
         H('E', 'Vergleiche a + b mit c.'), { nachweis: [`${a} + ${b} = ${a + b}`, { art: 'konstruierbar', seiten: [a, b, c], geht: false }] }); },
     () => { const s = wahl([1, -1]), ox = s > 0 ? 1 : 9, A = [ox, 1], B = [ox + 7 * s, 1], C1 = [ox + 3 * s, 4], C2 = [ox + 4 * s, 5], ende = [ox + 6 * s, 7];
       return gitterPunkte('Gegeben sind c = AB, der Winkel α (der Strahl von A aus) und a = 5 Kästchen (der Kreis um B). Tippe alle Punkte an, die als Ecke C in Frage kommen.',
         GT(10, 8, { punkte: [PT('A', ...A), PT('B', ...B)], linien: [LN('c', A, B, 'strecke'), LN(null, A, ende, 'strahl')], kreise: [{ m: B, r: 5 }] }), [C1, C2], [[[C1], 'kongruenz-verwechselt'], [[C2], 'kongruenz-verwechselt']],
         H('E', 'C liegt auf dem Strahl und auf dem Kreis. Zähle die Schnittpunkte.'), { nachweis: [{ art: 'ort', bedingungen: [{ art: 'abstand', von: B, r: 5 }, { art: 'auf', a: A, b: ende }] }] }); },
     () => auswahl('Gegeben sind b, c und γ, und c ist kürzer als b. Begründe, warum es zwei verschiedene Dreiecke geben kann. Kreuze an.',
-      [opt('Der Kreis um A mit dem Radius c kann den freien Schenkel von γ zweimal schneiden.', true), opt('Weil sws immer zwei Lösungen hat.', false, 'kongruenz-verwechselt'), opt('Weil man das Dreieck spiegeln kann.', false, 'kongruenz-verwechselt'), opt('Weil γ zwischen b und c liegt.', false, 'kongruenz-verwechselt')],
+      [opt('Der Kreis um A mit dem Radius c kann den freien Schenkel von γ zweimal schneiden.', true), opt('Weil sws immer zwei Lösungen hat.', false, 'kongruenz-verwechselt'), opt('Weil man das Dreieck spiegeln kann und so ein zweites Dreieck entsteht.', false, 'kongruenz-verwechselt'), opt('Weil γ zwischen b und c liegt.', false, 'kongruenz-verwechselt')],
       H('E', 'Zeichne zuerst b und γ bei C, dann einen Kreis um A.'), { nachweis: [{ art: 'kongruenz', angaben: 'b, c, γ mit c < b', satz: 'SsW-kurz' }, { art: 'urteil', stimmt: true }] }),
   ]);
 }

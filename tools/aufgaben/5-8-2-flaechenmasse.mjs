@@ -67,7 +67,7 @@ export function urteilDing(dinge, stimmt, hilfen, zeilen = false) {
 
 export function flaechenmasse() {
   // ---------- H1: Einheiten kennen und wählen ----------
-  const tippE = h3('Denke an die Tabelle: 1 cm² ist so groß wie ein Fingernagel.', 'Ein Heft ist größer als ein Fingernagel, aber kleiner als eine Zeitung. Also passt dm².', 'Stell dir das Ding vor. Vergleiche mit der Tabelle.');
+  const tippE = h3('Denke an die Tabelle: 1 cm² ist so groß wie ein Fingernagel.', 'Ein Heft ist größer als ein Fingernagel, aber kleiner als eine Zeitung. Also passt dm².', 'Stell es dir genau vor. Vergleiche mit der Tabelle.');
   sechs(H1, 'F', [
     () => rasterFlaeche(Z('Jedes Feld ist 1 cm² groß.', 'Wie groß ist das Rechteck?'), 'rechteck', 1, h3('Zähle die Felder. Jedes Feld ist 1 cm².', 'Ein Rechteck mit 6 Feldern ist 6 cm² groß.', 'Zähle die Felder in einer Reihe. Rechne mal die Anzahl der Reihen.')),
     () => einheitWaehlen('F', tippE, { extra: { daten: VORSTELLUNG } }),
@@ -83,16 +83,16 @@ export function flaechenmasse() {
     () => angabeWaehlen('F', tippE, { daten: VORSTELLUNG }),
   ]);
   sechs(H1, 'G', [
-    () => einheitWaehlen('G', h3('mm² nimmt man für sehr kleine Flächen, km² für sehr große.', 'Ein Fingernagel ist ungefähr 80 mm² groß.', 'Stell dir das Ding vor. Ist es sehr klein oder sehr groß?'), { extra: { daten: VORSTELLUNG_G } }),
+    () => einheitWaehlen('G', h3('mm² nimmt man für sehr kleine Flächen, km² für sehr große.', 'Ein Fingernagel ist ungefähr 80 mm² groß.', 'Stell es dir genau vor. Ist es sehr klein oder sehr groß?'), { extra: { daten: VORSTELLUNG_G } }),
     () => dingeZuordnen(['F', 'G'], 3, h3('Kleine Dinge haben kleine Einheiten.', 'Eine Stadt ist ungefähr 90 km² groß.', 'Ordne zuerst das kleinste und das größte Ding zu.')),
     () => rasterFlaeche(Z('Jedes Feld ist 1 cm² groß.', 'Wie groß ist die Figur?'), wahl(['L', 'T']), 2, h3('Zähle die Felder Reihe für Reihe.', 'Unten 5 Felder, oben 2 Felder. Das sind 7 cm².', 'Teile die Figur in Rechtecke. Zähle jedes für sich.')),
     () => { const n = zz(2, 9), werte = ['mm²', 'cm²', 'dm²', 'm²', 'km²'].map((e) => q(n, e));
       return ordnen(Z('Ordne die Flächen.', 'Beginne mit der kleinsten Fläche.'), werte, h3('Die Zahl ist überall gleich. Es kommt auf die Einheit an.', 'mm² ist die kleinste Einheit, km² die größte.', 'Ordne die Einheiten von klein nach groß.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], links: 'klein', rechts: 'groß' }); },
-    () => angabeWaehlen('G', h3('Vergleiche mit Dingen, die du kennst.', 'Eine Tischplatte ist ungefähr 80 dm² groß.', 'Stell dir das Ding vor. Welche Einheit passt?'), { daten: VORSTELLUNG_G }),
-    () => urteilDing([...DINGE.F, ...DINGE.G], false, h3('Stell dir das Ding vor.', '1 m² ist so groß wie eine aufgeklappte Zeitung.', 'Passt die Einheit zur Größe des Dings?'), true),
+    () => angabeWaehlen('G', h3('Vergleiche mit Dingen, die du kennst.', 'Eine Tischplatte ist ungefähr 80 dm² groß.', 'Stell es dir genau vor. Welche Einheit passt?'), { daten: VORSTELLUNG_G }),
+    () => urteilDing([...DINGE.F, ...DINGE.G], false, h3('Stell es dir genau vor.', '1 m² ist so groß wie eine aufgeklappte Zeitung.', 'Passt die Einheit zur Größe des Dings?'), true),
   ]);
   sechs(H1, 'M', [
-    () => einheitWaehlen('M', h2('1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite.', 'Stell dir das Ding vor und vergleiche.')),
+    () => einheitWaehlen('M', h2('1 a ist ein Quadrat mit 10 m Länge und 10 m Breite, 1 ha eines mit 100 m Länge und 100 m Breite.', 'Stell es dir genau vor und vergleiche.')),
     () => dingeZuordnen(['F', 'G', 'M'], 4, h2('Kleine Dinge haben kleine Einheiten, große Flächen a, ha oder km².', 'Ordne zuerst das kleinste und das größte Ding zu.')),
     () => { const n = zz(2, 9), werte = ['dm²', 'm²', 'a', 'ha', 'km²'].map((e) => q(n, e));
       return ordnen('Ordne die Flächen. Beginne mit der größten Fläche.', [...werte].reverse(), h2('Die Zahl ist überall gleich. Es kommt auf die Einheit an.', 'Von m² zu a, von a zu ha und von ha zu km² ist es jeweils mal 100.'), { nachweis: [{ art: 'ordnung', richtung: 'ab' }], links: 'groß', rechts: 'klein' }); },
@@ -101,7 +101,7 @@ export function flaechenmasse() {
         h2(`Rechne erst ${s} m · ${s} m in m².`, `${e === 'a' ? '100 m² sind 1 a' : '10 000 m² sind 1 ha'}.`), { nachweis: [G(`${s} m · ${s} m = ${q(n, 'm²')}`), G(`${q(n, 'm²')} = 1 ${e}`)] }); },
     () => { const [ding, , n, e, falsch] = wahl(DINGE.M);
       return auswahl(`Welche Angabe passt zu einem ${ding}?`, [opt(q(n, e), true), ...falsch.map((f) => opt(q(n, f), false, 'groesse-ohne-vorstellung'))], h2('Vergleiche mit Flächen, die du kennst.', 'Ein Klassenzimmer ist ungefähr 60 m², ein Fußballfeld ungefähr 70 a groß.'), { nachweis: [SG({ ding })] }); },
-    () => urteilDing([...DINGE.G, ...DINGE.M], wahl([true, false]), h2('Stell dir das Ding vor.', 'Vergleiche mit Flächen, die du kennst: Klassenzimmer, Fußballfeld, Stadt.')),
+    () => urteilDing([...DINGE.G, ...DINGE.M], wahl([true, false]), h2('Stell es dir genau vor.', 'Vergleiche mit Flächen, die du kennst: Klassenzimmer, Fußballfeld, Stadt.')),
   ]);
   sechs(H1, 'E', [
     () => einheitWaehlen('E', h1('Vergleiche mit Flächen, die du kennst.')),

@@ -24,12 +24,12 @@ export function zahlen() {
   const hAblesen = (n) => H(n, 'Links von der Null stehen die negativen Zahlen. Zähle von einer beschrifteten Zahl aus.', 'Zwei Striche links von −5 steht −7.', 'Suche die nächste beschriftete Zahl. Zähle von dort die Striche bis zum Pfeil.');
   sechs(Z1, 'F', [
     () => { const w = -zz(1, 9);
-      return antwort(Z('Schau auf das Thermometer.', 'Wie viel Grad Celsius sind es?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'richtung-vertauscht']],
+      return antwort(Z('Schau auf das Thermometer.', 'Wie viel Grad Celsius sind es?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'strahl-gespiegelt']],
         H(0, 'Unter der Null sind die Temperaturen negativ. Sie haben ein Minus.', 'Drei Striche unter der Null sind es −3 °C.', 'Zähle die Striche von der Null nach unten. Schreibe ein Minus davor.'), [BILD(zt(w))], { einheit: '°C', bild: thermo(-10, 10, 1, 5, w) }); },
     () => { const w = -wahl([1, 2, 3, 4, 6, 7, 8, 9]);
-      return antwort(Z('Schau auf die Zahlengerade.', 'Auf welche Zahl zeigt der Pfeil?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'richtung-vertauscht']], hAblesen(0), [BILD(zt(w))], { bild: ZG({ pfeil: w }) }); },
+      return antwort(Z('Schau auf die Zahlengerade.', 'Auf welche Zahl zeigt der Pfeil?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'strahl-gespiegelt']], hAblesen(0), [BILD(zt(w))], { bild: ZG({ pfeil: w }) }); },
     () => { const w = -wahl([1, 2, 3, 4, 6, 7, 8, 9]);
-      return markiere(`Markiere ${zt(w)} an der Zahlengeraden.`, ZG(), w, [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'richtung-vertauscht']],
+      return markiere(`Markiere ${zt(w)} an der Zahlengeraden.`, ZG(), w, [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'strahl-gespiegelt']],
         H(0, 'Negative Zahlen stehen links von der Null.', '−3 liegt drei Striche links von der Null.', 'Starte bei der Null. Gehe so viele Striche nach links, wie die Zahl sagt.'), [ANGABE(zt(w))]); },
     () => { const b = zz(2, 9);
       return wahlAus(Z(`Es sind ${b} Grad unter null.`, 'Welche Zahl passt dazu?'), `${zt(-b)} °C`, [[`${b} °C`, 'vorzeichen-vergessen'], ['0 °C', null]],
@@ -39,21 +39,21 @@ export function zahlen() {
       return auswahl(Z('Die Thermometer zeigen drei Temperaturen an einem Tag.', 'Wann war es am kältesten?'), werte.map((w, i) => opt(namen[i], w === kalt, w === kalt ? undefined : fv(w))),
         H(0, 'Je weiter unten die Säule steht, desto kälter ist es.', '−8 °C ist kälter als −2 °C.', 'Suche das Thermometer mit der niedrigsten Säule.'), { bild: thermo(-10, 10, 1, 5, ...werte.map((w, i) => [w, namen[i]])), nachweis: [{ art: 'thermowahl', was: 'kaeltestes' }] }); },
     () => { const w = -wahl([11, 12, 13, 14, 16, 17, 18, 19]);
-      return antwort(Z('Schau auf die Zahlengerade.', 'Auf welche Zahl zeigt der Pfeil?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'richtung-vertauscht']], hAblesen(0), [BILD(zt(w))], { bild: gerade(-20, 0, 1, 5, { pfeil: w }) }); },
+      return antwort(Z('Schau auf die Zahlengerade.', 'Auf welche Zahl zeigt der Pfeil?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [gespiegelt(w, 5), 'strahl-gespiegelt']], hAblesen(0), [BILD(zt(w))], { bild: gerade(-20, 0, 1, 5, { pfeil: w }) }); },
   ]);
   const ZEHNTEL = (extra) => gerade(-20, 20, 1, 10, { teiler: 10, ...extra });
   sechs(Z1, 'G', [
     () => { const t = -wahl([1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19]);
-      return antwort(Z('Schau auf die Zahlengerade.', 'Auf welche Zahl zeigt der Pfeil?'), D(t), 'd', [[D(-t), 'vorzeichen-vergessen'], [D(gespiegelt(t, 10)), 'richtung-vertauscht']],
+      return antwort(Z('Schau auf die Zahlengerade.', 'Auf welche Zahl zeigt der Pfeil?'), D(t), 'd', [[D(-t), 'vorzeichen-vergessen'], [D(gespiegelt(t, 10)), 'strahl-gespiegelt']],
         H(1, 'Zwischen zwei beschrifteten Zahlen liegen zehn Schritte. Jeder Schritt ist ein Zehntel.', 'Drei Striche links von −1 steht −1,3.', 'Suche die nächste beschriftete Zahl. Zähle von dort die Zehntel bis zum Pfeil.'), [BILD(dt(D(t)))], { bild: ZEHNTEL({ pfeil: t }) }); },
     () => { const b = zz(12, 95), [satz, wort, negativ, einheit] = wahl(ALLTAG(b).filter((x) => x[3] !== '°C'));
       return antwort(Z(satz, 'Schreibe die Angabe als Zahl mit Vorzeichen.'), -b, 'd', [[b, 'vorzeichen-vergessen']],
         H(1, 'Unter null, unter dem Meeresspiegel und Schulden sind negativ.', '20 m unter dem Meeresspiegel schreibt man als −20 m.', 'Entscheide: Liegt die Angabe über oder unter null? Setze das passende Vorzeichen.'), [KONTEXT(b, wort, negativ)], { einheit }); },
     () => { const t = -wahl([3, 4, 5, 6, 7, 12, 13, 14, 15, 16, 17, 18]);
-      return markiere(`Markiere ${dt(D(t))} an der Zahlengeraden.`, ZEHNTEL(), t, [[-t, 'vorzeichen-vergessen'], [gespiegelt(t, 10), 'richtung-vertauscht']],
+      return markiere(`Markiere ${dt(D(t))} an der Zahlengeraden.`, ZEHNTEL(), t, [[-t, 'vorzeichen-vergessen'], [gespiegelt(t, 10), 'strahl-gespiegelt']],
         H(1, 'Jeder kleine Schritt ist ein Zehntel.', '−1,2 liegt zwei Striche links von −1.', 'Gehe erst zur ganzen Zahl. Gehe dann die Zehntel weiter nach links.'), [ANGABE(dt(D(t)))]); },
     () => { const w = -wahl([2, 4, 6, 8, 12, 14, 16, 18]);
-      return antwort(Z('Schau auf das Thermometer.', 'Wie viel Grad Celsius sind es?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [-10 * Math.floor(-w / 10) - (-w % 10) / 2, 'strahl-einerschritte'], [gespiegelt(w, 10), 'richtung-vertauscht']],
+      return antwort(Z('Schau auf das Thermometer.', 'Wie viel Grad Celsius sind es?'), w, 'd', [[-w, 'vorzeichen-vergessen'], [-10 * Math.floor(-w / 10) - (-w % 10) / 2, 'strahl-einerschritte'], [gespiegelt(w, 10), 'strahl-gespiegelt']],
         H(1, 'Achte auf die Skala: Ein Strich bedeutet hier 2 Grad.', 'Zwei Striche unter −10 °C sind es −14 °C.', 'Zähle von der nächsten beschrifteten Zahl in Zweierschritten bis zur Säule.'), [BILD(zt(w))], { einheit: '°C', bild: thermo(-20, 30, 2, 10, w) }); },
     () => { const bs = mische([zz(2, 9), zz(11, 30), zz(31, 60), zz(61, 95)]);
       const paare = [[`${bs[0]} Grad unter null`, `${zt(-bs[0])} °C`], [`${bs[1]} € Guthaben`, `${bs[1]} €`], [`${bs[2]} € Schulden`, `${zt(-bs[2])} €`], [`${bs[3]} m unter dem Meeresspiegel`, `${zt(-bs[3])} m`]];
@@ -65,11 +65,11 @@ export function zahlen() {
   ]);
   sechs(Z1, 'M', [
     () => { const t = -wahl([1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24, 26, 27, 28, 29]);
-      return antwort('Auf welche Zahl zeigt der Pfeil an der Zahlengeraden?', D(t, 2), 'd', [[D(-t, 2), 'vorzeichen-vergessen'], [D(gespiegelt(t, 10), 2), 'richtung-vertauscht'], [D(t, 1), 'strahl-einerschritte']],
+      return antwort('Auf welche Zahl zeigt der Pfeil an der Zahlengeraden?', D(t, 2), 'd', [[D(-t, 2), 'vorzeichen-vergessen'], [D(gespiegelt(t, 10), 2), 'strahl-gespiegelt'], [D(t, 1), 'strahl-einerschritte']],
         H(2, 'Zwischen zwei beschrifteten Zahlen liegen zehn Schritte. Wie groß ist ein Schritt?', 'Ein Schritt ist ein Hundertstel. Zähle von der nächsten beschrifteten Zahl nach links.'), [BILD(dt(D(t, 2)))], { bild: gerade(-30, 10, 1, 10, { teiler: 100, pfeil: t }) }); },
     () => { const N = wahl([2, 4, 5]), t = -wahl([...Array(3 * N).keys()].map((i) => i + 1).filter((i) => i % N !== 0)), w = Q(t, N);
       if (w[1] !== N) return null;
-      return markiere(`Markiere ${bt(w)} an der Zahlengeraden.`, gerade(-3 * N, N, 1, N, { teiler: N }), t, [[-t, 'vorzeichen-vergessen'], [gespiegelt(t, N), 'richtung-vertauscht']],
+      return markiere(`Markiere ${bt(w)} an der Zahlengeraden.`, gerade(-3 * N, N, 1, N, { teiler: N }), t, [[-t, 'vorzeichen-vergessen'], [gespiegelt(t, N), 'strahl-gespiegelt']],
         H(2, 'Zähle zuerst, in wie viele Teile der Abstand zwischen zwei ganzen Zahlen geteilt ist.', 'Gehe von der Null nach links: erst die ganzen Schritte, dann den Bruch weiter nach links.'), [ANGABE(bt(w))]); },
     () => { const g = zz(1, 8), z = zz(1, 9), w = D(-(10 * g + z));
       return luecken(`Zwischen welchen benachbarten ganzen Zahlen liegt ${dt(w)}? {{a}} < ${dt(w)} < {{b}}`, { a: lk(-g - 1, [[-g, 'negativ-groesser'], [g, 'vorzeichen-vergessen']]), b: lk(-g, [[-g - 1, 'negativ-groesser'], [-g + 1, 'richtung-vertauscht']]) },
@@ -85,22 +85,22 @@ export function zahlen() {
     () => { const g = zz(1, 6), z = zz(2, 8), w = D(-(10 * g + z)), k = kind(), stimmt = wahl([true, false, false]);
       const wahr = `${zt(-g - 1)} < ${dt(w)} < ${zt(-g)}`, falsch = `${zt(-g)} < ${dt(w)} < ${zt(-g - 1)}`, auch = `${zt(-g)} < ${dt(w)} < ${zt(-g + 1)}`;
       return auswahl(`${k} behauptet: ${stimmt ? wahr : falsch}. Stimmt das?`, [opt('Stimmt.', stimmt, stimmt ? undefined : 'negativ-groesser'), opt(`Falsch. Richtig ist: ${stimmt ? falsch : wahr}.`, !stimmt, stimmt ? 'negativ-groesser' : undefined), opt(`Falsch. Richtig ist: ${auch}.`, false, 'richtung-vertauscht')],
-        H(2, 'Bei „<“ steht links die kleinere Zahl. Welche Zahl liegt auf der Zahlengeraden weiter links?', 'Ordne die drei Zahlen in Gedanken auf der Zahlengeraden an und lies sie von links nach rechts.'), { nachweis: [{ art: 'urteil', stimmt, behauptung: stimmt ? wahr : falsch }] }); },
+        H(2, 'Bei „<“ steht links die kleinere Zahl. Welche Zahl liegt auf der Zahlengeraden weiter links?', 'Ordne die drei Zahlen in Gedanken auf der Zahlengeraden an und lies sie von links nach rechts.'), { hinweise: { 'richtung-vertauscht': 'Zwischen welchen ganzen Zahlen liegt die Zahl? Suche sie auf der Zahlengeraden.' }, nachweis: [{ art: 'urteil', stimmt, behauptung: stimmt ? wahr : falsch }] }); },
   ]);
   sechs(Z1, 'E', [
     () => { const t = -50 * wahl([1, 2, 3, 4, 6, 7, 8, 9]);
-      return antwort('Auf welche Zahl zeigt der Pfeil an der Zahlengeraden?', t, 'd', [[-t, 'vorzeichen-vergessen'], [-250 * Math.floor(-t / 250) - ((-t % 250) / 50), 'strahl-einerschritte'], [gespiegelt(t, 250), 'richtung-vertauscht']],
+      return antwort('Auf welche Zahl zeigt der Pfeil an der Zahlengeraden?', t, 'd', [[-t, 'vorzeichen-vergessen'], [-250 * Math.floor(-t / 250) - ((-t % 250) / 50), 'strahl-einerschritte'], [gespiegelt(t, 250), 'strahl-gespiegelt']],
         H(3, 'Bestimme zuerst die Schrittweite: Wie viele Schritte liegen zwischen zwei beschrifteten Zahlen?'), [BILD(zt(t))], { bild: gerade(-500, 500, 50, 250, { pfeil: t }) }); },
     () => { const N = wahl([3, 4, 5]), z = -wahl([...Array(2 * N).keys()].map((i) => i + 1).filter((i) => i % N !== 0)), w = Q(z, N);
       if (w[1] !== N) return null;
-      return markiere(`Markiere ${ut(w)} an der Zahlengeraden.`, gerade(-4 * N, 2 * N, 1, 2 * N, { teiler: 2 * N }), 2 * z, [[-2 * z, 'vorzeichen-vergessen'], [z, 'bruchstrahl-striche'], [gespiegelt(2 * z, 2 * N), 'richtung-vertauscht']],
+      return markiere(`Markiere ${ut(w)} an der Zahlengeraden.`, gerade(-4 * N, 2 * N, 1, 2 * N, { teiler: 2 * N }), 2 * z, [[-2 * z, 'vorzeichen-vergessen'], [z, 'bruchstrahl-striche'], [gespiegelt(2 * z, 2 * N), 'strahl-gespiegelt']],
         H(3, 'Die Einteilung der Zahlengeraden ist feiner als der Nenner. Erweitere den Bruch passend.'), [ANGABE(ut(w))]); },
     () => { const N = wahl([3, 4, 5, 6, 7]), g = zz(1, 4), r = zz(1, N - 1), w = Q(-(g * N + r), N);
       if (w[1] !== N) return null;
       return luecken(`Zwischen welchen benachbarten ganzen Zahlen liegt ${ut(w)}? {{a}} < ${ut(w)} < {{b}}`, { a: lk(-g - 1, [[-g, 'negativ-groesser'], [g, 'vorzeichen-vergessen']]), b: lk(-g, [[-g - 1, 'negativ-groesser'], [-g + 1, 'richtung-vertauscht']]) },
         H(3, 'Wandle den Bruch zuerst in eine gemischte Zahl um.'), { nachweis: [{ art: 'luecken' }] }); },
     () => { const t = -5 * wahl([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]), w = D(t, 2), falsch = D(-50 * Math.floor(-t / 50) - ((-t % 50) / 5) * 10, 2);
-      return antwort('An der Zahlengeraden sind nur wenige Zahlen beschriftet. Auf welche Zahl zeigt der Pfeil?', w, 'd', [[neg(w), 'vorzeichen-vergessen'], [falsch, 'strahl-einerschritte'], [D(gespiegelt(t, 50), 2), 'richtung-vertauscht']],
+      return antwort('An der Zahlengeraden sind nur wenige Zahlen beschriftet. Auf welche Zahl zeigt der Pfeil?', w, 'd', [[neg(w), 'vorzeichen-vergessen'], [falsch, 'strahl-einerschritte'], [D(gespiegelt(t, 50), 2), 'strahl-gespiegelt']],
         H(3, 'Zwischen zwei beschrifteten Zahlen liegen zehn Schritte. Wie groß ist dann ein Schritt?'), [BILD(dt(w))], { bild: gerade(-100, 100, 5, 50, { teiler: 100, pfeil: t }) }); },
     () => { const alle = mische([[Q(-3, 4), D(-75, 2)], [Q(-1, 2), D(-5)], [Q(-5, 4), D(-125, 2)], [Q(-2, 5), D(-4)], [Q(-7, 10), D(-7)], [Q(-3, 2), D(-15)], [Q(-1, 4), D(-25, 2)], [Q(-9, 5), D(-18)], [Q(-1, 8), D(-125, 3)]]).slice(0, 4);
       return zuordnen('Ordne jedem Bruch die gleich große Dezimalzahl zu.', alle.map(([b, d]) => [bt(b), dt(d)]), H(3, 'Erweitere den Bruch auf den Nenner 10, 100 oder 1000. Das Vorzeichen bleibt.'), { nachweis: [{ art: 'paare' }] }); },
@@ -114,11 +114,11 @@ export function zahlen() {
   const hAbstand = (n) => H(n, 'Der Abstand zur Null ist die Zahl der Schritte bis zur Null. Er hat kein Minus.', 'Von −4 bis zur Null sind es 4 Schritte.', 'Zähle die Schritte von der Zahl bis zur Null.');
   sechs(Z2, 'F', [
     () => { const b = zz(2, 9);
-      return antwort(Z(`Der Punkt liegt bei ${zt(-b)}.`, 'Wie viele Schritte sind es von dort bis zur Null?'), b, 'd', [[-b, 'betrag-gegenzahl'], [10 - b, 'richtung-vertauscht']], hAbstand(0), [`0 − (${zt(-b)}) = ${b}`], { bild: ZG({ punkte: [-b] }) }); },
+      return antwort(Z(`Der Punkt liegt bei ${zt(-b)}.`, 'Wie viele Schritte sind es von dort bis zur Null?'), b, 'd', [[-b, 'betrag-gegenzahl'], [10 - b, 'strahl-gespiegelt']], hAbstand(0), [`0 − (${zt(-b)}) = ${b}`], { bild: ZG({ punkte: [-b] }) }); },
     () => { const b = zz(2, 9);
       return antwort(Z('Schau auf die Zahlengerade.', `Wie heißt die Gegenzahl von ${zt(-b)}?`), b, 'd', [[-b, 'betrag-gegenzahl']], hGegen(0), [`0 − (${zt(-b)}) = ${b}`], { bild: ZG({ punkte: [-b] }) }); },
     () => { const b = wahl([1, 2, 3, 4, 6, 7, 8, 9]);
-      return markiere(Z(`Die Zahl ${b} hat eine Gegenzahl.`, 'Markiere die Gegenzahl an der Zahlengeraden.'), ZG(), -b, [[b, 'betrag-gegenzahl'], [gespiegelt(-b, 5), 'richtung-vertauscht']], hGegen(0), [`0 − ${b} = ${zt(-b)}`]); },
+      return markiere(Z(`Die Zahl ${b} hat eine Gegenzahl.`, 'Markiere die Gegenzahl an der Zahlengeraden.'), ZG(), -b, [[b, 'betrag-gegenzahl'], [gespiegelt(-b, 5), 'strahl-gespiegelt']], hGegen(0), [`0 − ${b} = ${zt(-b)}`]); },
     () => { const b = zz(2, 9);
       return antwort(Z(`Der Punkt liegt bei ${b}.`, 'Eine andere Zahl ist gleich weit von der Null entfernt.', 'Wie heißt diese Zahl?'), -b, 'd', [[b, 'betrag-gegenzahl'], [0, 'betrag-gegenzahl']], hGegen(0), [`0 − ${b} = ${zt(-b)}`], { bild: ZG({ punkte: [b] }) }); },
     () => { const fern = -zz(6, 9), nah = zz(1, fern === -6 ? 4 : 5), mittel = -zz(1, 3);
@@ -136,9 +136,9 @@ export function zahlen() {
     () => { const b = zz(12, 95);
       return antwort(Z(`Eine Zahl hat die Gegenzahl ${zt(-b)}.`, 'Wie heißt die Zahl?'), b, 'd', [[-b, 'betrag-gegenzahl'], [0, 'betrag-gegenzahl']], hGegen(1), [`0 − (${zt(-b)}) = ${b}`]); },
     () => { const t = wahl([3, 4, 6, 7, 8, 12, 13, 14, 16, 17]);
-      return markiere(Z(`Die Zahl ${dt(D(t))} hat eine Gegenzahl.`, 'Markiere die Gegenzahl an der Zahlengeraden.'), gerade(-20, 20, 1, 10, { teiler: 10 }), -t, [[t, 'betrag-gegenzahl'], [gespiegelt(-t, 10), 'richtung-vertauscht']], hGegen(1), [`0 − ${dt(D(t))} = ${dt(D(-t))}`]); },
+      return markiere(Z(`Die Zahl ${dt(D(t))} hat eine Gegenzahl.`, 'Markiere die Gegenzahl an der Zahlengeraden.'), gerade(-20, 20, 1, 10, { teiler: 10 }), -t, [[t, 'betrag-gegenzahl'], [gespiegelt(-t, 10), 'strahl-gespiegelt']], hGegen(1), [`0 − ${dt(D(t))} = ${dt(D(-t))}`]); },
     () => { const b = wahl([2, 3, 4, 6, 7, 8, 9]);
-      return markiere(Z(`Zwei Zahlen haben den Abstand ${b} zur Null.`, 'Markiere die kleinere der beiden Zahlen.'), ZG(), -b, [[b, 'negativ-groesser'], [gespiegelt(-b, 5), 'richtung-vertauscht']],
+      return markiere(Z(`Zwei Zahlen haben den Abstand ${b} zur Null.`, 'Markiere die kleinere der beiden Zahlen.'), ZG(), -b, [[b, 'negativ-groesser'], [gespiegelt(-b, 5), 'strahl-gespiegelt']],
         H(1, 'Zwei Zahlen sind gleich weit von der Null entfernt: eine links, eine rechts.', 'Den Abstand 4 zur Null haben −4 und 4. Die kleinere Zahl ist −4.', 'Finde beide Zahlen. Die kleinere liegt links.'), [`0 − ${b} = ${zt(-b)}`]); },
     () => { const b = zz(2, 9), k = kind();
       return auswahl(Z(`${k} sagt: Die Gegenzahl einer Zahl ist immer negativ.`, 'Stimmt das?'), [opt('Stimmt.', false, 'betrag-gegenzahl'), opt(`Falsch. Die Gegenzahl von ${zt(-b)} ist ${b}.`, true), opt(`Falsch. Die Gegenzahl von ${b} ist ${b}.`, false, 'betrag-gegenzahl')],
@@ -146,7 +146,7 @@ export function zahlen() {
   ]);
   const BEREICHE = [opt('ℕ (natürliche Zahlen)'), opt('ℤ (ganze Zahlen)'), opt('ℚ (rationale Zahlen)')];
   const bereich = (text, zahlText, w, hilfen) => { const inN = w[1] === 1 && w[0] >= 0, inZ = w[1] === 1;
-    return auswahl(text, [opt(BEREICHE[0].text, inN, inN ? undefined : 'betrag-gegenzahl'), opt(BEREICHE[1].text, inZ), opt(BEREICHE[2].text, true)], hilfen, { mehrfach: true, nachweis: [{ art: 'bereich', zahl: zahlText }] }); };
+    return auswahl(text, [opt(BEREICHE[0].text, inN, inN ? undefined : 'zahlbereich-falsch'), opt(BEREICHE[1].text, inZ), opt(BEREICHE[2].text, true)], hilfen, { mehrfach: true, nachweis: [{ art: 'bereich', zahl: zahlText }] }); };
   sechs(Z2, 'M', [
     () => { const w = D(-zz(11, 99));
       return rechne(`Berechne ${txt(AB(w))}.`, AB(w), {}, [[w, 'betrag-gegenzahl']], H(2, 'Der Betrag ist der Abstand zur Null. Er ist nie negativ.', 'Lass das Minuszeichen weg.')); },

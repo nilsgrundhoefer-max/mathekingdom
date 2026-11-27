@@ -85,7 +85,7 @@ export function prozent6() {
       return auswahl(Z('Kreuze das passende Zeichen an.', `${br(z, n)} ▢ ${pz(k)}`), ZEICHEN(d, 'prozent-als-zaehler'), h1('Wandle beide Angaben in Dezimalzahlen um. Vergleiche dann.'), { nachweis: [VGL(br(z, n), pz(k))] }); },
     () => { const liste = mische([['0,35', 0.35], ['3⁄8', 0.375], ['36 %', 0.36], ['1⁄3', 1 / 3], ['0,4', 0.4]]).slice(0, 4);
       return ordnen(Z('Ordne die Anteile der Größe nach.', 'Beginne mit dem kleinsten Anteil.'), [...liste].sort((x, y) => x[1] - y[1]).map(([t]) => t), h1('Schreibe alle Anteile als Dezimalzahl mit drei Stellen.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'prozent-als-zaehler' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'prozent-als-zaehler' }); },
     () => { const [z, n, l] = wahl([[2, 3, 67], [1, 3, 33], [1, 6, 17], [5, 6, 83], [4, 9, 44], [1, 7, 14]]);
       return dezimal(Z(`Gib ${br(z, n)} in Prozent an.`, 'Runde auf ganze Prozent.'), l, dfe(l, [[Math.floor((z * 100) / n) === l ? l - 1 : Math.floor((z * 100) / n), 'runden-abschneiden'], [z, 'prozent-als-zaehler']]),
         h1('Dividiere und runde auf Hundertstel. Die Hundertstel sind die Prozentzahl.'), { einheit: '%', nachweis: [RN(br(z, n), 0, `${l} %`, { einheit: '%' })] }); },
@@ -113,7 +113,7 @@ export function prozent6() {
         { bild: hundert(k * 10), nachweis: [URTEIL(false, `${d} = ${pz(k)}`)] }); },
     () => { const set = mische([['0,3', 30], ['25 %', 25], ['1⁄2', 50], ['0,1', 10], ['75 %', 75]]).slice(0, 3);
       return ordnen(Z('Die Felder A, B und C zeigen die Zahlen.', 'Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), [...set].sort((x, y) => x[1] - y[1]).map(([t]) => t), qF,
-        { bild: felder(...set.map(([, k]) => k)), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'prozent-als-zaehler' }); },
+        { bild: felder(...set.map(([, k]) => k)), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'prozent-als-zaehler' }); },
   ]);
   const qG = h3('Schreibe alle Zahlen gleich: als Dezimalzahl oder in Prozent.', '2⁄5 = 40⁄100 = 0,4 = 40 %.', 'Erweitere Brüche auf den Nenner 100. Vergleiche dann die Hundertstel.');
   sechs(P2, 'G', [
@@ -142,7 +142,7 @@ export function prozent6() {
         { nachweis: [UM(z, n, 100 / n, 'erweitern'), `${br(z, n, g)} = ${g} + ${br((100 / n) * z, 100)} = ${T(k, 2)} = ${pz(k)}`] }); },
     () => { const liste = [['0,6', 0.6], ['5⁄8', 0.625], ['62 %', 0.62], ['13⁄20', 0.65]];
       return ordnen(Z('Ordne die Anteile der Größe nach.', 'Beginne mit dem kleinsten Anteil.'), [...liste].sort((x, y) => x[1] - y[1]).map(([t]) => t), qM,
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'prozent-als-zaehler' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'prozent-als-zaehler' }); },
     () => { const [z, n] = wahl([[3, 4], [7, 10], [4, 5], [13, 20]]), k = wahl([70, 72, 78, 65, 82].filter((x) => x !== (100 / n) * z));
       return auswahl(Z(`Akku A ist zu ${br(z, n)} geladen.`, `Akku B zeigt ${pz(k)}.`, 'Kreuze die Ladung des volleren Akkus an.'), [opt(br(z, n), z / n > k / 100, 'prozent-als-zaehler'), opt(pz(k), k / 100 > z / n, 'prozent-als-zaehler')].map((o) => (o.richtig ? opt(o.text, true) : o)), qM,
         { nachweis: [{ art: 'extrem', was: 'groesste' }] }); },
@@ -163,7 +163,7 @@ export function prozent6() {
       return auswahl(Z('Kreuze das passende Zeichen an.', `${br(z, n)} ▢ ${pz(k)}`), ZEICHEN(z / n - k / 100, 'periode-abgebrochen'), h1('Schreibe den Bruch als periodische Dezimalzahl. Vergleiche Stelle für Stelle.'), { nachweis: [VGL(br(z, n), pz(k))] }); },
     () => { const liste = mische([['1⁄3', 1 / 3], ['33 %', 0.33], ['0,3', 0.3], ['3⁄8', 0.375], ['0,35', 0.35]]);
       return ordnen(Z('Ordne die Anteile der Größe nach.', 'Beginne mit dem größten Anteil.'), [...liste].sort((x, y) => y[1] - x[1]).map(([t]) => t), h1('Schreibe alle Anteile als Dezimalzahl mit vier Stellen. 1⁄3 ist periodisch.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'periode-abgebrochen' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'periode-abgebrochen' }); },
     () => { const [z, n, falsch, richtig] = wahl([[2, 3, '0,6', '0,6̅'], [1, 3, '0,3', '0,3̅'], [1, 6, '0,16', '0,16̅']]), kn = kind();
       return auswahl(Z(`${kn} rechnet: ${br(z, n)} = ${falsch} = ${pz(Number(falsch.slice(2)) * (falsch.length === 3 ? 10 : 1))}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. Es gilt ${br(z, n)} = ${richtig}. Das ist mehr als ${falsch}.`, true), opt('Stimmt.', false, 'periode-abgebrochen'), opt(`Stimmt, denn ${z} : ${n} ist ungefähr ${falsch}.`, false, 'periode-abgebrochen')],
         h1('Dividiere den Zähler durch den Nenner. Prüfe, ob die Division aufgeht.'), { nachweis: [URTEIL(false, `${br(z, n)} = ${falsch}`)] }); },

@@ -66,7 +66,7 @@ export function zweiersystem() {
       return zahl(Z(`Die Tafel zeigt die Zahl ${d2(n)}.`, 'Welche Zahl im Zehnersystem ist um 1 größer?'), n + 1, fehlerliste(n + 1, [[n, 'dual-zehnerwerte'], [Number(dual(n)) + 1, 'dual-zehnerwerte']]),
         h3('Rechne zuerst aus, welche Zahl die Tafel zeigt. Zähle dann 1 dazu.', '111₂ ist 4 + 2 + 1 = 7. Um 1 größer ist 8.', `Die Tafel zeigt ${werte(n).join(' + ')}.`), { bild: B.dualTafel(n, 5, true), nachweis: [D(n), EINS, ...N(`${n} + 1`)] }); },
     () => { const k = kind(), n = wahl([5, 6, 3]), wort = { 101: 'hunderteins', 110: 'hundertzehn', 11: 'elf' }[Number(dual(n))];
-      return auswahl(Z(`${k} liest die Zahl ${d2(n)} als ${wort}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'dual-zehnerwerte'), opt(`Falsch. Im Zweiersystem zählen andere Stellenwerte. Die Zahl ist ${n}.`, true), opt(`Falsch. Die Zahl ist ${einsen(n)}.`, false, 'dual-zehnerwerte')],
+      return auswahl(Z(`${k} liest die Zahl ${d2(n)} als ${wort}.`, 'Stimmt das?'), [opt('Stimmt. Die Ziffern liest man wie bei jeder anderen Zahl.', false, 'dual-zehnerwerte'), opt(`Falsch. Im Zweiersystem zählen andere Stellenwerte. Die Zahl ist ${n}.`, true), opt(`Falsch. Die Zahl ist ${einsen(n)}.`, false, 'dual-zehnerwerte')],
         h3('Im Zweiersystem sind die Stellen von rechts 1, 2 und 4 wert.', '101₂: 4 + 1 = 5.', `Eine 1 steht bei ${werte(n).join(' und bei ')}.`), { nachweis: [U(false), D(n, { nurWert: true })] }); },
   ]);
   sechs(Z_('Z1'), 'M', [
@@ -99,11 +99,11 @@ export function zweiersystem() {
     () => { const l = verschieden(() => zz(5, 40), 4).sort((x, y) => x - y);
       if (new Set(l.map((x) => dual(x).length)).size < 2) return null;
       return ordnen('Ordne die Dualzahlen. Beginne mit der kleinsten Zahl.', l.map(d2), h1('Vergleiche zuerst die Zahl der Stellen. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf', system: 'dual' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dual-zehnerwerte', links: 'kleinste', rechts: 'größte' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf', system: 'dual' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dual-zehnerwerte', links: 'kleinste', rechts: 'größte' }); },
     () => { const k = kind(), st = wahl([4, 5]), a = 2 ** (st - 1), wort = { 4: ['vier', 'drei'], 5: ['fünf', 'vier'] }[st];
       return auswahl(`${k} behauptet: „Auch im Zweiersystem ist von zwei Zahlen immer die mit mehr Stellen die größere.“ Beurteile die Aussage.`, [
         opt(`Stimmt. Die kleinste Zahl mit ${wort[0]} Stellen ist ${a}, die größte mit ${wort[1]} Stellen ist nur ${a - 1}.`, true),
-        opt('Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an.', false, 'dual-zehnerwerte'),
+        opt('Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an, nicht auf die Stellen.', false, 'dual-zehnerwerte'),
         opt('Falsch. Das gilt nur im Zehnersystem.', false),
         opt('Das gilt nur, wenn die längere Zahl auf 1 endet.', false)],
       h1('Vergleiche die kleinste Zahl mit einer bestimmten Stellenzahl und die größte Zahl mit einer Stelle weniger.'), { nachweis: [U(true), D(a, { nurWert: true }), D(a - 1, { nurWert: true })] }); },
@@ -150,7 +150,7 @@ export function zweiersystem() {
       return trage2(Z(`Eine Zahl ist die Summe ${werte(n).join(' + ')}.`, 'Schreibe sie im Zweiersystem.'), [n], 5,
         h3('Für jeden Summanden steht eine 1 in seiner Spalte.', '16 + 4 + 1: eine 1 bei 16, bei 4 und bei 1. Also 1, 0, 1, 0, 1.', `Schreibe eine 1 bei ${werte(n).join(', bei ')}.`), { nachweis: N(werte(n).join(' + ')) }); },
     () => { const k = kind(), n = wahl([12, 6, 14, 10]), falsch = dual(n).padStart(4, '0').split('').reverse().join('');
-      return auswahl(Z(`${k} schreibt die Zahl ${n} im Zweiersystem so: ${falsch}${TIEF2}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'dual-umgedreht'), opt(`Falsch. ${k} hat die Stellen umgedreht. Richtig ist ${dual(n).padStart(4, '0')}${TIEF2}.`, true), opt(`Falsch. Richtig ist ${dual(n + 1).padStart(4, '0')}${TIEF2}.`, false, 'dual-gerade-werte')],
+      return auswahl(Z(`${k} schreibt die Zahl ${n} im Zweiersystem so: ${falsch}${TIEF2}.`, 'Stimmt das?'), [opt('Stimmt. Die Stellen stehen in der richtigen Reihenfolge.', false, 'dual-umgedreht'), opt(`Falsch. ${k} hat die Stellen umgedreht. Richtig ist ${dual(n).padStart(4, '0')}${TIEF2}.`, true), opt(`Falsch. Richtig ist ${dual(n + 1).padStart(4, '0')}${TIEF2}.`, false, 'dual-gerade-werte')],
         h3('Der Stellenwert 1 steht ganz rechts. So ist es auch bei den Einern im Zehnersystem.', '12 ist 8 + 4. Das schreibt man 1100₂.', `${n} ist ${werte(n).join(' + ')}. Der größte Wert steht links.`), { nachweis: [U(false), D(n, { nurWert: true })] }); },
   ]);
   sechs(Z_('Z2'), 'M', [

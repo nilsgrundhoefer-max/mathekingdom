@@ -35,7 +35,9 @@ const SCHLUESSEL = ['id', 'lernziel', 'niveau', 'afb', 'kompetenz', 'format', 't
   'karten', 'tasten', 'bereich', 'lang', 'umgekehrt', 'sonst', 'links', 'rechts',
   'gitter', 'linie', 'bedingung', 'beispiel', 'verbinden', 'offen', 'toleranz',
   'groesse', 'einheiten', 'tippBild', 'winkelfeld',
-  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form', 'heftaufgabe', 'division', 'nenner', 'verlangt', 'reihenfolgeEgal', 'nachfrage'];
+  'faerben', 'genau', 'gemischt', 'gekuerzt', 'form', 'heftaufgabe', 'division', 'nenner', 'verlangt', 'reihenfolgeEgal', 'nachfrage',
+  // Version 0.65: eigener Hinweis je Fehlvorstellung, wenn der allgemeine Hinweis zu dieser Aufgabe nicht passt.
+  'hinweise'];
 // Kapitel, in denen mit Brüchen gerechnet wird: Klasse 5 Kapitel 9 und Klasse 6 Kapitel 1 (ADR 0037).
 const BRUCHKAPITEL = ['5.9', '6.1', '6.2', '6.4', '6.5'];
 const istBruchLernziel = (id) => BRUCHKAPITEL.some((k) => id.startsWith(`${k}.`));

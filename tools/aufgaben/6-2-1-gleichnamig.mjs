@@ -68,7 +68,7 @@ export function gleichnamig() {
       return rechneB(`Berechne ${br(a, n)} + ${br(c, n)} − ${br(e, n)} und kürze vollständig.`, [z, n], [[[a + c + e, n], 'sub-addiert'], [[a + c, n], 'sach-schritt-vergessen'], [[Math.abs(a - c - e), n], 'add-subtrahiert']],
         h2('Bei gleichnamigen Brüchen rechnest du nur mit den Zählern, der Nenner bleibt.', `Rechne ${a} + ${c} − ${e}. Schreibe das Ergebnis über den Nenner ${n} und kürze.`), [`${br(a, n)} + ${br(c, n)} − ${br(e, n)} = ${br(z, n)}`]); },
     () => { const { n, a, c } = paar(NM, (x, y, m) => y > x + 2 && !fremd(y - x, m));
-      return rechneB(`Welchen Bruch musst du zu ${br(a, n)} addieren, um ${br(c, n)} zu erhalten? Kürze vollständig.`, [c - a, n], [[[a + c, n], 'sub-addiert'], [[c, n], 'sach-frage-verfehlt']],
+      return rechneB(`Welchen Bruch musst du zu ${br(a, n)} addieren, um ${br(c, n)} zu erhalten? Kürze vollständig.`, [c - a, n], [[[a + c, n], 'ergaenzen-addiert'], [[c, n], 'sach-frage-verfehlt']],
         h2('Gesucht ist der Unterschied der beiden Brüche.', `Rechne ${br(c, n)} − ${br(a, n)} und kürze das Ergebnis.`), [`${br(c, n)} − ${br(a, n)} = ${br(c - a, n)}`]); },
     () => { const n = wahl([12, 16, 18, 20, 24]), a = zz(3, 7), c = zz(2, 6), rest = n - a - c, [k1, k2] = mische(['Mia', 'Tom', 'Lena', 'Ali', 'Ben', 'Mara']), [was] = wahl([['Kuchen'], ['Blechkuchen'], ['Apfelkuchen']]);
       if (rest < 2 || a === c) return null;

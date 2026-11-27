@@ -47,7 +47,7 @@ export function klammern() {
       return auswahl(Z('Welche Rechnung hat dasselbe Ergebnis?', `${a} − (${b} + ${c})`), [opt(`${a} − ${b + c}`, true), opt(`${a - b} + ${c}`, false, 'klammer-ignoriert'), opt(`${a} + ${b + c}`, false, 'sub-addiert')],
         h3('Rechne zuerst die Klammer aus.', '30 − (10 + 5): Die Klammer ergibt 15. Also 30 − 15.', `Klammer: ${b} + ${c} = ${b + c}.`), { bild: B.streifen(a, [b, c, frage(a - b - c)]), nachweis: [WERT(a - (b + c)), ...N(`${a} − (${b} + ${c})`)] }); },
     () => { const a = zz(4, 6) * 10, b = 10, c = 5, k = kind();
-      return auswahl(Z(`${k} rechnet ${a} − (${b} + ${c}) so:`, `${a} − ${b} = ${a - b}`, `${a - b} + ${c} = ${a - b + c}`, 'Stimmt das?'), [opt('Stimmt.', false, 'klammer-ignoriert'), opt(`Falsch. Die Klammer kommt zuerst. Richtig ist ${a - b - c}.`, true), opt(`Falsch. Richtig ist ${a + b + c}.`, false, 'sub-addiert')],
+      return auswahl(Z(`${k} rechnet ${a} − (${b} + ${c}) so:`, `${a} − ${b} = ${a - b}`, `${a - b} + ${c} = ${a - b + c}`, 'Stimmt das?'), [opt('Stimmt. Man rechnet von links nach rechts.', false, 'klammer-ignoriert'), opt(`Falsch. Die Klammer kommt zuerst. Richtig ist ${a - b - c}.`, true), opt(`Falsch. Richtig ist ${a + b + c}.`, false, 'sub-addiert')],
         h3('Was in der Klammer steht, wird zuerst berechnet.', '40 − (10 + 5): Klammer 10 + 5 = 15. Dann 40 − 15 = 25.', `Klammer: ${b} + ${c} = ${b + c}. Dann ${a} − ${b + c}.`), { nachweis: [U(false, `${a} − (${b} + ${c})`, a - b + c), ...N(`${a} − (${b} + ${c})`)] }); },
   ]);
   sechs(KL('B1'), 'M', [
@@ -94,7 +94,7 @@ export function klammern() {
       opt('Das stimmt immer. In beiden Termen kommt b dazu und c geht weg. Beispiel: 50 + (20 − 5) = 65 und 50 + 20 − 5 = 65.', true),
       opt('Das stimmt nie. Klammern darf man nicht weglassen.', false, 'klammer-ignoriert'),
       opt('Das stimmt nur, wenn c kleiner ist als a.'),
-      opt('Das stimmt nie. Beim Weglassen wird aus dem Minus ein Plus.', false, 'klammer-falsch-gesetzt'),
+      opt('Das stimmt nie. Beim Weglassen der Klammer wird aus dem Minus ein Plus, also ändert sich der Wert.', false, 'klammer-falsch-gesetzt'),
       opt('Das stimmt immer, denn auch a − (b − c) = a − b − c.', false, 'klammer-ignoriert')],
     h1('Überlege für beide Terme, was zu a dazukommt und was weggeht.'), { nachweis: [U(true), ...N('50 + (20 − 5)', '50 + 20 − 5')] }),
   ]);
@@ -139,7 +139,7 @@ export function klammern() {
       return auswahl(Z(`Die Rechnung ist ${a} − (${b} + ${c}).`, 'Welche Geschichte passt?'), [opt(`${a} Plätze. ${b} Kinder und ${c} Erwachsene setzen sich.`, true), opt(`${a} Plätze. ${b} Kinder setzen sich. ${c} Plätze kommen dazu.`, false, 'klammer-ignoriert'), opt(`${b} Kinder und ${c} Erwachsene. ${a} Menschen kommen dazu.`, false, 'sach-falsche-rechnung')],
         h3('In der Klammer steht, was zusammen weggeht.', '20 − (3 + 5) passt zu: 20 Plätze. 3 Kinder und 5 Erwachsene setzen sich.', `Suche die Geschichte, in der ${b} und ${c} zusammen weggehen.`), { bild: B.streifen(a, [b, c, frage(a - b - c)]), nachweis: N(`${a} − (${b} + ${c})`) }); },
     () => { const a = zz(6, 8) * 10, b = 25, c = 10, k = kind();
-      return auswahl(Z(`${k} hat ${a} Euro.`, `${k} gibt erst ${b} Euro aus, dann ${c} Euro.`, `${k} schreibt: ${a} − ${b} + ${c}`, 'Stimmt das?'), [opt('Stimmt.', false, 'klammer-ignoriert'), opt(`Falsch. Beide Beträge gehen weg. Richtig ist ${a} − (${b} + ${c}).`, true), opt(`Falsch. Richtig ist ${a} + ${b} + ${c}.`, false, 'sach-falsche-rechnung')],
+      return auswahl(Z(`${k} hat ${a} Euro.`, `${k} gibt erst ${b} Euro aus, dann ${c} Euro.`, `${k} schreibt: ${a} − ${b} + ${c}`, 'Stimmt das?'), [opt('Stimmt. Die Zahlen stehen in der richtigen Reihenfolge.', false, 'klammer-ignoriert'), opt(`Falsch. Beide Beträge gehen weg. Richtig ist ${a} − (${b} + ${c}).`, true), opt(`Falsch. Richtig ist ${a} + ${b} + ${c}.`, false, 'sach-falsche-rechnung')],
         h3('Ausgeben heißt minus. Hier wird 2-mal Geld ausgegeben.', '50 Euro, 10 Euro und 5 Euro ausgegeben: 50 − (10 + 5).', `Zusammen gehen ${b} + ${c} = ${b + c} Euro weg.`), { nachweis: [U(false), ...N(`${a} − (${b} + ${c})`, `${a} − ${b} + ${c}`)] }); },
   ]);
   sechs(KL('B2'), 'M', [
@@ -184,7 +184,7 @@ export function klammern() {
       opt('Für jede Zahl von 0 bis 80: Beide Terme subtrahieren insgesamt die Zahl und 20.', true),
       opt('Nur für die Zahl 0.', false, 'klammer-ignoriert'),
       opt('Nur für die Zahl 20.'),
-      opt('Für keine Zahl: Eine Klammer verändert immer den Wert.', false, 'klammer-ignoriert'),
+      opt('Für keine Zahl: Eine Klammer verändert immer den Wert, sonst wäre sie unnötig.', false, 'klammer-ignoriert'),
       opt('Nur für gerade Zahlen.')],
     h1('Setze mehrere Zahlen ein, zum Beispiel 10, 35 und 80, und vergleiche die Werte.'), { nachweis: N('100 − (10 + 20)', '100 − 10 − 20', '100 − (35 + 20)', '100 − 35 − 20', '100 − (80 + 20)', '100 − 80 − 20') }),
     () => { const a = 50, heft = zz(3, 5), anz = 3, stift = zz(6, 9), alter = zz(10, 12), k = kind();

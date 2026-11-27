@@ -55,7 +55,7 @@ export function rechengesetze() {
       return auswahl(Z('Welche Rechnung hat dasselbe Ergebnis?', `${a} + (${b} + ${c})`), [opt(`(${a} + ${b}) + ${c}`, true), opt(`(${a} + ${b}) − ${c}`, false, 'add-subtrahiert'), opt(`${a} − (${b} + ${c})`, false, 'add-subtrahiert')],
         h3('Beim Addieren darfst du die Klammer versetzen.', '5 + (4 + 6) = (5 + 4) + 6.', 'Suche die Rechnung mit denselben Zahlen und 2-mal Plus.'), { bild: B.streifen(frage(a + b + c), [a, b, c]), nachweis: [WERT(a + b + c), ...N(`${a} + (${b} + ${c})`, `(${a} + ${b}) + ${c}`)] }); },
     () => { const a = wahl([20, 30]), b = zz(7, 9), c = zz(2, 4), k = kind(), li = a - b - c, re = a - (b - c);
-      return auswahl(Z(`${k} sagt:`, `${a} − ${b} − ${c} ist dasselbe wie ${a} − (${b} − ${c}).`, 'Stimmt das?'), [opt('Stimmt.', false, 'gesetz-auf-subtraktion'), opt(`Falsch. Links kommt ${li} heraus. Rechts kommt ${re} heraus.`, true), opt(`Falsch. Links kommt ${re} heraus. Rechts kommt ${li} heraus.`, false, 'klammer-ignoriert')],
+      return auswahl(Z(`${k} sagt:`, `${a} − ${b} − ${c} ist dasselbe wie ${a} − (${b} − ${c}).`, 'Stimmt das?'), [opt('Stimmt. Eine Klammer ändert beim Minus-Rechnen nichts.', false, 'gesetz-auf-subtraktion'), opt(`Falsch. Links kommt ${li} heraus. Rechts kommt ${re} heraus.`, true), opt(`Falsch. Links kommt ${re} heraus. Rechts kommt ${li} heraus.`, false, 'klammer-ignoriert')],
         h3('Rechne beide Seiten aus. Die Klammer kommt zuerst.', '10 − 4 − 2 = 4. Aber 10 − (4 − 2) = 10 − 2 = 8.', `Rechts: Klammer ${b} − ${c} = ${b - c}. Dann ${a} − ${b - c}.`), { nachweis: [U(false), ...N(`${a} − ${b} − ${c}`, `${a} − (${b} − ${c})`)] }); },
   ]);
 
@@ -80,7 +80,7 @@ export function rechengesetze() {
         opt(`Falsch. Ein Gegenbeispiel genügt: ${x} − ${y} = ${x - y}, aber ${y} − ${x} ist keine natürliche Zahl.`, true),
         opt('Richtig. Die Rechengesetze gelten für alle Rechenarten.', false, 'gesetz-auf-subtraktion'),
         opt(`Richtig, denn ${x} − ${y} und ${y} − ${x} haben dasselbe Ergebnis.`, false, 'gesetz-auf-subtraktion'),
-        opt('Falsch. Das Vertauschungsgesetz gilt für keine Rechenart.')],
+        opt('Falsch. Das Vertauschungsgesetz gilt für keine Rechenart, auch nicht für die Addition.')],
       h2('Prüfe die Behauptung an einem Beispiel: Vertausche Minuend und Subtrahend.', `${x} − ${y} = ${x - y}. Bei ${y} − ${x} ist der Subtrahend größer als der Minuend.`), { nachweis: [U(false), ...N(`${x} − ${y}`)] }); },
   ]);
 
@@ -104,7 +104,7 @@ export function rechengesetze() {
     () => { const k = kind(), n = zz(6, 9);
       return auswahl(`${k} behauptet: „a − b = b − a gilt für keine natürlichen Zahlen.“ Beurteile die Aussage.`, [
         opt(`Falsch. Für a = b gilt die Gleichung, zum Beispiel ${n} − ${n} = ${n} − ${n} = 0. Für verschiedene Zahlen gilt sie nicht.`, true),
-        opt('Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen.'),
+        opt('Richtig. Bei der Subtraktion darf man in keinem Fall vertauschen. Die Ergebnisse sind immer verschieden.'),
         opt('Falsch. Die Gleichung gilt für alle natürlichen Zahlen.', false, 'gesetz-auf-subtraktion'),
         opt('Falsch. Die Gleichung gilt immer, wenn a größer ist als b.', false, 'gesetz-auf-subtraktion'),
         opt('Richtig. Auch wenn a und b gleich sind, sind die Ergebnisse verschieden.')],
@@ -198,7 +198,7 @@ export function rechengesetze() {
         h1(`Jeder der 9 Summanden ist um ${off} größer als in der bekannten Summe.`), { nachweis: N(reihe(1, 9), `${off + 1} − 1`, `9 · ${off} + 45`, reihe(off + 1, off + 9)) }); },
     () => auswahl('3 + 4 + 5 + 6 + 7 = 25 und 10 + 11 + 12 + 13 + 14 = 60. Stelle eine Regel für die Summe von 5 aufeinanderfolgenden Zahlen auf.', [
       opt('Die Summe ist 5-mal die mittlere Zahl, denn die äußeren Paare ergeben jeweils das Doppelte der mittleren Zahl.', true),
-      opt('Die Summe ist 5-mal die erste Zahl.'), opt('Die Summe ist 5-mal die letzte Zahl.'), opt('Die Summe ist die erste Zahl plus die letzte Zahl.'), opt('Es gibt keine Regel. Jede Summe muss einzeln berechnet werden.')],
+      opt('Die Summe ist 5-mal die erste Zahl.'), opt('Die Summe ist 5-mal die letzte Zahl.'), opt('Die Summe ist das Doppelte aus erster und letzter Zahl, denn die äußeren Zahlen bestimmen die Summe.'), opt('Es gibt keine Regel. Jede Summe muss einzeln berechnet werden.')],
     h1('Vergleiche beide Summen mit der Zahl in der Mitte.'), { nachweis: N('3 + 4 + 5 + 6 + 7', '5 · 5', '3 + 7', '4 + 6', '10 + 11 + 12 + 13 + 14', '5 · 12', '10 + 14', '11 + 13') }),
   ]);
 }

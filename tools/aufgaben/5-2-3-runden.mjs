@@ -67,7 +67,7 @@ export function rundenAufgaben() {
       return auswahl(Z('Eine Zahl wird auf Hunderter gerundet.', `Das Ergebnis ist ${h}.`, 'Welche Zahl kann es gewesen sein?'), [opt(String(r), true), opt(String(f1), false, 'falsch-gerundet'), opt(String(f2), false, f2 === h + 50 ? 'runden-fuenf-ab' : 'falsch-gerundet')],
         h3('Runde jede der 3 Zahlen auf Hunderter. Nur eine ergibt das Ergebnis.', '651 ergibt 700. 649 ergibt 600.', `Die gesuchte Zahl liegt zwischen ${h - 50} und ${h + 49}.`), { nachweis: [{ art: 'rundenwahl', auf: 100, wert: h }] }); },
     () => { const k = kind(), t = zz(1, 8) * 1000, h = zz(1, 8) * 100, n = t + h + 40 + zz(5, 9), z1 = rundeAuf(n, 10), z2 = rundeAuf(z1, 100);
-      return auswahl(Z(`${k} rundet ${n} auf Hunderter.`, `${k} rundet zuerst auf Zehner: ${z1}.`, `Dann rundet ${k} weiter auf Hunderter: ${z2}.`, 'Stimmt das Ergebnis?'), [opt('Stimmt.', false, 'runden-kette'), opt(`Falsch. Man rundet in einem Schritt. Richtig ist ${rundeAuf(n, 100)}.`, true), opt(`Falsch. Richtig ist ${rundeAuf(n, 1000) === 0 ? 1000 : rundeAuf(n, 1000)}.`, false, 'runden-falsche-stelle')],
+      return auswahl(Z(`${k} rundet ${n} auf Hunderter.`, `${k} rundet zuerst auf Zehner: ${z1}.`, `Dann rundet ${k} weiter auf Hunderter: ${z2}.`, 'Stimmt das Ergebnis?'), [opt('Stimmt. Man rundet Schritt für Schritt bis zum Hunderter.', false, 'runden-kette'), opt(`Falsch. Man rundet in einem Schritt. Richtig ist ${rundeAuf(n, 100)}.`, true), opt(`Falsch. Richtig ist ${rundeAuf(n, 1000) === 0 ? 1000 : rundeAuf(n, 1000)}.`, false, 'runden-falsche-stelle')],
         h3('Es zählt nur die Ziffer direkt rechts neben der Rundungsstelle.', '1449 auf Hunderter: Rechts neben der 4 steht eine 4. Abrunden: 1400.', `Rechts neben den Hundertern steht eine 4. Also wird abgerundet.`), { bild: um(n, 100), nachweis: [U(false), runden(n, 100)] }); },
   ]);
   sechs(R_('R1'), 'M', [
@@ -154,7 +154,7 @@ export function rundenAufgaben() {
       return auswahl(Z(`Ein Dorf im Königreich hat genau ${fz(n)} Einwohner.`, 'Auf dem Schild am Tor soll eine runde Zahl stehen.', 'Was passt am besten?'), [opt(`rund ${fz(r)} Einwohner`, true), opt(`rund ${fz(r > n ? r - 1000 : r + 1000)} Einwohner`, false, 'falsch-gerundet'), opt(`rund ${fz(100000)} Einwohner`, false, 'runden-falsche-stelle')],
         h3('Eine runde Zahl ist leicht zu merken. Sie soll aber nah an der genauen Zahl liegen.', '48 372 Einwohner: Auf dem Schild steht rund 48 000 Einwohner.', `Die Zahl liegt zwischen ${fz(ab(n, 1000))} und ${fz(ab(n, 1000) + 1000)}.`), { nachweis: [runden(n, 1000, true)] }); },
     () => { const k = kind(), h = zz(3, 9) * 100;
-      return auswahl(Z(`In der Zeitung steht: „Rund ${h} Besucher.“`, 'Die Zahl ist auf Hunderter gerundet.', `${k} sagt: „Dann waren es mindestens ${h}.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'falsch-gerundet'), opt(`Falsch. Es können auch nur ${h - 50} gewesen sein.`, true), opt(`Falsch. Es waren genau ${h}.`, false, 'gezaehlt-geschaetzt')],
+      return auswahl(Z(`In der Zeitung steht: „Rund ${h} Besucher.“`, 'Die Zahl ist auf Hunderter gerundet.', `${k} sagt: „Dann waren es mindestens ${h}.“`, 'Stimmt das?'), [opt('Stimmt. Beim Runden wird die Zahl immer größer.', false, 'falsch-gerundet'), opt(`Falsch. Es können auch nur ${h - 50} gewesen sein.`, true), opt(`Falsch. Es waren genau ${h}.`, false, 'gezaehlt-geschaetzt')],
         h3('Beim Runden wird auch aufgerundet. Die genaue Zahl kann also kleiner sein.', 'Rund 300: Es können auch 250 gewesen sein. Denn 250 wird auf 300 aufgerundet.', `Die kleinste Zahl mit dem Ergebnis ${h} endet auf 50.`),
         { bild: B.strahl({ von: h - 100, bis: h + 100, schritt: 10, beschriftung: 100, punkte: [h], ausschnitt: true }), nachweis: [U(false), grenze(h, 100, { kleinste: h - 50 })] }); },
   ]);
@@ -173,7 +173,7 @@ export function rundenAufgaben() {
       return zahl(`${satz} ${frage}`, q + 1, fehlerliste(q + 1, [[q, 'falsch-gerundet'], [q + 2, 'falsch-gerundet']]),
         h2('Hier darf man nicht nach der Rundungsregel abrunden: Auch der Rest braucht noch ein Paket oder ein Zelt.', `${q} reichen nur für ${q * je}.`), { nachweis: N(`${n} : ${je} = ${q} Rest ${n % je}`, `${q} + 1`), einheit }); },
     () => { const k = kind(), t = zz(3, 9) * 1000;
-      return auswahl(`Zwei Zahlen ergeben auf Tausender gerundet beide ${t}. ${k} sagt: „Dann unterscheiden sich die beiden Zahlen höchstens um 500.“ Stimmt das?`, [opt('Stimmt.', false, 'falsch-gerundet'), opt(`Falsch. Sie können fast 1000 auseinanderliegen, zum Beispiel ${t - 500} und ${t + 499}.`, true), opt('Falsch. Die beiden Zahlen müssen gleich sein.', false, 'gezaehlt-geschaetzt'), opt(`Falsch. Sie unterscheiden sich höchstens um 100.`, false, 'runden-falsche-stelle')],
+      return auswahl(`Zwei Zahlen ergeben auf Tausender gerundet beide ${t}. ${k} sagt: „Dann unterscheiden sich die beiden Zahlen höchstens um 500.“ Stimmt das?`, [opt('Stimmt. Beim Runden auf Tausender ändert sich eine Zahl höchstens um 500.', false, 'falsch-gerundet'), opt(`Falsch. Sie können fast 1000 auseinanderliegen, zum Beispiel ${t - 500} und ${t + 499}.`, true), opt('Falsch. Die beiden Zahlen müssen gleich sein.', false, 'gezaehlt-geschaetzt'), opt(`Falsch. Sie unterscheiden sich höchstens um 100.`, false, 'runden-falsche-stelle')],
         h2('Bestimme die kleinste und die größte Zahl, die auf diesen Tausender gerundet wird.', `Die kleinste Zahl ist ${t - 500}, die größte ist ${t + 499}.`), { nachweis: [U(false), grenze(t, 1000, { kleinste: t - 500, groesste: t + 499 })] }); },
   ]);
   sechs(R_('R2'), 'E', [
@@ -203,7 +203,7 @@ export function rundenAufgaben() {
         opt(`Falsch. Gegenbeispiel: ${x} + ${x} = ${s}, gerundet ${rundeAuf(s, 10)}. Rundet man zuerst, erhält man ${rundeAuf(x, 10)} + ${rundeAuf(x, 10)} = ${2 * rundeAuf(x, 10)}.`, true),
         opt('Stimmt immer, denn Runden ändert eine Zahl nur wenig.', false, 'gezaehlt-geschaetzt'),
         opt('Stimmt, solange beide Zahlen abgerundet werden.', false, 'falsch-gerundet'),
-        opt('Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer.', false, 'falsch-gerundet')],
+        opt('Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer. Runden macht Zahlen größer.', false, 'falsch-gerundet')],
       h1('Suche zwei Zahlen, die beide abgerundet werden, deren Summe aber aufgerundet wird.'), { nachweis: [U(false), ...N(`${x} + ${x}`, `${rundeAuf(x, 10)} + ${rundeAuf(x, 10)}`), `${s} ≈ ${rundeAuf(s, 10)}`] }); },
   ]);
 }
