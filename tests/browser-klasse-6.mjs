@@ -199,7 +199,7 @@ if (bilder) {
   if (bilder) await seite.locator('.kartenrahmen').screenshot({ path: `${bilder}/regionskarte-niveau-abstecher-420.png` });
   await seite.locator('svg.regionskarte .meilenstein[aria-label*="Brüche dividieren"] .stein').click();
   await seite.waitForSelector('#niveau-abstecher');
-  assert.equal(await seite.locator('#niveau-marke').innerText(), 'ab Gold');
+  assert.equal(await seite.locator('#niveau-marke').innerText(), 'freiwillig, Gold', 'Version 0.67: Der Abstecher über dem eigenen Ziel sagt, dass er freiwillig ist');
   assert.equal(await seite.locator('.tafel .kronenwahl').count(), 0, 'am Abstecher gibt es keine Kronenwahl');
   if (bilder) await seite.locator('.karte.tafel').screenshot({ path: `${bilder}/tafel-niveau-abstecher-420.png` });
   await seite.click('#aufbrechen');

@@ -127,7 +127,7 @@ export function klassendateiInhalt(klasse, k, stand) {
   return { klasse, stand, aktuellesKapitel: e.aktuellesKapitel, tore: e.tore, toreEinzeln: e.toreEinzeln ?? {}, codes: Object.keys(k.namen),
     zielniveaus: e.zielniveaus, spielpause: e.spielpause, spielfreigabe: e.spielfreigabe ?? 'spielpause', bestenliste: e.bestenliste !== false, ehrentafel: e.ehrentafel !== false,
     hilfe: e.hilfe, nachrichten: e.nachrichten, sonderauftraege: e.sonderauftraege ?? {}, muenzgaben: e.muenzgaben ?? {}, ...(e.feedback && { feedback: e.feedback }), sperren: e.sperren, meilensteinFreigabe: e.meilensteinFreigabe ?? {}, expedition: e.expedition ?? null,
-    sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins };
+    sicherheitsangabe: Boolean(e.sicherheitsangabe), ton: Boolean(e.ton), rast: e.rast !== false, vorausarbeiten: e.vorausarbeiten !== false, einstiegPflicht: e.einstiegPflicht ?? [], pins };
 }
 
 // ---------- Übernahme ins neue Schuljahr ----------

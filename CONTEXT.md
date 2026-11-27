@@ -264,6 +264,22 @@ _Avoid_: Station, Haltestelle, Level, Knotenpunkt
 Der Weg, den das Schüler-Dashboard von selbst vorschlägt, wenn der Schüler auf „Nächste Aufgabe“ oder „Hier geht es weiter“ drückt. Sie geht in Runden: In der ersten Runde kommt jedes Lernziel des Meilensteins, an dem er zuletzt gearbeitet hat, einmal dran, bis es ein Siegel hat oder unter dem Ziel geschafft ist, dann der nächste Meilenstein im Lernpfad. Lieber den ganzen Lernpfad auf Silber als lange in einem Lernziel. Ist der Lernpfad einmal durchgearbeitet, beginnt die nächste Runde vorn bei den Lernzielen ohne Siegel, wieder auf dem Zielniveau. Ein Lernziel, das zweimal nur unter dem Ziel geschafft ist, schlägt sie nicht mehr von selbst vor; die Lehrkraft bekommt dazu einen Impuls. Abstecher überspringt sie, bietet sie aber an. Sie zwingt nichts; der Schüler darf jeden offenen Meilenstein selbst wählen.
 _Avoid_: Empfehlung, Lernpfad (das ist der Weg durch das Kapitel)
 
+**Kapitel geschafft**:
+Der Zustand eines Kapitels für einen Schüler, wenn alle Pflicht-Meilensteine gemeistert sind. Gesperrte Meilensteine und Abstecher zählen nicht. Die Aufgabenführung zeigt dann den Bildschirm „Kapitel geschafft“ statt neuer Aufgaben. Sein Hauptknopf nimmt das erste Angebot, das zutrifft: nächstes Kapitel mit offenem Tor, fälliger Rückblick, offene Lernziele eines früheren Kapitels, nächsthöhere Krone. Trifft nichts zu, steht dort „Du bist fertig. Sag deiner Lehrkraft Bescheid.“ Die Lehrkraft sieht im Sitzplan „fertig“ oder „voraus“.
+_Avoid_: Kapitel fertig (im Schüler-Dashboard), Kapitel abgeschlossen, durchgespielt
+
+**Lernpfad geschafft**:
+Wie Kapitel geschafft, aber mindestens ein Lernziel ist zweimal nur unter dem Ziel geschafft und hat kein Siegel. Für das Kapitelende zählt das als erledigt; eine höhere Krone wird dann nicht angeboten.
+_Avoid_: Kapitel fast geschafft
+
+**Vorausarbeiten**:
+Die Einstellung je Klasse „Wer fertig ist, darf ein Kapitel vorausarbeiten“, Standard an. Für einen Schüler mit Kapitel geschafft oder Lernpfad geschafft im Aktuellen Kapitel öffnet sich das Tor zum nächsten Kapitel, höchstens ein Kapitel voraus. Das Kapitel beginnt mit dem Einstiegscheck. In ein Kapitel ohne Aufgaben geht es nicht.
+_Avoid_: Vorarbeiten, Überspringen, Zusatzkapitel (das ist ein einzeln geöffnetes Tor)
+
+**Tagessperre**:
+Die Regel, dass eine am selben Tag gelöste Aufgabe an diesem Tag nicht wiederkommt, auch nicht aus dem Einstiegscheck. Sie gilt beim Üben am Meilenstein und bei der „ähnlichen Aufgabe“ nach einem Fehler; eine falsch gelöste Aufgabe kommt frühestens nach zwei anderen wieder. Sind alle Aufgaben eines Lernziels heute gelöst, ist es für heute fertig und die Aufgabenführung geht weiter. Wählt der Schüler es trotzdem selbst, steht über der Aufgabe „Hier hast du heute alles gelöst. Morgen zählt es wieder.“; er bekommt 1 Münze und keinen neuen Heftcode. Rückblick, Seitenblick, Brücke und Sonderauftrag sind nicht betroffen.
+_Avoid_: Aufgabensperre (das ist das Sperren einer fehlerhaften Aufgabe), Tageslimit
+
 **Unter dem Ziel geschafft**:
 Ein Lernziel, das ein Schüler nach derselben Regel wie fürs Siegel nachgewiesen hat, aber nur auf einer Niveaustufe unter seinem Zielniveau. Es bringt kein Siegel; die Aufgabenführung geht danach zum nächsten Lernziel. Der Schüler sieht die Marke „Silber geschafft“, die Lehrkraft den Lernzielstand „unter dem Ziel geschafft“ mit der Niveaustufe. Danach bringen Aufgaben dieses Lernziels unter dem Zielniveau nur noch 1 Münze.
 _Avoid_: halb geschafft, Silbersiegel

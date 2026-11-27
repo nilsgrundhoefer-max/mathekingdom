@@ -364,7 +364,8 @@ export function imNebel(index, stand, kapitel, einst) {
   const offen = new Set(frei), zu = einst.gesperrteMeilensteine ?? new Set();
   const gemeistert = (u) => milestoneStatus(index, stand, u) === 'gemeistert';
   const ziel = einst.zielniveau;
-  const erledigt = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel) && offen.has(u.id) && !zu.has(u.id) && hatAufgabenIn(index, u)).every(gemeistert);
+  // Version 0.67: Ein Meilenstein, der zweimal nur unter dem Ziel geschafft ist, hält den Nebel nicht mehr fest (siehe meilensteinDurch).
+  const erledigt = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel) && offen.has(u.id) && !zu.has(u.id) && hatAufgabenIn(index, u)).every((u) => meilensteinDurch(index, stand, u));
   const angefangen = new Set(stand.versuche.filter(eigenerVersuch).map((v) => index.meilensteinVon.get(v.lernziel)?.id).filter(Boolean));
   const nebel = new Set();
   for (const u of kapitel.unterkapitel) {
@@ -384,16 +385,23 @@ export const runde = (stand, kapitelId) => stand.runde?.[kapitelId]?.nr ?? 1;
 export const rundeAb = (stand, kapitelId) => stand.runde?.[kapitelId]?.ab ?? 0;
 export const unterZielGeschafft = (stand, lernzielId) => stand.unterZiel?.[lernzielId] ?? null; // { mal, niveau, t }
 export const unterZielAufgegeben = (stand, lernzielId) => (unterZielGeschafft(stand, lernzielId)?.mal ?? 0) >= UNTER_ZIEL_HOECHSTENS;
-export function lernzielErledigt(index, stand, lernzielId, niveau, zielniveau) {
+export function lernzielErledigt(index, stand, lernzielId, niveau, zielniveau, jetzt = null) {
+  // Version 0.67 (Tagessperre): Mit `jetzt` gilt ein Lernziel auch als erledigt, wenn heute alle seine Aufgaben gelöst sind.
+  if (jetzt && heuteFertig(index, stand, lernzielId, aufgabenNiveau(stand, lernzielId, arbeitsniveau(stand, kapitelVon(lernzielId), zielniveau, lernzielId)), jetzt)) return true;
   const mal = unterZielGeschafft(stand, lernzielId)?.mal ?? 0;
   if (!stand.lernziele[lernzielId] && (mal >= UNTER_ZIEL_HOECHSTENS || mal >= runde(stand, kapitelVon(lernzielId)))) return true;
   if (NIVEAUS.indexOf(niveau) > NIVEAUS.indexOf(zielniveau)) return lernzielStand(stand, lernzielId, niveau, index).erreicht || mal >= runde(stand, kapitelVon(lernzielId));
   return Boolean(stand.lernziele[lernzielId]);
 }
 // Fertig für die Aufgabenführung: alle Lernziele mit Aufgaben erledigt (siehe lernzielErledigt).
-export function fuehrungFertig(index, stand, unterkapitel, niveau, zielniveau) {
+export function fuehrungFertig(index, stand, unterkapitel, niveau, zielniveau, jetzt = null) {
   const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
-  return mit.length > 0 && mit.every((l) => lernzielErledigt(index, stand, l.id, niveau, zielniveau));
+  return mit.length > 0 && mit.every((l) => lernzielErledigt(index, stand, l.id, niveau, zielniveau, jetzt));
+}
+// Version 0.67 (ADR 0057): Ein Meilenstein ist durch, wenn jedes Lernziel sein Siegel hat oder zweimal nur unter dem Ziel geschafft ist.
+export function meilensteinDurch(index, stand, unterkapitel) {
+  const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
+  return mit.length > 0 && mit.every((l) => stand.lernziele[l.id] || unterZielAufgegeben(stand, l.id));
 }
 // Ist der Lernpfad in dieser Runde durch, aber fehlen noch Siegel, beginnt die nächste Runde (gibt true zurück).
 // Wer sich selbst unter seinem Ziel eingeordnet hat, spielt in der neuen Runde wieder um sein Ziel.
@@ -407,14 +415,17 @@ export function naechsteRunde(index, stand, kapitel, weg, zielniveau) {
 }
 // Wohin die Aufgabenführung in einem Kapitel führt: zum zuletzt bearbeiteten Meilenstein, solange er nicht fertig ist,
 // sonst zum nächsten nicht fertigen danach in Kapitelreihenfolge, am Ende wieder von vorn. Abstecher nur, wenn der Schüler dort zuletzt war.
-export function fuehrungsMeilenstein(index, stand, kapitel, einst, niveau) {
+// Version 0.67: Mit `jetzt` gilt die Tagessperre. Ein Meilenstein, an dem heute alles gelöst ist, wird übersprungen; eine neue Runde beginnt deshalb nicht.
+export function fuehrungsMeilenstein(index, stand, kapitel, einst, niveau, jetzt = null) {
   const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
-  const offen = (u) => !zu.has(u.id) && !nebel.has(u.id) && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau);
+  const frei = (u) => !zu.has(u.id) && !nebel.has(u.id) && hatAufgabenIn(index, u);
+  const offenOhneSperre = (u) => frei(u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau);
+  const offen = (u) => frei(u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau, jetzt);
   const ziel = einst.zielniveau;
   const weg = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel));
   // Version 0.60: Ist der Lernpfad in dieser Runde durch, beginnt die nächste Runde vorn (siehe naechsteRunde).
-  if (ziel && !weg.some(offen) && naechsteRunde(index, stand, kapitel, weg.filter((u) => !zu.has(u.id) && !nebel.has(u.id)), ziel)) {
-    return fuehrungsMeilenstein(index, stand, kapitel, einst, arbeitsniveau(stand, kapitel.id, ziel));
+  if (ziel && !weg.some(offenOhneSperre) && naechsteRunde(index, stand, kapitel, weg.filter((u) => !zu.has(u.id) && !nebel.has(u.id)), ziel)) {
+    return fuehrungsMeilenstein(index, stand, kapitel, einst, arbeitsniveau(stand, kapitel.id, ziel), jetzt);
   }
   let zuletzt = null;
   // Eine neue Runde beginnt vorn: Nur Arbeit aus dieser Runde zählt als „zuletzt“ (Version 0.60).
@@ -428,10 +439,10 @@ export function fuehrungsMeilenstein(index, stand, kapitel, einst, niveau) {
   return [...weg.slice(ab), ...weg.slice(0, ab)].find(offen) ?? null;
 }
 // Abstecher, die an diesem Meilenstein hängen und noch offen sind: Sie bietet die Führung nach dem Meilenstein an.
-export function abstecherAm(index, stand, kapitel, unterkapitel, einst, niveau) {
+export function abstecherAm(index, stand, kapitel, unterkapitel, einst, niveau, jetzt = null) {
   const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
   return kapitel.unterkapitel.filter((u) => istAbstecher(u, einst.zielniveau) && wirtVon(kapitel, u, einst.zielniveau)?.id === unterkapitel.id && !zu.has(u.id) && !nebel.has(u.id)
-    && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau));
+    && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau, jetzt));
 }
 
 // Etappe für die Startseite: das Kapitel, an dem gerade gearbeitet wird, mit Fortschritt und nächstem Meilenstein.
@@ -452,11 +463,85 @@ export function etappe(pool, index, stand, einst) {
   const extra = offene.find((l) => l.milestone && einst.zusaetzlicheKapitel?.has(l.kapitel.id));
   return (aktuell?.milestone ? aktuell : null) ?? extra ?? offene.find((l) => l.milestone) ?? aktuell ?? offene.at(-1);
 }
+// ---------- Kapitelende und Vorausarbeiten (Version 0.67, ADR 0057) ----------
+const pflichtMeilensteine = (index, kapitel, einst) => kapitel.unterkapitel.filter((u) => !istAbstecher(u, einst.zielniveau) && !(einst.gesperrteMeilensteine ?? new Set()).has(u.id) && hatAufgabenIn(index, u));
+// null: noch nicht fertig | 'geschafft': alle Pflicht-Meilensteine gemeistert | 'lernpfad': fertig, aber ein Lernziel ist zweimal
+// nur unter dem Ziel geschafft („Lernpfad geschafft“). Gesperrte Meilensteine und Abstecher zählen nicht.
+export function kapitelStand(index, stand, kapitel, einst) {
+  const pflicht = pflichtMeilensteine(index, kapitel, einst);
+  if (!pflicht.length || !pflicht.every((u) => meilensteinDurch(index, stand, u))) return null;
+  return pflicht.every((u) => milestoneStatus(index, stand, u) === 'gemeistert') ? 'geschafft' : 'lernpfad';
+}
+// Das Kapitel, in das ein Kind vorausarbeiten darf: das nächste nach dem Aktuellen Kapitel, wenn die Klasse es erlaubt, das Kind
+// mit dem Aktuellen Kapitel fertig ist, das Tor noch zu ist und das Kapitel Aufgaben hat. Sonst null.
+export function vorausKapitel(pool, index, stand, einst) {
+  if (!einst.voraus || !einst.aktuellesKapitel) return null;
+  const i = pool.kapitel.findIndex((k) => k.id === einst.aktuellesKapitel), naechstes = pool.kapitel[i + 1];
+  if (i < 0 || !naechstes || einst.offeneKapitel.has(naechstes.id)) return null;
+  if (!naechstes.unterkapitel.some((u) => hatAufgabenIn(index, u))) return null;
+  return kapitelStand(index, stand, pool.kapitel[i], einst) ? naechstes.id : null;
+}
+// Die Einstellungen eines Kindes mit dem Tor zum Vorausarbeiten: Das Tor ist offen, das Kapitel beginnt mit dem Einstiegscheck.
+export function mitVorausarbeiten(pool, index, stand, einst) {
+  const id = vorausKapitel(pool, index, stand, einst);
+  if (!id) return einst;
+  return { ...einst, vorausKapitel: id, offeneKapitel: new Set(pool.kapitel.map((k) => k.id).filter((x) => x === id || einst.offeneKapitel.has(x))), einstiegPflicht: new Set([...(einst.einstiegPflicht ?? []), id]) };
+}
+// Für die Lehrkraft: 'voraus' (arbeitet schon im nächsten Kapitel), 'fertig' (mit dem Aktuellen Kapitel fertig) oder null.
+export function kapitelMarke(pool, index, stand, einst) {
+  const k = pool.kapitel.find((x) => x.id === einst.aktuellesKapitel);
+  if (!k || !kapitelStand(index, stand, k, einst)) return null;
+  const naechstes = pool.kapitel[pool.kapitel.indexOf(k) + 1];
+  const dort = naechstes && (stand.einstieg?.[naechstes.id] || stand.versuche.some((v) => v.lernziel && kapitelVon(v.lernziel) === naechstes.id));
+  return dort ? 'voraus' : 'fertig';
+}
+// Was der Bildschirm „Kapitel geschafft“ anbietet. Der Hauptknopf nimmt das erste, was zutrifft: nächstes Kapitel mit offenem Tor,
+// fälliger Rückblick, offene Lernziele früherer Kapitel, nächsthöhere Krone. Sonst ist das Kind fertig. Abstecher sind ein Nebenangebot.
+export function kapitelendeAngebot(pool, index, stand, einst, kapitel, jetzt) {
+  const niveau = (k) => arbeitsniveau(stand, k.id, einst.zielniveau);
+  let zustand = kapitelStand(index, stand, kapitel, einst);
+  // 'heute': Das Kapitel ist noch nicht fertig, aber alle Aufgaben auf dem Weg sind heute schon gelöst (Tagessperre).
+  if (!zustand && einst.zielniveau && !fuehrungsMeilenstein(index, stand, kapitel, einst, niveau(kapitel), jetzt) && !einstiegsZustand(stand, index, kapitel)) zustand = 'heute';
+  if (!zustand) return null;
+  const i = pool.kapitel.indexOf(kapitel);
+  const offen = (k) => einst.offeneKapitel.has(k.id) && !kapitelStand(index, stand, k, einst)
+    && Boolean(einstiegsZustand(stand, index, k) || fuehrungsMeilenstein(index, stand, k, einst, niveau(k), jetzt));
+  const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
+  const abstecher = kapitel.unterkapitel.filter((u) => istAbstecher(u, einst.zielniveau) && !zu.has(u.id) && !nebel.has(u.id) && hatAufgabenIn(index, u) && milestoneStatus(index, stand, u) !== 'gemeistert');
+  const naechstes = pool.kapitel.slice(i + 1).find(offen), frueher = pool.kapitel.slice(0, i).find(offen);
+  let haupt = { art: 'fertig' };
+  if (naechstes) haupt = { art: 'kapitel', kapitel: naechstes };
+  else if (rueckblickAngebot(stand, index, jetzt)) haupt = { art: 'rueckblick' };
+  else if (frueher) haupt = { art: 'frueher', kapitel: frueher };
+  else if (zustand === 'geschafft') {
+    const stufen = pflichtMeilensteine(index, kapitel, einst).map((u) => NIVEAUS.indexOf(krone(index, stand, u)));
+    const hoeher = NIVEAUS[Math.min(...stufen) + 1];
+    if (hoeher && wahlNiveaus(einst.zielniveau).includes(hoeher)) haupt = { art: 'krone', niveau: hoeher };
+  }
+  return { zustand, haupt, abstecher };
+}
+// Eine eigene Purpur-Wahl gilt im neuen Kapitel weiter, wenn das Kind im letzten Kapitel nie abgesunken ist (dann steht die Wahl dort
+// noch auf Purpur, siehe sinkeAb). Gilt nur, solange im neuen Kapitel noch nichts gewählt und nichts gearbeitet ist.
+export function erbeWahl(stand, kapitelId, zielniveau) {
+  if (stand.niveau[kapitelId] || zielniveau === 'E') return false;
+  let vorher = null;
+  for (let i = stand.versuche.length - 1; i >= 0; i--) {
+    const v = stand.versuche[i];
+    if (!eigenerVersuch(v) || !v.lernziel) continue;
+    if (kapitelVon(v.lernziel) === kapitelId) return false;
+    vorher ??= kapitelVon(v.lernziel);
+  }
+  if (!vorher || stand.niveau[vorher] !== 'E') return false;
+  stand.niveau[kapitelId] = 'E';
+  stand.niveauMarke[kapitelId] = stand.versuche.length;
+  (stand.wahlGeerbt ??= {})[kapitelId] = vorher;
+  return true;
+}
 // Mit `niveau` und `zielniveau`: zuerst ein Lernziel, das die Führung in dieser Runde noch nicht erledigt hat (Version 0.60).
 // Mit `niveau` allein: zuerst ein Lernziel, das für die Krone dieser Farbe noch fehlt (ADR 0012).
-export function naechstesLernziel(index, stand, unterkapitel, niveau = null, zielniveau = null) {
+export function naechstesLernziel(index, stand, unterkapitel, niveau = null, zielniveau = null, jetzt = null) {
   const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
-  const fehlt = niveau && (zielniveau ? mit.find((l) => !lernzielErledigt(index, stand, l.id, niveau, zielniveau))
+  const fehlt = niveau && (zielniveau ? mit.find((l) => !lernzielErledigt(index, stand, l.id, niveau, zielniveau, jetzt))
     : mit.find((l) => !lernzielStand(stand, l.id, niveau, index).erreicht));
   return fehlt || mit.find((l) => !stand.lernziele[l.id] && !unterZielAufgegeben(stand, l.id)) || mit.find((l) => !stand.lernziele[l.id]) || mit[0] || null;
 }
@@ -464,12 +549,34 @@ export function naechstesLernziel(index, stand, unterkapitel, niveau = null, zie
 // ---------- Aufgabe auswählen ----------
 // Reihenfolge: noch nie bearbeitet, dann bearbeitet aber nicht gelöst, dann schon gelöst.
 // An einem Niveau-Meilenstein kommen die Aufgaben mindestens von seiner Marke.
-export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.random) {
+// Version 0.67 (ADR 0057, Tagessperre): Mit `jetzt` kommt eine heute schon gelöste Aufgabe heute nicht wieder, auch nicht aus dem
+// Einstiegscheck. Sind heute alle Aufgaben gelöst, gibt es keine (null), außer mit `frei` (das Kind hat das Lernziel selbst gewählt).
+// Eine gerade bearbeitete Aufgabe kommt frühestens nach zwei anderen wieder.
+export const heuteGeloest = (stand, jetzt) => {
+  // Tagesgrenzen in Ortszeit als ISO-Text: Der Vergleich als Text ist schnell, auch bei einem langen Versuchsprotokoll.
+  const d = new Date(jetzt), ids = new Set();
+  if (Number.isNaN(d.getTime())) return ids;
+  const von = new Date(d.getFullYear(), d.getMonth(), d.getDate()).toISOString(), bis = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1).toISOString();
+  for (const v of stand.versuche) if (v.richtig && v.t >= von && v.t < bis) ids.add(v.aufgabe);
+  return ids;
+};
+export function heuteFertig(index, stand, lernzielId, niveau, jetzt) {
   const kandidaten = index.nach.get(`${lernzielId}|${stufeFuer(index, lernzielId, niveau)}`) ?? [];
+  if (kandidaten.length === 0) return false;
+  const heute = heuteGeloest(stand, jetzt);
+  return kandidaten.every((a) => heute.has(a.id));
+}
+export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.random, jetzt = null, frei = false) {
+  let kandidaten = index.nach.get(`${lernzielId}|${stufeFuer(index, lernzielId, niveau)}`) ?? [];
   if (kandidaten.length === 0) return null;
+  if (jetzt) {
+    const heute = heuteGeloest(stand, jetzt);
+    const offen = kandidaten.filter((a) => !heute.has(a.id));
+    if (offen.length) kandidaten = offen; else if (!frei) return null;
+  }
   const geloest = new Set(), bearbeitet = new Set();
   for (const v of stand.versuche) { if (v.einstieg) continue; bearbeitet.add(v.aufgabe); if (v.richtig) geloest.add(v.aufgabe); }
-  const letzte = stand.versuche.at(-1)?.aufgabe;
+  const letzte = stand.versuche.slice(-2).map((v) => v.aufgabe);
   const stufen = [
     kandidaten.filter((a) => !bearbeitet.has(a.id)),
     kandidaten.filter((a) => bearbeitet.has(a.id) && !geloest.has(a.id)),
@@ -478,10 +585,21 @@ export function naechsteAufgabe(index, stand, lernzielId, niveau, zufall = Math.
   // Neue Aufgaben kommen in der Reihenfolge ihrer Nummern. So folgen die Anforderungsbereiche der festen Folge der Niveaustufe
   // (AFB_FOLGEN), und die Aufgaben einer Gruppe bauen aufeinander auf.
   const erste = [...stufen[0]].sort((a, b) => a.id.localeCompare(b.id)).slice(0, 1);
-  for (const stufe of [erste, ...stufen]) {
-    const ohneLetzte = stufe.filter((a) => a.id !== letzte);
-    const auswahl = ohneLetzte.length ? ohneLetzte : stufe;
-    if (auswahl.length) return auswahl[Math.floor(zufall() * auswahl.length)];
+  // Ohne `jetzt` (Beispielklasse, simulierte Schüler) gilt die Auswahl wie bis 0.66: je Stufe nur nicht zweimal direkt dieselbe.
+  if (!jetzt) {
+    for (const stufe of [erste, ...stufen]) {
+      const ohneLetzte = stufe.filter((a) => a.id !== letzte.at(-1));
+      const auswahl = ohneLetzte.length ? ohneLetzte : stufe;
+      if (auswahl.length) return auswahl[Math.floor(zufall() * auswahl.length)];
+    }
+    return null;
+  }
+  // Erst ohne die letzten beiden Aufgaben über alle Stufen, dann ohne die letzte, dann jede.
+  for (const meiden of [letzte, letzte.slice(-1), []]) {
+    for (const stufe of [erste, ...stufen]) {
+      const auswahl = stufe.filter((a) => !meiden.includes(a.id));
+      if (auswahl.length) return auswahl[Math.floor(zufall() * auswahl.length)];
+    }
   }
   return null;
 }
@@ -499,12 +617,18 @@ export function kenntLoesung(stand, aufgabeId, jetzt) {
 // ---------- Münzen ----------
 // Version 0.60 (ADR 0052): Mit `index` beim Üben am Meilenstein bringt eine Aufgabe nur 1 Münze, wenn ihr Lernziel auf ihrer
 // Niveaustufe schon nachgewiesen ist: Silber nach „Silber geschafft“, Gold nach dem Siegel. Volle Münzen gibt es nur für eine bessere Krone.
+// Version 0.67: Warum eine gelöste Aufgabe nur 1 Münze bringt (für den Satz unter „Richtig!“), sonst null.
+// Eine im Einstiegscheck gelöste Aufgabe ist keine Wiederholung: Dort gab es keine Münzen.
+export function einMuenzGrund(stand, aufgabe, bearbeitung, index = null) {
+  if (bearbeitung.bekannt) return 'bekannt'; // Lösung heute schon gesehen (ADR 0031)
+  if (stand.versuche.some((v) => v.aufgabe === aufgabe.id && v.richtig && !v.einstieg)) return 'wiederholt';
+  if (index && aufgabe.niveau !== 'F' && lernzielStand(stand, aufgabe.lernziel, aufgabe.niveau, index).erreicht) return 'nachgewiesen';
+  if (hatKarte(bearbeitung, 'loesungsschritt')) return 'loesungsschritt';
+  return null;
+}
 export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau, index = null) {
   if (!bearbeitung.geloest) return 0;
-  if (bearbeitung.bekannt) return 1; // Lösung heute schon gesehen (ADR 0031)
-  if (stand.versuche.some((v) => v.aufgabe === aufgabe.id && v.richtig)) return 1; // Wiederholung
-  if (index && aufgabe.niveau !== 'F' && lernzielStand(stand, aufgabe.lernziel, aufgabe.niveau, index).erreicht) return 1; // schon nachgewiesen
-  if (hatKarte(bearbeitung, 'loesungsschritt')) return 1;
+  if (einMuenzGrund(stand, aufgabe, bearbeitung, index)) return 1;
   const abstand = NIVEAUS.indexOf(aufgabe.niveau) - NIVEAUS.indexOf(zielniveau);
   let m = abstand === 0 ? MUENZEN.ziel : abstand > 0 ? MUENZEN.darueber : MUENZEN.training;
   if (aufgabe.afb === 3) m *= AFB3_ZUSCHLAG; // Aufgaben zum Beurteilen und Begründen bringen die Hälfte mehr
@@ -520,10 +644,14 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau, index = nul
 // Mit `{ rueckblick: true }` zählt die Aufgabe zum Rückblick und nicht zur Selbsteinschätzung.
 // Mit `{ seitenblick: true }` bringt sie nur Münzen: kein Siegel, keine Krone, keine Selbsteinschätzung, keine Grundlagen-Schleife (ADR 0016).
 // Mit `{ sonderauftrag: id }` zählt sie wie die Brücke fürs Lernziel, aber nicht für Selbsteinschätzung und Grundlagen-Schleife (ADR 0021).
-export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false, sonderauftrag = null } = {}) {
+export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false, sonderauftrag = null, nachloesen = false } = {}) {
   const eigen = !rueckblick && !bruecke && !seitenblick && !sonderauftrag;
   const bekannt = bearbeitung.geloest && kenntLoesung(stand, aufgabe.id, jetzt);
   const muenzen = muenzenFuer(stand, aufgabe, { ...bearbeitung, bekannt }, zielniveau, eigen ? index : null);
+  const einMuenze = bearbeitung.geloest ? einMuenzGrund(stand, aufgabe, { ...bearbeitung, bekannt }, eigen ? index : null) : null;
+  // Version 0.67: Wer eine Aufgabe heute schon gelöst oder ihre Lösung gesehen hat, bekommt keinen neuen Heftcode.
+  // Das Nachlösen aus dem Heftcheck (`nachloesen`) bekommt wie bisher einen neuen Code: Dort soll das Kind noch einmal ins Heft schreiben.
+  const heuteSchon = !nachloesen && (bekannt || heuteGeloest(stand, jetzt).has(aufgabe.id));
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
   stand.versuche.push({
@@ -536,7 +664,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   });
   // Heftcode für gelöste Aufgaben ab M (ADR 0014): Der Schüler schreibt ihn mit dem Ergebnis ins Heft.
   let heft = null;
-  if (bearbeitung.geloest && NIVEAUS.indexOf(aufgabe.niveau) >= NIVEAUS.indexOf(HEFT_AB)) {
+  if (bearbeitung.geloest && !heuteSchon && NIVEAUS.indexOf(aufgabe.niveau) >= NIVEAUS.indexOf(HEFT_AB)) {
     stand.heftNr = (stand.heftNr ?? 0) + 1;
     heft = `H${stand.heftNr}`;
     stand.versuche.at(-1).heft = heft;
@@ -574,7 +702,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   const grundlage = eigen && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
   // Erstmals ohne Beispiel und Lösungsschritt (ADR 0017): nur beim Üben am Meilenstein.
   const ohneHilfe = eigen && erstmalsOhneHilfe(stand);
-  return { muenzen, neuesLernziel, unterZielNeu, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe, bekannt };
+  return { muenzen, neuesLernziel, unterZielNeu, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe, bekannt, einMuenze };
 }
 
 // ---------- Rückblick (ADR 0014) ----------
@@ -730,7 +858,9 @@ export function trageEinstiegEin(stand, kapitelId, aufgabe, bearbeitung, jetzt) 
   if (e.erledigt.length < e.aufgaben.length) return { fertig: false, nummer: e.erledigt.length, gesamt: e.aufgaben.length };
   e.fertig = jetzt;
   e.empfehlung = einstiegsEmpfehlung(e.erledigt);
-  return { fertig: true, gesamt: e.aufgaben.length, richtig: e.erledigt.filter((x) => x.richtig).length, empfehlung: e.empfehlung };
+  // Version 0.67: Der Vorschlag nennt seinen Grund. Es zählen nur die Gold-Aufgaben des Einstiegschecks.
+  const gold = e.erledigt.filter((x) => x.niveau === 'M');
+  return { fertig: true, gesamt: e.aufgaben.length, richtig: e.erledigt.filter((x) => x.richtig).length, empfehlung: e.empfehlung, gold: { richtig: gold.filter((x) => x.richtig).length, gesamt: gold.length } };
 }
 export function ueberspringeEinstieg(stand, kapitelId, jetzt) {
   (stand.einstieg ??= {})[kapitelId] = { uebersprungen: jetzt };
@@ -1404,6 +1534,7 @@ export function einstellungen(klassendatei, code, pool) {
     sicherheitsangabe: Boolean(k.sicherheitsangabe),
     ton: Boolean(k.ton),          // dezenter Ton bei richtigen Aufgaben, standardmäßig aus (ADR 0016)
     rast: k.rast !== false,       // Rast nach jedem vierten Wegstück, standardmäßig an (ADR 0016)
+    voraus: k.vorausarbeiten !== false, // Wer fertig ist, darf ein Kapitel vorausarbeiten, standardmäßig an (ADR 0057)
     einstiegPflicht: new Set(k.einstiegPflicht ?? []),
     hilfeAntwort: k.hilfe?.[code] ?? null,
     nachricht: k.nachrichten?.[code] ?? null,

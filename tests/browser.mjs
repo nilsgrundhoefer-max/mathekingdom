@@ -483,8 +483,9 @@ async function weiter(seite, wahl = '#weiter') {
     await weiter(seite, '#weiter, .vorschlag button.schlicht');
   }
   assert.match(await seite.innerText('#neue-krone'), /Neue Krone: Silber/);
-  assert.match(await seite.innerText('#einschaetzung'), /um Silber gespielt. Geschafft hast du Silber/);
-  assert.match(await seite.innerText('.ergebnis'), /brauchst du Gold/);
+  // Version 0.67 (Audit L145): Stimmen Wahl und Krone überein, steht kein Satz zur Selbsteinschätzung da, und die Meldung sagt, wie es weitergeht.
+  assert.equal(await seite.locator('#einschaetzung').count(), 0);
+  assert.match(await seite.innerText('.ergebnis'), /Ein guter Zwischenschritt: Später holst du dir hier Gold/);
   assert.equal(await seite.locator('#neues-siegel').count(), 0, 'kein Siegel unter dem Zielniveau');
   await foto(seite, 'krone-silber');
   await seite.click('.ergebnis button:has-text("Zur Regionskarte")');
@@ -611,7 +612,7 @@ async function weiter(seite, wahl = '#weiter') {
   for (let i = 0; i < 8; i++) {
     await seite.waitForSelector('section.aufgabe');
     assert.equal(await seite.locator('aside.hilfen').count(), 0);
-    assert.match(await seite.innerText('.einstiegmarke'), /Einstiegscheck \d von \d/);
+    assert.match(await seite.innerText('.einstiegmarke'), /Einstiegscheck · Aufgabe \d von \d/);
     if (i === 0) await foto(seite, 'einstieg-aufgabe');
     const id = await seite.getAttribute('section.aufgabe', 'data-aufgabe');
     await antworte(seite, pool.aufgaben.find((a) => a.id === id).niveau === 'G');
@@ -2641,7 +2642,7 @@ async function weiter(seite, wahl = '#weiter') {
   // Jetzt ist ein Seitenblick fällig: Er sagt, wo es danach weitergeht.
   await seite.waitForSelector('section.aufgabe');
   if (await seite.locator('#seitenblick-marke').count()) {
-    assert.equal(await seite.innerText('#seitenblick-satz'), 'Kurzer Blick zurück. Danach geht es hier weiter: „Dividieren“.');
+    assert.equal(await seite.innerText('#seitenblick-satz'), 'Eine Aufgabe zu einem Lernziel, das du schon kannst. Danach geht es hier weiter: „Dividieren“.');
     await foto(seite, 'seitenblick-satz');
     await antworte(seite, true);
     await weiter(seite, '#weiter');

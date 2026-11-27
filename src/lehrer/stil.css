@@ -432,3 +432,7 @@ body { margin: 0; background: #f4f1ea; }
 .stundentabelle th .nk { vertical-align: middle; }
 .stundentabelle th.zahl { text-align: right; }
 #mathekingdom-lehrer .erster-durchgang { background: #eef1f6; border-left: 4px solid #7b8796; padding: 8px 12px; border-radius: 6px; }
+
+/* Version 0.67: Marke „fertig“ oder „voraus“ auf der Sitzplan-Kachel (ADR 0057) */
+#mathekingdom-lehrer .platz .kapitelmarke { grid-column: 1 / -1; justify-self: start; font-size: .72rem; font-weight: 700; border-radius: 999px; padding: 1px 8px; background: #e3f1ea; color: #1d5a48; border: 1px solid #2e7d6b; }
+#mathekingdom-lehrer .platz .kapitelmarke.voraus { background: #efe6f7; color: #4a2a6b; border-color: #6b3fa0; }
