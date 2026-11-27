@@ -114,7 +114,7 @@ export function gradnetz() {
     () => lageFrage((n) => Z(`Wo liegt ${n} ungefähr?`), 'amerika', h3('Alle Städte liegen westlich vom Nullmeridian.', 'Prüfe dann: über oder unter dem Äquator?', 'Schreibe zuerst die Breite.')),
     () => welcherOrt((l) => Z(`Welche Stadt liegt bei ${l}?`), wahl(['afrika', 'amerika']), h3('Suche zuerst die Breite am linken Rand.', 'Achte auf N und S.', 'Suche dann die Länge am unteren Rand.')),
     () => { const x = netzMit('amerika', 4, { passt: (l) => l.some((y) => y.b < 0) }), o = x.orte.find((y) => y.b < 0), k = kind();
-      return auswahl(Z(`${k} sagt: „${o.n} liegt bei ${breiteText(-o.b)}, ${laengeText(o.l)}.“`, 'Hat das Kind recht?'), [opt(`Nein.\n${o.n} liegt südlich vom Äquator.\nRichtig ist ${lage(o)}.`, true), opt('Ja.\nDie Angabe stimmt.', false, 'gradnetz-richtung')],
+      return auswahl(Z(`${k} sagt: „${o.n} liegt bei ${breiteText(-o.b)}, ${laengeText(o.l)}.“`, `Hat ${k} recht?`), [opt(`Nein.\n${o.n} liegt südlich vom Äquator.\nRichtig ist ${lage(o)}.`, true), opt('Ja.\nDie Angabe stimmt.', false, 'gradnetz-richtung')],
         h3('Schau, ob die Stadt über oder unter dem Äquator liegt.', 'Unter dem Äquator heißt es S.', 'Vergleiche mit der Angabe des Kindes.'), { bild: x.bild, nachweis: [U(false), { art: 'gradnetz', ort: o.n, b: o.b, l: o.l }] }); },
   ]);
   sechs(N1, 'M', [

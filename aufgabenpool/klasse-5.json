@@ -20747,7 +20747,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat er gestellt?",
+   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat sie gestellt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -20988,7 +20988,7 @@
     "modellieren"
    ],
    "format": "auswahl",
-   "text": "Mia will diese Frage stellen:\n„Welches Obst isst du am liebsten?“\nWelche Antworten soll er zur Auswahl geben?",
+   "text": "Mia will diese Frage stellen:\n„Welches Obst isst du am liebsten?“\nWelche Antworten soll sie zur Auswahl geben?",
    "mehrfach": false,
    "optionen": [
     {
@@ -21179,7 +21179,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Mara hat eine Umfrage gemacht.\nDas ist die Strichliste.\nWelche Frage hat er gestellt?",
+   "text": "Mara hat eine Umfrage gemacht.\nDas ist die Strichliste.\nWelche Frage hat sie gestellt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -21622,7 +21622,7 @@
     "modellieren"
    ],
    "format": "auswahl",
-   "text": "Lena hat nur Kinder im Fußballverein befragt.\nEr sagt: „Fußball ist der beliebteste Sport an unserer Schule.“\nWas meinst du dazu?",
+   "text": "Lena hat nur Kinder im Fußballverein befragt.\nSie sagt: „Fußball ist der beliebteste Sport an unserer Schule.“\nWas meinst du dazu?",
    "mehrfach": false,
    "optionen": [
     {
@@ -21638,13 +21638,13 @@
      "richtig": false
     },
     {
-     "text": "Stimmt, denn er hat viele Kinder gefragt.",
+     "text": "Stimmt, denn sie hat viele Kinder gefragt.",
      "richtig": false
     }
    ],
    "hilfen": {
-    "tipp": "Überlege, wen er gefragt hat. Antworten diese Kinder wie alle anderen?",
-    "loesungsschritt": "Wer im Verein ist, mag diesen Sport oder dieses Tier besonders."
+    "tipp": "Überlege, wen sie gefragt hat. Antworten diese Kinder wie alle anderen?",
+    "loesungsschritt": "Wer im Fußballverein ist, mag Fußball besonders."
    },
    "nachweis": [
     {
@@ -21663,7 +21663,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat er gestellt?",
+   "text": "Lena hat eine Umfrage gemacht.\nDas ist das Diagramm dazu.\nWelche Frage hat sie gestellt?",
    "mehrfach": false,
    "optionen": [
     {
@@ -40541,7 +40541,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle die leeren Felder.",
-    "beispiel": "6 Plättchen: Bis 10 fehlen 4.",
+    "beispiel": "8 Plättchen: Bis 10 fehlen 2.",
     "loesungsschritt": "Zähle von 4 weiter bis 10."
    },
    "bild": {
@@ -40650,7 +40650,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle in Zehnerschritten bis 100.",
-    "beispiel": "Von 70 bis 100 fehlen 30.",
+    "beispiel": "Von 60 bis 100 fehlen 40.",
     "loesungsschritt": "Von 70 bis 100 sind es 3 Zehnerschritte."
    },
    "bild": {
@@ -43398,7 +43398,7 @@
    ],
    "hilfen": {
     "tipp": "Rechne nacheinander. Folge den Sprüngen.",
-    "beispiel": "3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9.",
+    "beispiel": "5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8.",
     "loesungsschritt": "3 + 4 = 7."
    },
    "bild": {
@@ -51545,7 +51545,7 @@
    },
    "hilfen": {
     "tipp": "Die Klammer sagt: Das rechnest du zuerst.",
-    "beispiel": "45 − (12 + 8): Klammer 12 + 8 = 20. Dann 45 − 20 = 25.",
+    "beispiel": "60 − (25 + 5): Klammer 25 + 5 = 30. Dann 60 − 30 = 30.",
     "loesungsschritt": "12 + 8 = 20."
    },
    "bild": {
@@ -124812,7 +124812,7 @@
    ],
    "hilfen": {
     "tipp": "Zurück bekommst du den Unterschied: gegeben minus Preis.",
-    "beispiel": "2 € − 1 € 50 ct = 50 ct",
+    "beispiel": "5 € − 3 € 50 ct = 1 € 50 ct",
     "loesungsschritt": "Rechne in Cent: 2 € sind 200 ct."
    },
    "daten": {
@@ -126981,7 +126981,7 @@
    "teile": [
     {
      "format": "zahl",
-     "text": "Wie viel cm schneidet das Kind zusammen ab?",
+     "text": "Wie viel cm schneidet Sara zusammen ab?",
      "loesung": 20,
      "einheit": "cm",
      "typischeFehler": [
@@ -130872,7 +130872,7 @@
    ],
    "hilfen": {
     "tipp": "Zähle zuerst die Kästchen des Radius.",
-    "beispiel": "2 Kästchen sind 1 cm.",
+    "beispiel": "6 Kästchen sind 3 cm.",
     "loesungsschritt": "Teile die Zahl der Kästchen durch 2."
    },
    "einheit": "cm",
@@ -134122,7 +134122,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Emre sagt: „Der Scheitel von α ist A.“\nHat das Kind recht?",
+   "text": "Emre sagt: „Der Scheitel von α ist A.“\nHat Emre recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -134607,7 +134607,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lina schreibt für den Winkel α: ∢BSA. Hat das Kind recht?",
+   "text": "Lina schreibt für den Winkel α: ∢BSA. Hat Lina recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -136044,7 +136044,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ida sagt: „Der Bogen von α ist größer.“\n„Also ist α der größere Winkel.“\nHat das Kind recht?",
+   "text": "Ida sagt: „Der Bogen von α ist größer.“\n„Also ist α der größere Winkel.“\nHat Ida recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -141026,7 +141026,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Elif sagt: „Recife liegt bei 8° N, 35° W.“\nHat das Kind recht?",
+   "text": "Elif sagt: „Recife liegt bei 8° N, 35° W.“\nHat Elif recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -142280,7 +142280,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ole misst den Winkel α.\nDas Kind liest 20° ab.\nStimmt das?",
+   "text": "Ole misst den Winkel α.\nOle liest 20° ab.\nStimmt das?",
    "mehrfach": false,
    "optionen": [
     {
@@ -142625,7 +142625,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Jonas misst den Winkel α.\nDas Kind liest 60° ab.\nHat es recht?",
+   "text": "Jonas misst den Winkel α.\nJonas liest 60° ab.\nStimmt das?",
    "mehrfach": false,
    "optionen": [
     {
@@ -142690,7 +142690,7 @@
     "symbolisch"
    ],
    "format": "auswahl",
-   "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat das Kind falsch gemacht?",
+   "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat Ben falsch gemacht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -143032,7 +143032,7 @@
     "symbolisch"
    ],
    "format": "auswahl",
-   "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht?",
+   "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat Jonas falsch gemacht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -145663,7 +145663,7 @@
     "kommunizieren"
    ],
    "format": "auswahl",
-   "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?",
+   "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?",
    "mehrfach": false,
    "optionen": [
     {
@@ -164408,7 +164408,7 @@
    ],
    "hilfen": {
     "tipp": "Die Teile sind gleich groß. Mehr gefärbte Teile sind mehr.",
-    "beispiel": "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.",
+    "beispiel": "Es gilt 1⁄4 < 3⁄4. Denn 1 Teil ist weniger als 3 Teile.",
     "loesungsschritt": "Der Nenner ist gleich. Vergleiche nur die Zähler."
    },
    "bild": {
@@ -165667,7 +165667,7 @@
    },
    "hilfen": {
     "tipp": "Teile zuerst durch den Nenner. Nimm das Ergebnis dann mit dem Zähler mal.",
-    "beispiel": "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.",
+    "beispiel": "2⁄3 von 12 kg: 12 kg : 3 = 4 kg und 4 kg · 2 = 8 kg.",
     "loesungsschritt": "Rechne zuerst einen Teil aus. Wie viele Teile sind gemeint?"
    },
    "bild": {

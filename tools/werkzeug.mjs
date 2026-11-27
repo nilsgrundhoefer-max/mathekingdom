@@ -138,6 +138,10 @@ export const UEBERFLUESSIG = (zahl) => ({ zahl, grund: 'überflüssige Angabe' }
 
 export const KINDER = ['Mia', 'Tom', 'Lena', 'Ali', 'Ben', 'Mara', 'Jonas', 'Finn', 'Ida', 'Ole', 'Lina', 'Paul', 'Emre', 'Noah', 'Elif', 'Sara'];
 export const kind = () => wahl(KINDER);
+// Version 0.65: Das Pronomen passt zum Namen. `er(name)` gibt „er“ oder „sie“, `Er(name)` dasselbe am Satzanfang.
+export const MAEDCHEN = new Set(['Mia', 'Lena', 'Mara', 'Ida', 'Lina', 'Elif', 'Sara']);
+export const er = (name) => (MAEDCHEN.has(name) ? 'sie' : 'er');
+export const Er = (name) => (MAEDCHEN.has(name) ? 'Sie' : 'Er');
 export const zweiKinder = () => mische(KINDER).slice(0, 2);
 
 // ---------- Fehlvorstellungen ----------
@@ -1154,8 +1158,67 @@ const schluessel = (a) => a.text + JSON.stringify(a.optionen?.map((o) => o.text)
 // Heftaufgabe (Nils, 2026-11-25, ADR 0047): Eine Aufgabe, die im Heft bearbeitet wird, trägt das Kennzeichen `heftaufgabe`.
 // Das Dashboard zeigt darüber das Heftband. Erkannt wird sie an ihrem Auftrag: „Im Heft: …“ oder „Zeichne … in dein Heft“.
 export const HEFTAUFTRAG = /(?:^|\n|[.:!] )Im Heft:|\b(?:Zeichne|Konstruiere|Rechne|Dividiere|Multipliziere|Addiere|Subtrahiere)\b[^.?!\n]*?\b(?:in dein Heft|ins Heft|im Heft)\b/;
+// Version 0.65: Ein Beispielkärtchen darf die Aufgabe nicht vorrechnen. Die Beispiele sind feste Sätze, die Zahlen der Aufgabe
+// sind gezogen; treffen beide zusammen, stünde die Lösung im Beispiel. Dann gilt das Ersatzbeispiel mit anderen Zahlen.
+const zahlenIn = (s) => new Set(String(s ?? '').match(/\d+(?:[,\u2044]\d+)?/g) ?? []);
+const loesungszahlen = (a) => {
+  const L = new Set(), dazu = (w) => { if (['number', 'string'].includes(typeof w)) zahlenIn(String(w).replace('.', ',')).forEach((x) => L.add(x)); };
+  dazu(a.loesung);
+  Object.values(a.luecken ?? {}).forEach((l) => dazu(Array.isArray(l) ? l[0] : l?.loesung));
+  (a.optionen ?? []).filter((o) => o.richtig).forEach((o) => dazu(o.text));
+  (a.teile ?? []).forEach((t) => dazu(t?.loesung));
+  return L;
+};
+export function beispielVerraet(a, beispiel = a.hilfen?.beispiel) {
+  if (!beispiel) return false;
+  const zb = zahlenIn(beispiel), zt = zahlenIn(String(a.text ?? '').replace(/\{\{\w+\}\}/g, '')), L = loesungszahlen(a);
+  if (!L.size || ![...L].every((x) => zb.has(x))) return false;
+  // Aufgabe nur im Bild (keine Zahl im Text): Steht der gesuchte Bruch im Beispiel, ist es dieselbe Aufgabe.
+  if (zt.size < 2) return zt.size === 0 && typeof a.loesung === 'string' && a.loesung.includes('\u2044');
+  return [...zt].every((x) => zb.has(x));
+}
+export const ERSATZBEISPIEL = {
+  "6 Plättchen: Bis 10 fehlen 4.": "8 Plättchen: Bis 10 fehlen 2.",
+  "Von 70 bis 100 fehlen 30.": "Von 60 bis 100 fehlen 40.",
+  "3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9.": "5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8.",
+  "45 − (12 + 8): Klammer 12 + 8 = 20. Dann 45 − 20 = 25.": "60 − (25 + 5): Klammer 25 + 5 = 30. Dann 60 − 30 = 30.",
+  "2 € − 1 € 50 ct = 50 ct": "5 € − 3 € 50 ct = 1 € 50 ct",
+  "2 Kästchen sind 1 cm.": "6 Kästchen sind 3 cm.",
+  "Es gilt 1⁄3 < 2⁄3. Denn 1 Teil ist weniger als 2 Teile.": "Es gilt 1⁄4 < 3⁄4. Denn 1 Teil ist weniger als 3 Teile.",
+  "3⁄4 von 8 kg: 8 kg : 4 = 2 kg und 2 kg · 3 = 6 kg.": "2⁄3 von 12 kg: 12 kg : 3 = 4 kg und 4 kg · 2 = 8 kg.",
+  "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.": "Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3.",
+  "Bei 5 Strichen von 0 bis 1 sind es 4 Abstände.": "Bei 4 Strichen von 0 bis 1 sind es 3 Abstände.",
+  "1⁄2 = 2⁄4, denn 1 · 2 = 2 und 2 · 2 = 4.": "1⁄3 = 2⁄6, denn 1 · 2 = 2 und 3 · 2 = 6.",
+  "1⁄2 + 1⁄4 = 2⁄4 + 1⁄4 = 3⁄4. Aus einem Halben werden zwei Viertel.": "1⁄3 + 1⁄6 = 2⁄6 + 1⁄6 = 3⁄6. Aus einem Drittel werden zwei Sechstel.",
+  "1⁄2 + 1⁄6 = 3⁄6 + 1⁄6 = 4⁄6 = 2⁄3.": "1⁄2 + 1⁄10 = 5⁄10 + 1⁄10 = 6⁄10 = 3⁄5.",
+  "1⁄2 + 1⁄4 + 1⁄8 = 4⁄8 + 2⁄8 + 1⁄8 = 7⁄8.": "1⁄3 + 1⁄6 + 1⁄12 = 4⁄12 + 2⁄12 + 1⁄12 = 7⁄12.",
+  "2 · 1⁄2 = 2⁄2 = 1. Zwei Halbe sind ein Ganzes.": "3 · 1⁄3 = 3⁄3 = 1. Drei Drittel sind ein Ganzes.",
+  "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
+  "4⁄5 reicht für 2 Stunden. Eine Stunde braucht 4⁄5 : 2 = 2⁄5.": "6⁄7 reicht für 3 Stunden. Eine Stunde braucht 6⁄7 : 3 = 2⁄7.",
+  "2⁄3 Kuchen für 4 Kinder: 2⁄3 : 4 = 2⁄12 = 1⁄6.": "3⁄4 Kuchen für 6 Kinder: 3⁄4 : 6 = 3⁄24 = 1⁄8.",
+  "2⁄3 von 3⁄4 l sind 2⁄3 · 3⁄4 l = 6⁄12 l = 1⁄2 l.": "1⁄2 von 4⁄5 l sind 1⁄2 · 4⁄5 l = 4⁄10 l = 2⁄5 l.",
+  "(1⁄7 + 2⁄7) · 2 = 3⁄7 · 2 = 6⁄7.": "(1⁄9 + 3⁄9) · 2 = 4⁄9 · 2 = 8⁄9.",
+  "Eine Tüte: 1⁄7 kg + 2⁄7 kg = 3⁄7 kg. Zwei Tüten: 2 · 3⁄7 kg = 6⁄7 kg.": "Eine Tüte: 1⁄9 kg + 3⁄9 kg = 4⁄9 kg. Zwei Tüten: 2 · 4⁄9 kg = 8⁄9 kg.",
+  "5 € − 1,20 €: 5 € − 1 € = 4 €. Dann 4 € − 20 ct = 3,80 €.": "10 € − 2,30 €: 10 € − 2 € = 8 €. Dann 8 € − 30 ct = 7,70 €.",
+  "2 · 0,3 = 2 · 3 Zehntel = 6 Zehntel = 0,6.": "4 · 0,2 = 4 · 2 Zehntel = 8 Zehntel = 0,8.",
+  "Turm aus 2 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 2 = 8 Quadrate. Zusammen 10.": "Turm aus 4 Würfeln: oben und unten 2 Quadrate, an den Seiten 4 · 4 = 16 Quadrate. Zusammen 18.",
+  "Start bei −3, dann 5 Schritte nach rechts: Das Ziel ist 2.": "Start bei −4, dann 7 Schritte nach rechts: Das Ziel ist 3.",
+  "Start bei −2, dann 6 nach rechts: 4. Dann 5 nach links: −1.": "Start bei −3, dann 8 nach rechts: 5. Dann 7 nach links: −2.",
+  "4 + (−7) = −3. Du gehst von 4 aus 7 Schritte nach links.": "2 + (−5) = −3. Du gehst von 2 aus 5 Schritte nach links.",
+  "−2 + 5 = 3. Der Aufzug hält im Stockwerk 3.": "−4 + 6 = 2. Der Aufzug hält im Stockwerk 2.",
+  "6 + (−4) = 6 − 4 = 2.": "9 + (−5) = 9 − 5 = 4.",
+  "−25 + 40 − 15 = 40 − 25 − 15 = 40 − 40 = 0.": "−35 + 50 − 15 = 50 − 35 − 15 = 50 − 50 = 0.",
+  "(−72) : (−8) = 9. Minus geteilt durch Minus ergibt Plus.": "(−42) : (−6) = 7. Minus geteilt durch Minus ergibt Plus.",
+  "(−15) : 3 = −5. Nach 1 Minute ist er bei −5 m.": "(−12) : 4 = −3. Nach 1 Minute ist er bei −3 m.",
+  "(−18) : 2 = −9. Der Weg bis −18 besteht aus 2 Sprüngen von je 9 nach links.": "(−14) : 2 = −7. Der Weg bis −14 besteht aus 2 Sprüngen von je 7 nach links.",
+  "Von −7 °C aus 3 Grad nach oben: −4 °C.": "Von −9 °C aus 4 Grad nach oben: −5 °C.",
+  "Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4 und nicht 5⁄8.": "Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3 und nicht 4⁄6.",
+  "7 Plättchen: Bis 10 fehlen 3.": "8 Plättchen: Bis 10 fehlen 2.",
+  "2 € − 1 € 50 ct sind 200 ct − 150 ct = 50 ct.": "5 € − 3 € 50 ct sind 500 ct − 350 ct = 150 ct."
+};
 function nachbearbeiten(a, niveau) {
   if (HEFTAUFTRAG.test(a.text ?? '')) a.heftaufgabe = true;
+  if (beispielVerraet(a) && ERSATZBEISPIEL[a.hilfen.beispiel]) a.hilfen = { ...a.hilfen, beispiel: ERSATZBEISPIEL[a.hilfen.beispiel] };
   if (a.optionen) {
     // Einfache Sprache auf F und G: auch in den Antworten steht jeder Satz in einer eigenen Zeile.
     if (niveau === 'F' || niveau === 'G') a.optionen = a.optionen.map((o) => ({ ...o, text: o.text.replace(/(?<=[.?!]) (?=[A-ZÄÖÜ„\d])/g, '\n') }));

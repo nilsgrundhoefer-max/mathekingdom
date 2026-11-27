@@ -151,7 +151,7 @@ export function dreiecke() {
       h2('Suche den größten Winkel des Dreiecks.', 'Vergleiche ihn mit einem rechten Winkel.'), { frage: 'winkel' }),
     () => { const a = zz(3, 9), b = suche(() => zz(2, 12), (x) => x !== a && x < 2 * a); return ausDaten(`Ein Dreieck hat die Seiten ${seitenSatz(mische([a, a, b]))}. Welche Namen passen? Kreuze alle an.`, { seiten: [a, a, b] }, ['gleichseitig', 'gleichschenklig', 'unregelmäßig'],
       h2('Vergleiche die drei Seitenlängen.', 'Zwei gleich lange Seiten heißen Schenkel, die dritte heißt Basis.')); },
-    () => { const k = kind(); return auswahl(`${k} behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?`, [opt('Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.', true), opt('Ja. Zum Beispiel, wenn man ein Quadrat halbiert.', false, 'dreieck-art'), opt('Ja, aber nur bei einem gleichseitigen Dreieck.', false, 'dreieck-art')],
+    () => { const k = kind(); return auswahl(`${k} behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat ${k} recht?`, [opt('Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.', true), opt('Ja. Zum Beispiel, wenn man ein Quadrat halbiert.', false, 'dreieck-art'), opt('Ja, aber nur bei einem gleichseitigen Dreieck.', false, 'dreieck-art')],
       h2('Zeichne eine Strecke und an beiden Enden eine Senkrechte.', 'Prüfe, ob sich die beiden Senkrechten treffen.'), { nachweis: [U(false)] }); },
   ]);
   sechs(D1, 'E', [

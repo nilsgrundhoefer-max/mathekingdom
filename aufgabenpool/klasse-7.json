@@ -8484,7 +8484,7 @@
    ],
    "hilfen": {
     "tipp": "Nach rechts werden die Zahlen größer, nach links werden sie kleiner.",
-    "beispiel": "Start bei −3, dann 5 Schritte nach rechts: Das Ziel ist 2.",
+    "beispiel": "Start bei −4, dann 7 Schritte nach rechts: Das Ziel ist 3.",
     "loesungsschritt": "Lege den Finger auf den Start. Zähle die Schritte Strich für Strich."
    },
    "nachweis": [
@@ -8572,7 +8572,7 @@
    ],
    "hilfen": {
     "tipp": "Gehe einen Schritt nach dem anderen.",
-    "beispiel": "Start bei −2, dann 6 nach rechts: 4. Dann 5 nach links: −1.",
+    "beispiel": "Start bei −3, dann 8 nach rechts: 5. Dann 7 nach links: −2.",
     "loesungsschritt": "Gehe erst nach rechts. Starte dort neu und gehe nach links."
    },
    "nachweis": [
@@ -9465,7 +9465,7 @@
    ],
    "hilfen": {
     "tipp": "Starte bei der ersten Zahl. Plus eine positive Zahl geht nach rechts, plus eine negative Zahl geht nach links.",
-    "beispiel": "4 + (−7) = −3. Du gehst von 4 aus 7 Schritte nach links.",
+    "beispiel": "2 + (−5) = −3. Du gehst von 2 aus 5 Schritte nach links.",
     "loesungsschritt": "Lege den Finger auf die erste Zahl. Gehe so viele Schritte, wie der Bogen zeigt."
    },
    "nachweis": [
@@ -10681,7 +10681,7 @@
    ],
    "hilfen": {
     "tipp": "Nach oben heißt: plus rechnen. An der Zahlengeraden geht es nach rechts.",
-    "beispiel": "−2 + 5 = 3. Der Aufzug hält im Stockwerk 3.",
+    "beispiel": "−4 + 6 = 2. Der Aufzug hält im Stockwerk 2.",
     "loesungsschritt": "Starte beim Stockwerk mit dem Minus. Zähle über die Null hinweg nach rechts."
    },
    "nachweis": [
@@ -13404,7 +13404,7 @@
    },
    "hilfen": {
     "tipp": "Plus und Minus wird Minus. Minus und Minus wird Plus.",
-    "beispiel": "6 + (−4) = 6 − 4 = 2.",
+    "beispiel": "9 + (−5) = 9 − 5 = 4.",
     "loesungsschritt": "Schau auf die beiden Zeichen vor der Zahl. Sind sie gleich, wird es Plus. Sind sie verschieden, wird es Minus."
    },
    "bild": {
@@ -14819,7 +14819,7 @@
    },
    "hilfen": {
     "tipp": "Fasse die beiden Zahlen mit Minus zusammen. Ziehe sie dann auf einmal ab.",
-    "beispiel": "−25 + 40 − 15 = 40 − 25 − 15 = 40 − 40 = 0.",
+    "beispiel": "−35 + 50 − 15 = 50 − 35 − 15 = 50 − 50 = 0.",
     "loesungsschritt": "Addiere die Zahlen, die ein Minus haben. Subtrahiere ihre Summe von der Zahl mit Plus."
    },
    "bild": {
@@ -17897,7 +17897,7 @@
    ],
    "hilfen": {
     "tipp": "Beim Dividieren gilt: Gleiche Vorzeichen ergeben Plus, verschiedene Vorzeichen ergeben Minus.",
-    "beispiel": "(−72) : (−8) = 9. Minus geteilt durch Minus ergibt Plus.",
+    "beispiel": "(−42) : (−6) = 7. Minus geteilt durch Minus ergibt Plus.",
     "loesungsschritt": "Bestimme zuerst das Vorzeichen. Teile dann die Zahlen ohne Vorzeichen."
    },
    "nachweis": [
@@ -18533,7 +18533,7 @@
    ],
    "hilfen": {
     "tipp": "Der Weg wird gleichmäßig auf die Minuten verteilt.",
-    "beispiel": "(−15) : 3 = −5. Nach 1 Minute ist er bei −5 m.",
+    "beispiel": "(−12) : 4 = −3. Nach 1 Minute ist er bei −3 m.",
     "loesungsschritt": "Zähle die Striche unter einem Bogen. Der Sprung geht nach links."
    },
    "nachweis": [
@@ -18593,7 +18593,7 @@
    ],
    "hilfen": {
     "tipp": "Teilen heißt: Der Weg wird in gleich lange Sprünge aufgeteilt.",
-    "beispiel": "(−18) : 2 = −9. Der Weg bis −18 besteht aus 2 Sprüngen von je 9 nach links.",
+    "beispiel": "(−14) : 2 = −7. Der Weg bis −14 besteht aus 2 Sprüngen von je 7 nach links.",
     "loesungsschritt": "Zähle die Striche unter einem Bogen. Der Sprung geht nach links, also ist er negativ."
    },
    "nachweis": [
@@ -21709,7 +21709,7 @@
    ],
    "hilfen": {
     "tipp": "Steigt die Temperatur, geht die Säule nach oben.",
-    "beispiel": "Von −7 °C aus 3 Grad nach oben: −4 °C.",
+    "beispiel": "Von −9 °C aus 4 Grad nach oben: −5 °C.",
     "loesungsschritt": "Zähle am Thermometer von der Säule aus nach oben. Es bleibt unter null."
    },
    "nachweis": [
@@ -24413,7 +24413,7 @@
    "hilfen": {
     "tipp": "Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.",
     "beispiel": "Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.",
-    "loesungsschritt": "Der Nebenwinkel von α ist 180° − 40° = 140°."
+    "loesungsschritt": "Der Winkel neben 40° ist sein Nebenwinkel: 180° − 40° = 140°. Der Winkel gegenüber von 40° ist auch 40°."
    },
    "bild": {
     "art": "figur",
@@ -24914,7 +24914,7 @@
    "hilfen": {
     "tipp": "Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.",
     "beispiel": "Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.",
-    "loesungsschritt": "Der Nebenwinkel von α ist 180° − 75° = 105°."
+    "loesungsschritt": "Der Winkel neben 75° ist sein Nebenwinkel: 180° − 75° = 105°. Der Winkel gegenüber von 75° ist auch 75°."
    },
    "bild": {
     "art": "figur",
@@ -25246,7 +25246,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Sara rechnet: β = 180° − 65° = 115°.\nWarum darf das Kind so rechnen?\nKreuze die richtige Begründung an.",
+   "text": "Sara rechnet: β = 180° − 65° = 115°.\nWarum darf Sara so rechnen?\nKreuze die richtige Begründung an.",
    "mehrfach": false,
    "optionen": [
     {
@@ -25395,7 +25395,7 @@
    },
    "hilfen": {
     "tipp": "Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.",
-    "loesungsschritt": "Der Nebenwinkel von α ist 180° − 127° = 53°."
+    "loesungsschritt": "Der Winkel neben 127° ist sein Nebenwinkel: 180° − 127° = 53°. Der Winkel gegenüber von 127° ist auch 127°."
    },
    "bild": {
     "art": "figur",
@@ -33128,7 +33128,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Jonas misst die Winkel in einem Dreieck.\nα = 40°, β = 80°, γ = 80°\nHat das Kind richtig gemessen?\nKreuze an.",
+   "text": "Jonas misst die Winkel in einem Dreieck.\nα = 40°, β = 80°, γ = 80°\nHat Jonas richtig gemessen?\nKreuze an.",
    "mehrfach": false,
    "optionen": [
     {
@@ -66609,7 +66609,7 @@
     },
     "hilfen": {
      "tipp": "Die Klammer sagt: Das rechnest du zuerst.",
-     "beispiel": "45 − (12 + 8): Klammer 12 + 8 = 20. Dann 45 − 20 = 25.",
+     "beispiel": "60 − (25 + 5): Klammer 25 + 5 = 30. Dann 60 − 30 = 30.",
      "loesungsschritt": "12 + 8 = 20."
     },
     "bild": {
@@ -81605,7 +81605,7 @@
     ],
     "hilfen": {
      "tipp": "Zähle zuerst die Kästchen des Radius.",
-     "beispiel": "2 Kästchen sind 1 cm.",
+     "beispiel": "6 Kästchen sind 3 cm.",
      "loesungsschritt": "Teile die Zahl der Kästchen durch 2."
     },
     "einheit": "cm",
@@ -84786,7 +84786,7 @@
      "argumentieren"
     ],
     "format": "auswahl",
-    "text": "Ole misst den Winkel α.\nDas Kind liest 20° ab.\nStimmt das?",
+    "text": "Ole misst den Winkel α.\nOle liest 20° ab.\nStimmt das?",
     "mehrfach": false,
     "optionen": [
      {
@@ -85131,7 +85131,7 @@
      "argumentieren"
     ],
     "format": "auswahl",
-    "text": "Jonas misst den Winkel α.\nDas Kind liest 60° ab.\nHat es recht?",
+    "text": "Jonas misst den Winkel α.\nJonas liest 60° ab.\nStimmt das?",
     "mehrfach": false,
     "optionen": [
      {
@@ -85196,7 +85196,7 @@
      "symbolisch"
     ],
     "format": "auswahl",
-    "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat das Kind falsch gemacht?",
+    "text": "Ben hat α gemessen und 35° abgelesen.\nWas hat Ben falsch gemacht?",
     "mehrfach": false,
     "optionen": [
      {
@@ -85538,7 +85538,7 @@
      "symbolisch"
     ],
     "format": "auswahl",
-    "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht?",
+    "text": "Jonas hat den Winkel α so gemessen wie im Bild. Was hat Jonas falsch gemacht?",
     "mehrfach": false,
     "optionen": [
      {
@@ -87580,7 +87580,7 @@
      "kommunizieren"
     ],
     "format": "auswahl",
-    "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?",
+    "text": "Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?",
     "mehrfach": false,
     "optionen": [
      {
@@ -91974,7 +91974,7 @@
     },
     "hilfen": {
      "tipp": "Erweitern heißt: Zähler und Nenner mit derselben Zahl malnehmen.",
-     "beispiel": "1⁄2 = 2⁄4, denn 1 · 2 = 2 und 2 · 2 = 4.",
+     "beispiel": "1⁄3 = 2⁄6, denn 1 · 2 = 2 und 3 · 2 = 6.",
      "loesungsschritt": "Nimm den Zähler 1 mal 2."
     },
     "bild": {
@@ -92094,7 +92094,7 @@
     ],
     "hilfen": {
      "tipp": "Die Teile sind verschieden groß. Mache zuerst aus den großen Teilen kleine Teile.",
-     "beispiel": "1⁄2 + 1⁄4 = 2⁄4 + 1⁄4 = 3⁄4. Aus einem Halben werden zwei Viertel.",
+     "beispiel": "1⁄3 + 1⁄6 = 2⁄6 + 1⁄6 = 3⁄6. Aus einem Drittel werden zwei Sechstel.",
      "loesungsschritt": "Erweitere den Bruch mit dem kleineren Nenner. Rechne dann mit den Zählern."
     },
     "bild": {
@@ -92204,7 +92204,7 @@
     ],
     "hilfen": {
      "tipp": "Erweitere zuerst. Zähle dann zusammen. Kürze am Ende.",
-     "beispiel": "1⁄2 + 1⁄6 = 3⁄6 + 1⁄6 = 4⁄6 = 2⁄3.",
+     "beispiel": "1⁄2 + 1⁄10 = 5⁄10 + 1⁄10 = 6⁄10 = 3⁄5.",
      "loesungsschritt": "Erweitere 1⁄2 auf den Nenner 6. Das Ergebnis lässt sich noch kürzen."
     },
     "gekuerzt": true,
@@ -92448,7 +92448,7 @@
     ],
     "hilfen": {
      "tipp": "Der größte Nenner ist der gemeinsame Nenner. Erweitere die beiden anderen Brüche.",
-     "beispiel": "1⁄2 + 1⁄4 + 1⁄8 = 4⁄8 + 2⁄8 + 1⁄8 = 7⁄8.",
+     "beispiel": "1⁄3 + 1⁄6 + 1⁄12 = 4⁄12 + 2⁄12 + 1⁄12 = 7⁄12.",
      "loesungsschritt": "Erweitere alle Brüche auf den Nenner 8. Zähle dann die drei Zähler zusammen."
     },
     "gekuerzt": true,
@@ -92845,7 +92845,7 @@
     },
     "hilfen": {
      "tipp": "Der Zähler lässt sich nicht teilen. Mache die Teile kleiner.",
-     "beispiel": "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.",
+     "beispiel": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
      "loesungsschritt": "Nimm den Nenner mit der Zahl mal. Schreibe den Zähler ab."
     },
     "bild": {
@@ -92900,7 +92900,7 @@
     ],
     "hilfen": {
      "tipp": "Der Zähler lässt sich nicht teilen. Mache die Teile kleiner.",
-     "beispiel": "1⁄2 : 3 = 1⁄6, denn 2 · 3 = 6. Der Zähler bleibt 1.",
+     "beispiel": "1⁄4 : 2 = 1⁄8, denn 4 · 2 = 8. Der Zähler bleibt 1.",
      "loesungsschritt": "Nimm den Nenner mit der Zahl mal. Schreibe den Zähler ab."
     },
     "bild": {

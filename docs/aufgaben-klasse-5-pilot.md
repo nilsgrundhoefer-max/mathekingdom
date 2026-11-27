@@ -832,7 +832,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
   - ☑ Es fehlen 2 Antworten.
   - ☐ Es sind 2 Striche zu viel.
   - ☐ Alles ist richtig.
-- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schoko 9, Erdbeere 7, Nuss 5)_
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat sie gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Schoko 9, Erdbeere 7, Nuss 5)_
   - ☐ Wie spät ist es?
   - ☑ Welche Eissorte isst du am liebsten?
   - ☐ Welches Obst isst du am liebsten?
@@ -854,7 +854,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
   | Hase | **6** |
   | Hamster | **2** |
 
-- `03` AFB II · _Modellieren_ · Mia will diese Frage stellen: / „Welches Obst isst du am liebsten?“ / Welche Antworten soll er zur Auswahl geben?
+- `03` AFB II · _Modellieren_ · Mia will diese Frage stellen: / „Welches Obst isst du am liebsten?“ / Welche Antworten soll sie zur Auswahl geben?
   - ☐ Vanille, Schoko, Zitrone, Erdbeere
   - ☐ Katze, Hamster, Pferd, Hund
   - ☑ Traube, Apfel, Banane, Erdbeere
@@ -871,7 +871,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie? *Lösungsschritt:* Die Antworten sind „Fußball“, „Schwimmen“, „Turnen“.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Mara hat eine Umfrage gemacht. / Das ist die Strichliste. / Welche Frage hat er gestellt? _(Bild: Strichliste: Fußball 6, Schwimmen 2, Turnen 9)_
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Mara hat eine Umfrage gemacht. / Das ist die Strichliste. / Welche Frage hat sie gestellt? _(Bild: Strichliste: Fußball 6, Schwimmen 2, Turnen 9)_
   - ☐ Was hast du gestern gemacht?
   - ☐ Wie spät ist es?
   - ☑ Welchen Sport machst du am liebsten?
@@ -899,17 +899,17 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welche
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Mia hat die Kinder der 5c gefragt: / „Welche Farbe magst du am liebsten?“ / 5 Kinder haben „weiß nicht“ gesagt. / Werte aus. _(Bild: Strichliste „Lieblingsfarben“: Rot 4, Blau 11, Grün 10)_
   - a) Wie viele Kinder haben eine der drei Antworten gewählt? **25 Kinder**. Typische Fehler: 30 (sach-unnoetige-angabe).
   - b) Wie viele Kinder wurden insgesamt befragt? **30 Kinder**. Typische Fehler: 25 (sach-schritt-vergessen).
-- `06` AFB III · _Argumentieren (+ Modellieren)_ · Lena hat nur Kinder im Fußballverein befragt. / Er sagt: „Fußball ist der beliebteste Sport an unserer Schule.“ / Was meinst du dazu?
+- `06` AFB III · _Argumentieren (+ Modellieren)_ · Lena hat nur Kinder im Fußballverein befragt. / Sie sagt: „Fußball ist der beliebteste Sport an unserer Schule.“ / Was meinst du dazu?
   - ☐ Stimmt, denn eine Umfrage hat immer recht.
   - ☑ Falsch geschlossen: Im Fußballverein ist „Fußball“ natürlich besonders beliebt. Man muss Kinder aus der ganzen Schule fragen.
   - ☐ Falsch, denn Umfragen sind nie richtig.
-  - ☐ Stimmt, denn er hat viele Kinder gefragt.
+  - ☐ Stimmt, denn sie hat viele Kinder gefragt.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Schau dir die Antworten an. Zu welcher Frage passen sie?
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat er gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Turnen 2, Tanzen 7, Reiten 6)_
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Lena hat eine Umfrage gemacht. / Das ist das Diagramm dazu. / Welche Frage hat sie gestellt? _(Bild: Säulendiagramm „Ergebnis der Umfrage“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Turnen 2, Tanzen 7, Reiten 6)_
   - ☐ Wie alt bist du?
   - ☑ Welchen Sport machst du am liebsten?
   - ☐ Was hast du gestern gemacht?
@@ -2204,7 +2204,7 @@ Baut auf: 5.3.1-K1 (Ich kann im Kopf addieren.), 5.3.1-K2 (Ich kann im Kopf subt
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:* 6 Plättchen: Bis 10 fehlen 4. *Lösungsschritt:* Zähle von 4 weiter bis 10.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die leeren Felder. *Beispiel:* 8 Plättchen: Bis 10 fehlen 2. *Lösungsschritt:* Zähle von 4 weiter bis 10.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Im Feld liegen 4 Plättchen. / Wie viele Plättchen fehlen bis 10? _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: **6**. Typische Fehler: 4 (begriffe-verwechselt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Welche Zahl passt? / 4 + ▢ = 10 _(Bild: Zehnerfeld mit 10 Feldern, 4 belegt)_ Lösung: a = **6**
@@ -2450,7 +2450,7 @@ Baut auf: 5.3.2-A2 (Ich kann schriftlich addieren, auch mit Übertrag.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9. *Lösungsschritt:* 3 + 4 = 7.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne nacheinander. Folge den Sprüngen. *Beispiel:* 5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8. *Lösungsschritt:* 3 + 4 = 7.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 3 + 4 + 2 _(Bild: Zahlenstrahl 0 bis 20, Teilstriche alle 1, Startpunkt 3, Sprünge 3 nach 7 (+ 4), 7 nach 9 (+ 2))_ Lösung: **9**. Typische Fehler: 7 (sach-schritt-vergessen).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne. / 10 + 10 + 7 _(Bild: Zahlenstrahl 10 bis 30, Teilstriche alle 1, Startpunkt 10, Sprünge 10 nach 20 (+ 10), 20 nach 27 (+ 7))_ Lösung: **27**. Typische Fehler: 20 (sach-schritt-vergessen).
@@ -8201,7 +8201,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne in zwei Schritten. Das erste E
   - a) Wie schwer sind die 3 Säcke Kartoffeln? **15 kg**. Typische Fehler: 8 (1x1-addiert).
   - b) Wie schwer ist die ganze Ladung? **21 kg**. Typische Fehler: 11 (sach-schritt-vergessen), 15 (sach-schritt-vergessen).
 - `04` AFB I · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Sara schneidet vom weißen Band 2 Stücke ab. / Jedes Stück ist 10 cm lang. _(Tabelle: Band | Länge / das weiße Band | 120 cm / das gelbe Band | 80 cm / das blaue Band | 90 cm)_
-  - a) Wie viel cm schneidet das Kind zusammen ab? **20 cm**. Typische Fehler: 12 (1x1-addiert), 10 (sach-schritt-vergessen).
+  - a) Wie viel cm schneidet Sara zusammen ab? **20 cm**. Typische Fehler: 12 (1x1-addiert), 10 (sach-schritt-vergessen).
   - b) Wie lang ist das Band danach noch? **100 cm**. Typische Fehler: 110 (sach-schritt-vergessen), 140 (sub-addiert).
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Schau in die Tabelle. / Mia übt Rechnen. / Am Dienstag übt Mia 15 min länger als am Montag. _(Tabelle: Tag | Übezeit / Montag | 25 min / Dienstag | ?)_
   - a) Wie viele min übt Mia am Dienstag? **40 min**. Typische Fehler: 10 (add-subtrahiert), 15 (sach-frage-verfehlt).
@@ -8543,7 +8543,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Winkel liegt schräg. *Beispiel:*
   - ☐ QR und OQ
   - ☐ QO und QR
   - ☑ OQ und OR
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „Der Scheitel von α ist A.“ / Hat das Kind recht? _(Bild: Winkel α 135°)_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „Der Scheitel von α ist A.“ / Hat Emre recht? _(Bild: Winkel α 135°)_
   - ☐ Ja. / A steht als erster Buchstabe da.
   - ☑ Nein. / A liegt am Ende eines Schenkels. / Der Scheitel ist B.
 
@@ -8575,7 +8575,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht immer in der Mitte
   - ☑ OR und OT
   - ☐ RO und RT
   - ☐ RT und OT
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina schreibt für den Winkel α: ∢BSA. Hat das Kind recht? _(Bild: Winkel α 40°)_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina schreibt für den Winkel α: ∢BSA. Hat Lina recht? _(Bild: Winkel α 40°)_
   - ☐ Ja. Die Reihenfolge der Buchstaben ist egal.
   - ☐ Nein. Der Scheitel muss vorne stehen. Richtig ist ∢SAB.
   - ☑ Nein. Gegen den Uhrzeigersinn geht es von SA nach SB. Richtig ist ∢ASB.
@@ -8669,7 +8669,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh die Winkel in Gedanken. *Beispie
   - ☑ β
   - ☑ α
   - ☐ γ
-- `06` AFB III · _Argumentieren_ · Ida sagt: „Der Bogen von α ist größer.“ / „Also ist α der größere Winkel.“ / Hat das Kind recht? _(Bild: Winkel α 60°, β 130°)_
+- `06` AFB III · _Argumentieren_ · Ida sagt: „Der Bogen von α ist größer.“ / „Also ist α der größere Winkel.“ / Hat Ida recht? _(Bild: Winkel α 60°, β 130°)_
   - ☐ Ja. / Ein großer Bogen gehört zu einem großen Winkel.
   - ☑ Nein. / Die Größe des Bogens ist egal. / β öffnet sich weiter.
 
@@ -9014,7 +9014,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Über dem Äquator heißt es N, darun
   - ☐ Lagos
   - ☑ Dakar
   - ☐ Kapstadt
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „Recife liegt bei 8° N, 35° W.“ / Hat das Kind recht? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Recife, Buenos Aires, Rio de Janeiro, Havanna)_
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Elif sagt: „Recife liegt bei 8° N, 35° W.“ / Hat Elif recht? _(Bild: Gradnetz -40° bis 40° Breite, -120° bis -20° Länge, Linien alle 20°: Recife, Buenos Aires, Rio de Janeiro, Havanna)_
   - ☐ Ja. / Die Angabe stimmt.
   - ☑ Nein. / Recife liegt südlich vom Äquator. / Richtig ist 8° S, 35° W.
 
@@ -9082,7 +9082,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nullpunkt liegt auf dem Scheitel.
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Lies ab: Wie groß ist α? _(Bild: Winkel α 150°; Geodreieck angelegt)_ Lösung: **150 °**. Typische Fehler: 30 (skala-falsch).
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Wie viel Grad zeigt das Geodreieck? _(Bild: Winkel α 110°; Geodreieck angelegt)_ Lösung: **110 °**. Typische Fehler: 70 (skala-falsch).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Wie viel Grad zeigt das Geodreieck? _(Bild: Winkel α 60°; Geodreieck angelegt)_ Lösung: **60 °**. Typische Fehler: 120 (skala-falsch).
-- `05` AFB II · _Argumentieren_ · Ole misst den Winkel α. / Das Kind liest 20° ab. / Stimmt das? _(Bild: Winkel α 160°; Geodreieck angelegt)_
+- `05` AFB II · _Argumentieren_ · Ole misst den Winkel α. / Ole liest 20° ab. / Stimmt das? _(Bild: Winkel α 160°; Geodreieck angelegt)_
   - ☑ Nein. / α ist stumpf. / Es sind 160°.
   - ☐ Ja. / α ist 20° groß.
 - `06` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Wie groß ist α? _(Bild: Winkel α 70°; Geodreieck angelegt)_ Lösung: **70 °**. Typische Fehler: 110 (skala-falsch).
@@ -9095,10 +9095,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dreh das Bild in Gedanken. *Beispiel:
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Miss den Winkel α. / Lies am Geodreieck ab. _(Bild: Winkel α 135°; Geodreieck angelegt)_ Lösung: **135 °**. Typische Fehler: 45 (skala-falsch).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der zweite Schenkel liegt auf der langen Seite. / Wie groß ist α? _(Bild: Winkel α 45°; Geodreieck angelegt)_ Lösung: **45 °**. Typische Fehler: 135 (skala-falsch).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Geodreieck liegt am Winkel α. / Wie groß ist α? _(Bild: Winkel α 55°; Geodreieck angelegt)_ Lösung: **55 °**. Typische Fehler: 125 (skala-falsch).
-- `05` AFB II · _Argumentieren_ · Jonas misst den Winkel α. / Das Kind liest 60° ab. / Hat es recht? _(Bild: Winkel α 120°; Geodreieck angelegt)_
+- `05` AFB II · _Argumentieren_ · Jonas misst den Winkel α. / Jonas liest 60° ab. / Stimmt das? _(Bild: Winkel α 120°; Geodreieck angelegt)_
   - ☐ Ja. / Das Geodreieck zeigt 60°.
   - ☑ Nein. / α ist stumpf. / Richtig sind 120°.
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben hat α gemessen und 35° abgelesen. / Was hat das Kind falsch gemacht? _(Bild: Winkel α 145°; Geodreieck angelegt)_
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ben hat α gemessen und 35° abgelesen. / Was hat Ben falsch gemacht? _(Bild: Winkel α 145°; Geodreieck angelegt)_
   - ☑ Auf der falschen Skala abgelesen.
   - ☐ Nichts. / Es ist alles richtig.
   - ☐ Die lange Seite liegt auf keinem Schenkel.
@@ -9112,7 +9112,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies auf der Skala ab, die am Schenke
 - `03` AFB II · _Modellieren_ · **[Heftaufgabe]** Zeichne in dein Heft ein Koordinatensystem mit 1 cm je Einheit. Zeichne A(1|3), B(7|4) und C(2|8) und verbinde A mit B und A mit C. Miss den Winkel bei A. Lösung: **69 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 111 (skala-falsch).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Wie groß ist der Winkel α? Miss gradgenau. _(Bild: Winkel α 67°; Geodreieck angelegt)_ Lösung: **67 °**. Typische Fehler: 113 (skala-falsch).
 - `05` AFB II · _Modellieren_ · Zeichne die Punkte A(2|1), B(6|2) und C(1|9) in ein Koordinatensystem mit 1 cm je Einheit. Wie groß ist der Winkel zwischen AB und AC? Lösung: **83 °** (bis 2 ° daneben gilt als richtig). Typische Fehler: 97 (skala-falsch).
-- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas hat den Winkel α so gemessen wie im Bild. Was hat das Kind falsch gemacht? _(Bild: Winkel α 131°; Geodreieck angelegt, aber verschoben)_
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas hat den Winkel α so gemessen wie im Bild. Was hat Jonas falsch gemacht? _(Bild: Winkel α 131°; Geodreieck angelegt, aber verschoben)_
   - ☐ Die lange Seite liegt auf keinem Schenkel.
   - ☑ Der Nullpunkt liegt nicht auf dem Scheitel.
   - ☐ Auf der falschen Skala abgelesen.
@@ -9281,7 +9281,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Entscheidend ist der größte Winkel.
   - ☐ unregelmäßig
   - ☑ gleichschenklig
   - ☐ gleichseitig
-- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat das Kind recht?
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?
   - ☐ Ja. Zum Beispiel, wenn man ein Quadrat halbiert.
   - ☑ Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.
   - ☐ Ja, aber nur bei einem gleichseitigen Dreieck.

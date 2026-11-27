@@ -40,11 +40,28 @@ export function mitPeriode(text) {
   return text.split(PERIODE).filter((t) => t !== '').map((t, i) => (PERIODE.test(t) && /^(?:\d\u0305)+$/.test(t)
     ? Object.assign(document.createElement('span'), { className: 'periode', textContent: t.replace(/\u0305/g, '') }) : t));
 }
+// Version 0.65: Ein Index im Text („h_c“, die Höhe auf c) wird tiefgestellt gezeichnet. In Auswahllisten und Zeichnungen bleibt er Text.
+const INDEX = /(?<![A-Za-zÄÖÜäöüß0-9_])([A-Za-zα-ω])_([a-z0-9])(?![A-Za-zÄÖÜäöüß0-9_])/g;
+export function mitIndex(text) {
+  const teile = [];
+  let ende = 0;
+  for (const m of text.matchAll(INDEX)) {
+    teile.push(text.slice(ende, m.index) + m[1]);
+    teile.push(Object.assign(document.createElement('sub'), { textContent: m[2] }));
+    ende = m.index + m[0].length;
+  }
+  if (ende < text.length) teile.push(text.slice(ende));
+  return teile.filter((t) => t !== '');
+}
 function fuelle(el, kinder) {
   const stapeln = !(el instanceof SVGElement) && el.tagName !== 'OPTION';
   for (const k of kinder.flat(Infinity)) if (k != null && k !== false) {
+    if (!stapeln && typeof k === 'string' && k.includes('_')) { el.append(k.replace(INDEX, '$1$2')); continue; }
     const stuecke = stapeln && typeof k === 'string' && k.includes('\u2044') ? mitBruch(k) : [k];
-    for (const x of stuecke) if (stapeln && typeof x === 'string' && x.includes('\u0305')) el.append(...mitPeriode(x)); else el.append(x);
+    for (const x of stuecke) {
+      const mitStrich = stapeln && typeof x === 'string' && x.includes('\u0305') ? mitPeriode(x) : [x];
+      for (const y of mitStrich) if (stapeln && typeof y === 'string' && y.includes('_')) el.append(...mitIndex(y)); else el.append(y);
+    }
   }
   return el;
 }

@@ -1042,7 +1042,7 @@ function aufgabenAnsicht() {
       h('div', { class: 'aufgabenkopf' },
         a.rueckblick && h('span', { class: 'marke rueckblickmarke' }, rueckblickNummer(a, fertig)),
         a.seitenblick && h('span', { class: 'marke seitenblickmarke', id: 'seitenblick-marke', title: 'Ein Blick zurück auf ein Lernziel, das du schon kannst. Dein Siegel behältst du in jedem Fall.' }, 'Seitenblick'),
-        a.seitenblick && h('span', { class: 'seitenblick-satz', id: 'seitenblick-satz' }, `Kurzer Blick zurück, danach geht es mit ${z.index.meilensteinVon.get(a.seitenblick.zurueck)?.titel ?? 'deinem Meilenstein'} weiter.`),
+        a.seitenblick && h('span', { class: 'seitenblick-satz', id: 'seitenblick-satz' }, seitenblickSatz(z.index.meilensteinVon.get(a.seitenblick.zurueck)?.titel)),
         a.bruecke && h('span', { class: 'marke brueckenmarke' }, brueckeNummer(a, fertig)),
         a.sonderauftrag && h('span', { class: 'marke sonderauftragmarke', id: 'sonderauftrag-marke' }, '✉ ', sonderauftragNummer(a, fertig)),
         a.einstieg ? h('span', { class: 'marke einstiegmarke' }, einstiegNummer(a, fertig))
@@ -1313,8 +1313,11 @@ function maleMitEntwurf(eingabe) {
   a.eingaben.push(eingabe); male(); a.eingaben.pop();
 }
 
+// Version 0.65: Der Titel steht in Anführungszeichen hinter dem Doppelpunkt, damit kein Fall gebeugt werden muss („mit Brüche“).
+export const seitenblickSatz = (titel) => (titel ? `Kurzer Blick zurück. Danach geht es hier weiter: „${titel.replace(/\.$/, '')}“.` : 'Kurzer Blick zurück. Danach geht es bei deinem Meilenstein weiter.');
 function loesungstext(auf) {
-  const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? ` ${t.einheit}` : ''}`;
+  // Version 0.65: Das Gradzeichen steht ohne Lücke an der Zahl („36°“), wie in den Aufgaben.
+  const zahl = (t) => `${gliedere(t.loesung)}${t.einheit ? `${t.einheit === '°' ? '' : ' '}${t.einheit}` : ''}`;
   switch (auf.format) {
     case 'zahlenstrahl': {
       // Kapitel 9: Am Strahl mit Teiler ist die Lösung die Nummer des Teilstrichs. Gezeigt wird die Zahl, die dort steht.
@@ -1379,7 +1382,7 @@ function soGehtEs(auf) {
 function urteilZeile(e, auf, nachsatz) {
   return e.richtig
     ? [h('h2', {}, 'Richtig!', h('span', { class: 'lohn' }, muenze(22), h('b', { class: 'plus' }, `+${e.muenzen}`), e.muenzen === 1 ? ' Münze' : ' Münzen'), lernsatz(e)), wahreAnzahl(auf), endnullSatz(auf)]
-    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `. ${nachsatz ?? ''}`.trimEnd()), endnullSatz(auf), wahreAnzahl(auf), loesungsbild(auf)];
+    : [h('h2', {}, 'Das war noch nicht richtig.'), h('p', {}, 'Die Lösung ist: ', h('b', {}, loesungstext(auf)), `${/[.!?][“”"')]*$/.test(loesungstext(auf)) ? '' : '.'} ${nachsatz ?? ''}`.trimEnd()), endnullSatz(auf), wahreAnzahl(auf), loesungsbild(auf)];
 }
 // Klasse 6, Kapitel 4 (ADR 0047): Beim Runden wird keine Endnull verlangt (4 ist so richtig wie 4,0).
 // Steht in der Lösung eine Endnull, sagt ein Satz, wozu sie da ist.

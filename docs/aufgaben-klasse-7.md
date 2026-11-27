@@ -410,7 +410,7 @@ Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahleng
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach rechts werden die Zahlen größer, nach links werden sie kleiner. *Beispiel:* Start bei −3, dann 5 Schritte nach rechts: Das Ziel ist 2. *Lösungsschritt:* Lege den Finger auf den Start. Zähle die Schritte Strich für Strich.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Nach rechts werden die Zahlen größer, nach links werden sie kleiner. *Beispiel:* Start bei −4, dann 7 Schritte nach rechts: Das Ziel ist 3. *Lösungsschritt:* Lege den Finger auf den Start. Zähle die Schritte Strich für Strich.
 
 - `01` AFB I · _Kommunizieren_ · Der Weg startet bei −3. / Er geht 5 Schritte nach rechts. / Bei welcher Zahl ist das Ziel? _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Startpunkt −3, Sprünge −3 nach 2 (+5))_ Lösung: **2**. Typische Fehler: −8 (richtung-vertauscht), −2 (vorzeichen-vergessen), 8 (betraege-addiert).
 - `02` AFB I · _Kommunizieren_ · Der Weg startet bei 6. / Er geht 7 Schritte nach links. / Markiere das Ziel. _(Zahlenstrahl −10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **−1**. Typische Fehler: 1 (vorzeichen-vergessen), 0 (strahl-einerschritte).
@@ -719,7 +719,7 @@ Baut auf: 7.1.4-S1 (Ich kann ganze Zahlen subtrahieren.), 5.3.4-B1 (Ich kann Rec
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Plus und Minus wird Minus. Minus und Minus wird Plus. *Beispiel:* 6 + (−4) = 6 − 4 = 2. *Lösungsschritt:* Schau auf die beiden Zeichen vor der Zahl. Sind sie gleich, wird es Plus. Sind sie verschieden, wird es Minus.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Plus und Minus wird Minus. Minus und Minus wird Plus. *Beispiel:* 9 + (−5) = 9 − 5 = 4. *Lösungsschritt:* Schau auf die beiden Zeichen vor der Zahl. Sind sie gleich, wird es Plus. Sind sie verschieden, wird es Minus.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe ohne Klammer und rechne. / 6 + (−4) = 6 − ▢ = ▢ _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Startpunkt 6, Sprünge 6 nach 2 (−4))_ Lösung: a = **4**, b = **2**
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schreibe ohne Klammer und rechne. / 1 − (−2) = 1 + ▢ = ▢ _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Startpunkt 1, Sprünge 1 nach 3 (+2))_ Lösung: a = **2**, b = **3**
@@ -1397,14 +1397,14 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Nebenwinkel liegen nebeneinander an e
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Die Geraden g und h schneiden sich. / Berechne die anderen drei Winkel. / α = ▢° / γ = ▢° / δ = ▢° _(Bild: figur)_ Lösung: a = **105**, c = **105**, d = **75**
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Geraden g und h schneiden sich. / Gib den Scheitelwinkel δ an. _(Bild: figur)_ Lösung: **140 °**. Typische Fehler: 40 (scheitel-neben-verwechselt).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Schere ist geöffnet. / Die beiden Klingen bilden einen Winkel von 45°. / Die Schere bildet zwei Geraden. / Sie schneiden sich. / Berechne den Winkel β zwischen Klinge und Griff. _(Bild: figur)_ Lösung: **135 °**. Typische Fehler: 45 (nebenwinkel-gleich).
-- `06` AFB III · _Argumentieren_ · Sara rechnet: β = 180° − 65° = 115°. / Warum darf das Kind so rechnen? / Kreuze die richtige Begründung an. _(Bild: figur)_
+- `06` AFB III · _Argumentieren_ · Sara rechnet: β = 180° − 65° = 115°. / Warum darf Sara so rechnen? / Kreuze die richtige Begründung an. _(Bild: figur)_
   - ☑ α und β sind Nebenwinkel. / Zusammen sind sie 180°.
   - ☐ α und β sind Scheitelwinkel. / Zusammen sind sie 180°.
   - ☐ An einer Kreuzung sind alle Winkel zusammen 180°.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°. *Lösungsschritt:* Der Nebenwinkel von α ist 180° − 127° = 53°.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°. *Lösungsschritt:* Der Winkel neben 127° ist sein Nebenwinkel: 180° − 127° = 53°. Der Winkel gegenüber von 127° ist auch 127°.
 
 - `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Geraden g und h schneiden sich. / Berechne die anderen drei Winkel. / α = ▢° / γ = ▢° / δ = ▢° _(Bild: figur)_ Lösung: a = **53**, c = **53**, d = **127**
 - `02` AFB II · _Modellieren_ · Die Geraden g und h schneiden sich. Bestimme γ und gib den Grund an. _(Bild: figur)_
@@ -1596,7 +1596,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* An der Geraden p liegen bei C drei Wi
   - ☑ 360°
   - ☐ 540°
 - `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf das linke Dreieck ADC. / Die drei Winkel im Dreieck sind zusammen 180°. / Berechne den Winkel bei C. _(Bild: figur)_ Lösung: **40 °**. Typische Fehler: 220 (winkelsumme), 140 (winkelsumme), 120 (winkelsumme).
-- `04` AFB I · _Argumentieren_ · Jonas misst die Winkel in einem Dreieck. / α = 40°, β = 80°, γ = 80° / Hat das Kind richtig gemessen? / Kreuze an. _(Bild: figur)_
+- `04` AFB I · _Argumentieren_ · Jonas misst die Winkel in einem Dreieck. / α = 40°, β = 80°, γ = 80° / Hat Jonas richtig gemessen? / Kreuze an. _(Bild: figur)_
   - ☑ Nein. / Zusammen sind das 200° und nicht 180°.
   - ☐ Ja. / Die Winkel sehen richtig aus.
   - ☐ Ja. / Zusammen sind es 200°. / Das passt.

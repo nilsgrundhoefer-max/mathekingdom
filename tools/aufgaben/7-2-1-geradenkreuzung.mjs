@@ -22,7 +22,7 @@ const grundOptionen = (richtig, andere = ['neben', 'scheitel', 'stufen']) => [..
 function w1() {
   const hNeben = (n, a) => H(n, 'Nebenwinkel liegen nebeneinander an einer Geraden. Zusammen sind sie 180°.', 'Ist α = 70°, dann ist sein Nebenwinkel 180° − 70° = 110°.', `Rechne 180° − ${a}°.`);
   const hScheitel = (n) => H(n, 'Scheitelwinkel liegen sich genau gegenüber. Sie sind gleich groß.', 'Ist α = 70°, dann ist auch γ = 70°.', 'Der gesuchte Winkel liegt dem bekannten Winkel gegenüber.');
-  const hAlle = (n, a) => H(n, 'Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.', 'Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.', `Der Nebenwinkel von α ist 180° − ${a}° = ${180 - a}°.`);
+  const hAlle = (n, a) => H(n, 'Gegenüber liegen gleich große Winkel. Nebeneinander ergeben zwei Winkel 180°.', 'Ist α = 60°, sind β = 120°, γ = 60° und δ = 120°.', `Der Winkel neben ${a}° ist sein Nebenwinkel: 180° − ${a}° = ${180 - a}°. Der Winkel gegenüber von ${a}° ist auch ${a}°.`);
   // Ein Winkel bekannt (Lage i), einer gesucht (Lage j).
   const einer = (n, i, j, text, hilfen) => { const a = alphaFuer(n), w = werte(a), zeige = [null, null, null, null];
     zeige[i] = WERT(w[i]); zeige[j] = GESUCHT(NAMEN_G[j], w[j]);
@@ -55,7 +55,7 @@ function w1() {
       return grad(Z('Eine Schere ist geöffnet.', `Die beiden Klingen bilden einen Winkel von ${a}°.`, 'Die Schere bildet zwei Geraden.', 'Sie schneiden sich.', 'Berechne den Winkel β zwischen Klinge und Griff.'), 180 - a, [[a, 'nebenwinkel-gleich']], hNeben('G', a),
         { bild: kr('G', a, zeige, { geraden: [null, null] }), nachweis: [FIG('β'), R(`180° − ${a}° = ${180 - a}°`)] }); },
     () => { const a = alphaFuer('G'), b = 180 - a, k = kind();
-      return auswahl(Z(`${k} rechnet: β = 180° − ${a}° = ${b}°.`, 'Warum darf das Kind so rechnen?', 'Kreuze die richtige Begründung an.'),
+      return auswahl(Z(`${k} rechnet: β = 180° − ${a}° = ${b}°.`, `Warum darf ${k} so rechnen?`, 'Kreuze die richtige Begründung an.'),
         [opt('α und β sind Nebenwinkel. Zusammen sind sie 180°.', true), opt('α und β sind Scheitelwinkel. Zusammen sind sie 180°.', false, 'scheitel-neben-verwechselt'), opt('An einer Kreuzung sind alle Winkel zusammen 180°.', false, 'gestreckt-voll')],
         hilfeBegriff('G'), { bild: kr('G', a, [WERT(a), NAME('β'), null, null]), nachweis: [BEZ(['α', 'β'], 'neben'), R(`180° − ${a}° = ${b}°`)] }); },
   ]);

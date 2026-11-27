@@ -31,7 +31,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Teile: Das ist der Nenner
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
-Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile. *Beispiel:* Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4. *Lösungsschritt:* Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile.
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile. *Beispiel:* Zwei Kreise mit je 3 Teilen. 4 Teile sind gefärbt. Das sind 4⁄3. *Lösungsschritt:* Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile.
 
 - `01` AFB I · _Kommunizieren_ · Jeder Kreis ist ein Ganzes. / Wie viel ist gefärbt? / Schreibe als Bruch. _(Bild: Bruchbild: 2 Ganze, je Kreis mit 4 Teilen, 5 gefärbt)_ _(Brucheingabe; jeder gleichwertige Bruch ist richtig)_ Lösung: **5⁄4**. Typische Fehler: 5⁄8 (bruch-ganzes-teil), 4⁄5 (bruch-vertauscht).
 - `02` AFB I · _Kommunizieren_ · Der Streifen ist in gleich große Teile geteilt. / Welcher Bruchteil ist gefärbt? _(Bild: Bruchbild: Streifen mit 20 Teilen, 14 gefärbt)_
