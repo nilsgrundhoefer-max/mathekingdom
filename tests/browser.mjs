@@ -886,8 +886,28 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.waitForSelector('.overlay .kennzahlen');
   assert.equal(await seite.locator('.sitzplan').count(), 1);
   await foto(seite, 'lehrer-overlay');
+  // Stundenverlauf (0.61, ADR 0053): Zeitleiste im Schülerfenster, Kachel mit den letzten Aufgaben.
+  await seite.waitForSelector('#zeitleiste svg circle');
+  assert.match(await seite.innerText('#zeitleiste'), /Aufgabe \d+: [FGME](, [FGME])*/);
   await seite.click('#overlay-zu');
   assert.equal(await seite.locator('.overlay').count(), 0);
+  assert.match(await seite.innerText('.sitzplan .platz[data-schueler] .heute >> nth=0'), /^heute \d+ Aufgaben?$/);
+  assert.ok(await seite.locator('.sitzplan .aufgabenreihe i').count() > 14);
+  assert.ok(await seite.locator('.sitzplan .aufgabenreihe').evaluateAll((l) => l.every((x) => x.children.length <= 8)));
+  assert.equal(await seite.locator('.wegreihe').count(), 0);
+  assert.match(await seite.innerText('.impulse'), /Unter dem Ziel: Jonas Weber hat .* zum 2\. Mal nur auf/);
+  await seite.click('[data-jetzt=verlauf]');
+  await seite.waitForSelector('#stundenverlauf .saeulenbild svg rect');
+  assert.equal(await seite.locator('.stundentabelle tbody tr').count(), 14);
+  assert.equal(await seite.locator('.sitzplan').count(), 0);
+  assert.ok(await seite.locator('.stundentabelle .marke').count() >= 1, 'mindestens ein Schüler deutlich langsamer oder schneller');
+  await foto(seite, 'lehrer-stundenverlauf');
+  await seite.locator('.stundentabelle tbody tr button.link').first().click();
+  await seite.waitForSelector('#zeitleiste');
+  await foto(seite, 'lehrer-zeitleiste');
+  await seite.click('#overlay-zu');
+  await seite.click('[data-jetzt=sitzplan]');
+  await seite.waitForSelector('.sitzplan');
   // Sitzplan ändern: ersten und zweiten Platz tauschen.
   const vorher = await seite.locator('.sitzplan .platz').nth(0).getAttribute('data-schueler');
   await seite.click('#sitzplan-bearbeiten');
@@ -953,7 +973,7 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.locator('#vorwissen').screenshot(bilder ? { path: `${bilder}/lehrer-vorwissen.png` } : {});
   await seite.locator('.heatmap [data-lernziel]').first().click();
   await seite.waitForSelector('.vierspaltig');
-  assert.equal(await seite.locator('.gruppenliste').count(), 6);
+  assert.equal(await seite.locator('.gruppenliste').count(), 7);
   assert.ok(await seite.locator('#hilfebedarf tbody tr').count() > 0);
   assert.match(await seite.innerText('#baut-auf'), /Baut auf/);
   // Tafelbild: eine Aufgabe mit den häufigsten falschen Antworten, ohne Namen, Lösung auf Knopfdruck.
