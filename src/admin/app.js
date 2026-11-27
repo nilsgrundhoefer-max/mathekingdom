@@ -136,6 +136,8 @@ async function weiter(fragen = true) {
     if (!v) throw new Error('Das Schulverzeichnis passt nicht zu deinem Administrator-Schlüssel. Hast du die richtige Schlüsseldatei?');
   } else v = SCH.leeresVerzeichnis(admin.schluessel.oeffentlich, SCH.schuljahrAm(new Date()));
   Object.assign(z, { persoenlich, schueler, lehrer, admin, v, jahr: v.schuljahr });
+  // Wann zuletzt eine Teststunde exportiert wurde (Version 0.59), für den Filter „seit dem letzten Export“.
+  try { z.letzterExport = JSON.parse(await persoenlich.lies(EXPORT_DATEI) ?? 'null')?.t ?? null; } catch { z.letzterExport = null; }
   if (!vorhanden) { await jahrOrdner(schueler); await jahrOrdner(lehrer); await speichereVerzeichnis(); z.hinweis = `Mathekingdom ist eingerichtet, Schuljahr ${v.schuljahr}. Lege jetzt die Lehrkräfte an, dann die Klassen.`; z.tab = 'klassen'; }
   // Kopie für Tage ohne Internet, damit Schüler-Startdateien auch dann starten.
   schritt('Kopie des Schüler-Dashboards aufs Schülertauschlaufwerk schreiben');
@@ -919,36 +921,46 @@ function auffaelligKarte() {
 }
 // ---------- Teststunde: Feedbackfragen und Aufgabenanalyse (ADR 0042) ----------
 // Gemeinsamer Filter für Feedback, Aufgabenanalyse und Export: welche Klassen, welcher Tag.
+// Version 0.59: Nach dem Auslesen wird nichts gelöscht. Stattdessen filtern „seit dem letzten Export“ und „ab Version“.
 const heuteTag = () => L.tagVon(new Date().toISOString());
+const EXPORT_DATEI = 'mathekingdom-letzter-export.json';
 function analyseFilter(b) {
-  const f = (z.analyse ??= { klasse: '', zeitraum: 'heute', datum: heuteTag() });
+  const f = (z.analyse ??= { klasse: '', zeitraum: 'heute', datum: heuteTag(), abVersion: '' });
+  if (f.zeitraum === 'export' && !z.letzterExport) f.zeitraum = 'alles';
   const klassen = f.klasse ? b.klassen.filter((k) => k.klasse === f.klasse) : echteKlassen(b);
-  const zeitraum = f.zeitraum === 'alles' ? {} : { tag: f.zeitraum === 'heute' ? heuteTag() : f.datum };
+  const zeitraum = f.zeitraum === 'alles' ? {} : f.zeitraum === 'export' ? { seit: z.letzterExport } : { tag: f.zeitraum === 'heute' ? heuteTag() : f.datum };
+  if (f.abVersion) zeitraum.abVersion = f.abVersion;
   const datum = (tag) => new Date(`${tag}T12:00:00`).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  const wann = zeitraum.tag ? `${f.zeitraum === 'heute' ? 'heute, ' : ''}${datum(zeitraum.tag)}` : zeitraum.seit ? `seit dem letzten Export (${new Date(zeitraum.seit).toLocaleString('de-DE')})` : 'das ganze Schuljahr';
   return { f, klassen, zeitraum, klassenText: f.klasse ? `Klasse ${f.klasse}${b.klassen.find((k) => k.klasse === f.klasse)?.test ? ' (Testklasse)' : ''}` : 'alle Klassen außer Testklassen',
-    zeitraumText: zeitraum.tag ? `${f.zeitraum === 'heute' ? 'heute, ' : ''}${datum(zeitraum.tag)}` : 'das ganze Schuljahr' };
+    zeitraumText: `${wann}${f.abVersion ? `, nur Schüler-Dashboard ab Version ${f.abVersion}` : ''}` };
 }
 function teststundeKarte() {
   return mitBetrieb((b) => {
     const { f, klassen, zeitraum, klassenText, zeitraumText } = analyseFilter(b);
     const neu = () => male();
-    const exportieren = () => {
+    const versionen = AN.vorkommendeVersionen(echteKlassen(b).concat(b.klassen.filter((k) => k.test)).map((k) => ({ klasse: k.klasse, staende: k.standListe })));
+    const exportieren = tue(async () => {
       const analyse = AN.aufgabenanalyse(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), allePoolAufgaben(), zeitraum);
       const feedback = AN.feedbackAuswertung(klassen.map((k) => ({ klasse: k.klasse, staende: k.standListe })), zeitraum, allePoolAufgaben());
       const text = AN.teststundeMarkdown({ klassen: klassenText, zeitraum: zeitraumText, version: versionstext(), erstellt: new Date().toLocaleString('de-DE') }, analyse, feedback, aufgabeZu, fehlvorstellungZu);
-      ladeHerunter(`Mathekingdom_Teststunde_${f.klasse || 'alle'}_${zeitraum.tag ?? 'schuljahr'}.md`, text, 'text/markdown;charset=utf-8');
-      z.hinweis = 'Teststunde exportiert. Die Datei enthält keine Namen und keine Schülercodes; du kannst sie so bei Claude hochladen.';
-      male();
-    };
+      ladeHerunter(`Mathekingdom_Teststunde_${f.klasse || 'alle'}_${zeitraum.tag ?? (zeitraum.seit ? 'seit-export' : 'schuljahr')}${f.abVersion ? `_ab-${f.abVersion}` : ''}.md`, text, 'text/markdown;charset=utf-8');
+      z.letzterExport = new Date().toISOString();
+      try { await z.persoenlich.schreibe(EXPORT_DATEI, JSON.stringify({ t: z.letzterExport })); } catch { /* der Export selbst hat geklappt */ }
+      z.hinweis = 'Teststunde exportiert. Die Datei enthält keine Namen und keine Schülercodes; du kannst sie so bei Claude hochladen. Gelöscht wird nichts: Mit „seit dem letzten Export“ siehst du beim nächsten Mal nur das Neue.';
+    });
     return h('section', { class: 'karte', id: 'teststunde' }, h('div', { class: 'reihe' }, h('h2', {}, 'Teststunde'), h('span', { class: 'rechts' }, neuLaden())),
-      h('p', { class: 'klein' }, 'Wähle Klasse und Tag. Feedback und Aufgabenanalyse darunter zeigen dann genau diese Stunde, und der Export enthält beides als eine Datei für Claude, ohne Namen und Schülercodes.'),
+      h('p', { class: 'klein' }, 'Wähle Klasse, Tag und Version. Feedback und Aufgabenanalyse darunter zeigen dann genau diese Stunde, und der Export enthält beides als eine Datei für Claude, ohne Namen und Schülercodes. Nach dem Export wird nichts gelöscht: Jede Bearbeitung trägt die Version des Schüler-Dashboards, und „seit dem letzten Export“ zeigt nur, was danach dazukam.'),
       h('div', { class: 'reihe' },
         h('label', {}, 'Klasse ', h('select', { id: 'analyse-klasse', onchange: (e) => { f.klasse = e.target.value; neu(); } },
           h('option', { value: '', selected: !f.klasse }, 'alle Klassen außer Testklassen'),
           b.klassen.map((k) => h('option', { value: k.klasse, selected: f.klasse === k.klasse }, `${k.klasse}${k.test ? ' (Testklasse)' : ''}`)))),
         h('label', {}, 'Zeitraum ', h('select', { id: 'analyse-zeitraum', onchange: (e) => { f.zeitraum = e.target.value; neu(); } },
-          [['heute', 'heute'], ['tag', 'ein Tag'], ['alles', 'ganzes Schuljahr']].map(([w, t]) => h('option', { value: w, selected: f.zeitraum === w }, t)))),
+          [['heute', 'heute'], ['tag', 'ein Tag'], ...(z.letzterExport ? [['export', 'seit dem letzten Export']] : []), ['alles', 'ganzes Schuljahr']].map(([w, t]) => h('option', { value: w, selected: f.zeitraum === w }, t)))),
         f.zeitraum === 'tag' && h('input', { type: 'date', id: 'analyse-datum', value: f.datum, onchange: (e) => { f.datum = e.target.value || heuteTag(); neu(); } }),
+        h('label', {}, 'Version ', h('select', { id: 'analyse-version', onchange: (e) => { f.abVersion = e.target.value; neu(); } },
+          h('option', { value: '', selected: !f.abVersion }, 'alle Versionen'),
+          versionen.map((ver) => h('option', { value: ver, selected: f.abVersion === ver }, `ab ${ver}`)))),
         h('button', { class: 'haupt', id: 'teststunde-export', onclick: exportieren }, 'Teststunde exportieren')),
       h('p', { class: 'klein' }, `Gezeigt: ${klassenText}, ${zeitraumText}.`));
   });

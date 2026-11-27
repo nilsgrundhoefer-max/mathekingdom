@@ -61,6 +61,8 @@ let falschGeprueft = 0;
 for (const auf of aufgaben) {
   if (process.env.LAUT) console.log(auf.id);
   await zeige(auf.id);
+  // Version 0.59: Den Knopf „±“ gibt es nur in Kapitel 1. Hier tippt das Kind ein Minus selbst.
+  assert.equal(await seite.locator('button.vorzeichen').count(), 0, `${auf.id}: kein Vorzeichenknopf außerhalb von Kapitel 1`);
   assert.ok(await seite.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), `${auf.id}: Seite ist breiter als der Bildschirm`);
   if (auf.bild?.art === 'figur') assert.equal(await seite.locator('section.aufgabe svg.figurbild').count(), 1, `${auf.id}: Figur fehlt`);
   if (auf.format === 'ordnen' && auf.karten.some((k) => k.length > 24)) {

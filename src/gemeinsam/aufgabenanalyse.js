@@ -34,8 +34,24 @@ const sekunden = (x) => (x == null ? '–' : `${Math.round(x)} s`);
 // Eine ungewöhnliche Eingabe (etwa von simulierten Schülern einer Testklasse) darf die Analyse nicht abbrechen.
 const sichereTeile = (a, eingabe) => { try { return falscheTeile(a, eingabe); } catch { return []; } };
 
-// Zeitraum: { tag: 'JJJJ-MM-TT' } für einen Tag (Ortszeit), sonst alles.
-export const imZeitraum = (t, zeitraum = {}) => !zeitraum.tag || (t && tagVon(t) === zeitraum.tag);
+// Versionsnummern wie „0.59“ der Reihe nach vergleichen: negativ, wenn a älter ist als b.
+export function vergleicheVersion(a, b) {
+  const x = String(a ?? '').split('.').map(Number), y = String(b ?? '').split('.').map(Number);
+  for (let i = 0; i < Math.max(x.length, y.length); i++) { const d = (x[i] || 0) - (y[i] || 0); if (d) return d; }
+  return 0;
+}
+// Zeitraum: { tag: 'JJJJ-MM-TT' } für einen Tag (Ortszeit), { seit: ISO-Zeit } ab einem Zeitpunkt, etwa dem letzten Export,
+// dazu wahlweise { abVersion: '0.59' }: nur Einträge, die ein Schüler-Dashboard ab dieser Version geschrieben hat (Version 0.59).
+// Ein Eintrag ohne Version ist älter als 0.54 und fällt dann heraus. Nichts wird nach dem Auslesen gelöscht.
+export const imZeitraum = (t, zeitraum = {}, version = null) => (!zeitraum.tag || (t && tagVon(t) === zeitraum.tag))
+  && (!zeitraum.seit || (t && t > zeitraum.seit))
+  && (!zeitraum.abVersion || (version != null && vergleicheVersion(version, zeitraum.abVersion) >= 0));
+// Alle Versionen, die in den Speicherständen vorkommen, neueste zuerst (für die Auswahl „ab Version“).
+export function vorkommendeVersionen(klassen) {
+  const alle = new Set();
+  for (const k of klassen) for (const { stand } of k.staende ?? []) for (const v of stand.versuche ?? []) if (v.version) alle.add(v.version);
+  return [...alle].sort((a, b) => vergleicheVersion(b, a));
+}
 
 // Je Aufgabe die Zahlen im Zeitraum, dazu Vergleich mit den übrigen Aufgaben desselben Lernziels und Niveaus.
 // Version 0.54: Je Klasse eine Zeile (Schüler, Bearbeitungen, Feedback, Versionen), je falsche Antwort die bekannte Fehlvorstellung,
@@ -56,7 +72,7 @@ export function aufgabenanalyse(klassen, aufgaben, zeitraum = {}) {
       schueler.add(wer); kl.schueler++;
       let aktiv = false;
       for (const v of stand.versuche ?? []) {
-        if (v.gesperrt || !imZeitraum(v.t, zeitraum)) continue;
+        if (v.gesperrt || !imZeitraum(v.t, zeitraum, v.version)) continue;
         const x = e(v.aufgabe);
         x.bearbeitet++; x.wer.add(wer); x.abgegeben.add(wer); bearbeiter.add(wer); aktiv = true; kl.bearbeitungen++;
         const ver = v.version ?? 'vor 0.54';
@@ -72,9 +88,9 @@ export function aufgabenanalyse(klassen, aufgaben, zeitraum = {}) {
         }
       }
       if (aktiv) kl.aktiv++;
-      for (const ab of stand.abbrueche ?? []) if (imZeitraum(ab.t, zeitraum)) { const x = e(ab.aufgabe); x.abbrueche++; x.wer.add(wer); }
+      for (const ab of stand.abbrueche ?? []) if (imZeitraum(ab.t, zeitraum, ab.version)) { const x = e(ab.aufgabe); x.abbrueche++; x.wer.add(wer); }
       for (const f of stand.feedback ?? []) {
-        if (!imZeitraum(f.t, zeitraum)) continue;
+        if (!imZeitraum(f.t, zeitraum, f.version)) continue;
         kl.feedback++;
         if (f.aufgabe && AUFGABEN_FRAGEN.includes(f.frage)) {
           const fb = e(f.aufgabe).fb;
@@ -133,7 +149,7 @@ export function feedbackAuswertung(klassen, zeitraum = {}, aufgaben = []) {
   const nachNiveau = new Map(); // frage → niveau → [ja, nein]
   let antworten = 0;
   for (const k of klassen) for (const { stand } of k.staende ?? []) for (const f of stand.feedback ?? []) {
-    if (!zahlen.has(f.frage) || !imZeitraum(f.t, zeitraum)) continue;
+    if (!zahlen.has(f.frage) || !imZeitraum(f.t, zeitraum, f.version)) continue;
     const nr = f.antwort === 0 ? 0 : 1;
     zahlen.get(f.frage)[nr]++;
     antworten++;

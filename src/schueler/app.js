@@ -15,7 +15,7 @@ import { wappenBild, wappenVoll, regionMap, muenze, siegel, gabeSiegel, kroneBil
 import { aufgabenBild } from './aufgabenbilder.js';
 import { kartenBild } from './koerperbilder.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
-import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild, mitVorzeichen, vorzeichenKnopf } from './zahlenbilder.js';
+import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild, mitVorzeichen, abKlasse7, vorzeichenKnopf } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
 import { werteTabelle, dreisatzTabelle } from './zuordnungsbilder.js';
 import { gitterLoesung } from './geo.js';
@@ -45,7 +45,7 @@ function zeige(ansicht) {
   if (ansicht.name !== 'aufgabe' && z.stand?.aktiv) {
     // Aufgabe ohne Ergebnis verlassen: für das Aufgaben-Audit der Lehrkraft festhalten.
     const a = z.stand.aktiv;
-    (z.stand.abbrueche ??= []).push({ t: jetzt(), aufgabe: a.aufgabe, fehlversuche: a.fehlversuche ?? 0, hilfen: a.hilfen ?? 0 });
+    (z.stand.abbrueche ??= []).push({ t: jetzt(), aufgabe: a.aufgabe, fehlversuche: a.fehlversuche ?? 0, hilfen: a.hilfen ?? 0, ...(z.stand.dashboardVersion && { version: z.stand.dashboardVersion }) });
     z.stand.aktiv = null; z.dienst.markiere();
   }
   male();
@@ -992,10 +992,10 @@ function aufgabenAnsicht() {
 
 // Auch für den Bilderbogen (tools/bilderbogen.mjs) ausgeführt.
 export function eingabefelder(auf, a, gesperrt) {
-  // Klasse 7 (ADR 0043): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
+  // Klasse 7 Kapitel 1 (ADR 0043, 0051): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
   const zahlfeld = (name, einheit, wert) => {
-    const feld = h('input', { name, type: 'text', inputMode: vorzeichen || auf.lernziel?.startsWith('5.9.3') || /^6\.[457]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+    const feld = h('input', { name, type: 'text', inputMode: abKlasse7(auf) || auf.lernziel?.startsWith('5.9.3') || /^6\.[457]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => gliedereEingabe(e.target) });
     return h('span', { class: `zahlfeld${vorzeichen ? ' mit-vorzeichen' : ''}` }, vorzeichen && vorzeichenKnopf(feld, gesperrt), feld, einheit && h('span', { class: 'einheit' }, einheit));
   };
@@ -1016,7 +1016,7 @@ export function eingabefelder(auf, a, gesperrt) {
       const luecke = (name) => (auf.ziffernfelder ? ziffernfeld(`luecke-${name}`, letzte?.[name]) : zahlfeld(`luecke-${name}`, null, letzte?.[name]));
       const einfach = (text) => text.split(/(\{\{\w+\}\})/).map((stueck) => { const m = stueck.match(/^\{\{(\w+)\}\}$/); return m ? luecke(m[1]) : stueck; });
       // Klasse 7 (ADR 0043): Rechenzeichen, Klammer und Lücke bleiben beim Umbruch zusammen. Eine Zeile endet so nie mit „=“ oder „(“.
-      const mitLuecken = (text) => (mitVorzeichen(auf) ? text.split(/((?:[=+−·:<>] )?\(?\{\{\w+\}\}\)?(?: (?:€|°C|°F|K|Grad|m|cm|km)(?![\wäöü]))?[.,;!?]?)/).map((stueck, i) => (i % 2 ? h('span', { class: 'lueckensatz' }, einfach(stueck)) : stueck)) : einfach(text));
+      const mitLuecken = (text) => (abKlasse7(auf) ? text.split(/((?:[=+−·:<>] )?\(?\{\{\w+\}\}\)?(?: (?:€|°C|°F|K|Grad|m|cm|km)(?![\wäöü]))?[.,;!?]?)/).map((stueck, i) => (i % 2 ? h('span', { class: 'lueckensatz' }, einfach(stueck)) : stueck)) : einfach(text));
       // Klasse 6 (ADR 0037): Steht eine Lücke im Zähler oder im Nenner, wird der Bruch gestapelt gezeichnet, mit dem Feld an seinem Platz.
       const BRUCH = /((?:\d+\u202f)?(?:\{\{\w+\}\}|\d+)\u2044(?:\{\{\w+\}\}|\d+))/;
       return h('p', { class: 'aufgabentext luecken' }, auf.text.split(BRUCH).map((stueck, i) => {

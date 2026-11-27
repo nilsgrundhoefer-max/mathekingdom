@@ -8,6 +8,18 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.59 vom 27.11.2026
+
+### Schüler
+
+- Den Knopf „±“ gibt es nur noch im Kapitel „Rationale Zahlen“ der Klasse 7. In allen anderen Kapiteln tippst du das Minus einfach selbst.
+
+### Lehrkraft
+
+- Der Vorzeichenknopf steht nur noch bei Aufgaben aus Klasse 7 Kapitel 1 und seinen Abstechern, auch wenn sie als Brücke kommen (ADR 0051).
+- Administrator: Teststunde, Feedback und Aufgabenanalyse filtern jetzt auch „seit dem letzten Export“ und „ab Version“. Nach dem Export wird nichts gelöscht.
+- Auch Feedback-Antworten und abgebrochene Aufgaben tragen jetzt die Version des Schüler-Dashboards.
+
 ## 0.58 vom 25.11.2026
 
 ### Schüler
