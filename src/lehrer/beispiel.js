@@ -62,7 +62,8 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
         fehlvorstellungen: !geloest && fehler.length && zufall() < 0.7 ? [fehler[Math.floor(zufall() * fehler.length)].fehlvorstellung] : [],
         hilfen, dauer }, ziel, new Date(Math.min(zeit, jetzt - 20000)).toISOString());
       L.trageWegstueckEin(stand, aufgabe, { richtig: geloest, muenzen: stand.versuche.at(-1).muenzen }, new Date(Math.min(zeit, jetzt - 20000)).toISOString()); // ADR 0016
-      const vorschlag = L.niveauVorschlag(stand, '5.3', niveau);
+      // Die Beispielklasse bleibt beim Kronenwechsel für das ganze Kapitel wie bis 0.59, damit ihre Zahlen gleich bleiben.
+      const vorschlag = L.niveauVorschlag(stand, '5.3', niveau, 'G');
       if (vorschlag && i !== 3) { niveau = L.NIVEAUS[L.NIVEAUS.indexOf(niveau) + (vorschlag === 'hoch' ? 1 : -1)]; L.setzeNiveau(stand, '5.3', niveau); }
     }
     const still = i === 9 ? 9 * 60000 : Math.floor(zufall() * 60000); // einer ist seit neun Minuten still

@@ -268,12 +268,14 @@ export const istAbstecher = (u, zielniveau) => Boolean(u.extra) || istNiveauAbst
 // sofern das Lernziel solche Aufgaben hat. Ohne `index` (reine Anzeige) wird das nicht geprüft.
 // Auf F gilt diese Bedingung nicht: Bronze gibt es für drei richtige Aufgaben (ADR 0015).
 // An einem Niveau-Meilenstein gilt mindestens seine Marke: Siegel und Krone gibt es dort erst ab dieser Niveaustufe.
-export function lernzielStand(stand, lernzielId, zielniveau, index = null) {
+// Mit `ab` zählen nur Versuche ab dieser Stelle im Versuchsprotokoll (Version 0.60: „unter dem Ziel geschafft“ je Runde).
+export function lernzielStand(stand, lernzielId, zielniveau, index = null, ab = 0) {
   zielniveau = stufeFuer(index, lernzielId, zielniveau);
   const ziel = NIVEAUS.indexOf(zielniveau);
   const alle = new Set(), aufZiel = new Set();
   let anspruch = zielniveau === 'F' || !index?.mitAnspruch.has(lernzielId);
-  for (const v of stand.versuche) {
+  for (let i = ab; i < stand.versuche.length; i++) {
+    const v = stand.versuche[i];
     if (v.lernziel !== lernzielId || !zaehlt(v)) continue;
     alle.add(v.aufgabe);
     if (NIVEAUS.indexOf(v.niveau) >= ziel) aufZiel.add(v.aufgabe);
@@ -370,27 +372,56 @@ export function imNebel(index, stand, kapitel, einst) {
   }
   return nebel;
 }
-// Fertig für die Aufgabenführung: gemeistert, und wer über seinem Ziel spielt, braucht die Krone in der gewählten Farbe.
+// ---------- Aufgabenführung in Runden (Version 0.60, ADR 0052) ----------
+// Lieber den ganzen Lernpfad auf Silber als lange in einem Lernziel: Ein Lernziel ist für die Führung in dieser Runde erledigt,
+// wenn es ein Siegel hat (wer über seinem Ziel spielt: die Krone in der gewählten Farbe) oder in dieser Runde unter dem Ziel
+// geschafft ist. Ist der Lernpfad einmal durch, beginnt die nächste Runde bei den Lernzielen ohne Siegel wieder auf dem Zielniveau.
+// Ein Lernziel, das zweimal nur unter dem Ziel geschafft ist, schlägt die Führung nicht mehr vor.
+export const UNTER_ZIEL_HOECHSTENS = 2;
+export const runde = (stand, kapitelId) => stand.runde?.[kapitelId]?.nr ?? 1;
+export const rundeAb = (stand, kapitelId) => stand.runde?.[kapitelId]?.ab ?? 0;
+export const unterZielGeschafft = (stand, lernzielId) => stand.unterZiel?.[lernzielId] ?? null; // { mal, niveau, t }
+export const unterZielAufgegeben = (stand, lernzielId) => (unterZielGeschafft(stand, lernzielId)?.mal ?? 0) >= UNTER_ZIEL_HOECHSTENS;
+export function lernzielErledigt(index, stand, lernzielId, niveau, zielniveau) {
+  const mal = unterZielGeschafft(stand, lernzielId)?.mal ?? 0;
+  if (!stand.lernziele[lernzielId] && (mal >= UNTER_ZIEL_HOECHSTENS || mal >= runde(stand, kapitelVon(lernzielId)))) return true;
+  if (NIVEAUS.indexOf(niveau) > NIVEAUS.indexOf(zielniveau)) return lernzielStand(stand, lernzielId, niveau, index).erreicht || mal >= runde(stand, kapitelVon(lernzielId));
+  return Boolean(stand.lernziele[lernzielId]);
+}
+// Fertig für die Aufgabenführung: alle Lernziele mit Aufgaben erledigt (siehe lernzielErledigt).
 export function fuehrungFertig(index, stand, unterkapitel, niveau, zielniveau) {
-  if (milestoneStatus(index, stand, unterkapitel) !== 'gemeistert') return false;
-  if (NIVEAUS.indexOf(niveau) <= NIVEAUS.indexOf(zielniveau)) return true;
-  const k = krone(index, stand, unterkapitel);
-  return Boolean(k) && NIVEAUS.indexOf(k) >= NIVEAUS.indexOf(niveau);
+  const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
+  return mit.length > 0 && mit.every((l) => lernzielErledigt(index, stand, l.id, niveau, zielniveau));
+}
+// Ist der Lernpfad in dieser Runde durch, aber fehlen noch Siegel, beginnt die nächste Runde (gibt true zurück).
+// Wer sich selbst unter seinem Ziel eingeordnet hat, spielt in der neuen Runde wieder um sein Ziel.
+export function naechsteRunde(index, stand, kapitel, weg, zielniveau) {
+  const offen = weg.flatMap((u) => u.lernziele).filter((l) => index.lernzielMitAufgaben.has(l.id) && !stand.lernziele[l.id] && !unterZielAufgegeben(stand, l.id));
+  if (!offen.length) return false;
+  (stand.runde ??= {})[kapitel.id] = { nr: runde(stand, kapitel.id) + 1, ab: stand.versuche.length };
+  if (stand.niveau[kapitel.id] && unterZiel(stand.niveau[kapitel.id], zielniveau)) delete stand.niveau[kapitel.id];
+  for (const l of offen) delete stand.lernzielNiveau?.[l.id];
+  return true;
 }
 // Wohin die Aufgabenführung in einem Kapitel führt: zum zuletzt bearbeiteten Meilenstein, solange er nicht fertig ist,
 // sonst zum nächsten nicht fertigen danach in Kapitelreihenfolge, am Ende wieder von vorn. Abstecher nur, wenn der Schüler dort zuletzt war.
 export function fuehrungsMeilenstein(index, stand, kapitel, einst, niveau) {
   const zu = einst.gesperrteMeilensteine ?? new Set(), nebel = imNebel(index, stand, kapitel, einst);
   const offen = (u) => !zu.has(u.id) && !nebel.has(u.id) && hatAufgabenIn(index, u) && !fuehrungFertig(index, stand, u, niveau, einst.zielniveau);
+  const ziel = einst.zielniveau;
+  const weg = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel));
+  // Version 0.60: Ist der Lernpfad in dieser Runde durch, beginnt die nächste Runde vorn (siehe naechsteRunde).
+  if (ziel && !weg.some(offen) && naechsteRunde(index, stand, kapitel, weg.filter((u) => !zu.has(u.id) && !nebel.has(u.id)), ziel)) {
+    return fuehrungsMeilenstein(index, stand, kapitel, einst, arbeitsniveau(stand, kapitel.id, ziel));
+  }
   let zuletzt = null;
-  for (let i = stand.versuche.length - 1; i >= 0 && !zuletzt; i--) {
+  // Eine neue Runde beginnt vorn: Nur Arbeit aus dieser Runde zählt als „zuletzt“ (Version 0.60).
+  for (let i = stand.versuche.length - 1; i >= rundeAb(stand, kapitel.id) && !zuletzt; i--) {
     const v = stand.versuche[i];
     if (eigenerVersuch(v) && kapitelVon(v.lernziel ?? '') === kapitel.id) zuletzt = index.meilensteinVon.get(v.lernziel) ?? null;
   }
   // Von einem Niveau-Meilenstein über dem Zielniveau führt der Weg von selbst zurück auf das Kapitel (ADR 0038).
-  const ziel = einst.zielniveau;
   if (zuletzt && !istNiveauAbstecher(zuletzt, ziel) && offen(zuletzt)) return zuletzt;
-  const weg = kapitel.unterkapitel.filter((u) => !istAbstecher(u, ziel));
   const ab = zuletzt ? Math.max(0, weg.indexOf(istAbstecher(zuletzt, ziel) ? wirtVon(kapitel, zuletzt, ziel) : zuletzt) + 1) : 0;
   return [...weg.slice(ab), ...weg.slice(0, ab)].find(offen) ?? null;
 }
@@ -419,11 +450,13 @@ export function etappe(pool, index, stand, einst) {
   const extra = offene.find((l) => l.milestone && einst.zusaetzlicheKapitel?.has(l.kapitel.id));
   return (aktuell?.milestone ? aktuell : null) ?? extra ?? offene.find((l) => l.milestone) ?? aktuell ?? offene.at(-1);
 }
-// Mit `niveau`: zuerst ein Lernziel, das für die Krone dieser Farbe noch fehlt (ADR 0012).
-export function naechstesLernziel(index, stand, unterkapitel, niveau = null) {
+// Mit `niveau` und `zielniveau`: zuerst ein Lernziel, das die Führung in dieser Runde noch nicht erledigt hat (Version 0.60).
+// Mit `niveau` allein: zuerst ein Lernziel, das für die Krone dieser Farbe noch fehlt (ADR 0012).
+export function naechstesLernziel(index, stand, unterkapitel, niveau = null, zielniveau = null) {
   const mit = unterkapitel.lernziele.filter((l) => index.lernzielMitAufgaben.has(l.id));
-  const fehlt = niveau && mit.find((l) => !lernzielStand(stand, l.id, niveau, index).erreicht);
-  return fehlt || mit.find((l) => !stand.lernziele[l.id]) || mit[0] || null;
+  const fehlt = niveau && (zielniveau ? mit.find((l) => !lernzielErledigt(index, stand, l.id, niveau, zielniveau))
+    : mit.find((l) => !lernzielStand(stand, l.id, niveau, index).erreicht));
+  return fehlt || mit.find((l) => !stand.lernziele[l.id] && !unterZielAufgegeben(stand, l.id)) || mit.find((l) => !stand.lernziele[l.id]) || mit[0] || null;
 }
 
 // ---------- Aufgabe auswählen ----------
@@ -462,10 +495,13 @@ export function kenntLoesung(stand, aufgabeId, jetzt) {
 }
 
 // ---------- Münzen ----------
-export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
+// Version 0.60 (ADR 0052): Mit `index` beim Üben am Meilenstein bringt eine Aufgabe nur 1 Münze, wenn ihr Lernziel auf ihrer
+// Niveaustufe schon nachgewiesen ist: Silber nach „Silber geschafft“, Gold nach dem Siegel. Volle Münzen gibt es nur für eine bessere Krone.
+export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau, index = null) {
   if (!bearbeitung.geloest) return 0;
   if (bearbeitung.bekannt) return 1; // Lösung heute schon gesehen (ADR 0031)
   if (stand.versuche.some((v) => v.aufgabe === aufgabe.id && v.richtig)) return 1; // Wiederholung
+  if (index && aufgabe.niveau !== 'F' && lernzielStand(stand, aufgabe.lernziel, aufgabe.niveau, index).erreicht) return 1; // schon nachgewiesen
   if (hatKarte(bearbeitung, 'loesungsschritt')) return 1;
   const abstand = NIVEAUS.indexOf(aufgabe.niveau) - NIVEAUS.indexOf(zielniveau);
   let m = abstand === 0 ? MUENZEN.ziel : abstand > 0 ? MUENZEN.darueber : MUENZEN.training;
@@ -485,7 +521,7 @@ export function muenzenFuer(stand, aufgabe, bearbeitung, zielniveau) {
 export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index = null, { rueckblick = false, bruecke = false, seitenblick = false, sonderauftrag = null } = {}) {
   const eigen = !rueckblick && !bruecke && !seitenblick && !sonderauftrag;
   const bekannt = bearbeitung.geloest && kenntLoesung(stand, aufgabe.id, jetzt);
-  const muenzen = muenzenFuer(stand, aufgabe, { ...bearbeitung, bekannt }, zielniveau);
+  const muenzen = muenzenFuer(stand, aufgabe, { ...bearbeitung, bekannt }, zielniveau, eigen ? index : null);
   const meilenstein = index?.meilensteinVon?.get(aufgabe.lernziel) ?? null;
   const kroneVorher = meilenstein ? krone(index, stand, meilenstein) : null;
   stand.versuche.push({
@@ -510,6 +546,19 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
     stand.lernziele[aufgabe.lernziel] = { erreichtAm: jetzt };
     neuesLernziel = true;
   }
+  // Unter dem Ziel geschafft (Version 0.60): beim Üben am Meilenstein, ohne Siegel, auf Silber (bei Ziel Gold) oder einer anderen
+  // Stufe unter dem Ziel, nur Versuche dieser Runde. Bronze aus der Grundlagen-Schleife zählt nicht, außer das Ziel ist F.
+  let unterZielNeu = null;
+  const lzZiel = stufeFuer(index, aufgabe.lernziel, zielniveau);
+  if (eigen && index && !stand.lernziele[aufgabe.lernziel] && bearbeitung.geloest && unterZiel(aufgabe.niveau, lzZiel) && aufgabe.niveau !== 'F') {
+    const kap = kapitelVon(aufgabe.lernziel), bisher = unterZielGeschafft(stand, aufgabe.lernziel)?.mal ?? 0;
+    const ab = Math.max(rundeAb(stand, kap), stand.lernzielNiveau?.[aufgabe.lernziel]?.ab ?? 0);
+    if (bisher < runde(stand, kap) && lernzielStand(stand, aufgabe.lernziel, aufgabe.niveau, index, ab).erreicht) {
+      (stand.unterZiel ??= {})[aufgabe.lernziel] = { mal: bisher + 1, niveau: aufgabe.niveau, t: jetzt };
+      delete stand.lernzielNiveau?.[aufgabe.lernziel]; // das nächste Mal beginnt es wieder auf dem Zielniveau
+      unterZielNeu = { niveau: aufgabe.niveau, mal: bisher + 1 };
+    }
+  }
   // Krone und Selbsteinschätzung: Wer unter der gewählten Krone arbeitet, bevor er dort eine Krone hat, ist abgestiegen.
   const kroneJetzt = meilenstein ? krone(index, stand, meilenstein) : null;
   const e = meilenstein && eigen ? stand.einschaetzung?.[meilenstein.id] : null;
@@ -523,7 +572,7 @@ export function verbuche(stand, aufgabe, bearbeitung, zielniveau, jetzt, index =
   const grundlage = eigen && zielniveau !== 'F' ? pruefeGrundlage(stand, aufgabe, jetzt, index) : null;
   // Erstmals ohne Beispiel und Lösungsschritt (ADR 0017): nur beim Üben am Meilenstein.
   const ohneHilfe = eigen && erstmalsOhneHilfe(stand);
-  return { muenzen, neuesLernziel, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe, bekannt };
+  return { muenzen, neuesLernziel, unterZielNeu, training: unterZiel(aufgabe.niveau, zielniveau), neueKrone, ersteKrone, einschaetzung: ersteKrone ? { ...e } : null, heft, grundlage, ohneHilfe, bekannt };
 }
 
 // ---------- Rückblick (ADR 0014) ----------
@@ -927,25 +976,50 @@ export function trageHeftcheckEin(stand, frage, richtig, jetzt) {
 
 // ---------- Niveaustufe ----------
 // Wer früher um Bronze gespielt hat, spielt jetzt um Silber, außer die Lehrkraft hat das Ziel auf F gesetzt (ADR 0015).
-export const arbeitsniveau = (stand, kapitelId, zielniveau) => {
-  const n = stand.niveau[kapitelId] ?? zielniveau;
+// Version 0.60 (ADR 0052): Die Kronenwahl gilt je Lernziel. Mit `lernzielId` zählt zuerst, ob der Schüler bei diesem Lernziel
+// abgesunken ist; sonst gilt die Wahl des Kapitels (voreingestellt das Zielniveau, darüber nur selbst gewählt).
+export const arbeitsniveau = (stand, kapitelId, zielniveau, lernzielId = null) => {
+  const n = (lernzielId && stand.lernzielNiveau?.[lernzielId]?.niveau) || (stand.niveau[kapitelId] ?? zielniveau);
   return wahlNiveaus(zielniveau).includes(n) ? n : 'G';
 };
 // 'hoch' nach 8 guten von 10 Aufgaben, 'runter', wenn 3 der letzten 5 nicht gelöst sind, sonst null (ADR 0041).
 // 'hoch' führt nie zu Purpur: Purpur wählt das Kind selbst.
 // 'runter' gibt es nur zu einer Krone, die zur Wahl steht: nie von Silber auf Bronze, außer das Ziel ist F.
+// Version 0.60 (ADR 0052): 'runter' zählt mit `lernzielId` nur Aufgaben dieses Lernziels. 'hoch' gibt es nur noch bei Zielniveau
+// F oder G (bis Gold); wer Gold als Ziel hat, beginnt ohnehin jedes Lernziel auf Gold.
 export const HOCH_NACH = 10, HOCH_GUTE = 8, RUNTER_AUS = 5, RUNTER_FALSCH = 3;
-export function niveauVorschlag(stand, kapitelId, niveau, zielniveau = STANDARD_ZIELNIVEAU) {
-  const seit = stand.niveauMarke[kapitelId] ?? 0;
-  const eigene = stand.versuche.slice(seit).filter((v) => !v.einstieg && !v.bruecke && !v.seitenblick && !v.sonderauftrag && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
+const eigeneAufgabe = (v) => !v.einstieg && !v.bruecke && !v.seitenblick && !v.sonderauftrag && !v.rueckblick;
+export function niveauVorschlag(stand, kapitelId, niveau, zielniveau = STANDARD_ZIELNIVEAU, lernzielId = null) {
   const stufe = NIVEAUS.indexOf(niveau);
-  if (stufe < NIVEAUS.indexOf('M') && eigene.length >= HOCH_NACH && eigene.slice(-HOCH_NACH).filter(zaehlt).length >= HOCH_GUTE) return 'hoch';
+  const seit = stand.niveauMarke[kapitelId] ?? 0;
+  const imKapitel = stand.versuche.slice(seit).filter((v) => eigeneAufgabe(v) && kapitelVon(v.lernziel) === kapitelId && v.niveau === niveau);
+  if (NIVEAUS.indexOf(zielniveau) < NIVEAUS.indexOf('M') && stufe < NIVEAUS.indexOf('M') && imKapitel.length >= HOCH_NACH && imKapitel.slice(-HOCH_NACH).filter(zaehlt).length >= HOCH_GUTE) return 'hoch';
+  const seitLz = lernzielId ? Math.max(seit, stand.niveauMarkeLz?.[lernzielId] ?? 0) : seit;
+  const eigene = lernzielId ? stand.versuche.slice(seitLz).filter((v) => eigeneAufgabe(v) && v.lernziel === lernzielId && v.niveau === niveau) : imKapitel;
   if (stufe > NIVEAUS.indexOf(wahlNiveaus(zielniveau)[0]) && eigene.slice(-RUNTER_AUS).filter((v) => !v.richtig).length >= RUNTER_FALSCH) return 'runter';
   return null;
 }
+// Die Kronenwahl des Kapitels, selbst gewählt auf der Karte, nach dem Einstiegscheck oder nach dem Vorschlag „hoch“.
+// Sie gilt wieder für alle Lernziele des Kapitels: Ein Absinken einzelner Lernziele ist damit vergessen.
 export function setzeNiveau(stand, kapitelId, niveau) {
   stand.niveau[kapitelId] = niveau;
   stand.niveauMarke[kapitelId] = stand.versuche.length;
+  for (const id of Object.keys(stand.lernzielNiveau ?? {})) if (kapitelVon(id) === kapitelId) delete stand.lernzielNiveau[id];
+}
+// Absinken bei einem Lernziel (Version 0.60): nur dieses Lernziel, bis es unter dem Ziel geschafft ist. Eine selbst gewählte
+// höhere Krone des Kapitels ist damit vorbei: Die nächsten Lernziele beginnen wieder auf dem Zielniveau.
+export function sinkeAb(stand, lernzielId, niveau, zielniveau) {
+  const kap = kapitelVon(lernzielId);
+  (stand.lernzielNiveau ??= {})[lernzielId] = { niveau, ab: stand.versuche.length };
+  (stand.niveauMarkeLz ??= {})[lernzielId] = stand.versuche.length;
+  if (stand.niveau[kap] && NIVEAUS.indexOf(stand.niveau[kap]) > NIVEAUS.indexOf(zielniveau)) { stand.niveau[kap] = zielniveau; stand.niveauMarke[kap] = stand.versuche.length; }
+  delete stand.absinkenAbgelehnt?.[lernzielId];
+}
+// Wer das Absinken einmal ablehnt und wieder drei der letzten fünf nicht löst, sinkt von selbst (Version 0.60).
+export const sinktVonSelbst = (stand, lernzielId) => Boolean(stand.absinkenAbgelehnt?.[lernzielId]);
+export function lehneAbsinkenAb(stand, lernzielId) {
+  (stand.absinkenAbgelehnt ??= {})[lernzielId] = true;
+  (stand.niveauMarkeLz ??= {})[lernzielId] = stand.versuche.length;
 }
 export function lehneVorschlagAb(stand, kapitelId) {
   stand.niveauMarke[kapitelId] = stand.versuche.length;

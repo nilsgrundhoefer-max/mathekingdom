@@ -164,9 +164,10 @@ test('Niveauvorschlag: hoch nach 8 von 10, runter bei 3 von 5 ungelöst, nie zu 
   const stand = neu();
   const g = aufgaben(S2, 'G');
   for (let i = 0; i < 9; i++) L.verbuche(stand, g[i % g.length], ok(), 'G', 't');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null, 'neun Aufgaben reichen nicht');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G', 'G'), null, 'neun Aufgaben reichen nicht');
   L.verbuche(stand, g[3], ok({ geloest: false }), 'G', 't');
-  assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), 'hoch', '9 gute von 10');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G', 'G'), 'hoch', '9 gute von 10, bei Zielniveau Silber');
+  assert.equal(L.niveauVorschlag(stand, '5.3', 'G', 'M'), null, 'Version 0.60: Wer Gold als Ziel hat, bekommt den Vorschlag nicht mehr');
   L.lehneVorschlagAb(stand, '5.3');
   assert.equal(L.niveauVorschlag(stand, '5.3', 'G'), null);
   for (let i = 0; i < 3; i++) L.verbuche(stand, g[i], ok({ geloest: false }), 'G', 't');

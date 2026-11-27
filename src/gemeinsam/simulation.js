@@ -213,9 +213,10 @@ function waehleAufgabe(bot, ctx, einst, t) {
     L.setzeNiveau(s, kapitel.id, gewaehlt);
     L.merkeWahl(s, index, u, gewaehlt, iso(t));
   }
-  const niveau = L.arbeitsniveau(s, kapitel.id, einst.zielniveau);
-  const lz = L.naechstesLernziel(index, s, u, niveau);
+  // Version 0.60 (ADR 0052): Lernziele nacheinander in Runden, die Krone je Lernziel.
+  const lz = L.naechstesLernziel(index, s, u, L.arbeitsniveau(s, kapitel.id, einst.zielniveau), einst.zielniveau);
   if (!lz) return null;
+  const niveau = L.arbeitsniveau(s, kapitel.id, einst.zielniveau, lz.id);
   const a = L.naechsteAufgabe(index, s, lz.id, L.aufgabenNiveau(s, lz.id, niveau), z);
   return a ? neu('meilenstein', a.id, { kapitel: kapitel.id }) : null;
 }
@@ -274,11 +275,12 @@ function beendeVersuch(bot, ctx, einst, t) {
   if (lauf.art === 'sonderauftrag') L.trageSonderauftragEin(s, einst.sonderauftrag, a, richtig, iso(t));
   if (lauf.art !== 'rueckblick') L.trageWegstueckEin(s, a, { richtig, muenzen: buchung.muenzen }, iso(t));
   if (lauf.art === 'meilenstein') {
-    const kap = lauf.kapitel, n = L.arbeitsniveau(s, kap, einst.zielniveau);
-    const vorschlag = L.niveauVorschlag(s, kap, n, einst.zielniveau);
-    // Höher geht nur, wer sicher rechnet; tiefer gehen die meisten mit.
-    if (vorschlag && z() < (vorschlag === 'hoch' ? (p.koennen >= 0.8 ? 0.7 : 0.2) : 0.7)) L.setzeNiveau(s, kap, L.NIVEAUS[L.NIVEAUS.indexOf(n) + (vorschlag === 'hoch' ? 1 : -1)]);
-    else if (vorschlag) L.lehneVorschlagAb(s, kap);
+    const kap = lauf.kapitel, n = L.arbeitsniveau(s, kap, einst.zielniveau, a.lernziel);
+    const vorschlag = L.inGrundlage(s, a.lernziel) ? null : L.niveauVorschlag(s, kap, n, einst.zielniveau, a.lernziel);
+    const neuN = vorschlag && L.NIVEAUS[L.NIVEAUS.indexOf(n) + (vorschlag === 'hoch' ? 1 : -1)];
+    // Höher geht nur, wer sicher rechnet; tiefer gehen die meisten mit, und wer schon einmal abgelehnt hat, sinkt von selbst.
+    if (vorschlag === 'hoch') { if (z() < (p.koennen >= 0.8 ? 0.7 : 0.2)) L.setzeNiveau(s, kap, neuN); else L.lehneVorschlagAb(s, kap); }
+    else if (vorschlag === 'runter') { if (L.sinktVonSelbst(s, a.lernziel) || z() < 0.7) L.sinkeAb(s, a.lernziel, neuN, einst.zielniveau); else L.lehneAbsinkenAb(s, a.lernziel); }
   }
   bot.bonus = Math.max(0, bot.bonus - 0.1);
   return fertigMitAufgabe(bot, t, sek);

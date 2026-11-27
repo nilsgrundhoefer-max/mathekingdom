@@ -771,6 +771,55 @@ async function weiter(seite, wahl = '#weiter') {
   await seite.close();
 }
 
+// ---------- 2c. Aufgabenführung in Runden (Version 0.60, ADR 0052) ----------
+// Gold wird zu schwer: Das Kind sinkt nur bei diesem Lernziel auf Silber, schafft es dort und geht zum nächsten Lernziel, wieder auf Gold.
+{
+  const seite = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  const fehler = [];
+  seite.on('pageerror', (e) => fehler.push(e.message));
+  const frueh = new Date(Date.now() - 600000).toISOString();
+  const falsch = (id) => ({ t: frueh, aufgabe: id, lernziel: '5.3.1-K1', niveau: 'M', richtig: false, versuche: 2, eingaben: ['1', '2'], fehlvorstellungen: [], hilfen: 0, dauer: 30, muenzen: 0 });
+  await mitStand(seite, { ...leererStand('5A-RUND'), einstieg: { '5.3': { uebersprungen: true } }, versuche: [falsch('5.3.1-K1-M-01'), falsch('5.3.1-K1-M-02')] });
+  await seite.goto(new URL('dist/Mathekingdom-ohne-Netz.html', wurzel).href);
+  await seite.fill('#code', '5a-rund');
+  await seite.click('#demo');
+  await seite.click('[data-kapitel="5.3"]');
+  await seite.click('#aufbrechen');
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  assert.equal(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), '5.3.1-K1-M-03');
+  await antworte(seite, false);
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  await antworte(seite, false);
+  await seite.waitForSelector('#krone-wechseln');
+  assert.match(await seite.innerText('.vorschlag'), /bei diesem Lernziel um Silber[\s\S]*nächste Lernziel beginnt wieder bei Gold/);
+  await seite.waitForTimeout(900); // das Ergebnis blendet ein
+  await foto(seite, 'absinken-je-lernziel');
+  await seite.click('#krone-wechseln');
+  for (let i = 0; i < 3; i++) {
+    await seite.waitForSelector('section.aufgabe #pruefen');
+    assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.1-K1-G-/);
+    await antworte(seite, true);
+    await seite.waitForSelector('.ergebnis.richtig');
+    if (i < 2) { await seite.waitForTimeout(300); await weiter(seite); }
+  }
+  await seite.waitForSelector('#unter-ziel-geschafft');
+  assert.match(await seite.innerText('#unter-ziel-geschafft'), /Silber geschafft![\s\S]*nächsten Lernziel/);
+  await seite.waitForTimeout(900);
+  await foto(seite, 'silber-geschafft');
+  const st = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-RUND.json')));
+  assert.equal(st.unterZiel['5.3.1-K1'].mal, 1);
+  assert.equal(st.lernziele['5.3.1-K1'], undefined, 'kein Siegel auf Silber');
+  await seite.click('button:has-text("Zur Regionskarte")');
+  await seite.waitForSelector('[data-unter-ziel="5.3.1-K1"]');
+  assert.match(await seite.innerText('[data-unter-ziel="5.3.1-K1"]'), /Silber geschafft/);
+  await seite.locator('.karte.tafel').screenshot(bilder ? { path: `${bilder}/tafel-silber-geschafft.png` } : {});
+  await seite.click('#aufbrechen');
+  await seite.waitForSelector('section.aufgabe #pruefen');
+  assert.match(await seite.getAttribute('section.aufgabe', 'data-aufgabe'), /^5\.3\.1-K2-M-/, 'das nächste Lernziel, wieder auf Gold');
+  assert.deepEqual(fehler, []);
+  await seite.close();
+}
+
 // ---------- 3. Startdatei ohne Netz: Dashboard und Pool kommen aus dem Klassenordner ----------
 {
   const kontext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
