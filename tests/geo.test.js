@@ -64,7 +64,8 @@ test('Jede Gitteraufgabe nimmt ihre Lösung an und erkennt ihre typischen Fehler
 
 test('Heftaufgaben mit Kontrollwert: 2 mm Abweichung zählen als richtig, 3 mm nicht', () => {
   // Kapitel 7 hat eigene Spielräume in Grad (Schätzen, Messen); sie prüft der Pool-Prüfer.
-  const heft = pool.aufgaben.filter((a) => a.format === 'zahl' && a.toleranz && !a.lernziel.startsWith('5.7.'));
+  // Schätzaufgaben mit „ungefähr“ (5.2.4, Version 0.65) haben einen Bereich in Stück, keinen Kontrollwert.
+  const heft = pool.aufgaben.filter((a) => a.format === 'zahl' && a.toleranz && !a.lernziel.startsWith('5.7.') && !a.lernziel.startsWith('5.2.4'));
   assert.ok(heft.length >= 12, `nur ${heft.length}`);
   for (const a of heft) {
     assert.equal(a.toleranz, 2, a.id);

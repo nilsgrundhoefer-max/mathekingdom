@@ -8,6 +8,25 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.65 vom 27.11.2026
+
+### Schüler
+
+- Bei Aufgaben wie „Stimmt das?“ hat jetzt jede Antwort eine Begründung. Lies alle Antworten genau, die längste ist nicht mehr automatisch die richtige.
+- Der Hinweis nach einer falschen Antwort passt besser zu deiner Aufgabe.
+- Das Kärtchen „Beispiel“ zeigt nie mehr genau deine Aufgabe.
+- Bei „Wie viele sind es ungefähr?“ zählt jetzt auch eine gute Schätzung.
+- Kleine Fehler in Texten sind behoben, zum Beispiel „er“ bei Mädchennamen.
+
+### Lehrkraft
+
+- Erste von fünf Versionen zum Audit aus Schülersicht (ADR 0057): Korrekturen an Aufgaben und Texten.
+- Beurteile-Aufgaben: Falsche Antworten tragen eine Begründung, die zur Fehlvorstellung passt. Je Kapitel ist höchstens in einem Drittel der Auswahlaufgaben die längste Antwort die richtige; vorher waren es in einzelnen Kapiteln bis zu 87 %.
+- Gezielte Hinweise: 13 neue Fehlvorstellungen, eigene Hinweise je Aufgabe und ein allgemeiner Hinweis, der zum Aufgabenformat passt.
+- Einzelkorrekturen: Lösungsschritt zum Nebenwinkel, Indizes wie h_c tiefgestellt, Gradzeichen ohne Lücke, Tipps, die die Lösung verrieten, Ordnen-Karten ohne Bezug auf andere Karten, Worterklärung „Gerade“.
+- Neue Tests prüfen bei jedem Bau Schreibweise, Besitzwörter, Beispiel ungleich Aufgabe und die Länge der richtigen Antwort.
+- Zahlen und Ergebnisse der Aufgaben sind unverändert; geändert sind Aufgabentexte, Antworttexte und Hinweise (489 Aufgaben). Layout, Führung, Hilfe und Belohnung folgen in 0.66 bis 0.69.
+
 ## 0.64 vom 27.11.2026
 
 ### Schüler

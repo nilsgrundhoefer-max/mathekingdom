@@ -108,3 +108,14 @@ test('Beim Ordnen gehört zur umgekehrten Reihenfolge eine bekannte Fehlvorstell
   }
   assert.equal(funde.length, 0, zeige(funde));
 });
+
+test('Rechenaufgaben mit „ungefähr“ nehmen eine gute Schätzung an, aber keine grobe', async () => {
+  const L = await import('../src/schueler/logik.js');
+  const a = aufgaben.find((x) => x.id === '5.2.4-S1-M-05');
+  assert.ok(a.toleranz > 0 && /ungefähr/.test(a.text));
+  const [x, y] = a.text.match(/\d+/g).map(Number);
+  assert.equal(L.pruefeAntwort(a, String(a.loesung)).richtig, true);
+  assert.equal(L.pruefeAntwort(a, String(Math.round(x / 10) * 10 * y)).richtig, true, 'eine Zahl gerundet');
+  assert.equal(L.pruefeAntwort(a, String(x)).richtig, false, 'nur eine Reihe');
+  assert.equal(L.pruefeAntwort(a, String(a.loesung * 2)).richtig, false);
+});
