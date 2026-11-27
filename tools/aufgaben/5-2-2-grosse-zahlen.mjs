@@ -61,7 +61,7 @@ export function grosseZahlen() {
       return zuordnen(Z('Welche Zahl gehört zu welchem Zahlwort?'), l.map((n) => [fz(n), zahlwort(n)]),
         h3('Schau auf den Block der Tausender. Steht dort 300, 030 oder 003?', '2 030 000 heißt zwei Millionen dreißigtausend.', `Alle Zahlen beginnen mit ${m} Millionen. Lies nur den Block der Tausender.`), { nachweis: l.map(wort) }); },
     () => { const k = kind(), m = zz(2, 9), t = zz(2, 9), n = m * MIO + t * 1000;
-      return auswahl(Z(`${k} soll diese Zahl schreiben: ${zahlwort(n)}`, `${k} schreibt ${fz(m * MIO + t * 100000)}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'dreierblock-vergessen'), opt(`Falsch. Richtig ist ${fz(n)}.`, true), opt(`Falsch. Richtig ist ${fz(m * MIO + t)}.`, false, 'dreierblock-vergessen')],
+      return auswahl(Z(`${k} soll diese Zahl schreiben: ${zahlwort(n)}`, `${k} schreibt ${fz(m * MIO + t * 100000)}.`, 'Stimmt das?'), [opt('Stimmt. So spricht man die Zahl.', false, 'dreierblock-vergessen'), opt(`Falsch. Richtig ist ${fz(n)}.`, true), opt(`Falsch. Richtig ist ${fz(m * MIO + t)}.`, false, 'dreierblock-vergessen')],
         h3('Jeder Dreierblock braucht 3 Ziffern. Fülle mit Nullen auf.', 'zwei Millionen dreitausend: 2, dann 003, dann 000.', `Der Block der Tausender heißt 00${t}.`), { nachweis: [U(false), HILFSZAHL(n, zahlwort(n))] }); },
   ]);
   sechs(G_('B1'), 'M', [
@@ -160,7 +160,7 @@ export function grosseZahlen() {
       return zahl(Z(`Wie heißt der Vorgänger von ${fz(n)}?`), n - 1, fehlerliste(n - 1, [[n + 1, 'nachbar-verwechselt'], [n - 10, 'stellenwert'], [n - MIO, 'stellenwert']]),
         h3('Der Vorgänger ist um 1 kleiner. Aus den Nullen werden Neunen.', 'Der Vorgänger von 1 000 000 ist 999 999.', `Die erste Ziffer wird um 1 kleiner. Dahinter stehen nur Neunen.`), { nachweis: [EINS, ...N(`${n} − 1`)], lang: true }); },
     () => { const k = kind(), a = zz(5, 9) * 100 * MIO, b = zz(1, 4) * MRD;
-      return auswahl(Z(`${k} sagt: „${fz(a)} ist größer als ${fz(b)}.“`, `„Denn ${a / (100 * MIO)} ist größer als ${b / MRD}.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'vergleich-erste-ziffer'), opt(`Falsch. ${fz(b)} hat mehr Stellen und ist größer.`, true), opt('Falsch. Die beiden Zahlen sind gleich groß.', false)],
+      return auswahl(Z(`${k} sagt: „${fz(a)} ist größer als ${fz(b)}.“`, `„Denn ${a / (100 * MIO)} ist größer als ${b / MRD}.“`, 'Stimmt das?'), [opt('Stimmt. Bei großen Zahlen entscheidet die erste Ziffer.', false, 'vergleich-erste-ziffer'), opt(`Falsch. ${fz(b)} hat mehr Stellen und ist größer.`, true), opt('Falsch. Die beiden Zahlen sind gleich groß.', false)],
         h3('Schau in die Stellenwerttafel: Welche Zahl reicht weiter nach links?', '900 Millionen sind weniger als 1 Milliarde.', `${fz(b)} reicht bis zu den Milliarden. ${fz(a)} reicht nur bis zu den Millionen.`),
         { bild: B.zahlenTafel([a, b]), nachweis: [U(false), vergleich(a, b)] }); },
   ]);

@@ -60,7 +60,7 @@ function y1() {
     () => bildkarten('Kreuze die Pyramide mit 6 Ecken an.', [[pyramide(5), true], [pyramide(4), false, 'koerper-unvollstaendig-gezaehlt'], [pyramide(6), false, 'koerper-unvollstaendig-gezaehlt'], [prisma(3), false, 'prisma-pyramide']],
       H('M', 'Eine Ecke ist die Spitze.', 'Die übrigen Ecken gehören zur Grundfläche.'), { nachweis: [KA('pyramide', { n: 5 }), KZ('pyramide', 'ecken', 6, { n: 5 })] }),
     () => { const k = kind(), [satz, stimmt, grund, falsch1, falsch2] = wahl([
-      ['Eine Pyramide hat immer gleich viele Ecken wie Flächen.', true, 'Stimmt. Zu jedem Seitendreieck gehört eine Ecke unten, dazu Spitze und Grundfläche.', 'Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.', 'Stimmt nicht. Nur die vierseitige Pyramide hat das.'],
+      ['Eine Pyramide hat immer gleich viele Ecken wie Flächen.', true, 'Stimmt. Zu jedem Seitendreieck gehört eine Ecke unten, dazu Spitze und Grundfläche.', 'Stimmt nicht. Eine Pyramide hat immer mehr Kanten als Ecken und Flächen.', 'Stimmt nicht. Nur die vierseitige Pyramide hat das.'],
       ['Jede Pyramide hat eine gerade Anzahl von Kanten.', true, 'Stimmt. Unten sind es so viele Kanten wie zur Spitze.', 'Stimmt nicht. Die fünfseitige Pyramide hat 15 Kanten.', 'Stimmt nicht. Das gilt nur für Prismen.'],
       ['Bei jeder Pyramide sind alle Flächen Dreiecke.', false, 'Stimmt nicht. Bei der vierseitigen Pyramide ist die Grundfläche ein Viereck.', 'Stimmt. Alle Flächen laufen zur Spitze.', 'Stimmt. Eine Pyramide hat nur Seitendreiecke.']]);
       return auswahl(`${k} sagt: „${satz}“ Beurteile die Aussage.`, [opt(grund, true), opt(falsch1, false, 'prisma-pyramide'), opt(falsch2, false, 'ecken-kanten-verwechselt')],
@@ -140,7 +140,7 @@ function y2() {
       H('M', 'Prüfe Grundfläche und Seitendreiecke.', 'Fünf Ecken, fünf Seitendreiecke.'), { nachweis: [KA('pyramide', { n: 5 })] }),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Im Netz einer Pyramide müssen alle Seitendreiecke an der Grundfläche liegen.“ Beurteile die Aussage.`,
-        [opt('Stimmt nicht. Ein Seitendreieck kann auch an einem anderen Seitendreieck hängen.', true), opt('Stimmt. Sonst kann man das Netz nicht falten.', false, 'netz-nur-gezaehlt'), opt('Stimmt. Die Grundfläche hält alle Dreiecke fest.', false, 'netz-nur-gezaehlt')],
+        [opt('Stimmt nicht. Ein Seitendreieck kann auch an einem anderen Seitendreieck hängen.', true), opt('Stimmt. Sonst kann man das Netz nicht falten.', false, 'netz-nur-gezaehlt'), opt('Stimmt. Die Grundfläche hält alle Dreiecke fest, sonst fällt das Netz auseinander.', false, 'netz-nur-gezaehlt')],
         H('M', 'Denk an ein Würfelnetz: Nicht alle Quadrate liegen am Boden.', 'Beim Falten kommt es darauf an, dass am Ende alles zusammenpasst.'), { nachweis: [U(false)] }); },
     () => { const n = wahl([4, 5]), k = 2 * n, f = n + 1;
       return zahl(`Du faltest das Netz einer ${PND[n]} Pyramide. Im Netz hängen die ${f} Flächen an ${f - 1} Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst.`, k - (f - 1), [[k, 'netz-kleben'], [f, 'netz-kleben'], [n + 1, 'netz-kleben']],
@@ -151,7 +151,7 @@ function y2() {
   sechs(Y2, 'E', [
     () => { const n = wahl([4, 5, 6]), ok = zz(0, 1) === 1;
       return auswahl('Prüfe, ob sich das Netz zu einer Pyramide falten lässt. Kreuze die richtige Antwort an.', [opt('Ja, es lässt sich falten.', ok, ok ? undefined : 'netz-nur-gezaehlt'), opt('Nein, die Seitendreiecke sind zu flach und treffen sich nicht in einer Spitze.', !ok, ok ? 'netz-nur-gezaehlt' : undefined),
-        opt('Nein, es fehlt ein Seitendreieck.', false, 'netz-nur-gezaehlt')],
+        opt('Nein, es fehlt ein Seitendreieck, denn die Grundfläche hat mehr Seiten.', false, 'netz-nur-gezaehlt')],
         H('E', 'Stell dir vor, du klappst zwei Seitendreiecke hoch. Reichen ihre Spitzen bis zur Mitte?'), { bild: ok ? netz(n) : flach(n), nachweis: [NETZ('pyramide', { faltbar: ok, gruende: true }), U(ok)] }); },
     () => { const n = wahl([7, 8, 9]);
       return zahl(`Das Netz einer Pyramide besteht aus ${n + 1} Flächen. Gib an, wie viele Kanten die Pyramide hat.`, 2 * n, [[2 * (n + 1), 'koerper-unvollstaendig-gezaehlt'], [n + 1, 'ecken-kanten-verwechselt'], [3 * n, 'prisma-pyramide']],

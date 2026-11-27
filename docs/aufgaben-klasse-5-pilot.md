@@ -971,7 +971,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Finde zuerst heraus, wie groß ein Sc
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mia sagt: „Der Pfeil zeigt auf 502.“ / Stimmt das? _(Bild: Zahlenstrahl 500 bis 600, Teilstriche alle 20, Ausschnitt mit Bruchzeichen, Pfeil auf 540)_
   - ☑ Falsch. / Ein Schritt ist 20 groß. / Der Pfeil zeigt auf 540.
   - ☐ Falsch. / Der Pfeil zeigt auf 520.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Von Strich zu Strich geht es immer 1 weiter.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1040,7 +1040,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche von links: erst die Tausen
 - `04` AFB I · _Modellieren_ · Die Zahl 6000 ist am Zahlenstrahl markiert. / Wie heißt ihr Nachfolger? _(Bild: Zahlenstrahl 5990 bis 6010, Teilstriche alle 1, Ausschnitt mit Bruchzeichen, Punkte bei 6000)_ Lösung: **6001**. Typische Fehler: 5999 (nachbar-verwechselt), 7000 (stellenwert), 6010 (stellenwert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen. / Beginne mit der kleinsten Zahl. / Achte auf die Zahl der Stellen. _(Bild: Zahlenstrahl 800 bis 2000, Teilstriche alle 100, Punkte bei 838, 1308)_ _(Ordnen; die Karten liegen so da: 1308, 1038, 1083, 883, 838)_ Lösung: **838, 883, 1038, 1083, 1308**
 - `06` AFB III · _Argumentieren_ · Sara sagt: „909 ist größer als 1001.“ / „Denn 9 ist größer als 1.“ / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Bei großen Zahlen entscheidet die erste Ziffer.
   - ☐ Falsch. / Die beiden Zahlen sind gleich groß.
   - ☑ Falsch. / 1001 hat mehr Stellen. / Also ist 1001 größer.
 
@@ -1085,7 +1085,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Alle Zahlen haben gleich viele Stelle
   - ☐ Falsch. 999 ist größer als 1000, denn 9 ist größer als 1.
   - ☐ Das gilt nur für Zahlen bis 1000.
   - ☑ Stimmt. Jede vierstellige Zahl ist mindestens 1000, jede dreistellige höchstens 999. So ist es bei jeder Stellenzahl.
-  - ☐ Das gilt nur, wenn auch die erste Ziffer größer ist.
+  - ☐ Das gilt nur, wenn auch die erste Ziffer größer ist. Sonst muss man die Zahlen Stelle für Stelle vergleichen.
 
 ## 5.2.1-N3: Ich kann Zahlen in der Stellenwerttafel darstellen, lesen und schreiben.
 
@@ -1135,7 +1135,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Welcher Stellenwert fehlt? Dort steht
 - `05` AFB II · _Kommunizieren_ · Bei den Zehnern liegen zu viele Plättchen. / 10 Zehner sind 1 Hunderter. / Welche Zahl ist gelegt? _(Bild: Stellenwerttafel mit Plättchen, Spalten H Z E: 2 15 7)_ Lösung: **357**. Typische Fehler: 2157 (stellenwert), 257 (stellenwert).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida soll die Zahl neuntausendzwei schreiben. / Ida schreibt 902. / Stimmt das?
   - ☐ Falsch. / Richtig ist 90002.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / So spricht man die Zahl.
   - ☑ Falsch. / Richtig ist 9002.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -1222,7 +1222,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Dreierblöcke von rechts: 
 - `04` AFB I · _Kommunizieren_ · Schau auf die Stellenwerttafel. / Welche Zahl steht dort? _(Bild: Stellenwerttafel, Spalten HM ZM M HT ZT T H Z E: 5 0 4 0 0 0 2 0 0)_ Lösung: **504000200**. Typische Fehler: 542 (null-platzhalter), 504000 (dreierblock-vergessen).
 - `05` AFB II · _Kommunizieren_ · Welche Zahl gehört zu welchem Zahlwort? Lösung: 8 600 000 → acht Millionen sechshunderttausend, 8 060 000 → acht Millionen sechzigtausend, 8 006 000 → acht Millionen sechstausend
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Sara soll diese Zahl schreiben: neun Millionen viertausend / Sara schreibt 9 400 000. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / So spricht man die Zahl.
   - ☑ Falsch. / Richtig ist 9 004 000.
   - ☐ Falsch. / Richtig ist 9 000 004.
 
@@ -1300,7 +1300,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle zuerst die Stellen. Die Zahl m
   - ☑ 1 300 000 000
 - `05` AFB II · _Modellieren_ · Wie heißt der Vorgänger von 100 000 000? Lösung: **99999999**. Typische Fehler: 100000001 (nachbar-verwechselt), 99999990 (stellenwert), 99000000 (stellenwert).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Emre sagt: „500 000 000 ist größer als 1 000 000 000.“ / „Denn 5 ist größer als 1.“ / Stimmt das? _(Bild: Stellenwerttafel, Spalten Md HM ZM M HT ZT T H Z E: · 5 0 0 0 0 0 0 0 0 / 1 0 0 0 0 0 0 0 0 0)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Bei großen Zahlen entscheidet die erste Ziffer.
   - ☑ Falsch. / 1 000 000 000 hat mehr Stellen und ist größer.
   - ☐ Falsch. / Die beiden Zahlen sind gleich groß.
 
@@ -1387,7 +1387,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Rundungsstelle sind die Hunderter
 - `06` AFB III · _Argumentieren_ · Emre rundet 6348 auf Hunderter. / Emre rundet zuerst auf Zehner: 6350. / Dann rundet Emre weiter auf Hunderter: 6400. / Stimmt das Ergebnis? _(Bild: Zahlenstrahl 6300 bis 6400, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 6348)_
   - ☐ Falsch. / Richtig ist 6000.
   - ☑ Falsch. / Man rundet in einem Schritt. / Richtig ist 6300.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rundet Schritt für Schritt bis zum Hunderter.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1464,7 +1464,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Rundungsstelle sind die Tausender
   - ☐ rund 100 000 Einwohner
 - `06` AFB III · _Argumentieren_ · In der Zeitung steht: „Rund 400 Besucher.“ / Die Zahl ist auf Hunderter gerundet. / Sara sagt: „Dann waren es mindestens 400.“ / Stimmt das? _(Bild: Zahlenstrahl 300 bis 500, Teilstriche alle 10, Ausschnitt mit Bruchzeichen, Punkte bei 400)_
   - ☑ Falsch. / Es können auch nur 350 gewesen sein.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Beim Runden wird die Zahl immer größer.
   - ☐ Falsch. / Es waren genau 400.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -1487,7 +1487,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Für die Tausender entscheidet die Zi
 - `06` AFB III · _Argumentieren_ · Zwei Zahlen ergeben auf Tausender gerundet beide 9000. Paul sagt: „Dann unterscheiden sich die beiden Zahlen höchstens um 500.“ Stimmt das?
   - ☑ Falsch. Sie können fast 1000 auseinanderliegen, zum Beispiel 8500 und 9499.
   - ☐ Falsch. Sie unterscheiden sich höchstens um 100.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Runden auf Tausender ändert sich eine Zahl höchstens um 500.
   - ☐ Falsch. Die beiden Zahlen müssen gleich sein.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -1509,7 +1509,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es entscheidet allein die Ziffer der 
   - ☐ Hunderttausender
   - ☐ Tausender
 - `06` AFB III · _Argumentieren_ · Elif behauptet: „Es ist egal, ob ich zwei Zahlen erst auf Zehner runde und dann addiere oder erst addiere und dann runde.“ Beurteile die Aussage.
-  - ☐ Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer.
+  - ☐ Falsch. Wenn man zuerst rundet, ist das Ergebnis immer größer. Runden macht Zahlen größer.
   - ☑ Falsch. Gegenbeispiel: 34 + 34 = 68, gerundet 70. Rundet man zuerst, erhält man 30 + 30 = 60.
   - ☐ Stimmt, solange beide Zahlen abgerundet werden.
   - ☐ Stimmt immer, denn Runden ändert eine Zahl nur wenig.
@@ -1560,7 +1560,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld genau. Rechne dann ho
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Finn schätzt mit dem Raster: 128 Äpfel. / Dann zählt Finn alle einzeln nach: Es sind genau 123. / Finn sagt: „Dann war meine Schätzung falsch.“ / Stimmt das? _(Bild: Schätzbild mit 123 Symbolen (apfel) in 4 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 8 8 6 6 / 7 8 9 6 / 9 9 9 8 / 7 8 7 8)_
   - ☑ Falsch. / Eine Schätzung muss nur nah an der genauen Zahl liegen.
   - ☐ Falsch. / Beim Nachzählen macht man immer Fehler.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Eine gute Schätzung trifft die genaue Zahl immer.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1574,7 +1574,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle ein Feld aus, das typisch auss
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul zählt das gelbe Feld aus: 2 Menschen. Paul rechnet 2 · 12 = 24 und sagt: „Auf dem Bild sind ungefähr 24 Menschen.“ Warum ist diese Schätzung schlecht? _(Bild: Schätzbild mit 137 Symbolen (kind) in 3 mal 4 Feldern, Raster sichtbar, ein Feld markiert; je Feld 2 7 14 19 / 5 11 12 19 / 3 11 14 20)_
   - ☐ Paul hätte die beiden Zahlen addieren müssen.
   - ☐ Das Raster hat zu viele Felder für eine Schätzung.
-  - ☐ Die Schätzung ist gut, denn gerechnet wurde richtig.
+  - ☐ Die Schätzung ist gut, denn gerechnet wurde richtig. Auf das Feld kommt es nicht an.
   - ☑ Das Feld ist keine gute Stichprobe: In den meisten anderen Feldern sind viel mehr.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -1589,7 +1589,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein einzelnes Feld reicht hier nicht.
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Paul und Finn schätzen die Anzahl auf demselben Bild. Beide rechnen richtig hoch, aber mit verschiedenen Feldern. Paul erhält 240, Finn erhält 280. Kann beides eine brauchbare Schätzung sein?
   - ☐ Ja, aber nur, wenn beide zufällig dasselbe Feld gezählt haben.
   - ☐ Nein. Beim Schätzen mit einem Raster kommt immer dieselbe Zahl heraus.
-  - ☐ Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer verrechnet.
+  - ☐ Nein. Wenn zwei Ergebnisse verschieden sind, hat sich einer von beiden sicher verrechnet.
   - ☑ Ja. Die Felder sind nie genau gleich voll, deshalb führt jedes Feld zu einem etwas anderen Schätzwert.
 
 ## 5.2.4-S2: Ich kann Schätzungen beurteilen und gezählt, gerundet und geschätzt unterscheiden.
@@ -1645,7 +1645,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Was kann man leicht einzeln zählen? 
 - `06` AFB III · _Argumentieren_ · In der Zeitung steht: „Ungefähr 400 Gäste kamen zum Fest.“ / Sara sagt: „Das hat jemand einzeln gezählt.“ / Stimmt das?
   - ☐ Falsch. / Es waren genau 401 Gäste.
   - ☑ Falsch. / Das Wort ungefähr zeigt: Die Zahl ist geschätzt.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / In der Zeitung stehen nur gezählte Zahlen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -1654,7 +1654,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, was genau gezählt wurde u
 - `01` AFB I · _Argumentieren (+ Modellieren)_ · Eine Försterin zählt auf einer kleinen Probefläche 19 Bäume. Sie rechnet auf den ganzen Wald hoch und nennt 7600 Bäume. Wie ist diese Zahl entstanden?
   - ☐ Sie ist geraten, ganz ohne Rechnung.
   - ☐ Sie ist genau gezählt.
-  - ☐ Sie ist gerundet: Die genaue Zahl war bekannt.
+  - ☐ Sie ist gerundet: Die genaue Zahl war bekannt und wurde vereinfacht.
   - ☑ Sie ist geschätzt: Von einer Stichprobe wurde auf das Ganze geschlossen.
 - `02` AFB II · _Argumentieren_ · Ali zählt in einem Feld 12 Vögel und rechnet mit 24 Feldern hoch. Auf einem Foto werden später genau 301 Vögel gezählt. Um wie viel weicht der Schätzwert von der genauen Zahl ab? Lösung: **13**. Typische Fehler: 288 (begriffe-verwechselt), 589 (sub-addiert).
 - `03` AFB II · _Argumentieren_ · Eine Schätzung gilt hier als gut, wenn sie höchstens ein Fünftel von der genauen Zahl abweicht. Die genaue Zahl ist 350. Der Schätzbereich reicht dann von ▢ bis ▢. Lösung: a = **280**, b = **420**
@@ -1665,7 +1665,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, was genau gezählt wurde u
   - ☐ 520
 - `05` AFB II · _Argumentieren_ · Paul zählt drei Felder als Stichprobe aus: 12, 15 und 18 Ameisen. Paul rechnet mit dem mittleren Wert und 20 Feldern hoch. Wie groß ist der Schätzwert? Lösung: **300**. Typische Fehler: 45 (schaetzen-nicht-hochgerechnet), 900 (begriffe-verwechselt), 240 (begriffe-verwechselt).
 - `06` AFB III · _Argumentieren_ · Nach einem Stadtfest schreibt eine Zeitung „etwa 3000 Besucher“, eine andere „etwa 3200 Besucher“. Jemand sagt: „Eine der beiden Zeitungen lügt.“ Stimmt das?
-  - ☐ Falsch. Beide Zeitungen haben die Besucher einzeln gezählt.
+  - ☐ Falsch. Beide Zeitungen haben die Besucher einzeln gezählt, eine hat sich dabei verzählt.
   - ☐ Stimmt. Nur eine Zahl kann die richtige sein.
   - ☑ Falsch. Beide Zahlen sind Schätzungen. Sie liegen nah beieinander und können beide vernünftig sein.
   - ☐ Stimmt. Die größere Zahl ist bestimmt übertrieben.
@@ -1695,7 +1695,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterscheide: Beim Runden kennt man d
 - `06` AFB III · _Argumentieren_ · Warum wird eine Schätzung meist besser, wenn man mehrere Felder auszählt und mit ihrem mittleren Wert hochrechnet?
   - ☑ Ein einzelnes Feld kann zufällig besonders voll oder leer sein. Mehrere Felder gleichen das aus.
   - ☐ Sie wird nicht besser, denn es bleibt eine Schätzung.
-  - ☐ Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer.
+  - ☐ Weil man dann mehr rechnet, und mehr Rechnen ist immer genauer als wenig Rechnen.
   - ☐ Weil man die Felderzahl dann nicht mehr braucht.
 
 ## 5.2.5-Z1: Ich kann Zahlen aus dem Zweiersystem ins Zehnersystem übersetzen.
@@ -1732,7 +1732,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Stellenwerte zusammen, bei
 - `05` AFB II · _Kommunizieren (+ Modellieren)_ · Die Tafel zeigt die Zahl 1011₂. / Welche Zahl im Zehnersystem ist um 1 größer? _(Bild: Stellenwerttafel im Zweiersystem mit Plättchen, Spalten 16 8 4 2 1: 0 1 0 1 1)_ Lösung: **12**. Typische Fehler: 11 (dual-zehnerwerte), 1012 (dual-zehnerwerte).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ben liest die Zahl 11₂ als elf. / Stimmt das?
   - ☑ Falsch. / Im Zweiersystem zählen andere Stellenwerte. / Die Zahl ist 3.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Ziffern liest man wie bei jeder anderen Zahl.
   - ☐ Falsch. / Die Zahl ist 2.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -1766,7 +1766,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den Stellenwert der Z
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ida behauptet: „Auch im Zweiersystem ist von zwei Zahlen immer die mit mehr Stellen die größere.“ Beurteile die Aussage.
   - ☐ Das gilt nur, wenn die längere Zahl auf 1 endet.
   - ☑ Stimmt. Die kleinste Zahl mit fünf Stellen ist 16, die größte mit vier Stellen ist nur 15.
-  - ☐ Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an.
+  - ☐ Falsch. Im Zweiersystem kommt es nur auf die Zahl der Einsen an, nicht auf die Stellen.
   - ☐ Falsch. Das gilt nur im Zehnersystem.
 
 ## 5.2.5-Z2: Ich kann Zahlen ins Zweiersystem übersetzen.
@@ -1849,7 +1849,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beginne mit dem größten Stellenwert
   | **1** | **1** | **0** | **0** | **1** |
 
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Paul schreibt die Zahl 14 im Zweiersystem so: 0111₂. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Stellen stehen in der richtigen Reihenfolge.
   - ☐ Falsch. / Richtig ist 1111₂.
   - ☑ Falsch. / Paul hat die Stellen umgedreht. / Richtig ist 1110₂.
 
@@ -1935,7 +1935,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* L ist 50. Zähle die Werte von links 
   - ☐ 70
 - `05` AFB II · _Kommunizieren_ · Zerlege LXIV in zwei Teile. / LX ist ▢. / IV ist ▢. / Zusammen: 60 + 4 = ▢ Lösung: a = **60**, b = **4**, c = **64**
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas liest IX als elf. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Alle Zeichen werden einfach zusammengezählt.
   - ☑ Falsch. / Das I steht links und wird abgezogen. / Die Zahl ist 9.
   - ☐ Falsch. / Die Zahl ist 10.
 
@@ -2017,7 +2017,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe zuerst die Zehner, dann die 
 - `04` AFB I · _Kommunizieren_ · Schreibe die Zahl 100 mit römischen Zahlzeichen. _(Bild: Zeichentafel I, V, X, L, C mit Werten)_ _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **C**
 - `05` AFB II · _Kommunizieren (+ Modellieren)_ · Auf einer alten Uhr steht die Stunde VIII. / Schreibe die nächste Stunde mit römischen Zahlzeichen. _(Zeichen tippen mit den Tasten I V X L C D M)_ Lösung: **IX**
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Jonas schreibt die Zahl 40 so: XXXX. / Stimmt das?
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Jedes Zeichen darf man so oft schreiben wie nötig.
   - ☑ Falsch. / Das X steht höchstens dreimal hintereinander. / Richtig ist XL.
   - ☐ Falsch. / Richtig ist LX.
 
@@ -8577,7 +8577,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht immer in der Mitte
   - ☐ RT und OT
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lina schreibt für den Winkel α: ∢BSA. Hat Lina recht? _(Bild: Winkel α 40°)_
   - ☐ Ja. Die Reihenfolge der Buchstaben ist egal.
-  - ☐ Nein. Der Scheitel muss vorne stehen. Richtig ist ∢SAB.
+  - ☐ Nein. Der Scheitel muss immer vorne stehen. Richtig ist ∢SAB.
   - ☑ Nein. Gegen den Uhrzeigersinn geht es von SA nach SB. Richtig ist ∢ASB.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -8611,7 +8611,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Scheitel steht in der Mitte, gele
   - ☐ BC und SB
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Noah sagt: „∢ASB und ∢BSA sind gleich groß, sie haben ja dieselben Schenkel.“ Stimmt das? _(Bild: Winkel α 70°)_
   - ☑ Nein. ∢BSA ist der überstumpfe Winkel außen herum.
-  - ☐ Ja. Es kommt nur auf die Schenkel an.
+  - ☐ Ja. Es kommt nur auf die beiden Schenkel an.
 
 ## 5.7.2-V2: Ich kann Winkel ohne Messen vergleichen.
 
@@ -8734,7 +8734,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lage, Schenkellänge und Bogen sind e
   - ☐ γ
   - ☐ β
 - `06` AFB III · _Argumentieren_ · Mara sagt: „Ein Winkel mit kurzen Schenkeln kann größer sein als ein Winkel mit langen Schenkeln.“ Stimmt das? _(Bild: Winkel α 32°, β 135°)_
-  - ☐ Nein. Kurze Schenkel gehören immer zu kleinen Winkeln.
+  - ☐ Nein. Kurze Schenkel gehören immer zu den kleinen Winkeln.
   - ☑ Ja. Die Größe hängt nur von der Öffnung ab. Im Bild ist β größer als α.
 
 ## 5.7.3-A1: Ich kann Winkelarten erkennen und benennen.
@@ -8923,7 +8923,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche mit 90°. *Beispiel:* Die 
 - `05` AFB II · _Modellieren_ · β ist ein rechter Winkel. / Schätze mit seiner Hilfe den Winkel α. / Du darfst bis zu 20° daneben liegen. _(Bild: Winkel α 80°, β 90°)_ Lösung: **80 °** (bis 20 ° daneben gilt als richtig). Typische Fehler: 280 (ueberstumpf-klein).
 - `06` AFB III · _Argumentieren_ · Jonas schätzt den Winkel α auf 20°. / Was ist der Fehler? _(Bild: Winkel α 160°)_
   - ☑ α ist stumpf. / Er ist größer als 90°. / 20° ist viel zu klein.
-  - ☐ α ist spitz. / 20° ist zu groß.
+  - ☐ α ist spitz. / Er ist kleiner als 90°. / 20° ist zu groß.
   - ☐ Kein Fehler. / 20° passt gut.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -9282,7 +9282,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Entscheidend ist der größte Winkel.
   - ☑ gleichschenklig
   - ☐ gleichseitig
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Lena behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat Lena recht?
-  - ☐ Ja. Zum Beispiel, wenn man ein Quadrat halbiert.
+  - ☐ Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.
   - ☑ Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.
   - ☐ Ja, aber nur bei einem gleichseitigen Dreieck.
 
@@ -9310,7 +9310,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die drei Winkel eines Dreiecks ergebe
   - ☑ Dreieck C
   - ☐ Dreieck A
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Ole zeichnet ein Dreieck mit den Winkeln 90°, 50° und 45°. Geht das?
-  - ☐ Ja. Es ist ein stumpfwinkliges Dreieck.
+  - ☐ Ja. Es ist dann ein stumpfwinkliges Dreieck.
   - ☑ Nein. Die Winkel ergeben zusammen 185°, nicht 180°.
   - ☐ Ja. Jeder Winkel ist kleiner als 180°.
 

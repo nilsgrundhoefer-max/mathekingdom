@@ -175,7 +175,7 @@ function q2() {
         H('G', 'Zähle nicht im Netz. Stell dir den fertigen Würfel vor.', 'Beim Falten treffen sich drei Ecken des Netzes in einer Ecke.', 'Ein Würfel hat oben 4 und unten 4 Ecken.'), { bild: netzBild(n), nachweis: [NETZ('wuerfel', { faltbar: true }), KZ('wuerfel', 'ecken', 8)] }); },
     () => { const k = kind(), n = [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [1, 1]];
       return auswahl(Z('Vier Quadrate liegen in einer Reihe.', 'Über den ersten beiden liegt je ein Quadrat.', `${k} sagt: „6 Quadrate ergeben immer ein Würfelnetz.“`, 'Prüfe die Aussage.'),
-        [opt('Stimmt nicht. Beim Falten liegen zwei Quadrate aufeinander. Eine Seite fehlt.', true), opt('Stimmt. 6 Quadrate ergeben immer einen Würfel.', false, 'netz-nur-gezaehlt'), opt('Stimmt. Alle Quadrate hängen zusammen.', false, 'netz-nur-gezaehlt')],
+        [opt('Stimmt nicht. Beim Falten liegen zwei Quadrate aufeinander. Eine Seite fehlt.', true), opt('Stimmt. Ein Würfel hat 6 Flächen. 6 Quadrate ergeben immer einen Würfel.', false, 'netz-nur-gezaehlt'), opt('Stimmt. Alle Quadrate hängen zusammen.', false, 'netz-nur-gezaehlt')],
         H('G', 'Falte in Gedanken. Die vier Quadrate in der Reihe werden Boden und Seiten.', 'Die beiden oberen Quadrate klappen beide nach oben.', 'Wo landen die beiden oberen Quadrate?'), { bild: netzBild(n), nachweis: [NETZ('wuerfel', { faltbar: false }), U(false)] }); },
   ]);
   sechs(Q2, 'M', [
@@ -209,7 +209,7 @@ function q2() {
     () => { const k = kind();
       return auswahl(`${k} sagt: „Ein Würfelnetz kann nie fünf Quadrate in einer Reihe haben.“ Beurteile die Aussage.`,
         [opt('Stimmt. In einer Reihe falten sich nur vier Quadrate rundherum. Das fünfte liegt auf dem ersten.', true), opt('Stimmt nicht. Mit dem sechsten Quadrat daneben geht es.', false, 'netz-nur-gezaehlt'),
-          opt('Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels.', false, 'netz-nur-gezaehlt')],
+          opt('Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels mit Deckel.', false, 'netz-nur-gezaehlt')],
         H('E', 'Rolle einen Würfel über vier Flächen in einer Richtung. Wo landet er beim fünften Mal?'), { nachweis: [U(true), KZ('wuerfel', 'flaechen', 6), '4 + 1 = 5'] }); },
     () => { const n = zufallsLage(wahl(WUERFELNETZE));
       return zahl('Ein Würfelnetz hat 5 Knickkanten zwischen den Quadraten. Beim Falten wird jede andere Kante des Würfels aus zwei Randstücken zusammengeklebt. Gib an, wie viele Kanten geklebt werden.', 7,
@@ -217,7 +217,7 @@ function q2() {
         { bild: netzBild(n), nachweis: [NETZ('wuerfel', { faltbar: true }), KZ('wuerfel', 'kanten', 12), '12 − 5 = 7'] }); },
     () => { const k = kind(), [a, b, c] = wahl([[3, 2, 1], [4, 2, 1], [3, 2, 2]]);
       return auswahl(`${k} hat das Netz eines Quaders mit a = ${a} cm, b = ${b} cm und c = ${c} cm gezeichnet. Ein Kästchen steht für 1 cm. Beurteile das Netz.`,
-        [opt('Es ist falsch. Der Deckel liegt neben der Vorderseite und hat die falsche Größe.', true), opt('Es ist richtig. Es hat 6 Rechtecke.', false, 'netz-nur-gezaehlt'), opt('Es ist richtig. Gleich große Rechtecke kommen doppelt vor.', false, 'netz-nur-gezaehlt')],
+        [opt('Es ist falsch. Der Deckel liegt neben der Vorderseite und hat die falsche Größe.', true), opt('Es ist richtig. Es hat 6 Rechtecke.', false, 'netz-nur-gezaehlt'), opt('Es ist richtig. Gleich große Rechtecke kommen wie beim Quader doppelt vor.', false, 'netz-nur-gezaehlt')],
         H('E', 'Falte in Gedanken. Welche Kanten stoßen aneinander, und sind sie gleich lang?'), { bild: quaderNetz(a, b, c, { fehlerArt: 'deckel-falsch' }), nachweis: [NETZ('quader', { faltbar: false, quader: { a, b, c } }), U(false)] }); },
   ]);
 }

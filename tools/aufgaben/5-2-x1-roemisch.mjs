@@ -64,7 +64,7 @@ export function roemischeZahlzeichen() {
       return luecken(Z(`Zerlege ${r(n)} in zwei Teile.`, `${r(z)} ist {{a}}.`, `${r(e)} ist {{b}}.`, `Zusammen: {{a}} + {{b}} = {{c}}`.replace('{{a}} + {{b}}', `${z} + ${e}`)), { a: z, b: [e, fehlerliste(e, [[e + 2, 'roemisch-nur-addiert']])], c: [n, fehlerliste(n, [[n + 2, 'roemisch-nur-addiert']])] },
         h3('Der vordere Teil sind die Zehner. Der hintere Teil sind die Einer.', 'XXIV: XX ist 20, IV ist 4. Zusammen 24.', `${r(z)} ist ${z}. ${r(e)} ist ${e}.`), { nachweis: [R(z), R(e), R(n), ...N(`${z} + ${e}`)] }); },
     () => { const k = kind(), [n, f] = wahl([[9, 'elf'], [4, 'sechs']]);
-      return auswahl(Z(`${k} liest ${r(n)} als ${f}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'roemisch-nur-addiert'), opt(`Falsch. Das I steht links und wird abgezogen. Die Zahl ist ${n}.`, true), opt(`Falsch. Die Zahl ist ${n + 1}.`, false, 'roemisch-zeichen-verwechselt')],
+      return auswahl(Z(`${k} liest ${r(n)} als ${f}.`, 'Stimmt das?'), [opt('Stimmt. Alle Zeichen werden einfach zusammengezählt.', false, 'roemisch-nur-addiert'), opt(`Falsch. Das I steht links und wird abgezogen. Die Zahl ist ${n}.`, true), opt(`Falsch. Die Zahl ist ${n + 1}.`, false, 'roemisch-zeichen-verwechselt')],
         h3('Wo steht das kleinere Zeichen? Links heißt abziehen.', 'XI ist 10 + 1 = 11. IX ist 10 − 1 = 9.', `In ${r(n)} steht das I links.`), { nachweis: [U(false), R(n, NUR)] }); },
   ]);
   sechs(X_('X1'), 'M', [
@@ -151,7 +151,7 @@ export function roemischeZahlzeichen() {
       return schreiben(Z(`Auf einer alten Uhr steht die Stunde ${r(h)}.`, 'Schreibe die nächste Stunde mit römischen Zahlzeichen.'), h + 1,
         h3('Rechne zuerst in Zahlen. Schreibe dann die neue Zahl.', 'Nach der Stunde XIII kommt 14. Man schreibt XIV.', `${r(h)} ist ${h}. Die nächste Stunde ist ${h + 1}.`), {}, [R(h, NUR), EINS, ...N(`${h} + 1`)]); },
     () => { const k = kind(), [n, falsch, grund] = wahl([[4, 'IIII', 'I'], [9, 'VIIII', 'I'], [40, 'XXXX', 'X']]);
-      return auswahl(Z(`${k} schreibt die Zahl ${n} so: ${falsch}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'roemisch-vier-gleiche'), opt(`Falsch. Das ${grund} steht höchstens dreimal hintereinander. Richtig ist ${r(n)}.`, true), opt(`Falsch. Richtig ist ${umgedreht(n)}.`, false, 'roemisch-falsch-abgezogen')],
+      return auswahl(Z(`${k} schreibt die Zahl ${n} so: ${falsch}.`, 'Stimmt das?'), [opt('Stimmt. Jedes Zeichen darf man so oft schreiben wie nötig.', false, 'roemisch-vier-gleiche'), opt(`Falsch. Das ${grund} steht höchstens dreimal hintereinander. Richtig ist ${r(n)}.`, true), opt(`Falsch. Richtig ist ${umgedreht(n)}.`, false, 'roemisch-falsch-abgezogen')],
         h3('Zähle gleiche Zeichen hintereinander. Mehr als drei sind nicht erlaubt.', 'Die Zahl 14 schreibt man XIV, nicht XIIII.', `Ziehe ab: ${r(n)} ist ${n}.`), { nachweis: [U(false), R(n, NUR)] }); },
   ]);
   sechs(X_('X2'), 'M', [

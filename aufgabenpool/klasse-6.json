@@ -36449,7 +36449,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.\n6 Quadrate ergeben immer einen Würfel.",
+     "text": "Stimmt.\nEin Würfel hat 6 Flächen.\n6 Quadrate ergeben immer einen Würfel.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -39233,7 +39233,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels.",
+     "text": "Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels mit Deckel.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     }
@@ -39445,7 +39445,7 @@
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
     {
-     "text": "Es ist richtig. Gleich große Rechtecke kommen doppelt vor.",
+     "text": "Es ist richtig. Gleich große Rechtecke kommen wie beim Quader doppelt vor.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     }
@@ -44559,7 +44559,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.",
+     "text": "Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen, also genau 1 cm.",
      "richtig": false,
      "fehlvorstellung": "tiefe-nicht-verkuerzt"
     },
@@ -58504,7 +58504,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Es kommt nur auf die Anzahl der Flächen an.",
+     "text": "Stimmt. Es kommt beim Netz nur auf die Anzahl der Flächen an.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -60945,7 +60945,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.",
+     "text": "Stimmt nicht. Eine Pyramide hat immer mehr Kanten als Ecken und Flächen.",
      "richtig": false,
      "fehlvorstellung": "prisma-pyramide"
     },
@@ -64477,7 +64477,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Die Grundfläche hält alle Dreiecke fest.",
+     "text": "Stimmt. Die Grundfläche hält alle Dreiecke fest, sonst fällt das Netz auseinander.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -64973,7 +64973,7 @@
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
     {
-     "text": "Nein, es fehlt ein Seitendreieck.",
+     "text": "Nein, es fehlt ein Seitendreieck, denn die Grundfläche hat mehr Seiten.",
      "richtig": false,
      "fehlvorstellung": "netz-nur-gezaehlt"
     },
@@ -66596,7 +66596,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt. Der Kegel hat eine Ecke und zwei Kanten.",
+     "text": "Stimmt. Der Kegel hat eine Ecke an der Spitze und zwei Kanten am Rand.",
      "richtig": false,
      "fehlvorstellung": "runde-koerper-zaehlen"
     }
@@ -66976,7 +66976,7 @@
      "fehlvorstellung": "runde-koerper-zaehlen"
     },
     {
-     "text": "Stimmt. Runde Körper haben keine Kanten.",
+     "text": "Stimmt. Runde Körper haben überhaupt keine Kanten.",
      "richtig": false,
      "fehlvorstellung": "runde-koerper-zaehlen"
     }
@@ -74867,7 +74867,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.\n8 Würfel ergeben 2 · 2 · 2.",
+     "text": "Stimmt.\n8 Würfel ergeben immer 2 · 2 · 2.\nDas ist ein Würfel.",
      "richtig": false,
      "fehlvorstellung": "wuerfel-kein-quader"
     },
@@ -78103,7 +78103,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt. Beide haben dieselben Ziffern.",
+     "text": "Stimmt. Beide haben dieselben Ziffern, und Nullen ändern den Wert einer Dezimalzahl an keiner Stelle.",
      "richtig": false,
      "fehlvorstellung": "dezimal-wie-natuerlich"
     },
@@ -80986,7 +80986,7 @@
      "fehlvorstellung": "runden-kette"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rundet immer Stelle für Stelle.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     }
@@ -81246,7 +81246,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Die dritte Stelle wird gestrichen.",
      "richtig": false,
      "fehlvorstellung": "runden-abschneiden"
     }
@@ -81442,7 +81442,7 @@
      "fehlvorstellung": "runden-kette"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man rundet von hinten Stelle für Stelle bis zu den Zehnteln.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     },
@@ -82419,7 +82419,7 @@
      "fehlvorstellung": "runden-abschneiden"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Die hinteren Ziffern fallen weg.",
      "richtig": false,
      "fehlvorstellung": "runden-abschneiden"
     },
@@ -82616,7 +82616,7 @@
      "fehlvorstellung": "runden-kette"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man rundet von hinten Stelle für Stelle.",
      "richtig": false,
      "fehlvorstellung": "runden-kette"
     },
@@ -85487,7 +85487,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man teilt die größere Zahl durch die kleinere.",
      "richtig": false,
      "fehlvorstellung": "bruch-vertauscht"
     }
@@ -85909,7 +85909,7 @@
      "fehlvorstellung": "runden-abschneiden"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Nach dem ersten Ergebnis darf man aufhören.",
      "richtig": false,
      "fehlvorstellung": "runden-abschneiden"
     },
@@ -86048,7 +86048,7 @@
      "fehlvorstellung": "periode-abgebrochen"
     },
     {
-     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.",
+     "text": "Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist, also bei echten Brüchen.",
      "richtig": false,
      "fehlvorstellung": "periode-abgebrochen"
     }
@@ -86319,7 +86319,7 @@
      "fehlvorstellung": "periode-abgebrochen"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Ein paar Stellen nach dem Komma genügen.",
      "richtig": false,
      "fehlvorstellung": "periode-abgebrochen"
     }
@@ -86559,7 +86559,7 @@
      "fehlvorstellung": "periode-zu-frueh"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Die Periode beginnt direkt nach dem Komma.",
      "richtig": false,
      "fehlvorstellung": "periode-zu-frueh"
     }
@@ -86765,7 +86765,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Nach vier Stellen ist jede Division zu Ende.",
      "richtig": false,
      "fehlvorstellung": "periode-abgebrochen"
     },
@@ -101977,7 +101977,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nEin Quader hat drei verschiedene Flächen.\nDie zählt man zusammen.",
      "richtig": false,
      "fehlvorstellung": "oberflaeche-drei-flaechen"
     },
@@ -102374,7 +102374,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die Rechnung stimmt, es fehlt nur die Einheit.",
+     "text": "Die Rechnung stimmt, es fehlt nur die Einheit. Mit der richtigen Einheit ist es der Oberflächeninhalt.",
      "richtig": false,
      "fehlvorstellung": "volumen-oberflaeche-verwechselt"
     },
@@ -102681,7 +102681,7 @@
      "fehlvorstellung": "oberflaeche-drei-flaechen"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Jede der drei verschiedenen Flächen wurde berechnet und addiert.",
      "richtig": false,
      "fehlvorstellung": "oberflaeche-drei-flaechen"
     },
@@ -103978,7 +103978,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Kiste ist ein Quader mit 6 Flächen.",
      "richtig": false,
      "fehlvorstellung": "deckel-mitgerechnet"
     },
@@ -105462,7 +105462,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan zählt nur die Würfel im Bild.",
      "richtig": false,
      "fehlvorstellung": "wuerfel-verdeckt"
     },
@@ -106082,7 +106082,7 @@
      "richtig": false
     },
     {
-     "text": "Stimmt. Ein höherer Körper nimmt mehr Platz ein.",
+     "text": "Stimmt. Ein höherer Körper nimmt mehr Platz ein als ein flacher Körper.",
      "richtig": false
     },
     {
@@ -107766,7 +107766,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nVon dm zu cm rechnet man immer mit 100.",
      "richtig": false,
      "fehlvorstellung": "umrechnungszahl"
     },
@@ -109706,7 +109706,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Von m³ zu Liter ist die Umrechnungszahl 10.",
      "richtig": false,
      "fehlvorstellung": "umrechnungszahl"
     },
@@ -110653,7 +110653,7 @@
      "fehlvorstellung": "volumen-oberflaeche-verwechselt"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie Zahl ist richtig gerechnet.\nDie Einheit passt zu cm.",
      "richtig": false,
      "fehlvorstellung": "einheit-art"
     }
@@ -110981,7 +110981,7 @@
      "richtig": true
     },
     {
-     "text": "Die Rechnung stimmt. Es gibt keinen Fehler.",
+     "text": "Die Rechnung stimmt. Es gibt keinen Fehler, denn man darf jede Einheit multiplizieren.",
      "richtig": false,
      "fehlvorstellung": "einheiten-nicht-angeglichen"
     },
@@ -111265,7 +111265,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt, denn beim Würfel sind alle Kanten gleich lang.",
+     "text": "Stimmt, denn beim Würfel sind alle Kanten gleich lang. Doppelte Kante heißt doppeltes Volumen.",
      "richtig": false,
      "fehlvorstellung": "volumen-waechst-wie-kante"
     },
@@ -113963,7 +113963,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDer Quader unten ist der ganze Körper.",
      "richtig": false,
      "fehlvorstellung": "sach-schritt-vergessen"
     },
@@ -115487,7 +115487,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner.",
+     "text": "Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner, weil an der Ecke drei Quadrate wegfallen.",
      "richtig": false,
      "fehlvorstellung": "volumen-oberflaeche-verwechselt"
     },
@@ -143820,7 +143820,7 @@
       "richtig": false
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon Strich zu Strich geht es immer 1 weiter.",
       "richtig": false,
       "fehlvorstellung": "strahl-einerschritte"
      }
@@ -144709,7 +144709,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nMan rundet Schritt für Schritt bis zum Hunderter.",
       "richtig": false,
       "fehlvorstellung": "runden-kette"
      }
@@ -145617,7 +145617,7 @@
       "richtig": true
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nBeim Runden wird die Zahl immer größer.",
       "richtig": false,
       "fehlvorstellung": "falsch-gerundet"
      },
@@ -145887,7 +145887,7 @@
       "fehlvorstellung": "runden-falsche-stelle"
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt. Beim Runden auf Tausender ändert sich eine Zahl höchstens um 500.",
       "richtig": false,
       "fehlvorstellung": "falsch-gerundet"
      },
@@ -164782,7 +164782,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert.",
+      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.",
       "richtig": false,
       "fehlvorstellung": "dreieck-art"
      },

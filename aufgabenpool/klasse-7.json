@@ -63724,7 +63724,7 @@
       "richtig": false
      },
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nVon Strich zu Strich geht es immer 1 weiter.",
       "richtig": false,
       "fehlvorstellung": "strahl-einerschritte"
      }
@@ -64549,7 +64549,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Stimmt.",
+      "text": "Stimmt.\nBei großen Zahlen entscheidet die erste Ziffer.",
       "richtig": false,
       "fehlvorstellung": "vergleich-erste-ziffer"
      },
@@ -87669,7 +87669,7 @@
     "mehrfach": false,
     "optionen": [
      {
-      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert.",
+      "text": "Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.",
       "richtig": false,
       "fehlvorstellung": "dreieck-art"
      },

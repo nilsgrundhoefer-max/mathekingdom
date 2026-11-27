@@ -45,7 +45,7 @@ export function volumenVergleichen6() {
       return luecken(Z('Der Plan zeigt einen Würfelbau von oben.', 'Jede Zahl nennt die Anzahl der Würfel übereinander.', 'Bestimme die Anzahl aller Würfel.', 'Der Würfelbau hat {{n}} Würfel.'), { n: lk(n, [[oben, 'wuerfel-verdeckt']]) },
         H('G', 'Jedes Kästchen ist ein Turm.', 'Ein Kästchen mit der Zahl 3 ist ein Turm aus 3 Würfeln.', 'Addiere alle Zahlen im Plan.'), { bild: risseBild(grundrissMitZahlen(w)), nachweis: [BN('wuerfel', n)] }); },
     () => { const n = zz(8, 12), w = verdeckterBau(n), v = verdeckteWuerfel(w), kn = kind();
-      return auswahl(Z(`${kn} zählt bei dem Körper ${n - v} Würfel.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. Verdeckte Würfel fehlen. Es sind ${n} Würfel.`, true), opt('Stimmt.', false, 'wuerfel-verdeckt'), opt(`Falsch. Es sind ${n - v - 1} Würfel.`, false)],
+      return auswahl(Z(`${kn} zählt bei dem Körper ${n - v} Würfel.`, 'Beurteile das Ergebnis.'), [opt(`Falsch. Verdeckte Würfel fehlen. Es sind ${n} Würfel.`, true), opt('Stimmt. Man zählt nur die Würfel im Bild.', false, 'wuerfel-verdeckt'), opt(`Falsch. Es sind ${n - v - 1} Würfel.`, false)],
         hVerdeckt, { bild: bau(w), nachweis: [BN('wuerfel', n), URTEIL(false)] }); },
     () => { const w = suche(() => zufallsBau(3, 2, 3, zz(6, 10)), (x) => Math.max(...x.map((p) => p[0])) === 2 && Math.max(...x.map((p) => p[1])) === 1), bz = Math.max(...w.map((p) => p[2])) + 1, box = 3 * 2 * bz, n = w.length;
       if (box === n || bz < 2) return null;
@@ -94,7 +94,7 @@ export function volumenVergleichen6() {
       return zahl(Z(`Ein Quader aus Würfeln ist ${a} Würfel lang, ${b} Würfel breit und ${c} Würfel hoch. Aus allen Würfeln wird ein neuer Quader gebaut. Seine unterste Schicht hat ${x} · ${y} Würfel.`, 'Bestimme die Anzahl der Schichten des neuen Quaders.'), c2, [[n, 'sach-schritt-vergessen'], [c, 'sach-schritt-vergessen']],
         H('E', 'Die Anzahl der Würfel bleibt gleich.'), { nachweis: [`${a} · ${b} · ${c} = ${n}`, `${x} · ${y} = ${x * y}`, `${n} : ${x * y} = ${c2}`] }); },
     () => auswahl(Z('Zwei Körper bestehen aus gleich vielen gleich großen Würfeln. Der eine Körper ist höher als der andere.', `${kind()} sagt: „Der höhere Körper hat das größere Volumen.“`, 'Beurteile die Aussage.'),
-      [opt('Falsch. Gleich viele gleich große Würfel haben zusammen immer dasselbe Volumen.', true), opt('Stimmt. Ein höherer Körper nimmt mehr Platz ein.', false), opt('Stimmt, aber nur bei Quadern.', false), opt('Falsch. Der breitere Körper hat das größere Volumen.', false)],
+      [opt('Falsch. Gleich viele gleich große Würfel haben zusammen immer dasselbe Volumen.', true), opt('Stimmt. Ein höherer Körper nimmt mehr Platz ein als ein flacher Körper.', false), opt('Stimmt, aber nur bei Quadern.', false), opt('Falsch. Der breitere Körper hat das größere Volumen.', false)],
       H('E', 'Das Volumen hängt nur davon ab, wie viele Einheitswürfel in den Körper passen.'), { nachweis: [FREI('Volumen hängt nicht von der Form ab'), URTEIL(false)] }),
   ]);
 

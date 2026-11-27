@@ -2044,7 +2044,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lege in Gedanken eine Fläche als Bod
   - ☑ C _(Bild: netz)_
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus dem Netz wird ein Würfel gefaltet. / Gib an, wie viele Ecken der Würfel hat. _(Bild: netz)_ Lösung: **8**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (ecken-kanten-verwechselt), 6 (ecken-kanten-verwechselt).
 - `06` AFB III · _Argumentieren_ · Vier Quadrate liegen in einer Reihe. / Über den ersten beiden liegt je ein Quadrat. / Ida sagt: „6 Quadrate ergeben immer ein Würfelnetz.“ / Prüfe die Aussage. _(Bild: netz)_
-  - ☐ Stimmt. / 6 Quadrate ergeben immer einen Würfel.
+  - ☐ Stimmt. / Ein Würfel hat 6 Flächen. / 6 Quadrate ergeben immer einen Würfel.
   - ☑ Stimmt nicht. / Beim Falten liegen zwei Quadrate aufeinander. / Eine Seite fehlt.
   - ☐ Stimmt. / Alle Quadrate hängen zusammen.
 
@@ -2098,12 +2098,12 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Liegen vier Quadrate in einer Reihe, 
 - `04` AFB III · _Argumentieren_ · Ben sagt: „Ein Würfelnetz kann nie fünf Quadrate in einer Reihe haben.“ Beurteile die Aussage.
   - ☐ Stimmt nicht. Mit dem sechsten Quadrat daneben geht es.
   - ☑ Stimmt. In einer Reihe falten sich nur vier Quadrate rundherum. Das fünfte liegt auf dem ersten.
-  - ☐ Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels.
+  - ☐ Stimmt nicht. Fünf Quadrate in einer Reihe sind der Mantel eines Würfels mit Deckel.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfelnetz hat 5 Knickkanten zwischen den Quadraten. Beim Falten wird jede andere Kante des Würfels aus zwei Randstücken zusammengeklebt. Gib an, wie viele Kanten geklebt werden. _(Bild: netz)_ Lösung: **7**. Typische Fehler: 14 (netz-ecken-gezaehlt), 12 (kanten-teilweise), 6 (netz-nur-gezaehlt).
 - `06` AFB III · _Argumentieren_ · Ida hat das Netz eines Quaders mit a = 3 cm, b = 2 cm und c = 2 cm gezeichnet. Ein Kästchen steht für 1 cm. Beurteile das Netz. _(Bild: netz)_
   - ☑ Es ist falsch. Der Deckel liegt neben der Vorderseite und hat die falsche Größe.
   - ☐ Es ist richtig. Es hat 6 Rechtecke.
-  - ☐ Es ist richtig. Gleich große Rechtecke kommen doppelt vor.
+  - ☐ Es ist richtig. Gleich große Rechtecke kommen wie beim Quader doppelt vor.
 
 ## 6.3.2-S1: Ich kann Schrägbilder von Quadern lesen: sichtbare und verdeckte Kanten, Ecken und Maße.
 
@@ -2243,7 +2243,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe die Richtung an einer anderen 
 - `04` AFB III · _Kommunizieren_ · Das Schrägbild eines Würfels ist im Heft 12 Kästchen breit. Gib die Kantenlänge des Würfels an. Lösung: **4 cm**. Typische Fehler: 6 (tiefe-nicht-verkuerzt), 3 (tiefe-nicht-verkuerzt).
 - `05` AFB II · _Kommunizieren_ · **[Heftaufgabe]** Zeichne das Schrägbild eines Quaders mit a = 4 cm, b = 4 cm und c = 4 cm in dein Heft. Gib an, wie viele Kästchen hoch dein Schrägbild ist. Lösung: **12**. Typische Fehler: 16 (tiefe-nicht-verkuerzt), 8 (tiefe-nicht-verkuerzt).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Mara sagt: „Im Schrägbild ist eine Kante nach hinten genauso lang wie in Wirklichkeit. Eine Kästchendiagonale ist ja 1 cm.“ Beurteile die Aussage.
-  - ☐ Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.
+  - ☐ Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen, also genau 1 cm.
   - ☑ Stimmt nicht. Eine Kästchendiagonale ist kürzer als 1 cm. Die Tiefe wird verkürzt gezeichnet.
   - ☐ Stimmt. Nur die verdeckten Kanten werden kürzer.
   - ☐ Stimmt nicht. Die Kante wird länger gezeichnet.
@@ -2553,7 +2553,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Grundflächen gehören nicht zur 
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein fünfseitiges Prisma hat Grundkanten von 4 cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist. Lösung: **20 cm**. Typische Fehler: 4 (mantel-streifen), 28 (netz-nur-gezaehlt), 40 (mantel-streifen).
 - `05` AFB II · _Argumentieren_ · Ali sagt: „Im Netz eines Prismas dürfen beide Grundflächen an derselben Seite der Mantelfläche liegen.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Dann gibt es beim Falten zwei Deckel und keinen Boden.
-  - ☐ Stimmt. Es kommt nur auf die Anzahl der Flächen an.
+  - ☐ Stimmt. Es kommt beim Netz nur auf die Anzahl der Flächen an.
   - ☐ Stimmt. Beim Falten kann man sie umklappen.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich ein dreiseitiges Prisma falten lässt.
   - ☐ A _(Bild: netz)_
@@ -2638,7 +2638,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jedes Seitendreieck liegt an einer Ka
   - ☐ C _(Bild: koerper)_
   - ☐ D _(Bild: koerper)_
 - `04` AFB I · _Argumentieren (+ Kommunizieren)_ · Sara sagt: „Eine Pyramide hat immer gleich viele Ecken wie Flächen.“ Beurteile die Aussage.
-  - ☐ Stimmt nicht. Eine Pyramide hat mehr Kanten als Flächen.
+  - ☐ Stimmt nicht. Eine Pyramide hat immer mehr Kanten als Ecken und Flächen.
   - ☐ Stimmt nicht. Nur die vierseitige Pyramide hat das.
   - ☑ Stimmt. Zu jedem Seitendreieck gehört eine Ecke unten, dazu Spitze und Grundfläche.
 - `05` AFB II · _Kommunizieren_ · Ein fünfseitiges Prisma und eine fünfseitige Pyramide stehen nebeneinander. Gib an, wie viele Kanten das Prisma mehr hat. Lösung: **5**. Typische Fehler: 15 (prisma-pyramide), 10 (prisma-pyramide), 1 (koerper-unvollstaendig-gezaehlt).
@@ -2733,7 +2733,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* An jeder Seite der Grundfläche muss 
   - ☐ C _(Bild: netz)_
   - ☑ D _(Bild: netz)_
 - `04` AFB I · _Argumentieren_ · Mia sagt: „Im Netz einer Pyramide müssen alle Seitendreiecke an der Grundfläche liegen.“ Beurteile die Aussage.
-  - ☐ Stimmt. Die Grundfläche hält alle Dreiecke fest.
+  - ☐ Stimmt. Die Grundfläche hält alle Dreiecke fest, sonst fällt das Netz auseinander.
   - ☑ Stimmt nicht. Ein Seitendreieck kann auch an einem anderen Seitendreieck hängen.
   - ☐ Stimmt. Sonst kann man das Netz nicht falten.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Du faltest das Netz einer vierseitigen Pyramide. Im Netz hängen die 5 Flächen an 4 Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst. Lösung: **4**. Typische Fehler: 8 (netz-kleben), 5 (netz-kleben).
@@ -2749,7 +2749,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Stell dir vor, du klappst zwei Seiten
 
 - `01` AFB I · _Argumentieren_ · Prüfe, ob sich das Netz zu einer Pyramide falten lässt. Kreuze die richtige Antwort an. _(Bild: netz)_
   - ☐ Ja, es lässt sich falten.
-  - ☐ Nein, es fehlt ein Seitendreieck.
+  - ☐ Nein, es fehlt ein Seitendreieck, denn die Grundfläche hat mehr Seiten.
   - ☑ Nein, die Seitendreiecke sind zu flach und treffen sich nicht in einer Spitze.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Netz einer Pyramide besteht aus 9 Flächen. Gib an, wie viele Kanten die Pyramide hat. Lösung: **16**. Typische Fehler: 18 (koerper-unvollstaendig-gezaehlt), 9 (ecken-kanten-verwechselt), 24 (prisma-pyramide).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Netze an, aus denen sich eine sechsseitige Pyramide falten lässt.
@@ -2831,7 +2831,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Von oben siehst du den Kreis unten, d
 - `02` AFB II · _Argumentieren (+ Kommunizieren)_ · Ole sagt: „Die Spitze eines Kegels ist eine Ecke.“ Beurteile die Aussage.
   - ☐ Stimmt. Alles Spitze ist eine Ecke.
   - ☑ Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.
-  - ☐ Stimmt. Der Kegel hat eine Ecke und zwei Kanten.
+  - ☐ Stimmt. Der Kegel hat eine Ecke an der Spitze und zwei Kanten am Rand.
 - `03` AFB II · _Kommunizieren_ · Kreuze den Körper mit genau zwei Flächen an.
   - ☐ A _(Bild: koerper)_
   - ☐ B _(Bild: koerper)_
@@ -2870,7 +2870,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Eine Spitze ist ein Punkt, an dem der
 - `03` AFB II · _Argumentieren (+ Kommunizieren)_ · Lena sagt: „Zylinder und Kegel haben gleich viele Kanten.“ Beurteile die Aussage.
   - ☑ Stimmt nicht. Der Zylinder hat 2 Kanten, der Kegel nur 1.
   - ☐ Stimmt. Beide haben 2 Kanten.
-  - ☐ Stimmt. Runde Körper haben keine Kanten.
+  - ☐ Stimmt. Runde Körper haben überhaupt keine Kanten.
 - `04` AFB III · _Kommunizieren_ · Ein Turm besteht aus einem Zylinder. Oben sitzt ein Kegel als Dach genau auf dem Deckel. Gib an, wie viele Flächen man am Turm von außen sieht, den Boden mitgezählt. Lösung: **3**. Typische Fehler: 5 (runde-koerper-zaehlen), 4 (runde-koerper-zaehlen), 2 (runde-koerper-zaehlen).
 - `05` AFB II · _Kommunizieren_ · Ein Körper sieht von vorne aus wie ein Rechteck. Von oben sieht er aus wie ein Kreis. Kreuze den Körper an.
   - ☑ Zylinder
@@ -3126,7 +3126,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jeder Würfel steht auf dem Boden ode
 - `05` AFB II · _Probleme lösen_ · Das Bild zeigt einen Würfelbau. / Gib an, wie viele Würfel es sind. _(Bild: Würfelbau aus 12 Würfeln, Türme von vorne nach hinten: 0 1 1 1 / 2 2 2 0 / 3 0 0 0)_ Lösung: **12**. Typische Fehler: 11 (wuerfel-verdeckt), 8 (wuerfel-verdeckt).
 - `06` AFB III · _Argumentieren (+ Probleme lösen)_ · Mia sagt: „Ein Würfelbau aus 8 Würfeln ist immer ein Würfel.“ / Beurteile die Aussage.
   - ☑ Stimmt nicht. / Die 8 Würfel können auch in einer Reihe liegen.
-  - ☐ Stimmt. / 8 Würfel ergeben 2 · 2 · 2.
+  - ☐ Stimmt. / 8 Würfel ergeben immer 2 · 2 · 2. / Das ist ein Würfel.
   - ☐ Stimmt. / Jeder Würfelbau ist ein Würfel.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -3321,7 +3321,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Ziffer der genannten Stelle steht
   - ☐ 0,75 m = 75 cm
   - ☐ 3,700 t = 3 t 700 kg
 - `05` AFB II · _Argumentieren_ · Mara sagt: „0,99 und 0,0099 sind gleich viel.“ / Beurteile die Aussage und begründe sie.
-  - ☐ Stimmt. Beide haben dieselben Ziffern.
+  - ☐ Stimmt. Beide haben dieselben Ziffern, und Nullen ändern den Wert einer Dezimalzahl an keiner Stelle.
   - ☑ Falsch. Es gilt 0,99 > 0,0099, denn die Null nach dem Komma schiebt die Ziffern um eine Stelle nach rechts.
   - ☐ Falsch. Es gilt 0,99 < 0,0099.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Lena misst eine Strecke: 2 m 23 cm 6 mm. Gib die Länge in Metern mit Komma an. Lösung: **2,236 m**. Typische Fehler: 22,36 (dezimal-stelle).
@@ -3545,7 +3545,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterstreiche die Rundungsstelle. Sch
 - `06` AFB III · _Argumentieren_ · Elif rundet 8,147 auf Zehntel. / Elif rundet zuerst auf 8,15. / Dann rundet Elif auf 8,2. / Beurteile das Ergebnis.
   - ☑ Falsch. / 8,147 ≈ 8,1. / Man rundet in einem Schritt.
   - ☐ Stimmt, denn 8,15 ≈ 8,2.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rundet immer Stelle für Stelle.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -3564,7 +3564,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche die Rundungsstelle und schau nu
 - `06` AFB III · _Argumentieren_ · Tom rundet 7,8698 auf Hundertstel und schreibt 7,86. / Beurteile das Ergebnis.
   - ☐ Stimmt, denn beim Runden fallen die Ziffern hinten einfach weg.
   - ☑ Falsch. 7,8698 ≈ 7,87. Die dritte Stelle ist 9, also aufrunden.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Die dritte Stelle wird gestrichen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -3580,7 +3580,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege, ab welcher Zahl aufgerunde
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Runde 3,9995. / Auf Tausendstel: ▢ / Auf Hundertstel: ▢ / Auf Zehntel: ▢ Lösung: a = **4,000**, b = **4,00**, c = **4,0**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Finn rundet 2,3449 Stelle für Stelle von hinten auf Zehntel. / Finn erhält 2,4. / Finde den Fehler.
   - ☐ Stimmt, denn jede Stelle wurde richtig gerundet.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man rundet von hinten Stelle für Stelle bis zu den Zehnteln.
   - ☑ Falsch. 2,3449 ≈ 2,3. Es zählt nur die Ziffer rechts neben den Zehnteln.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, die auf Hundertstel gerundet 0,10 ergeben.
   - ☑ 0,1
@@ -3644,7 +3644,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Überlege zuerst, welche Stelle die E
   - ☐ 5,34 €
 - `06` AFB III · _Argumentieren_ · Der Rechner zeigt 7,6883 m. / Noah rundet auf Zentimeter und schreibt 7,68 m. / Beurteile das Ergebnis.
   - ☐ Stimmt, denn Zentimeter sind Hundertstel Meter.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Die hinteren Ziffern fallen weg.
   - ☑ Falsch. 7,6883 m ≈ 7,69 m.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -3660,7 +3660,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Millimeter ist ein Tausendstel Me
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der Taschenrechner zeigt für 1 : 3 die Zahl 0,3333. / Runde die Anzeige. / Auf Zehntel: ▢ / Auf Hundertstel: ▢ / Auf Tausendstel: ▢ Lösung: a = **0,3**, b = **0,33**, c = **0,333**
 - `04` AFB III · _Argumentieren_ · Ida rundet den Betrag 7,7449 € auf Zehntel Euro. / Ida rundet Stelle für Stelle und erhält 7,8 €. / Beurteile das Ergebnis und begründe.
   - ☐ Stimmt, denn jede Stelle wurde richtig gerundet.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man rundet von hinten Stelle für Stelle.
   - ☑ Falsch. 7,7449 € ≈ 7,7 €.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · In einer Umfrage nennen 4 von 7 Kindern Pizza als Lieblingsessen. / Der Rechner zeigt für den Anteil 0,5714. / Gib den Anteil auf Hundertstel gerundet an. Lösung: **0,57**. Typische Fehler: 0,571 (runden-falsche-stelle).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Messwert wurde auf Hundertstel gerundet und ergibt 3,80. / Kreuze alle Werte an, die es gewesen sein können.
@@ -3836,7 +3836,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Bruch ist eine Division: Zähler 
 - `06` AFB III · _Argumentieren_ · Ali rechnet für 3⁄16: 16 : 3 = 5,3̅ / Beurteile die Rechnung.
   - ☐ Stimmt, denn 16 : 3 = 5,3̅.
   - ☑ Falsch. Es gilt 3⁄16 = 3 : 16 = 0,1875.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man teilt die größere Zahl durch die kleinere.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 9 : 40 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,225**. Typische Fehler: 0,22 (runden-abschneiden), 9,40 (bruch-als-komma).
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze die Dezimalzahl zu 3⁄12 an.
   - ☐ 0,2
@@ -3869,7 +3869,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hänge so lange Nullen an, bis kein R
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ : 16 = 0,4375 Lösung: a = **7**
 - `06` AFB III · _Argumentieren_ · Paul rechnet 3 : 8 = 0,3 und hört auf. / Beurteile die Rechnung und begründe.
   - ☐ Stimmt, denn eine Stelle nach dem Komma reicht.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Nach dem ersten Ergebnis darf man aufhören.
   - ☑ Falsch. Es bleibt ein Rest. Es gilt 3 : 8 = 0,375.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 21 : 40 / Gib das Ergebnis als Dezimalzahl ein. Lösung: **0,525**. Typische Fehler: 0,52 (runden-abschneiden).
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Zahlen der Größe nach. / Beginne mit der kleinsten Zahl. _(Ordnen; die Karten liegen so da: 11⁄25, 9⁄20, 0,4, 0,4375)_ Lösung: **0,4, 0,4375, 11⁄25, 9⁄20**
@@ -3878,7 +3878,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Hänge so lange Nullen an, bis kein R
   - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Nenner gerade ist.
   - ☑ Er ergibt eine abbrechende Dezimalzahl, wenn sich sein Nenner durch Erweitern zu einer Zehnerpotenz machen lässt.
   - ☐ Er ergibt immer eine abbrechende Dezimalzahl.
-  - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist.
+  - ☐ Er ergibt eine abbrechende Dezimalzahl, wenn der Zähler kleiner als der Nenner ist, also bei echten Brüchen.
 - `11` AFB II · _Mit symbolischen Elementen umgehen_ · Wandle 10⁄16 in eine Dezimalzahl um. Lösung: **0,625**. Typische Fehler: 10,16 (bruch-als-komma).
 - `12` AFB III · _Mit symbolischen Elementen umgehen_ · Ergänze den Zähler. / ▢⁄16 = 0,3125 Lösung: a = **5**
 
@@ -3906,7 +3906,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich und schreibe je
 - `06` AFB III · _Argumentieren_ · Ida schreibt: 1⁄3 = 0,33 / Beurteile die Aussage.
   - ☑ Falsch. Es gilt 1⁄3 = 0,3̅.
   - ☐ Stimmt, denn 0,33 ist fast 1⁄3.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Ein paar Stellen nach dem Komma genügen.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 8 : 15 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,53̅**. Typische Fehler: 0,53 (periode-abgebrochen), 0,533 (periode-abgebrochen), 0,5̅3̅ (periode-zu-frueh).
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze die richtige Schreibweise für 7⁄11 an.
   - ☐ 0,63̅
@@ -3919,7 +3919,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich und schreibe je
 - `12` AFB III · _Argumentieren_ · Noah schreibt: 7⁄12 = 0,5̅8̅3̅ / Beurteile die Schreibweise.
   - ☑ Falsch. Es gilt 7⁄12 = 0,583̅.
   - ☐ Stimmt, denn 7 : 12 = 0,5̅8̅3̅.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Die Periode beginnt direkt nach dem Komma.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -3936,7 +3936,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe jeden Rest auf. Beim Teilen 
   - ☑ 2⁄21
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Gib den Bruch mit dem Nenner 9 an, der 0,5̅ ist. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄9**. Typische Fehler: 5⁄10 (periode-abgebrochen), 9⁄5 (bruch-vertauscht).
 - `06` AFB III · _Argumentieren_ · Elif sagt: „1⁄7 = 0,1428. Die Division geht auf.“ / Beurteile die Aussage und begründe.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Nach vier Stellen ist jede Division zu Ende.
   - ☐ Stimmt, denn 0,1428 hat vier Stellen.
   - ☑ Falsch. Der Rest kommt wieder. Es gilt 1⁄7 = 0,1̅4̅2̅8̅5̅7̅.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 13 : 30 / Gib das Ergebnis mit Periode ein. _(Periodeneingabe: Ziffern vor der Periode und Periode in zwei Feldern)_ Lösung: **0,43̅**. Typische Fehler: 0,43 (periode-abgebrochen), 0,433 (periode-abgebrochen), 0,4̅3̅ (periode-zu-frueh).
@@ -4985,7 +4985,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne die drei verschiedenen Fläche
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Würfel hat die Kantenlänge 19 cm. / Berechne den Oberflächeninhalt. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **2166 cm²**. Typische Fehler: 1083 cm² (oberflaeche-drei-flaechen), 361 cm² (oberflaeche-drei-flaechen), 1444 cm² (oberflaeche-drei-flaechen).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Container ist 8 m lang, 7 m breit und 3 m hoch. / Berechne seinen Oberflächeninhalt. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **202 m²**. Typische Fehler: 101 m² (oberflaeche-drei-flaechen), 168 m² (volumen-oberflaeche-verwechselt), 56 m² (oberflaeche-drei-flaechen).
 - `05` AFB II · _Argumentieren_ · Jonas rechnet für den Quader: 27 cm² + 27 cm² + 9 cm² = 63 cm². / Jonas sagt: „Das ist der Oberflächeninhalt.“ / Beurteile die Aussage. _(Bild: Quader im Schrägbild, Maße 9 cm, 3 cm, 3 cm)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Ein Quader hat drei verschiedene Flächen. / Die zählt man zusammen.
   - ☐ Falsch. / Der Oberflächeninhalt ist 81 cm².
   - ☑ Falsch. / Jede Fläche gibt es zweimal. / Der Oberflächeninhalt ist 126 cm².
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Quader A hat die Kanten 9 cm, 7 cm und 5 cm. / Quader B hat die Kanten 6 cm, 4 cm und 3 cm. / Kreuze den Quader mit dem größeren Oberflächeninhalt an.
@@ -5006,7 +5006,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Jede Fläche kommt zweimal vor: O = 2
   - ☐ Beide sind gleich groß.
   - ☑ der Quader
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Jonas berechnet den Oberflächeninhalt eines Quaders mit 9 cm, 7 cm und 6 cm so: 9 · 7 · 6 = 378. / Kreuze die Erklärung für den Fehler an.
-  - ☐ Die Rechnung stimmt, es fehlt nur die Einheit.
+  - ☐ Die Rechnung stimmt, es fehlt nur die Einheit. Mit der richtigen Einheit ist es der Oberflächeninhalt.
   - ☐ Das Ergebnis muss noch verdoppelt werden.
   - ☑ Das ist die Rechnung für das Volumen. Für den Oberflächeninhalt berechnet man die sechs Flächen und addiert sie.
   - ☐ Die drei Kanten müssen addiert werden.
@@ -5032,7 +5032,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne jede Rechnung aus und vergleic
 - `06` AFB III · _Argumentieren_ · Mia rechnet für einen Quader mit 8 cm, 6 cm und 3 cm: 2 · 48 cm² + 2 · 24 cm² + 18 cm² = 162 cm². / Beurteile die Rechnung.
   - ☑ Falsch. Die Fläche mit 18 cm² gibt es auch zweimal. Richtig sind 180 cm².
   - ☐ Falsch. Jede Fläche zählt nur einmal. Richtig sind 90 cm².
-  - ☐ Stimmt.
+  - ☐ Stimmt. Jede der drei verschiedenen Flächen wurde berechnet und addiert.
   - ☐ Falsch. Richtig sind 144 cm².
 
 ## 6.6.1-O2: Ich kann Sachaufgaben zum Oberflächeninhalt lösen und eine fehlende Kante bestimmen.
@@ -5081,7 +5081,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ohne Deckel bleiben fünf Flächen: d
 - `04` AFB I · _Modellieren_ · Ben packt ein Geschenk in Würfelform ein. / Jede Kante ist 12 cm lang. / Berechne, wie viel Papier mindestens nötig ist. _(Bild: Würfel im Schrägbild, Maße 12 cm)_ _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **864 cm²**. Typische Fehler: 432 cm² (oberflaeche-drei-flaechen), 144 cm² (oberflaeche-drei-flaechen), 576 cm² (oberflaeche-drei-flaechen).
 - `05` AFB II · _Argumentieren (+ Modellieren)_ · Die Kiste hat keinen Deckel. / Finn rechnet für das Holz: 94 dm². / Beurteile das Ergebnis. _(Bild: Quader im Schrägbild „Kiste ohne Deckel“, Maße 5 dm, 4 dm, 3 dm)_
   - ☑ Falsch. / Der Deckel fehlt. / Nötig sind 74 dm².
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Kiste ist ein Quader mit 6 Flächen.
   - ☐ Falsch. / Nötig sind 47 dm².
 - `06` AFB III · _Modellieren_ · Lena packt eine Schachtel mit 8 cm, 5 cm und 5 cm ein. / Emre packt einen Würfel mit 6 cm Kantenlänge ein. / Kreuze an, wer mehr Papier braucht.
   - ☐ Lena
@@ -5143,7 +5143,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Manche Würfel siehst du nicht. *Beis
 - `04` AFB I · _Kommunizieren_ · Der Plan zeigt einen Würfelbau von oben. / Jede Zahl nennt die Anzahl der Würfel übereinander. / Bestimme die Anzahl aller Würfel. / Der Würfelbau hat ▢ Würfel. _(Bild: risse)_ Lösung: n = **11**
 - `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Mara zählt bei dem Körper 8 Würfel. / Beurteile das Ergebnis. _(Bild: Würfelbau aus 9 Würfeln, Türme von vorne nach hinten: 1 0 0 / 2 2 3 / 0 0 1)_
   - ☑ Falsch. / Verdeckte Würfel fehlen. / Es sind 9 Würfel.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man zählt nur die Würfel im Bild.
   - ☐ Falsch. / Es sind 7 Würfel.
 - `06` AFB III · _Kommunizieren_ · Der Körper wird zu einem Quader aufgefüllt. / Der Quader ist 3 Würfel lang, 2 Würfel breit und 3 Würfel hoch. / Bestimme die Anzahl der fehlenden Würfel. _(Bild: Würfelbau aus 10 Würfeln, Türme von vorne nach hinten: 0 1 0 / 3 3 3)_ Lösung: **8**. Typische Fehler: 18 (sach-schritt-vergessen), 10 (sach-schritt-vergessen).
 
@@ -5178,7 +5178,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Quader hat 8 Ecken.
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Zwei Körper bestehen aus gleich vielen gleich großen Würfeln. Der eine Körper ist höher als der andere. / Ben sagt: „Der höhere Körper hat das größere Volumen.“ / Beurteile die Aussage.
   - ☑ Falsch. Gleich viele gleich große Würfel haben zusammen immer dasselbe Volumen.
   - ☐ Falsch. Der breitere Körper hat das größere Volumen.
-  - ☐ Stimmt. Ein höherer Körper nimmt mehr Platz ein.
+  - ☐ Stimmt. Ein höherer Körper nimmt mehr Platz ein als ein flacher Körper.
   - ☐ Stimmt, aber nur bei Quadern.
 
 ## 6.6.2-W2: Ich kann Volumen vergleichen und die Würfel eines Quaders in Schichten zählen.
@@ -5287,7 +5287,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 dm³ sind 1000 cm³. *Beispiel:* 2 
   - ☐ m²
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 9000 mm³ = ▢ cm³ _(Bild: Einheitentafel cm³ | mm³, Spalten H Z E H Z E: · · 9 0 0 0)_ Lösung: a = **9**
 - `05` AFB II · _Argumentieren (+ Kommunizieren)_ · Jonas wandelt um: 9 dm³ = 900 cm³. / Beurteile das Ergebnis. _(Bild: Einheitentafel dm³ | cm³, Spalten H Z E H Z E: · · 9 0 0 0)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Von dm zu cm rechnet man immer mit 100.
   - ☐ Falsch. / 9 dm³ = 90 cm³.
   - ☑ Falsch. / 1 dm³ = 1000 cm³. / Also 9 dm³ = 9000 cm³.
 - `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tafel hilft dir. / Wandle um. / 9 m³ = ▢ dm³ _(Bild: Einheitentafel m³ | dm³, Spalten H Z E H Z E: · · 9 0 0 0)_ Lösung: a = **9000**
@@ -5407,7 +5407,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 m³ sind 1000 dm³, und 1 dm³ ist 
 - `02` AFB II · _Argumentieren_ · Sara wandelt um: 4,5 m³ = 450 l. / Beurteile das Ergebnis.
   - ☐ Falsch. 1 m³ = 10 l. Also 4,5 m³ = 45 l.
   - ☑ Falsch. 1 m³ = 1000 l. Also 4,5 m³ = 4500 l.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Von m³ zu Liter ist die Umrechnungszahl 10.
   - ☐ Falsch. 1 m³ = 1 l. Also 4,5 m³ = 4,5 l.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Angaben nach der Größe. Beginne mit dem kleinsten Volumen. _(Ordnen; die Karten liegen so da: 750 ml, 1800 cm³, 0,01 hl, 0,8 l, 900 cm³)_ Lösung: **750 ml, 0,8 l, 900 cm³, 0,01 hl, 1800 cm³**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Regenfass enthält 3 hl Wasser. Es wird mit einer Gießkanne geleert, die 20 l fasst. / Bestimme, wie oft die Gießkanne gefüllt werden kann. Lösung: **15**. Typische Fehler: 150 (umrechnungszahl).
@@ -5458,7 +5458,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne Länge mal Breite mal Höhe. *
 - `06` AFB III · _Argumentieren_ · Ben berechnet das Volumen von dem Quader. / Ben schreibt: 6 cm · 4 cm · 4 cm = 96 cm². / Beurteile das Ergebnis. _(Bild: Quader im Schrägbild, Maße 6 cm, 4 cm, 4 cm)_
   - ☑ Falsch. / Die Zahl stimmt, aber die Einheit ist falsch. / Richtig sind 96 cm³.
   - ☐ Falsch. / Richtig sind 128 cm².
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die Zahl ist richtig gerechnet. / Die Einheit passt zu cm.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -5475,7 +5475,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* V = a · b · c. Alle Kanten brauchen
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Noah rechnet für einen Quader mit 6 dm, 35 cm und 12 cm: 6 · 35 · 12 = 2520. Noah schreibt als Ergebnis 2520 cm³. / Kreuze die Erklärung für den Fehler an.
   - ☐ Die drei Kanten müssen addiert werden.
   - ☑ Die Kanten haben verschiedene Einheiten. Mit 60 cm statt 6 dm ergibt sich 25 200 cm³.
-  - ☐ Die Rechnung stimmt. Es gibt keinen Fehler.
+  - ☐ Die Rechnung stimmt. Es gibt keinen Fehler, denn man darf jede Einheit multiplizieren.
   - ☐ Die Einheit ist falsch. Richtig sind 2520 dm³.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -5495,7 +5495,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Wandle zuerst alle Kanten in Dezimete
 - `06` AFB III · _Argumentieren_ · Ein Würfel hat die Kantenlänge 4 cm. Tom sagt: „Ein Würfel mit dem doppelten Volumen hat die doppelte Kantenlänge.“ / Beurteile die Aussage.
   - ☐ Stimmt. Mit 8 cm ist das Volumen 128 cm³.
   - ☑ Falsch. Mit der doppelten Kantenlänge 8 cm ist das Volumen 512 cm³. Das ist 8-mal so viel wie 64 cm³.
-  - ☐ Stimmt, denn beim Würfel sind alle Kanten gleich lang.
+  - ☐ Stimmt, denn beim Würfel sind alle Kanten gleich lang. Doppelte Kante heißt doppeltes Volumen.
   - ☐ Falsch. Mit der doppelten Kantenlänge ist das Volumen 256 cm³.
 
 ## 6.6.4-V2: Ich kann Sachaufgaben zum Volumen lösen und eine fehlende Kante bestimmen.
@@ -5591,7 +5591,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Körper besteht aus zwei Quadern.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Quader ist 6 cm lang, 4 cm breit und 4 cm hoch. / Auf dem Quader steht ein Würfel mit 2 cm Kantenlänge. / Berechne das Volumen von dem ganzen Körper. / Wähle auch die passende Einheit. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **104 cm³**. Typische Fehler: 96 cm³ (sach-schritt-vergessen), 8 cm³ (sach-schritt-vergessen), 144 cm³ (teilflaeche-doppelt).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Mauer der Burg hat eine Stufe. / Sie ist in zwei Quader zerlegt. / Berechne das Volumen von der Mauer. / Wähle auch die passende Einheit. _(Bild: Körper aus 2 Quadern (4 × 2 × 2, 2 × 2 × 3), Zerlegung in zwei Farben mit Schnittlinie, Maße 4 m, 2 m, 2 m, 2 m, 3 m)_ _(Größe eingeben, Einheit wählen aus m, m², m³)_ Lösung: **28 m³**. Typische Fehler: 16 m³ (sach-schritt-vergessen), 12 m³ (sach-schritt-vergessen), 40 m³ (teilflaeche-doppelt).
 - `05` AFB II · _Argumentieren_ · Ali rechnet nur den Quader unten aus. / Ali sagt: „Der Körper hat das Volumen 63 cm³.“ / Beurteile die Aussage. _(Bild: Körper aus 2 Quadern (7 × 3 × 3, 5 × 3 × 5), Zerlegung in zwei Farben mit Schnittlinie, Maße 7 cm, 3 cm, 3 cm, 5 cm, 5 cm)_
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Der Quader unten ist der ganze Körper.
   - ☑ Falsch. / Der Quader oben fehlt. / Das Volumen ist 138 cm³.
   - ☐ Falsch. / Das Volumen ist 168 cm³.
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Die Treppe hat drei gleich hohe Stufen. / Jede Stufe ist 5 dm lang, 7 dm breit und 1 dm hoch. / Berechne das Volumen von der ganzen Treppe. / Wähle auch die passende Einheit. _(Bild: Körper aus 3 Quadern (15 × 7 × 1, 10 × 7 × 1, 5 × 7 × 1), Maße 5 dm, 1 dm, 7 dm)_ _(Größe eingeben, Einheit wählen aus dm, dm², dm³)_ Lösung: **210 dm³**. Typische Fehler: 105 dm³ (sach-schritt-vergessen), 35 dm³ (sach-schritt-vergessen), 315 dm³ (teilflaeche-doppelt).
@@ -5622,7 +5622,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Berechne den vollen Quader und ziehe 
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Im Heft: Ein Wassertrog aus Stein ist außen 12 dm lang, 5 dm breit und 6 dm hoch. Die Wände und der Boden sind überall 1 dm dick. Oben ist der Trog offen. / Bestimme das Volumen des Steins. _(Größe eingeben, Einheit wählen aus dm³, l, dm², m³)_ Lösung: **210 dm³**. Typische Fehler: 150 dm³ (sach-schritt-vergessen), 140 dm³ (sach-schritt-vergessen), 240 dm³ (deckel-mitgerechnet).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Aus einem Würfel mit der Kantenlänge 7 cm wird an einer Ecke ein Würfel mit der Kantenlänge 3 cm herausgeschnitten. / Bestimme das Volumen des Restkörpers. _(Größe eingeben, Einheit wählen aus cm, cm², cm³)_ Lösung: **316 cm³**. Typische Fehler: 343 cm³ (sach-schritt-vergessen), 64 cm³ (volumen-waechst-wie-kante).
 - `06` AFB III · _Argumentieren_ · Aus einem Würfel wird an einer Ecke ein kleiner Würfel herausgeschnitten. / Sara sagt: „Volumen und Oberflächeninhalt werden beide kleiner.“ / Beurteile die Aussage.
-  - ☐ Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner.
+  - ☐ Falsch. Das Volumen bleibt gleich, nur der Oberflächeninhalt wird kleiner, weil an der Ecke drei Quadrate wegfallen.
   - ☑ Falsch. Das Volumen wird kleiner. Der Oberflächeninhalt bleibt gleich: Drei Quadrate fallen weg und drei gleich große kommen innen dazu.
   - ☐ Stimmt. Wenn etwas fehlt, wird beides kleiner.
   - ☐ Falsch. Beides bleibt gleich, denn die Form außen ändert sich kaum.

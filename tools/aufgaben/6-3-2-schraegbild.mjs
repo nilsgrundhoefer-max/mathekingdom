@@ -189,7 +189,7 @@ function s2() {
         { nachweis: [SB(a, b, c, [0, 0], { frage: 'hoehe', wert: w }), `2 · ${c} + ${b} = ${w}`] }); },
     () => { const k = kind();
       return auswahl(`${k} sagt: „Im Schrägbild ist eine Kante nach hinten genauso lang wie in Wirklichkeit. Eine Kästchendiagonale ist ja 1 cm.“ Beurteile die Aussage.`,
-        [opt('Stimmt nicht. Eine Kästchendiagonale ist kürzer als 1 cm. Die Tiefe wird verkürzt gezeichnet.', true), opt('Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen.', false, 'tiefe-nicht-verkuerzt'),
+        [opt('Stimmt nicht. Eine Kästchendiagonale ist kürzer als 1 cm. Die Tiefe wird verkürzt gezeichnet.', true), opt('Stimmt. Eine Kästchendiagonale ist so lang wie zwei Kästchen, also genau 1 cm.', false, 'tiefe-nicht-verkuerzt'),
           opt('Stimmt. Nur die verdeckten Kanten werden kürzer.', false, 'verdeckte-kante-durchgezogen'), opt('Stimmt nicht. Die Kante wird länger gezeichnet.', false, 'tiefe-nicht-verkuerzt')],
         H('E', 'Miss eine Kästchendiagonale in deinem Heft mit dem Lineal.'), { nachweis: [U(false), { zahl: 1, grund: 'Behauptung' }] }); },
   ]);

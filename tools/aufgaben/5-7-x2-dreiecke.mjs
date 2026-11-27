@@ -151,7 +151,7 @@ export function dreiecke() {
       h2('Suche den größten Winkel des Dreiecks.', 'Vergleiche ihn mit einem rechten Winkel.'), { frage: 'winkel' }),
     () => { const a = zz(3, 9), b = suche(() => zz(2, 12), (x) => x !== a && x < 2 * a); return ausDaten(`Ein Dreieck hat die Seiten ${seitenSatz(mische([a, a, b]))}. Welche Namen passen? Kreuze alle an.`, { seiten: [a, a, b] }, ['gleichseitig', 'gleichschenklig', 'unregelmäßig'],
       h2('Vergleiche die drei Seitenlängen.', 'Zwei gleich lange Seiten heißen Schenkel, die dritte heißt Basis.')); },
-    () => { const k = kind(); return auswahl(`${k} behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat ${k} recht?`, [opt('Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.', true), opt('Ja. Zum Beispiel, wenn man ein Quadrat halbiert.', false, 'dreieck-art'), opt('Ja, aber nur bei einem gleichseitigen Dreieck.', false, 'dreieck-art')],
+    () => { const k = kind(); return auswahl(`${k} behauptet: „Ein Dreieck kann zwei rechte Winkel haben.“ Hat ${k} recht?`, [opt('Nein. Die beiden Seiten an der dritten Ecke wären parallel und würden sich nie treffen.', true), opt('Ja. Zum Beispiel, wenn man ein Quadrat halbiert. Dann bleiben zwei rechte Winkel.', false, 'dreieck-art'), opt('Ja, aber nur bei einem gleichseitigen Dreieck.', false, 'dreieck-art')],
       h2('Zeichne eine Strecke und an beiden Enden eine Senkrechte.', 'Prüfe, ob sich die beiden Senkrechten treffen.'), { nachweis: [U(false)] }); },
   ]);
   sechs(D1, 'E', [
@@ -167,7 +167,7 @@ export function dreiecke() {
         { einheit: '°', nachweis: [HILFSZAHL(180, 'Winkelsumme im Dreieck'), ...N(`180 − ${sp}`, `${180 - sp} : 2`)] }); },
     () => welche('Welche Dreiecke sind stumpfwinklig? Kreuze alle an.', mische([{ winkel: 'stumpfwinklig' }, { winkel: 'stumpfwinklig' }, { winkel: 'rechtwinklig' }, { winkel: 'spitzwinklig' }]), 'stumpfwinklig', h1('Suche in jedem Dreieck den größten Winkel.'), { mehrfach: true }),
     () => { const [a, b] = suche(() => [5 * zz(10, 22), 5 * zz(6, 12)], ([x, y]) => x + y < 180), c = suche(() => 5 * zz(6, 16), (x) => a + b + x !== 180), s = a + b + c, k = kind();
-      return auswahl(`${k} zeichnet ein Dreieck mit den Winkeln ${a}°, ${b}° und ${c}°. Geht das?`, [opt(`Nein. Die Winkel ergeben zusammen ${s}°, nicht 180°.`, true), opt('Ja. Jeder Winkel ist kleiner als 180°.', false, 'winkelsumme'), opt('Ja. Es ist ein stumpfwinkliges Dreieck.', false, 'winkelsumme')],
+      return auswahl(`${k} zeichnet ein Dreieck mit den Winkeln ${a}°, ${b}° und ${c}°. Geht das?`, [opt(`Nein. Die Winkel ergeben zusammen ${s}°, nicht 180°.`, true), opt('Ja. Jeder Winkel ist kleiner als 180°.', false, 'winkelsumme'), opt('Ja. Es ist dann ein stumpfwinkliges Dreieck.', false, 'winkelsumme')],
         h1('Rechne die drei Winkel zusammen.'), { nachweis: [U(false), HILFSZAHL(180, 'Winkelsumme im Dreieck'), ...N(`${a} + ${b} + ${c}`)] }); },
   ]);
 

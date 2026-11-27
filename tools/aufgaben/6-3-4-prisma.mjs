@@ -142,7 +142,7 @@ function p2() {
         H('M', 'Jedes Rechteck der Mantelfläche ist so breit wie eine Grundkante.', `Es sind ${n} Rechtecke.`), { einheit: 'cm', nachweis: [`${n} · ${s} = ${n * s}`] }); },
     () => { const k = kind();
       return auswahl(`${k} sagt: „Im Netz eines Prismas dürfen beide Grundflächen an derselben Seite der Mantelfläche liegen.“ Beurteile die Aussage.`,
-        [opt('Stimmt nicht. Dann gibt es beim Falten zwei Deckel und keinen Boden.', true), opt('Stimmt. Beim Falten kann man sie umklappen.', false, 'netz-nur-gezaehlt'), opt('Stimmt. Es kommt nur auf die Anzahl der Flächen an.', false, 'netz-nur-gezaehlt')],
+        [opt('Stimmt nicht. Dann gibt es beim Falten zwei Deckel und keinen Boden.', true), opt('Stimmt. Beim Falten kann man sie umklappen.', false, 'netz-nur-gezaehlt'), opt('Stimmt. Es kommt beim Netz nur auf die Anzahl der Flächen an.', false, 'netz-nur-gezaehlt')],
         H('M', 'Falte den Streifen in Gedanken zu einem Ring.', 'Wo liegen dann die beiden Grundflächen?'), { nachweis: [U(false)] }); },
     () => bildkarten('Kreuze alle Netze an, aus denen sich ein dreiseitiges Prisma falten lässt.', [[netz(3, { unten: 0, oben: 1 }), true], [netz(3, { unten: 2, oben: 0 }), true], [netz(3, { gleicheSeite: true }), false, 'netz-nur-gezaehlt'], [netz(3, { seiten: 2 }), false, 'netz-nur-gezaehlt']],
       H('M', 'Wo die Dreiecke anliegen, ist egal.', 'Eines muss oben und eines unten am Streifen liegen.'), { mehrfach: true, nachweis: [KA('prisma', { n: 3 })] }),

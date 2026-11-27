@@ -54,7 +54,7 @@ function r1() {
       H('M', 'Von oben siehst du den Kreis unten, die Spitze liegt in der Mitte.', 'Der Umriss ist rund.'), { bild: rund('kegel'), nachweis: [AF('kegel', 'oben')] }),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Die Spitze eines Kegels ist eine Ecke.“ Beurteile die Aussage.`,
-        [opt('Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.', true), opt('Stimmt. Alles Spitze ist eine Ecke.', false, 'runde-koerper-zaehlen'), opt('Stimmt. Der Kegel hat eine Ecke und zwei Kanten.', false, 'runde-koerper-zaehlen')],
+        [opt('Stimmt nicht. An einer Ecke treffen sich Kanten. Der Kegel hat nur eine Kante.', true), opt('Stimmt. Alles Spitze ist eine Ecke.', false, 'runde-koerper-zaehlen'), opt('Stimmt. Der Kegel hat eine Ecke an der Spitze und zwei Kanten am Rand.', false, 'runde-koerper-zaehlen')],
         H('M', 'Bei einer Pyramide treffen sich an der Spitze Kanten.', 'Wie ist das beim Kegel?'), { nachweis: [U(false), KZ('kegel', 'kanten', 1, { zwischen: true }), { zahl: 2, grund: 'falsche Begründung' }] }); },
     () => bildkarten('Kreuze den Körper mit genau zwei Flächen an.', [[rund('kegel'), true], [rund('zylinder'), false, 'runde-koerper-zaehlen'], [rund('kugel'), false, 'runde-koerper-zaehlen'], [pyramide(4), false, 'runde-koerper-zaehlen']],
       H('M', 'Zähle bei jedem Körper die ebenen und die gekrümmten Flächen.', 'Der Zylinder hat drei, die Kugel nur eine.'), { nachweis: [KA('kegel'), KZ('kegel', 'flaechen', 2, { zwischen: true })] }),
@@ -76,7 +76,7 @@ function r1() {
       H('E', 'Eine ebene Fläche ist flach wie ein Blatt Papier.'), { mehrfach: true, nachweis: [EIG('nurEben')] }),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Zylinder und Kegel haben gleich viele Kanten.“ Beurteile die Aussage.`,
-        [opt('Stimmt nicht. Der Zylinder hat 2 Kanten, der Kegel nur 1.', true), opt('Stimmt. Beide haben 2 Kanten.', false, 'runde-koerper-zaehlen'), opt('Stimmt. Runde Körper haben keine Kanten.', false, 'runde-koerper-zaehlen')],
+        [opt('Stimmt nicht. Der Zylinder hat 2 Kanten, der Kegel nur 1.', true), opt('Stimmt. Beide haben 2 Kanten.', false, 'runde-koerper-zaehlen'), opt('Stimmt. Runde Körper haben überhaupt keine Kanten.', false, 'runde-koerper-zaehlen')],
         H('E', 'Zähle die Stellen, an denen ein Kreis an die gekrümmte Fläche stößt.'), { nachweis: [U(false), KZ('zylinder', 'kanten', 2, { zwischen: true }), KZ('kegel', 'kanten', 1, { zwischen: true })] }); },
     () => zahl('Ein Turm besteht aus einem Zylinder. Oben sitzt ein Kegel als Dach genau auf dem Deckel. Gib an, wie viele Flächen man am Turm von außen sieht, den Boden mitgezählt.', 3, [[5, 'runde-koerper-zaehlen'], [4, 'runde-koerper-zaehlen'], [2, 'runde-koerper-zaehlen']],
       H('E', 'Wo Kegel und Zylinder aufeinandersitzen, verschwinden zwei Kreise.'), { nachweis: [KZ('zylinder', 'flaechen', 3, { zwischen: true }), KZ('kegel', 'flaechen', 2, { zwischen: true }), '3 + 2 − 2 = 3'] }),

@@ -73,7 +73,7 @@ export function zahlenstrahlUndStellenwerte() {
         h3('Zähle die Schritte zwischen den beiden Zahlen. Die Mitte ist nach der Hälfte der Schritte.', 'Die Mitte zwischen 200 und 300 ist 250.', `Von ${a} bis ${b} sind es 10 Schritte. Geh 5 Schritte weit.`),
         { bild: B.strahl({ von: a, bis: b, schritt: 10, beschriftung: 100, ausschnitt: true }), nachweis: [ZWEI, ...N(`${a} + ${b}`, `${a + b} : 2`)] }); },
     () => { const k = kind(), z = zz(1, 8) * 100, s = wahl([5, 20]), n = zz(2, 4), p = z + n * s;
-      return auswahl(Z(`${k} sagt: „Der Pfeil zeigt auf ${z + n}.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'strahl-einerschritte'), opt(`Falsch. Ein Schritt ist ${s} groß. Der Pfeil zeigt auf ${p}.`, true), opt(`Falsch. Der Pfeil zeigt auf ${z + n * 10 + (s === 5 ? 100 : 0)}.`, false)],
+      return auswahl(Z(`${k} sagt: „Der Pfeil zeigt auf ${z + n}.“`, 'Stimmt das?'), [opt('Stimmt. Von Strich zu Strich geht es immer 1 weiter.', false, 'strahl-einerschritte'), opt(`Falsch. Ein Schritt ist ${s} groß. Der Pfeil zeigt auf ${p}.`, true), opt(`Falsch. Der Pfeil zeigt auf ${z + n * 10 + (s === 5 ? 100 : 0)}.`, false)],
         h3('Zähle die Schritte zwischen zwei beschrifteten Teilstrichen.', 'Sind es 5 Schritte bis zum nächsten Hunderter, dann ist ein Schritt 20 groß.', `Ein Schritt ist ${s} groß. Der Pfeil steht ${n} Schritte nach ${z}.`),
         { bild: B.strahl({ von: z, bis: z + 100, schritt: s, beschriftung: 100, pfeil: p, ausschnitt: true }), nachweis: [U(false), { art: 'strahl', wert: p }, { art: 'schrittweite', wert: s }, HILFSZAHL(n, 'Schritte nach dem beschrifteten Teilstrich')] }); },
   ]);
@@ -179,7 +179,7 @@ export function zahlenstrahlUndStellenwerte() {
         h3('Eine Zahl mit 3 Stellen ist immer kleiner als eine Zahl mit 4 Stellen.', '989 ist kleiner als 1001. Denn 989 hat nur 3 Stellen.', `Zwei Zahlen haben nur 3 Stellen. Sie stehen ganz links.`),
         { bild: B.strahl({ von: 800, bis: 2000, schritt: 100, beschriftung: 400, punkte: [s[0], s[4]] }), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'vergleich-erste-ziffer', links: 'kleinste', rechts: 'größte' }); },
     () => { const k = kind(), a = wahl([989, 978, 899, 995, 909]), b = wahl([1001, 1010, 1100, 1002]);
-      return auswahl(Z(`${k} sagt: „${a} ist größer als ${b}.“`, `„Denn 9 ist größer als 1.“`, 'Stimmt das?'), [opt('Stimmt.', false, 'vergleich-erste-ziffer'), opt(`Falsch. ${b} hat mehr Stellen. Also ist ${b} größer.`, true), opt('Falsch. Die beiden Zahlen sind gleich groß.', false)],
+      return auswahl(Z(`${k} sagt: „${a} ist größer als ${b}.“`, `„Denn 9 ist größer als 1.“`, 'Stimmt das?'), [opt('Stimmt. Bei großen Zahlen entscheidet die erste Ziffer.', false, 'vergleich-erste-ziffer'), opt(`Falsch. ${b} hat mehr Stellen. Also ist ${b} größer.`, true), opt('Falsch. Die beiden Zahlen sind gleich groß.', false)],
         h3('Zähle zuerst die Stellen der beiden Zahlen.', '99 ist kleiner als 100. Denn 99 hat 2 Stellen und 100 hat 3 Stellen.', `${a} hat 3 Stellen. ${b} hat 4 Stellen.`),
         { nachweis: [U(false), vergleich(a, b)] }); },
   ]);
@@ -224,7 +224,7 @@ export function zahlenstrahlUndStellenwerte() {
       return auswahl(`${k} behauptet: „Von zwei natürlichen Zahlen ist immer die Zahl mit mehr Stellen die größere.“ Beurteile die Aussage.`, [
         opt('Stimmt. Jede vierstellige Zahl ist mindestens 1000, jede dreistellige höchstens 999. So ist es bei jeder Stellenzahl.', true),
         opt('Falsch. 999 ist größer als 1000, denn 9 ist größer als 1.', false, 'vergleich-erste-ziffer'),
-        opt('Das gilt nur, wenn auch die erste Ziffer größer ist.', false, 'vergleich-erste-ziffer'),
+        opt('Das gilt nur, wenn auch die erste Ziffer größer ist. Sonst muss man die Zahlen Stelle für Stelle vergleichen.', false, 'vergleich-erste-ziffer'),
         opt('Das gilt nur für Zahlen bis 1000.', false)],
       h1('Vergleiche die kleinste Zahl mit vier Stellen und die größte Zahl mit drei Stellen.'), { nachweis: [U(true), { art: 'vergleich', links: '999', rechts: '1000', zeichen: '<' }] }); },
   ]);
@@ -275,7 +275,7 @@ export function zahlenstrahlUndStellenwerte() {
         h3('Tausche 10 Plättchen bei Z gegen 1 Plättchen bei H.', '2 bei H, 14 bei Z, 5 bei E: Tausche um. Dann sind es 3 bei H und 4 bei Z. Die Zahl ist 345.', `Nach dem Tauschen liegen ${h + 1} Plättchen bei H und ${z - 10} bei Z.`),
         { bild: B.ziffern(['H', 'Z', 'E'], [h, z, e], { plaettchen: true }), nachweis: N(`${h} · 100 + ${z} · 10 + ${e}`) }); },
     () => { const k = kind(), t = zz(2, 9), e = zz(1, 9), wort = `${['', '', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun'][t]}tausend${['', 'eins', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun'][e]}`, n = t * 1000 + e;
-      return auswahl(Z(`${k} soll die Zahl ${wort} schreiben.`, `${k} schreibt ${t * 100 + e}.`, 'Stimmt das?'), [opt('Stimmt.', false, 'null-platzhalter'), opt(`Falsch. Richtig ist ${n}.`, true), opt(`Falsch. Richtig ist ${t}000${e}.`, false, 'zahl-nach-gehoer')],
+      return auswahl(Z(`${k} soll die Zahl ${wort} schreiben.`, `${k} schreibt ${t * 100 + e}.`, 'Stimmt das?'), [opt('Stimmt. So spricht man die Zahl.', false, 'null-platzhalter'), opt(`Falsch. Richtig ist ${n}.`, true), opt(`Falsch. Richtig ist ${t}000${e}.`, false, 'zahl-nach-gehoer')],
         h3('Schreibe die Zahl in die Stellenwerttafel. Jede Stelle bekommt eine Ziffer.', 'Viertausendsechs: 4 Tausender, 0 Hunderter, 0 Zehner, 6 Einer. Das ist 4006.', `Die Zahl hat ${t} Tausender und ${e} Einer. Dazwischen stehen 2 Nullen.`),
         { nachweis: [U(false), HILFSZAHL(n, `die Zahl ${wort}`)] }); },
   ]);
