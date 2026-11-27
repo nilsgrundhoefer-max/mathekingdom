@@ -1206,6 +1206,7 @@ export function beispielVerraet(a, beispiel = a.hilfen?.beispiel) {
   return [...zt].every((x) => zb.has(x));
 }
 export const ERSATZBEISPIEL = {
+  'Der Pfeil steht bei 2⁄4. Gekürzt ist das 1⁄2.': 'Der Pfeil steht bei 2⁄6. Gekürzt ist das 1⁄3.',
   "6 Plättchen: Bis 10 fehlen 4.": "8 Plättchen: Bis 10 fehlen 2.",
   "Von 70 bis 100 fehlen 30.": "Von 60 bis 100 fehlen 40.",
   "3 + 2 + 4: Erst 3 + 2 = 5. Dann 5 + 4 = 9.": "5 + 1 + 2: Erst 5 + 1 = 6. Dann 6 + 2 = 8.",
