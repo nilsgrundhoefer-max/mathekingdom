@@ -17,8 +17,10 @@ import { gemerkteOrdner, erlaube, zugriff, startwache, haengerText, ordnersaetze
 import { aufklapper, AUFKLAPP_STIL } from '../gemeinsam/aufklappen.js';
 import { laufwerkSchild, LAUFWERK_STIL } from '../gemeinsam/laufwerke.js';
 
-// Aufklappbare Karten (Version 0.32): anfangs alles zu, nur im Reiter „Jetzt“ Klassenraum und Akut-Zone offen.
-const klapp = aufklapper('lehrer', { anfangsOffen: (id) => id === 'jetzt|Klassenraum' || id === 'jetzt|Akut-Zone' });
+// Aufklappbare Karten (Version 0.32): anfangs alles zu, nur im Reiter „Jetzt“ Klassenraum, Akut-Zone und Stundenverlauf offen.
+// Der Stundenverlauf (ADR 0053) ist auch offen, weil man ihn erst mit dem Umschalter wählt.
+const JETZT_OFFEN = ['Klassenraum', 'Akut-Zone', 'Aufgaben der Klasse je fünf Minuten', 'Wer wie viele Aufgaben auf welchem Niveau'];
+const klapp = aufklapper('lehrer', { anfangsOffen: (id) => JETZT_OFFEN.some((t) => id === `jetzt|${t}`) });
 function klappeKarten() {
   if (z.ansicht !== 'klasse' || !wurzel) return;
   klapp.wandle(wurzel.querySelector('main'), () => z.tab);
@@ -645,22 +647,22 @@ function sitzplanKarte(status) {
     h('div', { class: `sitzplan ${bearbeiten ? 'bearbeiten' : ''}`, style: `grid-template-columns: repeat(${plan.spalten}, minmax(0, 1fr))` }, plaetze.map((code, i) => {
       if (!code) return bearbeiten ? h('button', { class: 'platz leer', 'data-platz': i, 'aria-label': 'Leerer Platz', onclick: () => tausche(i) }) : h('span', { class: 'platz leer' });
       const st = status.get(code), [titel, zeichen] = STATUS[st.status];
-      const linien = [...new Set(Object.values(st.stand?.niveau ?? {}))];
       return h('button', { class: `platz ${st.status}${z.sitzGewaehlt === i ? ' gewaehlt' : ''}`, 'data-platz': i, 'data-schueler': code, title: `${titel}: ${st.text}`,
         onclick: () => { if (bearbeiten) tausche(i); else { z.overlay = code; male(); } } },
         h('span', { class: 'zeichen', 'aria-hidden': 'true' }, zeichen), h('b', {}, name(code)), h('span', { class: 'was' }, st.text),
-        h('span', { class: 'unten' }, (linien.length ? linien : [ziel(code)]).map(chip), st.stand ? `Siegel ${L.siegel(st.stand)}` : ''),
-        st.stand && wegreihe(st.stand));
+        st.stand && aufgabenreihe(st.stand));
     })));
 }
 
-// Wegstücke von heute als kleine Reihe, gefärbt nach der Quote (ADR 0016).
-const wegKlasse = (w) => (w.richtig / w.gesamt >= 0.8 ? 'voll' : w.richtig / w.gesamt >= 0.5 ? 'halb' : 'leer');
-function wegreihe(stand) {
-  const w = A.wegstueckeHeute(stand, jetzt());
-  if (!w.length) return null;
-  return h('span', { class: 'wegreihe', title: `Wegstücke heute: ${w.map((x) => `${x.richtig}/${x.gesamt}`).join(', ')}` },
-    w.slice(-8).map((x) => h('i', { class: wegKlasse(x) })), w.length > 8 && h('small', {}, `+${w.length - 8}`));
+// Aufgaben von heute auf der Kachel (ADR 0053): Anzahl und die letzten acht als Kästchen mit dem Buchstaben der Niveaustufe.
+// Grün und ein Haken heißt gelöst, rot und ein Punkt darunter heißt nicht gelöst, damit die Farbe nie allein trägt.
+const AUFGABEN_AUF_KACHEL = 8;
+function aufgabenreihe(stand) {
+  const heute = A.heutigeAufgaben(stand, jetzt());
+  const letzte = heute.slice(-AUFGABEN_AUF_KACHEL);
+  return h('span', { class: 'unten' }, h('span', { class: 'heute' }, heute.length === 1 ? 'heute 1 Aufgabe' : `heute ${heute.length} Aufgaben`),
+    letzte.length > 0 && h('span', { class: 'aufgabenreihe', role: 'img', 'aria-label': `Letzte Aufgaben: ${letzte.map((x) => `${x.niveau} ${x.richtig ? 'gelöst' : 'nicht gelöst'}`).join(', ')}` },
+      letzte.map((x) => h('i', { class: x.richtig ? 'richtig' : 'falsch', title: `${uhr(x.t)} · ${L.NIVEAU_NAMEN[x.niveau] ?? x.niveau} · ${x.richtig ? 'gelöst' : 'nicht gelöst'}` }, x.niveau))));
 }
 const anteilText = (q) => String(Math.round(q * 50) / 10).replace('.', ',');
 
@@ -790,7 +792,7 @@ function impulse() {
   for (const x of A.brueckenImpulse(angemeldet(), z.index, jetzt())) {
     const schluessel = `bruecke|${x.code}|${x.lernziel}`;
     if (z.gesehen.has(schluessel)) continue;
-    const zustand = { offen: 'nicht begonnen', begonnen: 'begonnen', wackelig: 'wackelig', aufzufrischen: 'aufzufrischen' };
+    const zustand = { offen: 'nicht begonnen', begonnen: 'begonnen', wackelig: 'wackelig', aufzufrischen: 'aufzufrischen', unterziel: 'unter dem Ziel geschafft' };
     karten.push(h('li', { 'data-bruecke': x.code }, h('span', {}, h('b', {}, 'Brücke: '), `${name(x.code)} ist wackelig bei ${lesbar(x.lernziel)}. Voraussetzung: ${x.voraussetzungen.map((v) => `${lesbar(v.id)} (${zustand[v.zustand]})`).join(', ')}. `,
       x.genommen ? 'Die Brücke wurde schon gegangen. Ein kurzes Gespräch lohnt sich.' : 'Das Dashboard bietet dazu eine Brücke an. Ein Hinweis von dir kann helfen, sie zu nehmen.'),
     gesehen(schluessel)));
@@ -802,6 +804,16 @@ function impulse() {
     karten.push(h('li', { 'data-grundlage': x.code }, h('span', {}, h('b', {}, 'Grundlage: '), `${name(x.code)} übt bei ${lesbar(x.lernziel)} zum ${x.mal}. Mal die Grundlage${x.aktiv ? '' : ' und ist inzwischen zurück auf G'}. `,
       x.baustein ? `Baustein: ${x.baustein}. ` : '', 'Ein kurzes Gespräch oder Material zum Anfassen kann jetzt helfen.'),
     gesehen(schluessel)));
+  }
+  // Unter dem Ziel (ADR 0052): zum zweiten Mal nur unter dem Zielniveau geschafft. Die Führung schlägt das Lernziel nicht mehr vor.
+  for (const { code, stand } of angemeldet()) {
+    for (const [lz, u] of Object.entries(stand.unterZiel ?? {})) {
+      if (u.mal < L.UNTER_ZIEL_HOECHSTENS || stand.lernziele[lz]) continue;
+      const schluessel = `unterziel|${code}|${lz}`;
+      if (z.gesehen.has(schluessel)) continue;
+      karten.push(h('li', { 'data-unterziel': code }, h('span', {}, h('b', {}, 'Unter dem Ziel: '), `${name(code)} hat ${lesbar(lz)} zum ${u.mal}. Mal nur auf ${L.NIVEAU_NAMEN[u.niveau] ?? u.niveau} geschafft (Ziel ${ziel(code)}). `,
+        'Die Aufgabenführung schlägt das Lernziel nicht mehr vor. Ob ein Gespräch, ein Sonderauftrag oder ein anderes Zielniveau hilft, entscheidest du.'), gesehen(schluessel)));
+    }
   }
   // Lässt nach (ADR 0016): Ob eine Pause, ein Wechsel oder ein Gespräch hilft, entscheidet die Lehrkraft.
   for (const { code, stand } of angemeldet()) {
@@ -845,8 +857,91 @@ function bereichJetzt() {
   return h('div', {},
     akutZone(status),
     impulse(),
-    alleCodes().length > 0 ? sitzplanKarte(status) : h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Klasse“ die Namensliste an.')),
+    alleCodes().length > 0 ? [jetztUmschalter(), z.jetztAnsicht === 'verlauf' ? stundenverlauf() : sitzplanKarte(status)] : h('section', { class: 'karte' }, h('p', {}, 'Lege zuerst unter „Klasse“ die Namensliste an.')),
     z.unbekannt.length > 0 && h('div', { class: 'meldung warnung' }, `Im Klassenordner liegen Speicherstände mit Codes, die nicht in deiner Namensliste stehen: ${z.unbekannt.map((u) => u.code).join(', ')}.`));
+}
+
+// ---------- Stundenverlauf (ADR 0053) ----------
+function jetztUmschalter() {
+  const knopf = (id, text) => h('button', { class: z.jetztAnsicht === id || (!z.jetztAnsicht && id === 'sitzplan') ? 'aktiv' : '', 'data-jetzt': id, 'aria-pressed': String((z.jetztAnsicht ?? 'sitzplan') === id),
+    onclick: () => { z.jetztAnsicht = id; male(); } }, text);
+  return h('div', { class: 'umschalter', role: 'group', 'aria-label': 'Ansicht' }, knopf('sitzplan', 'Sitzplan'), knopf('verlauf', 'Stundenverlauf'));
+}
+// Vier ruhige Blautöne von hell (F) nach dunkel (E), immer mit dem Buchstaben dazu.
+const NIVEAU_TON = { F: '#84b9f3', G: '#338ced', M: '#1b64be', E: '#0e3d7e' };
+const niveauLegende = () => h('ul', { class: 'nlegende', 'aria-label': 'Niveaustufen' },
+  L.NIVEAUS.map((n) => h('li', {}, h('i', { class: `nk ${n}` }, n), L.NIVEAU_NAMEN[n])));
+const tempoText = (t) => (t === null ? '' : String(Math.round(t * 10) / 10).replace('.', ','));
+function stundenverlauf() {
+  const staende = alleCodes().map((code) => ({ code, stand: z.staende.find((x) => x.code === code)?.stand ?? null }));
+  const { ab, saeulen } = A.stundenSaeulen(staende.filter((x) => x.stand), jetzt());
+  const tabelle = A.stundenTabelle(staende, jetzt());
+  return h('div', { id: 'stundenverlauf' },
+    h('section', { class: 'karte' },
+      h('div', { class: 'reihe' }, h('h2', {}, 'Aufgaben der Klasse je fünf Minuten'), h('span', { class: 'rechts' }, niveauLegende())),
+      ab === null ? h('p', { class: 'klein' }, 'Heute hat noch niemand eine Aufgabe abgeschlossen.') : saeulenBild(saeulen)),
+    h('section', { class: 'karte' },
+      h('h2', {}, 'Wer wie viele Aufgaben auf welchem Niveau'),
+      h('p', { class: 'klein' }, `Gelöst von bearbeitet in der laufenden Stunde (ab der ersten Aufgabe heute, höchstens ${A.STUNDE_MINUTEN} Minuten). Tempo: Aufgaben je ${A.TEMPO_MINUTEN} Minuten`,
+        tabelle.median !== null ? `, Median der Klasse ${tempoText(tabelle.median)}.` : '.'),
+      h('div', { class: 'rollbar' }, h('table', { class: 'tabelle stundentabelle' },
+        h('thead', {}, h('tr', {}, h('th', {}, 'Name'), L.NIVEAUS.map((n) => h('th', { class: 'zahl' }, h('i', { class: `nk ${n}` }, n))), h('th', { class: 'zahl' }, 'Gesamt'), h('th', { class: 'zahl' }, 'Tempo'), h('th', {}, ''))),
+        h('tbody', {}, tabelle.zeilen.map((x) => h('tr', { 'data-stunde': x.code },
+          h('td', {}, h('button', { class: 'link', onclick: () => { z.overlay = x.code; male(); } }, name(x.code))),
+          L.NIVEAUS.map((n) => h('td', { class: 'zahl' }, x.je[n].bearbeitet ? `${x.je[n].geloest} von ${x.je[n].bearbeitet}` : '')),
+          h('td', { class: 'zahl' }, x.bearbeitet ? `${x.geloest} von ${x.bearbeitet}` : h('span', { class: 'klein' }, 'noch keine')),
+          h('td', { class: 'zahl' }, tempoText(x.tempo)),
+          h('td', {}, x.vergleich && h('span', { class: `marke ${x.vergleich === 'langsamer' ? 'warn' : 'gut'}` }, `deutlich ${x.vergleich} als die Klasse`)))))))));
+}
+// Gestapelte Säulen, eine je fünf Minuten. Zwischen den Teilen bleibt eine schmale Fuge, jede Säule hat einen Hinweis beim Darüberfahren.
+function saeulenBild(saeulen) {
+  const B = 640, H = 200, links = 30, unten = 22, oben = 8;
+  const max = Math.max(4, ...saeulen.map((s) => s.gesamt));
+  const schritt = max <= 8 ? 2 : max <= 20 ? 5 : 10, spitze = Math.ceil(max / schritt) * schritt;
+  const y = (n) => oben + (H - oben - unten) * (1 - n / spitze);
+  const breite = (B - links) / saeulen.length, sb = Math.min(36, breite * 0.7);
+  const titel = (text) => svg('title', {}, text);
+  const linien = [];
+  for (let n = 0; n <= spitze; n += schritt) {
+    linien.push(svg('line', { x1: links, x2: B, y1: y(n), y2: y(n), class: n === 0 ? 'achse' : 'gitter' }), svg('text', { x: links - 6, y: y(n) + 4, 'text-anchor': 'end', class: 'beschriftung' }, String(n)));
+  }
+  const jedeWievielte = Math.ceil(saeulen.length / 8);
+  const teile = saeulen.map((s, i) => {
+    const x = links + i * breite + (breite - sb) / 2;
+    let boden = 0;
+    const stuecke = L.NIVEAUS.filter((n) => s.je[n]).map((n) => {
+      const y0 = y(boden), y1 = y(boden + s.je[n]); boden += s.je[n];
+      return svg('rect', { x, y: y1 + 1, width: sb, height: Math.max(0, y0 - y1 - 2), rx: 2, fill: NIVEAU_TON[n] });
+    });
+    const text = `${uhr(new Date(s.von).toISOString())} bis ${uhr(new Date(s.bis).toISOString())}: ${s.gesamt} Aufgaben, ${s.geloest} gelöst` + (s.gesamt ? ` (${L.NIVEAUS.filter((n) => s.je[n]).map((n) => `${n} ${s.je[n]}`).join(', ')})` : '');
+    return svg('g', { class: 'saeule', 'data-saeule': i },
+      svg('rect', { x: links + i * breite, y: oben, width: breite, height: H - oben - unten, class: 'treffer' }), stuecke, titel(text),
+      i % jedeWievielte === 0 && svg('text', { x: x + sb / 2, y: H - 6, 'text-anchor': 'middle', class: 'beschriftung' }, uhr(new Date(s.von).toISOString())));
+  });
+  return h('div', { class: 'saeulenbild' }, svg('svg', { viewBox: `0 0 ${B} ${H}`, role: 'img', 'aria-label': `Aufgaben der Klasse je ${A.SAEULE_MINUTEN} Minuten, gestapelt nach Niveaustufe` }, linien, teile));
+}
+// Zeitleiste eines Schülers im Schülerfenster: jede Aufgabe ein Punkt in der Zeile ihrer Niveaustufe, gefüllt gelöst, hohl nicht gelöst.
+function zeitleiste(code) {
+  const stand = z.staende.find((x) => x.code === code)?.stand;
+  const auf = A.stundenAufgaben(stand, jetzt());
+  if (!auf.length) return h('div', { class: 'zeitleiste', id: 'zeitleiste' }, h('p', { class: 'klein' }, 'Heute noch keine Aufgabe abgeschlossen.'));
+  const B = 640, H = 150, links = 40, rechts = 10, oben = 10, unten = 22;
+  const ab = A.stundenBeginn(stand, jetzt()), bis = Math.max(new Date(jetzt()).getTime(), ab + 60000);
+  const x = (t) => links + (B - links - rechts) * ((new Date(t).getTime() - ab) / (bis - ab));
+  const zeile = (n) => oben + (H - oben - unten) * (1 - (L.NIVEAUS.indexOf(n) + 0.5) / L.NIVEAUS.length);
+  const t = A.tempo(stand, jetzt());
+  const marken = [];
+  for (let m = 0; m <= (bis - ab) / 60000; m += 10) marken.push(svg('text', { x: x(ab + m * 60000), y: H - 6, 'text-anchor': 'middle', class: 'beschriftung' }, uhr(new Date(ab + m * 60000).toISOString())));
+  return h('div', { class: 'zeitleiste', id: 'zeitleiste' },
+    h('div', { class: 'reihe' }, h('h3', {}, 'Heute in dieser Stunde'),
+      h('span', { class: 'klein' }, `Aufgabe ${auf.length}: ${auf.slice(-8).map((v) => v.niveau).join(', ')}${auf.length > 8 ? ' (die letzten acht)' : ''} · ${auf.filter((v) => v.richtig).length} gelöst · Tempo ${tempoText(t)} je ${A.TEMPO_MINUTEN} Minuten`)),
+    svg('svg', { viewBox: `0 0 ${B} ${H}`, role: 'img', 'aria-label': `Zeitleiste: ${auf.map((v) => `${v.niveau} ${v.richtig ? 'gelöst' : 'nicht gelöst'}`).join(', ')}` },
+      L.NIVEAUS.map((n) => [svg('line', { x1: links, x2: B - rechts, y1: zeile(n), y2: zeile(n), class: 'gitter' }), svg('text', { x: links - 16, y: zeile(n) + 4, 'text-anchor': 'end', class: 'beschriftung' }, n)]),
+      svg('polyline', { points: auf.map((v) => `${x(v.t)},${zeile(v.niveau)}`).join(' '), class: 'verlauf' }),
+      auf.map((v, i) => svg('circle', { cx: x(v.t), cy: zeile(v.niveau), r: 6, class: v.richtig ? 'richtig' : 'falsch', fill: v.richtig ? NIVEAU_TON[v.niveau] : '#fff', stroke: NIVEAU_TON[v.niveau] },
+        svg('title', {}, `Aufgabe ${i + 1}, ${uhr(v.t)}: ${L.NIVEAU_NAMEN[v.niveau] ?? v.niveau}, ${v.richtig ? 'gelöst' : 'nicht gelöst'}${v.lernziel ? ` · ${lesbar(v.lernziel)}` : ''}`))),
+      marken),
+    h('p', { class: 'klein' }, 'Gefüllter Punkt: gelöst. Hohler Punkt: nicht gelöst.'));
 }
 
 function zielWahl(code) {
@@ -867,6 +962,7 @@ function overlay() {
         h('span', { class: 'rechts reihe' }, h('button', { class: 'schlicht', onclick: () => druckeEinzelbericht(code) }, 'Diagnosebericht als PDF'),
           h('button', { class: 'haupt', id: 'overlay-zu', onclick: zu }, 'Schließen'))),
       aktuelleAufgabe(code),
+      zeitleiste(code),
       nachrichtFeld(code),
       sonderauftragFeld(code),
       muenzgabenZeile(code),
@@ -1073,10 +1169,10 @@ function balken(wert) {
 // ---------- Lernstand: Klasse, darunter Lernziel, darunter Schüler ----------
 // Vier Zustände je Lernziel und Schüler, jeder mit eigenem Zeichen, damit die Farbe nie allein trägt.
 const ZUSTAND = {
-  gefestigt: ['Gefestigt', '★'], siegel: ['Siegel', '✓'], aufzufrischen: ['Aufzufrischen', '↻'], wackelig: ['Wackelig', '!'], begonnen: ['Begonnen', '…'], offen: ['Nicht begonnen', '·'],
+  gefestigt: ['Gefestigt', '★'], siegel: ['Siegel', '✓'], aufzufrischen: ['Aufzufrischen', '↻'], unterziel: ['Unter dem Ziel geschafft', '↓'], wackelig: ['Wackelig', '!'], begonnen: ['Begonnen', '…'], offen: ['Nicht begonnen', '·'],
 };
 const ZUSTAND_TEXT = {
-  gefestigt: 'Siegel und mindestens eine Woche später im Rückblick oder Seitenblick richtig gelöst', siegel: 'Lernziel erreicht', aufzufrischen: 'Siegel vorhanden, aber im Rückblick falsch gelöst', wackelig: 'begonnen, aber viele Fehlversuche oder Lösungsschritt-Kärtchen', begonnen: 'begonnen', offen: 'noch nicht begonnen',
+  gefestigt: 'Siegel und mindestens eine Woche später im Rückblick oder Seitenblick richtig gelöst', siegel: 'Lernziel erreicht', aufzufrischen: 'Siegel vorhanden, aber im Rückblick falsch gelöst', unterziel: 'auf einer Krone unter dem Zielniveau geschafft, noch ohne Siegel', wackelig: 'begonnen, aber viele Fehlversuche oder Lösungsschritt-Kärtchen', begonnen: 'begonnen', offen: 'noch nicht begonnen',
 };
 const zustandLegende = () => h('ul', { class: 'zlegende', 'aria-label': 'Zeichenerklärung' },
   Object.entries(ZUSTAND).map(([id, [titel, zeichen]]) => h('li', {}, h('i', { class: `zelle ${id}` }, zeichen), titel)));
@@ -1367,7 +1463,7 @@ function hilfebedarfTabelle(zeilen, erste) {
 
 // Gestapelte Balken je Lernziel: Siegel, begonnen, wackelig, nicht begonnen.
 function lernzielBalken(matrix, lernziele) {
-  const reihenfolge = ['gefestigt', 'siegel', 'aufzufrischen', 'begonnen', 'wackelig', 'offen'];
+  const reihenfolge = ['gefestigt', 'siegel', 'aufzufrischen', 'unterziel', 'begonnen', 'wackelig', 'offen'];
   return h('ul', { class: 'stapel' }, lernziele.map((l, i) => {
     const anzahl = Object.fromEntries(reihenfolge.map((s) => [s, matrix.filter((m) => m.zellen[i].status === s).length]));
     const gesamt = matrix.length || 1;
@@ -1393,7 +1489,7 @@ function lernstandLernziel(id) {
   const staende = angemeldet();
   const v = staende.flatMap(({ stand }) => stand.versuche.filter((x) => x.lernziel === id));
   const st = A.lernzielStatistik(staende, [l])[0];
-  const gruppen = { gefestigt: [], siegel: [], aufzufrischen: [], wackelig: [], begonnen: [], offen: [] };
+  const gruppen = { gefestigt: [], siegel: [], aufzufrischen: [], unterziel: [], wackelig: [], begonnen: [], offen: [] };
   for (const { code, stand } of staende) gruppen[A.lernzielZustand(stand, id)].push(code);
   const fehler = A.fehlerZuLernziel(staende, id).slice(0, 6);
   const nachNiveau = L.NIVEAUS.map((n) => { const x = v.filter((y) => y.niveau === n); return { n, bearbeitet: x.length, quote: x.length ? x.filter((y) => y.richtig).length / x.length : 0 }; }).filter((x) => x.bearbeitet);

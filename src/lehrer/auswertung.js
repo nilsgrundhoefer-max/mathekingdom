@@ -108,8 +108,10 @@ export function lernzieleMitAufgaben(pool, index) {
 // Wackelig: mindestens WACKELIG_AB Aufgaben, davon weniger als die Hälfte gelöst, oder zwei Mal das Lösungsschritt-Kärtchen.
 export const WACKELIG_AB = L.WACKELIG_AB;
 // Aufgaben aus dem Einstiegscheck zählen für den Lernzielstand nicht (ADR 0014).
+// Unter dem Ziel geschafft (ADR 0052): auf einer Krone unter dem Zielniveau nachgewiesen, aber noch ohne Siegel.
 export function lernzielZustand(stand, lernzielId) {
   if (stand.lernziele[lernzielId]) return stand.rueckblick?.[lernzielId]?.aufzufrischen ? 'aufzufrischen' : L.istGefestigt(stand, lernzielId) ? 'gefestigt' : 'siegel';
+  if (L.unterZielGeschafft(stand, lernzielId)) return 'unterziel';
   if (!stand.versuche.some((x) => x.lernziel === lernzielId && !x.einstieg)) return 'offen';
   return L.istWackelig(stand, lernzielId) ? 'wackelig' : 'begonnen';
 }
@@ -426,7 +428,7 @@ export function berichtstabellen(staende, pool, index, zielniveaus, name, jetzt)
   }
   const matrix = [['Name', 'Schülercode', ...lernziele.map((l) => l.id)], ['', 'Lernziel', ...lernziele.map((l) => l.text)]];
   for (const zeile of lernzielmatrix(staende, lernziele, zielniveaus)) {
-    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'gefestigt' ? 'Siegel, gefestigt' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : c.abstecher ? 'Abstecher' : ''))]);
+    matrix.push([name(zeile.code), zeile.code, ...zeile.zellen.map((c) => (c.status === 'siegel' ? 'Siegel' : c.status === 'gefestigt' ? 'Siegel, gefestigt' : c.status === 'aufzufrischen' ? 'Siegel, aufzufrischen' : c.status === 'unterziel' ? `unter dem Ziel geschafft (${L.unterZielGeschafft(staende.find((x) => x.code === zeile.code).stand, c.lernziel).niveau})` : c.status === 'begonnen' || c.status === 'wackelig' ? `${c.fortschritt} von ${L.LERNZIEL_RICHTIGE}` : c.abstecher ? 'Abstecher' : ''))]);
   }
   const versuche = [['Name', 'Schülercode', 'Zeitpunkt', 'Aufgabe', 'Lernziel', 'Niveaustufe', 'Gelöst', 'Versuche', 'Hilfekärtchen', 'Dauer (s)', 'Münzen', 'Erkannte Fehlvorstellungen', 'Eingaben']];
   for (const { code, stand } of staende) for (const x of stand.versuche) {
@@ -544,7 +546,7 @@ export function brueckenImpulse(staende, index, jetzt) {
     for (const lz of heute) {
       if (stand.lernziele[lz] || !L.istWackelig(stand, lz)) continue;
       const vor = (index.lernziel.get(lz)?.voraussetzungen ?? []).filter((id) => index.lernzielMitAufgaben.has(id));
-      const offen = vor.filter((id) => ['offen', 'begonnen', 'wackelig', 'aufzufrischen'].includes(lernzielZustand(stand, id)));
+      const offen = vor.filter((id) => ['offen', 'begonnen', 'wackelig', 'aufzufrischen', 'unterziel'].includes(lernzielZustand(stand, id)));
       if (!offen.length) continue;
       const genommen = (stand.bruecken ?? []).some((b) => b.fuer === lz && new Date(b.t).getTime() >= grenze);
       liste.push({ code, lernziel: lz, voraussetzungen: offen.map((id) => ({ id, zustand: lernzielZustand(stand, id) })), genommen });
@@ -724,4 +726,74 @@ export function sonderauftragStand(stand, auftrag) {
   const lauf = stand?.sonderauftrag?.id === auftrag.id ? stand.sonderauftrag : null;
   if (lauf) return { status: 'geoeffnet', erledigt: lauf.erledigt.length, richtig: lauf.erledigt.filter((e) => e.richtig).length, gesamt: auftrag.aufgaben.length, fehlvorstellungen };
   return { status: 'gesendet', erledigt: 0, gesamt: auftrag.aufgaben.length, fehlvorstellungen };
+}
+
+// ---------- Stundenverlauf (ADR 0053) ----------
+// Die laufende Stunde beginnt mit der ersten Aufgabe von heute und reicht höchstens STUNDE_MINUTEN zurück.
+export const STUNDE_MINUTEN = 90;
+export const SAEULE_MINUTEN = 5;
+export const TEMPO_MINUTEN = 10;
+// Deutlich langsamer oder schneller als die Klasse: unter dem 0,6-Fachen oder über dem 1,6-Fachen des Medians.
+export const TEMPO_LANGSAM = 0.6;
+export const TEMPO_SCHNELL = 1.6;
+const ms = (t) => new Date(t).getTime();
+
+// Alle Aufgaben von heute, die ein Schüler abgeschlossen hat, in zeitlicher Folge.
+export function heutigeAufgaben(stand, jetzt) {
+  if (!stand) return [];
+  const tag = L.tagVon(new Date(jetzt).toISOString());
+  return stand.versuche.filter((x) => L.tagVon(x.t) === tag && ms(x.t) <= ms(jetzt)).sort((a, b) => ms(a.t) - ms(b.t));
+}
+export function stundenBeginn(stand, jetzt) {
+  const heute = heutigeAufgaben(stand, jetzt);
+  if (!heute.length) return null;
+  return Math.max(ms(heute[0].t), ms(jetzt) - STUNDE_MINUTEN * 60000);
+}
+export function stundenAufgaben(stand, jetzt) {
+  const ab = stundenBeginn(stand, jetzt);
+  return ab === null ? [] : heutigeAufgaben(stand, jetzt).filter((x) => ms(x.t) >= ab);
+}
+// Aufgaben je zehn Minuten seit Stundenbeginn. Die ersten zehn Minuten zählen voll, damit zwei schnelle Aufgaben kein Rekordtempo ergeben.
+export function tempo(stand, jetzt) {
+  const ab = stundenBeginn(stand, jetzt);
+  if (ab === null) return null;
+  const minuten = Math.max(TEMPO_MINUTEN, (ms(jetzt) - ab) / 60000);
+  return (stundenAufgaben(stand, jetzt).length / minuten) * TEMPO_MINUTEN;
+}
+const mitte = (werte) => {
+  if (!werte.length) return null;
+  const s = [...werte].sort((a, b) => a - b), m = Math.floor(s.length / 2);
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+};
+// Je Schüler: bearbeitet und gelöst je Niveaustufe, Tempo und Vergleich mit dem Median der Klasse (nur ab drei Schülern mit Aufgaben).
+export function stundenTabelle(staende, jetzt) {
+  const zeilen = staende.map(({ code, stand }) => {
+    const auf = stundenAufgaben(stand, jetzt);
+    const je = Object.fromEntries(L.NIVEAUS.map((n) => [n, { bearbeitet: 0, geloest: 0 }]));
+    for (const x of auf) if (je[x.niveau]) { je[x.niveau].bearbeitet++; if (x.richtig) je[x.niveau].geloest++; }
+    return { code, je, bearbeitet: auf.length, geloest: auf.filter((x) => x.richtig).length, tempo: tempo(stand, jetzt) };
+  });
+  const aktiv = zeilen.filter((z) => z.tempo !== null);
+  const m = aktiv.length >= 3 ? mitte(aktiv.map((z) => z.tempo)) : null;
+  for (const z of zeilen) {
+    z.vergleich = m && z.tempo !== null ? (z.tempo < m * TEMPO_LANGSAM ? 'langsamer' : z.tempo > m * TEMPO_SCHNELL ? 'schneller' : null) : null;
+  }
+  return { zeilen, median: m };
+}
+// Säulen der Klasse: je fünf Minuten die abgeschlossenen Aufgaben, gestapelt nach Niveaustufe.
+export function stundenSaeulen(staende, jetzt) {
+  const beginne = staende.map(({ stand }) => stundenBeginn(stand, jetzt)).filter((x) => x !== null);
+  if (!beginne.length) return { ab: null, saeulen: [] };
+  const breite = SAEULE_MINUTEN * 60000;
+  const ab = Math.floor(Math.min(...beginne) / breite) * breite;
+  const anzahl = Math.max(1, Math.ceil((ms(jetzt) - ab) / breite));
+  const saeulen = Array.from({ length: anzahl }, (_, i) => ({ von: ab + i * breite, bis: ab + (i + 1) * breite, je: Object.fromEntries(L.NIVEAUS.map((n) => [n, 0])), geloest: 0, gesamt: 0 }));
+  for (const { stand } of staende) {
+    for (const x of stundenAufgaben(stand, jetzt)) {
+      const s = saeulen[Math.min(anzahl - 1, Math.floor((ms(x.t) - ab) / breite))];
+      if (!s || !(x.niveau in s.je)) continue;
+      s.je[x.niveau]++; s.gesamt++; if (x.richtig) s.geloest++;
+    }
+  }
+  return { ab, saeulen };
 }

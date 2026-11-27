@@ -8,6 +8,20 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.61 vom 27.11.2026
+
+### Schüler
+
+- Keine Änderung für Schüler.
+
+### Lehrkraft
+
+- Die Kachel im Klassenraum zeigt „heute n Aufgaben“ und die letzten acht Aufgaben als Kästchen mit dem Buchstaben der Niveaustufe: grün gelöst, rot umrandet nicht gelöst (ADR 0053).
+- Im Bereich Jetzt schaltest du zwischen Sitzplan und Stundenverlauf um. Der Stundenverlauf zeigt die Aufgaben der Klasse je fünf Minuten, gestapelt nach F, G, M und E, und darunter je Schüler gelöst von bearbeitet je Niveau und das Tempo in Aufgaben je zehn Minuten.
+- Wer deutlich langsamer oder schneller als die Klasse arbeitet, bekommt eine Marke. Verglichen wird mit dem Median der Klasse.
+- Im Schülerfenster steht die Zeitleiste der laufenden Stunde: jede Aufgabe ein Punkt in der Zeile ihres Niveaus, dazu „Aufgabe 5: M, G, F, G, G“.
+- Im Lernstand ist „unter dem Ziel geschafft“ ein eigener Stand mit eigenem Zeichen. Wer ein Lernziel zum zweiten Mal nur unter dem Ziel schafft, erscheint als Impuls.
+
 ## 0.60 vom 27.11.2026
 
 ### Schüler

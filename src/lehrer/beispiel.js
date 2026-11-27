@@ -90,6 +90,9 @@ export function beispielklasse(pool, index, jetzt = Date.now()) {
         (stand.rueckblick ??= {})[l.id] = { stufe: 2, zuletzt: t };
       }
     }
+    // Unter dem Ziel geschafft (ADR 0052), ohne Zufall: Jonas (Zielniveau M) hat das erste Lernziel des Kapitels ohne Siegel schon zwei Mal nur auf G geschafft.
+    const ohneSiegel = kap.unterkapitel.flatMap((u) => u.lernziele).find((l) => index.lernzielMitAufgaben.has(l.id) && !stand.lernziele[l.id]);
+    if (i === 9 && ziel === 'M' && ohneSiegel) (stand.unterZiel ??= {})[ohneSiegel.id] = { mal: 2, niveau: L.NIVEAUS[L.NIVEAUS.indexOf(ziel) - 1], t: new Date(jetzt - 30 * 60000).toISOString() };
     if (i === 8) for (const v of stand.versuche.filter((x) => x.t > new Date(jetzt - 3600000).toISOString())) v.sicher = true;
     staende.push({ code, stand });
   });

@@ -753,6 +753,11 @@ _Avoid_: Statistik (allein), Auswertung
 - **Live-Status**: Einschätzung, wie es einem Schüler in der laufenden Stunde geht: Hilferuf, blockiert, lässt nach, beobachten, im Flow, arbeitet, inaktiv, nicht da. Blockiert ist ein Schüler nach mehreren Fehlversuchen in Folge oder wenn er lange an einer Aufgabe sitzt, auch ohne Hilferuf. „Lässt nach“ heißt: Die Quote richtiger Aufgaben ist über zwei Wegstücke hinweg deutlich gesunken; der Schüler selbst bekommt dazu keine Meldung.
 - **Akut-Zone**: Die Liste der Schüler, um die sich die Lehrkraft jetzt kümmern sollte: offene Hilferufe zuerst, dann blockierte Schüler. Ersetzt die frühere reine Hilfe-Warteschlange in der Anzeige; die Hilfe-Warteschlange ist ihr erster Teil.
 - **Sitzplan**: Anordnung der Schüler im Klassenraum. Gehört zu den Klassendaten.
+- **Laufende Stunde**: Die Zeit seit der ersten Aufgabe, die ein Schüler heute abgeschlossen hat, höchstens die letzten 90 Minuten. Einen Stundenplan kennt das Dashboard nicht.
+- **Stundenverlauf**: Die zweite Ansicht im Bereich Jetzt neben dem Sitzplan: welche Aufgaben die Klasse in der laufenden Stunde auf welcher Niveaustufe abgeschlossen hat, je fünf Minuten und je Schüler.
+- **Tempo**: Abgeschlossene Aufgaben je zehn Minuten in der laufenden Stunde, verglichen mit dem Median der Klasse. Es sagt nichts über die Güte, nur über die Menge.
+  _Avoid_: Geschwindigkeit, Leistung
+- **Zeitleiste**: Die Folge der Aufgaben eines Schülers in der laufenden Stunde, jede mit Niveaustufe und gelöst oder nicht, im Schülerfenster.
 - **Impuls**: Vorschlag des Lehrer-Dashboards an die Lehrkraft, zum Beispiel ein Mini-Workshop, wenn mehrere Schüler denselben typischen Fehler machen, oder ein Hinweis auf einen Schnellläufer.
 - **Lernbegleiter**: Ein Schüler, der ein Lernziel schon erreicht hat und einem blockierten Mitschüler helfen könnte. Nur ein Vorschlag an die Lehrkraft.
 - **Schnellläufer**: Ein Schüler, der in der laufenden Stunde einen Meilenstein gemeistert hat. Die Lehrkraft kann sein Zielniveau anheben.
@@ -761,7 +766,7 @@ _Avoid_: Statistik (allein), Auswertung
 - **Anforderungsbereich (AFB)**: Einordnung jeder Aufgabe in I (Reproduzieren), II (Zusammenhänge herstellen) oder III (Verallgemeinern und Reflektieren). Unabhängig von der Niveaustufe.
 - **Aufgaben-Audit**: Auswertung je Aufgabe, um unklare oder zu schwere Aufgaben im Aufgabenpool zu finden.
 - **Abbruch**: Ein Schüler verlässt eine Aufgabe ohne Ergebnis.
-- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Sitzplan und Akut-Zone), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Klasse (Schüler, Unterricht, Berichte; bis 0.21 „Verwaltung“). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
+- **Bereich**: Einer der vier Teile des Lehrer-Dashboards: Jetzt (Akut-Zone, Impulse, Sitzplan oder Stundenverlauf), Lernstand (Klasse, Lernziel, Schüler), Aufgaben (Aufgaben-Audit), Klasse (Schüler, Unterricht, Berichte; bis 0.21 „Verwaltung“). Beim Öffnen einer Klasse erscheint Jetzt, wenn in den letzten 10 Minuten jemand gearbeitet hat, sonst Lernstand.
 - **Leitfrage**: Die eine Frage, die ein Bereich beantwortet. Jetzt: Wer braucht mich in dieser Minute? Lernstand: Was plane ich für die nächste Stunde, wen fördere ich, was wiederhole ich mit allen? Aufgaben: Welche Aufgaben funktionieren nicht, und welche greife ich an der Tafel auf? Was keiner Leitfrage dient, gehört in den Bereich Klasse oder ist eine ausschaltbare Auswertung.
 - **Auswertung**: Eine einzelne Karte mit Zahlen oder Namen in den Bereichen Lernstand und Aufgaben, etwa die Heatmap „Wer steht wo?“ oder das Kompetenzprofil. Sie ist entweder fest (beantwortet die Leitfrage des Bereichs) oder ausschaltbar. Eine Einstellung wie „Meilensteine sperren“ ist keine Auswertung.
   _Avoid_: Statistik, Analyse, Widget
