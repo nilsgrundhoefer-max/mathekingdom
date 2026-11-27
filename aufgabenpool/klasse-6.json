@@ -90903,7 +90903,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Man schreibt die Ziffern rechtsbündig untereinander und rechnet.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
@@ -91022,16 +91022,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Die Summe hat immer genau zwei Stellen nach dem Komma.",
+     "text": "Die Summe hat immer genau zwei Stellen nach dem Komma, wie die beiden Zahlen.",
      "richtig": false,
      "fehlvorstellung": "dezimal-mehr-ziffern"
     },
     {
-     "text": "Die Summe kann weniger Stellen nach dem Komma haben, zum Beispiel wenn sich die Hundertstel zu einem Zehntel ergänzen.",
+     "text": "Die Summe kann auch weniger Stellen nach dem Komma haben, wenn hinten eine Null entsteht.",
      "richtig": true
     },
     {
-     "text": "Die Summe hat immer vier Stellen nach dem Komma.",
+     "text": "Die Summe hat immer vier Stellen nach dem Komma, denn zwei und zwei sind vier.",
      "richtig": false,
      "fehlvorstellung": "dezimal-mehr-ziffern"
     }
@@ -91092,12 +91092,12 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das Komma steht an der falschen Stelle.",
+     "text": "Das Komma steht an der falschen Stelle. Die Ziffern selbst stimmen.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
     {
-     "text": "Es wurde addiert statt subtrahiert.",
+     "text": "Es wurde addiert statt subtrahiert. Darum ist das Ergebnis zu groß.",
      "richtig": false,
      "fehlvorstellung": "sub-addiert"
     },
@@ -92112,7 +92112,7 @@
      "fehlvorstellung": "komma-nicht-untereinander"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan schreibt die Ziffern rechtsbündig untereinander und rechnet.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
@@ -92314,7 +92314,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Wo oben keine Ziffer steht, schreibt man die untere einfach ab.",
      "richtig": false,
      "fehlvorstellung": "endnull-nicht-ergaenzt"
     },
@@ -92431,7 +92431,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Er hat einen Übertrag vergessen.",
+     "text": "Er hat beim Addieren der Zehntel einen Übertrag vergessen.",
      "richtig": false,
      "fehlvorstellung": "add-uebertrag-vergessen"
     },
@@ -92440,7 +92440,7 @@
      "richtig": true
     },
     {
-     "text": "Er hat das Komma im Ergebnis vergessen.",
+     "text": "Er hat das Komma im Ergebnis an die falsche Stelle gesetzt.",
      "richtig": false,
      "fehlvorstellung": "div-komma-vergessen"
     }
@@ -92499,11 +92499,11 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen, das Komma bleibt an seiner Stelle.",
+     "text": "Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen.",
      "richtig": true
     },
     {
-     "text": "Es klappt nur, wenn man vorher alle Zahlen rundet.",
+     "text": "Es klappt nur, wenn man vorher alle Zahlen auf Zehntel rundet.",
      "richtig": false,
      "fehlvorstellung": "komma-nicht-untereinander"
     },
@@ -93081,7 +93081,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBei mal 10 hängt man immer eine Null an die Zahl an.",
      "richtig": false,
      "fehlvorstellung": "stufe-null-angehaengt"
     },
@@ -93385,12 +93385,12 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beim Malnehmen mit zehn hängt man immer eine Null an.",
+     "text": "Beim Malnehmen mit zehn hängt man immer eine Null an die Zahl an.",
      "richtig": false,
      "fehlvorstellung": "stufe-null-angehaengt"
     },
     {
-     "text": "Jede Stelle wird zehnmal so viel wert. Jede Ziffer rückt eine Stelle nach links. Darum steht das Komma eine Stelle weiter rechts.",
+     "text": "Jede Ziffer wird zehnmal so viel wert und rückt eine Stelle nach links.",
      "richtig": true
     },
     {
@@ -93968,7 +93968,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\n1 km = 100 m, also rückt das Komma zwei Stellen.",
      "richtig": false,
      "fehlvorstellung": "umrechnungszahl"
     }
@@ -94255,16 +94255,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Sie hat geteilt statt malgenommen. Meter sind größer als Zentimeter, also braucht man mehr Zentimeter.",
+     "text": "Sie hat geteilt statt malgenommen. Es müssen mehr Zentimeter als Meter sein.",
      "richtig": true
     },
     {
-     "text": "Sie hat mit zehn statt mit hundert gerechnet.",
+     "text": "Sie hat mit zehn statt mit hundert gerechnet. Sonst stimmt die Rechnung.",
      "richtig": false,
      "fehlvorstellung": "umrechnungsrichtung"
     },
     {
-     "text": "Sie hat richtig gerechnet.",
+     "text": "Sie hat richtig gerechnet. Zentimeter sind kleiner, also wird die Zahl kleiner.",
      "richtig": false,
      "fehlvorstellung": "umrechnungsrichtung"
     }
@@ -95353,7 +95353,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie im Faktor.",
      "richtig": false,
      "fehlvorstellung": "dezimal-stelle"
     },
@@ -95493,14 +95493,14 @@
      "richtig": true
     },
     {
-     "text": "Beim Malnehmen rückt das Komma immer nach links.",
+     "text": "Beim Malnehmen mit einer Dezimalzahl rückt das Komma immer nach links.",
      "richtig": false,
      "fehlvorstellung": "komma-falsche-richtung"
     },
     {
-     "text": "Ein Ergebnis mit Komma ist immer klein.",
+     "text": "Ein Ergebnis mit Komma ist immer kleiner als eine natürliche Zahl.",
      "richtig": false,
-     "fehlvorstellung": "dezimal-stelle"
+     "fehlvorstellung": "komma-falsche-richtung"
     }
    ],
    "hilfen": {
@@ -96531,7 +96531,7 @@
      "fehlvorstellung": "mal-komma-wie-plus"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nZehntel mal Zehntel ergibt wieder Zehntel.\nDas Komma bleibt an seiner Stelle.",
      "richtig": false,
      "fehlvorstellung": "mal-komma-wie-plus"
     }
@@ -96778,7 +96778,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie in den Faktoren.",
      "richtig": false,
      "fehlvorstellung": "mal-komma-wie-plus"
     },
@@ -96915,16 +96915,16 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Das Komma wurde wie beim Addieren gesetzt. Das Ergebnis braucht so viele Nachkommastellen wie beide Faktoren zusammen.",
+     "text": "Das Komma wurde wie beim Addieren gesetzt. Hier braucht das Ergebnis zwei Stellen nach dem Komma.",
      "richtig": true
     },
     {
-     "text": "Hier hätte man plus rechnen müssen.",
+     "text": "Hier hätte man plus rechnen müssen. Dann stimmt auch das Komma im Ergebnis.",
      "richtig": false,
      "fehlvorstellung": "1x1-addiert"
     },
     {
-     "text": "Beim Einmaleins wurde falsch gerechnet.",
+     "text": "Beim Einmaleins wurde falsch gerechnet. Das Komma steht an der richtigen Stelle.",
      "richtig": false,
      "fehlvorstellung": "1x1-nachbar"
     }
@@ -97587,7 +97587,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nBeim Teilen durch eine natürliche Zahl fällt das Komma weg.",
      "richtig": false,
      "fehlvorstellung": "div-komma-vergessen"
     },
@@ -97836,7 +97836,7 @@
      "fehlvorstellung": "div-stellenwert"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Teilen durch eine natürliche Zahl fällt das Komma weg.",
      "richtig": false,
      "fehlvorstellung": "div-komma-vergessen"
     },
@@ -97970,17 +97970,17 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beim Dividieren wird das Ergebnis immer größer.",
+     "text": "Beim Dividieren wird das Ergebnis immer größer als die erste Zahl. Das wurde vergessen.",
      "richtig": false,
      "fehlvorstellung": "mal-macht-groesser"
     },
     {
-     "text": "Es wurde malgenommen statt geteilt.",
+     "text": "Es wurde malgenommen statt geteilt. Darum ist das Ergebnis zu groß geworden.",
      "richtig": false,
      "fehlvorstellung": "div-falsche-rechenart"
     },
     {
-     "text": "Das Komma im Quotienten fehlt. Überschreitet man das Komma im Dividenden, setzt man das Komma im Quotienten.",
+     "text": "Das Komma im Quotienten fehlt. Es wird gesetzt, sobald man im Dividenden das Komma überschreitet.",
      "richtig": true
     }
    ],
@@ -98617,7 +98617,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDas Komma rückt nur im Divisor um eine Stelle.\nDie andere Zahl bleibt gleich.",
      "richtig": false,
      "fehlvorstellung": "div-ein-komma-verschoben"
     },
@@ -98868,7 +98868,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Beim Dividieren wird das Ergebnis immer kleiner als die erste Zahl.",
      "richtig": false,
      "fehlvorstellung": "div-macht-kleiner"
     }
@@ -98991,17 +98991,17 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Beim Teilen rückt das Komma immer nach rechts.",
+     "text": "Beim Teilen durch eine Dezimalzahl rückt das Komma immer eine Stelle nach rechts.",
      "richtig": false,
      "fehlvorstellung": "komma-falsche-richtung"
     },
     {
-     "text": "Beim Dividieren wird das Ergebnis immer kleiner.",
+     "text": "Beim Dividieren wird das Ergebnis immer kleiner. Hier ist beim Rechnen etwas schiefgegangen.",
      "richtig": false,
      "fehlvorstellung": "div-macht-kleiner"
     },
     {
-     "text": "Ein halbes Ganzes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.",
+     "text": "Ein Halbes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.",
      "richtig": true
     }
    ],
@@ -99537,7 +99537,7 @@
      "fehlvorstellung": "punkt-vor-strich"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nMan rechnet von links nach rechts: erst plus, dann mal.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -99747,7 +99747,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Erst wird abgezogen, das Ergebnis wird danach malgenommen.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     }
@@ -99865,7 +99865,7 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Bei Dezimalzahlen braucht man diese Regel nicht.",
+     "text": "Bei Dezimalzahlen gilt Punkt vor Strich nicht. Dort zählt nur die Reihenfolge.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     },
@@ -99874,7 +99874,7 @@
      "richtig": true
     },
     {
-     "text": "Man rechnet immer von links nach rechts.",
+     "text": "Man rechnet immer von links nach rechts. Zuerst kommt also das Plus an die Reihe.",
      "richtig": false,
      "fehlvorstellung": "punkt-vor-strich"
     }
@@ -100397,7 +100397,7 @@
      "fehlvorstellung": "gesetz-auf-subtraktion"
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt.\nDie beiden hinteren Zahlen darf man zuerst voneinander abziehen.",
      "richtig": false,
      "fehlvorstellung": "sub-klammerfehler"
     }
@@ -100616,7 +100616,7 @@
      "richtig": true
     },
     {
-     "text": "Stimmt.",
+     "text": "Stimmt. Nur die erste Zahl in der Klammer wird malgenommen.",
      "richtig": false,
      "fehlvorstellung": "verteilung-halb"
     }
@@ -100726,17 +100726,17 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Man rundet den Preis auf zwei Euro ab.",
+     "text": "Man rundet den Preis auf zwei Euro ab und zählt danach die fehlenden Cent wieder dazu.",
      "richtig": false,
      "fehlvorstellung": "falsch-gerundet"
     },
     {
-     "text": "Man lässt die Cent einfach weg.",
+     "text": "Man lässt die Cent einfach weg, denn bei so kleinen Beträgen fallen sie nicht auf.",
      "richtig": false,
      "fehlvorstellung": "geschickt-nicht-ausgeglichen"
     },
     {
-     "text": "Der Preis ist fast so viel wie drei Euro. So viele Male drei Euro ist leicht zu rechnen. Danach zieht man die fehlenden Cent wieder ab.",
+     "text": "Man rechnet mit vollen Euro und zieht danach die Cent wieder ab, die zu viel waren.",
      "richtig": true
     }
    ],

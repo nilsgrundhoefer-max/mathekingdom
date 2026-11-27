@@ -77,7 +77,7 @@ export function addieren6() {
       return dezimal(Z(`${kn} kauft auf dem Markt für ${z} € ein.`, `${kn} bezahlt mit 20 €.`, 'Gib das Rückgeld an.'), l, dfe(l, [[endnullFehler('20', z), 'endnull-nicht-ergaenzt'], [euro(minus('20', T(P(z)[0] - P(z)[0] % 100, 2))), 'sach-schritt-vergessen']]),
         h2('Ergänze bis zum nächsten Euro und dann bis 20 €.', 'Zähle die beiden Schritte zusammen.'), { einheit: '€', nachweis: [`20 € − ${z} € = ${l} €`] }); },
     () => { const a = dez(1, 3.2, 9.8), b = dez(2, 0.11, 0.99), falsch = T(P(a)[0] + P(b)[0], 2), r = plus(a, b), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${a} + ${b} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. ${a} hat Zehntel, ${b} hat Hundertstel. Es gilt ${a} + ${b} = ${r}.`, true), opt('Stimmt.', false, 'komma-nicht-untereinander'), opt(`Stimmt, denn ${a} + ${b} = ${falsch}.`, false, 'komma-nicht-untereinander')],
+      return auswahl(Z(`${kn} rechnet: ${a} + ${b} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. ${a} hat Zehntel, ${b} hat Hundertstel. Es gilt ${a} + ${b} = ${r}.`, true), opt('Stimmt. Man schreibt die Ziffern rechtsbündig untereinander und rechnet.', false, 'komma-nicht-untereinander'), opt(`Stimmt, denn ${a} + ${b} = ${falsch}.`, false, 'komma-nicht-untereinander')],
         h2('Schreibe die Zahlen mit gleich vielen Stellen nach dem Komma.', `Rechne dann ${T(P(a)[0] * 10, 2)} + ${b}.`), { nachweis: [URTEIL(false, `${a} + ${b} = ${falsch}`)] }); },
   ]);
   sechs(A1, 'E', [
@@ -87,13 +87,13 @@ export function addieren6() {
       return luecken(Z('Ergänze die fehlende Zahl.', `{{a}} − ${b} = ${l}`), { a: [c, dfe(c, [[minus(l, b), 'probe-falsche-umkehr']])] }, h1('Rechne rückwärts mit der Umkehraufgabe.'), { nachweis: [`${l} + ${b} = ${c}`] }); },
     () => { const a = dez(1, 0.1, 0.9), b = dez(2, 0.01, 0.09), c = dez(3, 0.001, 0.009), l = plus(plus(a, b), c);
       return dezimal(Z(`Rechne im Kopf: ${a} + ${b} + ${c}`), l, dfe(l, [[T(P(a)[0] + P(b)[0] + P(c)[0], 3), 'komma-nicht-untereinander']]), h1('Schreibe jede Zahl in Tausendsteln. Dann siehst du die Stellen.'), { nachweis: [`${a} + ${b} + ${c} = ${l}`] }); },
-    () => { const opts = [['Die Summe kann weniger Stellen nach dem Komma haben, zum Beispiel wenn sich die Hundertstel zu einem Zehntel ergänzen.', true], ['Die Summe hat immer genau zwei Stellen nach dem Komma.', false], ['Die Summe hat immer vier Stellen nach dem Komma.', false]];
+    () => { const opts = [['Die Summe kann auch weniger Stellen nach dem Komma haben, wenn hinten eine Null entsteht.', true], ['Die Summe hat immer genau zwei Stellen nach dem Komma, wie die beiden Zahlen.', false], ['Die Summe hat immer vier Stellen nach dem Komma, denn zwei und zwei sind vier.', false]];
       return auswahl(Z('Zwei Zahlen haben je zwei Stellen nach dem Komma.', 'Kreuze die Aussage an, die stimmt.'), opts.map(([t, r]) => opt(t, r, r ? undefined : 'dezimal-mehr-ziffern')), h1('Probiere es aus: 1,25 + 2,75 = 4.'), { nachweis: [FREI('Stellenzahl einer Summe')] }); },
     () => { const z = [dez(2, 11.5, 12.6), dez(2, 11.5, 12.6), dez(1, 11.5, 12.6), dez(2, 11.5, 12.6)], s = z.reduce((x, y) => plus(x, y));
       return dezimal(Z(`Eine Staffel läuft 4 · 100 m. Die Zeiten sind ${z[0]} s, ${z[1]} s, ${z[2]} s und ${z[3]} s.`, 'Gib die Zeit der ganzen Staffel an.'), s, dfe(s, [[T(z.reduce((x, y) => x + P(y)[0], 0), 2), 'komma-nicht-untereinander']]),
         h1('Addiere zwei Zeiten, die zusammen glatt werden, zuerst.'), { einheit: 's', nachweis: [`${z[0]} s + ${z[1]} s + ${z[2]} s + ${z[3]} s = ${s} s`, HILFSZAHL(4, 'Anzahl der Läufer'), HILFSZAHL('100 m', 'Länge einer Strecke')] }); },
     () => { const a = dez(0, 4, 9), b = dez(2, 1.11, 3.99), falsch = endnullFehler(a, b), r = minus(a, b), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${a} − ${b} = ${falsch}`, 'Kreuze die Erklärung für den Fehler an.'), [opt('Die Endnullen fehlen. Die Hundertstel wurden einfach abgeschrieben.', true), opt('Das Komma steht an der falschen Stelle.', false, 'komma-nicht-untereinander'), opt('Es wurde addiert statt subtrahiert.', false, 'sub-addiert')],
+      return auswahl(Z(`${kn} rechnet: ${a} − ${b} = ${falsch}`, 'Kreuze die Erklärung für den Fehler an.'), [opt('Die Endnullen fehlen. Die Hundertstel wurden einfach abgeschrieben.', true), opt('Das Komma steht an der falschen Stelle. Die Ziffern selbst stimmen.', false, 'komma-nicht-untereinander'), opt('Es wurde addiert statt subtrahiert. Darum ist das Ergebnis zu groß.', false, 'sub-addiert')],
         h1(`Schreibe ${a} mit Endnullen. Rechne dann selbst: ${a} − ${b} = ${r}.`), { nachweis: [FREI('Fehler beim Subtrahieren erklären')] }); },
   ]);
 
@@ -121,7 +121,7 @@ export function addieren6() {
     () => { const a = dez(1, 2.1, 9.9), b = dez(2, 1.11, 9.99), c = dez(3, 0.101, 0.999), l = plus(plus(a, b), c);
       return rasterKomma(Z('Addiere schriftlich im Raster.', 'Ergänze zuerst die Endnullen in den kleinen Feldern.'), '+', [a, b, c], tG2, { endnullen: 'notiz' }); },
     () => { const a = dez(1, 4.1, 9.9), b = dez(2, 1.11, 3.99), falsch = rechtsbuendig(a, b), r = plus(a, b), kn = kind();
-      return auswahl(Z(`${kn} rechnet schriftlich: ${a} + ${b} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Komma muss unter Komma stehen. Es gilt ${a} + ${b} = ${r}.`, true), opt('Stimmt.', false, 'komma-nicht-untereinander'), opt(`Stimmt, denn ${a} + ${b} = ${falsch}.`, false, 'komma-nicht-untereinander')],
+      return auswahl(Z(`${kn} rechnet schriftlich: ${a} + ${b} = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Komma muss unter Komma stehen. Es gilt ${a} + ${b} = ${r}.`, true), opt('Stimmt. Man schreibt die Ziffern rechtsbündig untereinander und rechnet.', false, 'komma-nicht-untereinander'), opt(`Stimmt, denn ${a} + ${b} = ${falsch}.`, false, 'komma-nicht-untereinander')],
         h3('Schreibe die Zahlen untereinander, Komma unter Komma.', `${a} wird zu ${T(P(a)[0] * 10, 2)}.`, 'Rechne dann selbst und vergleiche.'), { nachweis: [URTEIL(false, `${a} + ${b} = ${falsch}`)] }); },
   ]);
   sechs(A2, 'M', [
@@ -142,7 +142,7 @@ export function addieren6() {
     () => { const c = dez(0, 10, 20), b = dez(2, 2.05, 7.95), l = minus(c, b);
       return luecken(Z('Ergänze die fehlende Zahl.', `${b} + {{a}} = ${c}`), { a: [l, dfe(l, [[endnullFehler(c, b), 'endnull-nicht-ergaenzt']])] }, h2('Rechne mit der Umkehraufgabe.', `Rechne ${c} − ${b}. Ergänze dazu Endnullen.`), { nachweis: [`${c} − ${b} = ${l}`] }); },
     () => { const a = dez(0, 6, 12), b = dez(2, 2.11, 4.99), falsch = endnullFehler(a, b), r = minus(a, b), kn = kind();
-      return auswahl(Z(`${kn} rechnet schriftlich: ${a} − ${b} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. ${a} = ${a},00. Es gilt ${a} − ${b} = ${r}.`, true), opt('Stimmt.', false, 'endnull-nicht-ergaenzt'), opt(`Stimmt, denn die Hundertstel von ${b} bleiben stehen.`, false, 'endnull-nicht-ergaenzt')],
+      return auswahl(Z(`${kn} rechnet schriftlich: ${a} − ${b} = ${falsch}`, 'Beurteile die Rechnung und begründe.'), [opt(`Falsch. ${a} = ${a},00. Es gilt ${a} − ${b} = ${r}.`, true), opt('Stimmt. Wo oben keine Ziffer steht, schreibt man die untere einfach ab.', false, 'endnull-nicht-ergaenzt'), opt(`Stimmt, denn die Hundertstel von ${b} bleiben stehen.`, false, 'endnull-nicht-ergaenzt')],
         h2('Ergänze bei der oberen Zahl Endnullen.', 'Rechne dann Stelle für Stelle und vergleiche.'), { nachweis: [URTEIL(false, `${a} − ${b} = ${falsch}`)] }); },
   ]);
   sechs(A2, 'E', [
@@ -152,13 +152,13 @@ export function addieren6() {
       return luecken(Z('Ergänze die fehlende Zahl.', `{{a}} − ${b} = ${l}`), { a: [a, dfe(a, [[minus(l, b), 'probe-falsche-umkehr']])] }, h1('Rechne rückwärts mit der Umkehraufgabe.'), { nachweis: [`${l} + ${b} = ${a}`] }); },
     () => { const a = dez(3, 1.001, 8.999), l = minus('10', a);
       return dezimal(Z(`Zwei Zahlen ergeben zusammen 10. Die eine Zahl ist ${a}.`, 'Rechne im Heft.', 'Gib die andere Zahl an.'), l, dfe(l, [[endnullFehler('10', a), 'endnull-nicht-ergaenzt'], [T(9999 - P(a)[0], 3), 'ergaenzen-zu-viel']]), h1('Rechne 10 minus die Zahl. Ergänze dafür Endnullen.'), { nachweis: [`10 − ${a} = ${l}`] }); },
-    () => { const opts = [['Er hat die Zahlen rechtsbündig geschrieben und nicht Komma unter Komma.', true], ['Er hat einen Übertrag vergessen.', false], ['Er hat das Komma im Ergebnis vergessen.', false]], a = dez(1, 3.1, 8.9), b = dez(3, 1.001, 4.999), falsch = rechtsbuendig(a, b);
+    () => { const opts = [['Er hat die Zahlen rechtsbündig geschrieben und nicht Komma unter Komma.', true], ['Er hat beim Addieren der Zehntel einen Übertrag vergessen.', false], ['Er hat das Komma im Ergebnis an die falsche Stelle gesetzt.', false]], a = dez(1, 3.1, 8.9), b = dez(3, 1.001, 4.999), falsch = rechtsbuendig(a, b);
       return auswahl(Z(`Ben rechnet schriftlich: ${a} + ${b} = ${falsch}`, 'Kreuze die Erklärung für seinen Fehler an.'), opts.map(([t, r]) => opt(t, r, r ? undefined : t.includes('Übertrag') ? 'add-uebertrag-vergessen' : 'div-komma-vergessen')), h1(`Rechne selbst: ${a} + ${b} = ${plus(a, b)}. Woher kommt die falsche Zahl?`), { nachweis: [FREI('Fehler beim schriftlichen Addieren erklären')] }); },
     () => { const p = [euro(dez(2, 2.15, 4.95)), euro(dez(2, 1.05, 2.95)), euro(dez(1, 0.5, 0.9))], s = euro(p.reduce((x, y) => plus(x, y))), l = euro(minus('50', T(P(s)[0] * 3, 2)));
       if (!l) return null;
       return dezimal(Z(`Auf dem Burgmarkt kauft eine Familie drei Mal dasselbe: Brot für ${p[0]} €, Käse für ${p[1]} € und einen Apfel für ${p[2]} €.`, 'Sie bezahlt mit 50 €.', 'Berechne das Rückgeld.'), l, dfe(l, [[euro(minus('50', s)), 'sach-schritt-vergessen']]), h1('Rechne zuerst einen Einkauf aus. Nimm ihn dann dreimal.'),
         { einheit: '€', nachweis: [`${p[0]} € + ${p[1]} € + ${p[2]} € = ${s} €`, `${s} € + ${s} € + ${s} € = ${euro(T(P(s)[0] * 3, 2))} €`, `50 € − ${euro(T(P(s)[0] * 3, 2))} € = ${l} €`, HILFSZAHL(3, 'drei Einkäufe')] }); },
-    () => { const opts = [['Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen, das Komma bleibt an seiner Stelle.', true], ['Es klappt nur, wenn man vorher alle Zahlen rundet.', false], ['Es klappt nur bei Zahlen mit gleich vielen Stellen nach dem Komma.', false]];
+    () => { const opts = [['Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen.', true], ['Es klappt nur, wenn man vorher alle Zahlen auf Zehntel rundet.', false], ['Es klappt nur bei Zahlen mit gleich vielen Stellen nach dem Komma.', false]];
       return auswahl(Z('Lena sagt: „Komma unter Komma, Endnullen ergänzen, dann rechne ich wie gewohnt.“', 'Beurteile, ob das immer klappt.'), opts.map(([t, r]) => opt(t, r, r ? undefined : 'komma-nicht-untereinander')), h1('Denke an die Stellenwerttafel: Zehntel stehen unter Zehnteln.'), { nachweis: [FREI('Verfahren begründen')] }); },
   ]);
 }

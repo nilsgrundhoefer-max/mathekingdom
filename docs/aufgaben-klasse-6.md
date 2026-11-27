@@ -4140,7 +4140,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zerlege: erst die Ganzen, dann die Ze
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Rechne geschickt im Kopf: 0,52 + 0,46 + 0,48 Lösung: **1,46**. Typische Fehler: 0,146 (dezimal-stelle).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Elif kauft auf dem Markt für 13,55 € ein. / Elif bezahlt mit 20 €. / Gib das Rückgeld an. Lösung: **6,45 €**. Typische Fehler: 7,55 (endnull-nicht-ergaenzt), 7,00 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren_ · Paul rechnet: 9,3 + 0,12 = 1,05 / Beurteile die Rechnung und begründe.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Man schreibt die Ziffern rechtsbündig untereinander und rechnet.
   - ☑ Falsch. 9,3 hat Zehntel, 0,12 hat Hundertstel. Es gilt 9,3 + 0,12 = 9,42.
   - ☐ Stimmt, denn 9,3 + 0,12 = 1,05.
 
@@ -4152,13 +4152,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ergänze erst bis zum nächsten Hunde
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ − 2,58 = 9,58 Lösung: a = **12,16**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne im Kopf: 0,9 + 0,05 + 0,007 Lösung: **0,957**. Typische Fehler: 0,021 (komma-nicht-untereinander).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben je zwei Stellen nach dem Komma. / Kreuze die Aussage an, die stimmt.
-  - ☐ Die Summe hat immer genau zwei Stellen nach dem Komma.
-  - ☑ Die Summe kann weniger Stellen nach dem Komma haben, zum Beispiel wenn sich die Hundertstel zu einem Zehntel ergänzen.
-  - ☐ Die Summe hat immer vier Stellen nach dem Komma.
+  - ☐ Die Summe hat immer genau zwei Stellen nach dem Komma, wie die beiden Zahlen.
+  - ☑ Die Summe kann auch weniger Stellen nach dem Komma haben, wenn hinten eine Null entsteht.
+  - ☐ Die Summe hat immer vier Stellen nach dem Komma, denn zwei und zwei sind vier.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Staffel läuft 4 · 100 m. Die Zeiten sind 11,81 s, 12,25 s, 12,3 s und 12,08 s. / Gib die Zeit der ganzen Staffel an. Lösung: **48,44 s**. Typische Fehler: 37,37 (komma-nicht-untereinander).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 8 − 2,12 = 6,12 / Kreuze die Erklärung für den Fehler an.
-  - ☐ Das Komma steht an der falschen Stelle.
-  - ☐ Es wurde addiert statt subtrahiert.
+  - ☐ Das Komma steht an der falschen Stelle. Die Ziffern selbst stimmen.
+  - ☐ Es wurde addiert statt subtrahiert. Darum ist das Ergebnis zu groß.
   - ☑ Die Endnullen fehlen. Die Hundertstel wurden einfach abgeschrieben.
 
 ## 6.5.1-A2: Ich kann Dezimalzahlen schriftlich addieren und subtrahieren: Komma unter Komma.
@@ -4260,7 +4260,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe Komma unter Komma. Fülle fe
 
 - `06` AFB III · _Argumentieren_ · Ali rechnet schriftlich: 8,8 + 1,15 = 2,03 / Beurteile die Rechnung.
   - ☐ Stimmt, denn 8,8 + 1,15 = 2,03.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man schreibt die Ziffern rechtsbündig untereinander und rechnet.
   - ☑ Falsch. / Komma muss unter Komma stehen. / Es gilt 8,8 + 1,15 = 9,95.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4274,7 +4274,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe Komma unter Komma und ergän
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / 3,65 + ▢ = 13 Lösung: a = **9,35**
 - `06` AFB III · _Argumentieren_ · Finn rechnet schriftlich: 7 − 4,75 = 3,75 / Beurteile die Rechnung und begründe.
   - ☑ Falsch. 7 = 7,00. Es gilt 7 − 4,75 = 2,25.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Wo oben keine Ziffer steht, schreibt man die untere einfach ab.
   - ☐ Stimmt, denn die Hundertstel von 4,75 bleiben stehen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4285,13 +4285,13 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe 100 mit drei Endnullen.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ − 2,95 = 12,4 Lösung: a = **15,35**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Zwei Zahlen ergeben zusammen 10. Die eine Zahl ist 6,841. / Rechne im Heft. / Gib die andere Zahl an. Lösung: **3,159**. Typische Fehler: 4,841 (endnull-nicht-ergaenzt), 3,158 (ergaenzen-zu-viel).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ben rechnet schriftlich: 4,2 + 1,918 = 1,96 / Kreuze die Erklärung für seinen Fehler an.
-  - ☐ Er hat einen Übertrag vergessen.
+  - ☐ Er hat beim Addieren der Zehntel einen Übertrag vergessen.
   - ☑ Er hat die Zahlen rechtsbündig geschrieben und nicht Komma unter Komma.
-  - ☐ Er hat das Komma im Ergebnis vergessen.
+  - ☐ Er hat das Komma im Ergebnis an die falsche Stelle gesetzt.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Auf dem Burgmarkt kauft eine Familie drei Mal dasselbe: Brot für 4,04 €, Käse für 1,78 € und einen Apfel für 0,60 €. / Sie bezahlt mit 50 €. / Berechne das Rückgeld. Lösung: **30,74 €**. Typische Fehler: 43,58 (sach-schritt-vergessen).
 - `06` AFB III · _Argumentieren_ · Lena sagt: „Komma unter Komma, Endnullen ergänzen, dann rechne ich wie gewohnt.“ / Beurteile, ob das immer klappt.
-  - ☑ Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen, das Komma bleibt an seiner Stelle.
-  - ☐ Es klappt nur, wenn man vorher alle Zahlen rundet.
+  - ☑ Es klappt immer. Mit Endnullen rechnet man wie mit natürlichen Zahlen.
+  - ☐ Es klappt nur, wenn man vorher alle Zahlen auf Zehntel rundet.
   - ☐ Es klappt nur bei Zahlen mit gleich vielen Stellen nach dem Komma.
 
 ## 6.5.2-S1: Ich kann Dezimalzahlen mit 10, 100 und 1000 multiplizieren und durch sie dividieren.
@@ -4322,7 +4322,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Nullen der Stufenzahl. *Be
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne von links nach rechts: 3,9 · 10 : 100 Lösung: **0,39**. Typische Fehler: 39 (sach-schritt-vergessen), 3900 (komma-falsche-richtung).
 - `06` AFB III · _Argumentieren_ · Mara rechnet: 5,46 · 10 = 5,460 / Beurteile die Rechnung.
   - ☑ Falsch. / Das Komma rückt eine Stelle nach rechts. / Es gilt 5,46 · 10 = 54,6.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Bei mal 10 hängt man immer eine Null an die Zahl an.
   - ☐ Stimmt, denn 5,460 hat eine Null mehr.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4348,8 +4348,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle, um wie viele Stellen das Komm
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ · 100 = 6,4 Lösung: a = **0,064**
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne: 0,4 : 0,1 Lösung: **4**. Typische Fehler: 0,04 (div-macht-kleiner), 40 (dezimal-stelle).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum bei mal 10 das Komma eine Stelle nach rechts rückt.
-  - ☐ Beim Malnehmen mit zehn hängt man immer eine Null an.
-  - ☑ Jede Stelle wird zehnmal so viel wert. Jede Ziffer rückt eine Stelle nach links. Darum steht das Komma eine Stelle weiter rechts.
+  - ☐ Beim Malnehmen mit zehn hängt man immer eine Null an die Zahl an.
+  - ☑ Jede Ziffer wird zehnmal so viel wert und rückt eine Stelle nach links.
   - ☐ Das Komma rückt nach rechts, weil man von rechts nach links rechnet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne von links nach rechts: 1,7 · 100 : 1000 · 10 Lösung: **1,7**. Typische Fehler: 0,17 (sach-schritt-vergessen), 17 (komma-falsche-richtung).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze alle Rechnungen an, die stimmen.
@@ -4387,7 +4387,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Nullen der Stufenzahl. *Be
 - `06` AFB III · _Argumentieren_ · Lina sagt: „0,2 km sind 20 m.“ / Beurteile die Aussage.
   - ☐ Falsch. / Es gilt 0,2 km = 2 m.
   - ☑ Falsch. / 1 km = 1000 m. / Es gilt 0,2 km = 200 m.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / 1 km = 100 m, also rückt das Komma zwei Stellen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4412,9 +4412,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 1 t = 1000 kg.
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Stapel aus 100 gleichen Münzen ist 20,1 cm hoch. / Gib an, wie dick eine Münze in Millimetern ist. Lösung: **2,01 mm**. Typische Fehler: 0,201 (umrechnungszahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Für 1000 gleiche Flaschen Saft braucht eine Firma 900 l. / Gib an, wie viel Milliliter in einer Flasche sind. Lösung: **900 ml**. Typische Fehler: 0,9 (umrechnungszahl).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Lina rechnet 1,4 m in Zentimeter um: 1,4 : 100 = 0,014 / Kreuze die Erklärung für den Fehler an.
-  - ☑ Sie hat geteilt statt malgenommen. Meter sind größer als Zentimeter, also braucht man mehr Zentimeter.
-  - ☐ Sie hat mit zehn statt mit hundert gerechnet.
-  - ☐ Sie hat richtig gerechnet.
+  - ☑ Sie hat geteilt statt malgenommen. Es müssen mehr Zentimeter als Meter sein.
+  - ☐ Sie hat mit zehn statt mit hundert gerechnet. Sonst stimmt die Rechnung.
+  - ☐ Sie hat richtig gerechnet. Zentimeter sind kleiner, also wird die Zahl kleiner.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Blatt Papier ist 0,1 mm dick. / Gib an, wie hoch ein Stapel aus 1000 Blatt in Zentimetern ist. Lösung: **10 cm**. Typische Fehler: 100 (umrechnungszahl), 1 (dezimal-stelle).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Setze die passende Zahl ein. / 9,2 · ▢ = 0,92 Lösung: a = **0,1**
 
@@ -4511,7 +4511,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne Komma und setze dann das 
   - ☑ 4,5 · 7
   - ☐ 45 · 70
 - `06` AFB III · _Argumentieren_ · Ali rechnet: 4,7 · 38 = 17,86 / Prüfe das Ergebnis mit einem Überschlag.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie im Faktor.
   - ☑ Falsch. Der Überschlag ist 5 · 38 = 190. Es gilt 4,7 · 38 = 178,6.
   - ☐ Falsch. Es gilt 4,7 · 38 = 1786.
 
@@ -4524,8 +4524,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Ein Paket wiegt 1,34 kg. / Ein Lieferwagen bringt 139 solche Pakete. / Rechne im Heft. / Gib das Gewicht aller Pakete an. Lösung: **186,26 kg**. Typische Fehler: 18,626 (dezimal-stelle), 1862,6 (dezimal-stelle).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum 0,9 · 23 kleiner als 23 ist.
   - ☑ Weniger als ein Ganzes mehrmals genommen ergibt weniger als die Zahl der Ganzen.
-  - ☐ Beim Malnehmen rückt das Komma immer nach links.
-  - ☐ Ein Ergebnis mit Komma ist immer klein.
+  - ☐ Beim Malnehmen mit einer Dezimalzahl rückt das Komma immer nach links.
+  - ☐ Ein Ergebnis mit Komma ist immer kleiner als eine natürliche Zahl.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 1,34 · 6 = 0,804 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **8,04**. Typische Fehler: 0,804 (dezimal-stelle).
 - `06` AFB III · _Probleme lösen_ · Rechne nicht genau. / Kreuze die Rechnung mit dem größten Ergebnis an.
   - ☑ 4,5 · 190
@@ -4602,7 +4602,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne ohne Komma. Zähle dann die St
 - `06` AFB III · _Argumentieren_ · Elif rechnet: 0,3 · 0,3 = 0,9 / Beurteile die Rechnung.
   - ☑ Falsch. / Zehntel mal Zehntel ergibt Hundertstel. / Es gilt 0,3 · 0,3 = 0,09.
   - ☐ Stimmt, denn 3 · 3 = 9.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Zehntel mal Zehntel ergibt wieder Zehntel. / Das Komma bleibt an seiner Stelle.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4619,7 +4619,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Runde jeden Faktor auf Ganze oder auf
   - ☑ 31 · 0,27
 - `06` AFB III · _Argumentieren_ · Paul rechnet: 5,9 · 9,9 = 584,1 / Prüfe das Ergebnis mit einem Überschlag.
   - ☑ Falsch. Der Überschlag ist 6 · 10 = 60. Es gilt 5,9 · 9,9 = 58,41.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Malnehmen bleibt das Komma an derselben Stelle wie in den Faktoren.
   - ☐ Falsch. Es gilt 5,9 · 9,9 = 5,841.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4630,9 +4630,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Multipliziere schriftlich im Heft: 0,27 · 0,68 Lösung: **0,1836**. Typische Fehler: 18,36 (mal-komma-wie-plus), 1,836 (dezimal-stelle).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** 1 m Stoff kostet 11,36 €. / Ole braucht 0,25 m Stoff. / Rechne im Heft. / Berechne den Preis. Lösung: **2,84 €**. Typische Fehler: 284 (mal-komma-wie-plus), 28,40 (dezimal-stelle).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ali rechnet: 0,3 · 0,3 = 0,9 / Kreuze die Erklärung für den Fehler an.
-  - ☑ Das Komma wurde wie beim Addieren gesetzt. Das Ergebnis braucht so viele Nachkommastellen wie beide Faktoren zusammen.
-  - ☐ Hier hätte man plus rechnen müssen.
-  - ☐ Beim Einmaleins wurde falsch gerechnet.
+  - ☑ Das Komma wurde wie beim Addieren gesetzt. Hier braucht das Ergebnis zwei Stellen nach dem Komma.
+  - ☐ Hier hätte man plus rechnen müssen. Dann stimmt auch das Komma im Ergebnis.
+  - ☐ Beim Einmaleins wurde falsch gerechnet. Das Komma steht an der richtigen Stelle.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Elif rechnet: 1,6 · 0,8 = 12,8 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **1,28**. Typische Fehler: 12,8 (mal-komma-wie-plus).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Rechne nicht genau. / Kreuze alle Rechnungen an, deren Ergebnis kleiner als 7 ist.
   - ☑ 0,9 · 7
@@ -4673,7 +4673,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere wie mit natürlichen Zahlen
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Pack mit 4 Flaschen Saft kostet 2,28 €. / Berechne den Preis für eine Flasche. _(Bild: Geld: 2 €, 20 ct, 5 ct, 2 ct, 1 ct)_ Lösung: **0,57 €**. Typische Fehler: 5,70 (div-stellenwert).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Dividiere: 7,1 : 2 / Hänge dafür Nullen an. Lösung: **3,55**. Typische Fehler: 3,5 (div-rest-vergessen), 355 (div-komma-vergessen), 35,5 (div-stellenwert), 0,355 (div-stellenwert).
 - `06` AFB III · _Argumentieren_ · Ali rechnet: 1,5 : 5 = 3 / Beurteile die Rechnung.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Beim Teilen durch eine natürliche Zahl fällt das Komma weg.
   - ☑ Falsch. / 1,5 ist kleiner als 5. / Es gilt 1,5 : 5 = 0,3.
   - ☐ Stimmt, denn 3 · 5 = 15.
 
@@ -4692,7 +4692,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Dividiere schriftlich. Überschreites
   - ☐ 12 : 6
 - `06` AFB III · _Argumentieren_ · Ida rechnet: 129,2 : 19 = 68 / Prüfe das Ergebnis mit einem Überschlag.
   - ☐ Falsch. Es gilt 129,2 : 19 = 0,68.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Teilen durch eine natürliche Zahl fällt das Komma weg.
   - ☑ Falsch. Der Überschlag ist 130 : 20 = 6,5. Es gilt 129,2 : 19 = 6,8.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
@@ -4703,9 +4703,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Noah und Freunde teilen 10 € gerecht. / Es sind 6 Kinder. / Dividiere im Heft. / Runde auf Cent. Lösung: **1,67 €**. Typische Fehler: 1,66 (runden-abschneiden).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Staffel aus 4 Kindern läuft zusammen 50 s. / Alle laufen gleich schnell, auch Mia. / Rechne im Heft. / Gib die Zeit für ein Kind an. Lösung: **12,5 s**. Typische Fehler: 125 (div-komma-vergessen), 1,25 (div-stellenwert).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Sara rechnet: 3,6 : 6 = 6 / Kreuze die Erklärung für den Fehler an.
-  - ☐ Beim Dividieren wird das Ergebnis immer größer.
-  - ☐ Es wurde malgenommen statt geteilt.
-  - ☑ Das Komma im Quotienten fehlt. Überschreitet man das Komma im Dividenden, setzt man das Komma im Quotienten.
+  - ☐ Beim Dividieren wird das Ergebnis immer größer als die erste Zahl. Das wurde vergessen.
+  - ☐ Es wurde malgenommen statt geteilt. Darum ist das Ergebnis zu groß geworden.
+  - ☑ Das Komma im Quotienten fehlt. Es wird gesetzt, sobald man im Dividenden das Komma überschreitet.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole rechnet: 0,3 : 6 = 0,5 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **0,05**. Typische Fehler: 0,5 (div-stellenwert).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Rechne nicht genau. / Kreuze alle Rechnungen an, deren Ergebnis kleiner als 1 ist.
   - ☑ 2 : 6
@@ -4746,7 +4746,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiebe das Komma in beiden Zahlen
   - ☐ 690
   - ☐ 6,9
 - `06` AFB III · _Argumentieren_ · Jonas rechnet: 16,2 : 0,6 = 2,7 / Beurteile die Rechnung.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Das Komma rückt nur im Divisor um eine Stelle. / Die andere Zahl bleibt gleich.
   - ☐ Stimmt, denn Dividieren macht immer kleiner.
   - ☑ Falsch. / Das Komma muss in beiden Zahlen rücken. / Es gilt 16,2 : 0,6 = 162 : 6 = 27.
 
@@ -4766,7 +4766,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Verschiebe das Komma in Dividend und 
 - `06` AFB III · _Argumentieren_ · Paul rechnet: 38,4 : 0,8 = 4,8 / Prüfe das Ergebnis mit einem Überschlag.
   - ☐ Falsch. Es gilt 38,4 : 0,8 = 480.
   - ☑ Falsch. Der Überschlag ist 38 : 0,8 = 47,5. Es gilt 38,4 : 0,8 = 48.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Beim Dividieren wird das Ergebnis immer kleiner als die erste Zahl.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4776,9 +4776,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts mit der Umkehraufg
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Dividiere schriftlich im Heft: 5,2 : 0,7 / Runde das Ergebnis auf Zehntel. Lösung: **7,4**. Typische Fehler: 7,43 (falsch-gerundet).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Flasche fasst 0,5 l. / Saft gibt es 13,5 l. / Rechne im Heft. / Gib an, wie viele Flaschen man damit füllen kann. Lösung: **27**. Typische Fehler: 2,7 (div-ein-komma-verschoben), 6,75 (div-falsche-rechenart).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum 9 : 0,5 größer als 9 ist.
-  - ☐ Beim Teilen rückt das Komma immer nach rechts.
-  - ☐ Beim Dividieren wird das Ergebnis immer kleiner.
-  - ☑ Ein halbes Ganzes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.
+  - ☐ Beim Teilen durch eine Dezimalzahl rückt das Komma immer eine Stelle nach rechts.
+  - ☐ Beim Dividieren wird das Ergebnis immer kleiner. Hier ist beim Rechnen etwas schiefgegangen.
+  - ☑ Ein Halbes passt in jedes Ganze zweimal. Darum passt es öfter hinein, als es Ganze sind.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ole rechnet: 6,4 : 0,8 = 0,8 / Das stimmt nicht. / Berechne das richtige Ergebnis. Lösung: **8**. Typische Fehler: 0,8 (div-ein-komma-verschoben).
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Rechne nicht genau. / Kreuze alle Rechnungen an, deren Ergebnis größer als 8 ist.
   - ☑ 8 : 0,9
@@ -4820,7 +4820,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unterstreiche zuerst, was du als Erst
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne zuerst die Punktrechnung. / 7,1 − 3 : 5 = 7,1 − ▢ = ▢ Lösung: q = **0,6**, e = **6,5**
 - `06` AFB III · _Argumentieren_ · Elif rechnet: 1,4 + 0,8 · 3 = 6,6 / Beurteile die Rechnung.
   - ☐ Stimmt, denn 1,4 + 0,8 = 2,2.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Man rechnet von links nach rechts: erst plus, dann mal.
   - ☑ Falsch. / Punkt vor Strich: 1,4 + 0,8 · 3 = 1,4 + 2,4 = 3,8.
 
 ### M · Mittleres Niveau (Realschulabschluss)
@@ -4839,7 +4839,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Klammer zuerst, dann Punkt vor Strich
 - `06` AFB III · _Argumentieren_ · Sara rechnet: 10 − 0,2 · 2 = 19,6 / Beurteile die Rechnung und begründe.
   - ☐ Stimmt, denn man rechnet von links nach rechts.
   - ☑ Falsch. Mal kommt vor minus. Es gilt 10 − 0,2 · 2 = 10 − 0,4 = 9,6.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Erst wird abgezogen, das Ergebnis wird danach malgenommen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4852,9 +4852,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Klammer zuerst, dann Punkt vor Strich
   - ☐ 2,8 + 2,1 · 4 = 19,6
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / 2,3 + ▢ · 5 = 6,8 Lösung: a = **0,9**
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum 3 + 0,5 · 5 nicht 17,5 ergibt.
-  - ☐ Bei Dezimalzahlen braucht man diese Regel nicht.
+  - ☐ Bei Dezimalzahlen gilt Punkt vor Strich nicht. Dort zählt nur die Reihenfolge.
   - ☑ Mal und geteilt rechnet man vor plus und minus. Zuerst wird also nur das Malnehmen gerechnet.
-  - ☐ Man rechnet immer von links nach rechts.
+  - ☐ Man rechnet immer von links nach rechts. Zuerst kommt also das Plus an die Reihe.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Emre kauft für 3 Kinder je ein Brötchen für 1,00 € und einen Saft für 0,75 €. / Schreibe einen Rechenausdruck mit Klammer. / Berechne den Preis. Lösung: **5,25 €**. Typische Fehler: 3,75 (klammer-falsch-gesetzt).
 - `06` AFB III · _Probleme lösen_ · Rechne nicht alles genau. / Kreuze die Rechnung mit dem größten Ergebnis an.
   - ☑ 4,6 · (0,5 + 2)
@@ -4894,7 +4894,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche Zahlen, die zusammen eine glatt
 - `06` AFB III · _Argumentieren_ · Finn rechnet: 9,2 − 2,9 − 1,3 = 9,2 − 1,6 = 7,6 / Beurteile die Rechnung.
   - ☑ Falsch. / Beide Zahlen werden abgezogen. / Es gilt 9,2 − 2,9 − 1,3 = 5.
   - ☐ Stimmt, denn man darf beim Subtrahieren immer zusammenfassen.
-  - ☐ Stimmt.
+  - ☐ Stimmt. / Die beiden hinteren Zahlen darf man zuerst voneinander abziehen.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
@@ -4912,7 +4912,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Tausche und fasse so zusammen, dass g
 - `06` AFB III · _Argumentieren_ · Mia rechnet: 2 · (1,4 + 0,1) = 2,8 + 0,1 = 2,9 / Beurteile die Rechnung und begründe.
   - ☐ Stimmt, denn 2 · 1,4 = 2,8.
   - ☑ Falsch. Jede Zahl in der Klammer wird malgenommen. Es gilt 2 · (1,4 + 0,1) = 2,8 + 0,2 = 3.
-  - ☐ Stimmt.
+  - ☐ Stimmt. Nur die erste Zahl in der Klammer wird malgenommen.
 
 ### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
 
@@ -4922,9 +4922,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Suche zwei Faktoren, die zusammen ein
 - `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Auto braucht auf 100 km 6,8 l Benzin. / Gib an, wie viel es auf 250 km braucht. Lösung: **17 l**. Typische Fehler: 1700 (sach-schritt-vergessen).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Noah kauft 3 gleiche Hefte und einen Block für 1,20 €. / Zusammen kostet das 5,40 €. / Gib den Preis für ein Heft an. Lösung: **1,40 €**. Typische Fehler: 1,80 (sach-schritt-vergessen).
 - `04` AFB III · _Mit symbolischen Elementen umgehen_ · Kreuze die Begründung an, warum man 3 · 2,99 € als 3 · 3 € − 3 · 0,01 € rechnen kann.
-  - ☐ Man rundet den Preis auf zwei Euro ab.
-  - ☐ Man lässt die Cent einfach weg.
-  - ☑ Der Preis ist fast so viel wie drei Euro. So viele Male drei Euro ist leicht zu rechnen. Danach zieht man die fehlenden Cent wieder ab.
+  - ☐ Man rundet den Preis auf zwei Euro ab und zählt danach die fehlenden Cent wieder dazu.
+  - ☐ Man lässt die Cent einfach weg, denn bei so kleinen Beträgen fallen sie nicht auf.
+  - ☑ Man rechnet mit vollen Euro und zieht danach die Cent wieder ab, die zu viel waren.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne geschickt. / 3 · 2,99 = 3 · 3 − 3 · ▢ = ▢ − ▢ = ▢ Lösung: d = **0,01**, a = **9**, b = **0,03**, e = **8,97**
 - `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Klasse mit 24 Kindern fährt ins Museum. / Der Bus kostet zusammen 216 €. / Der Eintritt kostet 5,50 € pro Kind. / Kreuze den Rechenausdruck für den Preis pro Kind an.
   - ☑ 216 : 24 + 5,50

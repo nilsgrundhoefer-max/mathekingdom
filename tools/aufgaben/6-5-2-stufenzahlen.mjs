@@ -51,7 +51,7 @@ export function stufenzahlen6() {
     () => { const t = dez(1, 1.1, 9.9), a = schiebe(t, 1), l = schiebe(a, -2);
       return dezimal(Z(`Rechne von links nach rechts: ${t} · 10 : 100`), l, dfe(l, [[a, 'sach-schritt-vergessen'], [schiebe(t, 3), 'komma-falsche-richtung']]), tG, { nachweis: [`${t} · 10 = ${a}`, `${a} : 100 = ${l}`] }); },
     () => { const t = dez(2, 1.11, 9.99), falsch = `${t}0`, r = schiebe(t, 1), kn = kind();
-      return auswahl(Z(`${kn} rechnet: ${t} · 10 = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Das Komma rückt eine Stelle nach rechts. Es gilt ${t} · 10 = ${r}.`, true), opt('Stimmt.', false, 'stufe-null-angehaengt'), opt(`Stimmt, denn ${falsch} hat eine Null mehr.`, false, 'stufe-null-angehaengt')],
+      return auswahl(Z(`${kn} rechnet: ${t} · 10 = ${falsch}`, 'Beurteile die Rechnung.'), [opt(`Falsch. Das Komma rückt eine Stelle nach rechts. Es gilt ${t} · 10 = ${r}.`, true), opt('Stimmt. Bei mal 10 hängt man immer eine Null an die Zahl an.', false, 'stufe-null-angehaengt'), opt(`Stimmt, denn ${falsch} hat eine Null mehr.`, false, 'stufe-null-angehaengt')],
         h3('Eine Endnull ändert den Wert nicht.', `${t} und ${falsch} sind gleich viel.`, 'Mal 10 muss aber mehr ergeben.'), { nachweis: [URTEIL(false, `${t} · 10 = ${falsch}`)] }); },
   ]);
   sechs(S1, 'M', [
@@ -73,7 +73,7 @@ export function stufenzahlen6() {
       return luecken(Z('Ergänze die fehlende Zahl.', `{{a}} · 100 = ${t}`), { a: [l, dfe(l, [[schiebe(t, 2), 'komma-falsche-richtung']])] }, h1('Rechne rückwärts: Die Umkehraufgabe von mal 100 ist durch 100.'), { nachweis: [`${t} : 100 = ${l}`] }); },
     () => { const t = T(zz(1, 9), 1), l = schiebe(t, 1);
       return dezimal(Z(`Berechne: ${t} : 0,1`), num(l), dfe(l, [[schiebe(t, -1), 'div-macht-kleiner'], [schiebe(t, 2), 'dezimal-stelle']]), h1('Überlege, wie oft 0,1 in die Zahl passt.'), { nachweis: [`${t} : 0,1 = ${l}`] }); },
-    () => { const opts = [['Jede Stelle wird zehnmal so viel wert. Jede Ziffer rückt eine Stelle nach links. Darum steht das Komma eine Stelle weiter rechts.', true], ['Beim Malnehmen mit zehn hängt man immer eine Null an.', false], ['Das Komma rückt nach rechts, weil man von rechts nach links rechnet.', false]];
+    () => { const opts = [['Jede Ziffer wird zehnmal so viel wert und rückt eine Stelle nach links.', true], ['Beim Malnehmen mit zehn hängt man immer eine Null an die Zahl an.', false], ['Das Komma rückt nach rechts, weil man von rechts nach links rechnet.', false]];
       return auswahl(Z('Kreuze die Begründung an, warum bei mal 10 das Komma eine Stelle nach rechts rückt.'), opts.map(([x, r]) => opt(x, r, r ? undefined : x.includes('Null') ? 'stufe-null-angehaengt' : 'komma-falsche-richtung')), h1('Denke an die Stellenwerttafel: Was passiert mit einem Zehntel, wenn du es mal 10 nimmst?'), { nachweis: [FREI('Kommaverschiebung begründen')] }); },
     () => { const t = dez(1, 1.1, 9.9), a = schiebe(t, 2), b = schiebe(a, -3), l = schiebe(b, 1);
       return dezimal(Z(`Rechne von links nach rechts: ${t} · 100 : 1000 · 10`), num(l), dfe(l, [[b, 'sach-schritt-vergessen'], [schiebe(t, 1), 'komma-falsche-richtung']]), h1('Zähle zusammen: Wie viele Stellen nach rechts und wie viele nach links?'), { nachweis: [`${t} · 100 = ${a}`, `${a} : 1000 = ${b}`, `${b} · 10 = ${l}`] }); },
@@ -114,7 +114,7 @@ export function stufenzahlen6() {
     () => { const p = euro(dez(2, 0.51, 0.99)), l = schiebe(p, 2);
       return dezimal(Z(`Ein Stift kostet ${p} €.`, 'Berechne den Preis für 100 Stifte.'), num(l), dfe(l, [[euro(schiebe(p, 1)), 'dezimal-stelle'], [euro(schiebe(p, -2)) ?? null, 'komma-falsche-richtung']].filter(([w]) => w && !/,\d{3}/.test(w))), tG, { einheit: '€', nachweis: [`${p} € · 100 = ${l} €`] }); },
     () => { const t = T(zz(1, 9), 1), falsch = schiebe(t, 2), r = schiebe(t, 3), kn = kind();
-      return auswahl(Z(`${kn} sagt: „${t} km sind ${falsch} m.“`, 'Beurteile die Aussage.'), [opt(`Falsch. 1 km = 1000 m. Es gilt ${t} km = ${r} m.`, true), opt('Stimmt.', false, 'umrechnungszahl'), opt(`Falsch. Es gilt ${t} km = ${schiebe(t, 1)} m.`, false, 'umrechnungszahl')],
+      return auswahl(Z(`${kn} sagt: „${t} km sind ${falsch} m.“`, 'Beurteile die Aussage.'), [opt(`Falsch. 1 km = 1000 m. Es gilt ${t} km = ${r} m.`, true), opt('Stimmt. 1 km = 100 m, also rückt das Komma zwei Stellen.', false, 'umrechnungszahl'), opt(`Falsch. Es gilt ${t} km = ${schiebe(t, 1)} m.`, false, 'umrechnungszahl')],
         h3('Denke an die Umrechnungszahl.', '1 km = 1000 m. Also 2 km = 2000 m.', 'Nimm die Zahl mal 1000.'), { nachweis: [URTEIL(false, `${t} km = ${falsch} m`)] }); },
   ]);
   sechs(S2, 'M', [
@@ -139,7 +139,7 @@ export function stufenzahlen6() {
       return dezimal(Z(`Ein Stapel aus 100 gleichen Münzen ist ${cm} cm hoch.`, 'Gib an, wie dick eine Münze in Millimetern ist.'), l, dfe(l, [[schiebe(cm, -2), 'umrechnungszahl']]), h1('Teile durch 100. Rechne dann in Millimeter um.'), { einheit: 'mm', nachweis: [`${cm} cm : 100 = ${l} mm`] }); },
     () => { const l = zz(2, 9) * 100 + wahl([0, 50]), liter = String(l);
       return dezimal(Z(`Für 1000 gleiche Flaschen Saft braucht eine Firma ${liter} l.`, 'Gib an, wie viel Milliliter in einer Flasche sind.'), l, dfe(l, [[schiebe(liter, -3), 'umrechnungszahl']]), h1('Teile durch 1000. Rechne dann in Milliliter um.'), { einheit: 'ml', nachweis: [`${liter} l : 1000 = ${l} ml`] }); },
-    () => { const t = dez(1, 1.1, 9.9), falsch = schiebe(t, -2), kn = kind(), opts = [['Sie hat geteilt statt malgenommen. Meter sind größer als Zentimeter, also braucht man mehr Zentimeter.', true], ['Sie hat mit zehn statt mit hundert gerechnet.', false], ['Sie hat richtig gerechnet.', false]];
+    () => { const t = dez(1, 1.1, 9.9), falsch = schiebe(t, -2), kn = kind(), opts = [['Sie hat geteilt statt malgenommen. Es müssen mehr Zentimeter als Meter sein.', true], ['Sie hat mit zehn statt mit hundert gerechnet. Sonst stimmt die Rechnung.', false], ['Sie hat richtig gerechnet. Zentimeter sind kleiner, also wird die Zahl kleiner.', false]];
       return auswahl(Z(`${kn} rechnet ${t} m in Zentimeter um: ${t} : 100 = ${falsch}`, 'Kreuze die Erklärung für den Fehler an.'), opts.map(([x, r]) => opt(x, r, r ? undefined : x.includes('10 statt') ? 'umrechnungszahl' : 'umrechnungsrichtung')), h1('Überlege: Sind es mehr Zentimeter oder mehr Meter?'), { nachweis: [FREI('Umrechnungsfehler erklären')] }); },
     () => { const d = T(wahl([1, 2, 5]), 1), n = 1000, l = schiebe(d, 2);
       return dezimal(Z(`Ein Blatt Papier ist ${d} mm dick.`, `Gib an, wie hoch ein Stapel aus ${n} Blatt in Zentimetern ist.`), num(l), dfe(l, [[schiebe(d, 3), 'umrechnungszahl'], [schiebe(d, 1), 'dezimal-stelle']]), h1('Rechne zuerst in Millimetern. Rechne dann in Zentimeter um.'),
