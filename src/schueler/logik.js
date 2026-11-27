@@ -84,6 +84,8 @@ export function neuerSpeicherstand(code, klasse, jetzt) {
 }
 // Ein Siegel je erreichtem Lernziel. Es wird nicht gespeichert, sondern aus den Lernzielen gezählt.
 export const siegel = (stand) => Object.keys(stand.lernziele).length;
+// Für den Rang zählen nach einer Wiederholung (ADR 0054) mindestens so viele Siegel wie vorher: Der Rang sinkt nie.
+export const rangSiegel = (stand) => Math.max(siegel(stand), stand.rangSiegel ?? 0);
 export function rang(anzahlSiegel) {
   let stufe = 0;
   RAENGE.forEach((r, i) => { if (anzahlSiegel >= r.ab) stufe = i; });
@@ -1165,7 +1167,7 @@ export function kaufe(stand, id) {
   if (t.preis == null) return 'ehrenzeichen';
   if (stand.wappen.gekauft.includes(id)) return 'vorhanden';
   if (t.klasse > klassenstufe(stand)) return 'klasse';
-  if (rang(siegel(stand)).stufe < t.rang) return 'rang';
+  if (rang(rangSiegel(stand)).stufe < t.rang) return 'rang';
   if (stand.muenzen < t.preis) return 'muenzen';
   stand.muenzen -= t.preis;
   stand.wappen.gekauft.push(id);
@@ -1590,3 +1592,39 @@ export function hoftitelVergabe(pool, index, eintraege) {
     .filter((e) => e.platz <= HOFTITEL_PLAETZE)
     .map((e) => ({ ...e, titel: hoftitelVon(e.platz) }));
 }
+
+// ---------- Wiederholung (ADR 0054) ----------
+// Wer eine Klassenstufe wiederholt, beginnt sie neu: Siegel, Kronen und alles, was die Aufgabenführung je Lernziel
+// oder Kapitel dieser Stufe weiß, kommt ins Archiv, ebenso die Bearbeitungen dieser Stufe. Münzen, Wappen und Rang bleiben.
+// Stellen im Versuchsprotokoll (Marken der Kronenwahl, Runde, Grundlage) werden nachgezogen, weil das Protokoll kürzer wird.
+const JE_LERNZIEL = ['lernziele', 'rueckblick', 'unterZiel', 'lernzielNiveau', 'niveauMarkeLz', 'absinkenAbgelehnt', 'grundlage'];
+const JE_KAPITEL = ['niveau', 'niveauMarke', 'runde', 'einstieg'];
+const stufeVon = (id) => Number.parseInt(id, 10);
+export function archiviereStufe(stand, stufe, jetzt, { schuljahr = null, klasse = null } = {}) {
+  const vorher = siegel(stand);
+  const eintrag = { stufe, bis: jetzt, ...(schuljahr && { schuljahr }), ...(klasse && { klasse }), siegel: 0, versuche: [] };
+  const behalten = [], weg = new Array(stand.versuche.length + 1).fill(0);
+  stand.versuche.forEach((v, i) => {
+    weg[i + 1] = weg[i];
+    if (stufeVon(v.lernziel) === stufe) { eintrag.versuche.push(v); weg[i + 1]++; } else behalten.push(v);
+  });
+  const neueStelle = (i) => (typeof i === 'number' ? i - weg[Math.min(Math.max(i, 0), weg.length - 1)] : i);
+  for (const feld of [...JE_LERNZIEL, ...JE_KAPITEL]) {
+    const quelle = stand[feld];
+    if (!quelle || typeof quelle !== 'object') continue;
+    for (const id of Object.keys(quelle)) {
+      if (stufeVon(id) === stufe) { (eintrag[feld] ??= {})[id] = quelle[id]; delete quelle[id]; continue; }
+      const x = quelle[id];
+      if (typeof x === 'number' && (feld === 'niveauMarke' || feld === 'niveauMarkeLz')) quelle[id] = neueStelle(x);
+      else if (x && typeof x === 'object') for (const k of ['ab', 'zurueckAb']) if (typeof x[k] === 'number') x[k] = neueStelle(x[k]);
+    }
+  }
+  for (const id of Object.keys(stand.einschaetzung ?? {})) if (stufeVon(id) === stufe) { (eintrag.einschaetzung ??= {})[id] = stand.einschaetzung[id]; delete stand.einschaetzung[id]; }
+  eintrag.siegel = Object.keys(eintrag.lernziele ?? {}).length;
+  stand.versuche = behalten;
+  stand.rangSiegel = Math.max(stand.rangSiegel ?? 0, vorher);
+  (stand.archiv ??= []).push(eintrag);
+  return eintrag;
+}
+// Der erste Durchgang einer Stufe, für die Lehrkraft: Siegel, bearbeitete und gelöste Aufgaben.
+export const archivDerStufe = (stand, stufe) => (stand?.archiv ?? []).filter((a) => a.stufe === stufe);

@@ -31,7 +31,7 @@ const LAUFWERKE = {
   schueler: ['Schülertauschlaufwerk', 'Wähle den Ordner „Mathekingdom“ oder das Laufwerk; fehlt der Ordner, wird er angelegt.'],
   lehrer: ['Lehrertauschlaufwerk', 'Wähle den Ordner „Mathekingdom“ oder das Laufwerk; fehlt der Ordner, wird er angelegt.'],
 };
-const z = { wahl: null, persoenlich: null, schueler: null, lehrer: null, admin: null, v: null, tab: 'uebersicht', jahr: null, betrieb: null, betriebLaedt: false, protokoll: { klasse: '', nurProbleme: true }, klasse: null, gabe: null, uebernahme: null, alt: null, fehler: null, hinweis: null };
+const z = { wahl: null, persoenlich: null, schueler: null, lehrer: null, admin: null, v: null, tab: 'uebersicht', jahr: null, betrieb: null, betriebLaedt: false, protokoll: { klasse: '', nurProbleme: true }, klasse: null, gabe: null, wechsel: null, uebernahme: null, alt: null, fehler: null, hinweis: null };
 let wurzel;
 const jetzt = () => new Date().toISOString();
 
@@ -248,7 +248,7 @@ function klassenKarte() {
         h('td', {}, kuerzel.length ? kuerzel.map((kz) => h('label', { class: 'schalter', style: 'margin-right:10px' },
           h('input', { type: 'checkbox', 'data-lehrkraft': `${k}|${kz}`, checked: (v.klassen[z.jahr][k].lehrkraefte ?? []).includes(kz), onchange: (ev) => setzeLehrkraft(k, kz, ev.target.checked) }), ` ${kz}`))
           : h('span', { class: 'klein' }, 'Lege zuerst Lehrkräfte an.')),
-        h('td', {}, h('div', { class: 'reihe' }, h('button', { class: 'schlicht', 'data-namen': k, onclick: () => { z.klasse = k; z.gabe = null; male(); } }, 'Namen und Codes'),
+        h('td', {}, h('div', { class: 'reihe' }, h('button', { class: 'schlicht', 'data-namen': k, onclick: () => { z.klasse = k; z.gabe = null; z.wechsel = null; male(); } }, 'Namen und Codes'),
           h('button', { class: 'schlicht', 'data-aufloesen': k, onclick: tue(async () => {
             if (!confirm(`Klasse ${k} auflösen? Sie verschwindet aus dem Schulverzeichnis, die Schüler können sich nicht mehr anmelden. Ihre Ordner bleiben liegen; du kannst sie wieder aufnehmen oder danach endgültig löschen.`)) return;
             delete v.klassen[z.jahr][k];
@@ -276,7 +276,7 @@ function namenKarte() {
     platz.replaceChildren(h('h2', {}, `Klasse ${klasse}: Namen und Codes`),
       h('p', { class: 'klein' }, 'Die Namen und PINs liegen auf dem Lehrertauschlaufwerk. Die Lehrkräfte der Klasse sehen und ändern dieselbe Liste.'),
       codes.length > 0 && h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-        h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'PIN', '', '', '', ''].map((t) => h('th', {}, t)))),
+        h('thead', {}, h('tr', {}, ['Name', 'Schülercode', 'PIN', '', '', '', '', ''].map((t) => h('th', {}, t)))),
         h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, daten.namen[c]), h('td', { class: 'code' }, c), h('td', { class: 'code pin' }, daten.pins?.[c]?.pin ?? '…'),
           h('td', {}, h('button', { class: 'schlicht', 'data-neue-pin': c, onclick: tue(async () => {
             if (!confirm(`Neue PIN für ${daten.namen[c]} vergeben? Die alte gilt dann nicht mehr.`)) return;
@@ -287,7 +287,9 @@ function namenKarte() {
             delete daten.namen[c]; delete daten.einst.zielniveaus?.[c]; await speichereKlasse(klasse, daten);
           }) }, 'Entfernen')),
           h('td', {}, h('button', { class: 'schlicht gefahr', 'data-loeschen': c, onclick: tue(() => loescheSchueler(klasse, daten, c)) }, 'Löschen')),
-          h('td', {}, h('button', { class: 'schlicht', 'data-muenzen': c, onclick: () => { z.gabe = { code: c, muenzen: 100 }; male(); } }, 'Münzen schicken'))))))),
+          h('td', {}, h('button', { class: 'schlicht', 'data-muenzen': c, onclick: () => { z.gabe = { code: c, muenzen: 100 }; z.wechsel = null; male(); } }, 'Münzen schicken')),
+          h('td', {}, h('button', { class: 'schlicht', 'data-wechseln': c, onclick: () => { z.wechsel = { code: c }; z.gabe = null; male(); } }, 'Klasse wechseln'))))))),
+      z.wechsel && daten.namen[z.wechsel.code] && wechselKarte(klasse, daten),
       codes.length > 0 && h('div', { class: 'reihe' }, h('button', { class: 'schlicht', id: 'klassengabe', onclick: () => { z.gabe = { klasse: true, muenzen: 100 }; male(); } }, 'Münzen an die ganze Klasse schicken')),
       z.gabe?.klasse && klassengabeKarte(klasse, daten),
       z.gabe && daten.namen[z.gabe.code] && gabeKarte(klasse, daten),
@@ -438,70 +440,148 @@ function gabeKarte(klasse, daten) {
     h('h4', {}, 'Bisherige Gaben'), liste);
 }
 
-// ---------- Übernahme ins neue Schuljahr ----------
-// Aus einer Klasse eines früheren Schuljahrs: jeder Schüler in eine Klasse des angezeigten Schuljahrs.
+// ---------- Schuljahreswechsel (ADR 0054) ----------
+// Alle Klassen des aktuellen Schuljahrs in einer Tabelle: Vorschlag dieselbe Klasse eine Stufe höher, Ausnahmen je Schüler.
+// Wer in derselben Stufe bleibt, wiederholt sie. Nach Klasse 10 wird niemand übernommen. Aktuell wird das neue Schuljahr
+// erst mit einem eigenen Klick, wenn alles stimmt.
+const klassenImJahr = (j) => Object.keys(z.v.klassen[j] ?? {}).filter((k) => !z.v.klassen[j][k].test).sort(SCH.vergleicheKlassen); // Testklassen nicht (ADR 0028)
+const zielJahr = () => (z.jahr > z.v.schuljahr ? z.jahr : SCH.naechstesSchuljahr(z.v.schuljahr));
 function uebernahmeKarte() {
-  const v = z.v, echte = (j) => Object.keys(v.klassen[j] ?? {}).filter((k) => !v.klassen[j][k].test); // Testklassen nicht (ADR 0028)
-  const frueher = v.schuljahre.filter((j) => j < z.jahr && echte(j).length).sort().reverse();
-  if (!frueher.length) return null;
+  const v = z.v, von = v.schuljahr, nach = zielJahr();
+  if (z.jahr < von || !klassenImJahr(von).length) return null;
   const u = z.uebernahme;
   if (!u) {
-    const jahrWahl = h('select', { id: 'uebernahme-jahr' }, frueher.map((j) => h('option', { value: j }, j)));
-    const klassenWahl = () => h('select', { id: 'uebernahme-klasse' }, echte(jahrWahl.value).sort(SCH.vergleicheKlassen).map((k) => h('option', { value: k }, k)));
-    let kw = klassenWahl();
-    jahrWahl.onchange = () => { const neu = klassenWahl(); kw.replaceWith(neu); kw = neu; };
-    return h('section', { class: 'karte' }, h('h2', {}, 'Klassen aus einem früheren Schuljahr übernehmen'),
-      h('p', { class: 'klein' }, `Die Schüler wandern mit Münzen, Siegeln, Rang, Wappen und Versuchsprotokoll in eine Klasse des Schuljahrs ${z.jahr}. Aus 5A-K4M2 wird zum Beispiel 6A-K4M2, die PIN bleibt. Die alten Ordner bleiben liegen.`),
-      h('div', { class: 'reihe' }, h('label', {}, 'Aus ', jahrWahl), h('label', {}, 'Klasse ', kw),
-        h('button', { class: 'haupt', id: 'uebernahme-start', onclick: tue(async () => {
-          const daten = await ladeKlasse(kw.value, jahrWahl.value);
-          if (!daten || !Object.keys(daten.namen).length) throw new Error('In dieser Klasse stehen keine Schüler.');
-          const ziel = SCH.naechsteKlasse(kw.value);
-          z.uebernahme = { jahr: jahrWahl.value, klasse: kw.value, daten, ziele: Object.fromEntries(Object.keys(daten.namen).map((c) => [c, ziel])) };
-        }) }, 'Schüler zuordnen')));
+    return h('section', { class: 'karte', id: 'schuljahreswechsel' }, h('h2', {}, `Schuljahreswechsel von ${von} nach ${nach}`),
+      h('p', { class: 'klein' }, `Alle Schüler wandern mit Münzen, Siegeln, Rang, Wappen, Versuchsprotokoll, PIN und Zielniveau in eine Klasse des Schuljahrs ${nach}. Aus 5A-K4M2 wird zum Beispiel 6A-K4M2. Vorgeschlagen ist dieselbe Klasse eine Stufe höher; Ausnahmen stellst du je Schüler ein. Wer in derselben Stufe bleibt, wiederholt sie: Siegel und Kronen dieser Stufe kommen ins Archiv. Die alten Ordner bleiben liegen.`),
+      h('button', { class: 'haupt', id: 'uebernahme-start', onclick: tue(async () => {
+        const klassen = {}, ziele = {}, herkunft = {};
+        for (const k of klassenImJahr(von)) {
+          const daten = await ladeKlasse(k, von);
+          if (!daten || !Object.keys(daten.namen).length) continue;
+          klassen[k] = daten;
+          for (const c of Object.keys(daten.namen)) { ziele[c] = SCH.vorschlagNeuesJahr(k); herkunft[c] = k; }
+        }
+        if (!Object.keys(ziele).length) throw new Error(`Im Schuljahr ${von} stehen noch keine Schüler.`);
+        z.uebernahme = { von, nach, klassen, ziele, herkunft, extra: [] };
+      }) }, 'Schüler zuordnen'));
   }
-  const ziele = [...new Set([...Object.keys(v.klassen[z.jahr] ?? {}), ...Object.values(u.ziele).filter(Boolean), ...(u.extra ?? [])])].sort(SCH.vergleicheKlassen);
-  const neuFeld = h('input', { id: 'uebernahme-neu', type: 'text', size: 5, placeholder: 'z. B. 6b' });
-  const codes = Object.keys(u.daten.namen).sort((a, b) => u.daten.namen[a].localeCompare(u.daten.namen[b], 'de'));
-  return h('section', { class: 'karte', id: 'uebernahme' }, h('h2', {}, `Klasse ${u.klasse} (${u.jahr}) übernehmen nach ${z.jahr}`),
+  const vorhandene = Object.keys(v.klassen[u.nach] ?? {});
+  const ziele = [...new Set([...vorhandene, ...Object.keys(u.klassen).map(SCH.vorschlagNeuesJahr).filter(Boolean), ...Object.keys(u.klassen), ...Object.values(u.ziele).filter(Boolean), ...u.extra])].sort(SCH.vergleicheKlassen);
+  const wahl = (wert, attr, onchange) => h('select', { ...attr, onchange }, h('option', { value: '', selected: !wert }, 'nicht übernehmen'),
+    ziele.map((k) => h('option', { value: k, selected: wert === k }, k)));
+  const neuFeld = h('input', { id: 'uebernahme-neu', type: 'text', size: 5, placeholder: 'z. B. 6e' });
+  const art = (c) => {
+    const ziel = u.ziele[c], k = u.herkunft[c];
+    if (!ziel) return SCH.stufe(k) >= SCH.LETZTE_STUFE ? 'verlässt die Schule (nach Klasse 10)' : 'wird nicht übernommen';
+    if (SCH.wiederholteStufe(k, ziel, true)) return h('span', { class: 'marke warn' }, `wiederholt Klasse ${SCH.stufe(ziel)}`);
+    return ziel === SCH.vorschlagNeuesJahr(k) ? '' : 'andere Klasse';
+  };
+  const anzahl = Object.values(u.ziele).filter(Boolean).length;
+  return h('section', { class: 'karte', id: 'uebernahme' }, h('h2', {}, `Schuljahreswechsel von ${u.von} nach ${u.nach}`),
     h('div', { class: 'rollbar' }, h('table', { class: 'tabelle' },
-      h('thead', {}, h('tr', {}, ['Name', 'Bisher', 'Neue Klasse'].map((t) => h('th', {}, t)))),
-      h('tbody', {}, codes.map((c) => h('tr', {}, h('td', {}, u.daten.namen[c]), h('td', { class: 'code' }, c),
-        h('td', {}, h('select', { 'data-ziel': c, onchange: (ev) => { u.ziele[c] = ev.target.value; } },
-          h('option', { value: '', selected: !u.ziele[c] }, 'nicht übernehmen'), ziele.map((k) => h('option', { value: k, selected: u.ziele[c] === k }, k))))))))),
+      h('thead', {}, h('tr', {}, ['Name', 'Bisher', 'Neue Klasse', ''].map((t) => h('th', {}, t)))),
+      Object.keys(u.klassen).sort(SCH.vergleicheKlassen).map((k) => {
+        const daten = u.klassen[k], codes = Object.keys(daten.namen).sort((a, b) => daten.namen[a].localeCompare(daten.namen[b], 'de'));
+        return h('tbody', { 'data-von': k },
+          h('tr', { class: 'gruppe' }, h('th', { colspan: 2 }, `Klasse ${k} (${codes.length})`),
+            h('th', {}, h('label', { class: 'klein' }, 'alle nach ', wahl(codes.every((c) => u.ziele[c] === u.ziele[codes[0]]) ? u.ziele[codes[0]] : null, { 'data-klasse-ziel': k },
+              (ev) => { for (const c of codes) u.ziele[c] = ev.target.value; male(); }))), h('th', {}, '')),
+          codes.map((c) => h('tr', {}, h('td', {}, daten.namen[c]), h('td', { class: 'code' }, c),
+            h('td', {}, wahl(u.ziele[c], { 'data-ziel': c }, (ev) => { u.ziele[c] = ev.target.value; male(); })), h('td', { class: 'klein' }, art(c)))));
+      }))),
     h('div', { class: 'reihe' }, h('label', {}, 'Weitere Zielklasse ', neuFeld), h('button', { class: 'schlicht', onclick: () => {
       const k = neuFeld.value.trim().toLowerCase();
-      if (SCH.istKlasse(k) && !ziele.includes(k)) { u.extra = [...(u.extra ?? []), k]; male(); }
+      if (SCH.istKlasse(k) && !ziele.includes(k)) { u.extra.push(k); male(); }
     } }, 'Hinzufügen')),
+    h('p', { class: 'klein' }, `Fehlende Klassen legt Mathekingdom im Schuljahr ${u.nach} an, mit den Lehrkräften der bisherigen Klasse. Notizen, Sitzplan, Tore und das Aktuelle Kapitel beginnen neu.`),
     h('div', { class: 'reihe' },
-      h('button', { class: 'haupt', id: 'uebernehmen', onclick: tue(fuehreUebernahmeAus) }, 'Übernehmen'),
+      h('button', { class: 'haupt', id: 'uebernehmen', onclick: tue(fuehreUebernahmeAus) }, `${anzahl} Schüler übernehmen`),
       h('button', { class: 'schlicht', onclick: () => { z.uebernahme = null; male(); } }, 'Abbrechen')));
 }
 async function fuehreUebernahmeAus() {
   const u = z.uebernahme, v = z.v;
-  const vergeben = await alleCodes();
-  const lehrkraefte = v.klassen[u.jahr][u.klasse].lehrkraefte ?? [];
-  const quelle = await klassenOrdner(z.schueler, u.klasse, u.jahr);
-  const zielDaten = {}, neueCodes = [];
+  if (!v.schuljahre.includes(u.nach)) v.schuljahre.push(u.nach);
+  v.klassen[u.nach] ??= {};
+  await jahrOrdner(z.schueler, u.nach); await jahrOrdner(z.lehrer, u.nach);
+  const vergeben = await alleCodes(u.nach);
+  const zielDaten = {}, neueCodes = [], schon = [], wiederholer = [];
+  // Lehrkräfte der neuen Klasse: die der Klasse, aus der sie vorgeschlagen ist, sonst die der Herkunft des ersten Schülers.
+  const lehrkraefteFuer = (ziel) => {
+    const quelle = Object.keys(u.klassen).find((k) => SCH.vorschlagNeuesJahr(k) === ziel) ?? u.herkunft[Object.keys(u.ziele).find((c) => u.ziele[c] === ziel)];
+    return [...(v.klassen[u.von][quelle]?.lehrkraefte ?? [])];
+  };
   let anzahl = 0;
   for (const [code, ziel] of Object.entries(u.ziele)) {
     if (!ziel) continue;
-    if (!zielDaten[ziel]) { await legeKlasseAn(ziel, lehrkraefte); zielDaten[ziel] = await ladeKlasse(ziel); }
+    const k = u.herkunft[code], daten = u.klassen[k];
+    // Schon übernommen (derselbe hintere Teil steht im neuen Schuljahr): nicht doppelt.
+    if (vergeben.some((c) => SCH.codeEnde(c) === SCH.codeEnde(code))) { schon.push(daten.namen[code]); continue; }
+    if (!zielDaten[ziel]) { await legeKlasseAn(ziel, lehrkraefteFuer(ziel), u.nach); zielDaten[ziel] = await ladeKlasse(ziel, u.nach); }
     const neu = SCH.codeFuerUebernahme(code, ziel, vergeben, erzeugeCode);
     vergeben.push(neu);
-    if (SCH.codeEnde(neu) !== SCH.codeEnde(code)) neueCodes.push(`${u.daten.namen[code]}: ${neu}`);
+    if (SCH.codeEnde(neu) !== SCH.codeEnde(code)) neueCodes.push(`${daten.namen[code]}: ${neu}`);
     const d = zielDaten[ziel];
-    d.namen[neu] = u.daten.namen[code];
-    if (u.daten.pins?.[code]) (d.pins ??= {})[neu] = u.daten.pins[code];
-    const alt = await quelle.lies(`${code}.json`);
-    const zielOrdner = await klassenOrdner(z.schueler, ziel);
-    if (alt && !(await zielOrdner.lies(`${neu}.json`))) await zielOrdner.schreibe(`${neu}.json`, JSON.stringify(SCH.uebernimmStand(JSON.parse(alt), neu, ziel, jetzt())));
+    d.namen[neu] = daten.namen[code];
+    if (daten.pins?.[code]) (d.pins ??= {})[neu] = daten.pins[code];
+    if (daten.einst?.zielniveaus?.[code]) d.einst.zielniveaus[neu] = daten.einst.zielniveaus[code];
+    const wdh = SCH.wiederholteStufe(k, ziel, true);
+    if (wdh) wiederholer.push(daten.namen[code]);
+    const alt = await (await klassenOrdner(z.schueler, k, u.von)).lies(`${code}.json`);
+    const zielOrdner = await klassenOrdner(z.schueler, ziel, u.nach);
+    if (alt && !(await zielOrdner.lies(`${neu}.json`))) await zielOrdner.schreibe(`${neu}.json`, JSON.stringify(SCH.uebernimmStand(JSON.parse(alt), neu, ziel, jetzt(), { wiederholung: wdh, schuljahr: u.von })));
     anzahl++;
   }
-  for (const [k, d] of Object.entries(zielDaten)) await speichereKlasse(k, d);
+  for (const [k, d] of Object.entries(zielDaten)) await speichereKlasse(k, d, u.nach);
   await speichereVerzeichnis();
-  z.uebernahme = null;
-  z.hinweis = `${anzahl} Schüler übernommen.${neueCodes.length ? ` Einen neuen Code bekamen, weil der alte schon vergeben war: ${neueCodes.join(', ')}.` : ''}`;
+  z.uebernahme = null; z.jahr = u.nach; z.klasse = null;
+  z.hinweis = `${anzahl} Schüler übernommen.${wiederholer.length ? ` Wiederholen ihre Klassenstufe: ${wiederholer.join(', ')}.` : ''}${neueCodes.length ? ` Einen neuen Code bekamen, weil der alte schon vergeben war: ${neueCodes.join(', ')}.` : ''}${schon.length ? ` Schon übernommen waren: ${schon.join(', ')}.` : ''} Prüfe die Klassen und mache ${u.nach} dann oben zum aktuellen Schuljahr.`;
+}
+
+// ---------- Klassenwechsel im laufenden Schuljahr (ADR 0054) ----------
+// Name, PIN, Speicherstand, Zielniveau und Notiz ziehen mit; der Code bekommt das neue Klassenkürzel. Die alte Datei
+// wird erst gelöscht, wenn die neue geschrieben ist; die Backups der alten Klasse bleiben.
+async function wechsleKlasse(klasse, code, ziel) {
+  const quelle = await ladeKlasse(klasse), zielDaten = await ladeKlasse(ziel);
+  if (!quelle?.namen[code]) throw new Error('Diesen Schüler gibt es in der Klasse nicht mehr.');
+  if (!zielDaten) throw new Error(`Die Klasse ${ziel} gibt es nicht.`);
+  const vergeben = (await alleCodes()).filter((c) => c !== code);
+  const neu = SCH.codeFuerUebernahme(code, ziel, vergeben, erzeugeCode);
+  const wdh = SCH.wiederholteStufe(klasse, ziel);
+  const quellOrdner = await klassenOrdner(z.schueler, klasse), zielOrdner = await klassenOrdner(z.schueler, ziel);
+  const alt = await quellOrdner.lies(`${code}.json`);
+  if (alt) {
+    await zielOrdner.schreibe(`${neu}.json`, JSON.stringify(SCH.uebernimmStand(JSON.parse(alt), neu, ziel, jetzt(), { wiederholung: wdh, schuljahr: z.jahr })));
+    if (!(await zielOrdner.lies(`${neu}.json`))) throw new Error('Der Speicherstand ließ sich in der neuen Klasse nicht schreiben. Es wurde nichts geändert.');
+  }
+  const name = quelle.namen[code];
+  SCH.zieheUm(quelle, zielDaten, code, neu);
+  await speichereKlasse(ziel, zielDaten);
+  await speichereKlasse(klasse, quelle);
+  if (alt && neu !== code) await quellOrdner.entferne(`${code}.json`);
+  return { name, neu, wdh };
+}
+function wechselKarte(klasse, daten) {
+  const code = z.wechsel.code, name = daten.namen[code];
+  const andere = Object.keys(z.v.klassen[z.jahr] ?? {}).filter((k) => k !== klasse).sort(SCH.vergleicheKlassen);
+  const wahl = h('select', { id: 'wechsel-ziel' }, andere.map((k) => h('option', { value: k }, k)));
+  const hinweis = h('p', { class: 'klein', id: 'wechsel-hinweis' });
+  const zeigeHinweis = () => {
+    const wdh = wahl.value && SCH.wiederholteStufe(klasse, wahl.value);
+    hinweis.textContent = !wahl.value ? '' : wdh ? `${name} wechselt in eine niedrigere Klassenstufe und wiederholt Klasse ${wdh}: Siegel und Kronen der Klasse ${wdh} kommen ins Archiv, Münzen, Wappen und Rang bleiben.`
+      : `${name} heißt danach ${SCH.codeInKlasse(code, wahl.value)}. PIN, Speicherstand, Zielniveau und Notiz ziehen mit; Sonderauftrag und Nachricht verfallen.`;
+  };
+  wahl.onchange = zeigeHinweis; zeigeHinweis();
+  return h('div', { class: 'karte innen', id: 'wechsel-karte' },
+    h('h3', {}, `${name} (${code}) wechselt die Klasse`),
+    andere.length ? [h('div', { class: 'reihe' }, h('label', {}, 'Neue Klasse ', wahl),
+      h('button', { class: 'haupt', id: 'wechsel-ausfuehren', onclick: tue(async () => {
+        if (!confirm(`${name} in die Klasse ${wahl.value} verschieben? Am besten ist ${name} dabei nicht angemeldet.`)) return;
+        const r = await wechsleKlasse(klasse, code, wahl.value);
+        z.wechsel = null;
+        z.hinweis = `${r.name} ist jetzt in der Klasse ${wahl.value} und meldet sich mit ${r.neu} an. Der alte Code führt beim nächsten Anmelden zum neuen.${r.wdh ? ` ${r.name} wiederholt Klasse ${r.wdh}.` : ''}`;
+      }) }, 'Wechseln'),
+      h('button', { class: 'schlicht', onclick: () => { z.wechsel = null; male(); } }, 'Abbrechen')), hinweis]
+      : h('p', { class: 'klein' }, `Im Schuljahr ${z.jahr} gibt es keine andere Klasse.`));
 }
 
 // ---------- Lehrkräfte ----------
