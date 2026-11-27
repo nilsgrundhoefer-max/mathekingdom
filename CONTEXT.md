@@ -632,7 +632,7 @@ Eine von bis zu drei aufeinander aufbauenden Hilfen zu einer Aufgabe: Tipp, Beis
 _Avoid_: Joker, Hinweis
 
 **Hilferuf**:
-Die Bitte eines Schülers um persönliche Hilfe durch die Lehrkraft, aus einer Aufgabe heraus und unabhängig von Hilfekärtchen. Der Schüler muss einen Hilferuf-Grund wählen.
+Die Bitte eines Schülers um persönliche Hilfe durch die Lehrkraft, aus einer Aufgabe heraus und unabhängig von Hilfekärtchen. Der Schüler muss einen Hilferuf-Grund wählen. Ein Hilferuf gilt für den Tag, an dem er gerufen wurde. Am nächsten Tag ist er ein abgelaufener Hilferuf: Er steht nicht mehr in der Akut-Zone, und das Kind wird einmal gefragt, ob es noch Hilfe braucht.
 
 **Hilferuf-Grund**:
 Der Anlass eines Hilferufs, den der Schüler mit einem Klick wählt und die Lehrkraft sofort sieht: Ich verstehe die Aufgabe nicht, Die Aufgabe ist mir zu schwer, Ich glaube, die Aufgabe ist falsch, Technisches Problem, Etwas anderes. Aus „Aufgabe ist falsch“ kann die Lehrkraft mit einem Klick eine Aufgabenmeldung machen.

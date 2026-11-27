@@ -42,7 +42,9 @@ let wurzel;
 function zeige(ansicht) {
   // Wer ein laufendes Belohnungsspiel verlässt, beendet die Runde.
   if (z.ansicht.name === 'minispiel' && ansicht.name !== 'minispiel') { spielStopp?.(); spielStopp = null; clearInterval(spieluhr); }
+  if (z.meldungHier) { z.meldung = null; z.meldungHier = false; }
   z.ansicht = { ...ansicht, seit: Date.now() };
+  if (z.hilfeErledigtWartet && ansicht.name !== 'minispiel') meldeErledigt(); // Version 0.68: erst nach dem Spiel
   if (ansicht.name !== 'aufgabe' && z.stand?.aktiv) {
     // Aufgabe ohne Ergebnis verlassen: für das Aufgaben-Audit der Lehrkraft festhalten.
     const a = z.stand.aktiv;
@@ -357,15 +359,32 @@ function sonderauftragErgebnis(a) {
         : h('button', { class: 'haupt', id: 'weiter', onclick: danach(a, () => starteSonderauftrag()) }, 'Nächste Aufgabe im Sonderauftrag'));
 }
 
+// Version 0.68 (ADR 0057): Die Meldung „erledigt“ bleibt 20 Sekunden stehen. Läuft gerade ein Belohnungsspiel, kommt sie erst danach.
+function meldeErledigt() {
+  if (z.ansicht.name === 'minispiel') { z.hilfeErledigtWartet = true; return; }
+  z.hilfeErledigtWartet = false;
+  z.hilfeErledigt = true;
+  setTimeout(() => { z.hilfeErledigt = false; wurzel.querySelector('.hilfebanner.erledigt')?.remove(); }, 20000);
+}
+const uhrzeit = (t) => new Date(t).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
 function hilfeBanner() {
   if (!z.stand.hilferuf) {
+    // Ein Hilferuf von gestern ist abgelaufen: Das Kind wird einmal gefragt, ob es noch Hilfe braucht.
+    const alt = z.stand.hilferufAbgelaufen;
+    if (alt && z.ansicht.name !== 'minispiel') {
+      const antworte = (ja) => { L.beantworteAbgelaufen(z.stand, ja, jetzt(), z.ansicht.name === 'aufgabe' ? z.ansicht.aufgabe?.id : null); z.wartePlatz = null; geaendert(); z.dienst.sofort(); if (z.ansicht.name === 'aufgabe' && !z.ansicht.ergebnis) maleMitEntwurf(liesEingabe(z.ansicht.aufgabe, wurzel.querySelector('form.antwort')).eingabe); else male(); if (ja) takt(); };
+      return h('div', { class: 'hilfebanner abgelaufen', id: 'hilferuf-abgelaufen', role: 'status' },
+        h('span', {}, `Dein Hilferuf vom ${new Date(alt.seit).toLocaleDateString('de-DE', { day: 'numeric', month: 'long' })} ist abgelaufen. Brauchst du noch Hilfe?`),
+        h('button', { class: 'schlicht', id: 'abgelaufen-ja', onclick: () => antworte(true) }, 'Ja, ich brauche Hilfe'),
+        h('button', { class: 'schlicht', id: 'abgelaufen-nein', onclick: () => antworte(false) }, 'Nein, danke'));
+    }
     return z.hilfeErledigt ? h('div', { class: 'hilfebanner erledigt', role: 'status' }, h('span', {}, 'Deine Lehrkraft hat deinen Hilferuf als erledigt abgehakt.')) : null;
   }
   const antwort = z.einst.hilfeAntwort;
   const kommt = antwort?.zu === z.stand.hilferuf.seit && antwort.status === 'unterwegs';
   return h('div', { class: 'hilfebanner', role: 'status' },
     h('span', {}, kommt ? 'Deine Lehrkraft kommt gleich zu dir.'
-      : `Du wartest auf Hilfe${z.wartePlatz ? ` und bist auf Platz ${z.wartePlatz} der Warteschlange` : ''}. Arbeite ruhig weiter.`),
+      : `Du wartest seit ${uhrzeit(z.stand.hilferuf.seit)} Uhr auf Hilfe${z.wartePlatz ? ` und bist auf Platz ${z.wartePlatz} der Warteschlange` : ''}. Arbeite ruhig weiter.`),
     h('button', { class: 'schlicht', onclick: () => { L.beendeHilferuf(z.stand, 'zurueckgezogen', jetzt()); geaendert(); male(); } }, 'Hilferuf zurückziehen'));
 }
 
@@ -547,6 +566,7 @@ async function melde({ code, klasse, pin }, ablage) {
   // Hat die Lehrkraft das Zielniveau gesenkt, kommen die Siegel jetzt dazu. Weggenommen wird nie etwas (ADR 0012).
   if (L.trageSiegelNach(z.stand, z.index, einst.zielniveau, jetzt())) { z.dienst.markiere(); z.dienst.sofort(); }
   if (L.gleicheSonderauftragAb(z.stand, einst.sonderauftrag)) z.dienst.markiere();
+  if (L.lasseHilferufAblaufen(z.stand, jetzt())) z.dienst.markiere(); // Version 0.68: Ein Hilferuf gilt für den Tag.
   // Vorgaben der Lehrkraft alle 10 Sekunden lesen. Wartet der Schüler auf Hilfe, alle 3 Sekunden,
   // und sofort, wenn er zum Fenster zurückkehrt (im Hintergrund bremst der Browser die Uhr).
   let schlag = 0;
@@ -578,12 +598,12 @@ async function takt() {
     z.einst = einstellungenJetzt();
     if (L.trageSiegelNach(z.stand, z.index, z.einst.zielniveau, jetzt())) geaendert();
     if (L.gleicheSonderauftragAb(z.stand, z.einst.sonderauftrag)) geaendert(); // zurückgezogen oder ersetzt
-    const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
     let neu = vorher !== bild(z.einst);
+    if (L.lasseHilferufAblaufen(z.stand, jetzt())) { geaendert(); z.dienst.sofort(); neu = true; } // über Mitternacht offen gelassen
+    const ruf = z.stand.hilferuf, antwort = z.einst.hilfeAntwort;
     if (ruf && antwort?.zu === ruf.seit && antwort.status === 'erledigt') {
       L.beendeHilferuf(z.stand, 'erledigt', jetzt()); geaendert(); z.dienst.sofort(); neu = true;
-      z.hilfeErledigt = true;
-      setTimeout(() => { z.hilfeErledigt = false; wurzel.querySelector('.hilfebanner.erledigt')?.remove(); }, 20000);
+      meldeErledigt();
     }
     // Stand der Expedition höchstens jede Minute neu zählen, und nur auf der Startseite.
     if (z.einst.expedition && z.ansicht.name === 'schlossgarten' && Date.now() - (z.klasseGelesen ?? 0) > 60000) {
@@ -592,7 +612,7 @@ async function takt() {
       if (expeditionsSumme() !== vorher) neu = true;
     }
     if (z.stand.hilferuf) {
-      const platz = L.wartePlatz(z.stand, await S.ladeAndereHilferufe(z.ablage, z.stand.code));
+      const platz = L.wartePlatz(z.stand, await S.ladeAndereHilferufe(z.ablage, z.stand.code), jetzt());
       if (platz !== z.wartePlatz) { z.wartePlatz = platz; neu = true; }
     }
     // Nicht mitten in einer Eingabe neu zeichnen.
@@ -1519,8 +1539,8 @@ function loesungstext(auf) {
 function danach(a, fortsetzung) {
   return bereit(() => {
     // Feedbackfrage nach dem Ergebnis, vor allem anderen (ADR 0042). Danach geht es weiter wie ohne sie.
-    if (!a.rueckblick && !a.einstieg && L.feedbackFaellig(z.stand, z.einst.feedback)) {
-      const frage = L.naechsteFeedbackFrage(z.stand, { tipp: (a.hilfen ?? 0) >= 1, bild: Boolean(a.aufgabe?.bild) });
+    if (!a.rueckblick && !a.einstieg && L.feedbackFaellig(z.stand, z.einst.feedback, jetzt())) {
+      const frage = L.naechsteFeedbackFrage(z.stand, { tipp: (a.hilfen ?? 0) >= 1, bild: Boolean(a.aufgabe?.bild) }, jetzt());
       if (frage) return zeige({ name: 'feedback', frage, aufgabe: a.aufgabe.id, kapitel: L.kapitelVon(a.aufgabe.lernziel), weiter: () => danach(a, fortsetzung)() });
     }
     const w = a.ergebnis?.wegstueck;
@@ -1737,12 +1757,20 @@ let rastUhr = null;
 // Feedbackfrage (ADR 0042): eine Frage, zwei Knöpfe, kein Überspringen, keine Münzen.
 function feedbackAnsicht() {
   const a = z.ansicht, f = a.frage;
-  const antworte = (nr) => { L.trageFeedbackEin(z.stand, f, nr, a.aufgabe, jetzt()); geaendert(); z.dienst.sofort(); a.weiter(); };
+  // Version 0.68 (ADR 0057): „Lieber etwas anderes“ wird eingelöst. Das Kind kommt auf die Regionskarte und wählt selbst.
+  const antworte = (nr) => {
+    L.trageFeedbackEin(z.stand, f, nr, a.aufgabe, jetzt()); geaendert(); z.dienst.sofort();
+    const kapitel = f.id === 'weiter' && nr === 1 && z.pool.kapitel.find((k) => k.id === a.kapitel);
+    if (!kapitel) return a.weiter();
+    zeige({ name: 'region', kapitel: kapitel.id });
+    z.meldung = 'Such dir auf der Karte aus, woran du jetzt arbeiten möchtest.'; z.meldungHier = true; // verschwindet beim Weitergehen
+    male();
+  };
   return h('section', { class: 'karte feedbackfrage', id: 'feedbackfrage' },
     h('span', { class: 'klein' }, 'Kurze Frage'),
     h('h1', {}, f.text),
     f.zurAufgabe && h('p', { class: 'klein' }, 'Es geht um die Aufgabe, die du gerade gelöst hast.'),
-    h('div', { class: 'knoepfe' }, f.antworten.map((t, nr) => h('button', { class: nr === 0 ? 'haupt' : 'schlicht', 'data-feedback': nr, onclick: () => antworte(nr) }, t))),
+    h('div', { class: 'knoepfe' }, f.antworten.map((t, nr) => h('button', { class: 'schlicht', 'data-feedback': nr, onclick: () => antworte(nr) }, t))),
     h('p', { class: 'klein' }, 'Deine Antwort hilft, Mathekingdom besser zu machen. Sie zählt nicht für Siegel oder Münzen.'));
 }
 function wegstueckAnsicht() {
@@ -1869,9 +1897,12 @@ function heftcheckAnsicht() {
   const a = z.ansicht, f = a.frage;
   const weiter = () => zeigeAufgabe(a.danach.aufgabe, a.danach.extra); // der Zähler steht wieder auf null
   if (a.gewaehlt == null) {
+    // Version 0.68 (ADR 0057): Die Aufgabe steht noch einmal da, damit das Kind sie im Heft wiederfindet.
+    const alt = z.index.aufgabe.get(f.aufgabe), teil = alt?.teile?.at(-1)?.text;
     return h('section', { class: 'karte heftcheck' },
       h('span', { class: 'klein' }, 'Heftcheck'),
       h('h1', {}, `Schau in dein Heft: Was hattest du bei ${f.heft} heraus?`),
+      alt?.text && h('p', { class: 'heftaufgabe', id: 'heftaufgabe' }, h('b', {}, `Aufgabe ${f.heft}: `), alt.text.replace(/\{\{\w+\}\}/g, '▢'), teil && alt.teile.length > 1 ? ` Gefragt ist das letzte Ergebnis (${teil.replace(/\{\{\w+\}\}/g, '▢')}).` : ''),
       h('div', { class: 'heftwahl' }, f.optionen.map((o, i) => h('button', { class: 'schlicht', 'data-heftwahl': i, onclick: () => {
         L.trageHeftcheckEin(z.stand, f, o.richtig, jetzt()); geaendert(); z.dienst.sofort();
         zeige({ ...a, gewaehlt: i });

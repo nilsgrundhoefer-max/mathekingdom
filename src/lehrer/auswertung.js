@@ -178,14 +178,28 @@ export function jemandAktiv(staende, jetzt, minuten = 10) {
 }
 
 // Hilfe-Warteschlange: offene Hilferufe nach Eingang. `gleiche` zählt Rufe zum selben Lernziel.
+// Version 0.68 (ADR 0057): Ein Hilferuf gilt für den Tag. Rufe von gestern stehen nicht mehr in der Schlange.
 export function warteschlange(staende, index, jetzt) {
-  const rufe = staende.filter(({ stand }) => stand.hilferuf).map(({ code, stand }) => ({
+  const rufe = staende.filter(({ stand }) => stand.hilferuf && !L.hilferufVeraltet(stand.hilferuf, jetzt)).map(({ code, stand }) => ({
     code, seit: stand.hilferuf.seit, aufgabe: stand.hilferuf.aufgabe, anlass: stand.hilferuf.anlass ?? null,
     lernziel: index.aufgabe.get(stand.hilferuf.aufgabe)?.lernziel ?? null,
     wartetMinuten: minutenSeit(stand.hilferuf.seit, jetzt),
   })).sort((a, b) => (a.seit < b.seit ? -1 : 1));
   for (const r of rufe) r.gleiche = rufe.filter((x) => x.lernziel && x.lernziel === r.lernziel).length;
   return rufe;
+}
+
+// Abgelaufene Hilferufe (Version 0.68): offene Rufe von einem früheren Tag und Rufe, die heute beim Anmelden abgelaufen sind,
+// solange das Kind nicht neu gerufen hat. Die Lehrkraft sieht, wer gestern ohne Hilfe geblieben ist.
+export function abgelaufeneHilferufe(staende, jetzt) {
+  const liste = [];
+  for (const { code, stand } of staende) {
+    if (L.hilferufVeraltet(stand.hilferuf, jetzt)) { liste.push({ code, seit: stand.hilferuf.seit, aufgabe: stand.hilferuf.aufgabe, anlass: stand.hilferuf.anlass ?? null }); continue; }
+    if (stand.hilferuf) continue;
+    const r = (stand.hilferufe ?? []).findLast((x) => x.grund === 'abgelaufen' && L.tagVon(x.bis) === L.tagVon(jetzt));
+    if (r) liste.push({ code, seit: r.seit, aufgabe: r.aufgabe, anlass: r.anlass ?? null });
+  }
+  return liste.sort((a, b) => (a.seit < b.seit ? -1 : 1));
 }
 
 // Woran arbeitet die Klasse gerade? Lernziele mit mehreren Schülern, die dort gerade wenig Erfolg haben.
@@ -237,7 +251,7 @@ export function livestatus(stand, zielniveau, jetzt) {
   const lernziel = stand.aktiv ? null : heute.at(-1)?.lernziel ?? null;
   const kontext = [KAERTCHEN[Math.min(hilfen, 3)], fehl ? `${fehl} Fehlversuche in Folge` : '', anAufgabe >= 2 ? `seit ${anAufgabe} min an dieser Aufgabe` : ''].filter(Boolean).join(', ');
   const basis = { aufgabe, lernziel, kontext, fehlversuche: fehl, hilfen, minuten: anAufgabe };
-  if (stand.hilferuf) {
+  if (stand.hilferuf && !L.hilferufVeraltet(stand.hilferuf, jetzt)) {
     const anlass = stand.hilferuf.anlass ?? null;
     return { ...basis, status: 'hilfe', anlass, text: anlass && L.HILFERUF_GRUENDE[anlass] ? `braucht Hilfe: ${L.HILFERUF_GRUENDE[anlass].kurz}` : 'braucht Hilfe', seit: stand.hilferuf.seit, minuten: minutenSeit(stand.hilferuf.seit, jetzt) };
   }

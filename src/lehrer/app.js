@@ -774,7 +774,18 @@ function akutZone(status) {
           ruf && h('button', { class: 'schlicht', 'data-erledigt': code, onclick: () => aendere((k) => { k.einst.hilfe[code] = { zu: st.seit, status: 'erledigt' }; }) }, 'Erledigt'),
           !ruf && h('button', { class: 'schlicht', 'data-kuemmere': code, onclick: () => { z.gesehen.add(`${code}|${st.seit}`); male(); } }, 'Ich kümmere mich')),
         nachrichtFeld(code));
-    })));
+    })),
+    abgelaufenZeile());
+}
+// Version 0.68 (ADR 0057): Hilferufe von gestern stehen nicht mehr in der Schlange, die Lehrkraft sieht sie aber noch.
+function abgelaufenZeile() {
+  const alte = A.abgelaufeneHilferufe(z.staende, jetzt());
+  if (!alte.length) return null;
+  const tag = (t) => new Date(t).toLocaleDateString('de-DE', { day: 'numeric', month: 'numeric' });
+  return h('p', { class: 'klein abgelaufen', id: 'hilferufe-abgelaufen' }, h('b', {}, 'Abgelaufene Hilferufe: '),
+    alte.map((r, i) => [i > 0 && ', ', h('button', { class: 'link', 'data-abgelaufen': r.code, onclick: () => { z.overlay = r.code; male(); } }, name(r.code)),
+      ` (vom ${tag(r.seit)}${r.anlass && L.HILFERUF_GRUENDE[r.anlass] ? `, ${L.HILFERUF_GRUENDE[r.anlass].kurz}` : ''})`]),
+    '. Ein Hilferuf gilt für den Tag.');
 }
 
 function impulse() {

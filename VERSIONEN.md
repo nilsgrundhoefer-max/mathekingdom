@@ -8,6 +8,23 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.68 vom 27.11.2026
+
+### Schüler
+
+- Ein Hilferuf gilt für den Tag. Am nächsten Tag fragt dich das Programm einmal: „Dein Hilferuf vom … ist abgelaufen. Brauchst du noch Hilfe?“
+- Beim Warten steht dabei, seit wann du wartest.
+- Hat deine Lehrkraft deinen Hilferuf abgehakt, während du spielst, liest du das erst nach dem Spiel.
+- Der Heftcheck zeigt die Aufgabe noch einmal, damit du sie im Heft findest. Er bietet immer vier Antworten an, auch bei Kommazahlen und negativen Zahlen.
+- Die kurze Frage zwischendurch kommt höchstens sechsmal am Tag und nie zweimal dieselbe. Beide Antwortknöpfe sehen gleich aus.
+- Antwortest du „Lieber etwas anderes“, kommst du auf die Karte und wählst selbst.
+
+### Lehrkraft
+
+- Hilferufe von gestern stehen nicht mehr in der Akut-Zone und verlängern die Warteschlange nicht. Unter der Akut-Zone steht „Abgelaufene Hilferufe“ mit Namen und Datum, bis das Kind neu ruft oder der Tag vorbei ist.
+- Der Heftcheck prüft jetzt auch Dezimalzahlen und negative Zahlen wirklich: immer eine richtige und drei falsche Antworten, mit Komma und Minuszeichen wie in der Aufgabe.
+- Die Feedbackfrage (Erprobung) ist auf sechs Fragen je Kind und Tag begrenzt.
+
 ## 0.67 vom 27.11.2026
 
 ### Schüler

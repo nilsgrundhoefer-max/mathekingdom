@@ -1076,11 +1076,17 @@ export const sicherFalsch = (v) => v.sicher === true && !(v.richtig && v.versuch
 export const HEFT_AB = 'M';
 export const HEFT_TAKT = 8;
 // Der Wert, nach dem der Heftcheck fragt: bei Zahl und Zahlenstrahl die Lösung, bei Sachaufgabe und Diagramm die letzte Teilantwort.
+// Version 0.68 (ADR 0057): Der Wert darf auch eine Dezimalzahl oder eine negative Zahl sein. Im Pool stehen sie als Text („−0,17“).
+export function heftZahl(x) {
+  if (typeof x === 'number') return Number.isFinite(x) ? { zahl: x, stellen: (String(x).split('.')[1] ?? '').length } : null;
+  const m = typeof x === 'string' && /^([−-]?)(\d+)(?:,(\d+))?$/.exec(x.trim());
+  return m ? { zahl: Number(`${m[1] ? '-' : ''}${m[2]}.${m[3] ?? '0'}`), stellen: (m[3] ?? '').length } : null;
+}
 export function heftWert(aufgabe) {
-  if (['zahl', 'zahlenstrahl'].includes(aufgabe.format)) return { wert: aufgabe.loesung, einheit: aufgabe.einheit ?? null, fehler: (aufgabe.typischeFehler ?? []).map((f) => f.wert) };
+  if (['zahl', 'zahlenstrahl'].includes(aufgabe.format)) return heftZahl(aufgabe.loesung) && { wert: aufgabe.loesung, einheit: aufgabe.einheit ?? null, fehler: (aufgabe.typischeFehler ?? []).map((f) => f.wert) };
   if (['sachaufgabe', 'diagramm'].includes(aufgabe.format) && aufgabe.teile?.length) {
     const t = aufgabe.teile.at(-1);
-    if (typeof t.loesung !== 'number') return null; // Kapitel 6: Der letzte Teil ist eine Auswahl (Antwortsatz).
+    if (!heftZahl(t.loesung)) return null; // Kapitel 6: Der letzte Teil ist eine Auswahl (Antwortsatz).
     return { wert: t.loesung, einheit: t.einheit ?? null, fehler: (t.typischeFehler ?? []).map((f) => f.wert) };
   }
   return null;
@@ -1094,7 +1100,37 @@ const ALLGEMEIN = {
   zahlenstrahl: 'Schau noch einmal genau auf die Striche und ihre Zahlen.',
 };
 export const allgemeinerHinweis = (aufgabe) => ALLGEMEIN[aufgabe?.format] ?? 'Rechne noch einmal in Ruhe nach.';
-const mitEinheit = (w, einheit) => `${w >= 10000 ? String(w).replace(/\B(?=(\d{3})+$)/g, ' ') : w}${einheit ? ` ${einheit}` : ''}`;
+// Zahl in deutscher Schreibweise: Komma, echtes Minuszeichen, ab 10 000 mit Lücke.
+export function heftText(zahl, stellen = 0) {
+  const [ganz, nach] = Math.abs(zahl).toFixed(stellen).split('.');
+  return `${zahl < 0 ? '−' : ''}${Number(ganz) >= 10000 ? ganz.replace(/\B(?=(\d{3})+$)/g, ' ') : ganz}${nach ? `,${nach}` : ''}`;
+}
+const mitEinheit = (text, einheit) => `${text}${einheit ? ` ${einheit}` : ''}`;
+export const HEFT_FALSCHE = 3;
+// Die Antworten des Heftchecks: die richtige und immer drei falsche. Erst die typischen Fehler der Aufgabe, dann Nachbarn in der
+// letzten Stelle, das Zehnfache, bei Dezimalzahlen das Zehntel und bei negativen Zahlen das andere Vorzeichen.
+export function heftAntworten(wert, fehler = []) {
+  const w = heftZahl(wert);
+  if (!w) return null;
+  const schritt = 10 ** -w.stellen, rund = (x) => Number(x.toFixed(w.stellen + 1));
+  const typisch = fehler.map(heftZahl).filter(Boolean);
+  const negativ = w.zahl < 0 || typisch.some((x) => x.zahl < 0);
+  const kandidaten = [
+    ...typisch,
+    ...(w.zahl < 0 ? [{ zahl: -w.zahl, stellen: w.stellen }] : []),
+    ...[1, -1, 10, -10].map((n) => ({ zahl: rund(w.zahl + n * schritt), stellen: w.stellen })),
+    { zahl: rund(w.zahl * 10), stellen: Math.max(0, w.stellen - 1) },
+    ...(w.stellen > 0 ? [{ zahl: rund(w.zahl / 10), stellen: w.stellen + 1 }] : []),
+    ...[100, 2, -2, 3, -3, 4, 5, 6].map((n) => ({ zahl: rund(w.zahl + n * schritt), stellen: w.stellen })),
+  ];
+  const falsche = [];
+  for (const k of kandidaten) {
+    if (falsche.length >= HEFT_FALSCHE) break;
+    if (k.zahl === w.zahl || (!negativ && k.zahl < 0) || falsche.some((x) => x.zahl === k.zahl)) continue;
+    falsche.push(k);
+  }
+  return [{ text: heftText(w.zahl, w.stellen), richtig: true }, ...falsche.map((k) => ({ text: heftText(k.zahl, k.stellen), richtig: false }))];
+}
 export function heftcheckFrage(stand, index, zufall = Math.random) {
   if ((stand.heftSeitCheck ?? 0) < HEFT_TAKT) return null;
   // Gefragt wird nach einer der letzten Aufgaben mit Heftcode, nicht nach der allerletzten.
@@ -1103,10 +1139,7 @@ export function heftcheckFrage(stand, index, zufall = Math.random) {
   if (!mitCode.length) return null;
   const { v, a } = mitCode[Math.floor(zufall() * mitCode.length)];
   const { wert, einheit, fehler } = heftWert(a);
-  const falsche = [...new Set([...fehler, wert + 1, wert - 1, wert + 10, wert - 10, wert * 10, wert + 100])].filter((x) => Number.isInteger(x) && x >= 0 && x !== wert);
-  const auswahl = [];
-  for (const x of falsche) { if (auswahl.length < 3) auswahl.push(x); }
-  const optionen = [wert, ...auswahl].map((x) => ({ text: mitEinheit(x, einheit), richtig: x === wert }));
+  const optionen = heftAntworten(wert, fehler).map((o) => ({ text: mitEinheit(o.text, einheit), richtig: o.richtig }));
   for (let i = optionen.length - 1; i > 0; i--) { const j = Math.floor(zufall() * (i + 1)); [optionen[i], optionen[j]] = [optionen[j], optionen[i]]; }
   return { heft: v.heft, aufgabe: a.id, optionen };
 }
@@ -1184,10 +1217,29 @@ export function beendeHilferuf(stand, grund, jetzt) {
   stand.hilferufe.push({ ...stand.hilferuf, bis: jetzt, grund });
   stand.hilferuf = null;
 }
-// Platz in der Hilfe-Warteschlange: 1 = als Nächster dran.
-export function wartePlatz(stand, andereHilferufe) {
+// Version 0.68 (ADR 0057): Ein Hilferuf gilt für den Tag, an dem er gerufen wurde.
+const istTag = (tag) => /^\d{4}-/.test(tag);
+export const hilferufVeraltet = (ruf, jetzt) => Boolean(ruf && jetzt && istTag(tagVon(ruf.seit)) && istTag(tagVon(jetzt)) && tagVon(ruf.seit) < tagVon(jetzt));
+// Beim Anmelden und im Takt: Ein Ruf von gestern ist vorbei. Das Kind wird einmal gefragt, ob es noch Hilfe braucht.
+export function lasseHilferufAblaufen(stand, jetzt) {
+  if (!hilferufVeraltet(stand.hilferuf, jetzt)) return false;
+  const { seit, aufgabe, anlass } = stand.hilferuf;
+  stand.hilferufe.push({ ...stand.hilferuf, bis: jetzt, grund: 'abgelaufen' });
+  stand.hilferuf = null;
+  stand.hilferufAbgelaufen = { seit, aufgabe, ...(anlass && { anlass }) };
+  return true;
+}
+// Antwort auf die Frage „Brauchst du noch Hilfe?“: Mit Ja gibt es einen neuen Ruf von heute, zum selben Anlass.
+export function beantworteAbgelaufen(stand, nochHilfe, jetzt, aufgabeId = null) {
+  const alt = stand.hilferufAbgelaufen;
+  if (!alt) return;
+  delete stand.hilferufAbgelaufen;
+  if (nochHilfe) rufeHilfe(stand, aufgabeId ?? alt.aufgabe, jetzt, alt.anlass ?? null);
+}
+// Platz in der Hilfe-Warteschlange: 1 = als Nächster dran. Rufe von gestern zählen mit `jetzt` nicht mit.
+export function wartePlatz(stand, andereHilferufe, jetzt = null) {
   if (!stand.hilferuf) return null;
-  return 1 + andereHilferufe.filter((h) => h && h.seit < stand.hilferuf.seit).length;
+  return 1 + andereHilferufe.filter((h) => h && h.seit < stand.hilferuf.seit && !hilferufVeraltet(h, jetzt)).length;
 }
 
 // ---------- Wappen (ADR 0018) ----------
@@ -1574,7 +1626,11 @@ export function zaehleFuerFeedback(stand, feedback) {
   if (!feedback) return;
   stand.feedbackSeit = (stand.feedbackSeit ?? 0) + 1;
 }
-export const feedbackFaellig = (stand, feedback) => Boolean(feedback) && (stand.feedbackSeit ?? 0) >= feedback.alle;
+// Version 0.68 (ADR 0057): höchstens sechs Fragen je Kind und Tag, und dieselbe Frage nie zweimal am Tag.
+export const FEEDBACK_JE_TAG = 6;
+const feedbackHeute = (stand, jetzt) => (jetzt ? (stand.feedback ?? []).filter((f) => tagVon(f.t) === tagVon(jetzt)) : []);
+export const feedbackFaellig = (stand, feedback, jetzt = null) => Boolean(feedback) && (stand.feedbackSeit ?? 0) >= feedback.alle
+  && feedbackHeute(stand, jetzt).length < FEEDBACK_JE_TAG;
 // Mit welcher Frage ein Schüler beginnt (Version 0.54): versetzt nach seinem Code, damit in einer Stunde alle Fragen
 // vorkommen und nicht jeder mit derselben ersten Frage anfängt.
 export function feedbackStart(code = '') {
@@ -1583,11 +1639,13 @@ export function feedbackStart(code = '') {
   return summe % FEEDBACK_FRAGEN.length;
 }
 // Reihum die nächste passende Frage. kontext: { tipp: Tipp war offen, bild: Aufgabe hat ein Bild }.
-export function naechsteFeedbackFrage(stand, kontext = {}) {
+export function naechsteFeedbackFrage(stand, kontext = {}, jetzt = null) {
   const start = stand.feedbackNaechste ?? feedbackStart(stand.code);
+  const heute = new Set(feedbackHeute(stand, jetzt).map((f) => f.frage));
   for (let i = 0; i < FEEDBACK_FRAGEN.length; i++) {
     const nr = (start + i) % FEEDBACK_FRAGEN.length, f = FEEDBACK_FRAGEN[nr];
     if (f.nur && !kontext[f.nur]) continue;
+    if (heute.has(f.id)) continue;
     return { ...f, nr };
   }
   return null;
