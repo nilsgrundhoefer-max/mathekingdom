@@ -49,7 +49,8 @@ writeFileSync(new URL('build/bilderbogen.html', wurzel), html);
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const browser = await chromium.launch();
-const seite = await browser.newPage({ viewport: { width: 900, height: 1000 }, deviceScaleFactor: 2 });
+// 1054 Pixel Fensterbreite ergeben die Aufgabenkarte in PC-Breite (690 Pixel, ADR 0055): Der Bogen zeigt, was die Kinder sehen.
+const seite = await browser.newPage({ viewport: { width: 1054, height: 1000 }, deviceScaleFactor: 2 });
 const fehler = [];
 seite.on('pageerror', (e) => fehler.push(e.message));
 await seite.goto(new URL('build/bilderbogen.html', wurzel).href);

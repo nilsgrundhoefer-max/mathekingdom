@@ -1,0 +1,11 @@
+# Beschriftungsplan im Gitterbild und Prüfung in PC-Breite
+
+Nils meldete am 27.11.2026, dass bei einigen Aufgaben die Bilder nicht richtig dargestellt werden, Beispiel 5.5.1-B1-F-04: Der Linienname „a“ klebte am Punktnamen „B“. Entschieden in der Fragerunde (Q1 bis Q6).
+
+**Ursache.** Der Name einer Linie stand im Gitterbild immer an derselben Stelle der Linie, ohne Rücksicht auf Punkte. Die Layoutprüfung (ADR 0034) hat Liniennamen nicht geprüft, nur echte Überdeckung gemeldet und bei 420 und 1200 Pixel gezeichnet. Die Aufgabenkarte am PC ist aber 690 Pixel breit, und die Kinder arbeiten fast nur am PC.
+
+**Beschriftungsplan.** Im Gitterbild bekommt jeder Name seinen Platz, bevor gezeichnet wird. Jeder Name hat eine Liste möglicher Orte, der gewohnte Ort steht vorn; genommen wird der erste freie Ort. So bleibt ein Bild, das schon gut war, unverändert, und der Aufgabenpool muss nicht neu erzeugt werden. Reihenfolge: Punktnamen, Figurnamen, Liniennamen, Namen der Linienzüge im Schaubild. Ein Linienname steht nahe am Ende der Linie, wenn dort Platz ist, sonst weiter innen oder auf der anderen Seite. Gehen mehrere benannte Strecken vom selben Punkt aus, stehen die Namen am anderen Ende. Enden zwei Linienzüge im selben Punkt, steht jeder Name neben seinem Zug. Verworfen: die Orte je Aufgabe im Aufgabenpool festlegen, weil dann jedes neue Kapitel dieselben Fehler wieder machen kann. Verworfen: die Namen im Browser ausmessen und verschieben, weil das Bild dann vom Gerät abhinge und nicht jedes Kind dasselbe sähe.
+
+**Einzelfälle außerhalb des Gitters.** Im Figurbild rücken die Namen zweier schmaler Nachbarwinkel weiter hinaus, und ein Linienname weicht einem Winkelnamen aus. Auf der Karte mit Maßstabsleiste liegt der Weg 16 Pixel tiefer. Im Koordinatensystem mit vier Quadranten stehen die Zahlen am Nullpunkt etwas weiter auseinander.
+
+**Prüfung.** Zwischen zwei Beschriftungen bleiben mindestens 4 Pixel frei. Kein Name liegt auf einer Linie oder auf einem fremden Punkt; Liniennamen und Linienzüge werden mitgeprüft. Am PC ist jedes Bild ohne Schieben ganz zu sehen. Gezeichnet wird bei 690 Pixel (Aufgabenkarte am PC) und bei 560 Pixel (kleines Notebookfenster); 420 und 1200 Pixel entfallen. Der Bilderbogen zeichnet ebenfalls in PC-Breite. Eine Tabletversion ist nicht absehbar; kommt sie, braucht die Prüfung wieder eine schmale Breite.

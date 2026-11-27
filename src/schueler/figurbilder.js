@@ -72,7 +72,7 @@ export function figurSvg(b, dazu = {}) {
   const svg = s('svg', { class: `figurbild${dazu.klasse ? ` ${dazu.klasse}` : ''}`, viewBox: `0 0 ${m.B} ${m.H}`, role: 'img', 'aria-label': beschreibung(b) });
   svg.style.maxWidth = `${m.B}px`;
   svg.append(s('rect', { x: 0, y: 0, width: m.B, height: m.H, class: 'blatt' }));
-  const namen = [], belegt = new Map();
+  const namen = [], belegt = new Map(), winkelnamen = [];
   const merke = (n, g) => { if (!belegt.has(n)) belegt.set(n, []); belegt.get(n).push(g); };
   const linie = (p, q, klasse, extra = {}) => s('line', { x1: Z(p[0]), y1: Z(SY(p[1])), x2: Z(q[0]), y2: Z(SY(q[1])), class: klasse, ...extra });
   const text = (p, t, klasse, farbe) => s('text', { x: Z(p[0]), y: Z(SY(p[1]) + 6), 'text-anchor': 'middle', class: klasse, ...(farbe ? { fill: farbe } : {}) }, t);
@@ -96,15 +96,25 @@ export function figurSvg(b, dazu = {}) {
       s('path', { d: `M${PS(p)} A${rb} ${rb} 0 ${groesse > 180 ? 1 : 0} 0 ${PS(q)}`, class: 'winkelbogen', stroke: farbe, 'data-grad': Z(groesse) }));
     for (let j = 0; j < (w.gleich ?? 0); j++) { const d = richtung(von + groesse / 2 + (j - ((w.gleich ?? 1) - 1) / 2) * Math.min(8, groesse / 4)); svg.append(linie(plus(S, d, rb - 6), plus(S, d, rb + 6), 'gleichstrich', { stroke: farbe })); }
     const t = winkelText(w), breit = 5 + 4.6 * t.length;
-    const abstand = Math.max(rb + 10 + breit / 2, (breit / 2 + 7) / Math.sin((Math.min(groesse, 179) * Math.PI) / 360));
-    namen.push(text(plus(S, mitte, abstand), t, `winkelname${w.wert != null && !w.frage ? ' wert' : ''}`, farbe));
+    // Liegt ein schmaler Winkel direkt neben einem zweiten schmalen am selben Scheitel (Winkelhalbierende), rückt der Name weiter hinaus,
+    // damit die beiden Namen Abstand halten (ADR 0055).
+    const nachbar = groesse < 40 && b.winkel.some((x, j) => j !== i && x.s === w.s && (x.a === w.b || x.b === w.a || x.a === w.a || x.b === w.b) && winkelLage(P, x).groesse < 40);
+    const abstand = Math.max(rb + 10 + breit / 2, (breit / 2 + (nachbar ? 13 : 7)) / Math.sin((Math.min(groesse, 179) * Math.PI) / 360));
+    const ort = plus(S, mitte, abstand);
+    winkelnamen.push([ort, breit]);
+    namen.push(text(ort, t, `winkelname${w.wert != null && !w.frage ? ' wert' : ''}`, farbe));
   });
   for (const l of b.linien ?? []) {
     const a = P(l.a), q = P(l.b);
     svg.append(linie(a, q, `kante${l.stil ? ` ${l.stil}` : ''}`));
     const d = [q[0] - a[0], q[1] - a[1]], len = Math.hypot(...d), e = [d[0] / len, d[1] / len], nrm = [-e[1], e[0]], mp = plus(a, d, 0.5);
     for (let j = 0; j < (l.gleich ?? 0); j++) { const c = plus(mp, e, (j - ((l.gleich ?? 1) - 1) / 2) * 5); svg.append(linie(plus(c, nrm, -6), plus(c, nrm, 6), 'gleichstrich')); }
-    if (l.n) namen.push(text(plus(plus(q, e, -14), nrm, 14), l.n, 'linienname'));
+    // Der Name steht nahe am Ende der Linie. Steht dort schon ein Winkelname, wechselt er die Seite oder rückt nach innen (ADR 0055).
+    if (l.n) {
+      const orte = [14, 34, 54, 74].flatMap((weit) => [14, -14].map((seite) => plus(plus(q, e, -weit), nrm, seite)));
+      const frei = (o) => winkelnamen.every(([w, breit]) => Math.abs(w[0] - o[0]) > breit + 5 + 5 * l.n.length + 8 || Math.abs(w[1] - o[1]) > 26);
+      namen.push(text(orte.find(frei) ?? orte[0], l.n, 'linienname'));
+    }
   }
   // Maße stehen außen an der Seite: auf der Seite, die vom Schwerpunkt der Figur weg zeigt.
   const sichtbar = b.punkte.filter((p) => p.zeigen !== false).map((p) => P(p.n));

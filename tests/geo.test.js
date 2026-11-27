@@ -80,3 +80,23 @@ test('Kapitel 5: Jedes der 16 Lernziele hat auf jeder Niveaustufe 6 Aufgaben', (
   assert.equal(zahl.size, 64);
   for (const [k, n] of zahl) assert.equal(n, 6, k);
 });
+
+// Beschriftungsplan (Version 0.63, ADR 0055): Namen im Gitterbild halten Abstand.
+test('Beschriftungsplan: Der Linienname klebt nicht am Punktnamen (5.5.1-B1-F-04)', async () => {
+  const { beschriftungsorte } = await import('../src/schueler/geobilder.js');
+  const g = { b: 10, h: 6, punkte: [{ n: 'A', x: 4, y: 4, pos: 'lo' }, { n: 'B', x: 9, y: 4, pos: 'ro' }], linien: [{ n: 'a', a: [4, 4], b: [9, 4], art: 'gerade' }] };
+  const plan = beschriftungsorte(g), [ax, ay] = plan.linien[0];
+  for (const [px, py] of plan.punkte) assert.ok(Math.abs(px - ax) > 20 || Math.abs(py - ay) > 20, 'Linienname und Punktname liegen auseinander');
+});
+test('Beschriftungsplan: Zwei Linienzüge mit gemeinsamem Ende bekommen getrennte Namen (6.7.1-D1-M-06)', async () => {
+  const { beschriftungsorte } = await import('../src/schueler/geobilder.js');
+  const g = { b: 5, h: 9, achsen: true, skala: { x: { name: 'Zeit in h', schritt: 1 }, y: { name: 'Strecke in km', schritt: 2 } }, zuege: [{ punkte: [[0, 0], [4, 8]], n: 'A' }, { punkte: [[0, 2], [4, 8]], n: 'B' }] };
+  const [a, b] = beschriftungsorte(g).zuege;
+  assert.ok(Math.hypot(a[0] - b[0], a[1] - b[1]) > 20);
+});
+test('Beschriftungsplan: Ein Bild ohne Enge bleibt, wie es war', async () => {
+  const { beschriftungsorte } = await import('../src/schueler/geobilder.js');
+  const g = { b: 10, h: 6, punkte: [{ n: 'A', x: 2, y: 2, pos: 'lo' }, { n: 'B', x: 7, y: 4 }] };
+  const plan = beschriftungsorte(g);
+  assert.deepEqual(plan.punkte.map((p) => p.map(Math.round)), [[(2 - 0.3 + 1) * 40, (6 - 2.32 + 1) * 40].map(Math.round), [(7.3 + 1) * 40, (6 - 4.32 + 1) * 40].map(Math.round)]);
+});
