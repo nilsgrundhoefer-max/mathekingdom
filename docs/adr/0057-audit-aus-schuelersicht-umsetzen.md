@@ -62,7 +62,19 @@ Das Audit aus Schülersicht (Stand 0.64, 27.11.2026) lieferte 213 Befunde aus si
 
 ## 0.68 Hilfe
 
-Der Hilferuf gilt für den Tag. Am nächsten Tag ist er weg, das Kind liest „Dein Hilferuf vom … ist abgelaufen. Brauchst du noch Hilfe?“, die Lehrkraft sieht ihn als abgelaufen. Die Meldung „erledigt“ kommt erst nach einem laufenden Spiel. Der Heftcheck bietet auch Dezimalzahlen, Brüche und negative Zahlen als falsche Antworten an, immer mindestens drei. Die Feedbackfrage kommt höchstens sechsmal je Kind und Tag und dieselbe nie zweimal am Tag; „Lieber etwas anderes“ führt zur Regionskarte.
+**Der Hilferuf gilt für den Tag.** Ein Ruf von einem früheren Tag läuft ab, sobald das Kind sich anmeldet oder das Dashboard über Mitternacht offen bleibt (`L.lasseHilferufAblaufen`). Er wandert mit dem Grund „abgelaufen“ in den Verlauf, und das Kind liest einmal „Dein Hilferuf vom … ist abgelaufen. Brauchst du noch Hilfe?“. „Ja“ ruft neu von heute, zum selben Hilferuf-Grund und zur Aufgabe, an der das Kind gerade sitzt; „Nein, danke“ räumt nur auf. Solange ein Ruf läuft, steht im Balken, seit wann das Kind wartet.
+
+**Lehrkraft.** Rufe von gestern stehen nicht mehr in der Akut-Zone, zählen nicht als „braucht Hilfe“ und verlängern die Warteschlange der anderen Kinder nicht, auch wenn das Kind sich noch nicht wieder angemeldet hat. Unter der Akut-Zone steht die Zeile „Abgelaufene Hilferufe“ mit Namen, Datum und Grund: offene Rufe früherer Tage und Rufe, die heute abgelaufen sind, bis das Kind neu ruft.
+
+**Erledigt nach dem Spiel.** Hakt die Lehrkraft einen Hilferuf ab, während das Kind ein Belohnungsspiel spielt, erscheint die Meldung erst, wenn das Spiel verlassen ist, und bleibt dann 20 Sekunden stehen.
+
+**Heftcheck.** Die falschen Antworten entstehen aus den typischen Fehlern der Aufgabe, aus Nachbarn in der letzten Stelle, dem Zehnfachen, bei Dezimalzahlen dem Zehntel und bei negativen Zahlen dem anderen Vorzeichen (`L.heftAntworten`). Es sind immer drei, alle verschieden von der Lösung und voneinander; negative Antworten gibt es nur, wenn die Aufgabe selbst negative Zahlen kennt. Alle Antworten stehen mit Komma und echtem Minuszeichen da. Über den Antworten steht der Aufgabentext noch einmal, damit das Kind die Aufgabe im Heft wiederfindet. Ein Test geht alle Aufgaben mit Heftwert in Klasse 5 bis 7 durch.
+
+**Feedbackfrage.** Höchstens sechs Fragen je Kind und Tag, dieselbe Frage nie zweimal am Tag. Beide Antwortknöpfe sind gleich gewichtet. Antwortet das Kind auf „Möchtest du so weiterarbeiten?“ mit „Lieber etwas anderes“, kommt es auf die Regionskarte des Kapitels und liest „Such dir auf der Karte aus, woran du jetzt arbeiten möchtest.“
+
+**Fester Test.** `tests/hilfe.test.js` prüft die Regeln ohne Browser, `tests/browser-hilfe.mjs` spielt sie bei 1366 × 650 Pixeln durch.
+
+**Nicht geändert.** Brüche fragt der Heftcheck weiter nicht ab: Im Pool hat keine Aufgabe mit Heftwert einen Bruch als Ergebnis. Der Temperaturunterschied bleibt in „Grad“ (L175): Ein Unterschied ist keine Temperatur in °C. Auf Purpur bleibt es bei einem Tippkärtchen (L129, ADR 0016). Die Lösungsanzeige bei Zeichenaufgaben (L188) bleibt, wie sie ist.
 
 ## 0.69 Belohnung und Eingabe
 

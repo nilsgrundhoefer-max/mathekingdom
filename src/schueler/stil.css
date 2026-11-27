@@ -1047,3 +1047,7 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .vorschlag.gleich button.gleich { background: #fff; color: var(--tinte); border: 2px solid #5b4632; border-radius: 10px; padding: 8px 16px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
 #mathekingdom .vorschlag.gleich button.gleich:hover { background: #f3ead6; }
 #mathekingdom .heute-geloest { background: #f3ead6; border-radius: 8px; padding: 6px 10px; margin: 0 0 8px; }
+
+/* Version 0.68 (ADR 0057): Hilfe */
+#mathekingdom .hilfebanner.abgelaufen { background: #eef0f2; border-bottom-color: #c3cdd1; }
+#mathekingdom .heftaufgabe { margin: .6rem 0 0; padding: .6rem .8rem; background: #f6f1e4; border-radius: 8px; max-width: 46rem; }
