@@ -8,6 +8,29 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.67 vom 27.11.2026
+
+### Schüler
+
+- Hast du alle Meilensteine eines Kapitels gemeistert, siehst du „Kapitel geschafft!“. Dort steht, wie es weitergeht: nächstes Kapitel, Rückblick, offene Lernziele oder eine höhere Krone.
+- Eine Aufgabe, die du heute schon gelöst hast, kommt heute nicht noch einmal. Nach einem Fehler kommt wirklich eine andere Aufgabe.
+- Gibt es für eine Aufgabe nur 1 Münze, steht immer dabei, warum.
+- Im Schlossgarten steht „Hier geht es weiter“ ganz oben. Der Rückblick steht daneben.
+- Der Einstiegscheck zeigt „Aufgabe 5 von 8“ und sagt dir, warum er Gold oder Silber vorschlägt.
+- Hast du selbst Purpur gewählt, spielst du im nächsten Kapitel weiter um Purpur.
+- Ein Abstecher um Purpur ist freiwillig. Das steht jetzt auch dort.
+- Während der Rast gibt es keinen Knopf zu den Spielen. Danach ist er wieder da.
+
+### Lehrkraft
+
+- Neue Einstellung unter Klasse › Unterricht: „Wer fertig ist, darf ein Kapitel vorausarbeiten“ (Standard an). Das Tor zum nächsten Kapitel öffnet sich nur für Kinder, die mit dem Aktuellen Kapitel fertig sind, höchstens ein Kapitel voraus und immer mit Einstiegscheck.
+- Im Sitzplan steht auf der Kachel „fertig“ oder „voraus“. Unter „Jetzt“ meldet ein Impuls, wie viele Kinder mit dem Aktuellen Kapitel fertig sind.
+- Fertig heißt: Alle Pflicht-Meilensteine sind gemeistert. Wer ein Lernziel zweimal nur unter dem Ziel geschafft hat, gilt als „Lernpfad geschafft“ und darf ebenfalls weiter.
+- Tagessperre: Eine am selben Tag gelöste Aufgabe kommt beim Üben am Meilenstein nicht wieder. Sind alle Aufgaben eines Lernziels gelöst, führt der Lernpfad weiter. Übt ein Kind dort trotzdem, bekommt es 1 Münze und keinen neuen Heftcode.
+- Beim Angebot „Um Gold spielen“ sind beide Knöpfe gleich groß, „Bei Silber bleiben“ steht zuerst. „Aufbrechen“ führt nicht mehr von selbst in einen Purpur-Abstecher.
+- Nach dem Nachlösen aus dem Heftcheck geht es dort weiter, wo das Kind vorher war, und nicht mehr im alten Kapitel.
+- Die Meldung zu einer Krone unter dem Ziel feiert nicht mehr und sagt zugleich, dass es nicht reicht. Bronze aus der Grundlagen-Schleife wird nicht mehr als neue Krone gemeldet.
+
 ## 0.66 vom 27.11.2026
 
 ### Schüler

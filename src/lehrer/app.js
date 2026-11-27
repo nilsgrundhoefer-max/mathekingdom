@@ -607,10 +607,12 @@ function statusAller() {
     const stand = z.staende.find((x) => x.code === code)?.stand ?? null;
     let st = A.livestatus(stand, ziel(code), jetzt());
     if (st.status === 'hilfe' && erledigt(code, st.seit)) st = { ...st, status: 'arbeitet', text: 'Hilfe erledigt' };
-    m.set(code, { ...st, stand });
+    // Version 0.67 (ADR 0057): mit dem Aktuellen Kapitel fertig oder schon im nächsten Kapitel voraus.
+    m.set(code, { ...st, stand, kapitel: stand ? L.kapitelMarke(z.pool, z.index, stand, L.einstellungen(kl().einst, code, z.pool)) : null });
   }
   return m;
 }
+const KAPITELMARKE = { fertig: ['fertig', 'Mit dem Aktuellen Kapitel fertig'], voraus: ['voraus', 'Mit dem Aktuellen Kapitel fertig und schon im nächsten Kapitel'] };
 
 // Sitzplan: Reihenfolge der Plätze, zeilenweise. Liegt bei den Lehrerdaten.
 function sitzplan() {
@@ -650,6 +652,7 @@ function sitzplanKarte(status) {
       return h('button', { class: `platz ${st.status}${z.sitzGewaehlt === i ? ' gewaehlt' : ''}`, 'data-platz': i, 'data-schueler': code, title: `${titel}: ${st.text}`,
         onclick: () => { if (bearbeiten) tausche(i); else { z.overlay = code; male(); } } },
         h('span', { class: 'zeichen', 'aria-hidden': 'true' }, zeichen), h('b', {}, name(code)), h('span', { class: 'was' }, st.text),
+        st.kapitel && h('span', { class: `kapitelmarke ${st.kapitel}`, 'data-kapitelmarke': st.kapitel, title: KAPITELMARKE[st.kapitel][1] }, KAPITELMARKE[st.kapitel][0]),
         st.stand && aufgabenreihe(st.stand));
     })));
 }
@@ -833,6 +836,20 @@ function impulse() {
     if (z.gesehen.has(schluessel)) continue;
     karten.push(h('li', { class: 'gut', 'data-sa-erledigt': code }, h('span', {}, h('b', {}, 'Sonderauftrag erledigt: '), `${name(code)} hat ${st.richtig} von ${st.gesamt} Aufgaben zu ${lesbar(auftrag.lernziel)} richtig gelöst.`),
       h('button', { class: 'schlicht', onclick: () => { z.overlay = code; male(); } }, 'Ansehen'), gesehen(schluessel)));
+  }
+  // Kapitel fertig (ADR 0057): Wer alle Pflicht-Meilensteine des Aktuellen Kapitels geschafft hat, bekommt keine neuen Aufgaben mehr daraus.
+  {
+    const fertig = z.staende.filter(({ code, stand }) => kl().namen[code] && L.kapitelMarke(z.pool, z.index, stand, L.einstellungen(kl().einst, code, z.pool)));
+    const kap = z.pool.kapitel.findIndex((k) => k.id === kl().einst.aktuellesKapitel);
+    const schluessel = `kapfertig|${kl().einst.aktuellesKapitel}|${fertig.length}`;
+    if (fertig.length && kap >= 0 && !z.gesehen.has(schluessel)) {
+      const voraus = kl().einst.vorausarbeiten !== false, naechstes = z.pool.kapitel[kap + 1];
+      const geht = voraus && naechstes && naechstes.unterkapitel.some((u) => u.lernziele.some((l) => z.index.lernzielMitAufgaben.has(l.id)));
+      karten.push(h('li', { class: 'gut', id: 'impuls-kapitel-fertig' }, h('span', {}, h('b', {}, 'Kapitel fertig: '),
+        `${fertig.length === 1 ? '1 Kind ist' : `${fertig.length} Kinder sind`} mit Kapitel ${kap + 1} fertig (${fertig.map((x) => name(x.code)).join(', ')}). `,
+        geht ? `Sie dürfen in Kapitel ${kap + 2} vorausarbeiten.` : voraus ? 'Im nächsten Kapitel gibt es noch keine Aufgaben. Ein Sonderauftrag oder die Rolle als Lernbegleiter passt jetzt.'
+          : 'Vorausarbeiten ist ausgeschaltet. Sie bekommen Rückblick, offene Lernziele und höhere Kronen angeboten.'), gesehen(schluessel)));
+    }
   }
   for (const x of A.schnelllaeufer(z.staende, z.pool, z.index, kl().einst.zielniveaus, jetzt())) {
     const schluessel = `fertig|${x.code}|${x.milestone}|${x.zielniveau}`;
@@ -1798,6 +1815,9 @@ function unterrichtAbschnitt() {
     meilensteineSperren(),
     expeditionKarte(),
     einstiegKarte(),
+    h('section', { class: 'karte', id: 'voraus-karte' }, h('h2', {}, 'Vorausarbeiten'),
+      h('p', { class: 'klein' }, 'Wer alle Pflicht-Meilensteine des Aktuellen Kapitels geschafft hat, sieht den Bildschirm „Kapitel geschafft“ und bekommt keine alten Aufgaben mehr. Mit dieser Einstellung öffnet sich für diese Kinder das Tor zum nächsten Kapitel, höchstens ein Kapitel voraus. Es beginnt mit dem Einstiegscheck. Im Sitzplan steht dann „fertig“ oder „voraus“.'),
+      h('label', { class: 'schalter' }, h('input', { id: 'vorausarbeiten', type: 'checkbox', checked: kl().einst.vorausarbeiten !== false, onchange: (ev) => aendere((k) => { k.einst.vorausarbeiten = ev.target.checked; }) }), ' Wer fertig ist, darf ein Kapitel vorausarbeiten')),
     h('section', { class: 'karte', id: 'sicherheitsangabe-karte' }, h('h2', {}, 'Sicherheitsangabe (Probe)'),
       h('p', { class: 'klein' }, 'Beim ersten Versuch prüfen die Schüler mit „ich bin sicher“ oder „ich bin unsicher“. Ist eine sichere Antwort falsch, kommt sofort ein deutlicher Hinweis. Münzen ändern sich nicht. Die Auswertung „Heftcheck und Sicherheitsangabe“ schaltest du im Lernstand unter „Ansicht anpassen“ ein.'),
       h('label', { class: 'schalter' }, h('input', { id: 'sicherheitsangabe', type: 'checkbox', checked: Boolean(kl().einst.sicherheitsangabe), onchange: (ev) => aendere((k) => { k.einst.sicherheitsangabe = ev.target.checked; }) }), ' Für diese Klasse einschalten')),
