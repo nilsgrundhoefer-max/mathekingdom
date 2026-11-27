@@ -103,7 +103,7 @@ export function bruecheUndGroessen() {
     () => { const roh = [[`${br(3, 4)} h`, 45], [`${br(2, 3)} h`, 40], [`${br(5, 6)} h`, 50], [`${br(7, 12)} h`, 35], [`${br(4, 5)} h`, 48], [`${br(3, 5)} h`, 36], [`${br(11, 12)} h`, 55], [`${br(7, 10)} h`, 42], ['44 min', 44], ['38 min', 38], ['52 min', 52], ['2400 s', 40], ['3000 s', 50], ['2760 s', 46], ['41 min', 41]];
       const karten = mische(roh).slice(0, 5).sort((a, c) => a[1] - c[1]);
       if (new Set(karten.map((k) => k[1])).size < 5 || karten.filter((k) => k[0].includes('⁄')).length < 2 || karten.filter((k) => !k[0].includes('⁄')).length < 2) return null;
-      return ordnen('Ordne die Zeitspannen. Beginne mit der kürzesten.', karten.map((k) => k[0]), h1('Rechne alle Zeitspannen in Minuten um. Eine Stunde hat 60 Minuten, eine Minute hat 60 Sekunden.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'zeit-zehnersystem' }); },
+      return ordnen('Ordne die Zeitspannen. Beginne mit der kürzesten.', karten.map((k) => k[0]), h1('Rechne alle Zeitspannen in Minuten um. Eine Stunde hat 60 Minuten, eine Minute hat 60 Sekunden.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'zeit-zehnersystem' }); },
   ]);
 
   // ================= T2: zum Ganzen zurück, Anteile =================

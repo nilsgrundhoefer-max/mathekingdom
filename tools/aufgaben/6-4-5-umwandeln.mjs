@@ -77,7 +77,7 @@ export function umwandeln6() {
       const werte = liste.map(([z, n]) => z / n);
       if (new Set(werte).size !== 4) return null;
       const sortiert = karten.map((t, i) => [t, werte[i]]).sort((x, y) => x[1] - y[1]).map(([t]) => t);
-      return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), sortiert, tM, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'bruch-als-komma' }); },
+      return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), sortiert, tM, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'bruch-als-komma' }); },
     () => { const [z, n, k] = wahl([[9, 12, 3], [6, 15, 3], [12, 16, 4], [14, 20, 2], [15, 20, 5], [10, 16, 2], [9, 15, 3]]), [a, c] = [z / k, n / k], e = auf10(a, c);
       return luecken(Z(`Kürze ${br(z, n)} zuerst. Erweitere dann.`, `${br(z, n)} = {{a}}⁄${c} = {{b}}`), { a: [a, dfe(a, [[z, 'erweitern-nur-ein-teil']])], b: [e.d, dfe(e.d, [[`${z},${n}`, 'bruch-als-komma']])] }, tM,
         { nachweis: [UM(z, n, k, 'kuerzen', false), UM(a, c, e.f, 'erweitern'), `${br(a * e.f, e.N)} = ${e.d}`] }); },
@@ -182,7 +182,7 @@ export function umwandeln6() {
       const werte = liste.map(([z, n]) => z / n);
       if (new Set(werte).size !== 5) return null;
       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der größten Zahl.'), karten.map((t, i) => [t, werte[i]]).sort((x, y) => y[1] - x[1]).map(([t]) => t), h1('Wandle alle Zahlen in Dezimalzahlen mit drei Stellen um. Vergleiche dann.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'bruch-als-komma' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'bruch-als-komma' }); },
     () => { const k = wahl([5, 2, 4, 6, 8]), kn = kind(), falsch = kz([k, 10]), richtig = kz([k, 100]);
       return auswahl(Z(`${kn} rechnet: ${T(k, 2)} = ${br(k, 10)} = ${br(...falsch)}`, 'Finde den Fehler.'), [opt(`Falsch. Es gilt ${T(k, 2)} = ${br(k, 100)} = ${br(...richtig)}.`, true), opt('Stimmt.', false, 'dezimal-stelle'), opt(`Falsch. Es gilt ${T(k, 2)} = ${br(k, 1000)}.`, false, 'dezimal-stelle')],
         h1('Zähle die Stellen nach dem Komma. So viele Nullen hat der Nenner.'), { nachweis: [URTEIL(false, `${T(k, 2)} = ${br(...falsch)}`)] }); },

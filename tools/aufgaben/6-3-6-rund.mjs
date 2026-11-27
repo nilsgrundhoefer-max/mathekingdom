@@ -133,7 +133,7 @@ function r2() {
       H('M', 'Prüfe die Lage der Kreise und die Breite des Rechtecks.', 'Das Rechteck muss um den Kreis ganz herumreichen.'), { nachweis: [KA('zylinder')] }),
     () => { const k = kind();
       return auswahl(`${k} sagt: „Das Netz eines Kegels besteht aus einem Dreieck und einem Kreis.“ Beurteile die Aussage.`,
-        [opt('Stimmt nicht. Die gekrümmte Fläche ist im Netz ein Kreisausschnitt.', true), opt('Stimmt. Von vorne sieht der Kegel aus wie ein Dreieck.', false, 'riss-verwechselt'), opt('Stimmt. Das Dreieck wird zur Spitze gefaltet.', false, 'prisma-pyramide')],
+        [opt('Stimmt nicht. Die gekrümmte Fläche ist im Netz ein Kreisausschnitt.', true), opt('Stimmt. Von vorne sieht der Kegel aus wie ein Dreieck.', false, 'netz-ansicht-verwechselt'), opt('Stimmt. Das Dreieck wird zur Spitze gefaltet.', false, 'prisma-pyramide')],
         H('M', 'Ein Dreieck hat gerade Seiten.', 'Kann es den runden Rand des Kreises umschließen?'), { nachweis: [U(false)] }); },
     () => bildkarten('Kreuze alle Körper an, die keine Ecke haben.', [[rund('zylinder'), true], [rund('kegel'), true], [rund('kugel'), true], [quader(2, 2, 2), false, 'runde-koerper-zaehlen'], [pyramide(4), false, 'runde-koerper-zaehlen']],
       H('M', 'Eine Ecke entsteht, wo sich Kanten treffen.', 'Die Spitze des Kegels zählt nicht als Ecke.'), { mehrfach: true, nachweis: [EIG('ohneEcke')] }),

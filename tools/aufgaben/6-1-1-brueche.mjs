@@ -42,7 +42,7 @@ export function brueche() {
   const tB1G = h3('Der Nenner zählt die Teile von einem Ganzen. Der Zähler zählt alle gefärbten Teile.', 'Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.', 'Zähle zuerst die Teile von einem Ganzen. Zähle dann alle gefärbten Teile.');
   sechs(B1, 'G', [
     () => { const [form, n] = wahl([['kreis', 3], ['kreis', 4], ['kreis', 5], ['kreis', 6], ['rechteck', [2, 2]], ['rechteck', [2, 3]]]), N = anz(n), k = zz(1, N - 1), z = N + k;
-      return bruch(Z(`${GANZE[form]} ist ein Ganzes.`, 'Wie viel ist gefärbt?', 'Schreibe als Bruch.'), br(z, N), [[br(z, 2 * N), 'bruch-ganzes-teil'], [br(N, z), 'bruch-vertauscht']], tB1G,
+      return bruch(Z(`${GANZE[form]} ist ein Ganzes.`, 'Wie viel ist gefärbt?', 'Schreibe als Bruch.'), br(z, N), [[br(z, 2 * N), 'ganzes-mehrere-figuren'], [br(N, z), 'bruch-vertauscht']], tB1G,
         { bild: bild(fig(form, n, vorn(z), { ganze: 2 })), nachweis: [NB(br(z, N))] }); },
     () => { const n = wahl([12, 15, 16, 18, 20]), k = zz(3, n - 3);
       if (2 * k === n) return null;
@@ -63,14 +63,14 @@ export function brueche() {
         h3('Die Form ist egal. Auch die Zahl der Teile darf anders sein.', '2⁄4 eines Rechtecks sind genauso viel wie 1⁄2.', 'Prüfe jede Figur: Sind die Teile gleich groß? Ist gleich viel gefärbt?'),
         { mehrfach: true, bild: bild(...figuren), nachweis: [{ art: 'figurwahl', bruch: br(k, n) }] }); },
     () => { const n = wahl([3, 4, 5, 6]), k = zz(1, n - 1), z = n + k, [a, c] = zweiKinder();
-      return auswahl(Z('Jeder Kreis ist ein Ganzes.', `${a} zählt ${br(z, 2 * n)}.`, `${c} zählt ${br(z, n)}.`, 'Welcher Bruch stimmt?'), [opt(br(z, n), true), opt(br(z, 2 * n), false, 'bruch-ganzes-teil'), opt(br(n, z), false, 'bruch-vertauscht')],
+      return auswahl(Z('Jeder Kreis ist ein Ganzes.', `${a} zählt ${br(z, 2 * n)}.`, `${c} zählt ${br(z, n)}.`, 'Welcher Bruch stimmt?'), [opt(br(z, n), true), opt(br(z, 2 * n), false, 'ganzes-mehrere-figuren'), opt(br(n, z), false, 'bruch-vertauscht')],
         h3('Ein Ganzes ist ein Kreis, nicht beide zusammen.', 'Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4 und nicht 5⁄8.', `Ein Kreis hat ${n} Teile. Das ist der Nenner.`),
         { bild: bild(fig('kreis', n, vorn(z), { ganze: 2 })), nachweis: [NB(br(z, n)), WERT(br(z, n)), HILFS(br(z, 2 * n), 'falsch gezählter Bruch aus dem Text')] }); },
   ]);
   const tB1M = h2('Zähle zuerst die Teile eines Ganzen: Das ist der Nenner. Zähle dann alle gefärbten Teile.', 'Schreibe die Zahl der gefärbten Teile über den Bruchstrich und die Zahl der Teile eines Ganzen darunter.');
   sechs(B1, 'M', [
     () => { const n = wahl([[3, 4], [3, 5], [4, 5], [2, 6], [3, 6]]), N = anz(n), k = zz(2, N - 2), z = 2 * N + k;
-      return bruch(Z('Jedes Rechteck ist ein Ganzes. Wie viel ist gefärbt?', 'Schreibe als Bruch.'), br(z, N), [[br(z, 3 * N), 'bruch-ganzes-teil'], [br(N, z), 'bruch-vertauscht'], [br(k, N), 'gemischt-umwandeln']], tB1M,
+      return bruch(Z('Jedes Rechteck ist ein Ganzes. Wie viel ist gefärbt?', 'Schreibe als Bruch.'), br(z, N), [[br(z, 3 * N), 'ganzes-mehrere-figuren'], [br(N, z), 'bruch-vertauscht'], [br(k, N), 'gemischt-umwandeln']], tB1M,
         { bild: bild(fig('rechteck', n, vorn(z), { ganze: 3 })), nachweis: [NB(br(z, N))] }); },
     () => { const [n, z, nn] = wahl([[[4, 5], 3, 5], [[4, 5], 3, 4], [[3, 4], 2, 3], [[3, 6], 5, 6], [[4, 4], 3, 8], [[3, 5], 2, 5], [[4, 5], 7, 10]]), N = anz(n), k = (N / nn) * z;
       return faerben(`Das Rechteck hat ${N} gleich große Teile. Färbe ${br(z, nn)} des Rechtecks.`, leer('rechteck', n), br(z, nn), k, [[z, 'bruchteil-zaehler-vergessen'], [N / nn, 'bruchteil-zaehler-vergessen'], [N - k, 'bruch-teil-zu-rest']],
@@ -80,7 +80,7 @@ export function brueche() {
         h2(`Wie viele Kästchen gehören zu einem Teil, wenn 100 Kästchen in ${n} gleich große Teile geteilt werden?`, `Rechne 100 : ${n} = ${mal}. Nimm das Ergebnis mit ${z} mal.`),
         { nachweis: [`${br(z, n)} von 100 = ${z * mal}`] }); },
     () => { const [form, n] = wahl([['kreis', 8], ['kreis', 10], ['kreis', 12], ['rechteck', [3, 4]], ['rechteck', [4, 5]]]), N = anz(n), k = zz(2, N - 2), z = N + k;
-      return auswahl(`${GANZE[form]} ist ein Ganzes. Welcher Bruch gibt an, wie viel weiß geblieben ist?`, [opt(br(N - k, N), true), opt(br(N - k, 2 * N), false, 'bruch-ganzes-teil'), opt(br(z, N), false, 'sach-frage-verfehlt'), opt(br(k, N), false)],
+      return auswahl(`${GANZE[form]} ist ein Ganzes. Welcher Bruch gibt an, wie viel weiß geblieben ist?`, [opt(br(N - k, N), true), opt(br(N - k, 2 * N), false, 'ganzes-mehrere-figuren'), opt(br(z, N), false, 'sach-frage-verfehlt'), opt(br(k, N), false)],
         h2('Gefragt ist nach den weißen Teilen. Der Nenner zählt trotzdem nur die Teile eines Ganzen.', `Ein Ganzes hat ${N} Teile. Weiß sind ${N - k} Teile.`),
         { bild: bild(fig(form, n, vorn(z), { ganze: 2 })), nachweis: [{ art: 'bild', was: 'weiss', zahl: N - k }, `${N - k} : ${N} = ${br(N - k, N)}`, WERT(br(N - k, N), true)] }); },
     () => { const n = wahl([24, 30, 36, 40, 48]), k = wahl(vorn(n - 10, 5)), j = zz(3, 6), kn = kind(), [ding, tat] = wahl([['Eine Tafel Schokolade hat', 'isst'], ['Ein Kalender hat', 'öffnet'], ['Ein Setzkasten hat', 'füllt']]), was = ding.startsWith('Eine Tafel') ? 'Stücke' : ding.startsWith('Ein Kalender') ? 'Türchen' : 'Fächer';
@@ -97,7 +97,7 @@ export function brueche() {
   ]);
   sechs(B1, 'E', [
     () => { const n = wahl([[3, 5], [4, 5], [3, 6], [4, 4]]), N = anz(n), k = zz(2, N - 2), z = 2 * N + k;
-      return bruch('Jedes Rechteck ist ein Ganzes. Welcher Bruchteil ist weiß geblieben? Schreibe als Bruch.', br(N - k, N), [[br(N - k, 3 * N), 'bruch-ganzes-teil'], [br(z, N), 'sach-frage-verfehlt'], [br(k, N), 'sach-frage-verfehlt']],
+      return bruch('Jedes Rechteck ist ein Ganzes. Welcher Bruchteil ist weiß geblieben? Schreibe als Bruch.', br(N - k, N), [[br(N - k, 3 * N), 'ganzes-mehrere-figuren'], [br(z, N), 'sach-frage-verfehlt'], [br(k, N), 'sach-frage-verfehlt']],
         h1('Der Nenner zählt die Teile eines Ganzen. Der Zähler zählt hier die weißen Teile.'),
         { bild: bild(fig('rechteck', n, vorn(z), { ganze: 3 })), nachweis: [{ art: 'bild', was: 'weiss', zahl: N - k }, `${N - k} : ${N} = ${br(N - k, N)}`] }); },
     () => { const n = wahl([20, 25, 50]), mal = 100 / n, z = wahl(vorn(n - 5, 3).filter((x) => x % 5 !== 0)), g = zz(1, 2), Z_ = g * n + z;
@@ -126,17 +126,17 @@ export function brueche() {
   const tB2 = h3('Ein voller Kreis ist ein Ganzes. Zähle die vollen Kreise. Schau dann auf den Rest.', 'Ein voller Kreis und 1 von 4 Teilen: Das ist 1 1⁄4.', 'Schreibe zuerst die Ganzen. Schreibe dahinter den Bruch für den Rest.');
   sechs(B2, 'F', [
     () => { const n = wahl([2, 3, 4, 5]), k = zz(1, n - 1);
-      return auswahl(Z('Jeder Kreis ist ein Ganzes.', 'Welche gemischte Zahl passt zum Bild?'), [opt(br(k, n, 1), true), opt(br(n + k, 2 * n), false, 'bruch-ganzes-teil'), opt(br(1, n, k === 1 ? 2 : k), false)], tB2,
+      return auswahl(Z('Jeder Kreis ist ein Ganzes.', 'Welche gemischte Zahl passt zum Bild?'), [opt(br(k, n, 1), true), opt(br(n + k, 2 * n), false, 'ganzes-mehrere-figuren'), opt(br(1, n, k === 1 ? 2 : k), false)], tB2,
         { bild: bild(fig('kreis', n, vorn(n + k), { ganze: 2 })), nachweis: [NBW(br(k, n, 1)), WERT(br(k, n, 1), true)] }); },
     () => { const n = wahl([[1, 2], [1, 3], [2, 2], [1, 4], [1, 5]]), N = anz(n), g = zz(1, 2), k = zz(1, N - 1);
-      return bruch(Z('Jedes Rechteck ist ein Ganzes.', 'Wie viel ist gefärbt?', 'Schreibe als gemischte Zahl.'), br(k, N, g), [[br(g * N + k, (g + 1) * N), 'bruch-ganzes-teil'], [br(N, k, g), 'bruch-vertauscht']], tB2,
+      return bruch(Z('Jedes Rechteck ist ein Ganzes.', 'Wie viel ist gefärbt?', 'Schreibe als gemischte Zahl.'), br(k, N, g), [[br(g * N + k, (g + 1) * N), 'ganzes-mehrere-figuren'], [br(N, k, g), 'bruch-vertauscht']], tB2,
         { form: 'gemischt', bild: bild(fig('rechteck', n, vorn(g * N + k), { ganze: g + 1 })), nachweis: [NBW(br(k, N, g))] }); },
     () => { const n = wahl([2, 3, 4, 5]), k = zz(1, n - 1);
       return luecken(Z('Das Bild zeigt eine gemischte Zahl.', 'Schreibe sie als Bruch.', `${br(k, n, 1)} = {{a}}⁄${n}`), { a: [n + k, fehlerliste(n + k, [[10 + k, 'gemischt-umwandeln'], [1 + k, 'gemischt-umwandeln'], [k, 'gemischt-umwandeln']])] },
         h3('Ein Ganzes hat so viele Teile, wie der Nenner sagt. Zähle alle gefärbten Teile.', '1 1⁄4 sind 4 Viertel und noch 1 Viertel. Das sind 5⁄4.', `Zähle im Bild alle gefärbten Teile. Das ist der Zähler.`),
         { bild: bild(fig('kreis', n, vorn(n + k), { ganze: 2 })), nachweis: [`${br(k, n, 1)} = ${br(n + k, n)}`] }); },
     () => { const n = wahl([2, 3, 4, 5]), g = zz(1, 2), k = zz(1, n - 1), z = g * n + k;
-      return bruch(Z('Jeder Kreis ist ein Ganzes.', 'Wie viel ist gefärbt?', 'Schreibe als Bruch.'), br(z, n), [[br(z, (g + 1) * n), 'bruch-ganzes-teil'], [br(k, n), 'gemischt-umwandeln']],
+      return bruch(Z('Jeder Kreis ist ein Ganzes.', 'Wie viel ist gefärbt?', 'Schreibe als Bruch.'), br(z, n), [[br(z, (g + 1) * n), 'ganzes-mehrere-figuren'], [br(k, n), 'gemischt-umwandeln']],
         h3('Der Nenner zählt die Teile von einem Kreis. Der Zähler zählt alle gefärbten Teile.', 'Zwei Kreise mit je 4 Teilen. 5 Teile sind gefärbt. Das sind 5⁄4.', 'Zähle alle gefärbten Teile in allen Kreisen. Das ist der Zähler.'),
         { bild: bild(fig('kreis', n, vorn(z), { ganze: g + 1 })), nachweis: [NB(br(z, n))] }); },
     () => { const [form, n] = wahl([['kreis', 2], ['kreis', 3], ['kreis', 4], ['rechteck', [1, 4]], ['rechteck', [1, 5]]]), N = anz(n), k = zz(1, N - 1);
@@ -185,7 +185,7 @@ export function brueche() {
       if (liste.length < 4) return null;
       const karten = liste.slice(0, 4).sort((a, c) => (a[0] + a[2] * a[1]) - (c[0] + c[2] * c[1]));
       if (!karten.some((x) => x[2]) || karten.every((x) => x[2])) return null;
-      return ordnen('Ordne die Zahlen. Beginne mit der kleinsten.', karten.map(b2), h2('Wandle alle Zahlen in dieselbe Schreibweise um, zum Beispiel alle in Brüche.', `Alle Zahlen haben den Nenner ${n}. Vergleiche dann nur noch die Zähler.`), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'gemischt-umwandeln' }); },
+      return ordnen('Ordne die Zahlen. Beginne mit der kleinsten.', karten.map(b2), h2('Wandle alle Zahlen in dieselbe Schreibweise um, zum Beispiel alle in Brüche.', `Alle Zahlen haben den Nenner ${n}. Vergleiche dann nur noch die Zähler.`), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'gemischt-umwandeln' }); },
     () => { const { n, g, k, z } = gz('M');
       return zahl(`Zwischen welchen beiden natürlichen Zahlen liegt ${br(z, n)}? Gib die kleinere der beiden Zahlen an.`, g, fehlerliste(g, [[g + 1, 'sach-frage-verfehlt'], [k, 'gemischt-umwandeln'], [Math.floor(z / 10), 'gemischt-umwandeln']]),
         h2('Wandle den Bruch in eine gemischte Zahl um. Die Ganzen sagen dir, wo die Zahl liegt.', `Die ${n} passt ${g}-mal in die ${z}. Die Zahl liegt also zwischen ${g} und ${g + 1}.`), { nachweis: [{ art: 'ganze', bruch: br(z, n), zahl: g }] }); },
@@ -211,7 +211,7 @@ export function brueche() {
     () => { const n = wahl([6, 8, 12]), g = zz(2, 6), roh = mische([[1, n, g], [g * n + 3, n, 0], [n - 1, n, g - 1], [g * n + n + 1, n, 0], [5, n, g]]);
       const karten = roh.sort((a, c) => (a[0] + a[2] * a[1]) - (c[0] + c[2] * c[1]));
       if (new Set(karten.map((x) => x[0] + x[2] * x[1])).size !== 5) return null;
-      return ordnen('Ordne die Zahlen. Beginne mit der größten.', karten.reverse().map(b2), h1('Schreibe alle Zahlen als Brüche mit demselben Nenner. Dann zählen nur noch die Zähler.'), { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'gemischt-umwandeln' }); },
+      return ordnen('Ordne die Zahlen. Beginne mit der größten.', karten.reverse().map(b2), h1('Schreibe alle Zahlen als Brüche mit demselben Nenner. Dann zählen nur noch die Zähler.'), { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'gemischt-umwandeln' }); },
     () => { const n = wahl([5, 6, 7, 8, 9, 12]), g = zz(2, 9), anzahl = n - 1;
       return zahl(`Ein Bruch hat den Nenner ${n} und liegt zwischen ${g} und ${g + 1}. Er ist keine natürliche Zahl. Wie viele solche Brüche gibt es?`, anzahl, fehlerliste(anzahl, [[n, 'bruchstrahl-striche'], [n + 1, 'bruchstrahl-striche'], [1, 'gemischt-umwandeln']]),
         h1(`Schreibe ${g} und ${g + 1} als Brüche mit dem Nenner ${n}. Welche Zähler liegen dazwischen?`), { nachweis: [`${g} · ${n} = ${g * n}`, `${g + 1} · ${n} = ${(g + 1) * n}`, `${(g + 1) * n} − ${g * n} − 1 = ${anzahl}`] }); },

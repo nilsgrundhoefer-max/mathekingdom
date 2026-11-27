@@ -199,7 +199,7 @@ function strichlisten() {
     lies('G', 4, 4, 19),
     () => { const s = klein(), namen = namenVon(s, 3), w = werte(3, 6, 18), gesamt = summe(w); const [a, b] = [namen[w.indexOf(Math.max(...w))], namen[w.indexOf(Math.min(...w))]]; const d = Math.max(...w) - Math.min(...w);
       return sach(Z(s.einleitung, 'Lies die Strichliste ab.'), [teil(s.alle, gesamt, s.einheit, ohneDoppelte(gesamt, [{ wert: alsVier(w[0]) + alsVier(w[1]) + alsVier(w[2]), fehlvorstellung: 'strich-buendel-als-vier' }])),
-        teil(s.mehr(a, b), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'sach-falsche-rechnung' }]))],
+        teil(s.mehr(a, b), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'unterschied-addiert' }]))],
       hil('G', 'Zähle jede Zeile. Schreibe die Zahl daneben.', 'Zeilen mit 7, 9 und 4 Strichen: 7 + 9 + 4 = 20.', `Die Zeilen haben ${w.join(', ')} Striche.`),
       { bild: strichBild(namen, w, s.diagrammTitel), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${gesamt}`, `${Math.max(...w)} − ${Math.min(...w)} = ${d}`] }); },
     () => { const s = klein(), namen = namenVon(s, 3), w = werte(3, 6, 14, 1, (x) => x.every((y) => y % 5 !== 0)); const i = zz(0, 2), fehlt = 5 - (w[i] % 5), voll = w[i] + fehlt;
@@ -217,7 +217,7 @@ function strichlisten() {
     anlegen('M', 4, 3, 9, 'selbst'),
     () => { const s = klein(), namen = namenVon(s, 4), w = werte(4, 4, 24), gesamt = summe(w); const [g, k] = [groesster(namen, w), kleinster(namen, w)], d = Math.max(...w) - Math.min(...w);
       return sach(Z(s.einleitung, 'Werte die Strichliste aus.'), [teil(s.alle, gesamt, s.einheit, ohneDoppelte(gesamt, [{ wert: summe(w.map(alsVier)), fehlvorstellung: 'strich-buendel-als-vier' }])),
-        teil(s.mehr(g, k), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'sach-falsche-rechnung' }]))],
+        teil(s.mehr(g, k), d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'unterschied-addiert' }]))],
       hil('M', 'Schreibe zu jeder Zeile die Anzahl als Zahl. Rechne dann mit den Zahlen.', `Die Zeilen haben ${w.join(', ')} Striche.`),
       { bild: strichBild(namen, w, s.diagrammTitel), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${gesamt}`, `${Math.max(...w)} − ${Math.min(...w)} = ${d}`] }); },
     nachtragen('M', 4, 'selbst'),
@@ -409,7 +409,7 @@ function diagrammeLesen() {
   const zweiFragen = (n, liegend, k = 4) => () => { const s = sach_(n), sk = wahl(SKALA[n]), namen = namenVon(s, k), w = skalenWerte(sk, k, n); const [i, j] = mische([...namen.keys()]).slice(0, 2);
     const [a, b] = w[i] >= w[j] ? [i, j] : [j, i], d = w[a] - w[b];
     return sach(Z(s.einleitung, 'Lies die Werte ab und rechne.'), [teil(s.zus(namen[i], namen[j]), w[i] + w[j], s.einheit, ohneDoppelte(w[i] + w[j], [{ wert: d, fehlvorstellung: 'sach-falsche-rechnung' }])),
-      teil(s.mehr(namen[a], namen[b]), d, s.einheit, ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'sach-falsche-rechnung' }]))],
+      teil(s.mehr(namen[a], namen[b]), d, s.einheit, ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'unterschied-addiert' }]))],
     hil(n, 'Lies zuerst beide Werte ab. Schreibe sie auf. Rechne dann.', 'Werte 30 und 20: zusammen 30 + 20 = 50, Unterschied 30 − 20 = 10.', `${s.gewaehlt(namen[i])} zeigt ${w[i]}, ${s.gewaehlt(namen[j])} zeigt ${w[j]}.`),
     { bild: (liegend ? balkenBild : saeulenBild)(s, namen, w, sk), nachweis: [ABL(namen[i], w[i]), ABL(namen[j], w[j]), `${w[i]} + ${w[j]} = ${w[i] + w[j]}`, `${w[a]} − ${w[b]} = ${d}`] }); };
   const allesAblesen = (n, liegend, k) => () => { const s = sach_(n), sk = wahl(SKALA[n]), namen = namenVon(s, k), w = skalenWerte(sk, k, n);
@@ -460,7 +460,7 @@ function diagrammeLesen() {
     zweiFragen('M', true),
     () => { const s = gross(), sk = wahl(SKALA.M), namen = namenVon(s, 4), w = skalenWerte(sk, 4, 'M'), g = summe(w), d = Math.max(...w) - Math.min(...w);
       return sach(Z(s.einleitung, 'Lies die Werte ab und rechne.'), [teil(s.alle, g, s.einheit, ohneDoppelte(g, [{ wert: g - w[3], fehlvorstellung: 'sach-schritt-vergessen' }])),
-        teil(`Um wie viele ${s.subjekt} unterscheiden sich der größte und der kleinste Wert?`, d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'sach-falsche-rechnung' }]))],
+        teil(`Um wie viele ${s.subjekt} unterscheiden sich der größte und der kleinste Wert?`, d, s.einheit, ohneDoppelte(d, [{ wert: Math.max(...w) + Math.min(...w), fehlvorstellung: 'unterschied-addiert' }]))],
       hil('M', 'Lies alle Werte ab und schreibe sie auf.', `Die Werte sind ${w.join(', ')}.`),
       { bild: saeulenBild(s, namen, w, sk), nachweis: [...namen.map((nm, i) => ABL(nm, w[i])), `${w.join(' + ')} = ${g}`, `${Math.max(...w)} − ${Math.min(...w)} = ${d}`] }); },
     welcheZeigt('M', true),
@@ -791,7 +791,7 @@ function datenVergleichen() {
     const [i, j] = n === 'M' || n === 'E' ? [w.indexOf(Math.max(...w)), w.indexOf(Math.min(...w))] : mische([...namen.keys()]).slice(0, 2).sort((a, b) => w[b] - w[a]);
     const d = w[i] - w[j];
     return zahl(Z(s.einleitung, n === 'M' || n === 'E' ? `Um wie viele ${s.subjekt} unterscheiden sich der größte und der kleinste Wert?` : s.mehr(namen[i], namen[j])), d,
-      ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'sach-falsche-rechnung' }, ...(art === 'bild' ? [{ wert: d / sk.je, fehlvorstellung: 'bild-symbole-gezaehlt' }] : [])].filter((x) => Number.isInteger(x.wert))),
+      ohneDoppelte(d, [{ wert: w[i] + w[j], fehlvorstellung: 'unterschied-addiert' }, ...(art === 'bild' ? [{ wert: d / sk.je, fehlvorstellung: 'bild-symbole-gezaehlt' }] : [])].filter((x) => Number.isInteger(x.wert))),
       hil(n, 'Lies beide Werte ab. Ziehe den kleineren vom größeren ab.', '8 und 5: 8 − 5 = 3. Es sind 3 mehr.', `Die Werte sind ${w[i]} und ${w[j]}.`),
       { bild: bildFuer(art, s, namen, w, n, sk), nachweis: [ABL(namen[i], w[i]), ABL(namen[j], w[j]), `${w[i]} − ${w[j]} = ${d}`] }); };
   const extrem = (n, was, art) => () => { const s = n === 'F' || n === 'G' ? klein() : gross(), sk = wahl(SKALA[n]), k = n === 'F' ? 3 : 4, namen = namenVon(s, k), w = skalenWerte(sk, k, n);
@@ -811,7 +811,7 @@ function datenVergleichen() {
   const zweiGruppen = (n, k, teile) => () => { const s = kleinUmfrage(), namen = namenVon(s, k), [ga, gb] = ['Jungen', 'Mädchen'], a = werte(k, 2, n === 'G' ? 9 : 14), b = werte(k, 2, n === 'G' ? 9 : 14);
     const i = suche(() => zz(0, k - 1), (x) => a[x] !== b[x]), [g1, g2] = a[i] > b[i] ? [ga, gb] : [gb, ga], d = Math.abs(a[i] - b[i]), j = (i + 1) % k;
     const liste = [teil(`Wie viele Kinder haben „${namen[j]}“ gewählt?`, a[j] + b[j], 'Kinder', ohneDoppelte(a[j] + b[j], [{ wert: a[j], fehlvorstellung: 'sach-schritt-vergessen' }])),
-      teil(`Wie viele ${g1} mehr als ${g2} haben „${namen[i]}“ gewählt?`, d, 'Kinder', ohneDoppelte(d, [{ wert: a[i] + b[i], fehlvorstellung: 'sach-falsche-rechnung' }])),
+      teil(`Wie viele ${g1} mehr als ${g2} haben „${namen[i]}“ gewählt?`, d, 'Kinder', ohneDoppelte(d, [{ wert: a[i] + b[i], fehlvorstellung: 'unterschied-addiert' }])),
       teil(`Wie viele ${gb} wurden befragt?`, summe(b), 'Kinder', ohneDoppelte(summe(b), [{ wert: summe(a) + summe(b), fehlvorstellung: 'sach-unnoetige-angabe' }]))].slice(0, teile);
     return sach(Z(`Bei der Umfrage „${s.titel}“ wurden Jungen und Mädchen getrennt gezählt.`, 'Vergleiche.'), liste,
       hil(n, 'Die Jungen stehen in der mittleren Spalte, die Mädchen rechts.', 'Jungen 6, Mädchen 4: Es sind 2 Jungen mehr.', `In der Zeile „${namen[i]}“ stehen ${a[i]} und ${b[i]}.`),

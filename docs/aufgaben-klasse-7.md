@@ -27,7 +27,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Unter der Null sind die Temperaturen 
   - ☐ mittags
   - ☐ morgens
   - ☑ abends
-- `06` AFB I · _Kommunizieren_ · Schau auf die Zahlengerade. / Auf welche Zahl zeigt der Pfeil? _(Bild: Zahlengerade −20 bis 0, Teilstriche alle 1, Pfeil auf −11)_ Lösung: **−11**. Typische Fehler: 11 (vorzeichen-vergessen), −9 (richtung-vertauscht).
+- `06` AFB I · _Kommunizieren_ · Schau auf die Zahlengerade. / Auf welche Zahl zeigt der Pfeil? _(Bild: Zahlengerade −20 bis 0, Teilstriche alle 1, Pfeil auf −11)_ Lösung: **−11**. Typische Fehler: 11 (vorzeichen-vergessen), −9 (strahl-gespiegelt).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
@@ -36,7 +36,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei beschrifteten Zahlen li
 - `01` AFB I · _Kommunizieren_ · Schau auf die Zahlengerade. / Auf welche Zahl zeigt der Pfeil? _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Pfeil auf −0,6)_ Lösung: **−0,6**. Typische Fehler: 0,6 (vorzeichen-vergessen).
 - `02` AFB I · _Kommunizieren_ · Ein Bergwerk liegt 95 m unter dem Meeresspiegel. / Schreibe die Angabe als Zahl mit Vorzeichen. Lösung: **−95 m**. Typische Fehler: 95 (vorzeichen-vergessen).
 - `03` AFB II · _Kommunizieren_ · Markiere −0,3 an der Zahlengeraden. _(Zahlenstrahl −2 bis 2, Teilstriche alle 0,1; antippen)_ Lösung: **−0,3**. Typische Fehler: 0,3 (vorzeichen-vergessen).
-- `04` AFB I · _Kommunizieren_ · Schau auf das Thermometer. / Wie viel Grad Celsius sind es? _(Bild: Thermometer von −20 °C bis 30 °C, Striche alle 2 Grad: −14 °C)_ Lösung: **−14 °C**. Typische Fehler: 14 (vorzeichen-vergessen), −12 (strahl-einerschritte), −6 (richtung-vertauscht).
+- `04` AFB I · _Kommunizieren_ · Schau auf das Thermometer. / Wie viel Grad Celsius sind es? _(Bild: Thermometer von −20 °C bis 30 °C, Striche alle 2 Grad: −14 °C)_ Lösung: **−14 °C**. Typische Fehler: 14 (vorzeichen-vergessen), −12 (strahl-einerschritte), −6 (strahl-gespiegelt).
 - `05` AFB II · _Kommunizieren_ · Ordne jeder Angabe die passende Zahl zu. Lösung: 9 Grad unter null → −9 °C, 30 € Guthaben → 30 €, 83 € Schulden → −83 €, 43 m unter dem Meeresspiegel → −43 m
 - `06` AFB III · _Kommunizieren_ · Ida liest am Thermometer −2 °C ab. / Das ist falsch. / Wie viel Grad sind es wirklich? _(Bild: Thermometer von −10 °C bis 10 °C, Striche alle 1 Grad: −8 °C)_
   - ☐ −13 °C
@@ -47,8 +47,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei beschrifteten Zahlen li
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei beschrifteten Zahlen liegen zehn Schritte. Wie groß ist ein Schritt? *Lösungsschritt:* Ein Schritt ist ein Hundertstel. Zähle von der nächsten beschrifteten Zahl nach links.
 
-- `01` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil an der Zahlengeraden? _(Bild: Zahlengerade −0,3 bis 0,1, Teilstriche alle 0,01, Pfeil auf −0,17)_ Lösung: **−0,17**. Typische Fehler: 0,17 (vorzeichen-vergessen), −0,03 (richtung-vertauscht), −1,7 (strahl-einerschritte).
-- `02` AFB II · _Kommunizieren_ · Markiere −1 3⁄5 an der Zahlengeraden. _(Zahlenstrahl −3 bis 1, Teilstriche alle 1⁄5; antippen)_ Lösung: **−8⁄5**. Typische Fehler: −2⁄5 (richtung-vertauscht).
+- `01` AFB I · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil an der Zahlengeraden? _(Bild: Zahlengerade −0,3 bis 0,1, Teilstriche alle 0,01, Pfeil auf −0,17)_ Lösung: **−0,17**. Typische Fehler: 0,17 (vorzeichen-vergessen), −0,03 (strahl-gespiegelt), −1,7 (strahl-einerschritte).
+- `02` AFB II · _Kommunizieren_ · Markiere −1 3⁄5 an der Zahlengeraden. _(Zahlenstrahl −3 bis 1, Teilstriche alle 1⁄5; antippen)_ Lösung: **−8⁄5**. Typische Fehler: −2⁄5 (strahl-gespiegelt).
 - `03` AFB II · _Kommunizieren_ · Zwischen welchen benachbarten ganzen Zahlen liegt −2,9? ▢ < −2,9 < ▢ Lösung: a = **−3**, b = **−2**
 - `04` AFB I · _Kommunizieren_ · Der Wasserstand eines Sees liegt 2,51 m unter dem Normalwert. Schreibe die Angabe als Zahl mit Vorzeichen. Lösung: **−2,51 m**. Typische Fehler: 2,51 (vorzeichen-vergessen).
 - `05` AFB II · _Kommunizieren_ · Auf welche Zahl zeigt der Pfeil? Schreibe sie als Bruch oder gemischte Zahl. _(Bild: Zahlengerade −2 bis 1, Teilstriche alle 1⁄3, Pfeil auf −4⁄3)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄3**. Typische Fehler: 1 1⁄3 (vorzeichen-vergessen), −2⁄3 (richtung-vertauscht).
@@ -78,9 +78,9 @@ Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahleng
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Abstand zur Null ist die Zahl der Schritte bis zur Null. Er hat kein Minus. *Beispiel:* Von −4 bis zur Null sind es 4 Schritte. *Lösungsschritt:* Zähle die Schritte von der Zahl bis zur Null.
 
-- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei −4. / Wie viele Schritte sind es von dort bis zur Null? _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Punkte bei −4)_ Lösung: **4**. Typische Fehler: −4 (betrag-gegenzahl), 6 (richtung-vertauscht).
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei −4. / Wie viele Schritte sind es von dort bis zur Null? _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Punkte bei −4)_ Lösung: **4**. Typische Fehler: −4 (betrag-gegenzahl), 6 (strahl-gespiegelt).
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Wie heißt die Gegenzahl von −3? _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Punkte bei −3)_ Lösung: **3**. Typische Fehler: −3 (betrag-gegenzahl).
-- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 6 hat eine Gegenzahl. / Markiere die Gegenzahl an der Zahlengeraden. _(Zahlenstrahl −10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **−6**. Typische Fehler: 6 (betrag-gegenzahl), −4 (richtung-vertauscht).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 6 hat eine Gegenzahl. / Markiere die Gegenzahl an der Zahlengeraden. _(Zahlenstrahl −10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **−6**. Typische Fehler: 6 (betrag-gegenzahl), −4 (strahl-gespiegelt).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 3. / Eine andere Zahl ist gleich weit von der Null entfernt. / Wie heißt diese Zahl? _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Punkte bei 3)_ Lösung: **−3**. Typische Fehler: 3 (betrag-gegenzahl), 0 (betrag-gegenzahl).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Welche Zahl ist am weitesten von der Null entfernt? _(Bild: Zahlengerade −10 bis 10, Teilstriche alle 1, Punkte bei −8, 5, −1)_
   - ☐ 5
@@ -96,7 +96,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Gegenzahl liegt gleich weit von d
 - `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei −1,4. / Wie groß ist der Abstand zur Null? _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Punkte bei −1,4)_ Lösung: **1,4**. Typische Fehler: −1,4 (betrag-gegenzahl).
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl hat die Gegenzahl −27. / Wie heißt die Zahl? Lösung: **27**. Typische Fehler: −27 (betrag-gegenzahl), 0 (betrag-gegenzahl).
 - `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 0,6 hat eine Gegenzahl. / Markiere die Gegenzahl an der Zahlengeraden. _(Zahlenstrahl −2 bis 2, Teilstriche alle 0,1; antippen)_ Lösung: **−0,6**. Typische Fehler: 0,6 (betrag-gegenzahl).
-- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben den Abstand 6 zur Null. / Markiere die kleinere der beiden Zahlen. _(Zahlenstrahl −10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **−6**. Typische Fehler: 6 (negativ-groesser), −4 (richtung-vertauscht).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben den Abstand 6 zur Null. / Markiere die kleinere der beiden Zahlen. _(Zahlenstrahl −10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **−6**. Typische Fehler: 6 (negativ-groesser), −4 (strahl-gespiegelt).
 - `06` AFB III · _Argumentieren_ · Elif sagt: Die Gegenzahl einer Zahl ist immer negativ. / Stimmt das?
   - ☑ Falsch. / Die Gegenzahl von −5 ist 5.
   - ☐ Falsch. / Die Gegenzahl von 5 ist 5.
@@ -2736,6 +2736,19 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `tafel-verrutscht` | Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein. | Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links. | Du trägst jetzt jede Ziffer in die richtige Spalte ein. |
 | `vergleich-erste-ziffer` | Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten. | Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer. | Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen. |
 | `zeichen-verwechselt` | Verwechselt die Zeichen < und >. | Die Spitze des Zeichens zeigt immer zur kleineren Zahl. | Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl. |
+| `reihenfolge-umgekehrt` | Ordnet richtig, aber in umgekehrter Reihenfolge. | Lies den Auftrag noch einmal: Womit sollst du beginnen? | Du schaust jetzt genau, womit du beim Ordnen beginnen sollst. |
+| `strahl-gespiegelt` | Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich. | Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst. | Du zählst am Zahlenstrahl jetzt in die richtige Richtung. |
+| `strahl-zu-grob` | Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg. | Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu. | Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit. |
+| `kuerzen-subtrahiert` | Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen. | Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert. | Du weißt jetzt: Kürzen heißt teilen, nicht abziehen. |
+| `ergaenzen-addiert` | Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt. | Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren. | Du rechnest jetzt aus, was bis zum Ziel noch fehlt. |
+| `strahl-ganzes` | Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1. | Der Nenner zählt nur die Abstände von 0 bis 1. | Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1. |
+| `ganzes-mehrere-figuren` | Nimmt mehrere Figuren zusammen als ein Ganzes. | Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner. | Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen. |
+| `koerper-unvollstaendig-gezaehlt` | Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt. | Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab. | Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach. |
+| `mantel-streifen` | Bestimmt die Länge der Mantelfläche im Netz falsch. | Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen. | Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen. |
+| `netz-kleben` | Zählt beim Zusammenkleben eines Netzes die falschen Kanten. | Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen. | Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind. |
+| `netz-ansicht-verwechselt` | Verwechselt das Netz eines Körpers mit seiner Ansicht. | Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite. | Du unterscheidest jetzt Netz und Ansicht eines Körpers. |
+| `zahlbereich-falsch` | Ordnet eine Zahl einem falschen Zahlbereich zu. | Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein. | Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind. |
+| `unterschied-addiert` | Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist. | Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert. | Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert. |
 | `nachbar-verwechselt` | Verwechselt Vorgänger und Nachfolger. | Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach. | Du hältst Vorgänger und Nachfolger jetzt auseinander. |
 | `strahl-einerschritte` | Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen. | Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt? | Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist. |
 | `million-milliarde` | Verwechselt Tausender, Millionen und Milliarden. | Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden. | Du hältst Tausender, Millionen und Milliarden jetzt auseinander. |
@@ -2866,7 +2879,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `ortslinie-verwechselt` | Verwechselt die Ortslinien: Kreis (fester Abstand zu einem Punkt), Mittelsenkrechte (gleicher Abstand zu zwei Punkten), Winkelhalbierende (gleicher Abstand zu zwei Geraden), Parallele (fester Abstand zu einer Geraden). | Lies die Bedingung genau: Abstand zu einem Punkt, zu zwei Punkten oder zu Geraden? | Du weißt jetzt, welche Ortslinie zu welcher Bedingung gehört. |
 | `tangente-nicht-senkrecht` | Zeichnet die Tangente nicht senkrecht zum Radius im Berührpunkt. | Die Tangente berührt den Kreis in einem Punkt. Dort steht sie senkrecht auf dem Radius. | Du weißt jetzt: Die Tangente steht senkrecht auf dem Radius. |
 | `umkreis-inkreis-verwechselt` | Verwechselt Umkreis (Schnittpunkt der Mittelsenkrechten, durch die Ecken) und Inkreis (Schnittpunkt der Winkelhalbierenden, berührt die Seiten). | Der Umkreis geht durch alle Ecken. Der Inkreis berührt alle Seiten von innen. | Du hältst Umkreis und Inkreis jetzt auseinander. |
-| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie? | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
+| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir. | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
 | `konstruktion-reihenfolge` | Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt. | Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst? | Du ordnest die Schritte einer Konstruktion jetzt richtig. |
 | `ecken-kanten-verwechselt` | Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken). | Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil. | Du hältst Ecken, Kanten und Flächen jetzt auseinander. |
 | `verdeckt-nicht-gezaehlt` | Zählt nur die Ecken, Kanten oder Flächen, die im Bild sichtbar sind. | Denk an die Rückseite: Was ist hinten verdeckt? Die gestrichelten Linien helfen dir. | Du zählst jetzt auch, was hinten verdeckt ist. |
@@ -2878,7 +2891,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `wuerfel-verdeckt` | Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter. | Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter. | Du zählst jetzt auch verdeckte Würfel mit. |
 | `netz-ecken-gezaehlt` | Zählt Ecken oder Kanten im Netz statt am gefalteten Körper. | Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers. | Du zählst Ecken jetzt am fertigen Körper und nicht im Netz. |
 | `prisma-pyramide` | Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze). | Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma. | Du hältst Prisma und Pyramide jetzt auseinander. |
-| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma. | Du benennst den Körper jetzt nach seiner Grundfläche. |
+| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken. | Du benennst den Körper jetzt nach seiner Grundfläche. |
 | `gegenueber-benachbart` | Hält im Würfelnetz benachbarte Flächen für gegenüberliegend. | Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt. | Du findest gegenüberliegende Flächen jetzt sicher. |
 | `runde-koerper-zaehlen` | Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante. | Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen. | Du zählst Flächen und Kanten an runden Körpern jetzt richtig. |
 | `koerper-verwechselt` | Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma). | Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt? | Du erkennst die Körper jetzt an ihren Flächen. |

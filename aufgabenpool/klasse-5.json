@@ -338,6 +338,71 @@
    "hinweis": "Die Spitze des Zeichens zeigt immer zur kleineren Zahl.",
    "kind": "Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl."
   },
+  "reihenfolge-umgekehrt": {
+   "beschreibung": "Ordnet richtig, aber in umgekehrter Reihenfolge.",
+   "hinweis": "Lies den Auftrag noch einmal: Womit sollst du beginnen?",
+   "kind": "Du schaust jetzt genau, womit du beim Ordnen beginnen sollst."
+  },
+  "strahl-gespiegelt": {
+   "beschreibung": "Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich.",
+   "hinweis": "Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst.",
+   "kind": "Du zählst am Zahlenstrahl jetzt in die richtige Richtung."
+  },
+  "strahl-zu-grob": {
+   "beschreibung": "Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg.",
+   "hinweis": "Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu.",
+   "kind": "Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit."
+  },
+  "kuerzen-subtrahiert": {
+   "beschreibung": "Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen.",
+   "hinweis": "Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert.",
+   "kind": "Du weißt jetzt: Kürzen heißt teilen, nicht abziehen."
+  },
+  "ergaenzen-addiert": {
+   "beschreibung": "Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt.",
+   "hinweis": "Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren.",
+   "kind": "Du rechnest jetzt aus, was bis zum Ziel noch fehlt."
+  },
+  "strahl-ganzes": {
+   "beschreibung": "Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1.",
+   "hinweis": "Der Nenner zählt nur die Abstände von 0 bis 1.",
+   "kind": "Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1."
+  },
+  "ganzes-mehrere-figuren": {
+   "beschreibung": "Nimmt mehrere Figuren zusammen als ein Ganzes.",
+   "hinweis": "Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner.",
+   "kind": "Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen."
+  },
+  "koerper-unvollstaendig-gezaehlt": {
+   "beschreibung": "Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt.",
+   "hinweis": "Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab.",
+   "kind": "Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach."
+  },
+  "mantel-streifen": {
+   "beschreibung": "Bestimmt die Länge der Mantelfläche im Netz falsch.",
+   "hinweis": "Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen.",
+   "kind": "Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen."
+  },
+  "netz-kleben": {
+   "beschreibung": "Zählt beim Zusammenkleben eines Netzes die falschen Kanten.",
+   "hinweis": "Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen.",
+   "kind": "Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind."
+  },
+  "netz-ansicht-verwechselt": {
+   "beschreibung": "Verwechselt das Netz eines Körpers mit seiner Ansicht.",
+   "hinweis": "Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite.",
+   "kind": "Du unterscheidest jetzt Netz und Ansicht eines Körpers."
+  },
+  "zahlbereich-falsch": {
+   "beschreibung": "Ordnet eine Zahl einem falschen Zahlbereich zu.",
+   "hinweis": "Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein.",
+   "kind": "Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind."
+  },
+  "unterschied-addiert": {
+   "beschreibung": "Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist.",
+   "hinweis": "Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert.",
+   "kind": "Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert."
+  },
   "nachbar-verwechselt": {
    "beschreibung": "Verwechselt Vorgänger und Nachfolger.",
    "hinweis": "Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach.",
@@ -990,7 +1055,7 @@
   },
   "innen-aussen-verwechselt": {
    "beschreibung": "Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich).",
-   "hinweis": "Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie?",
+   "hinweis": "Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir.",
    "kind": "Du achtest jetzt darauf: Liegt der Punkt innen oder außen?"
   },
   "konstruktion-reihenfolge": {
@@ -1050,7 +1115,7 @@
   },
   "name-nach-seitenflaeche": {
    "beschreibung": "Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche.",
-   "hinweis": "Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma.",
+   "hinweis": "Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken.",
    "kind": "Du benennst den Körper jetzt nach seiner Grundfläche."
   },
   "gegenueber-benachbart": {
@@ -6008,7 +6073,7 @@
      "typischeFehler": [
       {
        "wert": 19,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -6367,7 +6432,7 @@
      "typischeFehler": [
       {
        "wert": 29,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10007,7 +10072,7 @@
      "typischeFehler": [
       {
        "wert": 65,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10349,7 +10414,7 @@
      "typischeFehler": [
       {
        "wert": 340,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -10432,7 +10497,7 @@
      "typischeFehler": [
       {
        "wert": 280,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -16773,7 +16838,7 @@
    "typischeFehler": [
     {
      "wert": 5,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -16954,7 +17019,7 @@
    "typischeFehler": [
     {
      "wert": 22,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17068,7 +17133,7 @@
    "typischeFehler": [
     {
      "wert": 26,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     },
     {
      "wert": 1,
@@ -17130,7 +17195,7 @@
    "typischeFehler": [
     {
      "wert": 36,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17324,7 +17389,7 @@
    "typischeFehler": [
     {
      "wert": 52,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17404,7 +17469,7 @@
      "typischeFehler": [
       {
        "wert": 14,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     }
@@ -17566,7 +17631,7 @@
    "typischeFehler": [
     {
      "wert": 270,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17715,7 +17780,7 @@
      "typischeFehler": [
       {
        "wert": 27,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     },
@@ -17814,7 +17879,7 @@
    "typischeFehler": [
     {
      "wert": 150,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -17977,7 +18042,7 @@
    "typischeFehler": [
     {
      "wert": 2600,
-     "fehlvorstellung": "sach-falsche-rechnung"
+     "fehlvorstellung": "unterschied-addiert"
     }
    ],
    "hilfen": {
@@ -18055,7 +18120,7 @@
      "typischeFehler": [
       {
        "wert": 14,
-       "fehlvorstellung": "sach-falsche-rechnung"
+       "fehlvorstellung": "unterschied-addiert"
       }
      ]
     },
@@ -23197,7 +23262,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "links": "kleinste",
    "rechts": "größte"
   },
@@ -23293,7 +23358,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "stellenwert",
    "links": "kleinste",
    "rechts": "größte"
@@ -23433,7 +23498,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "stellenwert",
    "links": "größte",
    "rechts": "kleinste"
@@ -23597,7 +23662,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -23680,7 +23745,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -23914,7 +23979,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "stellenwert",
    "links": "größte",
    "rechts": "kleinste"
@@ -27129,7 +27194,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "links": "kleinste",
    "rechts": "größte"
   },
@@ -27307,7 +27372,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -27427,7 +27492,7 @@
      "system": "wort"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "million-milliarde",
    "links": "kleinste",
    "rechts": "größte"
@@ -27765,7 +27830,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "vergleich-erste-ziffer",
    "links": "kleinste",
    "rechts": "größte"
@@ -28011,7 +28076,7 @@
      "system": "wort"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "million-milliarde",
    "links": "größte",
    "rechts": "kleinste"
@@ -34691,7 +34756,7 @@
      "system": "dual"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dual-zehnerwerte",
    "links": "kleinste",
    "rechts": "größte"
@@ -36810,7 +36875,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "roemisch-nur-addiert"
   },
   {
@@ -37148,7 +37213,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "roemisch-nur-addiert"
   },
   {
@@ -164377,7 +164442,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.1-B3-F-05",
@@ -164583,7 +164648,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.1-B3-G-03",
@@ -165062,7 +165127,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.1-B3-E-01",
@@ -166226,7 +166291,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.2-T1-E-06",
@@ -168567,7 +168632,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.3-K2-F-05",
@@ -168803,7 +168868,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.3-K2-G-05",
@@ -169023,7 +169088,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-wie-natuerlich"
   },
   {
@@ -169184,7 +169249,7 @@
      "richtung": "ab"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt",
+   "umgekehrt": "reihenfolge-umgekehrt",
    "sonst": "dezimal-wie-natuerlich"
   },
   {
@@ -170190,7 +170255,7 @@
      "richtung": "auf"
     }
    ],
-   "umgekehrt": "zeichen-verwechselt"
+   "umgekehrt": "reihenfolge-umgekehrt"
   },
   {
    "id": "5.9.3-K3-E-01",

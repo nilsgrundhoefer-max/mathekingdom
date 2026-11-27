@@ -56,7 +56,7 @@ export function roemischeZahlzeichen() {
         h3('Steht I links vor V oder X? Dann wird 1 abgezogen.', 'IV ist 5 − 1 = 4.', n === 4 ? 'Rechne 5 − 1.' : 'Rechne 10 − 1.'), { bild: TAFEL_G() }); },
     () => { const l = mische([4, 6, 9, 11, 14, 16, 19, 21]).slice(0, 4).sort((a, b) => a - b);
       return ordnen(Z('Ordne die Zahlen.', 'Beginne mit der kleinsten Zahl.'), l.map(r),
-        h3('Rechne zuerst jede Karte in eine Zahl um.', 'IV ist 4. VI ist 6. Also kommt IV vor VI.', `${r(l[0])} ist ${l[0]}. Das ist die kleinste Zahl.`), { bild: TAFEL_G(), nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'roemisch-nur-addiert' }); },
+        h3('Rechne zuerst jede Karte in eine Zahl um.', 'IV ist 4. VI ist 6. Also kommt IV vor VI.', `${r(l[0])} ist ${l[0]}. Das ist die kleinste Zahl.`), { bild: TAFEL_G(), nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'roemisch-nur-addiert' }); },
     () => { const n = wahl([24, 29, 34, 39, 64, 69, 74, 79]);
       return auswahl(`Welche Zahl ist ${r(n)}?`, [opt(String(n), true), opt(String(roemWert(r(n))), false, 'roemisch-nur-addiert'), opt(String(n + 1), false)],
         h3('Schau auf das Ende. Dort steht ein kleineres Zeichen links.', 'XIV ist 10 + 4 = 14.', `Das Ende ${r(n % 10)} ist ${n % 10}.`), { nachweis: [R(n)] }); },
@@ -79,7 +79,7 @@ export function roemischeZahlzeichen() {
       h2('Das linke Zeichen ist kleiner und wird vom rechten abgezogen.', 'XL ist 50 − 10, CM ist 1000 − 100.'), { nachweis: [40, 90, 400, 900].map((n) => R(n)) }),
     () => { const l = mische([[49, 51], [90, 110], [400, 600], [99, 101], [44, 46]]).slice(0, 3).flat().slice(0, 5).sort((a, b) => b - a);
       return ordnen('Ordne die Zahlen. Beginne mit der größten Zahl.', l.map(r),
-        h2('Rechne jede Karte in eine Zahl um, bevor du ordnest.', `Die größte Zahl ist ${r(l[0])}, das ist ${l[0]}.`), { nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'roemisch-nur-addiert' }); },
+        h2('Rechne jede Karte in eine Zahl um, bevor du ordnest.', `Die größte Zahl ist ${r(l[0])}, das ist ${l[0]}.`), { nachweis: [{ art: 'ordnung', system: 'roemisch', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'roemisch-nur-addiert' }); },
     () => { const [n, kurz, viele, halb] = wahl([[99, 'IC', 'LXXXXVIIII', 'XCVIIII'], [49, 'IL', 'XXXXVIIII', 'XLVIIII'], [499, 'ID', 'CCCCXCIX', 'CDXCVIIII'], [999, 'IM', 'DCCCCXCIX', 'CMXCVIIII']]);
       return auswahl(`Nur eine dieser Schreibweisen für die Zahl ${n} ist richtig. Welche?`, [opt(r(n), true), opt(kurz, false, 'roemisch-falsch-abgezogen'), opt(viele, false, 'roemisch-vier-gleiche'), opt(halb, false, 'roemisch-vier-gleiche')],
         h2('Abgezogen wird immer nur das nächstkleinere Zeichen der Reihe I, X, C. Kein Zeichen steht viermal hintereinander.', `Zerlege ${n} in Stellen und schreibe jede Stelle für sich.`), { nachweis: [{ art: 'roemischGueltig' }, R(n, NUR)] }); },

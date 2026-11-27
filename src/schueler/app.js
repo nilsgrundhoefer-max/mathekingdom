@@ -1252,7 +1252,7 @@ function liesEingabe(auf, formular) {
 function pruefe(formular, sicher = null) {
   const a = z.ansicht, auf = a.aufgabe;
   const { eingabe, leer } = liesEingabe(auf, formular);
-  if (leer) { a.hinweis = 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
+  if (leer) { a.hinweis = ['gitter', 'zeichnen', 'winkel', 'faerben', 'zahlenstrahl'].includes(auf.format) ? 'Da fehlt noch etwas. Tippe oder zeichne erst deine Lösung ins Bild, bevor du prüfst.' : auf.format === 'auswahl' ? 'Da fehlt noch etwas. Kreuze erst eine Antwort an, bevor du prüfst.' : 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
   if (a.versuch === 0 && sicher != null) a.sicher = sicher;
   const ergebnis = L.pruefeAntwort(auf, eingabe);
   // Klasse 6 (ADR 0037): Der Wert stimmt, aber der Bruch ist noch nicht gekürzt oder keine gemischte Zahl. Das ist „fast richtig“ und kostet keinen Versuch.
@@ -1273,11 +1273,12 @@ function pruefe(formular, sicher = null) {
     return male();
   }
   if (!ergebnis.richtig && a.versuch < 2) {
-    const gezielt = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis;
+    // Version 0.65: Eine Aufgabe kann zu einer Fehlvorstellung einen eigenen Hinweis tragen (`hinweise`), wenn der allgemeine nicht passt.
+    const gezielt = ergebnis.fehlvorstellung && (auf.hinweise?.[ergebnis.fehlvorstellung] ?? z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.hinweis);
     // Nach dem ersten Fehlversuch geht der Tipp von selbst auf. Er kostet nichts (ADR 0010). Auf E bleibt er zu (ADR 0015).
     const tippNeu = a.hilfen === 0 && L.tippVonSelbst(auf);
     if (tippNeu) a.hilfen = 1;
-    a.hinweis = `Das stimmt noch nicht. ${gezielt ?? 'Rechne noch einmal in Ruhe nach.'}${tippNeu ? ' Unten liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
+    a.hinweis = `Das stimmt noch nicht. ${gezielt || L.allgemeinerHinweis(auf)}${tippNeu ? ' Unten liegt jetzt ein Tipp für dich.' : ''} Du hast noch einen Versuch, und er kostet dich nichts.`;
     // Sicher, aber falsch: Hier lohnt genaues Hinschauen besonders (Hyperkorrektur, ADR 0014).
     if (a.sicher === true) {
       const typisch = ergebnis.fehlvorstellung && z.pool.fehlvorstellungen[ergebnis.fehlvorstellung]?.beschreibung;

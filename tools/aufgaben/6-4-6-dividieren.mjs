@@ -76,7 +76,7 @@ export function dividieren6() {
     () => { const liste = mische([[3, 8], [2, 5], [7, 16], [9, 20], [11, 25]]).slice(0, 4), karten = liste.map(([z, n], i) => (i % 2 ? ab(z, n) : br(z, n))), werte = liste.map(([z, n]) => z / n);
       if (new Set(werte).size !== 4) return null;
       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), karten.map((t, i) => [t, werte[i]]).sort((x, y) => x[1] - y[1]).map(([t]) => t), h1('Wandle die Brüche durch Dividieren in Dezimalzahlen um.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-mehr-ziffern' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-mehr-ziffern' }); },
     () => { const [geld, n] = wahl([['4,50', 3], ['7,50', 6], ['9,60', 8], ['5,40', 4], ['8,40', 5]]), cent = Number(geld.replace(',', '')), l = T(cent / n, 2, 2);
       return dezimal(Z(`${n} Kinder teilen ${geld} € gerecht.`, 'Gib an, wie viel Euro jedes Kind bekommt.'), l, dfe(l, [[T(cent / n, 1), 'dezimal-stelle']]), h1('Dividiere wie bei natürlichen Zahlen. Setze das Komma, wenn du das Komma im Dividenden überschreitest.'),
         { einheit: '€', nachweis: [`${geld} € : ${n} = ${l} €`] }); },
@@ -141,7 +141,7 @@ export function dividieren6() {
       return auswahl(Z('Kreuze das passende Zeichen an.', `${a} ▢ ${c}`), ZEICHEN(Number(a.replace(/̅/g, '').replace(',', '.') + a.replace(/̅/g, '').slice(-1).repeat(4)) - Number(c.replace(',', '.')), 'periode-abgebrochen'),
         h1('Schreibe die periodische Zahl mit vielen Stellen aus. Vergleiche dann Stelle für Stelle.'), { nachweis: [VGL(a, c)] }); },
     () => {       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), ['0,33', '0,3̅', '0,34', '0,3̅4̅'], h1('Schreibe jede Zahl mit sechs Stellen nach dem Komma aus. Vergleiche dann.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'periode-abgebrochen'}); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'periode-abgebrochen'}); },
     () => { const z = wahl([2, 4, 5, 7, 8]), p = teile(z, 9);
       return bruch(Z('Es gilt: 0,1̅ = 1⁄9.', `Gib ${p.text} als vollständig gekürzten Bruch an.`), br(z, 9), [[br(z, 10), 'periode-abgebrochen']], h1(`${p.text} ist ${z}-mal so groß wie 0,1̅.`), { gekuerzt: true, nachweis: [`${p.text} = ${z} · 0,1̅ = ${br(z, 9)}`] }); },
     () => { const [pizza, n] = wahl([[3, 11], [5, 11], [2, 11], [1, 11]]), p = teile(pizza, n);

@@ -38,7 +38,7 @@ export function vergleichen6() {
     () => { const z = zz(2, 7), zahlen = mische([T(z, 1), T(z * 10 + zz(1, 9), 2), T((z + 1) * 10 + zz(1, 9), 2), T(z * 10 - zz(1, 9), 2)]);
       if (!verschieden(zahlen)) return null;
       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), sortiere(zahlen), tF,
-        { bild: tafelVon(['E', 'z', 'h'], zahlen), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-mehr-ziffern' }); },
+        { bild: tafelVon(['E', 'z', 'h'], zahlen), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-mehr-ziffern' }); },
     () => { const z = zz(3, 9), h = zz(11, 99), a = T(z, 1), c = T(h, 2), kn = kind();
       if (Math.floor(h / 10) >= z || h % 10 === 0) return null;
       return auswahl(Z(`${kn} sagt: „${a} < ${c}“`, `${kn} meint: ${h} ist mehr als ${z}.`, 'Beurteile die Aussage.'), [opt(`Falsch. Es gilt ${a} > ${c}.`, true), opt('Stimmt.', false, 'dezimal-mehr-ziffern'), opt(`Stimmt, denn ${h} > ${z}.`, false, 'dezimal-wie-natuerlich')], tF,
@@ -55,7 +55,7 @@ export function vergleichen6() {
     () => { const g = zz(1, 8), z = zz(1, 8), zahlen = mische([T(g * 10 + z, 1), T(g * 1000 + z * 100 + zz(1, 9) * 10 + zz(1, 9), 3), T(g * 100 + z * 10 + zz(1, 9), 2), T(g * 1000 + (z - 1) * 100 + zz(1, 9) * 10 + zz(1, 9), 3)]);
       if (!verschieden(zahlen)) return null;
       return ordnen(Z('Ordne die Zahlen der Größe nach.', 'Beginne mit der kleinsten Zahl.'), sortiere(zahlen), tG,
-        { bild: tafelVon(['E', 'z', 'h', 't'], zahlen), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-mehr-ziffern' }); },
+        { bild: tafelVon(['E', 'z', 'h', 't'], zahlen), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-mehr-ziffern' }); },
     () => { const z = zz(2, 7), von = T(z, 1), bis = T(z + 1, 1), richtig = T(z * 100 + zz(1, 9) * 10 + zz(1, 9), 3), unter = T(z * 10 - zz(1, 9), 2), ueber = T((z + 1) * 100 + zz(1, 9), 3);
       return auswahl(Z(`Kreuze die Zahl zwischen ${von} und ${bis} an.`), [opt(richtig, true), opt(unter, false, 'dezimal-mehr-ziffern'), opt(ueber, false, 'dezimal-mehr-ziffern')], tG,
         { nachweis: [{ art: 'zwischen', von, bis }] }); },
@@ -66,7 +66,7 @@ export function vergleichen6() {
     () => { const g = zz(1, 4), zahlen = mische([T(g * 1000 + zz(1, 9) * 100 + zz(1, 9), 3), T(g * 10 + zz(1, 9), 1), T(g * 100 + zz(1, 9) * 10 + zz(1, 9), 2), T(g * 1000 + zz(1, 9) * 10 + zz(1, 9), 3)]);
       if (!verschieden(zahlen)) return null;
       return ordnen(Z('Vier Pakete werden gewogen.', 'Ordne die Gewichte der Größe nach.', 'Beginne mit dem schwersten Paket.'), sortiere(zahlen).reverse().map((t) => `${t} kg`), tG,
-        { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-mehr-ziffern' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-mehr-ziffern' }); },
     () => { const z = zz(5, 9), a = T(z, 1), c = T((z - 1) * 10 + zz(5, 9), 2), kn = kind();
       return auswahl(Z(`${kn} sagt: „Mehr Stellen nach dem Komma machen eine Zahl größer.“`, `${kn} meint deshalb: ${c} > ${a}`, 'Beurteile die Aussage.'), [opt(`Falsch. Es gilt ${a} > ${c}.`, true), opt('Stimmt.', false, 'dezimal-mehr-ziffern'), opt(`Stimmt, denn ${c} hat mehr Stellen.`, false, 'dezimal-mehr-ziffern')], tG,
         { nachweis: [URTEIL(false, `${c} > ${a}`)] }); },
@@ -81,7 +81,7 @@ export function vergleichen6() {
       const werte = [km * 1000 + m, km * 1000 + mix, km * 1000 + m + 5, km * 1000 + x * 10];
       if (new Set(werte).size !== 4) return null;
       const sortiert = karten.map((t, i) => [t, werte[i]]).sort((x, y) => x[1] - y[1]).map(([t]) => t);
-      return ordnen(Z('Ordne die Längen der Größe nach.', 'Beginne mit der kürzesten.'), sortiert, tM, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'null-platzhalter' }); },
+      return ordnen(Z('Ordne die Längen der Größe nach.', 'Beginne mit der kürzesten.'), sortiert, tM, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'null-platzhalter' }); },
     () => { const z = zz(2, 7), grenze = T(z * 10 + 5, 2), liste = [T(z * 100 + 6 * 10 + zz(1, 9), 3), T(z * 10 + 4, 2) + '9', T(z * 1000 + 5 * 100 + 1, 4), T(z + 1, 1), `${grenze}0`];
       const texte = mische(liste).slice(0, 5);
       if (!verschieden(texte) || texte.every((t) => d(t, grenze) > 0) || texte.every((t) => d(t, grenze) < 0)) return null;
@@ -93,7 +93,7 @@ export function vergleichen6() {
       const weiten = mische([T(g * 100 + zz(1, 9) * 10 + zz(1, 9), 2), T(g * 10 + zz(1, 9), 1), T(g * 100 + zz(1, 9), 2), T(g * 100 + zz(1, 9) * 10 + zz(1, 9), 2)]);
       if (!verschieden(weiten)) return null;
       return ordnen(Z(`Vier Kinder messen beim ${name} ihre Weiten.`, 'Ordne die Weiten. Beginne mit der größten Weite.'), sortiere(weiten).reverse().map((t) => `${t} ${einheit}`), tM,
-        { daten: { kopf: ['Kind', 'Weite'], zeilen: namen.map((n, i) => [n, `${weiten[i]} ${einheit}`]) }, nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dezimal-mehr-ziffern' }); },
+        { daten: { kopf: ['Kind', 'Weite'], zeilen: namen.map((n, i) => [n, `${weiten[i]} ${einheit}`]) }, nachweis: [{ art: 'ordnung', richtung: 'ab' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dezimal-mehr-ziffern' }); },
     () => { const g = zz(2, 9), z = zz(1, 9), a = `${g},0${z}00`, c = `${g},0${z}`, kn = kind();
       return auswahl(Z(`${kn} sagt: „${a} > ${c}“`, `${kn} meint: ${a} hat mehr Stellen.`, 'Beurteile die Aussage.'), [opt(`Falsch. Es gilt ${a} = ${c}.`, true), opt('Stimmt.', false, 'dezimal-mehr-ziffern'), opt(`Falsch. Es gilt ${a} < ${c}.`, false, 'dezimal-endnull'), opt(`Stimmt, denn ${g}0${z}00 > ${g}0${z}.`, false, 'dezimal-wie-natuerlich')], tM,
         { nachweis: [URTEIL(false, `${a} > ${c}`)] }); },
@@ -120,7 +120,7 @@ export function vergleichen6() {
       if (new Set(werte).size !== 4) return null;
       const karten = werte.map((w, i) => (i === 0 ? `${w} g` : i === 1 ? `${g} kg ${w - g * 1000} g` : `${T(w, 3)} kg`));
       const sortiert = karten.map((t, i) => [t, werte[i]]).sort((x, y) => x[1] - y[1]).map(([t]) => t);
-      return ordnen(Z('Ordne die Gewichte der Größe nach.', 'Beginne mit dem leichtesten.'), sortiert, h1('Rechne alle Gewichte in Gramm um. 1 kg = 1000 g.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt', sonst: 'null-platzhalter' }); },
+      return ordnen(Z('Ordne die Gewichte der Größe nach.', 'Beginne mit dem leichtesten.'), sortiert, h1('Rechne alle Gewichte in Gramm um. 1 kg = 1000 g.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'null-platzhalter' }); },
     () => { const g = zz(1, 9), z = zz(1, 8), a = T(g * 100 + z * 10 + zz(1, 8), 2), [w] = alsPaar(a), c = T(w + 1, 2), mitte = T(w * 10 + 5, 3);
       return dezimal(Z(`Gib die Zahl an, die genau in der Mitte zwischen ${a} und ${c} liegt.`), mitte, dfe(mitte, [[T(w * 10 + 1, 3), 'dezimal-mehr-ziffern'], [T(w, 2), 'dezimal-mehr-ziffern'], [T(w * 10 + 15, 3), 'dezimal-stelle']]),
         h1(`Hänge an beide Zahlen eine Endnull an. Dann liegen zwischen ihnen 10 Tausendstel.`), { nachweis: [`(${a} + ${c}) : 2 = ${mitte}`] }); },
@@ -141,11 +141,11 @@ export function vergleichen6() {
         h3('Hier geht der Strahl von einem Zehntel zum nächsten.', 'Von 0,3 bis 0,4 sind es 10 Schritte. Ein Schritt ist 0,01.', 'Zähle die Hundertstel vom linken Strich bis zum Pfeil.'), { nachweis: [{ art: 'strahl', zahl: T(p, 2) }] }); },
     () => { const z = zz(1, 8), p = z * 10 + zz(1, 9);
       if (p % 5 === 0) return null;
-      return strahl('markieren', Z('Der Zahlenstrahl zeigt nur ein Stück.', `Markiere ${T(p, 2)}.`), strahlSpec(z * 10, z * 10 + 10, 100, 5), p, fehlerliste(p, [[z * 10 + (10 - (p % 10)), 'zeichen-verwechselt']]),
+      return strahl('markieren', Z('Der Zahlenstrahl zeigt nur ein Stück.', `Markiere ${T(p, 2)}.`), strahlSpec(z * 10, z * 10 + 10, 100, 5), p, fehlerliste(p, [[z * 10 + (10 - (p % 10)), 'strahl-gespiegelt']]),
         h3('Hier geht der Strahl von einem Zehntel zum nächsten.', '0,37 liegt 7 Schritte rechts von 0,3.', 'Suche das passende Zehntel links. Zähle dann die Hundertstel ab.'), { nachweis: [{ art: 'strahl', zahl: T(p, 2) }] }); },
     () => { const z = zz(1, 8), h = zz(1, 9), p = z * 10 + h;
       if (h === 5 || h === z) return null;
-      return auswahl(Z('Der Pfeil zeigt auf eine Zahl.', 'Kreuze die passende Zahl an.'), [opt(T(p, 2), true), opt(T(h * 10 + z, 2), false, 'stellenwert'), opt(T(z * 10 + 10 - h, 2), false, 'zeichen-verwechselt')],
+      return auswahl(Z('Der Pfeil zeigt auf eine Zahl.', 'Kreuze die passende Zahl an.'), [opt(T(p, 2), true), opt(T(h * 10 + z, 2), false, 'stellenwert'), opt(T(z * 10 + 10 - h, 2), false, 'strahl-gespiegelt')],
         h3('Lies zuerst das Zehntel links vom Pfeil ab.', 'Steht links 0,3 und sind es 7 Schritte, zeigt der Pfeil auf 0,37.', 'Zähle die kleinen Schritte vom linken Strich bis zum Pfeil.'), { bild: B.strahl(strahlSpec(z * 10, z * 10 + 10, 100, 5, { pfeil: p })), nachweis: [{ art: 'strahl', zahl: T(p, 2) }, { art: 'wert', wert: T(p, 2) }] }); },
     () => { const p = wahl([5, 15, 25, 35, 45, 55, 65, 85, 95]);
       return strahl('ablesen', Z('Lies die Zahl am Pfeil ab.', 'Achte auf die Schrittweite.'), strahlSpec(0, 100, 100, 50, { schritt: 5, pfeil: p }), T(p, 2), dfe(T(p, 2), [[T(p / 5, 2), 'strahl-einerschritte'], [T(p / 5, 1), 'strahl-einerschritte']]),
@@ -158,17 +158,17 @@ export function vergleichen6() {
       return strahl('ablesen', Z('Lies die Zahl am Pfeil ab.'), strahlSpec(h * 10, h * 10 + 10, 1000, 5, { pfeil: p }), T(p, 3), dfe(T(p, 3), [[T(h * 10 + (p % 10) * 100, 3), 'stellenwert'], [T(p, 2), 'dezimal-stelle']]), sG, { nachweis: [{ art: 'strahl', zahl: T(p, 3) }] }); },
     () => { const h = zz(101, 899), p = h * 10 + zz(1, 9);
       if (p % 5 === 0 || h % 10 === 0) return null;
-      return strahl('markieren', Z(`Markiere ${T(p, 3)} am Zahlenstrahl.`), strahlSpec(h * 10, h * 10 + 10, 1000, 5), p, fehlerliste(p, [[h * 10 + 10 - (p % 10), 'zeichen-verwechselt']]), sG, { nachweis: [{ art: 'strahl', zahl: T(p, 3) }] }); },
+      return strahl('markieren', Z(`Markiere ${T(p, 3)} am Zahlenstrahl.`), strahlSpec(h * 10, h * 10 + 10, 1000, 5), p, fehlerliste(p, [[h * 10 + 10 - (p % 10), 'strahl-gespiegelt']]), sG, { nachweis: [{ art: 'strahl', zahl: T(p, 3) }] }); },
     () => { const z = zz(1, 8), p = z * 100 + wahl([2, 4, 6, 8, 12, 14, 16, 18]);
       return strahl('ablesen', Z('Lies die Zahl am Pfeil ab.', 'Achte auf die Schrittweite.'), strahlSpec(z * 100, z * 100 + 20, 1000, 10, { schritt: 2, pfeil: p }), T(p, 3), dfe(T(p, 3), [[T(z * 100 + (p - z * 100) / 2, 3), 'strahl-einerschritte'], [T(p, 2), 'dezimal-stelle']]),
         h3('Von einem beschrifteten Strich zum nächsten sind es 5 Schritte.', 'Von 0,1 bis 0,11 sind es 10 Tausendstel. Ein Schritt ist dann 0,002.', 'Rechne zuerst aus, wie groß ein Schritt ist.'), { nachweis: [{ art: 'strahl', zahl: T(p, 3) }] }); },
     () => { const g = zz(1, 8), p = g * 100 + zz(1, 19), von = g * 100;
       if (p % 5 === 0) return null;
-      return strahl('markieren', Z(`Markiere ${T(p, 2)} am Zahlenstrahl.`), strahlSpec(von, von + 20, 100, 10), p, fehlerliste(p, [[von + 20 - (p - von), 'zeichen-verwechselt']]),
+      return strahl('markieren', Z(`Markiere ${T(p, 2)} am Zahlenstrahl.`), strahlSpec(von, von + 20, 100, 10), p, fehlerliste(p, [[von + 20 - (p - von), 'strahl-gespiegelt']]),
         h3('Zwischen zwei beschrifteten Strichen liegen 10 Hundertstel.', `Von ${T(von, 2)} bis ${T(von + 10, 2)} sind es 10 Schritte.`, 'Suche den passenden beschrifteten Strich. Zähle dann ab.'), { nachweis: [{ art: 'strahl', zahl: T(p, 2) }] }); },
     () => { const z = zz(11, 89), t = zz(1, 9), p = z * 10 + t;
       if (z % 10 === 0 || t === 5) return null;
-      return auswahl(Z('Der Pfeil zeigt auf eine Zahl.', 'Kreuze die passende Zahl an.'), [opt(T(p, 3), true), opt(T(Math.floor(z / 10) * 100 + t, 3), false, 'null-platzhalter'), opt(T(z * 10 + 10 - t, 3), false, 'zeichen-verwechselt')],
+      return auswahl(Z('Der Pfeil zeigt auf eine Zahl.', 'Kreuze die passende Zahl an.'), [opt(T(p, 3), true), opt(T(Math.floor(z / 10) * 100 + t, 3), false, 'null-platzhalter'), opt(T(z * 10 + 10 - t, 3), false, 'strahl-gespiegelt')],
         sG, { bild: B.strahl(strahlSpec(z * 10, z * 10 + 10, 1000, 5, { pfeil: p })), nachweis: [{ art: 'strahl', zahl: T(p, 3) }, { art: 'wert', wert: T(p, 3) }] }); },
     () => { const g = zz(1, 8), h = zz(1, 9), p = g * 10 + h, falsch = `0,${g}0${h}`, kn = kind();
       if (h === 5) return null;
@@ -179,19 +179,19 @@ export function vergleichen6() {
   sechs(V2, 'M', [
     () => { const z = zz(1, 8), h = z * 10 + zz(1, 8), p = h * 10 + zz(1, 9);
       if (p % 5 === 0) return null;
-      return dezimal(Z('Die Lupe vergrößert einen Abschnitt.', 'Lies die Zahl am Pfeil ab.'), T(p, 3), dfe(T(p, 3), [[T(h, 2), 'runden-abschneiden'], [T(z * 100 + (p % 10), 3), 'null-platzhalter']]), sM,
+      return dezimal(Z('Die Lupe vergrößert einen Abschnitt.', 'Lies die Zahl am Pfeil ab.'), T(p, 3), dfe(T(p, 3), [[T(h, 2), 'strahl-zu-grob'], [T(z * 100 + (p % 10), 3), 'null-platzhalter']]), sM,
         { bild: lupe(z * 10, z * 10 + 10, 100, h, { pfeil: p }), nachweis: [{ art: 'strahl', zahl: T(p, 3) }] }); },
     () => { const t = zz(1001, 8999), p = t * 10 + zz(1, 9);
       if (p % 5 === 0 || t % 10 === 0) return null;
-      return strahl('markieren', Z(`Markiere ${T(p, 4)} am Zahlenstrahl.`), strahlSpec(t * 10, t * 10 + 10, 10000, 5), p, fehlerliste(p, [[t * 10 + 10 - (p % 10), 'zeichen-verwechselt']]),
+      return strahl('markieren', Z(`Markiere ${T(p, 4)} am Zahlenstrahl.`), strahlSpec(t * 10, t * 10 + 10, 10000, 5), p, fehlerliste(p, [[t * 10 + 10 - (p % 10), 'strahl-gespiegelt']]),
         h2('Zwischen zwei beschrifteten Strichen liegen hier Zehntausendstel.', 'Lies den linken Strich ab. Die letzte Ziffer sagt, wie viele Schritte du nach rechts gehst.'), { nachweis: [{ art: 'strahl', zahl: T(p, 4) }] }); },
     () => { const g = zz(1, 8), h = g * 10 + zz(1, 8), t = zz(1, 9), p = h * 10 + t;
       if (t === 5) return null;
-      return auswahl(Z('Die Lupe vergrößert einen Abschnitt.', 'Kreuze die Zahl am Pfeil an.'), [opt(T(p, 3), true), opt(T(h, 2), false, 'runden-abschneiden'), opt(T(g * 100 + t, 3), false, 'null-platzhalter'), opt(T(h * 10 + 10 - t, 3), false, 'zeichen-verwechselt')], sM,
+      return auswahl(Z('Die Lupe vergrößert einen Abschnitt.', 'Kreuze die Zahl am Pfeil an.'), [opt(T(p, 3), true), opt(T(h, 2), false, 'strahl-zu-grob'), opt(T(g * 100 + t, 3), false, 'null-platzhalter'), opt(T(h * 10 + 10 - t, 3), false, 'strahl-gespiegelt')], sM,
         { bild: lupe(g * 10, g * 10 + 10, 100, h, { pfeil: p }), nachweis: [{ art: 'strahl', zahl: T(p, 3) }, { art: 'wert', wert: T(p, 3) }] }); },
     () => { const t = zz(1001, 8999), p = t * 10 + zz(1, 9);
       if (p % 5 === 0 || t % 10 === 0) return null;
-      return strahl('ablesen', Z('Lies die Zahl am Pfeil ab.'), strahlSpec(t * 10, t * 10 + 10, 10000, 5, { pfeil: p }), T(p, 4), dfe(T(p, 4), [[T(t, 3), 'runden-abschneiden'], [T(t * 10 + 10 - (p % 10), 4), 'zeichen-verwechselt']]),
+      return strahl('ablesen', Z('Lies die Zahl am Pfeil ab.'), strahlSpec(t * 10, t * 10 + 10, 10000, 5, { pfeil: p }), T(p, 4), dfe(T(p, 4), [[T(t, 3), 'strahl-zu-grob'], [T(t * 10 + 10 - (p % 10), 4), 'strahl-gespiegelt']]),
         h2('Der Strahl geht von einem Tausendstel zum nächsten. Ein Schritt ist ein Zehntausendstel.', 'Lies den linken Strich ab und hänge die Anzahl der Schritte als vierte Stelle an.'), { nachweis: [{ art: 'strahl', zahl: T(p, 4) }] }); },
     () => { const z = zz(11, 89), von = z * 10, p = von + wahl([5, 15]);
       if (z % 10 === 0) return null;
@@ -205,7 +205,7 @@ export function vergleichen6() {
   sechs(V2, 'E', [
     () => { const g = zz(1, 8), h = g * 100 + zz(11, 89), t = h * 10 + zz(1, 9);
       if (t % 5 === 0 || h % 10 === 0) return null;
-      return dezimal(Z('Die Lupe vergrößert einen Abschnitt.', 'Lies die Zahl am Pfeil ab.'), T(t, 4), dfe(T(t, 4), [[T(h, 3), 'runden-abschneiden'], [T(h * 10 + 10 - (t % 10), 4), 'zeichen-verwechselt']]),
+      return dezimal(Z('Die Lupe vergrößert einen Abschnitt.', 'Lies die Zahl am Pfeil ab.'), T(t, 4), dfe(T(t, 4), [[T(h, 3), 'strahl-zu-grob'], [T(h * 10 + 10 - (t % 10), 4), 'strahl-gespiegelt']]),
         h1('Oben zählt der Strahl in Tausendsteln, unten in Zehntausendsteln. Lies erst oben, dann unten ab.'), { bild: lupe(Math.floor(h / 10) * 10, Math.floor(h / 10) * 10 + 10, 1000, h, { pfeil: t }), nachweis: [{ art: 'strahl', zahl: T(t, 4) }] }); },
     () => { const t = zz(1001, 8999), p = t * 10 + wahl([2, 4, 6, 8, 12, 14, 16, 18]);
       if (t % 10 === 0) return null;
@@ -221,7 +221,7 @@ export function vergleichen6() {
         h1('Prüfe zuerst, wie groß ein Schritt ist. Rechne dann nach.'), { bild: B.strahl(strahlSpec(z * 10, z * 10 + 20, 1000, 10, { schritt: 2, pfeil: p })), nachweis: [{ art: 'strahl', zahl: T(p, 3) }, URTEIL(false, `${falsch} = ${T(p, 3)}`)] }); },
     () => { const g = zz(1, 8), h = g * 100 + zz(11, 89), t = h * 10 + wahl([2, 4, 6, 8]);
       if (h % 10 === 0) return null;
-      return dezimal(Z('Die Lupe vergrößert einen Abschnitt.', 'Unten ist nur jeder zweite Schritt gezeichnet.', 'Lies die Zahl am Pfeil ab.'), T(t, 4), dfe(T(t, 4), [[T(h * 10 + (t % 10) / 2, 4), 'strahl-einerschritte'], [T(h, 3), 'runden-abschneiden']]),
+      return dezimal(Z('Die Lupe vergrößert einen Abschnitt.', 'Unten ist nur jeder zweite Schritt gezeichnet.', 'Lies die Zahl am Pfeil ab.'), T(t, 4), dfe(T(t, 4), [[T(h * 10 + (t % 10) / 2, 4), 'strahl-einerschritte'], [T(h, 3), 'strahl-zu-grob']]),
         h1('Unten liegen zwischen zwei Tausendsteln 5 Schritte. Ein Schritt ist 0,0002.'), { bild: lupe(Math.floor(h / 10) * 10, Math.floor(h / 10) * 10 + 10, 1000, h, { schritt: 2, beschriftung: 10, pfeil: t }), nachweis: [{ art: 'strahl', zahl: T(t, 4) }] }); },
     () => { const z = zz(2, 7), a = T(z, 1), c = T(z + 1, 1);
       const liste = [[`${a} < ${T(z * 10 + 5, 2)} < ${c}`, true], [`${a} < ${T(z * 100 + 5, 3)} < ${c}`, true], [`${a} < ${T(z * 1000 + 999, 4)} < ${c}`, true], [`${a} < ${T((z + 1) * 1000 + 5, 4)} < ${c}`, false], [`${a} < ${T(z * 10 - 1, 2)} < ${c}`, false]];

@@ -17,23 +17,23 @@ const hZaehlen = (n, was) => H(n, `Zähle die ${was} der Reihe nach.`, 'Fange vo
 // ---------- P1: Prismen erkennen und zählen ----------
 function p1() {
   sechs(P1, 'F', [
-    () => zahl(Z('Das Bild zeigt einen Körper wie ein Zelt.', 'Zähle seine Flächen.'), 5, [[2, 'runde-koerper-zaehlen'], [3, 'verdeckt-nicht-gezaehlt'], [6, 'wuerfel-kein-quader']],
+    () => zahl(Z('Das Bild zeigt einen Körper wie ein Zelt.', 'Zähle seine Flächen.'), 5, [[2, 'runde-koerper-zaehlen'], [3, 'koerper-unvollstaendig-gezaehlt'], [6, 'wuerfel-kein-quader']],
       H('F', 'Vorne und hinten ist je ein Dreieck.', 'Dazu kommen die Rechtecke: zwei Dachflächen und der Boden.', 'Zähle Dreiecke und Rechtecke zusammen.'), { bild: zelt(), nachweis: [KZ('prisma', 'flaechen', 5, { n: 3, bild: true })] }),
-    () => zahl(Z('Das Bild zeigt einen Körper wie ein Zelt.', 'Zähle seine Ecken.'), 6, [[3, 'verdeckt-nicht-gezaehlt'], [5, 'verdeckt-nicht-gezaehlt'], [9, 'ecken-kanten-verwechselt']],
+    () => zahl(Z('Das Bild zeigt einen Körper wie ein Zelt.', 'Zähle seine Ecken.'), 6, [[3, 'koerper-unvollstaendig-gezaehlt'], [5, 'koerper-unvollstaendig-gezaehlt'], [9, 'ecken-kanten-verwechselt']],
       H('F', 'Jedes Dreieck hat drei Ecken.', 'Vorne und hinten ist je ein Dreieck.', 'Zähle die Ecken vorne und hinten zusammen.'), { bild: zelt(), nachweis: [KZ('prisma', 'ecken', 6, { n: 3, bild: true })] }),
     () => bildkarten(Z('Ein Körper hat zwei Dreiecke und drei Rechtecke als Flächen.', 'Kreuze ihn an.'), [[zelt(), true], [pyramide(4), false, 'prisma-pyramide'], [quader(4, 2, 2), false, 'koerper-verwechselt']],
       H('F', 'Suche die Dreiecke in den Bildern.', 'Der Körper hat genau zwei davon.', 'Die anderen Flächen sind Rechtecke.'), { nachweis: [KA('prisma', { n: 3 }), { zahl: 2, grund: 'Dreiecke' }, { zahl: 3, grund: 'Rechtecke' }] }),
     () => auswahl(Z('Du schaust von vorne auf das Zelt.', 'Kreuze die Form der Ansicht an.'), ['Dreieck', 'Rechteck', 'Kreis'].map((f) => opt(f, f === 'Dreieck', f === 'Dreieck' ? undefined : 'riss-verwechselt')),
       H('F', 'Vorne ist der Eingang des Zelts.', 'Er hat drei Ecken.', 'Welche Form hat drei Ecken?'), { bild: zelt(), nachweis: [AF('prisma', 'vorne', { n: 3, liegend: true })] }),
-    () => zahl(Z('Das Bild zeigt einen Körper wie ein Zelt.', 'Zähle seine Kanten.'), 9, [[6, 'verdeckt-nicht-gezaehlt'], [8, 'verdeckt-nicht-gezaehlt'], [5, 'ecken-kanten-verwechselt']],
+    () => zahl(Z('Das Bild zeigt einen Körper wie ein Zelt.', 'Zähle seine Kanten.'), 9, [[6, 'koerper-unvollstaendig-gezaehlt'], [8, 'koerper-unvollstaendig-gezaehlt'], [5, 'ecken-kanten-verwechselt']],
       H('F', 'Zähle zuerst die Kanten am Dreieck vorne.', 'Dann die Kanten am Dreieck hinten.', 'Dazu kommen die Kanten von vorne nach hinten.'), { bild: zelt(), nachweis: [KZ('prisma', 'kanten', 9, { n: 3, bild: true })] }),
     () => auswahl(Z('Du schaust von oben auf das Zelt.', 'Kreuze die Form der Ansicht an.'), ['Rechteck', 'Dreieck', 'Kreis'].map((f) => opt(f, f === 'Rechteck', f === 'Rechteck' ? undefined : 'riss-verwechselt')),
       H('F', 'Von oben siehst du die beiden Dachflächen.', 'Zusammen sind sie so lang und so breit wie der Boden.', 'Der Boden ist ein Rechteck.'), { bild: zelt(), nachweis: [AF('prisma', 'oben', { n: 3, liegend: true })] }),
   ]);
   sechs(P1, 'G', [
-    () => zahl(Z('Das Bild zeigt ein fünfseitiges Prisma.', 'Gib an, wie viele Ecken es hat.'), 10, [[5, 'verdeckt-nicht-gezaehlt'], [7, 'verdeckt-nicht-gezaehlt'], [15, 'ecken-kanten-verwechselt']],
+    () => zahl(Z('Das Bild zeigt ein fünfseitiges Prisma.', 'Gib an, wie viele Ecken es hat.'), 10, [[5, 'koerper-unvollstaendig-gezaehlt'], [7, 'koerper-unvollstaendig-gezaehlt'], [15, 'ecken-kanten-verwechselt']],
       H('G', 'Oben und unten ist je ein Fünfeck.', 'Jedes Fünfeck hat fünf Ecken.', 'Zähle die Ecken oben und unten zusammen.'), { bild: prisma(5), nachweis: [KZ('prisma', 'ecken', 10, { n: 5, bild: true })] }),
-    () => zahl(Z('Das Bild zeigt ein sechsseitiges Prisma.', 'Gib an, wie viele Flächen es hat.'), 8, [[6, 'verdeckt-nicht-gezaehlt'], [2, 'verdeckt-nicht-gezaehlt'], [12, 'ecken-kanten-verwechselt']],
+    () => zahl(Z('Das Bild zeigt ein sechsseitiges Prisma.', 'Gib an, wie viele Flächen es hat.'), 8, [[6, 'koerper-unvollstaendig-gezaehlt'], [2, 'koerper-unvollstaendig-gezaehlt'], [12, 'ecken-kanten-verwechselt']],
       H('G', 'Oben und unten ist je eine Grundfläche.', 'Rundherum liegt an jeder Seite des Sechsecks ein Rechteck.', 'Zähle die Rechtecke und die zwei Grundflächen zusammen.'), { bild: prisma(6), nachweis: [KZ('prisma', 'flaechen', 8, { n: 6, bild: true })] }),
     () => { const n = wahl([3, 5, 6]);
       return auswahl(Z('Das Bild zeigt ein Prisma.', 'Kreuze seinen Namen an.'), nameOpts(n, [3, 5, 6]),
@@ -41,23 +41,23 @@ function p1() {
     () => bildkarten(Z('Ein Prisma hat zwei gleiche Grundflächen.', 'Kreuze alle Prismen an.'), [[prisma(wahl([3, 5])), true], [prisma(6), true], [pyramide(wahl([4, 5])), false, 'prisma-pyramide'], [rund('kegel'), false, 'koerper-verwechselt']],
       H('G', 'Suche Körper mit einer Grundfläche oben und einer gleichen unten.', 'Die Seitenflächen dazwischen sind Rechtecke.', 'Ein Körper mit Spitze ist kein Prisma.'), { mehrfach: true, nachweis: [KA('prisma')] }),
     () => { const n = wahl([5, 6]);
-      return zahl(Z(`Die Grundfläche eines Prismas ist ein ${ECK[n]}.`, 'Gib an, wie viele Kanten das Prisma hat.'), 3 * n, [[2 * n, 'verdeckt-nicht-gezaehlt'], [n, 'verdeckt-nicht-gezaehlt'], [2 * n, 'ecken-kanten-verwechselt']],
+      return zahl(Z(`Die Grundfläche eines Prismas ist ein ${ECK[n]}.`, 'Gib an, wie viele Kanten das Prisma hat.'), 3 * n, [[2 * n, 'koerper-unvollstaendig-gezaehlt'], [n, 'koerper-unvollstaendig-gezaehlt'], [2 * n, 'ecken-kanten-verwechselt']],
         H('G', `Oben und unten hat das ${ECK[n]} je ${n} Kanten.`, 'Dazu kommt an jeder Ecke eine Kante von unten nach oben.', `Rechne: ${n} + ${n} + ${n}.`), { nachweis: [KZ('prisma', 'kanten', 3 * n, { n })] }); },
     () => { const n = wahl([5, 6, 8]);
-      return zahl(Z(`Ein Prisma hat ein ${ECK[n]} als Grundfläche.`, 'Gib an, wie viele Ecken es hat.'), 2 * n, [[n, 'verdeckt-nicht-gezaehlt'], [3 * n, 'ecken-kanten-verwechselt'], [n + 2, 'ecken-kanten-verwechselt']],
+      return zahl(Z(`Ein Prisma hat ein ${ECK[n]} als Grundfläche.`, 'Gib an, wie viele Ecken es hat.'), 2 * n, [[n, 'koerper-unvollstaendig-gezaehlt'], [3 * n, 'ecken-kanten-verwechselt'], [n + 2, 'ecken-kanten-verwechselt']],
         H('G', 'Ecken gibt es nur an den beiden Grundflächen.', `Jedes ${ECK[n]} hat ${n} Ecken.`, `Rechne: ${n} + ${n}.`), { nachweis: [KZ('prisma', 'ecken', 2 * n, { n })] }); },
   ]);
   sechs(P1, 'M', [
-    () => zahl('Das Bild zeigt ein sechsseitiges Prisma. Gib an, wie viele Kanten es hat.', 18, [[12, 'verdeckt-nicht-gezaehlt'], [15, 'verdeckt-nicht-gezaehlt'], [8, 'ecken-kanten-verwechselt']],
+    () => zahl('Das Bild zeigt ein sechsseitiges Prisma. Gib an, wie viele Kanten es hat.', 18, [[12, 'koerper-unvollstaendig-gezaehlt'], [15, 'koerper-unvollstaendig-gezaehlt'], [8, 'ecken-kanten-verwechselt']],
       H('M', 'Zähle getrennt: Kanten oben, Kanten unten, Kanten dazwischen.', '6 + 6 + 6 = 18'), { bild: prisma(6), nachweis: [KZ('prisma', 'kanten', 18, { n: 6, bild: true })] }),
     () => { const n = wahl([5, 6, 8]), k = 3 * n;
-      return zahl(`Ein Prisma hat ${k} Kanten. Gib an, wie viele Ecken seine Grundfläche hat.`, n, [[k / 3 * 2, 'ecken-kanten-verwechselt'], [k / 2, 'kanten-teilweise']].filter(([x]) => Number.isInteger(x)),
+      return zahl(`Ein Prisma hat ${k} Kanten. Gib an, wie viele Ecken seine Grundfläche hat.`, n, [[k / 3 * 2, 'ecken-kanten-verwechselt'], [k / 2, 'koerper-unvollstaendig-gezaehlt']].filter(([x]) => Number.isInteger(x)),
         H('M', 'Ein Prisma mit n Ecken an der Grundfläche hat 3 · n Kanten.', `${k} : 3 = ${n}`), { nachweis: [KZ('prisma', 'kanten', k, { n }), `${k} : 3 = ${n}`] }); },
     () => { const n = wahl([5, 6, 8]);
-      return zahl(`Die Mantelfläche eines Prismas besteht aus ${n} Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat.`, n + 2, [[n, 'verdeckt-nicht-gezaehlt'], [n + 1, 'verdeckt-nicht-gezaehlt'], [2 * n, 'ecken-kanten-verwechselt']],
+      return zahl(`Die Mantelfläche eines Prismas besteht aus ${n} Rechtecken. Gib an, wie viele Flächen das Prisma insgesamt hat.`, n + 2, [[n, 'koerper-unvollstaendig-gezaehlt'], [n + 1, 'koerper-unvollstaendig-gezaehlt'], [2 * n, 'ecken-kanten-verwechselt']],
         H('M', 'Die Mantelfläche ist der Streifen um das Prisma herum.', `Dazu kommen die beiden Grundflächen: ${n} + 2.`), { nachweis: [KZ('prisma', 'flaechen', n + 2, { n })] }); },
     () => { const n = wahl([5, 6]);
-      return bildkarten(`Kreuze das Prisma mit ${2 * n} Ecken an.`, mische([[prisma(n), true], [prisma(n === 5 ? 6 : 5), false, 'kanten-teilweise'], [prisma(3), false, 'kanten-teilweise'], [pyramide(n), false, 'prisma-pyramide']]),
+      return bildkarten(`Kreuze das Prisma mit ${2 * n} Ecken an.`, mische([[prisma(n), true], [prisma(n === 5 ? 6 : 5), false, 'koerper-unvollstaendig-gezaehlt'], [prisma(3), false, 'koerper-unvollstaendig-gezaehlt'], [pyramide(n), false, 'prisma-pyramide']]),
         H('M', 'Die Ecken liegen je zur Hälfte oben und unten.', `${2 * n} : 2 = ${n} Ecken hat eine Grundfläche.`), { nachweis: [KA('prisma', { n }), KZ('prisma', 'ecken', 2 * n, { n })] }); },
     () => { const k = kind(), [satz, stimmt, grund, falsch] = wahl([
       ['Jeder Quader ist ein Prisma.', true, 'Stimmt. Seine Grundflächen sind zwei gleiche Rechtecke.', 'Stimmt nicht. Ein Prisma hat immer Dreiecke.'],
@@ -70,17 +70,17 @@ function p1() {
   ]);
   sechs(P1, 'E', [
     () => { const n = wahl([7, 9, 10, 12]);
-      return zahl(`Ein Prisma hat ${3 * n} Kanten. Gib an, wie viele Ecken es hat.`, 2 * n, [[n, 'kanten-teilweise'], [n + 2, 'ecken-kanten-verwechselt'], [3 * n - 2, 'ecken-kanten-verwechselt']],
+      return zahl(`Ein Prisma hat ${3 * n} Kanten. Gib an, wie viele Ecken es hat.`, 2 * n, [[n, 'koerper-unvollstaendig-gezaehlt'], [n + 2, 'ecken-kanten-verwechselt'], [3 * n - 2, 'ecken-kanten-verwechselt']],
         H('E', 'Finde zuerst heraus, wie viele Ecken die Grundfläche hat.'), { nachweis: [KZ('prisma', 'kanten', 3 * n, { n }), `${3 * n} : 3 = ${n}`, `2 · ${n} = ${2 * n}`, KZ('prisma', 'ecken', 2 * n, { n })] }); },
     () => { const n = wahl([5, 6]), z = { e: 2 * n, k: 3 * n, f: n + 2 };
-      return zahl(`Zähle am ${PN[n] === 'fünfseitiges' ? 'fünfseitigen' : 'sechsseitigen'} Prisma Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an.`, 2, [[0, 'kanten-teilweise'], [4, 'verdeckt-nicht-gezaehlt'], [z.e + z.f, 'kanten-teilweise']],
+      return zahl(`Zähle am ${PN[n] === 'fünfseitiges' ? 'fünfseitigen' : 'sechsseitigen'} Prisma Ecken, Flächen und Kanten. Rechne dann Ecken plus Flächen minus Kanten. Gib das Ergebnis an.`, 2, [[0, 'koerper-unvollstaendig-gezaehlt'], [4, 'koerper-unvollstaendig-gezaehlt'], [z.e + z.f, 'koerper-unvollstaendig-gezaehlt']],
         H('E', 'Zähle sorgfältig, auch die verdeckten Teile.'), { bild: prisma(n), nachweis: [KZ('prisma', 'ecken', z.e, { n, bild: true, zwischen: true }), KZ('prisma', 'flaechen', z.f, { n, zwischen: true }), KZ('prisma', 'kanten', z.k, { n, zwischen: true }), `${z.e} + ${z.f} − ${z.k} = 2`] }); },
     () => { const n = wahl([7, 9, 10]);
-      return zahl(`Ein Prisma hat ${n + 2} Flächen. Gib an, wie viele Kanten es hat.`, 3 * n, [[3 * (n + 2), 'kanten-teilweise'], [2 * n, 'ecken-kanten-verwechselt'], [2 * (n + 2), 'ecken-kanten-verwechselt']],
+      return zahl(`Ein Prisma hat ${n + 2} Flächen. Gib an, wie viele Kanten es hat.`, 3 * n, [[3 * (n + 2), 'koerper-unvollstaendig-gezaehlt'], [2 * n, 'ecken-kanten-verwechselt'], [2 * (n + 2), 'ecken-kanten-verwechselt']],
         H('E', 'Zwei der Flächen sind Grundflächen. Wie viele Ecken hat dann eine Grundfläche?'), { nachweis: [KZ('prisma', 'flaechen', n + 2, { n }), `${n + 2} − 2 = ${n}`, `3 · ${n} = ${3 * n}`, KZ('prisma', 'kanten', 3 * n, { n })] }); },
     () => { const k = kind(), [zahlK, stimmt] = wahl([[16, false], [20, false], [21, true], [24, true]]);
       return auswahl(`${k} sagt: „Ein Prisma kann ${zahlK} Kanten haben.“ Beurteile die Aussage.`, [opt(stimmt ? `Stimmt. ${zahlK} : 3 = ${zahlK / 3}, die Grundfläche hat ${zahlK / 3} Ecken.` : `Stimmt nicht. Die Anzahl der Kanten ist immer durch 3 teilbar.`, true),
-        opt(stimmt ? 'Stimmt nicht. Ein Prisma hat höchstens 18 Kanten.' : 'Stimmt. Ein Prisma kann jede Anzahl von Kanten haben.', false, 'kanten-teilweise'), opt(stimmt ? 'Stimmt nicht. Die Anzahl der Kanten ist immer gerade.' : 'Stimmt. Die Anzahl der Kanten ist immer gerade.', false, 'ecken-kanten-verwechselt')],
+        opt(stimmt ? 'Stimmt nicht. Ein Prisma hat höchstens 18 Kanten.' : 'Stimmt. Ein Prisma kann jede Anzahl von Kanten haben.', false, 'koerper-unvollstaendig-gezaehlt'), opt(stimmt ? 'Stimmt nicht. Die Anzahl der Kanten ist immer gerade.' : 'Stimmt. Die Anzahl der Kanten ist immer gerade.', false, 'ecken-kanten-verwechselt')],
         H('E', 'Ein Prisma mit n Ecken an der Grundfläche hat 3 · n Kanten.'), { nachweis: [U(stimmt), { zahl: zahlK, grund: 'Behauptung' }, { zahl: 3, grund: 'Kanten je Ecke der Grundfläche' }, { zahl: 18, grund: 'falsche Begründung' }, ...(stimmt ? [`${zahlK} : 3 = ${zahlK / 3}`] : [])] }); },
     () => bildkarten('Kreuze alle Körper an, die Prismen sind.', [[prisma(3), true], [prisma(5), true], [prisma(6), true], [pyramide(5), false, 'prisma-pyramide'], [rund('zylinder'), false, 'koerper-verwechselt']],
       H('E', 'Ein Prisma hat zwei gleiche Vielecke als Grundflächen und Rechtecke dazwischen.'), { mehrfach: true, nachweis: [KA('prisma')] }),
@@ -138,7 +138,7 @@ function p2() {
       return bildkarten(`Kreuze das Netz eines ${PN[n] === 'fünfseitiges' ? 'fünfseitigen' : 'sechsseitigen'} Prismas an.`, [[netz(n, { unten: zz(0, n - 1) }), true], [netz(n, { eckenzahl: n === 5 ? 6 : 5 }), false, 'netz-nur-gezaehlt'], [netz(n, { gleicheSeite: true }), false, 'netz-nur-gezaehlt'], [netz(n === 5 ? 6 : 5), false, 'name-nach-seitenflaeche']],
         H('M', 'Prüfe bei jedem Netz die Anzahl der Rechtecke und die Ecken der Grundflächen.', 'Prüfe dann, ob die Grundflächen oben und unten liegen.'), { nachweis: [KA('prisma', { n })] }); },
     () => { const n = wahl([5, 6]), s = zz(2, 4);
-      return zahl(`Ein ${PN[n]} Prisma hat Grundkanten von ${s} cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist.`, n * s, [[s, 'kanten-teilweise'], [(n + 2) * s, 'netz-nur-gezaehlt'], [2 * n * s, 'kanten-teilweise']],
+      return zahl(`Ein ${PN[n]} Prisma hat Grundkanten von ${s} cm Länge. Gib an, wie lang der Streifen der Mantelfläche im Netz ist.`, n * s, [[s, 'mantel-streifen'], [(n + 2) * s, 'netz-nur-gezaehlt'], [2 * n * s, 'mantel-streifen']],
         H('M', 'Jedes Rechteck der Mantelfläche ist so breit wie eine Grundkante.', `Es sind ${n} Rechtecke.`), { einheit: 'cm', nachweis: [`${n} · ${s} = ${n * s}`] }); },
     () => { const k = kind();
       return auswahl(`${k} sagt: „Im Netz eines Prismas dürfen beide Grundflächen an derselben Seite der Mantelfläche liegen.“ Beurteile die Aussage.`,
@@ -149,7 +149,7 @@ function p2() {
   ]);
   sechs(P2, 'E', [
     () => { const n = wahl([6, 8]);
-      return zahl(`Das Netz eines Prismas besteht aus ${n + 2} Flächen. Gib an, wie viele Ecken das Prisma hat.`, 2 * n, [[n + 2, 'netz-ecken-gezaehlt'], [n, 'kanten-teilweise'], [3 * n, 'ecken-kanten-verwechselt']],
+      return zahl(`Das Netz eines Prismas besteht aus ${n + 2} Flächen. Gib an, wie viele Ecken das Prisma hat.`, 2 * n, [[n + 2, 'netz-ecken-gezaehlt'], [n, 'koerper-unvollstaendig-gezaehlt'], [3 * n, 'ecken-kanten-verwechselt']],
         H('E', 'Zwei Flächen sind Grundflächen. Die übrigen sind Rechtecke.'), { nachweis: [`${n + 2} − 2 = ${n}`, `2 · ${n} = ${2 * n}`, KZ('prisma', 'ecken', 2 * n, { n })] }); },
     () => { const n = wahl([5, 6]), ok = zz(0, 1) === 1, b = ok ? netz(n, { unten: zz(0, n - 1), oben: zz(0, n - 1) }) : netz(n, { eckenzahl: n === 5 ? 6 : 5 });
       return auswahl('Prüfe, ob sich das Netz zu einem Prisma falten lässt. Kreuze die richtige Antwort an.', [opt('Ja, es lässt sich falten.', ok, ok ? undefined : 'netz-nur-gezaehlt'), opt('Nein, es lässt sich nicht falten.', !ok, ok ? 'netz-nur-gezaehlt' : undefined)],
@@ -162,10 +162,10 @@ function p2() {
           opt(stimmt ? 'Stimmt nicht. Die Grundflächen zählen nicht mit.' : 'Stimmt. Die Grundflächen zählen doppelt.', false, 'netz-nur-gezaehlt')],
         H('E', 'Zähle Rechtecke der Mantelfläche und Grundflächen getrennt.'), { nachweis: [U(stimmt), { zahl: f, grund: 'Behauptung' }, KZ('prisma', 'flaechen', n + 2, { n }), { zahl: 2, grund: 'Grundflächen' }] }); },
     () => { const n = wahl([5, 6]), s = zz(2, 4), l = n * s;
-      return zahl(`Die Mantelfläche eines ${n === 5 ? 'fünfseitigen' : 'sechsseitigen'} Prismas ist im Netz ein Streifen von ${l} cm Länge. Alle Grundkanten sind gleich lang. Gib an, wie lang eine Grundkante ist.`, s, [[l / 2, 'kanten-teilweise'], [l - n, 'kanten-teilweise']].filter(([x]) => Number.isInteger(x)),
+      return zahl(`Die Mantelfläche eines ${n === 5 ? 'fünfseitigen' : 'sechsseitigen'} Prismas ist im Netz ein Streifen von ${l} cm Länge. Alle Grundkanten sind gleich lang. Gib an, wie lang eine Grundkante ist.`, s, [[l / 2, 'mantel-streifen'], [l - n, 'mantel-streifen']].filter(([x]) => Number.isInteger(x)),
         H('E', 'Der Streifen besteht aus gleich breiten Rechtecken. Wie viele sind es?'), { einheit: 'cm', nachweis: [`${l} : ${n} = ${s}`] }); },
     () => { const n = wahl([3, 5, 6]), k = 3 * n, f = n + 2, w = k - (f - 1);
-      return zahl(`Du faltest das Netz eines ${n === 3 ? 'dreiseitigen' : n === 5 ? 'fünfseitigen' : 'sechsseitigen'} Prismas. Im Netz hängen die ${f} Flächen an ${f - 1} Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst.`, w, [[k, 'kanten-teilweise'], [f - 1, 'kanten-teilweise'], [k - f, 'kanten-teilweise']],
+      return zahl(`Du faltest das Netz eines ${n === 3 ? 'dreiseitigen' : n === 5 ? 'fünfseitigen' : 'sechsseitigen'} Prismas. Im Netz hängen die ${f} Flächen an ${f - 1} Faltkanten zusammen. Gib an, wie viele Kanten du noch zukleben musst.`, w, [[k, 'netz-kleben'], [f - 1, 'netz-kleben'], [k - f, 'netz-kleben']],
         H('E', 'Jede Kante des Prismas ist entweder eine Faltkante oder eine Klebekante.'), { nachweis: [KZ('prisma', 'kanten', k, { n, zwischen: true }), KZ('prisma', 'flaechen', f, { n, zwischen: true }), `${f} − 1 = ${f - 1}`, `${k} − ${f - 1} = ${w}`] }); },
   ]);
 }

@@ -187,7 +187,7 @@ function tangenten() {
       H('E', 'Der Thaleskreis über MQ schneidet den Kreis in den Berührpunkten.'), { nachweis: [{ art: 'ort', bedingungen: [{ art: 'abstand', von: O, r: 5 }, { art: 'rechter', a: O, b: Q }] }] }); };
   const lageD = () => { const r = zz(3, 8), d = wahl([r - zz(1, 2), r, r + zz(1, 3), 0]), was = d < r ? 'Sekante' : d === r ? 'Tangente' : 'Passante';
     return auswahl(`Ein Kreis hat den Radius ${cm(r)}. Eine Gerade hat vom Mittelpunkt den Abstand ${cm(d)}. Entscheide, wie die Gerade heißt. Kreuze an.`,
-      ['Sekante', 'Tangente', 'Passante'].map((x) => opt(x, x === was, x === was ? undefined : 'innen-aussen-verwechselt')), H('E', 'Vergleiche den Abstand mit dem Radius.'), { nachweis: [{ art: 'kreislage', r, d, was }] }); };
+      ['Sekante', 'Tangente', 'Passante'].map((x) => opt(x, x === was, x === was ? undefined : 'innen-aussen-verwechselt')), H('E', 'Vergleiche den Abstand mit dem Radius.'), { hinweise: { 'innen-aussen-verwechselt': 'Ist der Abstand kleiner als der Radius, gleich groß oder größer? Danach richtet sich der Name.' }, nachweis: [{ art: 'kreislage', r, d, was }] }); };
   const viereck = () => { const m = suche(() => zz(70, 130), (x) => x !== 90), q = 180 - m, dreh = zz(0, 359), r = 2.2;
     const M = [0, 0], T1 = drehe(plus(M, dir(-m / 2), r), dreh), T2 = drehe(plus(M, dir(m / 2), r), dreh), Q = drehe(plus(M, dir(0), r / Math.cos((m / 2 * Math.PI) / 180)), dreh);
     return grad(`Von Q aus gehen zwei Tangenten an den Kreis um M. Sie berühren ihn in T₁ und T₂. Es ist ∢T₁MT₂ = ${m}°. Bestimme den Winkel φ bei Q.`, q, [[m, 'tangente-nicht-senkrecht'], [360 - m, 'winkelsumme']],

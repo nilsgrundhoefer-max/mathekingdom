@@ -99,7 +99,7 @@ export function zweiersystem() {
     () => { const l = verschieden(() => zz(5, 40), 4).sort((x, y) => x - y);
       if (new Set(l.map((x) => dual(x).length)).size < 2) return null;
       return ordnen('Ordne die Dualzahlen. Beginne mit der kleinsten Zahl.', l.map(d2), h1('Vergleiche zuerst die Zahl der Stellen. Bei gleich vielen Stellen vergleichst du von links Ziffer für Ziffer.'),
-        { nachweis: [{ art: 'ordnung', richtung: 'auf', system: 'dual' }], umgekehrt: 'zeichen-verwechselt', sonst: 'dual-zehnerwerte', links: 'kleinste', rechts: 'größte' }); },
+        { nachweis: [{ art: 'ordnung', richtung: 'auf', system: 'dual' }], umgekehrt: 'reihenfolge-umgekehrt', sonst: 'dual-zehnerwerte', links: 'kleinste', rechts: 'größte' }); },
     () => { const k = kind(), st = wahl([4, 5]), a = 2 ** (st - 1), wort = { 4: ['vier', 'drei'], 5: ['fünf', 'vier'] }[st];
       return auswahl(`${k} behauptet: „Auch im Zweiersystem ist von zwei Zahlen immer die mit mehr Stellen die größere.“ Beurteile die Aussage.`, [
         opt(`Stimmt. Die kleinste Zahl mit ${wort[0]} Stellen ist ${a}, die größte mit ${wort[1]} Stellen ist nur ${a - 1}.`, true),

@@ -43,19 +43,19 @@ export function bruecheAmZahlenstrahl() {
   const tZ1G = h3('Zähle die Abstände von 0 bis 1. Das ist der Nenner. Er gilt auch hinter der 1.', 'Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht 3 Abstände hinter der 1. Das ist 1 3⁄4.', 'Schreibe zuerst die Ganzen. Zähle dann die Abstände vom letzten Ganzen bis zum Pfeil.');
   sechs(Z1, 'G', [
     () => { const T = wahl([2, 3, 4, 5, 6]), bis = wahl([2, 3]), p = fremd(T, T + 1, bis * T - 1);
-      return bruch(Z('Auf welche Zahl zeigt der Pfeil?', 'Schreibe als gemischte Zahl.'), gem(p, T), [[br(p % T, T + 1, Math.floor(p / T)), 'bruchstrahl-striche'], [br(p % T, bis * T, Math.floor(p / T)), 'bruch-ganzes-teil']], tZ1G,
+      return bruch(Z('Auf welche Zahl zeigt der Pfeil?', 'Schreibe als gemischte Zahl.'), gem(p, T), [[br(p % T, T + 1, Math.floor(p / T)), 'bruchstrahl-striche'], [br(p % T, bis * T, Math.floor(p / T)), 'strahl-ganzes']], tZ1G,
         { gekuerzt: true, form: 'gemischt', bild: B.strahl(bstrahl(T, bis, { pfeil: p })), nachweis: [S(gem(p, T))] }); },
     () => { const T = wahl([3, 4, 5, 6, 8]), p = fremd(T, T + 1, 2 * T - 1);
-      return bruch(Z('Auf welche Zahl zeigt der Pfeil?', 'Schreibe als Bruch.'), br(p, T), [[br(p, 2 * T), 'bruch-ganzes-teil'], [br(p - T, T), 'gemischt-umwandeln'], [br(T, p), 'bruch-vertauscht']],
+      return bruch(Z('Auf welche Zahl zeigt der Pfeil?', 'Schreibe als Bruch.'), br(p, T), [[br(p, 2 * T), 'strahl-ganzes'], [br(p - T, T), 'gemischt-umwandeln'], [br(T, p), 'bruch-vertauscht']],
         h3('Zähle alle Abstände von 0 bis zum Pfeil. Das ist der Zähler.', 'Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 7 Abständen. Das ist 7⁄4.', 'Der Nenner ist die Zahl der Abstände von 0 bis 1.'), { gekuerzt: true, bild: B.strahl(bstrahl(T, 2, { pfeil: p })), nachweis: [S(br(p, T))] }); },
     () => { const T = wahl([6, 8, 12]), bis = T === 12 ? 1 : wahl([1, 2]), p = kuerzbar(T, 1, bis * T - 1), [z, n] = gek(p, T);
       return bruch(Z('Auf welche Zahl zeigt der Pfeil?', 'Kürze vollständig.'), gem(z, n), [[br(p % T, T + 1, Math.floor(p / T)), 'bruchstrahl-striche']].filter(([x]) => !x.startsWith('0')),
         h3('Lies zuerst ab. Kürze dann den Bruch.', 'Der Pfeil steht bei 6⁄8. Gekürzt ist das 3⁄4.', `Der Pfeil steht bei ${gem(p, T)}. Kürze den Bruch mit ${p / z}.`), { gekuerzt: true, bild: B.strahl(bstrahl(T, bis, { pfeil: p })), nachweis: [S(gem(p, T))] }); },
     () => { const T = wahl([3, 4, 5, 6, 8, 12]), bis = T > 6 ? 2 : wahl([2, 3]), p = zz(T + 1, bis * T - 1);
-      return zahl(Z('Schau auf den Zahlenstrahl.', 'In wie viele Abstände ist ein Ganzes geteilt?'), T, fehlerliste(T, [[T + 1, 'bruchstrahl-striche'], [bis * T, 'bruch-ganzes-teil'], [T - 1, 'bruchstrahl-striche']]),
+      return zahl(Z('Schau auf den Zahlenstrahl.', 'In wie viele Abstände ist ein Ganzes geteilt?'), T, fehlerliste(T, [[T + 1, 'bruchstrahl-striche'], [bis * T, 'strahl-ganzes'], [T - 1, 'bruchstrahl-striche']]),
         h3('Ein Ganzes reicht von 0 bis 1. Zähle dort die Abstände.', 'Von 0 bis 1 sind es 4 Abstände. Die Einteilung ist in Viertel.', 'Zähle nur von 0 bis 1 und nicht weiter.'), { bild: B.strahl(bstrahl(T, bis, { pfeil: p })), nachweis: [{ art: 'abstaende', zahl: T }] }); },
     () => { const T = wahl([3, 4, 5]), p = fremd(T, T + 1, 2 * T - 1), [a, c] = zweiKinder();
-      return auswahl(Z(`${a} liest am Pfeil ${br(p, 2 * T)} ab.`, `${c} liest ${br(p, T)} ab.`, 'Welcher Bruch stimmt?'), [opt(br(p, T), true), opt(br(p, 2 * T), false, 'bruch-ganzes-teil'), opt(br(p, T + 1), false, 'bruchstrahl-striche')],
+      return auswahl(Z(`${a} liest am Pfeil ${br(p, 2 * T)} ab.`, `${c} liest ${br(p, T)} ab.`, 'Welcher Bruch stimmt?'), [opt(br(p, T), true), opt(br(p, 2 * T), false, 'strahl-ganzes'), opt(br(p, T + 1), false, 'bruchstrahl-striche')],
         h3('Der Nenner zählt die Abstände von 0 bis 1 und nicht bis 2.', 'Von 0 bis 1 sind es 4 Abstände. Der Pfeil steht nach 5 Abständen. Das ist 5⁄4 und nicht 5⁄8.', 'Zähle zuerst die Abstände von 0 bis 1. Zähle dann von 0 bis zum Pfeil.'), { bild: B.strahl(bstrahl(T, 2, { pfeil: p })), nachweis: [S(br(p, T)), WERT(br(p, T), true), HILFS(br(p, 2 * T), 'falsch abgelesener Bruch aus dem Text')] }); },
     () => { const T = wahl([3, 4, 5, 6]), p = fremd(T, T + 1, 2 * T - 1), g = 1, k = p - T, kn = zweiKinder()[0], stimmt = wahl([true, false, false]), falle = br(k, T, 10 + k === p ? 2 : Math.floor(p / 10) || 2), gesagt = stimmt ? br(k, T, g) : falle, glg = (x) => `${br(p, T)} = ${x}`;
       return auswahl(Z(`Der Pfeil zeigt auf ${br(p, T)}.`, `${kn} sagt: „Das ist dasselbe wie ${gesagt}.“`, 'Stimmt das?'), [opt('Stimmt.', stimmt, stimmt ? undefined : 'gemischt-umwandeln'), opt(`Falsch. Es gilt ${glg(stimmt ? falle : br(k, T, g))}.`, !stimmt, stimmt ? 'gemischt-umwandeln' : undefined), opt(`Falsch. Es gilt ${glg(br(T - k, T, g))}.`, false, 'bruch-teil-zu-rest')].filter((o, i, l) => l.findIndex((x) => x.text === o.text) === i),
@@ -72,7 +72,7 @@ export function bruecheAmZahlenstrahl() {
       return luecken(`Der Pfeil zeigt auf einen Bruch. Schreibe ihn mit dem Nenner ${T * k}: {{a}}⁄${T * k}`, { a: [p * k, fehlerliste(p * k, [[p, 'erweitern-nur-ein-teil'], [p + T * k - T, 'erweitern-addiert'], [k, 'sach-frage-verfehlt']])] },
         h2('Lies zuerst den Bruch ab. Erweitere ihn dann auf den verlangten Nenner.', `Der Pfeil steht bei ${br(p, T)}. Erweitere mit ${k}.`), { bild: B.strahl(bstrahl(T, 1, { pfeil: p })), nachweis: [S(br(p, T)), `${T * k} : ${T} = ${k}`, UMF([p, T], k, 'erweitern')] }); },
     () => { const T = wahl([5, 6, 7, 9]), p = fremd(T, T + 1, 3 * T - 1);
-      return bruch('Auf welche Zahl zeigt der Pfeil? Schreibe als Bruch.', br(p, T), [[br(p, 3 * T), 'bruch-ganzes-teil'], [br(p % T, T), 'gemischt-umwandeln'], [br(T, p), 'bruch-vertauscht']],
+      return bruch('Auf welche Zahl zeigt der Pfeil? Schreibe als Bruch.', br(p, T), [[br(p, 3 * T), 'strahl-ganzes'], [br(p % T, T), 'gemischt-umwandeln'], [br(T, p), 'bruch-vertauscht']],
         h2('Der Nenner ist die Zahl der Abstände von 0 bis 1. Der Zähler zählt alle Abstände von 0 bis zum Pfeil.', `Ein Ganzes hat ${T} Abstände. Vor dem Pfeil liegen ${Math.floor(p / T)} Ganze und noch ${p % T} ${p % T === 1 ? 'Abstand' : 'Abstände'}.`), { gekuerzt: true, bild: B.strahl(bstrahl(T, 3, { pfeil: p })), nachweis: [S(br(p, T))] }); },
     () => { const T = wahl([4, 5, 6, 8]), p = zz(2, 2 * T - 3), d = 2 * T - p, [z, n] = gek(d, T);
       if (p % T === 0 || d % T === 0) return null;
@@ -84,7 +84,7 @@ export function bruecheAmZahlenstrahl() {
   ]);
   sechs(Z1, 'E', [
     () => { const [G, m] = wahl([[2, 5], [2, 7], [3, 4], [3, 5], [2, 9], [3, 8], [4, 5], [3, 7]]), k = zz(1, m - 1), p = G * k;
-      return bruch(`Die Strecke von 0 bis ${G} ist in ${m} gleich große Abstände geteilt. Auf welche Zahl zeigt der Pfeil? Kürze vollständig.`, gem(p, m), [[br(k, m), 'bruch-ganzes-teil'], [br(k, m + 1), 'bruchstrahl-striche']],
+      return bruch(`Die Strecke von 0 bis ${G} ist in ${m} gleich große Abstände geteilt. Auf welche Zahl zeigt der Pfeil? Kürze vollständig.`, gem(p, m), [[br(k, m), 'strahl-ganzes'], [br(k, m + 1), 'bruchstrahl-striche']],
         h1(`Wie lang ist ein Abstand, wenn ${G} Ganze in ${m} gleich große Abstände geteilt werden? Zähle dann die Abstände bis zum Pfeil.`), { gekuerzt: true, bild: B.strahl({ von: 0, bis: G * m, schritt: G, beschriftung: G * m, teiler: m, pfeil: p }), nachweis: [S(gem(p, m)), HILFS(G, 'Ende des Strahls'), HILFS(m, 'Anzahl der Abstände')] }); },
     () => { const T = wahl([12, 15, 16, 18, 20]), g = zz(4, 12), r = kuerzbar(T), p = g * T + r, [z, n] = gek(r, T);
       return bruch('Der Zahlenstrahl zeigt einen Ausschnitt. Auf welche Zahl zeigt der Pfeil? Schreibe als vollständig gekürzte gemischte Zahl.', br(z, n, g), [[br(z, n, g + 1), 'gemischt-umwandeln'], [br(z, n), 'gemischt-umwandeln']],

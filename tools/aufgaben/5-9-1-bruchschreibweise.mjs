@@ -224,7 +224,7 @@ export function bruchschreibweise() {
     () => { const zs = mische(mische([1, 2, 3, 4]).slice(0, 3));
       return auswahl(Z('Die Streifen zeigen drei Brüche.', 'Welcher Bruch ist am größten?'), zs.map((k) => opt(br(k, 4), k === Math.max(...zs))), tB3, { bild: bild(...dreiStreifen(zs)), nachweis: [{ art: 'extrem', was: 'groesste' }] }); },
     () => { const zs = mische(wahl([[1, 2, 3], [1, 2, 3, 4], [2, 3, 4], [1, 3, 4]])), sort = [...zs].sort((a, c) => a - c);
-      return ordnen(Z('Die Streifen zeigen die Brüche.', 'Ordne die Brüche.', 'Beginne mit dem kleinsten.'), sort.map((k) => br(k, 4)), tB3, { bild: bild(...dreiStreifen(zs)), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt' }); },
+      return ordnen(Z('Die Streifen zeigen die Brüche.', 'Ordne die Brüche.', 'Beginne mit dem kleinsten.'), sort.map((k) => br(k, 4)), tB3, { bild: bild(...dreiStreifen(zs)), nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt' }); },
     () => { const n = zz(3, 4), [a, c] = mische(vorn(n - 1, 1)).slice(0, 2), stimmt = wahl([true, false]), kn_ = kind(), gr = a > c ? '>' : '<', beh = stimmt ? gr : (gr === '>' ? '<' : '>');
       return auswahl(Z(`${kn_} sagt: „${br(a, n)} ist ${beh === '>' ? 'größer' : 'kleiner'} als ${br(c, n)}.“`, 'Stimmt das?', 'Schau auf die Figuren.'),
         [opt('Stimmt.', stimmt, 'zeichen-verwechselt'), opt(`Falsch. Es gilt ${br(a, n)} ${gr} ${br(c, n)}.`, !stimmt, 'zeichen-verwechselt'), opt(`Falsch. Es gilt ${br(a, n)} = ${br(c, n)}.`, false)].map((o) => (o.richtig ? opt(o.text, true) : o)), tB3,
@@ -239,7 +239,7 @@ export function bruchschreibweise() {
     () => { const n = wahl([5, 6, 8, 10]), [a, c] = mische(vorn(n - 1, 1)).slice(0, 2);
       return auswahl(Z('Welches Zeichen passt?', `${br(a, n)} ▢ ${br(c, n)}`), ZEICHEN([a, n], [c, n]), tGleich, { nachweis: [VGL(br(a, n), br(c, n))] }); },
     () => { const n = wahl([6, 8, 10]), zs = mische(vorn(n - 1, 1)).slice(0, 4).sort((a, c) => a - c);
-      return ordnen(Z('Ordne die Brüche.', 'Beginne mit dem kleinsten.'), zs.map((k) => br(k, n)), tGleich, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt' }); },
+      return ordnen(Z('Ordne die Brüche.', 'Beginne mit dem kleinsten.'), zs.map((k) => br(k, n)), tGleich, { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt' }); },
     () => { const [a, c] = stamm().filter((x) => x <= 8).slice(0, 2);
       return auswahl(Z(`Figur A zeigt ${br(1, a)}.`, `Figur B zeigt ${br(1, c)}.`, 'Welches Zeichen passt?', `${br(1, a)} ▢ ${br(1, c)}`), [opt('<', a > c, 'bruch-nenner-groesse'), opt('>', a < c, 'bruch-nenner-groesse'), opt('=', false)].map((o) => (o.richtig ? opt(o.text, true) : o)), tStamm,
         { bild: bild(...benenne([fig('kreis', a, [0]), fig('kreis', c, [0])])), nachweis: [NB(br(1, a), { figur: 'A' }), NB(br(1, c), { figur: 'B' }), VGL(br(1, a), br(1, c))] }); },
@@ -277,7 +277,7 @@ export function bruchschreibweise() {
         { bild: B.strahl({ von: 0, bis: T, schritt: 1, beschriftung: T, pfeil: p, teiler: T }), nachweis: [{ art: 'strahl', zahl: br(p, T) }] }); },
     () => { for (let i = 0; i < 50; i++) { const liste = mische(ACHTEL).slice(0, 5);
         if (new Set(liste.map(([z, n]) => z / n)).size === 5 && liste.some(([, , t]) => t.includes(' ')) && liste.some(([z, n]) => z < n)) return ordnen(Z('Ordne die Zahlen.', 'Beginne mit der kleinsten.'), sortiere(liste).map(([, , t]) => t),
-          h2('Sortiere zuerst grob: Welche Zahlen sind kleiner als 1, welche größer?', 'Schreibe alle Zahlen in Achteln, zum Beispiel am Zahlenstrahl: 1⁄2 sind 4 Achtel, 3⁄4 sind 6 Achtel, 1 sind 8 Achtel.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'zeichen-verwechselt' }); }
+          h2('Sortiere zuerst grob: Welche Zahlen sind kleiner als 1, welche größer?', 'Schreibe alle Zahlen in Achteln, zum Beispiel am Zahlenstrahl: 1⁄2 sind 4 Achtel, 3⁄4 sind 6 Achtel, 1 sind 8 Achtel.'), { nachweis: [{ art: 'ordnung', richtung: 'auf' }], umgekehrt: 'reihenfolge-umgekehrt' }); }
       return null; },
   ]);
   sechs(B3, 'E', [

@@ -161,7 +161,7 @@ function d2() {
         { bild: dreieckBild(E, {}, { gleich: Object.fromEntries(rest.map((x) => [x, 1])) }), nachweis: [{ art: 'name', seite: basis, basis: true }] }); },
     () => { const s = zz(3, 9), u = 3 * s;
       return zahl(Z('Ein gleichseitiges Dreieck hat drei gleich lange Seiten.', `Sein Umfang ist ${u} cm.`, 'Berechne die Länge einer Seite.'), s, [[u / 2, 'dreieck-sonderfall'], [u - s, 'dreieck-sonderfall']].filter(([x]) => Number.isInteger(x)),
-        H('G', 'Der Umfang ist die Summe der drei Seiten.', 'Umfang 12 cm: 12 cm : 3 = 4 cm.', `Rechne ${u} : 3.`), { einheit: 'cm', bild: dreieckFigur(dreieckSss(s, s, s, drehFuer('G')), { gleich: { a: 1, b: 1, c: 1 } }), nachweis: [{ zahl: 3, grund: 'drei gleich lange Seiten' }, `${u} : 3 = ${s}`] }); },
+        H('G', 'Der Umfang ist die Summe der drei Seiten.', 'Umfang 12 cm: 12 cm : 3 = 4 cm.', `Rechne ${u} : 3.`), { hinweise: { 'dreieck-sonderfall': 'Gleichseitig heißt: Alle drei Seiten sind gleich lang. Teile den Umfang durch 3.' }, einheit: 'cm', bild: dreieckFigur(dreieckSss(s, s, s, drehFuer('G')), { gleich: { a: 1, b: 1, c: 1 } }), nachweis: [{ zahl: 3, grund: 'drei gleich lange Seiten' }, `${u} : 3 = ${s}`] }); },
     () => { const k = kind(), s = winkelFuer('G', 95, 130); if ((180 - s) % 2) return null; const b = (180 - s) / 2;
       return auswahl(Z(`${k} sagt: „Ein gleichschenkliges Dreieck kann an der Spitze ${s}° haben.“`, 'Kreuze die richtige Antwort an.'),
         [opt(`Stimmt. Dann sind die Basiswinkel je ${b}°.`, true), opt('Stimmt nicht. Die Spitze ist immer kleiner als 90°.', false, 'dreieck-art'), opt(`Stimmt nicht. Die Basiswinkel wären dann je ${s}°.`, false, 'basiswinkel-falsch')],

@@ -955,6 +955,15 @@ export function heftWert(aufgabe) {
   }
   return null;
 }
+// Version 0.65: Der Hinweis ohne erkannte Fehlvorstellung passt zur Art der Aufgabe. „Rechne noch einmal nach“ steht nur noch dort, wo gerechnet wird.
+const ALLGEMEIN = {
+  gitter: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.', zeichnen: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.',
+  winkel: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.', faerben: 'Zähle die Teile noch einmal genau.', strichliste: 'Zähle noch einmal genau nach.',
+  ordnen: 'Vergleiche die Kärtchen noch einmal der Reihe nach.', zuordnen: 'Prüfe jedes Paar noch einmal einzeln.',
+  auswahl: 'Lies die Frage und alle Antworten noch einmal genau.', zeichen: 'Vergleiche die beiden Zahlen noch einmal Stelle für Stelle.',
+  zahlenstrahl: 'Schau noch einmal genau auf die Striche und ihre Zahlen.',
+};
+export const allgemeinerHinweis = (aufgabe) => ALLGEMEIN[aufgabe?.format] ?? 'Rechne noch einmal in Ruhe nach.';
 const mitEinheit = (w, einheit) => `${w >= 10000 ? String(w).replace(/\B(?=(\d{3})+$)/g, ' ') : w}${einheit ? ` ${einheit}` : ''}`;
 export function heftcheckFrage(stand, index, zufall = Math.random) {
   if ((stand.heftSeitCheck ?? 0) < HEFT_TAKT) return null;

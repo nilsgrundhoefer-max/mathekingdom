@@ -36,7 +36,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe die Liste von vorne nach hinten 
 - `02` AFB I · _Kommunizieren_ · Die Kinder der 5b wurden gefragt: „Wie kommst du zur Schule?“ / Die Lehrerin macht eine Strichliste. / Wie viele Kinder haben „zu Fuß“ gewählt? _(Bild: Strichliste „Schulweg der 5b“: zu Fuß 8, Bus 7, Auto 15, Roller 13)_ Lösung: **8**. Typische Fehler: 7 (strich-buendel-als-vier).
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5b wurden gefragt: „Welchen Sport machst du am liebsten?“ / Lies die Strichliste ab. _(Bild: Strichliste „Lieblingssport der 5b“: Fußball 11, Tanzen 10, Reiten 8)_
   - a) Wie viele Kinder wurden insgesamt befragt? **29 Kinder**. Typische Fehler: 24 (strich-buendel-als-vier).
-  - b) Wie viele Kinder mehr haben „Fußball“ gewählt als „Reiten“? **3 Kinder**. Typische Fehler: 19 (sach-falsche-rechnung).
+  - b) Wie viele Kinder mehr haben „Fußball“ gewählt als „Reiten“? **3 Kinder**. Typische Fehler: 19 (unterschied-addiert).
 - `04` AFB I · _Kommunizieren (+ Modellieren)_ · Die Kinder der 5c wurden gefragt: „Wie kommst du zur Schule?“ / Schau dir die Zeile „Roller“ an. / Wie viele Striche fehlen bis zum nächsten vollen Bündel? _(Bild: Strichliste „Schulweg der 5c“: zu Fuß 12, Auto 6, Roller 14)_ Lösung: **1**. Typische Fehler: 0 (strich-buendel-als-vier).
 - `05` AFB II · _Kommunizieren_ · In der Strichliste stehen schon Antworten der 5a. / Diese Kinder haben später geantwortet. / Trage ihre Antworten nach. _(Antwortkärtchen: Grün, Gelb, Lila, Gelb, Grün, Gelb, Grün, Gelb, Lila, Grün)_ _(Strichliste anlegen, der fünfte Strich wird von selbst quer gesetzt)_ Lösung: Grün **9** (schon 5), Gelb **16** (schon 12), Lila **11** (schon 9)
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Mara und Tom lesen die Zeile „Vanille“ ab. / Mara sagt: „Es sind 13.“ / Tom sagt: „Es sind 11.“ / Wer hat recht? _(Bild: Strichliste „Lieblingseis der 5c“: Vanille 13, Schoko 7, Zitrone 9)_
@@ -51,7 +51,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache bei jeder Antwort einen Strich.
 - `01` AFB I · _Kommunizieren_ · Das sind die Antworten der 5b. / Mache für jede Antwort einen Strich in der passenden Zeile. _(Antwortkärtchen: Reiten, Reiten, Fußball, Reiten, Turnen, Reiten, Schwimmen, Turnen, Fußball, Fußball, Fußball, Reiten, Fußball, Reiten, Fußball, Fußball, Schwimmen, Reiten, Turnen, Fußball, Turnen, Fußball, Turnen, Turnen, Schwimmen)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Fußball **9**, Schwimmen **3**, Turnen **6**, Reiten **7**
 - `02` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Werte die Strichliste aus. _(Bild: Strichliste „Tiere auf dem Burghof“: Schafe 17, Ziegen 23, Kühe 22, Gänse 6)_
   - a) Wie viele Tiere sind es insgesamt? **68 Tiere**. Typische Fehler: 56 (strich-buendel-als-vier).
-  - b) Wie viele Ziegen mehr als Gänse sind auf dem Burghof? **17 Tiere**. Typische Fehler: 29 (sach-falsche-rechnung).
+  - b) Wie viele Ziegen mehr als Gänse sind auf dem Burghof? **17 Tiere**. Typische Fehler: 29 (unterschied-addiert).
 - `03` AFB II · _Kommunizieren_ · In der Strichliste stehen schon Antworten der 5c. / Diese Kinder haben später geantwortet. / Trage ihre Antworten nach. _(Antwortkärtchen: Hund, Pferd, Hund, Hund, Hund, Hase, Pferd, Katze)_ _(Strichliste anlegen, das Kind setzt den Querstrich selbst)_ Lösung: Hund **15** (schon 11), Katze **8** (schon 7), Pferd **6** (schon 4), Hase **11** (schon 10)
 - `04` AFB I · _Kommunizieren_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Die Lehrerin macht eine Strichliste. / Wie viele Kinder haben „Rot“ gewählt? _(Bild: Strichliste „Lieblingsfarben der 5c“: Rot 26, Blau 19, Grün 24, Lila 14)_ Lösung: **26**. Typische Fehler: 21 (strich-buendel-als-vier).
 - `05` AFB II · _Kommunizieren_ · Bei „Hamster“ sind es 19 Striche. / Es sind ▢ volle Bündel und ▢ einzelne Striche. Lösung: a = **3**, b = **4**
@@ -303,7 +303,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waage
 - `02` AFB I · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder haben „Schoko“ gewählt? _(Bild: Balkendiagramm „Lieblingseis der 5a“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Vanille 55, Schoko 95, Zitrone 70, Nuss 20)_ Lösung: **95**. Typische Fehler: 19 (skala-einerschritte), 80 (skala-zwischenwert).
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Der Kundschafter zählt die Tiere auf dem Burghof. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Tiere auf dem Burghof“; Achse 0 bis 50, Linien alle 5, beschriftet alle 10; Ziegen 25, Hühner 15, Kühe 50)_
   - a) Wie viele Hühner und Kühe sind es zusammen? **65 Tiere**. Typische Fehler: 35 (sach-falsche-rechnung).
-  - b) Wie viele Kühe mehr als Hühner sind auf dem Burghof? **35 Tiere**. Typische Fehler: 65 (sach-falsche-rechnung).
+  - b) Wie viele Kühe mehr als Hühner sind auf dem Burghof? **35 Tiere**. Typische Fehler: 65 (unterschied-addiert).
 - `04` AFB I · _Kommunizieren_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Bei welcher Säule sind es genau 28 Kinder? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 28, Erdbeere 16, Nuss 10)_
   - ☑ „Schoko“
   - ☐ „Nuss“
@@ -321,10 +321,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Gehe vom oberen Ende der Säule waage
 - `01` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Museum. / Wie viele Besucher kamen am Mittwoch? _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 275, Di 400, Mi 450, Do 150)_ Lösung: **450**. Typische Fehler: 18 (skala-einerschritte), 400 (skala-zwischenwert).
 - `02` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Lies die Werte ab und rechne. _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 190, Mi 90, Do 110, Fr 150)_
   - a) Wie viele Besucher kamen am Dienstag und am Freitag zusammen? **340 Besucher**. Typische Fehler: 40 (sach-falsche-rechnung).
-  - b) Wie viele Besucher kamen am Dienstag mehr als am Freitag? **40 Besucher**. Typische Fehler: 340 (sach-falsche-rechnung).
+  - b) Wie viele Besucher kamen am Dienstag mehr als am Freitag? **40 Besucher**. Typische Fehler: 340 (unterschied-addiert).
 - `03` AFB II · _Kommunizieren (+ Modellieren)_ · Das Diagramm zeigt die Besucher im Museum. / Lies die Werte ab und rechne. _(Bild: Säulendiagramm „Besucher im Museum“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Do 150, Fr 200, Sa 90, So 80)_
   - a) Wie viele Besucher kamen an allen Tagen zusammen? **520 Besucher**. Typische Fehler: 440 (sach-schritt-vergessen).
-  - b) Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? **120 Besucher**. Typische Fehler: 280 (sach-falsche-rechnung).
+  - b) Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? **120 Besucher**. Typische Fehler: 280 (unterschied-addiert).
 - `04` AFB I · _Kommunizieren_ · Das Diagramm zeigt die Besucher im Freibad. / Bei welcher Zeile sind es genau 175 Besucher? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 175, Di 475, Mi 150, Do 100)_
   - ☐ Dienstag
   - ☑ Montag
@@ -618,7 +618,7 @@ Baut auf: 5.1.2-L1 (Ich kann Werte aus Säulen- und Balkendiagrammen ablesen.)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Beispiel:* 8 und 5: 8 − 5 = 3. Es sind 3 mehr. *Lösungsschritt:* Die Werte sind 4 und 1.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Vanille“ gewählt als „Erdbeere“? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 4, Schoko 10, Erdbeere 1)_ Lösung: **3**. Typische Fehler: 5 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Vanille“ gewählt als „Erdbeere“? _(Bild: Säulendiagramm „Lieblingseis der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Vanille 4, Schoko 10, Erdbeere 1)_ Lösung: **3**. Typische Fehler: 5 (unterschied-addiert).
 - `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Balkendiagramm „Lieblingsobst der 5c“; Achse 0 bis 10, Linien alle 1, beschriftet alle 1; Apfel 1, Banane 7, Traube 8)_
   - ☐ „Apfel“
   - ☐ „Banane“
@@ -627,18 +627,18 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
   - ☐ „Gelb“
   - ☑ „Lila“
   - ☐ „Grün“
-- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Kirsche“ gewählt als „Traube“? _(Bild: Strichliste „Lieblingsobst der 5b“: Apfel 7, Kirsche 14, Traube 8)_ Lösung: **6**. Typische Fehler: 22 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Kirsche“ gewählt als „Traube“? _(Bild: Strichliste „Lieblingsobst der 5b“: Apfel 7, Kirsche 14, Traube 8)_ Lösung: **6**. Typische Fehler: 22 (unterschied-addiert).
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welche Farbe magst du am liebsten?“ / Ordne vom größten zum kleinsten Wert. / Welche Reihe stimmt? _(Bild: Säulendiagramm „Lieblingsfarben der 5c“; Achse 0 bis 20, Linien alle 2, beschriftet alle 2; Rot 4, Blau 6, Gelb 18)_
   - ☐ „Gelb“, „Rot“, „Blau“
   - ☐ „Rot“, „Blau“, „Gelb“
   - ☑ „Gelb“, „Blau“, „Rot“
-- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Erdbeere“ gewählt als „Kirsche“? _(Bild: Bilddiagramm „Lieblingsobst der 5c“, ein Bild (kind) = 2 Kinder; Banane 2, Erdbeere 14, Kirsche 12)_ Lösung: **2**. Typische Fehler: 26 (sach-falsche-rechnung), 1 (bild-symbole-gezaehlt).
+- `06` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5c wurden gefragt: „Welches Obst isst du am liebsten?“ / Wie viele Kinder mehr haben „Erdbeere“ gewählt als „Kirsche“? _(Bild: Bilddiagramm „Lieblingsobst der 5c“, ein Bild (kind) = 2 Kinder; Banane 2, Erdbeere 14, Kirsche 12)_ Lösung: **2**. Typische Fehler: 26 (unterschied-addiert), 1 (bild-symbole-gezaehlt).
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Beispiel:* 8 und 5: 8 − 5 = 3. Es sind 3 mehr. *Lösungsschritt:* Die Werte sind 30 und 6.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Schoko“ gewählt als „Nuss“? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 30, Erdbeere 20, Zitrone 26, Nuss 6)_ Lösung: **24**. Typische Fehler: 36 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Eissorte isst du am liebsten?“ / Wie viele Kinder mehr haben „Schoko“ gewählt als „Nuss“? _(Bild: Säulendiagramm „Lieblingseis der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Schoko 30, Erdbeere 20, Zitrone 26, Nuss 6)_ Lösung: **24**. Typische Fehler: 36 (unterschied-addiert).
 - `02` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5b wurden gefragt: „Welches Tier magst du am liebsten?“ / Was wurde am häufigsten gewählt? _(Bild: Balkendiagramm „Lieblingstiere der 5b“; Achse 0 bis 100, Linien alle 5, beschriftet alle 20; Katze 95, Pferd 20, Hase 70, Hamster 40)_
   - ☑ „Katze“
   - ☐ „Hase“
@@ -647,10 +647,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
   - ☐ Schafe, Gänse, Ziegen, Kühe
   - ☐ Ziegen, Kühe, Gänse, Schafe
   - ☑ Schafe, Gänse, Kühe, Ziegen
-- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder mehr haben „Lila“ gewählt als „Rot“? _(Bild: Balkendiagramm „Lieblingsfarben der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Rot 14, Blau 32, Gelb 22, Lila 38)_ Lösung: **24**. Typische Fehler: 52 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Die Kinder der 5a wurden gefragt: „Welche Farbe magst du am liebsten?“ / Wie viele Kinder mehr haben „Lila“ gewählt als „Rot“? _(Bild: Balkendiagramm „Lieblingsfarben der 5a“; Achse 0 bis 40, Linien alle 2, beschriftet alle 10; Rot 14, Blau 32, Gelb 22, Lila 38)_ Lösung: **24**. Typische Fehler: 52 (unterschied-addiert).
 - `05` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingstiere“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Tier | Jungen | Mädchen / Hund | 6 | 7 / Hase | 4 | 2 / Hamster | 8 | 6)_
   - a) Wie viele Kinder haben „Hund“ gewählt? **13 Kinder**. Typische Fehler: 6 (sach-schritt-vergessen).
-  - b) Wie viele Jungen mehr als Mädchen haben „Hamster“ gewählt? **2 Kinder**. Typische Fehler: 14 (sach-falsche-rechnung).
+  - b) Wie viele Jungen mehr als Mädchen haben „Hamster“ gewählt? **2 Kinder**. Typische Fehler: 14 (unterschied-addiert).
 - `06` AFB III · _Argumentieren (+ Modellieren)_ · Die Kinder der 5a wurden gefragt: „Welches Obst isst du am liebsten?“ / Elif sagt: „Bei ‚Apfel‘ sind es doppelt so viele Kinder wie bei ‚Erdbeere‘.“ / Stimmt das? _(Bild: Säulendiagramm „Lieblingsobst der 5a“; Achse 0 bis 30, Linien alle 2, beschriftet alle 10; Apfel 8, Erdbeere 6, Kirsche 30)_
   - ☐ Stimmt: Die Säule ist höher.
   - ☑ Falsch: 2 · 6 = 12, es sind aber 8.
@@ -660,7 +660,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab. *Lösungsschritt:* Die Werte sind 200 und 70.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 90, Mi 70, Do 200, Fr 150)_ Lösung: **130**. Typische Fehler: 270 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 200, Linien alle 10, beschriftet alle 50; Di 90, Mi 70, Do 200, Fr 150)_ Lösung: **130**. Typische Fehler: 270 (unterschied-addiert).
 - `02` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Welche Rangfolge stimmt, vom größten zum kleinsten Wert? _(Bild: Säulendiagramm „Besucher im Freibad“; Achse 0 bis 500, Linien alle 25, beschriftet alle 100; Mo 475, Di 175, Mi 150, Do 250, Fr 350)_
   - ☐ Freitag, Montag, Donnerstag, Dienstag, Mittwoch
   - ☐ Montag, Freitag, Donnerstag, Mittwoch, Dienstag
@@ -668,9 +668,9 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
   - ☑ Montag, Freitag, Donnerstag, Dienstag, Mittwoch
 - `03` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingsfarben“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Farbe | Jungen | Mädchen / Rot | 5 | 4 / Blau | 10 | 9 / Grün | 14 | 13 / Gelb | 2 | 6)_
   - a) Wie viele Kinder haben „Gelb“ gewählt? **8 Kinder**. Typische Fehler: 2 (sach-schritt-vergessen).
-  - b) Wie viele Jungen mehr als Mädchen haben „Grün“ gewählt? **1 Kinder**. Typische Fehler: 27 (sach-falsche-rechnung).
+  - b) Wie viele Jungen mehr als Mädchen haben „Grün“ gewählt? **1 Kinder**. Typische Fehler: 27 (unterschied-addiert).
   - c) Wie viele Mädchen wurden befragt? **32 Kinder**. Typische Fehler: 63 (sach-unnoetige-angabe).
-- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Bilddiagramm „Besucher im Museum“, ein Bild (kind) = 20 Besucher; Mo 100, Di 110, Mi 40, Do 80)_ Lösung: **70**. Typische Fehler: 150 (sach-falsche-rechnung).
+- `04` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Museum. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Bilddiagramm „Besucher im Museum“, ein Bild (kind) = 20 Besucher; Mo 100, Di 110, Mi 40, Do 80)_ Lösung: **70**. Typische Fehler: 150 (unterschied-addiert).
 - `05` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Freibad. / Um wie viele Besucher liegt der größte Wert vor dem zweitgrößten? _(Bild: Balkendiagramm „Besucher im Freibad“; Achse 0 bis 400, Linien alle 20, beschriftet alle 100; Mi 240, Do 340, Fr 360, Sa 100)_ Lösung: **20**. Typische Fehler: 260 (extrem-verwechselt).
 - `06` AFB III · _Modellieren_ · In der 5a mögen 11 von 22 Kindern „Auto“ am liebsten. / In der 5b sind es 15 von 30 Kindern. / Finn sagt: „In der 5b ist ‚Auto‘ beliebter.“ / Was meinst du?
   - ☐ Die 5a, denn die Klasse ist kleiner.
@@ -682,10 +682,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleine
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies beide Werte ab. Ziehe den kleineren vom größeren ab.
 
-- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mi 1200, Do 600, Fr 2000, Sa 1500)_ Lösung: **1400**. Typische Fehler: 2600 (sach-falsche-rechnung).
+- `01` AFB I · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher im Zoo. / Um wie viele Besucher unterscheiden sich der größte und der kleinste Wert? _(Bild: Balkendiagramm „Besucher im Zoo“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mi 1200, Do 600, Fr 2000, Sa 1500)_ Lösung: **1400**. Typische Fehler: 2600 (unterschied-addiert).
 - `02` AFB II · _Modellieren_ · Bei der Umfrage „Lieblingseis“ wurden Jungen und Mädchen getrennt gezählt. / Vergleiche. _(Tabelle: Eissorte | Jungen | Mädchen / Vanille | 14 | 7 / Schoko | 9 | 11 / Erdbeere | 4 | 10 / Zitrone | 10 | 4)_
   - a) Wie viele Kinder haben „Zitrone“ gewählt? **14 Kinder**. Typische Fehler: 10 (sach-schritt-vergessen).
-  - b) Wie viele Mädchen mehr als Jungen haben „Erdbeere“ gewählt? **6 Kinder**. Typische Fehler: 14 (sach-falsche-rechnung).
+  - b) Wie viele Mädchen mehr als Jungen haben „Erdbeere“ gewählt? **6 Kinder**. Typische Fehler: 14 (unterschied-addiert).
   - c) Wie viele Mädchen wurden befragt? **32 Kinder**. Typische Fehler: 69 (sach-unnoetige-angabe).
 - `03` AFB II · _Modellieren (+ Kommunizieren)_ · Das Diagramm zeigt die Besucher auf der Burg. / Wie viele Besucher kamen am Samstag und Sonntag zusammen mehr als am Montag und Dienstag zusammen? _(Bild: Säulendiagramm „Besucher auf der Burg“; Achse 0 bis 2000, Linien alle 100, beschriftet alle 500; Mo 1900, Di 400, Sa 1100, So 1800)_ Lösung: **600**. Typische Fehler: 2900 (sach-schritt-vergessen), 5200 (sach-falsche-rechnung).
 - `04` AFB III · _Modellieren_ · In der 5a mögen 9 von 27 Kindern „Hamster“ am liebsten. / In der 5b sind es 12 von 24 Kindern. / In welcher Klasse ist „Hamster“ beliebter?
@@ -10699,6 +10699,19 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `tafel-verrutscht` | Trägt Ziffern in die falsche Spalte der Stellenwerttafel ein. | Beginne ganz rechts bei den Einern und gehe Spalte für Spalte nach links. | Du trägst jetzt jede Ziffer in die richtige Spalte ein. |
 | `vergleich-erste-ziffer` | Hält die Zahl mit der größeren ersten Ziffer für größer, ohne auf die Zahl der Stellen zu achten. | Zähle zuerst die Stellen. Die Zahl mit mehr Stellen ist größer. | Du schaust beim Vergleichen jetzt zuerst auf die Zahl der Stellen. |
 | `zeichen-verwechselt` | Verwechselt die Zeichen < und >. | Die Spitze des Zeichens zeigt immer zur kleineren Zahl. | Du weißt jetzt: Die Spitze zeigt immer zur kleineren Zahl. |
+| `reihenfolge-umgekehrt` | Ordnet richtig, aber in umgekehrter Reihenfolge. | Lies den Auftrag noch einmal: Womit sollst du beginnen? | Du schaust jetzt genau, womit du beim Ordnen beginnen sollst. |
+| `strahl-gespiegelt` | Zählt am Zahlenstrahl in die falsche Richtung und trifft den gespiegelten Strich. | Schau, bei welchem beschrifteten Strich du anfängst und in welche Richtung du zählst. | Du zählst am Zahlenstrahl jetzt in die richtige Richtung. |
+| `strahl-zu-grob` | Liest am Zahlenstrahl nur den beschrifteten Strich ab und lässt die feinen Schritte weg. | Der Pfeil steht nicht auf einem beschrifteten Strich. Zähle die kleinen Schritte dazu. | Du zählst am Zahlenstrahl jetzt auch die kleinen Schritte mit. |
+| `kuerzen-subtrahiert` | Zieht beim Kürzen ab oder zählt dazu, statt Zähler und Nenner zu teilen. | Beim Kürzen teilst du Zähler und Nenner durch dieselbe Zahl. Abziehen ändert den Wert. | Du weißt jetzt: Kürzen heißt teilen, nicht abziehen. |
+| `ergaenzen-addiert` | Addiert die beiden Zahlen, statt zu bestimmen, was bis zum Ziel fehlt. | Gesucht ist, was noch fehlt. Rechne vom kleineren Bruch zum größeren. | Du rechnest jetzt aus, was bis zum Ziel noch fehlt. |
+| `strahl-ganzes` | Zählt am Zahlenstrahl alle Abstände des ganzen Strahls statt nur die von 0 bis 1. | Der Nenner zählt nur die Abstände von 0 bis 1. | Du zählst für den Nenner jetzt nur die Abstände von 0 bis 1. |
+| `ganzes-mehrere-figuren` | Nimmt mehrere Figuren zusammen als ein Ganzes. | Ein Ganzes ist eine Figur. Zähle die Teile von einer Figur: Das ist der Nenner. | Du weißt jetzt: Ein Ganzes ist eine Figur, nicht alle zusammen. |
+| `koerper-unvollstaendig-gezaehlt` | Zählt Ecken, Kanten oder Flächen eines Körpers nicht vollständig oder doppelt. | Zähle der Reihe nach: erst unten, dann oben, dann dazwischen. Hake jedes Teil in Gedanken ab. | Du zählst Ecken, Kanten und Flächen jetzt der Reihe nach. |
+| `mantel-streifen` | Bestimmt die Länge der Mantelfläche im Netz falsch. | Der Streifen der Mantelfläche ist so lang wie alle Grundkanten zusammen. | Du weißt jetzt: Der Mantelstreifen ist so lang wie alle Grundkanten zusammen. |
+| `netz-kleben` | Zählt beim Zusammenkleben eines Netzes die falschen Kanten. | Zähle alle Kanten des Körpers. Ziehe die Faltkanten ab, die im Netz schon zusammenhängen. | Du weißt jetzt, welche Kanten beim Falten eines Netzes noch offen sind. |
+| `netz-ansicht-verwechselt` | Verwechselt das Netz eines Körpers mit seiner Ansicht. | Ein Netz entsteht, wenn du den Körper aufschneidest und flach hinlegst. Eine Ansicht ist nur der Blick von einer Seite. | Du unterscheidest jetzt Netz und Ansicht eines Körpers. |
+| `zahlbereich-falsch` | Ordnet eine Zahl einem falschen Zahlbereich zu. | Natürliche Zahlen sind 0, 1, 2, 3 und so weiter. Ganze Zahlen haben kein Komma und keinen Bruch, dürfen aber negativ sein. | Du weißt jetzt, welche Zahlen natürlich, ganz oder rational sind. |
+| `unterschied-addiert` | Addiert zwei Werte, obwohl nach dem Unterschied gefragt ist. | Gefragt ist der Unterschied. Rechne: größerer Wert minus kleinerer Wert. | Du rechnest beim Unterschied jetzt: größerer Wert minus kleinerer Wert. |
 | `nachbar-verwechselt` | Verwechselt Vorgänger und Nachfolger. | Der Vorgänger kommt direkt vor der Zahl, der Nachfolger direkt danach. | Du hältst Vorgänger und Nachfolger jetzt auseinander. |
 | `strahl-einerschritte` | Zählt am Zahlenstrahl jeden Strich als 1, statt die Schrittweite zu bestimmen. | Schau auf zwei beschriftete Striche: Wie viele Schritte liegen dazwischen, und wie groß ist dann ein Schritt? | Du findest jetzt zuerst heraus, wie groß ein Schritt am Zahlenstrahl ist. |
 | `million-milliarde` | Verwechselt Tausender, Millionen und Milliarden. | Zähle die Dreierblöcke von rechts: Einer, Tausender, Millionen, Milliarden. | Du hältst Tausender, Millionen und Milliarden jetzt auseinander. |
@@ -10829,7 +10842,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `ortslinie-verwechselt` | Verwechselt die Ortslinien: Kreis (fester Abstand zu einem Punkt), Mittelsenkrechte (gleicher Abstand zu zwei Punkten), Winkelhalbierende (gleicher Abstand zu zwei Geraden), Parallele (fester Abstand zu einer Geraden). | Lies die Bedingung genau: Abstand zu einem Punkt, zu zwei Punkten oder zu Geraden? | Du weißt jetzt, welche Ortslinie zu welcher Bedingung gehört. |
 | `tangente-nicht-senkrecht` | Zeichnet die Tangente nicht senkrecht zum Radius im Berührpunkt. | Die Tangente berührt den Kreis in einem Punkt. Dort steht sie senkrecht auf dem Radius. | Du weißt jetzt: Die Tangente steht senkrecht auf dem Radius. |
 | `umkreis-inkreis-verwechselt` | Verwechselt Umkreis (Schnittpunkt der Mittelsenkrechten, durch die Ecken) und Inkreis (Schnittpunkt der Winkelhalbierenden, berührt die Seiten). | Der Umkreis geht durch alle Ecken. Der Inkreis berührt alle Seiten von innen. | Du hältst Umkreis und Inkreis jetzt auseinander. |
-| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Lies noch einmal: Soll der Punkt innen liegen, außen oder genau auf der Linie? | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
+| `innen-aussen-verwechselt` | Achtet nicht darauf, ob ein Punkt innerhalb oder außerhalb liegen soll (Kreis, Dreieck, Bereich). | Überlege genau: innen, außen oder genau auf der Linie? Eine Skizze hilft dir. | Du achtest jetzt darauf: Liegt der Punkt innen oder außen? |
 | `konstruktion-reihenfolge` | Bringt die Schritte einer Konstruktion oder einer Begründung in eine Reihenfolge, in der ein Schritt etwas benutzt, das es noch nicht gibt. | Prüfe jeden Schritt: Gibt es schon alles, was du dafür brauchst? | Du ordnest die Schritte einer Konstruktion jetzt richtig. |
 | `ecken-kanten-verwechselt` | Verwechselt Ecken, Kanten und Flächen eines Körpers (zählt zum Beispiel Kanten statt Ecken). | Ecken sind Punkte, Kanten sind Linien, Flächen sind die Seiten. Zeige beim Zählen auf jedes Teil. | Du hältst Ecken, Kanten und Flächen jetzt auseinander. |
 | `verdeckt-nicht-gezaehlt` | Zählt nur die Ecken, Kanten oder Flächen, die im Bild sichtbar sind. | Denk an die Rückseite: Was ist hinten verdeckt? Die gestrichelten Linien helfen dir. | Du zählst jetzt auch, was hinten verdeckt ist. |
@@ -10841,7 +10854,7 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `wuerfel-verdeckt` | Zählt bei Würfelbauten nur die sichtbaren Würfel und vergisst verdeckte Würfel darunter oder dahinter. | Zähle Schicht für Schicht. Ein Würfel oben braucht einen Würfel darunter. | Du zählst jetzt auch verdeckte Würfel mit. |
 | `netz-ecken-gezaehlt` | Zählt Ecken oder Kanten im Netz statt am gefalteten Körper. | Beim Falten treffen sich mehrere Ecken des Netzes in einer Ecke des Körpers. | Du zählst Ecken jetzt am fertigen Körper und nicht im Netz. |
 | `prisma-pyramide` | Verwechselt Prisma (zwei gleiche Vielecke, Rechtecke an den Seiten) und Pyramide (ein Vieleck, Dreiecke bis zur Spitze). | Hat der Körper oben eine Spitze? Dann ist es eine Pyramide. Hat er oben und unten dieselbe Fläche, ist es ein Prisma. | Du hältst Prisma und Pyramide jetzt auseinander. |
-| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Hat sie fünf Ecken, ist es ein fünfseitiges Prisma. | Du benennst den Körper jetzt nach seiner Grundfläche. |
+| `name-nach-seitenflaeche` | Benennt ein Prisma oder eine Pyramide nach der Form der Seitenflächen statt nach der Grundfläche. | Der Name richtet sich nach der Grundfläche: Zähle ihre Ecken. | Du benennst den Körper jetzt nach seiner Grundfläche. |
 | `gegenueber-benachbart` | Hält im Würfelnetz benachbarte Flächen für gegenüberliegend. | Zwei Flächen, die eine Kante gemeinsam haben, liegen nebeneinander. Gegenüber liegt die Fläche, die die andere nicht berührt. | Du findest gegenüberliegende Flächen jetzt sicher. |
 | `runde-koerper-zaehlen` | Zählt bei Zylinder und Kegel die gekrümmte Fläche oder die Kreislinien nicht mit oder hält die Spitze für eine Kante. | Eine gekrümmte Fläche ist auch eine Fläche. Eine Kante ist dort, wo zwei Flächen zusammenstoßen. | Du zählst Flächen und Kanten an runden Körpern jetzt richtig. |
 | `koerper-verwechselt` | Verwechselt Körperformen (zum Beispiel Zylinder und Kegel oder Quader und Prisma). | Schau auf die Flächen: Wie viele sind es, sind sie eben oder gekrümmt? | Du erkennst die Körper jetzt an ihren Flächen. |
