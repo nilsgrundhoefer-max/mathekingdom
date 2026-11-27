@@ -757,13 +757,15 @@ async function weiter(seite, wahl = '#weiter') {
     await seite.click('#weiter');
   }
   await seite.waitForSelector('#feedbackfrage');
-  assert.match(await seite.innerText('#feedbackfrage'), /Wie gefällt dir das Aussehen/);
+  // Mit welcher Frage ein Kind beginnt, hängt seit 0.54 von seinem Code ab: Bei 5A-FEED ist es die letzte.
+  assert.match(await seite.innerText('#feedbackfrage'), /Möchtest du so weiterarbeiten/);
   assert.equal(await seite.locator('#feedbackfrage [data-feedback]').count(), 2);
   await foto(seite, 'feedbackfrage');
   await seite.click('#feedbackfrage [data-feedback="0"]');
   await seite.waitForSelector('section.aufgabe #pruefen');
   const st = JSON.parse(await seite.evaluate(() => localStorage.getItem('mk-demo-5a/5A-FEED.json')));
-  assert.deepEqual(st.feedback.map((f) => [f.frage, f.antwort]), [['aussehen', 0]]);
+  assert.deepEqual(st.feedback.map((f) => [f.frage, f.antwort]), [['weiter', 0]]);
+  assert.match(st.feedback[0].version, /^\d+\.\d+$/, 'Feedback trägt die Version (0.59)');
   assert.equal(st.feedbackSeit, 0);
   assert.deepEqual(fehler, []);
   await seite.close();
@@ -1569,6 +1571,8 @@ async function weiter(seite, wahl = '#weiter') {
     await leh.close();
 
     // Schüler: Unter dem Knopf steht, dass der gemerkte Ordner nicht antwortet; der Klick wählt einen anderen.
+    // Seit 0.54 sperrt ein zweites Fenster mit demselben Code. Das Schülerfenster aus der Schule ist dafür kurz zu.
+    await schueler.goto('about:blank');
     const sch = await neu('schüler');
     await sch.goto(`${basis}test/Mathekingdom.html`);
     await sch.waitForSelector('#ordner-stumm', { timeout: 10000 });
@@ -1598,6 +1602,12 @@ async function weiter(seite, wahl = '#weiter') {
     await leh2.waitForSelector('nav.bereiche', { timeout: 15000 });
     await leh2.close();
     await weg('');
+    await schueler.goto(`${basis}test/Mathekingdom.html`);
+    await schueler.waitForSelector('#code');
+    await schueler.fill('#code', code); await schueler.fill('#pin', pin);
+    await waehle(schueler, 'S');
+    await schueler.click('#ordner');
+    await schueler.waitForSelector('.regionen', { timeout: 15000 });
   }
 
   // Münzgabe (ADR 0027): Der Administrator schickt Lena 500 Münzen. Sie kommen als Brief, gutgeschrieben beim Öffnen.
@@ -1677,6 +1687,21 @@ async function weiter(seite, wahl = '#weiter') {
   assert.match(download.suggestedFilename(), /^Mathekingdom_Teststunde_alle_\d{4}-\d\d-\d\d\.md$/);
   assert.match(export_, /# Mathekingdom: Teststunde[\s\S]*## Alle Aufgaben/);
   assert.doesNotMatch(export_, new RegExp(`Lena|Müller|${code}`), 'ohne Namen und Codes');
+  // Version 0.59: Nach dem Export wird nichts gelöscht, aber „seit dem letzten Export“ und „ab Version“ filtern.
+  await admin.waitForSelector('#analyse-zeitraum option[value="export"]', { state: 'attached' });
+  await admin.selectOption('#analyse-zeitraum', 'export');
+  await admin.waitForFunction(() => /seit dem letzten Export/.test(document.getElementById('teststunde')?.textContent ?? ''));
+  await admin.waitForSelector('#analyse-leer');
+  // Die Auswahl zeigt nur Versionen, die in den Speicherständen vorkommen; hier kommt die laufende dazu.
+  const versionen = await admin.locator('#analyse-version option').allInnerTexts();
+  assert.equal(versionen[0], 'alle Versionen');
+  if (versionen.length > 1) {
+    await admin.selectOption('#analyse-version', { index: 1 });
+    await admin.waitForFunction(() => /nur Schüler-Dashboard ab Version/.test(document.getElementById('teststunde')?.textContent ?? ''));
+  }
+  await admin.locator('#teststunde').screenshot(bilder ? { path: `${bilder}/admin-teststunde-filter.png` } : {});
+  await admin.selectOption('#analyse-version', '');
+  await admin.selectOption('#analyse-zeitraum', 'heute');
   await admin.uncheck('[data-feedback-an="5a"]');
   await admin.waitForFunction(() => /Feedbackfragen in Klasse 5a: aus/.test(document.getElementById('hinweis')?.textContent ?? ''));
   // Lehrkraft: Belohnung des Sonderauftrags für die Klasse auf 250 stellen, Münzgabe im Schülerprofil sehen.

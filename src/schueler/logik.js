@@ -1377,7 +1377,8 @@ export function naechsteFeedbackFrage(stand, kontext = {}) {
   return null;
 }
 export function trageFeedbackEin(stand, frage, antwort, aufgabeId, jetzt) {
-  (stand.feedback ??= []).push({ t: jetzt, frage: frage.id, antwort: Number(antwort) === 1 ? 1 : 0, ...(frage.zurAufgabe && aufgabeId && { aufgabe: aufgabeId }) });
+  (stand.feedback ??= []).push({ t: jetzt, frage: frage.id, antwort: Number(antwort) === 1 ? 1 : 0, ...(frage.zurAufgabe && aufgabeId && { aufgabe: aufgabeId }),
+    ...(stand.dashboardVersion && { version: stand.dashboardVersion }) }); // Version 0.59: auch Feedback trägt die Version
   stand.feedbackSeit = 0;
   stand.feedbackNaechste = (frage.nr + 1) % FEEDBACK_FRAGEN.length;
 }
