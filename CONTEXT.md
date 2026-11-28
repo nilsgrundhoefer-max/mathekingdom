@@ -348,6 +348,34 @@ _Avoid_: Graph, Diagramm (das sind Säulen, Balken, Bilder), Ursprung (steht nur
 Rechenweg bei proportionalen (auf E auch antiproportionalen) Zuordnungen in drei Zeilen: gegebenes Wertepaar, Wert „für 1“ (ab M auch für einen gemeinsamen Teiler), gesuchter Wert. Die **Dreisatztabelle** zeigt die drei Zeilen; ein **Rechenpfeil** am Rand nennt, womit beide Seiten geteilt oder malgenommen werden.
 _Avoid_: Schlussrechnung, Verhältnisgleichung
 
+**Stichprobe**:
+Der Teil der Personen oder Dinge, die bei einer Umfrage oder Beobachtung wirklich gefragt oder gezählt werden, wenn man etwas über alle wissen will. Sie passt, wenn sie groß genug ist und nicht nur eine Gruppe erfasst. Das Wort steht ab G.
+_Avoid_: Auswahl, Umfragegruppe, repräsentativ
+
+**Kenngröße**:
+Eine Zahl, die eine Datenreihe zusammenfasst: Minimum, Maximum, Spannweite, Mittelwert, Zentralwert. Die **Spannweite** ist Maximum minus Minimum, nie der größte Wert selbst.
+_Avoid_: Kennwert, Lageparameter, Streumaß
+
+**Mittelwert**:
+Die Summe aller Werte geteilt durch ihre Anzahl. Im Alltag sagt man „Durchschnitt“; das steht nur in der Worterklärung. Er ist nicht der Wert in der Mitte.
+_Avoid_: arithmetisches Mittel, Durchschnitt (in Aufgaben)
+
+**Zentralwert**:
+Der Wert in der Mitte der der Größe nach geordneten Datenreihe; bei gerader Anzahl (ab M) der Mittelwert der beiden mittleren Werte. Erst ab G. Ein **Ausreißer** (nur E) ist ein Wert, der weit weg von den anderen liegt und den Mittelwert stärker verschiebt als den Zentralwert.
+_Avoid_: Median
+
+**Absolute und relative Häufigkeit**:
+Die absolute Häufigkeit ist die Anzahl, wie oft ein Ergebnis vorkommt. Die relative Häufigkeit ist ihr Anteil an der Gesamtzahl, als Bruch (vollständig gekürzt), Dezimalzahl oder in Prozent. Auf F heißt es nur „Anzahl“ und „Anteil“, die beiden Fachwörter stehen ab G.
+_Avoid_: Quote, Prozentsatz
+
+**Kreisdiagramm**:
+Ein Diagramm, in dem ein Kreis für die Gesamtheit steht und jeder Anteil ein Kreisausschnitt mit eigener Farbe ist. Die Namen stehen in einer Legende rechts neben dem Kreis, nicht im Kreis. Zum Zeichnen berechnet man den Winkel jedes Ausschnitts als Anteil von 360°; das Zeichnen selbst ist eine Heftaufgabe.
+_Avoid_: Tortendiagramm, Kuchendiagramm, Sektordiagramm
+
+**Streifendiagramm**:
+Ein Diagramm, in dem ein Streifen fester Länge (10 cm oder 20 cm) für die Gesamtheit steht und jeder Anteil ein Abschnitt ist; ein Zentimeterlineal darunter erlaubt das Ablesen. Am Bildschirm erstellt man es durch Färben eines Streifens aus 20 Kästchen. Es ist nicht der Teil-Ganzes-Streifen aus Klasse 5, der eine Zahl in Teile zerlegt.
+_Avoid_: Balken (das ist ein Balkendiagramm), Prozentstreifen
+
 **Planfigur**:
 Eine Skizze des gesuchten Dreiecks, in der alle gegebenen Seiten und Winkel markiert sind. In Kapitel 2 steht sie neben jeder Heftaufgabe des Konstruierens und ist maßstabsgetreu gezeichnet.
 _Avoid_: Skizze, Entwurf
