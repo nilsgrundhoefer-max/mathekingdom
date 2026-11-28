@@ -98,4 +98,15 @@ export const merkzettel6 = {
   '6.7.7-A2': { regel: 'Rechnest du oben mal, dann rechnest du unten geteilt durch dieselbe Zahl.', beispiel: '3 Pumpen → 8 h\nMal 2 oben: 6 Pumpen\nGeteilt durch 2 unten: 4 h' },
   '6.7.8-U1': { regel: 'Rechne über die 1 mit der Gegenrechnung: Links geteilt, rechts mal. Dann links mal, rechts geteilt.', rechnung: ['3 Pumpen →  8 h', '1 Pumpe  → 24 h', '4 Pumpen →  6 h'], beispiel: '8 h · 3 = 24 h\n24 h : 4 = 6 h' },
   '6.7.8-U2': { regel: 'Gehört zum Doppelten das Doppelte, ist die Zuordnung proportional. Gehört zum Doppelten die Hälfte, ist sie antiproportional.', beispiel: 'Doppelt so viele Hefte kosten doppelt so viel: proportional.\nDoppelt so viele Pumpen brauchen halb so lange: antiproportional.' },
+  // 6.8 Daten auswerten und darstellen
+  '6.8.1-E1': { regel: 'Zähle jede Antwort mit einem Strich und schreibe die Anzahl in die Häufigkeitstabelle. Alle Anzahlen zusammen ergeben die Anzahl der Antworten.', beispiel: 'Hund, Katze, Hund, Hund, Katze\nHund: 3, Katze: 2, zusammen 5' },
+  '6.8.1-E2': { regel: 'Eine Stichprobe passt, wenn sie groß genug ist und nicht nur eine Gruppe fragt.', beispiel: 'Frage zur ganzen Schule:\nNur die Fußballmannschaft fragen passt nicht.\nAus jeder Klasse ein paar Kinder fragen passt.' },
+  '6.8.2-K1': { regel: 'Minimum ist der kleinste Wert, Maximum der größte. Spannweite = Maximum − Minimum.', beispiel: '4, 9, 2, 7\nMinimum 2, Maximum 9\nSpannweite 9 − 2 = 7' },
+  '6.8.2-K2': { regel: 'Mittelwert: alle Werte addieren und durch die Anzahl teilen. Zentralwert: Werte ordnen und den Wert in der Mitte nehmen.', beispiel: '2, 3, 4, 5, 11\nMittelwert: 25 : 5 = 5\nZentralwert: 4' },
+  '6.8.4-H1': { regel: 'Absolute Häufigkeit: wie oft. Relative Häufigkeit: Anzahl geteilt durch Gesamtzahl.', beispiel: '6 von 20 Kindern mögen Pizza.\nAbsolut: 6\nRelativ: 6⁄20 = 3⁄10' },
+  '6.8.4-H2': { regel: 'Erweitere den Anteil auf den Nenner 100. Dann kannst du ihn in Prozent und als Dezimalzahl schreiben.', beispiel: '6⁄20 = 30⁄100 = 0,3 = 30 %' },
+  '6.8.5-L1': { regel: 'Der ganze Kreis ist 100 % oder 360°. Ein halber Kreis ist 50 %, ein Viertel 25 %.', beispiel: 'Ausschnitt mit 90°:\n90° von 360° ist 1⁄4, also 25 %.' },
+  '6.8.5-L2': { regel: 'Der ganze Streifen ist 100 %. Teile die Länge des Abschnitts durch die Länge des Streifens.', beispiel: 'Streifen 10 cm, Abschnitt 3 cm:\n3⁄10 = 30 %' },
+  '6.8.6-D1': { regel: 'Berechne für jede Antwort den Anteil in Prozent. Bei 20 Kästchen ist ein Kästchen 5 %.', beispiel: '40 % sind 40 : 5 = 8 Kästchen.' },
+  '6.8.6-D2': { regel: 'Winkel = Anteil mal 360°. Alle Winkel zusammen ergeben 360°.', beispiel: '25 % von 360°:\n1⁄4 · 360° = 90°\n10 % sind 36°.' },
 };

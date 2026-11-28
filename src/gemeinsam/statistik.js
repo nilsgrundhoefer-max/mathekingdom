@@ -4,6 +4,7 @@
 // klassen: [{ klasse, namen: { code: name }, staende: [{ code, stand }], backups: [stempel] }]
 
 import { pruefeGroesse } from '../schueler/groessen.js';
+import { pruefeStreifenFaerben, pruefeDatensatz, streifenAnzahlen } from '../schueler/daten.js';
 import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseTeile, pruefePeriode } from '../schueler/bruch.js';
 
 const TAG = 86400000;
@@ -75,7 +76,8 @@ export function falscheTeile(a, eingabe) {
       : zahl(t, eingabe?.[i], a.teile.length > 1 ? `${'abcdef'[i]}) ` : '')));
     // Kapitel 6: Größe mit Einheit. Erwartet ist ein hinterlegter typischer Fehler oder eine fehlende Einheit.
     case 'groesse': { const e = pruefeGroesse(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
-    case 'luecken': case 'tabelle': { const n = Object.keys(a.luecken); return n.flatMap((k) => zahl(a.luecken[k], eingabe?.[k], n.length > 1 ? `${k}: ` : '')); }
+    // Klasse 6, Kapitel 8 (ADR 0058): erfundener Datensatz und gefärbter Streifen.
+    case 'luecken': case 'tabelle': if (a.datensatz) { const e = pruefeDatensatz(a, eingabe); const t = Object.keys(a.luecken).map((k) => eingabe?.[k] ?? '').join(', '); return !t.replace(/[, ]/g, '') || e.richtig ? [] : [{ text: t, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; } { const n = Object.keys(a.luecken); return n.flatMap((k) => zahl(a.luecken[k], eingabe?.[k], n.length > 1 ? `${k}: ` : '')); }
     case 'auswahl': return (eingabe ?? []).map((t) => a.optionen.find((o) => o.text === t)).filter((o) => o && !o.richtig).map((o) => ({ text: o.text, erwartet: !!o.fehlvorstellung, ...(o.fehlvorstellung && { fehlvorstellung: o.fehlvorstellung }) }));
     // Kapitel 1: Strichliste und Säulen zeichnen, je falsche Zeile oder Säule.
     case 'strichliste': return a.zeilen.flatMap((z, i) => {
@@ -93,6 +95,7 @@ export function falscheTeile(a, eingabe) {
     // Kapitel 9: Brucheingabe und Teile färben.
     case 'bruch': { const e = pruefeBruch(a, eingabe); return !String(eingabe ?? '').trim() || e.richtig ? [] : [{ text: String(eingabe), erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     case 'faerben': { const e = pruefeFaerben(a, eingabe); return eingabe == null || e.richtig ? [] : [{ text: `${leseTeile(eingabe).length} Teile gefärbt`, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
+    case 'streifenfaerben': { const e = pruefeStreifenFaerben(a, eingabe); return eingabe == null || e.richtig ? [] : [{ text: a.farben.map((f, i) => `${f.name} ${streifenAnzahlen(a, eingabe)[i]}`).join(', '), erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     // Klasse 6, Kapitel 4 (ADR 0047): periodische Dezimalzahl aus zwei Feldern.
     case 'periode': { const e = pruefePeriode(a, eingabe); const t = eingabe ? `${eingabe.vor ?? ''}${eingabe.periode ? ` Periode ${eingabe.periode}` : ''}` : ''; return !t.trim() || e.richtig ? [] : [{ text: t, erwartet: !!e.fehlvorstellung, ...(e.fehlvorstellung && { fehlvorstellung: e.fehlvorstellung }) }]; }
     case 'zuordnen': return a.paare.filter((p) => eingabe?.[p.links] && eingabe[p.links] !== p.rechts).map((p) => ({ text: `${p.links} → ${eingabe[p.links]}`, erwartet: false }));

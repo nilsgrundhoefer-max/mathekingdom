@@ -2,6 +2,7 @@
 // Begriffe wie in CONTEXT.md.
 
 import { pruefeGitter } from './geo.js';
+import { pruefeStreifenFaerben, pruefeDatensatz } from './daten.js';
 import { pruefeWinkel } from './winkel.js';
 import { pruefeGroesse } from './groessen.js';
 import { pruefeDezimal, pruefeBruch, pruefeFaerben, leseDezimal, pruefePeriode } from './bruch.js';
@@ -197,6 +198,8 @@ function pruefeRoh(aufgabe, eingabe) {
       return { richtig, fehlvorstellung: richtig ? null : falsche?.fehlvorstellung ?? null };
     }
     case 'luecken': case 'tabelle': {
+      // Klasse 6, Kapitel 8 (ADR 0058): Datensatz erfinden. Jede Zahlenreihe mit den verlangten Kenngrößen ist richtig.
+      if (aufgabe.datensatz) return pruefeDatensatz(aufgabe, eingabe);
       // Klasse 6, Kapitel 6 (ADR 0049): Bei `reihenfolgeEgal` dürfen die Zahlen dieser Lücken in beliebiger Reihenfolge stehen (die drei Kanten eines Quaders).
       const frei = aufgabe.reihenfolgeEgal ?? [];
       const ist = frei.map((n) => leseZahl(eingabe?.[n])).sort((x, y) => x - y), soll = frei.map((n) => aufgabe.luecken[n].loesung).sort((x, y) => x - y);
@@ -221,6 +224,7 @@ function pruefeRoh(aufgabe, eingabe) {
     case 'winkel': return pruefeWinkel(aufgabe, eingabe);
     case 'bruch': return pruefeBruch(aufgabe, eingabe);
     case 'faerben': return pruefeFaerben(aufgabe, eingabe);
+    case 'streifenfaerben': return pruefeStreifenFaerben(aufgabe, eingabe);
     case 'periode': return pruefePeriode(aufgabe, eingabe);
     default: throw new Error(`Unbekanntes Aufgabenformat: ${aufgabe.format}`);
   }
@@ -1122,7 +1126,7 @@ export function heftWert(aufgabe) {
 // Version 0.65: Der Hinweis ohne erkannte Fehlvorstellung passt zur Art der Aufgabe. „Rechne noch einmal nach“ steht nur noch dort, wo gerechnet wird.
 const ALLGEMEIN = {
   gitter: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.', zeichnen: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.',
-  winkel: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.', faerben: 'Zähle die Teile noch einmal genau.', strichliste: 'Zähle noch einmal genau nach.',
+  winkel: 'Schau dir die Zeichnung und den Auftrag noch einmal genau an.', faerben: 'Zähle die Teile noch einmal genau.', streifenfaerben: 'Zähle die Kästchen jeder Farbe noch einmal genau.', strichliste: 'Zähle noch einmal genau nach.',
   ordnen: 'Vergleiche die Kärtchen noch einmal der Reihe nach.', zuordnen: 'Prüfe jedes Paar noch einmal einzeln.',
   auswahl: 'Lies die Frage und alle Antworten noch einmal genau.', zeichen: 'Vergleiche die beiden Zahlen noch einmal Stelle für Stelle.',
   zahlenstrahl: 'Schau noch einmal genau auf die Striche und ihre Zahlen.',

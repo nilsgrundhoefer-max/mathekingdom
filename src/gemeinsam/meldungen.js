@@ -8,6 +8,7 @@
 import { gitterLoesung } from '../schueler/geo.js';
 import { loesungGroesse } from '../schueler/groessen.js';
 import { faerbenLoesung, bruchLoesung } from '../schueler/bruch.js';
+import { streifenFaerbenLoesung } from '../schueler/daten.js';
 
 export const STATUS_DATEI = 'aufgabenmeldungen.json';
 export const ARTEN = { loesung: 'Lösung falsch', unloesbar: 'nicht lösbar', unklar: 'unklar formuliert', bild: 'Bild falsch' };
@@ -67,6 +68,7 @@ export function loesungVon(a) {
     case 'gitter': return gitterLoesung(a);
     case 'bruch': return `${bruchLoesung(a)}${a.einheit ? ` ${a.einheit}` : ''}`;
     case 'faerben': return faerbenLoesung(a);
+    case 'streifenfaerben': return streifenFaerbenLoesung(a);
     case 'periode': return String(a.loesung);
     default: return '';
   }

@@ -15,6 +15,7 @@ const satzSchule = ordnersaetze(gemerkteOrdner('mathekingdom-schueler'), ['schul
 import { wappenBild, wappenVoll, regionMap, muenze, siegel, gabeSiegel, kroneBild, gartentor, schlossBild, turmZeichen, wuerfelZeichen, zahlenstrahl, saeulendiagramm, hoftitelBild } from './bilder.js';
 import { aufgabenBild } from './aufgabenbilder.js';
 import { kartenBild } from './koerperbilder.js';
+import { streifenFaerbenEingabe, streifenFaerbenLoesungBild, streifenFaerbenLoesung } from './datenbilder6.js';
 import { strichlisteEingabe, zeichnenEingabe, zeichnenLoesung, urlisteBild, datenTabelle, striche, buendle } from './datenbilder.js';
 import { ordnenEingabe, liesOrdnung, zeichenEingabe, gliedereEingabe, gliedere, tafelBild, mitVorzeichen, abKlasse7, vorzeichenKnopf } from './zahlenbilder.js';
 import { gitterEingabe, gitterLoesungBild } from './geobilder.js';
@@ -1375,6 +1376,8 @@ export function eingabefelder(auf, a, gesperrt) {
     case 'winkel': return winkelEingabe(auf, letzte, gesperrt);
     case 'bruch': return bruchEingabe(auf, letzte, gesperrt, L.mitGanzenFeld(z.index, auf));
     case 'faerben': return faerbenEingabe(auf, letzte, gesperrt);
+    // Klasse 6, Kapitel 8 (ADR 0058): Streifendiagramm durch Färben von Kästchen erstellen.
+    case 'streifenfaerben': return streifenFaerbenEingabe(auf, letzte, gesperrt);
     case 'periode': return periodeEingabe(auf, letzte, gesperrt);
     default: return null;
   }
@@ -1405,6 +1408,7 @@ function liesEingabe(auf, formular) {
     // Kapitel 9: Bruch aus Zähler und Nenner; beim Färben fehlt etwas, solange kein Teil gefärbt ist.
     case 'bruch': return liesBruch(auf, formular);
     case 'faerben': { const v = feld('faerben'); return { eingabe: v, leer: v === '' }; }
+    case 'streifenfaerben': { const v = feld('streifenfaerben'); return { eingabe: v, leer: !/\d/.test(v) }; }
     case 'periode': return liesPeriode(formular);
     case 'gitter': { const frage = auf.nachfrage ? formular.querySelector('input[name=nachfrage]:checked')?.value ?? null : null;
       const v = `${feld('gitter')}${frage != null ? ` [${frage}]` : ''}`, n = (feld('gitter').match(/\(/g) ?? []).length; return { eingabe: v, leer: (auf.nachfrage && frage == null) || n < (auf.eingabe === 'linie' || auf.eingabe === 'kreis' ? 2 : auf.eingabe === 'zellen' || auf.offen ? 1 : auf.loesung.length) }; }
@@ -1415,7 +1419,7 @@ function liesEingabe(auf, formular) {
 function pruefe(formular, sicher = null) {
   const a = z.ansicht, auf = a.aufgabe;
   const { eingabe, leer } = liesEingabe(auf, formular);
-  if (leer) { a.hinweis = ['gitter', 'zeichnen', 'winkel', 'faerben', 'zahlenstrahl'].includes(auf.format) ? 'Da fehlt noch etwas. Tippe oder zeichne erst deine Lösung ins Bild, bevor du prüfst.' : auf.format === 'auswahl' ? 'Da fehlt noch etwas. Kreuze erst eine Antwort an, bevor du prüfst.' : 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
+  if (leer) { a.hinweis = ['gitter', 'zeichnen', 'winkel', 'faerben', 'streifenfaerben', 'zahlenstrahl'].includes(auf.format) ? 'Da fehlt noch etwas. Tippe oder zeichne erst deine Lösung ins Bild, bevor du prüfst.' : auf.format === 'auswahl' ? 'Da fehlt noch etwas. Kreuze erst eine Antwort an, bevor du prüfst.' : 'Da fehlt noch etwas. Fülle alles aus, bevor du prüfst.'; return maleMitEntwurf(eingabe); }
   if (a.versuch === 0 && sicher != null) a.sicher = sicher;
   const ergebnis = L.pruefeAntwort(auf, eingabe);
   // Klasse 6 (ADR 0037): Der Wert stimmt, aber der Bruch ist noch nicht gekürzt oder keine gemischte Zahl. Das ist „fast richtig“ und kostet keinen Versuch.
@@ -1522,6 +1526,8 @@ function loesungstext(auf) {
     case 'auswahl': return auf.optionen.filter((o) => o.richtig).map((o) => o.text).join(' · ');
     // Version 0.66 (Audit L083): Gezeigt werden nur die Sätze mit Lücke, nicht noch einmal die ganze Aufgabe. Der Schlusspunkt kommt vom Satz „Die Lösung ist: … .“
     case 'luecken': {
+      // Klasse 6, Kapitel 8 (ADR 0058): Beim erfundenen Datensatz ist die Lösung nur ein Beispiel.
+      if (auf.datensatz) return `zum Beispiel ${Object.values(auf.luecken).map((l) => gliedere(l.loesung)).join(', ')}`;
       const saetze = auf.text.split(/(?<=[.?!:])\s+(?=\S)/), mit = saetze.filter((t) => t.includes('{{'));
       return (mit.length ? mit : saetze).join(' ').replace(/\{\{(\w+)\}\}/g, (_, n) => gliedere(auf.luecken[n].loesung)).replace(/[\s.]+$/, '');
     }
@@ -1534,6 +1540,7 @@ function loesungstext(auf) {
     case 'winkel': return winkelLoesung(auf);
     case 'bruch': return `${bruchLoesung(auf)}${auf.einheit ? ` ${auf.einheit}` : ''}`;
     case 'faerben': return faerbenLoesung(auf);
+    case 'streifenfaerben': return streifenFaerbenLoesung(auf);
     case 'periode': return String(auf.loesung);
     default: return '';
   }
@@ -1605,6 +1612,7 @@ export function loesungsbild(auf) {
   // Kapitel 7: der Winkel mit dem zweiten Schenkel in der richtigen Lage.
   if (auf.format === 'winkel') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, winkelLoesungBild(auf));
   if (auf.format === 'faerben') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, faerbenLoesungBild(auf));
+  if (auf.format === 'streifenfaerben') return h('div', { class: 'bildrahmen loesungsbild', id: 'loesungsbild' }, streifenFaerbenLoesungBild(auf));
   // Klasse 6, Kapitel 7 (ADR 0050): die ausgefüllte Wertetabelle oder Dreisatztabelle.
   if (auf.tabelle?.art === 'werte' || auf.tabelle?.art === 'dreisatz') {
     const voll = (c) => (typeof c === 'object' && c !== null ? `${gliedere(auf.luecken[c.luecke].loesung)}${c.einheit ? ` ${c.einheit}` : ''}` : c);

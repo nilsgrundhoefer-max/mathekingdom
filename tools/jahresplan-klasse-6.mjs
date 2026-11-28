@@ -10,6 +10,7 @@ import { lernziele4, merkzettel4, wortspeicher4, voraussetzungen4, grundlagen4, 
 import { lernziele5, merkzettel5, wortspeicher5, voraussetzungen5, grundlagen5, bp5 } from './jahresplan-6-5.mjs';
 import { lernziele66, merkzettel66, wortspeicher66, voraussetzungen66, grundlagen66, bp66 } from './jahresplan-6-6.mjs';
 import { lernziele67, merkzettel67, wortspeicher67, voraussetzungen67, grundlagen67, bp67 } from './jahresplan-6-7.mjs';
+import { lernziele68, merkzettel68, wortspeicher68, voraussetzungen68, grundlagen68, bp68 } from './jahresplan-6-8.mjs';
 
 // `pflicht` (ADR 0044, 0045): Ein Meilenstein ist erst ab dieser Stufe verbindlich, hat aber Aufgaben auf allen Stufen.
 // `bp`: der Standard im Bildungsplan 2016 je Lernziel (ADR 0045, Quelle docs/quellen/niveaustufen-klasse-6.md).
@@ -117,11 +118,11 @@ const roh = [
     uk(8, 'Dreisatz bei antiproportionalen Zuordnungen', lernziele67[8], 'E'),
   ]],
   ['Daten auswerten und darstellen', [
-    uk(1, 'Daten erheben und Stichproben auswählen', ['Ich kann beurteilen, wie Daten erhoben werden und ob eine Stichprobe geeignet ist.']),
-    uk(2, 'Daten mithilfe von Kenngrößen auswerten', ['Ich kann Minimum, Maximum, Spannweite, Mittelwert und Zentralwert bestimmen und deuten.']),
-    uk(4, 'Absolute und relative Häufigkeit', ['Ich kann absolute und relative Häufigkeiten bestimmen und als Bruch, Dezimalzahl oder in Prozent angeben.']),
-    uk(5, 'Kreis- und Streifendiagramme lesen', ['Ich kann Anteile aus Kreis- und Streifendiagrammen ablesen.']),
-    uk(6, 'Daten darstellen', ['Ich kann Daten in einem passenden Diagramm darstellen, auch im Streifen- und Kreisdiagramm.'], 'M'),
+    uk(1, 'Daten erheben und Stichproben auswählen', lernziele68[1]),
+    uk(2, 'Daten mithilfe von Kenngrößen auswerten', lernziele68[2]),
+    uk(4, 'Absolute und relative Häufigkeit', lernziele68[4]),
+    uk(5, 'Kreis- und Streifendiagramme lesen', lernziele68[5]),
+    uk(6, 'Daten darstellen', lernziele68[6], 'M'),
   ]],
   ['Rationale Zahlen', [
     uk(1, 'Ganze Zahlen', ['Ich kann ganze Zahlen an der Zahlengerade darstellen und im Sachzusammenhang deuten.']),
@@ -166,6 +167,7 @@ export const merkzettel = {
   ...merkzettel5,
   ...merkzettel66,
   ...merkzettel67,
+  ...merkzettel68,
 };
 
 // Wortspeicher je Unterkapitel: Wort, Niveaustufe, ab der es gezeigt und benutzt wird, und Erklärung.
@@ -226,6 +228,7 @@ export const wortspeicher = {
   ...wortspeicher5,
   ...wortspeicher66,
   ...wortspeicher67,
+  ...wortspeicher68,
 };
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 liegen (ADR 0037).
@@ -248,6 +251,7 @@ const voraussetzungen = {
   ...voraussetzungen5,
   ...voraussetzungen66,
   ...voraussetzungen67,
+  ...voraussetzungen68,
 };
 
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F übt. Er steht im Hinweis für die Lehrkraft.
@@ -270,6 +274,7 @@ const grundlagen = {
   ...grundlagen5,
   ...grundlagen66,
   ...grundlagen67,
+  ...grundlagen68,
 };
 
 // IDs: Kapitel "6.1", Unterkapitel "6.1.3", Lernziel "6.1.3-K2". Unterkapitel ohne feine Lernziele haben "6.2.1-L1".
@@ -279,7 +284,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => ({
   unterkapitel: unterkapitel.map((u) => {
     const id = `6.${k + 1}.${u.nr}`;
     const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(merkzettel6[`${id}-${kurz}`] && { merkzettel: merkzettel6[`${id}-${kurz}`] }), voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] }) }));
+    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(merkzettel6[`${id}-${kurz}`] && { merkzettel: merkzettel6[`${id}-${kurz}`] }), voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] ?? bp68[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] ?? bp68[`${id}-${kurz}`] }) }));
     return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id]?.heft && { heft: merkzettel[id].heft }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
   }),
 }));

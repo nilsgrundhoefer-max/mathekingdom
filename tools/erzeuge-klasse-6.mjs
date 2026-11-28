@@ -47,6 +47,11 @@ import { proportional6 } from './aufgaben/6-7-2-proportional.mjs';
 import { schaubilder6 } from './aufgaben/6-7-5-schaubilder.mjs';
 import { dreisatz6 } from './aufgaben/6-7-6-dreisatz.mjs';
 import { antiproportional6 } from './aufgaben/6-7-7-antiproportional.mjs';
+import { erheben6 } from './aufgaben/6-8-1-erheben.mjs';
+import { kenngroessen6 } from './aufgaben/6-8-2-kenngroessen.mjs';
+import { haeufigkeit6 } from './aufgaben/6-8-4-haeufigkeit.mjs';
+import { diagrammeLesen6 } from './aufgaben/6-8-5-diagramme-lesen.mjs';
+import { darstellen6 } from './aufgaben/6-8-6-darstellen.mjs';
 
 const ERZEUGER = [
   // Kapitel 1 (ADR 0037)
@@ -97,6 +102,12 @@ const ERZEUGER = [
   [67567567, schaubilder6],
   [67667667, dreisatz6],
   [67767767, antiproportional6],
+  // Kapitel 8 (ADR 0058)
+  [68168168, erheben6],
+  [68268268, kenngroessen6],
+  [68468468, haeufigkeit6],
+  [68568568, diagrammeLesen6],
+  [68668668, darstellen6],
 ];
 for (const [saat, erzeuge] of ERZEUGER) { setzeSaat(saat); erzeuge(); }
 
