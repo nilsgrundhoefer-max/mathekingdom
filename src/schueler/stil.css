@@ -1056,3 +1056,21 @@ body { margin: 0; background: #efe6d2; }
 #mathekingdom .titelform { margin-top: .8rem; display: flex; flex-direction: column; gap: .4rem; align-items: flex-start; }
 #mathekingdom .titelform .reihe { display: flex; gap: .5rem; flex-wrap: wrap; }
 #mathekingdom .titelform button.aktiv { border-color: #5b4632; box-shadow: inset 0 0 0 2px #5b4632; font-weight: 600; }
+
+/* Klasse 6, Kapitel 8 (ADR 0058): Kreisdiagramm, Streifendiagramm und „Streifen färben“. */
+#mathekingdom svg.datendiagramm.kreisdiagramm, #mathekingdom svg.datendiagramm.streifendiagramm { touch-action: auto; }
+#mathekingdom .datendiagramm .ausschnitt, #mathekingdom .datendiagramm .abschnitt { stroke: #fff; stroke-width: 2; }
+#mathekingdom .datendiagramm .kreisrand, #mathekingdom .datendiagramm .streifenrand { fill: none; stroke: var(--tinte); stroke-width: 2; }
+#mathekingdom .datendiagramm .legendenfeld { stroke: var(--tinte); stroke-width: 1; }
+#mathekingdom .datendiagramm .legende { font-size: 16px; fill: var(--tinte); }
+#mathekingdom .datendiagramm .legende.mitfrage { font-weight: 700; }
+#mathekingdom .streifenfaerben .farbknoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+#mathekingdom .streifenfaerben .farbknopf { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 2px solid var(--rand); border-radius: 8px; background: var(--karte); color: var(--tinte); font: inherit; cursor: pointer; }
+#mathekingdom .streifenfaerben .farbknopf.aktiv { border-color: var(--nacht); box-shadow: 0 0 0 2px var(--gold); font-weight: 700; }
+#mathekingdom .streifenfaerben .farbfeld { display: inline-block; width: 18px; height: 18px; border-radius: 3px; border: 1px solid var(--tinte); }
+#mathekingdom .streifenfaerben .faerbestreifen { display: grid; grid-template-columns: repeat(20, 1fr); max-width: 600px; min-width: 420px; border: 2px solid var(--tinte); }
+#mathekingdom .streifenfaerben .streifenkaestchen { height: 48px; border: 0; border-right: 1px solid #b9ad94; background: #fff; padding: 0; cursor: pointer; }
+#mathekingdom .streifenfaerben .streifenkaestchen:last-child { border-right: 0; }
+#mathekingdom .streifenfaerben .streifenkaestchen:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+#mathekingdom .streifenfaerben .legende-zeile { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 8px 0 0; }
+#mathekingdom .streifenfaerben .legende-eintrag { display: inline-flex; align-items: center; gap: 6px; }

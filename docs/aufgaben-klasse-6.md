@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (2016 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (2256 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2016).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2256).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -7071,6 +7071,932 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Prüfe: Gehört zum Doppelten das Dop
   - ☐ keines von beiden: Der Wert lässt sich so nicht berechnen.
 - `24` AFB III · _Argumentieren_ · 6 kg Kartoffeln kosten 8,40 €. / Jedes Kilogramm kostet gleich viel. Entscheide zuerst: proportional oder antiproportional. Berechne den Preis für 8 kg Kartoffeln. Lösung: **11,20 €**. Typische Fehler: 6,30 (prop-antiproportional-gerechnet), 1,40 (dreisatz-zwischenwert).
 
+## 6.8.1-E1: Ich kann Daten erheben und in einer Häufigkeitstabelle ordnen.
+
+Grundlage, die F übt: Antworten aus einer Liste mit einer Strichliste zählen
+
+Baut auf: 5.1.1-H2 (Ich kann aus einer Liste oder Strichliste eine Häufigkeitstabelle erstellen.), 5.1.5-U1 (Ich kann eine Umfrage planen und auswerten.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache für jede Antwort einen Strich. Zähle dann die Striche. *Beispiel:* Hund, Katze, Hund: Hund 2, Katze 1. *Lösungsschritt:* Zähle zuerst nur „Turnen“.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 17 Kinder nennen ihren Lieblingssport. / Zähle die Antworten. / Ergänze die Häufigkeitstabelle. _(Antwortkärtchen: Tanzen, Tanzen, Tanzen, Reiten, Turnen, Tanzen, Reiten, Reiten, Reiten, Reiten, Tanzen, Reiten, Turnen, Tanzen, Reiten, Tanzen, Tanzen)_ 
+
+  | Antwort | Anzahl |
+  |---|---|
+  | Turnen | **2** |
+  | Tanzen | **8** |
+  | Reiten | **7** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 18 Knappen nennen ihre Lieblingsübung. / Zähle, wie oft „Reiten“ vorkommt. _(Antwortkärtchen: Reiten, Schwertkampf, Bogenschießen, Schwertkampf, Reiten, Schwertkampf, Reiten, Bogenschießen, Reiten, Schwertkampf, Reiten, Schwertkampf, Schwertkampf, Reiten, Reiten, Reiten, Schwertkampf, Bogenschießen)_ Lösung: **8**. Typische Fehler: 9 (liste-verzaehlt), 7 (liste-verzaehlt), 18 (haeufigkeit-falsche-gesamtzahl).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Tabelle zeigt eine Umfrage zum Schulweg. / Bestimme, wie viele Kinder insgesamt gefragt wurden. _(Tabelle: Antwort | Anzahl / Bus | 1 / Auto | 7 / zu Fuß | 9)_ Lösung: **17**. Typische Fehler: 9 (extrem-verwechselt), 3 (liste-verzaehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 17 Kinder nennen ihren Lieblingssport. / Kreuze die häufigste Antwort an. _(Antwortkärtchen: Turnen, Schwimmen, Fußball, Fußball, Schwimmen, Turnen, Turnen, Schwimmen, Fußball, Turnen, Schwimmen, Fußball, Turnen, Turnen, Fußball, Fußball, Turnen)_
+  - ☑ Turnen
+  - ☐ Fußball
+  - ☐ Schwimmen
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 19 Knappen nennen ihre Lieblingsübung. / Bestimme, wie viele Knappen mehr „Schwertkampf“ als „Lanzenstechen“ nennen. _(Antwortkärtchen: Falknerei, Falknerei, Schwertkampf, Schwertkampf, Falknerei, Lanzenstechen, Schwertkampf, Falknerei, Lanzenstechen, Falknerei, Lanzenstechen, Schwertkampf, Schwertkampf, Schwertkampf, Schwertkampf, Lanzenstechen, Lanzenstechen, Falknerei, Schwertkampf)_ Lösung: **3**. Typische Fehler: 13 (unterschied-addiert), 8 (sach-schritt-vergessen).
+- `06` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 17 Kinder nennen ihr Lieblingsobst. / Zähle die Antworten. / Ergänze die Häufigkeitstabelle. _(Antwortkärtchen: Birne, Apfel, Apfel, Apfel, Apfel, Traube, Kirsche, Birne, Kirsche, Birne, Birne, Birne, Kirsche, Apfel, Kirsche, Birne, Birne)_ 
+
+  | Antwort | Anzahl |
+  |---|---|
+  | Apfel | **5** |
+  | Birne | **7** |
+  | Kirsche | **4** |
+  | Traube | **1** |
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache für jede Antwort einen Strich. Zähle dann die Striche. *Beispiel:* Hund, Katze, Hund: Hund 2, Katze 1. *Lösungsschritt:* Zähle zuerst nur „Pizza“.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 25 Kinder nennen ihr Lieblingsessen. / Zähle die Antworten. / Ergänze die Häufigkeitstabelle. _(Antwortkärtchen: Nudeln, Reis, Reis, Pizza, Pizza, Suppe, Pizza, Reis, Nudeln, Pizza, Pizza, Nudeln, Nudeln, Suppe, Pizza, Pizza, Nudeln, Reis, Nudeln, Pizza, Nudeln, Pizza, Pizza, Nudeln, Nudeln)_ 
+
+  | Antwort | Anzahl |
+  |---|---|
+  | Pizza | **10** |
+  | Reis | **4** |
+  | Suppe | **2** |
+  | Nudeln | **9** |
+
+- `02` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 25 Kinder nennen ihr Lieblingsessen. / Zähle die Antworten. / Ergänze die Häufigkeitstabelle. _(Antwortkärtchen: Salat, Pommes, Suppe, Pommes, Salat, Pommes, Pommes, Suppe, Suppe, Pommes, Suppe, Pommes, Pommes, Pommes, Suppe, Suppe, Pommes, Pommes, Suppe, Suppe, Suppe, Pommes, Suppe, Suppe, Suppe)_ 
+
+  | Antwort | Anzahl |
+  |---|---|
+  | Suppe | **12** |
+  | Salat | **2** |
+  | Pommes | **11** |
+  | Gesamt | **25** |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Elif hat 26 Kinder nach dem Lieblingsobst gefragt. / Die Tabelle zeigt die gezählten Antworten. / Kreuze an, was passiert ist. _(Tabelle: Antwort | Anzahl / Banane | 1 / Erdbeere | 10 / Traube | 3 / Kirsche | 9)_
+  - ☐ Die Tabelle stimmt.
+  - ☐ Elif hat 3 Antworten doppelt gezählt.
+  - ☑ Elif hat 3 Antworten nicht gezählt.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 28 Kinder nennen ihr Lieblingsessen. / Zähle, wie oft „Pizza“ vorkommt. _(Antwortkärtchen: Pizza, Pommes, Pizza, Nudeln, Pommes, Pommes, Reis, Reis, Reis, Reis, Nudeln, Pizza, Reis, Nudeln, Nudeln, Nudeln, Nudeln, Reis, Reis, Reis, Reis, Pizza, Nudeln, Nudeln, Pizza, Pizza, Pommes, Pizza)_ Lösung: **7**. Typische Fehler: 8 (liste-verzaehlt), 6 (liste-verzaehlt), 28 (haeufigkeit-falsche-gesamtzahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 27 Kinder nennen ihren Lieblingssport. / Bestimme, wie viele Kinder nicht „Turnen“ nennen. _(Antwortkärtchen: Turnen, Tanzen, Fußball, Reiten, Tanzen, Reiten, Fußball, Reiten, Turnen, Reiten, Tanzen, Turnen, Fußball, Tanzen, Reiten, Turnen, Turnen, Fußball, Tanzen, Turnen, Turnen, Reiten, Turnen, Reiten, Reiten, Reiten, Tanzen)_ Lösung: **19**. Typische Fehler: 8 (sach-frage-verfehlt), 27 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Elif will wissen, welches Obst die Klasse am liebsten mag. / Kreuze die passende Frage für die Umfrage an. _(Tabelle: Umfrage | Antwort / Frage | ? / Antworten | …)_
+  - ☐ „Wie viel Obst isst du?“
+  - ☑ „Welches Obst magst du am liebsten?“
+  - ☐ „Magst du Obst?“
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bei einer Umfrage fragt man. Bei einer Beobachtung schaut man zu und zählt. Bei einer Messung misst man eine Größe. *Lösungsschritt:* Wer mit dem Maßband die Weite bestimmt, macht eine Messung.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Noah misst mit der Stoppuhr, wie lange jeder Knappe für den Burggraben braucht. / Kreuze an, welche Art der Erhebung das ist.
+  - ☐ Umfrage
+  - ☐ Beobachtung
+  - ☑ Messung
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Mara hat diese Frage in einen Fragebogen geschrieben: / „Wie kommst du zur Schule?“ / ☐ Bus / ☐ Fahrrad / ☐ zu Fuß / Kreuze an, was an der Frage nicht gut ist.
+  - ☐ Die Frage ist zu kurz.
+  - ☐ Der Fragebogen ist in Ordnung.
+  - ☐ Es gibt zu viele Antworten.
+  - ☑ Es fehlt eine Antwort für Kinder, die mit dem Auto kommen.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Paul hat diese Frage in einen Fragebogen geschrieben: / „Welche Farbe hat dein Fahrrad?“ / ☐ rot / ☐ blau / ☐ schwarz / Kreuze an, was an der Frage nicht gut ist.
+  - ☐ Fahrräder passen nicht in eine Umfrage.
+  - ☑ Es fehlen Antworten für andere Farben und für Kinder ohne Fahrrad.
+  - ☐ Es gibt zu viele Antworten.
+  - ☐ Der Fragebogen ist in Ordnung.
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 29 Knappen nennen ihre Lieblingsübung. / Zähle die Antworten. / Ergänze die Häufigkeitstabelle. _(Antwortkärtchen: Falknerei, Schwertkampf, Bogenschießen, Lanzenstechen, Bogenschießen, Reiten, Reiten, Falknerei, Schwertkampf, Reiten, Reiten, Schwertkampf, Lanzenstechen, Reiten, Lanzenstechen, Bogenschießen, Lanzenstechen, Bogenschießen, Lanzenstechen, Reiten, Lanzenstechen, Falknerei, Reiten, Bogenschießen, Schwertkampf, Bogenschießen, Lanzenstechen, Schwertkampf, Lanzenstechen)_ 
+
+  | Antwort | Anzahl |
+  |---|---|
+  | Bogenschießen | **6** |
+  | Lanzenstechen | **8** |
+  | Falknerei | **3** |
+  | Schwertkampf | **5** |
+  | Reiten | **7** |
+  | Gesamt | **29** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Tabelle zeigt eine Umfrage zum Lieblingsessen in der 6c und der 6b. / Bestimme, wie viele Kinder in beiden Klassen zusammen „Nudeln“ nennen. _(Tabelle: Antwort | 6c | 6b / Nudeln | 2 | 6 / Salat | 7 | 6 / Pommes | 4 | 6 / Pizza | 4 | 3)_ Lösung: **8**. Typische Fehler: 2 (sach-schritt-vergessen), 38 (sach-frage-verfehlt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Noah hat diese Frage in einen Fragebogen geschrieben: / „Wie viele Minuten brauchst du für den Schulweg?“ / ☐ 0 bis 10 / ☐ 10 bis 20 / ☐ 20 bis 30 / Kreuze an, was an der Frage nicht gut ist.
+  - ☐ Die Zahlen sind zu groß.
+  - ☐ Der Fragebogen ist in Ordnung.
+  - ☐ Es fehlt eine Antwort „gar nicht“.
+  - ☑ Die Antworten überschneiden sich: 10 und 20 Minuten passen in zwei Kästchen. Und für mehr als 30 Minuten fehlt ein Kästchen.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache für jede Antwort einen Strich. Zähle dann die Striche.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 30 Kinder nennen ihr Lieblingstier. / Zähle die Antworten. / Ergänze die Häufigkeitstabelle. _(Antwortkärtchen: Hamster, Pferd, Pferd, Pferd, Hase, Hase, Hamster, Hase, Hase, Pferd, Vogel, Hamster, Pferd, Hamster, Vogel, Hamster, Hase, Pferd, Hamster, Hase, Pferd, Hamster, Hase, Hamster, Pferd, Hamster, Vogel, Katze, Hamster, Vogel)_ 
+
+  | Antwort | Anzahl |
+  |---|---|
+  | Katze | **1** |
+  | Hamster | **10** |
+  | Hase | **7** |
+  | Pferd | **8** |
+  | Vogel | **4** |
+  | Gesamt | **30** |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Elif will herausfinden, wie weit die Kinder der 6b springen. / Kreuze an, welche Erhebung am besten passt, und begründe.
+  - ☐ Umfrage. Man fragt die Personen und schreibt die Antworten auf.
+  - ☐ Schätzen. Das geht am schnellsten.
+  - ☐ Beobachtung. Man schaut zu und zählt, ohne zu fragen.
+  - ☑ Messung. Man bestimmt eine Größe mit einem Messgerät.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas hat diese Frage in einen Fragebogen geschrieben: / „Findest du nicht auch, dass Pizza das beste Essen ist?“ / ☐ ja / ☐ nein / Kreuze an, was an der Frage nicht gut ist.
+  - ☐ Es fehlt die Antwort „vielleicht“.
+  - ☐ Die Frage ist zu kurz.
+  - ☐ Der Fragebogen ist in Ordnung.
+  - ☑ Die Frage drängt zu einer Antwort. Besser: „Was ist dein Lieblingsessen?“
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · 30 Kinder wurden nach dem Lieblingstier gefragt. / In der Tabelle fehlt eine Anzahl. / Bestimme die fehlende Anzahl. _(Tabelle: Antwort | Anzahl / Hund | 2 / Hamster | ? / Hase | 4 / Vogel | 8 / Katze | 7)_ Lösung: **9**. Typische Fehler: 19 (liste-verzaehlt), 21 (sach-frage-verfehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 16 Kinder nennen, wie viele Minuten sie für den Schulweg brauchen. / Die Lehrkraft will die Zeiten in Gruppen ordnen: 0 bis 9 Minuten, 10 bis 19 Minuten, 20 bis 29 Minuten. / Bestimme, wie viele Kinder in die Gruppe 10 bis 19 Minuten gehören. _(Antwortkärtchen: 10 min, 5 min, 8 min, 18 min, 18 min, 17 min, 25 min, 17 min, 12 min, 9 min, 27 min, 28 min, 23 min, 14 min, 17 min, 14 min)_ Lösung: **9**. Typische Fehler: 8 (liste-verzaehlt).
+- `06` AFB III · _Argumentieren_ · Die Tabelle zeigt den Schulweg von 20 Kindern. / Lina sagt: „Mehr als die Hälfte der Kinder fährt mit dem Bus.“ / Beurteile die Aussage. _(Tabelle: Schulweg | Anzahl / Bus | 11 / Fahrrad | 5 / zu Fuß | 4)_
+  - ☐ Falsch. Die meisten fahren nicht mit dem Bus.
+  - ☑ Stimmt. 11 ist mehr als die Hälfte von 20.
+  - ☐ Falsch. Dafür müssten es alle Kinder sein.
+
+## 6.8.1-E2: Ich kann beurteilen, ob eine Stichprobe passt.
+
+Grundlage, die F übt: Erkennen, ob nur eine kleine Gruppe gefragt wurde
+
+Baut auf: 6.8.1-E1 (Ich kann Daten erheben und in einer Häufigkeitstabelle ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein. *Beispiel:* Wer nur die 5a fragt, weiß nur etwas über die 5a. *Lösungsschritt:* Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?
+
+- `01` AFB I · _Argumentieren_ · Ben will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Ben gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 26 / 6a | 0 / 6b | 0 / 6c | 0)_
+  - ☑ Nein. / Ben hat nur Kinder aus der 5c gefragt.
+  - ☐ Ja. / Die Kinder sind alle in derselben Schule.
+  - ☐ Ja. / 26 Kinder sind genug.
+- `02` AFB I · _Argumentieren_ · Emre will wissen, welche AG die Kinder der Schule wählen. / Die Tabelle zeigt, wen Emre gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 6 / 5b | 6 / 5c | 5 / 6a | 6 / 6b | 6 / 6c | 5)_
+  - ☐ Nein. / Aus jeder Klasse wurden zu viele gefragt.
+  - ☐ Nein. / Man muss alle Kinder der Schule fragen.
+  - ☑ Ja. / Aus jeder Klasse wurden einige Kinder gefragt.
+- `03` AFB I · _Argumentieren_ · Ben will wissen, welchen Sport die Kinder der Schule mögen. / Die Tabelle zeigt, wen Ben gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 1 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 1)_
+  - ☐ Ja. / Die Kinder sind aus zwei Klassen.
+  - ☑ Nein. / 2 Kinder sind viel zu wenige.
+  - ☐ Ja. / Jedes Kind sagt seine Meinung.
+- `04` AFB I · _Argumentieren_ · Ali will wissen, welches Obst die Kinder der 6c mögen. / Die Tabelle zeigt, wen Ali gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 28)_
+  - ☑ Ja. / Es geht nur um die 6c, und dort wurden alle gefragt.
+  - ☐ Nein. / Eine Klasse ist zu klein für eine Umfrage.
+  - ☐ Nein. / Kinder aus anderen Klassen fehlen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas will wissen, welchen Sport die Kinder der Schule mögen. / Kreuze an, wen Jonas am besten fragt. _(Tabelle: Schule | Kinder / 5a | 27 / 5b | 26 / 5c | 26 / 6a | 22 / 6b | 23 / 6c | 26)_
+  - ☐ Nur die Kinder aus dem Fußballverein
+  - ☐ Nur seine besten Freunde
+  - ☑ Einige Kinder aus jeder Klasse
+- `06` AFB I · _Argumentieren_ · Jonas will wissen, wie gern die Kinder der Schule schwimmen. / Jonas fragt nur die Kinder der Schwimm-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 2 / 5b | 4 / 5c | 4 / 6a | 2 / 6b | 1 / 6c | 2)_
+  - ☑ Nein. / Die Schwimm-AG denkt anders als die anderen Kinder.
+  - ☐ Ja. / Kinder aus allen Klassen sind dabei, also passt es.
+  - ☐ Ja. / Die Schwimm-AG kennt sich mit dem Thema gut aus.
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein. *Beispiel:* Wer nur die 5a fragt, weiß nur etwas über die 5a. *Lösungsschritt:* Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?
+
+- `01` AFB I · _Argumentieren_ · Ali will wissen, wie die Kinder der Schule zur Schule kommen. / Die Tabelle zeigt, wen Ali gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 23 / 6c | 0)_
+  - ☐ Ja. / Die Kinder sind alle in derselben Schule.
+  - ☑ Nein. / Ali hat nur Kinder aus der 6b gefragt.
+  - ☐ Ja. / 23 Kinder sind genug.
+- `02` AFB I · _Argumentieren_ · Jonas will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Jonas gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 6 / 5b | 4 / 5c | 5 / 6a | 6 / 6b | 6 / 6c | 5)_
+  - ☑ Ja. / Aus jeder Klasse wurden einige Kinder gefragt.
+  - ☐ Nein. / Man muss alle Kinder der Schule fragen.
+  - ☐ Nein. / Aus jeder Klasse wurden zu viele gefragt.
+- `03` AFB II · _Argumentieren_ · Emre will wissen, welches Obst die Kinder der 6c mögen. / Die Tabelle zeigt, wen Emre gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 27)_
+  - ☐ Nein. / Kinder aus anderen Klassen fehlen.
+  - ☐ Nein. / Eine Klasse ist zu klein für eine Umfrage.
+  - ☑ Ja. / Es geht nur um die 6c, und dort wurden alle gefragt.
+- `04` AFB I · _Argumentieren_ · Lina will wissen, welchen Sport die Kinder der Schule mögen. / Die Tabelle zeigt, wen Lina gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 1 / 6a | 0 / 6b | 0 / 6c | 1)_
+  - ☐ Ja. / Die Kinder sind aus zwei Klassen.
+  - ☐ Ja. / Jedes Kind sagt seine Meinung.
+  - ☑ Nein. / 2 Kinder sind viel zu wenige.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Paul will wissen, welchen Sport die Kinder der Schule mögen. / Kreuze an, wen Paul am besten fragt. _(Tabelle: Schule | Kinder / 5a | 25 / 5b | 27 / 5c | 27 / 6a | 25 / 6b | 24 / 6c | 24)_
+  - ☐ Nur seine besten Freunde
+  - ☐ Nur die Kinder aus dem Fußballverein
+  - ☑ Einige Kinder aus jeder Klasse
+- `06` AFB III · _Argumentieren_ · Lina will wissen, wie gern die Kinder der Schule lesen. / Lina fragt nur die Kinder der Bücherei-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 1 / 5b | 2 / 5c | 1 / 6a | 1 / 6b | 2 / 6c | 3)_
+  - ☐ Ja. / Kinder aus allen Klassen sind dabei, also passt es.
+  - ☑ Nein. / Die Bücherei-AG denkt anders als die anderen Kinder.
+  - ☐ Ja. / Die Bücherei-AG kennt sich mit dem Thema gut aus.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein. *Lösungsschritt:* Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?
+
+- `01` AFB I · _Argumentieren_ · Sara will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Sara gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 22 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 0)_
+  - ☐ Ja. 22 Kinder sind genug.
+  - ☐ Ja. Die Kinder sind alle in derselben Schule.
+  - ☑ Nein. Sara hat nur Kinder aus der 5b gefragt.
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ida will wissen, wie viele Kinder der Schule ein Haustier haben. / Kreuze den besten Plan für die Stichprobe an.
+  - ☐ Sie fragt alle Kinder ihrer eigenen Klasse.
+  - ☐ Sie fragt ihre 5 besten Freundinnen.
+  - ☐ Sie fragt 40 Kinder vor der Zoohandlung.
+  - ☑ Sie fragt aus jeder der 8 Klassen 5 Kinder, die sie auslost.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Die Schule hat 8 Klassen. / Mara will aus jeder Klasse 4 Kinder zufällig auslosen. / Bestimme, wie viele Kinder in der Stichprobe sind. Lösung: **32**. Typische Fehler: 12 (sach-falsche-rechnung), 4 (sach-schritt-vergessen).
+- `04` AFB I · _Argumentieren_ · Mia will wissen, wie gern die Kinder der Schule schwimmen. / Mia fragt nur die Kinder der Schwimm-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 3 / 5b | 2 / 5c | 2 / 6a | 2 / 6b | 2 / 6c | 3)_
+  - ☐ Ja. Die Schwimm-AG kennt sich mit dem Thema gut aus.
+  - ☑ Nein. Die Schwimm-AG denkt anders als die anderen Kinder.
+  - ☐ Ja. Kinder aus allen Klassen sind dabei, also passt es.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Lina will wissen, welches Schulessen die Kinder am liebsten mögen. / Kreuze den besten Plan für die Stichprobe an.
+  - ☐ Sie fragt nur die Köchin.
+  - ☑ Sie fragt an drei verschiedenen Tagen einige Kinder aus allen Klassen.
+  - ☐ Sie fragt nur an dem Tag, an dem es Pizza gibt.
+  - ☐ Sie fragt nur die Kinder, die nie in der Mensa essen.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ali will wissen, welche Bücher die Kinder der Schule lesen. / Kreuze an, wen Ali am besten fragt. _(Tabelle: Schule | Kinder / 5a | 22 / 5b | 27 / 5c | 26 / 6a | 23 / 6b | 27 / 6c | 24)_
+  - ☐ Nur die Kinder in der Bücherei
+  - ☑ Einige Kinder aus jeder Klasse
+  - ☐ Nur die Kinder der 5a
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein.
+
+- `01` AFB I · _Argumentieren_ · Mia will wissen, wie die Kinder der Schule zur Schule kommen. / Die Tabelle zeigt, wen Mia gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 22 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 0)_
+  - ☐ Ja. 22 Kinder sind genug.
+  - ☐ Ja. Die Kinder sind alle in derselben Schule.
+  - ☑ Nein. Mia hat nur Kinder aus der 5a gefragt.
+- `02` AFB II · _Argumentieren_ · **[Heftaufgabe]** Emre fragt im Schwimmbad 50 Kinder, ob die Kinder der Stadt gern schwimmen. / Im Heft: Begründe, warum die Stichprobe nicht passt. Schreibe einen besseren Vorschlag auf. / Kreuze dann an, welcher Vorschlag deinem am nächsten kommt.
+  - ☐ Die Bademeister fragen.
+  - ☐ Nur die Kinder im Schwimmkurs fragen.
+  - ☑ In mehreren Schulen der Stadt einige Kinder aus jeder Klasse fragen.
+  - ☐ Im Schwimmbad 100 Kinder fragen.
+- `03` AFB II · _Argumentieren_ · Zwei Kinder wollen wissen, welchen Sport die Kinder der Stadt mögen. / Jonas fragt 157 Kinder im Fußballstadion. / Lena fragt 49 Kinder, die sie in fünf Schulen der Stadt auslost. / Beurteile die beiden Stichproben.
+  - ☑ Lenas Stichprobe passt besser. Im Stadion sind vor allem Fußballfans.
+  - ☐ Jonass Stichprobe passt besser. Sie ist größer.
+  - ☐ Beide passen gleich gut. Es sind in beiden Fällen Kinder aus der Stadt.
+  - ☐ Keine passt. Man muss alle Kinder der Stadt fragen.
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Noah fragt nur seine Fußballmannschaft, wie die Kinder der Schule zur Schule kommen. / Die Stichprobe passt nicht. / Kreuze den besseren Vorschlag an.
+  - ☐ Nur die Kinder fragen, die mit dem Rad kommen.
+  - ☑ Aus jeder Klasse einige Kinder zufällig auslosen und fragen.
+  - ☐ Die Lehrkräfte fragen, wie die Kinder kommen.
+  - ☐ Die ganze Fußballmannschaft zweimal fragen.
+- `05` AFB II · _Argumentieren_ · Ben fragt 25 Kinder in der Schwimm-AG: „Schwimmst du gern?“ / 21 Kinder sagen ja. / Ben schreibt: „Fast alle Kinder der Schule schwimmen gern.“ / Beurteile die Aussage.
+  - ☑ Falsch. In der Schwimm-AG sind Kinder, die gern schwimmen. Für die Schule sagt das wenig.
+  - ☐ Falsch. 21 von 25 ist weniger als die Hälfte.
+  - ☐ Stimmt. 25 Kinder sind genug.
+  - ☐ Stimmt. 21 von 25 sind fast alle.
+- `06` AFB III · _Argumentieren_ · **[Heftaufgabe]** Paul fragt im Schwimmbad 50 Kinder, ob die Kinder der Stadt gern schwimmen. / Im Heft: Begründe, warum die Stichprobe nicht passt. Schreibe einen besseren Vorschlag auf. / Kreuze dann an, welcher Vorschlag deinem am nächsten kommt.
+  - ☐ Im Schwimmbad 100 Kinder fragen.
+  - ☐ Die Bademeister fragen.
+  - ☐ Nur die Kinder im Schwimmkurs fragen.
+  - ☑ In mehreren Schulen der Stadt einige Kinder aus jeder Klasse fragen.
+
+## 6.8.2-K1: Ich kann Minimum, Maximum und Spannweite bestimmen.
+
+Grundlage, die F übt: Den größten und den kleinsten Wert in einer Liste finden
+
+Baut auf: 5.1.4-V1 (Ich kann Daten vergleichen: Unterschiede, größter und kleinster Wert, Rangfolge.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Minimum ist der kleinste Wert. Das Maximum ist der größte Wert. *Beispiel:* Bei 4, 9 und 2 ist das Minimum 2 und das Maximum 9. *Lösungsschritt:* Gehe die Tabelle von oben nach unten durch.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder werfen einen Ball. / Bestimme Minimum und Maximum. / Minimum: ▢ m / Maximum: ▢ m _(Tabelle: Kind | Weite in m / Ida | 24 / Elif | 22 / Finn | 13 / Mara | 19 / Paul | 35)_ Lösung: a = **13**, b = **35**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder nennen ihr Taschengeld in der Woche. / Bestimme die Spannweite. _(Tabelle: Kind | Taschengeld in € / Emre | 6 / Ida | 7 / Noah | 18 / Sara | 13 / Finn | 16)_ Lösung: **12 €**. Typische Fehler: 18 (spannweite-groesster-wert), 24 (unterschied-addiert).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Klasse misst jeden Mittag die Temperatur. / Bestimme das Maximum. _(Tabelle: Tag | Temperatur in °C / Montag | 22 / Dienstag | 14 / Mittwoch | 11 / Donnerstag | 9 / Freitag | 18 / Samstag | 10)_ Lösung: **22 °C**. Typische Fehler: 9 (extrem-verwechselt), 10 (liste-verzaehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder werfen einen Ball. / Kreuze an, wer den kleinsten Wert hat. _(Tabelle: Kind | Weite in m / Ali | 29 / Noah | 14 / Mara | 30 / Ida | 35 / Sara | 32)_
+  - ☑ Noah
+  - ☐ Ida
+  - ☐ Ali
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Klasse misst jeden Mittag die Temperatur. / Bestimme die Spannweite. _(Tabelle: Tag | Temperatur in °C / Montag | 25 / Dienstag | 26 / Mittwoch | 15 / Donnerstag | 11 / Freitag | 20 / Samstag | 22)_ Lösung: **15 °C**. Typische Fehler: 26 (spannweite-groesster-wert), 37 (unterschied-addiert), 3 (extrem-verwechselt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Klasse misst jeden Mittag die Temperatur. / Bestimme das Minimum. _(Tabelle: Tag | Temperatur in °C / Montag | 18 / Dienstag | 24 / Mittwoch | 26 / Donnerstag | 23 / Freitag | 13 / Samstag | 21)_ Lösung: **13 °C**. Typische Fehler: 26 (extrem-verwechselt), 21 (liste-verzaehlt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Minimum ist der kleinste Wert. Das Maximum ist der größte Wert. *Beispiel:* Bei 4, 9 und 2 ist das Minimum 2 und das Maximum 9. *Lösungsschritt:* Gehe die Tabelle von oben nach unten durch.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Bestimme Minimum, Maximum und Spannweite. / Minimum: ▢ s / Maximum: ▢ s / Spannweite: ▢ s _(Tabelle: Kind | Zeit in s / Mara | 9,4 / Elif | 7,2 / Finn | 7,4 / Paul | 7,6 / Ali | 9,5 / Ole | 9,0)_ Lösung: a = **7,2**, b = **9,5**, c = **2,3**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Bestimme die Spannweite. _(Tabelle: Kind | Weite in m / Mara | 3,8 / Lina | 4,2 / Ole | 4,0 / Sara | 3,5 / Ida | 3,0 / Lena | 2,6 / Emre | 2,3)_ Lösung: **1,9 m**. Typische Fehler: 4,2 (spannweite-groesster-wert), 6,5 (unterschied-addiert), 1,5 (extrem-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Kreuze an, wer am schnellsten gelaufen ist. _(Tabelle: Kind | Zeit in s / Mara | 8,7 / Finn | 7,5 / Ole | 8,5 / Elif | 7,2 / Lena | 7,7 / Noah | 7,8)_
+  - ☑ Elif
+  - ☐ Mara
+  - ☐ Finn
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Bestimme das Maximum. _(Tabelle: Kind | Weite in m / Lena | 3,2 / Mia | 3,3 / Finn | 3,8 / Lina | 3,7 / Mara | 2,5 / Tom | 2,8 / Ole | 3,6)_ Lösung: **3,8 m**. Typische Fehler: 2,5 (extrem-verwechselt), 3,6 (liste-verzaehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Mara kommt dazu: 9,7 s. / Bestimme die neue Spannweite. _(Tabelle: Kind | Zeit in s / Ole | 8,8 / Ida | 7,2 / Ben | 7,8 / Jonas | 9,2 / Lena | 8,1 / Mia | 9,1)_ Lösung: **2,5 s**. Typische Fehler: 2 (sach-schritt-vergessen), 9,7 (spannweite-groesster-wert).
+- `06` AFB III · _Argumentieren_ · Kinder laufen 50 m. / Ali sagt: „Die Spannweite ist 9,4 s.“ / Beurteile die Aussage. _(Tabelle: Kind | Zeit in s / Jonas | 7,3 / Mara | 9,4 / Ole | 7,6 / Lina | 8,1 / Mia | 8,5 / Ali | 8,9)_
+  - ☐ Stimmt. / 9,4 s ist der größte Wert.
+  - ☑ Falsch. / 9,4 s ist das Maximum. / Die Spannweite ist 2,1 s.
+  - ☐ Falsch. / Die Spannweite ist 7,3 s.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Minimum ist der kleinste Wert. Das Maximum ist der größte Wert. *Lösungsschritt:* Gehe die Tabelle von oben nach unten durch.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Bestimme Minimum, Maximum und Spannweite. / Minimum: ▢ s / Maximum: ▢ s / Spannweite: ▢ s _(Tabelle: Kind | Zeit in s / Lena | 8,9 / Emre | 7,6 / Ali | 8,6 / Elif | 9,0 / Ole | 9,6 / Noah | 9,4 / Tom | 8,4 / Jonas | 8,3)_ Lösung: a = **7,6**, b = **9,6**, c = **2**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. Die Tabelle zeigt Werte aus zwei Klassen. / Bestimme, um wie viel m die Spannweite der 6c größer oder kleiner ist als die der 6b. _(Tabelle:  | 6c | 6b / 1. Kind | 4,2 | 4,2 / 2. Kind | 2,7 | 2,9 / 3. Kind | 2,3 | 3,0 / 4. Kind | 2,5 | 3,1 / 5. Kind | 3,1 | 3,7 / 6. Kind | 2,2 | 2,3)_ Lösung: **0,1 m**. Typische Fehler: 0 (spannweite-groesster-wert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. Die Tabelle zeigt Werte aus zwei Klassen. / Kreuze an, in welcher Klasse die Werte näher beieinanderliegen, und begründe. _(Tabelle:  | 6c | 6b / 1. Kind | 8,9 | 7,5 / 2. Kind | 8,3 | 8,1 / 3. Kind | 8,0 | 7,4 / 4. Kind | 7,5 | 8,2 / 5. Kind | 8,7 | 7,7 / 6. Kind | 9,2 | 9,2)_
+  - ☑ 6c. Ihre Spannweite ist kleiner.
+  - ☐ 6b. Ihre Spannweite ist größer.
+  - ☐ Das kann man mit der Spannweite nicht sagen.
+  - ☐ 6b. Sie hat den größten Wert.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Bestimme die Spannweite. _(Tabelle: Kind | Weite in m / Ida | 2,6 / Lina | 3,3 / Mia | 2,4 / Ben | 2,3 / Sara | 2,2 / Paul | 4,0 / Emre | 2,5 / Tom | 3,1 / Finn | 3,0)_ Lösung: **1,8 m**. Typische Fehler: 4 (spannweite-groesster-wert), 6,2 (unterschied-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder werfen einen Ball. / Das Minimum ist 15 m. Die Spannweite ist 10 m. / Bestimme das Maximum. Lösung: **25 m**. Typische Fehler: 5 (unterschied-addiert), 10 (spannweite-groesster-wert).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Noah kommt dazu: 3,4 m. / Kreuze an, wie sich die Spannweite ändert, und begründe. _(Tabelle: Kind | Weite in m / Tom | 3,7 / Sara | 3,1 / Ben | 3,6 / Mara | 4,2 / Lina | 3,3 / Ali | 2,6)_
+  - ☐ Sie wird 3,4 m größer.
+  - ☐ Sie wird kleiner. Der neue Wert liegt in der Mitte.
+  - ☐ Sie wird größer. Es sind jetzt mehr Werte.
+  - ☑ Sie bleibt gleich. 3,4 m liegt zwischen Minimum und Maximum.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Das Minimum ist der kleinste Wert. Das Maximum ist der größte Wert.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Bestimme Minimum, Maximum und Spannweite. / Minimum: ▢ s / Maximum: ▢ s / Spannweite: ▢ s _(Tabelle: Kind | Zeit in s / Finn | 7,7 / Sara | 8,6 / Elif | 9,1 / Paul | 8,5 / Noah | 9,3 / Emre | 7,3 / Ali | 9,6 / Ida | 8,4 / Tom | 8,0 / Lena | 7,8)_ Lösung: a = **7,3**, b = **9,6**, c = **2,3**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Ein Wert in der Tabelle fehlt. Die Spannweite ist 1,5 m. / Ben hat den größten Wert. / Bestimme den Wert von Ben. _(Tabelle: Kind | Weite in m / Jonas | 4,1 / Ben | ? / Emre | 2,7 / Lena | 3,1 / Sara | 3,0 / Noah | 3,7)_ Lösung: **4,2 m**. Typische Fehler: 1,5 (spannweite-groesster-wert), 5,6 (extrem-verwechselt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. Die Tabelle zeigt Werte aus zwei Klassen. / Bestimme die Spannweite für beide Klassen zusammen. _(Tabelle:  | 6a | 6c / 1. Kind | 3,7 | 3,7 / 2. Kind | 3,1 | 2,9 / 3. Kind | 3,2 | 4,0 / 4. Kind | 4,1 | 2,7 / 5. Kind | 3,0 | 2,3)_ Lösung: **1,8 m**. Typische Fehler: 2,8 (unterschied-addiert), 1,7 (sach-frage-verfehlt).
+- `04` AFB III · _Argumentieren_ · Ole sagt: „Zwei Gruppen mit gleicher Spannweite haben auch das gleiche Maximum.“ / Beurteile die Aussage.
+  - ☑ Falsch. Bei 2 bis 6 und bei 10 bis 14 ist die Spannweite beide Male 4.
+  - ☐ Das kann man nicht entscheiden.
+  - ☐ Stimmt. Das folgt aus der Spannweite.
+- `05` AFB II · _Argumentieren_ · Knappen schießen beim Turnier mit dem Bogen. / Ortwin kommt dazu: 38 Punkte. / Beurteile, was dieser Wert mit der Spannweite macht. _(Tabelle: Knappe | Punkte / Hagen | 4 / Volker | 12 / Gernot | 11 / Rüdiger | 14 / Gunther | 7 / Konrad | 8)_
+  - ☑ Die Spannweite wächst von 10 Punkte auf 34 Punkte. Ein einzelner Ausreißer macht sie viel größer.
+  - ☐ Die Spannweite bleibt 10 Punkte. Ein Wert ändert nichts.
+  - ☐ Die Spannweite ist jetzt 38 Punkte.
+  - ☐ Die Spannweite wächst um 38 Punkte.
+- `06` AFB III · _Argumentieren_ · Ali sagt: „Zwei Gruppen mit gleicher Spannweite haben auch das gleiche Maximum.“ / Beurteile die Aussage.
+  - ☑ Falsch. Bei 2 bis 6 und bei 10 bis 14 ist die Spannweite beide Male 4.
+  - ☐ Stimmt. Das folgt aus der Spannweite.
+  - ☐ Das kann man nicht entscheiden.
+
+## 6.8.2-K2: Ich kann den Mittelwert und den Zentralwert bestimmen und deuten.
+
+Grundlage, die F übt: Werte zusammenzählen und die Summe durch die Anzahl teilen
+
+Baut auf: 6.8.2-K1 (Ich kann Minimum, Maximum und Spannweite bestimmen.), 6.5.4-D1 (Ich kann eine Dezimalzahl durch eine natürliche Zahl dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Werte zusammen. Teile die Summe durch die Anzahl der Werte. *Beispiel:* Bei 2, 4 und 6: 12 : 3 = 4. *Lösungsschritt:* Rechne 15 + 17 + 16 und teile durch 3.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder nennen ihr Taschengeld in der Woche. / Bestimme den Mittelwert. _(Tabelle: Kind | Taschengeld in € / Finn | 15 / Paul | 17 / Elif | 16)_ Lösung: **16 €**. Typische Fehler: 17 (mittelwert-mitte), 24 (mittelwert-falsche-anzahl), 48 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder nennen ihr Taschengeld in der Woche. / Bestimme den Mittelwert. _(Tabelle: Kind | Taschengeld in € / Lena | 15 / Ole | 19 / Jonas | 20 / Emre | 6)_ Lösung: **15 €**. Typische Fehler: 20 (mittelwert-mitte), 60 (sach-schritt-vergessen).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Klasse misst jeden Mittag die Temperatur. / Bestimme den Mittelwert in zwei Schritten. / Summe: ▢ °C / Mittelwert: ▢ °C _(Tabelle: Tag | Temperatur in °C / Montag | 22 / Dienstag | 24 / Mittwoch | 19 / Donnerstag | 15)_ Lösung: a = **80**, b = **20**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder werfen einen Ball. / Bestimme den Mittelwert. _(Tabelle: Kind | Weite in m / Ole | 22 / Jonas | 18 / Finn | 26 / Paul | 38 / Lena | 21)_ Lösung: **25 m**. Typische Fehler: 26 (mittelwert-mitte), 31,25 (mittelwert-falsche-anzahl), 125 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Knappen schießen beim Turnier mit dem Bogen. / Kreuze die richtige Rechnung für den Mittelwert an. _(Tabelle: Knappe | Punkte / Rüdiger | 13 / Gernot | 7 / Volker | 27 / Ortwin | 21)_
+  - ☐ 13 + 7 + 27 + 21
+  - ☐ (27 + 7) : 2
+  - ☑ (13 + 7 + 27 + 21) : 4
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder nennen ihr Taschengeld in der Woche. / Bestimme den Mittelwert. _(Tabelle: Kind | Taschengeld in € / Tom | 4 / Noah | 6 / Jonas | 11 / Lina | 7)_ Lösung: **7 €**. Typische Fehler: 11 (mittelwert-mitte), 9,33 (mittelwert-falsche-anzahl), 28 (sach-schritt-vergessen).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Werte zusammen. Teile die Summe durch die Anzahl der Werte. *Beispiel:* Bei 2, 4 und 6: 12 : 3 = 4. *Lösungsschritt:* Rechne 2,5 + 2,6 + 3,7 + 3,2 und teile durch 4.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Bestimme den Mittelwert. _(Tabelle: Kind | Weite in m / Sara | 2,5 / Mara | 2,6 / Ida | 3,7 / Ben | 3,2)_ Lösung: **3 m**. Typische Fehler: 3,7 (mittelwert-mitte), 4 (mittelwert-falsche-anzahl), 12 (sach-schritt-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Bestimme den Zentralwert. _(Tabelle: Kind | Zeit in s / Paul | 8,0 / Ben | 8,1 / Emre | 9,8 / Lina | 9,5 / Finn | 9,3)_ Lösung: **9,3 s**. Typische Fehler: 9,8 (zentralwert-unsortiert), 8,94 (mittelwert-mitte).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder messen ihre Körpergröße. / Bestimme Mittelwert und Zentralwert. / Mittelwert: ▢ cm / Zentralwert: ▢ cm _(Tabelle: Kind | Größe in cm / Finn | 147 / Mara | 138 / Lena | 153 / Emre | 146 / Elif | 156)_ Lösung: a = **148**, b = **147**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Knappen schießen beim Turnier mit dem Bogen. / Bestimme den Mittelwert. _(Tabelle: Knappe | Punkte / Rüdiger | 5 / Gunther | 29 / Volker | 12 / Konrad | 19 / Ortwin | 10)_ Lösung: **15 Punkte**. Typische Fehler: 12 (mittelwert-mitte), 18,75 (mittelwert-falsche-anzahl), 75 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Bestimme den Zentralwert. _(Tabelle: Kind | Weite in m / Jonas | 2,3 / Paul | 3,2 / Tom | 3,6 / Ida | 2,8 / Ole | 3,1 / Lina | 4,2 / Ali | 3,5)_ Lösung: **3,2 m**. Typische Fehler: 2,8 (zentralwert-unsortiert), 3,24 (mittelwert-mitte).
+- `06` AFB III · _Argumentieren_ · Kinder springen weit. / Der Mittelwert ist 3,5 m. / Ida sagt: „Also hat ein Kind genau 3,5 m erreicht.“ / Beurteile die Aussage. _(Tabelle: Kind | Weite in m / Tom | 3,8 / Ida | 3,4 / Emre | 3,6 / Elif | 3,2)_
+  - ☐ Stimmt. / Der Mittelwert ist einer der Werte.
+  - ☐ Stimmt. / 3,5 m steht in der Mitte der Tabelle.
+  - ☑ Falsch. / Kein Kind hat genau 3,5 m.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ordne die Werte der Größe nach. Der Zentralwert steht in der Mitte. *Lösungsschritt:* Ordne zuerst: 7,2, 7,8, …
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Bestimme den Zentralwert. _(Tabelle: Kind | Zeit in s / Ole | 9,0 / Tom | 7,8 / Mia | 8,1 / Lena | 7,2 / Emre | 9,8 / Noah | 7,9)_ Lösung: **8 s**. Typische Fehler: 7,65 (zentralwert-unsortiert), 7,9 (zentralwert-unsortiert), 8,1 (zentralwert-unsortiert), 8,3 (mittelwert-mitte).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Der Mittelwert ist 3 m. / Lina kommt dazu: 4,0 m. / Bestimme den neuen Mittelwert. Runde auf zwei Stellen nach dem Komma. _(Tabelle: Kind | Weite in m / Jonas | 3,3 / Sara | 3,0 / Lena | 2,6 / Mia | 2,7 / Ole | 3,4)_ Lösung: **3,17 m**. Typische Fehler: 3,8 (mittelwert-falsche-anzahl), 3 (sach-schritt-vergessen), 3,5 (mittelwert-falsche-anzahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Kinder springen weit. / Der Mittelwert ist 3,1 m. / Finn kommt dazu: 4,8 m. / Im Heft: Berechne den neuen Mittelwert. Beschreibe in einem Satz, wie er sich ändert. / Gib den neuen Mittelwert an. Runde auf zwei Stellen nach dem Komma. _(Tabelle: Kind | Weite in m / Elif | 2,9 / Ole | 4,2 / Noah | 2,6 / Mia | 3,1 / Lena | 2,7)_ Lösung: **3,38 m**. Typische Fehler: 4,06 (mittelwert-falsche-anzahl), 3,1 (sach-schritt-vergessen), 3,95 (mittelwert-falsche-anzahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder springen weit. / Bestimme den Mittelwert. Runde auf zwei Stellen nach dem Komma. _(Tabelle: Kind | Weite in m / Elif | 3,3 / Jonas | 2,9 / Ben | 3,7 / Ole | 2,7 / Mia | 3,6 / Lina | 3,8)_ Lösung: **3,33 m**. Typische Fehler: 2,7 (mittelwert-mitte), 4 (mittelwert-falsche-anzahl), 20 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Kinder laufen 50 m. / Der Mittelwert ist 8,6 s. / Ida kommt dazu: 10,6 s. / Im Heft: Berechne den neuen Mittelwert. Beschreibe in einem Satz, wie er sich ändert. / Gib den neuen Mittelwert an. Runde auf zwei Stellen nach dem Komma. _(Tabelle: Kind | Zeit in s / Ole | 9,8 / Ali | 7,7 / Sara | 8,7 / Noah | 9,4 / Tom | 7,4)_ Lösung: **8,93 s**. Typische Fehler: 10,72 (mittelwert-falsche-anzahl), 8,6 (sach-schritt-vergessen), 9,6 (mittelwert-falsche-anzahl).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Kinder messen ihre Körpergröße. / Bestimme Mittelwert und Zentralwert. / Mittelwert: ▢ cm / Zentralwert: ▢ cm _(Tabelle: Kind | Größe in cm / Ali | 162 / Noah | 138 / Ben | 155 / Finn | 140 / Tom | 156 / Ida | 149)_ Lösung: a = **150**, b = **152**
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle alle Werte zusammen. Teile die Summe durch die Anzahl der Werte.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Kinder laufen 50 m. / Bestimme den Mittelwert. Runde auf zwei Stellen nach dem Komma. _(Tabelle: Kind | Zeit in s / Elif | 9,1 / Ida | 8,9 / Ali | 9,3 / Paul | 9,2 / Jonas | 7,4 / Sara | 7,6 / Mia | 9,5)_ Lösung: **8,71 s**. Typische Fehler: 9,2 (mittelwert-mitte), 10,17 (mittelwert-falsche-anzahl), 61 (sach-schritt-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Knappen schießen beim Turnier mit dem Bogen. / Ein Wert in der Tabelle fehlt. Der Mittelwert ist 20 Punkte. / Bestimme den Wert von Hagen. _(Tabelle: Knappe | Punkte / Gunther | 6 / Hagen | ? / Rüdiger | 25 / Volker | 18 / Konrad | 27)_ Lösung: **24 Punkte**. Typische Fehler: 20 (mittelwert-mitte), 100 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Finde fünf natürliche Zahlen mit dem Mittelwert 7 und der Spannweite 6. / Trage sie ein. / ▢ ▢ ▢ ▢ ▢ _(Datensatz erfinden: 5 natürliche Zahlen von 0 bis 50; Mittelwert 7, Spannweite 6; jede passende Reihe ist richtig)_ Lösung zum Beispiel: **4, 7, 7, 7, 10**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Finde fünf natürliche Zahlen mit dem Mittelwert 7 und dem Zentralwert 6. / Trage sie ein. / ▢ ▢ ▢ ▢ ▢ _(Datensatz erfinden: 5 natürliche Zahlen von 0 bis 50; Mittelwert 7, Zentralwert 6; jede passende Reihe ist richtig)_ Lösung zum Beispiel: **3, 5, 6, 7, 14**
+- `05` AFB II · _Argumentieren_ · Kinder nennen ihr Taschengeld in der Woche. / Beurteile, ob der Mittelwert oder der Zentralwert das Taschengeld der meisten Kinder besser beschreibt. _(Tabelle: Kind | Taschengeld in € / Sara | 3 / Ali | 10 / Lena | 10 / Finn | 4 / Jonas | 7 / Mara | 9 / Emre | 48)_
+  - ☑ Der Zentralwert (9 €). Der Ausreißer zieht den Mittelwert nach oben.
+  - ☐ Der Mittelwert (13 €). Er nimmt alle Werte gleich wichtig.
+  - ☐ Beide gleich gut. Es sind dieselben Daten.
+  - ☐ Das Maximum (48 €). Es ist der wichtigste Wert.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Finde fünf natürliche Zahlen mit dem Mittelwert 6 und der Spannweite 9. / Trage sie ein. / ▢ ▢ ▢ ▢ ▢ _(Datensatz erfinden: 5 natürliche Zahlen von 0 bis 50; Mittelwert 6, Spannweite 9; jede passende Reihe ist richtig)_ Lösung zum Beispiel: **2, 6, 5, 6, 11**
+
+## 6.8.4-H1: Ich kann absolute und relative Häufigkeiten bestimmen.
+
+Grundlage, die F übt: Den Anteil „3 von 10“ als Bruch schreiben
+
+Baut auf: 6.8.1-E1 (Ich kann Daten erheben und in einer Häufigkeitstabelle ordnen.), 6.1.3-K2 (Ich kann einen Bruch vollständig kürzen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Gesamtzahl sind alle Antworten zusammen. *Beispiel:* Hund 3, Katze 5: 3 + 5 = 8. *Lösungsschritt:* Rechne 5 + 4 + 2 + 9.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Tabelle zeigt eine Umfrage zum Lieblingssport. / Bestimme die Gesamtzahl. / Gesamtzahl: ▢ _(Tabelle: Antwort | Anzahl / Reiten | 5 / Fußball | 4 / Basketball | 2 / Turnen | 9)_ Lösung: a = **20**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 20 Kinder wurden nach dem Lieblingstier gefragt. / Bestimme den Anteil von „Hase“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Pferd | 7 / Vogel | 1 / Hase | 12)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄5**. Typische Fehler: 12⁄7 (haeufigkeit-falsche-gesamtzahl), 3⁄2 (haeufigkeit-falsche-gesamtzahl).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 10 Kinder wurden nach dem Lieblingstier gefragt. / Bestimme den Anteil von „Vogel“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Hamster | 1 / Katze | 2 / Vogel | 7)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄10**. Typische Fehler: 7⁄1 (haeufigkeit-falsche-gesamtzahl), 7⁄3 (haeufigkeit-falsche-gesamtzahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 50 Kinder wurden nach dem Lieblingsobst gefragt. / Bestimme den Anteil von „Banane“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Apfel | 24 / Traube | 1 / Banane | 25)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄2**. Typische Fehler: 25⁄24 (haeufigkeit-falsche-gesamtzahl), 1⁄1 (haeufigkeit-falsche-gesamtzahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 10 Kinder wurden nach dem Schulweg gefragt. / Bestimme den Anteil aller Antworten außer „Fahrrad“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Fahrrad | 2 / Bus | 3 / Roller | 5)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: 8⁄3 (haeufigkeit-falsche-gesamtzahl), 4⁄1 (haeufigkeit-falsche-gesamtzahl), 1⁄5 (sach-frage-verfehlt).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · 100 Knappen wurden nach der Lieblingsübung gefragt. / Bestimme den Anteil von „Reiten“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Lanzenstechen | 13 / Schwertkampf | 31 / Reiten | 56)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **14⁄25**. Typische Fehler: 56⁄13 (haeufigkeit-falsche-gesamtzahl), 14⁄11 (haeufigkeit-falsche-gesamtzahl).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben im Bruch steht die Anzahl, unten die Gesamtzahl. *Beispiel:* 6 von 20 Kindern: 6⁄20 = 3⁄10. *Lösungsschritt:* Rechne 9 von 25. Kürze dann.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 25 Kinder wurden nach dem Lieblingssport gefragt. / Bestimme die relative Häufigkeit von „Tanzen“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Fußball | 8 / Schwimmen | 1 / Basketball | 7 / Tanzen | 9)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **9⁄25**. Typische Fehler: 9⁄8 (haeufigkeit-falsche-gesamtzahl), 9⁄16 (haeufigkeit-falsche-gesamtzahl).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 25 Kinder wurden nach dem Lieblingstier gefragt. / Bestimme die relative Häufigkeit für „Hund“ in Prozent. _(Tabelle: Antwort | Anzahl / Pferd | 1 / Vogel | 3 / Hase | 6 / Hund | 15)_ Lösung: **60 %**. Typische Fehler: 15 (prozent-als-zaehler), 150 (haeufigkeit-falsche-gesamtzahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 200 Kinder wurden nach dem Lieblingsessen gefragt. / Bestimme die relative Häufigkeit für „Salat“ in Prozent. _(Tabelle: Antwort | Anzahl / Suppe | 4 / Salat | 54 / Nudeln | 142)_ Lösung: **27 %**. Typische Fehler: 54 (prozent-als-zaehler), 36,99 (haeufigkeit-falsche-gesamtzahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 25 Kinder wurden nach dem Lieblingssport gefragt. / Ergänze die relative Häufigkeit in Prozent. 
+
+  | Antwort | absolute Häufigkeit | relative Häufigkeit in % |
+  |---|---|---|
+  | Tanzen | 2 | **8** |
+  | Basketball | 1 | **4** |
+  | Schwimmen | 22 | **88** |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 25 Knappen wurden nach der Lieblingsübung gefragt. / 40 % nennen „Reiten“. / Bestimme die absolute Häufigkeit. Lösung: **10**. Typische Fehler: 40 (prozent-als-zaehler), 15 (sach-frage-verfehlt).
+- `06` AFB III · _Argumentieren_ · 2 von 25 Kindern fahren mit dem Bus. / Mia sagt: „Das sind 2 %.“ / Beurteile die Aussage.
+  - ☐ Falsch. / Es sind 23 %.
+  - ☐ Stimmt. / Prozent ist die Anzahl.
+  - ☑ Falsch. / Es sind 2⁄25 = 8 %.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Oben im Bruch steht die Anzahl, unten die Gesamtzahl. *Lösungsschritt:* Rechne 3 von 40. Kürze dann.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 40 Kinder wurden nach dem Lieblingssport gefragt. / Bestimme die relative Häufigkeit von „Schwimmen“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Fußball | 11 / Schwimmen | 3 / Reiten | 9 / Turnen | 17)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄40**. Typische Fehler: 1⁄3 (haeufigkeit-falsche-gesamtzahl), 3⁄37 (haeufigkeit-falsche-gesamtzahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 80 Knappen wurden nach der Lieblingsübung gefragt. / Bestimme die relative Häufigkeit für „Reiten“ als Dezimalzahl. _(Tabelle: Antwort | Anzahl / Bogenschießen | 24 / Falknerei | 4 / Schwertkampf | 12 / Reiten | 40)_ Lösung: **0,5**. Typische Fehler: 0,4 (haeufigkeit-falsche-gesamtzahl), 50 (dezimal-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 40 Kinder wurden nach dem Schulweg gefragt. / Ergänze die relative Häufigkeit in Prozent. 
+
+  | Antwort | absolute Häufigkeit | relative Häufigkeit in % |
+  |---|---|---|
+  | zu Fuß | 2 | **5** |
+  | Bus | 4 | **10** |
+  | Fahrrad | 6 | **15** |
+  | Auto | 28 | **70** |
+
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Tabelle zeigt eine Umfrage zum Lieblingsessen. / Bestimme die relative Häufigkeit für „Nudeln“ in Prozent. _(Tabelle: Antwort | Anzahl / Suppe | 6 / Nudeln | 8 / Reis | 10 / Pommes | 16)_ Lösung: **20 %**. Typische Fehler: 8 (prozent-als-zaehler), 25 (haeufigkeit-falsche-gesamtzahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 80 Kinder wurden nach dem Schulweg gefragt. / Die relative Häufigkeit für „Bus“ ist 55 %. / Bestimme die absolute Häufigkeit. Lösung: **44**. Typische Fehler: 55 (prozent-als-zaehler), 36 (sach-frage-verfehlt).
+- `06` AFB III · _Argumentieren_ · Mia hat zu der Umfrage die relativen Häufigkeiten in Prozent berechnet: Banane 35 %, Erdbeere 25 %, Apfel 45 %. / Beurteile die Rechnung. _(Tabelle: Antwort | Anzahl / Banane | 14 / Erdbeere | 10 / Apfel | 16)_
+  - ☐ Falsch. Bei „Banane“ sind es 40 %.
+  - ☐ Stimmt. Die Prozente müssen nicht 100 % ergeben.
+  - ☐ Stimmt. Jede Antwort hat einen eigenen Prozentwert.
+  - ☑ Falsch. Zusammen sind es 105 %. Bei „Apfel“ sind es 40 %.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Anzahlen beider Klassen zusammen. Die Gesamtzahl sind alle Kinder beider Klassen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Tabelle zeigt eine Umfrage in der 6c und der 6a. / Bestimme für beide Klassen zusammen die relative Häufigkeit für „Kirsche“ in Prozent. _(Tabelle: Antwort | 6c | 6a / Kirsche | 8 | 1 / Apfel | 10 | 14 / Traube | 4 | 13)_ Lösung: **18 %**. Typische Fehler: 36,36 (haeufigkeit-falsche-gesamtzahl), 9 (prozent-als-zaehler).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 120 Kinder wurden nach dem Lieblingssport gefragt. / Bestimme die relative Häufigkeit von „Fußball“. / Gib einen Bruch an. / Kürze vollständig. _(Tabelle: Antwort | Anzahl / Fußball | 10 / Turnen | 38 / Tanzen | 18 / Basketball | 54)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄12**. Typische Fehler: 5⁄19 (haeufigkeit-falsche-gesamtzahl), 1⁄11 (haeufigkeit-falsche-gesamtzahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 10 Kinder einer Umfrage nennen „Fußball“. / Das sind 20 % aller Befragten. / Bestimme, wie viele Kinder befragt wurden. Lösung: **50**. Typische Fehler: 2 (sach-falsche-rechnung), 30 (sach-falsche-rechnung).
+- `04` AFB III · _Argumentieren_ · Tom bestimmt die relative Häufigkeit für „Basketball“. / Tom rechnet: 4⁄13. / Beurteile die Rechnung. _(Tabelle: Antwort | Anzahl / Basketball | 4 / Tanzen | 9 / Fußball | 12)_
+  - ☐ Stimmt. Tom vergleicht „Basketball“ und „Tanzen“.
+  - ☑ Falsch. Die Gesamtzahl ist 25, also 4⁄25.
+  - ☐ Falsch. Es muss 25⁄4 heißen.
+  - ☐ Falsch. Es muss 4⁄12 heißen.
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 50 Kinder wurden nach dem Schulweg gefragt. / Ergänze die Tabelle. 
+
+  | Antwort | absolute Häufigkeit | relative Häufigkeit in % |
+  |---|---|---|
+  | Bus | **8** | 16 |
+  | zu Fuß | **2** | 4 |
+  | Auto | 9 | **18** |
+  | Fahrrad | 31 | **62** |
+
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · 20 Knappen wurden gefragt. 10 nennen „Schwertkampf“. / Dann werden noch 5 Knappen gefragt. Alle 5 nennen „Schwertkampf“. / Bestimme die neue relative Häufigkeit für „Schwertkampf“ in Prozent. Lösung: **60 %**. Typische Fehler: 75 (haeufigkeit-falsche-gesamtzahl), 50 (sach-schritt-vergessen).
+
+## 6.8.4-H2: Ich kann relative Häufigkeiten als Bruch, Dezimalzahl und in Prozent angeben und vergleichen.
+
+Grundlage, die F übt: Einen Bruch mit dem Nenner 100 in Prozent schreiben
+
+Baut auf: 6.8.4-H1 (Ich kann absolute und relative Häufigkeiten bestimmen.), 6.4.7-P2 (Ich kann Anteile als Bruch, Dezimalzahl und in Prozent angeben und vergleichen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere oder kürze auf den Nenner 100. *Beispiel:* 3⁄10 = 30⁄100 = 0,30 = 30 %. *Lösungsschritt:* Schreibe 9⁄10 mit dem Nenner 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 9 von 10 Kinder nennen „Auto“. / Der Anteil ist 9⁄10. / Schreibe den Anteil als Dezimalzahl und in Prozent. / Dezimalzahl: ▢ / Prozent: ▢ % _(Tabelle: Antwort | Anzahl / Auto | 9 / andere | 1)_ Lösung: a = **0,9**, b = **90**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 38 von 100 Kinder nennen „Schwimmen“. / Gib den Anteil in Prozent an. _(Tabelle: Antwort | Anzahl / Schwimmen | 38 / andere | 62)_ Lösung: **38 %**. Typische Fehler: 62 (sach-frage-verfehlt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 9 von 10 Kinder nennen „Hund“. / Gib den Anteil als Dezimalzahl an. _(Tabelle: Antwort | Anzahl / Hund | 9 / andere | 1)_ Lösung: **0,9**. Typische Fehler: 9 (dezimal-stelle), 0,1 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Anteil 1⁄4 kommt in einer Umfrage vor. / Kreuze an, was dasselbe ist wie 1⁄4. _(Tabelle: Bruch | Prozent / 1⁄4 | ?)_
+  - ☐ 025 %
+  - ☑ 25 %
+  - ☐ 14 %
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · In der 6a nennen 7 von 20 Kindern „Katze“. / In der 6b nennen 5 von 10 Kindern „Katze“. / Kreuze an, in welcher Klasse der Anteil größer ist. _(Tabelle: Klasse | „Katze“ | Kinder / 6a | 7 | 20 / 6b | 5 | 10)_
+  - ☑ In der 6b. / Es sind 50 % statt 35 %.
+  - ☐ In der 6a. / Dort nennen mehr Kinder „Katze“.
+  - ☐ Der Anteil ist gleich groß.
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · 14 von 20 Kinder nennen „Auto“. / Gib den Anteil in Prozent an. _(Tabelle: Antwort | Anzahl / Auto | 14 / andere | 6)_ Lösung: **70 %**. Typische Fehler: 14 (prozent-als-zaehler), 30 (sach-frage-verfehlt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere oder kürze auf den Nenner 100. *Beispiel:* 3⁄10 = 30⁄100 = 0,30 = 30 %. *Lösungsschritt:* Schreibe 8⁄20 mit dem Nenner 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 8 von 20 Kinder nennen „Reiten“. / Der Anteil ist 8⁄20. / Schreibe den Anteil als Dezimalzahl und in Prozent. / Dezimalzahl: ▢ / Prozent: ▢ % _(Tabelle: Antwort | Anzahl / Reiten | 8 / andere | 12)_ Lösung: a = **0,4**, b = **40**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 18 von 25 Kinder nennen „Pizza“. / Gib den Anteil in Prozent an. _(Tabelle: Antwort | Anzahl / Pizza | 18 / andere | 7)_ Lösung: **72 %**. Typische Fehler: 18 (prozent-als-zaehler), 28 (sach-frage-verfehlt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · In der 6a nennen 16 von 20 Kindern „Birne“. / In der 6b nennen 30 von 50 Kindern „Birne“. / Kreuze an, in welcher Klasse der Anteil größer ist. _(Tabelle: Klasse | „Birne“ | Kinder / 6a | 16 | 20 / 6b | 30 | 50)_
+  - ☐ In der 6b. / Dort nennen mehr Kinder „Birne“.
+  - ☐ Der Anteil ist gleich groß.
+  - ☑ In der 6a. / Es sind 80 % statt 60 %.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 15 % der Befragten nennen „Fußball“. / Schreibe den Anteil als Bruch. / Kürze vollständig. _(Tabelle: Antwort | Anteil / Fußball | 15 % / andere | 85 %)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3⁄20**. Typische Fehler: 15⁄10 (dezimal-stelle), 85⁄100 (sach-frage-verfehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Drei Umfragen zum Lieblingssport haben diese Anteile für „Fußball“ ergeben. / Kreuze den größten Anteil an. _(Tabelle: Umfrage | Anteil / 1. Umfrage | 3⁄5 / 2. Umfrage | 0,64 / 3. Umfrage | 0,7)_
+  - ☐ 3⁄5
+  - ☐ 0,64
+  - ☑ 0,7
+- `06` AFB III · _Argumentieren_ · In der 6c nennen 12 von 25 Kindern „Reiten“. / In der 6a nennen 12 von 50 Kindern „Reiten“. / Sara sagt: „Reiten ist in beiden Klassen gleich beliebt.“ / Beurteile die Aussage. _(Tabelle: Klasse | „Reiten“ | Kinder / 6c | 12 | 25 / 6a | 12 | 50)_
+  - ☑ Falsch. / In der 6c sind es 48 %, in der 6a 24 %.
+  - ☐ Falsch. / In der 6c sind es 12 %, in der 6a 17 %.
+  - ☐ Stimmt. / In beiden Klassen sind es 12 Kinder.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere oder kürze auf den Nenner 100. *Lösungsschritt:* Schreibe 16⁄40 mit dem Nenner 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 16 von 40 Kinder nennen „Reis“. / Der Anteil ist 16⁄40. / Schreibe den Anteil als Dezimalzahl und in Prozent. / Dezimalzahl: ▢ / Prozent: ▢ % _(Tabelle: Antwort | Anzahl / Reis | 16 / andere | 24)_ Lösung: a = **0,4**, b = **40**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 80 Knappen wurden nach der Lieblingsübung gefragt. / Bestimme die relative Häufigkeit für „Schwertkampf“ als Dezimalzahl. _(Tabelle: Antwort | Anzahl / Bogenschießen | 4 / Schwertkampf | 12 / Falknerei | 24 / Reiten | 40)_ Lösung: **0,15**. Typische Fehler: 0,12 (haeufigkeit-falsche-gesamtzahl), 15 (dezimal-stelle).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · In der 6a nennen 14 von 40 Kindern „Kirsche“. / In der 6b nennen 13 von 25 Kindern „Kirsche“. / Kreuze an, in welcher Klasse der Anteil größer ist. _(Tabelle: Klasse | „Kirsche“ | Kinder / 6a | 14 | 40 / 6b | 13 | 25)_
+  - ☑ In der 6b. Es sind 52 % statt 35 %.
+  - ☐ Der Anteil ist gleich groß.
+  - ☐ In der 6a. Dort nennen mehr Kinder „Kirsche“.
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die relative Häufigkeit für „Bus“ ist 0,35. / Schreibe sie als Bruch. / Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄20**. Typische Fehler: 35⁄10 (dezimal-stelle).
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Die Tabelle zeigt relative Häufigkeiten als Bruch. / Ergänze Dezimalzahl und Prozent. 
+
+  | Bruch | Dezimalzahl | Prozent |
+  |---|---|---|
+  | 1⁄4 | **0,25** | **25** |
+  | 3⁄8 | **0,375** | **37,5** |
+  | 3⁄5 | **0,6** | **60** |
+
+- `06` AFB III · _Argumentieren_ · In der 6a nennen 15 von 50 Kindern „Fußball“. / In der 6b nennen 12 von 25 Kindern „Fußball“. / Ali sagt: „In der 6a gibt es mehr Fußballfans, aber der Anteil ist kleiner.“ / Beurteile die Aussage. _(Tabelle: Klasse | „Fußball“ | Kinder / 6a | 15 | 50 / 6b | 12 | 25)_
+  - ☐ Falsch. Mehr Fans bedeutet immer einen größeren Anteil.
+  - ☐ Stimmt. Die 6a hat 3 Fans mehr.
+  - ☐ Falsch. In der 6b gibt es mehr Fußballfans.
+  - ☑ Stimmt. 15 ist mehr als 12, aber 30 % ist weniger als 48 %.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Erweitere oder kürze auf den Nenner 100.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 8 von 80 Kinder nennen „Salat“. / Der Anteil ist 8⁄80. / Schreibe den Anteil als Dezimalzahl und in Prozent. / Dezimalzahl: ▢ / Prozent: ▢ % _(Tabelle: Antwort | Anzahl / Salat | 8 / andere | 72)_ Lösung: a = **0,1**, b = **10**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · In drei Klassen wurde gefragt, wer ein Haustier hat. / Kreuze die Klasse mit dem größten Anteil an. _(Tabelle: Klasse | mit Haustier | Kinder / 6a | 12 | 40 / 6b | 11 | 20 / 6c | 9 | 25)_
+  - ☐ 6c
+  - ☑ 6b
+  - ☐ 6a
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · In der 6a nennen 11 von 25 Kindern „Schwimmen“. / In der 6b sind es 40 % von 30 Kindern. / Bestimme, wie viele Kinder beider Klassen zusammen „Schwimmen“ nennen. Lösung: **23**. Typische Fehler: 51 (prozent-als-zaehler), 12 (sach-schritt-vergessen).
+- `04` AFB III · _Argumentieren_ · In der 6a nennen 15 von 50 Kindern „Fußball“. / In der 6b nennen 12 von 25 Kindern „Fußball“. / Jonas sagt: „In der 6a gibt es mehr Fußballfans, aber der Anteil ist kleiner.“ / Beurteile die Aussage. _(Tabelle: Klasse | „Fußball“ | Kinder / 6a | 15 | 50 / 6b | 12 | 25)_
+  - ☐ Falsch. In der 6b gibt es mehr Fußballfans.
+  - ☐ Falsch. Mehr Fans bedeutet immer einen größeren Anteil.
+  - ☑ Stimmt. 15 ist mehr als 12, aber 30 % ist weniger als 48 %.
+  - ☐ Stimmt. Die 6a hat 3 Fans mehr.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 48 % der Befragten nennen „Fußball“. / Schreibe den Anteil als Bruch. / Kürze vollständig. _(Tabelle: Antwort | Anteil / Fußball | 48 % / andere | 52 %)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **12⁄25**. Typische Fehler: 48⁄10 (dezimal-stelle), 52⁄100 (sach-frage-verfehlt).
+- `06` AFB III · _Argumentieren_ · In der 6c nennen 12 von 25 Kindern „Reiten“. / In der 6a nennen 12 von 50 Kindern „Reiten“. / Ole sagt: „Reiten ist in beiden Klassen gleich beliebt.“ / Beurteile die Aussage. _(Tabelle: Klasse | „Reiten“ | Kinder / 6c | 12 | 25 / 6a | 12 | 50)_
+  - ☐ Stimmt. In beiden Klassen sind es 12 Kinder.
+  - ☐ Falsch. In der 6c sind es 12 %, in der 6a 17 %.
+  - ☑ Falsch. In der 6c sind es 48 %, in der 6a 24 %.
+
+## 6.8.5-L1: Ich kann Anteile aus Kreisdiagrammen ablesen.
+
+Grundlage, die F übt: Halben und Viertel Kreis im Kreisdiagramm erkennen
+
+Baut auf: 6.8.4-H2 (Ich kann relative Häufigkeiten als Bruch, Dezimalzahl und in Prozent angeben und vergleichen.), 5.7.4-W1 (Ich kann Winkel mit dem Geodreieck messen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Kreis sind alle Befragten. Ein halber Kreis ist 1⁄2, ein Viertelkreis ist 1⁄4. *Beispiel:* Ein Viertelkreis sieht aus wie ein Stück mit einer rechten Ecke in der Mitte. *Lösungsschritt:* Schau, wie viel vom Kreis „Traube“ bedeckt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsobst. / Kreuze an, welcher Anteil „Traube“ ist. _(Bild: Kreisdiagramm: Birne 90°, Traube 45°, Apfel 225°)_
+  - ☐ 3⁄8
+  - ☑ 1⁄8
+  - ☐ 1⁄4
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Schulweg. / Kreuze die häufigste Antwort an. _(Bild: Kreisdiagramm: Bus 135°, Roller 45°, Auto 180°)_
+  - ☐ Roller
+  - ☑ Auto
+  - ☐ Bus
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 16 Kinder wurden nach dem Lieblingssport gefragt. / Bestimme, wie viele Kinder „Tanzen“ nennen. _(Bild: Kreisdiagramm: Schwimmen 90°, Reiten 45°, Tanzen 225°)_ Lösung: **10**. Typische Fehler: 6 (sach-frage-verfehlt), 8 (bruch-teil-zu-rest).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsessen. / Kreuze an, wie viel Prozent „Pizza“ ist. _(Bild: Kreisdiagramm: Pizza 180°, Reis 45°, Nudeln 90°, Salat 45°)_
+  - ☐ 180 %
+  - ☐ 25 %
+  - ☑ 50 %
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 40 Kinder wurden nach dem Lieblingsessen gefragt. / Bestimme, wie viele Kinder „Suppe“ nennen. _(Bild: Kreisdiagramm: Suppe 90°, Salat 45°, Pommes 45°, Reis 90°, Pizza 90°)_ Lösung: **10**. Typische Fehler: 30 (sach-frage-verfehlt), 20 (bruch-teil-zu-rest).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsobst. / Kreuze an, welche zwei Antworten zusammen genau die Hälfte sind. _(Bild: Kreisdiagramm: Birne 90°, Apfel 90°, Banane 90°, Kirsche 45°, Traube 45°)_
+  - ☐ Birne und Kirsche
+  - ☑ Birne und Apfel
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Lies den Prozentwert in der Legende ab. Rechne ihn in eine Anzahl um. *Beispiel:* 25 % von 40: 40 : 4 = 10. *Lösungsschritt:* Rechne 20 % von 20.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 20 Kinder wurden nach dem Lieblingstier gefragt. / Bestimme, wie viele Kinder „Hamster“ nennen. _(Bild: Kreisdiagramm: Hase 162° (beschriftet 45 %), Hund 36° (beschriftet 10 %), Hamster 72° (beschriftet 20 %), Katze 90° (beschriftet 25 %))_ Lösung: **4**. Typische Fehler: 20 (prozent-als-zaehler), 16 (sach-frage-verfehlt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsobst. / Bestimme, wie viel Prozent „Apfel“ ist. _(Bild: Kreisdiagramm: Banane 90° (beschriftet 25 %), Birne 36° (beschriftet 10 %), Apfel 126° (beschriftet ?), Traube 108° (beschriftet 30 %))_ Lösung: **35 %**. Typische Fehler: 70 (sach-schritt-vergessen), 65 (sach-frage-verfehlt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsobst. / Kreuze an, welche zwei Antworten zusammen mehr als die Hälfte sind. _(Bild: Kreisdiagramm: Erdbeere 18° (beschriftet 5 %), Traube 72° (beschriftet 20 %), Kirsche 234° (beschriftet 65 %), Banane 36° (beschriftet 10 %))_
+  - ☐ Traube und Erdbeere
+  - ☑ Kirsche und Traube
+  - ☐ Banane und Erdbeere
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · 200 Kinder wurden nach dem Lieblingstier gefragt. / Bestimme, wie viele Kinder „Hamster“ nennen. _(Bild: Kreisdiagramm: Hamster 126° (beschriftet 35 %), Hase 180° (beschriftet 50 %), Vogel 54° (beschriftet 15 %))_ Lösung: **70**. Typische Fehler: 35 (prozent-als-zaehler), 130 (sach-frage-verfehlt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 20 Kinder wurden nach dem Lieblingsessen gefragt. / Bestimme, wie viele Kinder mehr „Reis“ als „Suppe“ nennen. _(Bild: Kreisdiagramm: Reis 108° (beschriftet 30 %), Suppe 18° (beschriftet 5 %), Pizza 234° (beschriftet 65 %))_ Lösung: **5**. Typische Fehler: 25 (prozent-als-zaehler).
+- `06` AFB III · _Argumentieren_ · 60 Kinder wurden nach dem Schulweg gefragt. / Lina sagt: „45 Kinder nennen zu Fuß.“ / Beurteile die Aussage. _(Bild: Kreisdiagramm: Fahrrad 72° (beschriftet 20 %), Roller 90° (beschriftet 25 %), Auto 36° (beschriftet 10 %), zu Fuß 162° (beschriftet 45 %))_
+  - ☐ Falsch. / Es sind 33 Kinder.
+  - ☑ Falsch. / 45 % von 60 sind 27 Kinder.
+  - ☐ Stimmt. / Das steht in der Legende.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 360° sind 100 %. Also sind 3,6° ein Prozent. *Lösungsschritt:* Rechne 54 : 3,6.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Schulweg. / Bestimme den Anteil von „Bus“ in Prozent. _(Bild: Kreisdiagramm: zu Fuß 90° (beschriftet 90°), Roller 72° (beschriftet 72°), Bus 54° (beschriftet 54°), Fahrrad 144° (beschriftet 144°))_ Lösung: **15 %**. Typische Fehler: 54 (prozent-als-grad).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingstier. / Bestimme den Anteil von „Hase“ als Bruch. / Kürze vollständig. _(Bild: Kreisdiagramm: Hase 120° (beschriftet 120°), Katze 90° (beschriftet 90°), Pferd 90° (beschriftet 90°), Vogel 60° (beschriftet 60°))_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄3**. Typische Fehler: 120⁄100 (prozent-als-grad).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 36 Kinder wurden nach dem Lieblingstier gefragt. / Bestimme, wie viele Kinder „Hase“ nennen. _(Bild: Kreisdiagramm: Hase 30° (beschriftet 30°), Hund 150° (beschriftet 150°), Pferd 60° (beschriftet 60°), Hamster 120° (beschriftet 120°))_ Lösung: **3**. Typische Fehler: 30 (prozent-als-grad), 33 (sach-frage-verfehlt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Schulweg. / Bestimme den Winkel für „zu Fuß“. _(Bild: Kreisdiagramm: Fahrrad 234° (beschriftet 234°), Roller 72° (beschriftet 72°), zu Fuß 18° (beschriftet ?), Auto 36° (beschriftet 36°))_ Lösung: **18 °**. Typische Fehler: 5 (prozent-als-grad), 144 (sach-falsche-rechnung).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 48 Kinder wurden nach dem Schulweg gefragt. / Bestimme, wie viele Kinder mehr „Bus“ als „Fahrrad“ nennen. _(Bild: Kreisdiagramm: Bus 90° (beschriftet 90°), Fahrrad 30° (beschriftet 30°), Auto 240° (beschriftet 240°))_ Lösung: **8**. Typische Fehler: 60 (prozent-als-grad).
+- `06` AFB III · _Argumentieren_ · Eine Umfrage zum Lieblingsessen ergibt: Pizza 35 %, Pommes 25 %, Reis 40 %. / Emre zeichnet ein Kreisdiagramm. Für „Pommes“ zeichnet Emre einen Winkel von 25°. / Beurteile das.
+  - ☐ Falsch. Es müssen 50° sein.
+  - ☑ Falsch. 25 % von 360° sind 90°.
+  - ☐ Falsch. Es müssen 75° sein.
+  - ☐ Stimmt. Prozent und Grad sind dasselbe.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* 18° sind 2 Knappen. Rechne aus, wie viele Knappen 360° sind.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zur Lieblingsübung. / 2 Knappen nennen „Bogenschießen“. / Bestimme, wie viele befragt wurden. _(Bild: Kreisdiagramm: Falknerei 36° (beschriftet 36°), Schwertkampf 126° (beschriftet 126°), Lanzenstechen 180° (beschriftet 180°), Bogenschießen 18° (beschriftet 18°))_ Lösung: **40**. Typische Fehler: 8 (sach-falsche-rechnung).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 48 Kinder wurden nach dem Lieblingsobst gefragt. / Bestimme, wie viele Kinder „Kirsche“ nennen. _(Bild: Kreisdiagramm: Kirsche 150° (beschriftet ?), Birne 30° (beschriftet 30°), Erdbeere 60° (beschriftet 60°), Banane 120° (beschriftet 120°))_ Lösung: **20**. Typische Fehler: 150 (prozent-als-grad).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsessen. / Bestimme den Anteil von „Nudeln“ in Prozent. _(Bild: Kreisdiagramm: Pizza 162° (beschriftet 162°), Nudeln 27° (beschriftet 27°), Suppe 108° (beschriftet 108°), Reis 63° (beschriftet 63°))_ Lösung: **7,5 %**. Typische Fehler: 27 (prozent-als-grad), 8 (sach-falsche-rechnung).
+- `04` AFB III · _Argumentieren_ · Eine Zeitung zeigt dieses Kreisdiagramm zum Lieblingssport. / Beurteile die Darstellung. _(Bild: Kreisdiagramm: Basketball 108° (beschriftet 30 %), Turnen 54° (beschriftet 15 %), Reiten 180° (beschriftet 60 %), Tanzen 18° (beschriftet 5 %))_
+  - ☐ In Ordnung. Bei Umfragen dürfen es mehr als 100 % sein.
+  - ☑ Fehlerhaft. Zusammen sind es 110 % statt 100 %.
+  - ☐ In Ordnung. Jeder Anteil hat einen eigenen Ausschnitt im Kreis.
+  - ☐ Fehlerhaft. „Reiten“ ist zu klein gezeichnet.
+- `05` AFB II · _Argumentieren_ · Eine Werbung zeigt dieses Kreisdiagramm zur Lieblingsübung. / Beurteile die Darstellung. _(Bild: Kreisdiagramm: Schwertkampf 120° (beschriftet 50 %), Lanzenstechen 192° (beschriftet 40 %), Falknerei 48° (beschriftet 10 %))_
+  - ☐ In Ordnung. Die Größe der Ausschnitte ist egal.
+  - ☐ In Ordnung. Die Prozente stimmen zusammen.
+  - ☑ Irreführend. „Schwertkampf“ hat 50 %, der Ausschnitt ist aber kleiner als ein halber Kreis.
+  - ☐ Irreführend. „Lanzenstechen“ müsste kleiner sein als 40 %.
+- `06` AFB III · _Argumentieren_ · In der 6a nennen 40 % von 20 Kindern „Fußball“. Im Kreisdiagramm ist der Ausschnitt groß. / In der 6b nennen 25 % von 80 Kindern „Fußball“. Der Ausschnitt ist kleiner. / Noah sagt: „In der 6a mögen mehr Kinder Fußball.“ / Beurteile die Aussage. _(Tabelle: Klasse | befragt | „Fußball“ / 6a | 20 | 40 % / 6b | 80 | 25 %)_
+  - ☐ Das kann man nicht vergleichen.
+  - ☐ Stimmt. 40 % ist mehr als 25 %.
+  - ☑ Falsch. In der 6a sind es 8 Kinder, in der 6b 20 Kinder.
+  - ☐ Stimmt. Der Ausschnitt der 6a ist größer.
+
+## 6.8.5-L2: Ich kann Anteile aus Streifendiagrammen ablesen.
+
+Grundlage, die F übt: An einem 10 cm langen Streifen ablesen: 1 cm ist ein Zehntel
+
+Baut auf: 6.8.4-H2 (Ich kann relative Häufigkeiten als Bruch, Dezimalzahl und in Prozent angeben und vergleichen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Streifen ist 100 %. 1 cm sind 10 %. *Beispiel:* 3 cm von 10 cm sind 30 %. *Lösungsschritt:* Lies die Länge von „Traube“ am Lineal ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingsobst. / Der Streifen ist 10 cm lang. / Bestimme den Anteil von „Traube“ in Prozent. _(Bild: Streifendiagramm, 10 cm lang: Banane 1 cm, Traube 2 cm, Erdbeere 3 cm, Birne 4 cm)_ Lösung: **20 %**. Typische Fehler: 2 (streifen-laenge-als-anteil).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingstier. / Kreuze an, welcher Anteil „Hamster“ ist. _(Bild: Streifendiagramm, 10 cm lang: Hamster 5 cm, Pferd 4 cm, Vogel 1 cm)_
+  - ☐ 1⁄5
+  - ☐ 1⁄4
+  - ☑ 1⁄2
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · 20 Knappen wurden nach der Lieblingsübung gefragt. / Der Streifen ist 10 cm lang. / Bestimme, wie viele Knappen „Falknerei“ nennen. _(Bild: Streifendiagramm, 10 cm lang: Schwertkampf 5 cm, Falknerei 3 cm, Lanzenstechen 2 cm)_ Lösung: **6**. Typische Fehler: 3 (streifen-laenge-als-anteil), 30 (prozent-als-zaehler).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingstier. / Kreuze die seltenste Antwort an. _(Bild: Streifendiagramm, 10 cm lang: Hase 4 cm, Katze 2 cm, Pferd 3 cm, Hund 1 cm)_
+  - ☐ Katze
+  - ☑ Hund
+  - ☐ Hase
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Schulweg. / Bestimme den Anteil von „Bus“ in Prozent. _(Bild: Streifendiagramm, 10 cm lang: Fahrrad 2 cm (beschriftet 20 %), Bus 1 cm (beschriftet ?), Auto 3 cm (beschriftet 30 %), Roller 4 cm (beschriftet 40 %))_ Lösung: **10 %**. Typische Fehler: 1 (streifen-laenge-als-anteil).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingsessen. / Der Streifen ist 10 cm lang. / Bestimme den Anteil von „Nudeln“ in Prozent. _(Bild: Streifendiagramm, 10 cm lang: Nudeln 5 cm, Pizza 3 cm, Suppe 2 cm)_ Lösung: **50 %**. Typische Fehler: 5 (streifen-laenge-als-anteil).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Streifen ist 100 %. 1 cm sind 5 %. *Beispiel:* 3 cm von 20 cm sind 15 %. *Lösungsschritt:* Lies die Länge von „zu Fuß“ am Lineal ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Schulweg. / Der Streifen ist 20 cm lang. / Bestimme den Anteil von „zu Fuß“ in Prozent. _(Bild: Streifendiagramm, 20 cm lang: Roller 11 cm, zu Fuß 6 cm, Fahrrad 2 cm, Auto 1 cm)_ Lösung: **30 %**. Typische Fehler: 6 (streifen-laenge-als-anteil), 60 (streifen-laenge-als-anteil).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · 60 Kinder wurden nach dem Lieblingsessen gefragt. / Der Streifen ist 20 cm lang. / Bestimme, wie viele Kinder „Salat“ nennen. _(Bild: Streifendiagramm, 20 cm lang: Pizza 10 cm, Salat 7 cm, Suppe 3 cm)_ Lösung: **21**. Typische Fehler: 7 (streifen-laenge-als-anteil), 35 (prozent-als-zaehler).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingssport. / Der Streifen ist 20 cm lang. / Bestimme, um wie viel Prozent „Reiten“ mehr ist als „Schwimmen“. _(Bild: Streifendiagramm, 20 cm lang: Reiten 15 cm, Schwimmen 4 cm, Tanzen 1 cm)_ Lösung: **55 %**. Typische Fehler: 11 (streifen-laenge-als-anteil).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zur Lieblingsübung. / Der Streifen ist 20 cm lang. / Bestimme den Anteil von „Bogenschießen“ in Prozent. _(Bild: Streifendiagramm, 20 cm lang: Reiten 5 cm, Lanzenstechen 1 cm, Bogenschießen 3 cm, Falknerei 11 cm)_ Lösung: **15 %**. Typische Fehler: 3 (streifen-laenge-als-anteil), 30 (streifen-laenge-als-anteil).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 200 Kinder wurden nach dem Lieblingstier gefragt. / Der Streifen ist 20 cm lang. / Bestimme, wie viele Kinder „Hamster“ nennen. _(Bild: Streifendiagramm, 20 cm lang: Pferd 1 cm, Katze 6 cm, Hamster 13 cm)_ Lösung: **130**. Typische Fehler: 13 (streifen-laenge-als-anteil), 65 (prozent-als-zaehler).
+- `06` AFB III · _Argumentieren_ · Das Streifendiagramm ist 20 cm lang. / Elif sagt: „Der Abschnitt Turnen ist 17 cm lang, also sind es 17 %.“ / Beurteile die Aussage. _(Bild: Streifendiagramm, 20 cm lang: Turnen 17 cm, Fußball 2 cm, Basketball 1 cm)_
+  - ☑ Falsch. / 17 cm von 20 cm sind 85 %.
+  - ☐ Stimmt. / Man liest die Prozent am Lineal ab.
+  - ☐ Falsch. / Es sind 170 %.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Streifen ist 100 %. 1 cm sind 10 %. *Lösungsschritt:* Lies die Länge von „Salat“ am Lineal ab.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingsessen. / Der Streifen ist 10 cm lang. / Bestimme den Anteil von „Salat“ in Prozent. _(Bild: Streifendiagramm, 10 cm lang: Pizza 6 cm, Nudeln 2 cm, Salat 1,5 cm, Pommes 0,5 cm)_ Lösung: **15 %**. Typische Fehler: 1,5 (streifen-laenge-als-anteil).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 40 Kinder wurden nach dem Lieblingsessen gefragt. / Der Streifen ist 10 cm lang. / Bestimme, wie viele Kinder „Pommes“ nennen. _(Bild: Streifendiagramm, 10 cm lang: Suppe 3 cm, Pommes 6 cm, Salat 1 cm)_ Lösung: **24**. Typische Fehler: 6 (streifen-laenge-als-anteil), 60 (prozent-als-zaehler).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Schulweg. / Der Streifen ist 20 cm lang. / Bestimme den Anteil von „Bus“ in Prozent. _(Bild: Streifendiagramm, 20 cm lang: Roller 6 cm, Fahrrad 4 cm, Bus 4,5 cm, Auto 5,5 cm)_ Lösung: **22,5 %**. Typische Fehler: 4,5 (streifen-laenge-als-anteil), 45 (streifen-laenge-als-anteil).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingstier. / Bestimme den Anteil von „Pferd“ in Prozent. _(Bild: Streifendiagramm, 10 cm lang: Pferd 2 cm (beschriftet ?), Hase 1 cm (beschriftet 10 %), Katze 4,5 cm (beschriftet 45 %), Hamster 2,5 cm (beschriftet 25 %))_ Lösung: **20 %**. Typische Fehler: 2 (streifen-laenge-als-anteil).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingsessen. / Der Streifen ist 10 cm lang. / Bestimme den Anteil von „Suppe“ als Bruch. / Kürze vollständig. _(Bild: Streifendiagramm, 10 cm lang: Pommes 0,5 cm, Suppe 2 cm, Nudeln 7,5 cm)_ _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: 20⁄10 (streifen-laenge-als-anteil).
+- `06` AFB III · _Argumentieren_ · Ali vergleicht zwei Streifendiagramme. / Im 10-cm-Streifen der 6a ist „Bus“ 4 cm lang. / Im 20-cm-Streifen der 6b ist „Bus“ auch 4 cm lang. / Beurteile die Aussage: „In beiden Klassen fährt der gleiche Anteil mit dem Bus.“
+  - ☐ Stimmt. Streifen kann man immer direkt vergleichen.
+  - ☐ Stimmt. Beide Abschnitte sind gleich lang.
+  - ☐ Falsch. In der 6b sind es 80 %.
+  - ☑ Falsch. In der 6a sind es 40 %, in der 6b 20 %.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den Anteil in Prozent. Rechne dann zurück auf 100 %.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm ist 20 cm lang. / 21 Kinder nennen „Pizza“. / Bestimme, wie viele befragt wurden. _(Bild: Streifendiagramm, 20 cm lang: Suppe 5 cm, Pizza 7 cm, Salat 8 cm)_ Lösung: **60**. Typische Fehler: 147 (sach-falsche-rechnung), 420 (sach-falsche-rechnung).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 40 Kinder wurden nach dem Lieblingsobst gefragt. / Bestimme, wie viele Kinder „Kirsche“ nennen. _(Bild: Streifendiagramm, 20 cm lang: Erdbeere 2 cm (beschriftet 10 %), Banane 5 cm (beschriftet 25 %), Kirsche 6 cm (beschriftet ?), Birne 7 cm (beschriftet 35 %))_ Lösung: **12**. Typische Fehler: 30 (prozent-als-zaehler).
+- `03` AFB II · _Argumentieren_ · Ein Plakat zeigt dieses Streifendiagramm zum Lieblingstier. / Beurteile die Darstellung. _(Bild: Streifendiagramm, 10 cm lang: Hase 5 cm (beschriftet 50 %), Pferd 2 cm (beschriftet 30 %), Katze 3 cm (beschriftet 30 %))_
+  - ☐ In Ordnung. Die Zahlen sind gerundet.
+  - ☐ Fehlerhaft. „Pferd“ müsste 40 % sein.
+  - ☐ In Ordnung. Die Abschnitte füllen den Streifen.
+  - ☑ Fehlerhaft. Die Anteile ergeben zusammen 110 %. Bei „Pferd“ passt die Zahl nicht zur Länge.
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen. / Die Achse beginnt nicht bei 0. / Bestimme, um wie viel Prozent der Schützenverein mehr Mitglieder hat als der Reitverein. _(Bild: Säulendiagramm „Mitglieder“; Achse 140 bis 210, Linien alle 10, beschriftet alle 10; Reitverein 160, Schützenverein 200)_ Lösung: **25 %**. Typische Fehler: 200 (achse-abgeschnitten), 40 (prozent-als-zaehler).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingsobst. / Der Streifen ist 20 cm lang. / Bestimme den Anteil von „Traube“ in Prozent. _(Bild: Streifendiagramm, 20 cm lang: Erdbeere 11 cm, Birne 2 cm, Banane 2,5 cm, Traube 4,5 cm)_ Lösung: **22,5 %**. Typische Fehler: 4,5 (streifen-laenge-als-anteil), 45 (streifen-laenge-als-anteil).
+- `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen. / Die Säule des Ritterclub ist 3-mal so hoch wie die des Reitverein. / Beurteile die Darstellung. _(Bild: Säulendiagramm „Mitglieder“; Achse 70 bis 110, Linien alle 10, beschriftet alle 10; Reitverein 80, Ritterclub 100)_
+  - ☐ In Ordnung. Der Ritterclub hat 3-mal so viele Mitglieder.
+  - ☐ In Ordnung. Die Zahlen an der Achse stimmen.
+  - ☐ Irreführend. Der Reitverein hat in Wahrheit mehr Mitglieder.
+  - ☑ Irreführend. Die Achse beginnt bei 70. Der Ritterclub hat nur 25 % mehr Mitglieder.
+
+## 6.8.6-D1: Ich kann ein Streifendiagramm erstellen.
+
+Grundlage, die F übt: Zu einem Anteil in Prozent die Anzahl der Kästchen im Streifen bestimmen
+
+Baut auf: 6.8.5-L2 (Ich kann Anteile aus Streifendiagrammen ablesen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Streifen hat 20 Kästchen. Ein Kästchen sind 100 % : 20 = 5 %. *Lösungsschritt:* 50 % sind 50 : 5 = 10 Kästchen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Lieblingsobst ergibt die Anteile in der Tabelle. / Färbe den Streifen passend. Der ganze Streifen sind 100 %. _(Tabelle: Antwort | Anteil / Erdbeere | 50 % / Traube | 40 % / Apfel | 10 %)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Erdbeere 10, Traube 8, Apfel 2** · typische Fehler: 5/4/1 (streifen-laenge-als-anteil)
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Schulweg ergibt die Anteile in der Tabelle. / Färbe den Streifen passend. Der ganze Streifen sind 100 %. _(Tabelle: Antwort | Anteil / Fahrrad | 20 % / zu Fuß | 15 % / Auto | 35 % / Bus | 30 %)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Fahrrad 4, zu Fuß 3, Auto 7, Bus 6** · typische Fehler: 2/1/3/3 (streifen-laenge-als-anteil)
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 20 Kinder wurden nach dem Schulweg gefragt. / Färbe den Streifen passend. Der ganze Streifen sind alle Befragten. _(Tabelle: Antwort | Anzahl / Bus | 6 / Fahrrad | 4 / Auto | 10)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Bus 6, Fahrrad 4, Auto 10** · typische Fehler: 3/2/5 (streifen-laenge-als-anteil)
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Lieblingsessen ergibt die Anteile in der Tabelle. / Färbe den Streifen passend. Der ganze Streifen sind 100 %. _(Tabelle: Antwort | Anteil / Pommes | 20 % / Suppe | 25 % / Reis | 55 %)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Pommes 4, Suppe 5, Reis 11** · typische Fehler: 2/2/5 (streifen-laenge-als-anteil)
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Lieblingssport ergibt: Reiten 15 %, Tanzen 55 %, Basketball 30 %. / Das Streifendiagramm soll 10 cm lang werden. / Bestimme, wie lang der Abschnitt für „Tanzen“ wird. Lösung: **5,5 cm**. Typische Fehler: 55 (streifen-laenge-als-anteil), 11 (streifen-laenge-als-anteil).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · 40 Knappen wurden nach der Lieblingsübung gefragt. / Färbe den Streifen passend. Der ganze Streifen sind alle Befragten. _(Tabelle: Antwort | Anzahl / Falknerei | 24 / Reiten | 14 / Lanzenstechen | 2)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Falknerei 12, Reiten 7, Lanzenstechen 1** · typische Fehler: 6/3/0 (streifen-laenge-als-anteil)
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Lieblingsessen ergibt die Anteile in der Tabelle. / Färbe den Streifen passend. Der ganze Streifen sind 100 %. _(Tabelle: Antwort | Anteil / Nudeln | 30 % / Reis | 40 % / Pommes | 5 % / Pizza | 25 %)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Nudeln 6, Reis 8, Pommes 1, Pizza 5** · typische Fehler: 3/4/0/2 (streifen-laenge-als-anteil)
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Streifen hat 20 Kästchen. Der ganze Streifen sind 100 %. / Kreuze an, wie viele Kästchen 35 % sind.
+  - ☐ 35
+  - ☑ 7
+  - ☐ 3
+  - ☐ 13
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Lieblingsessen ergibt die Anteile in der Tabelle. / Färbe den Streifen passend. Der ganze Streifen sind 100 %. _(Tabelle: Antwort | Anteil / Reis | 30 % / Nudeln | 55 % / Pommes | 15 %)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Reis 6, Nudeln 11, Pommes 3** · typische Fehler: 3/5/1 (streifen-laenge-als-anteil)
+- `10` AFB I · _Mit symbolischen Elementen umgehen_ · 40 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen passend. Der ganze Streifen sind alle Befragten. _(Tabelle: Antwort | Anzahl / Fußball | 6 / Basketball | 12 / Tanzen | 8 / Reiten | 14)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Fußball 3, Basketball 6, Tanzen 4, Reiten 7** · typische Fehler: 1/3/2/3 (streifen-laenge-als-anteil)
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zum Schulweg ergibt: Auto 30 %, Bus 5 %, Fahrrad 65 %. / Das Streifendiagramm soll 20 cm lang werden. / Bestimme, wie lang der Abschnitt für „Auto“ wird. Lösung: **6 cm**. Typische Fehler: 30 (streifen-laenge-als-anteil), 3 (streifen-laenge-als-anteil).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Umfrage zur Lieblingsübung ergibt die Anteile in der Tabelle. / Färbe den Streifen passend. Der ganze Streifen sind 100 %. _(Tabelle: Antwort | Anteil / Schwertkampf | 30 % / Lanzenstechen | 15 % / Bogenschießen | 20 % / Falknerei | 35 %)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Schwertkampf 6, Lanzenstechen 3, Bogenschießen 4, Falknerei 7** · typische Fehler: 3/1/2/3 (streifen-laenge-als-anteil)
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst, wie viele Befragte ein Kästchen sind: 60 : 20.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · 60 Kinder wurden nach dem Lieblingstier gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Hund | 27 / Pferd | 12 / Hase | 21)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Hund 9, Pferd 4, Hase 7** · typische Fehler: 8/3/6 (sach-falsche-rechnung)
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · 200 Kinder wurden nach dem Lieblingsessen gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Pommes | 20 / Reis | 10 / Salat | 140 / Pizza | 30)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Pommes 2, Reis 1, Salat 14, Pizza 3** · typische Fehler: 1/0/13/2 (sach-falsche-rechnung)
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 200 Kinder wurden nach dem Lieblingssport gefragt: Tanzen 140, Fußball 40, Turnen 20. / Das Streifendiagramm soll 20 cm lang werden. / Bestimme, wie lang der Abschnitt für „Turnen“ wird. Lösung: **2 cm**. Typische Fehler: 20 (streifen-laenge-als-anteil), 1 (sach-falsche-rechnung).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Streifen hat 20 Kästchen. „Vogel“ hat 9 Kästchen. / 36 Kinder haben „Vogel“ genannt. / Bestimme, wie viele befragt wurden. Lösung: **80**. Typische Fehler: 324 (sach-falsche-rechnung), 56 (sach-falsche-rechnung), 720 (relativ-absolut-verwechselt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · 140 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Fußball | 7 / Schwimmen | 28 / Tanzen | 63 / Turnen | 42)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Fußball 1, Schwimmen 4, Tanzen 9, Turnen 6** · typische Fehler: 0/3/8/5 (sach-falsche-rechnung)
+- `06` AFB III · _Argumentieren_ · Lina zeichnet ein Streifendiagramm zur Lieblingsübung. Der Streifen ist 10 cm lang. / Beurteile die Darstellung. _(Bild: Streifendiagramm, 10 cm lang: Bogenschießen 3 cm (beschriftet 20 %), Reiten 3 cm (beschriftet 30 %), Falknerei 4 cm (beschriftet 50 %))_
+  - ☐ Fehlerhaft. „Bogenschießen“ müsste 40 % sein.
+  - ☐ In Ordnung. Die Prozente in der Beschriftung ergeben zusammen 100 %.
+  - ☐ In Ordnung. Die Abschnitte füllen den ganzen Streifen von 10 cm.
+  - ☑ Fehlerhaft. „Falknerei“ hat 50 %, müsste also 5 cm lang sein.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · 80 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Schwimmen | 28 / Tanzen | 12 / Basketball | 16 / Reiten | 24)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Schwimmen 7, Tanzen 3, Basketball 4, Reiten 6** · typische Fehler: 6/2/3/5 (sach-falsche-rechnung)
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · 100 Kinder wurden nach dem Schulweg gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / zu Fuß | 20 / Bus | 10 / Fahrrad | 40 / Auto | 5 / Roller | 25)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **zu Fuß 4, Bus 2, Fahrrad 8, Auto 1, Roller 5** · typische Fehler: 3/1/7/0/4 (sach-falsche-rechnung)
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · 80 Knappen wurden nach der Lieblingsübung gefragt: Falknerei 52, Lanzenstechen 8, Reiten 20. / Das Streifendiagramm soll 20 cm lang werden. / Bestimme, wie lang der Abschnitt für „Falknerei“ wird. Lösung: **13 cm**. Typische Fehler: 52 (streifen-laenge-als-anteil), 6,5 (sach-falsche-rechnung).
+- `10` AFB III · _Argumentieren_ · Sara zeichnet zwei Streifendiagramme nebeneinander: für die 6a einen 20-cm-Streifen, für die 6b einen 10-cm-Streifen. / In beiden Streifen ist „Fahrrad“ 3 cm lang. / Sara schreibt darunter: „In beiden Klassen fährt der gleiche Anteil mit dem Fahrrad.“ / Beurteile die Darstellung.
+  - ☐ Irreführend. In der 6a sind es 30 %, in der 6b 15 %.
+  - ☐ In Ordnung. Gleich lange Abschnitte zeigen immer gleiche Anteile.
+  - ☐ In Ordnung. Streifendiagramme dürfen verschieden lang sein.
+  - ☑ Irreführend. In der 6a sind es 15 %, in der 6b 30 %.
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · 140 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Basketball | 42 / Reiten | 7 / Fußball | 91)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Basketball 6, Reiten 1, Fußball 13** · typische Fehler: 5/0/12 (sach-falsche-rechnung)
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Streifen hat 20 Kästchen. „zu Fuß“ hat 4 Kästchen. / 8 Kinder haben „zu Fuß“ genannt. / Bestimme, wie viele befragt wurden. Lösung: **40**. Typische Fehler: 32 (sach-falsche-rechnung), 28 (sach-falsche-rechnung), 160 (relativ-absolut-verwechselt).
+
+## 6.8.6-D2: Ich kann ein Kreisdiagramm erstellen.
+
+Grundlage, die F übt: Zu einem Anteil den Winkel als Teil von 360° berechnen
+
+Baut auf: 6.8.5-L1 (Ich kann Anteile aus Kreisdiagrammen ablesen.), 5.7.4-W2 (Ich kann Winkel mit dem Geodreieck zeichnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Kreis hat 360°. 1 % sind 360° : 100 = 3,6°. *Lösungsschritt:* 40 % sind 40 · 3,6° = 144°.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingsobst ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anteil | Winkel in ° |
+  |---|---|---|
+  | Banane | 40 % | **144** |
+  | Birne | 55 % | **198** |
+  | Erdbeere | 5 % | **18** |
+  | zusammen | 100 % | 360 |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingsessen ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anteil | Winkel in ° |
+  |---|---|---|
+  | Pizza | 35 % | **126** |
+  | Salat | 20 % | **72** |
+  | Nudeln | 30 % | **108** |
+  | Pommes | 15 % | **54** |
+  | zusammen | 100 % | 360 |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 24 Kinder wurden nach dem Lieblingssport gefragt. 9 nennen „Schwimmen“. / Berechne den Winkel für „Schwimmen“ im Kreisdiagramm. Lösung: **135 °**. Typische Fehler: 9 (prozent-als-grad), 90 (sach-falsche-rechnung).
+- `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingssport ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anteil | Winkel in ° |
+  |---|---|---|
+  | Turnen | 55 % | **198** |
+  | Tanzen | 25 % | **90** |
+  | Basketball | 20 % | **72** |
+  | zusammen | 100 % | 360 |
+
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Bei einer Umfrage zum Lieblingsobst nennen 70 % „Traube“. / Berechne den Winkel für „Traube“ im Kreisdiagramm. Lösung: **252 °**. Typische Fehler: 70 (prozent-als-grad), 210 (sach-falsche-rechnung).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Umfrage zur Lieblingsübung ergibt die Werte in der Tabelle. / Zeichne das Kreisdiagramm mit Geodreieck und Zirkel in dein Heft. Beschrifte die Ausschnitte. / Gib zur Kontrolle den Winkel für „Reiten“ an. _(Tabelle: Antwort | Anteil / Reiten | 50 % / Lanzenstechen | 30 % / Schwertkampf | 20 %)_ Lösung: **180 °**. Typische Fehler: 50 (prozent-als-grad).
+- `07` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingsessen ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anteil | Winkel in ° |
+  |---|---|---|
+  | Suppe | 10 % | **36** |
+  | Pizza | 15 % | **54** |
+  | Nudeln | 25 % | **90** |
+  | Reis | 50 % | **180** |
+  | zusammen | 100 % | 360 |
+
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · 30 Kinder wurden nach dem Lieblingssport gefragt. 7 nennen „Basketball“. / Berechne den Winkel für „Basketball“ im Kreisdiagramm. Lösung: **84 °**. Typische Fehler: 7 (prozent-als-grad), 70 (sach-falsche-rechnung).
+- `09` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingssport ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anteil | Winkel in ° |
+  |---|---|---|
+  | Fußball | 10 % | **36** |
+  | Tanzen | 25 % | **90** |
+  | Reiten | 35 % | **126** |
+  | Schwimmen | 30 % | **108** |
+  | zusammen | 100 % | 360 |
+
+- `10` AFB I · _Mit symbolischen Elementen umgehen_ · Bei einer Umfrage nennen 20 % „Pizza“. / Kreuze den Winkel an, den „Pizza“ im Kreisdiagramm bekommt.
+  - ☑ 72°
+  - ☐ 288°
+  - ☐ 20°
+  - ☐ 60°
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Bei einer Umfrage zur Lieblingsübung nennen 70 % „Lanzenstechen“. / Berechne den Winkel für „Lanzenstechen“ im Kreisdiagramm. Lösung: **252 °**. Typische Fehler: 70 (prozent-als-grad), 210 (sach-falsche-rechnung).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Umfrage zum Lieblingsobst ergibt die Werte in der Tabelle. / Zeichne das Kreisdiagramm mit Geodreieck und Zirkel in dein Heft. Beschrifte die Ausschnitte. / Gib zur Kontrolle den Winkel für „Birne“ an. _(Tabelle: Antwort | Anzahl / Banane | 12 / Traube | 4 / Erdbeere | 6 / Birne | 18)_ Lösung: **162 °**. Typische Fehler: 18 (prozent-als-grad).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Befragter ist 360° : 24 = 15°.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 24 Kinder wurden nach dem Lieblingsessen gefragt. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anzahl | Winkel in ° |
+  |---|---|---|
+  | Pommes | 6 | **90** |
+  | Suppe | 3 | **45** |
+  | Pizza | 15 | **225** |
+  | zusammen | 24 | 360 |
+
+- `02` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 45 Kinder wurden nach dem Lieblingstier gefragt. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anzahl | Winkel in ° |
+  |---|---|---|
+  | Vogel | 1 | **8** |
+  | Katze | 9 | **72** |
+  | Pferd | 7 | **56** |
+  | Hase | 28 | **224** |
+  | zusammen | 45 | 360 |
+
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Kreisdiagramm zum Lieblingsobst hat „Erdbeere“ einen Winkel von 36°. / Das sind 2 Kinder. / Bestimme, wie viele befragt wurden. Lösung: **20**. Typische Fehler: 324 (sach-frage-verfehlt).
+- `04` AFB III · _Argumentieren_ · Eine Umfrage zur Lieblingsübung ergibt: Bogenschießen 45 %, Reiten 30 %, Falknerei 25 %. / Elif zeichnet dazu das Kreisdiagramm im Bild. / Beurteile die Darstellung. _(Bild: Kreisdiagramm: Bogenschießen 120° (beschriftet 45 %), Reiten 120° (beschriftet 30 %), Falknerei 120° (beschriftet 25 %))_
+  - ☑ Irreführend. „Bogenschießen“ müsste 162° bekommen, nicht 120°.
+  - ☐ In Ordnung. Die Prozente in der Legende ergeben zusammen 100 %.
+  - ☐ Irreführend. „Bogenschießen“ müsste 45° bekommen.
+  - ☐ In Ordnung. Drei Antworten bekommen immer drei gleiche Ausschnitte.
+- `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 90 Kinder wurden nach dem Schulweg gefragt. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anzahl | Winkel in ° |
+  |---|---|---|
+  | Auto | 21 | **84** |
+  | Bus | 51 | **204** |
+  | Fahrrad | 1 | **4** |
+  | zu Fuß | 17 | **68** |
+  | zusammen | 90 | 360 |
+
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Umfrage zum Lieblingstier ergibt die Werte in der Tabelle. / Zeichne das Kreisdiagramm mit Geodreieck und Zirkel in dein Heft. Beschrifte die Ausschnitte. / Gib zur Kontrolle den Winkel für „Hase“ an. _(Tabelle: Antwort | Anzahl / Hase | 62 / Vogel | 3 / Hamster | 25)_ Lösung: **248 °**. Typische Fehler: 62 (prozent-als-grad).
+- `07` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 45 Kinder wurden nach dem Lieblingsobst gefragt. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
+
+  | Antwort | Anzahl | Winkel in ° |
+  |---|---|---|
+  | Birne | 10 | **80** |
+  | Banane | 15 | **120** |
+  | Traube | 7 | **56** |
+  | Apfel | 13 | **104** |
+  | zusammen | 45 | 360 |
+
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Im Kreisdiagramm zum Lieblingssport hat „Reiten“ einen Winkel von 60°. / Das sind 9 Kinder. / Bestimme, wie viele befragt wurden. Lösung: **54**. Typische Fehler: 15 (prozent-als-grad), 300 (sach-frage-verfehlt).
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Die Klasse will die Temperatur an jedem Tag der Woche zeigen. / Kreuze an, welche Darstellung am besten passt.
+  - ☑ Ein Säulendiagramm. Jeder Tag hat einen eigenen Wert.
+  - ☐ Ein Streifendiagramm. Die Tage liegen nebeneinander wie Abschnitte.
+  - ☐ Ein Kreisdiagramm. Die Woche ist ein Ganzes aus sieben Tagen.
+- `10` AFB III · _Argumentieren_ · 40 Kinder wurden nach dem Lieblingssport gefragt. 16 nennen „Tanzen“. / Ali rechnet für das Kreisdiagramm: 16 · 3,6° = 57,6°. / Beurteile die Rechnung.
+  - ☐ Falsch. Es sind 16°, ein Grad für jeden Befragten.
+  - ☐ Falsch. Es sind 216°, der Rest vom ganzen Kreis.
+  - ☐ Richtig. Ein Befragter ist bei jeder Umfrage genau 3,6°.
+  - ☑ Falsch. Ein Befragter ist hier 9°, also sind es 144°.
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Die Klasse will die Lieblingsfächer von zwei Klassen vergleichen. / Kreuze an, welche Darstellung am besten passt.
+  - ☑ Zwei gleich lange Streifendiagramme. Man vergleicht Abschnitt für Abschnitt.
+  - ☐ Zwei Kreisdiagramme mit verschiedenen Radien. Größere Klassen bekommen größere Kreise.
+  - ☐ Ein Streifendiagramm für beide Klassen. Dann ist alles in einem Bild.
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Umfrage zum Lieblingstier ergibt die Werte in der Tabelle. / Zeichne das Kreisdiagramm mit Geodreieck und Zirkel in dein Heft. Beschrifte die Ausschnitte. / Gib zur Kontrolle den Winkel für „Vogel“ an. _(Tabelle: Antwort | Anzahl / Hase | 4 / Hamster | 5 / Pferd | 10 / Vogel | 21)_ Lösung: **189 °**. Typische Fehler: 21 (prozent-als-grad).
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -7342,14 +8268,18 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `grundgebuehr-uebersehen` | Übersieht einen festen Betrag (Grundgebühr) und rechnet, als wäre die Zuordnung proportional. | Im Preis steckt ein fester Betrag, der nicht mitwächst. Rechne ihn getrennt. | Du achtest jetzt auf feste Beträge wie eine Grundgebühr. |
 | `anti-proportional-gerechnet` | Rechnet eine antiproportionale Zuordnung proportional (mehr Pumpen brauchen angeblich mehr Zeit). | Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Pumpen brauchen weniger Zeit. | Du erkennst jetzt: Mehr Helfer brauchen weniger Zeit. |
 | `prop-antiproportional-gerechnet` | Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger). | Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr. | Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner? |
+| `mittelwert-mitte` | Hält den Wert in der Mitte der Liste für den Mittelwert. | Der Mittelwert ist nicht der Wert in der Mitte. Zähle alle Werte zusammen und teile durch ihre Anzahl. | Du rechnest den Mittelwert jetzt aus allen Werten aus. |
+| `mittelwert-falsche-anzahl` | Teilt beim Mittelwert die Summe durch eine falsche Anzahl (einen Wert vergessen oder den neuen Wert nicht mitgezählt). | Zähle, wie viele Werte es sind. Durch genau diese Anzahl teilst du die Summe. | Du teilst jetzt durch die Anzahl aller Werte. |
+| `spannweite-groesster-wert` | Gibt als Spannweite den größten Wert an statt Maximum minus Minimum. | Die Spannweite sagt, wie weit die Werte auseinanderliegen. Rechne größter Wert minus kleinster Wert. | Du rechnest bei der Spannweite jetzt Maximum minus Minimum. |
+| `zentralwert-unsortiert` | Nimmt als Zentralwert den mittleren Wert der ungeordneten Liste. | Ordne die Werte zuerst der Größe nach. Erst dann suchst du den Wert in der Mitte. | Du ordnest die Werte jetzt, bevor du die Mitte suchst. |
+| `haeufigkeit-falsche-gesamtzahl` | Bezieht die relative Häufigkeit auf eine falsche Gesamtzahl (eine andere Anzahl aus der Tabelle oder nur einen Teil der Befragten). | Unten im Bruch steht immer die Gesamtzahl: alle, die gefragt wurden. | Du teilst jetzt durch die richtige Gesamtzahl. |
+| `relativ-absolut-verwechselt` | Vergleicht bei verschieden großen Gruppen die Anzahlen statt der Anteile. | Sind die Gruppen verschieden groß, vergleichst du die Anteile. Rechne für jede Gruppe Anzahl geteilt durch Gesamtzahl. | Du vergleichst jetzt Anteile, nicht nur Anzahlen. |
+| `prozent-als-grad` | Trägt im Kreisdiagramm die Prozentzahl direkt als Winkel ein (25 % als 25°). | Der ganze Kreis hat 360°, nicht 100°. 25 % sind ein Viertel von 360°, also 90°. | Du rechnest Prozent jetzt in Grad um: 1 % sind 3,6°. |
+| `streifen-laenge-als-anteil` | Liest die Länge eines Abschnitts im Streifendiagramm direkt als Prozent ab, auch wenn der Streifen nicht 100 Einheiten lang ist. | Teile die Länge des Abschnitts durch die Länge des ganzen Streifens. Erst dann hast du den Anteil. | Du teilst die Länge im Streifen jetzt durch die ganze Länge. |
+| `stichprobe-einseitig` | Hält eine zu kleine oder einseitige Stichprobe für geeignet (nur Freunde, nur eine Klasse, nur ein Verein). | Frage dich: Haben alle, um die es geht, eine Chance, gefragt zu werden? Wenn nur eine Gruppe gefragt wird, passt die Stichprobe nicht. | Du fragst jetzt nicht nur eine Gruppe, sondern Kinder aus allen Gruppen. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.8.1-L1 Ich kann beurteilen, wie Daten erhoben werden und ob eine Stichprobe geeignet ist. Baut auf: nur Grundschulstoff
-- 6.8.2-L1 Ich kann Minimum, Maximum, Spannweite, Mittelwert und Zentralwert bestimmen und deuten. Baut auf: nur Grundschulstoff
-- 6.8.4-L1 Ich kann absolute und relative Häufigkeiten bestimmen und als Bruch, Dezimalzahl oder in Prozent angeben. Baut auf: nur Grundschulstoff
-- 6.8.5-L1 Ich kann Anteile aus Kreis- und Streifendiagrammen ablesen. Baut auf: nur Grundschulstoff
-- 6.8.6-L1 Ich kann Daten in einem passenden Diagramm darstellen, auch im Streifen- und Kreisdiagramm. Baut auf: nur Grundschulstoff
 - 6.9.1-L1 Ich kann ganze Zahlen an der Zahlengerade darstellen und im Sachzusammenhang deuten. Baut auf: nur Grundschulstoff
 - 6.9.2-L1 Ich kann negative Brüche und Dezimalzahlen an der Zahlengerade darstellen und deuten. Baut auf: nur Grundschulstoff
 - 6.9.3-L1 Ich kann rationale Zahlen vergleichen und ordnen. Baut auf: nur Grundschulstoff

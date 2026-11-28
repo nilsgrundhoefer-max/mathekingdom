@@ -426,6 +426,16 @@ const KIND = {
   'grundgebuehr-uebersehen': 'Du achtest jetzt auf feste Beträge wie eine Grundgebühr.',
   'anti-proportional-gerechnet': 'Du erkennst jetzt: Mehr Helfer brauchen weniger Zeit.',
   'prop-antiproportional-gerechnet': 'Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner?',
+  // Klasse 6, Kapitel 8 „Daten auswerten und darstellen“ (ADR 0058)
+  'mittelwert-mitte': 'Du rechnest den Mittelwert jetzt aus allen Werten aus.',
+  'mittelwert-falsche-anzahl': 'Du teilst jetzt durch die Anzahl aller Werte.',
+  'spannweite-groesster-wert': 'Du rechnest bei der Spannweite jetzt Maximum minus Minimum.',
+  'zentralwert-unsortiert': 'Du ordnest die Werte jetzt, bevor du die Mitte suchst.',
+  'haeufigkeit-falsche-gesamtzahl': 'Du teilst jetzt durch die richtige Gesamtzahl.',
+  'relativ-absolut-verwechselt': 'Du vergleichst jetzt Anteile, nicht nur Anzahlen.',
+  'prozent-als-grad': 'Du rechnest Prozent jetzt in Grad um: 1 % sind 3,6°.',
+  'streifen-laenge-als-anteil': 'Du teilst die Länge im Streifen jetzt durch die ganze Länge.',
+  'stichprobe-einseitig': 'Du fragst jetzt nicht nur eine Gruppe, sondern Kinder aus allen Gruppen.',
 };
 export const fehlvorstellungen = {
   'begriffe-verwechselt': fv('Verwechselt die Fachbegriffe der Rechenart.', 'Schau dir die Fachbegriffe noch einmal an: Welche Zahl steht wo?'),
@@ -710,6 +720,16 @@ export const fehlvorstellungen = {
   'grundgebuehr-uebersehen': fv('Übersieht einen festen Betrag (Grundgebühr) und rechnet, als wäre die Zuordnung proportional.', 'Im Preis steckt ein fester Betrag, der nicht mitwächst. Rechne ihn getrennt.'),
   'anti-proportional-gerechnet': fv('Rechnet eine antiproportionale Zuordnung proportional (mehr Pumpen brauchen angeblich mehr Zeit).', 'Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Pumpen brauchen weniger Zeit.'),
   'prop-antiproportional-gerechnet': fv('Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger).', 'Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr.'),
+  // Klasse 6, Kapitel 8 „Daten auswerten und darstellen“ (ADR 0058)
+  'mittelwert-mitte': fv('Hält den Wert in der Mitte der Liste für den Mittelwert.', 'Der Mittelwert ist nicht der Wert in der Mitte. Zähle alle Werte zusammen und teile durch ihre Anzahl.'),
+  'mittelwert-falsche-anzahl': fv('Teilt beim Mittelwert die Summe durch eine falsche Anzahl (einen Wert vergessen oder den neuen Wert nicht mitgezählt).', 'Zähle, wie viele Werte es sind. Durch genau diese Anzahl teilst du die Summe.'),
+  'spannweite-groesster-wert': fv('Gibt als Spannweite den größten Wert an statt Maximum minus Minimum.', 'Die Spannweite sagt, wie weit die Werte auseinanderliegen. Rechne größter Wert minus kleinster Wert.'),
+  'zentralwert-unsortiert': fv('Nimmt als Zentralwert den mittleren Wert der ungeordneten Liste.', 'Ordne die Werte zuerst der Größe nach. Erst dann suchst du den Wert in der Mitte.'),
+  'haeufigkeit-falsche-gesamtzahl': fv('Bezieht die relative Häufigkeit auf eine falsche Gesamtzahl (eine andere Anzahl aus der Tabelle oder nur einen Teil der Befragten).', 'Unten im Bruch steht immer die Gesamtzahl: alle, die gefragt wurden.'),
+  'relativ-absolut-verwechselt': fv('Vergleicht bei verschieden großen Gruppen die Anzahlen statt der Anteile.', 'Sind die Gruppen verschieden groß, vergleichst du die Anteile. Rechne für jede Gruppe Anzahl geteilt durch Gesamtzahl.'),
+  'prozent-als-grad': fv('Trägt im Kreisdiagramm die Prozentzahl direkt als Winkel ein (25 % als 25°).', 'Der ganze Kreis hat 360°, nicht 100°. 25 % sind ein Viertel von 360°, also 90°.'),
+  'streifen-laenge-als-anteil': fv('Liest die Länge eines Abschnitts im Streifendiagramm direkt als Prozent ab, auch wenn der Streifen nicht 100 Einheiten lang ist.', 'Teile die Länge des Abschnitts durch die Länge des ganzen Streifens. Erst dann hast du den Anteil.'),
+  'stichprobe-einseitig': fv('Hält eine zu kleine oder einseitige Stichprobe für geeignet (nur Freunde, nur eine Klasse, nur ein Verein).', 'Frage dich: Haben alle, um die es geht, eine Chance, gefragt zu werden? Wenn nur eine Gruppe gefragt wird, passt die Stichprobe nicht.'),
 };
 for (const [id, f] of Object.entries(fehlvorstellungen)) {
   if (!KIND[id]) throw new Error(`Fehlvorstellung ${id} hat keinen Kindersatz`);

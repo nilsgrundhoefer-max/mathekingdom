@@ -41,7 +41,7 @@ test('Pflicht ab M: Schrägbild (3.2) und Ansichten (3.3) sind auf F und G ein f
 test('Jedes gebaute Lernziel der Klasse 6 nennt seine Stelle im Bildungsplan', () => {
   const gebaut = pool.kapitel.flatMap((k) => k.unterkapitel.flatMap((x) => x.lernziele)).filter((l) => pool.aufgaben.some((a) => a.lernziel === l.id));
   assert.ok(gebaut.length >= 38);
-  for (const l of gebaut) assert.match(l.bp ?? '', /^(ZVO|RF|FZ|DS|ZP|MES) \(\d+\)/, l.id);
+  for (const l of gebaut) assert.match(l.bp ?? '', /^(ZVO|RF|FZ|DS|DZ|ZP|MES) \(\d+\)/, l.id);
   assert.ok(drei.unterkapitel.flatMap((x) => x.lernziele).every((l) => l.bp.startsWith('RF')));
 });
 
