@@ -49,7 +49,8 @@ let groessenModus = false;
 // Kapitel 9 (ADR 0036): Dort wird mit Brüchen und Dezimalzahlen gerechnet. Gleichungen, Format und Nachweis prüft tools/pruefe-brueche.mjs.
 let bruchModus = false;
 // Klasse 7, Kapitel 1 (ADR 0043): Dort wird mit Vorzeichen gerechnet. Gleichungen, Format und Nachweis prüft tools/pruefe-rational.mjs.
-const RATIONALKAPITEL = ['7.1'];
+// Klasse 6, Kapitel 9 (ADR 0059) führt die negativen Zahlen ein und nutzt dieselbe Prüfung mit der Staffel der Klasse 6.
+const RATIONALKAPITEL = ['7.1', '6.9'];
 const istRationalLernziel = (id) => RATIONALKAPITEL.some((k) => id.startsWith(`${k}.`));
 let rationalModus = false;
 // Klasse 7, Kapitel 2 (ADR 0044): Figuren, Winkelbeziehungen, Kongruenzsätze und Ortslinien prüft tools/pruefe-dreiecke.mjs.
@@ -227,7 +228,7 @@ function pruefeSprache(a) {
   if (istRationalLernziel(a.lernziel)) for (const x of rationalSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istDreieckLernziel(a.lernziel)) for (const x of dreieckSprachMaengel(a, mitHilfen)) melde(a.id, x);
   if (istKoerperLernziel(a.lernziel)) for (const x of koerperSprachMaengel(a)) melde(a.id, x);
-  if (/^6\.[45678]\./.test(a.lernziel)) for (const x of operatorMaengel(a)) melde(a.id, x);
+  if (/^6\.[456789]\./.test(a.lernziel)) for (const x of operatorMaengel(a)) melde(a.id, x);
   // Einfache Sprache auf F und G: kurze Sätze, jeder Satz in einer eigenen Zeile, keine Nebensätze.
   if (stufe <= 1) for (const t of texte) for (const zeile of t.split('\n')) {
     const saetze = zeile.replace(/\{\{\w+\}\}/g, 'x').split(/(?<=[.?!])\s+(?=[A-ZÄÖÜ„])/).filter(Boolean);

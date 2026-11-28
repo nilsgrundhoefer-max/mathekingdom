@@ -1327,6 +1327,51 @@
    "beschreibung": "Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger).",
    "hinweis": "Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr.",
    "kind": "Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner?"
+  },
+  "mittelwert-mitte": {
+   "beschreibung": "Hält den Wert in der Mitte der Liste für den Mittelwert.",
+   "hinweis": "Der Mittelwert ist nicht der Wert in der Mitte. Zähle alle Werte zusammen und teile durch ihre Anzahl.",
+   "kind": "Du rechnest den Mittelwert jetzt aus allen Werten aus."
+  },
+  "mittelwert-falsche-anzahl": {
+   "beschreibung": "Teilt beim Mittelwert die Summe durch eine falsche Anzahl (einen Wert vergessen oder den neuen Wert nicht mitgezählt).",
+   "hinweis": "Zähle, wie viele Werte es sind. Durch genau diese Anzahl teilst du die Summe.",
+   "kind": "Du teilst jetzt durch die Anzahl aller Werte."
+  },
+  "spannweite-groesster-wert": {
+   "beschreibung": "Gibt als Spannweite den größten Wert an statt Maximum minus Minimum.",
+   "hinweis": "Die Spannweite sagt, wie weit die Werte auseinanderliegen. Rechne größter Wert minus kleinster Wert.",
+   "kind": "Du rechnest bei der Spannweite jetzt Maximum minus Minimum."
+  },
+  "zentralwert-unsortiert": {
+   "beschreibung": "Nimmt als Zentralwert den mittleren Wert der ungeordneten Liste.",
+   "hinweis": "Ordne die Werte zuerst der Größe nach. Erst dann suchst du den Wert in der Mitte.",
+   "kind": "Du ordnest die Werte jetzt, bevor du die Mitte suchst."
+  },
+  "haeufigkeit-falsche-gesamtzahl": {
+   "beschreibung": "Bezieht die relative Häufigkeit auf eine falsche Gesamtzahl (eine andere Anzahl aus der Tabelle oder nur einen Teil der Befragten).",
+   "hinweis": "Unten im Bruch steht immer die Gesamtzahl: alle, die gefragt wurden.",
+   "kind": "Du teilst jetzt durch die richtige Gesamtzahl."
+  },
+  "relativ-absolut-verwechselt": {
+   "beschreibung": "Vergleicht bei verschieden großen Gruppen die Anzahlen statt der Anteile.",
+   "hinweis": "Sind die Gruppen verschieden groß, vergleichst du die Anteile. Rechne für jede Gruppe Anzahl geteilt durch Gesamtzahl.",
+   "kind": "Du vergleichst jetzt Anteile, nicht nur Anzahlen."
+  },
+  "prozent-als-grad": {
+   "beschreibung": "Trägt im Kreisdiagramm die Prozentzahl direkt als Winkel ein (25 % als 25°).",
+   "hinweis": "Der ganze Kreis hat 360°, nicht 100°. 25 % sind ein Viertel von 360°, also 90°.",
+   "kind": "Du rechnest Prozent jetzt in Grad um: 1 % sind 3,6°."
+  },
+  "streifen-laenge-als-anteil": {
+   "beschreibung": "Liest die Länge eines Abschnitts im Streifendiagramm direkt als Prozent ab, auch wenn der Streifen nicht 100 Einheiten lang ist.",
+   "hinweis": "Teile die Länge des Abschnitts durch die Länge des ganzen Streifens. Erst dann hast du den Anteil.",
+   "kind": "Du teilst die Länge im Streifen jetzt durch die ganze Länge."
+  },
+  "stichprobe-einseitig": {
+   "beschreibung": "Hält eine zu kleine oder einseitige Stichprobe für geeignet (nur Freunde, nur eine Klasse, nur ein Verein).",
+   "hinweis": "Frage dich: Haben alle, um die es geht, eine Chance, gefragt zu werden? Wenn nur eine Gruppe gefragt wird, passt die Stichprobe nicht.",
+   "kind": "Du fragst jetzt nicht nur eine Gruppe, sondern Kinder aus allen Gruppen."
   }
  },
  "kompetenzen": {

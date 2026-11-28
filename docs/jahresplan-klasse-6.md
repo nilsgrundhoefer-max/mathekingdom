@@ -136,6 +136,8 @@ Gebaut in Version 0.70 (ADR 0058): 10 Lernziele, zusammen 240 Aufgaben. Neu sind
 | 9.5 | Rationale Zahlen addieren und subtrahieren | E | Ich kann rationale Zahlen addieren und subtrahieren. |
 | 9.6 | Rationale Zahlen multiplizieren und dividieren | E | Ich kann rationale Zahlen multiplizieren und dividieren. |
 
+Gebaut in Version 0.71 (ADR 0059): 12 Lernziele, zusammen 288 Aufgaben. 9.1 bis 9.4 haben je 6 Aufgaben auf F, G, M und E, 9.5 und 9.6 je 24 Aufgaben nur auf E. Die Zahlengerade, das Thermometer, der Kontoauszug und der ±-Knopf kommen aus Klasse 7 Kapitel 1. Heftaufgaben gibt es nicht.
+
 ## Kapitel 10: Flächenberechnungen (E)
 
 | Nr. | Unterkapitel | Marke | Lernziel |

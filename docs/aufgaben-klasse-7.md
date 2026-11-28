@@ -10,7 +10,7 @@ Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
 Grundlage, die F übt: Am Thermometer und an der Zahlengeraden von −10 bis 10 ganze Zahlen ablesen und antippen
 
-Baut auf: 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.), 5.9.3-K2 (Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.)
+Baut auf: 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.), 5.9.3-K2 (Ich kann Dezimalzahlen am Zahlenstrahl ablesen, vergleichen und ordnen.), 6.9.1-N1 (Ich kann negative Zahlen im Alltag deuten und mit Vorzeichen schreiben.), 6.9.1-N2 (Ich kann ganze Zahlen an der Zahlengerade ablesen und eintragen.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
@@ -72,7 +72,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst die Schrittweite: Wie
 
 Grundlage, die F übt: An der Zahlengeraden die Schritte bis zur Null zählen und die Zahl auf der anderen Seite finden
 
-Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahlengeraden ablesen und eintragen.)
+Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahlengeraden ablesen und eintragen.), 6.9.2-R2 (Ich kann die Gegenzahl einer Zahl angeben und rationale Zahlen erkennen.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
@@ -230,7 +230,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Spiegeln an der x-Achse wechselt
 
 Grundlage, die F übt: Zwei Zahlen an der Zahlengeraden vergleichen: Die linke Zahl ist die kleinere
 
-Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahlengeraden ablesen und eintragen.), 5.2.1-N2 (Ich kann Zahlen vergleichen und ordnen.)
+Baut auf: 7.1.1-Z1 (Ich kann negative Zahlen im Alltag deuten und an der Zahlengeraden ablesen und eintragen.), 5.2.1-N2 (Ich kann Zahlen vergleichen und ordnen.), 6.9.3-V1 (Ich kann rationale Zahlen vergleichen.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
@@ -356,7 +356,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig. Bei zw
 
 Grundlage, die F übt: Drei Zahlen von −10 bis 10 an der Zahlengeraden ordnen und Schritte zwischen zwei Zahlen zählen
 
-Baut auf: 7.1.2-V1 (Ich kann rationale Zahlen vergleichen.), 6.1.4-V2 (Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen.)
+Baut auf: 7.1.2-V1 (Ich kann rationale Zahlen vergleichen.), 6.1.4-V2 (Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen.), 6.9.3-V2 (Ich kann rationale Zahlen ordnen und Zahlen angeben, die dazwischen liegen.)
 
 ### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
 
@@ -2934,6 +2934,15 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 | `grundgebuehr-uebersehen` | Übersieht einen festen Betrag (Grundgebühr) und rechnet, als wäre die Zuordnung proportional. | Im Preis steckt ein fester Betrag, der nicht mitwächst. Rechne ihn getrennt. | Du achtest jetzt auf feste Beträge wie eine Grundgebühr. |
 | `anti-proportional-gerechnet` | Rechnet eine antiproportionale Zuordnung proportional (mehr Pumpen brauchen angeblich mehr Zeit). | Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Pumpen brauchen weniger Zeit. | Du erkennst jetzt: Mehr Helfer brauchen weniger Zeit. |
 | `prop-antiproportional-gerechnet` | Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger). | Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr. | Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner? |
+| `mittelwert-mitte` | Hält den Wert in der Mitte der Liste für den Mittelwert. | Der Mittelwert ist nicht der Wert in der Mitte. Zähle alle Werte zusammen und teile durch ihre Anzahl. | Du rechnest den Mittelwert jetzt aus allen Werten aus. |
+| `mittelwert-falsche-anzahl` | Teilt beim Mittelwert die Summe durch eine falsche Anzahl (einen Wert vergessen oder den neuen Wert nicht mitgezählt). | Zähle, wie viele Werte es sind. Durch genau diese Anzahl teilst du die Summe. | Du teilst jetzt durch die Anzahl aller Werte. |
+| `spannweite-groesster-wert` | Gibt als Spannweite den größten Wert an statt Maximum minus Minimum. | Die Spannweite sagt, wie weit die Werte auseinanderliegen. Rechne größter Wert minus kleinster Wert. | Du rechnest bei der Spannweite jetzt Maximum minus Minimum. |
+| `zentralwert-unsortiert` | Nimmt als Zentralwert den mittleren Wert der ungeordneten Liste. | Ordne die Werte zuerst der Größe nach. Erst dann suchst du den Wert in der Mitte. | Du ordnest die Werte jetzt, bevor du die Mitte suchst. |
+| `haeufigkeit-falsche-gesamtzahl` | Bezieht die relative Häufigkeit auf eine falsche Gesamtzahl (eine andere Anzahl aus der Tabelle oder nur einen Teil der Befragten). | Unten im Bruch steht immer die Gesamtzahl: alle, die gefragt wurden. | Du teilst jetzt durch die richtige Gesamtzahl. |
+| `relativ-absolut-verwechselt` | Vergleicht bei verschieden großen Gruppen die Anzahlen statt der Anteile. | Sind die Gruppen verschieden groß, vergleichst du die Anteile. Rechne für jede Gruppe Anzahl geteilt durch Gesamtzahl. | Du vergleichst jetzt Anteile, nicht nur Anzahlen. |
+| `prozent-als-grad` | Trägt im Kreisdiagramm die Prozentzahl direkt als Winkel ein (25 % als 25°). | Der ganze Kreis hat 360°, nicht 100°. 25 % sind ein Viertel von 360°, also 90°. | Du rechnest Prozent jetzt in Grad um: 1 % sind 3,6°. |
+| `streifen-laenge-als-anteil` | Liest die Länge eines Abschnitts im Streifendiagramm direkt als Prozent ab, auch wenn der Streifen nicht 100 Einheiten lang ist. | Teile die Länge des Abschnitts durch die Länge des ganzen Streifens. Erst dann hast du den Anteil. | Du teilst die Länge im Streifen jetzt durch die ganze Länge. |
+| `stichprobe-einseitig` | Hält eine zu kleine oder einseitige Stichprobe für geeignet (nur Freunde, nur eine Klasse, nur ein Verein). | Frage dich: Haben alle, um die es geht, eine Chance, gefragt zu werden? Wenn nur eine Gruppe gefragt wird, passt die Stichprobe nicht. | Du fragst jetzt nicht nur eine Gruppe, sondern Kinder aus allen Gruppen. |
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 

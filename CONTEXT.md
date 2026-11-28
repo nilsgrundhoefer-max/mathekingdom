@@ -397,11 +397,11 @@ Ein Lernziel, auf dem ein anderes Lernziel aufbaut, auch aus früheren Kapiteln,
 _Avoid_: Vorwissen (für die Verknüpfung)
 
 **Zahlengerade**:
-Der Zahlenstrahl, sobald er negative Zahlen zeigt (ab Klasse 7). Die Null ist hervorgehoben. In Klasse 5 und 6 heißt das Bild weiter Zahlenstrahl.
+Der Zahlenstrahl, sobald er negative Zahlen zeigt (ab Klasse 6 Kapitel 9). Die Null ist hervorgehoben. Ohne negative Zahlen heißt das Bild weiter Zahlenstrahl.
 _Avoid_: Zahlenstrahl (für negative Zahlen), Zahlenlinie
 
 **Vorzeichenknopf**:
-Der Knopf „±“ neben jedem Zahlenfeld und jeder Brucheingabe der Aufgaben aus Klasse 7 Kapitel 1 (Rationale Zahlen) und seinen Abstechern, auch wenn sie später als Brücke kommen. In allen anderen Aufgaben tippt der Schüler das Minus selbst. Er setzt das Minus vor die Zahl und nimmt es wieder weg. Getippt zählen Bindestrich, Minuszeichen und Halbgeviertstrich gleich.
+Der Knopf „±“ neben jedem Zahlenfeld und jeder Brucheingabe der Aufgaben aus Klasse 6 Kapitel 9 und Klasse 7 Kapitel 1 (Rationale Zahlen) und ihren Abstechern, auch wenn sie später als Brücke kommen. In allen anderen Aufgaben tippt der Schüler das Minus selbst. Er setzt das Minus vor die Zahl und nimmt es wieder weg. Getippt zählen Bindestrich, Minuszeichen und Halbgeviertstrich gleich.
 _Avoid_: Minus-Taste, Plusminus-Feld
 
 **Kontoauszug**:

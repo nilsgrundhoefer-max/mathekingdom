@@ -11,6 +11,7 @@ import { lernziele5, merkzettel5, wortspeicher5, voraussetzungen5, grundlagen5, 
 import { lernziele66, merkzettel66, wortspeicher66, voraussetzungen66, grundlagen66, bp66 } from './jahresplan-6-6.mjs';
 import { lernziele67, merkzettel67, wortspeicher67, voraussetzungen67, grundlagen67, bp67 } from './jahresplan-6-7.mjs';
 import { lernziele68, merkzettel68, wortspeicher68, voraussetzungen68, grundlagen68, bp68 } from './jahresplan-6-8.mjs';
+import { lernziele69, merkzettel69, wortspeicher69, voraussetzungen69, grundlagen69, bp69 } from './jahresplan-6-9.mjs';
 
 // `pflicht` (ADR 0044, 0045): Ein Meilenstein ist erst ab dieser Stufe verbindlich, hat aber Aufgaben auf allen Stufen.
 // `bp`: der Standard im Bildungsplan 2016 je Lernziel (ADR 0045, Quelle docs/quellen/niveaustufen-klasse-6.md).
@@ -125,12 +126,12 @@ const roh = [
     uk(6, 'Daten darstellen', lernziele68[6], 'M'),
   ]],
   ['Rationale Zahlen', [
-    uk(1, 'Ganze Zahlen', ['Ich kann ganze Zahlen an der Zahlengerade darstellen und im Sachzusammenhang deuten.']),
-    uk(2, 'Rationale Zahlen', ['Ich kann negative Brüche und Dezimalzahlen an der Zahlengerade darstellen und deuten.']),
-    uk(3, 'Rationale Zahlen vergleichen und ordnen', ['Ich kann rationale Zahlen vergleichen und ordnen.']),
-    uk(4, 'Zunahme und Abnahme', ['Ich kann Zunahmen und Abnahmen an der Zahlengerade und im Sachzusammenhang berechnen.']),
-    uk(5, 'Rationale Zahlen addieren und subtrahieren', ['Ich kann rationale Zahlen addieren und subtrahieren.'], 'E'),
-    uk(6, 'Rationale Zahlen multiplizieren und dividieren', ['Ich kann rationale Zahlen multiplizieren und dividieren.'], 'E'),
+    uk(1, 'Ganze Zahlen', lernziele69[1]),
+    uk(2, 'Rationale Zahlen', lernziele69[2]),
+    uk(3, 'Rationale Zahlen vergleichen und ordnen', lernziele69[3]),
+    uk(4, 'Zunahme und Abnahme', lernziele69[4]),
+    uk(5, 'Rationale Zahlen addieren und subtrahieren', lernziele69[5], 'E'),
+    uk(6, 'Rationale Zahlen multiplizieren und dividieren', lernziele69[6], 'E'),
   ]],
   ['Flächenberechnungen', [
     uk(1, 'Dreieck', ['Ich kann den Flächeninhalt von Dreiecken berechnen.'], 'E'),
@@ -168,6 +169,7 @@ export const merkzettel = {
   ...merkzettel66,
   ...merkzettel67,
   ...merkzettel68,
+  ...merkzettel69,
 };
 
 // Wortspeicher je Unterkapitel: Wort, Niveaustufe, ab der es gezeigt und benutzt wird, und Erklärung.
@@ -229,6 +231,7 @@ export const wortspeicher = {
   ...wortspeicher66,
   ...wortspeicher67,
   ...wortspeicher68,
+  ...wortspeicher69,
 };
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 liegen (ADR 0037).
@@ -252,6 +255,7 @@ const voraussetzungen = {
   ...voraussetzungen66,
   ...voraussetzungen67,
   ...voraussetzungen68,
+  ...voraussetzungen69,
 };
 
 // Grundlage (ADR 0015): der Baustein, den die Förderstufe F übt. Er steht im Hinweis für die Lehrkraft.
@@ -275,6 +279,7 @@ const grundlagen = {
   ...grundlagen66,
   ...grundlagen67,
   ...grundlagen68,
+  ...grundlagen69,
 };
 
 // IDs: Kapitel "6.1", Unterkapitel "6.1.3", Lernziel "6.1.3-K2". Unterkapitel ohne feine Lernziele haben "6.2.1-L1".
@@ -284,7 +289,7 @@ export const kapitel = roh.map(([titel, unterkapitel], k) => ({
   unterkapitel: unterkapitel.map((u) => {
     const id = `6.${k + 1}.${u.nr}`;
     const paare = Array.isArray(u.lernziele) ? u.lernziele.map((text, i) => [`L${i + 1}`, text]) : Object.entries(u.lernziele);
-    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(merkzettel6[`${id}-${kurz}`] && { merkzettel: merkzettel6[`${id}-${kurz}`] }), voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] ?? bp68[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] ?? bp68[`${id}-${kurz}`] }) }));
+    const lernziele = paare.map(([kurz, text]) => ({ id: `${id}-${kurz}`, text, ...(merkzettel6[`${id}-${kurz}`] && { merkzettel: merkzettel6[`${id}-${kurz}`] }), voraussetzungen: voraussetzungen[`${id}-${kurz}`] ?? [], ...(grundlagen[`${id}-${kurz}`] && { grundlage: grundlagen[`${id}-${kurz}`] }), ...((bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] ?? bp68[`${id}-${kurz}`] ?? bp69[`${id}-${kurz}`]) && { bp: bp6[`${id}-${kurz}`] ?? bp4[`${id}-${kurz}`] ?? bp5[`${id}-${kurz}`] ?? bp66[`${id}-${kurz}`] ?? bp67[`${id}-${kurz}`] ?? bp68[`${id}-${kurz}`] ?? bp69[`${id}-${kurz}`] }) }));
     return { id, titel: u.titel, extra: false, ...(u.ab && { ab: u.ab }), ...(u.pflicht && { pflicht: u.pflicht }), lernziele, ...(merkzettel[id]?.heft && { heft: merkzettel[id].heft }), ...(wortspeicher[id] && { wortspeicher: wortspeicher[id] }) };
   }),
 }));

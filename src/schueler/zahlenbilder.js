@@ -217,9 +217,10 @@ export function zeichentafelBild(b) {
 // ---------- Vorzeichen (Klasse 7, ADR 0043) ----------
 // Die Zifferntastatur am Handy hat kein Minuszeichen. Der Knopf „±“ neben dem Feld wechselt das Vorzeichen der Eingabe.
 export const MINUS = '−';
-// Den Knopf „±“ gibt es nur in Klasse 7 Kapitel 1 „Rationale Zahlen“ samt Abstechern, auch als Brücke (Version 0.59).
+// Den Knopf „±“ gibt es nur in Klasse 7 Kapitel 1 „Rationale Zahlen“ samt Abstechern, auch als Brücke (Version 0.59),
+// und seit Version 0.71 in Klasse 6 Kapitel 9 „Rationale Zahlen“ (ADR 0059).
 // In allen anderen Kapiteln tippt der Schüler das Minus selbst; getippt zählt es überall.
-export const mitVorzeichen = (auf) => String(auf?.lernziel ?? '').startsWith('7.1.');
+export const mitVorzeichen = (auf) => /^(?:7\.1|6\.9)\./.test(String(auf?.lernziel ?? ''));
 export const abKlasse7 = (auf) => parseInt(auf?.lernziel, 10) >= 7;
 export function vorzeichenKnopf(feld, gesperrt) {
   return h('button', { type: 'button', class: 'schlicht vorzeichen', disabled: gesperrt, 'aria-label': 'Vorzeichen wechseln', title: 'Vorzeichen wechseln',

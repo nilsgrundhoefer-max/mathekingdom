@@ -1239,7 +1239,7 @@ export function eingabefelder(auf, a, gesperrt) {
   // Klasse 7 Kapitel 1 (ADR 0043, 0051): Jedes Zahlenfeld hat den Knopf „±“, und die Tastatur am Handy zeigt das Komma.
   const vorzeichen = mitVorzeichen(auf);
   const zahlfeld = (name, einheit, wert, ohneKnopf = false) => {
-    const feld = h('input', { name, type: 'text', inputMode: abKlasse7(auf) || auf.lernziel?.startsWith('5.9.3') || /^6\.[457]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
+    const feld = h('input', { name, type: 'text', inputMode: abKlasse7(auf) || auf.lernziel?.startsWith('5.9.3') || /^6\.[4579]\./.test(auf.lernziel ?? '') ? 'decimal' : 'numeric', autocomplete: 'off', size: auf.lang ? 18 : 9, class: auf.lang ? 'lang' : null, disabled: gesperrt, value: wert ?? '', 'aria-label': 'Deine Antwort',
       oninput: (e) => { gliedereEingabe(e.target); passeBreiteAn(e.target); } });
     passeBreiteAn(feld);
     const knopf = vorzeichen && !ohneKnopf;
