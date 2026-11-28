@@ -142467,7 +142467,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ben will wissen, welches Eis die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Ben gefragt hat.\nBeurteile die Umfrage.",
+   "text": "Ben will wissen, welches Eis die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Ben gefragt hat.\nKreuze an: Passt die Umfrage oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -142542,7 +142542,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Emre will wissen, welche AG die Kinder der Schule wählen.\nDie Tabelle zeigt, wen Emre gefragt hat.\nBeurteile die Umfrage.",
+   "text": "Emre will wissen, welche AG die Kinder der Schule wählen.\nDie Tabelle zeigt, wen Emre gefragt hat.\nKreuze an: Passt die Umfrage oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -142612,7 +142612,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ben will wissen, welchen Sport die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Ben gefragt hat.\nBeurteile die Umfrage.",
+   "text": "Ben will wissen, welchen Sport die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Ben gefragt hat.\nKreuze an: Passt die Umfrage oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -142684,7 +142684,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ali will wissen, welches Obst die Kinder der 6c mögen.\nDie Tabelle zeigt, wen Ali gefragt hat.\nBeurteile die Umfrage.",
+   "text": "Ali will wissen, welches Obst die Kinder der 6c mögen.\nDie Tabelle zeigt, wen Ali gefragt hat.\nKreuze an: Passt die Umfrage oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -142824,20 +142824,20 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Jonas will wissen, wie gern die Kinder der Schule schwimmen.\nJonas fragt nur die Kinder der Schwimm-AG.\nDie Tabelle zeigt die Klassen dieser Kinder.\nBeurteile die Umfrage.",
+   "text": "Jonas will wissen, wie gern die Kinder der Schule schwimmen.\nJonas fragt nur die Kinder der Schwimm-AG.\nDie Tabelle zeigt die Klassen dieser Kinder.\nKreuze an: Passt die Umfrage oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Nein.\nKinder der Schwimm-AG antworten anders als die anderen Kinder.",
+     "text": "Nein.\nDie Schwimm-AG denkt anders als die anderen Kinder.",
      "richtig": true
     },
     {
-     "text": "Ja.\nKinder aus allen Klassen sind dabei.",
+     "text": "Ja.\nKinder aus allen Klassen sind dabei, also passt es.",
      "richtig": false,
      "fehlvorstellung": "stichprobe-einseitig"
     },
     {
-     "text": "Ja.\nDie Schwimm-AG kennt sich gut aus.",
+     "text": "Ja.\nDie Schwimm-AG kennt sich mit dem Thema gut aus.",
      "richtig": false,
      "fehlvorstellung": "stichprobe-einseitig"
     }
@@ -142899,7 +142899,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Ali will wissen, wie die Kinder der Schule zur Schule kommen.\nDie Tabelle zeigt, wen Ali gefragt hat.\nBeurteile die Stichprobe.",
+   "text": "Ali will wissen, wie die Kinder der Schule zur Schule kommen.\nDie Tabelle zeigt, wen Ali gefragt hat.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -142974,7 +142974,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Jonas will wissen, welches Eis die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Jonas gefragt hat.\nBeurteile die Stichprobe.",
+   "text": "Jonas will wissen, welches Eis die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Jonas gefragt hat.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -143044,7 +143044,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Emre will wissen, welches Obst die Kinder der 6c mögen.\nDie Tabelle zeigt, wen Emre gefragt hat.\nBeurteile die Stichprobe.",
+   "text": "Emre will wissen, welches Obst die Kinder der 6c mögen.\nDie Tabelle zeigt, wen Emre gefragt hat.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -143113,7 +143113,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Lina will wissen, welchen Sport die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Lina gefragt hat.\nBeurteile die Stichprobe.",
+   "text": "Lina will wissen, welchen Sport die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Lina gefragt hat.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -143256,20 +143256,20 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Lina will wissen, wie gern die Kinder der Schule lesen.\nLina fragt nur die Kinder der Bücherei-AG.\nDie Tabelle zeigt die Klassen dieser Kinder.\nBeurteile die Stichprobe.",
+   "text": "Lina will wissen, wie gern die Kinder der Schule lesen.\nLina fragt nur die Kinder der Bücherei-AG.\nDie Tabelle zeigt die Klassen dieser Kinder.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja.\nKinder aus allen Klassen sind dabei.",
+     "text": "Ja.\nKinder aus allen Klassen sind dabei, also passt es.",
      "richtig": false,
      "fehlvorstellung": "stichprobe-einseitig"
     },
     {
-     "text": "Nein.\nKinder der Bücherei-AG antworten anders als die anderen Kinder.",
+     "text": "Nein.\nDie Bücherei-AG denkt anders als die anderen Kinder.",
      "richtig": true
     },
     {
-     "text": "Ja.\nDie Bücherei-AG kennt sich gut aus.",
+     "text": "Ja.\nDie Bücherei-AG kennt sich mit dem Thema gut aus.",
      "richtig": false,
      "fehlvorstellung": "stichprobe-einseitig"
     }
@@ -143331,7 +143331,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Sara will wissen, welches Eis die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Sara gefragt hat.\nBeurteile die Stichprobe.",
+   "text": "Sara will wissen, welches Eis die Kinder der Schule mögen.\nDie Tabelle zeigt, wen Sara gefragt hat.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -143476,20 +143476,20 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Mia will wissen, wie gern die Kinder der Schule schwimmen.\nMia fragt nur die Kinder der Schwimm-AG.\nDie Tabelle zeigt die Klassen dieser Kinder.\nBeurteile die Stichprobe.",
+   "text": "Mia will wissen, wie gern die Kinder der Schule schwimmen.\nMia fragt nur die Kinder der Schwimm-AG.\nDie Tabelle zeigt die Klassen dieser Kinder.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ja. Die Schwimm-AG kennt sich gut aus.",
+     "text": "Ja. Die Schwimm-AG kennt sich mit dem Thema gut aus.",
      "richtig": false,
      "fehlvorstellung": "stichprobe-einseitig"
     },
     {
-     "text": "Nein. Kinder der Schwimm-AG antworten anders als die anderen Kinder.",
+     "text": "Nein. Die Schwimm-AG denkt anders als die anderen Kinder.",
      "richtig": true
     },
     {
-     "text": "Ja. Kinder aus allen Klassen sind dabei.",
+     "text": "Ja. Kinder aus allen Klassen sind dabei, also passt es.",
      "richtig": false,
      "fehlvorstellung": "stichprobe-einseitig"
     }
@@ -143662,7 +143662,7 @@
     "argumentieren"
    ],
    "format": "auswahl",
-   "text": "Mia will wissen, wie die Kinder der Schule zur Schule kommen.\nDie Tabelle zeigt, wen Mia gefragt hat.\nBeurteile die Stichprobe.",
+   "text": "Mia will wissen, wie die Kinder der Schule zur Schule kommen.\nDie Tabelle zeigt, wen Mia gefragt hat.\nKreuze an: Passt die Stichprobe oder nicht.",
    "mehrfach": false,
    "optionen": [
     {
@@ -152174,11 +152174,11 @@
      "fehlvorstellung": "haeufigkeit-falsche-gesamtzahl"
     },
     {
-     "text": "Fehlerhaft. Die Anteile ergeben zusammen 110 %, ein Kreis ist aber genau 100 %.",
+     "text": "Fehlerhaft. Zusammen sind es 110 % statt 100 %.",
      "richtig": true
     },
     {
-     "text": "In Ordnung. Jeder Anteil hat einen eigenen Ausschnitt.",
+     "text": "In Ordnung. Jeder Anteil hat einen eigenen Ausschnitt im Kreis.",
      "richtig": false
     },
     {
@@ -153509,7 +153509,7 @@
     "kommunizieren"
    ],
    "format": "zahl",
-   "text": "Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen.\nDie Achse beginnt nicht bei 0.\nBestimme, um wie viel Prozent der Bogenschützen mehr Mitglieder hat als der Reitverein.",
+   "text": "Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen.\nDie Achse beginnt nicht bei 0.\nBestimme, um wie viel Prozent der Schützenverein mehr Mitglieder hat als der Reitverein.",
    "loesung": 25,
    "einheit": "%",
    "typischeFehler": [
@@ -153537,7 +153537,7 @@
       "wert": 160
      },
      {
-      "name": "Bogenschützen",
+      "name": "Schützenverein",
       "wert": 200
      }
     ],
@@ -155176,15 +155176,15 @@
      "richtig": false
     },
     {
-     "text": "In Ordnung. Die Prozente ergeben zusammen 100 %.",
+     "text": "In Ordnung. Die Prozente in der Beschriftung ergeben zusammen 100 %.",
      "richtig": false
     },
     {
-     "text": "In Ordnung. Die Abschnitte füllen den ganzen Streifen.",
+     "text": "In Ordnung. Die Abschnitte füllen den ganzen Streifen von 10 cm.",
      "richtig": false
     },
     {
-     "text": "Fehlerhaft. „Falknerei“ hat 50 %, der Abschnitt müsste 5 cm lang sein. Er ist aber nur 4 cm lang.",
+     "text": "Fehlerhaft. „Falknerei“ hat 50 %, müsste also 5 cm lang sein.",
      "richtig": true
     }
    ],
@@ -155577,16 +155577,16 @@
      "richtig": false
     },
     {
-     "text": "In Ordnung. Gleich lange Abschnitte zeigen gleiche Anteile.",
+     "text": "In Ordnung. Gleich lange Abschnitte zeigen immer gleiche Anteile.",
      "richtig": false,
      "fehlvorstellung": "streifen-laenge-als-anteil"
     },
     {
-     "text": "In Ordnung. Streifen dürfen verschieden lang sein.",
+     "text": "In Ordnung. Streifendiagramme dürfen verschieden lang sein.",
      "richtig": false
     },
     {
-     "text": "Irreführend. In der 6a sind es 15 %, in der 6b 30 %. Zum Vergleichen müssen beide Streifen gleich lang sein.",
+     "text": "Irreführend. In der 6a sind es 15 %, in der 6b 30 %.",
      "richtig": true
     }
    ],
@@ -157020,11 +157020,11 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Irreführend. Alle Ausschnitte sind gleich groß. „Bogenschießen“ müsste 162° bekommen, nicht 120°.",
+     "text": "Irreführend. „Bogenschießen“ müsste 162° bekommen, nicht 120°.",
      "richtig": true
     },
     {
-     "text": "In Ordnung. Die Prozente in der Legende stimmen.",
+     "text": "In Ordnung. Die Prozente in der Legende ergeben zusammen 100 %.",
      "richtig": false
     },
     {
@@ -157433,15 +157433,15 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Ein Säulendiagramm. Jeder Tag hat einen eigenen Wert. Die Werte sind keine Teile eines Ganzen.",
+     "text": "Ein Säulendiagramm. Jeder Tag hat einen eigenen Wert.",
      "richtig": true
     },
     {
-     "text": "Ein Streifendiagramm.",
+     "text": "Ein Streifendiagramm. Die Tage liegen nebeneinander wie Abschnitte.",
      "richtig": false
     },
     {
-     "text": "Ein Kreisdiagramm.",
+     "text": "Ein Kreisdiagramm. Die Woche ist ein Ganzes aus sieben Tagen.",
      "richtig": false
     }
    ],
@@ -157451,7 +157451,7 @@
    "nachweis": [
     {
      "art": "frei",
-     "grund": "ein Säulendiagramm: Jeder Tag hat einen eigenen Wert. Die Werte sind keine Teile eines Ganzen."
+     "grund": "Ein Säulendiagramm. Jeder Tag hat einen eigenen Wert."
     }
    ]
   },
@@ -157468,21 +157468,21 @@
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Falsch. Es sind 16°.",
+     "text": "Falsch. Es sind 16°, ein Grad für jeden Befragten.",
      "richtig": false,
      "fehlvorstellung": "prozent-als-grad"
     },
     {
-     "text": "Falsch. Es sind 216°.",
+     "text": "Falsch. Es sind 216°, der Rest vom ganzen Kreis.",
      "richtig": false
     },
     {
-     "text": "Richtig. Ein Befragter ist immer 3,6°.",
+     "text": "Richtig. Ein Befragter ist bei jeder Umfrage genau 3,6°.",
      "richtig": false,
      "fehlvorstellung": "haeufigkeit-falsche-gesamtzahl"
     },
     {
-     "text": "Falsch. 3,6° gehören zu einem Prozent. Ein Befragter ist hier 360° : 40 = 9°, also sind es 144°.",
+     "text": "Falsch. Ein Befragter ist hier 9°, also sind es 144°.",
      "richtig": true
     }
    ],
@@ -157512,19 +157512,19 @@
     "symbolisch"
    ],
    "format": "auswahl",
-   "text": "Die Klasse will die Lieblingsfächer von zwei Klassen übereinander vergleichen.\nKreuze an, welche Darstellung am besten passt.",
+   "text": "Die Klasse will die Lieblingsfächer von zwei Klassen vergleichen.\nKreuze an, welche Darstellung am besten passt.",
    "mehrfach": false,
    "optionen": [
     {
-     "text": "Zwei gleich lange Streifendiagramme. Gleich lange Streifen kann man Abschnitt für Abschnitt vergleichen.",
+     "text": "Zwei gleich lange Streifendiagramme. Man vergleicht Abschnitt für Abschnitt.",
      "richtig": true
     },
     {
-     "text": "Zwei Kreisdiagramme mit verschiedenen Radien.",
+     "text": "Zwei Kreisdiagramme mit verschiedenen Radien. Größere Klassen bekommen größere Kreise.",
      "richtig": false
     },
     {
-     "text": "Ein Streifendiagramm für beide Klassen zusammen.",
+     "text": "Ein Streifendiagramm für beide Klassen. Dann ist alles in einem Bild.",
      "richtig": false
     }
    ],
@@ -157534,7 +157534,7 @@
    "nachweis": [
     {
      "art": "frei",
-     "grund": "zwei gleich lange Streifendiagramme: Gleich lange Streifen kann man Abschnitt für Abschnitt vergleichen."
+     "grund": "Zwei gleich lange Streifendiagramme. Man vergleicht Abschnitt für Abschnitt."
     }
    ]
   },

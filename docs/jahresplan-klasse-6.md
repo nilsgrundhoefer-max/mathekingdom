@@ -123,6 +123,8 @@ Gebaut in Version 0.58 (ADR 0050): 12 Lernziele mit je 24 Aufgaben. Neu sind das
 | 8.5 | Kreis- und Streifendiagramme lesen | | Ich kann Anteile aus Kreis- und Streifendiagrammen ablesen. |
 | 8.6 | Daten darstellen | M | Ich kann Daten in einem passenden Diagramm darstellen, auch im Streifen- und Kreisdiagramm. |
 
+Gebaut in Version 0.70 (ADR 0058): 10 Lernziele, zusammen 240 Aufgaben. Neu sind das Kreisdiagramm und das Streifendiagramm als Bild, das Streifen färben mit 20 Kästchen und das Datensatz erfinden, bei dem jede passende Zahlenreihe richtig ist. 8.6 ist ein Niveau-Meilenstein ab M mit je 12 Aufgaben auf M und E. Heftaufgaben gibt es nur auf M und E, davon vier zum Kreisdiagramm zeichnen.
+
 ## Kapitel 9: Rationale Zahlen
 
 | Nr. | Unterkapitel | Marke | Lernziel |

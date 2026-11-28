@@ -8,6 +8,22 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.70 vom 28.11.2026
+
+### Schüler
+
+- Neues Kapitel in Klasse 6: „Daten auswerten und darstellen“ mit 240 Aufgaben. Du zählst Umfragen aus, bestimmst Minimum, Maximum, Spannweite, Mittelwert und Zentralwert und gibst Anteile als Bruch, Dezimalzahl und in Prozent an.
+- Kreis- und Streifendiagramme: Du liest Anteile ab und rechnest sie in Anzahlen um.
+- Streifen färben: Wähle eine Farbe und tippe Kästchen an. Es zählt nur, wie viele Kästchen jede Farbe hat.
+- Auf E erfindest du selbst Zahlenreihen mit einem verlangten Mittelwert. Jede passende Reihe ist richtig.
+- Ab M zeichnest du Kreisdiagramme in dein Heft und gibst einen Winkel zur Kontrolle ein.
+
+### Lehrkraft
+
+- Klasse 6, Kapitel 8 „Daten auswerten und darstellen“ (ADR 0058): 8.1 Erheben und Stichproben, 8.2 Kenngrößen, 8.4 absolute und relative Häufigkeit, 8.5 Kreis- und Streifendiagramme lesen, 8.6 Daten darstellen als Niveau-Meilenstein ab M. 8.3 (Tabellenkalkulation) entfällt.
+- Neue Fehlvorstellungen, zum Beispiel „Mittelwert als Mitte zwischen größtem und kleinstem Wert“, „Prozent als Grad“ und „Länge im Streifen als Anteil“.
+- Neues Format „Streifen färben“ in der Auswertung.
+
 ## 0.69 vom 27.11.2026
 
 ### Schüler

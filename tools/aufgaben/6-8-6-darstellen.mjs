@@ -56,11 +56,11 @@ export function darstellen6() {
       H(n, `${k} Kästchen sind ${anz} ${u.wer}. Bestimme zuerst, wie viele ein Kästchen sind.`), { nachweis: [ANZAHL(k * 5, 'prozent', g, anz)] }); };
   const falscheLaenge = (n) => () => { const u = umfrage(), p = teile(100, 3, 10), a = antworten(u, 3), i = p.indexOf(Math.max(...p)), j = p.indexOf(Math.min(...p)), mm = p.map((x, x2) => (x2 === i ? x - 10 : x2 === j ? x + 10 : x)), kn = kind();
     if (mm[j] === mm[i]) return null;
-    return auswahl(Z(`${kn} zeichnet ein Streifendiagramm ${u.zum}. Der Streifen ist 10 cm lang.`, 'Beurteile die Darstellung.'), [opt(`Fehlerhaft. „${a[i]}“ hat ${p[i]} %, der Abschnitt müsste ${p[i] / 10} cm lang sein. Er ist aber nur ${mm[i] / 10} cm lang.`, true), opt('In Ordnung. Die Prozente ergeben zusammen 100 %.', false), opt('In Ordnung. Die Abschnitte füllen den ganzen Streifen.', false), opt(`Fehlerhaft. „${a[j]}“ müsste ${p[j] + 20} % sein.`, false)],
+    return auswahl(Z(`${kn} zeichnet ein Streifendiagramm ${u.zum}. Der Streifen ist 10 cm lang.`, 'Beurteile die Darstellung.'), [opt(`Fehlerhaft. „${a[i]}“ hat ${p[i]} %, müsste also ${p[i] / 10} cm lang sein.`, true), opt('In Ordnung. Die Prozente in der Beschriftung ergeben zusammen 100 %.', false), opt('In Ordnung. Die Abschnitte füllen den ganzen Streifen von 10 cm.', false), opt(`Fehlerhaft. „${a[j]}“ müsste ${p[j] + 20} % sein.`, false)],
       H(n, 'Prüfe für jeden Abschnitt, ob die Länge zum Prozentwert passt. Bei 10 cm sind 10 % genau 1 cm.'), { bild: streifen(10, a.map((x, x2) => [x, mm[x2], `${p[x2]} %`])), nachweis: [`${p.join(' + ')} = 100`, ANZAHL(p[i], 'prozent', 100, p[i], { einheit: 'mm' }), URTEIL(false)] }); };
   const zweiLaengen = (n) => () => { const cm = wahl([3, 4, 6]), kn = kind();
     return auswahl(Z(`${kn} zeichnet zwei Streifendiagramme nebeneinander: für die 6a einen 20-cm-Streifen, für die 6b einen 10-cm-Streifen.`, `In beiden Streifen ist „Fahrrad“ ${cm} cm lang.`, `${kn} schreibt darunter: „In beiden Klassen fährt der gleiche Anteil mit dem Fahrrad.“`, 'Beurteile die Darstellung.'),
-      [opt(`Irreführend. In der 6a sind es ${cm * 5} %, in der 6b ${cm * 10} %. Zum Vergleichen müssen beide Streifen gleich lang sein.`, true), opt('In Ordnung. Gleich lange Abschnitte zeigen gleiche Anteile.', false, 'streifen-laenge-als-anteil'), opt(`Irreführend. In der 6a sind es ${cm * 10} %, in der 6b ${cm * 5} %.`, false), opt('In Ordnung. Streifen dürfen verschieden lang sein.', false)],
+      [opt(`Irreführend. In der 6a sind es ${cm * 5} %, in der 6b ${cm * 10} %.`, true), opt('In Ordnung. Gleich lange Abschnitte zeigen immer gleiche Anteile.', false, 'streifen-laenge-als-anteil'), opt(`Irreführend. In der 6a sind es ${cm * 10} %, in der 6b ${cm * 5} %.`, false), opt('In Ordnung. Streifendiagramme dürfen verschieden lang sein.', false)],
       H(n, 'Ein Abschnitt zeigt einen Anteil am ganzen Streifen. Vergleiche, wie lang die ganzen Streifen sind.'), { nachweis: [`${cm} · 5 = ${cm * 5}`, `${cm} · 10 = ${cm * 10}`, URTEIL(false)] }); };
   zwoelf(D1, 'E', [ausAnzahlE('E', [60, 80, 100], 3), ausAnzahlE('E', [100, 200, 120], 4), laengeE('E'), gesamtRueck('E'), ausAnzahlE('E', [60, 140, 160], 4), falscheLaenge('E'),
     ausAnzahlE('E', [80, 200, 60], 4), ausAnzahlE('E', [120, 100, 180], 5), laengeE('E'), zweiLaengen('E'), ausAnzahlE('E', [60, 80, 140], 3), gesamtRueck('E')]);
@@ -108,22 +108,27 @@ export function darstellen6() {
       H(n, `Bestimme, der wievielte Teil von 360° der Winkel ${w}° ist.`), { nachweis: [ANTEIL(anz, g, w, 'grad')] }); };
   const falscherKreis = (n) => () => { const u = umfrage(), p = wahl([[40, 30, 30], [50, 30, 20], [60, 20, 20], [45, 30, 25]]), a = antworten(u, 3), kn = kind();
     return auswahl(Z(`Eine Umfrage ${u.zum} ergibt: ${a.map((x, i) => `${x} ${p[i]} %`).join(', ')}.`, `${kn} zeichnet dazu das Kreisdiagramm im Bild.`, 'Beurteile die Darstellung.'),
-      [opt(`Irreführend. Alle Ausschnitte sind gleich groß. „${a[0]}“ müsste ${dz(p[0] * 3.6, 1)}° bekommen, nicht 120°.`, true), opt('In Ordnung. Die Prozente in der Legende stimmen.', false), opt('In Ordnung. Drei Antworten bekommen immer drei gleiche Ausschnitte.', false), opt(`Irreführend. „${a[0]}“ müsste ${p[0]}° bekommen.`, false, 'prozent-als-grad')],
+      [opt(`Irreführend. „${a[0]}“ müsste ${dz(p[0] * 3.6, 1)}° bekommen, nicht 120°.`, true), opt('In Ordnung. Die Prozente in der Legende ergeben zusammen 100 %.', false), opt('In Ordnung. Drei Antworten bekommen immer drei gleiche Ausschnitte.', false), opt(`Irreführend. „${a[0]}“ müsste ${p[0]}° bekommen.`, false, 'prozent-als-grad')],
       H(n, 'Prüfe für jeden Ausschnitt, ob der Winkel zum Prozentwert passt.'), { bild: kreis(a.map((x, i) => [x, 120, `${p[i]} %`])), nachweis: [`${p[0]} · 3,6 = ${dz(p[0] * 3.6, 1)}`, URTEIL(false)] }); };
   const falscheGesamt = (n) => () => { const u = umfrage(), g = wahl([20, 25, 40, 50]), a = antworten(u, 1)[0], anz = zz(3, g / 2), w = (anz * 360) / g, kn = kind();
     if (!Number.isInteger(w) || anz * 3.6 === w) return null;
     return auswahl(Z(`${g} ${u.wer} wurden nach ${u.dem} gefragt. ${anz} nennen „${a}“.`, `${kn} rechnet für das Kreisdiagramm: ${anz} · 3,6° = ${dz(anz * 3.6, 1)}°.`, 'Beurteile die Rechnung.'),
-      [opt(`Falsch. 3,6° gehören zu einem Prozent. Ein Befragter ist hier 360° : ${g} = ${dz(360 / g, 1)}°, also sind es ${w}°.`, true), opt('Richtig. Ein Befragter ist immer 3,6°.', false, 'haeufigkeit-falsche-gesamtzahl'), opt(`Falsch. Es sind ${anz}°.`, false, 'prozent-als-grad'), opt(`Falsch. Es sind ${360 - w}°.`, false)],
+      [opt(`Falsch. Ein Befragter ist hier ${dz(360 / g, 1)}°, also sind es ${w}°.`, true), opt('Richtig. Ein Befragter ist bei jeder Umfrage genau 3,6°.', false, 'haeufigkeit-falsche-gesamtzahl'), opt(`Falsch. Es sind ${anz}°, ein Grad für jeden Befragten.`, false, 'prozent-als-grad'), opt(`Falsch. Es sind ${360 - w}°, der Rest vom ganzen Kreis.`, false)],
       H(n, 'Der ganze Kreis sind alle Befragten. Prüfe, wie viele es sind.'), { nachweis: [ANTEIL(anz, g, w, 'grad'), URTEIL(false)] }); };
+  // Je Lage: richtige Darstellung mit Grund, zwei falsche mit einem Grund, der nicht trägt.
   const SITUATIONEN = [
-    ['Die Klasse will zeigen, wie sich alle Kinder auf die Schulwege verteilen.', 'ein Kreisdiagramm', 'Es zeigt Anteile an einem Ganzen.', ['ein Liniendiagramm', 'eine Strichliste ohne Auswertung']],
-    ['Die Klasse will die Temperatur an jedem Tag der Woche zeigen.', 'ein Säulendiagramm', 'Jeder Tag hat einen eigenen Wert. Die Werte sind keine Teile eines Ganzen.', ['ein Kreisdiagramm', 'ein Streifendiagramm']],
-    ['Die Klasse will die Lieblingsfächer von zwei Klassen übereinander vergleichen.', 'zwei gleich lange Streifendiagramme', 'Gleich lange Streifen kann man Abschnitt für Abschnitt vergleichen.', ['zwei Kreisdiagramme mit verschiedenen Radien', 'ein Streifendiagramm für beide Klassen zusammen']],
-    ['Die Knappen wollen zeigen, wie viele Punkte jeder einzelne beim Turnier erreicht hat.', 'ein Säulendiagramm', 'Jeder Knappe hat eine eigene Punktzahl. Die Punkte sind keine Teile eines Ganzen.', ['ein Kreisdiagramm', 'ein Streifendiagramm']],
+    ['Die Klasse will zeigen, wie sich alle Kinder auf die Schulwege verteilen.', ['Ein Kreisdiagramm.', 'Es zeigt Anteile an einem Ganzen.'],
+      [['Ein Säulendiagramm.', 'Säulen passen zu jeder Umfrage am besten.'], ['Eine Strichliste.', 'Striche sind leichter zu zählen als Winkel.']]],
+    ['Die Klasse will die Temperatur an jedem Tag der Woche zeigen.', ['Ein Säulendiagramm.', 'Jeder Tag hat einen eigenen Wert.'],
+      [['Ein Kreisdiagramm.', 'Die Woche ist ein Ganzes aus sieben Tagen.'], ['Ein Streifendiagramm.', 'Die Tage liegen nebeneinander wie Abschnitte.']]],
+    ['Die Klasse will die Lieblingsfächer von zwei Klassen vergleichen.', ['Zwei gleich lange Streifendiagramme.', 'Man vergleicht Abschnitt für Abschnitt.'],
+      [['Zwei Kreisdiagramme mit verschiedenen Radien.', 'Größere Klassen bekommen größere Kreise.'], ['Ein Streifendiagramm für beide Klassen.', 'Dann ist alles in einem Bild.']]],
+    ['Die Knappen wollen zeigen, wie viele Punkte jeder beim Turnier erreicht hat.', ['Ein Säulendiagramm.', 'Jeder Knappe hat eine eigene Punktzahl.'],
+      [['Ein Kreisdiagramm.', 'Alle Knappen zusammen sind ein Ganzes.'], ['Ein Streifendiagramm.', 'Jeder Knappe bekommt einen Abschnitt.']]],
   ];
-  const diagrammWahl = (n) => () => { const [lage, richtig, grund, falsch] = wahl(SITUATIONEN);
-    return auswahl(Z(lage, 'Kreuze an, welche Darstellung am besten passt.'), [opt(`${richtig[0].toUpperCase()}${richtig.slice(1)}. ${grund}`, true), ...falsch.map((f) => opt(`${f[0].toUpperCase()}${f.slice(1)}.`))],
-      H(n, 'Kreis- und Streifendiagramme zeigen Anteile an einem Ganzen. Säulendiagramme zeigen einzelne Werte.'), { nachweis: [FREI(`${richtig}: ${grund}`)] }); };
+  const diagrammWahl = (n) => () => { const [lage, [richtig, grund], falsch] = wahl(SITUATIONEN);
+    return auswahl(Z(lage, 'Kreuze an, welche Darstellung am besten passt.'), [opt(`${richtig} ${grund}`, true), ...falsch.map(([f, g]) => opt(`${f} ${g}`))],
+      H(n, 'Kreis- und Streifendiagramme zeigen Anteile an einem Ganzen. Säulendiagramme zeigen einzelne Werte.'), { nachweis: [FREI(`${richtig} ${grund}`)] }); };
   zwoelf(D2, 'E', [tabAnzahl('E', [24, 36, 40], 3), tabAnzahl('E', [45, 60, 72], 4), gesamtWinkel('E'), falscherKreis('E'), tabAnzahl('E', [90, 72, 60], 4), heftKreis('E', true),
     tabAnzahl('E', [36, 40, 45], 4), gesamtWinkel('E'), diagrammWahl('E'), falscheGesamt('E'), diagrammWahl('E'), heftKreis('E', true)]);
 }

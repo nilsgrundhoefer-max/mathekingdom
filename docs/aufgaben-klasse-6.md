@@ -7217,19 +7217,19 @@ Baut auf: 6.8.1-E1 (Ich kann Daten erheben und in einer Häufigkeitstabelle ordn
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein. *Beispiel:* Wer nur die 5a fragt, weiß nur etwas über die 5a. *Lösungsschritt:* Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?
 
-- `01` AFB I · _Argumentieren_ · Ben will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Ben gefragt hat. / Beurteile die Umfrage. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 26 / 6a | 0 / 6b | 0 / 6c | 0)_
+- `01` AFB I · _Argumentieren_ · Ben will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Ben gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 26 / 6a | 0 / 6b | 0 / 6c | 0)_
   - ☑ Nein. / Ben hat nur Kinder aus der 5c gefragt.
   - ☐ Ja. / Die Kinder sind alle in derselben Schule.
   - ☐ Ja. / 26 Kinder sind genug.
-- `02` AFB I · _Argumentieren_ · Emre will wissen, welche AG die Kinder der Schule wählen. / Die Tabelle zeigt, wen Emre gefragt hat. / Beurteile die Umfrage. _(Tabelle: Klasse | gefragte Kinder / 5a | 6 / 5b | 6 / 5c | 5 / 6a | 6 / 6b | 6 / 6c | 5)_
+- `02` AFB I · _Argumentieren_ · Emre will wissen, welche AG die Kinder der Schule wählen. / Die Tabelle zeigt, wen Emre gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 6 / 5b | 6 / 5c | 5 / 6a | 6 / 6b | 6 / 6c | 5)_
   - ☐ Nein. / Aus jeder Klasse wurden zu viele gefragt.
   - ☐ Nein. / Man muss alle Kinder der Schule fragen.
   - ☑ Ja. / Aus jeder Klasse wurden einige Kinder gefragt.
-- `03` AFB I · _Argumentieren_ · Ben will wissen, welchen Sport die Kinder der Schule mögen. / Die Tabelle zeigt, wen Ben gefragt hat. / Beurteile die Umfrage. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 1 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 1)_
+- `03` AFB I · _Argumentieren_ · Ben will wissen, welchen Sport die Kinder der Schule mögen. / Die Tabelle zeigt, wen Ben gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 1 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 1)_
   - ☐ Ja. / Die Kinder sind aus zwei Klassen.
   - ☑ Nein. / 2 Kinder sind viel zu wenige.
   - ☐ Ja. / Jedes Kind sagt seine Meinung.
-- `04` AFB I · _Argumentieren_ · Ali will wissen, welches Obst die Kinder der 6c mögen. / Die Tabelle zeigt, wen Ali gefragt hat. / Beurteile die Umfrage. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 28)_
+- `04` AFB I · _Argumentieren_ · Ali will wissen, welches Obst die Kinder der 6c mögen. / Die Tabelle zeigt, wen Ali gefragt hat. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 28)_
   - ☑ Ja. / Es geht nur um die 6c, und dort wurden alle gefragt.
   - ☐ Nein. / Eine Klasse ist zu klein für eine Umfrage.
   - ☐ Nein. / Kinder aus anderen Klassen fehlen.
@@ -7237,28 +7237,28 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann mü
   - ☐ Nur die Kinder aus dem Fußballverein
   - ☐ Nur seine besten Freunde
   - ☑ Einige Kinder aus jeder Klasse
-- `06` AFB I · _Argumentieren_ · Jonas will wissen, wie gern die Kinder der Schule schwimmen. / Jonas fragt nur die Kinder der Schwimm-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Beurteile die Umfrage. _(Tabelle: Klasse | gefragte Kinder / 5a | 2 / 5b | 4 / 5c | 4 / 6a | 2 / 6b | 1 / 6c | 2)_
-  - ☑ Nein. / Kinder der Schwimm-AG antworten anders als die anderen Kinder.
-  - ☐ Ja. / Kinder aus allen Klassen sind dabei.
-  - ☐ Ja. / Die Schwimm-AG kennt sich gut aus.
+- `06` AFB I · _Argumentieren_ · Jonas will wissen, wie gern die Kinder der Schule schwimmen. / Jonas fragt nur die Kinder der Schwimm-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Kreuze an: Passt die Umfrage oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 2 / 5b | 4 / 5c | 4 / 6a | 2 / 6b | 1 / 6c | 2)_
+  - ☑ Nein. / Die Schwimm-AG denkt anders als die anderen Kinder.
+  - ☐ Ja. / Kinder aus allen Klassen sind dabei, also passt es.
+  - ☐ Ja. / Die Schwimm-AG kennt sich mit dem Thema gut aus.
 
 ### G · Grundlegendes Niveau (Hauptschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein. *Beispiel:* Wer nur die 5a fragt, weiß nur etwas über die 5a. *Lösungsschritt:* Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?
 
-- `01` AFB I · _Argumentieren_ · Ali will wissen, wie die Kinder der Schule zur Schule kommen. / Die Tabelle zeigt, wen Ali gefragt hat. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 23 / 6c | 0)_
+- `01` AFB I · _Argumentieren_ · Ali will wissen, wie die Kinder der Schule zur Schule kommen. / Die Tabelle zeigt, wen Ali gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 23 / 6c | 0)_
   - ☐ Ja. / Die Kinder sind alle in derselben Schule.
   - ☑ Nein. / Ali hat nur Kinder aus der 6b gefragt.
   - ☐ Ja. / 23 Kinder sind genug.
-- `02` AFB I · _Argumentieren_ · Jonas will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Jonas gefragt hat. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 6 / 5b | 4 / 5c | 5 / 6a | 6 / 6b | 6 / 6c | 5)_
+- `02` AFB I · _Argumentieren_ · Jonas will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Jonas gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 6 / 5b | 4 / 5c | 5 / 6a | 6 / 6b | 6 / 6c | 5)_
   - ☑ Ja. / Aus jeder Klasse wurden einige Kinder gefragt.
   - ☐ Nein. / Man muss alle Kinder der Schule fragen.
   - ☐ Nein. / Aus jeder Klasse wurden zu viele gefragt.
-- `03` AFB II · _Argumentieren_ · Emre will wissen, welches Obst die Kinder der 6c mögen. / Die Tabelle zeigt, wen Emre gefragt hat. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 27)_
+- `03` AFB II · _Argumentieren_ · Emre will wissen, welches Obst die Kinder der 6c mögen. / Die Tabelle zeigt, wen Emre gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 27)_
   - ☐ Nein. / Kinder aus anderen Klassen fehlen.
   - ☐ Nein. / Eine Klasse ist zu klein für eine Umfrage.
   - ☑ Ja. / Es geht nur um die 6c, und dort wurden alle gefragt.
-- `04` AFB I · _Argumentieren_ · Lina will wissen, welchen Sport die Kinder der Schule mögen. / Die Tabelle zeigt, wen Lina gefragt hat. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 1 / 6a | 0 / 6b | 0 / 6c | 1)_
+- `04` AFB I · _Argumentieren_ · Lina will wissen, welchen Sport die Kinder der Schule mögen. / Die Tabelle zeigt, wen Lina gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 0 / 5c | 1 / 6a | 0 / 6b | 0 / 6c | 1)_
   - ☐ Ja. / Die Kinder sind aus zwei Klassen.
   - ☐ Ja. / Jedes Kind sagt seine Meinung.
   - ☑ Nein. / 2 Kinder sind viel zu wenige.
@@ -7266,16 +7266,16 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann mü
   - ☐ Nur seine besten Freunde
   - ☐ Nur die Kinder aus dem Fußballverein
   - ☑ Einige Kinder aus jeder Klasse
-- `06` AFB III · _Argumentieren_ · Lina will wissen, wie gern die Kinder der Schule lesen. / Lina fragt nur die Kinder der Bücherei-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 1 / 5b | 2 / 5c | 1 / 6a | 1 / 6b | 2 / 6c | 3)_
-  - ☐ Ja. / Kinder aus allen Klassen sind dabei.
-  - ☑ Nein. / Kinder der Bücherei-AG antworten anders als die anderen Kinder.
-  - ☐ Ja. / Die Bücherei-AG kennt sich gut aus.
+- `06` AFB III · _Argumentieren_ · Lina will wissen, wie gern die Kinder der Schule lesen. / Lina fragt nur die Kinder der Bücherei-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 1 / 5b | 2 / 5c | 1 / 6a | 1 / 6b | 2 / 6c | 3)_
+  - ☐ Ja. / Kinder aus allen Klassen sind dabei, also passt es.
+  - ☑ Nein. / Die Bücherei-AG denkt anders als die anderen Kinder.
+  - ☐ Ja. / Die Bücherei-AG kennt sich mit dem Thema gut aus.
 
 ### M · Mittleres Niveau (Realschulabschluss)
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein. *Lösungsschritt:* Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?
 
-- `01` AFB I · _Argumentieren_ · Sara will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Sara gefragt hat. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 22 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 0)_
+- `01` AFB I · _Argumentieren_ · Sara will wissen, welches Eis die Kinder der Schule mögen. / Die Tabelle zeigt, wen Sara gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 0 / 5b | 22 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 0)_
   - ☐ Ja. 22 Kinder sind genug.
   - ☐ Ja. Die Kinder sind alle in derselben Schule.
   - ☑ Nein. Sara hat nur Kinder aus der 5b gefragt.
@@ -7285,10 +7285,10 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann mü
   - ☐ Sie fragt 40 Kinder vor der Zoohandlung.
   - ☑ Sie fragt aus jeder der 8 Klassen 5 Kinder, die sie auslost.
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Die Schule hat 8 Klassen. / Mara will aus jeder Klasse 4 Kinder zufällig auslosen. / Bestimme, wie viele Kinder in der Stichprobe sind. Lösung: **32**. Typische Fehler: 12 (sach-falsche-rechnung), 4 (sach-schritt-vergessen).
-- `04` AFB I · _Argumentieren_ · Mia will wissen, wie gern die Kinder der Schule schwimmen. / Mia fragt nur die Kinder der Schwimm-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 3 / 5b | 2 / 5c | 2 / 6a | 2 / 6b | 2 / 6c | 3)_
-  - ☐ Ja. Die Schwimm-AG kennt sich gut aus.
-  - ☑ Nein. Kinder der Schwimm-AG antworten anders als die anderen Kinder.
-  - ☐ Ja. Kinder aus allen Klassen sind dabei.
+- `04` AFB I · _Argumentieren_ · Mia will wissen, wie gern die Kinder der Schule schwimmen. / Mia fragt nur die Kinder der Schwimm-AG. / Die Tabelle zeigt die Klassen dieser Kinder. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 3 / 5b | 2 / 5c | 2 / 6a | 2 / 6b | 2 / 6c | 3)_
+  - ☐ Ja. Die Schwimm-AG kennt sich mit dem Thema gut aus.
+  - ☑ Nein. Die Schwimm-AG denkt anders als die anderen Kinder.
+  - ☐ Ja. Kinder aus allen Klassen sind dabei, also passt es.
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Lina will wissen, welches Schulessen die Kinder am liebsten mögen. / Kreuze den besten Plan für die Stichprobe an.
   - ☐ Sie fragt nur die Köchin.
   - ☑ Sie fragt an drei verschiedenen Tagen einige Kinder aus allen Klassen.
@@ -7303,7 +7303,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann mü
 
 Hilfekärtchen der ersten Aufgabe: *Tipp:* Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein.
 
-- `01` AFB I · _Argumentieren_ · Mia will wissen, wie die Kinder der Schule zur Schule kommen. / Die Tabelle zeigt, wen Mia gefragt hat. / Beurteile die Stichprobe. _(Tabelle: Klasse | gefragte Kinder / 5a | 22 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 0)_
+- `01` AFB I · _Argumentieren_ · Mia will wissen, wie die Kinder der Schule zur Schule kommen. / Die Tabelle zeigt, wen Mia gefragt hat. / Kreuze an: Passt die Stichprobe oder nicht. _(Tabelle: Klasse | gefragte Kinder / 5a | 22 / 5b | 0 / 5c | 0 / 6a | 0 / 6b | 0 / 6c | 0)_
   - ☐ Ja. 22 Kinder sind genug.
   - ☐ Ja. Die Kinder sind alle in derselben Schule.
   - ☑ Nein. Mia hat nur Kinder aus der 5a gefragt.
@@ -7712,8 +7712,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* 18° sind 2 Knappen. Rechne aus, wie 
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Das Kreisdiagramm zeigt eine Umfrage zum Lieblingsessen. / Bestimme den Anteil von „Nudeln“ in Prozent. _(Bild: Kreisdiagramm: Pizza 162° (beschriftet 162°), Nudeln 27° (beschriftet 27°), Suppe 108° (beschriftet 108°), Reis 63° (beschriftet 63°))_ Lösung: **7,5 %**. Typische Fehler: 27 (prozent-als-grad), 8 (sach-falsche-rechnung).
 - `04` AFB III · _Argumentieren_ · Eine Zeitung zeigt dieses Kreisdiagramm zum Lieblingssport. / Beurteile die Darstellung. _(Bild: Kreisdiagramm: Basketball 108° (beschriftet 30 %), Turnen 54° (beschriftet 15 %), Reiten 180° (beschriftet 60 %), Tanzen 18° (beschriftet 5 %))_
   - ☐ In Ordnung. Bei Umfragen dürfen es mehr als 100 % sein.
-  - ☑ Fehlerhaft. Die Anteile ergeben zusammen 110 %, ein Kreis ist aber genau 100 %.
-  - ☐ In Ordnung. Jeder Anteil hat einen eigenen Ausschnitt.
+  - ☑ Fehlerhaft. Zusammen sind es 110 % statt 100 %.
+  - ☐ In Ordnung. Jeder Anteil hat einen eigenen Ausschnitt im Kreis.
   - ☐ Fehlerhaft. „Reiten“ ist zu klein gezeichnet.
 - `05` AFB II · _Argumentieren_ · Eine Werbung zeigt dieses Kreisdiagramm zur Lieblingsübung. / Beurteile die Darstellung. _(Bild: Kreisdiagramm: Schwertkampf 120° (beschriftet 50 %), Lanzenstechen 192° (beschriftet 40 %), Falknerei 48° (beschriftet 10 %))_
   - ☐ In Ordnung. Die Größe der Ausschnitte ist egal.
@@ -7789,7 +7789,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst den Anteil in Prozent
   - ☐ Fehlerhaft. „Pferd“ müsste 40 % sein.
   - ☐ In Ordnung. Die Abschnitte füllen den Streifen.
   - ☑ Fehlerhaft. Die Anteile ergeben zusammen 110 %. Bei „Pferd“ passt die Zahl nicht zur Länge.
-- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen. / Die Achse beginnt nicht bei 0. / Bestimme, um wie viel Prozent der Bogenschützen mehr Mitglieder hat als der Reitverein. _(Bild: Säulendiagramm „Mitglieder“; Achse 140 bis 210, Linien alle 10, beschriftet alle 10; Reitverein 160, Bogenschützen 200)_ Lösung: **25 %**. Typische Fehler: 200 (achse-abgeschnitten), 40 (prozent-als-zaehler).
+- `04` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen. / Die Achse beginnt nicht bei 0. / Bestimme, um wie viel Prozent der Schützenverein mehr Mitglieder hat als der Reitverein. _(Bild: Säulendiagramm „Mitglieder“; Achse 140 bis 210, Linien alle 10, beschriftet alle 10; Reitverein 160, Schützenverein 200)_ Lösung: **25 %**. Typische Fehler: 200 (achse-abgeschnitten), 40 (prozent-als-zaehler).
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Streifendiagramm zeigt eine Umfrage zum Lieblingsobst. / Der Streifen ist 20 cm lang. / Bestimme den Anteil von „Traube“ in Prozent. _(Bild: Streifendiagramm, 20 cm lang: Erdbeere 11 cm, Birne 2 cm, Banane 2,5 cm, Traube 4,5 cm)_ Lösung: **22,5 %**. Typische Fehler: 4,5 (streifen-laenge-als-anteil), 45 (streifen-laenge-als-anteil).
 - `06` AFB III · _Argumentieren (+ Kommunizieren)_ · Das Säulendiagramm zeigt die Mitglieder von zwei Vereinen. / Die Säule des Ritterclub ist 3-mal so hoch wie die des Reitverein. / Beurteile die Darstellung. _(Bild: Säulendiagramm „Mitglieder“; Achse 70 bis 110, Linien alle 10, beschriftet alle 10; Reitverein 80, Ritterclub 100)_
   - ☐ In Ordnung. Der Ritterclub hat 3-mal so viele Mitglieder.
@@ -7841,17 +7841,17 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst, wie viele Befragte e
 - `05` AFB II · _Mit symbolischen Elementen umgehen_ · 140 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Fußball | 7 / Schwimmen | 28 / Tanzen | 63 / Turnen | 42)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Fußball 1, Schwimmen 4, Tanzen 9, Turnen 6** · typische Fehler: 0/3/8/5 (sach-falsche-rechnung)
 - `06` AFB III · _Argumentieren_ · Lina zeichnet ein Streifendiagramm zur Lieblingsübung. Der Streifen ist 10 cm lang. / Beurteile die Darstellung. _(Bild: Streifendiagramm, 10 cm lang: Bogenschießen 3 cm (beschriftet 20 %), Reiten 3 cm (beschriftet 30 %), Falknerei 4 cm (beschriftet 50 %))_
   - ☐ Fehlerhaft. „Bogenschießen“ müsste 40 % sein.
-  - ☐ In Ordnung. Die Prozente ergeben zusammen 100 %.
-  - ☐ In Ordnung. Die Abschnitte füllen den ganzen Streifen.
-  - ☑ Fehlerhaft. „Falknerei“ hat 50 %, der Abschnitt müsste 5 cm lang sein. Er ist aber nur 4 cm lang.
+  - ☐ In Ordnung. Die Prozente in der Beschriftung ergeben zusammen 100 %.
+  - ☐ In Ordnung. Die Abschnitte füllen den ganzen Streifen von 10 cm.
+  - ☑ Fehlerhaft. „Falknerei“ hat 50 %, müsste also 5 cm lang sein.
 - `07` AFB I · _Mit symbolischen Elementen umgehen_ · 80 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Schwimmen | 28 / Tanzen | 12 / Basketball | 16 / Reiten | 24)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Schwimmen 7, Tanzen 3, Basketball 4, Reiten 6** · typische Fehler: 6/2/3/5 (sach-falsche-rechnung)
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · 100 Kinder wurden nach dem Schulweg gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / zu Fuß | 20 / Bus | 10 / Fahrrad | 40 / Auto | 5 / Roller | 25)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **zu Fuß 4, Bus 2, Fahrrad 8, Auto 1, Roller 5** · typische Fehler: 3/1/7/0/4 (sach-falsche-rechnung)
 - `09` AFB II · _Mit symbolischen Elementen umgehen_ · 80 Knappen wurden nach der Lieblingsübung gefragt: Falknerei 52, Lanzenstechen 8, Reiten 20. / Das Streifendiagramm soll 20 cm lang werden. / Bestimme, wie lang der Abschnitt für „Falknerei“ wird. Lösung: **13 cm**. Typische Fehler: 52 (streifen-laenge-als-anteil), 6,5 (sach-falsche-rechnung).
 - `10` AFB III · _Argumentieren_ · Sara zeichnet zwei Streifendiagramme nebeneinander: für die 6a einen 20-cm-Streifen, für die 6b einen 10-cm-Streifen. / In beiden Streifen ist „Fahrrad“ 3 cm lang. / Sara schreibt darunter: „In beiden Klassen fährt der gleiche Anteil mit dem Fahrrad.“ / Beurteile die Darstellung.
   - ☐ Irreführend. In der 6a sind es 30 %, in der 6b 15 %.
-  - ☐ In Ordnung. Gleich lange Abschnitte zeigen gleiche Anteile.
-  - ☐ In Ordnung. Streifen dürfen verschieden lang sein.
-  - ☑ Irreführend. In der 6a sind es 15 %, in der 6b 30 %. Zum Vergleichen müssen beide Streifen gleich lang sein.
+  - ☐ In Ordnung. Gleich lange Abschnitte zeigen immer gleiche Anteile.
+  - ☐ In Ordnung. Streifendiagramme dürfen verschieden lang sein.
+  - ☑ Irreführend. In der 6a sind es 15 %, in der 6b 30 %.
 - `11` AFB II · _Mit symbolischen Elementen umgehen_ · 140 Kinder wurden nach dem Lieblingssport gefragt. / Färbe den Streifen mit 20 Kästchen passend. _(Tabelle: Antwort | Anzahl / Basketball | 42 / Reiten | 7 / Fußball | 91)_ _(Streifen mit 20 Kästchen färben; nur die Anzahl je Farbe zählt)_ Lösung: **Basketball 6, Reiten 1, Fußball 13** · typische Fehler: 5/0/12 (sach-falsche-rechnung)
 - `12` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Streifen hat 20 Kästchen. „zu Fuß“ hat 4 Kästchen. / 8 Kinder haben „zu Fuß“ genannt. / Bestimme, wie viele befragt wurden. Lösung: **40**. Typische Fehler: 32 (sach-falsche-rechnung), 28 (sach-falsche-rechnung), 160 (relativ-absolut-verwechselt).
 
@@ -7890,7 +7890,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Kreis hat 360°. 1 % sind 3
   | Pommes | 15 % | **54** |
   | zusammen | 100 % | 360 |
 
-- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 24 Kinder wurden nach dem Lieblingssport gefragt. 9 nennen „Schwimmen“. / Berechne den Winkel für „Schwimmen“ im Kreisdiagramm. Lösung: **135 °**. Typische Fehler: 9 (prozent-als-grad), 37,5 (prozent-als-grad), 90 (sach-falsche-rechnung).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · 24 Kinder wurden nach dem Lieblingssport gefragt. 9 nennen „Schwimmen“. / Berechne den Winkel für „Schwimmen“ im Kreisdiagramm. Lösung: **135 °**. Typische Fehler: 9 (prozent-als-grad), 90 (sach-falsche-rechnung).
 - `04` AFB I · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingssport ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
 
   | Antwort | Anteil | Winkel in ° |
@@ -7912,7 +7912,7 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Der ganze Kreis hat 360°. 1 % sind 3
   | Reis | 50 % | **180** |
   | zusammen | 100 % | 360 |
 
-- `08` AFB II · _Mit symbolischen Elementen umgehen_ · 30 Kinder wurden nach dem Lieblingssport gefragt. 7 nennen „Basketball“. / Berechne den Winkel für „Basketball“ im Kreisdiagramm. Lösung: **84 °**. Typische Fehler: 7 (prozent-als-grad), 23,33 (prozent-als-grad), 70 (sach-falsche-rechnung).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · 30 Kinder wurden nach dem Lieblingssport gefragt. 7 nennen „Basketball“. / Berechne den Winkel für „Basketball“ im Kreisdiagramm. Lösung: **84 °**. Typische Fehler: 7 (prozent-als-grad), 70 (sach-falsche-rechnung).
 - `09` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Eine Umfrage zum Lieblingssport ergibt die Anteile in der Tabelle. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
 
   | Antwort | Anteil | Winkel in ° |
@@ -7956,8 +7956,8 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Befragter ist 360° : 24 = 15°.
 
 - `03` AFB II · _Mit symbolischen Elementen umgehen_ · Im Kreisdiagramm zum Lieblingsobst hat „Erdbeere“ einen Winkel von 36°. / Das sind 2 Kinder. / Bestimme, wie viele befragt wurden. Lösung: **20**. Typische Fehler: 324 (sach-frage-verfehlt).
 - `04` AFB III · _Argumentieren_ · Eine Umfrage zur Lieblingsübung ergibt: Bogenschießen 45 %, Reiten 30 %, Falknerei 25 %. / Elif zeichnet dazu das Kreisdiagramm im Bild. / Beurteile die Darstellung. _(Bild: Kreisdiagramm: Bogenschießen 120° (beschriftet 45 %), Reiten 120° (beschriftet 30 %), Falknerei 120° (beschriftet 25 %))_
-  - ☑ Irreführend. Alle Ausschnitte sind gleich groß. „Bogenschießen“ müsste 162° bekommen, nicht 120°.
-  - ☐ In Ordnung. Die Prozente in der Legende stimmen.
+  - ☑ Irreführend. „Bogenschießen“ müsste 162° bekommen, nicht 120°.
+  - ☐ In Ordnung. Die Prozente in der Legende ergeben zusammen 100 %.
   - ☐ Irreführend. „Bogenschießen“ müsste 45° bekommen.
   - ☐ In Ordnung. Drei Antworten bekommen immer drei gleiche Ausschnitte.
 - `05` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · 90 Kinder wurden nach dem Schulweg gefragt. / Berechne für jede Antwort den Winkel im Kreisdiagramm. 
@@ -7983,18 +7983,18 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Befragter ist 360° : 24 = 15°.
 
 - `08` AFB II · _Mit symbolischen Elementen umgehen_ · Im Kreisdiagramm zum Lieblingssport hat „Reiten“ einen Winkel von 60°. / Das sind 9 Kinder. / Bestimme, wie viele befragt wurden. Lösung: **54**. Typische Fehler: 15 (prozent-als-grad), 300 (sach-frage-verfehlt).
 - `09` AFB II · _Mit symbolischen Elementen umgehen_ · Die Klasse will die Temperatur an jedem Tag der Woche zeigen. / Kreuze an, welche Darstellung am besten passt.
-  - ☑ Ein Säulendiagramm. Jeder Tag hat einen eigenen Wert. Die Werte sind keine Teile eines Ganzen.
-  - ☐ Ein Streifendiagramm.
-  - ☐ Ein Kreisdiagramm.
+  - ☑ Ein Säulendiagramm. Jeder Tag hat einen eigenen Wert.
+  - ☐ Ein Streifendiagramm. Die Tage liegen nebeneinander wie Abschnitte.
+  - ☐ Ein Kreisdiagramm. Die Woche ist ein Ganzes aus sieben Tagen.
 - `10` AFB III · _Argumentieren_ · 40 Kinder wurden nach dem Lieblingssport gefragt. 16 nennen „Tanzen“. / Ali rechnet für das Kreisdiagramm: 16 · 3,6° = 57,6°. / Beurteile die Rechnung.
-  - ☐ Falsch. Es sind 16°.
-  - ☐ Falsch. Es sind 216°.
-  - ☐ Richtig. Ein Befragter ist immer 3,6°.
-  - ☑ Falsch. 3,6° gehören zu einem Prozent. Ein Befragter ist hier 360° : 40 = 9°, also sind es 144°.
-- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Die Klasse will die Lieblingsfächer von zwei Klassen übereinander vergleichen. / Kreuze an, welche Darstellung am besten passt.
-  - ☑ Zwei gleich lange Streifendiagramme. Gleich lange Streifen kann man Abschnitt für Abschnitt vergleichen.
-  - ☐ Zwei Kreisdiagramme mit verschiedenen Radien.
-  - ☐ Ein Streifendiagramm für beide Klassen zusammen.
+  - ☐ Falsch. Es sind 16°, ein Grad für jeden Befragten.
+  - ☐ Falsch. Es sind 216°, der Rest vom ganzen Kreis.
+  - ☐ Richtig. Ein Befragter ist bei jeder Umfrage genau 3,6°.
+  - ☑ Falsch. Ein Befragter ist hier 9°, also sind es 144°.
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Die Klasse will die Lieblingsfächer von zwei Klassen vergleichen. / Kreuze an, welche Darstellung am besten passt.
+  - ☑ Zwei gleich lange Streifendiagramme. Man vergleicht Abschnitt für Abschnitt.
+  - ☐ Zwei Kreisdiagramme mit verschiedenen Radien. Größere Klassen bekommen größere Kreise.
+  - ☐ Ein Streifendiagramm für beide Klassen. Dann ist alles in einem Bild.
 - `12` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Umfrage zum Lieblingstier ergibt die Werte in der Tabelle. / Zeichne das Kreisdiagramm mit Geodreieck und Zirkel in dein Heft. Beschrifte die Ausschnitte. / Gib zur Kontrolle den Winkel für „Vogel“ an. _(Tabelle: Antwort | Anzahl / Hase | 4 / Hamster | 5 / Pferd | 10 / Vogel | 21)_ Lösung: **189 °**. Typische Fehler: 21 (prozent-als-grad).
 
 ## Typische Fehler und Aha-Momente

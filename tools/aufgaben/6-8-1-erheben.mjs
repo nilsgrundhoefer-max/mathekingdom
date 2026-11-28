@@ -124,22 +124,22 @@ export function erheben6() {
   const gefragt = (verteilung) => daten(['Klasse', 'gefragte Kinder'], KLASSEN.map((k, i) => [k, verteilung[i]]));
   // Nur eine Klasse gefragt, Frage zur ganzen Schule.
   const nurEine = (n, stichwort = false) => () => { const kn = kind(), i = zz(0, 5), v = KLASSEN.map((_, j) => (j === i ? zz(20, 26) : 0)), thema = wahl(['welches Eis die Kinder der Schule mögen', 'wie die Kinder der Schule zur Schule kommen', 'welche AG die Kinder der Schule wählen']);
-    return auswahl(Z(`${kn} will wissen, ${thema}.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Beurteile die ${stichwort ? 'Stichprobe' : 'Umfrage'}.`),
+    return auswahl(Z(`${kn} will wissen, ${thema}.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Kreuze an: Passt die ${stichwort ? 'Stichprobe' : 'Umfrage'} oder nicht.`),
       [opt(`Nein. ${kn} hat nur Kinder aus der ${KLASSEN[i]} gefragt.`, true), opt(`Ja. ${v[i]} Kinder sind genug.`, false, 'stichprobe-einseitig'), opt('Ja. Die Kinder sind alle in derselben Schule.', false, 'stichprobe-einseitig')],
       H(n, 'Es geht um die ganze Schule. Dann müssen Kinder aus allen Klassen dabei sein.', 'Wer nur die 5a fragt, weiß nur etwas über die 5a.', 'Schau in der Tabelle: Aus welchen Klassen wurden Kinder gefragt?'), { daten: gefragt(v), nachweis: [URTEIL(false), FREI('Nur eine Klasse gefragt')] }); };
   // Aus jeder Klasse einige: passt.
   const ausJeder = (n, stichwort = false) => () => { const kn = kind(), v = KLASSEN.map(() => zz(4, 6)), thema = wahl(['welches Eis die Kinder der Schule mögen', 'welche AG die Kinder der Schule wählen', 'wie lange die Kinder der Schule schlafen']);
-    return auswahl(Z(`${kn} will wissen, ${thema}.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Beurteile die ${stichwort ? 'Stichprobe' : 'Umfrage'}.`),
+    return auswahl(Z(`${kn} will wissen, ${thema}.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Kreuze an: Passt die ${stichwort ? 'Stichprobe' : 'Umfrage'} oder nicht.`),
       [opt('Ja. Aus jeder Klasse wurden einige Kinder gefragt.', true), opt('Nein. Man muss alle Kinder der Schule fragen.', false), opt('Nein. Aus jeder Klasse wurden zu viele gefragt.', false)],
       H(n, 'Kinder aus allen Klassen sind dabei. Dann zeigt die Umfrage gut, was die ganze Schule denkt.', 'Aus jeder Klasse 5 Kinder: Alle Klassen sind dabei.', 'Schau in der Tabelle: Fehlt eine Klasse?'), { daten: gefragt(v), nachweis: [`${v.join(' + ')} = ${summe(v)}`, URTEIL(true)] }); };
   // Zu wenige gefragt.
   const zuWenige = (n, stichwort = false) => () => { const kn = kind(), v = KLASSEN.map(() => 0), a = zz(0, 2), b = zz(3, 5); v[a] = 1; v[b] = 1;
-    return auswahl(Z(`${kn} will wissen, welchen Sport die Kinder der Schule mögen.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Beurteile die ${stichwort ? 'Stichprobe' : 'Umfrage'}.`),
+    return auswahl(Z(`${kn} will wissen, welchen Sport die Kinder der Schule mögen.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Kreuze an: Passt die ${stichwort ? 'Stichprobe' : 'Umfrage'} oder nicht.`),
       [opt('Nein. 2 Kinder sind viel zu wenige.', true), opt('Ja. Die Kinder sind aus zwei Klassen.', false, 'stichprobe-einseitig'), opt('Ja. Jedes Kind sagt seine Meinung.', false, 'stichprobe-einseitig')],
       H(n, 'Zähle, wie viele Kinder gefragt wurden. Sind es genug für die ganze Schule?', 'Fragt man nur 2 Kinder, kann das Ergebnis Zufall sein.', 'Zähle die gefragten Kinder zusammen.'), { daten: gefragt(v), nachweis: ['1 + 1 = 2', URTEIL(false)] }); };
   // Frage nur zur eigenen Klasse, ganze Klasse gefragt: passt.
   const eigeneKlasse = (n, stichwort = false) => () => { const kn = kind(), i = zz(0, 5), v = KLASSEN.map((_, j) => (j === i ? zz(22, 28) : 0));
-    return auswahl(Z(`${kn} will wissen, welches Obst die Kinder der ${KLASSEN[i]} mögen.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Beurteile die ${stichwort ? 'Stichprobe' : 'Umfrage'}.`),
+    return auswahl(Z(`${kn} will wissen, welches Obst die Kinder der ${KLASSEN[i]} mögen.`, `Die Tabelle zeigt, wen ${kn} gefragt hat.`, `Kreuze an: Passt die ${stichwort ? 'Stichprobe' : 'Umfrage'} oder nicht.`),
       [opt(`Ja. Es geht nur um die ${KLASSEN[i]}, und dort wurden alle gefragt.`, true), opt('Nein. Kinder aus anderen Klassen fehlen.', false), opt('Nein. Eine Klasse ist zu klein für eine Umfrage.', false)],
       H(n, 'Lies genau: Um wen geht es in der Frage?', 'Geht es nur um die 6a, reicht es, die 6a zu fragen.', `Die Frage ist nur zur ${KLASSEN[i]}.`), { daten: gefragt(v), nachweis: [URTEIL(true)] }); };
   // Wen fragen?
@@ -152,8 +152,8 @@ export function erheben6() {
       H(n, 'Gut ist eine Gruppe, in der alle Kinder der Schule vorkommen können.', 'Nur Kinder aus dem Schwimmbad zu fragen, ob sie gern schwimmen, passt nicht.', 'Überlege bei jeder Gruppe: Denken diese Kinder vielleicht alle gleich?'), { daten: daten(['Schule', 'Kinder'], KLASSEN.map((k) => [k, zz(22, 28)])), nachweis: [FREI('Einseitige Stichproben erkennen')] }); };
   // Einseitige Gruppe: Sportverein und Lieblingssport.
   const verein = (n, stichwort = false) => () => { const kn = kind(), [gruppe, thema] = wahl([['Fußballmannschaft', 'welchen Sport die Kinder der Schule mögen'], ['Schwimm-AG', 'wie gern die Kinder der Schule schwimmen'], ['Bücherei-AG', 'wie gern die Kinder der Schule lesen']]), v = KLASSEN.map(() => zz(1, 4));
-    return auswahl(Z(`${kn} will wissen, ${thema}.`, `${kn} fragt nur die Kinder der ${gruppe}.`, `Die Tabelle zeigt die Klassen dieser Kinder.`, `Beurteile die ${stichwort ? 'Stichprobe' : 'Umfrage'}.`),
-      [opt(`Nein. Kinder der ${gruppe} antworten anders als die anderen Kinder.`, true), opt('Ja. Kinder aus allen Klassen sind dabei.', false, 'stichprobe-einseitig'), opt(`Ja. Die ${gruppe} kennt sich gut aus.`, false, 'stichprobe-einseitig')],
+    return auswahl(Z(`${kn} will wissen, ${thema}.`, `${kn} fragt nur die Kinder der ${gruppe}.`, `Die Tabelle zeigt die Klassen dieser Kinder.`, `Kreuze an: Passt die ${stichwort ? 'Stichprobe' : 'Umfrage'} oder nicht.`),
+      [opt(`Nein. Die ${gruppe} denkt anders als die anderen Kinder.`, true), opt('Ja. Kinder aus allen Klassen sind dabei, also passt es.', false, 'stichprobe-einseitig'), opt(`Ja. Die ${gruppe} kennt sich mit dem Thema gut aus.`, false, 'stichprobe-einseitig')],
       H(n, 'Alle Klassen sind dabei. Aber denken diese Kinder anders als die anderen?', 'Kinder im Schwimmverein schwimmen meist gern. Sie sind keine gute Gruppe für die Frage „Schwimmst du gern?“.', `Überlege: Was mögen Kinder der ${gruppe} wohl am liebsten?`), { daten: gefragt(v), nachweis: [URTEIL(false), FREI('Einseitige Gruppe trotz aller Klassen')] }); };
   sechs(E2, 'F', [nurEine('F'), ausJeder('F'), zuWenige('F'), eigeneKlasse('F'), wenFragen('F'), verein('F')]);
   sechs(E2, 'G', [nurEine('G', true), ausJeder('G', true), eigeneKlasse('G', true), zuWenige('G', true), wenFragen('G', true), verein('G', true)]);

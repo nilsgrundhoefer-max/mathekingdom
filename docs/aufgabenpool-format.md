@@ -273,3 +273,17 @@ Sprachregeln, die die Prüfung erzwingt: „Volumen“ statt „Rauminhalt“, k
 Nachweise in 6.7: Gleichungen als Text, `tabelle` (Regel `prop`, `anti`, `bild` oder `{ m, b, fallend? }`), `dreisatz` (Regel, `von`, `x`, `y`, `gesucht?`), `einordnung` (Wertepaare und Antwort je Art), `bildart` (Art des Schaubilds), `ablesen` (Wert auf einer Linie oder an einem Punkt), `punkte`, `tabellenwert`, `tabwahl`, `kartenpaare`, `karte`, `bildextrem`, `flach`, `steilst`, `wert`, `urteil` und `frei` für Begründungen.
 
 Sprachregeln, die die Prüfung erzwingt: „antiproportional“ und „Produkt“ nur auf E, „Quotient“ ab M, „Wertepaar“ und „Einteilung“ ab G, „Nullpunkt“ statt „Ursprung“, kein Proportionalitätsfaktor, jeder Achsenname nennt seine Einheit.
+
+## Klasse 6, Kapitel 8 „Daten auswerten und darstellen“ (ADR 0058)
+
+| Feld | Inhalt |
+|---|---|
+| `format: "streifenfaerben"` | Streifen färben: `streifen: { kaestchen: 20, laenge? }`, `farben: [{ name, loesung }]` mit der Zahl der Kästchen je Farbe (zusammen 20), `typischeFehler: [{ werte: [...], fehlvorstellung }]`. Nur die Anzahl je Farbe zählt, nicht wo die Kästchen liegen. Eingabe: je Kästchen die Nummer der Farbe oder „-“, durch Kommas getrennt. Nur auf M und E. |
+| `datensatz` | Bei `format: "luecken"`: Datensatz erfinden. `{ anzahl, von, bis, mittelwert?, spannweite?, zentralwert? }`. Jede Reihe natürlicher Zahlen mit den verlangten Kenngrößen ist richtig; die Lösungen der Lücken sind nur ein Beispiel. Erkannt werden „Spannweite als größter Wert“ und „Zentralwert statt Mittelwert“. Nur auf E. |
+| `bild.art: "kreisdiagramm"` | `{ titel?, teile: [{ name, winkel, text? }] }`. Die Winkel ergeben 360°, der erste Ausschnitt beginnt oben, dann im Uhrzeigersinn. `text` beschriftet den Ausschnitt („25 %“, „90°“, „?“). |
+| `bild.art: "streifendiagramm"` | `{ titel?, laenge: 10 oder 20, teile: [{ name, mm, text? }] }`. Die Abschnitte ergeben `laenge · 10` mm, jeder ein Vielfaches von 5 mm, auf F volle Zentimeter. Darunter ein Lineal in cm. |
+| `daten` | Datentabelle unter dem Text (wie in Klasse 5 Kapitel 6): `{ kopf, zeilen }`. Zählt in 6.8 als Bild. |
+
+Nachweise in 6.8 (tools/pruefe-daten.mjs): Gleichungen als Text, `kenngroesse` (`was`: minimum, maximum, spannweite, mittelwert, zentralwert, summe, anzahl; `werte`, `wert`, `gerundet?`, `beispiel?`), `zaehlen` (Anzahl einer Antwort in der Urliste), `anteil` (`anzahl` von `gesamt` als bruch, prozent, dezimal oder grad), `anzahl` (Anteil in prozent, grad oder „mm von L“ von `gesamt`), `lesen` (Anteil eines Ausschnitts oder Abschnitts im Bild), `wert`, `urteil` und `frei`. `zwischen: true` markiert einen Zwischenschritt, `luecke` die Lücke, die er belegt.
+
+Sprachregeln, die die Prüfung erzwingt: kein Median, Durchschnitt, arithmetisches Mittel, Torten- oder Kuchendiagramm; „Ausreißer“ nur auf E; „Stichprobe“, „absolute“ und „relative Häufigkeit“ und „Ausschnitt“ erst ab G.
