@@ -1327,6 +1327,51 @@
    "beschreibung": "Rechnet eine proportionale Zuordnung antiproportional (mehr Ware kostet angeblich weniger).",
    "hinweis": "Überlege zuerst: Wird der zweite Wert größer oder kleiner? Mehr Ware kostet mehr.",
    "kind": "Du prüfst jetzt zuerst: Wird der zweite Wert größer oder kleiner?"
+  },
+  "mittelwert-mitte": {
+   "beschreibung": "Hält den Wert in der Mitte der Liste für den Mittelwert.",
+   "hinweis": "Der Mittelwert ist nicht der Wert in der Mitte. Zähle alle Werte zusammen und teile durch ihre Anzahl.",
+   "kind": "Du rechnest den Mittelwert jetzt aus allen Werten aus."
+  },
+  "mittelwert-falsche-anzahl": {
+   "beschreibung": "Teilt beim Mittelwert die Summe durch eine falsche Anzahl (einen Wert vergessen oder den neuen Wert nicht mitgezählt).",
+   "hinweis": "Zähle, wie viele Werte es sind. Durch genau diese Anzahl teilst du die Summe.",
+   "kind": "Du teilst jetzt durch die Anzahl aller Werte."
+  },
+  "spannweite-groesster-wert": {
+   "beschreibung": "Gibt als Spannweite den größten Wert an statt Maximum minus Minimum.",
+   "hinweis": "Die Spannweite sagt, wie weit die Werte auseinanderliegen. Rechne größter Wert minus kleinster Wert.",
+   "kind": "Du rechnest bei der Spannweite jetzt Maximum minus Minimum."
+  },
+  "zentralwert-unsortiert": {
+   "beschreibung": "Nimmt als Zentralwert den mittleren Wert der ungeordneten Liste.",
+   "hinweis": "Ordne die Werte zuerst der Größe nach. Erst dann suchst du den Wert in der Mitte.",
+   "kind": "Du ordnest die Werte jetzt, bevor du die Mitte suchst."
+  },
+  "haeufigkeit-falsche-gesamtzahl": {
+   "beschreibung": "Bezieht die relative Häufigkeit auf eine falsche Gesamtzahl (eine andere Anzahl aus der Tabelle oder nur einen Teil der Befragten).",
+   "hinweis": "Unten im Bruch steht immer die Gesamtzahl: alle, die gefragt wurden.",
+   "kind": "Du teilst jetzt durch die richtige Gesamtzahl."
+  },
+  "relativ-absolut-verwechselt": {
+   "beschreibung": "Vergleicht bei verschieden großen Gruppen die Anzahlen statt der Anteile.",
+   "hinweis": "Sind die Gruppen verschieden groß, vergleichst du die Anteile. Rechne für jede Gruppe Anzahl geteilt durch Gesamtzahl.",
+   "kind": "Du vergleichst jetzt Anteile, nicht nur Anzahlen."
+  },
+  "prozent-als-grad": {
+   "beschreibung": "Trägt im Kreisdiagramm die Prozentzahl direkt als Winkel ein (25 % als 25°).",
+   "hinweis": "Der ganze Kreis hat 360°, nicht 100°. 25 % sind ein Viertel von 360°, also 90°.",
+   "kind": "Du rechnest Prozent jetzt in Grad um: 1 % sind 3,6°."
+  },
+  "streifen-laenge-als-anteil": {
+   "beschreibung": "Liest die Länge eines Abschnitts im Streifendiagramm direkt als Prozent ab, auch wenn der Streifen nicht 100 Einheiten lang ist.",
+   "hinweis": "Teile die Länge des Abschnitts durch die Länge des ganzen Streifens. Erst dann hast du den Anteil.",
+   "kind": "Du teilst die Länge im Streifen jetzt durch die ganze Länge."
+  },
+  "stichprobe-einseitig": {
+   "beschreibung": "Hält eine zu kleine oder einseitige Stichprobe für geeignet (nur Freunde, nur eine Klasse, nur ein Verein).",
+   "hinweis": "Frage dich: Haben alle, um die es geht, eine Chance, gefragt zu werden? Wenn nur eine Gruppe gefragt wird, passt die Stichprobe nicht.",
+   "kind": "Du fragst jetzt nicht nur eine Gruppe, sondern Kinder aus allen Gruppen."
   }
  },
  "kompetenzen": {
@@ -1355,7 +1400,9 @@
        },
        "voraussetzungen": [
         "5.2.1-N1",
-        "5.9.3-K2"
+        "5.9.3-K2",
+        "6.9.1-N1",
+        "6.9.1-N2"
        ],
        "grundlage": "Am Thermometer und an der Zahlengeraden von −10 bis 10 ganze Zahlen ablesen und antippen",
        "bp": "3.1.1 (4), (7) aus Kl. 5/6"
@@ -1368,7 +1415,8 @@
         "beispiel": "Die Gegenzahl von 4 ist −4.\n|−4| = 4 und |4| = 4"
        },
        "voraussetzungen": [
-        "7.1.1-Z1"
+        "7.1.1-Z1",
+        "6.9.2-R2"
        ],
        "grundlage": "An der Zahlengeraden die Schritte bis zur Null zählen und die Zahl auf der anderen Seite finden",
        "bp": "3.1.1 (7) aus Kl. 5/6, Betrag 3.1.1 (8) nur E"
@@ -1512,7 +1560,8 @@
        },
        "voraussetzungen": [
         "7.1.1-Z1",
-        "5.2.1-N2"
+        "5.2.1-N2",
+        "6.9.3-V1"
        ],
        "grundlage": "Zwei Zahlen an der Zahlengeraden vergleichen: Die linke Zahl ist die kleinere",
        "bp": "3.1.1 (7) aus Kl. 5/6"
@@ -1526,7 +1575,8 @@
        },
        "voraussetzungen": [
         "7.1.2-V1",
-        "6.1.4-V2"
+        "6.1.4-V2",
+        "6.9.3-V2"
        ],
        "grundlage": "Drei Zahlen von −10 bis 10 an der Zahlengeraden ordnen und Schritte zwischen zwei Zahlen zählen",
        "bp": "3.1.1 (7) aus Kl. 5/6"
@@ -61030,6 +61080,46 @@
      "regel": "Zähler mal Zähler und Nenner mal Nenner. Kürze vorher, wenn es geht.",
      "beispiel": "2⁄3 · 4⁄5 = 8⁄15\nDenn 2 · 4 = 8 und 3 · 5 = 15."
     }
+   },
+   {
+    "id": "6.9.1-N1",
+    "text": "Ich kann negative Zahlen im Alltag deuten und mit Vorzeichen schreiben.",
+    "merkzettel": {
+     "regel": "Zahlen unter null sind negativ. Sie haben ein Minuszeichen, so wie Schulden, Grad unter null und Höhen unter dem Meeresspiegel sind negativ.",
+     "beispiel": "5 Grad unter null sind −5 °C.\n20 € Schulden sind −20 €."
+    }
+   },
+   {
+    "id": "6.9.1-N2",
+    "text": "Ich kann ganze Zahlen an der Zahlengerade ablesen und eintragen.",
+    "merkzettel": {
+     "regel": "Auf der Zahlengeraden stehen die negativen Zahlen links von der Null. Zähle von einer beschrifteten Zahl aus die Striche.",
+     "beispiel": "Zwei Striche links von −5 steht −7."
+    }
+   },
+   {
+    "id": "6.9.2-R2",
+    "text": "Ich kann die Gegenzahl einer Zahl angeben und rationale Zahlen erkennen.",
+    "merkzettel": {
+     "regel": "Die Gegenzahl liegt gleich weit von der Null entfernt, auf der anderen Seite. Ganze Zahlen, Dezimalzahlen und Brüche mit Vorzeichen sind rationale Zahlen.",
+     "beispiel": "Die Gegenzahl von 4 ist −4.\nDie Gegenzahl von −2,5 ist 2,5."
+    }
+   },
+   {
+    "id": "6.9.3-V1",
+    "text": "Ich kann rationale Zahlen vergleichen.",
+    "merkzettel": {
+     "regel": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links. Jede negative Zahl ist kleiner als jede positive Zahl.",
+     "beispiel": "−8 < −3\nBei −8 °C ist es kälter als bei −3 °C."
+    }
+   },
+   {
+    "id": "6.9.3-V2",
+    "text": "Ich kann rationale Zahlen ordnen und Zahlen angeben, die dazwischen liegen.",
+    "merkzettel": {
+     "regel": "Beim Ordnen kommen zuerst die negativen Zahlen, die am weitesten von der Null entfernt sind. Zwischen zwei Zahlen liegen immer weitere Zahlen.",
+     "beispiel": "−7 < −2 < 0 < 3\nZwischen −1 und −0,5 liegt −0,7."
+    }
    }
   ],
   "woerter": [
@@ -61959,6 +62049,256 @@
     "meilenstein": "6.7.8"
    },
    {
+    "wort": "Umfrage",
+    "erklaerung": "Man stellt vielen Personen dieselbe Frage und schreibt die Antworten auf.",
+    "meilenstein": "6.8.1"
+   },
+   {
+    "wort": "Strichliste",
+    "erklaerung": "Für jede Antwort machst du einen Strich. Der fünfte Strich geht quer.",
+    "meilenstein": "6.8.1"
+   },
+   {
+    "wort": "Häufigkeit",
+    "erklaerung": "Wie oft eine Antwort vorkommt.",
+    "meilenstein": "6.8.1"
+   },
+   {
+    "wort": "Stichprobe",
+    "erklaerung": "Die Personen, die man wirklich fragt, wenn man etwas über alle wissen will.",
+    "meilenstein": "6.8.1"
+   },
+   {
+    "wort": "Beobachtung",
+    "erklaerung": "Man schaut zu und zählt, ohne zu fragen, zum Beispiel Autos an einer Kreuzung.",
+    "meilenstein": "6.8.1"
+   },
+   {
+    "wort": "Messung",
+    "erklaerung": "Man misst eine Größe, zum Beispiel die Weite beim Weitsprung.",
+    "meilenstein": "6.8.1"
+   },
+   {
+    "wort": "Minimum",
+    "erklaerung": "Der kleinste Wert.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Maximum",
+    "erklaerung": "Der größte Wert.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Spannweite",
+    "erklaerung": "Maximum minus Minimum. So weit liegen der größte und der kleinste Wert auseinander.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Mittelwert",
+    "erklaerung": "Alle Werte zusammenzählen und durch ihre Anzahl teilen. Im Alltag sagt man auch Durchschnitt.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Zentralwert",
+    "erklaerung": "Der Wert in der Mitte, wenn alle Werte der Größe nach geordnet sind.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Kenngröße",
+    "erklaerung": "Eine Zahl, die eine ganze Datenreihe kurz beschreibt, zum Beispiel Mittelwert oder Spannweite.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Ausreißer",
+    "erklaerung": "Ein Wert, der weit weg von allen anderen liegt.",
+    "meilenstein": "6.8.2"
+   },
+   {
+    "wort": "Gesamtzahl",
+    "erklaerung": "Wie viele Antworten es insgesamt gibt.",
+    "meilenstein": "6.8.4"
+   },
+   {
+    "wort": "absolute Häufigkeit",
+    "erklaerung": "Die Anzahl, wie oft eine Antwort vorkommt.",
+    "meilenstein": "6.8.4"
+   },
+   {
+    "wort": "relative Häufigkeit",
+    "erklaerung": "Der Anteil an der Gesamtzahl: absolute Häufigkeit geteilt durch Gesamtzahl.",
+    "meilenstein": "6.8.4"
+   },
+   {
+    "wort": "Prozentsatz",
+    "erklaerung": "Der Anteil in Prozent geschrieben, zum Beispiel 30 %.",
+    "meilenstein": "6.8.4"
+   },
+   {
+    "wort": "Kreisdiagramm",
+    "erklaerung": "Der ganze Kreis steht für alle. Jeder Ausschnitt zeigt einen Anteil.",
+    "meilenstein": "6.8.5"
+   },
+   {
+    "wort": "Streifendiagramm",
+    "erklaerung": "Der ganze Streifen steht für alle. Jeder Abschnitt zeigt einen Anteil.",
+    "meilenstein": "6.8.5"
+   },
+   {
+    "wort": "Legende",
+    "erklaerung": "Die Liste neben dem Diagramm. Sie sagt, welche Farbe was bedeutet.",
+    "meilenstein": "6.8.5"
+   },
+   {
+    "wort": "Mittelpunktswinkel",
+    "erklaerung": "Der Winkel eines Ausschnitts in der Mitte des Kreises. Ein Prozent sind 3,6°.",
+    "meilenstein": "6.8.5"
+   },
+   {
+    "wort": "Vollwinkel",
+    "erklaerung": "Ein ganzer Kreis: 360°.",
+    "meilenstein": "6.8.6"
+   },
+   {
+    "wort": "negative Zahl",
+    "erklaerung": "Eine Zahl unter null. Sie trägt ein Minuszeichen: −3.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "positive Zahl",
+    "erklaerung": "Eine Zahl über null, zum Beispiel 5.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Vorzeichen",
+    "erklaerung": "Das Plus oder Minus vor einer Zahl.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Zahlengerade",
+    "erklaerung": "Eine Linie mit Strichen in gleichen Abständen. Links von der Null stehen die negativen Zahlen.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "ganze Zahl",
+    "erklaerung": "Eine Zahl ohne Komma und ohne Bruch, positiv, negativ oder null: … −2, −1, 0, 1, 2 …",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Schulden",
+    "erklaerung": "Geld, das man jemandem zurückgeben muss. Auf dem Konto steht dann ein Minus.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Guthaben",
+    "erklaerung": "Geld, das auf dem Konto liegt. Der Kontostand ist positiv.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Meeresspiegel",
+    "erklaerung": "Die Höhe des Meeres. Sie hat die Höhe 0 m. Berge liegen darüber, manche Seen darunter.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Verlust",
+    "erklaerung": "Ein Laden nimmt weniger ein, als er ausgibt. Ein Verlust ist negativ.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Untergeschoss",
+    "erklaerung": "Ein Stockwerk unter dem Erdgeschoss, zum Beispiel ein Keller oder eine Tiefgarage.",
+    "meilenstein": "6.9.1"
+   },
+   {
+    "wort": "Gegenzahl",
+    "erklaerung": "Die Zahl auf der anderen Seite der Null, gleich weit entfernt. Die Gegenzahl von 3 ist −3.",
+    "meilenstein": "6.9.2"
+   },
+   {
+    "wort": "Abstand zur Null",
+    "erklaerung": "So viele Schritte ist eine Zahl von der Null entfernt.",
+    "meilenstein": "6.9.2"
+   },
+   {
+    "wort": "rationale Zahl",
+    "erklaerung": "Jede Zahl, die sich als Bruch schreiben lässt, positiv oder negativ, zum Beispiel −2,5 oder 3⁄4.",
+    "meilenstein": "6.9.2"
+   },
+   {
+    "wort": "Betrag",
+    "erklaerung": "Der Abstand einer Zahl zur Null. Er ist nie negativ: |−7| = 7.",
+    "meilenstein": "6.9.2"
+   },
+   {
+    "wort": "natürliche Zahl",
+    "erklaerung": "Eine Zahl zum Zählen: 0, 1, 2, 3 … Das Zeichen für alle natürlichen Zahlen ist ℕ. Für die ganzen Zahlen steht ℤ, für die rationalen ℚ.",
+    "meilenstein": "6.9.2"
+   },
+   {
+    "wort": "kleiner als",
+    "erklaerung": "Das Zeichen <. Die kleinere Zahl liegt auf der Zahlengeraden links.",
+    "meilenstein": "6.9.3"
+   },
+   {
+    "wort": "größer als",
+    "erklaerung": "Das Zeichen >. Die größere Zahl liegt auf der Zahlengeraden rechts.",
+    "meilenstein": "6.9.3"
+   },
+   {
+    "wort": "Reihenfolge",
+    "erklaerung": "Wie die Zahlen nacheinander stehen, zum Beispiel von der kleinsten zur größten.",
+    "meilenstein": "6.9.3"
+   },
+   {
+    "wort": "Ungleichung",
+    "erklaerung": "Zwei Zahlen mit dem Zeichen < oder > dazwischen: −5 < −2.",
+    "meilenstein": "6.9.3"
+   },
+   {
+    "wort": "Zunahme",
+    "erklaerung": "Ein Wert wird größer, zum Beispiel wird es wärmer oder mehr Geld kommt aufs Konto.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Abnahme",
+    "erklaerung": "Ein Wert wird kleiner, zum Beispiel wird es kälter oder Geld wird abgebucht.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Kontostand",
+    "erklaerung": "So viel Geld ist auf dem Konto. Ein negativer Kontostand bedeutet Schulden.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Änderung",
+    "erklaerung": "Um wie viel ein Wert größer oder kleiner wird.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Abbuchung",
+    "erklaerung": "Geld geht vom Konto weg. Im Kontoauszug steht der Betrag mit Minus.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Gutschrift",
+    "erklaerung": "Geld kommt auf das Konto. Im Kontoauszug steht der Betrag ohne Minus.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Höhenunterschied",
+    "erklaerung": "Wie weit zwei Höhen auseinanderliegen, zum Beispiel ein Keller und eine Turmspitze.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Temperaturunterschied",
+    "erklaerung": "Wie viele Grad zwei Temperaturen auseinanderliegen.",
+    "meilenstein": "6.9.4"
+   },
+   {
+    "wort": "Zahlenmauer",
+    "erklaerung": "Jeder Stein ist die Summe der beiden Steine darunter.",
+    "meilenstein": "6.9.5"
+   },
+   {
     "wort": "Körper",
     "erklaerung": "Eine Form, die man anfassen kann, zum Beispiel ein Würfel oder eine Kugel."
    },
@@ -61973,11 +62313,6 @@
    {
     "wort": "Oberfläche",
     "erklaerung": "Alle Flächen eines Körpers zusammen."
-   },
-   {
-    "wort": "Strichliste",
-    "erklaerung": "Für jede Antwort machst du einen Strich. Der fünfte Strich geht quer.",
-    "meilenstein": "5.1.1"
    },
    {
     "wort": "Bündel",
@@ -61995,11 +62330,6 @@
     "meilenstein": "5.1.1"
    },
    {
-    "wort": "Gesamtzahl",
-    "erklaerung": "Alle Anzahlen zusammen.",
-    "meilenstein": "5.1.1"
-   },
-   {
     "wort": "Häufigkeitstabelle",
     "erklaerung": "Eine Tabelle, die für jede Antwort die Anzahl zeigt.",
     "meilenstein": "5.1.1"
@@ -62007,11 +62337,6 @@
    {
     "wort": "Urliste",
     "erklaerung": "Die Liste aller Antworten, so wie sie gesammelt wurden, noch ungeordnet.",
-    "meilenstein": "5.1.1"
-   },
-   {
-    "wort": "Häufigkeit",
-    "erklaerung": "Wie oft eine Antwort vorkommt.",
     "meilenstein": "5.1.1"
    },
    {
@@ -62088,11 +62413,6 @@
     "wort": "Rangfolge",
     "erklaerung": "Die Reihenfolge vom größten zum kleinsten Wert.",
     "meilenstein": "5.1.4"
-   },
-   {
-    "wort": "Umfrage",
-    "erklaerung": "Du stellst vielen Leuten dieselbe Frage und zählst die Antworten.",
-    "meilenstein": "5.1.5"
    },
    {
     "wort": "Antwort",
@@ -62192,11 +62512,6 @@
    {
     "wort": "Schätzwert",
     "erklaerung": "Das Ergebnis einer Schätzung.",
-    "meilenstein": "5.2.4"
-   },
-   {
-    "wort": "Stichprobe",
-    "erklaerung": "Ein kleiner Teil, den man genau zählt, um auf das Ganze zu schließen.",
     "meilenstein": "5.2.4"
    },
    {
@@ -62432,11 +62747,6 @@
    {
     "wort": "Regel",
     "erklaerung": "Sie sagt, wie du von einer Zahl zur nächsten kommst.",
-    "meilenstein": "5.4.X1"
-   },
-   {
-    "wort": "Zahlenmauer",
-    "erklaerung": "Jeder Stein ist die Summe der beiden Steine darunter.",
     "meilenstein": "5.4.X1"
    },
    {
@@ -62715,11 +63025,6 @@
     "meilenstein": "5.6.2"
    },
    {
-    "wort": "Betrag",
-    "erklaerung": "So viel Geld, zum Beispiel 3 € 50 ct.",
-    "meilenstein": "5.6.2"
-   },
-   {
     "wort": "Stückpreis",
     "erklaerung": "So viel kostet ein einzelnes Stück.",
     "meilenstein": "5.6.2"
@@ -62957,11 +63262,6 @@
    {
     "wort": "gestreckt",
     "erklaerung": "Ein gestreckter Winkel hat 180°. Seine Schenkel bilden eine Gerade.",
-    "meilenstein": "5.7.3"
-   },
-   {
-    "wort": "Vollwinkel",
-    "erklaerung": "Ein Winkel mit 360°: eine ganze Drehung.",
     "meilenstein": "5.7.3"
    },
    {
@@ -94467,6 +94767,3821 @@
      {
       "art": "frei",
       "grund": "Multiplizieren mit einem Bruch unter 1 verkleinert"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-F-01",
+    "lernziel": "6.9.1-N1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf das Thermometer.\nLies die Temperatur ab.",
+    "loesung": -7,
+    "typischeFehler": [
+     {
+      "wert": 7,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -3,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Unter der Null sind die Temperaturen negativ. Sie haben ein Minus.",
+     "beispiel": "Drei Striche unter der Null sind es −3 °C.",
+     "loesungsschritt": "Zähle die Striche von der Null nach unten. Schreibe ein Minus davor."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−7"
+     }
+    ],
+    "einheit": "°C",
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -7
+      }
+     ]
+    }
+   },
+   {
+    "id": "6.9.1-N1-F-02",
+    "lernziel": "6.9.1-N1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Es sind 4 Grad unter null.\nKreuze die passende Temperatur an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "0 °C",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "−4 °C",
+      "richtig": true
+     },
+     {
+      "text": "4 °C",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Unter null heißt: Die Zahl bekommt ein Minus.",
+     "beispiel": "3 Grad unter null sind −3 °C.",
+     "loesungsschritt": "Schau auf das Thermometer. Liegt die rote Säule über oder unter der Null?"
+    },
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -4
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "4",
+      "wort": "unter",
+      "negativ": true
+     },
+     {
+      "art": "wert",
+      "wert": "−4"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-F-03",
+    "lernziel": "6.9.1-N1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Die Thermometer zeigen drei Temperaturen an einem Tag.\nKreuze an, wann es am kältesten war.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "abends",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "morgens",
+      "richtig": true
+     },
+     {
+      "text": "mittags",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Je weiter unten die Säule steht, desto kälter ist es.",
+     "beispiel": "−8 °C ist kälter als −2 °C.",
+     "loesungsschritt": "Suche das Thermometer mit der niedrigsten Säule."
+    },
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -9,
+       "name": "morgens"
+      },
+      {
+       "wert": -1,
+       "name": "mittags"
+      },
+      {
+       "wert": 6,
+       "name": "abends"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "thermowahl",
+      "was": "kaeltestes"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-F-04",
+    "lernziel": "6.9.1-N1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Die Tiefgarage ist 4 Stockwerke unter dem Erdgeschoss.\nDas Erdgeschoss hat die Nummer 0.\nSchreibe das Stockwerk der Tiefgarage als Zahl mit Vorzeichen.",
+    "loesung": -4,
+    "typischeFehler": [
+     {
+      "wert": 4,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Stockwerke unter dem Erdgeschoss bekommen ein Minus.",
+     "beispiel": "Zwei Stockwerke unter dem Erdgeschoss ist −2.",
+     "loesungsschritt": "Starte an der Zahlengeraden bei der Null. Gehe so viele Schritte nach links, wie die Tiefgarage tiefer liegt."
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "4",
+      "wort": "unter",
+      "negativ": true
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -5,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      0
+     ]
+    }
+   },
+   {
+    "id": "6.9.1-N1-F-05",
+    "lernziel": "6.9.1-N1",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Die Thermometer zeigen die Temperatur in zwei Orten.\nKreuze an, wo es wärmer ist.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Kiruna",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "Zermatt",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Je weiter oben die Säule steht, desto wärmer ist es.",
+     "beispiel": "−2 °C ist wärmer als −8 °C.",
+     "loesungsschritt": "Vergleiche die Höhe der beiden Säulen."
+    },
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -2,
+       "name": "Zermatt"
+      },
+      {
+       "wert": -8,
+       "name": "Kiruna"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "thermowahl",
+      "was": "waermstes"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-F-06",
+    "lernziel": "6.9.1-N1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf das Thermometer.\nLies die Temperatur ab.",
+    "loesung": -14,
+    "typischeFehler": [
+     {
+      "wert": 14,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -6,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Unter der Null sind die Temperaturen negativ. Sie haben ein Minus.",
+     "beispiel": "Drei Striche unter der Null sind es −3 °C.",
+     "loesungsschritt": "Zähle die Striche von der Null nach unten. Schreibe ein Minus davor."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−14"
+     }
+    ],
+    "einheit": "°C",
+    "bild": {
+     "art": "thermometer",
+     "von": -20,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -14
+      }
+     ]
+    }
+   },
+   {
+    "id": "6.9.1-N1-G-01",
+    "lernziel": "6.9.1-N1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Auf dem Konto sind 54 € Schulden.\nSchreibe die Angabe als Zahl mit Vorzeichen.",
+    "loesung": -54,
+    "typischeFehler": [
+     {
+      "wert": 54,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Unter null, unter dem Meeresspiegel, Schulden und Jahre vor Christus sind negativ.",
+     "beispiel": "20 m unter dem Meeresspiegel schreibt man als −20 m.",
+     "loesungsschritt": "Entscheide: Liegt die Angabe über oder unter null? Setze das passende Vorzeichen."
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "54",
+      "wort": "Schulden",
+      "negativ": true
+     }
+    ],
+    "einheit": "€"
+   },
+   {
+    "id": "6.9.1-N1-G-02",
+    "lernziel": "6.9.1-N1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zuordnen",
+    "text": "Ordne jeder Angabe die passende Zahl zu.",
+    "paare": [
+     {
+      "links": "48 Grad unter null",
+      "rechts": "−48 °C"
+     },
+     {
+      "links": "3 € Guthaben",
+      "rechts": "3 €"
+     },
+     {
+      "links": "88 € Schulden",
+      "rechts": "−88 €"
+     },
+     {
+      "links": "20 m unter dem Meeresspiegel",
+      "rechts": "−20 m"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Unter null und Schulden sind negativ. Guthaben ist positiv.",
+     "beispiel": "5 € Schulden sind −5 €.",
+     "loesungsschritt": "Schau zuerst auf die Einheit. Entscheide dann über das Vorzeichen."
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Alltagsangaben mit Vorzeichen, jede Einheit kommt mit einer anderen Zahl vor"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-G-03",
+    "lernziel": "6.9.1-N1",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf das Thermometer.\nEin Strich bedeutet hier 2 Grad.\nLies die Temperatur ab.",
+    "loesung": -2,
+    "typischeFehler": [
+     {
+      "wert": 2,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -1,
+      "fehlvorstellung": "strahl-einerschritte"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Achte auf die Skala: Ein Strich bedeutet hier 2 Grad.",
+     "beispiel": "Zwei Striche unter −10 °C sind es −14 °C.",
+     "loesungsschritt": "Zähle von der nächsten beschrifteten Zahl in Zweierschritten bis zur Säule."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−2"
+     }
+    ],
+    "einheit": "°C",
+    "bild": {
+     "art": "thermometer",
+     "von": -20,
+     "bis": 30,
+     "schritt": 2,
+     "beschriftung": 10,
+     "saeulen": [
+      {
+       "wert": -2
+      }
+     ]
+    }
+   },
+   {
+    "id": "6.9.1-N1-G-04",
+    "lernziel": "6.9.1-N1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Ein Kontoauszug zeigt den Kontostand −41 €.\nKreuze an, was das bedeutet.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "41 € abgehoben",
+      "richtig": false,
+      "fehlvorstellung": "begriffe-verwechselt"
+     },
+     {
+      "text": "41 € Guthaben",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "41 € Schulden",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ein negativer Kontostand bedeutet Schulden.",
+     "beispiel": "−30 € heißt: 30 € Schulden.",
+     "loesungsschritt": "Achte auf das Vorzeichen. Minus heißt: Es fehlt Geld."
+    },
+    "daten": {
+     "art": "auszug",
+     "kopf": [
+      "Buchung",
+      "Betrag"
+     ],
+     "zeilen": [
+      [
+       "Kontostand",
+       "−41 €"
+      ]
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Ein negativer Kontostand bedeutet Schulden"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-G-05",
+    "lernziel": "6.9.1-N1",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Noah liest am Thermometer −3 °C ab.\nDas ist falsch.\nKreuze die richtige Temperatur an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "7 °C",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "−12 °C",
+      "richtig": false,
+      "fehlvorstellung": "strahl-einerschritte"
+     },
+     {
+      "text": "−7 °C",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Unter der Null werden die Zahlen nach unten immer kleiner.",
+     "beispiel": "Zwei Striche unter −5 °C sind es −7 °C.",
+     "loesungsschritt": "Suche die beschriftete Zahl über der Säule. Zähle von dort nach unten."
+    },
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -7
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−7"
+     },
+     {
+      "art": "wert",
+      "wert": "−7"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-G-06",
+    "lernziel": "6.9.1-N1",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "Ein Vogel fliegt 78 m über dem Meer.\nEin Fisch schwimmt 79 m unter der Wasseroberfläche.\nDie Wasseroberfläche hat die Höhe 0 m.\nSchreibe beide Höhen als Zahlen mit Vorzeichen.\nVogel: {{a}} m\nFisch: {{b}} m",
+    "luecken": {
+     "a": {
+      "loesung": 78,
+      "typischeFehler": [
+       {
+        "wert": -78,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     },
+     "b": {
+      "loesung": -79,
+      "typischeFehler": [
+       {
+        "wert": 79,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     }
+    },
+    "hilfen": {
+     "tipp": "Über der Wasseroberfläche ist positiv, darunter negativ.",
+     "beispiel": "5 m unter Wasser sind −5 m.",
+     "loesungsschritt": "Entscheide für jede Angabe: über oder unter 0 m?"
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "78",
+      "wort": "über",
+      "negativ": false
+     },
+     {
+      "art": "kontext",
+      "betrag": "79",
+      "wort": "unter",
+      "negativ": true
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-M-01",
+    "lernziel": "6.9.1-N1",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Ein Kellerboden liegt 2,27 m unter der Straße.\nSchreibe die Angabe als Zahl mit Vorzeichen.",
+    "loesung": "−2,27",
+    "typischeFehler": [
+     {
+      "wert": "2,27",
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Angaben unter einem Vergleichswert und Schulden sind negativ.",
+     "loesungsschritt": "Setze das Minuszeichen vor die Dezimalzahl."
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "2,27",
+      "wort": "unter",
+      "negativ": true
+     }
+    ],
+    "einheit": "m"
+   },
+   {
+    "id": "6.9.1-N1-M-02",
+    "lernziel": "6.9.1-N1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Kreuze alle Angaben an, die man mit einer negativen Zahl schreibt.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "7. Untergeschoss",
+      "richtig": true
+     },
+     {
+      "text": "69,50 € Schulden",
+      "richtig": true
+     },
+     {
+      "text": "72 € Guthaben",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "707 m über dem Meeresspiegel",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "14 Grad unter null",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Negativ ist alles, was unter einem Nullpunkt liegt: unter null, unter dem Erdgeschoss, Schulden.",
+     "loesungsschritt": "Prüfe jede Angabe einzeln: Liegt sie über oder unter dem Nullpunkt?"
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Unter null, Schulden und Untergeschoss sind negativ, über dem Meeresspiegel und Guthaben positiv"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-M-03",
+    "lernziel": "6.9.1-N1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "Der tiefste Punkt der Niederlande liegt 7 m unter dem Meeresspiegel. Die Burg liegt 942 m über dem Meeresspiegel.\nSchreibe beide Höhen als Zahlen mit Vorzeichen.\nUfer oder Stadt: {{a}} m\nBurg: {{b}} m",
+    "luecken": {
+     "a": {
+      "loesung": -7,
+      "typischeFehler": [
+       {
+        "wert": 7,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     },
+     "b": {
+      "loesung": 942,
+      "typischeFehler": [
+       {
+        "wert": -942,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     }
+    },
+    "hilfen": {
+     "tipp": "Der Meeresspiegel hat die Höhe 0 m.",
+     "loesungsschritt": "Unter dem Meeresspiegel steht ein Minus, darüber nicht."
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "7",
+      "wort": "unter",
+      "negativ": true
+     },
+     {
+      "art": "kontext",
+      "betrag": "942",
+      "wort": "über",
+      "negativ": false
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-M-04",
+    "lernziel": "6.9.1-N1",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Ein Thermometer zeigt −8,7 °C.\nKreuze den passenden Satz an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Es ist 8,7 Grad unter null.",
+      "richtig": true
+     },
+     {
+      "text": "Es ist 8,7 Grad über null.",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "Es ist 9,7 Grad unter null.",
+      "richtig": false,
+      "fehlvorstellung": "strahl-einerschritte"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Das Minus heißt: unter null.",
+     "loesungsschritt": "Lies die Zahl ohne Vorzeichen und entscheide dann: über oder unter null?"
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Eine negative Temperatur liegt unter null"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N1-M-05",
+    "lernziel": "6.9.1-N1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Ein Laden macht in einem Monat 4,57 € Verlust.\nSchreibe den Verlust als Zahl mit Vorzeichen.",
+    "loesung": "−4,57",
+    "typischeFehler": [
+     {
+      "wert": "4,57",
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ein Gewinn ist positiv, ein Verlust negativ.",
+     "loesungsschritt": "Setze ein Minus vor die Zahl."
+    },
+    "nachweis": [
+     {
+      "art": "kontext",
+      "betrag": "4,57",
+      "wort": "Verlust",
+      "negativ": true
+     }
+    ],
+    "einheit": "€"
+   },
+   {
+    "id": "6.9.1-N1-M-06",
+    "lernziel": "6.9.1-N1",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zuordnen",
+    "text": "Ordne jeder Angabe die passende Zahl zu.",
+    "paare": [
+     {
+      "links": "245 € Guthaben",
+      "rechts": "245 €"
+     },
+     {
+      "links": "475 € Schulden",
+      "rechts": "−475 €"
+     },
+     {
+      "links": "754 m unter dem Meeresspiegel",
+      "rechts": "−754 m"
+     },
+     {
+      "links": "3,2 Grad unter null",
+      "rechts": "−3,2 °C"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Schulden und Angaben unter null sind negativ.",
+     "loesungsschritt": "Achte auf die Einheit und auf das Vorzeichen."
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Alltagsangaben mit Vorzeichen, jede Einheit kommt mit einer anderen Zahl vor"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-F-01",
+    "lernziel": "6.9.1-N2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf die Zahlengerade.\nLies die Zahl ab, auf die der Pfeil zeigt.",
+    "loesung": -9,
+    "typischeFehler": [
+     {
+      "wert": 9,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -1,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Links von der Null stehen die negativen Zahlen. Zähle von einer beschrifteten Zahl aus.",
+     "beispiel": "Zwei Striche links von −5 steht −7.",
+     "loesungsschritt": "Suche die nächste beschriftete Zahl. Zähle von dort die Striche bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−9"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "pfeil": -9
+    }
+   },
+   {
+    "id": "6.9.1-N2-F-02",
+    "lernziel": "6.9.1-N2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Markiere −7 an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5
+    },
+    "loesung": -7,
+    "typischeFehler": [
+     {
+      "wert": 7,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -3,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Negative Zahlen stehen links von der Null.",
+     "beispiel": "−3 liegt drei Striche links von der Null.",
+     "loesungsschritt": "Starte bei der nächsten beschrifteten Zahl. Gehe so viele Striche weiter, wie noch fehlen."
+    },
+    "nachweis": [
+     {
+      "art": "angabe",
+      "wert": "−7"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-F-03",
+    "lernziel": "6.9.1-N2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf die Zahlengerade.\nLies die Zahl ab, auf die der Pfeil zeigt.",
+    "loesung": -14,
+    "typischeFehler": [
+     {
+      "wert": 14,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -6,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Links von der Null stehen die negativen Zahlen. Zähle von einer beschrifteten Zahl aus.",
+     "beispiel": "Zwei Striche links von −5 steht −7.",
+     "loesungsschritt": "Suche die nächste beschriftete Zahl. Zähle von dort die Striche bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−14"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 0,
+     "schritt": 1,
+     "beschriftung": 5,
+     "pfeil": -14
+    }
+   },
+   {
+    "id": "6.9.1-N2-F-04",
+    "lernziel": "6.9.1-N2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Markiere −18 an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 5,
+     "schritt": 1,
+     "beschriftung": 5
+    },
+    "loesung": -18,
+    "typischeFehler": [
+     {
+      "wert": -12,
+      "fehlvorstellung": "strahl-gespiegelt"
+     },
+     {
+      "wert": -8,
+      "fehlvorstellung": "stellenwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Negative Zahlen stehen links von der Null.",
+     "beispiel": "−3 liegt drei Striche links von der Null.",
+     "loesungsschritt": "Starte bei der nächsten beschrifteten Zahl. Gehe so viele Striche weiter, wie noch fehlen."
+    },
+    "nachweis": [
+     {
+      "art": "angabe",
+      "wert": "−18"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-F-05",
+    "lernziel": "6.9.1-N2",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Zahlengerade.\nKreuze die Zahl an, auf die der Pfeil zeigt.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "−4",
+      "richtig": false,
+      "fehlvorstellung": "strahl-gespiegelt"
+     },
+     {
+      "text": "6",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "−6",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Links von der Null stehen die negativen Zahlen. Zähle von einer beschrifteten Zahl aus.",
+     "beispiel": "Zwei Striche links von −5 steht −7.",
+     "loesungsschritt": "Suche die nächste beschriftete Zahl. Zähle von dort die Striche bis zum Pfeil."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "pfeil": -6
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−6"
+     },
+     {
+      "art": "wert",
+      "wert": "−6"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-F-06",
+    "lernziel": "6.9.1-N2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf die Zahlengerade.\nVon Strich zu Strich sind es 2.\nLies die Zahl ab, auf die der Pfeil zeigt.",
+    "loesung": -4,
+    "typischeFehler": [
+     {
+      "wert": 4,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -2,
+      "fehlvorstellung": "strahl-einerschritte"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Achte auf die Einteilung: Ein Strich bedeutet hier 2.",
+     "beispiel": "Ein Strich links von −10 steht −12.",
+     "loesungsschritt": "Zähle von der nächsten beschrifteten Zahl in Zweierschritten bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−4"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 10,
+     "schritt": 2,
+     "beschriftung": 10,
+     "pfeil": -4
+    }
+   },
+   {
+    "id": "6.9.1-N2-G-01",
+    "lernziel": "6.9.1-N2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt.",
+    "loesung": -10,
+    "typischeFehler": [
+     {
+      "wert": 10,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -2,
+      "fehlvorstellung": "strahl-einerschritte"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Bestimme zuerst, wie viel ein Strich bedeutet.",
+     "beispiel": "Zwischen 0 und −25 liegen 5 Striche. Ein Strich ist 5.",
+     "loesungsschritt": "Zähle von der nächsten beschrifteten Zahl in Fünferschritten bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−10"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -50,
+     "bis": 50,
+     "schritt": 5,
+     "beschriftung": 25,
+     "pfeil": -10
+    }
+   },
+   {
+    "id": "6.9.1-N2-G-02",
+    "lernziel": "6.9.1-N2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Markiere −20 an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -100,
+     "bis": 20,
+     "schritt": 10,
+     "beschriftung": 50
+    },
+    "loesung": -20,
+    "typischeFehler": [
+     {
+      "wert": 20,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ein Strich bedeutet hier 10.",
+     "beispiel": "−70 liegt zwei Striche links von −50.",
+     "loesungsschritt": "Suche die nächste beschriftete Zahl. Gehe in Zehnerschritten weiter."
+    },
+    "nachweis": [
+     {
+      "art": "angabe",
+      "wert": "−20"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-G-03",
+    "lernziel": "6.9.1-N2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt.",
+    "loesung": -34,
+    "typischeFehler": [
+     {
+      "wert": 34,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -32,
+      "fehlvorstellung": "strahl-einerschritte"
+     },
+     {
+      "wert": -26,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ein Strich bedeutet hier 2.",
+     "beispiel": "Zwei Striche links von −20 steht −24.",
+     "loesungsschritt": "Zähle von der nächsten beschrifteten Zahl in Zweierschritten bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−34"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -40,
+     "bis": 20,
+     "schritt": 2,
+     "beschriftung": 10,
+     "pfeil": -34
+    }
+   },
+   {
+    "id": "6.9.1-N2-G-04",
+    "lernziel": "6.9.1-N2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Markiere −23 an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -30,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 10
+    },
+    "loesung": -23,
+    "typischeFehler": [
+     {
+      "wert": -17,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Negative Zahlen stehen links von der Null.",
+     "beispiel": "−3 liegt drei Striche links von der Null.",
+     "loesungsschritt": "Starte bei der nächsten beschrifteten Zahl. Gehe so viele Striche weiter, wie noch fehlen."
+    },
+    "nachweis": [
+     {
+      "art": "angabe",
+      "wert": "−23"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-G-05",
+    "lernziel": "6.9.1-N2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "Die Zahlen steigen immer um 5.\nErgänze die nächsten beiden Zahlen.\n−48, −43, −38, {{a}}, {{b}}",
+    "luecken": {
+     "a": {
+      "loesung": -33,
+      "typischeFehler": [
+       {
+        "wert": -43,
+        "fehlvorstellung": "richtung-vertauscht"
+       },
+       {
+        "wert": 33,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     },
+     "b": {
+      "loesung": -28,
+      "typischeFehler": [
+       {
+        "wert": -48,
+        "fehlvorstellung": "richtung-vertauscht"
+       },
+       {
+        "wert": 28,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     }
+    },
+    "hilfen": {
+     "tipp": "Steigen heißt: Auf der Zahlengeraden geht es nach rechts. Negative Zahlen werden dabei näher an der Null.",
+     "beispiel": "Von −30 aus um 3 gestiegen ist −27.",
+     "loesungsschritt": "Rechne immer plus 5."
+    },
+    "nachweis": [
+     "−38 + 5 = −33",
+     "−33 + 5 = −28"
+    ]
+   },
+   {
+    "id": "6.9.1-N2-G-06",
+    "lernziel": "6.9.1-N2",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "luecken",
+    "text": "Ergänze die beiden Nachbarzahlen. {{a}} < −15 < {{b}}",
+    "luecken": {
+     "a": {
+      "loesung": -16,
+      "typischeFehler": [
+       {
+        "wert": -14,
+        "fehlvorstellung": "negativ-groesser"
+       },
+       {
+        "wert": 16,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     },
+     "b": {
+      "loesung": -14,
+      "typischeFehler": [
+       {
+        "wert": -16,
+        "fehlvorstellung": "negativ-groesser"
+       },
+       {
+        "wert": 14,
+        "fehlvorstellung": "vorzeichen-vergessen"
+       }
+      ]
+     }
+    },
+    "hilfen": {
+     "tipp": "Die kleinere Nachbarzahl liegt links, die größere rechts.",
+     "beispiel": "Die Nachbarzahlen von −40 sind −41 und −39.",
+     "loesungsschritt": "Gehe von der Zahl einen Schritt nach links und einen nach rechts."
+    },
+    "nachweis": [
+     "−15 − 1 = −16",
+     "−15 + 1 = −14"
+    ]
+   },
+   {
+    "id": "6.9.1-N2-M-01",
+    "lernziel": "6.9.1-N2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt.",
+    "loesung": -180,
+    "typischeFehler": [
+     {
+      "wert": 180,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -108,
+      "fehlvorstellung": "strahl-einerschritte"
+     },
+     {
+      "wert": -20,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Bestimme zuerst, wie viel ein Strich bedeutet.",
+     "loesungsschritt": "Zähle von der nächsten beschrifteten Zahl in passenden Schritten bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−180"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -300,
+     "bis": 100,
+     "schritt": 10,
+     "beschriftung": 100,
+     "pfeil": -180
+    }
+   },
+   {
+    "id": "6.9.1-N2-M-02",
+    "lernziel": "6.9.1-N2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Markiere −100 an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -500,
+     "bis": 500,
+     "schritt": 50,
+     "beschriftung": 250
+    },
+    "loesung": -100,
+    "typischeFehler": [
+     {
+      "wert": 100,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Bestimme zuerst, wie viel ein Strich bedeutet.",
+     "loesungsschritt": "Zwischen zwei beschrifteten Zahlen liegen 5 Striche. Gehe von der nächsten beschrifteten Zahl weiter."
+    },
+    "nachweis": [
+     {
+      "art": "angabe",
+      "wert": "−100"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-M-03",
+    "lernziel": "6.9.1-N2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Bestimme die Zahl, die genau in der Mitte zwischen −29 und 51 liegt.",
+    "loesung": 11,
+    "typischeFehler": [
+     {
+      "wert": 40,
+      "fehlvorstellung": "abstand-ueber-null"
+     },
+     {
+      "wert": -11,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": 22,
+      "fehlvorstellung": "sach-schritt-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Mitte ist von beiden Zahlen gleich weit entfernt.",
+     "loesungsschritt": "Zähle die Schritte zwischen den Zahlen. Gehe die Hälfte davon von der linken Zahl nach rechts."
+    },
+    "nachweis": [
+     "51 − (−29) = 80",
+     "80 : 2 = 40",
+     "−29 + 40 = 11"
+    ]
+   },
+   {
+    "id": "6.9.1-N2-M-04",
+    "lernziel": "6.9.1-N2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt.",
+    "loesung": -58,
+    "typischeFehler": [
+     {
+      "wert": 58,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "wert": -49,
+      "fehlvorstellung": "strahl-einerschritte"
+     },
+     {
+      "wert": -22,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Bestimme zuerst, wie viel ein Strich bedeutet.",
+     "loesungsschritt": "Zähle von der nächsten beschrifteten Zahl in Zweierschritten bis zum Pfeil."
+    },
+    "nachweis": [
+     {
+      "art": "bild",
+      "wert": "−58"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -60,
+     "bis": 20,
+     "schritt": 2,
+     "beschriftung": 20,
+     "pfeil": -58
+    }
+   },
+   {
+    "id": "6.9.1-N2-M-05",
+    "lernziel": "6.9.1-N2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Kreuze alle Zahlen an, für die gilt: −20 < ▢ < −14",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "18",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "−21",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−15",
+      "richtig": true
+     },
+     {
+      "text": "−12",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−19",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Zahl muss rechts von der ersten und links von der zweiten Zahl liegen.",
+     "loesungsschritt": "Prüfe jede Antwort an der Zahlengeraden in Gedanken."
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−20 < ▢ < −14"
+     }
+    ]
+   },
+   {
+    "id": "6.9.1-N2-M-06",
+    "lernziel": "6.9.1-N2",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Bestimme, wie viele ganze Zahlen zwischen −19 und 18 liegen.",
+    "loesung": 36,
+    "typischeFehler": [
+     {
+      "wert": 37,
+      "fehlvorstellung": "sach-schritt-vergessen"
+     },
+     {
+      "wert": -2,
+      "fehlvorstellung": "abstand-ueber-null"
+     },
+     {
+      "wert": 38,
+      "fehlvorstellung": "sach-schritt-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zähle die negativen Zahlen, die Null und die positiven Zahlen dazwischen.",
+     "loesungsschritt": "Die beiden Grenzen zählen nicht mit."
+    },
+    "nachweis": [
+     {
+      "art": "zaehle",
+      "von": "−19",
+      "bis": "18"
+     }
+    ]
+   },
+   {
+    "id": "6.9.2-R2-F-01",
+    "lernziel": "6.9.2-R2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Der Punkt liegt bei −8.\nZähle die Schritte von dort bis zur Null.",
+    "loesung": 8,
+    "typischeFehler": [
+     {
+      "wert": -8,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "wert": 2,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Abstand zur Null ist die Zahl der Schritte bis zur Null. Er hat kein Minus.",
+     "beispiel": "Von −4 bis zur Null sind es 4 Schritte.",
+     "loesungsschritt": "Zähle die Schritte von der Zahl bis zur Null."
+    },
+    "nachweis": [
+     "0 − (−8) = 8"
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -8
+     ]
+    }
+   },
+   {
+    "id": "6.9.2-R2-F-02",
+    "lernziel": "6.9.2-R2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf die Zahlengerade.\nGib die Gegenzahl von −9 an.",
+    "loesung": 9,
+    "typischeFehler": [
+     {
+      "wert": -9,
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − (−9) = 9"
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -9
+     ]
+    }
+   },
+   {
+    "id": "6.9.2-R2-F-03",
+    "lernziel": "6.9.2-R2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Die Zahl 6 hat eine Gegenzahl.\nMarkiere die Gegenzahl an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5
+    },
+    "loesung": -6,
+    "typischeFehler": [
+     {
+      "wert": 6,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "wert": -4,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − 6 = −6"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-F-04",
+    "lernziel": "6.9.2-R2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Der Punkt liegt bei 8.\nEine andere Zahl ist gleich weit von der Null entfernt.\nGib diese Zahl an.",
+    "loesung": -8,
+    "typischeFehler": [
+     {
+      "wert": 8,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "wert": 0,
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − 8 = −8"
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      8
+     ]
+    }
+   },
+   {
+    "id": "6.9.2-R2-F-05",
+    "lernziel": "6.9.2-R2",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nKreuze die Zahl mit dem größten Abstand zur Null an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "−1",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−8",
+      "richtig": true
+     },
+     {
+      "text": "2",
+      "richtig": false,
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zähle bei jeder Zahl die Schritte bis zur Null.",
+     "beispiel": "−7 ist weiter von der Null entfernt als 4.",
+     "loesungsschritt": "Zähle für jeden Punkt die Schritte bis zur Null. Vergleiche."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -8,
+      2,
+      -1
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "nullfern"
+     }
+    ]
+   },
+   {
+    "id": "6.9.2-R2-F-06",
+    "lernziel": "6.9.2-R2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Schau auf die Zahlengerade.\nGib die Gegenzahl von 18 an.",
+    "loesung": -18,
+    "typischeFehler": [
+     {
+      "wert": 18,
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − 18 = −18"
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 20,
+     "schritt": 2,
+     "beschriftung": 10,
+     "punkte": [
+      18
+     ]
+    }
+   },
+   {
+    "id": "6.9.2-R2-G-01",
+    "lernziel": "6.9.2-R2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Gib die Gegenzahl von −2,8 an.",
+    "loesung": "2,8",
+    "typischeFehler": [
+     {
+      "wert": "−2,8",
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − (−2,8) = 2,8"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-G-02",
+    "lernziel": "6.9.2-R2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Der Punkt liegt bei −0,6.\nBestimme den Abstand zur Null.",
+    "loesung": "0,6",
+    "typischeFehler": [
+     {
+      "wert": "−0,6",
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Der Abstand zur Null ist die Zahl der Schritte bis zur Null. Er hat kein Minus.",
+     "beispiel": "Von −4 bis zur Null sind es 4 Schritte.",
+     "loesungsschritt": "Zähle die Schritte von der Zahl bis zur Null."
+    },
+    "nachweis": [
+     "0 − (−0,6) = 0,6"
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 20,
+     "schritt": 1,
+     "beschriftung": 10,
+     "teiler": 10,
+     "punkte": [
+      -6
+     ]
+    }
+   },
+   {
+    "id": "6.9.2-R2-G-03",
+    "lernziel": "6.9.2-R2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Eine Zahl hat die Gegenzahl −61.\nGib die Zahl an.",
+    "loesung": 61,
+    "typischeFehler": [
+     {
+      "wert": -61,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "wert": 0,
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − (−61) = 61"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-G-04",
+    "lernziel": "6.9.2-R2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Die Zahl 1,2 hat eine Gegenzahl.\nMarkiere die Gegenzahl an der Zahlengeraden.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 20,
+     "schritt": 1,
+     "beschriftung": 10,
+     "teiler": 10
+    },
+    "loesung": -12,
+    "typischeFehler": [
+     {
+      "wert": 12,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "wert": -8,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite.",
+     "beispiel": "Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5.",
+     "loesungsschritt": "Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit."
+    },
+    "nachweis": [
+     "0 − 1,2 = −1,2"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-G-05",
+    "lernziel": "6.9.2-R2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahlenstrahl",
+    "eingabe": "markieren",
+    "text": "Zwei Zahlen haben den Abstand 9 zur Null.\nMarkiere die kleinere der beiden Zahlen.",
+    "strahl": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5
+    },
+    "loesung": -9,
+    "typischeFehler": [
+     {
+      "wert": 9,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "wert": -1,
+      "fehlvorstellung": "strahl-gespiegelt"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zwei Zahlen sind gleich weit von der Null entfernt: eine links, eine rechts.",
+     "beispiel": "Den Abstand 4 zur Null haben −4 und 4. Die kleinere Zahl ist −4.",
+     "loesungsschritt": "Finde beide Zahlen. Die kleinere liegt links."
+    },
+    "nachweis": [
+     "0 − 9 = −9"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-G-06",
+    "lernziel": "6.9.2-R2",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Elif sagt: „Die Gegenzahl einer Zahl ist immer negativ.“\nPrüfe die Aussage.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Stimmt.",
+      "richtig": false,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "text": "Falsch.\nDie Gegenzahl von 2 ist 2.",
+      "richtig": false,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "text": "Falsch.\nDie Gegenzahl von −2 ist 2.",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Probiere es mit einer negativen Zahl aus.",
+     "beispiel": "Die Gegenzahl von −2 ist 2.",
+     "loesungsschritt": "Suche eine Zahl mit einer positiven Gegenzahl."
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Gegenbeispiel: Die Gegenzahl einer negativen Zahl ist positiv"
+     }
+    ]
+   },
+   {
+    "id": "6.9.2-R2-M-01",
+    "lernziel": "6.9.2-R2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "bruch",
+    "text": "Gib die Gegenzahl von −4⁄5 an.",
+    "loesung": "4⁄5",
+    "typischeFehler": [
+     {
+      "wert": "−4⁄5",
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "wert": "1 1⁄4",
+      "fehlvorstellung": "bruch-kehrwert"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl hat denselben Abstand zur Null, aber das andere Vorzeichen.",
+     "loesungsschritt": "Ändere nur das Vorzeichen. Zähler und Nenner bleiben."
+    },
+    "gekuerzt": true,
+    "nachweis": [
+     "0 − (−4⁄5) = 4⁄5"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-M-02",
+    "lernziel": "6.9.2-R2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Gib die Gegenzahl von −2,09 an.",
+    "loesung": "2,09",
+    "typischeFehler": [
+     {
+      "wert": "−2,09",
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Gegenzahl hat dasselbe Zahlenbild, nur das Vorzeichen ist anders.",
+     "loesungsschritt": "Lass das Minus weg."
+    },
+    "nachweis": [
+     "0 − (−2,09) = 2,09"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-M-03",
+    "lernziel": "6.9.2-R2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Kreuze alle Zahlen an, die von der Null den Abstand 7,1 haben.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "−7,1",
+      "richtig": true
+     },
+     {
+      "text": "−1,7",
+      "richtig": false,
+      "fehlvorstellung": "zahl-nach-gehoer"
+     },
+     {
+      "text": "0",
+      "richtig": false,
+      "fehlvorstellung": "betrag-gegenzahl"
+     },
+     {
+      "text": "7,1",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zwei Zahlen haben denselben Abstand zur Null: eine positive und eine negative.",
+     "loesungsschritt": "Suche die Zahl selbst und ihre Gegenzahl."
+    },
+    "nachweis": [
+     {
+      "art": "betragwahl",
+      "betrag": "7,1"
+     }
+    ]
+   },
+   {
+    "id": "6.9.2-R2-M-04",
+    "lernziel": "6.9.2-R2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Gib die Gegenzahl der Gegenzahl von −1,27 an.",
+    "loesung": "−1,27",
+    "typischeFehler": [
+     {
+      "wert": "1,27",
+      "fehlvorstellung": "betrag-gegenzahl"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Bilde zweimal die Gegenzahl. Dabei wechselt das Vorzeichen zweimal.",
+     "loesungsschritt": "Bilde zuerst die Gegenzahl. Bilde dann davon noch einmal die Gegenzahl."
+    },
+    "nachweis": [
+     "0 − (−1,27) = 1,27",
+     "0 − 1,27 = −1,27"
+    ]
+   },
+   {
+    "id": "6.9.2-R2-M-05",
+    "lernziel": "6.9.2-R2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Kreuze alle rationalen Zahlen an, die keine ganzen Zahlen sind.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "−1,6",
+      "richtig": true
+     },
+     {
+      "text": "26",
+      "richtig": false,
+      "fehlvorstellung": "zahlbereich-falsch"
+     },
+     {
+      "text": "0",
+      "richtig": false,
+      "fehlvorstellung": "zahlbereich-falsch"
+     },
+     {
+      "text": "−25",
+      "richtig": false,
+      "fehlvorstellung": "zahlbereich-falsch"
+     },
+     {
+      "text": "2⁄5",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ganze Zahlen haben kein Komma und keinen Bruch. Alle anderen Zahlen hier sind rationale Zahlen, aber keine ganzen.",
+     "loesungsschritt": "Prüfe jede Zahl: Hat sie ein Komma oder einen Bruch?"
+    },
+    "nachweis": [
+     {
+      "art": "frei",
+      "grund": "Dezimalzahlen und Brüche sind rationale, aber keine ganzen Zahlen"
+     }
+    ]
+   },
+   {
+    "id": "6.9.2-R2-M-06",
+    "lernziel": "6.9.2-R2",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "zahl",
+    "text": "Eine Zahl und ihre Gegenzahl liegen 13,8 auseinander.\nGib die negative der beiden Zahlen an.",
+    "loesung": "−6,9",
+    "typischeFehler": [
+     {
+      "wert": "6,9",
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "wert": "−13,8",
+      "fehlvorstellung": "sach-schritt-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Null liegt genau in der Mitte zwischen einer Zahl und ihrer Gegenzahl.",
+     "loesungsschritt": "Halbiere den Abstand. Setze ein Minus davor."
+    },
+    "nachweis": [
+     "13,8 : 2 = 6,9",
+     "0 − 6,9 = −6,9"
+    ]
+   },
+   {
+    "id": "6.9.3-V1-F-01",
+    "lernziel": "6.9.3-V1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nSetze das passende Zeichen ein. −6 ▢ −5",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "<",
+      "richtig": true
+     },
+     {
+      "text": ">",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links.",
+     "beispiel": "−8 liegt links von −3. Also gilt −8 < −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -6,
+      -5
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−6",
+      "rechts": "−5"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-F-02",
+    "lernziel": "6.9.3-V1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nSetze das passende Zeichen ein. 1 ▢ −8",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": ">",
+      "richtig": true
+     },
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "<",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Jede negative Zahl ist kleiner als jede positive Zahl.",
+     "beispiel": "−9 < 2, denn −9 liegt links von 2.",
+     "loesungsschritt": "Schau auf die Zahlengerade. Welche Zahl liegt weiter links?"
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -8,
+      1
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "1",
+      "rechts": "−8"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-F-03",
+    "lernziel": "6.9.3-V1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "probleme-loesen"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nKreuze die kleinste Zahl an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "−1",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−9",
+      "richtig": true
+     },
+     {
+      "text": "4",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links.",
+     "beispiel": "−8 liegt links von −3. Also gilt −8 < −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      4,
+      -1,
+      -9
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "extrem",
+      "was": "kleinstes"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-F-04",
+    "lernziel": "6.9.3-V1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Die Thermometer zeigen die Temperatur in zwei Orten.\nKreuze an, wo es kälter ist.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Moskau",
+      "richtig": true
+     },
+     {
+      "text": "Oslo",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Je weiter unten die Säule steht, desto kälter ist es.",
+     "beispiel": "−8 °C ist kälter als −2 °C.",
+     "loesungsschritt": "Vergleiche die Höhe der beiden Säulen."
+    },
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -7,
+       "name": "Moskau"
+      },
+      {
+       "wert": -5,
+       "name": "Oslo"
+      }
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "thermowahl",
+      "was": "kaeltestes"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-F-05",
+    "lernziel": "6.9.3-V1",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nSetze das passende Zeichen ein. −16 ▢ −18",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "<",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": ">",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links.",
+     "beispiel": "−8 liegt links von −3. Also gilt −8 < −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 0,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -16,
+      -18
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−16",
+      "rechts": "−18"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-F-06",
+    "lernziel": "6.9.3-V1",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Zahlengerade.\nSetze das passende Zeichen ein. 0 ▢ −9",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "<",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": ">",
+      "richtig": true
+     },
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Jede negative Zahl ist kleiner als null.",
+     "beispiel": "−4 < 0, denn −4 liegt links von der Null.",
+     "loesungsschritt": "Suche die Zahl auf der Zahlengeraden. Liegt sie links oder rechts von der Null?"
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -9
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "0",
+      "rechts": "−9"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-G-01",
+    "lernziel": "6.9.3-V1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nSetze das passende Zeichen ein. −60 ▢ −75",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": ">",
+      "richtig": true
+     },
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "<",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links.",
+     "beispiel": "−8 liegt links von −3. Also gilt −8 < −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -100,
+     "bis": 0,
+     "schritt": 5,
+     "beschriftung": 25,
+     "punkte": [
+      -60,
+      -75
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−60",
+      "rechts": "−75"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-G-02",
+    "lernziel": "6.9.3-V1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nSetze das passende Zeichen ein. −1,1 ▢ −0,5",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "<",
+      "richtig": true
+     },
+     {
+      "text": ">",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links.",
+     "beispiel": "−8 liegt links von −3. Also gilt −8 < −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 20,
+     "schritt": 1,
+     "beschriftung": 10,
+     "teiler": 10,
+     "punkte": [
+      -11,
+      -5
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−1,1",
+      "rechts": "−0,5"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-G-03",
+    "lernziel": "6.9.3-V1",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "probleme-loesen"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Punkte an der Zahlengeraden.\nKreuze die größte Zahl an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "−1,5",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−0,2",
+      "richtig": true
+     },
+     {
+      "text": "−0,9",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden weiter links.",
+     "beispiel": "−8 liegt links von −3. Also gilt −8 < −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 20,
+     "schritt": 1,
+     "beschriftung": 10,
+     "teiler": 10,
+     "punkte": [
+      -9,
+      -15,
+      -2
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "extrem",
+      "was": "groesstes"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-G-04",
+    "lernziel": "6.9.3-V1",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze das passende Zeichen ein. −3 1⁄2 ▢ −3,3",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": ">",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "<",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Ein Halb ist 0,5. Schreibe beide Zahlen als Dezimalzahl.",
+     "beispiel": "−1⁄2 = −0,5",
+     "loesungsschritt": "Wandle den Bruch in eine Dezimalzahl um. Vergleiche dann."
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−3 1⁄2",
+      "rechts": "−3,3"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-G-05",
+    "lernziel": "6.9.3-V1",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Prüfe die Aussagen.\nKreuze alle richtigen Aussagen an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "−87,5 > −87",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−87 < −84",
+      "richtig": true
+     },
+     {
+      "text": "84 > −87",
+      "richtig": true
+     },
+     {
+      "text": "0 < −84",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt links. Bei zwei negativen Zahlen ist die Zahl weiter von der Null entfernt die kleinere.",
+     "beispiel": "−45 < −40",
+     "loesungsschritt": "Prüfe jede Aussage einzeln an der Zahlengeraden in Gedanken."
+    },
+    "nachweis": [
+     {
+      "art": "aussagen"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-G-06",
+    "lernziel": "6.9.3-V1",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze eine Zahl in das Kästchen ein: −4 < ▢ < −2\nKreuze die passende Zahl an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "−1,6",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−2,3",
+      "richtig": true
+     },
+     {
+      "text": "−4,4",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die gesuchte Zahl liegt auf der Zahlengeraden zwischen den beiden Zahlen.",
+     "beispiel": "Zwischen −5 und −3 liegt zum Beispiel −4,2.",
+     "loesungsschritt": "Prüfe jede Antwort: Liegt sie rechts von der ersten und links von der zweiten Zahl?"
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−4 < ▢ < −2"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-M-01",
+    "lernziel": "6.9.3-V1",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze das passende Zeichen ein. −4,31 ▢ −4,4",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "<",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-mehr-ziffern"
+     },
+     {
+      "text": ">",
+      "richtig": true
+     },
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-mehr-ziffern"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Vergleiche zuerst ohne Vorzeichen, Stelle für Stelle. Bei zwei negativen Zahlen dreht sich das Zeichen um.",
+     "loesungsschritt": "Schreibe beide Zahlen mit gleich vielen Nachkommastellen. Die Zahl, die weiter von der Null entfernt ist, ist die kleinere."
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−4,31",
+      "rechts": "−4,4"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-M-02",
+    "lernziel": "6.9.3-V1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze das passende Zeichen ein. −2⁄5 ▢ −0,45",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "<",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": ">",
+      "richtig": true
+     },
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Wandle den Bruch in eine Dezimalzahl um. Vergleiche dann.",
+     "loesungsschritt": "Schreibe den Bruch mit dem Nenner 100. Bei zwei negativen Zahlen ist die Zahl weiter von der Null entfernt die kleinere."
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−2⁄5",
+      "rechts": "−0,45"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-M-03",
+    "lernziel": "6.9.3-V1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Prüfe die Aussagen.\nKreuze alle richtigen Aussagen an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "0,98 > −1,8",
+      "richtig": true
+     },
+     {
+      "text": "0 > −0,61",
+      "richtig": true
+     },
+     {
+      "text": "−1,8 > −0,61",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−0,61 < −0,98",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinere Zahl liegt auf der Zahlengeraden links.",
+     "loesungsschritt": "Prüfe jede Aussage einzeln. Achte besonders auf zwei negative Zahlen."
+    },
+    "nachweis": [
+     {
+      "art": "aussagen"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-M-04",
+    "lernziel": "6.9.3-V1",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze das passende Zeichen ein. −4⁄5 ▢ −1⁄5",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "<",
+      "richtig": true
+     },
+     {
+      "text": ">",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "=",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Bei gleichem Nenner entscheidet der Zähler. Bei negativen Brüchen dreht sich das Zeichen um.",
+     "loesungsschritt": "Vergleiche erst die Brüche ohne Vorzeichen. Der Bruch weiter weg von der Null ist hier der kleinere."
+    },
+    "nachweis": [
+     {
+      "art": "vergleich",
+      "links": "−4⁄5",
+      "rechts": "−1⁄5"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-M-05",
+    "lernziel": "6.9.3-V1",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "probleme-loesen"
+    ],
+    "format": "auswahl",
+    "text": "Kreuze die kleinste Zahl an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "−1⁄4",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-mehr-ziffern"
+     },
+     {
+      "text": "−0,53",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-mehr-ziffern"
+     },
+     {
+      "text": "−0,8",
+      "richtig": true
+     },
+     {
+      "text": "0,2",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-mehr-ziffern"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Schreibe alle Zahlen als Dezimalzahl mit zwei Nachkommastellen.",
+     "loesungsschritt": "Die kleinste Zahl liegt am weitesten links: die negative Zahl, die am weitesten von der Null entfernt ist."
+    },
+    "nachweis": [
+     {
+      "art": "extrem",
+      "was": "kleinstes"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V1-M-06",
+    "lernziel": "6.9.3-V1",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "argumentieren"
+    ],
+    "format": "auswahl",
+    "text": "Ali sagt: „−0,24 ist größer als −0,2, weil 24 größer ist als 2.“\nPrüfe die Aussage.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Stimmt.",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-wie-natuerlich"
+     },
+     {
+      "text": "Falsch. Richtig ist: −0,24 = −0,2.",
+      "richtig": false,
+      "fehlvorstellung": "dezimal-stelle"
+     },
+     {
+      "text": "Falsch. Richtig ist: −0,24 < −0,2.",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Schreibe beide Zahlen mit gleich vielen Nachkommastellen.",
+     "loesungsschritt": "−0,2 = −0,20. Vergleiche dann wie bei ganzen Zahlen mit Vorzeichen."
+    },
+    "nachweis": [
+     {
+      "art": "urteil",
+      "stimmt": false,
+      "behauptung": "−0,24 > −0,2"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-F-01",
+    "lernziel": "6.9.3-V2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "8",
+     "−7",
+     "−3"
+    ],
+    "loesung": [
+     "−7",
+     "−3",
+     "8"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -7,
+      -3,
+      8
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-F-02",
+    "lernziel": "6.9.3-V2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "5",
+     "−6",
+     "−7",
+     "−1"
+    ],
+    "loesung": [
+     "−7",
+     "−6",
+     "−1",
+     "5"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -7,
+      -6,
+      -1,
+      5
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-F-03",
+    "lernziel": "6.9.3-V2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Temperatur.",
+    "karten": [
+     "−1 °C",
+     "−9 °C",
+     "3 °C"
+    ],
+    "loesung": [
+     "−9 °C",
+     "−1 °C",
+     "3 °C"
+    ],
+    "hilfen": {
+     "tipp": "Die tiefste Temperatur steht am Thermometer ganz unten.",
+     "beispiel": "−8 °C ist kälter als −3 °C.",
+     "loesungsschritt": "Suche zuerst die kälteste Temperatur. Sie hat die niedrigste Säule."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ],
+    "bild": {
+     "art": "thermometer",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "saeulen": [
+      {
+       "wert": -1,
+       "name": "Mo"
+      },
+      {
+       "wert": 3,
+       "name": "Di"
+      },
+      {
+       "wert": -9,
+       "name": "Mi"
+      }
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-F-04",
+    "lernziel": "6.9.3-V2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der größten zur kleinsten Zahl.",
+    "karten": [
+     "−16",
+     "−2",
+     "−12"
+    ],
+    "loesung": [
+     "−2",
+     "−12",
+     "−16"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung",
+      "ab": true
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 0,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -16,
+      -12,
+      -2
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-F-05",
+    "lernziel": "6.9.3-V2",
+    "niveau": "F",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "6",
+     "−8",
+     "0",
+     "−4"
+    ],
+    "loesung": [
+     "−8",
+     "−4",
+     "0",
+     "6"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -8,
+      -4,
+      6
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-F-06",
+    "lernziel": "6.9.3-V2",
+    "niveau": "F",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Schau auf die Zahlengerade.\nSetze eine Zahl in das Kästchen ein: −3 < ▢ < 1\nKreuze die passende Zahl an.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "3",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−5",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "0",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Zahl muss zwischen den beiden Zahlen liegen.",
+     "beispiel": "Zwischen −5 und −2 liegen −4 und −3.",
+     "loesungsschritt": "Suche beide Zahlen auf der Zahlengeraden. Welche Zahl liegt dazwischen?"
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−3 < ▢ < 1"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -10,
+     "bis": 10,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -3,
+      1
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-G-01",
+    "lernziel": "6.9.3-V2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "−25",
+     "−50",
+     "−70",
+     "80",
+     "20"
+    ],
+    "loesung": [
+     "−70",
+     "−50",
+     "−25",
+     "20",
+     "80"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -100,
+     "bis": 100,
+     "schritt": 5,
+     "beschriftung": 50,
+     "punkte": [
+      -70,
+      -50,
+      -25,
+      20,
+      80
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-G-02",
+    "lernziel": "6.9.3-V2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "1,7",
+     "−0,7",
+     "−0,4",
+     "−1,6"
+    ],
+    "loesung": [
+     "−1,6",
+     "−0,7",
+     "−0,4",
+     "1,7"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ],
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 20,
+     "schritt": 1,
+     "beschriftung": 10,
+     "teiler": 10,
+     "punkte": [
+      -16,
+      -7,
+      -4,
+      17
+     ]
+    }
+   },
+   {
+    "id": "6.9.3-V2-G-03",
+    "lernziel": "6.9.3-V2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "9,5",
+     "−2,1",
+     "−3",
+     "−2,6"
+    ],
+    "loesung": [
+     "−3",
+     "−2,6",
+     "−2,1",
+     "9,5"
+    ],
+    "hilfen": {
+     "tipp": "Ein Halb ist 0,5. Schreibe alle Zahlen als Dezimalzahl.",
+     "beispiel": "−1⁄2 = −0,5",
+     "loesungsschritt": "Wandle den Bruch um. Ordne dann an der Zahlengeraden in Gedanken."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-G-04",
+    "lernziel": "6.9.3-V2",
+    "niveau": "G",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der größten zur kleinsten Zahl.",
+    "karten": [
+     "−5,1",
+     "4,5",
+     "−8,5",
+     "−1,7"
+    ],
+    "loesung": [
+     "4,5",
+     "−1,7",
+     "−5,1",
+     "−8,5"
+    ],
+    "hilfen": {
+     "tipp": "Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind.",
+     "beispiel": "−8, −3, 0, 5 ist richtig geordnet.",
+     "loesungsschritt": "Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung",
+      "ab": true
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-G-05",
+    "lernziel": "6.9.3-V2",
+    "niveau": "G",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze Zahlen in das Kästchen ein: −8 < ▢ < −7\nKreuze alle passenden Zahlen an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "8,1",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "−7,7",
+      "richtig": true
+     },
+     {
+      "text": "−7,3",
+      "richtig": true
+     },
+     {
+      "text": "−6,9",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Zahl muss rechts von der ersten und links von der zweiten Zahl liegen.",
+     "beispiel": "Zwischen −5 und −4 liegt zum Beispiel −4,3.",
+     "loesungsschritt": "Prüfe jede Antwort: Liegt sie auf der Zahlengeraden zwischen den beiden Zahlen?"
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−8 < ▢ < −7"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-G-06",
+    "lernziel": "6.9.3-V2",
+    "niveau": "G",
+    "afb": 3,
+    "kompetenz": [
+     "argumentieren"
+    ],
+    "format": "auswahl",
+    "text": "Ben ordnet die Zahlen −19, −12, −3 von der kleinsten zur größten.\nBen schreibt: −3 < −12 < −19\nPrüfe die Reihenfolge.",
+    "mehrfach": false,
+    "optionen": [
+     {
+      "text": "Falsch.\nRichtig ist: −12 < −19 < −3.",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "Falsch.\nRichtig ist: −19 < −12 < −3.",
+      "richtig": true
+     },
+     {
+      "text": "Stimmt.",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die kleinste Zahl liegt ganz links. Bei negativen Zahlen ist das die Zahl am weitesten weg von der Null.",
+     "beispiel": "−18 < −9 < −3",
+     "loesungsschritt": "Suche die Zahlen auf der Zahlengeraden. Lies sie von links nach rechts."
+    },
+    "bild": {
+     "art": "zahlenstrahl",
+     "von": -20,
+     "bis": 0,
+     "schritt": 1,
+     "beschriftung": 5,
+     "punkte": [
+      -19,
+      -12,
+      -3
+     ]
+    },
+    "nachweis": [
+     {
+      "art": "urteil",
+      "stimmt": false,
+      "behauptung": "−3 < −12 < −19"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-M-01",
+    "lernziel": "6.9.3-V2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der kleinsten zur größten Zahl.",
+    "karten": [
+     "−1,61",
+     "−0,7",
+     "0,09",
+     "0,96",
+     "−0,3"
+    ],
+    "loesung": [
+     "−1,61",
+     "−0,7",
+     "−0,3",
+     "0,09",
+     "0,96"
+    ],
+    "hilfen": {
+     "tipp": "Ordne zuerst die negativen Zahlen. Je weiter weg von der Null, desto kleiner die Zahl.",
+     "loesungsschritt": "Schreibe alle Zahlen mit zwei Nachkommastellen. Beginne mit der Zahl, die am weitesten links liegt."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-M-02",
+    "lernziel": "6.9.3-V2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne die Brüche und Dezimalzahlen von der kleinsten zur größten Zahl.",
+    "karten": [
+     "−2⁄5",
+     "−0,6",
+     "−0,3",
+     "−3⁄4"
+    ],
+    "loesung": [
+     "−3⁄4",
+     "−0,6",
+     "−2⁄5",
+     "−0,3"
+    ],
+    "hilfen": {
+     "tipp": "Wandle die Brüche in Dezimalzahlen um. Ordne dann.",
+     "loesungsschritt": "Schreibe jede Zahl als Dezimalzahl mit zwei Nachkommastellen und vergleiche."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-M-03",
+    "lernziel": "6.9.3-V2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze Zahlen in das Kästchen ein: −1 < ▢ < −1⁄2\nKreuze alle passenden Zahlen an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "−0,4",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−1,25",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−0,9",
+      "richtig": true
+     },
+     {
+      "text": "−0,55",
+      "richtig": true
+     },
+     {
+      "text": "0,5",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Schreibe −1⁄2 als Dezimalzahl. Die Zahl muss zwischen −1 und −0,5 liegen.",
+     "loesungsschritt": "Prüfe jede Antwort an der Zahlengeraden: rechts von −1 und links von −0,5?"
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−1 < ▢ < −1⁄2"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-M-04",
+    "lernziel": "6.9.3-V2",
+    "niveau": "M",
+    "afb": 1,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze Zahlen in das Kästchen ein: −4,7 < ▢ < −4,2\nKreuze alle passenden Zahlen an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "−4,61",
+      "richtig": true
+     },
+     {
+      "text": "−4,15",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−4,75",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     },
+     {
+      "text": "−4,26",
+      "richtig": true
+     }
+    ],
+    "hilfen": {
+     "tipp": "Die Zahl muss rechts von der ersten und links von der zweiten Zahl liegen.",
+     "loesungsschritt": "Schreibe alle Zahlen mit zwei Nachkommastellen. Prüfe dann jede Antwort einzeln."
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−4,7 < ▢ < −4,2"
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-M-05",
+    "lernziel": "6.9.3-V2",
+    "niveau": "M",
+    "afb": 2,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "ordnen",
+    "text": "Ordne von der größten zur kleinsten Zahl.",
+    "karten": [
+     "−2,16",
+     "0,97",
+     "−1,6",
+     "−3⁄4"
+    ],
+    "loesung": [
+     "0,97",
+     "−3⁄4",
+     "−1,6",
+     "−2,16"
+    ],
+    "hilfen": {
+     "tipp": "Wandle den Bruch in eine Dezimalzahl um. Ordne dann.",
+     "loesungsschritt": "Die größte Zahl liegt am weitesten rechts."
+    },
+    "umgekehrt": "negativ-groesser",
+    "nachweis": [
+     {
+      "art": "ordnung",
+      "ab": true
+     }
+    ]
+   },
+   {
+    "id": "6.9.3-V2-M-06",
+    "lernziel": "6.9.3-V2",
+    "niveau": "M",
+    "afb": 3,
+    "kompetenz": [
+     "symbolisch"
+    ],
+    "format": "auswahl",
+    "text": "Setze Zahlen in das Kästchen ein: −5,2 < ▢ < −5,1\nKreuze alle passenden Zahlen an.",
+    "mehrfach": true,
+    "optionen": [
+     {
+      "text": "−5,16",
+      "richtig": true
+     },
+     {
+      "text": "5,15",
+      "richtig": false,
+      "fehlvorstellung": "vorzeichen-vergessen"
+     },
+     {
+      "text": "−5,15",
+      "richtig": true
+     },
+     {
+      "text": "−5,23",
+      "richtig": false,
+      "fehlvorstellung": "negativ-groesser"
+     }
+    ],
+    "hilfen": {
+     "tipp": "Zwischen zwei Dezimalzahlen mit einer Nachkommastelle liegen Zahlen mit zwei Nachkommastellen.",
+     "loesungsschritt": "Hänge an beide Grenzen eine Null an. Dann siehst du die Zahlen dazwischen."
+    },
+    "nachweis": [
+     {
+      "art": "einsetzen",
+      "muster": "−5,2 < ▢ < −5,1"
      }
     ]
    }

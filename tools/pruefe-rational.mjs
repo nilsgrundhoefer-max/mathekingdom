@@ -110,6 +110,7 @@ export function rGleichungen(text) {
 const GROSS = /^7\.1\.(?:[678]|X[34])-/;
 export function rationalSprachMaengel(a, texte) {
   const m = [], stufe = NIVEAUS.indexOf(a.niveau), alle = texte.join(' \n ');
+  if (a.lernziel.startsWith('6.9.')) return klasse6SprachMaengel(a, stufe, alle);
   if (/(?:[+−·]| :) [−+]\d/.test(alle)) m.push('nach einem Rechenzeichen steht eine Zahl mit Vorzeichen in Klammern');
   if (/(?<![\d⁄])\d+\/\d+/.test(alle)) m.push('ein Bruch steht mit Schrägstrich statt mit Bruchstrich');
   if (/Kommazahl|Dezimalbruch/.test(alle)) m.push('es heißt „Dezimalzahl“');
@@ -125,6 +126,37 @@ export function rationalSprachMaengel(a, texte) {
   for (const x of alle.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)) if (Number(x[3]) < 2 || (x[1] && Number(x[2]) >= Number(x[3]))) m.push(`Bruch „${x[0]}“ ist nicht sauber geschrieben`);
   const grenze = GROSS.test(a.lernziel) ? [100, 1000, 10000, 1000000][stufe] : [20, 100, 1000, 1000000][stufe];
   const zuGross = [...alle.replace(/\d+⁄\d+/g, ' ').matchAll(/\d+(?: \d{3})*/g)].map((x) => Number(x[0].replace(/ /g, ''))).find((n) => n > grenze);
+  if (zuGross != null) m.push(`die Zahl ${zuGross} ist für Niveaustufe ${a.niveau} hier zu groß (Grenze ${grenze})`);
+  return m;
+}
+
+// Klasse 6, Kapitel 9 (ADR 0059, Grilling mit Nils 2026-11-28): F ganze Zahlen bis ±20 mit Bild, G bis ±100 und eine Nachkommastelle,
+// Brüche auf G nur Halbe und nur in 9.2 und 9.3. M zwei Nachkommastellen, Brüche mit den Nennern 2, 4, 5 und 10. E frei.
+// „Rationale Zahl“ ab M; Betrag, Betragsstriche und die Zeichen ℕ, ℤ, ℚ nur auf E. Die Schreibweise (+15) gibt es nicht.
+function klasse6SprachMaengel(a, stufe, alle) {
+  const m = [];
+  if (/(?:[+−·]| :) [−+]\d/.test(alle)) m.push('nach einem Rechenzeichen steht eine Zahl mit Vorzeichen in Klammern');
+  if (/(?<![\d⁄])\d+\/\d+/.test(alle)) m.push('ein Bruch steht mit Schrägstrich statt mit Bruchstrich');
+  if (/Kommazahl|Dezimalbruch/.test(alle)) m.push('es heißt „Dezimalzahl“');
+  if (/\(\+\d/.test(alle)) m.push('die Schreibweise (+15) gibt es in Klasse 6 nicht');
+  if (stufe < 3 && /\|[−\d][^|(]*\|(?!\d)/.test(alle.replace(/\([−\d]+\|[−\d]+\)/g, ''))) m.push('Betragsstriche gibt es in Klasse 6 nur auf E');
+  if (stufe < 3 && /[ℕℤℚ]/.test(alle)) m.push('die Zeichen ℕ, ℤ und ℚ gibt es in Klasse 6 nur auf E');
+  if (stufe < 3 && /Betrag/.test(alle)) m.push('das Wort „Betrag“ gibt es in Klasse 6 nur auf E');
+  if (stufe < 2 && /rationale Zahl/.test(alle)) m.push('das Wort „rationale Zahl“ gibt es erst ab M');
+  if (new RegExp(`[\\d)][${HOCH}]`).test(alle)) m.push('Potenzen gibt es in Klasse 6 nicht');
+  const ohneGeld = alle.replace(/\d+,\d{2}[  ]€/g, ' ');
+  const stellen = [...ohneGeld.matchAll(/\d,(\d+)/g)].map((x) => x[1].length);
+  if (stellen.some((s) => s > [0, 1, 2, 3][stufe])) m.push(stufe === 0 ? 'auf F gibt es keine Dezimalzahlen' : `zu viele Nachkommastellen für Niveaustufe ${a.niveau}`);
+  const nenner = [...alle.matchAll(/(?:(\d+) )?(\d+)⁄(\d+)/g)];
+  for (const x of nenner) {
+    const n = Number(x[3]);
+    if (n < 2 || (x[1] && Number(x[2]) >= n)) m.push(`Bruch „${x[0]}“ ist nicht sauber geschrieben`);
+    if (stufe === 0) m.push('auf F gibt es hier keine Brüche');
+    else if (stufe === 1 && (n !== 2 || !/^6\.9\.[23]-/.test(a.lernziel))) m.push('auf G gibt es nur Halbe und nur in 9.2 und 9.3');
+    else if (stufe === 2 && ![2, 4, 5, 10].includes(n)) m.push(`auf M gibt es nur die Nenner 2, 4, 5 und 10 (nicht ${n})`);
+  }
+  const grenze = [20, 100, 1000, 1000000][stufe];
+  const zuGross = [...alle.replace(/\d+⁄\d+/g, ' ').matchAll(/\d+(?: \d{3})*/g)].map((x) => Number(x[0].replace(/ /g, ''))).find((n) => n > grenze);
   if (zuGross != null) m.push(`die Zahl ${zuGross} ist für Niveaustufe ${a.niveau} hier zu groß (Grenze ${grenze})`);
   return m;
 }

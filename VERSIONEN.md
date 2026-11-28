@@ -8,6 +8,21 @@ Die oberste Version gilt. `npm run build` liest Nummer, Datum und Punkte von hie
 
 Wurde eine Version im Schulnetz geprüft und lief dort ohne Probleme, steht direkt unter ihrer Überschrift die Zeile „Im Schulnetz erprobt am <TT.MM.JJJJ>.“ Auf diesen Stand ist Verlass, wenn eine spätere Version Probleme macht. Die Zeile erscheint nicht im Dashboard.
 
+## 0.71 vom 28.11.2026
+
+### Schüler
+
+- Neues Kapitel in Klasse 6: „Rationale Zahlen“ mit 288 Aufgaben. Du liest negative Zahlen am Thermometer, auf dem Konto und an der Zahlengerade ab, findest Gegenzahlen und vergleichst und ordnest Zahlen mit Vorzeichen.
+- Zunahme und Abnahme: Du bestimmst, um wie viel es wärmer oder kälter wird, auch über die Null hinweg.
+- Mit dem Knopf „±“ setzt du das Minus vor deine Zahl.
+- Auf E rechnest du schon mit negativen Zahlen: addieren, subtrahieren, multiplizieren und dividieren.
+
+### Lehrkraft
+
+- Klasse 6, Kapitel 9 „Rationale Zahlen“ (ADR 0059): 9.1 ganze Zahlen, 9.2 rationale Zahlen, 9.3 vergleichen und ordnen, 9.4 Zunahme und Abnahme mit je 6 Aufgaben auf F, G, M und E; 9.5 und 9.6 (Rechnen mit rationalen Zahlen) als Abstecher nur auf E mit je 24 Aufgaben.
+- Klasse 7 Kapitel 1 zeigt jetzt Aufgaben aus Klasse 6 Kapitel 9 als Brücken.
+- Keine neuen Fehlvorstellungen: Die Auswertung nutzt die Einträge aus Klasse 7 Kapitel 1.
+
 ## 0.70 vom 28.11.2026
 
 ### Schüler

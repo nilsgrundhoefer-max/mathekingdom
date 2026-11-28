@@ -109,4 +109,17 @@ export const merkzettel6 = {
   '6.8.5-L2': { regel: 'Der ganze Streifen ist 100 %. Teile die Länge des Abschnitts durch die Länge des Streifens.', beispiel: 'Streifen 10 cm, Abschnitt 3 cm:\n3⁄10 = 30 %' },
   '6.8.6-D1': { regel: 'Berechne für jede Antwort den Anteil in Prozent. Bei 20 Kästchen ist ein Kästchen 5 %.', beispiel: '40 % sind 40 : 5 = 8 Kästchen.' },
   '6.8.6-D2': { regel: 'Winkel = Anteil mal 360°. Alle Winkel zusammen ergeben 360°.', beispiel: '25 % von 360°:\n1⁄4 · 360° = 90°\n10 % sind 36°.' },
+  // 6.9 Rationale Zahlen (ADR 0059)
+  '6.9.1-N1': { regel: 'Zahlen unter null sind negativ. Sie haben ein Minuszeichen, so wie Schulden, Grad unter null und Höhen unter dem Meeresspiegel sind negativ.', beispiel: '5 Grad unter null sind −5 °C.\n20 € Schulden sind −20 €.' },
+  '6.9.1-N2': { regel: 'Auf der Zahlengeraden stehen die negativen Zahlen links von der Null. Zähle von einer beschrifteten Zahl aus die Striche.', beispiel: 'Zwei Striche links von −5 steht −7.' },
+  '6.9.2-R1': { regel: 'Auch zwischen den negativen ganzen Zahlen liegen Dezimalzahlen und Brüche. −1,5 liegt in der Mitte zwischen −2 und −1.', beispiel: '−2 < −1,5 < −1\n−1⁄2 = −0,5' },
+  '6.9.2-R2': { regel: 'Die Gegenzahl liegt gleich weit von der Null entfernt, auf der anderen Seite. Ganze Zahlen, Dezimalzahlen und Brüche mit Vorzeichen sind rationale Zahlen.', beispiel: 'Die Gegenzahl von 4 ist −4.\nDie Gegenzahl von −2,5 ist 2,5.' },
+  '6.9.3-V1': { regel: 'Die kleinere Zahl liegt auf der Zahlengeraden weiter links. Jede negative Zahl ist kleiner als jede positive Zahl.', beispiel: '−8 < −3\nBei −8 °C ist es kälter als bei −3 °C.' },
+  '6.9.3-V2': { regel: 'Beim Ordnen kommen zuerst die negativen Zahlen, die am weitesten von der Null entfernt sind. Zwischen zwei Zahlen liegen immer weitere Zahlen.', beispiel: '−7 < −2 < 0 < 3\nZwischen −1 und −0,5 liegt −0,7.' },
+  '6.9.4-Z1': { regel: 'Bei einer Zunahme gehst du auf der Zahlengeraden nach rechts, bei einer Abnahme nach links. Über die Null hinweg zählst du erst bis zur Null und dann weiter.', beispiel: 'Von −3 °C auf 5 °C:\n3 Grad bis 0 °C und 5 Grad weiter.\n3 + 5 = 8\nEs ist 8 Grad wärmer geworden.' },
+  '6.9.4-Z2': { regel: 'Kommt etwas dazu, rechnest du plus, geht etwas weg, rechnest du minus. Ein negativer Kontostand bedeutet Schulden.', beispiel: 'Kontostand 40 €, Abbuchung 65 €:\n40 − 65 = −25\nDas Konto ist mit 25 € im Minus.' },
+  '6.9.5-A1': { regel: 'Plus eine positive Zahl geht nach rechts, plus eine negative Zahl geht nach links. Eine negative Zahl subtrahieren heißt: ihre Gegenzahl addieren.', beispiel: '−5 + 3 = −2\n2 + (−6) = −4\n3 − (−5) = 3 + 5 = 8' },
+  '6.9.5-A2': { regel: 'Für Dezimalzahlen und Brüche gelten dieselben Regeln wie für ganze Zahlen.', beispiel: '−1,5 + 0,7 = −0,8\n1⁄4 − 3⁄4 = −1⁄2' },
+  '6.9.6-P1': { regel: 'Gleiche Vorzeichen ergeben Plus, verschiedene Vorzeichen ergeben Minus. Bestimme zuerst das Vorzeichen, dann rechnest du ohne Vorzeichen.', beispiel: '3 · (−4) = −12\n(−3) · (−4) = 12' },
+  '6.9.6-D1': { regel: 'Beim Dividieren gelten dieselben Vorzeichenregeln wie beim Multiplizieren.', beispiel: '(−12) : (−3) = 4\n(−12) : 3 = −4\n12 : (−3) = −4' },
 };

@@ -1,10 +1,10 @@
 # Aufgaben Klasse 6: Übersicht zur Durchsicht
 
-Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (2256 Aufgaben). Nicht von Hand bearbeiten.
+Automatisch erzeugt aus `aufgabenpool/klasse-6.json` (2544 Aufgaben). Nicht von Hand bearbeiten.
 
 Bei Auswahlaufgaben ist ☑ die Antwort, die der Schüler ankreuzen muss.
 
-✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2256).
+✔ vor einer Aufgabe: vom Administrator im Aufgabentester kontrolliert (0 von 2544).
 
 ## 6.1.1-B1: Ich kann Bruchteile an Bildern erkennen und darstellen, auch wenn sie größer als ein Ganzes sind.
 
@@ -7997,6 +7997,853 @@ Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Befragter ist 360° : 24 = 15°.
   - ☐ Ein Streifendiagramm für beide Klassen. Dann ist alles in einem Bild.
 - `12` AFB III · _Mit symbolischen Elementen umgehen_ · **[Heftaufgabe]** Eine Umfrage zum Lieblingstier ergibt die Werte in der Tabelle. / Zeichne das Kreisdiagramm mit Geodreieck und Zirkel in dein Heft. Beschrifte die Ausschnitte. / Gib zur Kontrolle den Winkel für „Vogel“ an. _(Tabelle: Antwort | Anzahl / Hase | 4 / Hamster | 5 / Pferd | 10 / Vogel | 21)_ Lösung: **189 °**. Typische Fehler: 21 (prozent-als-grad).
 
+## 6.9.1-N1: Ich kann negative Zahlen im Alltag deuten und mit Vorzeichen schreiben.
+
+Grundlage, die F übt: Am Thermometer Temperaturen unter null ablesen und mit Minus schreiben
+
+Baut auf: 5.2.1-N1 (Ich kann Zahlen am Zahlenstrahl ablesen und eintragen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Unter der Null sind die Temperaturen negativ. Sie haben ein Minus. *Beispiel:* Drei Striche unter der Null sind es −3 °C. *Lösungsschritt:* Zähle die Striche von der Null nach unten. Schreibe ein Minus davor.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf das Thermometer. / Lies die Temperatur ab. _(Bild: Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: -7 °C)_ Lösung: **-7 °C**. Typische Fehler: 7 (vorzeichen-vergessen), -3 (strahl-gespiegelt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Es sind 4 Grad unter null. / Kreuze die passende Temperatur an. _(Bild: Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: -4 °C)_
+  - ☐ 0 °C
+  - ☑ −4 °C
+  - ☐ 4 °C
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen drei Temperaturen an einem Tag. / Kreuze an, wann es am kältesten war. _(Bild: 3 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: morgens -9 °C, mittags -1 °C, abends 6 °C)_
+  - ☐ abends
+  - ☑ morgens
+  - ☐ mittags
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Tiefgarage ist 4 Stockwerke unter dem Erdgeschoss. / Das Erdgeschoss hat die Nummer 0. / Schreibe das Stockwerk der Tiefgarage als Zahl mit Vorzeichen. _(Bild: Zahlengerade -5 bis 10, Teilstriche alle 1, Punkte bei 0)_ Lösung: **-4**. Typische Fehler: 4 (vorzeichen-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen die Temperatur in zwei Orten. / Kreuze an, wo es wärmer ist. _(Bild: 2 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: Zermatt -2 °C, Kiruna -8 °C)_
+  - ☐ Kiruna
+  - ☑ Zermatt
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf das Thermometer. / Lies die Temperatur ab. _(Bild: Thermometer von -20 °C bis 10 °C, Striche alle 1 Grad: -14 °C)_ Lösung: **-14 °C**. Typische Fehler: 14 (vorzeichen-vergessen), -6 (strahl-gespiegelt).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Unter null, unter dem Meeresspiegel, Schulden und Jahre vor Christus sind negativ. *Beispiel:* 20 m unter dem Meeresspiegel schreibt man als −20 m. *Lösungsschritt:* Entscheide: Liegt die Angabe über oder unter null? Setze das passende Vorzeichen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Auf dem Konto sind 54 € Schulden. / Schreibe die Angabe als Zahl mit Vorzeichen. Lösung: **-54 €**. Typische Fehler: 54 (vorzeichen-vergessen).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne jeder Angabe die passende Zahl zu. Lösung: 48 Grad unter null → −48 °C, 3 € Guthaben → 3 €, 88 € Schulden → −88 €, 20 m unter dem Meeresspiegel → −20 m
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf das Thermometer. / Ein Strich bedeutet hier 2 Grad. / Lies die Temperatur ab. _(Bild: Thermometer von -20 °C bis 30 °C, Striche alle 2 Grad: -2 °C)_ Lösung: **-2 °C**. Typische Fehler: 2 (vorzeichen-vergessen), -1 (strahl-einerschritte).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Kontoauszug zeigt den Kontostand −41 €. / Kreuze an, was das bedeutet. _(Tabelle: Buchung | Betrag / Kontostand | −41 €)_
+  - ☐ 41 € abgehoben
+  - ☐ 41 € Guthaben
+  - ☑ 41 € Schulden
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Noah liest am Thermometer −3 °C ab. / Das ist falsch. / Kreuze die richtige Temperatur an. _(Bild: Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: -7 °C)_
+  - ☐ 7 °C
+  - ☐ −12 °C
+  - ☑ −7 °C
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Vogel fliegt 78 m über dem Meer. / Ein Fisch schwimmt 79 m unter der Wasseroberfläche. / Die Wasseroberfläche hat die Höhe 0 m. / Schreibe beide Höhen als Zahlen mit Vorzeichen. / Vogel: ▢ m / Fisch: ▢ m Lösung: a = **78**, b = **-79**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Angaben unter einem Vergleichswert und Schulden sind negativ. *Lösungsschritt:* Setze das Minuszeichen vor die Dezimalzahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Kellerboden liegt 2,27 m unter der Straße. / Schreibe die Angabe als Zahl mit Vorzeichen. Lösung: **−2,27 m**. Typische Fehler: 2,27 (vorzeichen-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Angaben an, die man mit einer negativen Zahl schreibt.
+  - ☑ 7. Untergeschoss
+  - ☑ 69,50 € Schulden
+  - ☐ 72 € Guthaben
+  - ☐ 707 m über dem Meeresspiegel
+  - ☑ 14 Grad unter null
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Der tiefste Punkt der Niederlande liegt 7 m unter dem Meeresspiegel. Die Burg liegt 942 m über dem Meeresspiegel. / Schreibe beide Höhen als Zahlen mit Vorzeichen. / Ufer oder Stadt: ▢ m / Burg: ▢ m Lösung: a = **-7**, b = **942**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Thermometer zeigt −8,7 °C. / Kreuze den passenden Satz an.
+  - ☑ Es ist 8,7 Grad unter null.
+  - ☐ Es ist 8,7 Grad über null.
+  - ☐ Es ist 9,7 Grad unter null.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Laden macht in einem Monat 4,57 € Verlust. / Schreibe den Verlust als Zahl mit Vorzeichen. Lösung: **−4,57 €**. Typische Fehler: 4,57 (vorzeichen-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ordne jeder Angabe die passende Zahl zu. Lösung: 245 € Guthaben → 245 €, 475 € Schulden → −475 €, 754 m unter dem Meeresspiegel → −754 m, 3,2 Grad unter null → −3,2 °C
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Denke an die Zahlengerade: Weiter links heißt kleiner, kälter, tiefer oder weniger Geld.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. Kreuze alle an, die stimmen.
+  - ☑ Ein Kontostand von −20 € bedeutet 20 € Schulden.
+  - ☑ Das Jahr 50 vor Christus schreibt man als −50.
+  - ☑ Ein Taucher bei −12 m ist tiefer als ein Taucher bei −7 m.
+  - ☐ 0 °C ist eine negative Temperatur.
+  - ☐ −8 °C ist wärmer als −3 °C.
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Der Pegel eines Flusses zeigt −2,43 m. / Der Wert 0 m ist der normale Wasserstand. / Kreuze die passende Bedeutung an.
+  - ☑ Das Wasser steht 2,43 m unter dem normalen Wasserstand.
+  - ☐ Das Wasser ist 2,43 m tief.
+  - ☐ Das Wasser steht 243 m unter dem normalen Wasserstand.
+  - ☐ Das Wasser steht 2,43 m über dem normalen Wasserstand.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Auf einem Kontoauszug steht „Soll“ für Schulden und „Haben“ für Guthaben. / Schreibe den Kontostand als Zahl mit Vorzeichen. _(Tabelle: Buchung | Betrag / Kontostand am 1. | −31,91 € Soll)_ Lösung: **−31,91 €**. Typische Fehler: 31,91 (vorzeichen-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Im Aufzug eines Hauses steht 0 für das Erdgeschoss. / Herr Lang steigt im Stockwerk −5 ein und fährt in den 7. Stock. / Kreuze an, wo Herr Lang einsteigt.
+  - ☐ im 7. Untergeschoss
+  - ☑ im 5. Untergeschoss
+  - ☐ im Erdgeschoss
+  - ☐ im 5. Stock über dem Erdgeschoss
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Jonas schreibt für „82 m unter dem Meeresspiegel“ die Zahl 82 m. / Prüfe die Angabe. Kreuze die richtige Antwort an.
+  - ☑ Falsch. Richtig ist −82 m.
+  - ☐ Stimmt.
+  - ☐ Falsch. Richtig ist −820 m.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Gewinn von 20,53 € wird als 20,53 € geschrieben. / Ein Verlust von 40,19 € wird ebenso mit Vorzeichen geschrieben. / Ergänze die Zahl. / Verlust: ▢ € Lösung: a = **−40,19**
+
+## 6.9.1-N2: Ich kann ganze Zahlen an der Zahlengerade ablesen und eintragen.
+
+Grundlage, die F übt: An der Zahlengeraden von −20 bis 20 ganze Zahlen ablesen und antippen
+
+Baut auf: 6.9.1-N1 (Ich kann negative Zahlen im Alltag deuten und mit Vorzeichen schreiben.), 5.2.1-N2 (Ich kann Zahlen vergleichen und ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Links von der Null stehen die negativen Zahlen. Zähle von einer beschrifteten Zahl aus. *Beispiel:* Zwei Striche links von −5 steht −7. *Lösungsschritt:* Suche die nächste beschriftete Zahl. Zähle von dort die Striche bis zum Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Pfeil auf -9)_ Lösung: **-9**. Typische Fehler: 9 (vorzeichen-vergessen), -1 (strahl-gespiegelt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere −7 an der Zahlengeraden. _(Zahlenstrahl -10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **-7**. Typische Fehler: 7 (vorzeichen-vergessen), -3 (strahl-gespiegelt).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Pfeil auf -14)_ Lösung: **-14**. Typische Fehler: 14 (vorzeichen-vergessen), -6 (strahl-gespiegelt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere −18 an der Zahlengeraden. _(Zahlenstrahl -20 bis 5, Teilstriche alle 1; antippen)_ Lösung: **-18**. Typische Fehler: -12 (strahl-gespiegelt), -8 (stellenwert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Kreuze die Zahl an, auf die der Pfeil zeigt. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Pfeil auf -6)_
+  - ☐ −4
+  - ☐ 6
+  - ☑ −6
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Von Strich zu Strich sind es 2. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade -20 bis 10, Teilstriche alle 2, Pfeil auf -4)_ Lösung: **-4**. Typische Fehler: 4 (vorzeichen-vergessen), -2 (strahl-einerschritte).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst, wie viel ein Strich bedeutet. *Beispiel:* Zwischen 0 und −25 liegen 5 Striche. Ein Strich ist 5. *Lösungsschritt:* Zähle von der nächsten beschrifteten Zahl in Fünferschritten bis zum Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt. _(Bild: Zahlengerade -50 bis 50, Teilstriche alle 5, Pfeil auf -10)_ Lösung: **-10**. Typische Fehler: 10 (vorzeichen-vergessen), -2 (strahl-einerschritte).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere −20 an der Zahlengeraden. _(Zahlenstrahl -100 bis 20, Teilstriche alle 10; antippen)_ Lösung: **-20**. Typische Fehler: 20 (strahl-gespiegelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt. _(Bild: Zahlengerade -40 bis 20, Teilstriche alle 2, Pfeil auf -34)_ Lösung: **-34**. Typische Fehler: 34 (vorzeichen-vergessen), -32 (strahl-einerschritte), -26 (strahl-gespiegelt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere −23 an der Zahlengeraden. _(Zahlenstrahl -30 bis 10, Teilstriche alle 1; antippen)_ Lösung: **-23**. Typische Fehler: -17 (strahl-gespiegelt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Zahlen steigen immer um 5. / Ergänze die nächsten beiden Zahlen. / −48, −43, −38, ▢, ▢ Lösung: a = **-33**, b = **-28**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ergänze die beiden Nachbarzahlen. ▢ < −15 < ▢ Lösung: a = **-16**, b = **-14**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst, wie viel ein Strich bedeutet. *Lösungsschritt:* Zähle von der nächsten beschrifteten Zahl in passenden Schritten bis zum Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt. _(Bild: Zahlengerade -300 bis 100, Teilstriche alle 10, Pfeil auf -180)_ Lösung: **-180**. Typische Fehler: 180 (vorzeichen-vergessen), -108 (strahl-einerschritte), -20 (strahl-gespiegelt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere −100 an der Zahlengeraden. _(Zahlenstrahl -500 bis 500, Teilstriche alle 50; antippen)_ Lösung: **-100**. Typische Fehler: 100 (vorzeichen-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Bestimme die Zahl, die genau in der Mitte zwischen −29 und 51 liegt. Lösung: **11**. Typische Fehler: 40 (abstand-ueber-null), -11 (vorzeichen-vergessen), 22 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt. _(Bild: Zahlengerade -60 bis 20, Teilstriche alle 2, Pfeil auf -58)_ Lösung: **-58**. Typische Fehler: 58 (vorzeichen-vergessen), -49 (strahl-einerschritte), -22 (strahl-gespiegelt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, für die gilt: −20 < ▢ < −14
+  - ☐ 18
+  - ☐ −21
+  - ☑ −15
+  - ☐ −12
+  - ☑ −19
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Bestimme, wie viele ganze Zahlen zwischen −19 und 18 liegen. Lösung: **36**. Typische Fehler: 37 (sach-schritt-vergessen), -2 (abstand-ueber-null), 38 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Bestimme zuerst die Schrittweite: Wie viele Striche liegen zwischen zwei beschrifteten Zahlen?
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt. _(Bild: Zahlengerade -1000 bis 1000, Teilstriche alle 100, Pfeil auf -200)_ Lösung: **-200**. Typische Fehler: 200 (vorzeichen-vergessen), -2 (strahl-einerschritte).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere −10 an der Zahlengeraden. _(Zahlenstrahl -120 bis 30, Teilstriche alle 5; antippen)_ Lösung: **-10**. Typische Fehler: 10 (vorzeichen-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Auf dieser Zahlengeraden fehlt die Null. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade -90 bis -30, Teilstriche alle 2, Pfeil auf -76)_ Lösung: **-76**. Typische Fehler: 76 (vorzeichen-vergessen), -73 (strahl-einerschritte), -64 (strahl-gespiegelt).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Punkt liegt bei 13. / Bestimme die Zahl, die 29 Schritte links von diesem Punkt liegt. Lösung: **-16**. Typische Fehler: 42 (richtung-vertauscht), 16 (vorzeichen-vergessen), -15 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Bestimme, wie viele ganze Zahlen zwischen −37 und −6 liegen. Lösung: **30**. Typische Fehler: 31 (sach-schritt-vergessen), 42 (abstand-ueber-null), 32 (sach-schritt-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen liegen gleich weit von der Null entfernt, eine links und eine rechts. / Zusammen sind sie 70 Schritte voneinander entfernt. / Gib die kleinere der beiden Zahlen an. Lösung: **-35**. Typische Fehler: 35 (negativ-groesser), -70 (sach-schritt-vergessen).
+
+## 6.9.2-R1: Ich kann negative Dezimalzahlen und Brüche an der Zahlengerade ablesen und eintragen.
+
+Grundlage, die F übt: Zwischen zwei ganzen Zahlen die Teilstriche zählen
+
+Baut auf: 6.9.1-N2 (Ich kann ganze Zahlen an der Zahlengerade ablesen und eintragen.), 6.1.6-Z2 (Ich kann Brüche am Zahlenstrahl eintragen.), 6.4.2-V2 (Ich kann Dezimalzahlen am Zahlenstrahl ablesen und eintragen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Pfeil liegt zwischen zwei ganzen Zahlen. Die linke ist die kleinere. *Beispiel:* Liegt der Pfeil zwischen −3 und −2, dann gilt −3 < Pfeil < −2. *Lösungsschritt:* Suche die beschrifteten Zahlen links und rechts vom Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Pfeil zeigt auf eine Zahl zwischen zwei ganzen Zahlen. / Ergänze die beiden ganzen Zahlen. / ▢ < Zahl am Pfeil < ▢ _(Bild: Zahlengerade −5 bis 2, Teilstriche alle 1⁄2, Pfeil auf −5⁄2)_ Lösung: a = **-3**, b = **-2**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere die Zahl genau in der Mitte zwischen −4 und −3. _(Zahlenstrahl −5 bis 2, Teilstriche alle 1⁄2; antippen)_ Lösung: **−7⁄2**. Typische Fehler: −9⁄2 (richtung-vertauscht), −4 (strahl-ganzes).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Zähle, wie viele Striche der Pfeil links von der Null liegt. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Pfeil auf −1,6)_ Lösung: **16**. Typische Fehler: 17 (sach-schritt-vergessen), -16 (vorzeichen-vergessen), 6 (strahl-ganzes).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere den Strich genau in der Mitte zwischen −5 und −4. _(Zahlenstrahl −5 bis 2, Teilstriche alle 1⁄2; antippen)_ Lösung: **−9⁄2**. Typische Fehler: −7⁄2 (richtung-vertauscht).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Pfeil zeigt auf eine Zahl zwischen zwei ganzen Zahlen. / Ergänze die beiden ganzen Zahlen. / ▢ < Zahl am Pfeil < ▢ _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Pfeil auf −1,3)_ Lösung: a = **-2**, b = **-1**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Zähle, wie viele Striche der Pfeil links von der Null liegt. _(Bild: Zahlengerade −5 bis 2, Teilstriche alle 1⁄2, Pfeil auf −1⁄2)_ Lösung: **1**. Typische Fehler: 2 (sach-schritt-vergessen), 0 (strahl-ganzes).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei ganzen Zahlen liegen zehn Schritte. Jeder Schritt ist ein Zehntel. *Beispiel:* Drei Striche links von −1 steht −1,3. *Lösungsschritt:* Suche die nächste beschriftete Zahl. Zähle von dort die Zehntel bis zum Pfeil.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Pfeil auf −1,2)_ Lösung: **−1,2**. Typische Fehler: 1,2 (vorzeichen-vergessen), −0,8 (strahl-gespiegelt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere −1,7 an der Zahlengeraden. _(Zahlenstrahl −2 bis 2, Teilstriche alle 0,1; antippen)_ Lösung: **−1,7**. Typische Fehler: 1,7 (vorzeichen-vergessen), −0,3 (strahl-gespiegelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Lies die Zahl ab, auf die der Pfeil zeigt. / Schreibe sie als Dezimalzahl. _(Bild: Zahlengerade −5 bis 2, Teilstriche alle 1⁄2, Pfeil auf −3⁄2)_ Lösung: **−1,5**. Typische Fehler: 1,5 (vorzeichen-vergessen), −0,5 (richtung-vertauscht), −3 (strahl-einerschritte).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Markiere −1 1⁄2 an der Zahlengeraden. _(Zahlenstrahl −5 bis 2, Teilstriche alle 1⁄2; antippen)_ Lösung: **−3⁄2**. Typische Fehler: 3⁄2 (vorzeichen-vergessen), −1⁄2 (richtung-vertauscht), −1 (strahl-ganzes).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch die gleich große Dezimalzahl zu. Lösung: −3 1⁄2 → −3,5, −2 1⁄2 → −2,5, −1 1⁄2 → −1,5, −1⁄2 → −0,5
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ergänze die benachbarten ganzen Zahlen. ▢ < −1,1 < ▢ Lösung: a = **-2**, b = **-1**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei beschrifteten Zahlen liegen zehn Schritte. Bestimme, wie groß ein Schritt ist. *Lösungsschritt:* Ein Schritt ist ein Hundertstel. Zähle von der nächsten beschrifteten Zahl nach links.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil an der Zahlengeraden zeigt. _(Bild: Zahlengerade −0,3 bis 0,1, Teilstriche alle 0,01, Pfeil auf −0,22)_ Lösung: **−0,22**. Typische Fehler: 0,22 (vorzeichen-vergessen), −0,18 (strahl-gespiegelt), −2,2 (strahl-einerschritte).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere −1 1⁄4 an der Zahlengeraden. _(Zahlenstrahl −3 bis 1, Teilstriche alle 1⁄4; antippen)_ Lösung: **−5⁄4**. Typische Fehler: −3⁄4 (strahl-gespiegelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Lies die Zahl ab, auf die der Pfeil zeigt. Schreibe sie als Bruch oder gemischte Zahl. _(Bild: Zahlengerade −2 bis 1, Teilstriche alle 1⁄5, Pfeil auf −7⁄5)_ _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 2⁄5**. Typische Fehler: 1 2⁄5 (vorzeichen-vergessen), −3⁄5 (richtung-vertauscht).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ergänze die benachbarten ganzen Zahlen. ▢ < −2,87 < ▢ Lösung: a = **-3**, b = **-2**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch die gleich große Dezimalzahl zu. Lösung: −7⁄10 → −0,7, −2⁄5 → −0,4, −1⁄2 → −0,5, −1⁄4 → −0,25
+- `06` AFB III · _Argumentieren_ · Lina behauptet: −4 < −3,5 < −3. / Prüfe die Behauptung.
+  - ☑ Stimmt.
+  - ☐ Falsch. Richtig ist: −3 < −3,5 < −4.
+  - ☐ Falsch. Richtig ist: −3 < −3,5 < −2.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zwischen zwei beschrifteten Zahlen liegen zehn Schritte. Bestimme, wie groß dann ein Schritt ist.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · An der Zahlengeraden sind nur wenige Zahlen beschriftet. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade −1 bis 1, Teilstriche alle 0,05, Pfeil auf −0,85)_ Lösung: **−0,85**. Typische Fehler: 0,85 (vorzeichen-vergessen), −1,2 (strahl-einerschritte), −0,15 (strahl-gespiegelt).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Markiere −5⁄4 an der Zahlengeraden. _(Zahlenstrahl −2 bis 1, Teilstriche alle 1⁄8; antippen)_ Lösung: **−10⁄8**. Typische Fehler: −5⁄8 (bruchstrahl-striche), −6⁄8 (strahl-gespiegelt).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die benachbarten ganzen Zahlen. ▢ < −16⁄5 < ▢ Lösung: a = **-4**, b = **-3**
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Gib die Zahl an, die 10 Teilstriche links vom Pfeil liegt. _(Bild: Zahlengerade −1 bis 1, Teilstriche alle 0,1, Pfeil auf 0,5)_ Lösung: **−0,5**. Typische Fehler: 1,5 (richtung-vertauscht), 0,5 (vorzeichen-vergessen), −9,5 (strahl-einerschritte).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne jedem Bruch die gleich große Dezimalzahl zu. Lösung: −3⁄8 → −0,375, −3⁄4 → −0,75, −1 3⁄8 → −1,375, −9⁄25 → −0,36
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Auf dieser Zahlengeraden fehlt die Null. / Lies die Zahl ab, auf die der Pfeil zeigt. _(Bild: Zahlengerade −3 bis −1, Teilstriche alle 0,05, Pfeil auf −2,55)_ Lösung: **−2,55**. Typische Fehler: 2,55 (vorzeichen-vergessen), −2,45 (strahl-gespiegelt), −2,6 (strahl-einerschritte).
+
+## 6.9.2-R2: Ich kann die Gegenzahl einer Zahl angeben und rationale Zahlen erkennen.
+
+Grundlage, die F übt: An der Zahlengeraden die Schritte bis zur Null zählen und die Zahl auf der anderen Seite finden
+
+Baut auf: 6.9.2-R1 (Ich kann negative Dezimalzahlen und Brüche an der Zahlengerade ablesen und eintragen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Abstand zur Null ist die Zahl der Schritte bis zur Null. Er hat kein Minus. *Beispiel:* Von −4 bis zur Null sind es 4 Schritte. *Lösungsschritt:* Zähle die Schritte von der Zahl bis zur Null.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei −8. / Zähle die Schritte von dort bis zur Null. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -8)_ Lösung: **8**. Typische Fehler: -8 (betrag-gegenzahl), 2 (strahl-gespiegelt).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Gib die Gegenzahl von −9 an. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -9)_ Lösung: **9**. Typische Fehler: -9 (betrag-gegenzahl).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 6 hat eine Gegenzahl. / Markiere die Gegenzahl an der Zahlengeraden. _(Zahlenstrahl -10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **-6**. Typische Fehler: 6 (betrag-gegenzahl), -4 (strahl-gespiegelt).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei 8. / Eine andere Zahl ist gleich weit von der Null entfernt. / Gib diese Zahl an. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei 8)_ Lösung: **-8**. Typische Fehler: 8 (betrag-gegenzahl), 0 (betrag-gegenzahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Kreuze die Zahl mit dem größten Abstand zur Null an. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -8, 2, -1)_
+  - ☐ −1
+  - ☑ −8
+  - ☐ 2
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Gib die Gegenzahl von 18 an. _(Bild: Zahlengerade -20 bis 20, Teilstriche alle 2, Punkte bei 18)_ Lösung: **-18**. Typische Fehler: 18 (betrag-gegenzahl).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Gegenzahl liegt gleich weit von der Null entfernt, aber auf der anderen Seite. *Beispiel:* Die Gegenzahl von −3 ist 3. Die Gegenzahl von 5 ist −5. *Lösungsschritt:* Zähle die Schritte bis zur Null. Gehe auf der anderen Seite genauso weit.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib die Gegenzahl von −2,8 an. Lösung: **2,8**. Typische Fehler: −2,8 (betrag-gegenzahl).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Punkt liegt bei −0,6. / Bestimme den Abstand zur Null. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Punkte bei −0,6)_ Lösung: **0,6**. Typische Fehler: −0,6 (betrag-gegenzahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Eine Zahl hat die Gegenzahl −61. / Gib die Zahl an. Lösung: **61**. Typische Fehler: -61 (betrag-gegenzahl), 0 (betrag-gegenzahl).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Zahl 1,2 hat eine Gegenzahl. / Markiere die Gegenzahl an der Zahlengeraden. _(Zahlenstrahl −2 bis 2, Teilstriche alle 0,1; antippen)_ Lösung: **−1,2**. Typische Fehler: 1,2 (betrag-gegenzahl), −0,8 (strahl-gespiegelt).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Zwei Zahlen haben den Abstand 9 zur Null. / Markiere die kleinere der beiden Zahlen. _(Zahlenstrahl -10 bis 10, Teilstriche alle 1; antippen)_ Lösung: **-9**. Typische Fehler: 9 (negativ-groesser), -1 (strahl-gespiegelt).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Elif sagt: „Die Gegenzahl einer Zahl ist immer negativ.“ / Prüfe die Aussage.
+  - ☐ Stimmt.
+  - ☐ Falsch. / Die Gegenzahl von 2 ist 2.
+  - ☑ Falsch. / Die Gegenzahl von −2 ist 2.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die Gegenzahl hat denselben Abstand zur Null, aber das andere Vorzeichen. *Lösungsschritt:* Ändere nur das Vorzeichen. Zähler und Nenner bleiben.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Gib die Gegenzahl von −4⁄5 an. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **4⁄5**. Typische Fehler: −4⁄5 (betrag-gegenzahl), 1 1⁄4 (bruch-kehrwert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Gib die Gegenzahl von −2,09 an. Lösung: **2,09**. Typische Fehler: −2,09 (betrag-gegenzahl).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlen an, die von der Null den Abstand 7,1 haben.
+  - ☑ −7,1
+  - ☐ −1,7
+  - ☐ 0
+  - ☑ 7,1
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Gib die Gegenzahl der Gegenzahl von −1,27 an. Lösung: **−1,27**. Typische Fehler: 1,27 (betrag-gegenzahl).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle rationalen Zahlen an, die keine ganzen Zahlen sind.
+  - ☑ −1,6
+  - ☐ 26
+  - ☐ 0
+  - ☐ −25
+  - ☑ 2⁄5
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Zahl und ihre Gegenzahl liegen 13,8 auseinander. / Gib die negative der beiden Zahlen an. Lösung: **−6,9**. Typische Fehler: 6,9 (negativ-groesser), −13,8 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Der Betrag ist der Abstand zur Null. Er ist nie negativ.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne |−1,5|. Lösung: **1,5**. Typische Fehler: −1,5 (betrag-gegenzahl).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlbereiche an, zu denen 23 gehört.
+  - ☑ ℚ (rationale Zahlen)
+  - ☑ ℤ (ganze Zahlen)
+  - ☑ ℕ (natürliche Zahlen)
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Kreuze alle Zahlbereiche an, zu denen 9⁄4 gehört.
+  - ☐ ℤ (ganze Zahlen)
+  - ☑ ℚ (rationale Zahlen)
+  - ☐ ℕ (natürliche Zahlen)
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. Kreuze alle an, die stimmen.
+  - ☐ Eine negative Zahl ist umso größer, je größer ihr Betrag ist.
+  - ☑ Der Betrag einer Zahl ist nie negativ.
+  - ☐ Die Gegenzahl einer Zahl ist immer kleiner als die Zahl.
+  - ☑ Zwei verschiedene Zahlen können denselben Betrag haben.
+  - ☑ Jede natürliche Zahl ist auch eine ganze Zahl.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Zahl a hat den Betrag 38 und ist kleiner als ihre Gegenzahl. Gib a an. Lösung: **-38**. Typische Fehler: 38 (betrag-gegenzahl), 0 (betrag-gegenzahl).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Bestimme, wie viele ganze Zahlen einen Betrag haben, der kleiner als 3 ist. Lösung: **5**. Typische Fehler: 4 (sach-schritt-vergessen), 2 (betrag-gegenzahl), 7 (betrag-gegenzahl).
+
+## 6.9.3-V1: Ich kann rationale Zahlen vergleichen.
+
+Grundlage, die F übt: Zwei Zahlen an der Zahlengeraden vergleichen: Die linke Zahl ist die kleinere
+
+Baut auf: 6.9.2-R1 (Ich kann negative Dezimalzahlen und Brüche an der Zahlengerade ablesen und eintragen.), 6.1.4-V1 (Ich kann Brüche mit gleichem Nenner oder gleichem Zähler vergleichen.), 6.4.2-V1 (Ich kann Dezimalzahlen vergleichen und der Größe nach ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die kleinere Zahl liegt auf der Zahlengeraden weiter links. *Beispiel:* −8 liegt links von −3. Also gilt −8 < −3. *Lösungsschritt:* Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Setze das passende Zeichen ein. −6 ▢ −5 _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -6, -5)_
+  - ☐ =
+  - ☑ <
+  - ☐ >
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Setze das passende Zeichen ein. 1 ▢ −8 _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -8, 1)_
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `03` AFB I · _Probleme lösen_ · Schau auf die Punkte an der Zahlengeraden. / Kreuze die kleinste Zahl an. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei 4, -1, -9)_
+  - ☐ −1
+  - ☑ −9
+  - ☐ 4
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen die Temperatur in zwei Orten. / Kreuze an, wo es kälter ist. _(Bild: 2 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: Moskau -7 °C, Oslo -5 °C)_
+  - ☑ Moskau
+  - ☐ Oslo
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Setze das passende Zeichen ein. −16 ▢ −18 _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Punkte bei -16, -18)_
+  - ☐ =
+  - ☐ <
+  - ☑ >
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Setze das passende Zeichen ein. 0 ▢ −9 _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -9)_
+  - ☐ <
+  - ☑ >
+  - ☐ =
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Die kleinere Zahl liegt auf der Zahlengeraden weiter links. *Beispiel:* −8 liegt links von −3. Also gilt −8 < −3. *Lösungsschritt:* Suche beide Zahlen auf der Zahlengeraden. Die linke Zahl ist die kleinere.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Setze das passende Zeichen ein. −60 ▢ −75 _(Bild: Zahlengerade -100 bis 0, Teilstriche alle 5, Punkte bei -60, -75)_
+  - ☑ >
+  - ☐ =
+  - ☐ <
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Punkte an der Zahlengeraden. / Setze das passende Zeichen ein. −1,1 ▢ −0,5 _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Punkte bei −1,1, −0,5)_
+  - ☐ =
+  - ☑ <
+  - ☐ >
+- `03` AFB II · _Probleme lösen_ · Schau auf die Punkte an der Zahlengeraden. / Kreuze die größte Zahl an. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Punkte bei −0,9, −1,5, −0,2)_
+  - ☐ −1,5
+  - ☑ −0,2
+  - ☐ −0,9
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Setze das passende Zeichen ein. −3 1⁄2 ▢ −3,3
+  - ☐ =
+  - ☐ >
+  - ☑ <
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. / Kreuze alle richtigen Aussagen an.
+  - ☐ −87,5 > −87
+  - ☑ −87 < −84
+  - ☑ 84 > −87
+  - ☐ 0 < −84
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Setze eine Zahl in das Kästchen ein: −4 < ▢ < −2 / Kreuze die passende Zahl an.
+  - ☐ −1,6
+  - ☑ −2,3
+  - ☐ −4,4
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Vergleiche zuerst ohne Vorzeichen, Stelle für Stelle. Bei zwei negativen Zahlen dreht sich das Zeichen um. *Lösungsschritt:* Schreibe beide Zahlen mit gleich vielen Nachkommastellen. Die Zahl, die weiter von der Null entfernt ist, ist die kleinere.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Setze das passende Zeichen ein. −4,31 ▢ −4,4
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Setze das passende Zeichen ein. −2⁄5 ▢ −0,45
+  - ☐ <
+  - ☑ >
+  - ☐ =
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. / Kreuze alle richtigen Aussagen an.
+  - ☑ 0,98 > −1,8
+  - ☑ 0 > −0,61
+  - ☐ −1,8 > −0,61
+  - ☐ −0,61 < −0,98
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Setze das passende Zeichen ein. −4⁄5 ▢ −1⁄5
+  - ☑ <
+  - ☐ >
+  - ☐ =
+- `05` AFB II · _Probleme lösen_ · Kreuze die kleinste Zahl an.
+  - ☐ −1⁄4
+  - ☐ −0,53
+  - ☑ −0,8
+  - ☐ 0,2
+- `06` AFB III · _Argumentieren_ · Ali sagt: „−0,24 ist größer als −0,2, weil 24 größer ist als 2.“ / Prüfe die Aussage.
+  - ☐ Stimmt.
+  - ☐ Falsch. Richtig ist: −0,24 = −0,2.
+  - ☑ Falsch. Richtig ist: −0,24 < −0,2.
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig. Bei zwei negativen Brüchen ist der mit dem größeren Abstand zur Null der kleinere.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Setze das passende Zeichen ein. −1⁄4 ▢ −1⁄5
+  - ☑ <
+  - ☐ >
+  - ☐ =
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −3⁄4 < ▢ < −1⁄2 / Kreuze alle passenden Zahlen an.
+  - ☐ −4⁄5
+  - ☐ −0,78
+  - ☑ −0,51
+  - ☑ −2⁄3
+  - ☐ −2⁄7
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Setze das passende Zeichen ein. −1 5⁄6 ▢ −1,83
+  - ☐ >
+  - ☐ =
+  - ☑ <
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Setze Ziffern in das Kästchen ein: −1,▢6 > −1,56 / Kreuze alle passenden Ziffern an.
+  - ☐ 7
+  - ☑ 1
+  - ☐ 6
+  - ☑ 2
+  - ☐ 9
+- `05` AFB II · _Argumentieren_ · Emre sagt: „Eine negative Zahl ist umso größer, je weiter sie von der Null entfernt ist.“ / Emre denkt dabei an −8 und −5. / Prüfe die Aussage. Begründe mit der Zahlengeraden.
+  - ☐ Falsch. Beide Zahlen sind gleich groß, also gilt −8 = −5.
+  - ☐ Stimmt. −8 ist weiter von der Null entfernt, also gilt −8 > −5.
+  - ☑ Falsch. −8 liegt weiter links als −5, also gilt −8 < −5.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Bestimme, wie viele ganze Zahlen zwischen −7,8 und 6,7 liegen. Lösung: **14**. Typische Fehler: 13 (sach-schritt-vergessen), 15 (abstand-ueber-null), -1 (abstand-ueber-null).
+
+## 6.9.3-V2: Ich kann rationale Zahlen ordnen und Zahlen angeben, die dazwischen liegen.
+
+Grundlage, die F übt: Drei Zahlen von −10 bis 10 an der Zahlengeraden ordnen
+
+Baut auf: 6.9.3-V1 (Ich kann rationale Zahlen vergleichen.), 6.1.4-V2 (Ich kann Brüche mit verschiedenen Nennern vergleichen und ordnen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind. *Beispiel:* −8, −3, 0, 5 ist richtig geordnet. *Lösungsschritt:* Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -7, -3, 8)_ _(Ordnen; die Karten liegen so da: 8, −7, −3)_ Lösung: **−7, −3, 8**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -7, -6, -1, 5)_ _(Ordnen; die Karten liegen so da: 5, −6, −7, −1)_ Lösung: **−7, −6, −1, 5**
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Temperatur. _(Bild: 3 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: Mo -1 °C, Di 3 °C, Mi -9 °C)_ _(Ordnen; die Karten liegen so da: −1 °C, −9 °C, 3 °C)_ Lösung: **−9 °C, −1 °C, 3 °C**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der größten zur kleinsten Zahl. _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Punkte bei -16, -12, -2)_ _(Ordnen; die Karten liegen so da: −16, −2, −12)_ Lösung: **−2, −12, −16**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -8, -4, 6)_ _(Ordnen; die Karten liegen so da: 6, −8, 0, −4)_ Lösung: **−8, −4, 0, 6**
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Setze eine Zahl in das Kästchen ein: −3 < ▢ < 1 / Kreuze die passende Zahl an. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -3, 1)_
+  - ☐ 3
+  - ☐ −5
+  - ☑ 0
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ganz links stehen die negativen Zahlen, die weit von der Null entfernt sind. *Beispiel:* −8, −3, 0, 5 ist richtig geordnet. *Lösungsschritt:* Ordne erst die negativen Zahlen: Die Zahl am weitesten weg von der Null ist die kleinste. Dann folgen die positiven.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Bild: Zahlengerade -100 bis 100, Teilstriche alle 5, Punkte bei -70, -50, -25, 20, 80)_ _(Ordnen; die Karten liegen so da: −25, −50, −70, 80, 20)_ Lösung: **−70, −50, −25, 20, 80**
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Punkte bei −1,6, −0,7, −0,4, 1,7)_ _(Ordnen; die Karten liegen so da: 1,7, −0,7, −0,4, −1,6)_ Lösung: **−1,6, −0,7, −0,4, 1,7**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Ordnen; die Karten liegen so da: 9,5, −2,1, −3, −2,6)_ Lösung: **−3, −2,6, −2,1, 9,5**
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der größten zur kleinsten Zahl. _(Ordnen; die Karten liegen so da: −5,1, 4,5, −8,5, −1,7)_ Lösung: **4,5, −1,7, −5,1, −8,5**
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −8 < ▢ < −7 / Kreuze alle passenden Zahlen an.
+  - ☐ 8,1
+  - ☑ −7,7
+  - ☑ −7,3
+  - ☐ −6,9
+- `06` AFB III · _Argumentieren_ · Ben ordnet die Zahlen −19, −12, −3 von der kleinsten zur größten. / Ben schreibt: −3 < −12 < −19 / Prüfe die Reihenfolge. _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Punkte bei -19, -12, -3)_
+  - ☐ Falsch. / Richtig ist: −12 < −19 < −3.
+  - ☑ Falsch. / Richtig ist: −19 < −12 < −3.
+  - ☐ Stimmt.
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ordne zuerst die negativen Zahlen. Je weiter weg von der Null, desto kleiner die Zahl. *Lösungsschritt:* Schreibe alle Zahlen mit zwei Nachkommastellen. Beginne mit der Zahl, die am weitesten links liegt.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der kleinsten zur größten Zahl. _(Ordnen; die Karten liegen so da: −1,61, −0,7, 0,09, 0,96, −0,3)_ Lösung: **−1,61, −0,7, −0,3, 0,09, 0,96**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne die Brüche und Dezimalzahlen von der kleinsten zur größten Zahl. _(Ordnen; die Karten liegen so da: −2⁄5, −0,6, −0,3, −3⁄4)_ Lösung: **−3⁄4, −0,6, −2⁄5, −0,3**
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −1 < ▢ < −1⁄2 / Kreuze alle passenden Zahlen an.
+  - ☐ −0,4
+  - ☐ −1,25
+  - ☑ −0,9
+  - ☑ −0,55
+  - ☐ 0,5
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −4,7 < ▢ < −4,2 / Kreuze alle passenden Zahlen an.
+  - ☑ −4,61
+  - ☐ −4,15
+  - ☐ −4,75
+  - ☑ −4,26
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ordne von der größten zur kleinsten Zahl. _(Ordnen; die Karten liegen so da: −2,16, 0,97, −1,6, −3⁄4)_ Lösung: **0,97, −3⁄4, −1,6, −2,16**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −5,2 < ▢ < −5,1 / Kreuze alle passenden Zahlen an.
+  - ☑ −5,16
+  - ☐ 5,15
+  - ☑ −5,15
+  - ☐ −5,23
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Mache die Brüche gleichnamig oder wandle alles in Dezimalzahlen um.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Ordne von der größten zur kleinsten Zahl. _(Ordnen; die Karten liegen so da: −0,72, −7⁄8, −3⁄4, −2⁄3, −5⁄6)_ Lösung: **−2⁄3, −0,72, −3⁄4, −5⁄6, −7⁄8**
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −4⁄5 < ▢ < −3⁄4 / Kreuze alle passenden Zahlen an.
+  - ☐ 31⁄40
+  - ☑ −31⁄40
+  - ☐ −3⁄5
+  - ☐ −1
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. / Kreuze alle richtigen Aussagen an.
+  - ☐ −1⁄6 < −1⁄5
+  - ☑ −0,097 > −0,21
+  - ☑ 1⁄6 > −0,097
+  - ☐ −0,21 > −1⁄5
+- `04` AFB III · _Argumentieren_ · Noah ordnet −0,24; −0,313; −1,50 von der kleinsten zur größten Zahl. / Noah schreibt: −0,313 < −0,24 < −1,50 / Prüfe die Reihenfolge.
+  - ☐ Stimmt.
+  - ☑ Falsch. Richtig ist: −1,5 < −0,313 < −0,24.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. / Kreuze alle richtigen Aussagen an.
+  - ☐ Von zwei negativen Zahlen ist die mit mehr Ziffern die kleinere.
+  - ☑ −6 ist größer als −7, weil −6 näher an der Null liegt.
+  - ☐ Es gibt eine kleinste negative Zahl.
+  - ☑ Zwischen −7 und −6 liegen unendlich viele Zahlen.
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Setze Zahlen in das Kästchen ein: −5⁄7 < ▢ < −4⁄7 / Kreuze alle passenden Zahlen an.
+  - ☐ 9⁄14
+  - ☑ −9⁄14
+  - ☐ −4⁄7
+  - ☐ −5⁄6
+
+## 6.9.4-Z1: Ich kann Zunahmen und Abnahmen an der Zahlengerade und am Thermometer bestimmen.
+
+Grundlage, die F übt: Am Thermometer die Grade zwischen zwei Temperaturen über die Null hinweg zählen
+
+Baut auf: 6.9.1-N2 (Ich kann ganze Zahlen an der Zahlengerade ablesen und eintragen.), 5.3.1-K1 (Ich kann im Kopf addieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Grade von der einen Säule zur anderen. Zähle über die Null hinweg. *Beispiel:* Von −2 °C bis 3 °C: 2 Grad bis zur Null und 3 Grad weiter, zusammen 5 Grad. *Lösungsschritt:* Zähle erst bis zur Null. Zähle dann weiter bis zur zweiten Säule.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen die Temperatur morgens und mittags. / Bestimme, um wie viel Grad es wärmer geworden ist. _(Bild: 2 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: morgens -1 °C, mittags 4 °C)_ Lösung: **5 Grad**. Typische Fehler: 3 (abstand-ueber-null).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Das Thermometer zeigt die Temperatur am Abend. / In der Nacht wird es 9 Grad kälter. / Gib die Temperatur in der Nacht an. _(Bild: Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: 5 °C)_ Lösung: **-4 °C**. Typische Fehler: 4 (vorzeichen-vergessen), 14 (richtung-vertauscht).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Der Pfeil startet beim Punkt. / Gib die Zahl an, bei der der Pfeil endet. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Startpunkt -6, Sprünge -6 nach 1 (+7))_ Lösung: **1**. Typische Fehler: -13 (richtung-vertauscht), -1 (vorzeichen-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Die Punkte liegen bei −2 und 5. / Bestimme, wie viele Schritte es von der linken zur rechten Zahl sind. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -2, 5)_ Lösung: **7**. Typische Fehler: 3 (abstand-ueber-null).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen die Temperatur mittags und abends. / Bestimme, um wie viel Grad es kälter geworden ist. _(Bild: 2 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: mittags -3 °C, abends -7 °C)_ Lösung: **4 Grad**. Typische Fehler: 10 (betraege-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen die Temperatur nachts und mittags. / Kreuze die passende Änderung an. _(Bild: 2 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: nachts -7 °C, mittags 6 °C)_
+  - ☐ 1 Grad wärmer
+  - ☑ 13 Grad wärmer
+  - ☐ 13 Grad kälter
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Zähle die Grade von der einen Säule zur anderen. Zähle über die Null hinweg. *Beispiel:* Von −2 °C bis 3 °C: 2 Grad bis zur Null und 3 Grad weiter, zusammen 5 Grad. *Lösungsschritt:* Zähle erst bis zur Null. Zähle dann weiter bis zur zweiten Säule.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Morgens zeigt das Thermometer −15 °C, mittags 22 °C. / Bestimme, um wie viel Grad es wärmer geworden ist. Lösung: **37 Grad**. Typische Fehler: 7 (abstand-ueber-null).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Die Thermometer zeigen die Temperatur morgens und mittags. / Ein Strich bedeutet 2 Grad. / Bestimme, um wie viel Grad es wärmer geworden ist. _(Bild: 2 Thermometer von -20 °C bis 30 °C, Striche alle 2 Grad: morgens -18 °C, mittags 4 °C)_ Lösung: **22 Grad**. Typische Fehler: 14 (abstand-ueber-null), 11 (strahl-einerschritte).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Der Weg startet beim Punkt und folgt den Pfeilen. / Gib die Zahl an, bei der der Weg endet. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Startpunkt -1, Sprünge -1 nach -6 (−5), -6 nach -2 (+4))_ Lösung: **-2**. Typische Fehler: 0 (richtung-vertauscht), 2 (vorzeichen-vergessen), -6 (sach-schritt-vergessen).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Am Nachmittag sind es 9 °C. / Bis zum Morgen fällt die Temperatur um 20 Grad. / Gib die Temperatur am Morgen an. Lösung: **-11 °C**. Typische Fehler: 11 (vorzeichen-vergessen), 29 (richtung-vertauscht).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Das Thermometer zeigt die Temperatur am Mittag. / Bis zum Abend wird es 24 Grad kälter. / Gib die Temperatur am Abend an. _(Bild: Thermometer von -20 °C bis 30 °C, Striche alle 2 Grad: 6 °C)_ Lösung: **-18 °C**. Typische Fehler: 18 (vorzeichen-vergessen), 30 (richtung-vertauscht), -6 (strahl-einerschritte).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Pfeil an der Zahlengeraden startet bei −3 und endet bei 5. / Ergänze die Länge des Pfeils. / Der Pfeil geht ▢ Schritte nach rechts. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -3, 5)_ Lösung: a = **8**
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Ein Strich bedeutet hier 0,1. Plus geht nach rechts. *Lösungsschritt:* Rechne Start plus Pfeil. Achte darauf, ob du über die Null kommst.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Gib die Zahl an, bei der der Pfeil endet. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Startpunkt −1,3, Sprünge −1,3 nach 1,6 (+2,9))_ Lösung: **1,6**. Typische Fehler: −4,2 (richtung-vertauscht), −1,6 (vorzeichen-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Nachts sind es −2,7 °C, mittags 3,7 °C. / Bestimme, um wie viel Grad es wärmer geworden ist. Lösung: **6,4 Grad**. Typische Fehler: 1 (abstand-ueber-null).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Pfeil an der Zahlengeraden startet bei −0,6 und endet bei 1,5. / Gib die Änderung mit Vorzeichen an. / Ein Pfeil nach rechts bekommt ein Plus, ein Pfeil nach links ein Minus. Lösung: **2,1**. Typische Fehler: −2,1 (richtung-vertauscht), 0,9 (abstand-ueber-null).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · In Nordheim fällt die Temperatur von 4,4 °C auf −4,4 °C. / In Südheim fällt sie von −0,5 °C auf −5,4 °C. / Kreuze an, wo die Temperatur stärker fällt.
+  - ☐ in beiden Orten gleich stark
+  - ☑ in Nordheim, um 8,8 Grad
+  - ☐ in Südheim, um 4,9 Grad
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Der Weg startet beim Punkt und folgt den drei Pfeilen. / Gib die Zahl an, bei der der Weg endet. _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Startpunkt -2, Sprünge -2 nach 6 (+8), 6 nach -2 (−8), -2 nach 2 (+4))_ Lösung: **2**. Typische Fehler: -6 (richtung-vertauscht), -2 (vorzeichen-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · In einer Kühlkammer sind es −20,1 °C. / Draußen sind es 12 °C. / Bestimme den Temperaturunterschied. Lösung: **32,1 Grad**. Typische Fehler: 8,1 (abstand-ueber-null).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts: Ein Anstieg wird beim Zurückrechnen zu einer Abnahme.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Nach einem Anstieg um 7,5 Grad zeigt das Thermometer 5,3 °C. / Gib die Temperatur vor dem Anstieg an. Lösung: **−2,2 °C**. Typische Fehler: 12,8 (richtung-vertauscht), 2,2 (vorzeichen-vergessen).
+- `02` AFB II · _Argumentieren_ · Mia rechnet: „Von −4 °C auf 5 °C sind es 1 Grad.“ / Prüfe die Rechnung. Begründe.
+  - ☐ Falsch. Es sind 4 Grad, denn nur der Teil unter null zählt.
+  - ☐ Stimmt, denn 5 − 4 = 1.
+  - ☑ Falsch. Es sind 9 Grad, denn bis zur Null sind es 4 Grad und dann noch 5 Grad.
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Schau auf die Zahlengerade. / Der Weg startet beim Punkt und folgt den drei Pfeilen. / Gib die Zahl an, bei der der Weg endet. _(Bild: Zahlengerade −2 bis 2, Teilstriche alle 0,1, Startpunkt −1,2, Sprünge −1,2 nach 0 (+1,2), 0 nach −1,9 (−1,9), −1,9 nach −1,6 (+0,3))_ Lösung: **−1,6**. Typische Fehler: −0,8 (richtung-vertauscht), 1,6 (vorzeichen-vergessen), −1,9 (sach-schritt-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Die Temperatur fällt erst um 3,5 Grad und steigt dann um 2,7 Grad. / Am Ende sind es −4,1 °C. / Gib die Temperatur am Anfang an. Lösung: **−3,3 °C**. Typische Fehler: −4,9 (richtung-vertauscht), 3,3 (vorzeichen-vergessen), −0,6 (sach-schritt-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Wasserstand liegt 5⁄8 m über dem Normalwert. / Er sinkt um 1 1⁄8 m. / Gib den neuen Wasserstand als Zahl mit Vorzeichen an. Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1⁄2 m**. Typische Fehler: 1⁄2 (vorzeichen-vergessen), 1 3⁄4 (richtung-vertauscht).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Pfeil der Länge 4,1 zeigt nach rechts und endet bei −4,3. / Gib die Zahl an, bei der der Pfeil startet. Lösung: **−8,4**. Typische Fehler: −0,2 (richtung-vertauscht), 8,4 (vorzeichen-vergessen).
+
+## 6.9.4-Z2: Ich kann Zunahmen und Abnahmen in Sachaufgaben berechnen.
+
+Grundlage, die F übt: Einen Kontostand nach einer Abbuchung mit Bild bestimmen
+
+Baut auf: 6.9.4-Z1 (Ich kann Zunahmen und Abnahmen an der Zahlengerade und am Thermometer bestimmen.), 6.5.1-A1 (Ich kann Dezimalzahlen im Kopf addieren und subtrahieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Kommt Geld dazu, rechnest du plus. Geht Geld ab, rechnest du minus. *Beispiel:* Kontostand 5 €, Abbuchung 8 €: 5 − 8 = −3. Das Konto ist mit 3 € im Minus. *Lösungsschritt:* Rechne den alten Kontostand plus oder minus die Buchung.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Auf Ninas Konto sind 8 €. / Es werden 13 € abgebucht. / Gib den neuen Kontostand an. _(Tabelle: Buchung | Betrag / alter Kontostand | 8 € / Abbuchung | −13 € / neuer Kontostand | ?)_ Lösung: **-5 €**. Typische Fehler: 5 (vorzeichen-vergessen), 21 (richtung-vertauscht).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Der Aufzug steht im Stockwerk 3. / Er fährt 7 Stockwerke nach unten. / Gib das Stockwerk an, in dem er hält. _(Bild: Zahlengerade -5 bis 10, Teilstriche alle 1, Startpunkt 3)_ Lösung: **-4**. Typische Fehler: 4 (vorzeichen-vergessen), 10 (richtung-vertauscht).
+- `03` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Taucher ist 12 m unter der Wasseroberfläche. / Er steigt 5 m auf. / Gib seine neue Höhe als Zahl mit Vorzeichen an. _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Startpunkt -12)_ Lösung: **-7 m**. Typische Fehler: 7 (vorzeichen-vergessen), -17 (richtung-vertauscht).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Abends sind es 2 °C. / In der Nacht wird es 7 Grad kälter. / Gib die Temperatur in der Nacht an. _(Bild: Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: 2 °C)_ Lösung: **-5 °C**. Typische Fehler: 5 (vorzeichen-vergessen), 9 (richtung-vertauscht).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Ben hat 7 € Schulden. / Er zahlt 15 € auf sein Konto ein. / Gib den neuen Kontostand an. _(Tabelle: Buchung | Betrag / alter Kontostand | −7 € / Einzahlung | 15 € / neuer Kontostand | ?)_ Lösung: **8 €**. Typische Fehler: -22 (richtung-vertauscht), 22 (betraege-addiert).
+- `06` AFB I · _Mit symbolischen Elementen umgehen_ · Der Burgkeller liegt bei −3 m. / Die Turmspitze liegt bei 8 m. / Bestimme den Höhenunterschied. _(Bild: Zahlengerade -5 bis 15, Teilstriche alle 1, Punkte bei -3, 8)_ Lösung: **11 m**. Typische Fehler: 5 (abstand-ueber-null).
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Kommt Geld dazu, rechnest du plus. Geht Geld ab, rechnest du minus. *Beispiel:* Kontostand 5 €, Abbuchung 8 €: 5 − 8 = −3. Das Konto ist mit 3 € im Minus. *Lösungsschritt:* Rechne den alten Kontostand plus oder minus die Buchung.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Auf einem Konto sind 44 €. / Es werden 50 € abgebucht. / Berechne den neuen Kontostand. _(Tabelle: Buchung | Betrag / alter Kontostand | 44 € / Abbuchung | −50 € / neuer Kontostand | ?)_ Lösung: **-6 €**. Typische Fehler: 6 (vorzeichen-vergessen), 94 (richtung-vertauscht).
+- `02` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Fisch schwimmt 40 m unter der Wasseroberfläche. / Eine Möwe fliegt 35 m darüber. / Berechne den Höhenunterschied zwischen Fisch und Möwe. Lösung: **75 m**. Typische Fehler: 5 (abstand-ueber-null).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · In Helsinki sind es um 7 Uhr −13 °C. / Um 14 Uhr sind es 4 °C. / Berechne, um wie viel Grad es wärmer geworden ist. Lösung: **17 Grad**. Typische Fehler: 9 (abstand-ueber-null).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Lea steigt im Stockwerk −3 in den Aufzug. / Sie fährt in das Stockwerk 8. / Bestimme, um wie viele Stockwerke sie nach oben fährt. _(Bild: Zahlengerade -5 bis 15, Teilstriche alle 1, Punkte bei -3, 8)_ Lösung: **11**. Typische Fehler: 5 (abstand-ueber-null).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Auf Tims Konto sind 28 €. / Erst werden 35 € abgebucht, dann 22 € eingezahlt. / Berechne den neuen Kontostand. _(Tabelle: Buchung | Betrag / alter Kontostand | 28 € / Abbuchung | −35 € / Einzahlung | 22 €)_ Lösung: **15 €**. Typische Fehler: 41 (richtung-vertauscht), -7 (sach-schritt-vergessen), -15 (vorzeichen-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Konto zeigt −34 €. / Dann werden 9 € eingezahlt. / Kreuze die passende Rechnung an.
+  - ☐ 34 + 9
+  - ☐ −34 − 9
+  - ☑ −34 + 9
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Geht mehr Geld ab, als auf dem Konto ist, wird der Kontostand negativ. *Lösungsschritt:* Rechne die größere minus die kleinere Zahl und setze ein Minus davor.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Auf einem Konto sind 29,19 €. / Es werden 182,37 € abgebucht. / Berechne den neuen Kontostand. Lösung: **−153,18 €**. Typische Fehler: 153,18 (vorzeichen-vergessen), 211,56 (richtung-vertauscht).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Taucher ist 13,4 m unter der Wasseroberfläche. / Er steigt 5,7 m auf. / Berechne seine neue Höhe als Zahl mit Vorzeichen. Lösung: **−7,7 m**. Typische Fehler: 7,7 (vorzeichen-vergessen), −19,1 (richtung-vertauscht).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · An einem Wintertag sind es in Oslo −5,2 °C, in Rom 2,5 °C. / Berechne den Temperaturunterschied. Lösung: **7,7 Grad**. Typische Fehler: 2,7 (abstand-ueber-null).
+- `04` AFB I · _Mit symbolischen Elementen umgehen_ · Hier siehst du einen Kontoauszug. / Berechne den neuen Kontostand. _(Tabelle: Buchung | Betrag / alter Kontostand | 40,49 € / Abbuchung | −54,67 € / Gutschrift | 18,07 €)_ Lösung: **3,89 €**. Typische Fehler: −14,18 (sach-schritt-vergessen), −3,89 (vorzeichen-vergessen), 77,09 (richtung-vertauscht).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Der Wasserstand im Burggraben liegt bei −0,79 m, also unter dem Normalwert. / Nach einem Regen steigt er um 1,23 m. / Berechne den neuen Wasserstand. Lösung: **0,44 m**. Typische Fehler: −2,02 (richtung-vertauscht), −0,44 (vorzeichen-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Ein Auto fährt im Parkhaus vom Stockwerk −3 in das Stockwerk 8. / Jedes Stockwerk ist 3,21 m hoch. / Berechne, wie viele Meter das Auto nach oben fährt. Lösung: **35,31 m**. Typische Fehler: 16,05 (abstand-ueber-null), 25,68 (sach-schritt-vergessen).
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Rechne rückwärts: Eine Abbuchung machst du mit plus rückgängig.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Nach einer Abbuchung von 80,23 € zeigt ein Konto −10,73 €. / Berechne den Kontostand vor der Abbuchung. Lösung: **69,50 €**. Typische Fehler: −90,96 (richtung-vertauscht), −69,50 (vorzeichen-vergessen).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Um 18 Uhr sind es 8 °C. / Danach fällt die Temperatur jede Stunde um 2,5 Grad. / Berechne die Temperatur um 23 Uhr. Lösung: **−4,5 °C**. Typische Fehler: 20,5 (richtung-vertauscht), 4,5 (vorzeichen-vergessen), −2 (sach-schritt-vergessen).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Ein Pegel zeigt am Morgen −7⁄8 m und am Abend 2 1⁄4 m. / Berechne, um wie viele Meter das Wasser gestiegen ist. Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **3 1⁄8 m**. Typische Fehler: 1 3⁄8 (abstand-ueber-null), −3 1⁄8 (vorzeichen-vergessen).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Auf einem Konto sind 21,83 €. Es werden 69,29 € abgebucht. / Mia rechnet: „Der neue Kontostand ist 47,46 €.“ / Prüfe das Ergebnis.
+  - ☐ Falsch. Der Kontostand ist 91,12 €.
+  - ☑ Falsch. Der Kontostand ist −47,46 €, weil mehr abgebucht wird, als auf dem Konto war.
+  - ☐ Stimmt.
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Im Kontoauszug fehlt ein Betrag. / Ergänze die fehlende Abbuchung. / Alter Kontostand 23,41 €, neuer Kontostand 0,65 €, Gutschrift 11,73 €. / Abbuchung: ▢ € _(Tabelle: Buchung | Betrag / alter Kontostand | 23,41 € / Abbuchung | ? / Gutschrift | 11,73 € / neuer Kontostand | 0,65 €)_ Lösung: a = **34,49**
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Eine Taucherin ist 12,8 m tief. / Sie taucht 9,1 m tiefer und steigt dann 12,2 m auf. / Berechne ihre Höhe am Ende als Zahl mit Vorzeichen. Lösung: **−9,7 m**. Typische Fehler: 8,5 (richtung-vertauscht), 9,7 (vorzeichen-vergessen), −21,9 (sach-schritt-vergessen).
+
+## 6.9.5-A1: Ich kann ganze Zahlen addieren und subtrahieren.
+
+Grundlage, die F übt: An der Zahlengeraden von einer ganzen Zahl aus nach rechts und links gehen
+
+Baut auf: 6.9.4-Z1 (Ich kann Zunahmen und Abnahmen an der Zahlengerade und am Thermometer bestimmen.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Plus eine negative Zahl geht nach links. Minus eine negative Zahl geht nach rechts: Du addierst die Gegenzahl.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne −63 + 83. Lösung: **20**. Typische Fehler: -20 (vorzeichen-vergessen), 146 (betraege-addiert), -146 (betraege-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 90 + (−18). Lösung: **72**. Typische Fehler: -72 (vorzeichen-vergessen), 108 (betraege-addiert), -108 (betraege-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −74 + (−61). Lösung: **-135**. Typische Fehler: 135 (vorzeichen-vergessen), -13 (richtung-vertauscht).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne −111 + 155. Lösung: **44**. Typische Fehler: -44 (vorzeichen-vergessen), 266 (betraege-addiert), -266 (betraege-addiert).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 50 − 88. Lösung: **-38**. Typische Fehler: 138 (richtung-vertauscht), 38 (vorzeichen-vergessen), -138 (betraege-addiert).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne −55 − 83. Lösung: **-138**. Typische Fehler: 28 (richtung-vertauscht), 138 (vorzeichen-vergessen), -28 (betraege-addiert).
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 71 − (−48). Lösung: **119**. Typische Fehler: 23 (minus-minus-uebersehen), -119 (vorzeichen-vergessen).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −55 − (−65). Lösung: **10**. Typische Fehler: -120 (minus-minus-uebersehen), -10 (vorzeichen-vergessen).
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −21 + 14 − 15. Lösung: **-22**. Typische Fehler: 22 (vorzeichen-vergessen), 20 (betraege-addiert), 8 (minus-minus-uebersehen).
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne 16 − (−14) + (−32). Lösung: **-2**. Typische Fehler: 2 (vorzeichen-vergessen), 34 (betraege-addiert), 62 (minus-minus-uebersehen).
+- `11` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ergänze die Zahlenmauer. / Jeder Stein ist die Summe der beiden Steine darunter. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ **23** / **10** · **13** / −13 · 23 · −10
+- `12` AFB III · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ergänze die Zahlenmauer. / Jeder Stein ist die Summe der beiden Steine darunter. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ **-34** / **-21** · −13 / −38 · **17** · −30
+- `13` AFB I · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ + (−23) = 24 Lösung: a = **47**
+- `14` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ − (−24) = 62 Lösung: a = **38**
+- `15` AFB II · _Argumentieren_ · Emre rechnet: −31 + (−29) = −60 / Prüfe die Rechnung.
+  - ☐ Falsch. Richtig ist: −31 + (−29) = 60.
+  - ☐ Falsch. Richtig ist: −31 + (−29) = −2.
+  - ☑ Stimmt.
+- `16` AFB III · _Argumentieren_ · Ida rechnet: −15 − (−22) = −37 / Prüfe die Rechnung.
+  - ☐ Stimmt.
+  - ☐ Falsch. Richtig ist: −15 − (−22) = −7.
+  - ☑ Falsch. Richtig ist: −15 − (−22) = 7.
+- `17` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Rechnungen. / Kreuze alle richtigen Rechnungen an.
+  - ☑ −9 + 28 = 19
+  - ☑ −16 + 13 = −3
+  - ☑ −4 − (−3) = −1
+  - ☐ −10 + (−21) = 31
+- `18` AFB III · _Mit symbolischen Elementen umgehen_ · Prüfe die Rechnungen. / Kreuze alle richtigen Rechnungen an.
+  - ☑ −10 + (−20) = −30
+  - ☐ −23 − 27 = 4
+  - ☐ −23 + (−15) = 38
+  - ☑ −25 − (−11) = −14
+- `19` AFB I · _Mit symbolischen Elementen umgehen_ · Auf einem Konto sind 23 €. / Es werden 263 € abgebucht und 82 € gutgeschrieben. / Schreibe eine Rechnung und berechne den Kontostand. Lösung: **-158 €**. Typische Fehler: 204 (richtung-vertauscht), 158 (vorzeichen-vergessen), -240 (sach-schritt-vergessen).
+- `20` AFB II · _Mit symbolischen Elementen umgehen_ · Um 6 Uhr sind es −8 °C. / Bis 8 Uhr fällt die Temperatur um 2 Grad, bis 14 Uhr steigt sie um 7 Grad. / Berechne die Temperatur um 14 Uhr. Lösung: **-3 °C**. Typische Fehler: -13 (richtung-vertauscht), 3 (vorzeichen-vergessen), -10 (sach-schritt-vergessen).
+- `21` AFB II · _Mit symbolischen Elementen umgehen_ · Wenn du zu einer Zahl 25 addierst, erhältst du −29. / Gib die Zahl an. Lösung: **-54**. Typische Fehler: -4 (richtung-vertauscht), 54 (vorzeichen-vergessen).
+- `22` AFB III · _Mit symbolischen Elementen umgehen_ · Schreibe die Aufgabe als Plusaufgabe und berechne. / −19 − (−35) = −19 + ▢ = ▢ Lösung: a = **35**, b = **16**
+- `23` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: −56 + 67 + 56 Lösung: **67**. Typische Fehler: -67 (vorzeichen-vergessen), -45 (betraege-addiert).
+- `24` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne −247 − (−306). Lösung: **59**. Typische Fehler: -553 (minus-minus-uebersehen), -59 (vorzeichen-vergessen).
+
+## 6.9.5-A2: Ich kann Dezimalzahlen und Brüche mit Vorzeichen addieren und subtrahieren.
+
+Grundlage, die F übt: Zwei Dezimalzahlen mit einer Stelle nach dem Komma addieren und subtrahieren
+
+Baut auf: 6.9.5-A1 (Ich kann ganze Zahlen addieren und subtrahieren.), 6.2.2-U1 (Ich kann ungleichnamige Brüche addieren und subtrahieren, wenn ein Nenner ein Vielfaches des anderen ist.), 6.5.1-A1 (Ich kann Dezimalzahlen im Kopf addieren und subtrahieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Schreibe beide Zahlen mit gleich vielen Nachkommastellen. Rechne dann wie mit ganzen Zahlen.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne −3,6 + 5,3. Lösung: **1,7**. Typische Fehler: −1,7 (vorzeichen-vergessen), 8,9 (betraege-addiert), −8,9 (betraege-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 6,4 + (−5,8). Lösung: **0,6**. Typische Fehler: −0,6 (vorzeichen-vergessen), 12,2 (betraege-addiert), −12,2 (betraege-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −3,6 + (−9,42). Lösung: **−13,02**. Typische Fehler: 13,02 (vorzeichen-vergessen), 5,82 (richtung-vertauscht).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne 3,6 − (−4,6). Lösung: **8,2**. Typische Fehler: −1 (minus-minus-uebersehen), −8,2 (vorzeichen-vergessen).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −8,7 − 4,3. Lösung: **-13**. Typische Fehler: 13 (vorzeichen-vergessen).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne −2,69 − (−1,18). Lösung: **−1,51**. Typische Fehler: −3,87 (minus-minus-uebersehen), 1,51 (vorzeichen-vergessen).
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne 1,5 − 5,5. Lösung: **-4**. Typische Fehler: 7 (richtung-vertauscht), 4 (vorzeichen-vergessen), -7 (betraege-addiert).
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −2⁄5 + 3⁄5. Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄5**. Typische Fehler: −1⁄5 (vorzeichen-vergessen).
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −3⁄4 − 3⁄4. Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 1⁄2**. Typische Fehler: 1 1⁄2 (vorzeichen-vergessen).
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne −1 1⁄2 + (−1⁄6). Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 2⁄3**. Typische Fehler: 1 2⁄3 (vorzeichen-vergessen), −1 1⁄3 (richtung-vertauscht).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 2⁄3 − (−3⁄4). Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1 5⁄12**. Typische Fehler: −1⁄12 (minus-minus-uebersehen), −1 5⁄12 (vorzeichen-vergessen).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne −4⁄5 − (−1⁄2). Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−3⁄10**. Typische Fehler: −1 3⁄10 (minus-minus-uebersehen), 3⁄10 (vorzeichen-vergessen).
+- `13` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne −2,4 + 3⁄4 und gib das Ergebnis als Dezimalzahl an. Lösung: **−1,65**. Typische Fehler: 1,65 (vorzeichen-vergessen), 3,15 (betraege-addiert), −3,15 (betraege-addiert).
+- `14` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ + (−4,1) = −6,7 Lösung: a = **−2,6**
+- `15` AFB II · _Argumentieren_ · Noah rechnet: −5,5 − (−2,3) = −3,2 / Prüfe die Rechnung.
+  - ☐ Falsch. Richtig ist: −5,5 − (−2,3) = 3,2.
+  - ☑ Stimmt.
+  - ☐ Falsch. Richtig ist: −5,5 − (−2,3) = −7,8.
+- `16` AFB III · _Argumentieren_ · Paul rechnet: −7,1 + (−1,8) = 8,9 / Prüfe die Rechnung.
+  - ☐ Stimmt.
+  - ☑ Falsch. Richtig ist: −7,1 + (−1,8) = −8,9.
+  - ☐ Falsch. Richtig ist: −7,1 + (−1,8) = −5,3.
+- `17` AFB II · _Mit symbolischen Elementen umgehen (+ Kommunizieren)_ · Ergänze die Zahlenmauer. / Jeder Stein ist die Summe der beiden Steine darunter. _(Zahlenmauer, von oben nach unten; fett = Eingabefeld)_ **0** / **0,1** · **−0,1** / −2,4 · 2,5 · −2,6
+- `18` AFB III · _Mit symbolischen Elementen umgehen_ · Auf einem Konto sind 26,91 €. / Es werden 173,93 € abgebucht und 38,03 € gutgeschrieben. / Berechne den Kontostand. Lösung: **−108,99 €**. Typische Fehler: 162,81 (richtung-vertauscht), 108,99 (vorzeichen-vergessen), −147,02 (sach-schritt-vergessen).
+- `19` AFB I · _Mit symbolischen Elementen umgehen_ · Ein Tauchroboter ist bei −3,63 m. / Er steigt um 0,83 m. / Berechne seine neue Höhe. Lösung: **−2,8 m**. Typische Fehler: −4,46 (richtung-vertauscht), 2,8 (vorzeichen-vergessen).
+- `20` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −3⁄8 + 5⁄8 − (−3⁄8). Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄8**. Typische Fehler: −5⁄8 (vorzeichen-vergessen), −1⁄8 (minus-minus-uebersehen).
+- `21` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Rechnungen. / Kreuze alle richtigen Rechnungen an.
+  - ☑ −2,4 − 8,2 = −10,6
+  - ☐ −7,5 + (−6,6) = 14,1
+  - ☑ −6,8 + (−8,7) = −15,5
+  - ☑ −8,1 − (−6,9) = −1,2
+- `22` AFB III · _Mit symbolischen Elementen umgehen_ · Wenn du zu einer Zahl 4⁄5 addierst, erhältst du −4⁄5. / Gib die Zahl an. Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 3⁄5**. Typische Fehler: 1 3⁄5 (vorzeichen-vergessen).
+- `23` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne −3,039 + 3,7. Lösung: **0,661**. Typische Fehler: −0,661 (vorzeichen-vergessen), 6,739 (betraege-addiert), −6,739 (betraege-addiert).
+- `24` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne 5⁄8 − 1⁄3. Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄24**. Typische Fehler: 23⁄24 (richtung-vertauscht), −7⁄24 (vorzeichen-vergessen), −23⁄24 (betraege-addiert).
+
+## 6.9.6-P1: Ich kann rationale Zahlen multiplizieren.
+
+Grundlage, die F übt: Eine Zahl mehrmals addieren und als Malaufgabe schreiben
+
+Baut auf: 6.9.5-A1 (Ich kann ganze Zahlen addieren und subtrahieren.), 6.2.5-P1 (Ich kann Brüche miteinander multiplizieren und dabei vorher kürzen.), 6.5.3-M1 (Ich kann eine Dezimalzahl mit einer natürlichen Zahl multiplizieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Gleiche Vorzeichen ergeben Plus. Verschiedene Vorzeichen ergeben Minus.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (−9) · 5. Lösung: **-45**. Typische Fehler: 45 (vorzeichen-vergessen), -4 (1x1-addiert).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 4 · (−9). Lösung: **-36**. Typische Fehler: 36 (vorzeichen-vergessen), -5 (1x1-addiert).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−8) · (−10). Lösung: **80**. Typische Fehler: -80 (minus-mal-minus), -18 (1x1-addiert).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−3⁄4) · (−0,8). / Gib das Ergebnis als Dezimalzahl an. Lösung: **0,6**. Typische Fehler: −0,6 (minus-mal-minus).
+- `05` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−4) · 2 · (−2). Lösung: **16**. Typische Fehler: -16 (minus-mal-minus), -4 (1x1-addiert).
+- `06` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−5) · 8 · (−3). Lösung: **120**. Typische Fehler: -120 (minus-mal-minus), 0 (1x1-addiert).
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Entscheide ohne zu rechnen. / Setze ein Zeichen ein: (−4) · (−4) · 4 · 2 ▢ 0 / Kreuze das passende Zeichen an.
+  - ☐ =
+  - ☑ >
+  - ☐ <
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Entscheide ohne zu rechnen. / Setze ein Zeichen ein: (−8) · (−4) · (−6) · 9 ▢ 0 / Kreuze das passende Zeichen an.
+  - ☐ >
+  - ☐ =
+  - ☑ <
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Rechnungen. / Kreuze alle richtigen Rechnungen an.
+  - ☑ (−11) · 9 = −99
+  - ☐ 7 · (−5) = 35
+  - ☐ (−11) · 3 = 33
+  - ☐ (−3) · 7 = 21
+- `10` AFB III · _Argumentieren_ · Ali rechnet: (−13) · (−8) = 104 / Prüfe die Rechnung.
+  - ☐ Falsch. Richtig ist: (−13) · (−8) = −104.
+  - ☑ Stimmt.
+  - ☐ Falsch. Richtig ist: (−13) · (−8) = −21.
+- `11` AFB II · _Argumentieren_ · Paul rechnet: (−14) · (−7) = −98 / Prüfe die Rechnung.
+  - ☐ Falsch. Richtig ist: (−14) · (−7) = −21.
+  - ☐ Stimmt.
+  - ☑ Falsch. Richtig ist: (−14) · (−7) = 98.
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · Schreibe die Plusaufgabe als Malaufgabe. / Berechne dann. / (−4) + (−4) + (−4) + (−4) = ▢ · (−4) = ▢ _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Startpunkt 0, Sprünge 0 nach -4 (−4), -4 nach -8 (−4), -8 nach -12 (−4), -12 nach -16 (−4))_ Lösung: a = **4**, b = **-16**
+- `13` AFB I · _Mit symbolischen Elementen umgehen_ · Am Abend sind es 6 °C. / Die Temperatur sinkt jede Stunde um 3 Grad. / Berechne die Temperatur nach 3 Stunden. _(Bild: Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: Abend 6 °C)_ Lösung: **-3 °C**. Typische Fehler: 15 (richtung-vertauscht), -9 (sach-schritt-vergessen), 0 (1x1-addiert).
+- `14` AFB II · _Mit symbolischen Elementen umgehen_ · Der Kontoauszug zeigt 3 gleiche Abbuchungen. / Berechne die Änderung des Kontostands. / Schreibe das Ergebnis mit Vorzeichen. _(Tabelle: Buchung | Euro / Handy Januar | −30 / Handy Februar | −30 / Handy März | −30)_ Lösung: **-90 €**. Typische Fehler: 90 (vorzeichen-vergessen), -30 (sach-schritt-vergessen), -33 (1x1-addiert).
+- `15` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−1,2) · 9. Lösung: **−10,8**. Typische Fehler: 10,8 (vorzeichen-vergessen), 7,8 (1x1-addiert).
+- `16` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−4,8) · 0,9. Lösung: **−4,32**. Typische Fehler: 4,32 (vorzeichen-vergessen), −3,9 (1x1-addiert).
+- `17` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−2,2) · (−0,5). Lösung: **1,1**. Typische Fehler: −1,1 (minus-mal-minus), −2,7 (1x1-addiert).
+- `18` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−1⁄3) · (−5⁄7). Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **5⁄21**. Typische Fehler: −5⁄21 (minus-mal-minus).
+- `19` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (−2⁄3) · 5⁄8. Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−5⁄12**. Typische Fehler: 5⁄12 (vorzeichen-vergessen).
+- `20` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−3⁄8) · (−24). Lösung: **9**. Typische Fehler: -9 (minus-mal-minus).
+- `21` AFB II · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ · (−3) = −15 Lösung: a = **5**
+- `22` AFB III · _Mit symbolischen Elementen umgehen_ · Setze die Reihe fort. / 2 · (−2) = −4 / 1 · (−2) = −2 / 0 · (−2) = 0 / (−1) · (−2) = ▢ / (−2) · (−2) = ▢ _(Bild: Zahlengerade -10 bis 10, Teilstriche alle 1, Punkte bei -4, -2, 0)_ Lösung: a = **2**, b = **4**
+- `23` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. / Kreuze die Aussage an, die immer stimmt.
+  - ☐ Das Produkt von drei negativen Zahlen ist positiv.
+  - ☐ Wechselt ein Faktor sein Vorzeichen, bleibt das Produkt gleich.
+  - ☑ Das Produkt von vier negativen Zahlen ist positiv.
+  - ☐ Eine Zahl mit sich selbst malgenommen kann negativ sein.
+- `24` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne geschickt: (−2) · 0,6 · (−5) · 3 Lösung: **18**. Typische Fehler: -18 (minus-mal-minus).
+
+## 6.9.6-D1: Ich kann rationale Zahlen dividieren.
+
+Grundlage, die F übt: Eine Malaufgabe mit der Umkehraufgabe zur Geteiltaufgabe machen
+
+Baut auf: 6.9.6-P1 (Ich kann rationale Zahlen multiplizieren.), 6.2.6-D1 (Ich kann durch einen Bruch dividieren.), 6.5.4-D1 (Ich kann eine Dezimalzahl durch eine natürliche Zahl dividieren.)
+
+### F · Grundlage (Basiskompetenzen, nur über die Grundlagen-Schleife)
+
+
+### G · Grundlegendes Niveau (Hauptschulabschluss)
+
+
+### M · Mittleres Niveau (Realschulabschluss)
+
+
+### E · Erweitertes Niveau (Zugabe Richtung Gymnasium)
+
+Hilfekärtchen der ersten Aufgabe: *Tipp:* Beim Dividieren gelten dieselben Vorzeichenregeln wie beim Multiplizieren.
+
+- `01` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (−30) : 5. Lösung: **-6**. Typische Fehler: 6 (vorzeichen-division), -150 (div-falsche-rechenart), -35 (div-falsche-rechenart).
+- `02` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−50) : (−10). Lösung: **5**. Typische Fehler: -5 (vorzeichen-division), 500 (div-falsche-rechenart), -40 (div-falsche-rechenart).
+- `03` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 54 : (−9). Lösung: **-6**. Typische Fehler: 6 (vorzeichen-division), -486 (div-falsche-rechenart), 63 (div-falsche-rechenart).
+- `04` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−30) : (−3). Lösung: **10**. Typische Fehler: -10 (vorzeichen-division), 90 (div-falsche-rechenart), -27 (div-falsche-rechenart).
+- `05` AFB II · _Argumentieren_ · Finn rechnet: 30 : (−6) = −5 / Prüfe die Rechnung.
+  - ☐ Falsch. Richtig ist: 30 : (−6) = 5.
+  - ☐ Falsch. Richtig ist: 30 : (−6) = −180.
+  - ☑ Stimmt.
+- `06` AFB III · _Argumentieren_ · Ben rechnet: (−108) : (−9) = −12 / Prüfe die Rechnung.
+  - ☐ Stimmt.
+  - ☑ Falsch. Richtig ist: (−108) : (−9) = 12.
+  - ☐ Falsch. Richtig ist: (−108) : (−9) = 972.
+- `07` AFB I · _Mit symbolischen Elementen umgehen_ · Entscheide ohne zu rechnen. / Setze ein Zeichen ein: (−162) : (−9) : (−3) ▢ 0 / Kreuze das passende Zeichen an.
+  - ☐ >
+  - ☐ =
+  - ☑ <
+- `08` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Rechnungen. / Kreuze alle richtigen Rechnungen an.
+  - ☑ (−24) : (−4) = 6
+  - ☑ (−20) : 4 = −5
+  - ☑ (−6) : (−2) = 3
+  - ☐ 108 : (−9) = 12
+- `09` AFB II · _Mit symbolischen Elementen umgehen_ · Prüfe die Rechnungen. / Kreuze alle richtigen Rechnungen an.
+  - ☑ (−18) : 6 = −3
+  - ☐ (−60) : (−5) = −12
+  - ☑ 48 : (−6) = −8
+  - ☑ 108 : (−9) = −12
+- `10` AFB III · _Mit symbolischen Elementen umgehen_ · Der Weg an der Zahlengeraden hat gleich lange Sprünge. / Berechne (−12) : 4. _(Bild: Zahlengerade -20 bis 0, Teilstriche alle 1, Startpunkt 0, Sprünge 0 nach -3 (?), -3 nach -6 (?), -6 nach -9 (?), -9 nach -12 (?))_ Lösung: **-3**. Typische Fehler: 3 (vorzeichen-division), -48 (div-falsche-rechenart), -16 (div-falsche-rechenart).
+- `11` AFB II · _Mit symbolischen Elementen umgehen_ · Um 18 Uhr sind es 6 °C, 3 Stunden später sind es −3 °C. / Die Temperatur ändert sich jede Stunde gleich. / Bestimme die Änderung pro Stunde mit Vorzeichen. _(Bild: 2 Thermometer von -10 °C bis 10 °C, Striche alle 1 Grad: 18 Uhr 6 °C, später -3 °C)_ Lösung: **-3 °C**. Typische Fehler: 3 (vorzeichen-division), -9 (sach-schritt-vergessen), 1 (abstand-ueber-null).
+- `12` AFB III · _Mit symbolischen Elementen umgehen_ · 4 Freunde bezahlen gemeinsam von einem Konto. / Der Kontoauszug zeigt die Abbuchungen. / Teile den gesamten Betrag auf die 4 Freunde auf. / Gib den Anteil pro Person mit Vorzeichen an. _(Tabelle: Buchung | Euro / Kino | −50 / Fahrrad | −50 / Ausflug | −50 / Pizza | −50)_ Lösung: **-50 €**. Typische Fehler: 50 (vorzeichen-division), -800 (div-falsche-rechenart).
+- `13` AFB I · _Mit symbolischen Elementen umgehen_ · Ergänze die fehlende Zahl. / ▢ : 3 = −9 Lösung: a = **-27**
+- `14` AFB II · _Mit symbolischen Elementen umgehen_ · Rechne die Aufgabe und mache die Probe. / 9 : (−3) = ▢ / Probe: ▢ · (−3) = 9 Lösung: a = **-3**, b = **-3**
+- `15` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−23,1) : (−3). Lösung: **7,7**. Typische Fehler: −7,7 (vorzeichen-division), 69,3 (div-falsche-rechenart), −20,1 (div-falsche-rechenart).
+- `16` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne 1,24 : (−0,4). Lösung: **−3,1**. Typische Fehler: 3,1 (vorzeichen-division), −0,496 (div-falsche-rechenart), 1,64 (div-falsche-rechenart).
+- `17` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne 27,5 : (−5). Lösung: **−5,5**. Typische Fehler: 5,5 (vorzeichen-division), −137,5 (div-falsche-rechenart), 32,5 (div-falsche-rechenart).
+- `18` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−2⁄5) : (−4⁄7). Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **7⁄10**. Typische Fehler: −7⁄10 (vorzeichen-division), 8⁄35 (bruch-kehrwert).
+- `19` AFB I · _Mit symbolischen Elementen umgehen_ · Berechne (−2⁄3) : 3⁄7. Kürze vollständig. _(Brucheingabe mit Feld für die Ganzen; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **−1 5⁄9**. Typische Fehler: 1 5⁄9 (vorzeichen-division), −2⁄7 (bruch-kehrwert).
+- `20` AFB II · _Mit symbolischen Elementen umgehen_ · Berechne (−3⁄4) : (−3). Kürze vollständig. _(Brucheingabe; nur vollständig gekürzt richtig, sonst Hinweis „fast richtig“)_ Lösung: **1⁄4**. Typische Fehler: −1⁄4 (vorzeichen-division), 2 1⁄4 (div-falsche-rechenart).
+- `21` AFB II · _Mit symbolischen Elementen umgehen_ · Lena denkt sich eine Zahl. / Sie nimmt die Zahl mit (−3) mal und addiert 6. / Sie erhält 15. / Bestimme Lenas Zahl. Lösung: **-3**. Typische Fehler: 3 (vorzeichen-division), -7 (richtung-vertauscht).
+- `22` AFB III · _Mit symbolischen Elementen umgehen_ · Prüfe die Aussagen. / Kreuze die Aussage an, die immer stimmt.
+  - ☐ Ein Quotient ist immer kleiner als die erste Zahl.
+  - ☑ 0 geteilt durch eine negative Zahl ergibt 0.
+  - ☐ Eine negative Zahl geteilt durch 0 ergibt 0.
+  - ☐ Eine negative Zahl geteilt durch eine negative Zahl ist negativ.
+- `23` AFB II · _Mit symbolischen Elementen umgehen_ · Die Tabelle zeigt die Temperatur an 4 Tagen am Morgen. / Berechne den Mittelwert. _(Tabelle: Tag | Temperatur in °C / Montag | 3 / Dienstag | −7 / Mittwoch | −2 / Donnerstag | −6)_ Lösung: **-3 °C**. Typische Fehler: 3 (vorzeichen-division), -12 (sach-schritt-vergessen).
+- `24` AFB III · _Mit symbolischen Elementen umgehen_ · Berechne (−6) · (−2) : 2. Lösung: **6**. Typische Fehler: -6 (vorzeichen-division).
+
 ## Typische Fehler und Aha-Momente
 
 Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fehlversuch liest, und der Satz für den Aha-Moment, wenn er den Fehler überwunden hat (ADR 0017).
@@ -8280,12 +9127,6 @@ Je Fehlvorstellung: was die Lehrkraft liest, was der Schüler nach dem ersten Fe
 
 ## Voraussetzungen der Lernziele ohne Aufgaben
 
-- 6.9.1-L1 Ich kann ganze Zahlen an der Zahlengerade darstellen und im Sachzusammenhang deuten. Baut auf: nur Grundschulstoff
-- 6.9.2-L1 Ich kann negative Brüche und Dezimalzahlen an der Zahlengerade darstellen und deuten. Baut auf: nur Grundschulstoff
-- 6.9.3-L1 Ich kann rationale Zahlen vergleichen und ordnen. Baut auf: nur Grundschulstoff
-- 6.9.4-L1 Ich kann Zunahmen und Abnahmen an der Zahlengerade und im Sachzusammenhang berechnen. Baut auf: nur Grundschulstoff
-- 6.9.5-L1 Ich kann rationale Zahlen addieren und subtrahieren. Baut auf: nur Grundschulstoff
-- 6.9.6-L1 Ich kann rationale Zahlen multiplizieren und dividieren. Baut auf: nur Grundschulstoff
 - 6.10.1-L1 Ich kann den Flächeninhalt von Dreiecken berechnen. Baut auf: nur Grundschulstoff
 - 6.10.2-L1 Ich kann den Flächeninhalt von Parallelogrammen berechnen. Baut auf: nur Grundschulstoff
 - 6.10.3-L1 Ich kann den Flächeninhalt von Trapezen berechnen. Baut auf: nur Grundschulstoff

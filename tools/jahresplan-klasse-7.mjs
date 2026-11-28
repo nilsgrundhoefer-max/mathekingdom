@@ -386,11 +386,12 @@ const wortspeicher = {
 
 // Voraussetzungen (ADR 0017): Lernziele, auf denen ein Lernziel aufbaut. Sie dürfen in Klasse 5 und 6 liegen (ADR 0037).
 const voraussetzungen = {
-  '7.1.1-Z1': ['5.2.1-N1', '5.9.3-K2'],
-  '7.1.1-Z2': ['7.1.1-Z1'],
+  // Seit Version 0.71 (ADR 0059) kennen die Kinder negative Zahlen schon aus Klasse 6 Kapitel 9: Die Vorstufe zeigt auf 6.9.1 bis 6.9.3.
+  '7.1.1-Z1': ['5.2.1-N1', '5.9.3-K2', '6.9.1-N1', '6.9.1-N2'],
+  '7.1.1-Z2': ['7.1.1-Z1', '6.9.2-R2'],
   '7.1.X1-K1': ['7.1.1-Z1', '5.5.4-K1', '5.5.4-K2'],
-  '7.1.2-V1': ['7.1.1-Z1', '5.2.1-N2'],
-  '7.1.2-V2': ['7.1.2-V1', '6.1.4-V2'],
+  '7.1.2-V1': ['7.1.1-Z1', '5.2.1-N2', '6.9.3-V1'],
+  '7.1.2-V2': ['7.1.2-V1', '6.1.4-V2', '6.9.3-V2'],
   '7.1.X2-W1': ['7.1.1-Z1', '5.3.1-K1'],
   '7.1.3-A1': ['7.1.1-Z2', '5.3.1-K1'],
   '7.1.3-A2': ['7.1.3-A1', '6.2.1-A1'],

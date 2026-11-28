@@ -50,8 +50,11 @@ test('Aufgabenanalyse und Feedback zählen nur die gewählte Version', () => {
   assert.equal(st.versuche.length, 2);
 });
 
-test('Vorzeichenknopf nur in Klasse 7 Kapitel 1, Abstecher eingeschlossen', () => {
+test('Vorzeichenknopf nur in Klasse 6 Kapitel 9 und Klasse 7 Kapitel 1, Abstecher eingeschlossen', () => {
   assert.equal(mitVorzeichen({ lernziel: '7.1.3-A1' }), true);
+  assert.equal(mitVorzeichen({ lernziel: '6.9.1-N1' }), true, 'Klasse 6 Kapitel 9 (ADR 0059)');
+  assert.equal(mitVorzeichen({ lernziel: '6.9.6-D1' }), true);
+  assert.equal(mitVorzeichen({ lernziel: '6.8.2-K1' }), false);
   assert.equal(mitVorzeichen({ lernziel: '7.1.X1-K1' }), true, 'Abstecher Koordinatensystem');
   assert.equal(mitVorzeichen({ lernziel: '7.2.1-D1' }), false);
   assert.equal(mitVorzeichen({ lernziel: '7.4.1-G1' }), false);
